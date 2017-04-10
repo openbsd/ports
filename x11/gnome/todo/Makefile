@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2017/02/19 14:43:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2017/04/10 11:46:36 sthen Exp $
 
 COMMENT=		simple task management application
 
@@ -23,7 +23,7 @@ WANTLIB += icuuc idn2 intl javascriptcoregtk-4.0 json-glib-1.0
 WANTLIB += lzma m nettle nspr4 nss3 orc-0.4 p11-kit pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre peas-1.0 pixman-1
 WANTLIB += plc4 plds4 png pthread pthread-stubs secret-1 smime3
-WANTLIB += softokn3 soup-2.4 sqlite3 ssl3 stdc++ tasn1 webkit2gtk-4.0
+WANTLIB += softokn3 soup-2.4 sqlite3 ssl3 ${LIBCXX} tasn1 webkit2gtk-4.0
 WANTLIB += xcb xcb-dri2 xcb-glx xcb-render xcb-shm xcb-xfixes
 WANTLIB += xml2 z
 

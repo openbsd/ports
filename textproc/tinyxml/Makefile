@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2016/03/16 16:46:33 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2017/04/10 11:46:34 sthen Exp $
 
 COMMENT=	simple and small C++ XML parser
 
@@ -17,7 +17,7 @@ HOMEPAGE=	http://www.grinninglizard.com/tinyxml/
 # zlib license
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += m stdc++
+WANTLIB += m ${LIBCXX}
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tinyxml/}
 

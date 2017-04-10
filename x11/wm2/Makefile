@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2013/10/11 23:51:53 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2017/04/10 11:46:37 sthen Exp $
 
 COMMENT=		stylish window manager
 
@@ -11,7 +11,7 @@ HOMEPAGE=		http://www.all-day-breakfast.com/wm2/
 # X11/MIT
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		X11 Xext Xau Xdmcp c m stdc++
+WANTLIB=		X11 Xext Xau Xdmcp c m ${LIBCXX}
 
 MASTER_SITES=		http://www.all-day-breakfast.com/wm2/
 

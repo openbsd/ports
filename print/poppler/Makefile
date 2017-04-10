@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.120 2017/03/26 19:51:36 kili Exp $
+# $OpenBSD: Makefile,v 1.121 2017/04/10 11:46:33 sthen Exp $
 
 COMMENT-main=	PDF rendering library
 COMMENT-qt4=	qt4 interface to PDF rendering library
@@ -81,12 +81,12 @@ LIB_DEPENDS-utils= print/poppler
 WANTLIB-main=	${cWANTLIB} Xext ffi gio-2.0 glib-2.0 gmodule-2.0 \
 		gobject-2.0 pixman-1 openjp2 X11 Xrender cairo pcre \
 		png pthread-stubs xcb xcb-render lcms2 xcb-shm \
-		iconv intl stdc++
+		iconv intl ${LIBCXX}
 
 WANTLIB-qt4=    ${cWANTLIB} ${MODQT4_WANTLIB} ICE QtCore QtGui QtXml \
 		SM X11 Xext Xi Xinerama Xrender ffi glib-2.0 \
 		gobject-2.0 gthread-2.0 iconv intl lcms2 openjp2 \
-		png poppler pcre pthread-stubs stdc++ xcb
+		png poppler pcre pthread-stubs ${LIBCXX} xcb
 
 WANTLIB-qt5=	${cWANTLIB} estdc++ \
 		GL Qt5Core Qt5Gui Qt5Widgets Qt5Xml X11 X11-xcb \
@@ -96,7 +96,7 @@ WANTLIB-qt5=	${cWANTLIB} estdc++ \
 		pcre16 png poppler pthread-stubs xcb xcb-dri2 xcb-glx
 
 WANTLIB-utils=	X11 Xext Xrender c cairo fontconfig lcms2 m pixman-1 \
-		png pthread-stubs stdc++ xcb xcb-render xcb-shm openjp2 \
+		png pthread-stubs ${LIBCXX} xcb xcb-render xcb-shm openjp2 \
 		poppler z ${cWANTLIB}
 
 CONFIGURE_STYLE=autoconf

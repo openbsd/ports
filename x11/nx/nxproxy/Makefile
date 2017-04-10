@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2016/10/15 19:14:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2017/04/10 11:46:36 sthen Exp $
 
 COMMENT=		NX X proxy support tool
 
@@ -9,7 +9,7 @@ REVISION=		1
 
 MASTER_SITES=	${MASTER_SITES_NX:=nxproxy/}
 
-WANTLIB += c m stdc++ Xcomp
+WANTLIB += c m ${LIBCXX} Xcomp
 LIB_DEPENDS=		x11/nx/nxcomp
 
 CONFIGURE_STYLE=        gnu

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2016/04/09 20:14:49 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2017/04/10 11:46:35 sthen Exp $
 
 COMMENT =	pager for the Blackbox window manager
 
@@ -20,7 +20,7 @@ BUILD_DEPENDS = x11/blackbox
 LIB_DEPENDS =	converters/libiconv
 
 WANTLIB =	ICE SM X11 Xau Xdmcp Xext Xft Xrender c expat fontconfig \
-		freetype iconv m stdc++ z pthread-stubs xcb
+		freetype iconv m ${LIBCXX} z pthread-stubs xcb
 
 CONFIGURE_STYLE = gnu
 

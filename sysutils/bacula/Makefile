@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.106 2017/03/16 11:04:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.107 2017/04/10 11:46:33 sthen Exp $
 
 # XXX building this port while a version is already installed on the
 # system will lead to unexpected hidden dependencies!!!
@@ -37,7 +37,7 @@ HOMEPAGE=		http://www.bacula.org/
 
 MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
 
-WANTLIB += c pthread crypto ssl z m stdc++
+WANTLIB += c pthread crypto ssl z m ${LIBCXX}
 
 # AGPLv3 with exception for OpenSSL (majority),
 # FDL (docs), LGPL (some libraries), and PD
@@ -115,13 +115,13 @@ LIB_DEPENDS-server=	${LIB_DEPENDS} \
 			sysutils/bacula,-main \
 			bacula-pgsql-*|bacula-mysql-*|bacula-sqlite3-*:sysutils/bacula,-pgsql
 
-WANTLIB-pgsql += pq crypto m ssl stdc++
+WANTLIB-pgsql += pq crypto m ssl ${LIBCXX}
 LIB_DEPENDS-pgsql +=	databases/postgresql
 
-WANTLIB-mysql += mysqlclient_r crypto m pthread ssl stdc++ z
+WANTLIB-mysql += mysqlclient_r crypto m pthread ssl ${LIBCXX} z
 LIB_DEPENDS-mysql +=	databases/mariadb
 
-WANTLIB-sqlite3 += sqlite3 m pthread stdc++
+WANTLIB-sqlite3 += sqlite3 m pthread ${LIBCXX}
 LIB_DEPENDS-sqlite3=	databases/sqlite3
 
 WANTLIB-bat += ${WANTLIB}

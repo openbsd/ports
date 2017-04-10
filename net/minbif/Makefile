@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2015/01/22 18:41:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2017/04/10 11:46:32 sthen Exp $
 
 COMMENT =	IRC-friendly instant messaging client
 
@@ -16,7 +16,7 @@ MODULES =	devel/gettext devel/cmake
 
 LIB_DEPENDS =	net/pidgin,-libpurple \
 		security/gnutls
-WANTLIB =	purple c glib-2.0 gthread-2.0 m pthread stdc++ gnutls
+WANTLIB =	purple c glib-2.0 gthread-2.0 m pthread ${LIBCXX} gnutls
 CONFIGURE_ENV+=	CPPFLAGS+="-I${X11BASE}/include"
 
 NO_TEST =	Yes

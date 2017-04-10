@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.132 2017/03/06 23:42:54 naddy Exp $
+# $OpenBSD: Makefile,v 1.133 2017/04/10 11:46:32 sthen Exp $
 
 COMMENT-main=	multi-protocol instant messaging client
 COMMENT-finch=	multi-protocol instant messaging client, console client
@@ -37,7 +37,7 @@ WANTLIB-main=	X11 ICE SM Xcomposite Xcursor Xdamage Xext Xfixes Xi \
 		Xinerama Xrandr Xrender Xss atk-1.0 cairo expat fontconfig \
 		freetype gdk-x11-2.0 gdk_pixbuf-2.0 graphite2 gtk-x11-2.0 \
 		harfbuzz pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 \
-		png pthread-stubs purple stdc++ xcb-render xcb-shm xcb \
+		png pthread-stubs purple ${LIBCXX} xcb-render xcb-shm xcb \
 		${WANTLIB}
 WANTLIB-libpurple= crypto meanwhile ssl silc silcclient ${WANTLIB}
 WANTLIB-finch=	X11 ncursesw panelw purple util xcb ${WANTLIB} \

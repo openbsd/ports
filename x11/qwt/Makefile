@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2016/03/26 20:37:36 zhuk Exp $
+# $OpenBSD: Makefile,v 1.20 2017/04/10 11:46:36 sthen Exp $
 
 COMMENT =		Qt Widgets for Technical Applications
 DISTNAME =		qwt-5.2.1
@@ -20,7 +20,7 @@ NO_TEST =		Yes
 USE_GMAKE =		Yes
 
 WANTLIB +=	ICE QtDesigner QtGui QtScript QtXml SM X11 Xext Xi
-WANTLIB +=	Xinerama Xrender fontconfig freetype m pthread stdc++
+WANTLIB +=	Xinerama Xrender fontconfig freetype m pthread ${LIBCXX}
 
 # svgmap example not included to prevent the need of svg dependencies
 EXAMPLES =	bode realtime_plot cpuplot dials radio event_filter \

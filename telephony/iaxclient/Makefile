@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2017/01/02 12:56:06 sebastia Exp $
+# $OpenBSD: Makefile,v 1.34 2017/04/10 11:46:34 sthen Exp $
 
 COMMENT-main=	IAX client library
 COMMENT-tcl=	IAX client library, tcl bindings
@@ -30,7 +30,7 @@ cWANTLIB	+= avcodec gsm m ogg ossaudio portaudio pthread speex
 cWANTLIB	+= speexdsp sndio theora vidcap z
 
 WANTLIB-main 	+= avutil c mp3lame vorbis vorbisenc vpx x264 ${cWANTLIB}
-WANTLIB-main 	+= opus stdc++ swresample x265 xvidcore
+WANTLIB-main 	+= opus ${LIBCXX} swresample x265 xvidcore
 
 WANTLIB-tcl	+= X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB-tcl	+= Xi Xinerama Xrandr Xrender atk-1.0 c cairo
@@ -47,7 +47,7 @@ WANTLIB-iaxcomm	+= c cairo expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB-iaxcomm	+= gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB-iaxcomm	+= gtk-x11-2.0 iaxclient iodbc jpeg mspack ${MODGETTEXT_WANTLIB}
 WANTLIB-iaxcomm	+= pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB-iaxcomm	+= png pthread-stubs stdc++ tiff usbhid wx_base wx_base_net
+WANTLIB-iaxcomm	+= png pthread-stubs ${LIBCXX} tiff usbhid wx_base wx_base_net
 WANTLIB-iaxcomm	+= wx_base_odbc wx_base_xml wx_gtk2_adv wx_gtk2_aui wx_gtk2_core
 WANTLIB-iaxcomm	+= wx_gtk2_dbgrid wx_gtk2_html wx_gtk2_qa wx_gtk2_richtext
 WANTLIB-iaxcomm	+= graphite2 harfbuzz vorbis

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2014/06/18 01:16:42 william Exp $
+# $OpenBSD: Makefile,v 1.16 2017/04/10 11:46:35 sthen Exp $
 
 COMMENT=	displays the date and resembles the toolbar
 
@@ -12,7 +12,7 @@ MAINTAINER=	William Yodlowsky <william@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-WANTLIB=		ICE SM X11 c m stdc++
+WANTLIB=		ICE SM X11 c m ${LIBCXX}
 
 
 CONFIGURE_STYLE= gnu

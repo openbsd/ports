@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2016/09/13 18:52:06 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2017/04/10 11:46:34 sthen Exp $
 
 COMMENT =		finite-state lexical processing toolkit
 
@@ -18,7 +18,7 @@ MAINTAINER =		Anthony J. Bentley <anthony@anjbe.name>
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c iconv lzma m pthread stdc++ xml2 z
+WANTLIB += c iconv lzma m pthread ${LIBCXX} xml2 z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=apertium/}
 

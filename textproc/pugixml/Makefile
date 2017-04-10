@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/03/18 23:12:19 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2017/04/10 11:46:34 sthen Exp $
 
 COMMENT=	light-weight, simple and fast XML parser for C++
 
@@ -16,7 +16,7 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += m stdc++
+WANTLIB += m ${LIBCXX}
 
 MASTER_SITES=	http://github.com/zeux/pugixml/releases/download/v$V/
 

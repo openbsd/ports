@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2016/11/07 10:51:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2017/04/10 11:46:34 sthen Exp $
 
 COMMENT=	command line parser generator
 
@@ -11,7 +11,7 @@ HOMEPAGE=	http://pmade.org/~pjones/software/clo++/
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c iconv m pthread lzma stdc++ xml2>=6 z
+WANTLIB += c iconv m pthread lzma ${LIBCXX} xml2>=6 z
 
 MASTER_SITES=	${HOMEPAGE}/download/
 

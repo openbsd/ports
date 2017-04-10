@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2016/08/20 11:59:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2017/04/10 11:46:34 sthen Exp $
 
 COMMENT=	Extensible Binary Meta Language library
 
@@ -16,7 +16,7 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 # LGPLv2.1+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	m stdc++
+WANTLIB=	m ${LIBCXX}
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	gnu

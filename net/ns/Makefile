@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2013/03/11 11:35:50 espie Exp $
+# $OpenBSD: Makefile,v 1.43 2017/04/10 11:46:32 sthen Exp $
 
 COMMENT=	UCB/LBNL Network Simulator Version 2
 
@@ -14,7 +14,7 @@ HOMEPAGE=	http://nsnam.sourceforge.net/
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES +=	x11/tk
-WANTLIB +=	X11 Xext c m pcap stdc++ otcl
+WANTLIB +=	X11 Xext c m pcap ${LIBCXX} otcl
 WANTLIB +=	${MODTK_WANTLIB}
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=nsnam/}

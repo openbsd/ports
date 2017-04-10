@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2016/03/11 20:28:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2017/04/10 11:46:34 sthen Exp $
 
 COMMENT =	spelling, stemming, morphological analysis and generation
 
@@ -16,7 +16,7 @@ MAINTAINER =	Edd Barrett <edd@openbsd.org>
 # GPL/LGPL/MPL
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c m ncurses ncursesw readline stdc++
+WANTLIB += c m ncurses ncursesw readline ${LIBCXX}
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=hunspell/}
 

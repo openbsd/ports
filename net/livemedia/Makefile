@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2016/03/16 16:46:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2017/04/10 11:46:32 sthen Exp $
 
 COMMENT=	LIVE555 streaming media library
 
@@ -13,7 +13,7 @@ HOMEPAGE=	http://www.live555.com/liveMedia/
 # LGPLv2.1+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	c m stdc++
+WANTLIB=	c m ${LIBCXX}
 
 CONFIGURE_STYLE=simple
 CONFIGURE_SCRIPT=genMakefiles

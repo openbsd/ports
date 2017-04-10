@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2016/03/11 20:11:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2017/04/10 11:46:35 sthen Exp $
 
 COMMENT=	c++ compliant CGI applications libraries
 
@@ -14,7 +14,7 @@ HOMEPAGE=	https://www.gnu.org/software/cgicc/cgicc.html
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += m stdc++
+WANTLIB += m ${LIBCXX}
 
 
 CONFIGURE_STYLE= gnu

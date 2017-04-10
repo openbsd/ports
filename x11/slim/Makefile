@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2016/10/14 09:33:12 landry Exp $
+# $OpenBSD: Makefile,v 1.42 2017/04/10 11:46:36 sthen Exp $
 
 COMMENT=	simple login manager
 
@@ -23,7 +23,7 @@ LIB_DEPENDS=	graphics/jpeg \
 		graphics/png
 
 WANTLIB += X11 Xft Xmu Xrandr Xrender c ck-connector dbus-1
-WANTLIB += fontconfig freetype jpeg m png pthread stdc++ z
+WANTLIB += fontconfig freetype jpeg m png pthread ${LIBCXX} z
 
 CONFIGURE_ARGS= -DUSE_CONSOLEKIT:Bool=Yes
 

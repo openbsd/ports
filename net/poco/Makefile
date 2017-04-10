@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2016/09/23 09:16:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2017/04/10 11:46:32 sthen Exp $
 
 COMMENT =	POCO C++ libraries for network based applications
 
@@ -21,7 +21,7 @@ MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 # Boost software license
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c crypto m pthread ssl stdc++ iodbc iodbcinst mysqlclient
+WANTLIB += c crypto m pthread ssl ${LIBCXX} iodbc iodbcinst mysqlclient
 WANTLIB += expat pcre sqlite3 z
 
 LIB_DEPENDS =	databases/iodbc \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.144 2017/02/12 11:19:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.145 2017/04/10 11:46:35 sthen Exp $
 
 COMMENT=	secure, fast, compliant, and very flexible web-server
 
@@ -48,7 +48,7 @@ WANTLIB+=	lber-2.4 ldap-2.4 sasl2
 .if ${FLAVOR:Mmysql}
 CONFIGURE_ARGS+= --with-mysql
 LIB_DEPENDS+=	databases/mariadb
-WANTLIB+=	mysqlclient pthread stdc++
+WANTLIB+=	mysqlclient pthread ${LIBCXX}
 .endif
 
 post-extract:

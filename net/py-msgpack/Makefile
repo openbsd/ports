@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2017/01/03 19:24:43 landry Exp $
+# $OpenBSD: Makefile,v 1.11 2017/04/10 11:46:32 sthen Exp $
 
 COMMENT =		messagepack (de)serializer
 
@@ -16,7 +16,7 @@ MAINTAINER =		Alexandr Shadchin <shadchin@openbsd.org>
 # Apache 2.0
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB +=	${MODPY_WANTLIB} m pthread stdc++
+WANTLIB +=	${MODPY_WANTLIB} m pthread ${LIBCXX}
 
 MODULES =		lang/python
 

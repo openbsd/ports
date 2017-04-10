@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2015/06/26 18:36:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2017/04/10 11:46:33 sthen Exp $
 
 COMMENT=		mastering tools for DVD+RW/+R/-R/-RW
 
@@ -11,7 +11,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=		${HOMEPAGE}tools/
 
-WANTLIB += c m pthread stdc++
+WANTLIB += c m pthread ${LIBCXX}
 
 RUN_DEPENDS=		sysutils/cdrtools>=1.10
 

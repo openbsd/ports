@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2017/02/18 17:33:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2017/04/10 11:46:33 sthen Exp $
 
 BROKEN-powerpc =	64-bit atomics (__sync_bool_compare_and_swap_8)
 
@@ -27,7 +27,7 @@ WANTLIB-main +=		${MODGETTEXT_WANTLIB}
 WANTLIB-main +=		c estr ffi gcrypt gmp gnutls gpg-error hogweed idn2
 WANTLIB-main +=		json-c nettle p11-kit pthread relp tasn1 uuid z
 
-WANTLIB-mysql +=	crypto m mysqlclient pthread ssl stdc++ z
+WANTLIB-mysql +=	crypto m mysqlclient pthread ssl ${LIBCXX} z
 
 WANTLIB-pgsql +=	crypto pq ssl
 

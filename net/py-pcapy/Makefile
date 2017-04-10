@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2017/01/03 19:24:43 landry Exp $
+# $OpenBSD: Makefile,v 1.14 2017/04/10 11:46:32 sthen Exp $
 
 COMMENT =		libpcap module for Python
 
@@ -16,7 +16,7 @@ HOMEPAGE =		https://www.coresecurity.com/corelabs-research/open-source-tools/pca
 # Apache
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += 		${MODPY_WANTLIB} m stdc++ pcap
+WANTLIB += 		${MODPY_WANTLIB} m ${LIBCXX} pcap
 
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2016/12/25 15:14:25 zhuk Exp $
+# $OpenBSD: Makefile,v 1.64 2017/04/10 11:46:36 sthen Exp $
 
 COMMENT=	personal search and metasearch
 
@@ -23,7 +23,7 @@ WANTLIB += glibmm-2.4 gmime-2.6 gmodule-2.0 gobject-2.0 graphite2
 WANTLIB += gthread-2.0 gtk-3 gtkmm-3.0 harfbuzz iconv intl lzma m
 WANTLIB += nghttp2 pango-1.0 pangocairo-1.0 pangoft2-1.0 pangomm-1.4
 WANTLIB += pcre pixman-1 png pthread pthread-stubs sigc-2.0 sqlite3 ssl
-WANTLIB += stdc++ tag textcat uuid xapian xcb xcb-render xcb-shm
+WANTLIB += ${LIBCXX} tag textcat uuid xapian xcb xcb-render xcb-shm
 WANTLIB += xml++-2.6 xml2 z
 
 MASTER_SITES=	${MASTER_SITE_GOOGLECODE:=pinot-search/}

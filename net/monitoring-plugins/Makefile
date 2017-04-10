@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2017/02/18 17:33:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2017/04/10 11:46:32 sthen Exp $
 
 COMMENT-main=	monitoring plugins (for Nagios, Icinga, etc)
 COMMENT-dbi=	dbi monitoring plugin
@@ -110,7 +110,7 @@ CONFIGURE_ARGS += --without-mysql
 CONFIGURE_ARGS += --with-mysql=${LOCALBASE}
 .endif
 LIB_DEPENDS-mysql = ${LIB_DEPENDS} databases/mariadb
-WANTLIB-mysql = ${WANTLIB} crypto m mysqlclient ssl stdc++ z
+WANTLIB-mysql = ${WANTLIB} crypto m mysqlclient ssl ${LIBCXX} z
 
 # PGSQL
 .if !${BUILD_PACKAGES:M-pgsql}

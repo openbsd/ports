@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2016/11/02 15:37:26 landry Exp $
+# $OpenBSD: Makefile,v 1.41 2017/04/10 11:46:33 sthen Exp $
 
 COMMENT=	personal accounting application
 
@@ -22,7 +22,7 @@ WANTLIB += ffi fontconfig freetype gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 goffice-0.8
 WANTLIB += graphite2 gsf-1 gthread-2.0 gtk-x11-2.0 harfbuzz lzma m ofx
 WANTLIB += osp pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png
-WANTLIB += pthread pthread-stubs stdc++ xcb xcb-render xcb-shm xml2 z
+WANTLIB += pthread pthread-stubs ${LIBCXX} xcb xcb-render xcb-shm xml2 z
 WANTLIB += iconv intl
 
 MODULES =	textproc/intltool

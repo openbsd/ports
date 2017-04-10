@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2016/03/18 23:12:19 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2017/04/10 11:46:33 sthen Exp $
 
 COMMENT =	Qt Cryptographic Architecture
 
@@ -25,6 +25,6 @@ MAKE_FLAGS =	LIBqca2_VERSION=${LIBqca2_VERSION}
 FAKE_FLAGS =	INSTALL_ROOT=${WRKINST}
 NO_TEST =	Yes
 
-WANTLIB += c m pthread stdc++
+WANTLIB += c m pthread ${LIBCXX}
 
 .include <bsd.port.mk>

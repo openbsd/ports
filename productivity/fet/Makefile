@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2016/03/26 20:37:35 zhuk Exp $
+# $OpenBSD: Makefile,v 1.20 2017/04/10 11:46:33 sthen Exp $
 
 COMMENT=		automatically create timetables
 
@@ -12,7 +12,7 @@ HOMEPAGE=		http://www.lalescu.ro/liviu/fet/
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += Qt3Support QtGui QtNetwork QtSql QtXml c m pthread
-WANTLIB += stdc++
+WANTLIB += ${LIBCXX}
 WANTLIB += ICE SM X11 Xext Xi Xinerama Xrender fontconfig freetype
 
 MASTER_SITES=		${HOMEPAGE}/download/ \

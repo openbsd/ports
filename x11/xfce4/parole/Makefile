@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2017/03/02 17:13:49 landry Exp $
+# $OpenBSD: Makefile,v 1.39 2017/04/10 11:46:37 sthen Exp $
 
 COMMENT =	Xfce4 media player
 
@@ -17,7 +17,7 @@ WANTLIB += gobject-2.0 graphite2 gstaudio-1.0 gstbase-1.0 gstpbutils-1.0
 WANTLIB += gstreamer-1.0 gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3
 WANTLIB += harfbuzz m notify orc-0.4 pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
-WANTLIB += startup-notification-1 stdc++ tag tag_c xcb xcb-render
+WANTLIB += startup-notification-1 ${LIBCXX} tag tag_c xcb xcb-render
 WANTLIB += xcb-shm xcb-util xfce4ui-2 xfce4util xfconf-0 z iconv intl
 
 MODULES =	x11/xfce4

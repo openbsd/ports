@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2017/03/02 10:12:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2017/04/10 11:46:34 sthen Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 USE_WXNEEDED =		Yes
@@ -28,7 +28,7 @@ MAINTAINER =		Frank Groeneveld <frank@frankgroeneveld.nl>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += X11 Xext Xrender c fontconfig freetype iconv jpeg m
-WANTLIB += png pthread stdc++ z
+WANTLIB += png pthread ${LIBCXX} z
 
 WANTLIB += icui18n # dlopen()d via QLibrary
 

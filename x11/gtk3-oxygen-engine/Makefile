@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/03/18 23:12:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2017/04/10 11:46:36 sthen Exp $
 COMMENT =		KDE Oxygen widget theme for GTK+3
 
 V =			1.3.5
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += X11 atk-1.0 c cairo cairo-gobject fontconfig freetype
 WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 gtk-3
-WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pthread stdc++
+WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pthread ${LIBCXX}
 WANTLIB += z
 
 MASTER_SITES =		${MASTER_SITE_KDE:=stable/oxygen-gtk3/${V}/src/}

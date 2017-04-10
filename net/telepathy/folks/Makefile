@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.85 2017/02/19 14:43:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.86 2017/04/10 11:46:32 sthen Exp $
 
 # XXX: PORTROACH set below to override the value from gnome.port.mk
 
@@ -32,7 +32,7 @@ WANTLIB += hogweed iconv icudata icui18n icuuc idn2 intl javascriptcoregtk-4.0
 WANTLIB += json-glib-1.0 lzma m ncurses nettle nspr4 nss3 orc-0.4
 WANTLIB += p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
 WANTLIB += pixman-1 plc4 plds4 png pthread pthread-stubs readline
-WANTLIB += secret-1 smime3 softokn3 soup-2.4 sqlite3 ssl3 stdc++
+WANTLIB += secret-1 smime3 softokn3 soup-2.4 sqlite3 ssl3 ${LIBCXX}
 WANTLIB += tasn1 telepathy-glib webkit2gtk-4.0 xcb xcb-dri2 xcb-glx
 WANTLIB += xcb-render xcb-shm xcb-xfixes xml2 z
 

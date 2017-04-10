@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2016/11/23 14:16:10 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.19 2017/04/10 11:46:32 sthen Exp $
 
 COMMENT =	e-donkey client
 DISTNAME =	mldonkey-3.1.5
@@ -18,7 +18,7 @@ WANTLIB += Xrandr Xrender atk-1.0 bz2 c cairo charset fontconfig
 WANTLIB += freetype gd gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gobject-2.0 gtk-x11-2.0 jpeg m magic miniupnpc natpmp
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 png pthread rsvg-2
-WANTLIB += stdc++ tiff vpx z
+WANTLIB += ${LIBCXX} tiff vpx z
 
 EXTRACT_SUFX =		.tar.bz2
 

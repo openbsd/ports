@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2017/04/06 07:42:25 benoit Exp $
+# $OpenBSD: Makefile,v 1.43 2017/04/10 11:46:34 sthen Exp $
 
 COMMENT =		convert source code to markup formats
 
@@ -12,7 +12,7 @@ MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		c m stdc++ ${MODLUA_WANTLIB}
+WANTLIB =		c m ${LIBCXX} ${MODLUA_WANTLIB}
 
 MASTER_SITES =		${HOMEPAGE}/zip/
 EXTRACT_SUFX =		.tar.bz2

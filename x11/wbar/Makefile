@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2016/10/01 11:54:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2017/04/10 11:46:36 sthen Exp $
 
 COMMENT =		Mac OS-X style lightweight application launcher
 
@@ -13,7 +13,7 @@ HOMEPAGE=		https://code.google.com/p/wbar/
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += Imlib2 X11 Xext c freetype intl m stdc++ z
+WANTLIB += Imlib2 X11 Xext c freetype intl m ${LIBCXX} z
 
 MASTER_SITES =		${MASTER_SITE_GOOGLECODE:=wbar/}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2017/01/03 19:27:51 landry Exp $
+# $OpenBSD: Makefile,v 1.10 2017/04/10 11:46:34 sthen Exp $
 
 COMMENT=		Python extension wrapping the ICU C++ API
 
@@ -12,7 +12,7 @@ CATEGORIES=		textproc
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += icudata icui18n icuuc m pthread stdc++
+WANTLIB += icudata icui18n icuuc m pthread ${LIBCXX}
 WANTLIB += ${MODPY_WANTLIB}
 
 MODPY_PI =		Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2015/02/16 22:57:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2017/04/10 11:46:33 sthen Exp $
 
 COMMENT =		top-like monitor for Apache
 
@@ -21,6 +21,6 @@ AUTOCONF_VERSION =	2.59
 CONFIGURE_ARGS =	--disable-fam \
 			--with-logfile=/var/www/logs/access_log
 
-WANTLIB +=		c m ncurses readline stdc++
+WANTLIB +=		c m ncurses readline ${LIBCXX}
 
 .include <bsd.port.mk>

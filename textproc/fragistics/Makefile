@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/06/10 12:58:21 awolk Exp $
+# $OpenBSD: Makefile,v 1.2 2017/04/10 11:46:34 sthen Exp $
 
 COMMENT =	Quake 3 statistics program
 
@@ -13,7 +13,7 @@ MAINTAINER =	Adam Wolk <awolk@openbsd.org>
 # License GPL + Perl
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c m stdc++
+WANTLIB += c m ${LIBCXX}
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=fragistics/}
 

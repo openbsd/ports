@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2016/12/17 16:25:31 zhuk Exp $
+# $OpenBSD: Makefile,v 1.13 2017/04/10 11:46:33 sthen Exp $
 
 COMMENT=	python bindings for poppler
 
@@ -20,7 +20,7 @@ WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
 WANTLIB += gtk-x11-2.0 harfbuzz jpeg lcms2 m openjp2 pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png poppler-glib>=8
-WANTLIB += poppler>=10 pthread-stubs pthread stdc++ tiff xcb xcb-render
+WANTLIB += poppler>=10 pthread-stubs pthread ${LIBCXX} tiff xcb xcb-render
 WANTLIB += xcb-shm z
 
 MODULES=		devel/gettext \

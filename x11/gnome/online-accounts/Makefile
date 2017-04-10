@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.89 2017/03/29 13:27:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.90 2017/04/10 11:46:36 sthen Exp $
 
 COMMENT=	interfaces for interacting with online accounts
 
@@ -24,7 +24,7 @@ WANTLIB += harfbuzz harfbuzz-icu hyphen iconv icudata icui18n
 WANTLIB += icuuc intl javascriptcoregtk-4.0 jpeg json-glib-1.0
 WANTLIB += lzma m notify orc-0.4 pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread pthread-stubs rest-0.7 secret-1
-WANTLIB += soup-2.4 soup-gnome-2.4 sqlite3 stdc++ telepathy-glib
+WANTLIB += soup-2.4 soup-gnome-2.4 sqlite3 ${LIBCXX} telepathy-glib
 WANTLIB += webkit2gtk-4.0 webp xcb xcb-dri2 xcb-glx xcb-render
 WANTLIB += xcb-shm xcb-xfixes xml2 xslt z
 

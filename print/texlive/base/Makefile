@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.85 2016/12/17 20:40:29 zhuk Exp $
+# $OpenBSD: Makefile,v 1.86 2017/04/10 11:46:33 sthen Exp $
 
 COMMENT =		base binaries for TeXLive typesetting distribution
 
@@ -20,7 +20,7 @@ WANTLIB += ICE SM X11 Xau Xaw Xdmcp Xext Xi Xmu Xpm Xrender Xt
 WANTLIB += c cairo expat fontconfig freetype gd glib-2.0 graphite2
 WANTLIB += harfbuzz harfbuzz-icu iconv icudata icui18n icuio icuuc intl
 WANTLIB += jpeg lcms2 m openjp2 paper pcre pixman-1 png poppler
-WANTLIB += potrace pthread pthread-stubs stdc++ tiff vpx xcb
+WANTLIB += potrace pthread pthread-stubs ${LIBCXX} tiff vpx xcb
 WANTLIB += xcb-render xcb-shm z zzip
 
 RUN_DEPENDS =		print/ghostscript/gnu \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2015/04/21 18:51:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2017/04/10 11:46:34 sthen Exp $
 
 COMMENT=	import and export WordPerfect(tm) documents
 
@@ -18,7 +18,7 @@ MAINTAINER=	Robert Nagy <robert@openbsd.org>
 PERMIT_PACKAGE_CDROM=   Yes
 
 WANTLIB += bz2 c ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gsf-1
-WANTLIB += gthread-2.0 lzma m pcre pthread stdc++ xml2 z
+WANTLIB += gthread-2.0 lzma m pcre pthread ${LIBCXX} xml2 z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=libwpd/}
 

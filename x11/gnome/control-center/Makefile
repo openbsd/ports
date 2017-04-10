@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2017/03/15 08:21:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2017/04/10 11:46:35 sthen Exp $
 
 # XXX change proxy settings without network-manager?
 
@@ -29,7 +29,7 @@ WANTLIB += nettle ogg orc-0.4 p11-kit pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png polkit-gobject-1
 WANTLIB += pthread-stubs pulse pulse-mainloop-glib pwquality rest-0.7
 WANTLIB += sasl2 secret-1 smbclient sndfile soup-2.4 soup-gnome-2.4
-WANTLIB += sqlite3 ssl stdc++ tasn1 telepathy-glib upower-glib
+WANTLIB += sqlite3 ssl ${LIBCXX} tasn1 telepathy-glib upower-glib
 WANTLIB += vorbis vorbisenc vorbisfile webkit2gtk-4.0 xcb xcb-dri2
 WANTLIB += xcb-glx xcb-render xcb-shm xcb-xfixes xml2 z
 WANTLIB += heimdal/lib/heimsqlite

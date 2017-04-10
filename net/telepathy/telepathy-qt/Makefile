@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2016/06/16 11:01:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2017/04/10 11:46:32 sthen Exp $
 
 # XXX: PORTROACH set below to override the value from ../Makefile.inc
 
@@ -15,7 +15,7 @@ HOMEPAGE =		${HOMEPAGE_TP:=Telepathy Qt}
 
 MASTER_SITES =		${MASTER_SITES_TP:=telepathy-qt/}
 
-WANTLIB =  lib/qt4/QtDBus lib/qt4/QtNetwork lib/qt4/QtXml m stdc++
+WANTLIB =  lib/qt4/QtDBus lib/qt4/QtNetwork lib/qt4/QtXml m ${LIBCXX}
 WANTLIB += telepathy-farstream telepathy-glib
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 

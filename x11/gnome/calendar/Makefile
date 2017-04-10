@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2017/03/29 19:07:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2017/04/10 11:46:35 sthen Exp $
 
 COMMENT =		GNOME calendar
 
@@ -21,7 +21,7 @@ WANTLIB += icalss icalvcal iconv icudata icui18n icuuc idn2 intl
 WANTLIB += javascriptcoregtk-4.0 json-glib-1.0 lzma m nettle nspr4
 WANTLIB += nss3 orc-0.4 p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 plc4 plds4 png pthread pthread-stubs
-WANTLIB += secret-1 smime3 softokn3 soup-2.4 sqlite3 ssl3 stdc++
+WANTLIB += secret-1 smime3 softokn3 soup-2.4 sqlite3 ssl3 ${LIBCXX}
 WANTLIB += tasn1 webkit2gtk-4.0 xcb xcb-dri2 xcb-glx xcb-render
 WANTLIB += xcb-shm xcb-xfixes xml2 z unistring
 

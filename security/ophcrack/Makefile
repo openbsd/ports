@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2016/08/03 06:18:18 benoit Exp $
+# $OpenBSD: Makefile,v 1.14 2017/04/10 11:46:33 sthen Exp $
 
 COMMENT =		password cracker based on rainbow tables
 
@@ -31,7 +31,7 @@ FLAVOR ?=
 
 .if ${FLAVOR:Mgui}
 WANTLIB +=		ICE SM X11 Xext Xi Xinerama Xrender fontconfig
-WANTLIB +=		freetype stdc++ QtGui>=8 QtCore>=7 qwt
+WANTLIB +=		freetype ${LIBCXX} QtGui>=8 QtCore>=7 qwt
 
 MODULES +=		x11/qt4
 

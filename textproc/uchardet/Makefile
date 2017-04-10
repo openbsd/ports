@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2016/10/01 11:54:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2017/04/10 11:46:34 sthen Exp $
 
 COMMENT=	universal charset detection library and tool
 
@@ -14,7 +14,7 @@ HOMEPAGE=	https://code.google.com/p/uchardet/
 # MPL 1.1
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c m stdc++
+WANTLIB += c m ${LIBCXX}
 
 MASTER_SITES=	${MASTER_SITE_GOOGLECODE:=uchardet/}
 

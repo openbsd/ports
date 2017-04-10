@@ -1,4 +1,4 @@
-# $OpenBSD: mozilla.port.mk,v 1.102 2017/03/09 07:08:24 landry Exp $
+# $OpenBSD: mozilla.port.mk,v 1.103 2017/04/10 11:46:35 sthen Exp $
 
 ONLY_FOR_ARCHS ?=	amd64 i386
 # ppc: firefox-esr/thunderbird xpcshell segfaults during startup compilation
@@ -93,7 +93,7 @@ MODMOZ_WANTLIB +=	X11 Xext Xrender Xt atk-1.0 c cairo \
 		fontconfig freetype gdk_pixbuf-2.0 gio-2.0 glib-2.0 \
 		gobject-2.0 gthread-2.0 m \
 		pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-		pthread sndio stdc++ z
+		pthread sndio ${LIBCXX} z
 
 # --no-keep-memory avoids OOM when linking libxul
 # --relax avoids relocation overflow on ppc, needed since sm 2.7b, tb 10.0b, fx 15.0b

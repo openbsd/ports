@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2017/02/19 14:43:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2017/04/10 11:46:35 sthen Exp $
 
 TRACKER_API=		1.0
 
@@ -26,7 +26,7 @@ WANTLIB += iconv icudata icui18n icuuc idn2 intl javascriptcoregtk-3.0
 WANTLIB += javascriptcoregtk-4.0 jpeg json-glib-1.0 kvm lzma m
 WANTLIB += nettle nspr4 nss3 orc-0.4 p11-kit pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 plc4 plds4 png pthread pthread-stubs
-WANTLIB += secret-1 smime3 softokn3 soup-2.4 sqlite3 ssl3 stdc++
+WANTLIB += secret-1 smime3 softokn3 soup-2.4 sqlite3 ssl3 ${LIBCXX}
 WANTLIB += tasn1 uuid webkit2gtk-4.0 webkitgtk-3.0 webp xcb xcb-dri2
 WANTLIB += xcb-glx xcb-render xcb-shm xcb-xfixes xml2 xslt z
 WANTLIB += tracker-sparql-${TRACKER_API}

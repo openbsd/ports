@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2016/04/27 12:42:55 jca Exp $
+# $OpenBSD: Makefile,v 1.13 2017/04/10 11:46:33 sthen Exp $
 
 COMMENT =		data recovery tool
 
@@ -11,7 +11,7 @@ HOMEPAGE =		https://www.gnu.org/software/ddrescue/ddrescue.html
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		c m stdc++
+WANTLIB =		c m ${LIBCXX}
 
 MASTER_SITES =		${MASTER_SITE_GNU:=ddrescue/}
 

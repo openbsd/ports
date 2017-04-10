@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2013/10/06 19:12:08 lteo Exp $
+# $OpenBSD: Makefile,v 1.25 2017/04/10 11:46:32 sthen Exp $
 
 COMMENT=	tool for measuring maximum TCP and UDP bandwidth
 
@@ -13,7 +13,7 @@ MAINTAINER=	Lawrence Teo <lteo@openbsd.org>
 # MIT'ish
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	c m pthread stdc++
+WANTLIB=	c m pthread ${LIBCXX}
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=iperf/}
 

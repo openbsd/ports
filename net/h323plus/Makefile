@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2016/03/16 21:19:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.27 2017/04/10 11:46:32 sthen Exp $
 
 # XXX drop at next release
 CONFIGURE_ARGS += --enable-h235
@@ -23,7 +23,7 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += SDL c crypto expat lber ldap ldap_r m pt pthread sasl2
-WANTLIB += ssl stdc++
+WANTLIB += ssl ${LIBCXX}
 
 MASTER_SITES=	http://www.h323plus.org/source/download/
 

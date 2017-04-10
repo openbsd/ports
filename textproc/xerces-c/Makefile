@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2016/06/28 09:34:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2017/04/10 11:46:35 sthen Exp $
 
 COMMENT=	c++ validating XML parser
 
@@ -21,7 +21,7 @@ MASTER_SITES=	http://apache.mirrors.crysys.hit.bme.hu/xerces/c/2/sources/
 
 USE_GMAKE=	Yes
 
-WANTLIB=	m stdc++
+WANTLIB=	m ${LIBCXX}
 
 XERCESCROOT=	${WRKDIR}/${DISTNAME}
 WRKSRC=		${XERCESCROOT}/src/xercesc

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2014/06/18 01:17:22 william Exp $
+# $OpenBSD: Makefile,v 1.16 2017/04/10 11:46:36 sthen Exp $
 
 COMMENT=		tree window manager
 DISTNAME=		treewm-0.4.5
@@ -14,7 +14,7 @@ MAINTAINER=		William Yodlowsky <william@openbsd.org>
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		ICE SM X11 Xau Xdmcp Xext Xmu Xpm Xt Xxf86vm c m stdc++
+WANTLIB=		ICE SM X11 Xau Xdmcp Xext Xmu Xpm Xt Xxf86vm c m ${LIBCXX}
 
 BUILD_DEPENDS=		devel/imake
 

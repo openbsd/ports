@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2015/02/16 22:57:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2017/04/10 11:46:32 sthen Exp $
 
 COMMENT=		simple tcp re-engineering tool
 
@@ -14,7 +14,7 @@ MASTER_SITES=		http://www.remlab.net/files/tcpreen/stable/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-WANTLIB=		c m stdc++ 
+WANTLIB=		c m ${LIBCXX} 
 
 EXTRACT_SUFX=		.tar.bz2
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2016/12/25 16:23:58 zhuk Exp $
+# $OpenBSD: Makefile,v 1.23 2017/04/10 11:46:36 sthen Exp $
 
 COMMENT=	viewer for IETF RFCs
 
@@ -10,7 +10,7 @@ CATEGORIES=	x11
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += ICE SM X11 Xext Xi Xinerama Xrender fontconfig freetype
-WANTLIB += QtGui QtNetwork c m pthread stdc++
+WANTLIB += QtGui QtNetwork c m pthread ${LIBCXX}
 
 # requires qmake fix
 BUILD_DEPENDS=	x11/qt4>=4.8.7p6

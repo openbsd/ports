@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2016/03/11 20:28:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.40 2017/04/10 11:46:32 sthen Exp $
 
 COMMENT=		HTTP and WebDAV client library, with C interface
 
@@ -12,7 +12,7 @@ HOMEPAGE=		http://www.webdav.org/neon/
 # LGPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += crypto expat m proxy pthread ssl stdc++ z
+WANTLIB += crypto expat m proxy pthread ssl ${LIBCXX} z
 
 MASTER_SITES=		${HOMEPAGE}
 

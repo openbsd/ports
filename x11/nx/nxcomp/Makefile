@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2016/10/15 19:14:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2017/04/10 11:46:36 sthen Exp $
 
 COMMENT=		library to compress the standard X protocol
 
@@ -10,7 +10,7 @@ SHARED_LIBS=		Xcomp	1.0
 
 MASTER_SITES=		${MASTER_SITES_NX:=nxcomp/}
 
-WANTLIB += jpeg m png stdc++ z
+WANTLIB += jpeg m png ${LIBCXX} z
 
 LIB_DEPENDS=		graphics/jpeg \
 			graphics/png

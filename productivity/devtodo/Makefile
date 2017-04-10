@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2015/12/03 21:24:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2017/04/10 11:46:33 sthen Exp $
 
 COMMENT=		reminder/task program aimed at developers
 
@@ -14,7 +14,7 @@ MASTER_SITES=		http://swapoff.org/files/devtodo/ \
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		c m ncurses readline stdc++
+WANTLIB=		c m ncurses readline ${LIBCXX}
 
 CONFIGURE_STYLE=	gnu
 

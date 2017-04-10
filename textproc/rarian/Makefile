@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2015/07/25 04:25:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2017/04/10 11:46:34 sthen Exp $
 
 COMMENT=		documentation metadata library
 
@@ -16,7 +16,7 @@ HOMEPAGE=		http://rarian.freedesktop.org/
 # LGPLv2.1/GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c m stdc++
+WANTLIB += c m ${LIBCXX}
 
 MODULES=		x11/gnome
 

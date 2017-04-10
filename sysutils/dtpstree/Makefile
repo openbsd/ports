@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/10/11 23:50:56 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2017/04/10 11:46:33 sthen Exp $
 
 COMMENT =		display a tree of processes
 
@@ -13,7 +13,7 @@ MAINTAINER =		Douglas William Thrift <douglas@douglasthrift.net>
 # Apache 2.0
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		c kvm m ncurses stdc++
+WANTLIB =		c kvm m ncurses ${LIBCXX}
 
 MASTER_SITES =		http://code.douglasthrift.net/files/dtpstree/ \
 			http://apt.douglasthrift.net/files/dtpstree/

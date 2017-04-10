@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2017/03/04 21:59:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.49 2017/04/10 11:46:35 sthen Exp $
 
 COMMENT =		canvas API for X
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB += GL X11 X11-xcb Xau Xdamage Xdmcp Xext Xfixes Xrender
 WANTLIB += Xxf86vm c crypto drm eet eina expat fontconfig freetype
 WANTLIB += fribidi gif glapi glib-2.0 graphite2 harfbuzz jpeg
-WANTLIB += m pcre png pthread pthread-stubs ssl stdc++ tiff xcb
+WANTLIB += m pcre png pthread pthread-stubs ssl ${LIBCXX} tiff xcb
 WANTLIB += xcb-dri2 xcb-glx z
 
 MODULES=		devel/gettext \

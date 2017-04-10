@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2015/05/01 07:49:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2017/04/10 11:46:37 sthen Exp $
 
 COMMENT=	display chm files
 
@@ -18,7 +18,7 @@ LIB_DEPENDS=	devel/chmlib \
 
 RUN_DEPENDS=	devel/desktop-file-utils
 
-WANTLIB += m c stdc++ pthread chm wx_base_xml wx_gtk2_qa wx_base_odbc
+WANTLIB += m c ${LIBCXX} pthread chm wx_base_xml wx_gtk2_qa wx_base_odbc
 WANTLIB += wx_gtk2_html wx_base wx_gtk2_adv wx_gtk2_xrc wx_gtk2_core
 WANTLIB += wx_base_net wx_gtk2_dbgrid wx_gtk2_aui wx_gtk2_richtext
 

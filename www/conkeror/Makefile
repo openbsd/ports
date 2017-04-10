@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2015/11/02 11:56:54 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2017/04/10 11:46:35 sthen Exp $
 
 COMMENT =		keyboard-oriented Mozilla-based browser
 
@@ -18,7 +18,7 @@ MAINTAINER =		Joshua Elsasser <joshe@openbsd.org>
 # mozilla public license
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		c m pthread stdc++
+WANTLIB =		c m pthread ${LIBCXX}
 
 MASTER_SITES =		http://www.elsasser.org/openbsd/distfiles/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/12/01 05:43:54 benoit Exp $
+# $OpenBSD: Makefile,v 1.6 2017/04/10 11:46:35 sthen Exp $
 
 COMMENT=	test tool for slow HTTP reads/posts
 
@@ -11,7 +11,7 @@ HOMEPAGE=	https://slowhttptest.googlecode.com/
 # Apache 2.0
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c crypto m ssl stdc++
+WANTLIB += c crypto m ssl ${LIBCXX}
 
 MASTER_SITES=	${HOMEPAGE}files/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.152 2017/02/18 17:33:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.153 2017/04/10 11:46:33 sthen Exp $
 
 PORTROACH=		skipv:${V}_py2.5
 
@@ -93,7 +93,7 @@ RUN_DEPENDS-hpaio=	# empty
 
 ### -hpcups
 WANTLIB-hpcups += ${cWANTLIB} z netsnmp hpdiscovery iconv intl
-WANTLIB-hpcups += c jpeg stdc++ hpip cups cupsimage dbus-1 idn2
+WANTLIB-hpcups += c jpeg ${LIBCXX} hpip cups cupsimage dbus-1 idn2
 WANTLIB-hpcups += z usb-1.0 avahi-client avahi-common hpmud
 WANTLIB-hpcups += ffi gmp gnutls hogweed nettle p11-kit tasn1
 
@@ -106,7 +106,7 @@ RUN_DEPENDS-hpcups=	# empty
 
 ### -hpijs
 WANTLIB-hpijs += ${cWANTLIB} hpip usb-1.0 hpdiscovery
-WANTLIB-hpijs += c jpeg netsnmp stdc++ dbus-1 hpmud
+WANTLIB-hpijs += c jpeg netsnmp ${LIBCXX} dbus-1 hpmud
 
 LIB_DEPENDS-hpijs=	print/hplip,-common \
 			graphics/jpeg \

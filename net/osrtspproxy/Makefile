@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2017/02/27 01:42:06 bluhm Exp $
+# $OpenBSD: Makefile,v 1.6 2017/04/10 11:46:32 sthen Exp $
 
 COMMENT=		RTSP proxy reference implementation
 
@@ -19,7 +19,7 @@ CONFIGURE_STYLE=	simple
 
 NO_TEST=Yes
 
-WANTLIB += c m pthread stdc++
+WANTLIB += c m pthread ${LIBCXX}
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/osrtspproxy

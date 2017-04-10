@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2016/03/04 10:11:22 kirby Exp $
+# $OpenBSD: Makefile,v 1.11 2017/04/10 11:46:33 sthen Exp $
 
 COMMENT =		audit network device configuration
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP =	Yes
 
 EXTRACT_SUFX =		.tgz
 
-WANTLIB =		c m stdc++ nipper
+WANTLIB =		c m ${LIBCXX} nipper
 
 LIB_DEPENDS=		security/libnipper
 

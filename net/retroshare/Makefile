@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2016/03/26 20:37:35 zhuk Exp $
+# $OpenBSD: Makefile,v 1.10 2017/04/10 11:46:32 sthen Exp $
 
 COMMENT =		secure decentralised communication platform
 V = 			0.5.5c
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB += 	ICE QtGui QtMultimedia QtNetwork QtScript QtXml SM
 WANTLIB += 	X11 Xext Xi Xinerama Xrender bz2 c crypto curl fontconfig
 WANTLIB += 	freetype gpgme gnome-keyring ixml m pthread protobuf speex
-WANTLIB += 	speexdsp ssh ssh_threads ssl stdc++ upnp xml2 xslt z
+WANTLIB += 	speexdsp ssh ssh_threads ssl ${LIBCXX} upnp xml2 xslt z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=retroshare/RetroShare/${V}/}
 MODULES =		devel/qmake x11/qt4

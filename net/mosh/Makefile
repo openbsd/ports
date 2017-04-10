@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2017/03/28 18:49:53 jca Exp $
+# $OpenBSD: Makefile,v 1.12 2017/04/10 11:46:32 sthen Exp $
 
 COMMENT =		mobile shell
 
@@ -14,7 +14,7 @@ MAINTAINER =		Jeremie Courreges-Anglas <jca@wxcvbn.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 # uses pledge()
-WANTLIB +=		c crypto m ncursesw protobuf pthread ssl stdc++ util
+WANTLIB +=		c crypto m ncursesw protobuf pthread ssl ${LIBCXX} util
 WANTLIB +=		z
 
 MASTER_SITES =		${HOMEPAGE}

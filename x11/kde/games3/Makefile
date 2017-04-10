@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2016/06/29 16:14:45 espie Exp $
+# $OpenBSD: Makefile,v 1.75 2017/04/10 11:46:36 sthen Exp $
 
 COMMENT =		K Desktop Environment, games
 
@@ -27,7 +27,7 @@ WANTLIB = GL ICE SM X11 Xau Xcursor Xdamage Xdmcp Xext Xfixes Xft Xi Xinerama \
 	lib/kde3/artskde lib/kde3/kdecore>=6 lib/kde3/kdefx lib/kde3/kdeprint \
 	lib/kde3/kdesu lib/kde3/kdeui lib/kde3/kdnssd lib/kde3/kio \
 	lib/kde3/kparts m mad mcop mng ogg pcre png pthread pthread-stubs \
-	qtmcop sndio soundserver_idl stdc++ util vorbis vorbisenc vorbisfile \
+	qtmcop sndio soundserver_idl ${LIBCXX} util vorbis vorbisenc vorbisfile \
 	xcb z
 WANTLIB += avahi-client avahi-common dbus-1 dns_sd
 WANTLIB += FLAC X11-xcb glapi xcb-dri2 xcb-glx

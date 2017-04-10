@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.151 2017/01/26 06:19:58 zhuk Exp $
+# $OpenBSD: Makefile,v 1.152 2017/04/10 11:46:36 sthen Exp $
 
 BROKEN-alpha =		.got subsegment exceeds 64K
 BROKEN-mips64 =		.got subsegment exceeds 64K
@@ -66,7 +66,7 @@ WANTLIB-main += bz2 c dbus-1 dns_sd drm expat fam fontconfig
 WANTLIB-main += freetype glapi glib-2.0 gmodule-2.0 gthread-2.0
 WANTLIB-main += idn jasper jpeg kmedia2_idl lcms lzma m mad
 WANTLIB-main += mcop mng ogg pcre pcreposix png pthread pthread-stubs
-WANTLIB-main += qt-mt qtmcop sndio soundserver_idl stdc++ tiff
+WANTLIB-main += qt-mt qtmcop sndio soundserver_idl ${LIBCXX} tiff
 WANTLIB-main += util vorbis vorbisenc vorbisfile xcb xcb-dri2
 WANTLIB-main += xcb-glx xml2 xslt z
 WANTLIB-langlist =

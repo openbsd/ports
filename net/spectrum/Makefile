@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2016/05/06 21:39:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2017/04/10 11:46:32 sthen Exp $
 
 COMMENT =	XMPP transport/gateway
 
@@ -13,7 +13,7 @@ MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c m pthread stdc++ gloox purple glib-2.0 gthread-2.0 ev
+WANTLIB += c m pthread ${LIBCXX} gloox purple glib-2.0 gthread-2.0 ev
 WANTLIB += PocoData PocoFoundation PocoDataMySQL PocoDataODBC PocoDataSQLite
 WANTLIB += Magick++-6.Q16
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2017/02/19 14:43:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.50 2017/04/10 11:46:33 sthen Exp $
 
 COMMENT =		labels and business card designer
 
@@ -31,7 +31,7 @@ WANTLIB += javascriptcoregtk-4.0 json-glib-1.0 lzma m nettle nspr4
 WANTLIB += nss3 orc-0.4 p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 plc4 plds4 png pthread pthread-stubs
 WANTLIB += qrencode rsvg-2 secret-1 smime3 softokn3 soup-2.4 sqlite3
-WANTLIB += ssl3 stdc++ tasn1 webkit2gtk-4.0 xcb xcb-dri2 xcb-glx
+WANTLIB += ssl3 ${LIBCXX} tasn1 webkit2gtk-4.0 xcb xcb-dri2 xcb-glx
 WANTLIB += xcb-render xcb-shm xcb-xfixes xml2 z zint
 
 MODULES =		devel/dconf \

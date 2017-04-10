@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/11 11:46:13 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2017/04/10 11:46:36 sthen Exp $
 
 COMMENT=		put clickable icons on the desktop
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 EXTRACT_SUFX=		.tar.bz2
 
-WANTLIB=		ICE stdc++ c X11 Xrender Xau Xdmcp expat z m Imlib2 \
+WANTLIB=		ICE ${LIBCXX} c X11 Xrender Xau Xdmcp expat z m Imlib2 \
 			SM Xft freetype fontconfig Xext pthread-stubs xcb
 
 LIB_DEPENDS=		graphics/imlib2

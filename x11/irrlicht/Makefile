@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2016/09/01 11:11:09 pascal Exp $
+# $OpenBSD: Makefile,v 1.14 2017/04/10 11:46:36 sthen Exp $
 
 COMMENT =		fast, real time 3D engine
 DISTNAME =		irrlicht-1.8.4
@@ -15,7 +15,7 @@ MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 # BSD-style (zlib/libpng)
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += 		GL Xxf86vm bz2 jpeg m png stdc++>=51.0 z
+WANTLIB += 		GL Xxf86vm bz2 jpeg m png ${LIBCXX}>=51.0 z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=irrlicht/}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2017/04/05 13:36:34 bluhm Exp $
+# $OpenBSD: Makefile,v 1.22 2017/04/10 11:46:33 sthen Exp $
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
 
@@ -20,7 +20,7 @@ MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 # BSD 2-Clause
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		bz2 crypto gmp m pthread stdc++ z
+WANTLIB =		bz2 crypto gmp m pthread ${LIBCXX} z
 
 MASTER_SITES =		${HOMEPAGE}releases/
 

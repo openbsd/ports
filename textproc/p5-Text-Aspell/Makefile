@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2016/03/20 19:57:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2017/04/10 11:46:34 sthen Exp $
 
 COMMENT=	interface to the GNU aspell library
 
@@ -10,7 +10,7 @@ CATEGORIES=	devel textproc
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c perl stdc++ aspell>=16
+WANTLIB += c perl ${LIBCXX} aspell>=16
 
 LIB_DEPENDS=	textproc/aspell/core
 

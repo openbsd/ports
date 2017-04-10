@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2016/03/18 23:12:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2017/04/10 11:46:36 sthen Exp $
 
 COMMENT =		template and text document library for Qt4
 PKG_VERSION =		0.5.1
@@ -20,7 +20,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 MASTER_SITES =		http://downloads.grantlee.org/ \
 			http://www.loegria.net/grantlee/
 
-WANTLIB =		c m stdc++
+WANTLIB =		c m ${LIBCXX}
 WANTLIB +=		lib/qt4/QtGui lib/qt4/QtScript
 
 MODULES =		devel/cmake x11/qt4

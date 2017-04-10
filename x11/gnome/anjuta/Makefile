@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.145 2017/03/29 13:27:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.146 2017/04/10 11:46:35 sthen Exp $
 
 COMMENT=		versatile IDE for GNOME
 
@@ -29,7 +29,7 @@ WANTLIB += gtksourceview-3.0 harfbuzz harfbuzz-icu icudata icui18n
 WANTLIB += icuuc javascriptcoregtk-4.0 jpeg lzma m orc-0.4 pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB += pthread-stubs sasl2 secret-1 serf-1 soup-2.4 sqlite3
-WANTLIB += ssl stdc++ svn_client-1 svn_delta-1 svn_diff-1 svn_fs-1
+WANTLIB += ssl ${LIBCXX} svn_client-1 svn_delta-1 svn_diff-1 svn_fs-1
 WANTLIB += svn_fs_base-1 svn_fs_fs-1 svn_fs_util-1 svn_ra-1 svn_ra_local-1
 WANTLIB += svn_ra_serf-1 svn_ra_svn-1 svn_repos-1 svn_subr-1 svn_wc-1
 WANTLIB += util vala-0.34 vte-2.91 webkit2gtk-4.0 webp xcb xcb-dri2

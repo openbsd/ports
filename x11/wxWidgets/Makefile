@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2016/08/27 16:39:37 jca Exp $
+# $OpenBSD: Makefile,v 1.56 2017/04/10 11:46:37 sthen Exp $
 
 COMMENT-main =	C++ cross-platform GUI toolkit
 COMMENT-media =	wxMediaCtrl class for wxWidgets
@@ -57,7 +57,7 @@ WANTLIB-main += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 c expat
 WANTLIB-main += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB-main += glib-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0 iconv
 WANTLIB-main += intl iodbc jpeg m mspack pango-1.0 pangoft2-1.0 png
-WANTLIB-main += pthread stdc++ tiff z
+WANTLIB-main += pthread ${LIBCXX} tiff z
 
 LIB_DEPENDS-media = ${LIB_DEPENDS} \
 		    devel/gconf2 \
@@ -69,7 +69,7 @@ WANTLIB-media += Xrandr Xrender Xxf86vm atk-1.0 fontconfig freetype
 WANTLIB-media += gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB-media += gmodule-2.0 gobject-2.0 gstinterfaces-0.10 gstreamer-0.10
 WANTLIB-media += gthread-2.0 gtk-x11-2.0 iconv intl jpeg m pango-1.0
-WANTLIB-media += pangoft2-1.0 png pthread stdc++ tiff wx_base wx_gtk2_core
+WANTLIB-media += pangoft2-1.0 png pthread ${LIBCXX} tiff wx_base wx_gtk2_core
 WANTLIB-media += xml2 z
 
 MAKE_FLAGS =	WXUNICODEFLAG=""

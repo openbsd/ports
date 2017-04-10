@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2015/01/21 06:23:34 bentley Exp $
+# $OpenBSD: Makefile,v 1.24 2017/04/10 11:46:32 sthen Exp $
 
 COMMENT=	irc client that uses Tcl/Tk
 
@@ -11,7 +11,7 @@ HOMEPAGE=	http://quirc.sourceforge.net/
 # GPLv2+
 PERMIT_PACKAGE_CDROM=   Yes
 
-WANTLIB=		ICE SM X11 c m stdc++ ${MODTCL_LIB}
+WANTLIB=		ICE SM X11 c m ${LIBCXX} ${MODTCL_LIB}
 
 MODULES=	x11/tk
 

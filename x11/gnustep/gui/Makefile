@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2016/06/23 20:56:23 sebastia Exp $
+# $OpenBSD: Makefile,v 1.46 2017/04/10 11:46:36 sthen Exp $
 
 COMMENT=	GNUstep gui library
 
@@ -14,7 +14,7 @@ HOMEPAGE=	http://www.gnustep.org/
 
 WANTLIB += ao aspell cups flite flite_cmu_us_kal flite_cmulex
 WANTLIB += flite_usenglish gif jpeg png sndfile sndio
-WANTLIB += stdc++ tiff c icudata icui18n icuuc z
+WANTLIB += ${LIBCXX} tiff c icudata icui18n icuuc z
 
 MASTER_SITES=	${MASTER_SITE_GNUSTEP:=core/}
 

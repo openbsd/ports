@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2015/12/18 11:08:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2017/04/10 11:46:35 sthen Exp $
 
 # note, this isn't really maintained upstream any more
 # see e2guardian.org for a maintained fork
@@ -13,7 +13,7 @@ HOMEPAGE =	http://www.dansguardian.org/
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		c m pcre pcreposix stdc++ z
+WANTLIB =		c m pcre pcreposix ${LIBCXX} z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=dansguardian/}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2016/12/25 14:34:40 zhuk Exp $
+# $OpenBSD: Makefile,v 1.15 2017/04/10 11:46:35 sthen Exp $
 
 COMMENT =	capybara driver that uses WebKit
 
@@ -17,7 +17,7 @@ CONFIGURE_STYLE = ruby gem ext
 USE_WXNEEDED =	Yes
 MAKE_ENV =	QMAKE=qmake-qt5 LDFLAGS="-Wl,-z,wxneeded"
 WANTLIB +=	GL Qt5Core Qt5Gui Qt5Network Qt5WebKit Qt5WebKitWidgets
-WANTLIB +=	Qt5Widgets stdc++
+WANTLIB +=	Qt5Widgets ${LIBCXX}
 
 BUILD_DEPENDS =	${RUN_DEPENDS}
 RUN_DEPENDS =	www/ruby-capybara,${MODRUBY_FLAVOR}>=2.3.0,<2.8.0 \

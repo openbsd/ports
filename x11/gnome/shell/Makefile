@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.139 2017/02/25 15:05:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.140 2017/04/10 11:46:36 sthen Exp $
 
 USE_WXNEEDED=		Yes
 
@@ -27,7 +27,7 @@ WANTLIB += nspr4 nss3 ogg orc-0.4 p11-kit pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 plc4 plds4 png polkit-agent-1
 WANTLIB += polkit-gobject-1 pthread pthread-stubs pulse pulse-mainloop-glib
 WANTLIB += readline secret-1 smime3 sndfile softokn3 soup-2.4
-WANTLIB += sqlite3 ssl3 startup-notification-1 stdc++ tasn1 telepathy-glib
+WANTLIB += sqlite3 ssl3 startup-notification-1 ${LIBCXX} tasn1 telepathy-glib
 WANTLIB += upower-glib vorbis vorbisenc vorbisfile webkit2gtk-4.0
 WANTLIB += xcb xcb-dri2 xcb-glx xcb-randr xcb-render xcb-res xcb-shm
 WANTLIB += xcb-util xcb-xfixes xcb-xkb xkbcommon xkbcommon-x11

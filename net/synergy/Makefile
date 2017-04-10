@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2015/10/21 19:51:28 jturner Exp $
+# $OpenBSD: Makefile,v 1.30 2017/04/10 11:46:32 sthen Exp $
 
 COMMENT=		mouse and keyboard sharing utility
 
@@ -16,7 +16,7 @@ HOMEPAGE=		http://synergy-foss.org/
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=		ICE SM X11 Xext Xi Xinerama Xrandr Xtst \
-			c curl m pthread stdc++
+			c curl m pthread ${LIBCXX}
 
 LIB_DEPENDS=		net/curl
 

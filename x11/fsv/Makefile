@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2016/03/11 19:59:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.25 2017/04/10 11:46:35 sthen Exp $
 
 # XXX check if still needed at next update
 #CXXFLAGS +=		-std=c++11
@@ -27,7 +27,7 @@ WANTLIB += gdkmm-2.4 gio-2.0 giomm-2.4 glapi glib-2.0 glibmm-2.4
 WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-x11-2.0
 WANTLIB += gtkgl-2.0 gtkmm-2.4 harfbuzz m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pangomm-1.4 pcre pixman-1 png pthread
-WANTLIB += pthread-stubs sigc-2.0 stdc++ xcb xcb-dri2 xcb-glx
+WANTLIB += pthread-stubs sigc-2.0 ${LIBCXX} xcb xcb-dri2 xcb-glx
 WANTLIB += xcb-render xcb-shm z
 
 MASTER_SITES=		http://fedorchenko.net/src/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2017/03/02 17:30:15 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2017/04/10 11:46:35 sthen Exp $
 
 USE_WXNEEDED =		Yes
 
@@ -19,7 +19,7 @@ MAINTAINER =		Francisco de Borja Lopez Rio <borja@codigo23.net>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB +=		ICE SM X11 Xext Xi Xinerama Xrender c fontconfig \
-			freetype m pthread stdc++
+			freetype m pthread ${LIBCXX}
 
 MASTER_SITES = 		https://bitbucket.org/ariya/phantomjs/downloads/
 EXTRACT_SUFX =		-source.zip

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2017/03/04 10:51:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.59 2017/04/10 11:46:34 sthen Exp $
 
 NOT_FOR_ARCHS=		${GCC3_ARCHS}
 
@@ -27,7 +27,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # http://source.icu-project.org/repos/icu/icu/trunk/license.html
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		c m pthread stdc++
+WANTLIB=		c m pthread ${LIBCXX}
 
 MASTER_SITES=		http://download.icu-project.org/files/icu4c/${VERSION}/ \
 			${MASTER_SITE_SOURCEFORGE:=icu/}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2015/06/28 13:36:09 bcallah Exp $
+# $OpenBSD: Makefile,v 1.33 2017/04/10 11:46:35 sthen Exp $
 
 COMMENT=	fast-light window manager
 
@@ -20,7 +20,7 @@ LIB_DEPENDS=	x11/fltk
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += X11 Xext c fltk m pthread stdc++
+WANTLIB += X11 Xext c fltk m pthread ${LIBCXX}
 
 NO_TEST=	Yes
 

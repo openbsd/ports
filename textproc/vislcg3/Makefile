@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2016/04/26 08:25:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2017/04/10 11:46:34 sthen Exp $
 
 BROKEN=			undefined reference to `_ZN6icu_5713UnicodeStringC1EOS0_'
 
@@ -16,7 +16,7 @@ HOMEPAGE =		http://beta.visl.sdu.dk/cg3/chunked/
 # GPLv3+
 PERMIT_PACKAGE_CDROM =		Yes
 
-WANTLIB +=		c icui18n icuio icuuc m pthread stdc++
+WANTLIB +=		c icui18n icuio icuuc m pthread ${LIBCXX}
 
 MASTER_SITES =		http://beta.visl.sdu.dk/download/vislcg3/
 

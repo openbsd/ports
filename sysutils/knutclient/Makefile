@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2015/05/05 17:00:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2017/04/10 11:46:33 sthen Exp $
 
 COMMENT=		KDE UPS monitoring tool
 
@@ -18,7 +18,7 @@ WANTLIB += ${KDE}/DCOP ${KDE}/kdecore ${KDE}/kdefx ${KDE}/kdeui
 WANTLIB += GL ICE SM X11 X11-xcb Xau Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xft Xi Xinerama Xmu Xrandr Xrender Xt Xxf86vm art_lgpl_2 c
 WANTLIB += drm expat fontconfig freetype glapi idn jpeg lcms m mng png
-WANTLIB += pthread pthread-stubs stdc++ util xcb xcb-dri2 xcb-glx z
+WANTLIB += pthread pthread-stubs ${LIBCXX} util xcb xcb-dri2 xcb-glx z
 
 MASTER_SITES=		ftp://ftp.buzuluk.cz/pub/alo/knutclient/
 

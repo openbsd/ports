@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2016/03/11 19:59:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2017/04/10 11:46:35 sthen Exp $
 
 COMMENT=	web search application
 
@@ -13,7 +13,7 @@ HOMEPAGE=	http://xapian.org/
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c m uuid stdc++ z xapian pcre magic
+WANTLIB += c m uuid ${LIBCXX} z xapian pcre magic
 
 MASTER_SITES=	http://oligarchy.co.uk/xapian/${V}/
 

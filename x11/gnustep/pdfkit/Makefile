@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2016/06/03 11:57:58 sebastia Exp $
+# $OpenBSD: Makefile,v 1.17 2017/04/10 11:46:36 sthen Exp $
 
 COMMENT =	framework for accessing and rendering PDF content
 
@@ -13,7 +13,7 @@ MASTER_SITES =	${MASTER_SITE_SAVANNAH:=gap/}
 
 MODULES =		x11/gnustep
 MODGNUSTEP_IS_FRAMEWORK	= Yes
-WANTLIB += 		stdc++ pthread freetype m
+WANTLIB += 		${LIBCXX} pthread freetype m
 BUILD_DEPENDS =		x11/gnustep/gui
 
 CONFIGURE_STYLE =	gnu

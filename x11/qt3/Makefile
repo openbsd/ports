@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.118 2017/03/03 12:43:10 espie Exp $
+# $OpenBSD: Makefile,v 1.119 2017/04/10 11:46:36 sthen Exp $
 
 # no libGL (toolchain issue)
 NOT_FOR_ARCHS= m88k
@@ -151,7 +151,7 @@ LIB_DEPENDS=		graphics/png \
 WANTLIB=		GL GLU ICE SM X11>=10 Xcursor Xext Xft Xi Xinerama \
 			Xmu png mng \
 			Xrandr Xrender fontconfig freetype jpeg lcms m \
-			stdc++ z pthread
+			${LIBCXX} z pthread
 
 
 WANTLIB-main=		${WANTLIB} pthread c
@@ -174,7 +174,7 @@ WANTLIB-sqlite2=	${WANTLIB} qt-mt sqlite
 
 LIB_DEPENDS-examples=	${LIB_DEPENDS} \
 			${BUILD_PKGPATH}
-WANTLIB-examples=	${WANTLIB} stdc++ c qt-mt
+WANTLIB-examples=	${WANTLIB} ${LIBCXX} c qt-mt
 
 
 LIB_DEPENDS-html=

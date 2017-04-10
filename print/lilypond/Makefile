@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2016/03/20 16:12:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.45 2017/04/10 11:46:33 sthen Exp $
 
 COMMENT-main=		text based music notation system
 COMMENT-docs=		lilypond documentation
@@ -56,7 +56,7 @@ LIB_DEPENDS-docs=
 RUN_DEPENDS-docs=
 
 WANTLIB-main=		c fontconfig freetype gmp gthread-2.0 ltdl m \
-			pthread stdc++ z guile>=20 glib-2.0>=1000 \
+			pthread ${LIBCXX} z guile>=20 glib-2.0>=1000 \
 			gmodule-2.0>=1000 gobject-2.0>=1000 \
 			pango-1.0>=1200 pangoft2-1.0>=1200 ${WANTLIB}
 MODULES=		devel/gettext lang/python

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/11 11:42:42 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2017/04/10 11:46:34 sthen Exp $
 
 COMMENT=	SGML parser and entity manager
 
@@ -11,7 +11,7 @@ MAINTAINER=	Gerardo Santana Gomez Garrido <gerardo.santana@gmail.com>
 
 # BSD-like
 PERMIT_PACKAGE_CDROM=	Yes
-WANTLIB=		c m stdc++ 
+WANTLIB=		c m ${LIBCXX} 
 
 MASTER_SITES=	${HOMEPAGE}
 

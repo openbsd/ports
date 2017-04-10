@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2015/08/17 20:04:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.76 2017/04/10 11:46:36 sthen Exp $
 
 COMMENT-main = 		K Desktop Environment, additional artwork
 COMMENT-emoticons =	KDE emoticons
@@ -37,7 +37,7 @@ WANTLIB +=	gthread-2.0 idn kmedia2_idl kwalletclient lib/kde3/DCOP
 WANTLIB +=	lib/kde3/kdecorations lib/kde3/kdecore>=6 lib/kde3/kdefx
 WANTLIB +=	lib/kde3/kdesu lib/kde3/kdeui lib/kde3/kio lib/kde3/kparts
 WANTLIB +=	lib/kde3/kscreensaver m mad mcop ogg pcre png pthread
-WANTLIB +=	pthread-stubs qtmcop sndio soundserver_idl stdc++
+WANTLIB +=	pthread-stubs qtmcop sndio soundserver_idl ${LIBCXX}
 WANTLIB +=	util vorbis vorbisenc vorbisfile xcb z
 WANTLIB +=	X11-xcb Xau Xdmcp glapi xcb-dri2 xcb-glx
 

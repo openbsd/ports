@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.114 2017/03/13 08:39:13 benoit Exp $
+# $OpenBSD: Makefile,v 1.115 2017/04/10 11:46:32 sthen Exp $
 
 COMMENT=	shell-like command line ftp and sftp client
 
@@ -13,7 +13,7 @@ MAINTAINER=	Rafael Sadowski <rafael@sizeofvoid.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c crypto curses ereadline expat iconv idn intl m ssl
-WANTLIB += stdc++ util z
+WANTLIB += ${LIBCXX} util z
 
 USE_GROFF=	Yes
 

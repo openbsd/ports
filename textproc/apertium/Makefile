@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2016/09/13 18:52:05 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2017/04/10 11:46:34 sthen Exp $
 
 COMMENT =		rule-based machine translation platform
 
@@ -19,7 +19,7 @@ MAINTAINER =		Anthony J. Bentley <anthony@anjbe.name>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c iconv lttoolbox3-3.3 lzma m pcre pcrecpp pcreposix pthread
-WANTLIB += stdc++ xml2 z
+WANTLIB += ${LIBCXX} xml2 z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=apertium/}
 

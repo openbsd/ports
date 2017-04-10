@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.253 2017/04/07 21:32:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.254 2017/04/10 11:46:34 sthen Exp $
 
 COMMENT-main=		open source multi-protocol PBX and telephony toolkit
 
@@ -25,7 +25,7 @@ WANTLIB-main += ilbccodec jansson lzma m nghttp2 ogg opencore-amrnb
 WANTLIB-main += opencore-amrwb pj pjlib-util pjmedia pjmedia-audiodev
 WANTLIB-main += pjmedia-codec pjmedia-videodev pjnath pjsip pjsip-simple
 WANTLIB-main += pjsip-ua pjsua pjsua2 portaudio pthread resample spandsp
-WANTLIB-main += speex speexdsp sqlite3 ssl stdc++ termcap tiff uriparser
+WANTLIB-main += speex speexdsp sqlite3 ssl ${LIBCXX} termcap tiff uriparser
 WANTLIB-main += uuid vorbis vorbisenc vorbisfile xml2 xslt z
 
 SHARED_LIBS=		asteriskssl 0.0		# 1

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2016/11/04 11:35:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.41 2017/04/10 11:46:36 sthen Exp $
 
 COMMENT=		OSS replacement for the Nomachine nxclient
 
@@ -16,7 +16,7 @@ WANTLIB += curl expat ffi fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
 WANTLIB += gthread-2.0 gtk-x11-2.0 harfbuzz jpeg m mspack nghttp2
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png
-WANTLIB += pthread pthread-stubs sndio ssl stdc++ tiff usbhid wx_base
+WANTLIB += pthread pthread-stubs sndio ssl ${LIBCXX} tiff usbhid wx_base
 WANTLIB += wx_base_net wx_base_xml wx_gtk2_adv wx_gtk2_core wx_gtk2_html
 WANTLIB += wx_gtk2_qa wx_gtk2_richtext wx_gtk2_xrc xcb xcb-render
 WANTLIB += xcb-shm z

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.133 2017/04/09 09:13:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.134 2017/04/10 11:46:33 sthen Exp $
 
 COMMENT=		GNU Transport Layer Security library
 
@@ -29,7 +29,7 @@ MODULES +=		lang/clang
 MODCLANG_ARCHS=		amd64
 MODCLANG_LANGS=		c++
 .if ${MACHINE_ARCH} != "amd64"
-WANTLIB += stdc++
+WANTLIB += ${LIBCXX}
 .endif
 
 # needed for tests

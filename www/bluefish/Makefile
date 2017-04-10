@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2016/08/27 17:27:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.78 2017/04/10 11:46:35 sthen Exp $
 
 COMMENT=		HTML editor for experienced web designers
 
@@ -18,7 +18,7 @@ WANTLIB += fontconfig freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-3
 WANTLIB += gucharmap_2_90 harfbuzz iconv intl lzma m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
-WANTLIB += pthread-stubs python2.7 stdc++ util xcb xcb-render
+WANTLIB += pthread-stubs python2.7 ${LIBCXX} util xcb xcb-render
 WANTLIB += xcb-shm xml2 z
 
 MODULES=		lang/python \

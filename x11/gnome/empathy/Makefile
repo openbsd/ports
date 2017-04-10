@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.183 2017/03/19 15:26:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.184 2017/04/10 11:46:35 sthen Exp $
 
 COMMENT= 		Telepathy based messenger for GNOME
 
@@ -30,7 +30,7 @@ WANTLIB += jpeg json-glib-1.0 ltdl lzma m mission-control-plugins
 WANTLIB += nettle notify ogg orc-0.4 p11-kit pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += pulse pulse-mainloop-glib secret-1 sndfile soup-2.4
-WANTLIB += sqlite3 stdc++ tasn1 telepathy-farstream telepathy-glib
+WANTLIB += sqlite3 ${LIBCXX} tasn1 telepathy-farstream telepathy-glib
 WANTLIB += telepathy-logger vorbis vorbisenc vorbisfile webkitgtk-3.0
 WANTLIB += webp xcb xcb-dri2 xcb-render xcb-shm xcb-xfixes unistring
 WANTLIB += xml2 xslt z Xxf86vm xcb-glx iconv intl idn2

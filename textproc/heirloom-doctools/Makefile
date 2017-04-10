@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2017/02/26 20:45:41 bentley Exp $
+# $OpenBSD: Makefile,v 1.6 2017/04/10 11:46:34 sthen Exp $
 
 COMMENT =		modernized troff implementation
 
@@ -14,7 +14,7 @@ MAINTAINER =		Anthony J. Bentley <anthony@anjbe.name>
 # see LICENSE and LICENSE.d/
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c m stdc++
+WANTLIB += c m ${LIBCXX}
 
 MASTER_SITES =		https://github.com/n-t-roff/heirloom-doctools/releases/download/$V/
 EXTRACT_SUFX =		.tar.bz2

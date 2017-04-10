@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2017/02/18 17:33:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2017/04/10 11:46:33 sthen Exp $
 
 COMMENT=	online banking interface and financial data framework
 
@@ -23,7 +23,7 @@ HOMEPAGE=	http://www.aquamaniac.de/sites/aqbanking/
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c ffi gcrypt gmp gnutls gpg-error gwenhywfar hogweed idn2 ltdl
-WANTLIB += lzma m nettle p11-kit pthread stdc++ tasn1 xml2 xmlsec1
+WANTLIB += lzma m nettle p11-kit pthread ${LIBCXX} tasn1 xml2 xmlsec1
 WANTLIB += xmlsec1-gcrypt xmlsec1-gnutls xslt z
 
 MASTER_SITES=	http://www.aquamaniac.de/sites/download/

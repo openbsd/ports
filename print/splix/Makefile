@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2014/01/25 09:22:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2017/04/10 11:46:33 sthen Exp $
 
 COMMENT=	CUPS drivers for SPL printers
 
@@ -18,7 +18,7 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c cups cupsimage jbig85 m pthread stdc++
+WANTLIB += c cups cupsimage jbig85 m pthread ${LIBCXX}
 
 # snapshot of SVN (Fedora tarball)
 MASTER_SITES=	http://pkgs.fedoraproject.org/repo/pkgs/splix/${DISTNAME}${EXTRACT_SUFX}/2901e9482dd1a7c44f7b730696868e09/

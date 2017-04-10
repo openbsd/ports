@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.150 2017/01/31 08:57:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.151 2017/04/10 11:46:35 sthen Exp $
 
 USE_WXNEEDED =	Yes
 
@@ -87,7 +87,7 @@ WANTLIB += gsttag-1.0 gstvideo-1.0 gthread-2.0 harfbuzz harfbuzz-icu
 WANTLIB += iconv icudata icui18n icuuc intl jpeg lzma m orc-0.4
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png pthread pthread-stubs secret-1 soup-2.4 sqlite3
-WANTLIB += stdc++ webp xcb xcb-dri2 xcb-glx xcb-render xcb-shape
+WANTLIB += ${LIBCXX} webp xcb xcb-dri2 xcb-glx xcb-render xcb-shape
 WANTLIB += xcb-shm xcb-xfixes xml2 xslt z
 
 LIB_DEPENDS =	multimedia/gstreamer1/plugins-base \

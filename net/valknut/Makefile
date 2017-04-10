@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2016/09/12 20:58:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2017/04/10 11:46:32 sthen Exp $
 
 COMMENT=	graphical Direct-Connect client
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_CDROM=   Yes
 WANTLIB += GL ICE SM X11 Xcursor Xdamage Xext Xfixes Xft Xi Xinerama
 WANTLIB += Xmu Xrandr Xrender Xt Xxf86vm bz2 c crypto dc drm expat
 WANTLIB += fontconfig freetype iconv jpeg lcms m mng png pthread
-WANTLIB += pthread-stubs ssl stdc++ xcb xml2 z
+WANTLIB += pthread-stubs ssl ${LIBCXX} xcb xml2 z
 WANTLIB += X11-xcb Xau Xdmcp glapi lzma xcb-dri2 xcb-glx
 
 MODULES=	x11/qt3

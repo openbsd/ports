@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2017/03/07 14:22:15 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2017/04/10 11:46:34 sthen Exp $
 
 COMMENT =	STUN server implementing RFCs 5389, 5769, and 5780
 NOT_FOR_ARCHS = arm hppa # atomic ops
@@ -18,7 +18,7 @@ MASTER_SITES =	${HOMEPAGE}
 # Apache 2.0 license
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB +=	c crypto m pthread stdc++
+WANTLIB +=	c crypto m pthread ${LIBCXX}
 
 BUILD_DEPENDS =	devel/boost
 

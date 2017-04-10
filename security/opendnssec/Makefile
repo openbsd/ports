@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2017/03/17 21:12:11 fcambus Exp $
+# $OpenBSD: Makefile,v 1.10 2017/04/10 11:46:33 sthen Exp $
 
 COMMENT=	open-source turn-key solution for DNSSEC
 
@@ -38,7 +38,7 @@ LIB_DEPENDS+=	databases/sqlite3
 
 .if ${FLAVOR:Mmysql}
 CONFIGURE_ARGS+= --with-database-backend=mysql
-WANTLIB+=	mysqlclient_r ssl stdc++
+WANTLIB+=	mysqlclient_r ssl ${LIBCXX}
 LIB_DEPENDS+=	databases/mariadb
 .endif
 

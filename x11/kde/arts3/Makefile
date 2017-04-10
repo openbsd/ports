@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.80 2015/08/13 14:40:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.81 2017/04/10 11:46:36 sthen Exp $
 
 COMMENT =		K Desktop Environment, aRTs
 CATEGORIES =		x11 x11/kde
@@ -42,7 +42,7 @@ CONFIGURE_ARGS +=	${ENABLE_SHARED} \
 WANTLIB += GL ICE SM X11 Xcursor Xdamage Xext Xfixes Xft Xi Xinerama Xmu
 WANTLIB += Xrandr Xrender Xt Xxf86vm audiofile c drm expat fontconfig
 WANTLIB += freetype glib-2.0 gmodule-2.0 gthread-2.0 jpeg lcms m mad mng
-WANTLIB += ogg pcre png pthread sndio stdc++ vorbis vorbisenc vorbisfile
+WANTLIB += ogg pcre png pthread sndio ${LIBCXX} vorbis vorbisenc vorbisfile
 WANTLIB += xcb xcb-glx z FLAC X11-xcb Xau Xdmcp glapi pthread-stubs xcb-dri2
 
 post-patch:

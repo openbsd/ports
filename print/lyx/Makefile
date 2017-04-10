@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2016/07/08 16:53:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.76 2017/04/10 11:46:33 sthen Exp $
 
 
 COMMENT=	graphical frontend for LaTeX (nearly WYSIWYG)
@@ -31,7 +31,7 @@ LIB_DEPENDS=	${MODQT4_LIB_DEPENDS}>=4.5.3 \
 		textproc/enchant \
 		textproc/aspell/core
 
-WANTLIB += lib/qt4/QtGui>=8 lib/qt4/QtSvg aspell c m pthread stdc++ z
+WANTLIB += lib/qt4/QtGui>=8 lib/qt4/QtSvg aspell c m pthread ${LIBCXX} z
 WANTLIB += boost_regex-mt>=1 boost_signals-mt>=1
 WANTLIB += glib-2.0 gmodule-2.0 enchant magic
 

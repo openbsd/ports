@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2016/09/23 09:16:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2017/04/10 11:46:32 sthen Exp $
 
 COMMENT=	network traffic probe with web ui and dpi
 
@@ -16,7 +16,7 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += GeoIP c crypto curl hiredis json-c luajit-5.1 m
-WANTLIB += mysqlclient pcap pthread rrd sqlite3 ssl stdc++ z zmq
+WANTLIB += mysqlclient pcap pthread rrd sqlite3 ssl ${LIBCXX} z zmq
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ntop/}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2017/03/29 13:27:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.44 2017/04/10 11:46:35 sthen Exp $
 
 COMMENT=		IDE for GNOME
 
@@ -35,7 +35,7 @@ WANTLIB += hyphen iconv icudata icui18n icuuc idn2 intl javascriptcoregtk-4.0
 WANTLIB += jpeg json-glib-1.0 lzma m nettle nghttp2 notify orc-0.4
 WANTLIB += p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0 pangomm-1.4
 WANTLIB += pcre pcre2-8 peas-1.0 pixman-1 png pthread pthread-stubs
-WANTLIB += secret-1 sigc-2.0 soup-2.4 sqlite3 ssh2 ssl stdc++ tasn1 util
+WANTLIB += secret-1 sigc-2.0 soup-2.4 sqlite3 ssh2 ssl ${LIBCXX} tasn1 util
 WANTLIB += vala-0.34 vte-2.91 webkit2gtk-4.0 webp xcb xcb-dri2 xcb-glx
 WANTLIB += xcb-render xcb-shm xcb-xfixes xml2 xslt z unistring
 

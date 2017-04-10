@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2015/03/16 18:07:57 naddy Exp $
+# $OpenBSD: Makefile,v 1.27 2017/04/10 11:46:34 sthen Exp $
 
 COMMENT=	object-oriented DSSSL engine
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		devel/gettext
 LIB_DEPENDS=		textproc/opensp
-WANTLIB=		c m pthread stdc++ osp
+WANTLIB=		c m pthread ${LIBCXX} osp
 
 CONFIGURE_STYLE=	gnu
 USE_GMAKE=		Yes

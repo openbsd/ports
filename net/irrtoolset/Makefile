@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2015/11/15 11:55:59 jca Exp $
+# $OpenBSD: Makefile,v 1.3 2017/04/10 11:46:32 sthen Exp $
 
 COMMENT=	toolset for internet routing registries
 
@@ -15,7 +15,7 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c m readline stdc++ termcap
+WANTLIB += c m readline ${LIBCXX} termcap
 
 MASTER_SITES=	http://ftp.isc.org/isc/IRRToolSet/IRRToolSet-$V/ \
 		ftp://ftp.isc.org/isc/IRRToolSet/IRRToolSet-$V/

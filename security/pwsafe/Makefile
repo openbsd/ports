@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2016/10/30 16:11:55 jca Exp $
+# $OpenBSD: Makefile,v 1.17 2017/04/10 11:46:33 sthen Exp $
 
 COMMENT=		program that manages encrypted password databases
 DISTNAME=		pwsafe-0.2.0
@@ -10,7 +10,7 @@ HOMEPAGE=		http://nsd.dyndns.org/pwsafe/
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		m ncurses crypto c stdc++ readline curses
+WANTLIB=		m ncurses crypto c ${LIBCXX} readline curses
 
 MASTER_SITES=		${HOMEPAGE}releases/
 

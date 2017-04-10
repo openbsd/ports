@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2017/02/28 03:11:37 jca Exp $
+# $OpenBSD: Makefile,v 1.24 2017/04/10 11:46:36 sthen Exp $
 
 COMMENT=	gui for ogle
 CATEGORIES=	x11
@@ -49,6 +49,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += FOX-1.6>=1 GL GLU X11 Xau Xcursor Xdmcp Xext Xfixes Xft
 WANTLIB += Xrandr Xrender bz2 c dvdcontrol expat fontconfig freetype
-WANTLIB += jpeg m msgevents png pthread pthread-stubs stdc++ tiff xcb z
+WANTLIB += jpeg m msgevents png pthread pthread-stubs ${LIBCXX} tiff xcb z
 
 .include <bsd.port.mk>

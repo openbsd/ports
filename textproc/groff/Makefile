@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2016/10/17 18:32:34 schwarze Exp $
+# $OpenBSD: Makefile,v 1.32 2017/04/10 11:46:34 sthen Exp $
 
 COMMENT =		GNU troff typesetter
 VERSION =		1.22.3
@@ -15,7 +15,7 @@ MAINTAINER =		Ingo Schwarze <schwarze@openbsd.org>
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		c m stdc++
+WANTLIB =		c m ${LIBCXX}
 
 MASTER_SITES =		${MASTER_SITE_GNU:=groff/}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2016/05/17 19:20:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2017/04/10 11:46:36 sthen Exp $
 
 COMMENT=	quick previewer for Nautilus
 
@@ -23,7 +23,7 @@ WANTLIB += icudata icui18n icuuc intl javascriptcoregtk-4.0 jpeg
 WANTLIB += json-glib-1.0 lzma m mozjs-24 musicbrainz5 ncursesw
 WANTLIB += neon notify orc-0.4 pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png proxy pthread pthread-stubs readline
-WANTLIB += secret-1 soup-2.4 sqlite3 ssl stdc++ webkit2gtk-4.0
+WANTLIB += secret-1 soup-2.4 sqlite3 ssl ${LIBCXX} webkit2gtk-4.0
 WANTLIB += webp xcb xcb-dri2 xcb-glx xcb-render xcb-shape xcb-shm
 WANTLIB += xcb-xfixes xml2 xslt z
 
