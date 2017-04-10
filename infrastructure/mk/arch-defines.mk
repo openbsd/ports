@@ -1,4 +1,4 @@
-# $OpenBSD: arch-defines.mk,v 1.32 2017/03/01 21:58:53 naddy Exp $
+# $OpenBSD: arch-defines.mk,v 1.33 2017/04/10 11:18:28 sthen Exp $
 #
 # ex:ts=4 sw=4 filetype=make:
 #
@@ -39,3 +39,9 @@ PROPERTIES += ${PROP:L}
 .    endif
 .  endfor
 .endfor
+
+.if ${PROPERTIES:Mclang}
+LIBCXX = c++ c++abi pthread
+.else
+LIBCXX = stdc++
+.endif
