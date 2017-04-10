@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2016/08/03 13:06:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2017/04/10 11:46:23 sthen Exp $
 
 COMMENT=	filemanager for X Window
 
@@ -16,7 +16,7 @@ MASTER_SITES=	${HOMEPAGE}/src/
 
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ICE SM X11 Xext c jpeg m png stdc++ util z tiff 
+WANTLIB += ICE SM X11 Xext c jpeg m png ${LIBCXX} util z tiff 
 
 LIB_DEPENDS=	graphics/tiff \
 		graphics/png

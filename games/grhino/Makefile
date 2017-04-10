@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2014/10/31 12:21:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2017/04/10 11:46:18 sthen Exp $
 
 COMMENT =		Othello/Reversi-like game
 DISTNAME =		grhino-${V}
@@ -18,7 +18,7 @@ WANTLIB += bonobo-2 bonobo-activation bonoboui-2 c cairo fontconfig
 WANTLIB += freetype gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gnome-2 gnomecanvas-2 gnomeui-2
 WANTLIB += gnomevfs-2 gobject-2.0 gthread-2.0 gtk-x11-2.0 m pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 popt pthread stdc++ z
+WANTLIB += pangocairo-1.0 pangoft2-1.0 popt pthread ${LIBCXX} z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=rhino/GRhino/${V}/}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2015/08/12 22:27:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2017/04/10 11:46:23 sthen Exp $
 
 COMMENT =		small SRCP client to control digital model trains
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_CDROM =		Yes
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=dtcltiny/}
 
 MODULES =		x11/qt3
-WANTLIB += 		ICE SM X11 Xext c m png pthread stdc++ z
+WANTLIB += 		ICE SM X11 Xext c m png pthread ${LIBCXX} z
 
 SEPARATE_BUILD =	Yes
 USE_GMAKE =		Yes

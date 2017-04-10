@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2016/01/07 23:00:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.61 2017/04/10 11:46:19 sthen Exp $
 
 COMMENT =	dungeon explorin', hackin', game.  Piece of cake
 V =		3.4.3
@@ -33,7 +33,7 @@ NETHACKCONFIG =	${FILESDIR}/simple-config
 .elif ${FLAVOR} == "qt"
 NETHACKCONFIG =	${FILESDIR}/qt-config
 MODULES =	x11/qt3
-WANTLIB +=	SM m pthread stdc++
+WANTLIB +=	SM m pthread ${LIBCXX}
 .else
 NETHACKCONFIG =	${FILESDIR}/x-config
 WANTLIB +=	X11 Xaw Xext Xmu Xpm Xt pthread-stubs xcb

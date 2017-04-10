@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/02/12 21:48:19 rpointel Exp $
+# $OpenBSD: Makefile,v 1.2 2017/04/10 11:46:23 sthen Exp $
 
 COMMENT =	z3 theorem prover
 
@@ -10,7 +10,7 @@ GH_PROJECT =	z3
 
 CATEGORIES =	math
 
-WANTLIB +=	c m pthread stdc++
+WANTLIB +=	c m pthread ${LIBCXX}
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes

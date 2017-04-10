@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2016/03/18 21:38:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2017/04/10 11:46:19 sthen Exp $
 
 BROKEN-alpha=	libtomcrypt/src/headers/tomcrypt_cfg.h:130:6: error: #error You must specify a word size as well as endianess in tomcrypt_cfg.h
 
@@ -37,7 +37,7 @@ LIB_DEPENDS =	audio/libvorbis \
 
 WANTLIB += GL GLU X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender Xtst c fontconfig freetype
-WANTLIB += m pthread stdc++ z
+WANTLIB += m pthread ${LIBCXX} z
 WANTLIB += GLEW avcodec avformat avutil bz2 gio-2.0 glib-2.0 gobject-2.0
 WANTLIB += mad ogg pulse swscale vorbis vorbisfile
 WANTLIB += atk-1.0 cairo gdk-x11-2.0 gdk_pixbuf-2.0 gtk-x11-2.0

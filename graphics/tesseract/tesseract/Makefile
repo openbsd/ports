@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2016/04/12 07:38:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2017/04/10 11:46:21 sthen Exp $
 
 COMMENT=	OCR Engine developed at HP Labs
 
@@ -11,7 +11,7 @@ WANTLIB += X11 Xext Xrender c cairo expat ffi fontconfig freetype
 WANTLIB += gif glib-2.0 gobject-2.0 graphite2 gthread-2.0 harfbuzz
 WANTLIB += iconv icudata icui18n icuuc intl jpeg lept m openjp2
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png pthread pthread-stubs stdc++ tiff webp xcb xcb-render
+WANTLIB += png pthread pthread-stubs ${LIBCXX} tiff webp xcb xcb-render
 WANTLIB += xcb-shm z
 
 # c++11: needed to build the training tools

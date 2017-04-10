@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2016/11/17 02:06:46 jca Exp $
+# $OpenBSD: Makefile,v 1.40 2017/04/10 11:46:18 sthen Exp $
 
 COMMENT=	chess program
 
@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_GNU:=chess/}
 # GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c iconv intl m ncurses pthread readline stdc++
+WANTLIB += c iconv intl m ncurses pthread readline ${LIBCXX}
 
 LIB_DEPENDS=	devel/gettext
 

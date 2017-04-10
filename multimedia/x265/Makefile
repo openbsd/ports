@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2017/03/01 08:53:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2017/04/10 11:46:23 sthen Exp $
 
 COMMENT=	free H.265/HEVC encoder
 
@@ -19,7 +19,7 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 PERMIT_PACKAGE_CDROM=	patents
 PERMIT_PACKAGE_FTP=	Yes
 
-WANTLIB=	c m pthread stdc++
+WANTLIB=	c m pthread ${LIBCXX}
 
 WRKSRC=		${WRKDIST}/source
 

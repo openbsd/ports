@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2016/09/13 15:29:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2017/04/10 11:46:19 sthen Exp $
 
 COMMENT=		2D games framework for use with Lua
 
@@ -19,7 +19,7 @@ WANTLIB += ${MODLUA_WANTLIB}
 WANTLIB += GL Half IL Iex IexMath IlmImf IlmThread Imath SDL X11
 WANTLIB += X11-xcb Xdamage Xext Xfixes Xxf86vm c drm
 WANTLIB += freetype glapi iconv jasper jpeg lcms m mng modplug mpg123
-WANTLIB += ogg openal physfs png pthread sndio stdc++
+WANTLIB += ogg openal physfs png pthread sndio ${LIBCXX}
 WANTLIB += tiff usbhid vorbis vorbisfile xcb xcb-dri2 xcb-glx
 WANTLIB += z expat
 

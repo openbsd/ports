@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2016/03/18 23:12:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2017/04/10 11:46:20 sthen Exp $
 
 COMMENT =	garmin gps device driver
 
@@ -13,7 +13,7 @@ MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 PERMIT_PACKAGE_CDROM =		Yes
 
 MODULES =	devel/cmake
-WANTLIB +=	m pthread stdc++ usb
+WANTLIB +=	m pthread ${LIBCXX} usb
 LIB_DEPENDS +=	devel/libusb-compat
 
 # libgarmindev is only needed to compile the drivers, but not on runtime

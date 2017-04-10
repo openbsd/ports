@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/03/03 03:04:34 bentley Exp $
+# $OpenBSD: Makefile,v 1.3 2017/04/10 11:46:19 sthen Exp $
 
 COMMENT =		sidescrolling space shmup
 
@@ -15,7 +15,7 @@ MAINTAINER =		Anthony J. Bentley <anthony@anjbe.name>
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += SDL2 SDL2_image SDL2_mixer c m pthread stdc++
+WANTLIB += SDL2 SDL2_image SDL2_mixer c m pthread ${LIBCXX}
 
 MASTER_SITES =		${MASTER_SITE_SAVANNAH:=starfighter/1.5/}
 

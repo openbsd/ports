@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2017/03/08 02:22:14 jca Exp $
+# $OpenBSD: Makefile,v 1.28 2017/04/10 11:46:23 sthen Exp $
 
 COMMENT=	Google VP8/VP9 video codec
 
@@ -16,7 +16,7 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	c m pthread stdc++
+WANTLIB=	c m pthread ${LIBCXX}
 
 MODULES=	lang/clang
 

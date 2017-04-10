@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/12/26 15:27:26 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2017/04/10 11:46:18 sthen Exp $
 
 COMMENT =		package manager for Instead game engine
 V =			0.6.3
@@ -12,7 +12,7 @@ MAINTAINER =		Roman Yakovlev <obsd@51t.ru>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =  ICE QtGui QtNetwork SM X11 Xext Xi Xinerama Xrender
-WANTLIB += c fontconfig freetype m pthread stdc++ z
+WANTLIB += c fontconfig freetype m pthread ${LIBCXX} z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=instead/}
 

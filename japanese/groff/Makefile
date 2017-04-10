@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2013/03/11 11:12:33 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2017/04/10 11:46:21 sthen Exp $
 
 COMMENT=	japanese groff
 
@@ -17,7 +17,7 @@ MASTER_SITES0=	ftp://ftp.ae.keio.ac.jp/pub/GNU/ \
 
 
 PERMIT_PACKAGE_CDROM=	Yes
-WANTLIB=		c stdc++ m
+WANTLIB=		c ${LIBCXX} m
 
 PATCH_DIST_STRIP=	-p1
 

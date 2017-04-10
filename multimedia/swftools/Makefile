@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2015/04/21 18:24:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2017/04/10 11:46:23 sthen Exp $
 
 BROKEN-hppa =	ICE/double-free/cc1(30516) in malloc(): error: recursive call 
 COMMENT=	SWF manipulation and generation utilities
@@ -13,7 +13,7 @@ HOMEPAGE=	http://www.swftools.org/
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c fftw3 freetype gif jpeg m mp3lame pthread stdc++ z
+WANTLIB += c fftw3 freetype gif jpeg m mp3lame pthread ${LIBCXX} z
 
 LIB_DEPENDS=	audio/lame \
 		graphics/jpeg \

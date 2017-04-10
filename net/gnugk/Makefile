@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2016/12/31 10:19:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.66 2017/04/10 11:46:23 sthen Exp $
 
 BROKEN-hppa=	libpt.so.7.0: undefined reference to __sync_fetch_and_or_4
 
@@ -20,7 +20,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += GeoIP SDL c crypto expat h323 kvm lber ldap ldap_r
 WANTLIB += lua${MODLUA_VERSION} m netsnmp netsnmpagent netsnmpmibs pt pthread
-WANTLIB += sasl2 ssh ssl stdc++ z
+WANTLIB += sasl2 ssh ssl ${LIBCXX} z
 
 MODULES=	lang/lua
 

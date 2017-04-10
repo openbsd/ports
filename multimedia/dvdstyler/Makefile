@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2015/11/01 07:16:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2017/04/10 11:46:23 sthen Exp $
 
 COMMENT=		DVD authoring application
 
@@ -20,7 +20,7 @@ WANTLIB += bonoboui-2 c cairo dbus-1 exif fontconfig freetype gconf-2
 WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gnome-2 gnomecanvas-2 gnomeui-2 gnomevfs-2 gobject-2.0
 WANTLIB += gthread-2.0 gtk-x11-2.0 jpeg m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 popt pthread stdc++ swscale wx_base wx_base_net
+WANTLIB += pangoft2-1.0 popt pthread ${LIBCXX} swscale wx_base wx_base_net
 WANTLIB += wx_gtk2_adv wx_gtk2_core wx_gtk2_html wx_gtk2_media
 WANTLIB += wxsvg z
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2015/03/16 18:07:50 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2017/04/10 11:46:23 sthen Exp $
 
 COMMENT =		weighted finite-state transducers library
 
@@ -18,7 +18,7 @@ HOMEPAGE =		http://www.openfst.org/twiki/bin/view/FST/WebHome
 # Apache 2.0
 PERMIT_PACKAGE_CDROM =		Yes
 
-WANTLIB +=		c m stdc++
+WANTLIB +=		c m ${LIBCXX}
 
 MASTER_SITES =		http://www.openfst.org/twiki/pub/FST/FstDownload/
 

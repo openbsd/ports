@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2015/03/27 08:41:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2017/04/10 11:46:19 sthen Exp $
 
 COMMENT =	puzzle/platform game
 
@@ -23,7 +23,7 @@ LIB_DEPENDS =	net/curl \
 		archivers/libarchive
 
 WANTLIB += SDL SDL_gfx SDL_image SDL_mixer SDL_ttf archive c crypto
-WANTLIB += curl m pthread ssl stdc++ GL GLU ICE SM X11 Xext
+WANTLIB += curl m pthread ssl ${LIBCXX} GL GLU ICE SM X11 Xext
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+3,-guic

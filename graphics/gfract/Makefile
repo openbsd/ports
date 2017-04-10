@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2016/10/28 13:45:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2017/04/10 11:46:20 sthen Exp $
 
 COMMENT=		fractal program with GTK interface
 GH_ACCOUNT=		oskusalerma
@@ -18,7 +18,7 @@ WANTLIB += Xrandr Xrender atk-1.0 boost_filesystem boost_regex
 WANTLIB += boost_system c cairo fontconfig freetype gdk-x11-2.0
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 gtk-x11-2.0
 WANTLIB += intl m pango-1.0 pangocairo-1.0 pangoft2-1.0 png pthread
-WANTLIB += stdc++ z
+WANTLIB += ${LIBCXX} z
 
 MASTER_SITES0= 		http://distfiles.nl/
 

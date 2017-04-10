@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2016/04/04 16:09:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2017/04/10 11:46:21 sthen Exp $
 
 COMMENT=	translate PostScript/PDF graphics to other vector formats
 
@@ -25,7 +25,7 @@ CONFIGURE_ARGS=	--without-libplot	\
 		--without-emf	 	\
 		--without-swf		\
 		--without-magick
-WANTLIB=	c stdc++ m
+WANTLIB=	c ${LIBCXX} m
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/pstoedit.1 ${PREFIX}/man/man1

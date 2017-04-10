@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.94 2016/11/15 20:35:30 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.95 2017/04/10 11:46:23 sthen Exp $
 
 COMMENT-main=		bad elements for GStreamer
 COMMENT-neon=		neon element for GStreamer (plugins-bad)
@@ -41,14 +41,14 @@ WANTLIB-main += gstpbutils-0.10 gstriff-0.10 gstrtp-0.10 gstsdp-0.10
 WANTLIB-main += gsttag-0.10 gstvideo-0.10 jasper jpeg lrdf mms
 WANTLIB-main += mpcdec nghttp2 opus orc-0.4 pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB-main += pixman-1 png pthread-stubs raptor2 rsvg-2
-WANTLIB-main += sndfile sndio spandsp ssl stdc++ tiff usbhid vpx xcb
+WANTLIB-main += sndfile sndio spandsp ssl ${LIBCXX} tiff usbhid vpx xcb
 WANTLIB-main += xcb-render xcb-shm xslt harfbuzz
 WANTLIB-main += yajl FLAC graphite2 ogg vorbis vorbisenc
 
 WANTLIB-neon += ${WANTLIB} crypto expat gstbase-0.10 neon proxy ssl
 
 WANTLIB-mjpeg += ${WANTLIB}
-WANTLIB-mjpeg += gstbase-0.10 mjpegutils mpeg2encpp mplex2 stdc++
+WANTLIB-mjpeg += gstbase-0.10 mjpegutils mpeg2encpp mplex2 ${LIBCXX}
 
 BUILD_DEPENDS=		audio/ladspa \
 			graphics/libexif

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2016/05/05 19:52:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.27 2017/04/10 11:46:20 sthen Exp $
 
 COMMENT=	Motif minesweeper game
 
@@ -10,7 +10,7 @@ MASTER_SITES=	${MASTER_SITE_XCONTRIB:=games/}
 
 PERMIT_PACKAGE_CDROM=	no fee
 PERMIT_PACKAGE_FTP=	Yes
-WANTLIB=		X11 Xext Xpm Xt c m pthread-stubs stdc++ xcb Xm
+WANTLIB=		X11 Xext Xpm Xt c m pthread-stubs ${LIBCXX} xcb Xm
 
 LIB_DEPENDS+=	x11/motif
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2016/03/18 23:12:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.55 2017/04/10 11:46:20 sthen Exp $
 
 PORTROACH=		limit:^0\.2
 
@@ -57,7 +57,7 @@ WANTLIB-plugins += ${WANTLIB}
 WANTLIB-plugins += gsm mp3lame ogg IlmImf avutil bz2 speex
 WANTLIB-plugins += vorbis vorbisenc x264 avcodec avformat vpx
 WANTLIB-plugins += Half Iex IexMath IlmThread Imath xvidcore
-WANTLIB-plugins += crypto opus pthread stdc++ ssl swresample x265
+WANTLIB-plugins += crypto opus pthread ${LIBCXX} ssl swresample x265
 
 RUN_DEPENDS-plugins= 	${BUILD_PKGPATH},-main
 LIB_DEPENDS-plugins= 	${LIB_DEPENDS} \

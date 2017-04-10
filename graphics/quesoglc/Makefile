@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2015/08/24 10:01:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2017/04/10 11:46:21 sthen Exp $
 
 COMMENT=	implementation of the OpenGL Character Renderer
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB+= GL GLU X11 Xdamage Xext Xfixes Xxf86vm drm expat fontconfig
 WANTLIB += X11-xcb Xau Xdmcp glapi pthread pthread-stubs xcb-dri2
-WANTLIB+= freetype fribidi m stdc++ xcb xcb-glx z
+WANTLIB+= freetype fribidi m ${LIBCXX} xcb xcb-glx z
 
 LIB_DEPENDS=	devel/fribidi
 

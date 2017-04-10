@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2015/08/25 13:18:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2017/04/10 11:46:19 sthen Exp $
 
 V =		0.1.1
 COMMENT =	third person, 3D physics game
@@ -11,7 +11,7 @@ CATEGORIES =	games x11
 PERMIT_PACKAGE_CDROM =		Yes
 
 WANTLIB += BulletCollision BulletDynamics BulletSoftBody Irrlicht
-WANTLIB += LinearMath c m openal pthread stdc++
+WANTLIB += LinearMath c m openal pthread ${LIBCXX}
 
 GH_ACCOUNT =	jazztickets
 GH_PROJECT =	irrlamb

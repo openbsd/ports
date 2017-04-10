@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2016/03/11 20:07:49 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2017/04/10 11:46:20 sthen Exp $
 
 COMMENT =		font rendering library for OpenGL applications
 
@@ -17,7 +17,7 @@ MAINTAINER =		Peter Hessler <phessler@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += GL GLU ICE SM X11 Xdamage Xext Xfixes Xmu Xt Xxf86vm drm
-WANTLIB += freetype m stdc++ xcb xcb-glx z expat
+WANTLIB += freetype m ${LIBCXX} xcb xcb-glx z expat
 WANTLIB += X11-xcb glapi pthread xcb-dri2   
 
 WRKDIST =		${WRKDIR}/${DISTNAME:S/-rc/~rc/}

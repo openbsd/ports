@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2016/11/04 11:35:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2017/04/10 11:46:18 sthen Exp $
 
 COMMENT=	remake of Konami's F1-Spirit
 
@@ -17,7 +17,7 @@ MASTER_SITES=	http://braingames.jorito.net/f1spirit/
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB+= GL GLU SDL SDL_image SDL_mixer SDL_net c crypto curl m nghttp2
-WANTLIB+= pthread ssl stdc++ z
+WANTLIB+= pthread ssl ${LIBCXX} z
 
 NO_TEST=	Yes
 USE_GMAKE=	Yes

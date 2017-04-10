@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2015/07/20 23:13:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2017/04/10 11:46:22 sthen Exp $
 
 COMMENT=	environment for rapid engineering and scientific processing
 BROKEN-hppa =	undefined reference to lapack funcs
@@ -16,7 +16,7 @@ HOMEPAGE=	http://freemat.sourceforge.net/
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += GL GLU QtGui QtNetwork QtOpenGL QtSvg QtXml amd c fftw3
-WANTLIB += fftw3f m ncurses pcre portaudio pthread stdc++ umfpack
+WANTLIB += fftw3f m ncurses pcre portaudio pthread ${LIBCXX} umfpack
 WANTLIB += z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=freemat/}

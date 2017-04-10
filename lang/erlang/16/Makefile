@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2016/09/01 10:53:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2017/04/10 11:46:22 sthen Exp $
 
 BROKEN-alpha=	beam/erl_process.c:6692: internal compiler error: in final_scan_insn, at final.c:2449
 BROKEN-hppa =	error: No native atomic implementation found.
@@ -32,7 +32,7 @@ MULTI_PACKAGES = -main -wx
 WANTLIB =	m pthread
 WANTLIB-main =	${WANTLIB} c crypto ncurses util
 
-WANTLIB-wx += ${WANTLIB} GL GLU stdc++ wx_base wx_base_xml wx_gtk2_adv
+WANTLIB-wx += ${WANTLIB} GL GLU ${LIBCXX} wx_base wx_base_xml wx_gtk2_adv
 WANTLIB-wx += wx_gtk2_aui wx_gtk2_core wx_gtk2_gl wx_gtk2_html wx_gtk2_stc
 WANTLIB-wx += wx_gtk2_xrc
 

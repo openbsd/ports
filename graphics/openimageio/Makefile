@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2016/10/28 02:15:51 jca Exp $
+# $OpenBSD: Makefile,v 1.24 2017/04/10 11:46:21 sthen Exp $
 
 BROKEN-powerpc =	undefined reference to __atomic_fetch_add_8
 
@@ -27,7 +27,7 @@ WANTLIB += QtGui QtOpenGL avcodec avformat avutil boost_filesystem-mt
 WANTLIB += boost_python-mt boost_regex-mt boost_system-mt boost_thread-mt
 WANTLIB += boost_atomic-mt boost_chrono-mt boost_date_time-mt
 WANTLIB += c freetype gif jpeg m openjpeg png pthread ${MODPY_WANTLIB}
-WANTLIB += raw_r stdc++ swscale tiff webp z
+WANTLIB += raw_r ${LIBCXX} swscale tiff webp z
 
 MODULES =		devel/cmake \
 			lang/python \

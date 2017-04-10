@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2016/09/13 16:12:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2017/04/10 11:46:23 sthen Exp $
 
 COMMENT=	chemistry file translation program
 
@@ -16,7 +16,7 @@ HOMEPAGE=	http://openbabel.sourceforge.net/
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c iconv lzma m pthread stdc++ xml2 z
+WANTLIB += c iconv lzma m pthread ${LIBCXX} xml2 z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=openbabel/}
 

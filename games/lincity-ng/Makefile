@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2016/08/03 13:06:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2017/04/10 11:46:19 sthen Exp $
 
 COMMENT=	city simulation game
 
@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=lincity-ng.berlios/}
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	GL SDL X11 c m pthread pthread-stubs stdc++ xcb z \
+WANTLIB=	GL SDL X11 c m pthread pthread-stubs ${LIBCXX} xcb z \
 		SDL_gfx SDL_image SDL_mixer SDL_ttf physfs xml2
 
 MODULES=	devel/gettext

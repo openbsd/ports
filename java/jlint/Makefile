@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2015/06/18 07:14:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2017/04/10 11:46:22 sthen Exp $
 
 COMMENT=	Java program analyzer and checker
 
@@ -10,7 +10,7 @@ HOMEPAGE=	http://jlint.sourceforge.net/
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=  Yes
-WANTLIB=		c z m stdc++
+WANTLIB=		c z m ${LIBCXX}
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=jlint/}
 

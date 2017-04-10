@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2015/06/27 10:26:38 pirofti Exp $
+# $OpenBSD: Makefile,v 1.23 2017/04/10 11:46:22 sthen Exp $
 
 COMMENT=	GiNaC is Not a Computer Algebra System (CAS)
 
@@ -17,7 +17,7 @@ MASTER_SITES=	 ${HOMEPAGE} \
 		 ftp://ftpthep.physik.uni-mainz.de/pub/GiNaC/
 EXTRACT_SUFX=	.tar.bz2
 
-WANTLIB=	c m ncurses readline stdc++ gmp cln
+WANTLIB=	c m ncurses readline ${LIBCXX} gmp cln
 
 MODULES =       lang/python
 BUILD_DEPENDS =	devel/doxygen

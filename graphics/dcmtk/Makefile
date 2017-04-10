@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2015/04/21 18:24:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2017/04/10 11:46:20 sthen Exp $
 
 COMMENT=		DICOM toolkit
 
@@ -15,7 +15,7 @@ MASTER_SITES=		ftp://dicom.offis.de/pub/dicom/offis/software/dcmtk/dcmtk354/
 # ftp://dicom.offis.de/pub/dicom/offis/software/dcmtk/dcmtk354/COPYRIGHT
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c crypto jpeg>=62 m png>=4 pthread ssl stdc++ tiff>=36
+WANTLIB += c crypto jpeg>=62 m png>=4 pthread ssl ${LIBCXX} tiff>=36
 WANTLIB += xml2>=9 z
 
 LIB_DEPENDS=		graphics/jpeg \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2017/02/09 14:43:04 giovanni Exp $
+# $OpenBSD: Makefile,v 1.61 2017/04/10 11:46:22 sthen Exp $
 
 COMMENT-main=		authentication library for courier
 COMMENT-ldap=		ldap authentication module for courier-authLib
@@ -92,7 +92,7 @@ LIB_DEPENDS-ldap=	${BUILD_PKGPATH} \
 			security/cyrus-sasl2
 
 WANTLIB-mysql=		crypto m ssl z courierauthcommon courierauth \
-			mysqlclient pthread stdc++
+			mysqlclient pthread ${LIBCXX}
 RUN_DEPENDS-mysql=
 LIB_DEPENDS-mysql=	${BUILD_PKGPATH} \
 			databases/mariadb

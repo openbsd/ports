@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2016/03/19 22:48:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.31 2017/04/10 11:46:22 sthen Exp $
 
 CATEGORIES=	math x11/kde
 COMMENT=	data viewing/plotting tool
@@ -24,7 +24,7 @@ WANTLIB += GL ICE SM X11 Xcursor Xdamage Xext Xfixes Xft Xi Xinerama Xmu
 WANTLIB += Xrandr Xrender Xt Xxf86vm art_lgpl_2 c cfitsio drm expat
 WANTLIB += fontconfig freetype gsl>=7 gslcblas idn jpeg lcms lib/qt3/qui
 WANTLIB += m mng ncurses netcdf netcdf_c++ pcre pcreposix png pthread
-WANTLIB += readline stdc++ util xcb xcb-glx z
+WANTLIB += readline ${LIBCXX} util xcb xcb-glx z
 WANTLIB += X11-xcb Xau Xdmcp fam glapi pthread-stubs xcb-dri2
 
 MODULES=		x11/kde devel/gettext

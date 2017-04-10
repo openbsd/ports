@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2016/09/23 09:16:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2017/04/10 11:46:20 sthen Exp $
 
 COMMENT =	store rasters coverages within spatialite
 PROJECT =	librasterlite
@@ -16,7 +16,7 @@ LIB_DEPENDS +=	converters/libiconv \
 		devel/geotiff
 
 WANTLIB += c freexl geos geos_c geotiff iconv jpeg lzma m png proj pthread
-WANTLIB += spatialite sqlite3 stdc++ tiff xml2 z
+WANTLIB += spatialite sqlite3 ${LIBCXX} tiff xml2 z
 
 # 1 test fails
 #ERROR: jpeg50 reference image mismatch at offset 717

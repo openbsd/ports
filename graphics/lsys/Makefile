@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:10:54 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2017/04/10 11:46:21 sthen Exp $
 
 COMMENT=	intepreter for Lindenmayer-systems
 
@@ -13,7 +13,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=		http://crappydiffs.org/
 
-WANTLIB += GL GLU X11 Xext c m pthread stdc++
+WANTLIB += GL GLU X11 Xext c m pthread ${LIBCXX}
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \

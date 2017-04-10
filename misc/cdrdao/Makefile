@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2015/05/01 06:15:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2017/04/10 11:46:23 sthen Exp $
 
 COMMENT=	write audio/data CD-Rs in disk-at-once mode
 
@@ -11,7 +11,7 @@ HOMEPAGE=	http://cdrdao.sourceforge.net/
 
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		c m stdc++
+WANTLIB=		c m ${LIBCXX}
 
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu

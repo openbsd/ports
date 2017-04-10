@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2016/05/05 02:32:55 bentley Exp $
+# $OpenBSD: Makefile,v 1.14 2017/04/10 11:46:19 sthen Exp $
 
 COMMENT =	free J-RPG game
 CATEGORIES =	games x11
@@ -17,7 +17,7 @@ HOMEPAGE =	https://valyriatear.blogspot.com/
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += GL GLU ICE SDL SDL_image SDL_ttf SM X11 Xext c m
-WANTLIB += ogg openal png pthread stdc++ vorbis vorbisfile
+WANTLIB += ogg openal png pthread ${LIBCXX} vorbis vorbisfile
 WANTLIB += z ${MODLUA_WANTLIB}
 
 MODULES =	devel/cmake \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2016/11/11 12:07:00 danj Exp $
+# $OpenBSD: Makefile,v 1.26 2017/04/10 11:46:22 sthen Exp $
 
 COMMENT=	mail purpose library
 
@@ -17,7 +17,7 @@ MAINTAINER=	Daniel Jakots <obsd@chown.me>
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += crypto curl expat iconv m nghttp2 pthread sasl2 ssl stdc++ z
+WANTLIB += crypto curl expat iconv m nghttp2 pthread sasl2 ssl ${LIBCXX} z
 
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.15

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2017/02/24 10:04:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.55 2017/04/10 11:46:23 sthen Exp $
 
 COMMENT=		bad elements for GStreamer
 
@@ -29,7 +29,7 @@ WANTLIB += gstpbutils-1.0 gstreamer-1.0 gstrtp-1.0 gstsdp-1.0
 WANTLIB += gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3 harfbuzz crypto
 WANTLIB += jpeg lzma m mms opus orc-0.4 pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs ssl
-WANTLIB += rsvg-2 stdc++ xcb xcb-dri2 xcb-glx xcb-render
+WANTLIB += rsvg-2 ${LIBCXX} xcb xcb-dri2 xcb-glx xcb-render
 WANTLIB += xcb-shm xcb-xfixes xml2 z gstallocators-1.0 iconv intl
 
 MASTER_SITES =		${MASTER_SITE_GST:=gst-plugins-bad/}

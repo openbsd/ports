@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2016/12/31 17:52:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.33 2017/04/10 11:46:21 sthen Exp $
 
 COMMENT=	3D image rendering package
 
@@ -11,7 +11,7 @@ HOMEPAGE=	http://www.povray.org/
 PERMIT_PACKAGE_CDROM=	Perhaps we qualify for commercial distribution
 PERMIT_PACKAGE_FTP=	Yes
 
-WANTLIB += ICE SM X11 Xpm c jpeg m stdc++ tiff z
+WANTLIB += ICE SM X11 Xpm c jpeg m ${LIBCXX} tiff z
 
 MASTER_SITES=	\
 	http://www.povray.org/ftp/pub/povray/Old-Versions/Official-3.62/Unix/

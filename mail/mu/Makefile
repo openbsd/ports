@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2017/01/13 16:06:48 abieber Exp $
+# $OpenBSD: Makefile,v 1.8 2017/04/10 11:46:22 sthen Exp $
 
 COMMENT=	maildir indexer and searcher with emacs frontend
 
@@ -24,7 +24,7 @@ LIB_DEPENDS=	databases/xapian-core \
 
 WANTLIB += assuan c ffi gio-2.0 glib-2.0 gmime-2.6 gmodule-2.0
 WANTLIB += gobject-2.0 gpg-error gpgme-pthread gthread-2.0 iconv
-WANTLIB += intl m pcre pthread stdc++ uuid xapian z
+WANTLIB += intl m pcre pthread ${LIBCXX} uuid xapian z
 
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.11

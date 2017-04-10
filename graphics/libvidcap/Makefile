@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2015/03/16 18:07:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2017/04/10 11:46:21 sthen Exp $
 
 COMMENT=	video capture library
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_CDROM=   Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=libvidcap/}
 
-WANTLIB=	pthread m stdc++
+WANTLIB=	pthread m ${LIBCXX}
 
 SEPARATE_BUILD= Yes
 CONFIGURE_STYLE=gnu

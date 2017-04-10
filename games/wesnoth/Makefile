@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2016/05/23 14:30:16 kirby Exp $
+# $OpenBSD: Makefile,v 1.68 2017/04/10 11:46:19 sthen Exp $
 
 PORTROACH = 	limitw:1,even
 
@@ -24,7 +24,7 @@ WANTLIB += Xext boost_filesystem-mt boost_iostreams-mt
 WANTLIB += boost_locale-mt boost_program_options-mt boost_regex-mt
 WANTLIB += boost_system-mt c cairo dbus-1 fontconfig freetype fribidi
 WANTLIB += glib-2.0 gobject-2.0 intl m pango-1.0 pangocairo-1.0
-WANTLIB += pthread stdc++ vorbisfile z
+WANTLIB += pthread ${LIBCXX} vorbisfile z
 
 MODULES=	devel/cmake
 

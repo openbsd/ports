@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2016/03/20 16:12:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2017/04/10 11:46:18 sthen Exp $
 
 COMMENT =	game of life simulator
 
@@ -21,7 +21,7 @@ RUN_DEPENDS =		devel/desktop-file-utils
 
 # Note: perl and python are loaded with wxDynamicLibrary.Load(), and
 # python needs libutil to prevent undefined openpty and forkpty symbols.
-WANTLIB += c m perl pthread stdc++ util wx_base wx_base_net wx_gtk2_adv
+WANTLIB += c m perl pthread ${LIBCXX} util wx_base wx_base_net wx_gtk2_adv
 WANTLIB += wx_gtk2_core wx_gtk2_html wx_gtk2_richtext z ${MODPY_WANTLIB}
 
 CONFIGURE_STYLE =		gnu

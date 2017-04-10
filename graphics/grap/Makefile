@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2014/11/14 08:20:26 benoit Exp $
+# $OpenBSD: Makefile,v 1.7 2017/04/10 11:46:21 sthen Exp $
 
 COMMENT =	language for typesetting graphs
 
@@ -13,7 +13,7 @@ MAINTAINER =	Hermann Gottschalk <magnum@pestilenz.org>
 PERMIT_PACKAGE_CDROM = Yes
 
 MASTER_SITES =		${HOMEPAGE}
-WANTLIB =		c m stdc++
+WANTLIB =		c m ${LIBCXX}
 CONFIGURE_STYLE =	gnu
 
 .include <bsd.port.mk>

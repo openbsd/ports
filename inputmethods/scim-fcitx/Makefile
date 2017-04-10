@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2017/02/07 08:11:11 bentley Exp $
+# $OpenBSD: Makefile,v 1.11 2017/04/10 11:46:21 sthen Exp $
 
 COMMENT=	scim input method module for fcitx
 
@@ -14,7 +14,7 @@ HOMEPAGE=	https://github.com/scim-im/scim-fcitx
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	c m stdc++ scim-1.0 pthread
+WANTLIB=	c m ${LIBCXX} scim-1.0 pthread
 
 MODULES=	devel/gettext
 

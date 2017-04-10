@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2016/11/07 21:29:56 giovanni Exp $
+# $OpenBSD: Makefile,v 1.35 2017/04/10 11:46:22 sthen Exp $
 
 COMMENT-main=	fully featured POP3 and IMAP4 proxy server
 COMMENT-ldap=	LDAP backend for perdition mail proxy
@@ -84,7 +84,7 @@ CONFIGURE_ARGS+=	--with-ldap-libraries=${LOCALBASE}/lib \
 
 LIB_DEPENDS-mysql=	${cLIB_DEPENDS} databases/mariadb \
 			vanessa_adt->=0.0.9:devel/vanessa/adt
-WANTLIB-mysql=		crypto pthread ssl stdc++ util m z \
+WANTLIB-mysql=		crypto pthread ssl ${LIBCXX} util m z \
 			lib/mysql/mysqlclient ${cWANTLIB} \
 			vanessa_adt>=1.0
 

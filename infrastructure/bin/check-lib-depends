@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-lib-depends,v 1.38 2017/04/09 19:30:09 espie Exp $
+# $OpenBSD: check-lib-depends,v 1.39 2017/04/10 11:46:21 sthen Exp $
 # Copyright (c) 2004-2010 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -493,6 +493,8 @@ sub print_list
 	$self->backsubst($h, $state);
 	my $line = "";
 	for my $k (sort keys %$h) {
+		next if $k eq 'c++abi';
+		$k =~ s/^(std)?c\+\+$/\${LIBCXX}/;
 		if (length $line > 50) {
 			$state->say_with_context("#1#2", $head, $line);
 			$line = "";

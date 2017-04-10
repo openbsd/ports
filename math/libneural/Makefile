@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2017/02/27 19:46:37 jca Exp $
+# $OpenBSD: Makefile,v 1.10 2017/04/10 11:46:22 sthen Exp $
 
 COMMENT=		three layer backpropagation neural network library
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=		${HOMEPAGE}
 
-WANTLIB += m stdc++
+WANTLIB += m ${LIBCXX}
 
 
 CONFIGURE_STYLE=	gnu

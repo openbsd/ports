@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2016/09/01 16:50:56 pascal Exp $
+# $OpenBSD: Makefile,v 1.6 2017/04/10 11:46:19 sthen Exp $
 
 V =		0.7.5
 COMMENT =	ridiculous shoot-em-up game
@@ -13,7 +13,7 @@ HOMEPAGE =	http://mars-game.sourceforge.net/
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += GL GLU Xrandr c fribidi m pthread sfml-audio sfml-graphics
-WANTLIB += sfml-system sfml-window stdc++ tag
+WANTLIB += sfml-system sfml-window ${LIBCXX} tag
 
 # Not using the GH_* variables on purpose. The tarball was generated
 # separately. Will update to use GH_* next time M.A.R.S. is updated.

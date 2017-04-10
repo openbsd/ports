@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2016/03/23 21:14:58 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2017/04/10 11:46:20 sthen Exp $
 
 COMMENT-main=		GPS processing toolkit
 COMMENT-devel=		GPStk development libraries and headers
@@ -49,7 +49,7 @@ BUILD_DEPENDS=		${MODGNU_AUTOCONF_DEPENDS} \
 			devel/libtool \
 			${MODGNU_AUTOMAKE_DEPENDS}
 MULTI_PACKAGES=		-main -devel
-WANTLIB-main=		m c stdc++ curses
+WANTLIB-main=		m c ${LIBCXX} curses
 WANTLIB-devel=
 RUN_DEPENDS-devel=	${PKGNAME-main}:geo/gpstk
 

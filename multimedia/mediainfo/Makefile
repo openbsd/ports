@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2016/11/19 15:04:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2017/04/10 11:46:23 sthen Exp $
 
 COMMENT=	display technical and tag data for video and audio files
 
@@ -12,7 +12,7 @@ MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 # BSD-style
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	c m pthread stdc++ z
+WANTLIB=	c m pthread ${LIBCXX} z
 
 MASTER_SITES=	https://mediaarea.net/download/binary/mediainfo/${VERSION}/
 DISTFILES=	MediaInfo_CLI_${VERSION}_GNU_FromSource.tar.xz

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2017/01/01 09:29:09 jca Exp $
+# $OpenBSD: Makefile,v 1.32 2017/04/10 11:46:22 sthen Exp $
 
 # old version that does not get updates; should be rm'd at some point
 PORTROACH=	ignore:1
@@ -41,7 +41,7 @@ MODULES =	lang/python
 MODPY_RUNDEP =	No
 BUILD_DEPENDS =	archivers/zip archivers/unzip
 LIB_DEPENDS =	devel/nspr
-WANTLIB =	c m pthread readline nspr4 ncurses plc4 plds4 stdc++
+WANTLIB =	c m pthread readline nspr4 ncurses plc4 plds4 ${LIBCXX}
 
 WRKDIST =	${WRKDIR}/mozilla-${MOZILLA_BRANCH}/js/src
 USE_GMAKE =	yes

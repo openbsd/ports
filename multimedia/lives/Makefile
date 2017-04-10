@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2016/08/30 10:12:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2017/04/10 11:46:23 sthen Exp $
 
 COMMENT =		video editor and a VJ tool
 
@@ -24,7 +24,7 @@ WANTLIB += expat ffi fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
 WANTLIB += gthread-2.0 gtk-x11-2.0 harfbuzz m mjpegutils ogg oil-0.3
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png
-WANTLIB += pthread pthread-stubs sndio stdc++ theora usbhid xcb
+WANTLIB += pthread pthread-stubs sndio ${LIBCXX} theora usbhid xcb
 WANTLIB += xcb-render xcb-shm z
 
 MODULES =		devel/gettext

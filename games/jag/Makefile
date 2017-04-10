@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2016/04/24 11:07:55 zhuk Exp $ 
+# $OpenBSD: Makefile,v 1.6 2017/04/10 11:46:19 sthen Exp $ 
 COMMENT =		arcade-puzzle game
 V = 			0.3.2
 DISTNAME =		jag-${V}
@@ -11,7 +11,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += GL ICE QtGui QtOpenGL QtXml SDL SDL_mixer SM X11 Xext
 WANTLIB += Xi Xinerama Xrandr Xrender c fontconfig freetype m
-WANTLIB += pthread stdc++
+WANTLIB += pthread ${LIBCXX}
 
 MASTER_SITES = 		http://jag.xlabsoft.com/files/
 DISTFILES = 		jag-${V}-src.zip jag-${V}-data.zip

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.9 2016/03/28 09:29:00 zhuk Exp $
+# $OpenBSD: Makefile.inc,v 1.10 2017/04/10 11:46:18 sthen Exp $
 
 CATEGORIES =	games
 PKGNAME ?=	${DISTNAME:S/-src//}
@@ -21,7 +21,7 @@ WANTLIB +=	GL Qt5Core Qt5Gui Qt5Widgets
 .else
 MODULES +=	x11/qt4
 WANTLIB +=	ICE SM X11 Xext Xi Xinerama Xrender fontconfig freetype
-WANTLIB +=	QtGui stdc++
+WANTLIB +=	QtGui ${LIBCXX}
 .endif
 WANTLIB +=	c m pthread
 RUN_DEPENDS +=	devel/desktop-file-utils x11/gtk+3,-guic

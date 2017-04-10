@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2016/04/22 08:45:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2017/04/10 11:46:21 sthen Exp $
 
 COMMENT =	tool for working with RAW images
 
@@ -24,7 +24,7 @@ WANTLIB += Xrandr Xrender atk-1.0 c cairo dbus-1 exiv2 expat fontconfig
 WANTLIB += freetype gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0
 WANTLIB += jpeg lcms m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1
-WANTLIB += png pthread pthread-stubs stdc++ tiff xcb xcb-render
+WANTLIB += png pthread pthread-stubs ${LIBCXX} tiff xcb xcb-render
 WANTLIB += xcb-shm xml2 z
 
 MODULES =	devel/gettext

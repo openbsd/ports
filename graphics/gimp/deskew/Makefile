@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/09/14 11:15:43 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.2 2017/04/10 11:46:20 sthen Exp $
 
 COMMENT =		deskew plug-in for GIMP
 DISTNAME =		gimp-deskew-plugin-0.0.20141025
@@ -20,7 +20,7 @@ WANTLIB += Xrandr Xrender atk-1.0 c cairo fontconfig freetype
 WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gimp-2.0 gimpbase-2.0 gimpcolor-2.0
 WANTLIB += gimpconfig-2.0 gimpmath-2.0 gimpmodule-2.0 gimpui-2.0
 WANTLIB += gimpwidgets-2.0 gio-2.0 glib-2.0 gobject-2.0 gtk-x11-2.0
-WANTLIB += intl m pango-1.0 pangocairo-1.0 pangoft2-1.0 stdc++
+WANTLIB += intl m pango-1.0 pangocairo-1.0 pangoft2-1.0 ${LIBCXX}
 WANTLIB += z
 
 MODULES =		textproc/intltool

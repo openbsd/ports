@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2015/08/27 07:30:25 zhuk Exp $
+# $OpenBSD: Makefile,v 1.7 2017/04/10 11:46:23 sthen Exp $
 
 CATEGORIES =	net
 COMMENT =	SSDP cache/proxy daemon for KDE
@@ -13,7 +13,7 @@ EXTRACT_SUFX =	.tar.bz2
 PERMIT_PACKAGE_CDROM =          Yes
 
 WANTLIB += c lib/qt4/QtDBus lib/qt4/QtNetwork lib/qt4/QtXml m pthread
-WANTLIB += stdc++
+WANTLIB += ${LIBCXX}
 
 MODULES =	x11/kde4
 MODKDE4_USE =

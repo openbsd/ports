@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2017/02/24 13:46:22 shadchin Exp $
+# $OpenBSD: Makefile,v 1.62 2017/04/10 11:46:21 sthen Exp $
 
 COMMENT=	Python charting and plotting API
 
@@ -16,7 +16,7 @@ MAINTAINER =	Daniel Dickman <daniel@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += ${MODPY_WANTLIB}
-WANTLIB += freetype m png stdc++ z
+WANTLIB += freetype m png ${LIBCXX} z
 
 MODULES=	lang/python
 

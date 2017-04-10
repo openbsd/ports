@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2016/06/05 11:02:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2017/04/10 11:46:21 sthen Exp $
 
 COMMENT =	scim input method module for anthy
 
@@ -19,7 +19,7 @@ WANTLIB += drm expat ffi fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
 WANTLIB += gthread-2.0 gtk-x11-2.0 harfbuzz m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread-stubs pthread
-WANTLIB += scim-1.0 scim-gtkutils-1.0 scim-x11utils-1.0 stdc++ xcb
+WANTLIB += scim-1.0 scim-gtkutils-1.0 scim-x11utils-1.0 ${LIBCXX} xcb
 WANTLIB += xcb-render xcb-shm z
 
 MASTER_SITES =	${MASTER_SITE_OSDN_JP:=scim-imengine/37309/}

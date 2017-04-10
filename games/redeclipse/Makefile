@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2017/01/23 11:40:16 jsg Exp $
+# $OpenBSD: Makefile,v 1.15 2017/04/10 11:46:19 sthen Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64
 
@@ -45,7 +45,7 @@ LIB_DEPENDS-main=	devel/sdl2-mixer \
 			devel/sdl2-image \
 			net/enet>=1.3.12
 WANTLIB-main+=		GL X11 SDL2 SDL2_image SDL2_mixer c enet m pthread \
-			stdc++ z
+			${LIBCXX} z
 
 WRKDIST=		${WRKDIR}/base-${V}/src
 USE_GMAKE=		Yes

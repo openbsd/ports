@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2015/03/16 18:07:49 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2017/04/10 11:46:22 sthen Exp $
 
 COMMENT=	open-source (C++ generating) VHDL simulator
 
@@ -20,7 +20,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=	${HOMEPAGE}/~enaroska/
 
-WANTLIB += c m stdc++
+WANTLIB += c m ${LIBCXX}
 
 USE_GMAKE=	Yes
 

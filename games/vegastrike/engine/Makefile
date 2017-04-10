@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2017/02/13 07:23:37 kirby Exp $
+# $OpenBSD: Makefile,v 1.5 2017/04/10 11:46:19 sthen Exp $
 
 COMMENT =		3D space simulator
 
@@ -11,7 +11,7 @@ WANTLIB += Xext Xfixes Xi Xinerama Xmu Xrandr Xrender atk-1.0
 WANTLIB += boost_python boost_thread-mt c cairo expat fontconfig
 WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += glut gobject-2.0 gtk-x11-2.0 jpeg m ogg openal pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 png pthread stdc++ util
+WANTLIB += pangocairo-1.0 pangoft2-1.0 png pthread ${LIBCXX} util
 WANTLIB += vorbis vorbisfile z
 
 PATCHORIG =		.orig.port

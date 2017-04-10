@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2016/11/04 11:35:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2017/04/10 11:46:23 sthen Exp $
 
 COMMENT=		text based IM client
 
@@ -13,7 +13,7 @@ MAINTAINER=		Gonzalo L. R. <gonzalo@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += assuan c crypto curl gpg-error gpgme jpeg m ncursesw nghttp2
-WANTLIB += pthread ssl stdc++ z
+WANTLIB += pthread ssl ${LIBCXX} z
 
 MASTER_SITES=		http://centerim.org/download/releases/
 

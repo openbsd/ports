@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2016/11/23 09:56:21 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.58 2017/04/10 11:46:23 sthen Exp $
 
 COMMENT-main =	another eDonkey P2P file sharing client
 COMMENT-web =	webserver interface to amuled
@@ -49,7 +49,7 @@ LIB_DEPENDS-web =	${LIB_DEPENDS} ${commonLIB_DEPENDS}
 RUN_DEPENDS-main =	${RUN_DEPENDS} \
 			devel/desktop-file-utils
 
-commonWANTLIB =		c ixml m pthread stdc++ threadutil upnp \
+commonWANTLIB =		c ixml m pthread ${LIBCXX} threadutil upnp \
 			wx_base wx_base_net z
 WANTLIB-main =		${WANTLIB} ${commonWANTLIB} \
 			GeoIP X11 cryptopp fontconfig tiff vpx \

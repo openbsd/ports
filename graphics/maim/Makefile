@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2015/08/25 13:18:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2017/04/10 11:46:21 sthen Exp $
 
 V =		3.4.43
 COMMENT =	desktop screenshot utility (make image)
@@ -13,7 +13,7 @@ GH_TAGNAME =	v${V}
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += ICE Imlib2 SM X11 Xext Xfixes Xrandr c m stdc++
+WANTLIB += ICE Imlib2 SM X11 Xext Xfixes Xrandr c m ${LIBCXX}
 
 MODULES =	devel/cmake
 

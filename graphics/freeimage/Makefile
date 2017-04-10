@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2015/03/16 18:07:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2017/04/10 11:46:20 sthen Exp $
 
 COMMENT=		c++ library for common image format
 
@@ -16,7 +16,7 @@ MAINTAINER=		Eric Faurot <eric@openbsd.org>
 # GPL / "FreeImage Public Nons^WLicense"
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		stdc++
+WANTLIB=		${LIBCXX}
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=freeimage/}
 EXTRACT_SUFX=		.zip

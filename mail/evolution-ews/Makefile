@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.87 2017/03/29 13:27:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.88 2017/04/10 11:46:22 sthen Exp $
 
 COMMENT=		evolution connector for MS Exchange via EWS
 
@@ -35,7 +35,7 @@ WANTLIB += icui18n icuuc intl javascriptcoregtk-4.0 jpeg json-glib-1.0
 WANTLIB += ltdl lz4 lzma m mspack notify nspr4 nss3 nssutil3 ogg
 WANTLIB += orc-0.4 p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 plc4 plds4 png pthread pthread-stubs
-WANTLIB += secret-1 smime3 softokn3 soup-2.4 sqlite3 ssl3 stdc++
+WANTLIB += secret-1 smime3 softokn3 soup-2.4 sqlite3 ssl3 ${LIBCXX}
 WANTLIB += vorbis vorbisfile webkit2gtk-4.0 webp xcb xcb-dri2
 WANTLIB += xcb-glx xcb-render xcb-shm xcb-xfixes xml2 xslt z
 WANTLIB += lib/evolution/eabutil

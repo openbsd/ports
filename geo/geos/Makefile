@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2017/02/06 09:56:49 landry Exp $
+# $OpenBSD: Makefile,v 1.20 2017/04/10 11:46:20 sthen Exp $
 
 BROKEN-hppa =	undefined reference to `std::auto_ptr<geos::geom::Envelope>::~auto_ptr()'
 COMMENT=	2d geometry and topology engine
@@ -16,7 +16,7 @@ MASTER_SITES=		http://download.osgeo.org/geos/
 
 EXTRACT_SUFX=		.tar.bz2
 
-WANTLIB=	m stdc++
+WANTLIB=	m ${LIBCXX}
 
 USE_GMAKE=	Yes
 

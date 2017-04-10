@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2016/04/27 14:16:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2017/04/10 11:46:22 sthen Exp $
 
 COMMENT=		Verilog simulation and synthesis tool
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=		ftp://ftp.icarus.com/pub/eda/verilog/v10/
 
-WANTLIB += c m pthread readline stdc++ termcap z
+WANTLIB += c m pthread readline ${LIBCXX} termcap z
 
 USE_GMAKE=		Yes
 

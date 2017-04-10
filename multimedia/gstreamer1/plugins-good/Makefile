@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2017/01/31 03:34:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.47 2017/04/10 11:46:23 sthen Exp $
 
 # XXX ossaudio(3) is only enabled to be used as a mixing device by
 # x11/xfce4/xfce4-mixer
@@ -23,7 +23,7 @@ WANTLIB-main += FLAC Xdamage Xfixes bz2 xml2 pthread-stubs
 WANTLIB-main += gdk_pixbuf-2.0 gio-2.0 gstcontroller-1.0 lzma
 WANTLIB-main += gstfft-1.0 gstnet-1.0 gstriff-1.0 gstrtp-1.0 gstrtsp-1.0 xcb-render
 WANTLIB-main += gstallocators-1.0 gstsdp-1.0 jpeg ogg ossaudio png shout soup-2.4
-WANTLIB-main += speex sqlite3 stdc++ tag theora vorbis vpx>=5 wavpack xcb-shm
+WANTLIB-main += speex sqlite3 ${LIBCXX} tag theora vorbis vpx>=5 wavpack xcb-shm
 WANTLIB-main += Xrender cairo cairo-gobject expat fontconfig freetype pixman-1
 WANTLIB-main += v4l2 v4lconvert
 

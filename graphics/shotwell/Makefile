@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2017/03/29 13:27:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.77 2017/04/10 11:46:21 sthen Exp $
 
 COMMENT =		digital photo organizer
 
@@ -31,7 +31,7 @@ WANTLIB += jasper javascriptcoregtk-4.0 jpeg json-glib-1.0 lcms2
 WANTLIB += ltdl lzma m nghttp2 notify nspr4 nss3 oauth orc-0.4
 WANTLIB += p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
 WANTLIB += pixman-1 plc4 plds4 png pthread pthread-stubs raw secret-1
-WANTLIB += smime3 softokn3 soup-2.4 sqlite3 ssl ssl3 stdc++ webkit2gtk-4.0
+WANTLIB += smime3 softokn3 soup-2.4 sqlite3 ssl ssl3 ${LIBCXX} webkit2gtk-4.0
 WANTLIB += webp xcb xcb-dri2 xcb-glx xcb-render xcb-shm xcb-xfixes
 WANTLIB += xml2 xslt z
 

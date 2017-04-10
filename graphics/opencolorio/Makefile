@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2016/05/07 12:40:57 pascal Exp $
+# $OpenBSD: Makefile,v 1.6 2017/04/10 11:46:21 sthen Exp $
 
 COMMENT =		color management library
 
@@ -18,7 +18,7 @@ MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 # several BSD-like
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += m pthread stdc++ tinyxml yaml-cpp
+WANTLIB += m pthread ${LIBCXX} tinyxml yaml-cpp
 
 MASTER_SITES =		http://deftly.net/
 

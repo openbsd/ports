@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2016/09/12 11:45:57 naddy Exp $
+# $OpenBSD: Makefile,v 1.55 2017/04/10 11:46:23 sthen Exp $
 
 COMMENT-main =	advanced 2D and 3D scientific plotting library
 COMMENT-c++ =	C++ interface to plplot
@@ -68,7 +68,7 @@ myWANTLIB += gobject-2.0 jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0
 myWANTLIB += png z ${MODGETTEXT_WANTLIB}
 
 WANTLIB-main =	${myWANTLIB} c pthread
-WANTLIB-c++ =	${myWANTLIB} csirocsa plplotd stdc++
+WANTLIB-c++ =	${myWANTLIB} csirocsa plplotd ${LIBCXX}
 WANTLIB-f77 +=	${myWANTLIB} csirocsa plplotd ${MODFORTRAN_WANTLIB}
 
 myLIB_DEPENDS =	devel/glib2 \

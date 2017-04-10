@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2016/05/07 12:40:57 pascal Exp $
+# $OpenBSD: Makefile,v 1.21 2017/04/10 11:46:23 sthen Exp $
 
 COMMENT-main =		DVD ripper/converter
 COMMENT-dvdcpy =	copy selected info from DVD
@@ -36,7 +36,7 @@ WANTLIB-main += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB-main += glade-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB-main += gtk-x11-2.0 jpeg m notify ogg pango-1.0 pangocairo-1.0
 WANTLIB-main += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
-WANTLIB-main += stdc++ theora tiff xcb xcb-render xcb-shm xml2 z
+WANTLIB-main += ${LIBCXX} theora tiff xcb xcb-render xcb-shm xml2 z
 WANTLIB-main += harfbuzz graphite2 Xau Xdmcp lzma
 
 WANTLIB-dvdcpy += c dvdread dvdcss

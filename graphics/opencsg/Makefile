@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2016/03/26 20:37:35 zhuk Exp $
+# $OpenBSD: Makefile,v 1.8 2017/04/10 11:46:21 sthen Exp $
 
 COMMENT =		constructive solid geometry rendering library
 
@@ -15,7 +15,7 @@ HOMEPAGE =		http://www.opencsg.org/
 # GPLv2 with CGAL exception
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB +=		GL GLEW lib/qt4/QtGui m stdc++ pthread
+WANTLIB +=		GL GLEW lib/qt4/QtGui m ${LIBCXX} pthread
 WANTLIB +=		ICE SM X11 Xext Xi Xinerama Xrender fontconfig freetype
 
 MODULES =		devel/qmake x11/qt4

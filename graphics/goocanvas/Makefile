@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2016/08/31 20:47:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2017/04/10 11:46:21 sthen Exp $
 
 PORTROACH=		ignore
 
@@ -18,7 +18,7 @@ WANTLIB += Xinerama Xrandr Xrender Xxf86vm atk-1.0 cairo drm expat ffi
 WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
 WANTLIB += gtk-x11-2.0 harfbuzz m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png pthread-stubs pthread stdc++ xcb
+WANTLIB += pcre pixman-1 png pthread-stubs pthread ${LIBCXX} xcb
 WANTLIB += xcb-render xcb-shm z
 
 EXTRACT_SUFX=		.tar.bz2

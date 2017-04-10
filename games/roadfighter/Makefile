@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2017/03/01 10:15:27 benoit Exp $
+# $OpenBSD: Makefile,v 1.8 2017/04/10 11:46:19 sthen Exp $
 
 COMMENT=	remake of Konami's Road Fighter
 
@@ -26,6 +26,6 @@ LIB_DEPENDS=	devel/sdl-sound \
 		devel/sdl-image \
 		devel/sdl-ttf \
 		devel/sdl-mixer
-WANTLIB=	SDL c stdc++ m pthread SDL_sound SDL_image SDL_ttf SDL_mixer
+WANTLIB=	SDL c ${LIBCXX} m pthread SDL_sound SDL_image SDL_ttf SDL_mixer
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2015/09/24 09:16:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2017/04/10 11:46:21 sthen Exp $
 
 COMMENT=	ILM base libraries
 
@@ -17,7 +17,7 @@ HOMEPAGE=	http://www.openexr.com/
 # `name of ILM not to be used for advertizing without written agreement'
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += m pthread stdc++
+WANTLIB += m pthread ${LIBCXX}
 
 MASTER_SITES=	${MASTER_SITE_SAVANNAH:=openexr/}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2016/09/24 08:15:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.59 2017/04/10 11:46:22 sthen Exp $
 
 COMMENT-main =	anti-spam filter
 COMMENT-pgsql =	PostgreSQL driver for dspam
@@ -68,7 +68,7 @@ ERRORS += "Fatal: choose either domainscale or largescale, not both"
 
 LIB_DEPENDS-mysql =	${LIB_DEPENDS} ${PKGNAME-main}:mail/dspam,-main \
 			databases/mariadb
-WANTLIB-mysql =		${WANTLIB} crypto dspam z ssl stdc++ lib/mysql/mysqlclient
+WANTLIB-mysql =		${WANTLIB} crypto dspam z ssl ${LIBCXX} lib/mysql/mysqlclient
 
 LIB_DEPENDS-pgsql =	${LIB_DEPENDS} ${PKGNAME-main}:mail/dspam,-main \
 			databases/postgresql

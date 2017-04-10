@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2015/05/05 17:00:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2017/04/10 11:46:19 sthen Exp $
 
 COMMENT=	total conversion of the Space Hulk board game
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += GL ICE SM X11 X11-xcb Xau Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xft Xi Xinerama Xmu Xrandr Xrender Xt Xxf86vm c drm expat
 WANTLIB += fontconfig freetype glapi jpeg lcms m mng png pthread
-WANTLIB += pthread-stubs stdc++ xcb xcb-dri2 xcb-glx z
+WANTLIB += pthread-stubs ${LIBCXX} xcb xcb-dri2 xcb-glx z
 
 MASTER_SITES=	${HOMEPAGE}
 

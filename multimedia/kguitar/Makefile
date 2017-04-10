@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2016/05/07 12:40:57 pascal Exp $
+# $OpenBSD: Makefile,v 1.17 2017/04/10 11:46:23 sthen Exp $
 
 COMMENT =		guitar tab editor
 
@@ -15,7 +15,7 @@ MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =  ICE SM X11 Xext Xfixes Xrender Xt art_lgpl_2 c expat
-WANTLIB += fontconfig freetype idn m png pthread stdc++ util
+WANTLIB += fontconfig freetype idn m png pthread ${LIBCXX} util
 WANTLIB += xcb z fam pthread-stubs
 WANTLIB += X11-xcb Xdamage Xxf86vm drm glapi xcb-dri2 xcb-glx  
 WANTLIB += ${KDE}/DCOP ${KDE}/kdecore ${KDE}/kdefx ${KDE}/kdeprint

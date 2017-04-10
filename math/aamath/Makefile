@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2017/02/26 22:15:08 kili Exp $
+# $OpenBSD: Makefile,v 1.13 2017/04/10 11:46:22 sthen Exp $
 
 COMMENT=		ASCII art mathematics
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=		http://openbsd.dead-parrot.de/distfiles/
 
-WANTLIB=		c m stdc++ termcap readline
+WANTLIB=		c m ${LIBCXX} termcap readline
 
 NO_TEST=		Yes
 WRKDIST=		${WRKDIR}/aamath

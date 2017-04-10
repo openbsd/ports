@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2017/02/26 22:29:58 kili Exp $
+# $OpenBSD: Makefile,v 1.7 2017/04/10 11:46:18 sthen Exp $
 
 COMMENT =	open source remake of old DOS game Sherlock
 
@@ -13,7 +13,7 @@ HOMEPAGE =	http://games.flowix.com/
 # "you can download game for free under GPL license terms".
 PERMIT_PACKAGE_CDROM =		Yes
 
-WANTLIB =	c freetype m pthread stdc++ z SDL>=8 SDL_mixer>=3 SDL_ttf>=7
+WANTLIB =	c freetype m pthread ${LIBCXX} z SDL>=8 SDL_mixer>=3 SDL_ttf>=7
 
 MASTER_SITES =	${HOMEPAGE}files/einstein/
 EXTRACT_SUFX =	-src.tar.gz

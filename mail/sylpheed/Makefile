@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.111 2016/08/26 09:13:59 edd Exp $
+# $OpenBSD: Makefile,v 1.112 2017/04/10 11:46:22 sthen Exp $
 
 COMMENT =		lightweight and user-friendly e-mail client
 
@@ -24,7 +24,7 @@ WANTLIB += Xinerama Xrandr Xrender c crypto atk-1.0 cairo gdk_pixbuf-2.0
 WANTLIB += pango-1.0 pangocairo-1.0 dbus-1 dbus-glib-1 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 expat fontconfig freetype m pixman-1
 WANTLIB += pthread pthread-stubs gthread-2.0 pcre enchant pangoft2-1.0
-WANTLIB += png gpgme gpg-error gtkspell ssl stdc++ xcb xcb-render xcb-shm z
+WANTLIB += png gpgme gpg-error gtkspell ssl ${LIBCXX} xcb xcb-render xcb-shm z
 WANTLIB += gtk-x11-2.0 gdk-x11-2.0 gtkspell assuan ffi graphite2 harfbuzz
 
 RUN_DEPENDS =		devel/desktop-file-utils

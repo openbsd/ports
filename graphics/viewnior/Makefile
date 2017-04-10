@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2016/03/11 19:59:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2017/04/10 11:46:21 sthen Exp $
 
 COMMENT=		fast and simple image viewer
 
@@ -16,7 +16,7 @@ WANTLIB += Xrandr Xrender atk-1.0 c cairo exiv2 expat ffi fontconfig
 WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-x11-2.0
 WANTLIB += harfbuzz m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
-WANTLIB += pixman-1 png pthread pthread-stubs stdc++ xcb xcb-render
+WANTLIB += pixman-1 png pthread pthread-stubs ${LIBCXX} xcb xcb-render
 WANTLIB += xcb-shm z
 
 MASTER_SITES=		https://github.com/xsisqox/Viewnior/archive/

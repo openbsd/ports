@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2016/11/04 11:35:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2017/04/10 11:46:23 sthen Exp $
 
 COMMENT=		command-line podcast downloader
 
@@ -17,7 +17,7 @@ MAINTAINER=		Gleydson Soares <gsoares@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c crypto curl glib-2.0 id3 lzma m nghttp2 pcre pthread ssl
-WANTLIB += stdc++ xml2 z
+WANTLIB += ${LIBCXX} xml2 z
 
 MODULES=		devel/gettext
 

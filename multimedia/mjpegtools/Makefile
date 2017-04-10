@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2016/03/11 20:28:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.38 2017/04/10 11:46:23 sthen Exp $
 
 COMMENT=		tools to edit/modify/encode video streams
 
@@ -25,7 +25,7 @@ WANTLIB += ffi fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
 WANTLIB += gthread-2.0 gtk-x11-2.0 harfbuzz jpeg m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
-WANTLIB += sndio stdc++ usbhid xcb xcb-render xcb-shm z
+WANTLIB += sndio ${LIBCXX} usbhid xcb xcb-render xcb-shm z
 
 MODULES=		devel/gettext
 LIB_DEPENDS=		devel/sdl \

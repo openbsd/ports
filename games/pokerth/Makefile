@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2016/09/23 09:16:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2017/04/10 11:46:19 sthen Exp $
 
 COMMENT=	texas hold'em poker game with online capabilities
 BROKEN-hppa =	needs atomic ops
@@ -16,7 +16,7 @@ HOMEPAGE=	http://www.pokerth.net/
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c m pthread stdc++
+WANTLIB += c m pthread ${LIBCXX}
 WANTLIB += ICE lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSql SDL SDL_mixer SM
 WANTLIB += X11 Xext Xi Xinerama Xrender boost_filesystem-mt boost_iostreams-mt
 WANTLIB += boost_program_options-mt boost_random-mt boost_regex-mt

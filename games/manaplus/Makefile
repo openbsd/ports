@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.86 2016/11/04 14:33:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.87 2017/04/10 11:46:19 sthen Exp $
 
 COMMENT =	client for The Mana World
 V =		1.6.3.26
@@ -12,7 +12,7 @@ HOMEPAGE =	http://manaplus.org/
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += GL X11 c crypto curl m nghttp2 physfs png pthread ssl stdc++ xml2 z
+WANTLIB += GL X11 c crypto curl m nghttp2 physfs png pthread ssl ${LIBCXX} xml2 z
 
 MASTER_SITES =	http://download.evolonline.org/manaplus/download/${V}/
 

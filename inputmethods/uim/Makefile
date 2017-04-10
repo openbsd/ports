@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2016/03/19 22:48:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.54 2017/04/10 11:46:21 sthen Exp $
 
 DPB_PROPERTIES=		tag:kde3
 
@@ -53,7 +53,7 @@ RUN_DEPENDS-main=	${MODGETTEXT_RUN_DEPENDS} \
 			devel/desktop-file-utils
 
 WANTLIB-main += ${cWANTLIB}
-WANTLIB-main += Xft anthy anthydic c curses expat pthread-stubs stdc++
+WANTLIB-main += Xft anthy anthydic c curses expat pthread-stubs ${LIBCXX}
 WANTLIB-main += util xcb z
 
 LIB_DEPENDS-main=	${MODGETTEXT_LIB_DEPENDS} \
@@ -87,7 +87,7 @@ WANTLIB-kde += ${cWANTLIB} ${KDE}/kdecore ${KDE}/kdeui
 WANTLIB-kde += DCOP GL ICE SM X11-xcb Xau Xcursor Xdamage Xdmcp Xfixes
 WANTLIB-kde += Xft Xi Xinerama Xmu Xrandr Xt Xxf86vm art_lgpl_2 drm
 WANTLIB-kde += expat gcroots glapi idn jpeg kdefx lcms mng png pthread
-WANTLIB-kde += pthread-stubs qt-mt stdc++ uim uim-scm util xcb xcb-dri2
+WANTLIB-kde += pthread-stubs qt-mt ${LIBCXX} uim uim-scm util xcb xcb-dri2
 WANTLIB-kde += xcb-glx z
 
 LIB_DEPENDS-kde=	inputmethods/uim \
@@ -96,7 +96,7 @@ LIB_DEPENDS-kde=	inputmethods/uim \
 WANTLIB-qt += ${cWANTLIB} ${MODQT3_WANTLIB}
 WANTLIB-qt += GL ICE SM X11-xcb Xau Xcursor Xdamage Xdmcp Xfixes
 WANTLIB-qt += Xft Xi Xinerama Xmu Xrandr Xt Xxf86vm c drm expat gcroots
-WANTLIB-qt += glapi jpeg lcms mng png pthread pthread-stubs stdc++
+WANTLIB-qt += glapi jpeg lcms mng png pthread pthread-stubs ${LIBCXX}
 WANTLIB-qt += uim uim-custom uim-scm xcb xcb-dri2 xcb-glx z
 
 LIB_DEPENDS-qt=		${MODQT3_LIB_DEPENDS} \
@@ -104,7 +104,7 @@ LIB_DEPENDS-qt=		${MODQT3_LIB_DEPENDS} \
 			inputmethods/uim
 
 WANTLIB-qt4 += ${cWANTLIB} ${MODQT4_WANTLIB}
-WANTLIB-qt4 += ICE QtGui SM Xi Xinerama c pthread stdc++ uim
+WANTLIB-qt4 += ICE QtGui SM Xi Xinerama c pthread ${LIBCXX} uim
 WANTLIB-qt4 += uim-custom uim-scm
 
 LIB_DEPENDS-qt4=	${MODQT4_LIB_DEPENDS} \

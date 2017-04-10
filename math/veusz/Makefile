@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2016/01/04 08:26:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2017/04/10 11:46:23 sthen Exp $
 
 COMMENT =	scientific plotting and graphing package
 MODPY_EGG_VERSION =	1.23.1
@@ -11,7 +11,7 @@ HOMEPAGE =	http://home.gna.org/veusz/
 # GPLv2+
 PERMIT_PACKAGE_CDROM =		Yes
 
-WANTLIB += lib/qt4/QtGui lib/qt4/QtXml m pthread stdc++ ${MODPY_WANTLIB}
+WANTLIB += lib/qt4/QtGui lib/qt4/QtXml m pthread ${LIBCXX} ${MODPY_WANTLIB}
 
 MASTER_SITES =	http://download.gna.org/veusz/
 

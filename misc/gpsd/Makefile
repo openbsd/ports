@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2015/06/05 06:00:21 robert Exp $
+# $OpenBSD: Makefile,v 1.63 2017/04/10 11:46:23 sthen Exp $
 
 COMMENT-main=		service daemon that monitors one or more GPSes
 COMMENT-x11=		GUI test apps using gpsd
@@ -56,7 +56,7 @@ CONFIGURE_ARGS+=	--without-x
 CONFIGURE_ENV +=	LDFLAGS="-lm -pthread -lutil"
 .endif
 
-WANTLIB-main=		m ncurses c pthread stdc++ usb-1.0 util ${MODPY_WANTLIB}
+WANTLIB-main=		m ncurses c pthread ${LIBCXX} usb-1.0 util ${MODPY_WANTLIB}
 
 # the php display script doesn't depend on having any of gpsd around,
 # it just sits there and looks pretty.
