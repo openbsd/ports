@@ -1,23 +1,12 @@
-$OpenBSD: patch-src_build-data_os_openbsd_txt,v 1.2 2017/03/16 12:32:16 bluhm Exp $
-
-commit 6eb7588d45b7b793b11f67788a2c27eeb0d7796e
-Author: Alexander Bluhm <alexander.bluhm@gmx.net>
-Date:   Mon Mar 13 16:23:58 2017 +0100
-
-    OpenBSD does not have 3 digit soname and library symlinks.
-    
-    Set library name for openbsd to libbotan-2.so.0.0 and do not install
-    symlinks.
-
---- src/build-data/os/openbsd.txt.orig	Tue Jan 10 04:21:31 2017
-+++ src/build-data/os/openbsd.txt	Fri Mar 10 01:54:13 2017
-@@ -1,6 +1,8 @@
- os_type unix
+$OpenBSD: patch-src_build-data_os_openbsd_txt,v 1.3 2017/04/10 11:10:33 bluhm Exp $
+--- src/build-data/os/openbsd.txt.orig	Wed Apr  5 03:09:22 2017
++++ src/build-data/os/openbsd.txt	Sun Apr  9 23:59:46 2017
+@@ -2,7 +2,7 @@ os_type unix
  
--soname_suffix "so"
-+soname_pattern_base  "libbotan-{version_major}.so"
-+soname_pattern_abi   "libbotan-{version_major}.so.{abi_rev}"
-+soname_pattern_patch "libbotan-{version_major}.so.{abi_rev}.{version_minor}"
+ soname_pattern_base  "libbotan-{version_major}.so"
+ soname_pattern_abi   "libbotan-{version_major}.so.{abi_rev}"
+-soname_pattern_patch "libbotan-{version_major}.so.{abi_rev}.{version_minor}"
++soname_pattern_patch "libbotan-{version_major}.so.${LIBbotan-2_VERSION}"
  
  <target_features>
- clock_gettime
+ arc4random

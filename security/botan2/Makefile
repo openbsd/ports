@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2017/04/03 10:08:17 jca Exp $
+# $OpenBSD: Makefile,v 1.4 2017/04/10 11:10:33 bluhm Exp $
 
 COMMENT =	crypto and TLS for C++11
 
-VERSION =	2.0.1
-REVISION =	0
+VERSION =	2.1.0
 DISTNAME =	Botan-${VERSION}
 PKGNAME =	botan2-${VERSION}
 
-SHARED_LIBS =	botan-2		0.0
+SHARED_LIBS =	botan-2		1.0
 
 CATEGORIES =	security
 
@@ -51,10 +50,11 @@ PKG_ARGS =		-Dx86=1
 PKG_ARGS =		-Dx86=0
 .endif
 
-SUBST_VARS =		CXX CXXFLAGS
+SUBST_VARS =		CXX CXXFLAGS LIBbotan-2_VERSION
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/build-data/cc/gcc.txt
+	${SUBST_CMD} ${WRKSRC}/src/build-data/os/openbsd.txt
 	ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
 
 do-test:
@@ -62,6 +62,7 @@ do-test:
 
 post-install:
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
-	    ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/botan.py
+	    ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/botan2.py
+	cd ${PREFIX}/share/doc && mv botan-${VERSION} botan-2
 
 .include <bsd.port.mk>
