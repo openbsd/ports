@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2016/10/28 13:40:27 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.25 2017/04/11 07:26:02 ajacoutot Exp $
 include/atk-1.0/
 include/atk-1.0/atk/
 include/atk-1.0/atk/atk-enum-types.h
@@ -92,7 +92,7 @@ share/gtk-doc/html/atk/atk-AtkSocket.html
 share/gtk-doc/html/atk/atk-AtkState.html
 share/gtk-doc/html/atk/atk-Versioning-Utilities.html
 share/gtk-doc/html/atk/atk.devhelp2
-share/gtk-doc/html/atk/atkobject.html
+share/gtk-doc/html/atk/base-object.html
 share/gtk-doc/html/atk/data.html
 share/gtk-doc/html/atk/deprecated.html
 share/gtk-doc/html/atk/home.png
@@ -139,6 +139,7 @@ share/locale/eu/LC_MESSAGES/atk10.mo
 share/locale/fa/LC_MESSAGES/atk10.mo
 share/locale/fi/LC_MESSAGES/atk10.mo
 share/locale/fr/LC_MESSAGES/atk10.mo
+share/locale/fur/LC_MESSAGES/atk10.mo
 share/locale/ga/LC_MESSAGES/atk10.mo
 share/locale/gd/LC_MESSAGES/atk10.mo
 share/locale/gl/LC_MESSAGES/atk10.mo
