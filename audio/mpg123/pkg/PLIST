@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2016/03/13 22:42:28 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.11 2017/04/11 20:25:55 naddy Exp $
 @bin bin/mpg123
 @bin bin/mpg123-id3dump
 @bin bin/mpg123-strip
@@ -13,9 +13,7 @@ lib/libout123.a
 lib/libout123.la
 @lib lib/libout123.so.${LIBout123_VERSION}
 lib/mpg123/
-@comment lib/mpg123/output_dummy.la
 lib/mpg123/output_dummy.so
-@comment lib/mpg123/output_sndio.la
 lib/mpg123/output_sndio.so
 lib/pkgconfig/libmpg123.pc
 lib/pkgconfig/libout123.pc

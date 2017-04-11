@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.86 2016/11/01 12:27:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.87 2017/04/11 20:25:55 naddy Exp $
 
 COMMENT=	fast console MPEG audio player and decoder library
 
-DISTNAME=	mpg123-1.23.8
-SHARED_LIBS=	mpg123		6.0	# 42.2
-SHARED_LIBS+=	out123		0.1	# 1.4
+DISTNAME=	mpg123-1.24.0
+SHARED_LIBS=	mpg123		6.1	# 43.0
+SHARED_LIBS+=	out123		1.0	# 2.1
 CATEGORIES=	audio
-HOMEPAGE=	http://www.mpg123.de/
+HOMEPAGE=	https://www.mpg123.de/
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
@@ -14,21 +14,20 @@ MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mpg123/} \
-		http://www.mpg123.de/download/
+		https://www.mpg123.de/download/
 EXTRACT_SUFX=	.tar.bz2
 
-WANTLIB=	c ltdl m sndio
-LIB_DEPENDS=	devel/libtool,-ltdl
+WANTLIB=	c m sndio
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--enable-static \
 		--disable-lfs-alias \
 		--with-audio=sndio \
-		--with-module-suffix=.so \
 		--with-optimization=0
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/build
+MAKE_ENV=	RM='rm -f'
 
 .if   ${MACHINE_ARCH} == "amd64"
 # no support for AVX instructions in as(1)

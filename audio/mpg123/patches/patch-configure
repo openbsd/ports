@@ -1,0 +1,13 @@
+$OpenBSD: patch-configure,v 1.19 2017/04/11 20:25:55 naddy Exp $
+--- configure.orig	Thu Mar  2 08:52:53 2017
++++ configure	Tue Apr 11 21:41:07 2017
+@@ -14961,6 +14961,9 @@ $as_echo "no" >&6; }
+       ;;
+     esac
+   ;;
++  aarch64-*-openbsd*)
++    cpu_type="aarch64"
++  ;;
+   i?86-*-dragonfly* | i?86-*-freebsd* | i?86-*-midnightbsd* | i?86-*-mirbsd* | i?86-*-netbsd* | i?86-*-openbsd* | i?86-*-haiku*)
+     cpu_type="x86"
+     newoldwritesample=enabled
