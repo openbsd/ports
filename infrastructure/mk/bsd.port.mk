@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1339 2017/02/28 21:31:46 edd Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1340 2017/04/11 15:36:56 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -666,7 +666,7 @@ _TEST_COOKIE =			${WRKDIR}/.test_done
 
 _ALL_COOKIES = ${_EXTRACT_COOKIE} ${_PATCH_COOKIE} ${_CONFIGURE_COOKIE} \
 	${_INSTALL_PRE_COOKIE} ${_BUILD_COOKIE} ${_TEST_COOKIE} \
-	${_PACKAGE_COOKIES} \
+	${_PACKAGE_COOKIES} ${_CACHE_PACKAGE_COOKIES} \
 	${_DISTPATCH_COOKIE} ${_PREPATCH_COOKIE} ${_FAKE_COOKIE} \
 	${_WRKDIR_COOKIE} ${_DEPBUILD_COOKIES} \
 	${_DEPRUN_COOKIES} ${_DEPTEST_COOKIES} ${_UPDATE_COOKIES} \
@@ -854,6 +854,7 @@ _PACKAGE_COOKIE${_S} = ${PACKAGE_REPOSITORY}/${NO_ARCH}/${_PKGFILE${_S}}
 .  else
 _PACKAGE_COOKIE${_S} = ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/all/${_PKGFILE${_S}}
 .  endif
+_CACHE_PACKAGE_COOKIES += ${_CACHE_REPO}${_PKGFILE${_S}}
 .endfor
 
 .for _S in ${BUILD_PACKAGES}
@@ -1850,7 +1851,7 @@ check-register-all:
 
 .for _S in ${MULTI_PACKAGES}
 
-${_CACHE_REPO}/${_PKGFILE${_S}}:
+${_CACHE_REPO}${_PKGFILE${_S}}:
 	@install -d ${PACKAGE_REPOSITORY_MODE} ${@D}
 	@${ECHO_MSG} -n "===>  Looking for ${_PKGFILE${_S}} in \$$PKG_PATH - "
 	@if ${SETENV} ${_TERM_ENV} PKG_CACHE=${_CACHE_REPO} PKG_PATH=${_CACHE_REPO}:${_PKG_REPO}:${PACKAGE_REPOSITORY}/${NO_ARCH}/:${PKG_PATH} ${_PKG_ADD} -n -q ${_PKG_ADD_FORCE} -r -D installed -D downgrade ${_PKGFILE${_S}} >/dev/null 2>&1; then \
@@ -1867,7 +1868,7 @@ ${_CACHE_REPO}/${_PKGFILE${_S}}:
 ${_PACKAGE_COOKIE${_S}}:
 	@install -d ${PACKAGE_REPOSITORY_MODE} ${@D} ${_TMP_REPO}
 .  if ${FETCH_PACKAGES:L} == "yes" && !defined(_TRIED_FETCHING_${_PACKAGE_COOKIE${_S}})
-	@f=${_CACHE_REPO}/${_PKGFILE${_S}}; \
+	@f=${_CACHE_REPO}${_PKGFILE${_S}}; \
 	cd ${.CURDIR} && ${MAKE} $$f && \
 		{ ln $$f $@ 2>/dev/null || cp -p $$f $@ ; } || \
 		cd ${.CURDIR} && ${MAKE} _TRIED_FETCHING_${_PACKAGE_COOKIE${_S}}=Yes _internal-package-only
@@ -2921,7 +2922,7 @@ _internal-clean:
 .  endif
 .endif
 .if ${_clean:Mpackages} || ${_clean:Mpackage} && ${_clean:Msub}
-	rm -f ${_PACKAGE_COOKIES} ${_UPDATE_COOKIES}
+	rm -f ${_PACKAGE_COOKIES} ${_UPDATE_COOKIES} ${_CACHE_PACKAGE_COOKIES}
 .elif ${_clean:Mpackage}
 	rm -f ${_PACKAGE_COOKIES${SUBPACKAGE}} ${_UPDATE_COOKIE${SUBPACKAGE}}
 .endif
