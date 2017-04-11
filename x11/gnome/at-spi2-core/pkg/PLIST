@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2016/10/28 13:41:02 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.18 2017/04/11 07:26:24 ajacoutot Exp $
 include/at-spi-2.0/
 include/at-spi-2.0/atspi/
 include/at-spi-2.0/atspi/atspi-accessible.h
@@ -124,8 +124,6 @@ share/locale/eu/LC_MESSAGES/at-spi2-core.mo
 share/locale/fa/LC_MESSAGES/at-spi2-core.mo
 share/locale/fi/LC_MESSAGES/at-spi2-core.mo
 share/locale/fr/LC_MESSAGES/at-spi2-core.mo
-share/locale/fur/
-share/locale/fur/LC_MESSAGES/
 share/locale/fur/LC_MESSAGES/at-spi2-core.mo
 share/locale/ga/LC_MESSAGES/at-spi2-core.mo
 share/locale/gd/LC_MESSAGES/at-spi2-core.mo
