@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2016/06/23 20:56:23 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.14 2017/04/11 20:34:27 sebastia Exp $
 bin/GSSpeechServer
 @bin bin/gclose
 @bin bin/gcloseall
@@ -50,6 +50,7 @@ include/AppKit/GSVbox.h
 include/AppKit/GSVersion.h
 include/AppKit/GSWindowDecorationView.h
 include/AppKit/GSXibElement.h
+include/AppKit/GSXibKeyedUnarchiver.h
 include/AppKit/GSXibLoading.h
 include/AppKit/GSXibObjectContainer.h
 include/AppKit/GSXibParser.h
@@ -250,6 +251,7 @@ include/GNUstepGUI/GSVbox.h
 include/GNUstepGUI/GSVersion.h
 include/GNUstepGUI/GSWindowDecorationView.h
 include/GNUstepGUI/GSXibElement.h
+include/GNUstepGUI/GSXibKeyedUnarchiver.h
 include/GNUstepGUI/GSXibLoading.h
 include/GNUstepGUI/GSXibObjectContainer.h
 include/GNUstepGUI/GSXibParser.h
@@ -296,6 +298,7 @@ include/gnustep/gui/GSVbox.h
 include/gnustep/gui/GSVersion.h
 include/gnustep/gui/GSWindowDecorationView.h
 include/gnustep/gui/GSXibElement.h
+include/gnustep/gui/GSXibKeyedUnarchiver.h
 include/gnustep/gui/GSXibLoading.h
 include/gnustep/gui/GSXibObjectContainer.h
 include/gnustep/gui/GSXibParser.h
