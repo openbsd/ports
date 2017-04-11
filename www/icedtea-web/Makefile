@@ -1,8 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2017/04/10 11:46:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2017/04/11 12:45:36 giovanni Exp $
 
 COMMENT =	Java web browser plugin
 DISTNAME =	icedtea-web-1.6.2
+REVISION =	0
 CATEGORIES =	www
+
+MAINTAINER =	Giovanni Bechis <giovanni@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
@@ -12,14 +15,14 @@ HOMEPAGE =	http://icedtea.classpath.org/wiki/IcedTea-Web
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		BIN_BASH=${LOCALBASE}/bin/bash
-CONFIGURE_ARGS =	--with-jdk-home=${LOCALBASE}/jdk-1.7.0 \
+CONFIGURE_ARGS =	--with-jdk-home=${LOCALBASE}/jdk-1.8.0 \
 			--disable-docs \
 			--libdir=${TRUEPREFIX}/lib/mozilla/plugins
 
 MODULES =	java \
 		devel/gettext
 
-MODJAVA_VER=	1.7+
+MODJAVA_VER=	1.8+
 
 #build system does horrible things with bash
 RUN_DEPENDS =	shells/bash
