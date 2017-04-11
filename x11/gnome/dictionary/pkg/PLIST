@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2016/04/25 17:09:45 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2017/04/11 09:43:59 ajacoutot Exp $
 @conflict gnome-utils-*
 @bin bin/gnome-dictionary
 include/gdict-1.0/
@@ -57,7 +57,6 @@ share/gtk-doc/html/gdict/gdict.html
 share/gtk-doc/html/gdict/gdictui.html
 share/gtk-doc/html/gdict/home.png
 share/gtk-doc/html/gdict/index.html
-share/gtk-doc/html/gdict/index.sgml
 share/gtk-doc/html/gdict/introduction.html
 share/gtk-doc/html/gdict/ix01.html
 share/gtk-doc/html/gdict/ix02.html
@@ -681,6 +680,7 @@ share/locale/fi/LC_MESSAGES/gnome-dictionary.mo
 share/locale/fr/LC_MESSAGES/gnome-dictionary.mo
 share/locale/fur/LC_MESSAGES/gnome-dictionary.mo
 share/locale/ga/LC_MESSAGES/gnome-dictionary.mo
+share/locale/gd/LC_MESSAGES/gnome-dictionary.mo
 share/locale/gl/LC_MESSAGES/gnome-dictionary.mo
 share/locale/gu/LC_MESSAGES/gnome-dictionary.mo
 share/locale/he/LC_MESSAGES/gnome-dictionary.mo
@@ -688,6 +688,7 @@ share/locale/hi/LC_MESSAGES/gnome-dictionary.mo
 share/locale/hr/LC_MESSAGES/gnome-dictionary.mo
 share/locale/hu/LC_MESSAGES/gnome-dictionary.mo
 share/locale/id/LC_MESSAGES/gnome-dictionary.mo
+share/locale/is/LC_MESSAGES/gnome-dictionary.mo
 share/locale/it/LC_MESSAGES/gnome-dictionary.mo
 share/locale/ja/LC_MESSAGES/gnome-dictionary.mo
 share/locale/ka/LC_MESSAGES/gnome-dictionary.mo
