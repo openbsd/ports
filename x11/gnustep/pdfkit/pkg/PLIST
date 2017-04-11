@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/04/18 12:38:17 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.3 2017/04/11 20:31:41 sebastia Exp $
 include/PDFKit
-lib/GNUstep/
 lib/GNUstep/Frameworks/
 lib/GNUstep/Frameworks/PDFKit.framework/
 lib/GNUstep/Frameworks/PDFKit.framework/Headers

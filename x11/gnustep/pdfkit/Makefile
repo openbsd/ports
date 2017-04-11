@@ -1,11 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2017/04/10 11:46:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2017/04/11 20:31:41 sebastia Exp $
 
 COMMENT =	framework for accessing and rendering PDF content
 
-BROKEN =	shows PDFs only white, and breaks GWorkspace on macppc
-
-REVISION =	3
-DISTNAME =	PDFKit-0.9.3
+DISTNAME =	PDFKit-1.0.1
 SHARED_LIBS +=	PDFKit	0.0
 
 HOMEPAGE =	http://wiki.gnustep.org/index.php/PDFKit
@@ -13,7 +10,7 @@ MASTER_SITES =	${MASTER_SITE_SAVANNAH:=gap/}
 
 MODULES =		x11/gnustep
 MODGNUSTEP_IS_FRAMEWORK	= Yes
-WANTLIB += 		${LIBCXX} pthread freetype m
+WANTLIB += 		pthread freetype m z
 BUILD_DEPENDS =		x11/gnustep/gui
 
 CONFIGURE_STYLE =	gnu
