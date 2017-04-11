@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.51 2017/02/13 16:07:52 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.52 2017/04/11 07:25:38 ajacoutot Exp $
 @conflict glib2-docs-*
 @conflict glib2-fam-*
 @pkgpath devel/glib2,-docs
@@ -262,6 +262,7 @@ include/glib-2.0/glib/gtypes.h
 include/glib-2.0/glib/gunicode.h
 include/glib-2.0/glib/gurifuncs.h
 include/glib-2.0/glib/gutils.h
+include/glib-2.0/glib/guuid.h
 include/glib-2.0/glib/gvariant.h
 include/glib-2.0/glib/gvarianttype.h
 include/glib-2.0/glib/gversion.h
@@ -349,8 +350,8 @@ share/gdb/auto-load/
 share/gdb/auto-load/usr/
 share/gdb/auto-load/usr/local/
 share/gdb/auto-load/usr/local/lib/
-share/gdb/auto-load/usr/local/lib/libglib-2.0.so.0.5000.3-gdb.py
-share/gdb/auto-load/usr/local/lib/libgobject-2.0.so.0.5000.3-gdb.py
+share/gdb/auto-load/usr/local/lib/libglib-2.0.so.0.5200.1-gdb.py
+share/gdb/auto-load/usr/local/lib/libgobject-2.0.so.0.5200.1-gdb.py
 share/gettext/its/
 share/gettext/its/gschema.its
 share/gettext/its/gschema.loc
@@ -388,6 +389,8 @@ share/glib-2.0/gettext/po/
 share/glib-2.0/gettext/po/Makefile.in.in
 share/glib-2.0/schemas/
 share/glib-2.0/schemas/gschema.dtd
+share/glib-2.0/valgrind/
+share/glib-2.0/valgrind/glib.supp
 share/gtk-doc/
 share/gtk-doc/html/
 share/gtk-doc/html/gio/
@@ -524,24 +527,6 @@ share/gtk-doc/html/gio/GVolumeMonitor.html
 share/gtk-doc/html/gio/GZlibCompressor.html
 share/gtk-doc/html/gio/GZlibDecompressor.html
 share/gtk-doc/html/gio/annotation-glossary.html
-share/gtk-doc/html/gio/api-index-2-18.html
-share/gtk-doc/html/gio/api-index-2-20.html
-share/gtk-doc/html/gio/api-index-2-22.html
-share/gtk-doc/html/gio/api-index-2-24.html
-share/gtk-doc/html/gio/api-index-2-26.html
-share/gtk-doc/html/gio/api-index-2-28.html
-share/gtk-doc/html/gio/api-index-2-30.html
-share/gtk-doc/html/gio/api-index-2-32.html
-share/gtk-doc/html/gio/api-index-2-34.html
-share/gtk-doc/html/gio/api-index-2-36.html
-share/gtk-doc/html/gio/api-index-2-38.html
-share/gtk-doc/html/gio/api-index-2-40.html
-share/gtk-doc/html/gio/api-index-2-42.html
-share/gtk-doc/html/gio/api-index-2-44.html
-share/gtk-doc/html/gio/api-index-2-46.html
-share/gtk-doc/html/gio/api-index-2-48.html
-share/gtk-doc/html/gio/api-index-2-50.html
-share/gtk-doc/html/gio/api-index-deprecated.html
 share/gtk-doc/html/gio/api-index-full.html
 share/gtk-doc/html/gio/application.html
 share/gtk-doc/html/gio/async.html
@@ -646,32 +631,6 @@ share/gtk-doc/html/glib/Sorted_binary_tree_inorder.svg
 share/gtk-doc/html/glib/Sorted_binary_tree_postorder.svg
 share/gtk-doc/html/glib/Sorted_binary_tree_preorder.svg
 share/gtk-doc/html/glib/annotation-glossary.html
-share/gtk-doc/html/glib/api-index-2-10.html
-share/gtk-doc/html/glib/api-index-2-12.html
-share/gtk-doc/html/glib/api-index-2-14.html
-share/gtk-doc/html/glib/api-index-2-16.html
-share/gtk-doc/html/glib/api-index-2-18.html
-share/gtk-doc/html/glib/api-index-2-2.html
-share/gtk-doc/html/glib/api-index-2-20.html
-share/gtk-doc/html/glib/api-index-2-22.html
-share/gtk-doc/html/glib/api-index-2-24.html
-share/gtk-doc/html/glib/api-index-2-26.html
-share/gtk-doc/html/glib/api-index-2-28.html
-share/gtk-doc/html/glib/api-index-2-30.html
-share/gtk-doc/html/glib/api-index-2-32.html
-share/gtk-doc/html/glib/api-index-2-34.html
-share/gtk-doc/html/glib/api-index-2-36.html
-share/gtk-doc/html/glib/api-index-2-38.html
-share/gtk-doc/html/glib/api-index-2-4.html
-share/gtk-doc/html/glib/api-index-2-40.html
-share/gtk-doc/html/glib/api-index-2-42.html
-share/gtk-doc/html/glib/api-index-2-44.html
-share/gtk-doc/html/glib/api-index-2-46.html
-share/gtk-doc/html/glib/api-index-2-48.html
-share/gtk-doc/html/glib/api-index-2-50.html
-share/gtk-doc/html/glib/api-index-2-6.html
-share/gtk-doc/html/glib/api-index-2-8.html
-share/gtk-doc/html/glib/api-index-deprecated.html
 share/gtk-doc/html/glib/api-index-full.html
 share/gtk-doc/html/glib/deprecated.html
 share/gtk-doc/html/glib/file-name-encodings.png
@@ -701,6 +660,7 @@ share/gtk-doc/html/glib/glib-Error-Reporting.html
 share/gtk-doc/html/glib/glib-File-Utilities.html
 share/gtk-doc/html/glib/glib-GDateTime.html
 share/gtk-doc/html/glib/glib-GTimeZone.html
+share/gtk-doc/html/glib/glib-GUuid.html
 share/gtk-doc/html/glib/glib-GVariant.html
 share/gtk-doc/html/glib/glib-GVariantType.html
 share/gtk-doc/html/glib/glib-Glob-style-pattern-matching.html
@@ -781,28 +741,6 @@ share/gtk-doc/html/gobject/GBinding.html
 share/gtk-doc/html/gobject/GTypeModule.html
 share/gtk-doc/html/gobject/GTypePlugin.html
 share/gtk-doc/html/gobject/annotation-glossary.html
-share/gtk-doc/html/gobject/api-index-2-10.html
-share/gtk-doc/html/gobject/api-index-2-12.html
-share/gtk-doc/html/gobject/api-index-2-14.html
-share/gtk-doc/html/gobject/api-index-2-18.html
-share/gtk-doc/html/gobject/api-index-2-2.html
-share/gtk-doc/html/gobject/api-index-2-22.html
-share/gtk-doc/html/gobject/api-index-2-24.html
-share/gtk-doc/html/gobject/api-index-2-26.html
-share/gtk-doc/html/gobject/api-index-2-28.html
-share/gtk-doc/html/gobject/api-index-2-30.html
-share/gtk-doc/html/gobject/api-index-2-32.html
-share/gtk-doc/html/gobject/api-index-2-34.html
-share/gtk-doc/html/gobject/api-index-2-36.html
-share/gtk-doc/html/gobject/api-index-2-38.html
-share/gtk-doc/html/gobject/api-index-2-4.html
-share/gtk-doc/html/gobject/api-index-2-40.html
-share/gtk-doc/html/gobject/api-index-2-42.html
-share/gtk-doc/html/gobject/api-index-2-44.html
-share/gtk-doc/html/gobject/api-index-2-46.html
-share/gtk-doc/html/gobject/api-index-2-6.html
-share/gtk-doc/html/gobject/api-index-2-8.html
-share/gtk-doc/html/gobject/api-index-deprecated.html
 share/gtk-doc/html/gobject/api-index-full.html
 share/gtk-doc/html/gobject/ch01s02.html
 share/gtk-doc/html/gobject/chapter-gobject.html
@@ -931,6 +869,9 @@ share/locale/fa/LC_MESSAGES/
 share/locale/fa/LC_MESSAGES/glib20.mo
 share/locale/fi/LC_MESSAGES/glib20.mo
 share/locale/fr/LC_MESSAGES/glib20.mo
+share/locale/fur/
+share/locale/fur/LC_MESSAGES/
+share/locale/fur/LC_MESSAGES/glib20.mo
 share/locale/ga/LC_MESSAGES/glib20.mo
 share/locale/gd/
 share/locale/gd/LC_MESSAGES/
