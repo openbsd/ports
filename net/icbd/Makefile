@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2016/05/07 12:40:58 pascal Exp $
+# $OpenBSD: Makefile,v 1.12 2017/04/11 11:01:39 sthen Exp $
 
 COMMENT =		Internet Citizens Band Server
 
 GH_ACCOUNT =		mbelop
 GH_PROJECT =		icbd
 GH_TAGNAME =		1.7
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		net
 
