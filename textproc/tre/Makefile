@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2015/03/16 18:07:57 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2017/04/11 13:56:52 sthen Exp $
 
 COMMENT=	lightweight regexp matching library with additional features
 
 DISTNAME=		tre-0.8.0
 EXTRACT_SUFX=		.tar.bz2
 CATEGORIES=		textproc
-REVISION=		1
+REVISION=		2
 
 HOMEPAGE=		http://laurikari.net/tre/
 
