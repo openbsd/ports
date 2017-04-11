@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2016/10/29 18:14:29 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.26 2017/04/11 10:11:38 ajacoutot Exp $
 @bin bin/devhelp
 include/devhelp-3.0/
 include/devhelp-3.0/devhelp/
@@ -38,6 +38,35 @@ share/devhelp/assistant/assistant.js
 share/devhelp/dtd/
 share/devhelp/dtd/devhelp-1.dtd
 share/glib-2.0/schemas/org.gnome.devhelp.gschema.xml
+share/gtk-doc/html/devhelp-3/
+share/gtk-doc/html/devhelp-3/DhApp.html
+share/gtk-doc/html/devhelp-3/DhAssistant.html
+share/gtk-doc/html/devhelp-3/DhAssistantView.html
+share/gtk-doc/html/devhelp-3/DhBook.html
+share/gtk-doc/html/devhelp-3/DhBookManager.html
+share/gtk-doc/html/devhelp-3/DhBookTree.html
+share/gtk-doc/html/devhelp-3/DhKeywordModel.html
+share/gtk-doc/html/devhelp-3/DhLanguage.html
+share/gtk-doc/html/devhelp-3/DhLink.html
+share/gtk-doc/html/devhelp-3/DhSidebar.html
+share/gtk-doc/html/devhelp-3/DhWindow.html
+share/gtk-doc/html/devhelp-3/annotation-glossary.html
+share/gtk-doc/html/devhelp-3/api-index-full.html
+share/gtk-doc/html/devhelp-3/ch01.html
+share/gtk-doc/html/devhelp-3/deprecated-api-index.html
+share/gtk-doc/html/devhelp-3/devhelp-3.devhelp2
+share/gtk-doc/html/devhelp-3/devhelp-DhError.html
+share/gtk-doc/html/devhelp-3/devhelp-Initialization.html
+share/gtk-doc/html/devhelp-3/home.png
+share/gtk-doc/html/devhelp-3/index.html
+share/gtk-doc/html/devhelp-3/left-insensitive.png
+share/gtk-doc/html/devhelp-3/left.png
+share/gtk-doc/html/devhelp-3/object-tree.html
+share/gtk-doc/html/devhelp-3/right-insensitive.png
+share/gtk-doc/html/devhelp-3/right.png
+share/gtk-doc/html/devhelp-3/style.css
+share/gtk-doc/html/devhelp-3/up-insensitive.png
+share/gtk-doc/html/devhelp-3/up.png
 share/icons/hicolor/16x16/apps/devhelp.png
 share/icons/hicolor/22x22/apps/devhelp.png
 share/icons/hicolor/24x24/apps/devhelp.png
@@ -85,6 +114,7 @@ share/locale/id/LC_MESSAGES/devhelp.mo
 share/locale/is/LC_MESSAGES/devhelp.mo
 share/locale/it/LC_MESSAGES/devhelp.mo
 share/locale/ja/LC_MESSAGES/devhelp.mo
+share/locale/kk/LC_MESSAGES/devhelp.mo
 share/locale/km/LC_MESSAGES/devhelp.mo
 share/locale/kn/LC_MESSAGES/devhelp.mo
 share/locale/ko/LC_MESSAGES/devhelp.mo

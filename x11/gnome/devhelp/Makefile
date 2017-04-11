@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.97 2017/03/29 13:27:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.98 2017/04/11 10:11:38 ajacoutot Exp $
 
-COMMENT=	API documentation browser for GNOME
+COMMENT=		API documentation browser for GNOME
 
-GNOME_PROJECT=	devhelp
-GNOME_VERSION=	3.22.0
-REVISION=	1
+GNOME_PROJECT=		devhelp
+GNOME_VERSION=		3.24.0
 
 SHARED_LIBS +=  devhelp-3            0.0      # 2.0
 
-CATEGORIES=	textproc
+CATEGORIES=		textproc
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -28,16 +27,16 @@ WANTLIB += pixman-1 png pthread pthread-stubs secret-1 soup-2.4
 WANTLIB += sqlite3 webkit2gtk-4.0 webp xcb xcb-dri2 xcb-glx xcb-render
 WANTLIB += xcb-shm xcb-xfixes xml2 xslt z
 
-MODULES=	devel/dconf \
-		lang/python \
-		x11/gnome
+MODULES=		devel/dconf \
+			lang/python \
+			x11/gnome
 
-MODGNOME_TOOLS=	desktop-file-utils gtk-update-icon-cache
+MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache
 
-BUILD_DEPENDS=	x11/gnome/doc-utils
-LIB_DEPENDS=	www/webkitgtk4
+BUILD_DEPENDS=		x11/gnome/doc-utils
+LIB_DEPENDS=		www/webkitgtk4
 
 # for convenience
-RUN_DEPENDS +=	x11/gnome/devel-docs
+RUN_DEPENDS +=		x11/gnome/devel-docs
 
 .include <bsd.port.mk>
