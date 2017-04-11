@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.528 2017/04/09 11:29:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.529 2017/04/11 13:55:38 sthen Exp $
 
      SUBDIR =
      SUBDIR += TclXML
-     SUBDIR += agrep
      SUBDIR += antiword
      SUBDIR += apertium
      SUBDIR += apertium-dicts
