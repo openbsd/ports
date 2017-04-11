@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.26 2016/03/18 16:41:53 naddy Exp $
+# $OpenBSD: Makefile,v 1.27 2017/04/11 13:57:34 sthen Exp $
 
 COMMENT=	text search engine
 
 DISTNAME=	glimpse-4.1
-REVISION=	4
+REVISION=	5
 CATEGORIES=	textproc databases
 
 PERMIT_PACKAGE_CDROM=	no fee
 PERMIT_PACKAGE_FTP=	Yes
+
 WANTLIB=		c 
 
 MASTER_SITES=   ftp://ftp.cs.arizona.edu/glimpse/

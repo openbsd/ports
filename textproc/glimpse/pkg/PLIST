@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2016/03/18 16:41:53 naddy Exp $
-@conflict agrep-*
+@comment $OpenBSD: PLIST,v 1.9 2017/04/11 13:57:34 sthen Exp $
 @conflict tre-*
 @bin bin/agrep
 @bin bin/glimpse
