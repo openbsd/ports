@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.4 2017/01/24 11:06:07 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2017/04/11 09:28:00 rpointel Exp $
 lib/python${MODPY_VERSION}/site-packages/parsedatetime/
 lib/python${MODPY_VERSION}/site-packages/parsedatetime-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/parsedatetime-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/parsedatetime-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/parsedatetime-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/parsedatetime-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/pbr.json
 lib/python${MODPY_VERSION}/site-packages/parsedatetime-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/parsedatetime/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/parsedatetime/${MODPY_PYCACHE}/
