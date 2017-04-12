@@ -1,7 +1,7 @@
-$OpenBSD: patch-ar_h,v 1.1 2006/04/07 07:40:18 pvalchev Exp $
---- ar.h.orig	Fri Apr 30 22:04:22 1993
-+++ ar.h	Fri Apr  7 01:38:55 2006
-@@ -15,11 +15,11 @@ Adapted from "ar" archiver written by Ha
+$OpenBSD: patch-ar_h,v 1.2 2017/04/12 23:09:08 jca Exp $
+--- ar.h.orig	Sat May  1 06:04:22 1993
++++ ar.h	Thu Apr 13 01:06:24 2017
+@@ -15,11 +15,11 @@ Adapted from "ar" archiver written by Haruhiko Okumura
  /* uchar should be 8 bits or more */
  /* typedef unsigned char  uchar;   -- already in zoo.h */
  

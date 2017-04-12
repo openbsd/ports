@@ -1,7 +1,7 @@
-$OpenBSD: patch-zoopack_c,v 1.1 2006/04/07 07:40:18 pvalchev Exp $
---- zoopack.c.orig	Fri Apr 30 21:59:21 1993
-+++ zoopack.c	Fri Apr  7 01:38:55 2006
-@@ -78,6 +78,9 @@ int latest_time = 0;                    
+$OpenBSD: patch-zoopack_c,v 1.2 2017/04/12 23:09:08 jca Exp $
+--- zoopack.c.orig	Sat May  1 05:59:21 1993
++++ zoopack.c	Thu Apr 13 01:06:25 2017
+@@ -78,6 +78,9 @@ int latest_time = 0;                      /*  ...likew
  int curr_dir = 0;									/* create backup in curr dir */
  static char partial_msg[] =
     "Partially packed archive left in %s.\n";
