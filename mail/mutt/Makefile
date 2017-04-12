@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.91 2017/02/25 10:53:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.92 2017/04/12 15:59:08 sthen Exp $
 
 COMMENT=	tty-based e-mail client
 
 DISTNAME=	mutt-1.8.0
 EPOCH=		3
+REVISION=	0
 
 CATEGORIES=	mail
 HOMEPAGE=	http://www.mutt.org/
@@ -34,7 +35,8 @@ CONFIGURE_STYLE=  gnu
 FLAVOR_COMMA=	${FLAVOR_EXT:S/-/,/g}
 SUBST_VARS=	FLAVOR_COMMA
 
-CONFIGURE_ARGS+= --enable-external_dotlock \
+CONFIGURE_ARGS+= --enable-compressed \
+		--enable-external_dotlock \
 		--disable-fcntl \
 		--enable-flock \
 		--enable-hcache \
