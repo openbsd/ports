@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_multimarkdown_c,v 1.1 2017/04/12 18:42:34 landry Exp $
+
+Use pledge(2) on OpenBSD.
+--- src/multimarkdown.c.orig	Fri Aug  5 09:08:36 2016
++++ src/multimarkdown.c	Thu Sep 15 17:28:27 2016
+@@ -58,6 +58,7 @@
+ */
+ 
+ 
++#include <errno.h>
+ #include <getopt.h>
+ #include <libgen.h>
+ #include "parser.h"
+@@ -262,6 +263,11 @@ int main(int argc, char **argv)
+ 			abort();
+ 		}
+ 	}	
++	
++	if (pledge("stdio rpath wpath cpath", NULL) == -1) {
++		fprintf(stderr,"pledge: error #%d\n", errno);
++		exit(EXIT_FAILURE);
++	}
+ 	
+ 	/* Compatibility mode emulates the behavior of Markdown.pl */
+ 	if (compatibility_flag) {

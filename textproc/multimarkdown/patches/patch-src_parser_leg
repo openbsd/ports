@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_parser_leg,v 1.1 2017/04/12 18:42:34 landry Exp $
+
+Switch from sprintf(3) to safer idiom.  Handle errors as elsewhere in code.
+--- src/parser.leg.orig	Fri Aug  5 09:08:36 2016
++++ src/parser.leg	Sat Oct  1 14:05:54 2016
+@@ -637,8 +637,12 @@ AutoLinkUrl =   '<' < [A-Za-z]+ "://" ( !Newline !'>' 
+ 
+ AutoLinkEmail = '<' ( "mailto:" )? < [-A-Za-z0-9+_./!%~$]+ '@' ( !Newline !'>' . )+ > '>'
+ 	{
+-		char *mailto = malloc(strlen(yytext) + 8);
+-		sprintf(mailto, "mailto:%s", yytext);
++		char *mailto = NULL;
++		if (asprintf(&mailto, "mailto:%s", yytext) == -1) {
++			fprintf(stderr, "error copying mailto link: %s\n",
++				yytext);
++			exit(1);
++		}
+ 		$$ = mk_link(str(yytext), NULL, mailto, NULL, NULL);
+ 		free(mailto);
+ 	}

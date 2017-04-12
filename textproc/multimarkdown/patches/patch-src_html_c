@@ -1,0 +1,53 @@
+$OpenBSD: patch-src_html_c,v 1.1 2017/04/12 18:42:34 landry Exp $
+
+Use srand_deterministic(3) if available.
+--- src/html.c.orig	Fri Aug  5 09:08:36 2016
++++ src/html.c	Thu Sep 15 15:35:50 2016
+@@ -115,7 +115,11 @@ void print_html_node(GString *out, node *n, scratch_pa
+ 				scratch->footnote_para_counter --;
+ 				if (scratch->footnote_para_counter == 0) {
+ 					if (scratch->extensions & EXT_RANDOM_FOOT) {
++#ifdef HAVE_SRAND_DETERMINISTIC
++						srand_deterministic(scratch->random_seed_base + scratch->footnote_to_print);
++#else
+ 						srand(scratch->random_seed_base + scratch->footnote_to_print);
++#endif /* HAVE_SRAND_DETERMINISTIC */
+ 						random = rand() % 99999 + 1;
+ 					} else {
+ 						random = scratch->footnote_to_print;
+@@ -604,7 +608,11 @@ void print_html_node(GString *out, node *n, scratch_pa
+ 			temp_node = node_for_count(scratch->used_notes, lev);
+ 			
+ 			if (scratch->extensions & EXT_RANDOM_FOOT) {
++#ifdef HAVE_SRAND_DETERMINISTIC
++				srand_deterministic(scratch->random_seed_base + lev);
++#else
+ 				srand(scratch->random_seed_base + lev);
++#endif /* HAVE_SRAND_DETERMINISTIC */
+ 				random = rand() % 99999 + 1;
+ 			} else {
+ 				random = lev;
+@@ -658,7 +666,11 @@ void print_html_node(GString *out, node *n, scratch_pa
+ 					fprintf(stderr, "matching cite found - %d\n",lev);
+ #endif
+ 					if (scratch->extensions & EXT_RANDOM_FOOT) {
++#ifdef HAVE_SRAND_DETERMINISTIC
++						srand_deterministic(scratch->random_seed_base + lev);
++#else
+ 						srand(scratch->random_seed_base + lev);
++#endif /* HAVE_SRAND_DETERMINISTIC */
+ 						random = rand() % 99999 + 1;
+ 					} else {
+ 						random = lev;
+@@ -951,7 +963,11 @@ void print_html_endnotes(GString *out, scratch_pad *sc
+ 		pad(out, 1, scratch);
+ 		
+ 		if (scratch->extensions & EXT_RANDOM_FOOT) {
++#ifdef HAVE_SRAND_DETERMINISTIC
++			srand_deterministic(scratch->random_seed_base + counter);
++#else
+ 			srand(scratch->random_seed_base + counter);
++#endif /* HAVE_SRAND_DETERMINISTIC */
+ 			random = rand() % 99999 + 1;
+ 		} else {
+ 			random = counter;

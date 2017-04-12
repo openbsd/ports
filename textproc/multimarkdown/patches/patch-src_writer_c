@@ -1,0 +1,43 @@
+$OpenBSD: patch-src_writer_c,v 1.1 2017/04/12 18:42:34 landry Exp $
+
+Switch from strcat(3) to a safer idiom, make sure bogus dimension does
+not result in out of bounds pointer.
+--- src/writer.c.orig	Sat Oct  1 11:18:59 2016
++++ src/writer.c	Sat Oct  1 11:22:21 2016
+@@ -690,6 +690,7 @@ char * dimension_for_attribute(char *querystring, node
+     int i;
+     char *upper;
+     GString *result;
++    size_t dimension_len;
+ 
+     attribute = node_for_attribute(querystring, list);
+     if (attribute == NULL) return NULL;
+@@ -698,6 +699,7 @@ char * dimension_for_attribute(char *querystring, node
+ #endif
+ 
+     dimension = strdup(attribute->children->str);
++    dimension_len = strlen(dimension);
+     upper = strdup(attribute->children->str);
+ 
+     for(i = 0; dimension[ i ]; i++)
+@@ -709,15 +711,14 @@ char * dimension_for_attribute(char *querystring, node
+ 	fprintf(stderr, "b\n");
+ #endif
+ 
+-    if (strstr(dimension, "px")) {
+-        ptr = strstr(dimension,"px");
+-        ptr[0] = '\0';
+-        strcat(ptr,"pt");
+-    }
++    ptr = strstr(dimension,"px");
++    if (ptr)
++        ptr[1] = 't';
+ 
+     result = g_string_new(dimension);
+     
+-    if ((strcmp(dimension,upper) == 0) && (dimension[strlen(dimension) -1] != '%')) {
++    if ((strcmp(dimension,upper) == 0) && (dimension_len > 0) &&
++        (dimension[dimension_len-1] != '%')) {
+         /* no units */
+         g_string_append_printf(result, "pt");
+     }

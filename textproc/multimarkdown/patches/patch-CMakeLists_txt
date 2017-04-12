@@ -1,0 +1,14 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2017/04/12 18:42:34 landry Exp $
+
+Use installed greg
+--- CMakeLists.txt.orig	Mon Feb 22 20:05:02 2016
++++ CMakeLists.txt	Tue Mar 22 12:45:41 2016
+@@ -149,7 +149,7 @@ endif ()
+ # Need to build parser.c via greg
+ add_custom_command (
+ 	OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/parser.c
+-	COMMAND ${PROJECT_SOURCE_DIR}/submodules/greg/greg -o ${CMAKE_CURRENT_BINARY_DIR}/parser.c ${PROJECT_SOURCE_DIR}/src/parser.leg
++	COMMAND ${GREG} -o ${CMAKE_CURRENT_BINARY_DIR}/parser.c ${PROJECT_SOURCE_DIR}/src/parser.leg
+ )
+ 
+ # src_files are the primary files, and will be included in doxygen documentation

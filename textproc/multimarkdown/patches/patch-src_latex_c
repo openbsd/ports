@@ -1,0 +1,28 @@
+$OpenBSD: patch-src_latex_c,v 1.1 2017/04/12 18:42:34 landry Exp $
+
+Switch from strcat(3) to safer idiom, ensure bogus input doesn't result
+in out of bounds pointer.
+--- src/latex.c.orig	Sat Oct  1 11:12:24 2016
++++ src/latex.c	Sat Oct  1 11:23:02 2016
+@@ -1219,16 +1219,16 @@ void print_latex_url(GString *out, char *str, scratch_
+ char * correct_dimension_units(char *original) {
+ 	char *result;
+ 	int i;
++	size_t result_len;
+ 	
+ 	result = strdup(original);
++	result_len = strlen(result);
+ 	
+ 	for (i = 0; result[i]; i++)
+ 		result[i] = tolower(result[i]);
+ 	
+-	if (strstr(&result[strlen(result)-2],"px")) {
+-		result[strlen(result)-2] = '\0';
+-		strcat(result, "pt");
+-	}
+-	
++	if ((result_len > 1) && strstr(&result[result_len-2],"px"))
++		result[result_len-1] = 't';
++
+ 	return result;
+ }

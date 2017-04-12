@@ -1,0 +1,31 @@
+$OpenBSD: patch-src_parse_utilities_c,v 1.1 2017/04/12 18:42:34 landry Exp $
+
+Use srand_deterministic(3) on OpenBSD
+--- src/parse_utilities.c.orig	Fri Aug  5 09:08:36 2016
++++ src/parse_utilities.c	Thu Sep 15 15:35:50 2016
+@@ -268,10 +268,18 @@ scratch_pad * mk_scratch_pad(unsigned long extensions)
+ 	result->inside_footnote = 0;
+ 
+ 	if (extensions & EXT_RANDOM_FOOT) {
++#ifdef HAVE_SRAND_DETERMINISTIC
++	    srand_deterministic((int)time(NULL));
++#else
+ 	    srand((int)time(NULL));
++#endif /* HAVE_SRAND_DETERMINISTIC */
+ 		result->random_seed_base = rand() % 32000;
+ 	} else {
++#ifdef HAVE_SRAND_DETERMINISTIC
++		srand_deterministic(1);
++#else
+ 		srand(1);
++#endif /* HAVE_SRAND_DETERMINISTIC */
+ 		result->random_seed_base = 0;
+ 	}
+ 	ran_start(310952L);
+@@ -909,4 +917,4 @@ char * my_strndup(const char * source, size_t n) {
+ 	result[len] = '\0';
+ 
+ 	return result;
+-}
+\ No newline at end of file
++}

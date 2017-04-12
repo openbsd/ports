@@ -1,34 +1,45 @@
-# $OpenBSD: Makefile,v 1.2 2015/04/05 13:31:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2017/04/12 18:42:34 landry Exp $
 
-V =		4.7.1
+V =		5.4.0
 COMMENT =	marked-up plain text to formatted document converter
 DISTNAME =	${GH_PROJECT}-${V}
-PKGNAME =	multimarkdown-${V}
+PKGNAME =	multimarkdown-${V:C/-/./}
 CATEGORIES =	textproc
 
 GH_ACCOUNT =	fletcher
-GH_PROJECT =	MultiMarkdown-4
+GH_PROJECT =	MultiMarkdown-5
 GH_TAGNAME =	${V}
 
+TESTS_COMMIT =	8d5ad66e3bbaeb0de8646783bfe964261ddb39c7
+DIST_SUBDIR =	multimarkdown
+MASTER_SITES_GITHUB =	https://github.com/fletcher/MMD-Test-Suite/archive/
+DISTFILES =	${DISTNAME}${EXTRACT_SUFX} ${TESTS_COMMIT}${EXTRACT_SUFX}
 HOMEPAGE =	http://fletcherpenney.net/multimarkdown/
 MAINTAINER =	Sean Levy <attila@stalphonsos.com>
 
 # Dual licensed: MIT and GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c
+# uses pledge()
+WANTLIB += 	c
 
 BUILD_DEPENDS =	devel/greg
 
-USE_GMAKE =	Yes
-ALL_TARGET =	ALL
-MAKE_FLAGS =	CFLAGS="${CFLAGS} -include GLibFacade.h -DHAVE_ARC4RANDOM" \
-		GREG=${LOCALBASE}/bin/greg
+MODULES =	devel/cmake
 
-# Test files aren't included in distfile.
-NO_TEST =	Yes
+CFLAGS +=	-DHAVE_SRAND_DETERMINISTIC
+
+CONFIGURE_ARGS += -DGREG=${LOCALBASE}/bin/greg
+
+post-extract:
+	rm -rf ${WRKSRC}/submodules/MarkdownTest
+	cp -r ${WRKDIR}/MMD-Test-Suite-${TESTS_COMMIT} \
+		${WRKSRC}/submodules/MarkdownTest
+
+pre-configure:
+	touch ${WRKBUILD}/README.html
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/multimarkdown ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKBUILD}/multimarkdown ${PREFIX}/bin/
 
 .include <bsd.port.mk>
