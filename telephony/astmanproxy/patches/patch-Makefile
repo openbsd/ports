@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2009/10/13 11:10:41 sthen Exp $
---- Makefile.orig	Wed Sep 13 17:26:28 2006
-+++ Makefile	Fri Jan 18 16:01:36 2008
+$OpenBSD: patch-Makefile,v 1.2 2017/04/12 11:59:25 sthen Exp $
+--- Makefile.orig	Wed Jun 24 08:58:23 2009
++++ Makefile	Wed Apr 12 12:58:13 2017
 @@ -11,7 +11,7 @@ PERMDIR:=/etc/asterisk
  PERMDIR_REAL := $(DESTDIR)/etc/asterisk
  DISTDIR:=/var/www/html/astmanproxy
@@ -16,14 +16,15 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2009/10/13 11:10:41 sthen Exp $
  # Add -g below for debug/GDB symbols
 -CFLAGS:=-Wall -O2 -D_REENTRANT -fPIC -Isrc/include -I/usr/include/openssl
 +CFLAGS ?= -O2
-+CFLAGS += -Wall -D_REENTRANT -fPIC -Isrc/include -I/usr/include/openssl
++CFLAGS += -Wall -D_REENTRANT -fPIC -iquotesrc/include -I/usr/include/openssl
  
  ifeq (${OSARCH},Darwin)  
    LIBS+=-lresolv
-@@ -49,15 +50,21 @@ ifeq (${OSARCH},Darwin)  
+@@ -48,16 +49,21 @@ ifeq (${OSARCH},Darwin)  
+   MKTEMP=/usr/bin/mktemp
  else
    #These are used for all but Darwin
-   CFLAGS+=-I-
+-  CFLAGS+=-I-
 +ifeq (${OSARCH},OpenBSD)
 +  LIBS+=-pthread -lcrypto
 +  MKTEMP=/usr/bin/mktemp
@@ -45,7 +46,7 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2009/10/13 11:10:41 sthen Exp $
  DEFINES:='-DPROXY_VERSION="$(VERSION)"' '-DCDIR="$(CONFDIR)"' '-DCFILE="$(CONFFILE)"'
  DEFINES+='-DMDIR="$(MODDIR)"' '-DPDIR="$(PERMDIR)"' '-DPFILE="$(PERMFILE)"'
  
-@@ -137,12 +144,12 @@ certificate:
+@@ -137,12 +143,12 @@ certificate:
  	fi
  
  
@@ -61,7 +62,7 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2009/10/13 11:10:41 sthen Exp $
  	install -d $(CONFDIR_REAL)
  	if [ ! -f $(CONF_TARGET) ]; then \
  		install ./configs/$(CONFFILE) $(CONF_TARGET); \
-@@ -154,7 +161,7 @@ install: uninstall all
+@@ -154,7 +160,7 @@ install: uninstall all
  
  uninstall:
  	rm -f $(BINDIR)/astmanproxy
