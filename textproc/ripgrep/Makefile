@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2017/03/25 16:16:47 danj Exp $
+# $OpenBSD: Makefile,v 1.3 2017/04/12 02:21:58 danj Exp $
 
 COMMENT =		line oriented search tool using Rust's regex library
 
 GH_ACCOUNT =		BurntSushi
 GH_PROJECT =		ripgrep
-GH_TAGNAME =		0.5.0
+GH_TAGNAME =		0.5.1
 
 CATEGORIES =		textproc sysutils
 
@@ -20,20 +20,20 @@ MODULES =		devel/cargo
 # as devel/cargo MODULES adds DISTFILES, GH_* didn't
 DISTFILES += ${DISTNAME}${EXTRACT_SUFX}
 
-MODCARGO_CRATES +=	aho-corasick-0.6.2	# Unlicense/MIT
+MODCARGO_CRATES +=	aho-corasick-0.6.3	# Unlicense/MIT
 MODCARGO_CRATES +=	ansi_term-0.9.0	# MIT
 MODCARGO_CRATES +=	atty-0.2.2	# MIT
-MODCARGO_CRATES +=	bitflags-0.8.0	# MIT/Apache-2.0
+MODCARGO_CRATES +=	bitflags-0.8.2	# MIT/Apache-2.0
 MODCARGO_CRATES +=	bytecount-0.1.6	# Apache-2.0/MIT
 MODCARGO_CRATES +=	cfg-if-0.1.0	# MIT/Apache-2.0
-MODCARGO_CRATES +=	clap-2.21.1	# MIT
+MODCARGO_CRATES +=	clap-2.23.1	# MIT
 MODCARGO_CRATES +=	crossbeam-0.2.10	# Apache-2.0/MIT
 MODCARGO_CRATES +=	encoding_rs-0.5.0	# MIT/Apache-2.0
 MODCARGO_CRATES +=	env_logger-0.4.2	# MIT/Apache-2.0
 MODCARGO_CRATES +=	fnv-1.0.5	# Apache-2.0 / MIT
 MODCARGO_CRATES +=	fs2-0.4.1	# MIT/Apache-2.0
 MODCARGO_CRATES +=	kernel32-sys-0.2.2	# MIT
-MODCARGO_CRATES +=	lazy_static-0.2.4	# MIT
+MODCARGO_CRATES +=	lazy_static-0.2.6	# MIT
 MODCARGO_CRATES +=	libc-0.2.21	# MIT/Apache-2.0
 MODCARGO_CRATES +=	log-0.3.7	# MIT/Apache-2.0
 MODCARGO_CRATES +=	memchr-1.0.1	# Unlicense/MIT
