@@ -1,10 +1,10 @@
-$OpenBSD: patch-tools_krb5-config_in,v 1.3 2016/12/17 14:58:31 ajacoutot Exp $
+$OpenBSD: patch-tools_krb5-config_in,v 1.4 2017/04/12 09:50:01 ajacoutot Exp $
 
 Search /usr/local/{include,lib} for libcom_err.
 
---- tools/krb5-config.in.orig	Tue Nov 29 02:35:28 2016
-+++ tools/krb5-config.in	Sat Dec 17 15:34:10 2016
-@@ -229,7 +229,7 @@ if test "$do_libs" = "yes"; then
+--- tools/krb5-config.in.orig	Fri Mar 17 19:18:19 2017
++++ tools/krb5-config.in	Wed Apr 12 11:33:41 2017
+@@ -238,7 +238,7 @@ if test "$do_libs" = "yes"; then
      if test "$lib_krb5" = yes; then
  	lib_flags="$lib_flags -lkrb5"
      fi
@@ -13,7 +13,7 @@ Search /usr/local/{include,lib} for libcom_err.
      deplibs="$deplibs @LIB_hcrypto_appl@ -lasn1 -lwind -lheimbase -lroken"
      deplibs="$deplibs @LIB_crypt@ @PTHREAD_LIBADD@ @LIB_dlopen@"
      deplibs="$deplibs @LIB_door_create@ @LIBS@"
-@@ -248,7 +248,7 @@ fi
+@@ -257,7 +257,7 @@ fi
  if test "$do_cflags" = "yes"; then
      cflags=""
      if test X"${includedir}" != X/usr/include; then
