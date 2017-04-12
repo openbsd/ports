@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1596 2017/03/12 20:52:10 krw Exp $
+# $oPEnBSD: Makefile,v 1.1596 2017/03/12 20:52:10 krw Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1710,6 +1710,7 @@
      SUBDIR += ucpp
      SUBDIR += udis86
      SUBDIR += unibilium
+     SUBDIR += universal-ctags
      SUBDIR += utfcpp
      SUBDIR += uthash
      SUBDIR += uuid
