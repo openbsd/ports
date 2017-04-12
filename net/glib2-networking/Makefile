@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2017/04/08 10:39:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.46 2017/04/12 12:48:20 sthen Exp $
 
 COMMENT=		network-related gio modules for GLib
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c ffi gio-2.0 glib-2.0 gmodule-2.0 gmp gnutls gobject-2.0
 WANTLIB += hogweed iconv idn2 intl m nettle p11-kit pcre proxy
-WANTLIB += pthread stdc++ tasn1 unistring z
+WANTLIB += pthread ${LIBCXX} tasn1 unistring z
 
 MODULES=		x11/gnome
 
