@@ -1,0 +1,41 @@
+$OpenBSD: patch-bin_netbeans,v 1.1 2017/04/12 19:29:48 rsadowski Exp $
+
+- remove hidden bash dependency
+- add OpenBSD mem size calculation
+
+--- bin/netbeans.orig	Fri Sep 30 01:33:04 2016
++++ bin/netbeans	Fri Nov 25 23:42:31 2016
+@@ -161,8 +161,12 @@ heap_size () {
+         mem=`/usr/sbin/sysctl hw.memsize | tr -d [:alpha:][:space:].:`
+         mem=`expr $mem / 1048576`
+         ;;
+-        *) 
++    OpenBSD*)
++        mem=`/sbin/sysctl -n hw.usermem`
++        mem=`expr $mem / 1048576`
+         ;;
++        *)
++        ;;
+     esac
+     if [ -z "$mem" ] ; then
+         mem=640
+@@ -194,11 +198,6 @@ launchNbexec() {
+         fi
+     done | head -n 1`
+     sh=sh
+-    # #73162: Ubuntu uses the ancient Bourne shell, which does not implement trap well.
+-    if [ -x /bin/bash ]
+-    then
+-        sh=/bin/bash
+-    fi
+     if [ "${founduserdir}" = "yes" ]; then
+         exec $sh "$nbexec" "$@"
+     else
+@@ -230,6 +229,7 @@ case "`uname`" in
+             --jdkhome '"$netbeans_jdkhome"' \
+             --branding nb \
+             --clusters '"$netbeans_clusters"' \
++            -J-Dawt.useSystemAAFontSettings=lcd \
+             -J-Dnetbeans.importclass=org.netbeans.upgrade.AutoUpgrade \
+             -J-Dnetbeans.accept_license_class=org.netbeans.license.AcceptLicense \
+             ${netbeans_default_options} \

@@ -1,25 +1,26 @@
-# $OpenBSD: Makefile,v 1.29 2016/03/18 23:12:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.30 2017/04/12 19:29:48 rsadowski Exp $
 
 COMMENT=		NetBeans Java IDE
 
-V=			6.9.1
+V=			8.2
 DISTNAME=		netbeans-${V}
 CATEGORIES=		devel
-REVISION=		5
 
-HOMEPAGE=		http://www.netbeans.org/
+HOMEPAGE=		https://www.netbeans.org/
+
+MAINTAINER=		Giovanni Bechis <giovanni@openbsd.org> \
+			Rafael Sadowski <rsadowski@openbsd.org>
 
 # CDDL and GPLv2 dual-licensed
-#
-# For external components see:
-#   http://www.netbeans.info/downloads/licence/netbeans-3rd-party.txt
+# See:
+# https://netbeans.org/about/legal/index.html
 PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=		http://download.netbeans.org/netbeans/${V}/final/zip/
-EXTRACT_SUFX=		-201007282301-ml.zip
+EXTRACT_SUFX=		-201609300101.zip
 
 MODULES=		java
-MODJAVA_VER=		1.6+
+MODJAVA_VER=		1.8+
 
 RUN_DEPENDS=		java/javaPathHelper \
 			devel/desktop-file-utils
@@ -31,16 +32,20 @@ WRKDIST=		${WRKDIR}/netbeans
 
 NB=			${PREFIX}/netbeans
 
-pre-configure:
-	@${SUBST_CMD} ${WRKSRC}/platform/lib/nbexec
-
 do-install:
 	${INSTALL_DATA_DIR} ${NB}
-	@tar -czf - -C ${WRKDIR}/netbeans . | tar xzf - -C ${NB}
+	@tar -czf - -C ${WRKDIST} . | tar xzf - -C ${NB}
+	@rm -rf ${NB}/profiler ${NB}/{ide,cnd,dlight}/bin \
+		${NB}/platform/modules/lib/{i386,amd64,x86}
 	@find ${NB} -name "*.dll" -o -name "*.exe" -o -name "*.cmd" \
-		-o -name "*.bat" -o -name "*.orig" | xargs rm
-	@${SUBST_PROGRAM} ${FILESDIR}/netbeans \
-		${PREFIX}/bin/netbeans
+		-o -name "*.bat" -o -name ".lastModified" \
+		-o -name "*.orig" | xargs rm
+	@${SUBST_PROGRAM} ${FILESDIR}/netbeans ${PREFIX}/bin/netbeans
+	@${INSTALL_DATA_DIR} ${NB}/cnd/bin
+	@${INSTALL_SCRIPT} ${WRKDIST}/cnd/bin/dorun.sh ${NB}/cnd/bin/
+	@${INSTALL_DATA_DIR} ${NB}/ide/bin/nativeexecution
+	@${INSTALL_SCRIPT} ${WRKDIST}/ide/bin/nativeexecution/hostinfo.sh \
+		${NB}/ide/bin/nativeexecution/
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/applications
 	@${SUBST_DATA} ${FILESDIR}/netbeans.desktop \
 		${PREFIX}/share/applications/netbeans.desktop

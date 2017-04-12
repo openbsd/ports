@@ -1,16 +1,16 @@
-$OpenBSD: patch-etc_netbeans_conf,v 1.3 2010/11/12 12:26:16 jasper Exp $
+$OpenBSD: patch-etc_netbeans_conf,v 1.4 2017/04/12 19:29:48 rsadowski Exp $
 
 Turn autoupdate off by default. The relevant options are documented here:
 	http://wiki.netbeans.org/FaqPluginManagerCustomization
 
---- etc/netbeans.conf.orig	Thu Jul 29 02:06:10 2010
-+++ etc/netbeans.conf	Tue Nov  9 21:48:58 2010
-@@ -3,7 +3,7 @@ netbeans_default_userdir="${HOME}/.netbeans/6.9"
+--- etc/netbeans.conf.orig	Fri Sep 30 01:33:04 2016
++++ etc/netbeans.conf	Wed Nov 23 21:17:08 2016
+@@ -43,7 +43,7 @@ netbeans_default_cachedir="${DEFAULT_CACHEDIR_ROOT}/8.
+ # Concurrent Mark & Sweep garbage collector.
+ # (see http://wiki.netbeans.org/FaqGCPauses)
+ #
+-netbeans_default_options="-J-client -J-Xss2m -J-Xms32m -J-Dapple.laf.useScreenMenuBar=true -J-Dapple.awt.graphics.UseQuartz=true -J-Dsun.java2d.noddraw=true -J-Dsun.java2d.dpiaware=true -J-Dsun.zip.disableMemoryMapping=true"
++netbeans_default_options="-J-client -J-Xss2m -J-Xms32m -J-Dapple.laf.useScreenMenuBar=true -J-Dapple.awt.graphics.UseQuartz=true -J-Dsun.java2d.noddraw=true -J-Dsun.java2d.dpiaware=true -J-Dsun.zip.disableMemoryMapping=true -J-Dplugin.manager.check.updates=false -J-Dplugin.manager.check.interval=NEVER"
  
- # Options used by NetBeans launcher by default, can be overridden by explicit
- # command line switches:
--netbeans_default_options="-J-client -J-Xss2m -J-Xms32m -J-XX:PermSize=32m -J-XX:MaxPermSize=200m -J-Dapple.laf.useScreenMenuBar=true -J-Dapple.awt.graphics.UseQuartz=true -J-Dsun.java2d.noddraw=true"
-+netbeans_default_options="-J-client -J-Xss2m -J-Xms32m -J-XX:PermSize=32m -J-XX:MaxPermSize=200m -J-Dapple.laf.useScreenMenuBar=true -J-Dapple.awt.graphics.UseQuartz=true -J-Dsun.java2d.noddraw=true -J-Dplugin.manager.check.updates=false -J-Dplugin.manager.check.interval=NEVER"
- # Note that a default -Xmx is selected for you automatically.
- # You can find this value in var/log/messages.log file in your userdir.
- # The automatically selected value can be overridden by specifying -J-Xmx here
+ # Default location of JDK:
+ # (set by installer or commented out if launcher should decide)
