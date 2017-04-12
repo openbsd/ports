@@ -1,6 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2017/04/10 11:46:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2017/04/12 10:52:09 sthen Exp $
 
-BROKEN=			undefined reference to `_ZN6icu_5713UnicodeStringC1EOS0_'
+# icu4c namespace problem when mixing gcc 4.2 and a c++11 compiler:
+# undefined reference to `_ZN6icu_5713UnicodeStringC1EOS0_'
+ONLY_FOR_ARCHS=		${CLANG_ARCHS}
 
 COMMENT =		constraint grammar formalism variant
 
