@@ -1,7 +1,7 @@
-$OpenBSD: patch-tests_Makefile_tests,v 1.3 2015/06/03 20:17:04 uaa Exp $
---- tests/Makefile.tests.orig	Wed Nov 12 12:29:16 2014
-+++ tests/Makefile.tests	Sun May 31 04:25:17 2015
-@@ -52,7 +52,7 @@ $(LIB_TESTS): %: $(TESTS_PREFIX)testutils.o util.o $(L
+$OpenBSD: patch-tests_Makefile_tests,v 1.4 2017/04/12 08:07:22 ajacoutot Exp $
+--- tests/Makefile.tests.orig	Thu Mar  9 19:17:23 2017
++++ tests/Makefile.tests	Sun Apr  9 14:25:49 2017
+@@ -56,7 +56,7 @@ $(LIB_TESTS): %: $(TESTS_PREFIX)testutils.o util.o $(L
  
  $(DL_LIB_TESTS): %: %.o $(TESTS_PREFIX)testutils.o util.o $(LIBFDT_archive)
  	@$(VECHO) LD [libdl] $@
