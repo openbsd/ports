@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/04/12 20:00:30 rsadowski Exp $
+@bin bin/readtags
+@bin bin/uctags
+libexec/ctags/
+libexec/ctags/drivers/
+libexec/ctags/drivers/coffeetags
+@man man/man1/uctags.1
+share/ctags/
+share/ctags/optlib/
+share/ctags/optlib/coffee.ctags
+share/ctags/optlib/ctags.ctags
+share/ctags/optlib/gdbinit.ctags
+share/ctags/optlib/m4.ctags
+share/ctags/preload/
+share/ctags/preload/default.ctags

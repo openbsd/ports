@@ -1,0 +1,12 @@
+$OpenBSD: patch-makefiles_testing_mak,v 1.1.1.1 2017/04/12 20:00:30 rsadowski Exp $
+--- makefiles/testing.mak.orig	Fri Mar 17 18:28:32 2017
++++ makefiles/testing.mak	Fri Mar 17 18:29:01 2017
+@@ -2,7 +2,7 @@
+ 
+ check: tmain units
+ 
+-CTAGS_TEST = ./ctags$(EXEEXT)
++CTAGS_TEST = ./$(CTAGS_PROG)$(EXEEXT)
+ READ_TEST = ./$(READ_CMD)
+ TIMEOUT=
+ LANGUAGES=
