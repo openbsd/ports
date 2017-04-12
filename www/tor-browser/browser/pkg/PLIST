@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/11/13 21:15:43 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/04/12 18:46:52 landry Exp $
 bin/${BROWSER_NAME}
 lib/${BROWSER_NAME}-${TB_VERSION}/
 lib/${BROWSER_NAME}-${TB_VERSION}/application.ini
@@ -59,6 +59,7 @@ lib/${BROWSER_NAME}-${TB_VERSION}/webapprt/
 lib/${BROWSER_NAME}-${TB_VERSION}/webapprt/omni.ja
 lib/${BROWSER_NAME}-${TB_VERSION}/webapprt/webapprt.ini
 share/applications/${BROWSER_NAME}.desktop
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/pixmaps/
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
