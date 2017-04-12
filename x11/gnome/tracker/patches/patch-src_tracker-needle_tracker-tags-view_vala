@@ -1,0 +1,40 @@
+$OpenBSD: patch-src_tracker-needle_tracker-tags-view_vala,v 1.1 2017/04/12 09:27:31 ajacoutot Exp $
+
+From d7019161cdf9eb141293792bbba0ccfe46600ed1 Mon Sep 17 00:00:00 2001
+From: Carlos Garnacho <carlosg@gnome.org>
+Date: Sat, 19 Nov 2016 23:31:28 +0100
+Subject: tracker-needle: Fix build
+
+From 53007652ce1ed3cf350ec042b310606e0115377a Mon Sep 17 00:00:00 2001
+From: Carlos Garnacho <carlosg@gnome.org>
+Date: Tue, 28 Feb 2017 21:03:49 +0100
+Subject: tracker-needle: Fix build with up-to-date gtk+ vapi
+
+From b351a636949814c300de85470c884ad5f14f0804 Mon Sep 17 00:00:00 2001
+From: Sam Thursfield <sam@afuera.me.uk>
+Date: Sat, 11 Mar 2017 12:27:23 +0000
+Subject: Use conditional to work around gtk+-3.0.vapi breakage
+
+--- src/tracker-needle/tracker-tags-view.vala.orig	Wed Apr 12 10:54:45 2017
++++ src/tracker-needle/tracker-tags-view.vala	Wed Apr 12 10:56:24 2017
+@@ -373,7 +373,7 @@ public class TrackerTagsView : Box {
+ 			string str = dngettext (null,
+ 			                        "_Set the tags you want to associate with the %d selected item:",
+ 			                        "_Set the tags you want to associate with the %d selected items:",
+-			                        files.length ()).printf (files.length ());
++			                        files.length ()).printf ((int) files.length ());
+ 			label.set_text_with_mnemonic (str);
+ 			vbox.sensitive = true;
+ 		} else {
+@@ -520,7 +520,11 @@ public class TrackerTagsView : Box {
+ 			yield connection.update_async (query, Priority.DEFAULT, td.cancellable);
+ 
+ 			debug ("Tag removed");
++			#if VALA_0_36
++			store.remove (ref td.iter);
++			#else
+ 			store.remove (td.iter);
++			#endif
+ 		} catch (GLib.Error e) {
+ 			warning ("Could not run Sparql update query: %s", e.message);
+ 			show_error_dialog (_("Could not remove tag"), e);

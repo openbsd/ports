@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.213 2017/04/10 11:46:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.214 2017/04/12 09:27:31 ajacoutot Exp $
 
 COMMENT=		powerful desktop search tool and indexer
 
 GNOME_PROJECT=		tracker
 GNOME_VERSION=		1.10.5
+REVISION=		0
 
 # there is already audio/tracker, so this port has to live
 # as meta-tracker
@@ -29,20 +30,19 @@ SHARED_LIBS +=  tracker-control-1.0  1.1      # 1001.0
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
-WANTLIB += Xinerama Xrandr Xrender archive atk-1.0 atk-bridge-2.0
+WANTLIB += Xinerama Xrandr Xrender archive assuan atk-1.0 atk-bridge-2.0
 WANTLIB += atspi bz2 c cairo cairo-gobject crypto cue dbus-1 enca
 WANTLIB += epoxy exempi exif expat ffi fontconfig freetype gcrypt
 WANTLIB += gdk-3 gdk_pixbuf-2.0 gif gio-2.0 glib-2.0 gmime-2.6
-WANTLIB += gmodule-2.0 gobject-2.0 gpg-error graphite2 gsf-1 gstaudio-1.0
-WANTLIB += gstbase-1.0 gstpbutils-1.0 gstreamer-1.0 gsttag-1.0
-WANTLIB += gstvideo-1.0 gthread-2.0 gtk-3 gxps harfbuzz iconv
-WANTLIB += icudata icui18n icuuc intl iptcdata jpeg kvm lcms2
-WANTLIB += lz4 lzma lzo2 m mediaart-2.0 openjp2 orc-0.4 osinfo-1.0
+WANTLIB += gmodule-2.0 gobject-2.0 gpg-error gpgme-pthread graphite2
+WANTLIB += gsf-1 gstaudio-1.0 gstbase-1.0 gstpbutils-1.0 gstreamer-1.0
+WANTLIB += gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3 gxps harfbuzz
+WANTLIB += iconv icudata icui18n icuuc intl iptcdata jpeg kvm
+WANTLIB += lcms2 lz4 lzma m mediaart-2.0 openjp2 orc-0.4 osinfo-1.0
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png poppler poppler-glib pthread pthread-stubs soup-2.4
 WANTLIB += sqlite3 ${LIBCXX} tag tag_c tiff totem-plparser upower-glib
-WANTLIB += util uuid xcb xcb-render xcb-shm xml2 xslt z assuan
-WANTLIB += gpgme-pthread
+WANTLIB += util uuid xcb xcb-render xcb-shm xml2 xslt z
 
 MODULES=		devel/dconf \
 			lang/python \
@@ -82,6 +82,8 @@ MODPY_RUNDEP=		No
 
 MODPY_ADJ_FILES=	tests/tracker-writeback/01-writeback.py \
 			utils/data-generators/cc/generate
+
+CONFIGURE_STYLE=	gnu
 
 CONFIGURE_ARGS=		--disable-miner-thunderbird \
 			--disable-miner-firefox \
