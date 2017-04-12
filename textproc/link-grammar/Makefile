@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2017/02/18 11:27:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2017/04/12 18:12:33 landry Exp $
 
 ONLY_FOR_ARCHS-java =	i386 amd64
 
@@ -12,6 +12,7 @@ DISTNAME =		link-grammar-${VERSION}
 PKGNAME-main =		${DISTNAME}
 PKGNAME-java =		link-grammar-java-${VERSION}
 PKGNAME-python =	py-link-grammar-${VERSION}
+REVISION =	0
 
 SHARED_LIBS +=  link-grammar         4.0      # 8.7
 SHARED_LIBS +=  link-grammar-java    4.0      # 8.7
@@ -23,7 +24,7 @@ HOMEPAGE =		http://www.abisource.com/projects/link-grammar/
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += hunspell-1.3 m sqlite3
+WANTLIB += hunspell-1.6 m sqlite3
 
 WANTLIB-main += ${WANTLIB} c pthread
 

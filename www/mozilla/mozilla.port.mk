@@ -1,4 +1,4 @@
-# $OpenBSD: mozilla.port.mk,v 1.103 2017/04/10 11:46:35 sthen Exp $
+# $OpenBSD: mozilla.port.mk,v 1.104 2017/04/12 18:12:33 landry Exp $
 
 ONLY_FOR_ARCHS ?=	amd64 i386
 # ppc: firefox-esr/thunderbird xpcshell segfaults during startup compilation
@@ -68,8 +68,8 @@ CONFIGURE_ARGS +=	--with-system-icu
 .endif
 
 .if !defined(MOZILLA_USE_BUNDLED_HUNSPELL)
-MODMOZ_LIB_DEPENDS +=	textproc/hunspell
-MODMOZ_WANTLIB +=	hunspell-1.3
+MODMOZ_LIB_DEPENDS +=	textproc/hunspell>=1.6
+MODMOZ_WANTLIB +=	hunspell-1.6
 CONFIGURE_ARGS +=	--with-system-hunspell
 .endif
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.313 2017/03/28 20:07:27 landry Exp $
+# $OpenBSD: Makefile,v 1.314 2017/04/12 18:12:33 landry Exp $
 
 COMMENT =	Mozilla web browser
 
@@ -10,6 +10,7 @@ MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
 BROKEN-sparc64 =	xpcshell SIGBUS during fake
 EXTRACT_SUFX =		.tar.xz
+REVISION =		0
 
 SO_VERSION =	70.0
 # NOTE: Must bump minor version if any shlib's are removed from the

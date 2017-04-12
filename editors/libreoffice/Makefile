@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.155 2017/01/03 19:30:57 landry Exp $
+# $OpenBSD: Makefile,v 1.156 2017/04/12 18:12:33 landry Exp $
 
 USE_WXNEEDED=	Yes
 
@@ -19,7 +19,7 @@ PKGNAME-kde=	libreoffice-kde-${VERSION}
 PKGNAME-java=	libreoffice-java-${VERSION}
 CATEGORIES=	editors productivity
 DPB_PROPERTIES=	parallel tag:kde4
-REVISION=	0
+REVISION=	1
 
 EPOCH=		0
 
@@ -204,7 +204,7 @@ WANTLIB-main+=	ICE SM X11 Xcomposite Xcursor Xdamage \
 		jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
 		pthread ssl xml2 z gdk_pixbuf-2.0 \
 		util ${MODGETTEXT_WANTLIB}
-WANTLIB-main+=	hunspell-1.3
+WANTLIB-main+=	hunspell-1.6
 WANTLIB-main+=	${MODPY_WANTLIB}
 WANTLIB-main+=	clucene-contribs-lib clucene-core clucene-shared
 WANTLIB-main+=	cups exslt gcrypt gpg-error lcms2

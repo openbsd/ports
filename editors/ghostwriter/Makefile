@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/01/17 12:58:26 awolk Exp $
+# $OpenBSD: Makefile,v 1.2 2017/04/12 18:12:33 landry Exp $
 
 # qt5 webkit
 USE_WXNEEDED =	Yes
@@ -8,6 +8,7 @@ COMMENT =	distraction-free Markdown editor
 GH_ACCOUNT =	wereturtle
 GH_PROJECT =	ghostwriter
 GH_TAGNAME =	v1.4.2
+REVISION =	0
 
 CATEGORIES =	editors
 
@@ -19,7 +20,7 @@ MAINTAINER =	Adam Wolk <awolk@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += GL Qt5Concurrent Qt5Core Qt5Gui Qt5Network Qt5PrintSupport
-WANTLIB += Qt5WebKit Qt5WebKitWidgets Qt5Widgets c hunspell-1.3
+WANTLIB += Qt5WebKit Qt5WebKitWidgets Qt5Widgets c hunspell-1.6
 WANTLIB += m pthread
 
 MODULES =		devel/qmake \

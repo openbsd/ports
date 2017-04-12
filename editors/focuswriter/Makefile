@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2017/04/10 11:45:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2017/04/12 18:12:33 landry Exp $
 
 COMMENT =	simple, distraction-free writing environment
 
@@ -7,7 +7,7 @@ PKGNAME =	${DISTNAME:S/-src//}
 CATEGORIES =	editors
 EXTRACT_SUFX =	.tar.bz2
 WRKDIST =	${WRKDIR}/${DISTNAME:S/-src//}
-
+REVISION =	0
 HOMEPAGE =	http://gottcode.org/focuswriter/
 
 MASTER_SITES =	${HOMEPAGE}
@@ -22,7 +22,7 @@ RUN_DEPENDS +=	devel/desktop-file-utils \
 		x11/gtk+3,-guic
 LIB_DEPENDS +=	textproc/hunspell
 WANTLIB +=	ICE SM X11 Xext Xi Xinerama Xrender fontconfig freetype
-WANTLIB +=	QtNetwork z QtGui c m pthread ${LIBCXX} hunspell-1.3
+WANTLIB +=	QtNetwork z QtGui c m pthread ${LIBCXX} hunspell-1.6
 
 NO_TEST =	Yes
 
