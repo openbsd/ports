@@ -1,9 +1,9 @@
-$OpenBSD: patch-tests_test_sh,v 1.1.1.1 2009/06/13 07:48:53 ajacoutot Exp $
---- tests/test.sh.orig	Fri Jun  5 17:37:50 2009
-+++ tests/test.sh	Fri Jun  5 17:37:58 2009
+$OpenBSD: patch-tests_test_sh,v 1.2 2017/04/12 18:09:01 landry Exp $
+--- tests/test.sh.orig	Sat Mar 25 22:20:45 2017
++++ tests/test.sh	Sat Apr  8 19:25:56 2017
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!${LOCALBASE}/bin/bash
- export LC_ALL="C"
- 
- function check_valgrind_log () {
+ # ***** BEGIN LICENSE BLOCK *****
+ # Version: MPL 1.1/GPL 2.0/LGPL 2.1
+ #

@@ -1,6 +1,6 @@
-$OpenBSD: patch-man_hu_hunspell_1,v 1.2 2010/11/14 14:25:23 sthen Exp $
---- man/hu/hunspell.1.orig	Tue Feb 23 10:08:52 2010
-+++ man/hu/hunspell.1	Sat Sep 25 11:39:53 2010
+$OpenBSD: patch-man_hu_hunspell_1,v 1.3 2017/04/12 18:09:01 landry Exp $
+--- man/hu/hunspell.1.orig	Sat Mar 25 22:20:45 2017
++++ man/hu/hunspell.1	Sat Apr  8 19:13:44 2017
 @@ -65,12 +65,12 @@ a javaslattevést). Az első szótár mindig alapszót
  .PP
  Az alapértelmezett szótár a környezet nyelvi beállításától függ
@@ -16,7 +16,7 @@ $OpenBSD: patch-man_hu_hunspell_1,v 1.2 2010/11/14 14:25:23 sthen Exp $
  és még több más könyvtárban keresi a szótárt a program. L. \-D és a
  .BR PÉLDÁK.
  .TP
-@@ -307,7 +307,7 @@ macka
+@@ -317,7 +317,7 @@ macka
  .TP
  .B hunspell \-d en_US english.html
  Az amerikai angol helyesírási szótár kiválasztása (aktuális, vagy a
@@ -24,8 +24,8 @@ $OpenBSD: patch-man_hu_hunspell_1,v 1.2 2010/11/14 14:25:23 sthen Exp $
 +.BR ${PREFIX}/share/hunspell
  könyvtárból.
  .TP
- .B hunspell \-d /opt/OpenOffice.org1.0.1/share/dict/ooo/de_DE
-@@ -335,10 +335,10 @@ A saját szótár helyének megadására szolgál. Sze
+ .B hunspell -l szöveg.html
+@@ -347,10 +347,10 @@ A saját szótár helyének megadására szolgál. Sze
  .I \-p
  kapcsolóval.
  .SH ÁLLOMÁNYOK
