@@ -1,7 +1,7 @@
-$OpenBSD: patch-kdecore_util_kshareddatacache_p_h,v 1.1 2013/12/08 19:13:32 zhuk Exp $
---- kdecore/util/kshareddatacache_p.h.orig	Fri Jun 28 21:03:40 2013
-+++ kdecore/util/kshareddatacache_p.h	Fri Dec  6 14:00:45 2013
-@@ -102,9 +102,8 @@ class KSDCLock { (public)
+$OpenBSD: patch-kdecore_util_kshareddatacache_p_h,v 1.2 2017/04/12 17:59:32 landry Exp $
+--- kdecore/util/kshareddatacache_p.h.orig	Fri Jun 26 05:14:18 2015
++++ kdecore/util/kshareddatacache_p.h	Mon Apr 10 08:11:14 2017
+@@ -106,9 +106,8 @@ class KSDCLock { (public)
  
      // Return value indicates if the mutex was properly initialized (including
      // threads-only as a fallback).
@@ -12,7 +12,7 @@ $OpenBSD: patch-kdecore_util_kshareddatacache_p_h,v 1.1 2013/12/08 19:13:32 zhuk
          return false;
      }
  
-@@ -131,11 +130,10 @@ class simpleSpinLock : public KSDCLock (public)
+@@ -135,11 +134,10 @@ class simpleSpinLock : public KSDCLock (public)
      {
      }
  
@@ -25,7 +25,7 @@ $OpenBSD: patch-kdecore_util_kshareddatacache_p_h,v 1.1 2013/12/08 19:13:32 zhuk
          return true;
      }
  
-@@ -190,29 +188,21 @@ class pthreadLock : public KSDCLock (public)
+@@ -194,29 +192,21 @@ class pthreadLock : public KSDCLock (public)
      {
      }
  
@@ -58,7 +58,7 @@ $OpenBSD: patch-kdecore_util_kshareddatacache_p_h,v 1.1 2013/12/08 19:13:32 zhuk
      }
  
      virtual bool lock()
-@@ -263,23 +253,18 @@ class semaphoreLock : public KSDCLock (public)
+@@ -267,23 +257,18 @@ class semaphoreLock : public KSDCLock (public)
      {
      }
  
@@ -85,7 +85,7 @@ $OpenBSD: patch-kdecore_util_kshareddatacache_p_h,v 1.1 2013/12/08 19:13:32 zhuk
      }
  
      virtual bool lock()
-@@ -363,9 +348,10 @@ struct SharedLock
+@@ -367,9 +352,10 @@ struct SharedLock
   */
  static SharedLockId findBestSharedLock()
  {
@@ -97,7 +97,7 @@ $OpenBSD: patch-kdecore_util_kshareddatacache_p_h,v 1.1 2013/12/08 19:13:32 zhuk
      bool timeoutsSupported = false;
      bool pthreadsProcessShared = false;
      bool semaphoresProcessShared = false;
-@@ -389,7 +375,7 @@ static SharedLockId findBestSharedLock()
+@@ -393,7 +379,7 @@ static SharedLockId findBestSharedLock()
              tempLock = QSharedPointer<KSDCLock>(new pthreadLock(tempMutex));
          }
  
@@ -106,7 +106,7 @@ $OpenBSD: patch-kdecore_util_kshareddatacache_p_h,v 1.1 2013/12/08 19:13:32 zhuk
      }
  #endif
  
-@@ -409,7 +395,7 @@ static SharedLockId findBestSharedLock()
+@@ -413,7 +399,7 @@ static SharedLockId findBestSharedLock()
              tempLock = QSharedPointer<KSDCLock>(new semaphoreLock(tempSemaphore));
          }
  
@@ -115,7 +115,7 @@ $OpenBSD: patch-kdecore_util_kshareddatacache_p_h,v 1.1 2013/12/08 19:13:32 zhuk
      }
  #endif
  
-@@ -422,6 +408,7 @@ static SharedLockId findBestSharedLock()
+@@ -426,6 +412,7 @@ static SharedLockId findBestSharedLock()
      else if(semaphoresProcessShared) {
          return LOCKTYPE_SEMAPHORE;
      }
