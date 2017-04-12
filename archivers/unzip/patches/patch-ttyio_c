@@ -1,0 +1,49 @@
+$OpenBSD: patch-ttyio_c,v 1.1 2017/04/12 11:11:52 bluhm Exp $
+
+pledge("tty") prevents tty operations on non-ttys.
+
+--- ttyio.c.orig	Sat Jan  5 21:24:16 2008
++++ ttyio.c	Wed Apr 12 00:12:10 2017
+@@ -309,10 +309,12 @@ void Echoff(__G__ f)
+ {
+     struct sgttyb sg;         /* tty device structure */
+ 
++  if(isatty(f)) {
+     GLOBAL(echofd) = f;
+     GTTY(f, &sg);             /* get settings */
+     sg.sg_flags &= ~ECHO;     /* turn echo off */
+     STTY(f, &sg);
++  }
+ }
+ 
+ /*
+@@ -445,7 +447,9 @@ int zgetch(__G__ f)
+ #endif
+     char c;
+     struct sgttyb sg;           /* tty device structure */
++  int istty = isatty(f);
+ 
++  if (istty) {
+     GTTY(f, &sg);               /* get settings */
+ #if (defined(USE_SYSV_TERMIO) || defined(USE_POSIX_TERMIOS))
+     oldmin = sg.c_cc[VMIN];     /* save old values */
+@@ -459,9 +463,11 @@ int zgetch(__G__ f)
+     sg.sg_flags &= ~ECHO;       /* turn echo off, too */
+     STTY(f, &sg);               /* set cbreak mode */
+     GLOBAL(echofd) = f;         /* in case ^C hit (not perfect: still CBREAK) */
++  }
+ 
+     read(f, &c, 1);             /* read our character */
+ 
++  if (istty) {
+ #if (defined(USE_SYSV_TERMIO) || defined(USE_POSIX_TERMIOS))
+     sg.c_cc[VMIN] = oldmin;     /* restore old values */
+     sg.c_cc[VTIME] = oldtim;
+@@ -472,6 +478,7 @@ int zgetch(__G__ f)
+     sg.sg_flags |= ECHO;        /* turn echo on */
+     STTY(f, &sg);               /* restore canonical mode */
+     GLOBAL(echofd) = -1;
++  }
+ 
+     return (int)(uch)c;
+ }

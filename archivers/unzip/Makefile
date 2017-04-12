@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2017/03/23 17:26:17 bluhm Exp $
+# $OpenBSD: Makefile,v 1.61 2017/04/12 11:11:52 bluhm Exp $
 
 PORTROACH =	skipv:552
 
@@ -7,7 +7,7 @@ COMMENT =	extract, list & test files in a ZIP archive
 VERSION =	6.0
 DISTNAME =	unzip${VERSION:S/.//}
 PKGNAME =	unzip-${VERSION}
-REVISION =	10
+REVISION =	11
 CATEGORIES =	archivers
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=infozip/} \
 		ftp://ftp.info-zip.org/pub/infozip/src/
