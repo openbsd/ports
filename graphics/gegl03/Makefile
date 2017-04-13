@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2017/04/13 08:42:31 ajacoutot Exp $
-
-BROKEN=			fails with gobject-introspection >= 1.52
+# $OpenBSD: Makefile,v 1.18 2017/04/13 13:01:20 ajacoutot Exp $
 
 COMMENT=		graph based image processing framework (API version 0.3)
 
@@ -61,7 +59,6 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ARGS=		--without-lensfun \
 			--without-openexr \
 			--without-sdl \
-			--without-libopenraw \
 			--without-graphviz \
 			--without-libavformat \
 			--without-libv4l \

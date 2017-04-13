@@ -1,0 +1,18 @@
+$OpenBSD: patch-configure,v 1.1 2017/04/13 13:01:20 ajacoutot Exp $
+
+From 81fb956b221e4b1f919788d8a5f6a3a5462b86ae Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?=C3=98yvind=20Kol=C3=A5s?= <pippin@gimp.org>
+Date: Thu, 23 Mar 2017 14:59:28 +0100
+Subject: build: move G_LOG_DOMAIN define to a Makefile.am as suggested in glib docs...
+
+--- configure.orig	Thu Apr 13 14:53:35 2017
++++ configure	Thu Apr 13 14:53:45 2017
+@@ -24100,8 +24100,6 @@ done
+ # We should support this at some point if possible
+ #LDFLAGS="-Wl,-z,defs"
+ 
+-CFLAGS="$CFLAGS -DG_LOG_DOMAIN=\\\"GEGL\\\""
+-
+ ac_config_files="$ac_config_files Makefile bin/Makefile gegl/Makefile gegl/gegl-version.h gegl/buffer/Makefile gegl/graph/Makefile gegl/module/Makefile gegl/operation/Makefile gegl/process/Makefile gegl/property-types/Makefile gegl/opencl/Makefile libs/Makefile libs/rgbe/Makefile libs/npd/Makefile libs/poly2tri-c/Makefile libs/poly2tri-c/poly2tri-c/Makefile libs/poly2tri-c/poly2tri-c/render/Makefile libs/poly2tri-c/poly2tri-c/p2t/sweep/Makefile libs/poly2tri-c/poly2tri-c/p2t/common/Makefile libs/poly2tri-c/poly2tri-c/p2t/Makefile libs/poly2tri-c/poly2tri-c/refine/Makefile seamless-clone/Makefile operations/Makefile operations/core/Makefile operations/json/Makefile operations/common/Makefile operations/common/perlin/Makefile operations/seamless-clone/Makefile operations/external/Makefile operations/generated/Makefile operations/transform/Makefile operations/workshop/Makefile operations/workshop/external/Makefile operations/workshop/generated/Makefile tools/Makefile docs/Makefile docs/index.txt docs/hello-world.txt docs/copyright.txt examples/Makefile examples/data/Makefile tests/Makefile tests/buffer/Makefile tests/buffer/reference/Makefile tests/buffer/tests/Makefile tests/compositions/Makefile tests/compositions/data/Makefile tests/ff-load-save/Makefile tests/python/Makefile tests/simple/Makefile tests/mipmap/Makefile tests/xml/Makefile tests/xml/data/Makefile perf/Makefile po/Makefile.in gegl-uninstalled.pc opencl/Makefile"
+ 
+ 
