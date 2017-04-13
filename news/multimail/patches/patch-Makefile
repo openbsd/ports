@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile,v 1.1 2017/04/13 09:00:18 fcambus Exp $
+--- Makefile.orig	Thu Apr 13 10:16:24 2017
++++ Makefile	Thu Apr 13 10:16:31 2017
+@@ -10,7 +10,7 @@ include version
+ #OPTS = -g -Wall -Wextra -pedantic -Wno-deprecated -Wno-char-subscripts
+ 
+ # Optimized, no debug:
+-OPTS = -O2 -Wall -pedantic -Wno-deprecated -Wno-char-subscripts
++OPTS = -Wall -pedantic -Wno-deprecated -Wno-char-subscripts
+ 
+ # PREFIX is the base directory under which to install the binary and man 
+ # page; generally either /usr/local or /usr (or perhaps /opt...):
