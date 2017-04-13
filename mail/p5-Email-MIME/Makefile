@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2016/03/20 19:56:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2017/04/13 19:56:26 giovanni Exp $
 
 COMMENT=	handle MIME messages
 
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME =	Email-MIME-1.937
+DISTNAME =	Email-MIME-1.940
 CATEGORIES=	mail
 
 # Same as Perl
