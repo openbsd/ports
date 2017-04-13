@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.24 2017/03/26 12:11:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2017/04/13 08:43:22 ajacoutot Exp $
 
 COMMENT=		library for AppStream metadata
 
-DISTNAME=		appstream-glib-0.6.11
+DISTNAME=		appstream-glib-0.6.12
 EXTRACT_SUFX=		.tar.xz
 
-SHARED_LIBS +=  appstream-glib       2.4      # 8.11
-SHARED_LIBS +=  appstream-builder    2.1      # 8.11
+SHARED_LIBS +=  appstream-glib       2.4      # 8.12
+SHARED_LIBS +=  appstream-builder    2.1      # 8.12
 
 CATEGORIES=		devel
 
@@ -36,12 +36,10 @@ MODGNOME_TOOLS=		docbook
 
 USE_GMAKE=		Yes
 
-BUILD_DEPENDS=		archivers/gcab \
-			devel/gperf
+BUILD_DEPENDS=		devel/gperf
 
-RUN_DEPENDS=		archivers/gcab
-
-LIB_DEPENDS=		archivers/libarchive \
+LIB_DEPENDS=		archivers/gcab \
+			archivers/libarchive \
 			devel/json-glib \
 			devel/libsoup \
 			devel/libyaml \
