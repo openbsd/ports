@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2017/04/07 07:24:01 fcambus Exp $
+# $OpenBSD: Makefile,v 1.12 2017/04/13 09:02:41 fcambus Exp $
 
 COMMENT =		command-line client for speedtest.net bandwidth tester
 
-MODPY_EGG_VERSION =	1.0.3
+MODPY_EGG_VERSION =	1.0.4
 DISTNAME =		speedtest-cli-${MODPY_EGG_VERSION}
 CATEGORIES =		benchmarks net
 
