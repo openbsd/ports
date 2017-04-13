@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.90 2017/04/10 11:46:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.91 2017/04/13 07:38:45 ajacoutot Exp $
 
 COMMENT=	interfaces for interacting with online accounts
 
@@ -43,6 +43,7 @@ MODGNU_CONFIG_GUESS_DIRS= \
 			${WRKSRC} \
 			${WRKSRC}/telepathy-account-widgets
 
+CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--disable-gudev
 
 post-install:

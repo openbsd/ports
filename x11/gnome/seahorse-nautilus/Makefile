@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2016/04/28 09:37:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2017/04/13 07:38:45 ajacoutot Exp $
 
 COMMENT=		GnuPG extension for nautilus(1)
 
@@ -29,6 +29,8 @@ MODGNOME_TOOLS=		desktop-file-utils
 LIB_DEPENDS=		x11/gnome/gcr \
 			x11/gnome/nautilus \
 			x11/gnome/libcryptui
+
+CONFIGURE_STYLE=	gnu
 
 # security/gpgme depends on either gnupg-1 or gnupg-2; we want 2.X
 BUILD_DEPENDS +=	gnupg->=2:security/gnupg2

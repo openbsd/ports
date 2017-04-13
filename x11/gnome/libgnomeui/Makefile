@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2016/04/28 09:37:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.66 2017/04/13 07:38:45 ajacoutot Exp $
 
 COMMENT=		user interface components for GNOME
 
@@ -33,6 +33,8 @@ LIB_DEPENDS=	x11/gnome/libgnome-keyring \
 		x11/gnome/libbonoboui
 
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib
+
+CONFIGURE_STYLE=	gnu
 
 post-install:
 	rm ${PREFIX}/lib/libglade/2.0/*.{a,la}

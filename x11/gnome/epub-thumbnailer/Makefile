@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2016/04/27 09:20:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2017/04/13 07:38:44 ajacoutot Exp $
 
 COMMENT=		thumbnailer for EPub and MOBI books
 
@@ -18,5 +18,7 @@ MODULES=		x11/gnome
 
 LIB_DEPENDS=		archivers/libarchive \
 			graphics/gdk-pixbuf2
+
+CONFIGURE_STYLE=	gnu
 
 .include <bsd.port.mk>

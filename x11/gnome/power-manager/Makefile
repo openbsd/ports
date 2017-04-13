@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2016/11/07 10:53:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.51 2017/04/13 07:38:45 ajacoutot Exp $
 
 COMMENT=		GNOME power manager
 
@@ -27,6 +27,8 @@ LIB_DEPENDS=		sysutils/upower \
 
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib
+
+CONFIGURE_STYLE=	gnu
 
 # gnome-power-statistics.sgml:1: parser error : StartTag: invalid element name
 CONFIGURE_ENV=		ac_cv_path_DOCBOOK2MAN=no

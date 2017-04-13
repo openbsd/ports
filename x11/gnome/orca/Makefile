@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.95 2017/01/03 18:54:49 shadchin Exp $
+# $OpenBSD: Makefile,v 1.96 2017/04/13 07:38:45 ajacoutot Exp $
 
 # XXX could use brltty and brlapi (with python bindinds) -- not ported yet
 
@@ -38,5 +38,7 @@ RUN_DEPENDS +=		x11/gtk+3
 MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 MODGNOME_TOOLS= 	gtk-update-icon-cache yelp
 FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/orca/
+
+CONFIGURE_STYLE=	gnu
 
 .include <bsd.port.mk>

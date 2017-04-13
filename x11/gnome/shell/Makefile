@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.140 2017/04/10 11:46:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.141 2017/04/13 07:38:45 ajacoutot Exp $
 
 USE_WXNEEDED=		Yes
 
@@ -99,6 +99,8 @@ RUN_DEPENDS +=		x11/gnome/libgnomekbd
 # add required introspection libs that are not in the dependency chain
 RUN_DEPENDS +=		inputmethods/ibus \
 			x11/gnome/gdm
+
+CONFIGURE_STYLE=	gnu
 
 CONFIGURE_ARGS=		--disable-systemd
 

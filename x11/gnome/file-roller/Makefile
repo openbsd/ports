@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.125 2017/02/28 16:14:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.126 2017/04/13 07:38:44 ajacoutot Exp $
 
 COMMENT=	archive manager utility for GNOME
 
@@ -42,6 +42,7 @@ LIB_DEPENDS=	archivers/libarchive>=3.1.2 \
 
 MODGNOME_TOOLS += desktop-file-utils gtk-update-icon-cache yelp
 
+CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPIO=${LOCALBASE}/bin/gcpio
 
 .include <bsd.port.mk>

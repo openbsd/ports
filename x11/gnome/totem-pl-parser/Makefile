@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2016/11/04 11:35:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.74 2017/04/13 07:38:46 ajacoutot Exp $
 
 COMMENT=		GObject-based parsing library
 
@@ -29,5 +29,7 @@ LIB_DEPENDS=		archivers/libarchive \
 			textproc/libxml
 
 MODGNOME_TOOLS=		gobject-introspection
+
+CONFIGURE_STYLE=	gnu
 
 .include <bsd.port.mk>

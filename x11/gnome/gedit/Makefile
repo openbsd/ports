@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.145 2017/04/10 11:46:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.146 2017/04/13 07:38:44 ajacoutot Exp $
 
 COMMENT=		lightweight GNOME text editor
 
@@ -45,6 +45,8 @@ MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 MODGNOME_TOOLS += 	desktop-file-utils gobject-introspection \
 			gtk-update-icon-cache vala yelp
+
+CONFIGURE_STYLE=	gnu
 
 CONFIGURE_ARGS=		--disable-updater
 

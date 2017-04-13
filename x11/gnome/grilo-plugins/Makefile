@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2017/02/15 18:33:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.65 2017/04/13 07:38:44 ajacoutot Exp $
 
 # XXX: PORTROACH overriden at end of this file.
 
@@ -43,6 +43,8 @@ LIB_DEPENDS=	devel/libgdata \
 RUN_DEPENDS +=	net/dleyna/server
 
 MODGNOME_TOOLS=	yelp
+
+CONFIGURE_STYLE=	gnu
 
 post-install:
 	rm ${PREFIX}/lib/grilo-${API}/*.{a,la}

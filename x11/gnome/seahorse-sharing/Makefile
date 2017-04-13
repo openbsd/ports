@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2016/04/28 09:37:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2017/04/13 07:38:45 ajacoutot Exp $
 
 COMMENT=		PGP public keys sharing via DNS-SD and HKP
 
@@ -28,7 +28,9 @@ LIB_DEPENDS=		devel/libsoup \
 			net/avahi \
 			x11/gtk+3
 
-# security/gpgme depends on either gnupg-1 or gnupg-2; we want 1.X
+CONFIGURE_STYLE=	gnu
+
+# security/gpgme depends on either gnupg-1 or gnupg-2; we want 2.X
 BUILD_DEPENDS +=	gnupg->=2:security/gnupg2
 RUN_DEPENDS +=		gnupg->=2:security/gnupg2
 CONFIGURE_ENV +=	ac_cv_path_GNUPG=${LOCALBASE}/bin/gpg2

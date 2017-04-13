@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.80 2016/12/30 18:13:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.81 2017/04/13 07:38:45 ajacoutot Exp $
 
 COMMENT=		weather information access library
 
@@ -27,6 +27,8 @@ MODULES=		devel/dconf \
 MODGNOME_TOOLS= 	gobject-introspection vala
 LIB_DEPENDS=		geo/geocode-glib \
 			x11/gtk+3
+
+CONFIGURE_STYLE=	gnu
 
 CONFIGURE_ARGS=		--with-zoneinfo-dir="/usr/share/zoneinfo" \
 			--disable-glade-catalog

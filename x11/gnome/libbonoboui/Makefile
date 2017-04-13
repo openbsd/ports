@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2016/04/29 08:15:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.69 2017/04/13 07:38:45 ajacoutot Exp $
 
 COMMENT=	user interface components for bonobo
 
@@ -32,6 +32,8 @@ LIB_DEPENDS=	devel/popt \
 		x11/gnome/libgnomecanvas
 
 MODGNOME_TOOLS=	desktop-file-utils
+
+CONFIGURE_STYLE=	gnu
 
 TEST_IS_INTERACTIVE= x11
 

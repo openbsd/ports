@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2016/09/24 12:46:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.56 2017/04/13 07:38:45 ajacoutot Exp $
 
 COMMENT=		keyboard configuration library
 
@@ -30,5 +30,7 @@ MODGNOME_CPPFLAGS=	-I${X11BASE}/include
 
 LIB_DEPENDS=		x11/gnome/libxklavier \
 			x11/gtk+3
+
+CONFIGURE_STYLE=	gnu
 
 .include <bsd.port.mk>

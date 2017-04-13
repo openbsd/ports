@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2016/10/31 14:31:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2017/04/13 07:38:45 ajacoutot Exp $
 
 COMMENT =		fit falling blocks together
 
@@ -24,5 +24,7 @@ MODGNOME_TOOLS =	vala desktop-file-utils gtk-update-icon-cache yelp
 
 LIB_DEPENDS =		audio/libcanberra,-gtk3 \
 			graphics/clutter/clutter-gtk
+
+CONFIGURE_STYLE=	gnu
 
 .include <bsd.port.mk>

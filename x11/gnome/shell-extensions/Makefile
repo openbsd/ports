@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2016/11/10 19:28:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.37 2017/04/13 07:38:45 ajacoutot Exp $
 
 PKG_ARCH=		*
 
@@ -24,5 +24,7 @@ RUN_DEPENDS=		devel/libgtop2 \
 
 # extensions/apps-menu/extension.js
 RUN_DEPENDS +=		x11/gnome/menus
+
+CONFIGURE_STYLE=	gnu
 
 .include <bsd.port.mk>

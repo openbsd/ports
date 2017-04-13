@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2016/04/28 09:37:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.64 2017/04/13 07:38:45 ajacoutot Exp $
 
 COMMENT=	libraries for the GNOME project
 
@@ -28,6 +28,7 @@ LIB_DEPENDS=	audio/libcanberra \
 
 MODGCONF2_SCHEMAS_DIR= libgnome
 
+CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+= --disable-esd
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/libgnome/

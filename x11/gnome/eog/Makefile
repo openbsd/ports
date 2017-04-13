@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.132 2016/10/11 19:16:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.133 2017/04/13 07:38:44 ajacoutot Exp $
 
 COMMENT=		Eye of GNOME, image viewing and cataloging program
 
@@ -35,6 +35,8 @@ RUN_DEPENDS=		devel/gsettings-desktop-schemas
 
 MODGNOME_TOOLS += desktop-file-utils gobject-introspection yelp
 MODGNOME_TOOLS += gtk-update-icon-cache shared-mime-info
+
+CONFIGURE_STYLE=	gnu
 
 post-install:
 	rm ${PREFIX}/lib/eog/{,plugins}/*.{a,la}

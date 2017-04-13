@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.118 2017/03/29 13:27:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.119 2017/04/13 07:38:46 ajacoutot Exp $
 
 COMMENT=		GNOME help browser
 
@@ -38,6 +38,8 @@ LIB_DEPENDS=		archivers/xz \
 			www/webkitgtk4
 
 MODGNOME_TOOLS=		desktop-file-utils
+
+CONFIGURE_STYLE=	gnu
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/libyelp/yelp-man-parser.c

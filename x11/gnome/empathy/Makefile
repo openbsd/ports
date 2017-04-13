@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.184 2017/04/10 11:46:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.185 2017/04/13 07:38:44 ajacoutot Exp $
 
 COMMENT= 		Telepathy based messenger for GNOME
 
@@ -74,6 +74,9 @@ RUN_DEPENDS +=		geo/geoclue2
 RUN_DEPENDS +=		multimedia/gstreamer1/plugins-good,-pulse
 
 MODGNOME_TOOLS += 	desktop-file-utils gtk-update-icon-cache yelp
+
+CONFIGURE_STYLE=	gnu
+
 CONFIGURE_ARGS=		--disable-gudev
 
 # needs signond, libsignon-glib -- Ubuntu/Meego

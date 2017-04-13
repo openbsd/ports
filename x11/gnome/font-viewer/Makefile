@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2016/10/31 09:48:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2017/04/13 07:38:44 ajacoutot Exp $
 
 COMMENT=		font viewer for GNOME
 
@@ -22,5 +22,7 @@ LIB_DEPENDS=		x11/gnome/desktop
 MODULES=		x11/gnome
 
 MODGNOME_TOOLS +=	desktop-file-utils
+
+CONFIGURE_STYLE=	gnu
 
 .include <bsd.port.mk>

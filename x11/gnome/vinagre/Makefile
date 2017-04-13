@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.102 2016/11/11 11:52:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.103 2017/04/13 07:38:46 ajacoutot Exp $
 
 COMMENT=		remote desktop viewer for GNOME
 
@@ -32,5 +32,7 @@ LIB_DEPENDS=		devel/vte3 \
 
 MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache \
 			shared-mime-info yelp
+
+CONFIGURE_STYLE=	gnu
 
 .include <bsd.port.mk>

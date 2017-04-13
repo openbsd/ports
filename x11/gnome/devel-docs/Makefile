@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2016/10/28 13:47:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.61 2017/04/13 07:38:44 ajacoutot Exp $
 
 PKG_ARCH=		*
 
@@ -13,5 +13,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 MODULES=		x11/gnome
 
 MODGNOME_TOOLS=		yelp
+
+CONFIGURE_STYLE=	gnu
 
 .include <bsd.port.mk>

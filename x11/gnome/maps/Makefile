@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2016/11/08 08:50:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2017/04/13 07:38:45 ajacoutot Exp $
 
 COMMENT=		map application for GNOME
 
@@ -35,5 +35,7 @@ BUILD_DEPENDS +=	geo/geoclue2 \
 			x11/gnome/gjs
 RUN_DEPENDS +=		geo/geoclue2 \
 			x11/gnome/gjs
+
+CONFIGURE_STYLE=	gnu
 
 .include <bsd.port.mk>

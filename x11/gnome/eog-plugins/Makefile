@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2017/04/11 18:40:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.74 2017/04/13 07:38:44 ajacoutot Exp $
 
 # XXX the "postr" plugin needs postr which hasn't been ported yet
 
@@ -45,6 +45,8 @@ RUN_DEPENDS=		devel/gsettings-desktop-schemas \
 			x11/gnome/eog>=${GNOME_VERSION}
 
 MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
+
+CONFIGURE_STYLE=	gnu
 
 post-install:
 	rm ${PREFIX}/lib/eog/plugins/*.{a,la}

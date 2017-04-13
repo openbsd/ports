@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.147 2017/04/13 07:06:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.148 2017/04/13 07:38:44 ajacoutot Exp $
 
 # XXX: Re-enable vala 0.36 support
 
@@ -69,6 +69,8 @@ MODGNOME_TOOLS += desktop-file-utils gtk-update-icon-cache shared-mime-info
 MODGNOME_TOOLS += gobject-introspection yelp
 
 YACC=			bison -y
+
+CONFIGURE_STYLE=	gnu
 
 CONFIGURE_ARGS=		--with-symbol-db-shm=/tmp \
 			--disable-neon

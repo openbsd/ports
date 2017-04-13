@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2016/06/13 09:05:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.65 2017/04/13 07:38:45 ajacoutot Exp $
 
 COMMENT=		applications integration into Nautilus
 
@@ -19,5 +19,7 @@ MODGNOME_TOOLS=		gobject-introspection
 LIB_DEPENDS=		devel/glib2
 
 FAKE_FLAGS=		schemadir=${PREFIX}/share/schemas/nautilus-sendto
+
+CONFIGURE_STYLE=	gnu
 
 .include <bsd.port.mk>

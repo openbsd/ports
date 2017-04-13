@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2017/03/21 13:47:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2017/04/13 07:38:44 ajacoutot Exp $
 
 COMMENT=		GLib wrapper around libarchive
 
@@ -25,6 +25,8 @@ WANTLIB += xcb xcb-render xcb-shm z
 MODULES=		x11/gnome
 
 MODGNOME_TOOLS= 	gobject-introspection vala
+
+CONFIGURE_STYLE=	gnu
 
 LIB_DEPENDS=		archivers/libarchive \
 			x11/gtk+3

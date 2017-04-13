@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.257 2017/03/09 05:45:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.258 2017/04/13 07:38:45 ajacoutot Exp $
 
 COMMENT=		GNOME session
 
@@ -46,6 +46,8 @@ RUN_DEPENDS+=		devel/gsettings-desktop-schemas
 
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib
+
+CONFIGURE_STYLE=	gnu
 
 CONFIGURE_ARGS=		--disable-systemd \
 			--enable-consolekit

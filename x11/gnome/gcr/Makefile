@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2016/04/25 10:31:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.52 2017/04/13 07:38:44 ajacoutot Exp $
 
 COMMENT=		library for bits of crypto UI and parsing
 
@@ -30,6 +30,8 @@ MODGNOME_TOOLS +=	gtk-update-icon-cache shared-mime-info vala
 LIB_DEPENDS=		x11/gtk+3 \
 			security/libgcrypt \
 			security/p11-kit
+
+CONFIGURE_STYLE=	gnu
 
 BUILD_DEPENDS +=	gnupg->=2:security/gnupg2
 RUN_DEPENDS +=		gnupg->=2:security/gnupg2

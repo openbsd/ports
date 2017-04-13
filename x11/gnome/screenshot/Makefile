@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2016/10/31 09:48:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.27 2017/04/13 07:38:45 ajacoutot Exp $
 
 COMMENT=		screenshot application for GNOME
 
@@ -19,5 +19,7 @@ MODULES=		devel/dconf \
 
 MODGNOME_TOOLS=		desktop-file-utils
 MODGNOME_LDFLAGS +=	-L${X11BASE}/lib
+
+CONFIGURE_STYLE=	gnu
 
 .include <bsd.port.mk>

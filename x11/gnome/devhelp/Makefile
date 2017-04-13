@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.98 2017/04/11 10:11:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.99 2017/04/13 07:38:44 ajacoutot Exp $
 
 COMMENT=		API documentation browser for GNOME
 
@@ -38,5 +38,7 @@ LIB_DEPENDS=		www/webkitgtk4
 
 # for convenience
 RUN_DEPENDS +=		x11/gnome/devel-docs
+
+CONFIGURE_STYLE=	gnu
 
 .include <bsd.port.mk>

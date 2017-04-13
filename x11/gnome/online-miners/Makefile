@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2016/11/04 11:35:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2017/04/13 07:38:45 ajacoutot Exp $
 
 TRACKER_API=		1.0
 
@@ -37,6 +37,8 @@ RUN_DEPENDS +=		net/dleyna/server
 
 # calls grl_registry_load...plugin
 RUN_DEPENDS +=		x11/gnome/grilo-plugins
+
+CONFIGURE_STYLE=	gnu
 
 post-install:
 	rm ${PREFIX}/lib/gnome-online-miners/*.{a,la}

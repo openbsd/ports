@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2016/10/12 18:21:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.67 2017/04/13 07:38:44 ajacoutot Exp $
 
 COMMENT=		binary editor
 
@@ -26,5 +26,7 @@ MODULES=		devel/dconf \
 LIB_DEPENDS=		x11/gtk+3
 
 MODGNOME_TOOLS= 	desktop-file-utils gtk-update-icon-cache yelp
+
+CONFIGURE_STYLE=	gnu
 
 .include <bsd.port.mk>

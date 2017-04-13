@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2017/04/13 07:07:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.46 2017/04/13 07:38:44 ajacoutot Exp $
 
 BROKEN=			broken after vala 0.36 update
 
@@ -75,6 +75,8 @@ LIB_DEPENDS=		${MODPY_LIB_DEPENDS} \
 			x11/gnome/devhelp \
 			x11/gtksourceview3 \
 			x11/gtk3mm
+
+CONFIGURE_STYLE=	gnu
 
 CONFIGURE_ENV=		ac_cv_path_PYTHON3_CONFIG=python${MODPY_VERSION}-config
 

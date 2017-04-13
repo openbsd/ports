@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.150 2017/03/21 18:15:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.151 2017/04/13 07:38:46 ajacoutot Exp $
 
 COMMENT=	GNOME terminal
 
@@ -33,6 +33,8 @@ LIB_DEPENDS=	devel/gconf2 \
 		x11/gnome/nautilus>=3.22.1
 
 MODGNOME_TOOLS=	desktop-file-utils vala yelp
+
+CONFIGURE_STYLE=	gnu
 
 pre-configure:
 # XXX cc1: error: unrecognized command line option

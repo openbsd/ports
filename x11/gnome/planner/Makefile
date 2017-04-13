@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2016/04/28 09:37:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.73 2017/04/13 07:38:45 ajacoutot Exp $
 
 COMMENT=		project management application
 
@@ -57,6 +57,8 @@ LIB_DEPENDS=		security/libgcrypt \
 MODGNOME_TOOLS += desktop-file-utils gtk-update-icon-cache shared-mime-info yelp
 
 MODGCONF2_SCHEMAS_DIR=	planner
+
+CONFIGURE_STYLE=	gnu
 
 CONFIGURE_ARGS= 	--disable-python \
 			--disable-eds \

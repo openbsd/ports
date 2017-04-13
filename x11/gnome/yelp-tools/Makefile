@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2015/09/24 10:28:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2017/04/13 07:38:46 ajacoutot Exp $
 
 PKG_ARCH=		*
 
@@ -19,5 +19,7 @@ BUILD_DEPENDS=		textproc/itstool \
 RUN_DEPENDS=		textproc/itstool \
 			textproc/libxslt \
 			x11/gnome/yelp-xsl
+
+CONFIGURE_STYLE=	gnu
 
 .include <bsd.port.mk>

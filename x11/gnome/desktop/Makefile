@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.148 2016/11/07 18:04:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.149 2017/04/13 07:38:44 ajacoutot Exp $
 
 COMMENT=		components for the GNOME desktop
 
@@ -41,6 +41,8 @@ RUN_DEPENDS +=		x11/gnome/backgrounds \
 LIB_DEPENDS=		x11/gtk+3
 
 MODGNOME_TOOLS=		gobject-introspection yelp
+
+CONFIGURE_STYLE=	gnu
 
 CONFIGURE_ARGS=		--with-gnome-distributor="OpenBSD Ports" \
 			--disable-udev

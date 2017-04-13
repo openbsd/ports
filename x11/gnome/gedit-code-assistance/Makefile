@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2016/04/28 07:22:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2017/04/13 07:38:44 ajacoutot Exp $
 
 COMMENT=	code assistance for Gedit
 
@@ -30,6 +30,8 @@ BUILD_DEPENDS=	x11/gnome/gedit>=3.14.0
 
 RUN_DEPENDS=	x11/gnome/code-assistance \
 		x11/gnome/gedit>=3.14.0
+
+CONFIGURE_STYLE=	gnu
 
 post-install:
 	rm ${PREFIX}/lib/gedit/plugins{,/gca/indent-backends}/*.{a,la}

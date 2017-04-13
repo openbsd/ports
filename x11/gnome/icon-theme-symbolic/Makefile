@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2015/03/27 08:16:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2017/04/13 07:38:45 ajacoutot Exp $
 
 COMMENT=	base icon theme extension for special UI contexts
 
@@ -21,6 +21,8 @@ RUN_DEPENDS=	x11/gnome/icon-theme
 PKG_ARCH=	*
 
 MODGNOME_TOOLS=	gtk-update-icon-cache
+
+CONFIGURE_STYLE=gnu
 
 CONFIGURE_ENV=	ac_cv_path_GIT=false \
 		ac_cv_path_INKSCAPE=false

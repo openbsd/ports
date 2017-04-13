@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2017/04/11 07:26:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2017/04/13 07:38:44 ajacoutot Exp $
 
 COMMENT=		atk-bridge for at-spi2
 
@@ -16,6 +16,8 @@ WANTLIB += ICE SM X11 atk-1.0 atspi dbus-1 ffi glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 iconv intl pcre pthread xcb
 
 MODULES=		x11/gnome
+
+CONFIGURE_STYLE=	gnu
 
 LIB_DEPENDS=		devel/atk \
 			x11/gnome/at-spi2-core>=${GNOME_VERSION}

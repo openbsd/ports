@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2016/08/20 12:39:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2017/04/13 07:38:46 ajacoutot Exp $
 
 PKG_ARCH=		*
 
@@ -32,5 +32,7 @@ MODGNOME_TOOLS=		desktop-file-utils gobject-introspection \
 			gtk-update-icon-cache
 
 TEST_DEPENDS=		${MODPY_RUN_DEPENDS}
+
+CONFIGURE_STYLE=	gnu
 
 .include <bsd.port.mk>

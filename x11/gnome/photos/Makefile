@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2017/03/07 15:40:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.53 2017/04/13 07:38:45 ajacoutot Exp $
 
 TRACKER_API=		1.0
 
@@ -57,6 +57,8 @@ RUN_DEPENDS +=		x11/gnome/grilo-plugins
 # undefined reference to `__sync_add_and_fetch_8'
 CFLAGS +=		-march=i686
 .endif
+
+CONFIGURE_STYLE=	gnu
 
 # XXX
 # cc1: error: unrecognized command line option "-Wunused-but-set-variable"

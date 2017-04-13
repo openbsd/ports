@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2017/02/15 18:34:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.47 2017/04/13 07:38:44 ajacoutot Exp $
 
 # XXX: PORTROACH overriden at end of this file.
 
@@ -38,6 +38,8 @@ LIB_DEPENDS=	devel/libsoup \
 		x11/gtk+3
 
 MODGNOME_TOOLS += gobject-introspection vala
+
+CONFIGURE_STYLE=	gnu
 
 # Own the grilo plugins directory to prevent warnings that this
 # directory does not exist when no plugin is installed.

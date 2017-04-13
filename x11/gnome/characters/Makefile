@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2016/10/31 09:44:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2017/04/13 07:38:44 ajacoutot Exp $
 
 COMMENT =		GNOME utility to insert unusual characters
 
@@ -26,6 +26,8 @@ BUILD_DEPENDS =		x11/gnome/gjs
 RUN_DEPENDS =		x11/gnome/gjs
 
 MODGNOME_TOOLS =	desktop-file-utils gtk-update-icon-cache
+
+CONFIGURE_STYLE =	gnu
 
 # Requires unported 'dogtail'
 NO_TEST =		Yes

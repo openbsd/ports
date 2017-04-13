@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2017/04/10 11:46:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2017/04/13 07:38:44 ajacoutot Exp $
 
 # XXX change proxy settings without network-manager?
 
@@ -88,6 +88,8 @@ MODGNOME_CPPFLAGS=	-I${X11BASE}/include
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 
 FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/gnome-control-center
+
+CONFIGURE_STYLE=	gnu
 
 # XXX
 # http://permalink.gmane.org/gmane.comp.gnome.desktop/51950

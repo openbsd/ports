@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2017/04/11 09:43:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2017/04/13 07:38:44 ajacoutot Exp $
 
 COMMENT=		GNOME dictionary application
 
@@ -25,5 +25,6 @@ LIB_DEPENDS=		x11/gtk+3
 
 MODGNOME_TOOLS=		desktop-file-utils gobject-introspection yelp
 
-.include <bsd.port.mk>
+CONFIGURE_STYLE=	gnu
 
+.include <bsd.port.mk>

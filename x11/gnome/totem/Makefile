@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.147 2017/03/03 15:53:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.148 2017/04/13 07:38:46 ajacoutot Exp $
 
 COMMENT=		official media player for GNOME
 
@@ -61,6 +61,8 @@ RUN_DEPENDS +=		multimedia/gstreamer1/plugins-good \
 
 MODGNOME_TOOLS += desktop-file-utils gobject-introspection gtk-update-icon-cache
 MODGNOME_TOOLS += vala yelp
+
+CONFIGURE_STYLE=	gnu
 
 pre-configure:
 # XXX cc1: error: unrecognized command line option "-Wno-unused-but-set-variable"

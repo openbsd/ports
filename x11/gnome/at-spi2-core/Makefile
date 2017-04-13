@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2017/04/11 07:26:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.44 2017/04/13 07:38:44 ajacoutot Exp $
 
 COMMENT=		service interface for assistive technologies
 
@@ -20,6 +20,8 @@ MODULES=		x11/gnome
 
 LIB_DEPENDS=		devel/glib2 \
 			x11/dbus
+
+CONFIGURE_STYLE=	gnu
 
 MODGNOME_TOOLS=		gobject-introspection
 

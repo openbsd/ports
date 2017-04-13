@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2017/04/10 11:46:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.39 2017/04/13 07:38:45 ajacoutot Exp $
 
 COMMENT=	quick previewer for Nautilus
 
@@ -36,6 +36,8 @@ LIB_DEPENDS=	audio/libmusicbrainz5 \
 		www/webkitgtk4 \
 		x11/gnome/gjs \
 		x11/gtksourceview3
+
+CONFIGURE_STYLE=gnu
 
 post-install:
 	rm ${PREFIX}/lib/sushi/*.{a,la}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2016/10/31 09:44:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.75 2017/04/13 07:38:46 ajacoutot Exp $
 
 COMMENT=		dialogs for GNOME
 
@@ -18,5 +18,7 @@ LIB_DEPENDS=		devel/libnotify>=0.7.2 \
 			www/webkitgtk4
 
 MODGNOME_TOOLS +=	yelp
+
+CONFIGURE_STYLE=	gnu
 
 .include <bsd.port.mk>

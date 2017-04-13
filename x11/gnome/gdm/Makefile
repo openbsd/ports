@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.252 2017/04/09 14:37:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.253 2017/04/13 07:38:44 ajacoutot Exp $
 
 COMMENT=		GNOME display manager
 
@@ -56,6 +56,8 @@ LIB_DEPENDS=		audio/libcanberra,-gtk3 \
 MODGNOME_TOOLS += gobject-introspection gtk-update-icon-cache yelp
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include -DHAS_SA_LEN
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib
+
+CONFIGURE_STYLE=	gnu
 
 CONFIGURE_ARGS=		--mandir=${PREFIX}/man \
 			--disable-systemd-journal \

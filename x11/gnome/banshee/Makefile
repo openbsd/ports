@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2017/04/10 11:46:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.36 2017/04/13 07:38:44 ajacoutot Exp $
 
 COMMENT=		music management and playback application for GNOME
 
@@ -55,6 +55,8 @@ LIB_DEPENDS=		multimedia/gstreamer-0.10/plugins-base \
 			www/webkit
 
 MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache shared-mime-info yelp
+
+CONFIGURE_STYLE=	gnu
 
 CONFIGURE_ARGS=		--with-vendor-build-id="OpenBSD Ports" \
 			--disable-shave

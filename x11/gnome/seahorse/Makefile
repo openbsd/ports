@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.107 2016/04/26 07:38:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.108 2017/04/13 07:38:45 ajacoutot Exp $
 
 COMMENT=		GNOME encryption interface
 
@@ -27,6 +27,8 @@ LIB_DEPENDS=		databases/openldap \
 			devel/libsoup \
 			security/gpgme \
 			net/avahi
+
+CONFIGURE_STYLE=	gnu
 
 # security/gpgme depends on either gnupg-1 or gnupg-2; we want 2.X
 BUILD_DEPENDS +=	gnupg->=2:security/gnupg2

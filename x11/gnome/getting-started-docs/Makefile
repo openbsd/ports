@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2016/10/28 13:47:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2017/04/13 07:38:44 ajacoutot Exp $
 
 PKG_ARCH=		*
 
@@ -19,5 +19,7 @@ RUN_DEPENDS=		x11/gnome/user-docs
 # decoder-video/x-vp8 (VP8 decoder)
 # decoder-video/webm (WebM demuxer)
 RUN_DEPENDS +=		multimedia/gstreamer1/plugins-good
+
+CONFIGURE_STYLE=	gnu
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2017/03/23 10:15:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.67 2017/04/13 07:38:46 ajacoutot Exp $
 
 COMMENT=		standard GNOME themes
 
@@ -32,6 +32,8 @@ RUN_DEPENDS +=		x11/gtk-engines2
 # default settings
 RUN_DEPENDS +=		fonts/cantarell-fonts \
 			x11/gnome/adwaita-icon-theme
+
+CONFIGURE_STYLE=	gnu
 
 post-install:
 	rm ${PREFIX}/lib/gtk-2.0/2.10.0/engines/*.{a,la}

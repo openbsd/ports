@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2017/04/10 11:46:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2017/04/13 07:38:45 ajacoutot Exp $
 
 COMMENT =		recipe manager for GNOME
 
@@ -33,6 +33,8 @@ LIB_DEPENDS =		archivers/libarchive \
 
 MODGNOME_TOOLS =	desktop-file-utils gobject-introspection \
 			gtk-update-icon-cache shared-mime-info vala
+
+CONFIGURE_STYLE =	gnu
 
 # Prevent picking up git(1) during configure
 CONFIGURE_ENV +=	GIT=/usr/bin/true

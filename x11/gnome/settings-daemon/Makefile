@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.161 2017/03/15 10:14:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.162 2017/04/13 07:38:45 ajacoutot Exp $
 
 # XXX gcm-dmi.c:141:2: warning: #warning Please add dmi support for your OS
 
@@ -67,6 +67,8 @@ MODGNOME_TOOLS=		docbook gtk-update-icon-cache
 
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib
+
+CONFIGURE_STYLE=	gnu
 
 CONFIGURE_ARGS= 	--disable-gudev \
 			--disable-rfkill \

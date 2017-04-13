@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2016/11/08 18:04:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.69 2017/04/13 07:38:45 ajacoutot Exp $
 
 COMMENT=		sytem monitor for GNOME
 
@@ -40,6 +40,8 @@ RUN_DEPENDS +=		sysutils/polkit
 RUN_DEPENDS +=		sysutils/consolekit
 
 MODGNOME_TOOLS=		desktop-file-utils yelp
+
+CONFIGURE_STYLE=	gnu
 
 CONFIGURE_ARGS=		--disable-systemd
 

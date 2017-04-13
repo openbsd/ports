@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2016/01/05 13:24:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2017/04/13 07:38:45 ajacoutot Exp $
 
 COMMENT=		OCR and DAR program
 
@@ -39,6 +39,8 @@ RUN_DEPENDS=		devel/iso-codes \
 RUN_DEPENDS +=		ocrad-*|tesseract-*|gocr-*:graphics/ocrad
 
 MODGNOME_TOOLS= 	desktop-file-utils yelp
+
+CONFIGURE_STYLE=	gnu
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/ocrfeeder/util/constants.py.in

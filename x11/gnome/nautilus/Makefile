@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.170 2017/03/09 05:30:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.171 2017/04/13 07:38:45 ajacoutot Exp $
 
 TRACKER_API=		1.0
 
@@ -45,6 +45,7 @@ MODGNOME_TOOLS=		desktop-file-utils gobject-introspection \
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 
+CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--disable-selinux
 
 FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/nautilus

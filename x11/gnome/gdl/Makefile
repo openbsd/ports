@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2016/10/31 14:14:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.58 2017/04/13 07:38:44 ajacoutot Exp $
 
 COMMENT=		GNOME Docking Library
 
@@ -25,5 +25,7 @@ LIB_DEPENDS=		textproc/libxml \
 			x11/gtk+3
 
 MODGNOME_TOOLS=		gobject-introspection
+
+CONFIGURE_STYLE=	gnu
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2017/01/14 08:28:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2017/04/13 07:38:44 ajacoutot Exp $
 
 COMMENT=		graphical dconf(1) editor
 
@@ -20,5 +20,7 @@ MODULES=		devel/dconf \
 MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache
 
 LIB_DEPENDS=		x11/gtk+3
+
+CONFIGURE_STYLE=	gnu
 
 .include <bsd.port.mk>

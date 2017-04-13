@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2017/04/11 07:27:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2017/04/13 07:38:45 ajacoutot Exp $
 
 PKG_ARCH=		*
 
@@ -28,5 +28,7 @@ RUN_DEPENDS +=		x11/gtk+3
 
 # connects to DBus
 TEST_IS_INTERACTIVE=	x11
+
+CONFIGURE_STYLE=	gnu
 
 .include <bsd.port.mk>

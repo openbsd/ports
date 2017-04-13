@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2017/04/10 11:46:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.55 2017/04/13 07:38:44 ajacoutot Exp $
 
 COMMENT=		color profile manager for GNOME
 
@@ -35,6 +35,8 @@ RUN_DEPENDS=		graphics/argyll \
 			graphics/shared-color-targets
 
 MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache yelp
+
+CONFIGURE_STYLE=	gnu
 
 # XXX gcm-calibrate.sgml:1: parser error : StartTag: invalid element name
 CONFIGURE_ENV +=	ac_cv_path_DOCBOOK2MAN=no

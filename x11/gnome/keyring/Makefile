@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.123 2016/04/25 10:57:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.124 2017/04/13 07:38:45 ajacoutot Exp $
 
 COMMENT=		password agent for the GNOME project
 
@@ -26,6 +26,8 @@ LIB_DEPENDS=		x11/gnome/gcr
 
 # GnuPG2 gnome-keyring agent
 RUN_DEPENDS +=		security/pinentry,-gnome3,
+
+CONFIGURE_STYLE=	gnu
 
 CONFIGURE_ARGS=		--disable-pam \
 			--disable-valgrind

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.170 2017/03/28 15:24:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.171 2017/04/13 07:38:45 ajacoutot Exp $
 
 COMMENT-main=		GNOME Virtual File System
 COMMENT-smb=		GVFS mount module for samba
@@ -89,6 +89,8 @@ LIB_DEPENDS-nfs=	devel/libnfs \
 RUN_DEPENDS-google=	${BASE_PKGPATH},-main=${GNOME_VERSION}
 LIB_DEPENDS-google=	devel/libgdata \
 			x11/gnome/online-accounts
+
+CONFIGURE_STYLE=	gnu
 
 CONFIGURE_ARGS=		--disable-libsystemd-login \
 			--disable-cdda \

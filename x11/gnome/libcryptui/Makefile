@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2016/04/28 09:37:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.31 2017/04/13 07:38:45 ajacoutot Exp $
 
 COMMENT=	interface components for OpenPGP
 
@@ -32,6 +32,8 @@ LIB_DEPENDS=	x11/dbus-glib \
 		x11/gtk+3 \
 		x11/gnome/libgnome-keyring \
 		devel/libnotify
+
+CONFIGURE_STYLE=gnu
 
 # security/gpgme depends on either gnupg-1 or gnupg-2; we want 2.X
 BUILD_DEPENDS +=	gnupg->=2:security/gnupg2

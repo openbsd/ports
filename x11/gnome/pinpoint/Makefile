@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2016/04/27 09:47:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2017/04/13 07:38:45 ajacoutot Exp $
 
 COMMENT=		simple presentation tool
 
@@ -22,6 +22,8 @@ MODULES=		x11/gnome
 
 LIB_DEPENDS=		graphics/clutter/clutter-gst \
 			graphics/clutter/clutter-gtk
+
+CONFIGURE_STYLE=	gnu
 
 # not ported yet
 CONFIGURE_ARGS +=	--disable-dax

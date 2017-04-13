@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2016/04/28 09:37:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.61 2017/04/13 07:38:45 ajacoutot Exp $
 
 COMMENT=	graphics library for GNOME
 
@@ -28,6 +28,7 @@ MODULES=	x11/gnome
 LIB_DEPENDS=	devel/libglade2 \
 		graphics/libart
 
+CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--enable-glade
 MODGNOME_LDFLAGS=-L${X11BASE}/lib
 

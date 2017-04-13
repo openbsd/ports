@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.85 2016/04/28 09:32:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.86 2017/04/13 07:38:46 ajacoutot Exp $
 
 COMMENT=		GNOME Virtual File System
 
@@ -28,6 +28,8 @@ LIB_DEPENDS=		archivers/bzip2 \
 			sysutils/gamin
 
 MODGCONF2_SCHEMAS_DIR=	gnome-vfs2
+
+CONFIGURE_STYLE=	gnu
 
 CONFIGURE_ARGS+= 	--disable-cdda \
 			--disable-avahi \

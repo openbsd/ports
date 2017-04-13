@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2017/04/10 11:46:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.60 2017/04/13 07:38:44 ajacoutot Exp $
 
 COMMENT=		contacts manager for GNOME
 
@@ -40,5 +40,7 @@ LIB_DEPENDS=		geo/libchamplain \
 
 MODGNOME_TOOLS=		desktop-file-utils docbook \
 			gobject-introspection vala
+
+CONFIGURE_STYLE=	gnu
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2016/04/25 08:59:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2017/04/13 07:38:46 ajacoutot Exp $
 
 PKG_ARCH=		*
 
@@ -14,5 +14,7 @@ MODULES=		x11/gnome
 
 BUILD_DEPENDS=		textproc/itstool \
 			textproc/libxslt
+
+CONFIGURE_STYLE=	gnu
 
 .include <bsd.port.mk>

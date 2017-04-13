@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.79 2016/04/28 09:37:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.80 2017/04/13 07:38:45 ajacoutot Exp $
 
 COMMENT=		implementation of the FreeDesktop Desktop Menu Spec
 
@@ -21,6 +21,8 @@ MODGNOME_TOOLS += 	gobject-introspection
 LIB_DEPENDS=		devel/glib2
 
 FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/gnome-menus
+
+CONFIGURE_STYLE=	gnu
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/layout/gnome-applications.menu

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2016/04/28 09:37:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.39 2017/04/13 07:38:45 ajacoutot Exp $
 
 # XXX check if still needed at next update
 CXXFLAGS +=		-std=c++11
@@ -36,5 +36,7 @@ MODGCC4_LANGS=		c++
 
 LIB_DEPENDS=		x11/gnome/libgnomecanvas \
 			x11/gtk2mm
+
+CONFIGURE_STYLE=	gnu
 
 .include <bsd.port.mk>

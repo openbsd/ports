@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2017/04/10 11:46:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2017/04/13 07:38:44 ajacoutot Exp $
 
 COMMENT =		GNOME calendar
 
@@ -31,6 +31,8 @@ MODULES =		devel/dconf \
 LIB_DEPENDS =		databases/evolution-data-server
 
 MODGNOME_TOOLS =	desktop-file-utils gtk-update-icon-cache
+
+CONFIGURE_STYLE =	gnu
 
 pre-configure:
 # XXX cc1: error: unrecognized command line option

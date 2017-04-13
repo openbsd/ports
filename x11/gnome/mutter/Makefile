@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2017/02/25 15:05:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.68 2017/04/13 07:38:45 ajacoutot Exp $
 
 COMMENT=		window and compositing manager
 
@@ -40,6 +40,8 @@ BUILD_DEPENDS=		devel/gsettings-desktop-schemas>=3.16.0 \
 
 RUN_DEPENDS=		devel/gsettings-desktop-schemas>=3.16.0 \
 			x11/gnome/zenity
+
+CONFIGURE_STYLE=	gnu
 
 # Required by embedded cogl/clutter forks.
 CONFIGURE_ARGS +=	--with-x \

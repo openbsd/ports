@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2017/03/29 13:27:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.75 2017/04/13 07:38:44 ajacoutot Exp $
 
 TRACKER_API=		1.0
 
@@ -62,6 +62,8 @@ RUN_DEPENDS +=		x11/gnome/epub-thumbnailer
 
 # src/application.js
 RUN_DEPENDS +=		x11/gnome/online-miners
+
+CONFIGURE_STYLE=	gnu
 
 post-install:
 	rm ${PREFIX}/lib/gnome-documents/*.{a,la}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2017/04/13 07:07:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.29 2017/04/13 07:38:44 ajacoutot Exp $
 
 COMMENT=		code assistance services for GNOME
 
@@ -32,6 +32,8 @@ RUN_DEPENDS=		devel/llvm>=${MODCLANG_VERSION} \
 
 LIB_DEPENDS=		devel/libgee \
 			lang/vala
+
+CONFIGURE_STYLE=	gnu
 
 CONFIGURE_ENV=		RUBY="${RUBY}"
 

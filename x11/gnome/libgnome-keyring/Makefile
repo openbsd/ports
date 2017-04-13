@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2016/04/28 09:37:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.44 2017/04/13 07:38:45 ajacoutot Exp $
 
 COMMENT=	library for gnome keyring integration
 
@@ -25,6 +25,8 @@ LIB_DEPENDS=	security/libgcrypt \
 # org.freedesktop.secrets
 # (XXX add "gnome-keyring-*|ksecretsservice-*" when implemented)
 #RUN_DEPENDS +=		x11/gnome/keyring
+
+CONFIGURE_STYLE=	gnu
 
 # regression tests call 'env python'
 MODULES +=		lang/python

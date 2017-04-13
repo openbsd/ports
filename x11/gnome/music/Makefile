@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2017/01/03 18:54:49 shadchin Exp $
+# $OpenBSD: Makefile,v 1.42 2017/04/13 07:38:45 ajacoutot Exp $
 
 COMMENT=		GNOME music playing application
 
@@ -41,6 +41,8 @@ RUN_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR} \
 
 # sndio(7) support
 RUN_DEPENDS +=	multimedia/gstreamer1/plugins-base
+
+CONFIGURE_STYLE=	gnu
 
 post-install:
 	rm ${PREFIX}/lib/gnome-music/*.{a,la}

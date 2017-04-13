@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.95 2017/01/03 18:54:49 shadchin Exp $
+# $OpenBSD: Makefile,v 1.96 2017/04/13 07:38:44 ajacoutot Exp $
 
 COMMENT=		plugins for Gedit
 
@@ -46,6 +46,8 @@ RUN_DEPENDS=		devel/gsettings-desktop-schemas \
 			x11/gnome/gucharmap
 
 MODGNOME_TOOLS +=	yelp
+
+CONFIGURE_STYLE=	gnu
 
 post-install:
 	rm ${PREFIX}/lib/gedit/plugins/*.{a,la}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2017/04/10 11:46:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2017/04/13 07:38:46 ajacoutot Exp $
 
 COMMENT=		simple task management application
 
@@ -34,5 +34,7 @@ MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache
 
 LIB_DEPENDS=		databases/evolution-data-server \
 			devel/libpeas
+
+CONFIGURE_STYLE=	gnu
 
 .include <bsd.port.mk>

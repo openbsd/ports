@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2016/11/09 11:18:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.37 2017/04/13 07:38:45 ajacoutot Exp $
 
 COMMENT=		.NET language bindings for assorted GNOME libraries
 
@@ -40,6 +40,8 @@ DLLMAP_FILES=		art/art-sharp.dll.config \
 			gnome/gnome-sharp.dll.config \
 			gconf/GConf/gconf-sharp.dll.config \
 			gnomevfs/gnome-vfs-sharp.dll.config
+
+CONFIGURE_STYLE=	gnu
 
 pre-configure:
 	find ${WRKSRC} -name *\.pc.in -exec sed -i \

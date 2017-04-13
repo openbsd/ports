@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2016/10/31 09:22:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.54 2017/04/13 07:38:46 ajacoutot Exp $
 
 PKG_ARCH=		*
 
@@ -32,5 +32,7 @@ RUN_DEPENDS +=		x11/gnome/shell
 
 # Notify introspection libs: site-packages/gtweak/utils.py
 RUN_DEPENDS +=		devel/libnotify
+
+CONFIGURE_STYLE=	gnu
 
 .include <bsd.port.mk>

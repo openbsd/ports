@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2017/01/03 18:54:48 shadchin Exp $
+# $OpenBSD: Makefile,v 1.43 2017/04/13 07:38:44 ajacoutot Exp $
 
 COMMENT=		input assistive technology
 
@@ -41,6 +41,8 @@ LIB_DEPENDS=		devel/libgee \
 			x11/gtk+3
 
 FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/caribou
+
+CONFIGURE_STYLE=	gnu
 
 post-install:
 	rm ${PREFIX}/lib/gtk-{2,3}.0/modules/*.{a,la}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2017/03/06 08:10:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2017/04/13 07:38:45 ajacoutot Exp $
 
 COMMENT=		media art extraction and cache management library
 
@@ -21,6 +21,7 @@ MODGNOME_TOOLS=		gobject-introspection vala
 
 LIB_DEPENDS=		graphics/gdk-pixbuf2
 
+CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--disable-qt
 
 .include <bsd.port.mk>

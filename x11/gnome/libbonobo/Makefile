@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2016/04/28 09:37:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.65 2017/04/13 07:38:45 ajacoutot Exp $
 
 COMMENT=	GNOME component and compound document system
 
@@ -30,6 +30,8 @@ LIB_DEPENDS=	devel/ORBit2 \
 RUN_DEPENDS=   devel/popt
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/libbonobo
+
+CONFIGURE_STYLE=	gnu
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/activation-server/bonobo-activation-server.1

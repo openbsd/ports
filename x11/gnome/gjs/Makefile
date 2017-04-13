@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2016/10/29 07:49:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.46 2017/04/13 07:38:44 ajacoutot Exp $
 
 USE_WXNEEDED=		Yes
 
@@ -41,6 +41,8 @@ LIB_DEPENDS=		devel/gobject-introspection \
 			x11/gtk+3
 
 TEST_DEPENDS=		sysutils/e2fsprogs #uuidgen(1)
+
+CONFIGURE_STYLE=	gnu
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gjs/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2017/02/15 18:31:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.39 2017/04/13 07:38:44 ajacoutot Exp $
 
 COMMENT=		GNOME desktop calculator
 
@@ -27,6 +27,8 @@ LIB_DEPENDS+=		devel/mpfr \
 			x11/gtksourceview3
 
 MODGNOME_TOOLS=		desktop-file-utils vala yelp
+
+CONFIGURE_STYLE=	gnu
 
 post-install:
 	rm ${PREFIX}/lib/gnome-calculator/*.{a,la}

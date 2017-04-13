@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2017/04/11 09:49:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2017/04/13 07:38:44 ajacoutot Exp $
 
 PKG_ARCH=		*
 
@@ -21,6 +21,8 @@ CONFIGURE_ENV=		ac_cv_path_GIT=false \
 
 BUILD_DEPENDS=		x11/icontool
 RUN_DEPENDS=		x11/gnome/librsvg
+
+CONFIGURE_STYLE=	gnu
 
 # XXX cyclic dep: gtk+3->adwaita-icon-theme->gtk+3
 #BUILD_DEPENDS +=	x11/gtk+3

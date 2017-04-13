@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.110 2017/03/21 18:15:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.111 2017/04/13 07:38:45 ajacoutot Exp $
 
 COMMENT=		Unicode character map for the GNOME project
 
@@ -26,6 +26,8 @@ MODGNOME_TOOLS=		desktop-file-utils gobject-introspection vala yelp
 BUILD_DEPENDS=		archivers/unzip \
 			textproc/unicode-ucd>=9.0.0
 LIB_DEPENDS=		x11/gtk+3,-main
+
+CONFIGURE_STYLE=	gnu
 
 CONFIGURE_ARGS +=	--with-unicode-data=${LOCALBASE}/share/unicode/ucd/
 # error: -Bsymbolic-functions requested but not supported by ld

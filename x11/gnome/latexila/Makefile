@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2017/04/10 11:46:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.49 2017/04/13 07:38:45 ajacoutot Exp $
 
 COMMENT=		integrated LaTeX environment for GNOME
 
@@ -35,5 +35,7 @@ LIB_DEPENDS=		devel/libgee \
 
 MODGNOME_TOOLS=		desktop-file-utils gobject-introspection \
 			gtk-update-icon-cache vala yelp
+
+CONFIGURE_STYLE=	gnu
 
 .include <bsd.port.mk>
