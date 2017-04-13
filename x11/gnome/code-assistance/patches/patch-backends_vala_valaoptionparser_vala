@@ -1,0 +1,15 @@
+$OpenBSD: patch-backends_vala_valaoptionparser_vala,v 1.1 2017/04/13 07:07:16 jasper Exp $
+
+Fix build with vala 0.36, extracted from:
+https://git.gnome.org/browse/gnome-code-assistance/commit/?id=508e157a08eda979683d130bd779792ee4d90d58
+
+--- backends/vala/valaoptionparser.vala.orig	Tue Apr 11 21:16:37 2017
++++ backends/vala/valaoptionparser.vala	Tue Apr 11 21:17:23 2017
+@@ -184,7 +184,6 @@ class OptionParser {
+ 		context.gir_directories = realpaths(wd, gir_directories);
+ 		context.metadata_directories = realpaths(wd, metadata_directories);
+ 		context.debug = debug;
+-		context.thread = thread;
+ 		context.mem_profiler = mem_profiler;
+ 		context.save_temps = save_temps;
+ 		if (profile == "gobject-2.0" || profile == "gobject" || profile == null) {
