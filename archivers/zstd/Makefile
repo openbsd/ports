@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2017/02/19 14:34:44 juanfra Exp $
+# $OpenBSD: Makefile,v 1.5 2017/04/13 09:41:15 juanfra Exp $
 
 COMMENT =		zstandard fast real-time compression algorithm
 
 GH_ACCOUNT =		facebook
 GH_PROJECT =		zstd
-GH_TAGNAME =		v1.1.3
+GH_TAGNAME =		v1.1.4
 
 CATEGORIES =		archivers
 
@@ -17,7 +17,7 @@ MAINTAINER =		Juan Francisco Cantero Hurtado <juanfra@openbsd.org>
 # https://github.com/facebook/zstd/issues/335
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		c
+WANTLIB =		c z
 
 MODULES =		gcc4
 MODGCC4_LANGS =		c

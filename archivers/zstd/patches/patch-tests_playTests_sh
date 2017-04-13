@@ -1,6 +1,6 @@
-$OpenBSD: patch-tests_playTests_sh,v 1.4 2017/02/19 14:34:44 juanfra Exp $
---- tests/playTests.sh.orig	Mon Feb  6 18:17:34 2017
-+++ tests/playTests.sh	Sun Feb 19 13:35:24 2017
+$OpenBSD: patch-tests_playTests_sh,v 1.5 2017/04/13 09:41:15 juanfra Exp $
+--- tests/playTests.sh.orig	Thu Mar 16 01:31:40 2017
++++ tests/playTests.sh	Tue Apr 11 01:32:41 2017
 @@ -34,6 +34,7 @@ UNAME=$(uname)
  case "$UNAME" in
    Darwin) MD5SUM="md5 -r" ;;
@@ -9,7 +9,7 @@ $OpenBSD: patch-tests_playTests_sh,v 1.4 2017/02/19 14:34:44 juanfra Exp $
    *) MD5SUM="md5sum" ;;
  esac
  
-@@ -147,7 +148,7 @@ rm ./*.tmp ./*.zstd
+@@ -149,7 +150,7 @@ rm ./*.tmp ./*.zstd
  $ECHO "frame concatenation tests completed"
  
  
@@ -18,13 +18,3 @@ $OpenBSD: patch-tests_playTests_sh,v 1.4 2017/02/19 14:34:44 juanfra Exp $
  $ECHO "\n**** flush write error test **** "
  
  $ECHO "$ECHO foo | $ZSTD > /dev/full"
-@@ -305,7 +306,8 @@ $ZSTD -bi1 tmp1
- $ECHO "bench multiple levels"
- $ZSTD -i1b1e3 tmp1
- $ECHO "with recursive and quiet modes"
--$ZSTD -rqi1b1e3 tmp1
-+#$ZSTD -rqi1b1e3 tmp1
-+echo "OpenBSD package: broken benchmark"
- 
- 
- $ECHO "\n**** zstd round-trip tests **** "
