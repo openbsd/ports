@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.5 2017/04/12 18:46:52 landry Exp $
+# $OpenBSD: Makefile.inc,v 1.6 2017/04/13 13:43:29 sthen Exp $
 
 MAINTAINER ?=		Sean Levy <attila@stalphonsos.com>
 HOMEPAGE ?=		https://www.torproject.org
@@ -6,6 +6,7 @@ GH_ACCOUNT ?=		torbsd
 PERMIT_PACKAGE_CDROM ?= Yes
 CATEGORIES =		www
 BROWSER_NAME =		tor-browser
+# XXX If updating, bump REVISION of any extensions which did not get updated.
 TB_VERSION =		6.5.1
 TB_PREFIX =		tb
 
