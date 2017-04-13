@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_engine_imap-engine_imap-engine-minimal-folder_vala,v 1.1 2017/04/13 07:10:21 jasper Exp $
+
+From 5a0b85e58639f5a9b9e2a1aa6b1882da6b2e6648 Mon Sep 17 00:00:00 2001
+From: Michael James Gratton <mike@vee.net>
+Date: Tue, 4 Oct 2016 00:06:54 +1100
+Subject: Fix compilation with valac git master.
+
+--- src/engine/imap-engine/imap-engine-minimal-folder.vala.orig	Sun Dec 25 02:14:36 2016
++++ src/engine/imap-engine/imap-engine-minimal-folder.vala	Thu Apr 13 08:45:54 2017
+@@ -1412,8 +1412,9 @@ private class Geary.ImapEngine.MinimalFolder : Geary.F
+         Geary.EmailFlags? flags_to_add, Geary.EmailFlags? flags_to_remove,
+         Cancellable? cancellable = null) throws Error {
+         check_open("mark_email_async");
+-        
+-        MarkEmail mark = new MarkEmail(this, to_mark, flags_to_add, flags_to_remove, cancellable);
++        check_ids("mark_email_async", to_mark);
++
++        MarkEmail mark = new MarkEmail(this, (Gee.List<ImapDB.EmailIdentifier>) to_mark, flags_to_add, flags_to_remove, cancellable);
+         replay_queue.schedule(mark);
+         
+         yield mark.wait_for_ready_async(cancellable);

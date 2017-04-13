@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_client_conversation-list_conversation-list-store_vala,v 1.1 2017/04/13 07:10:21 jasper Exp $
+
+Fix build with vala 0.36:
+error: Argument 1: Cannot pass value to reference or output parameter
+
+--- src/client/conversation-list/conversation-list-store.vala.orig	Thu Apr 13 08:49:51 2017
++++ src/client/conversation-list/conversation-list-store.vala	Thu Apr 13 08:52:10 2017
+@@ -313,7 +313,7 @@ public class ConversationListStore : Gtk.ListStore {
+         if (last_email == null) {
+             debug("Cannot refresh conversation: last email is null");
+             
+-            remove(iter);
++            remove(ref iter);
+             return;
+         }
+         
+@@ -385,7 +385,7 @@ public class ConversationListStore : Gtk.ListStore {
+     private void remove_conversation(Geary.App.Conversation conversation) {
+         Gtk.TreeIter iter;
+         if (get_iter_for_conversation(conversation, out iter))
+-            remove(iter);
++            remove(ref iter);
+         
+         row_map.remove(conversation);
+     }

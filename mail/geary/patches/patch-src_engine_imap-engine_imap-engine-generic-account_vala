@@ -1,0 +1,27 @@
+$OpenBSD: patch-src_engine_imap-engine_imap-engine-generic-account_vala,v 1.1 2017/04/13 07:10:21 jasper Exp $
+
+From 5a0b85e58639f5a9b9e2a1aa6b1882da6b2e6648 Mon Sep 17 00:00:00 2001
+From: Michael James Gratton <mike@vee.net>
+Date: Tue, 4 Oct 2016 00:06:54 +1100
+Subject: Fix compilation with valac git master.
+
+--- src/engine/imap-engine/imap-engine-generic-account.vala.orig	Sun Dec 25 02:14:36 2016
++++ src/engine/imap-engine/imap-engine-generic-account.vala	Thu Apr 13 08:45:54 2017
+@@ -806,7 +806,7 @@ private abstract class Geary.ImapEngine.GenericAccount
+         
+         // If path in local but not remote (and isn't local-only, i.e. the Outbox), need to remove it
+         Gee.ArrayList<Geary.Folder> to_remove
+-            = Geary.traverse<Gee.Map.Entry<FolderPath, Imap.Folder>>(existing_folders)
++            = Geary.traverse<Gee.Map.Entry<FolderPath,Geary.Folder>>(existing_folders)
+             .filter(e => !remote_folders.has_key(e.key) && !local_only.has_key(e.key))
+             .map<Geary.Folder>(e => (Geary.Folder) e.value)
+             .to_array_list();
+@@ -833,7 +833,7 @@ private abstract class Geary.ImapEngine.GenericAccount
+                 debug("Unable to fetch local folder after cloning: %s", convert_err.message);
+             }
+         }
+-        Gee.Collection<MinimalFolder> engine_added = new Gee.ArrayList<Geary.Folder>();
++        Gee.Collection<MinimalFolder> engine_added = new Gee.ArrayList<MinimalFolder>();
+         engine_added.add_all(build_folders(folders_to_build));
+         
+         Gee.ArrayList<Geary.Folder> engine_removed = new Gee.ArrayList<Geary.Folder>();

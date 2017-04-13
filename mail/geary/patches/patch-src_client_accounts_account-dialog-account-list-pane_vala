@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_client_accounts_account-dialog-account-list-pane_vala,v 1.1 2017/04/13 07:10:21 jasper Exp $
+
+Fix build with vala 0.36:
+error: Argument 1: Cannot pass value to reference or output parameter
+
+--- src/client/accounts/account-dialog-account-list-pane.vala.orig	Thu Apr 13 08:49:38 2017
++++ src/client/accounts/account-dialog-account-list-pane.vala	Thu Apr 13 08:49:43 2017
+@@ -158,7 +158,7 @@ public class AccountDialogAccountListPane : AccountDia
+         if (iter == null)
+             return;
+         
+-        list_model.remove(iter);
++        list_model.remove(ref iter);
+     }
+     
+     private void on_account_changed(Object object, ParamSpec p) {

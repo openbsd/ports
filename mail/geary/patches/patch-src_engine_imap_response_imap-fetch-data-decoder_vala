@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_engine_imap_response_imap-fetch-data-decoder_vala,v 1.1 2017/04/13 07:10:21 jasper Exp $
+
+From 5a0b85e58639f5a9b9e2a1aa6b1882da6b2e6648 Mon Sep 17 00:00:00 2001
+From: Michael James Gratton <mike@vee.net>
+Date: Tue, 4 Oct 2016 00:06:54 +1100
+Subject: Fix compilation with valac git master.
+
+--- src/engine/imap/response/imap-fetch-data-decoder.vala.orig	Sun Dec 25 02:14:36 2016
++++ src/engine/imap/response/imap-fetch-data-decoder.vala	Thu Apr 13 08:45:54 2017
+@@ -95,7 +95,7 @@ public class Geary.Imap.MessageFlagsDecoder : Geary.Im
+     }
+     
+     protected override MessageData decode_list(ListParameter listp) throws ImapError {
+-        Gee.List<Flag> flags = new Gee.ArrayList<Flag>();
++        Gee.List<MessageFlag> flags = new Gee.ArrayList<MessageFlag>();
+         for (int ctr = 0; ctr < listp.size; ctr++)
+             flags.add(new MessageFlag(listp.get_as_string(ctr).ascii));
+         
