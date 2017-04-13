@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.16 2017/04/10 11:46:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2017/04/13 08:42:31 ajacoutot Exp $
+
+BROKEN=			fails with gobject-introspection >= 1.52
 
 COMMENT=		graph based image processing framework (API version 0.3)
 
