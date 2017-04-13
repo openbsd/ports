@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2016/08/01 19:19:46 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.25 2017/04/13 07:37:08 bentley Exp $
 @bin bin/openttd
 @man man/man6/openttd.6
 share/applications/openttd.desktop
@@ -46,7 +46,6 @@ share/icons/hicolor/256x256/apps/openttd.png
 share/icons/hicolor/32x32/apps/openttd.png
 share/icons/hicolor/48x48/apps/openttd.png
 share/icons/hicolor/64x64/apps/openttd.png
-share/openttd/
 share/openttd/ai/
 share/openttd/ai/compat_0.7.nut
 share/openttd/ai/compat_1.0.nut
@@ -56,6 +55,7 @@ share/openttd/ai/compat_1.3.nut
 share/openttd/ai/compat_1.4.nut
 share/openttd/ai/compat_1.5.nut
 share/openttd/ai/compat_1.6.nut
+share/openttd/ai/compat_1.7.nut
 share/openttd/baseset/
 share/openttd/baseset/no_music.obm
 share/openttd/baseset/no_sound.obs
@@ -64,58 +64,17 @@ share/openttd/baseset/opntitle.dat
 share/openttd/baseset/orig_dos.obg
 share/openttd/baseset/orig_dos.obs
 share/openttd/baseset/orig_dos_de.obg
+share/openttd/baseset/orig_extra.grf
 share/openttd/baseset/orig_win.obg
 share/openttd/baseset/orig_win.obm
 share/openttd/baseset/orig_win.obs
-share/openttd/data/
-share/openttd/data/ogfx1_base.grf
-share/openttd/data/ogfxc_arctic.grf
-share/openttd/data/ogfxe_extra.grf
-share/openttd/data/ogfxh_tropical.grf
-share/openttd/data/ogfxi_logos.grf
-share/openttd/data/ogfxt_toyland.grf
-share/openttd/data/opengfx.obg
-share/openttd/data/opensfx.cat
-share/openttd/data/opensfx.obs
 share/openttd/game/
 share/openttd/game/compat_1.2.nut
 share/openttd/game/compat_1.3.nut
 share/openttd/game/compat_1.4.nut
 share/openttd/game/compat_1.5.nut
 share/openttd/game/compat_1.6.nut
-share/openttd/gm/
-share/openttd/gm/5432gone_redfarn.mid
-share/openttd/gm/be_sharp_bw_redfarn.mid
-share/openttd/gm/big_man_boogie_redfarn.mid
-share/openttd/gm/boogi_marabi_redfarn.mid
-share/openttd/gm/busy_schedule.mid
-share/openttd/gm/careless_perc_redfarn.mid
-share/openttd/gm/chemistry_lab.mid
-share/openttd/gm/chuggachugga.mid
-share/openttd/gm/city_blues_redfarn.mid
-share/openttd/gm/coconut_run2.mid
-share/openttd/gm/flying_scotsman.mid
-share/openttd/gm/harp_harmony.mid
-share/openttd/gm/linns_basket.mid
-share/openttd/gm/midnight_snow_run.mid
-share/openttd/gm/mighty_giant_run.mid
-share/openttd/gm/modern_motion.mid
-share/openttd/gm/moo_redfarn.mid
-share/openttd/gm/mosey_along_redfarn.mid
-share/openttd/gm/no_work_song_redfarn.mid
-share/openttd/gm/openmsx.obm
-share/openttd/gm/relax_song.mid
-share/openttd/gm/run_for_your_life.mid
-share/openttd/gm/say_what_redfarn.mid
-share/openttd/gm/slow_neasy_redfarn.mid
-share/openttd/gm/the_fast_route.mid
-share/openttd/gm/the_hobo_redfarn.mid
-share/openttd/gm/train_filled_with_cash.mid
-share/openttd/gm/ttsong_iii_imuh3.mid
-share/openttd/gm/ttsong_iv_imuh3.mid
-share/openttd/gm/tttheme2.mid
-share/openttd/gm/ultimate_run.mid
-share/openttd/gm/wood_whistles.mid
+share/openttd/game/compat_1.7.nut
 share/openttd/lang/
 share/openttd/lang/afrikaans.lng
 share/openttd/lang/arabic_egypt.lng
@@ -198,6 +157,7 @@ share/openttd/media/extra_grf/autorail.png
 share/openttd/media/extra_grf/canal_locks.png
 share/openttd/media/extra_grf/canals.nfo
 share/openttd/media/extra_grf/canals.png
+share/openttd/media/extra_grf/canals_extra.nfo
 share/openttd/media/extra_grf/chars.nfo
 share/openttd/media/extra_grf/chars.png
 share/openttd/media/extra_grf/elrails.nfo
@@ -215,6 +175,7 @@ share/openttd/media/extra_grf/oneway.png
 share/openttd/media/extra_grf/openttd.nfo
 share/openttd/media/extra_grf/openttdgui.nfo
 share/openttd/media/extra_grf/openttdgui.png
+share/openttd/media/extra_grf/orig_extra.nfo
 share/openttd/media/extra_grf/palette.nfo
 share/openttd/media/extra_grf/rivers/
 share/openttd/media/extra_grf/rivers/arctic.nfo

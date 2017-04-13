@@ -1,19 +1,10 @@
-# $OpenBSD: Makefile,v 1.50 2017/04/10 11:46:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.51 2017/04/13 07:37:08 bentley Exp $
 
 COMMENT=	open source clone of the game Transport Tycoon Deluxe
 
-V =		1.6.1
-DISTNAME =	openttd-$V
-EXTRACT_SUFX=	-source.tar.gz
-GFX_V =		0.5.4
-SFX_V=		0.2.3
-MSX_V=		0.3.1
-REVISION=	0
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		opengfx-${GFX_V}.zip:0 \
-		opensfx-${SFX_V}.zip:1 \
-		openmsx-${MSX_V}.zip:2
-DIST_SUBDIR=	openttd
+V =		1.7.0
+DISTNAME =	openttd-$V-source
+PKGNAME =	openttd-$V
 
 CATEGORIES=	games
 
@@ -27,10 +18,9 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += SDL c fontconfig freetype icudata icui18n icuuc
 WANTLIB += lzma lzo2 m png pthread ${LIBCXX} xdg-basedir z
 
-MASTER_SITES=		http://binaries.openttd.org/releases/${V}/
-MASTER_SITES0=		https://bundles.openttdcoop.org/opengfx/releases/${GFX_V}/
-MASTER_SITES1=		https://bundles.openttdcoop.org/opensfx/releases/${SFX_V}/
-MASTER_SITES2=		https://bundles.openttdcoop.org/openmsx/releases/${MSX_V}/
+MASTER_SITES=		https://binaries.openttd.org/releases/$V/
+
+DIST_SUBDIR =		openttd
 
 LIB_DEPENDS=		archivers/lzo2 \
 			devel/sdl \
@@ -40,6 +30,9 @@ LIB_DEPENDS=		archivers/lzo2 \
 			x11/libxdg-basedir
 
 RUN_DEPENDS=            devel/desktop-file-utils \
+			games/openttd-data/opengfx \
+			games/openttd-data/openmsx \
+			games/openttd-data/opensfx \
 			x11/gtk+3,-guic
 
 CONFIGURE_STYLE=	simple
@@ -69,8 +62,7 @@ GAMEDIR=		${PREFIX}/share/openttd
 
 FAKE_FLAGS=BUNDLE_DIR=${WRKINST}/bundle BUNDLES_DIR=${WRKINST}/bundle
 
-post-extract:
-	cd ${WRKDIR} && ${TAR} xf opengfx-${GFX_V}.tar
+WRKDIST =		${WRKDIR}/openttd-$V
 
 post-install:
 	${INSTALL_DATA_DIR} ${GAMEDIR}/media
@@ -79,11 +71,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/bin/scripts/* ${EXAMPLESDIR}
 	${INSTALL_DATA_DIR} ${DOCSDIR}
 	cd ${WRKSRC}/docs/ && umask 022 && pax -rw . ${DOCSDIR}
-	${INSTALL_DATA_DIR} ${GAMEDIR}/data
-	${INSTALL_DATA_DIR} ${GAMEDIR}/gm
-	${INSTALL_DATA} ${WRKDIR}/opengfx-${GFX_V}/*.{grf,obg} ${GAMEDIR}/data
-	${INSTALL_DATA} ${WRKDIR}/opensfx-${SFX_V}/*.{cat,obs} ${GAMEDIR}/data
-	${INSTALL_DATA} ${WRKDIR}/openmsx-${MSX_V}/*.{mid,obm} ${GAMEDIR}/gm
 	rm -rf ${WRKINST}/bundle
 	rm -rf ${GAMEDIR}/media/openttd.desktop*
 
