@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.29 2015/01/21 17:25:50 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.30 2017/04/13 09:54:38 ajacoutot Exp $
 @pkgpath editors/abiword,gnome
 @bin bin/abiword
 include/abiword-${MAJORVER}/
@@ -13,9 +13,7 @@ lib/abiword-${MAJORVER}/plugins/openwriter.so
 lib/abiword-${MAJORVER}/plugins/openxml.so
 lib/abiword-${MAJORVER}/plugins/pdf.so
 lib/girepository-1.0/Abi-${MAJORVER}.typelib
-lib/libabiword-${MAJORVER}.a
-lib/libabiword-${MAJORVER}.la
-@lib lib/libabiword-${MAJORVER}.so.${LIBabiword-3.0_VERSION}
+lib/libabiword-${MAJORVER}.so
 lib/pkgconfig/abiword-${MAJORVER}.pc
 @man man/man1/abiword.1
 share/abiword-${MAJORVER}/
@@ -346,8 +344,6 @@ share/icons/hicolor/22x22/apps/abiword.png
 share/icons/hicolor/256x256/apps/abiword.png
 share/icons/hicolor/32x32/apps/abiword.png
 share/icons/hicolor/48x48/apps/abiword.png
-share/icons/hicolor/512x512/
-share/icons/hicolor/512x512/apps/
 share/icons/hicolor/512x512/apps/abiword.png
 share/icons/hicolor/scalable/apps/abiword.svg
 @exec %D/bin/update-desktop-database

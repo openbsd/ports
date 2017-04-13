@@ -1,0 +1,31 @@
+$OpenBSD: patch-src_af_xap_gtk_xap_UnixFrameImpl_cpp,v 1.1 2017/04/13 09:54:38 ajacoutot Exp $
+
+commit 2ee38d1881aeea27bb49acc450631d813d1f28ba
+Author: Hubert Figuière <hub@figuiere.net>
+Date:   Wed Dec 7 09:44:01 2016 -0500
+Bug 13815 - draw event should return TRUE
+This fix the black drawing regression witj Gtk3.22
+
+--- src/af/xap/gtk/xap_UnixFrameImpl.cpp.orig	Sun Dec 14 15:56:47 2014
++++ src/af/xap/gtk/xap_UnixFrameImpl.cpp	Thu Apr 13 11:26:22 2017
+@@ -1208,9 +1208,9 @@ gint XAP_UnixFrameImpl::_fe::delete_event(GtkWidget * 
+ }
+ 
+ #if GTK_CHECK_VERSION(3,0,0)
+-gint XAP_UnixFrameImpl::_fe::draw(GtkWidget * w, cairo_t * cr)
++gboolean XAP_UnixFrameImpl::_fe::draw(GtkWidget * w, cairo_t * cr)
+ #else
+-gint XAP_UnixFrameImpl::_fe::expose(GtkWidget * w, GdkEventExpose* pExposeEvent)
++gboolean XAP_UnixFrameImpl::_fe::expose(GtkWidget * w, GdkEventExpose* pExposeEvent)
+ #endif
+ {
+ 	XAP_UnixFrameImpl * pUnixFrameImpl = static_cast<XAP_UnixFrameImpl *>(g_object_get_data(G_OBJECT(w), "user_data"));
+@@ -1243,7 +1243,7 @@ gint XAP_UnixFrameImpl::_fe::expose(GtkWidget * w, Gdk
+ 		pView->draw(&rClip);
+ #endif
+ 	}
+-	return FALSE;
++	return TRUE;
+ }
+ 
+ static bool bScrollWait = false;
