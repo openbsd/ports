@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/04/13 07:30:15 bentley Exp $
+@conflict openttd-<1.7.0
+share/openttd/
+share/openttd/data/
+share/openttd/data/ogfx1_base.grf
+share/openttd/data/ogfxc_arctic.grf
+share/openttd/data/ogfxe_extra.grf
+share/openttd/data/ogfxh_tropical.grf
+share/openttd/data/ogfxi_logos.grf
+share/openttd/data/ogfxt_toyland.grf
+share/openttd/data/opengfx.obg
