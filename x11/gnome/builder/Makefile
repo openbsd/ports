@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.44 2017/04/10 11:46:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.45 2017/04/13 07:07:44 jasper Exp $
+
+BROKEN=			broken after vala 0.36 update
 
 COMMENT=		IDE for GNOME
 
