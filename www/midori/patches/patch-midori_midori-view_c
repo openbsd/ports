@@ -1,0 +1,16 @@
+$OpenBSD: patch-midori_midori-view_c,v 1.1 2017/04/13 09:05:52 landry Exp $
+
+http://bazaar.launchpad.net/~midori/midori/trunk/revision/7039
+
+--- midori/midori-view.c.orig	Sun Aug 30 13:56:26 2015
++++ midori/midori-view.c	Thu Apr 13 09:42:14 2017
+@@ -3495,9 +3495,6 @@ midori_view_web_inspector_construct_window (gpointer  
+     }
+     else
+         gtk_window_set_icon_name (GTK_WINDOW (window), icon_name);
+-    #if GTK_CHECK_VERSION (3, 4, 0)
+-    gtk_window_set_hide_titlebar_when_maximized (GTK_WINDOW (window), TRUE);
+-    #endif
+     gtk_widget_set_size_request (GTK_WIDGET (inspector_view), 700, 100);
+     #if GTK_CHECK_VERSION (3, 0, 0)
+     scrolled = gtk_scrolled_window_new (NULL, NULL);

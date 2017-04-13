@@ -1,0 +1,18 @@
+$OpenBSD: patch-midori_midori-browser_c,v 1.1 2017/04/13 09:05:52 landry Exp $
+
+http://bazaar.launchpad.net/~midori/midori/trunk/revision/7039
+
+--- midori/midori-browser.c.orig	Sun Aug 30 13:56:26 2015
++++ midori/midori-browser.c	Thu Apr 13 09:42:14 2017
+@@ -5953,11 +5953,6 @@ midori_browser_init (MidoriBrowser* browser)
+                       G_CALLBACK (midori_browser_destroy_cb), NULL);
+     gtk_window_set_role (GTK_WINDOW (browser), "browser");
+     gtk_window_set_icon_name (GTK_WINDOW (browser), MIDORI_STOCK_WEB_BROWSER);
+-    #if GTK_CHECK_VERSION (3, 4, 0)
+-    #ifndef HAVE_GRANITE
+-    gtk_window_set_hide_titlebar_when_maximized (GTK_WINDOW (browser), TRUE);
+-    #endif
+-    #endif
+     vbox = gtk_vbox_new (FALSE, 0);
+     /* gtk_container_add (GTK_CONTAINER (browser), vbox);
+     gtk_widget_show (vbox); */
