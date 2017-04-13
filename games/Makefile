@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.343 2017/03/24 15:21:46 okan Exp $
+# $OpenBSD: Makefile,v 1.344 2017/04/13 07:37:39 bentley Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -178,6 +178,7 @@
      SUBDIR += openmw
      SUBDIR += opensonic
      SUBDIR += openttd
+     SUBDIR += openttd-data
      SUBDIR += opentyrian
      SUBDIR += openxcom
      SUBDIR += pacman-arena
