@@ -1,0 +1,20 @@
+$OpenBSD: patch-sem_c,v 1.1 2017/04/13 21:21:43 naddy Exp $
+--- sem.c.orig	Wed Jul 14 17:59:18 1993
++++ sem.c	Thu Apr 13 23:20:09 2017
+@@ -26,6 +26,7 @@
+ /* This is a simple module to provide an easier to understand interface to
+  * semaphores */
+ 
++#include <unistd.h>
+ #include <stdio.h>
+ #include <sys/types.h>
+ #include <sys/stat.h>
+@@ -94,7 +95,7 @@ new_sems( nsems )
+ 	return sem;
+ }
+ 
+-static
++static void
+ do_sem( sem_id, pbuf, err )
+ 	int sem_id;
+ 	struct sembuf *pbuf;
