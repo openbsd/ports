@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.41 2015/10/24 09:53:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2017/04/13 07:31:18 ajacoutot Exp $
 
 COMMENT=		simple scanning utility
 
 GNOME_PROJECT=		simple-scan
-GNOME_VERSION=		3.18.0
+GNOME_VERSION=		3.24.0
 
 CATEGORIES=		graphics
 
@@ -16,14 +16,13 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += atk-1.0 c cairo cairo-gobject colord colordprivate
 WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += gthread-2.0 gtk-3 m pango-1.0 pangocairo-1.0 pthread
+WANTLIB += gthread-2.0 gtk-3 intl m pango-1.0 pangocairo-1.0 pthread
 WANTLIB += sane z
 
 MASTER_SITES=		https://launchpad.net/simple-scan/${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}/${GNOME_VERSION}/+download/
 
-MODULES=		devel/gettext \
-			x11/gnome \
-			devel/dconf
+MODULES=		devel/dconf \
+			x11/gnome
 
 LIB_DEPENDS=		graphics/sane-backends \
 			x11/gtk+3 \
@@ -38,6 +37,8 @@ USE_GMAKE=		Yes
 
 AUTOCONF_VERSION=	2.69
 CONFIGURE_STYLE=	autoconf no-autoheader
+
+CONFIGURE_ARGS=		--disable-packagekit
 
 # patch-src_simple-scan_vala, patches/patch-src_ui_vala
 MODGNOME_TOOLS +=	vala

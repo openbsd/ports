@@ -1,15 +1,14 @@
-$OpenBSD: patch-configure_ac,v 1.6 2015/10/24 09:53:54 ajacoutot Exp $
+$OpenBSD: patch-configure_ac,v 1.7 2017/04/13 07:31:18 ajacoutot Exp $
 
-No gusb nor packagekit under OpenBSD.
+No gusb on OpenBSD.
 
---- configure.ac.orig	Mon Sep 21 22:03:01 2015
-+++ configure.ac	Sat Oct 24 11:35:57 2015
-@@ -28,8 +28,6 @@ PKG_CHECK_MODULES(SIMPLE_SCAN, [
+--- configure.ac.orig	Sun Mar 19 23:06:43 2017
++++ configure.ac	Thu Apr 13 09:19:04 2017
+@@ -30,7 +30,6 @@ PKG_CHECK_MODULES(SIMPLE_SCAN, [
      zlib
      cairo
      gdk-pixbuf-2.0
 -    gusb
--    packagekit-glib2
  ])
  
- PKG_CHECK_MODULES(COLORD, [
+ AC_ARG_ENABLE([colord],

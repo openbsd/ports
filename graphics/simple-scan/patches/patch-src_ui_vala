@@ -1,69 +1,25 @@
-$OpenBSD: patch-src_ui_vala,v 1.1 2015/10/24 09:53:54 ajacoutot Exp $
+$OpenBSD: patch-src_ui_vala,v 1.2 2017/04/13 07:31:18 ajacoutot Exp $
 
-No packagekit under OpenBSD.
+Fix build with vala 0.36:
+error: Argument 1: Cannot pass value to reference or output parameter
 
---- src/ui.vala.orig	Sat Oct 24 11:45:12 2015
-+++ src/ui.vala	Sat Oct 24 11:45:03 2015
-@@ -1636,62 +1636,6 @@ public class UserInterface : Gtk.ApplicationWindow
-         label.xalign = 0f;        
-         dialog.get_content_area ().border_width = 12;
-         dialog.get_content_area ().pack_start (label, true, true, 0);
--
--        if (packages_to_install.length > 0)
--        {
--            stack.visible = true;
--            spinner.active = true;
--            instructions_label.set_text (/* Label shown while installing drivers */
--                                         _("Installing drivers..."));
--            install_packages.begin (packages_to_install, () => {}, (object, result) =>
--            {
--                status_label.visible = true;
--                spinner.active = false;
--                status_label.set_text ("☒");
--                stack.visible_child = status_label;
--                /* Label shown once drivers successfully installed */
--                var result_text = _("Drivers installed successfully!");
--                try
--                {
--                    var results = install_packages.end (result);
--                    if (results.get_error_code () == null)
--                        status_label.set_text ("☑");
--                    else
--                    {
--                        var e = results.get_error_code ();
--                        /* Label shown if failed to install drivers */
--                        result_text = _("Failed to install drivers (error code %d).").printf (e.code);
--                    }
--                }
--                catch (Error e)
--                {
--                    /* Label shown if failed to install drivers */
--                    result_text = _("Failed to install drivers.");
--                    warning ("Failed to install drivers: %s", e.message);
--                }
--                instructions_label.set_text (result_text);
--            });
--        }
--
--        dialog.run ();
--        dialog.destroy ();
--    }
--
--    private async Pk.Results? install_packages (string[] packages, Pk.ProgressCallback progress_callback) throws GLib.Error
--    {
--        var task = new Pk.Task ();
--        Pk.Results results;
--        results = yield task.resolve_async (Pk.Filter.NOT_INSTALLED, packages, null, progress_callback);
--        if (results == null || results.get_error_code () != null)
--            return results;
--
--        var package_array = results.get_package_array ();
--        var package_ids = new string[package_array.length + 1];
--        package_ids[package_array.length] = null;
--        for (var i = 0; i < package_array.length; i++)
--            package_ids[i] = package_array.data[i].get_id ();
--
--        return yield task.install_packages_async (package_ids, null, progress_callback);
-     }
+--- src/ui.vala.orig	Thu Apr 13 09:23:49 2017
++++ src/ui.vala	Thu Apr 13 09:24:09 2017
+@@ -453,7 +453,7 @@ public class UserInterface : Gtk.ApplicationWindow
+                 for (i = 0; i < n_delete; i++)
+                 {
+                     device_model.iter_nth_child (out iter, null, index);
+-                    device_model.remove (iter);
++                    device_model.remove (ref iter);
+                 }
+             }
+             else
+@@ -466,7 +466,7 @@ public class UserInterface : Gtk.ApplicationWindow
  
-     [GtkCallback]
+         /* Remove any remaining devices */
+         while (device_model.iter_nth_child (out iter, null, index))
+-            device_model.remove (iter);
++            device_model.remove (ref iter);
+ 
+         /* Select the previously selected device or the first available device */
+         if (!have_selection)
