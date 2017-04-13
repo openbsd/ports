@@ -1,0 +1,16 @@
+$OpenBSD: patch-deja-dup_widgets_ConfigList_vala,v 1.1 2017/04/13 07:10:01 jasper Exp $
+
+Fix build with vala 0.36:
+error: Argument 1: Cannot pass value to reference or output parameter
+
+--- deja-dup/widgets/ConfigList.vala.orig	Thu Apr 13 08:37:21 2017
++++ deja-dup/widgets/ConfigList.vala	Thu Apr 13 08:37:26 2017
+@@ -333,7 +333,7 @@ public class ConfigList : ConfigWidget
+ 
+     model.row_deleted.disconnect(write_to_config);
+     foreach (Gtk.TreeIter iter in iters) {
+-      (model as Gtk.ListStore).remove(iter);
++      (model as Gtk.ListStore).remove(ref iter);
+     }
+     model.row_deleted.connect(write_to_config);
+ 

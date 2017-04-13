@@ -1,0 +1,22 @@
+$OpenBSD: patch-deja-dup_widgets_ConfigLocation_vala,v 1.1 2017/04/13 07:10:01 jasper Exp $
+
+Fix build with vala 0.36:
+error: Argument 1: Cannot pass value to reference or output parameter
+
+--- deja-dup/widgets/ConfigLocation.vala.orig	Thu Apr 13 08:37:56 2017
++++ deja-dup/widgets/ConfigLocation.vala	Thu Apr 13 08:38:03 2017
+@@ -397,12 +397,12 @@ public class ConfigLocation : ConfigWidget
+     if (uuid == saved_uuid)
+       return;
+ 
+-    store.remove(iter);
++    store.remove(ref iter);
+ 
+     if (--num_volumes == 0) {
+       Gtk.TreeIter sep_iter;
+       if (store.get_iter_from_string(out sep_iter, index_vol_sep.to_string())) {
+-        store.remove(sep_iter);
++        store.remove(ref sep_iter);
+         index_vol_sep = -2;
+       }
+     }
