@@ -1,0 +1,16 @@
+$OpenBSD: patch-extensions_adblock_widgets_vala,v 1.1 2017/04/13 07:08:40 jasper Exp $
+
+Fix build with vala 0.36:
+error: Argument 1: Cannot pass value to reference or output parameter
+
+--- extensions/adblock/widgets.vala.orig	Thu Apr 13 08:34:24 2017
++++ extensions/adblock/widgets.vala	Thu Apr 13 08:34:32 2017
+@@ -227,7 +227,7 @@ namespace Adblock {
+                             liststore.get (iter, 0, out sub);
+                             if (sub.mutable) {
+                                 config.remove (sub);
+-                                liststore.remove (iter);
++                                liststore.remove (ref iter);
+                                 return true;
+                             }
+                         }

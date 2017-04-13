@@ -1,0 +1,37 @@
+$OpenBSD: patch-midori_midori-notebook_vala,v 1.1 2017/04/13 07:08:40 jasper Exp $
+
+First hunk:
+error: Argument 1: Cannot pass value to reference or output parameter
+
+Second hunk:
+revno: 7159 message: Fix build with valac 0.35.x
+
+--- midori/midori-notebook.vala.orig	Sun Aug 30 13:56:26 2015
++++ midori/midori-notebook.vala	Thu Apr 13 08:28:05 2017
+@@ -10,7 +10,7 @@
+ */
+ 
+ namespace Midori {
+-    protected class Tally : Gtk.EventBox {
++    internal class Tally : Gtk.EventBox {
+         public Midori.Tab tab { get; set; }
+         Gtk.Spinner spinner;
+         public Gtk.Label label;
+@@ -22,7 +22,7 @@ namespace Midori {
+         public bool close_button_left { get; set; default = false; }
+         public bool close_button_visible { get; set; default = false; }
+ 
+-        protected Tally (Midori.Tab tab) {
++        internal Tally (Midori.Tab tab) {
+             this.tab = tab;
+             box = new Gtk.HBox (false, 1);
+             add (box);
+@@ -155,7 +155,7 @@ namespace Midori {
+         int last_tab_size = 0;
+ 
+ #if !HAVE_GTK3
+-        static const string style_fixup = """
++        const string style_fixup = """
+             style "midori-close-button-style"
+             {
+             GtkWidget::focus-padding = 0

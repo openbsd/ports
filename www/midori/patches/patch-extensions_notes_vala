@@ -1,0 +1,16 @@
+$OpenBSD: patch-extensions_notes_vala,v 1.1 2017/04/13 07:08:40 jasper Exp $
+
+Fix build with vala 0.36:
+error: Argument 1: Cannot pass value to reference or output parameter
+
+--- extensions/notes.vala.orig	Thu Apr 13 08:32:56 2017
++++ extensions/notes.vala	Thu Apr 13 08:33:00 2017
+@@ -116,7 +116,7 @@ namespace ClipNotes {
+                     if (current_note == note) {
+                         current_note = null;
+                     }
+-                    notes_list_store.remove (iter);
++                    notes_list_store.remove (ref iter);
+                     break;
+                 }
+             } while (notes_list_store.iter_next (ref iter));

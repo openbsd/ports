@@ -1,0 +1,16 @@
+$OpenBSD: patch-extensions_history-list_vala,v 1.3 2017/04/13 07:08:40 jasper Exp $
+
+Fix build with vala 0.36:
+error: Argument 1: Cannot pass value to reference or output parameter
+
+--- extensions/history-list.vala.orig	Thu Apr 13 08:31:32 2017
++++ extensions/history-list.vala	Thu Apr 13 08:31:40 2017
+@@ -223,7 +223,7 @@ namespace HistoryList {
+                     FixMe: the retrun value of `Gtk.ListStore.remove` should be checked
+                     Note:  in some cases the return value of `Gtk.ListStore.remove` is wrong
+                 */
+-                model.remove (iter);
++                model.remove (ref iter);
+                 this.browser.close_tab (view);
+                 if (length > 2)
+                     this.resize_treeview ();

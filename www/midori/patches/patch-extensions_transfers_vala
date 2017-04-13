@@ -1,0 +1,29 @@
+$OpenBSD: patch-extensions_transfers_vala,v 1.1 2017/04/13 07:08:40 jasper Exp $
+
+First hunk:
+error: Argument 1: Cannot pass value to reference or output parameter
+
+Second hunk:
+
+revno: 7159, message: Fix build with valac 0.35.x
+
+--- extensions/transfers.vala.orig	Sun Aug 30 13:56:26 2015
++++ extensions/transfers.vala	Thu Apr 13 08:33:43 2017
+@@ -275,7 +275,7 @@ namespace Transfers {
+                     Transfer found;
+                     store.get (iter, 0, out found);
+                     if (transfer == found) {
+-                        store.remove (iter);
++                        store.remove (ref iter);
+                         break;
+                     }
+                 } while (store.iter_next (ref iter));
+@@ -455,7 +455,7 @@ namespace Transfers {
+                 if (notifications.length () == 1)
+                     msg = _("The file '<b>%s</b>' has been downloaded.").printf (filename);
+                 else
+-                    msg = _("'<b>%s</b>' and %d other files have been downloaded.").printf (filename, notifications.length ());
++                    msg = _("'<b>%s</b>' and %d other files have been downloaded.").printf (filename, (int) notifications.length ());
+                 get_app ().send_notification (_("Transfer completed"), msg);
+                 notifications = new GLib.List<string> ();
+             }

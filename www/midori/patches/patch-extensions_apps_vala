@@ -1,0 +1,16 @@
+$OpenBSD: patch-extensions_apps_vala,v 1.1 2017/04/13 07:08:40 jasper Exp $
+
+Fix build with vala 0.36:
+error: Argument 1: Cannot pass value to reference or output parameter
+
+--- extensions/apps.vala.orig	Thu Apr 13 08:32:04 2017
++++ extensions/apps.vala	Thu Apr 13 08:32:11 2017
+@@ -265,7 +265,7 @@ namespace Apps {
+                             store.get (iter, 0, out launcher);
+                             try {
+                                 launcher.file.trash (null);
+-                                store.remove (iter);
++                                store.remove (ref iter);
+ 
+                                 string filename = Midori.Download.clean_filename (launcher.name);
+ #if HAVE_WIN32
