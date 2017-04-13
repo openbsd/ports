@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.114 2017/04/10 11:46:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.115 2017/04/13 07:08:14 jasper Exp $
 
 COMMENT-main=		GNOME Data Access library
 COMMENT-ldap=		LDAP backend for libgda
@@ -18,11 +18,11 @@ PKGNAME-mysql=		libgda-mysql-${GNOME_VERSION}
 PKGNAME-pgsql=		libgda-pgsql-${GNOME_VERSION}
 PKGNAME-ui=		libgda-ui-${GNOME_VERSION}
 
-REVISION-main=		6
+REVISION-main=		7
 REVISION-ldap=		1
 REVISION-mysql=		1
 REVISION-pgsql=		1
-REVISION-ui=		2
+REVISION-ui=		3
 
 EPOCH-main=		2
 EPOCH-ldap=		0
@@ -85,7 +85,7 @@ CONFIGURE_ARGS=		--enable-system-sqlite \
 			--with-postgres="${LOCALBASE}"
 
 # XXX sync with API_V in lang/vala
-CONFIGURE_ENV +=	VALA_API_VERSION=0.34
+CONFIGURE_ENV +=	VALA_API_VERSION=0.36
 
 FAKE_FLAGS=		configdir="${PREFIX}/share/examples/libgda"
 
