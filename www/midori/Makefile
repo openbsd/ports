@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.78 2017/04/13 07:08:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.79 2017/04/13 08:04:41 landry Exp $
 
 COMMENT =	lightweight web browser
 
@@ -45,6 +45,8 @@ WANTLIB += pango-1.0 xml2 gck-1 gcr-base-3 p11-kit
 WANTLIB += soup-2.4 sqlite3 soup-gnome-2.4
 
 pre-configure:
+	# cmake trips on it
+	rm ${WRKSRC}/extensions/*.orig
 	${SUBST_CMD} ${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>
