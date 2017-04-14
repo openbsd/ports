@@ -1,0 +1,29 @@
+$OpenBSD: patch-tmac_doc-nroff,v 1.1 2017/04/14 19:49:06 schwarze Exp $
+Map \*[Lq]\*[Rq] to \[lq]\[rq] for all terminal devices (merged upstream).
+--- tmac/doc-nroff.orig	Tue Nov  4 09:38:35 2014
++++ tmac/doc-nroff	Fri Apr 14 21:04:21 2017
+@@ -148,6 +148,8 @@
+ .ds aa \[aa]
+ .ds ga \[ga]
+ .ds q \[dq]
++.ds Lq \[lq]
++.ds Rq \[rq]
+ .ds Ne \[!=]
+ .ds Le \[<=]
+ .ds Ge \[>=]
+@@ -162,15 +164,11 @@
+ .\" character representations which are different from GNU troff's standard
+ .\" forms.
+ .ie '\*[.T]'utf8' \{\
+-.  ds Rq \[rq]
+-.  ds Lq \[lq]
+ .  ds ua \[ua]
+ .  ds Pi \[*p]
+ .  ds If \[if]
+ .\}
+ .el \{\
+-.  ds Rq ''
+-.  ds Lq ``
+ .  ds ua ^
+ .  ds Pi pi
+ .  ds If infinity

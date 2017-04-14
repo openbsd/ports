@@ -1,9 +1,11 @@
-$OpenBSD: patch-tmac_doc_tmac,v 1.6 2016/10/17 18:32:34 schwarze Exp $
+$OpenBSD: patch-tmac_doc_tmac,v 1.7 2017/04/14 19:49:06 schwarze Exp $
 chunks 1,2,4-6,8-14: Simplify .Bl -tag without -width (merged upstream).
 chunk 3: Trailing -width/-offset must not pick up old args (merged upstream).
 chunk 7: Always format .Pa the same way, as requested by jmc@ (local change).
+chunk 15: Use typographic quotes for .%T (merged upstream).
+chunk 16: Improve .Lk with more than two arguments (merged upstream).
 --- tmac/doc.tmac.orig	Tue Nov  4 09:38:35 2014
-+++ tmac/doc.tmac	Sun Oct  9 20:36:30 2016
++++ tmac/doc.tmac	Fri Apr 14 21:02:49 2017
 @@ -2990,6 +2990,7 @@
  .  \}
  .  el \{ .ie "\$1"-tag" \{\
@@ -159,3 +161,84 @@ chunk 7: Always format .Pa the same way, as requested by jmc@ (local change).
  .  nr doc-compact-list-stack\n[doc-list-depth] 0
  .  nr doc-enum-list-count-stack\n[doc-list-depth] 0
  ..
+@@ -5296,7 +5243,7 @@
+ .    unformat doc-reference-title-name-for-book
+ .    chop doc-reference-title-name-for-book
+ .    ie ((\n[doc-journal-count] == 1) : (\n[doc-book-count] == 1)) \{\
+-.      nop \)\*[q]\)\*[doc-reference-title-name-for-book]\)\*[q]\c
++.      nop \)\*[Lq]\)\*[doc-reference-title-name-for-book]\)\*[Rq]\c
+ .      doc-finish-reference \n[doc-reference-title-count]
+ .    \}
+ .    el \{\
+@@ -6498,36 +6445,53 @@
+ .\" NS   link (for conversion to HTML)
+ .\" NS
+ .\" NS local variables:
++.\" NS   doc-delim-Lk
+ .\" NS   doc-reg-Lk
+-.\" NS   doc-str-Lk
++.\" NS   doc-target-Lk
++.\" NS   doc-text-Lk
+ .
+ .de Lk
+-.  ds doc-str-Lk Sy \$@
++.  \" The first argument is the target URI.
++.  ds doc-target-Lk \$1
++.  shift
+ .
+-.  ie (\n[.$] > 1) \{\
+-.    doc-get-arg-type \$2
+-.    ie (\n[doc-arg-type] < 3) \{\
+-.      Em \)\$2:
+-.      ds doc-str-Lk Sy "\$1"
+-.      doc-get-width "\$1"
+-.      shift 2
+-.      if \n[.$] \
+-.        as doc-str-Lk " \$@
++.  \" Split the remaining arguments into link text and delimiters.
++.  ds doc-text-Lk
++.  ds doc-delim-Lk
++.  while \n[.$] \{\
++.    doc-get-width "\$1"
++.    doc-get-arg-type \$1
++.    ie (\n[doc-arg-type] > 2) \
++.      as doc-delim-Lk \$1
++.    el \{\
++.      if !'\*[doc-delim-Lk]'' \{\
++.        \" More text follows delimiter(s); go back to text mode.
++.        as doc-text-Lk \*[doc-delim-Lk]
++.        ds doc-delim-Lk
++.      \}
++.      ie '\*[doc-text-Lk]'' \
++.        ds doc-text-Lk \$1
++.      el \
++.        as doc-text-Lk " \$1
+ .    \}
+-.    el \
+-.      doc-get-width "\$1"
++.    shift
+ .  \}
+-.  el \
+-.    doc-get-width "\$1"
+ .
++.  \" Print the link text, if any.
++.  if !'\*[doc-text-Lk]'' \
++.      Em \*[doc-text-Lk] Ns :
++.
++.  \" Print the link target.
+ .  ie n \
+ .    nr doc-reg-Lk 26
+ .  el \
+ .    nr doc-reg-Lk 38
++.  doc-get-width "\*[doc-target-Lk]"
+ .  ie (\n[doc-width] >= \n[doc-reg-Lk]) \
+-.    D1 \*[doc-str-Lk]
+-.  el \
+-.    \*[doc-str-Lk]
++.    D1 Sy \*[doc-target-Lk] Ns \*[doc-delim-Lk]\&
++.  el .ie \n[doc-width] \
++.    Sy \*[doc-target-Lk] Ns \*[doc-delim-Lk]\&
++.  el \*[doc-delim-Lk]\&
+ ..
+ .
+ .
