@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.60 2016/10/12 11:39:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.61 2017/04/14 21:53:06 dhill Exp $
 
 COMMENT=	Matt's traceroute - network diagnostic tool#'
 
 DISTNAME=	mtr-0.87
+REVISION=	0
 CATEGORIES=	net
 
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
