@@ -1,10 +1,11 @@
-$OpenBSD: patch-ldapvi_c,v 1.1 2012/03/02 08:01:07 sthen Exp $
+$OpenBSD: patch-ldapvi_c,v 1.2 2017/04/14 08:24:03 ajacoutot Exp $
 
 rename getline to avoid future namespace collision, upstream git 256ced029c
 remove pointless header which vim whines about
+fix build with clang: 'copy_sasl_output' should return a value [-Wreturn-type]
 
---- ldapvi.c.orig	Sat May  5 11:17:26 2007
-+++ ldapvi.c	Thu Mar  1 22:04:17 2012
+--- ldapvi.c.orig	Sat May  5 12:17:26 2007
++++ ldapvi.c	Fri Apr 14 10:20:13 2017
 @@ -470,7 +470,7 @@ change_mechanism(bind_options *bo)
  		bo->authmethod = LDAP_AUTH_SASL;
  		puts("Switching to SASL authentication.");
@@ -23,3 +24,12 @@ remove pointless header which vim whines about
  		nlines++;
  	}
  	if (cmdline->ldif) {
+@@ -1465,7 +1465,7 @@ copy_sasl_output(FILE *out, char *sasl)
+ 	int line = 0;
+ 	int c;
+ 
+-	if (lstat(sasl, &st) == -1) return;
++	if (lstat(sasl, &st) == -1) return 0;
+ 	if ( !(in = fopen(sasl, "r"))) syserr();
+ 
+ 	if (st.st_size > 0) {

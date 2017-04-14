@@ -1,41 +1,41 @@
-# $OpenBSD: Makefile,v 1.20 2015/08/11 21:43:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2017/04/14 08:24:03 ajacoutot Exp $
 
-COMMENT=	update LDAP entries with a text editor
+COMMENT=		update LDAP entries with a text editor
 
-DISTNAME=	ldapvi-1.7
-CATEGORIES=	editors
+DISTNAME=		ldapvi-1.7
+CATEGORIES=		editors
+REVISION=		7
 
-REVISION=	6
+HOMEPAGE=		http://www.lichteblau.com/ldapvi.html
 
-HOMEPAGE=	http://www.lichteblau.com/ldapvi.html
-
-MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
+MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c crypto curses glib-2.0>=0.8 lber ldap popt pthread readline
+WANTLIB += c crypto curses glib-2.0 intl lber ldap popt readline
 WANTLIB += ssl
 
-MASTER_SITES=	http://www.lichteblau.com/download/
+MASTER_SITES=		http://www.lichteblau.com/download/
 
-MODULES=	devel/gettext
-BUILD_DEPENDS=	textproc/libxslt
-LIB_DEPENDS=	devel/glib2 \
-		databases/openldap \
-		devel/popt
+BUILD_DEPENDS=		textproc/libxslt
 
-MAKE_FILE=	GNUmakefile
-USE_GMAKE=	Yes
-CONFIGURE_STYLE=gnu
+LIB_DEPENDS=		devel/glib2 \
+			databases/openldap \
+			devel/popt
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+MAKE_FILE=		GNUmakefile
+USE_GMAKE=		Yes
 
-NO_TEST=	Yes
+CONFIGURE_STYLE=	gnu
+
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib"
+
+NO_TEST=		Yes
 
 pre-build:
-	@sed -i "s,/etc/ldap,${SYSCONFDIR}/openldap,g" ${WRKSRC}/ldapvi.1
+	sed -i "s,/etc/ldap,${SYSCONFDIR}/openldap,g" ${WRKSRC}/ldapvi.1
 
 do-install:
 	cd ${WRKSRC}/manual && ${MAKE_PROGRAM} ${MAKE_FILE} manual.html
