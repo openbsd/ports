@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Config.pm,v 1.68 2016/06/10 16:10:20 espie Exp $
+# $OpenBSD: Config.pm,v 1.69 2017/04/14 16:39:32 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -279,16 +279,17 @@ sub parse_command_line
 	$state->{record} = $state->expand_path($state->{record});
 	$state->{size_log} = $state->expand_path($state->{size_log});
 	$state->{lockdir} = $state->expand_path($state->{lockdir});
-	if (!$state->{subst}->value("NO_BUILD_STATS")) {
-		push @{$state->{build_files}}, "%f/build-stats/%a";
-	}
 	for my $cat (qw(build_files paths ipaths cpaths xpaths)) {
 		next unless defined $state->{$cat};
 		for my $f (@{$state->{$cat}}) {
 			$f = $state->expand_path($f);
 		}
 	}
-	$state->{permanent_log} = $state->{build_files}[-1];
+	if (!$state->{subst}->value("NO_BUILD_STATS")) {
+		$state->{permanent_log} = 
+		    $state->expand_path("%f/build-stats/%a");
+		push(@{$state->{build_files}}, $state->{permanent_log});
+	}
 	$state->{dependencies_log} = 
 	    $state->expand_path("%f/build-stats/%a-dependencies");
 	$state->{display_timeout} =

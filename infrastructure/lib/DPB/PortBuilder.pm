@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortBuilder.pm,v 1.74 2016/05/15 20:08:30 espie Exp $
+# $OpenBSD: PortBuilder.pm,v 1.75 2017/04/14 16:39:32 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -181,16 +181,16 @@ sub report
 		print $log  "!\n";
 	} else {
 		print $log  "\n";
+		return unless defined $self->{state}{permanent_log};
 		my $fh = $self->logger->open('>>', 
 		    $self->{state}{permanent_log});
-		if (defined $fh) {
-			print $fh DPB::Serialize::Build->write({
-			    pkgpath => $pkgpath, 
-			    host => $host, 
-			    time => $job->totaltime, 
-			    size => $sz, 
-			    ts => CORE::time }), "\n";
-	    	}
+		return unless defined $fh;
+		print $fh DPB::Serialize::Build->write({
+		    pkgpath => $pkgpath, 
+		    host => $host, 
+		    time => $job->totaltime, 
+		    size => $sz, 
+		    ts => CORE::time }), "\n";
 	}
 }
 

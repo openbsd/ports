@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: State.pm,v 1.19 2016/10/21 00:45:43 espie Exp $
+# $OpenBSD: State.pm,v 1.20 2017/04/14 16:39:32 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -345,8 +345,8 @@ sub add_build_info
 
 sub rewrite_build_info
 {
-	my $state = shift;
-	$state->{log_user}->rewrite_file($state, $state->{permanent_log},
+	my ($state, $filename) = @_;
+	$state->{log_user}->rewrite_file($state, $filename,
 	    sub {
 	    	my $f = shift;
 		for my $p (sort {$a->fullpkgpath cmp $b->fullpkgpath}
@@ -372,9 +372,11 @@ sub handle_build_files
 	}
 	$state->heuristics->calibrate(DPB::Core::Init->cores);
 	$state->add_build_info($state->heuristics, "DPB::Job::Port");
-	print "zapping old stuff...";
-	$state->rewrite_build_info($state->{permanent_log});
-	print "Done\n";
+	if (defined $state->{permanent_log}) {
+		print "zapping old stuff...";
+		$state->rewrite_build_info($state->{permanent_log});
+		print "Done\n";
+	}
 	$state->heuristics->finished_parsing;
 }
 
