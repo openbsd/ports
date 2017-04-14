@@ -1,6 +1,15 @@
-$OpenBSD: patch-jlint_cc,v 1.4 2015/06/17 19:06:58 jasper Exp $
---- jlint.cc.orig	Tue Jan 11 03:42:33 2011
-+++ jlint.cc	Wed Jun 17 21:04:30 2015
+$OpenBSD: patch-jlint_cc,v 1.5 2017/04/14 00:44:21 ian Exp $
+--- jlint.cc.orig	Mon Jan 10 21:42:33 2011
++++ jlint.cc	Wed Apr 12 14:39:37 2017
+@@ -41,7 +41,7 @@ bool  source_path_redefined = false;
+ int   reported_message_mask = cat_all;
+ FILE* history;
+ string_pool stringPool;
+-field_desc* is_const;
++field_desc* my_is_const;
+ 
+ message_descriptor msg_table[] = 
+   {
 @@ -138,7 +138,7 @@ int get_type(utf_string const& str) 
  
  void format_message(int code, utf_string const& file, int line, __VALIST ap)
@@ -37,3 +46,23 @@ $OpenBSD: patch-jlint_cc,v 1.4 2015/06/17 19:06:58 jasper Exp $
                }
              } else if (!message_node::find(his_buf)) { 
                fprintf(stdout, "%s\n", msg_buf);
+@@ -401,8 +401,8 @@ bool parse_class_file(byte* fp)
+   is_this->equals = is_this;
+   is_this->cls = this_class;
+ 
+-  // init. is_const
+-  field_desc* is_const = new field_desc(utf_string("<const>"), NULL, NULL);
++  // init. my_is_const
++  field_desc* my_is_const = new field_desc(utf_string("<const>"), NULL, NULL);
+ 
+   this_class->attr = access_flags;
+   if (super_class_name == 0) { // Object class
+@@ -627,7 +627,7 @@ bool parse_class_file(byte* fp)
+   delete[] constant_pool;
+   delete is_this->name_and_type;
+   //delete is_this;
+-  delete is_const;
++  delete my_is_const;
+ 
+   monitor_stack::const_iterator it;
+   for (it = this_class->usedLocks.begin();

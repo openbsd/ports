@@ -1,0 +1,21 @@
+$OpenBSD: patch-method_desc_cc,v 1.1 2017/04/14 00:44:21 ian Exp $
+--- method_desc.cc.orig	Wed Apr 12 14:38:53 2017
++++ method_desc.cc	Wed Apr 12 14:40:13 2017
+@@ -767,7 +767,7 @@ void method_desc::parse_code(constant** constant_pool,
+           sp->mask = var_desc::vs_not_null;
+         }
+         sp->index = NO_ASSOC_VAR;
+-        sp->equals = is_const;
++        sp->equals = my_is_const;
+         sp += 1;
+       }
+       break;
+@@ -2381,7 +2381,7 @@ void method_desc::parse_code(constant** constant_pool,
+             aux->name_and_type = nt;
+             sp->equals = aux;
+             equal_descs.push_back(aux);*/
+-            sp->equals = is_const;
++            sp->equals = my_is_const;
+           }
+         }
+         field->equals = sp->equals;
