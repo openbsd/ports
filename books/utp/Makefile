@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/12/19 22:13:58 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2017/04/14 12:31:07 sthen Exp $
 
 COMMENT =		comprehensive book on unix text processing
 
@@ -14,7 +14,7 @@ MAINTAINER =		Anthony J. Bentley <anthony@anjbe.name>
 # CC-BY-1.0
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		http://ftp.ffii.org/pub/groff/contrib/documentation/utp/ \
+MASTER_SITES =		https://groff.ffii.org/groff/contrib/documentation/utp/ \
 			http://home.windstream.net/kollar/utp/
 
 EXTRACT_ONLY =
