@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.28 2016/12/30 10:43:07 jsg Exp $
+# $OpenBSD: Makefile,v 1.29 2017/04/14 18:26:40 jasper Exp $
 
 BROKEN-hppa =		no atomic ops
 COMMENT=		the Git library, take 2
 
 GH_ACCOUNT =		libgit2
 GH_PROJECT =		libgit2
-GH_TAGNAME =		v0.24.1
-SHARED_LIBS +=  git2                      8.0 # 0.24
+GH_TAGNAME =		v0.25.1
+SHARED_LIBS +=  git2                      9.0 # 0.25
 
 MODULES=		devel/cmake \
 			lang/python \
