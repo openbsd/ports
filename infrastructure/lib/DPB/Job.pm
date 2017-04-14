@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Job.pm,v 1.10 2014/12/07 15:18:50 espie Exp $
+# $OpenBSD: Job.pm,v 1.11 2017/04/14 16:43:40 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -129,6 +129,18 @@ sub watched
 {
 	my $self = shift;
 	return $self->{status};
+}
+
+# abstract method, to be used by jobs that have actual watch limits
+sub kill_on_timeout
+{
+	my ($self, $diff, $core, $msg) = @_;
+	my $to = $self->get_timeout($core);
+	return $msg if !defined $to || $diff <= $to;
+	local $> = 0;	# XXX switch to root, we don't know for sure which
+			# user owns the pid (not really an issue)
+	kill 9, $core->{pid};
+	return $self->{stuck} = "KILLED: $self->{current} stuck at $msg";
 }
 
 sub add_tasks

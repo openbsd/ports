@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.168 2015/11/20 13:49:08 espie Exp $
+# $OpenBSD: Port.pm,v 1.169 2017/04/14 16:43:40 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -1064,17 +1064,13 @@ sub watched
 	if ($self->{task}->want_frozen) {
 		$msg .= $w->frozen_message($diff);
 	}
-	my $stuck = $core->stuck_timeout;
-	if (defined $stuck) {
-		if ($diff > $stuck) {
-			local $> = 0;
-			$self->{stuck} =
-			    "KILLED: $self->{current} stuck at $msg";
-			kill 9, $core->{pid};
-			return $self->{stuck};
-		}
-	}
-	return $msg;
+	return $self->kill_on_timeout($diff, $core, $msg);
+}
+
+sub get_timeout
+{
+	my ($self, $core) = @_;
+	return $core->stuck_timeout;
 }
 
 sub really_watch
