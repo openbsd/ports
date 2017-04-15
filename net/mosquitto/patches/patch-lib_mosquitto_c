@@ -1,0 +1,31 @@
+$OpenBSD: patch-lib_mosquitto_c,v 1.1 2017/04/15 20:49:44 sthen Exp $
+--- lib/mosquitto.c.orig	Fri Apr 14 15:35:36 2017
++++ lib/mosquitto.c	Fri Apr 14 15:36:20 2017
+@@ -64,6 +64,7 @@ int mosquitto_lib_version(int *major, int *minor, int 
+ 
+ int mosquitto_lib_init(void)
+ {
++#ifndef WITH_ARC4RANDOM
+ #ifdef WIN32
+ 	srand(GetTickCount());
+ #else
+@@ -72,6 +73,7 @@ int mosquitto_lib_init(void)
+ 	gettimeofday(&tv, NULL);
+ 	srand(tv.tv_sec*1000 + tv.tv_usec/1000);
+ #endif
++#endif
+ 
+ 	_mosquitto_net_init();
+ 
+@@ -166,7 +168,11 @@ int mosquitto_reinitialise(struct mosquitto *mosq, con
+ 		mosq->id[4] = '/';
+ 
+ 		for(i=5; i<23; i++){
++#ifdef WITH_ARC4RANDOM
++			mosq->id[i] = arc4random_uniform(73)+48;
++#else
+ 			mosq->id[i] = (rand()%73)+48;
++#endif
+ 		}
+ 	}
+ 	mosq->in_packet.payload = NULL;

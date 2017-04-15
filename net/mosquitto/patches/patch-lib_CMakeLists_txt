@@ -1,6 +1,6 @@
-$OpenBSD: patch-lib_CMakeLists_txt,v 1.3 2017/03/28 17:02:01 jasper Exp $
---- lib/CMakeLists.txt.orig	Mon Feb 20 23:06:57 2017
-+++ lib/CMakeLists.txt	Sat Mar 18 14:29:49 2017
+$OpenBSD: patch-lib_CMakeLists_txt,v 1.4 2017/04/15 20:49:44 sthen Exp $
+--- lib/CMakeLists.txt.orig	Mon Feb 20 22:06:57 2017
++++ lib/CMakeLists.txt	Fri Apr 14 15:35:06 2017
 @@ -48,12 +48,12 @@ add_library(libmosquitto SHARED
  
  set (LIBRARIES ${OPENSSL_LIBRARIES} ${PTHREAD_LIBRARIES})
@@ -16,7 +16,20 @@ $OpenBSD: patch-lib_CMakeLists_txt,v 1.3 2017/03/28 17:02:01 jasper Exp $
  
  if (WIN32)
  	set (LIBRARIES ${LIBRARIES} ws2_32)
-@@ -81,6 +81,3 @@ set_target_properties(libmosquitto PROPERTIES
+@@ -70,6 +70,12 @@ if (${WITH_SRV} STREQUAL ON)
+ 	endif (ARES_HEADER)
+ endif (${WITH_SRV} STREQUAL ON)
+ 
++include(CheckSymbolExists)
++CHECK_SYMBOL_EXISTS(arc4random_uniform stdlib.h ARC4RANDOM_UNIFORM)
++if (${ARC4RANDOM_UNIFORM})
++	add_definitions("-DWITH_ARC4RANDOM")
++endif (${ARC4RANDOM_UNIFORM})
++
+ target_link_libraries(libmosquitto ${LIBRARIES})
+ 
+ set_target_properties(libmosquitto PROPERTIES
+@@ -81,6 +87,3 @@ set_target_properties(libmosquitto PROPERTIES
  install(TARGETS libmosquitto RUNTIME DESTINATION "${BINDIR}" LIBRARY DESTINATION "${LIBDIR}")
  install(FILES mosquitto.h DESTINATION "${INCLUDEDIR}")
  
