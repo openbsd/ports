@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2017/04/10 11:46:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2017/04/15 20:46:16 sthen Exp $
 
 COMMENT =		opensource MQTT broker
 
@@ -19,7 +19,11 @@ WANTLIB +=		c crypto m pthread ssl ${LIBCXX} uuid
 CFLAGS +=		-I${LOCALBASE}/include
 MASTER_SITES =		http://mosquitto.org/files/source/
 
-MODULES =		devel/cmake
+MODULES =		devel/cmake \
+			lang/python
+
+MODPY_BUILDDEP=		No
+MODPY_RUNDEP=		No
 
 CONFIGURE_ARGS=		-DWITH_SRV=no
 
@@ -28,6 +32,17 @@ CONFIGURE_ARGS +=	-DWITH_TLS_PSK=no
 
 LIB_DEPENDS =		sysutils/e2fsprogs
 
-NO_TEST =		Yes
+TEST_DEPENDS=		${MODPY_RUN_DEPENDS} \
+			devel/gmake
+
+pre-test:
+	ln -fs ${MODPY_BIN} ${WRKDIR}/bin/python
+	ln -fs ${WRKBUILD}/src/mosquitto ${WRKSRC}/src/
+
+do-test:
+	cd ${WRKSRC}/test; env ${MAKE_ENV} \
+	    WRKLIB=${WRKBUILD}/lib/libmosquitto.so.${LIBmosquitto_VERSION} \
+	    WRKLIBPP=${WRKBUILD}/lib/cpp/libmosquittopp.so.${LIBmosquittopp_VERSION} \
+	    gmake WITH_TLS_PSK=no test
 
 .include <bsd.port.mk>

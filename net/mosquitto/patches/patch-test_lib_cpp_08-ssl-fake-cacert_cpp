@@ -1,0 +1,11 @@
+$OpenBSD: patch-test_lib_cpp_08-ssl-fake-cacert_cpp,v 1.1 2017/04/15 20:46:16 sthen Exp $
+--- test/lib/cpp/08-ssl-fake-cacert.cpp.orig	Fri Apr 14 15:15:51 2017
++++ test/lib/cpp/08-ssl-fake-cacert.cpp	Fri Apr 14 15:16:51 2017
+@@ -1,3 +1,7 @@
++#if defined(__OpenBSD__)
++#  define EPROTO EOPNOTSUPP
++#endif
++
+ #include <errno.h>
+ #include <mosquittopp.h>
+ 

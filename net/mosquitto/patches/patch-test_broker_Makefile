@@ -1,0 +1,14 @@
+$OpenBSD: patch-test_broker_Makefile,v 1.1 2017/04/15 20:46:16 sthen Exp $
+--- test/broker/Makefile.orig	Fri Apr 14 14:55:30 2017
++++ test/broker/Makefile	Fri Apr 14 14:58:12 2017
+@@ -88,8 +88,10 @@ ifeq ($(WITH_TLS),yes)
+ 	./08-ssl-connect-identity.py
+ 	./08-ssl-connect-no-identity.py
+ 	./08-ssl-bridge.py
++ifeq ($(WITH_TLS_PSK),yes)
+ 	./08-tls-psk-pub.py
+ 	./08-tls-psk-bridge.py
++endif
+ endif
+ 
+ 09 :
