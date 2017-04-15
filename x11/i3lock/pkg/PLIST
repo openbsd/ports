@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/04/15 12:53:02 jasper Exp $
+@mode 2555
+@group auth
+@bin bin/i3lock
+@mode
+@group
+@man man/man1/i3lock.1
