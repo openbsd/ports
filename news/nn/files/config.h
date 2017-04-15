@@ -122,7 +122,7 @@
  *	conf/m-template.h as a starting point for writing you own.
  */
 
-#include "m-i80386.h"
+#include "m-openbsd.h"
 
 
 /***************************** OWNERSHIP ***************************
@@ -173,10 +173,10 @@
  *			   (= LIB_DIRECTORY/Log if undefined).
  */
 
-#define BIN_DIRECTORY	"OBSD_PREFIX/bin"
-#define LIB_DIRECTORY	"OBSD_PREFIX/lib/nn"
-#define CLIENT_DIRECTORY "OBSD_PREFIX/libexec/nn"
-#define HELP_DIRECTORY "OBSD_PREFIX/share/doc/nn"
+#define BIN_DIRECTORY	"${PREFIX}/bin"
+#define LIB_DIRECTORY	"${PREFIX}/lib/nn"
+#define CLIENT_DIRECTORY "${PREFIX}/libexec/nn"
+#define HELP_DIRECTORY "${PREFIX}/share/doc/nn"
 #define TMP_DIRECTORY "/tmp"
 #define LOG_FILE "/var/log/nn"
 
@@ -240,13 +240,13 @@
  *	DAEMON_MAN	- nnmaster
  */
 
-#define USER_MAN_DIR	"OBSD_PREFIX/man/man1"
+#define USER_MAN_DIR	"${PREFIX}/man/man1"
 #define USER_MAN_SECTION	"1"
 
-#define SYS_MAN_DIR	"OBSD_PREFIX/man/man1"
+#define SYS_MAN_DIR	"${PREFIX}/man/man1"
 #define SYS_MAN_SECTION		"1m"
 
-#define DAEMON_MAN_DIR	"OBSD_PREFIX/man/man8"
+#define DAEMON_MAN_DIR	"${PREFIX}/man/man8"
 #define DAEMON_MAN_SECTION	"8"
 
 

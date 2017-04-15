@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2016/09/01 10:53:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2017/04/15 14:11:35 naddy Exp $
 
-COMMENT =		No News is Good News (Fast CLI Point & Read Newsreader)
+COMMENT =		menu-based Usenet newsreader
 DISTNAME =		nn-6.7.3
-REVISION =		2
+REVISION =		3
 CATEGORIES =		news
 HOMEPAGE =		http://www.nndev.org
 
@@ -23,36 +23,12 @@ USE_GROFF =		Yes
 NO_TEST =		Yes
 MAKE_ENV =		CC="${CC}"
 
-.if "${MACHINE_ARCH}" == "alpha"
-MFILE =			m-alpha.h
-.elif "${MACHINE_ARCH}" == "hppa"
-MFILE =			m-hp9000.h
-.elif "${MACHINE_ARCH}" == "m88k"
-MFILE =			m-m88000.h
-.elif "${MACHINE_ARCH}" == "powerpc"
-MFILE = 		m-powerpc.h
-.elif "${MACHINE_ARCH}" == "mips64"
-MFILE =			m-mips.h
-.elif "${MACHINE_ARCH}" == "sparc64"
-MFILE =			m-sparc.h
-.else
-MFILE =			m-i80386.h
-.endif
-
 pre-configure:
-	sed -e "s/OBSD_PREFIX/${PREFIX:S/\//\\\//g}/" \
-		-e "s/m-i80386\.h/${MFILE}/" \
-		${FILESDIR}/config.h > ${WRKSRC}/config.h
-	cp ${FILESDIR}/s-openbsd.h ${WRKSRC}/conf/s-openbsd.h
-
-pre-install:
-	sed -e "s/\/usr\/local/${PREFIX:C/\//\\\//g}/" \
-	    ${WRKSRC}/inst > ${WRKSRC}/inst.new
-	mv ${WRKSRC}/inst ${WRKSRC}/inst.old
-	mv ${WRKSRC}/inst.new ${WRKSRC}/inst
-	chmod 755 ${WRKSRC}/inst
+	${SUBST_DATA} ${FILESDIR}/config.h ${WRKSRC}/config.h
+	cp ${FILESDIR}/[ms]-openbsd.h ${WRKSRC}/conf/
 
 do-install:
-	cd ${WRKSRC} && echo `pwd` && ./inst n
+	perl -pi.bak -e 's:${TRUEPREFIX}:${PREFIX}:g' ${WRKSRC}/inst
+	cd ${WRKSRC} && ./inst n
 
 .include <bsd.port.mk>
