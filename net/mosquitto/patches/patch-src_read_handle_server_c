@@ -1,0 +1,55 @@
+$OpenBSD: patch-src_read_handle_server_c,v 1.1 2017/04/15 20:49:09 sthen Exp $
+--- src/read_handle_server.c.orig	Mon Feb 20 22:06:57 2017
++++ src/read_handle_server.c	Fri Apr 14 16:23:25 2017
+@@ -27,7 +27,9 @@ Contributors:
+ #include <tls_mosq.h>
+ #include <util_mosq.h>
+ 
+-#ifdef WITH_UUID
++#ifdef WITH_UUID_CREATE
++#  include <uuid.h>
++#elif defined(WITH_UUID)
+ #  include <uuid/uuid.h>
+ #endif
+ 
+@@ -42,13 +44,17 @@ extern unsigned int g_connection_count;
+ static char *client_id_gen(struct mosquitto_db *db)
+ {
+ 	char *client_id;
+-#ifdef WITH_UUID
++#ifdef WITH_UUID_CREATE
+ 	uuid_t uuid;
++	uint32_t status;
++	char *out;
++#elif defined(WITH_UUID)
++	uuid_t uuid;
+ #else
+ 	int i;
+ #endif
+ 
+-#ifdef WITH_UUID
++#if defined(WITH_UUID) || defined(WITH_UUID_CREATE)
+ 	client_id = (char *)_mosquitto_calloc(37 + db->config->auto_id_prefix_len, sizeof(char));
+ 	if(!client_id){
+ 		return NULL;
+@@ -56,6 +62,20 @@ static char *client_id_gen(struct mosquitto_db *db)
+ 	if(db->config->auto_id_prefix){
+ 		memcpy(client_id, db->config->auto_id_prefix, db->config->auto_id_prefix_len);
+ 	}
++#endif
++
++#ifdef WITH_UUID_CREATE
++	uuid_create(&uuid, &status);
++	if (status != uuid_s_ok){
++		return NULL;
++	}
++	uuid_to_string(&uuid, &out, &status);
++	if (status != uuid_s_ok){
++		return NULL;
++	}
++	memcpy(&client_id[db->config->auto_id_prefix_len], out, UUID_STR_LEN + 1);
++	free(out);
++#elif defined(WITH_UUID)
+ 	uuid_generate_random(uuid);
+ 	uuid_unparse_lower(uuid, &client_id[db->config->auto_id_prefix_len]);
+ #else

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2017/04/15 20:46:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2017/04/15 20:49:09 sthen Exp $
 
 COMMENT =		opensource MQTT broker
 
 DISTNAME =		mosquitto-1.4.11
+REVISION =		0
 
 SHARED_LIBS +=  mosquitto                 0.0 # 1.4
 SHARED_LIBS +=  mosquittopp               0.0 # 1.4
@@ -14,7 +15,7 @@ MAINTAINER =		Edd Barrett <edd@openbsd.org>
 # EPL/EDL
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB +=		c crypto m pthread ssl ${LIBCXX} uuid
+WANTLIB +=		c crypto m pthread ssl ${LIBCXX}
 
 CFLAGS +=		-I${LOCALBASE}/include
 MASTER_SITES =		http://mosquitto.org/files/source/
@@ -29,8 +30,6 @@ CONFIGURE_ARGS=		-DWITH_SRV=no
 
 # Pre-shared key support was intentionally removed from libressl
 CONFIGURE_ARGS +=	-DWITH_TLS_PSK=no
-
-LIB_DEPENDS =		sysutils/e2fsprogs
 
 TEST_DEPENDS=		${MODPY_RUN_DEPENDS} \
 			devel/gmake
