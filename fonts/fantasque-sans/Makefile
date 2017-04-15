@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2016/08/07 10:00:40 landry Exp $
+# $OpenBSD: Makefile,v 1.5 2017/04/15 14:51:08 jasper Exp $
 
 BROKEN-macppc =			fontforge doesnt validate fonts
 BROKEN-sparc64 =		fontforge doesnt validate fonts
@@ -7,8 +7,7 @@ COMMENT =			programming font designed with functionality in mind
 
 GH_ACCOUNT =			belluzj
 GH_PROJECT =			fantasque-sans
-GH_TAGNAME =			v1.7.0
-REVISION =			0
+GH_TAGNAME =			v1.7.1
 
 CATEGORIES =			fonts
 
