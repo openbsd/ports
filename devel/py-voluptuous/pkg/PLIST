@@ -1,10 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/10/03 17:40:26 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/04/15 17:26:17 sebastia Exp $
 lib/python${MODPY_VERSION}/site-packages/voluptuous/
 lib/python${MODPY_VERSION}/site-packages/voluptuous-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/voluptuous-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/voluptuous-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/voluptuous-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/voluptuous-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/voluptuous-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/voluptuous/__init__.py
 lib/python${MODPY_VERSION}/site-packages/voluptuous/__init__.pyc
