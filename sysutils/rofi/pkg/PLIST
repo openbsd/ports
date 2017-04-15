@@ -1,7 +1,30 @@
-@comment $OpenBSD: PLIST,v 1.4 2016/04/25 17:59:27 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2017/04/15 14:23:45 jasper Exp $
 @bin bin/rofi
 bin/rofi-sensible-terminal
+bin/rofi-theme-selector
 @man man/man1/rofi-sensible-terminal.1
 @man man/man1/rofi.1
 share/examples/rofi/
 share/examples/rofi/i3_switch_workspaces.sh
+share/rofi/
+share/rofi/themes/
+share/rofi/themes/Adapta-Nokto.theme
+share/rofi/themes/Arc.theme
+share/rofi/themes/DarkBlue.theme
+share/rofi/themes/Indego.theme
+share/rofi/themes/Monokai.theme
+share/rofi/themes/Paper.theme
+share/rofi/themes/android_notification.theme
+share/rofi/themes/blue.theme
+share/rofi/themes/c64.theme
+share/rofi/themes/glue_pro_blue.theme
+share/rofi/themes/gruvbox-dark-hard.theme
+share/rofi/themes/gruvbox-dark-soft.theme
+share/rofi/themes/gruvbox-dark.theme
+share/rofi/themes/gruvbox-light-hard.theme
+share/rofi/themes/gruvbox-light-soft.theme
+share/rofi/themes/gruvbox-light.theme
+share/rofi/themes/lb.theme
+share/rofi/themes/purple.theme
+share/rofi/themes/solarized.theme
+share/rofi/themes/solarized_alternate.theme
