@@ -1,11 +1,33 @@
-$OpenBSD: patch-include_private_gcconfig_h,v 1.21 2016/11/12 10:33:04 jca Exp $
+$OpenBSD: patch-include_private_gcconfig_h,v 1.22 2017/04/15 14:02:46 naddy Exp $
 
 - All OpenBSD mips platforms are 64-bit, so correct the wordsize and alignment
 - use __data_start instead of _fdata on OpenBSD/mips64
+- add support for OpenBSD/aarch64
 
 --- include/private/gcconfig.h.orig	Tue Aug  2 21:36:14 2016
-+++ include/private/gcconfig.h	Thu Nov 10 04:14:50 2016
-@@ -1712,14 +1712,15 @@
++++ include/private/gcconfig.h	Fri Apr 14 17:44:40 2017
+@@ -102,7 +102,8 @@
+ # endif
+ # if defined(__aarch64__)
+ #    define AARCH64
+-#    if !defined(LINUX) && !defined(DARWIN) && !defined(FREEBSD)
++#    if !defined(LINUX) && !defined(DARWIN) && !defined(FREEBSD) \
++	&& !defined(OPENBSD)
+ #      define NOSYS
+ #      define mach_type_known
+ #    endif
+@@ -137,6 +138,10 @@
+ #    define ARM32
+ #    define mach_type_known
+ # endif
++# if defined(OPENBSD) && defined(__aarch64__)
++#    define AARCH64
++#    define mach_type_known
++# endif
+ # if defined(OPENBSD) && defined(__sh__)
+ #    define SH
+ #    define mach_type_known
+@@ -1712,14 +1717,15 @@
  #  endif
  #  ifdef OPENBSD
  #    define OS_TYPE "OPENBSD"
@@ -24,3 +46,23 @@ $OpenBSD: patch-include_private_gcconfig_h,v 1.21 2016/11/12 10:33:04 jca Exp $
       extern int _end[];
  #    define DATAEND ((ptr_t)(&_end))
  #    define DYNAMIC_LOADING
+@@ -2165,6 +2171,19 @@
+       extern char etext[];
+ #     define DATASTART GC_FreeBSDGetDataStart(0x1000, (ptr_t)etext)
+ #     define DATASTART_USES_BSDGETDATASTART
++#   endif
++#   ifdef OPENBSD
++#     define OS_TYPE "OPENBSD"
++#     ifndef GC_OPENBSD_THREADS
++#       include <sys/param.h>
++#       include <uvm/uvm_extern.h>
++#       define STACKBOTTOM ((ptr_t)USRSTACK)
++#     endif
++      extern int __data_start[];
++#     define DATASTART ((ptr_t)__data_start)
++      extern int _end[];
++#     define DATAEND ((ptr_t)(&_end))
++#     define DYNAMIC_LOADING
+ #   endif
+ #   ifdef NOSYS
+       /* __data_start is usually defined in the target linker script.   */
