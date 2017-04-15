@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.27 2017/04/10 11:46:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2017/04/15 20:33:04 naddy Exp $
 
 COMMENT=	object-oriented DSSSL engine
 
 DISTNAME=	openjade-1.3.3-pre1
 PKGNAME=	openjade-1.3.3pre1
-REVISION=	2
+REVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=openjade/}
 
