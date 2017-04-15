@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.585 2017/02/23 17:32:52 feinerer Exp $
+# $OpenBSD: Makefile,v 1.586 2017/04/15 12:54:42 jasper Exp $
 
      SUBDIR =
      SUBDIR += Xaw3d
@@ -123,6 +123,7 @@
      SUBDIR += hs-xmonad-contrib
      SUBDIR += human-icon-theme
      SUBDIR += i3
+     SUBDIR += i3lock
      SUBDIR += i3status
      SUBDIR += icewm
      SUBDIR += icon-naming-utils
