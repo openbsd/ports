@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2016/12/17 21:44:06 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.5 2017/04/15 17:27:38 sebastia Exp $
 bin/curator
 bin/curator_cli
 bin/es_repo_mgr
@@ -20,6 +20,14 @@ lib/python${MODPY_VERSION}/site-packages/curator/curator_cli.pyc
 lib/python${MODPY_VERSION}/site-packages/curator/defaults/
 lib/python${MODPY_VERSION}/site-packages/curator/defaults/__init__.py
 lib/python${MODPY_VERSION}/site-packages/curator/defaults/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/curator/defaults/client_defaults.py
+lib/python${MODPY_VERSION}/site-packages/curator/defaults/client_defaults.pyc
+lib/python${MODPY_VERSION}/site-packages/curator/defaults/filter_elements.py
+lib/python${MODPY_VERSION}/site-packages/curator/defaults/filter_elements.pyc
+lib/python${MODPY_VERSION}/site-packages/curator/defaults/filtertypes.py
+lib/python${MODPY_VERSION}/site-packages/curator/defaults/filtertypes.pyc
+lib/python${MODPY_VERSION}/site-packages/curator/defaults/option_defaults.py
+lib/python${MODPY_VERSION}/site-packages/curator/defaults/option_defaults.pyc
 lib/python${MODPY_VERSION}/site-packages/curator/defaults/settings.py
 lib/python${MODPY_VERSION}/site-packages/curator/defaults/settings.pyc
 lib/python${MODPY_VERSION}/site-packages/curator/exceptions.py
@@ -43,12 +51,8 @@ lib/python${MODPY_VERSION}/site-packages/curator/validators/actions.py
 lib/python${MODPY_VERSION}/site-packages/curator/validators/actions.pyc
 lib/python${MODPY_VERSION}/site-packages/curator/validators/config_file.py
 lib/python${MODPY_VERSION}/site-packages/curator/validators/config_file.pyc
-lib/python${MODPY_VERSION}/site-packages/curator/validators/filter_elements.py
-lib/python${MODPY_VERSION}/site-packages/curator/validators/filter_elements.pyc
 lib/python${MODPY_VERSION}/site-packages/curator/validators/filters.py
 lib/python${MODPY_VERSION}/site-packages/curator/validators/filters.pyc
-lib/python${MODPY_VERSION}/site-packages/curator/validators/filtertypes.py
-lib/python${MODPY_VERSION}/site-packages/curator/validators/filtertypes.pyc
 lib/python${MODPY_VERSION}/site-packages/curator/validators/options.py
 lib/python${MODPY_VERSION}/site-packages/curator/validators/options.pyc
 lib/python${MODPY_VERSION}/site-packages/curator/validators/schemacheck.py

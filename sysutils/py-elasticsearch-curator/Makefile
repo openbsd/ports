@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2017/02/28 16:20:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2017/04/15 17:27:38 sebastia Exp $
 
 COMMENT=	manage Elasticsearch indices
 
-MODPY_EGG_VERSION=4.2.6
-REVISION =	0
+MODPY_EGG_VERSION=5.0.1
 DISTNAME=	elasticsearch-curator-${MODPY_EGG_VERSION}
 PKGNAME=	py-elasticsearch-curator-${MODPY_EGG_VERSION}
 
@@ -20,9 +19,9 @@ MODPY_PI =	Yes
 
 MODULES=	lang/python
 RUN_DEPENDS=	devel/py-certifi>=2017.1.23 \
-		devel/py-click \
+		devel/py-click>=6.7 \
 		devel/py-voluptuous \
-		textproc/py-elasticsearch>=5,<6 \
+		textproc/py-elasticsearch>=5.3,<6 \
 		textproc/py-yaml
 
 MODPY_SETUPTOOLS= Yes
