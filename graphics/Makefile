@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.433 2017/03/22 21:23:52 landry Exp $
+# $OpenBSD: Makefile,v 1.434 2017/04/16 15:59:17 fcambus Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -139,6 +139,7 @@
      SUBDIR += libpgf
      SUBDIR += libqrencode
      SUBDIR += libraw
+     SUBDIR += libsixel
      SUBDIR += libvidcap
      SUBDIR += libwebp
      SUBDIR += libwmf
