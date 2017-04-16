@@ -1,12 +1,17 @@
-$OpenBSD: patch-src_polkitbackend_polkitbackendinteractiveauthority_c,v 1.6 2015/07/20 20:16:59 ajacoutot Exp $
+$OpenBSD: patch-src_polkitbackend_polkitbackendinteractiveauthority_c,v 1.7 2017/04/16 15:37:41 ajacoutot Exp $
 
 From 074df27827fd773f1c76545cd08da568440ca41f Mon Sep 17 00:00:00 2001
 From: Antoine Jacoutot <ajacoutot@gnome.org>
 Date: Sun, 19 Jul 2015 02:19:08 +0200
 Subject: Add support for OpenBSD
 
+commit 7ecf29a9db86f7161e2ff48e7bb8ea46a90f954f
+Author: Miloslav Trma\xc4\x8d <mitr@redhat.com>
+Date:   Wed Feb 8 22:57:21 2017 +0100
+Fix a memory leak in server_handle_authentication_agent_response{,2}
+
 --- src/polkitbackend/polkitbackendinteractiveauthority.c.orig	Fri Jun 19 22:39:58 2015
-+++ src/polkitbackend/polkitbackendinteractiveauthority.c	Sun Jul 19 02:08:14 2015
++++ src/polkitbackend/polkitbackendinteractiveauthority.c	Sun Apr 16 17:31:32 2017
 @@ -23,7 +23,11 @@
  #include <errno.h>
  #include <pwd.h>
@@ -19,7 +24,34 @@ Subject: Add support for OpenBSD
  #include <string.h>
  #include <glib/gstdio.h>
  #include <locale.h>
-@@ -2236,7 +2240,11 @@ get_users_in_net_group (PolkitIdentity                
+@@ -1903,15 +1907,15 @@ authentication_agent_begin_cb (GDBusProxy   *proxy,
+   AuthenticationSession *session = user_data;
+   gboolean gained_authorization;
+   gboolean was_dismissed;
++  GVariant *result;
+   GError *error;
+ 
+   was_dismissed = FALSE;
+   gained_authorization = FALSE;
+ 
+   error = NULL;
+-  if (!g_dbus_proxy_call_finish (proxy,
+-                                 res,
+-                                 &error))
++  result = g_dbus_proxy_call_finish (proxy, res, &error);
++  if (result == NULL)
+     {
+       g_printerr ("Error performing authentication: %s (%s %d)\n",
+                   error->message,
+@@ -1923,6 +1927,7 @@ authentication_agent_begin_cb (GDBusProxy   *proxy,
+     }
+   else
+     {
++      g_variant_unref (result);
+       gained_authorization = session->is_authenticated;
+       g_debug ("Authentication complete, is_authenticated = %d", session->is_authenticated);
+     }
+@@ -2236,7 +2241,11 @@ get_users_in_net_group (PolkitIdentity                
  
    for (;;)
      {

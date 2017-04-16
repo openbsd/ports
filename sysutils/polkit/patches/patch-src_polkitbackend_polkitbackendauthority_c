@@ -1,0 +1,33 @@
+$OpenBSD: patch-src_polkitbackend_polkitbackendauthority_c,v 1.1 2017/04/16 15:37:41 ajacoutot Exp $
+
+commit af4566e1a7e9031b9a05f49c7d27bf379d822016
+Author: Miloslav Trmač <mitr@redhat.com>
+Date:   Thu Feb 9 19:53:54 2017 +0100
+Fix a memory leak per agent authentication
+
+--- src/polkitbackend/polkitbackendauthority.c.orig	Sun Apr 16 17:34:05 2017
++++ src/polkitbackend/polkitbackendauthority.c	Sun Apr 16 17:34:10 2017
+@@ -1007,6 +1007,7 @@ server_handle_unregister_authentication_agent (Server 
+   g_dbus_method_invocation_return_value (invocation, g_variant_new ("()"));
+ 
+  out:
++  g_variant_unref (subject_gvariant);
+   if (subject != NULL)
+     g_object_unref (subject);
+ }
+@@ -1057,6 +1058,7 @@ server_handle_authentication_agent_response (Server   
+   g_dbus_method_invocation_return_value (invocation, g_variant_new ("()"));
+ 
+  out:
++  g_variant_unref (identity_gvariant);
+   if (identity != NULL)
+     g_object_unref (identity);
+ }
+@@ -1107,6 +1109,7 @@ server_handle_authentication_agent_response2 (Server  
+   g_dbus_method_invocation_return_value (invocation, g_variant_new ("()"));
+ 
+  out:
++  g_variant_unref (identity_gvariant);
+   if (identity != NULL)
+     g_object_unref (identity);
+ }
