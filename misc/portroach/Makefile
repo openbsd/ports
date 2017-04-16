@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.29 2017/03/25 14:18:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.30 2017/04/16 09:14:52 jasper Exp $
 
 COMMENT=		OpenBSD ports distfile version scanner
 
 GH_ACCOUNT=		jasperla
 GH_PROJECT=		portroach
-GH_TAGNAME=		2.0.10
-REVISION=		3
+GH_TAGNAME=		2.0.11
 
 CATEGORIES=		misc
 
