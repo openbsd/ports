@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2015/11/25 12:42:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.42 2017/04/16 14:43:16 sthen Exp $
 
 COMMENT=	tools to convert Xfig's .fig files
 
@@ -17,6 +17,10 @@ RUN_DEPENDS=	print/ghostscript/gnu \
 # MIT-like
 PERMIT_PACKAGE_CDROM=	Yes
 
+WANTLIB=	X11 Xpm c m z png>=2
+
+MAKE_FLAGS=	CC="${CC}"
+
 PATCHORIG=	.pat.orig
 
 CONFIGURE_STYLE=imake
@@ -24,7 +28,6 @@ USE_GROFF =	Yes
 
 FLAVORS=	a4
 FLAVOR?=
-WANTLIB=	X11 Xpm c m z png>=2
 
 .if ${FLAVOR:Ma4}
 PATCH_LIST=	patch-* a4-*
