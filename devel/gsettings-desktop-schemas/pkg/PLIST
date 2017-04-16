@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2016/10/31 09:19:36 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.27 2017/04/16 15:21:03 ajacoutot Exp $
 include/gsettings-desktop-schemas/
 include/gsettings-desktop-schemas/gdesktop-enums.h
 lib/girepository-1.0/
@@ -56,12 +56,14 @@ share/locale/es/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/eu/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/fi/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/fr/LC_MESSAGES/gsettings-desktop-schemas.mo
+share/locale/fur/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/gl/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/gu/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/he/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/hi/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/hu/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/id/LC_MESSAGES/gsettings-desktop-schemas.mo
+share/locale/is/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/it/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/ja/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/kk/LC_MESSAGES/gsettings-desktop-schemas.mo
