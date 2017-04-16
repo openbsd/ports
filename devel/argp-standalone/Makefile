@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2016/03/11 19:59:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2017/04/16 19:51:09 sthen Exp $
 
-COMMENT=		Standalone version of arguments parsing functions from GLIBC
+COMMENT=	standalone version of argument parsing functions from GLIBC
 
 DISTNAME=		argp-standalone-1.3
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		devel
 
@@ -15,6 +15,7 @@ MASTER_SITES=		http://www.lysator.liu.se/~nisse/misc/
 SEPARATE_BUILD=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--disable-dependency-tracking
+CFLAGS+=		--std=gnu89
 
 do-install:
 	${INSTALL_DATA} ${WRKBUILD}/libargp.a ${PREFIX}/lib
