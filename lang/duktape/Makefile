@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/03/27 15:39:00 fcambus Exp $
+# $OpenBSD: Makefile,v 1.2 2017/04/16 18:23:51 fcambus Exp $
 
 COMMENT =	embeddable JavaScript engine
 
-DISTNAME =	duktape-2.0.2
+DISTNAME =	duktape-2.1.0
 EXTRACT_SUFX =	.tar.xz
 
 CATEGORIES =	lang
