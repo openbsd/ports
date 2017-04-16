@@ -1,18 +1,17 @@
-# $OpenBSD: Makefile,v 1.19 2017/01/03 19:19:48 landry Exp $
+# $OpenBSD: Makefile,v 1.20 2017/04/16 15:52:39 ajacoutot Exp $
 
 COMMENT=	braille translator, back-translator and formatter
 
-V=		3.0.0
+V=		3.1.0
 DISTNAME=	liblouis-${V}
-REVISION=	0
 
-SHARED_LIBS +=  louis                5.0      # 12.0
+SHARED_LIBS +=  louis                6.0      # 13.0
 
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.liblouis.org/
 
-# GPLv3 - LGPLv3
+# GPLv3 - LGPLv3 - LGPLv2.1+
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c
