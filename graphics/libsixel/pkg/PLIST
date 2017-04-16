@@ -1,0 +1,18 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/04/16 15:58:31 fcambus Exp $
+@bin bin/img2sixel
+bin/libsixel-config
+@bin bin/sixel2png
+include/sixel.h
+lib/libsixel.a
+lib/libsixel.la
+@lib lib/libsixel.so.${LIBsixel_VERSION}
+lib/pkgconfig/libsixel.pc
+@man man/man1/img2sixel.1
+@man man/man1/sixel2png.1
+@man man/man5/sixel.5
+share/bash-completion/
+share/bash-completion/completions/
+share/bash-completion/completions/img2sixel
+share/zsh/
+share/zsh/site-functions/
+share/zsh/site-functions/_img2sixel
