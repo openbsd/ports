@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_dnsmasq_c,v 1.4 2017/04/16 10:40:07 sthen Exp $
+
+Fails. Currently disabled pending investigation.
+
+--- src/dnsmasq.c.orig	Wed May 18 15:51:54 2016
++++ src/dnsmasq.c	Sat Apr 15 22:47:55 2017
+@@ -144,7 +144,7 @@ int main (int argc, char **argv)
+       open("/dev/null", O_RDWR); 
+ 
+ #ifndef HAVE_LINUX_NETWORK
+-#  if !(defined(IP_RECVDSTADDR) && defined(IP_RECVIF) && defined(IP_SENDSRCADDR))
++#  if defined(__OpenBSD__) || !(defined(IP_RECVDSTADDR) && defined(IP_RECVIF) && defined(IP_SENDSRCADDR))
+   if (!option_bool(OPT_NOWILD))
+     {
+       bind_fallback = 1;

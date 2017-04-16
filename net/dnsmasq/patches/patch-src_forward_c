@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_forward_c,v 1.1 2017/04/16 10:40:07 sthen Exp $
+
+Fails. Currently disabled pending investigation.
+
+--- src/forward.c.orig	Sat Apr 15 22:36:04 2017
++++ src/forward.c	Sat Apr 15 22:46:09 2017
+@@ -35,7 +35,7 @@ int send_from(int fd, int nowild, char *packet, size_t
+     struct cmsghdr align; /* this ensures alignment */
+ #if defined(HAVE_LINUX_NETWORK)
+     char control[CMSG_SPACE(sizeof(struct in_pktinfo))];
+-#elif defined(IP_SENDSRCADDR)
++#elif !defined(__OpenBSD__) && defined(IP_SENDSRCADDR)
+     char control[CMSG_SPACE(sizeof(struct in_addr))];
+ #endif
+ #ifdef HAVE_IPV6
+@@ -71,7 +71,7 @@ int send_from(int fd, int nowild, char *packet, size_t
+ 	  msg.msg_controllen = cmptr->cmsg_len = CMSG_LEN(sizeof(struct in_pktinfo));
+ 	  cmptr->cmsg_level = IPPROTO_IP;
+ 	  cmptr->cmsg_type = IP_PKTINFO;
+-#elif defined(IP_SENDSRCADDR)
++#elif !defined(__OpenBSD__) && defined(IP_SENDSRCADDR)
+ 	  memcpy(CMSG_DATA(cmptr), &(source->addr.addr4), sizeof(source->addr.addr4));
+ 	  msg.msg_controllen = cmptr->cmsg_len = CMSG_LEN(sizeof(struct in_addr));
+ 	  cmptr->cmsg_level = IPPROTO_IP;
