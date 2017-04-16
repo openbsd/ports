@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile,v 1.1 2017/04/16 15:05:40 sthen Exp $
+--- Makefile.orig	Sun Apr 16 15:54:14 2017
++++ Makefile	Sun Apr 16 16:05:00 2017
+@@ -11,7 +11,7 @@ MAN=	torture.8
+ BINDIR=	/usr/local/sbin
+ 
+ CFLAGS+=	-g -Wall -Werror -I${.CURDIR}
+-CFLAGS+=	-Wshadow -Wpointer-arith -Wcast-qual -Wbounded
++CFLAGS+=	-Wshadow -Wpointer-arith -Wcast-qual
+ #CFLAGS+=	-Wstrict-prototypes -Wmissing-prototypes
+ #CFLAGS+=	-Wmissing-declarations
+ #CFLAGS+=	-Wsign-compare
