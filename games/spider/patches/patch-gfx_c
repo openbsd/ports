@@ -1,6 +1,6 @@
-$OpenBSD: patch-gfx_c,v 1.2 2008/10/10 22:58:16 sthen Exp $
---- gfx.c.orig	Sat Sep 28 18:46:10 1991
-+++ gfx.c	Sat Aug  2 19:41:42 2008
+$OpenBSD: patch-gfx_c,v 1.3 2017/04/16 10:59:51 espie Exp $
+--- gfx.c.orig	Sat Sep 28 19:46:10 1991
++++ gfx.c	Sun Apr 16 12:08:18 2017
 @@ -15,6 +15,7 @@
   */
  #include	"defs.h"
@@ -9,7 +9,20 @@ $OpenBSD: patch-gfx_c,v 1.2 2008/10/10 22:58:16 sthen Exp $
  
  #ifdef ROUND_CARDS
  #include	<X11/Xmu/Drawing.h>
-@@ -166,7 +167,7 @@ unsigned long	redpixel;
+@@ -111,6 +112,12 @@ static GC	backgc;
+ 
+ static int	back_delta_x, back_delta_y; /* how much to modify the TS origin by */
+ 
++/* all ints because of K&R promotion rules */
++void draw_did(int suit, int x, int y);
++void draw_center_pip(int suit, int x, int y);
++void draw_six_pips(int suit, int x, int y);
++void draw_eight_pips(int suit, int x, int y);
++
+ #ifndef SMALL_CARDS
+ static Bool	card_is_clipped;	/* optimizer for card drawing */
+ #endif
+@@ -166,7 +173,7 @@ unsigned long	redpixel;
  	gcflags |= GCFont;
  
  	textgc = XCreateGC(dpy, RootWindow(dpy, screen), gcflags, &gcv);
@@ -18,3 +31,59 @@ $OpenBSD: patch-gfx_c,v 1.2 2008/10/10 22:58:16 sthen Exp $
  
  	tmpmap = XCreateBitmapFromData(dpy, RootWindow(dpy, screen),
  		logo_bits, logo_width, logo_height);
+@@ -566,6 +573,7 @@ force_redraw()
+  *
+  * REMIND -- spread the deck a bit to show that there's more
+  */
++void
+ redraw_deck(x, y, w, h)
+ int	x, y, w, h;
+ {
+@@ -599,6 +607,7 @@ CardPtr	tmp;
+ }
+ 
+ 
++void
+ redraw_card_piles(x, y, w, h)
+ int	x, y, w, h;
+ {
+@@ -641,6 +650,7 @@ CardPtr	tmp;
+ }
+ 
+ 
++void
+ redraw_card_stacks(x, y, w, h)
+ int	x, y, w, h;
+ {
+@@ -1011,6 +1021,7 @@ int	w, h;
+  *
+  * location is for center of pip
+  */
++void
+ draw_did(suit, x, y)
+ Suit	suit;
+ int	x,y;
+@@ -1051,6 +1062,7 @@ int	w, h;
+ /*
+  * draws big center pip
+  */
++void
+ draw_center_pip(suit, x, y)
+ Suit	suit;
+ int	x,y;
+@@ -1110,6 +1122,7 @@ int	x,y;
+ 	draw_did(suit, x + CARD_COL3_X, y + CARD_ROW5_Y);
+ }
+ 
++void
+ draw_six_pips(suit, x, y)
+ Suit	suit;
+ int	x, y;
+@@ -1129,6 +1142,7 @@ int	x, y;
+ 	draw_did(suit, x + CARD_COL3_X, y + CARD_ROW5_Y);
+ }
+ 
++void
+ draw_eight_pips(suit, x, y)
+ Suit	suit;
+ int	x,y;
