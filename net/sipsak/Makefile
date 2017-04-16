@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2014/07/09 16:49:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2017/04/16 13:55:49 sthen Exp $
 
 COMMENT =	SIP swiss army knife
 
 DISTNAME =	sipsak-0.9.6-1
+REVISION =	0
 CATEGORIES =	net
 
 PKGNAME =	${DISTNAME:S/-1//}

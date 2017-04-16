@@ -1,0 +1,12 @@
+$OpenBSD: patch-transport_c,v 1.1 2017/04/16 13:55:49 sthen Exp $
+--- transport.c.orig	Sun Apr 16 14:54:02 2017
++++ transport.c	Sun Apr 16 14:53:45 2017
+@@ -203,7 +203,7 @@ void check_socket_error(int socket, int size) {
+ 	sockerr.events=POLLERR;
+ 	ret = poll(&sockerr, 1, 10);
+ 	if (ret==1) {
+-		if (sockerr.revents && POLLERR) {
++		if (sockerr.revents & POLLERR) {
+ 			recvfrom(socket, recv, size, 0, NULL, 0);
+ 			if (verbose)
+ 				printf("\n");
