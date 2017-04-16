@@ -1,10 +1,10 @@
-$OpenBSD: README,v 1.7 2016/09/07 10:01:56 jasper Exp $
+$OpenBSD: README,v 1.8 2017/04/16 09:19:02 jasper Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
 +-----------------------------------------------------------------------
 
-On i386, amd64 and VGA-based alpha, slim is launched on vt05 like xdm.
+On i386, amd64 and VGA-based alpha, slim is launched on vt05 like xenodm.
 
 If you're on an arch which doesn't handle virtual terminals (like
 sparc, sparc64 or TGA-based alpha), you will have to
