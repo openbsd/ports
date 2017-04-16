@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_ac,v 1.3 2010/09/27 19:26:06 weerd Exp $
+$OpenBSD: patch-configure_ac,v 1.4 2017/04/16 19:53:20 sthen Exp $
 Disable PIE on ARM and HPPA
---- configure.ac.orig	Tue Sep 21 09:52:07 2010
-+++ configure.ac	Thu Sep 23 11:26:58 2010
+--- configure.ac.orig	Sat Feb 18 15:37:24 2012
++++ configure.ac	Sun Apr 16 20:52:19 2017
 @@ -35,6 +35,10 @@ case "$target_os" in
  	use_pie=no
  	;;
@@ -13,3 +13,12 @@ Disable PIE on ARM and HPPA
  	;;
      *)
  	AC_MSG_ERROR([Unsupported operating system])
+@@ -42,7 +46,7 @@ case "$target_os" in
+ esac
+ 
+ # enable warnings/errors/security
+-AX_CFLAGS_GCC_OPTION(-Wall -Werror, WCFLAGS)
++AX_CFLAGS_GCC_OPTION(-Wall, WCFLAGS)
+ AX_CFLAGS_GCC_OPTION(-Wformat -Wformat-security, WCFLAGS)
+ AX_CFLAGS_GCC_OPTION(-D_FORTIFY_SOURCE=2, WCFLAGS)
+ AX_CFLAGS_GCC_OPTION(-fno-delete-null-pointer-checks, WCFLAGS)
