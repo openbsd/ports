@@ -1,4 +1,4 @@
-$OpenBSD: README-minimal,v 1.8 2015/12/06 08:29:35 ajacoutot Exp $
+$OpenBSD: README-minimal,v 1.9 2017/04/16 12:43:20 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -24,7 +24,7 @@ Then the following line should be added:
   exec ${LOCALBASE}/bin/ck-launch-session ${TRUEPREFIX}/bin/startkde4
 
 ... in ~/.xinitrc when using startx(1) (console login)
-... in ~/.xsession when using xdm(1) (X Display Manager login)
+... in ~/.xsession when using xenodm(1) (X Display Manager login)
 
 
 sudo(8) integration

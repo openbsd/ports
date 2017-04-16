@@ -1,4 +1,4 @@
-$OpenBSD: patch-x11vnc_help_c,v 1.5 2011/09/15 20:27:29 sthen Exp $
+$OpenBSD: patch-x11vnc_help_c,v 1.6 2017/04/16 12:43:20 ajacoutot Exp $
 --- x11vnc/help.c.orig	Wed Aug 10 23:31:32 2011
 +++ x11vnc/help.c	Wed Sep 14 15:56:22 2011
 @@ -6036,7 +6036,7 @@ void xopen_display_fail_message(char *disp) {
@@ -6,7 +6,7 @@ $OpenBSD: patch-x11vnc_help_c,v 1.5 2011/09/15 20:27:29 sthen Exp $
  	fprintf(stderr, "     kdm:     -auth /var/lib/kdm/A:0-crWk72\n");
  	fprintf(stderr, "              -auth /var/run/xauth/A:0-crWk72\n");
 -	fprintf(stderr, "     xdm:     -auth /var/lib/xdm/authdir/authfiles/A:0-XQvaJk\n");
-+	fprintf(stderr, "     xdm:     -auth /etc/X11/xdm/authdir/authfiles/A:0-XQvaJk\n");
++	fprintf(stderr, "     xenodm:  -auth /etc/X11/xenodm/authdir/authfiles/A:0-XQvaJk\n");
  	fprintf(stderr, "     dtlogin: -auth /var/dt/A:0-UgaaXa\n");
  	fprintf(stderr, "\n");
  	fprintf(stderr, "   Sometimes the command \"ps wwwwaux | grep auth\""

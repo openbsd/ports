@@ -1,4 +1,4 @@
-$OpenBSD: patch-data_PreSession_in,v 1.5 2014/04/07 16:05:52 ajacoutot Exp $
+$OpenBSD: patch-data_PreSession_in,v 1.6 2017/04/16 12:43:20 ajacoutot Exp $
 --- data/PreSession.in.orig	Thu Dec 26 16:04:18 2013
 +++ data/PreSession.in	Thu Dec 26 16:09:50 2013
 @@ -7,3 +7,8 @@
@@ -6,7 +6,7 @@ $OpenBSD: patch-data_PreSession_in,v 1.5 2014/04/07 16:05:52 ajacoutot Exp $
  #
  PATH="@X_PATH@:$PATH"
 +
-+# /etc/X11/xdm/GiveConsole, fbtab(5)
++# /etc/X11/xenodm/GiveConsole, fbtab(5)
 +if [ -c /dev/drm0 ]; then
 +    /sbin/chown $USER /dev/drm0
 +fi

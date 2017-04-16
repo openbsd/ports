@@ -3,13 +3,13 @@ a slightly nicer 3D-ish interface.  Instead of broadcasting, it
 allows the user to supply a host via the keyboard.  This is useful
 when the list of machines extends beyond the limit of a broadcast,
 or is too cumbersome to enter on the command line (in one of the
-xdm config files).
+xenodm config files).
 
 xdmping is a quick way of determining if a host is willing to provide
-an xdm login session.  This is probably only useful in certain
+an xenodm login session.  This is probably only useful in certain
 circumstances.
 
-To get this to work, add/modify the following line in the xdm-config
+To get this to work, add/modify the following line in the xenodm-config
 file:
 
 DisplayManager*chooser:         ${PREFIX}/bin/xdmchooser

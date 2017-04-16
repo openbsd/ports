@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.39 2016/11/12 10:32:28 ajacoutot Exp $
+$OpenBSD: README-main,v 1.40 2017/04/16 12:43:20 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -28,7 +28,7 @@ GDM
 Session management requires the use of GDM as login manager, otherwise
 some key features like screen locking, session tracking... will not work
 properly. To do so, "gdm" must be added at the end of "pkg_scripts" in
-rc.conf.local(8) (and "xdm_flags" commented or removed).
+rc.conf.local(8) (and "xenodm_flags" commented or removed).
 
 GDM greeter language and character set is configured in:
     ${SYSCONFDIR}/gdm/locale.conf
@@ -44,7 +44,7 @@ Alternative (non-GDM) GNOME startup
 To start GNOME without GDM, the following line needs to be added:
     exec ${LOCALBASE}/bin/ck-launch-session ${TRUEPREFIX}/bin/gnome-session
 to ~/.xinitrc when using startx(1) (console login)
-to ~/.xsession when using xdm(1) (xdm(1) or similar login)
+to ~/.xsession when using xenodm(1) (or similar login)
 
 mDNS/DNS-SD support
 ===================
@@ -65,6 +65,6 @@ them. If such support is needed, `doas pkg_add unoconv` will take care of it.
 
 Cheat sheet
 ===========
-# rcctl disable xdm
+# rcctl disable xenodm
 # rcctl enable multicast messagebus avahi_daemon gdm
 # reboot
