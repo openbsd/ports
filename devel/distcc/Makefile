@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/12/28 08:15:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2017/04/16 19:29:27 jasper Exp $
 
 COMMENT-main =		distributed builds for C, C++ and Objective C
 COMMENT-gtk =		GTK+ monitor for distcc
@@ -8,7 +8,7 @@ COMMENT-server =	distcc server
 GH_COMMIT =		267fe5be154ca375ac574875894b476b60f19af0
 GH_PROJECT =		distcc
 GH_ACCOUNT =		distcc
-VERSION =		3.1.1
+VERSION =		3.2.0-rc1
 DISTNAME =		distcc-${VERSION}
 PKGNAME-main =		${DISTNAME}
 PKGNAME-gtk =		distcc-gtk-${VERSION}
