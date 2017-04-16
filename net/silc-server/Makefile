@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.71 2016/04/09 20:14:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.72 2017/04/16 10:38:10 sthen Exp $
 
 COMMENT=	Secure Internet Live Conferencing (SILC) server
 
 DISTNAME=	silc-server-1.1.19
+REVISION=	0
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=silc/}
 EXTRACT_SUFX=	.tar.bz2

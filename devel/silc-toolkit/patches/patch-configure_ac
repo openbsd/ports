@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_ac,v 1.7 2014/07/16 16:13:35 brad Exp $
+$OpenBSD: patch-configure_ac,v 1.8 2017/04/16 10:38:10 sthen Exp $
 --- configure.ac.orig	Tue May 13 02:20:24 2014
-+++ configure.ac	Sat Jul 12 20:39:49 2014
++++ configure.ac	Sat Apr 15 17:52:49 2017
 @@ -100,9 +100,6 @@ AM_CONDITIONAL(SILC_X86_64, test x$cpu_x86_64 = xtrue)
  AM_CONDITIONAL(SILC_POWERPC, test x$cpu_ppc = xtrue)
  AM_CONDITIONAL(SILC_IA64, test x$cpu_ia64 = xtrue)
@@ -73,16 +73,18 @@ $OpenBSD: patch-configure_ac,v 1.7 2014/07/16 16:13:35 brad Exp $
  #
  # Workaround a bug in GCC 2.x which causes memory exhaustion
  # when compiling sha1 with optimizations on UltraSPARC.
-@@ -1314,7 +1261,7 @@ fi
+@@ -1312,9 +1259,8 @@ case "$host_cpu" in
+ esac
+ fi
  
- SILC_ADD_CC_FLAGS(SILC_CRYPTO, -fno-regmove)
+-SILC_ADD_CC_FLAGS(SILC_CRYPTO, -fno-regmove)
  if test x$summary_debug = xno -a x$want_cc_optimizations = xtrue; then
 -  SILC_ADD_CC_FLAGS(SILC_CRYPTO, -fomit-frame-pointer -O3)
 +  SILC_ADD_CC_FLAGS(SILC_CRYPTO, -fomit-frame-pointer)
  fi
  
  AC_SUBST(SILC_CRYPTO_CFLAGS)
-@@ -1350,7 +1297,6 @@ if test x$compile_libs = xtrue; then
+@@ -1350,7 +1296,6 @@ if test x$compile_libs = xtrue; then
  AC_MSG_NOTICE([configuring math library])
  
  if test x$want_cc_optimizations = xtrue; then
