@@ -1,13 +1,13 @@
-$OpenBSD: patch-get_iplayer,v 1.78 2016/11/19 14:10:20 sthen Exp $
---- get_iplayer.orig	Sun Sep 25 17:32:57 2016
-+++ get_iplayer	Sat Nov 19 14:05:06 2016
+$OpenBSD: patch-get_iplayer,v 1.79 2017/04/16 14:11:23 sthen Exp $
+--- get_iplayer.orig	Sat Feb 11 19:18:46 2017
++++ get_iplayer	Sun Apr 16 15:07:29 2017
 @@ -1,4 +1,4 @@
 -#!/usr/bin/env perl
 +#!/usr/bin/perl
  #
- # get_iplayer - Lists, Records and Streams BBC iPlayer TV and Radio programmes and BBC podcasts
+ # get_iplayer - Lists and records BBC iPlayer TV and radio programmes
  #
-@@ -373,6 +373,7 @@ if ( $opt->{encodinglocale} =~ /UTF-?8/i ) {
+@@ -334,6 +334,7 @@ if ( $opt->{encodinglocale} =~ /UTF-?8/i ) {
  }
  
  # Copy a few options over to opt so that logger works
@@ -15,12 +15,3 @@ $OpenBSD: patch-get_iplayer,v 1.78 2016/11/19 14:10:20 sthen Exp $
  $opt->{debug} = $opt->{verbose} = 1 if $opt_pre->{debug};
  $opt->{verbose} = 1 if $opt_pre->{verbose};
  $opt->{silent} = $opt->{quiet} = 1 if $opt_pre->{silent};
-@@ -433,7 +434,7 @@ my $plugin_dir_system;
- if ( defined $ENV{ALLUSERSPROFILE} && $^O eq "MSWin32" ) {
- 	$plugin_dir_system = $ENV{ALLUSERSPROFILE}.'/get_iplayer/plugins';
- } else {
--	$plugin_dir_system = '/usr/share/get_iplayer/plugins';
-+	$plugin_dir_system = '${TRUEPREFIX}/share/get_iplayer/plugins';
- }
- my $plugin_dir_user = "$profile_dir/plugins";
- for my $plugin_dir ( ( $plugin_dir_user, $plugin_dir_system ) ) {
