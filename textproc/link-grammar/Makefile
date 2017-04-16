@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2017/04/12 18:12:33 landry Exp $
+# $OpenBSD: Makefile,v 1.39 2017/04/16 13:18:56 ajacoutot Exp $
 
 ONLY_FOR_ARCHS-java =	i386 amd64
 
@@ -6,13 +6,12 @@ COMMENT-main =		syntactic parser of different languages
 COMMENT-java =		Java bindings for link-grammar
 COMMENT-python =	Python bindings for link-grammar
 
-VERSION =		5.3.15
+VERSION =		5.3.16
 DISTNAME =		link-grammar-${VERSION}
 
 PKGNAME-main =		${DISTNAME}
 PKGNAME-java =		link-grammar-java-${VERSION}
 PKGNAME-python =	py-link-grammar-${VERSION}
-REVISION =	0
 
 SHARED_LIBS +=  link-grammar         4.0      # 8.7
 SHARED_LIBS +=  link-grammar-java    4.0      # 8.7
