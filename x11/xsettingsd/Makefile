@@ -1,25 +1,23 @@
-# $OpenBSD: Makefile,v 1.6 2017/04/10 11:46:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2017/04/16 19:40:35 sthen Exp $
 
 COMMENT=	lightweight XSETTINGS daemon
 
-DISTNAME=	derat-xsettingsd-486be8b
-PKGNAME=	xsettingsd-0.20120312
-REVISION=	1
+GH_ACCOUNT=	derat
+GH_PROJECT=	xsettingsd
+GH_COMMIT=	e98f8fde334843230ff6b96d7f237a7193d78143
+DISTNAME=	xsettingsd-0.20170402
 
 CATEGORIES=	x11
-
-HOMEPAGE=	https://github.com/derat/xsettingsd
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += X11 Xau Xdmcp c m pthread-stubs ${LIBCXX} xcb
 
-MASTER_SITES=	https://spacehopper.org/mirrors/
-
 MODULES=	devel/scons
 
-MAKE_ENV=	${MODSCONS_ENV} CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+MAKE_ENV=	${MODSCONS_ENV} \
+		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 # there are gtest-based tests, but fiddly to get working with SCons
 NO_TEST=	Yes

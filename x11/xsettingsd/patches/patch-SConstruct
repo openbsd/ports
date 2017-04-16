@@ -1,0 +1,12 @@
+$OpenBSD: patch-SConstruct,v 1.1 2017/04/16 19:40:35 sthen Exp $
+--- SConstruct.orig	Sun Apr  2 17:50:32 2017
++++ SConstruct	Sun Apr 16 20:39:17 2017
+@@ -46,7 +46,7 @@ env.Append(CPPFLAGS=os.environ.get('CPPFLAGS', ''),
+            CXXFLAGS=os.environ.get('CXXFLAGS', ''),
+            LINKFLAGS=os.environ.get('LDFLAGS', ''))
+ 
+-env.Append(CCFLAGS='-Wall -Werror -Wno-narrowing')
++env.Append(CCFLAGS='-Wall')
+ 
+ 
+ srcs = Split('''\
