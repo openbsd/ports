@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.34 2017/01/03 18:54:49 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.35 2017/04/16 16:02:12 ajacoutot Exp $
 bin/orca
 lib/python${MODPY_VERSION}/site-packages/orca/
 lib/python${MODPY_VERSION}/site-packages/orca/__init__.py
@@ -255,12 +255,9 @@ lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/Thunderbird/${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/Thunderbird/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/Thunderbird/${MODPY_PYCACHE}script.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/Thunderbird/${MODPY_PYCACHE}script.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/Thunderbird/${MODPY_PYCACHE}speech_generator.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/Thunderbird/${MODPY_PYCACHE}speech_generator.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/Thunderbird/${MODPY_PYCACHE}spellcheck.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/Thunderbird/${MODPY_PYCACHE}spellcheck.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/Thunderbird/script.py
-lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/Thunderbird/speech_generator.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/Thunderbird/spellcheck.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/__init__.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/${MODPY_PYCACHE}/
@@ -1404,6 +1401,7 @@ share/locale/et/LC_MESSAGES/orca.mo
 share/locale/eu/LC_MESSAGES/orca.mo
 share/locale/fi/LC_MESSAGES/orca.mo
 share/locale/fr/LC_MESSAGES/orca.mo
+share/locale/fur/LC_MESSAGES/orca.mo
 share/locale/ga/LC_MESSAGES/orca.mo
 share/locale/gl/LC_MESSAGES/orca.mo
 share/locale/gu/LC_MESSAGES/orca.mo
