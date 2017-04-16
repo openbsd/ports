@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.40 2017/04/16 10:38:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.41 2017/04/16 20:36:58 sthen Exp $
 
 COMMENT=	toolkit for the development of SILC applications
 
 DISTNAME=	silc-toolkit-1.1.12
-REVISION=	1
+REVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=silc/}
 EXTRACT_SUFX=	.tar.bz2

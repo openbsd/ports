@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_ac,v 1.8 2017/04/16 10:38:10 sthen Exp $
+$OpenBSD: patch-configure_ac,v 1.9 2017/04/16 20:36:58 sthen Exp $
 --- configure.ac.orig	Tue May 13 02:20:24 2014
-+++ configure.ac	Sat Apr 15 17:52:49 2017
++++ configure.ac	Sun Apr 16 13:27:48 2017
 @@ -100,9 +100,6 @@ AM_CONDITIONAL(SILC_X86_64, test x$cpu_x86_64 = xtrue)
  AM_CONDITIONAL(SILC_POWERPC, test x$cpu_ppc = xtrue)
  AM_CONDITIONAL(SILC_IA64, test x$cpu_ia64 = xtrue)
@@ -11,7 +11,25 @@ $OpenBSD: patch-configure_ac,v 1.8 2017/04/16 10:38:10 sthen Exp $
  AC_PROG_CC
  AC_C_INLINE
  AC_C_CONST
-@@ -504,59 +501,9 @@ fi
+@@ -188,12 +185,13 @@ AC_DEFUN([SILC_ADD_CFLAGS],
+ # Function to check if compiler flag works, destination specifiable
+ # Usage: SILC_ADD_CC_FLAGS(VAR, FLAGS, [ACTION-IF-FAILED])
+ AC_DEFUN([SILC_ADD_CC_FLAGS],
+-[ tmp_CFLAGS="$1_CFLAGS"
+-  $1_CFLAGS="${$1_CFLAGS} $2"
++[ tmp_CFLAGS="$CFLAGS"
++  CFLAGS="${$1_CFLAGS} $2"
+   AC_MSG_CHECKING(whether $CC accepts $2 flag)
+-  AC_TRY_LINK([], [], [AC_MSG_RESULT(yes)], [AC_MSG_RESULT(no)
+-				       $1_CFLAGS="$tmp_CFLAGS"
++  AC_TRY_LINK([], [], [AC_MSG_RESULT(yes)
++      $1_CFLAGS="$CFLAGS"], [AC_MSG_RESULT(no)
+ 				       $3])
++  CFLAGS="$tmp_CFLAGS"
+   unset tmp_CFLAGS
+ ])
+ 
+@@ -504,59 +502,9 @@ fi
  ## Compiler and compiler flag checks
  ##
  
@@ -73,18 +91,16 @@ $OpenBSD: patch-configure_ac,v 1.8 2017/04/16 10:38:10 sthen Exp $
  #
  # Workaround a bug in GCC 2.x which causes memory exhaustion
  # when compiling sha1 with optimizations on UltraSPARC.
-@@ -1312,9 +1259,8 @@ case "$host_cpu" in
- esac
- fi
+@@ -1314,7 +1262,7 @@ fi
  
--SILC_ADD_CC_FLAGS(SILC_CRYPTO, -fno-regmove)
+ SILC_ADD_CC_FLAGS(SILC_CRYPTO, -fno-regmove)
  if test x$summary_debug = xno -a x$want_cc_optimizations = xtrue; then
 -  SILC_ADD_CC_FLAGS(SILC_CRYPTO, -fomit-frame-pointer -O3)
 +  SILC_ADD_CC_FLAGS(SILC_CRYPTO, -fomit-frame-pointer)
  fi
  
  AC_SUBST(SILC_CRYPTO_CFLAGS)
-@@ -1350,7 +1296,6 @@ if test x$compile_libs = xtrue; then
+@@ -1350,7 +1298,6 @@ if test x$compile_libs = xtrue; then
  AC_MSG_NOTICE([configuring math library])
  
  if test x$want_cc_optimizations = xtrue; then
