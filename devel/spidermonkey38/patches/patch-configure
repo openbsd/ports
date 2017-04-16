@@ -1,0 +1,16 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2017/04/16 19:10:38 jasper Exp $
+--- configure.orig	Sun Apr 16 11:01:13 2017
++++ configure	Sun Apr 16 11:06:00 2017
+@@ -8182,10 +8182,11 @@ EOF
+     ;;
+ 
+ *-openbsd*)
+-    DLL_SUFFIX=".so.1.0"
++    DLL_SUFFIX=".so.${SO_VERSION}"
+     DSO_CFLAGS=''
+     DSO_PIC_CFLAGS='-fPIC'
+     DSO_LDOPTS='-shared -fPIC'
++    OS_LDFLAGS += -Wl,-z,wxneeded
+     if test "$LIBRUNPATH"; then
+ 	DSO_LDOPTS="-R$LIBRUNPATH $DSO_LDOPTS"
+     fi
