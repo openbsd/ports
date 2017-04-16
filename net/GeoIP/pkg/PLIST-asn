@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST-asn,v 1.1 2016/03/01 00:06:57 sthen Exp $
-share/examples/GeoIP/
+@comment $OpenBSD: PLIST-asn,v 1.2 2017/04/16 14:17:16 sthen Exp $
 @sample ${LOCALSTATEDIR}/db/GeoIP/
+share/examples/GeoIP/
 share/examples/GeoIP/GeoIPASNum.dat
 @sample ${LOCALSTATEDIR}/db/GeoIP/GeoIPASNum.dat
 share/examples/GeoIP/GeoIPASNumv6.dat
