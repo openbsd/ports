@@ -1,0 +1,34 @@
+$OpenBSD: patch-cxx_cxx_table_cpp,v 1.1 2017/04/16 20:49:32 sthen Exp $
+--- cxx/cxx_table.cpp.orig	Sun Apr 16 21:47:49 2017
++++ cxx/cxx_table.cpp	Sun Apr 16 21:48:01 2017
+@@ -520,10 +520,10 @@ int Db::upgrade(const char *name, u_int32_t flags)
+ static int _verify_callback_cxx(void *handle, const void *str_arg)
+ {
+ 	char *str;
+-	ostream *out;
++	std::ostream *out;
+ 
+ 	str = (char *)str_arg;
+-	out = (ostream *)handle;
++	out = (std::ostream *)handle;
+ 
+ 	(*out) << str;
+ 	if (out->fail())
+@@ -545,7 +545,7 @@ int _verify_callback_c(void *handle, const void *str_a
+ 
+ 
+ int Db::verify(const char *name, const char *subdb,
+-	       ostream *ostr, u_int32_t flags)
++	       std::ostream *ostr, u_int32_t flags)
+ {
+ 	int err;
+ 	DB *db = unwrap(this);
+@@ -635,7 +635,7 @@ int Db::set_paniccall(void (*callback)(DbEnv *, int))
+ 	return env_->set_paniccall(callback);
+ }
+ 
+-void Db::set_error_stream(ostream *error_stream)
++void Db::set_error_stream(std::ostream *error_stream)
+ {
+ 	env_->set_error_stream(error_stream);
+ }

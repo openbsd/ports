@@ -1,0 +1,44 @@
+$OpenBSD: patch-include_db_cxx_h,v 1.1 2017/04/16 20:49:32 sthen Exp $
+--- include/db_cxx.h.orig	Sun Apr 16 21:43:45 2017
++++ include/db_cxx.h	Sun Apr 16 21:46:09 2017
+@@ -49,7 +49,7 @@
+ // Forward declarations
+ //
+ 
+-#include <iostream.h>
++#include <iostream>
+ #include <stdarg.h>
+ #include "db.h"
+ 
+@@ -390,7 +390,7 @@ class _exported DbEnv (public)
+ 	// set_error_stream() to force all errors to a C++ stream.
+ 	// It is unwise to mix these approaches.
+ 	//
+-	void set_error_stream(ostream *);
++	void set_error_stream(std::ostream *);
+ 
+ 	// used internally
+ 	static void runtime_error(const char *caller, int err,
+@@ -469,7 +469,7 @@ class _exported DbEnv (public)
+ 	void (*feedback_callback_)(DbEnv *, int, int);
+ 
+ 	// class data
+-	static ostream *error_stream_;
++	static std::ostream *error_stream_;
+ };
+ 
+ ////////////////////////////////////////////////////////////////
+@@ -532,11 +532,11 @@ class _exported Db (public)
+ 	int stat(void *sp, db_malloc_fcn_type db_malloc_fcn, u_int32_t flags);
+ 	int sync(u_int32_t flags);
+ 	int upgrade(const char *name, u_int32_t flags);
+-	int verify(const char *, const char *, ostream *, u_int32_t);
++	int verify(const char *, const char *, std::ostream *, u_int32_t);
+ 
+ 	// This additional method is available for C++
+ 	//
+-	void set_error_stream(ostream *);
++	void set_error_stream(std::ostream *);
+ 
+ 	// This is public only because it needs to be called
+ 	// via C functions.  It should never be called by users

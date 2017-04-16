@@ -1,0 +1,21 @@
+$OpenBSD: patch-cxx_cxx_app_cpp,v 1.1 2017/04/16 20:49:32 sthen Exp $
+--- cxx/cxx_app.cpp.orig	Sun Apr 16 21:46:54 2017
++++ cxx/cxx_app.cpp	Sun Apr 16 21:47:04 2017
+@@ -57,7 +57,7 @@ static int last_known_error_policy = ON_ERROR_UNKNOWN;
+ // DbEnv::initialize() and DbEnv::cleanup().  Note that this strategy
+ // is also used with Db:: and DB handles.
+ 
+-ostream *DbEnv::error_stream_ = 0;
++std::ostream *DbEnv::error_stream_ = 0;
+ 
+ DbEnv::DbEnv(u_int32_t flags)
+ :	imp_(0)
+@@ -287,7 +287,7 @@ void DbEnv::_stream_error_function(const char *prefix,
+ // db_env triggered the call.  A user that has multiple DB_ENVs
+ // will simply not be able to have different streams for each one.
+ //
+-void DbEnv::set_error_stream(ostream *stream)
++void DbEnv::set_error_stream(std::ostream *stream)
+ {
+ 	DB_ENV *dbenv = unwrap(this);
+ 
