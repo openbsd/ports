@@ -1,0 +1,12 @@
+$OpenBSD: patch-fig2dev_dev_genibmgl_c,v 1.1 2017/04/16 14:48:29 sthen Exp $
+--- fig2dev/dev/genibmgl.c.pat.orig	Sun Apr 16 15:44:35 2017
++++ fig2dev/dev/genibmgl.c	Sun Apr 16 15:44:58 2017
+@@ -567,7 +567,7 @@ double	length;
+  * set_width - issue line width commands as appropriate
+  *		NOTE: HPGL/2 command used
+  */
+-static set_width(w)
++static void set_width(w)
+     int	w;
+ {
+     static int current_width=-1;
