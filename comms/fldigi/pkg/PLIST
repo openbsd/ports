@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/06/28 13:37:13 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.5 2017/04/16 14:36:02 sthen Exp $
 @bin bin/flarq
 @bin bin/fldigi
 @man man/man1/flarq.1
@@ -16,6 +16,7 @@ share/locale/fr/LC_MESSAGES/fldigi.mo
 share/locale/it/LC_MESSAGES/fldigi.mo
 share/locale/nl/LC_MESSAGES/fldigi.mo
 share/locale/pl/LC_MESSAGES/fldigi.mo
+share/locale/ru/LC_MESSAGES/fldigi.mo
 share/pixmaps/
 share/pixmaps/flarq.xpm
 share/pixmaps/fldigi.xpm
