@@ -1,0 +1,12 @@
+$OpenBSD: patch-header_f_c,v 1.1 2017/04/16 13:55:07 sthen Exp $
+--- header_f.c.orig	Sun Apr 16 14:49:39 2017
++++ header_f.c	Sun Apr 16 14:49:51 2017
+@@ -604,7 +604,7 @@ void print_message_line(char *message)
+ }
+ 
+ /* return pointer to the beginning of the message body */
+-inline char* get_body(char *mes) {
++char* get_body(char *mes) {
+ 	char *cr;
+ 
+ 	if ((cr = strstr(mes, "\r\n\r\n")) != NULL) {

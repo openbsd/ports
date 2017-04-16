@@ -1,0 +1,12 @@
+$OpenBSD: patch-helper_c,v 1.1 2017/04/16 13:55:07 sthen Exp $
+--- helper.c.orig	Sun Apr 16 14:51:26 2017
++++ helper.c	Sun Apr 16 14:51:29 2017
+@@ -295,7 +295,7 @@ static void cares_callback(void *arg, int status, unsi
+ 	}
+ }
+ 
+-inline unsigned long srv_ares(char *host, int *port, char *srv) {
++unsigned long srv_ares(char *host, int *port, char *srv) {
+ 	int nfds, count, srvh_len;
+ 	char *srvh;
+ 	fd_set read_fds, write_fds;

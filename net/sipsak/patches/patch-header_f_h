@@ -1,0 +1,10 @@
+$OpenBSD: patch-header_f_h,v 1.1 2017/04/16 13:55:07 sthen Exp $
+--- header_f.h.orig	Sun Apr 16 14:49:39 2017
++++ header_f.h	Sun Apr 16 14:49:45 2017
+@@ -61,5 +61,5 @@ void new_transaction(char *message);
+ 
+ void print_message_line(char *message);
+ 
+-inline char* get_body(char *mes);
++char* get_body(char *mes);
+ #endif
