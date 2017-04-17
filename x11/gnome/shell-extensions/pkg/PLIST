@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2016/04/26 07:42:37 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.18 2017/04/17 12:53:11 jasper Exp $
 share/glib-2.0/schemas/org.gnome.shell.extensions.auto-move-windows.gschema.xml
 share/glib-2.0/schemas/org.gnome.shell.extensions.classic-overrides.gschema.xml
 share/glib-2.0/schemas/org.gnome.shell.extensions.example.gschema.xml
@@ -97,6 +97,7 @@ share/locale/af/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/an/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/ar/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/as/LC_MESSAGES/gnome-shell-extensions.mo
+share/locale/be/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/bg/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/bn_IN/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/bs/LC_MESSAGES/gnome-shell-extensions.mo
