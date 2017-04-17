@@ -1,14 +1,16 @@
-# $OpenBSD: Makefile,v 1.64 2017/04/17 00:31:42 jca Exp $
+# $OpenBSD: Makefile,v 1.65 2017/04/17 00:37:30 jca Exp $
 
 COMMENT=	video stream processing tools
 
 DISTNAME=	transcode-1.1.7
-REVISION=	8
+REVISION=	9
 CATEGORIES=	multimedia
+
+HOMEPAGE=	https://bitbucket.org/achurch_/transcode/
+
+# XXX MASTER_SITES broken
 MASTER_SITES=	http://cdn.bitbucket.org/france/transcode-tcforge/downloads/
 EXTRACT_SUFX=	.tar.bz2
-
-HOMEPAGE=	http://www.transcoding.org/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
