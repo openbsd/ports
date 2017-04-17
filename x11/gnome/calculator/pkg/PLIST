@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2016/10/31 10:42:41 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.8 2017/04/17 09:46:21 jasper Exp $
 @conflict gcalctool-*
 @pkgpath x11/gnome/gcalctool
 @bin bin/gcalccmd
@@ -9,13 +9,13 @@ lib/gnome-calculator/libcalculator.so
 @man man/man1/gcalccmd.1
 @man man/man1/gnome-calculator.1
 share/appdata/
-share/appdata/gnome-calculator.appdata.xml
-share/applications/gnome-calculator.desktop
+share/appdata/org.gnome.Calculator.appdata.xml
+share/applications/org.gnome.Calculator.desktop
 share/dbus-1/services/org.gnome.Calculator.SearchProvider.service
 share/glib-2.0/schemas/org.gnome.calculator.gschema.xml
 share/gnome-shell/
 share/gnome-shell/search-providers/
-share/gnome-shell/search-providers/gnome-calculator-search-provider.ini
+share/gnome-shell/search-providers/org.gnome.Calculator-search-provider.ini
 share/help/
 share/help/C/
 share/help/C/gnome-calculator/
@@ -36,6 +36,7 @@ share/help/C/gnome-calculator/figures/
 share/help/C/gnome-calculator/figures/logo32.png
 share/help/C/gnome-calculator/financial.page
 share/help/C/gnome-calculator/functions.page
+share/help/C/gnome-calculator/history.page
 share/help/C/gnome-calculator/index.page
 share/help/C/gnome-calculator/keyboard.page
 share/help/C/gnome-calculator/legal.xml
@@ -68,6 +69,7 @@ share/help/bg/gnome-calculator/figures/
 share/help/bg/gnome-calculator/figures/logo32.png
 share/help/bg/gnome-calculator/financial.page
 share/help/bg/gnome-calculator/functions.page
+share/help/bg/gnome-calculator/history.page
 share/help/bg/gnome-calculator/index.page
 share/help/bg/gnome-calculator/keyboard.page
 share/help/bg/gnome-calculator/legal.xml
@@ -100,6 +102,7 @@ share/help/ca/gnome-calculator/figures/
 share/help/ca/gnome-calculator/figures/logo32.png
 share/help/ca/gnome-calculator/financial.page
 share/help/ca/gnome-calculator/functions.page
+share/help/ca/gnome-calculator/history.page
 share/help/ca/gnome-calculator/index.page
 share/help/ca/gnome-calculator/keyboard.page
 share/help/ca/gnome-calculator/legal.xml
@@ -132,6 +135,7 @@ share/help/cs/gnome-calculator/figures/
 share/help/cs/gnome-calculator/figures/logo32.png
 share/help/cs/gnome-calculator/financial.page
 share/help/cs/gnome-calculator/functions.page
+share/help/cs/gnome-calculator/history.page
 share/help/cs/gnome-calculator/index.page
 share/help/cs/gnome-calculator/keyboard.page
 share/help/cs/gnome-calculator/legal.xml
@@ -164,6 +168,7 @@ share/help/de/gnome-calculator/figures/
 share/help/de/gnome-calculator/figures/logo32.png
 share/help/de/gnome-calculator/financial.page
 share/help/de/gnome-calculator/functions.page
+share/help/de/gnome-calculator/history.page
 share/help/de/gnome-calculator/index.page
 share/help/de/gnome-calculator/keyboard.page
 share/help/de/gnome-calculator/legal.xml
@@ -196,6 +201,7 @@ share/help/el/gnome-calculator/figures/
 share/help/el/gnome-calculator/figures/logo32.png
 share/help/el/gnome-calculator/financial.page
 share/help/el/gnome-calculator/functions.page
+share/help/el/gnome-calculator/history.page
 share/help/el/gnome-calculator/index.page
 share/help/el/gnome-calculator/keyboard.page
 share/help/el/gnome-calculator/legal.xml
@@ -228,6 +234,7 @@ share/help/es/gnome-calculator/figures/
 share/help/es/gnome-calculator/figures/logo32.png
 share/help/es/gnome-calculator/financial.page
 share/help/es/gnome-calculator/functions.page
+share/help/es/gnome-calculator/history.page
 share/help/es/gnome-calculator/index.page
 share/help/es/gnome-calculator/keyboard.page
 share/help/es/gnome-calculator/legal.xml
@@ -260,6 +267,7 @@ share/help/eu/gnome-calculator/figures/
 share/help/eu/gnome-calculator/figures/logo32.png
 share/help/eu/gnome-calculator/financial.page
 share/help/eu/gnome-calculator/functions.page
+share/help/eu/gnome-calculator/history.page
 share/help/eu/gnome-calculator/index.page
 share/help/eu/gnome-calculator/keyboard.page
 share/help/eu/gnome-calculator/legal.xml
@@ -292,6 +300,7 @@ share/help/fi/gnome-calculator/figures/
 share/help/fi/gnome-calculator/figures/logo32.png
 share/help/fi/gnome-calculator/financial.page
 share/help/fi/gnome-calculator/functions.page
+share/help/fi/gnome-calculator/history.page
 share/help/fi/gnome-calculator/index.page
 share/help/fi/gnome-calculator/keyboard.page
 share/help/fi/gnome-calculator/legal.xml
@@ -324,6 +333,7 @@ share/help/fr/gnome-calculator/figures/
 share/help/fr/gnome-calculator/figures/logo32.png
 share/help/fr/gnome-calculator/financial.page
 share/help/fr/gnome-calculator/functions.page
+share/help/fr/gnome-calculator/history.page
 share/help/fr/gnome-calculator/index.page
 share/help/fr/gnome-calculator/keyboard.page
 share/help/fr/gnome-calculator/legal.xml
@@ -356,6 +366,7 @@ share/help/gl/gnome-calculator/figures/
 share/help/gl/gnome-calculator/figures/logo32.png
 share/help/gl/gnome-calculator/financial.page
 share/help/gl/gnome-calculator/functions.page
+share/help/gl/gnome-calculator/history.page
 share/help/gl/gnome-calculator/index.page
 share/help/gl/gnome-calculator/keyboard.page
 share/help/gl/gnome-calculator/legal.xml
@@ -388,6 +399,7 @@ share/help/hu/gnome-calculator/figures/
 share/help/hu/gnome-calculator/figures/logo32.png
 share/help/hu/gnome-calculator/financial.page
 share/help/hu/gnome-calculator/functions.page
+share/help/hu/gnome-calculator/history.page
 share/help/hu/gnome-calculator/index.page
 share/help/hu/gnome-calculator/keyboard.page
 share/help/hu/gnome-calculator/legal.xml
@@ -420,6 +432,7 @@ share/help/it/gnome-calculator/figures/
 share/help/it/gnome-calculator/figures/logo32.png
 share/help/it/gnome-calculator/financial.page
 share/help/it/gnome-calculator/functions.page
+share/help/it/gnome-calculator/history.page
 share/help/it/gnome-calculator/index.page
 share/help/it/gnome-calculator/keyboard.page
 share/help/it/gnome-calculator/legal.xml
@@ -452,6 +465,7 @@ share/help/ja/gnome-calculator/figures/
 share/help/ja/gnome-calculator/figures/logo32.png
 share/help/ja/gnome-calculator/financial.page
 share/help/ja/gnome-calculator/functions.page
+share/help/ja/gnome-calculator/history.page
 share/help/ja/gnome-calculator/index.page
 share/help/ja/gnome-calculator/keyboard.page
 share/help/ja/gnome-calculator/legal.xml
@@ -484,6 +498,7 @@ share/help/ko/gnome-calculator/figures/
 share/help/ko/gnome-calculator/figures/logo32.png
 share/help/ko/gnome-calculator/financial.page
 share/help/ko/gnome-calculator/functions.page
+share/help/ko/gnome-calculator/history.page
 share/help/ko/gnome-calculator/index.page
 share/help/ko/gnome-calculator/keyboard.page
 share/help/ko/gnome-calculator/legal.xml
@@ -516,6 +531,7 @@ share/help/lv/gnome-calculator/figures/
 share/help/lv/gnome-calculator/figures/logo32.png
 share/help/lv/gnome-calculator/financial.page
 share/help/lv/gnome-calculator/functions.page
+share/help/lv/gnome-calculator/history.page
 share/help/lv/gnome-calculator/index.page
 share/help/lv/gnome-calculator/keyboard.page
 share/help/lv/gnome-calculator/legal.xml
@@ -548,6 +564,7 @@ share/help/oc/gnome-calculator/figures/
 share/help/oc/gnome-calculator/figures/logo32.png
 share/help/oc/gnome-calculator/financial.page
 share/help/oc/gnome-calculator/functions.page
+share/help/oc/gnome-calculator/history.page
 share/help/oc/gnome-calculator/index.page
 share/help/oc/gnome-calculator/keyboard.page
 share/help/oc/gnome-calculator/legal.xml
@@ -580,6 +597,7 @@ share/help/pt_BR/gnome-calculator/figures/
 share/help/pt_BR/gnome-calculator/figures/logo32.png
 share/help/pt_BR/gnome-calculator/financial.page
 share/help/pt_BR/gnome-calculator/functions.page
+share/help/pt_BR/gnome-calculator/history.page
 share/help/pt_BR/gnome-calculator/index.page
 share/help/pt_BR/gnome-calculator/keyboard.page
 share/help/pt_BR/gnome-calculator/legal.xml
@@ -612,6 +630,7 @@ share/help/ro/gnome-calculator/figures/
 share/help/ro/gnome-calculator/figures/logo32.png
 share/help/ro/gnome-calculator/financial.page
 share/help/ro/gnome-calculator/functions.page
+share/help/ro/gnome-calculator/history.page
 share/help/ro/gnome-calculator/index.page
 share/help/ro/gnome-calculator/keyboard.page
 share/help/ro/gnome-calculator/legal.xml
@@ -644,6 +663,7 @@ share/help/ru/gnome-calculator/figures/
 share/help/ru/gnome-calculator/figures/logo32.png
 share/help/ru/gnome-calculator/financial.page
 share/help/ru/gnome-calculator/functions.page
+share/help/ru/gnome-calculator/history.page
 share/help/ru/gnome-calculator/index.page
 share/help/ru/gnome-calculator/keyboard.page
 share/help/ru/gnome-calculator/legal.xml
@@ -676,6 +696,7 @@ share/help/sl/gnome-calculator/figures/
 share/help/sl/gnome-calculator/figures/logo32.png
 share/help/sl/gnome-calculator/financial.page
 share/help/sl/gnome-calculator/functions.page
+share/help/sl/gnome-calculator/history.page
 share/help/sl/gnome-calculator/index.page
 share/help/sl/gnome-calculator/keyboard.page
 share/help/sl/gnome-calculator/legal.xml
@@ -708,6 +729,7 @@ share/help/sv/gnome-calculator/figures/
 share/help/sv/gnome-calculator/figures/logo32.png
 share/help/sv/gnome-calculator/financial.page
 share/help/sv/gnome-calculator/functions.page
+share/help/sv/gnome-calculator/history.page
 share/help/sv/gnome-calculator/index.page
 share/help/sv/gnome-calculator/keyboard.page
 share/help/sv/gnome-calculator/legal.xml
@@ -740,6 +762,7 @@ share/help/te/gnome-calculator/figures/
 share/help/te/gnome-calculator/figures/logo32.png
 share/help/te/gnome-calculator/financial.page
 share/help/te/gnome-calculator/functions.page
+share/help/te/gnome-calculator/history.page
 share/help/te/gnome-calculator/index.page
 share/help/te/gnome-calculator/keyboard.page
 share/help/te/gnome-calculator/legal.xml
@@ -772,6 +795,7 @@ share/help/zh_CN/gnome-calculator/figures/
 share/help/zh_CN/gnome-calculator/figures/logo32.png
 share/help/zh_CN/gnome-calculator/financial.page
 share/help/zh_CN/gnome-calculator/functions.page
+share/help/zh_CN/gnome-calculator/history.page
 share/help/zh_CN/gnome-calculator/index.page
 share/help/zh_CN/gnome-calculator/keyboard.page
 share/help/zh_CN/gnome-calculator/legal.xml
@@ -804,6 +828,7 @@ share/help/zh_HK/gnome-calculator/figures/
 share/help/zh_HK/gnome-calculator/figures/logo32.png
 share/help/zh_HK/gnome-calculator/financial.page
 share/help/zh_HK/gnome-calculator/functions.page
+share/help/zh_HK/gnome-calculator/history.page
 share/help/zh_HK/gnome-calculator/index.page
 share/help/zh_HK/gnome-calculator/keyboard.page
 share/help/zh_HK/gnome-calculator/legal.xml
@@ -836,6 +861,7 @@ share/help/zh_TW/gnome-calculator/figures/
 share/help/zh_TW/gnome-calculator/figures/logo32.png
 share/help/zh_TW/gnome-calculator/financial.page
 share/help/zh_TW/gnome-calculator/functions.page
+share/help/zh_TW/gnome-calculator/history.page
 share/help/zh_TW/gnome-calculator/index.page
 share/help/zh_TW/gnome-calculator/keyboard.page
 share/help/zh_TW/gnome-calculator/legal.xml
