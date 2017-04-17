@@ -1,0 +1,2 @@
+sshpass performs non-interactive password authentication with SSH.
+Useful when key-based authentication is not possible.

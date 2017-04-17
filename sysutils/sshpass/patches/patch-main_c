@@ -1,0 +1,19 @@
+$OpenBSD: patch-main_c,v 1.1.1.1 2017/04/17 01:14:09 jca Exp $
+
+On *BSD an open(2) call on a terminal will never make it the controlling
+terminal.
+
+--- main.c.orig	Thu Jun 30 21:23:33 2016
++++ main.c	Mon Apr 10 14:04:10 2017
+@@ -280,6 +280,11 @@ int runprogram( int argc, char *argv[] )
+ 	setsid();
+         // This line makes the ptty our controlling tty. We do not otherwise need it open
+         slavept=open(name, O_RDWR );
++#ifdef TIOCSCTTY
++        if( ioctl(slavept, TIOCSCTTY)==-1 ) {
++            perror("sshpass: failed to set controlling terminal in child (TIOCSCTTY)");
++        }
++#endif
+         close( slavept );
+ 	
+ 	close( masterpt );
