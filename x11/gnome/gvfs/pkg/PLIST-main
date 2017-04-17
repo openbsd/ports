@@ -1,23 +1,23 @@
-@comment $OpenBSD: PLIST-main,v 1.38 2016/04/25 13:43:20 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.39 2017/04/17 10:03:19 ajacoutot Exp $
 @pkgpath ${BASE_PKGPATH}
-@bin bin/gvfs-cat
-@bin bin/gvfs-copy
-@bin bin/gvfs-info
+bin/gvfs-cat
+bin/gvfs-copy
+bin/gvfs-info
 bin/gvfs-less
-@bin bin/gvfs-ls
-@bin bin/gvfs-mime
-@bin bin/gvfs-mkdir
-@bin bin/gvfs-monitor-dir
-@bin bin/gvfs-monitor-file
-@bin bin/gvfs-mount
-@bin bin/gvfs-move
-@bin bin/gvfs-open
-@bin bin/gvfs-rename
-@bin bin/gvfs-rm
-@bin bin/gvfs-save
-@bin bin/gvfs-set-attribute
-@bin bin/gvfs-trash
-@bin bin/gvfs-tree
+bin/gvfs-ls
+bin/gvfs-mime
+bin/gvfs-mkdir
+bin/gvfs-monitor-dir
+bin/gvfs-monitor-file
+bin/gvfs-mount
+bin/gvfs-move
+bin/gvfs-open
+bin/gvfs-rename
+bin/gvfs-rm
+bin/gvfs-save
+bin/gvfs-set-attribute
+bin/gvfs-trash
+bin/gvfs-tree
 include/gvfs-client/
 include/gvfs-client/gvfs/
 include/gvfs-client/gvfs/gvfsurimapper.h
@@ -66,23 +66,6 @@ lib/gvfs/libgvfsdaemon.so
 @man man/man1/gvfsd.1
 @man man/man7/gvfs.7
 share/GConf/gsettings/gvfs-dns-sd.convert
-share/bash-completion/completions/gvfs-cat
-share/bash-completion/completions/gvfs-copy
-share/bash-completion/completions/gvfs-info
-share/bash-completion/completions/gvfs-less
-share/bash-completion/completions/gvfs-ls
-share/bash-completion/completions/gvfs-mkdir
-share/bash-completion/completions/gvfs-monitor-dir
-share/bash-completion/completions/gvfs-monitor-file
-share/bash-completion/completions/gvfs-mount
-share/bash-completion/completions/gvfs-move
-share/bash-completion/completions/gvfs-open
-share/bash-completion/completions/gvfs-rename
-share/bash-completion/completions/gvfs-rm
-share/bash-completion/completions/gvfs-save
-share/bash-completion/completions/gvfs-set-attribute
-share/bash-completion/completions/gvfs-trash
-share/bash-completion/completions/gvfs-tree
 share/dbus-1/services/org.gtk.vfs.Daemon.service
 share/dbus-1/services/org.gtk.vfs.Metadata.service
 share/glib-2.0/schemas/org.gnome.system.dns_sd.gschema.xml
@@ -131,6 +114,7 @@ share/locale/eu/LC_MESSAGES/gvfs.mo
 share/locale/fa/LC_MESSAGES/gvfs.mo
 share/locale/fi/LC_MESSAGES/gvfs.mo
 share/locale/fr/LC_MESSAGES/gvfs.mo
+share/locale/fur/LC_MESSAGES/gvfs.mo
 share/locale/ga/LC_MESSAGES/gvfs.mo
 share/locale/gl/LC_MESSAGES/gvfs.mo
 share/locale/gu/LC_MESSAGES/gvfs.mo

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.171 2017/04/13 07:38:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.172 2017/04/17 10:03:19 ajacoutot Exp $
 
 COMMENT-main=		GNOME Virtual File System
 COMMENT-smb=		GVFS mount module for samba
@@ -7,7 +7,7 @@ COMMENT-nfs=		GVFS mount module for NFS
 COMMENT-google=		GVFS mount module for Google Drive
 
 GNOME_PROJECT=		gvfs
-GNOME_VERSION=		1.30.4
+GNOME_VERSION=		1.32.1
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-smb=		${GNOME_PROJECT}-smb-${GNOME_VERSION}
@@ -99,6 +99,9 @@ CONFIGURE_ARGS=		--disable-libsystemd-login \
 			--disable-gudev \
 			--disable-udev \
 			--disable-gdu
+
+# XXX needs libusb >=1.0.21
+CONFIGURE_ARGS +=	--disable-libusb
 
 # needs libcap
 CONFIGURE_ARGS +=	--disable-admin
