@@ -1,28 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.16 2016/04/26 07:39:49 ajacoutot Exp $
-include/evolution-data-server/ews/
-include/evolution-data-server/ews/e-ews-connection-utils.h
-include/evolution-data-server/ews/e-ews-connection.h
-include/evolution-data-server/ews/e-ews-debug.h
-include/evolution-data-server/ews/e-ews-enums.h
-include/evolution-data-server/ews/e-ews-enumtypes.h
-include/evolution-data-server/ews/e-ews-folder.h
-include/evolution-data-server/ews/e-ews-item-change.h
-include/evolution-data-server/ews/e-ews-item.h
-include/evolution-data-server/ews/e-ews-message.h
-include/evolution-data-server/ews/e-ews-notification.h
-include/evolution-data-server/ews/e-ews-oof-settings.h
-include/evolution-data-server/ews/ews-errors.h
+@comment $OpenBSD: PLIST,v 1.17 2017/04/17 14:55:29 ajacoutot Exp $
 lib/evolution-data-server/addressbook-backends/libebookbackendews.so
 lib/evolution-data-server/calendar-backends/libecalbackendews.so
 lib/evolution-data-server/camel-providers/libcamelews.so
 lib/evolution-data-server/camel-providers/libcamelews.urls
-lib/evolution-data-server/libeews-1.2.a
-lib/evolution-data-server/libeews-1.2.la
-@lib lib/evolution-data-server/libeews-1.2.so.${LIBeews-1.2_VERSION}
-lib/evolution-data-server/libewsutils.a
-lib/evolution-data-server/libewsutils.la
-@lib lib/evolution-data-server/libewsutils.so.${LIBewsutils_VERSION}
 lib/evolution-data-server/registry-modules/module-ews-backend.so
+lib/evolution-ews/
+lib/evolution-ews/libcamelews-priv.so
+lib/evolution-ews/libevolution-ews.so
 lib/evolution/modules/module-ews-configuration.so
 share/appdata/evolution-ews.metainfo.xml
 share/evolution-data-server/ews/

@@ -1,0 +1,15 @@
+$OpenBSD: patch-cmake_modules_SetupBuildFlags_cmake,v 1.1 2017/04/17 14:55:29 ajacoutot Exp $
+--- cmake/modules/SetupBuildFlags.cmake.orig	Mon Apr 17 16:44:00 2017
++++ cmake/modules/SetupBuildFlags.cmake	Mon Apr 17 16:44:21 2017
+@@ -78,8 +78,8 @@ macro(setup_build_flags _maintainer_mode)
+ 	endif(CMAKE_CXX_COMPILER_ID)
+ 
+ 	if(("${CMAKE_C_COMPILER_ID}" STREQUAL "Clang") OR ("${CMAKE_C_COMPILER_ID}" STREQUAL "GNU"))
+-		set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -Wl,--no-undefined")
+-		set(CMAKE_MODULE_LINKER_FLAGS "${CMAKE_MODULE_LINKER_FLAGS} -Wl,--no-undefined")
+-		set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -Wl,--no-undefined")
++		set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS}")
++		set(CMAKE_MODULE_LINKER_FLAGS "${CMAKE_MODULE_LINKER_FLAGS}")
++		set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS}")
+ 	endif(("${CMAKE_C_COMPILER_ID}" STREQUAL "Clang") OR ("${CMAKE_C_COMPILER_ID}" STREQUAL "GNU"))
+ endmacro()
