@@ -1,8 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.14 2016/06/14 09:49:41 czarkoff Exp $
+@comment $OpenBSD: PLIST,v 1.15 2017/04/17 05:11:03 rpointel Exp $
 bin/thg
 lib/nautilus/
 lib/nautilus/extensions-3.0/
 lib/nautilus/extensions-3.0/nautilus-thg.py
+@comment lib/python${MODPY_VERSION}/site-packages/hgext3rd/__init__.py
+@comment lib/python${MODPY_VERSION}/site-packages/hgext3rd/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/hgext3rd/thg.py
+lib/python${MODPY_VERSION}/site-packages/hgext3rd/thg.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/
 lib/python${MODPY_VERSION}/site-packages/tortoisehg-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/__init__.py
@@ -62,6 +66,8 @@ lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/graft.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/graft.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/graph.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/graph.pyc
+lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/graphopt.py
+lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/graphopt.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/grep.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/grep.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/guess.py
