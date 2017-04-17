@@ -1,17 +1,15 @@
-$OpenBSD: patch-configure_ac,v 1.5 2016/10/31 16:30:17 ajacoutot Exp $
+$OpenBSD: patch-configure_ac,v 1.6 2017/04/17 14:24:49 ajacoutot Exp $
 
 Disable NetworkManager.
 
---- configure.ac.orig	Mon Oct 10 19:20:18 2016
-+++ configure.ac	Mon Oct 31 17:16:13 2016
-@@ -30,10 +30,6 @@ GEOCLUE_REQUIRED_VERSION=2.3.1
+--- configure.ac.orig	Tue Mar 21 19:18:48 2017
++++ configure.ac	Mon Apr 17 16:12:13 2017
+@@ -31,8 +31,6 @@ GEOCLUE_REQUIRED_VERSION=2.3.1
  PACKAGEKIT_REQUIRED_VERSION=1.1.4
  
  PKG_CHECK_MODULES(INITIAL_SETUP,
--                  NetworkManager >= $NETWORK_MANAGER_REQUIRED_VERSION
--                  libnm-glib >= $NETWORK_MANAGER_REQUIRED_VERSION
--                  libnm-util >= $NETWORK_MANAGER_REQUIRED_VERSION
--                  libnm-gtk >= $NETWORK_MANAGER_REQUIRED_VERSION
+-                  libnm >= $LIBNM_REQUIRED_VERSION
+-                  libnma >= $LIBNMA_REQUIRED_VERSION
                    polkit-gobject-1 >= $POLKIT_REQUIRED_VERSION
                    accountsservice
                    gnome-desktop-3.0 >= $GNOME_DESKTOP_REQUIRED_VERSION
