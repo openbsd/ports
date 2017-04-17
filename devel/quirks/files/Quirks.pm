@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.476 2017/04/17 17:58:31 jasper Exp $
+# $OpenBSD: Quirks.pm,v 1.477 2017/04/17 19:49:39 naddy Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -953,6 +953,7 @@ my $obsolete_reason = {
 	'spectemu' => 3,
 	'pinpoint' => 3,
 	'anjuta' => 3,
+	'libneural' => 5,
 };
 
 # reasons for obsolete packages
