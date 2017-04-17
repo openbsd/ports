@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.30 2016/10/31 12:10:07 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.31 2017/04/17 11:18:36 jasper Exp $
 @conflict nautilus-file-roller-*
 @pkgpath x11/gnome/file-roller,-main
 @pkgpath x11/gnome/file-roller,-nautilus
 @bin bin/file-roller
+lib/nautilus/extensions-3.0/libnautilus-fileroller.so
 libexec/file-roller/
 libexec/file-roller/isoinfo.sh
 @bin libexec/file-roller/rpm2cpio
