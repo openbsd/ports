@@ -1,12 +1,14 @@
-$OpenBSD: patch-configure,v 1.2 2017/03/24 14:39:05 jeremy Exp $
+$OpenBSD: patch-configure,v 1.3 2017/04/17 18:29:11 jeremy Exp $
 
 Fix so name, checking for DOT and DOXYGEN.
 
 Override the arch setting to remove OpenBSD version from it,
 so ports don't have to be bumped when OpenBSD version changes.
 
+Rename HEAP_ALIGN_LOG to HEAP_PAGE_ALIGN_LOG to fix heap overflow.
+
 --- configure.orig	Tue Mar 21 22:56:10 2017
-+++ configure	Wed Mar 22 08:33:15 2017
++++ configure	Fri Apr 14 16:15:30 2017
 @@ -424,7 +424,7 @@ if test -z "$2"; then :
  
  else
@@ -16,6 +18,21 @@ so ports don't have to be bumped when OpenBSD version changes.
  	if test "$FOLD"; then :
  
  	    echo "$2" | fold -s -w50 |
+@@ -19464,12 +19464,12 @@ fi
+     colorize_result "$rb_cv_page_size_log" ; }
+   if test $rb_cv_page_size_log != no; then
+     cat >>confdefs.h <<_ACEOF
+-#define HEAP_ALIGN_LOG $rb_cv_page_size_log
++#define HEAP_PAGE_ALIGN_LOG $rb_cv_page_size_log
+ _ACEOF
+ 
+   else
+     cat >>confdefs.h <<_ACEOF
+-#define HEAP_ALIGN_LOG 12
++#define HEAP_PAGE_ALIGN_LOG 12
+ _ACEOF
+ 
+   fi
 @@ -25601,7 +25601,7 @@ esac
    openbsd*|mirbsd*) :
  
