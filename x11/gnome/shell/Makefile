@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.141 2017/04/13 07:38:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.142 2017/04/17 12:52:56 jasper Exp $
 
 USE_WXNEEDED=		Yes
 
 COMMENT=		next generation GNOME shell
 
 GNOME_PROJECT=		gnome-shell
-GNOME_VERSION=		3.22.3
+GNOME_VERSION=		3.24.1
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -13,34 +13,35 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += EGL FLAC ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xtst Xxf86vm
 WANTLIB += atk-1.0 atk-bridge-2.0 atspi c cairo cairo-gobject
-WANTLIB += camel-1.2 canberra canberra-gtk3 croco-0.6 dbus-1 dbus-glib-1
-WANTLIB += drm ecal-1.2 edataserver-1.2 epoxy execinfo expat ffi
-WANTLIB += fontconfig freetype gbm gck-1 gcr-base-3 gcrypt gdbm
-WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 girepository-1.0 gjs glapi
-WANTLIB += glib-2.0 gmodule-2.0 gmp gnome-desktop-3 gobject-2.0
-WANTLIB += gpg-error graphite2 gstaudio-1.0 gstbase-1.0 gstreamer-1.0
-WANTLIB += gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3 harfbuzz
-WANTLIB += hogweed ical icalss icalvcal iconv icudata icui18n
-WANTLIB += icuuc idn2 intl javascriptcoregtk-4.0 json-glib-1.0
-WANTLIB += ltdl lzma m mozjs-24 mutter ncurses ncursesw nettle
-WANTLIB += nspr4 nss3 ogg orc-0.4 p11-kit pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 plc4 plds4 png polkit-agent-1
-WANTLIB += polkit-gobject-1 pthread pthread-stubs pulse pulse-mainloop-glib
-WANTLIB += readline secret-1 smime3 sndfile softokn3 soup-2.4
-WANTLIB += sqlite3 ssl3 startup-notification-1 ${LIBCXX} tasn1 telepathy-glib
-WANTLIB += upower-glib vorbis vorbisenc vorbisfile webkit2gtk-4.0
-WANTLIB += xcb xcb-dri2 xcb-glx xcb-randr xcb-render xcb-res xcb-shm
-WANTLIB += xcb-util xcb-xfixes xcb-xkb xkbcommon xkbcommon-x11
-WANTLIB += xkbfile xml2 z unistring
+WANTLIB += camel-1.2 canberra canberra-gtk3 croco-0.6 dbus-1 drm
+WANTLIB += ecal-1.2 edataserver-1.2 epoxy execinfo expat ffi fontconfig
+WANTLIB += freetype gbm gck-1 gcr-base-3 gcrypt gdbm gdk-3 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 girepository-1.0 gjs glapi glib-2.0 gmodule-2.0
+WANTLIB += gnome-desktop-3 gobject-2.0 gpg-error graphite2 gstaudio-1.0
+WANTLIB += gstbase-1.0 gstreamer-1.0 gsttag-1.0 gstvideo-1.0 gthread-2.0
+WANTLIB += gtk-3 harfbuzz ical icalss icalvcal iconv icudata icui18n
+WANTLIB += icuuc intl javascriptcoregtk-4.0 json-glib-1.0 ltdl
+WANTLIB += lzma m mozjs-38 mutter-0 ncursesw nspr4 nss3 ogg orc-0.4
+WANTLIB += p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
+WANTLIB += pixman-1 plc4 plds4 png polkit-agent-1 polkit-gobject-1
+WANTLIB += pthread pthread-stubs pulse pulse-mainloop-glib readline
+WANTLIB += secret-1 smime3 sndfile softokn3 soup-2.4 sqlite3 ssl3
+WANTLIB += startup-notification-1 upower-glib vorbis
+WANTLIB += vorbisenc vorbisfile webkit2gtk-4.0 xcb xcb-dri2 xcb-glx
+WANTLIB += xcb-randr xcb-render xcb-res xcb-shm xcb-util xcb-xfixes
+WANTLIB += xcb-xkb xkbcommon xkbcommon-x11 xkbfile xml2 z
+WANTLIB += GL Xt enchant gstapp-1.0 gstfft-1.0 gstpbutils-1.0
+WANTLIB += hyphen jpeg notify nssutil3 ${LIBCXX} webp xslt
+
 
 MODULES=		devel/dconf \
 			lang/python \
 			x11/gnome
 
-# sync with devel/spidermonkey
+# sync with devel/spidermonkey38
 MODULES +=		gcc4
 MODGCC4_ARCHS=		*
-MODGCC4_LANGS=		c c++
+MODGCC4_LANGS=		c
 
 MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
@@ -52,12 +53,11 @@ RUN_DEPENDS +=		devel/gsettings-desktop-schemas
 LIB_DEPENDS=		audio/pulseaudio \
 			databases/evolution-data-server \
 			multimedia/gstreamer1/core \
-			net/telepathy/telepathy-glib \
 			sysutils/polkit \
 			www/libcroco \
 			x11/gnome/gcr \
 			x11/gnome/gjs \
-			x11/gnome/mutter>=3.22.0
+			x11/gnome/mutter>=3.24.0
 
 # configure looks for gnome-keybindings.pc;
 # system.js, backgroundMenu.js, network.js, remoteSearch.js

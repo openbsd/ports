@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2016/10/31 16:15:09 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.25 2017/04/17 12:52:56 jasper Exp $
 @conflict gnome-panel-*
 @conflict gnome-screensaver-*
 @conflict notification-daemon-*
@@ -12,10 +12,8 @@ bin/gnome-shell-perf-tool
 lib/gnome-shell/
 lib/gnome-shell/Gvc-1.0.typelib
 lib/gnome-shell/Shell-0.1.typelib
-lib/gnome-shell/ShellJS-0.1.typelib
 lib/gnome-shell/ShellMenu-0.1.typelib
 lib/gnome-shell/St-1.0.typelib
-lib/gnome-shell/libgnome-shell-js.so
 lib/gnome-shell/libgnome-shell-menu.so
 lib/gnome-shell/libgnome-shell.so
 lib/mozilla/
@@ -29,6 +27,7 @@ share/GConf/gsettings/gnome-shell-overrides.convert
 share/applications/evolution-calendar.desktop
 share/applications/gnome-shell-extension-prefs.desktop
 share/applications/org.gnome.Shell.desktop
+share/dbus-1/interfaces/org.gnome.Shell.PadOsd.xml
 share/dbus-1/interfaces/org.gnome.Shell.Screencast.xml
 share/dbus-1/interfaces/org.gnome.Shell.Screenshot.xml
 share/dbus-1/interfaces/org.gnome.ShellSearchProvider.xml
@@ -42,7 +41,6 @@ share/gnome-shell/perf-background.xml
 share/gtk-doc/html/shell/
 share/gtk-doc/html/shell/ShellEmbeddedWindow.html
 share/gtk-doc/html/shell/ShellGtkEmbed.html
-share/gtk-doc/html/shell/ShellTpClient.html
 share/gtk-doc/html/shell/annotation-glossary.html
 share/gtk-doc/html/shell/api-index-full.html
 share/gtk-doc/html/shell/ch01.html
@@ -51,7 +49,6 @@ share/gtk-doc/html/shell/ch03.html
 share/gtk-doc/html/shell/ch04.html
 share/gtk-doc/html/shell/ch05.html
 share/gtk-doc/html/shell/ch06.html
-share/gtk-doc/html/shell/deprecated-api-index.html
 share/gtk-doc/html/shell/gdbus-org.gnome.Shell.SearchProvider.html
 share/gtk-doc/html/shell/gdbus-org.gnome.Shell.SearchProvider2.html
 share/gtk-doc/html/shell/home.png
@@ -92,7 +89,6 @@ share/gtk-doc/html/st/annotation-glossary.html
 share/gtk-doc/html/st/api-index-full.html
 share/gtk-doc/html/st/base.html
 share/gtk-doc/html/st/containers.html
-share/gtk-doc/html/st/deprecated-api-index.html
 share/gtk-doc/html/st/home.png
 share/gtk-doc/html/st/index.html
 share/gtk-doc/html/st/left-insensitive.png
