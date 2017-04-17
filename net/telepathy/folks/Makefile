@@ -1,14 +1,20 @@
-# $OpenBSD: Makefile,v 1.87 2017/04/17 14:58:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.88 2017/04/17 17:28:13 jasper Exp $
 
 # XXX: PORTROACH set below to override the value from gnome.port.mk
 
 COMMENT=		people aggregation library
 
-GNOME_PROJECT=		folks
-GNOME_VERSION=		0.11.3
+# XXX: Remove when updating
+GH_PROJECT=		folks
+GH_ACCOUNT=		gnome
+GH_COMMIT=		780d64a984fb014e0ee7b633a24a9c4fda1df21e
+DISTNAME=		folks-0.11.3
+#GNOME_PROJECT=		folks
+#GNOME_VERSION=		0.11.3
+
 # MODULE_VERSION in config.h
 API_V=			43
-REVISION=		2
+REVISION=		3
 
 SHARED_LIBS +=  folks-telepathy           5.2 # 43.0
 SHARED_LIBS +=  folks                     5.5 # 43.0
@@ -64,6 +70,22 @@ CONFIGURE_ARGS += 	--disable-fatal-warnings
 
 # XXX undefined references to a few evolution-data-server symbols (private libs)
 CONFIGURE_ARGS +=	--disable-modular-tests
+
+########################################
+# XXX: Remove when updating
+BUILD_DEPENDS +=	devel/gettext-tools
+AUTOCONF_VERSION=	2.69
+AUTOMAKE_VERSION=	1.15
+BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS} \
+			devel/libtool
+
+pre-configure:
+	cd ${WRKSRC} && \
+		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
+		NOCONFIGURE=1 ./autogen.sh
+########################################
 
 post-install:
 	rm ${PREFIX}/lib/folks/${API_V}/backends/*/*.{a,la}
