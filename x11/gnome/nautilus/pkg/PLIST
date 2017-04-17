@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.54 2016/10/31 11:23:46 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.55 2017/04/17 10:35:15 ajacoutot Exp $
 @bin bin/nautilus
 @bin bin/nautilus-autorun-software
 @bin bin/nautilus-desktop
@@ -70,9 +70,9 @@ share/gtk-doc/html/libnautilus-extension/up.png
 share/icons/hicolor/16x16/apps/org.gnome.Nautilus.png
 share/icons/hicolor/22x22/apps/org.gnome.Nautilus.png
 share/icons/hicolor/24x24/apps/org.gnome.Nautilus.png
-share/icons/hicolor/256x256/apps/org.gnome.Nautilus.png
 share/icons/hicolor/32x32/apps/org.gnome.Nautilus.png
 share/icons/hicolor/48x48/apps/org.gnome.Nautilus.png
+share/icons/hicolor/512x512/apps/org.gnome.Nautilus.png
 share/icons/hicolor/symbolic/apps/org.gnome.Nautilus-symbolic.svg
 share/locale/af/LC_MESSAGES/nautilus.mo
 share/locale/am/LC_MESSAGES/nautilus.mo
