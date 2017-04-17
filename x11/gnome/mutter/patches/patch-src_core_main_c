@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_core_main_c,v 1.4 2017/04/17 12:52:33 jasper Exp $
+
+extend HAVE_WAYLAND block to include opt_nested and META_TYPE_BACKEND_X11_NESTED.
+
+--- src/core/main.c.orig	Mon Apr 17 13:08:59 2017
++++ src/core/main.c	Mon Apr 17 13:10:21 2017
+@@ -440,7 +440,6 @@ calculate_compositor_configuration (MetaCompositorType
+   if (run_as_wayland_compositor)
+     *compositor_type = META_COMPOSITOR_TYPE_WAYLAND;
+   else
+-#endif /* HAVE_WAYLAND */
+     *compositor_type = META_COMPOSITOR_TYPE_X11;
+ 
+   if (opt_nested)
+@@ -448,6 +447,7 @@ calculate_compositor_configuration (MetaCompositorType
+       *backend_gtype = META_TYPE_BACKEND_X11_NESTED;
+       return;
+     }
++#endif /* HAVE_WAYLAND */
+ 
+ #ifdef HAVE_NATIVE_BACKEND
+   if (opt_display_server)

@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.68 2017/04/13 07:38:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.69 2017/04/17 12:52:33 jasper Exp $
 
 COMMENT=		window and compositing manager
 
 GNOME_PROJECT=		mutter
-GNOME_VERSION=		3.22.3
+GNOME_VERSION=		3.24.1
 
-SHARED_LIBS +=  mutter                    2.0 # 0.0
+API_SUFFIX =	-0
+SHARED_LIBS +=  mutter-0                    0.0 # 0.0
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -21,7 +22,7 @@ WANTLIB += ltdl m ogg pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
 WANTLIB += pixman-1 png pthread pthread-stubs startup-notification-1
 WANTLIB += upower-glib vorbis vorbisfile xcb xcb-dri2 xcb-randr
 WANTLIB += xcb-render xcb-res xcb-shm xcb-util xcb-xfixes xcb-xkb
-WANTLIB += xkbcommon xkbcommon-x11 xkbfile z
+WANTLIB += xkbcommon xkbcommon-x11 xkbfile z Xtst
 
 MODULES=		devel/dconf \
 			x11/gnome
@@ -57,6 +58,8 @@ CONFIGURE_ARGS +=       --with-gl-libname=libGL.so \
 CONFIGURE_ARGS +=	--enable-compile-warnings=yes
 
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include
+
+SUBST_VARS +=		API_SUFFIX
 
 pre-configure:
 # XXX cc1: error: unrecognized command line option
