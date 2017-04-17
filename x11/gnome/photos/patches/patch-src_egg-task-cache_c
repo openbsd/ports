@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_egg-task-cache_c,v 1.1 2017/04/17 12:04:22 ajacoutot Exp $
+
+egg-task-cache.c:491: error: 'for' loop initial declaration used outside C99 mode
+
+--- src/egg-task-cache.c.orig	Mon Apr 17 13:34:51 2017
++++ src/egg-task-cache.c	Mon Apr 17 13:35:10 2017
+@@ -486,9 +486,10 @@ egg_task_cache_cancel_in_idle (gpointer user_data)
+   g_assert (data->self == self);
+   g_assert (data->cancellable == cancellable);
+ 
++  guint i;
+   if ((queued = g_hash_table_lookup (self->queued, data->key)))
+     {
+-      for (guint i = 0; i < queued->len; i++)
++      for (i = 0; i < queued->len; i++)
+         {
+           GCancellable *queued_cancellable;
+           GTask *queued_task;
