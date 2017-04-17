@@ -1683,7 +1683,6 @@
      SUBDIR += sparsehash
      SUBDIR += spe
      SUBDIR += spice-protocol
-     SUBDIR += spidermonkey
      SUBDIR += spidermonkey38
      SUBDIR += splint
      SUBDIR += src
