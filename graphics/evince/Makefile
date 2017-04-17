@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.145 2017/04/10 11:46:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.146 2017/04/17 11:42:20 jasper Exp $
 
 COMMENT=		GNOME document viewer
 
 GNOME_PROJECT=		evince
-GNOME_VERSION=		3.22.1
-REVISION=		2
+GNOME_VERSION=		3.24.0
 
 MAJ_V=			3.0
 SUBST_VARS=		MAJ_V
@@ -80,7 +79,7 @@ LIB_DEPENDS +=		graphics/djvulibre \
 			print/texlive/base \
 			x11/gnome/nautilus
 WANTLIB += archive bz2 djvulibre gnome-desktop-3 gxps kpathsea
-WANTLIB += nautilus-extension gnome-autoar-0 crypto lzo2 lz4
+WANTLIB += nautilus-extension gnome-autoar-0 crypto lz4
 .endif
 
 post-install:
