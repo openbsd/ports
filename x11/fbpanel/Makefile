@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2017/04/16 12:43:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2017/04/17 08:49:23 sthen Exp $
 
 COMMENT=	lightweight NETWM compliant desktop panel
 
 DISTNAME=	fbpanel-6.1
-REVISION=	7
+REVISION=	6
 CATEGORIES=	x11
 EXTRACT_SUFX=	.tbz2
 
