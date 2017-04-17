@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.79 2016/06/26 11:44:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.80 2017/04/17 17:29:13 rpe Exp $
 
 ONLY_FOR_ARCHS=	${LP64_ARCHS} # time_t format string issues
 
 COMMENT-main=	host and service monitor
 COMMENT-web=	cgis and webpages for nagios
 
-V=		4.0.8
-REVISION-web=	2
-REVISION-main=	3
+V=		4.3.1
 DISTNAME=	nagios-$V
 PKGNAME-main=	nagios-$V
 PKGNAME-web=	nagios-web-$V
@@ -24,7 +22,8 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=nagios/}
 
 MODULES=	lang/php
 
-BUILD_DEPENDS=	graphics/gd
+BUILD_DEPENDS=	graphics/gd \
+		archivers/unzip
 LIB_DEPENDS=	devel/libtool,-ltdl
 RUN_DEPENDS-main= net/monitoring-plugins
 

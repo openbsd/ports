@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-web,v 1.10 2015/12/30 10:01:26 ajacoutot Exp $
+@comment $OpenBSD: PLIST-web,v 1.11 2017/04/17 17:29:13 rpe Exp $
 cgi-bin/nagios/
 @bin cgi-bin/nagios/archivejson.cgi
 @bin cgi-bin/nagios/avail.cgi
@@ -22,6 +22,17 @@ cgi-bin/nagios/
 conf/modules.sample/nagios.conf.dist
 @sample /var/www/conf/modules.sample/
 @sample /var/www/conf/modules.sample/nagios.conf
+nagios/angularjs/
+nagios/angularjs/angular-1.3.9/
+nagios/angularjs/angular-1.3.9/angular.min.js
+nagios/angularjs/angular-1.3.9/angular.min.js.map
+nagios/angularjs/ui-bootstrap-tpls-0.12.0.min.js
+nagios/angularjs/ui-utils-0.2.1/
+nagios/angularjs/ui-utils-0.2.1/ui-utils.js
+nagios/bootstrap-3.3.0/
+nagios/bootstrap-3.3.0/css/
+nagios/bootstrap-3.3.0/css/bootstrap-theme.min.css
+nagios/bootstrap-3.3.0/css/bootstrap.min.css
 nagios/config.inc.php
 nagios/contexthelp/
 nagios/contexthelp/A1.html
@@ -87,8 +98,15 @@ nagios/contexthelp/N4.html
 nagios/contexthelp/N5.html
 nagios/contexthelp/N6.html
 nagios/contexthelp/N7.html
+nagios/d3/
+nagios/d3/d3.min.js
 nagios/docs/
 nagios/docs/images/
+nagios/graph-header.html
+nagios/histogram-form.html
+nagios/histogram-graph.html
+nagios/histogram-links.html
+nagios/histogram.html
 nagios/images/
 nagios/images/Nagios-clearbg.png
 nagios/images/NagiosEnterprises-whitebg-112x46.png
@@ -208,6 +226,9 @@ nagios/images/logos/monitor.png
 nagios/images/logos/nagios.gd2
 nagios/images/logos/nagios.gif
 nagios/images/logos/nagiosvrml.png
+nagios/images/logos/netbsd.gif
+nagios/images/logos/netbsd.jpg
+nagios/images/logos/netbsd.png
 nagios/images/logos/next.gd2
 nagios/images/logos/next.gif
 nagios/images/logos/next.jpg
@@ -266,6 +287,9 @@ nagios/images/logos/sunlogo.gd2
 nagios/images/logos/sunlogo.gif
 nagios/images/logos/sunlogo.jpg
 nagios/images/logos/sunlogo.png
+nagios/images/logos/suse.gif
+nagios/images/logos/suse.jpg
+nagios/images/logos/suse.png
 nagios/images/logos/switch.gd2
 nagios/images/logos/switch.gif
 nagios/images/logos/switch40.gd2
@@ -305,6 +329,7 @@ nagios/images/logos/yellowdog.gif
 nagios/images/logos/yellowdog.jpg
 nagios/images/logos/yellowdog.png
 nagios/images/logrotate.png
+nagios/images/menu.png
 nagios/images/ndisabled.gif
 nagios/images/noack.gif
 nagios/images/notes.gif
@@ -344,29 +369,37 @@ nagios/images/weblogo1.png
 nagios/images/zoom1.gif
 nagios/images/zoom2.gif
 nagios/includes/
-nagios/includes/jquery-1.7.1.min.js
-nagios/includes/rss/
-nagios/includes/rss/extlib/
-nagios/includes/rss/extlib/Snoopy.class.inc
-nagios/includes/rss/rss_cache.inc
-nagios/includes/rss/rss_fetch.inc
-nagios/includes/rss/rss_parse.inc
-nagios/includes/rss/rss_utils.inc
 nagios/includes/utils.inc.php
 nagios/index.php
+nagios/infobox.html
 nagios/js/
+nagios/js/histogram-events.js
+nagios/js/histogram-form.js
+nagios/js/histogram-graph.js
+nagios/js/histogram.js
 nagios/js/jquery-1.7.1.min.js
 nagios/js/jsonquery.js
+nagios/js/map-directive.js
+nagios/js/map-form.js
+nagios/js/map.js
+nagios/js/nag_funcs.js
+nagios/js/nagios-decorations.js
+nagios/js/nagios-time.js
+nagios/js/trends-form.js
+nagios/js/trends-graph.js
+nagios/js/trends.js
 nagios/jsonquery.html
 nagios/main.php
+nagios/map-directive.html
+nagios/map-form.html
+nagios/map-links.html
+nagios/map-popup.html
+nagios/map.php
 nagios/media/
 nagios/robots.txt
-nagios/rss-corebanner.php
-nagios/rss-corefeed.html
-nagios/rss-corefeed.php
-nagios/rss-newsfeed.html
-nagios/rss-newsfeed.php
 nagios/side.php
+nagios/spin/
+nagios/spin/spin.min.js
 nagios/ssi/
 nagios/stylesheets/
 nagios/stylesheets/avail.css
@@ -376,9 +409,13 @@ nagios/stylesheets/common.css
 nagios/stylesheets/config.css
 nagios/stylesheets/extinfo.css
 nagios/stylesheets/histogram.css
+nagios/stylesheets/histogramgraph.css
 nagios/stylesheets/history.css
 nagios/stylesheets/jsonquery.css
+nagios/stylesheets/map-directive.css
+nagios/stylesheets/map.css
 nagios/stylesheets/ministatus.css
+nagios/stylesheets/nag_funcs.css
 nagios/stylesheets/notifications.css
 nagios/stylesheets/outages.css
 nagios/stylesheets/showlog.css
@@ -387,3 +424,10 @@ nagios/stylesheets/statusmap.css
 nagios/stylesheets/summary.css
 nagios/stylesheets/tac.css
 nagios/stylesheets/trends.css
+nagios/stylesheets/trendsgraph.css
+nagios/trends-form.html
+nagios/trends-graph.html
+nagios/trends-host-yaxis.html
+nagios/trends-links.html
+nagios/trends-service-yaxis.html
+nagios/trends.html
