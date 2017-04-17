@@ -1,20 +1,21 @@
-# $OpenBSD: Makefile,v 1.23 2015/05/18 11:29:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.24 2017/04/17 21:43:15 sthen Exp $
 
 COMMENT=	clone of the ex/vi text editor
 
 DISTNAME=	elvis-2.2_0
 PKGNAME=	${DISTNAME:S/_/./}
-REVISION=	2
+REVISION=	3
 CATEGORIES=	editors
 HOMEPAGE=	http://elvis.the-little-red-haired-girl.org/
+
+MAINTAINER=	Donovan Watteau <tsoomi@gmail.com>
 
 # Clarified Artistic License
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=		c curses
 
-MASTER_SITES=	ftp://ftp.cs.pdx.edu/pub/elvis/ \
-		ftp://ftp.fh-wedel.de/pub/elvis/
+MASTER_SITES=	http://www.the-little-red-haired-girl.org/pub/elvis/
 
 FLAVORS=	no_x11
 FLAVOR?=

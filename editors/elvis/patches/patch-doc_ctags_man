@@ -1,6 +1,6 @@
-$OpenBSD: patch-doc_ctags_man,v 1.2 2012/05/05 14:03:15 sthen Exp $
+$OpenBSD: patch-doc_ctags_man,v 1.3 2017/04/17 21:43:15 sthen Exp $
 --- doc/ctags.man.orig	Tue Oct 21 04:32:26 2003
-+++ doc/ctags.man	Sat May  5 13:48:52 2012
++++ doc/ctags.man	Mon Apr 17 12:50:13 2017
 @@ -1,8 +1,8 @@
 -.TH CTAGS 1
 +.TH ELVCTAGS 1
@@ -13,30 +13,3 @@ $OpenBSD: patch-doc_ctags_man,v 1.2 2012/05/05 14:03:15 sthen Exp $
  .RB [ -D
  .IR word ]
  .RB [ -FBNgitvshlpdxra ]
-@@ -18,7 +18,7 @@ See
- .B ctags
- generates the
- .I tags
--and 
-+and
- .I refs
- files from a group of C source files.
- The
-@@ -84,7 +84,7 @@ and regular expressions for anything else.
- .IP \fB-g\fR
- For static tags, generate entries that look like global tags.
- (I.e., never generate an extra "file:" attribute.)
--This implies -s and -h.
-+This implies \-s and \-h.
- .IP \fB-i\fR
- Include inline definitions.
- A tag will be generated for each function which is declared as being
-@@ -151,7 +151,7 @@ the tag is defined, and the text of that line.
- .IP \fB-r\fP
- This causes
- .B ctags
--to generate both 
-+to generate both
- .I tags
- and
- .IR refs .

@@ -1,7 +1,43 @@
-$OpenBSD: patch-configure,v 1.1 2008/12/11 13:58:14 jasper Exp $
---- configure.orig	Tue Dec  9 12:08:27 2008
-+++ configure	Tue Dec  9 12:08:32 2008
-@@ -794,8 +794,6 @@ case "$SYS" in
+$OpenBSD: patch-configure,v 1.2 2017/04/17 21:43:15 sthen Exp $
+
+Disable some questionable/broken/dangerous features.
+
+We also don't require -lipc anymore.
+
+--- configure.orig	Tue Oct 21 04:32:25 2003
++++ configure	Mon Apr 17 14:24:03 2017
+@@ -463,26 +463,10 @@ case "$FEATURE_XFT" in
+ 	;;
+ esac
+ 
+-# if network protocols are unspecified, and the network header files are
+-# present, then assume they should be used.
+-if [ "$PROTOCOL_HTTP" = "" -a "$inet" ]
+-then
+-	why "Assuming HTTP should be supported because Internet headers were found"
+-	PROTOCOL_HTTP=define
+-elif [ "$PROTOCOL_HTTP" = "" ]
+-then
+-	why "Assuming HTTP should not be supported because Internet headers were not found"
+-	PROTOCOL_HTTP=undef
+-fi
+-if [ "$PROTOCOL_FTP" = "" -a "$inet" ]
+-then
+-	why "Assuming FTP should be supported because Internet headers were found"
+-	PROTOCOL_FTP=define
+-elif [ "$PROTOCOL_FTP" = "" ]
+-then
+-	why "Assuming FTP should not be supported because Internet headers were not found"
+-	PROTOCOL_FTP=undef
+-fi
++why "Assuming HTTP should not be supported because it's dangerous"
++PROTOCOL_HTTP=undef
++why "Assuming FTP should not be supported because it's dangerous" 
++PROTOCOL_FTP=undef
+ 
+ ################################################################################
+ 
+@@ -794,8 +778,6 @@ case "$SYS" in
  	why "For OpenBSD, we ignore the <sys/select.h> file"
  	NEED_SELECT_H="undef"
  	TLIBS="-lcurses"
@@ -10,3 +46,22 @@ $OpenBSD: patch-configure,v 1.1 2008/12/11 13:58:14 jasper Exp $
  	;;
  
    *netbsd*)
+@@ -979,15 +961,15 @@ cat >config.h <<eof-config
+  */
+ #define	DISPLAY_HEX	/* hex		interactive hex dump */
+ #define	DISPLAY_HTML	/* html		formatted text */
+-#define	DISPLAY_MAN	/* man		formatted text */
+-#define	DISPLAY_TEX	/* tex		formatted text */
++#undef	DISPLAY_MAN	/* man		formatted text */
++#undef	DISPLAY_TEX	/* tex		formatted text */
+ #define	DISPLAY_SYNTAX	/* syntax	generic syntax coloring */
+ #${PROTOCOL_HTTP}	PROTOCOL_HTTP	/* define to enable HTTP; undef to disable */
+ #${PROTOCOL_FTP}	PROTOCOL_FTP	/* define to enable FTP; undef to disable */
+ #define	FEATURE_ALIAS	/* the :alias command */
+ #define	FEATURE_ARRAY	/* arrays in :calc expressions */
+ #define	FEATURE_AUTOCMD	/* the :autocmd command */
+-#define	FEATURE_BACKTICK /* the \`program\` notation in file names */
++#undef	FEATURE_BACKTICK /* the \`program\` notation in file names */
+ #define	FEATURE_BROWSE	/* the :browse and :sbrowse commands */
+ #define	FEATURE_CACHEDESC /* store syntax/markup descriptions in RAM */
+ #define	FEATURE_CALC	/* built-in calculator -- see command below */

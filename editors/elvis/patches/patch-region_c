@@ -1,0 +1,15 @@
+$OpenBSD: patch-region_c,v 1.1 2017/04/17 21:43:15 sthen Exp $
+
+Fix an obvious typo.
+
+--- region.c.orig	Tue Oct 21 04:32:25 2003
++++ region.c	Tue Aug 16 19:52:41 2016
+@@ -409,7 +409,7 @@ RESULT ex_region(xinf)
+ 		if (comment)
+ 		{
+ 			*comment++ = '\0';
+-			while (*comment == ' ');
++			while (*comment == ' ')
+ 				comment++;
+ 			if (*comment == '\0')
+ 				comment = xinf->rhs;

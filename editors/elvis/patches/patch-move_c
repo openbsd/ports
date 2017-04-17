@@ -1,11 +1,13 @@
-$OpenBSD: patch-move_c,v 1.1 2012/05/05 14:03:15 sthen Exp $
+$OpenBSD: patch-move_c,v 1.2 2017/04/17 21:43:15 sthen Exp $
 
 From Debian:
   "Fix a bug in the ) vi command that could cause a segmentation
   fault (patch from elvis-almost-2.2.1)"
 
+Also fix a very likely typo.
+
 --- move.c.orig	Tue Oct 21 04:32:25 2003
-+++ move.c	Sat May  5 13:53:51 2012
++++ move.c	Tue Aug 16 19:51:36 2016
 @@ -1620,6 +1620,7 @@ RESULT m_fsentence(win, vinf)
  	long	para;
  	long	offset;
@@ -22,3 +24,12 @@ From Debian:
  	}
  	marksetoffset(win->state->cursor, offset);
  	if (para == offset)
+@@ -1892,7 +1894,7 @@ RESULT m_bsentence(win, vinf)
+ 			{
+ 				scannext(&cp);
+ 			}
+-			if (&cp)
++			if (cp)
+ 				marksetoffset(win->state->cursor, markoffset(scanmark(&cp)));
+ 			else
+ 			{

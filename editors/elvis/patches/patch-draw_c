@@ -1,0 +1,17 @@
+$OpenBSD: patch-draw_c,v 1.1 2017/04/17 21:43:15 sthen Exp $
+
+Fix a crash that's easily triggered by our malloc().
+
+https://github.com/mbert/elvis/commit/5c3c8ec827fe
+
+--- draw.c.orig	Tue Oct 21 04:32:25 2003
++++ draw.c	Tue Aug 16 19:59:52 2016
+@@ -1114,7 +1114,7 @@ static void updateimage(win)
+ 			logicaltab = 0;
+ 		else
+ 		{
+-			for (i = 0; di->newline[i].startrow < row && di->newline[i + 1].startrow - 1 < row; i++)
++			for (i = 0; di->newline[i].startrow < row && di->nlines > i && di->newline[i + 1].startrow - 1 < row; i++)
+ 			{
+ 			}
+ 			logicaltab = (row - di->newline[i].startrow) * ncols;

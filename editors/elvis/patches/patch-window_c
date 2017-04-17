@@ -1,0 +1,15 @@
+$OpenBSD: patch-window_c,v 1.1 2017/04/17 21:43:15 sthen Exp $
+
+Fix a very likely typo.
+
+--- window.c.orig	Tue Oct 21 04:32:25 2003
++++ window.c	Tue Aug 16 14:53:38 2016
+@@ -401,7 +401,7 @@ void winresize(win, rows, columns)
+ 
+ #ifdef FEATURE_AUTOCMD
+ 	/* handle OptChanged event for lines or columns now */
+-	if (changed);
++	if (changed)
+ 		auperform(win, ElvFalse, NULL, AU_OPTCHANGED, changed);
+ #endif
+ }
