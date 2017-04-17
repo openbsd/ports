@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.40 2016/10/31 11:07:25 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.41 2017/04/17 10:24:27 ajacoutot Exp $
 @conflict evolution-meta-tracker-*
 @conflict nautilus-meta-tracker-*
 @conflict tracker-*
@@ -26,6 +26,7 @@ include/tracker-${TRACKER_API}/libtracker-miner/tracker-miner.h
 include/tracker-${TRACKER_API}/libtracker-sparql/
 include/tracker-${TRACKER_API}/libtracker-sparql/tracker-generated.h
 include/tracker-${TRACKER_API}/libtracker-sparql/tracker-namespace-manager.h
+include/tracker-${TRACKER_API}/libtracker-sparql/tracker-notifier.h
 include/tracker-${TRACKER_API}/libtracker-sparql/tracker-ontologies.h
 include/tracker-${TRACKER_API}/libtracker-sparql/tracker-resource.h
 include/tracker-${TRACKER_API}/libtracker-sparql/tracker-sparql.h
@@ -193,6 +194,7 @@ share/gtk-doc/html/libtracker-miner/tracker-overview.html
 share/gtk-doc/html/libtracker-miner/up-insensitive.png
 share/gtk-doc/html/libtracker-miner/up.png
 share/gtk-doc/html/libtracker-sparql/
+share/gtk-doc/html/libtracker-sparql/TrackerNotifier.html
 share/gtk-doc/html/libtracker-sparql/TrackerResource.html
 share/gtk-doc/html/libtracker-sparql/TrackerSparqlBuilder.html
 share/gtk-doc/html/libtracker-sparql/TrackerSparqlConnection.html

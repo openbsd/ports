@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.214 2017/04/12 09:27:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.215 2017/04/17 10:24:27 ajacoutot Exp $
 
 COMMENT=		powerful desktop search tool and indexer
 
 GNOME_PROJECT=		tracker
-GNOME_VERSION=		1.10.5
-REVISION=		0
+GNOME_VERSION=		1.12.0
 
 # there is already audio/tracker, so this port has to live
 # as meta-tracker
@@ -21,10 +20,10 @@ SUBST_VARS=		TRACKER_API
 
 SHARED_LIBS +=  tracker-common       3.3      # unknown
 SHARED_LIBS +=  tracker-data         3.3      # unknown
-SHARED_LIBS +=  tracker-sparql-1.0   1.1      # 1001.0
+SHARED_LIBS +=  tracker-sparql-1.0   1.2      # 1200.0
 SHARED_LIBS +=  tracker-extract      0.1      # unknown
-SHARED_LIBS +=  tracker-miner-1.0    1.1      # 1001.0
-SHARED_LIBS +=  tracker-control-1.0  1.1      # 1001.0
+SHARED_LIBS +=  tracker-miner-1.0    1.1      # 1200.0
+SHARED_LIBS +=  tracker-control-1.0  1.1      # 1200.0
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -37,8 +36,8 @@ WANTLIB += gdk-3 gdk_pixbuf-2.0 gif gio-2.0 glib-2.0 gmime-2.6
 WANTLIB += gmodule-2.0 gobject-2.0 gpg-error gpgme-pthread graphite2
 WANTLIB += gsf-1 gstaudio-1.0 gstbase-1.0 gstpbutils-1.0 gstreamer-1.0
 WANTLIB += gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3 gxps harfbuzz
-WANTLIB += iconv icudata icui18n icuuc intl iptcdata jpeg kvm
-WANTLIB += lcms2 lz4 lzma m mediaart-2.0 openjp2 orc-0.4 osinfo-1.0
+WANTLIB += iconv icudata icui18n icuuc intl iptcdata jpeg json-glib-1.0
+WANTLIB += kvm lcms2 lz4 lzma m mediaart-2.0 openjp2 orc-0.4 osinfo-1.0
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png poppler poppler-glib pthread pthread-stubs soup-2.4
 WANTLIB += sqlite3 ${LIBCXX} tag tag_c tiff totem-plparser upower-glib
@@ -51,6 +50,7 @@ MODULES=		devel/dconf \
 LIB_DEPENDS=		audio/libcue \
 			audio/taglib \
 			converters/enca \
+			devel/json-glib \
 			devel/libgsf \
 			graphics/giflib \
 			graphics/libexif \
@@ -65,11 +65,6 @@ LIB_DEPENDS=		audio/libcue \
 			textproc/icu4c \
 			x11/gnome/libmediaart \
 			x11/gnome/totem-pl-parser
-
-# picked up by configure to build the resdump tool. it is not installed,
-# but when dpb removes libgee during a running build, causes tracker build
-# to fail.
-BUILD_DEPENDS +=	devel/libgee
 
 TEST_DEPENDS=		${MODPY_RUN_DEPENDS} \
 			x11/dbus-python
@@ -91,6 +86,9 @@ CONFIGURE_ARGS=		--disable-miner-thunderbird \
 
 # needs libgrss
 CONFIGURE_ARGS +=	--disable-miner-rss
+
+# needs libstemmer
+CONFIGURE_ARGS +=	--disable-libstemmer
 
 # cyclic dependency with x11/gnome/nautilus
 CONFIGURE_ARGS +=	--disable-nautilus-extension
