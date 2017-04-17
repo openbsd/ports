@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2016/11/11 11:52:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2017/04/17 07:31:50 jasper Exp $
 
 COMMENT=		GTK+3 remote desktop client
 
-V=			1.1.1
+V=			1.1.2
 DISTNAME=		remmina-${V}
-REVISION=		1
 
 GH_TAGNAME=		v${V}
 GH_PROJECT=		Remmina
