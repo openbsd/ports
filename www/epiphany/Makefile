@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.150 2017/03/29 13:27:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.151 2017/04/17 10:57:08 jasper Exp $
 
 COMMENT=	GNOME web browser based on webkit
 
 GNOME_PROJECT=	epiphany
-GNOME_VERSION=	3.22.7
+GNOME_VERSION=	3.24.1
 MAJOR_V=	${GNOME_VERSION:R}
 SUBST_VARS=	MAJOR_V
-REVISION=	0
 
 CATEGORIES=	www
 
@@ -56,19 +55,20 @@ MODULES=	devel/dconf \
 
 MODGCC4_ARCHS=*
 
-MODGNOME_TOOLS=	desktop-file-utils yelp
+MODGNOME_TOOLS=	desktop-file-utils gtk-update-icon-cache yelp
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--disable-nss \
 		--with-distributor-name="OpenBSD ports"
 
-MODGNOME_CPPFLAGS=	-I${X11BASE}/include
+# error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+MODGNOME_CPPFLAGS=	-I${X11BASE}/include -std=c99
 
 TEST_DEPENDS=		${BASE_PKGPATH}
 TEST_IS_INTERACTIVE=	x11
 PORTHOME=		${WRKDIR}
 
 post-install:
-	rm ${PREFIX}/lib/epiphany/${MAJOR_V}/web-extensions/*.{a,la}
+	rm ${PREFIX}/lib/epiphany/web-extensions/*.{a,la}
 
 .include <bsd.port.mk>
