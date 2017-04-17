@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.55 2017/04/13 07:38:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.56 2017/04/17 10:59:55 ajacoutot Exp $
 
 COMMENT=		color profile manager for GNOME
 
 GNOME_PROJECT=		gnome-color-manager
-GNOME_VERSION=		3.22.2
-REVISION=		0
+GNOME_VERSION=		3.24.0
 
 CATEGORIES=		graphics
 
@@ -21,7 +20,7 @@ WANTLIB += gthread-2.0 gtk-3 harfbuzz hogweed iconv idn2 intl jpeg
 WANTLIB += lcms2 ltdl m nettle ogg p11-kit pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pcre2-8 pixman-1 png pthread pthread-stubs
 WANTLIB += ${LIBCXX} tasn1 tiff vorbis vorbisfile vte-2.91 xcb xcb-render
-WANTLIB += xcb-shm z
+WANTLIB += xcb-shm z unistring
 
 MODULES=		x11/gnome
 
@@ -37,6 +36,8 @@ RUN_DEPENDS=		graphics/argyll \
 MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache yelp
 
 CONFIGURE_STYLE=	gnu
+
+CONFIGURE_ARGS=		--disable-packagekit
 
 # XXX gcm-calibrate.sgml:1: parser error : StartTag: invalid element name
 CONFIGURE_ENV +=	ac_cv_path_DOCBOOK2MAN=no
