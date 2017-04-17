@@ -1,0 +1,68 @@
+$OpenBSD: patch-configure,v 1.10 2017/04/17 10:40:28 ajacoutot Exp $
+
+*facepalm*
+
+--- configure.orig	Mon Apr 17 12:10:50 2017
++++ configure	Mon Apr 17 12:11:43 2017
+@@ -19464,16 +19464,16 @@ if test -n "$HOUSEKEEPING_CFLAGS"; then
+     if test -n "$PKG_CONFIG" && \
+     { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"gtk+-3.0
+ 		  gio-unix-2.0
+-		  libnotify >= LIBNOTIFY_REQUIRED_VERSION\""; } >&5
++		  libnotify >= $LIBNOTIFY_REQUIRED_VERSION\""; } >&5
+   ($PKG_CONFIG --exists --print-errors "gtk+-3.0
+ 		  gio-unix-2.0
+-		  libnotify >= LIBNOTIFY_REQUIRED_VERSION") 2>&5
++		  libnotify >= $LIBNOTIFY_REQUIRED_VERSION") 2>&5
+   ac_status=$?
+   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+   test $ac_status = 0; }; then
+   pkg_cv_HOUSEKEEPING_CFLAGS=`$PKG_CONFIG --cflags "gtk+-3.0
+ 		  gio-unix-2.0
+-		  libnotify >= LIBNOTIFY_REQUIRED_VERSION" 2>/dev/null`
++		  libnotify >= $LIBNOTIFY_REQUIRED_VERSION" 2>/dev/null`
+ 		      test "x$?" != "x0" && pkg_failed=yes
+ else
+   pkg_failed=yes
+@@ -19487,16 +19487,16 @@ if test -n "$HOUSEKEEPING_LIBS"; then
+     if test -n "$PKG_CONFIG" && \
+     { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"gtk+-3.0
+ 		  gio-unix-2.0
+-		  libnotify >= LIBNOTIFY_REQUIRED_VERSION\""; } >&5
++		  libnotify >= $LIBNOTIFY_REQUIRED_VERSION\""; } >&5
+   ($PKG_CONFIG --exists --print-errors "gtk+-3.0
+ 		  gio-unix-2.0
+-		  libnotify >= LIBNOTIFY_REQUIRED_VERSION") 2>&5
++		  libnotify >= $LIBNOTIFY_REQUIRED_VERSION") 2>&5
+   ac_status=$?
+   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+   test $ac_status = 0; }; then
+   pkg_cv_HOUSEKEEPING_LIBS=`$PKG_CONFIG --libs "gtk+-3.0
+ 		  gio-unix-2.0
+-		  libnotify >= LIBNOTIFY_REQUIRED_VERSION" 2>/dev/null`
++		  libnotify >= $LIBNOTIFY_REQUIRED_VERSION" 2>/dev/null`
+ 		      test "x$?" != "x0" && pkg_failed=yes
+ else
+   pkg_failed=yes
+@@ -19519,18 +19519,18 @@ fi
+         if test $_pkg_short_errors_supported = yes; then
+ 	        HOUSEKEEPING_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors --cflags --libs "gtk+-3.0
+ 		  gio-unix-2.0
+-		  libnotify >= LIBNOTIFY_REQUIRED_VERSION" 2>&1`
++		  libnotify >= $LIBNOTIFY_REQUIRED_VERSION" 2>&1`
+         else
+ 	        HOUSEKEEPING_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs "gtk+-3.0
+ 		  gio-unix-2.0
+-		  libnotify >= LIBNOTIFY_REQUIRED_VERSION" 2>&1`
++		  libnotify >= $LIBNOTIFY_REQUIRED_VERSION" 2>&1`
+         fi
+ 	# Put the nasty error message in config.log where it belongs
+ 	echo "$HOUSEKEEPING_PKG_ERRORS" >&5
+ 
+ 	as_fn_error $? "Package requirements (gtk+-3.0
+ 		  gio-unix-2.0
+-		  libnotify >= LIBNOTIFY_REQUIRED_VERSION) were not met:
++		  libnotify >= $LIBNOTIFY_REQUIRED_VERSION) were not met:
+ 
+ $HOUSEKEEPING_PKG_ERRORS
+ 

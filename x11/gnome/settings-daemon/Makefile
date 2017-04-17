@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.162 2017/04/13 07:38:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.163 2017/04/17 10:40:28 ajacoutot Exp $
 
 # XXX gcm-dmi.c:141:2: warning: #warning Please add dmi support for your OS
 
 COMMENT=		GNOME settings daemon
 
 GNOME_PROJECT=		gnome-settings-daemon
-GNOME_VERSION=		3.22.2
+GNOME_VERSION=		3.24.1
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
@@ -77,11 +77,6 @@ CONFIGURE_ARGS= 	--disable-gudev \
 FAKE_FLAGS=		desktopdir=${PREFIX}/share/examples/gnome-settings-daemon/xdg/autostart \
 			sysconfdir=${PREFIX}/share/examples/gnome-settings-daemon \
 			DBUS_SYS_DIR=${PREFIX}/share/examples/gnome-settings-daemon/dbus-1/system.d
-
-pre-configure:
-	sed -i -e 's,/etc/xdg,${SYSCONFDIR}/xdg,g' \
-		-e 's,/usr/share,${LOCALBASE}/share,g' \
-		${WRKSRC}/man/gnome-settings-daemon.xml
 
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/*.gschema.override \
