@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.475 2017/04/17 17:57:17 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.476 2017/04/17 17:58:31 jasper Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -952,6 +952,7 @@ my $obsolete_reason = {
 	'gogo' => 3,
 	'spectemu' => 3,
 	'pinpoint' => 3,
+	'anjuta' => 3,
 };
 
 # reasons for obsolete packages
