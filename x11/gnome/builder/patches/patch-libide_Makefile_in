@@ -1,0 +1,14 @@
+$OpenBSD: patch-libide_Makefile_in,v 1.3 2017/04/17 14:45:58 ajacoutot Exp $
+
+cc: error: unrecognized command line option '--no-as-needed'
+
+--- libide/Makefile.in.orig	Mon Apr 17 15:38:51 2017
++++ libide/Makefile.in	Mon Apr 17 15:38:59 2017
+@@ -1790,7 +1790,6 @@ libide_1_0_la_LDFLAGS = \
+ 	$(OPTIMIZE_LDFLAGS)                                                 \
+ 	-avoid-version                                                      \
+ 	-no-undefined                                                       \
+-	--no-as-needed                                                      \
+ 	-export-symbols-regex '^(ide_|_ide_).*'                             \
+ 	$(NULL)
+ 

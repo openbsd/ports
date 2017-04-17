@@ -1,6 +1,6 @@
-$OpenBSD: patch-libide_util_ide-posix_c,v 1.1 2016/10/31 15:02:09 ajacoutot Exp $
---- libide/util/ide-posix.c.orig	Mon Oct 31 15:30:27 2016
-+++ libide/util/ide-posix.c	Mon Oct 31 15:40:41 2016
+$OpenBSD: patch-libide_util_ide-posix_c,v 1.2 2017/04/17 14:45:58 ajacoutot Exp $
+--- libide/util/ide-posix.c.orig	Fri Mar 24 00:38:30 2017
++++ libide/util/ide-posix.c	Mon Apr 17 15:08:31 2017
 @@ -21,7 +21,11 @@
  #include <sys/user.h>
  #include <sys/utsname.h>
@@ -13,7 +13,7 @@ $OpenBSD: patch-libide_util_ide-posix_c,v 1.1 2016/10/31 15:02:09 ajacoutot Exp 
  
  #include "ide-posix.h"
  
-@@ -56,6 +60,7 @@ ide_get_system_page_size (void)
+@@ -92,6 +96,7 @@ ide_get_system_page_size (void)
   * Returns: (transfer full): A newly allocated string containing the
   *   expansion. A copy of the input string upon failure to expand.
   */
@@ -21,7 +21,7 @@ $OpenBSD: patch-libide_util_ide-posix_c,v 1.1 2016/10/31 15:02:09 ajacoutot Exp 
  gchar *
  ide_path_expand (const gchar *path)
  {
-@@ -80,6 +85,33 @@ ide_path_expand (const gchar *path)
+@@ -116,6 +121,33 @@ ide_path_expand (const gchar *path)
  
    return ret;
  }

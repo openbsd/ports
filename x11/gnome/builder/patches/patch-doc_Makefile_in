@@ -1,0 +1,16 @@
+$OpenBSD: patch-doc_Makefile_in,v 1.1 2017/04/17 14:45:58 ajacoutot Exp $
+
+XXX fix + push upstream
+Drop option specific to GNU cp(1).
+
+--- doc/Makefile.in.orig	Mon Apr 17 16:07:51 2017
++++ doc/Makefile.in	Mon Apr 17 16:07:59 2017
+@@ -881,7 +881,7 @@ dist-hook:
+ install-data-hook:
+ 	if test -d "$(srcdir)/html"; then                            \
+ 		$(MKDIR_P) "$(DESTDIR)$(docdir)/html" ;              \
+-		cp -R --no-preserve=all $(srcdir)/html/* "$(DESTDIR)$(docdir)/html/" ; \
++		cp -R $(srcdir)/html/* "$(DESTDIR)$(docdir)/html/" ; \
+ 	fi
+ 
+ uninstall-local:
