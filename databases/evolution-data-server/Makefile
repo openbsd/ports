@@ -1,24 +1,23 @@
-# $OpenBSD: Makefile,v 1.221 2017/04/10 11:45:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.222 2017/04/17 11:59:53 ajacoutot Exp $
 
 # XXX add libphonenumber support when a cpp release is out
 
 COMMENT=		unified backend for PIM programs
 
 GNOME_PROJECT=		evolution-data-server
-GNOME_VERSION=		3.22.7
-REVISION=		0
+GNOME_VERSION=		3.24.1
 
 CATEGORIES=		databases productivity
 
-SHARED_LIBS +=  camel-1.2            39.0     # 59.0
-SHARED_LIBS +=  edataserver-1.2      20.1     # 22.0
-SHARED_LIBS +=  ebackend-1.2         6.0      # 10.0
-SHARED_LIBS +=  edataserverui-1.2    2.0      # 1.0
-SHARED_LIBS +=  ebook-contacts-1.2   3.0      # 2.0
-SHARED_LIBS +=  edata-book-1.2       17.0     # 25.0
-SHARED_LIBS +=  ebook-1.2            20.0     # 19.1
-SHARED_LIBS +=  ecal-1.2             17.0     # 19.0
-SHARED_LIBS +=  edata-cal-1.2        20.0     # 28.0
+SHARED_LIBS +=  camel-1.2            39.0
+SHARED_LIBS +=  edataserver-1.2      20.1
+SHARED_LIBS +=  ebackend-1.2         6.0
+SHARED_LIBS +=  edataserverui-1.2    2.0
+SHARED_LIBS +=  ebook-contacts-1.2   3.0
+SHARED_LIBS +=  edata-book-1.2       17.0
+SHARED_LIBS +=  ebook-1.2            20.0
+SHARED_LIBS +=  ecal-1.2             17.0
+SHARED_LIBS +=  edata-cal-1.2        20.0
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 		Antoine Jacoutot <ajacoutot@openbsd.org>
@@ -26,26 +25,16 @@ MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += EGL GL ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage
-WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xt Xxf86vm atk-1.0
-WANTLIB += atk-bridge-2.0 atspi c cairo cairo-gobject crypto curl
-WANTLIB += db dbus-1 drm enchant epoxy estdc++ expat ffi fontconfig
-WANTLIB += freetype gbm gck-1 gcr-base-3 gcr-ui-3 gcrypt gdata
-WANTLIB += gdk-3 gdk_pixbuf-2.0 geocode-glib gio-2.0 glapi glib-2.0
-WANTLIB += gmodule-2.0 goa-1.0 gobject-2.0 gpg-error graphite2
-WANTLIB += gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstfft-1.0 gstpbutils-1.0
-WANTLIB += gstreamer-1.0 gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3
-WANTLIB += gweather-3 harfbuzz harfbuzz-icu hyphen ical icalss
-WANTLIB += icalvcal iconv icudata icui18n icuuc intl javascriptcoregtk-4.0
-WANTLIB += jpeg json-glib-1.0 lber-2.4 ldap-2.4 lzma m nghttp2
-WANTLIB += notify nspr4 nss3 nssutil3 oauth orc-0.4 p11-kit pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 plc4 plds4
-WANTLIB += png pthread pthread-stubs sasl2 secret-1 smime3 softokn3
-WANTLIB += soup-2.4 sqlite3 ssl ssl3 ${LIBCXX} webkit2gtk-4.0 webp
-WANTLIB += xcb xcb-dri2 xcb-glx xcb-render xcb-shm xcb-xfixes
-WANTLIB += xml2 xslt z
+WANTLIB += atk-1.0 c cairo cairo-gobject db gck-1 gcr-base-3 gcr-ui-3
+WANTLIB += gdata gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
+WANTLIB += goa-1.0 gobject-2.0 gtk-3 gweather-3 ical icalss icalvcal
+WANTLIB += icudata icui18n icuuc intl javascriptcoregtk-4.0 json-glib-1.0
+WANTLIB += lber ldap m nspr4 nss3 p11-kit pango-1.0 pangocairo-1.0
+WANTLIB += plc4 plds4 pthread secret-1 smime3 softokn3 soup-2.4
+WANTLIB += sqlite3 ssl3 ${LIBCXX} webkit2gtk-4.0 xml2 z
 
-MODULES=		devel/dconf \
+MODULES=		devel/cmake \
+			devel/dconf \
 			lang/python \
 			x11/gnome
 
@@ -54,7 +43,6 @@ BUILD_DEPENDS=		devel/gperf
 LIB_DEPENDS= 		databases/db/v4 \
 			databases/openldap \
 			devel/libgdata \
-			net/liboauth \
 			textproc/libical \
 			www/webkitgtk4 \
 			x11/gnome/gcr \
@@ -64,23 +52,21 @@ LIB_DEPENDS= 		databases/db/v4 \
 MODPY_RUNDEP=		No
 MODGNOME_TOOLS=		gobject-introspection vala
 
-CONFIGURE_STYLE= 	gnu
-CONFIGURE_ENV=		DB_CFLAGS="-I${LOCALBASE}/include/db4" \
-			DB_LIBS="-ldb" \
-			ac_cv_path_DB_LOAD=${LOCALBASE}/bin/db4_load
-CONFIGURE_ARGS=		--with-openldap=${LOCALBASE}
+CONFIGURE_ARGS=		-DWITH_KRB5=OFF \
+			-DWITH_LIBDB_CFLAGS="-I${LOCALBASE}/include/db4" \
+			-DWITH_LIBDB_LIBS="-L${LOCALBASE}/lib -ldb" \
+			-DWITH_OPENLDAP=${LOCALBASE} \
+			-DENABLE_INTROSPECTION=ON \
+			-DENABLE_VALA_BINDINGS=ON
+
+CONFIGURE_ENV=		LDFLAGS="-L${X11BASE}/lib"
 
 # needs signond, libsignon-glib -- Ubuntu/Meego
-CONFIGURE_ARGS +=	--disable-uoa
+CONFIGURE_ARGS +=	-DENABLE_UOA=OFF
 
 pre-configure:
+	${SUBST_CMD} ${WRKSRC}/CMakeLists.txt
 	sed -i 's,/usr/sbin/imapd,${LOCALBASE}/libexec/imapd,g' \
-		${WRKSRC}/camel/providers/imapx/camel-imapx-settings.c \
-		${WRKSRC}/docs/reference/camel/html/CamelIMAPXSettings.html
-# XXX cc1plus: error: unrecognized command line option "-Wnoexcept"
-	sed -i 's,-Wnoexcept,,' ${WRKSRC}/configure
-
-post-install:
-	rm ${PREFIX}/lib/evolution-data-server/*/*.{a,la}
+		${WRKSRC}/src/camel/providers/imapx/camel-imapx-settings.c
 
 .include <bsd.port.mk>

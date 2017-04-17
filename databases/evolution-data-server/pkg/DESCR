@@ -1,8 +1,13 @@
-The Evolution Data Server package provides a unified backend for
-programs that work with contacts, tasks, and calendar information. It
-was originally developed for Evolution (hence the name), but is now used
-by other packages as well.
+The Evolution Data Server package provides a unified backend for programs that
+work with contacts, tasks, and calendar information. It was originally developed
+for Evolution (hence the name), but is now used by other packages as well.
 
-The Evolution Data Server provides a single database for common,
-desktop-wide information, such as a user's address book or calendar
-events.
+The Evolution Data Server provides a single database for common, desktop-wide
+information, such as a user's address book or calendar events.
+
+By using the evolution-data-server, other GNOME applications are integrating
+with Evolution.
+
+  * gnome-panel calendar applet lists your appointments and tasks.
+  * Synchronize your Pidgin buddies with your Evolution contacts.
+  * View Planner files as Evolution task lists.
