@@ -1,11 +1,11 @@
-$OpenBSD: patch-libgnome-desktop_gnome-desktop-thumbnail_c,v 1.8 2016/04/25 11:12:17 ajacoutot Exp $
+$OpenBSD: patch-libgnome-desktop_gnome-desktop-thumbnail_c,v 1.9 2017/04/17 09:35:37 ajacoutot Exp $
 
 XXX push upstream
 gnome-desktop-thumbnail.c:1507: warning: format '%ld' expects type 'long int', but argument 4 has type 'time_t'
 
---- libgnome-desktop/gnome-desktop-thumbnail.c.orig	Thu Mar  3 16:36:38 2016
-+++ libgnome-desktop/gnome-desktop-thumbnail.c	Mon Apr 25 13:04:32 2016
-@@ -1502,7 +1502,7 @@ save_thumbnail (GdkPixbuf  *pixbuf,
+--- libgnome-desktop/gnome-desktop-thumbnail.c.orig	Mon Feb 13 23:54:01 2017
++++ libgnome-desktop/gnome-desktop-thumbnail.c	Mon Apr 17 11:30:59 2017
+@@ -1217,7 +1217,7 @@ save_thumbnail (GdkPixbuf  *pixbuf,
      goto out;
    close (tmp_fd);
  
