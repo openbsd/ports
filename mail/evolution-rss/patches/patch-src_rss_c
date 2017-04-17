@@ -1,12 +1,17 @@
-$OpenBSD: patch-src_rss_c,v 1.8 2016/10/31 12:34:30 ajacoutot Exp $
+$OpenBSD: patch-src_rss_c,v 1.9 2017/04/17 16:53:25 ajacoutot Exp $
+
+From c78ce3988f68d030b01723fa33ebb64d7a86ed7d Mon Sep 17 00:00:00 2001
+From: Milan Crha <mcrha@redhat.com>
+Date: Tue, 8 Nov 2016 15:56:44 +0100
+Subject: Bug 764065 - [Camel] Port more classes to GObject
 
 From 7741ef0cf3327cb5c719912358443b6aef3bdb59 Mon Sep 17 00:00:00 2001
 From: Milan Crha <mcrha@redhat.com>
 Date: Wed, 17 Aug 2016 18:43:48 +0200
 Subject: Adapt to changes in evolution 3.21.90
 
---- src/rss.c.orig	Thu Mar 26 09:41:11 2015
-+++ src/rss.c	Mon Oct 31 13:19:55 2016
+--- src/rss.c.orig	Mon Apr 17 18:45:46 2017
++++ src/rss.c	Mon Apr 17 18:45:42 2017
 @@ -1302,15 +1302,24 @@ org_gnome_evolution_presend (EPlugin *ep, EMEventTarge
  
  #if EVOLUTION_VERSION >= 31303
@@ -49,4 +54,111 @@ Subject: Adapt to changes in evolution 3.21.90
 +#endif
  #else
  		gtkhtml_editor_set_text_html((GtkhtmlEditor *)t->composer, (gchar *)buff, size);
+ #endif
+@@ -3933,7 +3951,8 @@ create_mail(create_feed *CF)
+ #endif
+ 
+ 	info = camel_message_info_new(NULL);
+-	camel_message_info_set_flags(info, CAMEL_MESSAGE_SEEN, 1);
++	/* Unset the Seen flag, thus the messages are marked as new/unread */
++	camel_message_info_set_flags(info, CAMEL_MESSAGE_SEEN, 0);
+ 
+ 	tmp = decode_entities(CF->subj);
+ 	tmp2 = markup_decode(tmp);
+@@ -4221,7 +4240,11 @@ out:
+ 	camel_object_unref(mail_folder);
+ #endif
+ #if (DATASERVER_VERSION >= 3011001)
++	#if (DATASERVER_VERSION >= 3023002)
++	g_clear_object (&info);
++	#else
+ 	camel_message_info_unref(info);
++	#endif
+ #else
+ 	camel_message_info_free(info);
+ #endif
+@@ -4699,10 +4722,18 @@ delete_oldest_article(CamelFolder *folder, guint unrea
+ 		if (info) {
+ 			if (rf->current_uid && !strcmp(rf->current_uid, uids->pdata[i]))
+ 				goto out;
++			#if (DATASERVER_VERSION >= 3023002)
++			date = camel_message_info_get_date_sent (info);
++			#else
+ 			date = camel_message_info_date_sent(info);
++			#endif
+ 			if (!date)
+ 				goto out;
++			#if (DATASERVER_VERSION >= 3023002)
++			flags = camel_message_info_get_flags (info);
++			#else
+ 			flags = camel_message_info_flags(info);
++			#endif
+ 			if (flags & CAMEL_MESSAGE_FLAGGED)
+ 				goto out;
+ 			if (flags & CAMEL_MESSAGE_DELETED)
+@@ -4735,7 +4766,11 @@ delete_oldest_article(CamelFolder *folder, guint unrea
+ //			i, j, q, min_date, ctime(&min_date), imax);
+ out:
+ #if (DATASERVER_VERSION >= 3011001)
++		#if (DATASERVER_VERSION >= 3023002)
++		g_clear_object (&info);
++		#else
+ 		camel_message_info_unref(info);
++		#endif
+ #else
+ 		camel_message_info_free(info);
+ #endif
+@@ -4822,7 +4857,11 @@ get_feed_age(RDF *r, gpointer name)
+ 			}
+ 			if (!match) {
+ 				info = camel_folder_get_message_info(folder, uids->pdata[i]);
++				#if (DATASERVER_VERSION >= 3023002)
++				flags = camel_message_info_get_flags (info);
++				#else
+ 				flags = camel_message_info_flags(info);
++				#endif
+ 				if ((del_unread) && !(flags & CAMEL_MESSAGE_FLAGGED)) {
+ 					gchar *feed_dir, *feed_name;
+ 					camel_folder_delete_message(folder, uids->pdata[i]);
+@@ -4835,7 +4874,11 @@ get_feed_age(RDF *r, gpointer name)
+ 					g_free(feed_name);
+ 				}
+ #if (DATASERVER_VERSION >= 3011001)
++				#if (DATASERVER_VERSION >= 3023002)
++				g_clear_object (&info);
++				#else
+ 				camel_message_info_unref(info);
++				#endif
+ #else
+ 				camel_folder_free_message_info(folder, info);
+ #endif
+@@ -4864,9 +4907,17 @@ get_feed_age(RDF *r, gpointer name)
+ 			if (info == NULL)
+ 				continue;
+ 			if (rf->current_uid && strcmp(rf->current_uid, uids->pdata[i])) {
++				#if (DATASERVER_VERSION >= 3023002)
++				date = camel_message_info_get_date_sent (info);
++				#else
+ 				date = camel_message_info_date_sent(info);
++				#endif
+ 				if (date < now - del_days * 86400) {
++					#if (DATASERVER_VERSION >= 3023002)
++					flags = camel_message_info_get_flags (info);
++					#else
+ 					flags = camel_message_info_flags(info);
++					#endif
+ 					if (!(flags & CAMEL_MESSAGE_SEEN)) {
+ 						if ((del_unread) && !(flags & CAMEL_MESSAGE_FLAGGED)) {
+ 							camel_folder_delete_message(folder, uids->pdata[i]);
+@@ -4878,7 +4929,11 @@ get_feed_age(RDF *r, gpointer name)
+ 				}
+ 			}
+ #if (DATASERVER_VERSION >= 3011001)
++			#if (DATASERVER_VERSION >= 3023002)
++			g_clear_object (&info);
++			#else
+ 			camel_message_info_unref(info);
++			#endif
+ #else
+ 			camel_folder_free_message_info(folder, info);
  #endif
