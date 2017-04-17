@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.151 2017/04/13 07:38:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.152 2017/04/17 12:29:36 jasper Exp $
 
 COMMENT=	GNOME terminal
 
 GNOME_PROJECT=	gnome-terminal
-GNOME_VERSION=	3.22.2
+GNOME_VERSION=	3.24.1
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -18,7 +18,7 @@ WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png pthread pthread-stubs vte-2.91 xcb xcb-render
 WANTLIB += xcb-shm z nautilus-extension iconv intl idn2
 WANTLIB += epoxy gmp gnutls hogweed nettle p11-kit tasn1
-WANTLIB += archive bz2 crypto gnome-autoar-0 lz4 lzma lzo2 pcre2-8
+WANTLIB += archive bz2 crypto gnome-autoar-0 lz4 lzma pcre2-8
 
 MODULES=	devel/dconf \
 		x11/gnome
