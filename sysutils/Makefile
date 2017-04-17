@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.437 2017/03/24 19:13:38 bentley Exp $
+# $OpenBSD: Makefile,v 1.438 2017/04/17 01:18:17 jca Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -266,6 +266,7 @@
      SUBDIR += socket
      SUBDIR += socklog
      SUBDIR += sshfs-fuse
+     SUBDIR += sshpass
      SUBDIR += sslmate
      SUBDIR += stan
      SUBDIR += stow
