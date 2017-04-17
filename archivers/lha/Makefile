@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.35 2016/06/05 11:02:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.36 2017/04/17 14:32:55 espie Exp $
 
 COMMENT=	archive files using LZW compression (.lzh files)
 
 DISTNAME=	lha-1.14i-ac20050924p1
 PKGNAME=	lha-1.14i.ac20050924.1
-REVISION=	1
+REVISION=	2
 CATEGORIES=	archivers
 
 HOMEPAGE=       https://lha.osdn.jp/
