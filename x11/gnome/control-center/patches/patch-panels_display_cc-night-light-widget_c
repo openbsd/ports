@@ -1,0 +1,19 @@
+$OpenBSD: patch-panels_display_cc-night-light-widget_c,v 1.1 2017/04/17 11:20:21 ajacoutot Exp $
+
+cc-night-light-widget.c:282: error: 'for' loop initial declaration used outside C99 mode
+
+--- panels/display/cc-night-light-widget.c.orig	Mon Apr 17 13:05:44 2017
++++ panels/display/cc-night-light-widget.c	Mon Apr 17 13:07:32 2017
+@@ -276,10 +276,11 @@ cc_night_light_widget_draw (GtkWidget *widget, cairo_t
+ 
+   /* draw each color line */
+   gdouble subsect = 24.f / (gdouble) rect.width;
++  guint x;
+   if (gtk_widget_is_sensitive (widget))
+     {
+       cairo_set_line_width (cr, 1);
+-      for (guint x = 0; x < rect.width; x += 1)
++      for (x = 0; x < rect.width; x += 1)
+         {
+           gdouble frac_hour = subsect * x;
+           if (is_frac_day_between (frac_hour, self->to - 1, self->to))

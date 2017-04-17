@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.25 2017/04/13 07:38:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2017/04/17 11:20:21 ajacoutot Exp $
 
 # XXX change proxy settings without network-manager?
 
 COMMENT=		GNOME control center
 
 GNOME_PROJECT=		gnome-control-center
-GNOME_VERSION=		3.22.2
+GNOME_VERSION=		3.24.1
 
 CATEGORIES=		x11
 
@@ -95,7 +95,7 @@ CONFIGURE_STYLE=	gnu
 # http://permalink.gmane.org/gmane.comp.gnome.desktop/51950
 # https://bugzilla.gnome.org/show_bug.cgi?id=770758#c3
 # https://bugzilla.gnome.org/show_bug.cgi?id=766329
-# https://bugzilla.gnome.org/show_bug.cgi?id=772736 (systemd --user
+# https://bugzilla.gnome.org/show_bug.cgi?id=772736 (systemd --user)
 post-install:
 	rm ${PREFIX}/share/applications/gnome-sharing-panel.desktop
 
