@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.79 2017/01/19 19:32:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.80 2017/04/17 17:29:46 jasper Exp $
 
 # XXX
 # sndio: what to do with (channel) map
@@ -111,7 +111,7 @@ AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.15
 BUILD_DEPENDS +=	${MODGNU_AUTOMAKE_DEPENDS} \
 			${MODGNU_AUTOCONF_DEPENDS}
-BUILD_DEPENDS +=	devel/libtool # needs needs libtoolize
+BUILD_DEPENDS +=	devel/libtool # needs libtoolize
 
 post-extract:
 	cp ${FILESDIR}/module-sndio*.{c,h} ${WRKSRC}/src/modules/
