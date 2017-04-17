@@ -1,0 +1,17 @@
+$OpenBSD: patch-prog_checker_string_hpp,v 1.1 2017/04/17 21:19:22 sthen Exp $
+
+fix with clang; from https://svnweb.freebsd.org/ports?view=revision&revision=343830
+
+should be obsoleted by upstream patch targetted for 0.60.7
+https://github.com/GNUAspell/aspell/commit/502e8f99a9c7c63344f5acdcb96ddecd30ee32f1
+
+--- prog/checker_string.hpp.orig	Sat Jul  2 22:09:09 2011
++++ prog/checker_string.hpp	Mon Apr 17 22:06:23 2017
+@@ -6,6 +6,7 @@
+ 
+ #include <stdio.h>
+ 
++#include "errors.hpp"
+ #include "aspell.h"
+ 
+ #include "vector.hpp"
