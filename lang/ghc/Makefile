@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.144 2017/02/28 00:07:10 kili Exp $
+# $OpenBSD: Makefile,v 1.145 2017/04/17 17:21:49 espie Exp $
 
 COMMENT =		compiler for the functional language Haskell
 
@@ -12,7 +12,7 @@ COMMENT =		compiler for the functional language Haskell
 NO_CCACHE =		Yes
 
 DISTNAME =		ghc-${MODGHC_VER}
-REVISION =		7
+REVISION =		8
 CATEGORIES =		lang devel
 HOMEPAGE =		https://www.haskell.org/ghc/
 

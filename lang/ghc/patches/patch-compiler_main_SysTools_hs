@@ -1,0 +1,13 @@
+$OpenBSD: patch-compiler_main_SysTools_hs,v 1.1 2017/04/17 17:21:49 espie Exp $
+--- compiler/main/SysTools.hs.orig	Mon Apr 17 00:59:34 2017
++++ compiler/main/SysTools.hs	Mon Apr 17 01:00:26 2017
+@@ -890,6 +890,9 @@ getCompilerInfo' dflags = do
+         -- Regular clang
+         | any ("clang version" `isPrefixOf`) stde =
+           return Clang
++        -- stupid thingy !!!!
++        | any ("OpenBSD clang version" `isPrefixOf`) stde =
++          return Clang
+         -- XCode 5.1 clang
+         | any ("Apple LLVM version 5.1" `isPrefixOf`) stde =
+           return AppleClang51
