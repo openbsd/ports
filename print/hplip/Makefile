@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.153 2017/04/10 11:46:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.154 2017/04/18 18:18:35 ajacoutot Exp $
 
 PORTROACH=		skipv:${V}_py2.5
 
@@ -9,7 +9,7 @@ COMMENT-hpcups=		HP native CUPS driver
 COMMENT-hpijs=		HP ghostscript driver (spooler independent)
 COMMENT-gui=		HPLIP graphical tools
 
-V=			3.16.11
+V=			3.17.4
 DISTNAME=		hplip-${V}
 SUBST_VARS=		V
 
@@ -19,12 +19,6 @@ PKGNAME-hpaio=		hpaio-${V}
 PKGNAME-hpcups=		hpcups-${V}
 PKGNAME-hpijs=		hpijs-${V}
 PKGNAME-gui=		hplip-gui-${V}
-REVISION-common=	0
-REVISION-gui=		0
-REVISION-hpaio=		0
-REVISION-hpcups=	0
-REVISION-hpijs=		0
-REVISION-main=		0
 
 SHARED_LIBS +=  hpdiscovery          0.0      # 0.1
 SHARED_LIBS +=  hpmud                2.0      # 0.6
@@ -54,7 +48,7 @@ cWANTLIB += crypto m pthread
 WANTLIB-main += ${cWANTLIB}
 WANTLIB-main += avahi-client avahi-common cups dbus-1 hpmud netsnmp
 WANTLIB-main += ffi gmp gnutls hogweed nettle p11-kit tasn1 usb-1.0 z
-WANTLIB-main += hpdiscovery hpipp idn2 iconv intl
+WANTLIB-main += hpdiscovery hpipp idn2 iconv intl unistring
 
 LIB_DEPENDS-main=	print/cups,-libs \
 			print/hplip,-common
@@ -83,7 +77,8 @@ WANTLIB-hpaio += ${cWANTLIB}
 WANTLIB-hpaio += avahi-client avahi-common cups dbus-1 ffi gmp gnutls
 WANTLIB-hpaio += hogweed hpip hpipp hpmud jpeg netsnmp nettle p11-kit
 WANTLIB-hpaio += sane tasn1 tiff usb usb-1.0 z hpdiscovery
-WANTLIB-hpaio += v4l1 v4l2 v4lconvert idn2 iconv intl
+WANTLIB-hpaio += v4l1 v4l2 v4lconvert idn2 iconv intl execinfo
+WANTLIB-hpaio += unistring
 
 LIB_DEPENDS-hpaio=	print/hplip,-common \
 			print/cups,-libs \
@@ -96,6 +91,7 @@ WANTLIB-hpcups += ${cWANTLIB} z netsnmp hpdiscovery iconv intl
 WANTLIB-hpcups += c jpeg ${LIBCXX} hpip cups cupsimage dbus-1 idn2
 WANTLIB-hpcups += z usb-1.0 avahi-client avahi-common hpmud
 WANTLIB-hpcups += ffi gmp gnutls hogweed nettle p11-kit tasn1
+WANTLIB-hpcups += unistring
 
 LIB_DEPENDS-hpcups=	graphics/jpeg \
 			print/hplip,-common \
