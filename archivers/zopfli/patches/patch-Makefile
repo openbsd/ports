@@ -1,0 +1,14 @@
+$OpenBSD: patch-Makefile,v 1.1 2017/04/18 13:09:23 sthen Exp $
+--- Makefile.orig	Tue Apr 18 14:06:16 2017
++++ Makefile	Tue Apr 18 14:06:23 2017
+@@ -1,8 +1,8 @@
+ CC = gcc
+ CXX = g++
+ 
+-CFLAGS = -W -Wall -Wextra -ansi -pedantic -lm -O2
+-CXXFLAGS = -W -Wall -Wextra -ansi -pedantic -O2
++CFLAGS = -W -Wall -Wextra -ansi -pedantic -lm $(COPTFLAGS)
++CXXFLAGS = -W -Wall -Wextra -ansi -pedantic $(COPTFLAGS)
+ 
+ ZOPFLILIB_SRC = src/zopfli/blocksplitter.c src/zopfli/cache.c\
+                 src/zopfli/deflate.c src/zopfli/gzip_container.c\
