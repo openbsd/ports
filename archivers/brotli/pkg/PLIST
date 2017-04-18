@@ -1,3 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/08/31 14:20:57 pascal Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/04/18 16:37:46 pascal Exp $
 @conflict bro-*
 @bin bin/bro
+include/brotli/
+include/brotli/decode.h
+include/brotli/encode.h
+include/brotli/port.h
+include/brotli/types.h
+@lib lib/libbrotlicommon.so.${LIBbrotlicommon_VERSION}
+@lib lib/libbrotlidec.so.${LIBbrotlidec_VERSION}
+@lib lib/libbrotlienc.so.${LIBbrotlienc_VERSION}
+lib/pkgconfig/libbrotlicommon.pc
+lib/pkgconfig/libbrotlidec.pc
+lib/pkgconfig/libbrotlienc.pc
