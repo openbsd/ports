@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2016/11/21 13:51:28 benoit Exp $
+# $OpenBSD: Makefile,v 1.18 2017/04/18 20:25:13 benoit Exp $
 
 COMMENT =	interface to bzip2 compression library
 
-DISTNAME =	Compress-Bzip2-2.25
+DISTNAME =	Compress-Bzip2-2.26
 CATEGORIES =	archivers
 
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
