@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2017/02/02 21:38:08 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.4 2017/04/18 13:53:09 sthen Exp $
 icinga-web2/modules/director/
 icinga-web2/modules/director/.gitignore
 icinga-web2/modules/director/.gitlab-ci.yml
@@ -397,6 +397,7 @@ icinga-web2/modules/director/library/Director/DataType/DataTypeString.php
 icinga-web2/modules/director/library/Director/DataType/DataTypeTime.php
 icinga-web2/modules/director/library/Director/Db/
 icinga-web2/modules/director/library/Director/Db.php
+icinga-web2/modules/director/library/Director/Db/AppliedServiceSetLoader.php
 icinga-web2/modules/director/library/Director/Db/Cache/
 icinga-web2/modules/director/library/Director/Db/Cache/CustomVariableCache.php
 icinga-web2/modules/director/library/Director/Db/Cache/GroupMembershipCache.php
@@ -691,6 +692,7 @@ icinga-web2/modules/director/schema/mysql-migrations/upgrade_125.sql
 icinga-web2/modules/director/schema/mysql-migrations/upgrade_126.sql
 icinga-web2/modules/director/schema/mysql-migrations/upgrade_127.sql
 icinga-web2/modules/director/schema/mysql-migrations/upgrade_128.sql
+icinga-web2/modules/director/schema/mysql-migrations/upgrade_129.sql
 icinga-web2/modules/director/schema/mysql-migrations/upgrade_63.sql
 icinga-web2/modules/director/schema/mysql-migrations/upgrade_64.sql
 icinga-web2/modules/director/schema/mysql-migrations/upgrade_65.sql
@@ -832,4 +834,5 @@ icinga-web2/modules/director/test/php/library/Director/Objects/rendered/service4
 icinga-web2/modules/director/test/php/library/Director/Objects/rendered/service5.out
 icinga-web2/modules/director/test/php/library/Director/Objects/rendered/service6.out
 icinga-web2/modules/director/test/php/library/Director/Objects/rendered/service7.out
+icinga-web2/modules/director/test/phpunit-compat.php
 icinga-web2/modules/director/test/travis-prepare.sh
