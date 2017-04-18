@@ -1,0 +1,28 @@
+$OpenBSD: patch-src_fmopl_c,v 1.1 2017/04/18 21:13:03 espie Exp $
+--- src/fmopl.c.orig	Tue Apr 18 12:15:41 2017
++++ src/fmopl.c	Tue Apr 18 12:16:56 2017
+@@ -401,6 +401,8 @@ INLINE void set_mul(FM_OPL *OPL,int slot,int v)
+ 	CALC_FCSLOT(CH,SLOT);
+ }
+ 
++extern void set_mul(FM_OPL *, int, int);
++
+ /* set ksl & tl */
+ INLINE void set_ksl_tl(FM_OPL *OPL,int slot,int v)
+ {
+@@ -494,6 +496,7 @@ INLINE void OPL_CALC_CH( OPL_CH *CH )
+ 		outd[0] += OP_OUT(SLOT,env_out, feedback2);
+ 	}
+ }
++extern void OPL_CALC_CH( OPL_CH * );
+ 
+ /* ---------- calcrate rythm block ---------- */
+ #define WHITE_NOISE_db 6.0
+@@ -579,6 +582,7 @@ INLINE void OPL_CALC_RH( OPL_CH *CH )
+ 	if( env_hh  < EG_ENT-1 )
+ 		outd[0] += OP_OUT(SLOT7_2,env_hh,tone8)*2;
+ }
++extern void OPL_CALC_RH( OPL_CH * );
+ 
+ /* ----------- initialize time tabls ----------- */
+ static void init_timetables( FM_OPL *OPL , int ARRATE , int DRRATE )

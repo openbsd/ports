@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2017/04/10 11:45:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2017/04/18 21:13:03 espie Exp $
 
 COMMENT =	AdLib sound player library
 
 DISTNAME =	adplug-2.2.1
-SHARED_LIBS +=	adplug	0.0	# 2.2
+SHARED_LIBS +=	adplug	0.1	# 2.2
 CATEGORIES =	audio
+REVISION =	0
 
 HOMEPAGE =	http://adplug.github.io/
 

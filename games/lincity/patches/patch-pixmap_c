@@ -1,0 +1,13 @@
+$OpenBSD: patch-pixmap_c,v 1.1 2017/04/18 21:13:03 espie Exp $
+--- pixmap.c.orig	Tue Apr 18 07:59:36 2017
++++ pixmap.c	Tue Apr 18 09:43:55 2017
+@@ -395,6 +395,9 @@ pixmap_index (int x, int y)
+ {
+     return y*pixmap_width + x;
+ }
++
++/* also mark it as extern for C99 */
++extern int pixmap_index(int, int);
+ #endif
+ 
+ int 
