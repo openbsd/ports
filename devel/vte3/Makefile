@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2017/04/17 07:51:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.78 2017/04/18 04:38:15 jasper Exp $
 
 COMMENT=		terminal emulation library
 
@@ -34,8 +34,9 @@ MODULES=		x11/gnome \
 MODGCC4_ARCHS=		*
 MODGCC4_LANGS=		c c++
 
+BUILD_DEPENDS=		devel/gperf
 # src/box_drawing_generate.sh
-BUILD_DEPENDS=		shells/bash
+BUILD_DEPENDS+=		shells/bash
 
 LIB_DEPENDS=		devel/pcre2>=10.22p0 \
 			security/gnutls \
