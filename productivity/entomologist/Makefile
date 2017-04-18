@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.12 2017/04/10 11:46:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2017/04/18 16:52:33 landry Exp $
 
 COMMENT =	bug tracker client
 DISTNAME =	entomologist-1.1
 CATEGORIES =	productivity
-REVISION =	0
+REVISION =	1
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=entomologist/}
-HOMEPAGE =	http://entomologist.sourceforge.net
+HOMEPAGE =	https://sourceforge.net/projects/entomologist/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
