@@ -1,0 +1,11 @@
+$OpenBSD: patch-png2ico_cpp,v 1.1 2017/04/18 00:31:54 espie Exp $
+--- png2ico.cpp.orig	Tue Apr 18 02:28:04 2017
++++ png2ico.cpp	Tue Apr 18 02:28:22 2017
+@@ -33,6 +33,7 @@ Notes about transparent and inverted pixels:
+ 
+ 
+ #include <cstdio>
++#include <cstdlib>
+ #include <vector>
+ #include <climits>
+ 
