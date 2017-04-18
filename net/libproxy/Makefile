@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2017/04/17 20:45:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.54 2017/04/18 09:13:20 sthen Exp $
 
 COMMENT-main=		library handling all the details of proxy configuration
 COMMENT-webkit=		pacrunner libproxy plugin for webkit-based browsers
@@ -8,8 +8,8 @@ GH_PROJECT=		libproxy
 GH_TAGNAME=		0.4.14
 SUBST_VARS=		GH_TAGNAME
 
-REVISION-main=		1
-REVISION-webkit=	0
+REVISION-main=		2
+REVISION-webkit=	1
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-webkit=		${GH_PROJECT}-webkit-${GH_TAGNAME}
