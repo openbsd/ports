@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.586 2017/04/15 12:54:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.587 2017/04/18 20:45:28 naddy Exp $
 
      SUBDIR =
      SUBDIR += Xaw3d
@@ -87,7 +87,6 @@
      SUBDIR += gob2
      SUBDIR += goggles
      SUBDIR += golem
-     SUBDIR += gpointing-device-settings
      SUBDIR += grantlee
      SUBDIR += gromit
      SUBDIR += gtk+2
