@@ -1,6 +1,6 @@
-$OpenBSD: patch-fceux-server_server_cpp,v 1.1.1.1 2012/12/25 00:07:01 bentley Exp $
---- fceux-server/server.cpp.orig	Thu Dec 20 22:19:05 2012
-+++ fceux-server/server.cpp	Thu Dec 20 22:19:46 2012
+$OpenBSD: patch-fceux-server_server_cpp,v 1.2 2017/04/18 22:00:34 espie Exp $
+--- fceux-server/server.cpp.orig	Tue Apr 18 21:10:50 2017
++++ fceux-server/server.cpp	Tue Apr 18 23:55:53 2017
 @@ -51,7 +51,9 @@
  
  // MSG_NOSIGNAL and SOL_TCP have been depreciated on osx
@@ -11,3 +11,12 @@ $OpenBSD: patch-fceux-server_server_cpp,v 1.1.1.1 2012/12/25 00:07:01 bentley Ex
  #define SOL_TCP IPPROTO_TCP
  #endif
  
+@@ -114,7 +116,7 @@ int LoadConfigFile(char *fn)
+  if(fp=fopen(fn,"rb"))
+  {
+   char buf[256];
+-  while(fgets(buf, 256, fp) > 0)
++  while(fgets(buf, 256, fp) != NULL)
+   {
+    if(!strncasecmp(buf,"maxclients",strlen("maxclients")))
+     sscanf(buf,"%*s %d",&ServerConfig.MaxClients);
