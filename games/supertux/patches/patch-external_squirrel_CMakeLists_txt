@@ -1,13 +1,14 @@
-$OpenBSD: patch-external_squirrel_CMakeLists_txt,v 1.1 2016/01/21 16:04:47 pascal Exp $
---- external/squirrel/CMakeLists.txt.orig	Thu Jan 21 16:22:42 2016
-+++ external/squirrel/CMakeLists.txt	Thu Jan 21 16:22:56 2016
-@@ -81,9 +81,3 @@ GENERATE_EXPORT_HEADER( squirrel
- # use standardized variable name
- set(LIB_SUBDIR "lib${LIB_SUFFIX}"
- 	CACHE STRING "Subdirectory of prefix into which libraries are installed (e.g., lib32, lib64)")
--
--INSTALL(TARGETS squirrel
--    RUNTIME DESTINATION bin
--	ARCHIVE DESTINATION ${LIB_SUBDIR}
--	LIBRARY DESTINATION ${LIB_SUBDIR}
--	COMPONENT squirrel)
+$OpenBSD: patch-external_squirrel_CMakeLists_txt,v 1.2 2017/04/18 16:28:50 pascal Exp $
+--- external/squirrel/CMakeLists.txt.orig	Tue Apr 18 17:10:57 2017
++++ external/squirrel/CMakeLists.txt	Tue Apr 18 17:34:44 2017
+@@ -14,9 +14,7 @@ include_directories(${CMAKE_SOURCE_DIR}/include)
+ if(CMAKE_COMPILER_IS_GNUCXX)
+   set(SQ_FLAGS -fno-exceptions -fno-strict-aliasing -Wall -Wextra -pedantic -Wcast-qual)
+ 
+-  if(CMAKE_BUILD_TYPE STREQUAL "Release")
+-    set(SQ_FLAGS ${SQ_FLAGS} -O3)
+-  elseif(CMAKE_BUILD_TYPE STREQUAL "RelWithDebInfo")
++  if(CMAKE_BUILD_TYPE STREQUAL "RelWithDebInfo")
+     set(SQ_FLAGS ${SQ_FLAGS} -O3 -g)
+   elseif(CMAKE_BUILD_TYPE STREQUAL "MinSizeRel")
+     set(SQ_FLAGS ${SQ_FLAGS} -Os)

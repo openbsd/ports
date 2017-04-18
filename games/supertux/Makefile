@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2016/09/12 22:20:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2017/04/18 16:28:50 pascal Exp $
 
 COMMENT =		jump 'n' run game
 
-V =			0.4.0
-DISTNAME =		supertux-$V
-REVISION =		0
+V =			0.5.1
+DISTNAME =		SuperTux-v${V}-Source
+PKGNAME =		supertux-$V
 
 CATEGORIES =		games
 
@@ -15,29 +15,30 @@ MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += GL GLEW GLU SDL2 SDL2_image c curl iconv m ogg openal physfs
-WANTLIB += pthread vorbis vorbisfile
+WANTLIB += GL GLEW GLU SDL2 SDL2_image boost_date_time-mt boost_filesystem-mt
+WANTLIB += boost_system-mt c curl m ogg openal pthread vorbis
+WANTLIB += vorbisfile
 
 MASTER_SITES =		https://github.com/SuperTux/supertux/releases/download/v${V}/
-EXTRACT_SUFX =		.tar.bz2
+
+MAKE_ENV +=		CXXFLAGS="${CXXFLAGS}"
 
 MODULES +=		devel/cmake gcc4
 MODGCC4_ARCHS =		*
 MODGCC4_LANGS =		c c++
-BUILD_DEPENDS =		devel/boost
 RUN_DEPENDS =		devel/desktop-file-utils
-LIB_DEPENDS =		converters/libiconv \
-			devel/sdl2-image \
-			devel/physfs \
+LIB_DEPENDS =		devel/sdl2-image \
 			graphics/glew \
 			net/curl \
 			audio/openal \
-			audio/libvorbis
+			audio/libvorbis \
+			devel/boost
 
 CONFIGURE_ARGS +=	-DINSTALL_SUBDIR_BIN="${LOCALBASE}/bin" \
 			-DBUILD_SHARED_LIBS=OFF
 
 USE_GMAKE =		Yes
+USE_NINJA =		No
 
 NO_TEST =		Yes
 # XXX compiler bug

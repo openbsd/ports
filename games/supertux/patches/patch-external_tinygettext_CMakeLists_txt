@@ -1,26 +1,11 @@
-$OpenBSD: patch-external_tinygettext_CMakeLists_txt,v 1.1 2016/01/21 16:04:47 pascal Exp $
---- external/tinygettext/CMakeLists.txt.orig	Thu Jan 21 16:20:23 2016
-+++ external/tinygettext/CMakeLists.txt	Thu Jan 21 16:20:41 2016
-@@ -194,22 +194,4 @@ IF(NOT HAVE_SDL) 
-   endforeach(TEST)
- ENDIF()
+$OpenBSD: patch-external_tinygettext_CMakeLists_txt,v 1.2 2017/04/18 16:28:50 pascal Exp $
+--- external/tinygettext/CMakeLists.txt.orig	Tue Apr 18 17:37:50 2017
++++ external/tinygettext/CMakeLists.txt	Tue Apr 18 17:38:13 2017
+@@ -131,7 +131,6 @@ option(WERROR "Stops on first compiler warning in debu
+ option(WARNINGS "Enable long list of warnings for compiler to check" ON)
  
--## Install tinygettext
--
--# use standardized variable name
--set(LIB_SUBDIR "lib${LIB_SUFFIX}"
--	CACHE STRING "Subdirectory of prefix into which libraries are installed (e.g., lib32, lib64)")
--
--## prepare tinygettext.pc
--configure_file(tinygettext.pc.in tinygettext.pc @ONLY)
--
--install(TARGETS tinygettext
--    RUNTIME DESTINATION bin
--	ARCHIVE DESTINATION ${LIB_SUBDIR}
--	LIBRARY DESTINATION ${LIB_SUBDIR})
--install(FILES ${TINYGETTEXT_HEADERS}
--	DESTINATION include/tinygettext)
--install(FILES ${tinygettext_BINARY_DIR}/tinygettext.pc
--	DESTINATION ${LIB_SUBDIR}/pkgconfig)
--
- # EOF #
+ CHECK_CXX_FLAG(std=c++0x)
+-CHECK_CXX_FLAG(O3)
+ IF(NOT MSVC)
+     #MSVC is excessivly verbose when Wall is activated
+     CHECK_CXX_FLAG(Wall)
