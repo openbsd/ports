@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/04/18 02:13:26 danj Exp $
+lib/python${MODPY_VERSION}/site-packages/podcastparser-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/podcastparser.py
+lib/python${MODPY_VERSION}/site-packages/podcastparser.pyc
+@man man/man1/podcastparser.1
