@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.478 2017/04/18 17:02:08 jca Exp $
+# $OpenBSD: Quirks.pm,v 1.479 2017/04/18 17:18:09 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -955,6 +955,7 @@ my $obsolete_reason = {
 	'anjuta' => 3,
 	'libneural' => 5,
 	'toolame' => 5,
+	'gpointing-device-settings' => 3,
 };
 
 # reasons for obsolete packages
