@@ -1,9 +1,9 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.14 2016/08/08 17:45:40 landry Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.15 2017/04/18 12:08:59 landry Exp $
 chunk 1: http://hub.qgis.org/issues/3999
 lots of undefined refs to syms in libc, we dont link shlibs with -lc
---- CMakeLists.txt.orig	Fri Jul  8 14:11:47 2016
-+++ CMakeLists.txt	Sat Jul 23 12:28:56 2016
-@@ -627,12 +627,6 @@ ELSE (WIN32)
+--- CMakeLists.txt.orig	Fri Apr  7 14:12:04 2017
++++ CMakeLists.txt	Tue Apr 18 10:48:49 2017
+@@ -631,12 +631,6 @@ ELSE (WIN32)
      SET(DLLEXPORT "")
    ENDIF()
  

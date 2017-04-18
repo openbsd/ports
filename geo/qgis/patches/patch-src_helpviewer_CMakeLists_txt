@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_helpviewer_CMakeLists_txt,v 1.4 2015/10/31 15:29:44 landry Exp $
---- src/helpviewer/CMakeLists.txt.orig	Fri Oct 23 14:10:38 2015
-+++ src/helpviewer/CMakeLists.txt	Fri Oct 30 15:44:07 2015
+$OpenBSD: patch-src_helpviewer_CMakeLists_txt,v 1.5 2017/04/18 12:08:59 landry Exp $
+--- src/helpviewer/CMakeLists.txt.orig	Fri Apr  7 14:12:04 2017
++++ src/helpviewer/CMakeLists.txt	Tue Apr 18 10:48:50 2017
 @@ -63,9 +63,9 @@ INCLUDE_DIRECTORIES(SYSTEM
  
  TARGET_LINK_LIBRARIES(qgis_help
@@ -13,4 +13,4 @@ $OpenBSD: patch-src_helpviewer_CMakeLists_txt,v 1.4 2015/10/31 15:29:44 landry E
 +  ${QT_QTNETWORK_LIBRARY} ${QT_QTNETWORK_LIB_DEPENDENCIES}
    ${QT_QTSVG_LIBRARY}
    ${QT_QTXML_LIBRARY}
-   ${QT_QTWEBKIT_LIBRARY}
+   ${OPTIONAL_QTWEBKIT}

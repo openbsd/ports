@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_core_CMakeLists_txt,v 1.16 2016/11/30 16:53:37 landry Exp $
+$OpenBSD: patch-src_core_CMakeLists_txt,v 1.17 2017/04/18 12:08:59 landry Exp $
 
 chunk 1: workaround $area expansion issue with gmake expanding to $$$$area
 
---- src/core/CMakeLists.txt.orig	Fri Nov 25 14:13:12 2016
-+++ src/core/CMakeLists.txt	Tue Nov 29 14:20:04 2016
+--- src/core/CMakeLists.txt.orig	Fri Apr  7 14:12:04 2017
++++ src/core/CMakeLists.txt	Tue Apr 18 10:48:50 2017
 @@ -365,7 +365,7 @@ SET(QGIS_CORE_SRCS
  )
  
@@ -24,5 +24,5 @@ chunk 1: workaround $area expansion issue with gmake expanding to $$$$area
 +  ${QT_QTGUI_LIBRARY} ${QT_QTGUI_LIB_DEPENDENCIES}
 +  ${QT_QTNETWORK_LIBRARY} ${QT_QTNETWORK_LIB_DEPENDENCIES}
    ${QT_QTSVG_LIBRARY}
-   ${QT_QTWEBKIT_LIBRARY}
+   ${OPTIONAL_QTWEBKIT}
    ${QT_QTSQL_LIBRARY}
