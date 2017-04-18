@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2017/04/10 11:45:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.51 2017/04/18 20:03:45 sthen Exp $
 
 # archs with atomic ops
 ONLY_FOR_ARCHS-server=	alpha aarch64 amd64 i386 mips64 mips64el powerpc sparc64
@@ -66,12 +66,16 @@ CONFIGURE_ARGS+=-DCMAKE_INSTALL_PREFIX="${PREFIX}" \
 		-DINSTALL_SUPPORTFILESDIR="share/examples/mysql" \
 		-DMYSQL_UNIX_ADDR="${SOCKET_DIR}/mysql.sock" \
 		-DCOMPILATION_COMMENT='OpenBSD port: ${FULLPKGNAME-server}' \
+		-DWITH_PCRE=bundled \
 		-DWITH_SSL=system \
 		-DCONNECT_WITH_LIBXML2=Off
 
-# The Mroonga storage engine does not build at the moment on OpenBSD.
+# The Mroonga and TokuDB storage engines do not build at the
+# moment on OpenBSD.
 # It is still not enabled due to a linking issue with liblz4.
 CONFIGURE_ARGS+=-DWITHOUT_MROONGA_STORAGE_ENGINE=1
+# One more or more issues to look into.
+CONFIGURE_ARGS+=-DWITHOUT_TOKUDB_STORAGE_ENGINE=1
 
 MULTI_PACKAGES=	-main -server -tests
 
