@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_recodext_h,v 1.1 2017/04/18 17:10:05 jca Exp $
+--- src/recodext.h.orig	Sat Apr 15 20:09:37 2017
++++ src/recodext.h	Sat Apr 15 20:10:14 2017
+@@ -218,7 +218,7 @@ struct recode_symbol
+     enum recode_symbol_type type : 3;
+ 
+     /* Non zero if this one should be ignored.  */
+-    bool ignore : 2;
++    bool ignore : 1;
+   };
+ 
+ struct recode_surface_list
