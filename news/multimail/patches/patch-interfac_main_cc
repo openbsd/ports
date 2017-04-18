@@ -1,7 +1,12 @@
-$OpenBSD: patch-interfac_main_cc,v 1.1.1.1 2016/03/14 19:04:40 awolk Exp $
+$OpenBSD: patch-interfac_main_cc,v 1.2 2017/04/18 08:54:17 fcambus Exp $
 --- interfac/main.cc.orig	Mon Jul 16 19:19:36 2007
-+++ interfac/main.cc	Wed Jan 20 13:36:01 2016
-@@ -16,6 +16,7 @@
++++ interfac/main.cc	Tue Apr 18 08:58:02 2017
+@@ -12,10 +12,11 @@
+ #include "interfac.h"
+ 
+ #ifdef USE_NEWHANDLER
+-# include <new.h>
++# include <new>
  #endif
  
  #include <locale.h>
@@ -9,6 +14,15 @@ $OpenBSD: patch-interfac_main_cc,v 1.1.1.1 2016/03/14 19:04:40 awolk Exp $
  
  Interface *ui = 0;
  const chtype *ColorArray = 0;
+@@ -40,7 +41,7 @@ ErrorType::ErrorType()
+ 	srand((unsigned) starttime);
+ 
+ #ifdef USE_NEWHANDLER
+-	set_new_handler(memError);
++	std::set_new_handler(memError);
+ #endif
+ 	origdir = mygetcwd();
+ }
 @@ -95,6 +96,11 @@ int main(int argc, char **argv)
  	int ARGC = argc;
  
