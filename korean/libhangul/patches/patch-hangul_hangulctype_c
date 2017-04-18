@@ -1,0 +1,17 @@
+$OpenBSD: patch-hangul_hangulctype_c,v 1.1 2017/04/18 16:50:34 jca Exp $
+
+  https://github.com/choehwanjin/libhangul/commit/3e59c64a985a1355d116319d69973b29d0d8ec66
+
+--- hangul/hangulctype.c.orig	Sun Aug 28 16:06:23 2011
++++ hangul/hangulctype.c	Thu Apr 13 20:02:34 2017
+@@ -518,6 +518,10 @@ hangul_jamo_to_cjamo(ucschar c)
+ 	0x0000,     /* 0xd7c4 */
+ 	0x0000,     /* 0xd7c5 */
+ 	0x0000,     /* 0xd7c6 */
++	0x0000,     /* 0xd7c7 */
++	0x0000,     /* 0xd7c8 */
++	0x0000,     /* 0xd7c9 */
++	0x0000,     /* 0xd7ca */
+ 	0x0000,     /* 0xd7cb */
+ 	0x0000,     /* 0xd7cc */
+ 	0x3138,     /* 0xd7cd */
