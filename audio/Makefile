@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.382 2017/03/27 08:12:03 fcambus Exp $
+# $OpenBSD: Makefile,v 1.383 2017/04/18 17:02:08 jca Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -248,7 +248,6 @@
      SUBDIR += teknap
      SUBDIR += tempest
      SUBDIR += timidity
-     SUBDIR += toolame
      SUBDIR += tracker
      SUBDIR += tremor
      SUBDIR += tremor-tools
