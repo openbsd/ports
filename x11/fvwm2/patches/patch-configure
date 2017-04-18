@@ -1,6 +1,15 @@
-$OpenBSD: patch-configure,v 1.2 2012/05/19 18:31:07 shadchin Exp $
---- configure.orig	Fri Apr 20 17:03:57 2012
-+++ configure	Mon Apr 30 21:20:31 2012
+$OpenBSD: patch-configure,v 1.3 2017/04/18 15:37:27 espie Exp $
+--- configure.orig	Fri Apr 20 13:03:57 2012
++++ configure	Tue Apr 18 17:33:45 2017
+@@ -6492,7 +6492,7 @@ int i; static j; int *p; char *c;
+   switch (*p = p = *c) { case 0: printf("%Q", c, p); }
+   *c = &i; c = p;
+   while (1 || (unsigned int)3 >= 0 || ((int)-1) == ((unsigned int)1));
+-  return;
++  return 0;
+   ;
+   return 0;
+ }
 @@ -11026,7 +11026,7 @@ if test "${with_intl_library+set}" = set; then :
  else
  
