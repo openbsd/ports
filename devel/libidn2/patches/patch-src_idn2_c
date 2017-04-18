@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_idn2_c,v 1.1.1.1 2017/02/14 16:06:00 naddy Exp $
---- src/idn2.c.orig	Sat Jan 14 16:06:09 2017
-+++ src/idn2.c	Mon Feb 13 21:22:11 2017
-@@ -31,7 +31,7 @@
- #include <unistr.h>
+$OpenBSD: patch-src_idn2_c,v 1.2 2017/04/18 21:22:57 naddy Exp $
+--- src/idn2.c.orig	Wed Mar 15 15:57:58 2017
++++ src/idn2.c	Tue Apr 18 22:01:10 2017
+@@ -33,7 +33,7 @@
+ #include <unistring/localcharset.h>
  
  /* Gnulib headers. */
 -#include "error.h"
@@ -10,16 +10,16 @@ $OpenBSD: patch-src_idn2_c,v 1.1.1.1 2017/02/14 16:06:00 naddy Exp $
  #include "gettext.h"
  #define _(String) dgettext (PACKAGE, String)
  #include "progname.h"
-@@ -161,7 +161,7 @@ process_input (char *readbuf, int flags)
+@@ -175,7 +175,7 @@ process_input (char *readbuf, int flags)
        free (output);
      }
    else
--    error (EXIT_FAILURE, 0, "%s: %s",
-+    errc (EXIT_FAILURE, 0, "%s: %s",
- 	   args_info.register_given ? "register" : "lookup",
- 	   idn2_strerror (rc));
+-    error (EXIT_FAILURE, 0, "%s: %s", tag, idn2_strerror (rc));
++    errc (EXIT_FAILURE, 0, "%s: %s", tag, idn2_strerror (rc));
  }
-@@ -222,7 +222,7 @@ main (int argc, char *argv[])
+ 
+ int
+@@ -234,7 +234,7 @@ main (int argc, char *argv[])
      }
  
    if (ferror (stdin))
