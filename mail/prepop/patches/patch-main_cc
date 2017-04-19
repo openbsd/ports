@@ -1,9 +1,10 @@
-$OpenBSD: patch-main_cc,v 1.1 2004/01/24 22:26:07 naddy Exp $
---- main.cc.orig	2004-01-24 23:05:57.000000000 +0100
-+++ main.cc	2004-01-24 23:06:07.000000000 +0100
+$OpenBSD: patch-main_cc,v 1.2 2017/04/19 17:51:30 jca Exp $
+--- main.cc.orig	Sat Dec  2 02:18:39 2000
++++ main.cc	Wed Apr 19 19:18:17 2017
 @@ -1,5 +1,5 @@
- #include <iostream.h>
+-#include <iostream.h>
 -#include <strstream.h>
++#include <iostream>
 +#include <strstream>
  #include <stdlib.h>
  #include <setjmp.h>

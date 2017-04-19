@@ -1,0 +1,113 @@
+$OpenBSD: patch-display_cc,v 1.1 2017/04/19 17:51:30 jca Exp $
+--- display.cc.orig	Mon Feb 28 01:11:09 2000
++++ display.cc	Wed Apr 19 19:23:04 2017
+@@ -6,13 +6,13 @@ display::display() {
+ // Display error on STDERR
+ void
+ display::showError(const char* message) {
+-  cerr << "\nError: " << message << "\n\n";
++  std::cerr << "\nError: " << message << "\n\n";
+ }
+ 
+ // Display error on STDERR and exit program
+ void
+ display::showFatalError(const char* message) {
+-  cerr << "\nFATAL: " << message << "\n\n";
++  std::cerr << "\nFATAL: " << message << "\n\n";
+   
+   exit(1);
+ }
+@@ -20,16 +20,16 @@ display::showFatalError(const char* message) {
+ // Display integers
+ void
+ display::showText(int number) {
+-  cout << number;
++  std::cout << number;
+ }
+ 
+ // Display text, "N/A" is shown if input is NULL
+ void
+ display::showText(const char* text) {
+   if (text == NULL)
+-    cout << "N/A";
++    std::cout << "N/A";
+   else
+-    cout << text;
++    std::cout << text;
+ }
+ 
+ // Display text with width and just, "N/A" is shown if input is NULL
+@@ -41,26 +41,26 @@ display::showText(const char* text, int width, const c
+     width = (int) width*atoi(ptrEnv)/100;
+   
+   if (strcmp(just, "left") == 0)
+-    cout.setf(ios::left);
++    std::cout.setf(std::ios::left);
+   else if (strcmp(just, "right") == 0)
+-    cout.setf(ios::right);
++    std::cout.setf(std::ios::right);
+   
+   if (text == NULL) {
+-    cout.width(width);
+-    cout << "N/A";
++    std::cout.width(width);
++    std::cout << "N/A";
+     return;
+   }
+   
+   if ((signed) strlen(text) > (width-FIELDSPACE)) {
+     for (i=0; i<(width-FIELDSPACE); i++)
+-      cout << text[i];
++      std::cout << text[i];
+   }
+   else {
+-    cout.width(width-FIELDSPACE);
+-    cout << text;
++    std::cout.width(width-FIELDSPACE);
++    std::cout << text;
+   }
+   for (i=0; i<FIELDSPACE; i++)
+-    cout << " ";
++    std::cout << " ";
+ }
+ 
+ // Display integer with width and justification
+@@ -72,29 +72,29 @@ display::showText(int num, int width, const char* just
+     width = (int) width*atoi(ptrEnv)/100;
+   
+   if (strcmp(just, "left") == 0)
+-    cout.setf(ios::left);
++    std::cout.setf(std::ios::left);
+   else if (strcmp(just, "right") == 0)
+-    cout.setf(ios::right);
++    std::cout.setf(std::ios::right);
+   
+-  cout.width(width-FIELDSPACE);
+-  cout << num;
++  std::cout.width(width-FIELDSPACE);
++  std::cout << num;
+   
+   for (i=0; i<FIELDSPACE; i++)
+-    cout << " ";
++    std::cout << " ";
+ }
+ 
+ void
+ display::showScroll(const char* text, int delay) {
+-  cout << " 0%: " << flush;
++  std::cout << " 0%: " << std::flush;
+   
+   for (i=0; text[i]; i++) {
+     
+-    cout << text[i] << flush;
++    std::cout << text[i] << std::flush;
+     
+     if (text[i] == '\n') {
+       if (((int) 100*i/strlen(text)) < 10)
+-	cout << " " << flush;
+-      cout << (int) 100*i/strlen(text) << "%: " << flush;
++	std::cout << " " << std::flush;
++      std::cout << (int) 100*i/strlen(text) << "%: " << std::flush;
+     }
+     
+     usleep(1000*delay);

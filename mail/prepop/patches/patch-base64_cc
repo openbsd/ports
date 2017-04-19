@@ -1,0 +1,18 @@
+$OpenBSD: patch-base64_cc,v 1.1 2017/04/19 17:51:30 jca Exp $
+--- base64.cc.orig	Wed Apr 19 19:23:32 2017
++++ base64.cc	Wed Apr 19 19:23:45 2017
+@@ -11,11 +11,11 @@ base64::dispBits(unsigned byte) {
+   
+   for (bit=128; bit>0; bit=bit/2) {
+     if (byte & bit)
+-      cout << "1 ";
++      std::cout << "1 ";
+     else
+-      cout << "0 ";
++      std::cout << "0 ";
+     }
+-  cout << "\n";
++  std::cout << "\n";
+ }
+ 
+ // The base64 convert table

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2017/04/10 11:46:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2017/04/19 17:51:30 jca Exp $
 
 COMMENT=	simple interactive POP3 client
 
 DISTNAME=	prepop-0.1b7
-REVISION =	1
+REVISION =	2
 CATEGORIES=	mail
 
 # GPL
@@ -18,6 +18,9 @@ MAKE_FLAGS= \
 ALL_TARGET=	compile link
 
 NO_TEST=	Yes
+
+post-patch:
+	sed -i -e 's/<iostream\.h>/<iostream>/' ${WRKSRC}/*.cc ${WRKSRC}/*.h
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/prepop ${PREFIX}/bin
