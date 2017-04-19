@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_libspf2_spf_dns_c,v 1.1 2017/04/19 16:49:49 jca Exp $
+--- src/libspf2/spf_dns.c.orig	Wed Apr 19 18:35:29 2017
++++ src/libspf2/spf_dns.c	Wed Apr 19 18:35:40 2017
+@@ -105,7 +105,7 @@ SPF_dns_debug_post(SPF_dns_server_t *spf_dns_server, S
+ 					break;
+ 
+ 				default:
+-					SPF_debugf("    - Unknown RR type");
++					SPF_debugf("%s", "    - Unknown RR type");
+ 					break;
+ 			}
+ 		}
