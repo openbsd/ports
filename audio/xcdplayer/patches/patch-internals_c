@@ -1,6 +1,6 @@
-$OpenBSD: patch-internals_c,v 1.2 2010/05/17 08:31:12 espie Exp $
+$OpenBSD: patch-internals_c,v 1.3 2017/04/19 15:26:59 espie Exp $
 --- internals.c.orig	Tue Jan 12 19:59:45 1993
-+++ internals.c	Mon May 17 10:24:16 2010
++++ internals.c	Wed Apr 19 17:25:18 2017
 @@ -22,6 +22,9 @@
  
  # include "debug.h"
@@ -27,6 +27,24 @@ $OpenBSD: patch-internals_c,v 1.2 2010/05/17 08:31:12 espie Exp $
  
  int
  cdrom_get_curtime() {
+@@ -46,7 +50,7 @@ cdrom_get_curtime() {
+ 
+ 	if (cdrom_open() == -1) {
+ 		debug_printf(1, "cdrom_get_curtime: error from cdrom_open\n");
+-		return;
++		return 0;
+ 	}
+ 
+ 	switch (cdrom_status()) {
+@@ -54,7 +58,7 @@ cdrom_get_curtime() {
+ 	case CDROM_PLAYING:
+ 	    if (cdrom_get_curmsf(&curmsf) == -1) {
+ 		debug_printf(1, "get_curtime: error reading location\n");
+-		return;
++		return 0;
+ 	    }
+ 
+ 	    if (((curtrack = cdrom_get_curtrack()) == -1) ||
 @@ -77,13 +81,13 @@ cdrom_get_curtime() {
  }
  
