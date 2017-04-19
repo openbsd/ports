@@ -1,0 +1,12 @@
+$OpenBSD: patch-htapp_cc,v 1.1 2017/04/19 09:13:28 benoit Exp $
+--- htapp.cc.orig	Wed Apr 19 10:45:16 2017
++++ htapp.cc	Wed Apr 19 10:46:05 2017
+@@ -3023,7 +3023,7 @@
+ {
+ 	uint a = 2;
+ 	uint b = u/a;
+-	while (abs(a - b) > 1) {
++	while (abs((int)(a - b)) > 1) {
+ 		a = (a+b)/2;
+ 		b = u/a;
+         }
