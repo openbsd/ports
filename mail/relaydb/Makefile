@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2015/01/22 21:17:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2017/04/19 17:00:29 jca Exp $
 
 COMMENT=	spam relay database
 
@@ -15,6 +15,8 @@ MAINTAINER=	Daniel Hartmeier <dhartmei@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=		c
+
+MAKE_FLAGS=	CC="${CC}"
 
 NO_TEST=	Yes
 
