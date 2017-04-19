@@ -1,0 +1,11 @@
+$OpenBSD: patch-hash_c,v 1.1 2017/04/19 22:20:27 espie Exp $
+--- hash.c.orig	Thu Apr 20 00:18:07 2017
++++ hash.c	Thu Apr 20 00:18:20 2017
+@@ -31,6 +31,7 @@ void clear_hash(void)
+    memset(hashtable, 0, sizeof(hashtable));
+ }
+ 
++extern int unnamed(u_long);
+ inline int unnamed(u_long ip)
+ {
+    u_char hashval;
