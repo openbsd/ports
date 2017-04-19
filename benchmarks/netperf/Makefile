@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.34 2015/10/21 13:10:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2017/04/19 23:33:40 jca Exp $
 
 COMMENT=	network performance benchmark
 
 DISTNAME=	netperf-2.7.0
+REVISION=	0
 
 CATEGORIES=	benchmarks net
 
