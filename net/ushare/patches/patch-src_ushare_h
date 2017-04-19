@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_ushare_h,v 1.1 2017/04/19 23:25:06 jca Exp $
+--- src/ushare.h.orig	Sun Dec  9 14:03:36 2007
++++ src/ushare.h	Thu Apr 20 01:19:21 2017
+@@ -127,6 +127,6 @@ struct action_event_t {
+   struct service_t *service;
+ };
+ 
+-inline void display_headers (void);
++void display_headers (void);
+ 
+ #endif /* _USHARE_H_ */

@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_trace_c,v 1.1 2017/04/19 23:25:06 jca Exp $
+--- src/trace.c.orig	Thu Apr 20 01:18:52 2017
++++ src/trace.c	Thu Apr 20 01:18:56 2017
+@@ -57,7 +57,7 @@ print_log (log_level level, const char *format, ...)
+   va_end (va);
+ }
+ 
+-inline void
++void
+ start_log (void)
+ {
+   openlog (PACKAGE_NAME, LOG_PID, LOG_DAEMON);

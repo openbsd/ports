@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_trace_h,v 1.1 2017/04/19 23:25:06 jca Exp $
+--- src/trace.h.orig	Thu Apr 20 01:18:35 2017
++++ src/trace.h	Thu Apr 20 01:18:40 2017
+@@ -29,7 +29,7 @@ typedef enum {
+ 
+ void print_log (log_level level, const char *format, ...)
+   __attribute__ ((format (printf, 2, 3)));
+-inline void start_log (void);
++void start_log (void);
+ 
+ /* log_info
+  * Normal print, to replace printf

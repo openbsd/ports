@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_ushare_c,v 1.5 2015/06/19 09:07:32 ajacoutot Exp $
+$OpenBSD: patch-src_ushare_c,v 1.6 2017/04/19 23:25:06 jca Exp $
 
 Unbreak build with libupnp>=1.6.17
 
 --- src/ushare.c.orig	Sun Dec  9 14:03:36 2007
-+++ src/ushare.c	Fri Nov  2 16:13:38 2012
++++ src/ushare.c	Thu Apr 20 01:19:12 2017
 @@ -188,7 +188,7 @@ handle_action_request (struct Upnp_Action_Request *req
    if (strcmp (request->DevUDN + 5, ut->udn))
      return;
@@ -13,19 +13,19 @@ Unbreak build with libupnp>=1.6.17
    ip = ntohl (ip);
    sprintf (val, "%d.%d.%d.%d",
             (ip >> 24) & 0xFF, (ip >> 16) & 0xFF, (ip >> 8) & 0xFF, ip & 0xFF);
-@@ -348,7 +348,47 @@ init_upnp (struct ushare_t *ut)
+@@ -348,7 +348,7 @@ init_upnp (struct ushare_t *ut)
  
    UpnpEnableWebserver (TRUE);
  
 -  res = UpnpSetVirtualDirCallbacks (&virtual_dir_callbacks);
 +  res = UpnpVirtualDir_set_WriteCallback(http_write);
-+  if (res != UPNP_E_SUCCESS)
-+  {
-+    log_error (_("Cannot set virtual directory callbacks\n"));
-+    free (description);
-+    return -1;
-+  }
-+
+   if (res != UPNP_E_SUCCESS)
+   {
+     log_error (_("Cannot set virtual directory callbacks\n"));
+@@ -356,6 +356,46 @@ init_upnp (struct ushare_t *ut)
+     return -1;
+   }
+ 
 +  res = UpnpVirtualDir_set_GetInfoCallback(http_get_info);
 +  if (res != UPNP_E_SUCCESS)
 +  {
@@ -59,6 +59,22 @@ Unbreak build with libupnp>=1.6.17
 +  }
 +
 +  res = UpnpVirtualDir_set_CloseCallback(http_close);
++  if (res != UPNP_E_SUCCESS)
++  {
++    log_error (_("Cannot set virtual directory callbacks\n"));
++    free (description);
++    return -1;
++  }
++
+   res = UpnpAddVirtualDir (VIRTUAL_DIR);
    if (res != UPNP_E_SUCCESS)
    {
-     log_error (_("Cannot set virtual directory callbacks\n"));
+@@ -718,7 +758,7 @@ reload_config (int s __attribute__ ((unused)))
+   }
+ }
+ 
+-inline void
++void
+ display_headers (void)
+ {
+   printf (_("%s (version %s), a lightweight UPnP A/V and DLNA Media Server.\n"),
