@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2017/04/19 17:51:30 jca Exp $
+# $OpenBSD: Makefile,v 1.15 2017/04/19 18:06:54 jca Exp $
 
 COMMENT=	simple interactive POP3 client
 
 DISTNAME=	prepop-0.1b7
-REVISION =	2
+REVISION =	3
 CATEGORIES=	mail
 
 # GPL

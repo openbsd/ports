@@ -1,0 +1,26 @@
+$OpenBSD: patch-header_cc,v 1.1 2017/04/19 18:06:54 jca Exp $
+--- header.cc.orig	Wed Apr 19 19:55:18 2017
++++ header.cc	Wed Apr 19 19:56:31 2017
+@@ -318,8 +318,10 @@ header::fixContType(char* &input) {
+   // Lowercase and remove everything after first whitespace character
+   if ((strncasecmp(input, "text/", 5) == 0) ||
+       (strncasecmp(input, "multipart/", 10) == 0)) {
+-    while (*end && !isspace(*end))
+-      *end++ = tolower(*end);
++    while (*end && !isspace(*end)) {
++      *end = tolower(*end);
++      end++;
++    }
+     *end = '\0';
+   }
+   else {
+@@ -347,7 +349,8 @@ header::fixCharSet(char* &input) {
+   }
+   
+   while (*end && !isspace(*end)) {
+-    *end++ = tolower(*end);
++    *end = tolower(*end);
++    end++;
+     if (*end == '\"')
+       break;
+   }
