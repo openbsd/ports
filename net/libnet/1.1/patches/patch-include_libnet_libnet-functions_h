@@ -1,0 +1,12 @@
+$OpenBSD: patch-include_libnet_libnet-functions_h,v 1.1 2017/04/19 12:29:12 jca Exp $
+--- include/libnet/libnet-functions.h.orig	Wed Apr 19 14:23:01 2017
++++ include/libnet/libnet-functions.h	Wed Apr 19 14:23:18 2017
+@@ -1429,7 +1429,7 @@ libnet_t *l, libnet_ptag_t ptag);
+  * @param ptag protocol tag to modify an existing header, 0 to build a new one
+  * @return protocol tag value on success, -1 on error
+  */
+-inline u_int32_t
++u_int32_t
+ libnet_getgre_length(u_int16_t fv);
+ 
+ /**
