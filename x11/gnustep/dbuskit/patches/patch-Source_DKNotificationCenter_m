@@ -1,0 +1,33 @@
+$OpenBSD: patch-Source_DKNotificationCenter_m,v 1.1 2017/04/19 21:18:48 sebastia Exp $
+
+Garbage Collection is gone, so are their macros
+
+--- Source/DKNotificationCenter.m.orig	Wed Apr 19 11:26:33 2017
++++ Source/DKNotificationCenter.m	Wed Apr 19 11:27:24 2017
+@@ -514,7 +514,7 @@
+   {
+     return nil;
+   }
+-  observer = GS_GC_HIDE(anObserver);
++  observer = anObserver;
+   selector = aSelector;
+ 
+   // Make sure the necessary components are there and that the selector takes a
+@@ -530,7 +530,7 @@
+ 
+ - (id)observer
+ {
+-  return GS_GC_UNHIDE(observer);
++  return observer;
+ }
+ 
+ - (SEL)selector
+@@ -556,7 +556,7 @@
+   // callback and need to avoid the reentrancy. We do this by scheduling
+   // delivery of the notification on the run loop.
+   [[NSRunLoop currentRunLoop] performSelector: selector
+-                                      target: GS_GC_UNHIDE(observer)
++                                      target: observer
+ 				    argument: notification
+ 				       order: UINT_MAX
+ 				       modes: [NSArray arrayWithObject: NSDefaultRunLoopMode]];

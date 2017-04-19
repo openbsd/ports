@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/04/25 16:28:52 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.3 2017/04/19 21:18:48 sebastia Exp $
 @bin bin/dk_make_protocol
 include/DBusKit
 @info info/DBusKit.info
@@ -29,6 +29,10 @@ share/doc/GNUstep/Developer/DBusKit/
 share/doc/GNUstep/Developer/DBusKit/ProgrammingManual/
 share/doc/GNUstep/Developer/DBusKit/ProgrammingManual/DBusKit/
 share/doc/GNUstep/Developer/DBusKit/ProgrammingManual/DBusKit.pdf
+share/doc/GNUstep/Developer/DBusKit/ProgrammingManual/DBusKit/Exposing-Objects-on-D_002dBus.html
+share/doc/GNUstep/Developer/DBusKit/ProgrammingManual/DBusKit/GNU-Free-Documentation-License.html
+share/doc/GNUstep/Developer/DBusKit/ProgrammingManual/DBusKit/Introduction.html
+share/doc/GNUstep/Developer/DBusKit/ProgrammingManual/DBusKit/Using-D_002dBus-From-Objective_002dC.html
 share/doc/GNUstep/Developer/DBusKit/ProgrammingManual/DBusKit/dependencies
 share/doc/GNUstep/Developer/DBusKit/Reference/
 share/doc/GNUstep/Developer/DBusKit/Reference/ClassesTOC.gsdoc
