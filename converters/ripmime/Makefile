@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2016/04/09 20:14:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2017/04/19 15:21:28 espie Exp $
 
 COMMENT=	extract attachments from MIME encoded emails
 
@@ -22,7 +22,7 @@ MAKE_FLAGS=	CFLAGS="${CFLAGS}" LIBS="-L${LOCALBASE}/lib -liconv"
 # there is a "riptest" target, but the actual test files are missing.
 NO_TEST=	Yes
 
-CFLAGS+=	-Wall -I. -I${LOCALBASE}/include -Werror
+CFLAGS+=	-Wall -I. -I${LOCALBASE}/include
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ripmime ${PREFIX}/bin
