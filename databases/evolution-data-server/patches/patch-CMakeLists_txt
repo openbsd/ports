@@ -1,15 +1,9 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1 2017/04/17 11:59:53 ajacoutot Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2017/04/19 07:42:40 ajacoutot Exp $
+
+DB_LOAD: https://bugzilla.gnome.org/show_bug.cgi?id=78146
+
 --- CMakeLists.txt.orig	Mon Apr 10 09:40:17 2017
 +++ CMakeLists.txt	Mon Apr 17 11:29:59 2017
-@@ -296,7 +296,7 @@ if(NOT PERL)
- 	message(FATAL_ERROR "You need perl to build ${PROJECT_NAME}")
- endif(NOT PERL)
- 
--find_program(PYTHON python)
-+find_program(PYTHON python${MODPY_VERSION})
- if(NOT PYTHON)
- 	message(FATAL_ERROR "You need python to build ${PROJECT_NAME}")
- endif(NOT PYTHON)
 @@ -305,7 +305,7 @@ endif(NOT PYTHON)
  # db_load checking, it's optional
  # ******************************

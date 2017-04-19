@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.275 2017/04/17 14:37:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.276 2017/04/19 07:42:40 ajacoutot Exp $
 
 COMMENT=		integrated email and PIM software for GNOME
 
 GNOME_PROJECT=		evolution
 GNOME_VERSION=		3.24.1
+REVISION=		0
 
 CATEGORIES=		mail
 
@@ -36,8 +37,7 @@ MODULES=		devel/cmake \
 			devel/dconf \
 			x11/gnome
 
-BUILD_DEPENDS=		devel/bison \
-			devel/gsettings-desktop-schemas
+BUILD_DEPENDS=		devel/gsettings-desktop-schemas
 
 LIB_DEPENDS=		audio/libcanberra,-gtk3 \
 			converters/libpst \
@@ -56,18 +56,14 @@ RUN_DEPENDS +=		textproc/highlight
 
 MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache yelp
 
-MODGNOME_CPPFLAGS=	-L${LOCALBASE}/include -I${X11BASE}/include
 # without --as-needed, evolution takes ages to start
-MODGNOME_LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib -Wl,--as-needed
-CONFIGURE_ENV=		CPPFLAGS="${MODGNOME_CPPFLAGS}" LDFLAGS="${MODGNOME_LDFLAGS}"
+MODGNOME_LDFLAGS=	-L${X11BASE}/lib -Wl,--as-needed
 
 CONFIGURE_ARGS=		-DWITH_BOGOFILTER="${LOCALBASE}/bin/bogofilter" \
 			-DWITH_SA_LEARN="${LOCALBASE}/bin/sa-learn" \
 			-DWITH_SPAMASSASSIN="${LOCALBASE}/bin/spamassassin" \
 			-DWITH_OPENLDAP=${LOCALBASE} \
-			-DVERSION_SUBSTRING=" (OpenBSD Ports)" \
-			-DENABLE_SCHEMAS_COMPILE=OFF \
-			-DSYSCONF_INSTALL_DIR=${SYSCONFDIR}
+			-DVERSION_SUBSTRING=" (OpenBSD Ports)"
 
 # needs libytnef
 CONFIGURE_ARGS +=	-DENABLE_YTNEF=OFF

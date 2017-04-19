@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.89 2017/04/17 14:55:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.90 2017/04/19 07:42:40 ajacoutot Exp $
 
 COMMENT=		evolution connector for MS Exchange via EWS
 
 GNOME_PROJECT=		evolution-ews
 GNOME_VERSION=		3.24.1
+REVISION=		0
 
 CATEGORIES=		mail
 
@@ -34,7 +35,5 @@ MODULES=		devel/cmake \
 
 LIB_DEPENDS=		archivers/libmspack \
 			mail/evolution
-
-CONFIGURE_ARGS=		-DENABLE_SCHEMAS_COMPILE=OFF
 
 .include <bsd.port.mk>

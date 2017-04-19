@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.222 2017/04/17 11:59:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.223 2017/04/19 07:42:40 ajacoutot Exp $
 
 # XXX add libphonenumber support when a cpp release is out
 
@@ -6,6 +6,7 @@ COMMENT=		unified backend for PIM programs
 
 GNOME_PROJECT=		evolution-data-server
 GNOME_VERSION=		3.24.1
+REVISION=		0
 
 CATEGORIES=		databases productivity
 
@@ -52,14 +53,13 @@ LIB_DEPENDS= 		databases/db/v4 \
 MODPY_RUNDEP=		No
 MODGNOME_TOOLS=		gobject-introspection vala
 
+MODGNOME_LDFLAGS=	-L${X11BASE}/lib
+
 CONFIGURE_ARGS=		-DWITH_KRB5=OFF \
 			-DWITH_LIBDB_CFLAGS="-I${LOCALBASE}/include/db4" \
 			-DWITH_LIBDB_LIBS="-L${LOCALBASE}/lib -ldb" \
-			-DWITH_OPENLDAP=${LOCALBASE} \
-			-DENABLE_INTROSPECTION=ON \
-			-DENABLE_VALA_BINDINGS=ON
+			-DWITH_OPENLDAP=${LOCALBASE}
 
-CONFIGURE_ENV=		LDFLAGS="-L${X11BASE}/lib"
 
 # needs signond, libsignon-glib -- Ubuntu/Meego
 CONFIGURE_ARGS +=	-DENABLE_UOA=OFF
