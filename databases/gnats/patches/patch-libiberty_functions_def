@@ -1,6 +1,6 @@
-$OpenBSD: patch-libiberty_functions_def,v 1.2 2007/12/28 17:11:25 espie Exp $
+$OpenBSD: patch-libiberty_functions_def,v 1.3 2017/04/19 15:08:11 jca Exp $
 --- libiberty/functions.def.orig	Thu Nov  5 20:54:15 1998
-+++ libiberty/functions.def	Fri Dec 28 18:00:24 2007
++++ libiberty/functions.def	Wed Apr 19 16:16:19 2017
 @@ -27,26 +27,26 @@ DEF(memcpy, PTR, (s1, s2, length), PTR s1 AND CONST PT
  DEF(memmove, PTR, (s1, s2, length), PTR s1 AND CONST PTR s2 AND size_t length)
  DEF(memset, PTR, (s, val, length), PTR s AND int val AND size_t length )
@@ -34,3 +34,12 @@ $OpenBSD: patch-libiberty_functions_def,v 1.2 2007/12/28 17:11:25 espie Exp $
  
  /* List of global variables that we want to look for in the host
     environment, and to generate an entry NEED_<variable> in config.h
+@@ -62,7 +62,7 @@ DEFVAR(sys_siglist, char *sys_siglist[], sys_siglist[0
+    environment, and to generate an entry NEED_<funcname> in config.h
+    if they are not found. */
+ 
+-DEFFUNC(strerror, char*, (), NOTHING)
++DEFFUNC(strerror, char*, (err), int err)
+ DEFFUNC(psignal, void, (signo, message), unsigned signo AND char *message)
+ DEFFUNC(basename, char *, (name), CONST char *name)
+ DEFFUNC(on_exit, void, (f, arg), void (*f)() AND char *arg)
