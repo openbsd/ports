@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.70 2017/04/19 22:54:32 juanfra Exp $
+# $OpenBSD: Makefile,v 1.71 2017/04/19 23:06:18 juanfra Exp $
 
 COMMENT-main =		fast, lightweight source control management
 COMMENT-x11 =		graphical tooling for mercurial
 
-MODPY_EGG_VERSION =    4.1.3
+MODPY_EGG_VERSION =	4.1.3
 DISTNAME =		mercurial-${MODPY_EGG_VERSION}
-CATEGORIES =     	devel
+CATEGORIES =		devel
 
 PKGNAME-main =		${DISTNAME}
 PKGNAME-x11 =		mercurial-x11-${MODPY_EGG_VERSION}
 
-HOMEPAGE =		http://www.mercurial-scm.org
+HOMEPAGE =		https://www.mercurial-scm.org
 
 MAINTAINER =		Juan Francisco Cantero Hurtado <juanfra@openbsd.org>
 
@@ -21,12 +21,12 @@ MASTER_SITES =		${HOMEPAGE}/release/
 
 MODULES =		lang/python x11/tk
 USE_GROFF =		Yes
-USE_GMAKE =        Yes
+USE_GMAKE =		Yes
 
 MULTI_PACKAGES =	-main -x11
 
 BUILD_DEPENDS =		devel/gettext-tools
-TEST_DEPENDS =	${RUN_DEPENDS} \
+TEST_DEPENDS =		${RUN_DEPENDS} \
 			archivers/unzip \
 			devel/git
 RUN_DEPENDS-x11 +=	${BASE_PKGPATH},-main \
