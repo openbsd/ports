@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.62 2016/11/08 14:23:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.63 2017/04/19 21:16:43 sebastia Exp $
 
 COMMENT=	GNUstep base library
 
-DISTNAME=	gnustep-base-1.24.9
-REVISION=	1
+DISTNAME=	gnustep-base-1.25.0
 
-SHARED_LIBS=	gnustep-base 9.0
+SHARED_LIBS=	gnustep-base 10.0
 CATEGORIES=	devel
 
 LIBDIR=		lib/GNUstep/Libraries/gnustep-base/Versions/${LIBgnustep-base_VERSION}
@@ -36,7 +35,8 @@ LIB_DEPENDS +=	converters/libiconv \
 		x11/gnustep/libobjc2
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	ac_cv_header_execinfo_h=false
+CONFIGURE_ENV=	ac_cv_header_execinfo_h=false \
+		OBJCFLAGS=-DHAVE_PTHREAD_NP_H=1
 CONFIGURE_ARGS +=	--disable-procfs \
 			--disable-procfs-psinfo
 MAKE_FLAGS +=		libgnustep-base_INTERFACE_VERSION=${LIBgnustep-base_VERSION}

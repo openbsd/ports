@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2016/06/03 11:44:36 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.23 2017/04/19 21:16:43 sebastia Exp $
 @conflict swi-prolog-<=5.6.27p5
 @bin bin/HTMLLinker
 @bin bin/autogsdoc
@@ -22,8 +22,6 @@
 include/Foundation/
 include/Foundation/Foundation.h
 include/Foundation/FoundationErrors.h
-include/Foundation/GSMime.h
-include/Foundation/GSXML.h
 include/Foundation/NSAffineTransform.h
 include/Foundation/NSArchiver.h
 include/Foundation/NSArray.h
@@ -177,15 +175,6 @@ include/GNUstepBase/NSTask+GNUstepBase.h
 include/GNUstepBase/NSThread+GNUstepBase.h
 include/GNUstepBase/NSURL+GNUstepBase.h
 include/GNUstepBase/Unicode.h
-include/GNUstepBase/unicode/
-include/gnustep/base/
-include/gnustep/unicode/
-include/gnustep/unicode/caseconv.h
-include/gnustep/unicode/cop.h
-include/gnustep/unicode/cyrillic.h
-include/gnustep/unicode/decomp.h
-include/gnustep/unicode/latin2.h
-include/gnustep/unicode/nextstep.h
 lib/GNUstep/
 lib/GNUstep/DTDs/
 lib/GNUstep/DTDs/gsdoc-0_6_5.dtd
@@ -437,6 +426,7 @@ ${LIBDIR}/Resources/NSTimeZones/zones/America/Port_of_Spain
 ${LIBDIR}/Resources/NSTimeZones/zones/America/Porto_Acre
 ${LIBDIR}/Resources/NSTimeZones/zones/America/Porto_Velho
 ${LIBDIR}/Resources/NSTimeZones/zones/America/Puerto_Rico
+${LIBDIR}/Resources/NSTimeZones/zones/America/Punta_Arenas
 ${LIBDIR}/Resources/NSTimeZones/zones/America/Rainy_River
 ${LIBDIR}/Resources/NSTimeZones/zones/America/Rankin_Inlet
 ${LIBDIR}/Resources/NSTimeZones/zones/America/Recife
@@ -495,6 +485,7 @@ ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Aqtau
 ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Aqtobe
 ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Ashgabat
 ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Ashkhabad
+${LIBDIR}/Resources/NSTimeZones/zones/Asia/Atyrau
 ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Baghdad
 ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Bahrain
 ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Baku
@@ -515,6 +506,7 @@ ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Dhaka
 ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Dili
 ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Dubai
 ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Dushanbe
+${LIBDIR}/Resources/NSTimeZones/zones/Asia/Famagusta
 ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Gaza
 ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Harbin
 ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Hebron
@@ -571,6 +563,7 @@ ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Tel_Aviv
 ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Thimbu
 ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Thimphu
 ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Tokyo
+${LIBDIR}/Resources/NSTimeZones/zones/Asia/Tomsk
 ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Ujung_Pandang
 ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Ulaanbaatar
 ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Ulan_Bator
@@ -579,6 +572,7 @@ ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Ust-Nera
 ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Vientiane
 ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Vladivostok
 ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Yakutsk
+${LIBDIR}/Resources/NSTimeZones/zones/Asia/Yangon
 ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Yekaterinburg
 ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Yerevan
 ${LIBDIR}/Resources/NSTimeZones/zones/Atlantic/
@@ -704,6 +698,7 @@ ${LIBDIR}/Resources/NSTimeZones/zones/Europe/Istanbul
 ${LIBDIR}/Resources/NSTimeZones/zones/Europe/Jersey
 ${LIBDIR}/Resources/NSTimeZones/zones/Europe/Kaliningrad
 ${LIBDIR}/Resources/NSTimeZones/zones/Europe/Kiev
+${LIBDIR}/Resources/NSTimeZones/zones/Europe/Kirov
 ${LIBDIR}/Resources/NSTimeZones/zones/Europe/Lisbon
 ${LIBDIR}/Resources/NSTimeZones/zones/Europe/Ljubljana
 ${LIBDIR}/Resources/NSTimeZones/zones/Europe/London
@@ -724,6 +719,7 @@ ${LIBDIR}/Resources/NSTimeZones/zones/Europe/Rome
 ${LIBDIR}/Resources/NSTimeZones/zones/Europe/Samara
 ${LIBDIR}/Resources/NSTimeZones/zones/Europe/San_Marino
 ${LIBDIR}/Resources/NSTimeZones/zones/Europe/Sarajevo
+${LIBDIR}/Resources/NSTimeZones/zones/Europe/Saratov
 ${LIBDIR}/Resources/NSTimeZones/zones/Europe/Simferopol
 ${LIBDIR}/Resources/NSTimeZones/zones/Europe/Skopje
 ${LIBDIR}/Resources/NSTimeZones/zones/Europe/Sofia
