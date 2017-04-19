@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.122 2016/10/21 00:45:43 espie Exp $
+# $OpenBSD: Engine.pm,v 1.123 2017/04/19 15:14:45 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -640,7 +640,7 @@ sub smart_dump
 		print $fh "\n";
 		$cache->{$v->{info}} = $v->fullpkgpath;
 	}
-	print $fh "\n";
+	print $fh 70x'-', "\n";
 }
 
 sub follow_thru
