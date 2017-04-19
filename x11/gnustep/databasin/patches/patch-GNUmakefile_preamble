@@ -1,0 +1,15 @@
+$OpenBSD: patch-GNUmakefile_preamble,v 1.1 2017/04/19 21:17:53 sebastia Exp $
+
+GNUSTEP_LOCAL_ROOT is obsolete, use GNUSTEP_INSTALLATION_DIR
+
+--- GNUmakefile.preamble.orig	Wed Apr 19 11:08:58 2017
++++ GNUmakefile.preamble	Wed Apr 19 11:09:42 2017
+@@ -15,7 +15,7 @@ ADDITIONAL_CFLAGS += 
+ ADDITIONAL_LDFLAGS +=  
+ 
+ # Additional include directories the compiler should search
+-ADDITIONAL_INCLUDE_DIRS += -I$(GNUSTEP_LOCAL_ROOT)/Library/Headers/WebServices -I$(GNUSTEP_LOCAL_ROOT)/Library/Headers/DataBasinKit 
++ADDITIONAL_INCLUDE_DIRS += -I$(GNUSTEP_INSTALLATION_DIR)/Library/Headers/WebServices -I$(GNUSTEP_INSTALLATION_DIR)/Library/Headers/DataBasinKit 
+ 
+ # Additional library directories the linker should search
+ ADDITIONAL_LIB_DIRS += -L/usr/GNUstep/Local/Library/Libraries -L/Local/Library/Frameworks/DataBasinKit.framework 
