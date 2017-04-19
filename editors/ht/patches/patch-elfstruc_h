@@ -1,0 +1,13 @@
+$OpenBSD: patch-elfstruc_h,v 1.1 2017/04/19 08:31:16 benoit Exp $
+--- elfstruc.h.orig	Sun Sep 14 17:55:26 2014
++++ elfstruc.h	Mon Apr 17 14:17:39 2017
+@@ -374,6 +374,9 @@ struct ELF_SECTION_HEADER64 {
+ #define ELF_PT_GNU_STACK	0x6474e551 /* Indicates stack executability */
+ #define ELF_PT_GNU_RELRO	0x6474e552 /* Read-only after relocation    */ 
+ #define ELF_PT_PAX_FLAGS	0x65041580 /* Indicates PaX flag markings */
++#define ELF_PT_OPENBSD_RANDOMIZE	0x65a3dbe6 /* Fill with random data. */
++#define ELF_PT_OPENBSD_WXNEEDED	0x65a3dbe7 /* Program does W^X violations */
++#define ELF_PT_OPENBSD_BOOTDATA	0x65a41be6 /* Section for boot arguments */
+ 
+ struct ELF_PROGRAM_HEADER32 {
+ 	elf32_word p_type;

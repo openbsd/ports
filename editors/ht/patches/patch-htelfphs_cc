@@ -1,0 +1,13 @@
+$OpenBSD: patch-htelfphs_cc,v 1.1 2017/04/19 08:31:16 benoit Exp $
+--- htelfphs.cc.orig	Sun Sep 14 17:55:26 2014
++++ htelfphs.cc	Mon Apr 17 14:17:39 2017
+@@ -67,6 +67,9 @@ static int_hash elf_ph_type[] =
+ 	{ELF_PT_GNU_STACK,	"gnu stack"},
+ 	{ELF_PT_GNU_RELRO,	"gnu relro"},
+ 	{ELF_PT_PAX_FLAGS,	"pax flags"},
++	{ELF_PT_OPENBSD_RANDOMIZE,	"openbsd randomize"},
++	{ELF_PT_OPENBSD_WXNEEDED,	"openbsd wxneeded"},
++	{ELF_PT_OPENBSD_BOOTDATA,	"openbsd bootdata"},
+ 	{0, 0}
+ };
+ 
