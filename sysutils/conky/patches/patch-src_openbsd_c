@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_openbsd_c,v 1.17 2017/04/19 20:36:41 sthen Exp $
+$OpenBSD: patch-src_openbsd_c,v 1.18 2017/04/19 20:37:42 sthen Exp $
 
 declarations in common.h got changed, but upstream forgot to do the
 corresponding changes into openbsd.c
@@ -9,8 +9,10 @@ Protect kvm_getprocs and global vars with mutexes.
 
 dkstat.h is going away on OpenBSD, so use sys/sched.h instead for CP_*
 
---- src/openbsd.c.orig	Thu May  3 22:08:27 2012
-+++ src/openbsd.c	Wed Apr 19 21:36:08 2017
+Make "inline void proc_find_top" static to fix building with clang.
+
+--- src/openbsd.c.orig	Thu May  3 23:08:27 2012
++++ src/openbsd.c	Wed Apr 19 22:14:41 2017
 @@ -28,10 +28,11 @@
   *
   */
@@ -32,6 +34,15 @@ dkstat.h is going away on OpenBSD, so use sys/sched.h instead for CP_*
  #include <machine/apmvar.h>
  
  #include <net80211/ieee80211.h>
+@@ -70,7 +72,7 @@
+ #define LOG1024			10
+ #define pagetok(size) ((size) << pageshift)
+ 
+-inline void proc_find_top(struct process **cpu, struct process **mem);
++static inline void proc_find_top(struct process **cpu, struct process **mem);
+ 
+ static short cpu_setup = 0;
+ static kvm_t *kd = 0;
 @@ -81,6 +83,8 @@ size_t len = 0;
  int init_kvm = 0;
  int init_sensors = 0;
@@ -305,9 +316,12 @@ dkstat.h is going away on OpenBSD, so use sys/sched.h instead for CP_*
  /* While topless is obviously better, top is also not bad. */
  
  int comparecpu(const void *a, const void *b)
-@@ -708,8 +685,8 @@ int comparemem(const void *a, const void *b)
+@@ -706,10 +683,10 @@ int comparemem(const void *a, const void *b)
+ 	return 0;
+ }
  
- inline void proc_find_top(struct process **cpu, struct process **mem)
+-inline void proc_find_top(struct process **cpu, struct process **mem)
++static inline void proc_find_top(struct process **cpu, struct process **mem)
  {
 -	struct kinfo_proc2 *p;
 -	int n_processes;
