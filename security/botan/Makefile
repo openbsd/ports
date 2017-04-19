@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.22 2017/04/10 11:46:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2017/04/19 11:16:03 sthen Exp $
 
-ONLY_FOR_ARCHS =	${GCC4_ARCHS}
+ONLY_FOR_ARCHS =	${GCC4_ARCHS} ${CLANG_ARCHS}
 
 COMMENT =	portable, easy to use, and efficient C++ crypto library
 

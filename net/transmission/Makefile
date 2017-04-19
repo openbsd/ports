@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.112 2017/01/11 13:44:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.113 2017/04/19 11:16:03 sthen Exp $
 
 COMMENT-main=	BitTorrent command line and daemon client
 COMMENT-gtk=	BitTorrent client with GTK+ interface
@@ -22,7 +22,7 @@ EXTRACT_SUFX=	.tar.xz
 
 MULTI_PACKAGES=	-main -gtk -qt
 
-ONLY_FOR_ARCHS-qt=	${MODGCC4_ARCHS}
+ONLY_FOR_ARCHS-qt=	${MODGCC4_ARCHS} ${CLANG_ARCHS}
 
 MODULES=	gcc4
 # keep in sync with lang/gcc/${MODGCC4_VERSION}/Makefile

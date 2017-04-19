@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile.inc,v 1.4 2016/12/29 20:59:05 zhuk Exp $
+# $OpenBSD: Makefile.inc,v 1.5 2017/04/19 11:16:03 sthen Exp $
 
-ONLY_FOR_ARCHS =	${GCC4_ARCHS}
+ONLY_FOR_ARCHS =	${GCC4_ARCHS} ${CLANG_ARCHS}
 BROKEN-powerpc =	never built - gcc ICE
 
 .include "Makefile.version"
@@ -273,7 +273,7 @@ gen_pkg_plist:
 	sed -Ei '\,^(@.* )?share/doc/qt5/.*\.qch,d' ${PKGDIR}/PLIST-main
 .endif
 .if ${BUILD_PACKAGES:M-html}
-	echo '@comment $$OpenBSD: Makefile.inc,v 1.4 2016/12/29 20:59:05 zhuk Exp $$' >${PKGDIR}/PLIST-html
+	echo '@comment $$OpenBSD: Makefile.inc,v 1.5 2017/04/19 11:16:03 sthen Exp $$' >${PKGDIR}/PLIST-html
 	egrep '^(@.* )?share/doc/qt5/' ${PKGDIR}/PLIST-main >>${PKGDIR}/PLIST-html
 	sed -Ei '\,^(@.* )?share/doc/qt5/,d' ${PKGDIR}/PLIST-main
 .endif

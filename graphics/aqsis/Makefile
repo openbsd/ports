@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.28 2017/04/10 11:46:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2017/04/19 11:16:03 sthen Exp $
 
-ONLY_FOR_ARCHS=	${GCC4_ARCHS}
+ONLY_FOR_ARCHS=	${GCC4_ARCHS} ${CLANG_ARCHS}
 
 COMMENT=	photorealistic 3D rendering solution
 

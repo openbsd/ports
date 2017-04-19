@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2017/04/10 11:45:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2017/04/19 11:16:03 sthen Exp $
 
-ONLY_FOR_ARCHS =	${GCC4_ARCHS}
+ONLY_FOR_ARCHS =	${GCC4_ARCHS} ${CLANG_ARCHS}
 
 COMMENT =		music studio with tracking, sampling and MIDI
 

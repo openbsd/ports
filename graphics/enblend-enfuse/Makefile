@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.29 2016/11/24 08:16:03 kirby Exp $
+# $OpenBSD: Makefile,v 1.30 2017/04/19 11:16:03 sthen Exp $
 
-ONLY_FOR_ARCHS = ${GCC4_ARCHS}
-.if (${MACHINE_ARCH} != "i386" && ${MACHINE_ARCH} != "amd64")
+ONLY_FOR_ARCHS = ${GCC4_ARCHS} ${CLANG_ARCHS}
+.if (${MACHINE_ARCH} != "i386" && ${MACHINE_ARCH} != "amd64" && ${MACHINE_ARCH} != "arm64")
 # likely to bump into MAXDSIZ on arch other than the above
 MAKE_ENV +=	CXXNOOPT=-O0
 .endif

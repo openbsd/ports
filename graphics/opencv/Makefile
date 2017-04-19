@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.39 2017/04/10 11:46:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.40 2017/04/19 11:16:03 sthen Exp $
 
-ONLY_FOR_ARCHS =	${GCC4_ARCHS}
+ONLY_FOR_ARCHS =	${GCC4_ARCHS} ${CLANG_ARCHS}
 
 CATEGORIES =		graphics devel
 COMMENT-docs =		OpenCV documentation and examples

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.61 2017/04/10 11:45:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.62 2017/04/19 11:16:03 sthen Exp $
 
-ONLY_FOR_ARCHS=	${GCC4_ARCHS}
+ONLY_FOR_ARCHS=	${GCC4_ARCHS} ${CLANG_ARCHS}
 
 COMMENT=	free peer-reviewed portable C++ source libraries
 
