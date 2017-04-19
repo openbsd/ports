@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2015/05/28 18:33:46 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.11 2017/04/19 21:13:25 sebastia Exp $
 bin/debugapp
 bin/gnustep-config
 bin/gnustep-tests
@@ -32,6 +32,7 @@ share/GNUstep/Makefiles/Instance/Shared/
 share/GNUstep/Makefiles/Instance/Shared/bundle.make
 share/GNUstep/Makefiles/Instance/Shared/headers.make
 share/GNUstep/Makefiles/Instance/Shared/java.make
+share/GNUstep/Makefiles/Instance/Shared/pkgconfig.make
 share/GNUstep/Makefiles/Instance/Shared/stamp-string.make
 share/GNUstep/Makefiles/Instance/Shared/strings.make
 share/GNUstep/Makefiles/Instance/application.make

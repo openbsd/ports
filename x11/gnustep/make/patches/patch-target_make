@@ -1,11 +1,11 @@
-$OpenBSD: patch-target_make,v 1.7 2013/09/08 16:28:02 sebastia Exp $
+$OpenBSD: patch-target_make,v 1.8 2017/04/19 21:13:25 sebastia Exp $
 
 We do not want to use the -Wl,-soname, cruft to encode soname into the
 library.
 
---- target.make.orig	Sat Mar 16 06:29:52 2013
-+++ target.make	Tue Aug  6 09:37:16 2013
-@@ -747,7 +747,7 @@ endif
+--- target.make.orig	Tue Nov 22 23:43:57 2016
++++ target.make	Wed Apr 19 09:18:45 2017
+@@ -752,7 +752,7 @@ endif
  ifeq ($(findstring openbsd, $(GNUSTEP_TARGET_OS)), openbsd)
  HAVE_SHARED_LIBS        = yes
  SHARED_LIB_LINK_CMD = \
@@ -14,7 +14,7 @@ library.
  	   $(ALL_LDFLAGS) -o $(LIB_LINK_OBJ_DIR)/$(LIB_LINK_VERSION_FILE) $^ \
  	   $(INTERNAL_LIBRARIES_DEPEND_UPON) \
  	   $(SHARED_LD_POSTFLAGS) \
-@@ -755,18 +755,17 @@ SHARED_LIB_LINK_CMD = \
+@@ -760,18 +760,17 @@ SHARED_LIB_LINK_CMD = \
  	  $(RM_LN_S) $(LIB_LINK_FILE); \
            if [ "$(LIB_LINK_SONAME_FILE)" != "$(LIB_LINK_VERSION_FILE)" ]; then\
              $(RM_LN_S) $(LIB_LINK_SONAME_FILE);\
