@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2016/10/11 20:35:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2017/04/19 16:56:04 jca Exp $
 
 COMMENT=	SPF library
 
 DISTNAME=	libspf2-1.2.10
-REVISION=	1
+REVISION=	2
 
 SHARED_LIBS +=	spf2                 4.0      # 3.0
 
