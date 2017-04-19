@@ -1,16 +1,14 @@
-$OpenBSD: patch-Printing_GSCUPS_GSCUPSPrinter_m,v 1.1 2013/05/15 15:36:11 sebastia Exp $
+$OpenBSD: patch-Printing_GSCUPS_GSCUPSPrinter_m,v 1.2 2017/04/19 21:23:20 sebastia Exp $
 
-fix against wrong assumption in cups
+fix implicit declaration warning, from upstream
 
---- Printing/GSCUPS/GSCUPSPrinter.m.orig	Thu May  2 17:21:55 2013
-+++ Printing/GSCUPS/GSCUPSPrinter.m	Thu May  2 17:22:18 2013
-@@ -48,7 +48,9 @@
- #import "GNUstepGUI/GSPrinting.h"
+--- Printing/GSCUPS/GSCUPSPrinter.m.orig	Wed Apr 19 08:33:22 2017
++++ Printing/GSCUPS/GSCUPSPrinter.m	Wed Apr 19 08:32:25 2017
+@@ -49,6 +49,7 @@
  #import "GSCUPSPrinter.h"
  
-+#undef __BLOCKS__
  #include <cups/cups.h>
-+#define __BLOCKS__
++#include <cups/ppd.h>
  
  
  NSString *GSCUPSDummyPrinterName = @"GSCUPSDummyPrinter";

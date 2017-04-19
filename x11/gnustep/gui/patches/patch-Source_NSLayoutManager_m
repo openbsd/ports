@@ -1,0 +1,15 @@
+$OpenBSD: patch-Source_NSLayoutManager_m,v 1.1 2017/04/19 21:23:20 sebastia Exp $
+
+from upstream, fix warning
+
+--- Source/NSLayoutManager.m.orig	Sun Oct 23 22:13:37 2016
++++ Source/NSLayoutManager.m	Wed Apr 19 08:18:14 2017
+@@ -1815,7 +1815,7 @@ attachmentSize(linefrag_t *lf, NSUInteger glyphIndex)
+ 		  unsigned int char_index =
+ 		    [self characterRangeForGlyphRange: NSMakeRange(g, 1)
+ 				     actualGlyphRange: NULL].location;
+-		  NSObject<NSTextAttachmentCell> *cell = [[_textStorage attribute: NSAttachmentAttributeName
++		  id<NSTextAttachmentCell> cell = [[_textStorage attribute: NSAttachmentAttributeName
+ 			atIndex: char_index
+ 			effectiveRange: NULL] attachmentCell];
+ 		  NSRect cellFrame;

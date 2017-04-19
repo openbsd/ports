@@ -1,0 +1,15 @@
+$OpenBSD: patch-Source_NSTableView_m,v 1.1 2017/04/19 21:23:20 sebastia Exp $
+
+from upstream, fix warning
+
+--- Source/NSTableView.m.orig	Sun Dec 18 12:58:31 2016
++++ Source/NSTableView.m	Wed Apr 19 08:18:14 2017
+@@ -6031,7 +6031,7 @@ This method is deprecated, use -columnIndexesInRect:. 
+ 	{
+ 	  NSArray *array;
+ 	  NSNumber *width, *identNum;
+-	  NSObject *ident;
++	  id ident;
+ 	  
+ 	  width = [NSNumber numberWithInt: [column width]];
+ 	  ident = [column identifier];

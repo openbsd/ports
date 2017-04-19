@@ -1,0 +1,33 @@
+$OpenBSD: patch-Model_IMLoading_m,v 1.1 2017/04/19 21:23:20 sebastia Exp $
+
+from upstream, fix warning
+
+--- Model/IMLoading.m.orig	Thu Feb 24 14:34:21 2011
++++ Model/IMLoading.m	Wed Apr 19 08:18:14 2017
+@@ -43,7 +43,6 @@
+ 
+ void __dummy_IMLoading_functionForLinking()
+ {
+-  __dummy_IMLoading_functionForLinking();
+ }
+ 
+ @implementation GMModel
+@@ -207,18 +206,3 @@ BOOL _fileOwnerDecoded = NO;
+ }
+ 
+ @end /* GMModel */
+-
+-
+-#if GNU_RUNTIME
+-#include "IMConnectors.h"
+-
+-__attribute__((unused))
+-static void __dummyFunctionForLinking (void)
+-{
+-  [IMCustomObject new];
+-  [IMConnector new];
+-
+-  __dummyFunctionForLinking();
+-}
+-
+-#endif

@@ -1,0 +1,31 @@
+$OpenBSD: patch-Source_GSToolbarView_m,v 1.1 2017/04/19 21:23:20 sebastia Exp $
+
+from upstream, fix warning
+
+--- Source/GSToolbarView.m.orig	Sat Dec 17 01:00:19 2016
++++ Source/GSToolbarView.m	Wed Apr 19 08:18:14 2017
+@@ -63,9 +63,6 @@ static const int InsetItemViewX = 10;
+ 
+ static const int ClippedItemsViewWidth = 28;
+ 
+-// Internal
+-static const int current_version = 1;
+-
+ static NSUInteger draggedItemIndex = NSNotFound;
+ 
+ /*
+@@ -270,12 +267,12 @@ static NSUInteger draggedItemIndex = NSNotFound;
+   if (draggedItemIndex == NSNotFound)
+     {
+       //simply locate the nearest location between existing items
+-      for (index=0; index < [visibleBackViews count]; index++)
++      for (index = 0; index < [visibleBackViews count]; index++)
+         {
+           NSRect itemRect = [[visibleBackViews objectAtIndex:index] frame];
+           if (location.x < (itemRect.origin.x + (itemRect.size.width/2)))
+             {
+-              NSLog(@"AT location %d", index);
++              NSLog(@"At location %lu", (unsigned long)index);
+               return index;
+             }
+         }

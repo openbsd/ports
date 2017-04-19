@@ -1,0 +1,15 @@
+$OpenBSD: patch-Source_GSTextStorage_m,v 1.1 2017/04/19 21:23:20 sebastia Exp $
+
+from upstream, fix warning
+
+--- Source/GSTextStorage.m.orig	Sat Jan 31 19:19:29 2015
++++ Source/GSTextStorage.m	Wed Apr 19 08:18:14 2017
+@@ -89,7 +89,7 @@ cacheEqual(id A, id B)
+ 
+ static NSDictionary	*blank;
+ static NSLock		*attrLock = nil;
+-static __strong GSIMapTable_t	attrMap;
++static GSIMapTable_t	attrMap;
+ static SEL		lockSel;
+ static SEL		unlockSel;
+ static IMP		lockImp;
