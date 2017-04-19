@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2017/02/13 14:22:00 sebastia Exp $
+# $OpenBSD: Makefile,v 1.22 2017/04/19 14:26:24 sebastia Exp $
 
 COMMENT=		web interface to PuppetDB
 
-MODPY_EGG_VERSION=	0.2.1
+MODPY_EGG_VERSION=	0.2.2
 DISTNAME=		puppetboard-${MODPY_EGG_VERSION}
 CATEGORIES=		www
 

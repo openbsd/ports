@@ -1,0 +1,18 @@
+$OpenBSD: patch-puppetboard_app_py,v 1.5 2017/04/19 14:26:24 sebastia Exp $
+
+actually puppetboard only supports werkzeug <= 0.11.X
+but we have 0.12 already, so cope with it
+This requirement was only added for the 0.2.2 version,
+just too late
+
+--- puppetboard/app.py.orig	Wed Apr 19 16:14:19 2017
++++ puppetboard/app.py	Wed Apr 19 16:14:32 2017
+@@ -114,7 +114,7 @@ class NoContent(ex.HTTPException):
+     code = 204
+     description = '<p>No content</p'
+ 
+-abort.mapping[204] = NoContent
++#abort.mapping[204] = NoContent
+ 
+ try:
+     @app.errorhandler(204)
