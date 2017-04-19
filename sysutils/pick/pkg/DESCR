@@ -1,0 +1,3 @@
+The pick utility allows users to select from a set of choices using an interface
+with fuzzy search functionality. The choices are read from stdin, and the
+selected choice written to stdout.
