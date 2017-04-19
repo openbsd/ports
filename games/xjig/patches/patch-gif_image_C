@@ -1,0 +1,14 @@
+$OpenBSD: patch-gif_image_C,v 1.1 2017/04/19 23:26:34 espie Exp $
+--- gif_image.C.orig	Thu Apr 20 01:23:51 2017
++++ gif_image.C	Thu Apr 20 01:24:43 2017
+@@ -58,8 +58,8 @@ GifImage::GifImage(const char *filename, int autocrop 
+ : lockcount(0) {
+ 	first=0;
+ 	LoadGIF( filename );
+-	name = strrchr(filename,'/');
+-	if (name)	name=strdup(name+1);
++	const char *n = strrchr(filename,'/');
++	if (n)	name=strdup(n+1);
+ 	else			name=strdup(filename);
+ 
+ 	if (autocrop&&!fastinfo_flag)	CropImage();
