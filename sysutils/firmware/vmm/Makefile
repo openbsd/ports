@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2017/03/26 17:06:29 kettenis Exp $
+# $OpenBSD: Makefile,v 1.6 2017/04/19 11:52:46 sthen Exp $
 
 FW_DRIVER=	vmm
 FW_VER=		1.10.2
@@ -33,6 +33,11 @@ MAKE_FLAGS=	PYTHON="${MODPY_BIN}" V=1 EXTRAVERSION="${EXTRAVERSION}" \
 
 pre-build:
 	cp ${FILESDIR}/config ${WRKSRC}/.config
+
+post-build:
+	@if ! grep -q "\"${FW_VER}${EXTRAVERSION}\"" ${WRKSRC}/out/autoversion.h; then \
+	    printf "\\nPort problem: 'cleanbuild' version string not used.\\n\\n"; \
+	    tail -2 ${WRKSRC}/out/autoversion.h; echo; exit 1; fi
 
 do-install:
 	 ${INSTALL_DATA} ${WRKSRC}/out/bios.bin ${PREFIX}/firmware/vmm-bios
