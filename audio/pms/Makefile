@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2017/04/10 11:45:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2017/04/19 16:23:39 jca Exp $
 
 COMMENT=		curses based frontend for mpd
 
 DISTNAME=		pms-0.42
 EXTRACT_SUFX = 		.tar.bz2
 CATEGORIES=		audio
-REVISION =		3
+REVISION =		4
 
 HOMEPAGE=		http://pms.sourceforge.net/
 
