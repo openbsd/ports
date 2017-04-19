@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.172 2017/04/17 10:03:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.173 2017/04/19 06:16:08 ajacoutot Exp $
 
 COMMENT-main=		GNOME Virtual File System
 COMMENT-smb=		GVFS mount module for samba
@@ -100,8 +100,9 @@ CONFIGURE_ARGS=		--disable-libsystemd-login \
 			--disable-udev \
 			--disable-gdu
 
-# XXX needs libusb >=1.0.21
-CONFIGURE_ARGS +=	--disable-libusb
+# needs gudev
+CONFIGURE_ARGS +=	--disable-libmtp \
+			--disable-libusb
 
 # needs libcap
 CONFIGURE_ARGS +=	--disable-admin
