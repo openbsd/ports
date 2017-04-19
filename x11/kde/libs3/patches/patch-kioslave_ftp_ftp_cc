@@ -1,6 +1,6 @@
-$OpenBSD: patch-kioslave_ftp_ftp_cc,v 1.5 2007/05/25 09:49:54 espie Exp $
---- kioslave/ftp/ftp.cc.orig	Mon May 14 09:52:34 2007
-+++ kioslave/ftp/ftp.cc	Mon May 14 16:18:30 2007
+$OpenBSD: patch-kioslave_ftp_ftp_cc,v 1.6 2017/04/19 13:21:49 espie Exp $
+--- kioslave/ftp/ftp.cc.orig	Tue Aug 19 20:18:12 2008
++++ kioslave/ftp/ftp.cc	Tue Apr 18 16:21:50 2017
 @@ -757,6 +757,14 @@ bool Ftp::ftpSendCmd( const QCString& cmd, int maxretr
      return false;
    }
@@ -16,3 +16,21 @@ $OpenBSD: patch-kioslave_ftp_ftp_cc,v 1.5 2007/05/25 09:49:54 espie Exp $
    // Don't print out the password...
    bool isPassCmd = (cmd.left(4).lower() == "pass");
    if ( !isPassCmd )
+@@ -876,7 +884,7 @@ int Ftp::ftpOpenPASVDataConnection()
+   // The usual answer is '227 Entering Passive Mode. (160,39,200,55,6,245)'
+   // but anonftpd gives '227 =160,39,200,55,6,245'
+   int i[6];
+-  char *start = strchr(ftpResponse(3), '(');
++  const char *start = strchr(ftpResponse(3), '(');
+   if ( !start )
+     start = strchr(ftpResponse(3), '=');
+   if ( !start ||
+@@ -931,7 +939,7 @@ int Ftp::ftpOpenEPSVDataConnection()
+     return ERR_INTERNAL;
+   }
+ 
+-  char *start = strchr(ftpResponse(3), '|');
++  const char *start = strchr(ftpResponse(3), '|');
+   if ( !start || sscanf(start, "|||%d|", &portnum) != 1)
+     return ERR_INTERNAL;
+ 
