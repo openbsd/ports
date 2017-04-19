@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2017/04/19 15:21:28 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2017/04/19 15:30:45 sthen Exp $
 
 COMMENT=	extract attachments from MIME encoded emails
 
@@ -17,7 +17,8 @@ MASTER_SITES=	${HOMEPAGE}
 
 LIB_DEPENDS=	converters/libiconv
 
-MAKE_FLAGS=	CFLAGS="${CFLAGS}" LIBS="-L${LOCALBASE}/lib -liconv"
+MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS}" \
+		LIBS="-L${LOCALBASE}/lib -liconv"
 
 # there is a "riptest" target, but the actual test files are missing.
 NO_TEST=	Yes
