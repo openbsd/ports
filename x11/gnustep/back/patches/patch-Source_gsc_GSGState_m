@@ -1,0 +1,15 @@
+$OpenBSD: patch-Source_gsc_GSGState_m,v 1.1 2017/04/19 21:21:30 sebastia Exp $
+
+fix warnings, from upstream
+
+--- Source/gsc/GSGState.m.orig	Wed Apr  6 22:43:32 2016
++++ Source/gsc/GSGState.m	Wed Apr 19 09:00:03 2017
+@@ -1249,7 +1249,7 @@ typedef enum {
+       out[0] = out[1] = out[2] = 0.0;
+       for (x = NSMinX(rect); x < NSMaxX(rect); x++)
+         {
+-          char r, g, b, a;
++          unsigned char r, g, b, a;
+             
+           [function eval: in : out];
+      

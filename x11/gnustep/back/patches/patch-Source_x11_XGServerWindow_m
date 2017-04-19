@@ -1,0 +1,33 @@
+$OpenBSD: patch-Source_x11_XGServerWindow_m,v 1.1 2017/04/19 21:21:30 sebastia Exp $
+
+fix warnings, from upstream
+
+--- Source/x11/XGServerWindow.m.orig	Tue Jan 17 23:01:52 2017
++++ Source/x11/XGServerWindow.m	Wed Apr 19 09:00:03 2017
+@@ -2745,7 +2745,7 @@ _get_next_prop_new_event(Display *display, XEvent *eve
+     && (window->buffer_width != width || window->buffer_height != height)
+     && (window->gdriverProtocol & GDriverHandlesBacking) == 0)
+     {
+-      [isa waitAllContexts];
++      [[self class] waitAllContexts];
+       XFreePixmap(dpy, window->buffer);
+       window->buffer = 0;
+       if (window->alpha_buffer)
+@@ -3623,7 +3623,7 @@ static BOOL didCreatePixmaps;
+       values.foreground = window->xwn_attrs.background_pixel;
+       valuemask = (GCFunction | GCPlaneMask | GCClipMask | GCForeground);
+       XChangeGC(dpy, window->gc, valuemask, &values);
+-      [isa waitAllContexts];
++      [[self class] waitAllContexts];
+       if ((window->gdriverProtocol & GDriverHandlesExpose))
+ 	{
+ 	  /* Temporary protocol until we standardize the backing buffer */
+@@ -3698,7 +3698,7 @@ static BOOL didCreatePixmaps;
+ 
+   if (width > 0 || height > 0)
+     {
+-      [isa waitAllContexts];
++      [[self class] waitAllContexts];
+       if ((window->gdriverProtocol & GDriverHandlesBacking))
+ 	{
+ 	  NSDebugLLog (@"XGFlush", 

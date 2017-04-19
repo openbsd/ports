@@ -1,0 +1,15 @@
+$OpenBSD: patch-Source_x11_XWindowBuffer_m,v 1.1 2017/04/19 21:21:30 sebastia Exp $
+
+fix warnings, from upstream
+
+--- Source/x11/XWindowBuffer.m.orig	Thu Oct 20 10:34:49 2011
++++ Source/x11/XWindowBuffer.m	Wed Apr 19 09:00:03 2017
+@@ -645,7 +645,7 @@ static int warn = 0;
+         while (XCheckTypedEvent(window->display,
+           XShmGetEventBase(window->display) + ShmCompletion, &e))
+           {
+-            [isa _gotShmCompletion: ((XShmCompletionEvent *)&e)->drawable];
++            [[self class] _gotShmCompletion: ((XShmCompletionEvent *)&e)->drawable];
+           }
+       }
+     }

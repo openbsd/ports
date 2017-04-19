@@ -1,0 +1,15 @@
+$OpenBSD: patch-Source_x11_XGDragView_m,v 1.1 2017/04/19 21:21:30 sebastia Exp $
+
+fix warnings, from upstream
+
+--- Source/x11/XGDragView.m.orig	Fri Dec 13 16:03:09 2013
++++ Source/x11/XGDragView.m	Wed Apr 19 09:00:03 2017
+@@ -428,7 +428,7 @@ static	XGDragView	*sharedDragView = nil;
+   NSCountedSet		*drag_set = [self dragTypesForWindow: win];
+ 
+   winNum = [win windowNumber];
+-  window = [isa _windowWithTag: winNum];
++  window = [[self class] _windowWithTag: winNum];
+ 
+   GSEnsureDndIsInitialized ();
+ 
