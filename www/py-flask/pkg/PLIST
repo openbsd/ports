@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2017/02/23 02:51:11 danj Exp $
+@comment $OpenBSD: PLIST,v 1.11 2017/04/19 00:46:53 danj Exp $
 bin/flask${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/Flask-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/Flask-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -271,6 +271,12 @@ share/examples/${MODPY_PY_PREFIX}flask/flaskr/.gitignore
 share/examples/${MODPY_PY_PREFIX}flask/flaskr/MANIFEST.in
 share/examples/${MODPY_PY_PREFIX}flask/flaskr/README
 share/examples/${MODPY_PY_PREFIX}flask/flaskr/flaskr/
+share/examples/${MODPY_PY_PREFIX}flask/flaskr/flaskr.egg-info/
+share/examples/${MODPY_PY_PREFIX}flask/flaskr/flaskr.egg-info/PKG-INFO
+share/examples/${MODPY_PY_PREFIX}flask/flaskr/flaskr.egg-info/SOURCES.txt
+share/examples/${MODPY_PY_PREFIX}flask/flaskr/flaskr.egg-info/dependency_links.txt
+share/examples/${MODPY_PY_PREFIX}flask/flaskr/flaskr.egg-info/requires.txt
+share/examples/${MODPY_PY_PREFIX}flask/flaskr/flaskr.egg-info/top_level.txt
 share/examples/${MODPY_PY_PREFIX}flask/flaskr/flaskr/__init__.py
 share/examples/${MODPY_PY_PREFIX}flask/flaskr/flaskr/flaskr.py
 share/examples/${MODPY_PY_PREFIX}flask/flaskr/flaskr/schema.sql
@@ -280,6 +286,7 @@ share/examples/${MODPY_PY_PREFIX}flask/flaskr/flaskr/templates/
 share/examples/${MODPY_PY_PREFIX}flask/flaskr/flaskr/templates/layout.html
 share/examples/${MODPY_PY_PREFIX}flask/flaskr/flaskr/templates/login.html
 share/examples/${MODPY_PY_PREFIX}flask/flaskr/flaskr/templates/show_entries.html
+share/examples/${MODPY_PY_PREFIX}flask/flaskr/pytest_runner-2.11.1-py2.7.egg
 share/examples/${MODPY_PY_PREFIX}flask/flaskr/setup.cfg
 share/examples/${MODPY_PY_PREFIX}flask/flaskr/setup.py
 share/examples/${MODPY_PY_PREFIX}flask/flaskr/tests/
@@ -294,6 +301,12 @@ share/examples/${MODPY_PY_PREFIX}flask/minitwit/.gitignore
 share/examples/${MODPY_PY_PREFIX}flask/minitwit/MANIFEST.in
 share/examples/${MODPY_PY_PREFIX}flask/minitwit/README
 share/examples/${MODPY_PY_PREFIX}flask/minitwit/minitwit/
+share/examples/${MODPY_PY_PREFIX}flask/minitwit/minitwit.egg-info/
+share/examples/${MODPY_PY_PREFIX}flask/minitwit/minitwit.egg-info/PKG-INFO
+share/examples/${MODPY_PY_PREFIX}flask/minitwit/minitwit.egg-info/SOURCES.txt
+share/examples/${MODPY_PY_PREFIX}flask/minitwit/minitwit.egg-info/dependency_links.txt
+share/examples/${MODPY_PY_PREFIX}flask/minitwit/minitwit.egg-info/requires.txt
+share/examples/${MODPY_PY_PREFIX}flask/minitwit/minitwit.egg-info/top_level.txt
 share/examples/${MODPY_PY_PREFIX}flask/minitwit/minitwit/__init__.py
 share/examples/${MODPY_PY_PREFIX}flask/minitwit/minitwit/minitwit.py
 share/examples/${MODPY_PY_PREFIX}flask/minitwit/minitwit/schema.sql
