@@ -1,4 +1,4 @@
-# $OpenBSD: gnome.port.mk,v 1.100 2016/03/11 20:07:49 naddy Exp $
+# $OpenBSD: gnome.port.mk,v 1.101 2017/04/19 07:41:28 ajacoutot Exp $
 #
 # Module for GNOME related ports
 
@@ -10,23 +10,36 @@ HOMEPAGE?=		https://wiki.gnome.org/
 MASTER_SITES?=		${MASTER_SITE_GNOME:=sources/${GNOME_PROJECT}/${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}/}
 EXTRACT_SUFX?=		.tar.xz
 CATEGORIES+=		x11/gnome
-.    if ${NO_BUILD:L} == "no"
+.  if ${NO_BUILD:L} == "no"
 MODULES+=		textproc/intltool
+.    if ${CONFIGURE_STYLE:Mgnu} || ${CONFIGURE_STYLE:Msimple}
 USE_GMAKE?=		Yes
 .    endif
+.  endif
 .endif
 
 .if ${CONFIGURE_STYLE:Mgnu} || ${CONFIGURE_STYLE:Msimple}
-     # https://mail.gnome.org/archives/desktop-devel-list/2011-September/msg00064.html
-.    if !defined(AUTOCONF_VERSION) && !defined(AUTOMAKE_VERSION)
+   # https://mail.gnome.org/archives/desktop-devel-list/2011-September/msg00064.html
+.  if !defined(AUTOCONF_VERSION) && !defined(AUTOMAKE_VERSION)
          CONFIGURE_ARGS += --disable-maintainer-mode
-.    endif
-     # If a port needs extra CPPFLAGS, they can just set MODGNOME_CPPFLAGS
-     # to the desired value, like -I${X11BASE}/include
-     _MODGNOME_cppflags ?= CPPFLAGS="${MODGNOME_CPPFLAGS} -I${LOCALBASE}/include"
-     _MODGNOME_ldflags ?= LDFLAGS="${MODGNOME_LDFLAGS} -L${LOCALBASE}/lib"
-     CONFIGURE_ENV += ${_MODGNOME_cppflags} \
-                      ${_MODGNOME_ldflags}
+.  endif
+.endif
+
+.if ${CONFIGURE_STYLE:Mcmake}
+   CONFIGURE_ARGS += -DENABLE_MAINTAINER_MODE=OFF
+   CONFIGURE_ARGS += -DSYSCONF_INSTALL_DIR=${SYSCONFDIR}
+   # matches what bsd.port.mk does (--disable-gtk-doc)
+.  if !defined(BUILD_DEPENDS) || !${BUILD_DEPENDS:Mtextproc/gtk-doc}
+     CONFIGURE_ARGS += -DENABLE_GTK_DOC=OFF
+.  endif
+   # not in the devel/dconf because the flag is not consistent between projects
+.  if ${MODULES:Mdevel/dconf}
+     CONFIGURE_ARGS += -DENABLE_SCHEMAS_COMPILE=OFF
+.  endif
+   # cmake looks for "python"
+.  if ${MODULES:Mlang/python}
+     MODGNOME_pre-configure += ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
+.  endif
 .endif
 
 # Use MODGNOME_TOOLS to indicate certain tools are needed for building bindings
@@ -80,7 +93,11 @@ ERRORS += "Fatal: unknown MODGNOME_TOOLS option: ${_t}\n(not in ${_VALID_TOOLS})
 .   endif
 
 .   if ${MODGNOME_TOOLS:Mgobject-introspection}
-        MODGNOME_CONFIGURE_ARGS_gi=--enable-introspection
+.       if ${CONFIGURE_STYLE:Mgnu} || ${CONFIGURE_STYLE:Msimple}
+            MODGNOME_CONFIGURE_ARGS_gi=--enable-introspection
+.       elif ${CONFIGURE_STYLE:Mcmake}
+            MODGNOME_CONFIGURE_ARGS_gi=-DENABLE_INTROSPECTION=ON
+.       endif
         MODGNOME_BUILD_DEPENDS+=devel/gobject-introspection
 .   endif
 
@@ -94,7 +111,11 @@ ERRORS += "Fatal: unknown MODGNOME_TOOLS option: ${_t}\n(not in ${_VALID_TOOLS})
 .   endif
 
 .   if ${MODGNOME_TOOLS:Mvala}
-        MODGNOME_CONFIGURE_ARGS_vala=--enable-vala --enable-vala-bindings
+.       if ${CONFIGURE_STYLE:Mgnu} || ${CONFIGURE_STYLE:Msimple}
+            MODGNOME_CONFIGURE_ARGS_vala=--enable-vala --enable-vala-bindings
+.       elif ${CONFIGURE_STYLE:Mcmake}
+            MODGNOME_CONFIGURE_ARGS_vala=-DENABLE_VALA_BINDINGS=ON
+.       endif
         MODGNOME_BUILD_DEPENDS+=lang/vala
 .   endif
 
@@ -108,9 +129,16 @@ ERRORS += "Fatal: unknown MODGNOME_TOOLS option: ${_t}\n(not in ${_VALID_TOOLS})
 .   endif
 .endif
 
-.if ${CONFIGURE_STYLE:Mgnu} || ${CONFIGURE_STYLE:Msimple}
-CONFIGURE_ARGS+=${MODGNOME_CONFIGURE_ARGS_gi} \
-		${MODGNOME_CONFIGURE_ARGS_vala}
+# If a port needs extra CPPFLAGS, they can just set MODGNOME_CPPFLAGS
+# to the desired value, like -I${X11BASE}/include
+_MODGNOME_cppflags ?= CPPFLAGS="${MODGNOME_CPPFLAGS} -I${LOCALBASE}/include"
+_MODGNOME_ldflags ?= LDFLAGS="${MODGNOME_LDFLAGS} -L${LOCALBASE}/lib"
+
+.if ${CONFIGURE_STYLE:Mgnu} || ${CONFIGURE_STYLE:Msimple} || \
+    ${CONFIGURE_STYLE:Mcmake}
+CONFIGURE_ARGS+=	${MODGNOME_CONFIGURE_ARGS_gi} \
+			${MODGNOME_CONFIGURE_ARGS_vala}
+CONFIGURE_ENV +=	${_MODGNOME_cppflags} ${_MODGNOME_ldflags}
 .endif
 
 .if defined(MODGNOME_BUILD_DEPENDS)
