@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile_Linux,v 1.1 2007/10/26 21:19:16 ajacoutot Exp $
+$OpenBSD: patch-Makefile_Linux,v 1.2 2017/04/19 23:07:53 espie Exp $
 --- Makefile.Linux.orig	Wed Jul 17 22:10:55 1996
 +++ Makefile.Linux	Fri Oct 26 23:07:06 2007
 @@ -1,11 +1,11 @@
@@ -7,7 +7,7 @@ $OpenBSD: patch-Makefile_Linux,v 1.1 2007/10/26 21:19:16 ajacoutot Exp $
 -CXX			= gcc -Wall -fstrength-reduce -fpcc-struct-return
 -CXXFLAGS	   = -g -DUSE_MIT_SHM
 +#CXX			= gcc -Wall -fstrength-reduce -fpcc-struct-return
-+CXXFLAGS	   += -Wall -fstrength-reduce -fpcc-struct-return -DUSE_MIT_SHM -I${X_INCLUDE}
++CXXFLAGS	   += -Wall -DUSE_MIT_SHM -I${X_INCLUDE}
  
  ### default file to be used, when no options are set
  
