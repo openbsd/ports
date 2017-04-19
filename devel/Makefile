@@ -1330,6 +1330,7 @@
      SUBDIR += py-gobject3
      SUBDIR += py-gobject3,python3
      SUBDIR += py-greenlet
+     SUBDIR += py-greenlet,python3
      SUBDIR += py-guppy
      SUBDIR += py-hachoir-core
      SUBDIR += py-hachoir-metadata
