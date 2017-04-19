@@ -1,0 +1,12 @@
+$OpenBSD: patch-kate_part_katebuffer_cpp,v 1.1 2017/04/19 13:21:23 espie Exp $
+--- kate/part/katebuffer.cpp.orig	Tue Apr 18 16:35:12 2017
++++ kate/part/katebuffer.cpp	Tue Apr 18 16:38:02 2017
+@@ -917,7 +917,7 @@ void KateBuffer::updatePreviousNotEmptyLine(KateBufBlo
+   } while (textLine->firstChar()==-1);
+   kdDebug(13020)<<"updatePreviousNotEmptyLine: updating line:"<<(blk->startLine()+current_line)<<endl;
+   QMemArray<uint> foldingList=textLine->foldingListArray();
+-  while ( (foldingList.size()>0)  && ( abs(foldingList[foldingList.size()-2])==1)) {
++  while ( (foldingList.size()>0)  && ( foldingList[foldingList.size()-2]==1)) {
+     foldingList.resize(foldingList.size()-2,QGArray::SpeedOptim);
+   }
+   addIndentBasedFoldingInformation(foldingList,addindent,deindent);
