@@ -1,6 +1,6 @@
-$OpenBSD: patch-chrome_browser_first_run_first_run_internal_posix_cc,v 1.10 2016/10/27 18:30:41 robert Exp $
---- chrome/browser/first_run/first_run_internal_posix.cc.orig.port	Sun Oct 23 21:05:00 2016
-+++ chrome/browser/first_run/first_run_internal_posix.cc	Thu Oct 27 11:16:54 2016
+$OpenBSD: patch-chrome_browser_first_run_first_run_internal_posix_cc,v 1.11 2017/04/19 05:16:46 robert Exp $
+--- chrome/browser/first_run/first_run_internal_posix.cc.orig.port	Sat Apr  8 19:22:37 2017
++++ chrome/browser/first_run/first_run_internal_posix.cc	Sat Apr  8 19:22:40 2017
 @@ -25,7 +25,7 @@ namespace first_run {
  namespace internal {
  

@@ -1,12 +1,12 @@
-$OpenBSD: patch-chrome_browser_ui_webui_chrome_web_ui_controller_factory_cc,v 1.11 2016/10/27 18:30:41 robert Exp $
---- chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc.orig.port	Thu Sep  1 00:03:28 2016
-+++ chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc	Thu Sep  1 11:12:21 2016
-@@ -546,7 +546,7 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
-   if (url.host() == chrome::kChromeUINaClHost)
+$OpenBSD: patch-chrome_browser_ui_webui_chrome_web_ui_controller_factory_cc,v 1.12 2017/04/19 05:16:47 robert Exp $
+--- chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc.orig.port	Thu Mar  9 21:04:29 2017
++++ chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc	Fri Mar 10 07:46:20 2017
+@@ -565,7 +565,7 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
+   if (url.host_piece() == chrome::kChromeUINaClHost)
      return &NewWebUI<NaClUI>;
  #endif
 -#if (defined(OS_LINUX) && defined(TOOLKIT_VIEWS)) || defined(USE_AURA)
 +#if ((defined(OS_LINUX) || defined(OS_BSD)) && defined(TOOLKIT_VIEWS)) || defined(USE_AURA)
-   if (url.host() == chrome::kChromeUITabModalConfirmDialogHost) {
+   if (url.host_piece() == chrome::kChromeUITabModalConfirmDialogHost) {
      return &NewWebUI<ConstrainedWebDialogUI>;
    }

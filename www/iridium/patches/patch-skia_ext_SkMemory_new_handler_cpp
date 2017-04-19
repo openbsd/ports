@@ -1,4 +1,4 @@
-$OpenBSD: patch-skia_ext_SkMemory_new_handler_cpp,v 1.5 2016/10/27 18:30:41 robert Exp $
+$OpenBSD: patch-skia_ext_SkMemory_new_handler_cpp,v 1.6 2017/04/19 05:16:47 robert Exp $
 --- skia/ext/SkMemory_new_handler.cpp.orig.port	Wed Oct 12 21:03:02 2016
 +++ skia/ext/SkMemory_new_handler.cpp	Wed Oct 19 12:56:08 2016
 @@ -68,7 +68,7 @@ static void* sk_malloc_nothrow(size_t size) {

@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_resources_ui_resources_grd,v 1.4 2016/10/27 18:30:41 robert Exp $
+$OpenBSD: patch-ui_resources_ui_resources_grd,v 1.5 2017/04/19 05:16:47 robert Exp $
 --- ui/resources/ui_resources.grd.orig.port	Wed Oct 14 07:59:01 2015
 +++ ui/resources/ui_resources.grd	Wed Oct 14 07:59:13 2015
 @@ -15,7 +15,7 @@

@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_process_launch_h,v 1.6 2016/10/27 18:30:40 robert Exp $
+$OpenBSD: patch-base_process_launch_h,v 1.7 2017/04/19 05:16:46 robert Exp $
 --- base/process/launch.h.orig.port	Wed Oct 12 21:02:52 2016
 +++ base/process/launch.h	Wed Oct 19 12:55:56 2016
 @@ -138,7 +138,7 @@ struct BASE_EXPORT LaunchOptions {

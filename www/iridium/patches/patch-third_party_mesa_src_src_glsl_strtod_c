@@ -1,0 +1,12 @@
+$OpenBSD: patch-third_party_mesa_src_src_glsl_strtod_c,v 1.1 2017/04/19 05:16:47 robert Exp $
+--- third_party/mesa/src/src/glsl/strtod.c.orig.port	Fri Mar 10 17:54:32 2017
++++ third_party/mesa/src/src/glsl/strtod.c	Fri Mar 10 17:54:43 2017
+@@ -45,7 +45,7 @@ double
+ glsl_strtod(const char *s, char **end)
+ {
+ #if defined(_GNU_SOURCE) && !defined(__CYGWIN__) && !defined(__FreeBSD__) && \
+-   !defined(__HAIKU__) && !defined(__UCLIBC__) && !defined(ANDROID)
++   !defined(__HAIKU__) && !defined(__UCLIBC__) && !defined(ANDROID) && !defined(__OpenBSD__)
+    static locale_t loc = NULL;
+    if (!loc) {
+       loc = newlocale(LC_CTYPE_MASK, "C", NULL);

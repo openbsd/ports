@@ -1,0 +1,30 @@
+$OpenBSD: patch-chrome_browser_ui_task_manager_task_manager_table_model_cc,v 1.1 2017/04/19 05:16:47 robert Exp $
+--- chrome/browser/ui/task_manager/task_manager_table_model.cc.orig.port	Sat Apr  1 21:15:12 2017
++++ chrome/browser/ui/task_manager/task_manager_table_model.cc	Sun Apr 16 12:26:37 2017
+@@ -443,7 +443,7 @@ base::string16 TaskManagerTableModel::GetText(int row,
+           ? stringifier_->backgrounded_string()
+           : stringifier_->foregrounded_string();
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+     case IDS_TASK_MANAGER_OPEN_FD_COUNT_COLUMN: {
+       const int fd_count = observed_task_manager()->GetOpenFdCount(tasks_[row]);
+       return fd_count >= 0 ? base::FormatNumber(fd_count)
+@@ -607,7 +607,7 @@ int TaskManagerTableModel::CompareValues(int row1,
+       return BooleanCompare(is_proc1_bg, is_proc2_bg);
+     }
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+     case IDS_TASK_MANAGER_OPEN_FD_COUNT_COLUMN: {
+       const int proc1_fd_count =
+           observed_task_manager()->GetOpenFdCount(tasks_[row1]);
+@@ -778,7 +778,7 @@ void TaskManagerTableModel::UpdateRefreshTypes(int col
+       type = REFRESH_TYPE_MEMORY_STATE;
+       break;
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+     case IDS_TASK_MANAGER_OPEN_FD_COUNT_COLUMN:
+       type = REFRESH_TYPE_FD_COUNT;
+       break;

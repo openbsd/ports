@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2016/10/27 18:30:40 robert Exp $
+# $OpenBSD: Makefile,v 1.57 2017/04/19 05:16:46 robert Exp $
 
 USE_WXNEEDED=		Yes
 
@@ -7,7 +7,7 @@ DPB_PROPERTIES=		parallel
 
 COMMENT=		Iridium browser
 
-V=			54.0
+V=			57.0
 DISTNAME=		iridium-browser-${V}
 PKGNAME=		iridium-${V}
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX}
@@ -18,7 +18,7 @@ HOMEPAGE=		https://iridiumbrowser.de/
 
 MAINTAINER=		Robert Nagy <robert@openbsd.org>
 
-EXTRACT_SUFX=		.tar.xz
+#EXTRACT_SUFX=		.tar.xz
 
 FLAVORS=		debug
 FLAVOR?=
@@ -115,6 +115,8 @@ GN_ARGS=	enable_nacl=false \
 		treat_warnings_as_errors=false \
 		clang_use_chrome_plugins=false \
 		use_allocator=\"none\" \
+		is_official_build=false \
+		fieldtrial_testing_like_official_build=true \
 		extra_cppflags=\"-idirafter ${LOCALBASE}/include -idirafter ${X11BASE}/include\" \
 		extra_ldflags=\"-L${LOCALBASE}/lib -L${X11BASE}/lib\"
 
@@ -134,8 +136,10 @@ MAKE_ENV+=	V=1
 pre-configure:
 	@ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
 .for _arch in x64 ia32
-	@cp -pR ${WRKSRC}/third_party/ffmpeg/chromium/config/Chrome/linux/${_arch}/libavutil \
-		${WRKSRC}/third_party/ffmpeg/chromium/config/Chrome/openbsd/${_arch}/libavutil
+.  for _dir in avcodec avformat avutil
+	@cp -pR ${WRKSRC}/third_party/ffmpeg/chromium/config/Chrome/linux/${_arch}/lib${_dir} \
+		${WRKSRC}/third_party/ffmpeg/chromium/config/Chrome/openbsd/${_arch}/lib${_dir}
+.  endfor
 .endfor
 	@mkdir -p ${WRKSRC}/media/audio/sndio ${WRKSRC}/media/audio/openbsd
 	@cp ${FILESDIR}/sndio_{out,in}put.{cc,h} ${WRKSRC}/media/audio/sndio
@@ -168,6 +172,7 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/iridium/locales
 	${INSTALL_DATA} ${BUILDDIR}/locales/* ${PREFIX}/iridium/locales
 	${INSTALL_DATA} ${BUILDDIR}/*.png ${PREFIX}/iridium
+	${INSTALL_DATA} ${BUILDDIR}/*.service ${PREFIX}/iridium
 	${INSTALL_DATA_DIR} ${PREFIX}/iridium/resources
 	@cp -Rp ${BUILDDIR}/resources/* ${PREFIX}/iridium/resources
 	@chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/iridium/resources

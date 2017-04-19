@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_process_process_metrics_openbsd_cc,v 1.4 2016/10/27 18:30:40 robert Exp $
+$OpenBSD: patch-base_process_process_metrics_openbsd_cc,v 1.5 2017/04/19 05:16:46 robert Exp $
 --- base/process/process_metrics_openbsd.cc.orig.port	Wed Oct 12 21:02:53 2016
 +++ base/process/process_metrics_openbsd.cc	Wed Oct 19 12:55:56 2016
 @@ -4,10 +4,21 @@

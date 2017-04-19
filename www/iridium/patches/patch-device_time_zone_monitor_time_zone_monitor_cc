@@ -1,0 +1,12 @@
+$OpenBSD: patch-device_time_zone_monitor_time_zone_monitor_cc,v 1.1 2017/04/19 05:16:47 robert Exp $
+--- device/time_zone_monitor/time_zone_monitor.cc.orig.port	Sat Dec  3 11:20:01 2016
++++ device/time_zone_monitor/time_zone_monitor.cc	Sat Dec  3 11:20:07 2016
+@@ -31,7 +31,7 @@ void TimeZoneMonitor::NotifyClients() {
+   std::unique_ptr<icu::TimeZone> new_zone(icu::TimeZone::createDefault());
+ #else
+   icu::TimeZone* new_zone = icu::TimeZone::detectHostTimeZone();
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   // We get here multiple times on Linux per a single tz change, but
+   // want to update the ICU default zone and notify renderer only once.
+   std::unique_ptr<icu::TimeZone> current_zone(icu::TimeZone::createDefault());

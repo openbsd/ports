@@ -1,21 +1,12 @@
-$OpenBSD: patch-chrome_browser_ui_browser_view_prefs_cc,v 1.6 2016/10/27 18:30:41 robert Exp $
---- chrome/browser/ui/browser_view_prefs.cc.orig.port	Wed Oct 19 13:39:27 2016
-+++ chrome/browser/ui/browser_view_prefs.cc	Wed Oct 19 13:39:41 2016
+$OpenBSD: patch-chrome_browser_ui_browser_view_prefs_cc,v 1.7 2017/04/19 05:16:47 robert Exp $
+--- chrome/browser/ui/browser_view_prefs.cc.orig.port	Tue Jan  3 20:34:08 2017
++++ chrome/browser/ui/browser_view_prefs.cc	Tue Jan  3 20:34:38 2017
 @@ -10,7 +10,7 @@
  #include "components/prefs/pref_registry_simple.h"
  #include "components/prefs/pref_service.h"
  
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
 +#if (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS)
- #include "ui/base/x/x11_util.h"
+ #include "ui/base/x/x11_util.h"  // nogncheck
  #endif
  
-@@ -32,7 +32,7 @@ void RegisterBrowserViewLocalPrefs(PrefRegistrySimple*
- 
- void RegisterBrowserViewProfilePrefs(
-     user_prefs::PrefRegistrySyncable* registry) {
--#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS)
-   registry->RegisterBooleanPref(prefs::kUseCustomChromeFrame,
-                                 ui::GetCustomFramePrefDefault());
- #endif

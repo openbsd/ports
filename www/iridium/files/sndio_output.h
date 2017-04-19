@@ -8,7 +8,10 @@
 #include <pthread.h>
 #include <sndio.h>
 
+#include "base/time/tick_clock.h"
+#include "base/time/time.h"
 #include "media/audio/audio_io.h"
+
 
 namespace media {
 
@@ -61,6 +64,7 @@ class SndioAudioOutputStream : public AudioOutputStream {
   AudioParameters params;
   // Source stores data here
   std::unique_ptr<AudioBus> audio_bus;
+  int bytes_per_frame;
   // Call-back that produces data to play
   AudioSourceCallback* source;
   // Handle of the audio device

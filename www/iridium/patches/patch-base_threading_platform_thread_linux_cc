@@ -1,6 +1,6 @@
-$OpenBSD: patch-base_threading_platform_thread_linux_cc,v 1.8 2016/10/27 18:30:40 robert Exp $
---- base/threading/platform_thread_linux.cc.orig.port	Wed Oct 19 13:23:29 2016
-+++ base/threading/platform_thread_linux.cc	Wed Oct 19 14:18:22 2016
+$OpenBSD: patch-base_threading_platform_thread_linux_cc,v 1.9 2017/04/19 05:16:46 robert Exp $
+--- base/threading/platform_thread_linux.cc.orig.port	Thu Mar  9 21:04:26 2017
++++ base/threading/platform_thread_linux.cc	Sat Mar 11 20:23:16 2017
 @@ -19,7 +19,9 @@
  
  #if !defined(OS_NACL)
@@ -11,7 +11,7 @@ $OpenBSD: patch-base_threading_platform_thread_linux_cc,v 1.8 2016/10/27 18:30:4
  #include <sys/resource.h>
  #include <sys/time.h>
  #include <sys/types.h>
-@@ -110,7 +112,7 @@ void PlatformThread::SetName(const std::string& name) 
+@@ -130,7 +132,7 @@ void PlatformThread::SetName(const std::string& name) 
    ThreadIdNameManager::GetInstance()->SetName(CurrentId(), name);
    tracked_objects::ThreadData::InitializeThreadContext(name);
  
@@ -20,12 +20,3 @@ $OpenBSD: patch-base_threading_platform_thread_linux_cc,v 1.8 2016/10/27 18:30:4
    // On linux we can get the thread names to show up in the debugger by setting
    // the process name for the LWP.  We don't want to do this for the main
    // thread because that would rename the process, causing tools like killall
-@@ -130,7 +132,7 @@ void PlatformThread::SetName(const std::string& name) 
- #endif  //  !defined(OS_NACL)
- }
- 
--#if !defined(OS_NACL)
-+#if !defined(OS_NACL) && !defined(OS_BSD)
- // static
- void PlatformThread::SetThreadPriority(PlatformThreadId thread_id,
-                                        ThreadPriority priority) {

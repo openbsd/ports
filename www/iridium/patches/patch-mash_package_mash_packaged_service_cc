@@ -1,0 +1,21 @@
+$OpenBSD: patch-mash_package_mash_packaged_service_cc,v 1.1 2017/04/19 05:16:47 robert Exp $
+--- mash/package/mash_packaged_service.cc.orig.port	Thu Mar  9 21:04:34 2017
++++ mash/package/mash_packaged_service.cc	Fri Mar 10 07:46:24 2017
+@@ -29,7 +29,7 @@
+ #include "ash/touch_hud/mus/touch_hud_application.h"  // nogncheck
+ #endif
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+ #include "components/font_service/font_service_app.h"
+ #endif
+ 
+@@ -103,7 +103,7 @@ std::unique_ptr<service_manager::Service> MashPackaged
+     return base::WrapUnique(new mash::task_viewer::TaskViewer);
+   if (name == "test_ime_driver")
+     return base::WrapUnique(new ui::test::TestIMEApplication);
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   if (name == "font_service")
+     return base::WrapUnique(new font_service::FontServiceApp);
+ #endif

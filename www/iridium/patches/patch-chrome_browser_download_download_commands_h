@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_download_download_commands_h,v 1.4 2016/10/27 18:30:40 robert Exp $
+$OpenBSD: patch-chrome_browser_download_download_commands_h,v 1.5 2017/04/19 05:16:46 robert Exp $
 --- chrome/browser/download/download_commands.h.orig.port	Wed Oct 12 21:02:54 2016
 +++ chrome/browser/download/download_commands.h	Wed Oct 19 12:55:58 2016
 @@ -43,7 +43,7 @@ class DownloadCommands {

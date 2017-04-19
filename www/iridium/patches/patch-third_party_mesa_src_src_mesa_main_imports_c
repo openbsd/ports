@@ -1,0 +1,12 @@
+$OpenBSD: patch-third_party_mesa_src_src_mesa_main_imports_c,v 1.1 2017/04/19 05:16:47 robert Exp $
+--- third_party/mesa/src/src/mesa/main/imports.c.orig.port	Fri Mar 10 17:53:17 2017
++++ third_party/mesa/src/src/mesa/main/imports.c	Fri Mar 10 17:53:27 2017
+@@ -542,7 +542,7 @@ float
+ _mesa_strtof( const char *s, char **end )
+ {
+ #if defined(_GNU_SOURCE) && !defined(__CYGWIN__) && !defined(__FreeBSD__) && \
+-   !defined(ANDROID) && !defined(__HAIKU__) && !defined(__UCLIBC__)
++   !defined(ANDROID) && !defined(__HAIKU__) && !defined(__UCLIBC__) && !defined(__OpenBSD__)
+    static locale_t loc = NULL;
+    if (!loc) {
+       loc = newlocale(LC_CTYPE_MASK, "C", NULL);

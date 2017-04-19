@@ -1,0 +1,12 @@
+$OpenBSD: patch-build_compiler_version_py,v 1.1 2017/04/19 05:16:46 robert Exp $
+--- build/compiler_version.py.orig.port	Tue Jan  3 20:48:31 2017
++++ build/compiler_version.py	Tue Jan  3 20:48:44 2017
+@@ -58,7 +58,7 @@ def GetVersion(compiler, tool):
+       # Unmodified: GNU assembler (GNU Binutils) 2.24
+       # Ubuntu: GNU assembler (GNU Binutils for Ubuntu) 2.22
+       # Fedora: GNU assembler version 2.23.2
+-      version_re = re.compile(r"^GNU [^ ]+ .* (\d+).(\d+).*?$", re.M)
++      version_re = re.compile(r"^GNU assembler (\d+).(\d+)")
+     else:
+       raise Exception("Unknown tool %s" % tool)
+ 

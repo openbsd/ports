@@ -1,0 +1,16 @@
+$OpenBSD: patch-base_debug_thread_heap_usage_tracker_cc,v 1.1 2017/04/19 05:16:46 robert Exp $
+--- base/debug/thread_heap_usage_tracker.cc.orig.port	Thu Mar  9 21:04:26 2017
++++ base/debug/thread_heap_usage_tracker.cc	Fri Mar 10 07:46:16 2017
+@@ -15,10 +15,12 @@
+ #include "base/threading/thread_local_storage.h"
+ #include "build/build_config.h"
+ 
++#if !defined(OS_OPENBSD)
+ #if defined(OS_MACOSX) || defined(OS_IOS)
+ #include <malloc/malloc.h>
+ #else
+ #include <malloc.h>
++#endif
+ #endif
+ 
+ namespace base {

@@ -1,7 +1,7 @@
-$OpenBSD: patch-third_party_sqlite_BUILD_gn,v 1.1 2016/10/27 18:30:41 robert Exp $
---- third_party/sqlite/BUILD.gn.orig.port	Sun Aug 14 20:22:54 2016
-+++ third_party/sqlite/BUILD.gn	Mon Aug 15 16:18:50 2016
-@@ -125,7 +125,7 @@ if (!use_system_sqlite) {
+$OpenBSD: patch-third_party_sqlite_BUILD_gn,v 1.2 2017/04/19 05:16:47 robert Exp $
+--- third_party/sqlite/BUILD.gn.orig.port	Thu Dec 15 00:02:28 2016
++++ third_party/sqlite/BUILD.gn	Tue Jan  3 20:30:01 2017
+@@ -126,7 +126,7 @@ if (!use_system_sqlite) {
  
      # Pull in config.h on Linux.  This allows use of preprocessor macros which
      # are not available to the build config.
@@ -10,7 +10,7 @@ $OpenBSD: patch-third_party_sqlite_BUILD_gn,v 1.1 2016/10/27 18:30:41 robert Exp
        defines += [ "_HAVE_SQLITE_CONFIG_H" ]
      }
  
-@@ -140,7 +140,7 @@ if (!use_system_sqlite) {
+@@ -150,7 +150,7 @@ if (!use_system_sqlite) {
        ":sqlite_warnings",
      ]
  

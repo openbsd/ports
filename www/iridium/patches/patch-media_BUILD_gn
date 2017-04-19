@@ -1,0 +1,13 @@
+$OpenBSD: patch-media_BUILD_gn,v 1.1 2017/04/19 05:16:47 robert Exp $
+--- media/BUILD.gn.orig.port	Thu Mar  9 21:04:34 2017
++++ media/BUILD.gn	Fri Mar 10 07:46:24 2017
+@@ -53,6 +53,9 @@ config("media_config") {
+       defines += [ "DLOPEN_PULSEAUDIO" ]
+     }
+   }
++  if (use_sndio) {
++    defines += [ "USE_SNDIO" ]
++  }
+   if (use_cras) {
+     defines += [ "USE_CRAS" ]
+   }

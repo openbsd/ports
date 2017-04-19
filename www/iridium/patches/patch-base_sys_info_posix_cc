@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_sys_info_posix_cc,v 1.4 2016/10/27 18:30:40 robert Exp $
+$OpenBSD: patch-base_sys_info_posix_cc,v 1.5 2017/04/19 05:16:46 robert Exp $
 --- base/sys_info_posix.cc.orig.port	Wed Oct 12 21:02:53 2016
 +++ base/sys_info_posix.cc	Wed Oct 19 12:55:56 2016
 @@ -140,6 +140,17 @@ int64_t SysInfo::AmountOfVirtualMemory() {

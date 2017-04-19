@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_zlib_BUILD_gn,v 1.1 2016/10/27 18:30:41 robert Exp $
+$OpenBSD: patch-third_party_zlib_BUILD_gn,v 1.2 2017/04/19 05:16:47 robert Exp $
 --- third_party/zlib/BUILD.gn.orig.port	Mon Aug 15 21:10:46 2016
 +++ third_party/zlib/BUILD.gn	Mon Aug 15 21:10:52 2016
 @@ -115,7 +115,7 @@ static_library("minizip") {

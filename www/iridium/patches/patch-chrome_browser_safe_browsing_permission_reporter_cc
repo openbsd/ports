@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_safe_browsing_permission_reporter_cc,v 1.1 2016/10/27 18:30:41 robert Exp $
---- chrome/browser/safe_browsing/permission_reporter.cc.orig.port	Wed Oct 12 21:02:55 2016
-+++ chrome/browser/safe_browsing/permission_reporter.cc	Wed Oct 19 12:56:00 2016
-@@ -190,7 +190,7 @@ bool PermissionReporter::BuildReport(const PermissionR
+$OpenBSD: patch-chrome_browser_safe_browsing_permission_reporter_cc,v 1.2 2017/04/19 05:16:47 robert Exp $
+--- chrome/browser/safe_browsing/permission_reporter.cc.orig.port	Thu Dec 15 00:02:05 2016
++++ chrome/browser/safe_browsing/permission_reporter.cc	Tue Jan  3 20:29:56 2017
+@@ -193,7 +193,7 @@ bool PermissionReporter::BuildReport(const PermissionR
  #if defined(OS_ANDROID)
    report.set_platform_type(PermissionReport::ANDROID_PLATFORM);
  #elif defined(OS_MACOSX) || defined(OS_WIN) || defined(OS_CHROMEOS) || \

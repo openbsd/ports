@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_browser_task_manager_task_manager_observer_h,v 1.1 2017/04/19 05:16:47 robert Exp $
+--- chrome/browser/task_manager/task_manager_observer.h.orig.port	Thu Mar  9 21:04:29 2017
++++ chrome/browser/task_manager/task_manager_observer.h	Fri Mar 10 07:46:19 2017
+@@ -42,7 +42,7 @@ enum RefreshType {
+   // or backgrounded.
+   REFRESH_TYPE_PRIORITY          = 1 << 13,
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   // For observers interested in getting the number of open file descriptors of
+   // processes.
+   REFRESH_TYPE_FD_COUNT          = 1 << 14,

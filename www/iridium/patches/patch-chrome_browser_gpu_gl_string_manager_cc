@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_gpu_gl_string_manager_cc,v 1.5 2016/10/27 18:30:41 robert Exp $
+$OpenBSD: patch-chrome_browser_gpu_gl_string_manager_cc,v 1.6 2017/04/19 05:16:47 robert Exp $
 --- chrome/browser/gpu/gl_string_manager.cc.orig.port	Wed Oct 12 21:02:54 2016
 +++ chrome/browser/gpu/gl_string_manager.cc	Wed Oct 19 12:55:59 2016
 @@ -33,7 +33,7 @@ GLStringManager::~GLStringManager() {

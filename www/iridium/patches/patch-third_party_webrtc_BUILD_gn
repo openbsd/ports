@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_webrtc_BUILD_gn,v 1.1 2016/10/27 18:30:41 robert Exp $
+$OpenBSD: patch-third_party_webrtc_BUILD_gn,v 1.2 2017/04/19 05:16:47 robert Exp $
 --- third_party/webrtc/BUILD.gn.orig.port	Wed Oct 12 21:05:46 2016
 +++ third_party/webrtc/BUILD.gn	Wed Oct 19 12:56:10 2016
 @@ -60,6 +60,9 @@ config("common_inherited_config") {

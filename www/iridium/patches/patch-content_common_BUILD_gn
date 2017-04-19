@@ -1,12 +1,13 @@
-$OpenBSD: patch-content_common_BUILD_gn,v 1.1 2016/10/27 18:30:41 robert Exp $
---- content/common/BUILD.gn.orig.port	Wed Oct 12 21:02:59 2016
-+++ content/common/BUILD.gn	Wed Oct 19 12:56:04 2016
-@@ -133,6 +133,17 @@ source_set("common") {
+$OpenBSD: patch-content_common_BUILD_gn,v 1.2 2017/04/19 05:16:47 robert Exp $
+--- content/common/BUILD.gn.orig.port	Thu Mar  9 21:04:32 2017
++++ content/common/BUILD.gn	Fri Mar 10 20:17:59 2017
+@@ -446,6 +446,18 @@ source_set("common") {
      libs += [ "android" ]
    }
  
 +  if (is_openbsd) {
 +    sources -= [
++      "quarantine/quarantine_linux.cc",
 +      "sandbox_linux/sandbox_linux.cc",
 +      "sandbox_linux/sandbox_seccomp_bpf_linux.cc",
 +      "sandbox_linux/sandbox_debug_handling_linux.cc"

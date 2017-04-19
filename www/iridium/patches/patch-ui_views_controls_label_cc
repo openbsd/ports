@@ -1,0 +1,21 @@
+$OpenBSD: patch-ui_views_controls_label_cc,v 1.1 2017/04/19 05:16:47 robert Exp $
+--- ui/views/controls/label.cc.orig.port	Thu Mar  9 21:04:49 2017
++++ ui/views/controls/label.cc	Fri Mar 10 07:46:26 2017
+@@ -521,7 +521,7 @@ bool Label::OnMousePressed(const ui::MouseEvent& event
+     GetFocusManager()->SetFocusedView(this);
+   }
+ 
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
+   if (event.IsOnlyMiddleMouseButton() && GetFocusManager())
+     GetFocusManager()->SetFocusedView(this);
+ #endif
+@@ -685,7 +685,7 @@ bool Label::PasteSelectionClipboard() {
+ }
+ 
+ void Label::UpdateSelectionClipboard() {
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
+   if (!obscured()) {
+     ui::ScopedClipboardWriter(ui::CLIPBOARD_TYPE_SELECTION)
+         .WriteText(GetSelectedText());

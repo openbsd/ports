@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.12 2016/10/27 18:30:40 robert Exp $
---- chrome/browser/chrome_content_browser_client.cc.orig.port	Wed Oct 19 13:31:02 2016
-+++ chrome/browser/chrome_content_browser_client.cc	Wed Oct 19 13:32:41 2016
-@@ -211,7 +211,7 @@
+$OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.13 2017/04/19 05:16:46 robert Exp $
+--- chrome/browser/chrome_content_browser_client.cc.orig.port	Sat Apr  1 21:15:12 2017
++++ chrome/browser/chrome_content_browser_client.cc	Sun Apr 16 12:26:36 2017
+@@ -242,7 +242,7 @@
  #include "chrome/browser/ui/browser_dialogs.h"
  #include "chromeos/chromeos_switches.h"
  #include "components/user_manager/user_manager.h"
@@ -10,8 +10,13 @@ $OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.12 2016/10/2
  #include "chrome/browser/chrome_browser_main_linux.h"
  #elif defined(OS_ANDROID)
  #include "chrome/browser/chrome_browser_main_android.h"
-@@ -223,7 +223,7 @@
+@@ -254,11 +254,11 @@
  #include "chrome/browser/chrome_browser_main_posix.h"
+ #endif
+ 
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_WIN)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_WIN) || defined(OS_BSD)
+ #include "chrome/browser/payments/payment_request_factory.h"
  #endif
  
 -#if defined(OS_POSIX) && !defined(OS_MACOSX)
@@ -19,7 +24,7 @@ $OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.12 2016/10/2
  #include "base/debug/leak_annotations.h"
  #include "components/crash/content/app/breakpad_linux.h"
  #include "components/crash/content/browser/crash_handler_host_linux.h"
-@@ -245,7 +245,7 @@
+@@ -281,7 +281,7 @@
  #include "chrome/browser/ui/views/chrome_browser_main_extra_parts_views.h"
  #endif
  
@@ -28,7 +33,7 @@ $OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.12 2016/10/2
  #include "chrome/browser/ui/views/chrome_browser_main_extra_parts_views_linux.h"
  #endif
  
-@@ -534,7 +534,7 @@ bool CertMatchesFilter(const net::X509Certificate& cer
+@@ -576,7 +576,7 @@ bool CertMatchesFilter(const net::X509Certificate& cer
    return false;
  }
  
@@ -37,7 +42,7 @@ $OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.12 2016/10/2
  breakpad::CrashHandlerHostLinux* CreateCrashHandlerHost(
      const std::string& process_type) {
    base::FilePath dumps_path;
-@@ -840,7 +840,7 @@ content::BrowserMainParts* ChromeContentBrowserClient:
+@@ -899,7 +899,7 @@ content::BrowserMainParts* ChromeContentBrowserClient:
    main_parts = new ChromeBrowserMainPartsMac(parameters);
  #elif defined(OS_CHROMEOS)
    main_parts = new chromeos::ChromeBrowserMainPartsChromeos(parameters);
@@ -46,16 +51,25 @@ $OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.12 2016/10/2
    main_parts = new ChromeBrowserMainPartsLinux(parameters);
  #elif defined(OS_ANDROID)
    main_parts = new ChromeBrowserMainPartsAndroid(parameters);
-@@ -856,7 +856,7 @@ content::BrowserMainParts* ChromeContentBrowserClient:
+@@ -915,7 +915,7 @@ content::BrowserMainParts* ChromeContentBrowserClient:
    // Construct additional browser parts. Stages are called in the order in
    // which they are added.
  #if defined(TOOLKIT_VIEWS)
--#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS) && !defined(USE_OZONE)
++#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS) && !defined(USE_OZONE)
    main_parts->AddParts(new ChromeBrowserMainExtraPartsViewsLinux());
  #else
-   main_parts->AddParts(new ChromeBrowserMainExtraPartsViews());
-@@ -1451,7 +1451,7 @@ void ChromeContentBrowserClient::AppendExtraCommandLin
+   ChromeBrowserMainExtraPartsViews* extra_parts_views =
+@@ -1449,7 +1449,7 @@ bool IsAutoReloadVisibleOnlyEnabled() {
+ }
+ 
+ #if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_WIN) || \
+-    defined(OS_ANDROID)
++    defined(OS_ANDROID) || defined(OS_BSD)
+ bool AreExperimentalWebPlatformFeaturesEnabled() {
+   const base::CommandLine& browser_command_line =
+       *base::CommandLine::ForCurrentProcess();
+@@ -1552,7 +1552,7 @@ void ChromeContentBrowserClient::AppendExtraCommandLin
      command_line->AppendSwitchASCII(switches::kMetricsClientID,
                                      client_info->client_id);
    }
@@ -64,12 +78,30 @@ $OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.12 2016/10/2
    if (breakpad::IsCrashReporterEnabled()) {
      std::string switch_value;
      std::unique_ptr<metrics::ClientInfo> client_info =
-@@ -2732,7 +2732,7 @@ void ChromeContentBrowserClient::GetAdditionalMappedFi
-   PathService::Get(base::DIR_ANDROID_APP_DATA, &app_data_path);
-   DCHECK(!app_data_path.empty());
+@@ -2806,7 +2806,7 @@ void ChromeContentBrowserClient::GetAdditionalFileSyst
+   }
  }
--#elif defined(OS_POSIX) && !defined(OS_MACOSX)
-+#elif defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_BSD)
+ 
+-#if defined(OS_POSIX) && !defined(OS_MACOSX)
++#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_BSD)
  void ChromeContentBrowserClient::GetAdditionalMappedFilesForChildProcess(
      const base::CommandLine& command_line,
      int child_process_id,
+@@ -3036,7 +3036,7 @@ void ChromeContentBrowserClient::RegisterRenderFrameMo
+                                      shape_detection::mojom::TextDetection>());
+     }
+   }
+-#elif defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_WIN)
++#elif defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_WIN) || defined(OS_BSD)
+   // TODO(crbug.com/679127): Enable for MacViews implementation.
+   if (AreExperimentalWebPlatformFeaturesEnabled()) {
+     content::WebContents* web_contents =
+@@ -3048,7 +3048,7 @@ void ChromeContentBrowserClient::RegisterRenderFrameMo
+   }
+ #endif
+ 
+-#if defined(OS_LINUX) || defined(OS_WIN)
++#if defined(OS_LINUX) || defined(OS_WIN) || defined(OS_BSD)
+   if (!ChromeOriginTrialPolicy().IsFeatureDisabled("WebShare")) {
+     registry->AddInterface(base::Bind(&ShareServiceImpl::Create));
+   }

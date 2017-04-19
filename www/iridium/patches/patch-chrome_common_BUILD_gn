@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_common_BUILD_gn,v 1.1 2016/10/27 18:30:41 robert Exp $
---- chrome/common/BUILD.gn.orig.port	Wed Oct 12 21:02:55 2016
-+++ chrome/common/BUILD.gn	Wed Oct 19 12:56:02 2016
-@@ -118,6 +118,10 @@ static_library("common") {
+$OpenBSD: patch-chrome_common_BUILD_gn,v 1.2 2017/04/19 05:16:47 robert Exp $
+--- chrome/common/BUILD.gn.orig.port	Thu Mar  9 21:04:29 2017
++++ chrome/common/BUILD.gn	Fri Mar 10 07:46:20 2017
+@@ -244,6 +244,10 @@ static_library("common") {
      public_deps += [ "//ppapi/shared_impl" ]
    }
  
@@ -9,6 +9,6 @@ $OpenBSD: patch-chrome_common_BUILD_gn,v 1.1 2016/10/27 18:30:41 robert Exp $
 +    sources -= [ "component_flash_hint_file_linux.cc" ]
 +  }
 +
-   if (is_ios) {
+   if (enable_extensions) {
      sources += [
-       # Use this Mac file that was filtered out.
+       "cast_messages.cc",

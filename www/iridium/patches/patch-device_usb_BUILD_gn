@@ -1,4 +1,4 @@
-$OpenBSD: patch-device_usb_BUILD_gn,v 1.1 2016/10/27 18:30:41 robert Exp $
+$OpenBSD: patch-device_usb_BUILD_gn,v 1.2 2017/04/19 05:16:47 robert Exp $
 --- device/usb/BUILD.gn.orig.port	Wed Oct 12 21:02:59 2016
 +++ device/usb/BUILD.gn	Wed Oct 19 12:56:05 2016
 @@ -87,7 +87,7 @@ static_library("usb") {

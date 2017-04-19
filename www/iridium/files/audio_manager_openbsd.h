@@ -8,7 +8,9 @@
 #include <set>
 
 #include "base/compiler_specific.h"
+#include "base/macros.h"
 #include "base/memory/ref_counted.h"
+#include "base/threading/thread.h"
 #include "media/audio/audio_manager_base.h"
 
 namespace media {
@@ -28,6 +30,7 @@ class MEDIA_EXPORT AudioManagerOpenBSD : public AudioManagerBase {
   void GetAudioOutputDeviceNames(AudioDeviceNames* device_names) override;
   AudioParameters GetInputStreamParameters(
       const std::string& device_id) override;
+  const char* GetName() override;
 
   // Implementation of AudioManagerBase.
   AudioOutputStream* MakeLinearOutputStream(
@@ -57,9 +60,6 @@ class MEDIA_EXPORT AudioManagerOpenBSD : public AudioManagerBase {
   // Called by MakeLinearOutputStream and MakeLowLatencyOutputStream.
   AudioOutputStream* MakeOutputStream(const AudioParameters& params);
   AudioInputStream* MakeInputStream(const AudioParameters& params);
-
-  // Flag to indicate whether the pulse library has been initialized or not.
-  bool pulse_library_is_initialized_;
 
   DISALLOW_COPY_AND_ASSIGN(AudioManagerOpenBSD);
 };

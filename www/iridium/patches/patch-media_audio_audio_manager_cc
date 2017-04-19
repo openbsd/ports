@@ -1,6 +1,6 @@
-$OpenBSD: patch-media_audio_audio_manager_cc,v 1.4 2016/10/27 18:30:41 robert Exp $
---- media/audio/audio_manager.cc.orig.port	Wed Oct 12 21:03:00 2016
-+++ media/audio/audio_manager.cc	Wed Oct 19 12:56:06 2016
+$OpenBSD: patch-media_audio_audio_manager_cc,v 1.5 2017/04/19 05:16:47 robert Exp $
+--- media/audio/audio_manager.cc.orig.port	Thu Mar  9 21:04:34 2017
++++ media/audio/audio_manager.cc	Fri Mar 10 07:46:24 2017
 @@ -95,7 +95,7 @@ class AudioManagerHelper : public base::PowerObserver 
    }
  #endif
@@ -19,7 +19,7 @@ $OpenBSD: patch-media_audio_audio_manager_cc,v 1.4 2016/10/27 18:30:41 robert Ex
    std::string app_name_;
  #endif
  
-@@ -365,7 +365,7 @@ void AudioManager::EnableCrashKeyLoggingForAudioThread
+@@ -369,7 +369,7 @@ void AudioManager::EnableCrashKeyLoggingForAudioThread
    g_helper.Pointer()->enable_crash_key_logging();
  }
  

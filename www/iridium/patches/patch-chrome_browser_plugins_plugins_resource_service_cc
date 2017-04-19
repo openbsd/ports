@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_plugins_plugins_resource_service_cc,v 1.4 2016/10/27 18:30:41 robert Exp $
+$OpenBSD: patch-chrome_browser_plugins_plugins_resource_service_cc,v 1.5 2017/04/19 05:16:47 robert Exp $
 --- chrome/browser/plugins/plugins_resource_service.cc.orig.port	Tue Oct 25 21:56:43 2016
 +++ chrome/browser/plugins/plugins_resource_service.cc	Tue Oct 25 22:02:34 2016
 @@ -31,7 +31,7 @@ GURL GetPluginsServerURL() {

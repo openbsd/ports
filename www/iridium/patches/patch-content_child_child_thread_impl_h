@@ -1,0 +1,12 @@
+$OpenBSD: patch-content_child_child_thread_impl_h,v 1.1 2017/04/19 05:16:47 robert Exp $
+--- content/child/child_thread_impl.h.orig.port	Thu Mar  9 21:04:32 2017
++++ content/child/child_thread_impl.h	Fri Mar 10 07:46:23 2017
+@@ -116,7 +116,7 @@ class CONTENT_EXPORT ChildThreadImpl
+   static std::unique_ptr<base::SharedMemory> AllocateSharedMemory(
+       size_t buf_size);
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   void SetThreadPriority(base::PlatformThreadId id,
+                          base::ThreadPriority priority);
+ #endif

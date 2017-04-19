@@ -1,4 +1,4 @@
-$OpenBSD: patch-tools_gyp_pylib_gyp_generator_make_py,v 1.4 2016/10/27 18:30:41 robert Exp $
+$OpenBSD: patch-tools_gyp_pylib_gyp_generator_make_py,v 1.5 2017/04/19 05:16:47 robert Exp $
 --- tools/gyp/pylib/gyp/generator/make.py.orig.port	Fri Jan 22 22:14:59 2016
 +++ tools/gyp/pylib/gyp/generator/make.py	Fri Jan 22 22:15:51 2016
 @@ -136,7 +136,7 @@ quiet_cmd_alink = AR($(TOOLSET)) $@

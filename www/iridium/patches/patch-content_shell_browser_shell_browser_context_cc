@@ -1,7 +1,7 @@
-$OpenBSD: patch-content_shell_browser_shell_browser_context_cc,v 1.5 2016/10/27 18:30:41 robert Exp $
---- content/shell/browser/shell_browser_context.cc.orig.port	Tue Oct 25 21:56:44 2016
-+++ content/shell/browser/shell_browser_context.cc	Tue Oct 25 22:11:34 2016
-@@ -24,7 +24,7 @@
+$OpenBSD: patch-content_shell_browser_shell_browser_context_cc,v 1.6 2017/04/19 05:16:47 robert Exp $
+--- content/shell/browser/shell_browser_context.cc.orig.port	Thu Dec 15 00:02:09 2016
++++ content/shell/browser/shell_browser_context.cc	Tue Jan  3 20:29:59 2017
+@@ -25,7 +25,7 @@
  
  #if defined(OS_WIN)
  #include "base/base_paths_win.h"
@@ -10,7 +10,7 @@ $OpenBSD: patch-content_shell_browser_shell_browser_context_cc,v 1.5 2016/10/27 
  #include "base/nix/xdg_util.h"
  #elif defined(OS_MACOSX)
  #include "base/base_paths_mac.h"
-@@ -81,7 +81,7 @@ void ShellBrowserContext::InitWhileIOAllowed() {
+@@ -97,7 +97,7 @@ void ShellBrowserContext::InitWhileIOAllowed() {
  #if defined(OS_WIN)
    CHECK(PathService::Get(base::DIR_LOCAL_APP_DATA, &path_));
    path_ = path_.Append(std::wstring(L"content_shell"));

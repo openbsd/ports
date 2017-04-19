@@ -1,7 +1,7 @@
-$OpenBSD: patch-ui_views_corewm_tooltip_aura_cc,v 1.1 2016/10/27 18:30:41 robert Exp $
---- ui/views/corewm/tooltip_aura.cc.orig.port	Tue Oct 25 21:56:44 2016
-+++ ui/views/corewm/tooltip_aura.cc	Tue Oct 25 22:14:45 2016
-@@ -35,7 +35,7 @@ const int kCursorOffsetY = 15;
+$OpenBSD: patch-ui_views_corewm_tooltip_aura_cc,v 1.2 2017/04/19 05:16:47 robert Exp $
+--- ui/views/corewm/tooltip_aura.cc.orig.port	Fri Dec  2 00:02:39 2016
++++ ui/views/corewm/tooltip_aura.cc	Fri Dec  2 17:44:57 2016
+@@ -34,7 +34,7 @@ const int kCursorOffsetY = 15;
  
  // TODO(varkha): Update if native widget can be transparent on Linux.
  bool CanUseTranslucentTooltipWidget() {
@@ -9,4 +9,4 @@ $OpenBSD: patch-ui_views_corewm_tooltip_aura_cc,v 1.1 2016/10/27 18:30:41 robert
 +#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
    return false;
  #else
-   return ui::MaterialDesignController::IsModeMaterial();
+   return true;

@@ -1,4 +1,4 @@
-$OpenBSD: patch-device_media_transfer_protocol_media_transfer_protocol_daemon_client_h,v 1.1 2016/10/27 18:30:41 robert Exp $
+$OpenBSD: patch-device_media_transfer_protocol_media_transfer_protocol_daemon_client_h,v 1.2 2017/04/19 05:16:47 robert Exp $
 --- device/media_transfer_protocol/media_transfer_protocol_daemon_client.h.orig.port	Sun Aug 14 22:49:26 2016
 +++ device/media_transfer_protocol/media_transfer_protocol_daemon_client.h	Sun Aug 14 22:49:33 2016
 @@ -19,7 +19,7 @@

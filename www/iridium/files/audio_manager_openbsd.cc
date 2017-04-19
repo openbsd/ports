@@ -2,17 +2,33 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+#include "base/metrics/histogram_macros.h"
+
 #include "media/audio/openbsd/audio_manager_openbsd.h"
 
 #include "media/audio/audio_device_description.h"
 #include "media/audio/audio_output_dispatcher.h"
+#if defined(USE_PULSEAUDIO)
+#include "media/audio/pulse/audio_manager_pulse.h"
+#endif
+#if defined(USE_SNDIO)
 #include "media/audio/sndio/sndio_input.h"
 #include "media/audio/sndio/sndio_output.h"
+#else
+#include "media/audio/fake_audio_manager.h"
+#endif
 #include "media/base/limits.h"
 #include "media/base/media_switches.h"
 
 namespace media {
 
+enum OpenBSDAudioIO {
+  kPulse,
+  kSndio,
+  kAudioIOMax = kSndio
+};
+
+#if defined(USE_SNDIO)
 // Maximum number of output streams that can be open simultaneously.
 static const int kMaxOutputStreams = 4;
 
@@ -46,6 +62,12 @@ void AudioManagerOpenBSD::GetAudioOutputDeviceNames(
     AudioDeviceNames* device_names) {
   AddDefaultDevice(device_names);
 }
+
+#if defined(USE_SNDIO)
+const char* AudioManagerOpenBSD::GetName() {
+  return "SNDIO";
+}
+#endif
 
 AudioParameters AudioManagerOpenBSD::GetInputStreamParameters(
     const std::string& device_id) {
@@ -146,15 +168,38 @@ AudioOutputStream* AudioManagerOpenBSD::MakeOutputStream(
   DLOG(WARNING) << "MakeOutputStream";
   return new SndioAudioOutputStream(params, this);
 }
+#endif
 
 ScopedAudioManagerPtr CreateAudioManager(
     scoped_refptr<base::SingleThreadTaskRunner> task_runner,
     scoped_refptr<base::SingleThreadTaskRunner> worker_task_runner,
     AudioLogFactory* audio_log_factory) {
   DLOG(WARNING) << "CreateAudioManager";
+#if defined(USE_PULSEAUDIO)
+  // Do not move task runners when creating AudioManagerPulse.
+  // If the creation fails, we need to use the task runners to create other
+  // AudioManager implementations.
+  std::unique_ptr<AudioManagerPulse, AudioManagerDeleter> manager(
+      new AudioManagerPulse(task_runner, worker_task_runner,
+                            audio_log_factory));
+  if (manager->Init()) {
+    UMA_HISTOGRAM_ENUMERATION("Media.OpenBSDAudioIO", kPulse, kAudioIOMax + 1);
+    return std::move(manager);
+  }
+  DVLOG(1) << "PulseAudio is not available on the OS";
+#endif
+
+#if defined(USE_SNDIO)
+  UMA_HISTOGRAM_ENUMERATION("Media.OpenBSDAudioIO", kSndio, kAudioIOMax + 1);
   return ScopedAudioManagerPtr(
       new AudioManagerOpenBSD(std::move(task_runner),
                               std::move(worker_task_runner),audio_log_factory));
+#else
+  return ScopedAudioManagerPtr(
+      new FakeAudioManager(std::move(task_runner),
+                           std::move(worker_task_runner), audio_log_factory));
+#endif
+
 }
 
 }  // namespace media

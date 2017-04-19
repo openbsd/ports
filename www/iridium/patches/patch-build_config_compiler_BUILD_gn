@@ -1,16 +1,16 @@
-$OpenBSD: patch-build_config_compiler_BUILD_gn,v 1.1 2016/10/27 18:30:40 robert Exp $
---- build/config/compiler/BUILD.gn.orig.port	Wed Oct 19 13:29:47 2016
-+++ build/config/compiler/BUILD.gn	Wed Oct 19 13:30:51 2016
-@@ -38,7 +38,7 @@ declare_args() {
+$OpenBSD: patch-build_config_compiler_BUILD_gn,v 1.2 2017/04/19 05:16:46 robert Exp $
+--- build/config/compiler/BUILD.gn.orig.port	Thu Mar  9 21:04:27 2017
++++ build/config/compiler/BUILD.gn	Fri Mar 10 07:46:16 2017
+@@ -36,7 +36,7 @@ declare_args() {
    # only two architectures that are currently checked in). Turn this off when
    # you are using a custom toolchain and need to control -B in cflags.
    linux_use_bundled_binutils =
--      is_linux && (current_cpu == "x64" || current_cpu == "x86")
-+      (is_linux && !is_openbsd) && (current_cpu == "x64" || current_cpu == "x86")
+-      linux_use_bundled_binutils_override && is_linux &&
++      linux_use_bundled_binutils_override && (is_linux && !is_openbsd) &&
+       (current_cpu == "x64" || current_cpu == "x86")
    binutils_path = rebase_path("//third_party/binutils/Linux_x64/Release/bin",
                                root_build_dir)
- 
-@@ -201,7 +201,7 @@ config("compiler") {
+@@ -215,7 +215,7 @@ config("compiler") {
  
      # Linker warnings.
      if (fatal_linker_warnings && !(is_chromeos && current_cpu == "arm") &&
@@ -19,16 +19,16 @@ $OpenBSD: patch-build_config_compiler_BUILD_gn,v 1.1 2016/10/27 18:30:40 robert 
        # TODO(jochen): Enable this on chromeos on arm. http://crbug.com/356580
        # TODO(lizeb,pasko): Fix link errors when linking with order_profiling=1
        # crbug.com/485542
-@@ -283,7 +283,7 @@ config("compiler") {
-       "-Wl,-z,now",
+@@ -295,7 +295,7 @@ config("compiler") {
        "-Wl,-z,relro",
      ]
--    if (!using_sanitizer && !use_cfi_diag) {
-+    if (!using_sanitizer && !use_cfi_diag && !is_openbsd) {
-       ldflags += [ "-Wl,-z,defs" ]
-     }
-   }
-@@ -1014,14 +1014,14 @@ config("default_warnings") {
+     if (!using_sanitizer) {
+-      if (!use_cfi_diag) {
++      if (!use_cfi_diag && !is_openbsd) {
+         ldflags += [ "-Wl,-z,defs" ]
+       }
+ 
+@@ -1058,14 +1058,14 @@ config("default_warnings") {
      # Chrome's hermetic Clang compiler, NaCl's Clang compiler and Xcode's Clang
      # compiler will almost always have different versions. Certain flags may not
      # be recognized by one version or the other.

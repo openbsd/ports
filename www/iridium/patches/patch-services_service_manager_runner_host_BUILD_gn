@@ -1,0 +1,12 @@
+$OpenBSD: patch-services_service_manager_runner_host_BUILD_gn,v 1.1 2017/04/19 05:16:47 robert Exp $
+--- services/service_manager/runner/host/BUILD.gn.orig.port	Fri Mar 10 10:06:07 2017
++++ services/service_manager/runner/host/BUILD.gn	Fri Mar 10 10:06:17 2017
+@@ -28,7 +28,7 @@ source_set("lib") {
+     "//mojo/public/cpp/system",
+   ]
+ 
+-  if (is_linux && !is_android) {
++  if (is_linux && !is_android && !is_openbsd) {
+     deps += [ "//sandbox/linux:sandbox_services" ]
+   }
+ }

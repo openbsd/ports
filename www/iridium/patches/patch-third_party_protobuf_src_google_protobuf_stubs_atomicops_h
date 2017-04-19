@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_protobuf_src_google_protobuf_stubs_atomicops_h,v 1.3 2016/10/27 18:30:41 robert Exp $
+$OpenBSD: patch-third_party_protobuf_src_google_protobuf_stubs_atomicops_h,v 1.4 2017/04/19 05:16:47 robert Exp $
 --- third_party/protobuf/src/google/protobuf/stubs/atomicops.h.orig.port	Wed Jul 20 21:03:43 2016
 +++ third_party/protobuf/src/google/protobuf/stubs/atomicops.h	Thu Jul 21 10:25:32 2016
 @@ -89,7 +89,11 @@ typedef intptr_t Atomic64;

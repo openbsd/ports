@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_usrsctp_BUILD_gn,v 1.1 2016/10/27 18:30:41 robert Exp $
+$OpenBSD: patch-third_party_usrsctp_BUILD_gn,v 1.2 2017/04/19 05:16:47 robert Exp $
 --- third_party/usrsctp/BUILD.gn.orig.port	Sun Aug 14 16:32:41 2016
 +++ third_party/usrsctp/BUILD.gn	Sun Aug 14 16:33:15 2016
 @@ -107,9 +107,14 @@ static_library("usrsctp") {

@@ -1,8 +1,8 @@
-$OpenBSD: patch-build_config_features_gni,v 1.1 2016/10/27 18:30:40 robert Exp $
---- build/config/features.gni.orig.port	Wed Oct 12 21:02:53 2016
-+++ build/config/features.gni	Wed Oct 19 12:55:57 2016
-@@ -102,7 +102,7 @@ declare_args() {
-   enable_wifi_display = false
+$OpenBSD: patch-build_config_features_gni,v 1.2 2017/04/19 05:16:46 robert Exp $
+--- build/config/features.gni.orig.port	Thu Mar  9 21:04:27 2017
++++ build/config/features.gni	Fri Mar 10 17:51:01 2017
+@@ -55,7 +55,7 @@ declare_args() {
+   fieldtrial_testing_like_official_build = is_chrome_branded
  
    # libudev usage. This currently only affects the content layer.
 -  use_udev = is_linux && !is_chromecast
@@ -10,12 +10,3 @@ $OpenBSD: patch-build_config_features_gni,v 1.1 2016/10/27 18:30:40 robert Exp $
  
    use_dbus = is_linux && !is_chromecast
  
-@@ -151,7 +151,7 @@ enable_pepper_cdms =
- use_seccomp_bpf =
-     (is_linux || is_android) &&
-     (current_cpu == "x86" || current_cpu == "x64" || current_cpu == "arm" ||
--     current_cpu == "arm64" || current_cpu == "mipsel")
-+     current_cpu == "arm64" || current_cpu == "mipsel") && !is_openbsd
- 
- # Enable notifications everywhere except iOS.
- enable_notifications = !is_ios

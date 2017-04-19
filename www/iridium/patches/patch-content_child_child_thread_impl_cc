@@ -1,0 +1,12 @@
+$OpenBSD: patch-content_child_child_thread_impl_cc,v 1.1 2017/04/19 05:16:47 robert Exp $
+--- content/child/child_thread_impl.cc.orig.port	Thu Mar  9 21:04:32 2017
++++ content/child/child_thread_impl.cc	Fri Mar 10 07:46:23 2017
+@@ -706,7 +706,7 @@ std::unique_ptr<base::SharedMemory> ChildThreadImpl::A
+   return base::MakeUnique<base::SharedMemory>(shared_buf, false);
+ }
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+ void ChildThreadImpl::SetThreadPriority(base::PlatformThreadId id,
+                                         base::ThreadPriority priority) {
+   Send(new ChildProcessHostMsg_SetThreadPriority(id, priority));

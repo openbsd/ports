@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_app_list_views_app_list_item_view_cc,v 1.7 2016/10/27 18:30:41 robert Exp $
+$OpenBSD: patch-ui_app_list_views_app_list_item_view_cc,v 1.8 2017/04/19 05:16:47 robert Exp $
 --- ui/app_list/views/app_list_item_view.cc.orig.port	Wed Oct 12 21:03:17 2016
 +++ ui/app_list/views/app_list_item_view.cc	Wed Oct 19 12:56:11 2016
 @@ -55,7 +55,7 @@ gfx::FontList GetFontList() {

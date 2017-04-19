@@ -1,0 +1,12 @@
+$OpenBSD: patch-content_child_child_process_h,v 1.1 2017/04/19 05:16:47 robert Exp $
+--- content/child/child_process.h.orig.port	Fri Jan 13 11:01:27 2017
++++ content/child/child_process.h	Fri Jan 13 11:01:36 2017
+@@ -69,7 +69,7 @@ class CONTENT_EXPORT ChildProcess {
+   void AddRefProcess();
+   void ReleaseProcess();
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   void SetIOThreadPriority(base::ThreadPriority io_thread_priority);
+ #endif
+ 

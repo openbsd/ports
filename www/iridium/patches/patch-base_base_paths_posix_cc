@@ -1,6 +1,6 @@
-$OpenBSD: patch-base_base_paths_posix_cc,v 1.4 2016/10/27 18:30:40 robert Exp $
---- base/base_paths_posix.cc.orig.port	Thu Oct 27 14:43:06 2016
-+++ base/base_paths_posix.cc	Thu Oct 27 14:43:25 2016
+$OpenBSD: patch-base_base_paths_posix_cc,v 1.5 2017/04/19 05:16:46 robert Exp $
+--- base/base_paths_posix.cc.orig.port	Sat Apr  8 19:38:10 2017
++++ base/base_paths_posix.cc	Sat Apr  8 19:42:40 2017
 @@ -70,10 +70,10 @@ bool PathProviderPosix(int key, FilePath* result) {
  #elif defined(OS_OPENBSD)
        // There is currently no way to get the executable path on OpenBSD

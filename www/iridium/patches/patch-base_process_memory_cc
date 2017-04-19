@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_process_memory_cc,v 1.5 2016/10/27 18:30:40 robert Exp $
+$OpenBSD: patch-base_process_memory_cc,v 1.6 2017/04/19 05:16:46 robert Exp $
 --- base/process/memory.cc.orig.port	Fri Oct 21 00:01:59 2016
 +++ base/process/memory.cc	Sat Oct 22 15:54:28 2016
 @@ -10,7 +10,7 @@

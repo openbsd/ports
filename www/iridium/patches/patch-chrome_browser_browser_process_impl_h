@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_browser_process_impl_h,v 1.1 2016/10/27 18:30:40 robert Exp $
---- chrome/browser/browser_process_impl.h.orig.port	Tue Oct 25 21:56:43 2016
-+++ chrome/browser/browser_process_impl.h	Tue Oct 25 22:19:37 2016
-@@ -336,7 +336,7 @@ class BrowserProcessImpl : public BrowserProcess,
+$OpenBSD: patch-chrome_browser_browser_process_impl_h,v 1.2 2017/04/19 05:16:46 robert Exp $
+--- chrome/browser/browser_process_impl.h.orig.port	Thu Mar  9 21:04:27 2017
++++ chrome/browser/browser_process_impl.h	Fri Mar 10 07:46:17 2017
+@@ -341,7 +341,7 @@ class BrowserProcessImpl : public BrowserProcess,
  
    std::unique_ptr<ChromeDeviceClient> device_client_;
  

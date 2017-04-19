@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_extensions_BUILD_gn,v 1.1 2016/10/27 18:30:41 robert Exp $
---- chrome/browser/extensions/BUILD.gn.orig.port	Wed Oct 12 21:02:54 2016
-+++ chrome/browser/extensions/BUILD.gn	Wed Oct 19 12:55:58 2016
-@@ -252,6 +252,10 @@ static_library("extensions") {
+$OpenBSD: patch-chrome_browser_extensions_BUILD_gn,v 1.2 2017/04/19 05:16:46 robert Exp $
+--- chrome/browser/extensions/BUILD.gn.orig.port	Thu Mar  9 21:04:28 2017
++++ chrome/browser/extensions/BUILD.gn	Fri Mar 10 07:46:19 2017
+@@ -1127,6 +1127,10 @@ static_library("extensions") {
      defines += [ "ENABLE_HOTWORDING" ]
    }
  
@@ -10,5 +10,5 @@ $OpenBSD: patch-chrome_browser_extensions_BUILD_gn,v 1.1 2016/10/27 18:30:41 rob
 +  }
 +
    if (enable_service_discovery) {
-     sources += rebase_path(
-             gypi_values.chrome_browser_extensions_service_discovery_sources,
+     sources += [
+       "api/gcd_private/gcd_private_api.cc",

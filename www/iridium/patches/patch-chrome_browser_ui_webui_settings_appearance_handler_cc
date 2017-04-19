@@ -1,0 +1,21 @@
+$OpenBSD: patch-chrome_browser_ui_webui_settings_appearance_handler_cc,v 1.1 2017/04/19 05:16:47 robert Exp $
+--- chrome/browser/ui/webui/settings/appearance_handler.cc.orig.port	Sat Feb  4 11:46:22 2017
++++ chrome/browser/ui/webui/settings/appearance_handler.cc	Sat Feb  4 12:11:27 2017
+@@ -32,7 +32,7 @@ void AppearanceHandler::RegisterMessages() {
+       "useDefaultTheme",
+       base::Bind(&AppearanceHandler::HandleUseDefaultTheme,
+                  base::Unretained(this)));
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
+   web_ui()->RegisterMessageCallback(
+       "useSystemTheme",
+       base::Bind(&AppearanceHandler::HandleUseSystemTheme,
+@@ -50,7 +50,7 @@ void AppearanceHandler::HandleUseDefaultTheme(const ba
+   ThemeServiceFactory::GetForProfile(profile_)->UseDefaultTheme();
+ }
+ 
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
+ void AppearanceHandler::HandleUseSystemTheme(const base::ListValue* args) {
+   if (profile_->IsSupervised())
+     NOTREACHED();

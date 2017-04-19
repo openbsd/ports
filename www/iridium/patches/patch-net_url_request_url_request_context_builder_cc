@@ -1,6 +1,6 @@
-$OpenBSD: patch-net_url_request_url_request_context_builder_cc,v 1.9 2016/10/27 18:30:41 robert Exp $
---- net/url_request/url_request_context_builder.cc.orig.port	Wed Oct 12 21:03:01 2016
-+++ net/url_request/url_request_context_builder.cc	Wed Oct 19 12:56:07 2016
+$OpenBSD: patch-net_url_request_url_request_context_builder_cc,v 1.10 2017/04/19 05:16:47 robert Exp $
+--- net/url_request/url_request_context_builder.cc.orig.port	Thu Dec 15 00:02:12 2016
++++ net/url_request/url_request_context_builder.cc	Tue Jan  3 20:30:00 2017
 @@ -327,7 +327,7 @@ std::unique_ptr<URLRequestContext> URLRequestContextBu
    if (!proxy_service_) {
      // TODO(willchan): Switch to using this code when

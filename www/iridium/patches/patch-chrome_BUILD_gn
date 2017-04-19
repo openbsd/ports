@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_BUILD_gn,v 1.1 2017/04/19 05:16:46 robert Exp $
+--- chrome/BUILD.gn.orig.port	Tue Apr 18 08:33:21 2017
++++ chrome/BUILD.gn	Sun Apr 16 12:30:23 2017
+@@ -253,7 +253,7 @@ if (!is_android && !is_mac) {
+         "//chrome/common:features",
+       ]
+ 
+-      ldflags = [ "-pie", "-Wl,--no-keep-memory" ]
++      ldflags += [ "-pie", "-Wl,--no-keep-memory" ]
+ 
+       if (use_pango || use_cairo) {
+         # Needed for chrome_main.cc initialization of libraries.

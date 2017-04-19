@@ -1,21 +1,21 @@
-$OpenBSD: patch-third_party_WebKit_Source_platform_fonts_skia_FontCacheSkia_cpp,v 1.6 2016/10/27 18:30:41 robert Exp $
---- third_party/WebKit/Source/platform/fonts/skia/FontCacheSkia.cpp.orig.port	Wed Oct 12 21:03:14 2016
-+++ third_party/WebKit/Source/platform/fonts/skia/FontCacheSkia.cpp	Wed Oct 19 12:56:08 2016
-@@ -62,7 +62,7 @@ static PassRefPtr<SkTypeface> typefaceForFontconfigInt
- 
- namespace blink {
+$OpenBSD: patch-third_party_WebKit_Source_platform_fonts_skia_FontCacheSkia_cpp,v 1.7 2017/04/19 05:16:47 robert Exp $
+--- third_party/WebKit/Source/platform/fonts/skia/FontCacheSkia.cpp.orig.port	Thu Mar  9 21:04:45 2017
++++ third_party/WebKit/Source/platform/fonts/skia/FontCacheSkia.cpp	Fri Mar 10 07:46:25 2017
+@@ -68,7 +68,7 @@ AtomicString toAtomicString(const SkString& str) {
+   return AtomicString::fromUTF8(str.c_str(), str.size());
+ }
  
 -#if OS(ANDROID) || OS(LINUX)
 +#if OS(ANDROID) || OS(LINUX) || OS(OPENBSD)
  // Android special locale for retrieving the color emoji font
  // based on the proposed changes in UTR #51 for introducing
  // an Emoji script code:
-@@ -183,7 +183,7 @@ PassRefPtr<SkTypeface> FontCache::createTypeface(const
-     }
+@@ -235,7 +235,7 @@ sk_sp<SkTypeface> FontCache::createTypeface(
+   }
  #endif
  
 -#if OS(LINUX) || OS(WIN)
 +#if OS(LINUX) || OS(WIN) || OS(OPENBSD)
-     // On linux if the fontManager has been overridden then we should be calling the embedder
-     // provided font Manager rather than calling SkTypeface::CreateFromName which may redirect the
-     // call to the default font Manager.
+   // On linux if the fontManager has been overridden then we should be calling
+   // the embedder provided font Manager rather than calling
+   // SkTypeface::CreateFromName which may redirect the call to the default font

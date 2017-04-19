@@ -1,8 +1,8 @@
-$OpenBSD: patch-chrome_browser_browser_process_impl_cc,v 1.1 2016/10/27 18:30:40 robert Exp $
---- chrome/browser/browser_process_impl.cc.orig.port	Tue Oct 25 21:56:43 2016
-+++ chrome/browser/browser_process_impl.cc	Tue Oct 25 22:00:31 2016
-@@ -162,7 +162,7 @@
- #include "chrome/browser/media/webrtc_log_uploader.h"
+$OpenBSD: patch-chrome_browser_browser_process_impl_cc,v 1.2 2017/04/19 05:16:46 robert Exp $
+--- chrome/browser/browser_process_impl.cc.orig.port	Thu Mar  9 21:04:27 2017
++++ chrome/browser/browser_process_impl.cc	Fri Mar 10 07:46:17 2017
+@@ -170,7 +170,7 @@
+ #include "chrome/browser/media/webrtc/webrtc_log_uploader.h"
  #endif
  
 -#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
@@ -10,7 +10,7 @@ $OpenBSD: patch-chrome_browser_browser_process_impl_cc,v 1.1 2016/10/27 18:30:40
  #include "chrome/browser/memory/tab_manager.h"
  #endif
  
-@@ -778,7 +778,7 @@ gcm::GCMDriver* BrowserProcessImpl::gcm_driver() {
+@@ -783,7 +783,7 @@ gcm::GCMDriver* BrowserProcessImpl::gcm_driver() {
  
  memory::TabManager* BrowserProcessImpl::GetTabManager() {
    DCHECK(CalledOnValidThread());

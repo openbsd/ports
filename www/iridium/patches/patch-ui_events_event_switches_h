@@ -1,8 +1,8 @@
-$OpenBSD: patch-ui_events_event_switches_h,v 1.4 2016/10/27 18:30:41 robert Exp $
---- ui/events/event_switches.h.orig.port	Wed Feb 24 00:02:06 2016
-+++ ui/events/event_switches.h	Thu Mar  3 09:43:26 2016
-@@ -18,7 +18,7 @@ EVENTS_BASE_EXPORT extern const char kTouchEventsEnabl
- EVENTS_BASE_EXPORT extern const char kTouchEventsDisabled[];
+$OpenBSD: patch-ui_events_event_switches_h,v 1.5 2017/04/19 05:16:47 robert Exp $
+--- ui/events/event_switches.h.orig.port	Thu Mar  9 21:04:49 2017
++++ ui/events/event_switches.h	Fri Mar 10 07:46:26 2017
+@@ -14,7 +14,7 @@ namespace switches {
+ EVENTS_BASE_EXPORT extern const char kEnableScrollPrediction[];
  EVENTS_BASE_EXPORT extern const char kCompensateForUnstablePinchZoom[];
  
 -#if defined(OS_LINUX)

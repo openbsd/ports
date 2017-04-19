@@ -1,0 +1,21 @@
+$OpenBSD: patch-chrome_browser_ui_views_chrome_browser_main_extra_parts_views_cc,v 1.1 2017/04/19 05:16:47 robert Exp $
+--- chrome/browser/ui/views/chrome_browser_main_extra_parts_views.cc.orig.port	Fri Mar 10 09:56:01 2017
++++ chrome/browser/ui/views/chrome_browser_main_extra_parts_views.cc	Fri Mar 10 09:56:35 2017
+@@ -26,7 +26,7 @@
+ #include "ui/wm/core/wm_state.h"
+ #endif  // defined(USE_AURA)
+ 
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
+ #include "base/command_line.h"
+ #include "chrome/browser/ui/simple_message_box.h"
+ #include "chrome/grit/chromium_strings.h"
+@@ -70,7 +70,7 @@ void ChromeBrowserMainExtraPartsViews::PreProfileInit(
+     IMEDriver::Register();
+ #endif
+ 
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
+   // On the Linux desktop, we want to prevent the user from logging in as root,
+   // so that we don't destroy the profile. Now that we have some minimal ui
+   // initialized, check to see if we're running as root and bail if we are.

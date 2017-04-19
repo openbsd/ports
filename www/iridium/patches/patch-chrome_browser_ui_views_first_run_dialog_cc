@@ -1,7 +1,18 @@
-$OpenBSD: patch-chrome_browser_ui_views_first_run_dialog_cc,v 1.6 2016/10/27 18:30:41 robert Exp $
---- chrome/browser/ui/views/first_run_dialog.cc.orig.port	Wed Oct 19 13:41:02 2016
-+++ chrome/browser/ui/views/first_run_dialog.cc	Wed Oct 19 13:41:14 2016
-@@ -116,8 +116,10 @@ views::View* FirstRunDialog::CreateExtraView() {
+$OpenBSD: patch-chrome_browser_ui_views_first_run_dialog_cc,v 1.7 2017/04/19 05:16:47 robert Exp $
+--- chrome/browser/ui/views/first_run_dialog.cc.orig.port	Fri Dec  2 00:02:08 2016
++++ chrome/browser/ui/views/first_run_dialog.cc	Sat Dec  3 20:15:05 2016
+@@ -40,8 +40,10 @@ using views::GridLayout;
+ namespace {
+ 
+ void InitCrashReporterIfEnabled(bool enabled) {
++#if !defined(OS_BSD)
+   if (enabled)
+     breakpad::InitCrashReporter(std::string());
++#endif
+ }
+ 
+ }  // namespace
+@@ -121,8 +123,10 @@ views::View* FirstRunDialog::CreateExtraView() {
  bool FirstRunDialog::Accept() {
    GetWidget()->Hide();
  

@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_chrome_browser_main_posix_cc,v 1.4 2016/10/27 18:30:40 robert Exp $
+$OpenBSD: patch-chrome_browser_chrome_browser_main_posix_cc,v 1.5 2017/04/19 05:16:46 robert Exp $
 --- chrome/browser/chrome_browser_main_posix.cc.orig.port	Thu Sep  1 00:03:27 2016
 +++ chrome/browser/chrome_browser_main_posix.cc	Thu Sep  1 11:12:19 2016
 @@ -275,6 +275,11 @@ void ChromeBrowserMainPartsPosix::PostMainMessageLoopS
