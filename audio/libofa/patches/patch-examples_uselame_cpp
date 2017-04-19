@@ -1,0 +1,11 @@
+$OpenBSD: patch-examples_uselame_cpp,v 1.1 2017/04/19 15:40:25 jca Exp $
+--- examples/uselame.cpp.orig	Wed Apr 19 17:27:41 2017
++++ examples/uselame.cpp	Wed Apr 19 17:30:39 2017
+@@ -11,6 +11,7 @@
+ #include "windows.h"
+ #else
+ #include <sys/wait.h>
++#include <unistd.h>
+ #endif
+ 
+ AudioData *loadWaveFile(char *file);
