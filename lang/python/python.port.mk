@@ -1,4 +1,4 @@
-# $OpenBSD: python.port.mk,v 1.93 2017/01/03 19:12:42 landry Exp $
+# $OpenBSD: python.port.mk,v 1.94 2017/04/19 07:41:00 ajacoutot Exp $
 #
 #	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
@@ -141,10 +141,12 @@ MODPY_DISTUTILS_INSTALL ?=	install --prefix=${LOCALBASE} \
 				--root=${DESTDIR}
 .endif
 
-MAKE_ENV +=	CC=${CC} PYTHONUSERBASE=${_MODPY_USERBASE}
-CONFIGURE_ENV += PYTHON="${MODPY_BIN}" \
-		ac_cv_prog_PYTHON="${MODPY_BIN}" \
-		ac_cv_path_PYTHON="${MODPY_BIN}"
+MAKE_ENV +=		CC=${CC} PYTHONUSERBASE=${_MODPY_USERBASE}
+CONFIGURE_ENV +=	PYTHON="${MODPY_BIN}"
+.if ${CONFIGURE_STYLE:Mgnu}
+CONFIGURE_ENV +=	ac_cv_prog_PYTHON="${MODPY_BIN}" \
+			ac_cv_path_PYTHON="${MODPY_BIN}"
+.endif
 
 MODPY_CMD =	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
 			${MODPY_BIN} ./${MODPY_SETUP} \
