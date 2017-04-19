@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.438 2017/04/17 01:18:17 jca Exp $
+# $OpenBSD: Makefile,v 1.439 2017/04/19 12:23:46 sthen Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -193,6 +193,7 @@
      SUBDIR += parallel
      SUBDIR += pciutils
      SUBDIR += pftop
+     SUBDIR += pick
      SUBDIR += pkg_mgr
      SUBDIR += polkit
      SUBDIR += pscpug
