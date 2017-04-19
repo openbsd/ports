@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.38 2017/03/29 07:12:05 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.39 2017/04/19 13:36:28 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
@@ -238,6 +238,8 @@ lib/python${MODPY_VERSION}/site-packages/awscli/customizations/iot_data.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/iot_data.pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/kms.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/kms.pyc
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/mturk.py
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/mturk.pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/opsworks.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/opsworks.pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/opsworkscm.py
