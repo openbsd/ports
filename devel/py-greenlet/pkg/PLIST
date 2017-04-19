@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/07/17 19:24:47 landry Exp $
-include/python${MODPY_VERSION}/greenlet/
-include/python${MODPY_VERSION}/greenlet/greenlet.h
+@comment $OpenBSD: PLIST,v 1.2 2017/04/19 12:02:57 edd Exp $
+${INCL_DIR}/greenlet/
+${INCL_DIR}/greenlet/greenlet.h
 lib/python${MODPY_VERSION}/site-packages/greenlet-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/greenlet.so
 share/doc/${MODPY_PY_PREFIX}greenlet/
