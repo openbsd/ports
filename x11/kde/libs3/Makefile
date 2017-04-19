@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.152 2017/04/10 11:46:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.153 2017/04/19 13:23:24 espie Exp $
 
 BROKEN-alpha =		.got subsegment exceeds 64K
 BROKEN-mips64 =		.got subsegment exceeds 64K
@@ -12,7 +12,7 @@ PKGNAME-main =		${DISTNAME}
 PKGSPEC-main =		kdelibs->=3,<4
 PKGNAME-langlist =	kde3-langlist-${VERSION}
 PKG_ARCH-langlist =	*
-REVISION-main =		41
+REVISION-main =		42
 REVISION-langlist =	1
 
 MODKDE_VERSION =	3.5.8
@@ -58,7 +58,7 @@ SHARED_LIBS +=	kimproxy             1.0      # .0.0
 SHARED_LIBS +=	katepartinterfaces   1.0      # .0.0
 
 WANTLIB-main += ${MODGETTEXT_WANTLIB}
-WANTLIB-main += FLAC GL Half ICE Iex IexMath IlmImf IlmThread Imath SM X11
+WANTLIB-main += FLAC GL ICE SM X11
 WANTLIB-main += X11-xcb Xau Xcursor Xdamage Xdmcp Xext Xfixes Xft Xi
 WANTLIB-main += Xinerama Xmu Xrandr Xrender Xt Xxf86vm art_lgpl_2 artsflow
 WANTLIB-main += artsflow_idl aspell audiofile avahi-client avahi-common
@@ -88,7 +88,6 @@ LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			devel/pcre \
 			graphics/jasper \
 			graphics/libart \
-			graphics/openexr \
 			graphics/tiff \
 			net/avahi \
 			sysutils/gamin \
@@ -103,7 +102,8 @@ SEPARATE_BUILD =	flavored
 # broken with cups>=1.6.0
 CONFIGURE_ARGS =	--disable-cups \
 			--without-lua \
-			--without-gssapi
+			--without-gssapi \
+			--without-openexr
 
 MODGNU_AUTOCONF_FILES +=	dcop/dcop-path.h.in
 

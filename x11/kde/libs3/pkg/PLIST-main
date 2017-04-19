@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.26 2016/06/29 16:14:45 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.27 2017/04/19 13:23:24 espie Exp $
 @option no-default-conflict
 @option is-branch
 @conflict kdelibs-<4
@@ -843,8 +843,6 @@ ${KDE}/kimg_dds.la
 ${KDE}/kimg_dds.so
 ${KDE}/kimg_eps.la
 ${KDE}/kimg_eps.so
-${KDE}/kimg_exr.la
-${KDE}/kimg_exr.so
 ${KDE}/kimg_hdr.la
 ${KDE}/kimg_hdr.so
 ${KDE}/kimg_ico.la
