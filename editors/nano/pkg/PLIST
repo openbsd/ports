@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.29 2017/01/19 16:28:17 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.30 2017/04/20 20:38:02 naddy Exp $
 @pkgpath editors/nano,slang
 @bin bin/nano
 bin/rnano
 @info info/nano.info
+@comment lib/charset.alias
 @man man/man1/nano.1
 @man man/man1/rnano.1
 @man man/man5/nanorc.5
