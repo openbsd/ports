@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.65 2017/03/07 15:31:38 landry Exp $
+@comment $OpenBSD: PLIST,v 1.66 2017/04/20 06:12:58 landry Exp $
 @conflict firefox3-*
 @conflict firefox35-*
 @conflict firefox36-*
@@ -44,12 +44,14 @@ lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/dependentlibs.list
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/dictionaries/
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/dictionaries/en-US.aff
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/dictionaries/en-US.dic
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/distribution/
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/distribution/distribution.ini
 @bin lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/${MOZILLA_PROJECT}
 @bin lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/${MOZILLA_PROJECT}-bin
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/gmp-clearkey/
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/gmp-clearkey/0.1/
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/gmp-clearkey/0.1/clearkey.info
 @lib lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/gmp-clearkey/0.1/libclearkey.so.${LIBclearkey_VERSION}
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/gmp-clearkey/0.1/manifest.json
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/gtk2/
 @lib lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/gtk2/libmozgtk.so.${LIBmozgtk_VERSION}
 @lib lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/liblgpllibs.so.${LIBlgpllibs_VERSION}

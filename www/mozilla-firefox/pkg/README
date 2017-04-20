@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.15 2016/09/24 14:46:45 landry Exp $
+$OpenBSD: README,v 1.16 2017/04/20 06:12:58 landry Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -41,6 +41,14 @@ If you encounter crashes, you might want to build the debug FLAVOR of
 this package, and run firefox inside gdb, so that you can gather
 debugging logs and traces (for all threads!).
 Bug reports without that information will be ignored.
+
+HTML5 audio/video support
+=========================
+For a full multimedia experience, such as playing MP3 audio or MPEG
+videos, install the "ffmpeg" package. It will be used at runtime if
+firefox finds it.
+
+# pkg_add ffmpeg
 
 KerberosV support
 =================

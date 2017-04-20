@@ -1,18 +1,17 @@
-# $OpenBSD: Makefile,v 1.314 2017/04/12 18:12:33 landry Exp $
+# $OpenBSD: Makefile,v 1.315 2017/04/20 06:12:58 landry Exp $
 
 COMMENT =	Mozilla web browser
 
 # Don't forget to bump www/firefox-i18n after updates.
 
-MOZILLA_VERSION =	52.0.2
+MOZILLA_VERSION =	53.0
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
 BROKEN-sparc64 =	xpcshell SIGBUS during fake
 EXTRACT_SUFX =		.tar.xz
-REVISION =		0
 
-SO_VERSION =	70.0
+SO_VERSION =	71.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 MOZILLA_LIBS =	mozavcodec mozavutil mozgtk xul clearkey lgpllibs
@@ -35,6 +34,8 @@ MODCLANG_LANGS =	c c++
 MOZILLA_USE_BUNDLED_LIBEVENT =	Yes
 # firefox >= 46 defaults to gtk+3
 MOZILLA_USE_GTK3 = Yes
+# firefox >= 53 needs rust and cargo
+BUILD_DEPENDS +=	lang/rust devel/cargo
 
 WANTLIB += X11-xcb pixman-1 pthread-stubs xcb xcb-shm
 
@@ -64,6 +65,10 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/browser/defaults/preferences
 	${SUBST_DATA} ${FILESDIR}/all-openbsd.js \
 		${PREFIX}/lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/browser/defaults/preferences/all-openbsd.js
+	# install distribution.ini file
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/distribution
+	echo "[Global]\nid=OpenBSD\nversion=${OSREV}\nabout=Packaged by ${MAINTAINER}\n" > \
+		${PREFIX}/lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/distribution/distribution.ini
 	# install desktop file
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/
 	${SUBST_DATA} ${FILESDIR}/${MOZILLA_PROJECT}.desktop \

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2017/03/07 15:36:45 landry Exp $
+@comment $OpenBSD: PLIST,v 1.7 2017/04/20 06:12:58 landry Exp $
 bin/${MOZILLA_PROJECT}-esr
 lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/
 lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/application.ini
@@ -33,6 +33,8 @@ lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/dependentlibs.list
 lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/dictionaries/
 lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/dictionaries/en-US.aff
 lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/dictionaries/en-US.dic
+lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/distribution/
+lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/distribution/distribution.ini
 @bin lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/${MOZILLA_PROJECT}-esr
 @bin lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/${MOZILLA_PROJECT}-esr-bin
 lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/gmp-clearkey/

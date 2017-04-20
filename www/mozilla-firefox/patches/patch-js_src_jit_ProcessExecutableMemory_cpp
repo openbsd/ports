@@ -1,12 +1,12 @@
-$OpenBSD: patch-js_src_jit_ProcessExecutableMemory_cpp,v 1.1 2017/03/20 19:35:15 landry Exp $
+$OpenBSD: patch-js_src_jit_ProcessExecutableMemory_cpp,v 1.2 2017/04/20 06:12:58 landry Exp $
 
 https://bugzilla.mozilla.org/show_bug.cgi?id=1347139
 
---- js/src/jit/ProcessExecutableMemory.cpp.orig	Mon Mar 20 10:53:39 2017
-+++ js/src/jit/ProcessExecutableMemory.cpp	Mon Mar 20 10:58:59 2017
+--- js/src/jit/ProcessExecutableMemory.cpp.orig	Mon Mar 20 21:10:31 2017
++++ js/src/jit/ProcessExecutableMemory.cpp	Tue Mar 21 19:48:35 2017
 @@ -390,7 +390,12 @@ class PageBitSet
  #if JS_BITS_PER_WORD == 32
- static const size_t MaxCodeBytesPerProcess = 128 * 1024 * 1024;
+ static const size_t MaxCodeBytesPerProcess = 140 * 1024 * 1024;
  #else
 +#ifdef __OpenBSD__
 +// default datasize is 768Mb on OpenBSD

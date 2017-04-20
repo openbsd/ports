@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.51 2017/04/12 18:12:33 landry Exp $
+# $OpenBSD: Makefile,v 1.52 2017/04/20 06:12:58 landry Exp $
 
 COMMENT =	Firefox web browser, Extended Support Release
 
-MOZILLA_VERSION =	52.0.2esr
+MOZILLA_VERSION =	52.1.0esr
 MOZILLA_BRANCH =	esr52
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
@@ -60,6 +60,10 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/browser/defaults/preferences
 	${SUBST_DATA} ${FILESDIR}/all-openbsd.js \
 		${PREFIX}/lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/browser/defaults/preferences/all-openbsd.js
+	# install distribution.ini file
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/distribution
+	echo "[Global]\nid=OpenBSD\nversion=${OSREV}\nabout=Packaged by ${MAINTAINER}\n" > \
+		${PREFIX}/lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/distribution/distribution.ini
 	# install desktop file
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/
 	${SUBST_DATA} ${FILESDIR}/${MOZILLA_PROJECT}.desktop \
