@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.89 2017/04/19 07:29:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.90 2017/04/20 19:01:58 jasper Exp $
 
 # XXX: PORTROACH set below to override the value from gnome.port.mk
 
@@ -74,6 +74,7 @@ CONFIGURE_ARGS +=	--disable-modular-tests
 
 ########################################
 # XXX: Remove when updating
+MODULES +=		textproc/intltool
 BUILD_DEPENDS +=	devel/gettext-tools
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.15
