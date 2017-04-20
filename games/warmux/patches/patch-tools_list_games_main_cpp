@@ -1,0 +1,9 @@
+$OpenBSD: patch-tools_list_games_main_cpp,v 1.1 2017/04/20 01:48:01 espie Exp $
+--- tools/list_games/main.cpp.orig	Thu Apr 20 03:44:46 2017
++++ tools/list_games/main.cpp	Thu Apr 20 03:44:58 2017
+@@ -1,4 +1,5 @@
+ #include <stdio.h>
++#include <unistd.h>
+ #include <WARMUX_types.h>
+ #include <WARMUX_network.h>
+ #include <WARMUX_index_server.h>
