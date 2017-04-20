@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2016/12/08 06:45:58 bentley Exp $
+# $OpenBSD: Makefile,v 1.30 2017/04/20 04:27:58 bentley Exp $
 
 COMMENT =		lightweight web browser, with GTK interface
 
@@ -35,8 +35,7 @@ WANTLIB += gtk-x11-2.0 hubbub jpeg m nsbmp nsgif nspsl pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 parserutils png pthread
 WANTLIB += rsvg-2 ssl utf8proc wapcaplet z nsutils
 
-MAKE_FLAGS +=		CC="${CC}" \
-			NETSURF_USE_HARU_PDF=NO \
+MAKE_FLAGS +=		NETSURF_USE_HARU_PDF=NO \
 			NETSURF_USE_LIBICONV_PLUG=NO \
 			NETSURF_USE_RSVG=YES \
 			NETSURF_USE_NSSVG=NO \

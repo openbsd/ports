@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.16 2016/11/30 07:35:00 bentley Exp $
+# $OpenBSD: Makefile.inc,v 1.17 2017/04/20 04:27:58 bentley Exp $
 
 CATEGORIES +=	www
 
@@ -31,6 +31,7 @@ MAKE_FLAGS +=	COMPONENT_TYPE=lib-shared \
 BUILD_DEPENDS +=	www/netsurf/buildsystem>=1.5
 MAKE_FLAGS +=		Q= \
 			VQ= \
+			CC="${CC}" \
 			CCOPT= \
 			CXXOPT= \
 			CCACHE= \

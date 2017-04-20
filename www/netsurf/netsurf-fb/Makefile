@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2016/12/08 06:45:58 bentley Exp $
+# $OpenBSD: Makefile,v 1.5 2017/04/20 04:27:58 bentley Exp $
 
 COMMENT =		lightweight web browser, with SDL interface
 
@@ -35,8 +35,7 @@ WANTLIB += nsbmp nsfb nsgif nspsl nsutils parserutils png pthread ssl
 WANTLIB += svgtiny utf8proc wapcaplet xcb xcb-icccm xcb-image
 WANTLIB += xcb-keysyms xcb-shm xcb-util z
 
-MAKE_FLAGS +=		CC="${CC}" \
-			NETSURF_USE_HARU_PDF=NO \
+MAKE_FLAGS +=		NETSURF_USE_HARU_PDF=NO \
 			NETSURF_USE_LIBICONV_PLUG=NO \
 			NETSURF_USE_ROSPRITE=NO \
 			NETSURF_USE_WEBP=YES \
