@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2017/04/18 11:16:10 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.15 2017/04/20 06:03:11 ajacoutot Exp $
 
 V =		4.4.62
 COMMENT =	desktop screenshot utility (make image)
@@ -21,6 +21,8 @@ MODULES =	devel/cmake \
 
 MODGCC4_LANGS =	c++
 MODGCC4_ARCHS =	${GCC3_ARCHS} ${GCC4_ARCHS}
+
+BUILD_DEPENDS =		graphics/glm
 
 LIB_DEPENDS +=		graphics/jpeg \
 			graphics/png \
