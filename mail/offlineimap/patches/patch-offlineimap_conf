@@ -1,7 +1,7 @@
-$OpenBSD: patch-offlineimap_conf,v 1.6 2017/01/29 20:02:42 danj Exp $
---- offlineimap.conf.orig	Fri Jan 27 13:49:42 2017
-+++ offlineimap.conf	Sun Jan 29 14:57:38 2017
-@@ -714,7 +714,7 @@ remotehost = examplehost
+$OpenBSD: patch-offlineimap_conf,v 1.7 2017/04/20 03:27:17 danj Exp $
+--- offlineimap.conf.orig	Sat Apr 15 18:40:54 2017
++++ offlineimap.conf	Wed Apr 19 23:23:06 2017
+@@ -706,7 +706,7 @@ remotehost = examplehost
  # You can also use fingerprint verification via cert_fingerprint.
  # See below for more verbose explanation.
  #
