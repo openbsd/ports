@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_sim_g_setup_c,v 1.1 2017/04/20 15:52:29 espie Exp $
+--- src/sim/g_setup.c.orig	Thu Apr 20 17:25:27 2017
++++ src/sim/g_setup.c	Thu Apr 20 17:25:43 2017
+@@ -286,6 +286,7 @@ GetPixmaps(XDisplay *xd)
+ }
+ 
+ 
++void
+ GetViewTiles(SimView *view)
+ {
+   char name[256];

@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_sim_g_map_c,v 1.3 2017/04/20 15:52:29 espie Exp $
+--- src/sim/g_map.c.orig	Thu Apr 20 17:26:57 2017
++++ src/sim/g_map.c	Thu Apr 20 17:28:02 2017
+@@ -100,6 +100,8 @@ int drawLandMap(SimView *view);
+ int drawFireRadius(SimView *view);
+ int drawPoliceRadius(SimView *view);
+ int drawDynamic(SimView *view);
++void maybeDrawRect(SimView *view, int val,
++	    int x, int y, int w, int h);
+ 
+ 
+ short GetCI(short x)
+@@ -346,6 +348,7 @@ ditherMap(SimView *view)
+ }
+ 
+ 
++void
+ maybeDrawRect(SimView *view, int val,
+ 	    int x, int y, int w, int h)
+ {

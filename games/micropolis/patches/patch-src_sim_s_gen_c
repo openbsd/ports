@@ -1,0 +1,35 @@
+$OpenBSD: patch-src_sim_s_gen_c,v 1.1 2017/04/20 15:52:29 espie Exp $
+--- src/sim/s_gen.c.orig	Thu Apr 20 17:09:52 2017
++++ src/sim/s_gen.c	Thu Apr 20 17:11:16 2017
+@@ -78,6 +78,7 @@ int LakeLevel = -1;		/* level for lake creation */
+ int CurveLevel = -1;		/* level for river curviness */
+ int CreateIsland = -1;		/* -1 => 10%, 0 => never, 1 => always */
+ 
++void GenerateMap(int r);
+ 
+ GenerateNewCity(void) 
+ {
+@@ -124,6 +125,7 @@ ERand(short limit)
+ }
+ 
+ 
++void
+ GenerateMap(int r)
+ {
+   SeedRand(r);
+@@ -268,6 +270,7 @@ MoveMap(short dir)
+ }
+ 
+ 
++void
+ TreeSplash(short xloc, short yloc)
+ {
+   short dis, dir;
+@@ -461,6 +464,7 @@ DoSRiv(void)
+ }
+ 
+ 
++void
+ PutOnMap(short Mchar, short Xoff, short Yoff)
+ {
+   register short Xloc, Yloc, temp;

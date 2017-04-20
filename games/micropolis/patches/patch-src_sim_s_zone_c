@@ -1,0 +1,104 @@
+$OpenBSD: patch-src_sim_s_zone_c,v 1.1 2017/04/20 15:52:29 espie Exp $
+--- src/sim/s_zone.c.orig	Thu Apr 20 17:17:39 2017
++++ src/sim/s_zone.c	Thu Apr 20 17:25:00 2017
+@@ -61,10 +61,20 @@
+  */
+ #include "sim.h"
+ 
++void DoComOut(int pop, int value);
++void DoResOut(int pop, int value);
++void DoComIn(int pop, int value);
++void DoResIn(int pop, int value);
++void DoIndOut(int pop, int value);
++void MakeHosp(void);
++void DoResidential(int ZonePwrFlg);
++void DoCommercial(int ZonePwrFlg);
++void DoIndustrial(int ZonePwrFlg);
+ 
+ /* Zone Stuff */
+ 
+ 
++void
+ DoZone(void)
+ {
+   short ZonePwrFlg;
+@@ -118,6 +128,7 @@ DoHospChur(void)
+ #define ASCBIT (ANIMBIT | CONDBIT | BURNBIT)
+ #define REGBIT (CONDBIT | BURNBIT)
+ 
++void
+ SetSmoke(int ZonePower)
+ {
+   static short AniThis[8] = {    T,    F,    T,    T,    F,    F,    T,    T };
+@@ -158,6 +169,7 @@ SetSmoke(int ZonePower)
+ }
+ 
+ 
++void
+ DoIndustrial(int ZonePwrFlg)
+ {
+   short tpop, zscore, TrfGood;
+@@ -189,6 +201,7 @@ DoIndustrial(int ZonePwrFlg)
+ }
+ 
+ 
++void
+ DoCommercial(int ZonePwrFlg)
+ {
+   register short tpop, TrfGood;
+@@ -227,6 +240,7 @@ DoCommercial(int ZonePwrFlg)
+ }
+ 
+ 
++void
+ DoResidential(int ZonePwrFlg)
+ {
+   short tpop, zscore, locvalve, value, TrfGood;
+@@ -269,6 +283,7 @@ DoResidential(int ZonePwrFlg)
+ }
+ 
+ 
++void
+ MakeHosp(void)
+ {
+   if (NeedHosp > 0) {
+@@ -297,6 +312,7 @@ GetCRVal(void)
+ }
+ 
+ 
++void
+ DoResIn(int pop, int value)
+ {
+   short z;
+@@ -324,6 +340,7 @@ DoResIn(int pop, int value)
+ }
+ 
+ 
++void
+ DoComIn(int pop, int value)
+ {
+   register short z;
+@@ -354,6 +371,7 @@ IncROG(int amount)
+ }
+ 
+ 
++void
+ DoResOut(int pop, int value)
+ {
+   static short Brdr[9] = {0,3,6,1,4,7,2,5,8};
+@@ -397,6 +415,7 @@ DoResOut(int pop, int value)
+ }
+ 
+ 
++void
+ DoComOut(int pop, int value)
+ {
+   if (pop > 1) {
+@@ -411,6 +430,7 @@ DoComOut(int pop, int value)
+ }
+ 
+ 
++void
+ DoIndOut(int pop, int value)
+ {
+   if (pop > 1) {

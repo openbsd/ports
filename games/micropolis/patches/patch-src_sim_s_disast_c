@@ -1,0 +1,39 @@
+$OpenBSD: patch-src_sim_s_disast_c,v 1.1 2017/04/20 15:52:29 espie Exp $
+--- src/sim/s_disast.c.orig	Thu Apr 20 17:06:15 2017
++++ src/sim/s_disast.c	Thu Apr 20 17:09:23 2017
+@@ -70,7 +70,11 @@ short FloodCnt;
+ short FloodX, FloodY;
+ 
+ 
++void MakeFlood(void);
++void MakeMeltdown(void);
++
+ /* comefrom: Simulate */
++void
+ DoDisasters(void)
+ { 
+   /* Chance of disasters at lev 0 1 2 */
+@@ -148,6 +152,7 @@ ScenarioDisaster(void)
+ 
+ 
+ /* comefrom: ScenarioDisaster */
++void
+ MakeMeltdown(void)
+ {
+   short x, y;
+@@ -222,6 +227,7 @@ SetFire(void)
+ 
+ 
+ /* comefrom: DoDisasters */
++void
+ MakeFire(void)
+ {
+   short t, x, y, z;
+@@ -257,6 +263,7 @@ Vunerable(int tem)
+ 
+ 
+ /* comefrom: DoDisasters ScenarioDisaster */
++void
+ MakeFlood(void)
+ {
+   static short Dx[4] = { 0, 1, 0,-1};

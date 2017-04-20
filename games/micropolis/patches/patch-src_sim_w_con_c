@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_sim_w_con_c,v 1.1 2017/04/20 15:52:29 espie Exp $
+--- src/sim/w_con.c.orig	Thu Apr 20 17:31:07 2017
++++ src/sim/w_con.c	Thu Apr 20 17:31:41 2017
+@@ -90,6 +90,7 @@ short _WireTable[16] = {
+     Tile = (Tile & 0x000F) + 64; \
+   }
+ 
++void _FixSingle(int x, int y, short *TileAdrPtr);
+ 
+ /* comefrom: check3Border check4Border check5Border processWand */
+ int
+@@ -518,6 +519,7 @@ _FixZone(int x, int y, short *TileAdrPtr)
+ 
+ 
+ /* comefrom: _FixZone */
++void
+ _FixSingle(int x, int y, short *TileAdrPtr)
+ {
+   short Tile;

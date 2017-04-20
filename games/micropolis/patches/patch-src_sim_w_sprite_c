@@ -1,0 +1,140 @@
+$OpenBSD: patch-src_sim_w_sprite_c,v 1.1 2017/04/20 15:52:29 espie Exp $
+--- src/sim/w_sprite.c.orig	Thu Apr 20 17:42:57 2017
++++ src/sim/w_sprite.c	Thu Apr 20 17:47:56 2017
+@@ -70,6 +70,16 @@ short Cycle;
+ SimSprite *GlobalSprites[OBJN];
+ 
+ SimSprite *NewSprite(char *name, int type, int x, int y);
++void StartFire(int x, int y);
++void DoExplosionSprite(SimSprite *sprite);
++void DoCopterSprite(SimSprite *sprite);
++void DoTrainSprite(SimSprite *sprite);
++void DrawSprite(SimView *view, SimSprite *sprite);
++void Destroy(int ox, int oy);
++void ExplodeSprite(SimSprite *sprite);
++void DoMonsterSprite(SimSprite *sprite);
++void DoShipSprite(SimSprite *sprite);
++void MoveObjects(void);
+ 
+ 
+ #define TRA_GROOVE_X -39
+@@ -479,6 +489,7 @@ DrawObjects(SimView *view)
+ }
+ 
+ 
++void
+ DrawSprite(SimView *view, SimSprite *sprite)
+ {
+   Pixmap pict, mask;
+@@ -611,6 +622,7 @@ int CheckSpriteCollision(SimSprite *s1, SimSprite *s2)
+ }
+ 
+ 
++void
+ MoveObjects()
+ {
+   SimSprite *sprite;
+@@ -660,6 +672,7 @@ MoveObjects()
+ }
+ 
+ 
++void
+ DoTrainSprite(SimSprite *sprite)
+ {
+   static short Cx[4] = {   0,  16,   0, -16 };
+@@ -710,6 +723,7 @@ DoTrainSprite(SimSprite *sprite)
+ }
+ 
+ 
++void
+ DoCopterSprite(SimSprite *sprite)
+ {
+   static short CDx[9] = { 0,  0,  3,  5,  3,  0, -3, -5, -3 };
+@@ -833,6 +847,7 @@ DoAirplaneSprite(SimSprite *sprite)
+ }
+ 
+ 
++void
+ DoShipSprite(SimSprite *sprite)
+ {
+   static short BDx[9] = { 0,  0,  1,  1,  1,  0, -1, -1, -1 };
+@@ -910,6 +925,7 @@ DoShipSprite(SimSprite *sprite)
+ }
+ 
+ 
++void
+ DoMonsterSprite(SimSprite *sprite)
+ {
+   static short Gx[5] = {  2,  2, -2, -2,  0 };
+@@ -1097,6 +1113,7 @@ DoTornadoSprite(SimSprite *sprite)
+ }
+ 
+ 
++void
+ DoExplosionSprite(SimSprite *sprite)
+ {
+   short x, y;
+@@ -1350,6 +1367,7 @@ CanDriveOn(int x, int y)
+ }
+ 
+ 
++void
+ ExplodeSprite(SimSprite *sprite)
+ {
+   int x, y;
+@@ -1406,6 +1424,7 @@ int checkWet(int x)
+ }
+ 
+ 
++void
+ Destroy(int ox, int oy)
+ {
+   short t, z, x, y;
+@@ -1463,6 +1482,7 @@ OFireZone(int Xloc, int Yloc, int ch)
+ }
+ 
+ 
++void
+ StartFire(int x, int y)
+ {
+   register t, z;
+@@ -1500,6 +1520,7 @@ GenerateBus(int x, int y)
+ }
+ 
+ 
++void
+ GenerateShip(void)
+ {
+   register short x, y;
+@@ -1537,6 +1558,7 @@ MakeShipHere(int x, int y, int z)	
+ }
+ 
+ 
++void
+ MakeMonster(void)
+ {
+   register x, y, z, done = 0;
+@@ -1574,6 +1596,7 @@ MonsterHere(int x, int y)
+ }
+ 
+ 
++void
+ GenerateCopter(int x, int y)
+ {
+   if (GetSprite(COP) != NULL) return;
+@@ -1582,6 +1605,7 @@ GenerateCopter(int x, int y)
+ }
+ 
+ 
++void
+ GeneratePlane(int x, int y)
+ {
+   if (GetSprite(AIR) != NULL) return;
+@@ -1607,6 +1631,7 @@ MakeAirCrash(void)
+ }
+ 
+ 
++void
+ MakeTornado(void)
+ {
+   short x, y;

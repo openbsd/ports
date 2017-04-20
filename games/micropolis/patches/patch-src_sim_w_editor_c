@@ -1,0 +1,43 @@
+$OpenBSD: patch-src_sim_w_editor_c,v 1.1 2017/04/20 15:52:29 espie Exp $
+--- src/sim/w_editor.c.orig	Thu Apr 20 17:39:35 2017
++++ src/sim/w_editor.c	Thu Apr 20 17:41:36 2017
+@@ -66,6 +66,7 @@ Tcl_HashTable EditorCmds;
+ int DoOverlay = 2;
+ int BobHeight = 8;
+ 
++void DrawOverlay(SimView *view);
+ 
+ extern Tk_ConfigSpec TileViewConfigSpecs[];
+ 
+@@ -834,7 +835,7 @@ DoNewEditor(SimView *view)
+   view->invalid = 1;
+ }
+ 
+-
++void
+ DoUpdateEditor(SimView *view)
+ {
+   int dx, dy, i;
+@@ -852,12 +853,12 @@ DoUpdateEditor(SimView *view)
+        view->skips)) {
+     if (sim_skips) {
+       if (sim_skip > 0) {
+-	return 0;
++	return;
+       }
+     } else {
+       if (view->skip > 0) {
+ 	--view->skip;
+-	return 0;
++	return;
+       } else {
+ 	view->skip = view->skips;
+       }
+@@ -1423,6 +1424,7 @@ TimeElapsed(struct timeval *elapsed,
+ 
+ 
+ 
++void
+ DrawOverlay(SimView *view)
+ {
+   int width = view->w_width;

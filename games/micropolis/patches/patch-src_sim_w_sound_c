@@ -1,0 +1,43 @@
+$OpenBSD: patch-src_sim_w_sound_c,v 1.1 2017/04/20 15:52:29 espie Exp $
+--- src/sim/w_sound.c.orig	Thu Apr 20 17:28:27 2017
++++ src/sim/w_sound.c	Thu Apr 20 17:30:00 2017
+@@ -145,6 +145,7 @@ static int SoundInitialized = 0;
+ Mix_Chunk *rumble;
+ 
+ 
++void
+ InitializeSound()
+ {
+   int reserved_chans;
+@@ -204,6 +205,7 @@ ShutDownSound()
+ }
+ 
+ 
++void
+ MakeSound(char *channel, char *id)
+ {
+   char buf[256];
+@@ -237,6 +239,7 @@ MakeSound(char *channel, char *id)
+     fprintf(stderr, "Mix_PlayChannel: %s\n", Mix_GetError());
+ }
+ 
++void
+ StartBulldozer(void)
+ {
+   if (!UserSoundOn) return;
+@@ -249,6 +252,7 @@ StartBulldozer(void)
+ }
+ 
+ 
++void
+ StopBulldozer(void)
+ {
+   if (!UserSoundOn) return;
+@@ -312,6 +316,7 @@ StopBulldozer(void)
+ #endif
+ 
+ 
++void
+ MakeSoundOn(SimView *view, char *channel, char *id)
+ {
+   if (!UserSoundOn) return;

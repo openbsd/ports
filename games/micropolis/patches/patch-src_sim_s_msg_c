@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_sim_s_msg_c,v 1.1 2017/04/20 15:52:29 espie Exp $
+--- src/sim/s_msg.c.orig	Thu Apr 20 17:11:36 2017
++++ src/sim/s_msg.c	Thu Apr 20 17:11:46 2017
+@@ -294,6 +294,7 @@ void SendMesAt(short Mnum, short x, short y)
+ }
+ 
+ 
++void
+ doMessage(void) 
+ {
+   char messageStr[256];

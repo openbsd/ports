@@ -1,0 +1,48 @@
+$OpenBSD: patch-src_sim_s_sim_c,v 1.1 2017/04/20 15:52:29 espie Exp $
+--- src/sim/s_sim.c.orig	Thu Apr 20 17:14:26 2017
++++ src/sim/s_sim.c	Thu Apr 20 17:17:11 2017
+@@ -85,8 +85,12 @@ short Spdcycle = 0;
+ short DoInitialEval = 0;
+ short MeltX, MeltY;
+ 
++void DoRail(void);
++void DoAirport(void);
++void DoRoad(void);
+ 
+ /* comefrom: doEditWindow scoreDoer doMapInFront graphDoer doNilEvent */
++void
+ SimFrame(void)
+ {
+   short i;
+@@ -744,6 +748,7 @@ MapScan(int x1, int x2)
+ 
+ 
+ /* comefrom: MapScan */
++void
+ DoRail(void)
+ {
+   RailTotal++;
+@@ -769,6 +774,7 @@ DoRadTile(void)
+ 
+ 
+ /* comefrom: MapScan */
++void
+ DoRoad(void)
+ {
+   register short Density, tden, z;
+@@ -1011,6 +1017,7 @@ RepairZone(short ZCent, short zsize)
+ 
+ 
+ /* comefrom: DoZone */
++void
+ DoSPZone(short PwrOn)
+ {
+   static short MltdwnTab[3] = { 30000, 20000, 10000 };  /* simadj */
+@@ -1130,6 +1137,7 @@ DrawStadium(int z)
+ 
+ 
+ /* comefrom: DoSPZone */
++void
+ DoAirport(void)
+ {
+   if (!(Rand(5))) {

@@ -1,0 +1,36 @@
+$OpenBSD: patch-src_sim_w_x_c,v 1.3 2017/04/20 15:52:29 espie Exp $
+--- src/sim/w_x.c.orig	Thu Apr 20 17:37:51 2017
++++ src/sim/w_x.c	Thu Apr 20 17:39:11 2017
+@@ -90,6 +90,8 @@ unsigned char ColorIntensities[] = {
+ 	/* COLOR_DARKGRAY */		63,
+ 	/* COLOR_BLACK */		0,
+ };
++void DoPanTo(struct SimView *view, int x, int y);
++void DoResizeView(SimView *view, int w, int h);
+ 
+ 
+ ViewToTileCoords(SimView *view, int x, int y, int *outx, int *outy)
+@@ -148,6 +150,7 @@ ViewToPixelCoords(SimView *view, int x, int y, int *ou
+ }
+ 
+ 
++void
+ UpdateFlush()
+ {
+   struct XDisplay *xd;
+@@ -723,6 +726,7 @@ AllocPixels(int len, unsigned char pixel)
+ }
+ 
+ 
++void
+ DoResizeView(SimView *view, int w, int h)
+ {
+   int resize = 0;
+@@ -1254,6 +1258,7 @@ DoPanBy(struct SimView *view, int dx, int dy)
+ }
+ 
+ 
++void
+ DoPanTo(struct SimView *view, int x, int y)
+ {
+   if (view->class != Editor_Class) {

@@ -1,0 +1,28 @@
+$OpenBSD: patch-src_sim_w_tool_c,v 1.1 2017/04/20 15:52:29 espie Exp $
+--- src/sim/w_tool.c.orig	Thu Apr 20 17:35:45 2017
++++ src/sim/w_tool.c	Thu Apr 20 17:37:09 2017
+@@ -126,6 +126,7 @@ Ink *NewInk();
+ 
+ short tally(short tileValue);
+ int DoSetWandState(SimView *view, short state);
++void ToolDrag(SimView *view, int px, int py);
+ 
+ 
+ /*************************************************************************/
+@@ -1593,14 +1594,11 @@ ToolDown(SimView *view, int x, int y)
+ 
+ ToolUp(SimView *view, int x, int y)
+ {
+-  int result;
+-
+-  result = ToolDrag(view, x, y);
+-
+-  return (result);
++  ToolDrag(view, x, y);
+ }
+ 
+ 
++void
+ ToolDrag(SimView *view, int px, int py)
+ {
+   int x, y, dx, dy, adx, ady, lx, ly, dist;

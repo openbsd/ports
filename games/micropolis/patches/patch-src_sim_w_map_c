@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_sim_w_map_c,v 1.1 2017/04/20 15:52:29 espie Exp $
+--- src/sim/w_map.c.orig	Thu Apr 20 17:41:54 2017
++++ src/sim/w_map.c	Thu Apr 20 17:42:28 2017
+@@ -69,6 +69,7 @@ extern Tk_ConfigSpec TileViewConfigSpecs[];
+ 
+ 
+ Ink *NewInk();
++void WireDrawMap(SimView *view);
+ 
+ 
+ MapCmdconfigure(VIEW_ARGS)
+@@ -491,6 +492,7 @@ CompareColor(struct Pix *p1, struct Pix *p2)
+ }
+ 
+ 
++void
+ WireDrawMap(SimView *view)
+ {
+   int different, x, y, i, last, pts;

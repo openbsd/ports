@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_tcl_tclenv_c,v 1.3 2017/04/20 15:52:29 espie Exp $
+--- src/tcl/tclenv.c.orig	Thu Apr 20 16:38:59 2017
++++ src/tcl/tclenv.c	Thu Apr 20 16:56:49 2017
+@@ -58,7 +58,7 @@ static char *		EnvTraceProc _ANSI_ARGS_((ClientData cl
+ static int		FindVariable _ANSI_ARGS_((char *name, int *lengthPtr));
+ 
+ void			setenv_tcl _ANSI_ARGS_((char *name, char *value));
+-int			unsetenv_tcl _ANSI_ARGS_((char *name));
++void			unsetenv_tcl _ANSI_ARGS_((char *name));
+ 
+ 
+ /*
+@@ -277,7 +277,7 @@ setenv_tcl(name, value)
+  *----------------------------------------------------------------------
+  */
+ 
+-int
++void
+ unsetenv_tcl(name)
+     char *name;			/* Name of variable to remove. */
+ {
