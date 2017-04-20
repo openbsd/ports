@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.27 2017/04/19 13:23:24 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.28 2017/04/20 09:39:02 espie Exp $
 @option no-default-conflict
 @option is-branch
 @conflict kdelibs-<4
@@ -5629,7 +5629,6 @@ share/services/bmp.kimgio
 share/services/data.protocol
 share/services/dds.kimgio
 share/services/eps.kimgio
-share/services/exr.kimgio
 share/services/file.protocol
 share/services/ftp.protocol
 share/services/ghelp.protocol
