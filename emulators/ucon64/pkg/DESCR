@@ -1,0 +1,6 @@
+uCON64 is the emulator Swiss Army knife program.
+
+It supports almost every video game system (Consoles, Handheld, Arcade),
+as well as all common patch file formats like IPS (with RLE compression),
+APS, BSL (Baseline Patch format), PPF (Playstation Patch File), and Game
+Genie.
