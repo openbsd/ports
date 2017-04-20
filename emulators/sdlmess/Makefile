@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2017/04/10 11:45:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.42 2017/04/20 09:29:49 fcambus Exp $
 
 # Other archs have not been tested
 ONLY_FOR_ARCHS =	amd64
@@ -25,15 +25,12 @@ PERMIT_DISTFILES_FTP =	unclear license
 WANTLIB += SDL SDL_ttf X11 Xinerama c expat fontconfig freetype
 WANTLIB += m pthread ${LIBCXX} util z
 
-MASTER_SITES =		http://mamedev.org/downloader.php?file=releases/ \
-			http://whiper.com/mame/${V}/
-MASTER_SITES0 =		http://mamedev.org/updates/
-MASTER_SITES1 = 	http://www.arcade-history.com/dats/
+MASTER_SITES =		https://github.com/mamedev/mame/releases/download/mame0${V}/
+MASTER_SITES1 =		https://spacehopper.org/mirrors/
 
 EXTRACT_SUFX =		.zip
 DIST_SUBDIR =		mame
 
-# PATCHFILES doesn't work for .zip
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
 			history${V}.zip:1
 
