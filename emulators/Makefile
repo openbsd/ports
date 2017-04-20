@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.90 2017/04/05 19:57:22 fcambus Exp $
+# $OpenBSD: Makefile,v 1.91 2017/04/20 13:49:12 fcambus Exp $
 
     SUBDIR =
     SUBDIR += BasiliskII
@@ -43,6 +43,7 @@
     SUBDIR += spim
     SUBDIR += stella
     SUBDIR += uae
+    SUBDIR += ucon64
     SUBDIR += vbam
     SUBDIR += vice
     SUBDIR += virtualjaguar
