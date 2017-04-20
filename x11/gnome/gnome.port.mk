@@ -1,4 +1,4 @@
-# $OpenBSD: gnome.port.mk,v 1.101 2017/04/19 07:41:28 ajacoutot Exp $
+# $OpenBSD: gnome.port.mk,v 1.102 2017/04/20 15:09:05 ajacoutot Exp $
 #
 # Module for GNOME related ports
 
@@ -38,7 +38,7 @@ USE_GMAKE?=		Yes
 .  endif
    # cmake looks for "python"
 .  if ${MODULES:Mlang/python}
-     MODGNOME_pre-configure += ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
+     MODGNOME_pre-configure += ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python;
 .  endif
 .endif
 
