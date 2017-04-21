@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2016/06/03 11:57:57 sebastia Exp $
+# $OpenBSD: Makefile,v 1.6 2017/04/21 17:26:32 sebastia Exp $
 
 COMMENT =	GNUstep client framework for salesforce.com
 
 VERSION =	0.9
-REVISION =	0
+REVISION =	1
 DISTNAME =	DataBasinKit-${VERSION}
 SHARED_LIBS +=  DataBasinKit	0.1
 
