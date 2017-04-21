@@ -1,6 +1,9 @@
-$OpenBSD: patch-configure,v 1.11 2017/04/18 17:47:14 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.12 2017/04/21 18:39:23 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=781463
+From c4450208d463c271c043364aa2542291877d53ae Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Tue, 18 Apr 2017 19:41:32 +0200
+Subject: housekeeping: Fix libnotify version check
 
 --- configure.orig	Mon Apr 17 12:10:50 2017
 +++ configure	Mon Apr 17 12:11:43 2017
