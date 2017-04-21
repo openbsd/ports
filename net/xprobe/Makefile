@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2017/04/10 11:46:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2017/04/21 13:58:00 jca Exp $
 
 COMMENT=		ICMP active OS fingerprint scanner
 
@@ -16,6 +16,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=xprobe/}
 
 CONFIGURE_STYLE=	gnu
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC}/cfg-scripts
+MAKE_ENV=		CC="${CC}" CXX="${CXX}"
 
 NO_TEST=		Yes
 
