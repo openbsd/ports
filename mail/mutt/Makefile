@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.94 2017/04/19 08:19:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.95 2017/04/21 08:08:44 sthen Exp $
 
 COMMENT=	tty-based e-mail client
 
 DISTNAME=	mutt-1.8.2
 EPOCH=		3
+REVISION=	0
 
 CATEGORIES=	mail
 HOMEPAGE=	http://www.mutt.org/
@@ -42,6 +43,7 @@ CONFIGURE_ARGS+= --enable-compressed \
 		--with-idn \
 		--enable-imap \
 		--enable-pop \
+		--enable-sidebar \
 		--enable-smtp \
 		--mandir=${PREFIX}/man \
 		--without-gdbm \
