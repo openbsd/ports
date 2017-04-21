@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_svgtiny_internal_h,v 1.1 2017/04/21 20:34:19 bentley Exp $
+Fix build with multiple versions of gperf.
+
+From upstream 4390f1c84e8fee51fc22468821e6fc158e783053.
+--- src/svgtiny_internal.h.orig	Thu Apr 20 09:09:27 2017
++++ src/svgtiny_internal.h	Thu Apr 20 09:09:56 2017
+@@ -102,9 +102,4 @@ void *svgtiny_list_get(struct svgtiny_list *list,
+ void *svgtiny_list_push(struct svgtiny_list *list);
+ void svgtiny_list_free(struct svgtiny_list *list);
+ 
+-/* colors.gperf */
+-const struct svgtiny_named_color *
+-		svgtiny_color_lookup(register const char *str,
+-				register unsigned int len);
+-
+ #endif
