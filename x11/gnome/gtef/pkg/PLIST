@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/04/17 11:41:10 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/04/21 18:04:34 ajacoutot Exp $
 include/gtef-2/
 include/gtef-2/gtef/
 include/gtef-2/gtef/gtef-action-info-central-store.h
@@ -26,13 +26,11 @@ include/gtef-2/gtef/gtef-types.h
 include/gtef-2/gtef/gtef-utils.h
 include/gtef-2/gtef/gtef-view.h
 include/gtef-2/gtef/gtef.h
-lib/girepository-1.0/
 lib/girepository-1.0/Gtef-2.typelib
 lib/libgtef-2.a
 lib/libgtef-2.la
 @lib lib/libgtef-2.so.${LIBgtef-2_VERSION}
 lib/pkgconfig/gtef-2.pc
-share/gir-1.0/
 share/gir-1.0/Gtef-2.gir
 share/gtk-doc/html/gtef-2.0/
 share/gtk-doc/html/gtef-2.0/GtefActionInfo.html
@@ -83,9 +81,12 @@ share/gtk-doc/html/gtef-2.0/style.css
 share/gtk-doc/html/gtef-2.0/up-insensitive.png
 share/gtk-doc/html/gtef-2.0/up.png
 share/locale/de/LC_MESSAGES/gtef-2.mo
+share/locale/fur/LC_MESSAGES/gtef-2.mo
+share/locale/hu/LC_MESSAGES/gtef-2.mo
 share/locale/id/LC_MESSAGES/gtef-2.mo
 share/locale/pl/LC_MESSAGES/gtef-2.mo
 share/locale/pt_BR/LC_MESSAGES/gtef-2.mo
+share/locale/ru/LC_MESSAGES/gtef-2.mo
 share/locale/sr/LC_MESSAGES/gtef-2.mo
 share/locale/sv/LC_MESSAGES/gtef-2.mo
 share/locale/uk/LC_MESSAGES/gtef-2.mo
