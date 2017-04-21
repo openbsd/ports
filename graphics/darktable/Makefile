@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2017/04/07 21:08:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.72 2017/04/21 12:18:30 sthen Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64
 
@@ -34,8 +34,7 @@ MODULES=	devel/cmake \
 		lang/lua \
 		textproc/intltool
 MODLUA_VERSION=	5.2
-# gcc4 required for TLS emulation
-MODGCC4_ARCHS=	*
+MODGCC4_ARCHS=	* # gcc4 required for TLS emulation
 MODGCC4_LANGS=	c c++
 
 BUILD_DEPENDS=	sysutils/coreutils
