@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2016/05/08 15:58:12 rpe Exp $
+# $OpenBSD: Makefile,v 1.20 2017/04/21 20:46:42 rpe Exp $
 
 COMMENT=		rss reader, live stream, mashup, aggregation webapp
 
-GH_TAGNAME=		2.15
-GH_ACCOUNT=		SSilence
-GH_PROJECT=		selfoss
+V=			2.17
+DISTNAME=		selfoss-$V
 
 CATEGORIES=		www
 
@@ -14,6 +13,9 @@ MAINTAINER=		Robert Peichaer <rpe@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
+
+MASTER_SITES=		https://github.com/SSilence/selfoss/releases/download/$V/
+EXTRACT_SUFX=		.zip
 
 MODULES=		lang/php
 
@@ -28,8 +30,9 @@ INSTDIR=		${PREFIX}/selfoss
 TINSTDIR=		${TRUEPREFIX}/selfoss
 SUBST_VARS=		INSTDIR MODPHP_VERSION TINSTDIR
 
-post-extract:
-	rm ${WRKSRC}/${FULLPKGNAME}.zip
+do-extract:
+	mkdir -p ${WRKDIST}
+	unzip -oq -d ${WRKDIST} ${FULLDISTDIR}/${EXTRACT_ONLY}
 
 do-install:
 	cp -Rp ${WRKDIST} ${INSTDIR}
