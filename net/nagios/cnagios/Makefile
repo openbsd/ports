@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2016/07/08 16:48:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2017/04/21 20:59:40 rpe Exp $
 
 COMMENT =		console interface for nagios
 
-DISTNAME =		cnagios-0.30
-REVISION =		1
+GH_ACCOUNT =		dannywarren
+GH_PROJECT =		cnagios
+GH_TAGNAME =		0.33
+
 CATEGORIES =		net
 
 WANTLIB =		c perl pthread curses m
