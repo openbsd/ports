@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.383 2017/04/18 17:02:08 jca Exp $
+# $OpenBSD: Makefile,v 1.384 2017/04/21 14:39:40 naddy Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -245,7 +245,6 @@
      SUBDIR += taglib
      SUBDIR += tagtool
      SUBDIR += tap-plugins
-     SUBDIR += teknap
      SUBDIR += tempest
      SUBDIR += timidity
      SUBDIR += tracker

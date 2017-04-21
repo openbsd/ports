@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.480 2017/04/19 06:01:36 bentley Exp $
+# $OpenBSD: Quirks.pm,v 1.481 2017/04/21 14:39:40 naddy Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -957,6 +957,7 @@ my $obsolete_reason = {
 	'toolame' => 5,
 	'gpointing-device-settings' => 3,
 	'ja-jvim' => 3,
+	'teknap' => 6,
 };
 
 # reasons for obsolete packages
