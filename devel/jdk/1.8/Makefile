@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2017/04/10 11:45:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2017/04/21 02:30:40 kurt Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_WXNEEDED=	Yes
@@ -12,7 +12,7 @@ PKGNAME=	jdk-${V}
 PKGNAME-main=	jdk-${V}
 PKGNAME-jre=	jre-${V}
 EPOCH=		0
-REVISION=	1
+REVISION=	2
 
 DIST_SUBDIR=	jdk
 DISTNAME=	openjdk-8u121b13-bsd-port-20170201
@@ -106,6 +106,8 @@ MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/common/autoconf/build-aux
 # MAKE_FLAGS=	LOG=debug
 MAKE_ENV=	DEFAULT_LIBPATH="/usr/lib:${X11BASE}/lib:${LOCALBASE}/lib" \
 		COMPILER_WARNINGS_FATAL=false
+
+#MAKE_ENV=	USE_CLANG=true
 
 JDKHOME=	jdk-1.8.0
 JREHOME=	jre-1.8.0
