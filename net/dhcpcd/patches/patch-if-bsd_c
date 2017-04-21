@@ -1,0 +1,16 @@
+$OpenBSD: patch-if-bsd_c,v 1.1 2017/04/21 16:41:20 sthen Exp $
+
+Workaround for our old broken behaviour no longer needed.
+Fixed with netinet6/in6.c r1.202.
+
+--- if-bsd.c.orig	Fri Apr 21 13:38:38 2017
++++ if-bsd.c	Fri Apr 21 13:39:38 2017
+@@ -985,7 +985,7 @@ if_address6(unsigned char cmd, const struct ipv6_addr 
+ 	}
+ #endif
+ 
+-#if defined(__OpenBSD__)
++#if 0
+ 	/* BUT OpenBSD does not reset the address lifetime
+ 	 * for subsequent calls...
+ 	 * Luckily dhcpcd will remove the lease when it expires so
