@@ -1,7 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.4 2016/11/01 14:14:49 stsp Exp $
+@comment $OpenBSD: PLIST,v 1.5 2017/04/21 11:40:08 sthen Exp $
 firmware/iwm-3160-16
+firmware/iwm-3168-22
 firmware/iwm-7260-16
 firmware/iwm-7265-16
 firmware/iwm-7265D-16
 firmware/iwm-8000C-16
+firmware/iwm-8265-22
 firmware/iwm-license
