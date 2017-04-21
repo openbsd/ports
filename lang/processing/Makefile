@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2016/10/01 11:54:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2017/04/21 13:27:46 kurt Exp $
 
 COMMENT=		language/IDE for images, animations and interactions
 
 V=			1.5.1
 DISTNAME=		processing-$V-linux
 PKGNAME=		${DISTNAME:S/-linux//}
-REVISION=		5
+REVISION=		6
 
 CATEGORIES=		lang graphics
 

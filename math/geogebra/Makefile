@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2016/10/01 11:54:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2017/04/21 13:27:46 kurt Exp $
 
 COMMENT=	educational mathematical software
 
 V=		4.2.60.0
 DISTNAME=	GeoGebra-Unixlike-Installer-${V}
 PKGNAME=	geogebra-${V}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	math java
 

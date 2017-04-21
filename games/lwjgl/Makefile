@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2016/03/18 23:12:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2017/04/21 13:27:46 kurt Exp $
 
 COMMENT=	lightweight game library for java
 
@@ -8,6 +8,7 @@ GH_PROJECT=	lwjgl
 GH_TAGNAME=	${GH_PROJECT}${V}
 DISTNAME=	lwjgl${V}
 PKGNAME=	lwjgl-${V}
+REVISION=	0
 
 .if ${MACHINE_ARCH} == "i386"
 M_ARCH=		""

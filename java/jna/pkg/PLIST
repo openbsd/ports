@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2017/03/26 12:45:27 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2017/04/21 13:27:46 kurt Exp $
 share/java/
 share/java/classes/
 share/java/classes/jna-min.jar
@@ -1030,11 +1030,7 @@ share/java/doc/javadoc/overview-frame.html
 share/java/doc/javadoc/overview-summary.html
 share/java/doc/javadoc/overview-tree.html
 share/java/doc/javadoc/package-list
-share/java/doc/javadoc/resources/
-share/java/doc/javadoc/resources/background.gif
-share/java/doc/javadoc/resources/tab.gif
-share/java/doc/javadoc/resources/titlebar.gif
-share/java/doc/javadoc/resources/titlebar_end.gif
+share/java/doc/javadoc/script.js
 share/java/doc/javadoc/serialized-form.html
 share/java/doc/javadoc/stylesheet.css
 share/java/doc/jna/

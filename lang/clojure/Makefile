@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.28 2016/01/30 09:31:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.29 2017/04/21 13:27:46 kurt Exp $
 
 COMMENT =		Lisp-1 dialect for the Java Virtual Machine
 
 GH_ACCOUNT =		clojure
 GH_PROJECT =		clojure
 GH_TAGNAME =		${GH_PROJECT}-1.8.0
-REVISION =		0
+REVISION =		1
 DISTNAME =		${GH_TAGNAME}
 
 PKG_ARCH =		*
