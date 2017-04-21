@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.29 2017/03/28 10:57:51 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.30 2017/04/21 11:51:24 sthen Exp $
 bin/calibre
 bin/calibre-complete
 bin/calibre-customize
@@ -1160,8 +1160,6 @@ lib/calibre/calibre/ebooks/pdf/render/test.py
 lib/calibre/calibre/ebooks/pdf/render/test.pyc
 lib/calibre/calibre/ebooks/pdf/render/toc.py
 lib/calibre/calibre/ebooks/pdf/render/toc.pyc
-lib/calibre/calibre/ebooks/pdf/writer.py
-lib/calibre/calibre/ebooks/pdf/writer.pyc
 lib/calibre/calibre/ebooks/pml/
 lib/calibre/calibre/ebooks/pml/__init__.py
 lib/calibre/calibre/ebooks/pml/__init__.pyc
@@ -3227,7 +3225,7 @@ share/calibre/catalog/template.xhtml
 share/calibre/coffee-script.js
 share/calibre/compiled_coffeescript.zip
 share/calibre/content-server/
-share/calibre/content-server/autoreload.js
+share/calibre/content-server/calibre.appcache
 share/calibre/content-server/calibre.png
 share/calibre/content-server/empty.html
 share/calibre/content-server/index-generated.html
@@ -4403,7 +4401,6 @@ share/calibre/recipes/film_org_pl.recipe
 share/calibre/recipes/film_web.png
 share/calibre/recipes/film_web.recipe
 share/calibre/recipes/financial_times.png
-share/calibre/recipes/financial_times.recipe
 share/calibre/recipes/financial_times_uk.png
 share/calibre/recipes/financial_times_uk.recipe
 share/calibre/recipes/financial_times_us.png
@@ -4807,6 +4804,7 @@ share/calibre/recipes/ixbt.png
 share/calibre/recipes/ixbt.recipe
 share/calibre/recipes/izvestia.png
 share/calibre/recipes/izvestia.recipe
+share/calibre/recipes/jacobinmag.recipe
 share/calibre/recipes/jagran_josh.recipe
 share/calibre/recipes/jakarta_globe.recipe
 share/calibre/recipes/jakarta_post.recipe
