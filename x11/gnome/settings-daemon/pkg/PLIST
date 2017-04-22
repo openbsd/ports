@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.45 2017/04/17 10:40:28 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.46 2017/04/22 09:18:03 ajacoutot Exp $
 include/gnome-settings-daemon-3.0/
 include/gnome-settings-daemon-3.0/gnome-settings-daemon/
 include/gnome-settings-daemon-3.0/gnome-settings-daemon/gsd-enums.h
@@ -74,8 +74,6 @@ share/examples/gnome-settings-daemon/xdg/autostart/org.gnome.SettingsDaemon.XRAN
 @sample ${SYSCONFDIR}/xdg/autostart/org.gnome.SettingsDaemon.XRANDR.desktop
 share/examples/gnome-settings-daemon/xdg/autostart/org.gnome.SettingsDaemon.XSettings.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/org.gnome.SettingsDaemon.XSettings.desktop
-share/glib-2.0/schemas/10_org.gnome.settings-daemon.peripherals.wacom.gschema.override
-share/glib-2.0/schemas/10_org.gnome.settings-daemon.plugins.orientation.gschema.override
 share/glib-2.0/schemas/org.gnome.settings-daemon.enums.xml
 share/glib-2.0/schemas/org.gnome.settings-daemon.peripherals.gschema.xml
 share/glib-2.0/schemas/org.gnome.settings-daemon.peripherals.wacom.gschema.xml

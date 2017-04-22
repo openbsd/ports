@@ -1,5 +1,0 @@
-# $OpenBSD: 10_org.gnome.settings-daemon.peripherals.wacom.gschema.override,v 1.2 2015/10/18 13:23:35 ajacoutot Exp $
-
-# no WACOM support on OpenBSD (gudev)
-[org.gnome.settings-daemon.plugins.gsdwacom]
-active=false
