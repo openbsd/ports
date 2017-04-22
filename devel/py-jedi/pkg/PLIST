@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2017/03/05 18:25:25 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.3 2017/04/22 21:57:42 shadchin Exp $
 lib/python${MODPY_VERSION}/site-packages/jedi/
 lib/python${MODPY_VERSION}/site-packages/jedi-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/jedi-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -106,16 +106,13 @@ lib/python${MODPY_VERSION}/site-packages/jedi/parser/
 lib/python${MODPY_VERSION}/site-packages/jedi/parser/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/jedi/parser/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/jedi/parser/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/jedi/parser/${MODPY_PYCACHE}diff.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/jedi/parser/${MODPY_PYCACHE}cache.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/jedi/parser/${MODPY_PYCACHE}parser.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jedi/parser/${MODPY_PYCACHE}token.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jedi/parser/${MODPY_PYCACHE}tokenize.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jedi/parser/${MODPY_PYCACHE}tree.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/jedi/parser/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/jedi/parser/diff.py
-lib/python${MODPY_VERSION}/site-packages/jedi/parser/grammar2.7.txt
-lib/python${MODPY_VERSION}/site-packages/jedi/parser/grammar3.4.txt
-lib/python${MODPY_VERSION}/site-packages/jedi/parser/grammar3.5.txt
-lib/python${MODPY_VERSION}/site-packages/jedi/parser/grammar3.6.txt
+lib/python${MODPY_VERSION}/site-packages/jedi/parser/cache.py
+lib/python${MODPY_VERSION}/site-packages/jedi/parser/parser.py
 lib/python${MODPY_VERSION}/site-packages/jedi/parser/pgen2/
 lib/python${MODPY_VERSION}/site-packages/jedi/parser/pgen2/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/jedi/parser/pgen2/${MODPY_PYCACHE}/
@@ -126,10 +123,23 @@ lib/python${MODPY_VERSION}/site-packages/jedi/parser/pgen2/${MODPY_PYCACHE}pgen.
 lib/python${MODPY_VERSION}/site-packages/jedi/parser/pgen2/grammar.py
 lib/python${MODPY_VERSION}/site-packages/jedi/parser/pgen2/parse.py
 lib/python${MODPY_VERSION}/site-packages/jedi/parser/pgen2/pgen.py
+lib/python${MODPY_VERSION}/site-packages/jedi/parser/python/
+lib/python${MODPY_VERSION}/site-packages/jedi/parser/python/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/jedi/parser/python/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/jedi/parser/python/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/jedi/parser/python/${MODPY_PYCACHE}diff.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/jedi/parser/python/${MODPY_PYCACHE}parser.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/jedi/parser/python/${MODPY_PYCACHE}tree.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/jedi/parser/python/diff.py
+lib/python${MODPY_VERSION}/site-packages/jedi/parser/python/grammar2.7.txt
+lib/python${MODPY_VERSION}/site-packages/jedi/parser/python/grammar3.4.txt
+lib/python${MODPY_VERSION}/site-packages/jedi/parser/python/grammar3.5.txt
+lib/python${MODPY_VERSION}/site-packages/jedi/parser/python/grammar3.6.txt
+lib/python${MODPY_VERSION}/site-packages/jedi/parser/python/parser.py
+lib/python${MODPY_VERSION}/site-packages/jedi/parser/python/tree.py
 lib/python${MODPY_VERSION}/site-packages/jedi/parser/token.py
 lib/python${MODPY_VERSION}/site-packages/jedi/parser/tokenize.py
 lib/python${MODPY_VERSION}/site-packages/jedi/parser/tree.py
-lib/python${MODPY_VERSION}/site-packages/jedi/parser/utils.py
 lib/python${MODPY_VERSION}/site-packages/jedi/refactoring.py
 lib/python${MODPY_VERSION}/site-packages/jedi/settings.py
 lib/python${MODPY_VERSION}/site-packages/jedi/utils.py
