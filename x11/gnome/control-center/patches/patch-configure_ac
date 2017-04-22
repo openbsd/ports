@@ -1,0 +1,27 @@
+$OpenBSD: patch-configure_ac,v 1.1 2017/04/22 12:11:48 ajacoutot Exp $
+
+http://permalink.gmane.org/gmane.comp.gnome.desktop/51950
+https://bugzilla.gnome.org/show_bug.cgi?id=770758#c3
+https://bugzilla.gnome.org/show_bug.cgi?id=766329
+https://bugzilla.gnome.org/show_bug.cgi?id=772736 (systemd --user)
+
+--- configure.ac.orig	Wed Apr 12 11:32:02 2017
++++ configure.ac	Sat Apr 22 13:58:39 2017
+@@ -10,9 +10,6 @@ AM_INIT_AUTOMAKE([1.11.2 no-dist-gzip dist-xz tar-usta
+ AM_MAINTAINER_MODE([enable])
+ m4_ifdef([AM_SILENT_RULES],[AM_SILENT_RULES([yes])])
+ 
+-GNOME_DEBUG_CHECK
+-GNOME_COMPILE_WARNINGS([maximum])
+-
+ # Check for programs
+ AC_PROG_CC
+ AM_PROG_CC_C_O
+@@ -235,6 +232,7 @@ else
+ 	AC_DEFINE(BUILD_NETWORK, 1, [Define to 1 to build the Network panel])
+ fi
+ AM_CONDITIONAL(BUILD_NETWORK, [test x$have_networkmanager = xyes])
++AM_CONDITIONAL(BUILD_SHARING, [test x$have_networkmanager = xyes])
+ if test x${have_networkmanager} = xyes; then
+   AC_DEFINE(HAVE_NETWORK_MANAGER, 1, [Define to 1 if NetworkManager is available])
+   NM_VPN_CONFIG_DIR=`$PKG_CONFIG --variable configdir NetworkManager`/VPN

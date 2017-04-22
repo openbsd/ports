@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2016/11/01 07:12:57 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2017/04/22 12:11:48 ajacoutot Exp $
 @conflict control-center-1*
 @conflict control-center2-*
 @conflict gnome-media-<2.91.2p3
@@ -6,7 +6,6 @@
 @pkgpath x11/gnome/controlcenter2
 @pkgpath x11/gnome/controlcenter
 @bin bin/gnome-control-center
-@bin libexec/cc-remote-login-helper
 @bin libexec/gnome-control-center-search-provider
 @man man/man1/gnome-control-center.1
 share/appdata/gnome-control-center.appdata.xml
@@ -347,7 +346,6 @@ share/pixmaps/faces/tennis-ball.png
 share/pixmaps/faces/yellow-rose.jpg
 share/pkgconfig/gnome-keybindings.pc
 share/polkit-1/actions/org.gnome.controlcenter.datetime.policy
-share/polkit-1/actions/org.gnome.controlcenter.remote-login-helper.policy
 share/polkit-1/actions/org.gnome.controlcenter.user-accounts.policy
 share/polkit-1/rules.d/gnome-control-center.rules
 share/sounds/gnome/

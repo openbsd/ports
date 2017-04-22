@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2017/04/17 11:20:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2017/04/22 12:11:48 ajacoutot Exp $
 
 # XXX change proxy settings without network-manager?
 
@@ -6,6 +6,7 @@ COMMENT=		GNOME control center
 
 GNOME_PROJECT=		gnome-control-center
 GNOME_VERSION=		3.24.1
+REVISION=		0
 
 CATEGORIES=		x11
 
@@ -91,12 +92,18 @@ FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/gnome-control-center
 
 CONFIGURE_STYLE=	gnu
 
-# XXX
-# http://permalink.gmane.org/gmane.comp.gnome.desktop/51950
-# https://bugzilla.gnome.org/show_bug.cgi?id=770758#c3
-# https://bugzilla.gnome.org/show_bug.cgi?id=766329
-# https://bugzilla.gnome.org/show_bug.cgi?id=772736 (systemd --user)
-post-install:
-	rm ${PREFIX}/share/applications/gnome-sharing-panel.desktop
+###
+AUTOCONF_VERSION=	2.69
+AUTOMAKE_VERSION=	1.15
+BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS} \
+			devel/libtool # libtoolize
+
+pre-configure:
+	cd ${WRKSRC} && ${SETENV} \
+		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
+		autoreconf -fi
+###
 
 .include <bsd.port.mk>

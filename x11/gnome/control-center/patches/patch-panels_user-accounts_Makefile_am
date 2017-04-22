@@ -1,0 +1,14 @@
+$OpenBSD: patch-panels_user-accounts_Makefile_am,v 1.1 2017/04/22 12:11:48 ajacoutot Exp $
+
+XXX cook a better fix + push upstream
+
+--- panels/user-accounts/Makefile.am.orig	Sat Apr 22 13:52:07 2017
++++ panels/user-accounts/Makefile.am	Sat Apr 22 13:52:14 2017
+@@ -65,7 +65,6 @@ libuser_accounts_la_LIBADD = 		\
+ 	$(USER_ACCOUNTS_PANEL_LIBS)	\
+ 	$(builddir)/../common/liblanguage.la	\
+ 	-lpwquality			\
+-	-lcrypt				\
+ 	$(LIBM)				\
+ 	$(top_builddir)/libgd/libgd.la
+ 

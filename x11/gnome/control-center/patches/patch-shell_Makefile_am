@@ -1,0 +1,25 @@
+$OpenBSD: patch-shell_Makefile_am,v 1.1 2017/04/22 12:11:48 ajacoutot Exp $
+
+http://permalink.gmane.org/gmane.comp.gnome.desktop/51950
+https://bugzilla.gnome.org/show_bug.cgi?id=770758#c3
+https://bugzilla.gnome.org/show_bug.cgi?id=766329
+https://bugzilla.gnome.org/show_bug.cgi?id=772736 (systemd --user)
+
+--- shell/Makefile.am.orig	Tue Mar 14 14:55:38 2017
++++ shell/Makefile.am	Sat Apr 22 13:54:19 2017
+@@ -90,11 +90,14 @@ gnome_control_center_LDADD =						\
+ 	$(top_builddir)/panels/privacy/libprivacy.la			\
+ 	$(top_builddir)/panels/region/libregion.la			\
+ 	$(top_builddir)/panels/search/libsearch.la			\
+-	$(top_builddir)/panels/sharing/libsharing.la			\
+ 	$(top_builddir)/panels/sound/libsound.la			\
+ 	$(top_builddir)/panels/universal-access/libuniversal-access.la	\
+ 	$(top_builddir)/panels/user-accounts/libuser-accounts.la	\
+ 	$(top_builddir)/panels/printers/libprinters.la
++
++if BUILD_SHARING
++gnome_control_center_LDADD += $(top_builddir)/panels/sharing/libsharing.la
++endif
+ 
+ if BUILD_WACOM
+ gnome_control_center_LDADD += $(top_builddir)/panels/wacom/libwacom-properties.la

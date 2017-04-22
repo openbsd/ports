@@ -1,0 +1,28 @@
+$OpenBSD: patch-panels_Makefile_am,v 1.1 2017/04/22 12:11:48 ajacoutot Exp $
+
+http://permalink.gmane.org/gmane.comp.gnome.desktop/51950
+https://bugzilla.gnome.org/show_bug.cgi?id=770758#c3
+https://bugzilla.gnome.org/show_bug.cgi?id=766329
+https://bugzilla.gnome.org/show_bug.cgi?id=772736 (systemd --user)
+
+--- panels/Makefile.am.orig	Sat Apr 22 13:35:13 2017
++++ panels/Makefile.am	Sat Apr 22 13:41:30 2017
+@@ -16,7 +16,6 @@ SUBDIRS= \
+ 	datetime \
+ 	search \
+ 	privacy \
+-	sharing \
+ 	printers
+ 
+ if BUILD_WACOM
+@@ -29,6 +28,10 @@ endif
+ 
+ if BUILD_BLUETOOTH
+ SUBDIRS += bluetooth
++endif
++
++if BUILD_SHARING
++SUBDIRS += sharing
+ endif
+ 
+ -include $(top_srcdir)/git.mk
