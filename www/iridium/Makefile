@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2017/04/19 05:16:46 robert Exp $
+# $OpenBSD: Makefile,v 1.58 2017/04/22 07:47:35 robert Exp $
 
 USE_WXNEEDED=		Yes
 
@@ -70,6 +70,7 @@ BUILD_DEPENDS=	archivers/bzip2 \
 		sysutils/pciutils \
 		x11/gnome/libgnome-keyring \
 		devel/ninja \
+		x11/gtk+3 \  
 		lang/gcc/4.9,-c++>=4.9,<4.10
 LIB_DEPENDS=	devel/libexecinfo \
 		security/nss \
