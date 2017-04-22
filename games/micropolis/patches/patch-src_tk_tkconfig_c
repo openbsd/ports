@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_tk_tkconfig_c,v 1.1 2017/04/22 15:02:55 espie Exp $
+--- src/tk/tkconfig.c.orig	Sat Apr 22 15:40:34 2017
++++ src/tk/tkconfig.c	Sat Apr 22 15:40:50 2017
+@@ -803,7 +803,7 @@ FormatConfigInfo(tkwin, specPtr, widgRec)
+ 	    argv[4] = buffer;
+ 	    break;
+ 	case TK_CONFIG_MM:
+-	    sprintf(buffer, "%gm", *((int *) ptr));
++	    sprintf(buffer, "%dm", *((int *) ptr));
+ 	    argv[4] = buffer;
+ 	    break;
+ 	case TK_CONFIG_WINDOW: {

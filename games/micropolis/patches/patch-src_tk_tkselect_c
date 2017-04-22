@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_tk_tkselect_c,v 1.1 2017/04/22 15:02:55 espie Exp $
+--- src/tk/tkselect.c.orig	Sat Apr 22 16:05:15 2017
++++ src/tk/tkselect.c	Sat Apr 22 16:05:39 2017
+@@ -1132,7 +1132,7 @@ SelCvtFromX(propPtr, numValues, type, tkwin)
+ 	if (type == XA_ATOM) {
+ 	    strcpy(result+curSize, atomName);
+ 	} else {
+-	    sprintf(result+curSize, "%#x", *propPtr);
++	    sprintf(result+curSize, "%#lx", *propPtr);
+ 	}
+ 	curSize += strlen(result+curSize);
+     }
+@@ -1856,7 +1856,7 @@ DefaultSelection(winPtr, target, buffer, maxBytes, typ
+ 	if (maxBytes < 20) {
+ 	    return -1;
+ 	}
+-	sprintf(buffer, "%#x", winPtr->dispPtr->selectionTime);
++	sprintf(buffer, "%#lx", winPtr->dispPtr->selectionTime);
+ 	*typePtr = XA_INTEGER;
+ 	return strlen(buffer);
+     }

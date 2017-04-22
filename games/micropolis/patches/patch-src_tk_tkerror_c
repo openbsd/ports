@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_tk_tkerror_c,v 1.1 2017/04/22 15:02:55 espie Exp $
+--- src/tk/tkerror.c.orig	Sat Apr 22 15:41:36 2017
++++ src/tk/tkerror.c	Sat Apr 22 15:41:40 2017
+@@ -23,7 +23,7 @@ static char rcsid[] = "$Header: /user6/ouster/wish/RCS
+ #include "tkconfig.h"
+ #include "tkint.h"
+ 
+-static initialized = 0;
++static int initialized = 0;
+ 
+ /*
+  * Forward references to procedures declared later in this file:

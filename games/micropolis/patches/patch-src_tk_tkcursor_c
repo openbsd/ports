@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_tk_tkcursor_c,v 1.1 2017/04/22 15:02:55 espie Exp $
+--- src/tk/tkcursor.c.orig	Sat Apr 22 15:41:07 2017
++++ src/tk/tkcursor.c	Sat Apr 22 15:41:25 2017
+@@ -560,7 +560,7 @@ Tk_NameOfCursor(cursor)
+ 
+     if (!initialized) {
+ 	printid:
+-	sprintf(string, "cursor id 0x%x", cursor);
++	snprintf(string, 20, "cursor id 0x%lx", cursor);
+ 	return string;
+     }
+     idHashPtr = Tcl_FindHashEntry(&idTable, (char *) cursor);

@@ -1,0 +1,30 @@
+$OpenBSD: patch-src_tk_tksend_c,v 1.1 2017/04/22 15:02:55 espie Exp $
+--- src/tk/tksend.c.orig	Sat Apr 22 16:05:46 2017
++++ src/tk/tksend.c	Sat Apr 22 16:06:51 2017
+@@ -237,7 +237,7 @@ Tk_RegisterInterp(interp, name, tkwin)
+ 	}
+ 	(void) LookupName(winPtr->dispPtr, name, 1);
+     }
+-    sprintf(propInfo, "%x %.*s", Tk_WindowId(dispPtr->commWindow),
++    sprintf(propInfo, "%lx %.*s", Tk_WindowId(dispPtr->commWindow),
+ 	    TCL_MAX_NAME_LENGTH, name);
+     XChangeProperty(dispPtr->display,
+ 	    Tk_DefaultRootWindow(dispPtr->display),
+@@ -431,7 +431,7 @@ Tk_SendCmd(clientData, interp, argc, argv)
+     } else {
+ 	property = (char *) ckalloc((unsigned) length);
+     }
+-    sprintf(property, "C %x %x %s|%s",
++    sprintf(property, "C %lx %x %s|%s",
+ 	    Tk_WindowId(dispPtr->commWindow), serial, argv[1], cmd);
+     (void) AppendPropCarefully(dispPtr->display, w, dispPtr->commProperty,
+ 	    property, &pending);
+@@ -713,7 +713,7 @@ LookupName(dispPtr, name, delete)
+ 	    p++;
+ 	}
+ 	if ((*p != 0) && (strcmp(name, p+1) == 0)) {
+-	    sscanf(entry, "%x", &returnValue);
++	    sscanf(entry, "%lx", &returnValue);
+ 	    break;
+ 	}
+ 	while (*p != 0) {

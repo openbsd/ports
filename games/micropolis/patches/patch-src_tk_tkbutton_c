@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_tk_tkbutton_c,v 1.1 2017/04/22 15:02:55 espie Exp $
+--- src/tk/tkbutton.c.orig	Sat Apr 22 16:13:26 2017
++++ src/tk/tkbutton.c	Sat Apr 22 16:13:36 2017
+@@ -383,7 +383,7 @@ Tk_ButtonCmd(clientData, interp, argc, argv)
+ 	    break;
+ 	default:
+ 	    sprintf(interp->result,
+-		    "unknown button-creation command \"%.50s\"");
++		    "unknown button-creation command \"%.50s\"", argv[0]);
+ 	    return TCL_ERROR;
+     }
+ 

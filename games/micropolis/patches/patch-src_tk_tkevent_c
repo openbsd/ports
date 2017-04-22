@@ -1,0 +1,29 @@
+$OpenBSD: patch-src_tk_tkevent_c,v 1.1 2017/04/22 15:02:55 espie Exp $
+--- src/tk/tkevent.c.orig	Mon Feb  4 03:52:26 2008
++++ src/tk/tkevent.c	Sat Apr 22 16:13:06 2017
+@@ -21,6 +21,7 @@ static char rcsid[] = "$Header: /user6/ouster/wish/RCS
+ 
+ #include "tkconfig.h"
+ #include "tkint.h"
++#include "tkwm.h"
+ #include <errno.h>
+ #include <signal.h>
+ #include <sys/time.h>
+@@ -930,7 +931,7 @@ Tk_CreateTimerHandler(milliseconds, proc, clientData)
+     ClientData clientData;	/* Arbitrary data to pass to proc. */
+ {
+     register TimerEvent *timerPtr, *tPtr2, *prevPtr;
+-    static int id = 0;
++    static intptr_t id = 0;
+ 
+     timerPtr = NewTimerEvent();
+ 
+@@ -1008,7 +1009,7 @@ Tk_CreateMicroTimerHandler(seconds, microseconds, proc
+     ClientData clientData;	/* Arbitrary data to pass to proc. */
+ {
+     register TimerEvent *timerPtr, *tPtr2, *prevPtr;
+-    static int id = 0;
++    static intptr_t id = 0;
+ 
+     timerPtr = NewTimerEvent();
+ 

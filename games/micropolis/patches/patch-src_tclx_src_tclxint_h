@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_tclx_src_tclxint_h,v 1.3 2017/04/22 15:02:55 espie Exp $
+--- src/tclx/src/tclxint.h.orig	Sat Apr 22 16:37:36 2017
++++ src/tclx/src/tclxint.h	Sat Apr 22 16:38:16 2017
+@@ -83,16 +83,9 @@
+ struct tm *gmtime ();
+ struct tm *localtime ();
+ 
+-#ifndef MAXINT
+-#    define BITSPERBYTE   8
+-#    define BITS(type)    (BITSPERBYTE * (int)sizeof(type))
+-#    define HIBITI        ((unsigned int)(1 << BITS(int) - 1))
+-#    define MAXINT        ((int)(~HIBITI))
+-#endif
++#define MAXINT INT_MAX
+ 
+-#ifndef MININT
+-#    define MININT (-MAXINT)-1
+-#endif
++#define MININT INT_MIN
+ 
+ #ifndef TRUE
+ #    define TRUE   (1)

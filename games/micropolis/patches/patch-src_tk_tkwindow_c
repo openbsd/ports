@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_tk_tkwindow_c,v 1.1 2017/04/22 15:02:55 espie Exp $
+--- src/tk/tkwindow.c.orig	Sat Apr 22 16:06:58 2017
++++ src/tk/tkwindow.c	Sat Apr 22 16:07:03 2017
+@@ -55,7 +55,7 @@ TkDisplay *tkDisplayList = NULL;
+  * Have statics in this module been initialized?
+  */
+ 
+-static initialized = 0;
++static int initialized = 0;
+ 
+ /*
+  * Context information used to map from X window id's to

@@ -1,0 +1,45 @@
+$OpenBSD: patch-src_tclx_src_tclxclck_c,v 1.1 2017/04/22 15:02:55 espie Exp $
+--- src/tclx/src/tclxclck.c.orig	Sat Apr 22 16:31:26 2017
++++ src/tclx/src/tclxclck.c	Sat Apr 22 16:33:28 2017
+@@ -43,7 +43,7 @@ Tcl_GetclockCmd (clientData, interp, argc, argv)
+         Tcl_AppendResult (interp, tclXWrongArgs, argv[0], (char *) NULL);
+         return TCL_ERROR;
+     }
+-    sprintf (interp->result, "%ld", time ((long *) NULL));
++    sprintf (interp->result, "%lld", time (NULL));
+     return TCL_OK;
+ }
+ 
+@@ -67,10 +67,11 @@ Tcl_FmtclockCmd (clientData, interp, argc, argv)
+     char      **argv;
+ {
+     int              useGMT = FALSE;
+-    long             clockVal;
++    time_t           clockVal;
+     char            *format;
+     struct tm       *timeDataPtr;
+     int              fmtError;
++    long tmp;
+ 
+     if ((argc < 2) || (argc > 4)) {
+         Tcl_AppendResult (interp, tclXWrongArgs, argv [0], 
+@@ -78,8 +79,9 @@ Tcl_FmtclockCmd (clientData, interp, argc, argv)
+         return TCL_ERROR;
+     }
+ 
+-    if (Tcl_GetLong (interp, argv[1], &clockVal) != TCL_OK)
++    if (Tcl_GetLong (interp, argv[1], &tmp) != TCL_OK)
+         return TCL_ERROR;
++    clockVal = tmp;
+     if ((argc == 4) && (argv [3][0] != '\0')) {
+         if (!STREQU (argv [3], "GMT")) {
+             Tcl_AppendResult (interp, "expected \"GMT\" or {} got \"",
+@@ -100,7 +102,7 @@ Tcl_FmtclockCmd (clientData, interp, argc, argv)
+         timeDataPtr = localtime (&clockVal);
+ 
+     fmtError = strftime (interp->result, TCL_RESULT_SIZE, format, 
+-                         timeDataPtr) < 0;
++                         timeDataPtr) == 0;
+     if (fmtError) {
+         Tcl_AppendResult (interp, "error formating time", (char *) NULL);
+         return TCL_ERROR;

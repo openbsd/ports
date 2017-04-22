@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_tk_tkpack_c,v 1.1 2017/04/22 15:02:55 espie Exp $
+--- src/tk/tkpack.c.orig	Sat Apr 22 16:04:46 2017
++++ src/tk/tkpack.c	Sat Apr 22 16:04:51 2017
+@@ -95,7 +95,7 @@ static Tcl_HashTable packerHashTable;
+  * Have statics in this module been initialized?
+  */
+ 
+-static initialized = 0;
++static int initialized = 0;
+ 
+ /*
+  * Forward declarations for procedures defined later in this file:

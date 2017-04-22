@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_tclx_src_tclxunix_c,v 1.1 2017/04/22 15:02:55 espie Exp $
+--- src/tclx/src/tclxunix.c.orig	Sat Apr 22 16:56:23 2017
++++ src/tclx/src/tclxunix.c	Sat Apr 22 16:56:45 2017
+@@ -203,7 +203,7 @@ Tcl_TimesCmd (clientData, interp, argc, argv)
+ 
+     times(&tm);
+ 
+-    sprintf(interp->result, "%ld %ld %ld %ld", 
++    sprintf(interp->result, "%lld %lld %lld %lld", 
+ #ifdef MSDOS
+             tm.tms_utime  * MS_PER_TICK, 
+             tm.tms_utime2 * MS_PER_TICK, 

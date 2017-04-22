@@ -1,0 +1,75 @@
+$OpenBSD: patch-src_tcl_tclunxaz_c,v 1.1 2017/04/22 15:02:55 espie Exp $
+--- src/tcl/tclunxaz.c.orig	Mon Feb  4 03:52:26 2008
++++ src/tcl/tclunxaz.c	Sat Apr 22 16:01:48 2017
+@@ -544,7 +544,7 @@ Tcl_FileCmd(dummy, interp, argc, argv)
+ 	if (stat(fileName, &statBuf) == -1) {
+ 	    goto badStat;
+ 	}
+-	sprintf(interp->result, "%ld", statBuf.st_atime);
++	sprintf(interp->result, "%lld", statBuf.st_atime);
+ 	return TCL_OK;
+     } else if ((c == 'i') && (strncmp(argv[1], "isdirectory", length) == 0)
+ 	    && (length >= 3)) {
+@@ -581,7 +581,7 @@ Tcl_FileCmd(dummy, interp, argc, argv)
+ 	if (stat(fileName, &statBuf) == -1) {
+ 	    goto badStat;
+ 	}
+-	sprintf(interp->result, "%ld", statBuf.st_mtime);
++	sprintf(interp->result, "%lld", statBuf.st_mtime);
+ 	return TCL_OK;
+     } else if ((c == 'o') && (strncmp(argv[1], "owned", length) == 0)) {
+ 	if (argc != 3) {
+@@ -622,7 +622,7 @@ Tcl_FileCmd(dummy, interp, argc, argv)
+ 	if (stat(fileName, &statBuf) == -1) {
+ 	    goto badStat;
+ 	}
+-	sprintf(interp->result, "%ld", statBuf.st_size);
++	sprintf(interp->result, "%lld", statBuf.st_size);
+ 	return TCL_OK;
+     } else if ((c == 's') && (strncmp(argv[1], "stat", length) == 0)
+ 	    && (length >= 2)) {
+@@ -720,7 +720,7 @@ StoreStatData(interp, varName, statPtr)
+ 	    == NULL) {
+ 	return TCL_ERROR;
+     }
+-    sprintf(string, "%d", statPtr->st_ino);
++    sprintf(string, "%llu", statPtr->st_ino);
+     if (Tcl_SetVar2(interp, varName, "ino", string, TCL_LEAVE_ERR_MSG)
+ 	    == NULL) {
+ 	return TCL_ERROR;
+@@ -745,22 +745,22 @@ StoreStatData(interp, varName, statPtr)
+ 	    == NULL) {
+ 	return TCL_ERROR;
+     }
+-    sprintf(string, "%ld", statPtr->st_size);
++    sprintf(string, "%lld", statPtr->st_size);
+     if (Tcl_SetVar2(interp, varName, "size", string, TCL_LEAVE_ERR_MSG)
+ 	    == NULL) {
+ 	return TCL_ERROR;
+     }
+-    sprintf(string, "%ld", statPtr->st_atime);
++    sprintf(string, "%lld", statPtr->st_atime);
+     if (Tcl_SetVar2(interp, varName, "atime", string, TCL_LEAVE_ERR_MSG)
+ 	    == NULL) {
+ 	return TCL_ERROR;
+     }
+-    sprintf(string, "%ld", statPtr->st_mtime);
++    sprintf(string, "%lld", statPtr->st_mtime);
+     if (Tcl_SetVar2(interp, varName, "mtime", string, TCL_LEAVE_ERR_MSG)
+ 	    == NULL) {
+ 	return TCL_ERROR;
+     }
+-    sprintf(string, "%ld", statPtr->st_ctime);
++    sprintf(string, "%lld", statPtr->st_ctime);
+     if (Tcl_SetVar2(interp, varName, "ctime", string, TCL_LEAVE_ERR_MSG)
+ 	    == NULL) {
+ 	return TCL_ERROR;
+@@ -1499,7 +1499,7 @@ Tcl_TellCmd(notUsed, interp, argc, argv)
+     if (TclGetOpenFile(interp, argv[1], &filePtr) != TCL_OK) {
+ 	return TCL_ERROR;
+     }
+-    sprintf(interp->result, "%d", ftell(filePtr->f));
++    sprintf(interp->result, "%ld", ftell(filePtr->f));
+     return TCL_OK;
+ }
+ 

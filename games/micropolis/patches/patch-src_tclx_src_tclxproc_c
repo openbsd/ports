@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_tclx_src_tclxproc_c,v 1.1 2017/04/22 15:02:55 espie Exp $
+--- src/tclx/src/tclxproc.c.orig	Sat Apr 22 16:53:52 2017
++++ src/tclx/src/tclxproc.c	Sat Apr 22 16:54:32 2017
+@@ -91,6 +91,7 @@ Tcl_ExeclCmd (clientData, interp, argc, argv)
+         return TCL_ERROR;
+     }
+ 
++    /*NOTREACHED*/
+ }
+ 
+ /*

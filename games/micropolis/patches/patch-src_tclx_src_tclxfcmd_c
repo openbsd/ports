@@ -1,0 +1,104 @@
+$OpenBSD: patch-src_tclx_src_tclxfcmd_c,v 1.1 2017/04/22 15:02:55 espie Exp $
+--- src/tclx/src/tclxfcmd.c.orig	Sat Apr 22 16:38:34 2017
++++ src/tclx/src/tclxfcmd.c	Sat Apr 22 16:42:09 2017
+@@ -242,13 +242,13 @@ ReturnStatList (interp, filePtr, statBufPtr)
+     char statList [200];
+ 
+     sprintf (statList, 
+-             "{atime %d} {ctime %d} {dev %d} {gid %d} {ino %d} {mode %d} ",
++             "{atime %lld} {ctime %lld} {dev %d} {gid %d} {ino %llu} {mode %d} ",
+               statBufPtr->st_atime, statBufPtr->st_ctime, statBufPtr->st_dev,
+               statBufPtr->st_gid,   statBufPtr->st_ino,   statBufPtr->st_mode);
+     Tcl_AppendResult (interp, statList, (char *) NULL);
+ 
+     sprintf (statList, 
+-             "{mtime %d} {nlink %d} {size %d} {uid %d} {tty %d} {type %s}",
++             "{mtime %lld} {nlink %d} {size %lld} {uid %d} {tty %d} {type %s}",
+              statBufPtr->st_mtime,  statBufPtr->st_nlink, statBufPtr->st_size,
+              statBufPtr->st_uid,    isatty (fileno (filePtr->f)),
+              GetFileType (statBufPtr));
+@@ -286,7 +286,7 @@ ReturnStatArray (interp, filePtr, statBufPtr, arrayNam
+                       TCL_LEAVE_ERR_MSG) == NULL)
+         return TCL_ERROR;
+ 
+-    sprintf (numBuf, "%d", statBufPtr->st_ino);
++    sprintf (numBuf, "%lld", statBufPtr->st_ino);
+     if  (Tcl_SetVar2 (interp, arrayName, "ino", numBuf,
+                          TCL_LEAVE_ERR_MSG) == NULL)
+         return TCL_ERROR;
+@@ -311,22 +311,22 @@ ReturnStatArray (interp, filePtr, statBufPtr, arrayNam
+                       TCL_LEAVE_ERR_MSG) == NULL)
+         return TCL_ERROR;
+ 
+-    sprintf (numBuf, "%d", statBufPtr->st_size);
++    sprintf (numBuf, "%lld", statBufPtr->st_size);
+     if  (Tcl_SetVar2 (interp, arrayName, "size", numBuf,
+                       TCL_LEAVE_ERR_MSG) == NULL)
+         return TCL_ERROR;
+ 
+-    sprintf (numBuf, "%d", statBufPtr->st_atime);
++    sprintf (numBuf, "%lld", statBufPtr->st_atime);
+     if  (Tcl_SetVar2 (interp, arrayName, "atime", numBuf,
+                       TCL_LEAVE_ERR_MSG) == NULL)
+         return TCL_ERROR;
+ 
+-    sprintf (numBuf, "%d", statBufPtr->st_mtime);
++    sprintf (numBuf, "%lld", statBufPtr->st_mtime);
+     if  (Tcl_SetVar2 (interp, arrayName, "mtime", numBuf,
+                       TCL_LEAVE_ERR_MSG) == NULL)
+         return TCL_ERROR;
+ 
+-    sprintf (numBuf, "%d", statBufPtr->st_ctime);
++    sprintf (numBuf, "%lld", statBufPtr->st_ctime);
+     if  (Tcl_SetVar2 (interp, arrayName, "ctime", numBuf,
+                       TCL_LEAVE_ERR_MSG) == NULL)
+         return TCL_ERROR;
+@@ -370,7 +370,7 @@ ReturnStatItem (interp, filePtr, statBufPtr, itemName)
+     if (STREQU (itemName, "dev"))
+         sprintf (interp->result, "%d", statBufPtr->st_dev);
+     else if (STREQU (itemName, "ino"))
+-        sprintf (interp->result, "%d", statBufPtr->st_ino);
++        sprintf (interp->result, "%lld", statBufPtr->st_ino);
+     else if (STREQU (itemName, "mode"))
+         sprintf (interp->result, "%d", statBufPtr->st_mode);
+     else if (STREQU (itemName, "nlink"))
+@@ -380,13 +380,13 @@ ReturnStatItem (interp, filePtr, statBufPtr, itemName)
+     else if (STREQU (itemName, "gid"))
+         sprintf (interp->result, "%d", statBufPtr->st_gid);
+     else if (STREQU (itemName, "size"))
+-        sprintf (interp->result, "%d", statBufPtr->st_size);
++        sprintf (interp->result, "%lld", statBufPtr->st_size);
+     else if (STREQU (itemName, "atime"))
+-        sprintf (interp->result, "%d", statBufPtr->st_atime);
++        sprintf (interp->result, "%lld", statBufPtr->st_atime);
+     else if (STREQU (itemName, "mtime"))
+-        sprintf (interp->result, "%d", statBufPtr->st_mtime);
++        sprintf (interp->result, "%lld", statBufPtr->st_mtime);
+     else if (STREQU (itemName, "ctime"))
+-        sprintf (interp->result, "%d", statBufPtr->st_ctime);
++        sprintf (interp->result, "%lld", statBufPtr->st_ctime);
+     else if (STREQU (itemName, "type"))
+         interp->result = GetFileType (statBufPtr);
+     else if (STREQU (itemName, "tty"))
+@@ -617,16 +617,19 @@ ParseLockUnlockArgs (interp, argc, argv, argIdx, fileP
+ 	return TCL_ERROR;
+     argIdx++;
+ 
++    long tmp;
+     if ((argIdx < argc) && (argv [argIdx][0] != '\0')) {
+         if (Tcl_GetLong (interp, argv [argIdx],
+-                         &lockInfoPtr->l_start) != TCL_OK)
++                         &tmp) != TCL_OK)
+             return TCL_ERROR;
++	lockInfoPtr->l_start = tmp;
+     }
+     argIdx++;
+ 
+     if ((argIdx < argc) && (argv [argIdx][0] != '\0')) {
+-        if (Tcl_GetLong (interp, argv [argIdx], &lockInfoPtr->l_len) != TCL_OK)
++        if (Tcl_GetLong (interp, argv [argIdx], &tmp) != TCL_OK)
+             return TCL_ERROR;
++	lockInfoPtr->l_len = tmp;
+     }
+     argIdx++;
+ 

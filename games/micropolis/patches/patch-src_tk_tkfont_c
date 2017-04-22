@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_tk_tkfont_c,v 1.1 2017/04/22 15:02:55 espie Exp $
+--- src/tk/tkfont.c.orig	Mon Feb  4 03:52:26 2008
++++ src/tk/tkfont.c	Sat Apr 22 16:12:50 2017
+@@ -228,7 +228,7 @@ Tk_NameOfFontStruct(fontStructPtr)
+ 
+     if (!initialized) {
+ 	printid:
+-	sprintf(string, "font id 0x%x", fontStructPtr->fid);
++	snprintf(string, 20, "font id 0x%lx", fontStructPtr->fid);
+ 	return string;
+     }
+     fontHashPtr = Tcl_FindHashEntry(&fontTable, (char *) fontStructPtr);

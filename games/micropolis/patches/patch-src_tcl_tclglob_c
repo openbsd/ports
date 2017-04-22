@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_tcl_tclglob_c,v 1.1 2017/04/22 15:02:55 espie Exp $
+--- src/tcl/tclglob.c.orig	Sat Apr 22 15:22:33 2017
++++ src/tcl/tclglob.c	Sat Apr 22 15:23:46 2017
+@@ -364,9 +364,9 @@ DoGlob(interp, dir, rem)
+ 	if (l2 <= STATIC_SIZE) {
+ 	    newDir = static1;
+ 	} else {
+-	    newDir = (char *) ckalloc((unsigned) l2);
++	    newDir = ckalloc((unsigned) l2);
+ 	}
+-	sprintf(newDir, "%s%s%.*s", dir, separator, p-rem, rem);
++	sprintf(newDir, "%s%s%.*s", dir, separator, (int)(p-rem), rem);
+ 	result = DoGlob(interp, newDir, p+1);
+ 	if (newDir != static1) {
+ 	    ckfree(newDir);

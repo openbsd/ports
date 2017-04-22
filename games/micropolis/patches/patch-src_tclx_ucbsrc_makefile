@@ -1,0 +1,28 @@
+$OpenBSD: patch-src_tclx_ucbsrc_makefile,v 1.1 2017/04/22 15:02:55 espie Exp $
+--- src/tclx/ucbsrc/makefile.orig	Sat Apr 22 16:25:39 2017
++++ src/tclx/ucbsrc/makefile	Sat Apr 22 16:26:35 2017
+@@ -24,8 +24,8 @@ SHELL=/bin/sh
+ 
+ #------------------------------------------------------------------------------
+ 
+-CFLAGS=$(OPTIMIZE_FLAG) $(XCFLAGS) -I../$(TCL_UCB_DIR) $(MEM_DEBUG_FLAGS) \
+-  $(SYS_DEP_FLAGS)
++CFLAGS=$(OPTIMIZE_FLAG) $(XCFLAGS) -I../$(TCL_UCB_DIR) -I../src \
++	$(MEM_DEBUG_FLAGS) $(SYS_DEP_FLAGS)
+ 
+ #------------------------------------------------------------------------------
+ 
+@@ -40,11 +40,11 @@ made.tmp: $(OBJS)
+ 	$(AR)  cr ../libtcl.a $(OBJS)
+ 	touch made.tmp
+ 
+-tclbasic.c: ../$(TCL_UCB_DIR)/tclbasic.c
++tclbasic.c: ../$(TCL_UCB_DIR)/tclbasic.c tclbasic.sed
+ 	rm -f tclbasic.c
+ 	sed -f tclbasic.sed <../$(TCL_UCB_DIR)/tclbasic.c >tclbasic.c
+ 
+-tclexpr.c: ../$(TCL_UCB_DIR)/tclexpr.c
++tclexpr.c: ../$(TCL_UCB_DIR)/tclexpr.c tclexpr.sed
+ 	rm -f tclexpr.c
+ 	sed -f tclexpr.sed <../$(TCL_UCB_DIR)/tclexpr.c >tclexpr.c
+ 
