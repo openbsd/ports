@@ -1,10 +1,10 @@
-$OpenBSD: patch-Makefile,v 1.5 2016/05/28 13:47:14 sthen Exp $
+$OpenBSD: patch-Makefile,v 1.6 2017/04/22 21:01:02 sthen Exp $
 
 # XXX N.B. if we get waitid() and want to enable parallel,
 # it conflicts with sysutils/parallel
 
---- Makefile.orig	Sat Apr  2 20:23:51 2016
-+++ Makefile	Sat May 28 14:44:56 2016
+--- Makefile.orig	Sat Aug 13 14:58:21 2016
++++ Makefile	Sat Apr 22 21:56:01 2017
 @@ -1,4 +1,5 @@
 -BINS=isutf8 ifdata ifne pee sponge mispipe lckdo parallel errno
 +BINS=isutf8 ifdata ifne pee sponge mispipe lckdo errno
@@ -12,14 +12,23 @@ $OpenBSD: patch-Makefile,v 1.5 2016/05/28 13:47:14 sthen Exp $
  PERLSCRIPTS=vidir vipe ts combine zrun chronic
  MANS=sponge.1 vidir.1 vipe.1 isutf8.1 ts.1 combine.1 ifdata.1 ifne.1 pee.1 zrun.1 chronic.1 mispipe.1 lckdo.1 parallel.1 errno.1
  CFLAGS?=-O2 -g -Wall
-@@ -18,8 +19,8 @@ install:
+@@ -19,7 +20,7 @@ clean:
+ 	rm -f $(BINS) $(MANS) dump.c errnos.h errno.o
+ 
+ isutf8: is_utf8/*.c is_utf8/*.h
+-	$(MAKE) -C is_utf8/
++	$(MAKE) -C is_utf8/ CC="${CC}" CFLAGS="${CFLAGS}"
+ 	cp is_utf8/isutf8 .
+ 
+ install:
+@@ -27,8 +28,8 @@ install:
  	$(INSTALL_BIN) $(BINS) $(DESTDIR)$(PREFIX)/bin
  	install $(PERLSCRIPTS) $(DESTDIR)$(PREFIX)/bin
- 	
+ 
 -	mkdir -p $(DESTDIR)$(PREFIX)/share/man/man1
 -	install $(MANS) $(DESTDIR)$(PREFIX)/share/man/man1
 +	mkdir -p $(DESTDIR)$(PREFIX)/man/man1
 +	install $(MANS) $(DESTDIR)$(PREFIX)/man/man1
  
  check: isutf8
- 	./check-isutf8
+ 	./is_utf8/test.sh

@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.15 2017/01/26 15:44:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2017/04/22 21:01:02 sthen Exp $
 
 COMMENT =	miscellaneous unix tools
 
-V =		0.59
-REVISION =	0
+V =		0.60
 DISTNAME =	moreutils_$V.orig
 PKGNAME =	moreutils-$V
-WRKDIST =	${WRKDIR}/moreutils-$V.orig
+WRKDIST =	${WRKDIR}/moreutils-$V
+EXTRACT_SUFX =	.tar.xz
 
 CATEGORIES =	sysutils
 
-HOMEPAGE =	http://joey.kitenet.net/code/moreutils/
+HOMEPAGE =	https://joeyh.name/code/moreutils/
 
 MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 
