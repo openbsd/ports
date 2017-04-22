@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_inc,v 1.4 2011/06/23 22:50:27 naddy Exp $
---- Makefile.inc.orig	Fri Jul 14 13:56:54 2006
-+++ Makefile.inc	Tue Jun 21 08:50:04 2011
-@@ -2,14 +2,10 @@
+$OpenBSD: patch-Makefile_inc,v 1.5 2017/04/22 05:34:00 jsg Exp $
+--- Makefile.inc.orig	Sat Jul 15 05:56:54 2006
++++ Makefile.inc	Sat Apr 22 15:31:31 2017
+@@ -2,15 +2,11 @@
  #
  # Default installation directories
  #
@@ -16,7 +16,17 @@ $OpenBSD: patch-Makefile_inc,v 1.4 2011/06/23 22:50:27 naddy Exp $
 +BINDIR=		${TRUEPREFIX}/bin
 +LIBDIR=		${TRUEPREFIX}/lib
 +MANDIR=		${TRUEPREFIX}/man/man
-+
  
++
  # Name the default serial port to talk to the gps
  #
+ GPS_SERIAL_PORT?=	/dev/tty00
+@@ -28,7 +24,7 @@ SIO_TYPE?=	-DSIO_TYPE=BSD
+ # C options
+ #
+ CFLAGS+= -g -I${.CURDIR}/../lib
+-CFLAGS+= -Wall -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Werror
++CFLAGS+= -Wall -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes
+ CFLAGS+= -DDEFAULT_PORT=\"${GPS_SERIAL_PORT}\" ${VERSION} ${SIO_TYPE}
+ 
+ # Figure out where the library lives for proper dependencies
