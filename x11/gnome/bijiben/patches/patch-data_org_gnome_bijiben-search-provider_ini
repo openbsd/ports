@@ -1,0 +1,15 @@
+$OpenBSD: patch-data_org_gnome_bijiben-search-provider_ini,v 1.1 2017/04/22 09:38:17 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=781106
+
+--- data/org.gnome.bijiben-search-provider.ini.orig	Mon May  9 22:44:19 2016
++++ data/org.gnome.bijiben-search-provider.ini	Sat Apr 22 11:23:24 2017
+@@ -1,5 +1,5 @@
+ [Shell Search Provider]
+-DesktopId=bijiben.desktop
++DesktopId=org.gnome.bijiben.desktop
+ BusName=org.gnome.bijiben.SearchProvider
+ ObjectPath=/org/gnome/bijiben/SearchProvider
+-Version=2
+\ No newline at end of file
++Version=2

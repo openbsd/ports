@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_bijiben-shell-search-provider_c,v 1.1 2017/04/22 09:38:17 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=781106
+
+--- src/bijiben-shell-search-provider.c.orig	Mon May  9 22:44:19 2016
++++ src/bijiben-shell-search-provider.c	Sat Apr 22 11:23:24 2017
+@@ -325,7 +325,7 @@ handle_activate_result (BijibenShellSearchProvider2  *
+ 
+   g_application_hold (user_data);
+ 
+-  app = G_APP_INFO (g_desktop_app_info_new ("bijiben.desktop"));
++  app = G_APP_INFO (g_desktop_app_info_new ("org.gnome.bijiben.desktop"));
+ 
+   context = gdk_display_get_app_launch_context (gdk_display_get_default ());
+   gdk_app_launch_context_set_timestamp (context, timestamp);
