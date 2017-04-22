@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2016/12/07 06:59:58 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.23 2017/04/22 20:37:39 shadchin Exp $
 lib/python${MODPY_VERSION}/site-packages/pytz/
 lib/python${MODPY_VERSION}/site-packages/pytz-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/pytz-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -211,6 +211,7 @@ lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/Port_of_Spain
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/Porto_Acre
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/Porto_Velho
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/Puerto_Rico
+lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/Punta_Arenas
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/Rainy_River
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/Rankin_Inlet
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/Recife
