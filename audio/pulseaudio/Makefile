@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.80 2017/04/17 17:29:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.81 2017/04/22 13:43:21 ajacoutot Exp $
 
 # XXX
 # sndio: what to do with (channel) map
@@ -10,6 +10,7 @@ COMMENT=		cross-platform networked sound server
 VERSION=		10.0
 DISTNAME=		pulseaudio-${VERSION}
 EXTRACT_SUFX=		.tar.xz
+REVISION=		0
 
 SHARED_LIBS +=  pulse                6.1      # .20.1
 SHARED_LIBS +=  pulse-simple         1.0      # .1.0

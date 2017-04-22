@@ -1,15 +1,6 @@
-$OpenBSD: patch-configure_ac,v 1.14 2017/01/19 19:32:06 ajacoutot Exp $
+$OpenBSD: patch-configure_ac,v 1.15 2017/04/22 13:43:21 ajacoutot Exp $
 --- configure.ac.orig	Fri Jan 13 04:02:18 2017
 +++ configure.ac	Thu Jan 19 09:51:12 2017
-@@ -1037,7 +1037,7 @@ AS_IF([test "x$HAVE_DBUS" = "x1"], AC_DEFINE([HAVE_DBU
- 
- PA_MACHINE_ID="${sysconfdir}/machine-id"
- AX_DEFINE_DIR(PA_MACHINE_ID, PA_MACHINE_ID, [D-Bus machine-id file])
--PA_MACHINE_ID_FALLBACK="${localstatedir}/lib/dbus/machine-id"
-+PA_MACHINE_ID_FALLBACK="${localstatedir}/db/dbus/machine-id"
- AX_DEFINE_DIR(PA_MACHINE_ID_FALLBACK, PA_MACHINE_ID_FALLBACK,
- 	      [Fallback machine-id file])
- 
 @@ -1336,9 +1336,9 @@ fi
  
  PA_SYSTEM_RUNTIME_PATH="${localstatedir}/run/pulse"

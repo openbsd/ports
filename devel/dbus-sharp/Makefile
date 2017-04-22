@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2015/10/03 11:55:38 robert Exp $
+# $OpenBSD: Makefile,v 1.5 2017/04/22 13:43:21 ajacoutot Exp $
 
 COMMENT=		C\# implementation of D-Bus
 
 DISTNAME=		dbus-sharp-0.7.0
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		devel
 

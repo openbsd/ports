@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.50 2016/10/01 11:54:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.51 2017/04/22 13:43:21 ajacoutot Exp $
 
 COMMENT =	intelligent input bus framework
 
 DISTNAME =	ibus-1.5.5
-REVISION =	3
+REVISION =	4
 
 SHARED_LIBS =	ibus-1.0	4.0 # 5.504
 

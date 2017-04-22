@@ -1,10 +1,23 @@
-$OpenBSD: patch-src_Makefile_am,v 1.6 2012/07/13 17:03:32 ajacoutot Exp $
+$OpenBSD: patch-src_Makefile_am,v 1.7 2017/04/22 13:43:21 ajacoutot Exp $
 --- src/Makefile.am.orig	Tue May 15 11:11:00 2012
-+++ src/Makefile.am	Fri Jul 13 17:55:35 2012
-@@ -213,6 +213,36 @@ libcanberra_oss_la_LDFLAGS = \
- endif
- endif
++++ src/Makefile.am	Sat Apr 22 15:04:40 2017
+@@ -80,7 +80,7 @@ libcanberra_la_SOURCES += \
+ 	cache.c cache.h
+ libcanberra_la_CFLAGS += \
+ 	$(TDB_CLFAGS) \
+-	-DCA_MACHINE_ID=\"$(localstatedir)/lib/dbus/machine-id\"
++	-DCA_MACHINE_ID=\"$(sysconfdir)/machine-id\"
+ libcanberra_la_LIBADD += \
+ 	$(TDB_LIBS)
  
+@@ -209,6 +209,36 @@ libcanberra_oss_la_CFLAGS = \
+ libcanberra_oss_la_LIBADD = \
+ 	libcanberra.la
+ libcanberra_oss_la_LDFLAGS = \
++	-avoid-version -module -export-dynamic
++endif
++endif
++
 +if HAVE_SNDIO
 +if BUILTIN_SNDIO
 +
@@ -31,10 +44,6 @@ $OpenBSD: patch-src_Makefile_am,v 1.6 2012/07/13 17:03:32 ajacoutot Exp $
 +libcanberra_sndio_la_LIBADD = \
 +	libcanberra.la $(SNDIO_LIBS)
 +libcanberra_sndio_la_LDFLAGS = \
-+	-avoid-version -module -export-dynamic
-+endif
-+endif
-+
- if HAVE_GSTREAMER
- if BUILTIN_GSTREAMER
- 
+ 	-avoid-version -module -export-dynamic
+ endif
+ endif

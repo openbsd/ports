@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.258 2017/04/11 07:25:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.259 2017/04/22 13:43:21 ajacoutot Exp $
 
 COMMENT=		general-purpose utility library
 
 GNOME_PROJECT=		glib
 GNOME_VERSION=		2.52.1
 PKGNAME=		${DISTNAME:S/glib/glib2/}
+
+REVISION=		0
 
 CATEGORIES=		devel
 
@@ -66,9 +68,5 @@ pre-configure:
 	sed -i "s,/usr/share,${PREFIX}/share,g" \
 		${WRKSRC}/docs/reference/gio/html/glib-compile-schemas.html \
 		${WRKSRC}/docs/reference/gio/glib-compile-schemas.xml
-	sed -i "s,/var/lib/dbus,/var/db/dbus,g" \
-		${WRKSRC}/gio/gdbusconnection.c \
-		${WRKSRC}/gio/gdbusprivate.c \
-		${WRKSRC}/po/*.po
 
 .include <bsd.port.mk>

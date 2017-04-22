@@ -1,14 +1,12 @@
 #!/bin/sh
 #
-# $OpenBSD: messagebus.rc,v 1.1 2015/04/04 09:18:54 ajacoutot Exp $
+# $OpenBSD: messagebus.rc,v 1.2 2017/04/22 13:43:21 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/bin/dbus-daemon --system"
 
 . /etc/rc.d/rc.subr
 
 rc_pre() {
-	[ ! -h /var/db/dbus/machine-id ] && \
-		ln -sf ${SYSCONFDIR}/machine-id /var/db/dbus/machine-id
 	rm -f /var/run/dbus/pid
 	install -d -o _dbus -g _dbus /var/run/dbus
 }
