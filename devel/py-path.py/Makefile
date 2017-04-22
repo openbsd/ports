@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2017/01/24 09:45:45 shadchin Exp $
+# $OpenBSD: Makefile,v 1.11 2017/04/22 17:23:54 shadchin Exp $
 
 COMMENT =		os.path wrapper for Python
 
-MODPY_EGG_VERSION =	10.1
+MODPY_EGG_VERSION =	10.3.1
 DISTNAME =		path.py-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
@@ -28,6 +28,6 @@ FLAVORS =		python3
 FLAVOR ?=
 
 do-test:
-	cd ${WRKSRC} && ${MODPY_BIN} -m pytest --ignore=lib
+	cd ${WRKSRC} && LC_CTYPE=C.UTF-8 ${MODPY_BIN} -m pytest --ignore=lib
 
 .include <bsd.port.mk>
