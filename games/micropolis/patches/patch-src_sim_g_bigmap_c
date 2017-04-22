@@ -1,16 +1,17 @@
-$OpenBSD: patch-src_sim_g_bigmap_c,v 1.3 2017/04/20 15:52:29 espie Exp $
---- src/sim/g_bigmap.c.orig	Thu Apr 20 17:26:02 2017
-+++ src/sim/g_bigmap.c	Thu Apr 20 17:26:38 2017
-@@ -63,7 +63,7 @@
+$OpenBSD: patch-src_sim_g_bigmap_c,v 1.4 2017/04/22 19:49:18 espie Exp $
+--- src/sim/g_bigmap.c.orig	Mon Feb  4 03:52:26 2008
++++ src/sim/g_bigmap.c	Sat Apr 22 21:31:18 2017
+@@ -63,14 +63,16 @@
  
  
  int dynamicFilter(int c, int r);
 -int WireDrawBeegMapRect(SimView *view, short x, short y, short w, short h);
 +void WireDrawBeegMapRect(SimView *view, short x, short y, short w, short h);
  
++void
  drawBeegMaps()
  {
-@@ -71,6 +71,7 @@ drawBeegMaps()
+   sim_update_editors();
  }
  
  
@@ -18,7 +19,7 @@ $OpenBSD: patch-src_sim_g_bigmap_c,v 1.3 2017/04/20 15:52:29 espie Exp $
  MemDrawBeegMapRect(SimView *view, int x, int y, int w, int h)
  {
    int lineBytes = view->line_bytes;
-@@ -264,6 +265,7 @@ MemDrawBeegMapRect(SimView *view, int x, int y, int w,
+@@ -264,6 +266,7 @@ MemDrawBeegMapRect(SimView *view, int x, int y, int w,
  }
  
  

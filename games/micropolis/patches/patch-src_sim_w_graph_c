@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_sim_w_graph_c,v 1.1 2017/04/20 15:52:29 espie Exp $
---- src/sim/w_graph.c.orig	Thu Apr 20 17:32:00 2017
-+++ src/sim/w_graph.c	Thu Apr 20 17:33:14 2017
+$OpenBSD: patch-src_sim_w_graph_c,v 1.2 2017/04/22 19:49:18 espie Exp $
+--- src/sim/w_graph.c.orig	Mon Feb  4 03:52:26 2008
++++ src/sim/w_graph.c	Sat Apr 22 19:53:43 2017
 @@ -71,6 +71,8 @@ short Graph10Max, Graph120Max;
  Tcl_HashTable GraphCmds;
  int GraphUpdateTime = 100;
@@ -10,7 +10,19 @@ $OpenBSD: patch-src_sim_w_graph_c,v 1.1 2017/04/20 15:52:29 espie Exp $
  
  #define DEF_GRAPH_FONT	"-Adobe-Helvetica-Bold-R-Normal-*-140-*"
  #define DEF_GRAPH_BG_COLOR	"#b0b0b0"
-@@ -666,6 +668,7 @@ DestroyGraph(SimGraph *graph)
+@@ -568,9 +570,10 @@ initGraphs(void)
+ 
+ 
+ /* comefrom: InitWillStuff */
++void
+ InitGraphMax(void)
+ {
+-  register x;
++  register int x;
+ 
+   ResHisMax = 0;
+   ComHisMax = 0;
+@@ -666,6 +669,7 @@ DestroyGraph(SimGraph *graph)
  }
  
  
@@ -18,7 +30,7 @@ $OpenBSD: patch-src_sim_w_graph_c,v 1.1 2017/04/20 15:52:29 espie Exp $
  DoResizeGraph(SimGraph *graph, int w, int h)
  {
    int resize = 0;
-@@ -698,6 +701,7 @@ DoNewGraph(SimGraph *graph)
+@@ -698,6 +702,7 @@ DoNewGraph(SimGraph *graph)
  
  #define BORDER 5
  

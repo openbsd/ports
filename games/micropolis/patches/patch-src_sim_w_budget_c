@@ -1,0 +1,27 @@
+$OpenBSD: patch-src_sim_w_budget_c,v 1.1 2017/04/22 19:49:18 espie Exp $
+--- src/sim/w_budget.c.orig	Mon Feb  4 03:52:26 2008
++++ src/sim/w_budget.c	Sat Apr 22 20:49:25 2017
+@@ -90,6 +90,7 @@ void InitFundingLevel(void)
+ }
+ 
+ 
++void
+ DoBudget()
+ {
+   DoBudgetNow(0);
+@@ -257,6 +258,7 @@ ReallyDrawBudgetWindow(void)
+ }
+ 
+ 
++void
+ drawCurrPercents(void)
+ {
+   MustDrawCurrPercents = 1;
+@@ -293,6 +295,7 @@ ReallyDrawCurrPercents(void)
+ }
+ 
+ 
++void
+ UpdateBudgetWindow()
+ {
+   if (MustDrawCurrPercents) {

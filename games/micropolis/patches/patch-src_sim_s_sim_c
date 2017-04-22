@@ -1,20 +1,181 @@
-$OpenBSD: patch-src_sim_s_sim_c,v 1.1 2017/04/20 15:52:29 espie Exp $
---- src/sim/s_sim.c.orig	Thu Apr 20 17:14:26 2017
-+++ src/sim/s_sim.c	Thu Apr 20 17:17:11 2017
-@@ -85,8 +85,12 @@ short Spdcycle = 0;
+$OpenBSD: patch-src_sim_s_sim_c,v 1.2 2017/04/22 19:49:18 espie Exp $
+--- src/sim/s_sim.c.orig	Mon Feb  4 03:52:26 2008
++++ src/sim/s_sim.c	Sat Apr 22 20:58:12 2017
+@@ -85,8 +85,28 @@ short Spdcycle = 0;
  short DoInitialEval = 0;
  short MeltX, MeltY;
  
 +void DoRail(void);
 +void DoAirport(void);
 +void DoRoad(void);
++void Simulate(int mod16);
++void SetValves(void);
++void ClearCensus(void);
++void MapScan(int x1, int x2);
++void TakeCensus(void);
++void Take2Census(void);
++void CollectTax(void);
++void DecROGMem(void);
++void DecTrafficMem(void);
++void SimLoadInit(void);
++void DoFire(void);
++void DoRadTile(void);
++int DoBridge(void);
++int GetBoatDis(void);
++void CoalSmoke(int mx, int my);
++void DrawStadium(int z);
  
  /* comefrom: doEditWindow scoreDoer doMapInFront graphDoer doNilEvent */
 +void
  SimFrame(void)
  {
    short i;
-@@ -744,6 +748,7 @@ MapScan(int x1, int x2)
+@@ -110,6 +130,7 @@ SimFrame(void)
+ 
+ 
+ /* comefrom: SimFrame */
++void
+ Simulate(int mod16)
+ {
+   static short SpdPwr[4] = { 1,  2,  4,  5 };
+@@ -204,6 +225,7 @@ Simulate(int mod16)
+ 
+ 
+ /* comefrom: Simulate */
++void
+ DoSimInit(void)
+ {
+   Fcycle = 0;
+@@ -235,6 +257,7 @@ DoSimInit(void)
+ 
+ 
+ /* comefrom: SimLoadInit */
++void
+ DoNilPower(void)
+ {
+   register short x, y, z;
+@@ -253,13 +276,14 @@ DoNilPower(void)
+ 
+ 
+ /* comefrom: Simulate */
++void
+ DecTrafficMem(void)		/* tends to empty TrfDensity   */
+ {
+   register short x, y, z;
+ 
+   for (x = 0; x < HWLDX; x++)
+     for (y = 0; y < HWLDY; y++)
+-      if (z = TrfDensity[x][y]) {
++      if ((z = TrfDensity[x][y])) {
+ 	if (z > 24) {
+ 	  if (z > 200) TrfDensity[x][y] = z - 34;
+ 	  else TrfDensity[x][y] = z - 24;
+@@ -270,6 +294,7 @@ DecTrafficMem(void)		/* tends to empty TrfDensity   */
+ 
+ 
+ /* comefrom: Simulate */
++void
+ DecROGMem(void)			/* tends to empty RateOGMem   */
+ {
+   register short x, y, z;
+@@ -292,6 +317,7 @@ DecROGMem(void)			/* tends to empty RateOGMem   */
+ 
+ 
+ /* comefrom: DoSimInit */
++void
+ InitSimMemory(void)
+ {	
+   register short x, z;
+@@ -330,6 +356,7 @@ InitSimMemory(void)
+ 
+ 
+ /* comefrom: DoSimInit */
++void
+ SimLoadInit(void)
+ {
+   static short DisTab[9] = { 0, 2, 10, 5, 20, 3, 5, 5, 2 * 48};
+@@ -395,6 +422,7 @@ SimLoadInit(void)
+ 
+ 
+ /* comefrom: InitSimMemory SimLoadInit */
++void
+ SetCommonInits(void)
+ {
+   EvalInit();
+@@ -411,6 +439,7 @@ SetCommonInits(void)
+ 
+ 
+ /* comefrom: Simulate DoSimInit */
++void
+ SetValves(void)
+ {
+   static short TaxTable[21] = {
+@@ -448,7 +477,7 @@ SetValves(void)
+   Births = NormResPop * (.02); 			/* Birth Rate  */
+   PjResPop = NormResPop + Migration + Births;	/* Projected Res.Pop  */
+ 
+-  if (temp = (ComHis[1] + IndHis[1])) LaborBase = (ResHis[1] / temp);
++  if ((temp = (ComHis[1] + IndHis[1]))) LaborBase = (ResHis[1] / temp);
+   else LaborBase = 1;
+   if (LaborBase > 1.3) LaborBase = 1.3;
+   if (LaborBase < 0) LaborBase = 0;  /* LB > 1 - .1  */
+@@ -521,6 +550,7 @@ SetValves(void)
+ 
+ 
+ /* comefrom: Simulate DoSimInit */
++void
+ ClearCensus(void)
+ {
+   register short x, y, z;
+@@ -556,6 +586,7 @@ ClearCensus(void)
+ 
+ 
+ /* comefrom: Simulate */
++void
+ TakeCensus(void)
+ {
+   short x;
+@@ -608,6 +639,7 @@ TakeCensus(void)
+ 
+ 
+ /* comefrom: Simulate */
++void
+ Take2Census(void)    /* Long Term Graphs */
+ {
+   short x;
+@@ -638,6 +670,7 @@ Take2Census(void)    /* Long Term Graphs */
+ 
+ 
+ /* comefrom: Simulate */
++void
+ CollectTax(void)
+ {	
+   static float RLevels[3] = { 0.7, 0.9, 1.2 };
+@@ -667,6 +700,7 @@ CollectTax(void)
+ }
+ 
+ 
++void
+ UpdateFundEffects(void)
+ {
+   if (RoadFund)
+@@ -692,13 +726,14 @@ UpdateFundEffects(void)
+ 
+ 
+ /* comefrom: Simulate DoSimInit */
++void
+ MapScan(int x1, int x2)
+ {
+   register short x, y;
+ 
+   for (x = x1; x < x2; x++)  {
+     for (y = 0; y < WORLD_Y; y++) {
+-      if (CChr = Map[x][y]) {
++      if ((CChr = Map[x][y])) {
+ 	CChr9 = CChr & LOMASK;	/* Mask off status bits  */
+ 	if (CChr9 >= FLOOD) {
+ 	  SMapX = x;
+@@ -744,6 +779,7 @@ MapScan(int x1, int x2)
  
  
  /* comefrom: MapScan */
@@ -22,7 +183,15 @@ $OpenBSD: patch-src_sim_s_sim_c,v 1.1 2017/04/20 15:52:29 espie Exp $
  DoRail(void)
  {
    RailTotal++;
-@@ -769,6 +774,7 @@ DoRadTile(void)
+@@ -762,6 +798,7 @@ DoRail(void)
+ 
+ 
+ /* comefrom: MapScan */
++void
+ DoRadTile(void)
+ {
+   if (!(Rand16() & 4095)) Map[SMapX][SMapY] = 0; /* Radioactive decay */
+@@ -769,6 +806,7 @@ DoRadTile(void)
  
  
  /* comefrom: MapScan */
@@ -30,7 +199,48 @@ $OpenBSD: patch-src_sim_s_sim_c,v 1.1 2017/04/20 15:52:29 espie Exp $
  DoRoad(void)
  {
    register short Density, tden, z;
-@@ -1011,6 +1017,7 @@ RepairZone(short ZCent, short zsize)
+@@ -810,6 +848,7 @@ DoRoad(void)
+ 
+ 
+ /* comefrom: MapScan */
++int
+ DoBridge(void)
+ {
+   static short HDx[7] = { -2,  2, -2, -1,  0,  1,  2 };
+@@ -828,7 +867,7 @@ DoBridge(void)
+   static short VBRTAB2[7] = {
+     VBRIDGE | BULLBIT, RIVER, VBRIDGE | BULLBIT, VBRIDGE | BULLBIT,
+     VBRIDGE | BULLBIT, VBRIDGE | BULLBIT, RIVER };
+-  register z, x, y, MPtem;
++  register int z, x, y, MPtem;
+ 
+   if (CChr9 == BRWV) { /*  Vertical bridge close */
+     if ((!(Rand16() & 3)) &&
+@@ -918,6 +957,7 @@ GetBoatDis(void)
+ 
+ 
+ /* comefrom: MapScan */
++void
+ DoFire(void)
+ {
+   static short DX[4] = { -1,  0,  1,  0 };
+@@ -955,6 +995,7 @@ DoFire(void)
+ 
+ 
+ /* comefrom: DoFire MakeFlood */
++void
+ FireZone(int Xloc, int Yloc, int ch)
+ {
+   register short Xtem, Ytem;
+@@ -985,6 +1026,7 @@ FireZone(int Xloc, int Yloc, int ch)
+ 
+ 
+ /* comefrom: DoSPZone DoHospChur */
++void
+ RepairZone(short ZCent, short zsize)
+ {
+   short cnt;
+@@ -1011,10 +1053,11 @@ RepairZone(short ZCent, short zsize)
  
  
  /* comefrom: DoZone */
@@ -38,7 +248,20 @@ $OpenBSD: patch-src_sim_s_sim_c,v 1.1 2017/04/20 15:52:29 espie Exp $
  DoSPZone(short PwrOn)
  {
    static short MltdwnTab[3] = { 30000, 20000, 10000 };  /* simadj */
-@@ -1130,6 +1137,7 @@ DrawStadium(int z)
+-  register z;
++  register int z;
+ 
+   switch (CChr9) {
+ 
+@@ -1117,6 +1160,7 @@ DoSPZone(short PwrOn)
+ 
+ 
+ /* comefrom: DoSPZone */
++void
+ DrawStadium(int z)
+ {
+   register int x, y;
+@@ -1130,6 +1174,7 @@ DrawStadium(int z)
  
  
  /* comefrom: DoSPZone */
@@ -46,3 +269,39 @@ $OpenBSD: patch-src_sim_s_sim_c,v 1.1 2017/04/20 15:52:29 espie Exp $
  DoAirport(void)
  {
    if (!(Rand(5))) {
+@@ -1142,6 +1187,7 @@ DoAirport(void)
+ 
+ 
+ /* comefrom: DoSPZone */
++void
+ CoalSmoke(int mx, int my)
+ {
+   static short SmTb[4] = { COALSMOKE1, COALSMOKE2, COALSMOKE3, COALSMOKE4 };
+@@ -1156,9 +1202,10 @@ CoalSmoke(int mx, int my)
+ 
+ 
+ /* comefrom: DoSPZone MakeMeltdown */
++void
+ DoMeltdown(int SX, int SY)
+ {
+-  register x, y, z, t;
++  register int x, y, z, t;
+ 
+   MeltX = SX; MeltY = SY;
+ 
+@@ -1224,6 +1271,7 @@ Rand16Signed(void)
+ }
+ 
+ 
++void
+ RandomlySeedRand()
+ {
+   struct timeval time;
+@@ -1234,6 +1282,7 @@ RandomlySeedRand()
+ }
+ 
+ 
++void
+ SeedRand(int seed)
+ {
+   sim_srand(seed);

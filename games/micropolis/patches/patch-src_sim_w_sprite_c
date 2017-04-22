@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_sim_w_sprite_c,v 1.1 2017/04/20 15:52:29 espie Exp $
---- src/sim/w_sprite.c.orig	Thu Apr 20 17:42:57 2017
-+++ src/sim/w_sprite.c	Thu Apr 20 17:47:56 2017
+$OpenBSD: patch-src_sim_w_sprite_c,v 1.2 2017/04/22 19:49:18 espie Exp $
+--- src/sim/w_sprite.c.orig	Sun Feb 10 22:25:24 2008
++++ src/sim/w_sprite.c	Sat Apr 22 20:52:55 2017
 @@ -70,6 +70,16 @@ short Cycle;
  SimSprite *GlobalSprites[OBJN];
  
@@ -18,7 +18,15 @@ $OpenBSD: patch-src_sim_w_sprite_c,v 1.1 2017/04/20 15:52:29 espie Exp $
  
  
  #define TRA_GROOVE_X -39
-@@ -479,6 +489,7 @@ DrawObjects(SimView *view)
+@@ -381,6 +391,7 @@ InitSprite(SimSprite *sprite, int x, int y)
+ }
+ 
+ 
++void
+ DestroyAllSprites()
+ {
+   SimSprite *sprite;
+@@ -479,6 +490,7 @@ DrawObjects(SimView *view)
  }
  
  
@@ -26,7 +34,7 @@ $OpenBSD: patch-src_sim_w_sprite_c,v 1.1 2017/04/20 15:52:29 espie Exp $
  DrawSprite(SimView *view, SimSprite *sprite)
  {
    Pixmap pict, mask;
-@@ -611,6 +622,7 @@ int CheckSpriteCollision(SimSprite *s1, SimSprite *s2)
+@@ -611,6 +623,7 @@ int CheckSpriteCollision(SimSprite *s1, SimSprite *s2)
  }
  
  
@@ -34,7 +42,7 @@ $OpenBSD: patch-src_sim_w_sprite_c,v 1.1 2017/04/20 15:52:29 espie Exp $
  MoveObjects()
  {
    SimSprite *sprite;
-@@ -660,6 +672,7 @@ MoveObjects()
+@@ -660,6 +673,7 @@ MoveObjects()
  }
  
  
@@ -42,7 +50,7 @@ $OpenBSD: patch-src_sim_w_sprite_c,v 1.1 2017/04/20 15:52:29 espie Exp $
  DoTrainSprite(SimSprite *sprite)
  {
    static short Cx[4] = {   0,  16,   0, -16 };
-@@ -710,6 +723,7 @@ DoTrainSprite(SimSprite *sprite)
+@@ -710,6 +724,7 @@ DoTrainSprite(SimSprite *sprite)
  }
  
  
@@ -50,7 +58,7 @@ $OpenBSD: patch-src_sim_w_sprite_c,v 1.1 2017/04/20 15:52:29 espie Exp $
  DoCopterSprite(SimSprite *sprite)
  {
    static short CDx[9] = { 0,  0,  3,  5,  3,  0, -3, -5, -3 };
-@@ -833,6 +847,7 @@ DoAirplaneSprite(SimSprite *sprite)
+@@ -833,6 +848,7 @@ DoAirplaneSprite(SimSprite *sprite)
  }
  
  
@@ -58,7 +66,7 @@ $OpenBSD: patch-src_sim_w_sprite_c,v 1.1 2017/04/20 15:52:29 espie Exp $
  DoShipSprite(SimSprite *sprite)
  {
    static short BDx[9] = { 0,  0,  1,  1,  1,  0, -1, -1, -1 };
-@@ -910,6 +925,7 @@ DoShipSprite(SimSprite *sprite)
+@@ -910,6 +926,7 @@ DoShipSprite(SimSprite *sprite)
  }
  
  
@@ -66,7 +74,7 @@ $OpenBSD: patch-src_sim_w_sprite_c,v 1.1 2017/04/20 15:52:29 espie Exp $
  DoMonsterSprite(SimSprite *sprite)
  {
    static short Gx[5] = {  2,  2, -2, -2,  0 };
-@@ -1097,6 +1113,7 @@ DoTornadoSprite(SimSprite *sprite)
+@@ -1097,6 +1114,7 @@ DoTornadoSprite(SimSprite *sprite)
  }
  
  
@@ -74,7 +82,7 @@ $OpenBSD: patch-src_sim_w_sprite_c,v 1.1 2017/04/20 15:52:29 espie Exp $
  DoExplosionSprite(SimSprite *sprite)
  {
    short x, y;
-@@ -1350,6 +1367,7 @@ CanDriveOn(int x, int y)
+@@ -1350,6 +1368,7 @@ CanDriveOn(int x, int y)
  }
  
  
@@ -82,7 +90,7 @@ $OpenBSD: patch-src_sim_w_sprite_c,v 1.1 2017/04/20 15:52:29 espie Exp $
  ExplodeSprite(SimSprite *sprite)
  {
    int x, y;
-@@ -1406,6 +1424,7 @@ int checkWet(int x)
+@@ -1406,6 +1425,7 @@ int checkWet(int x)
  }
  
  
@@ -90,7 +98,7 @@ $OpenBSD: patch-src_sim_w_sprite_c,v 1.1 2017/04/20 15:52:29 espie Exp $
  Destroy(int ox, int oy)
  {
    short t, z, x, y;
-@@ -1463,6 +1482,7 @@ OFireZone(int Xloc, int Yloc, int ch)
+@@ -1463,6 +1483,7 @@ OFireZone(int Xloc, int Yloc, int ch)
  }
  
  
@@ -98,7 +106,15 @@ $OpenBSD: patch-src_sim_w_sprite_c,v 1.1 2017/04/20 15:52:29 espie Exp $
  StartFire(int x, int y)
  {
    register t, z;
-@@ -1500,6 +1520,7 @@ GenerateBus(int x, int y)
+@@ -1481,6 +1502,7 @@ StartFire(int x, int y)
+ }
+ 
+ 
++void
+ GenerateTrain(int x, int y)
+ {
+   if ((TotalPop > 20) &&
+@@ -1500,6 +1522,7 @@ GenerateBus(int x, int y)
  }
  
  
@@ -106,7 +122,7 @@ $OpenBSD: patch-src_sim_w_sprite_c,v 1.1 2017/04/20 15:52:29 espie Exp $
  GenerateShip(void)
  {
    register short x, y;
-@@ -1537,6 +1558,7 @@ MakeShipHere(int x, int y, int z)	
+@@ -1537,6 +1560,7 @@ MakeShipHere(int x, int y, int z)	
  }
  
  
@@ -114,7 +130,7 @@ $OpenBSD: patch-src_sim_w_sprite_c,v 1.1 2017/04/20 15:52:29 espie Exp $
  MakeMonster(void)
  {
    register x, y, z, done = 0;
-@@ -1574,6 +1596,7 @@ MonsterHere(int x, int y)
+@@ -1574,6 +1598,7 @@ MonsterHere(int x, int y)
  }
  
  
@@ -122,7 +138,7 @@ $OpenBSD: patch-src_sim_w_sprite_c,v 1.1 2017/04/20 15:52:29 espie Exp $
  GenerateCopter(int x, int y)
  {
    if (GetSprite(COP) != NULL) return;
-@@ -1582,6 +1605,7 @@ GenerateCopter(int x, int y)
+@@ -1582,6 +1607,7 @@ GenerateCopter(int x, int y)
  }
  
  
@@ -130,7 +146,15 @@ $OpenBSD: patch-src_sim_w_sprite_c,v 1.1 2017/04/20 15:52:29 espie Exp $
  GeneratePlane(int x, int y)
  {
    if (GetSprite(AIR) != NULL) return;
-@@ -1607,6 +1631,7 @@ MakeAirCrash(void)
+@@ -1590,6 +1616,7 @@ GeneratePlane(int x, int y)
+ }
+ 
+ 
++void
+ MakeAirCrash(void)
+ {
+ #ifndef NO_AIRCRASH
+@@ -1607,6 +1634,7 @@ MakeAirCrash(void)
  }
  
  
@@ -138,3 +162,19 @@ $OpenBSD: patch-src_sim_w_sprite_c,v 1.1 2017/04/20 15:52:29 espie Exp $
  MakeTornado(void)
  {
    short x, y;
+@@ -1625,6 +1653,7 @@ MakeTornado(void)
+ }
+ 
+ 
++void
+ MakeExplosion(int x, int y)
+ {
+   if ((x >= 0) && (x < WORLD_X) &&
+@@ -1634,6 +1663,7 @@ MakeExplosion(int x, int y)
+ }
+ 
+ 
++void
+ MakeExplosionAt(int x, int y)
+ {
+   MakeNewSprite(EXP, x - 40, y - 16);

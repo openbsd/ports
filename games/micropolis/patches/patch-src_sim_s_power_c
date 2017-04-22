@@ -1,7 +1,19 @@
-$OpenBSD: patch-src_sim_s_power_c,v 1.1 2017/04/20 15:52:29 espie Exp $
---- src/sim/s_power.c.orig	Thu Apr 20 17:12:14 2017
-+++ src/sim/s_power.c	Thu Apr 20 17:13:15 2017
-@@ -183,6 +183,7 @@ short TestForCond(short TFDir)
+$OpenBSD: patch-src_sim_s_power_c,v 1.2 2017/04/22 19:49:18 espie Exp $
+--- src/sim/s_power.c.orig	Mon Feb  4 03:52:26 2008
++++ src/sim/s_power.c	Sat Apr 22 20:54:34 2017
+@@ -68,9 +68,11 @@
+ int PowerStackNum;
+ char PowerStackX[PWRSTKSIZE], PowerStackY[PWRSTKSIZE];
+ QUAD MaxPower, NumPower;
++void PullPowerStack(void);
+ 
+ 
+ /* comefrom: TestForCond DoPowerScan TryGo */
++int
+ MoveMapSim (short MDir)
+ {
+   switch (MDir) {
+@@ -183,6 +185,7 @@ short TestForCond(short TFDir)
  
  
  /* comefrom: Simulate SpecialInit InitSimMemory */
@@ -9,3 +21,19 @@ $OpenBSD: patch-src_sim_s_power_c,v 1.1 2017/04/20 15:52:29 espie Exp $
  DoPowerScan()
  {	
    short ADir;
+@@ -230,6 +233,7 @@ DoPowerScan()
+ 
+ 
+ /* comefrom: DoPowerScan DoSPZone */
++void
+ PushPowerStack(void) 
+ { 	
+   if (PowerStackNum < (PWRSTKSIZE - 2)) {
+@@ -241,6 +245,7 @@ PushPowerStack(void) 
+ 
+ 
+ /* comefrom: DoPowerScan */
++void
+ PullPowerStack(void)
+ { 	
+   if (PowerStackNum > 0)  {

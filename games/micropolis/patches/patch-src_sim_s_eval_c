@@ -1,0 +1,111 @@
+$OpenBSD: patch-src_sim_s_eval_c,v 1.1 2017/04/22 19:49:18 espie Exp $
+--- src/sim/s_eval.c.orig	Sat Apr 22 18:45:34 2017
++++ src/sim/s_eval.c	Sat Apr 22 18:52:12 2017
+@@ -77,8 +77,15 @@ short CityClass;			/*  0..5  */
+ short CityScore, deltaCityScore, AverageCityScore;
+ short TrafficAverage;
+ 
++void GetAssValue(void);
++void DoPopNum(void);
++void DoProblems(void);
++void GetScore(void);
++void DoVotes(void);
++void VoteProblems(void);
+ 
+ /* comefrom: SpecialInit Simulate */
++void
+ CityEvaluation(void)
+ {
+   EvalValid = 0;
+@@ -98,6 +105,7 @@ CityEvaluation(void)
+ 
+ 
+ /* comefrom: CityEvaluation SetCommonInits */
++void
+ EvalInit(void)
+ {
+   register short x, z;
+@@ -120,6 +128,7 @@ EvalInit(void)
+ 
+ 
+ /* comefrom: CityEvaluation */
++void
+ GetAssValue(void)
+ {
+   QUAD z;
+@@ -139,6 +148,7 @@ GetAssValue(void)
+ 
+ 
+ /* comefrom: CityEvaluation */
++void
+ DoPopNum(void)
+ {
+   QUAD OldCityPop;
+@@ -160,6 +170,7 @@ DoPopNum(void)
+ 
+ 
+ /* comefrom: CityEvaluation */
++void
+ DoProblems(void)
+ {
+   register short x, z;
+@@ -198,9 +209,10 @@ DoProblems(void)
+ 
+ 
+ /* comefrom: DoProblems */
++void
+ VoteProblems(void)
+ {
+-  register x, z, count;
++  register int x, z, count;
+ 
+   for (z = 0; z < PROBNUM; z++)
+     ProblemVotes[z] = 0;
+@@ -221,6 +233,7 @@ VoteProblems(void)
+ 
+ 
+ /* comefrom: DoProblems */
++short
+ AverageTrf(void)
+ {
+   QUAD TrfTotal;
+@@ -241,6 +254,7 @@ AverageTrf(void)
+ 
+ 
+ /* comefrom: DoProblems */
++short
+ GetUnemployment(void)
+ {
+   float r;
+@@ -260,6 +274,7 @@ GetUnemployment(void)
+ 
+ 
+ /* comefrom: DoProblems GetScore */
++short
+ GetFire(void)
+ {
+   short z;
+@@ -273,9 +288,10 @@ GetFire(void)
+ 
+ 
+ /* comefrom: CityEvaluation */
++void
+ GetScore(void)
+ {
+-  register x, z;
++  register int x, z;
+   short OldCityScore;
+   float SM, TM;
+ 
+@@ -329,9 +345,10 @@ GetScore(void)
+ 
+ 
+ /* comefrom: CityEvaluation */
++void
+ DoVotes(void)
+ {
+-  register z;
++  register int z;
+ 
+   CityYes = 0;
+   CityNo = 0;

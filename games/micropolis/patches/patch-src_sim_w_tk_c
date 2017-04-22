@@ -1,0 +1,59 @@
+$OpenBSD: patch-src_sim_w_tk_c,v 1.5 2017/04/22 19:49:18 espie Exp $
+--- src/sim/w_tk.c.orig	Sun Feb 10 22:25:24 2008
++++ src/sim/w_tk.c	Sat Apr 22 18:59:15 2017
+@@ -241,6 +241,7 @@ ConfigureTileView(Tcl_Interp *interp, SimView *view,
+ }
+ 
+ 
++void
+ InvalidateMaps()
+ {
+   SimView *view;
+@@ -255,6 +256,7 @@ InvalidateMaps()
+ }
+ 
+ 
++void
+ InvalidateEditors()
+ {
+   SimView *view;
+@@ -344,6 +346,7 @@ EventuallyRedrawView(SimView *view)
+ }
+ 
+ 
++void
+ CancelRedrawView(SimView *view)
+ {
+   if (view->flags & VIEW_REDRAW_PENDING) {
+@@ -669,6 +672,7 @@ DelayedUpdate(ClientData clientData)
+ }
+ 
+ 
++void
+ Kick()
+ {
+   if (!UpdateDelayed) {
+@@ -689,6 +693,7 @@ StopEarthquake()
+ }
+ 
+ 
++void
+ DoEarthQuake(void)
+ {
+   MakeSound("city", "Explosion-Low");
+@@ -710,6 +715,7 @@ StopToolkit()
+ }
+ 
+ 
++int
+ Eval(char *buf)
+ {
+   int result = Tcl_Eval(tk_mainInterp, buf, 0, (char **) NULL);
+@@ -724,6 +730,7 @@ Eval(char *buf)
+ }
+ 
+ 
++void
+ tk_main()
+ {
+   char *p, *msg;

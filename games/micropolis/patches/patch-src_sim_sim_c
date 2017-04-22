@@ -1,16 +1,60 @@
-$OpenBSD: patch-src_sim_sim_c,v 1.1 2017/04/20 15:52:29 espie Exp $
---- src/sim/sim.c.orig	Thu Apr 20 17:03:17 2017
-+++ src/sim/sim.c	Thu Apr 20 17:05:50 2017
-@@ -96,6 +96,8 @@ char *Displays = NULL;
+$OpenBSD: patch-src_sim_sim_c,v 1.2 2017/04/22 19:49:18 espie Exp $
+--- src/sim/sim.c.orig	Mon Feb  4 03:52:26 2008
++++ src/sim/sim.c	Sat Apr 22 18:28:09 2017
+@@ -96,7 +96,13 @@ char *Displays = NULL;
  char *FirstDisplay = NULL;
  int ExitReturn = 0;
  
 +void sim_update_evaluations(void);
 +void sim_update_budgets(void);
++void sim_update_maps(void);
++void sim_update_graphs(void);
++void signal_init(void);
  
++void
  sim_exit(int val)
  {
-@@ -325,7 +327,7 @@ sim_update_graphs(void)
+   tkMustExit = 1;
+@@ -104,6 +110,7 @@ sim_exit(int val)
+ }
+ 
+ 
++void
+ sim_really_exit(int val)
+ {
+   DoStopMicropolis();
+@@ -236,6 +243,7 @@ SignalExitHandler()
+ }
+ 
+ 
++void
+ signal_init()
+ {
+   signal(SIGHUP, (void (*)())SignalExitHandler);
+@@ -267,6 +275,7 @@ sim_update()
+ }
+ 
+ 
++void
+ sim_update_editors(void)
+ {
+   SimView *view;
+@@ -285,6 +294,7 @@ sim_update_editors(void)
+ }
+ 
+ 
++void
+ sim_update_maps(void)
+ {
+   SimView *view;
+@@ -319,13 +329,14 @@ sim_update_maps(void)
+ }
+ 
+ 
++void
+ sim_update_graphs(void)
+ {
+   graphDoer();
  }
  
  
@@ -19,7 +63,7 @@ $OpenBSD: patch-src_sim_sim_c,v 1.1 2017/04/20 15:52:29 espie Exp $
  {
    if ((sim_skips != 0) &&
        (sim_skip != 0)) {
-@@ -336,6 +338,7 @@ sim_update_budgets(void)
+@@ -336,6 +347,7 @@ sim_update_budgets(void)
  }
  
  
@@ -27,3 +71,11 @@ $OpenBSD: patch-src_sim_sim_c,v 1.1 2017/04/20 15:52:29 espie Exp $
  sim_update_evaluations(void)
  {
    if ((sim_skips != 0) &&
+@@ -557,6 +569,7 @@ sim_timeout_loop(short doSim)
+ }
+ 
+ 
++void
+ sim_loop(int doSim)
+ {
+ #ifdef CAM

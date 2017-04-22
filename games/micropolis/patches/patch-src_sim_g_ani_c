@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_sim_g_ani_c,v 1.1 2017/04/22 19:49:18 espie Exp $
+--- src/sim/g_ani.c.orig	Sat Apr 22 21:26:08 2017
++++ src/sim/g_ani.c	Sat Apr 22 21:26:17 2017
+@@ -64,6 +64,7 @@
+ 
+ 
+ /* comefrom: moveWorld doEditWindow scoreDoer doMapInFront graphDoer */
++void
+ animateTiles(void)
+ {
+   unsigned short tilevalue, tileflags;

@@ -1,0 +1,102 @@
+$OpenBSD: patch-src_sim_s_traf_c,v 1.1 2017/04/22 19:49:18 espie Exp $
+--- src/sim/s_traf.c.orig	Mon Feb  4 03:52:26 2008
++++ src/sim/s_traf.c	Sat Apr 22 21:11:37 2017
+@@ -72,8 +72,18 @@ short LDir;
+ short Zsource;
+ short TrafMaxX, TrafMaxY;
+ 
++int TryDrive(void);
++void SetTrafMem(void);
++void PushPos(void);
++void PullPos(void);
++int RoadTest(int x);
++int TryGo(int z);
++int DriveDone(void);
++int GetFromMap(int);
++int FindPTele(void);
+ 
+ /* comefrom: DoIndustrial DoCommercial DoResidential */
++int
+ MakeTraf(int Zt)
+ {
+   short xtem, ytem;
+@@ -106,6 +116,7 @@ MakeTraf(int Zt)
+ 
+ 
+ /* comefrom: MakeTraf */
++void
+ SetTrafMem(void)
+ {
+   register short x, z;
+@@ -139,6 +150,7 @@ SetTrafMem(void)
+ 
+ 
+ /* comefrom: TryGo */
++void
+ PushPos(void)
+ {
+   PosStackN++;
+@@ -148,6 +160,7 @@ PushPos(void)
+ 
+ 
+ /* comefrom: SetTrafMem */
++void
+ PullPos(void)
+ {
+   SMapX = SMapXStack[PosStackN];
+@@ -157,6 +170,7 @@ PullPos(void)
+ 
+ 
+ /* comefrom: DoSPZone MakeTraf */
++int
+ FindPRoad(void)		/* look for road on edges of zone   */
+ {
+   static short PerimX[12] = {-1, 0, 1, 2, 2, 2, 1, 0,-1,-2,-2,-2};
+@@ -178,6 +192,7 @@ FindPRoad(void)		/* look for road on edges of zone   *
+ }
+ 
+ 
++int
+ FindPTele(void)		/* look for telecommunication on edges of zone */
+ {
+   static short PerimX[12] = {-1, 0, 1, 2, 2, 2, 1, 0,-1,-2,-2,-2};
+@@ -199,6 +214,7 @@ FindPTele(void)		/* look for telecommunication on edge
+ 
+ 
+ /* comefrom: MakeTraf */
++int
+ TryDrive(void)
+ {
+   short z;
+@@ -221,6 +237,7 @@ TryDrive(void)
+ 
+ 
+ /* comefrom: TryDrive */
++int
+ TryGo(int z)
+ {
+   short x, rdir, realdir;
+@@ -246,6 +263,7 @@ TryGo(int z)
+ 
+ 
+ /* comefrom: TryGo DriveDone */
++int
+ GetFromMap(int x)
+ {
+   switch (x) {
+@@ -272,6 +290,7 @@ GetFromMap(int x)
+ 
+ 
+ /* comefrom: TryDrive */
++int
+ DriveDone(void)
+ {
+   static short TARGL[3] = {COMBASE, LHTHR, LHTHR};
+@@ -316,6 +335,7 @@ DriveDone(void)
+ 
+ 
+ /* comefrom: TryGo FindPRoad */
++int
+ RoadTest(int x)
+ {
+   x = x & LOMASK;

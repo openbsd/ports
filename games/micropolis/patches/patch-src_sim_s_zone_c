@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_sim_s_zone_c,v 1.1 2017/04/20 15:52:29 espie Exp $
---- src/sim/s_zone.c.orig	Thu Apr 20 17:17:39 2017
-+++ src/sim/s_zone.c	Thu Apr 20 17:25:00 2017
-@@ -61,10 +61,20 @@
+$OpenBSD: patch-src_sim_s_zone_c,v 1.2 2017/04/22 19:49:18 espie Exp $
+--- src/sim/s_zone.c.orig	Mon Feb  4 03:52:26 2008
++++ src/sim/s_zone.c	Sat Apr 22 21:28:49 2017
+@@ -61,10 +61,32 @@
   */
  #include "sim.h"
  
@@ -14,6 +14,18 @@ $OpenBSD: patch-src_sim_s_zone_c,v 1.1 2017/04/20 15:52:29 espie Exp $
 +void DoResidential(int ZonePwrFlg);
 +void DoCommercial(int ZonePwrFlg);
 +void DoIndustrial(int ZonePwrFlg);
++void ZonePlop(int);
++int EvalRes(int traf);
++int EvalCom(int traf);
++int EvalInd(int traf);
++void DoIndIn(int pop, int value);
++int GetCRVal(void);
++void IncROG(int amount);
++void ResPlop(int Den, int Value);
++void ComPlop(int Den, int Value);
++void IndPlop(int Den, int Value);
++void BuildHouse(int value);
++int EvalLot(int x, int y);
  
  /* Zone Stuff */
  
@@ -22,7 +34,15 @@ $OpenBSD: patch-src_sim_s_zone_c,v 1.1 2017/04/20 15:52:29 espie Exp $
  DoZone(void)
  {
    short ZonePwrFlg;
-@@ -118,6 +128,7 @@ DoHospChur(void)
+@@ -94,6 +116,7 @@ DoZone(void)
+ }
+ 
+ 
++void
+ DoHospChur(void)
+ {
+   if (CChr9 == HOSPITAL) {
+@@ -118,6 +141,7 @@ DoHospChur(void)
  #define ASCBIT (ANIMBIT | CONDBIT | BURNBIT)
  #define REGBIT (CONDBIT | BURNBIT)
  
@@ -30,7 +50,7 @@ $OpenBSD: patch-src_sim_s_zone_c,v 1.1 2017/04/20 15:52:29 espie Exp $
  SetSmoke(int ZonePower)
  {
    static short AniThis[8] = {    T,    F,    T,    T,    F,    F,    T,    T };
-@@ -158,6 +169,7 @@ SetSmoke(int ZonePower)
+@@ -158,6 +182,7 @@ SetSmoke(int ZonePower)
  }
  
  
@@ -38,7 +58,7 @@ $OpenBSD: patch-src_sim_s_zone_c,v 1.1 2017/04/20 15:52:29 espie Exp $
  DoIndustrial(int ZonePwrFlg)
  {
    short tpop, zscore, TrfGood;
-@@ -189,6 +201,7 @@ DoIndustrial(int ZonePwrFlg)
+@@ -189,6 +214,7 @@ DoIndustrial(int ZonePwrFlg)
  }
  
  
@@ -46,7 +66,7 @@ $OpenBSD: patch-src_sim_s_zone_c,v 1.1 2017/04/20 15:52:29 espie Exp $
  DoCommercial(int ZonePwrFlg)
  {
    register short tpop, TrfGood;
-@@ -227,6 +240,7 @@ DoCommercial(int ZonePwrFlg)
+@@ -227,6 +253,7 @@ DoCommercial(int ZonePwrFlg)
  }
  
  
@@ -54,7 +74,7 @@ $OpenBSD: patch-src_sim_s_zone_c,v 1.1 2017/04/20 15:52:29 espie Exp $
  DoResidential(int ZonePwrFlg)
  {
    short tpop, zscore, locvalve, value, TrfGood;
-@@ -269,6 +283,7 @@ DoResidential(int ZonePwrFlg)
+@@ -269,6 +296,7 @@ DoResidential(int ZonePwrFlg)
  }
  
  
@@ -62,7 +82,15 @@ $OpenBSD: patch-src_sim_s_zone_c,v 1.1 2017/04/20 15:52:29 espie Exp $
  MakeHosp(void)
  {
    if (NeedHosp > 0) {
-@@ -297,6 +312,7 @@ GetCRVal(void)
+@@ -284,6 +312,7 @@ MakeHosp(void)
+ }
+ 
+ 
++int
+ GetCRVal(void)
+ {
+   register short LVal;
+@@ -297,6 +326,7 @@ GetCRVal(void)
  }
  
  
@@ -70,7 +98,7 @@ $OpenBSD: patch-src_sim_s_zone_c,v 1.1 2017/04/20 15:52:29 espie Exp $
  DoResIn(int pop, int value)
  {
    short z;
-@@ -324,6 +340,7 @@ DoResIn(int pop, int value)
+@@ -324,6 +354,7 @@ DoResIn(int pop, int value)
  }
  
  
@@ -78,7 +106,22 @@ $OpenBSD: patch-src_sim_s_zone_c,v 1.1 2017/04/20 15:52:29 espie Exp $
  DoComIn(int pop, int value)
  {
    register short z;
-@@ -354,6 +371,7 @@ IncROG(int amount)
+@@ -339,6 +370,7 @@ DoComIn(int pop, int value)
+ }
+ 
+ 
++void
+ DoIndIn(int pop, int value)
+ {
+   if (pop < 4) {
+@@ -348,12 +380,14 @@ DoIndIn(int pop, int value)
+ }
+ 
+ 
++void
+ IncROG(int amount)
+ {
+   RateOGMem[SMapX>>3][SMapY>>3] += amount<<2;
  }
  
  
@@ -86,7 +129,7 @@ $OpenBSD: patch-src_sim_s_zone_c,v 1.1 2017/04/20 15:52:29 espie Exp $
  DoResOut(int pop, int value)
  {
    static short Brdr[9] = {0,3,6,1,4,7,2,5,8};
-@@ -397,6 +415,7 @@ DoResOut(int pop, int value)
+@@ -397,6 +431,7 @@ DoResOut(int pop, int value)
  }
  
  
@@ -94,7 +137,7 @@ $OpenBSD: patch-src_sim_s_zone_c,v 1.1 2017/04/20 15:52:29 espie Exp $
  DoComOut(int pop, int value)
  {
    if (pop > 1) {
-@@ -411,6 +430,7 @@ DoComOut(int pop, int value)
+@@ -411,6 +446,7 @@ DoComOut(int pop, int value)
  }
  
  
@@ -102,3 +145,125 @@ $OpenBSD: patch-src_sim_s_zone_c,v 1.1 2017/04/20 15:52:29 espie Exp $
  DoIndOut(int pop, int value)
  {
    if (pop > 1) {
+@@ -425,6 +461,7 @@ DoIndOut(int pop, int value)
+ }
+ 
+ 
++int
+ RZPop(int Ch9)
+ {
+   short CzDen;
+@@ -434,6 +471,7 @@ RZPop(int Ch9)
+ }
+ 
+ 
++int
+ CZPop(int Ch9)
+ {
+   short CzDen;
+@@ -444,6 +482,7 @@ CZPop(int Ch9)
+ }
+ 
+ 
++int
+ IZPop(int Ch9)
+ {
+   short CzDen;
+@@ -454,6 +493,7 @@ IZPop(int Ch9)
+ }
+ 
+ 
++void
+ BuildHouse(int value)
+ {
+   short z, score, hscore, BestLoc;
+@@ -487,6 +527,7 @@ BuildHouse(int value)
+ }
+ 
+ 
++void
+ ResPlop (int Den, int Value)
+ {
+   short base;
+@@ -496,6 +537,7 @@ ResPlop (int Den, int Value)
+ }
+ 
+ 
++void
+ ComPlop (int Den, int Value)
+ {
+   short base;
+@@ -504,7 +546,7 @@ ComPlop (int Den, int Value)
+   ZonePlop(base);
+ }
+ 
+-
++void
+ IndPlop (int Den, int Value)
+ {
+   short base;
+@@ -514,6 +556,7 @@ IndPlop (int Den, int Value)
+ }
+ 
+ 
++int
+ EvalLot (int x, int y)
+ {
+   short z, score;
+@@ -538,6 +581,7 @@ EvalLot (int x, int y)
+ }
+ 
+ 
++void
+ ZonePlop (int base)
+ {
+   short z, x;
+@@ -549,7 +593,7 @@ ZonePlop (int base)
+     int yy = SMapY + Zy[z];
+     if (TestBounds(xx, yy)) {
+       x = Map[xx][yy] & LOMASK;
+-      if ((x >= FLOOD) && (x < ROADBASE)) return (FALSE);
++      if ((x >= FLOOD) && (x < ROADBASE)) return;
+     }
+   }
+   for (z = 0; z < 9; z++) {
+@@ -566,6 +610,7 @@ ZonePlop (int base)
+ }
+ 
+ 
++int
+ EvalRes (int traf)
+ {
+   register short Value;
+@@ -585,6 +630,7 @@ EvalRes (int traf)
+ }
+ 
+ 
++int
+ EvalCom (int traf)
+ {
+   short Value;
+@@ -595,6 +641,7 @@ EvalCom (int traf)
+ }
+ 
+ 
++int
+ EvalInd (int traf)
+ {
+   if (traf < 0) return (-1000);
+@@ -602,6 +649,7 @@ EvalInd (int traf)
+ }
+ 
+ 
++short
+ DoFreePop (void)
+ {
+   short count;
+@@ -621,6 +669,7 @@ DoFreePop (void)
+ }
+ 
+ 
++int
+ SetZPower(void)		/* set bit in MapWord depending on powermap  */
+ {
+   short z;

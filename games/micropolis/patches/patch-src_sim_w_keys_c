@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_sim_w_keys_c,v 1.1 2017/04/22 19:49:18 espie Exp $
+--- src/sim/w_keys.c.orig	Sat Apr 22 19:54:44 2017
++++ src/sim/w_keys.c	Sat Apr 22 19:54:53 2017
+@@ -79,6 +79,7 @@ static char LastKeys[5];
+ */
+ 
+ 
++void
+ ResetLastKeys()
+ {
+   LastKeys[0] = ' ';

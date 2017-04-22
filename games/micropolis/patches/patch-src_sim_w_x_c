@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_sim_w_x_c,v 1.3 2017/04/20 15:52:29 espie Exp $
---- src/sim/w_x.c.orig	Thu Apr 20 17:37:51 2017
-+++ src/sim/w_x.c	Thu Apr 20 17:39:11 2017
+$OpenBSD: patch-src_sim_w_x_c,v 1.4 2017/04/22 19:49:18 espie Exp $
+--- src/sim/w_x.c.orig	Mon Feb  4 03:52:26 2008
++++ src/sim/w_x.c	Sat Apr 22 18:28:38 2017
 @@ -90,6 +90,8 @@ unsigned char ColorIntensities[] = {
  	/* COLOR_DARKGRAY */		63,
  	/* COLOR_BLACK */		0,
@@ -18,7 +18,23 @@ $OpenBSD: patch-src_sim_w_x_c,v 1.3 2017/04/20 15:52:29 espie Exp $
  UpdateFlush()
  {
    struct XDisplay *xd;
-@@ -723,6 +726,7 @@ AllocPixels(int len, unsigned char pixel)
+@@ -216,6 +219,7 @@ printf("GOT X ERROR code %d request code %d %d\n",
+ }
+ 
+ 
++void
+ DoStopMicropolis()
+ {
+   (void)XSetErrorHandler(CatchXError);
+@@ -244,6 +248,7 @@ DoStopMicropolis()
+ }
+ 
+ 
++void
+ DoTimeoutListen()
+ {
+   while (Tk_DoOneEvent(TK_DONT_WAIT)) ;
+@@ -723,6 +728,7 @@ AllocPixels(int len, unsigned char pixel)
  }
  
  
@@ -26,7 +42,7 @@ $OpenBSD: patch-src_sim_w_x_c,v 1.3 2017/04/20 15:52:29 espie Exp $
  DoResizeView(SimView *view, int w, int h)
  {
    int resize = 0;
-@@ -1254,6 +1258,7 @@ DoPanBy(struct SimView *view, int dx, int dy)
+@@ -1254,6 +1260,7 @@ DoPanBy(struct SimView *view, int dx, int dy)
  }
  
  

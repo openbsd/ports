@@ -1,15 +1,45 @@
-$OpenBSD: patch-src_sim_s_gen_c,v 1.1 2017/04/20 15:52:29 espie Exp $
---- src/sim/s_gen.c.orig	Thu Apr 20 17:09:52 2017
-+++ src/sim/s_gen.c	Thu Apr 20 17:11:16 2017
-@@ -78,6 +78,7 @@ int LakeLevel = -1;		/* level for lake creation */
+$OpenBSD: patch-src_sim_s_gen_c,v 1.2 2017/04/22 19:49:18 espie Exp $
+--- src/sim/s_gen.c.orig	Mon Feb  4 03:52:26 2008
++++ src/sim/s_gen.c	Sat Apr 22 19:52:54 2017
+@@ -78,13 +78,29 @@ int LakeLevel = -1;		/* level for lake creation */
  int CurveLevel = -1;		/* level for river curviness */
  int CreateIsland = -1;		/* -1 => 10%, 0 => never, 1 => always */
  
 +void GenerateMap(int r);
++short ERand(short);
++void MakeIsland(void);
++void MakeNakedIsland(void);
++void GetRandStart(void);
++void DoRivers(void);
++void MakeLakes(void);
++void DoTrees(void);
++void BRivPlop(void);
++void SRivPlop(void);
++void MoveMap(short);
++int IsTree(int);
++void DoBRiv(void);
++void DoSRiv(void);
  
++void
  GenerateNewCity(void) 
  {
-@@ -124,6 +125,7 @@ ERand(short limit)
+   GenerateSomeCity(Rand16());
+ }
+ 
+ 
++void
+ GenerateSomeCity(int r)
+ {
+   if (CityFileName != NULL) {
+@@ -112,6 +128,7 @@ GenerateSomeCity(int r)
+ }
+ 
+ 
++short
+ ERand(short limit)
+ {
+   short x, z;
+@@ -124,6 +141,7 @@ ERand(short limit)
  }
  
  
@@ -17,7 +47,63 @@ $OpenBSD: patch-src_sim_s_gen_c,v 1.1 2017/04/20 15:52:29 espie Exp $
  GenerateMap(int r)
  {
    SeedRand(r);
-@@ -268,6 +270,7 @@ MoveMap(short dir)
+@@ -154,6 +172,7 @@ GenerateMap(int r)
+ }
+ 
+ 
++void
+ ClearMap(void)
+ {
+   register short x, y;
+@@ -164,6 +183,7 @@ ClearMap(void)
+ }
+ 
+ 
++void
+ ClearUnnatural(void)
+ {
+   register short x, y;
+@@ -180,6 +200,7 @@ ClearUnnatural(void)
+ 
+ #define RADIUS 18
+ 
++void
+ MakeNakedIsland()
+ {
+   register int x, y;
+@@ -215,6 +236,7 @@ MakeNakedIsland()
+ }
+ 
+ 
++void
+ MakeIsland(void)
+ {
+   MakeNakedIsland();
+@@ -223,6 +245,7 @@ MakeIsland(void)
+ }
+ 
+ 
++void
+ MakeLakes(void)
+ {
+   short Lim1, Lim2, t, z;
+@@ -249,6 +272,7 @@ MakeLakes(void)
+ }
+ 
+ 
++void
+ GetRandStart(void)
+ {
+   XStart = 40 + Rand(WORLD_X - 80);
+@@ -258,6 +282,7 @@ GetRandStart(void)
+ }
+ 
+ 
++void
+ MoveMap(short dir)
+ {
+   static short DirTab[2][8] = { { 0, 1, 1, 1, 0, -1, -1, -1},
+@@ -268,6 +293,7 @@ MoveMap(short dir)
  }
  
  
@@ -25,7 +111,63 @@ $OpenBSD: patch-src_sim_s_gen_c,v 1.1 2017/04/20 15:52:29 espie Exp $
  TreeSplash(short xloc, short yloc)
  {
    short dis, dir;
-@@ -461,6 +464,7 @@ DoSRiv(void)
+@@ -291,6 +317,7 @@ TreeSplash(short xloc, short yloc)
+ }
+ 
+ 
++void
+ DoTrees(void)
+ {
+   short Amount, x, xloc, yloc;
+@@ -310,6 +337,7 @@ DoTrees(void)
+ }
+ 
+ 
++void
+ SmoothRiver(void)
+ {
+   static short DX[4] = {-1, 0, 1, 0};
+@@ -346,6 +374,7 @@ SmoothRiver(void)
+ }
+ 
+ 
++int
+ IsTree(int cell)
+ {
+   if (((cell & LOMASK) >= WOODS_LOW) &&
+@@ -355,6 +384,7 @@ IsTree(int cell)
+ }
+  
+ 
++void
+ SmoothTrees(void)
+ {
+   static short DX[4] = {-1, 0, 1, 0};
+@@ -393,6 +423,7 @@ SmoothTrees(void)
+ }
+ 
+ 
++void
+ DoRivers(void)
+ {	
+ 
+@@ -411,6 +442,7 @@ DoRivers(void)
+ }
+ 
+ 
++void
+ DoBRiv(void)
+ {
+   int r1, r2;
+@@ -436,6 +468,7 @@ DoBRiv(void)
+ }
+ 
+ 
++void
+ DoSRiv(void)
+ {
+   int r1, r2;
+@@ -461,6 +494,7 @@ DoSRiv(void)
  }
  
  
@@ -33,3 +175,36 @@ $OpenBSD: patch-src_sim_s_gen_c,v 1.1 2017/04/20 15:52:29 espie Exp $
  PutOnMap(short Mchar, short Xoff, short Yoff)
  {
    register short Xloc, Yloc, temp;
+@@ -471,7 +505,7 @@ PutOnMap(short Mchar, short Xoff, short Yoff)
+   Yloc = MapY + Yoff;
+   if (TestBounds(Xloc, Yloc) == FALSE)
+     return;
+-  if (temp = Map[Xloc][Yloc]) {
++  if ((temp = Map[Xloc][Yloc])) {
+     temp = temp & LOMASK;
+     if (temp == RIVER)
+       if (Mchar != CHANNEL)
+@@ -483,6 +517,7 @@ PutOnMap(short Mchar, short Xoff, short Yoff)
+ }
+ 
+ 
++void
+ BRivPlop(void)
+ {
+   static short BRMatrix[9][9] = {
+@@ -503,6 +538,7 @@ BRivPlop(void)
+ }
+ 
+ 
++void
+ SRivPlop(void)
+ {
+   static short SRMatrix[6][6] = {
+@@ -520,6 +556,7 @@ SRivPlop(void)
+ }
+ 
+ 
++void
+ SmoothWater()
+ {
+   int x, y;

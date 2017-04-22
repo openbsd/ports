@@ -1,7 +1,62 @@
-$OpenBSD: patch-src_sim_s_msg_c,v 1.1 2017/04/20 15:52:29 espie Exp $
---- src/sim/s_msg.c.orig	Thu Apr 20 17:11:36 2017
-+++ src/sim/s_msg.c	Thu Apr 20 17:11:46 2017
-@@ -294,6 +294,7 @@ void SendMesAt(short Mnum, short x, short y)
+$OpenBSD: patch-src_sim_s_msg_c,v 1.2 2017/04/22 19:49:18 espie Exp $
+--- src/sim/s_msg.c.orig	Sun Feb 10 22:25:24 2008
++++ src/sim/s_msg.c	Sat Apr 22 20:08:51 2017
+@@ -68,13 +68,19 @@ short LastPicNum;
+ short autoGo;
+ short HaveLastMessage = 0;
+ char LastMessage[256];
+-int DoAutoGoto(short x, short y, char *msg);
+-int DoShowPicture(short id);
++void DoScenarioScore(int type);
++void CheckGrowth(void);
++void SetMessageField(char *);
++void DoAutoGoto(short x, short y, char *msg);
++void DoShowPicture(short id);
++void DoLoseGame(void);
++void DoWinGame(void);
+ 
+ /* comefrom: Simulate */
++void
+ SendMessages(void)
+ {
+-  register z;
++  register int z;
+   short PowerPop;
+   float TM;
+ 
+@@ -186,6 +192,7 @@ SendMessages(void)
+ 
+ 
+ /* comefrom: SendMessages */
++void
+ CheckGrowth(void)
+ {
+   QUAD ThisCityPop;
+@@ -212,6 +219,7 @@ CheckGrowth(void)
+ 
+ 
+ /* comefrom: SendMessages */
++void
+ DoScenarioScore(int type)
+ {
+   short z;
+@@ -251,6 +259,7 @@ DoScenarioScore(int type)
+ }
+ 
+ 
++void
+ ClearMes(void)
+ {
+   MessagePort = 0;
+@@ -262,6 +271,7 @@ ClearMes(void)
+ 
+ /* comefrom: MakeEarthquake MakeFire MakeFire MakeFlood SendMessages 
+ 	     CheckGrowth DoScenarioScore DoPowerScan */
++int
+ SendMes(int Mnum)
+ {
+   if (Mnum < 0) {
+@@ -294,6 +304,7 @@ void SendMesAt(short Mnum, short x, short y)
  }
  
  
@@ -9,3 +64,56 @@ $OpenBSD: patch-src_sim_s_msg_c,v 1.1 2017/04/20 15:52:29 espie Exp $
  doMessage(void) 
  {
    char messageStr[256];
+@@ -401,16 +412,18 @@ doMessage(void) 
+ }
+ 
+ 
++void
+ DoAutoGoto(short x, short y, char *msg)
+ {
+   char buf[256];
+ 
+   SetMessageField(msg);
+-  sprintf(buf, "UIAutoGoto %d %d", x, y);
++  snprintf(buf, 256, "UIAutoGoto %d %d", x, y);
+   Eval(buf);
+ }
+ 
+ 
++void
+ SetMessageField(char *str)
+ {
+   char buf[256];
+@@ -419,27 +432,30 @@ SetMessageField(char *str)
+       strcmp(LastMessage, str)) {
+     strcpy(LastMessage, str);
+     HaveLastMessage = 1;
+-    sprintf(buf, "UISetMessage {%s}", str);
++    snprintf(buf, 256, "UISetMessage {%s}", str);
+     Eval(buf);
+   }
+ }
+ 
+ 
++void
+ DoShowPicture(short id)
+ {
+   char buf[256];
+ 
+-  sprintf(buf, "UIShowPicture %d", id);
++  snprintf(buf, 256, "UIShowPicture %d", id);
+   Eval(buf);
+ }
+ 
+ 
++void
+ DoLoseGame()
+ {
+   Eval("UILoseGame");
+ }
+ 
+ 
++void
+ DoWinGame()
+ {
+   Eval("UIWinGame");

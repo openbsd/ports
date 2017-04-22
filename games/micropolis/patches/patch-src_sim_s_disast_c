@@ -1,19 +1,30 @@
-$OpenBSD: patch-src_sim_s_disast_c,v 1.1 2017/04/20 15:52:29 espie Exp $
---- src/sim/s_disast.c.orig	Thu Apr 20 17:06:15 2017
-+++ src/sim/s_disast.c	Thu Apr 20 17:09:23 2017
-@@ -70,7 +70,11 @@ short FloodCnt;
+$OpenBSD: patch-src_sim_s_disast_c,v 1.2 2017/04/22 19:49:18 espie Exp $
+--- src/sim/s_disast.c.orig	Mon Feb  4 03:52:26 2008
++++ src/sim/s_disast.c	Sat Apr 22 18:44:34 2017
+@@ -70,7 +70,14 @@ short FloodCnt;
  short FloodX, FloodY;
  
  
 +void MakeFlood(void);
 +void MakeMeltdown(void);
++void ScenarioDisaster(void);
++void SetFire(void);
++int Vunerable(int);
 +
  /* comefrom: Simulate */
 +void
  DoDisasters(void)
  { 
    /* Chance of disasters at lev 0 1 2 */
-@@ -148,6 +152,7 @@ ScenarioDisaster(void)
+@@ -115,6 +122,7 @@ DoDisasters(void)
+ 
+ 
+ /* comefrom: DoDisasters */
++void
+ ScenarioDisaster(void)
+ {
+   int x, y;
+@@ -148,6 +156,7 @@ ScenarioDisaster(void)
  
  
  /* comefrom: ScenarioDisaster */
@@ -21,7 +32,31 @@ $OpenBSD: patch-src_sim_s_disast_c,v 1.1 2017/04/20 15:52:29 espie Exp $
  MakeMeltdown(void)
  {
    short x, y;
-@@ -222,6 +227,7 @@ SetFire(void)
+@@ -164,6 +173,7 @@ MakeMeltdown(void)
+ }
+ 
+ 
++void
+ FireBomb()
+ {
+   CrashX = Rand(WORLD_X - 1);
+@@ -175,6 +185,7 @@ FireBomb()
+ 
+ 
+ /* comefrom: DoDisasters ScenarioDisaster */
++void
+ MakeEarthquake(void)
+ {
+   register short x, y, z;
+@@ -202,6 +213,7 @@ MakeEarthquake(void)
+ 
+ 
+ /* comefrom: DoDisasters */
++void
+ SetFire(void)
+ {
+   register short x, y, z;
+@@ -222,6 +234,7 @@ SetFire(void)
  
  
  /* comefrom: DoDisasters */
@@ -29,11 +64,27 @@ $OpenBSD: patch-src_sim_s_disast_c,v 1.1 2017/04/20 15:52:29 espie Exp $
  MakeFire(void)
  {
    short t, x, y, z;
-@@ -257,6 +263,7 @@ Vunerable(int tem)
+@@ -243,6 +256,7 @@ MakeFire(void)
+ 
+ 
+ /* comefrom: MakeEarthquake */
++int
+ Vunerable(int tem)
+ {
+   register int tem2;
+@@ -257,6 +271,7 @@ Vunerable(int tem)
  
  
  /* comefrom: DoDisasters ScenarioDisaster */
 +void
  MakeFlood(void)
+ {
+   static short Dx[4] = { 0, 1, 0,-1};
+@@ -290,6 +305,7 @@ MakeFlood(void)
+ 
+ 
+ /* comefrom: MapScan */
++void
+ DoFlood(void)
  {
    static short Dx[4] = { 0, 1, 0,-1};

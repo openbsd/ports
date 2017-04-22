@@ -1,0 +1,27 @@
+$OpenBSD: patch-src_sim_s_init_c,v 1.1 2017/04/22 19:49:18 espie Exp $
+--- src/sim/s_init.c.orig	Sat Apr 22 17:24:04 2017
++++ src/sim/s_init.c	Sat Apr 22 17:26:18 2017
+@@ -66,6 +66,7 @@
+ 
+ 
+ /* comefrom: loadFile bootUp main doMessage */
++void
+ InitWillStuff()
+ {
+   register short x, y, z;
+@@ -131,6 +132,7 @@ InitWillStuff()
+ }
+ 
+ 
++void
+ ResetMapState()
+ {
+   SimView *view;
+@@ -141,6 +143,7 @@ ResetMapState()
+ }
+ 
+ 
++void
+ ResetEditorState()
+ {
+   SimView *view;

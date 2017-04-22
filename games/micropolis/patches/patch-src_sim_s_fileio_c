@@ -1,0 +1,140 @@
+$OpenBSD: patch-src_sim_s_fileio_c,v 1.3 2017/04/22 19:49:18 espie Exp $
+--- src/sim/s_fileio.c.orig	Mon Feb  4 03:52:26 2008
++++ src/sim/s_fileio.c	Sat Apr 22 21:30:19 2017
+@@ -68,6 +68,13 @@
+ 
+ #define NOOP_ON_BE	{ int test = 1; if (!(*(unsigned char*) (&test))) return; }
+ 
++void DidLoadScenario(void);
++void DidLoadCity(void);
++void DidntLoadCity(char *);
++void DoSaveCityAs(void);
++void DidSaveCity(void);
++void DidntSaveCity(char *msg);
++
+ static void
+ _swap_shorts(short *buf, int len)
+ {
+@@ -373,6 +380,7 @@ int saveFile(char *filename)
+ }
+ 
+ 
++void
+ LoadScenario(short s)
+ {
+   char *name, *fname;
+@@ -468,6 +476,7 @@ LoadScenario(short s)
+ }
+ 
+ 
++void
+ DidLoadScenario()
+ {
+   Eval("UIDidLoadScenario");
+@@ -485,12 +494,12 @@ int LoadCity(char *filename)
+     CityFileName = (char *)ckalloc(strlen(filename) + 1);
+     strcpy(CityFileName, filename);
+ 
+-    if (cp = (char *)rindex(filename, '.'))
++    if ((cp = (char *)rindex(filename, '.')))
+       *cp = 0;
+ #ifdef MSDOS
+-    if (cp = (char *)rindex(filename, '\\'))
++    if ((cp = (char *)rindex(filename, '\\')))
+ #else
+-    if (cp = (char *)rindex(filename, '/'))
++    if ((cp = (char *)rindex(filename, '/')))
+ #endif
+       cp++;
+     else
+@@ -514,20 +523,23 @@ int LoadCity(char *filename)
+ }
+ 
+ 
++void
+ DidLoadCity()
+ {
+   Eval("UIDidLoadCity");
+ }
+ 
+ 
++void
+ DidntLoadCity(char *msg)
+ {
+   char buf[1024];
+-  sprintf(buf, "UIDidntLoadCity {%s}", msg);
++  snprintf(buf, 1024, "UIDidntLoadCity {%s}", msg);
+   Eval(buf);
+ }
+ 
+ 
++void
+ SaveCity()
+ {
+   char msg[256];
+@@ -538,7 +550,7 @@ SaveCity()
+     if (saveFile(CityFileName))
+       DidSaveCity();
+     else {
+-      sprintf(msg, "Unable to save the city to the file named \"%s\". %s",
++      snprintf(msg, 256, "Unable to save the city to the file named \"%s\". %s",
+ 	      CityFileName ? CityFileName : "(null)",
+ 	      errno ? strerror(errno) : "");
+       DidntSaveCity(msg);
+@@ -547,26 +559,30 @@ SaveCity()
+ }
+ 
+ 
++void
+ DoSaveCityAs()
+ {
+   Eval("UISaveCityAs");
+ }
+ 
+ 
++void
+ DidSaveCity()
+ {
+   Eval("UIDidSaveCity");
+ }
+ 
+ 
++void
+ DidntSaveCity(char *msg)
+ {
+   char buf[1024];
+-  sprintf(buf, "UIDidntSaveCity {%s}", msg);
++  snprintf(buf, 1024, "UIDidntSaveCity {%s}", msg);
+   Eval(buf);
+ }
+ 
+ 
++void
+ SaveCityAs(char *filename)
+ {
+   char msg[256];
+@@ -578,12 +594,12 @@ SaveCityAs(char *filename)
+   strcpy(CityFileName, filename);
+ 
+   if (saveFile(CityFileName)) {
+-    if (cp = (char *)rindex(filename, '.'))
++    if ((cp = (char *)rindex(filename, '.')))
+       *cp = 0;
+ #ifdef MSDOS
+-    if (cp = (char *)rindex(filename, '\\'))
++    if ((cp = (char *)rindex(filename, '\\')))
+ #else
+-    if (cp = (char *)rindex(filename, '/'))
++    if ((cp = (char *)rindex(filename, '/')))
+ #endif
+       cp++;
+     else
+@@ -593,7 +609,7 @@ SaveCityAs(char *filename)
+     setCityName(cp);
+     DidSaveCity();
+   } else {
+-    sprintf(msg, "Unable to save the city to the file named \"%s\". %s",
++    snprintf(msg, 256, "Unable to save the city to the file named \"%s\". %s",
+ 	    CityFileName ? CityFileName : "(null)",
+ 	    errno ? strerror(errno) : "");
+     DidntSaveCity(msg);

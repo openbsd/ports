@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_sim_w_update_c,v 1.1 2017/04/20 15:52:29 espie Exp $
---- src/sim/w_update.c.orig	Thu Apr 20 17:34:57 2017
-+++ src/sim/w_update.c	Thu Apr 20 17:35:27 2017
+$OpenBSD: patch-src_sim_w_update_c,v 1.2 2017/04/22 19:49:18 espie Exp $
+--- src/sim/w_update.c.orig	Mon Feb  4 03:52:26 2008
++++ src/sim/w_update.c	Sat Apr 22 18:57:35 2017
 @@ -75,6 +75,7 @@ char *dateStr[12] = {
    "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
  };
@@ -9,7 +9,15 @@ $OpenBSD: patch-src_sim_w_update_c,v 1.1 2017/04/20 15:52:29 espie Exp $
  
  void DoUpdateHeads()
  {
-@@ -124,6 +125,7 @@ UpdateFunds(void)
+@@ -117,6 +118,7 @@ void UpdateHeads()
+   DoUpdateHeads();
+ }
+ 
++void
+ UpdateFunds(void)
+ {
+   MustUpdateFunds = 1;
+@@ -124,6 +126,7 @@ UpdateFunds(void)
  }
  
  
