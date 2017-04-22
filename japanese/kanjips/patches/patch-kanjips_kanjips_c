@@ -1,6 +1,6 @@
-$OpenBSD: patch-kanjips_kanjips_c,v 1.3 2010/05/19 14:35:18 espie Exp $
---- kanjips/kanjips.c.orig	Tue Jan 16 18:20:29 1990
-+++ kanjips/kanjips.c	Wed May 19 16:33:51 2010
+$OpenBSD: patch-kanjips_kanjips_c,v 1.4 2017/04/22 04:53:17 jsg Exp $
+--- kanjips/kanjips.c.orig	Wed Jan 17 04:20:29 1990
++++ kanjips/kanjips.c	Sat Apr 22 14:48:30 2017
 @@ -18,6 +18,8 @@ unsigned char *zs;	/* for state machine zztrans() */
  FILE *infile = stdin,*outfile = stdout;
  
@@ -51,6 +51,15 @@ $OpenBSD: patch-kanjips_kanjips_c,v 1.3 2010/05/19 14:35:18 espie Exp $
  		s += strlen(DFSTR);
  		forgetfont();
  		for(nfonts = 0; *s && nfonts < MAXFONTS; s++){
+@@ -103,7 +114,7 @@ forgetfont()
+ static int registcodes[MAXREGIST];	/* remembered font codes */
+ static int ncodes = 0;			/* number of remembered fonts */
+ 
+-static regist(code) int code;
++static void regist(code) int code;
+ {
+ 	register i;
+ 	for(i=0; i<ncodes; i++){
 @@ -116,7 +127,7 @@ static regist(code) int code;
  	fprintf(outfile,"end\n");
  	registcodes[ncodes++] = code;
