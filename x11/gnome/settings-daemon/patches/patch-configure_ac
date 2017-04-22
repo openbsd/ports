@@ -1,0 +1,33 @@
+$OpenBSD: patch-configure_ac,v 1.6 2017/04/22 12:09:05 ajacoutot Exp $
+
+- first chunk
+From c4450208d463c271c043364aa2542291877d53ae Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Tue, 18 Apr 2017 19:41:32 +0200
+Subject: housekeeping: Fix libnotify version check
+
+http://permalink.gmane.org/gmane.comp.gnome.desktop/51950
+https://bugzilla.gnome.org/show_bug.cgi?id=770758#c3
+https://bugzilla.gnome.org/show_bug.cgi?id=766329
+https://bugzilla.gnome.org/show_bug.cgi?id=772736 (systemd --user)
+
+--- configure.ac.orig	Wed Apr 12 11:20:51 2017
++++ configure.ac	Sat Apr 22 13:10:18 2017
+@@ -180,7 +180,7 @@ PKG_CHECK_MODULES(DUMMY,
+ PKG_CHECK_MODULES(HOUSEKEEPING,
+ 		  gtk+-3.0
+ 		  gio-unix-2.0
+-		  libnotify >= LIBNOTIFY_REQUIRED_VERSION)
++		  libnotify >= $LIBNOTIFY_REQUIRED_VERSION)
+ 
+ PKG_CHECK_MODULES(KEYBOARD,
+ 		  gtk+-3.0)
+@@ -426,6 +426,8 @@ PKG_CHECK_MODULES(SHARING,
+ 		  libnotify >= $LIBNOTIFY_REQUIRED_VERSION
+ 		  gio-unix-2.0
+ 		  $NM_MODULE)
++
++AM_CONDITIONAL(BUILD_SHARING, [test x"$enable_network_manager" = x"yes"])
+ 
+ # ---------------------------------------------------------------------------
+ # Enable Profiling
