@@ -1,0 +1,24 @@
+$OpenBSD: patch-sidplay_cpp,v 1.1 2017/04/22 01:42:27 jsg Exp $
+--- sidplay.cpp.orig	Thu Apr 20 16:54:28 2017
++++ sidplay.cpp	Thu Apr 20 16:58:52 2017
+@@ -18,8 +18,9 @@
+ //
+ 
+ #include <ctype.h>
+-#include <iomanip.h>
+-#include <fstream.h>
++#include <iomanip>
++#include <fstream>
++#include <iostream>
+ #include <signal.h>
+ #include <stdlib.h>
+ #include <string.h>
+@@ -29,6 +30,8 @@
+ #include <sidplay/fformat.h>
+ #include <sidplay/myendian.h>
+ #include "audiodrv.h"
++
++using namespace std;
+ 
+ #if defined(__amigaos__)
+ #define EXIT_ERROR_STATUS (20)

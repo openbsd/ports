@@ -1,0 +1,25 @@
+$OpenBSD: patch-sid2wav_cpp,v 1.1 2017/04/22 01:42:27 jsg Exp $
+--- sid2wav.cpp.orig	Thu Apr 20 16:59:16 2017
++++ sid2wav.cpp	Thu Apr 20 16:59:52 2017
+@@ -18,9 +18,9 @@
+ //  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ //
+ 
+-#include <iostream.h>
+-#include <iomanip.h>
+-#include <fstream.h>
++#include <iostream>
++#include <iomanip>
++#include <fstream>
+ #include <string.h>
+ 
+ #include <stdlib.h>
+@@ -38,6 +38,8 @@
+ #include <sidplay/player.h>
+ #include <sidplay/fformat.h>
+ #include <sidplay/myendian.h>
++
++using namespace std;
+ 
+ const char s2w_version[] = "1.8";
+ 

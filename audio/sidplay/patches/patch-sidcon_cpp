@@ -1,0 +1,19 @@
+$OpenBSD: patch-sidcon_cpp,v 1.1 2017/04/22 01:42:27 jsg Exp $
+--- sidcon.cpp.orig	Thu Apr 20 17:00:09 2017
++++ sidcon.cpp	Thu Apr 20 17:00:34 2017
+@@ -25,11 +25,13 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
+-#include <iostream.h>
+-#include <iomanip.h>
++#include <iostream>
++#include <iomanip>
+ 
+ #include <sidplay/sidtune.h>
+ #include <sidplay/fformat.h>
++
++using namespace std;
+ 
+ static bool toPSID = true,
+     toSIDPLAY = false,
