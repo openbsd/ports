@@ -1,0 +1,32 @@
+$OpenBSD: patch-xprompt_c,v 1.1 2017/04/22 08:48:06 jsg Exp $
+--- xprompt.c.orig	Sat Apr 22 18:43:05 2017
++++ xprompt.c	Sat Apr 22 18:45:18 2017
+@@ -41,6 +41,7 @@ static char *SCCS_Id = "@(#)xprompt.c\tver 1.4 (91/09/
+ #include <sys/stat.h>
+ #include <ctype.h>
+ #include <stdio.h>
++#include <stdlib.h>
+ 
+ #include <X11/IntrinsicP.h>
+ #include <X11/StringDefs.h>
+@@ -167,8 +168,6 @@ static void unparsegeometry(), unwarp();
+ static void Syntax();
+ static int get_user_text_translations();
+ 
+-char *malloc();
+-
+ /*ARGSUSED*/
+ static void
+ EraseLine(ctx, event, args, nargs)
+@@ -386,9 +385,8 @@ fprintf(stderr, "-nowarp     (Don't warp cursor)\n");
+ 
+ void unparsegeometry();
+ 
+-main(argc, argv)
+-unsigned int argc;
+-char **argv;
++int
++main(int argc, char **argv)
+ {
+     register int i, j;
+ 	int len, maxpromptlen;
