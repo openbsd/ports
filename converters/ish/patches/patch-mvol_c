@@ -1,10 +1,46 @@
-$OpenBSD: patch-mvol_c,v 1.1 2011/12/30 23:14:34 sthen Exp $
+$OpenBSD: patch-mvol_c,v 1.2 2017/04/22 02:14:04 jsg Exp $
 
-Fix: Multi-volume format cannot handle on 64bit environment.
+- Fix multi-volume format cannot handle on 64bit environment
+- Add missing includes
+- Add non-implicit return type to fix build with clang
 
---- mvol.c.orig	Sun Jan  7 10:47:17 1996
-+++ mvol.c	Fri Dec 30 23:09:44 2011
-@@ -248,7 +248,7 @@ unsigned char    *p;
+--- mvol.c.orig	Sun Jan  7 21:47:17 1996
++++ mvol.c	Sat Apr 22 11:59:17 2017
+@@ -8,6 +8,7 @@
+ #include <ctype.h>
+ #include <string.h>
+ #include <sys/types.h>
++#include <sys/stat.h>
+ #ifndef NOINDEX
+ #include <strings.h>
+ #endif
+@@ -17,8 +18,12 @@
+ #else
+ #include <dirent.h>
+ #endif
++#include <stdlib.h>
++#include <unistd.h>
+ #include "ish.h"
+ 
++void restore_done(char *, char *, long);
++
+ extern unsigned long    fsize;
+ extern unsigned long    v_offset;
+ extern unsigned short   max_vol;
+@@ -208,10 +213,8 @@ int    m,k;
+ 
+ #define    COPY_BUF    1024
+ 
+-restore_done(src, dst,sz)
+-char    *src;
+-char    *dst;
+-long    sz;
++void
++restore_done(char *src, char *dst, long sz)
+ {
+ int     id;
+ int     od;
+@@ -248,7 +251,7 @@ unsigned char    *p;
      }
      close(id);
      close(od);
