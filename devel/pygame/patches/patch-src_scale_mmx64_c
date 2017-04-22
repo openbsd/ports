@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_scale_mmx64_c,v 1.1 2017/04/22 03:11:36 jsg Exp $
+--- src/scale_mmx64.c.orig	Sat Apr 22 12:58:10 2017
++++ src/scale_mmx64.c	Sat Apr 22 12:58:14 2017
+@@ -425,7 +425,7 @@ filter_expand_X_MMX(Uint8 *srcpix, Uint8 *dstpix, int 
+              " movl             %5,      %%ecx;           "
+              " pxor          %%mm0,      %%mm0;           "
+              "1:                                          "
+-             " movsxl         (%3),      %%rax;           " /* get xidx0[x] */
++             " movslq         (%3),      %%rax;           " /* get xidx0[x] */
+              " add              $4,         %3;           "
+              " movq           (%0),      %%mm1;           " /* load mult0 */
+              " add              $8,         %0;           "
+@@ -500,7 +500,7 @@ filter_expand_X_SSE(Uint8 *srcpix, Uint8 *dstpix, int 
+              " movl             %5,      %%ecx;           "
+              " pxor          %%mm0,      %%mm0;           "
+              "1:                                          "
+-             " movsxl         (%3),      %%rax;           " /* get xidx0[x] */
++             " movslq         (%3),      %%rax;           " /* get xidx0[x] */
+              " add              $4,         %3;           "
+              " movq           (%0),      %%mm1;           " /* load mult0 */
+              " add              $8,         %0;           "
