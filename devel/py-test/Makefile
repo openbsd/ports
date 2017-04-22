@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.24 2017/01/24 10:35:10 shadchin Exp $
+# $OpenBSD: Makefile,v 1.25 2017/04/22 19:52:07 shadchin Exp $
 
 COMMENT=		cross-project testing tool for Python
 
-MODPY_EGG_VERSION=	3.0.6
+MODPY_EGG_VERSION=	3.0.7
 DISTNAME=		pytest-${MODPY_EGG_VERSION}
 PKGNAME=		py-test-${MODPY_EGG_VERSION}
 
@@ -35,6 +35,6 @@ TEST_DEPENDS +=		devel/py-twisted/core
 .endif
 
 post-install:
-	mv ${PREFIX}/bin/py.test ${PREFIX}/bin/py.test${MODPY_BIN_SUFFIX}
+	mv ${PREFIX}/bin/py.test{,${MODPY_BIN_SUFFIX}}
 
 .include <bsd.port.mk>
