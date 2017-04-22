@@ -1,0 +1,14 @@
+$OpenBSD: patch-main_c,v 1.1 2017/04/22 07:02:54 jsg Exp $
+--- main.c.orig	Sat Apr 22 16:59:48 2017
++++ main.c	Sat Apr 22 17:00:33 2017
+@@ -105,9 +105,7 @@ XrmOptionDescRec options[] = {
+ XtAppContext    app_context;
+ 
+ int 
+-main(argc,argv)
+-unsigned int argc;
+-char **argv;
++main(int argc, char **argv)
+ {
+ 	int		string_len = 0;
+ 	char		bm_dirs[MAXPATHLEN];
