@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.587 2017/04/18 20:45:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.588 2017/04/23 21:24:30 rsadowski Exp $
 
      SUBDIR =
      SUBDIR += Xaw3d
@@ -402,6 +402,7 @@
      SUBDIR += yad
      SUBDIR += yakuake-kde4
      SUBDIR += yeahconsole
-     SUBDIR += yeahlaunch
+     SUBDIR += yeahlauncH
+     SUBDIR += xwallpaper
 
 .include <bsd.port.subdir.mk>
