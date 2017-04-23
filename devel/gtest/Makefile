@@ -1,12 +1,17 @@
-# $OpenBSD: Makefile,v 1.12 2017/04/10 11:45:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2017/04/23 11:14:47 sthen Exp $
 
 COMMENT =	C++ unit test framework
 
-DISTNAME =	gtest-1.4.0
-REVISION =	3
+V=		1.8.0
+GH_ACCOUNT=	google
+GH_PROJECT=	googletest
+GH_TAGNAME=	release-$V
+PKGNAME =	gtest-$V
 
-SHARED_LIBS +=	gtest		0.0   # .0.0
-SHARED_LIBS +=	gtest_main	0.0   # .0.0
+SHARED_LIBS +=	gmock		0.0   # .0.0
+SHARED_LIBS +=	gmock_main	0.0   # .0.0
+SHARED_LIBS +=	gtest		1.0   # .0.0
+SHARED_LIBS +=	gtest_main	1.0   # .0.0
 
 CATEGORIES =	devel
 
@@ -17,13 +22,12 @@ MAINTAINER =	Vincent Auclair <auclair.vincent@gmail.com>
 # New BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =	${MASTER_SITE_GOOGLECODE:=googletest/}
-
 SEPARATE_BUILD =	Yes
 
 WANTLIB =		m ${LIBCXX}
 
-CONFIGURE_STYLE =	gnu
+MODULES +=		devel/cmake
+CONFIGURE_ARGS =	-DBUILD_SHARED_LIBS=ON
 
 NO_TEST =	Yes
 
