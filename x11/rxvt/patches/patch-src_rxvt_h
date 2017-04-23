@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_rxvt_h,v 1.1 2017/04/23 18:34:24 espie Exp $
+--- src/rxvt.h.orig	Sun Apr 23 20:30:12 2017
++++ src/rxvt.h	Sun Apr 23 20:30:59 2017
+@@ -1092,6 +1092,7 @@ struct rxvt_hidden {
+     unsigned char   kbuf[KBUFSZ];
+ };
+ 
++#ifndef __clang__
+ #ifndef __attribute__
+ # ifdef __GNUC__
+ #  if (__GNUC__ == 2 && __GNUC_MINOR__ < 5) || (__GNUC__ < 2)
+@@ -1099,6 +1100,7 @@ struct rxvt_hidden {
+ #  endif
+ # endif
+ # define __attribute__(x)
++#endif
+ #endif
+ 
+ /*
