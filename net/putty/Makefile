@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2016/09/10 13:03:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2017/04/23 21:51:43 sthen Exp $
 
 COMMENT-main=	SSH and telnet client
 COMMENT-gui=	PuTTY GUI clients
@@ -28,6 +28,7 @@ WANTLIB-gui += pthread z ${MODGETTEXT_WANTLIB}
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I.././" \
 			LDFLAGS="-L${X11BASE}/lib"
+MAKE_FLAGS=		WARNINGOPTS=-Wall # strip upstream's usual -Werror for clang
 WRKSRC=			${WRKDIST}/unix
 
 MULTI_PACKAGES=		-main -gui
