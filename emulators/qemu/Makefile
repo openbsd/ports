@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.159 2017/04/10 13:13:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.160 2017/04/23 13:24:17 ajacoutot Exp $
 
 USE_WXNEEDED=	Yes
 
@@ -6,7 +6,7 @@ ONLY_FOR_ARCHS=	aarch64 amd64 arm i386 powerpc sparc64
 
 COMMENT=	multi system emulator
 
-DISTNAME=	qemu-2.8.1
+DISTNAME=	qemu-2.9.0
 CATEGORIES=	emulators
 MASTER_SITES=	http://wiki.qemu.org/download/
 EXTRACT_SUFX=	.tar.bz2
@@ -22,7 +22,7 @@ WANTLIB=	SDL X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama \
 		Xrandr Xrender atk-1.0 bz2 c cairo curl drm epoxy fdt \
 		fontconfig freetype gbm gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 \
 		glib-2.0 gnutls gobject-2.0 gthread-2.0 gtk-x11-2.0 intl \
-		iscsi jpeg lzo2 m ncurses nettle nfs pango-1.0 pangocairo-1.0 \
+		iscsi jpeg lzo2 m nettle nfs pango-1.0 pangocairo-1.0 \
 		pangoft2-1.0 pixman-1 png pthread pthread-stubs ssh2 \
 		usb-1.0 util vte z
 
@@ -37,7 +37,7 @@ BUILD_DEPENDS=	devel/gettext-tools \
 		textproc/texi2html
 LIB_DEPENDS=	archivers/bzip2 \
 		archivers/lzo2 \
-		devel/dtc \
+		devel/dtc>=1.4.4 \
 		devel/gettext \
 		devel/glib2 \
 		devel/libiscsi \

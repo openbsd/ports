@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.35 2016/12/22 09:05:06 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.36 2017/04/23 13:24:17 ajacoutot Exp $
 @conflict kqemu-*
 @conflict qemu-*
 @pkgpath emulators/kqemu
@@ -24,7 +24,8 @@
 @bin bin/qemu-system-mips64el
 @bin bin/qemu-system-mipsel
 @bin bin/qemu-system-moxie
-@bin bin/qemu-system-or32
+@bin bin/qemu-system-nios2
+@bin bin/qemu-system-or1k
 @bin bin/qemu-system-ppc
 @bin bin/qemu-system-ppc64
 @bin bin/qemu-system-ppcemb
@@ -40,12 +41,18 @@
 @bin bin/qemu-system-xtensaeb
 @man man/man1/qemu-img.1
 @man man/man1/qemu.1
+@man man/man7/qemu-ga-ref.7
+@man man/man7/qemu-qmp-ref.7
 @man man/man8/qemu-ga.8
 @man man/man8/qemu-nbd.8
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/doc/qemu/
 share/doc/qemu/qemu-doc.html
-share/doc/qemu/qmp-commands.txt
+share/doc/qemu/qemu-doc.txt
+share/doc/qemu/qemu-ga-ref.html
+share/doc/qemu/qemu-ga-ref.txt
+share/doc/qemu/qemu-qmp-ref.html
+share/doc/qemu/qemu-qmp-ref.txt
 share/examples/qemu/
 share/examples/qemu/qemu-ifdown
 @mode 755
