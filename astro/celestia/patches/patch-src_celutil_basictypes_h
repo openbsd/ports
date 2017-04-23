@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_celutil_basictypes_h,v 1.1 2017/04/23 11:09:51 espie Exp $
+--- src/celutil/basictypes.h.orig	Sun Apr 23 12:19:41 2017
++++ src/celutil/basictypes.h	Sun Apr 23 12:20:10 2017
+@@ -31,7 +31,9 @@ typedef unsigned __int64 uint64;
+ #include <limits>
+ typedef          int64_t int64;
+ typedef         uint64_t uint64;
++#ifndef INT64_MAX
+ #define INT64_MAX 9223372036854775807LL
++#endif
+ #ifndef UINT64_MAX
+ #define UINT64_MAX 0xffffffffffffffffULL
+ #endif

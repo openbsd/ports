@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_celmath_intersect_h,v 1.1 2017/04/23 11:09:51 espie Exp $
+--- src/celmath/intersect.h.orig	Sun Apr 23 12:13:51 2017
++++ src/celmath/intersect.h	Sun Apr 23 12:14:45 2017
+@@ -15,6 +15,7 @@
+ #include "ray.h"
+ #include "sphere.h"
+ #include "ellipsoid.h"
++#include <celmath/mathlib.h>
+ 
+ 
+ template<class T> bool testIntersection(const Ray3<T>& ray,
