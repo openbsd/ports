@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_packetcapture_h,v 1.1 2017/04/23 21:30:24 sthen Exp $
+--- src/packetcapture.h.orig	Sun Apr 23 22:26:58 2017
++++ src/packetcapture.h	Sun Apr 23 22:27:03 2017
+@@ -23,8 +23,8 @@ void packetcapture_open_live(char* interface, char* fi
+ void packetcapture_open_offline(char* dumpfile);
+ void packetcapture_close(void);
+ 
+-inline void packetcapture_dispatch(void);
++extern inline void packetcapture_dispatch(void);
+ 
+-inline char* get_default_interface();
++extern inline char* get_default_interface();
+ 
+ #endif  /* __PACKETCAPTURE_H__ */

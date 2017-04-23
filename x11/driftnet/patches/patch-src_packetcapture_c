@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_packetcapture_c,v 1.1 2017/04/23 21:30:24 sthen Exp $
+--- src/packetcapture.c.orig	Sun Apr 23 22:26:58 2017
++++ src/packetcapture.c	Sun Apr 23 22:27:08 2017
+@@ -103,7 +103,7 @@ void packetcapture_close(void)
+     pcap_close(pc);
+ }
+ 
+-inline char* get_default_interface()
++extern inline char* get_default_interface()
+ {
+     char ebuf[PCAP_ERRBUF_SIZE];
+     char *interface;
+@@ -120,7 +120,7 @@ inline char* get_default_interface()
+     return interface;
+ }
+ 
+-inline void packetcapture_dispatch(void)
++extern inline void packetcapture_dispatch(void)
+ {
+     pcap_dispatch(pc, -1, process_packet, NULL);
+ }
