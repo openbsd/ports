@@ -1,0 +1,14 @@
+$OpenBSD: patch-Usage_cc,v 1.1 2017/04/23 22:18:32 sthen Exp $
+--- Usage.cc.orig	Sun Apr 23 23:03:51 2017
++++ Usage.cc	Sun Apr 23 23:04:23 2017
+@@ -17,7 +17,9 @@
+     Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ */
+ 
+-#include <iostream.h>
++#include <iostream>
++
++using namespace std;
+ 
+ #include "Usage.h"
+ 

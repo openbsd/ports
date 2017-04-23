@@ -1,0 +1,20 @@
+$OpenBSD: patch-ColorTail_cc,v 1.1 2017/04/23 22:18:32 sthen Exp $
+--- ColorTail.cc.orig	Sun Apr 23 23:03:51 2017
++++ ColorTail.cc	Sun Apr 23 23:04:43 2017
+@@ -17,7 +17,7 @@
+     Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ */
+ 
+-#include <iostream.h>
++#include <iostream>
+ #include <assert.h>
+ #include <unistd.h>
+ 
+@@ -26,6 +26,7 @@
+ #include "OptionsParser.h"
+ #include "Colorizer.h"
+ 
++using namespace std;
+ 
+ // the constructor
+ ColorTail::ColorTail()

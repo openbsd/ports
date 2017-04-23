@@ -1,54 +1,14 @@
-$OpenBSD: patch-Colorizer_cc,v 1.2 2017/04/23 22:02:29 sthen Exp $
+$OpenBSD: patch-Colorizer_cc,v 1.3 2017/04/23 22:18:32 sthen Exp $
 --- Colorizer.cc.orig	Tue Aug  3 20:41:17 1999
-+++ Colorizer.cc	Sun Apr 23 23:00:29 2017
-@@ -23,7 +23,7 @@
++++ Colorizer.cc	Sun Apr 23 23:13:01 2017
+@@ -23,8 +23,9 @@
  
  #include <assert.h>
  #include <stdio.h>
 -#include <strstream.h>
 +#include <strstream>
  
++using namespace std;
  
  Colorizer::Colorizer()
-@@ -111,7 +111,7 @@ char* Colorizer::colorize(char *str)
-    ListIterator<SearchData*> itr(*m_items_list);
- 
-    // will contain the new string
--   ostrstream newstr;
-+   std::ostrstream newstr;
-    
-    SearchData *current;
-    int i = 0;
-@@ -172,7 +172,7 @@ char* Colorizer::colorize(char *str)
- 	    }
- 
- 	    // write ansi reset str and a newline
--	    newstr << ANSI_RESET_STR << endl << ends;
-+	    newstr << ANSI_RESET_STR << std::endl << std::ends;
- 	    // return the new string
- 	    return newstr.str();
- 	 }
-@@ -187,12 +187,12 @@ char* Colorizer::colorize(char *str)
-       // check if str ends in '\n'
-       if (str[strlen(str)] == '\n')
-       {
--	 newstr << str << ends;
-+	 newstr << str << std::ends;
-       }
-       else
-       {
- 	 // doesn't end in '\n'
--	 newstr << str << endl << ends;
-+	 newstr << str << std::endl << std::ends;
-       }
- 
-       // return the new string
-@@ -240,7 +240,7 @@ char* Colorizer::colorize(char *str)
-       
-       // write newline and null
-       //newstr << endl << ends;
--      newstr << ends;
-+      newstr << std::ends;
-       
-       
-       // return the new string
+ {

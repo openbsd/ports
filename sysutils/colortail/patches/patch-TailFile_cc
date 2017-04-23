@@ -1,16 +1,25 @@
-$OpenBSD: patch-TailFile_cc,v 1.2 2017/04/23 22:02:29 sthen Exp $
+$OpenBSD: patch-TailFile_cc,v 1.3 2017/04/23 22:18:32 sthen Exp $
 --- TailFile.cc.orig	Thu Aug  5 00:09:38 1999
-+++ TailFile.cc	Sun Apr 23 23:00:29 2017
-@@ -375,7 +375,7 @@ void TailFile::follow_print(int n, int verbose, char *
-    // check if there isn't a follow buffer
-    if (m_follow_buffer == NULL)
-    {
--      m_follow_buffer = new ostrstream();
-+      m_follow_buffer = new std::ostrstream();
-    }
++++ TailFile.cc	Sun Apr 23 23:04:29 2017
+@@ -17,7 +17,7 @@
+     Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ */
  
-    // make buffer
-@@ -417,6 +417,9 @@ void TailFile::follow_print(int n, int verbose, char *
+-#include <iostream.h>
++#include <iostream>
+ #include <string.h>
+ #include <stdio.h>
+ #include <sys/stat.h>
+@@ -25,6 +25,8 @@
+ 
+ #include "TailFile.h"
+ 
++using namespace std;
++
+ TailFile::TailFile()
+ {
+    m_filename = NULL;
+@@ -417,6 +419,9 @@ void TailFile::follow_print(int n, int verbose, char *
        int ch = fgetc(m_file);
  
        // add the character to the string

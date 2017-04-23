@@ -1,16 +1,17 @@
-# $OpenBSD: Makefile,v 1.12 2017/04/10 11:46:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2017/04/23 22:18:32 sthen Exp $
 
 COMMENT=		color-able replacement for tail(1)
 
 DISTNAME=		colortail-0.3.0
 CATEGORIES=		sysutils
-REVISION=		0
+REVISION=		1
 
-MASTER_SITES=           http://keyserver.kjsl.com/~jharris/distfiles/
+MASTER_SITES=		http://keyserver.kjsl.com/~jharris/distfiles/
 MAINTAINER=		Robert Nagy <robert@openbsd.org>
 
-# GPL
+# GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
+
 WANTLIB=		c m ${LIBCXX}
 
 CONFIGURE_STYLE=	gnu

@@ -1,16 +1,18 @@
-$OpenBSD: patch-CfgFileParser_cc,v 1.1.1.1 2004/02/26 00:30:05 naddy Exp $
---- CfgFileParser.cc.orig	2004-02-26 00:03:08.000000000 +0100
-+++ CfgFileParser.cc	2004-02-26 00:03:25.000000000 +0100
-@@ -20,10 +20,10 @@
+$OpenBSD: patch-CfgFileParser_cc,v 1.2 2017/04/23 22:18:32 sthen Exp $
+--- CfgFileParser.cc.orig	Tue Aug  3 20:40:44 1999
++++ CfgFileParser.cc	Sun Apr 23 23:04:48 2017
+@@ -20,11 +20,12 @@
  #include "CfgFileParser.h"
  
  #include <stdio.h>
 -#include <fstream.h>
-+#include <iostream.h>
++#include <iostream>
  #include <assert.h>
  #include <string.h>
 -#include <malloc.h>
 +#include <stdlib.h>
  
++using namespace std;
  
  // ## class SearchData ##
+ 
