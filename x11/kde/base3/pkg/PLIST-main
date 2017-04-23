@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.22 2016/01/06 09:48:59 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.23 2017/04/23 11:11:44 sthen Exp $
 @conflict kdeartwork-<=3.4
 @conflict kdeedu-<3.4
 @pkgpath x11/kde/base3
@@ -178,8 +178,6 @@ ${KDE}/djvuthumbnail.la
 ${KDE}/djvuthumbnail.so
 ${KDE}/dockbar_panelextension.la
 ${KDE}/dockbar_panelextension.so
-${KDE}/exrthumbnail.la
-${KDE}/exrthumbnail.so
 ${KDE}/extensionproxy.la
 ${KDE}/extensionproxy.so
 ${KDE}/fontthumbnail.la
@@ -3639,7 +3637,6 @@ share/services/bzip2.protocol
 share/services/cgi.protocol
 share/services/cursorthumbnail.desktop
 share/services/djvuthumbnail.desktop
-share/services/exrthumbnail.desktop
 share/services/finger.protocol
 share/services/fish.protocol
 share/services/floppy.protocol
