@@ -1,5 +1,0 @@
-@comment $OpenBSD: PFRAG.no-python3,v 1.1 2017/04/23 08:07:17 shadchin Exp $
-share/jupyter/kernels/python2/
-share/jupyter/kernels/python2/kernel.json
-share/jupyter/kernels/python2/logo-32x32.png
-share/jupyter/kernels/python2/logo-64x64.png
