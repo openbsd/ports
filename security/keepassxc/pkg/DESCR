@@ -1,0 +1,9 @@
+KeePassXC is a community fork of KeePassX, the cross-platform port of KeePass
+for Windows. Every feature works cross-platform and was thoroughly tested on
+multiple systems to provide users with the same look and feel on every
+supported operating system. This includes the beloved Auto-Type feature.
+
+The complete database is always encrypted with the industry-standard AES (alias
+Rijndael) encryption algorithm using a 256 bit key. KeePassXC uses a database
+format that is compatible with KeePass Password Safe. Your wallet works offline
+and requires no Internet connection.
