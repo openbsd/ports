@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.137 2017/04/23 09:19:10 shadchin Exp $
+# $OpenBSD: Makefile,v 1.138 2017/04/23 17:50:01 shadchin Exp $
 
      SUBDIR =
      SUBDIR += R
@@ -104,6 +104,8 @@
      SUBDIR += py-gnuplot
      SUBDIR += py-mpmath
      SUBDIR += py-mpmath,python3
+     SUBDIR += py-numexpr
+     SUBDIR += py-numexpr,python3
      SUBDIR += py-numpy
      SUBDIR += py-numpy,python3
      SUBDIR += py-patsy
