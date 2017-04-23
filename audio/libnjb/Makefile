@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2016/11/12 20:50:41 jca Exp $
+# $OpenBSD: Makefile,v 1.15 2017/04/23 21:09:39 rsadowski Exp $
 
 COMMENT=		communicate with some Creative and Dell audio players
 
 DISTNAME=		libnjb-2.2.7
-REVISION=		1
+REVISION=		2
 CATEGORIES=		audio devel
 
 SHARED_LIBS +=  njb                  0.0      # 6.1
@@ -17,12 +17,12 @@ WANTLIB += c curses pthread usb usb-1.0 z
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=libnjb/}
 
-BUILD_DEPENDS=		devel/doxygen
 LIB_DEPENDS=		devel/libusb-compat
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib" \
-			CPPFLAGS="-I${LOCALBASE}/include"
+			CPPFLAGS="-I${LOCALBASE}/include" \
+			HAVE_DOXYGEN="no"
 
 FAKE_FLAGS=		pkgdocdir=${PREFIX}/share/doc/libnjb
 
