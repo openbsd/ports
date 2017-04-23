@@ -1,10 +1,10 @@
-$OpenBSD: patch-Makefile_in,v 1.9 2015/05/10 08:01:58 ajacoutot Exp $
+$OpenBSD: patch-Makefile_in,v 1.10 2017/04/23 13:25:29 ajacoutot Exp $
 
 Don't gzip the man pages.
 
---- Makefile.in.orig	Sun Mar 29 10:27:32 2015
-+++ Makefile.in	Fri May  8 15:06:13 2015
-@@ -460,8 +460,8 @@ clean_docbook::
+--- Makefile.in.orig	Sat Mar 18 05:27:48 2017
++++ Makefile.in	Tue Apr 11 21:57:44 2017
+@@ -471,8 +471,8 @@ clean_docbook::
  install_man::
  	-mkdir -p $(DESTDIR)$(man1dir)
  	-mkdir -p $(DESTDIR)$(man5dir)

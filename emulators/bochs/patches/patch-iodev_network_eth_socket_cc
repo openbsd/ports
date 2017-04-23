@@ -1,0 +1,21 @@
+$OpenBSD: patch-iodev_network_eth_socket_cc,v 1.1 2017/04/23 13:25:29 ajacoutot Exp $
+--- iodev/network/eth_socket.cc.orig	Tue Apr 11 22:08:35 2017
++++ iodev/network/eth_socket.cc	Tue Apr 11 22:10:14 2017
+@@ -83,12 +83,14 @@ extern "C" {
+ #include <sys/types.h>
+ #include <sys/socket.h>
+ #include <sys/ioctl.h>
+-#include <netpacket/packet.h>
+ #include <netinet/in.h>
+-#include <net/ethernet.h>
+ #include <net/if.h>
+-#include <linux/types.h>
+ #include <netdb.h>
++#ifdef __linux__
++#include <netpacket/packet.h>
++#include <net/ethernet.h>
++#include <linux/types.h>
++#endif
+ #define closesocket(s) close(s)
+ typedef int SOCKET;
+ #ifndef INVALID_SOCKET
