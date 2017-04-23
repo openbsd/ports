@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2016/04/21 10:03:11 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.7 2017/04/23 09:15:28 shadchin Exp $
 bin/pybabel${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/Babel-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/Babel-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -269,6 +269,7 @@ lib/python${MODPY_VERSION}/site-packages/babel/locale-data/es.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/es_419.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/es_AR.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/es_BO.dat
+lib/python${MODPY_VERSION}/site-packages/babel/locale-data/es_BR.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/es_CL.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/es_CO.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/es_CR.dat
@@ -571,8 +572,11 @@ lib/python${MODPY_VERSION}/site-packages/babel/locale-data/ps_AF.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/pt.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/pt_AO.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/pt_BR.dat
+lib/python${MODPY_VERSION}/site-packages/babel/locale-data/pt_CH.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/pt_CV.dat
+lib/python${MODPY_VERSION}/site-packages/babel/locale-data/pt_GQ.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/pt_GW.dat
+lib/python${MODPY_VERSION}/site-packages/babel/locale-data/pt_LU.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/pt_MO.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/pt_MZ.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/pt_PT.dat
@@ -725,6 +729,8 @@ lib/python${MODPY_VERSION}/site-packages/babel/locale-data/yi_001.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/yo.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/yo_BJ.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/yo_NG.dat
+lib/python${MODPY_VERSION}/site-packages/babel/locale-data/yue.dat
+lib/python${MODPY_VERSION}/site-packages/babel/locale-data/yue_HK.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/zgh.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/zgh_MA.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/zh.dat
