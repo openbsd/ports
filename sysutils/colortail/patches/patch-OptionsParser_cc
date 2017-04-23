@@ -1,6 +1,6 @@
-$OpenBSD: patch-OptionsParser_cc,v 1.1.1.1 2004/02/26 00:30:05 naddy Exp $
---- OptionsParser.cc.orig	2004-01-11 16:15:24.000000000 -0500
-+++ OptionsParser.cc	2004-01-11 16:15:42.000000000 -0500
+$OpenBSD: patch-OptionsParser_cc,v 1.2 2017/04/23 22:02:48 sthen Exp $
+--- OptionsParser.cc.orig	Thu Aug  5 00:23:39 1999
++++ OptionsParser.cc	Sun Apr 23 23:00:29 2017
 @@ -18,7 +18,7 @@
  */
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-OptionsParser_cc,v 1.1.1.1 2004/02/26 00:30:05 naddy Exp $
  #include <string.h>
  #include <stdio.h>
  #include <stdlib.h>
-@@ -130,7 +130,7 @@
+@@ -130,7 +130,7 @@ Options* OptionsParser::parse(int argc, char **argv)
  	    int loop = 1;
  	    while (loop)
  	    {
