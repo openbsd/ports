@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2016/11/05 10:29:38 danj Exp $
+# $OpenBSD: Makefile,v 1.10 2017/04/23 23:11:49 juanfra Exp $
 
 COMMENT =		C-Extensions for Python
 
-MODPY_EGG_VERSION = 	0.25.1
+MODPY_EGG_VERSION = 	0.25.2
 DISTNAME =		Cython-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:L}
 
@@ -11,6 +11,8 @@ CATEGORIES =		lang
 HOMEPAGE =		http://www.cython.org/
 MASTER_SITES =		${HOMEPAGE}release/ \
 			${MASTER_SITE_PYPI:=C/Cython/}
+
+MAINTAINER =		Juan Francisco Cantero Hurtado <juanfra@openbsd.org>
 
 # Apache 2
 PERMIT_PACKAGE_CDROM =	Yes
