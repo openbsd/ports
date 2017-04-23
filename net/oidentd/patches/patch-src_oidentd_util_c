@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_oidentd_util_c,v 1.1 2017/04/23 19:57:39 jca Exp $
+--- src/oidentd_util.c.orig	Sun Apr 23 17:41:44 2017
++++ src/oidentd_util.c	Sun Apr 23 17:41:53 2017
+@@ -75,7 +75,7 @@ int random_seed(void) {
+ ** PRNG functions on systems whose libraries provide them.)
+ */
+ 
+-inline int randval(int i) {
++int randval(int i) {
+ 	/* Per _Numerical Recipes in C_: */
+ 	return ((double) i * rand() / (RAND_MAX+1.0));
+ }
