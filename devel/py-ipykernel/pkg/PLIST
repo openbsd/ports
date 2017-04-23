@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/12/13 14:49:47 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.3 2017/04/23 08:07:17 shadchin Exp $
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}ipykernel_launcher.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ipykernel/
 lib/python${MODPY_VERSION}/site-packages/ipykernel-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/ipykernel/__init__.py
@@ -102,6 +103,7 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ipykernel/tests/${MODPY
 lib/python${MODPY_VERSION}/site-packages/ipykernel/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ipykernel/tests/${MODPY_PYCACHE}test_connect.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ipykernel/tests/${MODPY_PYCACHE}test_embed_kernel.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ipykernel/tests/${MODPY_PYCACHE}test_io.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ipykernel/tests/${MODPY_PYCACHE}test_jsonutil.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ipykernel/tests/${MODPY_PYCACHE}test_kernel.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ipykernel/tests/${MODPY_PYCACHE}test_kernelspec.${MODPY_PYC_MAGIC_TAG}pyc
@@ -113,6 +115,7 @@ lib/python${MODPY_VERSION}/site-packages/ipykernel/tests/${MODPY_PYCACHE}test_zm
 lib/python${MODPY_VERSION}/site-packages/ipykernel/tests/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ipykernel/tests/test_connect.py
 lib/python${MODPY_VERSION}/site-packages/ipykernel/tests/test_embed_kernel.py
+lib/python${MODPY_VERSION}/site-packages/ipykernel/tests/test_io.py
 lib/python${MODPY_VERSION}/site-packages/ipykernel/tests/test_jsonutil.py
 lib/python${MODPY_VERSION}/site-packages/ipykernel/tests/test_kernel.py
 lib/python${MODPY_VERSION}/site-packages/ipykernel/tests/test_kernelspec.py
@@ -123,3 +126,8 @@ lib/python${MODPY_VERSION}/site-packages/ipykernel/tests/test_start_kernel.py
 lib/python${MODPY_VERSION}/site-packages/ipykernel/tests/test_zmq_shell.py
 lib/python${MODPY_VERSION}/site-packages/ipykernel/tests/utils.py
 lib/python${MODPY_VERSION}/site-packages/ipykernel/zmqshell.py
+lib/python${MODPY_VERSION}/site-packages/ipykernel_launcher.py
+share/jupyter/
+share/jupyter/kernels/
+%%python3%%
+!%%python3%%
