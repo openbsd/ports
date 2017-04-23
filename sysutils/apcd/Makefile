@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 11:41:29 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2017/04/23 22:24:30 sthen Exp $
 
 COMMENT=		APC SmartUPS daemon
 
@@ -13,6 +13,7 @@ MAINTAINER=		Marcus Glocker <marcus@nazgul.ch>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
+
 WANTLIB=		c curses
 
 NO_TEST=		Yes
