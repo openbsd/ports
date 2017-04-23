@@ -1,7 +1,29 @@
-$OpenBSD: patch-xwit_c,v 1.1.1.1 2001/01/25 17:03:05 naddy Exp $
+$OpenBSD: patch-xwit_c,v 1.2 2017/04/23 16:14:35 espie Exp $
 --- xwit.c.orig	Tue Oct 21 03:32:54 1997
-+++ xwit.c	Mon Jan 22 22:21:10 2001
-@@ -134,7 +134,7 @@ int ms;
++++ xwit.c	Sun Apr 23 18:07:19 2017
+@@ -30,10 +30,13 @@
+ #include <X11/Xlib.h>
+ #include <X11/Xutil.h>
+ #include <X11/Xproto.h>
++#include <X11/Xmu/WinUtil.h>
+ #include <stdio.h>
++#include <stdlib.h>
+ #include <sys/time.h>
+ #include "dsimple.h"
+ 
+ /* note: called by dsimple.c code, must be global */
++void
+ usage()
+ {
+@@ -127,20 +130,20 @@ static void doit();
+ /*
+  * sleep for given millisecs for those without usleep
+  */
+-static
++static void
+ mssleep(ms)
+ int ms;
+ {
      struct timeval tv;
      tv.tv_sec = ms/1000;
      tv.tv_usec = (ms%1000)*1000;
@@ -10,3 +32,108 @@ $OpenBSD: patch-xwit_c,v 1.1.1.1 2001/01/25 17:03:05 naddy Exp $
  }
  
  /*
+  * find all windows below this and if name matches call doit on it
+  */
+-static
++static void
+ downtree(top)
+ Window top;
+ {
+@@ -164,7 +167,7 @@ Window top;
+ /*
+  * [un]set autorepeat for individual keys
+  */
+-static
++static void
+ setrepeat()
+ {
+     unsigned long value_mask;
+@@ -186,7 +189,7 @@ setrepeat()
+  * get window position, compensating for decorations
+  * (based on xwininfo.c)
+  */
+-static
++static void
+ getpos(window, xp, yp)
+ 	Window window;
+ 	int *xp, *yp;
+@@ -209,7 +212,7 @@ getpos(window, xp, yp)
+ /*
+  * get window size
+  */
+-static
++static void
+ getsize(window, wp, hp)
+ 	Window window;
+ 	int *wp, *hp;
+@@ -226,7 +229,7 @@ getsize(window, wp, hp)
+ /*
+  * set window position
+  */
+-static
++static void
+ domove(window, x, y, right, bottom)
+ 	Window window;
+ 	int x, y;
+@@ -299,7 +302,7 @@ domove(window, x, y, right, bottom)
+ /*
+  * set window size
+  */
+-static
++static void
+ doresize(window, w, h)
+     Window window;
+     int w, h;
+@@ -343,7 +346,7 @@ doresize(window, w, h)
+ /*
+  * set row/column size
+  */
+-static
++static void
+ rcresize(what, window)
+     enum functions what;
+     Window window;
+@@ -375,7 +378,7 @@ rcresize(what, window)
+     XFree(hints);
+ }
+ 
+-static
++static void
+ loadbitmap(window, file, pmp)
+ 	Window window;
+ 	char *file;
+@@ -389,7 +392,7 @@ loadbitmap(window, file, pmp)
+ 		Fatal_Error("XReadBitmapFile failed");
+ }
+ 
+-static
++static void
+ setbitmap(window)
+ 	Window window;
+ {
+@@ -418,7 +421,7 @@ setbitmap(window)
+ 		XSetCloseDownMode(dpy, RetainTemporary);
+ 	}
+ 
+-	if (ohints = XGetWMHints(dpy, window)) {
++	if ((ohints = XGetWMHints(dpy, window))) {
+ 		if (ohints->icon_pixmap && hints->icon_pixmap)
+ 			XFreePixmap(dpy, ohints->icon_pixmap);
+ 		if (ohints->icon_mask && hints->icon_mask)
+@@ -429,7 +432,7 @@ setbitmap(window)
+ 	XSetWMHints(dpy, window, hints);
+ }
+ 
+-static
++static void
+ setwinattr(window)
+ 	Window window;
+ {
+@@ -709,6 +712,7 @@ matchopt(key, nargs, argc, argv)
+ 	return match;
+ }
+ 
++int
+ main(argc, argv)
+ 	int argc;
+ 	char **argv;

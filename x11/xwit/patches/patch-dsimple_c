@@ -1,0 +1,84 @@
+$OpenBSD: patch-dsimple_c,v 1.1 2017/04/23 16:14:35 espie Exp $
+--- dsimple.c.orig	Sun Apr 23 18:07:35 2017
++++ dsimple.c	Sun Apr 23 18:12:08 2017
+@@ -5,6 +5,8 @@
+ #include <X11/Xutil.h>
+ #include <X11/cursorfont.h>
+ #include <stdio.h>
++#include <stdlib.h>
++#include <stdarg.h>
+ /*
+  * Other_stuff.h: Definitions of routines in other_stuff.
+  *
+@@ -17,9 +19,11 @@ unsigned long Resolve_Color();
+ Pixmap Bitmap_To_Pixmap();
+ Window Select_Window();
+ void out();
++void outl(char *msg, ...);
+ void blip();
+ Window Window_With_Name();
+-void Fatal_Error();
++void Fatal_Error(char *msg, ...);
++extern void usage(void);
+ 
+ /*
+  * Just_display: A group of routines designed to make the writting of simple
+@@ -46,7 +50,7 @@ extern int screen;
+ char *Malloc(size)
+      unsigned size;
+ {
+-	char *data, *malloc();
++	char *data;
+ 
+ 	if (!(data = malloc(size)))
+ 	  Fatal_Error("Out of memory!");
+@@ -62,7 +66,7 @@ char *Realloc(ptr, size)
+         char *ptr;
+         int size;
+ {
+-	char *new_ptr, *realloc();
++	char *new_ptr;
+ 
+ 	if (!ptr)
+ 	  return(Malloc(size));
+@@ -472,13 +476,14 @@ Window Window_With_Name(dpy, top, name)
+  *       in code so we can tell where we are.  Outl may be invoked like
+  *       printf with up to 7 arguments.
+  */
+-/* VARARGS1 */
+-outl(msg, arg0,arg1,arg2,arg3,arg4,arg5,arg6)
+-     char *msg;
+-     char *arg0, *arg1, *arg2, *arg3, *arg4, *arg5, *arg6;
++void
++outl(char *msg, ...)
+ {
+ 	fflush(stdout);
+-	fprintf(stderr, msg, arg0, arg1, arg2, arg3, arg4, arg5, arg6);
++	va_list ap;
++	va_start(ap, msg);
++	vfprintf(stderr, msg, ap);
++	va_end(ap);
+ 	fprintf(stderr, "\n");
+ 	fflush(stderr);
+ }
+@@ -488,15 +493,15 @@ outl(msg, arg0,arg1,arg2,arg3,arg4,arg5,arg6)
+  * Standard fatal error routine - call like printf but maximum of 7 arguments.
+  * Does not require dpy or screen defined.
+  */
+-/* VARARGS1 */
+-void Fatal_Error(msg, arg0,arg1,arg2,arg3,arg4,arg5,arg6)
+-char *msg;
+-char *arg0, *arg1, *arg2, *arg3, *arg4, *arg5, *arg6;
++void Fatal_Error(char *msg, ...)
+ {
+ 	fflush(stdout);
+ 	fflush(stderr);
+ 	fprintf(stderr, "%s: error: ", program_name);
+-	fprintf(stderr, msg, arg0, arg1, arg2, arg3, arg4, arg5, arg6);
++	va_list ap;
++	va_start(ap, msg);
++	vfprintf(stderr, msg, ap);
++	va_end(ap);
+ 	fprintf(stderr, "\n");
+ 	exit(2);
+ }
