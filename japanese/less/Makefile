@@ -1,30 +1,31 @@
-# $OpenBSD: Makefile,v 1.25 2014/11/27 12:26:49 naddy Exp $
+# $OpenBSD: Makefile,v 1.26 2017/04/23 09:18:21 yasuoka Exp $
 
-COMMENT=	less + zcat + ISO-2022 - a pager similar to more and pg
+COMMENT=	enhanced less with iso-2022-jp and UTF-8 encodings support
 
-DISTNAME=	less-332
-PKGNAME=	ja-less-3.32pl2.48
-REVISION=	0
+V=		382.262.03.b.01
+
+GH_ACCOUNT=	hrs-allbsd
+GH_PROJECT=	less
+GH_TAGNAME=	v${V}
+
+PKGNAME=	ja-less-${V}
 CATEGORIES=	japanese
-MASTER_SITES=	${MASTER_SITE_GNU:=less/}
-HOMEPAGE=	http://www.pobox.com/~jam/less/
+HOMEPAGE=	http://web.archive.org/web/20070220213232/http://www25.big.or.jp/~jam/less
 
-MASTER_SITES0=	ftp://ftp.big.or.jp/pub/usr2/jam/less/
-PATCHFILES=	less-332-iso242.patch.gz:0 \
-		less-332-iso242-243.patch.gz:0 \
-		less-332-iso243-244.patch.gz:0 \
-		less-332-iso244-245.patch.gz:0 \
-		less-332-iso245-247.patch.gz:0 \
-		less-332-iso247-248.patch.gz:0
-
-PATCH_DIST_STRIP=	-p1
-
-MAINTAINER=Marc Espie <espie@openbsd.org>
+MAINTAINER =	YASUOKA Masahiko <yasuoka@yasuoka.net>
 
 #		BSD
 PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=		c ncurses
 
 CONFIGURE_STYLE=	gnu dest
+
+DOCS=		README.iso README.iso.jp README.ext.jp
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ja-less
+.for _f in ${DOCS}
+	${INSTALL_DATA} ${WRKSRC}/${_f} ${PREFIX}/share/doc/ja-less
+.endfor
 
 .include <bsd.port.mk>
