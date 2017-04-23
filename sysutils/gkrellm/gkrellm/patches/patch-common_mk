@@ -1,0 +1,21 @@
+$OpenBSD: patch-common_mk,v 1.1 2017/04/23 13:48:29 sthen Exp $
+--- common.mk.orig	Wed Feb  1 23:35:29 2017
++++ common.mk	Wed Feb  1 23:36:26 2017
+@@ -18,7 +18,7 @@ export CC
+ export PKG_CONFIG
+ 
+ PREFIX ?= /usr/local
+-INSTALLROOT ?= $(DESTDIR)$(PREFIX)
++INSTALLROOT ?= $(PREFIX)
+ 
+ BINMODE ?= 755
+ BINEXT ?=
+@@ -37,7 +37,7 @@ MANDIRMODE ?= 755
+ 
+ INSTALL ?= install
+ STRIP ?= -s
+-LINK_FLAGS ?= -Wl,-E
++LINK_FLAGS ?= -Wl
+ 
+ SHARED_PATH = ../shared
+ # Make GNU Make search for sources somewhere else as well

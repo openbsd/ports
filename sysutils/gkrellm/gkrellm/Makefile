@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.72 2016/03/16 16:53:50 naddy Exp $
+# $OpenBSD: Makefile,v 1.73 2017/04/23 13:48:29 sthen Exp $
 
 COMMENT-main=	single process stack of system monitors for GTK+2 (server)
 COMMENT-client=	single process stack of system monitors for GTK+2
 
-V=		2.3.5
+V=		2.3.10
 DISTNAME=	gkrellm-${V}
 PKGNAME-main=	gkrellm-server-${V}
 PKGNAME-client=	gkrellm-${V}
-REVISION-main=	8
-REVISION-client=4
 CATEGORIES=	sysutils
 
 HOMEPAGE=	http://www.gkrellm.net/
@@ -16,7 +14,7 @@ HOMEPAGE=	http://www.gkrellm.net/
 # GPLv3 with OpenSSL license exception
 PERMIT_PACKAGE_CDROM=   Yes
 
-MASTER_SITES=	http://members.dslextreme.com/users/billw/gkrellm/
+MASTER_SITES=	http://gkrellm.srcbox.net/releases/
 EXTRACT_SUFX=	.tar.bz2
 
 PSEUDO_FLAVORS=	no_client
@@ -49,6 +47,7 @@ ALL_TARGET=	openbsd
 INSTALL_TARGET=	install_openbsd
 
 MAKE_ENV+=	without_gnutls=yes
+MAKE_FLAGS+=	CC="${CC}"
 
 # not all powerpc support apm(4), hence the use of ${MACHINE} and macppc
 # (patches/patch-src_sysdeps_openbsd_c)

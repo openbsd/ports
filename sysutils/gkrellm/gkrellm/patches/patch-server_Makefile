@@ -1,58 +1,37 @@
-$OpenBSD: patch-server_Makefile,v 1.11 2013/03/17 09:47:07 ajacoutot Exp $
---- server/Makefile.orig	Sat Oct  2 18:21:01 2010
-+++ server/Makefile	Sun Mar 17 10:40:23 2013
-@@ -3,12 +3,9 @@ PKG_CONFIG ?= pkg-config
- BINMODE ?= 755
- BINEXT ?=
+$OpenBSD: patch-server_Makefile,v 1.12 2017/04/23 13:48:29 sthen Exp $
+--- server/Makefile.orig	Wed Feb  1 23:33:24 2017
++++ server/Makefile	Wed Feb  1 23:38:27 2017
+@@ -2,13 +2,13 @@ include ../common.mk
  
--INSTALLROOT ?= $(DESTDIR)$(PREFIX)
--ifeq ($(INSTALLROOT),)
--	INSTALLROOT = /usr/local
--endif
-+INSTALLROOT ?= $(PREFIX)
+ PACKAGE_D ?= gkrellmd
  
 -SINSTALLDIR ?= $(INSTALLROOT)/bin
 +SINSTALLDIR ?= $(INSTALLROOT)/sbin
- INSTALLDIRMODE ?= 755
  
- INCLUDEDIR ?= $(INSTALLROOT)/include
-@@ -22,11 +19,11 @@ CFGDIR ?= $(INSTALLROOT)/etc
+ CFGDIR ?= $(INSTALLROOT)/etc
  CFGDIRMODE ?= 755
  CFGMODE ?= 644
  
 -SMANDIR ?= $(INSTALLROOT)/share/man/man1
 +SMANDIR ?= $(INSTALLROOT)/man/man1
- MANMODE ?= 644
- MANDIRMODE ?= 755
- INSTALL ?= install
--LINK_FLAGS ?= -Wl,-E
-+LINK_FLAGS ?= -Wl
+ 
  EXTRAOBJS =
  
- SHARED_PATH = ../shared
-@@ -60,13 +57,13 @@ PKG_LIB = `$(PKG_CONFIG) --libs glib-2.0 gmodule-2.0 g
- GLIB12_INCLUDE = `glib-config --cflags`
- GLIB12_LIB = `glib-config --libs glib gmodule`
+@@ -31,7 +31,7 @@ GKRELLMD_INCLUDES = gkrellmd.h $(SHARED_PATH)/log.h
+ PKG_INCLUDE := $(shell $(PKG_CONFIG) --cflags glib-2.0 gmodule-2.0 gthread-2.0)
+ PKG_LIB := $(shell $(PKG_CONFIG) --libs glib-2.0 gmodule-2.0 gthread-2.0)
  
 -FLAGS = -O2 $(PKG_INCLUDE)
 +FLAGS = $(PKG_INCLUDE)
  
- ifeq ($(glib12),1)
--    FLAGS = -O2 $(GLIB12_INCLUDE)
-+    FLAGS = $(GLIB12_INCLUDE)
- endif
- ifeq ($(glib12),yes)
--    FLAGS = -O2  $(GLIB12_INCLUDE)
-+    FLAGS = $(GLIB12_INCLUDE)
- endif
  FLAGS += $(GTOP_INCLUDE) $(PTHREAD_INC) -I.. -I$(SHARED_PATH) -DGKRELLM_SERVER
  
-@@ -107,6 +104,8 @@ endif
+@@ -66,6 +66,8 @@ endif
  ifeq ($(HAVE_GETADDRINFO),1)
      FLAGS += -DHAVE_GETADDRINFO
  endif
 +
 +CFLAGS += $(FLAGS)
  
- OS_NAME=$(shell uname -s)
  OS_RELEASE=$(shell uname -r)
+ 

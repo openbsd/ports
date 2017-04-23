@@ -1,6 +1,6 @@
-$OpenBSD: patch-server_main_c,v 1.1 2010/10/17 14:20:53 sthen Exp $
---- server/main.c.orig	Sun Oct 17 14:46:45 2010
-+++ server/main.c	Sun Oct 17 14:48:58 2010
+$OpenBSD: patch-server_main_c,v 1.2 2017/04/23 13:48:29 sthen Exp $
+--- server/main.c.orig	Wed Feb  1 23:40:47 2017
++++ server/main.c	Wed Feb  1 23:42:00 2017
 @@ -177,15 +177,15 @@ static void gkrellmd_syslog_log(GLogLevelFlags log_lev
  	int facility_priority;
  
@@ -20,5 +20,5 @@ $OpenBSD: patch-server_main_c,v 1.1 2010/10/17 14:20:53 sthen Exp $
 -		facility_priority = LOG_MAKEPRI(LOG_DAEMON, LOG_CRIT);
 +		facility_priority = (LOG_DAEMON | LOG_CRIT);
  
- 	syslog(facility_priority, message);
+ 	syslog(facility_priority, "%s", message);
  #endif // defined(WIN32)

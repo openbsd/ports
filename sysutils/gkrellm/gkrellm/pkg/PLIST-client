@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-client,v 1.8 2010/01/05 12:40:36 ajacoutot Exp $
+@comment $OpenBSD: PLIST-client,v 1.9 2017/04/23 13:48:29 sthen Exp $
 @mode 2755
 @group kmem
 @bin bin/gkrellm
@@ -20,7 +20,9 @@ share/locale/it/LC_MESSAGES/gkrellm.mo
 share/locale/ja/LC_MESSAGES/gkrellm.mo
 share/locale/nl/LC_MESSAGES/gkrellm.mo
 share/locale/pl/LC_MESSAGES/gkrellm.mo
+share/locale/pt/LC_MESSAGES/gkrellm.mo
 share/locale/pt_BR/LC_MESSAGES/gkrellm.mo
 share/locale/ru/LC_MESSAGES/gkrellm.mo
 share/locale/sl/LC_MESSAGES/gkrellm.mo
 share/locale/sv/LC_MESSAGES/gkrellm.mo
+share/locale/uk/LC_MESSAGES/gkrellm.mo
