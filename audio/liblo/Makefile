@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2015/06/09 11:55:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2017/04/23 21:11:53 rsadowski Exp $
 
 COMMENT =		leightweight open sound control (OSC) implementation
 DISTNAME =		liblo-0.28
@@ -13,7 +13,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =		c m pthread
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=liblo/}
-BUILD_DEPENDS =		devel/doxygen
 CONFIGURE_STYLE =	gnu
+CONFIGURE_ENV=		ac_cv_prog_DOXYGEN=""
 
 .include <bsd.port.mk>
