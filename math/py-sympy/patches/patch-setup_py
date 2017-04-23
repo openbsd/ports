@@ -1,10 +1,10 @@
-$OpenBSD: patch-setup_py,v 1.4 2015/09/18 07:36:46 benoit Exp $
+$OpenBSD: patch-setup_py,v 1.5 2017/04/23 09:17:16 shadchin Exp $
 
-Manual path
+Manual patch
 
---- setup.py	Thu Sep  3 22:34:00 2015
-+++ setup.py	Thu Sep 17 18:04:42 2015
-@@ -317,7 +317,7 @@
+--- setup.py.orig	Tue Mar  8 23:38:39 2016
++++ setup.py	Fri Dec 16 05:59:25 2016
+@@ -335,7 +335,7 @@ setup(name='sympy',
            'sympy.utilities.mathml': ['data/*.xsl'],
            'sympy.logic.benchmarks': ['input/*.cnf'],
            },
