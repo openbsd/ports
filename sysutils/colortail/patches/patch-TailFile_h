@@ -1,6 +1,6 @@
-$OpenBSD: patch-TailFile_h,v 1.1.1.1 2004/02/26 00:30:05 naddy Exp $
---- TailFile.h.orig	2004-01-11 16:15:51.000000000 -0500
-+++ TailFile.h	2004-01-11 16:15:55.000000000 -0500
+$OpenBSD: patch-TailFile_h,v 1.2 2017/04/23 22:02:29 sthen Exp $
+--- TailFile.h.orig	Tue Aug  3 20:42:33 1999
++++ TailFile.h	Sun Apr 23 23:00:29 2017
 @@ -23,7 +23,8 @@
  #include "Colorizer.h"
  
@@ -11,7 +11,7 @@ $OpenBSD: patch-TailFile_h,v 1.1.1.1 2004/02/26 00:30:05 naddy Exp $
  
  #define MAX_CHARS_READ 1024
  
-@@ -40,7 +41,7 @@
+@@ -40,7 +41,7 @@ class TailFile
     // the stream position
     long m_position;
     // the follow buffer, used in follow_print

@@ -1,7 +1,7 @@
-$OpenBSD: patch-TailFile_cc,v 1.1.1.1 2004/02/26 00:30:05 naddy Exp $
---- TailFile.cc.orig	2004-01-11 16:19:14.000000000 -0500
-+++ TailFile.cc	2004-01-11 16:20:33.000000000 -0500
-@@ -375,7 +375,7 @@
+$OpenBSD: patch-TailFile_cc,v 1.2 2017/04/23 22:02:29 sthen Exp $
+--- TailFile.cc.orig	Thu Aug  5 00:09:38 1999
++++ TailFile.cc	Sun Apr 23 23:00:29 2017
+@@ -375,7 +375,7 @@ void TailFile::follow_print(int n, int verbose, char *
     // check if there isn't a follow buffer
     if (m_follow_buffer == NULL)
     {
@@ -10,7 +10,7 @@ $OpenBSD: patch-TailFile_cc,v 1.1.1.1 2004/02/26 00:30:05 naddy Exp $
     }
  
     // make buffer
-@@ -417,6 +417,9 @@
+@@ -417,6 +417,9 @@ void TailFile::follow_print(int n, int verbose, char *
        int ch = fgetc(m_file);
  
        // add the character to the string

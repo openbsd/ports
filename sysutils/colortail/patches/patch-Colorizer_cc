@@ -1,6 +1,6 @@
-$OpenBSD: patch-Colorizer_cc,v 1.1.1.1 2004/02/26 00:30:05 naddy Exp $
---- Colorizer.cc.orig	2004-01-11 16:15:16.000000000 -0500
-+++ Colorizer.cc	2004-01-11 16:15:46.000000000 -0500
+$OpenBSD: patch-Colorizer_cc,v 1.2 2017/04/23 22:02:29 sthen Exp $
+--- Colorizer.cc.orig	Tue Aug  3 20:41:17 1999
++++ Colorizer.cc	Sun Apr 23 23:00:29 2017
 @@ -23,7 +23,7 @@
  
  #include <assert.h>
@@ -10,7 +10,7 @@ $OpenBSD: patch-Colorizer_cc,v 1.1.1.1 2004/02/26 00:30:05 naddy Exp $
  
  
  Colorizer::Colorizer()
-@@ -111,7 +111,7 @@
+@@ -111,7 +111,7 @@ char* Colorizer::colorize(char *str)
     ListIterator<SearchData*> itr(*m_items_list);
  
     // will contain the new string
@@ -19,7 +19,7 @@ $OpenBSD: patch-Colorizer_cc,v 1.1.1.1 2004/02/26 00:30:05 naddy Exp $
     
     SearchData *current;
     int i = 0;
-@@ -172,7 +172,7 @@
+@@ -172,7 +172,7 @@ char* Colorizer::colorize(char *str)
  	    }
  
  	    // write ansi reset str and a newline
@@ -28,7 +28,7 @@ $OpenBSD: patch-Colorizer_cc,v 1.1.1.1 2004/02/26 00:30:05 naddy Exp $
  	    // return the new string
  	    return newstr.str();
  	 }
-@@ -187,12 +187,12 @@
+@@ -187,12 +187,12 @@ char* Colorizer::colorize(char *str)
        // check if str ends in '\n'
        if (str[strlen(str)] == '\n')
        {
@@ -43,7 +43,7 @@ $OpenBSD: patch-Colorizer_cc,v 1.1.1.1 2004/02/26 00:30:05 naddy Exp $
        }
  
        // return the new string
-@@ -240,7 +240,7 @@
+@@ -240,7 +240,7 @@ char* Colorizer::colorize(char *str)
        
        // write newline and null
        //newstr << endl << ends;
