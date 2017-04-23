@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.148 2017/04/10 11:46:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.149 2017/04/23 10:57:17 sthen Exp $
 
 COMMENT-main =		K Desktop Environment, basic applications
 COMMENT-samba =		K Desktop Environment, samba support
@@ -13,7 +13,7 @@ PKGNAME-en_US =		kde3-locale-en_US-${VERSION}
 PKGNAME-locale =	kde3-locale-${VERSION}
 PKG_ARCH-en_US =	*
 PKG_ARCH-locale =	*
-REVISION-main =		45
+REVISION-main =		46
 REVISION-samba =	23
 REVISION-en_US =	4
 REVISION-locale =	3
@@ -71,8 +71,7 @@ WANTLIB += ${KDE}/DCOP ${KDE}/kdecore>=6 ${KDE}/kdefx ${KDE}/kdesu
 WANTLIB += ${KDE}/kdeui ${KDE}/kio ${KDE}/kwalletclient
 WANTLIB += art_lgpl_2 fam idn2 lber-2.4 ldap-2.4 png sasl2
 
-WANTLIB-main =  ${WANTLIB} c sndio IexMath
-WANTLIB-main += GL GLU Half Iex IlmImf IlmThread Imath Xau Xcomposite
+WANTLIB-main =  ${WANTLIB} c sndio GL GLU Xau Xcomposite
 WANTLIB-main += Xcursor Xdamage Xdmcp Xfixes Xft Xi Xinerama Xmu
 WANTLIB-main += Xrandr Xss Xtst Xxf86misc Xxf86vm X11-xcb drm
 WANTLIB-main += glapi xcb-dri2 xcb-glx xkbfile
