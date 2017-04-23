@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.26 2016/03/18 17:40:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.27 2017/04/23 17:15:16 espie Exp $
 
 COMMENT=	slide rule component of X11R3's xcalc
 
 DISTNAME=	sliderule
 PKGNAME=	sliderule-1.0
-REVISION=	2
+REVISION=	3
 CATEGORIES=	x11
 
 PERMIT_PACKAGE_CDROM=	no license

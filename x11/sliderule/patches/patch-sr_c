@@ -1,7 +1,13 @@
-$OpenBSD: patch-sr_c,v 1.1 2016/03/18 17:40:09 naddy Exp $
+$OpenBSD: patch-sr_c,v 1.2 2017/04/23 17:15:16 espie Exp $
 --- sr.c.orig	Mon Aug  4 12:17:37 1997
-+++ sr.c	Fri Mar 18 18:33:47 2016
-@@ -9,6 +9,7 @@ static char *rcsid_sr_c = "$XConsortium: sr.c,v 1.10 8
++++ sr.c	Sun Apr 23 19:10:38 2017
+@@ -4,11 +4,12 @@
+ 
+ #ifndef lint
+ static char *rcsid_sr_c = "$XConsortium: sr.c,v 1.10 88/10/22 10:37:58 jim Exp $";
+-#endif	lint
++#endif	/* lint */
+ 
  /* Slide Rule */
  
  #include <stdio.h>
@@ -20,7 +26,51 @@ $OpenBSD: patch-sr_c,v 1.1 2016/03/18 17:40:09 naddy Exp $
  extern Cursor	arrow;
  GC	sgc, cgc;
  int	height,scalelen,width,fheight,foffset;
-@@ -332,11 +333,11 @@ int	w;
+@@ -63,9 +64,27 @@ extern int ForeColor,BackColor,InvColor;
+ double logtenoftwo;
+ extern short check_bits[];
+ 
++void do_sr(int, char **, char *, int);
++void rescale(int);
++void redrawframe(int, int, int, int);
++void drawslide(void);
++void redrawslide(int, int, int, int);
++void drawhairl(void);
++void drawnums(void);
++void dotenths(Window, int, int, int, int, char *, int, double, double);
++void dotriangular(Window, int, int, int, int, double (*)());
++void doscale(Window, int, int, int, int);
++void drawframe(void);
++void drawmark(Window, int, int, int, int);
++void dolabel(Window, int, int, char *, int, int);
+ 
+ 
++extern void set_sizehint(XSizeHints *, int, int, char *);
++
++
++
+ /**************/
++void
+ do_sr(argc, argv, geom, border)
+ /**************/
+ char	**argv;
+@@ -302,13 +321,14 @@ int	border;
+ 		exit(0);
+ 	    break;
+         default:
+-           printf("event type=%ld\n",event.type); 
++           printf("event type=%ld\n", (long)event.type); 
+ 
+         }  /* end of switch */
+     }  /* end main loop */
+ }
+ 
+ 
++void
+ rescale(w)
+ int	w;
+ {
+@@ -332,17 +352,18 @@ int	w;
      XResizeWindow(dpy, blackwid, width, SLIDEHIGH+2);
      if (framePix)
        XFreePixmap(dpy, framePix);
@@ -34,7 +84,29 @@ $OpenBSD: patch-sr_c,v 1.1 2016/03/18 17:40:09 naddy Exp $
      drawslide();
      XMoveWindow(dpy, slidewid, xo, SLIDETOP);
      drawnums();
-@@ -369,7 +370,7 @@ drawframe()
+     drawhairl();
+ }
+ 
++void
+ drawmark(win, x, y, height, topp)
+ Window	win;
+ int	x,y,height,topp;
+@@ -351,6 +372,7 @@ int	x,y,height,topp;
+ 	      x, height + (topp?y:y+MAJORH-height));
+ }
+ 
++void
+ dolabel(win, x, y, str, topp, majorp)
+ Window	win;
+ int	x,y;
+@@ -363,19 +385,20 @@ int	topp,majorp;
+ }
+ 
+ 
++void
+ drawframe()
+ {
+     int		i,x,j,xx;
      char	str[5];
      int midpt = scalelen/2;
  
@@ -43,7 +115,122 @@ $OpenBSD: patch-sr_c,v 1.1 2016/03/18 17:40:09 naddy Exp $
        framePix = XCreatePixmap (dpy, theWindow, width, HEIGHT, 
  				DefaultDepth (dpy, DefaultScreen (dpy)));
      XFillRectangle(dpy, framePix, cgc, 0, 0, width, HEIGHT);
-@@ -546,7 +547,7 @@ drawslide()
+     XDrawString(dpy, framePix, sgc, LABEL, LSCALEH+foffset, "L", 1);
+     for (i = 0; i <= 10; i++) {
+-	sprintf(str, ".%d", i == 10? 0: i);
++	snprintf(str, sizeof str, ".%d", i == 10? 0: i);
+ 	x = START+(i*scalelen)/10;
+ 	dolabel(framePix, x, LSCALEH, str, 0, 2);
+ 	drawmark(framePix, x, LSCALEH, MAJORH, 0);
+@@ -392,7 +415,7 @@ drawframe()
+     XDrawString(dpy, framePix, sgc, LABEL, DISCALEH+foffset, "DI", 2);
+     for (i = 1; i <= 10; i++) {
+ 	x = START + scalelen * (1 - log10((float) i)) + 0.5;
+-	sprintf(str, "%d", (i==10?1:i));
++	snprintf(str, sizeof str, "%d", (i==10?1:i));
+ 	dolabel(framePix, x, DISCALEH, str, 1, 1);
+ 	drawmark(framePix, x, DISCALEH, MAJORH, 1);
+     }
+@@ -403,6 +426,7 @@ drawframe()
+     XCopyArea(dpy, framePix, theWindow, sgc, 0, 0, scalelen + START+END, HEIGHT, 0, 0);
+ }
+ 
++void
+ doscale(win, high, offset, len, topp)
+      Window	win;
+      int	high, offset, len, topp;
+@@ -417,19 +441,20 @@ doscale(win, high, offset, len, topp)
+ 
+   for (i = 1; i < 10; i++) {
+       if (xs[i] > xs[i-1] + LABELSPACE) {
+-	  sprintf(str, "%d", (i==10?1:i));
++	  snprintf(str, sizeof str, "%d", (i==10?1:i));
+ 	  dolabel(win, xs[i], high, str, topp, 1);
+ 	  drawmark(win, xs[i], high, MAJORH, topp);
+       } else
+ 	drawmark(win, xs[i], high, MIDDH, topp);
+ 
+-      sprintf(str, "%d.", i);
++      snprintf(str, sizeof str, "%d.", i);
+       dotenths(win, high, offset, len, xs[i+1]-xs[i], str, topp, (double)i, 0.1);
+   }
+   dolabel(win, xs[i], high, "1", topp, 1);
+   drawmark(win, xs[i], high, MAJORH, topp);
+ }
+ 
++void
+ dotriangular(win, high, offset, len, topp, fun)
+ Window	win;
+ int	high, offset, len, topp;
+@@ -445,7 +470,7 @@ double	(*fun)();
+ 	drawmark(win, xs, high,
+ 		 (i % 10 == 0? MAJORH: (i % 5 == 0? MIDDH: MINORH)), topp);
+ 	if (i % 10 == 0) {
+-	    sprintf(buf, "%1.0f", d);
++	    snprintf(buf, sizeof buf, "%1.0f", d);
+ 	    dolabel(win, xs, high, buf, MAJORH, topp);
+ 	}
+     }
+@@ -453,7 +478,7 @@ double	(*fun)();
+ 	xs = offset + len * log10(10 * fun(d / 90.0 * M_PI_2)) + 0.5;
+ 	drawmark(win, xs, high, (i % 5 == 0? MIDDH: MINORH), topp);
+ 	if (i % 5 == 0) {
+-	    sprintf(buf, "%1.0f", d);
++	    snprintf(buf, sizeof buf, "%1.0f", d);
+ 	    dolabel(win, xs, high, buf, MAJORH, topp);
+ 	}
+     }
+@@ -465,7 +490,7 @@ double	(*fun)();
+ 	drawmark(win, xs, high,
+ 		 (i % 10 == 0? MAJORH: (i % 5 == 0? MIDDH: MINORH)), topp);
+ 	if (i % 10 == 0 || val > 0.9999) {
+-	    sprintf(buf, "%1.0f", d);
++	    snprintf(buf, sizeof buf, "%1.0f", d);
+ 	    dolabel(win, xs, high, buf, MAJORH, topp);
+ 	}
+     }
+@@ -476,13 +501,14 @@ double	(*fun)();
+ 	xs = offset + len * val + 0.5;
+ 	drawmark(win, xs, high, (i % 2 == 0? MAJORH: MIDDH), topp);
+ 	if (val > 0.9999) {
+-	    sprintf(buf, "%1.0f", d);
++	    snprintf(buf, sizeof buf, "%1.0f", d);
+ 	    dolabel(win, xs, high, buf, MAJORH, topp);
+ 	}
+     }
+ }
+ 
+ 
++void
+ dotenths(win, high, offset, len, thislen, str, topp, start, incr)
+ Window	win;
+ int	high, offset, len, thislen;
+@@ -519,7 +545,7 @@ double	start, incr;
+     if (thislen < LABELTENTHS) {
+ 	for (i = 0, d = start; i < 10; i++, d += incr) {
+ 	    if (i == 5) {
+-		sprintf(nstr, "%s%d", str, 5);
++		snprintf(nstr, sizeof nstr, "%s%d", str, 5);
+ 		dolabel(win, xs[i], high, nstr, topp, 0);
+ 	    }
+ 	    drawmark(win, xs[i], high, (i==5?MAJORH:MIDDH), topp);
+@@ -527,7 +553,7 @@ double	start, incr;
+ 	}
+     } else {
+ 	for (i = 0, d = start; i < 10; i++, d += incr) {
+-	    sprintf(nstr, "%s%d", str, i);
++	    snprintf(nstr, sizeof nstr, "%s%d", str, i);
+ 	    if (i > 0) {
+ 		dolabel(win, xs[i], high, nstr, topp, 0);
+ 		drawmark(win, xs[i], high, MAJORH, topp);
+@@ -540,13 +566,14 @@ double	start, incr;
+ 
+ 
+ 
++void
+ drawslide()
+ {
+     int		i,x,j;
      char	str[5];
      int 	midpt = scalelen/2;
  
@@ -52,7 +239,22 @@ $OpenBSD: patch-sr_c,v 1.1 2016/03/18 17:40:09 naddy Exp $
        slidePix = XCreatePixmap (dpy, theWindow, width, SLIDEHIGH, 
  			        DefaultDepth (dpy, DefaultScreen (dpy)));
      XFillRectangle(dpy, slidePix, cgc, 0, 0, width, SLIDEHIGH);
-@@ -570,7 +571,7 @@ int	x,y,w,h;
+@@ -556,7 +583,7 @@ drawslide()
+     XDrawString(dpy, slidePix, sgc, LABEL, CISCALEH+foffset, "CI", 2);
+     for (i = 1; i <= 10; i++) {
+ 	x = START + scalelen * (1 - log10((float) i)) + 0.5;
+-	sprintf(str, "%d", (i==10?1:i));
++	snprintf(str, sizeof str, "%d", (i==10?1:i));
+ 	dolabel(slidePix, x, CISCALEH, str, 1, 1);
+ 	drawmark(slidePix, x, CISCALEH, MAJORH, 1);
+     }
+@@ -565,34 +592,38 @@ drawslide()
+     XCopyArea(dpy, slidePix, slidewid, sgc, 0, 0, scalelen+START+END, SLIDEHIGH, 0, 0);
+ }
+ 
++void
+ redrawslide(x, y, w, h)
+ int	x,y,w,h;
  {
      int	i;
  
@@ -61,7 +263,10 @@ $OpenBSD: patch-sr_c,v 1.1 2016/03/18 17:40:09 naddy Exp $
        XCopyArea(dpy, slidePix, slidewid, sgc, 0, 0, scalelen + START + END, SLIDEHIGH,
  		0, 0);
      else
-@@ -580,7 +581,7 @@ int	x,y,w,h;
+       drawslide();
+ }
+ 
++void
  redrawframe(x, y, w, h)
  int	x,y,w,h;
  {
@@ -70,3 +275,55 @@ $OpenBSD: patch-sr_c,v 1.1 2016/03/18 17:40:09 naddy Exp $
        XCopyArea(dpy, framePix, theWindow, sgc, 0, 0, scalelen + START + END, HEIGHT,
  		0, 0);
      else
+       drawframe();
+ }
+ 
++void
+ drawhairl()
+ {
+     XMoveWindow(dpy, hairlwid, hx, 0);
+     XClearWindow(dpy, hairlwid);
+ }
+ 
++void
+ drawnums()
+ {
+     char	str[20];	/* leave room for sprintf to slop over */
+@@ -606,28 +637,28 @@ drawnums()
+ 	xl += 1.0;
+     else if (xl >= 0.999)
+ 	xl -= 1.0;
+-    sprintf(str, "%6.3f", xl);
++    snprintf(str, sizeof str, "%6.3f", xl);
+     str[0] = str[1] = ' ';
+     XDrawImageString(dpy, dispwid, sgc, 5, LSCALEH+foffset, str, strlen(str));
+-    sprintf(str, "%6.3f", pow(100., x));
++    snprintf(str, sizeof str, "%6.3f", pow(100., x));
+     XDrawImageString(dpy, dispwid, sgc, 5, ASCALEH+foffset, str, strlen(str));
+-    sprintf(str, "%6.3f", pow(100., xs));
++    snprintf(str, sizeof str, "%6.3f", pow(100., xs));
+     XDrawImageString(dpy, dispwid, sgc, 5, SLIDETOP+foffset + BSCALEH, str, strlen(str));
+-    sprintf(str, "%6.3f", pow(10., 1. - xs));
++    snprintf(str, sizeof str, "%6.3f", pow(10., 1. - xs));
+     XDrawImageString(dpy, dispwid, sgc, 5, SLIDETOP+foffset + CISCALEH, str, strlen(str));
+-    sprintf(str, "%6.3f", pow(10., xs));
++    snprintf(str, sizeof str, "%6.3f", pow(10., xs));
+     XDrawImageString(dpy, dispwid, sgc, 5, SLIDETOP+foffset + CSCALEH, str, strlen(str));
+-    sprintf(str, "%6.3f", pow(10., x));
++    snprintf(str, sizeof str, "%6.3f", pow(10., x));
+     XDrawImageString(dpy, dispwid, sgc, 5, DSCALEH+foffset, str, strlen(str));
+-    sprintf(str, "%6.3f", pow(10., 1. - x));
++    snprintf(str, sizeof str, "%6.3f", pow(10., 1. - x));
+     XDrawImageString(dpy, dispwid, sgc, 5, DISCALEH+foffset, str, strlen(str));
+     if (x > 1.0) {
+ 	XDrawImageString(dpy, dispwid, sgc, 5, SSCALEH+foffset, "Over", 4);
+ 	XDrawImageString(dpy, dispwid, sgc, 5, TSCALEH+foffset, "Over", 4);
+     } else {
+-	sprintf(str, "%6.3f", 180 * M_1_PI * asin(0.1 * pow(10., x)));
++	snprintf(str, sizeof str, "%6.3f", 180 * M_1_PI * asin(0.1 * pow(10., x)));
+ 	XDrawImageString(dpy, dispwid, sgc, 5, SSCALEH+foffset, str, strlen(str));
+-	sprintf(str, "%6.3f", 180 * M_1_PI * atan(0.1 * pow(10., x)));
++	snprintf(str, sizeof str, "%6.3f", 180 * M_1_PI * atan(0.1 * pow(10., x)));
+ 	XDrawImageString(dpy, dispwid, sgc, 5, TSCALEH+foffset, str, strlen(str));
+     }
+ }
