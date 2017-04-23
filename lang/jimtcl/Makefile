@@ -1,27 +1,27 @@
-# $OpenBSD: Makefile,v 1.15 2016/09/23 09:16:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2017/04/23 21:05:47 stu Exp $
 
 COMMENT =		small footprint implementation of Tcl
 
-DISTNAME =		jimtcl-0.76pl1
-SHARED_LIBS =		jim 2.2
+DISTNAME =		jimtcl-0.77pl0
+SHARED_LIBS =		jim 2.3
 CATEGORIES =		lang devel
 HOMEPAGE =		http://jim.tcl.tk/
 MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
-REVISION =		0
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		c m sqlite3
+WANTLIB =		c crypto m sqlite3 ssl z
 
 GH_ACCOUNT =		msteveb
 GH_PROJECT =		jimtcl
-GH_COMMIT =		20fb65ac241531c216aff64cd158cd8797128d49
+GH_COMMIT =		31a9f433f06b8cc426d281436a628a5fdd3bf755
 
 MODULES =		lang/tcl
 
 BUILD_DEPENDS =		${MODTCL_BUILD_DEPENDS} \
 			textproc/asciidoc
+
 LIB_DEPENDS =		databases/sqlite3
 
 MAKE_FLAGS =		LIBJIM=libjim.so.${LIBjim_VERSION} \
@@ -41,7 +41,7 @@ CONFIGURE_ARGS +=	--enable-shared \
 			--includedir='$${prefix}/include/jim' \
 			--docdir='$${prefix}/share/doc/jim' \
 			--full \
-			--with-mod=sqlite3 \
+			--with-mod='sqlite3 zlib' \
 			CCACHE=none
 
 CONFIGURE_ENV +=	WRAPPER=${WRKSRC}/configure \

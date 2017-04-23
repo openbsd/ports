@@ -1,9 +1,9 @@
-$OpenBSD: patch-Makefile_in,v 1.7 2015/12/22 16:36:23 stu Exp $
+$OpenBSD: patch-Makefile_in,v 1.8 2017/04/23 21:05:47 stu Exp $
 
 Don't use soname when linking.
 
---- Makefile.in.orig	Mon Oct  5 21:40:31 2015
-+++ Makefile.in	Tue Dec 22 09:42:51 2015
+--- Makefile.in.orig	Fri Apr  7 22:27:33 2017
++++ Makefile.in	Mon Apr 17 01:06:32 2017
 @@ -10,7 +10,6 @@ STRIP = @STRIP@
  SH_CFLAGS ?= @SH_CFLAGS@
  SH_LDFLAGS ?= @SH_LDFLAGS@
@@ -20,16 +20,7 @@ Don't use soname when linking.
  @endif
  
  all: $(JIMSH) @C_EXT_SHOBJS@
-@@ -76,6 +76,8 @@ docs: Tcl.html
- install-docs: docs
- 	$(INSTALL_DATA_DIR) $(DESTDIR)$(docdir)
- 	$(INSTALL_DATA) Tcl.html $(DESTDIR)$(docdir)
-+	$(INSTALL_DATA) @srcdir@/LICENSE @srcdir@/README $(DESTDIR)$(docdir)
-+	$(INSTALL_DATA) @srcdir@/README.{extensions,namespaces,oo,sqlite,utf-8} $(DESTDIR)$(docdir)
- @else
- install-docs:
- @endif
-@@ -84,17 +86,22 @@ $(JIMSH): $(LIBJIM) jimsh.o initjimsh.o
+@@ -74,19 +74,24 @@ $(JIMSH): $(LIBJIM) jimsh.o initjimsh.o
  	$(JIMSH_CC) @SH_LINKFLAGS@ $(LDFLAGS) -o $@ jimsh.o initjimsh.o $(LIBJIM) $(LDLIBS) $(LIBS)
  
  @if JIM_INSTALL
@@ -46,13 +37,24 @@ Don't use soname when linking.
  	$(INSTALL_DATA) jim-config.h $(DESTDIR)@includedir@
 -	$(INSTALL_DATA_DIR) $(DESTDIR)@bindir@
 -	$(INSTALL_DATA) build-jim-ext $(DESTDIR)@bindir@
-+
+ 	$(INSTALL_DATA) jimtcl.pc $(DESTDIR)@libdir@/pkgconfig
+ 
 +install-exas:
 +	$(INSTALL_DATA_DIR) $(DESTDIR)@datadir@/examples/jim{,/api,/ext}
 +	$(INSTALL_SCRIPT) build-jim-ext         $(DESTDIR)@datadir@/examples/jim
 +	$(INSTALL_DATA) @srcdir@/examples/*     $(DESTDIR)@datadir@/examples/jim
 +	$(INSTALL_DATA) @srcdir@/examples.api/{README,Makefile,*.c,*.tcl} $(DESTDIR)@datadir@/examples/jim/api
 +	$(INSTALL_DATA) @srcdir@/examples.ext/{README,Makefile,*.c} $(DESTDIR)@datadir@/examples/jim/ext
- 
++
  install-exec: all
  	$(INSTALL_DATA_DIR) $(DESTDIR)@bindir@
+ 	$(INSTALL_PROGRAM) $(JIMSH) $(DESTDIR)@bindir@
+@@ -203,6 +208,8 @@ install-docs:
+ install-docs: docs
+ 	$(INSTALL_DATA_DIR) $(DESTDIR)$(docdir)
+ 	$(INSTALL_DATA) Tcl.html $(DESTDIR)$(docdir)
++	$(INSTALL_DATA) @srcdir@/LICENSE @srcdir@/README $(DESTDIR)$(docdir)
++	$(INSTALL_DATA) @srcdir@/README.{extensions,namespaces,oo,sqlite,utf-8} $(DESTDIR)$(docdir)
+ @endif
+ 
+ @if INSTALL_DOCS == shipped

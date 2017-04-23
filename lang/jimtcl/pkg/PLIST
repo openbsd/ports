@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2015/04/10 14:35:36 stu Exp $
+@comment $OpenBSD: PLIST,v 1.6 2017/04/23 21:05:47 stu Exp $
 @bin bin/jimsh
 include/jim/
 include/jim/jim-config.h
@@ -10,7 +10,9 @@ include/jim/jim.h
 lib/jim/
 lib/jim/sqlite3.so
 lib/jim/tcltest.tcl
+lib/jim/zlib.so
 @lib lib/libjim.so.${LIBjim_VERSION}
+lib/pkgconfig/jimtcl.pc
 share/doc/jim/
 share/doc/jim/LICENSE
 share/doc/jim/README
@@ -31,6 +33,7 @@ share/examples/jim/api/jim_obj.c
 share/examples/jim/api/jim_return.c
 share/examples/jim/api/print.tcl
 share/examples/jim/build-jim-ext
+share/examples/jim/certificate.pem
 share/examples/jim/client-server.tcl
 share/examples/jim/dns.tcl
 share/examples/jim/dnstest.tcl
@@ -39,15 +42,19 @@ share/examples/jim/ext/Makefile
 share/examples/jim/ext/README
 share/examples/jim/ext/helloworld.c
 share/examples/jim/jtclsh.tcl
+share/examples/jim/key.pem
 share/examples/jim/metakit.tcl
 share/examples/jim/ootest.tcl
 share/examples/jim/parray.tcl
 share/examples/jim/pipe.tcl
 share/examples/jim/popen.tcl
 share/examples/jim/sqlite3test.tcl
+share/examples/jim/ssl.client
+share/examples/jim/ssl.server
 share/examples/jim/tcp.client
 share/examples/jim/tcp.server
 share/examples/jim/timedread.tcl
+share/examples/jim/tip.tcl
 share/examples/jim/udp.client
 share/examples/jim/udp.server
 share/examples/jim/udp2.client
