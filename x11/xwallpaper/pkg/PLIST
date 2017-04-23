@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/04/23 21:22:25 rsadowski Exp $
+@bin bin/xwallpaper
+@man man/man1/xwallpaper.1
