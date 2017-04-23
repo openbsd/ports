@@ -1,6 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2017/04/23 00:29:22 kurt Exp $
+# $OpenBSD: Makefile,v 1.20 2017/04/23 02:32:34 espie Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64
+# XXX clang-built jdk on amd64 hangs on everything
+NOT_FOR_ARCHS= ${CLANG_ARCHS}
 USE_WXNEEDED=	Yes
 
 COMMENT-main=	OpenJDK Software Development Kit v${V}
