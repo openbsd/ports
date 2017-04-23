@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.146 2017/04/17 11:42:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.147 2017/04/23 21:45:58 ajacoutot Exp $
 
 COMMENT=		GNOME document viewer
 
@@ -58,6 +58,9 @@ CONFIGURE_ARGS +=	--disable-browser-plugin
 
 # Not much point in installing systemd service files
 FAKE_FLAGS +=		systemd_user_in_files=""
+
+# fix build with clang
+CFLAGS +=		-Wno-error=format-nonliteral
 
 FLAVORS=		light
 FLAVOR?=
