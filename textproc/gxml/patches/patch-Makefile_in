@@ -1,6 +1,9 @@
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2017/04/09 11:29:08 ajacoutot Exp $
+$OpenBSD: patch-Makefile_in,v 1.2 2017/04/24 22:06:32 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=781049
+From c1a05621ae8fc2de300c4126675c948621458df0 Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Mon, 24 Apr 2017 13:47:13 -0500
+Subject: Set correct destiny dir for docs
 
 --- Makefile.in.orig	Sat Apr  8 12:57:15 2017
 +++ Makefile.in	Sat Apr  8 12:57:50 2017
