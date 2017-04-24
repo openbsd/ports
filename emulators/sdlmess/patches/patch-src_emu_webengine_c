@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_emu_webengine_c,v 1.1 2017/04/24 07:52:21 jca Exp $
+--- src/emu/webengine.c.orig	Mon Apr 24 04:35:18 2017
++++ src/emu/webengine.c	Mon Apr 24 04:36:04 2017
+@@ -321,7 +321,7 @@ int web_engine::begin_request_handler(struct mg_connec
+ 	else if (!strncmp(conn->uri, "/keyupload",8))
+ 	{
+ 		char *upload_data;
+-		int data_length, ofs = 0;
++		int data_length = 0, ofs = 0;
+ 		char var_name[100], file_name[255];
+ 		while ((ofs = mg_parse_multipart(conn->content + ofs, conn->content_len - ofs, var_name, sizeof(var_name), file_name, sizeof(file_name), (const char **)&upload_data, &data_length)) > 0) {
+ 				mg_printf_data(conn, "File: %s, size: %d bytes", file_name, data_length);
+@@ -330,7 +330,7 @@ int web_engine::begin_request_handler(struct mg_connec
+ 		// That upload_data contains more than we need. It also has the headers.
+ 		// We'll need to strip it down to just what we want.
+ 
+-		if ((&data_length > 0) && (sizeof(file_name) > 0))
++		if ((data_length > 0) && (strlen(file_name) > 0))
+ 		{
+ 			// MSVC doesn't yet support variable-length arrays, so chop the string the old-fashioned way
+ 			upload_data[data_length] = '\0';
