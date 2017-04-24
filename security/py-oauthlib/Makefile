@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2017/01/03 19:38:35 landry Exp $
+# $OpenBSD: Makefile,v 1.9 2017/04/24 09:32:14 sthen Exp $
 
 COMMENT =	Python library for OAuth
 
-MODPY_EGG_VERSION = 2.0.0
-REVISION =	1
+MODPY_EGG_VERSION = 2.0.2
 
 GH_ACCOUNT =	idan
 GH_PROJECT =	oauthlib
@@ -36,7 +35,7 @@ post-extract:
 	chmod -R o+rX ${WRKSRC}
 
 # tests/oauth2/rfc5849/endpoints/test_error_responses.py
-# will through a warning when make test is run under
+# will throw a warning when make test is run under
 # the python3 flavor, fixing this breaks python2 though.
 do-test:
 	cd ${WRKSRC} && ${MODPY_BIN} -m unittest discover
