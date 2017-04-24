@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2015/11/26 09:57:07 jung Exp $
+# $OpenBSD: Makefile,v 1.3 2017/04/24 08:46:19 sthen Exp $
 
 COMMENT=		simple plaintext presentation tool
 
 DISTNAME=		sent-0.2
+REVISION=		0
 
 CATEGORIES=		misc productivity
 

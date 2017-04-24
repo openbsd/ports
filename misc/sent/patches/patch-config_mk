@@ -1,6 +1,6 @@
-$OpenBSD: patch-config_mk,v 1.2 2015/11/26 09:57:07 jung Exp $
---- config.mk.orig	Thu Nov 19 19:37:08 2015
-+++ config.mk	Wed Nov 25 12:35:33 2015
+$OpenBSD: patch-config_mk,v 1.3 2017/04/24 08:46:19 sthen Exp $
+--- config.mk.orig	Thu Nov 19 18:37:08 2015
++++ config.mk	Mon Apr 24 09:42:16 2017
 @@ -4,22 +4,22 @@ VERSION = 0.2
  # Customize below to fit your system
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-config_mk,v 1.2 2015/11/26 09:57:07 jung Exp $
 -INCS = -I. -I/usr/include -I/usr/include/freetype2 -I${X11INC}
 -LIBS = -L/usr/lib -lc -lm -L${X11LIB} -lXft -lfontconfig -lX11 -lpng
 +INCS = -I${PREFIX}/include -I${X11INC}/freetype2 -I${X11INC}
-+LIBS = -L${PREFIX}/lib -L${X11LIB} -lXft -lfontconfig -lX11 -lpng
++LIBS = -L${PREFIX}/lib -L${X11LIB} -lXft -lfontconfig -lX11 -lpng -lm
  
  # flags
  CPPFLAGS = -DVERSION=\"${VERSION}\" -D_XOPEN_SOURCE=600
