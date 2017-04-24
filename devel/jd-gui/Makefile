@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2017/04/21 13:27:46 kurt Exp $
+# $OpenBSD: Makefile,v 1.3 2017/04/24 03:55:45 rpointel Exp $
 
 COMMENT =		yet another fast Java decompiler
 
 VERSION =		1.4.0
 DISTNAME =		jd-gui-${VERSION}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel security
 
@@ -21,7 +21,7 @@ EXTRACT_ONLY =
 EXTRACT_SUFX =		.jar
 
 MODULES =		java
-MODJAVA_VER = 		1.7
+MODJAVA_VER = 		1.7+
 MODJAVA_JRERUN =	yes
 
 RUN_DEPENDS =		java/javaPathHelper
