@@ -1,4 +1,4 @@
-# $OpenBSD: arch-defines.mk,v 1.34 2017/04/13 11:15:15 fcambus Exp $
+# $OpenBSD: arch-defines.mk,v 1.35 2017/04/24 09:08:06 sthen Exp $
 #
 # ex:ts=4 sw=4 filetype=make:
 #
@@ -18,17 +18,21 @@ APM_ARCHS = amd64 i386 loongson macppc sparc64
 BE_ARCHS = hppa m88k mips64 powerpc sparc64
 LE_ARCHS = aarch64 alpha amd64 arm i386 mips64el sh
 LP64_ARCHS = aarch64 alpha amd64 sparc64 mips64 mips64el
-CLANG_ARCHS = aarch64
 GCC4_ARCHS = alpha amd64 arm armv7 i386 hppa landisk loongson \
 	macppc mips64 mips64el octeon powerpc sgi sh socppc sparc64
 GCC3_ARCHS = luna88k m88k
 # XXX easier for ports that depend on mono
 MONO_ARCHS = amd64 i386
-LLVM_ARCHS = aarch64 amd64 arm i386 powerpc mips64 mips64el sparc64
 OCAML_NATIVE_ARCHS = i386 amd64
 OCAML_NATIVE_DYNLINK_ARCHS = i386 amd64
 GO_ARCHS = amd64 i386
 
+# arches where the base compiler is clang
+CLANG_ARCHS = aarch64
+
+# arches where ports devel/llvm builds - populates llvm ONLY_FOR_ARCHS
+# as well as available for PROPERTIES checks.  XXX list currently inaccurate
+LLVM_ARCHS = aarch64 amd64 arm i386 powerpc mips64 mips64el sparc64
 
 .for PROP in ALL APM BE LE LP64 CLANG GCC4 GCC3 MONO LLVM \
                            OCAML_NATIVE OCAML_NATIVE_DYNLINK GO
