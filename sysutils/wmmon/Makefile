@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2015/11/24 09:11:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2017/04/24 02:15:03 jca Exp $
 
 COMMENT=	WindowMaker dock app similar to xload
 
@@ -14,6 +14,7 @@ MAINTAINER=	Vladimir Popov <pva48@mail.ru>
 PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=		X11 Xext Xpm c kvm pthread-stubs xcb
 
+MAKE_FLAGS=	CC="${CC}"
 
 WRKDIST=	${WRKDIR}/wmmon.app
 WRKSRC=		${WRKDIST}/wmmon
