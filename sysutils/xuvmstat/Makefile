@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2015/10/13 06:29:38 bentley Exp $
+# $OpenBSD: Makefile,v 1.18 2017/04/24 02:20:12 jca Exp $
 
 COMMENT=	graphical display for the current uvm status
 
@@ -16,6 +16,7 @@ WANTLIB=	X11 c
 MASTER_SITES=	http://www.netbsd.org/~chuck/gz/
 
 WRKDIST=	${WRKDIR}/xuvmstat
+MAKE_FLAGS=	CC="${CC}"
 MAKE_ENV=	X11BASE="${X11BASE}"
 
 NO_TEST=	Yes
