@@ -1,0 +1,12 @@
+$OpenBSD: patch-examples_OpenGLWindow_CMakeLists_txt,v 1.1 2017/04/24 18:09:25 pascal Exp $
+--- examples/OpenGLWindow/CMakeLists.txt.orig	Thu Apr 13 20:12:22 2017
++++ examples/OpenGLWindow/CMakeLists.txt	Thu Apr 13 20:12:37 2017
+@@ -59,7 +59,7 @@ if (BUILD_SHARED_LIBS)
+   else()
+ 	set (CMAKE_THREAD_PREFER_PTHREAD TRUE)
+ 	FIND_PACKAGE(Threads)
+-   	target_link_libraries(OpenGLWindow dl ${CMAKE_THREAD_LIBS_INIT})
++   	target_link_libraries(OpenGLWindow ${CMAKE_THREAD_LIBS_INIT})
+   endif()
+ endif()
+ 

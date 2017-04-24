@@ -1,0 +1,28 @@
+$OpenBSD: patch-examples_SharedMemory_CMakeLists_txt,v 1.1 2017/04/24 18:09:25 pascal Exp $
+--- examples/SharedMemory/CMakeLists.txt.orig	Thu Apr 13 20:12:47 2017
++++ examples/SharedMemory/CMakeLists.txt	Thu Apr 13 20:13:11 2017
+@@ -112,7 +112,7 @@ ELSE(WIN32)
+ 			        )
+ 							
+         ELSE(APPLE)
+-         			LINK_LIBRARIES(  pthread dl )
++         			LINK_LIBRARIES(  pthread )
+ 			        ADD_EXECUTABLE(App_SharedMemoryPhysics
+ 			                ${SharedMemory_SRCS}
+ 			                ../MultiThreading/b3PosixThreadSupport.cpp
+@@ -179,7 +179,7 @@ ELSE(WIN32)
+ 			        )
+ 							
+         ELSE(APPLE)
+-         			LINK_LIBRARIES(  pthread dl )
++         			LINK_LIBRARIES(  pthread )
+          			ADD_DEFINITIONS("-DGLEW_INIT_OPENGL11_FUNCTIONS=1")
+               ADD_DEFINITIONS("-DGLEW_STATIC")
+               ADD_DEFINITIONS("-DGLEW_DYNAMIC_LOAD_ALL_GLX_FUNCTIONS=1")
+@@ -288,4 +288,4 @@ IF (INTERNAL_ADD_POSTFIX_EXECUTABLE_NAMES)
+                         SET_TARGET_PROPERTIES(App_SharedMemoryPhysics_VR PROPERTIES  RELWITHDEBINFO_POSTFIX "_RelWithDebugInfo")
+ ENDIF(INTERNAL_ADD_POSTFIX_EXECUTABLE_NAMES)
+ 
+-ENDIF(WIN32)
+\ No newline at end of file
++ENDIF(WIN32)

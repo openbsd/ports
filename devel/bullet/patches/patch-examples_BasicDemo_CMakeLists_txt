@@ -1,0 +1,12 @@
+$OpenBSD: patch-examples_BasicDemo_CMakeLists_txt,v 1.1 2017/04/24 18:09:25 pascal Exp $
+--- examples/BasicDemo/CMakeLists.txt.orig	Thu Apr 13 20:11:32 2017
++++ examples/BasicDemo/CMakeLists.txt	Thu Apr 13 20:12:05 2017
+@@ -84,7 +84,7 @@ ELSE(WIN32)
+                 ADD_DEFINITIONS("-DGLEW_STATIC")
+                 ADD_DEFINITIONS("-DGLEW_DYNAMIC_LOAD_ALL_GLX_FUNCTIONS=1")
+ 
+-                LINK_LIBRARIES(  pthread dl )
++                LINK_LIBRARIES(  pthread )
+         ENDIF(APPLE)
+ ENDIF(WIN32)
+ 

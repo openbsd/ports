@@ -1,22 +1,21 @@
-# $OpenBSD: Makefile,v 1.8 2016/05/07 12:40:56 pascal Exp $
+# $OpenBSD: Makefile,v 1.9 2017/04/24 18:09:25 pascal Exp $
 
 COMMENT =		physics library
 
-V =			2.83.7
+V =			2.86.1
 DISTNAME =		bullet-${V}
-REVISION =		0
 
-SHARED_LIBS +=  BulletCollision           2.0 # 2.79
-SHARED_LIBS +=  BulletDynamics            2.0 # 2.79
-SHARED_LIBS +=  BulletInverseDynamics     0.0 # 2.83
-SHARED_LIBS +=  BulletSoftBody            2.0 # 2.79
-SHARED_LIBS +=  LinearMath                2.0 # 2.79
-SHARED_LIBS +=  Bullet2FileLoader         1.0 # 2.83
-SHARED_LIBS +=  Bullet3Collision          1.0 # 2.83
-SHARED_LIBS +=  Bullet3Common             1.0 # 2.83
-SHARED_LIBS +=  Bullet3Dynamics           1.0 # 2.83
-SHARED_LIBS +=  Bullet3Geometry           1.0 # 2.83
-SHARED_LIBS +=  Bullet3OpenCL_clew        1.0 # 2.83
+SHARED_LIBS +=  BulletCollision           3.0 # 2.79
+SHARED_LIBS +=  BulletDynamics            3.0 # 2.79
+SHARED_LIBS +=  BulletInverseDynamics     1.0 # 2.83
+SHARED_LIBS +=  BulletSoftBody            3.0 # 2.79
+SHARED_LIBS +=  LinearMath                3.0 # 2.79
+SHARED_LIBS +=  Bullet2FileLoader         2.0 # 2.83
+SHARED_LIBS +=  Bullet3Collision          2.0 # 2.83
+SHARED_LIBS +=  Bullet3Common             2.0 # 2.83
+SHARED_LIBS +=  Bullet3Dynamics           2.0 # 2.83
+SHARED_LIBS +=  Bullet3Geometry           2.0 # 2.83
+SHARED_LIBS +=  Bullet3OpenCL_clew        2.0 # 2.83
 
 CATEGORIES =		devel
 
