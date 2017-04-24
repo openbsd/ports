@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Makefile_am,v 1.1 2017/04/24 01:22:48 jca Exp $
+--- src/Makefile.am.orig	Mon Apr 24 03:20:56 2017
++++ src/Makefile.am	Mon Apr 24 03:21:02 2017
+@@ -2,7 +2,7 @@ bin_PROGRAMS = inotifywait inotifywatch
+ inotifywait_SOURCES = inotifywait.c common.c common.h
+ inotifywatch_SOURCES = inotifywatch.c common.c common.h
+ 
+-AM_CFLAGS = -Wall -Werror -Wpointer-arith -std=c99 -I../libinotifytools/src -L../libinotifytools/src
++AM_CFLAGS = -Wall -Wpointer-arith -std=c99 -I../libinotifytools/src -L../libinotifytools/src
+ AM_CPPFLAGS = -I$(top_srcdir)/libinotifytools/src
+ LDADD = ../libinotifytools/src/libinotifytools.la
+ 
