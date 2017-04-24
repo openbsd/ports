@@ -1,0 +1,17 @@
+$OpenBSD: patch-Makefile_in,v 1.3 2017/04/24 14:55:46 sthen Exp $
+
+OpenBSD libtool doesn't handle -static-libtool-libs, just passing it to the
+linker instead. gcc ignores this, clang complains. Just remove this, it's
+currently a noop with gcc and fixes clang.
+
+--- Makefile.in.orig	Mon Apr 24 15:48:44 2017
++++ Makefile.in	Mon Apr 24 15:48:50 2017
+@@ -681,7 +681,7 @@ include_HEADERS = jv.h jq.h
+ @ENABLE_ERROR_INJECTION_TRUE@libinject_errors_la_LDFLAGS = -module
+ generate_ver = ver="`{ $(srcdir)/scripts/version || echo '$(VERSION)' ; } | sed 's/.*/\#define JQ_VERSION \"&\"/'`"
+ jq_SOURCES = main.c version.h
+-jq_LDFLAGS = -static-libtool-libs $(am__append_3)
++jq_LDFLAGS = $(am__append_3)
+ jq_LDADD = libjq.la -lm
+ 
+ ### Tests (make check)
