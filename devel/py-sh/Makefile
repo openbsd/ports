@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.5 2017/04/23 23:06:57 juanfra Exp $
+# $OpenBSD: Makefile,v 1.6 2017/04/24 21:00:27 juanfra Exp $
 
-COMMENT =	Python subprocess interface
+COMMENT =		Python subprocess interface
 
 MODPY_EGG_VERSION =	1.12.13
-DISTNAME =	sh-${MODPY_EGG_VERSION}
-PKGNAME =	py-${DISTNAME}
-CATEGORIES =	devel
-MAINTAINER =	Juan Francisco Cantero Hurtado <juanfra@openbsd.org>
+DISTNAME =		sh-${MODPY_EGG_VERSION}
+PKGNAME =		py-${DISTNAME}
+CATEGORIES =		devel
 
-HOMEPAGE =	https://github.com/amoffat/sh
+MAINTAINER =		Juan Francisco Cantero Hurtado <juanfra@openbsd.org>
+
+HOMEPAGE =		https://github.com/amoffat/sh
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
