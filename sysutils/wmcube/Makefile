@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2013/03/11 11:41:33 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2017/04/24 02:09:42 jca Exp $
 
 COMMENT=		wm-dockapp; shows rotating 3d-object and CPU load
 
@@ -16,6 +16,7 @@ MASTER_SITES=		http://kling.mine.nu/files/
 
 NO_TEST=		Yes
 
+MAKE_FLAGS=		CC="${CC}"
 MAKE_FILE=		Makefile.OPENBSD
 WRKDIST=		${WRKDIR}/wmcube
 WRKSRC=			${WRKDIST}/wmcube
