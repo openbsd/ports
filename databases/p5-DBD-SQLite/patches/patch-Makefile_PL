@@ -1,9 +1,15 @@
-Upstream forces use of bundled sqlite but we use the one from ports.
+$OpenBSD: patch-Makefile_PL,v 1.11 2017/04/24 16:25:05 sthen Exp $
 
-$OpenBSD: patch-Makefile_PL,v 1.10 2012/01/22 11:29:55 nigel Exp $
---- Makefile.PL.orig	Tue Nov 29 00:05:51 2011
-+++ Makefile.PL	Sun Dec 18 14:06:22 2011
-@@ -124,7 +124,7 @@ SCOPE: {
+- Upstream forces use of bundled sqlite but we use the one from ports.
+
+- Ports sqlite is built without -DSQLITE_ENABLE_COLUMN_METADATA;
+DBD::SQLite uses this as a conditional in its own code as well in the built
+copy of sqlite, so it needs to follow what's done in the sqlite build.
+
+
+--- Makefile.PL.orig	Thu Nov  5 05:26:07 2015
++++ Makefile.PL	Mon Apr 24 17:20:34 2017
+@@ -129,7 +129,7 @@ SCOPE: {
  # a system sqlite is also sophisticated enough to have a patching system
  # that can change the if ( 0 ) to if ( 1 )
  my ($sqlite_local, $sqlite_base, $sqlite_lib, $sqlite_inc);
@@ -12,3 +18,11 @@ $OpenBSD: patch-Makefile_PL,v 1.10 2012/01/22 11:29:55 nigel Exp $
  	require File::Spec;
  	if ( $sqlite_base = (grep(/SQLITE_LOCATION=.*/, @ARGV))[0] ) {
  		$sqlite_base =~ /=(.*)/;
+@@ -223,7 +223,6 @@ my @CC_DEFINE = (
+ 	'-DSQLITE_ENABLE_FTS4',             # for sqlite >= 3.7.4
+ 	'-DSQLITE_ENABLE_FTS3_PARENTHESIS', # for sqlite >= 3.6.10
+ 	'-DSQLITE_ENABLE_RTREE',            # for sqlite >= 3.6.10
+-	'-DSQLITE_ENABLE_COLUMN_METADATA',
+ 	'-DSQLITE_ENABLE_STAT3',            # for sqlite >= 3.7.9
+ 	'-DSQLITE_ENABLE_STAT4',            # for sqlite >= 3.8.3.1
+ 	'-DSQLITE_ENABLE_JSON1',            # for sqlite >= 3.9.0
