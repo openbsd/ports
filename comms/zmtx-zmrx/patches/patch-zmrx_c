@@ -1,6 +1,7 @@
---- zmrx.c.orig	Sun Oct 13 12:25:53 1996
-+++ zmrx.c	Mon Oct 14 20:17:03 1996
-@@ -70,7 +70,7 @@
+$OpenBSD: patch-zmrx_c,v 1.1 2017/04/24 09:48:17 sthen Exp $
+--- zmrx.c.orig	Thu Dec 12 07:24:08 1996
++++ zmrx.c	Mon Apr 24 10:47:44 2017
+@@ -70,7 +70,7 @@ show_progress(char * name,FILE * fp)
  
  	cps = ftell(fp) / duration;
  
@@ -9,7 +10,7 @@
  		name,ftell(fp),percentage,cps);
  }
  
-@@ -223,7 +223,7 @@
+@@ -223,7 +223,7 @@ receive_file()
  	}
  
  	if (opt_v) {
@@ -18,7 +19,7 @@
  	}
  
  	sscanf(rx_data_subpacket + strlen(rx_data_subpacket) + 1,
-@@ -342,7 +342,7 @@
+@@ -342,7 +342,7 @@ receive_file()
  	 */
  
  	if (opt_v) {
