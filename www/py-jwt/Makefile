@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2017/01/03 19:28:49 landry Exp $
+# $OpenBSD: Makefile,v 1.8 2017/04/24 09:30:00 sthen Exp $
 
 COMMENT =	JSON Web Token implementation in Python
 
-MODPY_EGG_VERSION = 1.4.2
+MODPY_EGG_VERSION = 1.5.0
 DISTNAME =	PyJWT-${MODPY_EGG_VERSION}
 PKGNAME =	py-jwt-${MODPY_EGG_VERSION}
 CATEGORIES =	www
@@ -24,11 +24,11 @@ MODPY_SETUPTOOLS = Yes
 
 RUN_DEPENDS =   security/py-cryptography${MODPY_FLAVOR}
 
-# tests are available, but need pytest-runner plus dep's (which aren't in
-# tree) at build time; if adding these, remove patch-setup_py
-NO_TEST =	Yes
+TEST_DEPENDS =	devel/py-test \
+		devel/py-test-cov \
+		devel/py-test-runner
 
 post-install:
-	mv ${PREFIX}/bin/jwt ${PREFIX}/bin/jwt${MODPY_BIN_SUFFIX}
+	mv ${PREFIX}/bin/pyjwt ${PREFIX}/bin/pyjwt${MODPY_BIN_SUFFIX}
 
 .include <bsd.port.mk>
