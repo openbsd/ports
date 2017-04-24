@@ -1,7 +1,8 @@
-$OpenBSD: patch-src_man_ysm_1,v 1.1 2015/02/21 00:01:20 schwarze Exp $
+$OpenBSD: patch-src_man_ysm_1,v 1.2 2017/04/24 09:33:11 jca Exp $
 --- src/man/ysm.1.orig	Mon Jan 29 21:03:11 2007
-+++ src/man/ysm.1	Fri Feb 20 23:22:08 2015
-@@ -2,16 +2,18 @@
++++ src/man/ysm.1	Mon Apr 24 11:30:58 2017
+@@ -1,17 +1,19 @@
+ .\" $Id: patch-src_man_ysm_1,v 1.2 2017/04/24 09:33:11 jca Exp $
 -.TH Ysm 1 "Version 2.9.1" "Ysm" "Ysm manual"
  .Dd July 12, 2003
  .Dt YSM 1
