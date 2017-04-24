@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2017/01/06 14:07:45 pea Exp $
+@comment $OpenBSD: PLIST,v 1.10 2017/04/24 11:52:05 sthen Exp $
 @conflict par-*
 @newgroup _rancid:613
 @newuser _rancid:613:_rancid:daemon:Rancid user:/var/rancid:/bin/sh
@@ -172,6 +172,7 @@ share/examples/rancid/rancid.conf.sample
 @sample ${SYSCONFDIR}/rancid/rancid.conf
 share/examples/rancid/rancid.types.base
 @sample ${SYSCONFDIR}/rancid/rancid.types.base
+share/examples/rancid/rancid.types.conf
 share/examples/rancid/rtrfilter
 @mode 755
 @owner _rancid

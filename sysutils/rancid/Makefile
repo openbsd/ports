@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2017/01/06 14:07:45 pea Exp $
+# $OpenBSD: Makefile,v 1.20 2017/04/24 11:52:05 sthen Exp $
 
 COMMENT =	Really Awesome New Cisco confIg Differ
 
-DISTNAME =	rancid-3.6.1
+DISTNAME =	rancid-3.6.2
 EPOCH = 	0
 CATEGORIES =	sysutils
 
