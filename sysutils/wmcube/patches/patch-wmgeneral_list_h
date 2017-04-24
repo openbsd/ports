@@ -1,0 +1,16 @@
+$OpenBSD: patch-wmgeneral_list_h,v 1.1 2017/04/24 02:14:04 jca Exp $
+--- wmgeneral/list.h.orig	Sun Oct  8 22:38:45 2000
++++ wmgeneral/list.h	Mon Apr 24 04:11:07 2017
+@@ -29,11 +29,7 @@ Boston, MA 02111-1307, USA.  */
+ #ifndef __LIST_H_
+ #define __LIST_H_
+ 
+-#if defined(__GNUC__) && !defined(__STRICT_ANSI__)
+-# define INLINE inline
+-#else
+-# define INLINE
+-#endif
++#define INLINE
+ 
+ typedef struct LinkedList {
+   void *head;
