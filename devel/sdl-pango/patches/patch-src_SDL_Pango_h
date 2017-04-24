@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_SDL_Pango_h,v 1.1.1.1 2007/05/24 13:38:11 ajacoutot Exp $
---- src/SDL_Pango.h.orig	Tue Mar 27 10:12:28 2007
-+++ src/SDL_Pango.h	Tue Mar 27 10:16:11 2007
+$OpenBSD: patch-src_SDL_Pango_h,v 1.2 2017/04/24 03:29:08 jsg Exp $
+--- src/SDL_Pango.h.orig	Sat Apr 22 13:16:31 2017
++++ src/SDL_Pango.h	Sat Apr 22 13:24:08 2017
 @@ -47,10 +47,10 @@ typedef struct _SDLPango_Matrix {
  } SDLPango_Matrix;
  
@@ -73,3 +73,21 @@ $OpenBSD: patch-src_SDL_Pango_h,v 1.1.1.1 2007/05/24 13:38:11 ajacoutot Exp $
  /*!
      Specifies transparent back and transparent letter.
      This is useful for KARAOKE like rendering.
+@@ -184,17 +184,11 @@ extern DECLSPEC void SDLCALL SDLPango_SetBaseDirection
+     SDLPango_Context *context,
+     SDLPango_Direction direction);
+ 
+-
+-#ifdef __FT2_BUILD_UNIX_H__
+-
+ extern DECLSPEC void SDLCALL SDLPango_CopyFTBitmapToSurface(
+     const FT_Bitmap *bitmap,
+     SDL_Surface *surface,
+     const SDLPango_Matrix *matrix,
+     SDL_Rect *rect);
+-
+-#endif	/* __FT2_BUILD_UNIX_H__ */
+-
+ 
+ #ifdef __PANGO_H__
+ 
