@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_cfg_c,v 1.1 2004/12/14 23:23:18 jcs Exp $
---- src/cfg.c.orig	Thu Dec  2 12:20:06 2004
-+++ src/cfg.c	Thu Dec  2 12:20:28 2004
-@@ -316,8 +316,10 @@
+$OpenBSD: patch-src_cfg_c,v 1.2 2017/04/24 02:03:26 jca Exp $
+--- src/cfg.c.orig	Mon Jul 18 16:15:59 2005
++++ src/cfg.c	Mon Apr 24 03:58:29 2017
+@@ -316,8 +316,10 @@ void init_cfg(config *cfg) { /* {{{ */
      free(cfg->nvram);
    }
    cfg->nvram = NULL;

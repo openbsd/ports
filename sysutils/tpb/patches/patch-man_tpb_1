@@ -1,6 +1,6 @@
---- man/tpb.1.orig	Thu Nov 24 15:36:31 2005
-+++ man/tpb.1	Thu Nov 24 15:36:41 2005
-@@ -331,13 +331,6 @@
+--- man/tpb.1.orig	Mon Jul 25 10:40:53 2005
++++ man/tpb.1	Mon Apr 24 03:58:29 2017
+@@ -331,13 +331,6 @@ Default is bottom.
  Defines the alignment of the osd.
  Possible values are left, center and right.
  Default is left.
