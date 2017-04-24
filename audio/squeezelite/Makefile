@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2016/08/30 10:20:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2017/04/24 10:38:52 sthen Exp $
 
 COMMENT=	lightweight headless squeezebox emulator
 
 V=		1.8
-REVISION=	1
+REVISION=	2
 DISTNAME=	squeezelite-v$V
 PKGNAME=	squeezelite-$V
 
@@ -30,8 +30,9 @@ LIB_DEPENDS=	audio/faad \
 		audio/mpg123 \
 		audio/portaudio-svn \
 		graphics/ffmpeg
-LDFLAGS+=	-L${LOCALBASE}/lib -lportaudio -lpthread -lFLAC -lmpg123
+LDFLAGS+=	-L${LOCALBASE}/lib -lm -lportaudio -lpthread -lFLAC -lmpg123
 LDFLAGS+=	-lvorbis -lvorbisfile -lsoxr -lmad -lavcodec -lavformat -lfaad
+LDFLAGS+=	-lavutil
 
 MAKE_FLAGS=	CFLAGS="-Wall -fPIC -DFFMPEG -DRESAMPLE -DLINKALL ${CFLAGS}" \
 		CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="${LDFLAGS}"
