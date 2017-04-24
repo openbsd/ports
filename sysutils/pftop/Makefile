@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2015/11/21 01:51:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2017/04/24 01:42:35 jca Exp $
 
 # XXX should be fixed to use the new queuing subsystem
 
@@ -18,6 +18,7 @@ WANTLIB += c curses
 
 MASTER_SITES=	http://www.eee.metu.edu.tr/~canacar/
 
+MAKE_FLAGS=	CC="${CC}"
 FAKE_FLAGS=	BINDIR=${PREFIX}/sbin MANDIR=${PREFIX}/man/man
 
 .include <bsd.port.mk>
