@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.25 2017/02/26 20:15:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2017/04/24 10:14:05 sthen Exp $
 
 COMMENT=	receive/send files via ZMODEM protocol (unrestricted)
 
 DISTNAME=	zmtx-zmrx-1.02
 CATEGORIES=	comms
-REVISION=	0
+REVISION=	1
 
 PERMIT_PACKAGE_CDROM=	no license
 PERMIT_PACKAGE_FTP=	no license
 PERMIT_DISTFILES_FTP=	Yes
+
 WANTLIB=		c
 
 MASTER_SITES=	ftp://ftp.netsw.org/net/modem/protocols/zmodem/zmtx-zmrx/
@@ -16,6 +17,7 @@ MASTER_SITES=	ftp://ftp.netsw.org/net/modem/protocols/zmodem/zmtx-zmrx/
 # ftp://ftp.lth.se/pub/usenet/comp.sources.unix/volume28/zm/part01.gz
 
 WRKDIST=	${WRKDIR}/zmtx-zmrx
+CFLAGS+=	--std=gnu89
 MAKE_FILE=	makefile
 MAKE_FLAGS=	CC="${CC}"
 

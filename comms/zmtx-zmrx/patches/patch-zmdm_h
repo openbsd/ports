@@ -1,0 +1,19 @@
+$OpenBSD: patch-zmdm_h,v 1.1 2017/04/24 10:14:05 sthen Exp $
+--- zmdm.h.orig	Thu Dec 12 07:24:08 1996
++++ zmdm.h	Mon Apr 24 11:08:27 2017
+@@ -71,6 +71,15 @@ tx_bheader(unsigned char * buf,int n);
+ int
+ rx_header(int to);												/* receive any header with timeout in milliseconds */
+ 
++int rx_poll(void);
++void rx_purge(void);
++inline int rx_raw(int);
++
++void tx_data(int, unsigned char *, int);
++void tx_header(unsigned char *);
++void tx_hex_header(unsigned char *);
++void tx_raw(int);
++
+ #endif
+ 
+ 

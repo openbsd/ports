@@ -1,7 +1,15 @@
-$OpenBSD: patch-zmtx_c,v 1.1 2017/04/24 09:48:17 sthen Exp $
+$OpenBSD: patch-zmtx_c,v 1.2 2017/04/24 10:14:05 sthen Exp $
 --- zmtx.c.orig	Thu Dec 12 07:24:08 1996
-+++ zmtx.c	Mon Apr 24 10:47:44 2017
-@@ -65,7 +65,7 @@ show_progress(char * name,FILE * fp)
++++ zmtx.c	Mon Apr 24 11:11:57 2017
+@@ -17,6 +17,7 @@
+ #include <stdio.h>
+ #include <fcntl.h>
+ #include <sys/stat.h>
++#include <stdlib.h>
+ #include <string.h>
+ #include <time.h>
+ #include "version.h"
+@@ -65,7 +66,7 @@ show_progress(char * name,FILE * fp)
  
  	cps = ftell(fp) / duration;
  
@@ -10,3 +18,39 @@ $OpenBSD: patch-zmtx_c,v 1.1 2017/04/24 09:48:17 sthen Exp $
  		name,ftell(fp),percentage,cps);
  }
  
+@@ -149,7 +150,7 @@ send_from(char * name,FILE * fp)
+ 		while (rx_poll()) {
+ 			int type;
+ 			int c;
+-			c = rx_raw();
++			c = rx_raw(1000);
+ 			if (c == ZPAD) {
+ 				type = rx_header(1000);
+ 				if (type != TIMEOUT && type != ACK) {
+@@ -201,7 +202,7 @@ send_file(char * name)
+ 		if (opt_v) {
+ 			fprintf(stderr,"zmtx: can't open file %s\n",name);
+ 		}
+-		return;
++		return FALSE;
+ 	}
+ 
+ 	fstat(fileno(fp),&s);
+@@ -296,7 +297,7 @@ send_file(char * name)
+  	 * modification date
+ 	 */
+ 
+-	sprintf(p,"%lo ",s.st_mtime);
++	sprintf(p,"%llo ",(long long)s.st_mtime);
+ 
+ 	p += strlen(p);
+ 
+@@ -357,7 +358,7 @@ send_file(char * name)
+ 			if (opt_v) {
+ 				fprintf(stderr,"zmtx: skipped file \"%s\"                       \n",name);
+ 			}
+-			return;
++			return FALSE;
+ 		}
+ 
+ 	} while (type != ZRPOS);
