@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_tmpdir_h,v 1.1 2017/04/23 21:30:24 sthen Exp $
---- src/tmpdir.h.orig	Sun Apr 23 22:27:29 2017
-+++ src/tmpdir.h	Sun Apr 23 22:27:34 2017
+$OpenBSD: patch-src_tmpdir_h,v 1.2 2017/04/24 18:16:03 sthen Exp $
+--- src/tmpdir.h.orig	Sun May 12 16:16:43 2013
++++ src/tmpdir.h	Mon Apr 24 19:15:00 2017
 @@ -20,7 +20,7 @@
  typedef enum { TMPDIR_APP_OWNED = 0, TMPDIR_USER_OWNED = 1 } tmpdir_type_t;
  
  void set_tmpdir(const char *dir, tmpdir_type_t type, int max_files);
 -inline const char* get_tmpdir(void);
-+extern inline const char* get_tmpdir(void);
++const char* get_tmpdir(void);
  void clean_tmpdir(int preserve_files);
  
  const char* make_tmpdir(void);

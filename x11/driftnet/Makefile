@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2013/09/25 07:58:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2017/04/24 18:16:03 sthen Exp $
 
 COMMENT=	network sniffer that grabs and displays images
 
 VERSION =	1.0
 DISTNAME=	driftnet_${VERSION}.orig
 PKGNAME=	driftnet-${VERSION}
-REVISION=	0
+REVISION=	1
 CATEGORIES=	x11
 
 HOMEPAGE=	http://www.ex-parrot.com/~chris/driftnet/

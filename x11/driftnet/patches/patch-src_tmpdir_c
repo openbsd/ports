@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_tmpdir_c,v 1.1 2017/04/23 21:30:24 sthen Exp $
---- src/tmpdir.c.orig	Sun Apr 23 22:27:29 2017
-+++ src/tmpdir.c	Sun Apr 23 22:27:36 2017
+$OpenBSD: patch-src_tmpdir_c,v 1.2 2017/04/24 18:16:03 sthen Exp $
+--- src/tmpdir.c.orig	Sun May 12 16:16:43 2013
++++ src/tmpdir.c	Mon Apr 24 19:14:56 2017
 @@ -72,7 +72,7 @@ void set_tmpdir(const char *dir, tmpdir_type_t type, i
      log_msg(LOG_INFO, "using temporary file directory %s", tmpdir.path);
  }
  
 -inline const char* get_tmpdir(void)
-+extern inline const char* get_tmpdir(void)
++const char* get_tmpdir(void)
  {
      assert (tmpdir.path != NULL);
  
