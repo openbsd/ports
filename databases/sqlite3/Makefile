@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.81 2017/02/20 19:31:56 landry Exp $
+# $OpenBSD: Makefile,v 1.82 2017/04/24 16:25:20 sthen Exp $
 
 COMMENT=	embedded SQL implementation
 
@@ -25,6 +25,8 @@ CONFIGURE_ARGS=	--enable-editline \
 # for mozilla
 CFLAGS+=	-DSQLITE_ENABLE_UNLOCK_NOTIFY \
 		-DSQLITE_ENABLE_DBSTAT_VTAB
+
+# update p5-DBD-SQLite's Makefile.PL if enabling -DSQLITE_ENABLE_COLUMN_METADATA
 
 NO_TEST=	Yes
 
