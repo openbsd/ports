@@ -1,8 +1,44 @@
-$OpenBSD: README,v 1.2 2012/09/30 16:28:07 dcoppa Exp $
+$OpenBSD: README,v 1.3 2017/04/24 15:47:02 edd Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
 +-----------------------------------------------------------------------
 
 In order to use a card reader other than the few ones supported by
-GnuPG's internal CCID driver, the ccid package needs to be installed.
+GnuPG's internal CCID driver, the ccid, pcsc-lite and pcsc-tools packages
+need to be installed.
+
+Example YubiKey 4 Setup Procedure
+=================================
+
+Install required packages, enable and start pcscd(8) PC/SC smartcard daemon:
+
+    # pkg_add ccid pcsc-lite pcsc-tools
+    # rcctl enable pcscd
+    # rcctl start pcscd
+
+Find the reader with YubiKey:
+
+    $ pcsc_scan -n
+    PC/SC device scanner
+    V 1.4.27 (c) 2001-2011, Ludovic Rousseau <ludovic.rousseau@free.fr>
+    Compiled with PC/SC lite version: 1.8.20
+    Using reader plug'n play mechanism
+    Scanning present readers...
+    0: Yubico Yubikey 4 OTP+U2F+CCID 00 00
+
+    Sun Apr 23 15:15:40 2017
+    Reader 0: Yubico Yubikey 4 OTP+U2F+CCID 00 00
+      Card state: Card inserted, Exclusive Mode,
+      ATR: 3B F8 13 00 00 81 31 FE 15 59 75 62 69 6B 65 79 34 D4
+    #Ctrl+C
+
+Configure scdaemon(1) smartcard daemon to use this reader:
+
+    $ echo "reader-port \"Yubico Yubikey 4 OTP+U2F+CCID 00 0\"" >> \
+	~/.gnupg/scdaemon.conf
+
+Check if the YubiKey is recognized by GnuPG:
+
+    $ gpg2 --card-status
+    Reader ...........: Yubico Yubikey 4 OTP U2F CCID 00 00
