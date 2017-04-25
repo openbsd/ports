@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1001 2017/03/03 17:04:10 jca Exp $
+# $OpenBSD: Makefile,v 1.1002 2017/04/25 20:02:31 jca Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -682,7 +682,6 @@
      SUBDIR += tor
      SUBDIR += torsocks
      SUBDIR += totd
-     SUBDIR += trafd
      SUBDIR += trafshow
      SUBDIR += transmission
      SUBDIR += trickle
