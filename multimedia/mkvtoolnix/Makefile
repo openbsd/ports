@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2016/12/31 08:11:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.65 2017/04/25 11:45:31 sthen Exp $
 
 COMMENT=	create, alter and inspect Matroska files
 
@@ -70,6 +70,9 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
 
 # XXX does not build with our pugixml (it's too new)
 CONFIGURE_ENV +=ac_cv_header_pugixml_hpp=no
+
+# avoid hidden build dep on gtest
+CONFIGURE_ENV +=ac_cv_lib_gtest_main_main=no
 
 NO_TEST=	Yes
 
