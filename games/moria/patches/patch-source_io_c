@@ -1,6 +1,6 @@
-$OpenBSD: patch-source_io_c,v 1.2 2013/12/12 21:32:48 jca Exp $
+$OpenBSD: patch-source_io_c,v 1.3 2017/04/25 15:47:41 espie Exp $
 --- source/io.c.orig	Fri Jul 22 03:47:26 1994
-+++ source/io.c	Thu Dec 12 14:55:49 2013
++++ source/io.c	Tue Apr 25 17:35:17 2017
 @@ -60,6 +60,10 @@ long wgetch();
  char *getenv();
  #endif
@@ -40,9 +40,12 @@ $OpenBSD: patch-source_io_c,v 1.2 2013/12/12 21:32:48 jca Exp $
  static struct ltchars save_special_chars;
  static struct sgttyb save_ttyb;
  static struct tchars save_tchars;
-@@ -237,32 +245,45 @@ static WINDOW *tempscr;		/* Spare window for VMS CTRL(
+@@ -235,38 +243,51 @@ static WINDOW *tempscr;		/* Spare window for VMS CTRL(
+    Handle the stop and start signals. This ensures that the log
+    is up to date, and that the terminal is fully reset and
     restored.  */
- int suspend()
+-int suspend()
++void suspend(int sig)
  {
 -#ifdef USG
 +#if defined(USG) && !defined(__OpenBSD__)
@@ -88,21 +91,17 @@ $OpenBSD: patch-source_io_c,v 1.2 2013/12/12 21:32:48 jca Exp $
    (void) wrefresh(curscr);
    py.misc.male &= ~2;
  #endif
+-  return 0;
++  return;
+ }
+ #endif
+ #endif
 @@ -307,7 +328,7 @@ void init_curses()
  #else
  #if !defined(VMS) && !defined(MSDOS) && !defined(ATARI_ST)
  #ifndef AMIGA
 -  (void) ioctl(0, TCGETA, (char *)&save_termio);
 +  (void) tcgetattr(0, &save_termio);
- #endif
- #endif
- #endif
-@@ -334,7 +355,7 @@ void init_curses()
- #ifdef  __386BSD__
-   (void) signal (SIGTSTP, (sig_t)suspend);
- #else
--  (void) signal (SIGTSTP, suspend);
-+  (void) signal (SIGTSTP, (sig_t)suspend);
  #endif
  #endif
  #endif

@@ -1,158 +1,57 @@
-$OpenBSD: patch-source_signals_c,v 1.1.1.1 2001/07/04 16:57:50 lebel Exp $
---- source/signals.c.orig	Thu Jul 21 21:47:23 1994
-+++ source/signals.c	Wed Jul  4 11:44:57 2001
-@@ -113,7 +113,7 @@ int sig;
+$OpenBSD: patch-source_signals_c,v 1.2 2017/04/25 15:47:41 espie Exp $
+--- source/signals.c.orig	Fri Jul 22 03:47:42 1994
++++ source/signals.c	Tue Apr 25 17:30:19 2017
+@@ -88,27 +88,9 @@ static int error_sig = -1;
+ static int signal_count = 0;
+ 
+ /*ARGSUSED*/
+-#ifndef USG
+-#ifdef __386BSD__
+-static void signal_handler(sig, code, scp)
+-#else
+-static int signal_handler(sig, code, scp)
+-#endif
+-int sig, code;
+-struct sigcontext *scp;
+-{
+-  int smask;
+-
+-  smask = sigsetmask(0) | (1 << sig);
+-#else
+-#if defined(__TURBOC__) || defined(AMIGA)
+ static void signal_handler(sig)
+-#else
+-static int signal_handler(sig)
+-#endif
+ int sig;
+ {
+-#endif
+ 
    if(error_sig >= 0)	/* Ignore all second signals. */
      {
-       if(++signal_count > 10)	/* Be safe. We will die if persistent enough. */
--	(void) signal(sig, SIG_DFL);
-+	(void) signal(sig, (sig_t)SIG_DFL);
-       return;
-     }
-   error_sig = sig;
-@@ -126,7 +126,7 @@ int sig;
-       )
-     {
-       if (death)
--	(void) signal(sig, SIG_IGN);		/* Can't quit after death. */
-+	(void) signal(sig, (sig_t)SIG_IGN);		/* Can't quit after death. */
-       else if (!character_saved && character_generated)
- 	{
- 	  if (!get_check("Really commit *Suicide*?"))
-@@ -137,7 +137,7 @@ int sig;
+@@ -136,11 +118,6 @@ int sig;
+ 	      erase_line(0, 0);
  	      put_qio();
  	      error_sig = -1;
- #ifdef USG
+-#ifdef USG
 -	      (void) signal(sig, signal_handler);/* Have to restore handler. */
-+	      (void) signal(sig, (sig_t)signal_handler);/* Have to restore handler. */
- #else
- 	      (void) sigsetmask(smask);
- #endif
-@@ -179,7 +179,7 @@ int sig;
+-#else
+-	      (void) sigsetmask(smask);
+-#endif
+ 	      /* in case control-c typed during msg_print */
+ 	      if (wait_for_more)
+ 		put_buffer(" -more-", MSG_LINE, 0);
+@@ -177,13 +154,9 @@ int sig;
+       (void) _save_char(savefile);	/* Quietly save the memory anyway. */
+     }
    restore_term();
- #if !defined(MSDOS) && !defined(AMIGA) && !defined(ATARIST_TC)
+-#if !defined(MSDOS) && !defined(AMIGA) && !defined(ATARIST_TC)
    /* always generate a core dump */
--  (void) signal(sig, SIG_DFL);
-+  (void) signal(sig, (sig_t)SIG_DFL);
+   (void) signal(sig, SIG_DFL);
    (void) kill(getpid(), sig);
-   (void) sleep(5);
- #endif
-@@ -199,7 +199,7 @@ void nosignals()
- #if defined(atarist) && defined(__GNUC__)
-   (void) signal(SIGTSTP, (__Sigfunc)SIG_IGN);
- #else
--  (void) signal(SIGTSTP, SIG_IGN);
-+  (void) signal(SIGTSTP, (sig_t)SIG_IGN);
- #endif
- #ifndef USG
-   mask = sigsetmask(0);
-@@ -220,7 +220,7 @@ void signals()
- #ifdef  __386BSD__
-   (void) signal(SIGTSTP, (sig_t)suspend);
- #else
--  (void) signal(SIGTSTP, suspend);
-+  (void) signal(SIGTSTP, (sig_t)suspend);
- #endif
- #endif
- #ifndef USG
-@@ -237,7 +237,7 @@ void init_signals()
- {
- #if !defined(ATARIST_MWC) && !defined(ATARIST_TC)
-   /* No signals for Atari ST compiled with MWC or TC.  */
--  (void) signal(SIGINT, signal_handler);
-+  (void) signal(SIGINT, (sig_t)signal_handler);
- 
- #if defined(atarist) && defined(__GNUC__)
-   /* Atari ST compiled with GNUC has most signals, but we need a cast
-@@ -259,8 +259,8 @@ void init_signals()
- 
- #else
-   /* Everybody except the atari st.  */
--  (void) signal(SIGINT, signal_handler);
--  (void) signal(SIGFPE, signal_handler);
-+  (void) signal(SIGINT, (sig_t)signal_handler);
-+  (void) signal(SIGFPE, (sig_t)signal_handler);
- 
- #if defined(MSDOS)
-   /* many fewer signals under MSDOS */
-@@ -278,27 +278,27 @@ void init_signals()
- 
-   /* Everybody except Atari, MSDOS, and Amiga.  */
-   /* Ignore HANGUP, and let the EOF code take care of this case. */
--  (void) signal(SIGHUP, SIG_IGN);
--  (void) signal(SIGQUIT, signal_handler);
--  (void) signal(SIGILL, signal_handler);
--  (void) signal(SIGTRAP, signal_handler);
--  (void) signal(SIGIOT, signal_handler);
-+  (void) signal(SIGHUP, (sig_t)SIG_IGN);
-+  (void) signal(SIGQUIT, (sig_t)signal_handler);
-+  (void) signal(SIGILL, (sig_t)signal_handler);
-+  (void) signal(SIGTRAP, (sig_t)signal_handler);
-+  (void) signal(SIGIOT, (sig_t)signal_handler);
- #ifdef SIGEMT  /* in BSD systems */
--  (void) signal(SIGEMT, signal_handler);
-+  (void) signal(SIGEMT, (sig_t)signal_handler);
- #endif
- #ifdef SIGDANGER /* in SYSV systems */
-   (void) signal(SIGDANGER, signal_handler);
- #endif
--  (void) signal(SIGKILL, signal_handler);
--  (void) signal(SIGBUS, signal_handler);
--  (void) signal(SIGSEGV, signal_handler);
-+  (void) signal(SIGKILL, (sig_t)signal_handler);
-+  (void) signal(SIGBUS, (sig_t)signal_handler);
-+  (void) signal(SIGSEGV, (sig_t)signal_handler);
- #ifdef SIGSYS
--  (void) signal(SIGSYS, signal_handler);
-+  (void) signal(SIGSYS, (sig_t)signal_handler);
- #endif
--  (void) signal(SIGTERM, signal_handler);
--  (void) signal(SIGPIPE, signal_handler);
-+  (void) signal(SIGTERM, (sig_t)signal_handler);
-+  (void) signal(SIGPIPE, (sig_t)signal_handler);
- #ifdef SIGXCPU	/* BSD */
--  (void) signal(SIGXCPU, signal_handler);
-+  (void) signal(SIGXCPU, (sig_t)signal_handler);
- #endif
- #ifdef SIGPWR /* SYSV */
-   (void) signal(SIGPWR, signal_handler);
-@@ -312,9 +312,9 @@ void init_signals()
- void ignore_signals()
- {
- #if !defined(ATARIST_MWC)
--  (void) signal(SIGINT, SIG_IGN);
-+  (void) signal(SIGINT, (sig_t)SIG_IGN);
- #ifdef SIGQUIT
--  (void) signal(SIGQUIT, SIG_IGN);
-+  (void) signal(SIGQUIT, (sig_t)SIG_IGN);
- #endif
- #endif
+-  (void) sleep(5);
+-#endif
+-  exit(1);
  }
-@@ -322,9 +322,9 @@ void ignore_signals()
- void default_signals()
- {
- #if !defined(ATARIST_MWC)
--  (void) signal(SIGINT, SIG_DFL);
-+  (void) signal(SIGINT, (sig_t)SIG_DFL);
- #ifdef SIGQUIT
--  (void) signal(SIGQUIT, SIG_DFL);
-+  (void) signal(SIGQUIT, (sig_t)SIG_DFL);
- #endif
- #endif
- }
-@@ -335,13 +335,13 @@ void restore_signals()
- #if defined(atarist) && defined(__GNUC__)
-   (void) signal(SIGINT, (__Sigfunc)signal_handler);
- #else
--  (void) signal(SIGINT, signal_handler);
-+  (void) signal(SIGINT, (sig_t)signal_handler);
- #endif
- #ifdef SIGQUIT
- #if defined(atarist) && defined(__GNUC__)
-   (void) signal(SIGQUIT, (__Sigfunc)signal_handler);
- #else
--  (void) signal(SIGQUIT, signal_handler);
-+  (void) signal(SIGQUIT, (sig_t)signal_handler);
- #endif
- #endif
- #endif
+ 
+ #endif /* ATARIST_MWC, ATARIST_TC */

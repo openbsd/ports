@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2015/10/27 19:00:53 kirby Exp $
+# $OpenBSD: Makefile,v 1.19 2017/04/25 15:47:41 espie Exp $
 
 COMMENT=	The Dungeons of Moria
 
 V=		5.5.2
 DISTNAME=	um$V
 PKGNAME=	moria-$V
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=	games
 

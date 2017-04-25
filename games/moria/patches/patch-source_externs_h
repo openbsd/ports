@@ -1,0 +1,21 @@
+$OpenBSD: patch-source_externs_h,v 1.1 2017/04/25 15:47:41 espie Exp $
+--- source/externs.h.orig	Fri Jul 22 03:47:20 1994
++++ source/externs.h	Tue Apr 25 17:43:50 2017
+@@ -330,7 +330,7 @@ void ident_char(void);
+ 
+ /* io.c */
+ #ifdef SIGTSTP
+-int suspend(void);
++void suspend(int);
+ #endif
+ void init_curses(void);
+ void moriaterm(void);
+@@ -842,7 +842,7 @@ void ident_char();
+ 
+ /* io.c */
+ #ifdef SIGTSTP
+-int suspend();
++void suspend();
+ #endif
+ void init_curses();
+ void moriaterm();
