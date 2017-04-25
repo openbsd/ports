@@ -1,0 +1,28 @@
+$OpenBSD: patch-configure_ac,v 1.1 2017/04/25 08:46:27 ajacoutot Exp $
+--- configure.ac.orig	Wed Feb  8 23:24:36 2017
++++ configure.ac	Tue Apr 25 09:16:13 2017
+@@ -404,7 +404,7 @@ if test "x$check_aspell" != "xno"; then
+          ,)
+        AC_CHECK_LIB(aspell,get_aspell_dict_info_list,ASPELL_CFLAGS="-DASPELL_0_50_0=1",)
+ 
+-       ASPELL_CFLAGS+=" -DHAVE_PSPELL_H"
++       ASPELL_CFLAGS="${ASPELL_CFLAGS} -DHAVE_PSPELL_H"
+    elif test -f "$aspell_prefix/include/aspell.h"; then
+        AC_MSG_RESULT([yes (aspell)])
+ 
+@@ -510,12 +510,12 @@ build_zemberek=no
+ 
+ AC_ARG_ENABLE(zemberek, AS_HELP_STRING([--disable-zemberek],[enable the experimental zemberek (turkish) backend @<:@default=auto@:>@]), build_zemberek="$enableval", build_zemberek=no)
+ 
+-PKG_CHECK_MODULES(ZEMBEREK, [dbus-glib-1 >= 0.62], build_zemberek=yes, build_zemberek=no)
++AM_CONDITIONAL(WITH_ZEMBEREK, test "x$build_zemberek" = "xyes")
+ 
++PKG_CHECK_MODULES(ZEMBEREK, [dbus-glib-1 >= 0.62])
++
+ AC_SUBST(ZEMBEREK_CFLAGS)
+ AC_SUBST(ZEMBEREK_LIBS)
+-
+-AM_CONDITIONAL(WITH_ZEMBEREK, test "x$build_zemberek" = "xyes")
+ 
+ zemberek_dir=${datadir}/enchant/zemberek
+ 

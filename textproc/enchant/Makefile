@@ -1,55 +1,65 @@
-# $OpenBSD: Makefile,v 1.26 2017/04/24 09:36:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2017/04/25 08:46:27 ajacoutot Exp $
 
-COMMENT=	generic spell checking library/wrapper
+COMMENT=		generic spell checking library
 
-V=		1.6.0
-DISTNAME=	enchant-${V}
-REVISION=	3
-SHARED_LIBS=	enchant	6.1 # .7.0
-CATEGORIES=	textproc
+V=			1.6.1
+GH_ACCOUNT=		AbiWord
+GH_PROJECT=		enchant
+GH_TAGNAME=		enchant-${V:S/./-/g}
+PKGNAME=		${GH_PROJECT}-${V}
 
-HOMEPAGE=	http://www.abisource.com/projects/enchant/
+SHARED_LIBS +=  enchant              6.1      # 7.1
 
-MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
+CATEGORIES=		textproc
+
+HOMEPAGE=		https://abiword.github.io/enchant/
+
+MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	http://www.abisource.com/downloads/enchant/${V}/
+WANTLIB += aspell c glib-2.0 gmodule-2.0 hunspell-1.6 iconv intl
+WANTLIB += m pcre pthread ${LIBCXX}
 
-WANTLIB=	c m pcre ${LIBCXX} aspell>=16 glib-2.0 gmodule-2.0 pthread
+# c++11
+MODULES +=		gcc4
+MODGCC4_ARCHS=		*
+MODGCC4_LANGS=		c++
 
-LIB_DEPENDS=	textproc/aspell/core \
-		devel/glib2
+LIB_DEPENDS=		devel/glib2 \
+			textproc/aspell/core \
+			textproc/hunspell
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	x11/dbus-glib
+CONFIGURE_STYLE=	gnu
 
-MODULES=	devel/gettext
-CONFIGURE_STYLE=gnu
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include"
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
+# XXX linking gnome/todo and gnome/calendar breaks without this
+CONFIGURE_ENV +=	LDFLAGS="-L${LOCALBASE}/lib ${LIBCXX:C/^/-l/}"
 
-# XXX linking gnome/todo and gnome/calendar breaks without this,
-#     at least on gcc/ld.bfd arches
-CONFIGURE_ENV+= LDFLAGS="-L${LOCALBASE}/lib ${LIBCXX:C/^/-l/} -lm"
+CONFIGURE_ARGS=		--with-aspell-prefix=${LOCALBASE} \
+			--with-ispell-dir=${LOCALBASE}/lib/ispell/ \
+			--disable-voikko \
+			--disable-zemberek \
+			--disable-uspell \
+			--disable-hspell
 
-CONFIGURE_ARGS=	--enable-aspell \
-		--with-aspell-prefix=${LOCALBASE} \
-		--enable-ispell \
-		--with-ispell-dir=${LOCALBASE}/lib/ispell/ \
-		--disable-zemberek \
-		--disable-myspell \
-		--disable-voikko \
-		--disable-uspell \
-		--disable-hspell
-
-MAKE_FLAGS=	CXX_WARN_CFLAGS=""
+###
+AUTOCONF_VERSION=	2.69
+AUTOMAKE_VERSION=	1.15
+BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS} \
+			devel/libtool # libtoolize
 
 pre-configure:
-	@sed -i 's,MKDIRPROG-mkdir,MKDIRPROG-mkdir -p,g' \
-		${WRKSRC}/install-sh
-	@perl -pi -e 's,\$$\(datadir\),${LOCALBASE}/share,g' \
-		${WRKSRC}/doc/enchant.1
+	cd ${WRKSRC} && ${SETENV} \
+		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
+		autoreconf -fi
+###
+
+post-install:
+	rm ${PREFIX}/lib/enchant/*.{a,la}
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2016/04/04 22:57:45 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.7 2017/04/25 08:46:27 ajacoutot Exp $
 @bin bin/enchant
 @bin bin/enchant-lsmod
 include/enchant/
@@ -6,12 +6,9 @@ include/enchant/enchant++.h
 include/enchant/enchant-provider.h
 include/enchant/enchant.h
 lib/enchant/
-lib/enchant/libenchant_aspell.a
-lib/enchant/libenchant_aspell.la
 lib/enchant/libenchant_aspell.so
-lib/enchant/libenchant_ispell.a
-lib/enchant/libenchant_ispell.la
 lib/enchant/libenchant_ispell.so
+lib/enchant/libenchant_myspell.so
 lib/libenchant.a
 lib/libenchant.la
 @lib lib/libenchant.so.${LIBenchant_VERSION}
