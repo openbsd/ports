@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2016/06/29 16:14:42 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2017/04/25 11:21:14 sthen Exp $
 @option no-default-conflict
 @option is-branch
 @conflict php->=7.0,<7.1
@@ -46,6 +46,7 @@ share/php-${PV}/
 share/php-${PV}/build/
 share/php-${PV}/build/Makefile.global
 share/php-${PV}/build/acinclude.m4
+share/php-${PV}/build/ax_check_compile_flag.m4
 share/php-${PV}/build/config.guess
 share/php-${PV}/build/config.sub
 share/php-${PV}/build/libtool.m4

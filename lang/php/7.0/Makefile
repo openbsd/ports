@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.28 2017/04/10 11:46:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2017/04/25 11:21:14 sthen Exp $
 
 BROKEN-sparc64=	SIGBUS during phar generation
 
 PV=		7.0
 V=		${PV}.16
+REVISION-main=	0
 
 WANTLIB-main+=	${LIBCXX} ncurses readline
 
