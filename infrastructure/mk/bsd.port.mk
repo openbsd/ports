@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1340 2017/04/11 15:36:56 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1341 2017/04/25 10:23:09 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -264,6 +264,28 @@ NO_DEPENDS ?= No
 NO_BUILD ?= No
 NO_TEST ?= No
 INSTALL_TARGET ?= install
+
+.if !defined(_ARCH_DEFINES_INCLUDED)
+_ARCH_DEFINES_INCLUDED = Done
+.  include "${PORTSDIR}/infrastructure/mk/arch-defines.mk"
+.endif
+
+USE_CXX ?= No
+.if ${USE_CXX:L:Mc++11}
+.  if ${PROPERTIES:Mclang}
+# nothing to do
+.  elif ${PROPERTIES:Mllvm}
+# prefer llvm module
+MODULES +=	lang/clang
+MODCLANG_ARCH ?=	*
+MODCLANG_LANGS +=	c++
+.  else
+# try gcc4
+MODULES +=		gcc4
+MODGCC4_LANGS +=		c++
+MODGCC4_ARCHS ?=		*
+.  endif
+.endif
 
 .if ${CONFIGURE_STYLE:L:Mautomake} || ${CONFIGURE_STYLE:L:Mautoconf} || \
 	${CONFIGURE_STYLE:L:Mautoupdate}
