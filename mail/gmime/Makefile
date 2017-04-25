@@ -1,15 +1,20 @@
-# $OpenBSD: Makefile,v 1.56 2017/01/22 01:13:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.57 2017/04/25 09:00:26 ajacoutot Exp $
+
+PORTROACH=		limit:^2\.6
 
 COMMENT=		MIME messages creation and parsing library
 
 GNOME_PROJECT=		gmime
 GNOME_VERSION=		2.6.23
+REVISION=		0
 
 SHARED_LIBS +=  gmime-2.6            0.2      # 623.0
 
 CATEGORIES=		mail devel
 
 HOMEPAGE=		http://spruce.sourceforge.net/gmime/
+
+MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
