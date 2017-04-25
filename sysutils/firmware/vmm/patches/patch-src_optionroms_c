@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_optionroms_c,v 1.1 2017/04/25 20:09:35 sthen Exp $
+--- src/optionroms.c.orig	Fri Mar 31 09:34:40 2017
++++ src/optionroms.c	Fri Mar 31 09:35:35 2017
+@@ -361,7 +361,7 @@ optionrom_setup(void)
+ 
+     // All option roms found and deployed - now build BEV/BCV vectors.
+ 
+-    u32 pos = post_vga;
++    u32 pos = BUILD_BIOS_ADDR - BUILD_ROM_START;
+     while (pos < rom_get_last()) {
+         struct rom_header *rom = (void*)pos;
+         if (! is_valid_rom(rom)) {
