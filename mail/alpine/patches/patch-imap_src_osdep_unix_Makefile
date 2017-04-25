@@ -1,4 +1,4 @@
-$OpenBSD: patch-imap_src_osdep_unix_Makefile,v 1.4 2016/09/01 11:01:33 jasper Exp $
+$OpenBSD: patch-imap_src_osdep_unix_Makefile,v 1.5 2017/04/25 09:20:53 ajacoutot Exp $
 --- imap/src/osdep/unix/Makefile.orig	Mon Jan 12 06:12:25 2015
 +++ imap/src/osdep/unix/Makefile	Thu Mar 10 22:35:28 2016
 @@ -44,7 +44,7 @@ IP=4
@@ -23,15 +23,6 @@ $OpenBSD: patch-imap_src_osdep_unix_Makefile,v 1.4 2016/09/01 11:01:33 jasper Ex
  SSLINCLUDE=$(SSLDIR)/include
  SSLLIB=$(SSLDIR)/lib
  
-@@ -84,7 +84,7 @@ AFSDIR=/usr/afsws
- AFSCFLAGS=-I$(AFSDIR)/include
- AFSLIB=$(AFSDIR)/lib
- AFSLDFLAGS=-L$(AFSLIB)/afs -L$(AFSLIB) -L$(AFSDIR)/domestic/lib\
-- -lkauth -lprot -lubik -lauth -lrxkad -lrx -llwp -ldes -lcom_err\
-+ -lkauth -lprot -lubik -lauth -lrxkad -lrx -llwp -lcom_err\
-  $(AFSLIB)/afs/util.a -laudit -lsys
- # AFSLDFLAGS may also need -L/usr/ucblib -lucb
- DCECFLAGS= -DDCE_MINIMAL -DPASSWD_OVERRIDE=\"/opt/pop3/passwd/passwd\"
 @@ -150,6 +150,8 @@ DEFAULTAUTHENTICATORS=ext md5 pla log
  DEFAULTDRIVERS=imap nntp pop3 mix mx mbx tenex mtx mh mmdf unix news phile
  CHUNKSIZE=65536

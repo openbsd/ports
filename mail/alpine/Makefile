@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2016/07/10 11:55:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2017/04/25 09:20:53 ajacoutot Exp $
 
 COMMENT-main=		UW e-mail client
 COMMENT-c-client=	UW c-client mail access routines
@@ -7,14 +7,14 @@ COMMENT-mailutil=	UW IMAP4rev1/POP2/POP3 mail utility
 COMMENT-pico=		UW text editor
 COMMENT-pilot=		UW file system navigator
 
-V=			2.20
+V=			2.21
 DISTNAME=		alpine-${V}
 EXTRACT_SUFX=		.tar.xz
 
 SHARED_LIBS=		c-client 7.0
 
 # grep "PICO version" ${WRKSRC}/pico/pico.h
-PICO_V=			5.07
+PICO_V=			5.09
 # grep PILOT_VERSION ${WRKSRC}/pico/pilot.c
 PILOT_V=		2.99
 
@@ -25,12 +25,7 @@ PKGNAME-mailutil=	mailutil-uw-${V}
 PKGNAME-pico=		pico-${PICO_V}
 PKGNAME-pilot=		pilot-${PILOT_V}
 
-REVISION-main=		0
-REVISION-c-client=	0
-REVISION-imap=		2
-REVISION-mailutil=	0
-REVISION-pico=		4
-REVISION-pilot=		16
+REVISION-pilot=		17
 
 EPOCH-c-client=		0
 EPOCH-imap=		0

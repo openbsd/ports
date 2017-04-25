@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.8 2015/01/27 13:38:05 ajacoutot Exp $
---- configure.orig	Sun Jan 18 08:00:42 2015
-+++ configure	Tue Jan 27 08:57:49 2015
-@@ -13188,6 +13188,7 @@ fi
+$OpenBSD: patch-configure,v 1.9 2017/04/25 09:20:53 ajacoutot Exp $
+--- configure.orig	Mon Feb  6 01:06:22 2017
++++ configure	Tue Apr 25 11:10:08 2017
+@@ -13778,6 +13778,7 @@ fi
    fi
  
  
@@ -9,7 +9,7 @@ $OpenBSD: patch-configure,v 1.8 2015/01/27 13:38:05 ajacoutot Exp $
  
  
  
-@@ -14333,6 +14334,7 @@ $as_echo "$ac_res" >&6; }
+@@ -14923,6 +14924,7 @@ $as_echo "$ac_res" >&6; }
            INCINTL=
          fi
  
