@@ -1,6 +1,6 @@
-$OpenBSD: patch-doc_reference_conf,v 1.12 2016/12/11 09:29:05 ajacoutot Exp $
---- doc/reference.conf.orig	Sun Nov 27 14:54:31 2016
-+++ doc/reference.conf	Sat Dec 10 22:55:39 2016
+$OpenBSD: patch-doc_reference_conf,v 1.13 2017/04/25 08:07:35 ajacoutot Exp $
+--- doc/reference.conf.orig	Sun Mar 26 11:37:51 2017
++++ doc/reference.conf	Mon Apr 24 19:19:11 2017
 @@ -145,7 +145,7 @@ serverinfo {
  	 *    chown <ircd-user>.<ircd.group> rsa.key
  	 *    chmod 0600 rsa.key
@@ -37,7 +37,7 @@ $OpenBSD: patch-doc_reference_conf,v 1.12 2016/12/11 09:29:05 ajacoutot Exp $
  };
  
  /*
-@@ -1046,7 +1046,7 @@ serverhide {
+@@ -1049,7 +1049,7 @@ serverhide {
  	/*
  	 * flatten_links_file: path to the flatten links cache file.
  	 */
@@ -46,7 +46,7 @@ $OpenBSD: patch-doc_reference_conf,v 1.12 2016/12/11 09:29:05 ajacoutot Exp $
  
  	/*
  	 * hidden: hide this server from a /links output on servers that
-@@ -1379,9 +1379,9 @@ modules {
+@@ -1382,9 +1382,9 @@ modules {
  	 * path: other paths to search for modules specified below
  	 * and in "/module load".
  	 */
@@ -59,7 +59,7 @@ $OpenBSD: patch-doc_reference_conf,v 1.12 2016/12/11 09:29:05 ajacoutot Exp $
  
  	/* module: the name of a module to load on startup/rehash. */
  #	module = "some_module.la";
-@@ -1396,49 +1396,49 @@ log {
+@@ -1399,49 +1399,49 @@ log {
  
  	file {
  		type = oper;
