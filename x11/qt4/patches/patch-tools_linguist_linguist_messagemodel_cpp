@@ -1,0 +1,12 @@
+$OpenBSD: patch-tools_linguist_linguist_messagemodel_cpp,v 1.1 2017/04/25 20:08:50 espie Exp $
+--- tools/linguist/linguist/messagemodel.cpp.orig	Tue Apr 25 22:07:31 2017
++++ tools/linguist/linguist/messagemodel.cpp	Tue Apr 25 22:07:44 2017
+@@ -183,7 +183,7 @@ static int calcMergeScore(const DataModel *one, const 
+         if (ContextItem *c = one->findContext(oc->context())) {
+             for (int j = 0; j < oc->messageCount(); ++j) {
+                 MessageItem *m = oc->messageItem(j);
+-                if (c->findMessage(m->text(), m->comment()) >= 0)
++                if (c->findMessage(m->text(), m->comment()))
+                     ++inBoth;
+             }
+         }
