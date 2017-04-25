@@ -1,0 +1,48 @@
+$OpenBSD: patch-lib_Menu_cc,v 1.1 2017/04/25 14:59:33 espie Exp $
+--- lib/Menu.cc.orig	Tue Apr 25 16:23:11 2017
++++ lib/Menu.cc	Tue Apr 25 16:40:44 2017
+@@ -34,6 +34,7 @@
+ #include <X11/keysym.h>
+ 
+ #include <stdio.h>
++#include <stdlib.h>
+ #include <assert.h>
+ 
+ 
+@@ -363,7 +364,7 @@ unsigned int bt::Menu::insertItem(const MenuItem &item
+   } else {
+     index = std::min(static_cast<size_t>(index), _items.size());
+     it = _items.begin();
+-    std::advance<ItemList::iterator, signed>(it, index);
++    std::advance(it, index);
+   }
+ 
+   it = _items.insert(it, item);
+@@ -514,7 +515,7 @@ void bt::Menu::removeItem(unsigned int id) {
+ 
+ void bt::Menu::removeIndex(unsigned int index) {
+   ItemList::iterator it = _items.begin();
+-  std::advance<ItemList::iterator, signed>(it, index);
++  std::advance(it, index);
+   if (it == _items.end())
+     return; // item not found
+   removeItemByIterator(it);
+@@ -1035,7 +1036,7 @@ void bt::Menu::keyPressEvent(const XKeyEvent * const e
+     const ItemList::const_iterator &end = _items.end();
+     ItemList::const_iterator anchor = _items.begin();
+     if (_active_index != ~0u) {
+-      std::advance<ItemList::const_iterator, signed>(anchor, _active_index);
++      std::advance(anchor, _active_index);
+ 
+       // go one paste the current active index
+       if (anchor != end && !anchor->separator)
+@@ -1055,8 +1056,7 @@ void bt::Menu::keyPressEvent(const XKeyEvent * const e
+     ItemList::const_reverse_iterator anchor = _items.rbegin();
+     const ItemList::const_reverse_iterator &end = _items.rend();
+     if (_active_index != ~0u) {
+-      std::advance<ItemList::const_reverse_iterator, signed>
+-        (anchor, _items.size() - _active_index - 1);
++        std::advance(anchor, _items.size() - _active_index - 1);
+ 
+       // go one item past the current active index
+       if (anchor != end && !anchor->separator)
