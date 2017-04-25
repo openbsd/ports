@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2015/08/12 12:33:02 zhuk Exp $
+# $OpenBSD: Makefile,v 1.12 2017/04/25 19:05:53 rsadowski Exp $
 
 CATEGORIES =	net
 COMMENT =	KTorrent engine
@@ -27,11 +27,12 @@ MODKDE4_USE =		libs
 MODKDE4_LIB_LINKS =	Yes
 
 BUILD_DEPENDS =	devel/boost \
-		devel/doxygen \
 		devel/gettext-tools
 
 LIB_DEPENDS =	devel/gmp \
 		security/libgcrypt \
 		security/qca2
+
+CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen:Bool=Yes
 
 .include <bsd.port.mk>
