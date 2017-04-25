@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2015/11/02 11:56:54 espie Exp $
+# $OpenBSD: Makefile,v 1.54 2017/04/25 22:51:23 jca Exp $
 
 COMMENT=	handle external logins, send and receive faxes
 
@@ -24,6 +24,7 @@ RUN_DEPENDS=	print/ghostscript/gnu \
 
 WRKDIST=	${WRKDIR}/mgetty-${VERSION}
 
+MAKE_FLAGS=	CC="${CC}"
 MAKE_ENV+=	SYSCONFDIR=${SYSCONFDIR}
 
 SAMPLE_SCRIPTS=	answer_fax.sh coverpg* fax* printfax* \
