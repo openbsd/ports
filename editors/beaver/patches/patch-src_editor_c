@@ -1,0 +1,39 @@
+$OpenBSD: patch-src_editor_c,v 1.1 2017/04/25 21:45:02 jca Exp $
+--- src/editor.c.orig	Tue Apr 25 23:35:58 2017
++++ src/editor.c	Tue Apr 25 23:37:17 2017
+@@ -404,7 +404,7 @@ extern void		refresh_editor(GtkWidget *Editor, gint to
+ /* preconditions:  iter points to possible start of interesting word  
+ postconditions: end is set to the end of the word in the buffer if it was found.
+ if word found, returns TRUE, else FALSE*/
+-inline gboolean starts_string (gchar *text, gint i, gchar *word, gint *end)
++static inline gboolean starts_string (gchar *text, gint i, gchar *word, gint *end)
+ {
+ 	gunichar ch;
+ 	gunichar k;
+@@ -438,7 +438,7 @@ inline gboolean starts_string (gchar *text, gint i, gc
+ 
+ 
+ /* returns color index of match, or -1 if none */
+-inline gint is_matching_keyword (gint Lg, const gchar *str)
++static inline gint is_matching_keyword (gint Lg, const gchar *str)
+ {
+ 	gint rv = -1;
+ 	gpointer val;
+@@ -454,7 +454,7 @@ inline gint is_matching_keyword (gint Lg, const gchar 
+ }
+ 
+ 
+-inline void refresh_markers (GtkTextBuffer *Buffer)
++static inline void refresh_markers (GtkTextBuffer *Buffer)
+ {
+ 	gint CurrentPage;
+ 	gint Lg;
+@@ -780,7 +780,7 @@ void search_for_keyword_correctly (gint page, GtkTextB
+ }
+ 
+ 
+-inline void search_for_keyword_fastly (gint page, GtkTextBuffer *Buffer, gchar *text, gint *i, gint offset, gint Lg)
++static inline void search_for_keyword_fastly (gint page, GtkTextBuffer *Buffer, gchar *text, gint *i, gint offset, gint Lg)
+ {
+ 	/* search for a keyword */
+ 	gint tmp, next;
