@@ -1,0 +1,27 @@
+$OpenBSD: patch-src_FeatureMap_cpp,v 1.1 2017/04/25 08:12:16 ajacoutot Exp $
+
+CVE-2017-5436 1/2
+From 1ce331d5548b98ed8b818532b2556d6f2c7a3b83 Mon Sep 17 00:00:00 2001
+From: Martin Hosken <martin_hosken@sil.org>
+Date: Thu, 9 Mar 2017 22:04:04 +0000
+Subject: [PATCH] Ensure features have enough space. Fix from Mozilla
+
+CVE-2017-5436 2/2
+From b23d7b9e53f41b962fd99d82967dddd9a16891e6 Mon Sep 17 00:00:00 2001
+From: Martin Hosken <martin_hosken@sil.org>
+Date: Tue, 18 Apr 2017 10:24:31 +0100
+Subject: [PATCH] Resize rather than just reserve space in feature vector
+ creation. Quietens abort in debug
+
+--- src/FeatureMap.cpp.orig	Tue Apr 25 10:09:57 2017
++++ src/FeatureMap.cpp	Tue Apr 25 10:09:52 2017
+@@ -275,7 +275,8 @@ bool FeatureRef::applyValToFeature(uint32 val, Feature
+     else
+       if (pDest.m_pMap!=&m_pFace->theSill().theFeatureMap())
+         return false;       //incompatible
+-    pDest.reserve(m_index);
++    if (m_index >= pDest.size())
++        pDest.resize(m_index+1);
+     pDest[m_index] &= ~m_mask;
+     pDest[m_index] |= (uint32(val) << m_bits);
+     return true;
