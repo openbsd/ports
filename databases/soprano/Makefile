@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2017/04/10 11:45:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2017/04/25 06:22:08 rsadowski Exp $
 
 COMMENT =	RDF framework
 CATEGORIES =	databases devel textproc sysutils
@@ -24,8 +24,6 @@ WANTLIB += raptor2 rdf ${LIBCXX}
 MODULES =	x11/kde4
 MODKDE4_USE =
 
-BUILD_DEPENDS =	devel/doxygen
-
 LIB_DEPENDS = 	textproc/clucene \
 	    	databases/iodbc \
 		textproc/raptor \
@@ -33,6 +31,7 @@ LIB_DEPENDS = 	textproc/clucene \
 
 # No Java, thanks
 CONFIGURE_ARGS =	-DSOPRANO_DISABLE_SESAME2_BACKEND:Bool=Yes \
+			-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen:Bool=Yes \
 			-DSOPRANO_BUILD_TESTS:Bool=Yes
 
 TEST_DEPENDS =		databases/virtuoso \
