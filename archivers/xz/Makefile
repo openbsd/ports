@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.33 2017/01/18 21:28:35 naddy Exp $
+# $OpenBSD: Makefile,v 1.34 2017/04/25 15:09:53 naddy Exp $
 
 COMMENT=	LZMA compression and decompression tools
 
 DISTNAME=	xz-5.2.3
+REVISION=	0
 SHARED_LIBS=	lzma                 2.1      # 7.3
 CATEGORIES=	archivers
 DPB_PROPERTIES=	parallel
 
-HOMEPAGE=	http://tukaani.org/xz/
+HOMEPAGE=	https://tukaani.org/xz/
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
