@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.353 2016/12/02 14:58:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.354 2017/04/25 13:18:14 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += abook
@@ -57,6 +57,7 @@
      SUBDIR += geary
      SUBDIR += getmail
      SUBDIR += gmime
+     SUBDIR += gmime30
      SUBDIR += grepmail
      SUBDIR += greyscanner
      SUBDIR += hashcash
