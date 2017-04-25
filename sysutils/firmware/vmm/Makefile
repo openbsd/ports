@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2017/04/25 20:09:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2017/04/25 20:11:53 sthen Exp $
+
+ONLY_FOR_ARCHS=	amd64 i386
 
 FW_DRIVER=	vmm
 FW_VER=		1.10.2
