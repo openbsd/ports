@@ -1,0 +1,15 @@
+$OpenBSD: patch-source_test_intltest_utxttest_h,v 1.1 2017/04/25 20:10:02 ajacoutot Exp $
+
+CVE-2017-7867 CVE-2017-7868
+https://ssl.icu-project.org/trac/changeset/39671#file0
+
+--- source/test/intltest/utxttest.h.orig	Wed Jun 15 20:58:17 2016
++++ source/test/intltest/utxttest.h	Tue Apr 25 11:40:54 2017
+@@ -38,6 +38,7 @@ class UTextTest : public IntlTest { (public)
+     void Ticket10562();
+     void Ticket10983();
+     void Ticket12130();
++    void Ticket12888();
+ 
+ private:
+     struct m {                              // Map between native indices & code points.
