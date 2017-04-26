@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2016/09/24 11:03:31 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.25 2017/04/26 13:13:47 ajacoutot Exp $
 @conflict folks-meta-tracker-*
 @pkgpath net/telepathy/folks,-main
 @pkgpath net/telepathy/folks,-tracker
@@ -70,6 +70,7 @@ share/locale/gl/LC_MESSAGES/folks.mo
 share/locale/gu/LC_MESSAGES/folks.mo
 share/locale/he/LC_MESSAGES/folks.mo
 share/locale/hi/LC_MESSAGES/folks.mo
+share/locale/hr/LC_MESSAGES/folks.mo
 share/locale/hu/LC_MESSAGES/folks.mo
 share/locale/id/LC_MESSAGES/folks.mo
 share/locale/it/LC_MESSAGES/folks.mo

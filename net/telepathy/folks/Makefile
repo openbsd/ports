@@ -1,25 +1,20 @@
-# $OpenBSD: Makefile,v 1.91 2017/04/26 09:28:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.92 2017/04/26 13:13:47 ajacoutot Exp $
 
 # XXX: PORTROACH set below to override the value from gnome.port.mk
 
 COMMENT=		people aggregation library
 
-# XXX: Remove when updating
-GH_PROJECT=		folks
-GH_ACCOUNT=		gnome
-GH_COMMIT=		780d64a984fb014e0ee7b633a24a9c4fda1df21e
-DISTNAME=		folks-0.11.3
-#GNOME_PROJECT=		folks
-#GNOME_VERSION=		0.11.3
+GNOME_PROJECT=		folks
+GNOME_VERSION=		0.11.3
 
 # MODULE_VERSION in config.h
 API_V=			43
-REVISION=		3
+REVISION=		4
 
-SHARED_LIBS +=  folks-telepathy           5.2 # 43.0
-SHARED_LIBS +=  folks                     5.5 # 43.0
-SHARED_LIBS +=  folks-eds                 1.2 # 43.0
-SHARED_LIBS +=  folks-dummy               0.0 # 43.0
+SHARED_LIBS +=  folks                5.5      # 43.3
+SHARED_LIBS +=  folks-dummy          0.0      # 43.3
+SHARED_LIBS +=  folks-telepathy      5.2      # 43.3
+SHARED_LIBS +=  folks-eds            1.2      # 43.3
 
 SUBST_VARS=		API_V
 
@@ -70,8 +65,11 @@ CONFIGURE_ARGS += 	--disable-fatal-warnings
 
 ########################################
 # XXX: Remove when updating
-MODULES +=		textproc/intltool
-BUILD_DEPENDS +=	devel/gettext-tools
+GH_PROJECT=		folks
+GH_ACCOUNT=		gnome
+GH_COMMIT=		2f8018ff090820f3eb56357dc5490e4c8fea86bb
+EXTRACT_SUFX=		.tar.gz
+MASTER_SITES=		https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/archive/
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.15
 BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
