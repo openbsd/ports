@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.90 2017/04/20 19:01:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.91 2017/04/26 09:28:33 ajacoutot Exp $
 
 # XXX: PORTROACH set below to override the value from gnome.port.mk
 
@@ -67,10 +67,6 @@ CONFIGURE_ARGS +=	--disable-bluez-backend
 
 # https://git.gnome.org/browse/folks/commit/Makefile.am?id=8ebe13c457660de380521874a006425083151741
 CONFIGURE_ARGS += 	--disable-fatal-warnings
-
-# XXX undefined references to a few evolution-data-server symbols (private libs)
-# https://bugzilla.gnome.org/show_bug.cgi?id=781485
-CONFIGURE_ARGS +=	--disable-modular-tests
 
 ########################################
 # XXX: Remove when updating
