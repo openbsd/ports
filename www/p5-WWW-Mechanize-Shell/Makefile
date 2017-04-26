@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.2 2016/03/20 19:57:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2017/04/26 15:40:12 bluhm Exp $
 
-COMMENT =		interactive shell for WWW::Mechanize
+COMMENT =	interactive shell for WWW::Mechanize
 
-DISTNAME =		WWW-Mechanize-Shell-0.55
+DISTNAME =	WWW-Mechanize-Shell-0.56
 
-CATEGORIES =		www
+CATEGORIES =	www
 
 MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
-# perl
+# perl_5
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		cpan
@@ -28,6 +28,7 @@ TEST_DEPENDS =		devel/p5-File-Slurp \
 			devel/p5-Test-MockObject \
 			devel/p5-Test-Pod>=0.95 \
 			devel/p5-Test-Without-Module \
+			www/p5-CGI \
 			www/p5-HTML-TableExtract \
 			www/p5-HTTP-Daemon
 
