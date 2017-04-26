@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.92 2017/04/10 11:46:22 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.93 2017/04/26 08:15:05 sthen Exp $
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
 
@@ -59,6 +59,7 @@ AUTOCONF_VERSION?=	2.69
 CONFIGURE_ENV+=		CFLAGS="${CFLAGS} -I${LOCALBASE}/include -pthread" \
 			LDFLAGS="-L${LOCALBASE}/lib -pthread" \
 			EXTENSION_DIR=${MODULES_DIR} \
+			LIBCXX="${LIBCXX}" \
 			lt_cv_path_SED=/usr/bin/sed
 # configure detects us as having decimal fp support but it's not built in
 # in libgcc. https://bugs.php.net/bug.php?id=68114
