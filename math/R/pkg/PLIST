@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.33 2017/03/09 05:18:44 feinerer Exp $
+@comment $OpenBSD: PLIST,v 1.34 2017/04/26 17:29:58 feinerer Exp $
 bin/R
 @bin bin/Rscript
 lib/R/
@@ -94,6 +94,7 @@ lib/R/library/KernSmooth/DESCRIPTION
 lib/R/library/KernSmooth/INDEX
 lib/R/library/KernSmooth/Meta/
 lib/R/library/KernSmooth/Meta/Rd.rds
+lib/R/library/KernSmooth/Meta/features.rds
 lib/R/library/KernSmooth/Meta/hsearch.rds
 lib/R/library/KernSmooth/Meta/links.rds
 lib/R/library/KernSmooth/Meta/nsInfo.rds
@@ -137,6 +138,7 @@ lib/R/library/MASS/INDEX
 lib/R/library/MASS/Meta/
 lib/R/library/MASS/Meta/Rd.rds
 lib/R/library/MASS/Meta/data.rds
+lib/R/library/MASS/Meta/features.rds
 lib/R/library/MASS/Meta/hsearch.rds
 lib/R/library/MASS/Meta/links.rds
 lib/R/library/MASS/Meta/nsInfo.rds
@@ -204,6 +206,7 @@ lib/R/library/Matrix/LICENCE
 lib/R/library/Matrix/Meta/
 lib/R/library/Matrix/Meta/Rd.rds
 lib/R/library/Matrix/Meta/data.rds
+lib/R/library/Matrix/Meta/features.rds
 lib/R/library/Matrix/Meta/hsearch.rds
 lib/R/library/Matrix/Meta/links.rds
 lib/R/library/Matrix/Meta/nsInfo.rds
@@ -301,6 +304,7 @@ lib/R/library/base/INDEX
 lib/R/library/base/Meta/
 lib/R/library/base/Meta/Rd.rds
 lib/R/library/base/Meta/demo.rds
+lib/R/library/base/Meta/features.rds
 lib/R/library/base/Meta/hsearch.rds
 lib/R/library/base/Meta/links.rds
 lib/R/library/base/Meta/package.rds
@@ -330,6 +334,7 @@ lib/R/library/boot/INDEX
 lib/R/library/boot/Meta/
 lib/R/library/boot/Meta/Rd.rds
 lib/R/library/boot/Meta/data.rds
+lib/R/library/boot/Meta/features.rds
 lib/R/library/boot/Meta/hsearch.rds
 lib/R/library/boot/Meta/links.rds
 lib/R/library/boot/Meta/nsInfo.rds
@@ -378,6 +383,7 @@ lib/R/library/class/DESCRIPTION
 lib/R/library/class/INDEX
 lib/R/library/class/Meta/
 lib/R/library/class/Meta/Rd.rds
+lib/R/library/class/Meta/features.rds
 lib/R/library/class/Meta/hsearch.rds
 lib/R/library/class/Meta/links.rds
 lib/R/library/class/Meta/nsInfo.rds
@@ -422,6 +428,7 @@ lib/R/library/cluster/INDEX
 lib/R/library/cluster/Meta/
 lib/R/library/cluster/Meta/Rd.rds
 lib/R/library/cluster/Meta/data.rds
+lib/R/library/cluster/Meta/features.rds
 lib/R/library/cluster/Meta/hsearch.rds
 lib/R/library/cluster/Meta/links.rds
 lib/R/library/cluster/Meta/nsInfo.rds
@@ -471,6 +478,7 @@ lib/R/library/codetools/DESCRIPTION
 lib/R/library/codetools/INDEX
 lib/R/library/codetools/Meta/
 lib/R/library/codetools/Meta/Rd.rds
+lib/R/library/codetools/Meta/features.rds
 lib/R/library/codetools/Meta/hsearch.rds
 lib/R/library/codetools/Meta/links.rds
 lib/R/library/codetools/Meta/nsInfo.rds
@@ -494,6 +502,7 @@ lib/R/library/compiler/DESCRIPTION
 lib/R/library/compiler/INDEX
 lib/R/library/compiler/Meta/
 lib/R/library/compiler/Meta/Rd.rds
+lib/R/library/compiler/Meta/features.rds
 lib/R/library/compiler/Meta/hsearch.rds
 lib/R/library/compiler/Meta/links.rds
 lib/R/library/compiler/Meta/nsInfo.rds
@@ -518,6 +527,7 @@ lib/R/library/datasets/INDEX
 lib/R/library/datasets/Meta/
 lib/R/library/datasets/Meta/Rd.rds
 lib/R/library/datasets/Meta/data.rds
+lib/R/library/datasets/Meta/features.rds
 lib/R/library/datasets/Meta/hsearch.rds
 lib/R/library/datasets/Meta/links.rds
 lib/R/library/datasets/Meta/nsInfo.rds
@@ -543,6 +553,7 @@ lib/R/library/foreign/DESCRIPTION
 lib/R/library/foreign/INDEX
 lib/R/library/foreign/Meta/
 lib/R/library/foreign/Meta/Rd.rds
+lib/R/library/foreign/Meta/features.rds
 lib/R/library/foreign/Meta/hsearch.rds
 lib/R/library/foreign/Meta/links.rds
 lib/R/library/foreign/Meta/nsInfo.rds
@@ -590,6 +601,7 @@ lib/R/library/grDevices/INDEX
 lib/R/library/grDevices/Meta/
 lib/R/library/grDevices/Meta/Rd.rds
 lib/R/library/grDevices/Meta/demo.rds
+lib/R/library/grDevices/Meta/features.rds
 lib/R/library/grDevices/Meta/hsearch.rds
 lib/R/library/grDevices/Meta/links.rds
 lib/R/library/grDevices/Meta/nsInfo.rds
@@ -736,6 +748,7 @@ lib/R/library/graphics/INDEX
 lib/R/library/graphics/Meta/
 lib/R/library/graphics/Meta/Rd.rds
 lib/R/library/graphics/Meta/demo.rds
+lib/R/library/graphics/Meta/features.rds
 lib/R/library/graphics/Meta/hsearch.rds
 lib/R/library/graphics/Meta/links.rds
 lib/R/library/graphics/Meta/nsInfo.rds
@@ -776,6 +789,7 @@ lib/R/library/grid/DESCRIPTION
 lib/R/library/grid/INDEX
 lib/R/library/grid/Meta/
 lib/R/library/grid/Meta/Rd.rds
+lib/R/library/grid/Meta/features.rds
 lib/R/library/grid/Meta/hsearch.rds
 lib/R/library/grid/Meta/links.rds
 lib/R/library/grid/Meta/nsInfo.rds
@@ -848,6 +862,7 @@ lib/R/library/lattice/Meta/
 lib/R/library/lattice/Meta/Rd.rds
 lib/R/library/lattice/Meta/data.rds
 lib/R/library/lattice/Meta/demo.rds
+lib/R/library/lattice/Meta/features.rds
 lib/R/library/lattice/Meta/hsearch.rds
 lib/R/library/lattice/Meta/links.rds
 lib/R/library/lattice/Meta/nsInfo.rds
@@ -899,6 +914,7 @@ lib/R/library/methods/DESCRIPTION
 lib/R/library/methods/INDEX
 lib/R/library/methods/Meta/
 lib/R/library/methods/Meta/Rd.rds
+lib/R/library/methods/Meta/features.rds
 lib/R/library/methods/Meta/hsearch.rds
 lib/R/library/methods/Meta/links.rds
 lib/R/library/methods/Meta/nsInfo.rds
@@ -926,6 +942,7 @@ lib/R/library/mgcv/INDEX
 lib/R/library/mgcv/Meta/
 lib/R/library/mgcv/Meta/Rd.rds
 lib/R/library/mgcv/Meta/data.rds
+lib/R/library/mgcv/Meta/features.rds
 lib/R/library/mgcv/Meta/hsearch.rds
 lib/R/library/mgcv/Meta/links.rds
 lib/R/library/mgcv/Meta/nsInfo.rds
@@ -978,6 +995,7 @@ lib/R/library/nlme/LICENCE
 lib/R/library/nlme/Meta/
 lib/R/library/nlme/Meta/Rd.rds
 lib/R/library/nlme/Meta/data.rds
+lib/R/library/nlme/Meta/features.rds
 lib/R/library/nlme/Meta/hsearch.rds
 lib/R/library/nlme/Meta/links.rds
 lib/R/library/nlme/Meta/nsInfo.rds
@@ -1043,6 +1061,7 @@ lib/R/library/nnet/DESCRIPTION
 lib/R/library/nnet/INDEX
 lib/R/library/nnet/Meta/
 lib/R/library/nnet/Meta/Rd.rds
+lib/R/library/nnet/Meta/features.rds
 lib/R/library/nnet/Meta/hsearch.rds
 lib/R/library/nnet/Meta/links.rds
 lib/R/library/nnet/Meta/nsInfo.rds
@@ -1085,6 +1104,7 @@ lib/R/library/parallel/DESCRIPTION
 lib/R/library/parallel/INDEX
 lib/R/library/parallel/Meta/
 lib/R/library/parallel/Meta/Rd.rds
+lib/R/library/parallel/Meta/features.rds
 lib/R/library/parallel/Meta/hsearch.rds
 lib/R/library/parallel/Meta/links.rds
 lib/R/library/parallel/Meta/nsInfo.rds
@@ -1117,6 +1137,7 @@ lib/R/library/rpart/INDEX
 lib/R/library/rpart/Meta/
 lib/R/library/rpart/Meta/Rd.rds
 lib/R/library/rpart/Meta/data.rds
+lib/R/library/rpart/Meta/features.rds
 lib/R/library/rpart/Meta/hsearch.rds
 lib/R/library/rpart/Meta/links.rds
 lib/R/library/rpart/Meta/nsInfo.rds
@@ -1182,6 +1203,7 @@ lib/R/library/spatial/DESCRIPTION
 lib/R/library/spatial/INDEX
 lib/R/library/spatial/Meta/
 lib/R/library/spatial/Meta/Rd.rds
+lib/R/library/spatial/Meta/features.rds
 lib/R/library/spatial/Meta/hsearch.rds
 lib/R/library/spatial/Meta/links.rds
 lib/R/library/spatial/Meta/nsInfo.rds
@@ -1250,6 +1272,7 @@ lib/R/library/splines/DESCRIPTION
 lib/R/library/splines/INDEX
 lib/R/library/splines/Meta/
 lib/R/library/splines/Meta/Rd.rds
+lib/R/library/splines/Meta/features.rds
 lib/R/library/splines/Meta/hsearch.rds
 lib/R/library/splines/Meta/links.rds
 lib/R/library/splines/Meta/nsInfo.rds
@@ -1277,6 +1300,7 @@ lib/R/library/stats/INDEX
 lib/R/library/stats/Meta/
 lib/R/library/stats/Meta/Rd.rds
 lib/R/library/stats/Meta/demo.rds
+lib/R/library/stats/Meta/features.rds
 lib/R/library/stats/Meta/hsearch.rds
 lib/R/library/stats/Meta/links.rds
 lib/R/library/stats/Meta/nsInfo.rds
@@ -1308,6 +1332,7 @@ lib/R/library/stats4/DESCRIPTION
 lib/R/library/stats4/INDEX
 lib/R/library/stats4/Meta/
 lib/R/library/stats4/Meta/Rd.rds
+lib/R/library/stats4/Meta/features.rds
 lib/R/library/stats4/Meta/hsearch.rds
 lib/R/library/stats4/Meta/links.rds
 lib/R/library/stats4/Meta/nsInfo.rds
@@ -1334,6 +1359,7 @@ lib/R/library/survival/INDEX
 lib/R/library/survival/Meta/
 lib/R/library/survival/Meta/Rd.rds
 lib/R/library/survival/Meta/data.rds
+lib/R/library/survival/Meta/features.rds
 lib/R/library/survival/Meta/hsearch.rds
 lib/R/library/survival/Meta/links.rds
 lib/R/library/survival/Meta/nsInfo.rds
@@ -1367,6 +1393,9 @@ lib/R/library/survival/doc/splines.pdf
 lib/R/library/survival/doc/tests.R
 lib/R/library/survival/doc/tests.Rnw
 lib/R/library/survival/doc/tests.pdf
+lib/R/library/survival/doc/tiedtimes.R
+lib/R/library/survival/doc/tiedtimes.Rnw
+lib/R/library/survival/doc/tiedtimes.pdf
 lib/R/library/survival/doc/timedep.R
 lib/R/library/survival/doc/timedep.Rnw
 lib/R/library/survival/doc/timedep.pdf
@@ -1390,6 +1419,7 @@ lib/R/library/tcltk/INDEX
 lib/R/library/tcltk/Meta/
 lib/R/library/tcltk/Meta/Rd.rds
 lib/R/library/tcltk/Meta/demo.rds
+lib/R/library/tcltk/Meta/features.rds
 lib/R/library/tcltk/Meta/hsearch.rds
 lib/R/library/tcltk/Meta/links.rds
 lib/R/library/tcltk/Meta/nsInfo.rds
@@ -1433,6 +1463,7 @@ lib/R/library/tools/DESCRIPTION
 lib/R/library/tools/INDEX
 lib/R/library/tools/Meta/
 lib/R/library/tools/Meta/Rd.rds
+lib/R/library/tools/Meta/features.rds
 lib/R/library/tools/Meta/hsearch.rds
 lib/R/library/tools/Meta/links.rds
 lib/R/library/tools/Meta/nsInfo.rds
@@ -1777,6 +1808,7 @@ lib/R/library/utils/DESCRIPTION
 lib/R/library/utils/INDEX
 lib/R/library/utils/Meta/
 lib/R/library/utils/Meta/Rd.rds
+lib/R/library/utils/Meta/features.rds
 lib/R/library/utils/Meta/hsearch.rds
 lib/R/library/utils/Meta/links.rds
 lib/R/library/utils/Meta/nsInfo.rds

@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.6 2017/03/09 05:18:44 feinerer Exp $
+$OpenBSD: README,v 1.7 2017/04/26 17:29:58 feinerer Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -24,8 +24,8 @@ can be customized via ~/.R/Makevars
 (https://cran.r-project.org/doc/manuals/r-release/R-admin.html#Customizing-package-compilation).
 E.g., for using recent compilers (packages g++ and gcc) add
 
-CC='egcc -std=gnu99'
+CC=egcc -std=gnu99
 CXX=eg++
-CXX1X=eg++
-CXX1XSTD='-std=c++11'
-CXX1XPICFLAGS=-fpic
+CXX11=eg++
+CXX11STD=-std=c++11
+CXX11PICFLAGS=-fpic
