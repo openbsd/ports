@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2016/03/11 19:59:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2017/04/26 02:37:03 jsg Exp $
 
 COMMENT=	SDL wrapper around the Pango library
 
 V=		0.1.2
 DISTNAME=	SDL_Pango-${V}
 PKGNAME=	sdl-pango-${V}
-REVISION=	9
+REVISION=	10
 CATEGORIES=	devel x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=sdlpango/}
 MASTER_SITES0=	http://zarb.org/~gc/t/
