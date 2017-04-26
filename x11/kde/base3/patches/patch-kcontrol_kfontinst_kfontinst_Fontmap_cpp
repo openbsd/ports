@@ -1,0 +1,21 @@
+$OpenBSD: patch-kcontrol_kfontinst_kfontinst_Fontmap_cpp,v 1.1 2017/04/26 01:47:16 espie Exp $
+--- kcontrol/kfontinst/kfontinst/Fontmap.cpp.orig	Wed Apr 26 03:44:19 2017
++++ kcontrol/kfontinst/kfontinst/Fontmap.cpp	Wed Apr 26 03:45:50 2017
+@@ -44,7 +44,7 @@
+ 
+ using namespace std;
+ 
+-static char * findSpace(char *str)
++static const char * findSpace(const char *str)
+ {
+     while(str && *str!=' ' && *str!='\t')
+         str++;
+@@ -65,7 +65,7 @@ static bool parseLine(const char *line, QString &ps, Q
+     char a[constMaxLen+1],
+          b[constFileMaxLen+1];
+ 
+-    char *slash1=strchr(line, '/'),
++    const char *slash1=strchr(line, '/'),
+          *space1=slash1 ? findSpace(slash1) : NULL, //strchr(slash1, ' ') : NULL,
+          *ob=slash1 ? strchr(slash1, '(') : NULL,
+          *cb=ob ? strchr(ob, ')') : NULL,
