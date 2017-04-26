@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.10 2016/12/30 11:31:06 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2017/04/26 07:03:39 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/apache_libcloud-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/apache_libcloud-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/apache_libcloud-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/apache_libcloud-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
 lib/python${MODPY_VERSION}/site-packages/apache_libcloud-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
+lib/python${MODPY_VERSION}/site-packages/apache_libcloud-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/apache_libcloud-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/libcloud/
 lib/python${MODPY_VERSION}/site-packages/libcloud/__init__.py
@@ -195,6 +196,8 @@ lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/ntta.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/ntta.pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/onapp.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/onapp.pyc
+lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/oneandone.py
+lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/oneandone.pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/opennebula.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/opennebula.pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/openstack.py
@@ -306,6 +309,8 @@ lib/python${MODPY_VERSION}/site-packages/libcloud/dns/drivers/nfsn.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/dns/drivers/nfsn.pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/dns/drivers/nsone.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/dns/drivers/nsone.pyc
+lib/python${MODPY_VERSION}/site-packages/libcloud/dns/drivers/onapp.py
+lib/python${MODPY_VERSION}/site-packages/libcloud/dns/drivers/onapp.pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/dns/drivers/pointdns.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/dns/drivers/pointdns.pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/dns/drivers/powerdns.py
@@ -328,8 +333,8 @@ lib/python${MODPY_VERSION}/site-packages/libcloud/dns/providers.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/dns/providers.pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/dns/types.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/dns/types.pyc
-lib/python${MODPY_VERSION}/site-packages/libcloud/httplib_ssl.py
-lib/python${MODPY_VERSION}/site-packages/libcloud/httplib_ssl.pyc
+lib/python${MODPY_VERSION}/site-packages/libcloud/http.py
+lib/python${MODPY_VERSION}/site-packages/libcloud/http.pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/loadbalancer/
 lib/python${MODPY_VERSION}/site-packages/libcloud/loadbalancer/__init__.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/loadbalancer/__init__.pyc
@@ -411,8 +416,6 @@ lib/python${MODPY_VERSION}/site-packages/libcloud/storage/types.pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/utils/
 lib/python${MODPY_VERSION}/site-packages/libcloud/utils/__init__.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/utils/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/libcloud/utils/compression.py
-lib/python${MODPY_VERSION}/site-packages/libcloud/utils/compression.pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/utils/connection.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/utils/connection.pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/utils/decorators.py
@@ -427,6 +430,8 @@ lib/python${MODPY_VERSION}/site-packages/libcloud/utils/iso8601.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/utils/iso8601.pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/utils/logging.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/utils/logging.pyc
+lib/python${MODPY_VERSION}/site-packages/libcloud/utils/loggingconnection.py
+lib/python${MODPY_VERSION}/site-packages/libcloud/utils/loggingconnection.pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/utils/misc.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/utils/misc.pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/utils/networking.py
