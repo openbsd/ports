@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2017/03/25 17:33:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.49 2017/04/26 16:36:03 rsadowski Exp $
 
 COMMENT=	free open source planetarium
 
@@ -22,8 +22,6 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=stellarium/}
 MODULES=	devel/cmake \
 		x11/qt5
 
-BUILD_DEPENDS=	devel/doxygen
-
 LIB_DEPENDS=	x11/qt5/qtmultimedia \
 		x11/qt5/qtscript \
 		x11/qt5/qtserialport
@@ -36,7 +34,8 @@ RUN_DEPENDS=	net/curl \
 CONFIGURE_ENV=	HOME=${WRKDIR}
 CONFIGURE_ARGS=	-Wno-dev \
 		-DCMAKE_C_FLAGS="${CFLAGS} -I${X11BASE}/include" \
-		-DCMAKE_CXX_FLAGS="${CXXFLAGS} -I${X11BASE}/include"
+		-DCMAKE_CXX_FLAGS="${CXXFLAGS} -I${X11BASE}/include" \
+		-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen:Bool=Yes
 
 PORTHOME=	${WRKDIR}
 
