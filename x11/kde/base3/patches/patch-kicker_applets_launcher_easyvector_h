@@ -1,0 +1,30 @@
+$OpenBSD: patch-kicker_applets_launcher_easyvector_h,v 1.1 2017/04/26 01:39:54 espie Exp $
+--- kicker/applets/launcher/easyvector.h.orig	Wed Apr 26 03:33:46 2017
++++ kicker/applets/launcher/easyvector.h	Wed Apr 26 03:36:03 2017
+@@ -87,7 +87,7 @@ typename EasyVector< VALUE, CHECKINDEX >::Index
+ template < class VALUE, bool CHECKINDEX >
+ void EasyVector< VALUE, CHECKINDEX >::eraseAt(Index index)
+ {   _checkIndex(index);
+-    erase(this->begin()+index);
++    this->erase(this->begin()+index);
+ }
+ 
+ 
+@@ -108,7 +108,7 @@ void EasyVector< VALUE, CHECKINDEX >::insertAt(EasyVec
+         this->push_back(value);
+         return;
+     }
+-    insert(this->begin()+index,value);
++    this->insert(this->begin()+index,value);
+ }
+ 
+ 
+@@ -116,7 +116,7 @@ template < class VALUE, bool CHECKINDEX >
+ void EasyVector< VALUE, CHECKINDEX >::insertAt(EasyVector< VALUE, CHECKINDEX >::Index index,const EasyVector< VALUE, CHECKINDEX > &v)
+ {   index=_convertInsertIndex(index);
+     _checkInsertIndex(index);
+-    insert(this->begin()+index,v.begin(),v.end());
++    this->insert(this->begin()+index,v.begin(),v.end());
+ }
+ 
+ 
