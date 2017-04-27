@@ -1,12 +1,11 @@
-$OpenBSD: patch-config_tests_unix_nis_nis_cpp,v 1.4 2009/10/11 09:43:08 espie Exp $
---- config.tests/unix/nis/nis.cpp.orig	Tue Sep 29 13:01:31 2009
-+++ config.tests/unix/nis/nis.cpp	Sat Oct 10 13:19:31 2009
-@@ -41,6 +41,8 @@
+$OpenBSD: patch-config_tests_unix_nis_nis_cpp,v 1.5 2017/04/27 17:32:19 espie Exp $
+--- config.tests/unix/nis/nis.cpp.orig	Thu May  7 16:14:42 2015
++++ config.tests/unix/nis/nis.cpp	Thu Apr 27 19:30:31 2017
+@@ -39,6 +39,7 @@
+ **
+ ****************************************************************************/
  
++#define BOOL_DEFINED
  #include <sys/types.h>
  #include <rpc/rpc.h>
-+#include <sys/types.h>
-+#include <rpc/rpc.h>
  #include <rpcsvc/ypclnt.h>
- #include <rpcsvc/yp_prot.h>
- 
