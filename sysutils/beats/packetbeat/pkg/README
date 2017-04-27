@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1.1.1 2016/04/26 18:33:25 jasper Exp $
+$OpenBSD: README,v 1.2 2017/04/27 09:14:59 jasper Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -10,11 +10,18 @@ If Packetbeat will be shipping directly into ElasticSearch, the index
 template needs to be loaded into the cluster first:
 
     curl -XPUT 'http://localhost:9200/_template/packetbeat?pretty' \
-    	 -d@${SYSCONFDIR/filebeat/packetbeat.template.json
+    	 -d@${SYSCONFDIR}/filebeat/packetbeat.template.json
 
 Replace `localhost` and `9200` if required by your setup.
 
 Sniffer interface
 =================
 Before starting packetbeat, the correct interface needs to be
-specified in the configuration file.
+specified in the configuration file. It defaults to `em0` which
+may not be suitable depending on your setup.
+
+Migrating from Filebeat 1.x
+===========================
+The configuration file layout has changed from beats 1.x to 5.x,
+please refer to the upstream documentation at
+https://www.elastic.co/guide/en/beats/libbeat/5.0/upgrading-1-to-5.html

@@ -1,9 +1,9 @@
 #!/bin/sh
 #
-# $OpenBSD: packetbeat.rc,v 1.1.1.1 2016/04/26 18:33:25 jasper Exp $
+# $OpenBSD: packetbeat.rc,v 1.2 2017/04/27 09:14:59 jasper Exp $
 
 daemon="${PREFIX}/bin/packetbeat"
-daemon_flags="-c ${SYSCONFDIR}/packetbeat/packetbeat.yml"
+daemon_flags="-path.config ${SYSCONFDIR}/packetbeat/"
 
 . /etc/rc.d/rc.subr
 
