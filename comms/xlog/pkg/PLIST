@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2015/07/15 17:23:31 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.8 2017/04/27 23:03:54 naddy Exp $
 @bin bin/xlog
 @man man/man1/xlog.1
 share/applications/xlog.desktop
@@ -130,7 +130,6 @@ share/doc/xlog/manual/xlog.png
 share/doc/xlog/manual/xlog_manual.css
 share/doc/xlog/manual/xlog_user.doxy
 share/doc/xlog/manual/xlog_user.txt
-share/icons/
 share/icons/gnome-mime-text-x-xlog.png
 share/icons/xlog-icon.png
 share/locale/cs/LC_MESSAGES/xlog.mo

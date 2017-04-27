@@ -1,0 +1,13 @@
+$OpenBSD: patch-configure,v 1.1 2017/04/27 23:03:54 naddy Exp $
+--- configure.orig	Tue Apr 21 22:37:39 2015
++++ configure	Fri Apr 28 00:54:50 2017
+@@ -4462,9 +4462,6 @@ fi
+ done
+ 
+ 
+-if test "${ac_cv_c_compiler_gnu}" = "yes"; then
+-  CFLAGS="${CFLAGS} -Wall -Wno-unused-but-set-variable -Werror"
+-fi
+ 
+ 
+ 
