@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_3rdparty_webkit_Source_JavaScriptCore_wtf_Atomics_h,v 1.1 2017/04/25 17:47:41 espie Exp $
+$OpenBSD: patch-src_3rdparty_webkit_Source_JavaScriptCore_wtf_Atomics_h,v 1.2 2017/04/27 18:02:16 espie Exp $
 --- src/3rdparty/webkit/Source/JavaScriptCore/wtf/Atomics.h.orig	Tue Apr 25 19:11:23 2017
 +++ src/3rdparty/webkit/Source/JavaScriptCore/wtf/Atomics.h	Tue Apr 25 19:20:58 2017
 @@ -69,6 +69,8 @@
@@ -14,7 +14,7 @@ $OpenBSD: patch-src_3rdparty_webkit_Source_JavaScriptCore_wtf_Atomics_h,v 1.1 20
  inline int atomicIncrement(int volatile* addend) { return (int) atomic_add_value((unsigned int volatile*)addend, 1); }
  inline int atomicDecrement(int volatile* addend) { return (int) atomic_sub_value((unsigned int volatile*)addend, 1); }
  
-+#elif defined(__CLANG__)
++#elif defined(__clang__)
 +// No idea what to put there...
  #elif COMPILER(GCC) && !CPU(SPARC64) && !OS(SYMBIAN) // sizeof(_Atomic_word) != sizeof(int) on sparc64 gcc
  #define WTF_USE_LOCKFREE_THREADSAFEREFCOUNTED 1
