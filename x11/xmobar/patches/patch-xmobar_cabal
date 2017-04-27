@@ -1,7 +1,25 @@
-$OpenBSD: patch-xmobar_cabal,v 1.17 2016/08/10 08:50:24 dcoppa Exp $
---- xmobar.cabal.orig	Mon Aug  8 23:40:59 2016
-+++ xmobar.cabal	Wed Aug 10 10:22:49 2016
-@@ -103,9 +103,10 @@ executable xmobar
+$OpenBSD: patch-xmobar_cabal,v 1.18 2017/04/27 09:00:44 dcoppa Exp $
+
+commit dfb5dbd6cc5342348fbb46bd117c226d5e8127e4
+Author: jao <jao@gnu.org>
+Date:   Thu Feb 23 00:54:19 2017 +0100
+
+Compiling with --with-rtsopts=-V0 to reduce wakeups (issue #89)
+
+--- xmobar.cabal.orig	Mon Sep  5 17:49:18 2016
++++ xmobar.cabal	Thu Apr 27 10:47:39 2017
+@@ -74,6 +74,10 @@ flag with_threaded
+   description: Use threaded runtime.
+   default: False
+ 
++flag with_rtsopts
++  description: Use -with-rtsopts=-V0 to reduce wakeups
++  default: True
++
+ flag with_uvmeter
+   description: UVMeter only useful to australians.
+   default: False
+@@ -103,9 +107,10 @@ executable xmobar
        Plugins.Monitors.ThermalZone, Plugins.Monitors.Top,
        Plugins.Monitors.Uptime, Plugins.Monitors.Weather,
        Plugins.Monitors.Bright, Plugins.Monitors.CatInt,
@@ -13,7 +31,17 @@ $OpenBSD: patch-xmobar_cabal,v 1.17 2016/08/10 08:50:24 dcoppa Exp $
      extra-libraries: Xrandr Xrender
  
      build-depends:
-@@ -154,6 +155,8 @@ executable xmobar
+@@ -138,6 +143,9 @@ executable xmobar
+        ghc-options: -threaded
+        cpp-options: -DTHREADED_RUNTIME
+ 
++    if flag(with_rtsopts)
++       ghc-options: -with-rtsopts=-V0
++
+     if impl (ghc < 7)
+        cpp-options: -DGHC6
+ 
+@@ -154,6 +162,8 @@ executable xmobar
         build-depends: hinotify == 0.3.*
         other-modules: Plugins.Mail, Plugins.MBox
         cpp-options: -DINOTIFY
