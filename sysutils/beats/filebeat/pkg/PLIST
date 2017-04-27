@@ -1,11 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/04/26 13:08:03 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/04/27 09:14:40 jasper Exp $
 @bin bin/filebeat
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/filebeat/
 @sample ${SYSCONFDIR}/filebeat/
 share/examples/filebeat/README.md
+share/examples/filebeat/filebeat.template-es2x.json
+@sample ${SYSCONFDIR}/filebeat/filebeat.template-es2x.json
 share/examples/filebeat/filebeat.template.json
 @sample ${SYSCONFDIR}/filebeat/filebeat.template.json
 share/examples/filebeat/filebeat.yml
 @sample ${SYSCONFDIR}/filebeat/filebeat.yml
+share/filebeat/
+share/filebeat/migrate_beat_config_1_x_to_5_0.py
 @rcscript ${RCDIR}/filebeat

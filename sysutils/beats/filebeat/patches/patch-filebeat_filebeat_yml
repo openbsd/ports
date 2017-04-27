@@ -1,0 +1,12 @@
+$OpenBSD: patch-filebeat_filebeat_yml,v 1.1 2017/04/27 09:14:40 jasper Exp $
+--- filebeat/filebeat.yml.orig	Wed Jan 11 14:57:52 2017
++++ filebeat/filebeat.yml	Wed Jan 11 14:59:23 2017
+@@ -20,6 +20,8 @@ filebeat.prospectors:
+   # Paths that should be crawled and fetched. Glob based paths.
+   paths:
+     - /var/log/*.log
++    - /var/log/authlog
++    - /var/log/daemon
+     #- c:\programdata\elasticsearch\logs\*
+ 
+   # Exclude lines. A list of regular expressions to match. It drops the lines that are
