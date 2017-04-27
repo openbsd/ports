@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.133 2017/04/10 11:46:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.134 2017/04/27 14:28:35 ajacoutot Exp $
 
 COMMENT-main=	multi-protocol instant messaging client
 COMMENT-finch=	multi-protocol instant messaging client, console client
@@ -17,6 +17,10 @@ CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pidgin/}
 EXTRACT_SUFX=	.tar.bz2
 
+REVISION-main=		0
+REVISION-finch=		0
+REVISION-libpurple=	0
+
 SHARED_LIBS=	jabber		0.0 \
 		oscar		0.0 \
 		purple		6.3 \
@@ -32,7 +36,8 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	c dbus-1 dbus-glib-1 ffi gadu gio-2.0 glib-2.0 gmodule-2.0 \
-		gobject-2.0 gthread-2.0 idn lzma m pcre pthread xml2 z
+		gobject-2.0 gthread-2.0 idn lzma m pcre pthread xml2 z \
+		iconv intl
 WANTLIB-main=	X11 ICE SM Xcomposite Xcursor Xdamage Xext Xfixes Xi \
 		Xinerama Xrandr Xrender Xss atk-1.0 cairo expat fontconfig \
 		freetype gdk-x11-2.0 gdk_pixbuf-2.0 graphite2 gtk-x11-2.0 \
@@ -43,8 +48,7 @@ WANTLIB-libpurple= crypto meanwhile ssl silc silcclient ${WANTLIB}
 WANTLIB-finch=	X11 ncursesw panelw purple util xcb ${WANTLIB} \
 		${MODPY_WANTLIB}
 
-MODULES=	devel/gettext \
-		textproc/intltool \
+MODULES=	textproc/intltool \
 		lang/python \
 		devel/gconf2
 
