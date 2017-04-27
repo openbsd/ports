@@ -1,6 +1,10 @@
-# $OpenBSD: gnome.port.mk,v 1.102 2017/04/20 15:09:05 ajacoutot Exp $
+# $OpenBSD: gnome.port.mk,v 1.103 2017/04/27 09:06:58 ajacoutot Exp $
 #
 # Module for GNOME related ports
+
+# XXX TODO devel/meson
+# -Ddisable_introspection=true|false
+# -Denable-gtk-doc=true|false
 
 .if (defined(GNOME_PROJECT) && defined(GNOME_VERSION))
 PORTROACH+=		limitw:1,even
