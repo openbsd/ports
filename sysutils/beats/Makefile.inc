@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.5 2016/08/13 08:42:22 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.6 2017/04/27 09:13:19 jasper Exp $
 
 PKGNAME ?=		${BEAT}-${VERSION}
 
@@ -32,5 +32,8 @@ ALL_TARGET ?=		github.com/${GH_ACCOUNT}/${BEAT}
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/${BEAT}/
 .for c in ${CONFIGS}
-	cp ${WRKSRC}/etc/$c ${PREFIX}/share/examples/${BEAT}/
+	cp ${WRKSRC}/$c ${PREFIX}/share/examples/${BEAT}/
 .endfor
+	${INSTALL_DATA_DIR} ${PREFIX}/share/${BEAT}/
+	${INSTALL_SCRIPT} ${WRKDIST}/libbeat/scripts/migrate_beat_config_1_x_to_5_0.py \
+		${PREFIX}/share/${BEAT}/
