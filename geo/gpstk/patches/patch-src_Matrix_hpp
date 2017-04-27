@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_Matrix_hpp,v 1.1 2017/04/27 20:17:24 espie Exp $
+--- src/Matrix.hpp.orig	Thu Apr 27 22:13:48 2017
++++ src/Matrix.hpp	Thu Apr 27 22:14:08 2017
+@@ -560,7 +560,7 @@ namespace gpstk
+          /// makes a slice of row \c row from the matrix.
+       MatrixRowSlice(Matrix<T>& mat, size_t row)
+             : m(&mat), r(row), cSlice(std::slice(0,mat.cols(),1))
+-         { matSliceCheck(mat.rows(), mat.cols()); }
++         { this->matSliceCheck(mat.rows(), mat.cols()); }
+ 
+          /// makes a slice of row \c row from the matrix, slicing it by \c s.
+       MatrixRowSlice(Matrix<T>& mat, size_t row, 
+@@ -568,7 +568,7 @@ namespace gpstk
+             : m(&mat), r(row), cSlice(s)
+          { 
+                // decide if the input is reasonable
+-            matSliceCheck(mat.rows(), mat.cols());
++            this->matSliceCheck(mat.rows(), mat.cols());
+          }   
+ 
+          /// assigns this row to x.

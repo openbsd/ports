@@ -1,0 +1,57 @@
+$OpenBSD: patch-src_Vector_hpp,v 1.1 2017/04/27 20:17:24 espie Exp $
+--- src/Vector.hpp.orig	Thu Apr 27 22:06:42 2017
++++ src/Vector.hpp	Thu Apr 27 22:13:29 2017
+@@ -87,7 +87,7 @@ namespace gpstk
+                VectorException e("Vector<T>(size_t, const T) failed to allocate");
+                GPSTK_THROW(e);
+             }
+-            assignFrom(defaultValue);
++            this->assignFrom(defaultValue);
+          }
+          /**
+           * Copy constructor from a ConstVectorBase type.
+@@ -101,7 +101,7 @@ namespace gpstk
+                VectorException e("Vector<T>(ConstVectorBase) failed to allocate");
+                GPSTK_THROW(e);
+             }
+-            assignFrom(r);
++            this->assignFrom(r);
+          }
+          /**
+           * Copy constructor.
+@@ -114,7 +114,7 @@ namespace gpstk
+                VectorException e("Vector(Vector) failed to allocate");
+                GPSTK_THROW(e);
+             }
+-            assignFrom(r);
++            this->assignFrom(r);
+          }
+          /**
+           * Valarray constructor
+@@ -127,7 +127,7 @@ namespace gpstk
+                VectorException e("Vector(valarray) failed to allocate");
+                GPSTK_THROW(e);
+             }
+-            assignFrom(r);
++            this->assignFrom(r);
+          }
+ 
+          /// subvector constructor
+@@ -172,7 +172,7 @@ namespace gpstk
+          /// STL const front
+       const_reference front() const { return v[s-1];}
+          /// STL empty
+-      bool empty() const { return size == 0; }
++      bool empty() const { return this->size == 0; }
+          /// STL size
+       size_t size() const {return s; }
+          /// STL max_size
+@@ -197,7 +197,7 @@ namespace gpstk
+ 
+          /// *this will be resized if it isn't as large as x.
+       Vector& operator=(const Vector& x)
+-         { resize(x.s); return assignFrom(x); }
++         { resize(x.s); return this->assignFrom(x); }
+ 
+          /// *this will be resized if it isn't as large as x.
+       template <class E>
