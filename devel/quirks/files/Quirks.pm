@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.482 2017/04/25 20:02:31 jca Exp $
+# $OpenBSD: Quirks.pm,v 1.483 2017/04/27 09:20:23 jasper Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -959,6 +959,7 @@ my $obsolete_reason = {
 	'ja-jvim' => 3,
 	'teknap' => 6,
 	'trafd' => 4,
+	'topbeat' => 3,
 };
 
 # reasons for obsolete packages
