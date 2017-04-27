@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_libqhullcpp_QhullLinkedList_h,v 1.1 2017/04/27 20:46:17 espie Exp $
+--- src/libqhullcpp/QhullLinkedList.h.orig	Thu Apr 27 22:39:48 2017
++++ src/libqhullcpp/QhullLinkedList.h	Thu Apr 27 22:40:55 2017
+@@ -9,7 +9,20 @@
+ #ifndef QHULLLINKEDLIST_H
+ #define QHULLLINKEDLIST_H
+ 
++#include <new>
++#if defined(_LIBCPP_VERSION)
++// shut up clang
++# pragma GCC diagnostic push
++# pragma GCC diagnostic ignored "-Wc++11-extensions"
++_LIBCPP_BEGIN_NAMESPACE_STD
++	struct bidirectional_iterator_tag;
++	struct random_access_iterator_tag;
++_LIBCPP_END_NAMESPACE_STD
++# pragma GCC diagnostic pop
++#else
++//! Avoid dependence on <iterator>
+ namespace std { struct bidirectional_iterator_tag; struct random_access_iterator_tag; }
++#endif
+ 
+ #include "QhullError.h"
+ 
