@@ -1,0 +1,31 @@
+$OpenBSD: patch-main_c,v 1.1 2017/04/27 20:56:42 espie Exp $
+--- main.c.orig	Thu Apr 27 22:53:55 2017
++++ main.c	Thu Apr 27 22:55:35 2017
+@@ -73,6 +73,9 @@ int prev_x, prev_y;
+ int quit_x, quit_y;
+ int save_x, save_y;
+ 
++void doEvents(void);
++void changeCharacter(int x);
++
+ #define SETBIT		0
+ #define CLEARBIT	1
+ #define COMBIT		2
+@@ -285,6 +288,7 @@ char *argv[];
+     XMapWindow(dpy, imageWin);
+ }
+ 
++void
+ doEvents() {
+     XEvent pe;
+     XExposeEvent *ee = (XExposeEvent *) &pe;
+@@ -524,7 +528,8 @@ DrawOrig()
+ }
+ 
+ 
+-changeCharacter(x) {
++void
++changeCharacter(int x) {
+ 	int delta, index;
+ 
+ 	delta = (x - SPACE)/font.maxbbx.w - image_nc;
