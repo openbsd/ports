@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2016/04/27 17:50:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2017/04/27 09:21:40 jasper Exp $
 
     SUBDIR =
     SUBDIR += filebeat
-    SUBDIR += hwsensorsbeat
+    #SUBDIR += hwsensorsbeat
+    SUBDIR += metricbeat
     SUBDIR += packetbeat
-    SUBDIR += topbeat
 
 .include <bsd.port.subdir.mk>
 
