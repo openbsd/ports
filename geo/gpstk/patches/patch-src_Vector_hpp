@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_Vector_hpp,v 1.1 2017/04/27 20:17:24 espie Exp $
+$OpenBSD: patch-src_Vector_hpp,v 1.2 2017/04/27 20:28:50 espie Exp $
 --- src/Vector.hpp.orig	Thu Apr 27 22:06:42 2017
-+++ src/Vector.hpp	Thu Apr 27 22:13:29 2017
++++ src/Vector.hpp	Thu Apr 27 22:24:33 2017
 @@ -87,7 +87,7 @@ namespace gpstk
                 VectorException e("Vector<T>(size_t, const T) failed to allocate");
                 GPSTK_THROW(e);
@@ -46,7 +46,7 @@ $OpenBSD: patch-src_Vector_hpp,v 1.1 2017/04/27 20:17:24 espie Exp $
           /// STL size
        size_t size() const {return s; }
           /// STL max_size
-@@ -197,7 +197,7 @@ namespace gpstk
+@@ -197,22 +197,22 @@ namespace gpstk
  
           /// *this will be resized if it isn't as large as x.
        Vector& operator=(const Vector& x)
@@ -55,3 +55,46 @@ $OpenBSD: patch-src_Vector_hpp,v 1.1 2017/04/27 20:17:24 espie Exp $
  
           /// *this will be resized if it isn't as large as x.
        template <class E>
+       Vector& operator=(const ConstVectorBase<T, E>& x)
+-         { resize(x.size()); return assignFrom(x); }
++         { resize(x.size()); return this->assignFrom(x); }
+ 
+          /// *this will be resized if it isn't as large as x.
+       Vector& operator=(const std::valarray<T>& x)
+-         { resize(x.size()); return assignFrom(x); }
++         { resize(x.size()); return this->assignFrom(x); }
+          /// Only (*this).size() elements will be assigned.
+       Vector& operator=(const T x)
+-         { return assignFrom(x); }
++         { return this->assignFrom(x); }
+          /// Only (*this).size() elements will be assigned.
+       Vector& operator=(const T* x)
+-         { return assignFrom(x); }
++         { return this->assignFrom(x); }
+ 
+       /// *this will be cleared and resized as necessary
+       inline Vector& operator=(const std::vector<T>& x)
+@@ -337,19 +337,19 @@ namespace gpstk
+          /// Assign the elements of this slice from another vector.
+       template <class V>
+       VectorSlice& operator=(const ConstVectorBase<T, V>& x)
+-         { return assignFrom(x); }
++         { return this->assignFrom(x); }
+ 
+          /// Assign the elements of this slice from a valarray.
+       VectorSlice& operator=(const std::valarray<T>& x)
+-         { return assignFrom(x); }
++         { return this->assignFrom(x); }
+ 
+          /// Assign all the elements of this slice to x.
+       VectorSlice& operator=(const T x)
+-         { return assignFrom(x); }
++         { return this->assignFrom(x); }
+ 
+          /// Assign (*this).size() elements from x to (*this).
+       VectorSlice& operator=(const T* x)
+-         { return assignFrom(x); }
++         { return this->assignFrom(x); }
+ 
+          /// Returns the modifiable i'th element of the slice.
+       T& operator[] (size_t i) 

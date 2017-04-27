@@ -1,6 +1,94 @@
-$OpenBSD: patch-src_Matrix_hpp,v 1.1 2017/04/27 20:17:24 espie Exp $
+$OpenBSD: patch-src_Matrix_hpp,v 1.2 2017/04/27 20:28:50 espie Exp $
 --- src/Matrix.hpp.orig	Thu Apr 27 22:13:48 2017
-+++ src/Matrix.hpp	Thu Apr 27 22:14:08 2017
++++ src/Matrix.hpp	Thu Apr 27 22:25:47 2017
+@@ -187,14 +187,14 @@ namespace gpstk
+           * @warning be careful that array is as large as the matrix is!
+           */
+       inline Matrix& operator=(const T* array)
+-         { return assignFrom(array); }
++         { return this->assignFrom(array); }
+          /// Assigns the contents of this matrix to those in array in column
+          /// major order.
+       inline Matrix& operator=(const std::valarray<T> array)
+-         { return assignFrom(array); }
++         { return this->assignFrom(array); }
+          /// Assigns all elements of the matrix to \c t.
+       inline Matrix& operator=(const T t)
+-         { return assignFrom(t); }
++         { return this->assignFrom(t); }
+          /// Copies the other matrix.
+       inline Matrix& operator=(const Matrix& mat)
+          { v = mat.v; r = mat.r; c = mat.c; s = mat.s; return *this; }
+@@ -206,12 +206,12 @@ namespace gpstk
+             r=mat.rows(); 
+             c=mat.cols(); 
+             s=mat.size();
+-            return assignFrom(mat);
++            return this->assignFrom(mat);
+          }
+          /// Copies from any vector.
+       template <class BaseClass>
+       inline Matrix& operator=(const ConstVectorBase<T, BaseClass>& mat)
+-         { return assignFrom(mat); }
++         { return this->assignFrom(mat); }
+ 
+    private:
+          /// the matrix stored in column major order
+@@ -263,22 +263,22 @@ namespace gpstk
+          /// Copies from x to (*this).
+       template <class V>
+       MatrixSlice& operator=(const ConstMatrixBase<T, V>& x)
+-         { return assignFrom(x); }
++         { return this->assignFrom(x); }
+ 
+          /// Copies from x to (*this).
+       template <class V>
+       MatrixSlice& operator=(const ConstVectorBase<T, V>& x)
+-         { return assignFrom(x); }
++         { return this->assignFrom(x); }
+ 
+          /// Copies from x to (*this).
+       MatrixSlice& operator=(const std::valarray<T>& x)
+-         { return assignFrom(x); }
++         { return this->assignFrom(x); }
+          /// Copies from x to (*this).
+       MatrixSlice& operator=(const T x)
+-         { return assignFrom(x); }
++         { return this->assignFrom(x); }
+          /// Copies from x to (*this).
+       MatrixSlice& operator=(const T* x)
+-         { return assignFrom(x); }
++         { return this->assignFrom(x); }
+ 
+          /// returns the size of this slice
+       size_t size() const { return s; }
+@@ -414,21 +414,21 @@ namespace gpstk
+          /// assigns this column to x
+       template <class V>
+       MatrixColSlice& operator=(const ConstMatrixBase<T, V>& x)
+-         { return assignFrom(x); }
++         { return this->assignFrom(x); }
+ 
+          /// assigns this column to x
+       template <class V>
+       MatrixColSlice& operator=(const ConstVectorBase<T, V>& x)
+-         { return assignFrom(x); }
++         { return this->assignFrom(x); }
+          /// assigns this column to x
+       MatrixColSlice& operator=(const std::valarray<T>& x)
+-         { return assignFrom(x); }
++         { return this->assignFrom(x); }
+          /// assigns this column to x
+       MatrixColSlice& operator=(const T x)
+-         { return assignFrom(x); }
++         { return this->assignFrom(x); }
+          /// assigns this column to x
+       MatrixColSlice& operator=(const T* x)
+-         { return assignFrom(x); }
++         { return this->assignFrom(x); }
+ 
+          /// returns the i'th element of the column, non-const
+       T& operator[] (size_t i) 
 @@ -560,7 +560,7 @@ namespace gpstk
           /// makes a slice of row \c row from the matrix.
        MatrixRowSlice(Matrix<T>& mat, size_t row)
@@ -10,7 +98,7 @@ $OpenBSD: patch-src_Matrix_hpp,v 1.1 2017/04/27 20:17:24 espie Exp $
  
           /// makes a slice of row \c row from the matrix, slicing it by \c s.
        MatrixRowSlice(Matrix<T>& mat, size_t row, 
-@@ -568,7 +568,7 @@ namespace gpstk
+@@ -568,26 +568,26 @@ namespace gpstk
              : m(&mat), r(row), cSlice(s)
           { 
                 // decide if the input is reasonable
@@ -19,3 +107,27 @@ $OpenBSD: patch-src_Matrix_hpp,v 1.1 2017/04/27 20:17:24 espie Exp $
           }   
  
           /// assigns this row to x.
+       template <class V>
+       MatrixRowSlice& operator=(const ConstMatrixBase<T, V>& x)
+-         { return assignFrom(x); }
++         { return this->assignFrom(x); }
+          /// assigns this row to x.
+       template <class V>
+       MatrixRowSlice& operator=(const ConstVectorBase<T, V>& x)
+-         { return assignFrom(x); }
++         { return this->assignFrom(x); }
+          /// assigns this row to x.
+       MatrixRowSlice& operator=(const std::valarray<T>& x)
+-         { return assignFrom(x); }
++         { return this->assignFrom(x); }
+          /// assigns this row to x.
+       MatrixRowSlice& operator=(const T x)
+-         { return assignFrom(x); }
++         { return this->assignFrom(x); }
+          /// assigns this row to x.
+       MatrixRowSlice& operator=(const T* x)
+-         { return assignFrom(x); }
++         { return this->assignFrom(x); }
+ 
+          /// returns the j'th element of the slice, non-const
+       T& operator[] (size_t j)
