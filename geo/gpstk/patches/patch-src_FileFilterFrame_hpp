@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_FileFilterFrame_hpp,v 1.1 2017/04/27 21:09:57 espie Exp $
+--- src/FileFilterFrame.hpp.orig	Thu Apr 27 22:59:21 2017
++++ src/FileFilterFrame.hpp	Thu Apr 27 22:59:54 2017
+@@ -326,7 +326,7 @@ namespace gpstk
+          
+             while (s >> data)
+             {
+-               addData(data);
++               this->addData(data);
+             }
+          }
+       }

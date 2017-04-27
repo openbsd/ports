@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_Matrix_hpp,v 1.2 2017/04/27 20:28:50 espie Exp $
---- src/Matrix.hpp.orig	Thu Apr 27 22:13:48 2017
-+++ src/Matrix.hpp	Thu Apr 27 22:25:47 2017
+$OpenBSD: patch-src_Matrix_hpp,v 1.3 2017/04/27 21:09:57 espie Exp $
+--- src/Matrix.hpp.orig	Tue Mar 11 16:47:04 2008
++++ src/Matrix.hpp	Thu Apr 27 22:43:53 2017
 @@ -187,14 +187,14 @@ namespace gpstk
            * @warning be careful that array is as large as the matrix is!
            */
@@ -34,7 +34,32 @@ $OpenBSD: patch-src_Matrix_hpp,v 1.2 2017/04/27 20:28:50 espie Exp $
  
     private:
           /// the matrix stored in column major order
-@@ -263,22 +263,22 @@ namespace gpstk
+@@ -238,7 +238,7 @@ namespace gpstk
+             : m(&mat), rSlice(std::slice(0, mat.rows(), 1)),
+               cSlice(std::slice(0,mat.cols(), 1)), s(mat.size())
+          {
+-            matSliceCheck(mat.rows(), mat.cols());
++            this->matSliceCheck(mat.rows(), mat.cols());
+          }
+ 
+          /// Makes a partial slice of a matrix.
+@@ -247,7 +247,7 @@ namespace gpstk
+             : m(&mat), rSlice(rowSlice), cSlice(colSlice),
+               s(rSlice.size() * cSlice.size())
+          {
+-            matSliceCheck(mat.rows(), mat.cols());
++            this->matSliceCheck(mat.rows(), mat.cols());
+          }
+ 
+          /// Submatrix slice.
+@@ -257,28 +257,28 @@ namespace gpstk
+               cSlice(std::slice(topCol, numCols, 1)),
+               s(rSlice.size() * cSlice.size())
+          {
+-            matSliceCheck(mat.rows(), mat.cols());
++            this->matSliceCheck(mat.rows(), mat.cols());
+          }
+       
           /// Copies from x to (*this).
        template <class V>
        MatrixSlice& operator=(const ConstMatrixBase<T, V>& x)
@@ -62,7 +87,50 @@ $OpenBSD: patch-src_Matrix_hpp,v 1.2 2017/04/27 20:28:50 espie Exp $
  
           /// returns the size of this slice
        size_t size() const { return s; }
-@@ -414,21 +414,21 @@ namespace gpstk
+@@ -334,7 +334,7 @@ namespace gpstk
+             : m(&mat), rSlice(std::slice(0, mat.rows(), 1)),
+               cSlice(std::slice(0,mat.cols(), 1)), s(mat.size())
+          {
+-            matSliceCheck(mat.rows(), mat.cols());
++            this->matSliceCheck(mat.rows(), mat.cols());
+          }
+ 
+          /// makes a slice given std::slices for rows and columns
+@@ -343,7 +343,7 @@ namespace gpstk
+             : m(&mat), rSlice(rowSlice), cSlice(colSlice),
+               s(rSlice.size() * cSlice.size())
+          {
+-            matSliceCheck(mat.rows(), mat.cols());
++            this->matSliceCheck(mat.rows(), mat.cols());
+          }
+ 
+          /// submatrix slice
+@@ -353,7 +353,7 @@ namespace gpstk
+               cSlice(std::slice(topCol, numCols, 1)),
+               s(rSlice.size() * cSlice.size())
+          {
+-            matSliceCheck(mat.rows(), mat.cols());
++            this->matSliceCheck(mat.rows(), mat.cols());
+          }
+ 
+          /// the size of the slice
+@@ -400,7 +400,7 @@ namespace gpstk
+       MatrixColSlice(Matrix<T>& mat, size_t col)
+             : m(&mat), c(col), rSlice(std::slice(0,mat.rows(),1))
+          { 
+-            matSliceCheck(mat.rows(), mat.cols()); 
++            this->matSliceCheck(mat.rows(), mat.cols()); 
+          }
+          /// makes a slice of the column from the matrix using \c s to
+          /// further slice the column.
+@@ -408,27 +408,27 @@ namespace gpstk
+             : m(&mat), c(col), rSlice(s)
+          { 
+                // decide if the input is reasonable
+-            matSliceCheck(mat.rows(), mat.cols());
++            this->matSliceCheck(mat.rows(), mat.cols());
+          }
+ 
           /// assigns this column to x
        template <class V>
        MatrixColSlice& operator=(const ConstMatrixBase<T, V>& x)
@@ -89,6 +157,24 @@ $OpenBSD: patch-src_Matrix_hpp,v 1.2 2017/04/27 20:28:50 espie Exp $
  
           /// returns the i'th element of the column, non-const
        T& operator[] (size_t i) 
+@@ -495,7 +495,7 @@ namespace gpstk
+          /// constructor taking a slice of column \c col from the matrix.
+       ConstMatrixColSlice(const Matrix<T>& mat, size_t col)
+             : m(&mat), c(col), rSlice(std::slice(0,mat.rows(),1))
+-         { matSliceCheck(mat.rows(), mat.cols()); }
++         { this->matSliceCheck(mat.rows(), mat.cols()); }
+ 
+          /// constructor taking a slice of column \c col from the matrix,
+          /// slicing the column by \c s.
+@@ -504,7 +504,7 @@ namespace gpstk
+             : m(&mat), c(col), rSlice(s)
+          { 
+                // decide if the input is reasonable
+-            matSliceCheck(mat.rows(), mat.cols());
++            this->matSliceCheck(mat.rows(), mat.cols());
+          }
+ 
+          /// returns the i'th element of the column slice
 @@ -560,7 +560,7 @@ namespace gpstk
           /// makes a slice of row \c row from the matrix.
        MatrixRowSlice(Matrix<T>& mat, size_t row)
@@ -131,3 +217,21 @@ $OpenBSD: patch-src_Matrix_hpp,v 1.2 2017/04/27 20:28:50 espie Exp $
  
           /// returns the j'th element of the slice, non-const
        T& operator[] (size_t j)
+@@ -651,7 +651,7 @@ namespace gpstk
+          /// makes a const row slice from the matrix
+       ConstMatrixRowSlice(const Matrix<T>& mat, size_t row)
+             : m(&mat), r(row), cSlice(std::slice(0,mat.cols(),1))
+-         { matSliceCheck(mat.rows(), mat.cols()); }
++         { this->matSliceCheck(mat.rows(), mat.cols()); }
+ 
+          /// makes a const row slice from the matrix, slicing that row by \c s.
+       ConstMatrixRowSlice(const Matrix<T>& mat, size_t row, 
+@@ -659,7 +659,7 @@ namespace gpstk
+             : m(&mat), r(row), cSlice(s)
+          { 
+                // decide if the input is reasonable
+-            matSliceCheck(mat.rows(), mat.cols());
++            this->matSliceCheck(mat.rows(), mat.cols());
+          }   
+ 
+          /// returns the i'th element of the slice
