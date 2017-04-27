@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2016/04/12 15:19:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2017/04/27 20:13:36 naddy Exp $
 
 COMMENT=		data exchange utility for Siemens mobile phones
 
 DISTNAME=		scmxx-0.8.0
-REVISION=		2
+REVISION=		3
 CATEGORIES=		comms
 HOMEPAGE=		http://www.hendrik-sattler.de/scmxx/
 
@@ -22,8 +22,6 @@ USE_GMAKE=	Yes
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
-MAKE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -DNO_NL_LANGINFO" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 NO_TEST=	Yes
