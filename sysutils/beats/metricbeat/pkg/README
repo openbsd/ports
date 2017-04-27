@@ -1,0 +1,22 @@
+$OpenBSD: README,v 1.1.1.1 2017/04/27 09:17:26 jasper Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Loading index template
+======================
+If Metricbeat will be shipping directly into ElasticSearch, the index
+template needs to be loaded into the cluster first:
+
+    curl -XPUT 'http://localhost:9200/_template/metricbeat?pretty' \
+    	 -d@${SYSCONFDIR}/metricbeat/metricbeat.template.json
+
+Replace `localhost` and `9200` if required by your setup.
+
+Migrating from topbeat
+======================
+
+When migrating from `topbeat` to `metricbeat`, please refer to the
+following documentation on how to adjust your configuration:
+https://www.elastic.co/guide/en/beats/libbeat/current/upgrading-1-to-5.html#_upgrading_topbeat_to_metricbeat

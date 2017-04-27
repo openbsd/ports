@@ -1,0 +1,19 @@
+$OpenBSD: patch-metricbeat_metricbeat_yml,v 1.1.1.1 2017/04/27 09:17:26 jasper Exp $
+
+Disable unsupported module (needs support in gosigar)
+
+--- metricbeat/metricbeat.yml.orig	Thu Apr 27 10:30:12 2017
++++ metricbeat/metricbeat.yml	Thu Apr 27 10:30:16 2017
+@@ -35,10 +35,10 @@ metricbeat.modules:
+     - memory
+ 
+     # Network stats
+-    - network
++    #- network
+ 
+     # Per process stats
+-    - process
++    #- process
+ 
+     # Sockets (linux only)
+     #- socket

@@ -1,0 +1,13 @@
+#!/bin/sh
+#
+# $OpenBSD: metricbeat.rc,v 1.1.1.1 2017/04/27 09:17:26 jasper Exp $
+
+daemon="${PREFIX}/bin/metricbeat"
+daemon_flags="-path.config ${SYSCONFDIR}/metricbeat/"
+
+. /etc/rc.d/rc.subr
+
+rc_bg=YES
+rc_reload=NO
+
+rc_cmd $1
