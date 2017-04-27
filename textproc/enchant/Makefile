@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2017/04/25 20:30:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2017/04/27 22:30:06 ajacoutot Exp $
 
 COMMENT=		generic spell checking library
 
@@ -21,8 +21,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += aspell c glib-2.0 gmodule-2.0 hunspell-1.6 iconv intl
 WANTLIB += m pcre pthread ${LIBCXX}
-
-BUILD_DEPENDS=		x11/dbus-glib
 
 # c++11
 MODULES +=		gcc4
