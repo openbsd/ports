@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.32 2015/06/05 08:11:53 bentley Exp $
+# $OpenBSD: Makefile,v 1.33 2017/04/27 20:04:31 espie Exp $
 
 COMMENT=	block action game
 
 DISTNAME=	xdeblock
 PKGNAME=	xdeblock-1.0
-REVISION =	1
+REVISION =	2
 CATEGORIES=	games
 
 MASTER_SITES=	http://distcache.freebsd.org/ports-distfiles/ \

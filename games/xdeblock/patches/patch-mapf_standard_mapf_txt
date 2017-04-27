@@ -1,0 +1,12 @@
+$OpenBSD: patch-mapf_standard_mapf_txt,v 1.1 2017/04/27 20:04:31 espie Exp $
+--- mapf/standard.mapf.txt.orig	Thu Apr 27 21:54:14 2017
++++ mapf/standard.mapf.txt	Thu Apr 27 21:54:19 2017
+@@ -11,7 +11,7 @@
+ {/oku!/} {/all clear :-)/} 
+ 128 11 2 9 1 250 
+ 3 0 0 1000 1001 65 65 303 0 
+-{/pochi/} {/Wellcome XDeBlock!/} 
++{/pochi/} {/Welcome XDeBlock!/} 
+ 600 48 1 1 0 
+ 552 48 1 1 0 
+ 504 48 1 1 0 

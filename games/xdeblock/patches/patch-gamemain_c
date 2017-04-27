@@ -1,6 +1,6 @@
-$OpenBSD: patch-gamemain_c,v 1.1 2003/12/31 04:15:52 espie Exp $
---- gamemain.c.orig	2003-12-31 05:10:44.000000000 +0100
-+++ gamemain.c	2003-12-31 05:11:14.000000000 +0100
+$OpenBSD: patch-gamemain_c,v 1.2 2017/04/27 20:04:31 espie Exp $
+--- gamemain.c.orig	Sat Nov 16 06:37:16 1996
++++ gamemain.c	Thu Apr 27 21:57:05 2017
 @@ -793,7 +793,7 @@ void stageScoreCheck(void)
  void openingString(void)
  {
@@ -10,3 +10,12 @@ $OpenBSD: patch-gamemain_c,v 1.1 2003/12/31 04:15:52 espie Exp $
    struct timeval    time;
    char          text[32];
      
+@@ -804,7 +804,7 @@ void openingString(void)
+     {
+       /**  not yet clear map  **/
+       drawShadowText(display,mWin,120,300,
+-	       "You have not clear this map...",white.pixel);
++	       "You have not cleared this map...",white.pixel);
+     }
+   else
+     {

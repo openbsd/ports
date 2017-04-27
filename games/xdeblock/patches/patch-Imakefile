@@ -1,7 +1,7 @@
-$OpenBSD: patch-Imakefile,v 1.1 2002/02/20 22:50:51 pvalchev Exp $
---- Imakefile.orig	Fri Nov 15 21:06:36 1996
-+++ Imakefile	Wed Feb 20 15:44:17 2002
-@@ -10,7 +10,7 @@ XCOMM ==================================
+$OpenBSD: patch-Imakefile,v 1.2 2017/04/27 20:04:31 espie Exp $
+--- Imakefile.orig	Sat Nov 16 05:06:36 1996
++++ Imakefile	Thu Apr 27 21:45:21 2017
+@@ -10,7 +10,7 @@ XCOMM ================================================
  XCOMM    Set xdeblock working directory.
  XCOMM =====================================================================
  

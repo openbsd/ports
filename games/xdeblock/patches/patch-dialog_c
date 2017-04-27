@@ -1,0 +1,12 @@
+$OpenBSD: patch-dialog_c,v 1.1 2017/04/27 20:04:31 espie Exp $
+--- dialog.c.orig	Thu Apr 27 21:55:19 2017
++++ dialog.c	Thu Apr 27 21:55:24 2017
+@@ -177,7 +177,7 @@ void draw_inputname(win,name,num)
+ 		 "Input your name...",white.pixel);
+ 
+   drawMiniText(display,win,20,120,
+-	       "Press RTURN or Mouse to end.",white.pixel);
++	       "Press RETURN or Mouse to end.",white.pixel);
+ 
+   XSetForeground(display,gc,WhitePixel(display,DefaultScreen(display)));
+   XDrawRectangle(display,win,gc,16,66,dInputWidth-24,34);

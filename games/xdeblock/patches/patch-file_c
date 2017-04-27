@@ -1,0 +1,11 @@
+$OpenBSD: patch-file_c,v 1.1 2017/04/27 20:04:31 espie Exp $
+--- file.c.orig	Thu Apr 27 22:03:41 2017
++++ file.c	Thu Apr 27 22:03:49 2017
+@@ -39,6 +39,7 @@ void fileUpData(void)
+     {
+       fprintf(stderr,"XDeBlock:cannot updata mapf = %s\n",
+ 	      nowDataRec.nowMap.filename);
++      return;
+     }
+   
+   for(i = 0; i < 10; i++) 

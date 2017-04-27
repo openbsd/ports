@@ -1,6 +1,6 @@
-$OpenBSD: patch-main_c,v 1.1 2002/02/20 22:50:51 pvalchev Exp $
---- main.c.orig	Fri Nov 15 22:37:16 1996
-+++ main.c	Wed Feb 20 15:44:17 2002
+$OpenBSD: patch-main_c,v 1.2 2017/04/27 20:04:31 espie Exp $
+--- main.c.orig	Sat Nov 16 06:37:16 1996
++++ main.c	Thu Apr 27 21:59:08 2017
 @@ -66,7 +66,7 @@ int checkOption(argc,argv)
    /***  set s_map  ***/
    gameMainFlg.s_map = False;
@@ -10,3 +10,21 @@ $OpenBSD: patch-main_c,v 1.1 2002/02/20 22:50:51 pvalchev Exp $
  
    for(i =1; i  < argc; i++)
      {
+@@ -584,7 +584,7 @@ int checkTitleButton(num)
+       break;
+     case 1:		/****	game continue	****/
+       if(nowDataRec.nowMap.continueCount < 0)
+-	return;
++	return (False);
+       gameMainFlg.demoFlg             = False;
+       gameMainFlg.useContinue         = True;
+       nowDataRec.nowMap.continueCount --;
+@@ -743,7 +743,7 @@ void titleText(void)
+ 		   nowDataRec.nowMap.filename,red.pixel);
+   else
+     drawShadowText(display,mWin,310,420,
+-		   "non select",red.pixel);
++		   "none selected",red.pixel);
+     
+ }
+ 
