@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_corelib_concurrent_qtconcurrentiteratekernel_cpp,v 1.1 2017/04/27 17:52:12 espie Exp $
+--- src/corelib/concurrent/qtconcurrentiteratekernel.cpp.orig	Thu Apr 20 11:52:02 2017
++++ src/corelib/concurrent/qtconcurrentiteratekernel.cpp	Thu Apr 20 11:52:18 2017
+@@ -46,7 +46,7 @@
+ #include <mach/mach_time.h>
+ #include <unistd.h>
+ #elif defined(Q_OS_UNIX)
+-#if defined(Q_OS_HURD)
++#if defined(Q_OS_HURD) || defined(Q_OS_OPENBSD)
+ #include <sys/time.h>
+ #endif
+ #include <time.h>
