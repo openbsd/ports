@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2016/03/20 19:57:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2017/04/27 13:31:33 dcoppa Exp $
 
 COMMENT =		communicate with the i3 window manager
 
-DISTNAME =		AnyEvent-I3-0.16
-
-REVISION =		0
+DISTNAME =		AnyEvent-I3-0.17
 
 CATEGORIES =		x11 devel
 
