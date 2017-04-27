@@ -1,0 +1,12 @@
+$OpenBSD: patch-qt_src_3rdparty_webkit_Source_WebCore_html_HTMLImageElement_cpp,v 1.1 2017/04/27 16:23:14 espie Exp $
+--- qt/src/3rdparty/webkit/Source/WebCore/html/HTMLImageElement.cpp.orig	Thu Apr 27 17:13:35 2017
++++ qt/src/3rdparty/webkit/Source/WebCore/html/HTMLImageElement.cpp	Thu Apr 27 17:13:49 2017
+@@ -74,7 +74,7 @@ PassRefPtr<HTMLImageElement> HTMLImageElement::createF
+     RefPtr<HTMLImageElement> image = adoptRef(new HTMLImageElement(imgTag, document));
+     if (optionalWidth)
+         image->setWidth(*optionalWidth);
+-    if (optionalHeight > 0)
++    if (optionalHeight)
+         image->setHeight(*optionalHeight);
+     return image.release();
+ }
