@@ -1,4 +1,4 @@
-# $OpenBSD: gnome.port.mk,v 1.103 2017/04/27 09:06:58 ajacoutot Exp $
+# $OpenBSD: gnome.port.mk,v 1.104 2017/04/27 17:46:52 robert Exp $
 #
 # Module for GNOME related ports
 
@@ -6,14 +6,22 @@
 # -Ddisable_introspection=true|false
 # -Denable-gtk-doc=true|false
 
-.if (defined(GNOME_PROJECT) && defined(GNOME_VERSION))
+.if (defined(GNOME_PROJECT) && defined(GNOME_VERSION)) || (defined(MATE_PROJECT) && defined(MATE_VERSION))
 PORTROACH+=		limitw:1,even
+.  if (defined(GNOME_PROJECT) && defined(GNOME_VERSION))
 DISTNAME=		${GNOME_PROJECT}-${GNOME_VERSION}
 VERSION=		${GNOME_VERSION}
 HOMEPAGE?=		https://wiki.gnome.org/
 MASTER_SITES?=		${MASTER_SITE_GNOME:=sources/${GNOME_PROJECT}/${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}/}
-EXTRACT_SUFX?=		.tar.xz
 CATEGORIES+=		x11/gnome
+.  elif (defined(MATE_PROJECT) && defined(MATE_VERSION))
+DISTNAME=		${MATE_PROJECT}-${MATE_VERSION}
+VERSION=		${MATE_VERSION}
+HOMEPAGE?=		http://mate-desktop.org/
+MASTER_SITES?=		http://pub.mate-desktop.org/releases/${MATE_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}/
+CATEGORIES+=		x11/mate
+.  endif
+EXTRACT_SUFX?=		.tar.xz
 .  if ${NO_BUILD:L} == "no"
 MODULES+=		textproc/intltool
 .    if ${CONFIGURE_STYLE:Mgnu} || ${CONFIGURE_STYLE:Msimple}
