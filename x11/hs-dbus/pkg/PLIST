@@ -1,24 +1,25 @@
-@comment $OpenBSD: PLIST,v 1.5 2015/09/24 20:10:29 kili Exp $
+@comment $OpenBSD: PLIST,v 1.6 2017/04/27 08:43:26 dcoppa Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/DBus/
 lib/ghc/${DISTNAME}/DBus.hi
 lib/ghc/${DISTNAME}/DBus.p_hi
-lib/ghc/${DISTNAME}/DBus/Address.hi
-lib/ghc/${DISTNAME}/DBus/Address.p_hi
 lib/ghc/${DISTNAME}/DBus/Client.hi
 lib/ghc/${DISTNAME}/DBus/Client.p_hi
+lib/ghc/${DISTNAME}/DBus/Internal/
+lib/ghc/${DISTNAME}/DBus/Internal/Address.hi
+lib/ghc/${DISTNAME}/DBus/Internal/Address.p_hi
+lib/ghc/${DISTNAME}/DBus/Internal/Message.hi
+lib/ghc/${DISTNAME}/DBus/Internal/Message.p_hi
+lib/ghc/${DISTNAME}/DBus/Internal/Types.hi
+lib/ghc/${DISTNAME}/DBus/Internal/Types.p_hi
+lib/ghc/${DISTNAME}/DBus/Internal/Wire.hi
+lib/ghc/${DISTNAME}/DBus/Internal/Wire.p_hi
 lib/ghc/${DISTNAME}/DBus/Introspection.hi
 lib/ghc/${DISTNAME}/DBus/Introspection.p_hi
-lib/ghc/${DISTNAME}/DBus/Message.hi
-lib/ghc/${DISTNAME}/DBus/Message.p_hi
 lib/ghc/${DISTNAME}/DBus/Socket.hi
 lib/ghc/${DISTNAME}/DBus/Socket.p_hi
 lib/ghc/${DISTNAME}/DBus/Transport.hi
 lib/ghc/${DISTNAME}/DBus/Transport.p_hi
-lib/ghc/${DISTNAME}/DBus/Types.hi
-lib/ghc/${DISTNAME}/DBus/Types.p_hi
-lib/ghc/${DISTNAME}/DBus/Wire.hi
-lib/ghc/${DISTNAME}/DBus/Wire.p_hi
 lib/ghc/${DISTNAME}/HS${DISTNAME}-${MODGHC_PACKAGE_KEY}.o
 lib/ghc/${DISTNAME}/libHS${DISTNAME}-${MODGHC_PACKAGE_KEY}.a
 lib/ghc/${DISTNAME}/libHS${DISTNAME}-${MODGHC_PACKAGE_KEY}_p.a
@@ -26,6 +27,10 @@ lib/ghc/${DISTNAME}/register.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/html/
 share/doc/hs-${DISTNAME}/html/DBus-Client.html
+share/doc/hs-${DISTNAME}/html/DBus-Internal-Address.html
+share/doc/hs-${DISTNAME}/html/DBus-Internal-Message.html
+share/doc/hs-${DISTNAME}/html/DBus-Internal-Types.html
+share/doc/hs-${DISTNAME}/html/DBus-Internal-Wire.html
 share/doc/hs-${DISTNAME}/html/DBus-Introspection.html
 share/doc/hs-${DISTNAME}/html/DBus-Socket.html
 share/doc/hs-${DISTNAME}/html/DBus-Transport.html
@@ -39,6 +44,7 @@ share/doc/hs-${DISTNAME}/html/doc-index-D.html
 share/doc/hs-${DISTNAME}/html/doc-index-E.html
 share/doc/hs-${DISTNAME}/html/doc-index-F.html
 share/doc/hs-${DISTNAME}/html/doc-index-G.html
+share/doc/hs-${DISTNAME}/html/doc-index-H.html
 share/doc/hs-${DISTNAME}/html/doc-index-I.html
 share/doc/hs-${DISTNAME}/html/doc-index-L.html
 share/doc/hs-${DISTNAME}/html/doc-index-M.html
@@ -57,6 +63,10 @@ share/doc/hs-${DISTNAME}/html/hslogo-16.png
 share/doc/hs-${DISTNAME}/html/index-frames.html
 share/doc/hs-${DISTNAME}/html/index.html
 share/doc/hs-${DISTNAME}/html/mini_DBus-Client.html
+share/doc/hs-${DISTNAME}/html/mini_DBus-Internal-Address.html
+share/doc/hs-${DISTNAME}/html/mini_DBus-Internal-Message.html
+share/doc/hs-${DISTNAME}/html/mini_DBus-Internal-Types.html
+share/doc/hs-${DISTNAME}/html/mini_DBus-Internal-Wire.html
 share/doc/hs-${DISTNAME}/html/mini_DBus-Introspection.html
 share/doc/hs-${DISTNAME}/html/mini_DBus-Socket.html
 share/doc/hs-${DISTNAME}/html/mini_DBus-Transport.html
