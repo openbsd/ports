@@ -1,32 +1,27 @@
-# $OpenBSD: Makefile,v 1.14 2017/04/10 11:46:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2017/04/27 21:37:04 landry Exp $
 
 COMMENT=	lightweight PDF document viewer with vi bindings
 
-DISTNAME=	apvlv-0.0.9.6
-REVISION=	6
+GH_ACCOUNT =	naihe2010
+GH_PROJECT =	apvlv
+GH_COMMIT =	9ab76264c7818097a38e69a2d7d6b47199fffc1f
+DISTNAME=	apvlv-0.1.5pl0
 CATEGORIES=	print
-HOMEPAGE=	https://code.google.com/p/apvlv/
-
-MASTER_SITES=	${MASTER_SITE_GOOGLECODE:=apvlv/}
+HOMEPAGE=	https://naihe2010.github.io/apvlv/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=   Yes
 
-WANTLIB +=	GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi
-WANTLIB +=	Xinerama Xrandr Xrender Xxf86vm atk-1.0 c cairo drm expat
-WANTLIB +=	fontconfig freetype gdk-x11-2.0>=0.14 gdk_pixbuf-2.0>=0.14
-WANTLIB +=	gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
-WANTLIB +=	gtk-x11-2.0>=0.14 m pango-1.0 pangocairo-1.0
-WANTLIB +=	pangoft2-1.0 pixman-1 png poppler-glib>=3 poppler>=3
-WANTLIB +=	pthread pthread-stubs ${LIBCXX} xcb xcb-shm xcb-render z
+MODULES=	devel/gettext \
+		devel/cmake
 
-MODULES=	devel/gettext
+WANTLIB += atk-1.0 c cairo cairo-gobject gdk-3 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gobject-2.0 gthread-2.0 gtk-3 m pango-1.0
+WANTLIB += pangocairo-1.0 poppler-glib pthread ${LIBCXX}
 
-LIB_DEPENDS=	x11/gtk+2 \
+LIB_DEPENDS=	x11/gtk+3 \
 		print/poppler
 
-CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS+=	--without-djvu
-FAKE_FLAGS =		sysconfdir=${PREFIX}/share/examples/apvlv
+CONFIGURE_ARGS=-DMANDIR=${PREFIX}/man
 
 .include <bsd.port.mk>

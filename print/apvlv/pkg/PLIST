@@ -1,12 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/05/13 16:05:05 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/04/27 21:37:05 landry Exp $
 @bin bin/apvlv
 @man man/man1/apvlv.1
+share/applications/apvlv.desktop
 share/doc/apvlv/
 share/doc/apvlv/Startup.pdf
+share/doc/apvlv/Startup.tex
 share/doc/apvlv/apvlvrc.example
-share/doc/apvlv/dir.png
-share/doc/apvlv/pdf.png
-share/doc/apvlv/reg.png
+share/doc/apvlv/icons/
+share/doc/apvlv/icons/dir.png
+share/doc/apvlv/icons/pdf.png
+share/doc/apvlv/icons/reg.png
+share/doc/apvlv/main_menubar.glade
 share/examples/apvlv/
 share/examples/apvlv/apvlvrc
 @sample ${SYSCONFDIR}/apvlvrc
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
