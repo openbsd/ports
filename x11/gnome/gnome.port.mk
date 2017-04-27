@@ -1,4 +1,4 @@
-# $OpenBSD: gnome.port.mk,v 1.104 2017/04/27 17:46:52 robert Exp $
+# $OpenBSD: gnome.port.mk,v 1.105 2017/04/27 21:44:01 ajacoutot Exp $
 #
 # Module for GNOME related ports
 
@@ -6,22 +6,23 @@
 # -Ddisable_introspection=true|false
 # -Denable-gtk-doc=true|false
 
-.if (defined(GNOME_PROJECT) && defined(GNOME_VERSION)) || (defined(MATE_PROJECT) && defined(MATE_VERSION))
-PORTROACH+=		limitw:1,even
+.if (defined(GNOME_PROJECT) && defined(GNOME_VERSION)) || \
+    (defined(MATE_PROJECT) && defined(MATE_VERSION))
+PORTROACH +=		limitw:1,even
+EXTRACT_SUFX ?=		.tar.xz
 .  if (defined(GNOME_PROJECT) && defined(GNOME_VERSION))
 DISTNAME=		${GNOME_PROJECT}-${GNOME_VERSION}
 VERSION=		${GNOME_VERSION}
-HOMEPAGE?=		https://wiki.gnome.org/
-MASTER_SITES?=		${MASTER_SITE_GNOME:=sources/${GNOME_PROJECT}/${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}/}
-CATEGORIES+=		x11/gnome
+HOMEPAGE ?=		https://wiki.gnome.org/
+MASTER_SITES ?=		${MASTER_SITE_GNOME:=sources/${GNOME_PROJECT}/${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}/}
+CATEGORIES +=		x11/gnome
 .  elif (defined(MATE_PROJECT) && defined(MATE_VERSION))
 DISTNAME=		${MATE_PROJECT}-${MATE_VERSION}
 VERSION=		${MATE_VERSION}
-HOMEPAGE?=		http://mate-desktop.org/
-MASTER_SITES?=		http://pub.mate-desktop.org/releases/${MATE_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}/
-CATEGORIES+=		x11/mate
+HOMEPAGE ?=		http://mate-desktop.org/
+MASTER_SITES ?=		http://pub.mate-desktop.org/releases/${MATE_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}/
+CATEGORIES +=		x11/mate
 .  endif
-EXTRACT_SUFX?=		.tar.xz
 .  if ${NO_BUILD:L} == "no"
 MODULES+=		textproc/intltool
 .    if ${CONFIGURE_STYLE:Mgnu} || ${CONFIGURE_STYLE:Msimple}
@@ -31,26 +32,26 @@ USE_GMAKE?=		Yes
 .endif
 
 .if ${CONFIGURE_STYLE:Mgnu} || ${CONFIGURE_STYLE:Msimple}
-   # https://mail.gnome.org/archives/desktop-devel-list/2011-September/msg00064.html
 .  if !defined(AUTOCONF_VERSION) && !defined(AUTOMAKE_VERSION)
-         CONFIGURE_ARGS += --disable-maintainer-mode
+# https://mail.gnome.org/archives/desktop-devel-list/2011-September/msg00064.html
+CONFIGURE_ARGS += --disable-maintainer-mode
 .  endif
 .endif
 
 .if ${CONFIGURE_STYLE:Mcmake}
-   CONFIGURE_ARGS += -DENABLE_MAINTAINER_MODE=OFF
-   CONFIGURE_ARGS += -DSYSCONF_INSTALL_DIR=${SYSCONFDIR}
-   # matches what bsd.port.mk does (--disable-gtk-doc)
+CONFIGURE_ARGS += -DENABLE_MAINTAINER_MODE=OFF
+CONFIGURE_ARGS += -DSYSCONF_INSTALL_DIR=${SYSCONFDIR}
+# matches what bsd.port.mk does (--disable-gtk-doc)
 .  if !defined(BUILD_DEPENDS) || !${BUILD_DEPENDS:Mtextproc/gtk-doc}
-     CONFIGURE_ARGS += -DENABLE_GTK_DOC=OFF
+CONFIGURE_ARGS += -DENABLE_GTK_DOC=OFF
 .  endif
-   # not in the devel/dconf because the flag is not consistent between projects
+# not in the devel/dconf because the flag is not consistent between projects
 .  if ${MODULES:Mdevel/dconf}
-     CONFIGURE_ARGS += -DENABLE_SCHEMAS_COMPILE=OFF
+CONFIGURE_ARGS += -DENABLE_SCHEMAS_COMPILE=OFF
 .  endif
-   # cmake looks for "python"
+cmake looks for "python"
 .  if ${MODULES:Mlang/python}
-     MODGNOME_pre-configure += ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python;
+MODGNOME_pre-configure += ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python;
 .  endif
 .endif
 
@@ -82,8 +83,8 @@ USE_GMAKE?=		Yes
 #         access to the gnome-doc-* tools (legacy);
 #         same goes with yelp-tools which gives us itstool.
 
-MODGNOME_CONFIGURE_ARGS_gi=--disable-introspection
-MODGNOME_CONFIGURE_ARGS_vala=--disable-vala --disable-vala-bindings
+MODGNOME_CONFIGURE_ARGS_gi=	--disable-introspection
+MODGNOME_CONFIGURE_ARGS_vala=	--disable-vala --disable-vala-bindings
 
 .if defined(MODGNOME_TOOLS)
 _VALID_TOOLS=desktop-file-utils docbook gobject-introspection \
@@ -95,48 +96,48 @@ ERRORS += "Fatal: unknown MODGNOME_TOOLS option: ${_t}\n(not in ${_VALID_TOOLS})
 .   endfor
 
 .   if ${MODGNOME_TOOLS:Mdesktop-file-utils}
-        MODGNOME_RUN_DEPENDS+=	devel/desktop-file-utils
-        MODGNOME_pre-configure += ln -sf /usr/bin/true ${WRKDIR}/bin/appstream-util;
-        MODGNOME_pre-configure += ln -sf /usr/bin/true ${WRKDIR}/bin/desktop-file-validate;
+MODGNOME_RUN_DEPENDS +=	devel/desktop-file-utils
+MODGNOME_pre-configure += ln -sf /usr/bin/true ${WRKDIR}/bin/appstream-util;
+MODGNOME_pre-configure += ln -sf /usr/bin/true ${WRKDIR}/bin/desktop-file-validate;
 .   endif
 
 .   if ${MODGNOME_TOOLS:Mdocbook}
-        MODGNOME_BUILD_DEPENDS+=textproc/docbook-xsl
+MODGNOME_BUILD_DEPENDS +=	textproc/docbook-xsl
 .   endif
 
 .   if ${MODGNOME_TOOLS:Mgobject-introspection}
 .       if ${CONFIGURE_STYLE:Mgnu} || ${CONFIGURE_STYLE:Msimple}
-            MODGNOME_CONFIGURE_ARGS_gi=--enable-introspection
+MODGNOME_CONFIGURE_ARGS_gi=	--enable-introspection
 .       elif ${CONFIGURE_STYLE:Mcmake}
-            MODGNOME_CONFIGURE_ARGS_gi=-DENABLE_INTROSPECTION=ON
+MODGNOME_CONFIGURE_ARGS_gi=	-DENABLE_INTROSPECTION=ON
 .       endif
-        MODGNOME_BUILD_DEPENDS+=devel/gobject-introspection
+MODGNOME_BUILD_DEPENDS +=	devel/gobject-introspection
 .   endif
 
 .   if ${MODGNOME_TOOLS:Mgtk-update-icon-cache}
-        MODGNOME_RUN_DEPENDS+=	x11/gtk+3,-guic
+MODGNOME_RUN_DEPENDS +=	x11/gtk+3,-guic
 .   endif
 
 .   if ${MODGNOME_TOOLS:Mshared-mime-info}
-        MODGNOME_RUN_DEPENDS+=	misc/shared-mime-info
-        MODGNOME_pre-configure += ln -sf /usr/bin/true ${WRKDIR}/bin/update-mime-database;
+MODGNOME_RUN_DEPENDS +=	misc/shared-mime-info
+MODGNOME_pre-configure += ln -sf /usr/bin/true ${WRKDIR}/bin/update-mime-database;
 .   endif
 
 .   if ${MODGNOME_TOOLS:Mvala}
 .       if ${CONFIGURE_STYLE:Mgnu} || ${CONFIGURE_STYLE:Msimple}
-            MODGNOME_CONFIGURE_ARGS_vala=--enable-vala --enable-vala-bindings
+MODGNOME_CONFIGURE_ARGS_vala=	--enable-vala --enable-vala-bindings
 .       elif ${CONFIGURE_STYLE:Mcmake}
-            MODGNOME_CONFIGURE_ARGS_vala=-DENABLE_VALA_BINDINGS=ON
+MODGNOME_CONFIGURE_ARGS_vala=	-DENABLE_VALA_BINDINGS=ON
 .       endif
-        MODGNOME_BUILD_DEPENDS+=lang/vala
+MODGNOME_BUILD_DEPENDS +=	lang/vala
 .   endif
 
 .   if ${MODGNOME_TOOLS:Myelp}
-        MODGNOME_BUILD_DEPENDS+=x11/gnome/yelp-tools
-        MODGNOME_BUILD_DEPENDS+=x11/gnome/doc-utils
-        # automatically try to detect GUI applications
+MODGNOME_BUILD_DEPENDS +=	x11/gnome/yelp-tools
+MODGNOME_BUILD_DEPENDS +=	x11/gnome/doc-utils
+# automatically try to detect GUI applications
 .       if ${MODGNOME_TOOLS:Mdesktop-file-utils}
-            MODGNOME_RUN_DEPENDS+=x11/gnome/yelp
+MODGNOME_RUN_DEPENDS +=	x11/gnome/yelp
 .       endif
 .   endif
 .endif
@@ -148,15 +149,15 @@ _MODGNOME_ldflags ?= LDFLAGS="${MODGNOME_LDFLAGS} -L${LOCALBASE}/lib"
 
 .if ${CONFIGURE_STYLE:Mgnu} || ${CONFIGURE_STYLE:Msimple} || \
     ${CONFIGURE_STYLE:Mcmake}
-CONFIGURE_ARGS+=	${MODGNOME_CONFIGURE_ARGS_gi} \
+CONFIGURE_ARGS +=	${MODGNOME_CONFIGURE_ARGS_gi} \
 			${MODGNOME_CONFIGURE_ARGS_vala}
 CONFIGURE_ENV +=	${_MODGNOME_cppflags} ${_MODGNOME_ldflags}
 .endif
 
 .if defined(MODGNOME_BUILD_DEPENDS)
-BUILD_DEPENDS+=		${MODGNOME_BUILD_DEPENDS}
+BUILD_DEPENDS +=	${MODGNOME_BUILD_DEPENDS}
 .endif
 
 .if defined(MODGNOME_RUN_DEPENDS)
-RUN_DEPENDS+=		${MODGNOME_RUN_DEPENDS}
+RUN_DEPENDS +=		${MODGNOME_RUN_DEPENDS}
 .endif
