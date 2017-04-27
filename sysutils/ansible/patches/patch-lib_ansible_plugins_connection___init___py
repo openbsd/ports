@@ -1,0 +1,19 @@
+$OpenBSD: patch-lib_ansible_plugins_connection___init___py,v 1.1 2017/04/27 08:42:53 jasper Exp $
+
+From 0dd0600a6be610a6eeec68332e10e18fb1560304 Mon Sep 17 00:00:00 2001
+From: Matt Martz <matt@sivel.net>
+Date: Tue, 18 Apr 2017 11:34:07 -0500
+Subject: [PATCH] When become_method is su, self._play_context.prompt is a
+ function. Fixes #23689
+
+--- lib/ansible/plugins/connection/__init__.py.orig	Thu Apr 27 09:15:38 2017
++++ lib/ansible/plugins/connection/__init__.py	Thu Apr 27 09:15:30 2017
+@@ -260,6 +260,8 @@ class ConnectionBase(with_metaclass(ABCMeta, object)):
+             if not b_lines:
+                 return False
+             return b_lines[-1].strip().endswith(b_prompt) or b_lines[0].strip().endswith(b_prompt)
++        else:
++            return self._play_context.prompt(b_output)
+ 
+     def check_incorrect_password(self, b_output):
+         b_incorrect_password = to_bytes(gettext.dgettext(self._play_context.become_method, C.BECOME_ERROR_STRINGS[self._play_context.become_method]))
