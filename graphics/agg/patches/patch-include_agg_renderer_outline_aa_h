@@ -1,0 +1,11 @@
+$OpenBSD: patch-include_agg_renderer_outline_aa_h,v 1.1 2017/04/28 01:51:30 espie Exp $
+--- include/agg_renderer_outline_aa.h.orig	Fri Apr 28 03:45:20 2017
++++ include/agg_renderer_outline_aa.h	Fri Apr 28 03:47:27 2017
+@@ -1375,7 +1375,6 @@ namespace agg
+         //---------------------------------------------------------------------
+         void profile(const line_profile_aa& prof) { m_profile = &prof; }
+         const line_profile_aa& profile() const { return *m_profile; }
+-        line_profile_aa& profile() { return *m_profile; }
+ 
+         //---------------------------------------------------------------------
+         int subpixel_width() const { return m_profile->subpixel_width(); }
