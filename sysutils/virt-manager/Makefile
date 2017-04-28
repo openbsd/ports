@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2016/10/15 19:14:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2017/04/28 21:26:13 ajacoutot Exp $
 
 COMMENT=		GUI for managing virtual machines through libvirt
 
-DISTNAME=		virt-manager-1.4.0
-REVISION=		2
+DISTNAME=		virt-manager-1.4.1
 CATEGORIES=		sysutils x11
 
 HOMEPAGE=		http://virt-manager.org/
@@ -14,13 +13,12 @@ PERMIT_PACKAGE_CDROM=	Yes
 MASTER_SITES=		${HOMEPAGE}/download/sources/virt-manager/
 
 MODULES=		devel/dconf \
-			devel/gettext \
 			lang/python \
 			textproc/intltool
 
 RUN_DEPENDS=		devel/libvirt-glib \
 			devel/py-gobject3 \
-			devel/vte3>=0.38 \
+			devel/vte3 \
 			misc/osinfo/libosinfo \
 			net/py-ipaddr \
 			sysutils/libvirt-python \

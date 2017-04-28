@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2016/06/20 17:44:41 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2017/04/28 21:26:13 ajacoutot Exp $
 bin/virt-clone
 bin/virt-convert
 bin/virt-install
@@ -250,10 +250,12 @@ share/virt-manager/virtinst/seclabel.py
 share/virt-manager/virtinst/snapshot.py
 share/virt-manager/virtinst/storage.py
 share/virt-manager/virtinst/support.py
+share/virt-manager/virtinst/sysinfo.py
 share/virt-manager/virtinst/uri.py
 share/virt-manager/virtinst/urlfetcher.py
 share/virt-manager/virtinst/util.py
 share/virt-manager/virtinst/xmlbuilder.py
+share/virt-manager/virtinst/xmlnsqemu.py
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @exec %D/bin/update-desktop-database
