@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2017/04/11 07:37:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.56 2017/04/28 15:04:53 ajacoutot Exp $
 
 COMMENT-main=		Python bindings for GLib and GObject
 COMMENT-common=		common files for py-gobject3
@@ -10,6 +10,8 @@ MODPY_EGG_VERSION=	${GNOME_VERSION}
 PKGNAME-main=		py-gobject3-${GNOME_VERSION}
 FULLPKGNAME-common=	py-gobject3-common-${GNOME_VERSION}
 FULLPKGPATH-common=	devel/py-gobject3,-common
+
+REVISION-main=		0
 
 SUBST_VARS=		OSREV
 
@@ -41,20 +43,18 @@ MODULES=		lang/python \
 MODULES +=		gcc4
 MODGCC4_ARCHS=		*
 
+BUILD_DEPENDS=		graphics/py-cairo${MODPY_FLAVOR}
+
 LIB_DEPENDS-common=	#empty
 RUN_DEPENDS-common=	#empty
 
 LIB_DEPENDS-main=	devel/gobject-introspection
-RUN_DEPENDS-main=	devel/py-gobject3,-common=${GNOME_VERSION}
+RUN_DEPENDS-main=	devel/py-gobject3,-common=${GNOME_VERSION} \
+			graphics/py-cairo${MODPY_FLAVOR}
 
 .if ${FLAVOR:Mpython3}
 FULLPKGNAME-main=	${PKGNAME-main:S/^py-/py3-/}
 FULLPKGPATH-main=	devel/py-gobject3,-main${MODPY_FLAVOR}
-BUILD_DEPENDS +=	graphics/py3-cairo
-RUN_DEPENDS-main +=	graphics/py3-cairo
-.else
-BUILD_DEPENDS +=	graphics/py-cairo
-RUN_DEPENDS-main +=	graphics/py-cairo
 .endif
 
 CONFIGURE_STYLE=	gnu
