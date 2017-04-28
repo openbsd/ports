@@ -1,0 +1,12 @@
+$OpenBSD: patch-extras_gtk2_immodule_gtkimcontextscim_cpp,v 1.1 2017/04/28 10:42:26 espie Exp $
+--- extras/gtk2_immodule/gtkimcontextscim.cpp.orig	Fri Apr 28 12:35:21 2017
++++ extras/gtk2_immodule/gtkimcontextscim.cpp	Fri Apr 28 12:39:56 2017
+@@ -1710,7 +1710,7 @@ initialize (void)
+         // And set manual to false.
+         if (!check_socket_frontend ()) {
+             std::cerr << "Launching a SCIM daemon with Socket FrontEnd...\n";
+-            char *new_argv [] = { static_cast<char*> ("--no-stay"), 0 };
++            char *new_argv [] = { const_cast<char *>("--no-stay"), 0 };
+             scim_launch (true,
+                          config_module_name,
+                          (load_engine_list.size () ? scim_combine_string_list (load_engine_list, ',') : "all"),
