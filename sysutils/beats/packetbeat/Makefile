@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2017/04/27 09:14:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2017/04/28 17:28:14 jasper Exp $
 
 COMMENT =	lightweight shipper for real-time network analytics
 
 BEAT =		packetbeat
-VERSION =	5.3.1
+VERSION =	5.3.2
 
 GH_ACCOUNT =	elastic
 GH_PROJECT =	beats
