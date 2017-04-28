@@ -1,55 +1,38 @@
-# $OpenBSD: Makefile,v 1.34 2015/10/08 12:02:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.35 2017/04/28 15:04:32 ajacoutot Exp $
 
 # no libGL (toolchain issue)
-NOT_FOR_ARCHS= m88k
+NOT_FOR_ARCHS=		m88k
 
-COMMENT=	cairo bindings for Python
+COMMENT=		cairo bindings for Python
 
-MODPY_EGG_VERSION=1.10.0
-DISTNAME=	py2cairo-${MODPY_EGG_VERSION}
-PKGNAME=	py-cairo-${MODPY_EGG_VERSION}
-EXTRACT_SUFX=	.tar.bz2
+MODPY_EGG_VERSION=	1.12.0
+GH_ACCOUNT=		pygobject
+GH_PROJECT=		pycairo
+GH_TAGNAME=		v${MODPY_EGG_VERSION}
+PKGNAME=		py-cairo-${MODPY_EGG_VERSION}
 
-REVISION=	1
+CATEGORIES=		graphics
 
-CATEGORIES=	graphics
+HOMEPAGE=		https://pycairo.readthedocs.io
 
-HOMEPAGE=	http://cairographics.org/pycairo/
-
-MAINTAINER=	Eric Faurot <eric@openbsd.org>
+MAINTAINER=		Eric Faurot <eric@openbsd.org>
 
 # LGPLv2.1 / MPL 1.1
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	http://cairographics.org/releases/
+WANTLIB += ${MODPY_WANTLIB} cairo pthread
 
-WANTLIB += ${MODPY_WANTLIB}
-WANTLIB += GL X11 Xau Xdamage Xdmcp Xext Xfixes Xrender Xxf86vm
-WANTLIB += cairo drm expat fontconfig freetype glib-2.0 gobject-2.0
-WANTLIB += m pcre pixman-1 png pthread-stubs util xcb xcb-render
-WANTLIB += xcb-shm z pthread
+MODULES=		lang/python
 
-MODULES=	lang/python \
-		devel/gettext
+FLAVORS=		python3
+FLAVOR ?=
 
-LIB_DEPENDS=	${MODPY_LIB_DEPENDS} \
-		graphics/cairo
+LIB_DEPENDS=		${MODPY_LIB_DEPENDS} \
+			graphics/cairo
 
-TEST_DEPENDS=devel/py-test
-
-do-configure:
-	cd ${WRKSRC} && env PYTHON=${MODPY_BIN} \
-		LDFLAGS="$$(python${MODPY_VERSION}-config --libs)" \
-		${MODPY_BIN} ./waf configure
-
-do-build:
-	cd ${WRKBUILD} && ${MODPY_BIN} ./waf build
-
-do-install:
-	cd ${WRKBUILD} && ${MODPY_BIN} ./waf install
+TEST_DEPENDS=		devel/py-test${MODPY_FLAVOR}
 
 do-test: install
-	sed -i "s/python/python${MODPY_VERSION}/g" ${WRKSRC}/test/examples_test.py
-	cd ${WRKSRC}/test && py.test
+	cd ${WRKSRC}/tests && ${MODPY_BIN} ./test_api.py
 
 .include <bsd.port.mk>
