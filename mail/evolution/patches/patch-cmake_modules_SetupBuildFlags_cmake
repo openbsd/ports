@@ -1,6 +1,9 @@
-$OpenBSD: patch-cmake_modules_SetupBuildFlags_cmake,v 1.2 2017/04/27 13:16:03 ajacoutot Exp $
+$OpenBSD: patch-cmake_modules_SetupBuildFlags_cmake,v 1.3 2017/04/28 08:11:51 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=781834
+From 3f4cfa9956829f6a4f9b6681f3f3224a211b54b6 Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Fri, 28 Apr 2017 10:00:25 +0200
+Subject: Bug 781833 - Do not set '-Wl,--no-undefined' on BSD
 
 --- cmake/modules/SetupBuildFlags.cmake.orig	Mon Apr 10 10:02:00 2017
 +++ cmake/modules/SetupBuildFlags.cmake	Thu Apr 27 15:15:12 2017
