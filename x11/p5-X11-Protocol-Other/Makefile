@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/11/05 09:04:05 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2017/04/28 22:11:55 ajacoutot Exp $
 
 COMMENT =	extras and helpers for X11::Protocol
 
-DISTNAME =	X11-Protocol-Other-29
+DISTNAME =	X11-Protocol-Other-30
 
 CATEGORIES =	x11
 
