@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/12/07 10:48:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2017/04/28 16:51:55 ajacoutot Exp $
 
 COMMENT=		modern freedesktop flat icon theme
 
 GH_ACCOUNT=		snwh
 GH_PROJECT=		paper-icon-theme
-GH_TAGNAME=		v1.3.4
+GH_TAGNAME=		v1.4.0
 
 CATEGORIES=		x11
 
