@@ -1,0 +1,22 @@
+$OpenBSD: patch-button_c,v 1.1 2017/04/28 12:29:32 espie Exp $
+--- button.c.orig	Fri Apr 28 14:11:21 2017
++++ button.c	Fri Apr 28 14:13:05 2017
+@@ -44,6 +44,7 @@ button.c	Handles button events in the terminal emulato
+ extern char *malloc();
+ 
+ extern void DoSecureKeyboard();
++void TrackText(int, int, int, int);
+ 
+ #define KeyState(x) (((x) & (ShiftMask|ControlMask)) + (((x) & Mod1Mask) ? 2 : 0))
+     /* adds together the bits:
+@@ -1257,8 +1258,9 @@ register Bchr *ptr;
+ 
+ #endif	/* KTERM && KTERM_MBCC */
+ 
++void
+ TrackText(frow, fcol, trow, tcol)
+-    register int frow, fcol, trow, tcol;
++    int frow, fcol, trow, tcol;
+     /* Guaranteed (frow, fcol) <= (trow, tcol) */
+ {
+ 	register int from, to;

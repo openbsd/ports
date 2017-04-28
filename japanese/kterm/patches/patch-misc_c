@@ -1,0 +1,47 @@
+$OpenBSD: patch-misc_c,v 1.1 2017/04/28 12:29:33 espie Exp $
+--- misc.c.orig	Fri Apr 28 14:19:37 2017
++++ misc.c	Fri Apr 28 14:22:20 2017
+@@ -60,7 +60,11 @@ extern char *getenv();
+ 
+ static void DoSpecialEnterNotify();
+ static void DoSpecialLeaveNotify();
++void Bell(int, int);
++void unselectwindow();
++void selectwindow();
+ 
++void
+ xevents()
+ {
+ 	XEvent event;
+@@ -315,6 +319,7 @@ caddr_t eventdata;
+ 
+ 
+ 
++void
+ selectwindow(screen, flag)
+ register TScreen *screen;
+ register int flag;
+@@ -345,6 +350,7 @@ register int flag;
+ #endif /* !KTERM_NOTEK */
+ }
+ 
++void
+ unselectwindow(screen, flag)
+ register TScreen *screen;
+ register int flag;
+@@ -374,6 +380,7 @@ register int flag;
+ 
+ static long lastBellTime;	/* in milliseconds */
+ 
++void
+ Bell(which,percent)
+      int which;
+      int percent;
+@@ -915,6 +922,7 @@ int code;
+  * was allocated using calloc, with enough extra room at the end so not
+  * to have to do a realloc().
+  */
++void
+ Setenv (var, value)
+ register char *var, *value;
+ {

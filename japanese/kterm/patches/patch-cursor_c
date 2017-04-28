@@ -1,0 +1,19 @@
+$OpenBSD: patch-cursor_c,v 1.1 2017/04/28 12:29:33 espie Exp $
+--- cursor.c.orig	Fri Apr 28 14:17:59 2017
++++ cursor.c	Fri Apr 28 14:18:42 2017
+@@ -162,6 +162,7 @@ int		n;
+  * Moves cursor down amount lines, scrolls if necessary.
+  * Won't leave scrolling region. No carriage return.
+  */
++void
+ Index(screen, amount)
+ register TScreen	*screen;
+ register int	amount;
+@@ -186,6 +187,7 @@ register int	amount;
+  * Moves cursor up amount lines, reverse scrolls if necessary.
+  * Won't leave scrolling region. No carriage return.
+  */
++void
+ RevIndex(screen, amount)
+ register TScreen	*screen;
+ register int	amount;

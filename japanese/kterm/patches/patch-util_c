@@ -1,0 +1,53 @@
+$OpenBSD: patch-util_c,v 1.1 2017/04/28 12:29:33 espie Exp $
+--- util.c.orig	Fri Apr 28 14:25:24 2017
++++ util.c	Fri Apr 28 14:27:23 2017
+@@ -38,6 +38,9 @@
+ static void horizontal_copy_area();
+ static void vertical_copy_area();
+ 
++void recolor_cursor();
++void CopyWait();
++
+ #ifdef KTERM
+ static int fnum = F_ISO8859_1; /* refered by *GC in many functions */
+ #endif /* KTERM */
+@@ -164,6 +167,7 @@ register TScreen *screen;
+  * All done within the scrolling region, of course. 
+  * requires: amount > 0
+  */
++void
+ Scroll(screen, amount)
+ register TScreen *screen;
+ register int amount;
+@@ -335,6 +339,7 @@ register int amount;
+  * inserts n blank lines at the cursor's position.  Lines above the
+  * bottom margin are lost.
+  */
++void
+ InsertLine (screen, n)
+ register TScreen *screen;
+ register int n;
+@@ -396,6 +401,7 @@ register int n;
+  * If cursor not in scrolling region, returns.  Else, deletes n lines
+  * at the cursor's position, lines added at bottom margin are blank.
+  */
++void
+ DeleteLine(screen, n)
+ register TScreen *screen;
+ register int n;
+@@ -804,6 +810,7 @@ register TScreen *screen;
+ 	ClearBufRows (screen, 0, screen->max_row);
+ }
+ 
++void
+ CopyWait(screen)
+ register TScreen *screen;
+ {
+@@ -1143,6 +1150,7 @@ ReverseVideo (termw)
+ }
+ 
+ 
++void
+ recolor_cursor (cursor, fg, bg)
+     Cursor cursor;			/* X cursor ID to set */
+     unsigned long fg, bg;		/* pixel indexes to look up */

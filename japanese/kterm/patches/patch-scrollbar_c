@@ -1,0 +1,27 @@
+$OpenBSD: patch-scrollbar_c,v 1.1 2017/04/28 12:29:33 espie Exp $
+--- scrollbar.c.orig	Fri Apr 28 14:23:45 2017
++++ scrollbar.c	Fri Apr 28 14:25:11 2017
+@@ -265,6 +265,7 @@ ResizeScrollBar(scrollWidget, x, y, height)
+ 	ScrollBarDrawThumb(scrollWidget);
+ }
+ 
++void
+ WindowScroll(screen, top)
+ 	register TScreen *screen;
+ 	int top;
+@@ -317,6 +318,7 @@ WindowScroll(screen, top)
+ }
+ 
+ 
++void
+ ScrollBarOn (xw, init, doalloc)
+     XtermWidget xw;
+     int init, doalloc;
+@@ -404,6 +406,7 @@ ScrollBarOn (xw, init, doalloc)
+ 	}
+ }
+ 
++void
+ ScrollBarOff(screen)
+ 	register TScreen *screen;
+ {

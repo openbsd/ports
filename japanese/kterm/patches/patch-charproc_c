@@ -1,0 +1,64 @@
+$OpenBSD: patch-charproc_c,v 1.1 2017/04/28 12:29:32 espie Exp $
+--- charproc.c.orig	Fri Apr 28 14:13:42 2017
++++ charproc.c	Fri Apr 28 14:17:33 2017
+@@ -117,6 +117,12 @@ static void FromAlternate();
+ static void update_font_info();
+ 
+ static void bitset(), bitclr();
++void EraseStatus();
++void HideStatus();
++void ShowStatus();
++void FromStatus();
++void HideCursor();
++void ShowCursor();
+     
+ #define	DEFAULT		-1
+ #define	TEXT_BUF_SIZE	256
+@@ -3892,6 +3898,7 @@ static Boolean VTSetValues (cur, request, new, args, n
+ /*
+  * Shows cursor at new cursor position in screen.
+  */
++void
+ ShowCursor()
+ {
+ 	register TScreen *screen = &term->screen;
+@@ -4016,6 +4023,7 @@ ShowCursor()
+ /*
+  * hide cursor at previous cursor position in screen.
+  */
++void
+ HideCursor()
+ {
+ 	register TScreen *screen = &term->screen;
+@@ -4218,6 +4226,7 @@ int col;
+ 	screen->cur_col = col;
+ }
+ 
++void
+ FromStatus()
+ {
+ 	register TScreen *screen = &term->screen;
+@@ -4228,6 +4237,7 @@ FromStatus()
+ 	CursorRestore(term, &screen->statussc);
+ }
+ 
++void
+ ShowStatus()
+ {
+ 	register TScreen *screen = &term->screen;
+@@ -4241,6 +4251,7 @@ ShowStatus()
+ 		  Height(screen) + screen->border * 2 + screen->statusheight);
+ }
+ 
++void
+ HideStatus()
+ {
+ 	register TScreen *screen = &term->screen;
+@@ -4267,6 +4278,7 @@ HideStatus()
+ 		  Height(screen) + screen->border * 2);
+ }
+ 
++void
+ EraseStatus()
+ {
+ 	register TScreen *screen = &term->screen;
