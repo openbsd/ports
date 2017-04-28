@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2017/04/19 05:16:47 robert Exp $
+@comment $OpenBSD: PLIST,v 1.14 2017/04/28 22:22:37 robert Exp $
 bin/iridium
 iridium/
 iridium/chrome_100_percent.pak
@@ -79,7 +79,10 @@ iridium/resources/inspector/Images/accelerometer-front.png
 iridium/resources/inspector/Images/accelerometer-left.png
 iridium/resources/inspector/Images/accelerometer-right.png
 iridium/resources/inspector/Images/accelerometer-top.png
-iridium/resources/inspector/Images/applicationCache.png
+iridium/resources/inspector/Images/audits_logo.png
+iridium/resources/inspector/Images/audits_logo_2x.png
+iridium/resources/inspector/Images/audits_logo_bw.png
+iridium/resources/inspector/Images/audits_logo_bw_2x.png
 iridium/resources/inspector/Images/breakpoint.png
 iridium/resources/inspector/Images/breakpointConditional.png
 iridium/resources/inspector/Images/breakpointConditional_2x.png
@@ -93,19 +96,12 @@ iridium/resources/inspector/Images/chromeRight.png
 iridium/resources/inspector/Images/chromeSelect.png
 iridium/resources/inspector/Images/chromeSelect_2x.png
 iridium/resources/inspector/Images/deleteIcon.png
-iridium/resources/inspector/Images/domain.png
 iridium/resources/inspector/Images/errorWave.png
 iridium/resources/inspector/Images/errorWave_2x.png
-iridium/resources/inspector/Images/fileSystem.png
-iridium/resources/inspector/Images/forward.png
-iridium/resources/inspector/Images/frame.png
 iridium/resources/inspector/Images/ic_info_black_18dp.svg
 iridium/resources/inspector/Images/ic_warning_black_18dp.svg
 iridium/resources/inspector/Images/navigationControls.png
 iridium/resources/inspector/Images/navigationControls_2x.png
-iridium/resources/inspector/Images/paneAddButtons.png
-iridium/resources/inspector/Images/paneFilterButtons.png
-iridium/resources/inspector/Images/paneRefreshButtons.png
 iridium/resources/inspector/Images/popoverArrows.png
 iridium/resources/inspector/Images/profileGroupIcon.png
 iridium/resources/inspector/Images/profileIcon.png
@@ -130,18 +126,16 @@ iridium/resources/inspector/Images/searchNext.png
 iridium/resources/inspector/Images/searchPrev.png
 iridium/resources/inspector/Images/securityIcons.png
 iridium/resources/inspector/Images/securityIcons_2x.png
-iridium/resources/inspector/Images/settingsListRemove.png
-iridium/resources/inspector/Images/settingsListRemove_2x.png
 iridium/resources/inspector/Images/smallIcons.png
 iridium/resources/inspector/Images/smallIcons_2x.png
 iridium/resources/inspector/Images/speech.png
 iridium/resources/inspector/Images/toolbarButtonGlyphs.png
 iridium/resources/inspector/Images/toolbarButtonGlyphs_2x.png
-iridium/resources/inspector/Images/toolbarItemSelected.png
-iridium/resources/inspector/Images/toolbarResizerHorizontal.png
 iridium/resources/inspector/Images/toolbarResizerVertical.png
 iridium/resources/inspector/Images/touchCursor.png
 iridium/resources/inspector/Images/touchCursor_2x.png
+iridium/resources/inspector/Images/treeoutlineTriangles.png
+iridium/resources/inspector/Images/treeoutlineTriangles_2x.png
 iridium/resources/inspector/InspectorBackendCommands.js
 iridium/resources/inspector/SupportedCSSProperties.js
 iridium/resources/inspector/Tests.js
@@ -153,6 +147,9 @@ iridium/resources/inspector/audits/
 iridium/resources/inspector/audits/audits_module.js
 iridium/resources/inspector/audits2/
 iridium/resources/inspector/audits2/audits2_module.js
+iridium/resources/inspector/audits2_worker/
+iridium/resources/inspector/audits2_worker.js
+iridium/resources/inspector/audits2_worker/audits2_worker_module.js
 iridium/resources/inspector/cm/
 iridium/resources/inspector/cm/cm_module.js
 iridium/resources/inspector/cm_modes/
@@ -163,8 +160,8 @@ iridium/resources/inspector/console/
 iridium/resources/inspector/console/console_module.js
 iridium/resources/inspector/cookie_table/
 iridium/resources/inspector/cookie_table/cookie_table_module.js
-iridium/resources/inspector/css_tracker/
-iridium/resources/inspector/css_tracker/css_tracker_module.js
+iridium/resources/inspector/coverage/
+iridium/resources/inspector/coverage/coverage_module.js
 iridium/resources/inspector/data_grid/
 iridium/resources/inspector/data_grid/data_grid_module.js
 iridium/resources/inspector/devices/
@@ -213,6 +210,8 @@ iridium/resources/inspector/emulated_devices/iPhone6-landscape.svg
 iridium/resources/inspector/emulated_devices/iPhone6-portrait.svg
 iridium/resources/inspector/emulated_devices/iPhone6Plus-landscape.svg
 iridium/resources/inspector/emulated_devices/iPhone6Plus-portrait.svg
+iridium/resources/inspector/event_listeners/
+iridium/resources/inspector/event_listeners/event_listeners_module.js
 iridium/resources/inspector/formatter_worker.js
 iridium/resources/inspector/gonzales/
 iridium/resources/inspector/gonzales/gonzales_module.js
@@ -229,8 +228,12 @@ iridium/resources/inspector/layers/
 iridium/resources/inspector/layers/layers_module.js
 iridium/resources/inspector/network/
 iridium/resources/inspector/network/network_module.js
+iridium/resources/inspector/network_group_lookup/
+iridium/resources/inspector/network_group_lookup/network_group_lookup_module.js
 iridium/resources/inspector/perf_ui/
 iridium/resources/inspector/perf_ui/perf_ui_module.js
+iridium/resources/inspector/product_registry/
+iridium/resources/inspector/product_registry/product_registry_module.js
 iridium/resources/inspector/profiler/
 iridium/resources/inspector/profiler/profiler_module.js
 iridium/resources/inspector/quick_open/

@@ -1,7 +1,7 @@
-$OpenBSD: patch-base_debug_stack_trace_posix_cc,v 1.9 2017/04/19 05:16:46 robert Exp $
---- base/debug/stack_trace_posix.cc.orig.port	Thu Mar  9 21:04:26 2017
-+++ base/debug/stack_trace_posix.cc	Fri Mar 10 18:55:57 2017
-@@ -33,7 +33,7 @@
+$OpenBSD: patch-base_debug_stack_trace_posix_cc,v 1.10 2017/04/28 22:22:36 robert Exp $
+--- base/debug/stack_trace_posix.cc.orig.port	Thu Apr 27 21:34:42 2017
++++ base/debug/stack_trace_posix.cc	Fri Apr 28 07:24:14 2017
+@@ -34,7 +34,7 @@
  #include <AvailabilityMacros.h>
  #endif
  
@@ -10,17 +10,18 @@ $OpenBSD: patch-base_debug_stack_trace_posix_cc,v 1.9 2017/04/19 05:16:46 robert
  #include "base/debug/proc_maps_linux.h"
  #endif
  
-@@ -574,6 +574,9 @@ class SandboxSymbolizeHelper {
+@@ -575,6 +575,10 @@ class SandboxSymbolizeHelper {
    // for the modules that are loaded in the current process.
    // Returns true on success.
    bool CacheMemoryRegions() {
-+#if defined(OS_OPENBSD)
++#if defined(OS_BSD)
++    NOTIMPLEMENTED();
 +    return false;
 +#else
      // Reads /proc/self/maps.
      std::string contents;
      if (!ReadProcMaps(&contents)) {
-@@ -589,6 +592,7 @@ class SandboxSymbolizeHelper {
+@@ -590,6 +594,7 @@ class SandboxSymbolizeHelper {
  
      is_initialized_ = true;
      return true;
@@ -28,12 +29,12 @@ $OpenBSD: patch-base_debug_stack_trace_posix_cc,v 1.9 2017/04/19 05:16:46 robert
    }
  
    // Opens all object files and caches their file descriptors.
-@@ -721,7 +725,7 @@ StackTrace::StackTrace() {
-   // NOTE: This code MUST be async-signal safe (it's used by in-process
-   // stack dumping signal handler). NO malloc or stdio is allowed here.
+@@ -722,7 +727,7 @@ StackTrace::StackTrace(size_t count) {
+ // NOTE: This code MUST be async-signal safe (it's used by in-process
+ // stack dumping signal handler). NO malloc or stdio is allowed here.
  
 -#if !defined(__UCLIBC__)
 +#if !defined(__UCLIBC__) && !defined(OS_BSD)
+   count = std::min(arraysize(trace_), count);
+ 
    // Though the backtrace API man page does not list any possible negative
-   // return values, we take no chance.
-   count_ = base::saturated_cast<size_t>(backtrace(trace_, arraysize(trace_)));

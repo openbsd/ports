@@ -1,8 +1,8 @@
-$OpenBSD: patch-chrome_browser_ui_views_frame_browser_frame_cc,v 1.5 2017/04/19 05:16:47 robert Exp $
---- chrome/browser/ui/views/frame/browser_frame.cc.orig.port	Tue Jan  3 20:35:12 2017
-+++ chrome/browser/ui/views/frame/browser_frame.cc	Tue Jan  3 20:36:46 2017
-@@ -37,11 +37,11 @@
- #include "ash/common/wm_shell.h"  // nogncheck
+$OpenBSD: patch-chrome_browser_ui_views_frame_browser_frame_cc,v 1.6 2017/04/28 22:22:36 robert Exp $
+--- chrome/browser/ui/views/frame/browser_frame.cc.orig.port	Wed Apr 19 21:06:30 2017
++++ chrome/browser/ui/views/frame/browser_frame.cc	Thu Apr 27 19:56:00 2017
+@@ -36,11 +36,11 @@
+ #include "components/user_manager/user_manager.h"
  #endif
  
 -#if defined(OS_LINUX)
@@ -15,7 +15,7 @@ $OpenBSD: patch-chrome_browser_ui_views_frame_browser_frame_cc,v 1.5 2017/04/19 
  #include "ui/views/widget/desktop_aura/x11_desktop_handler.h"
  #endif
  
-@@ -98,7 +98,7 @@ void BrowserFrame::InitBrowserFrame() {
+@@ -97,7 +97,7 @@ void BrowserFrame::InitBrowserFrame() {
      non_client_view()->set_context_menu_controller(this);
    }
  

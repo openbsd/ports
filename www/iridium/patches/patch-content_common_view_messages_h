@@ -1,7 +1,7 @@
-$OpenBSD: patch-content_common_view_messages_h,v 1.1 2017/04/19 05:16:47 robert Exp $
---- content/common/view_messages.h.orig.port	Thu Mar  9 21:04:32 2017
-+++ content/common/view_messages.h	Fri Mar 10 07:46:23 2017
-@@ -246,7 +246,7 @@ IPC_STRUCT_TRAITS_BEGIN(content::RendererPreferences)
+$OpenBSD: patch-content_common_view_messages_h,v 1.2 2017/04/28 22:22:36 robert Exp $
+--- content/common/view_messages.h.orig.port	Wed Apr 19 21:06:34 2017
++++ content/common/view_messages.h	Thu Apr 27 19:56:02 2017
+@@ -245,7 +245,7 @@ IPC_STRUCT_TRAITS_BEGIN(content::RendererPreferences)
    IPC_STRUCT_TRAITS_MEMBER(plugin_fullscreen_allowed)
    IPC_STRUCT_TRAITS_MEMBER(use_video_overlay_for_embedded_encrypted_video)
    IPC_STRUCT_TRAITS_MEMBER(network_contry_iso)

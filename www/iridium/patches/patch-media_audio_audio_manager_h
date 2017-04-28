@@ -1,9 +1,9 @@
-$OpenBSD: patch-media_audio_audio_manager_h,v 1.5 2017/04/19 05:16:47 robert Exp $
---- media/audio/audio_manager.h.orig.port	Thu Sep  1 00:03:32 2016
-+++ media/audio/audio_manager.h	Thu Sep  1 11:12:23 2016
-@@ -84,7 +84,7 @@ class MEDIA_EXPORT AudioManager {
-   // See http://crbug.com/422522
-   static void EnableCrashKeyLoggingForAudioThreadHangs();
+$OpenBSD: patch-media_audio_audio_manager_h,v 1.6 2017/04/28 22:22:36 robert Exp $
+--- media/audio/audio_manager.h.orig.port	Wed Apr 19 21:06:35 2017
++++ media/audio/audio_manager.h	Thu Apr 27 19:56:02 2017
+@@ -81,7 +81,7 @@ class MEDIA_EXPORT AudioManager {
+   static void StartHangMonitorIfNeeded(
+       scoped_refptr<base::SingleThreadTaskRunner> task_runner);
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)

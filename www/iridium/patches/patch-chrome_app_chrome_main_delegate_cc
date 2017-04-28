@@ -1,6 +1,6 @@
-$OpenBSD: patch-chrome_app_chrome_main_delegate_cc,v 1.11 2017/04/19 05:16:46 robert Exp $
---- chrome/app/chrome_main_delegate.cc.orig.port	Thu Mar  9 21:04:27 2017
-+++ chrome/app/chrome_main_delegate.cc	Fri Mar 10 07:46:17 2017
+$OpenBSD: patch-chrome_app_chrome_main_delegate_cc,v 1.12 2017/04/28 22:22:36 robert Exp $
+--- chrome/app/chrome_main_delegate.cc.orig.port	Wed Apr 19 21:06:28 2017
++++ chrome/app/chrome_main_delegate.cc	Thu Apr 27 19:55:58 2017
 @@ -89,7 +89,7 @@
  #include "chrome/app/chrome_crash_reporter_client.h"
  #endif
@@ -73,12 +73,12 @@ $OpenBSD: patch-chrome_app_chrome_main_delegate_cc,v 1.11 2017/04/19 05:16:46 ro
    // Zygote needs to call InitCrashReporter() in RunZygote().
    if (process_type != switches::kZygoteProcess) {
  #if defined(OS_ANDROID)
-@@ -1008,7 +1008,7 @@ bool ChromeMainDelegate::DelaySandboxInitialization(
+@@ -1005,7 +1005,7 @@ bool ChromeMainDelegate::DelaySandboxInitialization(
  #endif
    return process_type == switches::kRelauncherProcess;
  }
 -#elif defined(OS_POSIX) && !defined(OS_ANDROID)
 +#elif defined(OS_POSIX) && !defined(OS_ANDROID) && !defined(OS_BSD)
  void ChromeMainDelegate::ZygoteStarting(
-     ScopedVector<content::ZygoteForkDelegate>* delegates) {
+     std::vector<std::unique_ptr<content::ZygoteForkDelegate>>* delegates) {
  #if defined(OS_CHROMEOS)

@@ -1,7 +1,7 @@
-$OpenBSD: patch-third_party_ffmpeg_chromium_config_Chrome_openbsd_ia32_config_asm,v 1.10 2017/04/19 05:16:47 robert Exp $
---- third_party/ffmpeg/chromium/config/Chrome/openbsd/ia32/config.asm.orig.port	Tue Mar 14 08:14:17 2017
-+++ third_party/ffmpeg/chromium/config/Chrome/openbsd/ia32/config.asm	Tue Mar 14 08:21:43 2017
-@@ -0,0 +1,2218 @@
+$OpenBSD: patch-third_party_ffmpeg_chromium_config_Chrome_openbsd_ia32_config_asm,v 1.11 2017/04/28 22:22:36 robert Exp $
+--- third_party/ffmpeg/chromium/config/Chrome/openbsd/ia32/config.asm.orig.port	Fri Apr 28 10:23:59 2017
++++ third_party/ffmpeg/chromium/config/Chrome/openbsd/ia32/config.asm	Fri Apr 28 15:55:31 2017
+@@ -0,0 +1,2228 @@
 +%define ARCH_AARCH64 0
 +%define ARCH_ALPHA 0
 +%define ARCH_ARM 0
@@ -599,6 +599,7 @@ $OpenBSD: patch-third_party_ffmpeg_chromium_config_Chrome_openbsd_ia32_config_as
 +%define CONFIG_LIBX262 0
 +%define CONFIG_LLAUDDSP 0
 +%define CONFIG_LLVIDDSP 0
++%define CONFIG_LLVIDENCDSP 0
 +%define CONFIG_LPC 0
 +%define CONFIG_LZF 0
 +%define CONFIG_ME_CMP 0
@@ -794,6 +795,7 @@ $OpenBSD: patch-third_party_ffmpeg_chromium_config_Chrome_openbsd_ia32_config_as
 +%define CONFIG_PGM_DECODER 0
 +%define CONFIG_PGMYUV_DECODER 0
 +%define CONFIG_PICTOR_DECODER 0
++%define CONFIG_PIXLET_DECODER 0
 +%define CONFIG_PNG_DECODER 0
 +%define CONFIG_PPM_DECODER 0
 +%define CONFIG_PRORES_DECODER 0
@@ -826,6 +828,7 @@ $OpenBSD: patch-third_party_ffmpeg_chromium_config_Chrome_openbsd_ia32_config_as
 +%define CONFIG_SMVJPEG_DECODER 0
 +%define CONFIG_SNOW_DECODER 0
 +%define CONFIG_SP5X_DECODER 0
++%define CONFIG_SPEEDHQ_DECODER 0
 +%define CONFIG_SUNRAST_DECODER 0
 +%define CONFIG_SVQ1_DECODER 0
 +%define CONFIG_SVQ3_DECODER 0
@@ -950,6 +953,7 @@ $OpenBSD: patch-third_party_ffmpeg_chromium_config_Chrome_openbsd_ia32_config_as
 +%define CONFIG_PAF_AUDIO_DECODER 0
 +%define CONFIG_QCELP_DECODER 0
 +%define CONFIG_QDM2_DECODER 0
++%define CONFIG_QDMC_DECODER 0
 +%define CONFIG_RA_144_DECODER 0
 +%define CONFIG_RA_288_DECODER 0
 +%define CONFIG_RALF_DECODER 0
@@ -976,6 +980,8 @@ $OpenBSD: patch-third_party_ffmpeg_chromium_config_Chrome_openbsd_ia32_config_as
 +%define CONFIG_PCM_ALAW_DECODER 1
 +%define CONFIG_PCM_BLURAY_DECODER 0
 +%define CONFIG_PCM_DVD_DECODER 0
++%define CONFIG_PCM_F16LE_DECODER 0
++%define CONFIG_PCM_F24LE_DECODER 0
 +%define CONFIG_PCM_F32BE_DECODER 0
 +%define CONFIG_PCM_F32LE_DECODER 1
 +%define CONFIG_PCM_F64BE_DECODER 0
@@ -1308,6 +1314,7 @@ $OpenBSD: patch-third_party_ffmpeg_chromium_config_Chrome_openbsd_ia32_config_as
 +%define CONFIG_SBG_DEMUXER 0
 +%define CONFIG_SDP_DEMUXER 0
 +%define CONFIG_SDR2_DEMUXER 0
++%define CONFIG_SDS_DEMUXER 0
 +%define CONFIG_SEGAFILM_DEMUXER 0
 +%define CONFIG_SHORTEN_DEMUXER 0
 +%define CONFIG_SIFF_DEMUXER 0
@@ -1797,6 +1804,7 @@ $OpenBSD: patch-third_party_ffmpeg_chromium_config_Chrome_openbsd_ia32_config_as
 +%define CONFIG_PULLUP_FILTER 0
 +%define CONFIG_QP_FILTER 0
 +%define CONFIG_RANDOM_FILTER 0
++%define CONFIG_READEIA608_FILTER 0
 +%define CONFIG_READVITC_FILTER 0
 +%define CONFIG_REALTIME_FILTER 0
 +%define CONFIG_REMAP_FILTER 0
@@ -2167,12 +2175,14 @@ $OpenBSD: patch-third_party_ffmpeg_chromium_config_Chrome_openbsd_ia32_config_as
 +%define CONFIG_PNM_PARSER 0
 +%define CONFIG_RV30_PARSER 0
 +%define CONFIG_RV40_PARSER 0
++%define CONFIG_SIPR_PARSER 0
 +%define CONFIG_TAK_PARSER 0
 +%define CONFIG_VC1_PARSER 0
 +%define CONFIG_VORBIS_PARSER 1
 +%define CONFIG_VP3_PARSER 1
 +%define CONFIG_VP8_PARSER 1
 +%define CONFIG_VP9_PARSER 0
++%define CONFIG_XMA_PARSER 0
 +%define CONFIG_ASYNC_PROTOCOL 0
 +%define CONFIG_BLURAY_PROTOCOL 0
 +%define CONFIG_CACHE_PROTOCOL 0

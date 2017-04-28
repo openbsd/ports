@@ -1,12 +1,12 @@
-$OpenBSD: patch-build_config_allocator_gni,v 1.2 2017/04/19 05:16:46 robert Exp $
---- build/config/allocator.gni.orig.port	Fri Dec  2 17:55:10 2016
-+++ build/config/allocator.gni	Sat Dec  3 14:29:11 2016
-@@ -17,7 +17,7 @@ if (is_android || current_cpu == "mipsel" || is_mac ||
- # the shim. NaCl in particular does seem to link some binaries statically
+$OpenBSD: patch-build_config_allocator_gni,v 1.3 2017/04/28 22:22:36 robert Exp $
+--- build/config/allocator.gni.orig.port	Thu Apr 27 19:56:56 2017
++++ build/config/allocator.gni	Thu Apr 27 19:57:03 2017
+@@ -18,7 +18,7 @@ if (is_android || current_cpu == "mipsel" || is_mac ||
  # against the debug CRT with "is_nacl=false".
- if ((is_linux || is_android || (is_win && !is_component_build && !is_debug)) &&
--     !is_asan && !is_lsan && !is_tsan && !is_msan) {
-+     !is_asan && !is_lsan && !is_tsan && !is_msan && !is_openbsd) {
+ if ((is_linux || is_android || is_mac ||
+      (is_win && !is_component_build && !is_debug)) && !is_asan && !is_lsan &&
+-    !is_tsan && !is_msan) {
++    !is_tsan && !is_msan && !is_openbsd) {
    _default_use_experimental_allocator_shim = true
  } else {
    _default_use_experimental_allocator_shim = false

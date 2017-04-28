@@ -1,7 +1,7 @@
-$OpenBSD: patch-content_browser_accessibility_browser_accessibility_h,v 1.7 2017/04/19 05:16:47 robert Exp $
---- content/browser/accessibility/browser_accessibility.h.orig.port	Tue Jan  3 20:39:56 2017
-+++ content/browser/accessibility/browser_accessibility.h	Tue Jan  3 20:40:40 2017
-@@ -38,7 +38,7 @@
+$OpenBSD: patch-content_browser_accessibility_browser_accessibility_h,v 1.8 2017/04/28 22:22:36 robert Exp $
+--- content/browser/accessibility/browser_accessibility.h.orig.port	Wed Apr 19 21:06:33 2017
++++ content/browser/accessibility/browser_accessibility.h	Thu Apr 27 19:56:01 2017
+@@ -40,7 +40,7 @@
  #define PLATFORM_HAS_NATIVE_ACCESSIBILITY_IMPL 1
  #endif
  

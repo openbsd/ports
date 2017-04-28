@@ -1,16 +1,16 @@
-$OpenBSD: patch-content_public_common_content_switches_cc,v 1.13 2017/04/19 05:16:47 robert Exp $
---- content/public/common/content_switches.cc.orig.port	Thu Mar 30 01:40:35 2017
-+++ content/public/common/content_switches.cc	Sun Apr  9 09:46:58 2017
-@@ -671,6 +671,8 @@ const char kNoReferrers[]                   = "no-refe
- // Disables the sandbox for all process types that are normally sandboxed.
- const char kNoSandbox[]                     = "no-sandbox";
+$OpenBSD: patch-content_public_common_content_switches_cc,v 1.14 2017/04/28 22:22:36 robert Exp $
+--- content/public/common/content_switches.cc.orig.port	Wed Apr 19 21:06:34 2017
++++ content/public/common/content_switches.cc	Fri Apr 28 23:56:07 2017
+@@ -47,6 +47,8 @@ const char kAllowLoopbackInPeerConnection[] =
+ // finishes.
+ const char kAllowNoSandboxJob[]             = "allow-no-sandbox-job";
  
 +const char kTrk[]                           = "trk";
 +
- // Disables the use of a zygote process for forking child processes. Instead,
- // child processes will be forked and exec'd directly. Note that --no-sandbox
- // should also be used together with this flag because the sandbox needs the
-@@ -1014,7 +1016,7 @@ const char kDisableVaapiAcceleratedVideoEncode[] =
+ // Allows debugging of sandboxed processes (see zygote_main_linux.cc).
+ const char kAllowSandboxDebugging[]         = "allow-sandbox-debugging";
+ 
+@@ -1006,7 +1008,7 @@ const char kDisableVaapiAcceleratedVideoEncode[] =
      "disable-vaapi-accelerated-video-encode";
  #endif
  

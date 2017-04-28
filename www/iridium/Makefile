@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2017/04/22 11:53:55 naddy Exp $
+# $OpenBSD: Makefile,v 1.60 2017/04/28 22:22:36 robert Exp $
 
 USE_WXNEEDED=		Yes
 
@@ -7,7 +7,7 @@ DPB_PROPERTIES=		parallel
 
 COMMENT=		Iridium browser
 
-V=			57.0
+V=			58.0
 DISTNAME=		iridium-browser-${V}
 PKGNAME=		iridium-${V}
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX}
@@ -18,7 +18,7 @@ HOMEPAGE=		https://iridiumbrowser.de/
 
 MAINTAINER=		Robert Nagy <robert@openbsd.org>
 
-#EXTRACT_SUFX=		.tar.xz
+EXTRACT_SUFX=		.tar.xz
 
 FLAVORS=		debug
 FLAVOR?=
@@ -54,6 +54,7 @@ WANTLIB += Xdamage
 WANTLIB += Xcursor Xrandr gio-2.0
 WANTLIB += nspr4 nss3 nssutil3 smime3
 WANTLIB += atk-1.0 gmodule-2.0
+WANTLIB += X11-xcb xcb
 
 RUN_DEPENDS=	devel/xdg-utils \
 		devel/desktop-file-utils \
@@ -64,6 +65,7 @@ RUN_DEPENDS=	devel/xdg-utils \
 BUILD_DEPENDS=	archivers/bzip2 \
 		devel/gperf \
 		devel/bison \
+		lang/node \
 		devel/yasm \
 		shells/bash \
 		sysutils/flock \
@@ -111,12 +113,13 @@ GN_ARGS=	enable_nacl=false \
 		use_kerberos=false \
 		use_sndio=true \
 		use_cups=true \
+		use_experimental_allocator_shim=false \
 		is_clang=true \
 		use_sysroot=false \
 		treat_warnings_as_errors=false \
 		clang_use_chrome_plugins=false \
 		use_allocator=\"none\" \
-		is_official_build=false \
+		is_official_build=true \
 		fieldtrial_testing_like_official_build=true \
 		extra_cppflags=\"-idirafter ${LOCALBASE}/include -idirafter ${X11BASE}/include\" \
 		extra_ldflags=\"-L${LOCALBASE}/lib -L${X11BASE}/lib\"
@@ -145,6 +148,8 @@ pre-configure:
 	@mkdir -p ${WRKSRC}/media/audio/sndio ${WRKSRC}/media/audio/openbsd
 	@cp ${FILESDIR}/sndio_{out,in}put.{cc,h} ${WRKSRC}/media/audio/sndio
 	@cp ${FILESDIR}/audio_manager_openbsd.{cc,h} ${WRKSRC}/media/audio/openbsd
+	@mkdir -p ${WRKSRC}/third_party/node/openbsd/node-openbsd/bin
+	@ln -sf ${TRUEPREFIX}/bin/node ${WRKSRC}/third_party/node/openbsd/node-openbsd/bin/node
 
 # Configuration consists of three steps:
 # 1. replace the specified bundled libraries with hooks to use the system libs

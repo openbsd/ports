@@ -1,6 +1,6 @@
-$OpenBSD: patch-ui_message_center_views_message_center_button_bar_cc,v 1.6 2017/04/19 05:16:47 robert Exp $
---- ui/message_center/views/message_center_button_bar.cc.orig.port	Wed Jul 20 21:03:46 2016
-+++ ui/message_center/views/message_center_button_bar.cc	Thu Jul 21 10:25:33 2016
+$OpenBSD: patch-ui_message_center_views_message_center_button_bar_cc,v 1.7 2017/04/28 22:22:36 robert Exp $
+--- ui/message_center/views/message_center_button_bar.cc.orig.port	Wed Apr 19 21:06:54 2017
++++ ui/message_center/views/message_center_button_bar.cc	Thu Apr 27 19:56:06 2017
 @@ -95,7 +95,7 @@ MessageCenterButtonBar::MessageCenterButtonBar(
      const base::string16& title)
      : message_center_view_(message_center_view),
@@ -37,7 +37,7 @@ $OpenBSD: patch-ui_message_center_views_message_center_button_bar_cc,v 1.6 2017/
    layout->AddView(close_bubble_button_);
  #endif
  }
-@@ -297,7 +297,7 @@ void MessageCenterButtonBar::ButtonPressed(views::Butt
+@@ -316,7 +316,7 @@ void MessageCenterButtonBar::ButtonPressed(views::Butt
      else
        message_center()->EnterQuietModeWithExpire(base::TimeDelta::FromDays(1));
      quiet_mode_button_->SetToggled(message_center()->IsQuietMode());

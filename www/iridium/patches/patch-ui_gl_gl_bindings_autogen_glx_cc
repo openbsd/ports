@@ -1,7 +1,7 @@
-$OpenBSD: patch-ui_gl_gl_bindings_autogen_glx_cc,v 1.7 2017/04/19 05:16:47 robert Exp $
---- ui/gl/gl_bindings_autogen_glx.cc.orig.port	Thu May 26 08:38:20 2016
-+++ ui/gl/gl_bindings_autogen_glx.cc	Thu May 26 08:38:28 2016
-@@ -74,6 +74,7 @@ void DriverGLX::InitializeStaticBindings() {
+$OpenBSD: patch-ui_gl_gl_bindings_autogen_glx_cc,v 1.8 2017/04/28 22:22:36 robert Exp $
+--- ui/gl/gl_bindings_autogen_glx.cc.orig.port	Fri Apr 28 12:16:19 2017
++++ ui/gl/gl_bindings_autogen_glx.cc	Fri Apr 28 12:16:22 2017
+@@ -73,6 +73,7 @@ void DriverGLX::InitializeStaticBindings() {
    fn.glXGetFBConfigsFn = reinterpret_cast<glXGetFBConfigsProc>(
        GetGLProcAddress("glXGetFBConfigs"));
    fn.glXGetMscRateOMLFn = 0;
@@ -9,7 +9,7 @@ $OpenBSD: patch-ui_gl_gl_bindings_autogen_glx_cc,v 1.7 2017/04/19 05:16:47 rober
    fn.glXGetSelectedEventFn = reinterpret_cast<glXGetSelectedEventProc>(
        GetGLProcAddress("glXGetSelectedEvent"));
    fn.glXGetSyncValuesOMLFn = 0;
-@@ -121,6 +122,8 @@ void DriverGLX::InitializeExtensionBindings() {
+@@ -120,6 +121,8 @@ void DriverGLX::InitializeExtensionBindings() {
  
    ext.b_GLX_ARB_create_context =
        extensions.find("GLX_ARB_create_context ") != std::string::npos;
@@ -18,49 +18,19 @@ $OpenBSD: patch-ui_gl_gl_bindings_autogen_glx_cc,v 1.7 2017/04/19 05:16:47 rober
    ext.b_GLX_EXT_swap_control =
        extensions.find("GLX_EXT_swap_control ") != std::string::npos;
    ext.b_GLX_EXT_texture_from_pixmap =
-@@ -168,6 +171,12 @@ void DriverGLX::InitializeExtensionBindings() {
+@@ -162,6 +165,11 @@ void DriverGLX::InitializeExtensionBindings() {
          GetGLProcAddress("glXGetMscRateOML"));
    }
  
-+  debug_fn.glXGetProcAddressARBFn = 0;
 +  if (ext.b_GLX_ARB_get_proc_address) {
 +    fn.glXGetProcAddressARBFn = reinterpret_cast<glXGetProcAddressARBProc>(
 +        GetGLProcAddress("glXGetProcAddressARB"));
 +  }
 +
-   debug_fn.glXGetSyncValuesOMLFn = 0;
    if (ext.b_GLX_OML_sync_control) {
      fn.glXGetSyncValuesOMLFn = reinterpret_cast<glXGetSyncValuesOMLProc>(
-@@ -541,6 +550,17 @@ static bool GL_BINDING_CALL Debug_glXGetMscRateOML(Dis
-   return result;
- }
- 
-+static __GLXextFuncPtr GL_BINDING_CALL
-+Debug_glXGetProcAddressARB(const GLubyte* procName) {
-+  GL_SERVICE_LOG("glXGetProcAddressARB"
-+                 << "(" << static_cast<const void*>(procName) << ")");
-+  DCHECK(g_driver_glx.debug_fn.glXGetProcAddressARBFn != nullptr);
-+  __GLXextFuncPtr result =
-+      g_driver_glx.debug_fn.glXGetProcAddressARBFn(procName);
-+  GL_SERVICE_LOG("GL_RESULT: " << result);
-+  return result;
-+}
-+
- static void GL_BINDING_CALL Debug_glXGetSelectedEvent(Display* dpy,
-                                                       GLXDrawable drawable,
-                                                       unsigned long* mask) {
-@@ -889,6 +909,10 @@ void DriverGLX::InitializeDebugBindings() {
-     debug_fn.glXGetMscRateOMLFn = fn.glXGetMscRateOMLFn;
-     fn.glXGetMscRateOMLFn = Debug_glXGetMscRateOML;
-   }
-+  if (!debug_fn.glXGetProcAddressARBFn) {
-+    debug_fn.glXGetProcAddressARBFn = fn.glXGetProcAddressARBFn;
-+    fn.glXGetProcAddressARBFn = Debug_glXGetProcAddressARB;
-+  }
-   if (!debug_fn.glXGetSelectedEventFn) {
-     debug_fn.glXGetSelectedEventFn = fn.glXGetSelectedEventFn;
-     fn.glXGetSelectedEventFn = Debug_glXGetSelectedEvent;
-@@ -1140,6 +1164,10 @@ bool GLXApiBase::glXGetMscRateOMLFn(Display* dpy,
+         GetGLProcAddress("glXGetSyncValuesOML"));
+@@ -352,6 +360,10 @@ bool GLXApiBase::glXGetMscRateOMLFn(Display* dpy,
    return driver_->fn.glXGetMscRateOMLFn(dpy, drawable, numerator, denominator);
  }
  
@@ -71,15 +41,30 @@ $OpenBSD: patch-ui_gl_gl_bindings_autogen_glx_cc,v 1.7 2017/04/19 05:16:47 rober
  void GLXApiBase::glXGetSelectedEventFn(Display* dpy,
                                         GLXDrawable drawable,
                                         unsigned long* mask) {
-@@ -1438,6 +1466,11 @@ bool TraceGLXApi::glXGetMscRateOMLFn(Display* dpy,
-                                      int32_t* denominator) {
-   TRACE_EVENT_BINARY_EFFICIENT0("gpu", "TraceGLAPI::glXGetMscRateOML")
+@@ -652,6 +664,11 @@ bool TraceGLXApi::glXGetMscRateOMLFn(Display* dpy,
    return glx_api_->glXGetMscRateOMLFn(dpy, drawable, numerator, denominator);
-+}
-+
+ }
+ 
 +__GLXextFuncPtr TraceGLXApi::glXGetProcAddressARBFn(const GLubyte* procName) {
 +  TRACE_EVENT_BINARY_EFFICIENT0("gpu", "TraceGLAPI::glXGetProcAddressARB")
 +  return glx_api_->glXGetProcAddressARBFn(procName);
- }
- 
++}
++
  void TraceGLXApi::glXGetSelectedEventFn(Display* dpy,
+                                         GLXDrawable drawable,
+                                         unsigned long* mask) {
+@@ -1074,6 +1091,14 @@ bool DebugGLXApi::glXGetMscRateOMLFn(Display* dpy,
+                  << static_cast<const void*>(denominator) << ")");
+   bool result =
+       glx_api_->glXGetMscRateOMLFn(dpy, drawable, numerator, denominator);
++  GL_SERVICE_LOG("GL_RESULT: " << result);
++  return result;
++}
++
++__GLXextFuncPtr DebugGLXApi::glXGetProcAddressARBFn(const GLubyte* procName) {
++  GL_SERVICE_LOG("glXGetProcAddressARB"
++                 << "(" << static_cast<const void*>(procName) << ")");
++  __GLXextFuncPtr result = glx_api_->glXGetProcAddressARBFn(procName);
+   GL_SERVICE_LOG("GL_RESULT: " << result);
+   return result;
+ }

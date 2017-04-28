@@ -1,7 +1,7 @@
-$OpenBSD: patch-content_child_child_process_cc,v 1.1 2017/04/19 05:16:47 robert Exp $
---- content/child/child_process.cc.orig.port	Thu Mar  9 21:04:32 2017
-+++ content/child/child_process.cc	Fri Mar 10 07:46:23 2017
-@@ -122,7 +122,7 @@ void ChildProcess::ReleaseProcess() {
+$OpenBSD: patch-content_child_child_process_cc,v 1.2 2017/04/28 22:22:36 robert Exp $
+--- content/child/child_process.cc.orig.port	Wed Apr 19 21:06:33 2017
++++ content/child/child_process.cc	Thu Apr 27 19:56:01 2017
+@@ -133,7 +133,7 @@ void ChildProcess::ReleaseProcess() {
      main_thread_->OnProcessFinalRelease();
  }
  

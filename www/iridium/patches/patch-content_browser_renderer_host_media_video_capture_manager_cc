@@ -1,7 +1,7 @@
-$OpenBSD: patch-content_browser_renderer_host_media_video_capture_manager_cc,v 1.1 2017/04/19 05:16:47 robert Exp $
---- content/browser/renderer_host/media/video_capture_manager.cc.orig.port	Sat Mar 11 09:55:52 2017
-+++ content/browser/renderer_host/media/video_capture_manager.cc	Sat Mar 11 09:57:42 2017
-@@ -662,7 +662,7 @@ VideoCaptureManager::DoStartTabCaptureOnDeviceThread(
+$OpenBSD: patch-content_browser_renderer_host_media_video_capture_manager_cc,v 1.2 2017/04/28 22:22:36 robert Exp $
+--- content/browser/renderer_host/media/video_capture_manager.cc.orig.port	Wed Apr 19 21:06:33 2017
++++ content/browser/renderer_host/media/video_capture_manager.cc	Thu Apr 27 19:56:01 2017
+@@ -645,7 +645,7 @@ VideoCaptureManager::DoStartTabCaptureOnDeviceThread(
    DCHECK(IsOnDeviceThread());
  
    std::unique_ptr<VideoCaptureDevice> video_capture_device;
@@ -10,7 +10,7 @@ $OpenBSD: patch-content_browser_renderer_host_media_video_capture_manager_cc,v 1
    video_capture_device = WebContentsVideoCaptureDevice::Create(id);
  #endif
  
-@@ -692,7 +692,7 @@ VideoCaptureManager::DoStartDesktopCaptureOnDeviceThre
+@@ -675,7 +675,7 @@ VideoCaptureManager::DoStartDesktopCaptureOnDeviceThre
    }
  
    if (desktop_id.type == DesktopMediaID::TYPE_WEB_CONTENTS) {

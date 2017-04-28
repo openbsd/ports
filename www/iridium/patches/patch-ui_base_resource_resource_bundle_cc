@@ -1,7 +1,7 @@
-$OpenBSD: patch-ui_base_resource_resource_bundle_cc,v 1.9 2017/04/19 05:16:47 robert Exp $
---- ui/base/resource/resource_bundle.cc.orig.port	Thu Mar  9 21:04:49 2017
-+++ ui/base/resource/resource_bundle.cc	Fri Mar 10 07:46:26 2017
-@@ -650,7 +650,7 @@ void ResourceBundle::ReloadFonts() {
+$OpenBSD: patch-ui_base_resource_resource_bundle_cc,v 1.10 2017/04/28 22:22:36 robert Exp $
+--- ui/base/resource/resource_bundle.cc.orig.port	Wed Apr 19 21:06:54 2017
++++ ui/base/resource/resource_bundle.cc	Thu Apr 27 19:56:05 2017
+@@ -661,7 +661,7 @@ void ResourceBundle::ReloadFonts() {
  }
  
  ScaleFactor ResourceBundle::GetMaxScaleFactor() const {
@@ -10,7 +10,7 @@ $OpenBSD: patch-ui_base_resource_resource_bundle_cc,v 1.9 2017/04/19 05:16:47 ro
    return max_scale_factor_;
  #else
    return GetSupportedScaleFactors().back();
-@@ -709,7 +709,7 @@ void ResourceBundle::InitSharedInstance(Delegate* dele
+@@ -719,7 +719,7 @@ void ResourceBundle::InitSharedInstance(Delegate* dele
      supported_scale_factors.push_back(SCALE_FACTOR_100P);
    }
  #elif defined(OS_MACOSX) || defined(OS_CHROMEOS) || defined(OS_LINUX) || \

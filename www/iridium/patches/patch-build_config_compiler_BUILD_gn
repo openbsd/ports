@@ -1,6 +1,6 @@
-$OpenBSD: patch-build_config_compiler_BUILD_gn,v 1.2 2017/04/19 05:16:46 robert Exp $
---- build/config/compiler/BUILD.gn.orig.port	Thu Mar  9 21:04:27 2017
-+++ build/config/compiler/BUILD.gn	Fri Mar 10 07:46:16 2017
+$OpenBSD: patch-build_config_compiler_BUILD_gn,v 1.3 2017/04/28 22:22:36 robert Exp $
+--- build/config/compiler/BUILD.gn.orig.port	Thu Apr 27 19:58:01 2017
++++ build/config/compiler/BUILD.gn	Thu Apr 27 22:56:36 2017
 @@ -36,7 +36,7 @@ declare_args() {
    # only two architectures that are currently checked in). Turn this off when
    # you are using a custom toolchain and need to control -B in cflags.
@@ -10,7 +10,7 @@ $OpenBSD: patch-build_config_compiler_BUILD_gn,v 1.2 2017/04/19 05:16:46 robert 
        (current_cpu == "x64" || current_cpu == "x86")
    binutils_path = rebase_path("//third_party/binutils/Linux_x64/Release/bin",
                                root_build_dir)
-@@ -215,7 +215,7 @@ config("compiler") {
+@@ -214,7 +214,7 @@ config("compiler") {
  
      # Linker warnings.
      if (fatal_linker_warnings && !(is_chromeos && current_cpu == "arm") &&
@@ -19,7 +19,7 @@ $OpenBSD: patch-build_config_compiler_BUILD_gn,v 1.2 2017/04/19 05:16:46 robert 
        # TODO(jochen): Enable this on chromeos on arm. http://crbug.com/356580
        # TODO(lizeb,pasko): Fix link errors when linking with order_profiling=1
        # crbug.com/485542
-@@ -295,7 +295,7 @@ config("compiler") {
+@@ -314,7 +314,7 @@ config("compiler") {
        "-Wl,-z,relro",
      ]
      if (!using_sanitizer) {
@@ -28,20 +28,21 @@ $OpenBSD: patch-build_config_compiler_BUILD_gn,v 1.2 2017/04/19 05:16:46 robert 
          ldflags += [ "-Wl,-z,defs" ]
        }
  
-@@ -1058,14 +1058,14 @@ config("default_warnings") {
-     # Chrome's hermetic Clang compiler, NaCl's Clang compiler and Xcode's Clang
-     # compiler will almost always have different versions. Certain flags may not
-     # be recognized by one version or the other.
--    if (!is_nacl) {
-+    if (!is_nacl && !is_openbsd) {
-       # Flags NaCl (Clang 3.7) does not recognize.
-       cflags += [
-         # TODO(thakis): Enable this, crbug.com/507717
-         "-Wno-shift-negative-value",
+@@ -1104,7 +1104,7 @@ config("default_warnings") {
+         "-Wno-block-capture-autoreleasing",
+ 
+         # TODO(hans): https://crbug.com/681136
+-        "-Wno-unused-lambda-capture",
++        # "-Wno-unused-lambda-capture",
+ 
+         # TODO(thakis ): https://crbug.com/683349
+         "-Wno-user-defined-warnings",
+@@ -1647,7 +1647,7 @@ config("symbols") {
+         "-g2",
        ]
+     } else {
+-      cflags = [ "-g2" ]
++      cflags = [ "-g0" ]
      }
--    if (!is_nacl && !use_xcode_clang) {
-+    if (!is_nacl && !use_xcode_clang && !is_openbsd) {
-       # Flags NaCl (Clang 3.7) and Xcode 7.3 (Clang clang-703.0.31) do not
-       # recognize.
-       cflags += [
+     if (use_debug_fission) {
+       cflags += [ "-gsplit-dwarf" ]
