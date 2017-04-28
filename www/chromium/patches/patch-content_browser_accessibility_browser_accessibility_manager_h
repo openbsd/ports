@@ -1,7 +1,7 @@
-$OpenBSD: patch-content_browser_accessibility_browser_accessibility_manager_h,v 1.10 2017/03/14 12:18:54 robert Exp $
---- content/browser/accessibility/browser_accessibility_manager.h.orig.port	Thu Mar  9 21:04:32 2017
-+++ content/browser/accessibility/browser_accessibility_manager.h	Fri Mar 10 07:46:21 2017
-@@ -34,7 +34,7 @@ class BrowserAccessibilityManager;
+$OpenBSD: patch-content_browser_accessibility_browser_accessibility_manager_h,v 1.11 2017/04/28 14:21:00 robert Exp $
+--- content/browser/accessibility/browser_accessibility_manager.h.orig.port	Wed Apr 19 21:06:33 2017
++++ content/browser/accessibility/browser_accessibility_manager.h	Thu Apr 27 19:56:01 2017
+@@ -36,7 +36,7 @@ class BrowserAccessibilityManager;
  class BrowserAccessibilityManagerAndroid;
  #elif defined(OS_WIN)
  class BrowserAccessibilityManagerWin;
@@ -10,7 +10,7 @@ $OpenBSD: patch-content_browser_accessibility_browser_accessibility_manager_h,v 
  class BrowserAccessibilityManagerAuraLinux;
  #elif defined(OS_MACOSX)
  class BrowserAccessibilityManagerMac;
-@@ -246,7 +246,7 @@ class CONTENT_EXPORT BrowserAccessibilityManager : pub
+@@ -248,7 +248,7 @@ class CONTENT_EXPORT BrowserAccessibilityManager : pub
    BrowserAccessibilityManagerAndroid* ToBrowserAccessibilityManagerAndroid();
  #endif
  

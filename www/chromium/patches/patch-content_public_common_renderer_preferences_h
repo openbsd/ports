@@ -1,7 +1,7 @@
-$OpenBSD: patch-content_public_common_renderer_preferences_h,v 1.1 2017/01/26 17:08:25 robert Exp $
---- content/public/common/renderer_preferences.h.orig.port	Wed Jan  4 18:08:36 2017
-+++ content/public/common/renderer_preferences.h	Wed Jan  4 18:08:42 2017
-@@ -139,7 +139,7 @@ struct CONTENT_EXPORT RendererPreferences {
+$OpenBSD: patch-content_public_common_renderer_preferences_h,v 1.2 2017/04/28 14:21:00 robert Exp $
+--- content/public/common/renderer_preferences.h.orig.port	Wed Apr 19 21:06:34 2017
++++ content/public/common/renderer_preferences.h	Thu Apr 27 19:56:02 2017
+@@ -131,7 +131,7 @@ struct CONTENT_EXPORT RendererPreferences {
    // Country iso of the mobile network for content detection purpose.
    std::string network_contry_iso;
  

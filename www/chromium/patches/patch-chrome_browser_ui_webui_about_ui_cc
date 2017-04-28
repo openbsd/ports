@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_ui_webui_about_ui_cc,v 1.38 2017/01/26 17:08:25 robert Exp $
---- chrome/browser/ui/webui/about_ui.cc.orig.port	Wed Jan 18 21:02:50 2017
-+++ chrome/browser/ui/webui/about_ui.cc	Thu Jan 19 08:22:34 2017
-@@ -75,7 +75,7 @@
+$OpenBSD: patch-chrome_browser_ui_webui_about_ui_cc,v 1.39 2017/04/28 14:21:00 robert Exp $
+--- chrome/browser/ui/webui/about_ui.cc.orig.port	Wed Apr 19 21:06:30 2017
++++ chrome/browser/ui/webui/about_ui.cc	Thu Apr 27 19:56:00 2017
+@@ -76,7 +76,7 @@
  #include "chrome/browser/ui/webui/theme_source.h"
  #endif
  

@@ -1,7 +1,7 @@
-$OpenBSD: patch-content_browser_BUILD_gn,v 1.6 2017/03/14 12:18:54 robert Exp $
---- content/browser/BUILD.gn.orig.port	Thu Mar  9 21:04:32 2017
-+++ content/browser/BUILD.gn	Fri Mar 10 17:51:30 2017
-@@ -1444,11 +1444,6 @@ source_set("browser") {
+$OpenBSD: patch-content_browser_BUILD_gn,v 1.7 2017/04/28 14:21:00 robert Exp $
+--- content/browser/BUILD.gn.orig.port	Wed Apr 19 21:06:33 2017
++++ content/browser/BUILD.gn	Thu Apr 27 19:56:01 2017
+@@ -1464,11 +1464,6 @@ source_set("browser") {
        "memory/memory_monitor_chromeos.cc",
        "memory/memory_monitor_chromeos.h",
      ]

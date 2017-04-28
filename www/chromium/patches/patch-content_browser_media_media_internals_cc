@@ -1,7 +1,7 @@
-$OpenBSD: patch-content_browser_media_media_internals_cc,v 1.6 2017/03/14 12:18:54 robert Exp $
---- content/browser/media/media_internals.cc.orig.port	Thu Mar  9 21:04:32 2017
-+++ content/browser/media/media_internals.cc	Fri Mar 10 07:46:23 2017
-@@ -776,7 +776,7 @@ void MediaInternals::UpdateVideoCaptureDeviceCapabilit
+$OpenBSD: patch-content_browser_media_media_internals_cc,v 1.7 2017/04/28 14:21:00 robert Exp $
+--- content/browser/media/media_internals.cc.orig.port	Wed Apr 19 21:06:33 2017
++++ content/browser/media/media_internals.cc	Thu Apr 27 19:56:01 2017
+@@ -774,7 +774,7 @@ void MediaInternals::UpdateVideoCaptureDeviceCapabilit
      device_dict->SetString("name", descriptor.GetNameAndModel());
      device_dict->Set("formats", format_list);
  #if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || \

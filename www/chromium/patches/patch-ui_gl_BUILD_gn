@@ -1,7 +1,7 @@
-$OpenBSD: patch-ui_gl_BUILD_gn,v 1.6 2017/03/14 12:18:54 robert Exp $
---- ui/gl/BUILD.gn.orig.port	Fri Mar 10 10:11:21 2017
-+++ ui/gl/BUILD.gn	Fri Mar 10 10:11:37 2017
-@@ -245,7 +245,6 @@ component("gl") {
+$OpenBSD: patch-ui_gl_BUILD_gn,v 1.7 2017/04/28 14:21:00 robert Exp $
+--- ui/gl/BUILD.gn.orig.port	Wed Apr 19 21:06:54 2017
++++ ui/gl/BUILD.gn	Thu Apr 27 19:56:06 2017
+@@ -241,7 +241,6 @@ component("gl") {
      data_deps = [
        "//third_party/angle:libEGL",
        "//third_party/angle:libGLESv2",
@@ -9,7 +9,7 @@ $OpenBSD: patch-ui_gl_BUILD_gn,v 1.6 2017/03/14 12:18:54 robert Exp $
      ]
  
      deps += [ "//third_party/angle:includes" ]
-@@ -404,10 +403,6 @@ test("gl_unittests") {
+@@ -402,10 +401,6 @@ test("gl_unittests") {
      "//ui/gfx",
      "//ui/gfx/geometry",
      "//ui/gl/init",

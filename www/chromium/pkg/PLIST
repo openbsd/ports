@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.67 2017/03/14 12:18:54 robert Exp $
+@comment $OpenBSD: PLIST,v 1.68 2017/04/28 14:21:00 robert Exp $
 @pkgpath www/chromium,proprietary
 bin/chrome
 chrome/
@@ -80,7 +80,10 @@ chrome/resources/inspector/Images/accelerometer-front.png
 chrome/resources/inspector/Images/accelerometer-left.png
 chrome/resources/inspector/Images/accelerometer-right.png
 chrome/resources/inspector/Images/accelerometer-top.png
-chrome/resources/inspector/Images/applicationCache.png
+chrome/resources/inspector/Images/audits_logo.png
+chrome/resources/inspector/Images/audits_logo_2x.png
+chrome/resources/inspector/Images/audits_logo_bw.png
+chrome/resources/inspector/Images/audits_logo_bw_2x.png
 chrome/resources/inspector/Images/breakpoint.png
 chrome/resources/inspector/Images/breakpointConditional.png
 chrome/resources/inspector/Images/breakpointConditional_2x.png
@@ -94,19 +97,12 @@ chrome/resources/inspector/Images/chromeRight.png
 chrome/resources/inspector/Images/chromeSelect.png
 chrome/resources/inspector/Images/chromeSelect_2x.png
 chrome/resources/inspector/Images/deleteIcon.png
-chrome/resources/inspector/Images/domain.png
 chrome/resources/inspector/Images/errorWave.png
 chrome/resources/inspector/Images/errorWave_2x.png
-chrome/resources/inspector/Images/fileSystem.png
-chrome/resources/inspector/Images/forward.png
-chrome/resources/inspector/Images/frame.png
 chrome/resources/inspector/Images/ic_info_black_18dp.svg
 chrome/resources/inspector/Images/ic_warning_black_18dp.svg
 chrome/resources/inspector/Images/navigationControls.png
 chrome/resources/inspector/Images/navigationControls_2x.png
-chrome/resources/inspector/Images/paneAddButtons.png
-chrome/resources/inspector/Images/paneFilterButtons.png
-chrome/resources/inspector/Images/paneRefreshButtons.png
 chrome/resources/inspector/Images/popoverArrows.png
 chrome/resources/inspector/Images/profileGroupIcon.png
 chrome/resources/inspector/Images/profileIcon.png
@@ -131,18 +127,16 @@ chrome/resources/inspector/Images/searchNext.png
 chrome/resources/inspector/Images/searchPrev.png
 chrome/resources/inspector/Images/securityIcons.png
 chrome/resources/inspector/Images/securityIcons_2x.png
-chrome/resources/inspector/Images/settingsListRemove.png
-chrome/resources/inspector/Images/settingsListRemove_2x.png
 chrome/resources/inspector/Images/smallIcons.png
 chrome/resources/inspector/Images/smallIcons_2x.png
 chrome/resources/inspector/Images/speech.png
 chrome/resources/inspector/Images/toolbarButtonGlyphs.png
 chrome/resources/inspector/Images/toolbarButtonGlyphs_2x.png
-chrome/resources/inspector/Images/toolbarItemSelected.png
-chrome/resources/inspector/Images/toolbarResizerHorizontal.png
 chrome/resources/inspector/Images/toolbarResizerVertical.png
 chrome/resources/inspector/Images/touchCursor.png
 chrome/resources/inspector/Images/touchCursor_2x.png
+chrome/resources/inspector/Images/treeoutlineTriangles.png
+chrome/resources/inspector/Images/treeoutlineTriangles_2x.png
 chrome/resources/inspector/InspectorBackendCommands.js
 chrome/resources/inspector/SupportedCSSProperties.js
 chrome/resources/inspector/Tests.js
@@ -154,6 +148,9 @@ chrome/resources/inspector/audits/
 chrome/resources/inspector/audits/audits_module.js
 chrome/resources/inspector/audits2/
 chrome/resources/inspector/audits2/audits2_module.js
+chrome/resources/inspector/audits2_worker/
+chrome/resources/inspector/audits2_worker.js
+chrome/resources/inspector/audits2_worker/audits2_worker_module.js
 chrome/resources/inspector/cm/
 chrome/resources/inspector/cm/cm_module.js
 chrome/resources/inspector/cm_modes/
@@ -164,8 +161,8 @@ chrome/resources/inspector/console/
 chrome/resources/inspector/console/console_module.js
 chrome/resources/inspector/cookie_table/
 chrome/resources/inspector/cookie_table/cookie_table_module.js
-chrome/resources/inspector/css_tracker/
-chrome/resources/inspector/css_tracker/css_tracker_module.js
+chrome/resources/inspector/coverage/
+chrome/resources/inspector/coverage/coverage_module.js
 chrome/resources/inspector/data_grid/
 chrome/resources/inspector/data_grid/data_grid_module.js
 chrome/resources/inspector/devices/
@@ -214,6 +211,8 @@ chrome/resources/inspector/emulated_devices/iPhone6-landscape.svg
 chrome/resources/inspector/emulated_devices/iPhone6-portrait.svg
 chrome/resources/inspector/emulated_devices/iPhone6Plus-landscape.svg
 chrome/resources/inspector/emulated_devices/iPhone6Plus-portrait.svg
+chrome/resources/inspector/event_listeners/
+chrome/resources/inspector/event_listeners/event_listeners_module.js
 chrome/resources/inspector/formatter_worker.js
 chrome/resources/inspector/gonzales/
 chrome/resources/inspector/gonzales/gonzales_module.js
@@ -230,8 +229,12 @@ chrome/resources/inspector/layers/
 chrome/resources/inspector/layers/layers_module.js
 chrome/resources/inspector/network/
 chrome/resources/inspector/network/network_module.js
+chrome/resources/inspector/network_group_lookup/
+chrome/resources/inspector/network_group_lookup/network_group_lookup_module.js
 chrome/resources/inspector/perf_ui/
 chrome/resources/inspector/perf_ui/perf_ui_module.js
+chrome/resources/inspector/product_registry/
+chrome/resources/inspector/product_registry/product_registry_module.js
 chrome/resources/inspector/profiler/
 chrome/resources/inspector/profiler/profiler_module.js
 chrome/resources/inspector/quick_open/

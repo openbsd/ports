@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.319 2017/03/30 17:54:24 robert Exp $
+# $OpenBSD: Makefile,v 1.320 2017/04/28 14:21:00 robert Exp $
 
 USE_WXNEEDED=		Yes
 
@@ -7,7 +7,7 @@ DPB_PROPERTIES=		parallel
 
 COMMENT=		Chromium browser
 
-V=			57.0.2987.133
+V=			58.0.3029.81
 
 DISTNAME=		chromium-${V}
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX}
@@ -65,6 +65,7 @@ RUN_DEPENDS=	devel/xdg-utils \
 BUILD_DEPENDS=	archivers/bzip2 \
 		devel/gperf \
 		devel/bison \
+		lang/node \
 		devel/yasm \
 		shells/bash \
 		sysutils/flock \
@@ -112,12 +113,13 @@ GN_ARGS=	enable_nacl=false \
 		use_kerberos=false \
 		use_sndio=true \
 		use_cups=true \
+		use_experimental_allocator_shim=false \
 		is_clang=true \
 		use_sysroot=false \
 		treat_warnings_as_errors=false \
 		clang_use_chrome_plugins=false \
 		use_allocator=\"none\" \
-		is_official_build=false \
+		is_official_build=true \
 		fieldtrial_testing_like_official_build=true \
 		extra_cppflags=\"-idirafter ${LOCALBASE}/include -idirafter ${X11BASE}/include\" \
 		extra_ldflags=\"-L${LOCALBASE}/lib -L${X11BASE}/lib\"
@@ -146,6 +148,8 @@ pre-configure:
 	@mkdir -p ${WRKSRC}/media/audio/sndio ${WRKSRC}/media/audio/openbsd
 	@cp ${FILESDIR}/sndio_{out,in}put.{cc,h} ${WRKSRC}/media/audio/sndio
 	@cp ${FILESDIR}/audio_manager_openbsd.{cc,h} ${WRKSRC}/media/audio/openbsd
+	@mkdir -p ${WRKSRC}/third_party/node/openbsd/node-openbsd/bin
+	@ln -sf ${TRUEPREFIX}/bin/node ${WRKSRC}/third_party/node/openbsd/node-openbsd/bin/node
 
 # Configuration consists of three steps:
 # 1. replace the specified bundled libraries with hooks to use the system libs

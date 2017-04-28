@@ -1,6 +1,6 @@
-$OpenBSD: patch-device_time_zone_monitor_time_zone_monitor_cc,v 1.1 2016/12/10 15:35:25 robert Exp $
---- device/time_zone_monitor/time_zone_monitor.cc.orig.port	Sat Dec  3 11:20:01 2016
-+++ device/time_zone_monitor/time_zone_monitor.cc	Sat Dec  3 11:20:07 2016
+$OpenBSD: patch-services_device_time_zone_monitor_time_zone_monitor_cc,v 1.1 2017/04/28 14:21:00 robert Exp $
+--- services/device/time_zone_monitor/time_zone_monitor.cc.orig.port	Fri Apr 28 07:36:12 2017
++++ services/device/time_zone_monitor/time_zone_monitor.cc	Fri Apr 28 07:36:18 2017
 @@ -31,7 +31,7 @@ void TimeZoneMonitor::NotifyClients() {
    std::unique_ptr<icu::TimeZone> new_zone(icu::TimeZone::createDefault());
  #else

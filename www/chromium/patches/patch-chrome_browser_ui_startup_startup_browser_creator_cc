@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_ui_startup_startup_browser_creator_cc,v 1.22 2017/03/14 12:18:53 robert Exp $
---- chrome/browser/ui/startup/startup_browser_creator.cc.orig.port	Thu Mar  9 21:04:29 2017
-+++ chrome/browser/ui/startup/startup_browser_creator.cc	Fri Mar 10 07:46:20 2017
-@@ -95,7 +95,7 @@
+$OpenBSD: patch-chrome_browser_ui_startup_startup_browser_creator_cc,v 1.23 2017/04/28 14:21:00 robert Exp $
+--- chrome/browser/ui/startup/startup_browser_creator.cc.orig.port	Wed Apr 19 21:06:30 2017
++++ chrome/browser/ui/startup/startup_browser_creator.cc	Thu Apr 27 19:56:00 2017
+@@ -96,7 +96,7 @@
  #include "components/user_manager/user_manager.h"
  #endif
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-chrome_browser_ui_startup_startup_browser_creator_cc,v 1.22 2017
  #include "ui/events/devices/x11/touch_factory_x11.h"  // nogncheck
  #endif
  
-@@ -657,8 +657,10 @@ bool StartupBrowserCreator::ProcessCmdLineImpl(
+@@ -668,8 +668,10 @@ bool StartupBrowserCreator::ProcessCmdLineImpl(
    }
  #endif  // OS_CHROMEOS
  

@@ -1,7 +1,7 @@
-$OpenBSD: patch-content_browser_child_process_launcher_helper_linux_cc,v 1.1 2017/03/14 12:18:54 robert Exp $
---- content/browser/child_process_launcher_helper_linux.cc.orig.port	Fri Mar 10 20:11:29 2017
-+++ content/browser/child_process_launcher_helper_linux.cc	Sat Mar 11 09:45:17 2017
-@@ -95,6 +95,7 @@ ChildProcessLauncherHelper::LaunchProcessOnLauncherThr
+$OpenBSD: patch-content_browser_child_process_launcher_helper_linux_cc,v 1.2 2017/04/28 14:21:00 robert Exp $
+--- content/browser/child_process_launcher_helper_linux.cc.orig.port	Wed Apr 19 21:06:33 2017
++++ content/browser/child_process_launcher_helper_linux.cc	Thu Apr 27 19:56:01 2017
+@@ -67,6 +67,7 @@ ChildProcessLauncherHelper::LaunchProcessOnLauncherThr
      int* launch_result) {
    *is_synchronous_launch = true;
  
@@ -9,7 +9,7 @@ $OpenBSD: patch-content_browser_child_process_launcher_helper_linux_cc,v 1.1 201
    ZygoteHandle* zygote_handle =
        base::CommandLine::ForCurrentProcess()->HasSwitch(switches::kNoZygote) ?
        nullptr : delegate_->GetZygote();
-@@ -114,6 +115,7 @@ ChildProcessLauncherHelper::LaunchProcessOnLauncherThr
+@@ -86,6 +87,7 @@ ChildProcessLauncherHelper::LaunchProcessOnLauncherThr
      process.zygote = *zygote_handle;
      return process;
    }
@@ -17,7 +17,7 @@ $OpenBSD: patch-content_browser_child_process_launcher_helper_linux_cc,v 1.1 201
  
    Process process;
    process.process = base::LaunchProcess(*command_line(), options);
-@@ -133,10 +135,12 @@ base::TerminationStatus ChildProcessLauncherHelper::Ge
+@@ -105,10 +107,12 @@ base::TerminationStatus ChildProcessLauncherHelper::Ge
      const ChildProcessLauncherHelper::Process& process,
      bool known_dead,
      int* exit_code) {
@@ -30,7 +30,7 @@ $OpenBSD: patch-content_browser_child_process_launcher_helper_linux_cc,v 1.1 201
    if (known_dead) {
      return base::GetKnownDeadTerminationStatus(
          process.process.Handle(), exit_code);
-@@ -155,13 +159,17 @@ void ChildProcessLauncherHelper::ForceNormalProcessTer
+@@ -127,13 +131,17 @@ void ChildProcessLauncherHelper::ForceNormalProcessTer
      ChildProcessLauncherHelper::Process process) {
    process.process.Terminate(RESULT_CODE_NORMAL_EXIT, false);
    // On POSIX, we must additionally reap the child.

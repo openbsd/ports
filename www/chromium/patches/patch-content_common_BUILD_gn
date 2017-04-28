@@ -1,7 +1,7 @@
-$OpenBSD: patch-content_common_BUILD_gn,v 1.6 2017/03/14 12:18:54 robert Exp $
---- content/common/BUILD.gn.orig.port	Thu Mar  9 21:04:32 2017
-+++ content/common/BUILD.gn	Fri Mar 10 20:17:59 2017
-@@ -446,6 +446,18 @@ source_set("common") {
+$OpenBSD: patch-content_common_BUILD_gn,v 1.7 2017/04/28 14:21:00 robert Exp $
+--- content/common/BUILD.gn.orig.port	Wed Apr 19 21:06:33 2017
++++ content/common/BUILD.gn	Thu Apr 27 19:56:01 2017
+@@ -451,6 +451,18 @@ source_set("common") {
      libs += [ "android" ]
    }
  

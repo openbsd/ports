@@ -1,6 +1,6 @@
-$OpenBSD: patch-media_base_video_frame_h,v 1.7 2017/01/26 17:08:26 robert Exp $
---- media/base/video_frame.h.orig.port	Thu Dec 15 00:02:10 2016
-+++ media/base/video_frame.h	Tue Jan  3 20:30:00 2017
+$OpenBSD: patch-media_base_video_frame_h,v 1.8 2017/04/28 14:21:00 robert Exp $
+--- media/base/video_frame.h.orig.port	Wed Apr 19 21:06:35 2017
++++ media/base/video_frame.h	Thu Apr 27 19:56:02 2017
 @@ -62,7 +62,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
      STORAGE_UNOWNED_MEMORY = 2,  // External, non owned data pointers.
      STORAGE_OWNED_MEMORY = 3,  // VideoFrame has allocated its own data buffer.
@@ -28,7 +28,7 @@ $OpenBSD: patch-media_base_video_frame_h,v 1.7 2017/01/26 17:08:26 robert Exp $
    // Returns backing DmaBuf file descriptor for given |plane|, if present, or
    // -1 if not.
    // TODO(mcasas): Rename to DmabufFd() to comply with Style Guide.
-@@ -519,7 +519,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
+@@ -528,7 +528,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
    base::SharedMemoryHandle shared_memory_handle_;
    size_t shared_memory_offset_;
  

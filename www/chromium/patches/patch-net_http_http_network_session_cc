@@ -1,7 +1,7 @@
-$OpenBSD: patch-net_http_http_network_session_cc,v 1.9 2017/03/14 12:18:54 robert Exp $
---- net/http/http_network_session.cc.orig.port	Fri Mar 10 10:05:39 2017
-+++ net/http/http_network_session.cc	Fri Mar 10 10:05:52 2017
-@@ -20,7 +20,9 @@
+$OpenBSD: patch-net_http_http_network_session_cc,v 1.10 2017/04/28 14:21:00 robert Exp $
+--- net/http/http_network_session.cc.orig.port	Wed Apr 19 21:06:36 2017
++++ net/http/http_network_session.cc	Thu Apr 27 19:56:03 2017
+@@ -23,7 +23,9 @@
  #include "base/trace_event/process_memory_dump.h"
  #include "base/values.h"
  #include "net/base/network_throttle_manager_impl.h"

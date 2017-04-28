@@ -1,12 +1,12 @@
-$OpenBSD: patch-ui_gl_sync_control_vsync_provider_cc,v 1.6 2017/01/26 17:08:26 robert Exp $
---- ui/gl/sync_control_vsync_provider.cc.orig.port	Tue Jan  3 20:51:20 2017
-+++ ui/gl/sync_control_vsync_provider.cc	Tue Jan  3 20:52:13 2017
+$OpenBSD: patch-ui_gl_sync_control_vsync_provider_cc,v 1.7 2017/04/28 14:21:00 robert Exp $
+--- ui/gl/sync_control_vsync_provider.cc.orig.port	Fri Apr 28 07:37:08 2017
++++ ui/gl/sync_control_vsync_provider.cc	Fri Apr 28 07:37:21 2017
 @@ -11,7 +11,7 @@
  #include "base/trace_event/trace_event.h"
  #include "build/build_config.h"
  
--#if defined(OS_LINUX) || defined(OS_WIN)
-+#if defined(OS_LINUX) || defined(OS_WIN) || defined(OS_BSD)
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
  // These constants define a reasonable range for a calculated refresh interval.
  // Calculating refreshes out of this range will be considered a fatal error.
  const int64_t kMinVsyncIntervalUs = base::Time::kMicrosecondsPerSecond / 400;
@@ -14,8 +14,8 @@ $OpenBSD: patch-ui_gl_sync_control_vsync_provider_cc,v 1.6 2017/01/26 17:08:26 r
  namespace gl {
  
  SyncControlVSyncProvider::SyncControlVSyncProvider() : gfx::VSyncProvider() {
--#if defined(OS_LINUX) || defined(OS_WIN)
-+#if defined(OS_LINUX) || defined(OS_WIN) || defined(OS_BSD)
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
    // On platforms where we can't get an accurate reading on the refresh
    // rate we fall back to the assumption that we're displaying 60 frames
    // per second.
@@ -23,17 +23,8 @@ $OpenBSD: patch-ui_gl_sync_control_vsync_provider_cc,v 1.6 2017/01/26 17:08:26 r
  void SyncControlVSyncProvider::GetVSyncParameters(
      const UpdateVSyncCallback& callback) {
    TRACE_EVENT0("gpu", "SyncControlVSyncProvider::GetVSyncParameters");
--#if defined(OS_LINUX) || defined(OS_WIN)
-+#if defined(OS_LINUX) || defined(OS_WIN) || defined(OS_BSD)
-   base::TimeTicks timebase;
- 
-   int64_t system_time;
-@@ -132,7 +132,7 @@ void SyncControlVSyncProvider::GetVSyncParameters(
- #endif  // defined(OS_LINUX) || defined(OS_WIN)
- }
- 
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
- bool SyncControlVSyncProvider::AdjustSyncValues(int64_t* system_time,
-                                                 int64_t* media_stream_counter) {
-   // Both Intel and Mali drivers will return TRUE for GetSyncValues
+   base::TimeTicks timebase;
+ 
+   // The actual clock used for the system time returned by glXGetSyncValuesOML

@@ -1,6 +1,6 @@
-$OpenBSD: patch-base_process_process_posix_cc,v 1.8 2017/01/26 17:08:25 robert Exp $
---- base/process/process_posix.cc.orig.port	Tue Jan  3 20:30:22 2017
-+++ base/process/process_posix.cc	Tue Jan  3 20:56:09 2017
+$OpenBSD: patch-base_process_process_posix_cc,v 1.9 2017/04/28 14:21:00 robert Exp $
+--- base/process/process_posix.cc.orig.port	Wed Apr 19 21:06:28 2017
++++ base/process/process_posix.cc	Thu Apr 27 19:55:58 2017
 @@ -8,6 +8,7 @@
  #include <stdint.h>
  #include <sys/resource.h>
@@ -31,9 +31,9 @@ $OpenBSD: patch-base_process_process_posix_cc,v 1.8 2017/01/26 17:08:25 robert E
  }
 -#endif  // !defined(OS_LINUX) && !defined(OS_MACOSX)
  
- bool Process::IsValid() const {
-   return process_ != kNullProcessHandle;
-@@ -361,21 +363,23 @@ bool Process::WaitForExitWithTimeout(TimeDelta timeout
+ // static
+ void Process::TerminateCurrentProcessImmediately(int exit_code) {
+@@ -366,21 +368,23 @@ bool Process::WaitForExitWithTimeout(TimeDelta timeout
    return WaitForExitWithTimeoutImpl(Handle(), exit_code, timeout);
  }
  

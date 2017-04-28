@@ -1,7 +1,7 @@
-$OpenBSD: patch-content_renderer_render_thread_impl_cc,v 1.17 2017/03/14 12:18:54 robert Exp $
---- content/renderer/render_thread_impl.cc.orig.port	Thu Mar  9 21:04:32 2017
-+++ content/renderer/render_thread_impl.cc	Fri Mar 10 07:46:23 2017
-@@ -207,11 +207,13 @@
+$OpenBSD: patch-content_renderer_render_thread_impl_cc,v 1.18 2017/04/28 14:21:00 robert Exp $
+--- content/renderer/render_thread_impl.cc.orig.port	Wed Apr 19 21:06:34 2017
++++ content/renderer/render_thread_impl.cc	Thu Apr 27 19:56:02 2017
+@@ -206,11 +206,13 @@
  #include "content/common/external_ipc_dumper.h"
  #endif
  
@@ -15,7 +15,7 @@ $OpenBSD: patch-content_renderer_render_thread_impl_cc,v 1.17 2017/03/14 12:18:5
  
  using base::ThreadRestrictions;
  using blink::WebDocument;
-@@ -882,7 +884,7 @@ void RenderThreadImpl::Init(
+@@ -875,7 +877,7 @@ void RenderThreadImpl::Init(
    GetRemoteInterfaces()->GetInterface(
        mojo::MakeRequest(&storage_partition_service_));
  
@@ -24,7 +24,7 @@ $OpenBSD: patch-content_renderer_render_thread_impl_cc,v 1.17 2017/03/14 12:18:5
    ChildProcess::current()->SetIOThreadPriority(base::ThreadPriority::DISPLAY);
    ChildThreadImpl::current()->SetThreadPriority(
        categorized_worker_pool_->background_worker_thread_id(),
-@@ -1080,7 +1082,7 @@ void RenderThreadImpl::InitializeCompositorThread() {
+@@ -1074,7 +1076,7 @@ void RenderThreadImpl::InitializeCompositorThread() {
    compositor_task_runner_->PostTask(
        FROM_HERE,
        base::Bind(base::IgnoreResult(&ThreadRestrictions::SetIOAllowed), false));
@@ -33,7 +33,7 @@ $OpenBSD: patch-content_renderer_render_thread_impl_cc,v 1.17 2017/03/14 12:18:5
    ChildThreadImpl::current()->SetThreadPriority(compositor_thread_->threadId(),
                                                  base::ThreadPriority::DISPLAY);
  #endif
-@@ -1386,7 +1388,7 @@ media::GpuVideoAcceleratorFactories* RenderThreadImpl:
+@@ -1379,7 +1381,7 @@ media::GpuVideoAcceleratorFactories* RenderThreadImpl:
    const bool enable_video_accelerator =
        !cmd_line->HasSwitch(switches::kDisableAcceleratedVideoDecode);
    const bool enable_gpu_memory_buffer_video_frames =
@@ -42,7 +42,7 @@ $OpenBSD: patch-content_renderer_render_thread_impl_cc,v 1.17 2017/03/14 12:18:5
        !cmd_line->HasSwitch(switches::kDisableGpuMemoryBufferVideoFrames) &&
        !cmd_line->HasSwitch(switches::kDisableGpuCompositing) &&
        !gpu_channel_host->gpu_info().software_rendering;
-@@ -1729,6 +1731,8 @@ void RenderThreadImpl::GetRendererMemoryMetrics(
+@@ -1712,6 +1714,8 @@ void RenderThreadImpl::GetRendererMemoryMetrics(
  #else
    size_t malloc_usage = minfo.hblkhd + minfo.arena;
  #endif

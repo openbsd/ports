@@ -1,12 +1,12 @@
-$OpenBSD: patch-ui_views_controls_textfield_textfield_cc,v 1.21 2017/03/14 12:18:54 robert Exp $
---- ui/views/controls/textfield/textfield.cc.orig.port	Thu Mar  9 21:04:49 2017
-+++ ui/views/controls/textfield/textfield.cc	Fri Mar 10 07:46:26 2017
+$OpenBSD: patch-ui_views_controls_textfield_textfield_cc,v 1.22 2017/04/28 14:21:00 robert Exp $
+--- ui/views/controls/textfield/textfield.cc.orig.port	Fri Apr 28 07:37:58 2017
++++ ui/views/controls/textfield/textfield.cc	Fri Apr 28 07:38:43 2017
 @@ -54,7 +54,7 @@
  #include "ui/base/win/osk_display_manager.h"
  #endif
  
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS)
++#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
  #include "base/strings/utf_string_conversions.h"
  #include "ui/base/ime/linux/text_edit_command_auralinux.h"
  #include "ui/base/ime/linux/text_edit_key_bindings_delegate_auralinux.h"
@@ -27,48 +27,57 @@ $OpenBSD: patch-ui_views_controls_textfield_textfield_cc,v 1.21 2017/03/14 12:18
        // Only erase by line break on Linux and ChromeOS.
        if (shift && control)
          return ui::TextEditCommand::DELETE_TO_END_OF_LINE;
-@@ -582,7 +582,7 @@ bool Textfield::OnMousePressed(const ui::MouseEvent& e
+@@ -221,7 +221,7 @@ bool IsControlKeyModifier(int flags) {
+ // Control-modified key combination, but we cannot extend it to other platforms
+ // as Control has different meanings and behaviors.
+ // https://crrev.com/2580483002/#msg46
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   return flags & ui::EF_CONTROL_DOWN;
+ #else
+   return false;
+@@ -606,7 +606,7 @@ bool Textfield::OnMousePressed(const ui::MouseEvent& e
      ShowImeIfNeeded();
    }
  
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS)
-   if (!handled && !HasFocus() && event.IsOnlyMiddleMouseButton())
++#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
+   if (!handled && !had_focus && event.IsOnlyMiddleMouseButton())
      RequestFocus();
  #endif
-@@ -619,7 +619,7 @@ bool Textfield::OnKeyPressed(const ui::KeyEvent& event
+@@ -645,7 +645,7 @@ bool Textfield::OnKeyPressed(const ui::KeyEvent& event
    if (!textfield)
      return handled;
  
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS)
++#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
    ui::TextEditKeyBindingsDelegateAuraLinux* delegate =
        ui::GetTextEditKeyBindingsDelegate();
    std::vector<ui::TextEditCommandAuraLinux> commands;
-@@ -759,7 +759,7 @@ void Textfield::AboutToRequestFocusFromTabTraversal(bo
+@@ -785,7 +785,7 @@ void Textfield::AboutToRequestFocusFromTabTraversal(bo
  }
  
  bool Textfield::SkipDefaultKeyEventProcessing(const ui::KeyEvent& event) {
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS)
++#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
    // Skip any accelerator handling that conflicts with custom keybindings.
    ui::TextEditKeyBindingsDelegateAuraLinux* delegate =
        ui::GetTextEditKeyBindingsDelegate();
-@@ -1041,7 +1041,7 @@ void Textfield::WriteDragDataForView(View* sender,
-   std::unique_ptr<gfx::Canvas> canvas(
-       GetCanvasForDragImage(GetWidget(), label.size()));
-   label.SetEnabledColor(GetTextColor());
+@@ -1076,7 +1076,7 @@ void Textfield::WriteDragDataForView(View* sender,
+ 
+   SkBitmap bitmap;
+   float raster_scale = ScaleFactorForDragFromWidget(GetWidget());
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS)
++#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
    // Desktop Linux Aura does not yet support transparency in drag images.
-   canvas->DrawColor(GetBackgroundColor());
- #endif
-@@ -1833,7 +1833,7 @@ bool Textfield::PasteSelectionClipboard() {
+   SkColor color = GetBackgroundColor();
+ #else
+@@ -1873,7 +1873,7 @@ bool Textfield::PasteSelectionClipboard() {
  }
  
  void Textfield::UpdateSelectionClipboard() {
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS)
++#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
    if (text_input_type_ != ui::TEXT_INPUT_TYPE_PASSWORD) {
      ui::ScopedClipboardWriter(ui::CLIPBOARD_TYPE_SELECTION)
          .WriteText(GetSelectedText());

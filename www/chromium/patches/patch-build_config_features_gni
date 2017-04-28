@@ -1,7 +1,7 @@
-$OpenBSD: patch-build_config_features_gni,v 1.6 2017/03/14 12:18:53 robert Exp $
---- build/config/features.gni.orig.port	Thu Mar  9 21:04:27 2017
-+++ build/config/features.gni	Fri Mar 10 17:51:01 2017
-@@ -55,7 +55,7 @@ declare_args() {
+$OpenBSD: patch-build_config_features_gni,v 1.7 2017/04/28 14:21:00 robert Exp $
+--- build/config/features.gni.orig.port	Wed Apr 19 21:06:28 2017
++++ build/config/features.gni	Thu Apr 27 19:55:58 2017
+@@ -58,7 +58,7 @@ declare_args() {
    fieldtrial_testing_like_official_build = is_chrome_branded
  
    # libudev usage. This currently only affects the content layer.

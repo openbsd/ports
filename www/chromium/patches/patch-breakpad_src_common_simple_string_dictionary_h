@@ -1,0 +1,12 @@
+$OpenBSD: patch-breakpad_src_common_simple_string_dictionary_h,v 1.1 2017/04/28 14:21:00 robert Exp $
+--- breakpad/src/common/simple_string_dictionary.h.orig.port	Fri Apr 28 07:16:49 2017
++++ breakpad/src/common/simple_string_dictionary.h	Fri Apr 28 07:17:02 2017
+@@ -33,7 +33,7 @@
+ #include <assert.h>
+ #include <string.h>
+ 
+-#include "common/basictypes.h"
++#include "breakpad/src/common/basictypes.h"
+ 
+ namespace google_breakpad {
+ 

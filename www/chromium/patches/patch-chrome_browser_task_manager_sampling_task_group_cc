@@ -1,6 +1,6 @@
-$OpenBSD: patch-chrome_browser_task_manager_sampling_task_group_cc,v 1.2 2017/03/14 12:18:53 robert Exp $
---- chrome/browser/task_manager/sampling/task_group.cc.orig.port	Fri Mar 10 08:45:09 2017
-+++ chrome/browser/task_manager/sampling/task_group.cc	Fri Mar 10 08:45:59 2017
+$OpenBSD: patch-chrome_browser_task_manager_sampling_task_group_cc,v 1.3 2017/04/28 14:21:00 robert Exp $
+--- chrome/browser/task_manager/sampling/task_group.cc.orig.port	Wed Apr 19 21:06:30 2017
++++ chrome/browser/task_manager/sampling/task_group.cc	Thu Apr 27 19:56:00 2017
 @@ -28,7 +28,7 @@ const int kBackgroundRefreshTypesMask =
  #if defined(OS_WIN)
      REFRESH_TYPE_START_TIME | REFRESH_TYPE_CPU_TIME |
@@ -9,9 +9,9 @@ $OpenBSD: patch-chrome_browser_task_manager_sampling_task_group_cc,v 1.2 2017/03
 +#if defined(OS_LINUX) || defined(OS_BSD)
      REFRESH_TYPE_FD_COUNT |
  #endif  // defined(OS_LINUX)
-     REFRESH_TYPE_PRIORITY;
-@@ -92,7 +92,7 @@ TaskGroup::TaskGroup(
-       nacl_debug_stub_port_(-1),
+ #if !defined(DISABLE_NACL)
+@@ -102,7 +102,7 @@ TaskGroup::TaskGroup(
+       nacl_debug_stub_port_(nacl::kGdbDebugStubPortUnknown),
  #endif  // !defined(DISABLE_NACL)
        idle_wakeups_per_second_(-1),
 -#if defined(OS_LINUX)
@@ -19,7 +19,7 @@ $OpenBSD: patch-chrome_browser_task_manager_sampling_task_group_cc,v 1.2 2017/03
        open_fd_count_(-1),
  #endif  // defined(OS_LINUX)
        gpu_memory_has_duplicates_(false),
-@@ -107,7 +107,7 @@ TaskGroup::TaskGroup(
+@@ -117,7 +117,7 @@ TaskGroup::TaskGroup(
                                        weak_ptr_factory_.GetWeakPtr()),
                             base::Bind(&TaskGroup::OnIdleWakeupsRefreshDone,
                                        weak_ptr_factory_.GetWeakPtr()),
@@ -28,7 +28,7 @@ $OpenBSD: patch-chrome_browser_task_manager_sampling_task_group_cc,v 1.2 2017/03
                             base::Bind(&TaskGroup::OnOpenFdCountRefreshDone,
                                        weak_ptr_factory_.GetWeakPtr()),
  #endif  // defined(OS_LINUX)
-@@ -313,7 +313,7 @@ void TaskGroup::OnIdleWakeupsRefreshDone(int idle_wake
+@@ -333,7 +333,7 @@ void TaskGroup::OnIdleWakeupsRefreshDone(int idle_wake
    OnBackgroundRefreshTypeFinished(REFRESH_TYPE_IDLE_WAKEUPS);
  }
  

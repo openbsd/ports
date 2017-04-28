@@ -1,6 +1,6 @@
-$OpenBSD: patch-third_party_WebKit_Source_platform_fonts_SimpleFontData_cpp,v 1.10 2017/01/26 17:08:26 robert Exp $
---- third_party/WebKit/Source/platform/fonts/SimpleFontData.cpp.orig.port	Tue Jan  3 20:50:09 2017
-+++ third_party/WebKit/Source/platform/fonts/SimpleFontData.cpp	Tue Jan  3 20:50:28 2017
+$OpenBSD: patch-third_party_WebKit_Source_platform_fonts_SimpleFontData_cpp,v 1.11 2017/04/28 14:21:00 robert Exp $
+--- third_party/WebKit/Source/platform/fonts/SimpleFontData.cpp.orig.port	Fri Apr 28 07:36:39 2017
++++ third_party/WebKit/Source/platform/fonts/SimpleFontData.cpp	Fri Apr 28 07:36:52 2017
 @@ -50,7 +50,7 @@ namespace blink {
  const float smallCapsFontSizeMultiplier = 0.7f;
  const float emphasisMarkFontSizeMultiplier = 0.5f;
@@ -10,7 +10,7 @@ $OpenBSD: patch-third_party_WebKit_Source_platform_fonts_SimpleFontData_cpp,v 1.
  // This is the largest VDMX table which we'll try to load and parse.
  static const size_t maxVDMXTableSize = 1024 * 1024;  // 1 MB
  #endif
-@@ -105,7 +105,7 @@ void SimpleFontData::platformInit(bool subpixelAscentD
+@@ -109,7 +109,7 @@ void SimpleFontData::platformInit(bool subpixelAscentD
    int vdmxAscent = 0, vdmxDescent = 0;
    bool isVDMXValid = false;
  
@@ -19,12 +19,12 @@ $OpenBSD: patch-third_party_WebKit_Source_platform_fonts_SimpleFontData_cpp,v 1.
    // Manually digging up VDMX metrics is only applicable when bytecode hinting
    // using FreeType.  With DirectWrite or CoreText, no bytecode hinting is ever
    // done.  This code should be pushed into FreeType (hinted font metrics).
-@@ -149,7 +149,7 @@ void SimpleFontData::platformInit(bool subpixelAscentD
-       ascent = SkScalarRoundToScalar(-metrics.fAscent);
-       descent = SkScalarRoundToScalar(metrics.fDescent);
-     }
+@@ -157,7 +157,7 @@ void SimpleFontData::platformInit(bool subpixelAscentD
+       visual_overflow_inflation_for_ascent_ = 1;
+     if (descent < metrics.fDescent) {
+       visual_overflow_inflation_for_descent_ = 1;
 -#if OS(LINUX) || OS(ANDROID)
 +#if OS(LINUX) || OS(ANDROID) || OS(OPENBSD)
-     // When subpixel positioning is enabled, if the descent is rounded down, the
-     // descent part of the glyph may be truncated when displayed in a 'overflow:
-     // hidden' container.  To avoid that, borrow 1 unit from the ascent when
+       // When subpixel positioning is enabled, if the descent is rounded down,
+       // the descent part of the glyph may be truncated when displayed in a
+       // 'overflow: hidden' container.  To avoid that, borrow 1 unit from the

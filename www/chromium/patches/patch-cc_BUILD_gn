@@ -1,7 +1,7 @@
-$OpenBSD: patch-cc_BUILD_gn,v 1.6 2017/03/14 12:18:53 robert Exp $
---- cc/BUILD.gn.orig.port	Thu Mar  9 21:04:27 2017
-+++ cc/BUILD.gn	Fri Mar 10 07:46:17 2017
-@@ -774,7 +774,7 @@ cc_static_library("test_support") {
+$OpenBSD: patch-cc_BUILD_gn,v 1.7 2017/04/28 14:21:00 robert Exp $
+--- cc/BUILD.gn.orig.port	Wed Apr 19 21:06:28 2017
++++ cc/BUILD.gn	Thu Apr 27 19:55:58 2017
+@@ -732,7 +732,7 @@ cc_static_library("test_support") {
      "//ui/gl",
      "//ui/gl:test_support",
    ]
@@ -10,7 +10,7 @@ $OpenBSD: patch-cc_BUILD_gn,v 1.6 2017/03/14 12:18:53 robert Exp $
      data_deps = [
        "//third_party/mesa:osmesa",
      ]
-@@ -985,10 +985,6 @@ cc_test("cc_unittests") {
+@@ -941,10 +941,6 @@ cc_test("cc_unittests") {
      "//ui/gfx/geometry",
      "//ui/gl",
      "//ui/gl:test_support",
