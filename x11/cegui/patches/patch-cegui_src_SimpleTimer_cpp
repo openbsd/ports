@@ -1,7 +1,7 @@
-$OpenBSD: patch-cegui_src_SimpleTimer_cpp,v 1.1.1.1 2014/08/19 22:35:01 pascal Exp $
---- cegui/src/SimpleTimer.cpp.orig.port	Mon Jul  7 09:06:18 2014
-+++ cegui/src/SimpleTimer.cpp	Sat Jul 12 22:00:56 2014
-@@ -33,7 +33,7 @@ double CEGUI::SimpleTimer::currentTime()
+$OpenBSD: patch-cegui_src_SimpleTimer_cpp,v 1.2 2017/04/28 16:58:50 pascal Exp $
+--- cegui/src/SimpleTimer.cpp.orig.port	Thu Apr 28 21:12:57 2016
++++ cegui/src/SimpleTimer.cpp	Fri Apr 28 18:19:41 2017
+@@ -38,7 +38,7 @@ double CEGUI::SimpleTimer::currentTime()
      return timeGetTime() / 1000.0;
  }
  

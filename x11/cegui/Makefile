@@ -1,19 +1,19 @@
-# $OpenBSD: Makefile,v 1.7 2016/09/12 22:20:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2017/04/28 16:58:50 pascal Exp $
 
 COMMENT =		widgets library for graphics engines
 
-V =			0.8.5
+V =			0.8.7
 DISTNAME =		cegui-${V}
 
 PATCHORIG =		.orig.port
 
-SHARED_LIBS +=  CEGUIBase-0			0.0 # 3.1
-SHARED_LIBS +=  CEGUICommonDialogs-0		0.0 # 3.1
-SHARED_LIBS +=  CEGUIIrrlichtRenderer-0		0.0 # 3.1
-SHARED_LIBS +=  CEGUIOgreRenderer-0		0.0 # 3.1
-SHARED_LIBS +=  CEGUIOpenGLRenderer-0		0.0 # 3.1
-SHARED_LIBS +=	CEGUIFreeImageImageCodec	0.0
-SHARED_LIBS +=	CEGUIExpatParser		0.0
+SHARED_LIBS +=  CEGUIBase-0			1.0 # 3.1
+SHARED_LIBS +=  CEGUICommonDialogs-0		1.0 # 3.1
+SHARED_LIBS +=  CEGUIIrrlichtRenderer-0		1.0 # 3.1
+SHARED_LIBS +=  CEGUIOgreRenderer-0		1.0 # 3.1
+SHARED_LIBS +=  CEGUIOpenGLRenderer-0		1.0 # 3.1
+SHARED_LIBS +=	CEGUIFreeImageImageCodec	1.0
+SHARED_LIBS +=	CEGUIExpatParser		1.0
 
 CATEGORIES =		x11
 
@@ -25,7 +25,8 @@ MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += GL GLEW GLU Irrlicht OIS OgreMain SDL2 SDL2_image boost_system-mt
-WANTLIB += boost_thread-mt c expat freeimage freetype iconv m pcre pthread
+WANTLIB += boost_thread-mt c expat freeimage freetype glfw iconv m pcre
+WANTLIB += pthread
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=crayzedsgui/}
 EXTRACT_SUFX =		.tar.bz2
@@ -41,7 +42,8 @@ LIB_DEPENDS =		x11/ogre \
 			devel/pcre \
 			graphics/glew \
 			devel/sdl2-image \
-			devel/ois
+			devel/ois \
+			graphics/glfw
 
 CONFIGURE_ARGS +=	-DCEGUI_BUILD_PYTHON_MODULES=OFF \
 			-DCEGUI_BUILD_XMLPARSER_XERCES=OFF \
