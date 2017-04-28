@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2016/03/20 19:56:06 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2017/04/28 22:20:45 ajacoutot Exp $
 
 COMMENT=	read tags of MP3 audio files
 
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME=	MP3-Tag-1.13
-REVISION=	0
+DISTNAME=	MP3-Tag-1.14
 CATEGORIES=	audio
 
 # perl
