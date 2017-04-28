@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_nautilus-ui-utilities_c,v 1.2 2017/04/17 10:35:15 ajacoutot Exp $
+$OpenBSD: patch-src_nautilus-ui-utilities_c,v 1.3 2017/04/28 08:31:57 ajacoutot Exp $
 
 nautilus-ui-utilities.c:443: error: #pragma GCC diagnostic not allowed inside functions
 nautilus-ui-utilities.c:444: error: #pragma GCC diagnostic not allowed inside functions
 nautilus-ui-utilities.c:446: error: #pragma GCC diagnostic not allowed inside functions
 
---- src/nautilus-ui-utilities.c.orig	Wed Mar 15 17:49:45 2017
-+++ src/nautilus-ui-utilities.c	Mon Apr 17 12:25:28 2017
-@@ -448,12 +448,9 @@ get_text_for_date_range (GPtrArray *date_range,
+--- src/nautilus-ui-utilities.c.orig	Sat Apr 22 22:06:54 2017
++++ src/nautilus-ui-utilities.c	Fri Apr 28 10:19:13 2017
+@@ -450,12 +450,9 @@ get_text_for_date_range (GPtrArray *date_range,
              normalized = days / 365;
          }
  
