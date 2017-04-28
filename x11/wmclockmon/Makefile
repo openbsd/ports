@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2017/01/17 16:18:18 jca Exp $
+# $OpenBSD: Makefile,v 1.17 2017/04/28 22:16:23 ajacoutot Exp $
 
 COMMENT=		WindowMaker dock.app clock
 BROKEN-sparc64 =	ICE in change_address_1, at emit-rtl.c:1784
 
-DISTNAME=		wmclockmon-0.8.0
-REVISION=		6
+DISTNAME=		wmclockmon-0.8.1
 CATEGORIES=		x11 x11/windowmaker
 
 HOMEPAGE=		http://tnemeth.free.fr/projets/dockapps.html
