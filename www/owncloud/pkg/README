@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.45 2016/07/30 14:25:37 ajacoutot Exp $
+$OpenBSD: README,v 1.46 2017/04/28 10:20:38 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -17,10 +17,9 @@ Post-installation instructions
 
 chroot(2)
 ---------
-ownCloud attempts to use the UTF-8 locale, which does not work by
-default inside the /var/www chroot. This causes warning messages in
-ownCloud's admin configuration page and logs. To prevent this problem,
-run the following as root:
+When running ownCloud with a chrooted web server, the UTF-8 locale files must be
+copied under the /var/www chroot to prevent warning messages in the admin
+configuration page and logs:
     # mkdir -p /var/www/usr/share/locale/UTF-8/
     # cp /usr/share/locale/UTF-8/LC_CTYPE \
         /var/www/usr/share/locale/UTF-8/
@@ -33,7 +32,7 @@ See:
 nginx
 -----
 See:
-    https://doc.owncloud.org/server/${VR}/admin_manual/installation/nginx_owncloud_9x.html
+    https://doc.owncloud.org/server/${VR}/admin_manual/installation/nginx_examples.html
 
 Apache HTTPD
 ------------
@@ -48,7 +47,7 @@ package is installed:
 PHP
 ---
 Default PHP values for Apache are set under:
-    ${TINSTDIR}/config/.htaccess
+    ${TINSTDIR}/.htaccess
 
 OpenBSD HTTP daemon users can match these .htaccess file values by editing
 ${SYSCONFDIR}/php-${MODPHP_VERSION}.ini or ${SYSCONFDIR}/php-fpm.conf.
@@ -57,7 +56,7 @@ nginx users can match these .htaccess file values by configuring fastcgi_param
 with a PHP_VALUE in ${SYSCONFDIR}/nginx/nginx.conf.
 
 For enhanced performance, a PHP opcode cache can be used, either use "opcache"
-(built-in to PHP 5.5+, enable "opcache.ini" to use it)
+built-in to PHP 5.5+, enable "opcache.ini" to use it)
 or install xcache.
 
 Database configuration
@@ -65,11 +64,10 @@ Database configuration
 See the following URL for setting up a database for ownCloud:
     https://doc.owncloud.org/server/${VR}/admin_manual/configuration_database/linux_database_configuration.html
 
-ownCloud can work with a PostgreSQL, MariaDB or SQLite3 database.
-Support for SQLite3 is included with the main php package; to use
-another database, the corresponding package needs to be installed
-*before* setting up ownCloud:
-    php-pdo_pgsql or php-pdo_mysql
+ownCloud can work with a PostgreSQL, MariaDB or SQLite3 database. Support for
+SQLite3 is included with the main php package; to use another database, the
+corresponding package needs to be installed *before* setting up ownCloud:
+    php-pgsql or php-pdo_mysql
 
 Configuration file
 ------------------
@@ -81,20 +79,19 @@ When running chrooted, /var/www must be stripped from the paths.
 
 Cron job
 --------
-ownCloud needs to run background jobs on a regular basis. By default, it
-will execute one task with each page loaded ("AJAX" option in the admin
-interface). The prefered way is to use a cron(8) job instead.
+ownCloud needs to run background jobs on a regular basis. By default, it will
+execute one task with each page loaded ("AJAX" option in the admin interface).
+The prefered way is to use a cron(8) job instead.
 (see https://<hostname>/owncloud/index.php/settings/admin#backgroundjobs)
 e.g.
-*/15	*	*	*	*	/usr/bin/ftp -Vo - https://<hostname>/owncloud/cron.php >/dev/null
+*/15	*	*	*	*	su -m www -c "${LOCALBASE}/bin/php-5.6 -f ${INSTDIR}/cron.php"
 
-Memory caching
---------------
-ownCloud server performance can be significantly improved with memory caching,
-where frequently-requested objects are stored in memory for faster retrieval.
-Distributed caching and Transactional File Locking is provided by Redis, an
-in-memory data structure store.
-More information and configuration example are available at:
+Memory caching and file locking
+-------------------------------
+ownCloud server performance can be significantly improved with memory caching
+and memory-based locking. Distributed caching and Transactional File Locking is
+provided by Redis, an in-memory data structure store. More information and
+configuration example are available at:
     https://doc.owncloud.org/server/${VR}/admin_manual/configuration_server/caching_configuration.html#id4
 
 TL;DR
@@ -102,22 +99,25 @@ You need a redis server running (available in the redis package) then adapt and
 append the following to:
     ${INSTDIR}/config/config.php
 
+  'filelocking.enabled' => true,
   'memcache.local' => '\OC\Memcache\Redis',
+  'memcache.locking' => '\OC\Memcache\Redis',
   'redis' => array(
     'host' => 'localhost',
     'port' => 6379,
     'timeout' => 0.0,
+    'password' => '', // Optional, if not defined no password will be used.
   ),
 
 Authentication backends
 -----------------------
-When using a non-default user authentication backend (LDAP, IMAP, ...),
-extra packages may be needed (e.g. php-ldap, php-imap).
+When using a non-default user authentication backend (LDAP, IMAP, ...), extra
+packages may be needed (e.g. php-ldap, php-imap).
 
 Finishing and validating the installation
 -----------------------------------------
-Make sure the web server can resolve its hostname (e.g. if chrooted, by
-creating /var/www/etc/hosts and/or /var/www/etc/resolv.conf).
+Make sure the web server can resolve its hostname (e.g. if chrooted, by creating
+/var/www/etc/hosts and/or /var/www/etc/resolv.conf).
 
 Accessing https://<hostname>/owncloud with a Web browser will finish the
 installation and create a new admin user.
@@ -127,15 +127,15 @@ Updating
 Before updating to a new release, read:
     https://doc.owncloud.org/server/${VR}/admin_manual/maintenance/upgrade.html
 
-When using a PostgreSQL or MariaDB, the corresponding MDB2 php package
-must be installed to properly upgrade the database:
+When using a PostgreSQL or MariaDB, the corresponding MDB2 php package must be
+installed to properly upgrade the database:
     php-pgsql or php-mysql
 
 WebDAV access
 =============
-The personal WebDAV share can be accessed using the following URL (e.g.
-with Nautilus, Thunar or Doplhin) and the corresponding user and
-password for the share:
+The personal WebDAV share can be accessed using the following URL (e.g. with
+Nautilus, Thunar or Doplhin) and the corresponding user and password for the
+share:
     https://<hostname>/owncloud/remote.php/webdav/
 
 Synchronization
@@ -145,7 +145,6 @@ application to synchronize with an ownCloud server.
 
 Apps and dependencies
 =====================
-To keep dependencies to a minimum, not all dependencies for all
-installed apps are enforced. It is the job of the administrator to
-manually install required packages according to the non-default apps he
-wants to enable.
+To keep dependencies to a minimum, not all dependencies for all installed apps
+are enforced. It is the job of the administrator to manually install required
+packages according to the non-default apps he wants to enable.

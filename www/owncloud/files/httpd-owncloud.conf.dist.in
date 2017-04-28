@@ -1,6 +1,15 @@
 Alias /owncloud ${TINSTDIR}
 
 <Directory ${TINSTDIR}>
+    Options +FollowSymlinks
     AllowOverride All
+
+    <IfModule mod_dav.c>
+      Dav off
+    </IfModule>
+
+    SetEnv HOME ${TINSTDIR}
+    SetEnv HTTP_HOME ${TINSTDIR}
+
     Require all granted
 </Directory>
