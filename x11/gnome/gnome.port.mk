@@ -1,4 +1,4 @@
-# $OpenBSD: gnome.port.mk,v 1.105 2017/04/27 21:44:01 ajacoutot Exp $
+# $OpenBSD: gnome.port.mk,v 1.106 2017/04/28 10:55:09 naddy Exp $
 #
 # Module for GNOME related ports
 
@@ -49,7 +49,7 @@ CONFIGURE_ARGS += -DENABLE_GTK_DOC=OFF
 .  if ${MODULES:Mdevel/dconf}
 CONFIGURE_ARGS += -DENABLE_SCHEMAS_COMPILE=OFF
 .  endif
-cmake looks for "python"
+# cmake looks for "python"
 .  if ${MODULES:Mlang/python}
 MODGNOME_pre-configure += ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python;
 .  endif
