@@ -1,0 +1,45 @@
+$OpenBSD: patch-gio_kqueue_kqueue-helper_c,v 1.1 2017/04/28 13:29:22 mpi Exp $
+
+Prevent a use-after-free resulting in a crash of all apps depending
+on glib/GIO mostly at "pkg_add -u" time.
+
+Fix https://bugzilla.gnome.org/show_bug.cgi?id=739424
+
+--- gio/kqueue/kqueue-helper.c.orig	Fri Apr 28 13:33:20 2017
++++ gio/kqueue/kqueue-helper.c	Fri Apr 28 13:35:01 2017
+@@ -291,10 +291,10 @@ process_kqueue_notifications (GIOChannel   *gioc,
+ 
+   G_LOCK (hash_lock);
+   sub = (kqueue_sub *) g_hash_table_lookup (subs_hash_table, GINT_TO_POINTER (n.fd));
+-  G_UNLOCK (hash_lock);
+ 
+   if (sub == NULL)
+     {
++      G_UNLOCK (hash_lock);
+       KH_W ("Got a notification for a deleted or non-existing subscription %d",
+              n.fd);
+       return TRUE;
+@@ -336,6 +336,7 @@ process_kqueue_notifications (GIOChannel   *gioc,
+         g_file_monitor_source_handle_event (source, mask, NULL, NULL, NULL, g_get_monotonic_time ());
+     }
+ 
++  G_UNLOCK (hash_lock);
+   return TRUE;
+ }
+ 
+@@ -451,13 +452,14 @@ _kh_start_watching (kqueue_sub *sub)
+ 
+   G_LOCK (hash_lock);
+   g_hash_table_insert (subs_hash_table, GINT_TO_POINTER (sub->fd), sub);
+-  G_UNLOCK (hash_lock);
+ 
+   _kqueue_thread_push_fd (sub->fd);
+   
+   /* Bump the kqueue thread. It will pick up a new sub entry to monitor */
+   if (!_ku_write (kqueue_socket_pair[0], "A", 1))
+     KH_W ("Failed to bump the kqueue thread (add fd, error %d)", errno);
++  G_UNLOCK (hash_lock);
++
+   return TRUE;
+ }
+ 
