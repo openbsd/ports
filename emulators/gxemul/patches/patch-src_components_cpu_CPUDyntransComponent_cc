@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_components_cpu_CPUDyntransComponent_cc,v 1.1 2017/04/28 07:37:00 fcambus Exp $
+--- src/components/cpu/CPUDyntransComponent.cc.orig	Sun Aug 17 10:45:14 2014
++++ src/components/cpu/CPUDyntransComponent.cc	Mon Apr 24 15:28:54 2017
+@@ -194,7 +194,7 @@ void CPUDyntransComponent::DyntransClearICPage(struct 
+ 	// Fill the page with "to be translated" entries, which when executed
+ 	// will read the instruction from memory, attempt to translate it, and
+ 	// then execute it.
+-	void (*f)(CPUDyntransComponent*, DyntransIC*) = GetDyntransToBeTranslated();
++	DyntransIC_t f = GetDyntransToBeTranslated();
+ 
+ 	for (int i=0; i<m_dyntransICentriesPerPage; ++i)
+ 		icpage[i].f = f;

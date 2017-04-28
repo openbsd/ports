@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_components_cpu_MIPS_CPUComponent_cc,v 1.1 2017/04/28 07:37:00 fcambus Exp $
+--- src/components/cpu/MIPS_CPUComponent.cc.orig	Sun Aug 17 10:45:14 2014
++++ src/components/cpu/MIPS_CPUComponent.cc	Mon Apr 24 15:28:54 2017
+@@ -327,7 +327,7 @@ int MIPS_CPUComponent::GetDyntransICshift() const
+ }
+ 
+ 
+-void (*MIPS_CPUComponent::GetDyntransToBeTranslated())(CPUDyntransComponent*, DyntransIC*) const
++DyntransIC_t MIPS_CPUComponent::GetDyntransToBeTranslated() const
+ {
+ 	bool mips16 = m_pc & 1? true : false;
+ 	return mips16? instr_ToBeTranslated_MIPS16 : instr_ToBeTranslated;

@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_include_components_MIPS_CPUComponent_h,v 1.1 2017/04/28 07:37:00 fcambus Exp $
+--- src/include/components/MIPS_CPUComponent.h.orig	Sun Aug 17 10:45:13 2014
++++ src/include/components/MIPS_CPUComponent.h	Mon Apr 24 15:28:54 2017
+@@ -196,7 +196,7 @@ class MIPS_CPUComponent (protected)
+ 	virtual bool FunctionTraceReturnImpl(int64_t& retval);
+ 
+ 	virtual int GetDyntransICshift() const;
+-	virtual void (*GetDyntransToBeTranslated())(CPUDyntransComponent*, DyntransIC*) const;
++	virtual DyntransIC_t GetDyntransToBeTranslated() const;
+ 
+ 	virtual void ShowRegisters(GXemul* gxemul, const vector<string>& arguments) const;
+ 

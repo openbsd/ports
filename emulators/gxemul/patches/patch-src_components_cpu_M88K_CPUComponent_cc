@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_components_cpu_M88K_CPUComponent_cc,v 1.1 2017/04/28 07:37:00 fcambus Exp $
+--- src/components/cpu/M88K_CPUComponent.cc.orig	Sun Aug 17 10:45:14 2014
++++ src/components/cpu/M88K_CPUComponent.cc	Mon Apr 24 15:28:54 2017
+@@ -337,7 +337,7 @@ int M88K_CPUComponent::GetDyntransICshift() const
+ }
+ 
+ 
+-void (*M88K_CPUComponent::GetDyntransToBeTranslated())(CPUDyntransComponent*, DyntransIC*) const
++DyntransIC_t M88K_CPUComponent::GetDyntransToBeTranslated() const
+ {
+ 	return instr_ToBeTranslated;
+ }
