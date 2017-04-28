@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2016/03/20 19:56:05 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2017/04/28 22:16:53 ajacoutot Exp $
 
 COMMENT=		POE filter wrapped around Compress::Zlib
 
-DISTNAME=		POE-Filter-Zlib-2.02
-REVISION=		0
+DISTNAME=		POE-Filter-Zlib-2.04
 CATEGORIES=		archivers
 
 # perl
