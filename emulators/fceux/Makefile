@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2017/04/10 11:45:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2017/04/28 13:17:21 espie Exp $
 
 COMMENT =		emulator for Nintendo Entertainment System
 
@@ -31,7 +31,7 @@ MODULES =		devel/scons \
 MAKE_ENV =		CC="${CC}" \
 			CXX="${CXX}" \
 			CXXFLAGS="${CXXFLAGS} -DIOAPI_NO_64" \
-			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lpthread"
 MODSCONS_FLAGS =	SYSTEM_LUA=1
 
 CONFIGURE_STYLE =	scons
@@ -54,6 +54,7 @@ do-install:
 		${MODSCONS_ENV} ${MODSCONS_FLAGS} \
 		--prefix=${PREFIX} ${INSTALL_TARGET}
 
+#BROKEN = nojunk
 # XXX scons picks up x264.h even though it's in an apparently unused ifdef block
 DPB_PROPERTIES =	nojunk
 
