@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.20 2016/07/14 16:57:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2017/04/28 18:06:06 ajacoutot Exp $
+
+PORTROACH=	skipv:0.98.11_01
 
 COMMENT=	full featured DVD copy program
 
