@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.434 2017/04/16 15:59:17 fcambus Exp $
+# $OpenBSD: Makefile,v 1.435 2017/04/28 15:06:54 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -230,7 +230,6 @@
      SUBDIR += py-pyx
      SUBDIR += py-sane
      SUBDIR += py-sane,python3
-     SUBDIR += py3-cairo
      SUBDIR += pycha
      SUBDIR += qimageblitz
      SUBDIR += qiv
