@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.46 2017/04/28 10:20:38 ajacoutot Exp $
+$OpenBSD: README,v 1.47 2017/04/28 10:41:45 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -43,6 +43,12 @@ It needs to be enabled by running the following command after the apache-httpd
 package is installed:
 # ln -s ../modules.sample/httpd-owncloud.conf /var/www/conf/modules
 # rcctl restart apache2
+
+The rewrite_module needs to be enabled by uncommenting the following line in
+${SYSCONFDIR}/apache2/httpd2.conf:
+    #LoadModule rewrite_module /usr/local/lib/apache2/mod_rewrite.so
+
+Apache also needs
 
 PHP
 ---

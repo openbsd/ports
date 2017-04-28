@@ -1,0 +1,19 @@
+$OpenBSD: patch-_htaccess,v 1.1 2017/04/28 10:41:45 ajacoutot Exp $
+
+XXX 500 error with our php5.
+
+--- .htaccess.orig	Fri Apr 28 12:35:01 2017
++++ .htaccess	Fri Apr 28 12:35:21 2017
+@@ -35,9 +35,9 @@
+   </FilesMatch>
+ </IfModule>
+ 
+-<IfModule mod_php5.c>
+-  php_value always_populate_raw_post_data -1
+-</IfModule>
++// <IfModule mod_php5.c>
++//   php_value always_populate_raw_post_data -1
++// </IfModule>
+ 
+ php_value upload_max_filesize 513M
+ php_value post_max_size 513M
