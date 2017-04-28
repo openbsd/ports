@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.215 2017/04/28 11:16:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.216 2017/04/28 17:35:11 espie Exp $
 
 # Everything is a Freaking GLib/GTK+ problem
 CFLAGS +=		-g
@@ -86,3 +86,7 @@ post-install:
 	rm ${PREFIX}/bin/gtk-update-icon-cache
 
 .include <bsd.port.mk>
+
+.if ${PROPERTIES:Mclang}
+CFLAGS += -Wno-expansion-to-defined
+.endif
