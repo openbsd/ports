@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2016/10/28 14:40:50 juanfra Exp $
+@comment $OpenBSD: PLIST,v 1.9 2017/04/28 18:15:42 juanfra Exp $
 @conflict racket-<6.2
 @pkgpath lang/racket
 @bin bin/racket
@@ -1150,6 +1150,8 @@ share/racket/collects/racket/private/compiled/logger_rkt.dep
 share/racket/collects/racket/private/compiled/logger_rkt.zo
 share/racket/collects/racket/private/compiled/map_rkt.dep
 share/racket/collects/racket/private/compiled/map_rkt.zo
+share/racket/collects/racket/private/compiled/math-predicates_rkt.dep
+share/racket/collects/racket/private/compiled/math-predicates_rkt.zo
 share/racket/collects/racket/private/compiled/member_rkt.dep
 share/racket/collects/racket/private/compiled/member_rkt.zo
 share/racket/collects/racket/private/compiled/misc_rkt.dep
@@ -1294,6 +1296,7 @@ share/racket/collects/racket/private/load.rkt
 share/racket/collects/racket/private/local.rkt
 share/racket/collects/racket/private/logger.rkt
 share/racket/collects/racket/private/map.rkt
+share/racket/collects/racket/private/math-predicates.rkt
 share/racket/collects/racket/private/member.rkt
 share/racket/collects/racket/private/misc.rkt
 share/racket/collects/racket/private/modbeg.rkt
@@ -1557,6 +1560,8 @@ share/racket/collects/setup/private/compiled/dylib_rkt.dep
 share/racket/collects/setup/private/compiled/dylib_rkt.zo
 share/racket/collects/setup/private/compiled/elf_rkt.dep
 share/racket/collects/setup/private/compiled/elf_rkt.zo
+share/racket/collects/setup/private/compiled/encode-relative_rkt.dep
+share/racket/collects/setup/private/compiled/encode-relative_rkt.zo
 share/racket/collects/setup/private/compiled/format-error_rkt.dep
 share/racket/collects/setup/private/compiled/format-error_rkt.zo
 share/racket/collects/setup/private/compiled/lib-roots_rkt.dep
@@ -1568,6 +1573,7 @@ share/racket/collects/setup/private/compiled/pkg-deps_rkt.zo
 share/racket/collects/setup/private/dirs.rkt
 share/racket/collects/setup/private/dylib.rkt
 share/racket/collects/setup/private/elf.rkt
+share/racket/collects/setup/private/encode-relative.rkt
 share/racket/collects/setup/private/format-error.rkt
 share/racket/collects/setup/private/lib-roots.rkt
 share/racket/collects/setup/private/omitted-paths.rkt
