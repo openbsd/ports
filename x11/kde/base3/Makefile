@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.149 2017/04/23 10:57:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.150 2017/04/28 22:07:46 espie Exp $
 
 COMMENT-main =		K Desktop Environment, basic applications
 COMMENT-samba =		K Desktop Environment, samba support
@@ -105,6 +105,7 @@ WANTLIB-en_US =
 WANTLIB-locale =
 
 CONFIGURE_ENV +=	CPPFLAGS="`pkg-config --cflags smbclient`"
+CONFIGURE_ARGS +=	--without-openexr
 
 SEPARATE_BUILD =	flavored
 SUBST_VARS =		PREFIX
