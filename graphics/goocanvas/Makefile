@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.21 2017/04/10 11:46:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2017/04/28 17:57:46 ajacoutot Exp $
 
-PORTROACH=		ignore
+PORTROACH=		limit:^1
 
 COMMENT=		canvas widget for GTK+ based on Cairo
 
