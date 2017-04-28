@@ -1,4 +1,4 @@
-# $OpenBSD: README,v 1.2 2014/10/06 08:28:35 landry Exp $
+# $OpenBSD: README,v 1.3 2017/04/28 08:56:33 landry Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -17,7 +17,7 @@ in the chroot by default:
 
 # install -d -o www /var/www/tmp
 
-If you would like to use FastCGI with nginx from base, use the provided rc.d(8)
+If you would like to use FastCGI with nginx, use the provided rc.d(8)
 script and add the following lines to your nginx.conf:
 
 location /cgi-bin/mapcache {
