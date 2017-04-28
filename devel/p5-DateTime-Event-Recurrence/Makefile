@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2016/03/20 19:56:19 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2017/04/28 17:45:08 benoit Exp $
 
 COMMENT =	DateTime::Set extension to create basic recurrence sets
 
-DISTNAME =	DateTime-Event-Recurrence-0.18
+DISTNAME =	DateTime-Event-Recurrence-0.19
 
 CATEGORIES =	devel
 
