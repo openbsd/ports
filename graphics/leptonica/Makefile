@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2016/08/27 15:20:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2017/04/28 18:12:36 ajacoutot Exp $
 
 COMMENT=	image processing and analysis library
 
-DISTNAME=	leptonica-1.73
+DISTNAME=	leptonica-1.74
 
 SHARED_LIBS +=  lept                 2.2      # 5.0
 
