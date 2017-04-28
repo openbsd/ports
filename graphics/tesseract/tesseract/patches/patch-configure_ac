@@ -1,0 +1,16 @@
+$OpenBSD: patch-configure_ac,v 1.1 2017/04/28 21:01:17 ajacoutot Exp $
+
+No librt on OpenBSD.
+
+--- configure.ac.orig	Fri Apr 28 20:55:39 2017
++++ configure.ac	Fri Apr 28 20:56:19 2017
+@@ -109,6 +109,9 @@ case "${host_os}" in
+     powerpc-*-darwin*)
+         OPENCL_LIBS=""
+         ;;
++    *openbsd*)
++        AM_CONDITIONAL([ADD_RT], false)
++        ;;
+     *)
+         # default
+         AM_CONDITIONAL([ADD_RT], true)

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2017/04/10 11:46:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2017/04/28 21:01:17 ajacoutot Exp $
 
 COMMENT=	OCR Engine developed at HP Labs
 
 GH_PROJECT=	tesseract
-GH_TAGNAME=	3.04.01
+GH_TAGNAME=	3.05.00
 
 SHARED_LIBS +=  tesseract            3.2      # 3.2
 
@@ -19,6 +19,8 @@ MODULES +=		gcc4
 MODGCC4_ARCHS=		*
 MODGCC4_LANGS=		c++
 
+ALL_TARGET=		training
+
 LIB_DEPENDS=		devel/pango \
 			graphics/leptonica \
 			textproc/icu4c
@@ -28,9 +30,21 @@ RUN_DEPENDS=		graphics/tesseract/tessdata,-main
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-
+ 
 ALL_TARGET=		all training
 INSTALL_TARGET=		install training-install
+
+###
+AUTOCONF_VERSION=	2.69
+AUTOMAKE_VERSION=	1.15
+BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS}
+pre-configure:
+	cd ${WRKSRC} && ${SETENV} \
+		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
+		autoreconf -fi
+###
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/tesseract

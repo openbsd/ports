@@ -1,6 +1,6 @@
---- viewer/svutil.h.orig	Sat Oct 22 04:21:21 2011
-+++ viewer/svutil.h	Wed Dec 21 19:12:28 2011
-@@ -39,6 +39,11 @@
+--- viewer/svutil.h.orig	Thu Feb 16 18:59:48 2017
++++ viewer/svutil.h	Fri Apr 28 20:26:55 2017
+@@ -42,6 +42,11 @@
  #else
  #include <pthread.h>
  #include <semaphore.h>
