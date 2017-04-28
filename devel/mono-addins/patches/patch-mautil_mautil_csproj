@@ -1,0 +1,17 @@
+$OpenBSD: patch-mautil_mautil_csproj,v 1.1 2017/04/28 16:58:40 ajacoutot Exp $
+
+From a3efa4ca9f56fab3aae32060b3b56d3585505966 Mon Sep 17 00:00:00 2001
+From: "Andres G. Aragoneses" <knocte@gmail.com>
+Date: Sat, 17 Sep 2016 13:12:28 +0800
+Subject: [PATCH] build: fix build with xbuild 12.0 engine (mono 4.2.1)
+
+--- mautil/mautil.csproj.orig	Wed Jul 27 00:26:26 2016
++++ mautil/mautil.csproj	Wed Nov  9 11:32:00 2016
+@@ -9,6 +9,7 @@
+     <AssemblyName>mautil</AssemblyName>
+     <SchemaVersion>2.0</SchemaVersion>
+     <RootNamespace>mautil</RootNamespace>
++    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+   </PropertyGroup>
+   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+     <DebugSymbols>True</DebugSymbols>
