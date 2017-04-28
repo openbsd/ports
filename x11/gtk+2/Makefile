@@ -1,4 +1,8 @@
-# $OpenBSD: Makefile,v 1.214 2017/02/18 17:33:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.215 2017/04/28 11:16:30 ajacoutot Exp $
+
+# Everything is a Freaking GLib/GTK+ problem
+CFLAGS +=		-g
+INSTALL_STRIP=		# empty
 
 COMMENT-main=		multi-platform graphical toolkit
 COMMENT-cups=		gtk+2 CUPS print backend
@@ -8,8 +12,8 @@ GNOME_PROJECT=		gtk+
 
 PKGNAME-main=		gtk+2-${GNOME_VERSION}
 PKGNAME-cups=		gtk+2-cups-${GNOME_VERSION}
-REVISION-cups=		0
-REVISION-main=		0
+REVISION-cups=		1
+REVISION-main=		1
 
 CATEGORIES=		x11 devel
 
