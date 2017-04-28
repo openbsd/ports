@@ -1,0 +1,21 @@
+$OpenBSD: patch-js_src_build_autoconf_moznbytetype_m4,v 1.1 2017/04/28 01:54:09 espie Exp $
+--- js/src/build/autoconf/moznbytetype.m4.orig	Tue Mar  6 15:45:30 2012
++++ js/src/build/autoconf/moznbytetype.m4	Fri Apr 28 02:17:44 2017
+@@ -91,7 +91,7 @@ AC_CACHE_CHECK([for the size of $2], moz_cv_size_of_$1
+     AC_TRY_COMPILE([],
+                    [
+                      int a[sizeof ($2) == $size ? 1 : -1];
+-                     return;
++                     return 0;
+                    ],
+                    [moz_cv_size_of_$1=$size; break], [])
+   done
+@@ -124,7 +124,7 @@ AC_CACHE_CHECK([for the alignment of $2], moz_cv_align
+                    ],
+                    [
+                      int a[offsetof(struct aligner, a) == $align ? 1 : -1];
+-                     return;
++                     return 0;
+                    ],
+                    [moz_cv_align_of_$1=$align; break], [])
+   done

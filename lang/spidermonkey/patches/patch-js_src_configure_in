@@ -1,4 +1,4 @@
-$OpenBSD: patch-js_src_configure_in,v 1.1 2013/12/09 16:31:59 landry Exp $
+$OpenBSD: patch-js_src_configure_in,v 1.2 2017/04/28 01:54:09 espie Exp $
 --- js/src/configure.in.orig	Tue Mar 16 10:55:20 2010
 +++ js/src/configure.in	Sat Mar 27 01:54:27 2010
 @@ -874,7 +874,7 @@ HOST_AR='$(AR)'
@@ -10,6 +10,17 @@ $OpenBSD: patch-js_src_configure_in,v 1.1 2013/12/09 16:31:59 landry Exp $
  
  MOZ_COMPONENT_NSPR_LIBS='-L$(LIBXUL_DIST)/bin $(NSPR_LIBS)'
  MOZ_XPCOM_OBSOLETE_LIBS='-L$(LIBXUL_DIST)/lib -lxpcom_compat'
+@@ -1193,8 +1193,8 @@ if test "$GNU_CC"; then
+     ASFLAGS="$ASFLAGS -fPIC"
+     _MOZ_RTTI_FLAGS_ON=${_COMPILER_PREFIX}-frtti
+     _MOZ_RTTI_FLAGS_OFF=${_COMPILER_PREFIX}-fno-rtti
+-    _MOZ_EXCEPTIONS_FLAGS_ON='-fhandle-exceptions'
+-    _MOZ_EXCEPTIONS_FLAGS_OFF='-fno-handle-exceptions'
++    _MOZ_EXCEPTIONS_FLAGS_ON='-fexceptions'
++    _MOZ_EXCEPTIONS_FLAGS_OFF='-fno-exceptions'
+ 
+     # Turn on GNU specific features
+     # -Wall - turn on all warnings
 @@ -2133,7 +2133,7 @@ case "$target" in
  	;;
  
@@ -57,3 +68,23 @@ $OpenBSD: patch-js_src_configure_in,v 1.1 2013/12/09 16:31:59 landry Exp $
      AC_DEFINE(AVMPLUS_UNIX)
      ;;
  *cygwin*|*mingw*|*mks*|*msvc*|*wince)
+@@ -3414,17 +3421,9 @@
+ 
+   dnl They changed -f[no-]handle-exceptions to -f[no-]exceptions in g++ 2.8
+   AC_CACHE_VAL(ac_cv_cxx_exceptions_flags,
+-  [echo "int main() { return 0; }" | cat > conftest.C
+-
+-  ${CXX-g++} ${CXXFLAGS} -c -fno-handle-exceptions conftest.C > conftest.out 2>&1
+-
+-  if egrep "warning.*renamed" conftest.out >/dev/null; then
++  [
+     ac_cv_cxx_exceptions_flags=${_COMPILER_PREFIX}-fno-exceptions
+-  else
+-    ac_cv_cxx_exceptions_flags=${_COMPILER_PREFIX}-fno-handle-exceptions
+-  fi
+-
+-  rm -f conftest*])
++  ])
+ 
+   AC_MSG_RESULT($ac_cv_cxx_exceptions_flags)
+   _MOZ_EXCEPTIONS_FLAGS_OFF=$ac_cv_cxx_exceptions_flags
