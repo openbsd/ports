@@ -1,30 +1,35 @@
-# $OpenBSD: Makefile,v 1.23 2017/04/10 11:46:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2017/04/29 19:18:49 rsadowski Exp $
 
 COMMENT=	GiNaC is Not a Computer Algebra System (CAS)
 
-DISTNAME=	ginac-1.6.4
-SHARED_LIBS +=	ginac	5.0	# 0.5
+DISTNAME=	ginac-1.7.2
+SHARED_LIBS +=	ginac	6.0	# 0.5
 CATEGORIES=	math
 
-HOMEPAGE=	http://www.ginac.de/
+HOMEPAGE=	https://www.ginac.de/
 
 MAINTAINER=	Paul Irofti <pirofti@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	 ${HOMEPAGE} \
-		 ftp://ftpthep.physik.uni-mainz.de/pub/GiNaC/
+MASTER_SITES=	${HOMEPAGE}
 EXTRACT_SUFX=	.tar.bz2
 
 WANTLIB=	c m ncurses readline ${LIBCXX} gmp cln
 
-MODULES =       lang/python
-BUILD_DEPENDS =	devel/doxygen
+MODULES =	lang/python \
+		gcc4
+
+MODGCC4_LANGS =	c++
+MODGCC4_ARCHS =	*
+
 LIB_DEPENDS=	devel/cln
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu
+
+CONFIGURE_ENV=	ac_cv_path_DOXYGEN=""
 
 TEST_TARGET=	check
 

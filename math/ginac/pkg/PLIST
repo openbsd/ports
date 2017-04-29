@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2015/01/06 21:11:54 sthen Exp $
-bin/ginac-excompiler
+@comment $OpenBSD: PLIST,v 1.6 2017/04/29 19:18:49 rsadowski Exp $
 @bin bin/ginsh
 @bin bin/viewgar
 include/ginac/
@@ -10,6 +9,7 @@ include/ginac/basic.h
 include/ginac/class_info.h
 include/ginac/clifford.h
 include/ginac/color.h
+include/ginac/compiler.h
 include/ginac/constant.h
 include/ginac/container.h
 include/ginac/ex.h
@@ -55,5 +55,6 @@ lib/libginac.a
 lib/libginac.la
 @lib lib/libginac.so.${LIBginac_VERSION}
 lib/pkgconfig/ginac.pc
+libexec/ginac-excompiler
 @man man/man1/ginsh.1
 @man man/man1/viewgar.1
