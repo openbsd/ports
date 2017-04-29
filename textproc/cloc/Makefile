@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2017/02/06 22:29:57 awolk Exp $
+# $OpenBSD: Makefile,v 1.10 2017/04/29 20:54:53 jung Exp $
 
 COMMENT=		count lines of code
 
-V=			1.70
+V=			1.72
 DISTNAME=		cloc-${V}
-REVISION=		0
 
 CATEGORIES=		textproc devel
 
