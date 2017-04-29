@@ -1,7 +1,7 @@
-$OpenBSD: patch-Imakefile,v 1.1.1.1 2005/05/24 07:19:35 mcbride Exp $
---- Imakefile.orig	Mon Jun 12 22:20:11 2000
-+++ Imakefile	Sun Mar 13 18:07:35 2005
-@@ -9,11 +9,10 @@ LOCAL_LIBRARIES = XkbClientLibs XawClien
+$OpenBSD: patch-Imakefile,v 1.2 2017/04/29 16:27:40 espie Exp $
+--- Imakefile.orig
++++ Imakefile
+@@ -9,11 +9,10 @@ LOCAL_LIBRARIES = XkbClientLibs XawClientLibs $(XTESTL
             SRCS = xscribble.c Scribble.c
             OBJS = xscribble.o Scribble.o
          HEADERS = ScribbleP.h Scribble.h

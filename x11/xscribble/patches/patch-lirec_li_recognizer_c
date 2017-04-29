@@ -1,6 +1,6 @@
-$OpenBSD: patch-lirec_li_recognizer_c,v 1.1.1.1 2005/05/24 07:19:35 mcbride Exp $
---- lirec/li_recognizer.c.orig	Mon Jun 12 22:20:13 2000
-+++ lirec/li_recognizer.c	Sun Mar 13 18:07:32 2005
+$OpenBSD: patch-lirec_li_recognizer_c,v 1.2 2017/04/29 16:27:40 espie Exp $
+--- lirec/li_recognizer.c.orig
++++ lirec/li_recognizer.c
 @@ -21,7 +21,7 @@
  #include <stdio.h>
  #include <string.h>
@@ -10,7 +10,7 @@ $OpenBSD: patch-lirec_li_recognizer_c,v 1.1.1.1 2005/05/24 07:19:35 mcbride Exp 
  #endif
  #include <math.h>
  #include <locale.h>
-@@ -53,9 +53,9 @@ static char *lialg_recognize_stroke(rCla
+@@ -53,9 +53,9 @@ static char *lialg_recognize_stroke(rClassifier *, poi
  char* li_err_msg = NULL;
  char _zdebug_flag[128];
  

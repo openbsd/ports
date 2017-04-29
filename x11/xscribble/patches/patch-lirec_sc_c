@@ -1,0 +1,20 @@
+$OpenBSD: patch-lirec_sc_c,v 1.1 2017/04/29 16:27:40 espie Exp $
+--- lirec/sc.c.orig
++++ lirec/sc.c
+@@ -30,6 +30,8 @@ Software Foundation, Inc., 675 Mass Ave, Cambridge, MA
+ #include "math.h"
+ #include "zdebug.h"
+ 
++void FixClassifier(sClassifier, Matrix);
++
+ #define	EPS	(1.0e-6)	/* for singular matrix check */
+ sClassifier
+ sNewClassifier()
+@@ -363,6 +365,7 @@ register Matrix sigma;
+ 	return result;
+ }
+ 
++void
+ FixClassifier(sc, avgcov)
+ register sClassifier sc;
+ Matrix avgcov;
