@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2016/03/20 19:56:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2017/04/29 13:26:12 benoit Exp $
 
 COMMENT =	read/write YAML files with as little code as possible
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	YAML-Tiny-1.69
+DISTNAME =	YAML-Tiny-1.70
 CATEGORIES =	devel
 
 # Perl
