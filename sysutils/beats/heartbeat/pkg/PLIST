@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/04/29 14:16:10 jasper Exp $
+@bin bin/heartbeat
+share/examples/heartbeat/
+@sample ${SYSCONFDIR}/heartbeat/
+share/examples/heartbeat/heartbeat.template-es2x.json
+@sample ${SYSCONFDIR}/heartbeat/heartbeat.template-es2x.json
+share/examples/heartbeat/heartbeat.template.json
+@sample ${SYSCONFDIR}/heartbeat/heartbeat.template.json
+share/examples/heartbeat/heartbeat.yml
+@sample ${SYSCONFDIR}/heartbeat/heartbeat.yml
+share/heartbeat/
+share/heartbeat/migrate_beat_config_1_x_to_5_0.py
+@rcscript ${RCDIR}/heartbeat

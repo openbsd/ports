@@ -1,0 +1,4 @@
+Monitor services for their availability with active probing. Given a
+list of URLs, Heartbeat asks the simple question: Are you alive?
+Heartbeat ships this information and response time to the rest of the
+Elastic Stack for further analysis.
