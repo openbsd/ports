@@ -1,7 +1,7 @@
-$OpenBSD: patch-runtime_filetype_vim,v 1.12 2016/10/12 09:31:16 sthen Exp $
---- runtime/filetype.vim.orig	Sun Oct  9 16:28:01 2016
-+++ runtime/filetype.vim	Wed Oct 12 10:01:36 2016
-@@ -627,7 +627,7 @@ au BufNewFile,BufRead dict.conf,.dictrc		setf dictconf
+$OpenBSD: patch-runtime_filetype_vim,v 1.13 2017/04/29 21:04:29 sthen Exp $
+--- runtime/filetype.vim.orig	Fri Apr 28 14:45:46 2017
++++ runtime/filetype.vim	Fri Apr 28 22:58:13 2017
+@@ -632,7 +632,7 @@ au BufNewFile,BufRead dict.conf,.dictrc		setf dictconf
  au BufNewFile,BufRead dictd.conf		setf dictdconf
  
  " Diff files
@@ -10,7 +10,7 @@ $OpenBSD: patch-runtime_filetype_vim,v 1.12 2016/10/12 09:31:16 sthen Exp $
  
  " Dircolors
  au BufNewFile,BufRead .dir_colors,.dircolors,*/etc/DIR_COLORS	setf dircolors
-@@ -1144,7 +1144,7 @@ au BufNewFile,BufRead */etc/mail/aliases,*/etc/aliases
+@@ -1155,7 +1155,7 @@ au BufNewFile,BufRead */etc/mail/aliases,*/etc/aliases
  au BufNewFile,BufRead .mailcap,mailcap		setf mailcap
  
  " Makefile

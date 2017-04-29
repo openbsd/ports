@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.19 2017/02/28 23:25:25 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.20 2017/04/29 21:04:29 sthen Exp $
 @pkgpath ${BASE_PKGPATH}
 %%gtk2%%
 bin/ex
@@ -42,6 +42,8 @@ share/vim/${P}/autoload/paste.vim
 share/vim/${P}/autoload/phpcomplete.vim
 share/vim/${P}/autoload/python3complete.vim
 share/vim/${P}/autoload/pythoncomplete.vim
+share/vim/${P}/autoload/rust.vim
+share/vim/${P}/autoload/rustfmt.vim
 share/vim/${P}/autoload/rubycomplete.vim
 share/vim/${P}/autoload/spellfile.vim
 share/vim/${P}/autoload/sqlcomplete.vim
@@ -91,6 +93,7 @@ share/vim/${P}/compiler/README.txt
 share/vim/${P}/compiler/ant.vim
 share/vim/${P}/compiler/bcc.vim
 share/vim/${P}/compiler/bdf.vim
+share/vim/${P}/compiler/cargo.vim
 share/vim/${P}/compiler/checkstyle.vim
 share/vim/${P}/compiler/context.vim
 share/vim/${P}/compiler/cs.vim
@@ -141,6 +144,7 @@ share/vim/${P}/compiler/rspec.vim
 share/vim/${P}/compiler/rst.vim
 share/vim/${P}/compiler/ruby.vim
 share/vim/${P}/compiler/rubyunit.vim
+share/vim/${P}/compiler/rustc.vim
 share/vim/${P}/compiler/sass.vim
 share/vim/${P}/compiler/se.vim
 share/vim/${P}/compiler/splint.vim
@@ -169,6 +173,7 @@ share/vim/${P}/doc/farsi.txt
 share/vim/${P}/doc/filetype.txt
 share/vim/${P}/doc/fold.txt
 share/vim/${P}/doc/ft_ada.txt
+share/vim/${P}/doc/ft_rust.txt
 share/vim/${P}/doc/ft_sql.txt
 share/vim/${P}/doc/gui.txt
 share/vim/${P}/doc/gui_w32.txt
@@ -450,6 +455,7 @@ share/vim/${P}/ftplugin/rpl.vim
 share/vim/${P}/ftplugin/rrst.vim
 share/vim/${P}/ftplugin/rst.vim
 share/vim/${P}/ftplugin/ruby.vim
+share/vim/${P}/ftplugin/rust.vim
 share/vim/${P}/ftplugin/sass.vim
 share/vim/${P}/ftplugin/scala.vim
 share/vim/${P}/ftplugin/scheme.vim
@@ -477,6 +483,7 @@ share/vim/${P}/ftplugin/tcsh.vim
 share/vim/${P}/ftplugin/terminfo.vim
 share/vim/${P}/ftplugin/tex.vim
 share/vim/${P}/ftplugin/text.vim
+share/vim/${P}/ftplugin/tmux.vim
 share/vim/${P}/ftplugin/treetop.vim
 share/vim/${P}/ftplugin/tt2html.vim
 share/vim/${P}/ftplugin/udevconf.vim
@@ -591,6 +598,8 @@ share/vim/${P}/indent/rpl.vim
 share/vim/${P}/indent/rrst.vim
 share/vim/${P}/indent/rst.vim
 share/vim/${P}/indent/ruby.vim
+share/vim/${P}/indent/rust.vim
+share/vim/${P}/indent/sas.vim
 share/vim/${P}/indent/sass.vim
 share/vim/${P}/indent/scala.vim
 share/vim/${P}/indent/scheme.vim
@@ -1248,6 +1257,7 @@ share/vim/${P}/syntax/rrst.vim
 share/vim/${P}/syntax/rst.vim
 share/vim/${P}/syntax/rtf.vim
 share/vim/${P}/syntax/ruby.vim
+share/vim/${P}/syntax/rust.vim
 share/vim/${P}/syntax/samba.vim
 share/vim/${P}/syntax/sas.vim
 share/vim/${P}/syntax/sass.vim
@@ -1346,6 +1356,7 @@ share/vim/${P}/syntax/tf.vim
 share/vim/${P}/syntax/tidy.vim
 share/vim/${P}/syntax/tilde.vim
 share/vim/${P}/syntax/tli.vim
+share/vim/${P}/syntax/tmux.vim
 share/vim/${P}/syntax/tpp.vim
 share/vim/${P}/syntax/trasys.vim
 share/vim/${P}/syntax/treetop.vim

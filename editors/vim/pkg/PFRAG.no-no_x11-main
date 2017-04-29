@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.no-no_x11-main,v 1.8 2016/09/26 10:48:39 sthen Exp $
+@comment $OpenBSD: PFRAG.no-no_x11-main,v 1.9 2017/04/29 21:04:29 sthen Exp $
 bin/eview
 bin/evim
 bin/gview
@@ -15,6 +15,7 @@ bin/rgvim
 @man man/man1/rgview.1
 @man man/man1/rgvim.1
 share/applications/gvim.desktop
+share/applications/vim.desktop
 share/icons/hicolor/48x48/apps/gvim.png
 share/icons/locolor/
 share/icons/locolor/16x16/
