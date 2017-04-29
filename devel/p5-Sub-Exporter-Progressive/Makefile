@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2016/03/20 19:56:34 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2017/04/29 09:40:01 benoit Exp $
 
 COMMENT =		only use Sub::Exporter if you need it  
 
-DISTNAME =		Sub-Exporter-Progressive-0.001011
+DISTNAME =		Sub-Exporter-Progressive-0.001013
 CATEGORIES =		devel
 
 # perl
