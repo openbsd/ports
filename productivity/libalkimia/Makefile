@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2017/01/12 16:18:55 zhuk Exp $
+# $OpenBSD: Makefile,v 1.5 2017/04/29 16:17:35 rsadowski Exp $
 COMMENT =		common classes for finance KDE 4 apps
 CATEGORIES =		productivity x11
 HOMEPAGE =		http://kmymoney2.sourceforge.net
@@ -19,9 +19,10 @@ MODULES =		x11/kde4
 MODKDE4_USE =
 KDE4_ONLY =		Yes
 
-BUILD_DEPENDS =		devel/doxygen \
-			${MODKDE4_DEP_DIR}/libs
+BUILD_DEPENDS =		${MODKDE4_DEP_DIR}/libs
 LIB_DEPENDS =		devel/gmp
+
+CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen:Bool=Yes
 
 do-test:
 	cd ${WRKBUILD} && ./libalkimia/alkcompanytest
