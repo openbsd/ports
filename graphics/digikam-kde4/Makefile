@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2017/02/02 12:57:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2017/04/29 09:24:28 rsadowski Exp $
 
 COMMENT-kipi =		KDE image plugins collection
 COMMENT-main =		KDE photo management utility
@@ -94,7 +94,6 @@ WANTLIB-mediawiki += ${KDE4LIB}/kio
 
 BUILD_DEPENDS =		devel/bison \
 			devel/boost \
-			devel/doxygen \
 			math/eigen3 \
 			misc/shared-desktop-ontologies
 
@@ -166,6 +165,7 @@ CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_Hupnp:Bool=Yes \
 			-DCMAKE_DISABLE_FIND_PACKAGE_QtSoap:Bool=Yes \
 			-DENABLE_INTERNALMYSQL:Bool=No \
 			-DENABLE_KDEPIMLIBSSUPPORT:Bool=Yes \
+			-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen:Bool=Yes \
 			-DENABLE_LCMS2:Bool=Yes
 
 # no official release yet
