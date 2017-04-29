@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2017/01/20 09:14:12 zhuk Exp $
+# $OpenBSD: Makefile,v 1.11 2017/04/29 16:16:38 rsadowski Exp $
 COMMENT =		accounting for KDE 4
 CATEGORIES =		productivity x11
 HOMEPAGE =		https://kmymoney.org/
@@ -41,7 +41,6 @@ MODULES =		x11/kde4 devel/gettext lang/python multimedia/phonon
 MODKDE4_USE =		pim
 
 BUILD_DEPENDS =	devel/boost \
-		devel/doxygen \
 		misc/shared-mime-info
 
 RUN_DEPENDS =	devel/desktop-file-utils \
@@ -61,7 +60,8 @@ LIB_DEPENDS =	devel/gwenhywfar>=4.13.1p3 \
 CONFIGURE_ARGS =	-DENABLE_KBANKING:Bool=Yes \
 			-DUSE_HTML_HANDBOOK:Bool=Yes \
 			-DUSE_DEVELOPER_DOC:Bool=Yes \
-			-DUSE_QT_DESIGNER:Bool=No
+			-DUSE_QT_DESIGNER:Bool=No \
+			-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen:Bool=Yes
 
 TEST_IS_INTERACTIVE =	X11
 
