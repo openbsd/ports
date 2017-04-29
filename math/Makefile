@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.138 2017/04/23 17:50:01 shadchin Exp $
+# $OpenBSD: Makefile,v 1.139 2017/04/29 15:37:32 edd Exp $
 
      SUBDIR =
      SUBDIR += R
@@ -42,7 +42,6 @@
      SUBDIR += lapack
      SUBDIR += libqalculate
      SUBDIR += libtommath
-     SUBDIR += logic2cnf
      SUBDIR += lpsolve
      SUBDIR += lrs
      SUBDIR += mathomatic
