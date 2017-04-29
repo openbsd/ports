@@ -1,0 +1,25 @@
+$OpenBSD: patch-inc_cc++_string_h,v 1.1 2017/04/29 15:30:04 espie Exp $
+--- inc/cc++/string.h.orig
++++ inc/cc++/string.h
+@@ -74,6 +74,12 @@ class MemPager;
+  * @author David Sugar <dyfet@ostel.com>
+  * @short Generic string class.
+  */
++
++/* can't put default value in friend */
++
++class  String;
++__EXPORT std::istream &getline(std::istream &is, String &str, char delim = '\n', size_t size = 0);
++
+ class __EXPORT String
+ {
+ protected:
+@@ -731,7 +737,7 @@ class __EXPORT String (public)
+ 	 * @param delim deliminator to use.
+ 	 * @param size optional size limitor.
+ 	 */
+-	friend __EXPORT std::istream &getline(std::istream &is, String &str, char delim = '\n', size_t size = 0);
++	friend __EXPORT std::istream &getline(std::istream &is, String &str, char delim, size_t size);
+ 
+ 	/**
+ 	 * Stream the content of our string variable directly to a C++
