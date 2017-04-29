@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2017/03/04 21:59:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2017/04/29 06:22:05 espie Exp $
 
 V =			3.3.6
 PKGNAME =		g77-$V
@@ -9,7 +9,7 @@ DISTFILES =		g77-openbsd-3.3.6.tgz
 CONFIG =		${MACHINE_ARCH}-unknown-openbsd${OSREV}
 SUBST_VARS +=		CONFIG V
 SYSV =			4.2.1
-SYSLIBPATH =		 `cc -v 2>&1| sed -n -e '/gcc-lib/s%^[^/]*\(/.*\)/[^/]*%\1%p'`
+SYSLIBPATH =		/usr/lib/gcc-lib/${CONFIG}/${SYSV}
 LIBDIR =		${PREFIX}/lib/gcc-lib/${CONFIG}/$V
 
 .if ${MACHINE_ARCH} == "m88k"
