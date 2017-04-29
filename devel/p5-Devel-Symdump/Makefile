@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2016/03/20 19:56:20 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2017/04/29 08:17:57 benoit Exp $
 
 COMMENT = 	module for inspecting Perl's symbol table
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	Devel-Symdump-2.15
+DISTNAME =	Devel-Symdump-2.18
 EPOCH =		0
 CATEGORIES =	devel perl5
 
