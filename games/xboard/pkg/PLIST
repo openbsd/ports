@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2014/11/10 09:04:18 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.11 2017/04/29 22:24:15 rsadowski Exp $
 @conflict cmail-*
 bin/cmail
 @bin bin/xboard
@@ -13,7 +13,6 @@ share/examples/xboard/
 @sample ${SYSCONFDIR}/xboard/
 share/examples/xboard/xboard.conf
 @sample ${SYSCONFDIR}/xboard/xboard.conf
-share/games/
 share/games/xboard/
 share/games/xboard/pixmaps/
 share/games/xboard/pixmaps/textures/
@@ -37,7 +36,6 @@ share/games/xboard/sounds/slap.wav
 share/games/xboard/sounds/woodthunk.wav
 share/games/xboard/themes/
 share/games/xboard/themes/conf/
-share/games/xboard/themes/conf/chu
 share/games/xboard/themes/conf/ics
 share/games/xboard/themes/conf/mini
 share/games/xboard/themes/conf/mini.fen
@@ -48,16 +46,25 @@ share/games/xboard/themes/conf/xq
 share/games/xboard/themes/default/
 share/games/xboard/themes/default/BlackAdvisor.svg
 share/games/xboard/themes/default/BlackArchbishop.svg
+share/games/xboard/themes/default/BlackAxe.svg
 share/games/xboard/themes/default/BlackBishop.svg
+share/games/xboard/themes/default/BlackButterfly.svg
+share/games/xboard/themes/default/BlackCamel.svg
 share/games/xboard/themes/default/BlackCanon.svg
 share/games/xboard/themes/default/BlackChancellor.svg
 share/games/xboard/themes/default/BlackClaw.svg
 share/games/xboard/themes/default/BlackCobra.svg
 share/games/xboard/themes/default/BlackCommoner.svg
+share/games/xboard/themes/default/BlackCopper.svg
 share/games/xboard/themes/default/BlackCrownedBishop.svg
 share/games/xboard/themes/default/BlackCrownedRook.svg
+share/games/xboard/themes/default/BlackCub.svg
 share/games/xboard/themes/default/BlackDolphin.svg
+share/games/xboard/themes/default/BlackDragon.svg
+share/games/xboard/themes/default/BlackDuck.svg
 share/games/xboard/themes/default/BlackElephant.svg
+share/games/xboard/themes/default/BlackFlag.svg
+share/games/xboard/themes/default/BlackGnu.svg
 share/games/xboard/themes/default/BlackGold.svg
 share/games/xboard/themes/default/BlackGoldKnight.svg
 share/games/xboard/themes/default/BlackGoldLance.svg
@@ -65,15 +72,20 @@ share/games/xboard/themes/default/BlackGoldPawn.svg
 share/games/xboard/themes/default/BlackGoldSilver.svg
 share/games/xboard/themes/default/BlackHCrown.svg
 share/games/xboard/themes/default/BlackHSword.svg
+share/games/xboard/themes/default/BlackHat.svg
 share/games/xboard/themes/default/BlackHawk.svg
+share/games/xboard/themes/default/BlackIron.svg
 share/games/xboard/themes/default/BlackKing.svg
 share/games/xboard/themes/default/BlackKnight.svg
+share/games/xboard/themes/default/BlackLShield.svg
 share/games/xboard/themes/default/BlackLance.svg
+share/games/xboard/themes/default/BlackLeft.svg
 share/games/xboard/themes/default/BlackLeopard.svg
 share/games/xboard/themes/default/BlackLion.svg
 share/games/xboard/themes/default/BlackMarshall.svg
 share/games/xboard/themes/default/BlackNightrider.svg
 share/games/xboard/themes/default/BlackPawn.svg
+share/games/xboard/themes/default/BlackPegasus.svg
 share/games/xboard/themes/default/BlackPrincess.svg
 share/games/xboard/themes/default/BlackPromoBishop.svg
 share/games/xboard/themes/default/BlackPromoDragon.svg
@@ -82,21 +94,37 @@ share/games/xboard/themes/default/BlackPromoHorse.svg
 share/games/xboard/themes/default/BlackPromoRook.svg
 share/games/xboard/themes/default/BlackPromoSword.svg
 share/games/xboard/themes/default/BlackQueen.svg
+share/games/xboard/themes/default/BlackRShield.svg
+share/games/xboard/themes/default/BlackRight.svg
 share/games/xboard/themes/default/BlackRook.svg
 share/games/xboard/themes/default/BlackSword.svg
+share/games/xboard/themes/default/BlackTower.svg
 share/games/xboard/themes/default/BlackUnicorn.svg
+share/games/xboard/themes/default/BlackViking.svg
+share/games/xboard/themes/default/BlackWizard.svg
+share/games/xboard/themes/default/BlackWolf.svg
+share/games/xboard/themes/default/BlackZebra.svg
 share/games/xboard/themes/default/WhiteAdvisor.svg
 share/games/xboard/themes/default/WhiteArchbishop.svg
+share/games/xboard/themes/default/WhiteAxe.svg
 share/games/xboard/themes/default/WhiteBishop.svg
+share/games/xboard/themes/default/WhiteButterfly.svg
+share/games/xboard/themes/default/WhiteCamel.svg
 share/games/xboard/themes/default/WhiteCanon.svg
 share/games/xboard/themes/default/WhiteChancellor.svg
 share/games/xboard/themes/default/WhiteClaw.svg
 share/games/xboard/themes/default/WhiteCobra.svg
 share/games/xboard/themes/default/WhiteCommoner.svg
+share/games/xboard/themes/default/WhiteCopper.svg
 share/games/xboard/themes/default/WhiteCrownedBishop.svg
 share/games/xboard/themes/default/WhiteCrownedRook.svg
+share/games/xboard/themes/default/WhiteCub.svg
 share/games/xboard/themes/default/WhiteDolphin.svg
+share/games/xboard/themes/default/WhiteDragon.svg
+share/games/xboard/themes/default/WhiteDuck.svg
 share/games/xboard/themes/default/WhiteElephant.svg
+share/games/xboard/themes/default/WhiteFlag.svg
+share/games/xboard/themes/default/WhiteGnu.svg
 share/games/xboard/themes/default/WhiteGold.svg
 share/games/xboard/themes/default/WhiteGoldKnight.svg
 share/games/xboard/themes/default/WhiteGoldLance.svg
@@ -104,15 +132,20 @@ share/games/xboard/themes/default/WhiteGoldPawn.svg
 share/games/xboard/themes/default/WhiteGoldSilver.svg
 share/games/xboard/themes/default/WhiteHCrown.svg
 share/games/xboard/themes/default/WhiteHSword.svg
+share/games/xboard/themes/default/WhiteHat.svg
 share/games/xboard/themes/default/WhiteHawk.svg
+share/games/xboard/themes/default/WhiteIron.svg
 share/games/xboard/themes/default/WhiteKing.svg
 share/games/xboard/themes/default/WhiteKnight.svg
+share/games/xboard/themes/default/WhiteLShield.svg
 share/games/xboard/themes/default/WhiteLance.svg
+share/games/xboard/themes/default/WhiteLeft.svg
 share/games/xboard/themes/default/WhiteLeopard.svg
 share/games/xboard/themes/default/WhiteLion.svg
 share/games/xboard/themes/default/WhiteMarshall.svg
 share/games/xboard/themes/default/WhiteNightrider.svg
 share/games/xboard/themes/default/WhitePawn.svg
+share/games/xboard/themes/default/WhitePegasus.svg
 share/games/xboard/themes/default/WhitePrincess.svg
 share/games/xboard/themes/default/WhitePromoBishop.svg
 share/games/xboard/themes/default/WhitePromoDragon.svg
@@ -121,9 +154,16 @@ share/games/xboard/themes/default/WhitePromoHorse.svg
 share/games/xboard/themes/default/WhitePromoRook.svg
 share/games/xboard/themes/default/WhitePromoSword.svg
 share/games/xboard/themes/default/WhiteQueen.svg
+share/games/xboard/themes/default/WhiteRShield.svg
+share/games/xboard/themes/default/WhiteRight.svg
 share/games/xboard/themes/default/WhiteRook.svg
 share/games/xboard/themes/default/WhiteSword.svg
+share/games/xboard/themes/default/WhiteTower.svg
 share/games/xboard/themes/default/WhiteUnicorn.svg
+share/games/xboard/themes/default/WhiteViking.svg
+share/games/xboard/themes/default/WhiteWizard.svg
+share/games/xboard/themes/default/WhiteWolf.svg
+share/games/xboard/themes/default/WhiteZebra.svg
 share/games/xboard/themes/default/eo_Analyzing.svg
 share/games/xboard/themes/default/eo_Black.svg
 share/games/xboard/themes/default/eo_Clear.svg
@@ -166,7 +206,7 @@ share/games/xboard/themes/textures/
 share/games/xboard/themes/textures/hatch.png
 share/games/xboard/themes/textures/wood_d.png
 share/games/xboard/themes/textures/wood_l.png
-share/games/xboard/themes/textures/xqboard.png
+share/games/xboard/themes/textures/xqboard-9x10.png
 share/games/xboard/themes/xiangqi/
 share/games/xboard/themes/xiangqi/BlackAdvisor.svg
 share/games/xboard/themes/xiangqi/BlackCanon.svg
@@ -187,10 +227,12 @@ share/icons/hicolor/scalable/apps/xboard.svg
 share/locale/da/LC_MESSAGES/xboard.mo
 share/locale/de/LC_MESSAGES/xboard.mo
 share/locale/es/LC_MESSAGES/xboard.mo
+share/locale/fr/LC_MESSAGES/xboard.mo
 share/locale/it/LC_MESSAGES/xboard.mo
 share/locale/nl/LC_MESSAGES/xboard.mo
 share/locale/pl/LC_MESSAGES/xboard.mo
 share/locale/ru/LC_MESSAGES/xboard.mo
+share/locale/sr/LC_MESSAGES/xboard.mo
 share/locale/tr/LC_MESSAGES/xboard.mo
 share/locale/uk/LC_MESSAGES/xboard.mo
 share/locale/vi/LC_MESSAGES/xboard.mo

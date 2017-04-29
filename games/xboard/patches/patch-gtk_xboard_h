@@ -1,7 +1,7 @@
-$OpenBSD: patch-xaw-xboard_h,v 1.2 2014/11/10 09:04:18 dcoppa Exp $
---- xaw/xboard.h.orig	Wed Oct 22 17:29:28 2014
-+++ xaw/xboard.h	Mon Nov 10 09:34:42 2014
-@@ -118,7 +118,7 @@ typedef struct {
+$OpenBSD: patch-gtk_xboard_h,v 1.1 2017/04/29 22:24:15 rsadowski Exp $
+--- gtk/xboard.h.orig	Wed May 18 07:50:45 2016
++++ gtk/xboard.h	Mon Apr 24 17:18:01 2017
+@@ -109,7 +109,7 @@ typedef struct {
  
  #define BORDER_X_OFFSET 3
  #define BORDER_Y_OFFSET 27
@@ -10,7 +10,7 @@ $OpenBSD: patch-xaw-xboard_h,v 1.2 2014/11/10 09:04:18 dcoppa Exp $
  #define SECOND_CHESS_PROGRAM	""
  #define FIRST_DIRECTORY         "."
  #define SECOND_DIRECTORY        "."
-@@ -127,7 +127,7 @@ typedef struct {
+@@ -118,7 +118,7 @@ typedef struct {
  #define FCP_NAMES               ""
  #define SCP_NAMES               ""
  #define ICS_TEXT_MENU_DEFAULT   ""
@@ -18,4 +18,4 @@ $OpenBSD: patch-xaw-xboard_h,v 1.2 2014/11/10 09:04:18 dcoppa Exp $
 +#define SETTINGS_FILE           SYSCONFDIR"/xboard/xboard.conf"
  #define COLOR_BKGD              "white"
  
- void NewTagsPopup P((char *text, char *msg));
+ GdkPixbuf *LoadIconFile P((char *name));
