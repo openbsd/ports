@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.40 2017/04/17 13:51:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2017/04/29 07:44:19 ajacoutot Exp $
 
 COMMENT=	quick previewer for Nautilus
 
 GNOME_PROJECT=	sushi
-GNOME_VERSION=	3.20.0
-REVISION=	0
+GNOME_VERSION=	3.24.0
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -24,9 +23,9 @@ WANTLIB += icudata icui18n icuuc intl javascriptcoregtk-4.0 jpeg
 WANTLIB += json-glib-1.0 lzma m mozjs-38 musicbrainz5 ncursesw
 WANTLIB += neon notify orc-0.4 pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png proxy pthread pthread-stubs readline
-WANTLIB += secret-1 soup-2.4 sqlite3 ssl webkit2gtk-4.0
-WANTLIB += webp xcb xcb-dri2 xcb-glx xcb-render xcb-shm
-WANTLIB += xcb-xfixes xml2 xslt z
+WANTLIB += secret-1 soup-2.4 sqlite3 ssl webkit2gtk-4.0 webp xcb
+WANTLIB += xcb-dri2 xcb-glx xcb-render xcb-shm xcb-xfixes xml2
+WANTLIB += xslt z
 
 MODULES=	x11/gnome
 
