@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2017/04/10 11:45:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2017/04/29 22:36:16 naddy Exp $
 
 COMMENT =	powerful and user-friendly console text editor
 DISTNAME =	moe-1.8
+REVISION =	0
 EXTRACT_SUFX =	.tar.lz
 CATEGORIES =	editors
 
@@ -12,7 +13,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c m ncurses ${LIBCXX}
 
-MASTER_SITES =	${MASTER_SITE_SAVANNAH:=moe/}
+MASTER_SITES =	${MASTER_SITE_GNU:=moe/}
 
 CONFIGURE_STYLE =	simple
 

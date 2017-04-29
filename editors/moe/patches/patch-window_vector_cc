@@ -1,0 +1,12 @@
+$OpenBSD: patch-window_vector_cc,v 1.1 2017/04/29 22:36:16 naddy Exp $
+--- window_vector.cc.orig
++++ window_vector.cc
+@@ -1026,7 +1026,7 @@ const char * Window_vector::copyright_update()
+     {
+     int year = 1900 + t->tm_year;
+     while( year )
+-      { year_string.insert( 0U, 1, '0' + ( year % 10 ) ); year /= 10; }
++      { char c = '0' + ( year % 10 ); year_string.insert( 0U, 1, c ); year /= 10; }
+     }
+   history.push_back( year_string );
+   if( Screen::get_string( "Year to add (^C to abort): ", history ) <= 0 )
