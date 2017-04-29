@@ -1,7 +1,7 @@
-#!/bin/sh
+#! /usr/bin/perl
 
-# $OpenBSD: update-patches,v 1.2 2016/05/15 22:43:18 jca Exp $
-# Copyright (c) 2000
+# $OpenBSD: update-patches,v 1.3 2017/04/29 14:49:38 espie Exp $
+# Copyright (c) 2017
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions
@@ -24,102 +24,208 @@
 # OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
 # SUCH DAMAGE.
 
-# Keywords expanded by CVS
-keywords="Author|CVSHeader|Date|Header|Id|Name|Locker|Log|RCSfile|Revision"
-keywords="$keywords|Source|State|OpenBSD"
+use File::Find;
+use strict;
+use warnings;
+use feature qw(say);
 
-# Find out all $PATCHORIG files and strip the name to what diff will use
-cd "$WRKDIST" && find . -type f -name '*'${PATCHORIG} | \
-    fgrep -v Oops.rej.orig | \
-    fgrep -v $DISTORIG | \
-    sed -e "s,^./\(.*\)\.${PATCHORIG#.*}\$,\1," | {
-while read file 
-do
-    if cmp -s "$WRKDIST/$file" "$WRKDIST/$file$PATCHORIG"; then
-    	echo 1>&2 "$file and $file$PATCHORIG are identical"
-    	continue
-    fi
-    if ! [ -f "$WRKDIST/$file" ]; then
-		echo 1>&2 "$file does not exist"
-		continue
-	fi
-    echo 1>&2 "Processing $file"
-    # look in patchdir for an existing patchfile matching this
-    mkdir -p $PATCHDIR
-    cd $PATCHDIR
-    for i in $PATCH_LIST
-    do
-	# Ignore non-files, or old backup
-	[ -f $i ] || continue
-	case $i in \
-	*.orig|*.rej|*~) ;;
-	*) # Patch found. Is this the one ?
-	    if grep -q "^--- $file$PATCHORIG" $i
-	    then
-		accounted="$accounted $i"
-		# found it, splice before diff part with diff
-		esc=`echo $file | sed -e 's,/,\\\\/,g'`
-		{ sed -e "/^--- $esc$PATCHORIG/,\$ d" <$i
-		    (cd "$WRKDIST" && diff -u -p -a ${DIFF_ARGS} "$file$PATCHORIG" "$file") } >$i.new
-		# did it change ? mark it as changed
-		if diff ${DIFF_ARGS} -u \
-			-I "^--- `echo $file$PATCHORIG | sed 's/[.+]/\\\\&/g'`	" \
-			-I "^\+\+\+ `echo $file | sed 's/[.+]/\\\\&/g'`	" $i $i.new 1>&2
-		then
-		    rm $i.new
-		else
-		    echo 1>&2 "Patch $i for $file updated"
-		    mv $i $i.orig
-		    mv $i.new $i
-		    edit="$edit $i"
-		fi
-		continue 2
-	    fi;;
-	esac
-    done
-    # Build a sensible name for the patch file
-    patchname=patch-`echo $file|sed -e s,[\ /.],_,g`
-    echo 1>&2 "No patch-* found for $file, creating $patchname"
-    { echo "$"OpenBSD$; \
-	(cd "$WRKDIST" && diff -u -p -a ${DIFF_ARGS} "$file$PATCHORIG" "$file") }>$patchname
-    edit="$edit $patchname"
-    accounted="$accounted $patchname"
-done
+# our "normal" output is STDERR
+open my $oldout, '>&STDOUT';
+open STDOUT, '>&STDERR'; 
 
-# Verify all patches accounted for
-if cd $PATCHDIR 2>/dev/null; then
-    for i in *
-    do
-	[ -f $i ] || continue
-	case $i in \
-	*.orig|*.rej|*~) ;;
-	*)
-	    if grep -q '^\\ No newline at end of file' $i; then
-		    echo 1>&2 "*** Patch $i needs manual intervention"
-	    fi
-	    for j in $accounted 
-	    do
-		if [ $j = $i ]
-		then
-		    continue 2
-		fi
-	    done
-	    echo 1>&2 "*** Patch $i not accounted for.";;
-	esac
-    done
-else
-    echo 1>&2 "No patch found"
-fi
+# grab env stuff
+my ($distorig, $patchorig, $wrkdist, $patchdir, $patch_list) = 
+    ($ENV{DISTORIG}, $ENV{PATCHORIG}, $ENV{WRKDIST}, $ENV{PATCHDIR},
+	 $ENV{PATCH_LIST});
 
-# Check for $Id: update-patches,v 1.2 2016/05/15 22:43:18 jca Exp $ and similar bugs in all those patch files.
-for i in $accounted
-do
-    if sed -e '1,/^---/ d' $i|egrep -q '\$('"$keywords"').*\$'
-    then
-	    echo 1>&2 "Problem with $i: CVS keyword found in patch"
-    fi
-done
-
-echo $edit
+my @diff_args;
+# XXX more processing maybe ?
+if (defined $ENV{DIFF_ARGS}) {
+	push(@diff_args, split(/\s+/, $ENV{DIFF_ARGS}));
 }
-exit 0
+
+my ($actual, $saved, $done);
+my @edit;
+
+sub create_patch
+{
+	my ($src, $dst, $stem) = @_;
+	say "Processing $stem";
+	open(my $file, "-|", "diff", "-u", "-p", "-a", @diff_args, "-L",
+		"$stem$patchorig", "-L", $stem, "--", $src, $dst) or die;
+	my @lines = <$file>;
+	close $file;
+	my $comment = "!OpenBSD!\n";
+	$comment =~ tr/!/$/;
+	return {stem => $stem, patch => \@lines, 
+		filename => patch_name($stem),
+		comment => [$comment] };
+}
+
+sub parse_existing_patch
+{
+	my $filename = shift;
+	open (my $f, '<', $filename) or die;
+	my (@comment, $src, @patch);
+	while (<$f>) {
+		if (m/^\-\-\-\s+(\S.*)\Q$patchorig\E/) {
+			$src = $1;
+			push(@patch, $_);
+			while (<$f>) {
+				push(@patch, $_);
+			}
+			last;
+		}
+		push(@comment, $_);
+	}
+	return {stem => $src, filename => $filename, 
+	    comment => \@comment, patch => \@patch};
+}
+
+sub write_patch
+{
+	my $p = shift;
+	if (-f $p->{filename}) {
+		rename $p->{filename}, $p->{filename}.".orig" or die;
+	}
+	open(my $f, '>', $p->{filename}) or die;
+	for my $l (@{$p->{comment}}) {
+		print $f $l;
+	}
+	for my $l (@{$p->{patch}}) {
+		print $f $l;
+	}
+	close $f or die;
+}
+
+sub patch_name
+{
+	my $arg = shift;
+	$arg =~ s/[\s\/\.]/_/g;
+	return "patch-$arg";
+}
+
+sub patches_differ
+{
+	my ($a, $b) = @_;
+	if (@{$a->{patch}} != @{$b->{patch}}) {
+		return 1;
+	}
+	my @m = @{$b->{patch}};
+	for my $l (@{$a->{patch}}) {
+		my $m = shift @m;
+		next if $l =~ m/^(\-\-\-|\+\+\+)\s+\Q$a->{stem}\E/;
+		return 1 if $l ne $m;
+	}
+	return 0;
+}
+
+# figure out which files to work with
+find(
+    sub {
+    	return if -l $_;
+	return unless -f _;
+	return unless m/\Q$patchorig\E$/;
+	return if $_ eq 'Oops.rej.orig';
+	return if m/\Q$distorig\E$/;
+	my $src = $File::Find::name;
+	my $dst = $src;
+	$dst =~ s/\Q$patchorig\E$//;
+	my $stem = $dst;
+	$stem =~ s/^\Q$wrkdist\E\///;
+	my $attach = '';
+	if (-f "$dst.beforesubst") {
+		$dst = "$dst.beforesubst";
+		$attach = '.beforesubst';
+	} elsif (!-f $dst) {
+		say "$stem not found";
+		return;
+	}
+	require File::Compare;
+	if (File::Compare::compare($src, $dst) == 0) {
+		say "Files $stem$patchorig and $stem$attach are identical";
+		return;
+	}
+	my $p = create_patch($src, $dst, $stem);
+	$actual->{$p->{stem}} = $p;
+    }, $ENV{WRKDIST});
+
+# do we have patches ?
+if (keys %$actual) {
+	unless (-d $patchdir) {
+		require File::Path;
+		File::Path::make_path($patchdir) or die;
+	}
+}
+
+if (chdir($patchdir)) {
+	# figure out which patch is which
+	for my $i (glob $patch_list) {
+		next unless -f $i;
+		next if $i =~ m/(\.orig|\.rej|\~)$/;
+		$done->{$i} = 1;
+		my $parsed = parse_existing_patch($i);
+		if (!defined $parsed->{stem}) {
+			say "*** File $i is not a proper patch";
+			$parsed->{stem} = $i;
+		}
+		$saved->{$parsed->{stem}} = $parsed;
+	}
+}
+
+# handle patches
+for my $k (sort keys %$actual) {
+	my $p = $actual->{"$k"};
+	# is there already a patch ?  we need to compare
+	if (exists $saved->{$k}) {
+		my $o = $saved->{$k};
+		if (patches_differ($o, $p)) {
+			$o->{patch} = $p->{patch};
+			write_patch($o);
+			system {"diff"} ('diff', '-u', @diff_args, '--', 
+			    $o->{filename}.".orig", $o->{filename});
+			say "Patch $o->{filename} for $o->{stem} updated";
+			push(@edit, $o->{filename});
+		}
+		$o->{accounted} = 1;
+	} else {
+		write_patch($p);
+		# register it as known so we don't reparse
+		$saved->{$p->{stem}} = $p;
+		$done->{$p->{filename}} = 1;
+		$p->{accounted} = 1;
+		push(@edit, $p->{filename});
+	}
+}
+
+# parse supplementary files
+if (chdir($patchdir)) {
+	for my $i (glob '*') {
+		next unless -f $i;
+		next if $i =~ m/(\.orig|\.rej|\~)$/;
+		next if $done->{$i};
+		my $parsed = parse_existing_patch($i);
+		$parsed->{stem} //= $i;
+		$saved->{$parsed->{stem}} = $parsed;
+	}
+}
+
+#for my $k (sort {$a->{filename} cmp $b->{filename}} keys %$old) {
+for my $k (sort keys %$saved) {
+	my $p = $saved->{"$k"};
+	if (!$p->{accounted}) {
+		say "*** $p->{filename} not accounted for";
+	}
+	for my $l (@{$p->{patch}}) {
+		if ($l =~ m/^\\ No newline at end of file/) {
+			say "*** $p->{filename} misses newline at end of file";
+		} elsif ($l =~ m/\$(
+			Author|CVSHeader|Date|Header|Id|Name|Locker|Log|
+			RCSFile|Revision|Source|State|OpenBSD
+		    )\b.*\$/x) {
+			say "*** $p->{filename} contains CVS keyword";
+		}
+	}
+}
+
+say $oldout join(' ', @edit);

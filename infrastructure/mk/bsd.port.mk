@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1341 2017/04/25 10:23:09 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1342 2017/04/29 14:49:38 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -2345,7 +2345,7 @@ update-patches:
 	@toedit=`WRKDIST=${WRKDIST} PATCHDIR=${PATCHDIR} \
 		PATCH_LIST='${PATCH_LIST}' DIFF_ARGS='${DIFF_ARGS}' \
 		DISTORIG=${DISTORIG} PATCHORIG=${PATCHORIG} \
-		${_SHSCRIPT}/update-patches`; \
+		${_PERLSCRIPT}/update-patches`; \
 	case $$toedit in "");; \
 	*) read i?'edit patches: '; \
 	cd ${PATCHDIR} && $${VISUAL:-$${EDITOR:-/usr/bin/vi}} $$toedit;; esac
