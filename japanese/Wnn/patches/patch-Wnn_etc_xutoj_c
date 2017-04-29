@@ -1,0 +1,21 @@
+$OpenBSD: patch-Wnn_etc_xutoj_c,v 1.1 2017/04/29 14:31:40 espie Exp $
+--- Wnn/etc/xutoj.c.orig
++++ Wnn/etc/xutoj.c
+@@ -53,6 +53,8 @@
+ #include "commonhd.h"
+ #include "config.h"
+ #include "wnn_os.h"
++#include <string.h>
++#include <stdlib.h>
+ 
+ #define ECNS_IS_UCNS 1	/* The trust CNS is CNS11643 based on ISO2022,
+ 			   but the CNS is binded on EUC */
+@@ -1726,7 +1728,7 @@ int siz;
+ {
+     register unsigned char *d = big5;
+     register w_char *s = icns;
+-    register i = siz;
++    register int i = siz;
+     short code_out;	/* Buffering one two-byte code	*/
+ 
+     if (d == NULL || s == NULL) return(-1);

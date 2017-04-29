@@ -1,7 +1,15 @@
-$OpenBSD: patch-Xwnmo_xjutil_jhlp_c,v 1.1 2013/12/08 16:42:24 espie Exp $
---- Xwnmo/xjutil/jhlp.c.orig	Sun Dec  8 17:39:32 2013
-+++ Xwnmo/xjutil/jhlp.c	Sun Dec  8 17:40:05 2013
-@@ -92,13 +92,6 @@ static char rcs_id[] = "$Id: jhlp.c,v 1.9 1992/09/25 0
+$OpenBSD: patch-Xwnmo_xjutil_jhlp_c,v 1.2 2017/04/29 14:31:40 espie Exp $
+--- Xwnmo/xjutil/jhlp.c.orig
++++ Xwnmo/xjutil/jhlp.c
+@@ -81,6 +81,7 @@ static char rcs_id[] = "$Id: jhlp.c,v 1.9 1992/09/25 0
+  */
+ #include <stdio.h>
+ #include <signal.h>
++#include <stdlib.h>
+ #include <pwd.h>
+ #include "commonhd.h"
+ #include "sdefine.h"
+@@ -92,13 +93,6 @@ static char rcs_id[] = "$Id: jhlp.c,v 1.9 1992/09/25 0
  
  struct passwd *getpwuid();
  
@@ -15,3 +23,12 @@ $OpenBSD: patch-Xwnmo_xjutil_jhlp_c,v 1.1 2013/12/08 16:42:24 espie Exp $
  extern char *optarg;
  extern int optind;
  
+@@ -173,7 +167,7 @@ save_signals()
+     signal(SIGCHLD, SIG_IGN);
+ }
+ 
+-void
++int
+ main(argc, argv)
+ int argc;
+ char **argv;

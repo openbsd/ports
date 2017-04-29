@@ -1,7 +1,16 @@
-$OpenBSD: patch-Wnn_jserver_de_c,v 1.2 2015/07/25 16:47:12 espie Exp $
---- Wnn/jserver/de.c.orig	Fri Aug 19 03:31:23 1994
-+++ Wnn/jserver/de.c	Fri Jul 24 10:33:32 2015
-@@ -61,10 +61,16 @@
+$OpenBSD: patch-Wnn_jserver_de_c,v 1.3 2017/04/29 14:31:40 espie Exp $
+--- Wnn/jserver/de.c.orig
++++ Wnn/jserver/de.c
+@@ -53,6 +53,8 @@
+ */
+ #include <stdio.h>
+ #include <signal.h>
++#include <string.h>
++#include <unistd.h>
+ #include "commonhd.h"
+ #include "config.h"
+ #include "jd_sock.h"
+@@ -61,10 +63,16 @@
  
  #include <ctype.h>
  #include <errno.h>
@@ -20,7 +29,15 @@ $OpenBSD: patch-Wnn_jserver_de_c,v 1.2 2015/07/25 16:47:12 espie Exp $
  #ifdef SYSVR2
  #include <sys/param.h>
  #ifndef SIGCHLD
-@@ -187,7 +193,7 @@ int get2_cur();
+@@ -81,6 +89,7 @@ extern int errno;		/* Pure BSD */
+ #include "msg.h"
+ 
+ #ifdef BSD42
++#undef NOFILE
+ #define NOFILE getdtablesize() 
+ #endif
+ 
+@@ -187,7 +196,7 @@ int get2_cur();
  char cmd_name[80];
  
  /* No arguments are used. Only options. */
@@ -29,7 +46,7 @@ $OpenBSD: patch-Wnn_jserver_de_c,v 1.2 2015/07/25 16:47:12 espie Exp $
  main(argc, argv)
  int argc;
  char **argv;
-@@ -264,7 +270,16 @@ char **argv;
+@@ -264,7 +273,16 @@ char **argv;
  	fclose(stdin);
  	fclose(stdout);
  	if(!noisy){
@@ -46,3 +63,12 @@ $OpenBSD: patch-Wnn_jserver_de_c,v 1.2 2015/07/25 16:47:12 espie Exp $
  	}
  
  #if defined(hpux) || defined(SOLARIS)
+@@ -462,7 +480,7 @@ demon_init()	/* initialize Demon */
+ 	    exit(1);
+ 	}
+ #ifdef SRAND48
+-	srand48(time((long *)0));
++	srand48(time(NULL));
+ #else
+ 	srand((int)time((long *)0));
+ #endif

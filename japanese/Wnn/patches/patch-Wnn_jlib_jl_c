@@ -1,11 +1,22 @@
-$OpenBSD: patch-Wnn_jlib_jl_c,v 1.1 2015/07/25 16:47:12 espie Exp $
---- Wnn/jlib/jl.c.orig	Fri Jul 24 10:40:18 2015
-+++ Wnn/jlib/jl.c	Fri Jul 24 10:40:33 2015
-@@ -55,6 +55,7 @@
+$OpenBSD: patch-Wnn_jlib_jl_c,v 1.2 2017/04/29 14:31:40 espie Exp $
+--- Wnn/jlib/jl.c.orig
++++ Wnn/jlib/jl.c
+@@ -55,13 +55,12 @@
  #include "commonhd.h"
  #include "config.h"
  #include <stdio.h>
 +#include <stdlib.h>
++#include <string.h>
++#include <time.h>
  #include <sys/types.h>
- #ifdef SYSVR2
- #   include <string.h>
+-#ifdef SYSVR2
+-#   include <string.h>
+-#endif
+-#ifdef BSD42
+-#   include <strings.h>
+-#endif
++#include <unistd.h>
++#include <sys/stat.h>
+ #include <sys/file.h>
+ #include <ctype.h>
+ #include <pwd.h>

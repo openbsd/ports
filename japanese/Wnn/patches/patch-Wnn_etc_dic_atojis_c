@@ -1,0 +1,11 @@
+$OpenBSD: patch-Wnn_etc_dic_atojis_c,v 1.1 2017/04/29 14:31:40 espie Exp $
+--- Wnn/etc/dic_atojis.c.orig
++++ Wnn/etc/dic_atojis.c
+@@ -53,6 +53,7 @@
+ #include "jdata.h"
+ #include "wnn_os.h"
+ #include "wnn_string.h"
++#include <string.h>
+ 
+ static int	keta_4;
+ 

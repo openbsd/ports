@@ -1,0 +1,12 @@
+$OpenBSD: patch-Wnn_uum_jutil_c,v 1.1 2017/04/29 14:31:40 espie Exp $
+--- Wnn/uum/jutil.c.orig
++++ Wnn/uum/jutil.c
+@@ -52,6 +52,8 @@
+ /*	活辞書とはカレントユーザ辞書のことだよ	*/
+ 
+ #include <stdio.h>
++#include <string.h>
++#include <stdlib.h>
+ #include "commonhd.h"
+ #include "jslib.h"
+ #include "jllib.h"

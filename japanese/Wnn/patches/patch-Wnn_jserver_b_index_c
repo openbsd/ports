@@ -1,7 +1,15 @@
-$OpenBSD: patch-Wnn_jserver_b_index_c,v 1.1 2000/04/16 21:53:31 espie Exp $
---- Wnn/jserver/b_index.c.orig	Tue Jun 28 04:06:49 1994
-+++ Wnn/jserver/b_index.c	Thu Apr 13 20:41:39 2000
-@@ -99,8 +99,8 @@ struct JT  *jt;
+$OpenBSD: patch-Wnn_jserver_b_index_c,v 1.2 2017/04/29 14:31:40 espie Exp $
+--- Wnn/jserver/b_index.c.orig
++++ Wnn/jserver/b_index.c
+@@ -57,6 +57,7 @@
+ /**  cWnn  Version 1.1	 **/
+ 
+ #include <stdio.h>
++#include <stdlib.h>
+ #include "commonhd.h"
+ #include "de_header.h"
+ #include "jdata.h"
+@@ -99,8 +100,8 @@ struct JT  *jt;
  
  	/** For each tuple in ri1[0] create b_nodes */
  	for (i=0; i<jt->maxri1[0]; i++){	
@@ -12,7 +20,7 @@ $OpenBSD: patch-Wnn_jserver_b_index_c,v 1.1 2000/04/16 21:53:31 espie Exp $
  		b_index_add(jt, yomi, serial);
  	}
  	return(b_cnt);
-@@ -133,7 +133,7 @@ struct	JT  *jt;
+@@ -133,7 +134,7 @@ struct	JT  *jt;
  int   serial;
  {
  	w_char *yomi;
@@ -21,7 +29,7 @@ $OpenBSD: patch-Wnn_jserver_b_index_c,v 1.1 2000/04/16 21:53:31 espie Exp $
  	delete_b_node(jt, yomi, 0, 0 );
  }
  
-@@ -160,7 +160,7 @@ int	p_node;
+@@ -160,7 +161,7 @@ int	p_node;
  			tmp_node = jt->bind[tmp_node].pter_son;
  		}
  		yo_kanji = KANJI_str( 
@@ -30,7 +38,7 @@ $OpenBSD: patch-Wnn_jserver_b_index_c,v 1.1 2000/04/16 21:53:31 espie Exp $
  		if  ( yomi[level] > yo_kanji[level] ) {
  			buf_node1 = buf_node2;
  			buf_node2 = jt->bind[buf_node2].pter_next ;
-@@ -216,7 +216,7 @@ int	p_node;			/* cureent b_node */
+@@ -216,7 +217,7 @@ int	p_node;			/* cureent b_node */
  			tmp_node = jt->bind[tmp_node].pter_son;
  		}
  		yo_kanji = KANJI_str( 

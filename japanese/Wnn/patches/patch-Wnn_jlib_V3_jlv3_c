@@ -1,0 +1,36 @@
+$OpenBSD: patch-Wnn_jlib_V3_jlv3_c,v 1.1 2017/04/29 14:31:40 espie Exp $
+--- Wnn/jlib.V3/jlv3.c.orig
++++ Wnn/jlib.V3/jlv3.c
+@@ -74,11 +74,9 @@ extern	Variables
+ #include <ctype.h>
+ #include <fcntl.h>
+ #include <pwd.h>
+-#ifdef	SYSVR2
+-#include <malloc.h>
+-#else
+-extern char *malloc();
+-#endif
++#include <stdlib.h>
++#include <unistd.h>
++#include <string.h>
+ 
+ #include "jllib.h"
+ #include "jlib.h"
+@@ -144,6 +142,7 @@ getlogname()
+  */
+ 
+ /**	jd_close	**/
++int
+ jd_close()
+ {
+     if (jlib_work_area) {
+@@ -581,8 +580,7 @@ int *bunsetsu_su,*par1,*par2,*par3,*par4,*par5;
+     *par3=para.p3;	/* 自立語長 */
+     *par4=para.p4;	/* 今使ったよビット */
+     *par5=para.p5;	/* 辞書 */
+-    if (ret < 0);
+-	return (ret);
++    return (ret);
+ }
+ 
+ 

@@ -1,0 +1,19 @@
+$OpenBSD: patch-Wnn_etc_yincoding_c,v 1.1 2017/04/29 14:31:40 espie Exp $
+--- Wnn/etc/yincoding.c.orig
++++ Wnn/etc/yincoding.c
+@@ -58,14 +58,9 @@
+ 
+ #include  <stdio.h>
+ #include  <ctype.h>
++#include <string.h>
+ #include  "commonhd.h"
+ #ifdef CHINESE
+-#ifdef SYSVR2
+-#include  <string.h>
+-#endif
+-#ifdef BSD42
+-#include  <strings.h>
+-#endif
+ #include  "cplib.h"
+ #include  "rk_spclval.h"
+ #include  "jh.h"

@@ -1,0 +1,22 @@
+$OpenBSD: patch-Wnn_jutil_wnnkill_c,v 1.1 2017/04/29 14:31:40 espie Exp $
+--- Wnn/jutil/wnnkill.c.orig
++++ Wnn/jutil/wnnkill.c
+@@ -49,6 +49,9 @@ static char *rcs_id = "$Id: wnnkill.c,v 1.11 1994/06/2
+ /*	Version 4.0
+  */
+ #include <stdio.h>
++#include <string.h>
++#include <unistd.h>
++#include <stdlib.h>
+ #include "jllib.h"
+ #include "jslib.h"
+ #include "jd_sock.h"
+@@ -75,7 +78,7 @@ int ocode = (TTY_CCODE + 4);
+ int ocode = TTY_HCODE;
+ #endif
+ 
+-void
++int
+ main(argc, argv)
+ int argc;
+ char **argv;

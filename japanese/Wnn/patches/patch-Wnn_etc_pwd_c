@@ -1,7 +1,11 @@
---- Wnn/etc/pwd.c.orig	Tue Sep 22 06:29:26 1992
-+++ Wnn/etc/pwd.c	Fri Jul 24 10:26:59 2015
-@@ -59,34 +59,16 @@
+--- Wnn/etc/pwd.c.orig
++++ Wnn/etc/pwd.c
+@@ -57,36 +57,20 @@
+ #include "jslib.h"
+ #include "wnn_os.h"
  #endif
++#include <unistd.h>
++#include <string.h>
  
  extern char *crypt();
 +#define salt "$2a$08$bonjourcommentcavatoie"
@@ -39,7 +43,7 @@
  }
  
  #ifdef JS
-@@ -97,5 +79,5 @@ check_pwd(src, encd)
+@@ -97,5 +81,5 @@ check_pwd(src, encd)
  char *src, *encd;
  {
      if(strcmp(encd, "") == 0) return(1);  /* No passwd */

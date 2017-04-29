@@ -1,6 +1,6 @@
-$OpenBSD: patch-Wnn_uum_wnnrc_op_c,v 1.2 2015/07/25 16:47:12 espie Exp $
---- Wnn/uum/wnnrc_op.c.orig	Fri Jul 24 10:31:15 2015
-+++ Wnn/uum/wnnrc_op.c	Fri Jul 24 10:44:10 2015
+$OpenBSD: patch-Wnn_uum_wnnrc_op_c,v 1.3 2017/04/29 14:31:40 espie Exp $
+--- Wnn/uum/wnnrc_op.c.orig
++++ Wnn/uum/wnnrc_op.c
 @@ -50,7 +50,8 @@
   */
  /* uumrc operations */
@@ -11,7 +11,20 @@ $OpenBSD: patch-Wnn_uum_wnnrc_op_c,v 1.2 2015/07/25 16:47:12 espie Exp $
  #include <ctype.h>
  #include <sys/errno.h>
  #include <pwd.h>
-@@ -148,7 +149,7 @@ char	*s;
+@@ -61,12 +62,7 @@
+ #include "rk_spclval.h"
+ #include "sdefine.h"
+ #include "sheader.h"
+-
+-#ifdef BSD42
+-#include <strings.h>
+-#else
+ #include <string.h>
+-#endif
+ 
+ extern char     *getenv();
+ extern FILE	*fopen();
+@@ -148,7 +144,7 @@ char	*s;
  #endif /* defined(SYSVR2) && !defined(AIXV3) */
  
      if(*s != '~' && *s != '@') {
@@ -20,7 +33,7 @@ $OpenBSD: patch-Wnn_uum_wnnrc_op_c,v 1.2 2015/07/25 16:47:12 espie Exp $
  	*s = '\0';
  	noerr = 1;
      }else{
-@@ -160,7 +161,7 @@ char	*s;
+@@ -160,7 +156,7 @@ char	*s;
  #else
  	if(NULL != (p = strchr(++s1, '/'))){
  #endif
@@ -29,7 +42,7 @@ $OpenBSD: patch-Wnn_uum_wnnrc_op_c,v 1.2 2015/07/25 16:47:12 espie Exp $
  		*p = '\0';
  	} else *tmp = '\0';
   /* ここまでは準備。s…先頭、s1…２文字目、p…最初の'/'のあったところ
-@@ -581,8 +582,8 @@ open_uumrc()
+@@ -581,8 +577,8 @@ open_uumrc()
      }
      strcpy(buf, LIBDIR);
      strcat(buf, "/");

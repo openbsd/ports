@@ -1,7 +1,16 @@
-$OpenBSD: patch-Wnn_uum_key_bind_c,v 1.1 2000/04/16 21:53:31 espie Exp $
---- Wnn/uum/key_bind.c.orig	Sat Apr 15 21:35:46 2000
-+++ Wnn/uum/key_bind.c	Sat Apr 15 21:36:19 2000
-@@ -265,11 +265,11 @@ init_key_table()
+$OpenBSD: patch-Wnn_uum_key_bind_c,v 1.2 2017/04/29 14:31:40 espie Exp $
+--- Wnn/uum/key_bind.c.orig
++++ Wnn/uum/key_bind.c
+@@ -62,6 +62,8 @@
+ */    
+ 
+ #include <stdio.h>
++#include <string.h>
++#include <stdlib.h>
+ #include "commonhd.h"
+ #include "config.h"
+ #include "sdefine.h"
+@@ -265,11 +267,11 @@ init_key_table()
  
     /* uumrcファイルから。*/
   if (uumkey_name_in_uumrc[0] != '\0') {

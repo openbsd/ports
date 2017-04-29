@@ -1,0 +1,11 @@
+$OpenBSD: patch-Wnn_jserver_sisheng_c,v 1.1 2017/04/29 14:31:40 espie Exp $
+--- Wnn/jserver/sisheng.c.orig
++++ Wnn/jserver/sisheng.c
+@@ -59,6 +59,7 @@
+ #ifdef CHINESE
+ 
+ #include <stdio.h>
++#include <string.h>
+ #include "commonhd.h"
+ #include "cplib.h"
+ #include "de_header.h"

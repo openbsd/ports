@@ -1,0 +1,57 @@
+$OpenBSD: patch-cWnn_jserver_Imakefile,v 1.1 2017/04/29 14:31:40 espie Exp $
+--- cWnn/jserver/Imakefile.orig
++++ cWnn/jserver/Imakefile
+@@ -32,7 +32,6 @@ SRC1= de_vars.c \
+ 	b_index.c \
+ 	jishosub.c \
+ 	jmt0.c \
+-	malloc.c \
+ 	kai_area.c \
+ 	mknode0.c \
+ 	mknode1.c \
+@@ -70,7 +69,6 @@ OBJ1= de_vars.o \
+ 	b_index.o \
+ 	jishosub.o \
+ 	jmt0.o \
+-	malloc.o \
+ 	kai_area.o \
+ 	mknode0.o \
+ 	mknode1.o \
+@@ -93,8 +91,6 @@ OBJ1= de_vars.o \
+ 	sisheng.o \
+ 	w_string.o
+ 
+-SRC2= $(CWNNJLIBSRC)/getopt.c
+-OBJ2= getopt.o
+ SRC3= $(CWNNJLIBSRC)/wnnerrmsg.c
+ OBJ3= wnnerrmsg.o 
+ 
+@@ -125,10 +121,10 @@ TOBJ0= de_t.o
+ TSRCGETHINSI= gethinsi_t.c
+ TOBJGETHINSI= gethinsi_t.o
+ TSRCS= $(TSRC0) $(TSRCGETHINSI)
+-SRCS= $(SRC0) $(SRC1) $(SRC2) $(SRC3) $(SRC4) $(SRC5) $(SRC6) $(SRC7) \
++SRCS= $(SRC0) $(SRC1) $(SRC3) $(SRC4) $(SRC5) $(SRC6) $(SRC7) \
+       $(SRCGETHINSI) $(SRC9) $(SRC10) $(SRC11) $(SRC12) $(SRC13) $(SRCS14) \
+       $(TSRCS)
+-OBJS= $(OBJ0) $(OBJ1) $(OBJ2) $(OBJ3) $(OBJ4) $(OBJ5) $(OBJ6) $(OBJ7) \
++OBJS= $(OBJ0) $(OBJ1) $(OBJ3) $(OBJ4) $(OBJ5) $(OBJ6) $(OBJ7) \
+       $(OBJGETHINSI) $(OBJ9) $(OBJ10) $(OBJ11) $(OBJ12) $(OBJ13) $(OBJ14)
+ TOBJS= $(TOBJ0) $(OBJ1) $(OBJ2) $(OBJ3) $(OBJ4) $(OBJ5) $(OBJ6) $(OBJ7) \
+       $(TOBJGETHINSI) $(OBJ9) $(OBJ10) $(OBJ11) $(OBJ12) $(OBJ13) $(OBJ14)
+@@ -167,7 +163,6 @@ LinkSourceFile(readfile.c,$(WNNJSERVERSRC))
+ LinkSourceFile(b_index.c,$(WNNJSERVERSRC))
+ LinkSourceFile(jishosub.c,$(WNNJSERVERSRC))
+ LinkSourceFile(jmt0.c,$(WNNJSERVERSRC))
+-LinkSourceFile(malloc.c,$(WNNJSERVERSRC))
+ LinkSourceFile(kai_area.c,$(WNNJSERVERSRC))
+ LinkSourceFile(mknode0.c,$(WNNJSERVERSRC))
+ LinkSourceFile(mknode1.c,$(WNNJSERVERSRC))
+@@ -191,7 +186,6 @@ LinkSourceFile(sisheng.c,$(WNNJSERVERSRC))
+ LinkSourceFile(w_string.c,$(WNNJSERVERSRC))
+ 
+ WnnSpecialObjectRule($(OBJ0),$(SRC0),.,$(SERVERINITDEF) $(FORKDEF))
+-WnnSpecialObjectRule($(OBJ2),$(SRC2),$(CWNNJLIBSRC),)
+ WnnSpecialObjectRule($(OBJ3),$(SRC3),$(CWNNJLIBSRC),)
+ WnnSpecialObjectRule($(OBJ4),$(SRC4),$(CWNNETCSRC),)
+ WnnSpecialObjectRule($(OBJ5),$(SRC5),$(CWNNETCSRC),)

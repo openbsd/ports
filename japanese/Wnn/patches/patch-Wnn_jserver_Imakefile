@@ -1,0 +1,48 @@
+$OpenBSD: patch-Wnn_jserver_Imakefile,v 1.1 2017/04/29 14:31:40 espie Exp $
+--- Wnn/jserver/Imakefile.orig
++++ Wnn/jserver/Imakefile
+@@ -31,7 +31,6 @@ SRC1= de_vars.c \
+ 	b_index.c \
+ 	jishosub.c \
+ 	jmt0.c \
+-	malloc.c \
+ 	kai_area.c \
+ 	mknode0.c \
+ 	mknode1.c \
+@@ -70,7 +69,6 @@ OBJ1= de_vars.o \
+ 	b_index.o \
+ 	jishosub.o \
+ 	jmt0.o \
+-	malloc.o \
+ 	kai_area.o \
+ 	mknode0.o \
+ 	mknode1.o \
+@@ -93,8 +91,6 @@ OBJ1= de_vars.o \
+ 	sisheng.o \
+ 	w_string.o
+ 
+-SRC2= $(WNNJLIBSRC)/getopt.c
+-OBJ2= getopt.o
+ SRC3= $(WNNJLIBSRC)/wnnerrmsg.c
+ OBJ3= wnnerrmsg.o 
+ 
+@@ -120,9 +116,9 @@ SRC13= $(WNNETCSRC)/msg.c
+ OBJ13= msg.o
+ SRC14= $(WNNETCSRC)/xutoj.c
+ OBJ14= xutoj.o
+-SRCS= $(SRC0) $(SRC1) $(SRC2) $(SRC3) $(SRC4) $(SRC5) $(SRC6) $(SRC7) \
++SRCS= $(SRC0) $(SRC1) $(SRC3) $(SRC4) $(SRC5) $(SRC6) $(SRC7) \
+       $(SRCGETHINSI) $(SRC9) $(SRC10) $(SRC11) $(SRC12) $(SRC13) $(SRC14)
+-OBJS= $(OBJ0) $(OBJ1) $(OBJ2) $(OBJ3) $(OBJ4) $(OBJ5) $(OBJ6) $(OBJ7) \
++OBJS= $(OBJ0) $(OBJ1) $(OBJ3) $(OBJ4) $(OBJ5) $(OBJ6) $(OBJ7) \
+       $(OBJGETHINSI) $(OBJ9) $(OBJ10) $(OBJ11) $(OBJ12) $(OBJ13) $(OBJ14)
+ 
+ AllTarget(jserver)
+@@ -133,7 +129,6 @@ instserver:: install
+ InstallProgramWithFlags(jserver,$(JWNNBINDIR),$(LOCAL_INSTFLAGS))
+ 
+ WnnSpecialObjectRule($(OBJ0),$(SRC0),.,$(SERVERINITDEF) $(FORKDEF) $(SOLINGERDEFS))
+-WnnSpecialObjectRule($(OBJ2),$(SRC2),$(WNNJLIBSRC),)
+ WnnSpecialObjectRule($(OBJ3),$(SRC3),$(WNNJLIBSRC),)
+ WnnSpecialObjectRule($(OBJ4),$(SRC4),$(WNNETCSRC),)
+ WnnSpecialObjectRule($(OBJ5),$(SRC5),$(WNNETCSRC),)

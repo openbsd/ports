@@ -1,0 +1,12 @@
+$OpenBSD: patch-Xwnmo_xwnmo_ichiran_c,v 1.1 2017/04/29 14:31:40 espie Exp $
+--- Xwnmo/xwnmo/ichiran.c.orig
++++ Xwnmo/xwnmo/ichiran.c
+@@ -1909,7 +1909,7 @@ insert_space_in_ichi_buf(p,  space_len)
+ int p, space_len;
+ {
+     register Ichiran *ichi = cur_root->ichi;
+-    register i, j, len, save_len, max_len = 0;
++    register int i, j, len, save_len, max_len = 0;
+     register unsigned char *s;
+     char buf[MAX_ICHI_COLUMNS];
+ 

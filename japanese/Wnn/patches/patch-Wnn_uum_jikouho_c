@@ -1,0 +1,11 @@
+$OpenBSD: patch-Wnn_uum_jikouho_c,v 1.1 2017/04/29 14:31:40 espie Exp $
+--- Wnn/uum/jikouho.c.orig
++++ Wnn/uum/jikouho.c
+@@ -49,6 +49,7 @@
+ /*	Version 4.0
+  */
+ #include <stdio.h>
++#include <string.h>
+ #include "jllib.h"
+ #include "commonhd.h"
+ #include "sdefine.h"

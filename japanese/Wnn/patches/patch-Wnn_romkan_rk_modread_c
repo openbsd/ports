@@ -1,0 +1,11 @@
+$OpenBSD: patch-Wnn_romkan_rk_modread_c,v 1.1 2017/04/29 14:31:40 espie Exp $
+--- Wnn/romkan/rk_modread.c.orig
++++ Wnn/romkan/rk_modread.c
+@@ -62,6 +62,7 @@
+     サーチパスに、Wnnのインクルードファイルのありかを設定しておくこと。*/
+ #endif
+ #include <pwd.h>
++#include <unistd.h>
+ 
+ #define Terminator 0 /* intの列（naibu[]）の終止コード */
+ 

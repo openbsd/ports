@@ -1,0 +1,14 @@
+$OpenBSD: patch-Xwnmo_xjutil_xselectele_c,v 1.1 2017/04/29 14:31:40 espie Exp $
+--- Xwnmo/xjutil/xselectele.c.orig
++++ Xwnmo/xjutil/xselectele.c
+@@ -104,8 +104,8 @@
+ 
+ static int cc; /* ima no gamen */
+ static int kosuu; /* kosuu of elements */
+-extern hilited_item;
+-extern max_line;
++extern int hilited_item;
++extern int max_line;
+ 
+ int
+ xw_select_one_element_call(c,kosuu1,init,title)

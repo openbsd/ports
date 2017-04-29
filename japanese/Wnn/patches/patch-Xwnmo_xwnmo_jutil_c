@@ -1,0 +1,12 @@
+$OpenBSD: patch-Xwnmo_xwnmo_jutil_c,v 1.1 2017/04/29 14:31:40 espie Exp $
+--- Xwnmo/xwnmo/jutil.c.orig
++++ Xwnmo/xwnmo/jutil.c
+@@ -117,7 +117,7 @@ int in;
+     static int k;
+     static char *buf[sizeof(message1) / sizeof(msg_fun)];
+     static WnnClientRec *c_c_sv = 0;
+-    static jutil_step = 0;
++    static int jutil_step = 0;
+     static char *lang;
+ 
+     if (c_c_sv != 0 && c_c != c_c_sv) {

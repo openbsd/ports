@@ -1,0 +1,20 @@
+$OpenBSD: patch-Wnn_jserver_initjserv_c,v 1.1 2017/04/29 14:31:40 espie Exp $
+--- Wnn/jserver/initjserv.c.orig
++++ Wnn/jserver/initjserv.c
+@@ -50,6 +50,7 @@
+  */
+ #include <stdio.h>
+ #include <ctype.h>
++#include <string.h>
+ #include "commonhd.h"
+ #include "de_header.h"
+ #include "wnn_malloc.h"
+@@ -358,7 +359,7 @@ register char *st;
+ 	return(num);
+     case 'd':
+     case 'D':
+-	return (atoi(*(st+1)));
++	return (atoi(st+1));
+     case 'o':
+     case 'O':
+ 	sscanf(st +1, "%o",&num);

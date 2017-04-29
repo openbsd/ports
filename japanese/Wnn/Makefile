@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.78 2016/03/11 16:06:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.79 2017/04/29 14:31:40 espie Exp $
 
 COMMENT-main = 		Japanese input method
 COMMENT-dict =		dictionaries for Japanese Wnn
@@ -16,19 +16,19 @@ CATEGORIES =	japanese
 MULTI_PACKAGES =	-main -dict -zh -zhdict -ko -kodict -xwnmo -data
 
 PKGNAME-main =		ja-Wnn-4.2
-REVISION-main =		13
+REVISION-main =		14
 PKGNAME-dict =		ja-Wnndict-4.2
 REVISION-dict =		0
 PKGNAME-zh =		zh-Wnn-4.2
-REVISION-zh =		7
+REVISION-zh =		8
 PKGNAME-zhdict =	zh-Wnndict-4.2
 REVISION-zhdict =	0
 PKGNAME-ko =		ko-Wnn-4.2
-REVISION-ko =		7
+REVISION-ko =		8
 PKGNAME-kodict =	ko-Wnndict-4.2
 REVISION-kodict =	0
 PKGNAME-xwnmo =		Wnn-xwnmo-4.2
-REVISION-xwnmo =	8
+REVISION-xwnmo =	9
 PKGNAME-data =		Wnn-data-4.2
 
 WNNDICBASE =	/var

@@ -1,0 +1,28 @@
+$OpenBSD: patch-cWnn_jlib_Imakefile,v 1.1 2017/04/29 14:31:40 espie Exp $
+--- cWnn/jlib/Imakefile.orig
++++ cWnn/jlib/Imakefile
+@@ -20,8 +20,6 @@ SRC1= js.c \
+ OBJ1= js.o \
+ 	wnnerrmsg.o \
+ 	jl.o
+-SRC2= getopt.c
+-OBJ2= getopt.o
+ SRC3= $(CWNNETCSRC)/msg.c
+ OBJ3= msg.o
+ SRC4= $(CWNNETCSRC)/yincoding.c
+@@ -62,15 +60,10 @@ LinkSourceFile(js.c,$(WNNJLIBSRC))
+ LinkSourceFile(kankana.c,$(WNNJLIBSRC))
+ LinkSourceFile(wnnerrmsg.c,$(WNNJLIBSRC))
+ 
+-NormalLibraryTarget(getopt,$(OBJ2))
+-LintLibraryTarget(getopt,$(SRC2))
+-
+ js.o : js.c \
+ 	$(CWNNETCSRC)/bdic.c \
+ 	$(CWNNETCSRC)/pwd.c \
+ 	$(CWNNETCSRC)/gethinsi.c
+-
+-NormalLintTarget($(SRC2))
+ 
+ SingleProgramTarget(kankana,kankana.o,$(CWNNJLIB),)
+ 

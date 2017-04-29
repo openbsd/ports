@@ -1,7 +1,17 @@
-$OpenBSD: patch-Wnn_uum_termio_c,v 1.2 2000/04/20 22:59:22 espie Exp $
---- Wnn/uum/termio.c.orig	Thu Jul  1 01:33:10 1993
-+++ Wnn/uum/termio.c	Sun Apr 16 14:02:18 2000
-@@ -93,7 +93,7 @@ openTermData()
+$OpenBSD: patch-Wnn_uum_termio_c,v 1.3 2017/04/29 14:31:40 espie Exp $
+--- Wnn/uum/termio.c.orig
++++ Wnn/uum/termio.c
+@@ -59,7 +59,8 @@
+ #ifdef putchar
+ #undef putchar
+ #endif
+-extern int putchar();
++#include <string.h>
++#include <stdlib.h>
+ 
+ extern char Term_Name[];
+ extern char    *Term_UnderScoreStart;
+@@ -93,7 +94,7 @@ openTermData()
          fprintf(stderr, "Cannot get terminal name.");
          return(-1);
      }
@@ -10,7 +20,7 @@ $OpenBSD: patch-Wnn_uum_termio_c,v 1.2 2000/04/20 22:59:22 espie Exp $
  
      if ((strlen(Term_Name) > 2) && (strcmp(Term_Name + (strlen(Term_Name) - 2),"-j") == 0)) {
  	fprintf(stderr, MSG_GET(4));
-@@ -102,11 +102,13 @@ openTermData()
+@@ -102,11 +103,13 @@ openTermData()
  	*/
  	return(-1);
      }
@@ -24,7 +34,7 @@ $OpenBSD: patch-Wnn_uum_termio_c,v 1.2 2000/04/20 22:59:22 espie Exp $
  #if defined(uniosu)
      if(jterm < 2) {	/* kanji terminal */
          fprintf(stderr, "Not kanji terminal. Goodbye !\n");
-@@ -119,10 +121,12 @@ openTermData()
+@@ -119,13 +122,15 @@ openTermData()
           fprintf(stderr, "Your terminal is not strong enough. Goodbye !\n");
           return(-1);
      }
@@ -36,4 +46,8 @@ $OpenBSD: patch-Wnn_uum_termio_c,v 1.2 2000/04/20 22:59:22 espie Exp $
 +#endif
  
      sprintf(lcode,"%d", lines - conv_lines);
-     setenv("LINES", lcode);
+-    setenv("LINES", lcode);
++    setenv("LINES", lcode, 1);
+ 
+     if(cursor_normal && cursor_invisible){
+ 	cursor_invisible_fun = 1;

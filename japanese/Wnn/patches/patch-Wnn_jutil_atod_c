@@ -1,16 +1,17 @@
-$OpenBSD: patch-Wnn_jutil_atod_c,v 1.1 2015/07/25 16:47:12 espie Exp $
---- Wnn/jutil/atod.c.orig	Tue Jun 28 04:07:27 1994
-+++ Wnn/jutil/atod.c	Fri Jul 24 18:35:08 2015
-@@ -54,6 +54,8 @@ UJIS ·Á¼°¤ò¡¢¼­½ñÅÐÏ¿²ÄÇ½·Á¼°, µÚ¤Ó¸ÇÄê·Á¼°¼­½ñ¤ËÊÑ´¹¤
+$OpenBSD: patch-Wnn_jutil_atod_c,v 1.2 2017/04/29 14:31:40 espie Exp $
+--- Wnn/jutil/atod.c.orig
++++ Wnn/jutil/atod.c
+@@ -54,6 +54,9 @@ UJIS ·Á¼°¤ò¡¢¼­½ñÅÐÏ¿²ÄÇ½·Á¼°, µÚ¤Ó¸ÇÄê·Á¼°¼­½ñ¤ËÊÑ´¹¤
  
  #include <stdio.h>
  #include <ctype.h>
 +#include <string.h>
 +#include <stdlib.h>
++#include <unistd.h>
  #include "commonhd.h"
  #include "config.h"
  #include "jslib.h"
-@@ -113,7 +115,6 @@ struct uind1 *tary;		/* index 1 */
+@@ -113,7 +116,6 @@ struct uind1 *tary;		/* index 1 */
  int tnum = 0;
  struct uind2 *uhopter;
  
@@ -18,3 +19,12 @@ $OpenBSD: patch-Wnn_jutil_atod_c,v 1.1 2015/07/25 16:47:12 espie Exp $
  char *hinsi_file_name = NULL;
  
  
+@@ -219,7 +221,7 @@ extern int sort_func_sdic();
+ extern int sort_func_je();
+ FILE *ofpter , *fopen();
+ 
+-void
++int
+ main(argc,argv)
+      int argc ;
+      char **argv;
