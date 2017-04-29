@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2016/03/20 19:56:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2017/04/29 12:52:31 benoit Exp $
 
 COMMENT=		YAML Test Shell
 
-DISTNAME=		YAML-Shell-0.70
+DISTNAME =		YAML-Shell-0.71
 CATEGORIES=		devel
 
 # perl
