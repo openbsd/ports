@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2017/01/03 19:19:49 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2017/04/29 21:22:44 benoit Exp $
 
 COMMENT =	py.test xdist plugin for distributed testing
 
 DISTNAME =		pytest-xdist-${MODPY_EGG_VERSION}
-MODPY_EGG_VERSION =	1.15.0
+MODPY_EGG_VERSION =	1.16.0
 MODPY_PI =		Yes
 PKGNAME =		py-test-xdist-${MODPY_EGG_VERSION}
-REVISION =		0
 
 CATEGORIES =	devel
 
