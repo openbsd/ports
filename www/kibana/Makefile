@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2017/04/15 17:23:06 sebastia Exp $
+# $OpenBSD: Makefile,v 1.11 2017/04/29 14:33:23 jasper Exp $
 
 COMMENT=	browser based analytics/search interface to ElasticSearch
 
-V=		5.3.0
+V=		5.3.1
 PKGNAME=	kibana-${V}
 DISTNAME=	${PKGNAME}-darwin-x86_64
 
