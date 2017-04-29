@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/04/11 13:07:55 ian Exp $
+# $OpenBSD: Makefile,v 1.2 2017/04/29 09:53:34 benoit Exp $
 
 COMMENT =	use mmap to map in a file as a Perl variable
 
-DISTNAME =	Sys-Mmap-0.17
+DISTNAME =	Sys-Mmap-0.19
 
 CATEGORIES =	devel
 
