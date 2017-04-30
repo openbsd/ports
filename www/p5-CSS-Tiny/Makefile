@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2016/03/20 19:57:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2017/04/30 16:26:21 benoit Exp $
 
 COMMENT=	handle CSS with little overhead
 
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME=	CSS-Tiny-1.19
-REVISION=	0
+DISTNAME =	CSS-Tiny-1.20
 CATEGORIES=	www
 
 # Perl
