@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2015/04/12 11:27:03 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.8 2017/04/30 15:11:10 benoit Exp $
 bin/tpage
 bin/ttree
 ${P5ARCH}/
@@ -63,7 +63,7 @@ ${P5ARCH}/Template/Stash.pm
 ${P5ARCH}/Template/Stash/Context.pm
 ${P5ARCH}/Template/Stash/XS.pm
 ${P5ARCH}/Template/Test.pm
-${P5ARCH}/Template/Toolkit.pod
+${P5ARCH}/Template/Toolkit.pm
 ${P5ARCH}/Template/Tools/
 ${P5ARCH}/Template/Tools.pod
 ${P5ARCH}/Template/Tools/tpage.pod

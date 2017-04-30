@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2016/03/20 19:57:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2017/04/30 15:11:10 benoit Exp $
 
 COMMENT=		template processing system
 
 MODULES=		cpan
-VERSION=		2.26
+VERSION =		2.27
 DISTNAME=		Template-Toolkit-${VERSION}
 PKGNAME=		p5-Template-${VERSION}
 CATEGORIES=		textproc
