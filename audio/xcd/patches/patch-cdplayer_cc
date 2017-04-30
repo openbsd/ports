@@ -1,12 +1,59 @@
-$OpenBSD: patch-cdplayer_cc,v 1.2 2011/10/31 16:55:41 stu Exp $
---- cdplayer.cc.orig	Tue Feb  2 18:28:24 1999
-+++ cdplayer.cc	Sun Oct 30 13:07:48 2011
-@@ -29,7 +29,7 @@ class button { (private)
+$OpenBSD: patch-cdplayer_cc,v 1.3 2017/04/30 10:11:44 espie Exp $
+--- cdplayer.cc.orig
++++ cdplayer.cc
+@@ -19,7 +19,7 @@
+ 
+ void open_cd (), setvol (int), do_update (), read_toc (), play_msf (int, int, int),
+     time_track (int, int, int), play_track (int), popup (int, int), 
+-    out (char *, ...);
++    out (const char *, ...);
+ int get_info ();
+ 
+ class button {
+@@ -27,9 +27,9 @@ class button { (private)
+     int state;
+     char name[20];
  public:
-     button (char *s) {state=0; strcpy (name, s);}
+-    button (char *s) {state=0; strcpy (name, s);}
++    button (const char *s) {state=0; strcpy (name, s);}
      ~button () {}
 -    set (int i) {
 +    void set (int i) {
  	if (state != i) {
  	    state = i;
  	    if (state == 0)
+@@ -62,7 +62,7 @@ typedef enum {
+ 
+ #define C(x) {#x, sizeof(#x)-1, x}
+ struct {
+-    char *s;
++    const char *s;
+     int l;
+     command cmd;
+ } clist[] = {
+@@ -90,6 +90,7 @@ button play_button ("play"),  pause_button ("pause"), 
+ #define S(t) toc_buffer[t].addr.msf.second
+ #define F(t) toc_buffer[t].addr.msf.frame
+ 
++int
+ main (int argc, char **argv)
+ {
+     char dev[20], line[50];
+@@ -233,7 +234,7 @@ open_cd ()
+ 	if (errno == EBUSY || EINVAL)
+ 	    return; /* loading the CD? */
+ {FILE *f=fopen("/tmp/cdplayer.error", "w"); fprintf(f, "exiting with errno=%d\n", errno);}
+-	err (1, device);
++	err (1, "%s", device);
+     }
+ }
+ void
+@@ -409,7 +410,7 @@ play_msf (int start_m, int start_s, int start_f)
+     i=ioctl (cd_fd, CDIOCPLAYMSF, (char *)&a);
+ }
+ void 
+-out (char *fmt, ...)
++out (const char *fmt, ...)
+ {
+     va_list ap;
+ 
