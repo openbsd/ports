@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2016/09/08 08:49:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.37 2017/04/30 06:16:45 espie Exp $
 
 COMMENT=		modern 3D graphics API
 
@@ -27,7 +27,8 @@ CONFIGURE_ARGS=		--with-gl-libname=libGL.so \
 			--with-gles1-libname=libGLESv1_CM \
 			--with-gles2-libname=libGLESv2 \
 			--enable-kms-egl-platform=yes \
-			--enable-xlib-egl-platform=yes
+			--enable-xlib-egl-platform=yes \
+			--disable-maintainer-flags
 
 TEST_DEPENDS=		shells/bash
 TEST_IS_INTERACTIVE=	x11
