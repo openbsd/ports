@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.104 2017/04/16 14:15:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.105 2017/04/30 23:20:24 nigel Exp $
 
 COMMENT=		download/stream programmes from BBC iPlayer
 
 GH_ACCOUNT=		get-iplayer
 GH_PROJECT=		get_iplayer
-GH_TAGNAME=		v2.99
-REVISION=		0
+GH_TAGNAME=		v3.00
 
 CATEGORIES=		multimedia
 
@@ -18,11 +17,11 @@ MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
 
 RUN_DEPENDS=		graphics/ffmpeg \
 			multimedia/atomicparsley \
-			net/rtmpdump>=2.4 \
 			textproc/p5-XML-LibXML \
 			textproc/p5-XML-Simple \
 			www/p5-HTML-Parser>=3.71 \
 			www/p5-LWP-Protocol-https \
+			www/p5-Mojo \
 			www/p5-libwww>=6.0
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
