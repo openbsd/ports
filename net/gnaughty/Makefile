@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2016/04/27 17:19:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2017/04/30 11:28:14 ajacoutot Exp $
 
 COMMENT=		fast and easy porn downloader
 
@@ -29,22 +29,22 @@ LIB_DEPENDS=		devel/libglade2 \
 
 RUN_DEPENDS=		devel/desktop-file-utils
 
-BUILD_DEPENDS +=	${MODGNU_AUTOMAKE_DEPENDS} \
-			${MODGNU_AUTOCONF_DEPENDS}
-
 MODGCONF2_SCHEMAS_DIR=	gnaughty
 
-AUTOCONF_VERSION=	2.62
-AUTOMAKE_VERSION=	1.11
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
+###
+AUTOCONF_VERSION=	2.69
+AUTOMAKE_VERSION=	1.15
 AUTOFUCK_ENV=		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 			AUTOMAKE_VERSION=${AUTOMAKE_VERSION}
+BUILD_DEPENDS +=	${MODGNU_AUTOMAKE_DEPENDS} \
+			${MODGNU_AUTOCONF_DEPENDS}
 
 pre-configure:
-	cd ${WRKSRC} && \
-		${SETENV} ${AUTOFUCK_ENV} autoreconf
+	cd ${WRKSRC} && ${SETENV} ${AUTOFUCK_ENV} autoreconf -fi
+###
 
 .include <bsd.port.mk>
