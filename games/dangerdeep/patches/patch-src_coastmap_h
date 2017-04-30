@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_coastmap_h,v 1.1 2017/04/30 08:24:33 espie Exp $
+--- src/coastmap.h.orig
++++ src/coastmap.h
+@@ -90,7 +90,7 @@ class coastsegment (public)
+ class coastmap
+ {
+ 	friend class coastsegment;	// just request some values
+-	friend class coastsegment::segcl;	// just request some values
++	friend struct coastsegment::segcl;	// just request some values
+ 
+ 	// some attributes used for map reading/processing
+ 	std::vector<Uint8> themap;		// pixel data of map file, y points up, like in OpenGL

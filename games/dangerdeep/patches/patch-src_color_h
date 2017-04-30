@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_color_h,v 1.1 2017/04/30 08:24:33 espie Exp $
+--- src/color.h.orig
++++ src/color.h
+@@ -36,7 +36,7 @@ struct color
+ 		b = (Uint8)(c1.b*(1-scal) + c2.b*scal);
+ 		a = (Uint8)(c1.a*(1-scal) + c2.a*scal);
+ 	}
+-	color(const class colorf& c);
++	color(const struct colorf& c);
+ 
+ 	color operator* (const color& c) const {
+ 		return color(
