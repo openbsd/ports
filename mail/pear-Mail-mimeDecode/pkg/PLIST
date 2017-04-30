@@ -1,5 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/11/18 19:07:09 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/04/30 08:50:52 benoit Exp $
 @group daemon
+pear/data/Mail_mimeDecode/
+pear/data/Mail_mimeDecode/xmail.dtd
+pear/data/Mail_mimeDecode/xmail.xsl
 pear/lib/.registry/mail_mimedecode.reg
 pear/lib/Mail/mimeDecode.php
 pear/tests/Mail_mimeDecode/
