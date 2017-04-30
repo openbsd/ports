@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.223 2017/04/19 07:42:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.224 2017/04/30 10:21:56 ajacoutot Exp $
 
 # XXX add libphonenumber support when a cpp release is out
 
@@ -58,14 +58,14 @@ MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 CONFIGURE_ARGS=		-DWITH_KRB5=OFF \
 			-DWITH_LIBDB_CFLAGS="-I${LOCALBASE}/include/db4" \
 			-DWITH_LIBDB_LIBS="-L${LOCALBASE}/lib -ldb" \
-			-DWITH_OPENLDAP=${LOCALBASE}
+			-DWITH_OPENLDAP=${LOCALBASE} \
+			-DCMAKE_C_FLAGS="-I${LOCALBASE}/include"
 
 
 # needs signond, libsignon-glib -- Ubuntu/Meego
 CONFIGURE_ARGS +=	-DENABLE_UOA=OFF
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/CMakeLists.txt
 	sed -i 's,/usr/sbin/imapd,${LOCALBASE}/libexec/imapd,g' \
 		${WRKSRC}/src/camel/providers/imapx/camel-imapx-settings.c
 

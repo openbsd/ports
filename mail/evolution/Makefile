@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.276 2017/04/19 07:42:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.277 2017/04/30 10:21:56 ajacoutot Exp $
 
 COMMENT=		integrated email and PIM software for GNOME
 
@@ -63,13 +63,11 @@ CONFIGURE_ARGS=		-DWITH_BOGOFILTER="${LOCALBASE}/bin/bogofilter" \
 			-DWITH_SA_LEARN="${LOCALBASE}/bin/sa-learn" \
 			-DWITH_SPAMASSASSIN="${LOCALBASE}/bin/spamassassin" \
 			-DWITH_OPENLDAP=${LOCALBASE} \
-			-DVERSION_SUBSTRING=" (OpenBSD Ports)"
+			-DVERSION_SUBSTRING=" (OpenBSD Ports)" \
+			-DCMAKE_C_FLAGS="-I${LOCALBASE}/include"
 
 # needs libytnef
 CONFIGURE_ARGS +=	-DENABLE_YTNEF=OFF
-
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/CMakeLists.txt
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/evolution
