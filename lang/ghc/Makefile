@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.146 2017/04/18 18:38:11 kili Exp $
+# $OpenBSD: Makefile,v 1.147 2017/04/30 21:33:26 kili Exp $
 
 COMMENT =		compiler for the functional language Haskell
 
@@ -111,12 +111,13 @@ CONFIGURE_ARGS +=	--with-iconv-includes=${LOCALBASE}/include \
 			--with-clang="${CC}"
 # XXX: wxneeded is a hack. Fix rts/Linker.c, mmapForLinker() and
 #      loadObj_() instead.
-CONFIGURE_ENV +=	CONF_CC_OPTS_STAGE0="-fno-pie -nopie" \
-			CONF_CC_OPTS_STAGE1="-fno-pie -nopie" \
-			CONF_CC_OPTS_STAGE2="-fno-pie -nopie" \
-			CONF_GCC_LINKER_OPTS_STAGE0="-fno-pie -nopie" \
-			CONF_GCC_LINKER_OPTS_STAGE1="-fno-pie -nopie -Wl,-z,wxneeded" \
-			CONF_GCC_LINKER_OPTS_STAGE2="-fno-pie -nopie -Wl,-z,wxneeded"
+GHC_CC_OPTS =		-fno-pie -nopie
+CONFIGURE_ENV +=	CONF_CC_OPTS_STAGE0="${GHC_CC_OPTS}" \
+			CONF_CC_OPTS_STAGE1="${GHC_CC_OPTS}" \
+			CONF_CC_OPTS_STAGE2="${GHC_CC_OPTS}" \
+			CONF_GCC_LINKER_OPTS_STAGE0="${GHC_CC_OPTS}" \
+			CONF_GCC_LINKER_OPTS_STAGE1="${GHC_CC_OPTS} -Wl,-z,wxneeded" \
+			CONF_GCC_LINKER_OPTS_STAGE2="${GHC_CC_OPTS} -Wl,-z,wxneeded"
 
 # Do not pick up gpatch
 CONFIGURE_ENV +=	ac_cv_path_PatchCmd=/usr/bin/patch
@@ -163,6 +164,7 @@ post-patch:
 # - Install a precompiled binary.
 	cd ${WRKDIR}/ghc-${BIN_VER} && \
 	LD_LIBRARY_PATH=${BOOTSTRAP_SHLIBS} \
+	CONFIGURE_ENV=${CONFIGURE_ENV} \
 	./configure --prefix=${WRKDIR}/bootstrap \
 	    --with-gcc="${CC}" \
 	    --with-clang="${CC}" && \
@@ -178,11 +180,6 @@ post-patch:
 		echo 'LD_LIBRARY_PATH=${BOOTSTRAP_SHLIBS} \' && \
 		printf 'exec ${WRKDIR}/bootstrap/bin/%s "$$@"\n' "$$f"; \
 	done
-# - Force the bootstrapper to use -nopie
-#   (maybe removed when switching to a newer bootstrapper, but only if I
-#    properly fix the bootstrap target)
-	perl -pi -e 's/(\S+ \S+)/\1 -optl -nopie/ if /^exec /' \
-		${WRKDIR}/bootstrap/bin/ghc
 
 post-install:
 	cd ${PREFIX}/lib/ghc && \
@@ -265,3 +262,8 @@ bootstrap: patch
 	pax -wzf ghc-${MODGHC_VER}.${BOOTSTRAP_DATE}-shlibs-$$(arch -s){.tar.gz,}
 
 .include <bsd.port.mk>
+
+# Silence clang when used by ghc to process assembler files
+.if ${PROPERTIES:Mclang}
+GHC_CC_OPTS += -Wno-unused-command-line-argument
+.endif
