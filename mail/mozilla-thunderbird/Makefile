@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.242 2017/04/20 06:19:08 landry Exp $
+# $OpenBSD: Makefile,v 1.243 2017/04/30 17:27:19 landry Exp $
 
 COMMENT-main =		Mozilla e-mail, rss and usenet client
 COMMENT-lightning =	Mozilla Thunderbird calendar extension
 
 # Don't forget to bump mail/thunderbird-i18n after updates.
 
-MOZILLA_VERSION =	52.0.1
+MOZILLA_VERSION =	52.1.0
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	thunderbird
 MOZILLA_CODENAME =	mail
@@ -14,6 +14,7 @@ EXTRACT_SUFX =		.tar.xz
 MULTI_PACKAGES =	-main -lightning
 PKGNAME-main =		${PKGNAME}
 PKGNAME-lightning =	lightning-5.4.1
+REVISION-lightning =	0
 EPOCH-lightning =	0
 
 HOMEPAGE =	http://www.mozilla.org/thunderbird/
@@ -22,7 +23,7 @@ SO_VERSION =	32.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 
-MOZILLA_LIBS = ldap60 ldif60 lgpllibs mozgtk prldap60 xul
+MOZILLA_LIBS = ldap60 ldif60 lgpllibs mozgtk mozsqlite3 prldap60 xul
 
 CATEGORIES=	mail news
 
@@ -39,6 +40,8 @@ MODCLANG_LANGS =	c c++
 MOZILLA_USE_BUNDLED_LIBEVENT =	Yes
 # firefox >= 46 defaults to gtk+3
 MOZILLA_USE_GTK3 = Yes
+# use bundled sqlite which has SQLITE_ENABLE_FTS3_TOKENIZER (#1252937)
+MOZILLA_USE_BUNDLED_SQLITE =	Yes
 
 NO_TEST =	Yes
 
