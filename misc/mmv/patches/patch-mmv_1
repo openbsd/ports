@@ -1,7 +1,7 @@
-$OpenBSD: patch-mmv_1,v 1.1 2002/12/23 19:11:48 pvalchev Exp $
---- mmv.1.orig	Mon Dec 23 13:25:04 2002
-+++ mmv.1	Mon Dec 23 13:25:29 2002
-@@ -141,7 +141,7 @@ If target file exists, it is overwritten
+$OpenBSD: patch-mmv_1,v 1.2 2017/04/30 13:55:57 naddy Exp $
+--- mmv.1.orig
++++ mmv.1
+@@ -141,7 +141,7 @@ If target file exists, it is overwritten,
  keeping its original owner and permission bits.
  If it does not exist, it is created, with read-write permission bits
  set according to

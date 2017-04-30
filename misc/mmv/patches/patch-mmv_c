@@ -1,6 +1,6 @@
-$OpenBSD: patch-mmv_c,v 1.1 2002/12/23 19:11:48 pvalchev Exp $
---- mmv.c.orig	Mon Dec 23 13:22:43 2002
-+++ mmv.c	Mon Dec 23 13:22:43 2002
+$OpenBSD: patch-mmv_c,v 1.2 2017/04/30 13:55:57 naddy Exp $
+--- mmv.c.orig
++++ mmv.c
 @@ -88,7 +88,6 @@ on the command line.\n";
  #endif
  
@@ -9,7 +9,7 @@ $OpenBSD: patch-mmv_c,v 1.1 2002/12/23 19:11:48 pvalchev Exp $
  
  #ifdef MSDOS
  /* for MS-DOS (under Turbo C 1.5)*/
-@@ -121,12 +120,12 @@ extern unsigned _stklen = 10000;
+@@ -121,14 +120,14 @@ extern unsigned _stklen = 10000;
  #else
  /* for various flavors of UN*X */
  
@@ -17,13 +17,27 @@ $OpenBSD: patch-mmv_c,v 1.1 2002/12/23 19:11:48 pvalchev Exp $
  #include <sys/types.h>
  #include <sys/stat.h>
  #include <sys/file.h>
++#include <ctype.h>
++#include <stdlib.h>
++#include <unistd.h>
  
- extern char *getenv();
+-extern char *getenv();
 -extern long lseek();
- extern char *malloc();
- 
+-extern char *malloc();
+-
  #ifdef DIRENT
-@@ -176,7 +175,6 @@ extern char *strcpy(), *strchr();
+ #include <dirent.h>
+ typedef struct dirent DIRENTRY;
+@@ -142,8 +141,6 @@ typedef struct dirent DIRENTRY;
+ typedef struct direct DIRENTRY;
+ #endif
+ 
+-#define void char	/* might want to remove this line */
+-
+ #ifndef O_BINARY
+ #define O_BINARY 0
+ #endif
+@@ -176,7 +173,6 @@ extern char *strcpy(), *strchr();
  
  #else
  /* for System V and BSD */
@@ -31,7 +45,7 @@ $OpenBSD: patch-mmv_c,v 1.1 2002/12/23 19:11:48 pvalchev Exp $
  #include <sys/signal.h>
  #include <fcntl.h>
  #endif
-@@ -370,7 +368,7 @@ static int movealias(/* REP *first, REP 
+@@ -370,7 +366,7 @@ static int movealias(/* REP *first, REP *p, int *pprin
  static int snap(/* REP *first, REP *p */);
  static void showdone(/* REP *fin */);
  static void breakout(/*  */);
@@ -40,7 +54,7 @@ $OpenBSD: patch-mmv_c,v 1.1 2002/12/23 19:11:48 pvalchev Exp $
  static void breakstat(/* */);
  static void quit(/*  */);
  static int copymove(/* REP *p */);
-@@ -389,7 +387,6 @@ static void cleanup(/*  */);
+@@ -389,7 +385,6 @@ static void cleanup(/*  */);
  static int getstat(/* char *full, FILEINFO *f */);
  static int dwritable(/* HANDLE *h */);
  static int fwritable(/* char *hname, FILEINFO *f */);
@@ -48,7 +62,7 @@ $OpenBSD: patch-mmv_c,v 1.1 2002/12/23 19:11:48 pvalchev Exp $
  #endif
  #ifndef RENAME
  static int rename(/* char *from, char *to */);
-@@ -2550,10 +2547,9 @@ static void breakout()
+@@ -2550,10 +2545,9 @@ static void breakout()
  }
  
  
@@ -60,7 +74,16 @@ $OpenBSD: patch-mmv_c,v 1.1 2002/12/23 19:11:48 pvalchev Exp $
  }
  
  
-@@ -2832,7 +2828,7 @@ static void chgive(p, k)
+@@ -2745,7 +2739,7 @@ static int getreply(m, failact)
+ 	static FILE *tty = NULL;
+ 	int c, r;
+ 
+-	fprintf(stderr, m);
++	fprintf(stderr, "%s", m);
+ 	if (tty == NULL && (tty = fopen(TTY, "r")) == NULL) {
+ 		fprintf(stderr, "Can not open %s to get reply.\n", TTY);
+ 		if (failact == -1)
+@@ -2832,7 +2826,7 @@ static void chgive(p, k)
  }
  
  
