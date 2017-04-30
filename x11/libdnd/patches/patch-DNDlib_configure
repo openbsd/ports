@@ -1,0 +1,12 @@
+$OpenBSD: patch-DNDlib_configure,v 1.1 2017/04/30 09:36:59 espie Exp $
+--- DNDlib/configure.orig
++++ DNDlib/configure
+@@ -738,7 +738,7 @@ cross_compiling=$ac_cv_prog_cxx_cross
+ cat > conftest.$ac_ext <<EOF
+ #line 740 "configure"
+ #include "confdefs.h"
+-main(){return(0);}
++int main(){return(0);}
+ EOF
+ if { (eval echo configure:744: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest; then
+   ac_cv_prog_cxx_works=yes

@@ -1,7 +1,7 @@
-$OpenBSD: patch-DNDlib_DragAndDrop_c,v 1.1.1.1 2001/03/07 15:43:33 wilfried Exp $
---- DNDlib/DragAndDrop.c.orig	Sat Nov 23 02:19:27 1996
-+++ DNDlib/DragAndDrop.c	Wed Feb  7 15:30:38 2001
-@@ -22,7 +22,7 @@ Foundation, 675 Mass Ave, Cambridge, MA 
+$OpenBSD: patch-DNDlib_DragAndDrop_c,v 1.2 2017/04/30 09:36:59 espie Exp $
+--- DNDlib/DragAndDrop.c.orig
++++ DNDlib/DragAndDrop.c
+@@ -22,7 +22,7 @@ Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
  #include <X11/Xmu/WinUtil.h>
  #include <stdio.h>
  #include <stdlib.h>
@@ -43,7 +43,7 @@ $OpenBSD: patch-DNDlib_DragAndDrop_c,v 1.1.1.1 2001/03/07 15:43:33 wilfried Exp 
      mime_x_hot,mime_y_hot }  
  };
  
-@@ -463,13 +463,13 @@ void DndSetData(int Type,unsigned char *
+@@ -463,13 +463,13 @@ void DndSetData(int Type,unsigned char *Data,unsigned 
  		
      /* Set the data */
      AuxData = Data;
@@ -59,7 +59,7 @@ $OpenBSD: patch-DNDlib_DragAndDrop_c,v 1.1.1.1 2001/03/07 15:43:33 wilfried Exp 
  	XChangeProperty(dpy,root,DndSelection,XA_STRING,8,
  			PropModeAppend,Data,AuxSize);
      }
-@@ -477,13 +477,13 @@ void DndSetData(int Type,unsigned char *
+@@ -477,13 +477,13 @@ void DndSetData(int Type,unsigned char *Data,unsigned 
      /* Set the data for old DND version */
      Size = BackSize;
      AuxData = Data;
