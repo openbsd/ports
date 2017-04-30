@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: proot,v 1.55 2017/02/13 12:52:13 espie Exp $
+# $OpenBSD: proot,v 1.56 2017/04/30 18:49:14 espie Exp $
 #
 # Copyright (c) 2016 Marc Espie <espie@openbsd.org>
 #
@@ -1077,11 +1077,11 @@ if ($state->{actions}{copy_ports}) {
 if ($state->{actions}{copy_sys}) {
 	$state->copy_sys;
 }
-if ($state->{actions}{ldconfig}) {
-	$state->run_ldconfig;
-}
 if ($state->{actions}{unpopulate_light}) {
 	$state->unpopulate_chroot;
+}
+if ($state->{actions}{ldconfig}) {
+	$state->run_ldconfig;
 }
 if ($state->{actions}{devs}) {
 	$state->regen_devs;
