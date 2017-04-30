@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2016/03/20 19:56:54 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2017/04/30 11:41:38 benoit Exp $
 
 COMMENT=	SSL/STARTTLS support for Net::SMTP
 
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME=	Net-SMTPS-0.04
+DISTNAME =	Net-SMTPS-0.06
 CATEGORIES=	net mail
 
 # perl
