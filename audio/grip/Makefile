@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.55 2017/04/10 11:45:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.56 2017/04/30 15:38:15 naddy Exp $
 
 COMMENT=	front-end to external cd audio rippers and mp3 encoders
 
 DISTNAME=	grip-3.3.1
 CATEGORIES=	audio
-REVISION=	4
+REVISION=	5
 
 HOMEPAGE=	http://sourceforge.net/projects/grip/
 
@@ -16,19 +16,17 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += ICE ORBit-2 SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender art_lgpl_2 atk-1.0 bonobo-2
 WANTLIB += bonobo-activation bonoboui-2 c cairo cdda_interface
-WANTLIB += cdda_paranoia crypto curl expat fontconfig freetype gconf-2
+WANTLIB += cdda_paranoia crypto curl fontconfig freetype gconf-2
 WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gnome-2 gnomecanvas-2 gnomeui-2 gnomevfs-2 gobject-2.0
-WANTLIB += gthread-2.0 gtk-x11-2.0 id3 m nghttp2 pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pixman-1 png popt pthread
-WANTLIB += pthread-stubs ssl ${LIBCXX} vte xcb xcb-render xcb-shm z
+WANTLIB += gthread-2.0 gtk-x11-2.0 id3 intl m nghttp2 pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 popt pthread ssl ${LIBCXX} vte z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=grip/}
 
-MODULES=	devel/gettext
-
 LIB_DEPENDS=	audio/cdparanoia \
 		audio/id3lib \
+		devel/gettext \
 		devel/vte \
 		net/curl \
 		x11/gnome/libgnomeui
