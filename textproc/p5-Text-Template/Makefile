@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2016/03/20 19:57:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2017/04/30 15:47:03 benoit Exp $
 
 COMMENT=	expand template text with embedded perl
 
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME =	Text-Template-1.46
+DISTNAME =	Text-Template-1.47
 CATEGORIES=	textproc
 
 # perl
