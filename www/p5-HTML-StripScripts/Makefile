@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2016/03/20 19:57:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2017/04/30 16:35:55 benoit Exp $
 
 COMMENT =	strip scripting constructs out of HTML
 
-DISTNAME =	HTML-StripScripts-1.05
-REVISION =	0
+DISTNAME =	HTML-StripScripts-1.06
 CATEGORIES =	www
 
 # Perl
