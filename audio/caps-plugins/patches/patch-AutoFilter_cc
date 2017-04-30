@@ -1,0 +1,12 @@
+$OpenBSD: patch-AutoFilter_cc,v 1.1 2017/04/30 22:37:28 espie Exp $
+--- AutoFilter.cc.orig
++++ AutoFilter.cc
+@@ -69,7 +69,7 @@ AutoFilter::activate()
+ void
+ AutoFilter::cycle (uint frames)
+ {
+-	div_t qr = div (frames, blocksize);
++	div_t qr = div (int(frames), int(blocksize));
+ 	int blocks = qr.quot;
+ 	if (qr.rem) ++blocks;
+ 	double over_blocks = 1./blocks;
