@@ -1,6 +1,9 @@
-$OpenBSD: patch-tls_openssl_gtlsclientconnection-openssl_c,v 1.3 2017/04/30 10:56:02 ajacoutot Exp $
+$OpenBSD: patch-tls_openssl_gtlsclientconnection-openssl_c,v 1.4 2017/04/30 11:55:52 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=781964
+From c7eb9a88a2c3d89140d772c7891955a4db2749a8 Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Sun, 30 Apr 2017 12:52:00 +0200
+Subject: Fix the build with libressl.
 
 From b8d66d389cc7817691a5b39dd1eaa10907453223 Mon Sep 17 00:00:00 2001
 From: Ignacio Casal Quinteiro <qignacio@amazon.com>
