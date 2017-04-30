@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2016/03/20 19:57:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2017/04/30 15:56:29 benoit Exp $
 
 COMMENT=	organize data in tables
 
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME =	Text-Table-1.130
+DISTNAME =	Text-Table-1.132
 CATEGORIES=	textproc
-REVISION =	0
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
