@@ -1,0 +1,21 @@
+$OpenBSD: patch-tls_openssl_gtlsclientconnection-openssl_c,v 1.1 2017/04/30 10:29:09 ajacoutot Exp $
+--- tls/openssl/gtlsclientconnection-openssl.c.orig
++++ tls/openssl/gtlsclientconnection-openssl.c
+@@ -381,7 +381,7 @@ retrieve_certificate (SSL       *ssl,
+ 
+       key = g_tls_certificate_openssl_get_key (G_TLS_CERTIFICATE_OPENSSL (cert));
+       /* increase ref count */
+-#if OPENSSL_VERSION_NUMBER < 0x10100000L
++#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined (LIBRESSL_VERSION_NUMBER)
+       CRYPTO_add (&key->references, 1, CRYPTO_LOCK_EVP_PKEY);
+ #else
+       EVP_PKEY_up_ref (key);
+@@ -443,7 +443,7 @@ g_tls_client_connection_openssl_initable_init (GInitab
+   /* Only TLS 1.2 or higher */
+   SSL_CTX_set_options (priv->ssl_ctx, options);
+ 
+-#if OPENSSL_VERSION_NUMBER >= 0x10200000L
++#if OPENSSL_VERSION_NUMBER >= 0x10200000L && !defined (LIBRESSL_VERSION_NUMBER)
+   if (hostname)
+     {
+       X509_VERIFY_PARAM *param;
