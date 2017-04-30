@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2017/04/28 21:01:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2017/04/30 11:28:28 sthen Exp $
 
 COMMENT=	OCR Engine developed at HP Labs
 
@@ -38,7 +38,8 @@ INSTALL_TARGET=		install training-install
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.15
 BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS}
+			${MODGNU_AUTOMAKE_DEPENDS} \
+			devel/libtool
 pre-configure:
 	cd ${WRKSRC} && ${SETENV} \
 		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
