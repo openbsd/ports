@@ -1,0 +1,7 @@
+pluma is a small and lightweight UTF-8 text editor for the MATE
+environment. Based on gedit, the text editor for the GNOME2 environment.
+
+pluma is part of MATE and uses the latest GTK+ and MATE libraries.
+Complete MATE integration is featured, with support for Drag and Drop (DnD)
+from Caja (the MATE file manager), the use of the MATE help system,
+the MATE Virtual File System and the MATE print framework.

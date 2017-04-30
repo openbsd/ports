@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure_ac,v 1.1.1.1 2017/04/30 19:01:25 robert Exp $
+--- configure.ac.orig	Sat Feb 25 17:09:28 2017
++++ configure.ac	Sat Feb 25 17:09:39 2017
+@@ -71,7 +71,7 @@ PKG_CHECK_MODULES(LIBSOUP, [libsoup-2.4 >= $LIBSOUP_RE
+ 
+ dnl -- check for gio (required) -----------------------------------------
+ PKG_CHECK_MODULES(GIO,
+-		  [gio-2.0 >= GIO_REQUIRED])
++		  [gio-2.0 >= $GIO_REQUIRED])
+ AC_SUBST(GIO_CFLAGS)
+ 
+ dnl -- check for glib; redundant at this point, but sets $GLIB_MKENUMS

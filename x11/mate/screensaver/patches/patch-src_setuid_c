@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_setuid_c,v 1.1.1.1 2017/04/30 19:01:28 robert Exp $
+--- src/setuid.c.orig	Tue Oct  6 17:32:23 2015
++++ src/setuid.c	Tue Mar 28 20:28:18 2017
+@@ -209,6 +209,15 @@ hack_uid (char **nolock_reason,
+ 
+ 		if (uid != euid || gid != egid)
+ 		{
++#ifdef HAVE_BSDAUTH /* we need to setgid auth to run the bsd_auth(3) login_* helpers */
++			struct group *authg = getgrnam("auth");
++			if (!authg || !authg->gr_name || !*authg->gr_name) {
++				reason = g_strdup ("no such group as \"auth\" for bsdauth.");
++				ret = FALSE;
++				goto out;
++			}
++			gid = authg->gr_gid;
++#endif /* !HAVE_BSDAUTH */
+ 			if (! set_ids_by_number (uid, gid, uid_message))
+ 			{
+ 				reason = g_strdup ("unable to discard privileges.");

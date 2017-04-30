@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_gs-auth-pwent_c,v 1.1.1.1 2017/04/30 19:01:28 robert Exp $
+--- src/gs-auth-pwent.c.orig	Fri Mar 17 18:00:34 2017
++++ src/gs-auth-pwent.c	Fri Mar 17 18:00:43 2017
+@@ -171,7 +171,7 @@ get_encrypted_passwd (const char *user)
+ 		}
+ 	}
+ 
+-#ifndef HAVE_PAM
++#if !defined(HAVE_PAM) && !defined(HAVE_BSDAUTH)
+ 	/* We only issue this warning if not compiled with support for PAM.
+ 	   If we're using PAM, it's not unheard of that normal pwent passwords
+ 	   would be unavailable. */

@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_Makefile_am,v 1.1.1.1 2017/04/30 19:01:28 robert Exp $
+--- src/Makefile.am.orig	Sun Feb 26 17:55:16 2017
++++ src/Makefile.am	Sun Feb 26 17:55:28 2017
+@@ -148,6 +148,7 @@ EXTRA_mate_screensaver_dialog_SOURCES = \
+ 	gs-auth-pam.c		\
+ 	gs-auth-helper.c	\
+ 	gs-auth-pwent.c		\
++	gs-auth-bsdauth.c	\
+ 	$(NULL)
+ 
+ mate_screensaver_dialog_LDADD =	\

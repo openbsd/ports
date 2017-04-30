@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_core_window-props_c,v 1.1.1.1 2017/04/30 19:01:25 robert Exp $
+--- src/core/window-props.c.orig	Sun Mar 26 16:19:01 2017
++++ src/core/window-props.c	Sun Mar 26 16:19:18 2017
+@@ -51,7 +51,7 @@
+ #include <sys/types.h>
+ #include <pwd.h>
+ 
+-#ifdef HAVE_GTOP
++#if defined(HAVE_GTOP) && !defined(__OpenBSD__)
+ #include <glibtop/procuid.h>
+ #include <errno.h>
+ #include <pwd.h>
+@@ -394,7 +394,7 @@ reload_net_wm_user_time_window (MetaWindow    *window,
+ static gboolean
+ owner_of_process (pid_t process, uid_t *result)
+ {
+-#ifdef HAVE_GTOP
++#if defined(HAVE_GTOP) && !defined(__OpenBSD__)
+   glibtop_proc_uid process_details;
+ 
+   glibtop_get_proc_uid (&process_details, process);

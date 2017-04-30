@@ -1,0 +1,7 @@
+The package contains an implementation of the draft "Desktop
+Menu Specification" from freedesktop.org:
+
+  http://www.freedesktop.org/Standards/menu-spec
+
+Also contained here are the MATE menu layout configuration
+files, .directory files and assorted menu related utility programs.

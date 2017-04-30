@@ -1,0 +1,100 @@
+$OpenBSD: patch-configure_ac,v 1.1.1.1 2017/04/30 19:01:28 robert Exp $
+--- configure.ac.orig	Mon Mar 13 12:16:31 2017
++++ configure.ac	Tue Mar 28 20:28:07 2017
+@@ -532,6 +532,44 @@ if test "x$have_libgl" = "xyes"; then
+ fi
+ 
+ dnl ---------------------------------------------------------------------------
++dnl - Check for bsd_auth(3) (OpenBSD)
++dnl ---------------------------------------------------------------------------
++have_bsdauth=no
++with_bsdauth_req=unspecified
++NEED_SETUID=no
++
++case "$host" in
++  *-openbsd*)
++    with_bsdauth=yes
++    AUTH_SCHEME=bsdauth
++    NEED_SETUID=no
++    if test "x$enable_locking" = "xyes"; then
++      with_bsdauth_req=yes
++      NEED_SETUID=yes
++    fi
++esac
++
++if test "$with_bsdauth" = yes ; then
++  AC_CACHE_CHECK([for BSD Authentication], ac_cv_bsdauth,
++    [AC_TRY_X_COMPILE([#include <stdlib.h>
++                       #include <unistd.h>
++                       #include <sys/types.h>
++                       #include <bsd_auth.h>],
++      [int ok = auth_userokay("x", 0, "x", "x");],
++      [ac_cv_bsdauth=yes],
++      [ac_cv_bsdauth=no])])
++  if test "$ac_cv_bsdauth" = yes; then
++    have_bsdauth=yes
++  fi
++fi
++
++if test "$have_bsdauth" = yes; then
++  AC_DEFINE(HAVE_BSDAUTH, 1, [Define to 1 if using bsd_auth(3) authentication])
++fi
++
++AC_SUBST(NEED_SETUID)
++
++dnl ---------------------------------------------------------------------------
+ dnl - Check for PAM
+ dnl ---------------------------------------------------------------------------
+ 
+@@ -540,7 +578,7 @@ AC_ARG_ENABLE(pam, AC_HELP_STRING([--enable-pam],
+                    [Enable PAM support @<:@default=auto@:>@],
+                    ),,enable_pam=auto)
+ 
+-if test "x$enable_locking" = "xyes" -a  "x$enable_pam" != "xno"; then
++if test "x$enable_locking" = "xyes" -a "x$enable_pam" != "xno" -a "x$have_bsdauth" = "xno"; then
+ AC_CHECK_LIB(pam, pam_start, have_pam=yes)
+ fi
+ if test "x$have_pam" = "xyes"; then
+@@ -823,7 +861,7 @@ dnl  Authentication scheme
+ dnl ---------------------------------------------------------------------------
+ 
+ AC_ARG_ENABLE(authentication-scheme,
+-  [  --enable-authentication-scheme=[auto/pam/helper/pwent]  Choose a specific
++  [  --enable-authentication-scheme=[auto/pam/helper/pwent/bsdauth]  Choose a specific
+                           authentication scheme [default=auto]],,
+   enable_authentication_scheme=auto)
+ 
+@@ -835,6 +873,9 @@ fi
+ if test x$enable_authentication_scheme = xhelper -a x$have_passwd_helper = xno ; then
+ 	AC_MSG_ERROR(Password helper support requested but not available)
+ fi
++if test x$enable_authentication_scheme = xbsdauth -a x$have_bsdauth = xno ; then
++	AC_MSG_ERROR(bsd_auth(3) support requested but not available)
++fi
+ 
+ if test x$enable_authentication_scheme = xpam ; then
+         AUTH_SCHEME="pam"
+@@ -842,11 +883,15 @@ elif test x$enable_authentication_scheme = xhelper ; t
+         AUTH_SCHEME="helper"
+ elif test x$enable_authentication_scheme = xpwent ; then
+         AUTH_SCHEME="pwent"
++elif test x$enable_authentication_scheme = xbsdauth ; then
++	AUTH_SCHEME="bsdauth"
+ elif test x$enable_authentication_scheme = xauto ; then
+ 	if test x$have_pam != xno ; then
+ 		AUTH_SCHEME="pam"
+ 	elif test x$have_passwd_helper != xno ; then
+ 		AUTH_SCHEME="helper"
++	elif test x$have_bsdauth != xno ; then
++		AUTH_SCHEME="bsdauth"
+ 	else
+ 		AUTH_SCHEME="pwent"
+         fi
+@@ -1127,6 +1172,7 @@ echo "
+         ConsoleKit support:       ${use_console_kit}
+         libnotify support:        ${have_libnotify}
+         PAM support:              ${have_pam}
++        bsd_auth(3) support:      ${have_bsdauth}
+         Have shadow passwords:    ${have_shadow}
+         Have adjunct shadow:      ${have_shadow_adjunct}
+         Have enhanced shadow:     ${have_shadow_enhanced}

@@ -1,0 +1,4 @@
+mate-terminal is a terminal emulator program that is part of the MATE 
+project.  mate-terminal supports color displays and provides mouse
+support to applications that are aware of mouse events for xterm-like
+terminals.

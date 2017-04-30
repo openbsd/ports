@@ -1,0 +1,14 @@
+$OpenBSD: patch-layout_mate-applications_menu,v 1.1.1.1 2017/04/30 19:01:25 robert Exp $
+--- layout/mate-applications.menu.orig	Sat Feb 25 17:55:32 2017
++++ layout/mate-applications.menu	Sat Feb 25 17:55:53 2017
+@@ -8,8 +8,8 @@
+ 
+   <!-- Scan legacy dirs first, as later items take priority -->
+   <KDELegacyDirs/>
+-  <LegacyDir>/etc/X11/applnk</LegacyDir>
+-  <LegacyDir>/usr/share/mate/apps</LegacyDir>
++  <LegacyDir>${LOCALBASE}/share/applnk</LegacyDir>
++  <LegacyDir>${LOCALBASE}/share/mate/apps</LegacyDir>
+ 
+   <!-- Read standard .directory and .desktop file locations -->
+   <DefaultAppDirs/>

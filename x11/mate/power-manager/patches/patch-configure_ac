@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure_ac,v 1.1.1.1 2017/04/30 19:01:28 robert Exp $
+--- configure.ac.orig	Wed Mar 15 18:37:56 2017
++++ configure.ac	Wed Mar 15 18:38:06 2017
+@@ -132,7 +132,7 @@ PKG_CHECK_MODULES(GDK, [
+ 
+ PKG_CHECK_MODULES(X11, [
+  xrandr >= $XRANDR_REQUIRED
+- x11 xext xproto >= XPROTO_REQUIRED])
++ x11 xext xproto >= $XPROTO_REQUIRED])
+ 
+ PKG_CHECK_MODULES(LIBNOTIFY, libnotify >= $LIBNOTIFY_REQUIRED)
+ 

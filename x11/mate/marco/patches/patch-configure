@@ -1,0 +1,29 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2017/04/30 19:01:25 robert Exp $
+--- configure.orig	Sun Apr 30 20:45:41 2017
++++ configure	Sun Apr 30 20:46:11 2017
+@@ -14812,25 +14812,6 @@ $as_echo "#define HAVE_XCURSOR /**/" >>confdefs.h
+ 
+ fi
+ 
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking libgtop" >&5
+-$as_echo_n "checking libgtop... " >&6; }
+-if $PKG_CONFIG libgtop-2.0; then
+-     have_gtop=yes
+-  else
+-     have_gtop=no
+-  fi
+-  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $have_gtop" >&5
+-$as_echo "$have_gtop" >&6; }
+-
+-if test x$have_gtop = xyes; then
+-  echo "Building with libgtop"
+-  MARCO_PC_MODULES="$MARCO_PC_MODULES libgtop-2.0"
+-
+-$as_echo "#define HAVE_GTOP /**/" >>confdefs.h
+-
+-fi
+-
+-
+ pkg_failed=no
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking for MARCO" >&5
+ $as_echo_n "checking for MARCO... " >&6; }
