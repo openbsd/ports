@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2016/04/28 14:30:05 rpe Exp $
+# $OpenBSD: Makefile,v 1.10 2017/04/30 08:29:51 benoit Exp $
 
 COMMENT = 	IMAP client interface with lots of features
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	Mail-IMAPTalk-4.03
+DISTNAME =	Mail-IMAPTalk-4.04
 CATEGORIES =	mail
 
 # Perl
