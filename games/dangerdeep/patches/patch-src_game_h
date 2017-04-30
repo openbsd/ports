@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_game_h,v 1.1 2017/04/30 08:56:45 espie Exp $
+--- src/game.h.orig
++++ src/game.h
+@@ -212,7 +212,7 @@ class game (protected)
+ 
+ 	class simulate_worker : public thread
+ 	{
+-		mutex mtx;
++		dd::mutex mtx;
+ 		condvar cond;
+ 		condvar condfini;
+ 		game& gm;

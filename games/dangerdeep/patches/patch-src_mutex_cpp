@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_mutex_cpp,v 1.1 2017/04/30 08:56:45 espie Exp $
+--- src/mutex.cpp.orig
++++ src/mutex.cpp
+@@ -24,6 +24,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, 
+ #include "error.h"
+ #include <SDL.h>
+ 
++namespace dd {
+ mutex::mutex()
+ {
+ 	mtx = SDL_CreateMutex();
+@@ -52,4 +53,5 @@ void mutex::unlock()
+ {
+ 	if (SDL_mutexV(mtx) < 0)
+ 		throw sdl_error("mutex unlock failed");
++}
+ }

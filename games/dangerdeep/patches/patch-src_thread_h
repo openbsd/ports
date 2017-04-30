@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_thread_h,v 1.1 2017/04/30 08:56:45 espie Exp $
+--- src/thread.h.orig
++++ src/thread.h
+@@ -25,6 +25,7 @@
+ 
+ #include "condvar.h"
+ #include <stdexcept>
++#include <string>
+ 
+ #if defined  WIN32 && defined _MSC_VER
+ 	// win32 lacks stdint.h (thankfully SDL provides...)
+@@ -53,7 +54,7 @@ class thread
+ 	struct SDL_Thread* thread_id;
+ 	bool thread_abort_request;
+ 	thread_state_t thread_state;
+-	mutex thread_state_mutex;
++	dd::mutex thread_state_mutex;
+ 	condvar thread_start_cond;
+ 	std::string thread_error_message; // to pass exception texts via thread boundaries
+ 	const char* myname;

@@ -1,0 +1,40 @@
+$OpenBSD: patch-src_mutex_h,v 1.1 2017/04/30 08:56:45 espie Exp $
+--- src/mutex.h.orig
++++ src/mutex.h
+@@ -26,11 +26,15 @@
+ /// A classical mutex.
+ ///@note This implementation is per default recursive, so you can lock the mutex again
+ ///      in the same thread where you already have locked it.
++struct SDL_mutex;
++class condvar;
++
++namespace dd {
+ class mutex
+ {
+-	friend class condvar;
++	friend class ::condvar;
+  protected:
+-	struct SDL_mutex* mtx;
++	struct ::SDL_mutex* mtx;
+  private:
+ 	mutex(const mutex& );
+ 	mutex& operator=(const mutex& );
+@@ -47,9 +51,9 @@ class mutex
+ 	/// unlock the mutex
+ 	void unlock();
+ };
++}
+ 
+ 
+-
+ /// A handy helper class for mutexes.
+ ///@note Create a local object of that class and give it a mutex. It will lock the mutex
+ ///	in its constructor and automatically unlock it in the destructor.
+@@ -57,6 +61,7 @@ class mutex
+ ///	inside the block or function that the object is declared in.
+ class mutex_locker
+ {
++	typedef dd::mutex mutex;
+  protected:
+ 	mutex& mymutex;
+  private:

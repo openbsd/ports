@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_condvar_h,v 1.1 2017/04/30 08:56:45 espie Exp $
+--- src/condvar.h.orig
++++ src/condvar.h
+@@ -29,6 +29,7 @@
+ ///@note Condition variables work toger with class mutex.
+ class condvar
+ {
++	typedef dd::mutex mutex;
+  protected:
+ 	struct SDL_cond* cdv;
+  private:
