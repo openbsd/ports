@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2015/11/11 10:43:59 benoit Exp $
+# $OpenBSD: Makefile,v 1.14 2017/04/30 09:58:48 benoit Exp $
 
 COMMENT =		library to manipulate units of physical quantities
 
-DISTNAME =		udunits-2.2.20
+DISTNAME =		udunits-2.2.24
 CATEGORIES =		math
 
-SHARED_LIBS =		udunits2 2.1
+SHARED_LIBS =		udunits2 2.2
 
 HOMEPAGE =		http://www.unidata.ucar.edu/software/udunits/
 
