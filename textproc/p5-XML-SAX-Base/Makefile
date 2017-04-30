@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/04/01 19:31:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2017/04/30 16:14:36 benoit Exp $
 
 COMMENT =	base class for SAX drivers and filters
 
-DISTNAME =	XML-SAX-Base-1.08
+DISTNAME =	XML-SAX-Base-1.09
 
 CATEGORIES =	textproc
 
