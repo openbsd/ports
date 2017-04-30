@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2015/07/19 01:32:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2017/04/30 11:04:36 benoit Exp $
 
 COMMENT=	DOS-XTREE(tm) look-a-like file manager
 
-DISTNAME=	ytree-1.98
+DISTNAME =	ytree-1.99
 CATEGORIES=	misc
 
 HOMEPAGE=	http://www.han.de/~werner/ytree.html
