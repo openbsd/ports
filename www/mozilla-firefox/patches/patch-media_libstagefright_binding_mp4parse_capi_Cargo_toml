@@ -1,0 +1,16 @@
+$OpenBSD: patch-media_libstagefright_binding_mp4parse_capi_Cargo_toml,v 1.1 2017/04/30 14:48:16 landry Exp $
+
+Fix build with cargo 0.17
+https://bugzilla.mozilla.org/show_bug.cgi?id=1360521
+
+--- media/libstagefright/binding/mp4parse_capi/Cargo.toml.orig
++++ media/libstagefright/binding/mp4parse_capi/Cargo.toml
+@@ -18,6 +18,8 @@ exclude = [
+   "*.mp4",
+ ]
+ 
++build = false
++
+ [dependencies]
+ byteorder = "1.0.0"
+ "mp4parse" = {version = "0.6.0", path = "../mp4parse"}
