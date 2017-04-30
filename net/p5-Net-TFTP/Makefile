@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2016/03/20 19:56:55 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2017/04/30 11:51:07 benoit Exp $
 
 COMMENT=	TFTP client class
 
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME=	Net-TFTP-0.19
+DISTNAME =	Net-TFTP-0.1901
 CATEGORIES=	net
 
 # Perl
