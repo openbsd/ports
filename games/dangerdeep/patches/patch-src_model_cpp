@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_model_cpp,v 1.1 2017/04/30 08:25:28 espie Exp $
+--- src/model.cpp.orig
++++ src/model.cpp
+@@ -49,6 +49,7 @@ using namespace std;
+ texture::mapping_mode model::mapping = texture::LINEAR_MIPMAP_LINEAR;//texture::NEAREST;
+ 
+ unsigned model::init_count = 0;
++const unsigned model::mesh::no_adjacency;
+ 
+ /*
+ fixme: possible cleanup/simplification of rendering EVERYWHERE:
