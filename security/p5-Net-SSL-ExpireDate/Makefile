@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2016/03/20 19:57:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2017/04/30 14:10:28 benoit Exp $
 
 COMMENT =		obtain expiration date of SSL certificate
 
-DISTNAME =		Net-SSL-ExpireDate-1.17
+DISTNAME =		Net-SSL-ExpireDate-1.20
 CATEGORIES =		security
 
 # Perl
