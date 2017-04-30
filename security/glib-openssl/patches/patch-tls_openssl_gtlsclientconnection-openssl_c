@@ -1,4 +1,12 @@
-$OpenBSD: patch-tls_openssl_gtlsclientconnection-openssl_c,v 1.1 2017/04/30 10:29:09 ajacoutot Exp $
+$OpenBSD: patch-tls_openssl_gtlsclientconnection-openssl_c,v 1.2 2017/04/30 10:36:43 ajacoutot Exp $
+
+XXX Fix build with libressl
+
+From b8d66d389cc7817691a5b39dd1eaa10907453223 Mon Sep 17 00:00:00 2001
+From: Ignacio Casal Quinteiro <qignacio@amazon.com>
+Date: Sun, 16 Apr 2017 18:59:15 +0200
+Subject: Fix warnings pointed out by the new flags added to meson
+
 --- tls/openssl/gtlsclientconnection-openssl.c.orig
 +++ tls/openssl/gtlsclientconnection-openssl.c
 @@ -381,7 +381,7 @@ retrieve_certificate (SSL       *ssl,
@@ -19,3 +27,12 @@ $OpenBSD: patch-tls_openssl_gtlsclientconnection-openssl_c,v 1.1 2017/04/30 10:2
    if (hostname)
      {
        X509_VERIFY_PARAM *param;
+@@ -471,7 +471,7 @@ g_tls_client_connection_openssl_initable_init (GInitab
+       return FALSE;
+     }
+ 
+-  data_index = SSL_get_ex_new_index (0, "gtlsclientconnection", NULL, NULL, NULL);
++  data_index = SSL_get_ex_new_index (0, (void *)"gtlsclientconnection", NULL, NULL, NULL);
+   SSL_set_ex_data (priv->ssl, data_index, client);
+ 
+ #ifdef SSL_CTRL_SET_TLSEXT_HOSTNAME

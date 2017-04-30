@@ -1,4 +1,7 @@
-$OpenBSD: patch-tls_openssl_gtlsbio_c,v 1.1 2017/04/30 10:29:09 ajacoutot Exp $
+$OpenBSD: patch-tls_openssl_gtlsbio_c,v 1.2 2017/04/30 10:36:43 ajacoutot Exp $
+
+XXX Fix build with libressl
+
 --- tls/openssl/gtlsbio.c.orig
 +++ tls/openssl/gtlsbio.c
 @@ -48,7 +48,7 @@ free_gbio (gpointer user_data)

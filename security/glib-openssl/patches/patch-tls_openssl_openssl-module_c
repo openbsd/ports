@@ -1,0 +1,20 @@
+$OpenBSD: patch-tls_openssl_openssl-module_c,v 1.1 2017/04/30 10:36:43 ajacoutot Exp $
+
+From b8d66d389cc7817691a5b39dd1eaa10907453223 Mon Sep 17 00:00:00 2001
+From: Ignacio Casal Quinteiro <qignacio@amazon.com>
+Date: Sun, 16 Apr 2017 18:59:15 +0200
+Subject: Fix warnings pointed out by the new flags added to meson
+
+--- tls/openssl/openssl-module.c.orig
++++ tls/openssl/openssl-module.c
+@@ -61,9 +61,5 @@ g_io_module_unload (GIOModule *module)
+ gchar **
+ g_io_module_query (void)
+ {
+-  gchar *eps[] = {
+-    G_TLS_BACKEND_EXTENSION_POINT_NAME,
+-    NULL
+-  };
+-  return g_strdupv (eps);
++  return g_strsplit (G_TLS_BACKEND_EXTENSION_POINT_NAME, "!", -1);
+ }
