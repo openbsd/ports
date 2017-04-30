@@ -1,16 +1,16 @@
-$OpenBSD: patch-src_Makefile_in,v 1.10 2016/12/03 11:44:41 landry Exp $
---- src/Makefile.in.orig	Wed Nov  9 20:02:37 2016
-+++ src/Makefile.in	Wed Nov  9 20:05:56 2016
+$OpenBSD: patch-src_Makefile_in,v 1.11 2017/04/30 17:52:15 landry Exp $
+--- src/Makefile.in.orig	Mon Jan 23 10:54:27 2017
++++ src/Makefile.in	Sun Feb 26 20:27:29 2017
 @@ -80,7 +80,7 @@ POST_UNINSTALL = :
  build_triplet = @build@
  host_triplet = @host@
  @BUILD_WITH_OWN_LIBOCONFIG_TRUE@am__append_1 = liboconfig
 -@BUILD_FEATURE_DAEMON_TRUE@am__append_2 = -DPIDFILE='"${localstatedir}/run/${PACKAGE_NAME}.pid"'
 +@BUILD_FEATURE_DAEMON_TRUE@am__append_2 = -DPIDFILE='"${localstatedir}/${PACKAGE_NAME}/${PACKAGE_NAME}.pid"'
- check_PROGRAMS = $(am__EXEEXT_1) test_utils_latency$(EXEEXT) \
+ check_PROGRAMS = test_format_graphite$(EXEEXT) $(am__EXEEXT_1) \
+ 	test_utils_latency$(EXEEXT) test_utils_cmds$(EXEEXT) \
  	test_utils_vl_lookup$(EXEEXT) test_utils_mount$(EXEEXT) \
- 	$(am__EXEEXT_2)
-@@ -2610,7 +2610,7 @@ PLUGIN_LDFLAGS = -module -avoid-version -export-symbol
+@@ -2698,7 +2698,7 @@ PLUGIN_LDFLAGS = -module -avoid-version -export-symbol
  AM_CPPFLAGS = -I$(srcdir)/daemon -DPREFIX='"${prefix}"' \
  	-DCONFIGFILE='"${sysconfdir}/${PACKAGE_NAME}.conf"' \
  	-DLOCALSTATEDIR='"${localstatedir}"' \
@@ -19,8 +19,8 @@ $OpenBSD: patch-src_Makefile_in,v 1.10 2016/12/03 11:44:41 landry Exp $
  	$(am__append_2) -DPLUGINDIR='"${pkglibdir}"' \
  	-DPKGDATADIR='"${pkgdatadir}"'
  LOG_COMPILER = env VALGRIND="@VALGRIND@" $(abs_top_srcdir)/testwrapper.sh
-@@ -5519,13 +5519,8 @@ uninstall-man: uninstall-man1 uninstall-man5
- @BUILD_PLUGIN_PINBA_TRUE@	$(AM_V_PROTOC_C)$(PROTOC_C) -I$(srcdir) --c_out . $(srcdir)/pinba.proto
+@@ -5709,13 +5709,8 @@ uninstall-man: uninstall-man1 uninstall-man5
+ @BUILD_PLUGIN_WRITE_PROMETHEUS_TRUE@	$(AM_V_PROTOC_C)$(PROTOC_C) -I$(top_srcdir)/proto --c_out=$(builddir) $(top_srcdir)/proto/prometheus.proto
  
  install-exec-hook:
 -	$(mkinstalldirs) $(DESTDIR)$(sysconfdir)

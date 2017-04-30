@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_tcpconns_c,v 1.12 2016/12/08 10:06:42 landry Exp $
+$OpenBSD: patch-src_tcpconns_c,v 1.13 2017/04/30 17:52:15 landry Exp $
 
 https://github.com/collectd/collectd/issues/2061
 https://github.com/collectd/collectd/pull/2088
 
---- src/tcpconns.c.orig	Wed Nov 30 09:52:01 2016
-+++ src/tcpconns.c	Sun Dec  4 16:22:52 2016
+--- src/tcpconns.c.orig	Mon Jan 23 10:53:57 2017
++++ src/tcpconns.c	Sun Feb 26 20:22:04 2017
 @@ -62,11 +62,16 @@
  #include "common.h"
  #include "plugin.h"
@@ -74,7 +74,7 @@ https://github.com/collectd/collectd/pull/2088
  #elif HAVE_LIBKVM_NLIST
  static const char *tcp_state[] = {"CLOSED",    "LISTEN",      "SYN_SENT",
                                    "SYN_RECV",  "ESTABLISHED", "CLOSE_WAIT",
-@@ -775,6 +805,49 @@ static int conn_read(void) {
+@@ -774,6 +804,49 @@ static int conn_read(void) {
    return (0);
  } /* int conn_read */
    /* #endif HAVE_SYSCTLBYNAME */

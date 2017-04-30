@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_processes_c,v 1.9 2016/12/12 17:55:24 landry Exp $
+$OpenBSD: patch-src_processes_c,v 1.10 2017/04/30 17:52:15 landry Exp $
 
 https://github.com/collectd/collectd/issues/2061
 https://github.com/collectd/collectd/pull/2088
 
---- src/processes.c.orig	Wed Nov 30 09:52:01 2016
-+++ src/processes.c	Mon Dec 12 18:52:34 2016
+--- src/processes.c.orig	Mon Jan 23 10:53:57 2017
++++ src/processes.c	Sun Feb 26 20:22:04 2017
 @@ -155,7 +155,7 @@
  #if defined(ARG_MAX) && (ARG_MAX < 4096)
  #define CMDLINE_BUFFER_SIZE ARG_MAX
@@ -14,7 +14,7 @@ https://github.com/collectd/collectd/pull/2088
  #endif
  #endif
  
-@@ -1937,7 +1937,7 @@ static int ps_read(void) {
+@@ -1916,7 +1916,7 @@ static int ps_read(void) {
    ps_list_reset();
  
    /* Open the kvm interface, get a descriptor */
