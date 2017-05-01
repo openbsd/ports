@@ -1,0 +1,14 @@
+$OpenBSD: patch-modelgen_ap_h,v 1.1 2017/05/01 19:29:26 espie Exp $
+Index: modelgen/ap.h
+--- modelgen/ap.h.orig
++++ modelgen/ap.h
+@@ -103,7 +103,8 @@ class CS { (public)
+   bool	      match1(char c)const{return (peek()==c);}
+   bool	      match1(const std::string& c)const
+ 		{return ns_more() && strchr(c.c_str(),peek());}
+-  int	      find1(const std::string& c)const
++  std::string::size_type	      
++	      find1(const std::string& c)const
+ 	{return ((ns_more()) ? c.find_first_of(peek()) : std::string::npos);}
+   bool	      is_xdigit()const
+ 		{untested(); return (match1("0123456789abcdefABCDEF"));}
