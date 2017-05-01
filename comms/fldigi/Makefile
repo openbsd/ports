@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2017/04/16 14:36:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2017/05/01 13:28:09 sthen Exp $
 
 COMMENT=	soundcard-based software modem for Amateur Radio use
 
 PORTROACH=	limit:^[0-9]+\.[0-9]+\.[0-9]+$$
 # if updating, make sure you're using a version from the fldigi subdir
 # (rather than the alpha_tests subdir.
-DISTNAME=	fldigi-4.0.2
+DISTNAME=	fldigi-4.0.3
 
 CATEGORIES=	comms hamradio
 
