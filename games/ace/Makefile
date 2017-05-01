@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/08/05 05:38:56 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2017/05/01 20:48:55 espie Exp $
 
 COMMENT =		solitaire games
 
 DISTNAME =		ace-1.4
+REVISION =		0
 
 SHARED_LIBS +=  cards                     0.0 # 1.0
 
