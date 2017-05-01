@@ -1,15 +1,17 @@
-# $OpenBSD: Makefile,v 1.21 2017/04/10 11:45:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2017/05/01 16:36:38 jca Exp $
 
 COMMENT =	powerful and simple qt4 editor
 
 V =		33.3.0
+REVISION =	0
 DISTNAME =	tea-${V}
 PKGNAME =	teaqt-${V}
 CATEGORIES =	editors x11
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=tea-editor/}
+MASTER_SITES =	http://semiletov.org/tea/dloads/ \
+		${MASTER_SITE_SOURCEFORGE:=tea-editor/}
 EXTRACT_SUFX =	.tar.bz2
 
-HOMEPAGE =	http://tea-editor.sf.net/
+HOMEPAGE =	http://semiletov.org/tea/
 
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
