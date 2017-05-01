@@ -1,45 +1,31 @@
-# $OpenBSD: Makefile,v 1.36 2017/04/10 11:45:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2017/05/01 19:24:57 rsadowski Exp $
 
-COMMENT= 	logic circuit simulator for KDE
+COMMENT =	logic circuit simulator for KDE
 
-DISTNAME=	klogic-1.6
-REVISION=	12
-CATEGORIES=	cad education x11 x11/kde
+DISTNAME =	klogic-4.0.2
 
-MASTER_SITES=	https://distfiles.nl/
+CATEGORIES =	cad education x11 x11/kde
 
-# GPL
-PERMIT_PACKAGE_CDROM=	Yes
+HOMEPAGE =	http://www.a-rostin.de
 
-WANTLIB += ${KDE}/DCOP ${KDE}/kdecore ${KDE}/kdefx ${KDE}/kdesu
-WANTLIB += ${KDE}/kdeui ${KDE}/kio ${KDE}/kwalletclient
-WANTLIB += GL ICE SM X11 Xcursor Xdamage Xext Xfixes Xft Xi Xinerama Xmu
-WANTLIB += Xrandr Xrender Xt Xxf86vm art_lgpl_2 c drm expat fontconfig
-WANTLIB += freetype idn jpeg lcms m mng png pthread ${LIBCXX} util xcb
-WANTLIB += xcb-glx z X11-xcb Xau Xdmcp fam glapi pthread-stubs xcb-dri2
+MASTER_SITES =	${HOMEPAGE}/klogic/releases/
+EXTRACT_SUFX =	.tar.gz
 
-LIB_DEPENDS=	x11/kde/libs3
+WANTLIB += QtDBus QtGui QtNetwork QtSvg QtXml c
+WANTLIB += ${KDE4LIB}/kdeui ${KDE4LIB}/kio m pthread
 
-MODULES=	x11/kde devel/gettext
-MODKDE_VERSION=	3.1
-MODKDE_FIXUP_DATADIR=	Yes
+# License information from homepage
+# GPLv3
+PERMIT_PACKAGE_CDROM =	Yes
 
-PORTHOME=	${WRKDIR}
+MODULES =	x11/kde4 \
+		devel/cmake
 
-MAKE_ENV=	KDEDIR="${LOCALBASE}"
-MAKE_FLAGS=	${MODKDE_MAKE_FLAGS}
+RUN_DEPENDS =	devel/desktop-file-utils \
+		x11/gtk+3,-guic
 
-USE_GMAKE=	Yes
-CONFIGURE_STYLE= autoconf
-MODGNU_CONFIG_GUESS_DIRS= ${MODKDE_CONFIG_GUESS_DIRS}
-CONFIGURE_ARGS=	${MODKDE_CONFIGURE_ARGS}
-CONFIGURE_ENV=	${MODKDE_CONFIGURE_ENV}
-AUTOCONF_VERSION=	2.57
+BUILD_DEPENDS =	devel/gettext-tools
 
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps
-	mv ${PREFIX}/share/icons/klogic/*.xpm ${PREFIX}/share/pixmaps/
-	rmdir ${PREFIX}/share/icons/klogic
-	rmdir ${PREFIX}/share/icons
+NO_TEST =	Yes
 
 .include <bsd.port.mk>
