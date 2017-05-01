@@ -1,0 +1,12 @@
+$OpenBSD: patch-source_effects_cc,v 1.1 2017/05/01 21:00:15 espie Exp $
+Index: source/effects.cc
+--- source/effects.cc.orig
++++ source/effects.cc
+@@ -13,6 +13,7 @@
+ 
+ #include <string.h>
+ #include <stdio.h>
++#include <stdlib.h>
+ 
+ #include "externs.h"
+ 

@@ -1,0 +1,12 @@
+$OpenBSD: patch-source_tags_cc,v 1.1 2017/05/01 21:00:15 espie Exp $
+Index: source/tags.cc
+--- source/tags.cc.orig
++++ source/tags.cc
+@@ -55,6 +55,7 @@
+ 
+ #include <stdio.h>
+ #include <string.h>            // for memcpy
++#include <stdlib.h>
+ 
+ #ifdef LINUX
+ #include <sys/types.h>

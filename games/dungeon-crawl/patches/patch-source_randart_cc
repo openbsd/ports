@@ -1,0 +1,12 @@
+$OpenBSD: patch-source_randart_cc,v 1.1 2017/05/01 21:00:15 espie Exp $
+Index: source/randart.cc
+--- source/randart.cc.orig
++++ source/randart.cc
+@@ -17,6 +17,7 @@
+ 
+ #include <string.h>
+ #include <stdio.h>
++#include <stdlib.h>
+ 
+ #include "externs.h"
+ #include "itemname.h"
