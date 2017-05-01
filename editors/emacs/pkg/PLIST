@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2016/10/13 15:39:32 jca Exp $
+@comment $OpenBSD: PLIST,v 1.19 2017/05/01 16:25:20 jca Exp $
 @option is-branch
 @pkgpath editors/emacs22,-main
 @pkgpath editors/emacs22,-el
@@ -999,7 +999,6 @@ share/emacs/${VERSION}/etc/refcards/de-refcard.tex
 share/emacs/${VERSION}/etc/refcards/dired-ref.pdf
 share/emacs/${VERSION}/etc/refcards/dired-ref.tex
 share/emacs/${VERSION}/etc/refcards/emacsver.tex
-share/emacs/${VERSION}/etc/refcards/emacsver.tex.in
 share/emacs/${VERSION}/etc/refcards/fr-dired-ref.pdf
 share/emacs/${VERSION}/etc/refcards/fr-dired-ref.tex
 share/emacs/${VERSION}/etc/refcards/fr-refcard.pdf
@@ -1014,13 +1013,19 @@ share/emacs/${VERSION}/etc/refcards/gnus-refcard.tex
 share/emacs/${VERSION}/etc/refcards/orgcard.pdf
 share/emacs/${VERSION}/etc/refcards/orgcard.tex
 share/emacs/${VERSION}/etc/refcards/pdflayout.sty
+share/emacs/${VERSION}/etc/refcards/pl-refcard.pdf
 share/emacs/${VERSION}/etc/refcards/pl-refcard.tex
+share/emacs/${VERSION}/etc/refcards/pt-br-refcard.pdf
 share/emacs/${VERSION}/etc/refcards/pt-br-refcard.tex
 share/emacs/${VERSION}/etc/refcards/refcard.pdf
 share/emacs/${VERSION}/etc/refcards/refcard.tex
+share/emacs/${VERSION}/etc/refcards/ru-refcard.pdf
 share/emacs/${VERSION}/etc/refcards/ru-refcard.tex
+share/emacs/${VERSION}/etc/refcards/sk-dired-ref.pdf
 share/emacs/${VERSION}/etc/refcards/sk-dired-ref.tex
+share/emacs/${VERSION}/etc/refcards/sk-refcard.pdf
 share/emacs/${VERSION}/etc/refcards/sk-refcard.tex
+share/emacs/${VERSION}/etc/refcards/sk-survival.pdf
 share/emacs/${VERSION}/etc/refcards/sk-survival.tex
 share/emacs/${VERSION}/etc/refcards/survival.pdf
 share/emacs/${VERSION}/etc/refcards/survival.tex
