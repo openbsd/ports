@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2017/04/13 09:41:15 juanfra Exp $
+# $OpenBSD: Makefile,v 1.6 2017/05/01 15:14:18 sthen Exp $
 
 COMMENT =		zstandard fast real-time compression algorithm
 
@@ -21,7 +21,7 @@ WANTLIB =		c z
 
 MODULES =		gcc4
 MODGCC4_LANGS =		c
-MODGCC4_ARCHS =		*
+MODGCC4_ARCHS =		${GCC3_ARCHS} ${GCC4_ARCHS}
 
 MAKE_ENV =		CC="${CC}" CXX="${CXX}" \
 			CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}"
