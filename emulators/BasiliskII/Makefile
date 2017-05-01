@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2017/04/10 11:45:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2017/05/01 23:54:02 espie Exp $
 
 COMMENT=		open source 68k Macintosh emulator
 
@@ -35,6 +35,8 @@ CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--enable-sdl-audio \
 			--with-esd=no \
 			--disable-fbdev-dga
+
+CFLAGS +=	-fgnu89-inline
 
 NO_TEST=		Yes
 
