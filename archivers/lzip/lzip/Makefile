@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2017/04/10 11:45:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2017/05/01 12:21:57 juanfra Exp $
 
 COMMENT =		lossless data compressor
 
-DISTNAME =		lzip-1.18
+DISTNAME =		lzip-1.19
 
 HOMEPAGE =		http://lzip.nongnu.org/lzip.html
 
