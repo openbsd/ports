@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/12/29 14:15:15 jca Exp $
+# $OpenBSD: Makefile,v 1.3 2017/05/01 19:32:31 fcambus Exp $
 
 COMMENT =	web application framework for writing scalable web APIs in C
 
@@ -38,7 +38,7 @@ LIB_DEPENDS +=	databases/postgresql,-main
 
 USE_GMAKE =	Yes
 
-MAKE_ENV +=	TASKS=1
+MAKE_ENV +=	CC="${CC}" TASKS=1
 
 NO_TEST =	Yes
 

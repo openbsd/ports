@@ -1,0 +1,16 @@
+$OpenBSD: patch-Makefile,v 1.1 2017/05/01 19:32:31 fcambus Exp $
+--- Makefile.orig
++++ Makefile
+@@ -22,12 +22,6 @@ ifneq ("$(DEBUG)", "")
+ 	NOOPT=1
+ endif
+ 
+-ifneq ("$(NOOPT)", "")
+-	CFLAGS+=-O0
+-else
+-	CFLAGS+=-O2
+-endif
+-
+ ifneq ("$(NOHTTP)", "")
+ 	CFLAGS+=-DKORE_NO_HTTP
+ else
