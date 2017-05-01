@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2014/10/24 18:17:59 nigel Exp $
+@comment $OpenBSD: PLIST,v 1.9 2017/05/01 19:54:18 benoit Exp $
 bin/htmltree
 ${P5SITE}/HTML/AsSubs.pm
 ${P5SITE}/HTML/Element/
@@ -11,6 +11,7 @@ ${P5SITE}/HTML/Tree/AboutObjects.pod
 ${P5SITE}/HTML/Tree/AboutTrees.pod
 ${P5SITE}/HTML/Tree/Scanning.pod
 ${P5SITE}/HTML/TreeBuilder.pm
+@man man/man1/htmltree.1
 @man man/man3p/HTML::AsSubs.3p
 @man man/man3p/HTML::Element.3p
 @man man/man3p/HTML::Element::traverse.3p
