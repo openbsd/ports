@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.484 2017/04/29 15:36:49 edd Exp $
+# $OpenBSD: Quirks.pm,v 1.485 2017/05/01 11:10:31 naddy Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -961,6 +961,7 @@ my $obsolete_reason = {
 	'trafd' => 4,
 	'topbeat' => 3,
 	'logic2cnf' => 3,
+	'bytebench' => 3,
 };
 
 # reasons for obsolete packages
