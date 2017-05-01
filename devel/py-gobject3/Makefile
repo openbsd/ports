@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2017/04/28 15:04:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.57 2017/05/01 20:21:22 sthen Exp $
 
 COMMENT-main=		Python bindings for GLib and GObject
 COMMENT-common=		common files for py-gobject3
@@ -41,7 +41,7 @@ MODULES=		lang/python \
 
 # XXX https://bugzilla.gnome.org/show_bug.cgi?id=737874
 MODULES +=		gcc4
-MODGCC4_ARCHS=		*
+MODGCC4_ARCHS=		${GCC3_ARCHS} ${GCC4_ARCHS}
 
 BUILD_DEPENDS=		graphics/py-cairo${MODPY_FLAVOR}
 
