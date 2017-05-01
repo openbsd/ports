@@ -1,7 +1,8 @@
-$OpenBSD: patch-src_bind_c,v 1.1 2004/01/06 03:29:09 espie Exp $
---- src/bind.c.orig	1995-11-19 03:09:20.000000000 +0100
-+++ src/bind.c	2004-01-06 04:20:22.000000000 +0100
-@@ -634,7 +634,8 @@ int hflag;	/* Look in the HOME environme
+$OpenBSD: patch-src_bind_c,v 1.2 2017/05/01 22:25:54 espie Exp $
+Index: src/bind.c
+--- src/bind.c.orig
++++ src/bind.c
+@@ -634,7 +634,8 @@ int hflag;	/* Look in the HOME environment variable fi
  	register char *sp;	/* pointer into path spec */
  	register int i; 	/* index */
  	static char fspec[NFILEN];	/* full path spec to search */
@@ -11,7 +12,7 @@ $OpenBSD: patch-src_bind_c,v 1.1 2004/01/06 03:29:09 espie Exp $
  	/* if we have an absolute path.. check only there! */
  	sp = fname;
  	while (*sp) {
-@@ -689,9 +690,11 @@ int hflag;	/* Look in the HOME environme
+@@ -689,9 +690,11 @@ int hflag;	/* Look in the HOME environment variable fi
  #if OS2
  	path = getenv("DPATH");
  #else

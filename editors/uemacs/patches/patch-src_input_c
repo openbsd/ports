@@ -1,6 +1,7 @@
-$OpenBSD: patch-src_input_c,v 1.1 2004/01/06 03:29:09 espie Exp $
---- src/input.c.orig	1995-12-29 19:10:12.000000000 +0100
-+++ src/input.c	2004-01-06 04:20:22.000000000 +0100
+$OpenBSD: patch-src_input_c,v 1.2 2017/05/01 22:25:54 espie Exp $
+Index: src/input.c
+--- src/input.c.orig
++++ src/input.c
 @@ -47,7 +47,7 @@
  #include	"edef.h"
  #include	"elang.h"
@@ -10,7 +11,7 @@ $OpenBSD: patch-src_input_c,v 1.1 2004/01/06 03:29:09 espie Exp $
  #include	<pwd.h>
  extern struct passwd *getpwnam();
  #endif
-@@ -244,7 +244,7 @@ int maxlen;		/* maximum length of input 
+@@ -244,7 +244,7 @@ int maxlen;		/* maximum length of input field */
  	char *ptr;		/* string pointer */
  	char user_name[NSTRING]; /* user name for directory */
  	static char buf[NSTRING];/* buffer to hold tentative name */
@@ -19,7 +20,7 @@ $OpenBSD: patch-src_input_c,v 1.1 2004/01/06 03:29:09 espie Exp $
  	struct passwd *pwd;	/* password structure */
  #endif
  
-@@ -353,7 +353,7 @@ int maxlen;		/* maximum length of input 
+@@ -353,7 +353,7 @@ int maxlen;		/* maximum length of input field */
  				--ttcol;
  			}
  

@@ -1,7 +1,17 @@
-$OpenBSD: patch-h_eproto_h,v 1.1 2004/01/06 03:29:09 espie Exp $
---- h/eproto.h.orig	2004-01-06 04:24:49.000000000 +0100
-+++ h/eproto.h	2004-01-06 04:25:04.000000000 +0100
-@@ -552,7 +552,7 @@ extern int PASCAL NEAR backtagword(int f
+$OpenBSD: patch-h_eproto_h,v 1.2 2017/05/01 22:25:54 espie Exp $
+Index: h/eproto.h
+--- h/eproto.h.orig
++++ h/eproto.h
+@@ -422,7 +422,7 @@ extern int PASCAL NEAR setfillcol(int f, int n);
+ extern int PASCAL NEAR setgmode(int f, int n);
+ extern int PASCAL NEAR setmark(int f, int n);
+ extern int PASCAL NEAR setmod(int f, int n);
+-extern int PASCAL NEAR setwlist(char *wclist);
++extern void PASCAL NEAR setwlist(char *wclist);
+ extern int PASCAL NEAR shellprog(char *cmd);
+ extern int PASCAL NEAR showcpos(int f, int n);
+ extern int PASCAL NEAR showfiles(int f, int n);
+@@ -552,7 +552,7 @@ extern int PASCAL NEAR backtagword(int f, int n); /* r
  
  char *strrev(char *);
  

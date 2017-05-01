@@ -1,7 +1,8 @@
-$OpenBSD: patch-src_char_c,v 1.1 2004/01/06 03:29:09 espie Exp $
---- src/char.c.orig	1995-11-19 03:09:20.000000000 +0100
-+++ src/char.c	2004-01-06 04:20:22.000000000 +0100
-@@ -142,14 +142,14 @@ VOID PASCAL NEAR initchars()	/* initiali
+$OpenBSD: patch-src_char_c,v 1.2 2017/05/01 22:25:54 espie Exp $
+Index: src/char.c
+--- src/char.c.orig
++++ src/char.c
+@@ -142,14 +142,14 @@ VOID PASCAL NEAR initchars()	/* initialize the charact
  		lowcase[index] = index ^ DIFCASE;
  		upcase[index ^ DIFCASE] = index;
  	}
