@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_html_cc,v 1.1 2017/05/01 19:57:34 espie Exp $
+Index: src/html.cc
+--- src/html.cc.orig
++++ src/html.cc
+@@ -31,7 +31,7 @@
+ #include <direct.h>
+ #endif
+ #include <errno.h>
+-#include <iostream.h>
++#include <iostream>
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>

@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_doc_ll,v 1.1 2017/05/01 19:57:34 espie Exp $
+Index: src/doc.ll
+--- src/doc.ll.orig
++++ src/doc.ll
+@@ -23,8 +23,8 @@
+ 
+ %{
+ #include <assert.h>
+-#include <fstream.h>
+-#include <iostream.h>
++#include <fstream>
++#include <iostream>
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>

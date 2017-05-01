@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_doc2dbsgml_ll,v 1.1 2017/05/01 19:57:34 espie Exp $
+Index: src/doc2dbsgml.ll
+--- src/doc2dbsgml.ll.orig
++++ src/doc2dbsgml.ll
+@@ -22,11 +22,15 @@
+ 
+ %{
+ #include <assert.h>
+-#include <fstream.h>
+-#include <iostream.h>
++#include <fstream>
++#include <iostream>
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
++
++using std::cerr;
++using std::endl;
++using std::ifstream;
+ 
+ #include "classgraph.h"
+ #include "doc.h"

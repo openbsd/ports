@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_java_ll,v 1.1 2017/05/01 19:57:34 espie Exp $
+Index: src/java.ll
+--- src/java.ll.orig
++++ src/java.ll
+@@ -26,7 +26,7 @@
+ 
+ #include <assert.h>
+ #include <ctype.h>
+-#include <iostream.h>
++#include <iostream>
+ #include <stdio.h>
+ 
+ #include "doc.h"

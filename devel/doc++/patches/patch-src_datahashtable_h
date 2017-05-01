@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_datahashtable_h,v 1.1 2017/05/01 19:57:34 espie Exp $
+Index: src/datahashtable.h
+--- src/datahashtable.h.orig
++++ src/datahashtable.h
+@@ -26,8 +26,12 @@
+ #define _DATAHASHTABLE_H
+ 
+ #include <assert.h>
+-#include <iostream.h>
++#include <iostream>
+ #include <stdlib.h>
++
++using std::cout;
++using std::istream;
++using std::ostream;
+ 
+ #include "McDArray.h"
+ 

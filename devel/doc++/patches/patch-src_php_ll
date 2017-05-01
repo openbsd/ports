@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_php_ll,v 1.1 2017/05/01 19:57:34 espie Exp $
+Index: src/php.ll
+--- src/php.ll.orig
++++ src/php.ll
+@@ -23,7 +23,7 @@
+ %{
+ #include <assert.h>
+ #include <ctype.h>
+-#include <iostream.h>
++#include <iostream>
+ #include <stdio.h>
+ 
+ #include "doc.h"

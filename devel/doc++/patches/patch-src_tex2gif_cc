@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_tex2gif_cc,v 1.1 2017/05/01 19:57:34 espie Exp $
+Index: src/tex2gif.cc
+--- src/tex2gif.cc.orig
++++ src/tex2gif.cc
+@@ -21,10 +21,12 @@
+   Software Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+ */
+ 
+-#include <iostream.h>
+-#include <fstream.h>
++#include <iostream>
++#include <fstream>
+ #include <stdio.h>
+ #include <string.h>
++
++using std::ifstream;
+ 
+ #ifdef __BORLANDC__
+ #include <dir.h>

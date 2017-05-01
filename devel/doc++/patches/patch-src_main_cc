@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_main_cc,v 1.1 2017/05/01 19:57:34 espie Exp $
+Index: src/main.cc
+--- src/main.cc.orig
++++ src/main.cc
+@@ -25,10 +25,13 @@
+ #include "config.h"
+ 
+ #include <assert.h>
+-#include <fstream.h>
++#include <fstream>
+ #include <getopt.h>
+ #include <locale.h>
+ #include <stdio.h>
++
++using std::ifstream;
++using std::ofstream;
+ 
+ #include "McDirectory.h"
+ #include "McString.h"

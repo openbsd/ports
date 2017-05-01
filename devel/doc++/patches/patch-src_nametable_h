@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_nametable_h,v 1.1 2017/05/01 19:57:34 espie Exp $
+Index: src/nametable.h
+--- src/nametable.h.orig
++++ src/nametable.h
+@@ -25,7 +25,7 @@
+ #define	_NAME_TABLE_H
+ 
+ #include <assert.h>
+-#include <iostream.h>
++#include <iostream>
+ 
+ #include "datahashtable.h"
+ 
