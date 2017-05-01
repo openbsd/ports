@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.147 2017/04/30 21:33:26 kili Exp $
+# $OpenBSD: Makefile,v 1.148 2017/05/01 19:31:08 kili Exp $
 
 COMMENT =		compiler for the functional language Haskell
 
@@ -263,7 +263,11 @@ bootstrap: patch
 
 .include <bsd.port.mk>
 
-# Silence clang when used by ghc to process assembler files
+# Silence clang when used by ghc to process assembler files and gets
+# flags chat don't make sense for assembly mode. Also, silence warnings
+# about macro expansions producing 'defined' (occuring in
+# includes/rts/storage/ClosureMacros.h, which has already been fixed
+# upstream)
 .if ${PROPERTIES:Mclang}
-GHC_CC_OPTS += -Wno-unused-command-line-argument
+GHC_CC_OPTS += -Wno-unused-command-line-argument -Wno-expansion-to-defined
 .endif
