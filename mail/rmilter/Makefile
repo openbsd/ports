@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/12/02 15:17:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2017/05/01 14:15:54 sthen Exp $
 
 COMMENT=	milter for rspamd (also supports clamav, rate-limiting, etc)
 
@@ -17,7 +17,7 @@ WANTLIB += c crypto glib-2.0 intl m milter opendkim pcre pthread ssl
 
 MODULES+=	devel/cmake \
 		gcc4
-MODGCC4_ARCHS=	*
+MODGCC4_ARCHS=	${GCC3_ARCHS} ${GCC4_ARCHS}
 
 BUILD_DEPENDS=	devel/bison
 LIB_DEPENDS=	devel/glib2 \
