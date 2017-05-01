@@ -1,0 +1,19 @@
+$OpenBSD: patch-CGExternalHandling_cpp,v 1.1 2017/05/01 20:08:41 espie Exp $
+Index: CGExternalHandling.cpp
+--- CGExternalHandling.cpp.orig
++++ CGExternalHandling.cpp
+@@ -185,12 +185,12 @@ namespace CodeWorker {
+ 		iLength = NetSocket::nToHl(iLength);
+ 		char* tcInput = new char[iLength + 1];
+ 		if (!NetSocket::receiveExactlyFromSocket(hSocket_, tcInput, iLength)) {
+-			delete tcInput;
++			delete [] tcInput;
+ 			throw UtlException("Remote debug protocol error: incorrect number of bytes received");
+ 		}
+ 		tcInput[iLength] = '\0';
+ 		std::string sResult = tcInput;
+-		delete tcInput;
++		delete [] tcInput;
+ 		return sResult;
+ 	}
+ 

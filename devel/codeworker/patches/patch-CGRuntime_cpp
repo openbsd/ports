@@ -1,0 +1,13 @@
+$OpenBSD: patch-CGRuntime_cpp,v 1.1 2017/05/01 20:08:41 espie Exp $
+Index: CGRuntime.cpp
+--- CGRuntime.cpp.orig
++++ CGRuntime.cpp
+@@ -41,6 +41,8 @@ To contact the author: codeworker@free.fr
+ #include <time.h>
+ 
+ #include <errno.h>
++// for EXIT_FAILURE
++#include <stdlib.h>
+ 
+ #ifdef CODEWORKER_GNU_READLINE
+ #	include <stdio.h> // fix for Red Hat 9 - thanks to Justin Cinkelj
