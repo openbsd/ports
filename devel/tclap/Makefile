@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2015/05/22 11:31:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2017/05/01 19:00:21 rsadowski Exp $
 
 COMMENT=	templatized C++ command line parser
 
@@ -17,10 +17,8 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tclap/}
 # tclap is implemented using only header files
 PKG_ARCH=	*
 
-BUILD_DEPENDS=	devel/doxygen \
-		math/graphviz
-
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu
+CONFIGURE_ARGS +=	--disable-doxygen
 
 .include <bsd.port.mk>
