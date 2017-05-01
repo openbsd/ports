@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2017/02/10 14:51:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.73 2017/05/01 14:04:09 sthen Exp $
 
 SHARED_LIBS +=	mupdf		5.0
 SHARED_LIBS +=	mupdfthird	0.0
@@ -29,7 +29,7 @@ FLAVORS=	js
 FLAVOR?=
 
 MODULES =	gcc4
-MODGCC4_ARCHS =	*
+MODGCC4_ARCHS =	${GCC3_ARCHS} ${GCC4_ARCHS}
 
 # http://git.ghostscript.com/?p=mupdf.git;a=summary
 MASTER_SITES =	http://mupdf.com/downloads/ \
@@ -58,7 +58,7 @@ MAKE_ENV += CFLAGS="${CFLAGS} -I$(WRKSRC)/fitz -I$(WRKSRC)/pdf -I$(WRKSRC)/xps"
 MAKE_FLAGS =	CC="${CC}" CXX="${CXX}" \
 		HAVE_CURL=yes \
 		CURL_LIB="-lcurl" \
-		CURL_LIBS="-lpthread -lssl -lcurl" \
+		CURL_LIBS="-lpthread -lssl -lcrypto -lnghttp2 -lcurl" \
 		SYS_OPENSSL_LIBS="-lssl -lcrypto" \
 		LDFLAGS="${LDFLAGS}" \
 		LIBmupdf_VERSION="${LIBmupdf_VERSION}" \
