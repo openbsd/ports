@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2016/03/11 19:59:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2017/05/01 22:32:59 espie Exp $
 
 COMMENT =	string library designed for network communication
 
@@ -15,6 +15,7 @@ HOMEPAGE =	http://www.and.org/vstr/
 
 # mostly LGPLv2.1+, assert_loop.c GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
+CFLAGS += -fgnu89-inline
 
 MASTER_SITES =		http://www.and.org/vstr/$V/
 
@@ -26,3 +27,6 @@ USE_GROFF =		Yes
 CONFIGURE_STYLE =	gnu
 
 .include <bsd.port.mk>
+.if ${PROPERTIES:Mclang}
+CFLAGS += -Wno-expansion-to-defined
+.endif
