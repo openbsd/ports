@@ -1,7 +1,8 @@
-$OpenBSD: patch-cmn_game_cpp,v 1.1 2007/12/07 15:54:56 ajacoutot Exp $
---- cmn/game.cpp.orig	Sat Mar 22 22:20:00 2003
-+++ cmn/game.cpp	Fri Dec  7 14:14:11 2007
-@@ -34,7 +34,8 @@ extern "C" {
+$OpenBSD: patch-cmn_game_cpp,v 1.2 2017/05/02 23:26:32 espie Exp $
+Index: cmn/game.cpp
+--- cmn/game.cpp.orig
++++ cmn/game.cpp
+@@ -34,13 +34,14 @@ extern "C" {
  }
  
  #if X11
@@ -11,3 +12,10 @@ $OpenBSD: patch-cmn_game_cpp,v 1.1 2007/12/07 15:54:56 ajacoutot Exp $
  #endif
  #if WIN32
  #include <strstrea.h>
+ #endif
+ 
+-#include <iomanip.h>
++#include <iomanip>
+ 
+ #include "utils.h"
+ #include "coord.h"

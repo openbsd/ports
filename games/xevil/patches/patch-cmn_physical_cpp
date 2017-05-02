@@ -1,6 +1,7 @@
-$OpenBSD: patch-cmn_physical_cpp,v 1.2 2010/06/15 19:04:05 landry Exp $
---- cmn/physical.cpp.orig	Wed Jan 19 20:38:14 2000
-+++ cmn/physical.cpp	Tue Jun 15 20:47:33 2010
+$OpenBSD: patch-cmn_physical_cpp,v 1.3 2017/05/02 23:26:32 espie Exp $
+Index: cmn/physical.cpp
+--- cmn/physical.cpp.orig
++++ cmn/physical.cpp
 @@ -33,10 +33,12 @@
  // Include Files
  #include "xdata.h"
@@ -21,7 +22,7 @@ $OpenBSD: patch-cmn_physical_cpp,v 1.2 2010/06/15 19:04:05 landry Exp $
  
    // Use the pixmap resource id as the base.
 -  u_int cmnBitsId = (unsigned int)mc->pixmapBits[baseDir][animNum];
-+  u_int cmnBitsId = (unsigned intptr_t)mc->pixmapBits[baseDir][animNum];
++  u_int cmnBitsId = (uintptr_t)mc->pixmapBits[baseDir][animNum];
  
    // It is ok to call OneTransform::compute_key() even if there is no 
    // transformation, will just return 0x0.  

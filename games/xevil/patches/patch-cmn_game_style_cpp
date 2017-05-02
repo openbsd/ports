@@ -1,7 +1,8 @@
-$OpenBSD: patch-cmn_game_style_cpp,v 1.2 2010/06/15 19:04:05 landry Exp $
---- cmn/game_style.cpp.orig	Sat Mar 22 20:47:42 2003
-+++ cmn/game_style.cpp	Tue Jun 15 20:48:55 2010
-@@ -29,12 +29,10 @@
+$OpenBSD: patch-cmn_game_style_cpp,v 1.3 2017/05/02 23:26:32 espie Exp $
+Index: cmn/game_style.cpp
+--- cmn/game_style.cpp.orig
++++ cmn/game_style.cpp
+@@ -29,19 +29,17 @@
  
  // Include Files
  #include "stdafx.h"
@@ -16,6 +17,14 @@ $OpenBSD: patch-cmn_game_style_cpp,v 1.2 2010/06/15 19:04:05 landry Exp $
  #endif
  
  #if WIN32
+ #include <strstrea.h>
+ #endif
+ 
+-#include <iomanip.h>
++#include <iomanip>
+ #include "utils.h"
+ #include "coord.h"
+ #include "world.h"
 @@ -2680,7 +2678,7 @@ int ZigZag::new_level_check(int,WorldP world,LocatorP 
      HumanP human = locator->get_human(n);
      if (human) {

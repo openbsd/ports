@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2017/04/10 11:46:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2017/05/02 23:26:32 espie Exp $
 #
 
 PORTROACH_COMMENT =	2.02r2 is newer than 2.02
@@ -9,7 +9,7 @@ COMMENT=	side-view, fast-action, kill everything type of game
 V=		2.02r2
 DISTNAME=	xevilsrc${V}
 PKGNAME=	xevil-${V}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES=	games
 
@@ -42,3 +42,8 @@ do-install:
 		${PREFIX}/share/doc/xevil/html
 
 .include <bsd.port.mk>
+
+# WAY too many warnings from xpm files otherwise!!!
+.if ${PROPERTIES:Mclang}
+CXXFLAGS +=	-Wno-c++11-compat-deprecated-writable-strings
+.endif
