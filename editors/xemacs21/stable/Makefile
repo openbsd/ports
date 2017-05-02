@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.37 2017/03/05 15:11:52 landry Exp $
+# $OpenBSD: Makefile,v 1.38 2017/05/02 21:14:22 espie Exp $
 
 BRANCH=		21.4
 VERSION=	22
-REVISION=	15
+REVISION=	16
 
 WANTLIB=	c m ncurses util
 
-CFLAGS +=	-fno-pie
+CFLAGS +=	-fno-pie -fgnu89-inline
+
 CONFIGURE_ENV =	LDFLAGS="-nopie"
 CONFIGURE_ARGS+=--infodir='$${DESTDIR}${PREFIX}/info/${DISTNAME}' \
 		--infopath='${LOCALBASE}/info/${DISTNAME}:${LOCALBASE}/info:/usr/share/info' \

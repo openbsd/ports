@@ -1,12 +1,36 @@
-$OpenBSD: patch-src_lisp_h,v 1.1 2009/12/15 10:05:55 jasper Exp $
+$OpenBSD: patch-src_lisp_h,v 1.2 2017/05/02 21:14:22 espie Exp $
 
-Security fix for CVE-2009-2688, xemacs: multiple integer overflow flaws.
+* Security fix for CVE-2009-2688, xemacs: multiple integer overflow flaws.
 
 Patch from gentoo.
 
---- src/lisp.h.orig	Tue Dec 15 10:57:22 2009
-+++ src/lisp.h	Tue Dec 15 10:57:44 2009
-@@ -265,6 +265,11 @@ void assert_failed (const char *, int, const char *);
+* steal  max_align_t declaration from unistd.h to avoid redef.
+
+--- src/lisp.h.orig
++++ src/lisp.h
+@@ -193,15 +193,13 @@ void xfree (void *);
+ # endif /* GNUC */
+ #endif
+ 
+-/* No type has a greater alignment requirement than max_align_t.
+-   (except perhaps for types we don't use, like long double) */
+-typedef union
+-{
+-  struct { long l; } l;
+-  struct { void *p; } p;
+-  struct { void (*f)(void); } f;
+-  struct { double d; } d;
++#ifndef __CLANG_MAX_ALIGN_T_DEFINED
++#define __CLANG_MAX_ALIGN_T_DEFINED
++typedef struct {
++	long long __max_align_ll __aligned(__alignof__(long long));
++	long double __max_align_ld __aligned(__alignof__(long double));
+ } max_align_t;
++#endif
+ 
+ #ifndef ALIGNOF
+ # if defined (__GNUC__) && (__GNUC__ >= 2)
+@@ -265,6 +263,11 @@ void assert_failed (const char *, int, const char *);
  /*#define REGISTER register*/
  /*#endif*/
  
