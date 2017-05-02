@@ -1,7 +1,16 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2011/03/07 19:35:49 jasper Exp $
---- configure.orig	Tue Jan 18 23:14:05 2011
-+++ configure	Tue Jan 18 23:14:38 2011
-@@ -7210,9 +7210,9 @@ fi;
+$OpenBSD: patch-configure,v 1.2 2017/05/02 19:28:25 rsadowski Exp $
+--- configure.orig	Sun Jul  3 11:13:03 2011
++++ configure	Wed Apr 26 07:45:39 2017
+@@ -6267,7 +6267,7 @@ fi
+ 
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking for doxygen" >&5
+ $as_echo_n "checking for doxygen... " >&6; }
+-dox_ver=`doxygen --version 2>/dev/null`
++dox_ver=``
+ if test "x$dox_ver" = "x"; then
+ 	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+ $as_echo "no" >&6; }
+@@ -6323,9 +6323,9 @@ fi
  
  
  # If we are compiling with gcc, enable all warning and make warnings errors.
