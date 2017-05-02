@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/04/23 21:27:58 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/05/02 20:41:04 rsadowski Exp $
 @bin bin/keepassxc
+lib/keepassxc/
+lib/keepassxc/libkeepassx-autotype-xcb.so
 share/applications/keepassxc.desktop
 share/icons/hicolor/128x128/apps/keepassxc-dark.png
 share/icons/hicolor/128x128/apps/keepassxc-locked.png
