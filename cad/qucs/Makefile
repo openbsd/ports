@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2017/04/10 11:45:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2017/05/02 15:13:39 espie Exp $
 
 PORTROACH=	limit:[0-9]\.[0-9]\.[0-9][0-9]$
 
@@ -6,7 +6,7 @@ COMMENT=	graphical circuit design and simulation tool
 BROKEN-hppa =	OOM on hicumL2V2p23.core.o
 
 DISTNAME=	qucs-0.0.16
-REVISION=	0
+REVISION=	1
 CATEGORIES=	cad
 
 HOMEPAGE=	http://qucs.sourceforge.net/
@@ -28,5 +28,10 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/configure
+
+post-configure:
+	perl -pi.bak \
+	    -e 's,.*(\#undef __(BEGIN|END)_DECLS).*,$$1,;' \
+	    ${WRKBUILD}/config.h ${WRKBUILD}/qucs-core/config.h
 
 .include <bsd.port.mk>
