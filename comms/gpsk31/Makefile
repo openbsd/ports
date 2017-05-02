@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2017/04/10 11:45:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2017/05/02 16:47:32 espie Exp $
 
 COMMENT=	gtk PSK31 send and receive
 
 DISTNAME=	gpsk31-0.3
-REVISION=	12
+REVISION=	13
 CATEGORIES=    	comms hamradio
 
 HOMEPAGE=	http://www.qsl.net/pg4i/linux/gpsk31.html
