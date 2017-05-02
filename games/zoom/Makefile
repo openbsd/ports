@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2014/11/01 22:44:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2017/05/02 23:29:11 espie Exp $
 
 COMMENT=		Z-code interpreter for X11
 
@@ -22,6 +22,8 @@ USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib" \
 			CPPFLAGS="-I${LOCALBASE}/include"
+
+CFLAGS +=	-fgnu89-inline
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/zoom
