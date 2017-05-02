@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2015/03/16 18:07:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.26 2017/05/02 18:18:38 espie Exp $
 # Original from: Yannick Cote
 
 DISTNAME=		lam-6.5.9
@@ -24,7 +24,8 @@ MASTER_SITES=		http://www.lam-mpi.org/download/files/ \
 HOMEPAGE=		http://www.lam-mpi.org/
 
 USE_GROFF =		Yes
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	autoconf
+AUTOCONF_VERSION =	2.52
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/config ${WRKSRC}/mpi2c++
 CONFIGURE_ARGS+=	--with-rsh="ssh -x"
 

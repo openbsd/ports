@@ -1,7 +1,8 @@
-$OpenBSD: patch-etc_Makefile_in,v 1.1 2001/04/13 22:16:08 todd Exp $
---- etc/Makefile.in.orig	Fri Apr 13 16:42:05 2001
-+++ etc/Makefile.in	Fri Apr 13 16:42:39 2001
-@@ -33,7 +33,7 @@ bindir = @bindir@
+$OpenBSD: patch-etc_Makefile_in,v 1.2 2017/05/02 18:18:38 espie Exp $
+Index: etc/Makefile.in
+--- etc/Makefile.in.orig
++++ etc/Makefile.in
+@@ -41,7 +41,7 @@ bindir = @bindir@
  sbindir = @sbindir@
  libexecdir = @libexecdir@
  datadir = @datadir@

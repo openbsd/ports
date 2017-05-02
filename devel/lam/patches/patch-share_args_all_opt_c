@@ -1,6 +1,7 @@
-$OpenBSD: patch-share_args_all_opt_c,v 1.1 2004/05/09 21:11:16 naddy Exp $
---- share/args/all_opt.c.orig	2004-05-08 18:29:21.000000000 +0200
-+++ share/args/all_opt.c	2004-05-08 18:29:52.000000000 +0200
+$OpenBSD: patch-share_args_all_opt_c,v 1.2 2017/05/02 18:18:38 espie Exp $
+Index: share/args/all_opt.c
+--- share/args/all_opt.c.orig
++++ share/args/all_opt.c
 @@ -34,7 +34,7 @@
  static int addinst(struct ao_opt *opt, int nparam, char **params);
  static int countparam(OPT *aod, struct ao_opt *opt, char **argv);
@@ -10,7 +11,7 @@ $OpenBSD: patch-share_args_all_opt_c,v 1.1 2004/05/09 21:11:16 naddy Exp $
  static struct ao_opt *findopt(OPT *desc, char *optstr);
  
  
-@@ -481,7 +481,7 @@ ao_parse(OPT *aod, int *pcmdc, char **cm
+@@ -481,7 +481,7 @@ ao_parse(OPT *aod, int *pcmdc, char **cmdv)
  /*
   * If a number, assume '#' option.
   */
@@ -37,7 +38,7 @@ $OpenBSD: patch-share_args_all_opt_c,v 1.1 2004/05/09 21:11:16 naddy Exp $
  {
  	char		*endstr;		/* end of parsed string */
  
-@@ -720,7 +720,7 @@ countparam(OPT *aod, struct ao_opt *opt,
+@@ -720,7 +720,7 @@ countparam(OPT *aod, struct ao_opt *opt, char **argv)
  
  		if (strcmp(string, "--") == 0) break;
  
@@ -46,7 +47,7 @@ $OpenBSD: patch-share_args_all_opt_c,v 1.1 2004/05/09 21:11:16 naddy Exp $
  				(findopt(aod, "#") != 0)) break;
  
  		if (findopt(aod, string + 1)) break;
-@@ -799,7 +799,7 @@ addinst(struct ao_opt *opt, int nparam, 
+@@ -799,7 +799,7 @@ addinst(struct ao_opt *opt, int nparam, char **params)
  	for (; nparam > 0; --nparam, ++params, parmbuf += size) {
  
  		if (fl_int) {
