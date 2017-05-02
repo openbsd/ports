@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2015/08/17 19:52:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.43 2017/05/02 16:56:11 espie Exp $
 
 COMMENT=	tools to talk to GSM cellular phones
 
@@ -35,6 +35,7 @@ CONFIGURE_ARGS=		--enable-security \
 			--disable-xdebug \
 			--disable-rlpdebug
 
+CFLAGS += -fgnu89-inline
 .if ${FLAVOR:Mno_x11}
 CONFIGURE_ARGS+=	--without-x
 .else
