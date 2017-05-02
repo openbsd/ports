@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.5 2016/05/27 18:00:08 danj Exp $
+@comment $OpenBSD: PLIST,v 1.6 2017/05/02 08:57:45 benoit Exp $
 bin/gunicorn${MODPY_BIN_SUFFIX}
-bin/gunicorn_django${MODPY_BIN_SUFFIX}
 bin/gunicorn_paster${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/gunicorn/
 lib/python${MODPY_VERSION}/site-packages/gunicorn-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -32,13 +31,9 @@ lib/python${MODPY_VERSION}/site-packages/gunicorn/app/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gunicorn/app/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gunicorn/app/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gunicorn/app/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/gunicorn/app/${MODPY_PYCACHE}django_wsgi.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/gunicorn/app/${MODPY_PYCACHE}djangoapp.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gunicorn/app/${MODPY_PYCACHE}pasterapp.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gunicorn/app/${MODPY_PYCACHE}wsgiapp.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gunicorn/app/base.py
-lib/python${MODPY_VERSION}/site-packages/gunicorn/app/django_wsgi.py
-lib/python${MODPY_VERSION}/site-packages/gunicorn/app/djangoapp.py
 lib/python${MODPY_VERSION}/site-packages/gunicorn/app/pasterapp.py
 lib/python${MODPY_VERSION}/site-packages/gunicorn/app/wsgiapp.py
 lib/python${MODPY_VERSION}/site-packages/gunicorn/arbiter.py
@@ -71,16 +66,6 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gunicorn/instrument/${M
 lib/python${MODPY_VERSION}/site-packages/gunicorn/instrument/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gunicorn/instrument/${MODPY_PYCACHE}statsd.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gunicorn/instrument/statsd.py
-lib/python${MODPY_VERSION}/site-packages/gunicorn/management/
-lib/python${MODPY_VERSION}/site-packages/gunicorn/management/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gunicorn/management/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/gunicorn/management/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/gunicorn/management/commands/
-lib/python${MODPY_VERSION}/site-packages/gunicorn/management/commands/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gunicorn/management/commands/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/gunicorn/management/commands/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/gunicorn/management/commands/${MODPY_PYCACHE}run_gunicorn.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/gunicorn/management/commands/run_gunicorn.py
 lib/python${MODPY_VERSION}/site-packages/gunicorn/pidfile.py
 lib/python${MODPY_VERSION}/site-packages/gunicorn/reloader.py
 lib/python${MODPY_VERSION}/site-packages/gunicorn/selectors.py
