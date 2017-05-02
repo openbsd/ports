@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 
-# $OpenBSD: update-patches,v 1.4 2017/05/02 09:26:30 espie Exp $
+# $OpenBSD: update-patches,v 1.5 2017/05/02 21:06:41 espie Exp $
 # Copyright (c) 2017
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
@@ -47,6 +47,119 @@ if (defined $ENV{DIFF_ARGS}) {
 my ($actual, $saved, $done);
 my @edit;
 
+my $kw_re = qr{\$(
+		Author|CVSHeader|Date|Header|Id|Name|Locker|Log|
+			RCSFile|Revision|Source|State|OpenBSD
+		    )\b.*\$}x;
+
+sub fuzz_chunk
+{
+	my $chunk = shift;
+	return 0 if @{$chunk->{lines}} < 4;
+	my $zap = 0;
+	my $fuzzed = 0;
+	if ($chunk->{lines}[0] =~ m/^\s/ && 
+	    $chunk->{lines}[0] =~ m/$kw_re/) {
+	    	$zap = 1;
+	}
+	if ($chunk->{lines}[0] =~ m/^\s/ &&
+	    $chunk->{lines}[1] =~ m/^\s/ && 
+	    $chunk->{lines}[1] =~ m/$kw_re/) {
+	    	$zap = 1;
+	}
+	while ($zap) {
+		shift @{$chunk->{lines}};
+		$chunk->{oldstart}++;
+		$chunk->{newstart}++;
+		$chunk->{oldplus}--;
+		$chunk->{newplus}--;
+		$zap--;
+		$fuzzed = 1;
+	}
+	if ($chunk->{lines}[-1] =~ m/^\s/ &&
+	    $chunk->{lines}[-1] =~ m/$kw_re/) {
+	    	$zap=1;
+	}
+	if ($chunk->{lines}[-2] =~ m/^\s/ &&
+	    $chunk->{lines}[-2] =~ m/^\s/ &&
+	    $chunk->{lines}[-2] =~ m/$kw_re/) {
+	    	$zap=2;
+	}
+	while ($zap) {
+		pop @{$chunk->{lines}};
+		$chunk->{oldplus}--;
+		$chunk->{newplus}--;
+		$zap--;
+		$fuzzed = 1;
+	}
+	return $fuzzed;
+}
+
+sub may_fuzz_patch
+{
+	my ($stem, $list) = @_;
+
+	my $try_fuzz = 0;
+	for my $l (@$list) {
+		if ($l =~ m/$kw_re/) {
+			$try_fuzz = 1;
+			last;
+		}
+	}
+
+	return unless $try_fuzz;
+
+	my @lines = @$list;
+	if (@lines < 2) {
+		return;
+	}
+	# extract the header
+	my $h1 = shift @lines;
+	my $h2 = shift @lines;
+	# cut up the patch
+	my $patch = [];
+	my $chunk;
+	my $fuzzed = 0;
+
+	while (@lines > 0) {
+		my $l = shift @lines;
+		if ($l =~ m/^\@\@\s+\-(\d+)\,(\d+)\s+\+(\d+)\,(\d+)\s+\@\@$/) {
+			if (defined $chunk) {
+				if ($chunk->{fuzzable} && fuzz_chunk($chunk)) {
+					$fuzzed = 1;
+				}
+				push(@$patch, $chunk);
+			}
+			$chunk = {oldstart => $1, oldplus => $2,
+				newstart => $3, newplus => $4};
+		} else {
+			return if !defined $chunk;
+			if ($l =~ m/$kw_re/) {
+				$chunk->{fuzzable} = 1;
+			}
+			push(@{$chunk->{lines}}, $l);
+		}
+	}
+	if (defined $chunk) {
+		if ($chunk->{fuzzable} && fuzz_chunk($chunk)) {
+			$fuzzed = 1;
+		}
+		push(@$patch, $chunk);
+	}
+
+	return unless $fuzzed;
+
+	say "*** Patch for $stem fuzzed because of CVS keywords";
+	@$list = ($h1, $h2);
+
+	for my $chunk (@{$patch}) {
+		push(@$list, '@@ -'.$chunk->{oldstart}.','.$chunk->{oldplus}.
+			' +'.$chunk->{newstart}.','.$chunk->{newplus}.
+			' @@'."\n");
+		push(@$list, @{$chunk->{lines}});
+	}
+}
+
 sub create_patch
 {
 	my ($src, $dst, $stem) = @_;
@@ -57,6 +170,7 @@ sub create_patch
 	close $file;
 	my $comment = "!OpenBSD!\n";
 	$comment =~ tr/!/$/;
+	may_fuzz_patch($stem, \@lines);
 	return {stem => $stem, patch => \@lines, 
 		filename => patch_name($stem),
 		comment => [$comment, "\n"] };
@@ -229,10 +343,7 @@ for my $k (sort keys %$saved) {
 	for my $l (@{$p->{patch}}) {
 		if ($l =~ m/^\\ No newline at end of file/) {
 			say "*** $p->{filename} misses newline at end of file";
-		} elsif ($l =~ m/\$(
-			Author|CVSHeader|Date|Header|Id|Name|Locker|Log|
-			RCSFile|Revision|Source|State|OpenBSD
-		    )\b.*\$/x) {
+		} elsif ($l =~ m/$kw_re/) {
 			say "*** $p->{filename} contains CVS keyword";
 		}
 	}
