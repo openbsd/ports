@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/04/19 12:23:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2017/05/02 20:17:31 fcambus Exp $
 
 COMMENT =	fuzzy select anything
 
-V =		1.6.0
+V =		1.6.1
 DISTNAME =	pick-${V}
 
 CATEGORIES =	sysutils
