@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_JavaCat_Class_cpp,v 1.1 2017/05/02 17:49:06 espie Exp $
+nullptr is part of modern C++, avoid collision
+
+Index: src/JavaCat/Class.cpp
+--- src/JavaCat/Class.cpp.orig
++++ src/JavaCat/Class.cpp
+@@ -601,11 +601,11 @@ bool Class::reverse(ClassContainer * container, QCStri
+ 	  if (CurrentArtifact->associatedClasses().isEmpty()) {
+ 	    // first association, to set artifact def
+ 	    Package * pack = (Package *) cl->parent();
+-	    UmlArtifact * nullptr = 0;
++	    UmlArtifact * nullp = 0;
+ 	    
+ 	    CurrentArtifact->addAssociatedClass(cl_uml);
+ 	    cl_uml->need_artifact(pack->get_imports(), pack->is_java_lang_added(),
+-				  pack->get_static_imports(), path, nullptr);
++				  pack->get_static_imports(), path, nullp);
+ 	  }
+ 	  else
+ 	    CurrentArtifact->addAssociatedClass(cl_uml);
