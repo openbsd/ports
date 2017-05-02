@@ -1,0 +1,14 @@
+$OpenBSD: patch-qcadguiqt_src_qg_dialogfactory_cpp,v 1.1 2017/05/02 08:05:26 espie Exp $
+
+Index: qcadguiqt/src/qg_dialogfactory.cpp
+--- qcadguiqt/src/qg_dialogfactory.cpp.orig
++++ qcadguiqt/src/qg_dialogfactory.cpp
+@@ -189,7 +189,7 @@ RS_Layer* QG_DialogFactory::requestNewLayerDialog(RS_L
+     int i = 2;
+ 
+     if (layerList!=NULL) {
+-        while (layerList->find(layer_name) > 0)
++        while (layerList->find(layer_name) != 0)
+             layer_name.sprintf("noname%d", i++);
+     }
+ 
