@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_main-win_c,v 1.3 2017/05/02 15:18:31 espie Exp $
+
+Index: src/main-win.c
+--- src/main-win.c.orig
++++ src/main-win.c
+@@ -378,7 +378,7 @@ gboolean main_win_open( MainWin* mw, const char* file_
+         image_list_sort_by_name( mw->img_list, GTK_SORT_DESCENDING );
+         if (image_list_get_first(mw->img_list))
+             main_win_open(mw, image_list_get_current_file_path(mw->img_list), zoom);
+-        return;
++        return FALSE;
+     }
+ 
+ 

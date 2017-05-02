@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_ptk-menu_h,v 1.1 2017/05/02 15:18:31 espie Exp $
+
+Index: src/ptk-menu.h
+--- src/ptk-menu.h.orig
++++ src/ptk-menu.h
+@@ -15,7 +15,7 @@
+ */
+ 
+ #ifndef _PTK_MENU_H_
+-#define _PTK_UTILS_H_
++#define _PTK_MENU_H_
+ 
+ #include <gtk/gtk.h>
+ #include <gdk/gdk.h>
