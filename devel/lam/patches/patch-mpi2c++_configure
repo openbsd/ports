@@ -1,0 +1,14 @@
+$OpenBSD: patch-mpi2c++_configure,v 1.1 2017/05/02 18:42:20 espie Exp $
+
+Index: mpi2c++/configure
+--- mpi2c++/configure.orig
++++ mpi2c++/configure
+@@ -2428,7 +2428,7 @@ foo<T>::member(int i)
+ }
+ 
+ int
+-main(int argc, char *argv)
++main(int argc, char **argv)
+ {
+   foo<bar> var1(6);
+   foo< foo<bar> > var2(var1);
