@@ -1,0 +1,12 @@
+$OpenBSD: patch-cmake_FindLibUV_cmake,v 1.1.1.1 2017/05/02 20:58:42 edd Exp $
+--- cmake/FindLibUV.cmake.orig	Mon May  1 21:13:23 2017
++++ cmake/FindLibUV.cmake	Tue May  2 09:45:33 2017
+@@ -65,7 +65,7 @@ if(HAVE_LIBKSTAT)
+ endif()
+ 
+ check_library_exists(kvm kvm_open "kvm.h" HAVE_LIBKVM)
+-if(HAVE_LIBKVM)
++if(HAVE_LIBKVM AND NOT CMAKE_SYSTEM_NAME STREQUAL "OpenBSD")
+   list(APPEND LIBUV_LIBRARIES kvm)
+ endif()
+ 

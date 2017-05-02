@@ -1,0 +1,22 @@
+$OpenBSD: README,v 1.1.1.1 2017/05/02 20:58:42 edd Exp $
+
++-------------------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-------------------------------------------------------------------------------
+
+Why is the Escape Key Not Working Right?
+========================================
+
+If you use Neovim under tmux, you are likely being bitten by a libtermkey bug.
+Read the libtermkey package README for a workaround.
+
+Migrating from Vim to Neovim
+============================
+
+Note that in Neovim some paths are different from traditional vim. The config
+dir is ~/.config/nvim, and the main config file is ~/.config/nvim/init.vim. You
+can symlink your existing traditional vim config and directory to the new
+paths, and this will work.
+
+The first time you invoke nvim, run ':CheckHealth' to see what else you might
+need to do to migrate.
