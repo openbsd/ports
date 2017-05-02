@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_fileformats_rtf_writer_cpp,v 1.1 2017/05/02 18:04:58 espie Exp $
+
+Index: src/fileformats/rtf_writer.cpp
+--- src/fileformats/rtf_writer.cpp.orig
++++ src/fileformats/rtf_writer.cpp
+@@ -30,6 +30,7 @@
+ #include <windows.h>
+ #endif
+ 
++#include <locale.h>
+ //-----------------------------------------------------------------------------
+ 
+ namespace
