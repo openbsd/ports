@@ -1,4 +1,4 @@
-# $OpenBSD: Port.pm,v 1.3 2016/04/26 17:24:38 tsg Exp $
+# $OpenBSD: Port.pm,v 1.4 2017/05/02 11:30:03 tsg Exp $
 #
 # Copyright (c) 2015 Giannis Tsaraias <tsg@openbsd.org>
 #
@@ -296,12 +296,6 @@ sub make_clean
 	return $self->_make('clean');
 }
 
-sub make_fetch
-{
-	my $self = shift;
-	return $self->_make('fetch-all');
-}
-
 sub make_makesum
 {
 	shift->_make('makesum');
@@ -361,7 +355,6 @@ sub make_port
 	$self->fill_in_makefile( $di, $vi );
 	$self->write_makefile();
 
-	$self->make_fetch();
 	$self->make_makesum();
 	$self->make_checksum();
 	$self->make_extract();
