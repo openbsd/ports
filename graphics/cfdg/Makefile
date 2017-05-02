@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2015/12/02 18:20:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2017/05/02 15:29:27 espie Exp $
 
 COMMENT =	Context Free Design Grammar
 
@@ -36,10 +36,10 @@ MAKE_ENV +=	CPPFLAGS="${CFLAGS}"
 
 EXAMPLEDIR =	${PREFIX}/share/examples/cfdg
 
-# FlexLexer.h is installed into /usr/include/g++, but we cannot set that
-# include path since we use g++ from ports.
+# Work-around bad installation of FlexLexer.h
 post-extract:
-	cp /usr/include/g++/FlexLexer.h ${WRKSRC}/src-unix/
+	test -f /usr/include/FlexLexer.h || \
+		cp /usr/include/g++/FlexLexer.h ${WRKSRC}/src-unix/
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/cfdg ${PREFIX}/bin
