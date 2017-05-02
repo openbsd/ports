@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2015/05/01 07:34:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2017/05/02 15:25:32 espie Exp $
 
 COMMENT=		convert text strings to printed bars
 
@@ -18,7 +18,8 @@ LIB_DEPENDS=		print/libpaper
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+			LDFLAGS="-L${LOCALBASE}/lib" \
+			ac_cv_func_calloc_0_nonnull=yes
 
 post-install:
 	rm ${PREFIX}/bin/sample
