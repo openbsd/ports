@@ -1,0 +1,38 @@
+$OpenBSD: patch-src_pgsql_c,v 1.1 2017/05/02 19:55:23 fcambus Exp $
+
+https://github.com/jorisvink/kore/commit/7eced6f035c83c02680d9b58371851f8662a0e8a
+https://github.com/jorisvink/kore/commit/c071d64bdddacbe1b69d238e14994d666a86f7cf
+
+--- src/pgsql.c.orig
++++ src/pgsql.c
+@@ -151,7 +151,7 @@ kore_pgsql_query(struct kore_pgsql *pgsql, const char 
+ 
+ int
+ kore_pgsql_v_query_params(struct kore_pgsql *pgsql,
+-    const char *query, int result, u_int8_t count, va_list args)
++    const char *query, int result, int count, va_list args)
+ {
+ 	u_int8_t	i;
+ 	char		**values;
+@@ -214,18 +214,16 @@ cleanup:
+ 
+ int
+ kore_pgsql_query_params(struct kore_pgsql *pgsql,
+-    const char *query, int result, u_int8_t count, ...)
++    const char *query, int result, int count, ...)
+ {
+ 	int		ret;
+ 	va_list		args;
+ 
+-	if (count > 0)
+-		va_start(args, count);
++	va_start(args, count);
+ 
+ 	ret = kore_pgsql_v_query_params(pgsql, query, result, count, args);
+ 
+-	if (count > 0)
+-		va_end(args);
++	va_end(args);
+ 
+ 	return (ret);
+ }

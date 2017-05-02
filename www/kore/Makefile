@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2017/05/01 19:32:31 fcambus Exp $
+# $OpenBSD: Makefile,v 1.4 2017/05/02 19:55:23 fcambus Exp $
 
 COMMENT =	web application framework for writing scalable web APIs in C
 
 GH_ACCOUNT =	jorisvink
 GH_PROJECT =	kore
 GH_TAGNAME =	2.0.0-release
+REVISION =	0
 
 PKGNAME =	${DISTNAME:S/-release//}
 

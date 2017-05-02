@@ -1,0 +1,18 @@
+$OpenBSD: patch-includes_pgsql_h,v 1.1 2017/05/02 19:55:23 fcambus Exp $
+
+https://github.com/jorisvink/kore/commit/7eced6f035c83c02680d9b58371851f8662a0e8a
+
+--- includes/pgsql.h.orig
++++ includes/pgsql.h
+@@ -66,9 +66,9 @@ void	kore_pgsql_cleanup(struct kore_pgsql *);
+ void	kore_pgsql_continue(struct http_request *, struct kore_pgsql *);
+ int	kore_pgsql_query(struct kore_pgsql *, const char *);
+ int	kore_pgsql_query_params(struct kore_pgsql *,
+-	    const char *, int, u_int8_t, ...);
++	    const char *, int, int, ...);
+ int	kore_pgsql_v_query_params(struct kore_pgsql *,
+-	    const char *, int, u_int8_t, va_list);
++	    const char *, int, int, va_list);
+ int	kore_pgsql_register(const char *, const char *);
+ int	kore_pgsql_ntuples(struct kore_pgsql *);
+ void	kore_pgsql_logerror(struct kore_pgsql *);
