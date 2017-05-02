@@ -1,4 +1,4 @@
-$OpenBSD: patch-mpi2c++_configure,v 1.1 2017/05/02 18:42:20 espie Exp $
+$OpenBSD: patch-mpi2c++_configure,v 1.2 2017/05/02 21:16:43 espie Exp $
 
 Index: mpi2c++/configure
 --- mpi2c++/configure.orig
@@ -12,3 +12,12 @@ Index: mpi2c++/configure
  {
    foo<bar> var1(6);
    foo< foo<bar> > var2(var1);
+@@ -2875,7 +2875,7 @@ rm -f conftest.o
+ cat > conftest.C <<EOF
+ #include <mpi.h>
+ int 
+-main(int argc, char* argv)
++main(int argc, char* argv[])
+ { return 0; }
+ EOF
+ echo configure:2864: $CXX $CXXFLAGS -c conftest.C >&5
