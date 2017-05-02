@@ -1,9 +1,12 @@
-$OpenBSD: patch-src_dcraw_cc,v 1.1 2015/05/31 06:35:02 kirby Exp $
+$OpenBSD: patch-src_dcraw_cc,v 1.2 2017/05/02 15:48:41 espie Exp $
 
 fix CVE-2015-3885
+const correct.
+fix evaluation order.
 
---- src/dcraw.cc.orig	Tue May 26 13:45:37 2015
-+++ src/dcraw.cc	Tue May 26 13:46:31 2015
+Index: src/dcraw.cc
+--- src/dcraw.cc.orig
++++ src/dcraw.cc
 @@ -916,7 +916,8 @@ struct jhead {
  
  int CLASS ljpeg_start (struct jhead *jh, int info_only)
@@ -14,3 +17,32 @@ fix CVE-2015-3885
    uchar data[0x10000], *dp;
  
    if (!info_only) init_decoder();
+@@ -2634,7 +2635,8 @@ void CLASS sony_decrypt (unsigned *data, int len, int 
+       pad[p] = htonl(pad[p]);
+   }
+   while (len--)
+-    *data++ ^= pad[p++ & 127] = pad[(p+1) & 127] ^ pad[(p+65) & 127];
++    *data++ ^= pad[p & 127] = pad[(p+1) & 127] ^ pad[(p+65) & 127];
++    p++;
+ }
+ 
+ void CLASS sony_load_raw()
+@@ -8445,7 +8447,8 @@ int CLASS main (int argc, const char **argv)
+   static int timestamp_only=0, thumbnail_only=0, identify_only=0;
+   static int user_qual=-1, user_black=-1, user_sat=-1, user_flip=-1;
+   static int use_fuji_rotate=1, write_to_stdout=0, quality, i, c;
+-  static char opm, opt, *ofname, *cp, *bpfile=0;
++  static char opm, opt, *ofname, *cp2, *bpfile=0;
++  static const char *cp;
+   static const char *sp, *dark_frame=0, *write_ext;
+   static struct utimbuf ut;
+   static FILE *ofp;
+@@ -8781,7 +8784,7 @@ thumbnail:
+       strcpy (ofname,_("standard output"));
+     else {
+       strcpy (ofname, ifname);
+-      if ((cp = strrchr (ofname, '.'))) *cp = 0;
++      if ((cp2 = strrchr (ofname, '.'))) *cp2 = 0;
+       if (multi_out)
+ 	sprintf (ofname+strlen(ofname), "_%0*d",
+ 		snprintf(0,0,"%d",is_raw-1), shot_select);
