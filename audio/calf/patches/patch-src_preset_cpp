@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_preset_cpp,v 1.1 2017/05/03 09:46:40 espie Exp $
+
+Index: src/preset.cpp
+--- src/preset.cpp.orig
++++ src/preset.cpp
+@@ -25,6 +25,7 @@
+ #include <errno.h>
+ #include <string.h>
+ #include <sys/stat.h>
++#include <unistd.h>
+ 
+ #include <expat.h>
+ #include <calf/preset.h>

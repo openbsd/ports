@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_osctlnet_cpp,v 1.1 2017/05/03 09:46:40 espie Exp $
+
+Index: src/osctlnet.cpp
+--- src/osctlnet.cpp.orig
++++ src/osctlnet.cpp
+@@ -26,6 +26,7 @@
+ #include <stdlib.h>
+ #include <sstream>
+ #include <stdio.h>
++#include <unistd.h>
+ using namespace osctl;
+ using namespace std;
+ 

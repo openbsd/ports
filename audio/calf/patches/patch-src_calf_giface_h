@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_calf_giface_h,v 1.1 2017/05/03 09:46:40 espie Exp $
+shut up warning (class/struct mismatch)
+
+Index: src/calf/giface.h
+--- src/calf/giface.h.orig
++++ src/calf/giface.h
+@@ -282,8 +282,9 @@ struct plugin_metadata_iface
+ };
+ 
+ /// Interface for host-GUI-plugin interaction (should be really split in two, but ... meh)
+-struct plugin_ctl_iface: public virtual plugin_metadata_iface
++class plugin_ctl_iface: public virtual plugin_metadata_iface
+ {
++public:
+     /// @return value of given parameter
+     virtual float get_param_value(int param_no) = 0;
+     /// Set value of given parameter
