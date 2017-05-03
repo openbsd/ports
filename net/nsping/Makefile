@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2013/03/11 11:35:50 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2017/05/03 18:36:05 fcambus Exp $
 
 COMMENT=	DNS ping
 
@@ -7,7 +7,7 @@ REVISION=	0
 DISTFILES=	nsping.tar.gz
 CATEGORIES=	net
 
-MASTER_SITES=	${MASTER_SITE_OPENBSD}
+MASTER_SITES=	https://www.distfiles.pl/
 
 PERMIT_PACKAGE_CDROM=	Yes
 

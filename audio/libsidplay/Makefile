@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2017/04/10 11:45:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2017/05/03 18:36:05 fcambus Exp $
 
 COMMENT=	C64 music player and SID chip emulator library
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB =		m ${LIBCXX}
 
-MASTER_SITES=	${MASTER_SITE_OPENBSD}
+MASTER_SITES=	https://www.distfiles.pl/
 EXTRACT_SUFX=	.tgz
 
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/scripts

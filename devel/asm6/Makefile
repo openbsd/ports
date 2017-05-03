@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2016/10/04 14:23:15 fcambus Exp $
+# $OpenBSD: Makefile,v 1.4 2017/05/03 18:36:05 fcambus Exp $
 
 COMMENT =	simple 6502 assembler
 
@@ -12,7 +12,7 @@ CATEGORIES =	devel
 # of this software in any fashion."
 PERMIT_PACKAGE_CDROM =		Yes
 
-MASTER_SITES =	${MASTER_SITE_OPENBSD}
+MASTER_SITES =	https://www.distfiles.pl/
 
 WRKDIST =	${WRKDIR}
 WANTLIB +=	c
