@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2017/05/02 15:39:54 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2017/05/03 12:27:21 espie Exp $
 
 COMMENT =	Context Free Design Grammar
 
@@ -33,7 +33,7 @@ USE_GMAKE =	Yes
 WRKDIST =	${WRKDIR}/context-free-${VERSION}
 
 MAKE_ENV +=	CPPFLAGS="${CFLAGS}"
-MAKE_FLAGS =	CXX=c++ CC=cc LIBCXX="${LIBCXX}"
+MAKE_FLAGS =	CXX=c++ CC=c++ LIBCXX="${LIBCXX}"
 
 EXAMPLEDIR =	${PREFIX}/share/examples/cfdg
 
