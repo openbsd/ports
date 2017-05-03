@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_action_cpp,v 1.1 2017/05/03 17:59:02 jca Exp $
+--- src/action.cpp.orig
++++ src/action.cpp
+@@ -4,6 +4,7 @@
+ // $Id: patch-src_action_cpp,v 1.1 2017/05/03 17:59:02 jca Exp $
+ 
+ #include <string>
++#include <cstdlib>
+ #include "wmi.h"
+ 
+ #include "action.h"
