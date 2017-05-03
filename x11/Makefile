@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.589 2017/04/24 14:36:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.590 2017/05/03 15:54:59 espie Exp $
 
      SUBDIR =
      SUBDIR += Xaw3d
@@ -362,7 +362,6 @@
      SUBDIR += xforms
      SUBDIR += xglobe
      SUBDIR += xglobe,no_map
-     SUBDIR += xgrab
      SUBDIR += xkbcommon
      SUBDIR += xkbset
      SUBDIR += xkeycaps
