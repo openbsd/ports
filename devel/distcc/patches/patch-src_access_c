@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_access_c,v 1.1 2017/05/03 08:55:23 espie Exp $
+global analysis, -Werror + -Wunused...
+
+Index: src/access.c
+--- src/access.c.orig
++++ src/access.c
+@@ -52,7 +52,9 @@
+  */
+ 
+ static const uint32_t allones = 0xffffffffUL;
++#ifdef ENABLE_RFC2553
+ static const uint8_t allones8 = 0xffU;
++#endif
+ 
+ /**
+  * Split a "HOST/BITS" mask specification into HOST and BITS.
