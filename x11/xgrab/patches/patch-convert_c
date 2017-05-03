@@ -1,0 +1,21 @@
+$OpenBSD: patch-convert_c,v 1.1 2017/05/03 13:50:47 espie Exp $
+
+Index: convert.c
+--- convert.c.orig
++++ convert.c
+@@ -22,6 +22,7 @@
+ /*
+  * convert a pixmap image into a bitmap image
+  */
++void
+ pixmap2bitmap(image)
+   imageInfo *image;
+ {
+@@ -139,6 +140,7 @@ static byte DitherBits[GRAYS][4] = {
+ /* halftone or dither a color image, changing it into a monochrome
+  * image
+  */
++void
+ pixmap2halftone(image, dither)
+   imageInfo *image;
+   ditherType dither;    /* type of dithering to perform */

@@ -1,0 +1,13 @@
+$OpenBSD: patch-xgrabsc_h,v 1.1 2017/05/03 13:50:47 espie Exp $
+
+Index: xgrabsc.h
+--- xgrabsc.h.orig
++++ xgrabsc.h
+@@ -43,6 +43,7 @@
+ #include "cmdopts.h"
+ 
+ #include <stdio.h>
++#include <stdlib.h>
+ 
+ #include <X11/Xos.h>
+ #include <X11/Xlib.h>

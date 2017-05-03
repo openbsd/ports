@@ -1,0 +1,22 @@
+$OpenBSD: patch-xgrabxaw_c,v 1.1 2017/05/03 13:50:47 espie Exp $
+
+Index: xgrabxaw.c
+--- xgrabxaw.c.orig
++++ xgrabxaw.c
+@@ -23,6 +23,7 @@
+ #include "config.h"
+ 
+ #include <stdio.h>
++#include <stdlib.h>
+ #include <ctype.h>
+ #include <X11/Intrinsic.h>
+ #include <X11/StringDefs.h>
+@@ -591,7 +592,7 @@ static void createWindow() {
+ int main(argc, argv, envp)
+   int argc;
+   char *argv[];
+-  char *envp;
++  char *envp[];
+ {
+   puts("X-Windows Screen Grabber");
+   printf("Version %s\n", version);
