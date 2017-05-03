@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.487 2017/05/03 15:54:59 espie Exp $
+# $OpenBSD: Quirks.pm,v 1.488 2017/05/03 16:24:07 fcambus Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -964,6 +964,7 @@ my $obsolete_reason = {
 	'bytebench' => 3,
 	'libdivxdecore' => 5,
 	'xgrab' => 9,
+	'quirc' => 3,
 };
 
 # reasons for obsolete packages
