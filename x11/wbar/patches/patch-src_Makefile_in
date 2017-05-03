@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2017/05/03 18:06:40 jca Exp $
+--- src/Makefile.in.orig
++++ src/Makefile.in
+@@ -235,7 +235,6 @@ AM_CPPFLAGS = \
+ 	-DPACKAGE_DATA_DIR=\""$(datadir)"\" \
+ 	-Wall \
+ 	-Wunused \
+-	-Werror \
+ 	-I$(top_srcdir)/src/utils
+ 
+ wbar_SOURCES = \
