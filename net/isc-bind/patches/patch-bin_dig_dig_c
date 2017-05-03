@@ -1,7 +1,7 @@
-$OpenBSD: patch-bin_dig_dig_c,v 1.1 2017/01/24 11:46:35 sthen Exp $
---- bin/dig/dig.c.orig	Sun Dec 11 22:05:58 2016
-+++ bin/dig/dig.c	Mon Jan 16 10:02:24 2017
-@@ -2066,6 +2066,11 @@ main(int argc, char **argv) {
+$OpenBSD: patch-bin_dig_dig_c,v 1.2 2017/05/03 20:20:42 sthen Exp $
+--- bin/dig/dig.c.orig	Fri Apr 14 04:54:11 2017
++++ bin/dig/dig.c	Thu Apr 20 09:35:26 2017
+@@ -2090,6 +2090,11 @@ main(int argc, char **argv) {
  	ISC_LIST_INIT(server_list);
  	ISC_LIST_INIT(search_list);
  
@@ -13,7 +13,7 @@ $OpenBSD: patch-bin_dig_dig_c,v 1.1 2017/01/24 11:46:35 sthen Exp $
  	debug("main()");
  	preparse_args(argc, argv);
  	progname = argv[0];
-@@ -2073,6 +2078,13 @@ main(int argc, char **argv) {
+@@ -2097,6 +2102,13 @@ main(int argc, char **argv) {
  	check_result(result, "isc_app_start");
  	setup_libs();
  	parse_args(ISC_FALSE, ISC_FALSE, argc, argv);

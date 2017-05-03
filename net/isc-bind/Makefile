@@ -1,22 +1,22 @@
-# $OpenBSD: Makefile,v 1.66 2017/04/13 10:35:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.67 2017/05/03 20:20:42 sthen Exp $
 
 COMMENT=	Berkeley Internet Name Daemon: DNS server and tools
 
-V=		9.10.4-P8
+V=		9.10.5
 
 DISTNAME=	bind-$V
 PKGNAME=	isc-bind-${V:S/-P/pl/}
 
-SHARED_LIBS +=	isc                  3.2      # 161.1
-SHARED_LIBS +=	isccc                0.0      # 140.4
-SHARED_LIBS +=	dns                  4.4      # 164.3
-SHARED_LIBS +=	isccfg               0.4      # 143.1
-SHARED_LIBS +=	bind9                0.1      # 140.11
+SHARED_LIBS +=	isc                  3.3      # 170.0
+SHARED_LIBS +=	isccc                0.0      # 140.5
+SHARED_LIBS +=	dns                  5.0      # 170.2
+SHARED_LIBS +=	isccfg               0.4      # 144.0
+SHARED_LIBS +=	bind9                0.1      # 140.12
 SHARED_LIBS +=	lwres                0.1      # 141.3
-SHARED_LIBS +=	irs                  0.0      # 141.4
+SHARED_LIBS +=	irs                  0.0      # 141.5
 
 # not installed:
-#SHARED_LIBS +=	isc-nosymtbl         148.2    # 148.2
+#SHARED_LIBS +=	isc-nosymtbl         148.2    # 170.0
 #SHARED_LIBS +=	t_api                0.0      # unknown
 
 CATEGORIES=	net
@@ -34,6 +34,7 @@ MASTER_SITES=	${MASTER_SITE_ISC:=bind9/$V/}
 
 MODULES=	lang/python
 # used for dnssec-checkds/dnssec-coverage, but don't want to force the run dep.
+# XXX subpackage?
 MODPY_RUNDEP=	No
 LIB_DEPENDS=	converters/libiconv \
 		devel/json-c \

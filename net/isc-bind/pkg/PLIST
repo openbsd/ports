@@ -1,14 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.10 2014/12/09 17:21:36 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.11 2017/05/03 20:20:42 sthen Exp $
 @pkgpath net/isc-bind,ratelimit
 @newgroup _bind:741
 @newuser _bind:741:_bind:daemon:bind user:/nonexistent:/sbin/nologin
 @extra ${SYSCONFDIR}/rndc.key
 @extra ${LOCALSTATEDIR}/named/etc/rndc.key
+@bin bin/arpaname
 bin/bind9-config
 @bin bin/delv
 @bin bin/dig
 @bin bin/host
 bin/isc-config.sh
+@bin bin/named-rrchecker
 @bin bin/nslookup
 @bin bin/nsupdate
 include/bind9/
@@ -137,6 +139,7 @@ include/isc/counter.h
 include/isc/crc64.h
 include/isc/dir.h
 include/isc/entropy.h
+include/isc/errno.h
 include/isc/error.h
 include/isc/event.h
 include/isc/eventclass.h
@@ -260,6 +263,7 @@ include/pk11/constants.h
 include/pk11/internal.h
 include/pk11/pk11.h
 include/pk11/result.h
+include/pk11/site.h
 include/pkcs11/
 include/pkcs11/cryptoki.h
 include/pkcs11/pkcs11.h
@@ -286,6 +290,28 @@ lib/libisccfg.la
 lib/liblwres.a
 lib/liblwres.la
 @lib lib/liblwres.so.${LIBlwres_VERSION}
+lib/python${MODPY_VERSION}/
+lib/python${MODPY_VERSION}/site-packages/
+lib/python${MODPY_VERSION}/site-packages/isc/
+lib/python${MODPY_VERSION}/site-packages/isc-1.0-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/isc/__init__.py
+lib/python${MODPY_VERSION}/site-packages/isc/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/isc/checkds.py
+lib/python${MODPY_VERSION}/site-packages/isc/checkds.pyc
+lib/python${MODPY_VERSION}/site-packages/isc/coverage.py
+lib/python${MODPY_VERSION}/site-packages/isc/coverage.pyc
+lib/python${MODPY_VERSION}/site-packages/isc/dnskey.py
+lib/python${MODPY_VERSION}/site-packages/isc/dnskey.pyc
+lib/python${MODPY_VERSION}/site-packages/isc/eventlist.py
+lib/python${MODPY_VERSION}/site-packages/isc/eventlist.pyc
+lib/python${MODPY_VERSION}/site-packages/isc/keydict.py
+lib/python${MODPY_VERSION}/site-packages/isc/keydict.pyc
+lib/python${MODPY_VERSION}/site-packages/isc/keyevent.py
+lib/python${MODPY_VERSION}/site-packages/isc/keyevent.pyc
+lib/python${MODPY_VERSION}/site-packages/isc/keyzone.py
+lib/python${MODPY_VERSION}/site-packages/isc/keyzone.pyc
+lib/python${MODPY_VERSION}/site-packages/isc/utils.py
+lib/python${MODPY_VERSION}/site-packages/isc/utils.pyc
 @man man/man1/arpaname.1
 @man man/man1/bind9-config.1
 @man man/man1/delv.1
@@ -405,7 +431,6 @@ lib/liblwres.la
 @man man/man8/rndc-confgen.8
 @man man/man8/rndc.8
 @man man/man8/tsig-keygen.8
-@bin sbin/arpaname
 @bin sbin/ddns-confgen
 sbin/dnssec-checkds
 sbin/dnssec-coverage
@@ -425,7 +450,6 @@ sbin/dnssec-coverage
 @bin sbin/named-checkzone
 sbin/named-compilezone
 @bin sbin/named-journalprint
-@bin sbin/named-rrchecker
 @bin sbin/nsec3hash
 @bin sbin/rndc
 @bin sbin/rndc-confgen

@@ -1,7 +1,7 @@
-$OpenBSD: patch-bin_dig_nslookup_c,v 1.1 2017/01/24 11:46:35 sthen Exp $
---- bin/dig/nslookup.c.orig	Sun Dec 11 22:05:58 2016
-+++ bin/dig/nslookup.c	Mon Jan 16 10:02:34 2017
-@@ -905,8 +905,19 @@ main(int argc, char **argv) {
+$OpenBSD: patch-bin_dig_nslookup_c,v 1.2 2017/05/03 20:20:42 sthen Exp $
+--- bin/dig/nslookup.c.orig	Fri Apr 14 04:54:11 2017
++++ bin/dig/nslookup.c	Thu Apr 20 09:35:26 2017
+@@ -913,8 +913,19 @@ main(int argc, char **argv) {
  	result = isc_app_start();
  	check_result(result, "isc_app_start");
  
