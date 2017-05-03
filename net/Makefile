@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1002 2017/04/25 20:02:31 jca Exp $
+# $OpenBSD: Makefile,v 1.1003 2017/05/03 16:20:01 fcambus Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -588,7 +588,6 @@
      SUBDIR += quagga
      SUBDIR += queryperf
      SUBDIR += queso
-     SUBDIR += quirc
      SUBDIR += quvi
      SUBDIR += rabbitmq
      SUBDIR += rabbitmq-c
