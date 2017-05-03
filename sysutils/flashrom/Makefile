@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2016/07/06 21:08:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2017/05/03 23:22:19 espie Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64
 
@@ -26,7 +26,7 @@ BUILD_DEPENDS=	sysutils/pciutils:patch
 RUN_DEPENDS=	sysutils/dmidecode
 LIB_DEPENDS=	devel/libusb-compat \
 		devel/libftdi
-MAKE_FLAGS=	LDFLAGS="-L./pciutils/lib"
+MAKE_FLAGS=	LDFLAGS="-L./pciutils/lib" WARNERROR=no
 FAKE_FLAGS=	PREFIX="${TRUEPREFIX}" MANDIR="${TRUEPREFIX}/man"
 
 USE_GMAKE=	Yes
