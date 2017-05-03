@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2015/09/22 21:48:25 zhuk Exp $
+# $OpenBSD: Makefile,v 1.32 2017/05/03 16:21:09 rsadowski Exp $
 
 COMMENT-main =		KDE core run-time components
 COMMENT-locale =	KDE locale data files
@@ -48,7 +48,6 @@ MODKDE4_USE =	pim libs
 
 BUILD_DEPENDS =		archivers/bzip2 \
 			archivers/xz \
-			devel/doxygen \
 			${MODKDE4_DEP_DIR}/nepomuk-core>=${MODKDE4_DEP_VERSION}
 
 RUN_DEPENDS-locale =

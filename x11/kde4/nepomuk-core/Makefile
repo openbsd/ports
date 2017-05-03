@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2015/05/28 10:17:30 pascal Exp $
+# $OpenBSD: Makefile,v 1.11 2017/05/03 16:21:09 rsadowski Exp $
 
 COMMENT =	KDE Nepomuk core libraries
 DISTNAME =	nepomuk-core-${MODKDE4_VERSION}
@@ -23,8 +23,7 @@ WANTLIB += sopranoserver tag
 
 MODKDE4_USE =	libs
 
-BUILD_DEPENDS =	devel/doxygen \
-		misc/shared-desktop-ontologies>=0.10.51
+BUILD_DEPENDS =	misc/shared-desktop-ontologies>=0.10.51
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		misc/shared-desktop-ontologies>=0.10.51
@@ -37,6 +36,7 @@ LIB_DEPENDS =	audio/taglib \
 		textproc/ebook-tools \
 		${MODKDE4_DEP_DIR}/baloo>=${MODKDE4_DEP_VERSION}
 
-CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_QMobipocket=True
+CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_QMobipocket=True \
+			-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen:Bool=Yes
 
 .include <bsd.port.mk>
