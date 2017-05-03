@@ -1,9 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.2 2017/04/13 07:10:45 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2017/05/03 17:42:02 phessler Exp $
 @bin bin/pdfpc
-man/man1/man1/
-@man man/man1/man1/pdfpc.1
-man/man1/man5/
-@man man/man1/man5/pdfpcrc.5
+@man man/man1/pdfpc.1
+@man man/man5/pdfpcrc.5
 share/examples/pdfpc/
 share/examples/pdfpc/pdfpcrc
 share/pixmaps/

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2017/04/13 07:10:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2017/05/03 17:42:02 phessler Exp $
 
 COMMENT=		presenter console with multi-monitor support
 
 GH_ACCOUNT=		pdfpc
 GH_PROJECT=		pdfpc
 GH_TAGNAME=		v4.0.6
+REVISION=		0
 
 CATEGORIES=		textproc
 
@@ -29,7 +30,7 @@ LIB_DEPENDS=		devel/libgee \
 			print/poppler \
 			x11/gtk+3
 
-CONFIGURE_ARGS+=	-DMANDIR="${PREFIX}/man/man1" \
+CONFIGURE_ARGS+=	-DMANDIR="${PREFIX}/man" \
 			-DSYSCONFDIR="${PREFIX}/share/examples/pdfpc"
 
 NO_TEST=		Yes
