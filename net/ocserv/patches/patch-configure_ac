@@ -1,7 +1,8 @@
-$OpenBSD: patch-configure_ac,v 1.6 2016/09/23 09:00:11 sthen Exp $
---- configure.ac.orig	Thu Sep 22 16:55:54 2016
-+++ configure.ac	Fri Sep 23 09:58:13 2016
-@@ -140,7 +140,7 @@ if test "$test_for_libnl" = yes;then
+$OpenBSD: patch-configure_ac,v 1.7 2017/05/03 07:39:55 sthen Exp $
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -153,7 +153,7 @@ if test "$test_for_geoip" = yes;then
  fi
  
  have_readline=no
