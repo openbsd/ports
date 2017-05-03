@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2013/03/11 11:46:16 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2017/05/03 18:41:29 jca Exp $
 
 COMMENT=	time/date applet for WindowMaker
 
@@ -15,6 +15,8 @@ WANTLIB=		X11 Xext Xpm c m
 
 MASTER_SITES=	http://mirror2.unixfreunde.de/ \
 		http://web.cs.mun.ca/~gstarkes/wmaker/dockapps/files/
+
+MAKE_FLAGS=	CC="${CC}"
 
 WRKDIST=        ${WRKDIR}/wmtime.app/
 WRKSRC=		${WRKDIST}/wmtime/
