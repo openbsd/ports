@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2013/09/27 17:49:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2017/05/03 08:52:56 espie Exp $
 
 COMMENT=		music tracking tool for X11
 
@@ -41,6 +41,9 @@ CONFIGURE_ARGS=		--disable-alsa \
 			--disable-sdl \
 			--disable-jack \
 			--disable-splash
+
+CFLAGS +=		-fgnu89-inline
+
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -DDRIVER_SNDIO" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			LIBS="-lsndio"
