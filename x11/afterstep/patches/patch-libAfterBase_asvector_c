@@ -1,0 +1,30 @@
+$OpenBSD: patch-libAfterBase_asvector_c,v 1.1 2017/05/03 17:51:26 jca Exp $
+--- libAfterBase/asvector.c.orig
++++ libAfterBase/asvector.c
+@@ -170,7 +170,7 @@ inline size_t vector_find_data( ASVector *v, void *dat
+     return i;
+ }
+ 
+-inline void vector_move_data_up( ASVector *v, int index, int offset, int length )
++static inline void vector_move_data_up( ASVector *v, int index, int offset, int length )
+ {
+     register int i ;
+     /* word copying is usually faster then raw memory copying */
+@@ -210,7 +210,7 @@ LOCAL_DEBUG_OUT ("index = %d, offset = %d, length = %d
+     }
+ }
+ 
+-inline void vector_move_data_down( ASVector *v, int index, int offset, int length )
++static inline void vector_move_data_down( ASVector *v, int index, int offset, int length )
+ {
+     register int i ;
+     /* word copying is usually faster then raw memory copying */
+@@ -244,7 +244,7 @@ LOCAL_DEBUG_OUT ("index = %d, offset = %d, length = %d
+     }
+ }
+ 
+-inline void vector_set_data( ASVector *v, void *data, int offset, int length)
++static inline void vector_set_data( ASVector *v, void *data, int offset, int length)
+ {
+     register int i ;
+     /* word copying is usually faster then raw memory copying */

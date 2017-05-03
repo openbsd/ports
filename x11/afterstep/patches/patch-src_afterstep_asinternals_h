@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_afterstep_asinternals_h,v 1.1 2017/05/03 17:51:26 jca Exp $
+--- src/afterstep/asinternals.h.orig
++++ src/afterstep/asinternals.h
+@@ -689,8 +689,8 @@ void ParsePopupEntry (char *tline, FILE * fd, char **j
+ 
+ 
+ /*************************** misc.c *********************************/
+-inline void ungrab_window_buttons( Window w );
+-inline void ungrab_window_keys (Window w );
++void ungrab_window_buttons( Window w );
++void ungrab_window_keys (Window w );
+ void MyXGrabButton ( unsigned button, unsigned modifiers,
+ 				Window grab_window, Bool owner_events, unsigned event_mask,
+ 				int pointer_mode, int keyboard_mode, Window confine_to, Cursor cursor);

@@ -1,0 +1,16 @@
+$OpenBSD: patch-libAfterStep_mylook_h,v 1.1 2017/05/03 17:51:26 jca Exp $
+--- libAfterStep/mylook.h.orig
++++ libAfterStep/mylook.h
+@@ -411,9 +411,9 @@ void mylook_set_font_size_var (MyLook * look);
+ 
+ 
+ struct MyStyle *mylook_get_style(MyLook *look, const char *name);
+-inline MyBackground  *mylook_get_desk_back(MyLook *look, long desk);
+-inline MyBackground  *mylook_get_back(MyLook *look, char *name);
+-inline MyDesktopConfig *mylook_get_desk_config(MyLook *look, long desk);
++MyBackground  *mylook_get_desk_back(MyLook *look, long desk);
++MyBackground  *mylook_get_back(MyLook *look, char *name);
++MyDesktopConfig *mylook_get_desk_config(MyLook *look, long desk);
+ 
+ 
+ 

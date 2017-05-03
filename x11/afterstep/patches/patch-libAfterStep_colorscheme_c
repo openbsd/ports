@@ -1,0 +1,12 @@
+$OpenBSD: patch-libAfterStep_colorscheme_c,v 1.1 2017/05/03 17:51:26 jca Exp $
+--- libAfterStep/colorscheme.c.orig
++++ libAfterStep/colorscheme.c
+@@ -129,7 +129,7 @@ int compare_color_lightness (ARGB32 c1, ARGB32 c2)
+ 			ASCS_BLACK_O_WHITE_CRITERIA16_VAL (red2, green2, blue2);
+ }
+ 
+-inline void
++static inline void
+ make_grad_argb (ASColorScheme * cs, int id, ARGB32 base_alpha16,
+ 								int hue360, int sat100, int val100, Bool base)
+ {

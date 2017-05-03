@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.48 2015/06/29 14:46:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.49 2017/05/03 17:51:26 jca Exp $
 
 COMMENT=	window manager, continuation of the Bowman NeXTSTEP clone
 
 V=		2.2.12
+REVISION=	0
 DISTNAME=	AfterStep-${V}
 PKGNAME=	${DISTNAME:L}
 CATEGORIES=     x11
