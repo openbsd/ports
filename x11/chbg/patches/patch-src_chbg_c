@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_chbg_c,v 1.1 2017/05/03 12:50:50 jca Exp $
+--- src/chbg.c.orig
++++ src/chbg.c
+@@ -2178,11 +2178,12 @@ static void chbg_cleanup()
+ #endif
+ }
+ 
+-gint main(argc, argv)
+-guint argc;
+-gchar **argv;
++int
++main(int ac, char **av)
+ {
+ 	gchar *p,pom[PATH_MAX];
++	gint argc = ac;
++	gchar **argv = av;
+ 
+ 	stop_changing = FALSE;
+ 
