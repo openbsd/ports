@@ -1,6 +1,10 @@
-$OpenBSD: patch-fig2dev_Imakefile,v 1.8 2013/06/04 15:41:26 naddy Exp $
---- fig2dev/Imakefile.pat.orig	Fri Feb  6 18:42:00 2009
-+++ fig2dev/Imakefile	Wed Aug 26 14:30:32 2009
+$OpenBSD: patch-fig2dev_Imakefile,v 1.9 2017/05/03 09:15:38 espie Exp $
+* unhardcode directories
+* use system's getopt
+
+Index: fig2dev/Imakefile
+--- fig2dev/Imakefile.orig
++++ fig2dev/Imakefile
 @@ -34,7 +34,7 @@ XCOMM ******
  XCOMM You should point XFIGLIBDIR to the same directory you did when you compiled
  XCOMM and installed xfig.
@@ -60,3 +64,25 @@ $OpenBSD: patch-fig2dev_Imakefile,v 1.8 2013/06/04 15:41:26 naddy Exp $
  
  #ifdef USEPNG
  DUSEPNG = -DUSE_PNG
+@@ -168,7 +168,8 @@ STRSTRO=	strstr.o
+ #endif /* defined(NOSTRSTR) */
+ 
+ DEFINES = $(NEED_STRERROR) $(HAVE_NO_STRCASECMP) $(HAVE_NO_STRNCASECMP) $(DDNFSS) $(USEINLINE) \
+-	$(I18N_DEFS) $(HAVE_SETMODE) $(DUSEPNG) $(DUSEXPM) $(PNGINC) $(XPMINC)
++	$(I18N_DEFS) $(HAVE_SETMODE) $(DUSEPNG) $(DUSEXPM) $(PNGINC) $(XPMINC) \
++	-Dfig_getopt=getopt
+ 
+ 
+ IMAKE_DEFINES = $(DUSEPNG) $(DUSEXPM) $(I18N_DEV_DEFS) 
+@@ -194,11 +195,6 @@ SYS_LIBRARIES = $(PNGLIBS) $(XPMLIBS) -lm -lcompat
+ SYS_LIBRARIES = $(PNGLIBS) $(XPMLIBS) -lm
+ #endif
+ DEPLIBS = $(LIBTRANSFIG)
+-
+-#if !(defined(SunOSPlatform) && (OSMajorVersion>=5))
+-GETOPTC=   getopt.c
+-GETOPTO=   getopt.o
+-#endif
+ 
+ SRCS = fig2dev.c psfonts.c iso2tex.c arrow.c bound.c colors.c trans_spline.c \
+ 	free.c read.c read1_3.c latex_line.c localmath.c $(STRSTRC) $(GETOPTC)
