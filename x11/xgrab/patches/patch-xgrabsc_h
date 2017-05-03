@@ -1,4 +1,4 @@
-$OpenBSD: patch-xgrabsc_h,v 1.1 2017/05/03 13:50:47 espie Exp $
+$OpenBSD: patch-xgrabsc_h,v 1.2 2017/05/03 14:57:52 espie Exp $
 
 Index: xgrabsc.h
 --- xgrabsc.h.orig
@@ -11,3 +11,19 @@ Index: xgrabsc.h
  
  #include <X11/Xos.h>
  #include <X11/Xlib.h>
+@@ -168,6 +169,15 @@ int         Halftone;
+ int         ForceBitmap;
+ 
+ EXT int needColorImageProc;
++
++extern Window getWindowWhenKeyIsPressed(unsigned int);
++extern Window getWindow(void);
++extern int getImage(XRectangle *, imageInfo *, Window);
++extern int alterPlanes(imageInfo *, int, unsigned int);
++extern int brightenColors(imageInfo *, int);
++extern void reverseColors(imageInfo *);
++extern void pixmap2bitmap(imageInfo *);
++extern void pixmap2halftone(imageInfo *, ditherType);
+ 
+ #undef EXT
+ #undef SZ

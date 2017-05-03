@@ -1,9 +1,33 @@
-$OpenBSD: patch-process_c,v 1.1 2017/05/03 13:50:47 espie Exp $
+$OpenBSD: patch-process_c,v 1.2 2017/05/03 14:57:52 espie Exp $
 
 Index: process.c
 --- process.c.orig
 +++ process.c
-@@ -229,6 +229,7 @@ reverseColors(image)
+@@ -28,6 +28,7 @@
+  * The number of eliminated colormap entries is returned.  The colormap
+  * is not compressed.
+  */
++int
+ alterPlanes(image, modeIsAnd, bits)
+   imageInfo *image;
+   int modeIsAnd;      /* if TRUE, combine mask with AND; if FALSE, use OR */
+@@ -112,6 +113,7 @@ alterPlanes(image, modeIsAnd, bits)
+  * colors equivalent colors are merged (as in alterPlanes).  The number
+  * of eliminated colors is returned.
+  */
++int
+ brightenColors(image, percent)
+   imageInfo *image;
+   int percent;
+@@ -187,6 +189,7 @@ brightenColors(image, percent)
+ 
+ 
+ /* Reverse the colors in the image */
++void
+ reverseColors(image)
+   imageInfo *image;
+ {
+@@ -229,6 +232,7 @@ reverseColors(image)
   * Compress the colors used in an XImage so that all pixel values are
   * adjacent.  Alters the rgb color tables and the XImage data values.
   */
