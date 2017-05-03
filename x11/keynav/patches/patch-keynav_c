@@ -1,4 +1,4 @@
-$OpenBSD: patch-keynav_c,v 1.3 2016/01/07 19:03:19 jasper Exp $
+$OpenBSD: patch-keynav_c,v 1.4 2017/05/03 12:32:55 jca Exp $
 
 From c822edfbc71a23e9710f00a670f353e3b614084c Mon Sep 17 00:00:00 2001
 From: Krister Svanlund <krister.svanlund@gmail.com>
@@ -10,9 +10,14 @@ From: Krister Svanlund <krister.svanlund@gmail.com>
 Date: Sat, 26 May 2012 00:05:22 +0200
 Subject: [PATCH] Replaced XKeycodeToKeysym with XkbKeycodeToKeysym
 
---- keynav.c.orig	Wed Oct 13 09:27:51 2010
-+++ keynav.c	Thu Jan  7 20:01:01 2016
-@@ -14,6 +14,7 @@
+--- keynav.c.orig
++++ keynav.c
+@@ -10,10 +10,12 @@
+ #include <unistd.h>
+ #include <string.h>
+ #include <errno.h>
++#include <ctype.h>
+ #include <sys/types.h>
  #include <sys/wait.h>
  #include <signal.h>
  #include <X11/Xlib.h>
@@ -20,7 +25,7 @@ Subject: [PATCH] Replaced XKeycodeToKeysym with XkbKeycodeToKeysym
  #include <X11/Xresource.h>
  #include <X11/Xutil.h>
  #include <X11/keysym.h>
-@@ -287,7 +288,7 @@ int parse_mods(char *keyseq) {
+@@ -287,7 +289,7 @@ int parse_mods(char *keyseq) {
  
    int i = 0;
    /* Use all but the last token as modifiers */
@@ -29,7 +34,7 @@ Subject: [PATCH] Replaced XKeycodeToKeysym with XkbKeycodeToKeysym
    for (i = 0; i < mods->len; i++) {
      KeySym keysym = 0;
      int j = 0;
-@@ -526,7 +527,7 @@ int parse_config_line(char *orig_line) {
+@@ -526,7 +528,7 @@ int parse_config_line(char *orig_line) {
  
    tokctx = line;
    keyseq = strdup(strtok_r(line, " ", &tokctx));
@@ -38,7 +43,7 @@ Subject: [PATCH] Replaced XKeycodeToKeysym with XkbKeycodeToKeysym
  
    /* A special config option that will clear all keybindings */
    if (strcmp(keyseq, "clear") == 0) {
-@@ -849,7 +850,7 @@ void cmd_start(char *args) {
+@@ -849,7 +851,7 @@ void cmd_start(char *args) {
  
      zone = XCreateSimpleWindow(dpy, viewport->root,
                                 wininfo.x, wininfo.y, wininfo.w, wininfo.h, 0, 0, 0);
@@ -47,7 +52,7 @@ Subject: [PATCH] Replaced XKeycodeToKeysym with XkbKeycodeToKeysym
      canvas_gc = XCreateGC(dpy, zone, 0, NULL);
  
      canvas = XCreatePixmap(dpy, zone, viewport->w, viewport->h,
-@@ -1012,7 +1013,7 @@ void cmd_cursorzoom(char *args) {
+@@ -1012,7 +1014,7 @@ void cmd_cursorzoom(char *args) {
      height = width;
    }
  
@@ -56,7 +61,7 @@ Subject: [PATCH] Replaced XKeycodeToKeysym with XkbKeycodeToKeysym
  
    wininfo.x = xloc - (width / 2);
    wininfo.y = yloc - (height / 2);
-@@ -1026,7 +1027,7 @@ void cmd_windowzoom(char *args) {
+@@ -1026,7 +1028,7 @@ void cmd_windowzoom(char *args) {
    Window dummy_win;
    int x, y, width, height, border_width, depth;
  
@@ -65,7 +70,7 @@ Subject: [PATCH] Replaced XKeycodeToKeysym with XkbKeycodeToKeysym
    XGetGeometry(xdo->xdpy, curwin, &rootwin, &x, &y, &width, &height,
                 &border_width, &depth);
    XTranslateCoordinates(xdo->xdpy, curwin, rootwin, 
-@@ -1055,8 +1056,8 @@ void cmd_warp(char *args) {
+@@ -1055,8 +1057,8 @@ void cmd_warp(char *args) {
    mouseinfo.y = y - wininfo.y;
    openpixel(dpy, zone, &mouseinfo);
  
@@ -76,7 +81,7 @@ Subject: [PATCH] Replaced XKeycodeToKeysym with XkbKeycodeToKeysym
  
    /* TODO(sissel): do we need to open again? */
    openpixel(dpy, zone, &mouseinfo);
-@@ -1069,7 +1070,7 @@ void cmd_click(char *args) {
+@@ -1069,7 +1071,7 @@ void cmd_click(char *args) {
    int button;
    button = atoi(args);
    if (button > 0)
@@ -85,7 +90,7 @@ Subject: [PATCH] Replaced XKeycodeToKeysym with XkbKeycodeToKeysym
    else
      fprintf(stderr, "Negative mouse button is invalid: %d\n", button);
  }
-@@ -1107,19 +1108,19 @@ void cmd_drag(char *args) {
+@@ -1107,19 +1109,19 @@ void cmd_drag(char *args) {
  
    if (ISDRAGGING) { /* End dragging */
      appstate.dragging = False;
@@ -111,7 +116,16 @@ Subject: [PATCH] Replaced XKeycodeToKeysym with XkbKeycodeToKeysym
    }
  }
  
-@@ -1477,7 +1478,7 @@ handler_info_t handle_gridnav(XKeyEvent *e) {
+@@ -1464,7 +1466,7 @@ handler_info_t handle_recording(XKeyEvent *e) {
+ 
+   //printf("Recording as keycode:%d\n", e->keycode);
+   active_recording->keycode = e->keycode;
+-  return;
++  return HANDLE_CONTINUE;
+ }
+ 
+ handler_info_t handle_gridnav(XKeyEvent *e) {
+@@ -1477,7 +1479,7 @@ handler_info_t handle_gridnav(XKeyEvent *e) {
      index += 1;
    }
  
