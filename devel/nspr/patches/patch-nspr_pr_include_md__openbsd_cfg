@@ -1,6 +1,8 @@
-$OpenBSD: patch-nspr_pr_include_md__openbsd_cfg,v 1.1 2013/06/23 18:36:50 landry Exp $
---- nspr/pr/include/md/_openbsd.cfg.orig	Tue May 28 23:39:29 2013
-+++ nspr/pr/include/md/_openbsd.cfg	Wed Jun 12 21:26:27 2013
+$OpenBSD: patch-nspr_pr_include_md__openbsd_cfg,v 1.2 2017/05/03 07:10:37 sthen Exp $
+
+Index: nspr/pr/include/md/_openbsd.cfg
+--- nspr/pr/include/md/_openbsd.cfg.orig
++++ nspr/pr/include/md/_openbsd.cfg
 @@ -161,7 +161,7 @@
  #define PR_BYTES_PER_WORD_LOG2  3
  #define PR_BYTES_PER_DWORD_LOG2 3
@@ -10,6 +12,15 @@ $OpenBSD: patch-nspr_pr_include_md__openbsd_cfg,v 1.1 2013/06/23 18:36:50 landry
  
  #undef IS_LITTLE_ENDIAN
  #define  IS_BIG_ENDIAN 1
+@@ -206,7 +206,7 @@
+ #define PR_ALIGN_OF_DOUBLE  8
+ #define PR_ALIGN_OF_POINTER 4
+ 
+-#elif defined(__alpha__)
++#elif defined(__alpha__) || defined(__aarch64__)
+ #define IS_LITTLE_ENDIAN 1
+ #undef  IS_BIG_ENDIAN
+ #define	HAVE_ALIGNED_DOUBLES
 @@ -294,6 +294,58 @@
  #define PR_ALIGN_OF_FLOAT   4
  #define PR_ALIGN_OF_DOUBLE  4
