@@ -1,10 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/06/30 10:11:33 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2017/05/03 19:38:16 ratchov Exp $
 @bin bin/midish
-@bin bin/rmidish
 bin/smfplay
 bin/smfrec
 @man man/man1/midish.1
-@man man/man1/rmidish.1
 @man man/man1/smfplay.1
 @man man/man1/smfrec.1
 share/doc/midish/

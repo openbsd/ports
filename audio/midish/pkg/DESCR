@@ -5,7 +5,7 @@ be lightweight, fast and reliable for real-time performance.
 Important features:
 	- multiple MIDI devices handling
 	- synchronisation to external MIDI devices
-	- real-time MIDI filtering/routing (controller 
+	- real-time MIDI filtering/routing (controller
 	  mapping, keyboard splitting, ...)
 	- track recording, metronome
 	- basic track editing (insert, copy, delete, ...)
