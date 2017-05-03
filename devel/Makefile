@@ -1282,6 +1282,8 @@
      SUBDIR += py-configobj
      SUBDIR += py-configobj,python3
      SUBDIR += py-configparser
+     SUBDIR += py-constantly
+     SUBDIR += py-constantly,python3
      SUBDIR += py-construct
      SUBDIR += py-construct,python3
      SUBDIR += py-country
