@@ -1,0 +1,14 @@
+$OpenBSD: patch-buffer_c,v 1.1 2017/05/04 19:14:00 espie Exp $
+
+Index: buffer.c
+--- buffer.c.orig
++++ buffer.c
+@@ -374,7 +374,7 @@ makelist ()
+     register A32 nbytes;
+     register char s;
+     char b[8 + 1];
+-    char line[128];
++    char line[NBUFN+32];
+ 
+     blistp->b_flag &= ~BFCHG;	/* Blow away old.    */
+     if ((s = bclear (blistp)) != TRUE)

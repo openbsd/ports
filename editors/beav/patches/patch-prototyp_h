@@ -1,0 +1,80 @@
+$OpenBSD: patch-prototyp_h,v 1.1 2017/05/04 19:14:00 espie Exp $
+
+Index: prototyp.h
+--- prototyp.h.orig
++++ prototyp.h
+@@ -5,7 +5,7 @@
+ 
+ extern char backchar (int f, int n, int k);
+ extern char forwchar (int f, int n, int k);
+-extern char move_ptr (struct WINDOW *wp, long len, char dot, char fix, char rel);
++extern char move_ptr (struct WINDOW *wp, long len, int dot, int fix, int rel);
+ extern char wind_on_dot (struct WINDOW *wp);
+ extern char gotobob (void);
+ extern char gotoeob (void);
+@@ -41,7 +41,7 @@ extern void funky_name (char *bname, int n);
+ extern char pickone (void);
+ extern char bufsizlock (void);
+ extern void b_append_l (struct BUFFER *buf_p, struct LINE *lp);
+-extern char b_append_c (struct BUFFER *buf_p, unsigned char ch);
++extern char b_append_c (struct BUFFER *buf_p, int ch);
+ extern void save_buf_init (void);
+ extern void save_buf_home (void);
+ extern unsigned short get_save_char (void);
+@@ -49,7 +49,7 @@ extern void vtinit (void);
+ extern void vtfree (void);
+ extern void vttidy (void);
+ extern void vtmove (int row, int col);
+-extern void vtputc (char c);
++extern void vtputc (int c);
+ extern char vtputd (struct WINDOW *wp, int row);
+ extern void bin_to_text (char *bin_buf, char *txt_buf, unsigned int len, struct ROW_FMT *fmt_ptr);
+ extern unsigned short get_int (unsigned char *w_buf);
+@@ -66,7 +66,7 @@ extern void uline (int row, struct vid *vvp, struct vi
+ extern void modeline (struct WINDOW *wp);
+ extern void writ_echo (char *buf);
+ extern char print (void);
+-extern char to_ebcdic (char ch);
++extern char to_ebcdic (int ch);
+ extern void eerase (void);
+ extern char eyesno (char *sp);
+ extern char ereply (char *fp, char *buf, int nbuf, char *arg);
+@@ -96,7 +96,7 @@ extern char readin (char *fname, unsigned long start, 
+ extern void makename (char *bname, char *fname);
+ extern char filewrite (void);
+ extern char filesave (void);
+-extern char writeout (char *fn, unsigned long start, unsigned long end, unsigned short mode);
++extern char writeout (char *fn, unsigned long start, unsigned long end, int mode);
+ extern char filename (void);
+ extern char parse_f_name (char *fn, unsigned long *start, unsigned long *end);
+ extern char ffropen (char *fn);
+@@ -116,9 +116,9 @@ extern struct LINE *lalloc (int size);
+ extern void lfree (struct LINE *lp);
+ extern void lchange (int flag);
+ extern struct LINE *l_break_in_two (struct LINE *lp, unsigned int lo, unsigned int extra);
+-extern char linsert (int n, unsigned char c);
++extern char linsert (int n, int c);
+ extern char ldelete (unsigned long n_bytes, int kflag);
+-extern void lreplace (int n, char c);
++extern void lreplace (int n, int c);
+ extern char lrepl_str (int plen, struct LINE *rstr, struct LINE *mstr);
+ extern void l_fix_up (struct LINE *line);
+ extern int main (int argc, char **argv);
+@@ -141,7 +141,7 @@ extern char insert_toggle (void);
+ extern char selfinsert (int f, int n, int k);
+ extern char insertunit (int f, int n, int k);
+ extern char fill_out (void);
+-extern char dec_chr_ok (char *char_buf, char *max_str, char chr, char pos);
++extern char dec_chr_ok (char *char_buf, char *max_str, int chr, int pos);
+ extern void set_mode_vars (void);
+ extern char asciimode (void);
+ extern char ebcdicmode (void);
+@@ -183,7 +183,7 @@ extern char spawncli (int f, int n, int k);
+ extern struct SYMBOL *symlookup (char *cp);
+ extern int symhash (char *cp);
+ extern void keymapinit (void);
+-extern void keyadd (short new, char (*funcp) (void), char *name, int modify);
++extern void keyadd (int new, char (*funcp) (void), char *name, int modify);
+ extern void keydup (int new, char *name);
+ extern void ttinit (void);
+ extern void tttidy (void);

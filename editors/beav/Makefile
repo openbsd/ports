@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2015/08/11 21:43:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.30 2017/05/04 19:14:00 espie Exp $
 
 COMMENT=	binary editor and viewer
 
@@ -8,7 +8,7 @@ REV=		18
 
 DISTNAME=	beav-140
 PKGNAME=	beav-${VERSION}.${REV}
-REVISION =	0
+REVISION =	1
 CATEGORIES=	editors
 
 # GPLv2+
@@ -32,6 +32,6 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/beav.1 ${PREFIX}/man/man1
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/beav
 	${INSTALL_DATA} ${WRKSRC}/beav140.txt ${PREFIX}/share/doc/beav/beav.txt
-	@sed -i 's,%%PREFIX%%,${TRUEPREFIX},' ${PREFIX}/man/man1/beav.1
+	@sed -i.beforesubst 's,%%PREFIX%%,${TRUEPREFIX},' ${PREFIX}/man/man1/beav.1
 
 .include <bsd.port.mk>
