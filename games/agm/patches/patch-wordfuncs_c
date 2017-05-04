@@ -1,0 +1,13 @@
+$OpenBSD: patch-wordfuncs_c,v 1.1 2017/05/04 20:04:44 espie Exp $
+
+Index: wordfuncs.c
+--- wordfuncs.c.orig
++++ wordfuncs.c
+@@ -55,6 +55,7 @@ int eliminate (word, subword, remains)
+   *remloop = '\0';
+ }
+ 
++void
+ minus_process (word, command)
+     char *word, *command;
+ {
