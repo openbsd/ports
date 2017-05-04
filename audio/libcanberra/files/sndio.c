@@ -248,7 +248,7 @@ static int open_sndio(ca_context *c, struct outstanding *out) {
 
     /* Check to make sure the configured rate is close enough to the
      * requested rate. */
-    if (fabs((double) (out->par.rate - testpar.rate)) > testpar.rate * 0.05) {
+    if (fabs(((double)out->par.rate - testpar.rate)) > testpar.rate * 0.05) {
         ret = CA_ERROR_NOTSUPPORTED;
         goto finish_error;
     }
