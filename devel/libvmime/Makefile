@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2017/04/10 11:45:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2017/05/04 18:01:19 espie Exp $
 
 COMMENT=	C++ class library for working with Internet mail
 
@@ -7,9 +7,9 @@ DISTNAME=	libvmime-${VMIME_V}+svn603
 EXTRACT_SUFX=	.tar.bz2
 
 PKGNAME=	libvmime-${VMIME_V}
-REVISION=	8
+REVISION=	9
 
-SHARED_LIBS+=  vmime    2.0     # 0.0
+SHARED_LIBS+=  vmime    3.0     # 0.0
 
 ### needed for mail/zarafa (FLAVOR is possible if needed in the future)
 #MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=vmime/}
