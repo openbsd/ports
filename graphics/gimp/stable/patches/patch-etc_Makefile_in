@@ -1,7 +1,8 @@
-$OpenBSD: patch-etc_Makefile_in,v 1.14 2014/07/11 17:02:00 giovanni Exp $
---- etc/Makefile.in.orig	Thu Nov 28 19:23:47 2013
-+++ etc/Makefile.in	Fri Jul 11 15:46:41 2014
-@@ -444,7 +444,7 @@ gimpdatadir = @gimpdatadir@
+$OpenBSD: patch-etc_Makefile_in,v 1.15 2017/05/04 11:48:49 espie Exp $
+Index: etc/Makefile.in
+--- etc/Makefile.in.orig
++++ etc/Makefile.in
+@@ -410,7 +410,7 @@ gimpdatadir = @gimpdatadir@
  gimpdir = @gimpdir@
  gimplocaledir = @gimplocaledir@
  gimpplugindir = @gimpplugindir@
