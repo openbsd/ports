@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2017/04/10 11:45:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2017/05/04 14:02:00 espie Exp $
 
 COMMENT=	GNOME multimode HF terminal
 
@@ -42,5 +42,6 @@ LIB_DEPENDS=		comms/hamlib \
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--enable-hamlib
 CONFIGURE_ENV=		LIBS="-lsndio"
+CFLAGS +=	-fgnu89-inline
 
 .include <bsd.port.mk>
