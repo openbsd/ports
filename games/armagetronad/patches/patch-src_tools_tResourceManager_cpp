@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_tools_tResourceManager_cpp,v 1.1 2017/05/04 20:52:00 espie Exp $
+
+Index: src/tools/tResourceManager.cpp
+--- src/tools/tResourceManager.cpp.orig
++++ src/tools/tResourceManager.cpp
+@@ -44,7 +44,7 @@ static int myHTTPFetch(const char *URI, const char *fi
+     }
+ 
+     fd = fopen(savepath, "w");
+-    if (fd < 0) {
++    if (fd != NULL) {
+         xmlNanoHTTPClose(ctxt);
+         con << tOutput( "$resource_no_write", savepath );
+         return 3;
