@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2015/11/05 19:08:58 jca Exp $
+# $OpenBSD: Makefile,v 1.12 2017/05/04 21:06:43 espie Exp $
 
 COMMENT=	bomberman clone with multiplayer mode
 
@@ -21,9 +21,10 @@ LIB_DEPENDS=	devel/sdl-image \
 USE_GMAKE=	Yes
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	--disable-debug
+CONFIGURE_ARGS=	--disable-debug --disable-werror
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		LIBS="-pthread"
+CFLAGS +=	-fgnu89-inline
 
 .include <bsd.port.mk>
