@@ -1,0 +1,15 @@
+$OpenBSD: patch-liboil_amd64_wavelet_c,v 1.1 2017/05/04 17:15:49 espie Exp $
+from FreeBSD, tijl
+
+Index: liboil/amd64/wavelet.c
+--- liboil/amd64/wavelet.c.orig
++++ liboil/amd64/wavelet.c
+@@ -1753,7 +1753,7 @@ mas8_across_add_s16_mmx (int16_t *d, int16_t *s1, int1
+         [s3_8] "+r" (s3_8),
+         [d] "+r" (d),
+         [n] "+m" (n),
+-        [s1] "+r" ((long)(s1))
++        [s1] "+r" (s1)
+       : [sstr] "r" ((long)(sstr2))
+       );
+ }
