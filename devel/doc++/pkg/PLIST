@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2014/01/20 17:06:31 edd Exp $
+@comment $OpenBSD: PLIST,v 1.10 2017/05/04 11:13:52 edd Exp $
 @bin bin/doc++
 @bin bin/docify
 @bin bin/promote
@@ -49,5 +49,5 @@ share/texmf-local/tex/latex/doc++/docxx-fr.sty
 share/texmf-local/tex/latex/doc++/docxx-ja.sty
 share/texmf-local/tex/latex/doc++/docxx-ro.sty
 share/texmf-local/tex/latex/doc++/docxx.sty
-@exec mktexlsr > /dev/null 2>&1
-@unexec-delete mktexlsr > /dev/null 2>&1
+@exec %D/bin/mktexlsr %D/share/texmf-local > /dev/null 2>&1
+@unexec-delete %D/bin/mktexlsr %D/share/texmf-local > /dev/null 2>&1

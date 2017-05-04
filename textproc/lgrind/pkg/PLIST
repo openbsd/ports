@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2008/10/21 21:03:55 steven Exp $
+@comment $OpenBSD: PLIST,v 1.6 2017/05/04 11:13:52 edd Exp $
 @bin bin/lgrind
 @man man/man1/lgrind.1
 @man man/man5/lgrindef.5
@@ -11,5 +11,5 @@ share/texmf-local/tex/latex/
 share/texmf-local/tex/latex/lgrind/
 share/texmf-local/tex/latex/lgrind/lgrind.sty
 share/texmf-local/tex/latex/lgrind/lgrindef
-@exec TEXMFMAIN=%D/share/texmf %D/bin/mktexlsr
-@unexec TEXMFMAIN=%D/share/texmf %D/bin/mktexlsr
+@exec %D/bin/mktexlsr %D/share/texmf-local > /dev/null 2>&1
+@unexec-delete %D/bin/mktexlsr %D/share/texmf-local > /dev/null 2>&1

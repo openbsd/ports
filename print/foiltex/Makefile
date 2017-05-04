@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2013/03/11 11:37:53 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2017/05/04 11:13:52 edd Exp $
 
 COMMENT=	LaTeX2e class for overhead transparencies
 
 DISTNAME=	foiltex-2.1.4b
+REVISION=	0
 CATEGORIES=	print
 
 PERMIT_PACKAGE_CDROM=	not-for-profit redistribution only

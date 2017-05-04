@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2016/09/23 23:13:37 juanfra Exp $
+# $OpenBSD: Makefile,v 1.6 2017/05/04 11:13:52 edd Exp $
 
 COMMENT =		official documentation format of the GNU project
 
 DISTNAME =		texinfo-6.3
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		print
 

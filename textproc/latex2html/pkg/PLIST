@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2015/11/17 15:03:14 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2017/05/04 11:13:52 edd Exp $
 bin/latex2html
 bin/pstoimg
 bin/texexpand
@@ -369,4 +369,4 @@ share/texmf-local/tex/latex/html/techexplHTML.tex
 @comment share/texmf-local/tex/latex/html/url.sty
 share/texmf-local/tex/latex/html/verbatimfiles.sty
 @exec %D/bin/mktexlsr %D/share/texmf-local > /dev/null 2>&1
-@unexec %D/bin/mktexlsr %D/share/texmf-local > /dev/null 2>&1
+@unexec-delete %D/bin/mktexlsr %D/share/texmf-local > /dev/null 2>&1
