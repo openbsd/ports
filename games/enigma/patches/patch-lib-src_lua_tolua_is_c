@@ -1,0 +1,14 @@
+$OpenBSD: patch-lib-src_lua_tolua_is_c,v 1.1 2017/05/04 23:00:16 espie Exp $
+
+Index: lib-src/lua/tolua_is.c
+--- lib-src/lua/tolua_is.c.orig
++++ lib-src/lua/tolua_is.c
+@@ -85,7 +85,7 @@ TOLUA_API const char* tolua_typename (lua_State* L, in
+ 	return lua_tostring(L,-1);
+ }
+ 
+-TOLUA_API void tolua_error (lua_State* L, char* msg, tolua_Error* err)
++TOLUA_API void tolua_error (lua_State* L, const char* msg, tolua_Error* err)
+ {
+ 	if (msg[0] == '#')
+ 	{
