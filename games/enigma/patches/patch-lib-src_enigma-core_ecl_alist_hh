@@ -1,0 +1,14 @@
+$OpenBSD: patch-lib-src_enigma-core_ecl_alist_hh,v 1.1 2017/05/04 22:59:23 espie Exp $
+two phase name lookup, can't find base class without a hint
+Index: lib-src/enigma-core/ecl_alist.hh
+--- lib-src/enigma-core/ecl_alist.hh.orig
++++ lib-src/enigma-core/ecl_alist.hh
+@@ -61,7 +61,7 @@ namespace ecl
+ 	VAL &operator[] (const key_type &key) { 
+             iterator i=find(key);
+             if (i==this->end())
+-                i=insert(this->end(), make_pair(key, VAL()));
++                i=this->insert(this->end(), make_pair(key, VAL()));
+             return i->second;
+         }
+     };

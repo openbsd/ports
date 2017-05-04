@@ -1,0 +1,13 @@
+$OpenBSD: patch-lib-src_enigma-core_ecl_dict_hh,v 1.1 2017/05/04 22:59:23 espie Exp $
+can't throw an object we can't construct
+Index: lib-src/enigma-core/ecl_dict.hh
+--- lib-src/enigma-core/ecl_dict.hh.orig
++++ lib-src/enigma-core/ecl_dict.hh
+@@ -27,6 +27,7 @@ namespace ecl
+     extern unsigned hash(const std::string &key);
+ 
+     class XInvalidKey : XGeneric {
++    public:
+ 	XInvalidKey () : XGeneric("invalid dictionary key")
+         {}
+     };

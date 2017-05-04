@@ -1,0 +1,41 @@
+$OpenBSD: patch-src_lua_cc,v 1.1 2017/05/04 22:59:23 espie Exp $
+is_object() is part of modern char_traits
+Index: src/lua.cc
+--- src/lua.cc.orig
++++ src/lua.cc
+@@ -160,7 +160,7 @@ to_value(lua_State *L, int idx)
+ }
+ 
+ static bool
+-is_object(lua_State *L, int idx)
++myis_object(lua_State *L, int idx)
+ {
+     return lua_isuserdata(L,idx) && luaL_checkudata(L,idx,"_ENIGMAOBJECT");
+ }
+@@ -171,7 +171,7 @@ to_object(lua_State *L, int idx)
+     if (lua_isnil(L,idx))
+         return 0;
+ 
+-    if (!is_object(L,idx)) {
++    if (!myis_object(L,idx)) {
+         throwLuaError(L, "Cannot convert type to an Object");
+         return 0;
+     }
+@@ -294,7 +294,7 @@ en_set_floor(lua_State *L)
+ 
+     if (lua_isnil(L, 3))
+         fl = 0;
+-    else if (is_object(L,3)) {
++    else if (myis_object(L,3)) {
+         fl = static_cast<Floor*>(*(static_cast<void**> (lua_touserdata(L,3))));
+     	if( ! fl)
+ 	    throwLuaError(L, "object is no valid floor");
+@@ -574,7 +574,7 @@ en_add_scramble(lua_State *L)
+     int         y       = round_down<int>(lua_tonumber(L, 2));
+     const char *dir     = lua_tostring(L,3);
+     const char *allowed = "wsen";
+-    char       *found   = strchr(allowed, dir[0]);
++    const char       *found   = strchr(allowed, dir[0]);
+ 
+     if (found && found[0]) 
+         world::AddScramble(GridPos(x,y), enigma::Direction(found-allowed));
