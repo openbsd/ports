@@ -1,0 +1,37 @@
+$OpenBSD: patch-xprop_xprop_c,v 1.1 2017/05/04 13:14:55 jca Exp $
+--- xprop/xprop.c.orig
++++ xprop/xprop.c
+@@ -46,6 +46,9 @@ from The Open Group.
+ char *getenv();
+ #endif
+ 
++void remove_property();
++void Show_Prop();
++
+ #define MAXSTR 10000
+ 
+ #define min(a,b)  ((a) < (b) ? (a) : (b))
+@@ -581,6 +584,7 @@ char *Format_Bool(value)
+ static char *_buf_ptr;
+ static int _buf_len;
+ 
++void
+ _put_char(c)
+      char c;
+ {
+@@ -1347,6 +1351,7 @@ char **argv;
+  *
+  */
+ 
++void
+ remove_property (dpy, w, propname)
+     Display *dpy;
+     Window w;
+@@ -1502,6 +1507,7 @@ char *Get_Property_Data_And_Type(atom, length, type, s
+ 	  return(Get_Window_Property_Data_And_Type(atom, length, type, size));
+ }
+ 
++void
+ Show_Prop(format, dformat, prop)
+      char *format, *dformat, *prop;
+ {
