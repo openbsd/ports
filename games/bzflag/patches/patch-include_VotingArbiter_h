@@ -1,0 +1,43 @@
+$OpenBSD: patch-include_VotingArbiter_h,v 1.1 2017/05/04 21:38:05 espie Exp $
+C++ Defect Report Core Issue 1344.
+Deducing basic properties of class, such as the presence of a default 
+constructor should not require full program knowledge. Thus, the default
+parameters should be in the class declaration.
+
+clang flags this as an error.
+
+Index: include/VotingArbiter.h
+--- include/VotingArbiter.h.orig
++++ include/VotingArbiter.h
+@@ -86,9 +86,11 @@ class VotingArbiter (protected)
+ public:
+ 
+   /* default constructor */
+-  VotingArbiter(unsigned short int voteTime, unsigned short int vetoTime,
+-		unsigned short int votesRequired, float votePercentage,
+-		unsigned short int voteRepeatTime);
++  VotingArbiter(unsigned short int voteTime = 60, 
++  		unsigned short int vetoTime = 20,
++		unsigned short int votesRequired = 2, 
++		float votePercentage = 50.1,
++		unsigned short int voteRepeatTime = 300);
+   /* default copy constructor */
+   VotingArbiter(const VotingArbiter& arbiter);
+   ~VotingArbiter(void);
+@@ -231,11 +233,11 @@ class VotingArbiter (protected)
+ };
+ 
+ 
+-inline VotingArbiter::VotingArbiter(unsigned short int voteTime=60,
+-				    unsigned short int vetoTime=20,
+-				    unsigned short int votesRequired=2,
+-				    float votePercentage=50.1,
+-				    unsigned short int voteRepeatTime=300)
++inline VotingArbiter::VotingArbiter(unsigned short int voteTime,
++				    unsigned short int vetoTime,
++				    unsigned short int votesRequired,
++				    float votePercentage,
++				    unsigned short int voteRepeatTime)
+   : _votingBooth(NULL),
+     _maxVotes(votesRequired+1),
+     _voteTime(voteTime),
