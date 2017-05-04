@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2017/02/27 15:38:02 jca Exp $
+# $OpenBSD: Makefile,v 1.35 2017/05/04 13:55:32 espie Exp $
 
 COMMENT=	Chinese(Big5) VT100 terminal emulator for X
 
@@ -23,12 +23,10 @@ CONFIGURE_STYLE=	gnu old
 CONFIGURE_ARGS=	--os=OpenBSD --no-menu
 
 post-configure:
-	mv ${WRKSRC}/config.status ${WRKSRC}/config.status.orig
-	sed -e '/OPT_CRXVT_CFONT/s/=.*/=-taipei-ming-medium-r-normal--16-160-75-75-c-160-big5-0/' ${WRKSRC}/config.status.orig > ${WRKSRC}/config.status
+	sed -i.bak -e '/OPT_CRXVT_CFONT/s/=.*/=-taipei-ming-medium-r-normal--16-160-75-75-c-160-big5-0/' ${WRKSRC}/config.status
 
 post-extract:
-	mv ${WRKSRC}/script/os_def/FreeBSD ${WRKSRC}/script/os_def/FreeBSD.orig
-	sed -e '/OS/s/=.*/=OpenBSD/' ${WRKSRC}/script/os_def/FreeBSD.orig > ${WRKSRC}/script/os_def/OpenBSD
+	sed -e '/OS/s/=.*/=OpenBSD/' ${WRKSRC}/script/os_def/FreeBSD > ${WRKSRC}/script/os_def/OpenBSD
 
 NO_TEST=	Yes
 
