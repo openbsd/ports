@@ -1,0 +1,50 @@
+$OpenBSD: patch-app_Makefile_in,v 1.4 2017/05/04 11:46:39 espie Exp $
+Pass linker flags without support from compiler
+
+Index: app/Makefile.in
+--- app/Makefile.in.orig
++++ app/Makefile.in
+@@ -653,33 +653,33 @@ INCLUDES = \
+ 
+ # FIXME: core should not depend on xcf
+ workaround_that_core_depends_on_xcf = \
+-	-u $(SYMPREFIX)xcf_init
++	-Wl,-u,$(SYMPREFIX)xcf_init
+ 
+ 
+ # FIXME: core should not depend on pdb
+ workaround_that_core_depends_on_pdb = \
+-	-u $(SYMPREFIX)internal_procs_init		\
+-	-u $(SYMPREFIX)gimp_plug_in_manager_restore
++	-Wl,-u,$(SYMPREFIX)internal_procs_init		\
++	-Wl,-u,$(SYMPREFIX)gimp_plug_in_manager_restore
+ 
+ 
+ # FIXME: plug-in should not depend on pdb
+ workaround_that_plug_in_depends_on_pdb = \
+-	-u $(SYMPREFIX)gimp_pdb_compat_param_spec
++	-Wl,-u,$(SYMPREFIX)gimp_pdb_compat_param_spec
+ 
+ 
+ # FIXME: file should not depend on plug-in
+ workaround_that_file_depends_on_plug_in = \
+-	-u $(SYMPREFIX)plug_in_icc_profile_apply_rgb	\
+-	-u $(SYMPREFIX)gimp_image_map_config_get_type
++	-Wl,-u,$(SYMPREFIX)plug_in_icc_profile_apply_rgb	\
++	-Wl,-u,$(SYMPREFIX)gimp_image_map_config_get_type
+ 
+ 
+ # core, vectors and gegl are on the same architectural layer, prevent
+ # the linker from panicing
+ calm_down_linker = \
+-	-u $(SYMPREFIX)gimp_vectors_undo_get_type	\
+-	-u $(SYMPREFIX)gimp_vectors_mod_undo_get_type	\
+-	-u $(SYMPREFIX)gimp_vectors_prop_undo_get_type	\
+-	-u $(SYMPREFIX)gimp_curve_map_pixels
++	-Wl,-u,$(SYMPREFIX)gimp_vectors_undo_get_type	\
++	-Wl,-u,$(SYMPREFIX)gimp_vectors_mod_undo_get_type	\
++	-Wl,-u,$(SYMPREFIX)gimp_vectors_prop_undo_get_type	\
++	-Wl,-u,$(SYMPREFIX)gimp_curve_map_pixels
+ 
+ AM_LDFLAGS = \
+ 	$(munix)					\
