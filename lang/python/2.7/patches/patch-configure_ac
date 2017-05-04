@@ -1,18 +1,36 @@
-$OpenBSD: patch-configure_ac,v 1.7 2016/12/19 20:47:26 rpointel Exp $
+$OpenBSD: patch-configure_ac,v 1.8 2017/05/04 15:20:24 espie Exp $
 
 SOVERSION defaults to 1.0. SHARED_LIBS, however, could be changed
 at any point.  Ensure they are on sync in case INSTSONAME is used
 by a third party.
 
---- configure.ac.orig	Sat Dec 17 21:05:07 2016
-+++ configure.ac	Sun Dec 18 08:21:52 2016
-@@ -917,6 +917,9 @@ if test $enable_shared = "yes"; then
+--- configure.ac.orig
++++ configure.ac
+@@ -465,7 +465,7 @@ esac
+ 
+ if test $define_xopen_source = yes
+ then
+-  AC_DEFINE(_XOPEN_SOURCE, 600, 
++  AC_DEFINE(_XOPEN_SOURCE, 700, 
+             Define to the level of X/Open that your system supports)
+ 
+   # On Tru64 Unix 4.0F, defining _XOPEN_SOURCE also requires
+@@ -475,7 +475,7 @@ then
+   AC_DEFINE(_XOPEN_SOURCE_EXTENDED, 1,
+    	    Define to activate Unix95-and-earlier features)
+ 
+-  AC_DEFINE(_POSIX_C_SOURCE, 200112L, Define to activate features from IEEE Stds 1003.1-2001)
++  AC_DEFINE(_POSIX_C_SOURCE, 200809L, Define to activate features from IEEE Stds 1003.1-2001)
+   
+ fi
+ 
+@@ -916,6 +916,9 @@ if test $enable_shared = "yes"; then
+ 	  case $ac_sys_system in
  	      FreeBSD*)
  		SOVERSION=`echo $SOVERSION|cut -d "." -f 1`
- 		;;
++		;;
 +	      OpenBSD*)
 +		SOVERSION=${LIBpython2.7_VERSION}
-+		;;
+ 		;;
  	  esac
  	  INSTSONAME="$LDLIBRARY".$SOVERSION
- 	  ;;
