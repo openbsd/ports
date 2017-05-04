@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_debugger_c,v 1.1 2017/05/04 19:59:37 espie Exp $
+
+Index: src/debugger.c
+--- src/debugger.c.orig
++++ src/debugger.c
+@@ -1528,7 +1528,7 @@ struct se {
+   struct se *se_next;
+ };
+ 
+-char *
++void
+ #ifdef __FunctionProto__
+ get_stack (void)
+ #else
