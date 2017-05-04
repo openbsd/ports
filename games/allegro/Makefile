@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2017/05/04 20:09:31 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2017/05/04 22:03:30 espie Exp $
 
 BROKEN-hppa =	./src/x/xdga2s.s:25: Error: symbol .text is already defined
 
@@ -6,7 +6,7 @@ COMMENT =	game programming library for C/C++ developers
 
 V =		4.2.3
 DISTNAME =	allegro-$V
-REVISION =	3
+REVISION =	4
 CATEGORIES =	games devel multimedia
 SHARED_LIBS =	alleg	1.0	# 4.2
 
@@ -38,6 +38,9 @@ CONFIGURE_ARGS =	--enable-artsdigi=no \
 			--enable-ossmidi=no \
 			--enable-modules=no \
 			--with-x
+# XXX work around bogus configure entry with clang
+CONFIGURE_ENV =		allegro_cv_support_include_prefix=yes
+
 MAKE_ENV +=		shared_major_minor=${LIBalleg_VERSION}
 
 NO_TEST =		Yes
