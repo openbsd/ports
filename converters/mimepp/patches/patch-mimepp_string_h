@@ -1,0 +1,16 @@
+$OpenBSD: patch-mimepp_string_h,v 1.1 2017/05/04 15:46:56 espie Exp $
+
+Index: mimepp/string.h
+--- mimepp/string.h.orig
++++ mimepp/string.h
+@@ -27,7 +27,9 @@
+ 
+ #include <assert.h>
+ #include <stddef.h>
+-#include <iostream.h>
++#include <iostream>
++using std::ostream;
++using std::istream;
+ 
+ #ifndef DW_CONFIG_H
+ #include <mimepp/config.h>

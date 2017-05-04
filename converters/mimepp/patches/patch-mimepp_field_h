@@ -1,0 +1,14 @@
+$OpenBSD: patch-mimepp_field_h,v 1.1 2017/05/04 15:46:56 espie Exp $
+
+Index: mimepp/field.h
+--- mimepp/field.h.orig
++++ mimepp/field.h
+@@ -25,7 +25,7 @@
+ #ifndef DW_FIELD_H
+ #define DW_FIELD_H
+ 
+-#include <iostream.h>
++#include <iostream>
+ 
+ #ifndef DW_CONFIG_H
+ #include <mimepp/config.h>

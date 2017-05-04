@@ -1,0 +1,13 @@
+$OpenBSD: patch-msgcmp_cpp,v 1.1 2017/05/04 15:46:56 espie Exp $
+
+Index: msgcmp.cpp
+--- msgcmp.cpp.orig
++++ msgcmp.cpp
+@@ -28,6 +28,7 @@
+ #include <mimepp/debug.h>
+ #include <stdlib.h>
+ #include <mimepp/msgcmp.h>
++using std::cerr;
+ 
+ #define kMagicNumber ((DwUint32) 0x22222222L)
+ 

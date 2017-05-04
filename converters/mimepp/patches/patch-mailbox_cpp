@@ -1,0 +1,14 @@
+$OpenBSD: patch-mailbox_cpp,v 1.1 2017/05/04 15:46:56 espie Exp $
+
+Index: mailbox.cpp
+--- mailbox.cpp.orig
++++ mailbox.cpp
+@@ -29,7 +29,7 @@
+ #include <ctype.h>
+ #include <stdlib.h>
+ #include <string.h>
+-#include <iostream.h>
++#include <iostream>
+ #include <mimepp/string.h>
+ #include <mimepp/mailbox.h>
+ #include <mimepp/token.h>

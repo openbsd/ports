@@ -1,0 +1,14 @@
+$OpenBSD: patch-field_cpp,v 1.1 2017/05/04 15:46:56 espie Exp $
+
+Index: field.cpp
+--- field.cpp.orig
++++ field.cpp
+@@ -28,7 +28,7 @@
+ #include <mimepp/debug.h>
+ #include <assert.h>
+ #include <ctype.h>
+-#include <iostream.h>
++#include <iostream>
+ #include <stdlib.h>
+ #include <string.h>
+ #include <mimepp/string.h>

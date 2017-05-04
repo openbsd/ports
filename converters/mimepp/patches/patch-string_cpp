@@ -1,0 +1,16 @@
+$OpenBSD: patch-string_cpp,v 1.1 2017/05/04 15:46:56 espie Exp $
+
+Index: string.cpp
+--- string.cpp.orig
++++ string.cpp
+@@ -29,8 +29,9 @@
+ #include <ctype.h>
+ #include <stdlib.h>
+ #include <string.h>
+-#include <new.h>
++#include <new>
+ #include <mimepp/string.h>
++using std::cerr;
+ 
+ #define DW_MIN(a,b) ((a) <= (b) ? (a) : (b))
+ #define DW_MAX(a,b) ((a) >= (b) ? (a) : (b))

@@ -1,0 +1,14 @@
+$OpenBSD: patch-headers_cpp,v 1.1 2017/05/04 15:46:56 espie Exp $
+
+Index: headers.cpp
+--- headers.cpp.orig
++++ headers.cpp
+@@ -30,7 +30,7 @@
+ #include <stdlib.h>
+ #include <string.h>
+ #include <time.h>
+-#include <iostream.h>
++#include <iostream>
+ #include <mimepp/string.h>
+ #include <mimepp/headers.h>
+ #include <mimepp/field.h>

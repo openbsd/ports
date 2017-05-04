@@ -1,0 +1,23 @@
+$OpenBSD: patch-dw_cte_cpp,v 1.1 2017/05/04 15:46:56 espie Exp $
+
+Index: dw_cte.cpp
+--- dw_cte.cpp.orig
++++ dw_cte.cpp
+@@ -420,7 +420,7 @@ static int encode_base64(const char* aIn, size_t aInLe
+         out[outPos++] = base64tab[c3 & 0x3F];
+ 		lineLen += 4;
+         if (lineLen >= MAXLINE-3) {
+-			char* cp = DW_EOL;
++			const char* cp = DW_EOL;
+             out[outPos++] = *cp++;
+ 			if (*cp) {
+ 				out[outPos++] = *cp;
+@@ -429,7 +429,7 @@ static int encode_base64(const char* aIn, size_t aInLe
+         }
+     }
+     /* Encode the remaining one or two characters. */
+-	char* cp;
++	const char* cp;
+     switch (inLen % 3) {
+     case 0:
+ 		cp = DW_EOL;

@@ -1,0 +1,14 @@
+$OpenBSD: patch-mimepp_headers_h,v 1.1 2017/05/04 15:46:56 espie Exp $
+
+Index: mimepp/headers.h
+--- mimepp/headers.h.orig
++++ mimepp/headers.h
+@@ -25,7 +25,7 @@
+ #ifndef DW_HEADERS_H
+ #define DW_HEADERS_H
+ 
+-#include <iostream.h>
++#include <iostream>
+ 
+ #ifndef DW_CONFIG_H
+ #include <mimepp/config.h>

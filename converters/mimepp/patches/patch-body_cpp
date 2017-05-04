@@ -1,0 +1,14 @@
+$OpenBSD: patch-body_cpp,v 1.1 2017/05/04 15:46:56 espie Exp $
+
+Index: body.cpp
+--- body.cpp.orig
++++ body.cpp
+@@ -30,7 +30,7 @@
+ #include <string.h>
+ #include <ctype.h>
+ #include <stdlib.h>
+-#include <iostream.h>
++#include <iostream>
+ #include <mimepp/string.h>
+ #include <mimepp/headers.h>
+ #include <mimepp/bodypart.h>
