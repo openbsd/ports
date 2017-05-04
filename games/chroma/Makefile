@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/05/16 17:20:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2017/05/04 21:40:47 espie Exp $
 
 COMMENT =	abstract puzzle game
 
@@ -21,6 +21,7 @@ CONFIGURE_STYLE =	gnu
 
 LIB_DEPENDS =	devel/sdl-image
 MODULES =	devel/gettext
+CFLAGS +=	-fgnu89-inline
 
 WANTLIB +=	SDL SDL_image c freetype ncurses pthread z
 

@@ -1,0 +1,15 @@
+$OpenBSD: patch-xor_c,v 1.1 2017/05/04 21:40:48 espie Exp $
+return value found in more recent sources
+
+Index: xor.c
+--- xor.c.orig
++++ xor.c
+@@ -635,7 +635,7 @@ int xor_evolve(struct level* plevel)
+     pmover = plevel->stack_first;
+ 
+     if(pmover == NULL)
+-	return;
++	return 0;
+ 
+     px = pmover->x;
+     py = pmover->y;
