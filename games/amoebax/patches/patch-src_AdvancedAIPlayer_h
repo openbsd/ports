@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_AdvancedAIPlayer_h,v 1.1 2017/05/04 20:40:34 espie Exp $
+
+Index: src/AdvancedAIPlayer.h
+--- src/AdvancedAIPlayer.h.orig
++++ src/AdvancedAIPlayer.h
+@@ -17,7 +17,7 @@
+ // Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ //
+ #if !defined (AMOEBAX_ADVANCED_AI_PLAYER_H)
+-#define AMOEBAS_ADVANCED_AI_PLAYER_H
++#define AMOEBAX_ADVANCED_AI_PLAYER_H
+ 
+ #include "AIPlayer.h"
+ 

@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_binreloc_cxx,v 1.1 2017/05/04 20:40:34 espie Exp $
+
+Index: src/binreloc.cxx
+--- src/binreloc.cxx.orig
++++ src/binreloc.cxx
+@@ -739,7 +739,8 @@ br_strndup (const char *str, size_t size)
+ char *
+ br_dirname (const char *path)
+ {
+-	char *end, *result;
++	const char *end;
++	char *result;
+ 
+ 	if (path == (const char *) NULL)
+ 		return (char *) NULL;

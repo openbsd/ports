@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_PauseState_h,v 1.1 2017/05/04 20:40:34 espie Exp $
+
+Index: src/PauseState.h
+--- src/PauseState.h.orig
++++ src/PauseState.h
+@@ -16,7 +16,7 @@
+ // along with this program; if not, write to the Free Software
+ // Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ //
+-#if !defined (AMEOBAX_PAUSE_STATE_H)
++#if !defined (AMOEBAX_PAUSE_STATE_H)
+ #define AMOEBAX_PAUSE_STATE_H
+ 
+ #include "IState.h"

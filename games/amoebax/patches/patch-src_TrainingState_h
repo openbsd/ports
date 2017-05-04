@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_TrainingState_h,v 1.1 2017/05/04 20:40:34 espie Exp $
+
+Index: src/TrainingState.h
+--- src/TrainingState.h.orig
++++ src/TrainingState.h
+@@ -17,7 +17,7 @@
+ // Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ //
+ #if !defined (AMOEBAX_TRAINING_STATE_H)
+-#define AMOEBAX_TRAINING_STATE
++#define AMOEBAX_TRAINING_STATE_H
+ 
+ #include "IPlayer.h"
+ #include "IState.h"

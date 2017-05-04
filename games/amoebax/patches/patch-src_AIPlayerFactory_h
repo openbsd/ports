@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_AIPlayerFactory_h,v 1.1 2017/05/04 20:40:34 espie Exp $
+
+Index: src/AIPlayerFactory.h
+--- src/AIPlayerFactory.h.orig
++++ src/AIPlayerFactory.h
+@@ -16,7 +16,7 @@
+ // along with this program; if not, write to the Free Software
+ // Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ //
+-#if !defined (AMEOBAX_AI_PLAYER_FACTORY_H)
++#if !defined (AMOEBAX_AI_PLAYER_FACTORY_H)
+ #define AMOEBAX_AI_PLAYER_FACTORY_H
+ 
+ #include <string>
