@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_stones_complex_cc,v 1.1 2017/05/04 23:00:48 espie Exp $
+
+Index: src/stones_complex.cc
+--- src/stones_complex.cc.orig
++++ src/stones_complex.cc
+@@ -3371,7 +3371,7 @@ namespace
+                     }
+                 } else if(skateDir != NODIR) {
+                     if(state == BLINK) {
+-                        state == ACTIVE;
++                        state = ACTIVE;
+                         init_model();
+                     }
+                     if(GetStone(move(p, skateDir))) {

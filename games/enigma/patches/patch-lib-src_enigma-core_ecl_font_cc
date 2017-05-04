@@ -1,0 +1,14 @@
+$OpenBSD: patch-lib-src_enigma-core_ecl_font_cc,v 1.1 2017/05/04 23:00:48 espie Exp $
+
+Index: lib-src/enigma-core/ecl_font.cc
+--- lib-src/enigma-core/ecl_font.cc.orig
++++ lib-src/enigma-core/ecl_font.cc
+@@ -114,7 +114,7 @@ BitmapFont::BitmapFont(Surface *s, const char *descr)
+         char_rects[c].y = 0;
+         char_rects[c].h = s->height();
+         advance[c] = adv;
+-        if (adv = 0)
++        if (adv == 0)
+             std::cout << "BitFont 0\n";
+     }
+ }

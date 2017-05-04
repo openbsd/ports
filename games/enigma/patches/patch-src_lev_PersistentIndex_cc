@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_lev_PersistentIndex_cc,v 1.1 2017/05/04 23:00:48 espie Exp $
+
+Index: src/lev/PersistentIndex.cc
+--- src/lev/PersistentIndex.cc.orig
++++ src/lev/PersistentIndex.cc
+@@ -1078,7 +1078,7 @@ namespace enigma { namespace lev {
+                 if (getline(is, line)) {
+                     // we read the index in binary mode and have to strip of the \n for
+                     // windows
+-                    if (line[line.size()-1] = '\n') {
++                    if (line[line.size()-1] == '\n') {
+                         line.resize(line.size()-1);
+                     }
+                     indexName = line;
