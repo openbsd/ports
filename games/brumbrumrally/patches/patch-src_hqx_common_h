@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_hqx_common_h,v 1.1 2017/05/04 21:23:30 espie Exp $
+
+Index: src/hqx/common.h
+--- src/hqx/common.h.orig
++++ src/hqx/common.h
+@@ -48,11 +48,16 @@ static inline uint32_t rgb_to_yuv(uint32_t c)
+     return RGBtoYUV[MASK_RGB & c];
+ }
+ 
++static inline uint32_t absdiff(uint32_t a, uint32_t b)
++{
++	return a < b ? b - a : a - b;
++}
++
+ /* Test if there is difference in color */
+ static inline int yuv_diff(uint32_t yuv1, uint32_t yuv2) {
+-    return (( abs((yuv1 & Ymask) - (yuv2 & Ymask)) > trY ) ||
+-            ( abs((yuv1 & Umask) - (yuv2 & Umask)) > trU ) ||
+-            ( abs((yuv1 & Vmask) - (yuv2 & Vmask)) > trV ) );
++    return (( absdiff(yuv1 & Ymask, yuv2 & Ymask) > trY ) ||
++            ( absdiff(yuv1 & Umask, yuv2 & Umask) > trU ) ||
++            ( absdiff(yuv1 & Vmask, yuv2 & Vmask) > trV ) );
+ }
+ 
+ static inline int Diff(uint32_t c1, uint32_t c2)

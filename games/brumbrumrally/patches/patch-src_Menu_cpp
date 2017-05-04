@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_Menu_cpp,v 1.1 2017/05/04 21:23:30 espie Exp $
+
+Index: src/Menu.cpp
+--- src/Menu.cpp.orig
++++ src/Menu.cpp
+@@ -27,6 +27,7 @@
+ #include <cassert>
+ #include <algorithm>
+ #include <cmath>
++#include <cstdlib>
+ 
+ Menu::Menu()
+ :	selectedItem(0),
