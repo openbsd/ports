@@ -181,7 +181,7 @@ bool AudioIOSNDIO::open()
 	    testpar.sig != par.sig ||
 	    testpar.le != par.le ||
 	    testpar.pchan != par.pchan ||
-	    fabs((testpar.rate - par.rate)/testpar.rate) > 0.05) {
+	    fabs((double(testpar.rate) - par.rate)/testpar.rate) > 0.05) {
 		_error = "returned params do not match requested params";
 
 		close();
