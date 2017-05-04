@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2016/03/16 21:19:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2017/05/04 20:09:31 espie Exp $
 
 BROKEN-hppa =	./src/x/xdga2s.s:25: Error: symbol .text is already defined
 
@@ -41,6 +41,7 @@ CONFIGURE_ARGS =	--enable-artsdigi=no \
 MAKE_ENV +=		shared_major_minor=${LIBalleg_VERSION}
 
 NO_TEST =		Yes
+CFLAGS +=		-fgnu89-inline
 
 post-extract:
 	cp ${FILESDIR}/sndio.c ${WRKSRC}/src/unix
