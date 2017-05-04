@@ -1,0 +1,14 @@
+$OpenBSD: patch-geo_drgeo_dialog_cc,v 1.1 2017/05/04 19:45:27 espie Exp $
+Modern C++ doesn't want to give external linkage to anonymous structs
+Index: geo/drgeo_dialog.cc
+--- geo/drgeo_dialog.cc.orig
++++ geo/drgeo_dialog.cc
+@@ -38,7 +38,7 @@ static GtkWidget *drgeoEditDialog = NULL, *drgeoEntry;
+ // Used in the style dialod callback, I know it's ugly, but so easy
+ static drgeoFigure *selected_figure;
+ 
+-struct
++struct fooclang
+ {
+   drgeoPoint mouse;
+   drgeoFigure *figure;

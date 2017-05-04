@@ -1,7 +1,18 @@
-$OpenBSD: patch-geo_drgeo_figure_cc,v 1.1 2005/11/11 20:23:53 wilfried Exp $
---- geo/drgeo_figure.cc.orig	Sun Nov  6 12:07:33 2005
-+++ geo/drgeo_figure.cc	Sun Nov  6 12:11:08 2005
-@@ -1044,7 +1044,7 @@ drgeoFigure::getKeyFromValueOnHash (gpoi
+$OpenBSD: patch-geo_drgeo_figure_cc,v 1.2 2017/05/04 19:45:27 espie Exp $
+
+Index: geo/drgeo_figure.cc
+--- geo/drgeo_figure.cc.orig
++++ geo/drgeo_figure.cc
+@@ -48,7 +48,7 @@
+ #include "drgeo_dialog.h"
+ #include "traite.h"
+ 
+-extern struct
++extern struct fooclang
+ {
+   drgeoPoint mouse;
+   drgeoFigure *figure;
+@@ -1044,7 +1044,7 @@ drgeoFigure::getKeyFromValueOnHash (gpointer value)
      return NULL;
    else
      // data.key is a * gchar get it content as a gpointer
