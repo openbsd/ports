@@ -1,0 +1,15 @@
+$OpenBSD: patch-ddd_my-dirent_h,v 1.1 2017/05/04 16:44:05 espie Exp $
+zap clang warnings
+
+Index: ddd/my-dirent.h
+--- ddd/my-dirent.h.orig
++++ ddd/my-dirent.h
+@@ -26,7 +26,7 @@
+ // or send a mail to the DDD developers <ddd@gnu.org>.
+ 
+ #ifndef _DDD_my_dirent_h
+-#define _DDD_my_Dirent_h
++#define _DDD_my_dirent_h
+ 
+ #include "config.h"
+ #include <sys/types.h>

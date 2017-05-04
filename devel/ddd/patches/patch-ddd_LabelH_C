@@ -1,0 +1,24 @@
+$OpenBSD: patch-ddd_LabelH_C,v 1.1 2017/05/04 16:44:05 espie Exp $
+Motif 1.1 is long gone, and this breaks with clang
+
+Index: ddd/LabelH.C
+--- ddd/LabelH.C.orig
++++ ddd/LabelH.C
+@@ -30,8 +30,6 @@
+  *  cwikla@wolfram.com
+ */
+ 
+-#define new a_new		// Motif 1.1 wants this
+-#define class a_class
+ extern "C" {
+ #include <Xm/XmP.h>
+ #include <Xm/LabelP.h>
+@@ -41,8 +39,6 @@ extern "C" {
+ #include <Xm/ManagerP.h>
+ #endif
+ }
+-#undef new
+-#undef class
+ 
+ #include "LabelHP.h"
+ #include "casts.h"

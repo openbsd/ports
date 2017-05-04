@@ -1,0 +1,45 @@
+$OpenBSD: patch-ddd_strclass_h,v 1.4 2017/05/04 16:44:05 espie Exp $
+friend declaration can't have default parameters
+
+Index: ddd/strclass.h
+--- ddd/strclass.h.orig
++++ ddd/strclass.h
+@@ -543,7 +543,15 @@ class subString (public)
+     bool OK() const; 
+ };
+ 
++class string;
+ 
++string common_prefix(const string& x, const string& y, 
++				int startpos = 0);
++string common_suffix(const string& x, const string& y, 
++				int startpos = -1);
++int readline(std::istream& s, string& x, char terminator = '\n',
++			int discard_terminator = 1);
++
+ class string
+ {
+     friend class subString;
+@@ -810,10 +818,8 @@ class string (public)
+     friend int split(const string& x, string *res, int maxn, 
+ 		     const regex& sep);
+ 
+-    friend string common_prefix(const string& x, const string& y, 
+-				int startpos = 0);
+-    friend string common_suffix(const string& x, const string& y, 
+-				int startpos = -1);
++    friend string common_prefix(const string& x, const string& y, int startpos);
++    friend string common_suffix(const string& x, const string& y, int startpos);
+     friend string replicate(char c, int n);
+     friend string replicate(const string& y, int n);
+     friend string join(const string *src, int n, const string& sep);
+@@ -864,8 +870,7 @@ class string (public)
+     friend std::istream& operator>>(std::istream& s, string& x);
+ 
+     friend int readline(std::istream& s, string& x, 
+-			char terminator = '\n',
+-			int discard_terminator = 1);
++			char terminator, int discard_terminator);
+ 
+     // Status
+     unsigned int length() const;

@@ -1,0 +1,15 @@
+$OpenBSD: patch-ddd_VSLDefList_C,v 1.1 2017/05/04 16:44:05 espie Exp $
+No default conversion from std::ostringstream to char *.
+
+Index: ddd/VSLDefList.C
+--- ddd/VSLDefList.C.orig
++++ ddd/VSLDefList.C
+@@ -60,7 +60,7 @@ const Box *VSLDefList::eval(Box *arg) const
+     {
+ 	std::ostringstream s;
+ 	s << *arg;
+-	VSLLib::eval_error("no suiting definition for " + f_name() + s);
++	VSLLib::eval_error("no suiting definition for " + f_name() + s.str().c_str());
+     }
+ 
+     return d ? d->eval(arg) : 0;
