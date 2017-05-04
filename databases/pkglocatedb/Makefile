@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.30 2016/02/21 02:13:12 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2017/05/04 15:08:21 espie Exp $
 
 COMMENT =		database of packages for use with locate(1)
 
 # locate data is NOT MI, unfortunately
 # PKG_ARCH = ${ARCH}....
-DISTNAME =		pkglocatedb-1.2
+DISTNAME =		pkglocatedb-1.3
 DISTFILES =
 
 CATEGORIES =		databases
