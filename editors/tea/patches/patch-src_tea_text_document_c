@@ -1,0 +1,41 @@
+$OpenBSD: patch-src_tea_text_document_c,v 1.1 2017/05/04 19:22:03 espie Exp $
+
+Index: src/tea_text_document.c
+--- src/tea_text_document.c.orig
++++ src/tea_text_document.c
+@@ -2148,7 +2148,7 @@ gchar* doc_get_sel (t_note_page *doc)
+ void doc_select_line (t_note_page *doc, gint line)
+ {
+   if (! doc)
+-     return NULL;
++     return;
+ 
+   GtkTextIter itstart, itend;
+   gtk_text_buffer_get_iter_at_line (doc->text_buffer, &itstart, line - 1);
+@@ -3059,7 +3059,7 @@ void doc_rep_sel (t_note_page *page, const gchar *news
+ gchar* get_c_url (t_note_page *doc)
+ {
+   if (! doc)
+-     return;
++     return NULL;
+ 
+   gchar *dir;
+   gchar *filename;
+@@ -3151,7 +3151,7 @@ gboolean doc_search_f (t_note_page *doc, const gchar *
+ gboolean doc_search_f_next (t_note_page *doc)
+ {
+   if (! doc)
+-     return;
++     return FALSE;
+ 
+   gboolean result = FALSE;
+   if (! doc->last_searched_text)
+@@ -5285,7 +5285,7 @@ void make_readability (t_note_page *page)
+ 
+   chars = chars - spaces;
+   if (chars <= 0)
+-     return NULL;
++     return;
+ 
+   double ari = ((4.71 * (chars / words)) + (0.5 * (words / sents))) - 21.43;
+   double coleman_liau = (5.89 * chars / words) - (30 * sents / words) - 15.8;

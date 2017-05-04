@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_rox_strings_c,v 1.3 2017/05/04 19:22:03 espie Exp $
+
+Index: src/rox_strings.c
+--- src/rox_strings.c.orig
++++ src/rox_strings.c
+@@ -2191,7 +2191,7 @@ gchar* copied_from_browser_to_ftext (const gchar *s, c
+ gchar* get_charset_from_meta (const gchar *text)
+ {
+   if (! text)
+-     return;
++     return NULL;
+ 
+   gchar *s1 = strstr (text, "<meta");
+   if (! s1)
+@@ -2479,7 +2479,7 @@ gchar* str_before_sep (const gchar *str, const gchar *
+ gchar* str_after_sep (const gchar *str, const gchar *sep)
+ {
+    if ((str == NULL) || (sep == NULL))
+-      return;
++      return NULL;
+ 
+    gchar *t = strstr (str, sep);
+    if (t)

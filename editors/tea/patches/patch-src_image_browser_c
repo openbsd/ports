@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_image_browser_c,v 1.1 2017/05/04 19:22:03 espie Exp $
+
+Index: src/image_browser.c
+--- src/image_browser.c.orig
++++ src/image_browser.c
+@@ -577,7 +577,7 @@ static void on_mni_copy_pixbuf (GtkMenuItem *menuitem,
+ {
+   GtkClipboard *c = gtk_clipboard_get (GDK_SELECTION_CLIPBOARD);
+   if (! c)
+-     return NULL;
++     return;
+ 
+   t_image_viewer *instance = user_data;
+   gtk_clipboard_set_image (c, gtk_image_get_pixbuf (instance->image));
+@@ -944,7 +944,7 @@ GtkWidget* create_image_browser (t_image_plane *instan
+ void image_browser_update (t_image_plane *instance)
+ {
+   if (! instance)
+-     return NULL;
++     return;
+ 
+   gchar *filename;
+   gchar *utf;

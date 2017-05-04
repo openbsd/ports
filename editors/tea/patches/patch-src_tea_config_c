@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_tea_config_c,v 1.4 2009/03/23 10:55:40 giovanni Exp $
+$OpenBSD: patch-src_tea_config_c,v 1.5 2017/05/04 19:22:03 espie Exp $
 --- src/tea_config.c.orig	Tue Jul  8 10:29:45 2008
 +++ src/tea_config.c	Fri Nov 21 17:03:32 2008
 @@ -591,7 +591,6 @@ void tea_done (void)
@@ -39,10 +39,3 @@ $OpenBSD: patch-src_tea_config_c,v 1.4 2009/03/23 10:55:40 giovanni Exp $
  
    confile.main_wnd_show_full_path = ht_get_int_value ("main_wnd_show_full_path", 1);
    confile.do_backup = ht_get_int_value ("do_backup", 0);
-@@ -1353,4 +1352,4 @@ GList* get_color_scheme_ids (void)
-   return NULL;
- 
- #endif
--}
-\ No newline at end of file
-+}
