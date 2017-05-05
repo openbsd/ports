@@ -1,7 +1,7 @@
-$OpenBSD: patch-tests_playTests_sh,v 1.5 2017/04/13 09:41:15 juanfra Exp $
---- tests/playTests.sh.orig	Thu Mar 16 01:31:40 2017
-+++ tests/playTests.sh	Tue Apr 11 01:32:41 2017
-@@ -34,6 +34,7 @@ UNAME=$(uname)
+$OpenBSD: patch-tests_playTests_sh,v 1.6 2017/05/05 18:16:53 juanfra Exp $
+--- tests/playTests.sh.orig	Thu May  4 20:18:24 2017
++++ tests/playTests.sh	Fri May  5 17:04:40 2017
+@@ -58,6 +58,7 @@ UNAME=$(uname)
  case "$UNAME" in
    Darwin) MD5SUM="md5 -r" ;;
    FreeBSD) MD5SUM="gmd5sum" ;;
@@ -9,7 +9,7 @@ $OpenBSD: patch-tests_playTests_sh,v 1.5 2017/04/13 09:41:15 juanfra Exp $
    *) MD5SUM="md5sum" ;;
  esac
  
-@@ -149,7 +150,7 @@ rm ./*.tmp ./*.zstd
+@@ -193,7 +194,7 @@ rm ./*.tmp ./*.zstd
  $ECHO "frame concatenation tests completed"
  
  

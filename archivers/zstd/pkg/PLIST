@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/12/25 21:53:13 juanfra Exp $
+@comment $OpenBSD: PLIST,v 1.3 2017/05/05 18:16:53 juanfra Exp $
 bin/unzstd
 @bin bin/zstd
 bin/zstdcat
 bin/zstdgrep
 bin/zstdless
+bin/zstdmt
 @man man/man1/unzstd.1
 @man man/man1/zstd.1
 @man man/man1/zstdcat.1
