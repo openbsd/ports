@@ -1,7 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2017/02/20 07:03:42 jsg Exp $
+# $OpenBSD: Makefile,v 1.7 2017/05/05 10:49:28 jsg Exp $
+
+ONLY_FOR_ARCHS=	${GCC4_ARCHS} ${CLANG_ARCHS}
 
 COMMENT=	Device Tree Blobs
-DISTNAME=	linux-4.10
+DISTNAME=	linux-4.11
 PKGNAME=	${DISTNAME:S/linux/dtb/}
 CATEGORIES=	sysutils
 HOMEPAGE=	http://www.devicetree.org
@@ -14,8 +16,8 @@ MASTER_SITES=	https://cdn.kernel.org/pub/linux/kernel/v4.x/
 EXTRACT_SUFX=	.tar.xz
 PKG_ARCH=	*
 
-MODULES=	gcc4
-MODGCC4_ARCHS=	*
+MODULES=	lang/clang
+MODCLANG_ARCHS=	${GCC4_ARCHS}
 BUILD_DEPENDS=	devel/dtc
 NO_TEST=	Yes
 
@@ -27,7 +29,7 @@ do-build:
         for vendor in `find . -type d ! -name include` ; do \
 	    cd ${WRKSRC}/arch/${ARCH}/boot/dts/$$vendor ; \
 	    for dts in `ls *.dts` ; do \
-	        ecpp -nostdinc -I . -I include -I${WRKSRC}/include \
+	        clang-cpp -nostdinc -I . -I include -I${WRKSRC}/include \
 		    -undef -D__DTS__ -x assembler-with-cpp $$dts \
 		    | dtc -I dts -O dtb -o `echo "$$dts" \
 		    | sed -e 's/\.dts$$/\.dtb/'` - ; \
