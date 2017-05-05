@@ -1,7 +1,15 @@
-$OpenBSD: patch-Makefile_rdy,v 1.1.1.1 2009/10/15 14:35:29 phessler Exp $
---- Makefile.rdy.orig	Sun Aug  7 18:18:39 2005
-+++ Makefile.rdy	Tue Jun  2 14:07:18 2009
-@@ -231,8 +231,8 @@ DBGFLAGS := -DDEBUGMODE=1 -g3
+$OpenBSD: patch-Makefile_rdy,v 1.2 2017/05/05 11:43:47 espie Exp $
+Index: Makefile.rdy
+--- Makefile.rdy.orig
++++ Makefile.rdy
+@@ -226,13 +226,13 @@ DBGFLAGS := -n32 -g3 -DDEBUGMODE=1
+ else
+ WFLAGS := -Wall -W -Wwrite-strings -Wstrict-prototypes -Wmissing-declarations -DDUMB_DECLARE_DEPRECATED
+ WFLAGS_ALLEGRO := -Wno-missing-declarations
+-OFLAGS := -O2 -ffast-math -fomit-frame-pointer
+-DBGFLAGS := -DDEBUGMODE=1 -g3
++OFLAGS := -O2 -ffast-math -fomit-frame-pointer -fgnu89-inline
++DBGFLAGS := -DDEBUGMODE=1 -g3 -fgnu89-inline
  endif
  endif
  
