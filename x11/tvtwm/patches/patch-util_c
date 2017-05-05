@@ -1,0 +1,72 @@
+$OpenBSD: patch-util_c,v 1.1 2017/05/05 22:11:08 naddy Exp $
+
+Index: util.c
+--- util.c.orig
++++ util.c
+@@ -266,7 +266,7 @@ char *name;
+     newname = (char *) malloc (HomeLen + strlen(name) + 2);
+     if (!newname) {
+ 	fprintf (stderr, 
+-		 "%s:  unable to allocate %d bytes to expand filename %s/%s\n",
++		 "%s:  unable to allocate %zu bytes to expand filename %s/%s\n",
+ 		 ProgramName, HomeLen + strlen(name) + 2, Home, &name[1]);
+     } else {
+ 	(void) sprintf (newname, "%s/%s", Home, &name[1]);
+@@ -496,6 +496,7 @@ Pixmap GetPixmap (name)
+ }
+ 
+ 
++void
+ InsertRGBColormap (a, maps, nmaps, replace)
+     Atom a;
+     XStandardColormap *maps;
+@@ -513,7 +514,7 @@ InsertRGBColormap (a, maps, nmaps, replace)
+     if (!sc) {				/* no existing, allocate new */
+ 	sc = (StdCmap *) malloc (sizeof (StdCmap));
+ 	if (!sc) {
+-	    fprintf (stderr, "%s:  unable to allocate %d bytes for StdCmap\n",
++	    fprintf (stderr, "%s:  unable to allocate %zu bytes for StdCmap\n",
+ 		     ProgramName, sizeof (StdCmap));
+ 	    return;
+ 	}
+@@ -538,6 +539,7 @@ InsertRGBColormap (a, maps, nmaps, replace)
+     return;
+ }
+ 
++void
+ RemoveRGBColormap (a)
+     Atom a;
+ {
+@@ -558,6 +560,7 @@ RemoveRGBColormap (a)
+     return;
+ }
+ 
++void
+ LocateStandardColormaps()
+ {
+     Atom *atoms;
+@@ -655,6 +658,7 @@ char *name;
+     return TRUE;
+ }
+ 
++void
+ GetFont(font)
+ MyFont *font;
+ {
+@@ -685,6 +689,7 @@ MyFont *font;
+  * SetFocus - separate routine to set focus to make things more understandable
+  * and easier to debug
+  */
++void
+ SetFocus (tmp_win, time)
+     TwmWindow *tmp_win;
+     Time      time;
+@@ -912,7 +917,7 @@ static Pixmap CreateQuestionPixmap (widthp, heightp)
+ static Pixmap CreateMenuPixmap (widthp, heightp)
+     int *widthp, *heightp;
+ {
+-    CreateMenuIcon (Scr->TBInfo.width - Scr->TBInfo.border * 2,widthp,heightp);
++    return CreateMenuIcon (Scr->TBInfo.width - Scr->TBInfo.border * 2,widthp,heightp);
+ }
+ 
+ Pixmap CreateMenuIcon (height, widthp, heightp)

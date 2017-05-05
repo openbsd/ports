@@ -1,0 +1,14 @@
+$OpenBSD: patch-move_c,v 1.1 2017/05/05 22:11:08 naddy Exp $
+
+Index: move.c
+--- move.c.orig
++++ move.c
+@@ -48,6 +48,8 @@ static char RCSinfo[]=
+ #include "move.h"
+ #include "events.h"
+ #include "parse.h"
++#include "resize.h"
++#include "util.h"
+ 
+ static int dragX;
+ static int dragY;

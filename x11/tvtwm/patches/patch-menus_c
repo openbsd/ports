@@ -1,0 +1,249 @@
+$OpenBSD: patch-menus_c,v 1.1 2017/05/05 22:11:08 naddy Exp $
+
+Index: menus.c
+--- menus.c.orig
++++ menus.c
+@@ -191,9 +191,11 @@
+ #include "gram.h"
+ #include "screen.h"
+ #include <X11/Xmu/CharSet.h>		/* for XmuCompareISOLatin1() */
++#include <X11/Xmu/Drawing.h>
+ #include "version.h"
+ #include "vdt.h"
+ #include "add_window.h"
++#include "move.h"
+ #include "patchlevel.h"
+ 
+ extern XEvent Event;
+@@ -228,15 +230,21 @@ static struct {
+ } MenuOrigins[MAXMENUDEPTH];
+ static Cursor LastCursor;
+ 
+-void WarpAlongRing(), WarpToWindow();
+-
+ extern char *Action;
+ extern int Context;
+ extern TwmWindow *ButtonWindow, *Tmp_win;
+ extern XEvent Event, ButtonEvent;
+ extern char *InitFile;
++
+ static void Identify();
++static void BumpWindowColormap();
++static Bool Deferrable();
++static Bool NeedToDefer();
++static void HideIconManager();
++static void WarpAlongRing();
++static void WarpToWindow();
+ 
++
+ #define MAX(x,y) ((x)>(y)?(x):(y))
+ 
+ 
+@@ -360,7 +368,7 @@ int CreateTitleButton (name, func, action, menuroot, r
+ 
+     if (!tb) {
+ 	fprintf (stderr,
+-		 "%s:  unable to allocate %d bytes for title button\n",
++		 "%s:  unable to allocate %zu bytes for title button\n",
+ 		 ProgramName, sizeof(TitleButton));
+ 	return 0;
+     }
+@@ -527,6 +535,7 @@ void InitTitlebarButtons ()
+ 
+ 
+ 
++void
+ PaintEntry(mr, mi, exposure)
+ MenuRoot *mr;
+ MenuItem *mi;
+@@ -684,6 +693,7 @@ int exposure;
+ 
+ 
+ 
++void
+ PaintMenu(mr, e)
+ MenuRoot *mr;
+ XEvent *e;
+@@ -711,6 +721,7 @@ XEvent *e;
+ static Bool fromMenu;
+ 
+ #if 1
++void
+ UpdateMenu()
+ {
+     MenuItem *mi;
+@@ -1205,6 +1216,7 @@ AddToMenu(menu, item, action, sub, func, fore, back)
+ 
+ 
+ 
++void
+ MakeMenus()
+ {
+     MenuRoot *mr;
+@@ -1220,6 +1232,7 @@ MakeMenus()
+ 
+ 
+ 
++void
+ MakeMenu(mr)
+ MenuRoot *mr;
+ {
+@@ -1472,6 +1485,7 @@ MenuRoot *mr;
+  *                                                                    *
+  \********************************************************************/
+ 
++void
+ HandleChangingMenus(menu)
+ MenuRoot *menu;
+ {
+@@ -1665,6 +1679,7 @@ Bool PopUpMenu (menu, x, y, center)
+  ***********************************************************************
+  */
+ 
++void
+ PopDownMenu()
+ {
+     MenuRoot *tmp;
+@@ -3149,6 +3164,7 @@ Cursor cursor;
+  ***********************************************************************
+  */
+ 
++void
+ ReGrab()
+ {
+     XGrabPointer(dpy, Scr->Root, True,
+@@ -3171,6 +3187,7 @@ ReGrab()
+  ***********************************************************************
+  */
+ 
++static Bool
+ Deferrable(func)
+ int func;
+ {
+@@ -3205,6 +3222,7 @@ int func;
+     }
+ }
+ 
++static Bool
+ NeedToDefer(root)
+ MenuRoot *root;
+ {
+@@ -3321,6 +3339,7 @@ FocusOnRoot()
+     Scr->FocusRoot = TRUE;
+ }
+ 
++void
+ DeIconify(tmp_win)
+ TwmWindow *tmp_win;
+ {
+@@ -3396,6 +3415,7 @@ TwmWindow *tmp_win;
+ 
+ 
+ 
++void
+ Iconify(tmp_win, def_x, def_y)
+ TwmWindow *tmp_win;
+ int def_x, def_y;
+@@ -3603,7 +3623,7 @@ TwmWindow *t;
+ 
+ 
+ 
+-SetMapStateProp(tmp_win, state)
++void SetMapStateProp(tmp_win, state)
+ TwmWindow *tmp_win;
+ int state;
+ {
+@@ -3647,6 +3667,7 @@ Bool GetWMState (w, statep, iwp)
+ 
+ 
+ 
++void
+ WarpToScreen (n, inc)
+     int n, inc;
+ {
+@@ -3691,6 +3712,7 @@ WarpToScreen (n, inc)
+  * BumpWindowColormap - rotate our internal copy of WM_COLORMAP_WINDOWS
+  */
+ 
++static void
+ BumpWindowColormap (tmp, inc)
+     TwmWindow *tmp;
+     int inc;
+@@ -3704,9 +3726,9 @@ BumpWindowColormap (tmp, inc)
+ 	cwins = (ColormapWindow **) malloc(sizeof(ColormapWindow *)*
+ 					   tmp->cmaps.number_cwins);
+ 	if (cwins) {
+-	    if (previously_installed =
++	    if ((previously_installed =
+ 		/* SUPPRESS 560 */(Scr->cmapInfo.cmaps == &tmp->cmaps &&
+-		tmp->cmaps.number_cwins)) {
++		tmp->cmaps.number_cwins))) {
+ 		for (i = tmp->cmaps.number_cwins; i-- > 0; )
+ 		    tmp->cmaps.cwins[i]->colormap->state = 0;
+ 	    }
+@@ -3737,6 +3759,7 @@ BumpWindowColormap (tmp, inc)
+ 
+ 
+ 
++static void
+ HideIconManager ()
+ {
+     SetMapStateProp (Scr->iconmgr.twm_win, WithdrawnState);
+@@ -3749,6 +3772,7 @@ HideIconManager ()
+ 
+ 
+ 
++void
+ SetBorder (tmp, onoroff)
+     TwmWindow *tmp;
+     Bool onoroff;
+@@ -3768,6 +3792,7 @@ SetBorder (tmp, onoroff)
+ 
+ 
+ 
++void
+ DestroyMenu (menu)
+     MenuRoot *menu;
+ {
+@@ -3792,7 +3817,7 @@ DestroyMenu (menu)
+ /*
+  * warping routines
+  */
+-void WarpAlongRing (ev, forward)
++static void WarpAlongRing (ev, forward)
+     XButtonEvent *ev;
+     Bool forward;
+ {
+@@ -3839,7 +3864,7 @@ void WarpAlongRing (ev, forward)
+ 
+ 
+ 
+-void WarpToWindow (t)
++static void WarpToWindow (t)
+     TwmWindow *t;
+ {
+     int x, y;
+@@ -3890,6 +3915,7 @@ static void send_clientmessage (w, a, timestamp)
+     XSendEvent (dpy, w, False, 0L, (XEvent *) &ev);
+ }
+ 
++void
+ SendDeleteWindowMessage (tmp, timestamp)
+     TwmWindow *tmp;
+     Time timestamp;
+@@ -3897,6 +3923,7 @@ SendDeleteWindowMessage (tmp, timestamp)
+     send_clientmessage (tmp->w, _XA_WM_DELETE_WINDOW, timestamp);
+ }
+ 
++void
+ SendSaveYourselfMessage (tmp, timestamp)
+     TwmWindow *tmp;
+     Time timestamp;
+@@ -3905,6 +3932,7 @@ SendSaveYourselfMessage (tmp, timestamp)
+ }
+ 
+ 
++void
+ SendTakeFocusMessage (tmp, timestamp)
+     TwmWindow *tmp;
+     Time timestamp;

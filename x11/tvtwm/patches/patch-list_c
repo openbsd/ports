@@ -1,0 +1,23 @@
+$OpenBSD: patch-list_c,v 1.1 2017/05/05 22:11:08 naddy Exp $
+
+Index: list.c
+--- list.c.orig
++++ list.c
+@@ -121,7 +121,7 @@ char *ptr;
+     if (nptr == NULL)
+     {
+ 	twmrc_error_prefix();
+-	fprintf (stderr, "unable to allocate %d bytes for name_list\n",
++	fprintf (stderr, "unable to allocate %zu bytes for name_list\n",
+ 		 sizeof(name_list));
+ 	Done();
+     }
+@@ -203,7 +203,7 @@ short type;
+ 
+ 	regexp_error = "";
+ 	if ((matcher = regcomp(pattern)) == NULL) {
+-	    fprintf(stderr, "%s: Error in regexp `%s'\n", ProgramName,
++	    fprintf(stderr, "%s: %s in regexp `%s'\n", ProgramName,
+ 			regexp_error, name);
+ 	    return 0;
+ 	}

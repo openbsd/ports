@@ -1,6 +1,7 @@
-$OpenBSD: patch-gram_y,v 1.2 2010/05/23 11:29:45 espie Exp $
---- gram.y.orig	Mon Nov 22 21:10:49 1993
-+++ gram.y	Sat May 22 16:16:03 2010
+$OpenBSD: patch-gram_y,v 1.3 2017/05/05 22:11:08 naddy Exp $
+Index: gram.y
+--- gram.y.orig
++++ gram.y
 @@ -79,7 +79,7 @@ unsigned int mods_used = (ShiftMask | ControlMask | Mo
  extern int do_single_keyword(), do_string_keyword(), do_number_keyword();
  extern name_list **do_colorlist_keyword();
@@ -10,3 +11,37 @@ $OpenBSD: patch-gram_y,v 1.2 2010/05/23 11:29:45 espie Exp $
  %}
  
  %union
+@@ -829,19 +829,20 @@ number		: NUMBER		{ $$ = $1; }
+ 		;
+ 
+ %%
+-yyerror(s) char *s;
++static void yyerror(s) char *s;
+ {
+     twmrc_error_prefix();
+     fprintf (stderr, "error in input file:  %s\n", s ? s : "");
+     fprintf (stderr, ": %s", current_input_line());
+     ParseError = 1;
+ }
+-RemoveDQuote(str)
++
++static void RemoveDQuote(str)
+ char *str;
+ {
+     register char *i, *o;
+-    register n;
+-    register count;
++    register int n;
++    register int count;
+ 
+     for (i=str+1, o=str; *i && *i != '\"'; o++)
+     {
+@@ -1053,7 +1054,7 @@ static Bool CheckColormapArg (s)
+ }
+ 
+ 
+-twmrc_error_prefix ()
++void twmrc_error_prefix ()
+ {
+     fprintf (stderr, "%s:  line %d:  ", ProgramName, yylineno);
+ }

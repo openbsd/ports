@@ -1,0 +1,155 @@
+$OpenBSD: patch-icons_c,v 1.1 2017/05/05 22:11:08 naddy Exp $
+
+Index: icons.c
+--- icons.c.orig
++++ icons.c
+@@ -122,7 +122,10 @@
+ #include "gram.h"
+ #include "parse.h"
+ #include "util.h"
++#include "vdt.h"
+ 
++static void AddOneIconRegion();
++
+ #define iconWidth(w)	(w->icon.width + 2 * w->icon.bw)
+ #define iconHeight(w)	(w->icon.height + 2 * w->icon.bw)
+ 
+@@ -131,7 +134,7 @@ Pixmap SetIconMask();
+ Pixmap SetIconClip();
+ #endif
+ 
+-static
++static void
+ splitEntry (ie, grav1, grav2, w, h)
+     IconEntry	*ie;
+     int		grav1, grav2;
+@@ -185,6 +188,7 @@ splitEntry (ie, grav1, grav2, w, h)
+     }
+ }
+ 
++static inline int
+ roundUp (v, multiple)
+ int	v;
+ int	multiple;
+@@ -192,6 +196,7 @@ int	multiple;
+     return ((v + multiple - 1) / multiple) * multiple;
+ }
+ 
++static void
+ PlaceIcon(tmp_win, def_x, def_y, final_x, final_y)
+ TwmWindow *tmp_win;
+ int def_x, def_y;
+@@ -206,8 +211,8 @@ int *final_x, *final_y;
+     ir_list = Scr->IconRegions;
+ 
+     while (ir_list)
+-	if (ir = (IconRegion *)MultiLookInList(ir_list, tmp_win->full_name,
+-						&tmp_win->class, &ir_list)) {
++	if ((ir = (IconRegion *)MultiLookInList(ir_list, tmp_win->full_name,
++						&tmp_win->class, &ir_list))) {
+ 	    w = roundUp (iconWidth (tmp_win), ir->stepx);
+ 	    h = roundUp (iconHeight (tmp_win), ir->stepy);
+ 	    for (ie = ir->entries; ie; ie=ie->next) {
+@@ -264,6 +269,7 @@ FindIconEntry (tmp_win, irp)
+     return 0;
+ }
+ 
++void
+ IconUp (tmp_win)
+     TwmWindow   *tmp_win;
+ {
+@@ -290,8 +296,8 @@ IconUp (tmp_win)
+ 
+ 	ir_list = Scr->IconRegions;
+ 	while (ir_list)
+-	    if (ir = (IconRegion *)MultiLookInList(ir_list, tmp_win->full_name,
+-						&tmp_win->class, &ir_list)) {
++	    if ((ir = (IconRegion *)MultiLookInList(ir_list, tmp_win->full_name,
++						&tmp_win->class, &ir_list))) {
+ 		if (x >= ir->x && x < (ir->x + ir->w) &&
+ 			y >= ir->y && y < (ir->y + ir->h))
+ 		    break;
+@@ -330,7 +336,7 @@ prevIconEntry (ie, ir)
+  * regions together
+  */
+ 
+-static
++static void
+ mergeEntries (old, ie)
+     IconEntry	*old, *ie;
+ {
+@@ -345,6 +351,7 @@ mergeEntries (old, ie)
+     }
+ }
+ 
++void
+ IconDown (tmp_win)
+     TwmWindow   *tmp_win;
+ {
+@@ -381,8 +388,7 @@ IconDown (tmp_win)
+     }
+ }
+ 
+-static int AddOneIconRegion();
+-
++void
+ AddIconRegion(name, type, geom, itterate, grav1, grav2, stepx, stepy)
+ char *name;
+ short type;
+@@ -418,7 +424,7 @@ int grav1, grav2;
+ 	AddOneIconRegion(name, type, x, y, w, h, grav1, grav2, stepx, stepy);
+ }
+ 
+-static
++static void
+ AddOneIconRegion(name, type, x, y, w, h, grav1, grav2, stepx, stepy)
+ char *name;
+ short type;
+@@ -819,6 +825,7 @@ unsigned int *widthp, *heightp;
+  * CreateIconWindows Actually creates the windows representing the icon.
+  */
+ 
++void
+ CreateIconWindows(tmp_win)
+ TwmWindow *tmp_win;
+ {
+@@ -1005,6 +1012,7 @@ TwmWindow *tmp_win;
+ 
+ #define max(x,y) ((x)>(y)?(x):(y))
+ 
++void
+ ConfigureIconWindows(tmp_win)
+ TwmWindow *tmp_win;
+ {
+@@ -1102,6 +1110,7 @@ TwmWindow *tmp_win;
+  * or SqueezeIcon has been turned on for this window.
+  */
+ 
++void
+ ShapeIconWindows(tmp_win)
+ TwmWindow *tmp_win;
+ {
+@@ -1187,6 +1196,7 @@ TwmWindow *tmp_win;
+  * PlaceIconWindows figures out where to put it.
+  */
+ 
++void
+ PlaceIconWindows(tmp_win, def_x, def_y)
+ TwmWindow *tmp_win;
+ int def_x, def_y;
+@@ -1217,6 +1227,7 @@ int def_x, def_y;
+  * Finally, here is the top level function.
+  */
+ 
++void
+ CreateIconWindow(tmp_win, def_x, def_y)
+ TwmWindow *tmp_win;
+ int def_x, def_y;
+@@ -1234,6 +1245,7 @@ int def_x, def_y;
+     return;
+ }
+ 
++void
+ DestroyIconWindow(tmp_win)
+ TwmWindow *tmp_win;
+ {

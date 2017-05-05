@@ -1,0 +1,13 @@
+$OpenBSD: patch-list_h,v 1.1 2017/05/05 22:11:08 naddy Exp $
+
+Index: list.h
+--- list.h.orig
++++ list.h
+@@ -66,6 +66,7 @@ typedef struct name_list_struct name_list;
+ extern void AddToList();
+ extern char* LookInList();
+ extern char* LookInNameList();
++extern char* MultiLookInList();
+ extern int 	GetColorFromList();
+ extern void	FreeList();
+ 

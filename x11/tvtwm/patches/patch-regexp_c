@@ -1,0 +1,31 @@
+$OpenBSD: patch-regexp_c,v 1.1 2017/05/05 22:11:08 naddy Exp $
+
+Index: regexp.c
+--- regexp.c.orig
++++ regexp.c
+@@ -24,6 +24,8 @@
+  */
+ #ifndef	FILE
+ #include <stdio.h>
++#include <stdlib.h>
++#include <string.h>
+ #endif  /* FILE */
+ #ifndef	NSUBEXP
+ #include "regexp.h"
+@@ -32,8 +34,6 @@
+ #include "regmagic.h"
+ #endif  /* MAGIC */
+ 
+-extern char *strchr();
+-
+ /*
+  * The "internal use only" fields in regexp.h are present to pass info from
+  * compile to execute that permits the execute phase to run lots faster on
+@@ -203,7 +203,6 @@ char *exp;
+ 	register char *longest;
+ 	register int len;
+ 	int flags;
+-	extern char *malloc();
+ 
+ 	if (exp == NULL)
+ 		FAIL("NULL argument");

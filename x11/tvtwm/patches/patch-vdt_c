@@ -1,0 +1,31 @@
+$OpenBSD: patch-vdt_c,v 1.1 2017/05/05 22:11:08 naddy Exp $
+
+Index: vdt.c
+--- vdt.c.orig
++++ vdt.c
+@@ -145,6 +145,7 @@ static char RCSinfo[]=
+ #endif
+ 
+ #include <stdio.h>
++#include <unistd.h>
+ #include <X11/X.h>
+ #include <X11/Xatom.h>
+ #include "twm.h"
+@@ -152,6 +153,8 @@ static char RCSinfo[]=
+ #include "vdt.h"
+ #include "parse.h"
+ #include "move.h"
++#include "resize.h"
++#include "util.h"
+ 
+ #define MAX_VDT_WIDTH	32000
+ #define MAX_VDT_HEIGHT	32000
+@@ -638,7 +641,7 @@ int width, height;
+ 		colors[1].green, colors[1].blue);
+ 	/* Fork the process */
+ 	fres = fork();
+-	if (fres < 0) fprintf(stderr, "%s: error in fork()...\n");
++	if (fres < 0) fprintf(stderr, "%s: error in fork()...\n", ProgramName);
+ 	if (fres == 0) {		/* This is the child */
+ 		execlp("xloadimage", "xsetbg", "-display",
+ 			display, "-foreground",

@@ -1,0 +1,14 @@
+$OpenBSD: patch-LocPixmap_c,v 1.1 2017/05/05 22:11:08 naddy Exp $
+
+Index: LocPixmap.c
+--- LocPixmap.c.orig
++++ LocPixmap.c
+@@ -223,7 +223,7 @@ Pixmap XcprLocatePixmapFile (screen, name, trans, numt
+ 
+ 	switch (i) {
+ 	  case 1:
+-	    if (!(name[0] == '/' || (name[0] == '.') && name[1] == '/')) 
++	    if (!(name[0] == '/' || (name[0] == '.' && name[1] == '/'))) 
+ 	      continue;
+ 	    fn = (char *) name;
+ 	    try_plain_name = False;

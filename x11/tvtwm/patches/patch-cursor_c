@@ -1,0 +1,14 @@
+$OpenBSD: patch-cursor_c,v 1.1 2017/05/05 22:11:08 naddy Exp $
+
+Index: cursor.c
+--- cursor.c.orig
++++ cursor.c
+@@ -208,7 +208,7 @@ Pixmap *shape_mask;
+     return bm;
+ }
+ 
+-NewBitmapCursor(cp, source, mask)
++void NewBitmapCursor(cp, source, mask)
+ Cursor *cp;
+ char *source, *mask;
+ {

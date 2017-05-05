@@ -1,0 +1,20 @@
+$OpenBSD: patch-add_window_h,v 1.1 2017/05/05 22:11:08 naddy Exp $
+
+Index: add_window.h
+--- add_window.h.orig
++++ add_window.h
+@@ -41,12 +41,14 @@
+ 
+ extern char NoName[];
+ 
++extern void AddDefaultBindings();
+ extern TwmWindow *AddWindow();
+ extern int MappedNotOverride();
+ extern void GrabButtons();
+ extern void GrabKeys();
+ extern void UngrabButtons();
+ extern void UngrabKeys();
++extern void GetGravityOffsets();
+ extern void GetWindowSizeHints();
+ extern void SetTWM_FLAGS();
+ extern int AddingX;	

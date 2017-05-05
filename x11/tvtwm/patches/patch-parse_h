@@ -1,0 +1,19 @@
+$OpenBSD: patch-parse_h,v 1.1 2017/05/05 22:11:08 naddy Exp $
+
+Index: parse.h
+--- parse.h.orig
++++ parse.h
+@@ -39,7 +39,13 @@
+ #ifndef _PARSE_
+ #define _PARSE_
+ 
++extern char *current_input_line();
++extern int do_pixmap_keyword();
++extern void do_var_savecolor();
++extern void do_squeeze_entry();
+ extern int ParseTwmrc(), ParseStringList();
++extern int ParseMenuFile();
++extern int parse_keyword();
+ extern int (*twmInputFunc)();
+ extern void twmUnput();
+ extern void TwmOutput();

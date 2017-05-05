@@ -1,0 +1,25 @@
+$OpenBSD: patch-add_window_c,v 1.1 2017/05/05 22:11:08 naddy Exp $
+
+Index: add_window.c
+--- add_window.c.orig
++++ add_window.c
+@@ -50,6 +50,8 @@
+ #include "screen.h"
+ #include "iconmgr.h"
+ #include "move.h"
++#include "vdt.h"
++#include <X11/Xmu/Drawing.h>
+ 
+ extern int FromVirtualDesktop;
+ 
+@@ -1490,8 +1492,8 @@ FetchWmColormapWindows (tmp)
+ 
+     number_cmap_windows = 0;
+ 
+-    if (/* SUPPRESS 560 */previously_installed = 
+-       (Scr->cmapInfo.cmaps == &tmp->cmaps && tmp->cmaps.number_cwins)) {
++    if (/* SUPPRESS 560 */(previously_installed = 
++       (Scr->cmapInfo.cmaps == &tmp->cmaps && tmp->cmaps.number_cwins))) {
+ 	cwins = tmp->cmaps.cwins;
+ 	for (i = 0; i < tmp->cmaps.number_cwins; i++)
+ 	    cwins[i]->colormap->state = 0;

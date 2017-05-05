@@ -1,0 +1,30 @@
+$OpenBSD: patch-resize_c,v 1.1 2017/05/05 22:11:08 naddy Exp $
+
+Index: resize.c
+--- resize.c.orig
++++ resize.c
+@@ -89,6 +89,8 @@
+ #include "resize.h"
+ #include "add_window.h"
+ #include "screen.h"
++#include "events.h"
++#include "vdt.h"
+ 
+ #define MINHEIGHT 0     /* had been 32 */
+ #define MINWIDTH 0      /* had been 60 */
+@@ -735,6 +737,7 @@ TwmWindow *tmp_win;
+  * 
+  ***********************************************************************/
+ 
++void
+ ConstrainSize (tmp_win, widthp, heightp)
+     TwmWindow *tmp_win;
+     int *widthp, *heightp;
+@@ -1183,6 +1186,7 @@ int flag;
+     XUngrabServer (dpy);
+ }
+ 
++void
+ SetFrameShape (tmp)
+     TwmWindow *tmp;
+ {

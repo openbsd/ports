@@ -1,0 +1,31 @@
+$OpenBSD: patch-vdt_h,v 1.1 2017/05/05 22:11:08 naddy Exp $
+
+Index: vdt.h
+--- vdt.h.orig
++++ vdt.h
+@@ -40,9 +40,9 @@
+ #define DEFAULT_PANNER_GEOMETRY "-0-0"
+ 
+ extern void InitVirtualDesktop();
+-extern void Set__SWM_ROOT();
+-extern void Set__SWM_VERSION();
+-extern void Remove__SWM_VERSION();
++extern void SetSWM_ROOT();
++extern void SetSWM_VERSION();
++extern void RemoveSWM_VERSION();
+ extern void MakePanner();
+ extern void MakeVirtualDesktop();
+ extern void MapFrame();
+@@ -60,10 +60,12 @@ extern void HandlePannerExpose();
+ extern void HandlePannerButtonPress();
+ extern void HandlePannerButtonRelease();
+ extern void HandlePannerMotionNotify();
++extern void HandlePannerMove();
+ extern void MoveDesktop();
+ extern void ScrollDesktop();
+ extern void ResizeDesktop();
+ extern void ScrollTo();
++extern void ScrollToQuadrant();
+ extern void PaintVirtualWindow();
+ 
+ #endif /* _VDT_ */

@@ -1,0 +1,122 @@
+$OpenBSD: patch-events_c,v 1.1 2017/05/05 22:11:08 naddy Exp $
+
+Index: events.c
+--- events.c.orig
++++ events.c
+@@ -137,8 +137,8 @@
+ extern unsigned int mods_used;
+ extern int menuFromFrameOrWindowOrTitlebar;
+ 
+-extern int ConfigureIconWindows();
+-extern int ShapeIconWindows();
++extern void ConfigureIconWindows();
++extern void ShapeIconWindows();
+ 
+ #define MAX_X_EVENT 256
+ event_proc EventHandler[MAX_X_EVENT]; /* event handler jump table */
+@@ -176,6 +176,7 @@ int Cancel = FALSE;
+ int GlobalFirstTime = True;
+ int GlobalMenuButton = False;
+ 
++static void RedoIconName();
+ 
+ void HandleCreateNotify();
+ void HandleReparentNotify();
+@@ -740,11 +741,12 @@ HandleFocusChange()
+     if (Tmp_win) {
+ 	event = LastFocusEvent(Event.xany.window,&Event);
+ 
+-	if (event)
++	if (event) {
+ 	    if (event->type == FocusIn)
+-		HandleFocusIn(event);
++		HandleFocusIn((XFocusInEvent *)event);
+ 	    else
+-		HandleFocusOut(event);
++		HandleFocusOut((XFocusOutEvent *)event);
++	}
+     }
+ }
+ 
+@@ -1126,6 +1128,7 @@ HandlePropertyNotify()
+  ***********************************************************************
+  */
+ 
++static void
+ RedoIconName()
+ {
+     int x, y;
+@@ -1184,7 +1187,7 @@ HandleClientMessage()
+ 		XUngrabPointer(dpy, CurrentTime);
+ 	    }
+ 	}
+-    } else if (Event.xclient.message_type = _XA_TWM_RESTART) {
++    } else if (Event.xclient.message_type == _XA_TWM_RESTART) {
+         RestartTwm(CurrentTime);
+     }
+ }
+@@ -1571,11 +1574,12 @@ HandleReparentNotify()
+      */
+     if (Event.xreparent.event == Scr->VirtualDesktop) {
+ 	if (XFindContext(dpy, Event.xreparent.window, ScreenContext, &junk)
+-	    == XCNOENT)
++	    == XCNOENT) {
+ 	    if (Event.xreparent.parent == Scr->VirtualDesktop)
+ 		XAddToSaveSet(dpy, Event.xreparent.window);
+ 	    else
+ 		XRemoveFromSaveSet(dpy, Event.xreparent.window);
++	}
+ #ifdef DEBUG_EVENTS
+ 	else
+ 	    fprintf(stderr, "\tone of ours\n");
+@@ -2047,7 +2051,7 @@ HandleButtonRelease()
+ 
+ 
+ 
+-static do_menu (menu, w)
++static void do_menu (menu, w)
+     MenuRoot *menu;			/* menu to pop up */
+     Window w;				/* invoking window or None */
+ {
+@@ -2131,11 +2135,12 @@ HandleButtonPress()
+ 	Cancel = TRUE;
+ 	CurrentDragX = origDragX;
+ 	CurrentDragY = origDragY;
+-	if (!menuFromFrameOrWindowOrTitlebar)
+-	if (Scr->OpaqueMove && DragWindow != None) {
+-	    XMoveWindow (dpy, DragWindow, origDragX, origDragY);
+-	} else {
+-	    MoveOutline(None, 0, 0, 0, 0, 0, 0);
++	if (!menuFromFrameOrWindowOrTitlebar) {
++	    if (Scr->OpaqueMove && DragWindow != None) {
++		XMoveWindow (dpy, DragWindow, origDragX, origDragY);
++	    } else {
++		MoveOutline(None, 0, 0, 0, 0, 0, 0);
++	    }
+ 	}
+ 	XUnmapWindow(dpy, Scr->SizeWindow);
+ 	if (!Scr->OpaqueMove)
+@@ -2947,6 +2952,7 @@ static void flush_expose (w)
+  ***********************************************************************
+  */
+ 
++void
+ InstallWindowColormaps (type, tmp)
+     int type;
+     TwmWindow *tmp;
+@@ -3065,6 +3071,7 @@ InstallWindowColormaps (type, tmp)
+  ***********************************************************************
+  */
+ 
++void
+ InstallRootColormap()
+ {
+     TwmWindow *tmp;
+@@ -3104,6 +3111,7 @@ UninstallRootColormapQScanner(dpy, ev, args)
+ 
+ 
+ 
++void
+ UninstallRootColormap()
+ {
+     char args;

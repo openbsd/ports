@@ -1,0 +1,36 @@
+$OpenBSD: patch-twm_h,v 1.1 2017/05/05 22:11:08 naddy Exp $
+
+Index: twm.h
+--- twm.h.orig
++++ twm.h
+@@ -319,6 +319,7 @@ typedef struct TwmWindow
+ extern char *malloc(), *calloc(), *realloc(), *getenv();
+ extern int free();
+ #endif
++extern void RestoreWithdrawnLocation();
+ extern void Reborder();
+ extern SIGNAL_T Done();
+ void ComputeCommonTitleOffsets();
+@@ -363,7 +364,10 @@ extern int Argc;
+ extern char **Argv;
+ extern char **Environ;
+ extern void NewFontCursor();
++extern void NewBitmapCursor();
+ extern Pixmap CreateMenuIcon();
++extern Pixmap GetCursorGlyph();
++extern Pixmap XcprLocatePixmapFile();
+ 
+ #ifdef XLOADIMAGE
+ extern int xloadim_pid;
+@@ -378,6 +382,11 @@ extern XErrorEvent LastErrorEvent;
+ 
+ extern Bool RestartPreviousState;
+ extern Bool GetWMState();
++
++extern void twmrc_error_prefix();
++
++extern int yyparse();
++extern int yylex();
+ 
+ extern Atom _XA_MIT_PRIORITY_COLORS;
+ extern Atom _XA_WM_CHANGE_STATE;

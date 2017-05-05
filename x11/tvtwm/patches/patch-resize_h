@@ -1,0 +1,29 @@
+$OpenBSD: patch-resize_h,v 1.1 2017/05/05 22:11:08 naddy Exp $
+
+Index: resize.h
+--- resize.h.orig
++++ resize.h
+@@ -39,15 +39,20 @@
+ #ifndef _RESIZE_
+ #define _RESIZE_
+ 
+-extern void StartResize();
++extern void AddEndResize();
+ extern void AddStartResize();
++extern void ConstrainSize();
+ extern void DoResize();
+ extern void DisplaySize();
+ extern void EndResize();
+-extern void AddEndResize();
+-extern void SetupWindow();
++extern void MenuDoResize();
++extern void MenuEndResize();
++extern void MenuStartResize();
++extern void SetFrameShape();
+ extern void SetupFrame();
++extern void SetupWindow();
+ extern void SendSyntheticConfigureNotify();
++extern void StartResize();
+ 
+ #endif /* _RESIZE_ */
+ 

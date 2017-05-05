@@ -1,0 +1,16 @@
+$OpenBSD: patch-icons_h,v 1.1 2017/05/05 22:11:08 naddy Exp $
+
+Index: icons.h
+--- icons.h.orig
++++ icons.h
+@@ -81,4 +81,10 @@ typedef struct TwmIcon {
+ #define ICON_TEXT_VBORDER 1
+ #define ICON_TEXT_HBORDER 2
+ 
++extern void IconUp();
++extern void IconDown();
++extern void AddIconRegion();
++extern void CreateIconWindow();
++extern void DestroyIconWindow();
++
+ #endif /* ICONS_H */

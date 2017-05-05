@@ -1,0 +1,40 @@
+$OpenBSD: patch-menus_h,v 1.1 2017/05/05 22:11:08 naddy Exp $
+
+Index: menus.h
+--- menus.h.orig
++++ menus.h
+@@ -143,16 +143,33 @@ extern int MenuDepth;
+ #define COLORMAP_PREV "prev"
+ #define COLORMAP_DEFAULT "default"
+ 
+-extern void InitTitlebarButtons();
+ extern void InitMenus();
++extern int CreateTitleButton();
++extern void InitTitlebarButtons();
++extern void PaintEntry();
++extern void PaintMenu();
++extern void UpdateMenu();
+ extern MenuRoot *NewMenuRoot();
+ extern MenuItem *AddToMenu();
++extern void MakeMenu();
++extern void MakeMenus();
+ extern Bool PopUpMenu();
++extern void PopDownMenu();
+ extern MenuRoot *FindMenuRoot();
+ extern Bool AddFuncKey();
+ extern int ExecuteFunction();
+ extern int DeferExecution();
+ extern int Execute();
++extern void ReGrab();
+ extern void FocusOnRoot();
++extern void DeIconify();
++extern void Iconify();
++extern void SetMapStateProp();
++extern void DestroyMenu();
++extern void WarpToScreen();
++extern void SetBorder();
++extern void SendDeleteWindowMessage();
++extern void SendSaveYourselfMessage();
++extern void SendTakeFocusMessage();
+ 
+ #endif /* _MENUS_ */
