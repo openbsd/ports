@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_cargo_util_config_rs,v 1.1 2017/05/05 11:42:27 landry Exp $
+fallback to LOCALBASE as default path for cargo binary.
+--- src/cargo/util/config.rs.orig	Fri Apr 28 19:28:12 2017
++++ src/cargo/util/config.rs	Sat Apr 29 06:02:19 2017
+@@ -97,7 +97,13 @@ impl Config {
+ 
+     pub fn cargo_exe(&self) -> CargoResult<&Path> {
+         self.cargo_exe.get_or_try_init(||
+-            env::current_exe().and_then(|path| path.canonicalize())
++            match env::current_exe() {
++                Ok(path) => Ok(path),
++                Err(_) => match option_env!("LOCALBASE") {
++                    Some(dir) => Ok(PathBuf::from(dir).join("bin").join("cargo")),
++                    None => panic!("invalid configuration at compile-time: undefined LOCALBASE"),
++                },
++            }.and_then(|path| path.canonicalize())
+             .chain_error(|| {
+                 human("couldn't get the path to cargo executable")
+             })
