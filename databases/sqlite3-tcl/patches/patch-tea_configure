@@ -1,0 +1,12 @@
+$OpenBSD: patch-tea_configure,v 1.1 2017/05/05 04:23:38 stu Exp $
+--- tea/configure.orig	Wed Apr 26 16:58:46 2017
++++ tea/configure	Wed Apr 26 16:59:16 2017
+@@ -7237,7 +7237,7 @@ fi
+ 		    CC_SEARCH_FLAGS='-Wl,-rpath,${LIB_RUNTIME_DIR}'
+ fi
+ 		LD_SEARCH_FLAGS=${CC_SEARCH_FLAGS}
+-		SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}.so.${SHLIB_VERSION}'
++		SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}.so'
+ 		LDFLAGS="-Wl,-export-dynamic"
+ 		;;
+ 	    esac
