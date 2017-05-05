@@ -1,16 +1,16 @@
-$OpenBSD: patch-Makefile,v 1.5 2015/06/06 09:03:16 dcoppa Exp $
---- Makefile.orig	Thu May 14 20:30:00 2015
-+++ Makefile	Thu Jun  4 19:20:59 2015
+$OpenBSD: patch-Makefile,v 1.6 2017/05/05 10:21:47 jsg Exp $
+--- Makefile.orig	Tue May  2 04:11:00 2017
++++ Makefile	Tue May  2 11:40:27 2017
 @@ -17,7 +17,7 @@ MAJVER=  2
  MINVER=  0
- RELVER=  4
+ RELVER=  5
  VERSION= $(MAJVER).$(MINVER).$(RELVER)
 -ABIVER=  5.1
 +ABIVER=  ${MODLUA_VERSION}
  
  ##############################################################################
  #
-@@ -111,18 +111,13 @@ install: $(INSTALL_DEP)
+@@ -117,18 +117,13 @@ install: $(INSTALL_DEP)
  	cd src && test -f $(FILE_A) && $(INSTALL_F) $(FILE_A) $(INSTALL_STATIC) || :
  	$(RM) $(INSTALL_TSYM) $(INSTALL_DYN) $(INSTALL_SHORT1) $(INSTALL_SHORT2)
  	cd src && test -f $(FILE_SO) && \

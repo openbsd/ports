@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_Makefile,v 1.5 2015/06/06 09:03:16 dcoppa Exp $
---- src/Makefile.orig	Thu May 14 20:30:00 2015
-+++ src/Makefile	Thu Jun  4 19:20:59 2015
-@@ -325,6 +325,10 @@ else
+$OpenBSD: patch-src_Makefile,v 1.6 2017/05/05 10:21:47 jsg Exp $
+--- src/Makefile.orig	Tue May  2 04:11:00 2017
++++ src/Makefile	Tue May  2 11:40:27 2017
+@@ -326,6 +326,10 @@ else
    ifeq (GNU/kFreeBSD,$(TARGET_SYS))
      TARGET_XLIBS+= -ldl
    endif
@@ -12,7 +12,7 @@ $OpenBSD: patch-src_Makefile,v 1.5 2015/06/06 09:03:16 dcoppa Exp $
  endif
  endif
  endif
-@@ -557,10 +561,10 @@ endif
+@@ -562,10 +566,10 @@ endif
  endif
  endif
  

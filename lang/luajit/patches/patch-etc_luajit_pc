@@ -1,9 +1,9 @@
-$OpenBSD: patch-etc_luajit_pc,v 1.1 2015/06/06 09:03:16 dcoppa Exp $
---- etc/luajit.pc.orig	Thu Jun  4 20:05:32 2015
-+++ etc/luajit.pc	Thu Jun  4 20:06:57 2015
+$OpenBSD: patch-etc_luajit_pc,v 1.2 2017/05/05 10:21:47 jsg Exp $
+--- etc/luajit.pc.orig	Tue May  2 04:11:00 2017
++++ etc/luajit.pc	Tue May  2 11:40:27 2017
 @@ -3,9 +3,9 @@ majver=2
  minver=0
- relver=4
+ relver=5
  version=${majver}.${minver}.${relver}
 -abiver=5.1
 +abiver=${MODLUA_VERSION}

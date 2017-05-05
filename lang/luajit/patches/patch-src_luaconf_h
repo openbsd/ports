@@ -1,13 +1,13 @@
-$OpenBSD: patch-src_luaconf_h,v 1.1 2015/06/06 09:03:16 dcoppa Exp $
---- src/luaconf.h.orig	Thu Jun  4 21:49:15 2015
-+++ src/luaconf.h	Thu Jun  4 21:52:03 2015
+$OpenBSD: patch-src_luaconf_h,v 1.2 2017/05/05 10:21:47 jsg Exp $
+--- src/luaconf.h.orig	Tue May  2 04:11:00 2017
++++ src/luaconf.h	Tue May  2 11:42:59 2017
 @@ -35,9 +35,9 @@
  #ifndef LUA_LMULTILIB
  #define LUA_LMULTILIB	"lib"
  #endif
 -#define LUA_LROOT	"/usr/local"
 -#define LUA_LUADIR	"/lua/5.1/"
--#define LUA_LJDIR	"/luajit-2.0.4/"
+-#define LUA_LJDIR	"/luajit-2.0.5/"
 +#define LUA_LROOT	"${TRUEPREFIX}"
 +#define LUA_LUADIR	"/lua/${MODLUA_VERSION}/"
 +#define LUA_LJDIR	"/luajit-2.0/"

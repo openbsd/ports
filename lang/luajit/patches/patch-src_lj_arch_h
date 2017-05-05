@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_lj_arch_h,v 1.4 2015/06/06 09:03:16 dcoppa Exp $
---- src/lj_arch.h.orig	Thu May 14 20:30:00 2015
-+++ src/lj_arch.h	Thu Jun  4 19:20:59 2015
-@@ -332,9 +332,6 @@
+$OpenBSD: patch-src_lj_arch_h,v 1.5 2017/05/05 10:21:47 jsg Exp $
+--- src/lj_arch.h.orig	Tue May  2 04:11:00 2017
++++ src/lj_arch.h	Tue May  2 11:40:27 2017
+@@ -339,9 +339,6 @@
  #if defined(_SOFT_FLOAT) || defined(_SOFT_DOUBLE)
  #error "No support for PowerPC CPUs without double-precision FPU"
  #endif
