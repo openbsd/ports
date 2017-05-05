@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_mock_libpcap_c,v 1.1 2017/05/05 19:24:12 benoit Exp $
+--- src/mock_libpcap.c~.orig	Tue Jan 17 21:53:37 2017
++++ src/mock_libpcap.c	Thu May  4 15:34:59 2017
+@@ -13,7 +13,7 @@
+ }
+ 
+ int
+-pcap_compile(pcap_t *pcap, struct bpf_program *prog, const char *x, int y,
++pcap_compile(pcap_t *pcap, struct bpf_program *prog, char *x, int y,
+              bpf_u_int32 z)
+ {
+         return 0;
