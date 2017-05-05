@@ -1,4 +1,4 @@
-$OpenBSD: patch-gio_kqueue_kqueue-helper_c,v 1.1 2017/04/28 13:29:22 mpi Exp $
+$OpenBSD: patch-gio_kqueue_kqueue-helper_c,v 1.2 2017/05/05 12:04:58 mpi Exp $
 
 Prevent a use-after-free resulting in a crash of all apps depending
 on glib/GIO mostly at "pkg_add -u" time.
@@ -7,6 +7,15 @@ Fix https://bugzilla.gnome.org/show_bug.cgi?id=739424
 
 --- gio/kqueue/kqueue-helper.c.orig	Fri Apr 28 13:33:20 2017
 +++ gio/kqueue/kqueue-helper.c	Fri Apr 28 13:35:01 2017
+@@ -43,7 +43,7 @@ static gboolean kh_debug_enabled = FALSE;
+ #define KH_W if (kh_debug_enabled) g_warning
+ 
+ static GHashTable *subs_hash_table = NULL;
+-G_LOCK_DEFINE_STATIC (hash_lock);
++G_LOCK_DEFINE (hash_lock);
+ 
+ static int kqueue_descriptor = -1;
+ static int kqueue_socket_pair[] = {-1, -1};
 @@ -291,10 +291,10 @@ process_kqueue_notifications (GIOChannel   *gioc,
  
    G_LOCK (hash_lock);
@@ -43,3 +52,13 @@ Fix https://bugzilla.gnome.org/show_bug.cgi?id=739424
    return TRUE;
  }
  
+@@ -506,9 +506,7 @@ _kh_cancel_sub (kqueue_sub *sub)
+ 
+   _km_remove (sub);
+ 
+-  G_LOCK (hash_lock);
+   removed = g_hash_table_remove (subs_hash_table, GINT_TO_POINTER (sub->fd));
+-  G_UNLOCK (hash_lock);
+ 
+   if (removed)
+     {

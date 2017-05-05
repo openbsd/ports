@@ -1,0 +1,51 @@
+$OpenBSD: patch-gio_kqueue_gkqueuefilemonitor_c,v 1.1 2017/05/05 12:04:58 mpi Exp $
+
+Prevent a use-after-free resulting in a crash of all apps depending
+on glib/GIO mostly at "pkg_add -u" time.
+
+Fix https://bugzilla.gnome.org/show_bug.cgi?id=739424
+
+Index: gio/kqueue/gkqueuefilemonitor.c
+--- gio/kqueue/gkqueuefilemonitor.c.orig
++++ gio/kqueue/gkqueuefilemonitor.c
+@@ -30,6 +30,16 @@
+ #include <gio/giomodule.h>
+ 
+ 
++/*
++ * Because `kqueue_sub'' are not refcounted, we need
++ * ensure no other thread is getting a reference to
++ * the element we want to free.
++ *
++ * That's why _kh_cancel_sub() must be called with
++ * this lock held to prevent a race.
++ */
++G_LOCK_EXTERN (hash_lock);
++
+ struct _GKqueueFileMonitor
+ {
+   GLocalFileMonitor parent_instance;
+@@ -80,9 +90,11 @@ g_kqueue_file_monitor_finalize (GObject *object)
+ 
+   if (kqueue_monitor->sub)
+     {
++      G_LOCK (hash_lock);
+       _kh_cancel_sub (kqueue_monitor->sub);
+       _kh_sub_free (kqueue_monitor->sub);
+       kqueue_monitor->sub = NULL;
++      G_UNLOCK (hash_lock);
+     }
+ 
+   if (kqueue_monitor->fallback)
+@@ -181,9 +181,11 @@ g_kqueue_file_monitor_cancel (GFileMonitor *monitor)
+ 
+   if (kqueue_monitor->sub)
+     {
++      G_LOCK (hash_lock);
+       _kh_cancel_sub (kqueue_monitor->sub);
+       _kh_sub_free (kqueue_monitor->sub);
+       kqueue_monitor->sub = NULL;
++      G_UNLOCK (hash_lock);
+     }
+   else if (kqueue_monitor->fallback)
+     {
