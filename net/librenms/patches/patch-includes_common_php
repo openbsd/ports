@@ -1,7 +1,15 @@
-$OpenBSD: patch-includes_common_php,v 1.10 2017/05/01 13:22:18 sthen Exp $
+$OpenBSD: patch-includes_common_php,v 1.11 2017/05/05 09:37:13 sthen Exp $
+Index: includes/common.php
 --- includes/common.php.orig
 +++ includes/common.php
-@@ -1107,7 +1107,7 @@ function version_info($remote = true)
+@@ -1102,12 +1102,14 @@ function version_info($remote = true)
+         $output['local_sha']    = $local_sha;
+         $output['local_date']   = $local_date;
+         $output['local_branch'] = rtrim(`git rev-parse --abbrev-ref HEAD`);
++    } else {
++	$output['local_date']   = filemtime($config['install_dir'].'/CHANGELOG');
+     }
+     $output['db_schema']   = get_db_schema();
      $output['php_ver']     = phpversion();
      $output['mysql_ver']   = dbFetchCell('SELECT version()');
      $output['rrdtool_ver'] = implode(' ', array_slice(explode(' ', shell_exec($config['rrdtool'].' --version |head -n1')), 1, 1));
@@ -10,3 +18,17 @@ $OpenBSD: patch-includes_common_php,v 1.10 2017/05/01 13:22:18 sthen Exp $
  
      return $output;
  }//end version_info()
+@@ -1643,12 +1645,7 @@ function set_numeric($value, $default = 0)
+ 
+ function check_git_exists()
+ {
+-    exec('git > /dev/null 2>&1', $response, $exit_code);
+-    if ($exit_code === 1) {
+-        return true;
+-    } else {
+-        return false;
+-    }
++    return false;
+ }
+ 
+ function get_vm_parent_id($device)
