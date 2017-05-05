@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2017/04/10 11:45:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2017/05/05 11:59:27 espie Exp $
 
 COMMENT =		platform game set in Seville and in space
 VERSION = 		1.0.3
@@ -27,13 +27,13 @@ LDFLAGS =		-L${LOCALBASE}/lib -L${X11BASE}/lib \
 			-lvorbis -lvorbisfile -logg -lfreetype \
 			-Llib -lalogg `allegro-config --libs` -lalfont \
 			-lpng -lz
-MAKE_ENV =		CC="${CC}" CXX="${CXX}"
+MAKE_ENV =		CC="${CC}" CXX="${CXX}" CXXFLAGS='${CXXFLAGS}'
 MAKE_FLAGS =		LDFLAGS="$(LDFLAGS)" DESTDIR="$(DESTDIR)"
 
 USE_GMAKE =		Yes
 NO_TEST =		Yes
 
-CFLAGS =		-O2 -pipe -pthread \
+CXXFLAGS =		-O2 -pipe -pthread \
 			-I${X11BASE}/include \
 			-I${X11BASE}/include/freetype2 \
 			-I./include \
@@ -42,6 +42,8 @@ CFLAGS =		-O2 -pipe -pthread \
 			-I./dependencies/alfont/include \
 			`allegro-config --cflags` \
 			-DCAPITAN_DATA_DIR="\"${LOCALBASE}/share/capitan-sevilla/\""
+CFLAGS =		${CXXFLAGS} -fgnu89-inline
+
 WRKDIST =		${WRKDIR}/capitan-${VERSION}
 
 ALL_TARGET =		deps all
