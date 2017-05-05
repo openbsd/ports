@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2017/04/07 14:56:24 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.16 2017/05/05 13:38:20 sthen Exp $
 @extraunexec rm -rf /var/log/certbot/*
 bin/certbot
 bin/letsencrypt
@@ -53,6 +53,8 @@ lib/python${MODPY_VERSION}/site-packages/certbot/hooks.py
 lib/python${MODPY_VERSION}/site-packages/certbot/hooks.pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/interfaces.py
 lib/python${MODPY_VERSION}/site-packages/certbot/interfaces.pyc
+lib/python${MODPY_VERSION}/site-packages/certbot/lock.py
+lib/python${MODPY_VERSION}/site-packages/certbot/lock.pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/log.py
 lib/python${MODPY_VERSION}/site-packages/certbot/log.pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/main.py
@@ -142,6 +144,8 @@ lib/python${MODPY_VERSION}/site-packages/certbot/tests/errors_test.py
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/errors_test.pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/hook_test.py
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/hook_test.pyc
+lib/python${MODPY_VERSION}/site-packages/certbot/tests/lock_test.py
+lib/python${MODPY_VERSION}/site-packages/certbot/tests/lock_test.pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/log_test.py
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/log_test.pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/main_test.py
@@ -168,7 +172,6 @@ lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/cli.ini
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/csr-6sans.pem
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/csr-nonames.pem
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/csr-nosans.pem
-lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/csr-san.der
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/csr-san.pem
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/csr.der
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/csr.pem
