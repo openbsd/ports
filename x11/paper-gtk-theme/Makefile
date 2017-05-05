@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2016/12/22 09:31:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2017/05/05 08:10:31 mpi Exp $
 
 COMMENT=		modern desktop flat theme suite
 
 GH_ACCOUNT=		snwh
 GH_PROJECT=		paper-gtk-theme
 GH_TAGNAME=		v2.1.0
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		x11
 
