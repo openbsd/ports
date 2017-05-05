@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_bootstrap_step_rs,v 1.1 2017/03/30 18:46:20 naddy Exp $
+$OpenBSD: patch-src_bootstrap_step_rs,v 1.2 2017/05/05 11:40:29 landry Exp $
 Require having building rustdoc before trying to build docs.
---- src/bootstrap/step.rs.orig	Wed Mar 29 18:57:20 2017
-+++ src/bootstrap/step.rs	Wed Mar 29 18:57:35 2017
-@@ -542,7 +542,7 @@ pub fn build_rules<'a>(build: &'a Build) -> Rules {
+--- src/bootstrap/step.rs.orig	Mon Apr 24 20:53:45 2017
++++ src/bootstrap/step.rs	Wed Apr 26 08:43:00 2017
+@@ -614,7 +614,7 @@ pub fn build_rules<'a>(build: &'a Build) -> Rules {
               s.name("rustc")
                .host(&build.config.build)
                .target(&build.config.build)

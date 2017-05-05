@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_tools_compiletest_src_main_rs,v 1.1 2017/05/05 11:40:29 landry Exp $
+The feature is stable with 1.17.0. So when using local-rebuild, the testsuite
+is unable to compile.
+--- src/tools/compiletest/src/main.rs.orig	Wed Apr 26 11:46:16 2017
++++ src/tools/compiletest/src/main.rs	Wed Apr 26 11:46:18 2017
+@@ -12,7 +12,6 @@
+ 
+ #![feature(box_syntax)]
+ #![feature(rustc_private)]
+-#![feature(static_in_const)]
+ #![feature(test)]
+ #![feature(libc)]
+ 

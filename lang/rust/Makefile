@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2017/04/15 19:41:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.42 2017/05/05 11:40:29 landry Exp $
 
 # snapshots are only available for amd64 and i386, for now
 ONLY_FOR_ARCHS =	amd64 i386
@@ -8,17 +8,17 @@ DPB_PROPERTIES =	parallel
 COMMENT-main =		compiler for Rust Language
 COMMENT-doc =		html documentation for rustc
 
-V =			1.16.0
+V =			1.17.0
 DISTNAME =		rustc-${V}-src
 
 # rustc bootstrap version
-RBV-amd64 =		1.16.0-20160315
-RBV-i386 =		1.16.0-20170312
+RBV-amd64 =		1.17.0-20170426
+RBV-i386 =		1.17.0-20170426
 RBV =			${RBV-${MACHINE_ARCH}}
 
 # cargo bootstrap version
-CBV-amd64 =		0.16.0-20170213
-CBV-i386 =		0.16.0-20170213
+CBV-amd64 =		0.18.0-20170426
+CBV-i386 =		0.18.0-20170426
 CBV =			${CBV-${MACHINE_ARCH}}
 
 PKGNAME =		rust-${V}
@@ -41,6 +41,7 @@ WANTLIB-doc =
 
 MASTER_SITES =		https://static.rust-lang.org/dist/
 MASTER_SITES0 =		http://kapouay.odns.fr/pub/rust/
+MASTER_SITES1 =		http://kapouay.odns.fr/pub/cargo/
 
 DIST_SUBDIR =		rust
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
@@ -51,7 +52,7 @@ RBOOTSTRAP =		${RBOOTSTRAP-${MACHINE_ARCH}}
 CBOOTSTRAP =		${CBOOTSTRAP-${MACHINE_ARCH}}
 .for m in ${ONLY_FOR_ARCHS}
 RBOOTSTRAP-$m =		rustc-bootstrap-${m}-${RBV-$m}.tar.gz:0
-CBOOTSTRAP-$m =		../cargo/cargo-bootstrap-${m}-${CBV-$m}.tar.gz:0
+CBOOTSTRAP-$m =		cargo-bootstrap-${m}-${CBV-$m}.tar.gz:1
 SUPDISTFILES +=		${RBOOTSTRAP-$m} \
 			${CBOOTSTRAP-$m}
 .endfor
@@ -69,18 +70,12 @@ MODULES +=		gcc4 \
 			lang/python
 MODPY_RUNDEP =		No
 
-# use embedded or ports version of LLVM
-PORTS_LLVM ?=	No
-.if ${PORTS_LLVM:L:Myes}
-BUILD_DEPENDS +=	devel/llvm<4
-.else
-BUILD_DEPENDS +=	devel/cmake \
-			devel/ninja
-.endif
+BUILD_DEPENDS +=	devel/llvm \
+			devel/cmake
 
 # rustllvm need c++11
 MODGCC4_LANGS =		c++
-MODGCC4_ARCHS =		*
+MODGCC4_ARCHS =		*	# patches required for base clang
 
 # need to be keep in sync
 LIBESTDC_VERSION =	17.0
@@ -116,8 +111,8 @@ TEST_TARGET ?=	src/test/run-pass \
 
 # - check datasize limit before configuring (and building)
 pre-configure:
-	@if [ `ulimit -d` -lt 1572864 ]; then \
-		echo datasize limit is too low - amd64 build takes approx 1.5GB; \
+	@if [ `ulimit -d` -lt 2097152 ]; then \
+		echo datasize limit is too low - amd64 build takes approx 2GB; \
 		exit 1; fi
 
 # - generate config.toml file
@@ -140,15 +135,9 @@ do-configure:
 	echo '[dist]' >>${WRKBUILD}/config.toml
 	echo 'src-tarball = false' >>${WRKBUILD}/config.toml
 
-.if ${PORTS_LLVM:L:Myes}
 	echo '[target.${TRIPLE_ARCH}]' >>${WRKBUILD}/config.toml
 	echo 'llvm-config = "${LOCALBASE}/bin/llvm-config"' \
 		>>${WRKBUILD}/config.toml
-.else
-	echo '[llvm]' >>${WRKBUILD}/config.toml
-	echo 'static-libstdcpp = false' >>${WRKBUILD}/config.toml
-	echo 'ninja = true' >>${WRKBUILD}/config.toml
-.endif
 
 	rm -rf ${WRKDIR}/modgcc-libs
 	mkdir -p ${WRKDIR}/modgcc-libs
@@ -158,8 +147,10 @@ do-configure:
 # hack to build doc using generated stage2 instead of with stage0
 # (rustdoc isn't included in our bootstrap)
 post-configure:
-	ln -fs ${WRKBUILD}/build/${TRIPLE_ARCH}/stage2/bin/rustdoc \
-		${WRKDIR}/rustc-bootstrap-${MACHINE_ARCH}-${RBV}/bin/rustdoc
+	echo '#!/bin/sh' > ${WRKDIR}/rustc-bootstrap-${MACHINE_ARCH}-${RBV}/bin/rustdoc
+	echo 'LD_LIBRARY_PATH="${WRKBUILD}/build/${TRIPLE_ARCH}/stage2/lib" exec "${WRKBUILD}/build/${TRIPLE_ARCH}/stage2/bin/rustdoc" "$$@"' \
+		>> ${WRKDIR}/rustc-bootstrap-${MACHINE_ARCH}-${RBV}/bin/rustdoc
+	chmod 755 ${WRKDIR}/rustc-bootstrap-${MACHINE_ARCH}-${RBV}/bin/rustdoc
 
 BUILD_BIN = cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
 	    ${MODPY_BIN} ${WRKSRC}/src/bootstrap/bootstrap.py
