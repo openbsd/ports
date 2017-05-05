@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2017/05/03 18:41:29 jca Exp $
+# $OpenBSD: Makefile,v 1.16 2017/05/05 13:45:59 jca Exp $
 
 COMMENT=	time/date applet for WindowMaker
 
@@ -18,8 +18,8 @@ MASTER_SITES=	http://mirror2.unixfreunde.de/ \
 
 MAKE_FLAGS=	CC="${CC}"
 
-WRKDIST=        ${WRKDIR}/wmtime.app/
-WRKSRC=		${WRKDIST}/wmtime/
+WRKDIST=        ${WRKDIR}/wmtime.app
+WRKSRC=		${WRKDIST}/wmtime
 
 NO_TEST=	Yes
 
