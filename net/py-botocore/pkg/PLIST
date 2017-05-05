@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.50 2017/04/22 08:05:41 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.51 2017/05/05 07:25:59 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/botocore/
 lib/python${MODPY_VERSION}/site-packages/botocore-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/botocore-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -449,6 +449,10 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/machinelearning/2014-12-1
 lib/python${MODPY_VERSION}/site-packages/botocore/data/machinelearning/2014-12-12/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/machinelearning/2014-12-12/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/machinelearning/2014-12-12/waiters-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/marketplace-entitlement/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/marketplace-entitlement/2017-01-11/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/marketplace-entitlement/2017-01-11/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/marketplace-entitlement/2017-01-11/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/marketplacecommerceanalytics/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/marketplacecommerceanalytics/2015-07-01/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/marketplacecommerceanalytics/2015-07-01/examples-1.json
