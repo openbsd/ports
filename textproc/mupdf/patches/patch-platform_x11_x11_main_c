@@ -1,11 +1,12 @@
-$OpenBSD: patch-platform_x11_x11_main_c,v 1.2 2016/12/12 10:54:39 sthen Exp $
+$OpenBSD: patch-platform_x11_x11_main_c,v 1.3 2017/05/05 14:02:51 sthen Exp $
 
 add pledge(2) to mupdf-x11 and mupdf-x11-curl:
   - inet dns : with HAVE_CURL only
   - proc exec : opening an external browser on uri link
 
---- platform/x11/x11_main.c.orig	Mon Nov 28 13:34:04 2016
-+++ platform/x11/x11_main.c	Mon Dec 12 09:39:02 2016
+Index: platform/x11/x11_main.c
+--- platform/x11/x11_main.c.orig
++++ platform/x11/x11_main.c
 @@ -706,7 +706,6 @@ void onselreq(Window requestor, Atom selection, Atom t
  void winreloadpage(pdfapp_t *app)
  {
@@ -24,7 +25,7 @@ add pledge(2) to mupdf-x11 and mupdf-x11-curl:
  }
  
  void winopenuri(pdfapp_t *app, char *buf)
-@@ -892,6 +890,20 @@ int main(int argc, char **argv)
+@@ -898,6 +896,20 @@ int main(int argc, char **argv)
  	tmo_at.tv_sec = 0;
  	tmo_at.tv_usec = 0;
  	timeout = NULL;
@@ -43,5 +44,5 @@ add pledge(2) to mupdf-x11 and mupdf-x11-curl:
 +	}
 +#endif
  
- 	pdfapp_open(&gapp, filename, 0);
- 
+ 	if (bps)
+ 		pdfapp_open_progressive(&gapp, filename, 0, bps);

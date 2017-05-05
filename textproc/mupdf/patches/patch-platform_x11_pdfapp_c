@@ -1,6 +1,7 @@
-$OpenBSD: patch-platform_x11_pdfapp_c,v 1.7 2016/12/12 10:54:39 sthen Exp $
---- platform/x11/pdfapp.c.orig	Mon Nov 28 13:34:04 2016
-+++ platform/x11/pdfapp.c	Mon Dec 12 09:39:02 2016
+$OpenBSD: patch-platform_x11_pdfapp_c,v 1.8 2017/05/05 14:02:51 sthen Exp $
+Index: platform/x11/pdfapp.c
+--- platform/x11/pdfapp.c.orig
++++ platform/x11/pdfapp.c
 @@ -26,8 +26,18 @@ enum
  static void pdfapp_showpage(pdfapp_t *app, int loadpage, int drawpage, int repaint, int transition, int searching);
  static void pdfapp_updatepage(pdfapp_t *app);
@@ -21,7 +22,7 @@ $OpenBSD: patch-platform_x11_pdfapp_c,v 1.7 2016/12/12 10:54:39 sthen Exp $
  static int zoom_in(int oldres)
  {
  	int i;
-@@ -1038,6 +1048,12 @@ static void pdfapp_search_in_direction(pdfapp_t *app, 
+@@ -1044,6 +1054,12 @@ static void pdfapp_search_in_direction(pdfapp_t *app, 
  		return;
  	}
  
@@ -34,7 +35,7 @@ $OpenBSD: patch-platform_x11_pdfapp_c,v 1.7 2016/12/12 10:54:39 sthen Exp $
  	wincursor(app, WAIT);
  
  	firstpage = app->pageno;
-@@ -1535,9 +1551,9 @@ static void handlescroll(pdfapp_t *app, int modifiers,
+@@ -1539,9 +1555,9 @@ static void handlescroll(pdfapp_t *app, int modifiers,
  	{
  		/* zoom in/out if ctrl is pressed */
  		if (dir < 0)

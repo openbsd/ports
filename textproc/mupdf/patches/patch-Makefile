@@ -1,32 +1,38 @@
-$OpenBSD: patch-Makefile,v 1.12 2016/12/12 10:54:39 sthen Exp $
---- Makefile.orig	Mon Nov 28 13:34:04 2016
-+++ Makefile	Mon Dec 12 09:40:54 2016
-@@ -152,14 +152,17 @@ $(FONT_GEN_SIL) : $(FONT_BIN_SIL)
+$OpenBSD: patch-Makefile,v 1.13 2017/05/05 14:02:51 sthen Exp $
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -300,7 +300,7 @@ generate: $(JAVASCRIPT_GEN)
  
  # --- Library ---
  
 -MUPDF_LIB = $(OUT)/libmupdf.a
--THIRD_LIB = $(OUT)/libmupdfthird.a
-+MUPDF_LIB = libmupdf.so.${LIBmupdf_VERSION}
-+THIRD_LIB = libmupdfthird.so.${LIBmupdfthird_VERSION}
++MUPDF_LIB = $(OUT)/libmupdf.so.${LIBmupdf_VERSION}
+ THIRD_LIB = $(OUT)/libmupdfthird.a
+ THREAD_LIB = $(OUT)/libmuthreads.a
  
- MUPDF_OBJ := $(FITZ_OBJ) $(FONT_OBJ) $(PDF_OBJ) $(XPS_OBJ) $(SVG_OBJ) $(CBZ_OBJ) $(HTML_OBJ) $(GPRF_OBJ)
- THIRD_OBJ := $(FREETYPE_OBJ) $(HARFBUZZ_OBJ) $(JBIG2DEC_OBJ) $(JPEG_OBJ) $(JPEGXR_OBJ) $(LURATECH_OBJ) $(MUJS_OBJ) $(OPENJPEG_OBJ) $(ZLIB_OBJ)
+@@ -308,11 +308,12 @@ MUPDF_OBJ := $(FITZ_OBJ) $(FONT_OBJ) $(PDF_OBJ) $(XPS_
+ THIRD_OBJ := $(FREETYPE_OBJ) $(HARFBUZZ_OBJ) $(JBIG2DEC_OBJ) $(LIBJPEG_OBJ) $(JPEGXR_OBJ) $(LURATECH_OBJ) $(MUJS_OBJ) $(OPENJPEG_OBJ) $(ZLIB_OBJ)
+ THREAD_OBJ := $(THREAD_OBJ)
  
- $(MUPDF_LIB) : $(MUPDF_OBJ)
-+	$(CC) $(LDFLAGS) --shared -o $@ $^ $(LIBS)
-+
+-$(MUPDF_LIB) : $(MUPDF_OBJ)
++$(MUPDF_LIB) : $(MUPDF_OBJ) $(THIRD_LIB) $(THREAD_LIB)
++	$(LINK_CMD) -shared -Wl,-soname -Wl,libmupdf.so.${LIBmupdf_VERSION}
  $(THIRD_LIB) : $(THIRD_OBJ)
-+	$(CC) $(LDFLAGS) --shared -o $@ $^ $(LIBS)
+ $(THREAD_LIB) : $(THREAD_OBJ)
  
- INSTALL_LIBS := $(MUPDF_LIB) $(THIRD_LIB)
+-INSTALL_LIBS := $(MUPDF_LIB) $(THIRD_LIB)
++INSTALL_LIBS := $(MUPDF_LIB)
  
-@@ -198,7 +201,7 @@ $(OUT)/platform/x11/curl/%.o : platform/x11/%.c | $(AL
- 	$(CC_CMD) $(X11_CFLAGS) $(CURL_CFLAGS) -DHAVE_CURL
+ # --- Tools and Apps ---
  
- $(OUT)/platform/gl/%.o : platform/gl/%.c | $(ALL_DIR)
--	$(CC_CMD) $(GLFW_CFLAGS)
-+	$(CC_CMD) -I${X11BASE}/include $(GLFW_CFLAGS)
+@@ -321,7 +322,7 @@ MUTOOL_SRC := source/tools/mutool.c source/tools/mucon
+ MUTOOL_SRC += $(wildcard source/tools/pdf*.c)
+ MUTOOL_OBJ := $(MUTOOL_SRC:%.c=$(OUT)/%.o)
+ $(MUTOOL_OBJ) : $(FITZ_HDR) $(PDF_HDR)
+-$(MUTOOL_EXE) : $(MUTOOL_OBJ) $(MUPDF_LIB) $(THIRD_LIB) $(THREAD_LIB)
++$(MUTOOL_EXE) : $(MUTOOL_OBJ) ${MUPDF_LIB} $(THIRD_LIB) $(THREAD_LIB)
+ 	$(LINK_CMD) $(PTHREAD_LIBS)
  
- .PRECIOUS : $(OUT)/%.o # Keep intermediates from chained rules
- 
+ MURASTER_EXE := $(OUT)/muraster

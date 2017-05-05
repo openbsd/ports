@@ -1,12 +1,13 @@
-$OpenBSD: patch-platform_gl_gl-main_c,v 1.3 2016/12/12 10:54:39 sthen Exp $
+$OpenBSD: patch-platform_gl_gl-main_c,v 1.4 2017/05/05 14:02:51 sthen Exp $
 
 add pledge(2) to mupdf-gl:
   - drm : opengl stuff
   - proc exec : opening a external browser on uri link
 
---- platform/gl/gl-main.c.orig	Mon Nov 28 13:34:04 2016
-+++ platform/gl/gl-main.c	Mon Dec 12 09:39:02 2016
-@@ -1414,6 +1414,12 @@ int main(int argc, char **argv)
+Index: platform/gl/gl-main.c
+--- platform/gl/gl-main.c.orig
++++ platform/gl/gl-main.c
+@@ -1486,6 +1486,12 @@ int main(int argc, char **argv)
  
  	glfwMakeContextCurrent(window);
  

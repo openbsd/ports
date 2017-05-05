@@ -1,32 +1,28 @@
-$OpenBSD: patch-Makerules,v 1.16 2016/12/12 10:54:39 sthen Exp $
---- Makerules.orig	Mon Nov 28 13:34:04 2016
-+++ Makerules	Mon Dec 12 09:41:21 2016
-@@ -21,6 +21,7 @@ else
- LDREMOVEUNREACH = -Wl,--gc-sections
- endif
- 
-+ifneq "$(OS)" "OpenBSD" # don't override C optimizer flags for ports builds
- ifeq "$(build)" "debug"
- CFLAGS += -pipe -g -DDEBUG
+$OpenBSD: patch-Makerules,v 1.17 2017/05/05 14:02:51 sthen Exp $
+Index: Makerules
+--- Makerules.orig
++++ Makerules
+@@ -26,8 +26,8 @@ ifeq "$(build)" "debug"
+ CFLAGS += -pipe -g
  LDFLAGS += -g
-@@ -55,6 +56,7 @@ LIBS += -lprofiler
- else
- $(error unknown build setting: '$(build)')
- endif
-+endif
- 
- ifeq "$(largefile)" "yes"
- CFLAGS += -DFZ_LARGEFILE
-@@ -103,7 +105,7 @@ LD = xcrun ld
- RANLIB_CMD = xcrun ranlib $@
+ else ifeq "$(build)" "release"
+-CFLAGS += -pipe -O2 -DNDEBUG -fomit-frame-pointer
+-LDFLAGS += $(LDREMOVEUNREACH) -Wl,-s
++CFLAGS += -DNDEBUG
++LDFLAGS += $(LDREMOVEUNREACH)
+ else ifeq "$(build)" "small"
+ CFLAGS += -pipe -Os -DNDEBUG -fomit-frame-pointer
+ LDFLAGS += $(LDREMOVEUNREACH) -Wl,-s
+@@ -110,7 +110,7 @@ LD := xcrun ld
+ RANLIB_CMD := xcrun ranlib $@
  
  # Linux uses pkg-config for system libraries.
 -else ifeq "$(OS)" "Linux"
 +else
  
- HAVE_PTHREADS ?= yes
- 
-@@ -123,7 +125,7 @@ SYS_CURL_CFLAGS += $(shell pkg-config --cflags openssl
+ HAVE_PTHREAD := yes
+ SYS_PTHREAD_CFLAGS :=
+@@ -132,7 +132,7 @@ SYS_CURL_CFLAGS += $(shell pkg-config --cflags openssl
  SYS_CURL_DEPS += $(shell pkg-config --libs openssl)
  endif
  endif
@@ -34,12 +30,4 @@ $OpenBSD: patch-Makerules,v 1.16 2016/12/12 10:54:39 sthen Exp $
 +SYS_CURL_DEPS += -lpthread
  
  ifeq "$(shell pkg-config --exists x11 xext && echo yes)" "yes"
- HAVE_X11 = yes
-@@ -147,6 +149,7 @@ SYS_OPENJPEG_LIBS = $(shell pkg-config --libs libopenj
- endif
- 
- SYS_JBIG2DEC_LIBS = -ljbig2dec
-+SYS_JPEG_CFLAGS = -I/usr/local/include
- SYS_JPEG_LIBS = -ljpeg
- SYS_ZLIB_LIBS = -lz
- 
+ HAVE_X11 := yes
