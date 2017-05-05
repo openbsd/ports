@@ -1,0 +1,16 @@
+$OpenBSD: patch-wmgeneral_list_h,v 1.1 2017/05/05 13:48:23 jca Exp $
+
+Index: wmgeneral/list.h
+--- wmgeneral/list.h.orig
++++ wmgeneral/list.h
+@@ -29,9 +29,7 @@ Boston, MA 02111-1307, USA.  */
+ #ifndef __LIST_H_
+ #define __LIST_H_
+ 
+-#if defined(__GNUC__) && !defined(__STRICT_ANSI__)
+-# define INLINE inline
+-#else
++#if 1
+ # define INLINE
+ #endif
+ 
