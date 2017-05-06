@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.2 2016/04/21 13:08:01 jturner Exp $
+$OpenBSD: README,v 1.3 2017/05/06 19:08:52 jung Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -11,16 +11,30 @@ Administrator Quick Start
   new calenders for users, changing email address and other
   options.
 
+  With httpd(8) the kcaldav CGI can be run through slowcgi(8)
+  using a configuration snippet like the following:
+
+    server "default" {
+        listen on * tls port 443
+
+        tls {
+            certificate "/etc/ssl/example.net.crt"
+            key "/etc/ssl/private/example.net.key"
+        }
+        location "/cgi-bin/*" {
+            fastcgi
+            root "/"
+        }
+    }
+
+  kcaldav.cgi uses http authentication for user security.
+  Install a tls certificate to ensure privacy of connection.
+
 User Quick Start
 ================
   Users can manage their account settings, create calendars
   and find the URL for use with their calendar application
   by browsing to: http://localhost/kcaldav/home.html
-
-Security
-========
-  kcaldav.cgi uses http authentication for user security.
-  Install a tls certificate to ensure privacy of connection.
 
 Porting Notes: Write Ahead Logging
 ==================================
