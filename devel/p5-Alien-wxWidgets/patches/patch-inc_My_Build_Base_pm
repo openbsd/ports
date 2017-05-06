@@ -1,7 +1,8 @@
-$OpenBSD: patch-inc_My_Build_Base_pm,v 1.3 2013/03/21 01:34:47 sthen Exp $
---- inc/My/Build/Base.pm.orig	Tue Oct  2 04:18:50 2012
-+++ inc/My/Build/Base.pm	Thu Mar 21 01:30:27 2013
-@@ -439,12 +439,11 @@ sub awx_get_name {
+$OpenBSD: patch-inc_My_Build_Base_pm,v 1.4 2017/05/06 08:53:45 benoit Exp $
+Index: inc/My/Build/Base.pm
+--- inc/My/Build/Base.pm.orig
++++ inc/My/Build/Base.pm
+@@ -443,12 +443,11 @@ sub awx_get_name {
      my $e = sub { defined $_[0] ? ( $_[0] ) : () };
      my $pv = sub { join '.', map { 0 + ( $_ || 0 ) }
                                   ( $_[0] =~ /(\d+)\.(\d{1,3})(\d{0,3})/ ) } ;
