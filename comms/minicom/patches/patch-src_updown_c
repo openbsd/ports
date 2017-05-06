@@ -1,6 +1,8 @@
-$OpenBSD: patch-src_updown_c,v 1.5 2013/03/27 12:14:28 gonzalo Exp $
---- src/updown.c.orig	Thu Jan 10 18:03:13 2013
-+++ src/updown.c	Thu Mar  7 11:33:10 2013
+$OpenBSD: patch-src_updown_c,v 1.6 2017/05/06 21:57:27 sthen Exp $
+
+Index: src/updown.c
+--- src/updown.c.orig
++++ src/updown.c
 @@ -47,7 +47,7 @@ static int mcd(char *dir)
  {
    char buf[256];

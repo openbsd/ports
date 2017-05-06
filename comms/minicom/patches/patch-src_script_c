@@ -1,6 +1,8 @@
-$OpenBSD: patch-src_script_c,v 1.1 2014/08/21 08:23:00 jasper Exp $
---- src/script.c.orig	Mon Aug 18 10:06:36 2014
-+++ src/script.c	Mon Aug 18 10:07:47 2014
+$OpenBSD: patch-src_script_c,v 1.2 2017/05/06 21:57:27 sthen Exp $
+
+Index: src/script.c
+--- src/script.c.orig
++++ src/script.c
 @@ -32,6 +32,10 @@
  #include <config.h>
  #endif

@@ -1,6 +1,8 @@
-$OpenBSD: patch-man_minicom_1,v 1.5 2014/08/21 08:23:00 jasper Exp $
---- man/minicom.1.orig	Tue Dec 31 16:20:12 2013
-+++ man/minicom.1	Mon Aug 18 10:05:31 2014
+$OpenBSD: patch-man_minicom_1,v 1.6 2017/05/06 21:57:27 sthen Exp $
+
+Index: man/minicom.1
+--- man/minicom.1.orig
++++ man/minicom.1
 @@ -842,7 +842,8 @@ $HOME/minicom.log
  /usr/share/locale/*/LC_MESSAGES/minicom.mo
  .fi
