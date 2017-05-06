@@ -1,16 +1,17 @@
-# $OpenBSD: Makefile,v 1.61 2017/04/18 21:05:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.62 2017/05/06 22:00:53 sthen Exp $
 
-COMMENT=		MS-DOS Telix-like serial communication program
+COMMENT=	MS-DOS Telix-like serial communication program
 
-DISTNAME=		minicom-2.7.1
-CATEGORIES=		comms
-MASTER_SITES=		https://www.alioth.debian.org/frs/download.php/latestfile/3/
+DISTNAME=	minicom-2.7.1
+REVISION=	0
+CATEGORIES=	comms
+MASTER_SITES=	https://www.alioth.debian.org/frs/download.php/latestfile/3/
 
-HOMEPAGE=		http://alioth.debian.org/projects/minicom/
+HOMEPAGE=	http://alioth.debian.org/projects/minicom/
 
-LIB_DEPENDS=		devel/gettext
-RUN_DEPENDS=		comms/kermit \
-			comms/lrzsz
+LIB_DEPENDS=	devel/gettext
+RUN_DEPENDS=	comms/kermit \
+		comms/lrzsz
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
