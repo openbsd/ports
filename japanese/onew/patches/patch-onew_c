@@ -1,6 +1,7 @@
-$OpenBSD: patch-onew_c,v 1.1 2010/05/19 14:05:37 espie Exp $
---- onew.c.orig	Wed May 19 16:00:54 2010
-+++ onew.c	Wed May 19 16:01:16 2010
+$OpenBSD: patch-onew_c,v 1.2 2017/05/06 12:51:21 espie Exp $
+Index: onew.c
+--- onew.c.orig
++++ onew.c
 @@ -26,7 +26,8 @@ History:
  #include <signal.h>
  #include <ctype.h>
@@ -11,3 +12,11 @@ $OpenBSD: patch-onew_c,v 1.1 2010/05/19 14:05:37 espie Exp $
  #include "onew.h"
  
  int on_via;
+@@ -492,6 +493,7 @@ ONEW_BEEP(nsec){
+ 	fflush(stdout);
+ }
+ static int prev_modef;
++void
+ ONEW_DISP_ROMKANMODE(cmode,chelp,modef)
+ 	char *cmode,*chelp;
+ {

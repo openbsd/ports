@@ -1,6 +1,7 @@
-$OpenBSD: patch-dialogue_onewdic_c,v 1.1 2010/05/19 14:05:37 espie Exp $
---- dialogue/onewdic.c.orig	Wed May 19 15:57:13 2010
-+++ dialogue/onewdic.c	Wed May 19 15:57:34 2010
+$OpenBSD: patch-dialogue_onewdic_c,v 1.2 2017/05/06 12:51:21 espie Exp $
+Index: dialogue/onewdic.c
+--- dialogue/onewdic.c.orig
++++ dialogue/onewdic.c
 @@ -18,6 +18,9 @@ Description:
  History:
  	940127	created
@@ -11,3 +12,47 @@ $OpenBSD: patch-dialogue_onewdic_c,v 1.1 2010/05/19 14:05:37 espie Exp $
  #include "onew.h"
  int ONEW_MAXWORDS = 32;
  
+@@ -40,14 +43,14 @@ Onew_addword(dic,word)
+ 	int len;
+ 
+ 	if( ONEW_MAXWORDS <= 0 )
+-		return;
++		return 0;
+ 
+ 	if( *word == 0 )
+-		return;
++		return 0;
+ 
+ 	if( np = strpbrk(word,"\n\r") ){
+ 		if( np == word )
+-			return;
++			return 0;
+ 		len = np - word;
+ 	}else	len = strlen(word);
+ 
+@@ -103,7 +106,7 @@ static word_sort(nth,inc)
+ 	int nnth;
+ 
+ 	if( (dwp = nth_wp(nth,&dwpp)) == 0 )
+-		return;
++		return 0;
+ 	dwp->w_freq += inc;
+ 
+ 	pwpp = &word_list;
+@@ -116,7 +119,7 @@ static word_sort(nth,inc)
+ 		nnth++;
+ 	}
+ 	if( pwp == 0 || pwp == dwp )
+-		return;
++		return 0;
+ 
+ 	twp = *pwpp;
+ 	*pwpp = dwp;
+@@ -151,6 +154,7 @@ static word_label(label,from,to,max)
+ static word_error(){
+ }
+ 
++void
+ Onew_getword(key)
+ 	char *key;
+ {	int n;

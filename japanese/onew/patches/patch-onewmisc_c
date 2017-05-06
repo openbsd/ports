@@ -1,6 +1,7 @@
-$OpenBSD: patch-onewmisc_c,v 1.1 2010/05/19 14:05:37 espie Exp $
---- onewmisc.c.orig	Wed May 19 15:54:43 2010
-+++ onewmisc.c	Wed May 19 15:55:00 2010
+$OpenBSD: patch-onewmisc_c,v 1.2 2017/05/06 12:51:21 espie Exp $
+Index: onewmisc.c
+--- onewmisc.c.orig
++++ onewmisc.c
 @@ -5,6 +5,7 @@
  char *getenv();
  #include <ctype.h>
@@ -9,3 +10,27 @@ $OpenBSD: patch-onewmisc_c,v 1.1 2010/05/19 14:05:37 espie Exp $
  #include "onew.h"
  
  char *Onew_env_substitute(istr,ostr)
+@@ -100,6 +101,7 @@ onew_messagefunc(func)
+ }
+ 
+ static FILE *LOG;
++void
+ Onew_dbglog(fmt,a,b,c,d,e,f,g)
+ 	char *fmt;
+ {	char *logfile;
+@@ -147,6 +149,7 @@ static strQovf(len){
+ 	}
+ 	return 0;
+ }
++void
+ strQenq(Q,c)
+ 	Uchar *Q,c;
+ {	int len;
+@@ -157,6 +160,7 @@ strQenq(Q,c)
+ 	Q[len] = c;
+ 	Q[len+1] = 0;
+ }
++void
+ strQins(Q,c)
+ 	Uchar *Q,c;
+ {	Linebuff buff;

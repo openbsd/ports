@@ -1,6 +1,7 @@
-$OpenBSD: patch-conf_c,v 1.1 2010/05/19 14:05:37 espie Exp $
---- conf.c.orig	Wed May 19 15:54:43 2010
-+++ conf.c	Wed May 19 15:54:49 2010
+$OpenBSD: patch-conf_c,v 1.2 2017/05/06 12:51:21 espie Exp $
+Index: conf.c
+--- conf.c.orig
++++ conf.c
 @@ -7,6 +7,7 @@ History:
  	931120	extracted from onewlib.c
  ///////////////////////////////////////////////////////////////////////*/
@@ -9,3 +10,19 @@ $OpenBSD: patch-conf_c,v 1.1 2010/05/19 14:05:37 espie Exp $
  #include "onew.h"
  
  typedef struct {
+@@ -119,6 +120,7 @@ static char *next_romkan(){
+ 			}
+ 	return name;
+ }
++void
+ switch_rkserv(){
+ 	char help[128];
+ 	char *romkan;
+@@ -137,6 +139,7 @@ switch_rkserv(){
+ 		Onew_putmsg_retain(1,"%s %s",Onew_RK_smode(),help);
+ 	}
+ }
++void
+ switch_kkserv(){
+ 	char mode[64],help[128],*kanakan;
+ 

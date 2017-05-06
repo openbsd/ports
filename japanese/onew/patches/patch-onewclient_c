@@ -1,6 +1,7 @@
-$OpenBSD: patch-onewclient_c,v 1.1 2010/05/19 14:05:37 espie Exp $
---- onewclient.c.orig	Wed May 19 15:58:17 2010
-+++ onewclient.c	Wed May 19 15:58:30 2010
+$OpenBSD: patch-onewclient_c,v 1.2 2017/05/06 12:51:21 espie Exp $
+Index: onewclient.c
+--- onewclient.c.orig
++++ onewclient.c
 @@ -21,6 +21,8 @@ History:
  ///////////////////////////////////////////////////////////////////////*/
  
@@ -10,3 +11,12 @@ $OpenBSD: patch-onewclient_c,v 1.1 2010/05/19 14:05:37 espie Exp $
  #include "onew.h"
  
  static int onew_DBG = 1;
+@@ -43,7 +45,7 @@ static dbg_printf(form,a,b,c,d,e,f,g){
+ 	Onew_message(form,a,b,c,d,e,f,g);
+ }
+ 
+-static open_onew(){
++static void open_onew(){
+ 	register int pid;
+ 	char *command;
+ 

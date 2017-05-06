@@ -1,6 +1,7 @@
-$OpenBSD: patch-interface_ouimessage_c,v 1.1 2010/05/19 14:05:37 espie Exp $
---- interface/ouimessage.c.orig	Wed May 19 15:55:45 2010
-+++ interface/ouimessage.c	Wed May 19 15:56:15 2010
+$OpenBSD: patch-interface_ouimessage_c,v 1.2 2017/05/06 12:51:21 espie Exp $
+Index: interface/ouimessage.c
+--- interface/ouimessage.c.orig
++++ interface/ouimessage.c
 @@ -1,6 +1,8 @@
  /*
   *	MESSAGE OUTPUT TO APPLICATION USER INTERFACE
@@ -10,3 +11,11 @@ $OpenBSD: patch-interface_ouimessage_c,v 1.1 2010/05/19 14:05:37 espie Exp $
  char *Onew_RK_smode();
  char *romkan_help();
  
+@@ -16,6 +18,7 @@ extern int ONEW_modedepth;
+ static int ONEW_msg_overw;
+ static int ONEW_msg_retain;
+ 
++void
+ Onew_putmode(mode,help)
+ 	char *mode,*help;
+ {	int modeflags,xmodef;
