@@ -1,0 +1,17 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2017/05/06 09:54:29 landry Exp $
+
+Backport https://github.com/glyph/automat/commit/eef0cf792334cb39fc5bf8966913c62e9789c590
+
+--- setup.py.orig	Tue Apr 18 23:43:25 2017
++++ setup.py	Tue Apr 18 23:43:56 2017
+@@ -39,8 +39,8 @@ setup(
+             "automat-visualize = automat._visualize:tool"
+         ],
+     },
+-    author_name='Glyph',
+-    author_mail='glyph@twistedmatrix.com',
++    author='Glyph',
++    author_email='glyph@twistedmatrix.com',
+     include_package_data=True,
+     license="MIT",
+     keywords='fsm finite state machine automata',
