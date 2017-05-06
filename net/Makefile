@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1003 2017/05/03 16:20:01 fcambus Exp $
+# $OpenBSD: Makefile,v 1.1004 2017/05/06 14:43:44 sthen Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -714,7 +714,6 @@
      SUBDIR += whatweb
      SUBDIR += wide-dhcpv6
      SUBDIR += wifind
-     SUBDIR += winexe
      SUBDIR += wireshark
      SUBDIR += wmifinfo
      SUBDIR += wmnet
