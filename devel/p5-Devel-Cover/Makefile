@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2016/03/20 19:56:20 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2017/05/06 21:36:02 benoit Exp $
 
 COMMENT =	code coverage metrics for Perl
 
 MODULES =	cpan
-DISTNAME =	Devel-Cover-1.21
+DISTNAME =	Devel-Cover-1.24
 CATEGORIES =	devel
 
 # Perl
