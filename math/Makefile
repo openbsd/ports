@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.139 2017/04/29 15:37:32 edd Exp $
+# $OpenBSD: Makefile,v 1.140 2017/05/06 11:53:31 fcambus Exp $
 
      SUBDIR =
      SUBDIR += R
@@ -124,7 +124,6 @@
      SUBDIR += wcalc
      SUBDIR += wmcalc
      SUBDIR += wxMaxima
-     SUBDIR += xspread
      SUBDIR += yorick
      SUBDIR += z3
 
