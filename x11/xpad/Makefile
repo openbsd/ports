@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2016/08/27 14:55:27 jca Exp $
+# $OpenBSD: Makefile,v 1.36 2017/05/06 20:24:45 jasper Exp $
 
 COMMENT=	virtual sticky pad system
 
@@ -6,7 +6,6 @@ DISTNAME=	xpad-4.0
 REVISION=	8
 CATEGORIES=	x11
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xpad/}
 MASTER_SITES=	http://launchpad.net/xpad/trunk/4.0/+download/
 EXTRACT_SUFX=	.tar.bz2
 
