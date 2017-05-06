@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2017/04/13 07:38:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.66 2017/05/06 21:37:06 jasper Exp $
 
 COMMENT=		applications integration into Nautilus
 
@@ -21,5 +21,9 @@ LIB_DEPENDS=		devel/glib2
 FAKE_FLAGS=		schemadir=${PREFIX}/share/schemas/nautilus-sendto
 
 CONFIGURE_STYLE=	gnu
+
+# fix build with clang
+# based on upstream 86fd0a3c
+CFLAGS +=		-Wno-error=format-nonliteral
 
 .include <bsd.port.mk>
