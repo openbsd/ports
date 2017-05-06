@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.160 2017/04/23 13:24:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.161 2017/05/06 19:25:18 uaa Exp $
 
 USE_WXNEEDED=	Yes
 
@@ -7,6 +7,7 @@ ONLY_FOR_ARCHS=	aarch64 amd64 arm i386 powerpc sparc64
 COMMENT=	multi system emulator
 
 DISTNAME=	qemu-2.9.0
+REVISION=	0
 CATEGORIES=	emulators
 MASTER_SITES=	http://wiki.qemu.org/download/
 EXTRACT_SUFX=	.tar.bz2
@@ -78,6 +79,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--host-cc="${CC}" \
 		--extra-cflags="${EXTRA_CFLAGS}" \
 		--extra-ldflags="${EXTRA_LDFLAGS}" \
+		--enable-curses \
 		--disable-bsd-user \
 		--disable-gcrypt \
 		--disable-smartcard \
