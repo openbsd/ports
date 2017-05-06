@@ -1,0 +1,25 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/05/06 09:46:48 landry Exp $
+lib/python${MODPY_VERSION}/site-packages/incremental/
+lib/python${MODPY_VERSION}/site-packages/incremental-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/incremental-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/incremental-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/incremental-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/incremental-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/incremental-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
+lib/python${MODPY_VERSION}/site-packages/incremental-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/incremental-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/incremental/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/incremental/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/incremental/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/incremental/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/incremental/${MODPY_PYCACHE}update.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/incremental/_version.py
+lib/python${MODPY_VERSION}/site-packages/incremental/tests/
+lib/python${MODPY_VERSION}/site-packages/incremental/tests/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/incremental/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/incremental/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/incremental/tests/${MODPY_PYCACHE}test_update.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/incremental/tests/${MODPY_PYCACHE}test_version.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/incremental/tests/test_update.py
+lib/python${MODPY_VERSION}/site-packages/incremental/tests/test_version.py
+lib/python${MODPY_VERSION}/site-packages/incremental/update.py
