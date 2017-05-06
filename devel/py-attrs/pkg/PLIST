@@ -1,0 +1,25 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/05/06 09:43:59 landry Exp $
+lib/python${MODPY_VERSION}/site-packages/attr/
+lib/python${MODPY_VERSION}/site-packages/attr/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/attr/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/attr/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/attr/${MODPY_PYCACHE}_compat.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/attr/${MODPY_PYCACHE}_config.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/attr/${MODPY_PYCACHE}_funcs.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/attr/${MODPY_PYCACHE}_make.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/attr/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/attr/${MODPY_PYCACHE}filters.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/attr/${MODPY_PYCACHE}validators.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/attr/_compat.py
+lib/python${MODPY_VERSION}/site-packages/attr/_config.py
+lib/python${MODPY_VERSION}/site-packages/attr/_funcs.py
+lib/python${MODPY_VERSION}/site-packages/attr/_make.py
+lib/python${MODPY_VERSION}/site-packages/attr/exceptions.py
+lib/python${MODPY_VERSION}/site-packages/attr/filters.py
+lib/python${MODPY_VERSION}/site-packages/attr/validators.py
+lib/python${MODPY_VERSION}/site-packages/attrs-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/attrs-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/attrs-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/attrs-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/attrs-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
+lib/python${MODPY_VERSION}/site-packages/attrs-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
