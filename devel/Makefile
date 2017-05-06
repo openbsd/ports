@@ -1239,6 +1239,10 @@
      SUBDIR += py-async
      SUBDIR += py-atomicwrites
      SUBDIR += py-atomicwrites,python3
+     SUBDIR += py-attrs
+     SUBDIR += py-attrs,python3
+     SUBDIR += py-automat
+     SUBDIR += py-automat,python3
      SUBDIR += py-babel
      SUBDIR += py-babel,python3
      SUBDIR += py-backports-abc
@@ -1346,6 +1350,8 @@
      SUBDIR += py-hypothesis
      SUBDIR += py-hypothesis,python3
      SUBDIR += py-iniparse
+     SUBDIR += py-incremental
+     SUBDIR += py-incremental,python3
      SUBDIR += py-ioflo
      SUBDIR += py-ipykernel
      SUBDIR += py-ipykernel,python3
