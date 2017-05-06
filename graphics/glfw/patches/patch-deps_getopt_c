@@ -1,0 +1,22 @@
+$OpenBSD: patch-deps_getopt_c,v 1.1 2017/05/06 14:10:16 espie Exp $
+XXX borrow variables from system getopt, work-around clang bug.
+
+Index: deps/getopt.c
+--- deps/getopt.c.orig
++++ deps/getopt.c
+@@ -33,11 +33,10 @@ const int no_argument = 0;
+ const int required_argument = 1;
+ const int optional_argument = 2;
+ 
+-char* optarg;
+-int optopt;
+-/* The variable optind [...] shall be initialized to 1 by the system. */
+-int optind = 1;
+-int opterr;
++extern char *optarg;
++extern int optopt;
++extern int optind;
++extern int opterr;
+ 
+ static char* optcursor = NULL;
+ 
