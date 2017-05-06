@@ -1,0 +1,15 @@
+$OpenBSD: patch-parse_h,v 1.1 2017/05/06 10:19:04 naddy Exp $
+
+Index: parse.h
+--- parse.h.orig
++++ parse.h
+@@ -39,7 +39,9 @@
+ #ifndef _PARSE_
+ #define _PARSE_
+ 
++extern int do_pixmap_keyword(int keyword, char *filename);
+ extern int ParseTwmrc(), ParseStringList();
++extern int parse_keyword(char *s, int *nump);
+ extern int (*twmInputFunc)();
+ extern void twmUnput();
+ extern void TwmOutput();

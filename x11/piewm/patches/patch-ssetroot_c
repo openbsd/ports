@@ -1,0 +1,70 @@
+$OpenBSD: patch-ssetroot_c,v 1.1 2017/05/06 10:19:04 naddy Exp $
+
+Index: ssetroot.c
+--- ssetroot.c.orig
++++ ssetroot.c
+@@ -4,6 +4,8 @@
+ #include <X11/Xutil.h>
+ #include <X11/Xatom.h>
+ #include <stdio.h>
++#include <stdlib.h>
++#include <string.h>
+ #include "X11/bitmaps/gray"
+ #include "X11/bitmaps/root_weave"
+ 
+@@ -37,6 +39,12 @@ int save_colors = 0;
+ int unsave_past = 0;
+ Pixmap save_pixmap = (Pixmap)None;
+ 
++void FixupState(void);
++void SetBackgroundToBitmap(Pixmap bitmap,
++			   unsigned int width, unsigned int height);
++Cursor CreateCursorFromFiles(char *cursor_file, char *mask_file);
++
++void
+ usage()
+ {
+     fprintf(stderr, "usage: %s [options]\n", program_name);
+@@ -61,6 +69,7 @@ Pixmap MakeModulaBitmap(), ReadBitmapFile();
+ XColor NameToXColor();
+ unsigned long NameToPixel();
+ 
++int
+ main(argc, argv) 
+     int argc;
+     char **argv;
+@@ -239,7 +248,7 @@ main(argc, argv) 
+     /* Handle set name */
+     if (name)
+ 	XStoreName(dpy, root, name);
+-#endif NOT_ALLOWED
++#endif /* NOT_ALLOWED */
+   
+     /* Handle restore defaults */
+     if (restore_defaults) {
+@@ -272,7 +281,8 @@ main(argc, argv) 
+ 
+ 
+ /* Free past incarnation if needed, and retain state if needed. */
+-FixupState()
++void
++FixupState(void)
+ {
+     Atom prop, type;
+     int format;
+@@ -307,6 +317,7 @@ FixupState()
+  * SetBackgroundToBitmap: Set the root window background to a caller supplied 
+  *                        bitmap.
+  */
++void
+ SetBackgroundToBitmap(bitmap, width, height)
+     Pixmap bitmap;
+     unsigned int width, height;
+@@ -344,6 +355,7 @@ SetBackgroundToBitmap(bitmap, width, height)
+  */
+ #define BITMAP_HOT_DEFAULT 8
+ 
++Cursor
+ CreateCursorFromFiles(cursor_file, mask_file)
+     char *cursor_file, *mask_file;
+ {

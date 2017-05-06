@@ -1,0 +1,22 @@
+$OpenBSD: patch-lex_l,v 1.1 2017/05/06 10:19:04 naddy Exp $
+
+Index: lex.l
+--- lex.l.orig
++++ lex.l
+@@ -37,6 +37,7 @@
+  ***********************************************************************/
+ 
+ /* #include <stdio.h> */		/* lex already includes stdio.h */
++#include "twm.h"
+ #include "gram.h"
+ #include "list.h"
+ #include "parse.h"
+@@ -44,7 +45,7 @@ extern char *ProgramName;
+ 
+ extern int ParseError;
+ 
+-yywrap() { return(1);}
++int yywrap() { return(1);}
+ 
+ #define YY_INPUT(buf,result,max_size) \
+     { \

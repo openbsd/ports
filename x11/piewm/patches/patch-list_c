@@ -1,0 +1,14 @@
+$OpenBSD: patch-list_c,v 1.1 2017/05/06 10:19:04 naddy Exp $
+
+Index: list.c
+--- list.c.orig
++++ list.c
+@@ -80,7 +80,7 @@ AddToList(name_list **list_head, char *name, char *ptr
+     if (nptr == NULL)
+     {
+ 	twmrc_error_prefix();
+-	fprintf (stderr, "unable to allocate %d bytes for name_list\n",
++	fprintf (stderr, "unable to allocate %zu bytes for name_list\n",
+ 		 sizeof(name_list));
+ 	Done();
+     }

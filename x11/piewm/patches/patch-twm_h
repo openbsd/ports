@@ -1,0 +1,25 @@
+$OpenBSD: patch-twm_h,v 1.1 2017/05/06 10:19:04 naddy Exp $
+
+Index: twm.h
+--- twm.h.orig
++++ twm.h
+@@ -355,6 +355,7 @@ extern int Argc;
+ extern char **Argv;
+ extern char **Environ;
+ extern void NewFontCursor();
++extern void NewBitmapCursor(Cursor *cp, char *source, char *mask);
+ extern Pixmap CreateMenuIcon();
+ 
+ extern Bool ErrorOccurred;
+@@ -364,6 +365,11 @@ extern XErrorEvent LastErrorEvent;
+ 
+ extern Bool RestartPreviousState;
+ extern Bool GetWMState();
++
++extern void twmrc_error_prefix(void);
++
++extern int yyparse(void);
++extern int yylex(void);
+ 
+ extern Atom _XA_WM_CHANGE_STATE;
+ extern Atom _XA_WM_STATE;

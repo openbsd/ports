@@ -1,0 +1,13 @@
+$OpenBSD: patch-events_h,v 1.1 2017/05/06 10:19:04 naddy Exp $
+
+Index: events.h
+--- events.h.orig
++++ events.h
+@@ -66,6 +66,7 @@ extern void HandleKeyPress(void);
+ extern void HandleColormapNotify(void);
+ extern void HandleVisibilityNotify(void);
+ extern void HandleUnknown(void);
++extern int Transient(Window w);
+ extern void InstallWindowColormaps (int type, TwmWindow *tmp);
+ extern void UninstallRootColormap(void);
+ extern void InstallRootColormap(void);

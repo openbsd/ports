@@ -1,0 +1,43 @@
+$OpenBSD: patch-menus_c,v 1.1 2017/05/06 10:19:04 naddy Exp $
+
+Index: menus.c
+--- menus.c.orig
++++ menus.c
+@@ -202,6 +202,7 @@ static void PaintPieMenuEntry(MenuRoot *mr, MenuItem *
+ static void ShapePieMenu(MenuRoot *mr);
+ static void SendSaveYourselfMessage(TwmWindow *tmp, Time timestamp);
+ static void SendDeleteWindowMessage (TwmWindow *tmp, Time timestamp);
++static int NeedToDefer(MenuRoot *root);
+ static void DestroyMenu (MenuRoot *menu);
+ static void HideIconManager (void);
+ static void BumpWindowColormap (TwmWindow *tmp, int inc);
+@@ -330,7 +331,7 @@ CreateTitleButton (char *name, int func, char *action,
+ 
+     if (!tb) {
+ 	fprintf (stderr,
+-		 "%s:  unable to allocate %d bytes for title button\n",
++		 "%s:  unable to allocate %zu bytes for title button\n",
+ 		 ProgramName, sizeof(TitleButton));
+ 	return 0;
+     }
+@@ -1781,9 +1782,9 @@ ExecuteFunction(int func, char *action, Window w, TwmW
+ 		0, 0, 0, 0, eventp->xbutton.x_root, eventp->xbutton.y_root);
+ 
+ 	if (context == C_ICON && tmp_win->icon_w) {
+-	    DragIcon(tmp_win, eventp, pulldown);
++	    DragIcon(tmp_win, (XButtonEvent *)eventp, pulldown);
+ 	} else if (w != tmp_win->icon_w) {
+-	    DragFrame(tmp_win, eventp, pulldown);
++	    DragFrame(tmp_win, (XButtonEvent *)eventp, pulldown);
+ 	}
+ 	if (MoveFunction == F_OPAQUEMOVE)
+ 	  Scr->OpaqueMove = Real_OpaqueMove ;
+@@ -2302,7 +2303,7 @@ ReGrab(void)
+  ***********************************************************************
+  */
+ 
+-int
++static int
+ NeedToDefer(MenuRoot *root)
+ {
+     MenuItem *mitem;

@@ -1,0 +1,13 @@
+$OpenBSD: patch-vdt_c,v 1.1 2017/05/06 10:19:04 naddy Exp $
+
+Index: vdt.c
+--- vdt.c.orig
++++ vdt.c
+@@ -100,6 +100,7 @@ static char RCSinfo[]=
+ 
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <unistd.h>
+ #include <X11/X.h>
+ #include <X11/Xatom.h>
+ #include "twm.h"

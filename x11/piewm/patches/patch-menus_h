@@ -1,0 +1,13 @@
+$OpenBSD: patch-menus_h,v 1.1 2017/05/06 10:19:04 naddy Exp $
+
+Index: menus.h
+--- menus.h.orig
++++ menus.h
+@@ -161,6 +161,7 @@ extern int MenuDepth;
+ #define COLORMAP_PREV "prev"
+ #define COLORMAP_DEFAULT "default"
+ 
++extern int CreateTitleButton(char *name, int func, char *action, MenuRoot *menuroot, Bool rightside, Bool append);
+ extern void InitTitlebarButtons(void);
+ extern void InitMenus(void);
+ extern MenuRoot *NewMenuRoot(char *name);

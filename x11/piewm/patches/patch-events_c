@@ -1,0 +1,21 @@
+$OpenBSD: patch-events_c,v 1.1 2017/05/06 10:19:04 naddy Exp $
+
+Index: events.c
+--- events.c.orig
++++ events.c
+@@ -92,6 +92,7 @@ static char RCSinfo[]=
+ #endif
+ 
+ #include <stdio.h>
++#include <stdlib.h>
+ #include "twm.h"
+ #include <X11/Xatom.h>
+ #include "add_window.h"
+@@ -104,6 +105,7 @@ static char RCSinfo[]=
+ #include "util.h"
+ #include "screen.h"
+ #include "iconmgr.h"
++#include "icons.h"
+ #include "version.h"
+ #include "vdt.h"
+ 
