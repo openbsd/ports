@@ -1,0 +1,9 @@
+$OpenBSD: patch-setup_cfg,v 1.1.1.1 2017/05/06 09:48:44 landry Exp $
+--- setup.cfg.orig
++++ setup.cfg
+@@ -1,4 +1,4 @@
+-[pytest]
++[tool:pytest]
+ minversion = 2.8.2
+ strict = true
+ addopts = -ra
