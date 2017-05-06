@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2016/01/11 09:35:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2017/05/06 17:02:58 espie Exp $
 
 COMMENT =		vertical shoot-em-up with nontraditional elements
 
@@ -26,5 +26,6 @@ LIB_DEPENDS =		games/allegro
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include"
+CFLAGS += -fgnu89-inline
 
 .include <bsd.port.mk>
