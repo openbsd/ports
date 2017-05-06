@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/03/10 16:32:29 fcambus Exp $
+# $OpenBSD: Makefile,v 1.2 2017/05/06 11:14:50 fcambus Exp $
 
 COMMENT =	bitmap fonts from SGI
 
@@ -14,7 +14,7 @@ MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 # MIT
 PERMIT_PACKAGE_CDROM = Yes
 
-MASTER_SITES =	https://mirrors.statdns.com/
+MASTER_SITES =	https://www.distfiles.pl/
 
 NO_TEST =	Yes
 USE_X11 =	Yes
