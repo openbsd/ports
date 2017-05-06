@@ -1,0 +1,17 @@
+M2R converts a markdown file including reST markups to a valid reST format.
+
+Features:
+* Basic markdown and some extensions
+  o inline/block-level raw html
+  o fenced-code block
+  o tables
+  o footnotes ([^1])
+* Inline- and Block-level reST markups
+  o single- and multi-line directives (.. directive::)
+  o inline-roles (:code:`print(1)` ...)
+  o ref-link (see `ref`_)
+  o footnotes ([#fn]_)
+  o math extension inspired by recommonmark
+* Sphinx extension
+  o add markdown support for sphinx
+  o mdinclude directive to include markdown from md or reST files

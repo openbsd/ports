@@ -1,0 +1,11 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2017/05/06 09:51:45 landry Exp $
+--- setup.py.orig	Tue Apr 18 23:10:49 2017
++++ setup.py	Tue Apr 18 23:11:00 2017
+@@ -27,7 +27,6 @@ setup(
+     author_email='miyako.dev@gmail.com',
+     url='https://github.com/miyakogi/m2r',
+     py_modules=['m2r'],
+-    packages=['tests'],
+     entry_points={'console_scripts': 'm2r = m2r:main'},
+     include_package_data=True,
+     license="MIT",

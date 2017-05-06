@@ -1,0 +1,12 @@
+$OpenBSD: patch-tests_test_rst,v 1.1.1.1 2017/05/06 09:51:45 landry Exp $
+--- tests/test.rst.orig	Wed Apr 19 11:20:09 2017
++++ tests/test.rst	Wed Apr 19 11:20:05 2017
+@@ -0,0 +1,8 @@
++
++Title
++=====
++
++SubTitle
++--------
++
++**content**

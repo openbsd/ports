@@ -1,0 +1,9 @@
+$OpenBSD: patch-tests_test_md,v 1.1.1.1 2017/05/06 09:51:45 landry Exp $
+--- tests/test.md.orig	Wed Apr 19 11:20:53 2017
++++ tests/test.md	Wed Apr 19 11:20:26 2017
+@@ -0,0 +1,5 @@
++# Title
++
++## SubTitle
++
++__content__
