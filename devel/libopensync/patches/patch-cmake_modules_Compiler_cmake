@@ -1,0 +1,18 @@
+$OpenBSD: patch-cmake_modules_Compiler_cmake,v 1.1 2017/05/06 14:49:17 sthen Exp $
+
+Index: cmake/modules/Compiler.cmake
+--- cmake/modules/Compiler.cmake.orig
++++ cmake/modules/Compiler.cmake
+@@ -4,9 +4,10 @@ IF ( WIN32 )
+ 	SET( SYMBOLS_VISIBILITY "" )
+ ENDIF ( WIN32 )
+ 
+-IF ( CMAKE_COMPILER_IS_GNUCC ) 
++IF ((CMAKE_COMPILER_IS_GNUCC) OR (CMAKE_C_COMPILER_ID MATCHES "Clang") OR (CMAKE_CXX_COMPILER_ID MATCHES "Clang"))
+ 	SET( SYMBOLS_VISIBILITY "-fvisibility=hidden" )
+-ENDIF ( CMAKE_COMPILER_IS_GNUCC ) 
++ENDIF ((CMAKE_COMPILER_IS_GNUCC) OR (CMAKE_C_COMPILER_ID MATCHES "Clang") OR (CMAKE_CXX_COMPILER_ID MATCHES "
++Clang"))
+ 
+ IF (CMAKE_SYSTEM MATCHES "SunOS-5*.")	
+ 	SET( SYMBOLS_VISIBILITY "-xldscope=hidden" )
