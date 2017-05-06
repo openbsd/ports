@@ -1,16 +1,8 @@
-$OpenBSD: patch-src_node_c,v 1.2 2010/05/22 16:02:23 espie Exp $
---- src/node.c.orig	Sat Jan 30 22:10:17 1999
-+++ src/node.c	Sat May 22 18:01:33 2010
-@@ -8,6 +8,8 @@ node.c: network core for serving the master (master.c)
- 
- /////////////////////////////
- #include "node.h"
-+#include <string.h>
-+#include <stdlib.h>
- 
- 
- /////////////////////////////
-@@ -49,7 +51,7 @@ int init( void )
+$OpenBSD: patch-src_node_c,v 1.3 2017/05/06 17:23:10 naddy Exp $
+Index: src/node.c
+--- src/node.c.orig
++++ src/node.c
+@@ -49,7 +49,7 @@ int init( void )
     global.self.addr.sin_family = AF_INET;
     global.self.addr.sin_addr.s_addr = INADDR_ANY;
     if( !global.self.addr.sin_port )
@@ -19,8 +11,28 @@ $OpenBSD: patch-src_node_c,v 1.2 2010/05/22 16:02:23 espie Exp $
     global.self.sa_len = sizeof(global.self.addr);
     
     if( bind( global.self.socket,
-@@ -111,12 +113,13 @@ int main( int argc, u_char **argv )
-    if(!commline_handler(argc,argv))
+@@ -67,7 +67,7 @@ void sleep_mode( void )
+       (struct sockaddr *)&global.master.addr,
+       &global.master.sa_len );
+    FD_SET(global.master.socket, &global.net_fds);
+-   strcpy(global.master.ipstr,(u_char *)inet_ntoa(&global.master.addr.sin_addr));
++   strcpy(global.master.ipstr,(u_char *)inet_ntoa(global.master.addr.sin_addr));
+ // indicate a first time connect to master
+    write( global.master.socket, FIRST_SEND, strlen(FIRST_SEND) );
+ }
+@@ -102,21 +102,22 @@ void clean_up( int exit_status )
+ 
+ 
+ /////////////////////////////
+-int main( int argc, u_char **argv )
++int main( int argc, char **argv )
+ {
+    u_int exit_state = 0;
+    global.self.addr.sin_port = 0;
+ 
+ // check for specific port request at command line
+-   if(!commline_handler(argc,argv))
++   if(!commline_handler(argc,(u_char **)argv))
        clean_up(1);
     if(!init())
 -      error("could not initialize on port: %d\n", global.self.addr.sin_port );
@@ -35,3 +47,12 @@ $OpenBSD: patch-src_node_c,v 1.2 2010/05/22 16:02:23 espie Exp $
        sleep_mode();
     // awake
        print_handler("master connected at %s.\n",
+@@ -139,7 +140,7 @@ int main( int argc, u_char **argv )
+             static u_int len;
+ 
+             read(global.master.socket, netbuf, MAX_PACKET_SIZE);
+-            if( pstr = message_handler(netbuf,&len) )
++            if( (pstr = message_handler(netbuf,&len)) )
+             {
+               	write( global.master.socket, pstr, len );
+                print(".\n");

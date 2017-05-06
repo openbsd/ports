@@ -1,7 +1,8 @@
-$OpenBSD: patch-src_mn_h,v 1.1.1.1 2001/01/03 22:34:09 danh Exp $
---- src/mn.h.orig	Sat Jan 30 16:09:01 1999
-+++ src/mn.h	Wed Jan  3 15:17:44 2001
-@@ -2,11 +2,12 @@
+$OpenBSD: patch-src_mn_h,v 1.2 2017/05/06 17:23:10 naddy Exp $
+Index: src/mn.h
+--- src/mn.h.orig
++++ src/mn.h
+@@ -2,11 +2,16 @@
  #define _MN_H_
  
  /////////////////////////////////
@@ -11,9 +12,13 @@ $OpenBSD: patch-src_mn_h,v 1.1.1.1 2001/01/03 22:34:09 danh Exp $
  #include <sys/types.h>
  #include <sys/time.h>
 +#include <sys/socket.h>
++#include <arpa/inet.h>
 +#include <netinet/in.h>
 +#include <stdio.h>
 +#include <stdarg.h>
++#include <stdlib.h>
++#include <string.h>
++#include <unistd.h>
  
  
  /////////////////////////////////

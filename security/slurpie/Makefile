@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2015/05/17 11:42:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2017/05/06 17:23:10 naddy Exp $
 
 COMMENT=	distributed passwd file cracker
 
 VERSION=	2.0b
-REVISION=	0
+REVISION=	1
 DISTNAME=	slurpie
 PKGNAME=	${DISTNAME}-${VERSION}
 CATEGORIES=	security

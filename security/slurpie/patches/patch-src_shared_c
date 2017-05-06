@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_shared_c,v 1.1 2017/05/06 17:23:10 naddy Exp $
+
+Index: src/shared.c
+--- src/shared.c.orig
++++ src/shared.c
+@@ -13,6 +13,6 @@ shared.c: shared stuff among slurpie.c and slurp.c.
+ u_int strcpy_len( u_char *t, u_char *s )
+ {
+    u_char *low = s;
+-   while( *(t++) = *(s++) );
++   while( (*(t++) = *(s++)) );
+    return (s-low);
+ }

@@ -1,15 +1,17 @@
-$OpenBSD: patch-src_slurp_c,v 1.2 2010/05/22 16:02:23 espie Exp $
---- src/slurp.c.orig	Sat Jan 30 23:11:50 1999
-+++ src/slurp.c	Sat May 22 18:01:19 2010
-@@ -13,6 +13,7 @@ dictionary comparison cracking.
- #include <unistd.h>
- #define _XOPEN_SOURCE
- #endif
-+#include <string.h>
+$OpenBSD: patch-src_slurp_c,v 1.3 2017/05/06 17:23:10 naddy Exp $
+Index: src/slurp.c
+--- src/slurp.c.orig
++++ src/slurp.c
+@@ -149,7 +149,7 @@ char *do_gdict( u_char *master_msg, u_char *sendbuf, u
+    salt[2] = '\0';
  
- 
- /////////////////////////////
-@@ -239,7 +240,7 @@ int cl_proc( int argc, u_char **argv )
+ // run generated password search
+-   for( i=0; i<pwdlen; testpwd[i]=wl.cset[state[i++]] );
++   for( i=0; i<pwdlen; testpwd[i]=wl.cset[state[i]], i++ );
+    if(pwdlen>cfg.gtask_level)
+       pwdlen=cfg.gtask_level;
+    for( i=0; i<pwdlen; )
+@@ -239,7 +239,7 @@ int cl_proc( int argc, u_char **argv )
     
     if(argc>1)
     {
@@ -18,3 +20,11 @@ $OpenBSD: patch-src_slurp_c,v 1.2 2010/05/22 16:02:23 espie Exp $
           goto jCOMM_HELP;
           
        for( i=1; i<argc; i++ )
+@@ -287,6 +287,6 @@ void print( const u_char *str, ... )
+    vsprintf(tbuf,str,parg);
+    va_end(parg);
+    if( cfg.cl & CL_VERBOSE )
+-      printf( tbuf );
++      printf( "%s", tbuf );
+ }
+ 
