@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.27 2017/05/06 16:45:34 juanfra Exp $
+# $OpenBSD: Makefile,v 1.28 2017/05/06 18:04:42 juanfra Exp $
 
 COMMENT =		series of applications for Mercurial
 
 # Change also the mercurial version in run_depends
 MODPY_EGG_VERSION =	4.2
 DISTNAME =		tortoisehg-${MODPY_EGG_VERSION}
-PKGNAME =		${DISTNAME}pre20170506
 
 CATEGORIES =		devel
 
@@ -16,9 +15,7 @@ MAINTAINER =		Juan Francisco Cantero Hurtado <juanfra@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-#MASTER_SITES =		https://bitbucket.org/tortoisehg/targz/downloads/
-MASTER_SITES =		http://download.tuxfamily.org/jod/devel/tortoisehg/ \
-			ftp://download.tuxfamily.org/jod/devel/tortoisehg/
+MASTER_SITES =		https://bitbucket.org/tortoisehg/targz/downloads/
 
 MODULES =		lang/python
 BUILD_DEPENDS =		x11/py-qt4 \
