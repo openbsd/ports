@@ -1,0 +1,13 @@
+$OpenBSD: patch-qt4_immodule_plugin_cpp,v 1.1 2017/05/06 17:23:35 espie Exp $
+
+Index: qt4/immodule/plugin.cpp
+--- qt4/immodule/plugin.cpp.orig
++++ qt4/immodule/plugin.cpp
+@@ -46,6 +46,7 @@
+ 
+ #include "quiminfomanager.h"
+ #include "quiminputcontext_with_slave.h"
++#include <locale.h>
+ 
+ #define UIM_QT_LIST_SUBIM_AS_QTIM 0
+ 
