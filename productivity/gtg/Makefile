@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2015/08/21 14:42:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.29 2017/05/06 20:23:21 jasper Exp $
 
 COMMENT=		GTD organizer for GNOME
 
@@ -13,7 +13,7 @@ HOMEPAGE=		http://gtgnome.net/
 # GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		https://launchpad.net/gtg/trunk/${MODPY_EGG_VERSION}/+download/
+MASTER_SITES=		https://launchpad.net/gtg/${MODPY_EGG_VERSION:R}/${MODPY_EGG_VERSION}/+download/
 
 MODULES=		lang/python
 
