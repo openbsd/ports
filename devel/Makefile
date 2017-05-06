@@ -1053,6 +1053,7 @@
      SUBDIR += p5-Test-Class
      SUBDIR += p5-Test-ClassAPI
      SUBDIR += p5-Test-Cmd
+     SUBDIR += p5-Test-Command-Simple
      SUBDIR += p5-Test-Corpus-Audio-MPD
      SUBDIR += p5-Test-Deep
      SUBDIR += p5-Test-Differences
