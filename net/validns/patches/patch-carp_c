@@ -1,0 +1,14 @@
+$OpenBSD: patch-carp_c,v 1.1.1.1 2017/05/06 15:52:24 fcambus Exp $
+
+Index: carp.c
+--- carp.c.orig
++++ carp.c
+@@ -102,7 +102,7 @@ static char proggy[MAXPATHLEN];
+ 
+ const char *thisprogname(void)
+ {
+-#if defined(__FreeBSD__)
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
+ 	return getprogname();
+ #elif defined(__APPLE__)
+ 	return getprogname();

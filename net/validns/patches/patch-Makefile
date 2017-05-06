@@ -1,0 +1,13 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2017/05/06 15:52:24 fcambus Exp $
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -1,6 +1,5 @@
+ # The following options seem to work fine on Linux, FreeBSD, and Darwin
+-OPTIMIZE=-O2 -g
+-CFLAGS=-Wall -Werror -pthread -fno-strict-aliasing
++CFLAGS+=-Wall -Werror -pthread -fno-strict-aliasing
+ INCPATH=-I/usr/local/include -I/opt/local/include -I/usr/local/ssl/include
+ CC?=cc
+ 
