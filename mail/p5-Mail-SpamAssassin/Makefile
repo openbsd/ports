@@ -1,17 +1,19 @@
-# $OpenBSD: Makefile,v 1.99 2017/04/27 17:10:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.100 2017/05/06 14:56:08 giovanni Exp $
 
 COMMENT=		mailfilter to identify and mark spam
 
 VER=			3.4.1
 DISTNAME=		Mail-SpamAssassin-${VER}
 PKGNAME=		p5-${DISTNAME}
-REVISION=		5
+REVISION=		6
 RULESNAME=		Mail-SpamAssassin-rules-${VER}.r1675274.tgz
 CATEGORIES=		mail perl5
 
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX} ${RULESNAME}
 EXTRACT_SUFX=		.tar.bz2
 EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
+
+MAINTAINER=		Giovanni Bechis <giovanni@openbsd.org>
 
 HOMEPAGE=		http://spamassassin.apache.org/
 
@@ -72,6 +74,7 @@ pre-configure:
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/SpamAssassin
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/SpamAssassin/ldap
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/SpamAssassin/sql
 	${INSTALL_DATA_DIR} ${SAMPLE_CONFDIR}
 	${INSTALL_DATA} ${WRKSRC}/rules/local.cf ${WRKSRC}/rules/*.pre \
@@ -79,6 +82,7 @@ post-install:
 .for i in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/share/doc/SpamAssassin
 .endfor
+	${INSTALL_DATA} ${WRKSRC}/ldap/* ${PREFIX}/share/doc/SpamAssassin/ldap
 	${INSTALL_DATA} ${WRKSRC}/sql/* ${PREFIX}/share/doc/SpamAssassin/sql
 	cp -r ${_R}/* ${PREFIX}/share/spamassassin/
 	chown ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/spamassassin/*

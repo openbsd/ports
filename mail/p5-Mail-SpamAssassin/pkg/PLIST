@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.34 2015/04/30 14:41:54 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.35 2017/05/06 14:56:08 giovanni Exp $
 @pkgpath mail/p5-Mail-SpamAssassin
 @newgroup _spamdaemon:506
 @newuser _spamdaemon:506:506:daemon:SpamAssassin:${LOCALSTATEDIR}:/sbin/nologin
@@ -215,6 +215,10 @@ share/doc/SpamAssassin/README
 share/doc/SpamAssassin/TRADEMARK
 share/doc/SpamAssassin/UPGRADE
 share/doc/SpamAssassin/USAGE
+share/doc/SpamAssassin/ldap/
+share/doc/SpamAssassin/ldap/README
+share/doc/SpamAssassin/ldap/README.testing
+share/doc/SpamAssassin/ldap/sa_test.ldif
 share/doc/SpamAssassin/procmailrc.example
 share/doc/SpamAssassin/sample-nonspam.txt
 share/doc/SpamAssassin/sample-spam.txt
