@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2017/04/10 11:45:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2017/05/06 02:51:13 espie Exp $
 
 COMMENT =		improved opensource version of Dune 2
 
@@ -25,6 +25,13 @@ LIB_DEPENDS =		devel/sdl-mixer \
 			net/enet
 RUN_DEPENDS = 		devel/desktop-file-utils
 TEST_DEPENDS = 		devel/cppunit
+
+.include <bsd.port.arch.mk>
+.if ${PROPERTIES:Mclang}
+# XXX clang requires c++11 for functional to be complete (in particular 
+# std::bind) but this turns on narrowing errors, which break dunelegacy
+CXXFLAGS += -std=c++11 -Wno-c++11-narrowing
+.endif
 
 MAKE_FLAGS +=		CXXFLAGS="${CXXFLAGS} -DXTHREADS"
 

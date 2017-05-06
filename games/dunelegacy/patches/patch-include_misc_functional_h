@@ -1,0 +1,23 @@
+$OpenBSD: patch-include_misc_functional_h,v 1.1 2017/05/06 02:51:13 espie Exp $
+those are standard in C++11
+
+Index: include/misc/functional.h
+--- include/misc/functional.h.orig
++++ include/misc/functional.h
+@@ -1,6 +1,7 @@
+ #ifndef FUNCTIONAL_INCLUDED
+ #define FUNCTIONAL_INCLUDED
+ 
++#if __cplusplus < 201103L
+ #include <tr1/functional>
+ 
+ namespace std {
+@@ -11,5 +12,8 @@ namespace std {
+ 		using namespace std::tr1::placeholders;
+ 	}
+ }
++#else
++#include <functional>
++#endif
+ 
+ #endif //FUNCTIONAL_INCLUDED

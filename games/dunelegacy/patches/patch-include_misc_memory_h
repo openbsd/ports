@@ -1,0 +1,23 @@
+$OpenBSD: patch-include_misc_memory_h,v 1.1 2017/05/06 02:51:13 espie Exp $
+Those are standard in C++11
+
+Index: include/misc/memory.h
+--- include/misc/memory.h.orig
++++ include/misc/memory.h
+@@ -1,6 +1,7 @@
+ #ifndef MEMORY_INCLUDED
+ #define MEMORY_INCLUDED
+ 
++#if __cplusplus < 201103L
+ #include <tr1/memory>
+ 
+ namespace std {
+@@ -8,5 +9,8 @@ namespace std {
+ 
+ 	using std::tr1::dynamic_pointer_cast;
+ }
++#else
++#include <memory>
++#endif
+ 
+ #endif //MEMORY_INCLUDED
