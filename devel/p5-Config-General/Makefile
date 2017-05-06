@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2016/03/20 19:56:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2017/05/06 21:16:37 benoit Exp $
 
 COMMENT =	generic configuration parser, inspired by apache
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	Config-General-2.60
+DISTNAME =	Config-General-2.63
 CATEGORIES =	devel
 
 HOMEPAGE =	http://www.daemon.de/ConfigGeneral
