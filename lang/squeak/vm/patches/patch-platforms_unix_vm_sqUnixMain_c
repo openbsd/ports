@@ -1,9 +1,12 @@
-$OpenBSD: patch-platforms_unix_vm_sqUnixMain_c,v 1.5 2016/09/11 16:30:12 ratchov Exp $
---- platforms/unix/vm/sqUnixMain.c.orig	Sat Mar 22 02:33:18 2008
-+++ platforms/unix/vm/sqUnixMain.c	Mon Dec 30 04:30:27 2013
-@@ -54,11 +54,6 @@
+$OpenBSD: patch-platforms_unix_vm_sqUnixMain_c,v 1.6 2017/05/06 17:15:20 espie Exp $
+Index: platforms/unix/vm/sqUnixMain.c
+--- platforms/unix/vm/sqUnixMain.c.orig
++++ platforms/unix/vm/sqUnixMain.c
+@@ -53,12 +53,8 @@
+ #include <errno.h>
  #include <signal.h>
  #include <fcntl.h>
++#include <ctype.h>
  
 -#if defined(__alpha__)
 -# include <sys/sysinfo.h>

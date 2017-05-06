@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2017/03/04 02:03:55 jca Exp $
+# $OpenBSD: Makefile,v 1.26 2017/05/06 17:15:20 espie Exp $
 
 COMMENT =	smalltalk system, vm
 
@@ -40,6 +40,7 @@ MAKE_FLAGS +=		docdir=${PREFIX}/share/doc/squeak \
 			LD="${CC}"
 DESTDIRNAME =		ROOT
 SUBST_VARS +=		FULLV
+CFLAGS +=		-fgnu89-inline
 
 pre-build:
 	@perl -pi -e s,dprintf,debugprintf, ${WRKDIST}/platforms/unix/vm/*.c
