@@ -1,0 +1,15 @@
+$OpenBSD: patch-opensync_opensync_error_c,v 1.1 2017/05/06 15:36:11 espie Exp $
+stolen from a more recent version
+
+Index: opensync/opensync_error.c
+--- opensync/opensync_error.c.orig
++++ opensync/opensync_error.c
+@@ -111,7 +111,7 @@ const char *osync_error_get_name(OSyncError **error)
+ OSyncError **osync_error_ref(OSyncError **error)
+ {
+ 	if (!osync_error_is_set(error))
+-		return;
++		return error;
+ 	
+ 	g_atomic_int_inc(&(*error)->ref_count);
+ 
