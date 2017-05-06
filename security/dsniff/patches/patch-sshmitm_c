@@ -1,0 +1,15 @@
+$OpenBSD: patch-sshmitm_c,v 1.1 2017/05/06 14:30:06 naddy Exp $
+
+Index: sshmitm.c
+--- sshmitm.c.orig
++++ sshmitm.c
+@@ -31,6 +31,9 @@
+ #include "ssh.h"
+ #include "version.h"
+ 
++/* clash with C99 csin() */
++#define csin clsin
++
+ int	 Opt_debug = 0;
+ int	 Opt_interact = 0;
+ u_short	 Opt_dns = 0;

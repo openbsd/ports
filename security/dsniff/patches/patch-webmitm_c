@@ -1,0 +1,15 @@
+$OpenBSD: patch-webmitm_c,v 1.1 2017/05/06 14:30:06 naddy Exp $
+
+Index: webmitm.c
+--- webmitm.c.orig
++++ webmitm.c
+@@ -33,6 +33,9 @@
+ 
+ #define CERT_FILE	"webmitm.crt"
+ 
++/* clash with C99 csin() */
++#define csin clsin
++
+ int	 Opt_quiet = 0;
+ int	 Opt_debug = 0;
+ int	 Opt_read = 0;
