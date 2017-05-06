@@ -1,0 +1,4 @@
+This test module is intended to simplify testing of external commands.
+It does so by running the command under IPC::Open3, closing the stdin
+immediately, and reading everything from the command's stdout and
+stderr. It then makes the output available to be tested.
