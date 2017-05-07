@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2013/03/11 11:35:58 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2017/05/07 20:42:40 schwarze Exp $
 
 COMMENT=	assemble usenet binaries
 
 PKGNAME=	aub-2.0.5
+REVISION=	0
 DISTNAME=	aub
 CATEGORIES=	news
 
@@ -17,7 +18,6 @@ NO_BUILD=	Yes
 NO_TEST=	Yes
 PKG_ARCH=	*
 WRKDIST=	${WRKDIR}
-USE_GROFF =	Yes
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/aub ${PREFIX}/bin
