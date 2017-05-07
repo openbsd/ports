@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_include_fst_test-properties_h,v 1.1 2017/05/07 20:00:26 espie Exp $
+
+Index: src/include/fst/test-properties.h
+--- src/include/fst/test-properties.h.orig
++++ src/include/fst/test-properties.h
+@@ -21,9 +21,15 @@
+ #ifndef FST_LIB_TEST_PROPERTIES_H__
+ #define FST_LIB_TEST_PROPERTIES_H__
+ 
++#if defined(__clang__) || __cplusplus >= 201103L
++#include <unordered_set>
++using std::unordered_set;
++using std::unordered_multiset;
++#else
+ #include <tr1/unordered_set>
+ using std::tr1::unordered_set;
+ using std::tr1::unordered_multiset;
++#endif
+ 
+ #include <fst/dfs-visit.h>
+ #include <fst/connect.h>

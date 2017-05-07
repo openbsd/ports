@@ -1,0 +1,27 @@
+$OpenBSD: patch-src_include_fst_synchronize_h,v 1.1 2017/05/07 20:00:26 espie Exp $
+
+Index: src/include/fst/synchronize.h
+--- src/include/fst/synchronize.h.orig
++++ src/include/fst/synchronize.h
+@@ -22,12 +22,21 @@
+ #define FST_LIB_SYNCHRONIZE_H__
+ 
+ #include <algorithm>
++#if defined(__clang__) || __cplusplus >= 201103L
++#include<unordered_map>
++using std::unordered_map;
++using std::unordered_multimap;
++#include <unordered_set>
++using std::unordered_set;
++using std::unordered_multiset;
++#else
+ #include <tr1/unordered_map>
+ using std::tr1::unordered_map;
+ using std::tr1::unordered_multimap;
+ #include <tr1/unordered_set>
+ using std::tr1::unordered_set;
+ using std::tr1::unordered_multiset;
++#endif
+ #include <string>
+ #include <utility>
+ using std::pair; using std::make_pair;

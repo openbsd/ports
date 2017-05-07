@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2017/04/10 11:46:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2017/05/07 20:00:25 espie Exp $
 
 COMMENT =		weighted finite-state transducers library
 
@@ -23,5 +23,7 @@ WANTLIB +=		c m ${LIBCXX}
 MASTER_SITES =		http://www.openfst.org/twiki/pub/FST/FstDownload/
 
 CONFIGURE_STYLE =	gnu
+# cheat!
+CONFIGURE_ENV += ac_cv_type_std__tr1__hash_long_long_unsigned_=yes
 
 .include <bsd.port.mk>

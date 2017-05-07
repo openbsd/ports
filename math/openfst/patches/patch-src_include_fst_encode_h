@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_include_fst_encode_h,v 1.1 2017/05/07 20:00:25 espie Exp $
+
+Index: src/include/fst/encode.h
+--- src/include/fst/encode.h.orig
++++ src/include/fst/encode.h
+@@ -22,9 +22,15 @@
+ #define FST_LIB_ENCODE_H__
+ 
+ #include <climits>
++#if defined(__clang__) || __cplusplus >= 201103L
++#include<unordered_map>
++using std::unordered_map;
++using std::unordered_multimap;
++#else
+ #include <tr1/unordered_map>
+ using std::tr1::unordered_map;
+ using std::tr1::unordered_multimap;
++#endif
+ #include <string>
+ #include <vector>
+ using std::vector;

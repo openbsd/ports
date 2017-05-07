@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_include_fst_symbol-table-ops_h,v 1.1 2017/05/07 20:00:26 espie Exp $
+
+Index: src/include/fst/symbol-table-ops.h
+--- src/include/fst/symbol-table-ops.h.orig
++++ src/include/fst/symbol-table-ops.h
+@@ -20,9 +20,15 @@
+ #include <vector>
+ using std::vector;
+ #include <string>
++#if defined(__clang__) || __cplusplus >= 201103L
++#include <unordered_set>
++using std::unordered_set;
++using std::unordered_multiset;
++#else
+ #include <tr1/unordered_set>
+ using std::tr1::unordered_set;
+ using std::tr1::unordered_multiset;
++#endif
+ 
+ 
+ #include <fst/fst.h>

@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_include_fst_determinize_h,v 1.1 2017/05/07 20:00:25 espie Exp $
+
+Index: src/include/fst/determinize.h
+--- src/include/fst/determinize.h.orig
++++ src/include/fst/determinize.h
+@@ -24,9 +24,15 @@
+ 
+ #include <algorithm>
+ #include <climits>
++#if defined(__clang__) || __cplusplus >= 201103L
++#include<unordered_map>
++using std::unordered_map;
++using std::unordered_multimap;
++#else
+ #include <tr1/unordered_map>
+ using std::tr1::unordered_map;
+ using std::tr1::unordered_multimap;
++#endif
+ #include <map>
+ #include <fst/slist.h>
+ #include <string>

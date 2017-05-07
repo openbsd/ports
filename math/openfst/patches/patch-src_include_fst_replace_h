@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_include_fst_replace_h,v 1.1 2017/05/07 20:00:26 espie Exp $
+
+Index: src/include/fst/replace.h
+--- src/include/fst/replace.h.orig
++++ src/include/fst/replace.h
+@@ -22,9 +22,15 @@
+ #ifndef FST_LIB_REPLACE_H__
+ #define FST_LIB_REPLACE_H__
+ 
++#if defined(__clang__) || __cplusplus >= 201103L
++#include<unordered_map>
++using std::unordered_map;
++using std::unordered_multimap;
++#else
+ #include <tr1/unordered_map>
+ using std::tr1::unordered_map;
+ using std::tr1::unordered_multimap;
++#endif
+ #include <set>
+ #include <string>
+ #include <utility>

@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_include_fst_epsnormalize_h,v 1.1 2017/05/07 20:00:26 espie Exp $
+
+Index: src/include/fst/epsnormalize.h
+--- src/include/fst/epsnormalize.h.orig
++++ src/include/fst/epsnormalize.h
+@@ -21,9 +21,15 @@
+ #ifndef FST_LIB_EPSNORMALIZE_H__
+ #define FST_LIB_EPSNORMALIZE_H__
+ 
++#if defined(__clang__) || __cplusplus >= 201103L
++#include<unordered_map>
++using std::unordered_map;
++using std::unordered_multimap;
++#else
+ #include <tr1/unordered_map>
+ using std::tr1::unordered_map;
+ using std::tr1::unordered_multimap;
++#endif
+ #include <fst/slist.h>
+ 
+ 

@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_include_fst_config_h_in,v 1.1 2017/05/07 20:00:25 espie Exp $
+
+Index: src/include/fst/config.h.in
+--- src/include/fst/config.h.in.orig
++++ src/include/fst/config.h.in
+@@ -5,7 +5,7 @@
+ 
+ /* Define to 1 if the system has the type `std::tr1::hash<long long
+    unsigned>'. */
+-#define HAVE_STD__TR1__HASH_LONG_LONG_UNSIGNED_ 1
++#undef HAVE_STD__TR1__HASH_LONG_LONG_UNSIGNED_
+ 
+ /* Define to 1 if the system has the type `__gnu_cxx::slist<int>'. */
+-#define HAVE___GNU_CXX__SLIST_INT_ 1
++#undef HAVE___GNU_CXX__SLIST_INT_

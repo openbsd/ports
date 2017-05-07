@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_include_fst_script_compile-impl_h,v 1.1 2017/05/07 20:00:26 espie Exp $
+
+Index: src/include/fst/script/compile-impl.h
+--- src/include/fst/script/compile-impl.h.orig
++++ src/include/fst/script/compile-impl.h
+@@ -21,9 +21,15 @@
+ #ifndef FST_SCRIPT_COMPILE_IMPL_H_
+ #define FST_SCRIPT_COMPILE_IMPL_H_
+ 
++#if defined(__clang__) || __cplusplus >= 201103L
++#include<unordered_map>
++using std::unordered_map;
++using std::unordered_multimap;
++#else
+ #include <tr1/unordered_map>
+ using std::tr1::unordered_map;
+ using std::tr1::unordered_multimap;
++#endif
+ #include <sstream>
+ #include <string>
+ #include <vector>

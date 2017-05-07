@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_include_fst_factor-weight_h,v 1.1 2017/05/07 20:00:26 espie Exp $
+
+Index: src/include/fst/factor-weight.h
+--- src/include/fst/factor-weight.h.orig
++++ src/include/fst/factor-weight.h
+@@ -22,9 +22,15 @@
+ #define FST_LIB_FACTOR_WEIGHT_H__
+ 
+ #include <algorithm>
++#if defined(__clang__) || __cplusplus >= 201103L
++#include<unordered_map>
++using std::unordered_map;
++using std::unordered_multimap;
++#else
+ #include <tr1/unordered_map>
+ using std::tr1::unordered_map;
+ using std::tr1::unordered_multimap;
++#endif
+ #include <fst/slist.h>
+ #include <string>
+ #include <utility>

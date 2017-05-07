@@ -1,0 +1,32 @@
+$OpenBSD: patch-src_include_fst_sparse-tuple-weight_h,v 1.1 2017/05/07 20:00:26 espie Exp $
+
+Index: src/include/fst/sparse-tuple-weight.h
+--- src/include/fst/sparse-tuple-weight.h.orig
++++ src/include/fst/sparse-tuple-weight.h
+@@ -33,9 +33,17 @@
+ #include<string>
+ #include<list>
+ #include<stack>
++#if defined(__clang__) || __cplusplus >= 201103L
++#include <unordered_map>
++using std::unordered_map;
++using std::unordered_multimap;
++using std::hash;
++#else
+ #include<tr1/unordered_map>
+ using std::tr1::unordered_map;
+ using std::tr1::unordered_multimap;
++using std::tr1::hash;
++#endif
+ 
+ #include <fst/weight.h>
+ 
+@@ -140,7 +148,7 @@ class SparseTupleWeight {
+   // Assumes H() function exists for the hash of the key value
+   size_t Hash() const {
+     uint64 h = 0;
+-    std::tr1::hash<K> H;
++    hash<K> H;
+     for (SparseTupleWeightIterator<W, K> it(*this); !it.Done(); it.Next()) {
+       h = 5 * h + H(it.Value().first);
+       h = 13 * h + it.Value().second.Hash();
