@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2017/04/10 11:46:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2017/05/07 07:31:14 jasper Exp $
 
 COMMENT=	little and fast Web crawler
 
@@ -26,7 +26,14 @@ NO_TEST=		Yes
 USE_X11 =		Yes
 
 pre-configure:
-	perl -pi -e 's,!!SYSCONFDIR!!,${SYSCONFDIR},' ${WRKSRC}/src/global.cc
+	${SUBST_CMD} ${WRKSRC}/src/global.cc
+# Now fixup some C++ constructs not supported by clang
+	find ${WRKSRC}/src -name '*.cc' -or -name '*.h' | xargs \
+		sed -i -e 's|<iostream.h>|<iostream>| ; \
+			s|<string.h>|<cstring>| ; \
+			s|\([[:blank:]]\)cerr|\1std::cerr|g ; \
+			s|\([[:blank:]]\)cout|\1std::cout|g ; \
+			s|\([[:blank:]]\)endl|\1std::endl|g'
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/larbin ${PREFIX}/bin

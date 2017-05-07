@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_larbin_make,v 1.2 2007/05/12 06:47:56 steven Exp $
---- src/larbin.make.orig	Tue Jul  8 22:25:24 2003
-+++ src/larbin.make	Fri May  4 20:35:06 2007
+$OpenBSD: patch-src_larbin_make,v 1.3 2017/05/07 07:31:14 jasper Exp $
+--- src/larbin.make.orig
++++ src/larbin.make
 @@ -1,4 +1,4 @@
 -ADNSDIR=$(BASEDIR)/../adns
 +ADNSDIR=${LOCALBASE}/include
@@ -14,7 +14,7 @@ $OpenBSD: patch-src_larbin_make,v 1.2 2007/05/12 06:47:56 steven Exp $
 -CFLAGS:=-O3 -Wall -D_REENTRANT
 -CXXFLAGS:= -Wno-deprecated -Wall -O3 -D_REENTRANT -I- -I$(BASEDIR) -I$(ADNSDIR)
 +CFLAGS+= -Wall -D_REENTRANT
-+CXXFLAGS+= -Wno-deprecated -Wall -D_REENTRANT -I- -I$(BASEDIR) -I$(ADNSDIR)
++CXXFLAGS+= -Wno-deprecated -Wall -D_REENTRANT -iquote -I- -I$(BASEDIR) -I$(ADNSDIR)
  RM:=rm -f
  
  first: all
