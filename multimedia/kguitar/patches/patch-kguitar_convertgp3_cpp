@@ -1,0 +1,13 @@
+$OpenBSD: patch-kguitar_convertgp3_cpp,v 1.1 2017/05/07 02:16:45 espie Exp $
+
+Index: kguitar/convertgp3.cpp
+--- kguitar/convertgp3.cpp.orig
++++ kguitar/convertgp3.cpp
+@@ -1,6 +1,7 @@
+ #include "convertgp3.h"
+ #include "settings.h"
+ 
++#include <stdlib.h>
+ #include <qfile.h>
+ #include <qdatastream.h>
+ 

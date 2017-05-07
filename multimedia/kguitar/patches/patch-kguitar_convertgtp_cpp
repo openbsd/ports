@@ -1,0 +1,13 @@
+$OpenBSD: patch-kguitar_convertgtp_cpp,v 1.1 2017/05/07 02:16:45 espie Exp $
+
+Index: kguitar/convertgtp.cpp
+--- kguitar/convertgtp.cpp.orig
++++ kguitar/convertgtp.cpp
+@@ -3,6 +3,7 @@
+ #include <klocale.h>
+ #include <qfile.h>
+ #include <qdatastream.h>
++#include <stdlib.h>
+ 
+ ConvertGtp::ConvertGtp(TabSong *song): ConvertBase(song)
+ {
