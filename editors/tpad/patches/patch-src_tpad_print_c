@@ -1,0 +1,28 @@
+$OpenBSD: patch-src_tpad_print_c,v 1.1 2017/05/07 01:05:10 naddy Exp $
+
+Index: src/tpad_print.c
+--- src/tpad_print.c.orig
++++ src/tpad_print.c
+@@ -21,13 +21,13 @@
+  ********************************************************************************/
+ #include "tpad_headers.h"
+ 
+-inline void print(gchar *s){
++void print(gchar *s){
+ 	#ifdef DEBUG_TOGGLE
+ 	g_print("tpad(v.%s): %s\n",VERSION,s);
+ 	#endif
+ }
+ 
+-inline void print_title(gchar* str){
++void print_title(gchar* str){
+ 	#ifdef DEBUG_TOGGLE
+ 	gint ihHash=0, ihStr=0,ihTmp=0;
+ 	register gint i=0;
+@@ -48,4 +48,4 @@ inline void print_title(gchar* str){
+ 	}
+ 	printf("\n");
+ 	#endif
+-}
+\ No newline at end of file
++}

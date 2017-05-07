@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_tpad_print_h,v 1.1 2017/05/07 01:05:10 naddy Exp $
+
+Index: src/tpad_print.h
+--- src/tpad_print.h.orig
++++ src/tpad_print.h
+@@ -34,6 +34,6 @@
+ #include <wchar.h>
+ #include <glib/gprintf.h>
+ #define HASH_PRINT_COUNT 52
+-inline void print(gchar *s);
+-inline void print_title(gchar* str);
+-#endif
+\ No newline at end of file
++void print(gchar *s);
++void print_title(gchar* str);
++#endif

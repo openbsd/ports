@@ -1,0 +1,30 @@
+$OpenBSD: patch-src_tpad_open_guard_c,v 1.1 2017/05/07 01:05:10 naddy Exp $
+
+Index: src/tpad_open_guard.c
+--- src/tpad_open_guard.c.orig
++++ src/tpad_open_guard.c
+@@ -49,14 +49,11 @@ void tpad_open_guard_cln () {
+  itempFilePathSize=0;
+  iswpFilePathSize=0;
+  ilockFilePathSize=0;
+- tpad_clear_char_array(path_temp_file);
+- tpad_clear_char_array(path_swp_file);
+- tpad_clear_char_array(path_lock_file);	
++ memset(path_temp_file, 0, sizeof(path_temp_file));
++ memset(path_swp_file, 0, sizeof(path_swp_file));
++ memset(path_lock_file, 0, sizeof(path_lock_file));	
+ }
+ 
+-void tpad_clear_char_array(char arr[]){
+-	memset(&arr[0], 0, sizeof(arr));
+-}
+ gint tpad_open_guard_init(){
+ 	tpad_open_guard_cln ();
+ 	 icurrentfile_size=strlen(currentfile);
+@@ -139,4 +136,4 @@ if(ihaveTemp == 0 && currentfile && path_temp_file) {
+ 		fclose(origFile);
+ 		free (buffer);
+ 	}
+-}
+\ No newline at end of file
++}
