@@ -1,17 +1,20 @@
-# $OpenBSD: Makefile,v 1.27 2017/04/11 13:57:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2017/05/07 21:41:51 stu Exp $
 
 COMMENT=	text search engine
 
 DISTNAME=	glimpse-4.1
-REVISION=	5
+REVISION=	6
 CATEGORIES=	textproc databases
+HOMEPAGE=	http://webglimpse.net/
 
 PERMIT_PACKAGE_CDROM=	no fee
 PERMIT_PACKAGE_FTP=	Yes
 
 WANTLIB=		c 
 
-MASTER_SITES=   ftp://ftp.cs.arizona.edu/glimpse/
+MASTER_SITES=	http://ftp.gnome.org/mirror/archive/ftp.sunet.se/pub/vendor/sco/skunkware/osr5/fileutil/md5/src/ \
+		http://ftp.icm.edu.pl/pub/unix/www/glimpse/
+
 DISTFILES=	glimpse-4.1.src.tar.gz
 
 CONFIGURE_STYLE=	gnu dest old

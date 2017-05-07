@@ -1,0 +1,13 @@
+$OpenBSD: patch-get_filename_c,v 1.1 2017/05/07 21:41:51 stu Exp $
+
+Index: get_filename.c
+--- get_filename.c.orig
++++ get_filename.c
+@@ -481,6 +481,7 @@ endofinput:
+ 	return 0;
+ }
+ 
++void
+ get_filenames(index_vect, argc, argv, dummylen, dummypat, file_num)
+ int  *index_vect;
+ int argc; /* the arguments to agrep for -F */

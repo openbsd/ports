@@ -1,0 +1,13 @@
+$OpenBSD: patch-compress_misc_c,v 1.1 2017/05/07 21:41:51 stu Exp $
+
+Index: compress/misc.c
+--- compress/misc.c.orig
++++ compress/misc.c
+@@ -288,6 +288,7 @@ int	flags;
+ 	return 1;
+ }
+ 
++void
+ uninitialize_common()
+ {
+ 	initialize_common_done = 0;

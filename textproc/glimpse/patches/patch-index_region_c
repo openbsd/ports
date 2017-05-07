@@ -1,6 +1,7 @@
-$OpenBSD: patch-index_region_c,v 1.1 2016/03/18 16:41:53 naddy Exp $
---- index/region.c.orig	Thu Nov 21 03:28:47 1996
-+++ index/region.c	Thu Mar 17 23:08:53 2016
+$OpenBSD: patch-index_region_c,v 1.2 2017/05/07 21:41:51 stu Exp $
+Index: index/region.c
+--- index/region.c.orig
++++ index/region.c
 @@ -1,6 +1,7 @@
  /* Copyright (c) 1994 Sun Wu, Udi Manber, Burra Gopal.  All Rights Reserved. */
  /* From mail received from Bill Camargo and Darren Hardy in June 1994 */
@@ -9,3 +10,20 @@ $OpenBSD: patch-index_region_c,v 1.1 2016/03/18 16:41:53 naddy Exp $
  #include "region.h"
  
  /*
+@@ -168,6 +169,7 @@ attr_free_table()
+ }
+ 
+ /* Looks for embedded attributes and copies the real attribute into dest */
++void
+ attr_extract(dest, src)
+ 	char	*dest, *src;
+ {
+@@ -464,7 +466,7 @@ region_destroy()
+ 	while (rl != NULL) {
+ 		trl = rl;
+ 		rl = rl->next;
+-		free(trl, sizeof(region_t));
++		my_free(trl, sizeof(region_t));
+ 	}
+ 	current_regions = nextpos = NULL;
+ 	return 0;

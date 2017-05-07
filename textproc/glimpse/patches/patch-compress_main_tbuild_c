@@ -1,0 +1,14 @@
+$OpenBSD: patch-compress_main_tbuild_c,v 1.1 2017/05/07 21:41:51 stu Exp $
+
+Index: compress/main_tbuild.c
+--- compress/main_tbuild.c.orig
++++ compress/main_tbuild.c
+@@ -24,7 +24,7 @@ char	*progname;
+ 
+ main(argc, argv)
+ 	int	argc;
+-	unsigned char	*argv[];
++	char	*argv[];
+ {
+ 	char	comp_dir[MAX_LINE_LEN];
+ 	int	threshold, specialwords;

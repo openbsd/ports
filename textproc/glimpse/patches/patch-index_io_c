@@ -1,0 +1,37 @@
+$OpenBSD: patch-index_io_c,v 1.1 2017/05/07 21:41:51 stu Exp $
+
+Index: index/io.c
+--- index/io.c.orig
++++ index/io.c
+@@ -221,6 +221,7 @@ CHAR *filter[MAX_FILTER];
+ CHAR *filter_command[MAX_FILTER];
+ struct stat filstbuf;
+ 
++void
+ read_filters(index_dir, dofilter)
+ char	*index_dir;
+ int	dofilter;
+@@ -1300,6 +1301,7 @@ get_filename_index(name)
+ 	return e->index;
+ }
+ 
++void
+ insert_filename(name, name_index)
+ 	char	*name;
+ 	int	name_index;
+@@ -1352,6 +1354,7 @@ insert_filename(name, name_index)
+ 	(*pe)->index = name_index;
+ }
+ 
++void
+ change_filename(name, len, index, newname)
+ 	char	*name;
+ 	int	len;
+@@ -1374,6 +1377,7 @@ change_filename(name, len, index, newname)
+ 	return;
+ }
+ 
++void
+ delete_filename(name, name_index)
+ 	char	*name;
+ 	int	name_index;
