@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_mixer_h,v 1.1 2017/05/07 17:17:44 espie Exp $
+default constructor must be declared first.
+
+Index: src/mixer.h
+--- src/mixer.h.orig
++++ src/mixer.h
+@@ -46,7 +46,7 @@ class Mixer (private)
+     bool audioHWInitialized;
+ 
+ public:
+-    Mixer(MixerMode mmode);
++    Mixer(MixerMode mmode = Realtime);
+     ~Mixer();
+     void Play();
+     void Pause();
