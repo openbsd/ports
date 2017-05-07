@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_calendar_c,v 1.1 2017/05/07 18:01:21 espie Exp $
+
+Index: src/calendar.c
+--- src/calendar.c.orig
++++ src/calendar.c
+@@ -37,6 +37,7 @@ extern int errno;
+ 
+ char *error_description();
+ 
++void
+ scan_calendar()
+ {
+ 	FILE *calendar;

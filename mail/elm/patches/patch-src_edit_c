@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_edit_c,v 1.1 2017/05/07 18:01:21 espie Exp $
+
+Index: src/edit.c
+--- src/edit.c.orig
++++ src/edit.c
+@@ -70,7 +70,7 @@ edit_mailbox()
+ 	int	len;
+ 
+ 	if (!current_folder)
+-	  return;
++	  return(0);
+ 
+ 	if(current_folder->folder_type == SPOOL) {
+ 	  if(save_file_stats(current_folder->cur_folder) != 0) {
