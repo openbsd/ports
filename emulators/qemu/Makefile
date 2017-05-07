@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.161 2017/05/06 19:25:18 uaa Exp $
+# $OpenBSD: Makefile,v 1.162 2017/05/07 08:43:28 ajacoutot Exp $
 
 USE_WXNEEDED=	Yes
 
@@ -7,7 +7,7 @@ ONLY_FOR_ARCHS=	aarch64 amd64 arm i386 powerpc sparc64
 COMMENT=	multi system emulator
 
 DISTNAME=	qemu-2.9.0
-REVISION=	0
+REVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://wiki.qemu.org/download/
 EXTRACT_SUFX=	.tar.bz2
@@ -23,7 +23,7 @@ WANTLIB=	SDL X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama \
 		Xrandr Xrender atk-1.0 bz2 c cairo curl drm epoxy fdt \
 		fontconfig freetype gbm gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 \
 		glib-2.0 gnutls gobject-2.0 gthread-2.0 gtk-x11-2.0 intl \
-		iscsi jpeg lzo2 m nettle nfs pango-1.0 pangocairo-1.0 \
+		iscsi jpeg lzo2 m ncursesw nettle nfs pango-1.0 pangocairo-1.0 \
 		pangoft2-1.0 pixman-1 png pthread pthread-stubs ssh2 \
 		usb-1.0 util vte z
 
@@ -79,7 +79,6 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--host-cc="${CC}" \
 		--extra-cflags="${EXTRA_CFLAGS}" \
 		--extra-ldflags="${EXTRA_LDFLAGS}" \
-		--enable-curses \
 		--disable-bsd-user \
 		--disable-gcrypt \
 		--disable-smartcard \
