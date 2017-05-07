@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_ptlib_common_osutils_cxx,v 1.5 2017/05/07 20:48:29 espie Exp $
+
+Index: src/ptlib/common/osutils.cxx
+--- src/ptlib/common/osutils.cxx.orig
++++ src/ptlib/common/osutils.cxx
+@@ -49,6 +49,8 @@
+ #include <ptlib/msos/ptlib/debstrm.h>
+ #endif
+ 
++#include<unistd.h>
++
+ 
+ static const char * const VersionStatus[PProcess::NumCodeStatuses] = { "alpha", "beta", "." };
+ static const char DefaultRollOverPattern[] = "_yyyy_MM_dd_hh_mm";

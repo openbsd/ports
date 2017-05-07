@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_ptlib_unix_tlibthrd_cxx,v 1.1 2017/05/07 20:48:29 espie Exp $
+--- src/ptlib/unix/tlibthrd.cxx.orig	Fri Apr 28 01:44:49 2017
++++ src/ptlib/unix/tlibthrd.cxx	Fri Apr 28 01:44:58 2017
+@@ -37,6 +37,7 @@
+ #include <sched.h>
+ #include <pthread.h>
+ #include <sys/resource.h>
++#include <unistd.h>
+ 
+ #ifdef P_RTEMS
+ #define SUSPEND_SIG SIGALRM
