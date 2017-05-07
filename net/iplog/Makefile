@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2015/05/17 11:42:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2017/05/07 20:25:32 schwarze Exp $
 
 COMMENT=	TCP/IP traffic logging tool
 
 DISTNAME=	iplog-2.2.3
-REVISION=	0
+REVISION=	1
 CATEGORIES=	net security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ojnk/}
 
@@ -13,7 +13,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=		c pcap pthread
 
 USE_GMAKE=	Yes
-USE_GROFF =	Yes
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu
 
