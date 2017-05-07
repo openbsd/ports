@@ -1,9 +1,10 @@
-$OpenBSD: patch-gtk_c,v 1.4 2015/11/22 19:34:00 landry Exp $
+$OpenBSD: patch-gtk_c,v 1.5 2017/05/07 16:45:12 landry Exp $
 Add 'online help' menu entry to open help in browser
---- gtk.c.orig	Tue Nov 17 19:47:29 2015
-+++ gtk.c	Sun Nov 22 20:15:45 2015
-@@ -2245,6 +2245,13 @@ static void menu_config_event(GtkMenuItem *menuitem, g
-     resize_fe(fe);
+Index: gtk.c
+--- gtk.c.orig
++++ gtk.c
+@@ -2317,6 +2317,13 @@ static void menu_config_event(GtkMenuItem *menuitem, g
+     midend_redraw(fe->me);
  }
  
 +static void menu_help_event(GtkMenuItem *menuitem, gpointer data)
@@ -16,7 +17,7 @@ Add 'online help' menu entry to open help in browser
  static void menu_about_event(GtkMenuItem *menuitem, gpointer data)
  {
      frontend *fe = (frontend *)data;
-@@ -2571,6 +2578,12 @@ static frontend *new_window(char *arg, int argtype, ch
+@@ -2661,6 +2668,12 @@ static frontend *new_window(char *arg, int argtype, ch
                       G_CALLBACK(menu_about_event), fe);
      gtk_widget_show(menuitem);
  
@@ -29,7 +30,7 @@ Add 'online help' menu entry to open help in browser
  #ifdef STYLUS_BASED
      menuitem=gtk_button_new_with_mnemonic("_Redo");
      g_object_set_data(G_OBJECT(menuitem), "user-data",
-@@ -2748,7 +2761,7 @@ char *fgetline(FILE *fp)
+@@ -2862,7 +2875,7 @@ static void list_presets_from_menu(struct preset_menu 
  int main(int argc, char **argv)
  {
      char *pname = argv[0];

@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.11 2015/11/22 19:34:00 landry Exp $
+# $OpenBSD: Makefile,v 1.12 2017/05/07 16:45:12 landry Exp $
 
 COMMENT =	collection of puzzles games
 
-DISTNAME =	puzzles-20151117
+DISTNAME =	puzzles-20170507
 CATEGORIES =	games
 
-MASTER_SITES =	http://rhaalovely.net/stuff/
+MASTER_SITES =	https://rhaalovely.net/stuff/
 HOMEPAGE =	http://www.chiark.greenend.org.uk/~sgtatham/puzzles/
 
 #gitweb generates tarballs on the fly with varying timestamps
-GIT_COMMIT =	2acd8baae8e411fae3235a5ab5c25b7523e55132
-GIT_COMMIT_SHORT = 2acd8ba
-GITWEB_URL =	http://tartarus.org/~simon-git/gitweb/
+GIT_COMMIT =	cce13ed7129a06fe7454f9e10906cb6663de45f7
+GIT_COMMIT_SHORT = cce13ed
+GITWEB_URL =	https://git.tartarus.org/
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
@@ -33,7 +33,7 @@ WANTLIB += gtk-x11-2.0 m pthread z
 
 # needs textproc/halibut, convert from ImageMagick, and a running X
 dist:
-	ftp -o - "${GITWEB_URL}?p=puzzles.git;a=snapshot;h=${GIT_COMMIT};sf=tgz" | \
+	ftp -o - "${GITWEB_URL}?p=simon/puzzles.git;a=snapshot;h=${GIT_COMMIT};sf=tgz" | \
 	tar -C /tmp -xzf - && \
 		cd /tmp/puzzles-${GIT_COMMIT_SHORT} && \
 		perl mkfiles.pl && \
