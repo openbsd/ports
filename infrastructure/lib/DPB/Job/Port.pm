@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.169 2017/04/14 16:43:40 espie Exp $
+# $OpenBSD: Port.pm,v 1.170 2017/05/07 14:50:14 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -98,7 +98,7 @@ sub tweak_args
 	if ($job->{special}) {
 		push(@$args, "USE_MFS=Yes");
 	}
-	if ($builder->{fetch}) {
+	if ($builder->{nochecksum}) {
 		push(@$args, "NO_CHECKSUM=Yes");
 	}
 }

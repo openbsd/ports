@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortBuilder.pm,v 1.76 2017/04/19 15:13:12 espie Exp $
+# $OpenBSD: PortBuilder.pm,v 1.77 2017/05/07 14:50:14 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -48,6 +48,9 @@ sub new
 	}
 	if ($state->opt('U')) {
 		$self->{forceupdate} = 1;
+	}
+	if ($self->{fetch} && $state->defines('NO_CHECKSUM')) {
+		$self->{nochecksum} = 1;
 	}
 	$self->init;
 	return $self;
