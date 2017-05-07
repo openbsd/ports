@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Distfile.pm,v 1.9 2015/10/30 10:27:50 espie Exp $
+# $OpenBSD: Distfile.pm,v 1.10 2017/05/07 16:50:22 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -24,6 +24,15 @@ our @ISA = (qw(DPB::UserProxy));
 
 # same distfile may exist in several ports.
 # so we keep a hash based on full storage path.
+
+sub normalize
+{
+	my ($class, $file) = @_;
+	# XXX collapse name/../ aka "semarie rule"
+	while ($file =~ s/[^\/]+\/\.\.\///) {
+	}
+	return $file;
+}
 
 my $cache = {};
 
@@ -78,6 +87,9 @@ sub new
 {
 	my ($class, $file, $url, $dir, @r) = @_;
 	my $full = (defined $dir) ? join('/', $dir->string, $file) : $file;
+
+	$full = DPB::Distfile->normalize($full);
+		
 	if (!defined $url) {
 		$url = $file;
 	}

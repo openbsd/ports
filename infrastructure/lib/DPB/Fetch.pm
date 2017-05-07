@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.75 2016/05/21 12:20:10 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.76 2017/05/07 16:50:22 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -131,6 +131,22 @@ sub run_expire_old
 	return 1;
 }
 
+sub parse_old
+{
+	my ($self, $fh, $fh2) = @_;
+	while (<$fh>) {
+		if (my ($ts, $file, $sha) =
+		    m/^(\d+)\s+SHA256\s*\((.*)\) \= (.*\=)$/) {
+			$file = DPB::Distfile->normalize($file);
+			if (!$self->{known_sha}{$sha}{$file}) {
+				$self->mark_sha($sha, $file);
+				$self->{known_file}{$file} = 1;
+				print $fh2 "$ts SHA256 ($file) = $sha\n";
+			}
+		}
+	}
+}
+
 sub expire_old
 {
 	my $self = shift;
@@ -139,18 +155,8 @@ sub expire_old
 	chdir($distdir) or die "can't change to distdir: $!";
 	my $fh2 = $self->open(">", "history.new");
 	return if !$fh2;
-	my $fh = $self->open('<', "history");
-	if ($fh) {
-		while (<$fh>) {
-			if (m/^\d+\s+SHA256\s*\((.*)\) \= (.*\=)$/) {
-				my ($file, $sha) = ($1, $2);
-				if (!$self->{known_sha}{$sha}{$file}) {
-					$self->mark_sha($sha, $file);
-					$self->{known_file}{$file} = 1;
-					print $fh2 $_;
-				}
-			}
-		}
+	if (my $fh = $self->open('<', "history")) {
+		$self->parse_old($fh, $fh2);
 		close $fh;
 	}
 	while (my ($sha, $file) = each %{$self->{reverse}}) {
@@ -221,10 +227,11 @@ sub read_checksums
 	return if !defined $fh;
 	my $r = { size => {}, sha => {}};
 	while (<$fh>) {
-		if (m/^SIZE \((.*)\) \= (\d+)$/) {
-			$r->{size}{$1} = $2;
-		} elsif (m/^SHA256 \((.*)\) \= (.*)$/) {
-			$r->{sha}{$1} = OpenBSD::sha->fromstring($2);
+		if (my ($file, $sz) = m/^SIZE \((.*)\) \= (\d+)$/) {
+			$r->{size}{DPB::Distfile->normalize($file)} = $sz;
+		} elsif (my ($file2, $sha) = m/^SHA256 \((.*)\) \= (.*)$/) {
+			$r->{sha}{DPB::Distfile->normalize($file2)} = 
+			    OpenBSD::sha->fromstring($sha);
 		}
 		# next!
 	}
