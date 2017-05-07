@@ -1,0 +1,23 @@
+$OpenBSD: patch-icc_icc_h,v 1.1 2017/05/07 13:38:36 espie Exp $
+C99 is not just MSC
+
+Index: icc/icc.h
+--- icc/icc.h.orig
++++ icc/icc.h
+@@ -99,8 +99,16 @@
+ #define PF64PREC "ll"		/* printf format precision specifier */
+ #define CF64PREC "LL"		/* Constant precision specifier */
+ 
++#ifdef _MSC_VER
+ #ifndef ATTRIBUTE_NORETURN
+ # define ATTRIBUTE_NORETURN __declspec(noreturn)
++#endif
++#endif
++
++#ifdef __GNUC__
++#ifndef ATTRIBUTE_NORETURN
++# define ATTRIBUTE_NORETURN __attribute__((noreturn))
++#endif
+ #endif
+ 
+ #else  /* !__STDC_VERSION__ */
