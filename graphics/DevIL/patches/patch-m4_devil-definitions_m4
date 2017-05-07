@@ -1,7 +1,19 @@
-$OpenBSD: patch-m4_devil-definitions_m4,v 1.1.1.1 2011/03/30 09:27:58 jasper Exp $
---- m4/devil-definitions.m4.orig	Wed Mar 25 13:30:42 2009
-+++ m4/devil-definitions.m4	Tue Mar 29 19:35:03 2011
-@@ -244,12 +244,12 @@ AC_DEFUN([SETTLE_MNG],
+$OpenBSD: patch-m4_devil-definitions_m4,v 1.2 2017/05/07 12:49:54 espie Exp $
+move to C99, fix C++
+
+Index: m4/devil-definitions.m4
+--- m4/devil-definitions.m4.orig
++++ m4/devil-definitions.m4
+@@ -6,6 +6,8 @@ dnl          ILU_CFLAGS="$ILU_CFLAGS $1"
+ dnl          ILUT_CFLAGS="$ILUT_CFLAGS $1"])
+ dnl IL_CFLAGS are present everywhere
+ 
++AC_DEFUN([ADD_ONLY_CFLAGS],
++	 [ONLY_CFLAGS="$ONLY_CFLAGS $1"])
+ 
+ dnl
+ dnl Check CPU Extensions
+@@ -244,12 +246,12 @@ AC_DEFUN([SETTLE_MNG],
  
  AC_DEFUN([SETTLE_PNG],
           [DEVIL_IL_LIB([png.h],
@@ -17,3 +29,21 @@ $OpenBSD: patch-m4_devil-definitions_m4,v 1.1.1.1 2011/03/30 09:27:58 jasper Exp
            AS_IF([test "x$lib_test_result" = "xyes"],
                  [MAYBE_OPTIONAL_DEPENDENCY([IL],
                                             [libpng]) ]) ]) 
+@@ -285,14 +287,14 @@ AC_DEFUN([DEVIL_CHECK_RESTRICT],
+ 
+ AC_DEFUN([DEVIL_CHECK_RESTRICT_GNU99],
+          [TMP_CFLAGS="$CFLAGS"
+-          CFLAGS="$CFLAGS -std=gnu99 -fgnu89-inline"
+-          AC_MSG_CHECKING([restrict gnu99 keyword])
++          CFLAGS="$CFLAGS -std=c99 -fgnu89-inline"
++          AC_MSG_CHECKING([restrict c99 keyword])
+           AC_COMPILE_IFELSE([[void foo(void * restrict test){}]],
+ 	                    [AC_DEFINE([RESTRICT_KEYWORD],
+ 	  			       [1],
+ 				       [restric keyword available])
+ 	                     AC_MSG_RESULT([yes])
+ 	                     CFLAGS="$TMP_CFLAGS"
+-                             ADD_CFLAGS(-std=gnu99 -fgnu89-inline)],
++                             ADD_ONLY_CFLAGS(-std=c99 -fgnu89-inline)],
+ 			    [AC_MSG_RESULT([no])
+ 	                     CFLAGS="$TMP_CFLAGS"]) ])

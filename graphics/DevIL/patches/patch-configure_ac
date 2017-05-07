@@ -1,0 +1,14 @@
+$OpenBSD: patch-configure_ac,v 1.1 2017/05/07 12:49:54 espie Exp $
+separate CFLAGS that don't work in C++
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -433,6 +433,7 @@ AM_CONDITIONAL([WINDOWS_BUILD],
+ 
+ dnl Final substitution
+ AC_SUBST([GENERAL_CFLAGS])
++AC_SUBST([ONLY_CFLAGS])
+ AC_SUBST([IL_CFLAGS])
+ AC_SUBST([IL_LIBS])
+ AC_SUBST([ILU_CFLAGS])
