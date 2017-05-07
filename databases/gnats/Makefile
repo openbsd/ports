@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.35 2017/04/19 15:08:11 jca Exp $
+# $OpenBSD: Makefile,v 1.36 2017/05/07 19:28:55 schwarze Exp $
 
 COMMENT=	GNU Problem Report Management System
 
 DISTNAME=	gnats-3.113.1
-REVISION=	16
+REVISION=	17
 CATEGORIES=	databases devel
 MASTER_SITES=	${MASTER_SITE_GNU:=gnats/}
 
@@ -14,7 +14,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=		c
 
-USE_GROFF=	Yes
 NO_TEST=	Yes
 RUN_DEPENDS=	www/p5-CGI
 
