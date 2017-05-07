@@ -1,0 +1,61 @@
+$OpenBSD: patch-lqr_lqr_energy_c,v 1.1 2017/05/07 14:29:35 espie Exp $
+C99 inlines require an extern decl
+
+Index: lqr/lqr_energy.c
+--- lqr/lqr_energy.c.orig
++++ lqr/lqr_energy.c
+@@ -44,6 +44,8 @@
+ 
+ /* read normalised pixel value from
+  * rgb buffer at the given index */
++extern inline gdouble
++lqr_pixel_get_norm(void *rgb, gint rgb_ind, LqrColDepth col_depth);
+ inline gdouble
+ lqr_pixel_get_norm(void *rgb, gint rgb_ind, LqrColDepth col_depth)
+ {
+@@ -66,6 +68,8 @@ lqr_pixel_get_norm(void *rgb, gint rgb_ind, LqrColDept
+ 
+ /* write pixel from normalised value
+  * in rgb buffer at the given index */
++extern inline void
++lqr_pixel_set_norm(gdouble val, void *rgb, gint rgb_ind, LqrColDepth col_depth);
+ inline void
+ lqr_pixel_set_norm(gdouble val, void *rgb, gint rgb_ind, LqrColDepth col_depth)
+ {
+@@ -90,6 +94,8 @@ lqr_pixel_set_norm(gdouble val, void *rgb, gint rgb_in
+     }
+ }
+ 
++extern inline gdouble
++lqr_pixel_get_rgbcol(void *rgb, gint rgb_ind, LqrColDepth col_depth, LqrImageType image_type, gint channel);
+ inline gdouble
+ lqr_pixel_get_rgbcol(void *rgb, gint rgb_ind, LqrColDepth col_depth, LqrImageType image_type, gint channel)
+ {
+@@ -115,6 +121,8 @@ lqr_pixel_get_rgbcol(void *rgb, gint rgb_ind, LqrColDe
+     }
+ }
+ 
++extern inline gdouble
++lqr_carver_read_brightness_grey(LqrCarver *r, gint x, gint y);
+ inline gdouble
+ lqr_carver_read_brightness_grey(LqrCarver *r, gint x, gint y)
+ {
+@@ -123,6 +131,8 @@ lqr_carver_read_brightness_grey(LqrCarver *r, gint x, 
+     return lqr_pixel_get_norm(r->rgb, rgb_ind, r->col_depth);
+ }
+ 
++extern inline gdouble
++lqr_carver_read_brightness_std(LqrCarver *r, gint x, gint y);
+ inline gdouble
+ lqr_carver_read_brightness_std(LqrCarver *r, gint x, gint y)
+ {
+@@ -205,6 +215,9 @@ lqr_carver_read_brightness(LqrCarver *r, gint x, gint 
+     return bright * alpha_fact;
+ }
+ 
++extern
++inline gdouble
++lqr_carver_read_luma_std(LqrCarver *r, gint x, gint y);
+ inline gdouble
+ lqr_carver_read_luma_std(LqrCarver *r, gint x, gint y)
+ {
