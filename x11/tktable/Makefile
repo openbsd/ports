@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.30 2016/03/11 20:28:33 naddy Exp $
+# $OpenBSD: Makefile,v 1.31 2017/05/07 21:44:43 stu Exp $
 
 COMMENT =		table/matrix widget extension to Tcl/Tk
 
-DOTVER =		2.10
-VER =			${DOTVER:S/.//}
-DISTNAME =		Tktable${DOTVER}
-PKGNAME =		Tktable-${DOTVER}
-REVISION =		3
-SHARED_LIBS =		Tktable${VER} 0.0
+V =			2.10
+
+DISTNAME =		Tktable${V}
+PKGNAME =		Tktable-${V}
+REVISION =		4
 CATEGORIES =		x11
 HOMEPAGE =		http://tktable.sourceforge.net/
 MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
@@ -23,18 +22,17 @@ RUN_DEPENDS =		${MODTK_RUN_DEPENDS}
 FAKE_FLAGS =		INSTALL_PROGRAM="${INSTALL_DATA}"
 SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	gnu
+
 CONFIGURE_ARGS +=	--with-tcl=${MODTCL_LIBDIR} \
 			--with-tk=${MODTK_LIBDIR} \
 			--with-tkinclude=${MODTK_INCDIR}
+
 USE_GROFF =		Yes
+TEST_IS_INTERACTIVE =	X11
+TEST_TARGET =		test
+SUBST_VARS +=		TKTABLE_VER
 
-CONFIGURE_ENV +=	SHLIB_VERSION=${LIBTktable${VER}_VERSION}
-
-TEST_IS_INTERACTIVE =x11
-TEST_TARGET =	test
-SUBST_VARS +=		TKTABLE_LIB
-
-TKTABLE_LIB =		libTktable${VER}
+TKTABLE_VER =		${V:S/.//}
 
 SCRIPTS_TCLSH =		basic.tcl buttons.tcl command.tcl debug.tcl dynarows.tcl \
 			maxsize.tcl spreadsheet.tcl valid.tcl
@@ -46,7 +44,7 @@ pre-configure:
 
 do-install:
 	${INSTALL_DATA_DIR} ${DESTDIR}${MODTCL_TCLDIR}/tktable
-	${INSTALL_DATA} ${WRKBUILD}/${TKTABLE_LIB}.so.${LIBTktable${VER}_VERSION} \
+	${INSTALL_DATA} ${WRKBUILD}/libTktable${TKTABLE_VER}.so \
 		${WRKBUILD}/pkgIndex.tcl ${WRKSRC}/library/tkTable.tcl \
 		${WRKSRC}/library/tktable.py ${DESTDIR}${MODTCL_TCLDIR}/tktable
 	${INSTALL_DATA_DIR} ${PREFIX}/man/mann

@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.10 2015/03/16 18:08:00 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.11 2017/05/07 21:44:43 stu Exp $
 lib/tcl/tktable/
-@lib lib/tcl/tktable/${TKTABLE_LIB}.so.${LIBTktable210_VERSION}
+lib/tcl/tktable/libTktable${TKTABLE_VER}.so
 lib/tcl/tktable/pkgIndex.tcl
 lib/tcl/tktable/tkTable.tcl
 lib/tcl/tktable/tktable.py
