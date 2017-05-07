@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2017/04/10 11:46:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2017/05/07 18:36:32 jasper Exp $
 
 COMMENT=	c++ compliant CGI applications libraries
 
-DISTNAME=	cgicc-3.2.1
-REVISION=	5
+DISTNAME=	cgicc-3.2.16
+
 CATEGORIES=	www devel
 SHARED_LIBS=	cgicc	5.0
 MODGNU_SHARED_LIBS=cgicc ''
@@ -16,11 +16,9 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += m ${LIBCXX}
 
-
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--enable-static
-MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/example ${WRKSRC}/support
 
-FAKE_FLAGS=	docdir=${DESTDIR}${PREFIX}/share/doc/cgicc
+FAKE_FLAGS=	docdir=${PREFIX}/share/doc/cgicc
 
 .include <bsd.port.mk>
