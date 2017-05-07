@@ -1,0 +1,20 @@
+$OpenBSD: patch-win_jtp_winjtp_c,v 1.1 2017/05/07 14:40:40 espie Exp $
+
+Index: win/jtp/winjtp.c
+--- win/jtp/winjtp.c.orig
++++ win/jtp/winjtp.c
+@@ -1504,12 +1504,12 @@ menu_item **menu_list;
+   if (!tempwindow)
+   {
+     jtp_messagebox("ERROR: Can't find window for menu selection!");
+-    return;
++    return(-1);
+   }  
+   if (!tempwindow->menu)
+   { 
+     jtp_messagebox("ERROR: Window does not have a menu!");
+-    return;
++    return(-1);
+   }  
+ 
+   tempwindow->menu->selectiontype = how;
