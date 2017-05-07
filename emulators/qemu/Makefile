@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.162 2017/05/07 08:43:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.163 2017/05/07 20:33:42 sthen Exp $
 
 USE_WXNEEDED=	Yes
 
@@ -80,6 +80,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--extra-cflags="${EXTRA_CFLAGS}" \
 		--extra-ldflags="${EXTRA_LDFLAGS}" \
 		--disable-bsd-user \
+		--enable-curses \
 		--disable-gcrypt \
 		--disable-smartcard \
 		--disable-spice \
