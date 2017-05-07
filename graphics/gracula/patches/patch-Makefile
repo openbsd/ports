@@ -1,0 +1,17 @@
+$OpenBSD: patch-Makefile,v 1.1 2017/05/07 20:24:01 espie Exp $
+Obey CFLAGS
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -13,8 +13,8 @@
+ ## Use maximum optimization. On busy web sites we want gracula to work as
+ ## fast as possible. However, these options may not work with a compiler
+ ## other than gcc. If that is the case, comment them out.
+-CFLAGS+= -O3 -fexpensive-optimizations -frerun-cse-after-loop \
+-	-fomit-frame-pointer
++#CFLAGS+= -O3 -fexpensive-optimizations -frerun-cse-after-loop \
++#	-fomit-frame-pointer
+ ## Comment out the next line if you only want 32-bit counters,
+ ## or if you get linking errors (since it, too, may only work with gcc):
+ CFLAGS+=	-DGCLUSELONGLONG
