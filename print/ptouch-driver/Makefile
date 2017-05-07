@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/12/12 14:54:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2017/05/07 18:27:17 jasper Exp $
 
 COMMENT=	Brother P-touch CUPS driver
 
@@ -26,6 +26,8 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -pthread"
 CONFIGURE_ARGS=	libdir=${PREFIX}/libexec
+
+CFLAGS +=	-fgnu89-inline
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/driver/ptouch.xml
