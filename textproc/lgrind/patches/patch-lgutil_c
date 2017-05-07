@@ -1,6 +1,7 @@
-$OpenBSD: patch-lgutil_c,v 1.1 2003/05/01 11:54:15 avsm Exp $
---- lgutil.c.orig	Tue Apr 15 22:55:24 2003
-+++ lgutil.c	Tue Apr 15 22:56:21 2003
+$OpenBSD: patch-lgutil_c,v 1.2 2017/05/07 22:15:50 espie Exp $
+Index: lgutil.c
+--- lgutil.c.orig
++++ lgutil.c
 @@ -113,7 +113,7 @@ void Internal_Help_Language_List()
  		check=0;
  		if (*config=='\n' || config[strlen(config)-2]!='\\')
@@ -10,3 +11,12 @@ $OpenBSD: patch-lgutil_c,v 1.1 2003/05/01 11:54:15 avsm Exp $
  		if (check!=0) AddToLList(config, &currlch, &llch);
  	} while (strcmp((*currlch).name, "EndOfLanguageDefinitions")!=0);
  	rch=lch;
+@@ -277,7 +277,7 @@ varsubst *parsevartab(char* fname)
+ 	char linebuf[201], *cp;
+ 	varsubst *varsubsts=NULL, *substitem, *substlistpos;
+ 
+-	if (f==NULL) return;
++	if (f==NULL) return varsubsts;
+ 	while (!feof(f))
+ 	{
+ 		fscanf(f, "%200[^\n]", linebuf);
