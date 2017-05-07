@@ -1,0 +1,14 @@
+$OpenBSD: patch-read_c,v 1.1 2017/05/07 17:46:24 espie Exp $
+
+Index: read.c
+--- read.c.orig
++++ read.c
+@@ -70,7 +70,7 @@ int *maxmoves, num;
+             row_ptr++;
+         };
+         fgets(screen_name,60,fp);
+-        screen_name[61] = '\0';
++        screen_name[60] = '\0';
+         screen_name[strlen(screen_name)-1] = '\0';
+         if(fscanf(fp,"%d",maxmoves) != 1)
+             *maxmoves=0;

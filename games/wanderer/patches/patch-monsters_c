@@ -1,0 +1,13 @@
+$OpenBSD: patch-monsters_c,v 1.1 2017/05/07 17:46:24 espie Exp $
+
+Index: monsters.c
+--- monsters.c.orig
++++ monsters.c
+@@ -51,7 +51,6 @@ extern struct mon_rec start_of_list;
+ struct mon_rec *make_monster(x,y)
+ int x,y;
+ {
+-    char *malloc();
+     #define MALLOC (struct mon_rec *)malloc(sizeof(struct mon_rec))
+     struct mon_rec *monster;
+     if(tail_of_list->next == NULL)

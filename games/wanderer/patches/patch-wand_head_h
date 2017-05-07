@@ -1,0 +1,30 @@
+$OpenBSD: patch-wand_head_h,v 1.1 2017/05/07 17:46:24 espie Exp $
+
+Index: wand_head.h
+--- wand_head.h.orig
++++ wand_head.h
+@@ -21,9 +21,12 @@
+ 
+ 
+ #include <stdio.h>
+-#include <ncurses.h>
++#include <stdlib.h>
++#include <curses.h>
+ #include <string.h>
+ #include <fcntl.h>
++#include <unistd.h>
++#include <err.h>
+ 
+ #undef MSDOS /* Marina */
+ 
+@@ -57,8 +60,8 @@
+ 
+ /* To disable the recording of hiscores from games restored from saves         */
+ /* #define NO_RESTORED_GAME_HISCORES  */
+-/* #define COMPARE_BY_NAME  /* define this to compare by name, not uid         */
+-/* #define NO_ENCRYPTION /* define this to disable the savefile encryptor */
++/* #define COMPARE_BY_NAME  * define this to compare by name, not uid         */
++/* #define NO_ENCRYPTION * define this to disable the savefile encryptor */
+ #define NOISY    /* do we want bells in the game ? */
+ 
+                 /****** OTHER PARAMETERS ******/

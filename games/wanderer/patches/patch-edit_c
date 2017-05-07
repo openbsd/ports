@@ -1,11 +1,29 @@
-$OpenBSD: patch-edit_c,v 1.1 2003/05/02 16:14:13 pvalchev Exp $
---- edit.c.orig	Thu Mar 13 04:21:17 2003
-+++ edit.c	Sun Apr 20 11:09:31 2003
-@@ -20,6 +20,7 @@
- ***************************************************************************/
- 
- 
-+#include <stdlib.h>
- #include "wand_head.h"
- 
- extern char *playscreen();
+$OpenBSD: patch-edit_c,v 1.2 2017/05/07 17:46:24 espie Exp $
+Index: edit.c
+--- edit.c.orig
++++ edit.c
+@@ -61,6 +61,7 @@ static char *inst[] = { "    O  Boulder",
+ *                    exit and player numbers,            *
+ *                    hanging boulders/arrows etc         *
+ **********************************************************/
++void
+ check_legality()
+ {
+ int ercount,cages,hanging,bmons,tele,arrival,you,mons,exits;
+@@ -256,6 +257,7 @@ edit_screen = oldname;
+ /*********************************************
+ *                 screen_read                *
+ **********************************************/
++void
+ screen_read(maxmoves)
+     int *maxmoves;
+ {
+@@ -455,7 +457,7 @@ while(!quit)
+         addstr("New name: ");
+         refresh();
+         readstring(screen_name,58);
+-        screen_name[61] = '\0';
++        screen_name[60] = '\0';
+         instruct();
+         move(19,0);
+         addstr("                                                                          ");

@@ -1,0 +1,50 @@
+$OpenBSD: patch-game_c,v 1.1 2017/05/07 17:46:24 espie Exp $
+
+Index: game.c
+--- game.c.orig
++++ game.c
+@@ -400,7 +400,7 @@ char *playscreen(int *num, long *score, int *bell, int
+         #endif
+             case ':': *score+=1;
+                 move(3,48);
+-                sprintf(buffer,"%d\t %d",*score,nf);
++                sprintf(buffer,"%ld\t %d",*score,nf);
+                 (void) addstr(buffer);
+             case ' ':
+                 screen[y][x] = ' ';
+@@ -431,7 +431,7 @@ char *playscreen(int *num, long *score, int *bell, int
+                     mx = my = -1;
+                     *score+=100;
+                     move(3,48);
+-                    sprintf(buffer,"%d\t %d\t %d ",*score,nf,diamonds);
++                    sprintf(buffer,"%ld\t %d\t %d ",*score,nf,diamonds);
+                     (void) addstr(buffer);
+                     draw_symbol(50,11,' ');
+                     move(12,56); addstr("              ");
+@@ -514,7 +514,7 @@ char *playscreen(int *num, long *score, int *bell, int
+                     mx = my = -1;
+                     *score+=100;
+                     move(3,48);
+-                    sprintf(buffer,"%d\t %d\t %d ",*score,nf,diamonds);
++                    sprintf(buffer,"%ld\t %d\t %d ",*score,nf,diamonds);
+                     (void) addstr(buffer);
+                     draw_symbol(50,11,' ');
+                        move(12,56); addstr("              ");
+@@ -562,7 +562,7 @@ char *playscreen(int *num, long *score, int *bell, int
+                     mx = my = -1;
+                     *score+=100;
+                     move(3,48);
+-                    sprintf(buffer,"%d\t %d\t %d ",*score,nf,diamonds);
++                    sprintf(buffer,"%ld\t %d\t %d ",*score,nf,diamonds);
+                     (void) addstr(buffer);
+                     draw_symbol(50,11,' ');
+                        move(12,56); addstr("              ");
+@@ -636,7 +636,7 @@ char *playscreen(int *num, long *score, int *bell, int
+                     sy = y;
+                     *score += 20;
+                     move(3,48);
+-                    sprintf(buffer,"%d\t %d\t %d ",*score,nf,diamonds);
++                    sprintf(buffer,"%ld\t %d\t %d ",*score,nf,diamonds);
+                     (void) addstr(buffer);
+                     if(!debug_disp)
+                         display(sx,sy,frow,*score);

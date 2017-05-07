@@ -1,0 +1,26 @@
+$OpenBSD: patch-scores_c,v 1.1 2017/05/07 17:46:24 espie Exp $
+
+Index: scores.c
+--- scores.c.orig
++++ scores.c
+@@ -28,20 +28,10 @@
+ #define UNLOCK
+ 
+ #else
+-/*#define LOCK     flock( fp->_cnt , LOCK_EX ) /* peeked at stdio.h ! */
+-/*#define UNLOCK   flock( fp->_cnt , LOCK_UN ) /*                     */
+-/* #define LOCK while((lock = creat(LOCKFILE,0))==-1) Not a good way  */
+-
+ #define LOCK if((lock = open(LOCKFILE, O_CREAT | O_TRUNC | O_WRONLY, "r"))==-1){errx (1,"%s","Lockfile creation failed\n"); exit(1);} /* Marina */
+ 
+ #define UNLOCK unlink(LOCKFILE)
+ 
+-#endif
+-
+-#ifndef   MSDOS        /* M001 */
+-extern int getuid();
+-#else
+-#define   getuid()        0
+ #endif
+ 
+ #ifdef    COMPARE_BY_NAME

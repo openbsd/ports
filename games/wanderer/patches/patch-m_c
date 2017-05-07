@@ -1,11 +1,49 @@
-$OpenBSD: patch-m_c,v 1.1 2003/05/02 16:14:13 pvalchev Exp $
---- m.c.orig	Thu Mar 13 04:22:07 2003
-+++ m.c	Sun Apr 20 11:09:05 2003
-@@ -20,6 +20,7 @@
- ***************************************************************************/
+$OpenBSD: patch-m_c,v 1.2 2017/05/07 17:46:24 espie Exp $
+Index: m.c
+--- m.c.orig
++++ m.c
+@@ -147,23 +147,24 @@ char *get_name(void)
+ char *name;
+ char *endchar;
  
- 
-+#include <stdlib.h>
- #include <sys/time.h>
- #include "wand_head.h"
- 
+-    if((name = (char *)getenv("NEWNAME")) == NULL)
+-        if((name = (char *)getenv("NAME")) == NULL)
+-            if((name = (char *)getenv("FULLNAME")) == NULL)
+-                if((name = (char *)getenv("USER")) == NULL)
+-                          if((name = (char *)getenv("LOGNAME")) == NULL)
++    if((name = getenv("NEWNAME")) == NULL)
++        if((name = getenv("NAME")) == NULL)
++            if((name = getenv("FULLNAME")) == NULL)
++                if((name = getenv("USER")) == NULL)
++                          if((name = getenv("LOGNAME")) == NULL)
+ #define ASKNAME /* Marina */
+ #ifdef        ASKNAME        /* M001 */
+                     {
+-                        name = (char *)malloc(80);
++                        name = malloc(80);
+                         if (name == NULL) {
+                             printf("malloc error\n"); /* Replace with Err* */
+                             exit(1);
+                         }
+                         printf("Name? "); fflush(stdout);
+                         fgets(name,80,stdin); /* get rid of gets Marina*/
+-                        endchar=strchr(name,'\0'); 
+-                        endchar='\0';
++                        endchar=strchr(name,'\n'); 
++			if (endchar)
++			    *endchar='\0';
+                         if (name[0] == '\0')
+                             name = "noname";
+                     }
+@@ -181,9 +182,9 @@ char *get_keys()
+ {
+     char *keys = NULL;
+     if( ! keys ) {
+-        if((keys = (char *)getenv("NEWKEYS")) == NULL)
++        if((keys = getenv("NEWKEYS")) == NULL)
+             {
+-            keys = (char *)malloc(5);
++            keys = malloc(5);
+            strcpy(keys,"kjhl");
+             }
+     }
