@@ -1,0 +1,19 @@
+$OpenBSD: patch-rocint_makefile,v 1.1 2017/05/07 23:57:16 espie Exp $
+
+Index: rocint/makefile
+--- rocint/makefile.orig
++++ rocint/makefile
+@@ -67,10 +67,10 @@ TMPOUTDIR=$(GENDIR)$(FS)rocint$(FS)bin
+ DEBUG=-g
+ BINDIR=..$(FS)$(COREDIR)bin
+ 
+-CPP=gcc
+-LNK=gcc
++CPP=$(CC)
++LNK=$(CC)
+ INCL_PATH=$(MOUNTPOINT)
+-CC_FLAGS=-c $(CC_EXTRA_FLAGS) $(DEBUG) -ansi -I$(INCL_PATH) -I$(GENDIR)
++CC_FLAGS=-c $(CC_EXTRA_FLAGS) $(CFLAGS) $(DEBUG) -ansi -I$(INCL_PATH) -I$(GENDIR)
+ 
+ all:
+ 	cd $(GENDIR)$(FS)rocint$(CS) ..$(FS)..$(FS)rocs$(FS)bin$(FS)ogen$(GENSUFFIX) ..$(FS)..$(FS)rocint$(FS)rocint.xml

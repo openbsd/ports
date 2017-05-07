@@ -1,0 +1,14 @@
+$OpenBSD: patch-rocs_public_rocs_h,v 1.1 2017/05/07 23:57:16 espie Exp $
+
+Index: rocs/public/rocs.h
+--- rocs/public/rocs.h.orig
++++ rocs/public/rocs.h
+@@ -40,7 +40,7 @@
+   #define _POSIX_SOURCE
+   #define __EXTENSIONS__
+ #elif defined __unix__
+-  #pragma message("--- [Unix] ---")
++/* SHHHH who cares */
+ #else
+   #error *** Unsupported Operating System ***
+ #endif

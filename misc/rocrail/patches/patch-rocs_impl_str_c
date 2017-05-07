@@ -1,0 +1,31 @@
+$OpenBSD: patch-rocs_impl_str_c,v 1.1 2017/05/07 23:57:16 espie Exp $
+
+Index: rocs/impl/str.c
+--- rocs/impl/str.c.orig
++++ rocs/impl/str.c
+@@ -21,6 +21,7 @@
+ #include <string.h>
+ #include <stdarg.h>
+ #include <time.h>
++#include <ctype.h>
+ 
+ #include "rocs/public/str.h"
+ #include "rocs/public/mem.h"
+@@ -520,7 +521,7 @@ static char* _createStampNoDotsID( RocsMemID id ) {
+ }
+ 
+ 
+-static char* _isoDate( long tt ) {
++static char* _isoDate( time_t tt ) {
+   struct tm* t  = NULL;
+ 
+   /* Alloc a string for the stamp; caller should freeup! */
+@@ -536,7 +537,7 @@ static char* _isoDate( long tt ) {
+   return s;
+ }
+ 
+-static char* _isoTime( long tt ) {
++static char* _isoTime( time_t tt ) {
+   struct tm* t  = NULL;
+ 
+   /* Alloc a string for the stamp; caller should freeup! */

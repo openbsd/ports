@@ -1,0 +1,23 @@
+$OpenBSD: patch-rocview_makefile,v 1.1 2017/05/07 23:57:16 espie Exp $
+
+Index: rocview/makefile
+--- rocview/makefile.orig
++++ rocview/makefile
+@@ -104,13 +104,13 @@ DEBUG=-g
+ DESTDIR=$(FS)opt$(FS)rocrail
+ BINDIR=..$(FS)rocs$(FS)bin
+ 
+-CPP=$(TOOLPREFIX)c++
+-CC=$(TOOLPREFIX)gcc
++CPP=$(TOOLPREFIX)$(CXX)
++CC=$(TOOLPREFIX)$(CC)
+ LNK=$(TOOLPREFIX)$(LINKTOOL)
+ INCL_PATH=$(MOUNTPOINT)
+-CC_FLAGS=-c $(CC_EXTRA_FLAGS) $(DEBUG) -I$(INCL_PATH) -I$(GENDIR)
++CC_FLAGS=-c $(CC_EXTRA_FLAGS) $(CFLAGS) $(DEBUG) -I$(INCL_PATH) -I$(GENDIR)
+ 
+-CC_WXFLAGS=-c $(CC_EXTRA_FLAGS) $(DEBUG) $(WX_FLAGS) $(WX_INCL) -I$(INCL_PATH) -I$(GENDIR)
++CC_WXFLAGS=-c $(CC_EXTRA_FLAGS) $(CFLAGS) $(DEBUG) $(WX_FLAGS) $(WX_INCL) -I$(INCL_PATH) -I$(GENDIR)
+ RRLIBS=$(OUTDIR)$(FS)librocrail.a $(OUTDIR)$(FS)libwrapper.a $(OUTDIR)$(FS)librocs.a
+ 
+ SRCS=impl$(FS)guiapp.cpp impl$(FS)item.cpp impl$(FS)locdlg.cpp impl$(FS)planpanel.cpp impl$(FS)propdlg.cpp impl$(FS)swdlg.cpp impl$(FS)streetdlg.cpp impl$(FS)bktext.cpp

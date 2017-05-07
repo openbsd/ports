@@ -1,0 +1,30 @@
+$OpenBSD: patch-rocs_makefile,v 1.1 2017/05/07 23:57:16 espie Exp $
+
+Index: rocs/makefile
+--- rocs/makefile.orig
++++ rocs/makefile
+@@ -85,11 +85,11 @@ OPENSSL=
+ SSLLIBS=
+ AR=$(TOOLPREFIX)ar
+ 
+-CPP=$(TOOLPREFIX)gcc
+-LNK=$(TOOLPREFIX)gcc
++CPP=$(TOOLPREFIX)$(CC)
++LNK=$(TOOLPREFIX)$(CC)
+ 
+ # --- compile flags ---
+-CC_FLAGS=-c $(CC_EXTRA_FLAGS) $(DEBUG) $(OPENSSL) -I$(SRCMOUNTPOINT) -I$(GENMOUNTPOINT)
++CC_FLAGS=-c $(CC_EXTRA_FLAGS) $(DEBUG) $(CFLAGS) $(OPENSSL) -I$(SRCMOUNTPOINT) -I$(GENMOUNTPOINT)
+ 
+ # --- link flags ---
+ LNK_FLAGS=
+@@ -172,8 +172,7 @@ fromtar:
+ 	-$(MKDIR) $(GENMOUNTPOINT)$(FS)rocs
+ 	-$(REMOVE) $(TMPOUTDIR)$(FS)*.o
+ 	-$(REMOVE) $(OUTDIR)$(FS)librocs.a
+-	cd $(GENMOUNTPOINT)$(CS) \
+-	$(COPY) ..$(FS)rocs$(FS)rocs-gen.tar.gz .$(CS) gzip -df rocs-gen.tar.gz$(CS) tar -xf rocs-gen.tar
++
+ 
+ 
+ ssl: OPENSSL=-D__OPENSSL__

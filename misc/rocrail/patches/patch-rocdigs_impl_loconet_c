@@ -1,0 +1,14 @@
+$OpenBSD: patch-rocdigs_impl_loconet_c,v 1.1 2017/05/07 23:57:16 espie Exp $
+
+Index: rocdigs/impl/loconet.c
+--- rocdigs/impl/loconet.c.orig
++++ rocdigs/impl/loconet.c
+@@ -1619,7 +1619,7 @@ static int __setFastClock(iOLocoNet loconet, iONode no
+       int hours = 10;
+       int mins = 30;
+ 
+-      long l_time = wClock.gettime(node);
++      time_t l_time = wClock.gettime(node);
+       struct tm* lTime = localtime( &l_time );
+ 
+       mins  = lTime->tm_min;

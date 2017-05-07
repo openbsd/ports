@@ -1,0 +1,14 @@
+$OpenBSD: patch-rocdigs_impl_dcc232_c,v 1.1 2017/05/07 23:57:16 espie Exp $
+
+Index: rocdigs/impl/dcc232.c
+--- rocdigs/impl/dcc232.c.orig
++++ rocdigs/impl/dcc232.c
+@@ -765,7 +765,7 @@ static int __getcvbyte(iODCC232 inst, int cv) {
+    /* no special error handling, it's job of the clients */
+    if (cv<0 || cv>1024) {
+      TraceOp.trc( name, TRCLEVEL_EXCEPTION, __LINE__, 9999, "PT: CV[%d] out of range", cv);
+-     return;
++     return 0;
+    }
+ 
+    TraceOp.trc( name, TRCLEVEL_MONITOR, __LINE__, 9999, "PT: enable booster output");

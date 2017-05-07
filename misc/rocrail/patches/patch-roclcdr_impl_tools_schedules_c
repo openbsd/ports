@@ -1,0 +1,23 @@
+$OpenBSD: patch-roclcdr_impl_tools_schedules_c,v 1.1 2017/05/07 23:57:16 espie Exp $
+
+Index: roclcdr/impl/tools/schedules.c
+--- roclcdr/impl/tools/schedules.c.orig
++++ roclcdr/impl/tools/schedules.c
+@@ -50,7 +50,7 @@ static Boolean isHourlyInRange(iILcDriverInt inst, iON
+   int     hours    = 0;
+   int     mins     = 0;
+ 
+-  long modeltime = data->model->getTime( data->model );
++  time_t modeltime = data->model->getTime( data->model );
+   struct tm* ltm;
+ 
+   ltm = localtime( &modeltime );
+@@ -214,7 +214,7 @@ Boolean checkScheduleTime( iILcDriverInt inst, const c
+     /* check if the schedule index is correct: */
+     while( entry != NULL ) {
+       if( idx == scheduleIdx ) {
+-        long modeltime = data->model->getTime( data->model );
++        time_t modeltime = data->model->getTime( data->model );
+         struct tm* ltm;
+         int modelminutes    = 0;
+         int scheduleminutes = 0;

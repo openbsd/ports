@@ -1,0 +1,28 @@
+$OpenBSD: patch-rocdigs_makefile,v 1.1 2017/05/07 23:57:16 espie Exp $
+
+Index: rocdigs/makefile
+--- rocdigs/makefile.orig
++++ rocdigs/makefile
+@@ -69,7 +69,7 @@ else ifeq ($(PLATFORM),OPENBSD)
+ 	DIRPREFIX=unx
+ 	CC_EXTRA_FLAGS=-fPIC
+ 	LNK_FLAGS=-shared
+-	LNK=gcc
++	LNK=$(CC)
+ 	SHAREDSUFFIX=.so
+ else
+ 	LIBS=-lpthread -ldl
+@@ -88,10 +88,10 @@ DEBUG=-g
+ DESTDIR=$(FS)opt$(FS)rocrail
+ BINDIR=..$(FS)rocs$(FS)bin
+ 
+-CPP=$(TOOLPREFIX)gcc
++CPP=$(TOOLPREFIX)$(CC)
+ INCL_PATH=$(MOUNTPOINT)
+-CC_FLAGS=-c $(CC_EXTRA_FLAGS) $(DEBUG) -I$(INCL_PATH) -I$(GENDIR)
+-DDL_CC_FLAGS=-c $(CC_EXTRA_FLAGS) $(DEBUG) -O2 -I$(INCL_PATH) -I$(GENDIR)
++CC_FLAGS=-c $(CC_EXTRA_FLAGS) $(CFLAGS) $(DEBUG) -I$(INCL_PATH) -I$(GENDIR)
++DDL_CC_FLAGS=-c $(CC_EXTRA_FLAGS) $(CFLAGS) $(DEBUG) -O2 -I$(INCL_PATH) -I$(GENDIR)
+ RRLIBS=$(OUTDIR)$(FS)libwrapper.a $(OUTDIR)$(FS)librocutils.a $(OUTDIR)$(FS)librocs.a
+ 
+ OBJS=$(patsubst impl/%.c,$(TMPOUTDIR)/%.o,$(wildcard impl/*.c))

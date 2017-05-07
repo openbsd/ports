@@ -1,0 +1,20 @@
+$OpenBSD: patch-rocutils_makefile,v 1.1 2017/05/07 23:57:16 espie Exp $
+
+Index: rocutils/makefile
+--- rocutils/makefile.orig
++++ rocutils/makefile
+@@ -69,11 +69,11 @@ BINDIR=..$(FS)$(COREDIR)bin
+ 
+ AR=$(TOOLPREFIX)ar
+ 
+-CPP=$(TOOLPREFIX)gcc
+-LNK=$(TOOLPREFIX)gcc
++CPP=$(TOOLPREFIX)$(CC)
++LNK=$(TOOLPREFIX)$(CC)
+ 
+ INCL_PATH=$(MOUNTPOINT)
+-CC_FLAGS=-c $(CC_EXTRA_FLAGS) $(DEBUG) -ansi -I$(INCL_PATH) -I$(GENDIR)
++CC_FLAGS=-c $(CC_EXTRA_FLAGS) $(CFLAGS) $(DEBUG) -ansi -I$(INCL_PATH) -I$(GENDIR)
+ 
+ OBJS=$(patsubst impl/%.c,$(TMPOUTDIR)/%.o,$(wildcard impl/*.c))
+ 

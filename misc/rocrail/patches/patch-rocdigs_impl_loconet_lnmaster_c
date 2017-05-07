@@ -1,0 +1,27 @@
+$OpenBSD: patch-rocdigs_impl_loconet_lnmaster_c,v 1.1 2017/05/07 23:57:16 espie Exp $
+
+Index: rocdigs/impl/loconet/lnmaster.c
+--- rocdigs/impl/loconet/lnmaster.c.orig
++++ rocdigs/impl/loconet/lnmaster.c
+@@ -379,17 +379,17 @@ static Boolean __setstat1byte(struct __lnslot* slot, i
+   slot[slotnr].format = 0;
+ 
+   if( stat & DEC_MODE_128 ) {
+-    slot[slotnr].steps == 128;
++    slot[slotnr].steps = 128;
+   }
+   else if( stat & DEC_MODE_28 ) {
+-    slot[slotnr].steps == 28;
++    slot[slotnr].steps = 28;
+   }
+   else if( stat & DEC_MODE_14 ) {
+-    slot[slotnr].steps == 14;
++    slot[slotnr].steps = 14;
+   }
+   else if( stat & DEC_MODE_28TRI )  {
+     slot[slotnr].format = 1;
+-    slot[slotnr].steps == 28;
++    slot[slotnr].steps = 28;
+   }
+ 
+   TraceOp.trc( name, TRCLEVEL_INFO, __LINE__, 9999,

@@ -1,0 +1,14 @@
+$OpenBSD: patch-unxgen_rocs_public_serial_h,v 1.1 2017/05/07 23:57:16 espie Exp $
+
+Index: unxgen/rocs/public/serial.h
+--- unxgen/rocs/public/serial.h.orig
++++ unxgen/rocs/public/serial.h
+@@ -23,7 +23,7 @@ typedef enum {cts=1,dsr=2,xon=3} serial_flow;
+ typedef enum {onestopbit=1,twostopbits=2} serial_stopbits;
+ typedef enum {eight=8,seven=7} serial_databits;
+ typedef enum {undefined=0,mm=1,dcc=2,mma=3} serial_mode;
+-typedef serial_bps;
++typedef int serial_bps;
+ 
+ 
+ 

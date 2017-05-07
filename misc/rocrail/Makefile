@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2017/04/10 11:46:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2017/05/07 23:57:16 espie Exp $
 
 COMMENT-main =		model railroad control daemon
 COMMENT-gui =		model railroad control daemon client
@@ -10,8 +10,8 @@ PKGNAME-main =		rocrail-${VERSION}.${REV}
 PKGNAME-gui =		rocview-${VERSION}.${REV}
 CATEGORIES =		misc x11
 
-REVISION-main =		1
-REVISION-gui =		0
+REVISION-main =		2
+REVISION-gui =		1
 
 HOMEPAGE =		http://www.rocrail.net/
 MAINTAINER =		Sebastian Reitenbach <sebastia@openbsd.org>
@@ -47,6 +47,10 @@ THEMES2 =		Accessories \
 			NMBS-SNCB \
 			Roads \
 			SpDrS60/alt
+
+post-extract:
+	mkdir ${WRKDIST}/unxgen
+	cd ${WRKDIST}/unxgen && tar zxf ${WRKDIST}/rocs/rocs-gen.tar.gz
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/rocrail

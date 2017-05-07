@@ -1,0 +1,14 @@
+$OpenBSD: patch-rocdigs_impl_xpressnet_opendcc_c,v 1.1 2017/05/07 23:57:16 espie Exp $
+
+Index: rocdigs/impl/xpressnet/opendcc.c
+--- rocdigs/impl/xpressnet/opendcc.c.orig
++++ rocdigs/impl/xpressnet/opendcc.c
+@@ -245,7 +245,7 @@ void opendccTranslate( obj xpressnet, void* node ) {
+     When no Parameters are given, it is a query and the answer will be sent only to the requesting slave.
+      */
+     if( data->fastclock && StrOp.equals( wClock.set, wClock.getcmd( node ) ) ) {
+-      long l_time = wClock.gettime(node);
++      time_t l_time = wClock.gettime(node);
+       struct tm* lTime = localtime( &l_time );
+ 
+       int mins    = lTime->tm_min;

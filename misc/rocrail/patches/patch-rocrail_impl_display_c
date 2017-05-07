@@ -1,0 +1,14 @@
+$OpenBSD: patch-rocrail_impl_display_c,v 1.1 2017/05/07 23:57:16 espie Exp $
+
+Index: rocrail/impl/display.c
+--- rocrail/impl/display.c.orig
++++ rocrail/impl/display.c
+@@ -97,7 +97,7 @@ static const char* __getSystemMenu(Boolean select) {
+   iODisplayData data = NULL;
+   
+   if( __displayinst == NULL ) {
+-    return;
++    return "";
+   }
+   data = Data(__displayinst);
+   if( data->menulevel == 0 ) { 

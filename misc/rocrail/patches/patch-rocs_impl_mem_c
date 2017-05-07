@@ -1,0 +1,23 @@
+$OpenBSD: patch-rocs_impl_mem_c,v 1.1 2017/05/07 23:57:16 espie Exp $
+
+Index: rocs/impl/mem.c
+--- rocs/impl/mem.c.orig
++++ rocs/impl/mem.c
+@@ -53,13 +53,13 @@ static void _mem_init( void ) {
+ static char __opStr[1024];
+ static const char* _mem_getLastOperation( void ) {
+   const char* op = "?";
+-  if( mt.type = MEMTYPE_ALLOC )
++  if( mt.type == MEMTYPE_ALLOC )
+     op = "alloc";
+-  else if( mt.type = MEMTYPE_FREE )
++  else if( mt.type == MEMTYPE_FREE )
+     op = "free";
+-  else if( mt.type = MEMTYPE_CHECK )
++  else if( mt.type == MEMTYPE_CHECK )
+     op = "check";
+-  else if( mt.type = MEMTYPE_REALLOC )
++  else if( mt.type == MEMTYPE_REALLOC )
+     op = "realloc";
+   sprintf( __opStr, ">>>>> memLastOp: op=%s p=0x%08X file=%s line=%d <<<<<", op, mt.p, mt.file, mt.line );
+   return __opStr;

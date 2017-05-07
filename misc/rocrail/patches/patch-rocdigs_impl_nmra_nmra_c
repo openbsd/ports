@@ -1,0 +1,14 @@
+$OpenBSD: patch-rocdigs_impl_nmra_nmra_c,v 1.1 2017/05/07 23:57:16 espie Exp $
+
+Index: rocdigs/impl/nmra/nmra.c
+--- rocdigs/impl/nmra/nmra.c.orig
++++ rocdigs/impl/nmra/nmra.c
+@@ -1390,7 +1390,7 @@ int createCVsetpacket(int cv, int value, char* SendStr
+    int ack = 0;
+ 
+    /* no special error handling, it's job of the clients */
+-   if (cv<0 || cv>1024 || value<0 || value>255) return;
++   if (cv<0 || cv>1024 || value<0 || value>255) return 0;
+ 
+    if (!smInitialized)
+      smInit();

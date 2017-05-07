@@ -1,0 +1,17 @@
+$OpenBSD: patch-analyser_makefile,v 1.1 2017/05/07 23:57:16 espie Exp $
+
+Index: analyser/makefile
+--- analyser/makefile.orig
++++ analyser/makefile
+@@ -87,9 +87,9 @@ DEBUG=-g
+ DESTDIR=$(FS)opt$(FS)rocrail
+ BINDIR=..$(FS)rocs$(FS)bin
+ 
+-CPP=$(TOOLPREFIX)gcc
++CPP=$(TOOLPREFIX)$(CC)
+ INCL_PATH=$(MOUNTPOINT)
+-CC_FLAGS=-c $(CC_EXTRA_FLAGS) $(DEBUG) -I$(INCL_PATH) -I$(GENDIR)
++CC_FLAGS=-c $(CC_EXTRA_FLAGS) $(CFLAGS) $(DEBUG) -I$(INCL_PATH) -I$(GENDIR)
+ RRLIBS=$(OUTDIR)$(FS)libwrapper.a $(OUTDIR)$(FS)librocs.a
+ 
+ OBJS=$(patsubst impl/%.c,$(TMPOUTDIR)/%.o,$(wildcard impl/*.c))

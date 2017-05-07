@@ -1,0 +1,19 @@
+$OpenBSD: patch-rocrail_makefile,v 1.1 2017/05/07 23:57:16 espie Exp $
+
+Index: rocrail/makefile
+--- rocrail/makefile.orig
++++ rocrail/makefile
+@@ -80,10 +80,10 @@ DEBUG=-g
+ DESTDIR=$(FS)opt$(FS)rocrail
+ BINDIR=..$(FS)rocs$(FS)bin
+ 
+-CPP=$(TOOLPREFIX)gcc
+-LNK=$(TOOLPREFIX)gcc
++CPP=$(TOOLPREFIX)$(CC)
++LNK=$(TOOLPREFIX)$(CC)
+ INCL_PATH=$(MOUNTPOINT)
+-CC_FLAGS=-c $(CC_EXTRA_FLAGS) $(DEBUG) $(ANSI) -I$(INCL_PATH) -I$(GENDIR)
++CC_FLAGS=-c $(CC_EXTRA_FLAGS) $(DEBUG) $(CFLAGS) $(ANSI) -I$(INCL_PATH) -I$(GENDIR)
+ LNK_FLAGS=
+ RRLIBS=$(OUTDIR)$(FS)libwrapper.a $(OUTDIR)$(FS)librocs.a $(OUTDIR)$(FS)librocutils.a $(OUTDIR)$(FS)librocrail.a
+ 

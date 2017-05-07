@@ -1,0 +1,14 @@
+$OpenBSD: patch-rocrail_impl_snmp_c,v 1.1 2017/05/07 23:57:16 espie Exp $
+
+Index: rocrail/impl/snmp.c
+--- rocrail/impl/snmp.c.orig
++++ rocrail/impl/snmp.c
+@@ -780,7 +780,7 @@ static int __handleGetRequest(iOSNMP snmp, iOSnmpHdr h
+               TraceOp.trc( name, TRCLEVEL_BYTE, __LINE__, 9999, "next request for %s=%s", oid, val );
+             }
+             else {
+-              val == NULL;
++              val = NULL;
+               break;
+             }
+           }

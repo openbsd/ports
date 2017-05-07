@@ -1,0 +1,14 @@
+$OpenBSD: patch-rocrail_impl_modplan_c,v 1.1 2017/05/07 23:57:16 espie Exp $
+
+Index: rocrail/impl/modplan.c
+--- rocrail/impl/modplan.c.orig
++++ rocrail/impl/modplan.c
+@@ -903,7 +903,7 @@ static iONode _setModule( iOModPlan inst, iONode modul
+   if( planmodule == NULL ) {
+     TraceOp.trc( name, TRCLEVEL_WARNING, __LINE__, 9999,
+         "no module found with id [%s] or [%s]", wModule.getid(module), wItem.getprev_id(module) );
+-    return;
++    return NULL;
+   }
+ 
+   wModule.settitle( planmodule, wModule.gettitle(module) );

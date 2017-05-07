@@ -1,0 +1,13 @@
+$OpenBSD: patch-rocs_impl_unx_uthread_c,v 1.1 2017/05/07 23:57:16 espie Exp $
+
+Index: rocs/impl/unx/uthread.c
+--- rocs/impl/unx/uthread.c.orig
++++ rocs/impl/unx/uthread.c
+@@ -26,6 +26,7 @@
+ #include <stddef.h>
+ #include <signal.h>
+ #include <errno.h>
++#include <unistd.h>
+ 
+ #include <pthread.h>
+ #include <sched.h>

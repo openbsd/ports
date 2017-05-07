@@ -1,0 +1,14 @@
+$OpenBSD: patch-rocdigs_impl_p50x_c,v 1.1 2017/05/07 23:57:16 espie Exp $
+
+Index: rocdigs/impl/p50x.c
+--- rocdigs/impl/p50x.c.orig
++++ rocdigs/impl/p50x.c
+@@ -602,7 +602,7 @@ static Boolean __getversion( iOP50x inst ) {
+     else
+       state = P50_SNDERR;
+ 
+-    if( state = P50_OK ) {
++    if( state == P50_OK ) {
+     int bAvail = 0;
+     ThreadOp.sleep( 500 );
+     bAvail = SerialOp.available(data->serial);

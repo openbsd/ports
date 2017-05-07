@@ -1,0 +1,13 @@
+$OpenBSD: patch-rocs_gen_mdoc_c,v 1.1 2017/05/07 23:57:16 espie Exp $
+
+Index: rocs/gen/mdoc.c
+--- rocs/gen/mdoc.c.orig
++++ rocs/gen/mdoc.c
+@@ -46,6 +46,7 @@
+ #include <signal.h>
+ #include <errno.h>
+ #include <time.h>
++#include <string.h>
+ 
+ /* ------------------------------------------------------------
+  * platform dependent interfaces.

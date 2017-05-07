@@ -1,0 +1,14 @@
+$OpenBSD: patch-rocrail_impl_action_c,v 1.1 2017/05/07 23:57:16 espie Exp $
+
+Index: rocrail/impl/action.c
+--- rocrail/impl/action.c.orig
++++ rocrail/impl/action.c
+@@ -819,7 +819,7 @@ static void _exec( struct OAction* inst, iONode action
+ static void _tick( iOAction inst ) {
+   iOActionData data = Data(inst);
+   iOControl control = AppOp.getControl();
+-  long l_time = ControlOp.getTime(control);
++  time_t l_time = ControlOp.getTime(control);
+   struct tm* lTime = localtime( &l_time );
+ 
+   data->ticker++; /* scale minutes */

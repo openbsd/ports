@@ -1,0 +1,41 @@
+$OpenBSD: patch-analyser_impl_analyse_c,v 1.1 2017/05/07 23:57:16 espie Exp $
+
+Index: analyser/impl/analyse.c
+--- analyser/impl/analyse.c.orig
++++ analyser/impl/analyse.c
+@@ -1208,7 +1208,7 @@ static Boolean __analyseBehindConnector(iOAnalyse inst
+            __analyseItem(inst, nextitem, route, occ, travel, 0, depth, searchingSignal, behindABlock );
+          }
+ 
+-         return;
++         return found;
+        }
+      }
+   }
+@@ -1437,7 +1437,7 @@ static Boolean __analyseItem(iOAnalyse inst, iONode it
+           searchingSignal = False;
+ 
+           if( behindABlock) {
+-            return;
++            return False;
+           }
+         }
+ 
+@@ -1454,7 +1454,7 @@ static Boolean __analyseItem(iOAnalyse inst, iONode it
+         if( behindABlock) {
+           TraceOp.trc( name, TRCLEVEL_DEBUG, __LINE__, 9999, "behind a block");
+ 
+-          return;
++          return False;
+         }
+ 
+         TraceOp.trc( name, TRCLEVEL_INFO, __LINE__, 9999, "next is a block: [%s]", wItem.getid(nextitem));
+@@ -1503,7 +1503,7 @@ static Boolean __analyseItem(iOAnalyse inst, iONode it
+ 
+         if( travelp > 10 && behindABlock){
+           TraceOp.trc( name, TRCLEVEL_INFO, __LINE__, 9999, " found a turnout [%s] behind the end block: return", wItem.getid(nextitem));
+-          return;
++          return False;
+         }
+ 
+         /* item is a turnout -> coming from the points: dive into branches */

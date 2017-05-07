@@ -1,0 +1,14 @@
+$OpenBSD: patch-rocs_impl_unx_umutex_c,v 1.1 2017/05/07 23:57:16 espie Exp $
+
+Index: rocs/impl/unx/umutex.c
+--- rocs/impl/unx/umutex.c.orig
++++ rocs/impl/unx/umutex.c
+@@ -94,7 +94,7 @@ Boolean rocs_mutex_wait( iOMutexData o, int t ) {
+   if( t == -1 ) {
+     rc = pthread_mutex_lock( (pthread_mutex_t*)data->mh );
+   }
+-  else if( rc = pthread_mutex_trylock( (pthread_mutex_t*)data->mh ) == EBUSY ) {
++  else if( (rc = pthread_mutex_trylock( (pthread_mutex_t*)data->mh )) == EBUSY ) {
+     int try = t / 10 + 1;
+     do {
+       ThreadOp.sleep( 10 );

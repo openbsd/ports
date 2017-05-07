@@ -1,0 +1,23 @@
+$OpenBSD: patch-rocdigs_impl_ddx_nmra_c,v 1.1 2017/05/07 23:57:16 espie Exp $
+
+Index: rocdigs/impl/ddx/nmra.c
+--- rocdigs/impl/ddx/nmra.c.orig
++++ rocdigs/impl/ddx/nmra.c
+@@ -1112,7 +1112,7 @@ int protocol_nmra_sm_direct_cvbyte(obj inst, int cv, i
+    int ack = 0;
+ 
+    /* no special error handling, it's job of the clients */
+-   if (cv<0 || cv>1024 || value<0 || value>255) return;
++   if (cv<0 || cv>1024 || value<0 || value>255) return 0;
+ 
+    if (!sm_initialized) sm_init();
+ 
+@@ -1333,7 +1333,7 @@ int nmragetcvbyte(obj inst, int cv) {
+    TraceOp.trc( __FILE__, TRCLEVEL_MONITOR, __LINE__, 9999, "PT: cvget for %d", cv);
+ 
+    /* no special error handling, it's job of the clients */
+-   if (cv<0 || cv>1024) return;
++   if (cv<0 || cv>1024) return 0;
+ 
+    if (!sm_initialized) sm_init();
+ 
