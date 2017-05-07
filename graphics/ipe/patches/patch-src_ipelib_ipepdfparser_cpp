@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_ipelib_ipepdfparser_cpp,v 1.1 2017/05/07 20:35:07 espie Exp $
+
+Index: src/ipelib/ipepdfparser.cpp
+--- src/ipelib/ipepdfparser.cpp.orig
++++ src/ipelib/ipepdfparser.cpp
+@@ -30,6 +30,7 @@
+ 
+ #include "ipepdfparser.h"
+ #include "ipeutils.h"
++#include <cstdlib>
+ 
+ using namespace ipe;
+ 

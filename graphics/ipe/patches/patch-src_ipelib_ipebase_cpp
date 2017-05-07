@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_ipelib_ipebase_cpp,v 1.1 2017/05/07 20:35:07 espie Exp $
+
+Index: src/ipelib/ipebase.cpp
+--- src/ipelib/ipebase.cpp.orig
++++ src/ipelib/ipebase.cpp
+@@ -30,6 +30,7 @@
+ 
+ #include "ipebase.h"
+ #include <cmath>
++#include <cstdlib>
+ 
+ using namespace ipe;
+ 

@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_ipelib_ipelatex_cpp,v 1.1 2017/05/07 20:35:07 espie Exp $
+
+Index: src/ipelib/ipelatex.cpp
+--- src/ipelib/ipelatex.cpp.orig
++++ src/ipelib/ipelatex.cpp
+@@ -34,6 +34,7 @@
+ 
+ #include "ipefontpool.h"
+ #include "ipelatex.h"
++#include <cstdlib>
+ 
+ using namespace ipe;
+ 
+@@ -149,7 +150,7 @@ int Latex::scanPage(Page *page)
+ */
+ int Latex::createLatexSource(Stream &stream, String preamble)
+ {
+-  bool ancient = (getenv("IPEANCIENTPDFTEX") != 0);
++  bool ancient = (std::getenv("IPEANCIENTPDFTEX") != 0);
+   int count = 0;
+   stream << "\\pdfcompresslevel0\n"
+ 	 << "\\nonstopmode\n"
