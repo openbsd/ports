@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.90 2016/11/01 13:56:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.91 2017/05/08 22:23:35 schwarze Exp $
 
 COMMENT=		screen saver and locker for the X Window System
 
 DISTNAME=		xscreensaver-5.36
+REVISION=		0
 
 CATEGORIES=		x11
 
@@ -40,7 +41,6 @@ BUILD_DEPENDS +=	devel/xdg-utils
 RUN_DEPENDS +=		devel/xdg-utils
 
 USE_GMAKE=		Yes
-USE_GROFF=		Yes
 NO_TEST=		Yes
 
 CONFIGURE_STYLE=	gnu
