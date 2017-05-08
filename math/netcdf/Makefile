@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2017/04/10 11:46:22 sthen Exp $ 
+# $OpenBSD: Makefile,v 1.28 2017/05/08 13:31:58 schwarze Exp $ 
 
 BROKEN-powerpc=	fails to build
 BROKEN-hppa =	fails to configure
@@ -6,7 +6,7 @@ BROKEN-hppa =	fails to configure
 COMMENT=	library for machine-independent, array-oriented data access
 
 DISTNAME=	netcdf-3.6.2
-REVISION=	2
+REVISION=	3
 CATEGORIES=	math
 
 SHARED_LIBS=	netcdf		4.0 \
@@ -33,7 +33,6 @@ CONFIGURE_ARGS+=	--enable-shared \
 			--disable-f90
 
 USE_GMAKE=		Yes
-USE_GROFF =		Yes
 SEPARATE_BUILD=		Yes
 
 post-install:
