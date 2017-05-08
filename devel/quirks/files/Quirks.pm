@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.489 2017/05/06 11:55:17 fcambus Exp $
+# $OpenBSD: Quirks.pm,v 1.490 2017/05/08 17:01:41 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -966,6 +966,8 @@ my $obsolete_reason = {
 	'xgrab' => 9,
 	'quirc' => 3,
 	'xspread' => 3,
+	'tryton' => 1,
+	'trytond' => 1,
 };
 
 # reasons for obsolete packages
