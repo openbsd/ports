@@ -1,0 +1,23 @@
+$OpenBSD: patch-main_cc,v 1.3 2017/05/08 21:40:10 naddy Exp $
+
+Index: main.cc
+--- main.cc.orig
++++ main.cc
+@@ -292,7 +292,7 @@ char *GetAddressFamily()
+ //
+ // Output:  ASCII representation of network protocol name.
+ //
+-char *GetPrintableNetworkProtocol(NetworkProtocolType np)
++const char *GetPrintableNetworkProtocol(NetworkProtocolType np)
+ {
+     switch (np) {
+     case (NetworkProtocolIpv4Udp): 
+@@ -371,7 +371,7 @@ int main(int argc, char **argv)
+ 	case 'b': {
+ 	    Burst = atoi(optarg);
+ 	    if (Burst < 1) {
+-		fprintf(stderr, "Warning: burst size %d too small; resetting to 1\n");
++		fprintf(stderr, "Warning: burst size %d too small; resetting to 1\n", Burst);
+ 		Burst = 1;
+ 	    }
+ 	    break;

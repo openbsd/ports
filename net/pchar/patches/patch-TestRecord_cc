@@ -1,0 +1,23 @@
+$OpenBSD: patch-TestRecord_cc,v 1.1 2017/05/08 21:40:10 naddy Exp $
+
+Index: TestRecord.cc
+--- TestRecord.cc.orig
++++ TestRecord.cc
+@@ -53,7 +53,7 @@ char *TestRecord::htoa(Pctest *pct) 
+ #else
+     sprintf(buffer2, 
+ #endif /* HAVE_SNPRINTF */
+-      "probe t %ld.%06ld ", tvstart.tv_sec, tvstart.tv_usec);
++      "probe t %lld.%06ld ", (long long)tvstart.tv_sec, (long)tvstart.tv_usec);
+     strncat(buffer, buffer2, buflen);
+ 
+ #ifdef HAVE_SNPRINTF
+@@ -61,7 +61,7 @@ char *TestRecord::htoa(Pctest *pct) 
+ #else
+     sprintf(buffer2, 
+ #endif /* HAVE_SNPRINTF */
+-      "h %d b %d addr %s res %d rtt %ld.%06ld rb %d", hops, size, pct->GetPrintableAddress(icmpSourceAddress), result, tv.tv_sec, tv.tv_usec, replsize);
++      "h %d b %d addr %s res %d rtt %lld.%06ld rb %d", hops, size, pct->GetPrintableAddress(icmpSourceAddress), result, (long long)tv.tv_sec, (long)tv.tv_usec, replsize);
+     strncat(buffer, buffer2, buflen);
+ 
+     return buffer;

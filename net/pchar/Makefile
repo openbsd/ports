@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2017/04/10 11:46:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2017/05/08 21:40:10 naddy Exp $
 
 COMMENT=	Sandia Internet path characterization tool
 
 DISTNAME=	pchar-1.5
+REVISION=	0
 CATEGORIES=	net
 
 MASTER_SITES=	${HOMEPAGE}
@@ -17,9 +18,11 @@ CONFIGURE_ARGS=	--with-ipv6 --with-pcap
 
 NO_TEST=	Yes
 
+post-patch:
+	/usr/bin/perl -pi.beforesubst -e 's/pchar 1/pchar 8/g' ${WRKSRC}/pchar.8
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pchar ${PREFIX}/sbin
-	@/usr/bin/perl -pi.orig -e 's/pchar 1/pchar 8/g' ${WRKSRC}/pchar.8
 	${INSTALL_MAN} ${WRKSRC}/pchar.8 ${PREFIX}/man/man8/pchar.8
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/pchar
 	cd ${WRKSRC} ; ${INSTALL_DATA} README FAQ ${PREFIX}/share/doc/pchar

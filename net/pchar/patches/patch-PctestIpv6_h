@@ -1,0 +1,14 @@
+$OpenBSD: patch-PctestIpv6_h,v 1.1 2017/05/08 21:40:10 naddy Exp $
+
+Index: PctestIpv6.h
+--- PctestIpv6.h.orig
++++ PctestIpv6.h
+@@ -82,7 +82,7 @@ class PctestIpv6 : public Pctest {
+     virtual char *GetPrintableAddress();
+     virtual char *GetPrintableAddress(void *a);
+     virtual char *GetName(void *a);
+-    virtual char *GetAddressFamilyString() { return "AF_INET6"; }
++    virtual const char *GetAddressFamilyString() { return "AF_INET6"; }
+     virtual int GetAddressFamily() { return (AF_INET6); }
+     
+   protected:

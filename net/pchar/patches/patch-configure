@@ -1,0 +1,14 @@
+$OpenBSD: patch-configure,v 1.1 2017/05/08 21:40:10 naddy Exp $
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -962,7 +962,7 @@ else
+ extern "C" void exit(int);
+ #endif
+ #include <stdio.h>
+-main()
++int main()
+ {
+   FILE *f=fopen("conftestval", "w");
+   if (!f) exit(1);

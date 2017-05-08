@@ -1,0 +1,14 @@
+$OpenBSD: patch-PctestIpv6File_cc,v 1.3 2017/05/08 21:40:10 naddy Exp $
+
+Index: PctestIpv6File.cc
+--- PctestIpv6File.cc.orig
++++ PctestIpv6File.cc
+@@ -101,6 +101,8 @@ int PctestIpv6File::SetOriginName(char *t) {
+ 	fprintf(stderr, "Couldn't allocate memory for origin hostname.\n");
+ 	return -1;
+     }
++
++    return 0;
+ }
+ 
+ //

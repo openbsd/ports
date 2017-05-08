@@ -1,0 +1,14 @@
+$OpenBSD: patch-Pctest_h,v 1.1 2017/05/08 21:40:10 naddy Exp $
+
+Index: Pctest.h
+--- Pctest.h.orig
++++ Pctest.h
+@@ -86,7 +86,7 @@ class Pctest {
+     virtual char *GetPrintableAddress() = 0;
+     virtual char *GetPrintableAddress(void *a) = 0;
+     virtual char *GetName(void *a) = 0;
+-    virtual char *GetAddressFamilyString() = 0;
++    virtual const char *GetAddressFamilyString() = 0;
+     virtual int GetAddressFamily() = 0;
+ 
+     // Get input and output sockets needed
