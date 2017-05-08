@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2016/11/02 22:22:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2017/05/08 10:48:04 ajacoutot Exp $
 
 COMMENT=		C++ bindings for GStreamer
 
 V=			1.8.0
 DISTNAME=		gstreamermm-${V}
 PKGNAME=		gstreamer1mm-${V}
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS +=  gstreamermm-1.0      1.0      # 1.0
 
@@ -19,12 +19,14 @@ WANTLIB += gstrtp-1.0 gstrtsp-1.0 gstsdp-1.0 gsttag-1.0 gstvideo-1.0
 WANTLIB += iconv intl m orc-0.4 pcre pthread sigc-2.0 z
 
 # c++11
-MODULES +=		gcc4
-MODGCC4_ARCHS=		*
 MODGCC4_LANGS=		c++
+MODCLANG_LANGS=		c++
 
 LIB_DEPENDS=		devel/glib2mm \
 			multimedia/gstreamer1/plugins-base
+
+CONFIGURE_ARGS=		ac_cv_path_DOT= \
+			ac_cv_path_DOXYGEN=
 
 # needed for the examples
 BUILD_DEPENDS +=	x11/gtk3mm

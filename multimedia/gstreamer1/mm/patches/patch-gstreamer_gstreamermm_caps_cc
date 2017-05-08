@@ -1,0 +1,18 @@
+$OpenBSD: patch-gstreamer_gstreamermm_caps_cc,v 1.1 2017/05/08 10:48:04 ajacoutot Exp $
+
+From 73b25333ca3778ccf4322f47abbcbc507c31890d Mon Sep 17 00:00:00 2001
+From: Marcin Kolny <marcin.kolny@gmail.com>
+Date: Wed, 12 Oct 2016 19:37:45 +0200
+Subject: Gst::Caps: include missing header
+
+Index: gstreamer/gstreamermm/caps.cc
+--- gstreamer/gstreamermm/caps.cc.orig
++++ gstreamer/gstreamermm/caps.cc
+@@ -26,7 +26,6 @@
+  * Software Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+  */
+ 
+-#include <gstreamermm/structure.h>
+ #include <gstreamermm/capsfeatures.h>
+ 
+ namespace Gst

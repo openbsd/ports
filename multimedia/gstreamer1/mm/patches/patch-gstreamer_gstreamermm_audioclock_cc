@@ -1,0 +1,28 @@
+$OpenBSD: patch-gstreamer_gstreamermm_audioclock_cc,v 1.1 2017/05/08 10:48:04 ajacoutot Exp $
+
+Fix build with gstreamer1 >= 1.12
+
+Index: gstreamer/gstreamermm/audioclock.cc
+--- gstreamer/gstreamermm/audioclock.cc.orig
++++ gstreamer/gstreamermm/audioclock.cc
+@@ -76,17 +76,17 @@ AudioClock::AudioClock(const Glib::ustring& name, cons
+ 
+ Gst::ClockTime AudioClock::adjust(Gst::ClockTime time)
+ {
+-  return static_cast<Gst::ClockTime>(gst_audio_clock_adjust(GST_CLOCK_CAST(gobj()), static_cast<GstClockTime>(time)));
++  return static_cast<Gst::ClockTime>(gst_audio_clock_adjust(GST_AUDIO_CLOCK_CAST(gobj()), static_cast<GstClockTime>(time)));
+ }
+ 
+ Gst::ClockTime AudioClock::get_time() const
+ {
+-  return static_cast<Gst::ClockTime>(gst_audio_clock_get_time(GST_CLOCK_CAST(gobj())));
++  return static_cast<Gst::ClockTime>(gst_audio_clock_get_time(GST_AUDIO_CLOCK_CAST(gobj())));
+ }
+ 
+ void AudioClock::invalidate()
+ {
+-  gst_audio_clock_invalidate(GST_CLOCK_CAST(gobj()));
++  gst_audio_clock_invalidate(GST_AUDIO_CLOCK_CAST(gobj()));
+ }
+ 
+ } //namespace Gst

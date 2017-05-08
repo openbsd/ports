@@ -1,0 +1,26 @@
+$OpenBSD: patch-gstreamer_gstreamermm_caps_h,v 1.1 2017/05/08 10:48:04 ajacoutot Exp $
+
+From 73b25333ca3778ccf4322f47abbcbc507c31890d Mon Sep 17 00:00:00 2001
+From: Marcin Kolny <marcin.kolny@gmail.com>
+Date: Wed, 12 Oct 2016 19:37:45 +0200
+Subject: Gst::Caps: include missing header
+
+Index: gstreamer/gstreamermm/caps.h
+--- gstreamer/gstreamermm/caps.h.orig
++++ gstreamer/gstreamermm/caps.h
+@@ -26,6 +26,7 @@
+  */
+ 
+ #include <gstreamermm/miniobject.h>
++#include <gstreamermm/structure.h>
+ 
+ 
+ namespace Gst
+@@ -137,7 +138,6 @@ namespace Gst
+ {
+ 
+ 
+-class Structure;
+ class CapsFeatures;
+ 
+ /** Structure describing sets of media formats.
