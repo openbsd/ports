@@ -1,0 +1,18 @@
+$OpenBSD: patch-kdirstat_kstdcleanup_h,v 1.1 2017/05/08 01:13:07 espie Exp $
+
+Index: kdirstat/kstdcleanup.h
+--- kdirstat/kstdcleanup.h.orig
++++ kdirstat/kstdcleanup.h
+@@ -18,11 +18,10 @@
+ 
+ // Forward declarations
+ class KActionCollection;
+-class KDirStat::KCleanup;
+ 
+-
+ namespace KDirStat
+ {
++    class KCleanup;
+     /**
+      * Predefined standard @ref KCleanup actions to be performed on
+      * @ref KDirTree items.
