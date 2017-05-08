@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2013/03/11 11:41:29 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2017/05/08 13:19:10 schwarze Exp $
 
 COMMENT=	extensible shell, derived from plan9's rc
 
 DISTNAME=	es-0.9-beta1
 PKGNAME=	es-0.9beta1
+REVISION=	0
 EPOCH=		0
 CATEGORIES=	shells
 
@@ -18,7 +19,6 @@ WANTLIB=	c
 
 ALL_TARGET=	es
 
-USE_GROFF =	Yes
 NO_TEST=	Yes
 
 do-install:
