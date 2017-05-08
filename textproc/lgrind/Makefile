@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2017/05/04 11:13:52 edd Exp $
+# $OpenBSD: Makefile,v 1.26 2017/05/08 22:03:53 schwarze Exp $
 
 COMMENT=	LaTeX vgrind(1) look-alike
 
@@ -6,7 +6,7 @@ CATEGORIES=	textproc devel print
 
 VERSION=	3.67
 DISTNAME=	lgrind-${VERSION}
-REVISION =	5
+REVISION =	6
 DISTFILES=source/lgrind.c source/lgutil.c source/lgrindef.c source/lgrindef.h \
 	source/regexp.c source/regexp.h source/v2lg.c \
 	source/retest.c source/lgrind.1 source/lgrindef.5 source/Makefile \
@@ -32,7 +32,6 @@ MAKE_FLAGS=	BASEDIR=${PREFIX} \
 		VERSION=${VERSION} \
 		CC='${CC}' CFLAGS='${CFLAGS}'
 FAKE_FLAGS=	BASEDIR=${WRKINST}${PREFIX}
-USE_GROFF =	Yes
 
 RUN_DEPENDS=	print/texlive/base
 BUILD_DEPENDS=	${RUN_DEPENDS}
