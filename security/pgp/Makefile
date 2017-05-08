@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.36 2016/06/29 16:14:44 espie Exp $
+# $OpenBSD: Makefile,v 1.37 2017/05/08 10:00:44 schwarze Exp $
 
 COMMENT=	Pretty Good Privacy 2.6.3ia
 
 DISTNAME=	pgp263is
 PKGNAME=	pgp-2.6.3
-REVISION=	1
+REVISION=	2
 CATEGORIES=	security
 
 MASTER_SITES=	http://www.netsw.org/crypto/systems/pgp/ \
@@ -18,7 +18,6 @@ WANTLIB=		c
 PGP_DOC_DIR=	${PREFIX}/share/doc/pgp
 
 WRKDIST=	${WRKDIR}/src
-USE_GROFF =	Yes
 
 # library and doc files to install
 LIBFILES= config.txt de.hlp en.hlp es.hlp fr.hlp keys.asc \
