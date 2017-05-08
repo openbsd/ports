@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/11 10:50:11 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2017/05/08 10:42:18 schwarze Exp $
 
 COMMENT=	Streamlined replacement for make
 
 VERSION=	2.0
 DISTNAME=	mk-${VERSION}
-REVISION=	1
+REVISION=	2
 CATEGORIES=	devel plan9
 MASTER_SITES=	${HOMEPAGE}
 HOMEPAGE=	http://pdos.lcs.mit.edu/~rsc/software/
@@ -22,7 +22,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=	c
 
 FAKE_FLAGS=	PREFIX=${WRKINST}${PREFIX}
-USE_GROFF =	Yes
 NO_TEST=	Yes
 MAKE_FLAGS=	CC="${CC}"
 

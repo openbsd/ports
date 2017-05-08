@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2015/09/11 19:50:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2017/05/08 10:42:18 schwarze Exp $
 
 COMMENT=	Safe/Fast I/O Library
 
 VERSION=	2002
 PKGNAME=	sfio-${VERSION}
-REVISION =	1
+REVISION =	2
 DISTNAME=	sfio_${VERSION}.src.unix_tar
 CATEGORIES=	devel
 
@@ -15,7 +15,6 @@ MAINTAINER=	Wilbern Cobb <wcobb@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 
-USE_GROFF =	Yes
 post-extract:
 	cd ${WRKDIR} && ln -s . ${DISTNAME}
 	cd ${WRKDIR}/man/man3 && \

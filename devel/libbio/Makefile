@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 10:50:09 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2017/05/08 10:42:18 schwarze Exp $
 
 COMMENT=	Simple buffered I/O library from Plan 9
 
 VERSION=	2.0
 DISTNAME=	libbio-${VERSION}
+REVISION=	0
 CATEGORIES=	devel plan9
 MASTER_SITES=	${HOMEPAGE}
 HOMEPAGE=	http://pdos.lcs.mit.edu/~rsc/software/
@@ -16,7 +17,6 @@ BUILD_DEPENDS=	devel/libutf \
 PERMIT_PACKAGE_CDROM=	Yes
 
 FAKE_FLAGS=	PREFIX=${WRKINST}${PREFIX}
-USE_GROFF =	Yes
 NO_TEST=	Yes
 
 pre-build:
