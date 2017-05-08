@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.43 2017/05/03 09:15:38 espie Exp $
+# $OpenBSD: Makefile,v 1.44 2017/05/08 09:46:52 schwarze Exp $
 
 COMMENT=	tools to convert Xfig's .fig files
 
 VERSION=	3.2.5a
 DISTNAME=	transfig.${VERSION}
 PKGNAME=	${DISTNAME:S/./-/}
-REVISION = 	2
+REVISION = 	3
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mcj/}
 HOMEPAGE=	http://xfig.org/
@@ -24,7 +24,6 @@ MAKE_FLAGS=	CC="${CC}"
 PATCHORIG=	.pat.orig
 
 CONFIGURE_STYLE=imake
-USE_GROFF =	Yes
 
 FLAVORS=	a4
 FLAVOR?=

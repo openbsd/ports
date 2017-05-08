@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.34 2016/04/12 15:19:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.35 2017/05/08 09:46:52 schwarze Exp $
 
 COMMENT=		convert ASCII files to PostScript
 
 DISTNAME=		enscript-1.6.6
 CATEGORIES=     	print
-REVISION=		0
+REVISION=		1
 
 HOMEPAGE=		https://www.gnu.org/software/enscript/
 
@@ -17,7 +17,6 @@ LIB_DEPENDS=		devel/gettext
 WANTLIB=		c iconv intl m
 
 CONFIGURE_STYLE=	gnu
-USE_GROFF =		Yes
 
 FAKE_FLAGS=		sysconfdir=${TRUEPREFIX}/share/examples/enscript
 
