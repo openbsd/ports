@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 11:35:54 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2017/05/08 18:10:25 schwarze Exp $
 
 COMMENT=		packet generation tool
 DISTNAME=		packit-1.0
-REVISION=		1
+REVISION=		2
 CATEGORIES=		net
 HOMEPAGE=		http://packit.sf.net/
 EXTRACT_SUFX=		.tgz
@@ -19,6 +19,5 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-libnet-includes=${LOCALBASE}/include/libnet-1.1 \
 			--with-libnet-libraries=${LOCALBASE}/lib/libnet-1.1
 CONFIGURE_ENV=		CPPFLAGS=`libnet-config-1.1 --cflags`
-USE_GROFF =		Yes
 
 .include <bsd.port.mk>

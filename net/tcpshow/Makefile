@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2013/03/11 11:35:57 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2017/05/08 18:10:25 schwarze Exp $
 
 COMMENT=	decode tcpdump(1) output
 
 DISTNAME=	tcpshow-1.74
+REVISION=	0
 CATEGORIES=	net security
 
 MASTER_SITES=	${MASTER_SITE_FREEBSD_LOCAL:=obrien/}
@@ -19,7 +20,6 @@ WRKDIST=	${WRKDIR}
 do-build:
 	cd ${WRKSRC}; ${CC} ${CFLAGS} -DNOETHERNAMES -o tcpshow tcpshow.c
 
-USE_GROFF =	Yes
 NO_TEST=	Yes
 
 do-install:

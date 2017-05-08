@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.42 2016/03/11 11:27:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.43 2017/05/08 18:10:25 schwarze Exp $
 
 COMMENT=	monitor arp & rarp requests
 
 DISTNAME=	arpwatch-2.1a15
-REVISION=	13
+REVISION=	14
 CATEGORIES=	net
 
 MASTER_SITES=	ftp://ftp.ee.lbl.gov/
@@ -21,7 +21,6 @@ MAKE_FLAGS+=		ARPDIR=/var/arpwatch
 # this provides an up-to-date pregenerated ethercodes.dat file
 RUN_DEPENDS=	net/arp-scan,-mac
 
-USE_GROFF=	Yes
 NO_TEST=	Yes
 
 EXAMPLESDIR=	${PREFIX}/share/examples/arpwatch

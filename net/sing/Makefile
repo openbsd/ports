@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.25 2015/10/08 21:19:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2017/05/08 18:10:25 schwarze Exp $
 
 COMMENT=	send ICMP nasty garbage
 
 DISTNAME=	SING-1.1
 PKGNAME=	${DISTNAME:L}
-REVISION=	5
+REVISION=	6
 CATEGORIES=	net security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=sing/}
 EXTRACT_SUFX=	.tgz
@@ -21,6 +21,5 @@ AUTOCONF_VERSION=2.13
 CONFIGURE_STYLE= autoconf
 CONFIGURE_ENV=	INCLUDES="-L${LOCALBASE}/include/libnet-1.0" \
 		LDFLAGS="-L${LOCALBASE}/lib/libnet-1.0"
-USE_GROFF =	Yes
 
 .include <bsd.port.mk>
