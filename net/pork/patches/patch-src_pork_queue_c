@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_pork_queue_c,v 1.1 2017/05/08 19:42:24 naddy Exp $
+
+Index: src/pork_queue.c
+--- src/pork_queue.c.orig
++++ src/pork_queue.c
+@@ -14,6 +14,7 @@
+ #include <stdlib.h>
+ #include <string.h>
+ 
++#include <pork.h>
+ #include <pork_util.h>
+ #include <pork_list.h>
+ #include <pork_queue.h>

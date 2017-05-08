@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_pork_h,v 1.1 2017/05/08 19:42:24 naddy Exp $
+
+The author of this did not understand the semantics of "inline" at all.
+Define it away.
+
+Index: src/pork.h
+--- src/pork.h.orig
++++ src/pork.h
+@@ -10,6 +10,8 @@
+ #ifndef __PORK_H
+ #define __PORK_H
+ 
++#define inline
++
+ #ifdef HAVE___ATTRIBUTE__
+ 	#define __used		__attribute__((used))
+ 	#define __notused	__attribute__((unused))
