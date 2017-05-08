@@ -1,11 +1,12 @@
-$OpenBSD: patch-gst_tcp_gstmultihandlesink_c,v 1.4 2014/10/07 16:05:11 ajacoutot Exp $
+$OpenBSD: patch-gst_tcp_gstmultihandlesink_c,v 1.5 2017/05/08 10:46:39 ajacoutot Exp $
 
 gstmultihandlesink.c:542: error: field 'sa' has incomplete type
 gstmultihandlesink.c:544: error: field 'sa_stor' has incomplete type
 
---- gst/tcp/gstmultihandlesink.c.orig	Mon Jul 21 10:22:56 2014
-+++ gst/tcp/gstmultihandlesink.c	Tue Oct  7 16:32:02 2014
-@@ -111,6 +111,7 @@
+Index: gst/tcp/gstmultihandlesink.c
+--- gst/tcp/gstmultihandlesink.c.orig
++++ gst/tcp/gstmultihandlesink.c
+@@ -112,6 +112,7 @@
  #endif
  
  #ifndef G_OS_WIN32

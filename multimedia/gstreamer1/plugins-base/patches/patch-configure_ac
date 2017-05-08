@@ -1,12 +1,13 @@
-$OpenBSD: patch-configure_ac,v 1.13 2016/12/28 13:13:55 zhuk Exp $
+$OpenBSD: patch-configure_ac,v 1.14 2017/05/08 10:46:39 ajacoutot Exp $
 
 1. Old cdparanoia-3.a9.8 (cdparanoia-III-9.8) does not have cache control.
 
 2. Avoid picking up Qt5 (used for examples only), or this will create
    a circular dependency.
 
---- configure.ac.orig	Tue Nov 29 15:22:19 2016
-+++ configure.ac	Wed Dec 28 15:50:30 2016
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
 @@ -319,6 +319,7 @@ PKG_CHECK_MODULES(QT, Qt5Gui Qt5Widgets, [
  ], [
    HAVE_QT=no
@@ -15,7 +16,7 @@ $OpenBSD: patch-configure_ac,v 1.13 2016/12/28 13:13:55 zhuk Exp $
  if test "x$HAVE_QT" = "xyes"; then
    AC_CHECK_TOOL(QT_MOC, moc)
    AC_MSG_CHECKING([for Qt5 moc])
-@@ -629,6 +630,21 @@ AG_GST_CHECK_FEATURE(ALSA, [ALSA], alsa, [
+@@ -630,6 +631,21 @@ AG_GST_CHECK_FEATURE(ALSA, [ALSA], alsa, [
    ])
  ])
  
@@ -37,7 +38,7 @@ $OpenBSD: patch-configure_ac,v 1.13 2016/12/28 13:13:55 zhuk Exp $
  dnl *** CDParanoia ***
  dnl Note: upstream has a pkg-config file only in post-10.2 SVN so far
  translit(dnm, m, l) AM_CONDITIONAL(USE_CDPARANOIA, true)
-@@ -659,10 +675,10 @@ AG_GST_CHECK_FEATURE(CDPARANOIA, [CDParanoia], cdparan
+@@ -660,10 +676,10 @@ AG_GST_CHECK_FEATURE(CDPARANOIA, [CDParanoia], cdparan
      if test "x$FOUND_CDPARANOIA" = "xyes";
      then
        AC_CHECK_LIB(cdda_paranoia,
@@ -50,7 +51,7 @@ $OpenBSD: patch-configure_ac,v 1.13 2016/12/28 13:13:55 zhuk Exp $
      fi
  
      AC_SUBST(CDPARANOIA_LIBS)
-@@ -773,6 +789,7 @@ else
+@@ -774,6 +790,7 @@ else
  dnl not building plugins with external dependencies,
  dnl but we still need to set the conditionals
  AM_CONDITIONAL(USE_ALSA, false)
@@ -58,7 +59,7 @@ $OpenBSD: patch-configure_ac,v 1.13 2016/12/28 13:13:55 zhuk Exp $
  AM_CONDITIONAL(USE_CDPARANOIA, false)
  AM_CONDITIONAL(USE_IVORBIS, false)
  AM_CONDITIONAL(USE_LIBVISUAL, false)
-@@ -893,6 +910,7 @@ sys/ximage/Makefile
+@@ -895,6 +912,7 @@ sys/ximage/Makefile
  sys/xvimage/Makefile
  ext/Makefile
  ext/alsa/Makefile
