@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.9 2016/04/10 10:13:42 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2017/05/08 10:47:24 ajacoutot Exp $
 lib/gstreamer-${API}/libgstasf.so
 lib/gstreamer-${API}/libgstdvdlpcmdec.so
 lib/gstreamer-${API}/libgstdvdread.so
 lib/gstreamer-${API}/libgstdvdsub.so
 lib/gstreamer-${API}/libgstlame.so
-lib/gstreamer-${API}/libgstrmdemux.so
+lib/gstreamer-${API}/libgstrealmedia.so
 lib/gstreamer-${API}/libgsttwolame.so
 lib/gstreamer-${API}/libgstx264.so
 lib/gstreamer-${API}/libgstxingmux.so
@@ -21,7 +21,6 @@ share/gtk-doc/html/gst-plugins-ugly-plugins-${API}/gst-plugins-ugly-plugins-amrn
 share/gtk-doc/html/gst-plugins-ugly-plugins-${API}/gst-plugins-ugly-plugins-amrwbdec.html
 share/gtk-doc/html/gst-plugins-ugly-plugins-${API}/gst-plugins-ugly-plugins-cdiocddasrc.html
 share/gtk-doc/html/gst-plugins-ugly-plugins-${API}/gst-plugins-ugly-plugins-lamemp3enc.html
-share/gtk-doc/html/gst-plugins-ugly-plugins-${API}/gst-plugins-ugly-plugins-mad.html
 share/gtk-doc/html/gst-plugins-ugly-plugins-${API}/gst-plugins-ugly-plugins-mpg123audiodec.html
 share/gtk-doc/html/gst-plugins-ugly-plugins-${API}/gst-plugins-ugly-plugins-plugin-a52dec.html
 share/gtk-doc/html/gst-plugins-ugly-plugins-${API}/gst-plugins-ugly-plugins-plugin-amrnb.html
@@ -32,7 +31,6 @@ share/gtk-doc/html/gst-plugins-ugly-plugins-${API}/gst-plugins-ugly-plugins-plug
 share/gtk-doc/html/gst-plugins-ugly-plugins-${API}/gst-plugins-ugly-plugins-plugin-dvdread.html
 share/gtk-doc/html/gst-plugins-ugly-plugins-${API}/gst-plugins-ugly-plugins-plugin-dvdsub.html
 share/gtk-doc/html/gst-plugins-ugly-plugins-${API}/gst-plugins-ugly-plugins-plugin-lame.html
-share/gtk-doc/html/gst-plugins-ugly-plugins-${API}/gst-plugins-ugly-plugins-plugin-mad.html
 share/gtk-doc/html/gst-plugins-ugly-plugins-${API}/gst-plugins-ugly-plugins-plugin-mpeg2dec.html
 share/gtk-doc/html/gst-plugins-ugly-plugins-${API}/gst-plugins-ugly-plugins-plugin-mpg123.html
 share/gtk-doc/html/gst-plugins-ugly-plugins-${API}/gst-plugins-ugly-plugins-plugin-realmedia.html
@@ -71,6 +69,7 @@ share/locale/es/LC_MESSAGES/gst-plugins-ugly-${API}.mo
 share/locale/eu/LC_MESSAGES/gst-plugins-ugly-${API}.mo
 share/locale/fi/LC_MESSAGES/gst-plugins-ugly-${API}.mo
 share/locale/fr/LC_MESSAGES/gst-plugins-ugly-${API}.mo
+share/locale/fur/LC_MESSAGES/gst-plugins-ugly-${API}.mo
 share/locale/gl/LC_MESSAGES/gst-plugins-ugly-${API}.mo
 share/locale/hr/LC_MESSAGES/gst-plugins-ugly-${API}.mo
 share/locale/hu/LC_MESSAGES/gst-plugins-ugly-${API}.mo

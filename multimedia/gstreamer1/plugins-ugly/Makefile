@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2016/11/17 16:56:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2017/05/08 10:47:24 ajacoutot Exp $
 
 COMMENT=		ugly elements for GStreamer
 
@@ -26,7 +26,6 @@ CONFIGURE_ARGS=		--disable-a52dec \
 			--disable-amrwb \
 			--disable-cdio \
 			--disable-mpg123 \
-			--disable-mad \
 			--disable-mpeg2dec \
 			--disable-sidplay
 
