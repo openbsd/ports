@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2013/03/11 11:46:08 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2017/05/08 18:46:38 schwarze Exp $
 
 COMMENT=	digital clock with optional military time and alarm
 
 PKGNAME=	dclock-0
-REVISION=	4
+REVISION=	5
 CATEGORIES=	x11
 DISTNAME=	dclock
 EXTRACT_SUFX=	.shar.Z
@@ -14,8 +14,6 @@ PERMIT_PACKAGE_CDROM=	no license
 PERMIT_PACKAGE_FTP=	no license
 PERMIT_DISTFILES_FTP=	no license
 WANTLIB=		X11 Xt c
-
-USE_GROFF =	Yes
 
 WRKDIST=	${WRKDIR}
 
