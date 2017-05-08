@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.52 2017/04/11 07:25:38 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.53 2017/05/08 16:57:08 ajacoutot Exp $
 @conflict glib2-docs-*
 @conflict glib2-fam-*
 @pkgpath devel/glib2,-docs
@@ -350,8 +350,8 @@ share/gdb/auto-load/
 share/gdb/auto-load/usr/
 share/gdb/auto-load/usr/local/
 share/gdb/auto-load/usr/local/lib/
-share/gdb/auto-load/usr/local/lib/libglib-2.0.so.0.5200.1-gdb.py
-share/gdb/auto-load/usr/local/lib/libgobject-2.0.so.0.5200.1-gdb.py
+share/gdb/auto-load/usr/local/lib/libglib-2.0.so.0.5200.2-gdb.py
+share/gdb/auto-load/usr/local/lib/libgobject-2.0.so.0.5200.2-gdb.py
 share/gettext/its/
 share/gettext/its/gschema.its
 share/gettext/its/gschema.loc

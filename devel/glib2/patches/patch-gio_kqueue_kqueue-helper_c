@@ -1,12 +1,12 @@
-$OpenBSD: patch-gio_kqueue_kqueue-helper_c,v 1.2 2017/05/05 12:04:58 mpi Exp $
+$OpenBSD: patch-gio_kqueue_kqueue-helper_c,v 1.3 2017/05/08 16:57:08 ajacoutot Exp $
 
 Prevent a use-after-free resulting in a crash of all apps depending
 on glib/GIO mostly at "pkg_add -u" time.
+https://bugzilla.gnome.org/show_bug.cgi?id=739424
 
-Fix https://bugzilla.gnome.org/show_bug.cgi?id=739424
-
---- gio/kqueue/kqueue-helper.c.orig	Fri Apr 28 13:33:20 2017
-+++ gio/kqueue/kqueue-helper.c	Fri Apr 28 13:35:01 2017
+Index: gio/kqueue/kqueue-helper.c
+--- gio/kqueue/kqueue-helper.c.orig
++++ gio/kqueue/kqueue-helper.c
 @@ -43,7 +43,7 @@ static gboolean kh_debug_enabled = FALSE;
  #define KH_W if (kh_debug_enabled) g_warning
  
@@ -52,7 +52,7 @@ Fix https://bugzilla.gnome.org/show_bug.cgi?id=739424
    return TRUE;
  }
  
-@@ -506,9 +506,7 @@ _kh_cancel_sub (kqueue_sub *sub)
+@@ -504,9 +506,7 @@ _kh_cancel_sub (kqueue_sub *sub)
  
    _km_remove (sub);
  

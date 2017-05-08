@@ -1,9 +1,8 @@
-$OpenBSD: patch-gio_kqueue_gkqueuefilemonitor_c,v 1.1 2017/05/05 12:04:58 mpi Exp $
+$OpenBSD: patch-gio_kqueue_gkqueuefilemonitor_c,v 1.2 2017/05/08 16:57:08 ajacoutot Exp $
 
 Prevent a use-after-free resulting in a crash of all apps depending
 on glib/GIO mostly at "pkg_add -u" time.
-
-Fix https://bugzilla.gnome.org/show_bug.cgi?id=739424
+https://bugzilla.gnome.org/show_bug.cgi?id=739424
 
 Index: gio/kqueue/gkqueuefilemonitor.c
 --- gio/kqueue/gkqueuefilemonitor.c.orig
@@ -37,7 +36,7 @@ Index: gio/kqueue/gkqueuefilemonitor.c
      }
  
    if (kqueue_monitor->fallback)
-@@ -181,9 +181,11 @@ g_kqueue_file_monitor_cancel (GFileMonitor *monitor)
+@@ -181,9 +193,11 @@ g_kqueue_file_monitor_cancel (GFileMonitor *monitor)
  
    if (kqueue_monitor->sub)
      {
