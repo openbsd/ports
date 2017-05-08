@@ -1,14 +1,16 @@
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2015/05/28 23:28:25 bmercer Exp $
---- Makefile.in.orig	Fri Dec  5 09:21:22 2014
-+++ Makefile.in	Wed May 13 16:39:06 2015
-@@ -928,30 +928,8 @@ configure-host:  \
-     maybe-configure-lto-plugin
+$OpenBSD: patch-Makefile_in,v 1.2 2017/05/08 09:04:54 patrick Exp $
+--- Makefile.in.orig	Wed Feb 15 01:14:40 2017
++++ Makefile.in	Wed May  3 09:53:45 2017
+@@ -952,32 +952,8 @@ configure-host:  \
+     maybe-configure-gotools
  .PHONY: configure-target
  configure-target:  \
 -    maybe-configure-target-libstdc++-v3 \
 -    maybe-configure-target-libsanitizer \
+-    maybe-configure-target-libmpx \
 -    maybe-configure-target-libvtv \
 -    maybe-configure-target-libcilkrts \
+-    maybe-configure-target-liboffloadmic \
 -    maybe-configure-target-libssp \
      maybe-configure-target-newlib \
 -    maybe-configure-target-libgcc \
@@ -33,7 +35,7 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2015/05/28 23:28:25 bmercer Exp $
  
  # The target built for a native non-bootstrap build.
  .PHONY: all
-@@ -1078,40 +1056,10 @@ all-host: maybe-all-lto-plugin
+@@ -1109,44 +1085,10 @@ all-host: maybe-all-gotools
  
  .PHONY: all-target
  
@@ -43,10 +45,14 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2015/05/28 23:28:25 bmercer Exp $
 -@if target-libsanitizer-no-bootstrap
 -all-target: maybe-all-target-libsanitizer
 -@endif target-libsanitizer-no-bootstrap
+-@if target-libmpx-no-bootstrap
+-all-target: maybe-all-target-libmpx
+-@endif target-libmpx-no-bootstrap
 -@if target-libvtv-no-bootstrap
 -all-target: maybe-all-target-libvtv
 -@endif target-libvtv-no-bootstrap
 -all-target: maybe-all-target-libcilkrts
+-all-target: maybe-all-target-liboffloadmic
 -all-target: maybe-all-target-libssp
  all-target: maybe-all-target-newlib
  @if target-libgcc-no-bootstrap
@@ -74,14 +80,16 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2015/05/28 23:28:25 bmercer Exp $
  
  # Do a target for all the subdirectories.  A ``make do-X'' will do a
  # ``make X'' in all subdirectories (because, in general, there is a
-@@ -1176,30 +1124,8 @@ info-host: maybe-info-lto-plugin
+@@ -1213,32 +1155,8 @@ info-host: maybe-info-gotools
  
  .PHONY: info-target
  
 -info-target: maybe-info-target-libstdc++-v3
 -info-target: maybe-info-target-libsanitizer
+-info-target: maybe-info-target-libmpx
 -info-target: maybe-info-target-libvtv
 -info-target: maybe-info-target-libcilkrts
+-info-target: maybe-info-target-liboffloadmic
 -info-target: maybe-info-target-libssp
  info-target: maybe-info-target-newlib
  info-target: maybe-info-target-libgcc
@@ -105,14 +113,16 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2015/05/28 23:28:25 bmercer Exp $
  
  .PHONY: do-dvi
  do-dvi:
-@@ -1259,30 +1185,8 @@ dvi-host: maybe-dvi-lto-plugin
+@@ -1300,32 +1218,8 @@ dvi-host: maybe-dvi-gotools
  
  .PHONY: dvi-target
  
 -dvi-target: maybe-dvi-target-libstdc++-v3
 -dvi-target: maybe-dvi-target-libsanitizer
+-dvi-target: maybe-dvi-target-libmpx
 -dvi-target: maybe-dvi-target-libvtv
 -dvi-target: maybe-dvi-target-libcilkrts
+-dvi-target: maybe-dvi-target-liboffloadmic
 -dvi-target: maybe-dvi-target-libssp
  dvi-target: maybe-dvi-target-newlib
  dvi-target: maybe-dvi-target-libgcc
@@ -136,14 +146,16 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2015/05/28 23:28:25 bmercer Exp $
  
  .PHONY: do-pdf
  do-pdf:
-@@ -1342,30 +1246,8 @@ pdf-host: maybe-pdf-lto-plugin
+@@ -1387,32 +1281,8 @@ pdf-host: maybe-pdf-gotools
  
  .PHONY: pdf-target
  
 -pdf-target: maybe-pdf-target-libstdc++-v3
 -pdf-target: maybe-pdf-target-libsanitizer
+-pdf-target: maybe-pdf-target-libmpx
 -pdf-target: maybe-pdf-target-libvtv
 -pdf-target: maybe-pdf-target-libcilkrts
+-pdf-target: maybe-pdf-target-liboffloadmic
 -pdf-target: maybe-pdf-target-libssp
  pdf-target: maybe-pdf-target-newlib
  pdf-target: maybe-pdf-target-libgcc
@@ -167,14 +179,16 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2015/05/28 23:28:25 bmercer Exp $
  
  .PHONY: do-html
  do-html:
-@@ -1425,30 +1307,8 @@ html-host: maybe-html-lto-plugin
+@@ -1474,32 +1344,8 @@ html-host: maybe-html-gotools
  
  .PHONY: html-target
  
 -html-target: maybe-html-target-libstdc++-v3
 -html-target: maybe-html-target-libsanitizer
+-html-target: maybe-html-target-libmpx
 -html-target: maybe-html-target-libvtv
 -html-target: maybe-html-target-libcilkrts
+-html-target: maybe-html-target-liboffloadmic
 -html-target: maybe-html-target-libssp
  html-target: maybe-html-target-newlib
  html-target: maybe-html-target-libgcc
@@ -198,14 +212,16 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2015/05/28 23:28:25 bmercer Exp $
  
  .PHONY: do-TAGS
  do-TAGS:
-@@ -1508,30 +1368,8 @@ TAGS-host: maybe-TAGS-lto-plugin
+@@ -1561,32 +1407,8 @@ TAGS-host: maybe-TAGS-gotools
  
  .PHONY: TAGS-target
  
 -TAGS-target: maybe-TAGS-target-libstdc++-v3
 -TAGS-target: maybe-TAGS-target-libsanitizer
+-TAGS-target: maybe-TAGS-target-libmpx
 -TAGS-target: maybe-TAGS-target-libvtv
 -TAGS-target: maybe-TAGS-target-libcilkrts
+-TAGS-target: maybe-TAGS-target-liboffloadmic
 -TAGS-target: maybe-TAGS-target-libssp
  TAGS-target: maybe-TAGS-target-newlib
  TAGS-target: maybe-TAGS-target-libgcc
@@ -229,14 +245,16 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2015/05/28 23:28:25 bmercer Exp $
  
  .PHONY: do-install-info
  do-install-info:
-@@ -1591,30 +1429,8 @@ install-info-host: maybe-install-info-lto-plugin
+@@ -1648,32 +1470,8 @@ install-info-host: maybe-install-info-gotools
  
  .PHONY: install-info-target
  
 -install-info-target: maybe-install-info-target-libstdc++-v3
 -install-info-target: maybe-install-info-target-libsanitizer
+-install-info-target: maybe-install-info-target-libmpx
 -install-info-target: maybe-install-info-target-libvtv
 -install-info-target: maybe-install-info-target-libcilkrts
+-install-info-target: maybe-install-info-target-liboffloadmic
 -install-info-target: maybe-install-info-target-libssp
  install-info-target: maybe-install-info-target-newlib
  install-info-target: maybe-install-info-target-libgcc
@@ -260,14 +278,16 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2015/05/28 23:28:25 bmercer Exp $
  
  .PHONY: do-install-pdf
  do-install-pdf:
-@@ -1674,30 +1490,8 @@ install-pdf-host: maybe-install-pdf-lto-plugin
+@@ -1735,32 +1533,8 @@ install-pdf-host: maybe-install-pdf-gotools
  
  .PHONY: install-pdf-target
  
 -install-pdf-target: maybe-install-pdf-target-libstdc++-v3
 -install-pdf-target: maybe-install-pdf-target-libsanitizer
+-install-pdf-target: maybe-install-pdf-target-libmpx
 -install-pdf-target: maybe-install-pdf-target-libvtv
 -install-pdf-target: maybe-install-pdf-target-libcilkrts
+-install-pdf-target: maybe-install-pdf-target-liboffloadmic
 -install-pdf-target: maybe-install-pdf-target-libssp
  install-pdf-target: maybe-install-pdf-target-newlib
  install-pdf-target: maybe-install-pdf-target-libgcc
@@ -291,14 +311,16 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2015/05/28 23:28:25 bmercer Exp $
  
  .PHONY: do-install-html
  do-install-html:
-@@ -1757,30 +1551,8 @@ install-html-host: maybe-install-html-lto-plugin
+@@ -1822,32 +1596,8 @@ install-html-host: maybe-install-html-gotools
  
  .PHONY: install-html-target
  
 -install-html-target: maybe-install-html-target-libstdc++-v3
 -install-html-target: maybe-install-html-target-libsanitizer
+-install-html-target: maybe-install-html-target-libmpx
 -install-html-target: maybe-install-html-target-libvtv
 -install-html-target: maybe-install-html-target-libcilkrts
+-install-html-target: maybe-install-html-target-liboffloadmic
 -install-html-target: maybe-install-html-target-libssp
  install-html-target: maybe-install-html-target-newlib
  install-html-target: maybe-install-html-target-libgcc
@@ -322,14 +344,16 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2015/05/28 23:28:25 bmercer Exp $
  
  .PHONY: do-installcheck
  do-installcheck:
-@@ -1840,30 +1612,8 @@ installcheck-host: maybe-installcheck-lto-plugin
+@@ -1909,32 +1659,8 @@ installcheck-host: maybe-installcheck-gotools
  
  .PHONY: installcheck-target
  
 -installcheck-target: maybe-installcheck-target-libstdc++-v3
 -installcheck-target: maybe-installcheck-target-libsanitizer
+-installcheck-target: maybe-installcheck-target-libmpx
 -installcheck-target: maybe-installcheck-target-libvtv
 -installcheck-target: maybe-installcheck-target-libcilkrts
+-installcheck-target: maybe-installcheck-target-liboffloadmic
 -installcheck-target: maybe-installcheck-target-libssp
  installcheck-target: maybe-installcheck-target-newlib
  installcheck-target: maybe-installcheck-target-libgcc
@@ -353,14 +377,16 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2015/05/28 23:28:25 bmercer Exp $
  
  .PHONY: do-mostlyclean
  do-mostlyclean:
-@@ -1923,30 +1673,8 @@ mostlyclean-host: maybe-mostlyclean-lto-plugin
+@@ -1996,32 +1722,8 @@ mostlyclean-host: maybe-mostlyclean-gotools
  
  .PHONY: mostlyclean-target
  
 -mostlyclean-target: maybe-mostlyclean-target-libstdc++-v3
 -mostlyclean-target: maybe-mostlyclean-target-libsanitizer
+-mostlyclean-target: maybe-mostlyclean-target-libmpx
 -mostlyclean-target: maybe-mostlyclean-target-libvtv
 -mostlyclean-target: maybe-mostlyclean-target-libcilkrts
+-mostlyclean-target: maybe-mostlyclean-target-liboffloadmic
 -mostlyclean-target: maybe-mostlyclean-target-libssp
  mostlyclean-target: maybe-mostlyclean-target-newlib
  mostlyclean-target: maybe-mostlyclean-target-libgcc
@@ -384,14 +410,16 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2015/05/28 23:28:25 bmercer Exp $
  
  .PHONY: do-clean
  do-clean:
-@@ -2006,30 +1734,8 @@ clean-host: maybe-clean-lto-plugin
+@@ -2083,32 +1785,8 @@ clean-host: maybe-clean-gotools
  
  .PHONY: clean-target
  
 -clean-target: maybe-clean-target-libstdc++-v3
 -clean-target: maybe-clean-target-libsanitizer
+-clean-target: maybe-clean-target-libmpx
 -clean-target: maybe-clean-target-libvtv
 -clean-target: maybe-clean-target-libcilkrts
+-clean-target: maybe-clean-target-liboffloadmic
 -clean-target: maybe-clean-target-libssp
  clean-target: maybe-clean-target-newlib
  clean-target: maybe-clean-target-libgcc
@@ -415,14 +443,16 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2015/05/28 23:28:25 bmercer Exp $
  
  .PHONY: do-distclean
  do-distclean:
-@@ -2089,30 +1795,8 @@ distclean-host: maybe-distclean-lto-plugin
+@@ -2170,32 +1848,8 @@ distclean-host: maybe-distclean-gotools
  
  .PHONY: distclean-target
  
 -distclean-target: maybe-distclean-target-libstdc++-v3
 -distclean-target: maybe-distclean-target-libsanitizer
+-distclean-target: maybe-distclean-target-libmpx
 -distclean-target: maybe-distclean-target-libvtv
 -distclean-target: maybe-distclean-target-libcilkrts
+-distclean-target: maybe-distclean-target-liboffloadmic
 -distclean-target: maybe-distclean-target-libssp
  distclean-target: maybe-distclean-target-newlib
  distclean-target: maybe-distclean-target-libgcc
@@ -446,14 +476,16 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2015/05/28 23:28:25 bmercer Exp $
  
  .PHONY: do-maintainer-clean
  do-maintainer-clean:
-@@ -2172,30 +1856,8 @@ maintainer-clean-host: maybe-maintainer-clean-lto-plug
+@@ -2257,32 +1911,8 @@ maintainer-clean-host: maybe-maintainer-clean-gotools
  
  .PHONY: maintainer-clean-target
  
 -maintainer-clean-target: maybe-maintainer-clean-target-libstdc++-v3
 -maintainer-clean-target: maybe-maintainer-clean-target-libsanitizer
+-maintainer-clean-target: maybe-maintainer-clean-target-libmpx
 -maintainer-clean-target: maybe-maintainer-clean-target-libvtv
 -maintainer-clean-target: maybe-maintainer-clean-target-libcilkrts
+-maintainer-clean-target: maybe-maintainer-clean-target-liboffloadmic
 -maintainer-clean-target: maybe-maintainer-clean-target-libssp
  maintainer-clean-target: maybe-maintainer-clean-target-newlib
  maintainer-clean-target: maybe-maintainer-clean-target-libgcc
@@ -477,14 +509,16 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2015/05/28 23:28:25 bmercer Exp $
  
  
  # Here are the targets which correspond to the do-X targets.
-@@ -2310,30 +1972,8 @@ check-host:  \
+@@ -2400,32 +2030,8 @@ check-host:  \
  
  .PHONY: check-target
  check-target:  \
 -    maybe-check-target-libstdc++-v3 \
 -    maybe-check-target-libsanitizer \
+-    maybe-check-target-libmpx \
 -    maybe-check-target-libvtv \
 -    maybe-check-target-libcilkrts \
+-    maybe-check-target-liboffloadmic \
 -    maybe-check-target-libssp \
      maybe-check-target-newlib \
 -    maybe-check-target-libgcc \
@@ -509,17 +543,19 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2015/05/28 23:28:25 bmercer Exp $
  
  do-check:
  	@: $(MAKE); $(unstage)
-@@ -2466,30 +2106,8 @@ install-host:  \
+@@ -2583,32 +2189,8 @@ install-host:  \
  
  .PHONY: install-target
  install-target:  \
 -    maybe-install-target-libstdc++-v3 \
 -    maybe-install-target-libsanitizer \
+-    maybe-install-target-libmpx \
 -    maybe-install-target-libvtv \
 -    maybe-install-target-libcilkrts \
+-    maybe-install-target-liboffloadmic \
 -    maybe-install-target-libssp \
      maybe-install-target-newlib \
-     maybe-install-target-libgcc \
+-    maybe-install-target-libgcc \
 -    maybe-install-target-libbacktrace \
 -    maybe-install-target-libquadmath \
 -    maybe-install-target-libgfortran \
@@ -537,17 +573,20 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2015/05/28 23:28:25 bmercer Exp $
 -    maybe-install-target-libgomp \
 -    maybe-install-target-libitm \
 -    maybe-install-target-libatomic
++    maybe-install-target-libgcc
  
  uninstall:
  	@echo "the uninstall target is not supported in this tree"
-@@ -2569,30 +2187,8 @@ install-strip-host:  \
+@@ -2690,32 +2272,8 @@ install-strip-host:  \
  
  .PHONY: install-strip-target
  install-strip-target:  \
 -    maybe-install-strip-target-libstdc++-v3 \
 -    maybe-install-strip-target-libsanitizer \
+-    maybe-install-strip-target-libmpx \
 -    maybe-install-strip-target-libvtv \
 -    maybe-install-strip-target-libcilkrts \
+-    maybe-install-strip-target-liboffloadmic \
 -    maybe-install-strip-target-libssp \
      maybe-install-strip-target-newlib \
 -    maybe-install-strip-target-libgcc \

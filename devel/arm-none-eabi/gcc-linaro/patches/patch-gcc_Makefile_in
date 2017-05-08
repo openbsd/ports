@@ -1,7 +1,7 @@
-$OpenBSD: patch-gcc_Makefile_in,v 1.1.1.1 2015/05/28 23:28:25 bmercer Exp $
---- gcc/Makefile.in.orig	Tue Jan 13 03:10:04 2015
-+++ gcc/Makefile.in	Wed May 13 16:31:55 2015
-@@ -3233,13 +3233,7 @@ install-driver: installdirs xgcc$(exeext)
+$OpenBSD: patch-gcc_Makefile_in,v 1.2 2017/05/08 09:04:54 patrick Exp $
+--- gcc/Makefile.in.orig	Wed Feb 15 01:14:41 2017
++++ gcc/Makefile.in	Wed May  3 09:46:25 2017
+@@ -3436,13 +3436,7 @@ install-driver: installdirs xgcc$(exeext)
  # Install the info files.
  # $(INSTALL_DATA) might be a relative pathname, so we can't cd into srcdir
  # to do the install.

@@ -1,7 +1,7 @@
-$OpenBSD: patch-libiberty_Makefile_in,v 1.1.1.1 2015/05/28 23:28:25 bmercer Exp $
---- libiberty/Makefile.in.orig	Fri May 31 20:20:49 2013
-+++ libiberty/Makefile.in	Wed May 13 16:42:27 2015
-@@ -344,7 +344,7 @@ libiberty.html : $(srcdir)/libiberty.texi $(TEXISRC)
+$OpenBSD: patch-libiberty_Makefile_in,v 1.2 2017/05/08 09:04:54 patrick Exp $
+--- libiberty/Makefile.in.orig	Wed Feb 15 01:14:45 2017
++++ libiberty/Makefile.in	Wed May  3 09:47:14 2017
+@@ -355,7 +355,7 @@ libiberty.html : $(srcdir)/libiberty.texi $(TEXISRC)
  @MAINT@	echo stamp > stamp-functions
  
  INSTALL_DEST = @INSTALL_DEST@

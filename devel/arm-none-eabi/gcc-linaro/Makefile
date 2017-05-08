@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2017/04/10 11:45:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2017/05/08 09:04:54 patrick Exp $
 
 COMMENT=	gcc for ${CONFIG} cross-development, Linaro version
 
-VERSION=	4.9-2016.02
-REVISION=	0
+VERSION=	6.3-2017.02
 DISTNAME=	gcc-linaro-${VERSION}
 EXTRACT_SUFX=	.tar.xz
 PKGNAME=	${CONFIG}-gcc-linaro-${VERSION:S/-/./g}
@@ -19,7 +18,7 @@ CONFIG=		arm-none-eabi
 ERRORS+=	"either aarch64 or arm FLAVOR should be set"
 .endif
 
-GCC_VERSION=	4.9.4
+GCC_VERSION=	6.3.1
 SUBST_VARS+=	VERSION CONFIG GCC_VERSION
 
 WANTLIB=	c m ${LIBCXX} gmp mpfr mpc
@@ -58,6 +57,7 @@ CFLAGS=		-O2 -g
 CONFIGURE_ARGS+=--enable-languages=${LANGS}	\
 		--enable-multilib		\
 		--enable-interwork		\
+		--with-gmp=${LOCALBASE}		\
 		--with-newlib			\
 		--disable-lto			\
 		--enable-cpp

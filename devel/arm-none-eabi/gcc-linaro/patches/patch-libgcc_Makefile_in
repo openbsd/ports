@@ -1,12 +1,12 @@
-$OpenBSD: patch-libgcc_Makefile_in,v 1.1.1.1 2015/05/28 23:28:25 bmercer Exp $
+$OpenBSD: patch-libgcc_Makefile_in,v 1.2 2017/05/08 09:04:54 patrick Exp $
 
 Using $(INSTALL_DATA) and chmod generates errors as the operation
 is not permitted. So use plain copy mode and chown/chgrp
 in the post-install target.
 
---- libgcc/Makefile.in.orig	Wed Jan  8 11:37:08 2014
-+++ libgcc/Makefile.in	Wed May 13 16:41:20 2015
-@@ -1023,7 +1023,7 @@ libgcc-extra-parts: $(EXTRA_PARTS)
+--- libgcc/Makefile.in.orig	Wed Feb 15 01:14:45 2017
++++ libgcc/Makefile.in	Wed May  3 09:47:14 2017
+@@ -1049,7 +1049,7 @@ libgcc-extra-parts: $(EXTRA_PARTS)
  	parts="$(EXTRA_PARTS)";					\
  	for file in $$parts; do					\
  	  rm -f $(gcc_objdir)$(MULTISUBDIR)/$$file;		\
@@ -15,7 +15,7 @@ in the post-install target.
  	  case $$file in 					\
  	    *.a)						\
  	      $(RANLIB) $(gcc_objdir)$(MULTISUBDIR)/$$file ;;	\
-@@ -1053,7 +1053,7 @@ install-unwind_h-forbuild:
+@@ -1079,7 +1079,7 @@ install-unwind_h-forbuild:
  # internal headers are copied by gcc's install.
  install-unwind_h:
  	$(mkinstalldirs) $(DESTDIR)$(libsubdir)/include
@@ -24,7 +24,7 @@ in the post-install target.
  
  all: install-unwind_h-forbuild
  
-@@ -1075,7 +1075,7 @@ install-libunwind:
+@@ -1101,7 +1101,7 @@ install-libunwind:
  
  	# NOTE: Maybe this should go into $(inst_libdir), but this
  	# is where the old mklibgcc.in put it.
@@ -33,7 +33,7 @@ in the post-install target.
  	chmod 644 $(DESTDIR)$(inst_slibdir)/libunwind.a
  	$(RANLIB) $(DESTDIR)$(inst_slibdir)/libunwind.a
  
-@@ -1086,7 +1086,7 @@ install-libunwind:
+@@ -1112,7 +1112,7 @@ install-libunwind:
  install-shared:
  	$(mkinstalldirs) $(DESTDIR)$(inst_libdir)
  
@@ -42,7 +42,7 @@ in the post-install target.
  	chmod 644 $(DESTDIR)$(inst_libdir)/libgcc_eh.a
  	$(RANLIB) $(DESTDIR)$(inst_libdir)/libgcc_eh.a
  
-@@ -1097,17 +1097,15 @@ install-shared:
+@@ -1123,17 +1123,15 @@ install-shared:
  install-leaf: $(install-shared) $(install-libunwind)
  	$(mkinstalldirs) $(DESTDIR)$(inst_libdir)
  
