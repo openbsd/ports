@@ -1,0 +1,17 @@
+$OpenBSD: patch-main_cpp,v 1.1 2017/05/08 01:02:16 espie Exp $
+const char* for ""
+
+Index: main.cpp
+--- main.cpp.orig
++++ main.cpp
+@@ -74,8 +74,8 @@ try
+   ostream *ofile = 0;
+   
+   char *outfile_str = 0;
+-  char *interpreter_str = "turtle";
+-  char *interface_str = "gl";
++  const char *interpreter_str = "turtle";
++  const char *interface_str = "gl";
+   char *module_str = 0;
+   double min, max, step;
+   int show_depth = 0;

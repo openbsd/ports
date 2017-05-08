@@ -1,0 +1,16 @@
+$OpenBSD: patch-config_h_in,v 1.1 2017/05/08 01:02:16 espie Exp $
+don't use before it's actually known.
+
+Index: config.h.in
+--- config.h.in.orig
++++ config.h.in
+@@ -1,9 +1,6 @@
+ /* config.h.in.  Generated from configure.in by autoheader.  */
+ 
+ 
+-   using namespace std;
+-
+-
+ /* Define to 1 if you have the <algorithm> header file. */
+ #undef HAVE_ALGORITHM
+ 

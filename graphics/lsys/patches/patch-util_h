@@ -1,0 +1,15 @@
+$OpenBSD: patch-util_h,v 1.1 2017/05/08 01:02:16 espie Exp $
+dude, it's not even constant
+
+Index: util.h
+--- util.h.orig
++++ util.h
+@@ -149,7 +149,7 @@ struct error : exception {
+     { };
+    
+    template<typename T>
+-   error &operator <<(const T &s) const t_no
++   error &operator <<(const T &s) t_no
+      { msg.append (s); return *this; };
+ };
+ 
