@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2016/04/12 15:19:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2017/05/08 21:35:35 schwarze Exp $
 
 COMMENT=	Atmel/NWN wireless access point configuration tools
 
 DISTNAME=	ap-utils-1.5
-REVISION=	2
+REVISION=	3
 CATEGORIES=	net
 EXTRACT_SUFX=	.tar.bz2
 
@@ -25,7 +25,6 @@ CONFIGURE_ARGS+=	--without-included-gettext \
 			--with-libiconv-prefix=${LOCALBASE} \
 			--with-libintl-prefix=${LOCALBASE}
 CONFIGURE_ENV+=		LDFLAGS="-L${LOCALBASE}/lib"
-USE_GROFF =	Yes
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config
 
 post-install:
