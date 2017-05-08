@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.6 2017/04/27 09:13:19 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.7 2017/05/08 20:45:23 jasper Exp $
 
 PKGNAME ?=		${BEAT}-${VERSION}
 
@@ -29,6 +29,9 @@ pre-build:
 ALL_TARGET ?=		github.com/${GH_ACCOUNT}/${BEAT}
 .endif
 
+# XXX: requires -path.home ${PREFIX}/share/${BEAT}/module/
+BEATS_MODULES ?=	No
+
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/${BEAT}/
 .for c in ${CONFIGS}
@@ -37,3 +40,9 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/${BEAT}/
 	${INSTALL_SCRIPT} ${WRKDIST}/libbeat/scripts/migrate_beat_config_1_x_to_5_0.py \
 		${PREFIX}/share/${BEAT}/
+.if defined(BEATS_MODULES) && ${BEATS_MODULES:L} == "yes"
+	${INSTALL_DATA_DIR} ${PREFIX}/share/${BEAT}/module/
+	cd ${WRKSRC}/module && \
+		find . -type f -name \*.yml -o -name \*.json -a \! -name \*expected\.json | \
+		grep -v _meta | pax -rw ${PREFIX}/share/${BEAT}/module/
+.endif
