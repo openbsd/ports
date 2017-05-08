@@ -1,11 +1,12 @@
-$OpenBSD: patch-configure_ac,v 1.12 2016/11/02 22:20:35 ajacoutot Exp $
+$OpenBSD: patch-configure_ac,v 1.13 2017/05/08 10:47:11 ajacoutot Exp $
 
 XXX: Short cut check for shm_open(3).
 Remove when/if we have librt.
 
---- configure.ac.orig	Tue Nov  1 16:14:30 2016
-+++ configure.ac	Wed Nov  2 18:47:55 2016
-@@ -1856,6 +1856,9 @@ AG_GST_CHECK_FEATURE(SHM, [POSIX shared memory source 
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -1864,6 +1864,9 @@ AG_GST_CHECK_FEATURE(SHM, [POSIX shared memory source 
          *-*-OpenBSD*)
              HAVE_SHM=yes
              ;;

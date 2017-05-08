@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.25 2016/11/17 16:56:05 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.26 2017/05/08 10:47:11 ajacoutot Exp $
+include/gstreamer-${API}/gst/allocators/badallocators.h
+include/gstreamer-${API}/gst/allocators/gstphysmemory.h
 include/gstreamer-${API}/gst/audio/gstaudioaggregator.h
 include/gstreamer-${API}/gst/base/gstaggregator.h
 include/gstreamer-${API}/gst/basecamerabinsrc/
@@ -21,7 +23,6 @@ include/gstreamer-${API}/gst/gl/
 include/gstreamer-${API}/gst/gl/egl/
 include/gstreamer-${API}/gst/gl/egl/gstegl.h
 include/gstreamer-${API}/gst/gl/egl/gsteglimage.h
-include/gstreamer-${API}/gst/gl/egl/gstglcontext_egl.h
 include/gstreamer-${API}/gst/gl/egl/gstgldisplay_egl.h
 include/gstreamer-${API}/gst/gl/egl/gstglmemoryegl.h
 include/gstreamer-${API}/gst/gl/gl.h
@@ -51,7 +52,6 @@ include/gstreamer-${API}/gst/gl/gstglbuffer.h
 include/gstreamer-${API}/gst/gl/gstglbufferpool.h
 include/gstreamer-${API}/gst/gl/gstglcolorconvert.h
 include/gstreamer-${API}/gst/gl/gstglcontext.h
-include/gstreamer-${API}/gst/gl/gstglcontrolbindingproxy.h
 include/gstreamer-${API}/gst/gl/gstgldebug.h
 include/gstreamer-${API}/gst/gl/gstgldisplay.h
 include/gstreamer-${API}/gst/gl/gstglfeature.h
@@ -104,6 +104,7 @@ include/gstreamer-${API}/gst/uridownloader/gsturidownloader.h
 include/gstreamer-${API}/gst/uridownloader/gsturidownloader_debug.h
 include/gstreamer-${API}/gst/video/gstvideoaggregator.h
 include/gstreamer-${API}/gst/video/gstvideoaggregatorpad.h
+lib/girepository-${API}/GstBadAllocators-${API}.typelib
 lib/girepository-${API}/GstGL-${API}.typelib
 lib/girepository-${API}/GstInsertBin-${API}.typelib
 lib/girepository-${API}/GstMpegts-${API}.typelib
@@ -118,20 +119,23 @@ lib/gstreamer-${API}/libgstadpcmenc.so
 lib/gstreamer-${API}/libgstaiff.so
 lib/gstreamer-${API}/libgstasfmux.so
 lib/gstreamer-${API}/libgstassrender.so
+lib/gstreamer-${API}/libgstaudiobuffersplit.so
 lib/gstreamer-${API}/libgstaudiofxbad.so
 lib/gstreamer-${API}/libgstaudiomixer.so
+lib/gstreamer-${API}/libgstaudiomixmatrix.so
 lib/gstreamer-${API}/libgstaudiovisualizers.so
 lib/gstreamer-${API}/libgstautoconvert.so
 lib/gstreamer-${API}/libgstbayer.so
 lib/gstreamer-${API}/libgstbs2b.so
 lib/gstreamer-${API}/libgstbz2.so
-lib/gstreamer-${API}/libgstcamerabin2.so
+lib/gstreamer-${API}/libgstcamerabin.so
 lib/gstreamer-${API}/libgstcoloreffects.so
 lib/gstreamer-${API}/libgstcompositor.so
 lib/gstreamer-${API}/libgstdashdemux.so
-lib/gstreamer-${API}/libgstdataurisrc.so
 lib/gstreamer-${API}/libgstdebugutilsbad.so
+lib/gstreamer-${API}/libgstdvbsuboverlay.so
 lib/gstreamer-${API}/libgstdvdspu.so
+lib/gstreamer-${API}/libgstfaceoverlay.so
 lib/gstreamer-${API}/libgstfestival.so
 lib/gstreamer-${API}/libgstfieldanalysis.so
 lib/gstreamer-${API}/libgstfreeverb.so
@@ -139,7 +143,7 @@ lib/gstreamer-${API}/libgstfrei0r.so
 lib/gstreamer-${API}/libgstgaudieffects.so
 lib/gstreamer-${API}/libgstgdp.so
 lib/gstreamer-${API}/libgstgeometrictransform.so
-lib/gstreamer-${API}/libgstgtksink.so
+lib/gstreamer-${API}/libgstgtk.so
 lib/gstreamer-${API}/libgsthls.so
 lib/gstreamer-${API}/libgstid3tag.so
 lib/gstreamer-${API}/libgstinter.so
@@ -148,6 +152,8 @@ lib/gstreamer-${API}/libgstivfparse.so
 lib/gstreamer-${API}/libgstivtc.so
 lib/gstreamer-${API}/libgstjp2kdecimator.so
 lib/gstreamer-${API}/libgstjpegformat.so
+lib/gstreamer-${API}/libgstkms.so
+lib/gstreamer-${API}/libgstlegacyrawparse.so
 lib/gstreamer-${API}/libgstmidi.so
 lib/gstreamer-${API}/libgstmms.so
 lib/gstreamer-${API}/libgstmpegpsdemux.so
@@ -160,7 +166,6 @@ lib/gstreamer-${API}/libgstopengl.so
 lib/gstreamer-${API}/libgstopusparse.so
 lib/gstreamer-${API}/libgstpcapparse.so
 lib/gstreamer-${API}/libgstpnm.so
-lib/gstreamer-${API}/libgstrawparse.so
 lib/gstreamer-${API}/libgstremovesilence.so
 lib/gstreamer-${API}/libgstrfbsrc.so
 lib/gstreamer-${API}/libgstrsvg.so
@@ -176,6 +181,7 @@ lib/gstreamer-${API}/libgstspeed.so
 lib/gstreamer-${API}/libgststereo.so
 lib/gstreamer-${API}/libgstsubenc.so
 lib/gstreamer-${API}/libgsttimecode.so
+lib/gstreamer-${API}/libgstttmlsubs.so
 lib/gstreamer-${API}/libgstvideofiltersbad.so
 lib/gstreamer-${API}/libgstvideoframe_audiolevel.so
 lib/gstreamer-${API}/libgstvideoparsersbad.so
@@ -186,6 +192,9 @@ lib/gstreamer-${API}/libgstyadif.so
 lib/libgstadaptivedemux-${API}.a
 lib/libgstadaptivedemux-${API}.la
 @lib lib/libgstadaptivedemux-${API}.so.${LIBgstadaptivedemux-1.0_VERSION}
+lib/libgstbadallocators-${API}.a
+lib/libgstbadallocators-${API}.la
+@lib lib/libgstbadallocators-${API}.so.${LIBgstbadallocators-1.0_VERSION}
 lib/libgstbadaudio-${API}.a
 lib/libgstbadaudio-${API}.la
 @lib lib/libgstbadaudio-${API}.so.${LIBgstbadaudio-1.0_VERSION}
@@ -219,6 +228,7 @@ lib/libgstplayer-${API}.la
 lib/libgsturidownloader-${API}.a
 lib/libgsturidownloader-${API}.la
 @lib lib/libgsturidownloader-${API}.so.${LIBgsturidownloader-1.0_VERSION}
+lib/pkgconfig/gstreamer-bad-allocators-${API}.pc
 lib/pkgconfig/gstreamer-bad-audio-${API}.pc
 lib/pkgconfig/gstreamer-bad-base-${API}.pc
 lib/pkgconfig/gstreamer-bad-video-${API}.pc
@@ -228,6 +238,7 @@ lib/pkgconfig/gstreamer-insertbin-${API}.pc
 lib/pkgconfig/gstreamer-mpegts-${API}.pc
 lib/pkgconfig/gstreamer-player-${API}.pc
 lib/pkgconfig/gstreamer-plugins-bad-${API}.pc
+share/gir-${API}/GstBadAllocators-${API}.gir
 share/gir-${API}/GstGL-${API}.gir
 share/gir-${API}/GstInsertBin-${API}.gir
 share/gir-${API}/GstMpegts-${API}.gir
@@ -236,6 +247,8 @@ share/gstreamer-${API}/
 share/gstreamer-${API}/presets/
 share/gstreamer-${API}/presets/GstFreeverb.prs
 share/gtk-doc/html/gst-plugins-bad-libs-${API}/
+share/gtk-doc/html/gst-plugins-bad-libs-${API}/GstAggregator.html
+share/gtk-doc/html/gst-plugins-bad-libs-${API}/GstAggregatorPad.html
 share/gtk-doc/html/gst-plugins-bad-libs-${API}/GstGLBaseFilter.html
 share/gtk-doc/html/gst-plugins-bad-libs-${API}/GstGLBufferPool.html
 share/gtk-doc/html/gst-plugins-bad-libs-${API}/GstGLColorConvert.html
@@ -248,6 +261,12 @@ share/gtk-doc/html/gst-plugins-bad-libs-${API}/GstGLShader.html
 share/gtk-doc/html/gst-plugins-bad-libs-${API}/GstGLUpload.html
 share/gtk-doc/html/gst-plugins-bad-libs-${API}/GstGLViewConvert.html
 share/gtk-doc/html/gst-plugins-bad-libs-${API}/GstGLWindow.html
+share/gtk-doc/html/gst-plugins-bad-libs-${API}/GstPlayer.html
+share/gtk-doc/html/gst-plugins-bad-libs-${API}/GstPlayerMediaInfo.html
+share/gtk-doc/html/gst-plugins-bad-libs-${API}/GstPlayerVideoOverlayVideoRenderer.html
+share/gtk-doc/html/gst-plugins-bad-libs-${API}/GstPlayerVisualization.html
+share/gtk-doc/html/gst-plugins-bad-libs-${API}/GstVideoAggregator.html
+share/gtk-doc/html/gst-plugins-bad-libs-${API}/GstVideoAggregatorPad.html
 share/gtk-doc/html/gst-plugins-bad-libs-${API}/annotation-glossary.html
 share/gtk-doc/html/gst-plugins-bad-libs-${API}/api-index-deprecated.html
 share/gtk-doc/html/gst-plugins-bad-libs-${API}/api-index-full.html
@@ -263,37 +282,29 @@ share/gtk-doc/html/gst-plugins-bad-libs-${API}/gst-plugins-bad-libs-Base-MPEG-TS
 share/gtk-doc/html/gst-plugins-bad-libs-${API}/gst-plugins-bad-libs-Base-MPEG-TS-sections.html
 share/gtk-doc/html/gst-plugins-bad-libs-${API}/gst-plugins-bad-libs-DVB-variants-of-MPEG-TS-descriptors.html
 share/gtk-doc/html/gst-plugins-bad-libs-${API}/gst-plugins-bad-libs-DVB-variants-of-MPEG-TS-sections.html
-share/gtk-doc/html/gst-plugins-bad-libs-${API}/gst-plugins-bad-libs-GstAggregator.html
-share/gtk-doc/html/gst-plugins-bad-libs-${API}/gst-plugins-bad-libs-GstAggregatorPad.html
 share/gtk-doc/html/gst-plugins-bad-libs-${API}/gst-plugins-bad-libs-GstEGLImage.html
 share/gtk-doc/html/gst-plugins-bad-libs-${API}/gst-plugins-bad-libs-GstGLAPI.html
 share/gtk-doc/html/gst-plugins-bad-libs-${API}/gst-plugins-bad-libs-GstGLBuffer.html
 share/gtk-doc/html/gst-plugins-bad-libs-${API}/gst-plugins-bad-libs-GstGLDisplayWayland.html
 share/gtk-doc/html/gst-plugins-bad-libs-${API}/gst-plugins-bad-libs-GstGLDisplayX11.html
 share/gtk-doc/html/gst-plugins-bad-libs-${API}/gst-plugins-bad-libs-GstGLMemory.html
+share/gtk-doc/html/gst-plugins-bad-libs-${API}/gst-plugins-bad-libs-GstGLMemoryPBO.html
 share/gtk-doc/html/gst-plugins-bad-libs-${API}/gst-plugins-bad-libs-GstGLOverlayCompositor.html
 share/gtk-doc/html/gst-plugins-bad-libs-${API}/gst-plugins-bad-libs-GstGLQuery.html
 share/gtk-doc/html/gst-plugins-bad-libs-${API}/gst-plugins-bad-libs-GstGLRenderbuffer.html
 share/gtk-doc/html/gst-plugins-bad-libs-${API}/gst-plugins-bad-libs-GstGLSL.html
 share/gtk-doc/html/gst-plugins-bad-libs-${API}/gst-plugins-bad-libs-GstGLSyncMeta.html
+share/gtk-doc/html/gst-plugins-bad-libs-${API}/gst-plugins-bad-libs-GstGlBaseMemory.html
 share/gtk-doc/html/gst-plugins-bad-libs-${API}/gst-plugins-bad-libs-GstInsertbin.html
 share/gtk-doc/html/gst-plugins-bad-libs-${API}/gst-plugins-bad-libs-GstPhotography.html
-share/gtk-doc/html/gst-plugins-bad-libs-${API}/gst-plugins-bad-libs-GstVideoAggregator.html
-share/gtk-doc/html/gst-plugins-bad-libs-${API}/gst-plugins-bad-libs-GstVideoAggregatorPad.html
+share/gtk-doc/html/gst-plugins-bad-libs-${API}/gst-plugins-bad-libs-GstPlayerGMainContextSignalDispatcher.html
 share/gtk-doc/html/gst-plugins-bad-libs-${API}/gst-plugins-bad-libs-ISDB-variants-of-MPEG-TS-descriptors.html
 share/gtk-doc/html/gst-plugins-bad-libs-${API}/gst-plugins-bad-libs-Mpeg-ts-helper-library.html
 share/gtk-doc/html/gst-plugins-bad-libs-${API}/gst-plugins-bad-libs-OpenGL-Formats.html
 share/gtk-doc/html/gst-plugins-bad-libs-${API}/gst-plugins-bad-libs-OpenGL-Miscellaneous-Utilities.html
 share/gtk-doc/html/gst-plugins-bad-libs-${API}/gst-plugins-bad-libs-OpenGL-debugging.html
-share/gtk-doc/html/gst-plugins-bad-libs-${API}/gst-plugins-bad-libs-gstglbasememory.html
 share/gtk-doc/html/gst-plugins-bad-libs-${API}/gst-plugins-bad-libs-gstglmemoryegl.html
-share/gtk-doc/html/gst-plugins-bad-libs-${API}/gst-plugins-bad-libs-gstglmemorypbo.html
 share/gtk-doc/html/gst-plugins-bad-libs-${API}/gst-plugins-bad-libs-gstmpegvideometa.html
-share/gtk-doc/html/gst-plugins-bad-libs-${API}/gst-plugins-bad-libs-gstplayer-gmaincontextsignaldispatcher.html
-share/gtk-doc/html/gst-plugins-bad-libs-${API}/gst-plugins-bad-libs-gstplayer-mediainfo.html
-share/gtk-doc/html/gst-plugins-bad-libs-${API}/gst-plugins-bad-libs-gstplayer-videooverlayvideorenderer.html
-share/gtk-doc/html/gst-plugins-bad-libs-${API}/gst-plugins-bad-libs-gstplayer-visualization.html
-share/gtk-doc/html/gst-plugins-bad-libs-${API}/gst-plugins-bad-libs-gstplayer.html
 share/gtk-doc/html/gst-plugins-bad-libs-${API}/gst-plugins-bad-libs-h264parser.html
 share/gtk-doc/html/gst-plugins-bad-libs-${API}/gst-plugins-bad-libs-jpegparser.html
 share/gtk-doc/html/gst-plugins-bad-libs-${API}/gst-plugins-bad-libs-mpeg4parser.html
@@ -319,6 +330,7 @@ share/gtk-doc/html/gst-plugins-bad-plugins-${API}/camerabin.png
 share/gtk-doc/html/gst-plugins-bad-plugins-${API}/ch01.html
 share/gtk-doc/html/gst-plugins-bad-plugins-${API}/ch02.html
 share/gtk-doc/html/gst-plugins-bad-plugins-${API}/gst-plugins-bad-plugins-${API}.devhelp2
+share/gtk-doc/html/gst-plugins-bad-plugins-${API}/gst-plugins-bad-plugins-IQA.html
 share/gtk-doc/html/gst-plugins-bad-plugins-${API}/gst-plugins-bad-plugins-accurip.html
 share/gtk-doc/html/gst-plugins-bad-plugins-${API}/gst-plugins-bad-plugins-aiffmux.html
 share/gtk-doc/html/gst-plugins-bad-plugins-${API}/gst-plugins-bad-plugins-aiffparse.html
@@ -341,7 +353,6 @@ share/gtk-doc/html/gst-plugins-bad-plugins-${API}/gst-plugins-bad-plugins-cverod
 share/gtk-doc/html/gst-plugins-bad-plugins-${API}/gst-plugins-bad-plugins-cvlaplace.html
 share/gtk-doc/html/gst-plugins-bad-plugins-${API}/gst-plugins-bad-plugins-cvsmooth.html
 share/gtk-doc/html/gst-plugins-bad-plugins-${API}/gst-plugins-bad-plugins-cvsobel.html
-share/gtk-doc/html/gst-plugins-bad-plugins-${API}/gst-plugins-bad-plugins-dataurisrc.html
 share/gtk-doc/html/gst-plugins-bad-plugins-${API}/gst-plugins-bad-plugins-diffuse.html
 share/gtk-doc/html/gst-plugins-bad-plugins-${API}/gst-plugins-bad-plugins-dilate.html
 share/gtk-doc/html/gst-plugins-bad-plugins-${API}/gst-plugins-bad-plugins-dodge.html
@@ -435,7 +446,6 @@ share/gtk-doc/html/gst-plugins-bad-plugins-${API}/gst-plugins-bad-plugins-plugin
 share/gtk-doc/html/gst-plugins-bad-plugins-${API}/gst-plugins-bad-plugins-plugin-camerabin.html
 share/gtk-doc/html/gst-plugins-bad-plugins-${API}/gst-plugins-bad-plugins-plugin-coloreffects.html
 share/gtk-doc/html/gst-plugins-bad-plugins-${API}/gst-plugins-bad-plugins-plugin-curl.html
-share/gtk-doc/html/gst-plugins-bad-plugins-${API}/gst-plugins-bad-plugins-plugin-dataurisrc.html
 share/gtk-doc/html/gst-plugins-bad-plugins-${API}/gst-plugins-bad-plugins-plugin-debugutilsbad.html
 share/gtk-doc/html/gst-plugins-bad-plugins-${API}/gst-plugins-bad-plugins-plugin-dtsdec.html
 share/gtk-doc/html/gst-plugins-bad-plugins-${API}/gst-plugins-bad-plugins-plugin-dvb.html
@@ -447,7 +457,6 @@ share/gtk-doc/html/gst-plugins-bad-plugins-${API}/gst-plugins-bad-plugins-plugin
 share/gtk-doc/html/gst-plugins-bad-plugins-${API}/gst-plugins-bad-plugins-plugin-geometrictransform.html
 share/gtk-doc/html/gst-plugins-bad-plugins-${API}/gst-plugins-bad-plugins-plugin-gsm.html
 share/gtk-doc/html/gst-plugins-bad-plugins-${API}/gst-plugins-bad-plugins-plugin-jpegformat.html
-share/gtk-doc/html/gst-plugins-bad-plugins-${API}/gst-plugins-bad-plugins-plugin-mimic.html
 share/gtk-doc/html/gst-plugins-bad-plugins-${API}/gst-plugins-bad-plugins-plugin-mms.html
 share/gtk-doc/html/gst-plugins-bad-plugins-${API}/gst-plugins-bad-plugins-plugin-modplug.html
 share/gtk-doc/html/gst-plugins-bad-plugins-${API}/gst-plugins-bad-plugins-plugin-mpeg2enc.html
@@ -463,10 +472,11 @@ share/gtk-doc/html/gst-plugins-bad-plugins-${API}/gst-plugins-bad-plugins-plugin
 share/gtk-doc/html/gst-plugins-bad-plugins-${API}/gst-plugins-bad-plugins-plugin-rawparse.html
 share/gtk-doc/html/gst-plugins-bad-plugins-${API}/gst-plugins-bad-plugins-plugin-rfbsrc.html
 share/gtk-doc/html/gst-plugins-bad-plugins-${API}/gst-plugins-bad-plugins-plugin-rtmp.html
-share/gtk-doc/html/gst-plugins-bad-plugins-${API}/gst-plugins-bad-plugins-plugin-sdp.html
+share/gtk-doc/html/gst-plugins-bad-plugins-${API}/gst-plugins-bad-plugins-plugin-sdpelem.html
 share/gtk-doc/html/gst-plugins-bad-plugins-${API}/gst-plugins-bad-plugins-plugin-shm.html
 share/gtk-doc/html/gst-plugins-bad-plugins-${API}/gst-plugins-bad-plugins-plugin-soundtouch.html
 share/gtk-doc/html/gst-plugins-bad-plugins-${API}/gst-plugins-bad-plugins-plugin-speed.html
+share/gtk-doc/html/gst-plugins-bad-plugins-${API}/gst-plugins-bad-plugins-plugin-ttmlsubs.html
 share/gtk-doc/html/gst-plugins-bad-plugins-${API}/gst-plugins-bad-plugins-plugin-voaacenc.html
 share/gtk-doc/html/gst-plugins-bad-plugins-${API}/gst-plugins-bad-plugins-plugin-voamrwbenc.html
 share/gtk-doc/html/gst-plugins-bad-plugins-${API}/gst-plugins-bad-plugins-plugin-webrtcdsp.html
@@ -488,6 +498,8 @@ share/gtk-doc/html/gst-plugins-bad-plugins-${API}/gst-plugins-bad-plugins-square
 share/gtk-doc/html/gst-plugins-bad-plugins-${API}/gst-plugins-bad-plugins-stretch.html
 share/gtk-doc/html/gst-plugins-bad-plugins-${API}/gst-plugins-bad-plugins-synaescope.html
 share/gtk-doc/html/gst-plugins-bad-plugins-${API}/gst-plugins-bad-plugins-templatematch.html
+share/gtk-doc/html/gst-plugins-bad-plugins-${API}/gst-plugins-bad-plugins-ttmlparse.html
+share/gtk-doc/html/gst-plugins-bad-plugins-${API}/gst-plugins-bad-plugins-ttmlrender.html
 share/gtk-doc/html/gst-plugins-bad-plugins-${API}/gst-plugins-bad-plugins-tunnel.html
 share/gtk-doc/html/gst-plugins-bad-plugins-${API}/gst-plugins-bad-plugins-twirl.html
 share/gtk-doc/html/gst-plugins-bad-plugins-${API}/gst-plugins-bad-plugins-unalignedaudioparse.html
@@ -523,6 +535,7 @@ share/locale/es/LC_MESSAGES/gst-plugins-bad-${API}.mo
 share/locale/eu/LC_MESSAGES/gst-plugins-bad-${API}.mo
 share/locale/fi/LC_MESSAGES/gst-plugins-bad-${API}.mo
 share/locale/fr/LC_MESSAGES/gst-plugins-bad-${API}.mo
+share/locale/fur/LC_MESSAGES/gst-plugins-bad-${API}.mo
 share/locale/gl/LC_MESSAGES/gst-plugins-bad-${API}.mo
 share/locale/hr/LC_MESSAGES/gst-plugins-bad-${API}.mo
 share/locale/hu/LC_MESSAGES/gst-plugins-bad-${API}.mo

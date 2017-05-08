@@ -1,22 +1,23 @@
-# $OpenBSD: Makefile,v 1.55 2017/04/10 11:46:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.56 2017/05/08 10:47:11 ajacoutot Exp $
 
 COMMENT=		bad elements for GStreamer
 
 DISTNAME=		gst-plugins-bad-${V}
 PKGNAME=		${GST_PKGNAME_PREFIX}-plugins-bad-${V}
 
-SHARED_LIBS +=  gstphotography-1.0   3.1      # 1004.0
-SHARED_LIBS +=  gstbasecamerabinsrc-1.0 3.1      # 1004.0
-SHARED_LIBS +=  gstcodecparsers-1.0  3.1      # 1004.0
-SHARED_LIBS +=  gstinsertbin-1.0     2.1      # 1004.0
-SHARED_LIBS +=  gsturidownloader-1.0 2.1      # 1004.0
-SHARED_LIBS +=  gstmpegts-1.0        2.1      # 1004.0
-SHARED_LIBS +=  gstbadbase-1.0       2.1      # 1004.0
-SHARED_LIBS +=  gstplayer-1.0        0.1      # 1004.0
-SHARED_LIBS +=  gstgl-1.0            2.1      # 1004.0
-SHARED_LIBS +=  gstadaptivedemux-1.0 1.1      # 1004.0
-SHARED_LIBS +=  gstbadvideo-1.0      2.1      # 1004.0
-SHARED_LIBS +=  gstbadaudio-1.0      0.1      # 1004.0
+SHARED_LIBS +=  gstphotography-1.0   3.2      # 1200.0
+SHARED_LIBS +=  gstbasecamerabinsrc-1.0 3.2   # 1200.0
+SHARED_LIBS +=  gstcodecparsers-1.0  3.2      # 1200.0
+SHARED_LIBS +=  gstinsertbin-1.0     2.2      # 1200.0
+SHARED_LIBS +=  gsturidownloader-1.0 2.2      # 1200.0
+SHARED_LIBS +=  gstmpegts-1.0        2.2      # 1200.0
+SHARED_LIBS +=  gstbadbase-1.0       2.2      # 1200.0
+SHARED_LIBS +=  gstplayer-1.0        0.2      # 1200.0
+SHARED_LIBS +=  gstbadallocators-1.0 0.0      # 1200.0
+SHARED_LIBS +=  gstgl-1.0            2.2      # 1200.0
+SHARED_LIBS +=  gstadaptivedemux-1.0 1.2      # 1200.0
+SHARED_LIBS +=  gstbadvideo-1.0      2.2      # 1200.0
+SHARED_LIBS +=  gstbadaudio-1.0      0.2      # 1200.0
 
 WANTLIB += EGL GL GLESv2 ICE SM SoundTouch X11 X11-xcb Xcomposite
 WANTLIB += Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender
@@ -31,6 +32,7 @@ WANTLIB += jpeg lzma m mms opus orc-0.4 pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs ssl
 WANTLIB += rsvg-2 ${LIBCXX} xcb xcb-dri2 xcb-glx xcb-render
 WANTLIB += xcb-shm xcb-xfixes xml2 z gstallocators-1.0 iconv intl
+WANTLIB += Xau Xdmcp gstcontroller-1.0
 
 MASTER_SITES =		${MASTER_SITE_GST:=gst-plugins-bad/}
 
@@ -69,7 +71,6 @@ CONFIGURE_ARGS +=	--disable-acm \
 			--disable-dtls \
 			--disable-dts \
 			--disable-dvb \
-			--disable-dvbsuboverlay \
 			--disable-faac \
 			--disable-faad \
 			--disable-fbdev \
