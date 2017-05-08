@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2015/10/13 06:29:38 bentley Exp $
+# $OpenBSD: Makefile,v 1.26 2017/05/08 17:25:41 schwarze Exp $
 
 # Memory hog, stuck for days on the same file during build.
 NOT_FOR_ARCHS=	sh
@@ -7,7 +7,7 @@ COMMENT=	interpreted language for scientific computing
 
 VERSION=	2.1.06
 DISTNAME=	yorick-${VERSION}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES=	math devel
 
@@ -22,7 +22,6 @@ MAINTAINER=	Peter Valchev <pvalchev@sightly.net>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	X11 c m
-USE_GROFF =	Yes
 
 Y_SITE=		${PREFIX}/share/yorick
 CONFIGURE_STYLE= simple
