@@ -1,0 +1,13 @@
+$OpenBSD: patch-qtsingleapplication_qtlocalpeer_cpp,v 1.1 2017/05/08 12:06:47 espie Exp $
+
+Index: qtsingleapplication/qtlocalpeer.cpp
+--- qtsingleapplication/qtlocalpeer.cpp.orig
++++ qtsingleapplication/qtlocalpeer.cpp
+@@ -51,6 +51,7 @@ static PProcessIdToSessionId pProcessIdToSessionId = 0
+ #if defined(Q_OS_UNIX)
+ #include <time.h>
+ #endif
++#include <unistd.h>
+ 
+ namespace QtLP_Private {
+ #include "qtlockedfile.cpp"
