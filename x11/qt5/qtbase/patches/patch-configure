@@ -1,8 +1,22 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2016/12/25 14:13:11 zhuk Exp $
+$OpenBSD: patch-configure,v 1.2 2017/05/08 16:14:32 espie Exp $
 Make bootstrap pick up CC/CXX we want.
---- configure.orig	Sat Dec 17 14:09:28 2016
-+++ configure	Sat Dec 17 14:00:42 2016
-@@ -4002,7 +4002,11 @@ fi
+Index: configure
+--- configure.orig
++++ configure
+@@ -2880,7 +2880,11 @@ if [ -z "$PLATFORM" ]; then
+         fi
+         ;;
+      OpenBSD:*)
+-        PLATFORM=openbsd-g++
++     	if cc -v 2>&1|grep -q clang; then
++	    PLATFORM=openbsd-clang
++	else
++	    PLATFORM=openbsd-g++
++	fi
+         ;;
+      NetBSD:*)
+         PLATFORM=netbsd-g++
+@@ -4002,7 +4006,11 @@ fi
  # is where the resulting variable is written to
  setBootstrapVariable()
  {
