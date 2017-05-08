@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2016/09/10 13:03:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2017/05/08 20:37:06 schwarze Exp $
 
 COMMENT=	concurrent multi-player battle strategy game
 
 DISTNAME=	xbattle-5.4.1
-REVISION =	3
+REVISION =	4
 
 CATEGORIES=	games
 
@@ -16,7 +16,6 @@ WANTLIB=	X11 Xau Xdmcp Xext c m pthread-stubs xcb
 
 CONFIGURE_STYLE=imake
 NO_TEST=	Yes
-USE_GROFF =	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/xbattle
