@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.13 2016/11/02 22:19:52 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.14 2017/05/08 10:46:53 ajacoutot Exp $
 @conflict gstreamer1-plugins-bad-<1.2.0
 lib/gstreamer-${API}/libgstalaw.so
 lib/gstreamer-${API}/libgstalpha.so
@@ -43,7 +43,7 @@ lib/gstreamer-${API}/libgstrtsp.so
 lib/gstreamer-${API}/libgstshapewipe.so
 lib/gstreamer-${API}/libgstshout2.so
 lib/gstreamer-${API}/libgstsmpte.so
-lib/gstreamer-${API}/libgstsouphttpsrc.so
+lib/gstreamer-${API}/libgstsoup.so
 lib/gstreamer-${API}/libgstspectrum.so
 lib/gstreamer-${API}/libgstspeex.so
 lib/gstreamer-${API}/libgsttaglib.so
@@ -225,7 +225,7 @@ share/gtk-doc/html/gst-plugins-good-plugins-${API}/gst-plugins-good-plugins-plug
 share/gtk-doc/html/gst-plugins-good-plugins-${API}/gst-plugins-good-plugins-plugin-rtpmanager.html
 share/gtk-doc/html/gst-plugins-good-plugins-${API}/gst-plugins-good-plugins-plugin-rtsp.html
 share/gtk-doc/html/gst-plugins-good-plugins-${API}/gst-plugins-good-plugins-plugin-shapewipe.html
-share/gtk-doc/html/gst-plugins-good-plugins-${API}/gst-plugins-good-plugins-plugin-shout2send.html
+share/gtk-doc/html/gst-plugins-good-plugins-${API}/gst-plugins-good-plugins-plugin-shout2.html
 share/gtk-doc/html/gst-plugins-good-plugins-${API}/gst-plugins-good-plugins-plugin-smpte.html
 share/gtk-doc/html/gst-plugins-good-plugins-${API}/gst-plugins-good-plugins-plugin-soup.html
 share/gtk-doc/html/gst-plugins-good-plugins-${API}/gst-plugins-good-plugins-plugin-spectrum.html
@@ -428,6 +428,7 @@ share/locale/es/LC_MESSAGES/gst-plugins-good-${API}.mo
 share/locale/eu/LC_MESSAGES/gst-plugins-good-${API}.mo
 share/locale/fi/LC_MESSAGES/gst-plugins-good-${API}.mo
 share/locale/fr/LC_MESSAGES/gst-plugins-good-${API}.mo
+share/locale/fur/LC_MESSAGES/gst-plugins-good-${API}.mo
 share/locale/gl/LC_MESSAGES/gst-plugins-good-${API}.mo
 share/locale/hr/LC_MESSAGES/gst-plugins-good-${API}.mo
 share/locale/hu/LC_MESSAGES/gst-plugins-good-${API}.mo

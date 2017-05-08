@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2017/04/10 11:46:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.48 2017/05/08 10:46:53 ajacoutot Exp $
 
 # XXX ossaudio(3) is only enabled to be used as a mixing device by
 # x11/xfce4/xfce4-mixer
@@ -16,7 +16,7 @@ MASTER_SITES=		${MASTER_SITE_GST:=gst-plugins-good/}
 
 WANTLIB += ffi glib-2.0 gmodule-2.0 gobject-2.0 gstaudio-1.0 gstbase-1.0
 WANTLIB += gstpbutils-1.0 gstreamer-1.0 gsttag-1.0 gstvideo-1.0
-WANTLIB += m orc-0.4 pcre pthread z X11 Xext xcb iconv intl
+WANTLIB += m orc-0.4 pcre pthread z X11 Xext xcb iconv intl execinfo
 
 WANTLIB-main +=	${WANTLIB}
 WANTLIB-main += FLAC Xdamage Xfixes bz2 xml2 pthread-stubs
@@ -34,8 +34,8 @@ WANTLIB-main += estdc++
 .endif
 
 WANTLIB-pulse += ${WANTLIB}
-WANTLIB-pulse += execinfo gdbm pulse sndfile X11-xcb Xi Xtst ICE
-WANTLIB-pulse += FLAC ogg vorbis vorbisenc dbus-1 SM
+WANTLIB-pulse += gdbm pulse sndfile X11-xcb Xi Xtst ICE FLAC ogg
+WANTLIB-pulse += vorbis vorbisenc dbus-1 SM
 
 MULTI_PACKAGES=		-main -pulse
 
