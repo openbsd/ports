@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.27 2015/03/31 09:44:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2017/05/08 12:53:28 schwarze Exp $
 
 COMMENT =	dungeon explorin', hackin', game.  Hard
 DISTNAME =	se007e7f1
 PKGNAME =	slash-em-3.4.3.7e7f1
-REVISION =	5
+REVISION =	6
 V =		3.4.3.7e7f1
 CATEGORIES =	games
 
 HOMEPAGE =	http://slashem.sourceforge.net
-MASTER_SITES =	http://avrc.city.ac.uk/nethack/slashem/
+#MASTER_SITES =	http://avrc.city.ac.uk/nethack/slashem/
 
 MAINTAINER =	Marc Espie <espie@openbsd.org>
 
@@ -24,7 +24,6 @@ GAMEDIR =		lib/slashemdir-$V
 NHDIR =			${PREFIX}/${GAMEDIR}
 MAKE_ENV += 		NHDIR=${NHDIR} NETHACKCONFIG=${NETHACKCONFIG}
 SUBST_VARS =		GAMEDIR V
-USE_GROFF =		Yes
 
 # qt flavor is apparently not working yet
 FLAVORS =		no_x11 #qt

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.27 2015/03/27 10:56:15 tobiasu Exp $
+# $OpenBSD: Makefile,v 1.28 2017/05/08 12:53:28 schwarze Exp $
 
 COMMENT =	NetHack derivative
 
 VERSION =	1.9.3
 DISTNAME =	nethack_source_331_jtp_${VERSION:S/.//g}
 PKGNAME =	falconseye-${VERSION}
-REVISION =	6
+REVISION =	7
 CATEGORIES =	games x11
 EXTRACT_SUFX =	.zip
 
@@ -32,7 +32,6 @@ SUBST_VARS =	GAMEDIR
 WRKDIST =	${WRKDIR}
 
 NETHACKCONFIG =	${FILESDIR}/x-config
-USE_GROFF =	Yes
 MAKE_ENV +=	CFLAGS="${CFLAGS} -I${X11BASE}/include -I${LOCALBASE}/include -L${X11BASE}/lib -L${LOCALBASE}/lib"
 
 NO_TEST =	Yes

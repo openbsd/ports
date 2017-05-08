@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.48 2016/12/01 00:11:22 jca Exp $
+# $OpenBSD: Makefile,v 1.49 2017/05/08 12:53:28 schwarze Exp $
 
 COMMENT =	dungeon explorin', hackin' game, but harder than nethack
 
 DISTNAME =	slash-e8
 PKGNAME =	slash-3.2.2.e8
-REVISION =	5
+REVISION =	6
 CATEGORIES =	games
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=nethack/}
@@ -26,7 +26,6 @@ GAMEDIR =	lib/slashdir
 NHDIR =		${PREFIX}/${GAMEDIR}
 MAKE_ENV += 	NHDIR=${NHDIR} NETHACKCONFIG=${NETHACKCONFIG}
 SUBST_VARS =	GAMEDIR
-USE_GROFF =	Yes
 
 FLAVORS =	no_x11
 FLAVOR ?=

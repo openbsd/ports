@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2015/11/24 09:11:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2017/05/08 12:53:28 schwarze Exp $
 
 COMMENT=		console based sudoku
 
 DISTNAME=		sudoku-1.0.1
-REVISION =		1
+REVISION =		2
 CATEGORIES=		games
 
 HOMEPAGE=		http://www.laurasia.com.au/sudoku/
@@ -16,7 +16,6 @@ MASTER_SITES=		https://distfiles.nl/ \
 			http://www.laurasia.com.au/downloads/
 EXTRACT_SUFX=		.tgz
 
-USE_GROFF =		Yes
 NO_TEST=		Yes
 
 do-configure:
