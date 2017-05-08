@@ -1,0 +1,15 @@
+$OpenBSD: patch-plugins_graphs_grapher_cpp,v 1.1 2017/05/08 11:56:50 espie Exp $
+missing def
+
+Index: plugins/graphs/grapher.cpp
+--- plugins/graphs/grapher.cpp.orig
++++ plugins/graphs/grapher.cpp
+@@ -24,6 +24,8 @@
+ 
+ #include <qpixmap.h>
+ #include <qpainter.h>
++#include <cstdlib>
++using std::rand;
+ 
+ const QString GraphBase::EMPTYSTR=QT_TR_NOOP( "No Transactions" );
+ 
