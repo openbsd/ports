@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2012/06/15 08:32:15 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2017/05/08 20:13:47 kili Exp $
 @bin bin/blobwars
 share/applications/blobwars.desktop
 share/blobwars/
@@ -27,6 +27,7 @@ share/doc/blobwars/spreadIcon.png
 share/doc/blobwars/title.png
 share/icons/hicolor/16x16/apps/blobwars.png
 share/icons/hicolor/32x32/apps/blobwars.png
+share/icons/hicolor/48x48/apps/blobwars.png
 share/icons/hicolor/64x64/apps/blobwars.png
 share/locale/ca/LC_MESSAGES/blobwars.mo
 share/locale/da/LC_MESSAGES/blobwars.mo

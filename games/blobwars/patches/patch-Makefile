@@ -1,0 +1,89 @@
+$OpenBSD: patch-Makefile,v 1.1 2017/05/08 20:13:47 kili Exp $
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -1,16 +1,16 @@
+ PROG = blobwars
+ PAKNAME = blobwars.pak
+-DOCS = doc/*
++DOCS = doc/*.{gif,png,html}
+ ICONS = icons/
+ DATA = data gfx sound music
+ 
+ VERSION = 2.00
+ RELEASE ?= 0
+-USEPAK ?= 0
++USEPAK ?= 1
+ 
+ PREFIX ?= /usr
+-BINDIR ?= $(PREFIX)/games/
+-DATADIR ?= $(PREFIX)/share/games/blobwars/
++BINDIR ?= $(PREFIX)/bin/
++DATADIR ?= $(PREFIX)/share/$(PROG)/data/
+ DOCDIR ?= $(PREFIX)/share/doc/$(PROG)/
+ ICONDIR ?= $(PREFIX)/share/icons/hicolor/
+ DESKTOPDIR ?= $(PREFIX)/share/applications/
+@@ -21,8 +21,8 @@ MEDAL_SERVER_PORT = 80
+ CXXFLAGS += `pkg-config --cflags sdl2 SDL2_mixer SDL2_image SDL2_ttf SDL2_net` -DVERSION=$(VERSION) -DRELEASE=$(RELEASE) -DUSEPAK=$(USEPAK)
+ CXXFLAGS += -DPAKNAME=\"$(PAKNAME)\" -DPAKLOCATION=\"$(DATADIR)\" -DUNIX -DGAMEPLAYMANUAL=\"$(DOCDIR)index.html\" -Wall
+ CXXFLAGS += -DLOCALEDIR=\"$(LOCALEDIR)\" -DMEDAL_SERVER_HOST=\"$(MEDAL_SERVER_HOST)\" -DMEDAL_SERVER_PORT=$(MEDAL_SERVER_PORT)
+-CXXFLAGS += $(CFLAGS) -Werror
+-LIBS = `pkg-config --libs sdl2 SDL2_mixer SDL2_image SDL2_ttf SDL2_net` -lz
++CXXFLAGS += $(CFLAGS)
++LIBS = `pkg-config --libs sdl2 SDL2_mixer SDL2_image SDL2_ttf SDL2_net` -lz -lintl -liconv
+ PAKLIBS = -lz
+ 
+ OBJS += CAudio.o
+@@ -105,33 +105,32 @@ buildpak: $(PAKNAME)
+ 
+ # install
+ install: $(ALL)
+-	mkdir -p $(DESTDIR)$(BINDIR)
+-	mkdir -p $(DESTDIR)$(DATADIR)
+-	mkdir -p $(DESTDIR)$(DOCDIR)
+-	mkdir -p $(DESTDIR)$(ICONDIR)16x16/apps
+-	mkdir -p $(DESTDIR)$(ICONDIR)32x32/apps
+-	mkdir -p $(DESTDIR)$(ICONDIR)48x48/apps
+-	mkdir -p $(DESTDIR)$(ICONDIR)64x64/apps
+-	mkdir -p $(DESTDIR)$(DESKTOPDIR)
++	$(BSD_INSTALL_PROGRAM_DIR) $(BINDIR)
++	$(BSD_INSTALL_DATA_DIR) $(DATADIR)
++	$(BSD_INSTALL_DATA_DIR) $(DOCDIR)
++	$(BSD_INSTALL_DATA_DIR) $(ICONDIR)16x16/apps
++	$(BSD_INSTALL_DATA_DIR) $(ICONDIR)32x32/apps
++	$(BSD_INSTALL_DATA_DIR) $(ICONDIR)48x48/apps
++	$(BSD_INSTALL_DATA_DIR) $(ICONDIR)64x64/apps
++	$(BSD_INSTALL_DATA_DIR) $(DESKTOPDIR)
+ 
+-	install -m 755 $(PROG) $(DESTDIR)$(BINDIR)$(PROG)
++	$(BSD_INSTALL_PROGRAM) $(PROG) $(BINDIR)
+ ifeq ($(USEPAK), 1)
+-	install -m 644 $(PAKNAME) $(DESTDIR)$(DATADIR)$(PAKNAME)
++	$(BSD_INSTALL_DATA) $(PAKNAME) $(DATADIR)
+ else
+-	cp -pr $(DATA) $(DESTDIR)$(DATADIR)
++	umask 022 && cp -R $(DATA) $(DATADIR)
+ endif
+-	cp -p $(DOCS) $(DESTDIR)$(DOCDIR)
+-	cp -p $(ICONS)$(PROG)16x16.png $(DESTDIR)$(ICONDIR)16x16/apps/$(PROG).png
+-	cp -p $(ICONS)$(PROG)32x32.png $(DESTDIR)$(ICONDIR)32x32/apps/$(PROG).png
+-	cp -p $(ICONS)$(PROG)48x48.png $(DESTDIR)$(ICONDIR)48x48/apps/$(PROG).png
+-	cp -p $(ICONS)$(PROG)64x64.png $(DESTDIR)$(ICONDIR)64x64/apps/$(PROG).png
+-	cp -p $(ICONS)$(PROG).desktop $(DESTDIR)$(DESKTOPDIR)
++	$(BSD_INSTALL_DATA) $(DOCS) $(DOCDIR)
++	${BSD_INSTALL_DATA} $(ICONS)$(PROG)16x16.png $(ICONDIR)16x16/apps/$(PROG).png
++	${BSD_INSTALL_DATA} $(ICONS)$(PROG)32x32.png $(ICONDIR)32x32/apps/$(PROG).png
++	${BSD_INSTALL_DATA} $(ICONS)$(PROG)48x48.png $(ICONDIR)48x48/apps/$(PROG).png
++	${BSD_INSTALL_DATA} $(ICONS)$(PROG)64x64.png $(ICONDIR)64x64/apps/$(PROG).png
++	${BSD_INSTALL_DATA} $(ICONS)$(PROG).desktop $(DESKTOPDIR)
+ 
+ 	@for f in $(LOCALE_MO); do \
+ 		lang=`echo $$f | sed -e 's/^locale\///;s/\.mo$$//'`; \
+-		mkdir -p $(DESTDIR)$(LOCALEDIR)$$lang/LC_MESSAGES; \
+-		echo "cp $$f $(DESTDIR)$(LOCALEDIR)$$lang/LC_MESSAGES/$(PROG).mo"; \
+-		cp $$f $(DESTDIR)$(LOCALEDIR)$$lang/LC_MESSAGES/$(PROG).mo; \
++		$(BSD_INSTALL_DATA_DIR) $(LOCALEDIR)$$lang/LC_MESSAGES; \
++		$(BSD_INSTALL_DATA) $$f $(LOCALEDIR)$$lang/LC_MESSAGES/$(PROG).mo; \
+ 	done
+ 
+ uninstall:

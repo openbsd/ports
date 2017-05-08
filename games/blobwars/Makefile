@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2017/04/10 11:45:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2017/05/08 20:13:47 kili Exp $
 
 COMMENT =	2D arcade game
 
-DISTNAME =	blobwars-1.19
-REVISION=	5
+DISTNAME =	blobwars-2.00
 
 CATEGORIES =	games
 
@@ -15,19 +14,21 @@ MAINTAINER =	Matthias Kilian <kili@openbsd.org>
 # LGPLv2.1, BSD, GPLv2, "Public Domain", "Fair use".
 PERMIT_PACKAGE_CDROM =		Yes
 
-WANTLIB =	SDL SDL_image SDL_mixer SDL_net SDL_ttf c m pthread ${LIBCXX} z
+WANTLIB =	SDL2 SDL2_image SDL2_mixer SDL2_net SDL2_ttf c m pthread ${LIBCXX} z
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=blobwars/}
 
 MODULES =	devel/gettext
 
-LIB_DEPENDS =	devel/sdl-image \
-		devel/sdl-mixer \
-		devel/sdl-net \
-		devel/sdl-ttf
+LIB_DEPENDS =	devel/sdl2-image \
+		devel/sdl2-mixer \
+		devel/sdl2-net \
+		devel/sdl2-ttf
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+3,-guic
+
+CXXFLAGS +=	-DOpenBSD
 
 MAKE_ENV +=	CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" \
@@ -37,7 +38,5 @@ USE_X11 =	Yes
 USE_GMAKE =	Yes
 
 NO_TEST =	Yes
-
-MAKE_FILE =	makefile
 
 .include <bsd.port.mk>
