@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_engine_generate_cpp,v 1.1 2017/05/08 11:50:27 espie Exp $
+
+Index: src/engine/generate.cpp
+--- src/engine/generate.cpp.orig
++++ src/engine/generate.cpp
+@@ -47,6 +47,8 @@ using namespace std;
+ 
+ #include <QDateTime>
+ 
++// XXX avoid collision with std::
++#define mutex mymutex
+ extern QMutex mutex; //timetablegenerateform.cpp
+ 
+ #include <QList>

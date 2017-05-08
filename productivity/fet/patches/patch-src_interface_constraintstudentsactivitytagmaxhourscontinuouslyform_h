@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_interface_constraintstudentsactivitytagmaxhourscontinuouslyform_h,v 1.1 2017/05/08 11:50:27 espie Exp $
+
+Index: src/interface/constraintstudentsactivitytagmaxhourscontinuouslyform.h
+--- src/interface/constraintstudentsactivitytagmaxhourscontinuouslyform.h.orig
++++ src/interface/constraintstudentsactivitytagmaxhourscontinuouslyform.h
+@@ -16,7 +16,7 @@
+  ***************************************************************************/
+ 
+ #ifndef CONSTRAINTSTUDENTSACTIVITYTAGMAXHOURSCONTINUOUSLYFORM_H
+-#define CONSTRAINTSTUDENTSCTIVITYTAGMAXHOURSCONTINUOUSLYFORM_H
++#define CONSTRAINTSTUDENTSACTIVITYTAGMAXHOURSCONTINUOUSLYFORM_H
+ 
+ #include "ui_constraintstudentsactivitytagmaxhourscontinuouslyform_template.h"
+ #include "timetable_defs.h"

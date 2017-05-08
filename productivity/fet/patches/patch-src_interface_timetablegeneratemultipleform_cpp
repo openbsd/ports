@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_interface_timetablegeneratemultipleform_cpp,v 1.1 2017/05/08 11:50:27 espie Exp $
+
+Index: src/interface/timetablegeneratemultipleform.cpp
+--- src/interface/timetablegeneratemultipleform.cpp.orig
++++ src/interface/timetablegeneratemultipleform.cpp
+@@ -41,6 +41,8 @@ using namespace std;
+ 
+ #include <QDir>
+ 
++// XXX
++#define mutex mymutex
+ extern QMutex mutex;
+ 
+ static GenerateMultipleThread generateMultipleThread;

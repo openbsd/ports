@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_interface_timetablegenerateform_cpp,v 1.1 2017/05/08 11:50:27 espie Exp $
+
+Index: src/interface/timetablegenerateform.cpp
+--- src/interface/timetablegenerateform.cpp.orig
++++ src/interface/timetablegenerateform.cpp
+@@ -44,6 +44,8 @@ using namespace std;
+ 
+ #include "longtextmessagebox.h"
+ 
++// XXX avoid collision with std::
++#define mutex mymutex
+ QMutex mutex;
+ 
+ static GenerateThread generateThread;
