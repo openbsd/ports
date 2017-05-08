@@ -1,16 +1,18 @@
-# $OpenBSD: Makefile,v 1.9 2017/04/28 17:28:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2017/05/08 19:17:21 jasper Exp $
 
 COMMENT =	lightweight shipper for log file data
 
 BEAT =		filebeat
-VERSION =	5.3.2
+VERSION =	5.4.0
 
 GH_ACCOUNT =	elastic
 GH_PROJECT =	beats
 GH_TAGNAME =	v${VERSION}
 
 CONFIGS =	filebeat.yml filebeat.template.json \
-		filebeat.template-es2x.json README.md
+		filebeat.template-es2x.json \
+		filebeat.template-es6x.json \
+		README.md
 
 WANTLIB +=	c pthread
 

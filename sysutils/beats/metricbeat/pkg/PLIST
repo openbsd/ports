@@ -1,10 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/04/27 09:17:26 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/05/08 19:17:21 jasper Exp $
 @bin bin/metricbeat
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/metricbeat/
 @sample ${SYSCONFDIR}/metricbeat/
 share/examples/metricbeat/metricbeat.template-es2x.json
 @sample ${SYSCONFDIR}/metricbeat/metricbeat.template-es2x.json
+share/examples/metricbeat/metricbeat.template-es6x.json
+@sample ${SYSCONFDIR}/metricbeat/metricbeat.template-es6x.json
 share/examples/metricbeat/metricbeat.template.json
 @sample ${SYSCONFDIR}/metricbeat/metricbeat.template.json
 share/examples/metricbeat/metricbeat.yml

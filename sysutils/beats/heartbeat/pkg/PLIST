@@ -1,9 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/04/29 14:16:10 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/05/08 19:17:21 jasper Exp $
 @bin bin/heartbeat
 share/examples/heartbeat/
 @sample ${SYSCONFDIR}/heartbeat/
 share/examples/heartbeat/heartbeat.template-es2x.json
 @sample ${SYSCONFDIR}/heartbeat/heartbeat.template-es2x.json
+share/examples/heartbeat/heartbeat.template-es6x.json
+@sample ${SYSCONFDIR}/heartbeat/heartbeat.template-es6x.json
 share/examples/heartbeat/heartbeat.template.json
 @sample ${SYSCONFDIR}/heartbeat/heartbeat.template.json
 share/examples/heartbeat/heartbeat.yml
