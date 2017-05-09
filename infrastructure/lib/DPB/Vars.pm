@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Vars.pm,v 1.49 2016/05/17 14:50:36 espie Exp $
+# $OpenBSD: Vars.pm,v 1.50 2017/05/09 14:18:28 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -59,6 +59,7 @@ sub get
 COMMENT = test
 CATEGORIES = test
 PKGPATH = test/a
+DISTNAME = test
 PERMIT_PACKAGE_CDROM=Yes
 IGNORE=Yes
 _MAKEFILE_INC_DONE=Yes
