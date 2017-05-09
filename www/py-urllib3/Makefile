@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2017/01/31 07:05:08 sebastia Exp $
+# $OpenBSD: Makefile,v 1.11 2017/05/09 06:12:09 sebastia Exp $
 
 COMMENT=	HTTP library for Python
 
-MODPY_EGG_VERSION=1.20
+MODPY_EGG_VERSION=1.21.1
 DISTNAME=	urllib3-${MODPY_EGG_VERSION}
 PKGNAME=	py-urllib3-${MODPY_EGG_VERSION}
 

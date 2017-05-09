@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2017/01/31 07:05:08 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.6 2017/05/09 06:12:09 sebastia Exp $
 lib/python${MODPY_VERSION}/site-packages/urllib3/
 lib/python${MODPY_VERSION}/site-packages/urllib3-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/urllib3-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -17,12 +17,21 @@ lib/python${MODPY_VERSION}/site-packages/urllib3/connectionpool.pyc
 lib/python${MODPY_VERSION}/site-packages/urllib3/contrib/
 lib/python${MODPY_VERSION}/site-packages/urllib3/contrib/__init__.py
 lib/python${MODPY_VERSION}/site-packages/urllib3/contrib/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/urllib3/contrib/_securetransport/
+lib/python${MODPY_VERSION}/site-packages/urllib3/contrib/_securetransport/__init__.py
+lib/python${MODPY_VERSION}/site-packages/urllib3/contrib/_securetransport/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/urllib3/contrib/_securetransport/bindings.py
+lib/python${MODPY_VERSION}/site-packages/urllib3/contrib/_securetransport/bindings.pyc
+lib/python${MODPY_VERSION}/site-packages/urllib3/contrib/_securetransport/low_level.py
+lib/python${MODPY_VERSION}/site-packages/urllib3/contrib/_securetransport/low_level.pyc
 lib/python${MODPY_VERSION}/site-packages/urllib3/contrib/appengine.py
 lib/python${MODPY_VERSION}/site-packages/urllib3/contrib/appengine.pyc
 lib/python${MODPY_VERSION}/site-packages/urllib3/contrib/ntlmpool.py
 lib/python${MODPY_VERSION}/site-packages/urllib3/contrib/ntlmpool.pyc
 lib/python${MODPY_VERSION}/site-packages/urllib3/contrib/pyopenssl.py
 lib/python${MODPY_VERSION}/site-packages/urllib3/contrib/pyopenssl.pyc
+lib/python${MODPY_VERSION}/site-packages/urllib3/contrib/securetransport.py
+lib/python${MODPY_VERSION}/site-packages/urllib3/contrib/securetransport.pyc
 lib/python${MODPY_VERSION}/site-packages/urllib3/contrib/socks.py
 lib/python${MODPY_VERSION}/site-packages/urllib3/contrib/socks.pyc
 lib/python${MODPY_VERSION}/site-packages/urllib3/exceptions.py
