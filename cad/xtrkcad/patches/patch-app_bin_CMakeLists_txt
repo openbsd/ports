@@ -1,7 +1,7 @@
-$OpenBSD: patch-app_bin_CMakeLists_txt,v 1.4 2015/10/28 09:37:57 sebastia Exp $
---- app/bin/CMakeLists.txt.orig	Wed Jun 10 18:30:19 2015
-+++ app/bin/CMakeLists.txt	Tue Oct 27 15:13:05 2015
-@@ -160,6 +160,10 @@ ADD_EXECUTABLE(mkturnout
+$OpenBSD: patch-app_bin_CMakeLists_txt,v 1.5 2017/05/09 06:07:07 sebastia Exp $
+--- app/bin/CMakeLists.txt.orig	Sun Mar 12 16:40:36 2017
++++ app/bin/CMakeLists.txt	Mon May  8 23:26:45 2017
+@@ -161,6 +161,10 @@ ADD_EXECUTABLE(mkturnout
  	ctodesgn.c
  	utility.c
  	)

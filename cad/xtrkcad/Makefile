@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2016/11/10 22:18:18 sebastia Exp $
+# $OpenBSD: Makefile,v 1.17 2017/05/09 06:07:07 sebastia Exp $
 
 COMMENT=	CAD program for designing model railroad layouts
 
-VERSION=	4.2.4
+VERSION=	4.3.0
 DISTNAME=	xtrkcad-source-${VERSION}
 PKGNAME=	xtrkcad-${VERSION}
 CATEGORIES=	cad
@@ -29,5 +29,8 @@ LIB_DEPENDS=	www/webkit>=1.4.0v0
 
 CONFIGURE_ENV+=	CFLAGS=-I${PREFIX}/include \
 		LDFLAGS="-pthread -L${PREFIX}/lib -liconv -lintl"
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/app/lib/CMakeLists.txt
 
 .include <bsd.port.mk>
