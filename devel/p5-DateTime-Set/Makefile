@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2016/03/20 19:56:19 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2017/05/09 08:07:01 benoit Exp $
 
 COMMENT =	datetime sets and set math
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	DateTime-Set-0.3600
+DISTNAME =	DateTime-Set-0.3900
 CATEGORIES =	devel
 
 # Perl
