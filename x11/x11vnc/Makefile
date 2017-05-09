@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.42 2017/04/16 12:43:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.43 2017/05/09 14:51:11 schwarze Exp $
 
 COMMENT =		VNC server for real X displays
 
 DISTNAME =		x11vnc-0.9.13
-REVISION =		5
+REVISION =		6
 
 CATEGORIES =		x11
 HOMEPAGE =		http://www.karlrunge.com/x11vnc/
@@ -15,8 +15,6 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += X11 Xdamage Xext Xfixes Xinerama Xrandr Xtst c crypto
 WANTLIB += pthread ssl z jpeg avahi-client avahi-common
-
-USE_GROFF =	Yes
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=libvncserver/}
 MODULES =		x11/tk
