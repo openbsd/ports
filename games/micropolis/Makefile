@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2017/04/22 19:49:18 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2017/05/09 13:01:42 espie Exp $
 
 COMMENT=	city-building simulation
 
@@ -23,11 +23,9 @@ LIB_DEPENDS=	devel/sdl-mixer
 
 CFLAGS+=	-I${LOCALBASE}/include -I${X11BASE}/include
 
+MAKE_FLAGS =	X11BASE=${X11BASE}
+
 do-configure:
-	@perl -pi -e s,%%PREFIX%%,${PREFIX}, ${WRKDIST}/Micropolis
-	@perl -pi -e s,%%PREFIX%%,${PREFIX}, ${WRKDIST}/res/micropolis.tcl
-	@perl -pi -e s,%%LOCALBASE%%,${LOCALBASE}, ${WRKDIST}/res/micropolis.tcl
-	@perl -pi -e s,%%X11BASE%%,${X11BASE},g ${WRKSRC}/src/tclx/config.mk
-	@perl -pi -e s,%%X11BASE%%,${X11BASE},g ${WRKSRC}/src/tk/makefile
+	@${SUBST_CMD} ${WRKDIST}/Micropolis
 
 .include <bsd.port.mk>

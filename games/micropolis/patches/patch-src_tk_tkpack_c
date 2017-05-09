@@ -1,6 +1,7 @@
-$OpenBSD: patch-src_tk_tkpack_c,v 1.1 2017/04/22 15:02:55 espie Exp $
---- src/tk/tkpack.c.orig	Sat Apr 22 16:04:46 2017
-+++ src/tk/tkpack.c	Sat Apr 22 16:04:51 2017
+$OpenBSD: patch-src_tk_tkpack_c,v 1.2 2017/05/09 13:01:42 espie Exp $
+Index: src/tk/tkpack.c
+--- src/tk/tkpack.c.orig
++++ src/tk/tkpack.c
 @@ -95,7 +95,7 @@ static Tcl_HashTable packerHashTable;
   * Have statics in this module been initialized?
   */

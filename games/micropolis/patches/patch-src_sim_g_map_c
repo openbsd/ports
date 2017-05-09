@@ -1,6 +1,7 @@
-$OpenBSD: patch-src_sim_g_map_c,v 1.4 2017/04/22 19:49:18 espie Exp $
---- src/sim/g_map.c.orig	Mon Feb  4 03:52:26 2008
-+++ src/sim/g_map.c	Sat Apr 22 21:42:06 2017
+$OpenBSD: patch-src_sim_g_map_c,v 1.5 2017/05/09 13:01:42 espie Exp $
+Index: src/sim/g_map.c
+--- src/sim/g_map.c.orig
++++ src/sim/g_map.c
 @@ -83,24 +83,22 @@ short valGrayMap[] = { 
  };
  

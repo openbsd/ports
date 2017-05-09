@@ -1,6 +1,7 @@
-$OpenBSD: patch-src_tk_tkconfig_c,v 1.1 2017/04/22 15:02:55 espie Exp $
---- src/tk/tkconfig.c.orig	Sat Apr 22 15:40:34 2017
-+++ src/tk/tkconfig.c	Sat Apr 22 15:40:50 2017
+$OpenBSD: patch-src_tk_tkconfig_c,v 1.2 2017/05/09 13:01:42 espie Exp $
+Index: src/tk/tkconfig.c
+--- src/tk/tkconfig.c.orig
++++ src/tk/tkconfig.c
 @@ -803,7 +803,7 @@ FormatConfigInfo(tkwin, specPtr, widgRec)
  	    argv[4] = buffer;
  	    break;

@@ -1,6 +1,7 @@
-$OpenBSD: patch-src_tcl_makefile,v 1.1.1.1 2008/01/18 03:36:32 deanna Exp $
---- src/tcl/makefile.orig	Fri Nov 30 21:49:55 2007
-+++ src/tcl/makefile	Sun Jan 13 11:45:22 2008
+$OpenBSD: patch-src_tcl_makefile,v 1.2 2017/05/09 13:01:42 espie Exp $
+Index: src/tcl/makefile
+--- src/tcl/makefile.orig
++++ src/tcl/makefile
 @@ -24,9 +24,8 @@
  
  TCL_LIBRARY =	/usr/local/lib/tcl

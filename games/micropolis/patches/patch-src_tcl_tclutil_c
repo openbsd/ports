@@ -1,6 +1,7 @@
-$OpenBSD: patch-src_tcl_tclutil_c,v 1.1 2017/04/22 15:02:55 espie Exp $
---- src/tcl/tclutil.c.orig	Sat Apr 22 15:21:03 2017
-+++ src/tcl/tclutil.c	Sat Apr 22 15:21:36 2017
+$OpenBSD: patch-src_tcl_tclutil_c,v 1.2 2017/05/09 13:01:42 espie Exp $
+Index: src/tcl/tclutil.c
+--- src/tcl/tclutil.c.orig
++++ src/tcl/tclutil.c
 @@ -177,7 +177,7 @@ TclFindElement(interp, list, elementPtr, nextPtr, size
  		    Tcl_ResetResult(interp);
  		    sprintf(interp->result,

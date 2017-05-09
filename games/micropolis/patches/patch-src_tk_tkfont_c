@@ -1,6 +1,7 @@
-$OpenBSD: patch-src_tk_tkfont_c,v 1.1 2017/04/22 15:02:55 espie Exp $
---- src/tk/tkfont.c.orig	Mon Feb  4 03:52:26 2008
-+++ src/tk/tkfont.c	Sat Apr 22 16:12:50 2017
+$OpenBSD: patch-src_tk_tkfont_c,v 1.2 2017/05/09 13:01:42 espie Exp $
+Index: src/tk/tkfont.c
+--- src/tk/tkfont.c.orig
++++ src/tk/tkfont.c
 @@ -228,7 +228,7 @@ Tk_NameOfFontStruct(fontStructPtr)
  
      if (!initialized) {

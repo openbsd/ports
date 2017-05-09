@@ -1,6 +1,7 @@
-$OpenBSD: patch-src_tk_tkevent_c,v 1.1 2017/04/22 15:02:55 espie Exp $
---- src/tk/tkevent.c.orig	Mon Feb  4 03:52:26 2008
-+++ src/tk/tkevent.c	Sat Apr 22 16:13:06 2017
+$OpenBSD: patch-src_tk_tkevent_c,v 1.2 2017/05/09 13:01:42 espie Exp $
+Index: src/tk/tkevent.c
+--- src/tk/tkevent.c.orig
++++ src/tk/tkevent.c
 @@ -21,6 +21,7 @@ static char rcsid[] = "$Header: /user6/ouster/wish/RCS
  
  #include "tkconfig.h"

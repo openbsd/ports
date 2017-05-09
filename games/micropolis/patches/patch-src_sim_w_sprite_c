@@ -1,6 +1,7 @@
-$OpenBSD: patch-src_sim_w_sprite_c,v 1.2 2017/04/22 19:49:18 espie Exp $
---- src/sim/w_sprite.c.orig	Sun Feb 10 22:25:24 2008
-+++ src/sim/w_sprite.c	Sat Apr 22 20:52:55 2017
+$OpenBSD: patch-src_sim_w_sprite_c,v 1.3 2017/05/09 13:01:42 espie Exp $
+Index: src/sim/w_sprite.c
+--- src/sim/w_sprite.c.orig
++++ src/sim/w_sprite.c
 @@ -70,6 +70,16 @@ short Cycle;
  SimSprite *GlobalSprites[OBJN];
  

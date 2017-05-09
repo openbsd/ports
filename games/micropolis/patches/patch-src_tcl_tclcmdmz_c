@@ -1,6 +1,7 @@
-$OpenBSD: patch-src_tcl_tclcmdmz_c,v 1.1 2017/04/22 15:02:55 espie Exp $
---- src/tcl/tclcmdmz.c.orig	Mon Feb  4 03:52:26 2008
-+++ src/tcl/tclcmdmz.c	Sat Apr 22 16:29:15 2017
+$OpenBSD: patch-src_tcl_tclcmdmz_c,v 1.2 2017/05/09 13:01:42 espie Exp $
+Index: src/tcl/tclcmdmz.c
+--- src/tcl/tclcmdmz.c.orig
++++ src/tcl/tclcmdmz.c
 @@ -162,7 +162,7 @@ Tcl_RegexpCmd(dummy, interp, argc, argv)
  	    }
  	} else {

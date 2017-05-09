@@ -1,6 +1,7 @@
-$OpenBSD: patch-src_tclx_tkucbsrc_tkevent_sed,v 1.1 2017/04/22 15:02:55 espie Exp $
---- src/tclx/tkucbsrc/tkevent.sed.orig	Sat Apr 22 16:57:45 2017
-+++ src/tclx/tkucbsrc/tkevent.sed	Sat Apr 22 16:58:03 2017
+$OpenBSD: patch-src_tclx_tkucbsrc_tkevent_sed,v 1.2 2017/05/09 13:01:42 espie Exp $
+Index: src/tclx/tkucbsrc/tkevent.sed
+--- src/tclx/tkucbsrc/tkevent.sed.orig
++++ src/tclx/tkucbsrc/tkevent.sed
 @@ -1,4 +1,5 @@
  /#include <signal.h>/a\
 +#include "tclxtend.h"\

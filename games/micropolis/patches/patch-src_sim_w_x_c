@@ -1,6 +1,7 @@
-$OpenBSD: patch-src_sim_w_x_c,v 1.4 2017/04/22 19:49:18 espie Exp $
---- src/sim/w_x.c.orig	Mon Feb  4 03:52:26 2008
-+++ src/sim/w_x.c	Sat Apr 22 18:28:38 2017
+$OpenBSD: patch-src_sim_w_x_c,v 1.5 2017/05/09 13:01:42 espie Exp $
+Index: src/sim/w_x.c
+--- src/sim/w_x.c.orig
++++ src/sim/w_x.c
 @@ -90,6 +90,8 @@ unsigned char ColorIntensities[] = {
  	/* COLOR_DARKGRAY */		63,
  	/* COLOR_BLACK */		0,

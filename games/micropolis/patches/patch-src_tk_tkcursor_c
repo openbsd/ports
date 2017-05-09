@@ -1,6 +1,7 @@
-$OpenBSD: patch-src_tk_tkcursor_c,v 1.1 2017/04/22 15:02:55 espie Exp $
---- src/tk/tkcursor.c.orig	Sat Apr 22 15:41:07 2017
-+++ src/tk/tkcursor.c	Sat Apr 22 15:41:25 2017
+$OpenBSD: patch-src_tk_tkcursor_c,v 1.2 2017/05/09 13:01:42 espie Exp $
+Index: src/tk/tkcursor.c
+--- src/tk/tkcursor.c.orig
++++ src/tk/tkcursor.c
 @@ -560,7 +560,7 @@ Tk_NameOfCursor(cursor)
  
      if (!initialized) {

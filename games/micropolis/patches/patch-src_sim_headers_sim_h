@@ -1,6 +1,7 @@
-$OpenBSD: patch-src_sim_headers_sim_h,v 1.4 2017/04/22 19:49:18 espie Exp $
---- src/sim/headers/sim.h.orig	Mon Feb  4 03:52:26 2008
-+++ src/sim/headers/sim.h	Sat Apr 22 21:46:33 2017
+$OpenBSD: patch-src_sim_headers_sim_h,v 1.5 2017/05/09 13:01:42 espie Exp $
+Index: src/sim/headers/sim.h
+--- src/sim/headers/sim.h.orig
++++ src/sim/headers/sim.h
 @@ -684,4 +684,127 @@ extern int setSkips(int skips);
  extern int SetGameLevel(short level);
  extern int SetGameLevelFunds(short level);

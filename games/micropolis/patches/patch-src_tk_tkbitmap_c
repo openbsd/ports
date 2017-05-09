@@ -1,6 +1,7 @@
-$OpenBSD: patch-src_tk_tkbitmap_c,v 1.1 2017/04/22 15:02:55 espie Exp $
---- src/tk/tkbitmap.c.orig	Sat Apr 22 15:25:52 2017
-+++ src/tk/tkbitmap.c	Sat Apr 22 15:25:58 2017
+$OpenBSD: patch-src_tk_tkbitmap_c,v 1.2 2017/05/09 13:01:42 espie Exp $
+Index: src/tk/tkbitmap.c
+--- src/tk/tkbitmap.c.orig
++++ src/tk/tkbitmap.c
 @@ -434,7 +434,7 @@ Tk_GetBitmapFromData(interp, tkwin, source, width, hei
      Tk_Uid name = NULL;		/* Initialization need only to prevent
  				 * compiler warning. */

@@ -1,6 +1,7 @@
-$OpenBSD: patch-src_tclx_src_tclxunix_c,v 1.1 2017/04/22 15:02:55 espie Exp $
---- src/tclx/src/tclxunix.c.orig	Sat Apr 22 16:56:23 2017
-+++ src/tclx/src/tclxunix.c	Sat Apr 22 16:56:45 2017
+$OpenBSD: patch-src_tclx_src_tclxunix_c,v 1.2 2017/05/09 13:01:42 espie Exp $
+Index: src/tclx/src/tclxunix.c
+--- src/tclx/src/tclxunix.c.orig
++++ src/tclx/src/tclxunix.c
 @@ -203,7 +203,7 @@ Tcl_TimesCmd (clientData, interp, argc, argv)
  
      times(&tm);

@@ -1,6 +1,7 @@
-$OpenBSD: patch-src_sim_s_traf_c,v 1.1 2017/04/22 19:49:18 espie Exp $
---- src/sim/s_traf.c.orig	Mon Feb  4 03:52:26 2008
-+++ src/sim/s_traf.c	Sat Apr 22 21:11:37 2017
+$OpenBSD: patch-src_sim_s_traf_c,v 1.2 2017/05/09 13:01:42 espie Exp $
+Index: src/sim/s_traf.c
+--- src/sim/s_traf.c.orig
++++ src/sim/s_traf.c
 @@ -72,8 +72,18 @@ short LDir;
  short Zsource;
  short TrafMaxX, TrafMaxY;

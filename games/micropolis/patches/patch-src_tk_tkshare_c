@@ -1,8 +1,9 @@
-$OpenBSD: patch-src_tk_tkshare_c,v 1.1 2017/03/18 15:55:56 tb Exp $
+$OpenBSD: patch-src_tk_tkshare_c,v 1.2 2017/05/09 13:01:42 espie Exp $
 
 fix backwards memcpy
---- src/tk/tkshare.c.orig	Sat Mar 18 06:51:20 2017
-+++ src/tk/tkshare.c	Sat Mar 18 06:51:40 2017
+Index: src/tk/tkshare.c
+--- src/tk/tkshare.c.orig
++++ src/tk/tkshare.c
 @@ -186,7 +186,7 @@ Tk_UnshareEvents(tkwin, groupId)
  		continue;
  	    }

@@ -1,6 +1,7 @@
-$OpenBSD: patch-src_tclx_src_tclxfcmd_c,v 1.1 2017/04/22 15:02:55 espie Exp $
---- src/tclx/src/tclxfcmd.c.orig	Sat Apr 22 16:38:34 2017
-+++ src/tclx/src/tclxfcmd.c	Sat Apr 22 16:42:09 2017
+$OpenBSD: patch-src_tclx_src_tclxfcmd_c,v 1.2 2017/05/09 13:01:42 espie Exp $
+Index: src/tclx/src/tclxfcmd.c
+--- src/tclx/src/tclxfcmd.c.orig
++++ src/tclx/src/tclxfcmd.c
 @@ -242,13 +242,13 @@ ReturnStatList (interp, filePtr, statBufPtr)
      char statList [200];
  

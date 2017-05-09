@@ -1,6 +1,7 @@
-$OpenBSD: patch-src_tk_tkselect_c,v 1.1 2017/04/22 15:02:55 espie Exp $
---- src/tk/tkselect.c.orig	Sat Apr 22 16:05:15 2017
-+++ src/tk/tkselect.c	Sat Apr 22 16:05:39 2017
+$OpenBSD: patch-src_tk_tkselect_c,v 1.2 2017/05/09 13:01:42 espie Exp $
+Index: src/tk/tkselect.c
+--- src/tk/tkselect.c.orig
++++ src/tk/tkselect.c
 @@ -1132,7 +1132,7 @@ SelCvtFromX(propPtr, numValues, type, tkwin)
  	if (type == XA_ATOM) {
  	    strcpy(result+curSize, atomName);

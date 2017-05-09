@@ -1,6 +1,7 @@
-$OpenBSD: patch-src_tclx_src_tclxfsca_c,v 1.1 2017/04/22 15:02:55 espie Exp $
---- src/tclx/src/tclxfsca.c.orig	Mon Feb  4 03:52:26 2008
-+++ src/tclx/src/tclxfsca.c	Sat Apr 22 16:47:04 2017
+$OpenBSD: patch-src_tclx_src_tclxfsca_c,v 1.2 2017/05/09 13:01:42 espie Exp $
+Index: src/tclx/src/tclxfsca.c
+--- src/tclx/src/tclxfsca.c.orig
++++ src/tclx/src/tclxfsca.c
 @@ -58,7 +58,7 @@ typedef scanGlob_t *scanGlob_pt;
  /*
   * Prototypes of internal functions.

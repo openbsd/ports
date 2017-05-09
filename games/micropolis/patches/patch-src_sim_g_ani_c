@@ -1,6 +1,7 @@
-$OpenBSD: patch-src_sim_g_ani_c,v 1.1 2017/04/22 19:49:18 espie Exp $
---- src/sim/g_ani.c.orig	Sat Apr 22 21:26:08 2017
-+++ src/sim/g_ani.c	Sat Apr 22 21:26:17 2017
+$OpenBSD: patch-src_sim_g_ani_c,v 1.2 2017/05/09 13:01:42 espie Exp $
+Index: src/sim/g_ani.c
+--- src/sim/g_ani.c.orig
++++ src/sim/g_ani.c
 @@ -64,6 +64,7 @@
  
  

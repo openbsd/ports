@@ -1,6 +1,7 @@
-$OpenBSD: patch-src_tclx_src_tclxcclk_c,v 1.1 2017/04/22 15:02:55 espie Exp $
---- src/tclx/src/tclxcclk.c.orig	Sat Apr 22 16:30:15 2017
-+++ src/tclx/src/tclxcclk.c	Sat Apr 22 16:30:55 2017
+$OpenBSD: patch-src_tclx_src_tclxcclk_c,v 1.2 2017/05/09 13:01:42 espie Exp $
+Index: src/tclx/src/tclxcclk.c
+--- src/tclx/src/tclxcclk.c.orig
++++ src/tclx/src/tclxcclk.c
 @@ -52,8 +52,10 @@ Tcl_ConvertclockCmd (clientData, interp, argc, argv)
  	return TCL_ERROR;
      }

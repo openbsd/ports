@@ -1,6 +1,7 @@
-$OpenBSD: patch-src_sim_s_eval_c,v 1.1 2017/04/22 19:49:18 espie Exp $
---- src/sim/s_eval.c.orig	Sat Apr 22 18:45:34 2017
-+++ src/sim/s_eval.c	Sat Apr 22 18:52:12 2017
+$OpenBSD: patch-src_sim_s_eval_c,v 1.2 2017/05/09 13:01:42 espie Exp $
+Index: src/sim/s_eval.c
+--- src/sim/s_eval.c.orig
++++ src/sim/s_eval.c
 @@ -77,8 +77,15 @@ short CityClass;			/*  0..5  */
  short CityScore, deltaCityScore, AverageCityScore;
  short TrafficAverage;

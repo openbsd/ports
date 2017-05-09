@@ -1,6 +1,7 @@
-$OpenBSD: patch-src_tk_tkwindow_c,v 1.1 2017/04/22 15:02:55 espie Exp $
---- src/tk/tkwindow.c.orig	Sat Apr 22 16:06:58 2017
-+++ src/tk/tkwindow.c	Sat Apr 22 16:07:03 2017
+$OpenBSD: patch-src_tk_tkwindow_c,v 1.2 2017/05/09 13:01:42 espie Exp $
+Index: src/tk/tkwindow.c
+--- src/tk/tkwindow.c.orig
++++ src/tk/tkwindow.c
 @@ -55,7 +55,7 @@ TkDisplay *tkDisplayList = NULL;
   * Have statics in this module been initialized?
   */

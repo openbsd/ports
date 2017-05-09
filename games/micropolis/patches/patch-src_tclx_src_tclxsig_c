@@ -1,6 +1,7 @@
-$OpenBSD: patch-src_tclx_src_tclxsig_c,v 1.1 2017/04/22 15:02:55 espie Exp $
---- src/tclx/src/tclxsig.c.orig	Sat Apr 22 16:54:44 2017
-+++ src/tclx/src/tclxsig.c	Sat Apr 22 16:55:53 2017
+$OpenBSD: patch-src_tclx_src_tclxsig_c,v 1.2 2017/05/09 13:01:42 espie Exp $
+Index: src/tclx/src/tclxsig.c
+--- src/tclx/src/tclxsig.c.orig
++++ src/tclx/src/tclxsig.c
 @@ -441,7 +441,7 @@ EvalTrapCode (interp, signalNum, command)
          result = TCL_ERROR;
      else

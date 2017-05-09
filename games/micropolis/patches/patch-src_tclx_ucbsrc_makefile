@@ -1,6 +1,7 @@
-$OpenBSD: patch-src_tclx_ucbsrc_makefile,v 1.1 2017/04/22 15:02:55 espie Exp $
---- src/tclx/ucbsrc/makefile.orig	Sat Apr 22 16:25:39 2017
-+++ src/tclx/ucbsrc/makefile	Sat Apr 22 16:26:35 2017
+$OpenBSD: patch-src_tclx_ucbsrc_makefile,v 1.2 2017/05/09 13:01:42 espie Exp $
+Index: src/tclx/ucbsrc/makefile
+--- src/tclx/ucbsrc/makefile.orig
++++ src/tclx/ucbsrc/makefile
 @@ -24,8 +24,8 @@ SHELL=/bin/sh
  
  #------------------------------------------------------------------------------

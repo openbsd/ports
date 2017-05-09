@@ -1,6 +1,7 @@
-$OpenBSD: patch-src_tk_tksend_c,v 1.1 2017/04/22 15:02:55 espie Exp $
---- src/tk/tksend.c.orig	Sat Apr 22 16:05:46 2017
-+++ src/tk/tksend.c	Sat Apr 22 16:06:51 2017
+$OpenBSD: patch-src_tk_tksend_c,v 1.2 2017/05/09 13:01:42 espie Exp $
+Index: src/tk/tksend.c
+--- src/tk/tksend.c.orig
++++ src/tk/tksend.c
 @@ -237,7 +237,7 @@ Tk_RegisterInterp(interp, name, tkwin)
  	}
  	(void) LookupName(winPtr->dispPtr, name, 1);

@@ -1,6 +1,7 @@
-$OpenBSD: patch-src_sim_s_init_c,v 1.1 2017/04/22 19:49:18 espie Exp $
---- src/sim/s_init.c.orig	Sat Apr 22 17:24:04 2017
-+++ src/sim/s_init.c	Sat Apr 22 17:26:18 2017
+$OpenBSD: patch-src_sim_s_init_c,v 1.2 2017/05/09 13:01:42 espie Exp $
+Index: src/sim/s_init.c
+--- src/sim/s_init.c.orig
++++ src/sim/s_init.c
 @@ -66,6 +66,7 @@
  
  

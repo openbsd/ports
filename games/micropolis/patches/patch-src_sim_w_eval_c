@@ -1,6 +1,7 @@
-$OpenBSD: patch-src_sim_w_eval_c,v 1.1 2017/04/22 19:49:18 espie Exp $
---- src/sim/w_eval.c.orig	Mon Feb  4 03:52:26 2008
-+++ src/sim/w_eval.c	Sat Apr 22 18:27:30 2017
+$OpenBSD: patch-src_sim_w_eval_c,v 1.2 2017/05/09 13:01:42 espie Exp $
+Index: src/sim/w_eval.c
+--- src/sim/w_eval.c.orig
++++ src/sim/w_eval.c
 @@ -126,12 +126,14 @@ doScoreCard(void)
  }
  

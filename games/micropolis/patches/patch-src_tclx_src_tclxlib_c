@@ -1,6 +1,7 @@
-$OpenBSD: patch-src_tclx_src_tclxlib_c,v 1.1 2017/04/22 15:02:55 espie Exp $
---- src/tclx/src/tclxlib.c.orig	Sat Apr 22 16:53:35 2017
-+++ src/tclx/src/tclxlib.c	Sat Apr 22 16:53:45 2017
+$OpenBSD: patch-src_tclx_src_tclxlib_c,v 1.2 2017/05/09 13:01:42 espie Exp $
+Index: src/tclx/src/tclxlib.c
+--- src/tclx/src/tclxlib.c.orig
++++ src/tclx/src/tclxlib.c
 @@ -331,7 +331,7 @@ GenerateFileId (interp, filePath, fileId)
          return TCL_ERROR;
      }

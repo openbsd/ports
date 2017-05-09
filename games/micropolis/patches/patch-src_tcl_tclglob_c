@@ -1,6 +1,7 @@
-$OpenBSD: patch-src_tcl_tclglob_c,v 1.1 2017/04/22 15:02:55 espie Exp $
---- src/tcl/tclglob.c.orig	Sat Apr 22 15:22:33 2017
-+++ src/tcl/tclglob.c	Sat Apr 22 15:23:46 2017
+$OpenBSD: patch-src_tcl_tclglob_c,v 1.2 2017/05/09 13:01:42 espie Exp $
+Index: src/tcl/tclglob.c
+--- src/tcl/tclglob.c.orig
++++ src/tcl/tclglob.c
 @@ -364,9 +364,9 @@ DoGlob(interp, dir, rem)
  	if (l2 <= STATIC_SIZE) {
  	    newDir = static1;

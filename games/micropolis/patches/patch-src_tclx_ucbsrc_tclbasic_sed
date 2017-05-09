@@ -1,6 +1,7 @@
-$OpenBSD: patch-src_tclx_ucbsrc_tclbasic_sed,v 1.1 2017/04/22 15:02:55 espie Exp $
---- src/tclx/ucbsrc/tclbasic.sed.orig	Mon Feb  4 03:52:26 2008
-+++ src/tclx/ucbsrc/tclbasic.sed	Sat Apr 22 16:25:25 2017
+$OpenBSD: patch-src_tclx_ucbsrc_tclbasic_sed,v 1.2 2017/05/09 13:01:42 espie Exp $
+Index: src/tclx/ucbsrc/tclbasic.sed
+--- src/tclx/ucbsrc/tclbasic.sed.orig
++++ src/tclx/ucbsrc/tclbasic.sed
 @@ -1,4 +1,5 @@
  /(\*cmdPtr->proc)/a\
 +#include "tclxtend.h"\
