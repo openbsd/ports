@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2016/03/20 19:56:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2017/05/09 08:41:24 benoit Exp $
 
 COMMENT =	extend your attribute interfaces
 
-DISTNAME =	MooseX-AttributeHelpers-0.24
+DISTNAME =	MooseX-AttributeHelpers-0.25
 CATEGORIES =	devel
 
 # Perl
