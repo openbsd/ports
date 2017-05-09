@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2017/04/18 17:36:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2017/05/09 17:19:30 jasper Exp $
 
 # XXX no i386 equivalent to mem_openbsd_amd64.go
 ONLY_FOR_ARCHS=		amd64
@@ -8,6 +8,7 @@ COMMENT=		service discovery and configuration tool
 GH_TAGNAME=		v0.8.1
 GH_ACCOUNT=		hashicorp
 GH_PROJECT=		consul
+REVISION=		0
 
 CATEGORIES=		sysutils net
 
@@ -25,6 +26,7 @@ MODULES=		lang/go
 # go/src/github.com/hashicorp/consul/scripts/build.sh
 # go/src/github.com/hashicorp/consul/version/version.go
 MODGO_LDFLAGS +=	-X github.com/hashicorp/consul/version.GitDescribe=${GH_TAGNAME}
+MODGO_LDFLAGS +=	-X github.com/hashicorp/consul/version.Version=${GH_TAGNAME:S/v//}
 MODGO_LDFLAGS +=	-X github.com/hashicorp/consul/version.VersionPrerelease="" # empty
 
 post-install:
