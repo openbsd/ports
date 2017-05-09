@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.arm,v 1.4 2017/03/03 03:27:28 jsg Exp $
+@comment $OpenBSD: PFRAG.arm,v 1.5 2017/05/09 04:11:18 jsg Exp $
 @pkgpath sysutils/u-boot,
 share/u-boot/
 share/u-boot/A10-OLinuXino-Lime/
@@ -41,6 +41,11 @@ share/u-boot/CHIP/u-boot
 share/u-boot/CHIP/u-boot-sunxi-with-spl.bin
 share/u-boot/CHIP/u-boot.bin
 share/u-boot/CHIP/u-boot.img
+share/u-boot/CHIP_pro/
+share/u-boot/CHIP_pro/u-boot
+share/u-boot/CHIP_pro/u-boot-sunxi-with-spl.bin
+share/u-boot/CHIP_pro/u-boot.bin
+share/u-boot/CHIP_pro/u-boot.img
 share/u-boot/Cubieboard/
 share/u-boot/Cubieboard/u-boot
 share/u-boot/Cubieboard/u-boot-sunxi-with-spl.bin
@@ -194,6 +199,10 @@ share/u-boot/rpi_2/u-boot.bin
 share/u-boot/rpi_3_32b/
 share/u-boot/rpi_3_32b/u-boot
 share/u-boot/rpi_3_32b/u-boot.bin
+share/u-boot/tinker-rk3288/
+share/u-boot/tinker-rk3288/u-boot
+share/u-boot/tinker-rk3288/u-boot.bin
+share/u-boot/tinker-rk3288/u-boot.img
 share/u-boot/udoo/
 share/u-boot/udoo/SPL
 share/u-boot/udoo/u-boot

@@ -1,0 +1,18 @@
+$OpenBSD: patch-lib_bch_c,v 1.1 2017/05/09 04:11:18 jsg Exp $
+
+POSIX errno OpenBSD doesn't have yet.
+
+Index: lib/bch.c
+--- lib/bch.c.orig
++++ lib/bch.c
+@@ -95,6 +95,10 @@
+ #define dbg(_fmt, args...)     do {} while (0)
+ #endif
+ 
++#ifndef EBADMSG
++#define EBADMSG ECONNREFUSED
++#endif
++
+ /*
+  * represent a polynomial over GF(2^m)
+  */

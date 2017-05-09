@@ -1,8 +1,12 @@
-@comment $OpenBSD: PFRAG.aarch64,v 1.1 2016/12/11 14:08:39 patrick Exp $
+@comment $OpenBSD: PFRAG.aarch64,v 1.2 2017/05/09 04:11:18 jsg Exp $
 share/u-boot/
 share/u-boot/dragonboard410c/
 share/u-boot/dragonboard410c/u-boot
 share/u-boot/dragonboard410c/u-boot.bin
+share/u-boot/orangepi_pc2/
+share/u-boot/orangepi_pc2/u-boot
+share/u-boot/orangepi_pc2/u-boot.bin
+share/u-boot/orangepi_pc2/u-boot.img
 share/u-boot/pine64_plus/
 share/u-boot/pine64_plus/u-boot
 share/u-boot/pine64_plus/u-boot.bin
