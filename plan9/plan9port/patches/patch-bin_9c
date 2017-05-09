@@ -1,6 +1,7 @@
-$OpenBSD: patch-bin_9c,v 1.1 2017/03/01 00:59:59 gsoares Exp $
---- bin/9c.orig	Wed Nov  2 20:17:40 2016
-+++ bin/9c	Tue Feb 28 17:28:31 2017
+$OpenBSD: patch-bin_9c,v 1.2 2017/05/09 22:22:36 gsoares Exp $
+Index: bin/9c
+--- bin/9c.orig
++++ bin/9c
 @@ -3,7 +3,7 @@
  test -f $PLAN9/config && . $PLAN9/config
  usegcc()
@@ -10,7 +11,7 @@ $OpenBSD: patch-bin_9c,v 1.1 2017/03/01 00:59:59 gsoares Exp $
  	ngflags=" \
  		-O2 \
  		-c \
-@@ -52,7 +52,7 @@ quiet()
+@@ -54,7 +54,7 @@ quiet()
  
  useclang()
  {
@@ -19,7 +20,7 @@ $OpenBSD: patch-bin_9c,v 1.1 2017/03/01 00:59:59 gsoares Exp $
  	ngflags=" \
  		-O2 \
  		-c \
-@@ -77,6 +77,8 @@ useclang()
+@@ -79,6 +79,8 @@ useclang()
  
  tag="${SYSNAME:-`uname`}-${OBJTYPE:-`uname -m`}-${CC9:-cc}"
  case "$tag" in
