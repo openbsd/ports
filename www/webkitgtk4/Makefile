@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2017/04/05 09:34:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.55 2017/05/09 17:31:14 espie Exp $
 
 # patches/patch-Source_JavaScriptCore_javascriptcoregtk_pc_in
 # patches/patch-Source_WebKit2_webkit2gtk-web-extension_pc_in
@@ -120,10 +120,5 @@ post-extract:
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/Source/cmake/WebKitCommon.cmake \
 		${WRKSRC}/Source/WebKit2/Shared/Plugins/unix/PluginSearchPath.cpp
-
-# XXX https://bugs.webkit.org/show_bug.cgi?id=170169
-pre-build:
-	sed -i "s,#define HAVE_PTHREAD_NP_H.*,#define HAVE_PTHREAD_NP_H 1," \
-		${WRKBUILD}/cmakeconfig.h
 
 .include <bsd.port.mk>

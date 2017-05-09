@@ -1,11 +1,12 @@
-$OpenBSD: patch-Source_cmake_OptionsCommon_cmake,v 1.9 2017/03/29 13:25:53 ajacoutot Exp $
+$OpenBSD: patch-Source_cmake_OptionsCommon_cmake,v 1.10 2017/05/09 17:31:14 espie Exp $
 
 Our ar(1) is too old and have not support for `T'.
 
 Undefined references to libc functions.
 
---- Source/cmake/OptionsCommon.cmake.orig	Mon Feb 27 08:11:15 2017
-+++ Source/cmake/OptionsCommon.cmake	Sun Mar 26 13:56:28 2017
+Index: Source/cmake/OptionsCommon.cmake
+--- Source/cmake/OptionsCommon.cmake.orig
++++ Source/cmake/OptionsCommon.cmake
 @@ -27,10 +27,10 @@ option(USE_THIN_ARCHIVES "Produce all static libraries
  if (USE_THIN_ARCHIVES)
      execute_process(COMMAND ${CMAKE_AR} -V OUTPUT_VARIABLE AR_VERSION)
@@ -34,3 +35,28 @@ Undefined references to libc functions.
  
  if (USE_ARM_LLVM_DISASSEMBLER)
      find_package(LLVM REQUIRED)
+@@ -221,13 +221,13 @@ if (NOT APPLE)
+ endif ()
+ 
+ # Macros for determining HAVE values.
+-include(CheckIncludeFile)
++include(CheckIncludeFiles)
+ include(CheckFunctionExists)
+ include(CheckSymbolExists)
+ include(CheckStructHasMember)
+ 
+ macro(_HAVE_CHECK_INCLUDE _variable _header)
+-    check_include_file(${_header} ${_variable}_value)
++    check_include_files("${_header}" ${_variable}_value)
+     SET_AND_EXPOSE_TO_BUILD(${_variable} ${_variable}_value)
+ endmacro()
+ 
+@@ -254,7 +254,7 @@ _HAVE_CHECK_INCLUDE(HAVE_FEATURES_H features.h)
+ _HAVE_CHECK_INCLUDE(HAVE_ERRNO_H errno.h)
+ _HAVE_CHECK_INCLUDE(HAVE_LANGINFO_H langinfo.h)
+ _HAVE_CHECK_INCLUDE(HAVE_MMAP sys/mman.h)
+-_HAVE_CHECK_INCLUDE(HAVE_PTHREAD_NP_H pthread_np.h)
++_HAVE_CHECK_INCLUDE(HAVE_PTHREAD_NP_H "pthread.h;pthread_np.h")
+ _HAVE_CHECK_INCLUDE(HAVE_STRINGS_H strings.h)
+ _HAVE_CHECK_INCLUDE(HAVE_SYS_PARAM_H sys/param.h)
+ _HAVE_CHECK_INCLUDE(HAVE_SYS_TIME_H sys/time.h)
