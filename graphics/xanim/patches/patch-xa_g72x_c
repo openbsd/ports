@@ -1,0 +1,27 @@
+$OpenBSD: patch-xa_g72x_c,v 1.1 2017/05/09 20:09:48 naddy Exp $
+
+Index: xa_g72x.c
+--- xa_g72x.c.orig
++++ xa_g72x.c
+@@ -30,6 +30,7 @@
+  * Common routines for G.721 and G.723 conversions.
+  */
+ 
++#include <stdlib.h>
+ #include "xa_g72x.h"
+ 
+ static short power2[15] = {1, 2, 4, 8, 0x10, 0x20, 0x40, 0x80,
+@@ -366,11 +367,12 @@ struct g72x_state *state_ptr;	/* coder state pointer *
+ 		/* UPA1 */
+ 		/* update predictor pole a[0] */
+ 		state_ptr->a[0] -= state_ptr->a[0] >> 8;
+-		if (dqsez != 0)
++		if (dqsez != 0) {
+ 			if (pks1 == 0)
+ 				state_ptr->a[0] += 192;
+ 			else
+ 				state_ptr->a[0] -= 192;
++		}
+ 
+ 		/* LIMD */
+ 		a1ul = 15360 - a2p;
