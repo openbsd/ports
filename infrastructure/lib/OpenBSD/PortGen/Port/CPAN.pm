@@ -1,4 +1,4 @@
-# $OpenBSD: CPAN.pm,v 1.2 2016/04/25 18:38:40 tsg Exp $
+# $OpenBSD: CPAN.pm,v 1.3 2017/05/09 13:37:08 tsg Exp $
 #
 # Copyright (c) 2015 Giannis Tsaraias <tsg@openbsd.org>
 #
@@ -95,10 +95,9 @@ sub get_config_style
 	}
 
 	for my $dep ( @{ $di->{dependency} } ) {
-		if ( $dep->{module} eq 'Module::Build' )
-		{
-			return 'modbuild';
-		}
+		return 'modbuild' if $dep->{module} eq 'Module::Build';
+		return 'modbuild tiny'
+		    if $dep->{module} eq 'Module::Build::Tiny';
 	}
 
 	return;
@@ -126,6 +125,7 @@ sub get_deps
 				each %{ $di->{prereqs}{$phase}{$relation} } )
 			{
 				next if $self->is_in_base($module);
+				next if $module eq 'Module::Build::Tiny';
 
 				my $dist = $self->get_dist_for_module($module);
 				my $port = module_in_ports( $dist, 'p5-' )
@@ -208,8 +208,7 @@ sub postextract
 
 	if ( $self->_uses_xs($wrksrc) ) {
 		$self->set_other( 'WANTLIB', 'perl' );
-	}
-	else {
+	} else {
 		$self->set_other( 'PKG_ARCH', '*' );
 	}
 }
@@ -280,13 +279,16 @@ sub _uses_xs
 	my ( $self, $dir ) = @_;
 	my $found_xs = 0;
 
-	find( sub {
-		if ( -d && /^(inc|t|xt)$/ ) {
-			$File::Find::prune = 1;
-			return;
-		}
-		$found_xs = 1 if -f && /\.xs$/;
-	}, $dir );
+	find(
+		sub {
+			if ( -d && /^(inc|t|xt)$/ ) {
+				$File::Find::prune = 1;
+				return;
+			}
+			$found_xs = 1 if -f && /\.xs$/;
+		},
+		$dir
+	);
 
 	return $found_xs;
 }
