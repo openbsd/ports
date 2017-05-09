@@ -1,35 +1,4 @@
-$OpenBSD: patch-gcc_configure,v 1.1 2017/05/08 09:04:54 patrick Exp $
---- gcc/configure.orig	Sun May  7 21:29:07 2017
-+++ gcc/configure	Sun May  7 21:29:20 2017
-@@ -29513,14 +29513,14 @@ if test "$gcc_cv_c_no_fpie" = "yes"; then
- fi
- 
- 
--# Check if -no-pie works.
--{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for -no-pie option" >&5
--$as_echo_n "checking for -no-pie option... " >&6; }
-+# Check if -nopie works.
-+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for -nopie option" >&5
-+$as_echo_n "checking for -nopie option... " >&6; }
- if test "${gcc_cv_no_pie+set}" = set; then :
-   $as_echo_n "(cached) " >&6
- else
-   saved_LDFLAGS="$LDFLAGS"
--   LDFLAGS="$LDFLAGS -no-pie"
-+   LDFLAGS="$LDFLAGS -nopie"
-    cat confdefs.h - <<_ACEOF >conftest.$ac_ext
- /* end confdefs.h.  */
- int main(void) {return 0;}
-@@ -29537,7 +29537,7 @@ fi
- { $as_echo "$as_me:${as_lineno-$LINENO}: result: $gcc_cv_no_pie" >&5
- $as_echo "$gcc_cv_no_pie" >&6; }
- if test "$gcc_cv_no_pie" = "yes"; then
--  NO_PIE_FLAG="-no-pie"
-+  NO_PIE_FLAG="-nopie"
- fi
- 
- 
-$OpenBSD: patch-gcc_configure,v 1.1 2017/05/08 09:04:54 patrick Exp $
+$OpenBSD: patch-gcc_configure,v 1.2 2017/05/09 05:58:36 patrick Exp $
 --- gcc/configure.orig	Sun May  7 21:29:07 2017
 +++ gcc/configure	Sun May  7 21:29:20 2017
 @@ -29513,14 +29513,14 @@ if test "$gcc_cv_c_no_fpie" = "yes"; then
