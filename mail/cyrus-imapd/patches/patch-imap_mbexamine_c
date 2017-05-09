@@ -1,0 +1,16 @@
+$OpenBSD: patch-imap_mbexamine_c,v 1.5 2017/05/09 07:33:33 ajacoutot Exp $
+
+64 bit time_t
+
+Index: imap/mbexamine.c
+--- imap/mbexamine.c.orig
++++ imap/mbexamine.c
+@@ -264,7 +264,7 @@ static int do_examine(char *name,
+     }
+     printf("\n");
+     printf("  Last POP3 Login: (%ld) %s", mailbox->i.pop3_last_login,
+-	   ctime((const long *) &mailbox->i.pop3_last_login));
++	   ctime((const long long *) &mailbox->i.pop3_last_login));
+     printf("  Highest Mod Sequence: " MODSEQ_FMT "\n",
+ 	   mailbox->i.highestmodseq);
+ 
