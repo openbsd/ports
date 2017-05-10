@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2017/02/26 10:09:53 ajacoutot Exp $
-
-BROKEN=			build hangs regularly
+# $OpenBSD: Makefile,v 1.11 2017/05/10 13:29:27 ajacoutot Exp $
 
 COMMENT=		GNU's Ubiquitous Intelligent Language for Extension
 
-VERSION=		2.0.14
+VERSION=		2.2.2
 DISTNAME=		guile-${VERSION}
 PKGNAME=		guile2-${VERSION}
 V=			${VERSION:C,.[0-9]+$,,}
@@ -14,8 +12,7 @@ CATEGORIES=		lang
 
 HOMEPAGE=		https://www.gnu.org/software/guile/
 
-SHARED_LIBS +=  guile-2.0            0.1      # 30.1
-SHARED_LIBS +=  guilereadline-v-18   0.0      # 18.0
+SHARED_LIBS +=  guile-2.2            0.0      # 3.0
 
 # GPLv3, LGPLv3
 PERMIT_PACKAGE_CDROM=	Yes
