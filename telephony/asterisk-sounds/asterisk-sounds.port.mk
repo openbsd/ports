@@ -1,4 +1,4 @@
-# $OpenBSD: asterisk-sounds.port.mk,v 1.11 2016/03/16 15:54:25 naddy Exp $
+# $OpenBSD: asterisk-sounds.port.mk,v 1.12 2017/05/10 10:58:36 sthen Exp $
 
 # sync with asterisk-sounds/Makefile and asterisk-sounds/*sounds/Makefile
 MODAS_CODECS ?=	gsm alaw ulaw g722 g729 wav # sln16 siren7 siren14
@@ -13,6 +13,7 @@ COMMENT =	${MODAS_DESC}
 EXTRACT_ONLY =
 NO_BUILD =	Yes
 NO_TEST =	Yes
+BUILD_DEPENDS =	telephony/asterisk,-main
 PKG_ARCH =	*
 
 _LN-en_AU =	Australian English
