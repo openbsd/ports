@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2016/03/18 23:12:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2017/05/10 14:27:01 stu Exp $
 
 COMMENT =	drag n drop extension for Tk
 
-REVISION =	2
+REVISION =	3
 DISTNAME =	tkdnd-1.0a2
-SHARED_LIBS =	tkdnd 0.0
 CATEGORIES =	x11
 
 HOMEPAGE = 	http://tkdnd.sourceforge.net/
@@ -20,8 +19,7 @@ MODULES =		x11/tk
 BUILD_DEPENDS =		${MODTK_BUILD_DEPENDS}
 RUN_DEPENDS =		${MODTK_RUN_DEPENDS}
 
-WANTLIB += X11 Xau Xdmcp Xext Xft Xrender Xss expat fontconfig
-WANTLIB += freetype m z pthread-stubs xcb
+WANTLIB =		X11 Xext Xft Xss fontconfig m
 
 USE_GMAKE =		yes
 WRKSRC =		${WRKDIR}/${DISTNAME}/unix
@@ -33,7 +31,6 @@ CONFIGURE_ARGS =	 --libdir=${MODTCL_TCLDIR} \
 			--datadir=${PREFIX}/share/examples \
 			--prefix=${WRKINST}
 CONFIGURE_ENV =		CFLAGS=-I${X11BASE}/include \
-			LIBtkdnd_VERSION=${LIBtkdnd_VERSION} \
 			DESTDIR=${DESTDIR}
 MAKE_ENV = 		MODTK_INCDIR=${MODTK_INCDIR}
 TEST_TARGET =		tests
@@ -51,7 +48,7 @@ do-install:
 	cd ${WRKBUILD}/../lib/tkdnd && \
 	${INSTALL_DATA} tkDND_Utils.tcl ${DESTDIR}${MODTCL_TCLDIR}/tkdnd
 	cd ${WRKBUILD}/../lib/tkdnd && \
-	${INSTALL_PROGRAM} libtkdnd.so.${LIBtkdnd_VERSION} ${DESTDIR}${MODTCL_TCLDIR}/tkdnd 
+	${INSTALL_DATA} libtkdnd.so ${DESTDIR}${MODTCL_TCLDIR}/tkdnd 
 	${INSTALL_DATA_DIR} ${PREFIX}/man/mann
 	cd ${WRKBUILD}/../doc && \
 	${INSTALL_MAN} tkDND.n ${PREFIX}/man/mann

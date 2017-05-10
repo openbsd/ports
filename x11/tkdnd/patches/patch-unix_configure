@@ -1,15 +1,16 @@
-$OpenBSD: patch-unix_configure,v 1.1.1.1 2010/07/16 08:30:27 sebastia Exp $
---- unix/configure.orig	Sat Sep  9 03:16:12 2000
-+++ unix/configure	Wed Dec 23 17:29:12 2009
-@@ -1697,7 +1697,7 @@ EOF
- # eval these two values to dereference the ${DBGX} variable.
- #--------------------------------------------------------------------
- 
--eval "SHARED_LIB_SUFFIX=${TCL_SHARED_LIB_SUFFIX}"
-+eval "SHARED_LIB_SUFFIX=.so.${LIBtkdnd_VERSION}"
- eval "UNSHARED_LIB_SUFFIX=${TCL_UNSHARED_LIB_SUFFIX}"
- 
- #--------------------------------------------------------------------
+$OpenBSD: patch-unix_configure,v 1.2 2017/05/10 14:27:01 stu Exp $
+Index: unix/configure
+--- unix/configure.orig
++++ unix/configure
+@@ -1717,7 +1717,7 @@ case "`uname -s`" in
+     *)
+ 	if test "${SHARED_BUILD}" = "1" ; then
+ 	    SHLIB_LD_LIBS="${TCL_STUB_LIB_SPEC} ${TK_STUB_LIB_SPEC}"
+-	    eval "${PACKAGE}_LIB_FILE=lib${PACKAGE}${SHARED_LIB_SUFFIX}"
++	    eval "${PACKAGE}_LIB_FILE=lib${PACKAGE}.so"
+ 	    RANLIB=:
+ 	else
+ 	    eval "${PACKAGE}_LIB_FILE=lib${PACKAGE}${UNSHARED_LIB_SUFFIX}"
 @@ -1741,7 +1741,7 @@ esac
  # versions have bugs in the pkg_mkIndex routine.
  #--------------------------------------------------------------------
