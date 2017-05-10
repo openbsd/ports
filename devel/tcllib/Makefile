@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2015/06/05 20:36:24 stu Exp $
+# $OpenBSD: Makefile,v 1.26 2017/05/10 01:06:25 stu Exp $
 
 COMMENT =	Tcl Standard Library
 
@@ -11,7 +11,7 @@ MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
 PERMIT_PACKAGE_CDROM =	Yes
 
 # Fossil checkin 2015/06/04 fe05de3454a49f831086a78ae987030c5fc85008
-MASTER_SITES =	http://mirror.yellow5.com/openbsd/
+MASTER_SITES =	https://github.com/aryler/Tcllib_distribution/raw/master/
 MODULES =	x11/tk
 BUILD_DEPENDS =	${MODTCL_BUILD_DEPENDS}
 RUN_DEPENDS =	${MODTCL_RUN_DEPENDS}
