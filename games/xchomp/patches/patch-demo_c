@@ -1,7 +1,16 @@
-$OpenBSD: patch-demo_c,v 1.1 2007/10/26 21:19:16 ajacoutot Exp $
---- demo.c.orig	Fri Mar 18 06:12:23 1994
-+++ demo.c	Fri Oct 26 23:02:48 2007
-@@ -127,7 +127,7 @@ demo_seq()
+$OpenBSD: patch-demo_c,v 1.2 2017/05/10 23:34:25 espie Exp $
+Index: demo.c
+--- demo.c.orig
++++ demo.c
+@@ -6,6 +6,7 @@
+  * for the game.
+  */
+ 
++void
+ demo_seq()
+ {
+    int             i, xx, yy, direction, ascent, descent, len;
+@@ -127,7 +128,7 @@ demo_seq()
        if (event.xany.window != window) continue;
        switch (event.type) {
           case KeyPress:

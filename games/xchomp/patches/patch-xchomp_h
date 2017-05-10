@@ -1,0 +1,73 @@
+$OpenBSD: patch-xchomp_h,v 1.1 2017/05/10 23:34:25 espie Exp $
+
+Index: xchomp.h
+--- xchomp.h.orig
++++ xchomp.h
+@@ -6,6 +6,10 @@
+ #include <signal.h>
+ #include <setjmp.h>
+ #include <string.h>
++#include <stdlib.h>
++#include <unistd.h>
++/* avoid unistd's pause */
++#define pause	mypause
+ 
+ #include <X11/Xlib.h>
+ #include <X11/Xutil.h>
+@@ -74,7 +78,7 @@ EXTERN struct timeval	st_delay;
+ typedef int		intm[8];
+ typedef char		charm[BLOCK_WIDTH];
+ typedef charm		mazedata[BLOCK_HEIGHT];
+-typedef int		(*funcptr)();
++typedef void		(*funcptr)(int);
+ 
+ EXTERN Atom		DEC_icon_atom;
+ 
+@@ -136,6 +140,44 @@ EXTERN Bool		dead, completed;
+ 
+ EXTERN jmp_buf		jb_start;
+ 
+-extern			follow(), hover(), hover2(), run(), go_home();
+-extern			die(), eat(), noop();
+-extern Bool		pause_seq();
++extern void control_pac(void);
++extern void follow(int);
++extern void hover(int);
++extern void hover2(int);
++extern void run(int);
++extern void go_home(int);
++extern void eat(int);
++extern void die(int);
++extern void noop(int);
++
++extern Bool pause_seq(void);
++extern void do_sleep(int);
++extern void do_usleep(int);
++extern void get_ready(void);
++extern void game_over(void);
++extern void finish(void);
++
++extern void print_score(long);
++extern int set_lives(int);
++extern void display_level(Bool);
++extern void display_title(void);
++extern void restore_status(void);
++
++extern void do_exit(void);
++
++extern void create_window(int, char *[]);
++extern void create_pac(void);
++extern void create_ghost(void);
++extern void create_maze_symbols(void);
++extern void create_maps(void);
++extern void create_fruit(void);
++extern void create_GCs(void);
++extern void create_demo_images(void);
++extern void clear_maps(void);
++extern void create_regions(void);
++extern void destroy_regions(void);
++
++extern void read_maze(int);
++extern void position_players(void);
++
++extern void demo_seq(void);

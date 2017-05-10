@@ -1,0 +1,58 @@
+$OpenBSD: patch-status_c,v 1.1 2017/05/10 23:34:25 espie Exp $
+
+Index: status.c
+--- status.c.orig
++++ status.c
+@@ -8,8 +8,8 @@
+  * score, the fruit level, and the number of lives remaining.
+  */
+ 
+-print_score(incr)
+-long incr;
++void
++print_score(long incr)
+ {
+    static char          string[6];
+    register long        sc;
+@@ -35,10 +35,10 @@ int num;
+ {
+    int i;
+ 
+-   if (lives = num)
+-      for (i = 1; i < lives; i++)
+-         XCopyPlane(display, small_pac, window, fullcopyGC, 0, 0,
+-            12, GHOST_SIZE, WIN_WIDTH - 6 - i * 12, WIN_HEIGHT + 1, 1);
++   lives = num;
++   for (i = 1; i < lives; i++)
++      XCopyPlane(display, small_pac, window, fullcopyGC, 0, 0,
++	 12, GHOST_SIZE, WIN_WIDTH - 6 - i * 12, WIN_HEIGHT + 1, 1);
+ 
+    if (lives < 4)
+       XFillRectangle(display, window, clearGC, WIN_WIDTH - 6 - 3 * 12,
+@@ -48,8 +48,8 @@ int num;
+ }
+ 
+ 
+-display_level(slowly)
+-Bool slowly;
++void
++display_level(Bool slowly)
+ {
+    int i, xx;
+ 
+@@ -73,6 +73,7 @@ Bool slowly;
+ }
+ 
+ 
++void
+ display_title()
+ {
+    XCopyPlane(display, title, window, fullcopyGC, 0, 0, TITLE_WIDTH,
+@@ -80,6 +81,7 @@ display_title()
+ }
+ 
+ 
++void
+ restore_status()
+ {
+    print_score(0L);

@@ -1,0 +1,93 @@
+$OpenBSD: patch-resources_c,v 1.1 2017/05/10 23:34:25 espie Exp $
+
+Index: resources.c
+--- resources.c.orig
++++ resources.c
+@@ -9,6 +9,7 @@
+  * contexts.
+  */
+ 
++void
+ create_window(argc, argv)
+ int argc;
+ char *argv[];
+@@ -39,6 +40,7 @@ char *argv[];
+ }
+ 
+ 
++void
+ create_pac()
+ {
+    int i;
+@@ -127,6 +129,7 @@ create_pac()
+ }
+ 
+ 
++void
+ create_ghost()
+ {
+    int i;
+@@ -164,6 +167,7 @@ create_ghost()
+ }
+ 
+ 
++void
+ create_maze_symbols()
+ {
+    int          i;
+@@ -190,6 +194,7 @@ create_maze_symbols()
+ }
+ 
+ 
++void
+ create_maps()
+ {
+    powermap = XCreatePixmap(display, root, WIN_WIDTH, WIN_HEIGHT, depth);
+@@ -200,6 +205,7 @@ create_maps()
+ 
+ 
+ 
++void
+ create_fruit()
+ {
+    fruit_pix[0] = XCreatePixmapFromBitmapData(display, root, fcherry_bits,
+@@ -261,6 +267,7 @@ create_fruit()
+ }
+ 
+ 
++void
+ create_GCs()
+ {
+    XGCValues            gcv;
+@@ -341,6 +348,7 @@ create_GCs()
+ }
+ 
+ 
++void
+ create_demo_images()
+ {
+    demo_mask[0] = XCreatePixmapFromBitmapData(display, root, bigc_bits,
+@@ -380,6 +388,7 @@ create_demo_images()
+ }
+ 
+ 
++void
+ clear_maps()
+ {
+    XFillRectangle(display, powermap, clearGC, 0, 0, WIN_WIDTH, WIN_HEIGHT);
+@@ -388,6 +397,7 @@ clear_maps()
+ }
+ 
+ 
++void
+ create_regions()
+ {
+    XRectangle	full_rect;
+@@ -411,6 +421,7 @@ create_regions()
+ }
+ 
+ 
++void
+ destroy_regions()
+ {
+    int i;

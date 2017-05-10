@@ -1,7 +1,26 @@
-$OpenBSD: patch-main_c,v 1.1 2007/10/26 21:19:16 ajacoutot Exp $
---- main.c.orig	Fri Mar 18 06:12:24 1994
-+++ main.c	Fri Oct 26 23:02:48 2007
-@@ -166,7 +166,7 @@ play_game() {
+$OpenBSD: patch-main_c,v 1.2 2017/05/10 23:34:25 espie Exp $
+Index: main.c
+--- main.c.orig
++++ main.c
+@@ -2,6 +2,9 @@
+ #define EXTERN
+ #include "xchomp.h"
+ 
++void play_game(void);
++
++int
+ main(argc, argv)
+ int argc;
+ char *argv[];
+@@ -74,6 +77,7 @@ char *argv[];
+ /* 
+  * The following function contains the main game loop.
+  */
++void
+ play_game() {
+    register int    i;
+    char            c_buf;
+@@ -166,7 +170,7 @@ play_game() {
           if (event.xany.window != window) continue;
           switch (event.type) {
              case KeyPress:
@@ -10,3 +29,11 @@ $OpenBSD: patch-main_c,v 1.1 2007/10/26 21:19:16 ajacoutot Exp $
                 if (last_key == XK_space)
                    if (!pause_seq())
                       goto demo;
+@@ -347,6 +351,7 @@ play_game() {
+ }
+ 
+ 
++void
+ do_exit()
+ {
+    destroy_regions();

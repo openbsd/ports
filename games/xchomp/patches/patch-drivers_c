@@ -1,0 +1,69 @@
+$OpenBSD: patch-drivers_c,v 1.1 2017/05/10 23:34:25 espie Exp $
+
+Index: drivers.c
+--- drivers.c.orig
++++ drivers.c
+@@ -5,6 +5,7 @@
+  * and the ghosts.
+  */
+ 
++void check_dots(void);
+ 
+ /*
+  * The following function is called explicitly during each animation
+@@ -12,6 +13,7 @@
+  * variables (pac_x, pac_y), the direction variables (pac_ix, pac_iy),
+  * and the clipping region (pac_region).
+  */
++void
+ control_pac()
+ {
+    register int         xx = pac_x, yy = pac_y, i, dx, dy;
+@@ -89,6 +91,7 @@ control_pac()
+  * eaten something which is not a ghost -- a dot, a power-dot,
+  * or the fruit.  If so, the appropriate action is taken.
+  */
++void
+ check_dots()
+ {
+    register char        *pi;
+@@ -218,6 +221,7 @@ check_dots()
+  * The function below causes ghosts to follow the player around, with a bit
+  * of randomness thrown in as well.
+  */
++void
+ follow(i)
+ register int i;
+ {
+@@ -289,6 +293,7 @@ register int i;
+  * at half speed.  It is set up as the driver function during
+  * the ghost-eating periods of the game.
+  */
++void
+ run(i)
+ register int i;
+ {
+@@ -358,6 +363,7 @@ register int i;
+  * high speed.  It is set up as the driver for ghosts which have
+  * been eaten.
+  */
++void
+ go_home(i)
+ register int i;
+ {
+@@ -459,6 +465,7 @@ register int i;
+  * They simply hover around in a circular pattern.  Randomness is
+  * used to decide when the ghosts leave the box.
+  */
++void
+ hover(i)
+ register int i;
+ {
+@@ -514,6 +521,7 @@ register int i;
+  * the ghost-eating periods of the game -- they move at half
+  * speed.
+  */
++void
+ hover2(i)
+ register int i;
+ {
