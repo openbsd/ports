@@ -1,14 +1,16 @@
-# $OpenBSD: Makefile,v 1.13 2016/03/18 23:12:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2017/05/10 01:10:50 stu Exp $
 
 COMMENT=	Tcl interface to PostgreSQL
 
-DISTNAME=	pgtcl-1.7
-SHARED_LIBS= 	pgtcl17	0.0
+V =		1.7
+
+DISTNAME=	pgtcl-${V}
+REVISION=	0
 CATEGORIES=	databases
 
 HOMEPAGE=	http://pgfoundry.org/projects/pgtcl/
 
-MAINTAINER=	Valery Masiutsin <val.masutin@gmail.com>
+MAINTAINER=	Stuart Cassoff <stwo@users.sourceforge.net>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
@@ -27,15 +29,19 @@ CONFIGURE_ARGS=	--with-tcl=${MODTCL_LIBDIR} \
 		--libdir=${MODTCL_TCLDIR} \
 		--with-postgres-include=${LOCALBASE}/include/postgresql \
 		--with-postgres-lib=${LOCALBASE}/lib \
-		--disable-threads \
-		SHLIB_VERSION=${LIBpgtcl17_VERSION}
+		--disable-threads
 
-FAKE_FLAGS=	PKG_DIR=pgtcl INSTALL_LIBRARY='${INSTALL_DATA}' PKG_HEADERS=
+FAKE_FLAGS =	PKG_DIR='$$(PACKAGE_NAME)' INSTALL_PROGRAM='$$(INSTALL_DATA)' \
+		PKG_HEADERS='' PKG_TCL_SOURCES=''
+
 NO_TEST=	Yes
 WRKDIST =	${WRKDIR}/lib${DISTNAME}
 ALL_TARGET =	 binaries libraries
 INSTALL_TARGET =install-binaries install-libraries
 SEPARATE_BUILD =Yes
+SUBST_VARS =	VER
+
+VER =		${V:S/.//g}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/pgtcl/html
