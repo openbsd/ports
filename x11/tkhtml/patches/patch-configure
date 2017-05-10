@@ -1,12 +1,13 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2010/07/16 08:32:13 sebastia Exp $
---- configure.orig	Mon Dec 28 12:53:41 2009
-+++ configure	Mon Dec 28 12:54:01 2009
+$OpenBSD: patch-configure,v 1.2 2017/05/10 14:27:47 stu Exp $
+Index: configure
+--- configure.orig
++++ configure
 @@ -9545,7 +9545,7 @@ echo "${ECHO_T}$tcl_cv_ld_elf" >&6
  	    DL_LIBS=""
  	    CC_SEARCH_FLAGS='-Wl,-rpath,${LIB_RUNTIME_DIR}'
  	    LD_SEARCH_FLAGS=${CC_SEARCH_FLAGS}
 -	    SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}.so.1.0'
-+	    SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}.so.${LIBTkhtml30_VERSION}'
++	    SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}.so'
  	    echo "$as_me:$LINENO: checking for ELF" >&5
  echo $ECHO_N "checking for ELF... $ECHO_C" >&6
  if test "${tcl_cv_ld_elf+set}" = set; then
