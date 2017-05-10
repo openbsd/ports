@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2016/06/29 16:14:43 espie Exp $
+@comment $OpenBSD: PLIST,v 1.10 2017/05/10 01:20:34 stu Exp $
 @option no-default-conflict
 @option is-branch
 @conflict tcl->=8.6,<8.7
@@ -724,6 +724,8 @@ lib/tcl/tcl8.6/man/man3/
 @man lib/tcl/tcl8.6/man/man3/Tcl_UtfCharComplete.3
 @man lib/tcl/tcl8.6/man/man3/Tcl_UtfFindFirst.3
 @man lib/tcl/tcl8.6/man/man3/Tcl_UtfFindLast.3
+@man lib/tcl/tcl8.6/man/man3/Tcl_UtfNcasecmp.3
+@man lib/tcl/tcl8.6/man/man3/Tcl_UtfNcmp.3
 @man lib/tcl/tcl8.6/man/man3/Tcl_UtfNext.3
 @man lib/tcl/tcl8.6/man/man3/Tcl_UtfPrev.3
 @man lib/tcl/tcl8.6/man/man3/Tcl_UtfToExternal.3
@@ -922,12 +924,12 @@ lib/tcl/tcl8.6/man/mann/
 @man lib/tcl/tcl8.6/man/mann/yieldto.n
 @man lib/tcl/tcl8.6/man/mann/zlib.n
 lib/tcl/tcl8.6/modules/
-lib/tcl/tcl8.6/modules/http-2.8.8.tm
-lib/tcl/tcl8.6/modules/msgcat-1.5.2.tm
+lib/tcl/tcl8.6/modules/http-2.8.9.tm
+lib/tcl/tcl8.6/modules/msgcat-1.6.0.tm
 lib/tcl/tcl8.6/modules/platform/
-lib/tcl/tcl8.6/modules/platform-1.0.13.tm
+lib/tcl/tcl8.6/modules/platform-1.0.14.tm
 lib/tcl/tcl8.6/modules/platform/shell-1.1.4.tm
-lib/tcl/tcl8.6/modules/tcltest-2.3.8.tm
+lib/tcl/tcl8.6/modules/tcltest-2.4.0.tm
 lib/tcl/tcl8.6/msgs/
 lib/tcl/tcl8.6/msgs/af.msg
 lib/tcl/tcl8.6/msgs/af_za.msg
