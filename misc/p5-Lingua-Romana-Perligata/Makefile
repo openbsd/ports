@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2016/03/20 19:56:49 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2017/05/10 20:18:32 benoit Exp $
 
 COMMENT=		write Perl in Latin
 
-DISTNAME=		Lingua-Romana-Perligata-0.50
-REVISION=		1
+DISTNAME =		Lingua-Romana-Perligata-0.601
 CATEGORIES=		misc
 
 MODULES=		cpan
