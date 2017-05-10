@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2015/05/28 06:59:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2017/05/10 02:20:22 schwarze Exp $
 
 COMMENT-main=		draw maps and charts
 COMMENT-high=		high resolution coastline data for GMT
@@ -7,7 +7,7 @@ COMMENT-full=		full resolution coastline data for GMT
 V=			4.1.3
 DISTNAME=		GMT$V
 PKGNAME-main=		gmt-$V
-REVISION-main =		4
+REVISION-main =		5
 PKGNAME-high=		gmt-high-$V
 REVISION-high =		1
 PKGNAME-full=		gmt-full-$V
@@ -45,7 +45,6 @@ CONFIGURE_ARGS+=	--datadir=${PREFIX}/share/gmt/share \
 			--enable-mansect=1 \
 			--enable-netcdf=${LOCALBASE}
 
-USE_GROFF =		Yes
 NO_TEST=		Yes
 
 ALL_TARGET=		gmt

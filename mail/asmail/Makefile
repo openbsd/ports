@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.36 2013/03/11 11:23:50 espie Exp $
+# $OpenBSD: Makefile,v 1.37 2017/05/10 02:20:22 schwarze Exp $
 
 COMMENT=	biff-type program, designed to match AfterStep
 
 DISTNAME=	asmail-0.56
-REVISION =	4
+REVISION =	5
 CATEGORIES=	mail
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=asmail/}
@@ -16,8 +16,6 @@ LIB_DEPENDS=	graphics/jpeg
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=		ICE SM X11 Xext Xpm Xt c jpeg>=62
-
-USE_GROFF=	Yes
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--enable-shaping

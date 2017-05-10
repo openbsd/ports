@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.36 2013/03/11 11:10:55 espie Exp $
+# $OpenBSD: Makefile,v 1.37 2017/05/10 02:20:22 schwarze Exp $
 
 COMMENT =	two-dimensional drawing tool and hyper-object browser
 
 VERSION =	4.2.5
 DISTNAME =	tgif-QPL-${VERSION}
 PKGNAME =	tgif-${VERSION}
+REVISION =	0
 CATEGORIES =	graphics
 
 HOMEPAGE =	http://bourbon.usc.edu/tgif/
@@ -22,8 +23,6 @@ MASTER_SITES =	ftp://bourbon.usc.edu/pub/tgif/ \
 RUN_DEPENDS =	graphics/netpbm
 
 CONFIGURE_STYLE = imake
-
-USE_GROFF =	Yes
 
 MAKE_FLAGS =	MODULE_CFLAGS="${CFLAGS}"
 

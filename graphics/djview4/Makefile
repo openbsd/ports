@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.28 2017/04/10 11:46:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2017/05/10 02:20:22 schwarze Exp $
 
 COMMENT=	portable DjVu viewer and browser plugin
 
 DISTNAME=	djview-4.10.6
 PKGNAME=	${DISTNAME:S/djview/djview4/}
+REVISION=	0
 CATEGORIES=	graphics print
 
 HOMEPAGE=	http://djvu.sourceforge.net/djview4.html
@@ -27,7 +28,6 @@ RUN_DEPENDS=	devel/desktop-file-utils \
 		x11/gtk+3,-guic
 
 USE_GMAKE=	Yes
-USE_GROFF =	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--with-tiff=${LOCALBASE}
 CONFIGURE_ENV+=	QTDIR="${MODQT4_QTDIR}" \

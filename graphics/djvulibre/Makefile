@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.37 2017/04/10 11:46:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2017/05/10 02:20:22 schwarze Exp $
 
 COMMENT=	view, decode and encode DjVu files
 
 DISTNAME=	djvulibre-3.5.27
-REVISION=	0
+REVISION=	1
 SHARED_LIBS=	djvulibre	26.0	# 27.0
 CATEGORIES=	graphics print
 
@@ -28,7 +28,6 @@ RUN_DEPENDS+=	misc/shared-mime-info \
 BUILD_DEPENDS+=	x11/gnome/librsvg
 
 USE_GMAKE=	Yes
-USE_GROFF =	Yes
 
 AUTOCONF_VERSION=	2.69
 
