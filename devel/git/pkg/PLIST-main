@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.76 2017/02/25 20:35:31 benoit Exp $
+@comment $OpenBSD: PLIST-main,v 1.77 2017/05/10 08:05:04 benoit Exp $
 @newgroup _gitdaemon:778
 @newuser _gitdaemon:778:_gitdaemon:daemon:GIT Daemon:/nonexistent:/sbin/nologin
 @pkgpath devel/git
@@ -57,7 +57,7 @@ libexec/git/git-cvsserver
 @bin libexec/git/git-diff-files
 @bin libexec/git/git-diff-index
 @bin libexec/git/git-diff-tree
-libexec/git/git-difftool
+@bin libexec/git/git-difftool
 libexec/git/git-difftool--helper
 @bin libexec/git/git-fast-export
 @bin libexec/git/git-fast-import
@@ -121,6 +121,7 @@ libexec/git/git-quiltimport
 @bin libexec/git/git-read-tree
 libexec/git/git-rebase
 libexec/git/git-rebase--am
+@bin libexec/git/git-rebase--helper
 libexec/git/git-rebase--interactive
 libexec/git/git-rebase--merge
 @bin libexec/git/git-receive-pack
