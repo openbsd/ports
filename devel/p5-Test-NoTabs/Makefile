@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2016/03/20 19:56:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2017/05/10 12:57:24 benoit Exp $
 
 COMMENT =	check the presence of tabs in your project
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	Test-NoTabs-1.4
+DISTNAME =	Test-NoTabs-2.00
 CATEGORIES =	devel
 
 # Perl
