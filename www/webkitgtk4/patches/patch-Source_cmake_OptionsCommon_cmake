@@ -1,4 +1,4 @@
-$OpenBSD: patch-Source_cmake_OptionsCommon_cmake,v 1.10 2017/05/09 17:31:14 espie Exp $
+$OpenBSD: patch-Source_cmake_OptionsCommon_cmake,v 1.11 2017/05/10 10:57:54 ajacoutot Exp $
 
 Our ar(1) is too old and have not support for `T'.
 
@@ -35,7 +35,7 @@ Index: Source/cmake/OptionsCommon.cmake
  
  if (USE_ARM_LLVM_DISASSEMBLER)
      find_package(LLVM REQUIRED)
-@@ -221,13 +221,13 @@ if (NOT APPLE)
+@@ -224,13 +224,13 @@ if (NOT APPLE)
  endif ()
  
  # Macros for determining HAVE values.
@@ -51,7 +51,7 @@ Index: Source/cmake/OptionsCommon.cmake
      SET_AND_EXPOSE_TO_BUILD(${_variable} ${_variable}_value)
  endmacro()
  
-@@ -254,7 +254,7 @@ _HAVE_CHECK_INCLUDE(HAVE_FEATURES_H features.h)
+@@ -257,7 +257,7 @@ _HAVE_CHECK_INCLUDE(HAVE_FEATURES_H features.h)
  _HAVE_CHECK_INCLUDE(HAVE_ERRNO_H errno.h)
  _HAVE_CHECK_INCLUDE(HAVE_LANGINFO_H langinfo.h)
  _HAVE_CHECK_INCLUDE(HAVE_MMAP sys/mman.h)
