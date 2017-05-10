@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2016/05/27 15:48:50 tim Exp $
+# $OpenBSD: Makefile,v 1.17 2017/05/10 12:47:56 pea Exp $
 
 GH_ACCOUNT =    imapsync
 GH_PROJECT =    imapsync
 
 COMMENT=	IMAP synchronization tool
 
-DISTNAME=	imapsync-1.678
+DISTNAME=	imapsync-1.727
 CATEGORIES=	mail
 
 MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
@@ -28,7 +28,8 @@ RUN_DEPENDS=	converters/p5-DateManip \
 		devel/p5-File-Copy-Recursive \
 		devel/p5-Parse-RecDescent \
 		devel/p5-Test-Pod \
-		devel/p5-Data-Uniqid
+		devel/p5-Data-Uniqid \
+		devel/p5-Readonly
 
 NO_BUILD=	Yes
 NO_TEST=	Yes
