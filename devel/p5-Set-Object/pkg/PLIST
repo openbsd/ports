@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/07/16 23:57:23 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2017/05/10 19:15:53 benoit Exp $
 ${P5ARCH}/
 ${P5ARCH}/Set/
+${P5ARCH}/Set/Changes.pod
 ${P5ARCH}/Set/Object/
 ${P5ARCH}/Set/Object.pm
 ${P5ARCH}/Set/Object/Weak.pm
@@ -9,5 +10,6 @@ ${P5ARCH}/auto/Set/
 ${P5ARCH}/auto/Set/Object/
 ${P5ARCH}/auto/Set/Object/Object.so
 ${P5ARCH}/auto/Set/Object/autosplit.ix
+@man man/man3p/Set::Changes.3p
 @man man/man3p/Set::Object.3p
 @man man/man3p/Set::Object::Weak.3p
