@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2016/03/20 19:56:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2017/05/10 11:51:14 benoit Exp $
 
 COMMENT=		use other catalog formats in Locale::Maketext
 
 MODULES=		cpan
 PKG_ARCH=		*
-DISTNAME=		Locale-Maketext-Lexicon-0.93
+DISTNAME =		Locale-Maketext-Lexicon-1.00
 CATEGORIES=		devel
 
 # MIT
