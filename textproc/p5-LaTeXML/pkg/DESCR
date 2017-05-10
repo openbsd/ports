@@ -1,0 +1,7 @@
+In brief, latexml is a program, written in Perl, that attempts to faithfully
+mimic TeX’s behavior, but produces XML instead of dvi. The document model of
+the target XML makes explicit the model implied by LaTeX. The processing and
+model are both extensible; you can define the mapping between TeX constructs
+and the XML fragments to be created. A postprocessor, latexmlpost converts this
+XML into other formats such as HTML or XHTML, with options to convert the math
+into MathML (currently only presentation) or images.

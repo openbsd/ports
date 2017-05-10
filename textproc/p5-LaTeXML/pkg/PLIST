@@ -1,0 +1,641 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/05/10 11:30:25 pirofti Exp $
+bin/latexml
+bin/latexmlc
+bin/latexmlfind
+bin/latexmlmath
+bin/latexmlpost
+${P5SITE}/LaTeXML/
+${P5SITE}/LaTeXML.pm
+${P5SITE}/LaTeXML/Common/
+${P5SITE}/LaTeXML/Common/Color/
+${P5SITE}/LaTeXML/Common/Color.pm
+${P5SITE}/LaTeXML/Common/Color/Derived.pm
+${P5SITE}/LaTeXML/Common/Color/cmy.pm
+${P5SITE}/LaTeXML/Common/Color/cmyk.pm
+${P5SITE}/LaTeXML/Common/Color/gray.pm
+${P5SITE}/LaTeXML/Common/Color/hsb.pm
+${P5SITE}/LaTeXML/Common/Color/rgb.pm
+${P5SITE}/LaTeXML/Common/Config.pm
+${P5SITE}/LaTeXML/Common/Dimension.pm
+${P5SITE}/LaTeXML/Common/Error.pm
+${P5SITE}/LaTeXML/Common/Float.pm
+${P5SITE}/LaTeXML/Common/Font.pm
+${P5SITE}/LaTeXML/Common/Glue.pm
+${P5SITE}/LaTeXML/Common/Model/
+${P5SITE}/LaTeXML/Common/Model.pm
+${P5SITE}/LaTeXML/Common/Model/DTD.pm
+${P5SITE}/LaTeXML/Common/Model/RelaxNG.pm
+${P5SITE}/LaTeXML/Common/Number.pm
+${P5SITE}/LaTeXML/Common/Object.pm
+${P5SITE}/LaTeXML/Common/XML/
+${P5SITE}/LaTeXML/Common/XML.pm
+${P5SITE}/LaTeXML/Common/XML/Parser.pm
+${P5SITE}/LaTeXML/Common/XML/RelaxNG.pm
+${P5SITE}/LaTeXML/Common/XML/XPath.pm
+${P5SITE}/LaTeXML/Common/XML/XSLT.pm
+${P5SITE}/LaTeXML/Core/
+${P5SITE}/LaTeXML/Core.pm
+${P5SITE}/LaTeXML/Core/Alignment/
+${P5SITE}/LaTeXML/Core/Alignment.pm
+${P5SITE}/LaTeXML/Core/Alignment/Template.pm
+${P5SITE}/LaTeXML/Core/Array.pm
+${P5SITE}/LaTeXML/Core/Box.pm
+${P5SITE}/LaTeXML/Core/Comment.pm
+${P5SITE}/LaTeXML/Core/Definition/
+${P5SITE}/LaTeXML/Core/Definition.pm
+${P5SITE}/LaTeXML/Core/Definition/CharDef.pm
+${P5SITE}/LaTeXML/Core/Definition/Conditional.pm
+${P5SITE}/LaTeXML/Core/Definition/Constructor/
+${P5SITE}/LaTeXML/Core/Definition/Constructor.pm
+${P5SITE}/LaTeXML/Core/Definition/Constructor/Compiler.pm
+${P5SITE}/LaTeXML/Core/Definition/Expandable.pm
+${P5SITE}/LaTeXML/Core/Definition/Primitive.pm
+${P5SITE}/LaTeXML/Core/Definition/Register.pm
+${P5SITE}/LaTeXML/Core/Document.pm
+${P5SITE}/LaTeXML/Core/Gullet.pm
+${P5SITE}/LaTeXML/Core/KeyVals.pm
+${P5SITE}/LaTeXML/Core/List.pm
+${P5SITE}/LaTeXML/Core/Mouth/
+${P5SITE}/LaTeXML/Core/Mouth.pm
+${P5SITE}/LaTeXML/Core/Mouth/Binding.pm
+${P5SITE}/LaTeXML/Core/Mouth/file.pm
+${P5SITE}/LaTeXML/Core/Mouth/http.pm
+${P5SITE}/LaTeXML/Core/Mouth/https.pm
+${P5SITE}/LaTeXML/Core/MuDimension.pm
+${P5SITE}/LaTeXML/Core/MuGlue.pm
+${P5SITE}/LaTeXML/Core/Pair.pm
+${P5SITE}/LaTeXML/Core/PairList.pm
+${P5SITE}/LaTeXML/Core/Parameter.pm
+${P5SITE}/LaTeXML/Core/Parameters.pm
+${P5SITE}/LaTeXML/Core/Rewrite.pm
+${P5SITE}/LaTeXML/Core/State.pm
+${P5SITE}/LaTeXML/Core/Stomach.pm
+${P5SITE}/LaTeXML/Core/Token.pm
+${P5SITE}/LaTeXML/Core/Tokens.pm
+${P5SITE}/LaTeXML/Core/Whatsit.pm
+${P5SITE}/LaTeXML/Global.pm
+${P5SITE}/LaTeXML/LaTeXML.catalog
+${P5SITE}/LaTeXML/MathGrammar.pm
+${P5SITE}/LaTeXML/MathParser.pm
+${P5SITE}/LaTeXML/Package/
+${P5SITE}/LaTeXML/Package.pm
+${P5SITE}/LaTeXML/Package/AmSTeX.pool.ltxml
+${P5SITE}/LaTeXML/Package/BibTeX.pool.ltxml
+${P5SITE}/LaTeXML/Package/JHEP.cls.ltxml
+${P5SITE}/LaTeXML/Package/JHEP2.cls.ltxml
+${P5SITE}/LaTeXML/Package/JHEP3.cls.ltxml
+${P5SITE}/LaTeXML/Package/LaTeX.pool.ltxml
+${P5SITE}/LaTeXML/Package/OmniBus.cls.ltxml
+${P5SITE}/LaTeXML/Package/TeX.pool.ltxml
+${P5SITE}/LaTeXML/Package/a0poster.cls.ltxml
+${P5SITE}/LaTeXML/Package/a0size.sty.ltxml
+${P5SITE}/LaTeXML/Package/a4.sty.ltxml
+${P5SITE}/LaTeXML/Package/a4wide.sty.ltxml
+${P5SITE}/LaTeXML/Package/aa.cls.ltxml
+${P5SITE}/LaTeXML/Package/aa_support.sty.ltxml
+${P5SITE}/LaTeXML/Package/aas_macros.sty.ltxml
+${P5SITE}/LaTeXML/Package/aas_support.sty.ltxml
+${P5SITE}/LaTeXML/Package/aasms.sty.ltxml
+${P5SITE}/LaTeXML/Package/aaspp.sty.ltxml
+${P5SITE}/LaTeXML/Package/aastex.cls.ltxml
+${P5SITE}/LaTeXML/Package/aastex.sty.ltxml
+${P5SITE}/LaTeXML/Package/acronym.sty.ltxml
+${P5SITE}/LaTeXML/Package/ae.sty.ltxml
+${P5SITE}/LaTeXML/Package/afterpage.sty.ltxml
+${P5SITE}/LaTeXML/Package/algc.sty.ltxml
+${P5SITE}/LaTeXML/Package/algcompatible.sty.ltxml
+${P5SITE}/LaTeXML/Package/algmatlab.sty.ltxml
+${P5SITE}/LaTeXML/Package/algorithm.sty.ltxml
+${P5SITE}/LaTeXML/Package/algorithmic.sty.ltxml
+${P5SITE}/LaTeXML/Package/algorithmicx.sty.ltxml
+${P5SITE}/LaTeXML/Package/algpascal.sty.ltxml
+${P5SITE}/LaTeXML/Package/algpseudocode.sty.ltxml
+${P5SITE}/LaTeXML/Package/alltt.sty.ltxml
+${P5SITE}/LaTeXML/Package/ams_core.cls.ltxml
+${P5SITE}/LaTeXML/Package/ams_support.sty.ltxml
+${P5SITE}/LaTeXML/Package/amsa.fontmap.ltxml
+${P5SITE}/LaTeXML/Package/amsart.cls.ltxml
+${P5SITE}/LaTeXML/Package/amsb.fontmap.ltxml
+${P5SITE}/LaTeXML/Package/amsbook.cls.ltxml
+${P5SITE}/LaTeXML/Package/amsbsy.sty.ltxml
+${P5SITE}/LaTeXML/Package/amscd.sty.ltxml
+${P5SITE}/LaTeXML/Package/amsfonts.sty.ltxml
+${P5SITE}/LaTeXML/Package/amsgen.sty.ltxml
+${P5SITE}/LaTeXML/Package/amsmath.sty.ltxml
+${P5SITE}/LaTeXML/Package/amsopn.sty.ltxml
+${P5SITE}/LaTeXML/Package/amsppt.sty.ltxml
+${P5SITE}/LaTeXML/Package/amsproc.cls.ltxml
+${P5SITE}/LaTeXML/Package/amsrefs.sty.ltxml
+${P5SITE}/LaTeXML/Package/amssymb.sty.ltxml
+${P5SITE}/LaTeXML/Package/amstex.sty.ltxml
+${P5SITE}/LaTeXML/Package/amstex.tex.ltxml
+${P5SITE}/LaTeXML/Package/amstext.sty.ltxml
+${P5SITE}/LaTeXML/Package/amsthm.sty.ltxml
+${P5SITE}/LaTeXML/Package/amsxtra.sty.ltxml
+${P5SITE}/LaTeXML/Package/apjfonts.sty.ltxml
+${P5SITE}/LaTeXML/Package/applemac.def.ltxml
+${P5SITE}/LaTeXML/Package/array.sty.ltxml
+${P5SITE}/LaTeXML/Package/article.cls.ltxml
+${P5SITE}/LaTeXML/Package/attachfile.sty.ltxml
+${P5SITE}/LaTeXML/Package/authblk.sty.ltxml
+${P5SITE}/LaTeXML/Package/avant.sty.ltxml
+${P5SITE}/LaTeXML/Package/babel.def.ltxml
+${P5SITE}/LaTeXML/Package/babel.sty.ltxml
+${P5SITE}/LaTeXML/Package/balance.sty.ltxml
+${P5SITE}/LaTeXML/Package/bbm.sty.ltxml
+${P5SITE}/LaTeXML/Package/bbold.sty.ltxml
+${P5SITE}/LaTeXML/Package/beton.sty.ltxml
+${P5SITE}/LaTeXML/Package/bm.sty.ltxml
+${P5SITE}/LaTeXML/Package/book.cls.ltxml
+${P5SITE}/LaTeXML/Package/bookman.sty.ltxml
+${P5SITE}/LaTeXML/Package/booktabs.sty.ltxml
+${P5SITE}/LaTeXML/Package/braket.sty.ltxml
+${P5SITE}/LaTeXML/Package/breakurl.sty.ltxml
+${P5SITE}/LaTeXML/Package/calc.sty.ltxml
+${P5SITE}/LaTeXML/Package/cancel.sty.ltxml
+${P5SITE}/LaTeXML/Package/caption.sty.ltxml
+${P5SITE}/LaTeXML/Package/ccfonts.sty.ltxml
+${P5SITE}/LaTeXML/Package/chancery.sty.ltxml
+${P5SITE}/LaTeXML/Package/charter.sty.ltxml
+${P5SITE}/LaTeXML/Package/circuitikz.sty.ltxml
+${P5SITE}/LaTeXML/Package/cite.sty.ltxml
+${P5SITE}/LaTeXML/Package/citesort.sty.ltxml
+${P5SITE}/LaTeXML/Package/cmbright.sty.ltxml
+${P5SITE}/LaTeXML/Package/color.sty.ltxml
+${P5SITE}/LaTeXML/Package/colordvi.sty.ltxml
+${P5SITE}/LaTeXML/Package/colortbl.sty.ltxml
+${P5SITE}/LaTeXML/Package/comment.sty.ltxml
+${P5SITE}/LaTeXML/Package/concmath.sty.ltxml
+${P5SITE}/LaTeXML/Package/courier.sty.ltxml
+${P5SITE}/LaTeXML/Package/cp852.def.ltxml
+${P5SITE}/LaTeXML/Package/crop.sty.ltxml
+${P5SITE}/LaTeXML/Package/cropmark.sty.ltxml
+${P5SITE}/LaTeXML/Package/dcolumn.sty.ltxml
+${P5SITE}/LaTeXML/Package/deluxetable.sty.ltxml
+${P5SITE}/LaTeXML/Package/doublespace.sty.ltxml
+${P5SITE}/LaTeXML/Package/dsfont.sty.ltxml
+${P5SITE}/LaTeXML/Package/eTeX.pool.ltxml
+${P5SITE}/LaTeXML/Package/ellipsis.sty.ltxml
+${P5SITE}/LaTeXML/Package/elsart.cls.ltxml
+${P5SITE}/LaTeXML/Package/elsart.sty.ltxml
+${P5SITE}/LaTeXML/Package/elsart_support.sty.ltxml
+${P5SITE}/LaTeXML/Package/elsarticle.cls.ltxml
+${P5SITE}/LaTeXML/Package/emulateapj.cls.ltxml
+${P5SITE}/LaTeXML/Package/emulateapj.sty.ltxml
+${P5SITE}/LaTeXML/Package/emulateapj5.sty.ltxml
+${P5SITE}/LaTeXML/Package/enumerate.sty.ltxml
+${P5SITE}/LaTeXML/Package/epigraph.sty.ltxml
+${P5SITE}/LaTeXML/Package/epsf.sty.ltxml
+${P5SITE}/LaTeXML/Package/epsf.tex.ltxml
+${P5SITE}/LaTeXML/Package/epsfig.sty.ltxml
+${P5SITE}/LaTeXML/Package/epstopdf.sty.ltxml
+${P5SITE}/LaTeXML/Package/esint.sty.ltxml
+${P5SITE}/LaTeXML/Package/eucal.sty.ltxml
+${P5SITE}/LaTeXML/Package/eufrak.sty.ltxml
+${P5SITE}/LaTeXML/Package/euler.sty.ltxml
+${P5SITE}/LaTeXML/Package/eulervm.sty.ltxml
+${P5SITE}/LaTeXML/Package/eurosym.sty.ltxml
+${P5SITE}/LaTeXML/Package/euscript.sty.ltxml
+${P5SITE}/LaTeXML/Package/exscale.sty.ltxml
+${P5SITE}/LaTeXML/Package/fancyhdr.sty.ltxml
+${P5SITE}/LaTeXML/Package/fix-cm.sty.ltxml
+${P5SITE}/LaTeXML/Package/fixltx2e.sty.ltxml
+${P5SITE}/LaTeXML/Package/flafter.sty.ltxml
+${P5SITE}/LaTeXML/Package/fleqn.sty.ltxml
+${P5SITE}/LaTeXML/Package/float.sty.ltxml
+${P5SITE}/LaTeXML/Package/floatfig.sty.ltxml
+${P5SITE}/LaTeXML/Package/floatflt.sty.ltxml
+${P5SITE}/LaTeXML/Package/floatpag.sty.ltxml
+${P5SITE}/LaTeXML/Package/fontenc.sty.ltxml
+${P5SITE}/LaTeXML/Package/fontspec.sty.ltxml
+${P5SITE}/LaTeXML/Package/footmisc.sty.ltxml
+${P5SITE}/LaTeXML/Package/fourier.sty.ltxml
+${P5SITE}/LaTeXML/Package/framed.sty.ltxml
+${P5SITE}/LaTeXML/Package/frenchb.ldf.ltxml
+${P5SITE}/LaTeXML/Package/fullpage.sty.ltxml
+${P5SITE}/LaTeXML/Package/gen-j-l.cls.ltxml
+${P5SITE}/LaTeXML/Package/gen-m-l.cls.ltxml
+${P5SITE}/LaTeXML/Package/gen-p-l.cls.ltxml
+${P5SITE}/LaTeXML/Package/geometry.sty.ltxml
+${P5SITE}/LaTeXML/Package/german.sty.ltxml
+${P5SITE}/LaTeXML/Package/graphics.sty.ltxml
+${P5SITE}/LaTeXML/Package/graphicx.sty.ltxml
+${P5SITE}/LaTeXML/Package/grffile.sty.ltxml
+${P5SITE}/LaTeXML/Package/helvet.sty.ltxml
+${P5SITE}/LaTeXML/Package/here.sty.ltxml
+${P5SITE}/LaTeXML/Package/hhline.sty.ltxml
+${P5SITE}/LaTeXML/Package/html.sty.ltxml
+${P5SITE}/LaTeXML/Package/hyperref.sty.ltxml
+${P5SITE}/LaTeXML/Package/hyperxmp.sty.ltxml
+${P5SITE}/LaTeXML/Package/ifluatex.sty.ltxml
+${P5SITE}/LaTeXML/Package/ifpdf.sty.ltxml
+${P5SITE}/LaTeXML/Package/ifthen.sty.ltxml
+${P5SITE}/LaTeXML/Package/ifvtex.sty.ltxml
+${P5SITE}/LaTeXML/Package/ifxetex.sty.ltxml
+${P5SITE}/LaTeXML/Package/import.sty.ltxml
+${P5SITE}/LaTeXML/Package/indentfirst.sty.ltxml
+${P5SITE}/LaTeXML/Package/inputenc.sty.ltxml
+${P5SITE}/LaTeXML/Package/inst_support.sty.ltxml
+${P5SITE}/LaTeXML/Package/iopams.sty.ltxml
+${P5SITE}/LaTeXML/Package/iopart.cls.ltxml
+${P5SITE}/LaTeXML/Package/iopart_support.sty.ltxml
+${P5SITE}/LaTeXML/Package/keyval.sty.ltxml
+${P5SITE}/LaTeXML/Package/latexml.sty.ltxml
+${P5SITE}/LaTeXML/Package/latexsym.sty.ltxml
+${P5SITE}/LaTeXML/Package/latin10.def.ltxml
+${P5SITE}/LaTeXML/Package/lgr.fontmap.ltxml
+${P5SITE}/LaTeXML/Package/lineno.sty.ltxml
+${P5SITE}/LaTeXML/Package/listings.sty.ltxml
+${P5SITE}/LaTeXML/Package/listingsutf8.sty.ltxml
+${P5SITE}/LaTeXML/Package/llncs.cls.ltxml
+${P5SITE}/LaTeXML/Package/lmodern.sty.ltxml
+${P5SITE}/LaTeXML/Package/longtable.sty.ltxml
+${P5SITE}/LaTeXML/Package/lscape.sty.ltxml
+${P5SITE}/LaTeXML/Package/luximono.sty.ltxml
+${P5SITE}/LaTeXML/Package/lxRDFa.sty.ltxml
+${P5SITE}/LaTeXML/Package/ly1.fontmap.ltxml
+${P5SITE}/LaTeXML/Package/makeidx.sty.ltxml
+${P5SITE}/LaTeXML/Package/marvosym.sty.ltxml
+${P5SITE}/LaTeXML/Package/mathbbol.sty.ltxml
+${P5SITE}/LaTeXML/Package/mathpazo.sty.ltxml
+${P5SITE}/LaTeXML/Package/mathpple.sty.ltxml
+${P5SITE}/LaTeXML/Package/mathptm.sty.ltxml
+${P5SITE}/LaTeXML/Package/mathptmx.sty.ltxml
+${P5SITE}/LaTeXML/Package/mathrsfs.sty.ltxml
+${P5SITE}/LaTeXML/Package/mathtools.sty.ltxml
+${P5SITE}/LaTeXML/Package/mn.cls.ltxml
+${P5SITE}/LaTeXML/Package/mn2e.cls.ltxml
+${P5SITE}/LaTeXML/Package/mn2e_support.sty.ltxml
+${P5SITE}/LaTeXML/Package/multicol.sty.ltxml
+${P5SITE}/LaTeXML/Package/multido.sty.ltxml
+${P5SITE}/LaTeXML/Package/multirow.sty.ltxml
+${P5SITE}/LaTeXML/Package/nameref.sty.ltxml
+${P5SITE}/LaTeXML/Package/natbib.sty.ltxml
+${P5SITE}/LaTeXML/Package/newcent.sty.ltxml
+${P5SITE}/LaTeXML/Package/newlfont.sty.ltxml
+${P5SITE}/LaTeXML/Package/ngerman.sty.ltxml
+${P5SITE}/LaTeXML/Package/nicefrac.sty.ltxml
+${P5SITE}/LaTeXML/Package/ntheorem.sty.ltxml
+${P5SITE}/LaTeXML/Package/numprint.sty.ltxml
+${P5SITE}/LaTeXML/Package/ot4.fontmap.ltxml
+${P5SITE}/LaTeXML/Package/palatino.sty.ltxml
+${P5SITE}/LaTeXML/Package/paralist.sty.ltxml
+${P5SITE}/LaTeXML/Package/parskip.sty.ltxml
+${P5SITE}/LaTeXML/Package/pdfTeX.pool.ltxml
+${P5SITE}/LaTeXML/Package/pdflscape.sty.ltxml
+${P5SITE}/LaTeXML/Package/pdfsync.sty.ltxml
+${P5SITE}/LaTeXML/Package/pgf.sty.ltxml
+${P5SITE}/LaTeXML/Package/pgfkeys.code.tex.ltxml
+${P5SITE}/LaTeXML/Package/pgfplots.sty.ltxml
+${P5SITE}/LaTeXML/Package/pgfsys-latexml.def.ltxml
+${P5SITE}/LaTeXML/Package/pifont.sty.ltxml
+${P5SITE}/LaTeXML/Package/placeins.sty.ltxml
+${P5SITE}/LaTeXML/Package/preview.sty.ltxml
+${P5SITE}/LaTeXML/Package/psfig.sty.ltxml
+${P5SITE}/LaTeXML/Package/psfig.tex.ltxml
+${P5SITE}/LaTeXML/Package/pslatex.sty.ltxml
+${P5SITE}/LaTeXML/Package/pspicture.sty.ltxml
+${P5SITE}/LaTeXML/Package/pst-grad.sty.ltxml
+${P5SITE}/LaTeXML/Package/pst-node.sty.ltxml
+${P5SITE}/LaTeXML/Package/pstricks.sty.ltxml
+${P5SITE}/LaTeXML/Package/pxfonts.sty.ltxml
+${P5SITE}/LaTeXML/Package/relsize.sty.ltxml
+${P5SITE}/LaTeXML/Package/report.cls.ltxml
+${P5SITE}/LaTeXML/Package/revsymb.sty.ltxml
+${P5SITE}/LaTeXML/Package/revtex.cls.ltxml
+${P5SITE}/LaTeXML/Package/revtex.sty.ltxml
+${P5SITE}/LaTeXML/Package/revtex3_support.sty.ltxml
+${P5SITE}/LaTeXML/Package/revtex4.cls.ltxml
+${P5SITE}/LaTeXML/Package/revtex4.sty.ltxml
+${P5SITE}/LaTeXML/Package/revtex4_support.sty.ltxml
+${P5SITE}/LaTeXML/Package/rotate.sty.ltxml
+${P5SITE}/LaTeXML/Package/rotating.sty.ltxml
+${P5SITE}/LaTeXML/Package/rsfs.sty.ltxml
+${P5SITE}/LaTeXML/Package/scalefnt.sty.ltxml
+${P5SITE}/LaTeXML/Package/setspace.sty.ltxml
+${P5SITE}/LaTeXML/Package/showkeys.sty.ltxml
+${P5SITE}/LaTeXML/Package/slashed.sty.ltxml
+${P5SITE}/LaTeXML/Package/slides.cls.ltxml
+${P5SITE}/LaTeXML/Package/soul.sty.ltxml
+${P5SITE}/LaTeXML/Package/srcltx.sty.ltxml
+${P5SITE}/LaTeXML/Package/stmaryrd.sty.ltxml
+${P5SITE}/LaTeXML/Package/subfig.sty.ltxml
+${P5SITE}/LaTeXML/Package/subfigure.sty.ltxml
+${P5SITE}/LaTeXML/Package/subfloat.sty.ltxml
+${P5SITE}/LaTeXML/Package/supertabular.sty.ltxml
+${P5SITE}/LaTeXML/Package/sv_support.sty.ltxml
+${P5SITE}/LaTeXML/Package/svg.sty.ltxml
+${P5SITE}/LaTeXML/Package/svjour.cls.ltxml
+${P5SITE}/LaTeXML/Package/svmult.cls.ltxml
+${P5SITE}/LaTeXML/Package/t1.fontmap.ltxml
+${P5SITE}/LaTeXML/Package/t1enc.def.ltxml
+${P5SITE}/LaTeXML/Package/t1enc.sty.ltxml
+${P5SITE}/LaTeXML/Package/t2a.fontmap.ltxml
+${P5SITE}/LaTeXML/Package/t2b.fontmap.ltxml
+${P5SITE}/LaTeXML/Package/t2c.fontmap.ltxml
+${P5SITE}/LaTeXML/Package/tabularx.sty.ltxml
+${P5SITE}/LaTeXML/Package/tabulary.sty.ltxml
+${P5SITE}/LaTeXML/Package/textcomp.sty.ltxml
+${P5SITE}/LaTeXML/Package/texvc.sty.ltxml
+${P5SITE}/LaTeXML/Package/theorem.sty.ltxml
+${P5SITE}/LaTeXML/Package/threeparttable.sty.ltxml
+${P5SITE}/LaTeXML/Package/tikz-3dplot.sty.ltxml
+${P5SITE}/LaTeXML/Package/tikz.sty.ltxml
+${P5SITE}/LaTeXML/Package/times.sty.ltxml
+${P5SITE}/LaTeXML/Package/tocbibind.sty.ltxml
+${P5SITE}/LaTeXML/Package/transparent.sty.ltxml
+${P5SITE}/LaTeXML/Package/ts1.fontmap.ltxml
+${P5SITE}/LaTeXML/Package/txfonts.sty.ltxml
+${P5SITE}/LaTeXML/Package/type1cm.sty.ltxml
+${P5SITE}/LaTeXML/Package/ulem.sty.ltxml
+${P5SITE}/LaTeXML/Package/units.sty.ltxml
+${P5SITE}/LaTeXML/Package/upgreek.sty.ltxml
+${P5SITE}/LaTeXML/Package/upref.sty.ltxml
+${P5SITE}/LaTeXML/Package/url.sty.ltxml
+${P5SITE}/LaTeXML/Package/utf8.def.ltxml
+${P5SITE}/LaTeXML/Package/utopia.sty.ltxml
+${P5SITE}/LaTeXML/Package/verbatim.sty.ltxml
+${P5SITE}/LaTeXML/Package/wasysym.sty.ltxml
+${P5SITE}/LaTeXML/Package/wrapfig.sty.ltxml
+${P5SITE}/LaTeXML/Package/xargs.sty.ltxml
+${P5SITE}/LaTeXML/Package/xcolor.sty.ltxml
+${P5SITE}/LaTeXML/Package/xspace.sty.ltxml
+${P5SITE}/LaTeXML/Package/xunicode.sty.ltxml
+${P5SITE}/LaTeXML/Package/yfonts.sty.ltxml
+${P5SITE}/LaTeXML/Post/
+${P5SITE}/LaTeXML/Post.pm
+${P5SITE}/LaTeXML/Post/Collector.pm
+${P5SITE}/LaTeXML/Post/CrossRef.pm
+${P5SITE}/LaTeXML/Post/Graphics.pm
+${P5SITE}/LaTeXML/Post/LaTeXImages.pm
+${P5SITE}/LaTeXML/Post/MakeBibliography.pm
+${P5SITE}/LaTeXML/Post/MakeIndex.pm
+${P5SITE}/LaTeXML/Post/Manifest/
+${P5SITE}/LaTeXML/Post/Manifest.pm
+${P5SITE}/LaTeXML/Post/Manifest/Epub.pm
+${P5SITE}/LaTeXML/Post/MathImages.pm
+${P5SITE}/LaTeXML/Post/MathML/
+${P5SITE}/LaTeXML/Post/MathML.pm
+${P5SITE}/LaTeXML/Post/MathML/Content.pm
+${P5SITE}/LaTeXML/Post/MathML/Linebreaker.pm
+${P5SITE}/LaTeXML/Post/MathML/Presentation.pm
+${P5SITE}/LaTeXML/Post/OpenMath.pm
+${P5SITE}/LaTeXML/Post/PictureImages.pm
+${P5SITE}/LaTeXML/Post/SVG.pm
+${P5SITE}/LaTeXML/Post/Scan.pm
+${P5SITE}/LaTeXML/Post/Split.pm
+${P5SITE}/LaTeXML/Post/TeXMath.pm
+${P5SITE}/LaTeXML/Post/Writer.pm
+${P5SITE}/LaTeXML/Post/XMath.pm
+${P5SITE}/LaTeXML/Post/XSLT.pm
+${P5SITE}/LaTeXML/Pre/
+${P5SITE}/LaTeXML/Pre/BibTeX/
+${P5SITE}/LaTeXML/Pre/BibTeX.pm
+${P5SITE}/LaTeXML/Pre/BibTeX/Entry.pm
+${P5SITE}/LaTeXML/Util/
+${P5SITE}/LaTeXML/Util/Geometry.pm
+${P5SITE}/LaTeXML/Util/Image.pm
+${P5SITE}/LaTeXML/Util/ObjectDB/
+${P5SITE}/LaTeXML/Util/ObjectDB.pm
+${P5SITE}/LaTeXML/Util/ObjectDB/Entry.pm
+${P5SITE}/LaTeXML/Util/Pack.pm
+${P5SITE}/LaTeXML/Util/Pathname.pm
+${P5SITE}/LaTeXML/Util/Radix.pm
+${P5SITE}/LaTeXML/Util/Test.pm
+${P5SITE}/LaTeXML/Util/Transform.pm
+${P5SITE}/LaTeXML/Util/WWW.pm
+${P5SITE}/LaTeXML/Version.pm
+${P5SITE}/LaTeXML/resources/
+${P5SITE}/LaTeXML/resources/CSS/
+${P5SITE}/LaTeXML/resources/CSS/LaTeXML-blue.css
+${P5SITE}/LaTeXML/resources/CSS/LaTeXML-marginpar.css
+${P5SITE}/LaTeXML/resources/CSS/LaTeXML-navbar-left.css
+${P5SITE}/LaTeXML/resources/CSS/LaTeXML-navbar-right.css
+${P5SITE}/LaTeXML/resources/CSS/LaTeXML.css
+${P5SITE}/LaTeXML/resources/CSS/ltx-amsart.css
+${P5SITE}/LaTeXML/resources/CSS/ltx-apj.css
+${P5SITE}/LaTeXML/resources/CSS/ltx-article.css
+${P5SITE}/LaTeXML/resources/CSS/ltx-book.css
+${P5SITE}/LaTeXML/resources/CSS/ltx-listings.css
+${P5SITE}/LaTeXML/resources/CSS/ltx-report.css
+${P5SITE}/LaTeXML/resources/CSS/ltx-svjour.css
+${P5SITE}/LaTeXML/resources/CSS/ltx-ulem.css
+${P5SITE}/LaTeXML/resources/DTD/
+${P5SITE}/LaTeXML/resources/DTD/LaTeXML.dtd
+${P5SITE}/LaTeXML/resources/Profiles/
+${P5SITE}/LaTeXML/resources/Profiles/fragment-html.opt
+${P5SITE}/LaTeXML/resources/Profiles/fragment-xhtml.opt
+${P5SITE}/LaTeXML/resources/Profiles/fragment.opt
+${P5SITE}/LaTeXML/resources/Profiles/math.opt
+${P5SITE}/LaTeXML/resources/Profiles/modern.opt
+${P5SITE}/LaTeXML/resources/Profiles/standard.opt
+${P5SITE}/LaTeXML/resources/Profiles/stex-migration.opt
+${P5SITE}/LaTeXML/resources/Profiles/stex-module.opt
+${P5SITE}/LaTeXML/resources/Profiles/stex.opt
+${P5SITE}/LaTeXML/resources/RelaxNG/
+${P5SITE}/LaTeXML/resources/RelaxNG/LaTeXML-bib.rnc
+${P5SITE}/LaTeXML/resources/RelaxNG/LaTeXML-bib.rng
+${P5SITE}/LaTeXML/resources/RelaxNG/LaTeXML-block.rnc
+${P5SITE}/LaTeXML/resources/RelaxNG/LaTeXML-block.rng
+${P5SITE}/LaTeXML/resources/RelaxNG/LaTeXML-common.rnc
+${P5SITE}/LaTeXML/resources/RelaxNG/LaTeXML-common.rng
+${P5SITE}/LaTeXML/resources/RelaxNG/LaTeXML-inline.rnc
+${P5SITE}/LaTeXML/resources/RelaxNG/LaTeXML-inline.rng
+${P5SITE}/LaTeXML/resources/RelaxNG/LaTeXML-math.rnc
+${P5SITE}/LaTeXML/resources/RelaxNG/LaTeXML-math.rng
+${P5SITE}/LaTeXML/resources/RelaxNG/LaTeXML-meta.rnc
+${P5SITE}/LaTeXML/resources/RelaxNG/LaTeXML-meta.rng
+${P5SITE}/LaTeXML/resources/RelaxNG/LaTeXML-misc.rnc
+${P5SITE}/LaTeXML/resources/RelaxNG/LaTeXML-misc.rng
+${P5SITE}/LaTeXML/resources/RelaxNG/LaTeXML-para.rnc
+${P5SITE}/LaTeXML/resources/RelaxNG/LaTeXML-para.rng
+${P5SITE}/LaTeXML/resources/RelaxNG/LaTeXML-picture.rnc
+${P5SITE}/LaTeXML/resources/RelaxNG/LaTeXML-picture.rng
+${P5SITE}/LaTeXML/resources/RelaxNG/LaTeXML-structure.rnc
+${P5SITE}/LaTeXML/resources/RelaxNG/LaTeXML-structure.rng
+${P5SITE}/LaTeXML/resources/RelaxNG/LaTeXML-tabular.rnc
+${P5SITE}/LaTeXML/resources/RelaxNG/LaTeXML-tabular.rng
+${P5SITE}/LaTeXML/resources/RelaxNG/LaTeXML.model
+${P5SITE}/LaTeXML/resources/RelaxNG/LaTeXML.rnc
+${P5SITE}/LaTeXML/resources/RelaxNG/LaTeXML.rng
+${P5SITE}/LaTeXML/resources/RelaxNG/svg/
+${P5SITE}/LaTeXML/resources/RelaxNG/svg/svg-animation.rnc
+${P5SITE}/LaTeXML/resources/RelaxNG/svg/svg-animation.rng
+${P5SITE}/LaTeXML/resources/RelaxNG/svg/svg-animevents-attrib.rnc
+${P5SITE}/LaTeXML/resources/RelaxNG/svg/svg-animevents-attrib.rng
+${P5SITE}/LaTeXML/resources/RelaxNG/svg/svg-basic-clip.rnc
+${P5SITE}/LaTeXML/resources/RelaxNG/svg/svg-basic-clip.rng
+${P5SITE}/LaTeXML/resources/RelaxNG/svg/svg-basic-filter.rnc
+${P5SITE}/LaTeXML/resources/RelaxNG/svg/svg-basic-filter.rng
+${P5SITE}/LaTeXML/resources/RelaxNG/svg/svg-basic-font.rnc
+${P5SITE}/LaTeXML/resources/RelaxNG/svg/svg-basic-font.rng
+${P5SITE}/LaTeXML/resources/RelaxNG/svg/svg-basic-graphics-attrib.rnc
+${P5SITE}/LaTeXML/resources/RelaxNG/svg/svg-basic-graphics-attrib.rng
+${P5SITE}/LaTeXML/resources/RelaxNG/svg/svg-basic-structure.rnc
+${P5SITE}/LaTeXML/resources/RelaxNG/svg/svg-basic-structure.rng
+${P5SITE}/LaTeXML/resources/RelaxNG/svg/svg-basic-text.rnc
+${P5SITE}/LaTeXML/resources/RelaxNG/svg/svg-basic-text.rng
+${P5SITE}/LaTeXML/resources/RelaxNG/svg/svg-clip.rnc
+${P5SITE}/LaTeXML/resources/RelaxNG/svg/svg-clip.rng
+${P5SITE}/LaTeXML/resources/RelaxNG/svg/svg-conditional.rnc
+${P5SITE}/LaTeXML/resources/RelaxNG/svg/svg-conditional.rng
+${P5SITE}/LaTeXML/resources/RelaxNG/svg/svg-container-attrib.rnc
+${P5SITE}/LaTeXML/resources/RelaxNG/svg/svg-container-attrib.rng
+${P5SITE}/LaTeXML/resources/RelaxNG/svg/svg-core-attrib.rnc
+${P5SITE}/LaTeXML/resources/RelaxNG/svg/svg-core-attrib.rng
+${P5SITE}/LaTeXML/resources/RelaxNG/svg/svg-cursor.rnc
+${P5SITE}/LaTeXML/resources/RelaxNG/svg/svg-cursor.rng
+${P5SITE}/LaTeXML/resources/RelaxNG/svg/svg-datatypes.rnc
+${P5SITE}/LaTeXML/resources/RelaxNG/svg/svg-datatypes.rng
+${P5SITE}/LaTeXML/resources/RelaxNG/svg/svg-docevents-attrib.rnc
+${P5SITE}/LaTeXML/resources/RelaxNG/svg/svg-docevents-attrib.rng
+${P5SITE}/LaTeXML/resources/RelaxNG/svg/svg-extensibility.rnc
+${P5SITE}/LaTeXML/resources/RelaxNG/svg/svg-extensibility.rng
+${P5SITE}/LaTeXML/resources/RelaxNG/svg/svg-extresources-attrib.rnc
+${P5SITE}/LaTeXML/resources/RelaxNG/svg/svg-extresources-attrib.rng
+${P5SITE}/LaTeXML/resources/RelaxNG/svg/svg-filter.rnc
+${P5SITE}/LaTeXML/resources/RelaxNG/svg/svg-filter.rng
+${P5SITE}/LaTeXML/resources/RelaxNG/svg/svg-font.rnc
+${P5SITE}/LaTeXML/resources/RelaxNG/svg/svg-font.rng
+${P5SITE}/LaTeXML/resources/RelaxNG/svg/svg-gradient.rnc
+${P5SITE}/LaTeXML/resources/RelaxNG/svg/svg-gradient.rng
+${P5SITE}/LaTeXML/resources/RelaxNG/svg/svg-graphevents-attrib.rnc
+${P5SITE}/LaTeXML/resources/RelaxNG/svg/svg-graphevents-attrib.rng
+${P5SITE}/LaTeXML/resources/RelaxNG/svg/svg-graphics-attrib.rnc
+${P5SITE}/LaTeXML/resources/RelaxNG/svg/svg-graphics-attrib.rng
+${P5SITE}/LaTeXML/resources/RelaxNG/svg/svg-hyperlink.rnc
+${P5SITE}/LaTeXML/resources/RelaxNG/svg/svg-hyperlink.rng
+${P5SITE}/LaTeXML/resources/RelaxNG/svg/svg-image.rnc
+${P5SITE}/LaTeXML/resources/RelaxNG/svg/svg-image.rng
+${P5SITE}/LaTeXML/resources/RelaxNG/svg/svg-marker.rnc
+${P5SITE}/LaTeXML/resources/RelaxNG/svg/svg-marker.rng
+${P5SITE}/LaTeXML/resources/RelaxNG/svg/svg-mask.rnc
+${P5SITE}/LaTeXML/resources/RelaxNG/svg/svg-mask.rng
+${P5SITE}/LaTeXML/resources/RelaxNG/svg/svg-opacity-attrib.rnc
+${P5SITE}/LaTeXML/resources/RelaxNG/svg/svg-opacity-attrib.rng
+${P5SITE}/LaTeXML/resources/RelaxNG/svg/svg-paint-attrib.rnc
+${P5SITE}/LaTeXML/resources/RelaxNG/svg/svg-paint-attrib.rng
+${P5SITE}/LaTeXML/resources/RelaxNG/svg/svg-pattern.rnc
+${P5SITE}/LaTeXML/resources/RelaxNG/svg/svg-pattern.rng
+${P5SITE}/LaTeXML/resources/RelaxNG/svg/svg-profile.rnc
+${P5SITE}/LaTeXML/resources/RelaxNG/svg/svg-profile.rng
+${P5SITE}/LaTeXML/resources/RelaxNG/svg/svg-qname.rng
+${P5SITE}/LaTeXML/resources/RelaxNG/svg/svg-script.rnc
+${P5SITE}/LaTeXML/resources/RelaxNG/svg/svg-script.rng
+${P5SITE}/LaTeXML/resources/RelaxNG/svg/svg-shape.rnc
+${P5SITE}/LaTeXML/resources/RelaxNG/svg/svg-shape.rng
+${P5SITE}/LaTeXML/resources/RelaxNG/svg/svg-structure.rnc
+${P5SITE}/LaTeXML/resources/RelaxNG/svg/svg-structure.rng
+${P5SITE}/LaTeXML/resources/RelaxNG/svg/svg-style.rnc
+${P5SITE}/LaTeXML/resources/RelaxNG/svg/svg-style.rng
+${P5SITE}/LaTeXML/resources/RelaxNG/svg/svg-text.rnc
+${P5SITE}/LaTeXML/resources/RelaxNG/svg/svg-text.rng
+${P5SITE}/LaTeXML/resources/RelaxNG/svg/svg-view.rnc
+${P5SITE}/LaTeXML/resources/RelaxNG/svg/svg-view.rng
+${P5SITE}/LaTeXML/resources/RelaxNG/svg/svg-viewport-attrib.rnc
+${P5SITE}/LaTeXML/resources/RelaxNG/svg/svg-viewport-attrib.rng
+${P5SITE}/LaTeXML/resources/RelaxNG/svg/svg-xlink-attrib.rnc
+${P5SITE}/LaTeXML/resources/RelaxNG/svg/svg-xlink-attrib.rng
+${P5SITE}/LaTeXML/resources/RelaxNG/svg/svg11-basic.rng
+${P5SITE}/LaTeXML/resources/RelaxNG/svg/svg11-tiny.rng
+${P5SITE}/LaTeXML/resources/RelaxNG/svg/svg11.rnc
+${P5SITE}/LaTeXML/resources/RelaxNG/svg/svg11.rng
+${P5SITE}/LaTeXML/resources/XSLT/
+${P5SITE}/LaTeXML/resources/XSLT/LaTeXML-all-xhtml.xsl
+${P5SITE}/LaTeXML/resources/XSLT/LaTeXML-bib-xhtml.xsl
+${P5SITE}/LaTeXML/resources/XSLT/LaTeXML-block-xhtml.xsl
+${P5SITE}/LaTeXML/resources/XSLT/LaTeXML-common.xsl
+${P5SITE}/LaTeXML/resources/XSLT/LaTeXML-epub3.xsl
+${P5SITE}/LaTeXML/resources/XSLT/LaTeXML-html4.xsl
+${P5SITE}/LaTeXML/resources/XSLT/LaTeXML-html5.xsl
+${P5SITE}/LaTeXML/resources/XSLT/LaTeXML-inline-xhtml.xsl
+${P5SITE}/LaTeXML/resources/XSLT/LaTeXML-jats.xsl
+${P5SITE}/LaTeXML/resources/XSLT/LaTeXML-math-xhtml.xsl
+${P5SITE}/LaTeXML/resources/XSLT/LaTeXML-meta-xhtml.xsl
+${P5SITE}/LaTeXML/resources/XSLT/LaTeXML-misc-xhtml.xsl
+${P5SITE}/LaTeXML/resources/XSLT/LaTeXML-para-xhtml.xsl
+${P5SITE}/LaTeXML/resources/XSLT/LaTeXML-picture-xhtml.xsl
+${P5SITE}/LaTeXML/resources/XSLT/LaTeXML-structure-xhtml.xsl
+${P5SITE}/LaTeXML/resources/XSLT/LaTeXML-tabular-xhtml.xsl
+${P5SITE}/LaTeXML/resources/XSLT/LaTeXML-webpage-xhtml.xsl
+${P5SITE}/LaTeXML/resources/XSLT/LaTeXML-xhtml.xsl
+${P5SITE}/LaTeXML/resources/javascript/
+${P5SITE}/LaTeXML/resources/javascript/LaTeXML-maybeMathjax.js
+${P5SITE}/LaTeXML/texmf/
+${P5SITE}/LaTeXML/texmf/latexml.sty
+${P5SITE}/LaTeXML/texmf/lxRDFa.sty
+@man man/man1/latexml.1
+@man man/man1/latexmlc.1
+@man man/man1/latexmlfind.1
+@man man/man1/latexmlmath.1
+@man man/man1/latexmlpost.1
+@man man/man3p/LaTeXML.3p
+@man man/man3p/LaTeXML::Common::Color.3p
+@man man/man3p/LaTeXML::Common::Color::Derived.3p
+@man man/man3p/LaTeXML::Common::Color::cmy.3p
+@man man/man3p/LaTeXML::Common::Color::cmyk.3p
+@man man/man3p/LaTeXML::Common::Color::gray.3p
+@man man/man3p/LaTeXML::Common::Color::hsb.3p
+@man man/man3p/LaTeXML::Common::Color::rgb.3p
+@man man/man3p/LaTeXML::Common::Config.3p
+@man man/man3p/LaTeXML::Common::Dimension.3p
+@man man/man3p/LaTeXML::Common::Error.3p
+@man man/man3p/LaTeXML::Common::Float.3p
+@man man/man3p/LaTeXML::Common::Font.3p
+@man man/man3p/LaTeXML::Common::Glue.3p
+@man man/man3p/LaTeXML::Common::Model.3p
+@man man/man3p/LaTeXML::Common::Model::DTD.3p
+@man man/man3p/LaTeXML::Common::Model::RelaxNG.3p
+@man man/man3p/LaTeXML::Common::Number.3p
+@man man/man3p/LaTeXML::Common::Object.3p
+@man man/man3p/LaTeXML::Core.3p
+@man man/man3p/LaTeXML::Core::Alignment.3p
+@man man/man3p/LaTeXML::Core::Array.3p
+@man man/man3p/LaTeXML::Core::Box.3p
+@man man/man3p/LaTeXML::Core::Comment.3p
+@man man/man3p/LaTeXML::Core::Definition.3p
+@man man/man3p/LaTeXML::Core::Definition::CharDef.3p
+@man man/man3p/LaTeXML::Core::Definition::Conditional.3p
+@man man/man3p/LaTeXML::Core::Definition::Constructor.3p
+@man man/man3p/LaTeXML::Core::Definition::Expandable.3p
+@man man/man3p/LaTeXML::Core::Definition::Primitive.3p
+@man man/man3p/LaTeXML::Core::Definition::Register.3p
+@man man/man3p/LaTeXML::Core::Document.3p
+@man man/man3p/LaTeXML::Core::Gullet.3p
+@man man/man3p/LaTeXML::Core::KeyVals.3p
+@man man/man3p/LaTeXML::Core::List.3p
+@man man/man3p/LaTeXML::Core::Mouth.3p
+@man man/man3p/LaTeXML::Core::Mouth::Binding.3p
+@man man/man3p/LaTeXML::Core::Mouth::file.3p
+@man man/man3p/LaTeXML::Core::Mouth::http.3p
+@man man/man3p/LaTeXML::Core::Mouth::https.3p
+@man man/man3p/LaTeXML::Core::MuDimension.3p
+@man man/man3p/LaTeXML::Core::MuGlue.3p
+@man man/man3p/LaTeXML::Core::Pair.3p
+@man man/man3p/LaTeXML::Core::PairList.3p
+@man man/man3p/LaTeXML::Core::Parameter.3p
+@man man/man3p/LaTeXML::Core::Parameters.3p
+@man man/man3p/LaTeXML::Core::Rewrite.3p
+@man man/man3p/LaTeXML::Core::State.3p
+@man man/man3p/LaTeXML::Core::Stomach.3p
+@man man/man3p/LaTeXML::Core::Token.3p
+@man man/man3p/LaTeXML::Core::Tokens.3p
+@man man/man3p/LaTeXML::Core::Whatsit.3p
+@man man/man3p/LaTeXML::Global.3p
+@man man/man3p/LaTeXML::MathParser.3p
+@man man/man3p/LaTeXML::Package.3p
+@man man/man3p/LaTeXML::Post.3p
+@man man/man3p/LaTeXML::Post::MathML.3p
+@man man/man3p/LaTeXML::Pre::BibTeX.3p
+@man man/man3p/LaTeXML::Util::Pack.3p
+@man man/man3p/LaTeXML::Util::Pathname.3p
+@man man/man3p/LaTeXML::Util::WWW.3p
+share/texmf-local/
+share/texmf-local/tex/
+share/texmf-local/tex/latex/
+share/texmf-local/tex/latex/latexml/
+share/texmf-local/tex/latex/latexml/.packlist
+share/texmf-local/tex/latex/latexml/latexml.sty
+share/texmf-local/tex/latex/latexml/lxRDFa.sty
+@exec %D/bin/mktexlsr %D/share/texmf-local > /dev/null 2>&1
+@unexec-delete %D/bin/mktexlsr %D/share/texmf-local > /dev/null 2>&1
