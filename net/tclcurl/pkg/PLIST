@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/01/05 19:30:26 stu Exp $
+@comment $OpenBSD: PLIST,v 1.6 2017/05/10 01:08:52 stu Exp $
 lib/tcl/tclcurl/
-@lib lib/tcl/tclcurl/libTclCurl7196.so.${LIBTclCurl7196_VERSION}
+lib/tcl/tclcurl/libTclCurl${VER}.so
 lib/tcl/tclcurl/pkgIndex.tcl
 lib/tcl/tclcurl/tclcurl.tcl
 @man man/mann/tclcurl.n
