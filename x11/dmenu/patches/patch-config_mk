@@ -1,8 +1,8 @@
-$OpenBSD: patch-config_mk,v 1.11 2015/11/11 09:23:20 jung Exp $
---- config.mk.orig	Sun Nov  8 23:42:21 2015
-+++ config.mk	Mon Nov  9 20:35:06 2015
+$OpenBSD: patch-config_mk,v 1.12 2017/05/10 22:06:33 jung Exp $
+--- config.mk.orig	Mon May  8 19:28:08 2017
++++ config.mk	Mon May  8 19:37:38 2017
 @@ -2,11 +2,11 @@
- VERSION = 4.6
+ VERSION = 4.7
  
  # paths
 -PREFIX = /usr/local
@@ -17,25 +17,27 @@ $OpenBSD: patch-config_mk,v 1.11 2015/11/11 09:23:20 jung Exp $
  
  # Xinerama, comment if you don't want it
  XINERAMALIBS  = -lXinerama
-@@ -14,7 +14,7 @@ XINERAMAFLAGS = -DXINERAMA
+@@ -14,18 +14,18 @@ XINERAMAFLAGS = -DXINERAMA
  
  # freetype
  FREETYPELIBS = -lfontconfig -lXft
 -FREETYPEINC = /usr/include/freetype2
 +#FREETYPEINC = /usr/include/freetype2
  # OpenBSD (uncomment)
- FREETYPEINC = ${X11INC}/freetype2
+-#FREETYPEINC = ${X11INC}/freetype2
++FREETYPEINC = ${X11INC}/freetype2
  
-@@ -23,9 +23,9 @@ INCS = -I${X11INC} -I${FREETYPEINC}
+ # includes and libs
+ INCS = -I${X11INC} -I${FREETYPEINC}
  LIBS = -L${X11LIB} -lX11 ${XINERAMALIBS} ${FREETYPELIBS}
  
  # flags
--CPPFLAGS = -D_BSD_SOURCE -D_XOPEN_SOURCE=700 -D_POSIX_C_SOURCE=200809L -DVERSION=\"${VERSION}\" ${XINERAMAFLAGS}
+-CPPFLAGS = -D_DEFAULT_SOURCE -D_BSD_SOURCE -D_XOPEN_SOURCE=700 -D_POSIX_C_SOURCE=200809L -DVERSION=\"${VERSION}\" ${XINERAMAFLAGS}
 -CFLAGS   = -std=c99 -pedantic -Wall -Os ${INCS} ${CPPFLAGS}
 -LDFLAGS  = -s ${LIBS}
 +CPPFLAGS += -D_BSD_SOURCE -D_XOPEN_SOURCE=700 -D_POSIX_C_SOURCE=200809L -DVERSION=\"${VERSION}\" ${XINERAMAFLAGS}
-+CFLAGS   += -std=c99 -pedantic -Wall -Os ${INCS} ${CPPFLAGS}
-+LDFLAGS  += -s ${LIBS}
++CFLAGS   += -std=c99 -pedantic -Wall ${INCS} ${CPPFLAGS}
++LDFLAGS  += ${LIBS}
  
  # compiler and linker
 -CC = cc

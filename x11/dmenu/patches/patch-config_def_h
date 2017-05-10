@@ -1,6 +1,6 @@
-$OpenBSD: patch-config_def_h,v 1.1 2015/11/11 09:23:20 jung Exp $
---- config.def.h.orig	Sun Nov  8 23:42:21 2015
-+++ config.def.h	Wed Nov 11 09:43:27 2015
+$OpenBSD: patch-config_def_h,v 1.2 2017/05/10 22:06:33 jung Exp $
+--- config.def.h.orig	Mon May  8 19:27:54 2017
++++ config.def.h	Mon May  8 19:27:30 2017
 @@ -4,13 +4,13 @@
  static int topbar = 1;                      /* -b  option; if 0, dmenu appears at bottom     */
  /* -fn option overrides fonts[0]; default X11 font or font set */
@@ -8,15 +8,13 @@ $OpenBSD: patch-config_def_h,v 1.1 2015/11/11 09:23:20 jung Exp $
 -	"monospace:size=10"
 +	"terminus:size=8"
  };
- static const char *prompt      = NULL;      /* -p  option; prompt to the elft of input field */
--static const char *normbgcolor = "#222222"; /* -nb option; normal background                 */
--static const char *normfgcolor = "#bbbbbb"; /* -nf option; normal foreground                 */
--static const char *selbgcolor  = "#005577"; /* -sb option; selected background               */
--static const char *selfgcolor  = "#eeeeee"; /* -sf option; selected foreground               */
-+static const char *normbgcolor = "#202020"; /* -nb option; normal background                 */
-+static const char *normfgcolor = "#c0c0c0"; /* -nf option; normal foreground                 */
-+static const char *selbgcolor  = "#404040"; /* -sb option; selected background               */
-+static const char *selfgcolor  = "#f0f0f0"; /* -sf option; selected foreground               */
- static const char *outbgcolor  = "#00ffff";
- static const char *outfgcolor  = "#000000";
+ static const char *prompt      = NULL;      /* -p  option; prompt to the left of input field */
+ static const char *colors[SchemeLast][2] = {
+ 	/*     fg         bg       */
+-	[SchemeNorm] = { "#bbbbbb", "#222222" },
+-	[SchemeSel] = { "#eeeeee", "#005577" },
++	[SchemeNorm] = { "#c0c0c0", "#202020" },
++	[SchemeSel] = { "#f0f0f0", "#404040" },
+ 	[SchemeOut] = { "#000000", "#00ffff" },
+ };
  /* -l option; if nonzero, dmenu uses vertical list with given number of lines */
