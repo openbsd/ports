@@ -1,9 +1,10 @@
-$OpenBSD: patch-pkgIndex_tcl_in,v 1.1 2015/05/22 04:23:29 stu Exp $
---- pkgIndex.tcl.in.orig	Fri May 15 21:11:42 2015
-+++ pkgIndex.tcl.in	Fri May 15 21:11:54 2015
-@@ -9,4 +9,4 @@ if {[catch {package present Tcl @TCL_VERSION_REQ@}]} {
+$OpenBSD: patch-pkgIndex_tcl_in,v 1.2 2017/05/10 01:22:33 stu Exp $
+--- pkgIndex.tcl.in.orig	Sat Apr 15 14:08:19 2017
++++ pkgIndex.tcl.in	Sat Apr 15 14:09:32 2017
+@@ -8,5 +8,5 @@ if {[catch {package present Tcl @TCL_VERSION_REQ@}]} {
+ }
  package ifneeded @PACKAGE_NAME@ @PACKAGE_VERSION@ \
      "package require TclOO @TCLOO_VERSION_REQ@-;\
-     [list source [file join $dir @PACKAGE_NAME@.tcl]]\;\
--    [list load [file join $dir @PKG_LIB_FILE@] @PACKAGE_NAME@]"
-+    [list load [file join $dir .. .. @PKG_LIB_FILE@] @PACKAGE_NAME@]"
+-    [list load [file join $dir @PKG_LIB_FILE@] @PACKAGE_NAME@]\;\
++    [list load [file join $dir .. .. @PKG_LIB_FILE@] @PACKAGE_NAME@]\;\
+     [list source [file join $dir @PACKAGE_NAME@.tcl]]"

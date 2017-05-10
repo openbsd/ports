@@ -1,0 +1,22 @@
+$OpenBSD: patch-configure,v 1.1 2017/05/10 01:22:33 stu Exp $
+--- configure.orig	Thu Jan 28 13:05:47 2016
++++ configure	Sat Apr 15 13:54:14 2017
+@@ -8995,8 +8995,7 @@ tdbc_SRC_DIR=`cd "${tdbc_SRC_DIR}"; $CYGPATH $(pwd)`
+ 
+ # Develop a fully qualified path for where .tcl files for the tdbc package
+ # appear at run time.
+-eval tdbc_LIB_DIR="${libdir}/${PACKAGE_NAME}${PACKAGE_VERSION}"
+-tdbc_LIB_DIR=`cd "${tdbc_LIB_DIR}"; $CYGPATH $(pwd)`
++eval tdbc_LIB_DIR="${libdir}/tcl/${PACKAGE_NAME}"
+ 
+ 
+ # Make the export configuration for the TDBC package
+@@ -9007,7 +9006,7 @@ tdbc_LIB_DIR=`cd "${tdbc_LIB_DIR}"; $CYGPATH $(pwd)`
+     #--------------------------------------------------------------------
+ 
+     # pkglibdir must be a fully qualified path and (not ${exec_prefix}/lib)
+-    eval pkglibdir="${libdir}/tdbc${PACKAGE_VERSION}"
++    eval pkglibdir="${libdir}"
+     if test "${TCL_LIB_VERSIONS_OK}" = "ok"; then
+ 	eval tdbc_LIB_FLAG="-ltdbc${PACKAGE_VERSION}${DBGX}"
+ 	eval tdbc_STUB_LIB_FLAG="-ltdbcstub${PACKAGE_VERSION}${DBGX}"

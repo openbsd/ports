@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.6 2016/03/11 20:28:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2017/05/10 01:22:33 stu Exp $
 
-COMMENT =	Tcl Database Connectivity
+COMMENT =		Tcl Database Connectivity
 
-V =		1.0.3
-DISTNAME =	tdbc${V}
-PKGNAME =	tdbc-${V}
-SHARED_LIBS =	tdbc${V:S/.//g} 0.0
-CATEGORIES =	databases
-HOMEPAGE =	http://tdbc.tcl.tk/
-MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
+V =			1.0.4
+
+DISTNAME =		tdbc${V}
+PKGNAME =		tdbc-${V}
+SHARED_LIBS =		tdbc${V:S/.//g} 0.0
+CATEGORIES =		databases
+HOMEPAGE =		http://tdbc.tcl.tk/
+MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
@@ -27,13 +28,12 @@ FAKE_FLAGS =		PKG_DIR=tdbc \
 
 SEPARATE_BUILD =	Yes
 USE_GROFF =		Yes
-CONFIGURE_STYLE =	autoconf no-autoheader
+CONFIGURE_STYLE =	gnu
 
 CONFIGURE_ARGS +=	--with-tcl=${MODTCL_LIBDIR} \
 			--includedir=${PREFIX}/include/tdbc \
 			SHLIB_VERSION=${LIBtdbc${V:S/.//g}_VERSION}
 
-AUTOCONF_VERSION =	2.69
 TEST_TARGET =		test
 
 .include <bsd.port.mk>
