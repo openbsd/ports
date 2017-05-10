@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2016/03/20 19:56:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2017/05/10 12:52:41 benoit Exp $
 
 COMMENT=		create fake sharedir for testing
 
-DISTNAME=		Test-File-ShareDir-1.001001
+DISTNAME =		Test-File-ShareDir-1.001002
 CATEGORIES=		devel
 
 # perl
