@@ -1,6 +1,6 @@
-$OpenBSD: patch-unix_Makefile_in,v 1.4 2015/05/22 04:17:59 stu Exp $
---- unix/Makefile.in.orig	Wed Mar 11 09:59:53 2015
-+++ unix/Makefile.in	Mon Apr  6 19:47:51 2015
+$OpenBSD: patch-unix_Makefile_in,v 1.5 2017/05/10 01:21:05 stu Exp $
+--- unix/Makefile.in.orig	Tue Jul 26 10:07:50 2016
++++ unix/Makefile.in	Sat Apr 22 02:21:57 2017
 @@ -593,6 +593,10 @@ ${STUB_LIB_FILE}: ${STUB_LIB_OBJS}
  	rm -f $@
  	@MAKE_STUB_LIB@
@@ -12,7 +12,7 @@ $OpenBSD: patch-unix_Makefile_in,v 1.4 2015/05/22 04:17:59 stu Exp $
  # Build Aqua resource files
  ${TK_RSRC_FILE}: $(AQUA_RESOURCES)
  	rm -f $@
-@@ -740,10 +744,10 @@ install-binaries: $(TK_STUB_LIB_FILE) $(TK_LIB_FILE) $
+@@ -736,10 +740,10 @@ install-binaries: $(TK_STUB_LIB_FILE) $(TK_LIB_FILE) $
  	    echo "}";\
  	    fi \
  	    ) > "$(PKG_INDEX)"; \
@@ -24,7 +24,7 @@ $OpenBSD: patch-unix_Makefile_in,v 1.4 2015/05/22 04:17:59 stu Exp $
  	@if test -f "tk${MAJOR_VERSION}${MINOR_VERSION}.dll"; then \
  	    $(INSTALL_LIBRARY) "tk${MAJOR_VERSION}${MINOR_VERSION}.dll" "$(DLL_INSTALL_DIR)";\
  	    chmod 555 "$(DLL_INSTALL_DIR)/tk${MAJOR_VERSION}${MINOR_VERSION}.dll";\
-@@ -761,7 +765,7 @@ install-binaries: $(TK_STUB_LIB_FILE) $(TK_LIB_FILE) $
+@@ -757,7 +761,7 @@ install-binaries: $(TK_STUB_LIB_FILE) $(TK_LIB_FILE) $
  	@EXTRA_INSTALL_BINARIES@
  	@echo "Installing pkg-config file to $(LIB_INSTALL_DIR)/pkgconfig/"
  	@$(INSTALL_DATA_DIR) $(LIB_INSTALL_DIR)/pkgconfig
@@ -33,7 +33,7 @@ $OpenBSD: patch-unix_Makefile_in,v 1.4 2015/05/22 04:17:59 stu Exp $
  
  install-libraries: libraries
  	@for i in "$(SCRIPT_INSTALL_DIR)" "$(SCRIPT_INSTALL_DIR)/images" \
-@@ -816,6 +820,7 @@ install-demos:
+@@ -812,6 +816,7 @@ install-demos:
  	    if [ -f $$i ] ; then \
  		sed -e '3 s|exec wish|exec wish$(VERSION)|' \
  			$$i > "$(DEMO_INSTALL_DIR)"/`basename $$i`; \
@@ -41,7 +41,7 @@ $OpenBSD: patch-unix_Makefile_in,v 1.4 2015/05/22 04:17:59 stu Exp $
  	    fi; \
  	    done;
  	@for i in $(DEMOPROGS); \
-@@ -823,7 +828,7 @@ install-demos:
+@@ -819,7 +824,7 @@ install-demos:
  	    if test $$i = "square"; then \
  	    rm -f  "$(DEMO_INSTALL_DIR)/$$i"; \
  	    else \

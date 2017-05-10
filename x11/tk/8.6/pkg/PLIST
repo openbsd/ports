@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2016/06/29 16:14:45 espie Exp $
+@comment $OpenBSD: PLIST,v 1.10 2017/05/10 01:21:05 stu Exp $
 @option no-default-conflict
 @option is-branch
 @conflict tk->=8.6,<8.7
@@ -13,7 +13,6 @@ lib/libtk86_pic.a
 lib/libtkstub86.a
 lib/libtkstub86_pic.a
 lib/pkgconfig/tk86.pc
-lib/tcl/
 lib/tcl/tk8.6/
 lib/tcl/tk8.6/bgerror.tcl
 lib/tcl/tk8.6/button.tcl
@@ -29,8 +28,6 @@ lib/tcl/tk8.6/iconlist.tcl
 lib/tcl/tk8.6/icons.tcl
 lib/tcl/tk8.6/images/
 lib/tcl/tk8.6/images/README
-lib/tcl/tk8.6/images/lamp.png
-lib/tcl/tk8.6/images/lamp.svg
 lib/tcl/tk8.6/images/logo.eps
 lib/tcl/tk8.6/images/logo100.gif
 lib/tcl/tk8.6/images/logo64.gif
