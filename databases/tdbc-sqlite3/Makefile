@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.6 2016/09/23 09:16:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2017/05/10 01:23:05 stu Exp $
 
-COMMENT =	sqlite3 module for TDBC
+COMMENT =		sqlite3 module for TDBC
 
-V =		1.0.3
-REVISION =	0
-DISTNAME =	tdbcsqlite3-${V}
-PKGNAME =	tdbc-sqlite3-${V}
-CATEGORIES =	databases
-HOMEPAGE =	http://tdbc.tcl.tk/
-MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
+V =			1.0.4
+
+DISTNAME =		tdbcsqlite3-${V}
+PKGNAME =		tdbc-sqlite3-${V}
+CATEGORIES =		databases
+HOMEPAGE =		http://tdbc.tcl.tk/
+MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
@@ -23,11 +23,16 @@ BUILD_DEPENDS =		${MODTCL_BUILD_DEPENDS} \
 			databases/tdbc
 
 RUN_DEPENDS =		${MODTCL_RUN_DEPENDS} \
-			databases/sqlite3-tcl \
-			databases/tdbc
+			databases/tdbc \
+			databases/sqlite3-tcl
 
 TEST_DEPENDS =		databases/sqlite3-tcl
 FAKE_FLAGS =		tmdir=${MODTCL_MODDIR}/${MODTCL_VERSION:S/.//}
+
+TEST_FLAGS =		SCRIPT='${WRKSRC}/tests/all.tcl ${TESTFLAGS} \
+				-load "package ifneeded tdbc::sqlite3 ${V} \
+				[list source ${WRKSRC}/library/tdbcsqlite3.tcl]"'
+
 SEPARATE_BUILD =	Yes
 USE_GROFF =		Yes
 CONFIGURE_STYLE =	gnu
@@ -35,7 +40,7 @@ CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--with-tcl=${MODTCL_LIBDIR} \
 			--with-tdbc=${MODTCL_TCLDIR}/tdbc
 
-TEST_TARGET =		test
+TEST_TARGET =		shell
 NO_BUILD =		Yes
 
 SUBST_VARS +=		V
