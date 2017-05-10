@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.15 2016/03/18 23:12:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2017/05/10 14:28:42 stu Exp $
 
 COMMENT =		tree widget extension for Tk
-DISTNAME =		tktreectrl-2.4.1
-REVISION =		0
+
+V =			2.4.1
+
+DISTNAME =		tktreectrl-${V}
+REVISION =		1
 EPOCH =			0
-SHARED_LIBS =		treectrl24 0.0
 CATEGORIES =		x11
 HOMEPAGE =		http://tktreectrl.sourceforge.net/
 MAINTAINER =		Sebastian Reitenbach <sebastia@openbsd.org>
@@ -18,10 +20,7 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=tktreectrl/}
 MODULES =		x11/tk
 BUILD_DEPENDS =		${MODTK_BUILD_DEPENDS}
 RUN_DEPENDS =		${MODTK_RUN_DEPENDS}
-
-FAKE_FLAGS =		PKG_DIR=tktreectrl \
-			INSTALL_PROGRAM='${INSTALL_DATA}'
-
+FAKE_FLAGS =		PKG_DIR=tktreectrl INSTALL_PROGRAM='$$(INSTALL_DATA)'
 SEPARATE_BUILD =	Yes
 USE_GROFF =		Yes
 CONFIGURE_STYLE =	gnu
@@ -30,11 +29,13 @@ CONFIGURE_ARGS +=	--libdir=${MODTCL_TCLDIR} \
 			--with-tcl=${MODTCL_LIBDIR} \
 			--with-tk=${MODTK_LIBDIR} \
 			--datadir=${PREFIX}/share/examples \
-			--docdir=${PREFIX}/share/doc/tktreectrl \
-			SHLIB_VERSION=${LIBtreectrl24_VERSION}
+			--docdir=${PREFIX}/share/doc/tktreectrl
 
 TEST_IS_INTERACTIVE =X11
 TEST_TARGET =	test
+SUBST_VARS =	VER
+
+VER =		${V:R:S/.//g}
 
 pre-configure:
 	@${MODTCL_TCLSH_ADJ} ${WRKSRC}/demos/demo.tcl

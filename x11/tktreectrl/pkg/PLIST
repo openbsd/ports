@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.6 2011/10/30 07:38:50 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.7 2017/05/10 14:28:43 stu Exp $
 lib/tcl/tktreectrl/
 lib/tcl/tktreectrl/filelist-bindings.tcl
-@lib lib/tcl/tktreectrl/libtreectrl24.so.${LIBtreectrl24_VERSION}
+lib/tcl/tktreectrl/libtreectrl${VER}.so
 lib/tcl/tktreectrl/pkgIndex.tcl
 lib/tcl/tktreectrl/treectrl.tcl
 @man man/mann/treectrl.n
