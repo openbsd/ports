@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.7 2016/03/18 23:12:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2017/05/10 14:26:19 stu Exp $
 
 COMMENT =	PNG photo image extension for Tcl/Tk
 
-DISTNAME =	tkpng0.9
-PKGNAME =	tkpng-0.9
-REVISION =	1
-SHARED_LIBS =	tkpng09 0.0
+V =		0.9
+
+DISTNAME =	tkpng${V}
+PKGNAME =	tkpng-${V}
+REVISION =	2
 CATEGORIES =	graphics
 HOMEPAGE =	http://www.muonics.com/FreeStuff/TkPNG/
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
@@ -20,10 +21,7 @@ EXTRACT_SUFX =	.tgz
 MODULES =	x11/tk
 BUILD_DEPENDS =	${MODTK_BUILD_DEPENDS}
 RUN_DEPENDS =	${MODTK_RUN_DEPENDS}
-
-FAKE_FLAGS =	PKG_DIR=tkpng \
-		INSTALL_PROGRAM='${INSTALL_DATA}'
-
+FAKE_FLAGS =	PKG_DIR='$$(PACKAGE_NAME)' INSTALL_PROGRAM='$$(INSTALL_DATA)'
 SEPARATE_BUILD =Yes
 CONFIGURE_STYLE=gnu
 
@@ -31,11 +29,12 @@ CONFIGURE_ARGS+=--with-tcl=${MODTCL_LIBDIR} \
 		--with-tk=${MODTK_LIBDIR} \
 		--with-tkinclude=${MODTK_INCDIR} \
 		--libdir=${MODTCL_TCLDIR} \
-		LIBtkpng09_VERSION=${LIBtkpng09_VERSION} \
 		CFLAGS="${CFLAGS} -pthread"
 
 NO_TEST =	Yes
-SUBST_VARS =	SHLIB_VERSION
+SUBST_VARS =	VER
+
+VER =		${V:S/.//g}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/tkpng
