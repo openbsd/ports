@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.170 2017/04/28 11:16:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.171 2017/05/10 11:37:22 ajacoutot Exp $
 
 # Everything is a Freaking GLib/GTK+ problem
 CFLAGS +=		-g
@@ -12,22 +12,17 @@ COMMENT-cloudprint=	gtk+3 Google Cloud Print backend
 COMMENT-guic=		gtk+ icon theme caching utility
 
 GNOME_PROJECT=		gtk+
-GNOME_VERSION=		3.22.12
+GNOME_VERSION=		3.22.13
 
 PKGNAME-main=		gtk+3-${GNOME_VERSION}
 PKGNAME-cups=		gtk+3-cups-${GNOME_VERSION}
 PKGNAME-cloudprint=	gtk+3-cloudprint-${GNOME_VERSION}
 PKGNAME-guic=		gtk-update-icon-cache-${GNOME_VERSION}
 
-REVISION-main=		0
-REVISION-cups=		0
-REVISION-cloudprint=	0
-REVISION-guic=		0
-
 CATEGORIES=		x11 devel
 
-SHARED_LIBS +=  gdk-3                2200.2   # 2200.12
-SHARED_LIBS +=  gtk-3                2200.2   # 2200.12
+SHARED_LIBS +=  gdk-3                2200.2   # 2200.13
+SHARED_LIBS +=  gtk-3                2200.2   # 2200.13
 SHARED_LIBS +=  gailutil-3           0.0      # 0.0
 
 HOMEPAGE=		http://www.gtk.org/
