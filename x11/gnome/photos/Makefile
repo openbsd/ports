@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.54 2017/04/17 12:04:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.55 2017/05/10 14:51:50 ajacoutot Exp $
 
 TRACKER_API=		1.0
 
 COMMENT=		access, organize and share your photos on GNOME
 
 GNOME_PROJECT=		gnome-photos
-GNOME_VERSION=		3.24.1
+GNOME_VERSION=		3.24.2
 
 CATEGORIES=		graphics
 
