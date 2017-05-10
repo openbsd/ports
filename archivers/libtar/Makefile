@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2016/11/05 15:13:54 jca Exp $
+# $OpenBSD: Makefile,v 1.15 2017/05/10 23:51:19 espie Exp $
 
 COMMENT=	C library for manipulating tar files
 
@@ -21,6 +21,9 @@ BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
 
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
+
+# XXX no tls without pthread
+CONFIGURE_ENV +=	ac_cv_tls=none
 
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.11
