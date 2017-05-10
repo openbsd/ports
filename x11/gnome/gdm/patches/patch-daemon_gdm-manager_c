@@ -1,4 +1,4 @@
-$OpenBSD: patch-daemon_gdm-manager_c,v 1.13 2017/04/17 13:17:07 ajacoutot Exp $
+$OpenBSD: patch-daemon_gdm-manager_c,v 1.14 2017/05/10 10:18:15 ajacoutot Exp $
 
 REVERT - OpenBSD does not have a systemd implementation (we need ConsoleKit)
 From 21905303afbd508f3bf599ad219c9209413c53a2 Mon Sep 17 00:00:00 2001
@@ -24,8 +24,9 @@ From: Ray Strode <rstrode@redhat.com>
 Date: Fri, 12 Jun 2015 13:48:52 -0400
 Subject: require logind support
 
---- daemon/gdm-manager.c.orig	Mon Apr 17 15:07:08 2017
-+++ daemon/gdm-manager.c	Mon Apr 17 15:07:04 2017
+Index: daemon/gdm-manager.c
+--- daemon/gdm-manager.c.orig
++++ daemon/gdm-manager.c
 @@ -36,7 +36,9 @@
  
  #include <act/act-user-manager.h>
@@ -821,7 +822,7 @@ Subject: require logind support
                          break;
                  default:
                          break;
-@@ -2009,11 +2294,57 @@ on_user_session_died (GdmSession *session,
+@@ -2014,11 +2299,57 @@ on_user_session_died (GdmSession *session,
  }
  
  static char *
@@ -881,7 +882,7 @@ Subject: require logind support
  }
  
  static void
-@@ -2022,26 +2353,6 @@ on_session_reauthenticated (GdmSession *session,
+@@ -2027,26 +2358,6 @@ on_session_reauthenticated (GdmSession *session,
                              GdmManager *manager)
  {
          gboolean fail_if_already_switched = FALSE;
