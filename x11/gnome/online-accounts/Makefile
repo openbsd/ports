@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.93 2017/05/11 20:27:07 espie Exp $
+# $OpenBSD: Makefile,v 1.94 2017/05/11 21:22:31 espie Exp $
 
 COMMENT=	interfaces for interacting with online accounts
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += EGL GL ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xt Xxf86vm atk-1.0
 WANTLIB += atk-bridge-2.0 atspi c cairo cairo-gobject dbus-1 dbus-glib-1
-WANTLIB += drm enchant epoxy $(LIBCXX) expat ffi fontconfig freetype
+WANTLIB += drm enchant epoxy $(LIBECXX) expat ffi fontconfig freetype
 WANTLIB += gbm gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0 glapi glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 gpg-error graphite2 gstapp-1.0
 WANTLIB += gstaudio-1.0 gstbase-1.0 gstfft-1.0 gstpbutils-1.0
