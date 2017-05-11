@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2017/03/05 21:35:47 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.10 2017/05/11 18:26:48 shadchin Exp $
 bin/pydisassemble${MODPY_BIN_SUFFIX}
 bin/uncompyle6${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/uncompyle6/
@@ -47,6 +47,7 @@ lib/python${MODPY_VERSION}/site-packages/uncompyle6/parsers/${MODPY_PYCACHE}pars
 lib/python${MODPY_VERSION}/site-packages/uncompyle6/parsers/${MODPY_PYCACHE}parse25.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/uncompyle6/parsers/${MODPY_PYCACHE}parse26.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/uncompyle6/parsers/${MODPY_PYCACHE}parse27.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/uncompyle6/parsers/${MODPY_PYCACHE}parse3-reduced.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/uncompyle6/parsers/${MODPY_PYCACHE}parse3.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/uncompyle6/parsers/${MODPY_PYCACHE}parse30.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/uncompyle6/parsers/${MODPY_PYCACHE}parse31.${MODPY_PYC_MAGIC_TAG}pyc
@@ -65,6 +66,7 @@ lib/python${MODPY_VERSION}/site-packages/uncompyle6/parsers/parse24.py
 lib/python${MODPY_VERSION}/site-packages/uncompyle6/parsers/parse25.py
 lib/python${MODPY_VERSION}/site-packages/uncompyle6/parsers/parse26.py
 lib/python${MODPY_VERSION}/site-packages/uncompyle6/parsers/parse27.py
+lib/python${MODPY_VERSION}/site-packages/uncompyle6/parsers/parse3-reduced.py
 lib/python${MODPY_VERSION}/site-packages/uncompyle6/parsers/parse3.py
 lib/python${MODPY_VERSION}/site-packages/uncompyle6/parsers/parse30.py
 lib/python${MODPY_VERSION}/site-packages/uncompyle6/parsers/parse31.py

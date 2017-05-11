@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2017/03/05 21:35:47 shadchin Exp $
+# $OpenBSD: Makefile,v 1.14 2017/05/11 18:26:48 shadchin Exp $
 
 COMMENT =		Python cross-version byte-code deparser
 
-MODPY_EGG_VERSION =	2.9.10
+MODPY_EGG_VERSION =	2.9.11
 DISTNAME =		uncompyle6-${MODPY_EGG_VERSION}
 PKGNAME =		py-uncompyle6-${MODPY_EGG_VERSION}
 CATEGORIES =		devel
@@ -28,7 +28,7 @@ FLAVOR ?=
 NO_TEST =		Yes
 
 post-install:
-	mv ${PREFIX}/bin/pydisassemble ${PREFIX}/bin/pydisassemble${MODPY_BIN_SUFFIX}
-	mv ${PREFIX}/bin/uncompyle6 ${PREFIX}/bin/uncompyle6${MODPY_BIN_SUFFIX}
+	mv ${PREFIX}/bin/pydisassemble{,${MODPY_BIN_SUFFIX}}
+	mv ${PREFIX}/bin/uncompyle6{,${MODPY_BIN_SUFFIX}}
 
 .include <bsd.port.mk>
