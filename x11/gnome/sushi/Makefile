@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2017/04/29 07:44:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2017/05/11 14:42:17 espie Exp $
 
 COMMENT=	quick previewer for Nautilus
 
@@ -12,7 +12,7 @@ WANTLIB += EGL GL ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xt Xxf86vm atk-1.0
 WANTLIB += atk-bridge-2.0 atspi c cairo cairo-gobject clutter-1.0
 WANTLIB += clutter-gst-3.0 clutter-gtk-1.0 cogl cogl-pango cogl-path
-WANTLIB += crypto dbus-1 drm enchant epoxy estdc++ evdocument3
+WANTLIB += crypto dbus-1 drm enchant epoxy $(LIBCXX) evdocument3
 WANTLIB += evview3 expat ffi fontconfig freetype gbm gcrypt gdk-3
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 girepository-1.0 gjs glapi glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 gpg-error graphite2 gstapp-1.0
