@@ -1,0 +1,14 @@
+$OpenBSD: patch-ConfigureChecks_cmake,v 1.1 2017/05/11 00:21:50 espie Exp $
+
+Index: ConfigureChecks.cmake
+--- ConfigureChecks.cmake.orig
++++ ConfigureChecks.cmake
+@@ -200,7 +200,7 @@ check_c_source_compiles("
+ __thread int tls;
+ 
+ int main(void) {
+-    return 0;
++    return tls;
+ }" HAVE_GCC_THREAD_LOCAL_STORAGE)
+ 
+ check_c_source_compiles("
