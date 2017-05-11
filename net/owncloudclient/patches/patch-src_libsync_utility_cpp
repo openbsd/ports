@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_libsync_utility_cpp,v 1.6 2017/03/09 13:33:52 kirby Exp $
---- src/libsync/utility.cpp.orig	Fri Mar  3 12:11:17 2017
-+++ src/libsync/utility.cpp	Mon Mar  6 10:53:40 2017
-@@ -211,8 +211,8 @@ qint64 Utility::freeDiskSpace(const QString &path)
+$OpenBSD: patch-src_libsync_utility_cpp,v 1.7 2017/05/11 06:18:03 kirby Exp $
+--- src/libsync/utility.cpp.orig	Mon May  8 16:53:10 2017
++++ src/libsync/utility.cpp	Wed May 10 10:56:28 2017
+@@ -212,8 +212,8 @@ qint64 Utility::freeDiskSpace(const QString &path)
          return (qint64) stat.f_bavail * stat.f_frsize;
      }
  #elif defined(Q_OS_UNIX)
