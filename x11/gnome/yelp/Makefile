@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.120 2017/05/11 11:16:16 espie Exp $
+# $OpenBSD: Makefile,v 1.121 2017/05/11 21:23:49 espie Exp $
 
 COMMENT=		GNOME help browser
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += EGL GL ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xt Xxf86vm atk-1.0
 WANTLIB += atk-bridge-2.0 atspi bz2 c cairo cairo-gobject dbus-1
-WANTLIB += drm enchant epoxy $(LIBCXX) expat exslt ffi fontconfig
+WANTLIB += drm enchant epoxy $(LIBECXX) expat exslt ffi fontconfig
 WANTLIB += freetype gbm gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0 glapi
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gpg-error graphite2
 WANTLIB += gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstfft-1.0 gstpbutils-1.0
