@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.42 2017/04/19 13:41:19 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.43 2017/05/11 09:25:27 ajacoutot Exp $
 @ask-update salt-<2014.1.5p0 Make sure the _salt-master user does not exist
 @comment needs a homedir to store ssh keys for GitFS
 @newgroup _salt:722
@@ -225,8 +225,6 @@ lib/python${MODPY_VERSION}/site-packages/salt/cloud/clouds/pyrax.py
 lib/python${MODPY_VERSION}/site-packages/salt/cloud/clouds/pyrax.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/cloud/clouds/qingcloud.py
 lib/python${MODPY_VERSION}/site-packages/salt/cloud/clouds/qingcloud.pyc
-lib/python${MODPY_VERSION}/site-packages/salt/cloud/clouds/rackspace.py
-lib/python${MODPY_VERSION}/site-packages/salt/cloud/clouds/rackspace.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/cloud/clouds/saltify.py
 lib/python${MODPY_VERSION}/site-packages/salt/cloud/clouds/saltify.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/cloud/clouds/scaleway.py
@@ -2544,8 +2542,6 @@ lib/python${MODPY_VERSION}/site-packages/salt/utils/rsax931.py
 lib/python${MODPY_VERSION}/site-packages/salt/utils/rsax931.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/utils/s3.py
 lib/python${MODPY_VERSION}/site-packages/salt/utils/s3.pyc
-lib/python${MODPY_VERSION}/site-packages/salt/utils/saltminionservice.py
-lib/python${MODPY_VERSION}/site-packages/salt/utils/saltminionservice.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/utils/sanitizers.py
 lib/python${MODPY_VERSION}/site-packages/salt/utils/sanitizers.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/utils/schedule.py
@@ -2607,8 +2603,6 @@ lib/python${MODPY_VERSION}/site-packages/salt/utils/win_runas.py
 lib/python${MODPY_VERSION}/site-packages/salt/utils/win_runas.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/utils/winapi.py
 lib/python${MODPY_VERSION}/site-packages/salt/utils/winapi.pyc
-lib/python${MODPY_VERSION}/site-packages/salt/utils/winservice.py
-lib/python${MODPY_VERSION}/site-packages/salt/utils/winservice.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/utils/xdg.py
 lib/python${MODPY_VERSION}/site-packages/salt/utils/xdg.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/utils/xmlutil.py
