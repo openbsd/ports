@@ -1,0 +1,39 @@
+$OpenBSD: patch-src_impala_matrix_c,v 1.1 2017/05/11 16:40:58 espie Exp $
+restrict is a keyword in C99
+
+Index: src/impala/matrix.c
+--- src/impala/matrix.c.orig
++++ src/impala/matrix.c
+@@ -1510,18 +1510,18 @@ dim mclxUnaryList
+ mclv* mclgUnionv
+ (  mclx* mx
+ ,  const mclv* coldom
+-,  const mclv* restrict
++,  const mclv* restricted
+ ,  mcxenum scratch_STATUS
+ ,  mclv* dst
+ )
+-   {  return mclgUnionv2(mx, coldom, restrict, scratch_STATUS, dst, mx->dom_rows)
++   {  return mclgUnionv2(mx, coldom, restricted, scratch_STATUS, dst, mx->dom_rows)
+ ;  }
+ 
+ 
+ mclv* mclgUnionv2
+ (  const mclx* mx
+ ,  const mclv* coldom
+-,  const mclv* restrict
++,  const mclv* restricted
+ ,  mcxenum scratch_STATUS
+ ,  mclv* dst
+ ,  mclv* scratch
+@@ -1566,8 +1566,8 @@ mclv* mclgUnionv2
+                )
+                continue               /* SNH if coldom is subset of mx->dom_cols */
+             ;  if
+-               (  restrict
+-               && 0 > (o_restrict = mclvGetIvpOffset(restrict, idx, o_restrict))
++               (  restricted
++               && 0 > (o_restrict = mclvGetIvpOffset(restricted, idx, o_restrict))
+                )
+                continue               /* not found in restriction domain */
+ 
