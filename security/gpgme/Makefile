@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2016/10/01 13:56:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.38 2017/05/11 00:29:50 espie Exp $
 
 COMMENT=		GnuPG Made Easy
 
@@ -20,6 +20,9 @@ MASTER_SITES=		${MASTER_SITE_GNUPG:=gpgme/}
 EXTRACT_SUFX=		.tar.bz2
 
 CONFIGURE_STYLE=	gnu
+
+# not without -pthread
+CONFIGURE_ENV +=		gpgme_cv_tls_works=no
 
 # Requires gpgsm (gnupg 2.x) during build, but can run with any gnupg.
 BUILD_DEPENDS=		gnupg->=2:security/gnupg2
