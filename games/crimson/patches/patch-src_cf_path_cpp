@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_cf_path_cpp,v 1.1 2017/05/11 19:24:01 espie Exp $
+clang fix taken from FreeBSD
+
+Index: src/cf/path.cpp
+--- src/cf/path.cpp.orig
++++ src/cf/path.cpp
+@@ -212,7 +212,7 @@ short Path::Find( const Unit *u, const Point &start, c
+ // RETURNS    : estimated cost to destination
+ ////////////////////////////////////////////////////////////////////////
+ 
+-inline unsigned short Path::ETA( const Point &p ) const {
++unsigned short Path::ETA( const Point &p ) const {
+   return Distance( p, end ) * quality;
+ }
+ 
+@@ -249,7 +249,7 @@ unsigned short Path::StepsToDest( const Point &pos ) c
+ // RETURNS    : TRUE if search aborted, FALSE otherwise
+ ////////////////////////////////////////////////////////////////////////
+ 
+-inline bool Path::StopSearch( const PathNode &next ) const {
++bool Path::StopSearch( const PathNode &next ) const {
+   return Distance( next.pos, end ) <= deviation;
+ }
+ 
