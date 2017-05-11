@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2017/04/22 17:30:53 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.3 2017/05/11 19:25:53 shadchin Exp $
 lib/python${MODPY_VERSION}/site-packages/hypothesis/
 lib/python${MODPY_VERSION}/site-packages/hypothesis-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/hypothesis-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -57,7 +57,6 @@ lib/python${MODPY_VERSION}/site-packages/hypothesis/internal/${MODPY_PYCACHE}__i
 lib/python${MODPY_VERSION}/site-packages/hypothesis/internal/${MODPY_PYCACHE}charmap.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hypothesis/internal/${MODPY_PYCACHE}classmap.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hypothesis/internal/${MODPY_PYCACHE}compat.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/hypothesis/internal/${MODPY_PYCACHE}debug.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hypothesis/internal/${MODPY_PYCACHE}deferredformat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hypothesis/internal/${MODPY_PYCACHE}detection.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hypothesis/internal/${MODPY_PYCACHE}escalation.${MODPY_PYC_MAGIC_TAG}pyc
@@ -79,7 +78,6 @@ lib/python${MODPY_VERSION}/site-packages/hypothesis/internal/conjecture/data.py
 lib/python${MODPY_VERSION}/site-packages/hypothesis/internal/conjecture/engine.py
 lib/python${MODPY_VERSION}/site-packages/hypothesis/internal/conjecture/minimizer.py
 lib/python${MODPY_VERSION}/site-packages/hypothesis/internal/conjecture/utils.py
-lib/python${MODPY_VERSION}/site-packages/hypothesis/internal/debug.py
 lib/python${MODPY_VERSION}/site-packages/hypothesis/internal/deferredformat.py
 lib/python${MODPY_VERSION}/site-packages/hypothesis/internal/detection.py
 lib/python${MODPY_VERSION}/site-packages/hypothesis/internal/escalation.py
