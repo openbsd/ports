@@ -1,0 +1,14 @@
+$OpenBSD: patch-helpers_external_acl_file_userip_ext_file_userip_acl_8,v 1.1 2017/05/11 16:29:55 schwarze Exp $
+
+Index: helpers/external_acl/file_userip/ext_file_userip_acl.8
+--- helpers/external_acl/file_userip/ext_file_userip_acl.8.orig
++++ helpers/external_acl/file_userip/ext_file_userip_acl.8
+@@ -68,7 +68,7 @@ There are other two directives, 
+ .B ALL 
+ and 
+ .B NONE 
+-, which mean \"any user on this IP address may authenticate\" or \"no user on this IP address may authenticate\".
++, which mean \(dqany user on this IP address may authenticate\(dq or \(dqno user on this IP address may authenticate\(dq.
+ .
+ .SH AUTHOR
+ This program was written by

@@ -1,0 +1,17 @@
+$OpenBSD: patch-helpers_basic_auth_RADIUS_basic_radius_auth_8,v 1.1 2017/05/11 16:29:55 schwarze Exp $
+
+Index: helpers/basic_auth/RADIUS/basic_radius_auth.8
+--- helpers/basic_auth/RADIUS/basic_radius_auth.8.orig
++++ helpers/basic_auth/RADIUS/basic_radius_auth.8
+@@ -9,9 +9,9 @@ basic_radius_auth \- Squid RADIUS authentication helpe
+ config file
+ .br
+ .if !'po4a'hide' .B basic_radius_auth
+-.if !'po4a'hide' .B "\-h \""
++.if !'po4a'hide' .B "\-h \(dq"
+ server name
+-.if !'po4a'hide' .B "\" [\-p "
++.if !'po4a'hide' .B "\(dq [\-p "
+ port
+ .if !'po4a'hide' .B "] [\-i "
+ identifier
