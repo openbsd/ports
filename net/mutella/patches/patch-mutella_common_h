@@ -1,0 +1,15 @@
+$OpenBSD: patch-mutella_common_h,v 1.1 2017/05/11 16:28:58 espie Exp $
+clang looks at parameter names... twice the same one ? not a good idea.
+
+Index: mutella/common.h
+--- mutella/common.h.orig
++++ mutella/common.h
+@@ -50,7 +50,7 @@ CString restore_string(CString s, bool bFormMode = tru
+ bool QueryMatch(CString Result, const CString& Query);
+ // fast functions which do not copy the string
+ void MakeWordList(LPSTR szQuery, vector<char*>& QWords);
+-void MakeWordList(LPSTR szQuery, vector<char*>& QWords, vector<char*>& QWords);
++void MakeWordList(LPSTR szQuery, vector<char*>&, vector<char*>&);
+ bool MatchWordList(const CString& ResultLower, const vector<char*>& QWords, bool bMatchAll = true);
+ 
+ // slower but 'storage-independent' versions

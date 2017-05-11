@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2017/04/10 11:46:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2017/05/11 16:28:58 espie Exp $
 
 COMMENT=		gnutella client with an easy to use interface
 
@@ -18,4 +18,10 @@ SEPARATE_BUILD=		Yes
 
 CONFIGURE_STYLE=	gnu
 
+
 .include <bsd.port.mk>
+
+# this warning is dubious for now
+.if ${PROPERTIES:Mclang}
+CXXFLAGS += -Wno-undefined-var-template
+.endif

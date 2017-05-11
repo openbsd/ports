@@ -1,0 +1,37 @@
+$OpenBSD: patch-mutella_uiremote_cpp,v 1.1 2017/05/11 16:28:58 espie Exp $
+
+Index: mutella/uiremote.cpp
+--- mutella/uiremote.cpp.orig
++++ mutella/uiremote.cpp
+@@ -575,11 +575,11 @@ bool MUIRemotePriv::on_http_request(const IP& ipRemote
+ 	{
+ 		// login -- HTTP-Basic so far
+ 		bool bLoginOK = false;
+-		char * pszAuth = NULL;
++		const char * pszAuth = NULL;
+ 		if ( (pszAuth = strstr(szHandshake, "Authorization:")) )
+ 		{
+ 			// extract authorization line
+-			char * pRN = strstr(pszAuth, "\r\n");
++			const char * pRN = strstr(pszAuth, "\r\n");
+ 			CString sAuthLine(pszAuth + strlen("Authorization:"), pRN-pszAuth-strlen("Authorization:"));
+ 			int nPos = sAuthLine.find("Basic");
+ 			if (nPos>=0)
+@@ -616,7 +616,7 @@ bool MUIRemotePriv::on_http_request(const IP& ipRemote
+ 	const char* pszCookie;
+ 	if( (pszCookie = strstr(szHandshake, "Cookie:")) )
+ 	{
+-		char * pRN = strstr(pszCookie, "\r\n");
++		const char * pRN = strstr(pszCookie, "\r\n");
+ 		CString sCookieLine(pszCookie + strlen("Cookie:"), pRN-pszCookie-strlen("Cookie:"));
+ 		// we will split the line by "; " combination
+ 		list<CString> Cookies;
+@@ -1288,7 +1288,7 @@ enum TagResolv{
+ #define TAG_ENVLISTITEM "#ENVLISTITEM#"
+ 
+ struct STagEntry{
+-	char*     tag;
++	const char*     tag;
+ 	TagResolv res;
+ };
+ 
