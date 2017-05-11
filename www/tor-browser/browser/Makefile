@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2017/04/12 18:46:52 landry Exp $
+# $OpenBSD: Makefile,v 1.9 2017/05/11 01:26:37 danj Exp $
 # Some of this comes from www/firefox-esr as apropos, since Tor
 # browser is a fork of ESR.  It is a good idea to look at that
 # Makefile when editing this one (ESR versions not always the same).
@@ -15,7 +15,7 @@ DIST_SUBDIR = 		${BROWSER_NAME}
 WRKDIST = 		${WRKDIR}/${GH_PROJECT}-${GH_TAGNAME:C/^v//}
 
 GH_PROJECT =		torb
-GH_TAGNAME =		v${TB_VERSION}-esr45.8.0
+GH_TAGNAME =		v${TB_VERSION}-esr45.9.0
 
 PKGNAME =		${TB_PREFIX}-browser-${TB_VERSION}
 DISTNAME =		${GH_TAGNAME}

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2017/04/12 18:46:52 landry Exp $
+# $OpenBSD: Makefile,v 1.6 2017/05/11 01:26:37 danj Exp $
 
 COMMENT=	Tor Browser meta package
 
 MAINTAINER=	Sean Levy <attila@stalphonsos.com>
 
-PKGNAME=	tor-browser-6.5.1
+PKGNAME=	tor-browser-6.5.2
 
 RUN_DEPENDS=	www/tor-browser/browser \
 		www/tor-browser/torbutton \
