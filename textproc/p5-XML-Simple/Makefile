@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.26 2016/03/20 19:57:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.27 2017/05/11 15:46:33 benoit Exp $
 
 COMMENT=	trivial perl API for reading/writing XML
 
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME =	XML-Simple-2.22
+DISTNAME =	XML-Simple-2.24
 CATEGORIES=	textproc
 
 RUN_DEPENDS=	textproc/p5-XML-Parser>=2 \
