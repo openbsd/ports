@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_document_cc,v 1.3 2017/05/11 19:41:33 espie Exp $
+
+Index: src/document.cc
+--- src/document.cc.orig
++++ src/document.cc
+@@ -78,7 +78,7 @@ Document::Document()
+ /*
+  * Constructor by copy
+  */
+-Document::Document(Document &src, bool copy_subtitles = true )
++Document::Document(Document &src, bool copy_subtitles)
+ :CommandSystem(*this), m_subtitles(*this), m_styles(*this), m_subtitleView(NULL)
+ {
+ 	m_timing_mode = src.m_timing_mode;

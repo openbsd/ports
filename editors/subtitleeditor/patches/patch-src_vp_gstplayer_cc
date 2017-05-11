@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_vp_gstplayer_cc,v 1.1 2017/05/11 19:41:33 espie Exp $
+
+Index: src/vp/gstplayer.cc
+--- src/vp/gstplayer.cc.orig
++++ src/vp/gstplayer.cc
+@@ -257,7 +257,7 @@ bool GstPlayer::seek(long start, long end, const Gst::
+ 	gint64 gend = end * Gst::MILLI_SECOND;
+ 
+ 	se_debug_message(SE_DEBUG_VIDEO_PLAYER,
+-			"pipeline->seek(%" GST_TIME_FORMAT", %"GST_TIME_FORMAT")", 
++			"pipeline->seek(%" GST_TIME_FORMAT", %" GST_TIME_FORMAT")", 
+ 			GST_TIME_ARGS(gstart), GST_TIME_ARGS(gend));
+ 
+ 	bool ret = m_pipeline->seek(
