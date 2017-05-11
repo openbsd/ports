@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.28 2016/03/20 19:57:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.29 2017/05/11 15:42:28 benoit Exp $
 
 COMMENT=	perl modules for creating and manipulating PDF
 
 MODULES=	cpan
 PKG_ARCH=	*
-V =		0.29
-DISTNAME =	Text-PDF-${V}a
+V =		0.31
+DISTNAME =	Text-PDF-${V}
 CATEGORIES=	textproc
 
 # Artistic
