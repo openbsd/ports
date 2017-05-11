@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2014/01/23 18:30:57 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2017/05/11 00:41:14 schwarze Exp $
 
 COMMENT=	simple and performant DNS server
 
 VERSION=	1.3.07.15
 DISTNAME=	maradns-${VERSION}
 CATEGORIES=	net
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE=	http://www.maradns.org/
 
@@ -18,7 +18,6 @@ MASTER_SITES=	http://maradns.org/download/1.3/
 
 MAKE_FLAGS=	CC="${CC}" FLAGS="${CFLAGS} -D_THREAD_SAFE -pthread"
 
-USE_GROFF =	Yes
 NO_TEST=	Yes
 
 post-configure:

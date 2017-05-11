@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2017/04/10 11:45:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2017/05/11 00:41:14 schwarze Exp $
 
 COMMENT=		wrapper class around the pcre library
 
 DISTNAME=		pcre++-0.9.5
 PKGNAME=		${DISTNAME}
-REVISION=		4
+REVISION=		5
 SHARED_LIBS=		pcre++ 1.0
 
 CATEGORIES=		devel
@@ -24,7 +24,6 @@ CONFIGURE_ENV=          CPPFLAGS="-I${LOCALBASE}/include" \
                         LDFLAGS="-L${LOCALBASE}/lib"
 
 USE_GMAKE=      	Yes
-USE_GROFF =		Yes
 
 do-test:
 	@cd ${WRKBUILD}/test && ./test testinput
