@@ -1,0 +1,52 @@
+$OpenBSD: patch-starlanes_c,v 1.1 2017/05/11 19:52:15 espie Exp $
+
+Index: starlanes.c
+--- starlanes.c.orig
++++ starlanes.c
+@@ -159,7 +159,7 @@ void split_announce(int conum);
+ int co_avail(void);
+ void clear_general(char *s,int blink);
+ void center(WINDOW *win, int width, int row, char *s);
+-int my_mvwgetstr(WINDOW *win, int y, int x, int max, int restrict, char *s);
++int my_mvwgetstr(WINDOW *win, int y, int x, int max, int restricted, char *s);
+ void redraw(void);
+ void show_standings(char *title);
+ int order_compare(const void *v1, const void *v2);
+@@ -173,6 +173,9 @@ char *VERSION = "1.2.2";
+ char *VERSION_DATE = "29-Mar-1997";
+ char *ident = "$Id: patch-starlanes_c,v 1.1 2017/05/11 19:52:15 espie Exp $";
+ 
++/* XXX work-around clang bug */
++#define LINES mylines
++
+ int MAPX = 12;                     /* x dimension of map */
+ int MAPY = 10;                     /* y dimension of map */
+ int LINES;                         /* lines in screen */
+@@ -247,7 +250,8 @@ int main(int argc, char *argv[])
+         holding_bonus();
+         if ((done = check_endgame()) != 1) {
+             buy_sell();
+-            turn = (++turn)%numplayers;
++	    ++turn;
++            turn %= numplayers;
+         }
+     } while (!done);
+ 
+@@ -1179,7 +1183,7 @@ void center(WINDOW *win, int width, int row, char *s)
+ ** my_mvwgetstr() -- does it my way
+ */
+ 
+-int my_mvwgetstr(WINDOW *win, int y, int x, int max, int restrict, char *s)
++int my_mvwgetstr(WINDOW *win, int y, int x, int max, int restricted, char *s)
+ {
+     int cur=0,c,done=0;
+ 
+@@ -1200,7 +1204,7 @@ int my_mvwgetstr(WINDOW *win, int y, int x, int max, i
+                 wnoutrefresh(win);
+             }
+         } else {
+-            if (restrict == 1) {  /* only numbers and '-' allowed */
++            if (restricted == 1) {  /* only numbers and '-' allowed */
+                 if (!isdigit(c) && c!='-' && tolower(c)!='m' && tolower(c)!='n')
+                     continue;
+                 if (tolower(c) == 'm' || tolower(c) == 'n')

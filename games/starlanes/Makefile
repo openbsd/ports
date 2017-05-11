@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2014/07/14 10:03:33 kirby Exp $
+# $OpenBSD: Makefile,v 1.25 2017/05/11 19:52:15 espie Exp $
 
 COMMENT=	classic space-age stock trading game
 
@@ -15,8 +15,8 @@ ALL_TARGET=
 
 NO_TEST=	Yes
 
-pre-build:
-	@rm ${WRKSRC}/starlanes
+post-extract:
+	@rm -f ${WRKSRC}/starlanes
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/starlanes
