@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.6 2016/10/16 13:51:21 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.7 2017/05/11 15:44:43 sthen Exp $
 
 CATEGORIES ?=		textproc x11
 MASTER_SITES ?=		https://pwmt.org/projects/zathura/plugins/download/
@@ -18,4 +18,4 @@ NO_TEST ?=	Yes
 USE_GMAKE ?=	Yes
 
 MODULES +=	gcc4
-MODGCC4_ARCHS =	*
+MODGCC4_ARCHS =	${GCC3_ARCHS} ${GCC4_ARCHS}
