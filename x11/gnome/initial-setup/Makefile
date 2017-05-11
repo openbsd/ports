@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2017/05/11 08:13:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.37 2017/05/11 20:27:07 espie Exp $
 
 COMMENT=		initial-setup firstboot-like tool
 
@@ -11,7 +11,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += EGL GL ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xt Xxf86vm accountsservice
 WANTLIB += atk-1.0 atk-bridge-2.0 atspi c cairo cairo-gobject
-WANTLIB += crack crypto dbus-1 dbus-glib-1 drm enchant epoxy estdc++
+WANTLIB += crack crypto dbus-1 dbus-glib-1 drm enchant epoxy ${LIBCXX}
 WANTLIB += expat ffi fontconfig freetype gbm gcrypt gdk-3 gdk_pixbuf-2.0
 WANTLIB += gdm geoclue-2 geocode-glib gio-2.0 glapi glib-2.0 gmodule-2.0
 WANTLIB += gnome-desktop-3 goa-1.0 goa-backend-1.0 gobject-2.0
