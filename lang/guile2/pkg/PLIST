@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2017/05/10 13:29:27 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2017/05/11 14:10:21 ajacoutot Exp $
 bin/guild
 @bin bin/guile2
 bin/guile2-config
@@ -476,7 +476,7 @@ lib/guile/${V}/extensions/guile-readline.so.0.0
 lib/libguile-${V}.a
 lib/libguile-${V}.la
 @lib lib/libguile-${V}.so.${LIBguile-2.2_VERSION}
-lib/libguile-${V}.so.3.0-gdb.scm
+lib/libguile-${V}.so.${LIBguile-2.2_VERSION}-gdb.scm
 lib/pkgconfig/guile-${V}.pc
 @man man/man1/guile2.1
 share/aclocal/guile2.m4
