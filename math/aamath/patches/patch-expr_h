@@ -1,0 +1,24 @@
+$OpenBSD: patch-expr_h,v 1.1 2017/05/11 16:34:03 espie Exp $
+clang looks at parameter names
+
+Index: expr.h
+--- expr.h.orig
++++ expr.h
+@@ -451,7 +451,7 @@ class Integral : public OpOnFunction {
+ 
+ 	virtual CanvasPtr render_head() const;
+ 
+-	void render_symbol(Canvas& c, int r, int c, int h) const;
++	void render_symbol(Canvas& can, int r, int c, int h) const;
+ 
+ 	virtual CanvasPtr render() const;
+ };
+@@ -467,7 +467,7 @@ class IntegralOnInterval : public Integral, public OpO
+ 
+ class OpSymbol {
+   public:
+-	virtual void render(Canvas& c, int r, int c) const = 0;
++	virtual void render(Canvas& can, int r, int c) const = 0;
+ };
+ 
+ class SumOrProduct : public OpOnFunction {
