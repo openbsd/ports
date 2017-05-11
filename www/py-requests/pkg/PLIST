@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2017/02/11 16:47:19 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.11 2017/05/11 19:10:51 shadchin Exp $
 lib/python${MODPY_VERSION}/site-packages/requests/
 lib/python${MODPY_VERSION}/site-packages/requests-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/requests-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -45,14 +45,13 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/requests/packages/chard
 lib/python${MODPY_VERSION}/site-packages/requests/packages/chardet/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/requests/packages/chardet/${MODPY_PYCACHE}big5freq.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/requests/packages/chardet/${MODPY_PYCACHE}big5prober.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/requests/packages/chardet/${MODPY_PYCACHE}chardetect.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/requests/packages/chardet/${MODPY_PYCACHE}chardistribution.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/requests/packages/chardet/${MODPY_PYCACHE}charsetgroupprober.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/requests/packages/chardet/${MODPY_PYCACHE}charsetprober.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/requests/packages/chardet/${MODPY_PYCACHE}codingstatemachine.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/requests/packages/chardet/${MODPY_PYCACHE}compat.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/requests/packages/chardet/${MODPY_PYCACHE}constants.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/requests/packages/chardet/${MODPY_PYCACHE}cp949prober.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/requests/packages/chardet/${MODPY_PYCACHE}enums.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/requests/packages/chardet/${MODPY_PYCACHE}escprober.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/requests/packages/chardet/${MODPY_PYCACHE}escsm.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/requests/packages/chardet/${MODPY_PYCACHE}eucjpprober.${MODPY_PYC_MAGIC_TAG}pyc
@@ -71,6 +70,7 @@ lib/python${MODPY_VERSION}/site-packages/requests/packages/chardet/${MODPY_PYCAC
 lib/python${MODPY_VERSION}/site-packages/requests/packages/chardet/${MODPY_PYCACHE}langhebrewmodel.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/requests/packages/chardet/${MODPY_PYCACHE}langhungarianmodel.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/requests/packages/chardet/${MODPY_PYCACHE}langthaimodel.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/requests/packages/chardet/${MODPY_PYCACHE}langturkishmodel.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/requests/packages/chardet/${MODPY_PYCACHE}latin1prober.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/requests/packages/chardet/${MODPY_PYCACHE}mbcharsetprober.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/requests/packages/chardet/${MODPY_PYCACHE}mbcsgroupprober.${MODPY_PYC_MAGIC_TAG}pyc
@@ -80,16 +80,22 @@ lib/python${MODPY_VERSION}/site-packages/requests/packages/chardet/${MODPY_PYCAC
 lib/python${MODPY_VERSION}/site-packages/requests/packages/chardet/${MODPY_PYCACHE}sjisprober.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/requests/packages/chardet/${MODPY_PYCACHE}universaldetector.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/requests/packages/chardet/${MODPY_PYCACHE}utf8prober.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/requests/packages/chardet/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/requests/packages/chardet/big5freq.py
 lib/python${MODPY_VERSION}/site-packages/requests/packages/chardet/big5prober.py
-lib/python${MODPY_VERSION}/site-packages/requests/packages/chardet/chardetect.py
 lib/python${MODPY_VERSION}/site-packages/requests/packages/chardet/chardistribution.py
 lib/python${MODPY_VERSION}/site-packages/requests/packages/chardet/charsetgroupprober.py
 lib/python${MODPY_VERSION}/site-packages/requests/packages/chardet/charsetprober.py
+lib/python${MODPY_VERSION}/site-packages/requests/packages/chardet/cli/
+lib/python${MODPY_VERSION}/site-packages/requests/packages/chardet/cli/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/requests/packages/chardet/cli/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/requests/packages/chardet/cli/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/requests/packages/chardet/cli/${MODPY_PYCACHE}chardetect.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/requests/packages/chardet/cli/chardetect.py
 lib/python${MODPY_VERSION}/site-packages/requests/packages/chardet/codingstatemachine.py
 lib/python${MODPY_VERSION}/site-packages/requests/packages/chardet/compat.py
-lib/python${MODPY_VERSION}/site-packages/requests/packages/chardet/constants.py
 lib/python${MODPY_VERSION}/site-packages/requests/packages/chardet/cp949prober.py
+lib/python${MODPY_VERSION}/site-packages/requests/packages/chardet/enums.py
 lib/python${MODPY_VERSION}/site-packages/requests/packages/chardet/escprober.py
 lib/python${MODPY_VERSION}/site-packages/requests/packages/chardet/escsm.py
 lib/python${MODPY_VERSION}/site-packages/requests/packages/chardet/eucjpprober.py
@@ -108,6 +114,7 @@ lib/python${MODPY_VERSION}/site-packages/requests/packages/chardet/langgreekmode
 lib/python${MODPY_VERSION}/site-packages/requests/packages/chardet/langhebrewmodel.py
 lib/python${MODPY_VERSION}/site-packages/requests/packages/chardet/langhungarianmodel.py
 lib/python${MODPY_VERSION}/site-packages/requests/packages/chardet/langthaimodel.py
+lib/python${MODPY_VERSION}/site-packages/requests/packages/chardet/langturkishmodel.py
 lib/python${MODPY_VERSION}/site-packages/requests/packages/chardet/latin1prober.py
 lib/python${MODPY_VERSION}/site-packages/requests/packages/chardet/mbcharsetprober.py
 lib/python${MODPY_VERSION}/site-packages/requests/packages/chardet/mbcsgroupprober.py
@@ -117,6 +124,7 @@ lib/python${MODPY_VERSION}/site-packages/requests/packages/chardet/sbcsgroupprob
 lib/python${MODPY_VERSION}/site-packages/requests/packages/chardet/sjisprober.py
 lib/python${MODPY_VERSION}/site-packages/requests/packages/chardet/universaldetector.py
 lib/python${MODPY_VERSION}/site-packages/requests/packages/chardet/utf8prober.py
+lib/python${MODPY_VERSION}/site-packages/requests/packages/chardet/version.py
 lib/python${MODPY_VERSION}/site-packages/requests/packages/idna/
 lib/python${MODPY_VERSION}/site-packages/requests/packages/idna/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/requests/packages/idna/${MODPY_PYCACHE}/
@@ -156,10 +164,20 @@ lib/python${MODPY_VERSION}/site-packages/requests/packages/urllib3/contrib/${MOD
 lib/python${MODPY_VERSION}/site-packages/requests/packages/urllib3/contrib/${MODPY_PYCACHE}appengine.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/requests/packages/urllib3/contrib/${MODPY_PYCACHE}ntlmpool.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/requests/packages/urllib3/contrib/${MODPY_PYCACHE}pyopenssl.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/requests/packages/urllib3/contrib/${MODPY_PYCACHE}securetransport.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/requests/packages/urllib3/contrib/${MODPY_PYCACHE}socks.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/requests/packages/urllib3/contrib/_securetransport/
+lib/python${MODPY_VERSION}/site-packages/requests/packages/urllib3/contrib/_securetransport/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/requests/packages/urllib3/contrib/_securetransport/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/requests/packages/urllib3/contrib/_securetransport/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/requests/packages/urllib3/contrib/_securetransport/${MODPY_PYCACHE}bindings.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/requests/packages/urllib3/contrib/_securetransport/${MODPY_PYCACHE}low_level.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/requests/packages/urllib3/contrib/_securetransport/bindings.py
+lib/python${MODPY_VERSION}/site-packages/requests/packages/urllib3/contrib/_securetransport/low_level.py
 lib/python${MODPY_VERSION}/site-packages/requests/packages/urllib3/contrib/appengine.py
 lib/python${MODPY_VERSION}/site-packages/requests/packages/urllib3/contrib/ntlmpool.py
 lib/python${MODPY_VERSION}/site-packages/requests/packages/urllib3/contrib/pyopenssl.py
+lib/python${MODPY_VERSION}/site-packages/requests/packages/urllib3/contrib/securetransport.py
 lib/python${MODPY_VERSION}/site-packages/requests/packages/urllib3/contrib/socks.py
 lib/python${MODPY_VERSION}/site-packages/requests/packages/urllib3/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/requests/packages/urllib3/fields.py
