@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/08/07 21:32:55 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2017/05/11 20:50:55 espie Exp $
 
 COMMENT=		passive web application security assessment tool
 
@@ -19,7 +19,7 @@ MASTER_SITES=		${HOMEPAGE}/files/
 
 RUN_DEPENDS=		shells/bash
 
-WRKDIST=		${WRKDIR}/ratproxy/
+WRKDIST=		${WRKDIR}/ratproxy
 
 NO_TEST=		Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2016/11/04 15:53:59 rpe Exp $
+# $OpenBSD: Makefile,v 1.10 2017/05/11 20:50:55 espie Exp $
 
 COMMENT=		ink-saving font based on Vera Sans
 
@@ -24,6 +24,6 @@ MODULES =		font
 NO_BUILD=		Yes
 NO_TEST=		Yes
 
-WRKDIST=		${WRKDIR}/
+WRKDIST=		${WRKDIR}
 
 .include <bsd.port.mk>

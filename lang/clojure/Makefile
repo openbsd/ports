@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2017/04/21 13:27:46 kurt Exp $
+# $OpenBSD: Makefile,v 1.30 2017/05/11 20:50:55 espie Exp $
 
 COMMENT =		Lisp-1 dialect for the Java Virtual Machine
 
@@ -25,7 +25,7 @@ MODJAVA_BUILD = 	ant
 MODJAVA_BUILD_TARGET_NAME =	jar
 MODJAVA_JRERUN = 	Yes
 
-WRKDIST =		${WRKDIR}/clojure-${DISTNAME}/
+WRKDIST =		${WRKDIR}/clojure-${DISTNAME}
 
 RUN_DEPENDS =		java/javaPathHelper \
 			misc/rlwrap

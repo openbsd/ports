@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2017/02/28 22:29:32 juanfra Exp $
+# $OpenBSD: Makefile,v 1.45 2017/05/11 20:50:55 espie Exp $
 
 COMMENT=	XMPP real time collaboration server
 V =		4.1.3
@@ -25,7 +25,7 @@ MODJAVA_BUILD=	ant
 RUN_DEPENDS=	java/javaPathHelper
 
 WRKDIST=	${WRKDIR}/openfire_src
-WRKSRC=		${WRKDIST}/build/
+WRKSRC=		${WRKDIST}/build
 
 OPENFIREDEST=	${PREFIX}/openfire
 DATADIRS=	lib logs plugins resources

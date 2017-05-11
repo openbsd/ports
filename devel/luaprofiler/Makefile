@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2016/10/16 23:21:23 jca Exp $
+# $OpenBSD: Makefile,v 1.11 2017/05/11 20:50:55 espie Exp $
 
 COMMENT=		time profiler for Lua
 
@@ -27,7 +27,7 @@ MAKE_FILE=		../Makefile.linux
 ALL_TARGET=		# empty
 CFLAGS +=       	-I${MODLUA_INCL_DIR} -fPIC
 
-WRKSRC= 		${WRKDIST}/src/
+WRKSRC= 		${WRKDIST}/src
 
 do-install:
 	${INSTALL_DATA_DIR} ${MODLUA_LIBDIR} ${MODLUA_DATADIR}/luaprofiler/\

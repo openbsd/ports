@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/10/15 06:35:00 rpointel Exp $
+# $OpenBSD: Makefile,v 1.2 2017/05/11 20:50:55 espie Exp $
 
 COMMENT =		basic file input/output abstraction C library
 
@@ -24,6 +24,6 @@ CONFIGURE_ARGS +=	--mandir=${PREFIX}/man
 
 NO_TEST =		Yes
 
-WRKDIST =		${WRKDIR}/libbfio-${VERSION}/
+WRKDIST =		${WRKDIR}/libbfio-${VERSION}
 
 .include <bsd.port.mk>

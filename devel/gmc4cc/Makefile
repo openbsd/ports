@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2016/09/13 14:40:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2017/05/11 20:50:55 espie Exp $
 
 COMMENT=	C compiler for GMC-4
 
@@ -27,7 +27,7 @@ BUILD_DEPENDS=	lang/ghc
 LIB_DEPENDS=	converters/libiconv \
 		devel/gmp
 
-WRKDIST= 	${WRKDIR}/gmc4cc/
+WRKDIST= 	${WRKDIR}/gmc4cc
 
 NO_TEST=	Yes
 

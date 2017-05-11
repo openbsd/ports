@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2015/04/03 15:12:28 pascal Exp $
+# $OpenBSD: Makefile,v 1.8 2017/05/11 20:50:55 espie Exp $
 
 ONLY_FOR_ARCHS =	i386 amd64
 
@@ -27,7 +27,7 @@ USE_GMAKE =		Yes
 
 NO_TEST =		Yes
 
-WRKDIST =		${WRKDIR}/chntpw-${V}/
+WRKDIST =		${WRKDIR}/chntpw-${V}
 
 PROGS =			chntpw chntpw.static cpnt reged reged.static
 DOCDIR =		$(PREFIX)/share/doc/chntpw

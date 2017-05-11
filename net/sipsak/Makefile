@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2017/04/16 13:55:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2017/05/11 20:50:55 espie Exp $
 
 COMMENT =	SIP swiss army knife
 
@@ -7,7 +7,7 @@ REVISION =	0
 CATEGORIES =	net
 
 PKGNAME =	${DISTNAME:S/-1//}
-WRKDIST =	${WRKDIR}/${DISTNAME:S/-1//}/
+WRKDIST =	${WRKDIR}/${DISTNAME:S/-1//}
 
 HOMEPAGE =	http://sipsak.org/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2013/08/09 16:53:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2017/05/11 20:50:55 espie Exp $
 
 COMMENT=		filter to print a wide range of file formats
 
@@ -21,7 +21,7 @@ CONFIGURE_ARGS+=	--prefix='${PREFIX}' \
 
 RUN_DEPENDS=		print/a2ps
 
-WRKDIST=		${WRKDIR}/apsfilter/
+WRKDIST=		${WRKDIR}/apsfilter
 
 NO_TEST=		Yes
 

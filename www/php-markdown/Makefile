@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2015/12/31 08:15:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2017/05/11 20:50:55 espie Exp $
 
 COMMENT=		Markdown implementation for PHP
 
@@ -26,7 +26,7 @@ PREFIX=			${VARBASE}/www
 INSTDIR=                ${PREFIX}/pear/lib/
 SUBST_VARS=             INSTDIR
 
-WRKSRC= 		${WRKDIR}/PHP\ Markdown\ Lib\ ${V}/
+WRKSRC= 		${WRKDIR}/PHP\ Markdown\ Lib\ ${V}
 
 do-install:
 	${INSTALL_DATA_DIR} ${INSTDIR}

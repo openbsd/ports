@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2017/03/29 19:58:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2017/05/11 20:50:55 espie Exp $
 
 COMMENT=		simple but effective personal calendar
 
@@ -15,7 +15,7 @@ MASTER_SITES=		https://distfiles.nl/
 NO_BUILD=		Yes
 PKG_ARCH=		*
 
-WRKDIST=		${WRKDIR}/when_dist/
+WRKDIST=		${WRKDIR}/when_dist
 
  # Requires interactive terminal and other hoops not worth going through.
 NO_TEST=		Yes

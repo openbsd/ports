@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2015/11/24 09:11:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2017/05/11 20:50:55 espie Exp $
 
 COMMENT=		uniform frontend to running Common Lisp code from the shell
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=		https://distfiles.nl/
 
-WRKDIST=		${WRKDIR}/cl-launch.git/
+WRKDIST=		${WRKDIR}/cl-launch.git
 
 WANTLIB=		c
 

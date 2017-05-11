@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2017/01/06 17:02:06 jca Exp $
+# $OpenBSD: Makefile,v 1.11 2017/05/11 20:50:55 espie Exp $
 
 BROKEN-alpha =		error "ISA not supported"
 
@@ -21,8 +21,8 @@ WANTLIB +=		c dwarf elf pthread z
 LIB_DEPENDS =		devel/libelf \
 			devel/libdwarf>=20160613p0
 
-WRKDIST =		${WRKDIR}/ctftools-${GH_COMMIT}/
-WRKSRC =		${WRKDIR}/ctftools-${GH_COMMIT}/cddl/
+WRKDIST =		${WRKDIR}/ctftools-${GH_COMMIT}
+WRKSRC =		${WRKDIR}/ctftools-${GH_COMMIT}/cddl
 
 do-configure:
 	${SUBST_CMD} ${WRKSRC}/lib/libctf/Makefile \

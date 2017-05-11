@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2013/03/11 11:06:03 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2017/05/11 20:50:55 espie Exp $
 
 COMMENT=		General Atomistic Modelling Graphic Interface
 
@@ -24,8 +24,8 @@ WANTLIB += gdkglext-x11-1.0 gtkglext-x11-1.0
 LIB_DEPENDS=		x11/gtkglext
 RUN_DEPENDS=		graphics/netpbm
 
-WRKDIST=		${WRKDIR}/gamgi${V}/
-WRKSRC= 		${WRKDIST}/src/
+WRKDIST=		${WRKDIR}/gamgi${V}
+WRKSRC= 		${WRKDIST}/src
 MAKE_FILE=		${WRKSRC}/makefile
 ALL_TARGET=		# This comment intentionally left senseless.
 

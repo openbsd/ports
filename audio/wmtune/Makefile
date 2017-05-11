@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2016/03/23 09:50:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2017/05/11 20:50:55 espie Exp $
 
 COMMENT=	premier dockable radio tuner
 
@@ -21,7 +21,7 @@ MAKE_ENV=		CC="${CC}"
 FLAVORS=		zoltrix
 FLAVOR?=
 
-WRKDIST=		${WRKDIR}/wmtune-1.0.1-combined/
+WRKDIST=		${WRKDIR}/wmtune-1.0.1-combined
 
 post-extract:
 	@cp ${FILESDIR}/wmtune.1 ${WRKDIST}

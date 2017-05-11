@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.79 2017/05/04 17:29:15 giovanni Exp $
+# $OpenBSD: Makefile,v 1.80 2017/05/11 20:50:55 espie Exp $
 
 COMMENT=		open source web analytics software program
 
@@ -13,7 +13,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=		http://builds.piwik.org/
 
-WRKDIST=		${WRKDIR}/piwik/
+WRKDIST=		${WRKDIR}/piwik
 
 NO_BUILD=		Yes
 NO_TEST=		Yes

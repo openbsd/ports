@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2015/11/24 09:11:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2017/05/11 20:50:55 espie Exp $
 
 COMMENT=		dockapp; gives access to X11's cut buffers
 
@@ -19,7 +19,7 @@ EXTRACT_SUFX=		.tgz
 MAKE_FLAGS=		CFLAGS="${CFLAGS} -DOpenBSD -Wall -I${X11BASE}/include"
 
 MAKE_FILE=		${WRKSRC}/Makefile
-WRKDIST=		${WRKDIR}/wmcb.app/
+WRKDIST=		${WRKDIR}/wmcb.app
 WRKSRC=			${WRKDIST}/wmcb
 
 NO_TEST=		Yes

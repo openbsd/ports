@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 11:07:38 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2017/05/11 20:50:55 espie Exp $
 
 COMMENT =		dungeon-crawling action-RPG adventure
 
@@ -21,7 +21,7 @@ LIB_DEPENDS =		devel/sdl-net \
 
 USE_GMAKE =		Yes
 MAKE_FILE =		Makefile.unix
-WRKSRC =		${WRKDIR}/${DISTNAME}/game/
+WRKSRC =		${WRKDIR}/${DISTNAME}/game
 EGOBOO_PREFIX =		${PREFIX}
 EGOBOO_SHARED =		${PREFIX}/share/egoboo
 

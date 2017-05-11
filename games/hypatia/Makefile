@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2015/12/29 19:49:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2017/05/11 20:50:55 espie Exp $
 
 COMMENT =	2D action adventure game engine
 CATEGORIES =	games x11
@@ -22,7 +22,7 @@ RUN_DEPENDS =	devel/py-enum34 \
 
 TEST_DEPENDS =	graphics/py-Pillow
 
-WRKDIST =	${WRKDIR}/hypatia-engine-${GH_TAGNAME}/
+WRKDIST =	${WRKDIR}/hypatia-engine-${GH_TAGNAME}
 
 pre-patch:
 	@cd ${WRKSRC} && perl -i -pe 's/\r$$//' setup.py

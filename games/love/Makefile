@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2017/04/10 11:46:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2017/05/11 20:50:55 espie Exp $
 
 COMMENT=		2D games framework for use with Lua
 
@@ -45,7 +45,7 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/SDL/ \
 				`pkg-config --cflags ${MODLUA_DEP}`" \
 			LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib -pthread"
 
-WRKDIST=		${WRKDIR}/love-$V/
+WRKDIST=		${WRKDIR}/love-$V
 
 post-extract:
 # Add missing newlines
