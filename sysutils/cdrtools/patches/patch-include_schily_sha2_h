@@ -1,0 +1,19 @@
+$OpenBSD: patch-include_schily_sha2_h,v 1.1 2017/05/11 20:20:16 espie Exp $
+can't provide inconsistent protos for pragma weak functions.
+(from freebsd)
+
+Index: include/schily/sha2.h
+--- include/schily/sha2.h.orig
++++ include/schily/sha2.h
+@@ -102,9 +102,11 @@ extern char *SHA256Data		__PR((const UInt8_t *, size_t
+ 
+ #ifdef	HAVE_LONGLONG
+ extern void SHA384Init		__PR((SHA2_CTX *));
++#ifndef HAVE_PRAGMA_WEAK
+ extern void SHA384Transform	__PR((UInt64_t state[8], const UInt8_t [SHA384_BLOCK_LENGTH]));
+ extern void SHA384Update	__PR((SHA2_CTX *, const UInt8_t *, size_t));
+ extern void SHA384Pad		__PR((SHA2_CTX *));
++#endif
+ extern void SHA384Final		__PR((UInt8_t [SHA384_DIGEST_LENGTH], SHA2_CTX *));
+ extern char *SHA384End		__PR((SHA2_CTX *, char *));
+ extern char *SHA384File		__PR((const char *, char *));
