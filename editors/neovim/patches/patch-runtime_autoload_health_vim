@@ -1,0 +1,15 @@
+$OpenBSD: patch-runtime_autoload_health_vim,v 1.1 2017/05/12 09:56:34 edd Exp $
+
+https://github.com/neovim/neovim/pull/6721
+
+Index: runtime/autoload/health.vim
+--- runtime/autoload/health.vim.orig
++++ runtime/autoload/health.vim
+@@ -66,6 +66,7 @@ function! health#check(plugin_names) abort
+   " needed for plasticboy/vim-markdown, because it uses fdm=expr
+   normal! zR
+   setlocal nomodified
++  setlocal bufhidden=hide
+   redraw|echo ''
+ endfunction
+ 
