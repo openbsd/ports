@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2017/02/28 22:08:56 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.24 2017/05/12 14:34:53 gonzalo Exp $
 
 USE_WXNEEDED =		Yes
 
 COMMENT =		browse and download YouTube videos
 
-DISTNAME =		smtube-17.1.0
+DISTNAME =		smtube-17.5.0
 
 CATEGORIES =		multimedia x11
 
