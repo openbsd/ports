@@ -1,4 +1,4 @@
-$OpenBSD: patch-libproxy_CMakeLists_txt,v 1.6 2017/04/18 09:13:20 sthen Exp $
+$OpenBSD: patch-libproxy_CMakeLists_txt,v 1.7 2017/05/12 07:12:10 ajacoutot Exp $
 
 Adding -pthread:
 https://code.google.com/p/libproxy/issues/detail?id=196&thanks=196&ts=1370457244
@@ -7,9 +7,10 @@ Setting _POSIX_C_SOURCE unsets __BSD_VISIBLE by default, and several symbols
 end up being hidden, resulting in build failure with clang.
 https://svnweb.freebsd.org/ports/head/net/libproxy/files/patch-libproxy_CMakeLists.txt?revision=406680&view=markup 
 
---- libproxy/CMakeLists.txt.orig	Mon Jan  9 14:22:22 2017
-+++ libproxy/CMakeLists.txt	Sun Apr 16 22:16:52 2017
-@@ -6,8 +6,7 @@ set_project_version(0 4 14)
+Index: libproxy/CMakeLists.txt
+--- libproxy/CMakeLists.txt.orig
++++ libproxy/CMakeLists.txt
+@@ -6,8 +6,7 @@ set_project_version(0 4 15)
  if (WIN32)
    add_definitions(-D_CRT_SECURE_NO_WARNINGS=1)
  else(WIN32)
