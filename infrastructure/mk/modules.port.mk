@@ -1,4 +1,4 @@
-# $OpenBSD: modules.port.mk,v 1.7 2017/05/12 16:36:01 espie Exp $
+# $OpenBSD: modules.port.mk,v 1.8 2017/05/12 16:56:59 espie Exp $
 #
 #  Copyright (c) 2001 Marc Espie
 # 
@@ -51,8 +51,10 @@ ERRORS += "Fatal: Missing support for module ${_m}."
 # support for preferred compiler
 .if defined(WANT_CXX) && !defined(CHOSEN_CXX)
 .  for i in ${WANT_CXX}
-.    if "$i" == "base" && ${PROPERTIES:Mclang}
+.    if "$i" == "base"
+.      if ${PROPERTIES:Mclang}
 CHOSEN_CXX ?= base
+.      endif
 .    elif "$i" == "gcc"
 .      if !defined(CHOSEN_CXX)
 MODULES +=		gcc4
