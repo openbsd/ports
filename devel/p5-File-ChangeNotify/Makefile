@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2016/05/30 15:24:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2017/05/12 07:26:49 benoit Exp $
 
 COMMENT =	watch for changes to files, cross-platform style
 
-DISTNAME =	File-ChangeNotify-0.26
+DISTNAME =	File-ChangeNotify-0.27
 
 CATEGORIES =	devel
 
