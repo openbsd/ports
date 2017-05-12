@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: TreeWalker.pm,v 1.4 2017/04/10 19:11:11 espie Exp $
+# $OpenBSD: TreeWalker.pm,v 1.5 2017/05/12 18:18:09 espie Exp $
 #
 # Copyright (c) 2006-2013 Marc Espie <espie@openbsd.org>
 #
@@ -64,7 +64,8 @@ sub dump_dirs
 		delete $ENV{'FLAVOR'};
 		close STDERR;
 		open STDERR, '>&STDOUT';
-		exec {'make'} ("make", "dump-vars", 'LIBCXX=$${LIBCXX}');
+		exec {'make'} ("make", "dump-vars", 'LIBCXX=$${LIBCXX}',
+		    'LIBECXX=$${LIBECXX}');
 		die $!;
 	}
 }

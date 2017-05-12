@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1347 2017/05/12 16:36:01 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1348 2017/05/12 18:18:09 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -116,7 +116,7 @@ _ALL_VARIABLES += HOMEPAGE DISTNAME \
 	SHARED_LIBS TARGETS PSEUDO_FLAVOR \
 	MAINTAINER AUTOCONF_VERSION AUTOMAKE_VERSION CONFIGURE_ARGS \
 	GH_ACCOUNT GH_COMMIT GH_PROJECT GH_TAGNAME PORTROACH \
-	PORTROACH_COMMENT MAKEFILE_LIST USE_WXNEEDED
+	PORTROACH_COMMENT MAKEFILE_LIST USE_WXNEEDED WANT_CXX
 _ALL_VARIABLES_PER_ARCH += BROKEN
 # and stuff needing to be MULTI_PACKAGE'd
 _ALL_VARIABLES_INDEXED += COMMENT PKGNAME \
@@ -295,8 +295,6 @@ _MODULES_DONE =
 .  include "${PORTSDIR}/infrastructure/mk/modules.port.mk"
 .endif
 
-WANT_CXX ?= None
-CHOSEN_CXX ?= None
 ###
 ### Variable setup that can happen after modules
 ###
