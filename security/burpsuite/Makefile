@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2017/04/21 13:27:47 kurt Exp $
+# $OpenBSD: Makefile,v 1.16 2017/05/12 08:13:42 rpointel Exp $
 
 COMMENT =		tool for testing security of web applications
 
-VERSION =		1.7.15
+VERSION =		1.7.22
 DISTNAME =		burpsuite_free_v${VERSION}
 PKGNAME =		burpsuite-${VERSION}
-REVISION =		0
 
 DISTFILES=${DISTNAME}${EXTRACT_SUFX}{Download?productId=100\&version=${VERSION}\&type=Jar}
 
@@ -23,7 +22,7 @@ EXTRACT_ONLY =
 EXTRACT_SUFX =		.jar
 
 MODULES =		java
-MODJAVA_VER = 		1.7
+MODJAVA_VER = 		1.7+
 MODJAVA_JRERUN =	yes
 
 RUN_DEPENDS =		java/javaPathHelper
