@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/03/05 21:09:09 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/05/12 09:32:52 shadchin Exp $
 bin/jupyter-qtconsole${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/qtconsole/
 lib/python${MODPY_VERSION}/site-packages/qtconsole-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
@@ -76,11 +76,15 @@ lib/python${MODPY_VERSION}/site-packages/qtconsole/tests/${MODPY_PYCACHE}test_an
 lib/python${MODPY_VERSION}/site-packages/qtconsole/tests/${MODPY_PYCACHE}test_app.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qtconsole/tests/${MODPY_PYCACHE}test_completion_widget.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qtconsole/tests/${MODPY_PYCACHE}test_console_widget.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/qtconsole/tests/${MODPY_PYCACHE}test_jupyter_widget.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qtconsole/tests/${MODPY_PYCACHE}test_kill_ring.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/qtconsole/tests/${MODPY_PYCACHE}test_styles.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qtconsole/tests/test_ansi_code_processor.py
 lib/python${MODPY_VERSION}/site-packages/qtconsole/tests/test_app.py
 lib/python${MODPY_VERSION}/site-packages/qtconsole/tests/test_completion_widget.py
 lib/python${MODPY_VERSION}/site-packages/qtconsole/tests/test_console_widget.py
+lib/python${MODPY_VERSION}/site-packages/qtconsole/tests/test_jupyter_widget.py
 lib/python${MODPY_VERSION}/site-packages/qtconsole/tests/test_kill_ring.py
+lib/python${MODPY_VERSION}/site-packages/qtconsole/tests/test_styles.py
 lib/python${MODPY_VERSION}/site-packages/qtconsole/usage.py
 lib/python${MODPY_VERSION}/site-packages/qtconsole/util.py
