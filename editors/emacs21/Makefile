@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.91 2016/11/20 15:14:19 jca Exp $
+# $OpenBSD: Makefile,v 1.92 2017/05/12 21:26:32 espie Exp $
 
 BROKEN-powerpc=		dumped executable fails with SIGABRT
 
@@ -86,3 +86,8 @@ post-install:
 	chmod -t ${PREFIX}/bin/emacs
 
 .include <bsd.port.mk>
+
+.if ${PROPERTIES:Mclang}
+CFLAGS +=	-fno-builtin-malloc
+.endif
+
