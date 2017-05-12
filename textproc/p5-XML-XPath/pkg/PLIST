@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/09/15 18:44:06 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2017/05/12 20:19:48 benoit Exp $
 bin/xpath
 ${P5SITE}/XML/
 ${P5SITE}/XML/XPath/
@@ -25,6 +25,7 @@ ${P5SITE}/XML/XPath/Root.pm
 ${P5SITE}/XML/XPath/Step.pm
 ${P5SITE}/XML/XPath/Variable.pm
 ${P5SITE}/XML/XPath/XMLParser.pm
+@man man/man1/xpath.1
 @man man/man3p/XML::XPath.3p
 @man man/man3p/XML::XPath::Boolean.3p
 @man man/man3p/XML::XPath::Builder.3p
