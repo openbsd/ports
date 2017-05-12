@@ -1,4 +1,4 @@
-# $OpenBSD: arch-defines.mk,v 1.37 2017/05/11 21:19:42 espie Exp $
+# $OpenBSD: arch-defines.mk,v 1.38 2017/05/12 18:19:42 espie Exp $
 #
 # ex:ts=4 sw=4 filetype=make:
 #
@@ -34,8 +34,11 @@ CLANG_ARCHS = aarch64
 # as well as available for PROPERTIES checks.  XXX list currently inaccurate
 LLVM_ARCHS = aarch64 amd64 arm i386 powerpc mips64 mips64el sparc64
 
+# arches where there is a C++11 compiler, either clang in base or gcc4
+CXX11_ARCHS = aarch64 amd64 arm i386 hppa powerpc mips64 mips64el sparc64
+
 .for PROP in ALL APM BE LE LP64 CLANG GCC4 GCC3 MONO LLVM \
-                           OCAML_NATIVE OCAML_NATIVE_DYNLINK GO
+                     CXX11 OCAML_NATIVE OCAML_NATIVE_DYNLINK GO
 .  for A B in ${MACHINE_ARCH} ${ARCH}
 .    if !empty(${PROP}_ARCHS:M$A) || !empty(${PROP}_ARCHS:M$B)
 PROPERTIES += ${PROP:L}
