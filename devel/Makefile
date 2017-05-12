@@ -1513,6 +1513,7 @@
      SUBDIR += py-unittest2
      SUBDIR += py-urwid
      SUBDIR += py-urwid,python3
+     SUBDIR += py-uv
      SUBDIR += py-vcversioner
      SUBDIR += py-vcversioner,python3
      SUBDIR += py-virtualenv
