@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2016/03/20 19:57:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2017/05/12 20:00:43 benoit Exp $
 
 COMMENT =	read, write, and edit vCard address books
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	Text-vCard-3.07
+DISTNAME =	Text-vCard-3.09
 CATEGORIES =	textproc
 
 # Perl
