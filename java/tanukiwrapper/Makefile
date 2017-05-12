@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2017/04/21 13:27:46 kurt Exp $
+# $OpenBSD: Makefile,v 1.9 2017/05/12 15:11:17 espie Exp $
 
 COMMENT=	Tanuki Java Service Wrapper
 
@@ -37,7 +37,7 @@ LIB_DEPENDS=	converters/libiconv
 
 USE_GMAKE=	Yes
 
-WRKDIST=	${WRKDIR}/${DISTNAME}/wrapper/
+WRKDIST=	${WRKDIR}/${DISTNAME}/wrapper
 
 SUBST_VARS+=	CC CFLAGS
 

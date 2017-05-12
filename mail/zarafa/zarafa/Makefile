@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.203 2017/04/10 11:46:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.204 2017/05/12 15:11:18 espie Exp $
 
 COMMENT-main=	MS Exchange groupware suite replacement
 COMMENT-mapi=	zarafa MAPI extensions for PHP
@@ -141,7 +141,7 @@ SUB_SCRIPTS=	createcompany.d/00createpublic groups_common.sh \
 		createuser.d/00createstore companies_common.sh \
 		users_common.sh
 
-WRKDIST=	${WRKDIR}/zcp-${V}.${BUILD}/
+WRKDIST=	${WRKDIR}/zcp-${V}.${BUILD}
 
 post-patch:
 	ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python

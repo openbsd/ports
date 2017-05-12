@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2016/02/23 14:09:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2017/05/12 15:11:18 espie Exp $
 
 COMMENT =		C library implementing server and client side
 # XXX if updating, check the number in the MASTER_SITES path
@@ -22,7 +22,7 @@ WANTLIB += crypto pthread ssl z
 
 MODULES =		devel/cmake
 
-WRKBUILD =		${WRKDIST}/build/
+WRKBUILD =		${WRKDIST}/build
 
 BUILD_DEPENDS =		devel/cmocka \
 			devel/argp-standalone

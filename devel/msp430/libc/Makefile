@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2012/07/06 16:41:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2017/05/12 15:11:17 espie Exp $
 
 COMMENT=		libc for ${TARGET}
 
@@ -14,7 +14,7 @@ BUILD_DEPENDS=		${RUN_DEPENDS}
 
 MAKE_ENV=		PREFIX=${PREFIX}
 
-WRKSRC= 		${WRKDIST}/src/
+WRKSRC= 		${WRKDIST}/src
 
 SEPARATE_BUILD= 	No
 

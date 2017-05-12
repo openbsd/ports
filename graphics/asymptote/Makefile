@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2017/05/04 11:13:52 edd Exp $
+# $OpenBSD: Makefile,v 1.27 2017/05/12 15:11:17 espie Exp $
 
 COMMENT=		powerful descriptive vector graphics language
 BROKEN-hppa=		ghostscript segfaults during build
@@ -56,7 +56,7 @@ PORTHOME=		${WRKDIR}
 
 MODPY_ADJ_FILES=	GUI/*.py
 
-WRKDIST=		${WRKDIR}/${DISTNAME:S/.src//g}/
+WRKDIST=		${WRKDIR}/${DISTNAME:S/.src//g}
 
 post-install:
 	mv ${PREFIX}/man/man1/xasy.1x ${PREFIX}/man/man1/xasy.1

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2017/04/10 11:45:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2017/05/12 15:11:17 espie Exp $
 
 BROKEN-alpha =	relocation truncated to fit: GPRELHIGH against symbol default_target_hard_regs
 
@@ -46,7 +46,7 @@ SEPARATE_BUILD =	Yes
 
 SUBST_VARS +=		DESTDIR GCC_V
 
-WRKSRC =		${WRKDIR}/sources/tools/
+WRKSRC =		${WRKDIR}/sources/tools
 
 post-extract:
 .for c in dejagnu intl itcl tcl tk
