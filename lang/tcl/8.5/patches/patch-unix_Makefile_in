@@ -1,4 +1,4 @@
-$OpenBSD: patch-unix_Makefile_in,v 1.14 2014/10/21 05:08:14 stu Exp $
+$OpenBSD: patch-unix_Makefile_in,v 1.15 2017/05/12 21:44:33 stu Exp $
 --- unix/Makefile.in.orig	Wed Jul 23 09:03:24 2014
 +++ unix/Makefile.in	Sun Aug 17 15:22:06 2014
 @@ -565,6 +565,10 @@ ${STUB_LIB_FILE}: ${STUB_LIB_OBJS}
@@ -56,9 +56,9 @@ $OpenBSD: patch-unix_Makefile_in,v 1.14 2014/10/21 05:08:14 stu Exp $
 -	@$(INSTALL_DATA) $(TOP_DIR)/library/tcltest/tcltest.tcl "$(SCRIPT_INSTALL_DIR)"/../tcl8/8.5/tcltest-2.3.8.tm;
 +	@$(INSTALL_DATA) $(TOP_DIR)/library/tcltest/tcltest.tcl "$(SCRIPT_INSTALL_DIR)"/modules/tcltest-2.3.8.tm;
  
- 	@echo "Installing package platform 1.0.13 as a Tcl Module";
--	@$(INSTALL_DATA) $(TOP_DIR)/library/platform/platform.tcl "$(SCRIPT_INSTALL_DIR)"/../tcl8/8.4/platform-1.0.13.tm;
-+	@$(INSTALL_DATA) $(TOP_DIR)/library/platform/platform.tcl "$(SCRIPT_INSTALL_DIR)"/modules/platform-1.0.13.tm;
+ 	@echo "Installing package platform 1.0.14 as a Tcl Module";
+-	@$(INSTALL_DATA) $(TOP_DIR)/library/platform/platform.tcl "$(SCRIPT_INSTALL_DIR)"/../tcl8/8.4/platform-1.0.14.tm;
++	@$(INSTALL_DATA) $(TOP_DIR)/library/platform/platform.tcl "$(SCRIPT_INSTALL_DIR)"/modules/platform-1.0.14.tm;
  	@echo "Installing package platform::shell 1.1.4 as a Tcl Module";
 -	@$(INSTALL_DATA) $(TOP_DIR)/library/platform/shell.tcl "$(SCRIPT_INSTALL_DIR)"/../tcl8/8.4/platform/shell-1.1.4.tm;
 +	@$(INSTALL_DATA) $(TOP_DIR)/library/platform/shell.tcl "$(SCRIPT_INSTALL_DIR)"/modules/platform/shell-1.1.4.tm;
