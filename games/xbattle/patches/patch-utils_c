@@ -1,9 +1,30 @@
-$OpenBSD: patch-utils_c,v 1.1 2016/09/10 13:03:41 ajacoutot Exp $
---- utils.c.orig	Sat Sep 10 11:21:10 2016
-+++ utils.c	Sat Sep 10 11:21:28 2016
-@@ -1,4 +1,5 @@
+$OpenBSD: patch-utils_c,v 1.2 2017/05/12 21:25:00 espie Exp $
+Index: utils.c
+--- utils.c.orig
++++ utils.c
+@@ -1,4 +1,6 @@
  #include <stdio.h>
 +#include <string.h> /* strlen */
++#include <stdlib.h>
  
  #include "constant.h"
    
+@@ -62,8 +64,10 @@ match_color (red, green, blue)
+   return <default_hue>.
+ ******************************************************************************/
+ 
++int
+ match_color_name (color_name, default_hue)
+   char *color_name;
++  int default_hue;
+ {
+   int hue;
+ 
+@@ -85,6 +89,7 @@ match_color_name (color_name, default_hue)
+   strncmp (line, word, strlen(word)).
+ ******************************************************************************/
+ 
++int
+ matchstr (line, word)
+   char line[],
+        word[];

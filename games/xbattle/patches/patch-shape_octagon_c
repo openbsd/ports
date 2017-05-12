@@ -1,0 +1,53 @@
+$OpenBSD: patch-shape_octagon_c,v 1.1 2017/05/12 21:25:00 espie Exp $
+
+Index: shape_octagon.c
+--- shape_octagon.c.orig
++++ shape_octagon.c
+@@ -28,6 +28,7 @@
+   method.
+ ******************************************************************************/
+ 
++void
+ octagon_set_dimensions (shape, cell_size, side)
+   shape_type *shape;
+   int cell_size,
+@@ -138,6 +139,7 @@ octagon_set_dimensions (shape, cell_size, side)
+   Things get kind of messy.
+ ******************************************************************************/
+ 
++void
+ octagon_set_center (cell, shape1, shape2, side)
+   cell_type *cell;
+   shape_type *shape1,
+@@ -199,6 +201,7 @@ octagon_set_center (cell, shape1, shape2, side)
+   is used for horizon determination for both shapes.
+ ******************************************************************************/
+ 
++void
+ octagon_set_horizons (shape1, shape2)
+   shape_type *shape1,
+              *shape2;
+@@ -219,6 +222,7 @@ octagon_set_horizons (shape1, shape2)
+   Set the intercell pointers for the given tiling.
+ ******************************************************************************/
+ 
++void
+ octagon_set_connections ()
+ {
+   int i, j;
+@@ -342,6 +346,7 @@ octagon_set_connections ()
+  		|__|_____|_______|
+ ******************************************************************************/
+ 
++void
+ octagon_set_selects (shape1, shape2, select, side)
+   shape_type *shape1,
+              *shape2;
+@@ -486,6 +491,7 @@ octagon_set_selects (shape1, shape2, select, side)
+   determined by the octagonal cell <shape1>.
+ ******************************************************************************/
+ 
++void
+ octagon_set_square_troops (shape1, shape2)
+   shape_type *shape1,
+              *shape2;

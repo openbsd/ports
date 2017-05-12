@@ -1,0 +1,125 @@
+$OpenBSD: patch-update_c,v 1.1 2017/05/12 21:25:00 espie Exp $
+
+Index: update.c
+--- update.c.orig
++++ update.c
+@@ -15,6 +15,15 @@
+ 
+ #include "extern.h"
+ 
++void update_board_march(void);
++void update_cell_growth(cell_type *);
++void update_cell_manage(cell_type *);
++void update_cell(cell_type *, cell_type *);
++void update_cell_decay(cell_type *);
++void update_cell_erode(cell_type *);
++void update_cell_fight(cell_type *);
++
++
+ /******************************************************************************
+   update_board ()
+ 
+@@ -23,6 +32,7 @@
+   determined at the beginning of each update cycle.
+ ******************************************************************************/
+ 
++void
+ update_board ()
+ {
+   int i, j, k, l,
+@@ -193,6 +203,7 @@ update_board ()
+   the first to the second.
+ ******************************************************************************/
+ 
++void
+ update_cell (cell1, cell2)
+   cell_type *cell1,
+               *cell2;
+@@ -332,6 +343,7 @@ update_cell (cell1, cell2)
+   can happen when OPTION_MANAGE is set. 
+ ******************************************************************************/
+ 
++void
+ update_cell_manage (cell)    
+   cell_type *cell;
+ {
+@@ -476,6 +488,7 @@ update_cell_manage (cell)    
+   Compute the troop growth of <cell> and update the cell accordingly.
+ ******************************************************************************/
+ 
++void
+ update_cell_growth (cell)
+   cell_type *cell;
+ {
+@@ -533,6 +546,7 @@ update_cell_growth (cell)
+   Compute the troop decay of <cell> and update the cell accordingly.
+ ******************************************************************************/
+ 
++void
+ update_cell_decay (cell)
+   cell_type *cell;
+ {
+@@ -573,6 +587,7 @@ update_cell_decay (cell)
+   given by <Config->value_int[OPTION_ERODE]>.
+ ******************************************************************************/
+ 
++void
+ update_cell_erode (cell)
+   cell_type *cell;
+ {
+@@ -606,6 +621,7 @@ update_cell_erode (cell)
+   relative strengths of the troops.
+ ******************************************************************************/
+ 
++void
+ update_cell_fight (cell)
+   cell_type *cell;
+ {
+@@ -767,6 +783,7 @@ update_cell_fight (cell)
+   Updates the marching cells across the whole board.
+ ******************************************************************************/
+ 
++void
+ update_board_march ()
+ {
+   int i, j,
+@@ -931,6 +948,7 @@ update_board_march ()
+   being used by that side.
+ ******************************************************************************/
+ 
++int
+ is_visible (cell, active_side)
+   cell_type *cell;
+   int active_side;
+@@ -1011,6 +1029,7 @@ is_visible (cell, active_side)
+   checked for necessary redrawing) during the next update cycle.
+ ******************************************************************************/
+ 
++void
+ update_cell_horizon (base_cell, current_side)
+   cell_type *base_cell;
+   int current_side;
+@@ -1139,6 +1158,7 @@ update_cell_horizon (base_cell, current_side)
+   Reinitializes certain key elements of <cell> after catastrophic event.
+ ******************************************************************************/
+ 
++void
+ update_cell_clean (cell)
+   cell_type *cell;
+ {
+@@ -1219,6 +1239,7 @@ set_move_off (cell, dir, count)
+   differences in cell shapes if <factor>.
+ ******************************************************************************/
+ 
++void
+ set_move (cell, dir, factor)
+   cell_type *cell;
+   int dir[MAX_DIRECTIONS],
+@@ -1288,6 +1309,7 @@ set_move (cell, dir, factor)
+   for differences in cell shapes if <factor>.
+ ******************************************************************************/
+ 
++void
+ set_move_force (cell, dir, factor)
+   cell_type *cell;
+   int dir[MAX_DIRECTIONS],

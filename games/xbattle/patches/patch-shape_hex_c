@@ -1,0 +1,45 @@
+$OpenBSD: patch-shape_hex_c,v 1.1 2017/05/12 21:25:00 espie Exp $
+
+Index: shape_hex.c
+--- shape_hex.c.orig
++++ shape_hex.c
+@@ -21,6 +21,7 @@
+   method.
+ ******************************************************************************/
+ 
++void
+ hex_set_dimensions (shape, cell_size, side)
+   shape_type *shape;
+   int cell_size,
+@@ -124,6 +125,7 @@ hex_set_dimensions (shape, cell_size, side)
+   account any row- and column-based shifts.
+ ******************************************************************************/
+ 
++void
+ hex_set_center (cell, shape, side)  
+   cell_type *cell;
+   shape_type *shape;
+@@ -145,6 +147,7 @@ hex_set_center (cell, shape, side)  
+   Set the even and odd horizon arrays for <shape>.
+ ******************************************************************************/
+ 
++void
+ hex_set_horizons (shape)
+   shape_type *shape;
+ {
+@@ -235,6 +238,7 @@ hex_set_horizons (shape)
+   Set the intercell pointers for the given tiling.
+ ******************************************************************************/
+ 
++void
+ hex_set_connections ()
+ {
+   int i, j,
+@@ -404,6 +408,7 @@ hex_set_connections ()
+ 		|__\______/________|
+ ******************************************************************************/
+ 
++void
+ hex_set_selects (shape, select, side) 
+   shape_type *shape;
+   select_type *select;

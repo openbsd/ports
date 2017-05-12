@@ -1,0 +1,223 @@
+$OpenBSD: patch-parse_c,v 1.1 2017/05/12 21:25:00 espie Exp $
+
+Index: parse.c
+--- parse.c.orig
++++ parse.c
+@@ -2,6 +2,8 @@
+ #include <stdlib.h>
+ #include <string.h>
+ #include <ctype.h>
++#include <unistd.h>
++#include <time.h>
+ 
+ #include "constant.h"
+ #include "options.h"
+@@ -21,6 +23,29 @@
+ #include "parse.h"
+ 
+ 
++void check_options(int, char *[], int);
++int load_command_line(int, char *[], char *[]);
++void preload_options(int, char *[]);
++void parse_options(int, char *[]);
++void clean_options(void);
++int find_option(char *);
++int find_load_filename(char *, char *);
++int find_color_match(char *, char *, int);
++int find_parameter_count(int, char *[], int);
++void set_int_array(int *, int, int);
++void set_uchar_array(unsigned char *, int, int);
++void set_double_array(double *, double, int);
++int copy_first(char *, char *);
++void set_move_parameters(void);
++void set_palette(short[][3], int, int);
++
++int load_color(char *, int, int, int);
++void load_color_inverse(char *, char *);
++int load_stipple(char *, char *[]);
++void install_option(int, char *[], int, int, int);
++void print_usage_message(void);
++
++
+ /******************************************************************************
+   load_options (argc, argv)
+ 
+@@ -28,6 +53,7 @@
+   variables for later use.
+ ******************************************************************************/
+ 
++void
+ load_options (argc, argv)
+   int argc;
+   char *argv[];
+@@ -61,6 +87,7 @@ load_options (argc, argv)
+   treated as such (basically just makes sure parameter counts match).
+ ******************************************************************************/
+ 
++void
+ check_options (argc, argv, ignore_colors)
+   int argc,
+       ignore_colors;
+@@ -215,6 +242,7 @@ check_options (argc, argv, ignore_colors)
+   default and option files inline.  Return the new number of arguments.
+ ******************************************************************************/
+ 
++int
+ load_command_line (argc, argv, command_line)
+   int argc;
+   char *argv[],
+@@ -357,6 +385,7 @@ load_command_line (argc, argv, command_line)
+   preloaded so that they are not flagged as illegal options when used.
+ ******************************************************************************/
+ 
++void
+ preload_options (argc, argv)
+   int argc;
+   char *argv[];
+@@ -434,6 +463,7 @@ preload_options (argc, argv)
+   expanded, parse the options and assign player sides.
+ ******************************************************************************/
+ 
++void
+ parse_options (argc, argv)
+   int argc;
+   char *argv[];
+@@ -666,6 +696,7 @@ parse_options (argc, argv)
+   else it is installed to just <side>.
+ ******************************************************************************/
+ 
++void
+ install_option (option_index, argv, parameter_count, side, is_enabled)
+   int option_index,
+       parameter_count,
+@@ -893,6 +924,7 @@ install_option (option_index, argv, parameter_count, s
+   before all other options were installed.
+ ******************************************************************************/
+ 
++void
+ clean_options ()
+ {
+   int i,
+@@ -1090,7 +1122,7 @@ clean_options ()
+         throw_error ("Cannot open map file %s", Config->file_map);
+     }
+ 
+-    load_board_header (Config->file_map);
++    load_board_header ();
+   }
+   else
+   {
+@@ -1167,6 +1199,7 @@ clean_options ()
+   load on update_slope().
+ ******************************************************************************/
+ 
++void
+ set_move_parameters ()
+ {
+   int side,
+@@ -1227,6 +1260,7 @@ set_move_parameters ()
+   of the palette if there isn't a valid top entry already.
+ ******************************************************************************/
+ 
++void
+ set_palette (palette, count, max_count)
+   short palette[][3],
+       count,
+@@ -1299,6 +1333,7 @@ set_palette (palette, count, max_count)
+   explicit assignments.
+ ******************************************************************************/
+ 
++void
+ init_defaults ()
+ {
+   int i, j;
+@@ -1414,6 +1449,7 @@ init_defaults ()
+   plus OPTION_COUNT if there is a negation match.
+ ******************************************************************************/
+ 
++int
+ find_option (option)
+   char *option;
+ {
+@@ -1486,8 +1522,7 @@ find_load_filename (option, filename)
+        *filename;
+ {
+   int i;
+-  char *suffix,
+-       *strstr();
++  char *suffix;
+   FILE *fp;
+ 
+   strcpy (filename, &option[1]);
+@@ -1517,6 +1552,7 @@ find_load_filename (option, filename)
+   before the "_" (ie, "red_black" becomes "red").
+ ******************************************************************************/
+ 
++int
+ find_color_match (option, color_name, use_second_color)
+   char *option,
+        *color_name;
+@@ -1588,6 +1624,7 @@ find_color_match (option, color_name, use_second_color
+   Load custom color from option list into global <Config->hue_name>.
+ ******************************************************************************/
+ 
++int
+ load_color (hue_name, red, green, blue)
+   char *hue_name;
+   int red, green, blue;
+@@ -1637,6 +1674,7 @@ load_color (hue_name, red, green, blue)
+   both colors can be found in palette.
+ ******************************************************************************/
+ 
++void
+ load_color_inverse (hue_name, inverse_hue_name)
+   char *hue_name,
+        *inverse_hue_name;
+@@ -1671,6 +1709,7 @@ load_color_inverse (hue_name, inverse_hue_name)
+   load_stipple (hue_name, stipples)
+ 
+ ******************************************************************************/
++int
+ load_stipple (hue_name, stipples)
+   char *hue_name;
+   char *stipples[];
+@@ -1718,6 +1757,7 @@ load_stipple (hue_name, stipples)
+   Print the xbattle usage message (in global <Usage[]>) to stdout
+ ******************************************************************************/
+ 
++void
+ print_usage_message ()
+ {
+   int i;
+@@ -1737,6 +1777,7 @@ print_usage_message ()
+   the length of the entry.
+ ******************************************************************************/
+ 
++int
+ copy_first (dest, src)
+   char *dest,
+        *src;
+@@ -1786,6 +1827,7 @@ strip_first (src)
+   Fill <array[]> with <value> if <index> < 0, else just set <array[index]>
+ ******************************************************************************/
+ 
++void
+ set_double_array (array, value, index)
+   double *array,
+          value;
+@@ -1810,6 +1852,7 @@ set_double_array (array, value, index)
+   Fill <array[]> with <value> if <index> < 0, else just set <array[index]>
+ ******************************************************************************/
+ 
++void
+ set_int_array (array, value, index)
+   int *array,
+        value;
+@@ -1834,6 +1877,7 @@ set_int_array (array, value, index)
+   Fill <array[]> with <value> if <index> < 0, else just set <array[index]>
+ ******************************************************************************/
+ 
++void
+ set_uchar_array (array, value, index)
+   unsigned char *array,
+                 value;

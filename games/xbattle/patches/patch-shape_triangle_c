@@ -1,0 +1,45 @@
+$OpenBSD: patch-shape_triangle_c,v 1.1 2017/05/12 21:25:00 espie Exp $
+
+Index: shape_triangle.c
+--- shape_triangle.c.orig
++++ shape_triangle.c
+@@ -21,6 +21,7 @@
+   method.  If <point_up>, triangle should ... point up.
+ ******************************************************************************/
+ 
++void
+ triangle_set_dimensions (shape, cell_size, side, point_up)
+   shape_type *shape;
+   int cell_size,
+@@ -148,6 +149,7 @@ triangle_set_dimensions (shape, cell_size, side, point
+   <shape2>, taking into account any row- and column-based shifts.
+ ******************************************************************************/
+ 
++void
+ triangle_set_center (cell, shape1, shape2, side)
+   cell_type *cell;
+   shape_type *shape1, *shape2;
+@@ -177,6 +179,7 @@ triangle_set_center (cell, shape1, shape2, side)
+   points up, else it points down.
+ ******************************************************************************/
+ 
++void
+ triangle_set_horizons (shape, point_up)
+   shape_type *shape;
+   int point_up;
+@@ -246,6 +249,7 @@ triangle_set_horizons (shape, point_up)
+   Set the intercell pointers for the given tiling.
+ ******************************************************************************/
+ 
++void
+ triangle_set_connections ()
+ {
+   int i, j;
+@@ -363,6 +367,7 @@ triangle_set_connections ()
+ 		|___\/___|
+ ******************************************************************************/
+ 
++void
+ triangle_set_selects (shape, select, side)
+   shape_type *shape;
+   select_type *select;

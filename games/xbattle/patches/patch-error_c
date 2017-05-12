@@ -1,9 +1,66 @@
-$OpenBSD: patch-error_c,v 1.1 2016/09/10 13:03:41 ajacoutot Exp $
---- error.c.orig	Sat Sep 10 11:15:10 2016
-+++ error.c	Sat Sep 10 11:15:38 2016
+$OpenBSD: patch-error_c,v 1.2 2017/05/12 21:25:00 espie Exp $
+Index: error.c
+--- error.c.orig
++++ error.c
 @@ -1,4 +1,5 @@
  #include <stdio.h>
 +#include <stdlib.h> /* exit */
  
  #include "constant.h"
    
+@@ -15,6 +16,7 @@
+ 
+ #include "extern.h"
+ 
++void throw_message(char *, char *, char *);
+ 
+ /******************************************************************************
+   my_error_handler (my_display, my_error)
+@@ -23,6 +25,7 @@
+   they cause the game to dump the current board state, then exit gracefully.
+ ******************************************************************************/
+ 
++void
+ my_error_handler (my_display, my_error)
+   Display *my_display;
+   XErrorEvent *my_error;
+@@ -51,6 +54,7 @@ my_error_handler (my_display, my_error)
+   removes that player from the game.  Failing that, dumps the board.
+ ******************************************************************************/
+ 
++void
+ my_io_error_handler (my_display)
+   Display *my_display;
+ {
+@@ -121,6 +125,7 @@ my_io_error_handler (my_display)
+   <parameter_string> and exit the program.
+ ******************************************************************************/
+ 
++void
+ throw_error (control_string, parameter_string)
+   char *control_string,
+        *parameter_string;
+@@ -138,6 +143,7 @@ throw_error (control_string, parameter_string)
+   <parameter_string>.
+ ******************************************************************************/
+ 
++void
+ throw_warning (control_string, parameter_string)
+   char *control_string,
+        *parameter_string;
+@@ -154,6 +160,7 @@ throw_warning (control_string, parameter_string)
+   <control_string> with argument <parameter_string>.
+ ******************************************************************************/
+ 
++void
+ throw_message (type_string, control_string, parameter_string)
+   char *type_string,
+        *control_string,
+@@ -170,6 +177,6 @@ throw_message (type_string, control_string, parameter_
+     sprintf (full_string, temp_string, parameter_string);
+   }
+ 
+-  fprintf (stderr, full_string);
++  fprintf (stderr, "%s", full_string);
+   fflush (stderr);
+ }

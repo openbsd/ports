@@ -1,0 +1,45 @@
+$OpenBSD: patch-shape_diamond_c,v 1.1 2017/05/12 21:25:00 espie Exp $
+
+Index: shape_diamond.c
+--- shape_diamond.c.orig
++++ shape_diamond.c
+@@ -21,6 +21,7 @@
+   method.
+ ******************************************************************************/
+ 
++void
+ diamond_set_dimensions (shape, cell_size, side)
+   shape_type *shape;
+   int cell_size,
+@@ -114,6 +115,7 @@ diamond_set_dimensions (shape, cell_size, side)
+   account any row- and column-based shifts.
+ ******************************************************************************/
+ 
++void
+ diamond_set_center (cell, shape, side)
+   cell_type *cell;
+   shape_type *shape;
+@@ -134,6 +136,7 @@ diamond_set_center (cell, shape, side)
+   Set the even and odd horizon arrays for <shape>.
+ ******************************************************************************/
+ 
++void
+ diamond_set_horizons (shape)
+   shape_type *shape;
+ {
+@@ -230,6 +233,7 @@ diamond_set_horizons (shape)
+   Set the intercell pointers for the given tiling.
+ ******************************************************************************/
+ 
++void
+ diamond_set_connections ()
+ {
+   int i, j,
+@@ -368,6 +372,7 @@ diamond_set_connections ()
+ 		|__\/__|
+ ******************************************************************************/
+ 
++void
+ diamond_set_selects (shape, select, side)
+   shape_type *shape;
+   select_type *select;

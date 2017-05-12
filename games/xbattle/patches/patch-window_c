@@ -1,6 +1,7 @@
-$OpenBSD: patch-window_c,v 1.1 2016/09/10 13:03:41 ajacoutot Exp $
---- window.c.orig	Sat Sep 10 11:21:37 2016
-+++ window.c	Sat Sep 10 11:22:02 2016
+$OpenBSD: patch-window_c,v 1.2 2017/05/12 21:25:00 espie Exp $
+Index: window.c
+--- window.c.orig
++++ window.c
 @@ -1,4 +1,6 @@
  #include <stdio.h>
 +#include <stdlib.h> /* malloc */
@@ -8,3 +9,54 @@ $OpenBSD: patch-window_c,v 1.1 2016/09/10 13:03:41 ajacoutot Exp $
  
  #include "constant.h"
    
+@@ -13,6 +15,10 @@
+ 
+ #define	SEA_VALUE_MAX		0.95
+ 
++void create_xwindow(xwindow_type *, char *, char *, int);
++void init_stipple(Display *, Window, Pixmap []);
++void init_terrain_pixmaps(xwindow_type *, shape_type *, GC, GC, int);
++
+ /******************************************************************************
+   open_xwindow (xwindow, hue_title, bw_title)
+ 
+@@ -22,6 +28,7 @@
+   setting up colors, cell drawings, stipples, and so on.
+ ******************************************************************************/
+ 
++void
+ open_xwindow (xwindow, hue_title, bw_title)
+   xwindow_type *xwindow;
+   char *hue_title,
+@@ -696,6 +703,7 @@ open_xwindow (xwindow, hue_title, bw_title)
+   Perform the actual window creation as specfied by <xwindow>.
+ ******************************************************************************/
+ 
++void
+ create_xwindow (xwindow, hue_title, bw_title, current_side)
+   xwindow_type *xwindow;
+   char *hue_title,
+@@ -880,6 +888,7 @@ create_xwindow (xwindow, hue_title, bw_title, current_
+   Gracefully close a window.
+ ******************************************************************************/
+ 
++void
+ close_xwindow (xwindow)
+   xwindow_type *xwindow;
+ {
+@@ -895,6 +904,7 @@ close_xwindow (xwindow)
+   Create the stipple patterns which are used on b&w displays.
+ ******************************************************************************/
+ 
++void
+ init_stipple (display, window, stipple)
+   Display *display;
+   Window window;
+@@ -920,6 +930,7 @@ init_stipple (display, window, stipple)
+   with <gc_on> and <gc_off> providing the GCs for on and off bits respectively.
+ ******************************************************************************/
+ 
++void
+ init_terrain_pixmaps (xwindow, shape, gc_on, gc_off, index)
+   xwindow_type *xwindow;
+   shape_type *shape;

@@ -1,6 +1,7 @@
-$OpenBSD: patch-main_c,v 1.1 2016/09/10 13:03:41 ajacoutot Exp $
---- main.c.orig	Sat Sep 10 11:20:08 2016
-+++ main.c	Sat Sep 10 11:20:29 2016
+$OpenBSD: patch-main_c,v 1.2 2017/05/12 21:25:00 espie Exp $
+Index: main.c
+--- main.c.orig
++++ main.c
 @@ -1,4 +1,6 @@
  #include <stdio.h>
 +#include <stdlib.h> /* exit */
@@ -8,3 +9,71 @@ $OpenBSD: patch-main_c,v 1.1 2016/09/10 13:03:41 ajacoutot Exp $
    
  /**** x include files ****/
  #include <X11/Xlib.h>
+@@ -20,6 +22,9 @@
+ 
+ #include "keyboard.h"
+ 
++void set_windows(void);
++void run_unix_loop(void);
++void process_event(XEvent, int);
+ 
+ /******************************************************************************
+   main (argc,argv)
+@@ -27,6 +32,7 @@
+   Orchestrates the whole shebang.
+ ******************************************************************************/
+ 
++int
+ main (argc,argv)
+   int argc;
+   char *argv[];
+@@ -84,6 +90,7 @@ main (argc,argv)
+   using several important timing functions and error recovery schemes.
+ ******************************************************************************/
+ 
++void
+ run_unix_loop ()
+ {
+   int player,
+@@ -323,6 +330,7 @@ run_generic_loop ()
+   Handles each <event> from <player>, regardless of type.
+ ******************************************************************************/
+ 
++void
+ process_event (event, player)
+   XEvent event;
+   int player;
+@@ -1070,6 +1078,7 @@ get_cell (win_x, win_y, dir, side, shift)
+   variables and actually opening the associate windows.
+ ******************************************************************************/
+ 
++void
+ set_windows ()
+ {
+   int i,
+@@ -1173,6 +1182,7 @@ set_windows ()
+   the system know not to send any more drawing commands to this display.
+ ******************************************************************************/
+ 
++void
+ remove_player (current_player)
+   int current_player;
+ {
+@@ -1192,7 +1202,7 @@ remove_player (current_player)
+ #endif
+ 
+   if (XWindow[current_player]->open == FALSE)
+-    return (-1);
++    return;
+ 
+   /** Flush the remainder of the player's events **/
+ 
+@@ -1266,7 +1276,7 @@ remove_player (current_player)
+     /** Else there are still players, show quit message on displays **/
+ 
+     side = Config->player_to_side[current_player];
+-    sprintf (line, "%s has quit the game", Config->side_to_hue_name[side]);
++    snprintf (line, sizeof line, "%s has quit the game", Config->side_to_hue_name[side]);
+     draw_message (line, strlen(line), side, current_player);
+ 
+     /** Ring bells of remaining players **/

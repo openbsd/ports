@@ -1,0 +1,45 @@
+$OpenBSD: patch-shape_square_c,v 1.1 2017/05/12 21:25:00 espie Exp $
+
+Index: shape_square.c
+--- shape_square.c.orig
++++ shape_square.c
+@@ -19,6 +19,7 @@
+   method.
+ ******************************************************************************/
+ 
++void
+ square_set_dimensions (shape, cell_size, side, use_circle)
+   shape_type *shape;
+   int cell_size,
+@@ -142,6 +143,7 @@ square_set_dimensions (shape, cell_size, side, use_cir
+   account any row- and column-based shifts.
+ ******************************************************************************/
+ 
++void
+ square_set_center (cell, shape, side)
+   cell_type *cell;
+   shape_type *shape;
+@@ -167,6 +169,7 @@ square_set_center (cell, shape, side)
+   Set the even and odd horizon arrays for <shape>.
+ ******************************************************************************/
+ 
++void
+ square_set_horizons (shape)
+   shape_type *shape;
+ {
+@@ -216,6 +219,7 @@ square_set_horizons (shape)
+   Set the intercell pointers for the given tiling.
+ ******************************************************************************/
+ 
++void
+ square_set_connections ()
+ {
+   int i, j;
+@@ -277,6 +281,7 @@ square_set_connections ()
+   A trivial operation for square tiling.
+ ******************************************************************************/
+ 
++void
+ square_set_selects (shape, select, side)
+   shape_type *shape;
+   select_type *select;

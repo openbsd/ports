@@ -1,9 +1,125 @@
-$OpenBSD: patch-init_c,v 1.1 2016/09/10 13:03:41 ajacoutot Exp $
---- init.c.orig	Sat Sep 10 11:19:36 2016
-+++ init.c	Sat Sep 10 11:19:58 2016
+$OpenBSD: patch-init_c,v 1.2 2017/05/12 21:25:00 espie Exp $
+Index: init.c
+--- init.c.orig
++++ init.c
 @@ -1,4 +1,5 @@
  #include <stdio.h>
 +#include <stdlib.h> /* exit, malloc */
  #include <math.h>
  
  #include "constant.h"
+@@ -16,6 +17,14 @@
+ 
+ #include "extern.h"
+ 
++void init_terrain(void);
++void init_farms(void);
++void init_bases_or_armies(int);
++void init_rbases(void);
++void init_militia(int);
++void init_unseen(void);
++void init_towns(void);
++void init_single_cell(cell_type *, int, int, int);
+ 
+ /******************************************************************************
+   init_board ()
+@@ -23,6 +32,7 @@
+   Create the game board and initialize each cell of the board.
+ ******************************************************************************/
+ 
++void
+ init_board ()
+ {
+   int i, j, k,
+@@ -61,16 +71,16 @@ init_board ()
+       Board->cells[j][i] = cell;
+       Board->list[Board->cell_count++] = cell;
+ 
+-      cell->dir =	(s_char *)(malloc(sizeof(s_char)*(Config->direction_count)));
+-      cell->value =	(s_char *)(malloc(sizeof(s_char)*(Config->side_count)));
+-      cell->march =	(s_char *)(malloc(sizeof(s_char)*(Config->side_count)));
+-      cell->march_type =(s_char *)(malloc(sizeof(s_char)*(Config->side_count)));
+-      cell->march_dir =	(s_char *)(malloc(sizeof(s_char)*(Config->side_count)));
+-      cell->seen =	(s_char *)(malloc(sizeof(s_char)*(Config->side_count)));
+-      cell->draw_level = (s_char *)(malloc(sizeof(s_char)*(Config->side_count)));
++      cell->dir =	calloc(sizeof(s_char), Config->direction_count);
++      cell->value =	calloc(sizeof(s_char), Config->side_count);
++      cell->march =	calloc(sizeof(s_char), Config->side_count);
++      cell->march_type =calloc(sizeof(s_char), Config->side_count);
++      cell->march_dir =	calloc(sizeof(s_char), Config->side_count);
++      cell->seen =	calloc(sizeof(s_char), Config->side_count);
++      cell->draw_level = calloc(sizeof(s_char), Config->side_count);
+ 
+-      cell->x_center =	(short *)(malloc(sizeof(short)*(Config->side_count)));
+-      cell->y_center =	(short *)(malloc(sizeof(short)*(Config->side_count)));
++      cell->x_center =	calloc(sizeof(short), Config->side_count);
++      cell->y_center =	calloc(sizeof(short), Config->side_count);
+     }
+ 
+   /** Initialize each cell's values **/
+@@ -182,6 +192,7 @@ init_board ()
+   If using any type of map-as-you-go option set, render all cells unseen.
+ ******************************************************************************/
+ 
++void
+ init_unseen ()
+ {
+   int i,
+@@ -207,6 +218,7 @@ init_unseen ()
+   analogous trough algorithm tacked on.
+ ******************************************************************************/
+ 
++void
+ init_terrain ()
+ {
+   int i, j, k,
+@@ -381,6 +393,7 @@ init_terrain ()
+   Initialize troop producing towns randomly across the game board.
+ ******************************************************************************/
+ 
++void
+ init_towns ()
+ {
+   int i;
+@@ -407,6 +420,7 @@ init_towns ()
+   Initialize troop producing farms uniformly across the game board.
+ ******************************************************************************/
+ 
++void
+ init_farms ()
+ {
+   int i, j;
+@@ -429,6 +443,7 @@ init_farms ()
+   be seen within the horizon.
+ ******************************************************************************/
+ 
++void
+ init_rbases ()
+ {
+   int i, j, k, x, y,
+@@ -537,7 +552,8 @@ init_rbases ()
+   tangential-circular paradigm.
+ ******************************************************************************/
+ 
+-init_bases_or_armies (option)
++void
++init_bases_or_armies (int option)
+ {
+   int side,
+       center_x, center_y,
+@@ -679,6 +695,7 @@ init_bases_or_armies (option)
+   number of troops per side if <use_normalization> is set.
+ ******************************************************************************/
+ 
++void
+ init_militia (use_normalization)
+   int use_normalization;
+ {
+@@ -818,6 +835,7 @@ init_militia (use_normalization)
+   Initialize a single cell with troops and growth factors.
+ ******************************************************************************/
+ 
++void
+ init_single_cell (cell, side, value, growth)
+   cell_type *cell;
+   int side,

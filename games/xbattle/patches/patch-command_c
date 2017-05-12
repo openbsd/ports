@@ -1,9 +1,82 @@
-$OpenBSD: patch-command_c,v 1.1 2016/09/10 13:03:41 ajacoutot Exp $
---- command.c.orig	Sat Sep 10 11:18:46 2016
-+++ command.c	Sat Sep 10 11:19:03 2016
+$OpenBSD: patch-command_c,v 1.2 2017/05/12 21:25:00 espie Exp $
+Index: command.c
+--- command.c.orig
++++ command.c
 @@ -1,4 +1,5 @@
  #include <stdio.h>
 +#include <string.h> /* strcpy */
  
  #include "constant.h"
    
+@@ -22,6 +23,7 @@
+   Given a march command, prepare <cell> appropriately.
+ ******************************************************************************/
+ 
++void
+ run_march (cell, player, side, x, y, button, tdir)
+   cell_type *cell;
+   int player, side,
+@@ -92,6 +94,7 @@ run_march (cell, player, side, x, y, button, tdir)
+   Attack given <cell> from all adjacent cells owned by <side>.
+ ******************************************************************************/
+ 
++void
+ run_attack (cell, side)
+   cell_type *cell;
+   int side;
+@@ -177,6 +180,7 @@ run_attack (cell, side)
+   Eliminate all movement vectors from <cell>.
+ ******************************************************************************/
+ 
++void
+ run_zero (cell)
+   cell_type *cell;
+ {
+@@ -196,6 +200,7 @@ run_zero (cell)
+   Lower <cell> level by one unit.
+ ******************************************************************************/
+ 
++void
+ run_dig (cell)
+   cell_type *cell;
+ {
+@@ -322,6 +327,7 @@ run_dig (cell)
+   Raise <cell> level by one unit.
+ ******************************************************************************/
+ 
++void
+ run_fill (cell)
+   cell_type *cell;
+ {
+@@ -421,6 +427,7 @@ run_fill (cell)
+   Scuttle the town/base located within <cell>.
+ ******************************************************************************/
+ 
++void
+ run_scuttle (cell)
+   cell_type *cell;
+ {
+@@ -527,6 +534,7 @@ run_scuttle (cell)
+   to create a town.
+ ******************************************************************************/
+ 
++void
+ run_build (cell, side)
+   cell_type *cell;
+   int side;
+@@ -582,6 +590,7 @@ run_build (cell, side)
+   minimum due to troop movement.
+ ******************************************************************************/
+ 
++void
+ run_reserve (cell, player, side, text)
+   cell_type *cell;
+   int player,
+@@ -629,6 +638,7 @@ run_reserve (cell, player, side, text)
+   Shoot a shell or a paratroop.
+ ******************************************************************************/
+ 
++void
+ run_shoot (cell, current_player, xpos, ypos, calculate, is_artillery)
+   cell_type *cell;
+   int current_player,

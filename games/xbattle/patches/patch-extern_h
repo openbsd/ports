@@ -1,6 +1,7 @@
-$OpenBSD: patch-extern_h,v 1.1 2016/09/10 13:03:41 ajacoutot Exp $
---- extern.h.orig	Sat Sep 10 11:13:39 2016
-+++ extern.h	Sat Sep 10 11:13:49 2016
+$OpenBSD: patch-extern_h,v 1.2 2017/05/12 21:25:00 espie Exp $
+Index: extern.h
+--- extern.h.orig
++++ extern.h
 @@ -1,4 +1,6 @@
  
 +#include <sys/select.h> /* fd_set */
@@ -8,3 +9,118 @@ $OpenBSD: patch-extern_h,v 1.1 2016/09/10 13:03:41 ajacoutot Exp $
  #include "macro.h"
  
  typedef unsigned char	n_char;
+@@ -257,4 +259,113 @@ extern xwindow_type	*XWindow[MAX_PLAYERS];
+ extern board_type	*Board;
+ extern config_info	*Config;
+ 
+-extern cell_type	*get_cell();
++/* main.c */
++extern cell_type *get_cell(int, int, int [], int, int);
++extern void remove_player(int);
++
++/* draw.c */
++extern void draw_cell(cell_type *, int, int);
++extern void draw_shell(cell_type *, int, int);
++extern void draw_chute(cell_type *, int, int);
++extern void draw_board(int, int);
++extern void draw_timer(unsigned long, int);
++extern void draw_multiple_cell(cell_type *);
++extern void draw_message(char[], int, int, int);
++
++/* update.c */
++extern int is_visible(cell_type *, int);
++extern void set_move_force(cell_type *, int [], int);
++extern void update_cell_horizon(cell_type *, int);
++extern void update_cell_clean(cell_type *);
++extern void update_board(void);
++extern void set_move(cell_type *, int [], int);
++
++/* replay.c */
++extern void store_draw_cell(cell_type *);
++extern void game_stats(void);
++extern void replay_game(void);
++extern void store_parameters(void);
++extern void load_parameters(void);
++
++/* load.c */
++extern void dump_board(char [], int);
++extern void load_board(int);
++extern void load_board_header(void);
++
++/* shape.c */
++extern void shape_initialize(void);
++extern void shape_set_draw_method(shape_type *, int, int);
++extern void shape_set_growth(shape_type *);
++extern void shape_set_troops(shape_type *);
++extern void shape_set_arrows(shape_type *, int);
++
++/* error.c */
++extern void throw_error(char *, char *);
++extern void throw_warning(char *, char *);
++
++/* utils.c */
++extern int get_random(int);
++extern int matchstr(char[], char[]);
++extern int match_color_name(char *, int);
++
++/* parse.c */
++extern void load_options(int, char *[]);
++extern void init_defaults(void);
++
++/* init.c */
++extern void init_board(void);
++
++/* edit.c */
++extern void edit_board(void);
++
++/* command.c */
++extern void run_march(cell_type *, int, int, int, int, int, int []);
++extern void run_shoot(cell_type *, int, int, int, int, int);
++extern void run_attack(cell_type *, int);
++extern void run_zero(cell_type *);
++extern void run_dig(cell_type *);
++extern void run_fill(cell_type *);
++extern void run_scuttle(cell_type *);
++extern void run_build(cell_type *, int);
++extern void run_reserve(cell_type *, int, int, char []);
++
++/* window.c */
++extern void open_xwindow(xwindow_type *, char *, char *);
++extern void close_xwindow(xwindow_type *);
++
++/* shape_hex.c */
++extern void hex_set_dimensions(shape_type *, int, int);
++extern void hex_set_center(cell_type *, shape_type *, int);
++extern void hex_set_horizons(shape_type *);
++extern void hex_set_connections(void);
++extern void hex_set_selects(shape_type *, select_type *, int);
++
++/* shape_square.c */
++extern void square_set_dimensions(shape_type *, int, int, int);
++extern void square_set_center(cell_type *, shape_type *, int);
++extern void square_set_horizons(shape_type *);
++extern void square_set_connections(void);
++extern void square_set_selects(shape_type *, select_type *, int);
++
++/* shape_octagon.c */
++extern void octagon_set_dimensions(shape_type *, int, int);
++extern void octagon_set_center(cell_type *, shape_type *, shape_type *, int);
++extern void octagon_set_horizons(shape_type *, shape_type *);
++extern void octagon_set_connections(void);
++extern void octagon_set_selects(shape_type *, shape_type *, select_type *, int);
++extern void octagon_set_square_troops(shape_type *, shape_type *);
++
++/* shape_triangle.c */
++extern void triangle_set_dimensions(shape_type *, int, int, int);
++extern void triangle_set_center(cell_type *, shape_type *, shape_type *, int);
++extern void triangle_set_horizons(shape_type *, int);
++extern void triangle_set_connections(void);
++extern void triangle_set_selects(shape_type *, select_type *, int);
++
++/* shape_diamond.c */
++extern void diamond_set_dimensions(shape_type *, int, int);
++extern void diamond_set_center(cell_type *, shape_type *, int);
++extern void diamond_set_horizons(shape_type *);
++extern void diamond_set_connections(void);
++extern void diamond_set_selects(shape_type *, select_type *, int);
++

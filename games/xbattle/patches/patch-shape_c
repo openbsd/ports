@@ -1,9 +1,84 @@
-$OpenBSD: patch-shape_c,v 1.1 2016/09/10 13:03:41 ajacoutot Exp $
---- shape.c.orig	Sat Sep 10 11:22:31 2016
-+++ shape.c	Sat Sep 10 11:22:41 2016
+$OpenBSD: patch-shape_c,v 1.2 2017/05/12 21:25:00 espie Exp $
+Index: shape.c
+--- shape.c.orig
++++ shape.c
 @@ -1,4 +1,5 @@
  #include <stdio.h>
 +#include <stdlib.h> /* malloc */
  
  #include "constant.h"
    
+@@ -10,6 +11,9 @@
+ 
+ #include "extern.h"
+ 
++void shape_set_chart(shape_type *);
++void shape_set_single_arrow(int, int, int, int, XPoint[], XPoint[]);
++void shape_set_single_march(int, int, XPoint[], XPoint[]);
+ 
+ /******************************************************************************
+   shape_initialize ()
+@@ -18,6 +22,7 @@
+   positions, connection, horizons, selection and direction charts.
+ ******************************************************************************/
+ 
++void
+ shape_initialize ()
+ {
+   int i, j,
+@@ -320,6 +325,7 @@ shape_initialize ()
+   rectangular cells).
+ ******************************************************************************/
+ 
++void
+ shape_set_draw_method (shape, side, disallow_pixmap)
+   shape_type *shape;
+   int side,
+@@ -389,6 +395,7 @@ shape_set_draw_method (shape, side, disallow_pixmap)
+   fraction of <shape->center_erase.x>.
+ ******************************************************************************/
+ 
++void
+ shape_set_growth (shape)
+   shape_type *shape;
+ {
+@@ -431,6 +438,7 @@ shape_set_growth (shape)
+   fraction of <shape->center_erase.x>.
+ ******************************************************************************/
+ 
++void
+ shape_set_troops (shape)
+   shape_type *shape;
+ {
+@@ -490,6 +498,7 @@ shape_set_troops (shape)
+   begins at <shape->angle_offset>.
+ ******************************************************************************/
+ 
++void
+ shape_set_chart (shape)
+   shape_type *shape;
+ {
+@@ -664,6 +673,7 @@ shape_set_chart (shape)
+   a regular polygon.
+ ******************************************************************************/
+ 
++void
+ shape_set_arrows (shape, offset)
+   shape_type *shape;
+   int offset;
+@@ -781,6 +791,7 @@ shape_set_arrows (shape, offset)
+   and <arrow_dester> are the coordinate arrays to be used.
+ ******************************************************************************/
+ 
++void
+ shape_set_single_arrow (length, aux_length,
+ 		use_split, angle, arrow_source, arrow_dester)
+   int length,
+@@ -933,6 +944,7 @@ shape_set_single_arrow (length, aux_length,
+   using <march_source> and <march_dester> as coordinate arrays.
+ ******************************************************************************/
+ 
++void
+ shape_set_single_march (length, angle, march_source, march_dester)
+   int length,
+       angle;

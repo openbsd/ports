@@ -1,9 +1,128 @@
-$OpenBSD: patch-draw_c,v 1.1 2016/09/10 13:03:41 ajacoutot Exp $
---- draw.c.orig	Sat Sep 10 11:14:36 2016
-+++ draw.c	Sat Sep 10 11:14:48 2016
+$OpenBSD: patch-draw_c,v 1.2 2017/05/12 21:25:00 espie Exp $
+Index: draw.c
+--- draw.c.orig
++++ draw.c
 @@ -1,4 +1,5 @@
  #include <stdio.h>
 +#include <string.h> /* strlen */
  
  #include "constant.h"
    
+@@ -15,6 +16,12 @@
+ 
+ #include "extern.h"
+ 
++void draw_blank_cell(cell_type *, int, int);
++void draw_arrows(cell_type *, xwindow_type *, GC, GC, int, int, int, 
++    shape_type *, int);
++void draw_march_arrows(cell_type *, int, xwindow_type *, int, int,
++    shape_type *, int);
++void draw_manager(cell_type *, xwindow_type *, GC, int, int);
+ 
+ /******************************************************************************
+   draw_board (current_player, justboard)
+@@ -22,6 +29,7 @@
+   Draw the entire blank board and all message strings for <current_player>.
+ ******************************************************************************/
+ 
++void
+ draw_board (current_player, justboard)
+   int current_player,
+       justboard;
+@@ -151,6 +159,7 @@ draw_board (current_player, justboard)
+   Draw <cell> on every display (for which it should be visible).
+ ******************************************************************************/
+ 
++void
+ draw_multiple_cell (cell)
+   cell_type *cell;
+ {
+@@ -190,6 +199,7 @@ draw_multiple_cell (cell)
+   terrain is visible.
+ ******************************************************************************/
+ 
++void
+ draw_cell (cell, player, use_full)
+   cell_type *cell;
+   int player,
+@@ -610,6 +620,7 @@ draw_cell (cell, player, use_full)
+   Draw a single blank polygon.
+ ******************************************************************************/
+ 
++void
+ draw_blank_cell (cell, player, use_terrain)
+   cell_type *cell;
+   int player, use_terrain;
+@@ -659,6 +670,7 @@ draw_blank_cell (cell, player, use_terrain)
+   Current cell shape is <shape>.  If <is_halved>, just draw mini-vector.
+ ******************************************************************************/
+ 
++void
+ draw_arrows (cell, xwindow, hue_on, hue_off, x_center, y_center,
+ 		half_troop_size, shape, is_halved)
+   cell_type *cell;
+@@ -763,6 +775,7 @@ draw_arrows (cell, xwindow, hue_on, hue_off, x_center,
+   indicates passive or active marching.
+ ******************************************************************************/
+ 
++void
+ draw_march_arrows (cell, march_side, xwindow, x_center, y_center,
+ 		shape, march_type)
+   cell_type *cell;
+@@ -833,6 +846,7 @@ draw_march_arrows (cell, march_side, xwindow, x_center
+   Draw icons which indicate how <cell> is being managed.
+ ******************************************************************************/
+   
++void
+ draw_manager (cell, xwindow, hue_off, x_center, y_center)
+   cell_type *cell;
+   xwindow_type *xwindow;
+@@ -887,6 +901,7 @@ draw_manager (cell, xwindow, hue_off, x_center, y_cent
+   Draw a shell in <cell> of hue given by <source_side> for <player>.
+ ******************************************************************************/
+ 
++void
+ draw_shell (cell, player, source_side)
+   cell_type *cell;
+   int player,
+@@ -924,6 +939,7 @@ draw_shell (cell, player, source_side)
+   Draw a parachute in <cell> of hue given by <source_side> for <player>.
+ ******************************************************************************/
+ 
++void
+ draw_chute (cell, player, source_side)
+   cell_type *cell;
+   int player,
+@@ -985,6 +1001,7 @@ draw_chute (cell, player, source_side)
+   of CTRL_G to ring the bell.
+ ******************************************************************************/
+ 
++void
+ draw_message (text, textcount, new_side, current_player)
+   char text[];
+   int textcount,
+@@ -998,7 +1015,7 @@ draw_message (text, textcount, new_side, current_playe
+       old_length,
+       scroll, scroll_and_print;
+ 
+-  static old_side=0,
++  static int old_side=0,
+          very_first=TRUE,
+          first_time[MAX_PLAYERS];
+ 
+@@ -1266,13 +1283,14 @@ draw_message (text, textcount, new_side, current_playe
+   Draw short text string which indicates the elapsed game time.
+ ******************************************************************************/
+ 
++void
+ draw_timer (running_time, player)
+   unsigned long running_time;
+   int player;
+ {
+   char line[MAX_LINE];
+ 
+-  sprintf (line, "%02u:%02u", running_time/60, running_time%60);
++  snprintf (line, MAX_LINE, "%02lu:%02lu", running_time/60, running_time%60);
+   XDrawImageString (XWindow[player]->display, XWindow[player]->window,
+ 		XWindow[player]->hue_mark[0], TIMER_OFFSET,
+ 		XWindow[player]->text_y_pos[0],
