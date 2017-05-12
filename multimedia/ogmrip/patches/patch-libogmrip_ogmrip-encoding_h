@@ -1,0 +1,14 @@
+$OpenBSD: patch-libogmrip_ogmrip-encoding_h,v 1.1 2017/05/12 16:02:03 espie Exp $
+an enum is not an int. let (OGMRipTaskDetail)0  work
+
+Index: libogmrip/ogmrip-encoding.h
+--- libogmrip/ogmrip-encoding.h.orig
++++ libogmrip/ogmrip-encoding.h
+@@ -257,6 +257,7 @@ typedef union
+ {
+   gdouble          fraction;
+   OGMJobResultType result;
++  int		dummy;
+ } OGMRipTaskDetail;
+ 
+ /**
