@@ -1,0 +1,2 @@
+Implements support for python plugins in Nvim. Also works as a library for
+connecting to and scripting Nvim processes through its msgpack-rpc API.
