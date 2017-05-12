@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.4 2015/09/19 20:27:43 rpointel Exp $
+# $OpenBSD: Makefile,v 1.5 2017/05/12 15:29:50 benoit Exp $
 
 COMMENT =		powerful disassembler library for x86/amd64
 
-MODPY_EGG_VERSION =	3.3.0
+MODPY_EGG_VERSION =	3.3.4
 DISTNAME =		distorm3-${MODPY_EGG_VERSION}
 
 CATEGORIES =		security
 
 HOMEPAGE =		https://github.com/gdabah/distorm/
 
-# GPLv3
+# BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += pthread
