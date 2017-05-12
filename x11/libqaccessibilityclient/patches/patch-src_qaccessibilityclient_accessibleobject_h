@@ -1,0 +1,32 @@
+$OpenBSD: patch-src_qaccessibilityclient_accessibleobject_h,v 1.1 2017/05/12 14:30:57 espie Exp $
+
+Index: src/qaccessibilityclient/accessibleobject.h
+--- src/qaccessibilityclient/accessibleobject.h.orig
++++ src/qaccessibilityclient/accessibleobject.h
+@@ -40,6 +40,9 @@ namespace QAccessibleClient {
+ class AccessibleObjectPrivate;
+ class RegistryPrivate;
+ 
++#ifndef QT_NO_DEBUG_STREAM
++QACCESSIBILITYCLIENT_EXPORT QDebug operator<<(QDebug, const AccessibleObject &);
++#endif
+ /**
+     This class represents an accessible object.
+ 
+@@ -715,13 +718,12 @@ class QACCESSIBILITYCLIENT_EXPORT AccessibleObject (pr
+     friend class RegistryPrivate;
+     friend class CacheWeakStrategy;
+     friend class CacheStrongStrategy;
++#ifndef QT_NO_DEBUG_STREAM
+     friend QDebug QAccessibleClient::operator<<(QDebug, const AccessibleObject &);
+-    friend uint ::qHash(const AccessibleObject& object);
++#endif
++    friend unsigned int ::qHash(const AccessibleObject& object);
+ };
+ 
+-#ifndef QT_NO_DEBUG_STREAM
+-QACCESSIBILITYCLIENT_EXPORT QDebug operator<<(QDebug, const AccessibleObject &);
+-#endif
+ 
+ }
+ 
