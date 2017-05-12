@@ -1,0 +1,23 @@
+$OpenBSD: patch-gram_y,v 1.1 2017/05/12 20:27:25 naddy Exp $
+
+Index: gram.y
+--- gram.y.orig
++++ gram.y
+@@ -968,7 +968,7 @@ command:	S_LET var_or_range '=' e
+ 						macrofd); }
+ 	|	S_EVAL e STRING '|' NUMBER
+ 					{ doeval($2, $3, currow, curcol,
+-						$3); }
++						$5); }
+ 	|	S_SEVAL e		{ doseval($2, currow, curcol, macrofd); }
+ 	|	S_QUERY STRING STRING	{ doquery($2, $3, macrofd); }
+ 	|	S_QUERY STRING STRING '|' NUMBER
+@@ -1010,7 +1010,7 @@ command:	S_LET var_or_range '=' e
+ 	|	S_PLUGOUT STRING '=' STRING
+ 					{ addplugin($2, $4, 'w'); } 
+ 	|       PLUGIN			{ *line = '|';
+-					  sprintf(line + 1, $1);
++					  sprintf(line + 1, "%s", $1);
+ 					  readfile(line, 0);
+ 					  scxfree($1); }
+ 	|	/* nothing */

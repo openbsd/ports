@@ -1,0 +1,70 @@
+$OpenBSD: patch-screen_c,v 1.1 2017/05/12 20:27:25 naddy Exp $
+
+Index: screen.c
+--- screen.c.orig
++++ screen.c
+@@ -234,11 +234,12 @@ update(int anychanged)		/* did any cell really change 
+ 	    i = stcol;
+ 	    lcols = 0;
+ 	    col = rescol + frcols;
+-	    if (fr && stcol >= fr->or_left->col)
++	    if (fr && stcol >= fr->or_left->col) {
+ 		if (stcol < fr->ir_left->col)
+ 		    i = fr->or_left->col;
+ 		else
+ 		    col += flcols;
++	    }
+ 	    for (; (col + fwidth[i] < cols-1 || col_hidden[i] || i < curcol) &&
+ 		    i < maxcols; i++) {
+ 		lcols++;
+@@ -328,11 +329,12 @@ update(int anychanged)		/* did any cell really change 
+ 	    i = stcol;
+ 	    lcols = 0;
+ 	    col = rescol + frcols;
+-	    if (fr && stcol >= fr->or_left->col)
++	    if (fr && stcol >= fr->or_left->col) {
+ 		if (stcol < fr->ir_left->col)
+ 		    i = fr->or_left->col;
+ 		else
+ 		    col += flcols;
++	    }
+ 	    for (; (col + fwidth[i] < cols-1 || col_hidden[i] || i < curcol) &&
+ 		    i < maxcols; i++) {
+ 		lcols++;
+@@ -377,11 +379,12 @@ update(int anychanged)		/* did any cell really change 
+ 	    i = strow;
+ 	    rows = 0;
+ 	    row = RESROW + fbrows;
+-	    if (fr && strow >= fr->or_left->row)
++	    if (fr && strow >= fr->or_left->row) {
+ 		if (strow < fr->ir_left->row)
+ 		    i = fr->or_left->row;
+ 		else
+ 		    row += ftrows;
++	    }
+ 	    for (; (row < lines || row_hidden[i] || i < currow) && i < maxrows;
+ 		    i++) {
+ 		rows++;
+@@ -460,11 +463,12 @@ update(int anychanged)		/* did any cell really change 
+ 	    i = strow;
+ 	    rows = 0;
+ 	    row = RESROW + fbrows;
+-	    if (fr && strow >= fr->or_left->row)
++	    if (fr && strow >= fr->or_left->row) {
+ 		if (strow < fr->ir_left->row)
+ 		    i = fr->or_left->row;
+ 		else
+ 		    row += ftrows;
++	    }
+ 	    for (; (row < lines || row_hidden[i] || i < currow) && i < maxrows;
+ 		    i++) {
+ 		rows++;
+@@ -870,7 +874,7 @@ update(int anychanged)		/* did any cell really change 
+ 		    }
+ 		} /* else */
+ 	    } else
+-	    if (!*pp && color && has_colors && cr && cr->r_color != 1) {
++	    if (!*pp && color && has_colors() && cr && cr->r_color != 1) {
+ 		move(r, c);
+ 		color_set(cr->r_color, NULL);
+ 		printw("%*s", fwidth[col], " ");

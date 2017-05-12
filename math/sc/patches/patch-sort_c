@@ -1,0 +1,18 @@
+$OpenBSD: patch-sort_c,v 1.1 2017/05/12 20:27:25 naddy Exp $
+
+Index: sort.c
+--- sort.c.orig
++++ sort.c
+@@ -16,9 +16,11 @@
+ #endif
+ #endif
+ 
+-#include <stdio.h>
+ #include <ctype.h>
++#include <curses.h>
++#include <stdio.h>
+ #include <stdlib.h>
++#include <unistd.h>
+ #include "sc.h"
+ 
+ int compare(const void *row1, const void *row2);

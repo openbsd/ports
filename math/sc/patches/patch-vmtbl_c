@@ -1,0 +1,13 @@
+$OpenBSD: patch-vmtbl_c,v 1.1 2017/05/12 20:27:25 naddy Exp $
+
+Index: vmtbl.c
+--- vmtbl.c.orig
++++ vmtbl.c
+@@ -16,6 +16,7 @@
+ # include <curses.h>
+ #endif /* PSC */
+ 
++#include <unistd.h>
+ #include "sc.h"
+ 
+ /*

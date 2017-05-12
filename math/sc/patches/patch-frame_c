@@ -1,0 +1,17 @@
+$OpenBSD: patch-frame_c,v 1.1 2017/05/12 20:27:25 naddy Exp $
+
+Index: frame.c
+--- frame.c.orig
++++ frame.c
+@@ -16,8 +16,10 @@
+ #endif
+ #endif
+ 
+-#include <stdio.h>
+ #include <ctype.h>
++#include <curses.h>
++#include <stdio.h>
++#include <unistd.h>
+ #include "sc.h"
+ 
+ static struct frange *frame_base;

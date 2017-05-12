@@ -1,6 +1,8 @@
-$OpenBSD: patch-help_c,v 1.1 2011/06/26 09:48:50 sthen Exp $
---- help.c.orig	Sat Jun 25 23:54:17 2011
-+++ help.c	Sat Jun 25 23:54:36 2011
+$OpenBSD: patch-help_c,v 1.2 2017/05/12 20:27:25 naddy Exp $
+
+Index: help.c
+--- help.c.orig
++++ help.c
 @@ -6,5 +6,6 @@
   */
  

@@ -1,0 +1,17 @@
+$OpenBSD: patch-range_c,v 1.1 2017/05/12 20:27:25 naddy Exp $
+
+Index: range.c
+--- range.c.orig
++++ range.c
+@@ -16,8 +16,10 @@
+ #endif
+ #endif
+ 
+-#include <stdio.h>
+ #include <ctype.h>
++#include <curses.h>
++#include <stdio.h>
++#include <unistd.h>
+ #include "sc.h"
+ 
+ static	struct range *rng_base;

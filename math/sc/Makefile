@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2015/10/13 06:29:38 bentley Exp $
+# $OpenBSD: Makefile,v 1.18 2017/05/12 20:27:25 naddy Exp $
 
 COMMENT=	curses spreadsheet-calculator program
 
 DISTNAME=	sc-7.16
-REVISION=	3
+REVISION=	4
 CATEGORIES=	math
 
 MASTER_SITES=	${MASTER_SITE_SUNSITE:=apps/financial/spreadsheet/}

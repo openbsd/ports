@@ -1,0 +1,31 @@
+$OpenBSD: patch-interp_c,v 1.4 2017/05/12 20:27:25 naddy Exp $
+
+Index: interp.c
+--- interp.c.orig
++++ interp.c
+@@ -2066,7 +2066,7 @@ str_search(char *s, int firstrow, int firstcol, int la
+ 		    *line = '\0';
+ 	    }
+ 	}
+-	if (!col_hidden[c])
++	if (!col_hidden[c]) {
+ 	    if (gs.g_type == G_STR) {
+ 		if (p && p->label
+ #if defined(REGCOMP)
+@@ -2099,6 +2099,7 @@ str_search(char *s, int firstrow, int firstcol, int la
+ #endif
+ #endif
+ 		    break;
++        }
+ 	if (r == endr && c == endc) {
+ 	    error("String not found");
+ #if defined(REGCOMP)
+@@ -2475,7 +2476,7 @@ constant(register struct enode *e)
+ 	 e == NULL
+ 	 || e->op == O_CONST
+ 	 || e->op == O_SCONST
+-	 || e->op == 'm' && constant(e->e.o.left)
++	 || (e->op == 'm' && constant(e->e.o.left))
+ 	 || (
+ 	     e->op != O_VAR
+ 	     && !(e->op & REDUCE)

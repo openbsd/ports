@@ -1,7 +1,13 @@
-$OpenBSD: patch-vi_c,v 1.1 2011/06/26 09:48:50 sthen Exp $
---- vi.c.orig	Fri Jul 12 01:48:29 2002
-+++ vi.c	Sat Jun 25 23:52:50 2011
-@@ -16,7 +16,9 @@
+$OpenBSD: patch-vi_c,v 1.2 2017/05/12 20:27:25 naddy Exp $
+
+Index: vi.c
+--- vi.c.orig
++++ vi.c
+@@ -13,10 +13,13 @@
+ #endif
+ #endif
+ 
++#include <sys/wait.h>
  #include <signal.h>
  #include <curses.h>
  #include <ctype.h>
@@ -11,14 +17,32 @@ $OpenBSD: patch-vi_c,v 1.1 2011/06/26 09:48:50 sthen Exp $
  #include "sc.h"
  
  #if defined(REGCOMP)
-@@ -39,10 +41,6 @@ void gototop();
- void gotobottom();
+@@ -40,10 +43,6 @@ void gotobottom();
  
  #define istext(a) (isalnum(a) || ((a) == '_'))
--
+ 
 -#define bool	int
 -#define true	1
 -#define false	0
- 
+-
  static void append_line();
  static void back_hist();
+ static int  back_line(int arg);
+@@ -667,7 +666,7 @@ dotab()
+     static struct range *nextmatch;
+     int len;
+ 
+-    if (linelim > 0 && isalnum(line[linelim-1]) || line[linelim-1] == '_' ||
++    if ((linelim > 0 && isalnum(line[linelim-1])) || line[linelim-1] == '_' ||
+ 	    (completethis && line[linelim-1] == ' ')) {
+ 	if (!completethis) {
+ 	    for (completethis = line + linelim - 1; isalnum(*completethis) ||
+@@ -1573,7 +1572,7 @@ search_again(bool reverse)
+ #endif
+ 
+ #ifdef REGCOMP
+-    if ((last_search == NULL))
++    if (last_search == NULL)
+ 	return;
+ #else
+ #ifndef RE_COMP

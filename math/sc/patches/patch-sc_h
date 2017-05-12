@@ -1,6 +1,17 @@
-$OpenBSD: patch-sc_h,v 1.1 2011/06/26 09:48:50 sthen Exp $
---- sc.h.orig	Sat Jun 25 23:49:22 2011
-+++ sc.h	Sat Jun 25 23:50:59 2011
+$OpenBSD: patch-sc_h,v 1.2 2017/05/12 20:27:25 naddy Exp $
+
+Index: sc.h
+--- sc.h.orig
++++ sc.h
+@@ -41,7 +41,7 @@
+ #define COLFORMATS	 10	/* Number of custom column formats */
+ #define DELBUFSIZE	 40	/* Number of named buffers + 4 */
+ #ifdef PSC
+-# define error(msg)	fprintf(stderr, msg);
++# define error(msg)	fprintf(stderr, "%s", msg);
+ #else
+ # define error isatty(fileno(stdout)) && !move(1,0) && !clrtoeol() && printw
+ #endif
 @@ -304,6 +304,7 @@ struct go_save {
  #define is_deleted   0020
  #define is_locked    0040
@@ -9,3 +20,72 @@ $OpenBSD: patch-sc_h,v 1.1 2011/06/26 09:48:50 sthen Exp $
  #define is_cleared   0200
  #define may_sync     0400
  
+@@ -425,6 +426,7 @@ extern	struct ent *lookat(int row, int col);
+ extern	struct crange *find_crange(int row, int col);
+ extern	struct frange *find_frange(int row, int col);
+ extern	void EvalAll();
++extern	void add_abbr(char *string);
+ extern	void add_crange(struct ent *r_left, struct ent *r_right, int pair);
+ extern	void add_frange(struct ent *or_left, struct ent *or_right,
+ 	struct ent *ir_left, struct ent *ir_right, int toprows, int bottomrows,
+@@ -434,6 +436,7 @@ extern	void add_range(char *name, struct ent_ptr left,
+ extern	void addplugin(char *ext, char *plugin, char type);
+ extern	void backcol(int arg);
+ extern	void backrow(int arg);
++extern	void center(int sr, int sc, int er, int ec);
+ extern	void change_color(int pair, struct enode *e);
+ extern	void checkbounds(int *rowp, int *colp);
+ extern	void clearent(struct ent *v);
+@@ -458,7 +461,10 @@ extern	void doend(int rowinc, int colinc);
+ extern	void doformat(int c1, int c2, int w, int p, int r);
+ extern	void dupcol();
+ extern	void duprow();
++extern	void doeval(struct enode *e, char *fmt, int row, int col, int fd);
++extern	void dogetkey();
+ extern	void doquery(char *s, char *data, int fd);
++extern	void doseval(struct enode *e, int row, int col, int fd);
+ extern	void dostat(int fd);
+ extern	void dotick(int tick);
+ extern	void editexp(int row, int col);
+@@ -487,10 +493,13 @@ extern	void free_ent(register struct ent *p, int unloc
+ extern	void getexp(int r0, int c0, int rn, int cn, int fd);
+ extern	void getfmt(int r0, int c0, int rn, int cn, int fd);
+ extern	void getformat(int col, int fd);
++extern	void getframe(int fd);
+ extern	void getnum(int r0, int c0, int rn, int cn, int fd);
++extern	void getrange(char *name, int fd);
+ extern	void getstring(int r0, int c0, int rn, int cn, int fd);
+ extern	void go_last();
+ extern	void goraw();
++extern	void gotonote();
+ extern	void help();
+ extern	void hide_col(int arg);
+ extern	void hide_row(int arg);
+@@ -507,7 +516,9 @@ extern	void kbd_again();
+ extern	void label(register struct ent *v, register char *s, int flushdir);
+ extern	void let(struct ent *v, struct enode *e);
+ extern	void list_colors(FILE *f);
++extern	void list_frames(FILE *f);
+ extern	void list_ranges(FILE *f);
++extern	void ljustify(int sr, int sc, int er, int ec);
+ extern	void lock_cells(struct ent *v1, struct ent *v2);
+ extern	void markcell();
+ extern	void move_area(int dr, int dc, int sr, int sc, int er, int ec);
+@@ -523,6 +534,7 @@ extern	void query(char *s, char *data);
+ extern	void read_hist();
+ extern	void remember(int save);
+ extern	void resetkbd();
++extern	void rjustify(int sr, int sc, int er, int ec);
+ extern	void rowshow_op();
+ extern	void scxfree(char *p);
+ extern	void setauto(int i);
+@@ -560,6 +572,9 @@ extern	void write_hist();
+ extern	void write_line(int c);
+ extern	void write_ranges(FILE *f);
+ extern	void yank_area(int sr, int sc, int er, int ec);
++extern	void yankcol(int arg);
++extern	void yankr(struct ent *v1, struct ent *v2);
++extern	void yankrow(int arg);
+ extern	void yyerror(char *err);
+ extern	int yylex();
+ extern	int yyparse();

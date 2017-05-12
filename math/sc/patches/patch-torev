@@ -1,6 +1,8 @@
-$OpenBSD: patch-torev,v 1.4 2011/06/26 09:48:50 sthen Exp $
---- torev.orig	Tue May  8 07:19:34 2001
-+++ torev	Sat Jun 25 17:30:42 2011
+$OpenBSD: patch-torev,v 1.5 2017/05/12 20:27:25 naddy Exp $
+
+Index: torev
+--- torev.orig
++++ torev
 @@ -2,3 +2,4 @@
  sed -e s/pname/$name/g -e s/PNAME/$NAME/g \
  	-e "s%#LIBDIR#%$LIBDIR%g" \

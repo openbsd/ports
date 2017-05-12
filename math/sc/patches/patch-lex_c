@@ -1,6 +1,8 @@
-$OpenBSD: patch-lex_c,v 1.6 2011/06/26 09:48:50 sthen Exp $
---- lex.c.orig	Sat Jun 25 23:40:11 2011
-+++ lex.c	Sat Jun 25 23:39:40 2011
+$OpenBSD: patch-lex_c,v 1.7 2017/05/12 20:27:25 naddy Exp $
+
+Index: lex.c
+--- lex.c.orig
++++ lex.c
 @@ -34,6 +34,8 @@
  #include <signal.h>
  #include <setjmp.h>
@@ -19,6 +21,24 @@ $OpenBSD: patch-lex_c,v 1.6 2011/06/26 09:48:50 sthen Exp $
      static int isfunc = 0;
      static bool isgoto = 0;
      static bool colstate = 0;
+@@ -326,7 +328,7 @@ plugin_exists(char *name, int len, char *path)
+ 	strcpy((char *)path, HomeDir);
+ 	strcat((char *)path, "/.sc/plugins/");
+ 	strncat((char *)path, name, len);
+-	if (fp = fopen((char *)path, "r")) {
++	if ((fp = fopen((char *)path, "r"))) {
+ 	    fclose(fp);
+ 	    return 1;
+ 	}
+@@ -334,7 +336,7 @@ plugin_exists(char *name, int len, char *path)
+     strcpy((char *)path, LIBDIR);
+     strcat((char *)path, "/plugins/");
+     strncat((char *)path, name, len);
+-    if (fp = fopen((char *)path, "r")) {
++    if ((fp = fopen((char *)path, "r"))) {
+ 	fclose(fp);
+ 	return 1;
+     }
 @@ -642,7 +644,7 @@ nmgetch() 
  
  #endif

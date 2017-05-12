@@ -1,6 +1,8 @@
-$OpenBSD: patch-sc_doc,v 1.4 2006/05/28 21:21:51 weingart Exp $
---- sc.doc.orig	Thu May  4 10:12:29 2006
-+++ sc.doc	Thu May  4 10:13:05 2006
+$OpenBSD: patch-sc_doc,v 1.5 2017/05/12 20:27:25 naddy Exp $
+
+Index: sc.doc
+--- sc.doc.orig
++++ sc.doc
 @@ -113,7 +113,7 @@ often based on other cell values.
  .LP
  For an online tutorial, type the command:

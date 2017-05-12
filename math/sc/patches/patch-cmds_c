@@ -1,0 +1,80 @@
+$OpenBSD: patch-cmds_c,v 1.1 2017/05/12 20:27:25 naddy Exp $
+
+Index: cmds.c
+--- cmds.c.orig
++++ cmds.c
+@@ -810,7 +810,7 @@ pullcells(int to_insert)
+ 
+     if (to_insert == 'r') {
+ 	insertrow(numrows, 0);
+-	if (fr = find_frange(currow, curcol))
++	if ((fr = find_frange(currow, curcol)))
+ 	    deltac = fr->or_left->col - mincol;
+ 	else {
+ 	    for (i = 0; i < numrows; i++)
+@@ -2337,8 +2337,8 @@ copye(register struct enode *e, int Rdelta, int Cdelta
+ 		break;
+ 	    case 'f':
+ 	    case 'F':
+-		if (range && ret->op == 'F' ||
+-			!range && ret->op == 'f')
++		if ((range && ret->op == 'F') ||
++			(!range && ret->op == 'f'))
+ 		    Rdelta = Cdelta = 0;
+ 		ret->e.o.left = copye(e->e.o.left, Rdelta, Cdelta,
+ 			r1, c1, r2, c2, transpose);
+@@ -2563,7 +2563,7 @@ openfile(char *fname, int *rpid, int *rfd)
+ 	    (void) dup(pipefd[3]);	/* connect to second pipe */
+ 	}
+ 	(void) signal(SIGINT, SIG_DFL);	/* reset */
+-	(void) execl("/bin/sh", "sh", "-c", efname, 0);
++	(void) execl("/bin/sh", "sh", "-c", efname, NULL);
+ 	exit (-127);
+     } else {				/* else parent */
+ 	*rpid = pid;
+@@ -2861,12 +2861,12 @@ writefile(char *fname, int r0, int c0, int rn, int cn)
+ 	if ((plugin = findplugin(p+1, 'w')) != NULL) {
+ 	    if (!plugin_exists(plugin, strlen(plugin), save + 1)) {
+ 		error("plugin not found");
+-		return;
++		return (-1);
+ 	    }
+ 	    *save = '|';
+ 	    if ((strlen(save) + strlen(fname) + 20) > PATHLEN) {
+ 		error("Path too long");
+-		return;
++		return (-1);
+ 	    }
+ 	    sprintf(save + strlen(save), " %s%d:", coltoa(c0), r0);
+ 	    sprintf(save + strlen(save), "%s%d \"%s\"", coltoa(cn), rn, fname);
+@@ -2883,13 +2883,14 @@ writefile(char *fname, int r0, int c0, int rn, int cn)
+     }
+ #endif /* VMS */
+ 
+-    if (*fname == '\0')
++    if (*fname == '\0') {
+ 	if (isatty(STDOUT_FILENO) || *curfile != '\0')
+ 	    fname = curfile;
+ 	else {
+ 	    write_fd(stdout, r0, c0, rn, cn);
+ 	    return (0);
+ 	}
++    }
+ 
+ #ifdef MSDOS
+     namelen = 12;
+@@ -2981,12 +2982,12 @@ readfile(char *fname, int eraseflg)
+ 	if ((plugin = findplugin(p+1, 'r')) != NULL) {
+ 	    if (!(plugin_exists(plugin, strlen(plugin), save + 1))) {
+ 		error("plugin not found");
+-		return;
++		return 0;
+ 	    }
+ 	    *save = '|';
+ 	    if ((strlen(save) + strlen(fname) + 2) > PATHLEN) {
+ 		error("Path too long");
+-		return;
++		return 0;
+ 	    }
+ 	    sprintf(save + strlen(save), " \"%s\"", fname);
+ 	    eraseflg = 0;
