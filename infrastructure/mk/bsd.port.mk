@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1344 2017/05/06 15:01:31 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1345 2017/05/12 15:15:25 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1631,6 +1631,13 @@ _TEST_DEP = ${_TEST_DEP2:C,^[^:/]*:,,}
 
 REORDER_DEPENDENCIES ?=
 ECHO_REORDER ?= :
+
+# recheck WRK...
+.for w in WRKDIR WRKDIST WRKSRC WRKCONF WRKBUILD WRKINST
+.  if ${$w:M*/}
+ERRORS += "Fatal: $w ends with a slash"
+.  endif
+.endfor
 
 # Lock infrastructure:
 # to remove locks handling, define LOCKDIR to an empty value
