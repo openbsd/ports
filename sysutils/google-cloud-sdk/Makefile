@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.68 2017/05/06 08:39:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.69 2017/05/12 07:40:59 ajacoutot Exp $
 
 COMMENT=		manage resources on Google's Cloud Platform
 
-V=			154.0.1
+V=			155.0.0
 DISTNAME=		google-cloud-sdk-${V}-linux-x86
 PKGNAME=		google-cloud-sdk-${V}
 WRKDIST=		${WRKDIR}/google-cloud-sdk
@@ -32,7 +32,7 @@ pre-configure:
 	find ${WRKSRC}/bin{,/bootstrapping}/* -type f -exec \
 		${MODPY_BIN_ADJ} '{}' \+
 	${SUBST_CMD} ${WRKSRC}/lib/googlecloudsdk/core/config.py \
-		${WRKSRC}/bin/{bq,gcloud,git-credential-gcloud.sh,gsutil}
+		${WRKSRC}/bin/{bq,docker-credential-gcloud,gcloud,git-credential-gcloud.sh,gsutil}
 
 do-install:
 	cp -Rp ${WRKSRC} ${PREFIX}
