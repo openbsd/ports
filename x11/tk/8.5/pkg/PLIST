@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2016/06/29 16:14:45 espie Exp $
+@comment $OpenBSD: PLIST,v 1.16 2017/05/12 21:44:44 stu Exp $
 @option no-default-conflict
 @option is-branch
 @conflict tk->=8.5,<8.6
@@ -24,7 +24,6 @@ lib/libtk85_pic.a
 lib/libtkstub85.a
 lib/libtkstub85_pic.a
 lib/pkgconfig/tk85.pc
-lib/tcl/
 lib/tcl/tk8.5/
 lib/tcl/tk8.5/bgerror.tcl
 lib/tcl/tk8.5/button.tcl
@@ -379,6 +378,7 @@ lib/tcl/tk8.5/man/mann/
 @man lib/tcl/tk8.5/man/mann/spinbox.n
 @man lib/tcl/tk8.5/man/mann/text.n
 @man lib/tcl/tk8.5/man/mann/tk.n
+@man lib/tcl/tk8.5/man/mann/tk::mac.n
 @man lib/tcl/tk8.5/man/mann/tk_bindForTraversal.n
 @man lib/tcl/tk8.5/man/mann/tk_bisque.n
 @man lib/tcl/tk8.5/man/mann/tk_chooseColor.n
