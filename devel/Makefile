@@ -1514,6 +1514,7 @@
      SUBDIR += py-urwid
      SUBDIR += py-urwid,python3
      SUBDIR += py-uv
+     SUBDIR += py-uv,python3
      SUBDIR += py-vcversioner
      SUBDIR += py-vcversioner,python3
      SUBDIR += py-virtualenv
