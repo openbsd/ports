@@ -1,0 +1,14 @@
+$OpenBSD: patch-configure,v 1.1 2017/05/12 15:49:18 espie Exp $
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -18178,7 +18178,7 @@ $as_echo_n "checking for thread-local storage... " >&6
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+-static __thread int x ;
++__thread int x ;
+ int main () { x = 123; return x; }
+ 
+ _ACEOF
