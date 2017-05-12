@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2017/04/10 11:46:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2017/05/12 14:11:54 espie Exp $
 
 BROKEN-sparc64 =	Illegal operands error building SDL_gfxPrimitives.cpp
 
@@ -29,14 +29,14 @@ USE_GMAKE =		Yes
 MODULES +=		devel/cmake \
 			lang/lua
 MODLUA_BUILDDEP =	No
-WRKDIST =		${WRKDIR}/blinkensisters/lostpixels/game/software/
+WRKDIST =		${WRKDIR}/blinkensisters/lostpixels/game/software
 
 SEPARATE_BUILD =	No
 
 NO_TEST =		Yes
 
 pre-configure:
-	${SUBST_CMD} ${WRKDIST}CMakeLists.txt
+	${SUBST_CMD} ${WRKDIST}/CMakeLists.txt
 	@perl -pi -e 's,make,${MAKE_PROGRAM},g ; s,/usr/local,\$$\{PREFIX},g' \
 	    ${WRKDIST}/../addons/Makefile
 	@find ${WRKDIST}/../addons/ -name Makefile -exec \
