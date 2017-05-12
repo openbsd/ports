@@ -1,0 +1,65 @@
+$OpenBSD: patch-v4l2uvc_c,v 1.3 2017/05/12 23:10:26 espie Exp $
+
+Index: v4l2uvc.c
+--- v4l2uvc.c.orig
++++ v4l2uvc.c
+@@ -143,27 +143,17 @@ init_videoIn(struct vdIn *vd, char *device, int width,
+     close(vd->fd);
+     return -1;
+ }
+-int enum_controls(int vd) //struct vdIn *vd)
+-{    
+-  struct v4l2_queryctrl queryctrl;
+-  struct v4l2_querymenu querymenu;
+-  struct v4l2_control   control_s;
+-  struct v4l2_input*    getinput;
+ 
+-  //Name of the device
+-  getinput=(struct v4l2_input *) calloc(1, sizeof(struct v4l2_input));
+-  memset(getinput, 0, sizeof(struct v4l2_input));
+-  getinput->index=0;
+-  ioctl(vd,VIDIOC_ENUMINPUT , getinput);
+-  printf ("Available controls of device '%s' (Type 1=Integer 2=Boolean 3=Menu 4=Button)\n", getinput->name);
+-
+   //subroutine to read menu items of controls with type 3
+-  void enumerate_menu (void) {
++
++static  void enumerate_menu (int vd,  struct v4l2_queryctrl *queryctrl)
++{
++  struct v4l2_querymenu querymenu;
+     printf ("  Menu items:\n");
+     memset (&querymenu, 0, sizeof (querymenu));
+-    querymenu.id = queryctrl.id;
+-    for (querymenu.index = queryctrl.minimum;
+-         querymenu.index <= queryctrl.maximum;
++    querymenu.id = queryctrl->id;
++    for (querymenu.index = queryctrl->minimum;
++         querymenu.index <= queryctrl->maximum;
+          querymenu.index++) {
+       if (0 == ioctl (vd, VIDIOC_QUERYMENU, &querymenu)) {
+         printf ("  index:%d name:%s\n", querymenu.index, querymenu.name);
+@@ -173,7 +163,23 @@ int enum_controls(int vd) //struct vdIn *vd)
+         break;
+       }
+     }
+-  }
++}
++
++#define enumerate_menu()	enumerate_menu(vd, &queryctrl)
++
++int enum_controls(int vd) //struct vdIn *vd)
++{    
++  struct v4l2_queryctrl queryctrl;
++  struct v4l2_control   control_s;
++  struct v4l2_input*    getinput;
++
++  //Name of the device
++  getinput=(struct v4l2_input *) calloc(1, sizeof(struct v4l2_input));
++  memset(getinput, 0, sizeof(struct v4l2_input));
++  getinput->index=0;
++  ioctl(vd,VIDIOC_ENUMINPUT , getinput);
++  printf ("Available controls of device '%s' (Type 1=Integer 2=Boolean 3=Menu 4=Button)\n", getinput->name);
++
+ 
+   //predefined controls
+   printf ("V4L2_CID_BASE         (predefined controls):\n");
