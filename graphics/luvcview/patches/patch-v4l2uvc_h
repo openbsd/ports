@@ -1,6 +1,7 @@
-$OpenBSD: patch-v4l2uvc_h,v 1.1.1.1 2008/06/13 16:45:01 robert Exp $
---- v4l2uvc.h.orig	Fri Jun 13 00:35:33 2008
-+++ v4l2uvc.h	Fri Jun 13 00:35:42 2008
+$OpenBSD: patch-v4l2uvc_h,v 1.2 2017/05/12 23:09:25 espie Exp $
+Index: v4l2uvc.h
+--- v4l2uvc.h.orig
++++ v4l2uvc.h
 @@ -29,7 +29,7 @@
  #include <sys/ioctl.h>
  #include <sys/mman.h>
@@ -10,3 +11,13 @@ $OpenBSD: patch-v4l2uvc_h,v 1.1.1.1 2008/06/13 16:45:01 robert Exp $
  #include "avilib.h"
  
  #include "uvcvideo.h"
+@@ -100,7 +100,7 @@ int v4L2UpDownPan(struct vdIn *vd, short inc);
+ int v4L2UpDownTilt(struct vdIn *vd,short inc);
+ int v4L2UpDownPanTilt(struct vdIn *vd, short inc_p, short inc_t);
+ int v4l2SetLightFrequencyFilter(struct vdIn *vd,int flt);
+-int enum_frame_intervals(int dev, __u32 pixfmt, __u32 width, __u32 height);
+-int enum_frame_sizes(int dev, __u32 pixfmt);
++int enum_frame_intervals(int dev, u_int32_t pixfmt, u_int32_t width, u_int32_t height);
++int enum_frame_sizes(int dev, u_int32_t pixfmt);
+ int enum_frame_formats(int dev);
+ 
