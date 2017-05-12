@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1346 2017/05/12 15:34:42 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1347 2017/05/12 16:36:01 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -270,23 +270,6 @@ _ARCH_DEFINES_INCLUDED = Done
 .  include "${PORTSDIR}/infrastructure/mk/arch-defines.mk"
 .endif
 
-USE_CXX ?= No
-.if ${USE_CXX:L:Mc++11}
-.  if ${PROPERTIES:Mclang}
-# nothing to do
-.  elif ${PROPERTIES:Mllvm}
-# prefer llvm module
-MODULES +=	lang/clang
-MODCLANG_ARCH ?=	*
-MODCLANG_LANGS +=	c++
-.  else
-# try gcc4
-MODULES +=		gcc4
-MODGCC4_LANGS +=		c++
-MODGCC4_ARCHS ?=		*
-.  endif
-.endif
-
 .if ${CONFIGURE_STYLE:L:Mautomake} || ${CONFIGURE_STYLE:L:Mautoconf} || \
 	${CONFIGURE_STYLE:L:Mautoupdate}
 .  if !${CONFIGURE_STYLE:L:Mgnu}
@@ -312,6 +295,8 @@ _MODULES_DONE =
 .  include "${PORTSDIR}/infrastructure/mk/modules.port.mk"
 .endif
 
+WANT_CXX ?= None
+CHOSEN_CXX ?= None
 ###
 ### Variable setup that can happen after modules
 ###
