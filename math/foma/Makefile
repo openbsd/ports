@@ -1,18 +1,16 @@
-# $OpenBSD: Makefile,v 1.4 2016/10/01 11:54:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2017/05/12 14:38:18 benoit Exp $
 
 COMMENT =		finite-state compiler and C library
 
-DISTNAME =		foma-0.9.16alpha
-PKGNAME =		${DISTNAME:S/alpha//}
-REVISION =		0
+DISTNAME =		foma-0.9.17
 
-SHARED_LIBS +=		foma                      0.0 # 0.9.16
+SHARED_LIBS +=		foma                      0.1 # 0.9.16
 
 CATEGORIES =		math devel
 
 HOMEPAGE =		https://code.google.com/p/foma/
 
-# GPLv2
+# Apache 2.0
 PERMIT_PACKAGE_CDROM =		Yes
 
 WANTLIB +=		c readline termcap z
@@ -27,7 +25,5 @@ FAKE_FLAGS =		prefix="${WRKINST}${PREFIX}"
 USE_GMAKE =		Yes
 
 NO_TEST =		Yes
-
-WRKDIST =		${WRKDIR}/foma
 
 .include <bsd.port.mk>
