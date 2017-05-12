@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.9 2016/03/20 19:57:05 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2017/05/12 19:49:54 benoit Exp $
 
 COMMENT=	summarize HTML pages
 
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME=	HTML-Summary-0.017
-REVISION=	1
+DISTNAME =	HTML-Summary-0.022
 CATEGORIES=	textproc
 
-PERMIT_DISTFILES_FTP=	No permission
-PERMIT_PACKAGE_CDROM=	No permission
-PERMIT_PACKAGE_FTP=	No permission
+# Perl5
+PERMIT_PACKAGE_CDROM =	Yes
+
+RUN_DEPENDS =	converters/p5-Jcode
+TEST_DEPENDS =	www/p5-HTML-TreeBuilder-XPath
 
 .include <bsd.port.mk>
