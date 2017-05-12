@@ -1,9 +1,9 @@
-$OpenBSD: patch-mkspecs_openbsd-clang_qmake_conf,v 1.1 2017/05/08 16:14:32 espie Exp $
+$OpenBSD: patch-mkspecs_openbsd-clang_qmake_conf,v 1.2 2017/05/12 16:05:06 espie Exp $
 
 Index: mkspecs/openbsd-clang/qmake.conf
 --- mkspecs/openbsd-clang/qmake.conf.orig
 +++ mkspecs/openbsd-clang/qmake.conf
-@@ -0,0 +1,53 @@
+@@ -0,0 +1,54 @@
 +#
 +# qmake configuration for openbsd-g++
 +#
@@ -20,6 +20,7 @@ Index: mkspecs/openbsd-clang/qmake.conf
 +isEmpty(LOCALBASE) {
 +  LOCALBASE             = /usr/local
 +}
++QMAKE_INCDIR_PREPEND    = /usr/include/c++/v1
 +QMAKE_INCDIR            = $$LOCALBASE/include
 +QMAKE_LIBDIR            = $$LOCALBASE/lib
 +
