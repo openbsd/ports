@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2016/03/20 19:56:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2017/05/13 08:37:23 benoit Exp $
 
 COMMENT=		automatically apply roles at object creation time
 
-DISTNAME=		MooseX-Traits-0.12
+DISTNAME =		MooseX-Traits-0.13
 
 CATEGORIES=		devel
 
@@ -22,5 +22,7 @@ TEST_DEPENDS=		devel/p5-Test-Exception \
 			devel/p5-Test-Requires \
 			devel/p5-MooseX-Role-Parameterized \
 			devel/p5-Test-use-ok
+
+CONFIGURE_STYLE =	modbuild tiny
 
 .include <bsd.port.mk>
