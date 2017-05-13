@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2017/05/09 08:22:00 benoit Exp $
+# $OpenBSD: Makefile,v 1.14 2017/05/13 07:57:59 benoit Exp $
 
 COMMENT= 	run a subprocess
 
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME =	IPC-Run-0.95
+DISTNAME =	IPC-Run-0.96
 CATEGORIES=	devel
 
 # perl
