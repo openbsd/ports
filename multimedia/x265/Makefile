@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2017/04/23 21:47:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2017/05/13 17:53:28 espie Exp $
 
 COMMENT=	free H.265/HEVC encoder
 
@@ -22,11 +22,14 @@ WANTLIB=	c m pthread ${LIBCXX}
 
 WRKSRC=		${WRKDIST}/source
 
-MODULES=	devel/cmake \
-		lang/clang
+MODULES=	devel/cmake
 
+.include <bsd.port.arch.mk>
+.if !${PROPERTIES:Mclang}
+MODULES +=	lang/clang
 MODCLANG_ARCHS=	amd64 i386
 MODCLANG_LANGS=	c++
+.endif
 
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
 BUILD_DEPENDS+=	devel/yasm
