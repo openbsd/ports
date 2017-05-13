@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2015/10/26 20:24:54 edd Exp $
+# $OpenBSD: Makefile,v 1.43 2017/05/13 15:40:27 espie Exp $
 
 # XXX check if still needed at next update
 CXXFLAGS +=		-std=c++11
@@ -45,9 +45,7 @@ MODULES=		devel/gettext \
 			textproc/intltool
 
 # c++11 (although only for building against libsigc++)
-MODULES +=		gcc4
-MODGCC4_ARCHS=		*
-MODGCC4_LANGS=		c++
+WANT_CXX =		base gcc
 
 USE_GMAKE=		Yes
 
@@ -64,6 +62,9 @@ CONFIGURE_ARGS+=	--disable-gnome2 \
 			--disable-gnome3
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+
+post-patch:
+	sed -i -e 's/-D_XOPEN_SOURCE=600/-D_XOPEN_SOURCE=700 -D_BSD_SOURCE/' `find ${WRKDIST} -name Makefile.am`
 
 pre-configure:
 	@cd ${WRKSRC}; env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
