@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2016/11/03 14:50:06 pascal Exp $
+# $OpenBSD: Makefile,v 1.14 2017/05/13 22:00:23 espie Exp $
 
 COMMENT =		downhill racing game
 BROKEN-alpha =		cc1plus: error: unrecognized command line option '-std=c++11'
@@ -23,9 +23,8 @@ WANTLIB += sfml-window
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=extremetuxracer/}
 EXTRACT_SUFX =		.tar.xz
 
-MODULES =		gcc4
+WANT_CXX =		base gcc
 MODGCC4_LANGS =		c c++
-MODGCC4_ARCHS =		*
 BUILD_DEPENDS =		archivers/unzip
 RUN_DEPENDS =		devel/desktop-file-utils
 LIB_DEPENDS =		multimedia/sfml
