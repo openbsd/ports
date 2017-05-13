@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2017/04/27 22:30:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2017/05/13 09:49:50 espie Exp $
 
 COMMENT=		generic spell checking library
 
@@ -23,9 +23,7 @@ WANTLIB += aspell c glib-2.0 gmodule-2.0 hunspell-1.6 iconv intl
 WANTLIB += m pcre pthread ${LIBCXX}
 
 # c++11
-MODULES +=		gcc4
-MODGCC4_ARCHS=		*
-MODGCC4_LANGS=		c++
+WANT_CXX =		base gcc
 
 LIB_DEPENDS=		devel/glib2 \
 			textproc/aspell/core \

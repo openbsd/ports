@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2017/02/07 15:10:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2017/05/13 09:49:51 espie Exp $
 
 COMMENT=	library and tools to modify and parse PDF documents
 
@@ -19,9 +19,9 @@ WANTLIB += c crypto fontconfig freetype idn jpeg m png pthread tiff z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=podofo/}
 
-MODULES=	devel/cmake gcc4
-MODGCC4_ARCHS=	*
-MODGCC4_LANGS=	c++
+MODULES=	devel/cmake 
+
+WANT_CXX = 	base gcc
 
 LIB_DEPENDS=	devel/libidn \
 		graphics/jpeg \

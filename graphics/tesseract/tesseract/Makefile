@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2017/04/30 11:28:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2017/05/13 09:49:50 espie Exp $
 
 COMMENT=	OCR Engine developed at HP Labs
 
@@ -15,9 +15,7 @@ WANTLIB += png pthread pthread-stubs ${LIBCXX} tiff webp xcb xcb-render
 WANTLIB += xcb-shm z
 
 # c++11: needed to build the training tools
-MODULES +=		gcc4
-MODGCC4_ARCHS=		*
-MODGCC4_LANGS=		c++
+WANT_CXX =		base gcc
 
 ALL_TARGET=		training
 

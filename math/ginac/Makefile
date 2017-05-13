@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2017/04/29 19:18:49 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.25 2017/05/13 09:49:50 espie Exp $
 
 COMMENT=	GiNaC is Not a Computer Algebra System (CAS)
 
@@ -18,11 +18,9 @@ EXTRACT_SUFX=	.tar.bz2
 
 WANTLIB=	c m ncurses readline ${LIBCXX} gmp cln
 
-MODULES =	lang/python \
-		gcc4
+MODULES =	lang/python
 
-MODGCC4_LANGS =	c++
-MODGCC4_ARCHS =	*
+WANT_CXX =	base gcc
 
 LIB_DEPENDS=	devel/cln
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2016/09/06 11:31:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.65 2017/05/13 09:49:51 espie Exp $
 
 PORTROACH=		limit:^2
 
@@ -32,9 +32,7 @@ WANTLIB += xcb-render xcb-shm z
 MODULES=		x11/gnome
 
 # c++11
-MODULES +=		gcc4
-MODGCC4_ARCHS=		*
-MODGCC4_LANGS=		c++
+WANT_CXX =		base gcc
 
 LIB_DEPENDS=		devel/atk2mm \
 			devel/pangomm \

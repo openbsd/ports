@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2016/09/01 16:50:14 pascal Exp $
+# $OpenBSD: Makefile,v 1.5 2017/05/13 09:49:50 espie Exp $
 
 COMMENT =		simple and fast multimedia library
 
@@ -27,9 +27,10 @@ WANTLIB += vorbisfile xcb xcb-image xcb-randr
 
 MASTER_SITES =		http://www.sfml-dev.org/download/sfml/${V}/
 
-MODULES =		devel/cmake gcc4
+MODULES =		devel/cmake
+
+WANT_CXX =	base gcc
 MODGCC4_LANGS =		c c++
-MODGCC4_ARCHS =		*
 
 LIB_DEPENDS =		audio/openal \
 			graphics/jpeg \

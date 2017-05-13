@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.85 2017/04/05 07:51:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.86 2017/05/13 09:49:50 espie Exp $
 
 # g++3 chokes on the code
 NOT_FOR_ARCHS=		${GCC3_ARCHS}
@@ -31,9 +31,7 @@ WANTLIB += intl m pcre pthread sigc-2.0 z
 MODULES=		x11/gnome
 
 # c++11
-MODULES +=		gcc4
-MODGCC4_ARCHS=		*
-MODGCC4_LANGS=		c++
+WANT_CXX =		base gcc
 
 # clang-format
 BUILD_DEPENDS=		devel/llvm

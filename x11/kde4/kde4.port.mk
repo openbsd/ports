@@ -1,4 +1,4 @@
-# $OpenBSD: kde4.port.mk,v 1.34 2016/03/19 23:44:54 naddy Exp $
+# $OpenBSD: kde4.port.mk,v 1.35 2017/05/13 09:49:50 espie Exp $
 
 # The version of KDE SC in x11/kde4
 _MODKDE4_STABLE =	4.14.3
@@ -54,7 +54,7 @@ MODKDE4_VERSION ?=	${_MODKDE4_STABLE}
 MODKDE4_DEP_VERSION ?=	${MODKDE4_VERSION:R}
 
 # General options set by module
-ONLY_FOR_ARCHS ?=	${GCC4_ARCHS}
+ONLY_FOR_ARCHS ?=	${CXX11_ARCHS}
 
 GH_COMMIT ?=
 .if empty(GH_COMMIT)
@@ -112,9 +112,7 @@ MODKDE4_RESOURCES ?=	No
 
 .if ${MODKDE4_RESOURCES:L} == "no"
 MODKDE4_USE ?=		runtime
-MODULES +=		gcc4
-MODGCC4_ARCHS =		*
-MODGCC4_LANGS =		c++
+WANT_CXX =	base gcc
 .else
 MODKDE4_USE ?=		libs
 .endif

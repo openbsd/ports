@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2017/04/23 13:29:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2017/05/13 09:49:50 espie Exp $
 
 COMMENT=	advanced IRC bouncer
 
@@ -15,10 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	c crypto m pthread ssl z
 
-MODULES=	gcc4
-
-MODGCC4_ARCHS=	*
-MODGCC4_LANGS=	c++
+WANT_CXX =	base gcc
 
 MAKE_FLAGS=	VERBOSE=1
 

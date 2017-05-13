@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2017/03/15 11:56:17 tb Exp $
+# $OpenBSD: Makefile,v 1.7 2017/05/13 09:49:51 espie Exp $
 
 COMMENT =		tool to search text in PDF files
 
 DISTNAME =		pdfgrep-2.0.1
+REVISION =		0
 
 CATEGORIES =		textproc
 
@@ -13,9 +14,7 @@ MAINTAINER =		Reinhold Straub <demarchie@web.de>
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-MODULES =		gcc4
-MODGCC4_ARCHS =		*
-MODGCC4_LANGS =		c++
+WANT_CXX = base gcc
 
 # uses pledge()
 WANTLIB +=		c m pthread poppler-cpp pcre gcrypt gpg-error

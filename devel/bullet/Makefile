@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2017/04/24 18:09:25 pascal Exp $
+# $OpenBSD: Makefile,v 1.10 2017/05/13 09:49:50 espie Exp $
 
 COMMENT =		physics library
 
@@ -33,9 +33,9 @@ GH_TAGNAME =		$V
 
 WANTLIB += m
 
-MODULES =		devel/cmake gcc4
-MODGCC4_ARCHS =		*
-MODGCC4_LANGS =		c c++
+MODULES =		devel/cmake
+
+WANT_CXX =		base gcc
 BUILD_DEPENDS =		graphics/freeglut
 
 CONFIGURE_ARGS +=	-DBUILD_SHARED_LIBS=ON \

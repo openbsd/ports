@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2017/04/10 11:10:33 bluhm Exp $
+# $OpenBSD: Makefile,v 1.5 2017/05/13 09:49:50 espie Exp $
 
 COMMENT =	crypto and TLS for C++11
 
@@ -24,11 +24,10 @@ MASTER_SITES =		${HOMEPAGE}releases/
 SUPDISTFILES =		${DISTFILES}.asc
 EXTRACT_SUFX =		.tgz
 
-MODULES =		lang/python \
-			gcc4
+MODULES =		lang/python
 MODPY_RUNDEP =		No
-MODGCC4_LANGS =		c++
-MODGCC4_ARCHS =		*
+
+WANT_CXX =		base gcc
 LIB_DEPENDS =		archivers/bzip2 \
 			archivers/xz
 
@@ -66,3 +65,11 @@ post-install:
 	cd ${PREFIX}/share/doc && mv botan-${VERSION} botan-2
 
 .include <bsd.port.mk>
+# clang does not have /usr/local in its path, but more importantly,
+# if we don't explicitly configure for it, it passes as a good enough gcc,
+# and then we get lots of warnings for unknown warning options...
+.if ${PROPERTIES:Mclang}
+CONFIGURE_ARGS += 	--with-external-includedir=${LOCALBASE}/include \
+			--with-external-libdir=${LOCALBASE}/lib \
+			--cc=clang
+.endif

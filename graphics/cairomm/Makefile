@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2016/11/16 13:13:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2017/05/13 09:49:50 espie Exp $
 
 PORTROACH=		limitw:1,even
 
@@ -30,9 +30,7 @@ LIB_DEPENDS=		graphics/cairo \
 			devel/libsigc++-2
 
 # c++11
-MODULES +=		gcc4
-MODGCC4_ARCHS=		*
-MODGCC4_LANGS=		c++
+WANT_CXX =		base gcc
 
 USE_GMAKE=		Yes
 
