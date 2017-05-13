@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2016/03/20 19:56:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2017/05/13 08:53:15 benoit Exp $
 
 COMMENT =		file path utility
 
-DISTNAME =		Path-Tiny-0.072
+DISTNAME =		Path-Tiny-0.104
 CATEGORIES =		devel
 
 # Apachev2
@@ -12,5 +12,7 @@ CPAN_AUTHOR =		DAGOLDEN
 
 MODULES =		cpan
 PKG_ARCH =		*
+
+TEST_DEPENDS =		devel/p5-Test-MockRandom
 
 .include <bsd.port.mk>
