@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2016/03/20 19:57:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2017/05/13 14:42:44 benoit Exp $
 
 COMMENT= 	Atom RSS protocol for perl
 
 MODULES=	cpan
 PKG_ARCH=	*
 
-DISTNAME =	XML-Atom-0.41
+DISTNAME =	XML-Atom-0.42
 CATEGORIES=	www textproc
 
 # perl
@@ -21,5 +21,7 @@ RUN_DEPENDS=	devel/p5-Class-Data-Inheritable \
 		www/p5-LWP-Authen-Wsse \
 		www/p5-libwww
 BUILD_DEPENDS=	${RUN_DEPENDS}
+
+CONFIGURE_STYLE =	modbuild tiny
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2007/11/19 15:26:24 merdely Exp $
+@comment $OpenBSD: PLIST,v 1.3 2017/05/13 14:42:44 benoit Exp $
 ${P5SITE}/XML/Atom/
 ${P5SITE}/XML/Atom.pm
 ${P5SITE}/XML/Atom/Base.pm
@@ -14,9 +14,15 @@ ${P5SITE}/XML/Atom/Server.pm
 ${P5SITE}/XML/Atom/Thing.pm
 ${P5SITE}/XML/Atom/Util.pm
 @man man/man3p/XML::Atom.3p
+@man man/man3p/XML::Atom::Base.3p
+@man man/man3p/XML::Atom::Category.3p
 @man man/man3p/XML::Atom::Client.3p
+@man man/man3p/XML::Atom::Content.3p
 @man man/man3p/XML::Atom::Entry.3p
+@man man/man3p/XML::Atom::ErrorHandler.3p
 @man man/man3p/XML::Atom::Feed.3p
+@man man/man3p/XML::Atom::Link.3p
 @man man/man3p/XML::Atom::Person.3p
 @man man/man3p/XML::Atom::Server.3p
+@man man/man3p/XML::Atom::Thing.3p
 @man man/man3p/XML::Atom::Util.3p
