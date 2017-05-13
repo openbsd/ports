@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2017/04/17 12:52:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.70 2017/05/13 17:55:40 espie Exp $
 
 COMMENT=		window and compositing manager
 
@@ -63,10 +63,12 @@ SUBST_VARS +=		API_SUFFIX
 
 pre-configure:
 # XXX cc1: error: unrecognized command line option
+# XXX more: clang finds more issues!
 	sed -i -e 's,-Wempty-body,,' \
 		-e 's,-Werror=maybe-uninitialized,,' \
 		-e 's,-Wno-error=maybe-uninitialized,,' \
 		-e 's,-Werror=redundant-decls,,' \
+		-e 's,-Werror=format-nonliteral,,' \
 		-e 's,-Wvla,,' \
 		${WRKSRC}/{,cogl,clutter}/configure \
 		${WRKSRC}/cogl/tests/conform/Makefile.in \
