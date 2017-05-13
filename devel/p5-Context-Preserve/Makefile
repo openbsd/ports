@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2016/03/20 19:56:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2017/05/13 07:52:16 benoit Exp $
 
 COMMENT=		run code after a subroutine call
 
-DISTNAME=		Context-Preserve-0.01
-REVISION=		0
+DISTNAME =		Context-Preserve-0.02
 
 CATEGORIES=		devel
 
@@ -12,9 +11,9 @@ PERMIT_PACKAGE_CDROM=   Yes
 
 MODULES=		cpan
 PKG_ARCH=		*
-CPAN_AUTHOR=		JROCKWAY
+CPAN_AUTHOR =		ETHER
 
-TEST_DEPENDS=	devel/p5-Test-Exception \
+TEST_DEPENDS =		devel/p5-Test-Exception \
 			devel/p5-Test-use-ok
 
 .include <bsd.port.mk>
