@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2017/05/11 13:56:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.78 2017/05/13 11:30:54 ajacoutot Exp $
 
 TRACKER_API=		1.0
 
@@ -6,6 +6,7 @@ COMMENT=		document and e-books manager for GNOME
 
 GNOME_PROJECT=		gnome-documents
 GNOME_VERSION=		3.24.2
+REVISION=		0
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -36,6 +37,10 @@ MODULES=		devel/dconf \
 
 MODGNOME_TOOLS +=	desktop-file-utils gobject-introspection docbook
 MODGNOME_TOOLS += 	gtk-update-icon-cache yelp
+
+# GData-0.0.gir
+BUILD_DEPENDS +=	devel/libgdata
+RUN_DEPENDS +=		devel/libgdata
 
 # Gepub-0.4.gir
 BUILD_DEPENDS +=	x11/gnome/libgepub
