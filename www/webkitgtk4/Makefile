@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2017/05/10 10:57:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.57 2017/05/13 15:47:06 espie Exp $
 
 # patches/patch-Source_JavaScriptCore_javascriptcoregtk_pc_in
 # patches/patch-Source_WebKit2_webkit2gtk-web-extension_pc_in
@@ -49,9 +49,7 @@ MODULES =		devel/cmake \
 			lang/ruby \
 			x11/gnome
 
-MODULES +=		gcc4
-MODGCC4_ARCHS =		*
-MODGCC4_LANGS =		c++
+WANT_CXX =		base gcc
 
 MODRUBY_RUNDEP =	No
 MODPY_RUNDEP =		No
@@ -81,8 +79,8 @@ LIB_DEPENDS =		devel/harfbuzz,-icu \
 			x11/gnome/libsecret \
 			x11/gtk+3
 
-CFLAGS +=		-I${X11BASE}/include
-LDFLAGS =		-L${X11BASE}/lib
+CFLAGS +=		-I${X11BASE}/include -I${LOCALBASE}/include
+LDFLAGS =		-L${X11BASE}/lib -L${LOCALBASE}/lib
 
 CONFIGURE_ARGS =	-DPORT=GTK \
 			-DCMAKE_EXE_LINKER_FLAGS="${LDFLAGS}" \
