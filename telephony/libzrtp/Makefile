@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2015/10/01 20:13:39 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.7 2017/05/13 01:52:38 espie Exp $
 
 COMMENT =		ZRTP library
 
@@ -23,6 +23,10 @@ BUILD_DEPENDS =		${MODGNU_AUTOCONF_DEPENDS} \
 CONFIGURE_STYLE =	gnu
 AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.9
+.include <bsd.port.arch.mk>
+.if ${PROPERTIES:Mclang}
+MAKE_FLAGS += GCCMAGIC2=-lcompiler_rt
+.endif
 
 pre-configure:
 	@cd ${WRKSRC} && AUTOCONF_VERSION=${AUTOCONF_VERSION} \

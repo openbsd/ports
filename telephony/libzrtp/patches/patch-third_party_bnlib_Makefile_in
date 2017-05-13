@@ -1,6 +1,7 @@
-$OpenBSD: patch-third_party_bnlib_Makefile_in,v 1.2 2015/05/17 21:16:54 czarkoff Exp $
---- third_party/bnlib/Makefile.in.orig	Sun Mar 17 19:35:45 2013
-+++ third_party/bnlib/Makefile.in	Sat May 16 22:24:15 2015
+$OpenBSD: patch-third_party_bnlib_Makefile_in,v 1.3 2017/05/13 01:52:38 espie Exp $
+Index: third_party/bnlib/Makefile.in
+--- third_party/bnlib/Makefile.in.orig
++++ third_party/bnlib/Makefile.in
 @@ -41,12 +41,9 @@ all: $(BNLIB) bntest32.c bntest64.c
  
  # for libzrtp support
@@ -17,7 +18,7 @@ $OpenBSD: patch-third_party_bnlib_Makefile_in,v 1.2 2015/05/17 21:16:54 czarkoff
  
  # for libzrtp support
  #check: bntest
-@@ -60,7 +57,7 @@ germtest: germtest.o $(BNLIB)
+@@ -60,9 +57,11 @@ germtest: germtest.o $(BNLIB)
  	$(LD) $(LDFLAGS) -o $@ germtest.o $(BNLIB) $(LIBS)
  
  $(BNLIB): $(OBJS)
@@ -25,4 +26,29 @@ $OpenBSD: patch-third_party_bnlib_Makefile_in,v 1.2 2015/05/17 21:16:54 czarkoff
 +	$(AR) $(ARFLAGS) $@ $?
  	$(RANLIB) $@
  
++GCCMAGIC1=@GCCMAGIC1@
++GCCMAGIC2=@GCCMAGIC2@
  # Here we get tricky... if we're compiling with GCC, then GCCMAGIC1 and
+ # GCCMAGIC2 are set so that we actually do a link, but with the -r flag
+ # (produce relocatable output) and with -lgcc *only*.  This is so that
+@@ -72,16 +71,16 @@ $(BNLIB): $(OBJS)
+ # support-library function.
+ 
+ lbn00.o: $(srcdir)/lbn00.c $(HDRS) bnconfig.h
+-	$(CC) $(CPPFLAGS) $(CFLAGS) -I. -I$(srcdir) -o $@ @GCCMAGIC1@ lbn00.c @GCCMAGIC2@
++	$(CC) $(CPPFLAGS) $(CFLAGS) -I. -I$(srcdir) -o $@ ${GCCMAGIC1} lbn00.c ${GCCMAGIC2}
+ 
+ lbn16.o: $(srcdir)/lbn16.c $(HDRS) bnconfig.h
+-	$(CC) $(CPPFLAGS) $(CFLAGS) -I. -I$(srcdir) -o $@ @GCCMAGIC1@ lbn16.c @GCCMAGIC2@
++	$(CC) $(CPPFLAGS) $(CFLAGS) -I. -I$(srcdir) -o $@ ${GCCMAGIC1} lbn16.c ${GCCMAGIC2}
+ 
+ lbn32.o: $(srcdir)/lbn32.c $(HDRS) bnconfig.h
+-	$(CC) $(CPPFLAGS) $(CFLAGS) -I. -I$(srcdir) -o $@ @GCCMAGIC1@ lbn32.c @GCCMAGIC2@
++	$(CC) $(CPPFLAGS) $(CFLAGS) -I. -I$(srcdir) -o $@ ${GCCMAGIC1} lbn32.c ${GCCMAGIC2}
+ 
+ lbn64.o: $(srcdir)/lbn64.c $(HDRS) bnconfig.h
+-	$(CC) $(CPPFLAGS) $(CFLAGS) -I. -I$(srcdir) -o $@ @GCCMAGIC1@ lbn64.c @GCCMAGIC2@
++	$(CC) $(CPPFLAGS) $(CFLAGS) -I. -I$(srcdir) -o $@ ${GCCMAGIC1} lbn64.c ${GCCMAGIC2}
+ 
+ # The default .o rule.
+ .c.o: bnconfig.h
