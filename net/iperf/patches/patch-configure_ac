@@ -1,6 +1,9 @@
-$OpenBSD: patch-configure_ac,v 1.1 2013/03/03 12:29:44 sthen Exp $
---- configure.ac.orig	Sat Mar  2 01:58:53 2013
-+++ configure.ac	Sat Mar  2 01:59:05 2013
+$OpenBSD: patch-configure_ac,v 1.2 2017/05/13 07:45:07 espie Exp $
+Right, redefining bool in C++ is going to work wonders.
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
 @@ -39,9 +39,7 @@ dnl Checks for programs
  dnl ===================================================================
  
@@ -11,3 +14,12 @@ $OpenBSD: patch-configure_ac,v 1.1 2013/03/03 12:29:44 sthen Exp $
  AC_ISC_POSIX
  AC_PROG_INSTALL
  AC_PROG_MAKE_SET
+@@ -166,8 +164,6 @@ fi
+ 
+ dnl ===================================================================
+ dnl Check for compiler characteristics
+-
+-DAST_CHECK_BOOL
+ 
+ AC_C_BIGENDIAN
+ 
