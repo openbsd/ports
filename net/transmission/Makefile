@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.113 2017/04/19 11:16:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.114 2017/05/13 17:40:26 espie Exp $
 
 COMMENT-main=	BitTorrent command line and daemon client
 COMMENT-gtk=	BitTorrent client with GTK+ interface
@@ -24,10 +24,8 @@ MULTI_PACKAGES=	-main -gtk -qt
 
 ONLY_FOR_ARCHS-qt=	${MODGCC4_ARCHS} ${CLANG_ARCHS}
 
-MODULES=	gcc4
-# keep in sync with lang/gcc/${MODGCC4_VERSION}/Makefile
-MODGCC4_ARCHS=	amd64 arm hppa i386 mips64 mips64el powerpc sparc64
-MODGCC4_LANGS=	c
+WANT_CXX =	base gcc
+MODGCC4_LANGS=	c c++
 
 PSEUDO_FLAVORS=	no_gtk no_qt
 FLAVOR?=
@@ -48,7 +46,7 @@ WANTLIB-gtk=	${WANTLIB-common} ICE SM X11 Xcomposite Xcursor Xdamage \
 		xcb-render xcb-shm epoxy nghttp2 iconv
 WANTLIB-qt=	${WANTLIB-common} ${MODQT_WANTLIB} \
 		GL Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets \
-		fontconfig freetype estdc++
+		fontconfig freetype $(LIBECXX)
 
 MODULES+=	textproc/intltool
 

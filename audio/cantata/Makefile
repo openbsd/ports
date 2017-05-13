@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2017/03/27 14:41:23 landry Exp $
+# $OpenBSD: Makefile,v 1.5 2017/05/13 17:40:26 espie Exp $
 
 COMMENT =	Qt-based MPD client
 
@@ -14,12 +14,11 @@ GH_PROJECT=	cantata
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =	devel/gettext \
-		gcc4 \
 		devel/cmake \
 		x11/qt5
 
-# archs where qt4 builds
-MODGCC4_ARCHS =		amd64 i386 powerpc sparc64
+# because qt5
+WANT_CXX =	base gcc
 MODGCC4_LANGS =		c c++
 
 RUN_DEPENDS +=	devel/desktop-file-utils

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2017/04/10 11:45:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.50 2017/05/13 17:40:26 espie Exp $
 
 COMMENT=		GTK+ subtitles editor
 
@@ -49,9 +49,7 @@ RUN_DEPENDS=		devel/desktop-file-utils \
 MODULES=		textproc/intltool
 
 # c++11
-MODULES +=		gcc4
-MODGCC4_ARCHS=		*
-MODGCC4_LANGS=		c++
+WANT_CXX =		base gcc
 
 USE_GMAKE=		Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.92 2017/04/26 13:13:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.93 2017/05/13 17:40:26 espie Exp $
 
 # XXX: PORTROACH set below to override the value from gnome.port.mk
 
@@ -24,7 +24,7 @@ WANTLIB += EGL GL ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xt Xxf86vm atk-1.0
 WANTLIB += atk-bridge-2.0 atspi c cairo cairo-gobject camel-1.2
 WANTLIB += db dbus-1 dbus-glib-1 drm ebackend-1.2 ebook-1.2 ebook-contacts-1.2
-WANTLIB += edata-book-1.2 edataserver-1.2 enchant epoxy estdc++
+WANTLIB += edata-book-1.2 edataserver-1.2 enchant epoxy $(LIBECXX)
 WANTLIB += expat ffi fontconfig freetype gbm gck-1 gcr-base-3
 WANTLIB += gcrypt gdk-3 gdk_pixbuf-2.0 gee-0.8 gio-2.0 glapi glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 gpg-error graphite2 gstapp-1.0

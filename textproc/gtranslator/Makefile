@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2017/04/10 11:46:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.66 2017/05/13 17:40:26 espie Exp $
 
 COMMENT=	gettext(1) files editor for GNOME
 
@@ -48,6 +48,7 @@ MODGNOME_TOOLS += yelp
 MODGNOME_CPPFLAGS=	-I${LOCALBASE}/include/db4
 
 CONFIGURE_STYLE=gnu
+CONFIGURE_ARGS += --enable-compile-warnings=no
 
 post-install:
 	rm ${PREFIX}/lib/gtranslator/*.{a,la}

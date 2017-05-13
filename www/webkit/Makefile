@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.151 2017/04/10 11:46:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.152 2017/05/13 17:40:26 espie Exp $
 
 USE_WXNEEDED =	Yes
 
@@ -33,9 +33,7 @@ MODULES =	lang/python \
 		lang/ruby \
 		x11/gnome
 
-MODULES +=		gcc4
-MODGCC4_ARCHS =		*
-MODGCC4_LANGS =		c++
+WANT_CXX =		base gcc
 # cant use clang = needs <chrono> header in StdLib ?
 #MODULES +=		lang/clang
 #MODCLANG_ARCHS =        amd64

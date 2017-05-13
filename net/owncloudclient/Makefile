@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2017/05/11 06:18:03 kirby Exp $
+# $OpenBSD: Makefile,v 1.21 2017/05/13 17:40:26 espie Exp $
 
 COMMENT =		owncloud sync client
 
@@ -21,9 +21,9 @@ WANTLIB += c crypto iconv lib/inotify/inotify m pthread sqlite3 ssl z
 MASTER_SITES =		https://download.owncloud.com/desktop/stable/
 EXTRACT_SUFX =		.tar.xz
 
-MODULES =		devel/cmake gcc4
-MODGCC4_ARCHS = 	*
-MODGCC4_LANGS += 	c++
+MODULES =		devel/cmake
+WANT_CXX =		base gcc
+
 RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+3,-guic
 LIB_DEPENDS =		converters/libiconv \
@@ -33,10 +33,15 @@ LIB_DEPENDS =		converters/libiconv \
 CONFIGURE_ARGS +=	-Wno-dev \
 			-DSYSCONF_INSTALL_DIR=${SYSCONFDIR} \
 			-DCMAKE_C_FLAGS="${CFLAGS} \
-				-I${LOCALBASE}/include/inotify" \
-			-DCMAKE_CXX_FLAGS="${CXXFLAGS} -I${LOCALBASE}/include/inotify" \
+				-I${LOCALBASE}/include/inotify \
+				-I${LOCALBASE}/include" \
+			-DCMAKE_CXX_FLAGS="${CXXFLAGS} \
+				-I${LOCALBASE}/include/inotify \
+				-I${LOCALBASE}/include" \
 			-DCMAKE_EXE_LINKER_FLAGS="${LDFLAGS} \
-				-L${LOCALBASE}/lib/inotify -linotify -liconv \
+				-L${LOCALBASE}/lib/inotify \
+				-L${LOCALBASE}/lib \
+				-linotify -liconv \
 				-Wl,-rpath=${LOCALBASE}/lib/inotify" \
 			-DCMAKE_DISABLE_FIND_PACKAGE_KF5=TRUE
 

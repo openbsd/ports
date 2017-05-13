@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.121 2017/04/10 11:46:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.122 2017/05/13 17:40:26 espie Exp $
 
 COMMENT-main=	PDF rendering library
 COMMENT-qt4=	qt4 interface to PDF rendering library
@@ -88,7 +88,7 @@ WANTLIB-qt4=    ${cWANTLIB} ${MODQT4_WANTLIB} ICE QtCore QtGui QtXml \
 		gobject-2.0 gthread-2.0 iconv intl lcms2 openjp2 \
 		png poppler pcre pthread-stubs ${LIBCXX} xcb
 
-WANTLIB-qt5=	${cWANTLIB} estdc++ \
+WANTLIB-qt5=	${cWANTLIB} $(LIBECXX) \
 		GL Qt5Core Qt5Gui Qt5Widgets Qt5Xml X11 X11-xcb \
 		Xdamage Xext Xfixes Xxf86vm drm execinfo ffi glapi \
 		glib-2.0 gobject-2.0 graphite2 gthread-2.0 harfbuzz \
