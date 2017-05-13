@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.135 2017/05/13 08:54:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.136 2017/05/13 09:54:48 espie Exp $
 
 COMMENT=		GNU Transport Layer Security library
 
@@ -24,12 +24,14 @@ WANTLIB += tasn1 unistring z
 MASTER_SITES=		ftp://ftp.gnutls.org/gcrypt/gnutls/v${V:R}/ \
 			http://ftp.heanet.ie/mirrors/ftp.gnupg.org/gcrypt/gnutls/v${V:R}/
 
-# assembly instructions
-MODULES +=		lang/clang
-MODCLANG_ARCHS=		amd64
-MODCLANG_LANGS=		c++
-.if ${MACHINE_ARCH} != "amd64"
+.include <bsd.port.arch.mk>
+.if ${PROPERTIES:Mclang} || ${MACHINE_ARCH} != amd64
 WANTLIB += ${LIBCXX}
+.else
+# assembly instructions
+MODULES +=	lang/clang
+MODCLANG_ARCHS=	amd64
+MODCLANG_LANGS= c++
 .endif
 
 # needed for tests
