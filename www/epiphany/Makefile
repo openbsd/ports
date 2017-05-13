@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.152 2017/05/10 19:21:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.153 2017/05/13 15:47:52 espie Exp $
 
 COMMENT=	GNOME web browser based on webkit
 
@@ -19,7 +19,7 @@ WANTLIB += EGL GL ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xt Xxf86vm atk-1.0
 WANTLIB += atk-bridge-2.0 atspi avahi-client avahi-common avahi-glib
 WANTLIB += avahi-gobject c cairo cairo-gobject dbus-1 drm enchant
-WANTLIB += epoxy estdc++ execinfo expat ffi fontconfig freetype
+WANTLIB += epoxy $(LIBECXX) execinfo expat ffi fontconfig freetype
 WANTLIB += gbm gck-1 gcr-base-3 gcr-ui-3 gcrypt gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glapi glib-2.0 gmodule-2.0 gnome-desktop-3
 WANTLIB += gobject-2.0 gpg-error graphite2 gstapp-1.0 gstaudio-1.0
