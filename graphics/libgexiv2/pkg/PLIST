@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2017/03/20 12:52:03 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2017/05/13 08:44:51 ajacoutot Exp $
 include/gexiv2/
 include/gexiv2/gexiv2-log.h
 include/gexiv2/gexiv2-managed-stream.h
@@ -8,22 +8,19 @@ include/gexiv2/gexiv2-preview-properties.h
 include/gexiv2/gexiv2-startup.h
 include/gexiv2/gexiv2-version.h
 include/gexiv2/gexiv2.h
-lib/girepository-1.0/
 lib/girepository-1.0/GExiv2-0.10.typelib
 lib/libgexiv2.a
 lib/libgexiv2.la
 @lib lib/libgexiv2.so.${LIBgexiv2_VERSION}
 lib/pkgconfig/gexiv2.pc
-lib/python${MODPY_VERSION}/site-packages/gi/
-lib/python${MODPY_VERSION}/site-packages/gi/overrides/
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/GExiv2.py
-share/gir-1.0/
 share/gir-1.0/GExiv2-0.10.gir
 share/gtk-doc/html/gexiv2/
 share/gtk-doc/html/gexiv2/GExiv2Metadata.html
 share/gtk-doc/html/gexiv2/GExiv2PreviewImage.html
 share/gtk-doc/html/gexiv2/GExiv2PreviewProperties.html
 share/gtk-doc/html/gexiv2/annotation-glossary.html
+share/gtk-doc/html/gexiv2/api-index-0-10-6.html
 share/gtk-doc/html/gexiv2/api-index-full.html
 share/gtk-doc/html/gexiv2/ch01.html
 share/gtk-doc/html/gexiv2/deprecated-api-index.html
