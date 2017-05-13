@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_tree_cpp,v 1.1 2017/05/13 08:21:07 espie Exp $
+
+Index: src/tree.cpp
+--- src/tree.cpp.orig
++++ src/tree.cpp
+@@ -5,7 +5,7 @@
+ #include "tree.h"
+ #include "move.h"
+ #include "qgo.h"
+-#include <iostream.h>
++#include <iostream>
+ #include <qptrstack.h>
+ 
+ Tree::Tree(int board_size)

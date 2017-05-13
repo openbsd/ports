@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_matrix_cpp,v 1.1 2017/05/13 08:21:07 espie Exp $
+
+Index: src/matrix.cpp
+--- src/matrix.cpp.orig
++++ src/matrix.cpp
+@@ -5,7 +5,9 @@
+ #include "matrix.h"
+ #include <stdlib.h>
+ #ifndef NO_DEBUG
+-#include <iostream.h>
++#include <iostream>
++using std::cout;
++using std::endl;
+ #endif
+ 
+ Matrix::Matrix(int s)
