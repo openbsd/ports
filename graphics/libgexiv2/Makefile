@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2017/05/13 08:44:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2017/05/13 09:54:24 espie Exp $
 
 COMMENT=		GObject wrapper around exiv2
 
@@ -25,10 +25,8 @@ MODULES=		lang/python \
 MODGNOME_TOOLS=		gobject-introspection vala
 MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
-# gexiv2/gexiv2-metadata-gps.cpp:29:15: error: 'overflow_error' is not a member of 'std'
-MODULES +=		gcc4
-MODGCC4_LANGS=		c++
-MODGCC4_ARCHS=		*
+# C++11
+WANT_CXX = 		base gcc
 CXXFLAGS +=		-std=c++11
 
 LIB_DEPENDS=		devel/glib2 \
