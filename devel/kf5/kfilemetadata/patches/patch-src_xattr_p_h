@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_xattr_p_h,v 1.1 2017/05/13 19:17:44 espie Exp $
+
+Index: src/xattr_p.h
+--- src/xattr_p.h.orig
++++ src/xattr_p.h
+@@ -41,6 +41,8 @@
+ #include <sys/types.h>
+ #include <sys/extattr.h>
+ #include <errno.h>
++#elif defined(Q_OS_OPENBSD)
++#include <errno.h>
+ #elif defined(Q_OS_WIN)
+ #include <windows.h>
+ #define ssize_t SSIZE_T
