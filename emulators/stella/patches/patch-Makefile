@@ -1,0 +1,23 @@
+$OpenBSD: patch-Makefile,v 1.1 2017/05/13 20:28:37 espie Exp $
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -142,7 +142,7 @@ CXX_UPDATE_DEP_FLAG = -Wp,-MMD,"$(*D)/$(DEPDIR)/$(*F).
+ 
+ .c.o:
+ 	$(MKDIR) $(*D)/$(DEPDIR)
+-	$(CXX) $(CXX_UPDATE_DEP_FLAG) $(CXXFLAGS) $(CPPFLAGS) -c $(<) -o $*.o
++	$(CC) $(CXX_UPDATE_DEP_FLAG) $(CXXFLAGS) $(CPPFLAGS) -c $(<) -o $*.o
+ 	$(ECHO) "$(*D)/" > $(*D)/$(DEPDIR)/$(*F).d
+ 	$(CAT) "$(*D)/$(DEPDIR)/$(*F).d2" >> "$(*D)/$(DEPDIR)/$(*F).d"
+ 	$(RM) "$(*D)/$(DEPDIR)/$(*F).d2"
+@@ -157,7 +157,7 @@ else
+ 
+ .c.o:
+ 	$(MKDIR) $(*D)/$(DEPDIR)
+-	$(CXX) $(CXX_UPDATE_DEP_FLAG) $(CXXFLAGS) $(CPPFLAGS) -c $(<) -o $*.o
++	$(CC) $(CXX_UPDATE_DEP_FLAG) $(CXXFLAGS) $(CPPFLAGS) -c $(<) -o $*.o
+ endif
+ 
+ # Include the dependency tracking files. We add /dev/null at the end

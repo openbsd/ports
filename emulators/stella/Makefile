@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2017/04/10 11:45:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2017/05/13 20:28:37 espie Exp $
 
 COMMENT =		Atari 2600 VCS emulator
 
 DISTNAME =		stella-3.9
+REVISION =		0
 CATEGORIES =		emulators
 DISTFILES =		${DISTNAME}-src.tar.gz
 
@@ -20,8 +21,9 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=stella/}
 LIB_DEPENDS =		devel/sdl \
 			graphics/png
 
-CXXFLAGS +=		-I${X11BASE}/include \
-			-L${LOCALBASE}/lib
+CXXFLAGS +=		-I${X11BASE}/include -I${LOCALBASE}/include
+LDFLAGS += 		-L${LOCALBASE}/lib
+
 CONFIGURE_STYLE =	simple
 CONFIGURE_ARGS +=	--disable-gl
 
