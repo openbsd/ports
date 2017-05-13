@@ -1,0 +1,22 @@
+$OpenBSD: patch-mplex_mplex_cpp,v 1.1 2017/05/13 00:15:38 espie Exp $
+
+Index: mplex/mplex.cpp
+--- mplex/mplex.cpp.orig
++++ mplex/mplex.cpp
+@@ -59,7 +59,7 @@
+ 
+ using std::auto_ptr;
+ 
+-extern int read_from_buffer ( unsigned char, unsigned char *, int, int );
++extern "C" int read_from_buffer ( unsigned char, unsigned char *, int, int );
+ 
+ 
+ /*************************************************************************
+@@ -324,6 +324,7 @@ void CmdLineMultiplexJob::InputStreamsFromCmdLine(int 
+ }
+ 
+ 
++extern "C" int run_mplex(int, int *, int);
+ 
+ int run_mplex( int stream_count, int *stream_list, int av_delay ) {
+    CmdLineMultiplexJob job( stream_count, stream_list, av_delay );

@@ -1,0 +1,14 @@
+$OpenBSD: patch-mplex_lpcmstrm_in_cpp,v 1.1 2017/05/13 00:15:38 espie Exp $
+
+Index: mplex/lpcmstrm_in.cpp
+--- mplex/lpcmstrm_in.cpp.orig
++++ mplex/lpcmstrm_in.cpp
+@@ -52,7 +52,7 @@ LPCMStream::LPCMStream(IBitStream &ibs, LpcmParams *pa
+ 
+ bool LPCMStream::Probe(IBitStream &bs )
+ {
+-    char *last_dot = strrchr( bs.StreamName(), '.' );
++    const char *last_dot = strrchr( bs.StreamName(), '.' );
+     return 
+         last_dot != NULL 
+         && strcmp( last_dot+1, "lpcm") == 0;
