@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2013/11/25 14:16:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.78 2017/05/13 20:11:24 espie Exp $
 
 COMMENT=		PDP, IBM 1401, Nova and other CPUs simulator
 
@@ -25,7 +25,11 @@ CFLAGS+=		-DPATH_KA655X_BIN=\"${PREFIX}/lib/simh/vax/ka655x.bin\" \
 
 USE_GMAKE=		Yes
 MAKE_FILE=		makefile
+
 MAKE_FLAGS=		GCC="${CC}" USE_NETWORK=1
+
+# makefile magic detects clang does lto, but we don't have the linker
+MAKE_FLAGS +=		NO_LTO=1
 
 NO_TEST=		Yes
 
