@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_shared_ufotypes_h,v 1.1 2017/05/13 17:56:55 espie Exp $
+__WORDSIZE is defined nowhere, and our size_t are always lu
+
+Index: src/shared/ufotypes.h
+--- src/shared/ufotypes.h.orig
++++ src/shared/ufotypes.h
+@@ -54,7 +54,7 @@ typedef int32_t actorSizeEnum_t;
+ #	define UFO_SIZE_T "%Iu"
+ #else
+ #ifdef __cplusplus
+-#if __WORDSIZE == 64
++#if 1
+ # define UFO_SIZE_T "%lu"
+ #else
+ # define UFO_SIZE_T "%u"

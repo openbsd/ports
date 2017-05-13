@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_tools_radiant_radiant_ui_colourscheme_ColourScheme_h,v 1.1 2017/05/13 17:56:55 espie Exp $
+key is already used with const, doubling it confuses libc++
+
+Index: src/tools/radiant/radiant/ui/colourscheme/ColourScheme.h
+--- src/tools/radiant/radiant/ui/colourscheme/ColourScheme.h.orig
++++ src/tools/radiant/radiant/ui/colourscheme/ColourScheme.h
+@@ -31,7 +31,7 @@ class ColourItem (public)
+ 
+ };
+ 
+-typedef std::map<const std::string, ColourItem> ColourItemMap;
++typedef std::map<std::string, ColourItem> ColourItemMap;
+ 
+ /*	A colourscheme is basically a collection of ColourItems
+  */

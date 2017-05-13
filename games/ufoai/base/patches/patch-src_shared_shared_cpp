@@ -1,0 +1,46 @@
+$OpenBSD: patch-src_shared_shared_cpp,v 1.1 2017/05/13 17:56:55 espie Exp $
+register is deprecated for C++1y
+
+Index: src/shared/shared.cpp
+--- src/shared/shared.cpp.orig
++++ src/shared/shared.cpp
+@@ -105,8 +105,8 @@ char* Com_ConvertToASCII7 (char* s)
+  */
+ static int Com_FilterAfterStar (const char* pattern, const char* text)
+ {
+-	register const char* p = pattern, *t = text;
+-	register char c, c1;
++	const char* p = pattern, *t = text;
++	char c, c1;
+ 
+ 	while ((c = *p++) == '?' || c == '*')
+ 		if (c == '?' && *t++ == '\0')
+@@ -144,8 +144,8 @@ static int Com_FilterAfterStar (const char* pattern, c
+  */
+ int Com_Filter (const char* pattern, const char* text)
+ {
+-	register const char* p = pattern, *t = text;
+-	register char c;
++	const char* p = pattern, *t = text;
++	char c;
+ 
+ 	while ((c = *p++) != '\0')
+ 		switch (c) {
+@@ -166,7 +166,7 @@ int Com_Filter (const char* pattern, const char* text)
+ 
+ 		case '[':
+ 			{
+-				register char c1 = *t++;
++				char c1 = *t++;
+ 				int invert;
+ 
+ 				if (!c1)
+@@ -178,7 +178,7 @@ int Com_Filter (const char* pattern, const char* text)
+ 
+ 				c = *p++;
+ 				while (1) {
+-					register char cstart = c, cend = c;
++					char cstart = c, cend = c;
+ 
+ 					if (c == '\\') {
+ 						cstart = *p++;

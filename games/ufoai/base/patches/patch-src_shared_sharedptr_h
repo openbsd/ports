@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_shared_sharedptr_h,v 1.1 2017/05/13 17:56:55 espie Exp $
+can't const a ReferenceType (clang)
+
+Index: src/shared/sharedptr.h
+--- src/shared/sharedptr.h.orig
++++ src/shared/sharedptr.h
+@@ -181,7 +181,7 @@ class SharedPtr { (public)
+ 		return *_pointer < *other;
+ 	}
+ 
+-	inline bool operator< (const ReferenceType other) const
++	inline bool operator< (ReferenceType other) const
+ 	{
+ 		return *_pointer < other;
+ 	}

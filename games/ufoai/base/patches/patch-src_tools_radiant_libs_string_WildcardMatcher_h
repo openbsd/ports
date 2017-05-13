@@ -1,0 +1,57 @@
+$OpenBSD: patch-src_tools_radiant_libs_string_WildcardMatcher_h,v 1.1 2017/05/13 17:56:55 espie Exp $
+register is deprecated for C++1y
+
+Index: src/tools/radiant/libs/string/WildcardMatcher.h
+--- src/tools/radiant/libs/string/WildcardMatcher.h.orig
++++ src/tools/radiant/libs/string/WildcardMatcher.h
+@@ -32,8 +32,8 @@ class WildcardMatcher
+ 		/* Like glob_match, but match PATTERN against any final segment of TEXT.  */
+ 		inline bool glob_match_after_star (const char* pattern, const char* text)
+ 		{
+-			register const char* p = pattern, *t = text;
+-			register char c, c1;
++			const char* p = pattern, *t = text;
++			char c, c1;
+ 
+ 			while ((c = *p++) == '?' || c == '*')
+ 				if (c == '?' && *t++ == '\0')
+@@ -58,8 +58,8 @@ class WildcardMatcher
+ 		/* Return nonzero if PATTERN has any special globbing chars in it. */
+ 		inline bool glob_pattern_p (const char* pattern)
+ 		{
+-			register const char* p = pattern;
+-			register char c;
++			const char* p = pattern;
++			char c;
+ 			int open = 0;
+ 
+ 			while ((c = *p++) != '\0')
+@@ -86,8 +86,8 @@ class WildcardMatcher
+ 
+ 		bool glob_matches (const char* pattern, const char* text)
+ 		{
+-			register const char* p = pattern, *t = text;
+-			register char c;
++			const char* p = pattern, *t = text;
++			char c;
+ 
+ 			while ((c = *p++) != '\0')
+ 				switch (c) {
+@@ -107,7 +107,7 @@ class WildcardMatcher
+ 					return glob_match_after_star(p, t);
+ 
+ 				case '[': {
+-					register char c1 = *t++;
++					char c1 = *t++;
+ 					int invert;
+ 
+ 					if (!c1)
+@@ -119,7 +119,7 @@ class WildcardMatcher
+ 
+ 					c = *p++;
+ 					while (1) {
+-						register char cstart = c, cend = c;
++						char cstart = c, cend = c;
+ 
+ 						if (c == '\\') {
+ 							cstart = *p++;

@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_shared_vector_h,v 1.1 2017/05/13 17:56:55 espie Exp $
+better typing
+
+Index: src/shared/vector.h
+--- src/shared/vector.h.orig
++++ src/shared/vector.h
+@@ -34,7 +34,7 @@ extern const pos3_t pos3_origin;
+ 
+ /* Used to compare floats when rounding errors could occur  */
+ #ifndef EQUAL
+-#define EQUAL(a,b) (fabsf((a)-(b))<0.0000000001f)
++#define EQUAL(a,b) (std::abs((a)-(b))<0.0000000001f)
+ #endif
+ 
+ #define Vector2FromInt(x, y) { static_cast<float>(x), static_cast<float>(y) }

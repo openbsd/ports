@@ -1,6 +1,7 @@
-$OpenBSD: patch-build_flags_mk,v 1.2 2014/09/29 18:23:15 kirby Exp $
---- build/flags.mk.orig	Thu Jun  5 08:18:39 2014
-+++ build/flags.mk	Tue Jul  1 20:09:09 2014
+$OpenBSD: patch-build_flags_mk,v 1.3 2017/05/13 17:56:55 espie Exp $
+Index: build/flags.mk
+--- build/flags.mk.orig
++++ build/flags.mk
 @@ -21,7 +21,7 @@ CFLAGS += -g
  CFLAGS += -Winline
  CFLAGS += -Wcast-qual
@@ -10,7 +11,7 @@ $OpenBSD: patch-build_flags_mk,v 1.2 2014/09/29 18:23:15 kirby Exp $
  CFLAGS += -Wpointer-arith
  CFLAGS += -Wno-long-long
  CFLAGS += -pedantic
-@@ -32,7 +32,7 @@ CFLAGS += -Wno-unused-parameter
+@@ -32,13 +32,17 @@ CFLAGS += -Wno-unused-parameter
  CFLAGS += -Wreturn-type
  CFLAGS += -Wwrite-strings
  CFLAGS += -Wno-variadic-macros
@@ -18,4 +19,23 @@ $OpenBSD: patch-build_flags_mk,v 1.2 2014/09/29 18:23:15 kirby Exp $
 +#CFLAGS += -Wno-format-zero-length
  
  # clang stuff
- ifneq (,$(findstring clang,$(CXX)))
+-ifneq (,$(findstring clang,$(CXX)))
++ifeq ($(USE_CLANG), 1)
+   CFLAGS += -Wno-extended-offsetof
+-  CFLAGS += -Wno-c++11-extensions
+   CFLAGS += -Wno-cast-align
++  CFLAGS += -Wno-expansion-to-defined
++# XXX this one may break at runtime, to investigate
++  CFLAGS += -Wno-dynamic-class-memaccess
++# XXX so far so good ?
++  CFLAGS += -Wno-varargs
+ endif
+ 
+ ifeq ($(PROFILING),1)
+@@ -62,3 +66,6 @@ CCFLAGS += -std=c99
+ #CCFLAGS += -Wc++-compat
+ 
+ CXXFLAGS += -Wnon-virtual-dtor
++# features such as nullptr can only be used safely with variadic functions
++# in C++11
++CXXFLAGS += -std=c++11

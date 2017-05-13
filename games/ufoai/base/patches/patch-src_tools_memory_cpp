@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_tools_memory_cpp,v 1.1 2017/05/13 17:56:55 espie Exp $
+__WORDSIZE is not defined anywhere, and our size_t is always %lu
+
+Index: src/tools/memory.cpp
+--- src/tools/memory.cpp.orig
++++ src/tools/memory.cpp
+@@ -32,7 +32,7 @@
+ # define UFO_SIZE_LENGTH_T "%03Iu"
+ #else
+ #ifdef __cplusplus
+-#if __WORDSIZE == 64
++#if 1
+ # define UFO_SIZE_LENGTH_T "%03lu"
+ #else
+ # define UFO_SIZE_LENGTH_T "%03u"

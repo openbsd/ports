@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2016/04/11 18:22:43 nigel Exp $
+# $OpenBSD: Makefile,v 1.14 2017/05/13 17:56:55 espie Exp $
 
 COMMENT-main =		squad-based tactical strategy game
 COMMENT-editor = 	UFO:AI map editor
@@ -29,9 +29,7 @@ WANTLIB-editor += gtk-x11-2.0 gtkglext-x11-1.0 gtksourceview-2.0
 WANTLIB-editor += openal pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB-editor += pangox-1.0 vorbisfile xml2 ${cWANTLIB}
 
-MODULES = 		gcc4
-MODGCC4_ARCHS = 	*
-MODGCC4_LANGS =	c++
+WANT_CXX =		base gcc
 
 BUILD_DEPENDS = 	devel/gettext-tools
 RUN_DEPENDS = 		games/ufoai/data \
@@ -70,8 +68,8 @@ CONFIGURE_ARGS =	--enable-release \
 			--disable-testall \
 			--datadir=${PREFIX}/share/ufoai
 
-CONFIGURE_ENV +=	CFLAGS="${CFLAGS}" \
-			CCFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+CONFIGURE_ENV +=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include" \
+			CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -liconv -lexecinfo" \
 			Q=
 
@@ -81,8 +79,8 @@ post-extract:
 	cp ${WRKSRC}/build/platforms/freebsd.mk ${WRKSRC}/build/platforms/openbsd.mk
 
 pre-configure:
-	perl -pi -e 's,/usr/share/games/,${PREFIX}/share/,g' ${WRKSRC}/debian/*.6
-	perl -pi -e 's,/usr/games/,${PREFIX}/bin/,g' ${WRKSRC}/debian/*.desktop
+	perl -pi.beforesubst -e 's,/usr/share/games/,${PREFIX}/share/,g' ${WRKSRC}/debian/*.6
+	perl -pi.beforesubst -e 's,/usr/games/,${PREFIX}/bin/,g' ${WRKSRC}/debian/*.desktop
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/COPYING ${PREFIX}/share/ufoai
@@ -100,3 +98,6 @@ post-install:
 		${PREFIX}/share/ufoai/radiant/
 
 .include <bsd.port.mk>
+.if ${PROPERTIES:Mclang}
+MAKE_ENV += USE_CLANG=1
+.endif

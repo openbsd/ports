@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_client_battlescape_cl_particle_cpp,v 1.1 2017/05/13 17:56:55 espie Exp $
+from upstream, shuts up clang errors
+
+Index: src/client/battlescape/cl_particle.cpp
+--- src/client/battlescape/cl_particle.cpp.orig
++++ src/client/battlescape/cl_particle.cpp
+@@ -138,7 +138,7 @@ static char const* const pc_strings[] = {
+ CASSERT(lengthof(pc_strings) == PC_NUM_PTLCMDS);
+ 
+ /** @brief particle commands parameter and types */
+-static const int pc_types[PC_NUM_PTLCMDS] = {
++static const unsigned int pc_types[PC_NUM_PTLCMDS] = {
+ 	0,
+ 
+ 	V_UNTYPED, V_UNTYPED, V_UNTYPED,
