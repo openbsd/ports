@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.78 2017/04/12 08:29:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.79 2017/05/13 17:52:28 espie Exp $
 
 COMMENT =		digital photo organizer
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += EGL GL ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xt Xxf86vm atk-1.0
 WANTLIB += atk-bridge-2.0 atspi c cairo cairo-gobject crypto curl
-WANTLIB += dbus-1 drm enchant epoxy estdc++ exif exiv2 expat ffi
+WANTLIB += dbus-1 drm enchant epoxy $(LIBECXX) exif exiv2 expat ffi
 WANTLIB += fontconfig freetype gbm gck-1 gcr-base-3 gcr-ui-3 gcrypt
 WANTLIB += gdata gdk-3 gdk_pixbuf-2.0 gee-0.8 gexiv2 gio-2.0 glapi
 WANTLIB += glib-2.0 gmodule-2.0 goa-1.0 gobject-2.0 gpg-error
