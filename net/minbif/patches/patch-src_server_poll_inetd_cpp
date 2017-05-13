@@ -1,16 +1,18 @@
-$OpenBSD: patch-src_server_poll_inetd_cpp,v 1.2 2013/09/24 15:34:47 landry Exp $
+$OpenBSD: patch-src_server_poll_inetd_cpp,v 1.3 2017/05/13 18:38:25 espie Exp $
 https://symlink.me/projects/minbif/repository/revisions/cdc5ed2372b5df08337aa60c32a1c4493321d158
 
 error: #error "Only <glib.h> can be included directly."
 
---- src/server_poll/inetd.cpp.orig	Tue Mar 20 10:52:16 2012
-+++ src/server_poll/inetd.cpp	Tue Mar 20 10:52:27 2012
-@@ -17,7 +17,7 @@
+Index: src/server_poll/inetd.cpp
+--- src/server_poll/inetd.cpp.orig
++++ src/server_poll/inetd.cpp
+@@ -17,7 +17,8 @@
   */
  
  #include <cassert>
 -#include <glib/gmain.h>
 +#include <glib.h>
++#include <unistd.h>
  
  #include "inetd.h"
  #include "irc/irc.h"
