@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Distfile.pm,v 1.10 2017/05/07 16:50:22 espie Exp $
+# $OpenBSD: Distfile.pm,v 1.11 2017/05/13 09:56:03 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -30,6 +30,9 @@ sub normalize
 	my ($class, $file) = @_;
 	# XXX collapse name/../ aka "semarie rule"
 	while ($file =~ s/[^\/]+\/\.\.\///) {
+	}
+	# remove duplicate slashes as well
+	while ($file =~ s/\/\/+/\//g) {
 	}
 	return $file;
 }
