@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1348 2017/05/12 18:18:09 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1349 2017/05/13 12:34:01 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -290,7 +290,7 @@ MODULES += ${_i}
 .endfor
 
 MODULES ?=
-.if !empty(MODULES)
+.if !empty(MODULES) || !empty(WANT_CXX)
 _MODULES_DONE =
 .  include "${PORTSDIR}/infrastructure/mk/modules.port.mk"
 .endif
