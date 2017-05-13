@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2015/09/24 10:38:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2017/05/13 20:59:05 espie Exp $
 
 # XXX check if still needed at next update
 CXXFLAGS +=		-std=c++11 -fpermissive
@@ -33,9 +33,7 @@ MODULES =		devel/cmake \
 			devel/gettext
 
 # c++11
-MODULES +=		gcc4
-MODGCC4_ARCHS=		*
-MODGCC4_LANGS=		c++
+WANT_CXX =		base gcc
 
 RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+3,-guic
@@ -49,6 +47,7 @@ WRKDIST =		${WRKDIR}/${DISTNAME:S/-src//}
 
 # requires posix_openpt
 CONFIGURE_ARGS +=	-DENABLE_WX=OFF -DENABLE_FFMPEG=OFF
+CXXFLAGS +=		-Wno-c++11-narrowing
 
 pre-fake:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/vbam

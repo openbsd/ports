@@ -1,0 +1,15 @@
+$OpenBSD: patch-fex_fex_blargg_common_h,v 1.1 2017/05/13 20:59:05 espie Exp $
+an int is not a const char *!
+
+Index: fex/fex/blargg_common.h
+--- fex/fex/blargg_common.h.orig
++++ fex/fex/blargg_common.h
+@@ -12,7 +12,7 @@
+ typedef const char* blargg_err_t; // 0 on success, otherwise error string
+ 
+ // Success; no error
+-int const blargg_ok = 0;
++const char *const blargg_ok = nullptr;
+ 
+ // BLARGG_RESTRICT: equivalent to C99's restrict, where supported
+ #if __GNUC__ >= 3 || _MSC_VER >= 1100
