@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 
-# $OpenBSD: update-patches,v 1.10 2017/05/06 12:43:55 espie Exp $
+# $OpenBSD: update-patches,v 1.11 2017/05/13 19:40:22 espie Exp $
 # Copyright (c) 2017
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
@@ -68,7 +68,7 @@ sub fuzz_chunk
 	if ($chunk->{lines}[0] =~ m/^\s/ &&
 	    $chunk->{lines}[1] =~ m/^\s/ && 
 	    $chunk->{lines}[1] =~ m/$kw_re/) {
-	    	$zap = 1;
+	    	$zap = 2;
 	}
 	while ($zap) {
 		shift @{$chunk->{lines}};
@@ -83,7 +83,7 @@ sub fuzz_chunk
 	    $chunk->{lines}[-1] =~ m/$kw_re/) {
 	    	$zap=1;
 	}
-	if ($chunk->{lines}[-2] =~ m/^\s/ &&
+	if ($chunk->{lines}[-1] =~ m/^\s/ &&
 	    $chunk->{lines}[-2] =~ m/^\s/ &&
 	    $chunk->{lines}[-2] =~ m/$kw_re/) {
 	    	$zap=2;
