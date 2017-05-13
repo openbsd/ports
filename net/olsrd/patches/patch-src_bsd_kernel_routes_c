@@ -1,0 +1,68 @@
+$OpenBSD: patch-src_bsd_kernel_routes_c,v 1.1 2017/05/13 22:27:20 stsp Exp $
+
+Index: src/bsd/kernel_routes.c
+--- src/bsd/kernel_routes.c.orig
++++ src/bsd/kernel_routes.c
+@@ -111,6 +111,9 @@ add_del_route(const struct rt_entry *rt, int add)
+   rtm->rtm_flags = olsr_rt_flags(rt, add);
+   rtm->rtm_pid = OLSR_PID;
+   rtm->rtm_seq = ++seq;
++#if defined(__OpenBSD__)
++  rtm->rtm_tableid = getrtable();
++#endif
+ 
+   /* walk to the end of the header */
+   walker = buff + sizeof(struct rt_msghdr);
+@@ -222,14 +225,31 @@ add_del_route(const struct rt_entry *rt, int add)
+     drtm->rtm_version = RTM_VERSION;
+     drtm->rtm_type = RTM_DELETE;
+     drtm->rtm_index = 0;
+-    drtm->rtm_flags = olsr_rt_flags(rt, add);
++    drtm->rtm_flags = olsr_rt_flags(rt, 0);
+     drtm->rtm_seq = ++seq;
++#if defined(__OpenBSD__)
++    drtm->rtm_tableid = getrtable();
++#endif
+ 
+     walker = dbuff + sizeof(struct rt_msghdr);
+     sin4.sin_addr = rt->rt_dst.prefix.v4;
+     memcpy(walker, &sin4, sizeof(sin4));
+     walker += sin_size;
+     drtm->rtm_addrs = RTA_DST;
++    if (0 != (drtm->rtm_flags & RTF_GATEWAY)) {
++      nexthop = &rt->rt_nexthop;
++      sin4.sin_addr = nexthop->gateway.v4;
++      memcpy(walker, &sin4, sizeof(sin4));
++      walker += sin_size;
++      drtm->rtm_addrs |= RTA_GATEWAY;
++    }
++    if (0 == (drtm->rtm_flags & RTF_HOST)) {
++      olsr_prefix_to_netmask(&mask, rt->rt_dst.prefix_len);
++      sin4.sin_addr = mask.v4;
++      memcpy(walker, &sin4, sizeof(sin4));
++      walker += sin_size;
++      drtm->rtm_addrs |= RTA_NETMASK;
++    }
+     drtm->rtm_msglen = (unsigned short)(walker - dbuff);
+     len = write(olsr_cnf->rts, dbuff, drtm->rtm_msglen);
+     if (len < 0) {
+@@ -298,6 +318,9 @@ add_del_route6(const struct rt_entry *rt, int add)
+   rtm->rtm_flags = olsr_rt_flags(rt, add);
+   rtm->rtm_pid = OLSR_PID;
+   rtm->rtm_seq = ++seq;
++#if defined(__OpenBSD__)
++  rtm->rtm_tableid = getrtable();
++#endif
+ 
+   /* walk to the end of the header */
+   walker = buff + sizeof(struct rt_msghdr);
+@@ -385,6 +408,9 @@ add_del_route6(const struct rt_entry *rt, int add)
+     drtm->rtm_index = 0;
+     drtm->rtm_flags = olsr_rt_flags(rt, add);
+     drtm->rtm_seq = ++seq;
++#if defined(__OpenBSD__)
++    drtm->rtm_tableid = getrtable();
++#endif
+ 
+     walker = dbuff + sizeof(struct rt_msghdr);
+     memcpy(&sin6.sin6_addr.s6_addr, &rt->rt_dst.prefix.v6, sizeof(struct in6_addr));

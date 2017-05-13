@@ -1,26 +1,27 @@
-$OpenBSD: patch-src_plugin_loader_c,v 1.1 2010/06/14 12:36:34 sebastia Exp $
+$OpenBSD: patch-src_plugin_loader_c,v 1.2 2017/05/13 22:27:20 stsp Exp $
 the plugins get installed to $LOCALBASE/lib/olsrd-plugins, so load them from there.
---- src/plugin_loader.c.orig	Tue Jun  1 09:42:27 2010
-+++ src/plugin_loader.c	Tue Jun  1 09:43:13 2010
-@@ -87,20 +87,14 @@ olsr_load_plugins(void)
+--- src/plugin_loader.c.orig	Sun Sep 20 14:22:23 2015
++++ src/plugin_loader.c	Sun Apr  3 14:06:06 2016
+@@ -88,20 +88,14 @@ olsr_load_plugins(void)
  static int
  olsr_load_dl(char *libname, struct plugin_param *params)
  {
--#if TESTLIB_PATH
+-#if defined TESTLIB_PATH && TESTLIB_PATH
 -  char path[256] = "/usr/testlib/";
--#endif
+-#endif /* defined TESTLIB_PATH && TESTLIB_PATH */
 +  char path[256] = "${LOCALBASE}/lib/olsrd-plugins/";
    struct olsr_plugin *plugin = olsr_malloc(sizeof(struct olsr_plugin), "Plugin entry");
    int rv;
  
    OLSR_PRINTF(0, "---------- LOADING LIBRARY %s ----------\n", libname);
  
--#if TESTLIB_PATH
-   strcat(path, libname);
+-#if defined TESTLIB_PATH && TESTLIB_PATH
+-  strcat(path, libname);
++  strlcat(path, libname, sizeof(path));
    plugin->dlhandle = dlopen(path, RTLD_NOW);
--#else
+-#else /* defined TESTLIB_PATH && TESTLIB_PATH */
 -  plugin->dlhandle = dlopen(libname, RTLD_NOW);
--#endif
+-#endif /* defined TESTLIB_PATH && TESTLIB_PATH */
    if (plugin->dlhandle == NULL) {
      const int save_errno = errno;
      OLSR_PRINTF(0, "DL loading failed: \"%s\"!\n", dlerror());

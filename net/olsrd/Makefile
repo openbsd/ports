@@ -1,32 +1,30 @@
-# $OpenBSD: Makefile,v 1.27 2017/03/02 19:05:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2017/05/13 22:27:20 stsp Exp $
 
 COMMENT-main=		OLSR routing daemon
 COMMENT-gui=		OLSR routing daemon GUI
-COMMENT-plugins=	OLSR routing daemon plugins
 
-VERSION=		0.6.0
+VERSION=		0.9.0.3
 DISTNAME=		olsrd-${VERSION}
 PKGNAME-main=		olsrd-${VERSION}
 PKGNAME-gui=		olsrd-gui-${VERSION}
 PKGNAME-plugins=	olsrd-plugins-${VERSION}
-REVISION=		8
 
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.olsr.org/
-MASTER_SITES=	${HOMEPAGE}releases/0.6/
+MASTER_SITES=	${HOMEPAGE}releases/0.9/
 
-MAINTAINER=	Martin Reindl <martin@openbsd.org>
+MAINTAINER=	Stefan Sperling <stsp@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-MULTI_PACKAGES= -main -gui -plugins
+MULTI_PACKAGES= -main -gui
 
 BUILD_DEPENDS=	devel/bison
 
-LIB_DEPENDS-main=	# empty
-WANTLIB-main=	c
+LIB_DEPENDS-main= net/libnet/1.1
+WANTLIB-main=	c lib/libnet-1.1/net=11
 
 LIB_DEPENDS-gui= x11/gtk+2
 WANTLIB-gui=	${MODGETTEXT_WANTLIB}
@@ -36,9 +34,6 @@ WANTLIB-gui += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
 WANTLIB-gui += gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB-gui += z
 
-WANTLIB-plugins=	# empty
-LIB_DEPENDS-plugins=	# empty
-RUN_DEPENDS-plugins=	olsrd-${VERSION}:net/olsrd
 
 USE_GMAKE=	Yes
 NO_TEST=	Yes
@@ -46,7 +41,8 @@ NO_TEST=	Yes
 MODULES=	devel/gettext
 
 ALL_TARGET=	build_all
-MAKE_FLAGS=	DEBUG=0 CC="${CC}"
+MAKE_FLAGS=	DEBUG=0 CC="${CC}" OS=obsd LIBNET=1
+CPPFLAGS+=	"-I${PREFIX}/libnet-1.1"
 FAKE_FLAGS=	SBINDIR=${DESTDIR}/${PREFIX}/sbin \
 		ETCDIR=${DESTDIR}/${PREFIX}/share/examples/olsrd \
 		LIBDIR=${DESTDIR}/${PREFIX}/lib/olsrd-plugins \
@@ -68,11 +64,8 @@ post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gui/linux-gtk/olsrd-gui ${PREFIX}/sbin
 	${INSTALL_SCRIPT} ${WRKSRC}/lib/dot_draw/olsr-topology-view.pl \
 		${PREFIX}/bin
-	cd ${PREFIX}/man; gzip -d man5/olsrd.conf.5.gz man8/olsrd.8.gz
+	cd ${PREFIX}/man; gzip -f -d man5/olsrd.conf.5.gz man8/olsrd.8.gz
 	${INSTALL_DATA} ${WRKSRC}/files/olsrd.conf.default.* \
 		${PREFIX}/share/examples/olsrd
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/olsrd
-	cd ${WRKSRC}; ${INSTALL_DATA} CHANGELOG README README-Link-Quality* \
- 		${PREFIX}/share/doc/olsrd
 
 .include <bsd.port.mk>

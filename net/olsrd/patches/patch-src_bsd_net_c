@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_bsd_net_c,v 1.3 2017/05/13 22:27:20 stsp Exp $
+
+Index: src/bsd/net.c
+--- src/bsd/net.c.orig
++++ src/bsd/net.c
+@@ -51,6 +51,7 @@
+ #include "../ipcalc.h"
+ #include "../parser.h"          /* dnc: needed for call to packet_parser() */
+ #include "../olsr_protocol.h"
++#include "../olsr_random.h"
+ #include "../olsr_cfg.h"
+ #include "../olsr.h"
+ 

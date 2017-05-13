@@ -1,17 +1,27 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2010/07/06 07:41:46 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2017/05/13 22:27:20 stsp Exp $
 @pkgpath net/olsrd
+@pkgpath net/olsrd,-plugins
+@conflict olsrd-plugins-*
+bin/olsr-topology-view.pl
+lib/olsrd-plugins/
+lib/olsrd-plugins/olsrd_dot_draw.so
+lib/olsrd-plugins/olsrd_httpinfo.so
+lib/olsrd-plugins/olsrd_jsoninfo.so
+lib/olsrd-plugins/olsrd_mini.so
+lib/olsrd-plugins/olsrd_nameservice.so
+lib/olsrd-plugins/olsrd_pgraph.so
+lib/olsrd-plugins/olsrd_secure.so
+lib/olsrd-plugins/olsrd_txtinfo.so
+lib/olsrd-plugins/olsrd_watchdog.so
 @man man/man5/olsrd.conf.5
 @man man/man8/olsrd.8
 @bin sbin/olsrd
-share/doc/olsrd/
-share/doc/olsrd/CHANGELOG
-share/doc/olsrd/README
-share/doc/olsrd/README-Link-Quality-Fish-Eye.txt
-share/doc/olsrd/README-Link-Quality.html
 share/examples/olsrd/
-@comment share/examples/olsrd/olsrd.conf
+@sample ${SYSCONFDIR}/olsrd/
+share/examples/olsrd/olsrd.conf
+@sample ${SYSCONFDIR}/olsrd/olsrd.conf
 share/examples/olsrd/olsrd.conf.default.full
+share/examples/olsrd/olsrd.conf.default.full.txt
 share/examples/olsrd/olsrd.conf.default.lq
-share/examples/olsrd/olsrd.conf.default.lq-fisheye
 share/examples/olsrd/olsrd.conf.default.rfc
-@sample ${SYSCONFDIR}/olsrd.conf
+@rcscript /etc/rc.d/olsrd

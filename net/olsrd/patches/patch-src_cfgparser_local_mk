@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_cfgparser_local_mk,v 1.1 2010/07/06 07:41:46 sthen Exp $
---- src/cfgparser/local.mk.orig	Wed Mar 31 18:03:53 2010
-+++ src/cfgparser/local.mk	Tue Jun 29 15:25:30 2010
-@@ -73,5 +73,7 @@ $(C)oparse.c: $(C)oparse.y $(C)olsrd_conf.h $(C)Makefi
+$OpenBSD: patch-src_cfgparser_local_mk,v 1.2 2017/05/13 22:27:20 stsp Exp $
+--- src/cfgparser/local.mk.orig	Sun Sep 20 14:22:23 2015
++++ src/cfgparser/local.mk	Sun Apr  3 12:48:37 2016
+@@ -79,5 +79,7 @@ endif
  
  $(C)oparse.o: CFLAGS := $(filter-out -Wunreachable-code,$(CFLAGS))
  

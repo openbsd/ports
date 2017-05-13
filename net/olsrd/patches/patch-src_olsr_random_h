@@ -1,0 +1,32 @@
+$OpenBSD: patch-src_olsr_random_h,v 1.1 2017/05/13 22:27:20 stsp Exp $
+
+Index: src/olsr_random.h
+--- src/olsr_random.h.orig
++++ src/olsr_random.h
+@@ -9,7 +9,14 @@
+ 
+ #define OLSR_RANDOM_MAX INT32_MAX
+ 
++#if defined(__OpenBSD__)
+ static inline long int olsr_random(void) {
++  long int r;
++  arc4random_buf(&r, sizeof(r));
++  return r;
++}
++#else
++static inline long int olsr_random(void) {
+   int32_t value;
+   int randomFile;
+ 
+@@ -32,9 +39,10 @@ static inline long int olsr_random(void) {
+ 
+   return abs(value);
+ }
++#endif
+ 
+ static inline void olsr_init_random(void) {
+-  srandom(time(NULL));
++  srandom(arc4random());
+ }
+ 
+ #endif /* _OLSR_RANDOM_H */
