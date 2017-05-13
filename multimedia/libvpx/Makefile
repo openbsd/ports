@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2017/04/10 11:46:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2017/05/13 10:33:14 espie Exp $
 
 COMMENT=	Google VP8/VP9 video codec
 
@@ -18,10 +18,13 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	c m pthread ${LIBCXX}
 
-MODULES=	lang/clang
+.include <bsd.port.arch.mk>
+.if !${PROPERTIES:Mclang}
+MODULES =	lang/clang
 
-MODCLANG_ARCHS=	amd64 i386
+MODCLANG_ARCHS=amd64 i386
 MODCLANG_LANGS=	c c++
+.endif
 
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
 BUILD_DEPENDS+=	devel/yasm

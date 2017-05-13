@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2017/04/10 11:45:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2017/05/13 10:33:14 espie Exp $
 
 COMMENT =	console audio player
 DISTNAME =	moc-2.5.1
@@ -21,7 +21,7 @@ WANTLIB += vorbisfile vpx wavpack x264 x265 xvidcore z
 # libvpx -> libavcodec -> mocp
 # see multimedia/gstreamer1/plugins-good/Makefile for details
 .if ${MACHINE_ARCH:Mi386} || ${MACHINE_ARCH:Mamd64}
-WANTLIB += estdc++
+WANTLIB += $(LIBECXX)
 .endif
 
 LIB_DEPENDS =	audio/faad \

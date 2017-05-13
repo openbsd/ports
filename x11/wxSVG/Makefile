@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2017/04/10 11:46:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2017/05/13 10:33:14 espie Exp $
 
 COMMENT=		C++ library to create, manipulate and render SVG files
 
@@ -33,7 +33,7 @@ WANTLIB += xcb-render xcb-shm xvidcore z
 # comes from multimedia/libvpx using lang/clang MODULE on i386|amd64 only
 # which includes gcc4 MODULE with adds gcc-libs in dependency scope
 .if ${MACHINE_ARCH:Mi386} || ${MACHINE_ARCH:Mamd64}
-WANTLIB += estdc++
+WANTLIB += $(LIBECXX)
 .endif
 
 LIB_DEPENDS=		graphics/ffmpeg \
