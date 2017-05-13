@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2017/04/17 10:50:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.71 2017/05/13 15:44:09 espie Exp $
 
 COMMENT=		sytem monitor for GNOME
 
@@ -25,9 +25,7 @@ MODULES=		devel/dconf \
 			x11/gnome
 
 # c++11
-MODULES +=		gcc4
-MODGCC4_ARCHS=		*
-MODGCC4_LANGS=		c++
+WANT_CXX =		base gcc
 
 LIB_DEPENDS=		devel/libgtop2>=2.30.0 \
 			x11/gnome/librsvg \

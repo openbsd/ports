@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.78 2017/04/18 04:38:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.79 2017/05/13 15:44:09 espie Exp $
 
 COMMENT=		terminal emulation library
 
@@ -28,10 +28,9 @@ WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += tasn1 xcb xcb-render xcb-shm z iconv intl idn2 pcre2-8
 WANTLIB += unistring
 
-MODULES=		x11/gnome \
-			gcc4
+MODULES=		x11/gnome
 
-MODGCC4_ARCHS=		*
+WANT_CXX =	base gcc
 MODGCC4_LANGS=		c c++
 
 BUILD_DEPENDS=		devel/gperf

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2016/09/07 20:29:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2017/05/13 15:44:09 espie Exp $
 
 # XXX check if still needed at next update
 CXXFLAGS +=		-std=c++11
@@ -32,9 +32,7 @@ WANTLIB += xcb-dri2 xcb-glx xcb-render xcb-shm z
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=gtkglext/}
 
 # c++11
-MODULES +=		gcc4
-MODGCC4_ARCHS=		*
-MODGCC4_LANGS=		c++
+WANT_CXX =		base gcc
 
 LIB_DEPENDS =		x11/gtk2mm \
 			x11/gtkglext

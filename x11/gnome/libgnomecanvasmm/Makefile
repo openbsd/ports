@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2017/04/13 07:38:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2017/05/13 15:44:09 espie Exp $
 
 # XXX check if still needed at next update
 CXXFLAGS +=		-std=c++11
@@ -30,9 +30,7 @@ WANTLIB += xcb-shm z iconv intl
 MODULES=		x11/gnome
 
 # c++11
-MODULES +=		gcc4
-MODGCC4_ARCHS=		*
-MODGCC4_LANGS=		c++
+WANT_CXX =		base gcc
 
 LIB_DEPENDS=		x11/gnome/libgnomecanvas \
 			x11/gtk2mm
