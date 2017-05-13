@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2016/03/20 19:56:35 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2017/05/13 09:11:40 benoit Exp $
 
 COMMENT=	Perl extension for Consistent Signal Handling
 
-DISTNAME=	Sys-SigAction-0.11
+DISTNAME =	Sys-SigAction-0.23
 CATEGORIES=	devel
 
 # Perl
