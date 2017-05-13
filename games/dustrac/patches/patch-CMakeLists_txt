@@ -1,12 +1,16 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1 2017/01/25 09:58:03 kirby Exp $
---- CMakeLists.txt.orig	Wed Jan 25 10:45:31 2017
-+++ CMakeLists.txt	Wed Jan 25 10:45:58 2017
-@@ -64,7 +64,7 @@ elseif(WIN32)
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2017/05/13 21:56:14 espie Exp $
+set C++ options explicitly, clang complains for C code.
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -64,7 +64,8 @@ elseif(WIN32)
  endif()
  
  if(CMAKE_COMPILER_IS_GNUCXX OR MINGW OR ${CMAKE_CXX_COMPILER_ID} STREQUAL "Clang")
 -    add_compile_options(-std=c++11 -W -Wall -O3 -pedantic)
-+    add_compile_options(-std=c++11 -W -Wall -pedantic)
++    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
++    add_compile_options(-W -Wall -pedantic)
      add_compile_options(-fomit-frame-pointer -finline-functions -ffast-math)
  elseif(MSVC)
      add_definitions(-DNOMINMAX)
