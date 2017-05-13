@@ -1,3 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/05/25 20:52:24 jung Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/05/13 19:54:28 jung Exp $
 @bin bin/sct
+bin/sctd
 @man man/man1/sct.1
+@man man/man1/sctd.1
