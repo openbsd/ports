@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2015/06/05 20:36:46 stu Exp $
+@comment $OpenBSD: PLIST,v 1.7 2017/05/14 09:02:01 stu Exp $
 @conflict mentry-*
 @conflict wcb-*
 @pkgpath devel/mentry
@@ -85,8 +85,11 @@ lib/tcl/modules/85/cursor-0.3.1.tm
 lib/tcl/modules/85/datefield-0.2.tm
 lib/tcl/modules/85/history-0.1.tm
 lib/tcl/modules/85/ipentry-0.3.tm
-lib/tcl/modules/85/ntext-0.81.tm
+lib/tcl/modules/85/notifywindow-1.0.tm
 lib/tcl/modules/85/swaplist-0.2.tm
+lib/tcl/ntext/
+lib/tcl/ntext/ntext.tcl
+lib/tcl/ntext/pkgIndex.tcl
 lib/tcl/plotchart/
 lib/tcl/plotchart/pkgIndex.tcl
 lib/tcl/plotchart/plot3d.tcl
@@ -209,6 +212,7 @@ lib/tcl/widgetv/validator.tcl
 @man man/mann/ipentry.n
 @man man/mann/khim.n
 @man man/mann/menubar.n
+@man man/mann/notifywindow.n
 @man man/mann/ntext.n
 @man man/mann/ntextBindings.n
 @man man/mann/ntextIndent.n
@@ -255,11 +259,22 @@ share/doc/tablelist/README.txt
 share/doc/tablelist/adwaita.png
 share/doc/tablelist/ambiance.png
 share/doc/tablelist/aqua.png
+share/doc/tablelist/arc.png
 share/doc/tablelist/arrowStyles.png
+share/doc/tablelist/arrowStyles_vista.png
 share/doc/tablelist/baghira.png
+share/doc/tablelist/bicolor1.png
+share/doc/tablelist/bicolor2.png
+share/doc/tablelist/bicolor3.png
+share/doc/tablelist/bicolor4.png
+share/doc/tablelist/blueMenta.png
 share/doc/tablelist/browse.png
 share/doc/tablelist/browseTree.png
 share/doc/tablelist/bwidget.png
+share/doc/tablelist/classic1.png
+share/doc/tablelist/classic2.png
+share/doc/tablelist/classic3.png
+share/doc/tablelist/classic4.png
 share/doc/tablelist/config.png
 share/doc/tablelist/dirViewer.png
 share/doc/tablelist/dust.png
@@ -270,11 +285,17 @@ share/doc/tablelist/gtk.png
 share/doc/tablelist/index.html
 share/doc/tablelist/klearlooks.png
 share/doc/tablelist/mate.png
+share/doc/tablelist/menta.png
 share/doc/tablelist/mint.png
+share/doc/tablelist/mint2.png
 share/doc/tablelist/newWave.png
 share/doc/tablelist/oxygen1.png
 share/doc/tablelist/oxygen2.png
 share/doc/tablelist/phase.png
+share/doc/tablelist/plain1.png
+share/doc/tablelist/plain2.png
+share/doc/tablelist/plain3.png
+share/doc/tablelist/plain4.png
 share/doc/tablelist/plastik.png
 share/doc/tablelist/plastique.png
 share/doc/tablelist/radiance.png
@@ -294,14 +315,19 @@ share/doc/tablelist/tablelistTkCore.html
 share/doc/tablelist/tablelistWidget.html
 share/doc/tablelist/tileWidgets.png
 share/doc/tablelist/ubuntu.png
+share/doc/tablelist/ubuntu2.png
+share/doc/tablelist/ubuntu3.png
+share/doc/tablelist/ubuntuMate.png
 share/doc/tablelist/vistaAero.png
 share/doc/tablelist/vistaClassic.png
+share/doc/tablelist/win10.png
 share/doc/tablelist/win7Aero.png
 share/doc/tablelist/win7Classic.png
 share/doc/tablelist/winnative.png
 share/doc/tablelist/winxpBlue.png
 share/doc/tablelist/winxpOlive.png
 share/doc/tablelist/winxpSilver.png
+share/doc/tablelist/yuyo.png
 share/doc/wcb/
 share/doc/wcb/CHANGES.txt
 share/doc/wcb/COPYRIGHT.txt
@@ -356,6 +382,7 @@ share/examples/tklib/menubar/demo.tcl
 share/examples/tklib/ntext/
 share/examples/tklib/ntext/ntextDemoBindings.tcl
 share/examples/tklib/ntext/ntextDemoIndent.tcl
+share/examples/tklib/ntext/ntextDemoMacScrolling.tcl
 share/examples/tklib/ntext/ntextExample.tcl
 share/examples/tklib/plotchart/
 share/examples/tklib/plotchart/demo.tcl
@@ -396,6 +423,7 @@ share/examples/tklib/plotchart/testmask.tcl
 share/examples/tklib/plotchart/testmultiplexy.tcl
 share/examples/tklib/plotchart/testmultixy.tcl
 share/examples/tklib/plotchart/testneedle.tcl
+share/examples/tklib/plotchart/testregion.tcl
 share/examples/tklib/plotchart/testshadexy.tcl
 share/examples/tklib/plotchart/testtable.tcl
 share/examples/tklib/plotchart/testtxplot.tcl

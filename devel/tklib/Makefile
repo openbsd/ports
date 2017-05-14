@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2017/05/10 01:06:38 stu Exp $
+# $OpenBSD: Makefile,v 1.17 2017/05/14 09:02:01 stu Exp $
 
 COMMENT =	Tk Standard Library
 
-DISTNAME =	tklib-0.6pl2
+DISTNAME =	tklib-0.6pl3
 CATEGORIES =	devel x11/tk
 HOMEPAGE =	http://core.tcl.tk/tklib/home
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
@@ -10,8 +10,10 @@ MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
 # BSD style
 PERMIT_PACKAGE_CDROM =	Yes
 
-# Fossil checkin 2015/04/22 26f7edca5c2ac53d576f5af35146da23e76a005f
-MASTER_SITES =	https://github.com/aryler/Tklib_distribution/raw/master/
+GH_ACCOUNT =	tcltk
+GH_PROJECT =	tklib
+GH_COMMIT =	51f8f78bb5130e7f811dec33dcecc9211f4698bd
+
 MODULES =	x11/tk
 BUILD_DEPENDS =	devel/tcllib
 RUN_DEPENDS =	devel/tcllib ${MODTK_RUN_DEPENDS}
