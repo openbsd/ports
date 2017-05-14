@@ -1,7 +1,8 @@
-$OpenBSD: patch-support_installation_modules_tcl,v 1.7 2015/06/05 20:36:24 stu Exp $
---- support/installation/modules.tcl.orig	Thu Jun  4 11:36:52 2015
-+++ support/installation/modules.tcl	Fri Jun  5 15:18:28 2015
-@@ -32,29 +32,31 @@ array set guide {}
+$OpenBSD: patch-support_installation_modules_tcl,v 1.8 2017/05/14 09:01:31 stu Exp $
+Index: support/installation/modules.tcl
+--- support/installation/modules.tcl.orig
++++ support/installation/modules.tcl
+@@ -32,118 +32,120 @@ array set guide {}
  
  Exclude calendar
  Exclude exif
@@ -44,9 +45,11 @@ $OpenBSD: patch-support_installation_modules_tcl,v 1.7 2015/06/05 20:36:24 stu E
 +Module  csv         _tcm  _man _exa
 +Module  debug       _tcl  _man  _null
  Module  des         _tcl  _man  _null
+-Module  dicttool    _tcl  _man  _null
++Module  dicttool    _tcm  _man  _null
  Module  dns          _msg _man _exa
  Module  docstrip    _tcl  _man  _null
-@@ -62,93 +64,93 @@ Module  doctools     _doc _man _exa
+ Module  doctools     _doc _man _exa
  Module  doctools2base _tcl _man _null
  Module  doctools2idx  _tcl _man _null
  Module  doctools2toc  _tcl _man _null
@@ -66,14 +69,16 @@ $OpenBSD: patch-support_installation_modules_tcl,v 1.7 2015/06/05 20:36:24 stu E
  Module  grammar_me  _tcl  _man  _null
  Module  grammar_peg _tcl  _man  _null
 -Module  hook        _tcl  _man  _null
++Module  hook        _tcm  _man  _null
+ Module  http        _tcl  _man  _null
+ Module  httpd       _tcl  _man  _exa
+ Module  httpwget    _tcl  _null _null
 -Module  html        _tcl  _man  _null
 -Module  htmlparse   _tcl  _man  _exa
-+Module  hook        _tcm  _man  _null
-+Module  html        _tcm  _man  _null
-+Module  htmlparse   _tcm  _man  _exa
- Module  http        _tcl  _man  _null
 -Module  ident       _tcl  _man  _null
 -Module  imap4       _tcl  _man  _null
++Module  html        _tcm  _man  _null
++Module  htmlparse   _tcm  _man  _exa
 +Module  ident       _tcm  _man  _null
 +Module  imap4       _tcm  _man  _null
  Module  inifile     _tcl  _man  _null
@@ -88,6 +93,7 @@ $OpenBSD: patch-support_installation_modules_tcl,v 1.7 2015/06/05 20:36:24 stu E
 +Module  lambda      _tcm  _man  _null
  Module  ldap        _tcl  _man _exa
  Module  log          _msg _man  {_exax logger}
+ Module  markdown     _tcl  _man  _null
  Module  map         _tcl  _man  _null
 -Module  mapproj     _tcl  _man _exa
 +Module  mapproj     _tcm  _man _exa
@@ -111,6 +117,8 @@ $OpenBSD: patch-support_installation_modules_tcl,v 1.7 2015/06/05 20:36:24 stu E
  Module  ntp         _tcl  _man _exa
 -Module  oauth       _tcl  _man  _null
 +Module  oauth       _tcm  _man  _null
+ Module  oodialect   _tcl  _man   _null
+ Module  oometa      _tcl  _man  _null
  Module  ooutil      _tcl  _man  _null
 -Module  otp         _tcl  _man  _null
 +Module  otp         _tcm  _man  _null
@@ -124,6 +132,7 @@ $OpenBSD: patch-support_installation_modules_tcl,v 1.7 2015/06/05 20:36:24 stu E
 +Module  png         _tcm  _man  _null
 +Module  pop3        _tcm  _man  _null
  Module  pop3d       _tcl  _man  _null
+ Module  practcl     _tcl  _man  _exa
  Module  processman  _tcl  _man  _null
 -Module  profiler    _tcl  _man  _null
 +Module  profiler    _tcm  _man  _null
@@ -155,9 +164,12 @@ $OpenBSD: patch-support_installation_modules_tcl,v 1.7 2015/06/05 20:36:24 stu E
  Module  tie         _tcl  _man  _exa
 -Module  tiff        _tcl  _man  _null
 +Module  tiff        _tcm  _man  _null
+ Module  tool        _tcl  _man  _null
+ Module  tool_datatype        _tcl  _man  _null
  Module  transfer    _tcl  _man  _null
- Module  treeql      _tcl  _man  _null
+@@ -151,14 +153,14 @@ Module  treeql      _tcl  _man  _null
  Module  try         _tcl  _man  _null
+ Module  udpcluster  _tcl  _man  _null
  Module  uev         _tcl  _man  _null
 -Module  units       _tcl  _man  _null
 +Module  units       _tcm  _man  _null

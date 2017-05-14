@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2015/06/05 20:36:24 stu Exp $
+@comment $OpenBSD: PLIST,v 1.16 2017/05/14 09:01:31 stu Exp $
 bin/dtplite
 lib/tcl/amazon-s3/
 lib/tcl/amazon-s3/S3.tcl
@@ -187,7 +187,6 @@ lib/tcl/fumagic/
 lib/tcl/fumagic/cfront.tcl
 lib/tcl/fumagic/cgen.tcl
 lib/tcl/fumagic/filetypes.tcl
-lib/tcl/fumagic/mimetypes.tcl
 lib/tcl/fumagic/pkgIndex.tcl
 lib/tcl/fumagic/rtcore.tcl
 lib/tcl/generator/
@@ -218,6 +217,14 @@ lib/tcl/grammar_peg/pkgIndex.tcl
 lib/tcl/http/
 lib/tcl/http/autoproxy.tcl
 lib/tcl/http/pkgIndex.tcl
+lib/tcl/httpd/
+lib/tcl/httpd/content.tcl
+lib/tcl/httpd/httpd.tcl
+lib/tcl/httpd/pkgIndex.tcl
+lib/tcl/httpd/scgi-app.tcl
+lib/tcl/httpwget/
+lib/tcl/httpwget/pkgIndex.tcl
+lib/tcl/httpwget/wget.tcl
 lib/tcl/inifile/
 lib/tcl/inifile/ini.tcl
 lib/tcl/inifile/pkgIndex.tcl
@@ -254,6 +261,9 @@ lib/tcl/map/map_slippy.tcl
 lib/tcl/map/map_slippy_cache.tcl
 lib/tcl/map/map_slippy_fetcher.tcl
 lib/tcl/map/pkgIndex.tcl
+lib/tcl/markdown/
+lib/tcl/markdown/markdown.tcl
+lib/tcl/markdown/pkgIndex.tcl
 lib/tcl/math/
 lib/tcl/math/bessel.tcl
 lib/tcl/math/bigfloat.tcl
@@ -265,6 +275,7 @@ lib/tcl/math/combinatorics.tcl
 lib/tcl/math/constants.tcl
 lib/tcl/math/decimal.tcl
 lib/tcl/math/elliptic.tcl
+lib/tcl/math/exact.tcl
 lib/tcl/math/exponential.tcl
 lib/tcl/math/fourier.tcl
 lib/tcl/math/fuzzy.tcl
@@ -317,16 +328,17 @@ lib/tcl/modules/85/blowfish-1.0.4.tm
 lib/tcl/modules/85/cmdline-1.5.tm
 lib/tcl/modules/85/comm-4.6.3.1.tm
 lib/tcl/modules/85/counter-2.0.4.tm
-lib/tcl/modules/85/cron-1.1.tm
-lib/tcl/modules/85/csv-0.8.tm
-lib/tcl/modules/85/dtplite-1.2.tm
-lib/tcl/modules/85/ftpd-1.2.6.tm
+lib/tcl/modules/85/cron-2.0.tm
+lib/tcl/modules/85/csv-0.8.1.tm
+lib/tcl/modules/85/dicttool-1.1.tm
+lib/tcl/modules/85/dtplite-1.3.tm
+lib/tcl/modules/85/ftpd-1.3.tm
 lib/tcl/modules/85/gpx-1.tm
 lib/tcl/modules/85/hook-0.1.tm
 lib/tcl/modules/85/html-1.4.4.tm
-lib/tcl/modules/85/htmlparse-1.2.1.tm
+lib/tcl/modules/85/htmlparse-1.2.2.tm
 lib/tcl/modules/85/ident-0.42.tm
-lib/tcl/modules/85/imap4-0.5.2.tm
+lib/tcl/modules/85/imap4-0.5.3.tm
 lib/tcl/modules/85/javascript-1.0.2.tm
 lib/tcl/modules/85/jpeg-0.5.tm
 lib/tcl/modules/85/lambda-1.tm
@@ -338,7 +350,7 @@ lib/tcl/modules/85/nmea-1.0.0.tm
 lib/tcl/modules/85/nntp-0.2.1.tm
 lib/tcl/modules/85/oauth-1.tm
 lib/tcl/modules/85/otp-1.0.0.tm
-lib/tcl/modules/85/pki-0.6.tm
+lib/tcl/modules/85/pki-0.10.tm
 lib/tcl/modules/85/pluginmgr-0.3.tm
 lib/tcl/modules/85/png-0.2.tm
 lib/tcl/modules/85/pop3-1.9.tm
@@ -349,8 +361,8 @@ lib/tcl/modules/85/smtpd-1.5.tm
 lib/tcl/modules/85/soundex-1.0.tm
 lib/tcl/modules/85/tar-0.10.tm
 lib/tcl/modules/85/tiff-0.2.1.tm
-lib/tcl/modules/85/units-2.1.1.tm
-lib/tcl/modules/85/uuid-1.0.4.tm
+lib/tcl/modules/85/units-2.2.1.tm
+lib/tcl/modules/85/uuid-1.0.5.tm
 lib/tcl/modules/85/websocket-1.4.tm
 lib/tcl/nettool/
 lib/tcl/nettool/available_ports.tcl
@@ -371,6 +383,13 @@ lib/tcl/nns/server.tcl
 lib/tcl/ntp/
 lib/tcl/ntp/pkgIndex.tcl
 lib/tcl/ntp/time.tcl
+lib/tcl/oodialect/
+lib/tcl/oodialect/oodialect.tcl
+lib/tcl/oodialect/pkgIndex.tcl
+lib/tcl/oometa/
+lib/tcl/oometa/oometa.tcl
+lib/tcl/oometa/oooption.tcl
+lib/tcl/oometa/pkgIndex.tcl
 lib/tcl/ooutil/
 lib/tcl/ooutil/ooutil.tcl
 lib/tcl/ooutil/pkgIndex.tcl
@@ -426,6 +445,9 @@ lib/tcl/pop3d/pkgIndex.tcl
 lib/tcl/pop3d/pop3d.tcl
 lib/tcl/pop3d/pop3d_dbox.tcl
 lib/tcl/pop3d/pop3d_udb.tcl
+lib/tcl/practcl/
+lib/tcl/practcl/pkgIndex.tcl
+lib/tcl/practcl/practcl.tcl
 lib/tcl/pt/
 lib/tcl/pt/char.tcl
 lib/tcl/pt/configuration.tcl
@@ -462,8 +484,10 @@ lib/tcl/pt/pt_pexpression.tcl
 lib/tcl/pt/pt_pgen.tcl
 lib/tcl/pt/pt_rdengine.tcl
 lib/tcl/pt/pt_rdengine_c.tcl
+lib/tcl/pt/pt_rdengine_nx.tcl
 lib/tcl/pt/pt_rdengine_oo.tcl
 lib/tcl/pt/pt_rdengine_tcl.tcl
+lib/tcl/pt/pt_tclparam_config_nx.tcl
 lib/tcl/pt/pt_tclparam_config_snit.tcl
 lib/tcl/pt/pt_tclparam_config_tcloo.tcl
 lib/tcl/pt/pt_util.tcl
@@ -611,6 +635,20 @@ lib/tcl/tie/tie_file.tcl
 lib/tcl/tie/tie_growfile.tcl
 lib/tcl/tie/tie_log.tcl
 lib/tcl/tie/tie_rarray.tcl
+lib/tcl/tool/
+lib/tcl/tool/ensemble.tcl
+lib/tcl/tool/event.tcl
+lib/tcl/tool/index.tcl
+lib/tcl/tool/metaclass.tcl
+lib/tcl/tool/option.tcl
+lib/tcl/tool/organ.tcl
+lib/tcl/tool/pipeline.tcl
+lib/tcl/tool/pkgIndex.tcl
+lib/tcl/tool/script.tcl
+lib/tcl/tool/uuid.tcl
+lib/tcl/tool_datatype/
+lib/tcl/tool_datatype/datatype.tcl
+lib/tcl/tool_datatype/pkgIndex.tcl
 lib/tcl/transfer/
 lib/tcl/transfer/connect.tcl
 lib/tcl/transfer/copyops.tcl
@@ -627,7 +665,11 @@ lib/tcl/treeql/treeql84.tcl
 lib/tcl/treeql/treeql85.tcl
 lib/tcl/try/
 lib/tcl/try/pkgIndex.tcl
+lib/tcl/try/throw.tcl
 lib/tcl/try/try.tcl
+lib/tcl/udpcluster/
+lib/tcl/udpcluster/pkgIndex.tcl
+lib/tcl/udpcluster/udpcluster.tcl
 lib/tcl/uev/
 lib/tcl/uev/pkgIndex.tcl
 lib/tcl/uev/uevent.tcl
@@ -693,11 +735,14 @@ lib/tcl/wip/wip.tcl
 lib/tcl/wip/wip2.tcl
 lib/tcl/yaml/
 lib/tcl/yaml/huddle.tcl
+lib/tcl/yaml/huddle_types.tcl
+lib/tcl/yaml/json2huddle.tcl
 lib/tcl/yaml/pkgIndex.tcl
 lib/tcl/yaml/yaml.tcl
 lib/tcl/zip/
 lib/tcl/zip/decode.tcl
 lib/tcl/zip/encode.tcl
+lib/tcl/zip/mkzip.tcl
 lib/tcl/zip/pkgIndex.tcl
 @man man/mann/S3.n
 @man man/mann/adjust.n
@@ -768,6 +813,7 @@ lib/tcl/zip/pkgIndex.tcl
 @man man/mann/deleg_proc.n
 @man man/mann/des.n
 @man man/mann/dexec.n
+@man man/mann/dicttool.n
 @man man/mann/disjointset.n
 @man man/mann/docidx.n
 @man man/mann/docidx_intro.n
@@ -796,6 +842,7 @@ lib/tcl/zip/pkgIndex.tcl
 @man man/mann/dtplite.n
 @man man/mann/ean13.n
 @man man/mann/events.n
+@man man/mann/exact.n
 @man man/mann/expander.n
 @man man/mann/export_docidx.n
 @man man/mann/export_doctoc.n
@@ -874,6 +921,7 @@ lib/tcl/zip/pkgIndex.tcl
 @man man/mann/map_slippy_cache.n
 @man man/mann/map_slippy_fetcher.n
 @man man/mann/mapproj.n
+@man man/mann/markdown.n
 @man man/mann/math.n
 @man man/mann/math_geometry.n
 @man man/mann/matrix.n
@@ -888,8 +936,8 @@ lib/tcl/zip/pkgIndex.tcl
 @man man/mann/me_tcl.n
 @man man/mann/me_util.n
 @man man/mann/me_vm.n
+@man man/mann/meta.n
 @man man/mann/mime.n
-@man man/mann/mimetypes.n
 @man man/mann/montecarlo.n
 @man man/mann/mpexpand.n
 @man man/mann/multi.n
@@ -940,6 +988,7 @@ lib/tcl/zip/pkgIndex.tcl
 @man man/mann/pop3d.n
 @man man/mann/pop3d_dbox.n
 @man man/mann/pop3d_udb.n
+@man man/mann/practcl.n
 @man man/mann/prioqueue.n
 @man man/mann/profiler.n
 @man man/mann/pt.n
@@ -980,6 +1029,7 @@ lib/tcl/zip/pkgIndex.tcl
 @man man/mann/pt_pexpression.n
 @man man/mann/pt_pgen.n
 @man man/mann/pt_rdengine.n
+@man man/mann/pt_tclparam_config_nx.n
 @man man/mann/pt_tclparam_config_snit.n
 @man man/mann/pt_tclparam_config_tcloo.n
 @man man/mann/pt_to_api.n
@@ -1046,6 +1096,7 @@ lib/tcl/zip/pkgIndex.tcl
 @man man/mann/tcllib_null.n
 @man man/mann/tcllib_random.n
 @man man/mann/tcllib_string.n
+@man man/mann/tcllib_throw.n
 @man man/mann/tcllib_try.n
 @man man/mann/tcllib_variable.n
 @man man/mann/tcllib_zero.n
@@ -1082,12 +1133,15 @@ lib/tcl/zip/pkgIndex.tcl
 @man man/mann/toc_structure.n
 @man man/mann/token.n
 @man man/mann/token_shell.n
+@man man/mann/tool.n
+@man man/mann/tool_dict_ensemble.n
 @man man/mann/tqueue.n
 @man man/mann/transformcore.n
 @man man/mann/transmitter.n
 @man man/mann/traverse.n
 @man man/mann/treeql.n
 @man man/mann/trim.n
+@man man/mann/udpcluster.n
 @man man/mann/uevent.n
 @man man/mann/uevent_onidle.n
 @man man/mann/unicode.n
@@ -1155,6 +1209,21 @@ share/examples/tcllib/ftpd/ftpd.test
 share/examples/tcllib/ftpd/ftpd.unix
 share/examples/tcllib/htmlparse/
 share/examples/tcllib/htmlparse/webviewer.tcl
+share/examples/tcllib/httpd/
+share/examples/tcllib/httpd/htdocs/
+share/examples/tcllib/httpd/htdocs/content.file.md
+share/examples/tcllib/httpd/htdocs/content.form.md
+share/examples/tcllib/httpd/htdocs/content.md
+share/examples/tcllib/httpd/htdocs/content.proxy.md
+share/examples/tcllib/httpd/htdocs/content.scgi.md
+share/examples/tcllib/httpd/htdocs/content.server.md
+share/examples/tcllib/httpd/htdocs/example.md
+share/examples/tcllib/httpd/htdocs/index.md
+share/examples/tcllib/httpd/htdocs/operations.md
+share/examples/tcllib/httpd/htdocs/plume.png
+share/examples/tcllib/httpd/htdocs/reply.md
+share/examples/tcllib/httpd/htdocs/server.md
+share/examples/tcllib/httpd/httpd.tcl
 share/examples/tcllib/irc/
 share/examples/tcllib/irc/irc_example.tcl
 share/examples/tcllib/irc/mainloop.tcl
@@ -1197,6 +1266,12 @@ share/examples/tcllib/nntp/test-account
 share/examples/tcllib/nntp/test-message
 share/examples/tcllib/ntp/
 share/examples/tcllib/ntp/rdate.tcl
+share/examples/tcllib/practcl/
+share/examples/tcllib/practcl/README
+share/examples/tcllib/practcl/helloclass.tcl
+share/examples/tcllib/practcl/hellocmd.tcl
+share/examples/tcllib/practcl/hellotype.tcl
+share/examples/tcllib/practcl/project.tcl
 share/examples/tcllib/sasl/
 share/examples/tcllib/sasl/saslclient.tcl
 share/examples/tcllib/smtpd/

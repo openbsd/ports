@@ -1,4 +1,4 @@
-$OpenBSD: patch-installer_tcl,v 1.7 2015/06/05 20:36:24 stu Exp $
+$OpenBSD: patch-installer_tcl,v 1.8 2017/05/14 09:01:31 stu Exp $
 
 Install everything nicely.
 Generate tcllib.n.
@@ -63,7 +63,7 @@ Generate tcllib.n.
 +	_exafile $aexe $adst
 +	if {[file exists $aexe.man]} {
 +	    set fn [file tail $aexe].n
-+	    _manfile [file join $distribution embedded man files apps $fn] [file join $config(doc,nroff,path) $fn]
++	    _manfile [file join $distribution idoc man files apps $fn] [file join $config(doc,nroff,path) $fn]
 +	}
      }
      return
@@ -91,15 +91,15 @@ Generate tcllib.n.
      }
 -    if {$config(doc,nroff)} {
 +    if 0 {
- 	foreach dir [glob -directory $distribution/embedded/man/files/modules *] {
+ 	foreach dir [glob -directory $distribution/idoc/man/files/modules *] {
  	    xcopy $dir $config(doc,nroff,path) 1
  	}
- 	xcopy $distribution/embedded/man/files/apps $config(doc,nroff,path) 1
+ 	xcopy $distribution/idoc/man/files/apps $config(doc,nroff,path) 1
      }
-+    xinstall doc [file join $distribution embedded man files modules] $config(doc,nroff,path)
++    xinstall doc [file join $distribution idoc man files modules] $config(doc,nroff,path)
      if {$config(doc,html)}  {
  	#xinstall doc html  html $config(doc,html,path)
- 	xcopy $distribution/embedded/www $config(doc,html,path) 1
+ 	xcopy $distribution/idoc/www $config(doc,html,path) 1
      }
 -    if {$config(exa)}       {xinstall exa $config(exa,path)}
 +    if {$config(exa)}       {xinstall exa [file join $distribution examples] $config(exa,path)}
