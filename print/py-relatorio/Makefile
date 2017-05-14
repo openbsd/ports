@@ -1,20 +1,19 @@
-# $OpenBSD: Makefile,v 1.5 2015/09/29 10:52:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2017/05/14 17:45:21 danj Exp $
 
 COMMENT=		templating library able to output odt and pdf files
 
-MODPY_EGG_VERSION=	0.5.5
+MODPY_EGG_VERSION=	0.6.4
 DISTNAME=		relatorio-${MODPY_EGG_VERSION}
-REVISION=		1
 PKGNAME=		py-${DISTNAME}
 
 CATEGORIES=		print textproc
 
-HOMEPAGE=		http://relatorio.openhex.org/
+HOMEPAGE=		http://relatorio.tryton.org/
 
 # GPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE_CDROM=	Yes
 
-MODPY_PI =		Yes
+MODPY_PI=		Yes
 
 MODULES=		lang/python
 
@@ -25,7 +24,7 @@ RUN_DEPENDS=		www/py-genshi \
 			textproc/py-yaml \
 			textproc/py-lxml
 
-TEST_DEPENDS=	${RUN_DEPENDS} \
+TEST_DEPENDS=		${RUN_DEPENDS} \
 			devel/py-nose
 
 .include <bsd.port.mk>

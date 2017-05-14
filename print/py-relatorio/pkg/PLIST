@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/06/09 12:55:55 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/05/14 17:45:21 danj Exp $
 lib/python${MODPY_VERSION}/site-packages/relatorio/
 lib/python${MODPY_VERSION}/site-packages/relatorio-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/relatorio-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -21,3 +21,19 @@ lib/python${MODPY_VERSION}/site-packages/relatorio/templates/opendocument.py
 lib/python${MODPY_VERSION}/site-packages/relatorio/templates/opendocument.pyc
 lib/python${MODPY_VERSION}/site-packages/relatorio/templates/pdf.py
 lib/python${MODPY_VERSION}/site-packages/relatorio/templates/pdf.pyc
+lib/python${MODPY_VERSION}/site-packages/relatorio/tests/
+lib/python${MODPY_VERSION}/site-packages/relatorio/tests/__init__.py
+lib/python${MODPY_VERSION}/site-packages/relatorio/tests/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/relatorio/tests/egg.jpg
+lib/python${MODPY_VERSION}/site-packages/relatorio/tests/one.jpg
+lib/python${MODPY_VERSION}/site-packages/relatorio/tests/templates/
+lib/python${MODPY_VERSION}/site-packages/relatorio/tests/templates/include.tmpl
+lib/python${MODPY_VERSION}/site-packages/relatorio/tests/templates/other.tmpl
+lib/python${MODPY_VERSION}/site-packages/relatorio/tests/templates/test.tmpl
+lib/python${MODPY_VERSION}/site-packages/relatorio/tests/templates/time.tmpl
+lib/python${MODPY_VERSION}/site-packages/relatorio/tests/test.odt
+lib/python${MODPY_VERSION}/site-packages/relatorio/tests/test_api.py
+lib/python${MODPY_VERSION}/site-packages/relatorio/tests/test_api.pyc
+lib/python${MODPY_VERSION}/site-packages/relatorio/tests/test_odt.py
+lib/python${MODPY_VERSION}/site-packages/relatorio/tests/test_odt.pyc
+lib/python${MODPY_VERSION}/site-packages/relatorio/tests/two.png
