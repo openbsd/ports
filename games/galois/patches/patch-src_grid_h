@@ -1,0 +1,31 @@
+$OpenBSD: patch-src_grid_h,v 1.1 2017/05/14 12:02:03 espie Exp $
+assigning a slice to a gslice is a gnu extension actually
+turns out the non working code does work in both clang and eg++
+
+Index: src/grid.h
+--- src/grid.h.orig
++++ src/grid.h
+@@ -126,10 +126,11 @@ template <class T> void grid<T>::add(const coords &c, 
+       size_t len[] = { size_t(rows), size_t(cols), size_t(layers), };
+       size_t str[] = { size_t(ncols), 1, size_t(ncols * nrows), };
+       // doesn't work?
+-      // std::gslice g(d0.x + ncols * (d0.y + nrows * d0.z),
+-      // std::valarray<size_t>(len, 3),
+-      // std::valarray<size_t>(str, 3));
+-      // mask[g] = m;
++       std::gslice g(d0.x + ncols * (d0.y + nrows * d0.z),
++       std::valarray<size_t>(len, 3),
++       std::valarray<size_t>(str, 3));
++       mask[g] = m;
++#if 0
+       for (int i=0; i<layers; ++i)
+ 	{
+ 	  std::gslice g(d0.x + ncols * (d0.y + nrows * (d0.z + i)),
+@@ -138,6 +139,7 @@ template <class T> void grid<T>::add(const coords &c, 
+ 	  std::slice s(cols * rows * i, cols * rows, 1);
+ 	  mask[g] = m[s];
+ 	}
++#endif
+ 
+       c0 = n0;
+       rows = nrows;
