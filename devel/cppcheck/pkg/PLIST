@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2016/10/09 15:10:33 gsoares Exp $
+@comment $OpenBSD: PLIST,v 1.8 2017/05/14 11:27:52 gsoares Exp $
 @bin bin/cppcheck
 @man man/man1/cppcheck.1
 share/cppcheck/
@@ -11,6 +11,7 @@ share/cppcheck/cfg/microsoft_sal.cfg
 share/cppcheck/cfg/posix.cfg
 share/cppcheck/cfg/qt.cfg
 share/cppcheck/cfg/sdl.cfg
+share/cppcheck/cfg/sfml.cfg
 share/cppcheck/cfg/std.cfg
 share/cppcheck/cfg/windows.cfg
 share/cppcheck/cfg/wxwidgets.cfg
