@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2017/04/17 14:32:55 espie Exp $
+# $OpenBSD: Makefile,v 1.37 2017/05/14 17:41:27 schwarze Exp $
 
 COMMENT=	archive files using LZW compression (.lzh files)
 
@@ -19,7 +19,6 @@ WANTLIB=		c
 MASTER_SITES=	${MASTER_SITE_OSDN_JP:=lha/22231/}
 
 CONFIGURE_STYLE=gnu
-USE_GROFF =	Yes
 
 post-install:
 	${INSTALL_MAN_DIR} ${PREFIX}/man/ja_JP.EUC/man1
