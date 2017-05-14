@@ -1,10 +1,11 @@
-$OpenBSD: patch-tests_test_lua,v 1.1 2015/04/04 11:42:17 edd Exp $
+$OpenBSD: patch-tests_test_lua,v 1.2 2017/05/14 16:36:55 danj Exp $
 
 Spoke with upstream, apparently this should not be here.
 
---- tests/test.lua.orig	Tue Mar 24 19:18:04 2015
-+++ tests/test.lua	Fri Apr  3 18:13:45 2015
-@@ -12,9 +12,7 @@ function run_all_tests()
+Index: tests/test.lua
+--- tests/test.lua.orig
++++ tests/test.lua
+@@ -12,12 +12,9 @@ function run_all_tests()
  	package.loaded["net.connlisteners"] = { get = function () return {} end };
  	dotest "util.jid"
  	dotest "util.multitable"
@@ -13,4 +14,7 @@ Spoke with upstream, apparently this should not be here.
 -	dotest "core.modulemanager"
  	dotest "core.stanza_router"
  	dotest "core.s2smanager"
- 	dotest "core.configmanager"
+-	dotest "core.configmanager"
+ 	dotest "util.stanza"
+ 	dotest "util.sasl.scram"
+ 	

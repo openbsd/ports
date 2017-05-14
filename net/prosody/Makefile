@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.43 2016/05/16 12:11:48 jca Exp $
+# $OpenBSD: Makefile,v 1.44 2017/05/14 16:36:55 danj Exp $
 
 COMMENT=	communications server for Jabber/XMPP written in Lua
-DISTNAME=	prosody-0.9.10
-REVISION=	2
+DISTNAME=	prosody-0.9.12
 CATEGORIES=	net
 MASTER_SITES=	http://prosody.im/downloads/source/
 
@@ -29,7 +28,7 @@ SUBST_VARS+=	FLAVOR MAKE_PROGRAM
 CONFIGURE_STYLE=simple
 CONFIGURE_ARGS+=--prefix="${PREFIX}" \
 		--sysconfdir="${SYSCONFDIR}/prosody" \
-		--datadir="/var/prosody" \
+		--datadir="${VARBASE}/prosody" \
 		--with-lua="${LOCALBASE}" \
 		--with-lua-include="${MODLUA_INCL_DIR}" \
 		--c-compiler="${CC}" \
