@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2017/05/13 14:11:59 benoit Exp $
+# $OpenBSD: Makefile,v 1.4 2017/05/14 21:18:05 sthen Exp $
 
 COMMENT =		simple, small and efficient C++ XML parser
 
@@ -21,6 +21,9 @@ GH_PROJECT =		tinyxml2
 GH_TAGNAME =		$V
 
 MODULES =		devel/cmake
+
+pre-patch:
+	perl -i -pe 's/\r$$//' ${WRKSRC}/xmltest.cpp
 
 do-test:
 	cd ${WRKSRC} && ${CXX} xmltest.cpp tinyxml2.cpp tinyxml2.h && ./a.out

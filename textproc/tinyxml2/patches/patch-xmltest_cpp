@@ -1,0 +1,14 @@
+$OpenBSD: patch-xmltest_cpp,v 1.1 2017/05/14 21:18:05 sthen Exp $
+
+Index: xmltest.cpp
+--- xmltest.cpp.orig
++++ xmltest.cpp
+@@ -690,7 +690,7 @@ int main( int argc, const char ** argv )
+ 
+ 	// ---------- Attributes ---------
+ 	{
+-		static const int64_t BIG = -123456789012345678;
++		static const int64_t BIG = -123456789012345678LL;
+ 		XMLDocument doc;
+ 		XMLElement* element = doc.NewElement("element");
+ 		doc.InsertFirstChild(element);
