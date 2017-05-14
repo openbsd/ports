@@ -1,0 +1,11 @@
+$OpenBSD: patch-tests_run_tests_sh,v 1.3 2017/05/14 16:39:02 danj Exp $
+
+Index: tests/run_tests.sh
+--- tests/run_tests.sh.orig
++++ tests/run_tests.sh
+@@ -1,3 +1,3 @@
+ #!/bin/sh
+-rm reports/*.report
+-lua test.lua $*
++rm -f reports/*.report
++/usr/local/bin/lua51 test.lua $*
