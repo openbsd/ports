@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2016/03/11 19:59:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2017/05/14 19:49:29 schwarze Exp $
 # FreeBSD Id: Makefile,v 1.14 1998/04/05 04:46:33 max Exp $
 
 COMMENT=	Kanji -> kana converter
@@ -19,7 +19,6 @@ WANTLIB=		c
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= --enable-static
-USE_GROFF =	Yes
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/kakasi.1 ${PREFIX}/man/ja_JP.EUC/man1

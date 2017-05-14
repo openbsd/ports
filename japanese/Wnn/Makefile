@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.79 2017/04/29 14:31:40 espie Exp $
+# $OpenBSD: Makefile,v 1.80 2017/05/14 19:49:29 schwarze Exp $
 
 COMMENT-main = 		Japanese input method
 COMMENT-dict =		dictionaries for Japanese Wnn
@@ -80,8 +80,6 @@ BUILD_DEPENDS =	devel/imake \
 		japanese/groff
 # Run depends ensure this does not turn into infinite recursion, since
 # this is not needed before package build time.
-
-USE_GROFF =	Yes
 
 do-distpatch:
 	cd ${WRKDIR} && tar zxf ${FULLDISTDIR}/Wnn4.2.patch.tar.gz
