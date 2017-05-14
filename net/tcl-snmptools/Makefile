@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2016/03/18 23:12:19 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2017/05/14 14:06:38 stu Exp $
 
 COMMENT =	Tcl package that provides SNMP tools
 
-DISTNAME =	tcl-snmptools-1.0
-REVISION =	0
-SHARED_LIBS =	snmptools10 1.0
+V =		1.0
+
+DISTNAME =	tcl-snmptools-${V}
+REVISION =	1
 CATEGORIES =	net
 MAINTAINER =	Matthieu Herrb <matthieu@openbsd.org>
 
@@ -19,6 +20,7 @@ LIB_DEPENDS =	net/net-snmp
 BUILD_DEPENDS =	${MODTCL_BUILD_DEPENDS}
 RUN_DEPENDS = 	${MODTCL_RUN_DEPENDS}
 
+SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	gnu
 
 CONFIGURE_ARGS+=--with-tcl=${MODTCL_LIBDIR} \
@@ -26,6 +28,10 @@ CONFIGURE_ARGS+=--with-tcl=${MODTCL_LIBDIR} \
 		CPPFLAGS="-I${LOCALBASE}/include" \
                 CFLAGS="${CFLAGS} -pthread"
 
-NO_TEST =    Yes
+FAKE_FLAGS =	PKG_DIR='$$(PACKAGE_NAME)' INSTALL_PROGRAM='$$(INSTALL_DATA)'
+NO_TEST =	Yes
+SUBST_VARS =	VER
+
+VER =		${V:S/.//g}
 
 .include <bsd.port.mk>
