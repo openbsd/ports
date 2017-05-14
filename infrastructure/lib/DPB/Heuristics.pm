@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Heuristics.pm,v 1.31 2013/10/17 08:12:28 espie Exp $
+# $OpenBSD: Heuristics.pm,v 1.32 2017/05/14 12:43:55 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -244,19 +244,21 @@ sub next
 	my $self = shift;
 	# grab stuff from the normal queue
 	while (my $v = shift @{$self->{l}}) {
-		my $dep = $v->{info}->solve_depends;
-
-		# it has depends, return it
-		if (%$dep) {
-			return $v;
-		} else {
+		# XXX when requeuing a job with L= on the side, this might not
+		# be defined yet.
+		if (defined $v->{info}) {
+			my $dep = $v->{info}->solve_depends;
+			# it has depends, return it
+			if (%$dep) {
+				return $v;
+			}
+	    	}
 		# otherwise keep it for later.
-			push(@{$self->{l2}}, $v);
-			# XXX but when the diff grows too much, give up!
-			# 200 is completely arbitrary
-			last if DPB::Heuristics->measure($v) >
-			    200 * DPB::Heuristics->measure($self->{l2}[0]);
-		}
+		push(@{$self->{l2}}, $v);
+		# XXX but when the diff grows too much, give up!
+		# 200 is completely arbitrary
+		last if DPB::Heuristics->measure($v) >
+		    200 * DPB::Heuristics->measure($self->{l2}[0]);
 	}
 	return shift @{$self->{l2}};
 }
