@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_search_c,v 1.1 2017/05/14 18:51:22 jca Exp $
+
+commit 1765ad0d416113fdb2f411470abc4fee68571461
+Author: Victor Denisov <vdenisov@mirantis.com>
+Date:   Mon Jan 18 23:00:58 2016 -0800
+
+     Handle searched checksum is bigger than any existing
+
+     Fix for issue #50
+
+https://github.com/librsync/librsync/commit/c2daedb5835f5301de50b44add166344e1ef6b02
+
+Index: src/search.c
+--- src/search.c.orig
++++ src/search.c
+@@ -218,7 +218,7 @@ rs_search_for_block(rs_weak_sum_t weak_sum,
+ 	    r = m;
+     }
+ 
+-    if (l == r) {
++    if ((l == r) && (l <= bucket->r)) {
+ 	int i = sig->targets[l].i;
+ 	rs_block_sig_t *b = &(sig->block_sigs[i]);
+ 	if (weak_sum != b->weak_sum)

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2017/04/23 22:13:36 jca Exp $
+# $OpenBSD: Makefile,v 1.18 2017/05/14 18:51:22 jca Exp $
 
 COMMENT=	library for delta compression of streams
 
 V=		2.0.0
+REVISION=	0
 DISTNAME=	librsync-$V
 DISTFILES=	${DISTNAME}{v$V}.tar.gz
 
@@ -10,7 +11,7 @@ SHARED_LIBS +=	rsync                3.0      # 2.0
 
 CATEGORIES=	net
 
-HOMEPAGE=	http://librsync.sourceforge.net/
+HOMEPAGE=	https://github.com/librsync/librsync
 
 # LGPLv2.1+
 PERMIT_PACKAGE_CDROM=	Yes
