@@ -1,21 +1,22 @@
-# $OpenBSD: Makefile,v 1.14 2017/03/13 15:38:24 fcambus Exp $
+# $OpenBSD: Makefile,v 1.15 2017/05/14 17:49:27 fcambus Exp $
 
-COMMENT=		C macros to add, find and delete items from a hash
+COMMENT =	C macros to add, find and delete items from a hash
 
-GH_ACCOUNT=		troydhanson
-GH_PROJECT=		uthash
-GH_TAGNAME=		v2.0.1
+GH_ACCOUNT =	troydhanson
+GH_PROJECT =	uthash
+GH_TAGNAME =	v2.0.2
 
-CATEGORIES=		devel
+CATEGORIES =	devel
+
+MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
-NO_BUILD=		Yes
-PKG_ARCH=		*
+NO_BUILD =	Yes
+PKG_ARCH =	*
 
-PORTHOME=		${WRKDIR}
-TEST_TARGET=		run_tests
+TEST_TARGET =	run_tests
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/src/*.h ${PREFIX}/include
@@ -24,7 +25,6 @@ do-install:
 
 do-test:
 	@cd ${WRKSRC}/tests/ && exec ${SETENV} ${MAKE_ENV} \
-		${MAKE_PROGRAM} ${TEST_FLAGS} -f ${MAKE_FILE} \
-		${TEST_TARGET}
+		${MAKE_PROGRAM} ${TEST_FLAGS} -f ${MAKE_FILE} ${TEST_TARGET}
 
 .include <bsd.port.mk>
