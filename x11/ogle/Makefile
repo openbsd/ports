@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2016/08/28 14:35:54 jca Exp $
+# $OpenBSD: Makefile,v 1.60 2017/05/14 16:37:52 schwarze Exp $
 
 ONLY_FOR_ARCHS =	alpha i386 powerpc sparc64 amd64
 
@@ -6,7 +6,7 @@ CATEGORIES =	x11
 
 COMMENT =	DVD player
 DISTNAME =	ogle-0.9.2
-REVISION =	18
+REVISION =	19
 SHARED_LIBS =	dvdcontrol	11.0 \
 		msgevents	8.0
 HOMEPAGE =	http://www.dtek.chalmers.se/groups/dvd/
@@ -30,8 +30,6 @@ LIB_DEPENDS =	audio/liba52 \
 		textproc/libxml>=2.4.19 \
 		graphics/jpeg \
 		audio/libmad
-
-USE_GROFF =	Yes
 
 FLAVORS =	altivec
 FLAVOR ?=
