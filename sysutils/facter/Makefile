@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.38 2017/02/27 19:40:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.39 2017/05/14 20:36:21 sebastia Exp $
 
 # XXXTODO: Subpackage facter.jar for use with puppetserver
 COMMENT =		collect and display system facts
 
-REVISION =		1
-DISTNAME =		facter-3.4.1
-SHARED_LIBS +=  	facter                    3.0 # 3.2
+VERSION =		3.6.4
+DISTNAME =		facter-${VERSION}
+SHARED_LIBS +=  	facter                    3.1 # 3.2
 PKGSPEC =		facter->=3.0,<4.0
 CATEGORIES =		sysutils
 
@@ -50,12 +50,14 @@ SUBST_VARS +=		MODRUBY_BINREV MODRUBY_REV LIBfacter_MAJOR LIBfacter_MINOR
 CXXFLAGS +=		-pthread
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/CMakeLists.txt ${WRKSRC}/lib/CMakeLists.txt
+	${SUBST_CMD} ${WRKSRC}/CMakeLists.txt ${WRKSRC}/lib/CMakeLists.txt \
+		${WRKSRC}/lib/src/facts/posix/cache.cc
 
 # Install symlinked libfacter.so so Ruby can load libfacter.so as it refuses
 # to load with the version appended.
 post-install:
 	ln -s ./libfacter.so.${LIBfacter_VERSION} ${PREFIX}/lib/libfacter.so
+	mv ${PREFIX}/bin/facter-${VERSION} ${PREFIX}/bin/facter
 
 .include <bsd.port.mk>
 
