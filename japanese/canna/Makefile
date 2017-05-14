@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2015/03/19 20:25:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.39 2017/05/14 19:53:58 schwarze Exp $
 
 COMMENT-main= 	canna (kana-kanji converter) libraries
 COMMENT-dict=	canna (kana-kanji converter) dictionaries
@@ -30,7 +30,8 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
-BUILD_DEPENDS=	japanese/groff
+BUILD_DEPENDS=	japanese/groff \
+		textproc/groff
 
 HOMEPAGE =	http://www.nec.co.jp/canna/
 
@@ -59,7 +60,6 @@ MAKE_FLAGS=	LIBRKC_VERSION=$(LIBRKC_VERSION) \
 		LIBcanna16_VERSION=$(LIBcanna16_VERSION) \
 		COPTS="${COPTS}"
 
-USE_GROFF =	Yes
 NO_TEST=	Yes
 
 .include <bsd.port.mk>
