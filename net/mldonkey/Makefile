@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2017/04/10 11:46:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2017/05/15 19:56:03 rsadowski Exp $
 
 COMMENT =	e-donkey client
 DISTNAME =	mldonkey-3.1.5
-REVISION =	4
+REVISION =	5
 CATEGORIES =	net
 
 HOMEPAGE =	http://mldonkey.sourceforge.net/Main_Page
@@ -18,7 +18,7 @@ WANTLIB += Xrandr Xrender atk-1.0 bz2 c cairo charset fontconfig
 WANTLIB += freetype gd gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gobject-2.0 gtk-x11-2.0 jpeg m magic miniupnpc natpmp
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 png pthread rsvg-2
-WANTLIB += ${LIBCXX} tiff vpx z
+WANTLIB += ${LIBCXX} tiff webp z
 
 EXTRACT_SUFX =		.tar.bz2
 

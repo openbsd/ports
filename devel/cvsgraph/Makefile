@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.21 2016/09/13 14:40:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2017/05/15 19:56:03 rsadowski Exp $
 
 COMMENT=		graphical representation of CVS repository
 
 DISTNAME=		cvsgraph-1.7.0
 CATEGORIES=		devel
 HOMEPAGE=		http://www.akhphd.au.dk/~bertho/cvsgraph
+REVISION=		0
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c fontconfig freetype gd iconv jpeg m png pthread tiff vpx
+WANTLIB += c fontconfig freetype gd iconv jpeg m png pthread tiff webp
 WANTLIB += z
 
 MASTER_SITES=		${HOMEPAGE}/release/

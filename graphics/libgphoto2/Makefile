@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.49 2017/04/10 18:11:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.50 2017/05/15 19:56:03 rsadowski Exp $
 
 COMMENT=		digital camera library
 
 VERSION=		2.5.13
 DISTNAME=		libgphoto2-${VERSION}
 PKGNAME=		libgphoto-${VERSION}
+REVISION=		0
 
 GPHOTO2_PORT_API=	0.12.0
 SUBST_VARS=		GPHOTO2_PORT_API VERSION
@@ -23,7 +24,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c exif expat fontconfig freetype gd iconv intl jpeg
 WANTLIB += ltdl lzma m png pthread pthread-stubs tiff usb usb-1.0
-WANTLIB += vpx xml2 z
+WANTLIB += webp xml2 z
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gphoto/}
 

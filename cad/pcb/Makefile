@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.33 2015/05/18 11:29:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.34 2017/05/15 19:56:02 rsadowski Exp $
 
 COMMENT=	printed circuit board layout tool
 DISTNAME=	pcb-20110918
 CATEGORIES=	cad
-REVISION=	6
+REVISION=	7
 
 HOMEPAGE=	http://pcb.gpleda.org/
 
@@ -15,7 +15,7 @@ WANTLIB += Xi Xinerama Xmu Xrandr Xrender Xt atk-1.0 c cairo dbus-1
 WANTLIB += fontconfig freetype gd gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gdkglext-x11-1.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gtk-x11-2.0 gtkglext-x11-1.0 jpeg m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pangox-1.0 png pthread tiff vpx z
+WANTLIB += pangoft2-1.0 pangox-1.0 png pthread tiff webp z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pcb/}
 

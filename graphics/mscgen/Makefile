@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2016/09/13 15:29:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2017/05/15 19:56:03 rsadowski Exp $
 
 COMMENT=		utility to create Message Sequence Charts
 
 DISTNAME=		mscgen-src-0.20
-REVISION=		1
+REVISION=		2
 PKGNAME=		${DISTNAME:S/-src//}
 
 CATEGORIES=		graphics
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=		${HOMEPAGE}/software/
 
-WANTLIB += c fontconfig freetype gd iconv jpeg m png pthread tiff vpx z
+WANTLIB += c fontconfig freetype gd iconv jpeg m png pthread tiff webp z
 
 LIB_DEPENDS=		converters/libiconv \
 			graphics/gd
