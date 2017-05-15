@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.490 2017/05/08 17:01:41 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.491 2017/05/15 15:15:44 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -968,6 +968,7 @@ my $obsolete_reason = {
 	'xspread' => 3,
 	'tryton' => 1,
 	'trytond' => 1,
+	'sharity-light' => 6,
 };
 
 # reasons for obsolete packages
