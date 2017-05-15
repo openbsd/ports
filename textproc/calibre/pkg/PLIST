@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.30 2017/04/21 11:51:24 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.31 2017/05/15 14:37:41 sthen Exp $
 bin/calibre
 bin/calibre-complete
 bin/calibre-customize
@@ -463,6 +463,8 @@ lib/calibre/calibre/ebooks/conversion/plumber.py
 lib/calibre/calibre/ebooks/conversion/plumber.pyc
 lib/calibre/calibre/ebooks/conversion/preprocess.py
 lib/calibre/calibre/ebooks/conversion/preprocess.pyc
+lib/calibre/calibre/ebooks/conversion/search_replace.py
+lib/calibre/calibre/ebooks/conversion/search_replace.pyc
 lib/calibre/calibre/ebooks/conversion/utils.py
 lib/calibre/calibre/ebooks/conversion/utils.pyc
 lib/calibre/calibre/ebooks/covers.py
@@ -772,6 +774,8 @@ lib/calibre/calibre/ebooks/metadata/rb.py
 lib/calibre/calibre/ebooks/metadata/rb.pyc
 lib/calibre/calibre/ebooks/metadata/rtf.py
 lib/calibre/calibre/ebooks/metadata/rtf.pyc
+lib/calibre/calibre/ebooks/metadata/search_internet.py
+lib/calibre/calibre/ebooks/metadata/search_internet.pyc
 lib/calibre/calibre/ebooks/metadata/snb.py
 lib/calibre/calibre/ebooks/metadata/snb.pyc
 lib/calibre/calibre/ebooks/metadata/sources/
@@ -1458,8 +1462,6 @@ lib/calibre/calibre/gui2/catalog/catalog_bibtex_ui.py
 lib/calibre/calibre/gui2/catalog/catalog_bibtex_ui.pyc
 lib/calibre/calibre/gui2/catalog/catalog_csv_xml.py
 lib/calibre/calibre/gui2/catalog/catalog_csv_xml.pyc
-lib/calibre/calibre/gui2/catalog/catalog_csv_xml_ui.py
-lib/calibre/calibre/gui2/catalog/catalog_csv_xml_ui.pyc
 lib/calibre/calibre/gui2/catalog/catalog_epub_mobi.py
 lib/calibre/calibre/gui2/catalog/catalog_epub_mobi.pyc
 lib/calibre/calibre/gui2/catalog/catalog_epub_mobi_ui.py
@@ -1493,8 +1495,6 @@ lib/calibre/calibre/gui2/convert/docx_input_ui.py
 lib/calibre/calibre/gui2/convert/docx_input_ui.pyc
 lib/calibre/calibre/gui2/convert/docx_output.py
 lib/calibre/calibre/gui2/convert/docx_output.pyc
-lib/calibre/calibre/gui2/convert/docx_output_ui.py
-lib/calibre/calibre/gui2/convert/docx_output_ui.pyc
 lib/calibre/calibre/gui2/convert/epub_output.py
 lib/calibre/calibre/gui2/convert/epub_output.pyc
 lib/calibre/calibre/gui2/convert/epub_output_ui.py
@@ -1652,8 +1652,6 @@ lib/calibre/calibre/gui2/dialogs/add_empty_book.py
 lib/calibre/calibre/gui2/dialogs/add_empty_book.pyc
 lib/calibre/calibre/gui2/dialogs/add_from_isbn.py
 lib/calibre/calibre/gui2/dialogs/add_from_isbn.pyc
-lib/calibre/calibre/gui2/dialogs/add_from_isbn_ui.py
-lib/calibre/calibre/gui2/dialogs/add_from_isbn_ui.pyc
 lib/calibre/calibre/gui2/dialogs/authors_edit.py
 lib/calibre/calibre/gui2/dialogs/authors_edit.pyc
 lib/calibre/calibre/gui2/dialogs/book_info.py
@@ -1670,8 +1668,6 @@ lib/calibre/calibre/gui2/dialogs/choose_format_device.py
 lib/calibre/calibre/gui2/dialogs/choose_format_device.pyc
 lib/calibre/calibre/gui2/dialogs/choose_format_device_ui.py
 lib/calibre/calibre/gui2/dialogs/choose_format_device_ui.pyc
-lib/calibre/calibre/gui2/dialogs/choose_format_ui.py
-lib/calibre/calibre/gui2/dialogs/choose_format_ui.pyc
 lib/calibre/calibre/gui2/dialogs/choose_library.py
 lib/calibre/calibre/gui2/dialogs/choose_library.pyc
 lib/calibre/calibre/gui2/dialogs/choose_library_ui.py
@@ -1692,8 +1688,6 @@ lib/calibre/calibre/gui2/dialogs/confirm_delete_location.py
 lib/calibre/calibre/gui2/dialogs/confirm_delete_location.pyc
 lib/calibre/calibre/gui2/dialogs/confirm_delete_location_ui.py
 lib/calibre/calibre/gui2/dialogs/confirm_delete_location_ui.pyc
-lib/calibre/calibre/gui2/dialogs/confirm_delete_ui.py
-lib/calibre/calibre/gui2/dialogs/confirm_delete_ui.pyc
 lib/calibre/calibre/gui2/dialogs/confirm_merge.py
 lib/calibre/calibre/gui2/dialogs/confirm_merge.pyc
 lib/calibre/calibre/gui2/dialogs/conversion_error.py
@@ -1722,8 +1716,6 @@ lib/calibre/calibre/gui2/dialogs/edit_authors_dialog_ui.py
 lib/calibre/calibre/gui2/dialogs/edit_authors_dialog_ui.pyc
 lib/calibre/calibre/gui2/dialogs/exim.py
 lib/calibre/calibre/gui2/dialogs/exim.pyc
-lib/calibre/calibre/gui2/dialogs/job_view_ui.py
-lib/calibre/calibre/gui2/dialogs/job_view_ui.pyc
 lib/calibre/calibre/gui2/dialogs/jobs_ui.py
 lib/calibre/calibre/gui2/dialogs/jobs_ui.pyc
 lib/calibre/calibre/gui2/dialogs/match_books.py
@@ -1732,8 +1724,6 @@ lib/calibre/calibre/gui2/dialogs/match_books_ui.py
 lib/calibre/calibre/gui2/dialogs/match_books_ui.pyc
 lib/calibre/calibre/gui2/dialogs/message_box.py
 lib/calibre/calibre/gui2/dialogs/message_box.pyc
-lib/calibre/calibre/gui2/dialogs/message_box_ui.py
-lib/calibre/calibre/gui2/dialogs/message_box_ui.pyc
 lib/calibre/calibre/gui2/dialogs/metadata_bulk.py
 lib/calibre/calibre/gui2/dialogs/metadata_bulk.pyc
 lib/calibre/calibre/gui2/dialogs/metadata_bulk_ui.py
@@ -1748,8 +1738,6 @@ lib/calibre/calibre/gui2/dialogs/plugin_updater.py
 lib/calibre/calibre/gui2/dialogs/plugin_updater.pyc
 lib/calibre/calibre/gui2/dialogs/progress.py
 lib/calibre/calibre/gui2/dialogs/progress.pyc
-lib/calibre/calibre/gui2/dialogs/progress_ui.py
-lib/calibre/calibre/gui2/dialogs/progress_ui.pyc
 lib/calibre/calibre/gui2/dialogs/quickview.py
 lib/calibre/calibre/gui2/dialogs/quickview.pyc
 lib/calibre/calibre/gui2/dialogs/quickview_ui.py
@@ -1762,8 +1750,6 @@ lib/calibre/calibre/gui2/dialogs/saved_search_editor_ui.py
 lib/calibre/calibre/gui2/dialogs/saved_search_editor_ui.pyc
 lib/calibre/calibre/gui2/dialogs/scheduler.py
 lib/calibre/calibre/gui2/dialogs/scheduler.pyc
-lib/calibre/calibre/gui2/dialogs/scheduler_ui.py
-lib/calibre/calibre/gui2/dialogs/scheduler_ui.pyc
 lib/calibre/calibre/gui2/dialogs/search.py
 lib/calibre/calibre/gui2/dialogs/search.pyc
 lib/calibre/calibre/gui2/dialogs/search_item_ui.py
@@ -1794,12 +1780,8 @@ lib/calibre/calibre/gui2/dialogs/template_dialog_ui.py
 lib/calibre/calibre/gui2/dialogs/template_dialog_ui.pyc
 lib/calibre/calibre/gui2/dialogs/template_line_editor.py
 lib/calibre/calibre/gui2/dialogs/template_line_editor.pyc
-lib/calibre/calibre/gui2/dialogs/test_email_ui.py
-lib/calibre/calibre/gui2/dialogs/test_email_ui.pyc
 lib/calibre/calibre/gui2/dialogs/trim_image.py
 lib/calibre/calibre/gui2/dialogs/trim_image.pyc
-lib/calibre/calibre/gui2/dialogs/user_profiles_ui.py
-lib/calibre/calibre/gui2/dialogs/user_profiles_ui.pyc
 lib/calibre/calibre/gui2/dnd.py
 lib/calibre/calibre/gui2/dnd.pyc
 lib/calibre/calibre/gui2/ebook_download.py
@@ -1896,8 +1878,6 @@ lib/calibre/calibre/gui2/preferences/columns_ui.py
 lib/calibre/calibre/gui2/preferences/columns_ui.pyc
 lib/calibre/calibre/gui2/preferences/conversion.py
 lib/calibre/calibre/gui2/preferences/conversion.pyc
-lib/calibre/calibre/gui2/preferences/conversion_ui.py
-lib/calibre/calibre/gui2/preferences/conversion_ui.pyc
 lib/calibre/calibre/gui2/preferences/create_custom_column.py
 lib/calibre/calibre/gui2/preferences/create_custom_column.pyc
 lib/calibre/calibre/gui2/preferences/device_debug.py
@@ -1968,8 +1948,6 @@ lib/calibre/calibre/gui2/preferences/toolbar_ui.py
 lib/calibre/calibre/gui2/preferences/toolbar_ui.pyc
 lib/calibre/calibre/gui2/preferences/tweaks.py
 lib/calibre/calibre/gui2/preferences/tweaks.pyc
-lib/calibre/calibre/gui2/preferences/tweaks_ui.py
-lib/calibre/calibre/gui2/preferences/tweaks_ui.pyc
 lib/calibre/calibre/gui2/proceed.py
 lib/calibre/calibre/gui2/proceed.pyc
 lib/calibre/calibre/gui2/progress_indicator/
@@ -1983,8 +1961,6 @@ lib/calibre/calibre/gui2/search_restriction_mixin.py
 lib/calibre/calibre/gui2/search_restriction_mixin.pyc
 lib/calibre/calibre/gui2/shortcuts.py
 lib/calibre/calibre/gui2/shortcuts.pyc
-lib/calibre/calibre/gui2/shortcuts_ui.py
-lib/calibre/calibre/gui2/shortcuts_ui.pyc
 lib/calibre/calibre/gui2/splash_screen.py
 lib/calibre/calibre/gui2/splash_screen.pyc
 lib/calibre/calibre/gui2/store/
@@ -3773,6 +3749,7 @@ share/calibre/recipes/badania_net.png
 share/calibre/recipes/badania_net.recipe
 share/calibre/recipes/balkaninsight.png
 share/calibre/recipes/balkaninsight.recipe
+share/calibre/recipes/balkanist.recipe
 share/calibre/recipes/baltimore_sun.png
 share/calibre/recipes/baltimore_sun.recipe
 share/calibre/recipes/banat_news.recipe
@@ -4410,6 +4387,8 @@ share/calibre/recipes/financialsense.recipe
 share/calibre/recipes/financiarul.png
 share/calibre/recipes/financiarul.recipe
 share/calibre/recipes/financieele_dagblad.recipe
+share/calibre/recipes/first_things.png
+share/calibre/recipes/first_things.recipe
 share/calibre/recipes/fisco_oggi.recipe
 share/calibre/recipes/fleshbot.png
 share/calibre/recipes/fleshbot.recipe
@@ -5237,7 +5216,6 @@ share/calibre/recipes/natemat_pl.recipe
 share/calibre/recipes/natgeo.png
 share/calibre/recipes/natgeo.recipe
 share/calibre/recipes/nation_ke.recipe
-share/calibre/recipes/national_geographic_de.recipe
 share/calibre/recipes/national_geographic_es.png
 share/calibre/recipes/national_geographic_es.recipe
 share/calibre/recipes/national_geographic_it.png
