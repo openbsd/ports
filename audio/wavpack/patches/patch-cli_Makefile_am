@@ -1,0 +1,34 @@
+$OpenBSD: patch-cli_Makefile_am,v 1.1 2017/05/15 16:39:58 sthen Exp $
+
+Defer to libc's md5 functions, the internal version fails on
+strict-alignment architectures.
+
+Index: cli/Makefile.am
+--- cli/Makefile.am.orig
++++ cli/Makefile.am
+@@ -1,6 +1,6 @@
+ bin_PROGRAMS = wavpack wvunpack wvgain wvtag
+ 
+-wavpack_SOURCES = wavpack.c riff.c wave64.c caff.c dsdiff.c dsf.c utils.c md5.c import_id3.c
++wavpack_SOURCES = wavpack.c riff.c wave64.c caff.c dsdiff.c dsf.c utils.c import_id3.c
+ if WINDOWS_HOST
+ wavpack_SOURCES += win32_unicode_support.c
+ endif
+@@ -10,7 +10,7 @@ wavpack_LDFLAGS = -rpath $(libdir)
+ endif
+ wavpack_LDADD = $(AM_LDADD) $(top_builddir)/src/.libs/libwavpack.la $(LIBM) $(ICONV_LIBS)
+ 
+-wvunpack_SOURCES = wvunpack.c riff.c wave64.c caff.c dsdiff.c dsf.c utils.c md5.c
++wvunpack_SOURCES = wvunpack.c riff.c wave64.c caff.c dsdiff.c dsf.c utils.c
+ if WINDOWS_HOST
+ wvunpack_SOURCES += win32_unicode_support.c
+ endif
+@@ -42,7 +42,7 @@ wvtag_LDADD = $(AM_LDADD) $(top_builddir)/src/.libs/li
+ 
+ if ENABLE_TESTS
+ bin_PROGRAMS += wvtest
+-wvtest_SOURCES = wvtest.c md5.c
++wvtest_SOURCES = wvtest.c
+ wvtest_CFLAGS = $(AM_CFLAGS) -I$(top_srcdir)/include
+ if ENABLE_RPATH
+ wvtest_LDFLAGS = -rpath $(libdir)
