@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2014/03/25 21:20:39 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2017/05/15 18:34:20 schwarze Exp $
 
 COMMENT =		tests lexical similarity in texts
 
@@ -7,7 +7,7 @@ PKGNAME =		sim-2.26
 REVISION =		1
 CATEGORIES =		textproc
 
-HOMEPAGE =		http://www.cs.vu.nl/~dick/sim.html
+HOMEPAGE =		https://dickgrune.com/Programs/similarity_tester/
 
 MAINTAINER =     	Laurent Fanis <laurent.fanis@gmail.com>
 
@@ -17,10 +17,9 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB =		c
 
 EXTRACT_SUFX =		.zip
-MASTER_SITES =		ftp://ftp.cs.vu.nl/pub/dick/similarity_tester/
+MASTER_SITES =		https://dickgrune.com/Programs/similarity_tester/
 
 MAKE_FLAGS =		CC=${CC} CFLAGS="${CFLAGS} -DUNIX" LDFLAGS="${LDFLAGS}"
-USE_GROFF =		Yes
 
 WRKDIST =		${WRKDIR}
 

@@ -1,0 +1,25 @@
+$OpenBSD: patch-sim_1,v 1.1 2017/05/15 18:34:20 schwarze Exp $
+Neither groff nor mandoc define .DS, .DE, or \f5.
+Should probably be reported upstream after updating the port.
+
+Index: sim.1
+--- sim.1.orig
++++ sim.1
+@@ -161,12 +161,12 @@ columns (default is
+ The
+ .B \-p
+ option results in lines of the form
+-.DS
+-.ft 5
++.sp
++.RS
+ F consists for x % of G material
+-.ft P
+-.DE
+-meaning that \f5x\fP % of \f5F\fP's text can also be found in \f5G\fP.
++.RE
++.sp
++meaning that \fIx\fP % of \fIF\fP's text can also be found in \fIG\fP.
+ Note that this relation is not symmetric; it is in fact quite possible for one
+ file to consist for 100 % of text from another file, while the other file
+ consists for only 1 % of text of the first file, if their lengths differ
