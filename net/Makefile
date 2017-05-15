@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1005 2017/05/06 15:55:06 fcambus Exp $
+# $OpenBSD: Makefile,v 1.1006 2017/05/15 14:18:42 sthen Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -628,7 +628,6 @@
      SUBDIR += seafile
      SUBDIR += sendxmpp
      SUBDIR += serf
-     SUBDIR += sharity-light
      SUBDIR += si
      SUBDIR += sic
      SUBDIR += silc-client
