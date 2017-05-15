@@ -1,9 +1,11 @@
-#$OpenBSD: Makefile,v 1.1.1.1 2015/06/20 07:02:38 stu Exp $
+#$OpenBSD: Makefile,v 1.2 2017/05/15 04:05:55 stu Exp $
 
 COMMENT =	library for generating PDF documents for Tcl
 
-DISTNAME =	pdf4tcl08
-PKGNAME =	pdf4tcl-0.8
+V =		0.9.1
+
+DISTNAME =	pdf4tcl${V:S/.//g}
+PKGNAME =	pdf4tcl-${V}
 CATEGORIES =	textproc
 HOMEPAGE =	http://sourceforge.net/projects/pdf4tcl/
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
@@ -14,8 +16,9 @@ PERMIT_PACKAGE_CDROM =	Yes
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=pdf4tcl/}
 
 MODULES =	lang/tcl
+MODTCL_VERSION =8.6
 BUILD_DEPENDS =	devel/tcllib
-RUN_DEPENDS =	devel/tcllib
+RUN_DEPENDS =	${MODTCL_RUN_DEPENDS}
 SEPARATE_BUILD =Yes
 NO_TEST =	Yes
 PKG_ARCH =	*
