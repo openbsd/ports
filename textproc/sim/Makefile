@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2017/05/15 18:34:20 schwarze Exp $
+# $OpenBSD: Makefile,v 1.9 2017/05/15 18:37:29 schwarze Exp $
 
 COMMENT =		tests lexical similarity in texts
 
 DISTNAME =		sim_2_26
 PKGNAME =		sim-2.26
-REVISION =		1
+REVISION =		2
 CATEGORIES =		textproc
 
 HOMEPAGE =		https://dickgrune.com/Programs/similarity_tester/
