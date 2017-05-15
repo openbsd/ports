@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2016/01/17 17:29:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2017/05/15 10:27:29 sthen Exp $
 
 COMMENT =	KDE mathematical applications
 DISTNAME =	cantor-${MODKDE4_VERSION}
-REVISION =	4
+REVISION =	5
 
 # Bogus message about "backend /usr/local/bin/latex" at startup when no
 # backend is choosen on the command line.
