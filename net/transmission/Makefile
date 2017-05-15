@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.114 2017/05/13 17:40:26 espie Exp $
+# $OpenBSD: Makefile,v 1.115 2017/05/15 18:51:38 espie Exp $
 
 COMMENT-main=	BitTorrent command line and daemon client
 COMMENT-gtk=	BitTorrent client with GTK+ interface
@@ -23,9 +23,12 @@ EXTRACT_SUFX=	.tar.xz
 MULTI_PACKAGES=	-main -gtk -qt
 
 ONLY_FOR_ARCHS-qt=	${MODGCC4_ARCHS} ${CLANG_ARCHS}
+# keep in sync with lang/gcc/${MODGCC4_VERSION}/Makefile
+MODGCC4_ARCHS=  amd64 arm hppa i386 mips64 mips64el powerpc sparc64
 
 WANT_CXX =	base gcc
-MODGCC4_LANGS=	c c++
+MODGCC4_LANGS=	c
+
 
 PSEUDO_FLAVORS=	no_gtk no_qt
 FLAVOR?=
