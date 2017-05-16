@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.7 2017/05/16 08:47:22 ajacoutot Exp $
+@comment $OpenBSD: PLIST-server,v 1.8 2017/05/16 08:48:56 ajacoutot Exp $
 @extraunexec rm -rf /var/www/htdocs/munin/*
 @extraunexec rm -rf /var/db/munin/*
 @owner www
@@ -19,7 +19,6 @@ libexec/munin/munin-update
 @man man/man8/munin-cron.8
 @man man/man8/munin-html.8
 @man man/man8/munin-limits.8
-share/examples/munin/
 @owner www
 share/examples/munin/munin-cgi-graph.log
 @sample /var/log/munin/munin-cgi-graph.log
