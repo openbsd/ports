@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2017/04/10 13:38:41 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.26 2017/05/16 11:02:44 sthen Exp $
 @newgroup _unifi:732
 @newuser _unifi:732:_unifi:daemon:unifi user:/usr/local/share/unifi:/sbin/nologin
 bin/unifi
@@ -17,35 +17,35 @@ share/unifi/data/
 share/unifi/dl/
 share/unifi/dl/firmware/
 share/unifi/dl/firmware/BZ2/
-share/unifi/dl/firmware/BZ2/3.7.49.6201/
-share/unifi/dl/firmware/BZ2/3.7.49.6201/firmware.bin
+share/unifi/dl/firmware/BZ2/3.7.51.6230/
+share/unifi/dl/firmware/BZ2/3.7.51.6230/firmware.bin
 share/unifi/dl/firmware/U2HSR/
-share/unifi/dl/firmware/U2HSR/3.7.49.6201/
-share/unifi/dl/firmware/U2HSR/3.7.49.6201/firmware.bin
+share/unifi/dl/firmware/U2HSR/3.7.51.6230/
+share/unifi/dl/firmware/U2HSR/3.7.51.6230/firmware.bin
 share/unifi/dl/firmware/U2IW/
-share/unifi/dl/firmware/U2IW/3.7.49.6201/
-share/unifi/dl/firmware/U2IW/3.7.49.6201/firmware.bin
+share/unifi/dl/firmware/U2IW/3.7.51.6230/
+share/unifi/dl/firmware/U2IW/3.7.51.6230/firmware.bin
 share/unifi/dl/firmware/U2Sv2/
-share/unifi/dl/firmware/U2Sv2/3.7.49.6201/
-share/unifi/dl/firmware/U2Sv2/3.7.49.6201/firmware.bin
+share/unifi/dl/firmware/U2Sv2/3.7.51.6230/
+share/unifi/dl/firmware/U2Sv2/3.7.51.6230/firmware.bin
 share/unifi/dl/firmware/U7E/
-share/unifi/dl/firmware/U7E/3.7.49.6201/
-share/unifi/dl/firmware/U7E/3.7.49.6201/firmware.bin
+share/unifi/dl/firmware/U7E/3.7.51.6230/
+share/unifi/dl/firmware/U7E/3.7.51.6230/firmware.bin
 share/unifi/dl/firmware/U7HD/
-share/unifi/dl/firmware/U7HD/3.7.49.6201/
-share/unifi/dl/firmware/U7HD/3.7.49.6201/firmware.bin
+share/unifi/dl/firmware/U7HD/3.7.51.6230/
+share/unifi/dl/firmware/U7HD/3.7.51.6230/firmware.bin
 share/unifi/dl/firmware/U7P/
-share/unifi/dl/firmware/U7P/3.7.49.6201/
-share/unifi/dl/firmware/U7P/3.7.49.6201/firmware.bin
+share/unifi/dl/firmware/U7P/3.7.51.6230/
+share/unifi/dl/firmware/U7P/3.7.51.6230/firmware.bin
 share/unifi/dl/firmware/U7PG2/
-share/unifi/dl/firmware/U7PG2/3.7.49.6201/
-share/unifi/dl/firmware/U7PG2/3.7.49.6201/firmware.bin
+share/unifi/dl/firmware/U7PG2/3.7.51.6230/
+share/unifi/dl/firmware/U7PG2/3.7.51.6230/firmware.bin
 share/unifi/dl/firmware/US24P250/
-share/unifi/dl/firmware/US24P250/3.7.49.6201/
-share/unifi/dl/firmware/US24P250/3.7.49.6201/firmware.bin
+share/unifi/dl/firmware/US24P250/3.7.51.6230/
+share/unifi/dl/firmware/US24P250/3.7.51.6230/firmware.bin
 share/unifi/dl/firmware/USXG/
-share/unifi/dl/firmware/USXG/3.7.49.6201/
-share/unifi/dl/firmware/USXG/3.7.49.6201/firmware.bin
+share/unifi/dl/firmware/USXG/3.7.51.6230/
+share/unifi/dl/firmware/USXG/3.7.51.6230/firmware.bin
 share/unifi/dl/firmware/bundles.json
 share/unifi/dl/firmware/p2N/
 share/unifi/dl/firmware/p2N/3.3.22.4024/
@@ -101,11 +101,11 @@ share/unifi/lib/spring-core-3.2.8.RELEASE.jar
 share/unifi/lib/spring-expression-3.2.8.RELEASE.jar
 share/unifi/lib/spring-test-3.2.8.RELEASE.jar
 share/unifi/lib/sshj-0.9.0.jar
-share/unifi/lib/tomcat-embed-core-7.0.73.jar
-share/unifi/lib/tomcat-embed-el-7.0.73.jar
-share/unifi/lib/tomcat-embed-jasper-7.0.73.jar
-share/unifi/lib/tomcat-embed-logging-juli-7.0.73.jar
-share/unifi/lib/tomcat-embed-logging-log4j-7.0.73.jar
+share/unifi/lib/tomcat-embed-core-7.0.77.jar
+share/unifi/lib/tomcat-embed-el-7.0.77.jar
+share/unifi/lib/tomcat-embed-jasper-7.0.77.jar
+share/unifi/lib/tomcat-embed-logging-juli-7.0.77.jar
+share/unifi/lib/tomcat-embed-logging-log4j-7.0.77.jar
 share/unifi/lib/urlrewritefilter-4.0.4.jar
 @owner _unifi
 share/unifi/logs
