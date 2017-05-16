@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.121 2017/04/22 13:43:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.122 2017/05/16 19:31:34 landry Exp $
 
 ONLY_FOR_ARCHS-mono=	${MONO_ARCHS}
 
@@ -23,6 +23,7 @@ PKGNAME-python=		py-avahi-${V}
 PKGNAME-ui=		avahi-ui-${V}
 
 REVISION-main=		0
+REVISION-gui=		1
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
@@ -128,7 +129,7 @@ RUN_DEPENDS-gui=	${MODPY_RUN_DEPENDS} \
 			${BUILD_PKGPATH},-python \
 			x11/dbus-python \
 			x11/py-gtk2 \
-			devel/py-twisted/web \
+			devel/py-twisted \
 			devel/desktop-file-utils
 
 WANTLIB-gui += X11 Xcomposite Xcursor Xdamage Xext Xfixes

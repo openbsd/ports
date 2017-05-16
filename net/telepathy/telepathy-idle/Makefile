@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.44 2015/04/04 09:21:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2017/05/16 19:31:34 landry Exp $
 
 COMMENT=		flexible communications framework, IRC component
 
 DISTNAME=		telepathy-idle-0.2.0
-REVISION=		0
+REVISION=		1
 
 MASTER_SITES=		${MASTER_SITES_TP:=telepathy-idle/}
 
@@ -16,9 +16,9 @@ MODULES=		devel/gettext \
 MODPY_RUNDEP=		No
 
 BUILD_DEPENDS=		${RUN_DEPENDS} \
-			devel/py-twisted/words
+			devel/py-twisted
 RUN_DEPENDS=		textproc/libxslt
 LIB_DEPENDS=		net/telepathy/telepathy-glib>=0.22.0
-TEST_DEPENDS=		devel/py-twisted/words
+TEST_DEPENDS=		devel/py-twisted
 
 .include <bsd.port.mk>

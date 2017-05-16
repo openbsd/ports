@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.27 2016/01/04 22:12:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2017/05/16 19:31:34 landry Exp $
 
 COMMENT=		flexible communications framework, libpurple component
 
 DISTNAME=		telepathy-haze-0.8.0
-REVISION=		2
+REVISION=		3
 
 MASTER_SITES=		${MASTER_SITES_TP:=telepathy-haze/}
 
@@ -16,7 +16,7 @@ MODULES=		devel/gettext \
 
 MODPY_RUNDEP=		No
 
-BUILD_DEPENDS=		devel/py-twisted/words \
+BUILD_DEPENDS=		devel/py-twisted \
 			net/py-xmpp \
 			textproc/libxslt
 LIB_DEPENDS=		net/pidgin,-libpurple \
