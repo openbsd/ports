@@ -1,3 +1,0 @@
-Please change the value of Hellanzb.PREFIX_DIR in
- ${SYSCONFDIR}/hellanzb.conf to point to an existing directory.
-Like your home directory.
