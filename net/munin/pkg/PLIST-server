@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.6 2014/05/30 10:28:17 kirby Exp $
+@comment $OpenBSD: PLIST-server,v 1.7 2017/05/16 08:47:22 ajacoutot Exp $
 @extraunexec rm -rf /var/www/htdocs/munin/*
 @extraunexec rm -rf /var/db/munin/*
 @owner www
@@ -7,7 +7,6 @@
 @sample /var/www/htdocs/munin/
 @owner
 bin/munin-cron
-libexec/munin/
 libexec/munin/DejaVuSans.ttf
 libexec/munin/DejaVuSansMono.ttf
 libexec/munin/munin-datafile2storable

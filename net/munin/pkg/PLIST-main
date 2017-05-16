@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.16 2015/07/16 01:25:48 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.17 2017/05/16 08:47:22 ajacoutot Exp $
 @conflict munin-server-<2.0.21
 @newgroup _munin:644
 @newgroup _munin-plugin:645
@@ -68,6 +68,7 @@ libdata/perl5/site_perl/Munin/Plugin/
 libdata/perl5/site_perl/Munin/Plugin.pm
 libdata/perl5/site_perl/Munin/Plugin/Pgsql.pm
 libdata/perl5/site_perl/Munin/Plugin/SNMP.pm
+libexec/munin/
 libexec/munin/munin-async
 libexec/munin/munin-asyncd
 libexec/munin/plugins/
