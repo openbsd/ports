@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.3 2017/01/03 19:23:48 landry Exp $
+# $OpenBSD: Makefile,v 1.4 2017/05/16 14:57:28 shadchin Exp $
 
 BROKEN-powerpc = bottleneck/src/move.c:568: internal compiler error: in extract_insn, at recog.c:2077
 
 COMMENT =		fast NumPy array functions written in C
 
-MODPY_EGG_VERSION =	1.2.0
+MODPY_EGG_VERSION =	1.2.1
 DISTNAME =		Bottleneck-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:L}
 CATEGORIES =		math
-REVISION =		0
 
 MAINTAINER =		Alexandr Shadchin <shadchin@openbsd.org>
 
