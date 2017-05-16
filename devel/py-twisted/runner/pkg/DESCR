@@ -1,2 +1,0 @@
-This package contains Runner module for Twisted that has process
-management, including an inetd replacement.
