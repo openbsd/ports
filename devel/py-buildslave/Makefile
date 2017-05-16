@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2016/06/03 07:59:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2017/05/16 19:33:09 landry Exp $
 
 COMMENT=	buildslave for the buildbot CI system
 
 MODPY_EGG_VERSION=	0.8.12
 DISTNAME=	buildbot-slave-${MODPY_EGG_VERSION}
 PKGNAME=	py-buildslave-${MODPY_EGG_VERSION:S/p/pl/}
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	devel
 
@@ -22,7 +22,7 @@ MODULES=	lang/python
 
 MODPY_SETUPTOOLS=	Yes
 
-RUN_DEPENDS=	devel/py-twisted/core
+RUN_DEPENDS=	devel/py-twisted
 
 TEST_DEPENDS=	${RUN_DEPENDS} \
 			devel/py-mock
