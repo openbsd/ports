@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.34 2016/05/15 09:04:09 landry Exp $
+# $OpenBSD: Makefile,v 1.35 2017/05/16 19:34:50 landry Exp $
 
 COMMENT =	continuous integration framework
 
 MODPY_EGG_VERSION =	0.8.12
 DISTNAME =	buildbot-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:S/p/pl/}
-REVISION =	5
+REVISION =	6
 
 CATEGORIES =	devel
 
@@ -25,11 +25,7 @@ MODPY_SETUPTOOLS = Yes
 RUN_DEPENDS =	databases/py-sqlalchemy \
 		databases/py-sqlalchemy-migrate>=0.7.2 \
 		devel/py-dateutil \
-		devel/py-twisted/core \
-		devel/py-twisted/conch \
-		devel/py-twisted/mail \
-		devel/py-twisted/web \
-		devel/py-twisted/words \
+		devel/py-twisted \
 		www/py-jinja2
 
 TEST_DEPENDS =	${RUN_DEPENDS} \
