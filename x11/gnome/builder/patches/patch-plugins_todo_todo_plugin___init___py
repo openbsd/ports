@@ -1,0 +1,16 @@
+$OpenBSD: patch-plugins_todo_todo_plugin___init___py,v 1.1 2017/05/16 07:43:48 ajacoutot Exp $
+
+--exclude-dir is a GNU extension
+
+Index: plugins/todo/todo_plugin/__init__.py
+--- plugins/todo/todo_plugin/__init__.py.orig
++++ plugins/todo/todo_plugin/__init__.py
+@@ -119,7 +119,7 @@ class TodoWorkbenchAddin(GObject.Object, Ide.Workbench
+         trying to write anything too complex that would just approximate
+         the same thing anyway.
+         """
+-        args = ['grep', '-A', '5', '-I', '-H', '-n', '-r']
++        args = ['ggrep', '-A', '5', '-I', '-H', '-n', '-r']
+         for ignore_dir in ['.flatpak-builder', '.git']:
+             args.append('--exclude-dir={}'.format(ignore_dir))
+         for keyword in KEYWORDS:

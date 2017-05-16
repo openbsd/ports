@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.49 2017/05/13 17:55:01 espie Exp $
+# $OpenBSD: Makefile,v 1.50 2017/05/16 07:43:48 ajacoutot Exp $
 
 COMMENT=		IDE for GNOME
 
 GNOME_PROJECT=		gnome-builder
 GNOME_VERSION=		3.24.2
+REVISION=		0
 
 SHARED_LIBS +=	egg-private               0.0 # 0.0
 SHARED_LIBS +=  panel-gtk                 0.0 # 0.0
@@ -62,6 +63,9 @@ RUN_DEPENDS +=		devel/py-jedi${MODPY_FLAVOR}
 
 # python documentation auto-completion
 RUN_DEPENDS +=		textproc/py-lxml${MODPY_FLAVOR}
+
+# XXX patch-plugins_todo_todo_plugin___init___py
+RUN_DEPENDS +=		sysutils/ggrep
 
 LIB_DEPENDS=		devel/libgit2/libgit2-glib \
 			devel/libpeas \
