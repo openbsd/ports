@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.41 2017/05/11 14:18:56 benoit Exp $
+# $OpenBSD: Makefile,v 1.42 2017/05/16 08:45:54 benoit Exp $
 
 COMMENT=	translate common internet acronyms
 
-DISTNAME =	wtf-20170510
+DISTNAME =	wtf-20170512
 CATEGORIES=	games
 
 # Public Domain
