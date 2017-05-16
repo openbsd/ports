@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.491 2017/05/15 15:15:44 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.492 2017/05/16 19:52:46 landry Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -969,6 +969,11 @@ my $obsolete_reason = {
 	'tryton' => 1,
 	'trytond' => 1,
 	'sharity-light' => 6,
+	'py-axiom' => 5,
+	'py-epsilon' => 5,
+	'hellanzb'=> 3,
+	'londonlaw'=> 3,
+	'castle-combat'=> 3,
 };
 
 # reasons for obsolete packages
