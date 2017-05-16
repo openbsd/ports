@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.29 2017/02/09 17:03:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2017/05/16 19:36:54 landry Exp $
 
      SUBDIR =
      SUBDIR += aub
-     SUBDIR += hellanzb
      SUBDIR += leafnode
      SUBDIR += multimail
      SUBDIR += nn

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.344 2017/04/13 07:37:39 bentley Exp $
+# $OpenBSD: Makefile,v 1.345 2017/05/16 19:36:54 landry Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -36,7 +36,6 @@
      SUBDIR += burgerspace
      SUBDIR += bzflag
      SUBDIR += capitan-sevilla
-     SUBDIR += castle-combat
      SUBDIR += cdogs-sdl
      SUBDIR += cgames
      SUBDIR += cgoban
@@ -143,7 +142,6 @@
      SUBDIR += life
      SUBDIR += lincity
      SUBDIR += lincity-ng
-     SUBDIR += londonlaw
      SUBDIR += lostpixels
      SUBDIR += love
      SUBDIR += lugaru

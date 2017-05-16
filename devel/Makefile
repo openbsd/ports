@@ -1317,7 +1317,6 @@
      SUBDIR += py-entrypoints
      SUBDIR += py-entrypoints,python3
      SUBDIR += py-enum34
-     SUBDIR += py-epsilon
      SUBDIR += py-execnet
      SUBDIR += py-execnet,python3
      SUBDIR += py-extremes

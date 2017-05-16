@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.333 2017/03/04 16:56:28 krw Exp $
+# $OpenBSD: Makefile,v 1.334 2017/05/16 19:36:54 landry Exp $
 
      SUBDIR =
      SUBDIR += apache-couchdb
@@ -157,7 +157,6 @@
      SUBDIR += puppetdb4
      SUBDIR += py-apsw
      SUBDIR += py-apsw,python3
-     SUBDIR += py-axiom
      SUBDIR += py-bsddb3
      SUBDIR += py-bsddb3,python3
      SUBDIR += py-carbon
