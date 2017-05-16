@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2016/12/27 11:38:21 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.5 2017/05/16 17:01:35 giovanni Exp $
 ${P5SITE}/Search/
 ${P5SITE}/Search/Elasticsearch/
 ${P5SITE}/Search/Elasticsearch.pm
@@ -20,6 +20,7 @@ ${P5SITE}/Search/Elasticsearch/Client/5_0/Role/API.pm
 ${P5SITE}/Search/Elasticsearch/Client/5_0/Role/Bulk.pm
 ${P5SITE}/Search/Elasticsearch/Client/5_0/Role/Scroll.pm
 ${P5SITE}/Search/Elasticsearch/Client/5_0/Scroll.pm
+${P5SITE}/Search/Elasticsearch/Client/5_0/TestServer.pm
 ${P5SITE}/Search/Elasticsearch/Cxn/
 ${P5SITE}/Search/Elasticsearch/Cxn/Factory.pm
 ${P5SITE}/Search/Elasticsearch/Cxn/HTTPTiny.pm
@@ -75,6 +76,7 @@ ${P5SITE}/Search/Elasticsearch/Util.pm
 @man man/man3p/Search::Elasticsearch::Client::5_0::Role::Bulk.3p
 @man man/man3p/Search::Elasticsearch::Client::5_0::Role::Scroll.3p
 @man man/man3p/Search::Elasticsearch::Client::5_0::Scroll.3p
+@man man/man3p/Search::Elasticsearch::Client::5_0::TestServer.3p
 @man man/man3p/Search::Elasticsearch::Cxn::Factory.3p
 @man man/man3p/Search::Elasticsearch::Cxn::HTTPTiny.3p
 @man man/man3p/Search::Elasticsearch::Cxn::Hijk.3p
