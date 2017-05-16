@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.5 2014/03/26 10:17:02 sthen Exp $
+$OpenBSD: README,v 1.6 2017/05/16 17:15:40 jasper Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -29,9 +29,10 @@ in ${SYSCONFDIR}/radicale/config and update their saved passwords when
 possible (to help with migration, existing SHA hashes stored with a
 "{SHA}" prefix in the users file will still work with the new setting).
 
-By default all calendars may be accessed by any authenticated user.
-To restrict calendars so that "/user1/calendar_name" can ONLY be
-accessed by user1, also change "personal = False" to "personal = True".
+By default calendars may only be accessed by their owner. To adjust
+the rights for calendars please refer to the
+${SYSCONFDIR}/radicale/rights file and the upstream documentation on
+"Rights Management".
 
 For further authentication options (including deferring authentication
 to an existing IMAP server), consult Radicale's documentation.

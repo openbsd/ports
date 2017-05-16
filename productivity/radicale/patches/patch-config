@@ -1,6 +1,7 @@
-$OpenBSD: patch-config,v 1.10 2016/01/08 22:37:52 sthen Exp $
---- config.orig	Thu Nov  5 18:01:41 2015
-+++ config	Tue Jan  5 10:25:26 2016
+$OpenBSD: patch-config,v 1.11 2017/05/16 17:15:40 jasper Exp $
+Index: config
+--- config.orig
++++ config
 @@ -28,10 +28,10 @@
  #ssl = False
  
@@ -33,7 +34,7 @@ $OpenBSD: patch-config,v 1.10 2016/01/08 22:37:52 sthen Exp $
  
  # File for rights management from_file
 -#file = ~/.config/radicale/rights
-+file = ${SYSCONFDIR}/config/radicale/rights
++file = ${SYSCONFDIR}/radicale/rights
  
  
  [storage]
