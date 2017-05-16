@@ -1,41 +1,35 @@
-# $OpenBSD: Makefile,v 1.17 2016/04/27 21:07:40 eric Exp $
+# $OpenBSD: Makefile,v 1.18 2017/05/16 19:30:17 landry Exp $
 
 COMMENT=	web application construction kit
 
-VERSION=	0.10.0
-DISTNAME=	Nevow-${VERSION}
-PKGNAME=	py-nevow-${VERSION}
-REVISION=	6
+MODPY_EGG_VERSION=	0.14.2
+DISTNAME=	Nevow-${MODPY_EGG_VERSION}
+PKGNAME=	py-nevow-${MODPY_EGG_VERSION}
 CATEGORIES=	www
-
-HOMEPAGE=	http://divmod.org/trac/wiki/DivmodNevow
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	http://ekyo.nerim.net/distfiles/
-
 MODULES=	lang/python
+MODPY_PI=	Yes
 MODPY_SETUPTOOLS= Yes
 
-RUN_DEPENDS=	devel/py-twisted/web	\
-		devel/py-epsilon
-BUILD_DEPENDS=	${RUN_DEPENDS}	\
-		devel/py-twisted/lore
+BUILD_DEPENDS=	textproc/py-sphinx
+RUN_DEPENDS=	devel/py-twisted
 
-
-MODPY_EGG_VERSION=	${VERSION}
 MODPY_DISTUTILS_INSTALLARGS=	--install-data=/usr/local/share/doc
 
 pre-configure:
-	perl -pi -e 's/h3>/h2>/g' ${WRKSRC}/doc/howto/glossary.xhtml
-	cd ${WRKSRC}/doc/howto && lore
-	mv ${WRKSRC}/doc/howto ${WRKSRC}/py-nevow
+	cd ${WRKSRC}/doc && ${LOCALBASE}/bin/sphinx-build -N . html
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/man/nevow-xmlgettext.1 ${PREFIX}/man/man1
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-nevow
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/py-nevow
+	cp -r ${WRKSRC}/doc/html/* ${PREFIX}/share/doc/py-nevow
 	cp -r ${WRKSRC}/examples/* ${PREFIX}/share/examples/py-nevow
+	cd ${PREFIX}/share/examples/py-nevow && ln -s . sources && \
+		ln -s index.css cssfile
 
 TRIALDIR=	${WRKDIR}/trial
 do-test: install
