@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2016/01/08 22:37:52 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.12 2017/05/16 17:13:52 jasper Exp $
 @newgroup _radicale:672
 @newuser _radicale:672:_radicale:daemon:radicale user:/nonexistent:/sbin/nologin
 bin/radicale
@@ -6,7 +6,6 @@ lib/python${MODPY_VERSION}/site-packages/Radicale-${MODPY_EGG_VERSION}-py${MODPY
 lib/python${MODPY_VERSION}/site-packages/Radicale-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/Radicale-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/Radicale-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/Radicale-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/pbr.json
 lib/python${MODPY_VERSION}/site-packages/Radicale-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/radicale/
 lib/python${MODPY_VERSION}/site-packages/radicale/__init__.py
