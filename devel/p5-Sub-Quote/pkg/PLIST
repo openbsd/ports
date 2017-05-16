@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/05/16 16:53:37 giovanni Exp $
+@conflict p5-Moo-<2.002003
+${P5SITE}/Sub/
+${P5SITE}/Sub/Defer.pm
+${P5SITE}/Sub/Quote.pm
+@man man/man3p/Sub::Defer.3p
+@man man/man3p/Sub::Quote.3p
