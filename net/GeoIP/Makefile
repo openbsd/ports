@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.49 2017/04/16 14:17:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.50 2017/05/17 13:52:33 sthen Exp $
 
 COMMENT-main=	find the country where IP address/hostname originates from
 COMMENT-db=	GeoIP GeoLite database: IPv4/v6 address to country
 COMMENT-city=	GeoIP GeoLite database: IPv4/v6 address to city
 COMMENT-asn=	GeoIP GeoLite database: IPv4/v6 address to AS number
 
-V=		1.6.10
-D=		20170416
+V=		1.6.11
+D=		20170517
 DISTNAME=	GeoIP-$V
 PKGNAME-main=	GeoIP-$V
 PKGNAME-db=	geolite-country-$D
