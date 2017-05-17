@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.39 2017/04/19 13:36:28 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.40 2017/05/17 08:50:24 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
@@ -1264,22 +1264,6 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/logs/get-log-events.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/logs/put-log-events.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/logs/put-retention-policy.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/opsworks/
-lib/python${MODPY_VERSION}/site-packages/awscli/examples/opsworks-cm/
-lib/python${MODPY_VERSION}/site-packages/awscli/examples/opsworks-cm/associate-node.rst
-lib/python${MODPY_VERSION}/site-packages/awscli/examples/opsworks-cm/create-backup.rst
-lib/python${MODPY_VERSION}/site-packages/awscli/examples/opsworks-cm/create-server.rst
-lib/python${MODPY_VERSION}/site-packages/awscli/examples/opsworks-cm/delete-backup.rst
-lib/python${MODPY_VERSION}/site-packages/awscli/examples/opsworks-cm/delete-server.rst
-lib/python${MODPY_VERSION}/site-packages/awscli/examples/opsworks-cm/describe-account-attributes.rst
-lib/python${MODPY_VERSION}/site-packages/awscli/examples/opsworks-cm/describe-backups.rst
-lib/python${MODPY_VERSION}/site-packages/awscli/examples/opsworks-cm/describe-events.rst
-lib/python${MODPY_VERSION}/site-packages/awscli/examples/opsworks-cm/describe-node-association-status.rst
-lib/python${MODPY_VERSION}/site-packages/awscli/examples/opsworks-cm/describe-servers.rst
-lib/python${MODPY_VERSION}/site-packages/awscli/examples/opsworks-cm/disassociate-node.rst
-lib/python${MODPY_VERSION}/site-packages/awscli/examples/opsworks-cm/restore-server.rst
-lib/python${MODPY_VERSION}/site-packages/awscli/examples/opsworks-cm/start-maintenance.rst
-lib/python${MODPY_VERSION}/site-packages/awscli/examples/opsworks-cm/update-server-engine-attributes.rst
-lib/python${MODPY_VERSION}/site-packages/awscli/examples/opsworks-cm/update-server.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/opsworks/assign-instance.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/opsworks/assign-volume.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/opsworks/associate-elastic-ip.rst
@@ -1340,6 +1324,22 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/opsworks/update-layer.r
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/opsworks/update-my-user-profile.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/opsworks/update-rds-db-instance.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/opsworks/update-volume.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/opsworkscm/
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/opsworkscm/associate-node.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/opsworkscm/create-backup.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/opsworkscm/create-server.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/opsworkscm/delete-backup.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/opsworkscm/delete-server.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/opsworkscm/describe-account-attributes.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/opsworkscm/describe-backups.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/opsworkscm/describe-events.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/opsworkscm/describe-node-association-status.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/opsworkscm/describe-servers.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/opsworkscm/disassociate-node.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/opsworkscm/restore-server.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/opsworkscm/start-maintenance.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/opsworkscm/update-server-engine-attributes.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/opsworkscm/update-server.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/organizations/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/organizations/accept-handshake.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/organizations/attach-policy.rst
