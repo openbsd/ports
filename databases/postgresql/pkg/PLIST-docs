@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-docs,v 1.77 2017/02/10 14:07:28 pea Exp $
+@comment $OpenBSD: PLIST-docs,v 1.78 2017/05/17 07:34:19 pea Exp $
 share/doc/postgresql/
 share/doc/postgresql/COPYRIGHT
 share/doc/postgresql/HISTORY
@@ -542,6 +542,7 @@ share/doc/postgresql/html/pgvisibility.html
 share/doc/postgresql/html/pgxlogdump.html
 share/doc/postgresql/html/planner-optimizer.html
 share/doc/postgresql/html/planner-stats-details.html
+share/doc/postgresql/html/planner-stats-security.html
 share/doc/postgresql/html/planner-stats.html
 share/doc/postgresql/html/plhandler.html
 share/doc/postgresql/html/plperl-builtins.html
@@ -901,6 +902,7 @@ share/doc/postgresql/html/release-9-2-18.html
 share/doc/postgresql/html/release-9-2-19.html
 share/doc/postgresql/html/release-9-2-2.html
 share/doc/postgresql/html/release-9-2-20.html
+share/doc/postgresql/html/release-9-2-21.html
 share/doc/postgresql/html/release-9-2-3.html
 share/doc/postgresql/html/release-9-2-4.html
 share/doc/postgresql/html/release-9-2-5.html
@@ -917,6 +919,7 @@ share/doc/postgresql/html/release-9-3-13.html
 share/doc/postgresql/html/release-9-3-14.html
 share/doc/postgresql/html/release-9-3-15.html
 share/doc/postgresql/html/release-9-3-16.html
+share/doc/postgresql/html/release-9-3-17.html
 share/doc/postgresql/html/release-9-3-2.html
 share/doc/postgresql/html/release-9-3-3.html
 share/doc/postgresql/html/release-9-3-4.html
@@ -929,6 +932,7 @@ share/doc/postgresql/html/release-9-3.html
 share/doc/postgresql/html/release-9-4-1.html
 share/doc/postgresql/html/release-9-4-10.html
 share/doc/postgresql/html/release-9-4-11.html
+share/doc/postgresql/html/release-9-4-12.html
 share/doc/postgresql/html/release-9-4-2.html
 share/doc/postgresql/html/release-9-4-3.html
 share/doc/postgresql/html/release-9-4-4.html
@@ -944,9 +948,11 @@ share/doc/postgresql/html/release-9-5-3.html
 share/doc/postgresql/html/release-9-5-4.html
 share/doc/postgresql/html/release-9-5-5.html
 share/doc/postgresql/html/release-9-5-6.html
+share/doc/postgresql/html/release-9-5-7.html
 share/doc/postgresql/html/release-9-5.html
 share/doc/postgresql/html/release-9-6-1.html
 share/doc/postgresql/html/release-9-6-2.html
+share/doc/postgresql/html/release-9-6-3.html
 share/doc/postgresql/html/release-9-6.html
 share/doc/postgresql/html/release.html
 share/doc/postgresql/html/replication-origins.html
