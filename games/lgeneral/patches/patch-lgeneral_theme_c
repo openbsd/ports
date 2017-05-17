@@ -1,0 +1,23 @@
+$OpenBSD: patch-lgeneral_theme_c,v 1.1 2017/05/17 11:00:07 espie Exp $
+
+Index: lgeneral/theme.c
+--- lgeneral/theme.c.orig
++++ lgeneral/theme.c
+@@ -31,15 +31,14 @@
+ #include "tools.h"
+ 
+ /* delete theme surface ( for compatiblity with dyn_list) */
+-inline void delete_theme_surf( void *poi )
++static inline void delete_theme_surf( void *poi )
+ {
+     if ( poi )
+         SDL_FreeSurface( (SDL_Surface*)poi );
+ }
+ 
+-
+ /* delete theme font */
+-inline void delete_theme_font( void *poi )
++static inline void delete_theme_font( void *poi )
+ {
+     if ( poi )
+         free_font( (Font*)poi );

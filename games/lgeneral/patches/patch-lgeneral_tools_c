@@ -1,0 +1,50 @@
+$OpenBSD: patch-lgeneral_tools_c,v 1.1 2017/05/17 11:00:07 espie Exp $
+
+Index: lgeneral/tools.c
+--- lgeneral/tools.c.orig
++++ lgeneral/tools.c
+@@ -21,39 +21,17 @@
+ #include <stdio.h>
+ #include "tools.h"
+ 
+-/* compares to strings and returns true if their first strlen(str1) chars are equal */
+-inline int equal_str( char *str1, char *str2 )
+-{
+-    if ( strlen( str1 ) != strlen( str2 ) ) return 0;
+-    return ( !strncmp( str1, str2, strlen( str1 ) ) );
+-}
++/* compares two strings and returns true if their first strlen(str1) chars are equal */
++extern int equal_str( char *str1, char *str2 );
+ 
+ /* set delay to ms milliseconds */
+-inline void set_delay( Delay *delay, int ms )
+-{
+-    delay->limit = ms;
+-    delay->cur = 0;
+-}
++extern void set_delay( Delay *delay, int ms );
+ 
+ /* reset delay ( cur = 0 )*/
+-inline void reset_delay( Delay *delay )
+-{
+-    delay->cur = 0;
+-}
++extern void reset_delay( Delay *delay );
+ 
+ /* check if times out and reset */
+-inline int timed_out( Delay *delay, int ms )
+-{
+-    delay->cur += ms;
+-    if ( delay->cur >= delay->limit ) {
+-
+-        delay->cur = 0;
+-        return 1;
+-
+-    }
+-    return 0;
+-}
+-
++extern int timed_out( Delay *delay, int ms );
+ 
+ inline void goto_tile( int *x, int *y, int d )
+ {
