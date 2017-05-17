@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2016/11/06 10:16:21 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2017/05/17 10:01:14 ajacoutot Exp $
 include/gegl-${API_VERSION}/
 include/gegl-${API_VERSION}/gegl-apply.h
 include/gegl-${API_VERSION}/gegl-audio-fragment.h
@@ -6,7 +6,6 @@ include/gegl-${API_VERSION}/gegl-buffer-backend.h
 include/gegl-${API_VERSION}/gegl-buffer-cl-iterator.h
 include/gegl-${API_VERSION}/gegl-buffer-iterator.h
 include/gegl-${API_VERSION}/gegl-buffer.h
-include/gegl-${API_VERSION}/gegl-c.h
 include/gegl-${API_VERSION}/gegl-color.h
 include/gegl-${API_VERSION}/gegl-cpuaccel.h
 include/gegl-${API_VERSION}/gegl-curve.h
