@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2017/04/22 19:52:07 shadchin Exp $
+# $OpenBSD: Makefile,v 1.26 2017/05/17 11:34:17 landry Exp $
 
 COMMENT=		cross-project testing tool for Python
 
@@ -31,7 +31,7 @@ TEST_DEPENDS=		${RUN_DEPENDS} \
 			devel/py-test-xdist${MODPY_FLAVOR} \
 			www/py-requests${MODPY_FLAVOR}
 .if !${FLAVOR:Mpython3}
-TEST_DEPENDS +=		devel/py-twisted/core
+TEST_DEPENDS +=		devel/py-twisted
 .endif
 
 post-install:

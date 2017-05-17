@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2017/01/03 18:58:52 shadchin Exp $
+# $OpenBSD: Makefile,v 1.18 2017/05/17 11:34:17 landry Exp $
 
 COMMENT =		scalable, non-blocking web server
 
@@ -32,9 +32,7 @@ RUN_DEPENDS +=		devel/py-backports-abc \
 			devel/py-singledispatch
 TEST_DEPENDS +=		devel/py-futures \
 			devel/py-mock \
-			devel/py-twisted/core \
-			devel/py-twisted/names \
-			devel/py-twisted/web
+			devel/py-twisted
 .endif
 
 pre-test:
