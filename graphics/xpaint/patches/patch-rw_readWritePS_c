@@ -1,0 +1,14 @@
+$OpenBSD: patch-rw_readWritePS_c,v 1.1 2017/05/17 22:39:53 espie Exp $
+
+Index: rw/readWritePS.c
+--- rw/readWritePS.c.orig
++++ rw/readWritePS.c
+@@ -383,7 +383,7 @@ ReadPS(char *file)
+     fclose(fp);
+ 
+     type_doc = TestPS(file);
+-    if (!type_doc) return; /* should not happen anyway ... */
++    if (!type_doc) return NULL; /* should not happen anyway ... */
+ 
+     strncpy(rad, file, 256),
+     rad[256] = '\0';
