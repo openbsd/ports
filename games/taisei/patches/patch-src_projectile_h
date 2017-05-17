@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_projectile_h,v 1.1 2017/05/17 22:54:28 espie Exp $
+
+Index: src/projectile.h
+--- src/projectile.h.orig
++++ src/projectile.h
+@@ -9,6 +9,8 @@
+ #define PROJECTILE
+ 
+ #include <complex.h>
++#undef complex
++#define complex double _Complex
+ #include "resource/texture.h"
+ 
+ enum {

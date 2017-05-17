@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_player_h,v 1.1 2017/05/17 22:54:28 espie Exp $
+
+Index: src/player.h
+--- src/player.h.orig
++++ src/player.h
+@@ -9,6 +9,8 @@
+ #define PLAYER_H
+ 
+ #include <complex.h>
++#undef complex
++#define complex double _Complex
+ #include "enemy.h"
+ 
+ #include "resource/animation.h"

@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_enemy_h,v 1.1 2017/05/17 22:54:28 espie Exp $
+
+Index: src/enemy.h
+--- src/enemy.h.orig
++++ src/enemy.h
+@@ -8,6 +8,8 @@
+ #ifndef ENEMY_H
+ #define ENEMY_H
+ #include <complex.h>
++#undef complex
++#define complex double _Complex
+ #include "projectile.h"
+ 
+ #undef complex

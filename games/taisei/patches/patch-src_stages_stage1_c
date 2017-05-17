@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_stages_stage1_c,v 1.1 2017/05/17 22:54:28 espie Exp $
+
+Index: src/stages/stage1.c
+--- src/stages/stage1.c.orig
++++ src/stages/stage1.c
+@@ -60,7 +60,7 @@ Vector **stage1_bg_pos(Vector p, float maxrange) {
+ }
+ 
+ void stage1_smoke_draw(Vector pos) {
+-	float d = abs(pos[1]-bgcontext.cx[1]);
++	float d = fabsf(pos[1]-bgcontext.cx[1]);
+ 	
+ 	glDisable(GL_DEPTH_TEST);
+ 	glPushMatrix();

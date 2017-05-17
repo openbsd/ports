@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_item_h,v 1.1 2017/05/17 22:54:28 espie Exp $
+
+Index: src/item.h
+--- src/item.h.orig
++++ src/item.h
+@@ -10,6 +10,8 @@
+ #define ITEM_H
+ 
+ #include <complex.h>
++#undef complex
++#define complex double _Complex
+ 
+ typedef struct Item Item;
+ 

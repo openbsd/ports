@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_laser_h,v 1.1 2017/05/17 22:54:28 espie Exp $
+
+Index: src/laser.h
+--- src/laser.h.orig
++++ src/laser.h
+@@ -9,6 +9,8 @@
+ #define LASER_H
+ 
+ #include <complex.h>
++#undef complex
++#define complex double _Complex
+ #include "projectile.h"
+ #include "resource/shader.h"
+ 

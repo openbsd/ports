@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_menu_replayview_c,v 1.1 2017/05/17 22:54:28 espie Exp $
+
+Index: src/menu/replayview.c
+--- src/menu/replayview.c.orig
++++ src/menu/replayview.c
+@@ -193,7 +193,7 @@ static void replayview_drawitem(void *n, int item, int
+ 				break;
+ 			
+ 			case 3:
+-				snprintf(tmp, 128, difficulty_name(rpy->stages[0].diff));
++				snprintf(tmp, 128, "%s", difficulty_name(rpy->stages[0].diff));
+ 				break;
+ 			
+ 			case 4:

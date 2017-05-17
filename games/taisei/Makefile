@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2015/09/10 13:00:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2017/05/17 22:54:28 espie Exp $
 
 COMMENT =		clone of the touhou games
 
 V =			1.0a
 DISTNAME =		taisei-$V
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		games
 
@@ -20,6 +20,7 @@ GH_ACCOUNT =		laochailan
 GH_PROJECT =		taisei
 GH_TAGNAME =		v$V
 
+CFLAGS +=	-fgnu89-inline
 MODULES =		devel/cmake
 RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+3,-guic
