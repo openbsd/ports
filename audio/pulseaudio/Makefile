@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.81 2017/04/22 13:43:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.82 2017/05/17 16:26:51 espie Exp $
 
 # XXX
 # sndio: what to do with (channel) map
@@ -28,16 +28,14 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += FLAC ICE SM X11 X11-xcb Xext Xi Xtst c crypto dbus-1
 WANTLIB += execinfo gdbm glib-2.0 iconv intl ltdl m ogg pcre pthread
-WANTLIB += sndfile sndio speexdsp ssl vorbis vorbisenc xcb
+WANTLIB += sndfile sndio speexdsp ssl vorbis vorbisenc xcb $(LIBECXX)
 
 MASTER_SITES=		http://freedesktop.org/software/pulseaudio/releases/
 
 MODULES=		textproc/intltool
 
 # C++11
-MODULES +=		gcc4
-MODGCC4_ARCHS=		*
-MODGCC4_LANGS=		c++
+WANT_CXX =		base gcc
 
 USE_GMAKE=		Yes
 
