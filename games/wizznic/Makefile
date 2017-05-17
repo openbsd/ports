@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/01/23 05:01:38 bentley Exp $
+# $OpenBSD: Makefile,v 1.3 2017/05/17 12:10:53 espie Exp $
 
 COMMENT =		brick-matching puzzle game
 
@@ -26,7 +26,7 @@ RUN_DEPENDS =		net/wget
 MAKE_FLAGS =		DATADIR=${PREFIX}/share/wizznic/ \
 			BINDIR=${PREFIX}/bin \
 			CC="${CC}" \
-			CFLAGS="${CFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include" \
+			CFLAGS="${CFLAGS} -fgnu89-inline -I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 			STRIP=true
 
