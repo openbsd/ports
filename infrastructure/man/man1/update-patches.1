@@ -1,4 +1,4 @@
-.\"	$OpenBSD: update-patches.1,v 1.4 2017/05/04 11:21:37 espie Exp $
+.\"	$OpenBSD: update-patches.1,v 1.5 2017/05/17 11:31:17 espie Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: May 4 2017 $
+.Dd $Mdocdate: May 17 2017 $
 .Dt UPDATE-PATCHES 1
 .Os
 .Sh NAME
@@ -73,12 +73,14 @@ keywords may be fixed if possible, and reported if not.
 .Nm
 prints the list of changed patches for further study.
 .Sh ENVIRONMENT
-.Bl -tag -width PATCH_LIST
+.Bl -tag -width FORCE_REGEN
 .It Ev DIFF_ARGS
 Extra parameters to insert into
 .Xr diff 1 .
 .It Ev DISTORIG
 Extension to original files to ignore entirely.
+.It Ev FORCE_REGEN
+Force patches to be regenerated even if they didn't change.
 .It Ev PATCHDIR
 Path to existing and generated patches.
 .It Ev PATCHORIG
