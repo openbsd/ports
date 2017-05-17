@@ -1,0 +1,14 @@
+$OpenBSD: patch-gui-wx_configure_Makefile_in,v 1.1 2017/05/17 13:53:49 espie Exp $
+
+Index: gui-wx/configure/Makefile.in
+--- gui-wx/configure/Makefile.in.orig
++++ gui-wx/configure/Makefile.in
+@@ -312,7 +312,7 @@ top_srcdir = @top_srcdir@
+ ACLOCAL_AMFLAGS = -I m4
+ AM_CPPFLAGS = -I$(top_srcdir)/../../gollybase/
+ AM_CXXFLAGS = -DGOLLYDIR="$(GOLLYDIR)" -Wall -fno-strict-aliasing
+-AM_LDFLAGS = -Wl,--as-needed
++AM_LDFLAGS = 
+ noinst_LIBRARIES = libgolly.a
+ doc_DATA = ../../docs/License.html ../../docs/ReadMe.html
+ libgolly_a_SOURCES = ../../gollybase/bigint.h \
