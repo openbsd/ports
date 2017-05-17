@@ -1,0 +1,14 @@
+$OpenBSD: patch-spectool_raw_c,v 1.1 2017/05/17 23:21:55 espie Exp $
+
+Index: spectool_raw.c
+--- spectool_raw.c.orig
++++ spectool_raw.c
+@@ -101,7 +101,7 @@ int main(int argc, char *argv[]) {
+ 
+ 		if (o == 'h') {
+ 			Usage();
+-			return;
++			return 0;
+ 		} else if (o == 'b') {
+ 			bcastlisten = 1;
+ 		} else if (o == 'n') {

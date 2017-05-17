@@ -1,0 +1,51 @@
+$OpenBSD: patch-spectool_gtk_widget_c,v 1.1 2017/05/17 23:21:55 espie Exp $
+
+Index: spectool_gtk_widget.c
+--- spectool_gtk_widget.c.orig
++++ spectool_gtk_widget.c
+@@ -184,8 +184,8 @@ static gboolean spectool_widget_menu_button_press(gpoi
+ 	SpectoolWidgetController *con = (SpectoolWidgetController *) widget;
+ 	char alt_title_text[32];
+ 
+-	g_return_if_fail(widget != NULL);
+-	g_return_if_fail(event != NULL);
++	g_return_val_if_fail(widget != NULL, FALSE);
++	g_return_val_if_fail(event != NULL, FALSE);
+ 
+ 	if (event->type == GDK_BUTTON_PRESS) {
+ 		GdkEventButton *bevent = (GdkEventButton *) event;
+@@ -231,8 +231,8 @@ SpectoolWidgetController *spectool_widget_buildcontrol
+ 	GdkColor c;
+ 	GtkStyle *style;
+ 
+-	g_return_if_fail(widget != NULL);
+-	g_return_if_fail(IS_SPECTOOL_WIDGET(widget));
++	g_return_val_if_fail(widget != NULL, NULL);
++	g_return_val_if_fail(IS_SPECTOOL_WIDGET(widget), NULL);
+ 
+ 	wwidget = SPECTOOL_WIDGET(widget);
+ 
+@@ -294,9 +294,9 @@ gint spectool_widget_mouse_click(GtkWidget *widget, Gd
+ 	GtkWidget *menu;
+ 	GdkEvent *event = (GdkEvent *) button;
+ 
+-	g_return_if_fail(widget != NULL);
+-	g_return_if_fail(aux != NULL);
+-	g_return_if_fail(IS_SPECTOOL_WIDGET(aux));
++	g_return_val_if_fail(widget != NULL, 0);
++	g_return_val_if_fail(aux != NULL, 0);
++	g_return_val_if_fail(IS_SPECTOOL_WIDGET(aux), 0);
+ 
+ 	wwidget = SPECTOOL_WIDGET(aux);
+ 
+@@ -780,8 +780,8 @@ static gint spectool_widget_expose(GtkWidget *widget, 
+ 	SpectoolWidget *wwidget;
+ 	cairo_t *cr;
+ 
+-	g_return_if_fail(widget != NULL);
+-	g_return_if_fail(IS_SPECTOOL_WIDGET(aux));
++	g_return_val_if_fail(widget != NULL, 0);
++	g_return_val_if_fail(IS_SPECTOOL_WIDGET(aux), 0);
+ 	wwidget = SPECTOOL_WIDGET(aux);
+ 
+ 	cr = gdk_cairo_create(widget->window);

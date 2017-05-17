@@ -1,0 +1,38 @@
+$OpenBSD: patch-spectool_curses_c,v 1.1 2017/05/17 23:21:55 espie Exp $
+
+Index: spectool_curses.c
+--- spectool_curses.c.orig
++++ spectool_curses.c
+@@ -90,7 +90,7 @@ int main(int argc, char *argv[]) {
+ 
+ 		if (o == 'h') {
+ 			Usage();
+-			return;
++			return 0;
+ 		} else if (o == 'n') {
+ 			neturl = strdup(optarg);
+ 			continue;
+@@ -98,20 +98,20 @@ int main(int argc, char *argv[]) {
+ 			if (sscanf(optarg, "%d", &range) != 1) {
+ 				printf("Expected number for range, see listing for supported ranges\n");
+ 				Usage();
+-				return;
++				return 0;
+ 			}
+ 			continue;
+ 		} else if (o == 'd') {
+ 			if (sscanf(optarg, "%d", &device) != 1) {
+ 				printf("Expected number for device, see listing for detected devices\n");
+ 				Usage();
+-				return;
++				return 0;
+ 			}
+ 
+ 			if (device < 0 || device >= ndev) {
+ 				printf("Device number invalid, see listing for detected devices\n");
+ 				Usage();
+-				return;
++				return 0;
+ 			}
+ 
+ 			continue;

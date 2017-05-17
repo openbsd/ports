@@ -1,0 +1,18 @@
+$OpenBSD: patch-spectool_gtk_spectral_c,v 1.1 2017/05/17 23:21:55 espie Exp $
+
+Index: spectool_gtk_spectral.c
+--- spectool_gtk_spectral.c.orig
++++ spectool_gtk_spectral.c
+@@ -415,9 +415,9 @@ static gboolean spectool_spectral_legend_expose(GtkWid
+ 	cairo_pattern_t *pattern;
+ 	int cp;
+ 
+-	g_return_if_fail(widget != NULL);
+-	g_return_if_fail(aux != NULL);
+-	g_return_if_fail(IS_SPECTOOL_SPECTRAL(aux));
++	g_return_val_if_fail(widget != NULL, FALSE);
++	g_return_val_if_fail(aux != NULL, FALSE);
++	g_return_val_if_fail(IS_SPECTOOL_SPECTRAL(aux), FALSE);
+ 
+ 	spectral = SPECTOOL_SPECTRAL(aux);
+ 

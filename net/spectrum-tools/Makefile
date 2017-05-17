@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2013/10/10 02:08:24 brad Exp $
+# $OpenBSD: Makefile,v 1.20 2017/05/17 23:21:55 espie Exp $
 
 COMMENT-main =	graphical tools for the MetaGeek Wi-spy spectrum analyser
 COMMENT-utils =	tools for the MetaGeek Wi-spy spectrum analyser
@@ -48,7 +48,7 @@ RUN_DEPENDS-utils =	# empty
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include" \
-			CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
+			CFLAGS="${CFLAGS} -fgnu89-inline -I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 USE_GMAKE =		Yes
 

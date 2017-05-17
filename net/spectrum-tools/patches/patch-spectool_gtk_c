@@ -1,0 +1,14 @@
+$OpenBSD: patch-spectool_gtk_c,v 1.1 2017/05/17 23:21:55 espie Exp $
+
+Index: spectool_gtk.c
+--- spectool_gtk.c.orig
++++ spectool_gtk.c
+@@ -182,7 +182,7 @@ static gboolean main_nodev_menu_button_press(gpointer 
+ 	GtkWidget *menu;
+ 	nb_aux *nbaux = (nb_aux *) aux;
+ 
+-	g_return_if_fail(aux != NULL);
++	g_return_val_if_fail(aux != NULL, FALSE);
+ 
+ 	if (event->type == GDK_BUTTON_PRESS) {
+ 		GdkEventButton *bevent = (GdkEventButton *) event;
