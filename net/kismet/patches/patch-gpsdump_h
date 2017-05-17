@@ -1,0 +1,14 @@
+$OpenBSD: patch-gpsdump_h,v 1.1 2017/05/17 16:03:32 espie Exp $
+
+Index: gpsdump.h
+--- gpsdump.h.orig
++++ gpsdump.h
+@@ -41,7 +41,7 @@
+ // Link to last_info in kismet_server.cc
+ extern packet_info last_info;
+ // Link to decay rate in kismet_server.cc
+-extern int decay;
++extern int rdecay;
+ 
+ #define GPS_VERSION 5
+ 

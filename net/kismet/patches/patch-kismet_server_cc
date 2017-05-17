@@ -1,0 +1,77 @@
+$OpenBSD: patch-kismet_server_cc,v 1.3 2017/05/17 16:03:32 espie Exp $
+
+Index: kismet_server.cc
+--- kismet_server.cc.orig
++++ kismet_server.cc
+@@ -114,7 +114,7 @@ FifoDumpFile fifodump;
+ TcpServer ui_server;
+ int sound = -1;
+ packet_info last_info;
+-int decay;
++int rdecay;
+ channel_power channel_graph[CHANNEL_MAX];
+ char *servername = NULL;
+ 
+@@ -172,7 +172,7 @@ int filter_export_bssid_invert = -1, filter_export_sou
+     filter_export_dest_invert = -1;
+ 
+ // For alert enabling...
+-typedef struct _alert_enable {
++struct _alert_enable {
+     string alert_name;
+     alert_time_unit limit_unit;
+ 	alert_time_unit burst_unit;
+@@ -229,7 +229,7 @@ int retain_monitor;
+ int netcryptdetect = 0;
+ 
+ // Shutdown/restore networkmanager (if we can)
+-int networkmanager_control(char *cmd) {
++int networkmanager_control(const char *cmd) {
+ #ifdef HAVE_DBUS
+ 	DBusMessage* msg;
+ 	DBusConnection* conn;
+@@ -759,7 +759,7 @@ void NetWriteInfo() {
+     snprintf(tmpstr, 32, "%d", tracker.FetchNumPackets() - last_packnum);
+     idata.rate = tmpstr;
+ 
+-    if (time(0) - last_info.ts.tv_sec < decay && last_info.signal != -1)
++    if (time(0) - last_info.ts.tv_sec < rdecay && last_info.signal != -1)
+         snprintf(tmpstr, 16, "%d %d" , last_info.signal, last_info.noise);
+     else if (last_info.quality == -1)
+         snprintf(tmpstr, 16, "-1 -1");
+@@ -1543,7 +1543,7 @@ int ProcessBulkConf(ConfigFile *conf) {
+     }
+ 
+     if (conf->FetchOpt("decay") != "") {
+-        if (sscanf(conf->FetchOpt("decay").c_str(), "%d", &decay) != 1) {
++        if (sscanf(conf->FetchOpt("decay").c_str(), "%d", &rdecay) != 1) {
+             fprintf(stderr, "FATAL:  Illegal config file value for decay.\n");
+             ErrorShutdown();
+         }
+@@ -2237,7 +2237,7 @@ int main(int argc,char *argv[]) {
+         { 0, 0, 0, 0 }
+     };
+     int option_index;
+-    decay = 5;
++    rdecay = 5;
+ 
+     // Catch the interrupt handler to shut down
+     signal(SIGINT, CatchShutdown);
+@@ -2950,7 +2950,7 @@ int main(int argc,char *argv[]) {
+         timetracker.RegisterTimer(datainterval * SERVER_TIMESLICES_SEC, NULL, 1, &ExportSyncEvent, NULL);
+     // Write waypoints if requested
+     if (waypoint)
+-        timetracker.RegisterTimer(decay * SERVER_TIMESLICES_SEC, NULL, 1, &WaypointSyncEvent, NULL);
++        timetracker.RegisterTimer(rdecay * SERVER_TIMESLICES_SEC, NULL, 1, &WaypointSyncEvent, NULL);
+     // Channel hop if requested
+     if (channel_hop) {
+         if (channel_dwell)
+@@ -3175,7 +3175,7 @@ daemon_parent_cleanup:
+                     num_networks = tracker.FetchNumNetworks();
+ 
+                     if (tracker.FetchNumPackets() != num_packets) {
+-                        if (cur_time - last_click >= decay && sound == 1) {
++                        if (cur_time - last_click >= rdecay && sound == 1) {
+                             if (tracker.FetchNumPackets() - num_packets >
+                                 tracker.FetchNumDropped() + localdropnum - num_dropped) {
+                                 sound = PlaySound("traffic");

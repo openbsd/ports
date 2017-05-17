@@ -1,4 +1,4 @@
-$OpenBSD: patch-gpsmap_cc,v 1.5 2008/06/27 22:10:14 kili Exp $
+$OpenBSD: patch-gpsmap_cc,v 1.6 2017/05/17 16:03:32 espie Exp $
 
 # Disable map sources known to be broken.
 # Use our ftp(1) instead of wget.
@@ -7,8 +7,9 @@ $OpenBSD: patch-gpsmap_cc,v 1.5 2008/06/27 22:10:14 kili Exp $
 # because ImageMagick would bail out on the second attempt (after the
 # download).
 
---- gpsmap.cc.orig	Thu May  8 23:48:35 2008
-+++ gpsmap.cc	Sat Jun 21 18:36:19 2008
+Index: gpsmap.cc
+--- gpsmap.cc.orig
++++ gpsmap.cc
 @@ -90,24 +90,24 @@ const char *config_base = "kismet.conf";
  // Broken map sources...  Damn vendors changing.
  // Mappoint
@@ -41,6 +42,87 @@ $OpenBSD: patch-gpsmap_cc,v 1.5 2008/06/27 22:10:14 kili Exp $
  
  // Image scales we try to autofetch
  long int scales[] = { 1000, 2000, 5000, 10000, 20000, 30000, 50000, 60000, 
+@@ -162,7 +162,7 @@ const uint8_t track_decay = 0x1F;
+ const unsigned int horiz_throttle = 75000;
+ 
+ // Image colors
+-const char *netcolors[] = {
++const const char *netcolors[] = {
+     "#000000",
+     "#FF0000", "#FF0072", "#FF00E5", "#D400FF",
+     "#5D00FF", "#0087FF", "#00F2FF", "#00FF94",
+@@ -182,7 +182,7 @@ char *channelcolors[] = {
+     "#808080", "#CCCCCC"
+ };
+ */
+-char *channelcolors[] = { 
++const char *channelcolors[] = { 
+     "#FF0000", "#FF6000", "#A08000", 
+     "#80A000", "#60FF00", "#00FF00", 
+     "#00FF60", "#00A080", "#0080A0", 
+@@ -191,7 +191,7 @@ char *channelcolors[] = { 
+ int channelcolor_max = 14;
+ 
+ // Origional
+-char *powercolors_Orig[] = {
++const char *powercolors_Orig[] = {
+     "#FF0000", "#FFD500", "#FFCC00",
+     "#F2FF00", "#7BFF00", "#00FFB6",
+     "#00FFFF", "#005DFF", "#A100FF",
+@@ -199,7 +199,7 @@ char *powercolors_Orig[] = {
+ };
+ const int power_steps_Orig = 10;
+ // Blue powercolors
+-char *powercolors_Blue[] = {
++const char *powercolors_Blue[] = {
+     "#A0A0FF",
+     "#9B9BFA",
+     "#9696F5",
+@@ -236,7 +236,7 @@ char *powercolors_Blue[] = {
+ const int power_steps_Blue = 32;
+ 
+ // Math progression
+-char *powercolors_Math[] = {
++const char *powercolors_Math[] = {
+     "#FF0000", "#FF8000", "#FFFF00",
+     "#80FF00", "#00FF00", "#00FF80",
+     "#00FFFF", "#0080FF", "#0000FF",
+@@ -244,7 +244,7 @@ char *powercolors_Math[] = {
+ };
+ const int power_steps_Math = 12;
+ // Weather Radar
+-char *powercolors_Radar[] = {
++const char *powercolors_Radar[] = {
+     "#50E350", "#39C339", "#208420",
+     "#145A14", "#C8C832", "#DC961E",
+     "#811610", "#B31A17", "#E61E1E"
+@@ -256,7 +256,7 @@ const int power_max = 255;
+ int powercolor_index = 0;
+ 
+ // Label gravity
+-char *label_gravity_list[] = {
++const char *label_gravity_list[] = {
+     "northwest", "north", "northeast",
+     "west", "center", "east",
+     "southwest", "south", "southeast"
+@@ -297,7 +297,7 @@ bool hullPoint::operator() (const hullPoint& a, const 
+ 	return a.angle < b.angle;
+ }
+ 
+-typedef struct gps_network {
++struct gps_network {
+ 
+     gps_network() {
+         filtered = 0;
+@@ -411,7 +411,7 @@ int mapsource = -1;
+ int power_resolution = 5;
+ // Interpolation colors
+ // strength colors
+-char **power_colors = NULL;
++const char **power_colors = NULL;
+ int power_steps = 0;
+ // Center resolution (size of circle)
+ int center_resolution = 2;
 @@ -1512,29 +1512,6 @@ int BestMapScale(long int *in_mapscale, long int *in_f
      double mapx, mapy;
      double map2x, map2y;
@@ -107,6 +189,26 @@ $OpenBSD: patch-gpsmap_cc,v 1.5 2008/06/27 22:10:14 kili Exp $
      // Mapblast style scale finding
      for (int x = 0; scales[x] != -1; x++) {
          calcxy(&mapx, &mapy, tlat, tlon, (double) scales[x]/PIXELFACT, 
+@@ -2154,7 +2102,7 @@ void DrawNetBoundRects(vector<gps_network *> in_nets, 
+ 
+ // Thread function to compute a line of interpolated data
+ 
+-typedef struct powerline_arg {
++struct powerline_arg {
+ //    unsigned int y;
+ //    unsigned int y_max;
+     unsigned int in_res;
+@@ -2397,8 +2345,8 @@ void DrawNetPower(vector<gps_network *> in_nets, Image
+     delete[] power_map;
+     delete[] power_input_map;
+     delete[] colormap;
+-    delete point_template;
+-    delete rect_template;
++    delete[] point_template;
++    delete[] rect_template;
+ }
+ 
+ void DrawNetCenterDot(vector<gps_network *> in_nets, Image *in_img, DrawInfo *in_di) {
 @@ -4016,30 +3964,6 @@ int main(int argc, char *argv[]) {
      // Some day this needs to get rewritten to not be using a source that doesn't
      // work anymore as the internal reference point.

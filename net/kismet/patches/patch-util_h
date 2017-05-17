@@ -1,0 +1,14 @@
+$OpenBSD: patch-util_h,v 1.3 2017/05/17 16:03:32 espie Exp $
+
+Index: util.h
+--- util.h.orig
++++ util.h
+@@ -54,7 +54,7 @@ int Hex2UChar(unsigned char *in_hex, unsigned char *in
+ vector<string> StrTokenize(string in_str, string in_split, int return_partial = 1);
+ 
+ // 'smart' tokenizeing with start/end positions
+-typedef struct smart_word_token {
++struct smart_word_token {
+     string word;
+     size_t begin;
+     size_t end;

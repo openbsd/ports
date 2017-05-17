@@ -1,0 +1,32 @@
+$OpenBSD: patch-tcpclient_h,v 1.1 2017/05/17 16:03:32 espie Exp $
+
+Index: tcpclient.h
+--- tcpclient.h.orig
++++ tcpclient.h
+@@ -62,7 +62,7 @@ class TcpClient;
+ 
+ class TcpClient {
+ public:
+-    typedef struct alert_info {
++    struct alert_info {
+         timeval alert_ts;
+         string alert_text;
+     };
+@@ -78,7 +78,7 @@ class TcpClient { (public)
+         }
+     };
+ 
+-    typedef struct string_info {
++    struct string_info {
+         mac_addr bssid;
+         mac_addr source;
+         timeval string_ts;
+@@ -96,7 +96,7 @@ class TcpClient { (public)
+         }
+     };
+ 
+-    typedef struct card_info {
++    struct card_info {
+         string interface;
+         string type;
+         string username;

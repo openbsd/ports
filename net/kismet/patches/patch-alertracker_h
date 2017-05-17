@@ -1,0 +1,14 @@
+$OpenBSD: patch-alertracker_h,v 1.1 2017/05/17 16:03:32 espie Exp $
+
+Index: alertracker.h
+--- alertracker.h.orig
++++ alertracker.h
+@@ -43,7 +43,7 @@ enum alert_time_unit {
+ class Alertracker {
+ public:
+     // A registered alert type
+-    typedef struct alert_rec {
++    struct alert_rec {
+         int ref_index;
+         string header;
+ 

@@ -1,0 +1,46 @@
+$OpenBSD: patch-macaddr_h,v 1.3 2017/05/17 16:03:32 espie Exp $
+
+Index: macaddr.h
+--- macaddr.h.orig
++++ macaddr.h
+@@ -22,6 +22,7 @@
+ #include "config.h"
+ 
+ #include <stdio.h>
++#include <stdlib.h>
+ #include <ctype.h>
+ #include <sys/time.h>
+ #include <sys/resource.h>
+@@ -46,7 +47,7 @@
+ #define MAC_STR_LEN ((MAC_LEN * 2) + 6)
+ 
+ // A packet MAC address
+-typedef struct mac_addr {
++struct mac_addr {
+     uint64_t longmac;
+     uint64_t longmask;
+     int error;
+@@ -73,7 +74,7 @@ typedef struct mac_addr {
+ 			longmac |= (uint64_t) bs_in[5] << ((MAC_LEN - 5 - 1) * 8);
+ 
+             // If it has a mask component, get that
+-            char *in_mask = strchr(in, '/');
++            const char *in_mask = strchr(in, '/');
+             if (in_mask != NULL) {
+                 longmask = 0;
+ 
+@@ -277,12 +278,12 @@ typedef struct mac_addr {
+ template<class T>
+ class macmap {
+ protected:
+-    typedef struct mask_vec_content {
++    struct mask_vec_content {
+         mac_addr mac;
+         T value;
+     };
+ 
+-    typedef struct mask_vec_offsets {
++    struct mask_vec_offsets {
+         unsigned int first;
+         unsigned int last;
+     };

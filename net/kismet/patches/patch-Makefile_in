@@ -1,10 +1,11 @@
-$OpenBSD: patch-Makefile_in,v 1.7 2010/11/11 14:11:34 espie Exp $
+$OpenBSD: patch-Makefile_in,v 1.8 2017/05/17 16:03:32 espie Exp $
 
 # Don't hard code -O2 -Wall.
 # Use BSD_INSTALL_* macros for installation.
 
---- Makefile.in.orig	Thu May 29 21:18:26 2008
-+++ Makefile.in	Thu Nov 11 14:43:19 2010
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
 @@ -20,9 +20,10 @@ CC	= @CC@
  LD	= @CXX@
  LDFLAGS	= @LDFLAGS@
@@ -215,7 +216,8 @@ $OpenBSD: patch-Makefile_in,v 1.7 2010/11/11 14:11:34 espie Exp $
 +	@rm -f $(DEPEND)
  	@echo "Generating dependencies... "
  	@echo > $(DEPEND)
- 	@$(CXX) $(CFLAGS) -MM \
+-	@$(CXX) $(CFLAGS) -MM \
++	@$(CXX) $(CPPFLAGS) $(CXXFLAGS) -MM \
  		`echo $(PSO) $(DRONEO) $(GPSLO) $(NCO) | sed -e "s/\.o/\.cc/g" | sed -e "s/\.mo/\.m/g"` >> $(DEPEND)
 -
 -include $(DEPEND)
