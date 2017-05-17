@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_google_protobuf_generated_message_reflection_unittest_cc,v 1.1 2017/05/17 20:23:45 sthen Exp $
+
+Index: src/google/protobuf/generated_message_reflection_unittest.cc
+--- src/google/protobuf/generated_message_reflection_unittest.cc.orig
++++ src/google/protobuf/generated_message_reflection_unittest.cc
+@@ -327,6 +327,9 @@ TEST(GeneratedMessageReflectionTest, FindKnownExtensio
+               FindKnownExtensionByName(extension1->full_name()) == NULL);
+ }
+ 
++// Older version of protobuf incompatible with new version of gtest.
++// https://groups.google.com/d/msg/protobuf/xgGBG-_WYy8/ruf1MKDr-sIJ
++#undef GTEST_HAS_DEATH_TEST
+ #ifdef GTEST_HAS_DEATH_TEST
+ 
+ TEST(GeneratedMessageReflectionTest, UsageErrors) {

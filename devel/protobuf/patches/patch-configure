@@ -1,6 +1,8 @@
-$OpenBSD: patch-configure,v 1.4 2013/11/03 07:52:02 ajacoutot Exp $
---- configure.orig	Sat Apr 30 19:24:59 2011
-+++ configure	Sat Jul  9 02:36:18 2011
+$OpenBSD: patch-configure,v 1.5 2017/05/17 20:23:45 sthen Exp $
+
+Index: configure
+--- configure.orig
++++ configure
 @@ -904,7 +904,6 @@ CXX
  CXXFLAGS
  CCC

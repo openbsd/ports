@@ -1,6 +1,8 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2011/07/11 05:25:31 dcoppa Exp $
---- Makefile.in.orig	Sat Apr 30 19:25:00 2011
-+++ Makefile.in	Sat Jul  9 02:40:51 2011
+$OpenBSD: patch-Makefile_in,v 1.3 2017/05/17 20:23:45 sthen Exp $
+
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
 @@ -957,27 +957,6 @@ uninstall-am: uninstall-pkgconfigDATA
  	uninstall-pkgconfigDATA
  

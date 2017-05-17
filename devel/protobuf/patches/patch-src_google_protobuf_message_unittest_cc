@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_google_protobuf_message_unittest_cc,v 1.1 2017/05/17 20:23:45 sthen Exp $
+
+Index: src/google/protobuf/message_unittest.cc
+--- src/google/protobuf/message_unittest.cc.orig
++++ src/google/protobuf/message_unittest.cc
+@@ -205,6 +205,9 @@ TEST(MessageTest, InitializationErrorString) {
+   EXPECT_EQ("a, b, c", message.InitializationErrorString());
+ }
+ 
++// Older version of protobuf incompatible with new version of gtest.
++// https://groups.google.com/d/msg/protobuf/xgGBG-_WYy8/ruf1MKDr-sIJ
++#undef GTEST_HAS_DEATH_TEST
+ #ifdef GTEST_HAS_DEATH_TEST  // death tests do not work on Windows yet.
+ 
+ TEST(MessageTest, SerializeFailsIfNotInitialized) {
