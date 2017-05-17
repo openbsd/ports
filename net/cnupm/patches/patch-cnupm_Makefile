@@ -1,0 +1,14 @@
+$OpenBSD: patch-cnupm_Makefile,v 1.1 2017/05/17 23:01:26 espie Exp $
+
+Index: cnupm/Makefile
+--- cnupm/Makefile.orig
++++ cnupm/Makefile
+@@ -5,7 +5,7 @@ SRCS=	aggr_port.c cnupm.c collect.c datalinks.c
+ MAN=	cnupm.8
+ MAN8=	${MAN}
+ 
+-CFLAGS+=-finline-limit-1000
++#CFLAGS+=-finline-limit-1000
+ 
+ .if exists(${.CURDIR}/../libcnupm/obj)
+ LDADD=	-L${.CURDIR}/../libcnupm/obj -lcnupm -lpcap
