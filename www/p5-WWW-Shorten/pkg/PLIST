@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/04/07 08:29:48 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2017/05/18 08:38:48 benoit Exp $
 bin/shorten.pl
 ${P5SITE}/WWW/Shorten/
 ${P5SITE}/WWW/Shorten.pm
@@ -6,6 +6,8 @@ ${P5SITE}/WWW/Shorten/LinkToolbot.pm
 ${P5SITE}/WWW/Shorten/Linkz.pm
 ${P5SITE}/WWW/Shorten/MakeAShorterLink.pm
 ${P5SITE}/WWW/Shorten/Metamark.pm
+${P5SITE}/WWW/Shorten/Qurl.pm
+${P5SITE}/WWW/Shorten/Qwer.pm
 ${P5SITE}/WWW/Shorten/TinyClick.pm
 ${P5SITE}/WWW/Shorten/TinyURL.pm
 ${P5SITE}/WWW/Shorten/Tinylink.pm
@@ -18,6 +20,8 @@ ${P5SITE}/WWW/Shorten/generic.pm
 @man man/man3p/WWW::Shorten::Linkz.3p
 @man man/man3p/WWW::Shorten::MakeAShorterLink.3p
 @man man/man3p/WWW::Shorten::Metamark.3p
+@man man/man3p/WWW::Shorten::Qurl.3p
+@man man/man3p/WWW::Shorten::Qwer.3p
 @man man/man3p/WWW::Shorten::TinyClick.3p
 @man man/man3p/WWW::Shorten::TinyURL.3p
 @man man/man3p/WWW::Shorten::Tinylink.3p

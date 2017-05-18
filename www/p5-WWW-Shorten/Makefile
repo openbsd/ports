@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.8 2016/03/20 19:57:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2017/05/18 08:38:48 benoit Exp $
 
 COMMENT=		interface to URL shortening sites
 
-DISTNAME =		WWW-Shorten-3.08
+DISTNAME =		WWW-Shorten-3.093
 CATEGORIES=		www
 
-# Artistic 2.0
+# Perl
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		cpan
 PKG_ARCH=		*
-
-CONFIGURE_STYLE=	modbuild
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		devel/p5-Config-Auto \
