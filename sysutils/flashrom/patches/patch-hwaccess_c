@@ -1,0 +1,14 @@
+$OpenBSD: patch-hwaccess_c,v 1.1 2017/05/18 15:29:35 sthen Exp $
+
+Index: hwaccess.c
+--- hwaccess.c.orig
++++ hwaccess.c
+@@ -114,6 +114,8 @@ int rget_io_perms(void)
+ #if defined (__OpenBSD__)
+ 		msg_perr("If you are root already please set securelevel=-1 in /etc/rc.securelevel and\n"
+ 			 "reboot, or reboot into single user mode.\n");
++		msg_perr("If you are root already, please reboot into single user mode (preferred),\n"
++			 "or set sysctl kern.securelevel=-1 in /etc/rc.securelevel.\n");
+ #elif defined(__NetBSD__)
+ 		msg_perr("If you are root already please reboot into single user mode or make sure\n"
+ 			 "that your kernel configuration has the option INSECURE enabled.\n");
