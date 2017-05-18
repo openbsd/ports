@@ -1,21 +1,19 @@
-# $OpenBSD: Makefile,v 1.101 2017/03/18 23:06:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.102 2017/05/18 13:51:42 sthen Exp $
 
 COMMENT-main=	system to store and display time-series data
 COMMENT-update=	lightweight update-only tool for rrdtool
 COMMENT-python= python interface to librrd
 COMMENT-ruby=	ruby interface to librrd
 
-MODPY_EGG_VERSION= 0.2.2
-VERSION=	1.6.0
-REVISION-main=	2
-REVISION-ruby=	0
+MODPY_EGG_VERSION= 0.1.10
+VERSION=	1.7.0
 DISTNAME=	rrdtool-${VERSION}
 PKGNAME-main=	${DISTNAME}
 PKGNAME-update=	rrdupdate-${VERSION}
 PKGNAME-python= py-rrd-${VERSION}
 PKGNAME-ruby=	ruby-rrd-${VERSION}
 
-SHARED_LIBS +=	rrd                  5.1      # 8.0
+SHARED_LIBS +=	rrd                  5.2      # 9.0
 
 CATEGORIES=	net databases
 
@@ -82,7 +80,7 @@ WANTLIB-ruby=	${cWANTLIB} ${MODRUBY_WANTLIB} c gmp m rrd
 # depends on Perl ABI
 WANTLIB-main=	${cWANTLIB} ${MODGETTEXT_WANTLIB} perl
 WANTLIB-main += X11 Xext Xrender c cairo expat ffi fontconfig freetype
-WANTLIB-main += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
+WANTLIB-main += glib-2.0 gobject-2.0 graphite2 gthread-2.0
 WANTLIB-main += harfbuzz lzma m pango-1.0 pangocairo-1.0
 WANTLIB-main += pangoft2-1.0 pcre pixman-1 png pthread-stubs xcb
 WANTLIB-main += xcb-render xcb-shm xml2 z

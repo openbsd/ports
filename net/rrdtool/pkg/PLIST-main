@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2016/04/21 23:46:47 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2017/05/18 13:51:42 sthen Exp $
 @conflict p5-RRD-*
 @pkgpath net/rrdtool,-perl
 @newgroup _rrdcached:726
@@ -38,6 +38,7 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/RRDs/RRDs.so
 @man man/man1/rrdgraph_rpn.1
 @man man/man1/rrdlast.1
 @man man/man1/rrdlastupdate.1
+@man man/man1/rrdlist.1
 @man man/man1/rrdresize.1
 @man man/man1/rrdrestore.1
 @man man/man1/rrdthreads.1
@@ -66,6 +67,7 @@ share/examples/rrdtool/rrdcached/rrdcached-size.pl
 share/examples/rrdtool/rrdtool-chroot
 share/examples/rrdtool/shared-demo.pl
 share/examples/rrdtool/stripes.pl
+share/locale/hu/LC_MESSAGES/rrdtool.mo
 @mode 750
 @owner _rrdcached
 @sample /var/db/rrd/
