@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2017/05/12 09:23:43 shadchin Exp $
+# $OpenBSD: Makefile,v 1.10 2017/05/18 15:18:39 shadchin Exp $
 
 COMMENT=		character encoding auto-detection in Python
 
-MODPY_EGG_VERSION=	3.0.2
+MODPY_EGG_VERSION=	3.0.3
 DISTNAME=		chardet-${MODPY_EGG_VERSION}
 PKGNAME=		py-chardet-${MODPY_EGG_VERSION}
 
