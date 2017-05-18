@@ -1,0 +1,14 @@
+$OpenBSD: patch-tools_rng_cc,v 1.1 2017/05/18 23:28:53 espie Exp $
+
+Index: tools/rng.cc
+--- tools/rng.cc.orig
++++ tools/rng.cc
+@@ -853,7 +853,7 @@ RNG::RNG (const char *s) 
+ { 
+ 	if (strlen (s) > 99) {
+ 		strncpy (name_, s, 99);
+-		name_[100] = 0;
++		name_[99] = 0;
+ 	}
+ 	else 
+ 		strcpy (name_, s);

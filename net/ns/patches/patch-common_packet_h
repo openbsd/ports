@@ -1,6 +1,7 @@
-$OpenBSD: patch-common_packet_h,v 1.1 2003/11/01 20:05:01 sturm Exp $
---- common/packet.h.orig	2003-02-26 23:07:18.000000000 +0100
-+++ common/packet.h	2003-11-01 19:38:00.000000000 +0100
+$OpenBSD: patch-common_packet_h,v 1.2 2017/05/18 23:28:53 espie Exp $
+Index: common/packet.h
+--- common/packet.h.orig
++++ common/packet.h
 @@ -40,10 +40,11 @@
  #include <string.h>
  #include <assert.h>
@@ -14,3 +15,30 @@ $OpenBSD: patch-common_packet_h,v 1.1 2003/11/01 20:05:01 sturm Exp $
  #include "packet-stamp.h"
  #include "ns-process.h"
  
+@@ -294,7 +295,7 @@ class p_info { (public)
+ 	{
+ 		if(nPkt_ >= PT_NTYPE+1)
+ 		        return;
+-		char **nameNew = new char*[PT_NTYPE+1];
++		const char **nameNew = new const char*[PT_NTYPE+1];
+ 		for(unsigned int i = (unsigned int)PT_SMAC+1; i < nPkt_; i++)
+ 		{
+ 		        nameNew[i] = name_[i];
+@@ -419,7 +420,7 @@ class p_info { (public)
+ 
+ 		name_[PT_NTYPE]= "undefined";
+ 	}
+-	static int addPacket(char *name);
++	static int addPacket(const char *name);
+ 	static packet_t getType(const char *name)
+ 	{
+ 		for(unsigned int i = 0; i < nPkt_; i++)
+@@ -431,7 +432,7 @@ class p_info { (public)
+ 
+ 	}
+ private:
+-	static char** name_;
++	static const char** name_;
+ 	static unsigned int nPkt_;
+ 	static PacketClassifier *pc_;
+ };

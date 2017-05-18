@@ -1,0 +1,14 @@
+$OpenBSD: patch-linkstate_ls_h,v 1.1 2017/05/18 23:28:53 espie Exp $
+
+Index: linkstate/ls.h
+--- linkstate/ls.h.orig
++++ linkstate/ls.h
+@@ -134,7 +134,7 @@ class LsMap : public map<Key, T, less<Key> > { (public
+ 		return ib.second ? ib.first : baseMap::end();
+ 	}
+ 
+-	void eraseAll() { erase(baseMap::begin(), baseMap::end()); }
++	void eraseAll() { this->erase(baseMap::begin(), baseMap::end()); }
+ 	T* findPtr(Key key) {
+ 		iterator it = baseMap::find(key);
+ 		return (it == baseMap::end()) ? (T *)NULL : &((*it).second);

@@ -1,0 +1,13 @@
+$OpenBSD: patch-tcp_tcp-session_h,v 1.1 2017/05/18 23:28:53 espie Exp $
+
+Index: tcp/tcp-session.h
+--- tcp/tcp-session.h.orig
++++ tcp/tcp-session.h
+@@ -37,6 +37,6 @@
+  */
+ 
+-#ifndef nc_tcp_session_h
++#ifndef ns_tcp_session_h
+ #define ns_tcp_session_h
+ 
+ #include "agent.h"

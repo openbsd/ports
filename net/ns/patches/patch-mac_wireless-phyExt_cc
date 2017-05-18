@@ -1,0 +1,14 @@
+$OpenBSD: patch-mac_wireless-phyExt_cc,v 1.1 2017/05/18 23:28:53 espie Exp $
+
+Index: mac/wireless-phyExt.cc
+--- mac/wireless-phyExt.cc.orig
++++ mac/wireless-phyExt.cc
+@@ -425,7 +425,7 @@ int WirelessPhyExt::discard(Packet *p, double power, c
+ void WirelessPhyExt::dump(void) const {
+ }
+ 
+-void WirelessPhyExt::log(char * event, char* additional) {
++void WirelessPhyExt::log(const char * event, const char* additional) {
+ 	if (PHY_DBG)
+ 		cout<<"L "<<Scheduler::instance().clock()<<" "<<node_->nodeid()<<" "<<"PHY"<<" "<<event<<" "
+ 				<<additional<<endl;

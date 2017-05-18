@@ -1,0 +1,32 @@
+$OpenBSD: patch-indep-utils_cmu-scen-gen_setdest_calcdest_cc,v 1.1 2017/05/18 23:28:53 espie Exp $
+
+Index: indep-utils/cmu-scen-gen/setdest/calcdest.cc
+--- indep-utils/cmu-scen-gen/setdest/calcdest.cc.orig
++++ indep-utils/cmu-scen-gen/setdest/calcdest.cc
+@@ -441,7 +441,7 @@ Node::Update()
+ 	    } 
+ 	  else 
+ 	    {
+-	      vector v;
++	      tdvector v;
+ 	      destination.X = setdest->X;
+ 	      destination.Y = setdest->Y;
+ 	      speed = setdest->speed;
+@@ -473,7 +473,7 @@ Node::UpdateNeighbors()
+ {
+ 	static Node *n2;
+ 	static Neighbor *m1, *m2;
+-	static vector D, B, v1, v2;
++	static tdvector D, B, v1, v2;
+ 	static double a, b, c, t1, t2, Q;
+ 	static u_int32_t i, reachable;
+ 
+@@ -499,7 +499,7 @@ Node::UpdateNeighbors()
+ 		/* ==================================================
+ 		   Determine Reachability
+ 		   ================================================== */
+-		{	vector d = position - n2->position;
++		{	tdvector d = position - n2->position;
+ 
+ 			if(d.length() < RANGE) {
+ #ifdef SANITY_CHECKS

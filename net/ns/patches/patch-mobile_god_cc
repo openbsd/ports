@@ -1,0 +1,18 @@
+$OpenBSD: patch-mobile_god_cc,v 1.1 2017/05/18 23:28:53 espie Exp $
+
+Index: mobile/god.cc
+--- mobile/god.cc.orig
++++ mobile/god.cc
+@@ -474,9 +474,9 @@ bool God::IsNeighbor(int i, int j)
+     return false;
+   }
+ 
+-  vector a(mb_node[i]->X(), mb_node[i]->Y(), mb_node[i]->Z());
+-  vector b(mb_node[j]->X(), mb_node[j]->Y(), mb_node[j]->Z());
+-  vector d = a - b;
++  tdvector a(mb_node[i]->X(), mb_node[i]->Y(), mb_node[i]->Z());
++  tdvector b(mb_node[j]->X(), mb_node[j]->Y(), mb_node[j]->Z());
++  tdvector d = a - b;
+ 
+   if (d.length() < RANGE)
+     return true;

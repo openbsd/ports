@@ -1,0 +1,14 @@
+$OpenBSD: patch-mac_mac-802_11Ext_h,v 1.1 2017/05/18 23:28:53 espie Exp $
+
+Index: mac/mac-802_11Ext.h
+--- mac/mac-802_11Ext.h.orig
++++ mac/mac-802_11Ext.h
+@@ -530,7 +530,7 @@ class Mac802_11Ext : public Mac { (public)
+ 
+ protected:
+ 
+-	void log(char* event, char* additional);
++	void log(const char* event, const char* additional);
+ private:
+ 
+ 	void handleBKDone();

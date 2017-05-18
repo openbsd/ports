@@ -1,0 +1,14 @@
+$OpenBSD: patch-mdart_mdart_function_h,v 1.1 2017/05/18 23:28:53 espie Exp $
+
+Index: mdart/mdart_function.h
+--- mdart/mdart_function.h.orig
++++ mdart/mdart_function.h
+@@ -227,7 +227,7 @@ inline int DiffBit(nsaddr_t n1, nsaddr_t n2) {
+ 	return i;
+ }
+ 
+-inline nsaddr_t hash(nsaddr_t id) {
++inline nsaddr_t myhash(nsaddr_t id) {
+ 	bitset<ADDR_SIZE> tempAddress_ (id);
+ 	bitset<ADDR_SIZE> address_;
+ 	for(unsigned int i=0; i<ADDR_SIZE; i++) {

@@ -1,0 +1,14 @@
+$OpenBSD: patch-mac_mac-802_11Ext_cc,v 1.1 2017/05/18 23:28:53 espie Exp $
+
+Index: mac/mac-802_11Ext.cc
+--- mac/mac-802_11Ext.cc.orig
++++ mac/mac-802_11Ext.cc
+@@ -162,7 +162,7 @@ void Mac802_11Ext::dump(char *) {
+ 
+ }
+ 
+-void Mac802_11Ext::log(char* event, char* additional) {
++void Mac802_11Ext::log(const char* event, const char* additional) {
+ 	if (MAC_DBG)
+ 		cout<<"L "<<Scheduler::instance().clock()<<" "<<index_<<" "<<"MAC"<<" "<<event<<" "<<additional
+ 				<<endl;

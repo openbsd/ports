@@ -1,0 +1,14 @@
+$OpenBSD: patch-tcp_tcp_h,v 1.1 2017/05/18 23:28:53 espie Exp $
+
+Index: tcp/tcp.h
+--- tcp/tcp.h.orig
++++ tcp/tcp.h
+@@ -506,7 +506,7 @@ class TcpAgent : public Agent { (protected)
+ 
+         /* support for event-tracing */
+         //EventTrace *et_;
+-        void trace_event(char *eventtype);
++        void trace_event(const char *eventtype);
+ 
+ 	/* these function are now obsolete, see other above */
+ 	void closecwnd(int how);

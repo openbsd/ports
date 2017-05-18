@@ -1,0 +1,36 @@
+$OpenBSD: patch-dccp_dccp_cc,v 1.1 2017/05/18 23:28:53 espie Exp $
+
+Index: dccp/dccp.cc
+--- dccp/dccp.cc.orig
++++ dccp/dccp.cc
+@@ -34,7 +34,7 @@
+ #include "random.h"
+ 
+ //string representation of types
+-char* DCCPAgent::state_str_[DCCP_NUM_STATES] =
++const char* DCCPAgent::state_str_[DCCP_NUM_STATES] =
+ {"CLOSED", "LISTEN", "RESPOND", "REQUEST", "OPEN", "CLOSEREQ", "CLOSING"};
+ 
+ int DCCPAgent::hdr_size_[DCCP_NUM_PTYPES] =
+@@ -42,10 +42,10 @@ int DCCPAgent::hdr_size_[DCCP_NUM_PTYPES] =
+   DCCP_ACK_HDR_SIZE, DCCP_DACK_HDR_SIZE, DCCP_CREQ_HDR_SIZE,
+   DCCP_CLOSE_HDR_SIZE, DCCP_RESET_HDR_SIZE };
+ 
+-char* DCCPAgent::ptype_str_[DCCP_NUM_PTYPES] =
++const char* DCCPAgent::ptype_str_[DCCP_NUM_PTYPES] =
+ { "REQUEST", "RESPONSE", "DATA", "ACK", "DATAACK", "CLOSEREQ", "CLOSE", "RESET" };
+ 
+-char* DCCPAgent::reset_reason_str_[DCCP_NUM_RESET_REASONS]=
++const char* DCCPAgent::reset_reason_str_[DCCP_NUM_RESET_REASONS]=
+ { "Unspecified" , "Closed", "Invalid Packet", "Option Error", "Feature Error",
+   "Connection Refused", "Bad Service Name", "Too Busy", "Bad Init Cookie",
+   "Unknown", "Unanswered Challenge", "Fruitless Negotiation",
+@@ -53,7 +53,7 @@ char* DCCPAgent::reset_reason_str_[DCCP_NUM_RESET_REAS
+   "Mandatory Failure"
+ };
+ 
+-char* DCCPAgent::feature_location_str_[DCCP_NUM_FEAT_LOCS] =
++const char* DCCPAgent::feature_location_str_[DCCP_NUM_FEAT_LOCS] =
+ { "LOCAL", "REMOTE" };
+ 
+ //OTcl linkage for DCCP agent

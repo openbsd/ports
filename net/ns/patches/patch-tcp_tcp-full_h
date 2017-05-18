@@ -1,0 +1,16 @@
+$OpenBSD: patch-tcp_tcp-full_h,v 1.1 2017/05/18 23:28:53 espie Exp $
+
+Index: tcp/tcp-full.h
+--- tcp/tcp-full.h.orig
++++ tcp/tcp-full.h
+@@ -223,8 +223,8 @@ class FullTcpAgent : public TcpAgent { (protected)
+ 	DelAckTimer delack_timer_;	// other timers in tcp.h
+ 	void cancel_timers();		// cancel all timers
+ 	void prpkt(Packet*);		// print packet (debugging helper)
+-	char *flagstr(int);		// print header flags as symbols
+-	char *statestr(int);		// print states as symbols
++	const char *flagstr(int);	// print header flags as symbols
++	const char *statestr(int);	// print states as symbols
+ 
+ 	/*
+ 	* the following are part of a tcpcb in "real" RFC793 TCP

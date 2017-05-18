@@ -1,0 +1,32 @@
+$OpenBSD: patch-tcp_tcp-full_cc,v 1.1 2017/05/18 23:28:53 espie Exp $
+
+Index: tcp/tcp-full.cc
+--- tcp/tcp-full.cc.orig
++++ tcp/tcp-full.cc
+@@ -549,11 +549,11 @@ FullTcpAgent::prpkt(Packet *pkt)
+ 		tcph->reason());
+ }
+ 
+-char *
++const char *
+ FullTcpAgent::flagstr(int hflags)
+ {
+ 	// update this if tcp header flags change
+-	static char *flagstrs[28] = {
++	static const char *flagstrs[28] = {
+ 		"<null>", "<FIN>", "<SYN>", "<SYN,FIN>",	// 0-3
+ 		"<?>", "<?,FIN>", "<?,SYN>", "<?,SYN,FIN>",	// 4-7
+ 		"<PSH>", "<PSH,FIN>", "<PSH,SYN>", "<PSH,SYN,FIN>", // 0x08-0x0b
+@@ -581,10 +581,10 @@ FullTcpAgent::flagstr(int hflags)
+ 	return (flagstrs[hflags]);
+ }
+ 
+-char *
++const char *
+ FullTcpAgent::statestr(int state)
+ {
+-	static char *statestrs[TCP_NSTATES] = {
++	static const char *statestrs[TCP_NSTATES] = {
+ 		"CLOSED", "LISTEN", "SYN_SENT", "SYN_RCVD",
+ 		"ESTABLISHED", "CLOSE_WAIT", "FIN_WAIT_1", "CLOSING",
+ 		"LAST_ACK", "FIN_WAIT_2"

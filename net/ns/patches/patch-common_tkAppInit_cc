@@ -1,0 +1,13 @@
+$OpenBSD: patch-common_tkAppInit_cc,v 1.1 2017/05/18 23:28:53 espie Exp $
+
+Index: common/tkAppInit.cc
+--- common/tkAppInit.cc.orig
++++ common/tkAppInit.cc
+@@ -293,7 +293,6 @@ int
+ Tcl_AppInit(Tcl_Interp *interp)
+ {
+ #ifdef MEMDEBUG_SIMULATIONS
+-        extern MemTrace *globalMemTrace;
+         globalMemTrace = new MemTrace;
+ #endif
+ 

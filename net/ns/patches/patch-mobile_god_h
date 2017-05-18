@@ -1,19 +1,11 @@
-$OpenBSD: patch-indep-utils_cmu-scen-gen_setdest_setdest_h,v 1.2 2017/05/18 23:28:53 espie Exp $
-Index: indep-utils/cmu-scen-gen/setdest/setdest.h
---- indep-utils/cmu-scen-gen/setdest/setdest.h.orig
-+++ indep-utils/cmu-scen-gen/setdest/setdest.h
-@@ -3,7 +3,7 @@
+$OpenBSD: patch-mobile_god_h,v 1.1 2017/05/18 23:28:53 espie Exp $
+
+Index: mobile/god.h
+--- mobile/god.h.orig
++++ mobile/god.h
+@@ -76,39 +76,39 @@ class NodeStatus { (public)
  
- /*#include <sys/queue.h>*/
- #include "../../../config.h"
--#include "../../../lib/bsd-list.h"
-+#include <sys/queue.h> 
- 
- #ifndef LIST_FIRST
- #define LIST_FIRST(head)	((head)->lh_first)
-@@ -14,39 +14,39 @@
- 
- void ReadInMovementPattern(void);
+ // Cut and Paste from setdest.h   -- Chalermek 12/1/99
  
 -class vector {
 +class tdvector {
@@ -63,16 +55,3 @@ Index: indep-utils/cmu-scen-gen/setdest/setdest.h
  	}
  
  	double X;
-@@ -93,9 +93,9 @@ class Node { (private)
- 	u_int32_t	index;                  // unique node identifier
- 	u_int32_t 	first_trip;		// 1 if first trip, 0 otherwise. (by J. Yoon)
- 
--	vector		position;		// current position
--	vector		destination;		// destination
--	vector		direction;		// computed from pos and dest
-+	tdvector		position;	// current position
-+	tdvector		destination;	// destination
-+	tdvector		direction;	// computed from pos and dest
- 
- 	double		speed;
- 	double		time_update;		// when pos last updated

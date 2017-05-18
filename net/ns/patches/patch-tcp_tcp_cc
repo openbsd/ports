@@ -1,0 +1,14 @@
+$OpenBSD: patch-tcp_tcp_cc,v 1.1 2017/05/18 23:28:53 espie Exp $
+
+Index: tcp/tcp.cc
+--- tcp/tcp.cc.orig
++++ tcp/tcp.cc
+@@ -2174,7 +2174,7 @@ void TcpAgent::process_qoption_after_ack (int seqno)
+ 	}
+ }
+ 
+-void TcpAgent::trace_event(char *eventtype)
++void TcpAgent::trace_event(const char *eventtype)
+ {
+ 	if (et_ == NULL) return;
+ 	int seqno = t_seqno_;

@@ -1,0 +1,23 @@
+$OpenBSD: patch-queue_errmodel_cc,v 1.1 2017/05/18 23:28:53 espie Exp $
+
+Index: queue/errmodel.cc
+--- queue/errmodel.cc.orig
++++ queue/errmodel.cc
+@@ -96,7 +96,7 @@ static class TraceErrorModelClass : public TclClass { 
+ 	}
+ } class_traceerrormodel;
+ 
+-static char* eu_names[] = { EU_NAMES };
++static const char* eu_names[] = { EU_NAMES };
+ 
+ inline double comb(int n, int k) {
+ 	int i;
+@@ -551,7 +551,7 @@ int ComplexTwoStateErrorModel::corruptPkt(Packet*)
+ 
+ 
+ 
+-static char * st_names[]={ST_NAMES};
++static const char * st_names[]={ST_NAMES};
+ 
+ /*
+ // MultiState ErrorModel:

@@ -1,0 +1,21 @@
+$OpenBSD: patch-dccp_dccp_h,v 1.1 2017/05/18 23:28:53 espie Exp $
+
+Index: dccp/dccp.h
+--- dccp/dccp.h.orig
++++ dccp/dccp.h
+@@ -172,11 +172,11 @@ class DCCPAgent : public Agent { (private)
+ 	RNG* nonces_;   //random number generator
+ 
+ 	//string representation of types
+-	static char* state_str_[DCCP_NUM_STATES];
++	static const char* state_str_[DCCP_NUM_STATES];
+ 	static int hdr_size_[DCCP_NUM_PTYPES];
+-	static char* ptype_str_[DCCP_NUM_PTYPES];
+-	static char* reset_reason_str_[DCCP_NUM_RESET_REASONS];
+-	static char* feature_location_str_[DCCP_NUM_FEAT_LOCS];
++	static const char* ptype_str_[DCCP_NUM_PTYPES];
++	static const char* reset_reason_str_[DCCP_NUM_RESET_REASONS];
++	static const char* feature_location_str_[DCCP_NUM_FEAT_LOCS];
+ 	
+ 	bool server_;         //true if this agent i a server
+ 	dccp_state state_;    //current protocol state

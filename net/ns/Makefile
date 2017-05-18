@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.43 2017/04/10 11:46:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.44 2017/05/18 23:28:53 espie Exp $
 
 COMMENT=	UCB/LBNL Network Simulator Version 2
 
 V=		2.35
 DISTNAME=	ns-src-$V
 PKGNAME=	ns-$V
+REVISION =	0
 CATEGORIES=	net
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
 

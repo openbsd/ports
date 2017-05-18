@@ -1,0 +1,14 @@
+$OpenBSD: patch-nix_nixnode_cc,v 1.1 2017/05/18 23:28:53 espie Exp $
+
+Index: nix/nixnode.cc
+--- nix/nixnode.cc.orig
++++ nix/nixnode.cc
+@@ -156,7 +156,7 @@ Edge* pE;
+   if (last.first == NODE_NONE)
+     {
+       prev = m_Adj.begin();
+-      if (prev == (EdgeVec_it) NULL) // ! How can this happen?
++      if (prev == m_Adj.end()) // ! How can this happen?
+         return(NodeWeight_t(NODE_NONE, 0));
+       pE = *prev;
+       if(0)printf("NextAdj returning first edge %ld\n",

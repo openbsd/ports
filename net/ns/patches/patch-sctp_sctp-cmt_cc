@@ -1,0 +1,14 @@
+$OpenBSD: patch-sctp_sctp-cmt_cc,v 1.1 2017/05/18 23:28:53 espie Exp $
+
+Index: sctp/sctp-cmt.cc
+--- sctp/sctp-cmt.cc.orig
++++ sctp/sctp-cmt.cc
+@@ -5070,7 +5070,7 @@ void SctpCMTAgent::SackGenTimerExpiration() // section
+ /* New CMT function:
+  * Function returns dest status as string for printing
+  */
+-char* SctpCMTAgent::PrintDestStatus(SctpDest_S* spDest)
++const char* SctpCMTAgent::PrintDestStatus(SctpDest_S* spDest)
+ {
+   switch(spDest->eStatus)
+     {

@@ -1,0 +1,19 @@
+$OpenBSD: patch-common_packet_cc,v 1.1 2017/05/18 23:28:53 espie Exp $
+
+Index: common/packet.cc
+--- common/packet.cc.orig
++++ common/packet.cc
+@@ -41,11 +41,11 @@ static const char rcsid[] =
+ #include "flags.h"
+ 
+ p_info packet_info;
+-char** p_info::name_;
++const char** p_info::name_;
+ unsigned int p_info::nPkt_ = 0;
+ PacketClassifier *p_info::pc_ = 0;
+ 
+-int p_info::addPacket(char *name)
++int p_info::addPacket(const char *name)
+ {
+ 	if(!nPkt_)
+ 		initName();

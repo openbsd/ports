@@ -1,0 +1,13 @@
+$OpenBSD: patch-autoconf_h_in,v 1.1 2017/05/18 23:28:53 espie Exp $
+
+Index: autoconf.h.in
+--- autoconf.h.in.orig
++++ autoconf.h.in
+@@ -91,6 +91,7 @@
+ #endif
+ 
+ 
++#include <iosfwd>
+ using namespace CPP_NAMESPACE;
+ #endif /* CPP_NAMESPACE */
+ #endif /* __cplusplus */

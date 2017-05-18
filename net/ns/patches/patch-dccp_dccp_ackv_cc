@@ -1,0 +1,14 @@
+$OpenBSD: patch-dccp_dccp_ackv_cc,v 1.1 2017/05/18 23:28:53 espie Exp $
+
+Index: dccp/dccp_ackv.cc
+--- dccp/dccp_ackv.cc.orig
++++ dccp/dccp_ackv.cc
+@@ -32,7 +32,7 @@
+ #include "dccp_ackv.h"
+ 
+ /* Static string representation of packet states */
+-char* DCCPAckVector::packet_state_str_[DCCP_NUM_PACKET_STATES] =
++const char* DCCPAckVector::packet_state_str_[DCCP_NUM_PACKET_STATES] =
+ {"Received", "ECN-marked", "Reserved", "Not Received" };
+ 
+ //private methods

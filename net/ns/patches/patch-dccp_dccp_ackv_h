@@ -1,0 +1,14 @@
+$OpenBSD: patch-dccp_dccp_ackv_h,v 1.1 2017/05/18 23:28:53 espie Exp $
+
+Index: dccp/dccp_ackv.h
+--- dccp/dccp_ackv.h.orig
++++ dccp/dccp_ackv.h
+@@ -64,7 +64,7 @@ struct dccp_ackv_hist_entry {
+ class DCCPAckVector {
+ private:
+ 	//packet state names
+-	static char* packet_state_str_[DCCP_NUM_PACKET_STATES];
++	static const char* packet_state_str_[DCCP_NUM_PACKET_STATES];
+ 
+         u_char* vector_;       //the real ack vector as a byte array
+ 	u_int16_t size_;       //current size of vector

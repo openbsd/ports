@@ -1,0 +1,14 @@
+$OpenBSD: patch-linkstate_ls_cc,v 1.1 2017/05/18 23:28:53 espie Exp $
+
+Index: linkstate/ls.cc
+--- linkstate/ls.cc.orig
++++ linkstate/ls.cc
+@@ -81,7 +81,7 @@ static class initRouting { (public)
+ 	}
+ } lsRoutingInitializer;
+ 
+-static void ls_error(char* msg) 
++static void ls_error(const char* msg) 
+ { 
+ 	fprintf(stderr, "%s\n", msg);
+ 	abort();

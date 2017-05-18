@@ -1,0 +1,14 @@
+$OpenBSD: patch-mac_wireless-phyExt_h,v 1.1 2017/05/18 23:28:53 espie Exp $
+
+Index: mac/wireless-phyExt.h
+--- mac/wireless-phyExt.h.orig
++++ mac/wireless-phyExt.h
+@@ -211,7 +211,7 @@ class WirelessPhyExt : public WirelessPhy { (private)
+ 	double SINR_Th_RX; //SINR threshold for decode data according to the modulation scheme
+ 	double power_RX;
+ 
+-	void log(char * event, char* additional); // print out state informration
++	void log(const char * event, const char* additional); // print out state informration
+ 	double SINR_Th(int modulationScheme);
+ 	inline int initialized() {
+ 		return (node_ && uptarget_ && downtarget_ && propagation_);
