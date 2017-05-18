@@ -1,6 +1,21 @@
-$OpenBSD: patch-stats_c,v 1.6 2017/02/20 17:14:31 jca Exp $
---- stats.c.orig	Mon Feb 20 18:07:23 2017
-+++ stats.c	Mon Feb 20 18:07:30 2017
+$OpenBSD: patch-stats_c,v 1.7 2017/05/18 10:40:08 mpi Exp $
+Index: stats.c
+--- stats.c.orig
++++ stats.c
+@@ -49,13 +49,11 @@
+ #include <netinet/igmp_var.h>
+ #include <netinet/ip_var.h>
+ #include <netinet/tcp.h>
+-#include <netinet/tcpip.h>
+ #include <netinet/tcp_seq.h>
+ #define TCPSTATES
+ #include <netinet/tcp_fsm.h>
+ #include <netinet/tcp_timer.h>
+ #include <netinet/tcp_var.h>
+-#include <netinet/tcp_debug.h>
+ #include <netinet/udp.h>
+ #include <netinet/udp_var.h>
+ #include <netinet/ip_ipsp.h>
 @@ -576,16 +576,16 @@ ipip_stats()
  #define p(f, m) if (ipipstat.f || sflag <= 1) \
      printf(m, ipipstat.f, plural(ipipstat.f))
