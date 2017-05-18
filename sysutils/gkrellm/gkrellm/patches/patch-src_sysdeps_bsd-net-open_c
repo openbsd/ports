@@ -1,7 +1,16 @@
-$OpenBSD: patch-src_sysdeps_bsd-net-open_c,v 1.7 2017/04/23 13:48:29 sthen Exp $
---- src/sysdeps/bsd-net-open.c.orig	Wed Feb  1 23:48:00 2017
-+++ src/sysdeps/bsd-net-open.c	Wed Feb  1 23:50:44 2017
-@@ -67,7 +67,7 @@ gkrellm_sys_inet_read_tcp_data(void)
+$OpenBSD: patch-src_sysdeps_bsd-net-open_c,v 1.8 2017/05/18 10:39:20 mpi Exp $
+Index: src/sysdeps/bsd-net-open.c
+--- src/sysdeps/bsd-net-open.c.orig
++++ src/sysdeps/bsd-net-open.c
+@@ -50,7 +50,6 @@
+ 
+ #include <netinet/ip_var.h>
+ #include <netinet/tcp.h>
+-#include <netinet/tcpip.h>
+ #include <netinet/tcp_seq.h>
+ #include <netinet/tcp_fsm.h>
+ #include <netinet/tcp_timer.h>
+@@ -67,7 +66,7 @@ gkrellm_sys_inet_read_tcp_data(void)
     ActiveTCP tcp;
     gint	tcp_status;
     struct inpcbtable table;
@@ -10,7 +19,7 @@ $OpenBSD: patch-src_sysdeps_bsd-net-open_c,v 1.7 2017/04/23 13:48:29 sthen Exp $
     struct tcpcb tcpcb;
     static struct nlist nl[] = {
  #define X_TCBTABLE    0
-@@ -84,10 +84,8 @@ gkrellm_sys_inet_read_tcp_data(void)
+@@ -84,10 +83,8 @@ gkrellm_sys_inet_read_tcp_data(void)
  		sizeof(struct inpcbtable)) != sizeof(struct inpcbtable))
        return;
  
@@ -23,7 +32,7 @@ $OpenBSD: patch-src_sysdeps_bsd-net-open_c,v 1.7 2017/04/23 13:48:29 sthen Exp $
        
        if (kvm_read(kvmd, (u_long)next,
  		   (char *)&inpcb, sizeof(inpcb)) == sizeof(inpcb) &&
-@@ -103,7 +101,7 @@ gkrellm_sys_inet_read_tcp_data(void)
+@@ -103,7 +100,7 @@ gkrellm_sys_inet_read_tcp_data(void)
  	    gkrellm_inet_log_tcp_port_data(&tcp);
        }
  
