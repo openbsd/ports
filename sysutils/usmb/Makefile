@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2016/07/31 13:48:55 jca Exp $
+# $OpenBSD: Makefile,v 1.7 2017/05/18 21:27:47 espie Exp $
 
 COMMENT=	mount SMB shares from userland via FUSE
 
 DISTNAME=	usmb-20130204
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=	sysutils
 
