@@ -1,0 +1,13 @@
+$OpenBSD: patch-packet_c,v 1.1 2017/05/18 23:42:44 espie Exp $
+
+Index: packet.c
+--- packet.c.orig
++++ packet.c
+@@ -520,6 +520,7 @@ u_char *pak;
+     return (0);
+ }
+ 
++void
+ send_error_reply(type, msg)
+ int type;
+ char *msg;

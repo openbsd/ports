@@ -1,0 +1,13 @@
+$OpenBSD: patch-maxsess_c,v 1.1 2017/05/18 23:42:44 espie Exp $
+
+Index: maxsess.c
+--- maxsess.c.orig
++++ maxsess.c
+@@ -220,6 +220,7 @@ struct identity *idp;
+  * Given a start or a stop accounting record, update the file of
+  * records which tracks who's logged on and where.
+  */
++void
+ loguser(rec)
+ struct acct_rec *rec;
+ {

@@ -1,12 +1,15 @@
-$OpenBSD: patch-tac_plus_h,v 1.2 2012/09/11 12:45:44 sthen Exp $
---- tac_plus.h.orig	Sun Jun 18 18:26:54 2000
-+++ tac_plus.h	Tue Sep 11 13:32:47 2012
-@@ -141,6 +141,13 @@
+$OpenBSD: patch-tac_plus_h,v 1.3 2017/05/18 23:42:44 espie Exp $
+Index: tac_plus.h
+--- tac_plus.h.orig
++++ tac_plus.h
+@@ -141,6 +141,15 @@
  #define NO_PWAGE
  #endif
  
 +#ifdef OPENBSD
 +#include <stdlib.h>
++#include <ctype.h>
++#include <fcntl.h>
 +#define STDLIB_MALLOC
 +#define VOIDSIG
 +#define NO_PWAGE

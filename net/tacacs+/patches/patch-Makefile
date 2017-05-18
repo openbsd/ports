@@ -1,5 +1,6 @@
---- Makefile.orig	Sun Jun 18 19:26:32 2000
-+++ Makefile	Mon Jun  9 08:44:32 2003
+Index: Makefile
+--- Makefile.orig
++++ Makefile
 @@ -19,7 +19,6 @@
  # LIMITATION, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
  # FOR A PARTICULAR PURPOSE. 
@@ -34,7 +35,7 @@
 -# USERID  = 1500
 -# GROUPID = 25
 -# FLAGS   = -DTAC_PLUS_USERID=$(USERID) -DTAC_PLUS_GROUPID=$(GROUPID)
-+FLAGS = -DTAC_PLUS_USER=\"%%TACACSUSER%%\" -DTAC_PLUS_GROUP=\"%%TACACSGROUP%%\"
++FLAGS = -DTAC_PLUS_USER=\"_tacacs\" -DTAC_PLUS_GROUP=\"_tacacs\"
  
  # Definitions for SKEY functionality
 -# DEFINES = -DSKEY

@@ -1,0 +1,21 @@
+$OpenBSD: patch-dump_c,v 1.1 2017/05/18 23:42:44 espie Exp $
+
+Index: dump.c
+--- dump.c.orig
++++ dump.c
+@@ -119,6 +119,7 @@ u_char *pak;
+ 
+ 
+ /* Dump packets originated by a NAS */
++void
+ dump_nas_pak(pak)
+ u_char *pak;
+ {
+@@ -377,6 +378,7 @@ u_char *pak;
+ 
+ /* Dump packets originated by Tacacsd  */
+ 
++void
+ dump_tacacs_pak(pak)
+ u_char *pak;
+ {

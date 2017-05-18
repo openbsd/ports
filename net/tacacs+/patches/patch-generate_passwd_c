@@ -1,12 +1,16 @@
-$OpenBSD: patch-generate_passwd_c,v 1.1 2012/09/11 12:45:44 sthen Exp $
---- generate_passwd.c.orig	Sun Jun 18 18:26:54 2000
-+++ generate_passwd.c	Tue Sep 11 13:39:19 2012
-@@ -25,6 +25,8 @@
+$OpenBSD: patch-generate_passwd_c,v 1.2 2017/05/18 23:42:44 espie Exp $
+Index: generate_passwd.c
+--- generate_passwd.c.orig
++++ generate_passwd.c
+@@ -24,7 +24,10 @@
+    Usage: a.out [salt]
  */
  
- #define NULL 0
+-#define NULL 0
 +#include <stdio.h>
 +#include <string.h>
++#include <unistd.h>
++#include <stdlib.h>
  
  main(argc, argv)
  char **argv;
