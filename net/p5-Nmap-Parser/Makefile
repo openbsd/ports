@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2016/12/08 12:00:40 benoit Exp $
+# $OpenBSD: Makefile,v 1.18 2017/05/18 06:33:13 benoit Exp $
 
 COMMENT =	perl module for parsing nmap XML reports
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	Nmap-Parser-1.33
+DISTNAME =	Nmap-Parser-1.34
 EPOCH =		0
 CATEGORIES=	net
 
