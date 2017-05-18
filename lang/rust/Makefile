@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2017/05/05 11:40:29 landry Exp $
+# $OpenBSD: Makefile,v 1.43 2017/05/18 06:39:49 landry Exp $
 
 # snapshots are only available for amd64 and i386, for now
 ONLY_FOR_ARCHS =	amd64 i386
@@ -9,6 +9,7 @@ COMMENT-main =		compiler for Rust Language
 COMMENT-doc =		html documentation for rustc
 
 V =			1.17.0
+REVISION =		0
 DISTNAME =		rustc-${V}-src
 
 # rustc bootstrap version
@@ -72,6 +73,11 @@ MODPY_RUNDEP =		No
 
 BUILD_DEPENDS +=	devel/llvm \
 			devel/cmake
+
+# libgcc.a path
+CONFIG =		${MACHINE_ARCH}-unknown-openbsd${OSREV}
+SYSV =			4.2.1
+SYSLIBPATH =		/usr/lib/gcc-lib/${CONFIG}/${SYSV}
 
 # rustllvm need c++11
 MODGCC4_LANGS =		c++
@@ -183,6 +189,9 @@ post-install:
 		${PREFIX}/lib/rustlib/{install.log,uninstall.sh,rust-installer-version} \
 		${PREFIX}/lib/rustlib/components \
 		${PREFIX}/lib/rustlib/manifest-*
+	# make a link to libgcc.a inside rustlib
+	ln -fs ${SYSLIBPATH}/libgcc.a \
+		${PREFIX}/lib/rustlib/${TRIPLE_ARCH}/lib
 
 do-test:
 	${BUILD_BIN} test --verbose --jobs=${MAKE_JOBS} ${TEST_TARGET}
