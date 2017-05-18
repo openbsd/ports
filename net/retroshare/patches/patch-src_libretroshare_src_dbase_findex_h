@@ -1,0 +1,29 @@
+$OpenBSD: patch-src_libretroshare_src_dbase_findex_h,v 1.1 2017/05/18 14:47:27 espie Exp $
+tr1 / non-tr1 dance
+
+Index: src/libretroshare/src/dbase/findex.h
+--- src/libretroshare/src/dbase/findex.h.orig
++++ src/libretroshare/src/dbase/findex.h
+@@ -27,7 +27,13 @@
+ #include <string>
+ #include <map>
+ #include <set>
++#ifndef __clang__
+ #include <tr1/unordered_set>
++using std::tr1::unordered_set;
++#else
++#include <unordered_set>
++using std::unordered_set;
++#endif
+ #include <list>
+ #include <vector>
+ #include <stdint.h>
+@@ -246,7 +252,7 @@ class FileIndex
+ 
+ 		PersonEntry *root;
+ 
+-		static std::tr1::unordered_set<void*> _pointers ;
++		static unordered_set<void*> _pointers ;
+ 		static void registerEntry(void*p) ; 
+ 		static void unregisterEntry(void*p) ; 
+ 		static bool isValid(void*p)  ;

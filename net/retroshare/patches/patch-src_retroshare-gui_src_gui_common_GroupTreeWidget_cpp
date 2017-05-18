@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_retroshare-gui_src_gui_common_GroupTreeWidget_cpp,v 1.1 2017/05/18 14:47:27 espie Exp $
+can't shadow a parameter without a scope
+
+Index: src/retroshare-gui/src/gui/common/GroupTreeWidget.cpp
+--- src/retroshare-gui/src/gui/common/GroupTreeWidget.cpp.orig
++++ src/retroshare-gui/src/gui/common/GroupTreeWidget.cpp
+@@ -501,6 +501,7 @@ void GroupTreeWidget::calculateScore(QTreeWidgetItem *
+ 		return;
+ 	}
+ 
++	{
+ 	/* Find out which has given word in it */
+ 	QTreeWidgetItemIterator itemIterator(ui->treeWidget);
+ 	QTreeWidgetItem *item;
+@@ -512,6 +513,7 @@ void GroupTreeWidget::calculateScore(QTreeWidgetItem *
+ 		}
+ 
+ 		calculateScore(item, filterText);
++	}
+ 	}
+ }
+ 

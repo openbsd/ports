@@ -1,0 +1,32 @@
+$OpenBSD: patch-src_libretroshare_src_util_argstream_h,v 1.1 2017/05/18 14:47:27 espie Exp $
+friend declarations can't have default params
+
+Index: src/libretroshare/src/util/argstream.h
+--- src/libretroshare/src/util/argstream.h.orig
++++ src/libretroshare/src/util/argstream.h
+@@ -141,9 +141,9 @@ namespace 
+ 			inline OptionHolder(char s,
+ 					const char* l,
+ 					const char* desc);  
+-			friend OptionHolder help(char s='h',
+-					const char* l="help",
+-					const char* desc="Display this help");
++			friend OptionHolder help(char s,
++					const char* l,
++					const char* desc);
+ 		private:
+ 			std::string shortName_;
+ 			std::string longName_;
+@@ -173,9 +173,9 @@ namespace 
+ 			return OptionHolder(l,b,desc);
+ 		}
+ 	inline OptionHolder
+-		help(char s,
+-				const char* l,
+-				const char* desc)
++		help(char s ='h',
++				const char* l ="help",
++				const char* desc ="Display this help")
+ 		{
+ 			return OptionHolder(s,l,desc);
+ 		}

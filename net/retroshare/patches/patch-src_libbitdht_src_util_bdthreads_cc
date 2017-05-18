@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_libbitdht_src_util_bdthreads_cc,v 1.1 2017/05/18 14:47:27 espie Exp $
+pthread_t may be a pointer
+
+Index: src/libbitdht/src/util/bdthreads.cc
+--- src/libbitdht/src/util/bdthreads.cc.orig
++++ src/libbitdht/src/util/bdthreads.cc
+@@ -129,7 +129,7 @@ void bdThread::join() /* waits for the the mTid thread
+ #if defined(_WIN32) || defined(__MINGW32__)
+ 	/* Its a struct in Windows compile and the member .p ist checked in the pthreads library */
+ #else
+-	if(mTid > 0)
++	if(mTid != 0)
+ #endif
+ 		pthread_join(mTid, NULL);
+ 
