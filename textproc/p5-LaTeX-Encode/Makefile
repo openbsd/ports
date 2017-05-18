@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2016/03/20 19:57:05 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2017/05/18 07:03:02 benoit Exp $
 
 COMMENT =	encode characters for LaTeX formatting
 
-DISTNAME =	LaTeX-Encode-0.091.6
+DISTNAME =	LaTeX-Encode-0.092.0
 CATEGORIES =	textproc
 
 # MIT
