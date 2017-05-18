@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2016/11/07 10:51:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2017/05/18 10:29:00 espie Exp $
 
 COMMENT=	creates DVD file structures
 
@@ -27,8 +27,6 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-# error: trampoline code generation is not allowed without -ftrampolines
-CFLAGS += -ftrampolines
 
 WRKDIST=	${WRKDIR}/dvdauthor
 
@@ -37,3 +35,11 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/dvdauthor
 
 .include <bsd.port.mk>
+
+# XXX there is some limited functionality that requires nested routines
+# the configure detection works with clang but not with our gcc
+# -> activate the extra functionality on gcc (see HAVE_NESTED_ROUTINES)
+.if !${PROPERTIES:Mclang}
+# error: trampoline code generation is not allowed without -ftrampolines
+CFLAGS += -ftrampolines
+.endif
