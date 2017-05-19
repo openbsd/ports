@@ -1,0 +1,14 @@
+$OpenBSD: patch-fltk_editengine_h,v 1.1 2017/05/19 00:08:25 espie Exp $
+
+Index: fltk/editengine.h
+--- fltk/editengine.h.orig
++++ fltk/editengine.h
+@@ -113,7 +113,7 @@ class EditorEngine (public)
+   long CursorRow() const               { return Cursor.Row; }
+   long CursorColumn() const            { return Cursor.Column; }
+   rclError Command(EditorCommandTypes command, long argument=0);
+-  rclError Command(EditorCommandTypes command, const char *argument);
++  rclError Command(EditorCommandTypes command, char *argument);
+   rclError MoveTo(long row, long col);
+   rclError SetTabs(short *tabs);
+   rclError ChangeWidth(short newwidth)      { Width = newwidth; return Command(REFORMAT,(long)newwidth); };
