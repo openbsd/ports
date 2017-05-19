@@ -1,0 +1,13 @@
+$OpenBSD: patch-gk_cxx,v 1.5 2017/05/19 22:55:35 espie Exp $
+
+Index: gk.cxx
+--- gk.cxx.orig
++++ gk.cxx
+@@ -22,6 +22,7 @@
+ #include <sys/resource.h>
+ #include <sys/mman.h>
+ #endif
++#include <unistd.h>
+ #include <h225.h>
+ #include "h323util.h"
+ #include "Toolkit.h"

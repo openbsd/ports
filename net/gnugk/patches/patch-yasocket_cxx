@@ -1,10 +1,19 @@
-$OpenBSD: patch-yasocket_cxx,v 1.1 2016/12/05 10:01:13 ajacoutot Exp $
+$OpenBSD: patch-yasocket_cxx,v 1.2 2017/05/19 22:55:35 espie Exp $
 
 http://openh323gk.cvs.sourceforge.net/viewvc/openh323gk/openh323gk/yasocket.cxx?r1=1.100&r2=1.101
 
---- yasocket.cxx.orig	Mon Jan 18 22:39:46 2016
-+++ yasocket.cxx	Mon Dec  5 10:59:36 2016
-@@ -636,7 +636,14 @@ int YaUDPSocket::os_recv(void * buf, int sz)
+Index: yasocket.cxx
+--- yasocket.cxx.orig
++++ yasocket.cxx
+@@ -20,6 +20,7 @@
+ #include "Toolkit.h"
+ #include "snmp.h"
+ #include "gk.h"
++#include <unistd.h>
+ 
+ #ifdef _WIN32
+ #	ifndef SHUT_RDWR
+@@ -636,7 +637,14 @@ int YaUDPSocket::os_recv(void * buf, int sz)
  
  int YaUDPSocket::os_send(const void * buf, int sz)
  {

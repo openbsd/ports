@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2017/04/10 11:46:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.67 2017/05/19 22:55:35 espie Exp $
 
 BROKEN-hppa=	libpt.so.7.0: undefined reference to __sync_fetch_and_or_4
 
@@ -65,7 +65,7 @@ MAKE_FLAGS=	PTLIB_LIBDIR=$$(pkg-config --variable libdir ptlib) \
 		OBJDIR=.
 
 pre-configure:
-	sed -i 's,-llua,-llua${MODLUA_VERSION} -lm,g' ${WRKSRC}/configure
+	sed -i.beforesubst 's,-llua,-llua${MODLUA_VERSION} -lm,g' ${WRKSRC}/configure
 
 post-build:
 	cd ${WRKSRC}/addpasswd && \

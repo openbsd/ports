@@ -1,0 +1,13 @@
+$OpenBSD: patch-Toolkit_cxx,v 1.1 2017/05/19 22:55:35 espie Exp $
+
+Index: Toolkit.cxx
+--- Toolkit.cxx.orig
++++ Toolkit.cxx
+@@ -18,6 +18,7 @@
+ #include <map>
+ #include <vector>
+ #include <cstdlib>
++#include <unistd.h>
+ #include "stl_supp.h"
+ #include "gktimer.h"
+ #include "h323util.h"
