@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/11 11:23:54 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2017/05/19 23:39:14 espie Exp $
 
 COMMENT=		wm-dockapp; mail notifier
 
@@ -20,6 +20,7 @@ NO_TEST=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-PL-libs="-L${LOCALBASE}/lib" \
 			--with-PL-incs="-I${LOCALBASE}/include"
+CFLAGS +=		-fgnu89-inline
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/GNUstep/Apps/WMMail.app/
