@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.334 2017/05/16 19:36:54 landry Exp $
+# $OpenBSD: Makefile,v 1.335 2017/05/19 08:08:15 sthen Exp $
 
      SUBDIR =
      SUBDIR += apache-couchdb
@@ -45,6 +45,8 @@
      SUBDIR += mytop
      SUBDIR += openldap
      SUBDIR += openldap,aci
+     SUBDIR += openldap,aci,gssapi
+     SUBDIR += openldap,gssapi
      SUBDIR += openldap23
      SUBDIR += p5-AnyEvent-CouchDB
      SUBDIR += p5-AsciiDB-TagFile
