@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/10/19 09:12:33 grunk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/05/19 05:22:20 benoit Exp $
+@comment ${P5SITE}/MIME/test1.pl
 ${P5SITE}/MIME/
 ${P5SITE}/MIME/Base32.pm
-@comment ${P5SITE}/MIME/test1.pl
 @man man/man3p/MIME::Base32.3p
