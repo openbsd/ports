@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2017/05/05 11:42:27 landry Exp $
+# $OpenBSD: Makefile,v 1.13 2017/05/19 10:10:27 landry Exp $
 COMMENT = package manager for Rust language
 
 ONLY_FOR_ARCHS =	amd64 i386
@@ -141,9 +141,6 @@ SEPARATE_BUILD =	Yes
 
 MODULES =	devel/cargo \
 		lang/python
-
-MODULES +=	gcc4
-MODGCC4_ARCHS =	*	# patches required in rustc for using base clang
 
 # only deal with MODCARGO_CRATES
 MODCARGO_BUILDDEP =	No
