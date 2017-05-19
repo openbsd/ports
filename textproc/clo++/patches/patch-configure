@@ -1,6 +1,7 @@
---- configure.orig	Sun Mar  4 00:12:33 2001
-+++ configure	Sun Mar  4 00:13:02 2001
-@@ -1234,11 +1234,11 @@
+Index: configure
+--- configure.orig
++++ configure
+@@ -1234,11 +1234,11 @@ fi
  XML_CONFIG_ERROR="
  *** You need to have libxml2 installed to use clo++
  *** If libxml2 is installed, set the XML_CONFIG enviroment
