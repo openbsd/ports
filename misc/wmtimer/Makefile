@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2017/02/28 21:00:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.34 2017/05/19 23:36:08 espie Exp $
 
 COMMENT=		wm-dockapp; alarm clock
 
@@ -26,6 +26,7 @@ NO_TEST=		Yes
 WRKSRC=			${WRKDIST}/wmtimer
 
 MAKE_ENV=		CC="${CC}"
+CFLAGS +=		-fgnu89-inline
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/wmtimer ${PREFIX}/bin
