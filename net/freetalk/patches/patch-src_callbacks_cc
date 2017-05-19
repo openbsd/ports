@@ -1,0 +1,50 @@
+$OpenBSD: patch-src_callbacks_cc,v 1.1 2017/05/19 22:37:35 espie Exp $
+
+Index: src/callbacks.cc
+--- src/callbacks.cc.orig
++++ src/callbacks.cc
+@@ -117,6 +117,7 @@ ft_msg_msg_handler (LmMessageHandler *handler, LmConne
+ {
+   LmMessageNode *root, *body, *x;
+   const char *from, *msg_str, *type;
++  char *copy_from = NULL;
+   char *ts = NULL;
+ 
+   root = lm_message_get_node (msg);
+@@ -150,11 +151,11 @@ ft_msg_msg_handler (LmMessageHandler *handler, LmConne
+       }
+     
+     set_hook_return (0);
+-    /* TBD : make the below stripping of /Resource configurable */
+-    if (1) {
+-      if (strchr (from, '/'))
+-	*strchr (from, '/') = '\0';
+-    }
++      if (strchr (from, '/')) {
++      	copy_from = strdup(from);
++	*strchr (copy_from, '/') = '\0';
++	from = copy_from;
++      }
+     {
+       FtRosterItem *item = ft_roster_lookup (from);
+       char *nickname;
+@@ -173,8 +174,10 @@ ft_msg_msg_handler (LmMessageHandler *handler, LmConne
+     }
+     if (ts) g_free (ts);
+     
+-    if (get_hook_return () == 1)
++    if (get_hook_return () == 1) {
++      free(copy_from);
+       return LM_HANDLER_RESULT_REMOVE_MESSAGE;
++    }
+     
+     PRINTF ("%s: %s", from, msg_str);
+   } else {
+@@ -182,6 +185,7 @@ ft_msg_msg_handler (LmMessageHandler *handler, LmConne
+     ft_send_file_message_data (msg);
+ 
+   }
++  free(copy_from);
+   return LM_HANDLER_RESULT_REMOVE_MESSAGE;
+ }
+ 
