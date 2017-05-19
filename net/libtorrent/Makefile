@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2017/05/19 12:26:43 espie Exp $
+# $OpenBSD: Makefile,v 1.49 2017/05/19 22:25:53 espie Exp $
 
 COMMENT=		BitTorrent library written in C++
 
@@ -10,8 +10,8 @@ NOT_FOR_ARCHS=		${GCC3_ARCHS}
 
 DISTNAME=		libtorrent-0.13.6
 EPOCH=			0
-REVISION=		0
-SHARED_LIBS +=  	torrent 22.0	# .18.0
+REVISION=		1
+SHARED_LIBS +=  	torrent 22.1	# .18.0
 CATEGORIES=		net devel
 
 HOMEPAGE=		https://rakshasa.github.io/rtorrent/

@@ -1,0 +1,26 @@
+$OpenBSD: patch-src_torrent_download_cc,v 1.1 2017/05/19 22:25:53 espie Exp $
+
+Index: src/torrent/download.cc
+--- src/torrent/download.cc.orig
++++ src/torrent/download.cc
+@@ -72,6 +72,20 @@
+ 
+ namespace torrent {
+ 
++const int DownloadInfo::flag_open LIBTORRENT_EXPORT;
++const int DownloadInfo::flag_active LIBTORRENT_EXPORT;
++const int DownloadInfo::flag_compact LIBTORRENT_EXPORT;
++const int DownloadInfo::flag_accepting_new_peers LIBTORRENT_EXPORT;
++const int DownloadInfo::flag_accepting_seeders LIBTORRENT_EXPORT;
++const int DownloadInfo::flag_private LIBTORRENT_EXPORT;
++const int DownloadInfo::flag_meta_download LIBTORRENT_EXPORT;
++const int DownloadInfo::flag_pex_enabled LIBTORRENT_EXPORT;
++const int DownloadInfo::flag_pex_active LIBTORRENT_EXPORT;
++
++const int DownloadInfo::public_flags;
++
++const uint32_t DownloadInfo::unlimited;
++
+ const DownloadInfo* Download::info() const { return m_ptr->info(); }
+ const download_data* Download::data() const { return m_ptr->data(); }
+ 

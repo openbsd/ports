@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_torrent_data_file_cc,v 1.1 2017/05/19 22:25:53 espie Exp $
+
+Index: src/torrent/data/file.cc
+--- src/torrent/data/file.cc.orig
++++ src/torrent/data/file.cc
+@@ -50,6 +50,15 @@
+ 
+ namespace torrent {
+ 
++const int File::flag_active;
++const int File::flag_create_queued;
++const int File::flag_resize_queued;
++const int File::flag_fallocate;
++const int File::flag_previously_created;
++
++const int File::flag_prioritize_first;
++const int File::flag_prioritize_last;
++
+ File::File() :
+   m_fd(-1),
+   m_protection(0),

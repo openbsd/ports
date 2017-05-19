@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_torrent_peer_connection_list_cc,v 1.1 2017/05/19 22:25:53 espie Exp $
+
+Index: src/torrent/peer/connection_list.cc
+--- src/torrent/peer/connection_list.cc.orig
++++ src/torrent/peer/connection_list.cc
+@@ -60,6 +60,11 @@
+ 
+ namespace torrent {
+ 
++const int ConnectionList::disconnect_available;
++const int ConnectionList::disconnect_quick;
++const int ConnectionList::disconnect_unwanted;
++const int ConnectionList::disconnect_delayed;
++
+ ConnectionList::ConnectionList(DownloadMain* download) :
+   m_download(download), m_minSize(50), m_maxSize(100) {
+ }

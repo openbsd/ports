@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_data_memory_chunk_cc,v 1.1 2017/05/19 22:25:53 espie Exp $
+
+Index: src/data/memory_chunk.cc
+--- src/data/memory_chunk.cc.orig
++++ src/data/memory_chunk.cc
+@@ -54,6 +54,10 @@ extern "C" int madvise(void *, size_t, int);
+ 
+ namespace torrent {
+ 
++const int MemoryChunk::sync_sync;
++const int MemoryChunk::sync_async;
++const int MemoryChunk::sync_invalidate;
++
+ uint32_t MemoryChunk::m_pagesize = getpagesize();
+ 
+ inline void
