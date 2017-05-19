@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.820 2017/05/12 08:53:03 shadchin Exp $
+# $OpenBSD: Makefile,v 1.821 2017/05/19 07:42:10 pirofti Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -143,6 +143,7 @@
      SUBDIR += p5-CGI-Untaint
      SUBDIR += p5-CGI-XMLApplication
      SUBDIR += p5-CSS-Minifier
+     SUBDIR += p5-CSS-Minifier-XS
      SUBDIR += p5-CSS-Squish
      SUBDIR += p5-CSS-Tiny
      SUBDIR += p5-Catalyst-Action-RenderView
