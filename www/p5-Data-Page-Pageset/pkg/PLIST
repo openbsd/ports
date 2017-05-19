@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/05/19 07:57:59 pirofti Exp $
+${P5SITE}/Data/
+${P5SITE}/Data/Page/
+${P5SITE}/Data/Page/Pageset/
+${P5SITE}/Data/Page/Pageset.pm
+${P5SITE}/Data/Page/Pageset/Chunk.pm
+@man man/man3p/Data::Page::Pageset.3p
