@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2016/09/02 15:34:25 landry Exp $
+# $OpenBSD: Makefile,v 1.8 2017/05/19 04:50:12 benoit Exp $
 
 COMMENT =		schema migration tools for SQLAlchemy
 
-MODPY_EGG_VERSION =	0.10.0
+MODPY_EGG_VERSION =	0.11.0
 DISTNAME =		sqlalchemy-migrate-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
