@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2016/08/30 16:21:25 landry Exp $
+# $OpenBSD: Makefile,v 1.9 2017/05/19 10:02:58 landry Exp $
 
 COMMENT =	GIS WMTS/TMS tile caching server
 
-GH_TAGNAME =	1.9.0
-GH_PROJECT =	mapproxy
-GH_ACCOUNT =	mapproxy
+MODPY_EGG_VERSION =	1.10.0
+DISTNAME =		MapProxy-${MODPY_EGG_VERSION}
+PKGNAME =		${DISTNAME:L}
 
 CATEGORIES =	geo www
 
@@ -15,9 +15,9 @@ PERMIT_PACKAGE_CDROM =	Yes
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 
 MODULES =	lang/python
+MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 MODPY_ADJ_FILES =	mapproxy/test/system/fixture/cgi.py
-SUBST_VARS +=	GH_TAGNAME
 
 # libproj is dlopen'ed by proj.py - otherwise fallbacks to py-proj
 RUN_DEPENDS =	devel/proj \
@@ -32,9 +32,6 @@ TEST_DEPENDS =	${RUN_DEPENDS} \
 		www/py-requests \
 		www/py-webtest
 # some tests need mocker from https://labix.org/mocker
-post-patch:
-	# simpler than patching and fixing the patch at each update
-	sed -i -e 's#1.8.2a0#${GH_TAGNAME}#' ${WRKSRC}/setup.py
 
 pre-test:
 	# can't be fixed by MODPY_ADJ_FILES since this is not on the 1st line
