@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/05/19 07:43:23 pirofti Exp $
+${P5ARCH}/
+${P5ARCH}/JavaScript/
+${P5ARCH}/JavaScript/Minifier/
+${P5ARCH}/JavaScript/Minifier/XS.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/JavaScript/
+${P5ARCH}/auto/JavaScript/Minifier/
+${P5ARCH}/auto/JavaScript/Minifier/XS/
+${P5ARCH}/auto/JavaScript/Minifier/XS/XS.so
+@man man/man3p/JavaScript::Minifier::XS.3p

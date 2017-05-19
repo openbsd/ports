@@ -1,0 +1,6 @@
+JavaScript::Minifier::XS is a JavaScript "minifier"; its designed to remove
+un-necessary whitespace and comments from JavaScript files, which also not
+breaking the JavaScript.
+
+JavaScript::Minifier::XS is similar in function to JavaScript::Minifier, but is
+substantially faster as its written in XS and not just pure Perl.
