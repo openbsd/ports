@@ -849,6 +849,7 @@
      SUBDIR += p5-Log-Dispatch-Config
      SUBDIR += p5-Log-Dispatch-Config-TestLog
      SUBDIR += p5-Log-Dispatch-FileRotate
+     SUBDIR += p5-Log-Dispatch-Perl
      SUBDIR += p5-Log-Log4perl
      SUBDIR += p5-Log-Trace
      SUBDIR += p5-MCE
