@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2017/04/29 13:40:15 benoit Exp $
+# $OpenBSD: Makefile,v 1.20 2017/05/19 05:16:54 benoit Exp $
 
 COMMENT =	YAML implementation using XS and libyaml
 
 MODULES =	cpan
 
-V =		0.64
+V =		0.65
 DISTNAME =	YAML-LibYAML-$V
 PKGNAME =	p5-YAML-XS-$V
 CATEGORIES =	devel
