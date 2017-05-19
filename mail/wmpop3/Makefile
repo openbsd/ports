@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2013/03/11 11:23:54 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2017/05/19 23:41:25 espie Exp $
 
 COMMENT=		wm-dockapp; POP3 mail check
 
@@ -15,6 +15,7 @@ NO_TEST=		Yes
 
 WRKDIST=		${WRKDIR}/${DISTNAME:L}
 WRKSRC=			${WRKDIST}/wmpop3
+CFLAGS +=		-fgnu89-inline
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/wmpop3 ${PREFIX}/bin

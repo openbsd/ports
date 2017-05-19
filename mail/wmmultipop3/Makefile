@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/11 11:23:54 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2017/05/19 23:41:25 espie Exp $
 
 COMMENT=		wm-dockapp; multiple pop3 mailbox checker
 
@@ -17,6 +17,7 @@ WANTLIB=		X11 Xext Xpm c pthread-stubs xcb
 NO_TEST=	Yes
 
 WRKSRC=		${WRKDIST}/wmmultipop3
+CFLAGS +=	-fgnu89-inline
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wmmultipop3 ${PREFIX}/bin
