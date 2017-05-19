@@ -1,0 +1,16 @@
+$OpenBSD: patch-RawIP_xs,v 1.1 2017/05/19 22:43:54 espie Exp $
+Fine, return symbol if defined, but what if it's empty ? make sure
+to return something then!
+
+Index: RawIP.xs
+--- RawIP.xs.orig
++++ RawIP.xs
+@@ -275,7 +275,7 @@ constant(name, arg)
+         case 'l':
+         if (strEQ(name, "lib_pcap_h"))
+ #ifdef lib_pcap_h
+-            return lib_pcap_h;
++            return lib_pcap_h+0;
+ #else
+         goto not_there;
+ #endif
