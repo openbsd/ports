@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_torrent_data_block_failed_h,v 1.1 2017/05/19 12:26:43 espie Exp $
+const reference has no useful semantics, shut up clang warning
+
+Index: src/torrent/data/block_failed.h
+--- src/torrent/data/block_failed.h.orig
++++ src/torrent/data/block_failed.h
+@@ -85,8 +85,8 @@ class BlockFailed : public std::vector<std::pair<char*
+   BlockFailed(const BlockFailed&);
+   void operator = (const BlockFailed&);
+ 
+-  static void         delete_entry(const reference e)                         { delete [] e.first; }
+-  static bool         compare_entries(const reference e1, const reference e2) { return e1.second < e2.second; }
++  static void         delete_entry(reference e)                         { delete [] e.first; }
++  static bool         compare_entries(reference e1, reference e2) { return e1.second < e2.second; }
+ 
+   size_type           m_current;
+ };

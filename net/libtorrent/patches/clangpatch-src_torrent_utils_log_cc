@@ -1,0 +1,40 @@
+$OpenBSD: clangpatch-src_torrent_utils_log_cc,v 1.1 2017/05/19 12:26:43 espie Exp $
+can't figure out the functional magic, so just do the algorithm by hand.
+
+Index: src/torrent/utils/log.cc
+--- src/torrent/utils/log.cc.orig
++++ src/torrent/utils/log.cc
+@@ -187,17 +187,14 @@ log_group::internal_print(const HashString* hash, cons
+     return;
+ 
+   pthread_mutex_lock(&log_mutex);
+-  std::for_each(m_first, m_last, std::bind(&log_slot::operator(),
+-                                                std::placeholders::_1,
+-                                                buffer,
+-                                                std::distance(buffer, first),
+-                                                std::distance(log_groups.begin(), this)));
++
++  for (log_slot *it = m_first; it != m_last; ++it)
++  	(*it)(buffer, std::distance(buffer, first),
++		std::distance(log_groups.begin(), this));
++
+   if (dump_data != NULL)
+-    std::for_each(m_first, m_last, std::bind(&log_slot::operator(),
+-                                                  std::placeholders::_1,
+-                                                  (const char*)dump_data,
+-                                                  dump_size,
+-                                                  -1));
++      for (log_slot *it = m_first; it != m_last; ++it)
++      	(*it)((const char*)dump_data, dump_size, -1);
+   pthread_mutex_unlock(&log_mutex);
+ }
+ 
+@@ -250,7 +247,7 @@ void
+ log_cleanup() {
+   pthread_mutex_lock(&log_mutex);
+ 
+-  log_groups.assign(log_group());
++  fill_with_value(log_groups, log_group());
+   log_outputs.clear();
+   log_children.clear();
+ 

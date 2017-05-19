@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_utils_instrumentation_h,v 1.1 2017/05/19 12:26:43 espie Exp $
+tr1/std  difference, see header
+
+Index: src/utils/instrumentation.h
+--- src/utils/instrumentation.h.orig
++++ src/utils/instrumentation.h
+@@ -118,7 +118,7 @@ void instrumentation_reset();
+ 
+ inline void
+ instrumentation_initialize() {
+-  instrumentation_values.assign(int64_t());
++  fill_with_value(instrumentation_values, int64_t());
+ }
+ 
+ inline void

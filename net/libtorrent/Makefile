@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2017/04/10 11:46:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.48 2017/05/19 12:26:43 espie Exp $
 
 COMMENT=		BitTorrent library written in C++
 
@@ -32,11 +32,22 @@ MODGCC4_LANGS=		c++
 BUILD_DEPENDS=		devel/cppunit
 
 USE_LIBTOOL=		gnu
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	autoconf
+AUTOCONF_VERSION=	2.69
 CONFIGURE_ARGS=		--enable-static \
 			--with-kqueue \
 			--without-epoll \
 			--disable-instrumentation \
 			--disable-debug
 
+.include <bsd.port.arch.mk>
+.if ${PROPERTIES:Mclang}
+# this patches *only* files containing tr1 to no longer refer to tr1
+# we do it pre-patch, because autoconf passes right after us
+pre-patch:
+	find ${WRKDIST} -type f|xargs fgrep -lw tr1|xargs sed -i.bak -e 's,<tr1/,<,' -e 's/std::tr1/std/g'
+CXXFLAGS +=	-std=c++11
+# some patches involve the tr1 stuff
+PATCH_LIST =	patch-* clangpatch-*
+.endif
 .include <bsd.port.mk>

@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_torrent_data_transfer_list_cc,v 1.1 2017/05/19 12:26:43 espie Exp $
+
+Index: src/torrent/data/transfer_list.cc
+--- src/torrent/data/transfer_list.cc.orig
++++ src/torrent/data/transfer_list.cc
+@@ -159,7 +159,7 @@ TransferList::hash_succeeded(uint32_t index, Chunk* ch
+ struct transfer_list_compare_data {
+   transfer_list_compare_data(Chunk* chunk, const Piece& p) : m_chunk(chunk), m_piece(p) { }
+ 
+-  bool operator () (const BlockFailed::reference failed) {
++  bool operator () (BlockFailed::reference failed) {
+     return m_chunk->compare_buffer(failed.first, m_piece.offset(), m_piece.length());
+   }
+ 

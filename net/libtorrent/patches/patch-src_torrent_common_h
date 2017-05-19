@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_torrent_common_h,v 1.1 2017/05/19 12:26:43 espie Exp $
+comment says it all
+
+Index: src/torrent/common.h
+--- src/torrent/common.h.orig
++++ src/torrent/common.h
+@@ -109,4 +109,15 @@ class TransferList;
+ 
+ }
+ 
++// XXX tr1/array differs from array
++template<typename T, typename U>
++inline void fill_with_value(T& a, const U& v)
++{
++#if __cplusplus >= 201103L
++	a.fill(v);
++#else
++	a.assign(v);
++#endif
++}
++
+ #endif
