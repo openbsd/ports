@@ -9,3 +9,6 @@ is distributed under a Perl-style "Artistic License".
 
 This is the client portion of OpenLDAP, it provides the client binaries,
 libraries and headers.
+
+Flavors:
+	gssapi	build with GSSAPI support

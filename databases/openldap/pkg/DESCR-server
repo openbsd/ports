@@ -12,3 +12,4 @@ various administrative binaries.
 
 Flavors:
 	aci	enable the *experimental* ACI dynamic access control
+	gssapi	build with GSSAPI support

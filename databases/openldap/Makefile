@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.149 2017/04/10 11:45:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.150 2017/05/19 08:07:33 sthen Exp $
 
 DPB_PROPERTIES =	parallel
 
@@ -8,11 +8,11 @@ COMMENT-server =	open-source LDAP software (server)
 DISTNAME =		openldap-2.4.44
 PKGNAME-main =		${DISTNAME:S/-/-client-/}
 PKGNAME-server =	${DISTNAME:S/-/-server-/}
-REVISION =		3
+REVISION =		4
 
 # overwrite -main pkgname/path to strip FLAVOR, aci only affects the server
-FULLPKGNAME-main =	${DISTNAME:S/-/-client-/}
-FULLPKGPATH-main =	databases/openldap,-main
+FULLPKGNAME-main =	${DISTNAME:S/-/-client-/}${FLAVOR_EXT:S/-aci//}
+FULLPKGPATH-main =	databases/openldap,-main${FLAVOR_EXT:S/-aci//:S/-/,/g}
 
 SHARED_LIBS +=	lber                 12.0     # 12.6
 SHARED_LIBS +=	lber-2.4             12.0
@@ -49,7 +49,7 @@ CONFIGURE_STYLE =	autoconf
 USE_GROFF =		Yes
 
 FLAVOR ?=
-FLAVORS =		aci
+FLAVORS =		aci gssapi
 
 CONFIGURE_ARGS +=	--enable-ipv6 \
 			--with-tls=openssl
@@ -92,6 +92,14 @@ CONFIGURE_ARGS +=	--disable-mdb
 
 .if ${FLAVOR:Maci}
 CONFIGURE_ARGS +=	--enable-aci
+.endif
+
+.if ${FLAVOR:Mgssapi}
+CONFIGURE_ARGS +=	--enable-gssapi=${LOCALBASE}/heimdal
+MODULES += security/heimdal
+WANTLIB += heimdal/lib/gssapi
+WANTLIB += heimdal/lib/heimntlm
+WANTLIB += heimdal/lib/heimsqlite
 .endif
 
 MODGNU_CONFIG_GUESS_DIRS = ${WRKSRC} ${WRKSRC}/build
