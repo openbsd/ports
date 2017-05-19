@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.821 2017/05/19 07:42:10 pirofti Exp $
+# $OpenBSD: Makefile,v 1.822 2017/05/19 07:45:36 pirofti Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -270,6 +270,7 @@
      SUBDIR += p5-HTTPD-Log-Filter
      SUBDIR += p5-IO-HTML
      SUBDIR += p5-JavaScript-Minifier
+     SUBDIR += p5-JavaScript-Minifier-XS
      SUBDIR += p5-LWP-Authen-Wsse
      SUBDIR += p5-LWP-MediaTypes
      SUBDIR += p5-LWP-Protocol-https
