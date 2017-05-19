@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2015/01/22 17:47:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2017/05/19 23:42:51 espie Exp $
 
 PORTROACH=		limit:^0\.3a
 
@@ -21,6 +21,7 @@ WANTLIB=		X11 Xext Xpm c
 NO_TEST=		Yes
 
 WRKSRC=			${WRKDIST}/wmphoto
+CFLAGS +=		-fgnu89-inline
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/wmphoto ${PREFIX}/bin
