@@ -1,0 +1,22 @@
+$OpenBSD: patch-filedir_softmagic_c,v 1.1 2017/05/19 23:33:01 espie Exp $
+
+Index: filedir/softmagic.c
+--- filedir/softmagic.c.orig
++++ filedir/softmagic.c
+@@ -26,6 +26,7 @@
+  */
+ 
+ #include <stdio.h>
++#include <stdlib.h>
+ #include <string.h>
+ #include <time.h>
+ #include <sys/types.h>
+@@ -285,7 +286,7 @@ struct magic *m;
+ #endif
+                 
+                 t = m->offset + sizeof(time_t);
+-                return;
++                break;
+         default:
+                 error("invalid m->type (%d) in mprint().\n", m->type);
+                 /*NOTREACHED*/

@@ -1,0 +1,23 @@
+$OpenBSD: patch-bookmark_cxx,v 1.1 2017/05/19 23:33:01 espie Exp $
+
+Index: bookmark.cxx
+--- bookmark.cxx.orig
++++ bookmark.cxx
+@@ -1215,7 +1215,7 @@ void   BookMark::click()
+           {
+             XDrawLine(disp, Main, rgc, rwx, rwy, rwx, rwy + h);
+             XDrawLine(disp, Main, rgc, rwx + 1, rwy, rwx + 1, rwy + h);
+-            if (abs(rwx - (Mainl - l) / 2) < STICKY_CENTER)
++            if (abs(long(rwx - (Mainl - l) / 2)) < STICKY_CENTER)
+               rwx = (Mainl - l) / 2;
+             if (rwx < (Mainl - l) * MIN_PERCENT / 100)
+               rwx = (Mainl - l) * MIN_PERCENT / 100;
+@@ -1249,7 +1249,7 @@ void   BookMark::click()
+           {
+             if (cx > leftrx && cx < rightrx)
+               {
+-                if (abs(cx - (Mainl - l) / 2) < STICKY_CENTER)
++                if (abs(long(cx - (Mainl - l) / 2)) < STICKY_CENTER)
+                   cx = (Mainl - l) / 2;
+                 XDrawLine(disp, Main, rgc, rwx, rwy, rwx, rwy + h);
+                 XDrawLine(disp, Main, rgc, rwx + 1, rwy, rwx + 1, rwy + h);

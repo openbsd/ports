@@ -1,0 +1,23 @@
+$OpenBSD: patch-plugins_five_fivegui_cxx,v 1.1 2017/05/19 23:33:01 espie Exp $
+
+Index: plugins/five/fivegui.cxx
+--- plugins/five/fivegui.cxx.orig
++++ plugins/five/fivegui.cxx
+@@ -2153,7 +2153,7 @@ void   FiveBookMark::click()
+           {
+             XDrawLine(disp, Main, rgc, rwx, rwy, rwx, rwy + h);
+             XDrawLine(disp, Main, rgc, rwx + 1, rwy, rwx + 1, rwy + h);
+-            if (abs(rwx - (Mainl - l) / 2) < STICKY_CENTER)
++            if (abs(long(rwx - (Mainl - l) / 2)) < STICKY_CENTER)
+               rwx = (Mainl - l) / 2;
+             if (rwx < (Mainl - l) * MIN_PERCENT / 100)
+               rwx = (Mainl - l) * MIN_PERCENT / 100;
+@@ -2187,7 +2187,7 @@ void   FiveBookMark::click()
+           {
+             if (cx > leftrx && cx < rightrx)
+               {
+-                if (abs(cx - (Mainl - l) / 2) < STICKY_CENTER)
++                if (abs(long(cx - (Mainl - l) / 2)) < STICKY_CENTER)
+                   cx = (Mainl - l) / 2;
+                 XDrawLine(disp, Main, rgc, rwx, rwy, rwx, rwy + h);
+                 XDrawLine(disp, Main, rgc, rwx + 1, rwy, rwx + 1, rwy + h);

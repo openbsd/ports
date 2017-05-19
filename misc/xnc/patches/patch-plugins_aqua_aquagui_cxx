@@ -1,0 +1,23 @@
+$OpenBSD: patch-plugins_aqua_aquagui_cxx,v 1.1 2017/05/19 23:33:01 espie Exp $
+
+Index: plugins/aqua/aquagui.cxx
+--- plugins/aqua/aquagui.cxx.orig
++++ plugins/aqua/aquagui.cxx
+@@ -1296,7 +1296,7 @@ void   AquaBookMark::click()
+           {
+             XDrawLine(disp, Main, rgc, rwx, rwy, rwx, rwy + h);
+             XDrawLine(disp, Main, rgc, rwx + 1, rwy, rwx + 1, rwy + h);
+-            if (abs(rwx - (Mainl - l) / 2) < STICKY_CENTER)
++            if (abs(long(rwx - (Mainl - l) / 2)) < STICKY_CENTER)
+               rwx = (Mainl - l) / 2;
+             if (rwx < (Mainl - l) * MIN_PERCENT / 100)
+               rwx = (Mainl - l) * MIN_PERCENT / 100;
+@@ -1330,7 +1330,7 @@ void   AquaBookMark::click()
+           {
+             if (cx > leftrx && cx < rightrx)
+               {
+-                if (abs(cx - (Mainl - l) / 2) < STICKY_CENTER)
++                if (abs(long(cx - (Mainl - l) / 2)) < STICKY_CENTER)
+                   cx = (Mainl - l) / 2;
+                 XDrawLine(disp, Main, rgc, rwx, rwy, rwx, rwy + h);
+                 XDrawLine(disp, Main, rgc, rwx + 1, rwy, rwx + 1, rwy + h);
