@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-python,v 1.8 2016/05/15 12:18:26 landry Exp $
+@comment $OpenBSD: PLIST-python,v 1.9 2017/05/19 09:19:49 landry Exp $
 bin/epsg_tr.py
 bin/esri2wkt.py
 bin/gcps2vec.py
@@ -6,29 +6,22 @@ bin/gcps2wld.py
 bin/gdal2tiles.py
 bin/gdal2xyz.py
 bin/gdal_auth.py
-bin/gdal_calc.dox
 bin/gdal_calc.py
-bin/gdal_edit.dox
 bin/gdal_edit.py
-bin/gdal_fillnodata.dox
 bin/gdal_fillnodata.py
 bin/gdal_merge.py
 bin/gdal_pansharpen.py
-bin/gdal_polygonize.dox
 bin/gdal_polygonize.py
-bin/gdal_proximity.dox
 bin/gdal_proximity.py
 bin/gdal_retile.py
-bin/gdal_sieve.dox
 bin/gdal_sieve.py
 bin/gdalchksum.py
-bin/gdalcompare.dox
 bin/gdalcompare.py
 bin/gdalident.py
 bin/gdalimport.py
-bin/gdalmove.dox
 bin/gdalmove.py
 bin/mkgraticule.py
+bin/ogrmerge.py
 bin/pct2rgb.py
 bin/rgb2pct.py
 lib/python${MODPY_VERSION}/site-packages/GDAL-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -83,5 +76,6 @@ lib/python${MODPY_VERSION}/site-packages/osr.pyc
 @man man/man1/gdal_sieve.1
 @man man/man1/gdalcompare.1
 @man man/man1/gdalmove.1
+@man man/man1/ogrmerge.1
 @man man/man1/pct2rgb.1
 @man man/man1/rgb2pct.1

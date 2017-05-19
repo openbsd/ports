@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.14 2016/05/15 12:18:26 landry Exp $
+@comment $OpenBSD: PLIST-main,v 1.15 2017/05/19 09:19:48 landry Exp $
 @conflict gdal-<=1.8.0
 @pkgpath geo/gdal
 bin/gdal-config
@@ -31,8 +31,10 @@ include/cpl_aws.h
 include/cpl_config.h
 include/cpl_config_extras.h
 include/cpl_conv.h
+include/cpl_cpu_features.h
 include/cpl_csv.h
 include/cpl_error.h
+include/cpl_google_cloud.h
 include/cpl_hash_set.h
 include/cpl_http.h
 include/cpl_list.h
@@ -45,6 +47,7 @@ include/cpl_odbc.h
 include/cpl_port.h
 include/cpl_progress.h
 include/cpl_quad_tree.h
+include/cpl_sha1.h
 include/cpl_sha256.h
 include/cpl_spawn.h
 include/cpl_string.h
@@ -81,6 +84,9 @@ include/gdalpansharpen.h
 include/gdalsse_priv.h
 include/gdalwarper.h
 include/gdalwarpkernel_opencl.h
+include/gnm.h
+include/gnm_api.h
+include/gnmgraph.h
 include/gvgcpfit.h
 include/internal_qhull_headers.h
 include/memdataset.h
@@ -137,6 +143,7 @@ share/gdal/compdcs.csv
 share/gdal/coordinate_axis.csv
 share/gdal/cubewerx_extra.wkt
 share/gdal/datum_shift.csv
+share/gdal/default.rsc
 share/gdal/ecw_cs.wkt
 share/gdal/ellipsoid.csv
 share/gdal/epsg.wkt
@@ -150,6 +157,8 @@ share/gdal/gdalicon.png
 share/gdal/gdalvrt.xsd
 share/gdal/geoccs.csv
 share/gdal/gml_registry.xml
+share/gdal/gmlasconf.xml
+share/gdal/gmlasconf.xsd
 share/gdal/gt_datum.csv
 share/gdal/gt_ellips.csv
 share/gdal/header.dxf
@@ -157,6 +166,33 @@ share/gdal/inspire_cp_BasicPropertyUnit.gfs
 share/gdal/inspire_cp_CadastralBoundary.gfs
 share/gdal/inspire_cp_CadastralParcel.gfs
 share/gdal/inspire_cp_CadastralZoning.gfs
+share/gdal/jpfgdgml_AdmArea.gfs
+share/gdal/jpfgdgml_AdmBdry.gfs
+share/gdal/jpfgdgml_AdmPt.gfs
+share/gdal/jpfgdgml_BldA.gfs
+share/gdal/jpfgdgml_BldL.gfs
+share/gdal/jpfgdgml_Cntr.gfs
+share/gdal/jpfgdgml_CommBdry.gfs
+share/gdal/jpfgdgml_CommPt.gfs
+share/gdal/jpfgdgml_Cstline.gfs
+share/gdal/jpfgdgml_ElevPt.gfs
+share/gdal/jpfgdgml_GCP.gfs
+share/gdal/jpfgdgml_LeveeEdge.gfs
+share/gdal/jpfgdgml_RailCL.gfs
+share/gdal/jpfgdgml_RdASL.gfs
+share/gdal/jpfgdgml_RdArea.gfs
+share/gdal/jpfgdgml_RdCompt.gfs
+share/gdal/jpfgdgml_RdEdg.gfs
+share/gdal/jpfgdgml_RdMgtBdry.gfs
+share/gdal/jpfgdgml_RdSgmtA.gfs
+share/gdal/jpfgdgml_RvrMgtBdry.gfs
+share/gdal/jpfgdgml_SBAPt.gfs
+share/gdal/jpfgdgml_SBArea.gfs
+share/gdal/jpfgdgml_SBBdry.gfs
+share/gdal/jpfgdgml_WA.gfs
+share/gdal/jpfgdgml_WL.gfs
+share/gdal/jpfgdgml_WStrA.gfs
+share/gdal/jpfgdgml_WStrL.gfs
 share/gdal/netcdf_config.xsd
 share/gdal/nitf_spec.xml
 share/gdal/nitf_spec.xsd
@@ -168,6 +204,7 @@ share/gdal/pci_datum.txt
 share/gdal/pci_ellips.txt
 share/gdal/pcs.csv
 share/gdal/pcs.override.csv
+share/gdal/plscenesconf.json
 share/gdal/prime_meridian.csv
 share/gdal/projop_wparm.csv
 share/gdal/ruian_vf_ob_v1.gfs
@@ -176,12 +213,8 @@ share/gdal/ruian_vf_st_v1.gfs
 share/gdal/ruian_vf_v1.gfs
 share/gdal/s57agencies.csv
 share/gdal/s57attributes.csv
-share/gdal/s57attributes_aml.csv
-share/gdal/s57attributes_iw.csv
 share/gdal/s57expectedinput.csv
 share/gdal/s57objectclasses.csv
-share/gdal/s57objectclasses_aml.csv
-share/gdal/s57objectclasses_iw.csv
 share/gdal/seed_2d.dgn
 share/gdal/seed_3d.dgn
 share/gdal/stateplane.csv
