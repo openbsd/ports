@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_singleton_h,v 1.1 2017/05/19 13:19:59 espie Exp $
+pre-declare, not enough to shup up all warnings
+
+Index: src/singleton.h
+--- src/singleton.h.orig
++++ src/singleton.h
+@@ -58,6 +58,8 @@ class SingletonManager : public zmm::Object (protected
+ template <class T>
+ class Singleton : public zmm::Object
+ {
++protected:
++    static zmm::Ref<Mutex> mutex;
+ public:
+     static zmm::Ref<T> getInstance()
+     {
+@@ -87,7 +89,6 @@ class Singleton : public zmm::Object (protected)
+     virtual void init() { }
+     virtual void shutdown() { }
+     
+-    static zmm::Ref<Mutex> mutex;
+     static zmm::Ref<T> instance;
+     static bool singletonActive;
+     

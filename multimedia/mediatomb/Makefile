@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2017/04/10 11:46:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2017/05/19 13:19:59 espie Exp $
 
 COMMENT =	UPnP media server
 
 VER =		0.12.1
 DISTNAME =	mediatomb-${VER}
-REVISION =	14
+REVISION =	15
 
 CATEGORIES =	multimedia
 

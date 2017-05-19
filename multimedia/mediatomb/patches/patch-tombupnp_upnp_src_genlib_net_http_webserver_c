@@ -1,0 +1,15 @@
+$OpenBSD: patch-tombupnp_upnp_src_genlib_net_http_webserver_c,v 1.1 2017/05/19 13:19:59 espie Exp $
+gnu89 inlines
+
+Index: tombupnp/upnp/src/genlib/net/http/webserver.c
+--- tombupnp/upnp/src/genlib/net/http/webserver.c.orig
++++ tombupnp/upnp/src/genlib/net/http/webserver.c
+@@ -310,7 +310,7 @@ search_extension( IN const char *extension,
+ *	 0 - On Sucess														
+ *	 UPNP_E_OUTOF_MEMORY - on memory allocation failures				
+ ************************************************************************/
+-XINLINE int
++int
+ get_content_type( IN const char *filename,
+                   OUT DOMString * content_type )
+ {
