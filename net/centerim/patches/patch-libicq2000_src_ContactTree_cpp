@@ -1,0 +1,13 @@
+$OpenBSD: patch-libicq2000_src_ContactTree_cpp,v 1.1 2017/05/19 23:14:09 espie Exp $
+
+Index: libicq2000/src/ContactTree.cpp
+--- libicq2000/src/ContactTree.cpp.orig
++++ libicq2000/src/ContactTree.cpp
+@@ -21,6 +21,7 @@
+ 
+ #include "ContactTree.h"
+ #include "events.h"
++#include <stdlib.h>
+ 
+ namespace ICQ2000 {
+ 

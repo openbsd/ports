@@ -1,0 +1,30 @@
+$OpenBSD: patch-src_hooks_abstracthook_h,v 1.1 2017/05/19 23:14:09 espie Exp $
+
+Index: src/hooks/abstracthook.h
+--- src/hooks/abstracthook.h.orig
++++ src/hooks/abstracthook.h
+@@ -47,11 +47,7 @@ struct servicetype {
+ };
+ 
+ class abstracthook {
+-    protected:
+-	enum Encoding {
+-	    encUTF, encKOI, encUnknown
+-	};
+-
++    public:
+ 	enum logevent {
+ 	    logConnecting,
+ 	    logLogged,
+@@ -61,6 +57,11 @@ class abstracthook {
+ 	    logContactAdd,
+ 	    logContactRemove,
+ 	    logConfMembers
++	};
++
++    protected:
++	enum Encoding {
++	    encUTF, encKOI, encUnknown
+ 	};
+ 
+ 	protocolname proto;

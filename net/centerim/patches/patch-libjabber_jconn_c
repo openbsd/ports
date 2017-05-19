@@ -1,0 +1,44 @@
+$OpenBSD: patch-libjabber_jconn_c,v 1.1 2017/05/19 23:14:09 espie Exp $
+
+Index: libjabber/jconn.c
+--- libjabber/jconn.c.orig
++++ libjabber/jconn.c
+@@ -824,7 +824,7 @@ void *jabber_recieve_file_fd(void *arg)
+ 		free(hash);
+ 		close(sock);
+ 		close(fd_file);
+-		return;
++		return NULL;
+ 	}
+ 	 
+ 	recv( sock, buff, SEND_BUF, 0 );
+@@ -833,9 +833,9 @@ void *jabber_recieve_file_fd(void *arg)
+ 		free(hash);
+ 		close(sock);
+ 		close(fd_file);
+-		return;
++		return NULL;
+ 	}
+-	 
++     
+ //socks5 bytestream packet	 
+ 	buff[0] = 0x05;
+ 	buff[1] = 0x01;
+@@ -851,7 +851,7 @@ void *jabber_recieve_file_fd(void *arg)
+ 		free(hash);
+ 		close(sock);
+ 		close(fd_file);
+-		return;
++		return NULL;
+ 	}
+ 	recv( sock, buff, 47, 0 );
+ 	if( buff[0] != 0x05 || buff[3] != 0x03 )
+@@ -859,7 +859,7 @@ void *jabber_recieve_file_fd(void *arg)
+ 		free(hash);
+ 		close(sock);
+ 		close(fd_file);
+-		return;
++		return NULL;
+ 	}
+ 
+ 
