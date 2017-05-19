@@ -1,0 +1,29 @@
+$OpenBSD: patch-src_rpc_object_storage_cc,v 1.1 2017/05/19 22:26:32 espie Exp $
+
+Index: src/rpc/object_storage.cc
+--- src/rpc/object_storage.cc.orig
++++ src/rpc/object_storage.cc
+@@ -44,6 +44,23 @@
+ 
+ namespace rpc {
+ 
++const unsigned int object_storage::flag_generic_type;
++const unsigned int object_storage::flag_bool_type;
++const unsigned int object_storage::flag_value_type;
++const unsigned int object_storage::flag_string_type;
++const unsigned int object_storage::flag_list_type;
++const unsigned int object_storage::flag_function_type;
++const unsigned int object_storage::flag_multi_type;
++
++const unsigned int object_storage::mask_type;
++
++const unsigned int object_storage::flag_constant;
++const unsigned int object_storage::flag_static;
++const unsigned int object_storage::flag_private;
++const unsigned int object_storage::flag_rlookup;
++
++const size_t object_storage::key_size;
++
+ object_storage::local_iterator
+ object_storage::find_local(const torrent::raw_string& key) {
+   std::size_t n = hash_fixed_key_type::hash(key.data(), key.size()) % bucket_count();

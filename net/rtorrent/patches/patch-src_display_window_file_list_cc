@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_display_window_file_list_cc,v 1.5 2017/05/19 22:26:32 espie Exp $
+
+Index: src/display/window_file_list.cc
+--- src/display/window_file_list.cc.orig
++++ src/display/window_file_list.cc
+@@ -41,6 +41,7 @@
+ #include <torrent/data/file.h>
+ #include <torrent/data/file_list.h>
+ #include <torrent/data/file_list_iterator.h>
++#include <locale>
+ 
+ #include "core/download.h"
+ #include "ui/element_file_list.h"

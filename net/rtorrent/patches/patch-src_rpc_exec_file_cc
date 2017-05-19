@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_rpc_exec_file_cc,v 1.1 2017/05/19 22:26:32 espie Exp $
+
+Index: src/rpc/exec_file.cc
+--- src/rpc/exec_file.cc.orig
++++ src/rpc/exec_file.cc
+@@ -52,6 +52,14 @@ namespace rpc {
+ 
+ // Close m_logFd.
+ 
++const unsigned int ExecFile::max_args;
++const unsigned int ExecFile::buffer_size;
++
++const int ExecFile::flag_expand_tilde;
++const int ExecFile::flag_throw;
++const int ExecFile::flag_capture;
++const int ExecFile::flag_background;
++
+ int
+ ExecFile::execute(const char* file, char* const* argv, int flags) {
+   // Write the execued command and its parameters to the log fd.

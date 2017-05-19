@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2017/04/10 11:46:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.56 2017/05/19 22:26:32 espie Exp $
 
 COMMENT=		ncurses BitTorrent client based on libTorrent
 
@@ -31,7 +31,8 @@ BUILD_DEPENDS=		devel/cppunit
 LIB_DEPENDS=		net/libtorrent>=0.13.4 \
 			net/curl
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	autoconf
+AUTOCONF_VERSION=	2.69
 CONFIGURE_ENV +=	LDFLAGS=-pthread
 CONFIGURE_ARGS=		--disable-debug
 
@@ -41,4 +42,12 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/rtorrent.rc \
 		${PREFIX}/share/examples/rtorrent/rtorrent.rc
 
+.include <bsd.port.arch.mk>
+.if ${PROPERTIES:Mclang}
+# this patches *only* files containing tr1 to no longer refer to tr1
+# we do it pre-patch, because autoconf passes right after us
+pre-patch:
+	find ${WRKDIST} -type f|xargs fgrep -lw tr1|xargs sed -i.bak -e 's,<tr1/,<,' -e 's/std::tr1/std/g' -e 's/tr1::placeholders::/std::placeholders::/g' -e 's/tr1::bind/std::bind/g'
+CXXFLAGS +=	-std=c++11
+.endif
 .include <bsd.port.mk>

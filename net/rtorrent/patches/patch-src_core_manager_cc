@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_core_manager_cc,v 1.1 2017/05/19 22:26:32 espie Exp $
+
+Index: src/core/manager.cc
+--- src/core/manager.cc.orig
++++ src/core/manager.cc
+@@ -74,6 +74,11 @@
+ 
+ namespace core {
+ 
++const int Manager::create_start;
++const int Manager::create_tied;
++const int Manager::create_quiet;
++const int Manager::create_raw_data;
++
+ void
+ Manager::push_log(const char* msg) {
+   m_log_important->lock_and_push_log(msg, strlen(msg), 0);

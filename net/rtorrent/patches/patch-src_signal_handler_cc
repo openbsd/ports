@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_signal_handler_cc,v 1.1 2017/05/19 22:26:32 espie Exp $
+
+Index: src/signal_handler.cc
+--- src/signal_handler.cc.orig
++++ src/signal_handler.cc
+@@ -38,6 +38,7 @@
+ 
+ #include <signal.h>
+ #include <stdexcept>
++#include <string>
+ #include "rak/error_number.h"
+ #include "signal_handler.h"
+ 
