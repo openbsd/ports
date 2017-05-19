@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/05/19 07:40:52 pirofti Exp $
+${P5ARCH}/
+${P5ARCH}/CSS/
+${P5ARCH}/CSS/Minifier/
+${P5ARCH}/CSS/Minifier/XS.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/CSS/
+${P5ARCH}/auto/CSS/Minifier/
+${P5ARCH}/auto/CSS/Minifier/XS/
+${P5ARCH}/auto/CSS/Minifier/XS/XS.so
+@man man/man3p/CSS::Minifier::XS.3p
