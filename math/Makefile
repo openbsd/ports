@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.140 2017/05/06 11:53:31 fcambus Exp $
+# $OpenBSD: Makefile,v 1.141 2017/05/19 07:38:06 pirofti Exp $
 
      SUBDIR =
      SUBDIR += R
@@ -66,6 +66,7 @@
      SUBDIR += p5-Algorithm-Combinatorics
      SUBDIR += p5-Algorithm-NaiveBayes
      SUBDIR += p5-Bit-Vector
+     SUBDIR += p5-Business-Hours
      SUBDIR += p5-Chart-Math-Axis
      SUBDIR += p5-Data-PowerSet
      SUBDIR += p5-GraphViz
