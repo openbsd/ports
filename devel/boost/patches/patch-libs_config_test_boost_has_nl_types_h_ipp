@@ -1,0 +1,15 @@
+$OpenBSD: patch-libs_config_test_boost_has_nl_types_h_ipp,v 1.1 2017/05/20 10:32:43 espie Exp $
+clang really doesn't like pointer comparisons
+
+Index: libs/config/test/boost_has_nl_types_h.ipp
+--- libs/config/test/boost_has_nl_types_h.ipp.orig
++++ libs/config/test/boost_has_nl_types_h.ipp
+@@ -17,7 +17,7 @@ namespace boost_has_nl_types_h{
+ int test()
+ {
+    nl_catd cat = catopen("foo", 0);
+-   if(cat >= 0) catclose(cat);
++   if(cat != (nl_catd)-1) catclose(cat);
+    return 0;
+ }
+ 
