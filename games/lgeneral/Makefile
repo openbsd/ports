@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2015/10/13 06:29:38 bentley Exp $
+# $OpenBSD: Makefile,v 1.17 2017/05/20 17:13:01 espie Exp $
 
 COMMENT=	turn-based strategy engine
 
@@ -22,6 +22,7 @@ LIB_DEPENDS=	devel/sdl \
 
 AUTOCONF_VERSION=2.13
 CONFIGURE_STYLE= autoconf
+CFLAGS += -fgnu89-inline
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/lgeneral

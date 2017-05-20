@@ -1,4 +1,4 @@
-$OpenBSD: patch-lgeneral_gui_c,v 1.1 2017/05/17 11:00:07 espie Exp $
+$OpenBSD: patch-lgeneral_gui_c,v 1.2 2017/05/20 17:13:01 espie Exp $
 
 Index: lgeneral/gui.c
 --- lgeneral/gui.c.orig
@@ -39,17 +39,3 @@ Index: lgeneral/gui.c
          /* add horizontal top/bottom line */
          for ( i = tile_size; i < width - tile_size; i += tile_size ) {
  
-@@ -2173,12 +2173,7 @@ void update_window( Window *window, int flags )
- }
- 
- /* check if on window */
--inline int on_window( Window *window, int x, int y)
--{
--    return ( x >= window->x && y >= window->y && x < window->x + window->width &&
--             y < window->y + window->height );
--
--}
-+extern int on_window( Window *window, int x, int y);
- 
- /* set just a single line of text */
- void set_simple_window_text( Window *window, char *str, int ref )
