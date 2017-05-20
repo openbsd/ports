@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.16 2017/05/11 20:50:55 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2017/05/20 07:55:14 benoit Exp $
 
 COMMENT =		talk to other applications
 
-V =			1.33
+V =			1.35
 MODULES =		cpan
 PKG_ARCH =		*
 DISTNAME =		Expect-${V}
 CATEGORIES =		devel
-
-WRKDIST =		${WRKDIR}/expect.pm-Expect-${V}
 
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes
