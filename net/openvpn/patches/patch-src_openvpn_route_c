@@ -1,9 +1,10 @@
-$OpenBSD: patch-src_openvpn_route_c,v 1.8 2017/03/28 22:16:37 jca Exp $
+$OpenBSD: patch-src_openvpn_route_c,v 1.9 2017/05/21 16:12:43 jca Exp $
 
 - add support for on-link routes
+- add support for non-0 routing tables
 
---- src/openvpn/route.c.orig	Wed Mar 22 16:34:21 2017
-+++ src/openvpn/route.c	Mon Mar 27 06:01:57 2017
+--- src/openvpn/route.c.orig	Thu Mar 23 02:34:21 2017
++++ src/openvpn/route.c	Wed Apr 12 18:06:40 2017
 @@ -1778,12 +1778,17 @@ add_route(struct route_ipv4 *r,
      }
  #endif
@@ -25,3 +26,23 @@ $OpenBSD: patch-src_openvpn_route_c,v 1.8 2017/03/28 22:16:37 jca Exp $
  
      argv_msg(D_ROUTE, &argv);
      status = openvpn_execve_check(&argv, es, 0, "ERROR: OpenBSD/NetBSD route add command failed");
+@@ -3597,6 +3602,9 @@ get_default_gateway(struct route_gateway_info *rgi)
+     rtm.rtm_flags = RTF_UP | RTF_GATEWAY;
+     rtm.rtm_version = RTM_VERSION;
+     rtm.rtm_seq = ++seq;
++#ifdef TARGET_OPENBSD
++    rtm.rtm_tableid = getrtable();
++#endif
+     rtm.rtm_addrs = rtm_addrs;
+ 
+     so_dst.sa_family = AF_INET;
+@@ -3812,6 +3820,9 @@ get_default_gateway_ipv6(struct route_ipv6_gateway_inf
+     rtm.rtm_flags = RTF_UP;
+     rtm.rtm_version = RTM_VERSION;
+     rtm.rtm_seq = ++seq;
++#ifdef TARGET_OPENBSD
++    rtm.rtm_tableid = getrtable();
++#endif
+ 
+     so_dst.sin6_family = AF_INET6;
+     so_mask.sin6_family = AF_INET6;
