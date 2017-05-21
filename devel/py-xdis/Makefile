@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2017/03/26 11:17:22 shadchin Exp $
+# $OpenBSD: Makefile,v 1.11 2017/05/21 17:54:10 shadchin Exp $
 
 COMMENT =		cross-version byte-code disassembler and marshal routines
 
-MODPY_EGG_VERSION =	3.3.0
+MODPY_EGG_VERSION =	3.3.1
 DISTNAME =		xdis-${MODPY_EGG_VERSION}
 PKGNAME =		py-xdis-${MODPY_EGG_VERSION}
 CATEGORIES =		devel
@@ -16,11 +16,11 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		lang/python
 
-RUN_DEPENDS =		devel/py-six${MODPY_FLAVOR}
-BUILD_DEPENDS =		devel/py-test-runner${MODPY_FLAVOR}
-
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+
+RUN_DEPENDS =		devel/py-six${MODPY_FLAVOR}
+BUILD_DEPENDS =		devel/py-test-runner${MODPY_FLAVOR}
 
 FLAVORS =		python3
 FLAVOR ?=
