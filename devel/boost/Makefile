@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2017/04/19 11:16:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.63 2017/05/21 11:22:31 espie Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS} ${CLANG_ARCHS}
 
@@ -64,6 +64,21 @@ BUILD_DEPENDS+=	lang/python/${MODPY_DEFAULT_VERSION_3}
 LIB_DEPENDS=	archivers/bzip2 \
 		converters/libiconv 
 
+.include <bsd.port.arch.mk>
+.if ${PROPERTIES:Mclang}
+# XXX clang is *very* verbose on boost, the tricks that create typedefs
+# just for checking, and the extensive use of C++11 extensions are fun
+# so warn them off until we do better...
+CXXFLAGS +=	-Wno-c++11-extensions -Wno-unused-local-typedef \
+		-Wno-keyword-macro
+CFLAGS +=	-Wno-string-plus-int
+COMPILER =	clang
+CONFIG =	${FILESDIR}/user.hpp
+.else
+COMPILER =	gcc
+CONFIG =	user.hpp
+.endif
+
 MAKE_ENV=	GCC="${CC}" GXX="${CXX}"
 
 BJAM_CONFIG=	-sICONV_PATH=${LOCALBASE} \
@@ -84,7 +99,7 @@ BOOTSTRAP=	--with-bjam=${WRKSRC}/bjam \
 		--with-python=${MODPY_BIN} \
 		--with-python-root=${LOCALBASE} \
 		--with-python-version=${MODPY_VERSION} \
-		--with-toolset=gcc \
+		--with-toolset=${COMPILER} \
 		--without-icu \
 		--without-libraries=context,coroutine
 
@@ -101,11 +116,11 @@ SUBST_VARS+=	SO_VERSION
 
 do-configure:
 	echo "using python : ${MODPY_DEFAULT_VERSION_3} : ${LOCALBASE}/bin/python${MODPY_DEFAULT_VERSION_3} : ${LOCALBASE}/include/python${MODPY_DEFAULT_VERSION_3}$$(python${MODPY_DEFAULT_VERSION_3}-config --abiflags) ;" >> ${WRKSRC}/tools/build/user-config.jam
-	echo "using gcc : : ${CXX} ;" >>${WRKSRC}/tools/build/user-config.jam
+	echo "using ${COMPILER} : : ${CXX} ;" >>${WRKSRC}/tools/build/user-config.jam
 	@${SUBST_CMD} ${WRKSRC}/Jamroot
 	@cd ${WRKSRC}/libs/config && \
 	    ${SETENV} ${CONFIGURE_ENV} /bin/sh ./configure && \
-	    cp user.hpp ${WRKSRC}/boost/config
+	    cp ${CONFIG} ${WRKSRC}/boost/config
 	@cd ${WRKSRC}/tools/build/src/engine && \
 	    ${SETENV} CC="${CC}" CFLAGS="${CFLAGS}" /bin/sh ./build.sh cc && \
 	    cp bin.openbsd*/b2 bin.openbsd*/bjam ${WRKSRC}
