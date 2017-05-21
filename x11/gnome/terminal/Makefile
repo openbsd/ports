@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.153 2017/04/17 12:54:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.154 2017/05/21 17:49:17 jasper Exp $
 
 COMMENT=	GNOME terminal
 
 GNOME_PROJECT=	gnome-terminal
-GNOME_VERSION=	3.24.1
-REVISION=	0
+GNOME_VERSION=	3.24.2
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -36,6 +35,7 @@ LIB_DEPENDS=	devel/gconf2 \
 MODGNOME_TOOLS=	desktop-file-utils vala yelp
 
 CONFIGURE_STYLE=	gnu
+CONFIGURE_ARGS +=	--enable-debug
 
 pre-configure:
 # XXX cc1: error: unrecognized command line option
