@@ -1,10 +1,11 @@
-$OpenBSD: patch-utils_c,v 1.5 2015/09/11 09:16:23 sthen Exp $
+$OpenBSD: patch-utils_c,v 1.6 2017/05/21 14:52:54 sthen Exp $
 
 avoid mkdir /, from freebsd ports
 
---- utils.c.orig	Thu Sep 10 21:24:09 2015
-+++ utils.c	Fri Sep 11 10:41:01 2015
-@@ -271,7 +271,9 @@ make_dir(char * path, mode_t mode)
+Index: utils.c
+--- utils.c.orig
++++ utils.c
+@@ -285,7 +285,9 @@ make_dir(char * path, mode_t mode)
  			++s;
  		}
  

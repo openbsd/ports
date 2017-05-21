@@ -1,9 +1,10 @@
-$OpenBSD: patch-minidlna_conf,v 1.5 2015/01/25 14:07:26 sthen Exp $
+$OpenBSD: patch-minidlna_conf,v 1.6 2017/05/21 14:52:54 sthen Exp $
 
 default directories, plus we don't use inotify
 
---- minidlna.conf.orig	Tue Aug 26 22:09:22 2014
-+++ minidlna.conf	Sun Jan 25 14:01:23 2015
+Index: minidlna.conf
+--- minidlna.conf.orig
++++ minidlna.conf
 @@ -1,11 +1,12 @@
  # port for HTTP (descriptions, SOAP, media transfer) traffic
 +# if firewalling, this TCP port, as well as UDP port 1900, must be open.
@@ -55,7 +56,7 @@ default directories, plus we don't use inotify
  # set this to yes to enable support for streaming .jpg and .mp3 files to a TiVo supporting HMO
  enable_tivo=no
  
-@@ -60,6 +57,10 @@ notify_interval=900
+@@ -64,6 +61,10 @@ notify_interval=900
  # in its XML description
  serial=12345678
  model_number=1

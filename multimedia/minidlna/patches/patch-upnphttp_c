@@ -1,7 +1,8 @@
-$OpenBSD: patch-upnphttp_c,v 1.5 2014/09/03 21:15:44 sthen Exp $
---- upnphttp.c.orig	Tue Aug 26 23:09:22 2014
-+++ upnphttp.c	Wed Sep  3 13:28:00 2014
-@@ -1377,6 +1377,11 @@ SendResp_icon(struct upnphttp * h, char * icon)
+$OpenBSD: patch-upnphttp_c,v 1.6 2017/05/21 14:52:54 sthen Exp $
+Index: upnphttp.c
+--- upnphttp.c.orig
++++ upnphttp.c
+@@ -1426,6 +1426,11 @@ SendResp_icon(struct upnphttp * h, char * icon)
  	start_dlna_header(&str, 200, "Interactive", mime);
  	strcatf(&str, "Content-Length: %d\r\n\r\n", size);
  
