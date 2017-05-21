@@ -1,0 +1,15 @@
+$OpenBSD: patch-IndexSearch_ModuleFactory_cpp,v 1.1 2017/05/21 12:34:39 espie Exp $
+false is no pointer
+
+Index: IndexSearch/ModuleFactory.cpp
+--- IndexSearch/ModuleFactory.cpp.orig
++++ IndexSearch/ModuleFactory.cpp
+@@ -132,7 +132,7 @@ IndexInterface *ModuleFactory::getLibraryIndex(const s
+ 		(typeIter->second.m_canIndex == false))
+ 	{
+ 		// We don't know about this type, or doesn't support indexes
+-		return false;
++		return NULL;
+ 	}
+ 
+ 	void *pHandle = typeIter->second.m_pHandle;

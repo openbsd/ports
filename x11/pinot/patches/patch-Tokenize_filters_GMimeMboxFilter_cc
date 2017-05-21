@@ -1,0 +1,15 @@
+$OpenBSD: patch-Tokenize_filters_GMimeMboxFilter_cc,v 1.1 2017/05/21 12:34:39 espie Exp $
+C++11 wants spaces while gluing strings
+
+Index: Tokenize/filters/GMimeMboxFilter.cc
+--- Tokenize/filters/GMimeMboxFilter.cc.orig
++++ Tokenize/filters/GMimeMboxFilter.cc
+@@ -301,7 +301,7 @@ bool GMimeMboxFilter::skip_to_document(const string &i
+ 	}
+ 
+ 	// ipath's format is "o=offset&l=part_levels"
+-	if (sscanf(ipath.c_str(), "o="GMIME_OFFSET_MODIFIER"&l=[", &m_messageStart) != 1)
++	if (sscanf(ipath.c_str(), "o=" GMIME_OFFSET_MODIFIER "&l=[", &m_messageStart) != 1)
+ 	{
+ 		return false;
+ 	}

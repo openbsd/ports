@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2017/04/10 11:46:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.65 2017/05/21 12:34:39 espie Exp $
 
 COMMENT=	personal search and metasearch
 
@@ -29,9 +29,7 @@ WANTLIB += xml++-2.6 xml2 z
 MASTER_SITES=	${MASTER_SITE_GOOGLECODE:=pinot-search/}
 
 # c++11
-MODULES +=		gcc4
-MODGCC4_ARCHS=		*
-MODGCC4_LANGS=		c++
+WANT_CXX =		base gcc
 
 BUILD_DEPENDS=	devel/boost \
 		devel/desktop-file-utils \
