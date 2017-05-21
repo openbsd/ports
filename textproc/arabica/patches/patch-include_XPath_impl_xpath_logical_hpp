@@ -1,0 +1,14 @@
+$OpenBSD: patch-include_XPath_impl_xpath_logical_hpp,v 1.1 2017/05/21 09:50:45 espie Exp $
+
+Index: include/XPath/impl/xpath_logical.hpp
+--- include/XPath/impl/xpath_logical.hpp.orig
++++ include/XPath/impl/xpath_logical.hpp
+@@ -23,7 +23,7 @@ class LogicalOperator : public BinaryExpression<string
+   virtual XPathValue<string_type, string_adaptor> evaluate(const DOM::Node<string_type, string_adaptor>& context, 
+                                                            const ExecutionContext<string_type, string_adaptor>& executionContext) const 
+   {
+-    return BoolValue<string_type, string_adaptor>::createValue(evaluateAsBool(context, executionContext));
++    return BoolValue<string_type, string_adaptor>::createValue(this->evaluateAsBool(context, executionContext));
+   } // evaluate
+ }; // class LogicalOperator
+ 

@@ -1,0 +1,41 @@
+$OpenBSD: patch-include_io_convert_adaptor_hpp,v 1.1 2017/05/21 09:50:45 espie Exp $
+
+Index: include/io/convert_adaptor.hpp
+--- include/io/convert_adaptor.hpp.orig
++++ include/io/convert_adaptor.hpp
+@@ -83,7 +83,7 @@ typename convert_bufadaptor<charT, traitsT, externalCh
+     return traitsT::not_eof(c);
+ 
+   growOutBuffer();
+-  sputc(traitsT::to_char_type(c));
++  this->sputc(traitsT::to_char_type(c));
+ 
+   return traitsT::not_eof(c);
+ } // overflow
+@@ -124,7 +124,7 @@ void convert_bufadaptor<charT, traitsT, externalCharT,
+   size_t oldsize = outBuffer_.capacity();
+   size_t newsize = (oldsize ? oldsize*2 : bufferSize_);
+   outBuffer_.resize(newsize);
+-  setp(&outBuffer_[0] + oldsize, &outBuffer_[0] + outBuffer_.capacity());
++  this->setp(&outBuffer_[0] + oldsize, &outBuffer_[0] + outBuffer_.capacity());
+ } // growOutBuffer
+ 
+ template<class charT, class traitsT, class externalCharT, class externalTraitsT>
+@@ -175,7 +175,7 @@ bool convert_bufadaptor<charT, traitsT, externalCharT,
+   } // if(cvt.always_noconv())
+  
+   if(ok)
+-    setp(&outBuffer_[0], &outBuffer_[0] + outBuffer_.capacity());
++    this->setp(&outBuffer_[0], &outBuffer_[0] + outBuffer_.capacity());
+ 
+   return ok;
+ } // flushOut
+@@ -259,7 +259,7 @@ std::streamsize convert_bufadaptor<charT, traitsT, ext
+     } // if(r == std::codecvt_base::error)
+   }
+ 
+-  setg(&(inBuffer_[0]) + (pbSize_-pbCount), &(inBuffer_[0])+pbSize_, &(inBuffer_[0])+pbSize_+converted);
++  this->setg(&(inBuffer_[0]) + (pbSize_-pbCount), &(inBuffer_[0])+pbSize_, &(inBuffer_[0])+pbSize_+converted);
+ 
+   return static_cast<int_type>(res);
+ } // readIn

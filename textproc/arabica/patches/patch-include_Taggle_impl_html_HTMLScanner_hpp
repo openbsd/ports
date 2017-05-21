@@ -1,0 +1,26 @@
+$OpenBSD: patch-include_Taggle_impl_html_HTMLScanner_hpp,v 1.1 2017/05/21 09:50:45 espie Exp $
+Nope you can't add numbers to strings
+
+Index: include/Taggle/impl/html/HTMLScanner.hpp
+--- include/Taggle/impl/html/HTMLScanner.hpp.orig
++++ include/Taggle/impl/html/HTMLScanner.hpp
+@@ -5,6 +5,7 @@
+ #include <SAX/Locator.hpp>
+ #include <XML/XMLCharacterClasses.hpp>
+ #include "../Scanner.hpp"
++#include <sstream>
+ 
+ namespace Arabica
+ {
+@@ -473,7 +474,10 @@ class HTMLScanner : public Scanner, public SAX::Locato
+           outputBuffer_.clear();
+           break;
+         default:
+-          throw std::runtime_error("Can't process state " + action);
++	    std::ostringstream f("Can't process state ");
++	    f << action;
++	    std::string msg = f.str();
++          throw std::runtime_error(msg);
+       } // switch ...
+       state_ = nextState_;
+     } // while (state_ != S_DONE) 
