@@ -1,0 +1,15 @@
+$OpenBSD: patch-tools_build_src_engine_jam_h,v 1.1 2017/05/21 09:49:30 espie Exp $
+
+Index: tools/build/src/engine/jam.h
+--- tools/build/src/engine/jam.h.orig
++++ tools/build/src/engine/jam.h
+@@ -281,7 +281,9 @@
+ #ifdef __OpenBSD__
+     #define OSMINOR "OS=OPENBSD"
+     #define OS_OPENBSD
++# if !defined(unix)
+     #define unix
++# endif
+ #endif
+ #if defined (__FreeBSD_kernel__) && !defined(__FreeBSD__)
+     #define OSMINOR "OS=KFREEBSD"
