@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.195 2017/05/11 16:29:55 schwarze Exp $
+# $OpenBSD: Makefile,v 1.196 2017/05/21 17:27:22 sthen Exp $
 
 COMMENT-main=	WWW and FTP proxy cache and accelerator
 COMMENT-ldap=	LDAP authentication/ACL support for Squid
@@ -22,18 +22,17 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c m nettle pthread
-cWANTLIB = ${WANTLIB} ffi gmp gnutls hogweed iconv idn2 intl p11-kit tasn1 z
+cWANTLIB = ${WANTLIB} ${LIBECXX} ffi gmp gnutls hogweed iconv idn2 intl p11-kit tasn1 z
 
 # bzr repository at https://code.launchpad.net/squid
 MASTER_SITES=	${HOMEPAGE}Versions/v${V:C/^([0-9]).*/\1/}/${V:C/([0-9.]{3}).*/\1/}/ \
 		http://ftp.mirrorservice.org/sites/ftp.squid-cache.org/pub/archive/${V:C/([0-9.]{3}).*/\1/}/
 
-MODULES+=	gcc4
+# C++11
+WANT_CXX=	base gcc
+
 LIB_DEPENDS+=	security/gnutls
 BUILD_DEPENDS+=	devel/cppunit
-
-MODGCC4_ARCHS=	*
-MODGCC4_LANGS=	c c++
 
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= autoconf
