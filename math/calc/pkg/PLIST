@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2016/01/27 14:39:14 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.11 2017/05/21 14:44:31 sthen Exp $
 @bin bin/calc
 bin/cscript/
 bin/cscript/4dsphere
@@ -318,6 +318,7 @@ share/calc/help/log
 share/calc/help/lowbit
 share/calc/help/ltol
 share/calc/help/makelist
+share/calc/help/man
 share/calc/help/mat
 share/calc/help/matdim
 share/calc/help/matfill
@@ -463,7 +464,6 @@ share/calc/linear.cal
 share/calc/lnseries.cal
 share/calc/lucas.cal
 share/calc/lucas_chk.cal
-share/calc/lucas_tbl.cal
 share/calc/mersenne.cal
 share/calc/mfactor.cal
 share/calc/mod.cal
