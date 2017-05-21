@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2016/06/01 12:47:30 edd Exp $
+# $OpenBSD: Makefile,v 1.47 2017/05/21 11:57:47 edd Exp $
 
 COMMENT-context =	texlive texmf for conTeXt
 COMMENT-docs =		texlive documentation
@@ -10,7 +10,7 @@ COMMENT-buildset =	smallest texlive texmf for building ports
 #   * Update the buildset conflict markers in PLIST-buildset.
 #   * Add a more restrictive RUN_DEPEND upon the buildset.
 
-DISTNAME =		texlive-${DIST_V}-texmf
+DISTNAME =		texlive-${DIST_V}b-texmf
 MASTER_SITES0 =		https://spacehopper.org/mirrors/
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
 			texlive-${DIST_V}-extra${EXTRACT_SUFX} \
@@ -39,7 +39,6 @@ MODPY_RUNDEP =		No
 
 RUN_DEPENDS-main +=	texlive_base-${V}:print/texlive/base \
 			texlive_texmf-buildset-${V}:print/texlive/texmf,-buildset
-
 RUN_DEPENDS-full =	texlive_texmf-minimal-${V}:print/texlive/texmf,-main \
 			${MODPY_RUN_DEPENDS} \
 			${_MODLUA_RUNDEPENDS}
@@ -61,9 +60,19 @@ MODPY_RUNDEP =		No
 
 SUBST_VARS +=		RUBY
 
+WRKDIST =		${WRKDIR}/texlive-${DIST_V}-texmf
+
 # Substitute correct interpreter paths into scripts.
 # Some are done automatically by MODULES
 pre-configure:
+	@# Don't use substitution from the Python port, since we need to swap in
+	@# different versions.
+	for F in ${PYTHON2_ADJ_FILES}; do \
+	    perl -pi -e '($$. == 1) && s@^.*$$@#!${LOCALBASE}/bin/python${MODPY_DEFAULT_VERSION_2}@' ${WRKSRC}/$$F; \
+	done
+	for F in ${PYTHON3_ADJ_FILES}; do \
+	    perl -pi -e '($$. == 1) && s@^.*$$@#!${LOCALBASE}/bin/python${MODPY_DEFAULT_VERSION_3}@' ${WRKSRC}/$$F; \
+	done
 	@# Don't use builtin ruby.port.mk substitution. It uses
 	@# find, which takes an age on such a large directory.
 	for F in ${RUBY_ADJ_FILES}; do \
@@ -94,6 +103,10 @@ do-install:
 	#   updmap-sys
 	#   fmtutil-sys --all
 	#   context --make
+	#
+	# Make sure you hashed the tree before running the above commands:
+	#   mktexlsr
+	#   mtxrun --generate
 	mv ${WRKDIR}/texmf-var ${PREFIX}/share
 
 	# Put manuals in the right place.
@@ -124,7 +137,7 @@ post-install:
 update-plist: plist
 plist:
 	cd ${FILESDIR} && ${MODPY_BIN} mk_plists.py \
-		${TRUEPREFIX}/share/examples/py-texscythe/texlive2015.tlpdb.gz
+		${TRUEPREFIX}/share/examples/py-texscythe/texlive2016.tlpdb.gz
 
 
 .include <bsd.port.mk>

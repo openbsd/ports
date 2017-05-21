@@ -1,19 +1,18 @@
-# $OpenBSD: Makefile,v 1.87 2017/05/15 19:56:03 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.88 2017/05/21 11:57:45 edd Exp $
 
 COMMENT =		base binaries for TeXLive typesetting distribution
 
 # This year they used a different datestamp on the -source tarball.
-DIST_V_SOURCE =		${V}0521
-DISTNAME =		texlive-${DIST_V_SOURCE}-source
+DISTNAME =		texlive-${DIST_V}b-source
 PKGNAME =		texlive_base-${V}
-REVISION =		1
+WRKDIST =		${WRKDIR}/texlive-${DIST_V}-source
 
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
 			texlive-${DIST_V}-extra${EXTRACT_SUFX}
 
-SHARED_LIBS =		kpathsea	8.0 # 8.1
-SHARED_LIBS +=		ptexenc		5.0 # 4.3
-SHARED_LIBS +=		synctex		0.0 # 18.0
+SHARED_LIBS =		kpathsea	8.1 # 8.2
+SHARED_LIBS +=		ptexenc		5.1 # 4.4
+SHARED_LIBS +=		synctex		1.0 # 19.0
 SHARED_LIBS +=		texlua52	0.0 # 7.4
 
 WANTLIB += ICE SM X11 Xau Xaw Xdmcp Xext Xi Xmu Xpm Xrender Xt
@@ -105,6 +104,7 @@ CONFIGURE_ARGS +=	--mandir=${PREFIX}/man \
 			--disable-native-texlive-build \
 			--with-banner-add="-OpenBSD_Ports" \
 			--disable-luajittex \
+			--disable-mfluajit \
 			--with-system-xpdf \
 			--with-system-icu \
 			--with-system-cairo \
@@ -127,13 +127,14 @@ pre-install:
 # Run 'texlinks -u' and then observe the output of
 # 'texlinks -v'. Don't forget to check the links are in the PLIST.
 ALEPH_LN =	lamed
-LUATEX_LN =	dvilualatex dviluatex lualatex lualollipop
-PDFTEX_LN =	amstex cslatex csplain eplain etex jadetex latex lollipop mex mllatex mltex \
+LUATEX_LN =	dvilualatex dviluatex lualatex
+PDFTEX_LN =	amstex cslatex csplain eplain etex jadetex latex mex mllatex mltex \
 		pdfcslatex pdfcsplain pdfetex pdfjadetex pdflatex pdfmex \
 		pdfxmltex texsis utf8mex xmltex
 EPTEX_LN =	platex
-XETEX_LN =	xelatex xelollipop
 EUPTEX_LN =	uplatex
+XETEX_LN =	xelatex
+TEX_LN =	lollipop
 
 EXTRA_ROOT =	${WRKDIR}/texlive-${DIST_V}-extra
 

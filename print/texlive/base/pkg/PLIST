@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.30 2016/06/01 12:46:41 edd Exp $
+@comment $OpenBSD: PLIST,v 1.31 2017/05/21 11:57:46 edd Exp $
 @conflict teTeX_base-*
 @conflict pdfjam-*
 @conflict ht-<2
@@ -22,6 +22,7 @@ bin/arara
 bin/arlatex
 bin/authorindex
 bin/autoinst
+@bin bin/autosp
 bin/bg5+latex
 bin/bg5+pdflatex
 @bin bin/bg5conv
@@ -46,6 +47,7 @@ bin/cefslatex
 bin/cefspdflatex
 @bin bin/cfftot1
 bin/checkcites
+bin/checklistings
 @bin bin/chktex
 bin/chkweb
 bin/cjk-gs-integrate
@@ -63,6 +65,7 @@ bin/de-macro
 bin/depythontex
 @bin bin/devnag
 bin/deweb
+bin/diadia
 bin/dosepsbin
 @bin bin/dt2dv
 bin/dtxgen
@@ -83,7 +86,7 @@ bin/dvilj6
 bin/dvilualatex
 bin/dviluatex
 bin/dvipdfm
-@bin bin/dvipdfmx
+bin/dvipdfmx
 bin/dvipdft
 @bin bin/dvipng
 @bin bin/dvipos
@@ -109,7 +112,6 @@ bin/exceltex
 bin/extractbb
 bin/fig4latex
 bin/findhyph
-@bin bin/fixmsxpart
 bin/fmtutil
 bin/fmtutil-sys
 bin/fontinst
@@ -120,6 +122,7 @@ bin/getmapdl
 @bin bin/gftodvi
 @bin bin/gftopk
 @bin bin/gftype
+@bin bin/gregorio
 @bin bin/gsftopk
 @bin bin/hbf2gf
 bin/ht
@@ -164,19 +167,20 @@ bin/lily-image-commands
 bin/lily-rebuild-pdfs
 bin/listbib
 bin/listings-ext.sh
-bin/lollipop
 bin/ltx2crossrefxml
 bin/ltxfileinfo
 bin/ltximg
 bin/lua2dox_filter
 bin/lualatex
-bin/lualollipop
 bin/luaotfload-tool
 @bin bin/luatex
 bin/luatools
 bin/m-tx
 @bin bin/mag
+bin/make4ht
+bin/makedtx
 bin/makeglossaries
+bin/makeglossaries-lite
 @bin bin/makeindex
 @bin bin/makejvf
 bin/match_parens
@@ -186,6 +190,8 @@ bin/mex
 @bin bin/mf
 @bin bin/mf-nowin
 bin/mf2pt1
+@bin bin/mflua
+bin/mflua-nowin
 bin/mfplain
 @bin bin/mft
 bin/mk4ht
@@ -234,6 +240,7 @@ bin/pdf90
 bin/pdfannotextractor
 bin/pdfatfi
 bin/pdfbook
+bin/pdfbook2
 @bin bin/pdfclose
 bin/pdfcrop
 bin/pdfcslatex
@@ -254,6 +261,7 @@ bin/pdfpun
 @bin bin/pdftex
 @bin bin/pdftosrc
 bin/pdfxmltex
+bin/pdfxup
 bin/pdvitomp
 @bin bin/pdvitype
 bin/pedigree
@@ -271,6 +279,7 @@ bin/platex
 bin/pmx2pdf
 @bin bin/pmxab
 bin/pmxchords
+bin/pn2pdf
 @bin bin/pooltype
 @bin bin/ppltotf
 @bin bin/prepmx
@@ -297,6 +306,7 @@ bin/simpdftex
 bin/sjislatex
 bin/sjispdflatex
 bin/splitindex
+bin/srcredact
 bin/sty2dtx
 bin/svn-multi
 @bin bin/synctex
@@ -309,6 +319,7 @@ bin/svn-multi
 @bin bin/tangle
 @bin bin/teckit_compile
 @bin bin/tex
+bin/tex4ebook
 @bin bin/tex4ht
 bin/texconfig
 bin/texconfig-dialog
@@ -347,6 +358,7 @@ bin/updmap-sys
 bin/updvitomp
 @bin bin/updvitype
 bin/uplatex
+@bin bin/upmendex
 @bin bin/upmpost
 @bin bin/uppltotf
 @bin bin/uptex
@@ -368,7 +380,6 @@ bin/xdvi
 @bin bin/xdvi-xaw
 @bin bin/xdvipdfmx
 bin/xelatex
-bin/xelollipop
 @bin bin/xetex
 bin/xmltex
 bin/yplan
@@ -448,12 +459,12 @@ lib/pkgconfig/kpathsea.pc
 lib/pkgconfig/ptexenc.pc
 lib/pkgconfig/synctex.pc
 lib/pkgconfig/texlua52.pc
-${P5SITE}/TeXLive/
-${P5SITE}/TeXLive/TLConfig.pm
-${P5SITE}/TeXLive/TLUtils.pm
-share/doc/pkg-readmes/${FULLPKGNAME}
 @exec mktexlsr > /dev/null 2>&1
 @unexec-delete rm -f %D/share/texmf-dist/ls-R
 @unexec-delete rm -f %D/share/texmf-var/ls-R
 @unexec-delete rm -f %D/share/texmf/ls-R
 @unexec-delete rm -f %D/share/texmf-local/ls-R
+${P5SITE}/TeXLive/
+${P5SITE}/TeXLive/TLConfig.pm
+${P5SITE}/TeXLive/TLUtils.pm
+share/doc/pkg-readmes/${FULLPKGNAME}

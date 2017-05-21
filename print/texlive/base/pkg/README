@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.15 2016/06/01 12:46:41 edd Exp $
+$OpenBSD: README,v 1.16 2017/05/21 11:57:46 edd Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -57,6 +57,22 @@ installation by searching for the files using kpsewhich(1). Eg:
 /home/edd/texmf/tex/latex/acronym/acronym.sty
 % kpsewhich acronym.sty
 /home/edd/texmf/tex/latex/acronym/acronym.sty
+
+LuaLaTeX Bugs
+=============
+
+Unfortunately, this version of TeX Live shipped with a slightly buggy version
+of LuaLaTeX which can lead to some confusing error messages when compiling
+documents.
+
+You can work around this by putting:
+
+    \RequirePackage{luatex85}
+
+as the first line in your source file.
+
+For more information, see:
+http://tex.stackexchange.com/questions/315198/datetime-package-does-not-work-with-lualatex-in-tl-2016
 
 Other Misc. Notes
 =================

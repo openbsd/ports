@@ -1,6 +1,6 @@
-$OpenBSD: patch-texmf-dist_web2c_texmf_cnf,v 1.4 2016/06/01 12:47:33 edd Exp $
---- texmf-dist/web2c/texmf.cnf.origy	Sun Apr 12 16:20:30 2015
-+++ texmf-dist/web2c/texmf.cnf	Sun Apr 17 21:46:32 2016
+$OpenBSD: patch-texmf-dist_web2c_texmf_cnf,v 1.5 2017/05/21 11:57:51 edd Exp $
+--- texmf-dist/web2c/texmf.cnf.origy	Thu May 12 23:56:32 2016
++++ texmf-dist/web2c/texmf.cnf	Thu Dec 29 20:55:14 2016
 @@ -1,6 +1,10 @@
  % original texmf.cnf -- runtime path configuration file for kpathsea.
  % Public domain.
@@ -12,7 +12,7 @@ $OpenBSD: patch-texmf-dist_web2c_texmf_cnf,v 1.4 2016/06/01 12:47:33 edd Exp $
  % If you modify this original file, YOUR CHANGES WILL BE LOST when it is
  % updated.  Instead, put your changes -- and only your changes, not an
  % entire copy! -- in ../../texmf.cnf.  That is, if this file is
-@@ -48,10 +52,9 @@
+@@ -51,10 +55,9 @@
  % All trees must be organized according to the TeX Directory Structure
  % (http://tug.org/tds), or files may not be found.
  %
@@ -26,7 +26,7 @@ $OpenBSD: patch-texmf-dist_web2c_texmf_cnf,v 1.4 2016/06/01 12:47:33 edd Exp $
  
  % The main tree of distributed packages and programs:
  TEXMFDIST = $TEXMFROOT/texmf-dist
-@@ -61,7 +64,7 @@ TEXMFDIST = $TEXMFROOT/texmf-dist
+@@ -64,7 +67,7 @@ TEXMFDIST = $TEXMFROOT/texmf-dist
  TEXMFMAIN = $TEXMFDIST
  
  % Local additions to the distribution trees.
@@ -35,7 +35,7 @@ $OpenBSD: patch-texmf-dist_web2c_texmf_cnf,v 1.4 2016/06/01 12:47:33 edd Exp $
  
  % TEXMFSYSVAR, where *-sys store cached runtime data.
  TEXMFSYSVAR = $TEXMFROOT/texmf-var
-@@ -440,7 +443,7 @@ LUAINPUTS.dvilualatex = .;$TEXMF/scripts/{$progname,$e
+@@ -443,7 +446,7 @@ LUAINPUTS.dvilualatex = .;$TEXMF/scripts/{$progname,$e
  LUAINPUTS = .;$TEXMF/scripts/{$progname,$engine,}/{lua,}//;$TEXMF/tex/{luatex,plain,generic,}//
  
  % Lua needs to look for binary lua libraries distributed with packages.
