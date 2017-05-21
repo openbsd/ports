@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2017/04/07 16:21:53 edd Exp $
+@comment $OpenBSD: PLIST,v 1.17 2017/05/21 11:23:30 pea Exp $
 @option no-default-conflict
 @option is-branch
 @conflict gnupg->=2
@@ -58,9 +58,7 @@ share/doc/gnupg2/examples/trustlist.txt
 share/doc/gnupg2/examples/vsnfd.prf
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/gnupg/
-share/gnupg/dirmngr-conf.skel
 share/gnupg/distsigkey.gpg
-share/gnupg/gpg-conf.skel
 share/gnupg/help.be.txt
 share/gnupg/help.ca.txt
 share/gnupg/help.cs.txt
