@@ -1,0 +1,32 @@
+$OpenBSD: patch-version_c,v 1.1 2017/05/21 21:05:22 sthen Exp $
+
+This changed in 2.12.5.5 and introduced an intermittent segfault.
+Just use asprintf instead for simplicity.
+
+Index: version.c
+--- version.c.orig
++++ version.c
+@@ -121,21 +121,11 @@ version(void)
+ 	/*
+ 	 * form the version buffer
+ 	 */
+-	snprintf(verbuf, BUFSIZ,
+-	    "%d.%d.%d.%d", calc_major_ver, calc_minor_ver,
+-	     calc_major_patch, calc_minor_patch);
+-
+-	/*
+-	 * save the versions string into a newly malloced buffer
+-	 */
+-	len = strlen(verbuf);
+-	stored_version = (char *)malloc(len+1);
+-	if (stored_version == NULL) {
++	if (asprintf(&stored_version, "%d.%d.%d.%d", calc_major_ver,
++	    calc_minor_ver, calc_major_patch, calc_minor_patch) == -1) {
+ 		fprintf(stderr, "%s: cannot malloc version string\n", program);
+ 		exit(70);
+ 	}
+-	strncpy(stored_version, verbuf, BUFSIZ);
+-	stored_version[len] = '\0';	/* paranoia */
+ 
+ 	/*
+ 	 * return the newly malloced buffer

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.27 2017/05/21 14:44:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2017/05/21 21:05:22 sthen Exp $
 
 COMMENT=	C-style arbitrary precision calculator
 
 DISTNAME=	calc-2.12.5.5
+REVISION=	0
 EXTRACT_SUFX=	.tar.bz2
 
 SHARED_LIBS=	calc 0.0 \
@@ -23,6 +24,7 @@ MASTER_SITES=	http://www.isthe.com/chongo/src/calc/ \
 		${MASTER_SITE_SOURCEFORGE:=calc/}
 
 MAKE_FLAGS=\
+	Q="" LDCONFIG="" \
 	BINDIR='$${DESTDIR}${PREFIX}/bin' \
 	LIBDIR='$${DESTDIR}${PREFIX}/lib' \
 	INCDIR='$${DESTDIR}${PREFIX}/include' \
