@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2017/04/12 02:21:58 danj Exp $
+# $OpenBSD: Makefile,v 1.4 2017/05/21 15:41:48 danj Exp $
 
-COMMENT =		line oriented search tool using Rust's regex library
+COMMENT =		line oriented search tool using Rust's regex library #'
 
 GH_ACCOUNT =		BurntSushi
 GH_PROJECT =		ripgrep
-GH_TAGNAME =		0.5.1
+GH_TAGNAME =		0.5.2
 
 CATEGORIES =		textproc sysutils
 
@@ -26,25 +26,25 @@ MODCARGO_CRATES +=	atty-0.2.2	# MIT
 MODCARGO_CRATES +=	bitflags-0.8.2	# MIT/Apache-2.0
 MODCARGO_CRATES +=	bytecount-0.1.6	# Apache-2.0/MIT
 MODCARGO_CRATES +=	cfg-if-0.1.0	# MIT/Apache-2.0
-MODCARGO_CRATES +=	clap-2.23.1	# MIT
+MODCARGO_CRATES +=	clap-2.24.1	# MIT
 MODCARGO_CRATES +=	crossbeam-0.2.10	# Apache-2.0/MIT
-MODCARGO_CRATES +=	encoding_rs-0.5.0	# MIT/Apache-2.0
+MODCARGO_CRATES +=	encoding_rs-0.5.1	# MIT/Apache-2.0
 MODCARGO_CRATES +=	env_logger-0.4.2	# MIT/Apache-2.0
 MODCARGO_CRATES +=	fnv-1.0.5	# Apache-2.0 / MIT
 MODCARGO_CRATES +=	fs2-0.4.1	# MIT/Apache-2.0
 MODCARGO_CRATES +=	kernel32-sys-0.2.2	# MIT
-MODCARGO_CRATES +=	lazy_static-0.2.6	# MIT
-MODCARGO_CRATES +=	libc-0.2.21	# MIT/Apache-2.0
+MODCARGO_CRATES +=	lazy_static-0.2.8	# MIT/Apache-2.0
+MODCARGO_CRATES +=	libc-0.2.22	# MIT/Apache-2.0
 MODCARGO_CRATES +=	log-0.3.7	# MIT/Apache-2.0
 MODCARGO_CRATES +=	memchr-1.0.1	# Unlicense/MIT
 MODCARGO_CRATES +=	memmap-0.5.2	# MIT/Apache-2.0
-MODCARGO_CRATES +=	num_cpus-1.3.0	# MIT/Apache-2.0
+MODCARGO_CRATES +=	num_cpus-1.4.0	# MIT/Apache-2.0
 MODCARGO_CRATES +=	regex-0.2.1	# MIT/Apache-2.0
 MODCARGO_CRATES +=	regex-syntax-0.4.0	# MIT/Apache-2.0
 MODCARGO_CRATES +=	same-file-0.1.3	# Unlicense/MIT
 MODCARGO_CRATES +=	simd-0.1.1	# MIT/Apache-2.0
 MODCARGO_CRATES +=	strsim-0.6.0	# MIT
-MODCARGO_CRATES +=	term_size-0.2.3	# MIT/Apache-2.0
+MODCARGO_CRATES +=	term_size-0.3.0	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	thread-id-3.0.0	# Apache-2.0
 MODCARGO_CRATES +=	thread_local-0.3.3	# Apache-2.0/MIT
 MODCARGO_CRATES +=	unicode-segmentation-1.1.0	# MIT/Apache-2.0
