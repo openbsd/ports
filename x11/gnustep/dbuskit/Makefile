@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2017/04/19 21:18:48 sebastia Exp $
+# $OpenBSD: Makefile,v 1.14 2017/05/22 18:28:02 edd Exp $
 
 BROKEN-alpha =	DKEndpointManager.m:282: error: unrecognizable insn
 
@@ -6,7 +6,7 @@ COMMENT =	GNUstep dbus interface
 
 CATEGORIES +=   x11/gnustep devel
 VERSION =	0.1.1
-REVISION =	7
+REVISION =	8
 DISTNAME =	dbuskit-${VERSION}
 PKGNAME =	gnustep-dbuskit-${VERSION}
 
@@ -19,7 +19,8 @@ MODULES +=		x11/gnustep
 MODGNUSTEP_NEEDS_GUI =	No
 WANTLIB += 		c dbus-1
 BUILD_DEPENDS +=	print/texlive/base \
-			textproc/texi2html
+			textproc/texi2html \
+			print/texinfo
 
 # Setting porthome is needed to successfully build the
 # documenation

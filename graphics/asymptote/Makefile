@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2017/05/12 15:11:17 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2017/05/22 18:28:02 edd Exp $
 
 COMMENT=		powerful descriptive vector graphics language
 BROKEN-hppa=		ghostscript segfaults during build
@@ -6,7 +6,7 @@ BROKEN-hppa=		ghostscript segfaults during build
 DISTNAME=		asymptote-2.24.src
 PKGNAME=		asymptote-2.24
 CATEGORIES=		graphics
-REVISION=		6
+REVISION=		7
 
 HOMEPAGE=		http://asymptote.sourceforge.net/
 
@@ -21,7 +21,8 @@ MODULES=		lang/python
 WANTLIB += GL GLU OSMesa c fftw3 gc glut gsl gslcblas m ncurses pthread
 WANTLIB += readline sigsegv ${LIBCXX} z
 
-BUILD_DEPENDS=		print/texlive/base
+BUILD_DEPENDS=		print/texlive/base \
+			print/texinfo
 RUN_DEPENDS=		graphics/py-Pillow \
 			print/texlive/texmf,-full \
 			${MODPY_TKINTER_DEPENDS}
