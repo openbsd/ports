@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_mongo_platform_stack_locator_openbsd_cpp,v 1.1 2017/05/22 14:00:21 espie Exp $
+
+Index: src/mongo/platform/stack_locator_openbsd.cpp
+--- src/mongo/platform/stack_locator_openbsd.cpp.orig
++++ src/mongo/platform/stack_locator_openbsd.cpp
+@@ -30,6 +30,7 @@
+ 
+ #include "mongo/platform/stack_locator.h"
+ 
++#include <pthread.h>
+ #include <pthread_np.h>
+ #include <sys/signal.h>
+ 

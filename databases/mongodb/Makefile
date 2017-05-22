@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2017/04/06 22:11:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2017/05/22 14:00:21 espie Exp $
 
 PORTROACH =	limitw:1,even
 USE_WXNEEDED =	Yes
@@ -22,19 +22,17 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB += boost_chrono-mt boost_filesystem-mt boost_program_options-mt
 WANTLIB += boost_regex-mt boost_system-mt boost_thread-mt c crypto
 WANTLIB += execinfo kvm m pcap pcre pcrecpp pthread ssl yaml-cpp
-WANTLIB += z
+WANTLIB += z ${LIBECXX}
 
 MASTER_SITES =	https://fastdl.mongodb.org/src/
 
-MODULES =	gcc4 \
-		devel/scons \
+MODULES =	devel/scons \
 		lang/python
 
 # XXX should come from scons module, but broken when gcc module also used:
 NO_CCACHE =	Yes
 
-MODGCC4_ARCHS =	*
-MODGCC4_LANGS =	c c++
+WANT_CXX =	base gcc
 MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODSCONS_ENV =	CC="${CC}" \
 		CXX="${CXX}" \

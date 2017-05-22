@@ -1,7 +1,8 @@
-$OpenBSD: patch-SConstruct,v 1.6 2016/05/06 15:33:37 sthen Exp $
---- SConstruct.orig	Sat Apr 30 18:18:21 2016
-+++ SConstruct	Sat Apr 30 18:20:28 2016
-@@ -831,6 +831,7 @@ envDict = dict(BUILD_ROOT=buildDir,
+$OpenBSD: patch-SConstruct,v 1.7 2017/05/22 14:00:21 espie Exp $
+Index: SConstruct
+--- SConstruct.orig
++++ SConstruct
+@@ -839,6 +839,7 @@ envDict = dict(BUILD_ROOT=buildDir,
                 INSTALL_DIR=installDir,
                 CONFIG_HEADER_DEFINES={},
                 LIBDEPS_TAG_EXPANSIONS=[],
