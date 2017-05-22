@@ -1,4 +1,4 @@
-# $OpenBSD: modules.port.mk,v 1.8 2017/05/12 16:56:59 espie Exp $
+# $OpenBSD: modules.port.mk,v 1.9 2017/05/22 08:06:25 espie Exp $
 #
 #  Copyright (c) 2001 Marc Espie
 # 
@@ -50,26 +50,60 @@ ERRORS += "Fatal: Missing support for module ${_m}."
 
 # support for preferred compiler
 .if defined(WANT_CXX) && !defined(CHOSEN_CXX)
-.  for i in ${WANT_CXX}
-.    if "$i" == "base"
+.  for c in ${WANT_CXX:L}
+.    if "$c" == "base"
 .      if ${PROPERTIES:Mclang}
 CHOSEN_CXX ?= base
 .      endif
-.    elif "$i" == "gcc"
+.    elif "$c" == "gcc"
 .      if !defined(CHOSEN_CXX)
+MODGCC4_ARCHS ?=	*
+_MODGCC4_ARCH_USES = 	No
+
+.        if ${MODGCC4_ARCHS} != ""
+.          for _i in ${MODGCC4_ARCHS}
+.            if !empty(MACHINE_ARCH:M${_i})
+_MODGCC4_ARCH_USES = 	Yes
+.            endif
+.          endfor
+.        endif
+
+.        if ${_MODGCC4_ARCH_USES:L} == "yes"
 MODULES +=		gcc4
-MODGCC4_LANGS +=		c++
-MODGCC4_ARCHS ?=		*
-CHOSEN_CXX = gcc
-_MODULES_KEEP_GOING = Yep
+MODGCC4_LANGS +=	c c++
+CHOSEN_CXX = 		gcc
+_MODULES_KEEP_GOING = 	Yep
+.        endif
+.      endif
+.    elif "$c" == "clang"
+.      if !defined(CHOSEN_CXX)
+MODCLANG_ARCHS ?=	*
+_MODCLANG_ARCH_USES = 	No
+
+.        if ${MODCLANG_ARCHS} != ""
+.          for _i in ${MODCLANG_ARCHS}
+.            if !empty(MACHINE_ARCH:M${_i})
+_MODCLANG_ARCH_USES = 	Yes
+.            endif
+.          endfor
+.        endif
+
+.        if ${_MODCLANG_ARCH_USES:L} == "yes"
+MODULES +=		lang/clang
+MODCLANG_LANGS +=	c c++
+CHOSEN_CXX = 		clang
+_MODULES_KEEP_GOING = 	Yep
+.        endif
 .      endif
 .    else
-ERRORS += "Fatal: unknown keyword $i in WANT_CXX"
+ERRORS += "Fatal: unknown keyword $c in WANT_CXX"
 CHOSEN_CXX = error
 .    endif
 .  endfor
 ONLY_FOR_ARCHS ?= $(CXX11_ARCHS)
 .endif
+
+
 # Tail recursion
 .if defined(_MODULES_KEEP_GOING)
 .  include "${PORTSDIR}/infrastructure/mk/modules.port.mk"
