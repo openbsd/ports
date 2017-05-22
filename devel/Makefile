@@ -1456,6 +1456,8 @@
      SUBDIR += py-setuptools_scm,python3
      SUBDIR += py-sh
      SUBDIR += py-silc
+     SUBDIR += py-simpleeval
+     SUBDIR += py-simpleeval,python3
      SUBDIR += py-simplegeneric
      SUBDIR += py-simplegeneric,python3
      SUBDIR += py-simplejson
