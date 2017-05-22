@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2017/04/12 10:52:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2017/05/22 13:57:11 espie Exp $
 
 # icu4c namespace problem when mixing gcc 4.2 and a c++11 compiler:
 # undefined reference to `_ZN6icu_5713UnicodeStringC1EOS0_'
@@ -24,10 +24,9 @@ MASTER_SITES =		http://beta.visl.sdu.dk/download/vislcg3/
 
 EXTRACT_SUFX =		.tar.bz2
 
-MODULES =		devel/cmake \
-			lang/clang
-MODCLANG_LANGS =	c c++
-MODCLANG_ARCHS =	*
+MODULES =		devel/cmake
+
+WANT_CXX =		base clang
 BUILD_DEPENDS =		devel/boost
 LIB_DEPENDS =		textproc/icu4c
 
