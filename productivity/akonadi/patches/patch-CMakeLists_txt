@@ -1,8 +1,9 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.5 2014/10/05 10:32:07 zhuk Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.6 2017/05/22 19:38:59 espie Exp $
 Use original SQLite driver instead of "tweaked" one, unbreaks runtime.
---- CMakeLists.txt.orig	Tue Apr  8 01:02:16 2014
-+++ CMakeLists.txt	Wed Aug  6 01:31:15 2014
-@@ -75,7 +75,7 @@ endif()
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -84,7 +84,7 @@ endif()
  macro(SET_DEFAULT_DB_BACKEND)
      set(_backend ${ARGV0})
      if("${_backend}" STREQUAL "SQLITE")
