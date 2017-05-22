@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2016/12/31 00:29:41 jsg Exp $
+# $OpenBSD: Makefile,v 1.25 2017/05/22 08:04:39 espie Exp $
 
 BROKEN-hppa =		missing atomic ops
 BROKEN-alpha =		missing atomic ops
@@ -32,7 +32,8 @@ MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += ICE SM X11 Xaw Xext Xt atomic boost_atomic-mt boost_date_time-mt
+WANTLIB += ICE SM X11 Xaw Xext Xt $(MODGCC4_ATOMICWANTLIB)
+WANTLIB += boost_atomic-mt boost_date_time-mt
 WANTLIB += boost_chrono-mt boost_system-mt boost_thread-mt c
 WANTLIB += freeimage freetype m pthread z zzip
 
@@ -47,9 +48,8 @@ DISTFILES =		ogre-$V${EXTRACT_SUFX}{v${V:S/./-/g}${EXTRACT_SUFX}}
 
 CONFIGURE_ARGS +=	-DOGRE_INSTALL_SAMPLES=1
 
-MODULES =		devel/cmake gcc4
-MODGCC4_LANGS =		c c++
-MODGCC4_ARCHS =		*
+MODULES =		devel/cmake
+WANT_CXX =		base gcc
 LIB_DEPENDS =		graphics/freeimage \
 			archivers/zziplib \
 			devel/boost
