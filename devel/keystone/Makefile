@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2016/09/22 12:57:17 fcambus Exp $
+# $OpenBSD: Makefile,v 1.4 2017/05/22 20:34:10 espie Exp $
 
 COMMENT =	multi-platform, multi-architecture assembler framework
 
@@ -20,11 +20,11 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB +=	c m
 
-MODULES =	devel/cmake \
-		lang/clang
+MODULES =	devel/cmake
 
-MODCLANG_ARCHS = *
-MODCLANG_LANGS = c c++
+# atomics
+WANT_CXX =	base clang
+
 
 CONFIGURE_ARGS = -DBUILD_SHARED_LIBS=ON
 
