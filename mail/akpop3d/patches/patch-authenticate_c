@@ -1,6 +1,7 @@
-$OpenBSD: patch-authenticate_c,v 1.1.1.1 2004/11/08 21:57:05 naddy Exp $
---- authenticate.c.orig	Sun Aug 17 19:44:55 2003
-+++ authenticate.c	Mon Nov  8 22:49:53 2004
+$OpenBSD: patch-authenticate_c,v 1.2 2017/05/22 20:03:43 giovanni Exp $
+Index: authenticate.c
+--- authenticate.c.orig
++++ authenticate.c
 @@ -25,6 +25,9 @@
  #include "strlcpy.h"
  #include "mysql.h"
@@ -11,7 +12,7 @@ $OpenBSD: patch-authenticate_c,v 1.1.1.1 2004/11/08 21:57:05 naddy Exp $
  extern const char * authfile;
  char real_username[MAXLINE+1];
  char real_maildrop[MAXLINE+1];
-@@ -104,7 +107,7 @@ static int user_in_file(char * user, cha
+@@ -104,7 +107,7 @@ static int user_in_file(char * user, char * path) {
  static int is_user_allowed(char * user) {
    int allow, deny;
  
@@ -20,7 +21,7 @@ $OpenBSD: patch-authenticate_c,v 1.1.1.1 2004/11/08 21:57:05 naddy Exp $
      case 0:
        allow = 0;
        break;
-@@ -115,7 +118,7 @@ static int is_user_allowed(char * user) 
+@@ -115,7 +118,7 @@ static int is_user_allowed(char * user) {
        return 0;
    }
  
@@ -29,7 +30,7 @@ $OpenBSD: patch-authenticate_c,v 1.1.1.1 2004/11/08 21:57:05 naddy Exp $
      case 0:
        deny = 0;
        break;
-@@ -322,7 +325,7 @@ int authenticate(char * username, char *
+@@ -322,7 +325,7 @@ int authenticate(char * username, char * password) {
    memset(pass,0,sizeof(pass));
    strlcpy(pass,password,len+1);
  
@@ -38,3 +39,12 @@ $OpenBSD: patch-authenticate_c,v 1.1.1.1 2004/11/08 21:57:05 naddy Exp $
    if (0!=use_pop3_allow_deny && 0==is_user_allowed(user)) {
      return 0;
    }
+@@ -335,7 +338,7 @@ int authenticate(char * username, char * password) {
+   }
+ 
+ #ifndef HAVE_LIBMYSQLCLIENT
+-  u = getpwnam(user);
++  u = getpwnam_shadow(user);
+ #else
+     u = getMpwnam( user ); /* getMpwnam first checks getpwnam() */
+ #endif /* HAVE_LIBMYSQLCLIENT */

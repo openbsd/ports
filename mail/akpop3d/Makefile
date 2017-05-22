@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2016/09/10 13:03:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2017/05/22 20:03:43 giovanni Exp $
 
 COMMENT=	small and secure POP3 daemon
 
 DISTNAME=	akpop3d-0.7.7
-REVISION =	2
+REVISION =	3
 CATEGORIES=	mail
 HOMEPAGE=	http://www.synflood.at/akpop3d.html
 
@@ -16,6 +16,7 @@ MASTER_SITES=	http://www.synflood.at/akpop3d/ \
 EXTRACT_SUFX=	.tar.bz2
 
 CONFIGURE_STYLE=gnu
+CONFIGURE_ARGS=--with-mysql=no
 
 NO_TEST=	Yes
 
