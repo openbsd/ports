@@ -1,12 +1,13 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.4 2017/02/08 09:27:06 kirby Exp $
---- CMakeLists.txt.orig	Wed Feb  1 18:14:34 2017
-+++ CMakeLists.txt	Fri Feb  3 12:47:27 2017
-@@ -398,7 +398,7 @@ if (WIN32)
-     install (DIRECTORY "licenses" DESTINATION "${LICENCEDIR}")
- endif (WIN32)
- if (UNIX)
--  install (FILES "${PROJECT_SOURCE_DIR}/doc/manpage/rawtherapee.1" DESTINATION "${CMAKE_INSTALL_PREFIX}/share/man/man1")
-+  install (FILES "${PROJECT_SOURCE_DIR}/doc/manpage/rawtherapee.1" DESTINATION "${CMAKE_INSTALL_PREFIX}/man/man1")
-   install (FILES rawtherapee.appdata.xml DESTINATION "${APPDATADIR}")
- endif (UNIX)
+$OpenBSD: patch-CMakeLists_txt,v 1.5 2017/05/22 05:25:03 kirby Exp $
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -435,7 +435,7 @@ install(FILES RELEASE_NOTES.txt DESTINATION "${CREDITS
+ if(BUILD_BUNDLE)
+     install(FILES "${PROJECT_SOURCE_DIR}/doc/manpage/rawtherapee.1" DESTINATION "${DATADIR}/share/man/man1")
+ else()
+-    install(FILES "${PROJECT_SOURCE_DIR}/doc/manpage/rawtherapee.1" DESTINATION "${CMAKE_INSTALL_PREFIX}/share/man/man1")
++    install(FILES "${PROJECT_SOURCE_DIR}/doc/manpage/rawtherapee.1" DESTINATION "${CMAKE_INSTALL_PREFIX}/man/man1")
+ endif()
  
+ if(WIN32)

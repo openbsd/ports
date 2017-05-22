@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.5 2017/02/08 09:27:06 kirby Exp $
+@comment $OpenBSD: PLIST,v 1.6 2017/05/22 05:25:03 kirby Exp $
 @bin bin/rawtherapee
+@bin bin/rawtherapee-cli
 @man man/man1/rawtherapee.1
 share/appdata/
 share/appdata/rawtherapee.appdata.xml
@@ -44,18 +45,22 @@ share/rawtherapee/dcpprofiles/Canon PowerShot G7 X.dcp
 share/rawtherapee/dcpprofiles/Canon PowerShot S110.dcp
 share/rawtherapee/dcpprofiles/FUJIFILM X-Pro2.dcp
 share/rawtherapee/dcpprofiles/FUJIFILM X-T1.dcp
+share/rawtherapee/dcpprofiles/FUJIFILM X100S.dcp
 share/rawtherapee/dcpprofiles/FUJIFILM X100T.dcp
 share/rawtherapee/dcpprofiles/Fujifilm FinePix S9500.dcp
 share/rawtherapee/dcpprofiles/Fujifilm X-E1.dcp
 share/rawtherapee/dcpprofiles/Fujifilm X-E2.dcp
 share/rawtherapee/dcpprofiles/Fujifilm X-T10.dcp
+share/rawtherapee/dcpprofiles/LG Mobile LG-H815.dcp
 share/rawtherapee/dcpprofiles/Leaf Aptus 75.dcp
+share/rawtherapee/dcpprofiles/NIKON D300.dcp
+share/rawtherapee/dcpprofiles/NIKON D5600.dcp
 share/rawtherapee/dcpprofiles/NIKON D600.dcp
 share/rawtherapee/dcpprofiles/NIKON D7200.dcp
 share/rawtherapee/dcpprofiles/NIKON D750.dcp
+share/rawtherapee/dcpprofiles/NIKON D80.dcp
 share/rawtherapee/dcpprofiles/NIKON D810.dcp
 share/rawtherapee/dcpprofiles/Nikon D200.dcp
-share/rawtherapee/dcpprofiles/Nikon D300.dcp
 share/rawtherapee/dcpprofiles/Nikon D3000.dcp
 share/rawtherapee/dcpprofiles/Nikon D3100.dcp
 share/rawtherapee/dcpprofiles/Nikon D3S.dcp
@@ -65,6 +70,7 @@ share/rawtherapee/dcpprofiles/Nikon D700.dcp
 share/rawtherapee/dcpprofiles/Nikon D7000.dcp
 share/rawtherapee/dcpprofiles/Nikon D800.dcp
 share/rawtherapee/dcpprofiles/OLYMPUS E-M10.dcp
+share/rawtherapee/dcpprofiles/OLYMPUS E-M1MarkII.dcp
 share/rawtherapee/dcpprofiles/Olympus E-1.dcp
 share/rawtherapee/dcpprofiles/Olympus E-510.dcp
 share/rawtherapee/dcpprofiles/Olympus E-520.dcp
@@ -82,6 +88,7 @@ share/rawtherapee/dcpprofiles/Panasonic DMC-G3.dcp
 share/rawtherapee/dcpprofiles/Panasonic DMC-G5.dcp
 share/rawtherapee/dcpprofiles/Panasonic DMC-GH1.dcp
 share/rawtherapee/dcpprofiles/Panasonic DMC-GH2.dcp
+share/rawtherapee/dcpprofiles/Panasonic DMC-GX85.dcp
 share/rawtherapee/dcpprofiles/Pentax K-r.dcp
 share/rawtherapee/dcpprofiles/Pentax K200D.dcp
 share/rawtherapee/dcpprofiles/RICOH PENTAX K-1.dcp
@@ -765,7 +772,9 @@ share/rawtherapee/images/refresh-red.png
 share/rawtherapee/images/refresh-white.png
 share/rawtherapee/images/resize.png
 share/rawtherapee/images/rt-logo-large.png
-share/rawtherapee/images/rt-logo.png
+share/rawtherapee/images/rt-logo-medium.png
+share/rawtherapee/images/rt-logo-small.png
+share/rawtherapee/images/rt-logo-tiny.png
 share/rawtherapee/images/saved.png
 share/rawtherapee/images/savedg.png
 share/rawtherapee/images/savednot.png
@@ -823,11 +832,11 @@ share/rawtherapee/languages/Turkish
 share/rawtherapee/languages/default
 share/rawtherapee/options
 share/rawtherapee/profiles/
-share/rawtherapee/profiles/BW/
-share/rawtherapee/profiles/BW/BW 1.pp3
-share/rawtherapee/profiles/BW/BW 2.pp3
-share/rawtherapee/profiles/BW/BW 3.pp3
-share/rawtherapee/profiles/BW/BW 4.pp3
+share/rawtherapee/profiles/Black-and-White/
+share/rawtherapee/profiles/Black-and-White/Black-and-White 1.pp3
+share/rawtherapee/profiles/Black-and-White/Black-and-White 2.pp3
+share/rawtherapee/profiles/Black-and-White/Black-and-White 3.pp3
+share/rawtherapee/profiles/Black-and-White/Black-and-White 4.pp3
 share/rawtherapee/profiles/Default ISO High.pp3
 share/rawtherapee/profiles/Default ISO Medium.pp3
 share/rawtherapee/profiles/Default.pp3
@@ -874,6 +883,11 @@ share/rawtherapee/profiles/Generic/Punchy 1.pp3
 share/rawtherapee/profiles/Generic/Punchy 2.pp3
 share/rawtherapee/profiles/Non-raw/
 share/rawtherapee/profiles/Non-raw/Brighten.pp3
+share/rawtherapee/profiles/Pentax Pixel Shift/
+share/rawtherapee/profiles/Pentax Pixel Shift/PS ISO High.pp3
+share/rawtherapee/profiles/Pentax Pixel Shift/PS ISO Low.pp3
+share/rawtherapee/profiles/Pentax Pixel Shift/PS ISO Medium.pp3
+share/rawtherapee/profiles/Pentax Pixel Shift/PS No Motion.pp3
 share/rawtherapee/profiles/Pop/
 share/rawtherapee/profiles/Pop/Pop 1.pp3
 share/rawtherapee/profiles/Pop/Pop 2 L.pp3
@@ -899,65 +913,40 @@ share/rawtherapee/sounds/BatchComplete.wav
 share/rawtherapee/sounds/Empty.wav
 share/rawtherapee/sounds/ProcessComplete.wav
 share/rawtherapee/themes/
-share/rawtherapee/themes/09-Gray-Orange.gtkrc
-share/rawtherapee/themes/09-Gray-Orange.iconset
-share/rawtherapee/themes/17-Gray-Red.gtkrc
-share/rawtherapee/themes/17-Gray-Red.iconset
-share/rawtherapee/themes/21-Gray-Gray.gtkrc
-share/rawtherapee/themes/21-Gray-Gray.iconset
-share/rawtherapee/themes/21-Gray-Orange.gtkrc
-share/rawtherapee/themes/21-Gray-Orange.iconset
-share/rawtherapee/themes/21-Gray-Purple.gtkrc
-share/rawtherapee/themes/21-Gray-Purple.iconset
-share/rawtherapee/themes/21-Gray-Red.gtkrc
-share/rawtherapee/themes/21-Gray-Red.iconset
-share/rawtherapee/themes/25-Gray-Gray.gtkrc
-share/rawtherapee/themes/25-Gray-Gray.iconset
-share/rawtherapee/themes/25-Gray-Purple.gtkrc
-share/rawtherapee/themes/25-Gray-Purple.iconset
-share/rawtherapee/themes/25-Gray-Red.gtkrc
-share/rawtherapee/themes/25-Gray-Red.iconset
-share/rawtherapee/themes/37-Gray-Red-Textured.gtkrc
-share/rawtherapee/themes/37-Gray-Red-Textured.iconset
-share/rawtherapee/themes/37-Gray-Red.gtkrc
-share/rawtherapee/themes/37-Gray-Red.iconset
-share/rawtherapee/themes/63-Gray-Cyan.gtkrc
-share/rawtherapee/themes/63-Gray-Cyan.iconset
-share/rawtherapee/themes/92-Beige-DarkCyan.gtkrc
-share/rawtherapee/themes/92-Beige-DarkCyan.iconset
-share/rawtherapee/themes/gray_textured/
-share/rawtherapee/themes/gray_textured/arrow-down-ins.png
-share/rawtherapee/themes/gray_textured/arrow-down-pre.png
-share/rawtherapee/themes/gray_textured/arrow-down.png
-share/rawtherapee/themes/gray_textured/arrow-left-ins.png
-share/rawtherapee/themes/gray_textured/arrow-left-pre.png
-share/rawtherapee/themes/gray_textured/arrow-left.png
-share/rawtherapee/themes/gray_textured/arrow-right-ins.png
-share/rawtherapee/themes/gray_textured/arrow-right-pre.png
-share/rawtherapee/themes/gray_textured/arrow-right.png
-share/rawtherapee/themes/gray_textured/arrow-up-ins.png
-share/rawtherapee/themes/gray_textured/arrow-up-pre.png
-share/rawtherapee/themes/gray_textured/arrow-up.png
-share/rawtherapee/themes/gray_textured/button-insensitive.png
-share/rawtherapee/themes/gray_textured/button-normal.png
-share/rawtherapee/themes/gray_textured/button-normal.xcf
-share/rawtherapee/themes/gray_textured/button-prelight.png
-share/rawtherapee/themes/gray_textured/button-pressed.png
-share/rawtherapee/themes/gray_textured/null.png
-share/rawtherapee/themes/gray_textured/pbtroughh.png
-share/rawtherapee/themes/gray_textured/pbtroughv.png
-share/rawtherapee/themes/gray_textured/rangeslider-ins.png
-share/rawtherapee/themes/gray_textured/rangeslider-pre.png
-share/rawtherapee/themes/gray_textured/rangeslider.png
-share/rawtherapee/themes/gray_textured/slider-h-ins.png
-share/rawtherapee/themes/gray_textured/slider-h-pre.png
-share/rawtherapee/themes/gray_textured/slider-h.png
-share/rawtherapee/themes/gray_textured/slider-v-ins.png
-share/rawtherapee/themes/gray_textured/slider-v-pre.png
-share/rawtherapee/themes/gray_textured/slider-v.png
-share/rawtherapee/themes/gray_textured/trough2-h.png
-share/rawtherapee/themes/gray_textured/trough2.png
-share/rawtherapee/themes/slim
+share/rawtherapee/themes/RawTherapee-GTK3-20_.css
+share/rawtherapee/themes/RawTherapee-GTK3-_19.css
+share/rawtherapee/themes/TooWaBlue-Bright-GTK3-20_.css
+share/rawtherapee/themes/TooWaBlue-Dark-GTK3-20_.css
+share/rawtherapee/themes/TooWaBlue-GTK3-20_.css
+share/rawtherapee/themes/TooWaBlue-GTK3-_19.css
+share/rawtherapee/themes/images/
+share/rawtherapee/themes/images/svg/
+share/rawtherapee/themes/images/svg/twb/
+share/rawtherapee/themes/images/svg/twb/checkbox-checked-disabled.svg
+share/rawtherapee/themes/images/svg/twb/checkbox-checked.svg
+share/rawtherapee/themes/images/svg/twb/checkbox-inconsistent-disabled.svg
+share/rawtherapee/themes/images/svg/twb/checkbox-inconsistent.svg
+share/rawtherapee/themes/images/svg/twb/checkbox-unchecked-disabled.svg
+share/rawtherapee/themes/images/svg/twb/checkbox-unchecked.svg
+share/rawtherapee/themes/images/svg/twb/radio-checked-disabled.svg
+share/rawtherapee/themes/images/svg/twb/radio-checked.svg
+share/rawtherapee/themes/images/svg/twb/radio-inconsistent-disabled.svg
+share/rawtherapee/themes/images/svg/twb/radio-inconsistent.svg
+share/rawtherapee/themes/images/svg/twb/radio-unchecked-disabled.svg
+share/rawtherapee/themes/images/svg/twb/radio-unchecked.svg
+share/rawtherapee/themes/images/twb/
+share/rawtherapee/themes/images/twb/checkbox-checked-disabled.png
+share/rawtherapee/themes/images/twb/checkbox-checked.png
+share/rawtherapee/themes/images/twb/checkbox-inconsistent-disabled.png
+share/rawtherapee/themes/images/twb/checkbox-inconsistent.png
+share/rawtherapee/themes/images/twb/checkbox-unchecked-disabled.png
+share/rawtherapee/themes/images/twb/checkbox-unchecked.png
+share/rawtherapee/themes/images/twb/radio-checked-disabled.png
+share/rawtherapee/themes/images/twb/radio-checked.png
+share/rawtherapee/themes/images/twb/radio-inconsistent-disabled.png
+share/rawtherapee/themes/images/twb/radio-inconsistent.png
+share/rawtherapee/themes/images/twb/radio-unchecked-disabled.png
+share/rawtherapee/themes/images/twb/radio-unchecked.png
 share/rawtherapee/themes/system.iconset
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
