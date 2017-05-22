@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_i18n_cc,v 1.1 2017/05/22 00:13:09 espie Exp $
+
+you no longer get prototypes for free
+
+Index: src/i18n.cc
+--- src/i18n.cc.orig
++++ src/i18n.cc
+@@ -26,6 +26,7 @@
+ #include <libintl.h>
+ 
+ #include <cstdlib>
++#include <clocale>
+ #include <utility>
+ 
+ #if __APPLE__  && LIBINTL_VERSION >= 0x001201

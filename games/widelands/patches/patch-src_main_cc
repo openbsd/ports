@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_main_cc,v 1.1 2017/05/22 00:13:09 espie Exp $
+
+Index: src/main.cc
+--- src/main.cc.orig
++++ src/main.cc
+@@ -36,6 +36,8 @@
+ #include <fcntl.h>
+ #endif
+ 
++#include <unistd.h>
++
+ using std::cerr;
+ using std::endl;
+ using std::flush;

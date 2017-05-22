@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_journal_exceptions_h,v 1.1 2017/05/22 00:13:09 espie Exp $
+
+You no longer get std::string for free
+
+Index: src/journal_exceptions.h
+--- src/journal_exceptions.h.orig
++++ src/journal_exceptions.h
+@@ -22,6 +22,7 @@
+ 
+ #include <stdint.h>
+ #include <stdexcept>
++#include <string>
+ 
+ ///
+ /// Thrown for IO-errors occurring with a journal file (unable to open file

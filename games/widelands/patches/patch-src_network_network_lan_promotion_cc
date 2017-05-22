@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_network_network_lan_promotion_cc,v 1.1 2017/05/22 00:13:09 espie Exp $
+
+Index: src/network/network_lan_promotion.cc
+--- src/network/network_lan_promotion.cc.orig
++++ src/network/network_lan_promotion.cc
+@@ -26,6 +26,7 @@
+ 
+ #include <cstdio>
+ #include <cstring>
++#include <sys/select.h>
+ 
+ /*** class LAN_Base ***/
+ 

@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_writeHTML_cc,v 1.1 2017/05/22 00:13:09 espie Exp $
+
+map wants const correct operator()
+
+Index: src/writeHTML.cc
+--- src/writeHTML.cc.orig
++++ src/writeHTML.cc
+@@ -223,7 +223,7 @@ void Tribe_Descr::referenceWare
+ //  A container to keep the types ordered by descname for the table of
+ // contents.
+ struct orderer {
+-	bool operator () (std::string const * const a, std::string const * const b)
++	bool operator () (std::string const * const a, std::string const * const b) const
+ 	{
+ 		return *a < *b;
+ 	}
