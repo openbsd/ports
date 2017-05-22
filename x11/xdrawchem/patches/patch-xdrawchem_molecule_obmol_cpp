@@ -1,0 +1,14 @@
+$OpenBSD: patch-xdrawchem_molecule_obmol_cpp,v 1.1 2017/05/22 18:28:05 espie Exp $
+
+Index: xdrawchem/molecule_obmol.cpp
+--- xdrawchem/molecule_obmol.cpp.orig
++++ xdrawchem/molecule_obmol.cpp
+@@ -22,7 +22,7 @@ struct Point {
+ 
+ struct pt_cmp {
+ 
+-  bool operator() (const Point& one, const Point& two) { return one<two; }
++  bool operator() (const Point& one, const Point& two) const { return one<two; }
+ 
+ };
+ 

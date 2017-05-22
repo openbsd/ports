@@ -1,0 +1,14 @@
+$OpenBSD: patch-xdrawchem_ioiface_cpp,v 1.1 2017/05/22 18:28:05 espie Exp $
+
+Index: xdrawchem/ioiface.cpp
+--- xdrawchem/ioiface.cpp.orig
++++ xdrawchem/ioiface.cpp
+@@ -39,7 +39,7 @@ struct Point {
+ 
+ struct pt_cmp {
+ 
+-  bool operator() (const Point& one, const Point& two) { return one<two; }
++  bool operator() (const Point& one, const Point& two) const { return one<two; }
+ 
+ };
+ 
