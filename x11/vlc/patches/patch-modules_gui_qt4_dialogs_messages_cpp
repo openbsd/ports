@@ -1,0 +1,24 @@
+$OpenBSD: patch-modules_gui_qt4_dialogs_messages_cpp,v 1.1 2017/05/22 10:22:25 espie Exp $
+Use qt4 atomics there, they're portable (taken from FreeBSD)
+
+Index: modules/gui/qt4/dialogs/messages.cpp
+--- modules/gui/qt4/dialogs/messages.cpp.orig
++++ modules/gui/qt4/dialogs/messages.cpp
+@@ -143,7 +143,7 @@ MessagesDialog::~MessagesDialog()
+ 
+ void MessagesDialog::changeVerbosity( int i_verbosity )
+ {
+-    atomic_store( &this->verbosity, i_verbosity );
++    verbosity = i_verbosity;
+ }
+ 
+ void MessagesDialog::updateConfig()
+@@ -337,7 +337,7 @@ void MessagesDialog::MsgCallback( void *self, int type
+ {
+     MessagesDialog *dialog = (MessagesDialog *)self;
+     char *str;
+-    int verbosity = atomic_load( &dialog->verbosity );
++    int verbosity = dialog->verbosity;
+ 
+     if( verbosity < 0 || verbosity < (type - VLC_MSG_ERR)
+      || unlikely(vasprintf( &str, format, ap ) == -1) )

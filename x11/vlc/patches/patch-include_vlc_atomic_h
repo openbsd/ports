@@ -1,0 +1,23 @@
+$OpenBSD: patch-include_vlc_atomic_h,v 1.1 2017/05/22 10:22:25 espie Exp $
+Use std::atomic, libc++ will bring them in anyway
+
+Index: include/vlc_atomic.h
+--- include/vlc_atomic.h.orig
++++ include/vlc_atomic.h
+@@ -26,7 +26,15 @@
+  * Atomic operations do not require locking, but they are not very powerful.
+  */
+ 
+-# if !defined (__cplusplus) && (__STDC_VERSION__ >= 201112L) \
++# if defined(__cplusplus) && __cplusplus >= 201103L
++#  include <atomic>
++using std::atomic_uint_least32_t;
++using std::atomic_init;
++using std::atomic_load;
++using std::atomic_store;
++using std::atomic_uint;
++
++# elif !defined (__cplusplus) && (__STDC_VERSION__ >= 201112L) \
+   && !defined (__STDC_NO_ATOMICS__)
+ 
+ /*** Native C11 atomics ***/

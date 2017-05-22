@@ -1,0 +1,11 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2017/05/22 10:22:25 espie Exp $
+--- Makefile.in.orig	Tue Jun 30 21:47:49 2015
++++ Makefile.in	Tue Jun 30 21:48:12 2015
+@@ -2915,6 +2915,7 @@ vlc$(EXEEXT):
+ install-exec-hook:
+ 	if test "$(build)" = "$(host)"; then \
+ 		PATH="$(DESTDIR)$(bindir):$$PATH" \
++		LD_DEBUG=1 \
+ 		LD_LIBRARY_PATH="$(DESTDIR)$(libdir):$$LD_LIBRARY_PATH" \
+ 		"$(DESTDIR)$(vlclibdir)/vlc-cache-gen$(EXEEXT)" \
+ 			 "$(DESTDIR)$(vlclibdir)/plugins" ; \

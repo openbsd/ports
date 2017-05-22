@@ -1,0 +1,15 @@
+$OpenBSD: patch-modules_gui_skins2_src_dialogs_cpp,v 1.1 2017/05/22 10:22:25 espie Exp $
+C++11 rules
+
+Index: modules/gui/skins2/src/dialogs.cpp
+--- modules/gui/skins2/src/dialogs.cpp.orig
++++ modules/gui/skins2/src/dialogs.cpp
+@@ -212,7 +212,7 @@ void Dialogs::showChangeSkin()
+ void Dialogs::showPlaylistLoad()
+ {
+     showFileGeneric( _("Open playlist"),
+-                     _("Playlist Files|"EXTENSIONS_PLAYLIST"|"
++                     _("Playlist Files|" EXTENSIONS_PLAYLIST "|"
+                        "All Files|*"),
+                      showPlaylistLoadCB, kOPEN );
+ }

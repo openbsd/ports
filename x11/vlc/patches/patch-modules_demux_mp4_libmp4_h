@@ -1,0 +1,15 @@
+$OpenBSD: patch-modules_demux_mp4_libmp4_h,v 1.1 2017/05/22 10:22:25 espie Exp $
+C++11 rules
+
+Index: modules/demux/mp4/libmp4.h
+--- modules/demux/mp4/libmp4.h.orig
++++ modules/demux/mp4/libmp4.h
+@@ -1360,7 +1360,7 @@ static inline size_t mp4_box_headersize( MP4_Box_t *p_
+     if( i_actually_read < 0 || (int64_t)i_actually_read < i_read )\
+     { \
+         msg_Warn( p_stream, "MP4_READBOX_ENTER: I got %i bytes, "\
+-        "but I requested %"PRId64"", i_actually_read, i_read );\
++        "but I requested %" PRId64 "", i_actually_read, i_read );\
+         free( p_buff ); \
+         return( 0 ); \
+     } \
