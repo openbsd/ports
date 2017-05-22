@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2017/05/05 18:16:53 juanfra Exp $
+# $OpenBSD: Makefile,v 1.8 2017/05/22 13:47:39 espie Exp $
 
 COMMENT =		zstandard fast real-time compression algorithm
 
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =		c pthread z
 
-MODULES =		gcc4
+WANT_CXX =		base gcc
 MODGCC4_LANGS =		c
 MODGCC4_ARCHS =		${GCC3_ARCHS} ${GCC4_ARCHS}
 
