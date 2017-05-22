@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2017/02/06 10:42:01 kirby Exp $
+# $OpenBSD: Makefile,v 1.16 2017/05/22 15:06:28 espie Exp $
 
 BROKEN-alpha =	OOM on XcomRuleset.cpp
 BROKEN-hppa =	OOM on Engine/Scalers/hq4x.cpp
@@ -16,13 +16,13 @@ MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =		GL SDL SDL_gfx SDL_image SDL_mixer c m pthread \
-			yaml-cpp
+			yaml-cpp ${LIBECXX}
 
 MASTER_SITES =		${HOMEPAGE}/wp-content/uploads/downloads/2014/06/
 
 MODULES =		devel/cmake gcc4
-MODGCC4_LANGS +=	c++
-MODGCC4_ARCHS = 	*
+
+WANT_CXX =		base gcc
 
 RUN_DEPENDS =		audio/timidity \
 			devel/desktop-file-utils \
