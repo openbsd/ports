@@ -1,0 +1,18 @@
+$OpenBSD: patch-modules_vuln-ftpd_vuln-ftpd_cpp,v 1.1 2017/05/22 16:26:49 espie Exp $
+
+Index: modules/vuln-ftpd/vuln-ftpd.cpp
+--- modules/vuln-ftpd/vuln-ftpd.cpp.orig
++++ modules/vuln-ftpd/vuln-ftpd.cpp
+@@ -206,9 +206,9 @@ ConsumeLevel FTPdDialogue::incomingData(Message *msg)
+ 	const char* s_not_logged_in       = "530 You are not logged in\r\n";
+ 	const char* s_auth_failed         = "530 Authentication failed, sorry\r\n";
+ 
+-	const char* cmd_user = "USER";
+-	const char* cmd_pass = "PASS";
+-	const char* cmd_quit = "QUIT";
++	const char cmd_user[] = "USER";
++	const char cmd_pass[] = "PASS";
++	const char cmd_quit[] = "QUIT";
+ 
+ 	uint32_t threshold = 40;
+ 

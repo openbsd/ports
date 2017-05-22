@@ -1,0 +1,22 @@
+$OpenBSD: patch-modules_shellcode-generic_sch_generic_unicode_cpp,v 1.1 2017/05/22 16:26:49 espie Exp $
+
+Index: modules/shellcode-generic/sch_generic_unicode.cpp
+--- modules/shellcode-generic/sch_generic_unicode.cpp.orig
++++ modules/shellcode-generic/sch_generic_unicode.cpp
+@@ -35,6 +35,7 @@
+ #include "Nepenthes.hpp"
+ #include "Utilities.hpp"
+ 
++#include <stdlib.h>
+ 
+ #ifdef STDTAGS 
+ 	#undef STDTAGS 
+@@ -186,7 +187,7 @@ uint32_t GenericUniCode::unicodeLength(uint8_t *unicod
+                                 state = 0;
+                                 break;
+                 }
+-                *unicode++;
++                unicode++;
+                 size++;
+                 len--;
+         }

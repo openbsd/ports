@@ -1,0 +1,12 @@
+$OpenBSD: patch-modules_vuln-msmq_vuln-msmq_cpp,v 1.1 2017/05/22 16:26:49 espie Exp $
+
+Index: modules/vuln-msmq/vuln-msmq.cpp
+--- modules/vuln-msmq/vuln-msmq.cpp.orig
++++ modules/vuln-msmq/vuln-msmq.cpp
+@@ -29,5 +29,6 @@
+ 
+ #include <ctype.h>
++#include <stdlib.h>
+ 
+ #include "vuln-msmq.hpp"
+ #include "MSMQDialogue.hpp"

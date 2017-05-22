@@ -1,0 +1,12 @@
+$OpenBSD: patch-modules_vuln-sub7_vuln-sub7_cpp,v 1.1 2017/05/22 16:26:49 espie Exp $
+
+Index: modules/vuln-sub7/vuln-sub7.cpp
+--- modules/vuln-sub7/vuln-sub7.cpp.orig
++++ modules/vuln-sub7/vuln-sub7.cpp
+@@ -29,5 +29,6 @@
+ 
+ #include <ctype.h>
++#include <stdlib.h>
+ 
+ #include "vuln-sub7.hpp"
+ #include "SUB7Dialogue.hpp"

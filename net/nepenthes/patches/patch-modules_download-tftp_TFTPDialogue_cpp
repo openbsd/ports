@@ -1,0 +1,13 @@
+$OpenBSD: patch-modules_download-tftp_TFTPDialogue_cpp,v 1.1 2017/05/22 16:26:49 espie Exp $
+
+Index: modules/download-tftp/TFTPDialogue.cpp
+--- modules/download-tftp/TFTPDialogue.cpp.orig
++++ modules/download-tftp/TFTPDialogue.cpp
+@@ -30,6 +30,7 @@
+ #include <sys/types.h>
+ #include <arpa/tftp.h>
+ #include <netinet/in.h>
++#include <stdlib.h>
+ 
+ #include "TFTPDialogue.hpp"
+ 

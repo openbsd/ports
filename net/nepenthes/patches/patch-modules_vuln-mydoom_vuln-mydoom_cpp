@@ -1,0 +1,13 @@
+$OpenBSD: patch-modules_vuln-mydoom_vuln-mydoom_cpp,v 1.1 2017/05/22 16:26:49 espie Exp $
+
+Index: modules/vuln-mydoom/vuln-mydoom.cpp
+--- modules/vuln-mydoom/vuln-mydoom.cpp.orig
++++ modules/vuln-mydoom/vuln-mydoom.cpp
+@@ -30,6 +30,7 @@
+ 
+ 
+ #include <ctype.h>
++#include <stdlib.h>
+ 
+ #include "vuln-mydoom.hpp"
+ #include "MydoomDialogue.hpp"

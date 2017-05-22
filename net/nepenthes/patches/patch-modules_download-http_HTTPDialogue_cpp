@@ -1,0 +1,14 @@
+$OpenBSD: patch-modules_download-http_HTTPDialogue_cpp,v 1.1 2017/05/22 16:26:49 espie Exp $
+
+Index: modules/download-http/HTTPDialogue.cpp
+--- modules/download-http/HTTPDialogue.cpp.orig
++++ modules/download-http/HTTPDialogue.cpp
+@@ -43,6 +43,8 @@
+ 
+ #include "Utilities.hpp"
+ 
++#include <stdlib.h>
++
+ #ifdef STDTAGS 
+ #undef STDTAGS 
+ #endif

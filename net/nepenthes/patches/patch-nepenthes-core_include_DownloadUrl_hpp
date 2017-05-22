@@ -1,0 +1,14 @@
+$OpenBSD: patch-nepenthes-core_include_DownloadUrl_hpp,v 1.1 2017/05/22 16:26:49 espie Exp $
+
+Index: nepenthes-core/include/DownloadUrl.hpp
+--- nepenthes-core/include/DownloadUrl.hpp.orig
++++ nepenthes-core/include/DownloadUrl.hpp
+@@ -43,7 +43,7 @@ namespace nepenthes
+ 	/**
+ 	 * protocoll/port mapping for various protocols
+ 	 */
+-	typedef struct portTable
++	struct portTable
+ 	{
+ 		const char      *protocolName;
+ 		uint16_t         port;

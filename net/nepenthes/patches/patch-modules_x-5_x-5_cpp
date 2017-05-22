@@ -1,0 +1,14 @@
+$OpenBSD: patch-modules_x-5_x-5_cpp,v 1.1 2017/05/22 16:26:49 espie Exp $
+
+Index: modules/x-5/x-5.cpp
+--- modules/x-5/x-5.cpp.orig
++++ modules/x-5/x-5.cpp
+@@ -35,6 +35,8 @@
+ 
+ #include "EventHandler.cpp"
+ 
++#include <stdlib.h>
++
+ using namespace nepenthes;
+ 
+ #ifdef STDTAGS 

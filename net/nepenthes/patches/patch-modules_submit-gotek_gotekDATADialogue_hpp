@@ -1,0 +1,14 @@
+$OpenBSD: patch-modules_submit-gotek_gotekDATADialogue_hpp,v 1.1 2017/05/22 16:26:49 espie Exp $
+
+Index: modules/submit-gotek/gotekDATADialogue.hpp
+--- modules/submit-gotek/gotekDATADialogue.hpp.orig
++++ modules/submit-gotek/gotekDATADialogue.hpp
+@@ -50,7 +50,7 @@ namespace nepenthes
+ 
+ 
+ 	class Buffer;
+-	class GotekContext;
++	struct GotekContext;
+ 
+ 	class gotekDATADialogue : public Dialogue
+ 	{

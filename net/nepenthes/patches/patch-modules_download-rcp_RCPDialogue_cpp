@@ -1,0 +1,13 @@
+$OpenBSD: patch-modules_download-rcp_RCPDialogue_cpp,v 1.1 2017/05/22 16:26:49 espie Exp $
+
+Index: modules/download-rcp/RCPDialogue.cpp
+--- modules/download-rcp/RCPDialogue.cpp.orig
++++ modules/download-rcp/RCPDialogue.cpp
+@@ -30,6 +30,7 @@
+ #include <sys/types.h>
+ #include <netinet/in.h>
+ #include <ctype.h>
++#include <stdlib.h>
+ 
+ #include "RCPDialogue.hpp"
+ 

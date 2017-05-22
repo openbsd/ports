@@ -1,0 +1,14 @@
+$OpenBSD: patch-modules_shellcode-signatures_sch_engine_unicode_cpp,v 1.1 2017/05/22 16:26:49 espie Exp $
+
+Index: modules/shellcode-signatures/sch_engine_unicode.cpp
+--- modules/shellcode-signatures/sch_engine_unicode.cpp.orig
++++ modules/shellcode-signatures/sch_engine_unicode.cpp
+@@ -188,7 +188,7 @@ uint32_t EngineUnicode::unicodeLength(uint8_t *unicode
+ 			state = 0;
+ 			break;
+ 		}
+-		*unicode++;
++		unicode++;
+ 		size++;
+ 		len--;
+ 	}

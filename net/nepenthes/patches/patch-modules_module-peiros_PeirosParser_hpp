@@ -1,0 +1,14 @@
+$OpenBSD: patch-modules_module-peiros_PeirosParser_hpp,v 1.1 2017/05/22 16:26:49 espie Exp $
+
+Index: modules/module-peiros/PeirosParser.hpp
+--- modules/module-peiros/PeirosParser.hpp.orig
++++ modules/module-peiros/PeirosParser.hpp
+@@ -35,7 +35,7 @@ namespace peiros
+ 
+ struct PeirosStringComparator
+ {
+-	bool operator()(string a, string b)
++	bool operator()(string a, string b) const
+ 	{
+ 		return a < b;
+ 	}

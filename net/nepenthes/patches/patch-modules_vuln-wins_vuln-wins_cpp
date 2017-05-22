@@ -1,0 +1,12 @@
+$OpenBSD: patch-modules_vuln-wins_vuln-wins_cpp,v 1.1 2017/05/22 16:26:49 espie Exp $
+
+Index: modules/vuln-wins/vuln-wins.cpp
+--- modules/vuln-wins/vuln-wins.cpp.orig
++++ modules/vuln-wins/vuln-wins.cpp
+@@ -29,5 +29,6 @@
+ 
+ #include <ctype.h>
++#include <stdlib.h>
+ 
+ #include "vuln-wins.hpp"
+ 

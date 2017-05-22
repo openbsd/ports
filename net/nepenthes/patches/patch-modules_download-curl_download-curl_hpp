@@ -1,8 +1,8 @@
-$OpenBSD: patch-modules_download-curl_download-curl_hpp,v 1.1 2011/07/05 08:18:30 jasper Exp $
---- modules/download-curl/download-curl.hpp.orig	Tue Jul  5 09:28:17 2011
-+++ modules/download-curl/download-curl.hpp	Tue Jul  5 09:28:22 2011
-@@ -28,7 +28,6 @@
-  /* $Id: patch-modules_download-curl_download-curl_hpp,v 1.1 2011/07/05 08:18:30 jasper Exp $ */
+$OpenBSD: patch-modules_download-curl_download-curl_hpp,v 1.2 2017/05/22 16:26:49 espie Exp $
+Index: modules/download-curl/download-curl.hpp
+--- modules/download-curl/download-curl.hpp.orig
++++ modules/download-curl/download-curl.hpp
+@@ -29,6 +29,5 @@
  
  #include <curl/curl.h>
 -#include <curl/types.h> /* new for v7 */

@@ -1,0 +1,23 @@
+$OpenBSD: patch-nepenthes-core_src_Config_cpp,v 1.1 2017/05/22 16:26:49 espie Exp $
+
+Index: nepenthes-core/src/Config.cpp
+--- nepenthes-core/src/Config.cpp.orig
++++ nepenthes-core/src/Config.cpp
+@@ -352,7 +352,7 @@ char *Config::parseString(CharField *data, int32_t lin
+ 
+ 					szHexConv[0] = data->getChar();
+ 					szHexConv[1] = data->getChar();
+-					szHexConv[3] = 0;
++					szHexConv[2] = 0;
+ //					printf("uint32_t i is here %i\n",i);
+ //					printf("Converting %i %c%c -> %i\n",i, szHexConv[0],szHexConv[1], (unsigned char)strtol(szHexConv,NULL,16) );
+ //					strtol(szHexConv,NULL,16);
+@@ -690,7 +690,7 @@ char *Config::terminateString(char *str)
+ 
+ 
+         i++;
+-        *str++;
++        str++;
+     }
+ 
+ //    m_terminatedstring = strdup(str);

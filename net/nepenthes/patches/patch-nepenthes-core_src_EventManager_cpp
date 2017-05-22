@@ -1,0 +1,13 @@
+$OpenBSD: patch-nepenthes-core_src_EventManager_cpp,v 1.1 2017/05/22 16:26:49 espie Exp $
+
+Index: nepenthes-core/src/EventManager.cpp
+--- nepenthes-core/src/EventManager.cpp.orig
++++ nepenthes-core/src/EventManager.cpp
+@@ -34,6 +34,7 @@
+ 
+ #include "LogManager.hpp"
+ 
++#include <stdlib.h>
+ using namespace nepenthes;
+ 
+ #ifdef STDTAGS 

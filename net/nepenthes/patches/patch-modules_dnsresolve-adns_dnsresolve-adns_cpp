@@ -1,0 +1,13 @@
+$OpenBSD: patch-modules_dnsresolve-adns_dnsresolve-adns_cpp,v 1.1 2017/05/22 16:26:49 espie Exp $
+
+Index: modules/dnsresolve-adns/dnsresolve-adns.cpp
+--- modules/dnsresolve-adns/dnsresolve-adns.cpp.orig
++++ modules/dnsresolve-adns/dnsresolve-adns.cpp
+@@ -29,6 +29,7 @@
+ 
+ #include <sys/poll.h>
+ #include <errno.h>
++#include <stdlib.h>
+ 
+ 
+ #include "dnsresolve-adns.hpp"

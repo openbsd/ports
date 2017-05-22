@@ -1,0 +1,12 @@
+$OpenBSD: patch-modules_vuln-pnp_vuln-pnp_cpp,v 1.1 2017/05/22 16:26:49 espie Exp $
+
+Index: modules/vuln-pnp/vuln-pnp.cpp
+--- modules/vuln-pnp/vuln-pnp.cpp.orig
++++ modules/vuln-pnp/vuln-pnp.cpp
+@@ -29,5 +29,6 @@
+ 
+ #include <ctype.h>
++#include <stdlib.h>
+ 
+ #include "vuln-pnp.hpp"
+ #include "PNPDialogue.hpp"

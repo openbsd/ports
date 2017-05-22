@@ -1,0 +1,13 @@
+$OpenBSD: patch-modules_log-prelude_log-prelude_hpp,v 1.1 2017/05/22 16:26:49 espie Exp $
+
+Index: modules/log-prelude/log-prelude.hpp
+--- modules/log-prelude/log-prelude.hpp.orig
++++ modules/log-prelude/log-prelude.hpp
+@@ -34,6 +34,7 @@
+ #endif
+ 
+ #include <string>
++#include <stdlib.h>
+ 
+ #include "Module.hpp"
+ #include "ModuleManager.hpp"

@@ -1,0 +1,13 @@
+$OpenBSD: patch-nepenthes-core_src_RingFileLogger_cpp,v 1.1 2017/05/22 16:26:49 espie Exp $
+
+Index: nepenthes-core/src/RingFileLogger.cpp
+--- nepenthes-core/src/RingFileLogger.cpp.orig
++++ nepenthes-core/src/RingFileLogger.cpp
+@@ -33,6 +33,7 @@
+ #include <sys/stat.h>
+ #include <unistd.h>
+ #include <stdio.h>
++#include <stdlib.h>
+ #include <string>
+ #include <errno.h>
+ #include <sys/types.h>

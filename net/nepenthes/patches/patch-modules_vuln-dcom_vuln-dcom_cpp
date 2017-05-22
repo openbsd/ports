@@ -1,0 +1,13 @@
+$OpenBSD: patch-modules_vuln-dcom_vuln-dcom_cpp,v 1.1 2017/05/22 16:26:49 espie Exp $
+
+Index: modules/vuln-dcom/vuln-dcom.cpp
+--- modules/vuln-dcom/vuln-dcom.cpp.orig
++++ modules/vuln-dcom/vuln-dcom.cpp
+@@ -29,6 +29,7 @@
+ 
+ 
+ #include <ctype.h>
++#include <stdlib.h>
+ 
+ #include "vuln-dcom.hpp"
+ 

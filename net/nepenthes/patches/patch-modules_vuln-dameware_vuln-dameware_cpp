@@ -1,0 +1,12 @@
+$OpenBSD: patch-modules_vuln-dameware_vuln-dameware_cpp,v 1.1 2017/05/22 16:26:49 espie Exp $
+
+Index: modules/vuln-dameware/vuln-dameware.cpp
+--- modules/vuln-dameware/vuln-dameware.cpp.orig
++++ modules/vuln-dameware/vuln-dameware.cpp
+@@ -29,5 +29,6 @@
+ 
+ #include <ctype.h>
++#include <stdlib.h>
+ 
+ #include "vuln-dameware.hpp"
+ #include "DWDialogue.hpp"

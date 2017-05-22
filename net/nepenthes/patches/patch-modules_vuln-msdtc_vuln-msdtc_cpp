@@ -1,0 +1,12 @@
+$OpenBSD: patch-modules_vuln-msdtc_vuln-msdtc_cpp,v 1.1 2017/05/22 16:26:49 espie Exp $
+
+Index: modules/vuln-msdtc/vuln-msdtc.cpp
+--- modules/vuln-msdtc/vuln-msdtc.cpp.orig
++++ modules/vuln-msdtc/vuln-msdtc.cpp
+@@ -29,5 +29,6 @@
+ 
+ #include <ctype.h>
++#include <stdlib.h>
+ 
+ #include "vuln-msdtc.hpp"
+ #include "MSDTCDialogue.hpp"

@@ -1,0 +1,12 @@
+$OpenBSD: patch-modules_vuln-iis_vuln-iis_cpp,v 1.1 2017/05/22 16:26:49 espie Exp $
+
+Index: modules/vuln-iis/vuln-iis.cpp
+--- modules/vuln-iis/vuln-iis.cpp.orig
++++ modules/vuln-iis/vuln-iis.cpp
+@@ -29,5 +29,6 @@
+ 
+ #include <ctype.h>
++#include <stdlib.h>
+ 
+ #include "vuln-iis.hpp"
+ #include "IISDialogue.hpp"

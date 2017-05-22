@@ -1,0 +1,12 @@
+$OpenBSD: patch-modules_x-6_x-6_cpp,v 1.1 2017/05/22 16:26:49 espie Exp $
+
+Index: modules/x-6/x-6.cpp
+--- modules/x-6/x-6.cpp.orig
++++ modules/x-6/x-6.cpp
+@@ -29,5 +29,6 @@
+ 
+ #include <ctype.h>
++#include <stdlib.h>
+ 
+ #include "x-6.hpp"
+ 

@@ -1,0 +1,12 @@
+$OpenBSD: patch-modules_vuln-lsass_vuln-lsass_cpp,v 1.1 2017/05/22 16:26:49 espie Exp $
+
+Index: modules/vuln-lsass/vuln-lsass.cpp
+--- modules/vuln-lsass/vuln-lsass.cpp.orig
++++ modules/vuln-lsass/vuln-lsass.cpp
+@@ -29,5 +29,6 @@
+ 
+ #include <ctype.h>
++#include <stdlib.h>
+ 
+ #include "vuln-lsass.hpp"
+ #include "LSASSDialogue.hpp"

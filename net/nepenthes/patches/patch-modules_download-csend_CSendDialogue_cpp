@@ -1,0 +1,13 @@
+$OpenBSD: patch-modules_download-csend_CSendDialogue_cpp,v 1.1 2017/05/22 16:26:49 espie Exp $
+
+Index: modules/download-csend/CSendDialogue.cpp
+--- modules/download-csend/CSendDialogue.cpp.orig
++++ modules/download-csend/CSendDialogue.cpp
+@@ -29,6 +29,7 @@
+  
+ #include <sys/types.h>
+ #include <netinet/in.h>
++#include <stdlib.h>
+ 
+ #include "CSendDialogue.hpp"
+ 

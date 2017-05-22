@@ -1,0 +1,13 @@
+$OpenBSD: patch-modules_module-peiros_PeirosParser_cpp,v 1.1 2017/05/22 16:26:49 espie Exp $
+
+Index: modules/module-peiros/PeirosParser.cpp
+--- modules/module-peiros/PeirosParser.cpp.orig
++++ modules/module-peiros/PeirosParser.cpp
+@@ -19,6 +19,7 @@
+  */
+ 
+ #include <ctype.h>
++#include <stdlib.h>
+ #include <stdio.h>
+ #include "PeirosParser.hpp"
+ #include "Nepenthes.hpp"

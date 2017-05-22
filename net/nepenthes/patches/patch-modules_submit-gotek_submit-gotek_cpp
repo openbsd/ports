@@ -1,0 +1,13 @@
+$OpenBSD: patch-modules_submit-gotek_submit-gotek_cpp,v 1.1 2017/05/22 16:26:49 espie Exp $
+
+Index: modules/submit-gotek/submit-gotek.cpp
+--- modules/submit-gotek/submit-gotek.cpp.orig
++++ modules/submit-gotek/submit-gotek.cpp
+@@ -36,6 +36,7 @@
+ #include <string.h>
+ #include <errno.h>
+ #include <assert.h>
++#include <stdlib.h>
+ 
+ #include "submit-gotek.hpp"
+ #include "gotekCTRLDialogue.hpp"

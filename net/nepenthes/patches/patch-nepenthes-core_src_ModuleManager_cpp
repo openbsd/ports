@@ -1,0 +1,12 @@
+$OpenBSD: patch-nepenthes-core_src_ModuleManager_cpp,v 1.1 2017/05/22 16:26:49 espie Exp $
+
+Index: nepenthes-core/src/ModuleManager.cpp
+--- nepenthes-core/src/ModuleManager.cpp.orig
++++ nepenthes-core/src/ModuleManager.cpp
+@@ -29,5 +29,6 @@
+ 
+ #include <dlfcn.h>
++#include <stdlib.h>
+ 
+ #include "ModuleManager.hpp"
+ #include "Module.hpp"

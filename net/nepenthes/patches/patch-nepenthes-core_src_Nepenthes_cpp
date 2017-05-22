@@ -1,0 +1,13 @@
+$OpenBSD: patch-nepenthes-core_src_Nepenthes_cpp,v 1.1 2017/05/22 16:26:49 espie Exp $
+
+Index: nepenthes-core/src/Nepenthes.cpp
+--- nepenthes-core/src/Nepenthes.cpp.orig
++++ nepenthes-core/src/Nepenthes.cpp
+@@ -36,6 +36,7 @@
+ #endif /* WIN32 */
+ 
+ #include <stdio.h>
++#include <stdlib.h>
+ #include <signal.h>
+ #include <sys/types.h>
+ #include <pwd.h>

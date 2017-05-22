@@ -1,0 +1,22 @@
+$OpenBSD: patch-nepenthes-core_src_Utilities_cpp,v 1.1 2017/05/22 16:26:49 espie Exp $
+
+Index: nepenthes-core/src/Utilities.cpp
+--- nepenthes-core/src/Utilities.cpp.orig
++++ nepenthes-core/src/Utilities.cpp
+@@ -34,6 +34,7 @@
+ 
+ 
+ #include <string.h>
++#include <stdlib.h>
+ #include <sys/types.h>
+ #include <inttypes.h>
+ #include <ctype.h>
+@@ -309,7 +310,7 @@ void Utilities::MD5Final(unsigned char digest[16], str
+     PUT_32BIT_LSB_FIRST(digest + 4, ctx->buf[1]);
+     PUT_32BIT_LSB_FIRST(digest + 8, ctx->buf[2]);
+     PUT_32BIT_LSB_FIRST(digest + 12, ctx->buf[3]);
+-    memset(ctx, 0, sizeof(ctx));        /* In case it's sensitive */
++    memset(ctx, 0, sizeof(*ctx));        /* In case it's sensitive */
+ }
+ 
+ 

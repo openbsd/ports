@@ -1,0 +1,13 @@
+$OpenBSD: patch-nepenthes-core_src_LogManager_cpp,v 1.1 2017/05/22 16:26:49 espie Exp $
+
+Index: nepenthes-core/src/LogManager.cpp
+--- nepenthes-core/src/LogManager.cpp.orig
++++ nepenthes-core/src/LogManager.cpp
+@@ -30,6 +30,7 @@
+ #include <stdarg.h>
+ #include <assert.h>
+ #include <stdio.h>
++#include <stdlib.h>
+ #include "LogManager.hpp"
+ #include "LogHandlerEntry.hpp"
+ #include "LogHandler.hpp"

@@ -1,0 +1,12 @@
+$OpenBSD: patch-modules_module-portwatch_module-portwatch_cpp,v 1.1 2017/05/22 16:26:49 espie Exp $
+
+Index: modules/module-portwatch/module-portwatch.cpp
+--- modules/module-portwatch/module-portwatch.cpp.orig
++++ modules/module-portwatch/module-portwatch.cpp
+@@ -29,5 +29,6 @@
+ 
+ #include <ctype.h>
++#include <stdlib.h>
+ 
+ #include "module-portwatch.hpp"
+ #include "WatchDialogue.hpp"

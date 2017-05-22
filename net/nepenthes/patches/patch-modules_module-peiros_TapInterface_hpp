@@ -1,0 +1,19 @@
+$OpenBSD: patch-modules_module-peiros_TapInterface_hpp,v 1.1 2017/05/22 16:26:49 espie Exp $
+
+Index: modules/module-peiros/TapInterface.hpp
+--- modules/module-peiros/TapInterface.hpp.orig
++++ modules/module-peiros/TapInterface.hpp
+@@ -75,10 +75,12 @@ class TapInterface : public POLLSocket (public)
+ private:
+ 	TapEncapsulator * m_encapsulator;
+ 	int m_fd;
+-	uint32_t m_netmask;
+ 	std::string m_devname;
++#ifdef __linux_
++	uint32_t m_netmask;
+ 	uint8_t m_hwaddr[6];
+ 	bool m_manageRoute;
++#endif
+ };
+ 
+ #endif // __INCLUDE_TapInterface_hpp

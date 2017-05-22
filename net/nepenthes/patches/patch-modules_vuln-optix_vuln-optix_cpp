@@ -1,0 +1,13 @@
+$OpenBSD: patch-modules_vuln-optix_vuln-optix_cpp,v 1.1 2017/05/22 16:26:49 espie Exp $
+
+Index: modules/vuln-optix/vuln-optix.cpp
+--- modules/vuln-optix/vuln-optix.cpp.orig
++++ modules/vuln-optix/vuln-optix.cpp
+@@ -30,6 +30,7 @@
+ 
+ 
+ #include <ctype.h>
++#include <stdlib.h>
+ 
+ #include "vuln-optix.hpp"
+ #include "OPTIXShellDialogue.hpp"

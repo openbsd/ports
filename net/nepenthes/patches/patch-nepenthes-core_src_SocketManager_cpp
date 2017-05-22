@@ -1,0 +1,40 @@
+$OpenBSD: patch-nepenthes-core_src_SocketManager_cpp,v 1.1 2017/05/22 16:26:49 espie Exp $
+
+Index: nepenthes-core/src/SocketManager.cpp
+--- nepenthes-core/src/SocketManager.cpp.orig
++++ nepenthes-core/src/SocketManager.cpp
+@@ -41,6 +41,7 @@
+ #include <net/if.h>
+ #include <arpa/inet.h>
+ #include <sys/ioctl.h>
++#include <stdlib.h>
+ #endif
+ 
+ 
+@@ -283,7 +284,7 @@ bool SocketManager::doLoop(uint32_t polltimeout)
+ 	{
+ 		// read sockets
+ 		i=0;
+-		for (itSocket = m_Sockets.begin();itSocket != m_Sockets.end(), socketcounter < socketmax ; itSocket++, socketcounter++)
++		for (itSocket = m_Sockets.begin();itSocket != m_Sockets.end() && socketcounter < socketmax ; itSocket++, socketcounter++)
+ 		{
+ 			if ( (*itSocket)->isPolled() == true )
+ 			{
+@@ -308,7 +309,7 @@ bool SocketManager::doLoop(uint32_t polltimeout)
+ 		// write sockets
+ 		i=0;
+ 		socketcounter=0;
+-		for (itSocket = m_Sockets.begin();itSocket != m_Sockets.end(), socketcounter < socketmax; itSocket++, socketcounter++)
++		for (itSocket = m_Sockets.begin();itSocket != m_Sockets.end() && socketcounter < socketmax; itSocket++, socketcounter++)
+ 		{
+ 			if ( (*itSocket)->isPolled() == true )
+ 			{
+@@ -337,7 +338,7 @@ bool SocketManager::doLoop(uint32_t polltimeout)
+ 		// accept new, non udp clients as udp does not accept()
+ 		i=0;
+ 		socketcounter=0;
+-		for (itSocket = m_Sockets.begin();itSocket != m_Sockets.end(), socketcounter < socketmax; itSocket++, socketcounter++)
++		for (itSocket = m_Sockets.begin();itSocket != m_Sockets.end() && socketcounter < socketmax; itSocket++, socketcounter++)
+ 		{
+ 				
+ 

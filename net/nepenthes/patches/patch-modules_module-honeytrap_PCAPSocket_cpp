@@ -1,0 +1,13 @@
+$OpenBSD: patch-modules_module-honeytrap_PCAPSocket_cpp,v 1.1 2017/05/22 16:26:49 espie Exp $
+
+Index: modules/module-honeytrap/PCAPSocket.cpp
+--- modules/module-honeytrap/PCAPSocket.cpp.orig
++++ modules/module-honeytrap/PCAPSocket.cpp
+@@ -34,6 +34,7 @@
+ #include <netinet/in.h>
+ #include <arpa/inet.h>
+ #include <errno.h>
++#include <stdlib.h>
+ 
+ #include "LogManager.hpp"
+ #include "PCAPSocket.hpp"
