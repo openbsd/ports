@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2017/04/21 12:18:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.73 2017/05/22 18:25:41 espie Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64
 
@@ -25,17 +25,16 @@ WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gphoto2 gphoto2_port
 WANTLIB += gthread-2.0 gtk-3 intl jpeg json-glib-1.0 lcms2 lensfun
 WANTLIB += lua5.2 m openjp2 osmgpsmap-1.0 pango-1.0 pangocairo-1.0
 WANTLIB += png pthread pugixml rsvg-2 secret-1 soup-2.4 sqlite3
-WANTLIB += tiff webp xml2 z
+WANTLIB += tiff webp xml2 z ${LIBECXX}
 
 MASTER_SITES=	https://github.com/darktable-org/darktable/releases/download/release-$V/
 
 MODULES=	devel/cmake \
-		gcc4 \
 		lang/lua \
 		textproc/intltool
 MODLUA_VERSION=	5.2
-MODGCC4_ARCHS=	* # gcc4 required for TLS emulation
-MODGCC4_LANGS=	c c++
+# TLS emulation
+WANT_CXX =	base gcc
 
 BUILD_DEPENDS=	sysutils/coreutils
 RUN_DEPENDS=	devel/desktop-file-utils \
