@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2016/10/29 10:36:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2017/05/22 13:54:51 espie Exp $
 
 COMMENT =		command line double-entry accounting ledger
 
@@ -19,14 +19,11 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += boost_date_time-mt boost_filesystem-mt boost_iostreams-mt
 WANTLIB += boost_regex-mt boost_system-mt boost_unit_test_framework-mt
-WANTLIB += c gmp m mpfr pthread
-
-MODGCC4_ARCHS =		*
-MODGCC4_LANGS +=	c++
+WANTLIB += c gmp m mpfr pthread ${LIBECXX}
 
 MODULES =		devel/cmake \
-			lang/python \
-			gcc4
+			lang/python
+WANT_CXX =		base gcc
 
 BUILD_DEPENDS =		devel/utfcpp
 LIB_DEPENDS =		devel/boost \
