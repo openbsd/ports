@@ -1,4 +1,4 @@
-# $OpenBSD: gcc4.port.mk,v 1.5 2016/03/05 15:27:27 pascal Exp $
+# $OpenBSD: gcc4.port.mk,v 1.6 2017/05/22 08:04:07 espie Exp $
 
 MODGCC4_ARCHS ?=
 MODGCC4_LANGS ?=
@@ -32,6 +32,7 @@ COMPILER_VERSION ?= gcc2
 MODGCC4STDCPP = estdc++
 MODGCC4_CPPLIBDEP = lang/gcc/4.9,-libs>=4.9,<4.10
 MODGCC4_CPPWANTLIB = estdc++>=17
+MODGCC4_ATOMICWANTLIB = atomic
 
 _MODGCC4_LINKS =
 .if ${_MODGCC4_ARCH_USES:L} == "yes"
