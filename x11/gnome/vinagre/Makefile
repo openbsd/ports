@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.103 2017/04/13 07:38:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.104 2017/05/22 22:20:01 espie Exp $
 
 COMMENT=		remote desktop viewer for GNOME
 
@@ -32,6 +32,9 @@ LIB_DEPENDS=		devel/vte3 \
 
 MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache \
 			shared-mime-info yelp
+
+# for clang, because it catches non-constant formats in printf-like routines
+CONFIGURE_ARGS +=	--enable-compile-warnings=minimum
 
 CONFIGURE_STYLE=	gnu
 
