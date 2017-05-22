@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2017/05/19 21:55:40 landry Exp $
+# $OpenBSD: Makefile,v 1.56 2017/05/22 10:26:14 espie Exp $
 
 COMMENT =	Firefox web browser, Extended Support Release
 
@@ -23,16 +23,15 @@ MODULES =	www/mozilla devel/gettext lang/python
 
 MODPY_RUNDEP =	No
 
-MODULES +=		lang/clang
+WANT_CXX =		base clang
 MODCLANG_ARCHS =	amd64 i386
-MODCLANG_LANGS =	c c++
 
 # firefox >= 44 doesnt build with base libevent
 MOZILLA_USE_BUNDLED_LIBEVENT =	Yes
 # firefox >= 46 defaults to gtk+3
 MOZILLA_USE_GTK3 = Yes
 
-WANTLIB += X11-xcb pixman-1 pthread-stubs xcb xcb-shm
+WANTLIB += X11-xcb pixman-1 pthread-stubs xcb xcb-shm ${LIBECXX}
 
 # Regression tests are too hard to adapt to run here
 NO_TEST =	Yes
