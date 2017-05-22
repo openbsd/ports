@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2017/04/10 11:46:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.60 2017/05/22 15:02:40 espie Exp $
 
 COMMENT =	SVG vector drawing application
 
@@ -26,15 +26,13 @@ WANTLIB += gtkspell harfbuzz iconv intl jbig jpeg lcms2 lzma m
 WANTLIB += openjp2 pango-1.0 pangocairo-1.0 pangoft2-1.0 pangomm-1.4
 WANTLIB += pcre pixman-1 png poppler poppler-glib popt potrace
 WANTLIB += pthread pthread-stubs sigc-2.0 ${LIBCXX} tiff webp xcb
-WANTLIB += xcb-render xcb-shm xml2 xslt
+WANTLIB += xcb-render xcb-shm xml2 xslt ${LIBECXX}
 
 MODULES=	textproc/intltool \
 		lang/python \
-		lang/ruby \
-		gcc4
+		lang/ruby
 
-MODGCC4_ARCHS=	*
-MODGCC4_LANGS=	c++
+WANT_CXX =	base gcc
 
 # We are just substituting paths at build time
 MODPY_BUILDDEP =	No
