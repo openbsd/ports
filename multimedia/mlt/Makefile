@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2016/04/28 08:20:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2017/05/22 13:55:53 espie Exp $
 
 COMMENT-main =		multimedia transformations framework
 COMMENT-gpl2 =		GPLv2-licensed modules for mlt
@@ -65,7 +65,8 @@ LIB_DEPENDS-gpl2 =	${BUILD_PKGPATH},-main \
 			graphics/libexif
 
 MAKE_FLAGS =		soversion=${LIBmlt_VERSION}
-MAKE_ENV =		LDFLAGS="${LDFLAGS} -L${X11BASE}/lib" SHFLAGS="-shared"
+MAKE_ENV =		LDFLAGS="${LDFLAGS} -L${X11BASE}/lib" \
+			SHFLAGS="-shared"  CXX=${CXX}
 
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	simple
