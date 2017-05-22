@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_shared_CLucene_LuceneThreads_h,v 1.1 2017/05/22 14:01:52 espie Exp $
+
+Index: src/shared/CLucene/LuceneThreads.h
+--- src/shared/CLucene/LuceneThreads.h.orig
++++ src/shared/CLucene/LuceneThreads.h
+@@ -7,6 +7,7 @@
+ #ifndef _LuceneThreads_h
+ #define  _LuceneThreads_h
+ 
++#include <pthread.h>
+ 
+ CL_NS_DEF(util)
+ class CLuceneThreadIdCompare;
