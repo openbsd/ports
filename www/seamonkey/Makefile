@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.200 2017/04/12 18:12:33 landry Exp $
+# $OpenBSD: Makefile,v 1.201 2017/05/22 13:58:24 espie Exp $
 
 COMMENT-main =		Mozilla application suite
 COMMENT-lightning =	Mozilla Seamonkey calendar extension
@@ -33,11 +33,9 @@ MODULES =	www/mozilla devel/gettext lang/python
 MODPY_RUNDEP =	No
 
 # necessary glue to build with the correct compiler after fx 17
-MODULES +=		gcc4 lang/clang
+WANT_CXX =	base gcc clang
 MODGCC4_ARCHS =		powerpc sparc64 alpha
-MODGCC4_LANGS =		c c++
 MODCLANG_ARCHS =	amd64 i386
-MODCLANG_LANGS =	c c++
 
 # gecko >= 44 doesnt build with base libevent
 MOZILLA_USE_BUNDLED_LIBEVENT =	Yes
