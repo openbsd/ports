@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_platform_services-bsd_c,v 1.1 2017/05/23 09:00:53 benoit Exp $
+--- src/platform/services-bsd.c.orig	Tue May 23 10:28:40 2017
++++ src/platform/services-bsd.c	Tue May 23 10:29:07 2017
+@@ -73,7 +73,7 @@
+  * df(1) manual page. However, df and df -a have the same output on 2 machines
+  * on which I could test. Use this workaround for now.
+  */
+-#if defined(__APPLE__)
++#if defined(__APPLE__) || defined(__OpenBSD__)
+ #ifndef MNT_IGNORE
+ #define MNT_IGNORE 0
+ #endif

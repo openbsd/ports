@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.6 2014/11/01 22:45:06 benoit Exp $
+# $OpenBSD: Makefile,v 1.7 2017/05/23 09:00:53 benoit Exp $
 
 COMMENT =	display file system space usage using graph and colors
 
-DISTNAME =	dfc-3.0.5
+DISTNAME =	dfc-3.1.0
 CATEGORIES =	sysutils
 
-MASTER_SITES =	http://projects.gw-computing.net/attachments/download/467/
-HOMEPAGE =	http://projects.gw-computing.net/projects/dfc
+MASTER_SITES =	https://projects.gw-computing.net/attachments/download/614/
+HOMEPAGE =	https://projects.gw-computing.net/projects/dfc
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

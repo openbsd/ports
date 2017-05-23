@@ -1,16 +1,19 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/01/14 15:52:22 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.3 2017/05/23 09:00:53 benoit Exp $
 @bin bin/dfc
 man/fr/
 man/fr/man1/
 @man man/fr/man1/dfc.1
 @man man/man1/dfc.1
+man/nl/
+man/nl/man1/
+@man man/nl/man1/dfc.1
 share/doc/dfc/
-share/doc/dfc/AUTHORS
-share/doc/dfc/CHANGELOG
-share/doc/dfc/HACKING
+share/doc/dfc/AUTHORS.md
+share/doc/dfc/CHANGELOG.md
+share/doc/dfc/HACKING.md
 share/doc/dfc/LICENSE
-share/doc/dfc/README
-share/doc/dfc/TRANSLATORS
+share/doc/dfc/README.md
+share/doc/dfc/TRANSLATORS.md
 share/examples/dfc/
 @sample ${SYSCONFDIR}/xdg/
 @sample ${SYSCONFDIR}/xdg/dfc/
@@ -18,4 +21,7 @@ share/examples/dfc/dfcrc
 @sample ${SYSCONFDIR}/xdg/dfc/dfcrc
 share/examples/dfc/fr/
 share/examples/dfc/fr/dfcrc
+share/examples/dfc/nl/
+share/examples/dfc/nl/dfcrc
 share/locale/fr/LC_MESSAGES/dfc.mo
+share/locale/nl/LC_MESSAGES/dfc.mo

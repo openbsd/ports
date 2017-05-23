@@ -1,20 +1,20 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.2 2013/04/12 10:22:34 benoit Exp $
---- CMakeLists.txt.orig	Mon Apr  8 15:14:28 2013
-+++ CMakeLists.txt	Fri Apr 12 11:39:15 2013
-@@ -70,6 +70,7 @@ endif()
+$OpenBSD: patch-CMakeLists_txt,v 1.3 2017/05/23 09:00:53 benoit Exp $
+--- CMakeLists.txt.orig	Sun Apr  9 11:36:02 2017
++++ CMakeLists.txt	Tue May 23 10:21:03 2017
+@@ -104,6 +104,7 @@
  
  # Check for libintl
  find_package(Libintl)
 +find_library(LIBICONV_LIBRARIES NAMES iconv)
  if (LIBINTL_FOUND)
- 	option(NLS_ENABLED "Translation support with gettext" on)
+     option(NLS_ENABLED "Translation support with gettext" on)
  else()
-@@ -134,7 +135,7 @@ if(NLS_ENABLED)
- 	add_subdirectory(po)
+@@ -191,7 +192,7 @@
+     add_subdirectory(po)
  
- 	include_directories(${LIBINTL_INCLUDE_DIR})
--	target_link_libraries(${EXECUTABLE_NAME} ${LIBINTL_LIBRARIES})
-+	target_link_libraries(${EXECUTABLE_NAME} ${LIBICONV_LIBRARIES} ${LIBINTL_LIBRARIES})
+     include_directories(${LIBINTL_INCLUDE_DIR})
+-    target_link_libraries(${EXECUTABLE_NAME} ${LIBINTL_LIBRARIES})
++    target_link_libraries(${EXECUTABLE_NAME} ${LIBICONV_LIBRARIES} ${LIBINTL_LIBRARIES})
  endif()
  
- set(DFC_DOC_FILES
+ # link libraries
