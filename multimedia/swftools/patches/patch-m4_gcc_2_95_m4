@@ -1,0 +1,14 @@
+$OpenBSD: patch-m4_gcc_2_95_m4,v 1.1 2017/05/23 21:26:06 espie Exp $
+
+Index: m4/gcc.2.95.m4
+--- m4/gcc.2.95.m4.orig
++++ m4/gcc.2.95.m4
+@@ -6,7 +6,7 @@ cat > conftest.c << EOF
+ #include <stdlib.h>
+ #include <stdio.h>
+ 
+-int main (int argc, char*argv[])
++int main (int argc, char**argv)
+ {
+     int a,b;
+     b=3;

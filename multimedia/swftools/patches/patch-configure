@@ -1,0 +1,14 @@
+$OpenBSD: patch-configure,v 1.1 2017/05/23 21:26:06 espie Exp $
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -3404,7 +3404,7 @@ cat > conftest.c << EOF
+ #include <stdlib.h>
+ #include <stdio.h>
+ 
+-int main (int argc, char*argv)
++int main (int argc, char**argv)
+ {
+     int a,b;
+     b=3;
