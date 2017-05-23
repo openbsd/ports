@@ -1,4 +1,4 @@
-# $OpenBSD: modules.port.mk,v 1.9 2017/05/22 08:06:25 espie Exp $
+# $OpenBSD: modules.port.mk,v 1.10 2017/05/23 15:12:28 espie Exp $
 #
 #  Copyright (c) 2001 Marc Espie
 # 
@@ -70,7 +70,7 @@ _MODGCC4_ARCH_USES = 	Yes
 
 .        if ${_MODGCC4_ARCH_USES:L} == "yes"
 MODULES +=		gcc4
-MODGCC4_LANGS +=	c c++
+MODGCC4_LANGS ?=	c c++
 CHOSEN_CXX = 		gcc
 _MODULES_KEEP_GOING = 	Yep
 .        endif
@@ -90,7 +90,7 @@ _MODCLANG_ARCH_USES = 	Yes
 
 .        if ${_MODCLANG_ARCH_USES:L} == "yes"
 MODULES +=		lang/clang
-MODCLANG_LANGS +=	c c++
+MODCLANG_LANGS ?=	c c++
 CHOSEN_CXX = 		clang
 _MODULES_KEEP_GOING = 	Yep
 .        endif
