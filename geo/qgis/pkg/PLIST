@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2017/04/18 12:08:59 landry Exp $
+@comment $OpenBSD: PLIST,v 1.28 2017/05/23 09:16:29 landry Exp $
 @bin bin/qbrowser
 @bin bin/qgis
 @bin bin/qgis_bench
@@ -394,8 +394,10 @@ include/qgis/qgsmaplayercombobox.h
 include/qgis/qgsmaplayerconfigwidget.h
 include/qgis/qgsmaplayerconfigwidgetfactory.h
 include/qgis/qgsmaplayerlegend.h
+include/qgis/qgsmaplayerlistutils.h
 include/qgis/qgsmaplayermodel.h
 include/qgis/qgsmaplayerproxymodel.h
+include/qgis/qgsmaplayerref.h
 include/qgis/qgsmaplayerregistry.h
 include/qgis/qgsmaplayerrenderer.h
 include/qgis/qgsmaplayerstylemanager.h
@@ -678,6 +680,7 @@ include/qgis/qgsvectorlayerfeatureiterator.h
 include/qgis/qgsvectorlayerimport.h
 include/qgis/qgsvectorlayerjoinbuffer.h
 include/qgis/qgsvectorlayerlabelprovider.h
+include/qgis/qgsvectorlayerref.h
 include/qgis/qgsvectorlayerrenderer.h
 include/qgis/qgsvectorlayerselectionmanager.h
 include/qgis/qgsvectorlayertools.h
@@ -779,6 +782,7 @@ lib/qgis/plugins/libzonalstatisticsplugin.so
 @bin lib/qgis/qgis_help
 @man man/man1/qbrowser.1
 @man man/man1/qgis.1
+share/applications/
 share/applications/qgis.desktop
 share/doc/qgis/
 share/doc/qgis/AUTHORS
@@ -795,7 +799,6 @@ share/doc/qgis/images/
 share/doc/qgis/images/qgis-icon-60x60.png
 share/doc/qgis/index.html
 share/doc/qgis/news.html
-share/doc/qgis/release-sponsors.html
 share/doc/qgis/style.css
 share/pixmaps/
 share/pixmaps/qgis-icon.png
