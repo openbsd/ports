@@ -1,7 +1,8 @@
-$OpenBSD: patch-tests_CMakeLists_txt,v 1.2 2014/07/09 20:03:24 zhuk Exp $
+$OpenBSD: patch-tests_CMakeLists_txt,v 1.3 2017/05/23 17:55:52 espie Exp $
 Fix linking.
---- tests/CMakeLists.txt.orig	Fri May  9 12:43:33 2014
-+++ tests/CMakeLists.txt	Wed Jun  4 04:02:31 2014
+Index: tests/CMakeLists.txt
+--- tests/CMakeLists.txt.orig
++++ tests/CMakeLists.txt
 @@ -20,7 +20,15 @@ include_directories(
    ${KDE4_KIO_INCLUDES}
  )
@@ -151,7 +152,7 @@ Fix linking.
  )
  
  ########### indenting test ################
-@@ -241,10 +227,8 @@ kde4_add_unit_test(bug286887_test TESTNAME kate-bug286
+@@ -253,10 +239,8 @@ kde4_add_unit_test(bug286887_test TESTNAME kate-bug286
  set_tests_properties(kate-bug286887_test PROPERTIES TIMEOUT 4)
  
  target_link_libraries( bug286887_test
@@ -163,7 +164,7 @@ Fix linking.
  )
  
  ########### bug 313759 test ###############
-@@ -257,10 +241,8 @@ set(bug313759_SRCS
+@@ -269,10 +253,8 @@ set(bug313759_SRCS
  kde4_add_unit_test(bug313759_test TESTNAME kate-bug313759_test ${bug313759_SRCS})
  
  target_link_libraries(bug313759_test
@@ -175,7 +176,7 @@ Fix linking.
  )
  
  ########### bug 313769 test ###############
-@@ -268,10 +250,8 @@ target_link_libraries(bug313759_test
+@@ -280,10 +262,8 @@ target_link_libraries(bug313759_test
  kde4_add_unit_test(bug313769_test TESTNAME kate-bug313769_test bug313769.cpp)
  
  target_link_libraries( bug313769_test
@@ -187,7 +188,7 @@ Fix linking.
  )
  
  ########### bug 317111 test ###############
-@@ -284,10 +264,8 @@ set(bug317111_SRCS
+@@ -296,10 +276,8 @@ set(bug317111_SRCS
  kde4_add_unit_test(bug317111_test TESTNAME kate-bug317111_test ${bug317111_SRCS})
  
  target_link_libraries( bug317111_test
@@ -199,7 +200,7 @@ Fix linking.
  )
  
  ########### KTextEditor::DocumentCursor test ###############
-@@ -295,10 +273,8 @@ target_link_libraries( bug317111_test
+@@ -307,10 +285,8 @@ target_link_libraries( bug317111_test
  kde4_add_unit_test(kte_documentcursor_test TESTNAME kte-documentcursor_test kte_documentcursor.cpp)
  
  target_link_libraries( kte_documentcursor_test
@@ -211,7 +212,7 @@ Fix linking.
  )
  
  ########### KTextEditor::MessageInterface test ###############
-@@ -306,10 +282,8 @@ target_link_libraries( kte_documentcursor_test
+@@ -318,10 +294,8 @@ target_link_libraries( kte_documentcursor_test
  kde4_add_unit_test(kte_messageinterface_test TESTNAME kte-messageinterface messagetest.cpp)
  
  target_link_libraries( kte_messageinterface_test
