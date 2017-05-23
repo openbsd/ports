@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.823 2017/05/19 07:59:53 pirofti Exp $
+# $OpenBSD: Makefile,v 1.824 2017/05/23 17:55:02 shadchin Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -381,6 +381,7 @@
      SUBDIR += py-bleach
      SUBDIR += py-bleach,python3
      SUBDIR += py-bokeh
+     SUBDIR += py-bokeh,python3
      SUBDIR += py-cheroot
      SUBDIR += py-cheroot,python3
      SUBDIR += py-cherrypy2
