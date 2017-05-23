@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2015/01/22 22:17:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.27 2017/05/23 08:00:48 espie Exp $
 
 COMMENT=	Atmel AVR 8-bit RISC microcontrollers' XGCC
 
@@ -39,7 +39,7 @@ CONFIGURE_ARGS+= 			\
 	--with-gmp=${LOCALBASE}		\
 	--with-mpfr=${LOCALBASE}
 
-MAKE_FLAGS=	LANGUAGES="c c++" CFLAGS="-I/usr/local/include"
+MAKE_FLAGS=	LANGUAGES="c c++" CFLAGS="-I/usr/local/include -fgnu89-inline"
 MAKE_ENV=	MACHINE_ARCH=avr
 
 SEPARATE_BUILD=	Yes

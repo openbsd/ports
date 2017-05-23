@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2014/03/24 16:47:13 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2017/05/23 08:00:48 espie Exp $
 
 COMMENT = 	bootstrap compiler for the AVR32 toolchain
 V = 		4.4.7
@@ -29,6 +29,8 @@ BUILD_DEPENDS = 	devel/avr32/binutils
 RUN_DEPENDS = 		devel/avr32/binutils
 LIB_DEPENDS = 		devel/gmp \
 			devel/mpfr
+
+CFLAGS +=		-fgnu89-inline
 
 SEPARATE_BUILD =	Yes
 
