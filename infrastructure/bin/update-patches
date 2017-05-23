@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 
-# $OpenBSD: update-patches,v 1.12 2017/05/17 11:31:17 espie Exp $
+# $OpenBSD: update-patches,v 1.13 2017/05/23 17:52:34 espie Exp $
 # Copyright (c) 2017
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
@@ -38,6 +38,9 @@ my ($distorig, $patchorig, $wrkdist, $patchdir, $patch_list) =
     ($ENV{DISTORIG}, $ENV{PATCHORIG}, $ENV{WRKDIST}, $ENV{PATCHDIR},
 	 $ENV{PATCH_LIST});
 
+if ($patchorig ne '.orig') {
+	say "PATCHORIG=$patchorig";
+}
 my $force = defined($ENV{FORCE_REGEN});
 
 # protect against dirty stuff
