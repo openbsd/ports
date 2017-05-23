@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2017/04/28 16:58:50 pascal Exp $
+# $OpenBSD: Makefile,v 1.9 2017/05/23 22:56:57 espie Exp $
 
 COMMENT =		widgets library for graphics engines
 
@@ -25,16 +25,16 @@ MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += GL GLEW GLU Irrlicht OIS OgreMain SDL2 SDL2_image boost_system-mt
-WANTLIB += boost_thread-mt c expat freeimage freetype glfw iconv m pcre
-WANTLIB += pthread
+WANTLIB += boost_thread-mt c expat freeimage freetype glfw iconv m pcre 
+WANTLIB += pthread ${LIBECXX}
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=crayzedsgui/}
 EXTRACT_SUFX =		.tar.bz2
 
-MODULES =		devel/cmake \
-			gcc4
-MODGCC4_ARCHS =		*
-MODGCC4_LANGS +=	c++
+MODULES =		devel/cmake
+
+WANT_CXX =		base gcc
+
 BUILD_DEPENDS =		graphics/glm
 LIB_DEPENDS =		x11/ogre \
 			x11/irrlicht \

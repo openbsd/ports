@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2016/05/07 12:40:57 pascal Exp $
+# $OpenBSD: Makefile,v 1.7 2017/05/23 22:56:57 espie Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 
@@ -24,18 +24,15 @@ WANTLIB += CEGUIBase-0 CEGUIOgreRenderer-0 OIS OgreMain OgreRTShaderSystem
 WANTLIB += OgreTerrain X11 Xrandr alut boost_chrono-mt boost_date_time-mt
 WANTLIB += boost_filesystem-mt boost_system-mt boost_thread-mt
 WANTLIB += c enet m ogg openal physfs pthread tinyxml vorbis
-WANTLIB += vorbisfile boost_atomic-mt ${MODLUA_WANTLIB}
+WANTLIB += vorbisfile boost_atomic-mt ${MODLUA_WANTLIB} ${LIBECXX}
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=sumwars/}
 EXTRACT_SUFX =		.tar.bz2
 
 MODULES =		devel/cmake \
 			devel/gettext \
-			lang/lua \
-			gcc4
+			lang/lua
 MODLUA_VERSION =	5.2
-MODGCC4_ARCHS =		*
-MODGCC4_LANGS +=	c++
 
 LIB_DEPENDS =		x11/cegui \
 			audio/freealut \
