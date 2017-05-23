@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_rss_c,v 1.9 2017/04/17 16:53:25 ajacoutot Exp $
+$OpenBSD: patch-src_rss_c,v 1.10 2017/05/23 21:00:59 espie Exp $
 
 From c78ce3988f68d030b01723fa33ebb64d7a86ed7d Mon Sep 17 00:00:00 2001
 From: Milan Crha <mcrha@redhat.com>
@@ -10,8 +10,9 @@ From: Milan Crha <mcrha@redhat.com>
 Date: Wed, 17 Aug 2016 18:43:48 +0200
 Subject: Adapt to changes in evolution 3.21.90
 
---- src/rss.c.orig	Mon Apr 17 18:45:46 2017
-+++ src/rss.c	Mon Apr 17 18:45:42 2017
+Index: src/rss.c
+--- src/rss.c.orig
++++ src/rss.c
 @@ -1302,15 +1302,24 @@ org_gnome_evolution_presend (EPlugin *ep, EMEventTarge
  
  #if EVOLUTION_VERSION >= 31303
@@ -77,6 +78,15 @@ Subject: Adapt to changes in evolution 3.21.90
  #else
  	camel_message_info_free(info);
  #endif
+@@ -4356,7 +4379,7 @@ process_attachments(create_feed *CF)
+ 	gdouble emax;
+ 	guint proc = 0;
+ 
+-	g_return_if_fail(CF->attachments != NULL);
++	g_return_val_if_fail(CF->attachments != NULL, FALSE);
+ 
+ 	do {
+ 		if (!strlen(l->data))
 @@ -4699,10 +4722,18 @@ delete_oldest_article(CamelFolder *folder, guint unrea
  		if (info) {
  			if (rf->current_uid && !strcmp(rf->current_uid, uids->pdata[i]))
