@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2017/05/22 15:06:28 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2017/05/23 15:18:46 espie Exp $
 
 BROKEN-alpha =	OOM on XcomRuleset.cpp
 BROKEN-hppa =	OOM on Engine/Scalers/hq4x.cpp
@@ -20,7 +20,7 @@ WANTLIB =		GL SDL SDL_gfx SDL_image SDL_mixer c m pthread \
 
 MASTER_SITES =		${HOMEPAGE}/wp-content/uploads/downloads/2014/06/
 
-MODULES =		devel/cmake gcc4
+MODULES =		devel/cmake
 
 WANT_CXX =		base gcc
 
