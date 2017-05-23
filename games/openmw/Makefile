@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2016/12/27 12:54:10 pascal Exp $
+# $OpenBSD: Makefile,v 1.7 2017/05/23 17:54:54 espie Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 
@@ -21,15 +21,14 @@ WANTLIB += QtGui QtNetwork QtOpenGL SDL2 avcodec avformat avutil
 WANTLIB += boost_filesystem-mt boost_program_options-mt boost_system-mt
 WANTLIB += c m openal osg osgAnimation
 WANTLIB += osgDB osgFX osgGA osgParticle osgText osgUtil
-WANTLIB += osgViewer pthread swresample swscale unshield
+WANTLIB += osgViewer pthread swresample swscale unshield ${LIBECXX}
 
 GH_ACCOUNT =		OpenMW
 GH_PROJECT =		openmw
 GH_TAGNAME =		openmw-$V
 
-MODULES =		gcc4 devel/cmake x11/qt4
-MODGCC4_ARCHS = 	*
-MODGCC4_LANGS += 	c++
+MODULES =		devel/cmake x11/qt4
+WANT_CXX =		base gcc
 BUILD_DEPENDS = 	sysutils/e2fsprogs
 LIB_DEPENDS =		audio/openal \
 			devel/bullet \

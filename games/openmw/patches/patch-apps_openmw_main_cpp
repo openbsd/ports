@@ -1,0 +1,12 @@
+$OpenBSD: patch-apps_openmw_main_cpp,v 1.1 2017/05/23 17:54:54 espie Exp $
+
+Index: apps/openmw/main.cpp
+--- apps/openmw/main.cpp.orig
++++ apps/openmw/main.cpp
+@@ -1,5 +1,6 @@
+ #include <iostream>
+ #include <cstdio>
++#include <unistd.h>
+ 
+ #include <components/version/version.hpp>
+ #include <components/files/configurationmanager.hpp>
