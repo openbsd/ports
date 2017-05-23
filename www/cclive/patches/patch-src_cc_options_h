@@ -1,10 +1,11 @@
-$OpenBSD: patch-src_cc_options_h,v 1.3 2015/06/29 07:14:10 jasper Exp $
+$OpenBSD: patch-src_cc_options_h,v 1.4 2017/05/23 21:01:46 espie Exp $
 
 Add explicit <iostream> includes, fixes build with Boost 1.56
 https://github.com/legatvs/cclive/pull/2
 
---- src/cc/options.h.orig	Sat Nov 23 10:46:27 2013
-+++ src/cc/options.h	Sun Jun 28 21:43:12 2015
+Index: src/cc/options.h
+--- src/cc/options.h.orig
++++ src/cc/options.h
 @@ -37,6 +37,7 @@
  #include <boost/filesystem.hpp>
  #include <boost/foreach.hpp>
@@ -13,3 +14,12 @@ https://github.com/legatvs/cclive/pull/2
  #include <fstream>
  
  #include <ccerror>
+@@ -746,7 +747,7 @@ struct options : boost::noncopyable (private)
+ #endif
+               << "\n  built on " << BUILD_TIME
+               << " for "         << CANONICAL_TARGET
+-              << "\n    with "   << CXX", "CXXFLAGS
++              << "\n    with "   << CXX ", " CXXFLAGS
+               << "\n  libquvi "  << quvi::version()
+               << "\n  libquvi-scripts "
+               << quvi_version(QUVI_VERSION_SCRIPTS)
