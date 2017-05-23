@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_runtime_gc-common_c,v 1.1 2017/05/23 14:19:01 espie Exp $
+ffsl is non-standard, but both gcc and clang have it as builtin...
+clang only has it as builtin
+
+Index: src/runtime/gc-common.c
+--- src/runtime/gc-common.c.orig
++++ src/runtime/gc-common.c
+@@ -52,6 +52,8 @@
+ #endif
+ #endif
+ 
++#define ffsl	__builtin_ffsl
++
+ os_vm_size_t dynamic_space_size = DEFAULT_DYNAMIC_SPACE_SIZE;
+ os_vm_size_t thread_control_stack_size = DEFAULT_CONTROL_STACK_SIZE;
+ 

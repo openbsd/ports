@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_runtime_Config_generic-openbsd,v 1.1 2017/05/23 14:19:01 espie Exp $
+Don't try to guess (wrong) with clang. Just assume we have pie
+
+Index: src/runtime/Config.generic-openbsd
+--- src/runtime/Config.generic-openbsd.orig
++++ src/runtime/Config.generic-openbsd
+@@ -12,13 +12,9 @@
+ LINKFLAGS += -export-dynamic -Wl,-z,wxneeded
+ OS_LIBS += -lutil
+ 
+-# If the compiler recognizes a -nopie flag then we're building on a
+-# PIE-by-default system, so disable PIE.
+-ifneq ($(shell $(CC) -dumpspecs 2>/dev/null | grep -e -nopie),)
+-CFLAGS += -fno-pie
++CFLAGS += -fno-pie
+ LINKFLAGS += -nopie
+ LDFLAGS += -nopie
+-endif
+ 
+ ifdef LISP_FEATURE_SB_THREAD
+ CFLAGS += -pthread
