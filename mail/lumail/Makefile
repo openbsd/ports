@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2016/08/09 01:34:05 jturner Exp $
+# $OpenBSD: Makefile,v 1.26 2017/05/23 20:55:37 espie Exp $
 
 PORTROACH =		limit:^0
 
@@ -16,14 +16,12 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB +=		c gio-2.0 glib-2.0 glibmm-2.4 gmime-2.6 gobject-2.0
 WANTLIB +=		intl ${MODLUA_WANTLIB} m ncursesw pcrecpp pthread
-WANTLIB +=		sigc-2.0
+WANTLIB +=		sigc-2.0 ${LIBECXX}
 
 MODULES =		lang/lua
 
 # c++11
-MODULES +=		gcc4
-MODGCC4_ARCHS =		*
-MODGCC4_LANGS =		c++
+WANT_CXX =		base gcc
 
 LIB_DEPENDS +=		${MODLUA_LIB_DEPENDS} \
 			devel/glib2mm \
