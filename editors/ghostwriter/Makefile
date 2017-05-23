@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2017/04/12 18:12:33 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2017/05/23 09:54:13 awolk Exp $
 
 # qt5 webkit
 USE_WXNEEDED =	Yes
@@ -7,8 +7,7 @@ COMMENT =	distraction-free Markdown editor
 
 GH_ACCOUNT =	wereturtle
 GH_PROJECT =	ghostwriter
-GH_TAGNAME =	v1.4.2
-REVISION =	0
+GH_TAGNAME =	v1.5.0
 
 CATEGORIES =	editors
 
@@ -34,8 +33,6 @@ LIB_DEPENDS =		textproc/hunspell \
 NO_TEST =		Yes
 
 pre-configure:
-	@sed -i 's,VERSION = ..system.*,VERSION =,' \
-		${WRKSRC}/ghostwriter.pro
 	@sed -i 's,/share/man/man1,/man/man1,' \
 		${WRKSRC}/ghostwriter.pro
 
