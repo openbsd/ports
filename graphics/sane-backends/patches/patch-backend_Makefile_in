@@ -1,7 +1,8 @@
-$OpenBSD: patch-backend_Makefile_in,v 1.9 2015/10/09 07:06:52 ajacoutot Exp $
---- backend/Makefile.in.orig	Sun Oct  4 15:24:33 2015
-+++ backend/Makefile.in	Thu Oct  8 07:59:29 2015
-@@ -1919,7 +1919,7 @@ AM_LDFLAGS = @STRICT_LDFLAGS@
+$OpenBSD: patch-backend_Makefile_in,v 1.10 2017/05/23 13:00:46 ajacoutot Exp $
+Index: backend/Makefile.in
+--- backend/Makefile.in.orig
++++ backend/Makefile.in
+@@ -1947,7 +1947,7 @@ top_srcdir = @top_srcdir@
  # The -rpath option is added because we are creating _LTLIBRARIES based
  # on configure substitution.  This causes automake to not know the
  # correct $libdir and must be added here.

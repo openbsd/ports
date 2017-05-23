@@ -1,0 +1,13 @@
+$OpenBSD: patch-frontend_scanimage_c,v 1.3 2017/05/23 13:00:47 ajacoutot Exp $
+
+Index: frontend/scanimage.c
+--- frontend/scanimage.c.orig
++++ frontend/scanimage.c
+@@ -38,6 +38,7 @@
+ #include <string.h>
+ #include <unistd.h>
+ #include <stdarg.h>
++#include <libgen.h> /* basename(3) */
+ 
+ #include <sys/types.h>
+ #include <sys/stat.h>

@@ -1,7 +1,8 @@
-$OpenBSD: patch-backend_dll_conf_in,v 1.9 2016/01/09 09:52:03 ajacoutot Exp $
---- backend/dll.conf.in.orig	Mon Aug 24 02:52:49 2015
-+++ backend/dll.conf.in	Thu Oct  8 07:59:29 2015
-@@ -31,7 +31,7 @@ genesys
+$OpenBSD: patch-backend_dll_conf_in,v 1.10 2017/05/23 13:00:46 ajacoutot Exp $
+Index: backend/dll.conf.in
+--- backend/dll.conf.in.orig
++++ backend/dll.conf.in
+@@ -39,7 +39,7 @@ genesys
  gt68xx
  hp
  hp3900
@@ -10,7 +11,7 @@ $OpenBSD: patch-backend_dll_conf_in,v 1.9 2016/01/09 09:52:03 ajacoutot Exp $
  hp3500
  hp4200
  hp5400
-@@ -63,7 +63,7 @@ pixma
+@@ -71,7 +71,7 @@ pixma
  plustek
  #plustek_pp
  #pnm

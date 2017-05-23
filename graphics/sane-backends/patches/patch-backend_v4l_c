@@ -1,7 +1,19 @@
-$OpenBSD: patch-backend_v4l_c,v 1.1 2016/01/09 09:52:03 ajacoutot Exp $
---- backend/v4l.c.orig	Sat Jan  9 10:44:36 2016
-+++ backend/v4l.c	Sat Jan  9 10:45:34 2016
-@@ -72,7 +72,10 @@
+$OpenBSD: patch-backend_v4l_c,v 1.2 2017/05/23 13:00:46 ajacoutot Exp $
+
+error: '__u32' undeclared (first use in this function)
+
+Index: backend/v4l.c
+--- backend/v4l.c.orig
++++ backend/v4l.c
+@@ -61,6 +61,7 @@
+ #include <sys/types.h>
+ #include <sys/wait.h>
+ #include <unistd.h>
++#include <stdint.h>
+ #include <sys/mman.h>
+ 
+ #include <unistd.h>
+@@ -72,7 +73,10 @@
  #include "../include/sane/saneopts.h"
  
  #include <sys/ioctl.h>
@@ -12,3 +24,14 @@ $OpenBSD: patch-backend_v4l_c,v 1.1 2016/01/09 09:52:03 ajacoutot Exp $
  
  #define BACKEND_NAME v4l
  #include "../include/sane/sanei_backend.h"
+@@ -86,6 +90,10 @@
+ 
+ #include <libv4l1.h>
+ #include "v4l.h"
++
++#if !defined(__linux__) 
++typedef uint32_t __u32;
++#endif
+ 
+ static const SANE_Device **devlist = NULL;
+ static int num_devices;

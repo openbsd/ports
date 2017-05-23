@@ -1,10 +1,11 @@
-$OpenBSD: patch-backend_xerox_mfp_h,v 1.1 2012/08/28 08:26:40 ajacoutot Exp $
+$OpenBSD: patch-backend_xerox_mfp_h,v 1.2 2017/05/23 13:00:47 ajacoutot Exp $
 
 /usr/include/sys/param.h:190:1: warning: this is the location of the previous definition
 
---- backend/xerox_mfp.h.orig	Tue Aug 28 09:29:54 2012
-+++ backend/xerox_mfp.h	Tue Aug 28 09:31:42 2012
-@@ -18,7 +18,9 @@
+Index: backend/xerox_mfp.h
+--- backend/xerox_mfp.h.orig
++++ backend/xerox_mfp.h
+@@ -21,7 +21,9 @@
  #define UNUSED(x) x
  #endif
  

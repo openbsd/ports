@@ -1,11 +1,12 @@
-$OpenBSD: patch-backend_sm3600-scanusb_c,v 1.1 2016/05/18 20:02:27 sthen Exp $
+$OpenBSD: patch-backend_sm3600-scanusb_c,v 1.2 2017/05/23 13:00:46 ajacoutot Exp $
 
 errno.h header is required now that errno is a per-thread variable.
 "undefined symbol 'errno'" at runtime with dlopen()'d modules.
 
---- backend/sm3600-scanusb.c.orig	Wed May 18 14:00:07 2016
-+++ backend/sm3600-scanusb.c	Wed May 18 14:00:14 2016
-@@ -51,6 +51,7 @@
+Index: backend/sm3600-scanusb.c
+--- backend/sm3600-scanusb.c.orig
++++ backend/sm3600-scanusb.c
+@@ -51,6 +51,7 @@ $Id: patch-backend_sm3600-scanusb_c,v 1.2 2017/05/23 13:00:46 ajacoutot Exp $
  
  ====================================================================== */
  

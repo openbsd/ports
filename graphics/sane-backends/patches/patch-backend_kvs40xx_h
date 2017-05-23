@@ -1,11 +1,12 @@
-$OpenBSD: patch-backend_kvs40xx_h,v 1.1 2015/12/21 08:40:00 ajacoutot Exp $
---- backend/kvs40xx.h.orig	Mon Dec 21 09:32:49 2015
-+++ backend/kvs40xx.h	Mon Dec 21 09:33:08 2015
+$OpenBSD: patch-backend_kvs40xx_h,v 1.2 2017/05/23 13:00:46 ajacoutot Exp $
+Index: backend/kvs40xx.h
+--- backend/kvs40xx.h.orig
++++ backend/kvs40xx.h
 @@ -9,6 +9,7 @@
  */
  
  #include "../include/sane/config.h"
 +#include <pthread.h>
  #include <semaphore.h>
- 
- #undef  BACKEND_NAME
+ #ifdef HAVE_SYS_TYPES_H
+ #include <sys/types.h>
