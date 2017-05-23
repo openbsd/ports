@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2017/01/14 18:03:42 shadchin Exp $
+# $OpenBSD: Makefile,v 1.20 2017/05/23 17:52:39 shadchin Exp $
 
 COMMENT=		Natural Language ToolKit
 
-MODPY_EGG_VERSION =	3.2.2
+MODPY_EGG_VERSION =	3.2.4
 DISTNAME=		nltk-${MODPY_EGG_VERSION}
 PKGNAME=		py-nltk-${MODPY_EGG_VERSION}
 CATEGORIES=		textproc
@@ -16,10 +16,9 @@ MAINTAINER =		Alexandr Shadchin <shadchin@openbsd.org>
 # Apache License, Version 2.0
 PERMIT_PACKAGE_CDROM=	Yes
 
-MODPY_PI =		Yes
-
 MODULES=		lang/python
 
+MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
 RUN_DEPENDS=		devel/py-six${MODPY_FLAVOR} \

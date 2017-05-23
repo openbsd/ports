@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2017/01/14 18:03:42 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.8 2017/05/23 17:52:39 shadchin Exp $
 lib/python${MODPY_VERSION}/site-packages/nltk/
 lib/python${MODPY_VERSION}/site-packages/nltk-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/nltk-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -341,6 +341,7 @@ lib/python${MODPY_VERSION}/site-packages/nltk/parse/${MODPY_PYCACHE}__init__.${M
 lib/python${MODPY_VERSION}/site-packages/nltk/parse/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nltk/parse/${MODPY_PYCACHE}bllip.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nltk/parse/${MODPY_PYCACHE}chart.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/nltk/parse/${MODPY_PYCACHE}corenlp.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nltk/parse/${MODPY_PYCACHE}dependencygraph.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nltk/parse/${MODPY_PYCACHE}earleychart.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nltk/parse/${MODPY_PYCACHE}evaluate.${MODPY_PYC_MAGIC_TAG}pyc
@@ -359,6 +360,7 @@ lib/python${MODPY_VERSION}/site-packages/nltk/parse/${MODPY_PYCACHE}viterbi.${MO
 lib/python${MODPY_VERSION}/site-packages/nltk/parse/api.py
 lib/python${MODPY_VERSION}/site-packages/nltk/parse/bllip.py
 lib/python${MODPY_VERSION}/site-packages/nltk/parse/chart.py
+lib/python${MODPY_VERSION}/site-packages/nltk/parse/corenlp.py
 lib/python${MODPY_VERSION}/site-packages/nltk/parse/dependencygraph.py
 lib/python${MODPY_VERSION}/site-packages/nltk/parse/earleychart.py
 lib/python${MODPY_VERSION}/site-packages/nltk/parse/evaluate.py
@@ -582,6 +584,7 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/nltk/test/unit/${MODPY_
 lib/python${MODPY_VERSION}/site-packages/nltk/test/unit/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nltk/test/unit/${MODPY_PYCACHE}test_2x_compat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nltk/test/unit/${MODPY_PYCACHE}test_aline.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/nltk/test/unit/${MODPY_PYCACHE}test_chunk.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nltk/test/unit/${MODPY_PYCACHE}test_classify.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nltk/test/unit/${MODPY_PYCACHE}test_collocations.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nltk/test/unit/${MODPY_PYCACHE}test_corpora.${MODPY_PYC_MAGIC_TAG}pyc
@@ -599,6 +602,7 @@ lib/python${MODPY_VERSION}/site-packages/nltk/test/unit/${MODPY_PYCACHE}test_twi
 lib/python${MODPY_VERSION}/site-packages/nltk/test/unit/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nltk/test/unit/test_2x_compat.py
 lib/python${MODPY_VERSION}/site-packages/nltk/test/unit/test_aline.py
+lib/python${MODPY_VERSION}/site-packages/nltk/test/unit/test_chunk.py
 lib/python${MODPY_VERSION}/site-packages/nltk/test/unit/test_classify.py
 lib/python${MODPY_VERSION}/site-packages/nltk/test/unit/test_collocations.py
 lib/python${MODPY_VERSION}/site-packages/nltk/test/unit/test_corpora.py
