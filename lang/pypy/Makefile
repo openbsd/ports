@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2016/09/23 09:16:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2017/05/23 20:55:13 espie Exp $
 
 ONLY_FOR_ARCHS =	amd64
 
@@ -55,9 +55,10 @@ DISTFILES +=		${BOOTSTRAP-${MACHINE_ARCH}}:0
 # if adding archs, list *all* bootstraps in SUPDISTFILES
 SUPDISTFILES =		${BOOTSTRAP-amd64}:0
 
-MODULES +=		lang/python gcc4 lang/tcl x11/tk
+MODULES +=		lang/python lang/tcl x11/tk
 MODPY_VERSION =		2.7
-MODGCC4_ARCHS =		*
+
+WANT_CXX =		base gcc
 MODGCC4_LANGS =		c
 
 USE_GMAKE =		Yes
