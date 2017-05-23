@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.225 2017/05/17 07:34:19 pea Exp $
+# $OpenBSD: Makefile,v 1.226 2017/05/23 14:17:00 sthen Exp $
 
 COMMENT-main=	PostgreSQL RDBMS (client)
 COMMENT-server=	PostgreSQL RDBMS (server)
@@ -16,7 +16,7 @@ PKGNAME-docs=	postgresql-docs-${VERSION}
 PKGNAME-contrib=postgresql-contrib-${VERSION}
 PKGNAME-plpython=postgresql-plpython-${VERSION}
 PKGNAME-pg_upgrade=postgresql-pg_upgrade-${VERSION}
-
+REVISION-server= 0
 
 CATEGORIES=	databases
 SHARED_LIBS=	ecpg		7.8 \

@@ -1,4 +1,4 @@
-$OpenBSD: README-server,v 1.21 2017/02/09 15:14:11 sthen Exp $
+$OpenBSD: README-server,v 1.22 2017/05/23 14:17:00 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -119,7 +119,7 @@ to the current version.
 # su _postgresql -c "pg_dumpall -U postgres > /var/postgresql/full.sqldump"
 
 2) Shutdown the server:
-# ${RCDIR}/postgresql stop
+# rcctl stop postgresql
 
 3) Upgrade your PostgreSQL package with pkg_add.
 # pkg_add -ui postgresql-server
@@ -141,7 +141,7 @@ Some postgresql.conf settings changed or disappeared in this version.
 Examine your old file for local changes and apply them to the new version.
 
 7) Start PostgreSQL:
-# ${RCDIR}/postgresql start
+# rcctl start postgresql
 
 8) Restore your data:
 # su _postgresql -c "psql -U postgres < /var/postgresql/full.sqldump"
@@ -154,7 +154,7 @@ PostgreSQL supported by OpenBSD to the current version, and should be
 faster than a dump and reload, especially for large databases. 
 
 1) Shutdown the server:
-# ${RCDIR}/postgresql stop
+# rcctl stop postgresql
 
 2) Upgrade your PostgreSQL package with pkg_add.
 # pkg_add postgresql-pg_upgrade
@@ -188,7 +188,7 @@ Examine your old file for local changes and apply them to the new version.
 # su _postgresql -c "vi /var/postgresql/data/pg_hba.conf"
 
 9) Start PostgreSQL:
-# ${RCDIR}/postgresql start
+# rcctl start postgresql
 
 Clients/Frontends
 =================
