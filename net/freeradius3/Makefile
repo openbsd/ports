@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2017/03/09 21:25:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2017/05/23 14:35:04 sthen Exp $
 
 PORTROACH=	limit:^3\.
 
@@ -12,6 +12,7 @@ COMMENT-pgsql=	freeradius pgsql rlm addon
 COMMENT-python=	freeradius python rlm addon
 
 V=		3.0.13
+REVISION-main=	0
 REVISION-iodbc=	0
 DISTNAME=	freeradius-server-$V
 
@@ -53,9 +54,11 @@ TEST_TARGET=	test
 TEST_DEPENDS=	freeradius-$V:${BUILD_PKGPATH}
 TEST_IS_INTERACTIVE=Yes # doesn't exit properly
 
-MODULES=	gcc4 \
-		lang/python
-MODGCC4_ARCHS=	*
+MODULES=	lang/python
+
+# thread-local storage
+WANT_CXX=	base gcc
+MODGCC4_LANGS=	c
 
 MULTI_PACKAGES= -main -freetds -iodbc -ldap -memcached -mysql -pgsql -python
 
@@ -78,10 +81,9 @@ LIB_DEPENDS-main=	databases/gdbm \
 			devel/pcre \
 			net/curl
 
-WANTLIB-main += ${WANTLIB}
 WANTLIB-main += c crypto curl execinfo gdbm hiredis json-c m nghttp2
 WANTLIB-main += pcap pcre perl pthread readline sqlite3 ssl talloc termcap
-WANTLIB-main += util ykclient yubikey z
+WANTLIB-main += ykclient yubikey z
 
 PSEUDO_FLAVORS= no_freetds no_iodbc no_ldap no_memcached no_mysql \
 		no_pgsql no_python
