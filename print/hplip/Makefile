@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.154 2017/04/18 18:18:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.155 2017/05/23 13:01:05 ajacoutot Exp $
 
 PORTROACH=		skipv:${V}_py2.5
 
@@ -19,6 +19,8 @@ PKGNAME-hpaio=		hpaio-${V}
 PKGNAME-hpcups=		hpcups-${V}
 PKGNAME-hpijs=		hpijs-${V}
 PKGNAME-gui=		hplip-gui-${V}
+
+REVISION-hpaio=		0
 
 SHARED_LIBS +=  hpdiscovery          0.0      # 0.1
 SHARED_LIBS +=  hpmud                2.0      # 0.6
@@ -76,7 +78,7 @@ RUN_DEPENDS-common=	# empty
 WANTLIB-hpaio += ${cWANTLIB}
 WANTLIB-hpaio += avahi-client avahi-common cups dbus-1 ffi gmp gnutls
 WANTLIB-hpaio += hogweed hpip hpipp hpmud jpeg netsnmp nettle p11-kit
-WANTLIB-hpaio += sane tasn1 tiff usb usb-1.0 z hpdiscovery
+WANTLIB-hpaio += sane tasn1 tiff usb-1.0 z hpdiscovery
 WANTLIB-hpaio += v4l1 v4l2 v4lconvert idn2 iconv intl execinfo
 WANTLIB-hpaio += unistring
 
