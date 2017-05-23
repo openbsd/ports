@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2015/01/25 23:22:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2017/05/23 18:43:41 espie Exp $
 
 COMMENT = 	Atmel AVR 32-bit gcc
 V = 		4.4.7
@@ -30,6 +30,8 @@ RUN_DEPENDS = 		devel/avr32/binutils \
 			devel/avr32/headers
 LIB_DEPENDS = 		devel/gmp \
 			devel/mpfr
+
+CFLAGS +=		-fgnu89-inline
 
 SEPARATE_BUILD =	Yes
 
