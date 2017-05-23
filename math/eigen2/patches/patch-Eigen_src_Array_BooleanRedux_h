@@ -1,0 +1,14 @@
+$OpenBSD: patch-Eigen_src_Array_BooleanRedux_h,v 1.1 2017/05/23 23:19:08 espie Exp $
+
+Index: Eigen/src/Array/BooleanRedux.h
+--- Eigen/src/Array/BooleanRedux.h.orig
++++ Eigen/src/Array/BooleanRedux.h
+@@ -139,7 +139,7 @@ inline bool MatrixBase<Derived>::any() const
+ template<typename Derived>
+ inline int MatrixBase<Derived>::count() const
+ {
+-  return this->cast<bool>().cast<int>().sum();
++  return this->cast<bool>().template cast<int>().sum();
+ }
+ 
+ #endif // EIGEN_ALLANDANY_H
