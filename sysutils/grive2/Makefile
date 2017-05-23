@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/01/18 09:31:42 benoit Exp $
+# $OpenBSD: Makefile,v 1.3 2017/05/23 20:58:22 espie Exp $
 
 COMMENT =	third-party client for Google Drive
 
@@ -20,13 +20,14 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += boost_filesystem-mt boost_program_options-mt boost_regex-mt
 WANTLIB += boost_system-mt boost_unit_test_framework-mt c curl
-WANTLIB += expat gcrypt gpg-error iberty m pthread yajl z
+WANTLIB += expat gcrypt gpg-error iberty m pthread yajl z ${LIBECXX}
 
-MODULES =	devel/cmake \
-		gcc4
+MODULES =	devel/cmake
 
-MODGCC4_LANGS =	c++
-MODGCC4_ARCHS =	*
+WANT_CXX =	base gcc
+
+CXXFLAGS +=	-I${LOCALBASE}/include
+
 
 LIB_DEPENDS =	devel/boost \
 		devel/libyajl \
