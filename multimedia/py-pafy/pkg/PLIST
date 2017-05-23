@@ -1,12 +1,27 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/06/28 22:52:21 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.3 2017/05/23 11:11:16 benoit Exp $
 bin/ytdl
 lib/python${MODPY_VERSION}/site-packages/pafy/
 lib/python${MODPY_VERSION}/site-packages/pafy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/pafy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/pafy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/pafy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/pafy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/pafy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pafy/__init__.py
 lib/python${MODPY_VERSION}/site-packages/pafy/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/pafy/backend_internal.py
+lib/python${MODPY_VERSION}/site-packages/pafy/backend_internal.pyc
+lib/python${MODPY_VERSION}/site-packages/pafy/backend_shared.py
+lib/python${MODPY_VERSION}/site-packages/pafy/backend_shared.pyc
+lib/python${MODPY_VERSION}/site-packages/pafy/backend_youtube_dl.py
+lib/python${MODPY_VERSION}/site-packages/pafy/backend_youtube_dl.pyc
+lib/python${MODPY_VERSION}/site-packages/pafy/g.py
+lib/python${MODPY_VERSION}/site-packages/pafy/g.pyc
+lib/python${MODPY_VERSION}/site-packages/pafy/jsinterp.py
+lib/python${MODPY_VERSION}/site-packages/pafy/jsinterp.pyc
 lib/python${MODPY_VERSION}/site-packages/pafy/pafy.py
 lib/python${MODPY_VERSION}/site-packages/pafy/pafy.pyc
+lib/python${MODPY_VERSION}/site-packages/pafy/playlist.py
+lib/python${MODPY_VERSION}/site-packages/pafy/playlist.pyc
+lib/python${MODPY_VERSION}/site-packages/pafy/util.py
+lib/python${MODPY_VERSION}/site-packages/pafy/util.pyc
