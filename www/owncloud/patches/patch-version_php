@@ -1,15 +1,17 @@
-$OpenBSD: patch-version_php,v 1.10 2017/04/28 10:20:37 ajacoutot Exp $
+$OpenBSD: patch-version_php,v 1.11 2017/05/23 08:57:27 ajacoutot Exp $
 
 Prevents code integrity check warnings.
 https://doc.owncloud.org/server/10.0/admin_manual/issues/code_signing.html
 
---- version.php.orig	Wed Apr 26 13:44:07 2017
-+++ version.php	Fri Apr 28 10:45:40 2017
-@@ -1,6 +1,6 @@
+Index: version.php
+--- version.php.orig
++++ version.php
+@@ -1,7 +1,7 @@
  <?php 
- $OC_Version = array(10,0,0,12);
- $OC_VersionString = '10.0.0';
+ $OC_Version = array(10,0,1,5);
+ $OC_VersionString = '10.0.1';
 -$OC_Channel = 'stable';
 +$OC_Channel = 'OpenBSD ports';
- $OC_VersionCanBeUpgradedFrom = array(9,1);
- $OC_Build = '2017-04-26T11:44:04+00:00 ce40499f02717afa0af25bf2f67629a3159a29d3';
+ $OC_VersionCanBeUpgradedFrom = [[9,0,9],[9,1]];
+ $OC_Build = '2017-05-22T19:55:15+00:00 1c54fcd45dc4bc242eeb84b56a85da7a276d55a8';
+ $vendor = 'owncloud';
