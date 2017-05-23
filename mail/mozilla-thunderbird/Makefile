@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.244 2017/05/16 17:55:05 landry Exp $
+# $OpenBSD: Makefile,v 1.245 2017/05/23 20:56:06 espie Exp $
 
 COMMENT-main =		Mozilla e-mail, rss and usenet client
 COMMENT-lightning =	Mozilla Thunderbird calendar extension
@@ -32,9 +32,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 MODULES =	www/mozilla devel/gettext lang/python
 MODPY_RUNDEP =	No
 
-MODULES +=		lang/clang
+WANT_CXX =		base clang
 MODCLANG_ARCHS =	amd64 i386
-MODCLANG_LANGS =	c c++
 
 MOZILLA_USE_BUNDLED_LIBEVENT =	Yes
 # firefox >= 46 defaults to gtk+3
@@ -54,7 +53,7 @@ CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include"
 
 LIB_DEPENDS-lightning = STEM->=${MOZILLA_VERSION:S/b/beta/}:${BUILD_PKGPATH},-main
 WANTLIB-lightning =	lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/xul \
-			c m estdc++ nspr4 plc4 plds4 pthread
+			c m $(LIBECXX) nspr4 plc4 plds4 pthread
 
 WANTLIB += X11-xcb pixman-1 pthread-stubs xcb xcb-shm
 
