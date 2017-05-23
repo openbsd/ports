@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2017/03/06 18:03:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2017/05/23 20:53:27 espie Exp $
 
 COMMENT =		C++ parser for the HOCON configuration language
 
@@ -14,10 +14,10 @@ MAINTAINER =		Sebastian Reitenbach <sebastia@openbsd.org>
 # Apachev2
 PERMIT_PACKAGE_CDROM =	Yes
 
-MODULES =		devel/cmake \
-			gcc4
-MODGCC4_ARCHS =		*
-MODGCC4_LANGS =		c++
+MODULES =		devel/cmake
+WANTLIB =		${LIBECXX}
+
+WANT_CXX =		base gcc
 
 CXXFLAGS +=		-pthread
 
