@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2017/05/13 09:43:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2017/05/23 20:18:45 espie Exp $
 
 COMMENT =		collection of C++ and CMake utility libraries
 
@@ -13,11 +13,10 @@ MAINTAINER =		Sebastian Reitenbach <sebastia@openbsd.org>
 # Apachev2
 PERMIT_PACKAGE_CDROM =	Yes
 
-MODULES =		devel/cmake \
-			gcc4
+MODULES =		devel/cmake
 
-MODGCC4_ARCHS =		*
-MODGCC4_LANGS +=	c++
+WANT_CXX =		base gcc
+WANTLIB +=		${LIBECXX}
 
 BUILD_DEPENDS =		devel/boost \
 			devel/gettext-tools \
@@ -26,7 +25,7 @@ BUILD_DEPENDS =		devel/boost \
 # cmake tests are botched
 CONFIGURE_ARGS +=	-DLEATHERMAN_ENABLE_TESTING:Bool=No
 
-CXXFLAGS +=		-pthread
+CXXFLAGS +=		-pthread 
 
 NO_TEST =		Yes
 
