@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2016/04/15 08:53:49 shadchin Exp $
+# $OpenBSD: Makefile,v 1.8 2017/05/24 14:07:11 sthen Exp $
 
 COMMENT =	Python driver for mongodb
 
-MODPY_EGG_VERSION = 2.7.2
+MODPY_EGG_VERSION = 3.4.0
 DISTNAME =	pymongo-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:S/py//}
-REVISION =	1
 
 CATEGORIES =	databases devel
 
@@ -19,24 +18,16 @@ WANTLIB =	pthread ${MODPY_WANTLIB}
 MODPY_PI =	Yes
 
 MODULES =	lang/python
+FLAVORS =	python3
+FLAVOR ?=
 
 MODPY_SETUPTOOLS =	Yes
 
-BUILD_DEPENDS =	textproc/py-sphinx
-TEST_DEPENDS =	devel/py-nose
+TEST_DEPENDS =	devel/py-nose${MODPY_FLAVOR}
 
-# needs a running mongodb instance in 127.0.0.1:27017
+# needs a running mongodb instance in 127.0.0.1:27017,
+# and increased kern.somaxconn
 TEST_IS_INTERACTIVE = Yes
-
-post-build:
-	@cd ${WRKSRC} && \
-	    ${SETENV} ${MAKE_ENV} ${MODPY_BIN} ${MODPY_SETUP} doc
-
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/${MODPY_PY_PREFIX}mongo
-	cd ${WRKSRC}/doc/_build/${MODPY_EGG_VERSION} && \
-	    pax -rw * ${PREFIX}/share/doc/${MODPY_PY_PREFIX}mongo
-	rm -rf ${PREFIX}/share/doc/${MODPY_PY_PREFIX}mongo/_sources
 
 .include <bsd.port.arch.mk>
 
