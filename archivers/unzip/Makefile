@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.61 2017/04/12 11:11:52 bluhm Exp $
+# $OpenBSD: Makefile,v 1.62 2017/05/24 13:52:34 sthen Exp $
 
-PORTROACH =	skipv:552
+PORTROACH =	skipv:551,552
 
 COMMENT =	extract, list & test files in a ZIP archive
 
