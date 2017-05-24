@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/12/25 14:54:48 zhuk Exp $
+# $OpenBSD: Makefile,v 1.3 2017/05/24 19:38:09 espie Exp $
 
 COMMENT =	core components for the KDE Activity concept
 DISTNAME =	kactivities-${VERSION}
@@ -21,7 +21,7 @@ LIB_DEPENDS =	devel/kf5/kconfig \
 		devel/kf5/kio \
 		x11/qt5/qtdeclarative
 
-CONFIGURE_ENV =	CXXFLAGS="${CXXFLAGS} -DBOOST_NO_EXCEPTIONS=1"
+CONFIGURE_ENV =	CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include -DBOOST_NO_EXCEPTIONS=1"
 
 # please CMake
 CONFIGURE_ARGS +=	-DCMAKE_POLICY_DEFAULT_CMP0048=OLD
