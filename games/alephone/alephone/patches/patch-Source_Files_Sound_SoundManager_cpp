@@ -1,13 +1,14 @@
-$OpenBSD: patch-Source_Files_Sound_SoundManager_cpp,v 1.1 2015/06/29 07:31:48 jasper Exp $
+$OpenBSD: patch-Source_Files_Sound_SoundManager_cpp,v 1.2 2017/05/24 01:01:29 espie Exp $
 
 Directly include iostream for cerr (newer Boost versions no longer pull it in for us)
 upstream rev 5012
 
---- Source_Files/Sound/SoundManager.cpp.orig	Sun Jun 28 22:18:21 2015
-+++ Source_Files/Sound/SoundManager.cpp	Sun Jun 28 22:18:55 2015
-@@ -20,6 +20,7 @@ SOUND.C
+Index: Source_Files/Sound/SoundManager.cpp
+--- Source_Files/Sound/SoundManager.cpp.orig
++++ Source_Files/Sound/SoundManager.cpp
+@@ -22,6 +22,7 @@ SOUND.C
  
- */
+ #include <iostream>
  
 +#include <iostream>
  #include "SoundManager.h"
