@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/06/23 17:51:31 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.9 2017/05/24 15:52:52 espie Exp $
 
 COMMENT =		game based on the Sonic the Hedgehog universe
 
@@ -27,6 +27,7 @@ LIB_DEPENDS =		games/allegro \
 
 WANTLIB =		alleg c ogg m pthread vorbis vorbisfile
 
+CFLAGS +=		-fgnu89-inline
 CONFIGURE_ENV =		OPENSNC_ALLEGRO_CFLAGS="`allegro-config --cflags`" \
 			OPENSNC_ALLEGRO_LIBS="`allegro-config --libs`" \
 			OPENSNC_ALLEGRO_VERSION="`allegro-config --version`"
