@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_qtruby_cpp,v 1.1 2017/05/24 12:46:40 espie Exp $
+
+Index: src/qtruby.cpp
+--- src/qtruby.cpp.orig
++++ src/qtruby.cpp
+@@ -2094,7 +2094,7 @@ isObject(VALUE /*self*/, VALUE obj)
+ {
+     void * ptr = 0;
+     ptr = value_to_ptr(obj);
+-    return (ptr > 0 ? Qtrue : Qfalse);
++    return (ptr != 0 ? Qtrue : Qfalse);
+ }
+ 
+ static VALUE
