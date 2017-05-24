@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_raknet_RakPeer_cpp,v 1.1 2017/05/24 15:37:35 espie Exp $
+I don't even get how this could ever compile (banList is a list of pointers,
+and IP is an array inside the struct)
+
+Index: src/raknet/RakPeer.cpp
+--- src/raknet/RakPeer.cpp.orig
++++ src/raknet/RakPeer.cpp
+@@ -1060,8 +1060,7 @@ void RakPeer::ClearBanList( void )
+ 
+ 	for ( ; index < banList.size(); index++ )
+ 	{
+-		delete [] banList[ index ]->IP;
+-		delete [] banList[ index ];
++		delete banList[ index ];
+ 	}
+ 
+ 	banList.clear();

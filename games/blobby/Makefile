@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2017/04/10 11:45:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2017/05/24 15:37:35 espie Exp $
 
 COMMENT =		volleyball game with online play
 
 V =			1.0rc3
 DISTNAME =		blobby2-linux-${V}
 PKGNAME =		blobby-${V}
+REVISION =		0
 
 CATEGORIES =		games
 
