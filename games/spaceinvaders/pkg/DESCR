@@ -1,4 +1,4 @@
-This is a display-based version of the Space Invaders game.
+This is a curses-based version of the Space Invaders game.
 The object of the game is to prevent the aliens to invade you.
-For that you need to destroy all fifty-five aliens before they either
-reach your laser base or the floor.
+For that you need to destroy all fifty-five aliens before they
+can land on your floor.
