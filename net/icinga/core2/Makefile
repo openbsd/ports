@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2017/04/04 20:51:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.62 2017/05/24 10:31:21 espie Exp $
 
 BROKEN-arm =	needs atomic ops; __sync_add_and_fetch_4
 BROKEN-hppa =	needs atomic ops; __sync_add_and_fetch_4
@@ -42,13 +42,12 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += boost_atomic-mt boost_chrono-mt boost_date_time-mt
 WANTLIB += boost_program_options-mt boost_regex-mt boost_system-mt
-WANTLIB += boost_thread-mt crypto execinfo m pthread ssl estdc++
-WANTLIB += yajl
+WANTLIB += boost_thread-mt crypto execinfo m pthread ssl
+WANTLIB += yajl ${LIBECXX}
 
-MODULES =		devel/cmake \
-			gcc4
-MODGCC4_ARCHS =		*
-MODGCC4_LANGS =		c++
+MODULES =		devel/cmake
+
+WANT_CXX =		base gcc
 
 PSEUDO_FLAVORS =	test
 FLAVOR ?=
