@@ -1,0 +1,14 @@
+$OpenBSD: patch-lavtools_jpeg2yuv_c,v 1.1 2017/05/24 09:26:35 espie Exp $
+
+Index: lavtools/jpeg2yuv.c
+--- lavtools/jpeg2yuv.c.orig
++++ lavtools/jpeg2yuv.c
+@@ -451,7 +451,7 @@ static int generate_YUV4MPEG(parameters_t *param, char
+            
+            if (firstjpeg) {
+                p = firstjpeg;
+-               sprintf(jpegname, firstjpeg);
++               sprintf(jpegname, "%s", firstjpeg);
+                firstjpeg = NULL;
+            }
+            else {

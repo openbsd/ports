@@ -1,0 +1,14 @@
+$OpenBSD: patch-lavtools_lav_io_c,v 1.1 2017/05/24 09:26:35 espie Exp $
+
+Index: lavtools/lav_io.c
+--- lavtools/lav_io.c.orig
++++ lavtools/lav_io.c
+@@ -926,7 +926,7 @@ lav_file_t *lav_open_input_file(char *filename)
+             strcat(errmsg, ", quicktime");
+ #endif
+ 	    strcat(errmsg, ").\n");
+-            fprintf(stderr, errmsg);
++            fprintf(stderr, "%s", errmsg);
+ 	    free(lav_fd);
+ 	    internal_error = ERROR_FORMAT; /* Format not recognized */
+ 	    return 0;

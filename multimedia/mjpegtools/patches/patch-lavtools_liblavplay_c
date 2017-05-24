@@ -1,0 +1,22 @@
+$OpenBSD: patch-lavtools_liblavplay_c,v 1.1 2017/05/24 09:26:35 espie Exp $
+
+Index: lavtools/liblavplay.c
+--- lavtools/liblavplay.c.orig
++++ lavtools/liblavplay.c
+@@ -34,6 +34,7 @@
+ #include <fcntl.h>
+ #include <unistd.h>
+ #include <string.h>
++#include <math.h>
+ #include <errno.h>
+ #include <sys/types.h>
+ #include <sys/stat.h>
+@@ -2674,7 +2675,7 @@ int lavplay_open(lavplay_t *info, char **files, int nu
+    else if (editlist->video_width == new_eli->video_width &&
+       editlist->video_height == new_eli->video_height &&
+       editlist->video_inter == new_eli->video_inter &&
+-      abs(editlist->video_fps - new_eli->video_fps) < 0.0000001 &&
++      fabs(editlist->video_fps - new_eli->video_fps) < 0.0000001 &&
+       editlist->has_audio == new_eli->has_audio &&
+       editlist->audio_rate == new_eli->audio_rate &&
+       editlist->audio_chans == new_eli->audio_chans &&

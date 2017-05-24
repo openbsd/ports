@@ -1,0 +1,14 @@
+$OpenBSD: patch-lavtools_lavtrans_c,v 1.1 2017/05/24 09:26:35 espie Exp $
+
+Index: lavtools/lavtrans.c
+--- lavtools/lavtrans.c.orig
++++ lavtools/lavtrans.c
+@@ -275,7 +275,7 @@ int main(int argc, char ** argv)
+    if (process_image_frame != -1)
+    {
+       nv = el_get_video_frame(vbuff, process_image_frame, &el);
+-      sprintf(imgfname,outfile);
++      sprintf(imgfname,"%s", outfile); /* XXX ? */
+       imgfd = fopen(imgfname,"wb");
+       if (imgfd==0) system_error("opening image file","fopen");
+       res = fwrite(vbuff,nv,1,imgfd);

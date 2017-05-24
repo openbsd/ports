@@ -1,0 +1,49 @@
+$OpenBSD: patch-yuvfilters_yuvkineco_c,v 1.1 2017/05/24 09:26:35 espie Exp $
+
+Index: yuvfilters/yuvkineco.c
+--- yuvfilters/yuvkineco.c.orig
++++ yuvfilters/yuvkineco.c
+@@ -537,7 +537,7 @@ do_frame(YfTaskCore_t *handle, const YfTaskCore_t *h0,
+ 	    noise = yget;
+ 	  else if (256 - yget < noise)
+ 	    noise = 256 - yget;
+-	  d = abs(ypre - yget);
++	  d = ypre > yget ? ypre-yget : yget-ypre;
+ 	  h->framestat[b].diffdist[(d < NOISEMAX)? d: NOISEMAX]++;
+ 	  if (noise < d) {
+ 	    d -= noise;
+@@ -547,29 +547,29 @@ do_frame(YfTaskCore_t *handle, const YfTaskCore_t *h0,
+ 	    unsigned int ygte;
+ 	    ypre = fpre->data[((i - 1) * h->_.width) + j];
+ 	    ygte = fget->data[((i - 1) * h->_.width) + j];
+-	    d = abs(yget - ygte);
++	    d = yget > ygte ? yget-ygte : ygte-yget;
+ 	    if (noise < d) {
+ 	      d -= noise;
+ 	      h->framestat[b].eoediff -= (((d * d) + 16) >> 5);
+ 	    }
+-	    d = abs(yget - ypre);
++	    d = yget > ypre ? yget-ypre: ypre-yget;
+ 	    if (noise < d) {
+ 	      d -= noise;
+ 	      h->framestat[b].eoediff += (((d * d) + 16) >> 5);
+ 	    }
+ 	    ypre = fpre->data[((i + 1) * h->_.width) + j];
+ 	    ygte = fget->data[((i + 1) * h->_.width) + j];
+-	    d = abs(yget - ygte);
++	    d = yget > ygte ? yget-ygte : ygte-yget;
+ 	    if (noise < d) {
+ 	      d -= noise;
+ 	      h->framestat[b].eoediff -= (((d * d) + 16) >> 5);
+ 	    }
+-	    d = abs(yget - ypre);
++	    d = yget > ypre ? yget-ypre: ypre-yget;
+ 	    if (noise < d) {
+ 	      d -= noise;
+ 	      h->framestat[b].eoediff += (((d * d) + 16) >> 5);
+ 	    }
+-	    d = abs(ypre - ygte);
++	    d = ypre > ygte ? ypre-ygte : ygte-ypre;
+ 	    if (noise < d) {
+ 	      d -= noise;
+ 	      h->framestat[b].ediff += (((d * d) + 8) >> 4);
