@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2016/12/05 16:15:56 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.21 2017/05/24 15:44:42 ajacoutot Exp $
 @bin bin/derb
 @bin bin/genbrk
 @bin bin/gencfu
@@ -9,6 +9,7 @@ bin/icu-config
 @bin bin/icuinfo
 @bin bin/makeconv
 @bin bin/pkgdata
+@bin bin/uconv
 include/unicode/
 include/unicode/alphaindex.h
 include/unicode/appendable.h
@@ -213,6 +214,7 @@ lib/pkgconfig/icu-uc.pc
 @man man/man1/icu-config.1
 @man man/man1/makeconv.1
 @man man/man1/pkgdata.1
+@man man/man1/uconv.1
 @man man/man8/genccode.8
 @man man/man8/gencmn.8
 @man man/man8/gensprep.8

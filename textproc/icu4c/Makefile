@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2017/04/25 20:10:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.61 2017/05/24 15:44:42 ajacoutot Exp $
 
 NOT_FOR_ARCHS=		${GCC3_ARCHS}
 
@@ -7,10 +7,10 @@ COMMENT=		International Components for Unicode
 VERSION=		58.2
 DISTNAME=		icu4c-${VERSION:S/./_/g}-src
 PKGNAME=		icu4c-${VERSION}
-REVISION=		1
+REVISION=		2
 
 MAJ_V=			${VERSION:R}
-SO_VERSION=		12.0
+SO_VERSION=		13.0
 .for _lib in icudata icui18n icuio icutest icutu icuuc
 SHARED_LIBS+=		${_lib} ${SO_VERSION}
 .endfor
@@ -23,8 +23,7 @@ HOMEPAGE=		http://www.icu-project.org
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
-# ICU
-# http://source.icu-project.org/repos/icu/icu/trunk/license.html
+# ICU: http://source.icu-project.org/repos/icu/icu/trunk/license.html
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=		c m pthread ${LIBCXX}
@@ -35,15 +34,22 @@ EXTRACT_SUFX=		.tgz
 
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		--enable-static \
-			--disable-extras \
+CONFIGURE_ARGS=		--with-data-packaging=archive \
+			--enable-static \
+			--disable-renaming \
 			--disable-samples
+# needs icu-le-hb
+CONFIGURE_ARGS +=	--disable-layoutex
 
 SEPARATE_BUILD=		Yes
 WRKDIST=		${WRKDIR}/icu
 WRKSRC=			${WRKDIST}/source
 
-MAKE_FLAGS=		SO_TARGET_VERSION=${SO_VERSION} \
+# see readme.html
+CXXFLAGS +=		-DICU_NO_USER_DATA_OVERRIDE
+
+MAKE_FLAGS=		VERBOSE=1 \
+			SO_TARGET_VERSION=${SO_VERSION} \
 			SO_TARGET_VERSION_MAJOR=${SO_VERSION:R} \
 			PKGDATA_INVOKE_OPTS="SO_TARGET_VERSION=${SO_VERSION} SO_TARGET_VERSION_MAJOR=${SO_VERSION:R}"
 
@@ -54,16 +60,10 @@ CXXFLAGS +=		-O1 -fno-stack-protector
 .endif
 
 .include <bsd.port.arch.mk>
-PKG_ARGS +=		-Dbe=0 -Dle=0
-.if ${MACHINE_ARCH} == "arm" || ${MACHINE_ARCH} == "powerpc"
-CONFIGURE_ARGS +=	--with-data-packaging=archive
-.  if ${PROPERTIES:Mbe}
-PKG_ARGS +=		-Dbe=1
-TEST_ENV +=		ICU_DATA="${WRKBUILD}/data/out/build/icudt${MAJ_V}b"
-.  else
-PKG_ARGS +=		-Dle=1
-TEST_ENV +=		ICU_DATA="${WRKBUILD}/data/out/build/icudt${MAJ_V}l"
-.  endif
+.if ${PROPERTIES:Mbe}
+PKG_ARGS +=		-Dbe=1 -Dle=0
+.else
+PKG_ARGS +=		-Dle=1 -Dbe=0
 .endif
 
 # https://bugzilla.redhat.com/show_bug.cgi?id=889781
@@ -71,13 +71,9 @@ TEST_ENV +=		ICU_DATA="${WRKBUILD}/data/out/build/icudt${MAJ_V}l"
 CONFIGURE_ENV +=	CPPFLAGS="-DU_IS_BIG_ENDIAN=1"
 .endif
 
+TEST_DEPENDS=		${BASE_PKGPATH}=${VERSION}
+
 post-install:
-# Bug #7506, #7567 and #7574, libicutest is not installed
-	${INSTALL_DATA} ${WRKBUILD}/tools/ctestfw/libicutest.a ${PREFIX}/lib/
-	${INSTALL_DATA} \
-		${WRKBUILD}/tools/ctestfw/libicutest.so.${LIBicutest_VERSION} \
-			${PREFIX}/lib/
-# who needs those annoying symlinks ?
 	find ${PREFIX}/lib -type l -name 'libicu*.so*' -exec rm '{}' \;
 
 .include <bsd.port.mk>
