@@ -1,0 +1,14 @@
+$OpenBSD: patch-lib_fixedpoint_fixed_class_h,v 1.1 2017/05/24 19:19:22 espie Exp $
+
+Index: lib/fixedpoint/fixed_class.h
+--- lib/fixedpoint/fixed_class.h.orig
++++ lib/fixedpoint/fixed_class.h
+@@ -214,7 +214,7 @@ inline int uround(const fixed_point<16>& r)
+ }
+ 
+ namespace detail {
+-  static bool isDigit(int c) {
++  static inline bool isDigit(int c) {
+     return c >= '0' &&  c <= '9';
+   }
+ }

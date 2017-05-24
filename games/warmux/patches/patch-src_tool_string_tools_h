@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_tool_string_tools_h,v 1.1 2017/05/24 19:19:22 espie Exp $
+
+Index: src/tool/string_tools.h
+--- src/tool/string_tools.h.orig
++++ src/tool/string_tools.h
+@@ -20,7 +20,7 @@
+  *****************************************************************************/
+ 
+ #ifndef STRING_TOOLS_H
+-#define STRING_TOOLS__H
++#define STRING_TOOLS_H
+ 
+ #include <WARMUX_base.h>
+ #include <string>

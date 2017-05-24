@@ -1,0 +1,14 @@
+$OpenBSD: patch-tools_servers_index_server_Makefile_in,v 1.1 2017/05/24 19:19:22 espie Exp $
+
+Index: tools/servers/index_server/Makefile.in
+--- tools/servers/index_server/Makefile.in.orig
++++ tools/servers/index_server/Makefile.in
+@@ -273,7 +273,7 @@ warmux_index_server_SOURCES = \
+ 	stat.h stat.cpp			\
+ 	sync_slave.h sync_slave.cpp
+ 
+-warmux_index_server_LDFLAGS = -Wl,--as-needed
++warmux_index_server_LDFLAGS = 
+ AM_CXXFLAGS = -DPACKAGE_VERSION=\"$(PACKAGE_VERSION)\" \
+ 	  @LIBCURL_CPPFLAGS@ -I$(top_srcdir)/lib/warmux-server/include \
+ 	-I$(top_srcdir)/lib/fixedpoint

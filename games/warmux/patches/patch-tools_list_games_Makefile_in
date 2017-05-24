@@ -1,0 +1,14 @@
+$OpenBSD: patch-tools_list_games_Makefile_in,v 1.1 2017/05/24 19:19:22 espie Exp $
+
+Index: tools/list_games/Makefile.in
+--- tools/list_games/Makefile.in.orig
++++ tools/list_games/Makefile.in
+@@ -257,7 +257,7 @@ SUBDIRS = .
+ warmux_list_games_SOURCES = \
+ 	main.cpp
+ 
+-warmux_list_games_LDFLAGS = -Wl,--as-needed
++warmux_list_games_LDFLAGS = 
+ AM_CXXFLAGS = -DPACKAGE_VERSION=\"$(PACKAGE_VERSION)\" \
+ 	  @LIBCURL_CPPFLAGS@ -I$(top_srcdir)/lib/warmux-server/include \
+ 	-I$(top_srcdir)/lib/warmux/include \
