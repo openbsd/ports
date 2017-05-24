@@ -1,0 +1,21 @@
+$OpenBSD: patch-ECDSA_xs,v 1.1.1.1 2017/05/24 18:35:14 bluhm Exp $
+--- ECDSA.xs.orig	Fri Jan  2 02:24:13 2015
++++ ECDSA.xs	Wed May 24 11:36:14 2017
+@@ -80,6 +80,8 @@ ECDSA_set_method(EC_KEY *eckey, const ECDSA_METHOD *me
+ int	  
+ ECDSA_size(const EC_KEY *eckey)
+ 
++#ifdef ECDSA_F_ECDSA_METHOD_NEW
++
+ ECDSA_METHOD *
+ ECDSA_METHOD_new(ECDSA_METHOD *ecdsa_method=0)
+ 
+@@ -91,6 +93,8 @@ ECDSA_METHOD_set_flags(ECDSA_METHOD *ecdsa_method, int
+ 
+ void 
+ ECDSA_METHOD_set_name(ECDSA_METHOD *ecdsa_method, char *name)
++
++#endif
+ 
+ void 
+ ERR_load_ECDSA_strings()
