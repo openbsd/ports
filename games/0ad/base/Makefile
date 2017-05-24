@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2016/11/17 11:16:43 pascal Exp $
+# $OpenBSD: Makefile,v 1.16 2017/05/24 01:27:40 espie Exp $
 
 COMMENT =		historical real-time strategy game
 
@@ -13,7 +13,7 @@ SHARED_LIBS +=  mozjs38-ps-release        ${SO_VERSION}
 WANTLIB += GL SDL2 X11 Xcursor boost_filesystem boost_system c curl
 WANTLIB += enet execinfo gloox iconv icui18n icuuc m miniupnpc
 WANTLIB += nspr4 ogg openal plc4 plds4 png pthread vorbis vorbisfile
-WANTLIB += xml2 z
+WANTLIB += xml2 z ${LIBECXX}
 
 BUILD_DEPENDS =		archivers/zip \
 			shells/bash
@@ -36,9 +36,7 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 MODULES =		lang/python
 
 # sync with devel/spidermonkey
-MODULES +=		gcc4
-MODGCC4_ARCHS=		*
-MODGCC4_LANGS=		c c++
+WANT_CXX =		base gcc
 
 MODPY_RUNDEP =		No
 MODPY_ADJ_FILES =	../../../libraries/source/cxxtest-4.4/bin/cxxtestgen
