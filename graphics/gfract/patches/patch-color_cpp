@@ -1,0 +1,13 @@
+$OpenBSD: patch-color_cpp,v 1.1 2017/05/24 19:33:53 espie Exp $
+
+Index: color.cpp
+--- color.cpp.orig
++++ color.cpp
+@@ -1,6 +1,7 @@
+ #include <algorithm>
+ #include <math.h>
+ #include <stdio.h>
++#include <stdlib.h>
+ #include <string.h>
+ #include "misc.h"
+ #include "color.h"

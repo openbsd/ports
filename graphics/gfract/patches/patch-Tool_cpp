@@ -1,0 +1,13 @@
+$OpenBSD: patch-Tool_cpp,v 1.1 2017/05/24 19:33:53 espie Exp $
+
+Index: Tool.cpp
+--- Tool.cpp.orig
++++ Tool.cpp
+@@ -1,6 +1,7 @@
+ #include "Tool.h"
+ #include <gdk/gdkkeysyms.h>
+ #include "main.h"
++#include <cstdlib>
+ 
+ const float ZoomInTool::ZOOM_BOX_WIDTH = 0.35;
+ 

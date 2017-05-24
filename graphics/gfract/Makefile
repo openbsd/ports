@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2017/04/10 11:46:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2017/05/24 19:33:53 espie Exp $
 
 COMMENT=		fractal program with GTK interface
 GH_ACCOUNT=		oskusalerma
@@ -44,7 +44,7 @@ post-extract:
 	cd ${WRKDIR} && mv monk2\'.map monk2.map
 
 pre-build:
-	sed -i 's,/usr/local,${LOCALBASE},' ${WRKSRC}/main.cpp
+	sed -i.beforesubst 's,/usr/local,${LOCALBASE},' ${WRKSRC}/main.cpp
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/gfract/palettes
