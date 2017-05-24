@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2016/11/14 04:02:25 jca Exp $
+# $OpenBSD: Makefile,v 1.5 2017/05/24 15:29:55 espie Exp $
 
 # Block.s: Assembler messages:
 # Block.s:73: Error: junk `(%rip)' after expression
@@ -22,11 +22,10 @@ HOMEPAGE =	http://fph.altervista.org/prog/bastet.html
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =	boost_program_options c ncurses m
+WANTLIB =	boost_program_options c ncurses m ${LIBECXX}
 
-MODULES =	lang/clang
-MODCLANG_ARCHS = *
-MODCLANG_LANGS = c++
+WANT_CXX =	base clang
+
 LIB_DEPENDS =	devel/boost
 
 NO_TEST =	Yes
