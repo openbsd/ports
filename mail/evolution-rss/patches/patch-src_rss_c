@@ -1,6 +1,4 @@
-$OpenBSD: patch-src_rss_c,v 1.11 2017/05/24 07:08:59 ajacoutot Exp $
-
-Fix build with clang: g_return_if_fail -> g_return_val_if_fail
+$OpenBSD: patch-src_rss_c,v 1.12 2017/05/24 08:43:04 ajacoutot Exp $
 
 From c78ce3988f68d030b01723fa33ebb64d7a86ed7d Mon Sep 17 00:00:00 2001
 From: Milan Crha <mcrha@redhat.com>
@@ -11,6 +9,11 @@ From 7741ef0cf3327cb5c719912358443b6aef3bdb59 Mon Sep 17 00:00:00 2001
 From: Milan Crha <mcrha@redhat.com>
 Date: Wed, 17 Aug 2016 18:43:48 +0200
 Subject: Adapt to changes in evolution 3.21.90
+
+From bdeee6ed97b7dce337bc145e3e060214fe963cf9 Mon Sep 17 00:00:00 2001
+From: Lucian Langa <lucilanga@gnome.org>
+Date: Tue, 20 Oct 2015 00:33:05 +0200
+Subject: various cleanups III
 
 Index: src/rss.c
 --- src/rss.c.orig
