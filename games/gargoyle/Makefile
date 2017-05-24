@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2017/04/10 11:46:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2017/05/24 15:50:19 espie Exp $
 
 COMMENT =	cross-platform interactive fiction player
 
@@ -40,7 +40,7 @@ NO_TEST =		Yes
 INSTALL_TARGET =	install install_man
 JAMDEBUG =	-d x	# display command-lines
 JAMDEBUG +=	-q	# die quickly on build failure
-MAKE_ENV +=		CC=${CC} CXX=${CXX}
+MAKE_ENV +=		CC='${CC} -fgnu89-inline' CXX=${CXX}
 DESTDIRNAME =		DESTPREFIX
 
 # dos line-endings in file needing patch

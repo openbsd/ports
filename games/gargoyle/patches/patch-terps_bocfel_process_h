@@ -1,0 +1,11 @@
+$OpenBSD: patch-terps_bocfel_process_h,v 1.1 2017/05/24 15:50:20 espie Exp $
+
+Index: terps/bocfel/process.h
+--- terps/bocfel/process.h.orig
++++ terps/bocfel/process.h
+@@ -1,4 +1,4 @@
+-#ifndef ZTERP_PROCESS_h
++#ifndef ZTERP_PROCESS_H
+ #define ZTERP_PROCESS_H
+ 
+ #include <stdint.h>
