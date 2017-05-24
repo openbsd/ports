@@ -1,0 +1,17 @@
+$OpenBSD: patch-effects_cpp,v 1.1 2017/05/24 18:49:31 espie Exp $
+needs a virtual destructor implementation
+
+Index: effects.cpp
+--- effects.cpp.orig
++++ effects.cpp
+@@ -24,6 +24,10 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, 
+ #include "njamfont.h"
+ #include "effects.h"
+ 
++
++SpecialEffect::~SpecialEffect()
++{
++}
+ extern SDL_Surface *Screen;
+ //-----------------------------------------------------------------------------
+ Effects::~Effects()

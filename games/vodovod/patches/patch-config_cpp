@@ -1,6 +1,8 @@
-$OpenBSD: patch-config_cpp,v 1.2 2007/07/07 10:40:48 simon Exp $
---- config.cpp.orig	Sun Jun  3 13:09:24 2007
-+++ config.cpp	Fri Jul  6 10:28:01 2007
+$OpenBSD: patch-config_cpp,v 1.3 2017/05/24 18:49:31 espie Exp $
+
+Index: config.cpp
+--- config.cpp.orig
++++ config.cpp
 @@ -22,6 +22,8 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, 
  #include <fstream>
  #include <sstream>
@@ -20,11 +22,11 @@ $OpenBSD: patch-config_cpp,v 1.2 2007/07/07 10:40:48 simon Exp $
 +    int		 n;
 +
 +    if ((home = getenv("HOME")) == NULL)
-+        false;
++        return false;
 +
 +    if ((n = snprintf(path, PATH_MAX, "%s/.vodovod.conf", home) >= PATH_MAX) ||
 +      n <= 0)
-+        false;
++        return false;
 +
 +    std::ofstream file(path);
      if (!file)
@@ -40,11 +42,11 @@ $OpenBSD: patch-config_cpp,v 1.2 2007/07/07 10:40:48 simon Exp $
 +    int		 n;
 +
 +    if ((home = getenv("HOME")) == NULL)
-+        false;
++        return false;
 +
 +    if ((n = snprintf(path, PATH_MAX, "%s/.vodovod.conf", home) >= PATH_MAX) ||
 +      n <= 0)
-+        false;
++        return false;
 +
 +    std::ifstream file(path);
      if (!file)

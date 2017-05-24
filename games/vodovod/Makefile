@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2017/04/10 11:46:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2017/05/24 18:49:31 espie Exp $
 
 COMMENT=	combine pipes to lead water from the house to the tank
 
 DISTNAME=	vodovod-1.10-src
 PKGNAME=	vodovod-1.10
-REVISION =	2
+REVISION =	3
 CATEGORIES=	games
 
 HOMEPAGE=	http://home.gna.org/vodovod/

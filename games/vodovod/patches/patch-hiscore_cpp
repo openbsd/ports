@@ -1,7 +1,18 @@
-$OpenBSD: patch-hiscore_cpp,v 1.1 2007/07/07 10:40:48 simon Exp $
---- hiscore.cpp.orig	Tue Jun  5 00:13:40 2007
-+++ hiscore.cpp	Fri Jul  6 00:31:29 2007
-@@ -47,7 +47,7 @@ bool HiScores::canEnter(int score)
+$OpenBSD: patch-hiscore_cpp,v 1.2 2017/05/24 18:49:31 espie Exp $
+Index: hiscore.cpp
+--- hiscore.cpp.orig
++++ hiscore.cpp
+@@ -17,7 +17,8 @@ You should have received a copy of the GNU General Pub
+ along with Vodovod in file COPYING; if not, write to the Free Software
+ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ -----------------------------------------------------------------------------*/
+-#include "stdio.h"
++#include <stdio.h>
++#include <stdlib.h>
+ #include "hiscore.h"
+ //-----------------------------------------------------------------------------
+ HiScores &hiScores()
+@@ -47,7 +48,7 @@ bool HiScores::canEnter(int score)
  HiScores::HiScores()
  {
      // on Linux use /usr/share/abandoned/hiscore.dat  ?
@@ -10,7 +21,7 @@ $OpenBSD: patch-hiscore_cpp,v 1.1 2007/07/07 10:40:48 simon Exp $
      if (!fp)
      {
          std::string defaultNames[] = {      // create default hiscore
-@@ -104,7 +104,7 @@ HiScores::~HiScores()
+@@ -104,7 +105,7 @@ HiScores::~HiScores()
  {
      // save to file
      // format: NAME#POINTS#SWAPS#

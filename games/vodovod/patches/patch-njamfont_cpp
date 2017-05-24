@@ -1,0 +1,24 @@
+$OpenBSD: patch-njamfont_cpp,v 1.1 2017/05/24 18:49:31 espie Exp $
+Yuck
+
+Index: njamfont.cpp
+--- njamfont.cpp.orig
++++ njamfont.cpp
+@@ -37,7 +37,7 @@ NjamFont::NjamFont(const char *Filename, int CharWidth
+     if (!temp)
+     {
+         printf("FAILED.\n");
+-        printf((const char *)SDL_GetError());
++        printf("%s", SDL_GetError());
+         return;
+     }
+     printf("OK.\n");
+@@ -133,7 +133,7 @@ bool NjamFont::WriteTextXY(SDL_Surface *Destination, i
+                 if (0 != SDL_BlitSurface(m_Surface, &src, Destination, &dest))
+                 {
+                     printf("Failed to blit font character image.\n");
+-                    printf((const char *)SDL_GetError());
++                    printf("%s", SDL_GetError());
+                     return false;
+                 }
+                 break;

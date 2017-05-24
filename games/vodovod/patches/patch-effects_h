@@ -1,0 +1,14 @@
+$OpenBSD: patch-effects_h,v 1.1 2017/05/24 18:49:31 espie Exp $
+requires virtual destructor
+
+Index: effects.h
+--- effects.h.orig
++++ effects.h
+@@ -33,6 +33,7 @@ class SpecialEffect (protected)
+ public:
+     SpecialEffect(NjamFont *f) { fontM = f; };
+     virtual bool Update() = 0;
++    virtual ~SpecialEffect();
+ };
+ //-----------------------------------------------------------------------------
+ class Effects

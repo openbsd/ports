@@ -1,0 +1,15 @@
+$OpenBSD: patch-hiscore_h,v 1.1 2017/05/24 18:49:31 espie Exp $
+sort can't work without const on modern C++
+
+Index: hiscore.h
+--- hiscore.h.orig
++++ hiscore.h
+@@ -28,7 +28,7 @@ class HiScore (public)
+     std::string name;
+     int level;
+     int points;
+-    bool operator<(const HiScore& h) { return points > h.points; };
++    bool operator<(const HiScore& h) const { return points > h.points; };
+ };
+ //-----------------------------------------------------------------------------
+ class HiScores
