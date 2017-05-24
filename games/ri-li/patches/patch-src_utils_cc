@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_utils_cc,v 1.1 2017/05/24 18:37:43 espie Exp $
+
+Index: src/utils.cc
+--- src/utils.cc.orig
++++ src/utils.cc
+@@ -21,7 +21,10 @@
+ //    with this program; if not, write to the Free Software Foundation, Inc.,
+ //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ 
+-#include <iostream.h>
++#include <iostream>
++using std::cerr;
++using std::endl;
++
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>

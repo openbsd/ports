@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_editeur_cc,v 1.1 2017/05/24 18:37:43 espie Exp $
+
+Index: src/editeur.cc
+--- src/editeur.cc.orig
++++ src/editeur.cc
+@@ -25,7 +25,10 @@
+ #include <windows.h>
+ #endif
+ 
+-#include <iostream.h>
++#include <iostream>
++using std::cerr;
++using std::endl;
++
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>

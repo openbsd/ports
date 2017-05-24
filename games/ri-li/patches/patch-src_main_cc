@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_main_cc,v 1.1 2017/05/24 18:37:43 espie Exp $
+
+Index: src/main.cc
+--- src/main.cc.orig
++++ src/main.cc
+@@ -23,7 +23,9 @@
+ 
+ #include <stdio.h>
+ #include <stdlib.h>
+-#include <iostream.h>
++#include <iostream>
++using std::cerr;
++using std::endl;
+ #include <string.h>
+ #include <SDL/SDL.h>
+ #include <SDL/SDL_mixer.h>

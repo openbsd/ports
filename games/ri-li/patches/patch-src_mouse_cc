@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_mouse_cc,v 1.1 2017/05/24 18:37:43 espie Exp $
+
+Index: src/mouse.cc
+--- src/mouse.cc.orig
++++ src/mouse.cc
+@@ -21,7 +21,6 @@
+ //    with this program; if not, write to the Free Software Foundation, Inc.,
+ //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ 
+-#include <iostream.h>
+ #include <stdio.h>
+ #include "mouse.h"
+ #include "preference.h"

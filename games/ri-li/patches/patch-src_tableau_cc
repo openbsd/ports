@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_tableau_cc,v 1.1 2017/05/24 18:37:43 espie Exp $
+
+Index: src/tableau.cc
+--- src/tableau.cc.orig
++++ src/tableau.cc
+@@ -21,7 +21,6 @@
+ //    with this program; if not, write to the Free Software Foundation, Inc.,
+ //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ 
+-#include <iostream.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include "preference.h"
+@@ -87,7 +86,7 @@ bool Tableau::Save(void)
+   
+   // Alloue la mémoire
+   Buf=new unsigned char [sizeof(s_Tableau)*N+sizeof(int)+1];
+-  if(Buf<=0) return false;
++  if(Buf==0) return false;
+ 
+   // Charge les tableaux
+   Buf[0]=N/256;
