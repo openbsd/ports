@@ -1,0 +1,15 @@
+$OpenBSD: patch-sip_solid_predicate_sip,v 1.1 2017/05/24 10:29:40 espie Exp $
+confusion between the "void" macro and the int function
+
+Index: sip/solid/predicate.sip
+--- sip/solid/predicate.sip.orig
++++ sip/solid/predicate.sip
+@@ -112,7 +112,7 @@ Py_BEGIN_ALLOW_THREADS
+ #else
+         PyObject *obj = PyInt_FromLong ((long) value);
+ #endif
+-        if (obj == NULL || PyList_SET_ITEM (l, i, obj) < 0)
++        if (obj == NULL || PyList_SetItem (l, i, obj) < 0)
+         {
+             Py_DECREF(l);
+ 
