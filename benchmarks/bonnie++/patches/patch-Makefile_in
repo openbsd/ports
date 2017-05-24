@@ -1,11 +1,14 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2014/10/13 19:10:44 sthen Exp $
---- Makefile.in.orig	Tue Dec 30 21:04:25 2008
-+++ Makefile.in	Mon Oct 13 20:09:28 2014
-@@ -9,7 +9,7 @@ prefix=@prefix@
+$OpenBSD: patch-Makefile_in,v 1.3 2017/05/24 14:04:50 sthen Exp $
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -8,8 +8,8 @@ SCRIPTS=bon_csv2txt
+ prefix=@prefix@
  eprefix=@exec_prefix@
  #MORE_WARNINGS=-Weffc++
- WFLAGS=-Wall -W -Wshadow -Wpointer-arith -Wwrite-strings -pedantic -ffor-scope -Wcast-align -Wsign-compare -Wpointer-arith -Wwrite-strings -Wformat-security -Wswitch-enum -Winit-self $(MORE_WARNINGS)
+-WFLAGS=-Wall -W -Wshadow -Wpointer-arith -Wwrite-strings -pedantic -ffor-scope -Wcast-align -Wsign-compare -Wpointer-arith -Wwrite-strings -Wformat-security -Wswitch-enum -Winit-self $(MORE_WARNINGS)
 -CFLAGS=-O2 @debug@ -DNDEBUG $(WFLAGS) $(MORECFLAGS)
++WFLAGS=-Wall -W -Wshadow -Wpointer-arith -Wwrite-strings -pedantic -ffor-scope -Wcast-align -Wsign-compare -Wpointer-arith -Wwrite-strings -Wformat-security -Wswitch-enum $(MORE_WARNINGS)
 +CFLAGS+=@debug@ -DNDEBUG $(WFLAGS) $(MORECFLAGS)
  CXX=@CXX@ $(CFLAGS)
  LINK=@CXX@

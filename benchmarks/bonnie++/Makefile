@@ -1,13 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2017/04/10 11:45:24 sthen Exp $
-
-# -Winit-self
-NOT_FOR_ARCHS=	${GCC3_ARCHS}
+# $OpenBSD: Makefile,v 1.15 2017/05/24 14:04:50 sthen Exp $
 
 COMMENT=	enhanced performance test of filesystem I/O
 
-DISTNAME=	bonnie++-1.97
-REVISION=	2
-WRKDIST=	${WRKDIR}/${DISTNAME}.1
+DISTNAME=	bonnie++-1.97.3
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://www.coker.com.au/bonnie++/experimental/
 EXTRACT_SUFX=	.tgz

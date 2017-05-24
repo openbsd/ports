@@ -1,6 +1,7 @@
-$OpenBSD: patch-port_h_in,v 1.3 2015/08/18 20:41:29 bluhm Exp $
---- port.h.in.orig	Wed Dec 24 01:16:16 2008
-+++ port.h.in	Wed Aug  5 23:15:25 2015
+$OpenBSD: patch-port_h_in,v 1.4 2017/05/24 14:04:50 sthen Exp $
+Index: port.h.in
+--- port.h.in.orig
++++ port.h.in
 @@ -1,6 +1,8 @@
  #ifndef PORT_UNIX_H
  #define PORT_UNIX_H
@@ -9,8 +10,8 @@ $OpenBSD: patch-port_h_in,v 1.3 2015/08/18 20:41:29 bluhm Exp $
 +
  #include "conf.h"
  
- #ifndef HAVE_MIN_MAX
-@@ -37,10 +39,11 @@
+ @semun@
+@@ -24,10 +26,11 @@
  typedef struct timeval TIMEVAL_TYPE;
  
  #ifdef _LARGEFILE64_SOURCE
