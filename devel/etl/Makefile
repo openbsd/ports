@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2015/09/21 16:58:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2017/05/24 20:17:31 espie Exp $
 
 COMMENT =		C++ class and template library
 
@@ -7,6 +7,7 @@ DISTNAME =		ETL-${V}
 PKGNAME =		etl-${V}
 # Keep in sync with multimedia/synfig
 SYNFIG_V =		1.0.1
+REVISION =		0
 
 CATEGORIES =		devel
 
