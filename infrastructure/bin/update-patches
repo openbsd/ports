@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 
-# $OpenBSD: update-patches,v 1.14 2017/05/24 09:16:57 espie Exp $
+# $OpenBSD: update-patches,v 1.15 2017/05/24 09:22:48 espie Exp $
 # Copyright (c) 2017
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
@@ -52,6 +52,10 @@ if (defined $ENV{DIFF_ARGS}) {
 	push(@diff_args, split(/\s+/, $ENV{DIFF_ARGS}));
 }
 
+if (!-d $wrkdist) {
+	say "WRKDIST=$wrkdist is not a directory";
+	exit 1;
+}
 my ($actual, $saved, $done);
 my @edit;
 
@@ -283,7 +287,7 @@ find({wanted =>
 	}
 	my $p = create_patch($src, $dst, $stem);
 	$actual->{$p->{stem}} = $p;
-    }, follow => 1, follow_skip => 2 }, $wrkdist) or die;
+    }, follow => 1, follow_skip => 2 }, $wrkdist);
 
 # do we have patches ?
 if (keys %$actual) {
