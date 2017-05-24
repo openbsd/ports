@@ -1,0 +1,14 @@
+$OpenBSD: patch-Makefile_PL,v 1.1 2017/05/24 00:59:48 espie Exp $
+
+Index: Makefile.PL
+--- Makefile.PL.orig
++++ Makefile.PL
+@@ -22,7 +22,7 @@ requires_external_cc();
+     } elsif ($Config::Config{myuname} =~ /sunos|solaris/i) {
+       # Any SunStudio flags?
+     } else {
+-      cc_optimize_flags('-O2 -g -Wall -Werror');
++      cc_optimize_flags('-O2 -g -Wall -Werror -Wno-ignored-optimization-argument');
+     }
+ 
+ auto_install();
