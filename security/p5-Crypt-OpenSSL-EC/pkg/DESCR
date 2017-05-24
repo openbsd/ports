@@ -1,0 +1,2 @@
+Crypt::OpenSSL::EC is a perl module that provides a standard (non-OO)
+interface to the OpenSSL EC (Elliptic Curve) library.

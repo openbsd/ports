@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/05/24 18:24:07 bluhm Exp $
+${P5ARCH}/Crypt/OpenSSL/EC.pm
+${P5ARCH}/auto/Crypt/OpenSSL/EC/
+${P5ARCH}/auto/Crypt/OpenSSL/EC/EC.so
+${P5ARCH}/auto/Crypt/OpenSSL/EC/autosplit.ix
+@man man/man3p/Crypt::OpenSSL::EC.3p
