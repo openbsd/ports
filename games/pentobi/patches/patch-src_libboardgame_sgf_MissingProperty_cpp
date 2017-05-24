@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_libboardgame_sgf_MissingProperty_cpp,v 1.1 2017/05/24 15:59:28 espie Exp $
+forward declare is not enough to get all the strings operators...
+and libc++ has cleaner includes
+
+Index: src/libboardgame_sgf/MissingProperty.cpp
+--- src/libboardgame_sgf/MissingProperty.cpp.orig
++++ src/libboardgame_sgf/MissingProperty.cpp
+@@ -7,6 +7,7 @@
+ #ifdef HAVE_CONFIG_H
+ #include <config.h>
+ #endif
++#include <string>
+ 
+ #include "MissingProperty.h"
+ 
