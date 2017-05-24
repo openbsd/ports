@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2016/03/18 23:12:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2017/05/24 08:07:32 espie Exp $
 
 COMMENT =	Qt4-based featureful music player
 
@@ -26,13 +26,12 @@ WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += gstapp-0.10 gstbase-0.10 gstcdda-0.10 gstreamer-0.10
 WANTLIB += gsttag-0.10
 WANTLIB += cdio chromaprint gpod execinfo fftw3 lastfm mtp mygpo-qt
-WANTLIB += protobuf qca2 qjson tag>=5.0 usb-1.0 xml2
+WANTLIB += protobuf qca2 qjson tag>=5.0 usb-1.0 xml2 ${LIBECXX}
 # those are dlopen'ed
 WANTLIB += plist
 
-MODULES =		gcc4 devel/cmake devel/gettext x11/qt4
-MODGCC4_LANGS =		c c++
-MODGCC4_ARCHS =		*
+MODULES =		devel/cmake devel/gettext x11/qt4
+WANT_CXX =		base gcc
 
 BUILD_DEPENDS =		devel/boost \
 			devel/cmake>=2.8.10.2p3 \
@@ -74,6 +73,9 @@ CONFIGURE_ARGS +=	-DFORCE_BUNDLED_GMOCK=Yes
 CONFIGURE_ARGS +=	-DSTATIC_SQLITE:Bool=No \
 			-DI_HATE_MY_USERS:Bool=Yes \
 			-DMY_USERS_WILL_SUFFER_BECAUSE_OF_ME:Bool=Yes
+
+# stupidity
+CONFIGURE_ARGS +=	-DBUILD_WERROR:Bool=No
 
 # XXX Builds tend to sometimes omit projectM presets when this option
 # is missing. To be investigated.
