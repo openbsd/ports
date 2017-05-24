@@ -1,0 +1,14 @@
+$OpenBSD: patch-boost_asio_detail_handler_type_requirements_hpp,v 1.1 2017/05/24 08:30:20 espie Exp $
+
+Index: boost/asio/detail/handler_type_requirements.hpp
+--- boost/asio/detail/handler_type_requirements.hpp.orig
++++ boost/asio/detail/handler_type_requirements.hpp
+@@ -55,7 +55,7 @@
+ 
+ // Newer gcc needs special treatment to suppress unused typedef warnings.
+ #if defined(__GNUC__)
+-# if ((__GNUC__ == 4) && (__GNUC_MINOR__ >= 8)) || (__GNUC__ > 4)
++# if ((__GNUC__ == 4) && (__GNUC_MINOR__ >= 8)) || (__GNUC__ > 4) || defined(__clang__)
+ #  define BOOST_ASIO_UNUSED_TYPEDEF __attribute__((__unused__))
+ # endif // ((__GNUC__ == 4) && (__GNUC_MINOR__ >= 8)) || (__GNUC__ > 4)
+ #endif // defined(__GNUC__)

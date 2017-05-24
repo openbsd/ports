@@ -1,0 +1,14 @@
+$OpenBSD: patch-boost_concept_detail_general_hpp,v 1.1 2017/05/24 08:30:20 espie Exp $
+
+Index: boost/concept/detail/general.hpp
+--- boost/concept/detail/general.hpp.orig
++++ boost/concept/detail/general.hpp
+@@ -67,7 +67,7 @@ struct requirement_<void(*)(Model)>
+ 
+ // Version check from https://svn.boost.org/trac/boost/changeset/82886
+ // (boost/static_assert.hpp)
+-#if defined(__GNUC__) && ((__GNUC__ > 4) || ((__GNUC__ == 4) && (__GNUC_MINOR__ >= 7))) 
++#if defined(__GNUC__) && ((__GNUC__ > 4) || ((__GNUC__ == 4) && (__GNUC_MINOR__ >= 7))) || defined(__clang__)
+ #define BOOST_CONCEPT_UNUSED_TYPEDEF __attribute__((unused))
+ #else
+ #define BOOST_CONCEPT_UNUSED_TYPEDEF /**/

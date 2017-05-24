@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.63 2017/05/21 11:22:31 espie Exp $
+# $OpenBSD: Makefile,v 1.64 2017/05/24 08:30:20 espie Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS} ${CLANG_ARCHS}
 
 COMMENT=	free peer-reviewed portable C++ source libraries
 
 VERSION=	1.58.0
-REVISION=	3
+REVISION=	4
 DISTNAME=	boost_${VERSION:S/./_/g}
 PKGNAME=	boost-${VERSION}
 CATEGORIES=	devel
@@ -69,8 +69,9 @@ LIB_DEPENDS=	archivers/bzip2 \
 # XXX clang is *very* verbose on boost, the tricks that create typedefs
 # just for checking, and the extensive use of C++11 extensions are fun
 # so warn them off until we do better...
-CXXFLAGS +=	-Wno-c++11-extensions -Wno-unused-local-typedef \
-		-Wno-keyword-macro
+CXXFLAGS +=	-Wno-c++11-extensions -Wno-keyword-macro \
+		-Wno-expansion-to-defined -Wno-unused-local-typedef
+
 CFLAGS +=	-Wno-string-plus-int
 COMPILER =	clang
 CONFIG =	${FILESDIR}/user.hpp

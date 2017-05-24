@@ -1,0 +1,14 @@
+$OpenBSD: patch-libs_config_test_boost_has_part_alloc_ipp,v 1.1 2017/05/24 08:30:20 espie Exp $
+
+Index: libs/config/test/boost_has_part_alloc.ipp
+--- libs/config/test/boost_has_part_alloc.ipp.orig
++++ libs/config/test/boost_has_part_alloc.ipp
+@@ -12,7 +12,7 @@
+ 
+ #include <memory>
+ 
+-#if defined(__GNUC__) && ((__GNUC__ > 4) || ((__GNUC__ == 4) && (__GNUC_MINOR__ >= 7)))
++#if defined(__GNUC__) && ((__GNUC__ > 4) || ((__GNUC__ == 4) && (__GNUC_MINOR__ >= 7))) || defined(__clang__)
+ #  define BOOST_UNUSED_ATTRIBUTE __attribute__((unused))
+ #else
+ #  define BOOST_UNUSED_ATTRIBUTE

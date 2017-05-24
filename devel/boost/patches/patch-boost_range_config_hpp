@@ -1,0 +1,14 @@
+$OpenBSD: patch-boost_range_config_hpp,v 1.1 2017/05/24 08:30:20 espie Exp $
+
+Index: boost/range/config.hpp
+--- boost/range/config.hpp.orig
++++ boost/range/config.hpp
+@@ -44,7 +44,7 @@
+ #define BOOST_RANGE_ARRAY_REF() (&boost_range_array)
+ #endif
+ 
+-#if defined(__GNUC__) && ((__GNUC__ > 4) || ((__GNUC__ == 4) && (__GNUC_MINOR__ >= 7)))
++#if defined(__GNUC__) && ((__GNUC__ > 4) || ((__GNUC__ == 4) && (__GNUC_MINOR__ >= 7))) || defined(__clang__)
+ #  define BOOST_RANGE_UNUSED __attribute__((unused))
+ #else
+ #  define BOOST_RANGE_UNUSED
