@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2016/05/06 21:39:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2017/05/24 21:27:45 espie Exp $
 
 COMMENT =		2D animation software
 REVISION =		4
@@ -25,16 +25,14 @@ WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 harfbuzz
 WANTLIB += jbig jpeg lcms2 ltdl lzma m mlt mlt++ mng openjp2 pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB += pthread-stubs sigc-2.0 tiff webp xcb xcb-render xcb-shm
-WANTLIB += xml++-2.6 xml2 z
+WANTLIB += xml++-2.6 xml2 z ${LIBECXX}
 
 MASTER_SITES=		http://download.tuxfamily.org/synfig/releases/${V}/
 
 MODULES =		devel/gettext
 
 # c++11
-MODULES +=		gcc4
-MODGCC4_ARCHS=		*
-MODGCC4_LANGS=		c++
+WANT_CXX =		base gcc
 
 BUILD_DEPENDS =		devel/etl>=0.04.19
 LIB_DEPENDS =		archivers/xz \
