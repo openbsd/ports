@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2017/04/10 11:46:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2017/05/25 11:26:15 espie Exp $
 
 BROKEN-powerpc =	undefined reference to __atomic_fetch_add_8
 
@@ -32,10 +32,8 @@ WANTLIB += raw_r ${LIBCXX} swscale tiff webp z
 MODULES =		devel/cmake \
 			lang/python \
 			x11/qt4 \
-			gcc4
 
-MODGCC4_ARCHS =		*
-MODGCC4_LANGS =		c c++
+WANT_CXX =		base gcc
 
 BUILD_DEPENDS =		textproc/txt2man
 
@@ -59,9 +57,6 @@ CXXFLAGS +=		-pthread
 CXXFLAGS +=		-march=i686
 .endif
 WRKDIST =		${WRKDIR}/oiio-Release-$V
-
-pre-configure:
-	sed -i 's,share/man,man,' ${WRKSRC}/CMakeLists.txt
 
 post-install:
 	find ${PREFIX} -name '*.orig' -exec rm -f {} \;

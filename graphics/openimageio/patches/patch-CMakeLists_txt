@@ -1,0 +1,23 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2017/05/25 11:26:15 espie Exp $
+fixes warnings under clang... we're patching so patch man as well
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -75,6 +75,7 @@ if (CMAKE_CXX_COMPILER_ID MATCHES "Clang" OR CMAKE_CXX
+     # APPLECLANG_VERSION_STRING, otherwise for generic clang set
+     # CLANG_VERSION_STRING.
+     set (CMAKE_COMPILER_IS_CLANG 1)
++    add_definitions("-Wno-expansion-to-defined")
+     EXECUTE_PROCESS( COMMAND ${CMAKE_CXX_COMPILER} --version OUTPUT_VARIABLE clang_full_version_string )
+     if (clang_full_version_string MATCHES "Apple")
+         set (CMAKE_CXX_COMPILER_ID "AppleClang")
+@@ -322,7 +323,7 @@ if (UNIX AND NOT SELF_CONTAINED_INSTALL_TREE)
+     set (DEFAULT_PYLIB_INSTALL_DIR "lib/python/site-packages")
+     set (DEFAULT_PYLIB3_INSTALL_DIR "lib/python3/site-packages")
+     set (DEFAULT_DOC_INSTALL_DIR "share/doc/OpenImageIO")
+-    set (DEFAULT_MAN_INSTALL_DIR "share/man/man1")
++    set (DEFAULT_MAN_INSTALL_DIR "man/man1")
+     set (DEFAULT_FONTS_INSTALL_DIR "share/fonts/oiio")
+ else ()
+     # Here is the "self-contained install tree" case: the expectation here is
