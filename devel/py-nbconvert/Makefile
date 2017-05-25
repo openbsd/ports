@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2017/02/23 13:58:32 shadchin Exp $
+# $OpenBSD: Makefile,v 1.6 2017/05/25 11:45:25 shadchin Exp $
 
 COMMENT =		converting Jupyter notebooks
 
-MODPY_EGG_VERSION =	5.1.1
+MODPY_EGG_VERSION =	5.2.1
 DISTNAME =		nbconvert-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
@@ -16,6 +16,12 @@ MAINTAINER =		Alexandr Shadchin <shadchin@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		lang/python
+
+MODPY_PI =		Yes
+MODPY_SETUPTOOLS =	Yes
+
+FLAVORS =		python3
+FLAVOR ?=
 
 RUN_DEPENDS =		devel/py-entrypoints${MODPY_FLAVOR} \
 			devel/py-jupyter_client${MODPY_FLAVOR}>=5.0.0 \
@@ -35,12 +41,6 @@ TEST_DEPENDS =		${BASE_PKGPATH}=${MODPY_EGG_VERSION} \
 			devel/py-ipykernel${MODPY_FLAVOR}>=4.5.2 \
 			devel/py-nose${MODPY_FLAVOR} \
 			devel/py-test${MODPY_FLAVOR}
-
-MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-
-FLAVORS =		python3
-FLAVOR ?=
 
 post-install:
 	mv ${PREFIX}/bin/jupyter-nbconvert{,${MODPY_BIN_SUFFIX}}

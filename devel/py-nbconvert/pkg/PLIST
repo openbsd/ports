@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2017/02/23 13:58:32 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.5 2017/05/25 11:45:25 shadchin Exp $
 bin/jupyter-nbconvert${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/nbconvert/
 lib/python${MODPY_VERSION}/site-packages/nbconvert-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -163,6 +163,7 @@ lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/${MODPY_PYCACHE
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/${MODPY_PYCACHE}extractoutput.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/${MODPY_PYCACHE}highlightmagics.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/${MODPY_PYCACHE}latex.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/${MODPY_PYCACHE}regexremove.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/${MODPY_PYCACHE}sanitize.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/${MODPY_PYCACHE}svg2pdf.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/base.py
@@ -174,6 +175,7 @@ lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/execute.py
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/extractoutput.py
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/highlightmagics.py
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/latex.py
+lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/regexremove.py
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/sanitize.py
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/svg2pdf.py
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/
@@ -189,6 +191,7 @@ lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/${MODPY_PYCACHE}test_extractoutput.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/${MODPY_PYCACHE}test_highlightmagics.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/${MODPY_PYCACHE}test_latex.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/${MODPY_PYCACHE}test_regexremove.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/${MODPY_PYCACHE}test_sanitize.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/${MODPY_PYCACHE}test_svg2pdf.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/base.py
@@ -204,6 +207,7 @@ lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/files/SVG
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/files/Skip Exceptions.ipynb
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/files/Unicode.ipynb
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/files/python.png
+lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/files/update-display-id.ipynb
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/test_clearoutput.py
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/test_coalescestreams.py
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/test_csshtmlheader.py
@@ -211,6 +215,7 @@ lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/test_exec
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/test_extractoutput.py
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/test_highlightmagics.py
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/test_latex.py
+lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/test_regexremove.py
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/test_sanitize.py
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/test_svg2pdf.py
 lib/python${MODPY_VERSION}/site-packages/nbconvert/resources/
