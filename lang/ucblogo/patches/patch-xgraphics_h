@@ -1,0 +1,25 @@
+$OpenBSD: patch-xgraphics_h,v 1.1 2017/05/25 18:09:55 espie Exp $
+
+Index: xgraphics.h
+--- xgraphics.h.orig
++++ xgraphics.h
+@@ -22,15 +22,16 @@ void logofill(void);
+ 
+ #define GR_SIZE         60000
+ 
+-#define checkX { \
++#define checkX(v) { \
+     if (have_x < 0) real_window_init(); \
+     if (!have_x) { \
+ 	err_logo(BAD_GRAPH_INIT,NIL); \
+-	return; \
++	return v; \
+     } \
+ }
+ 
+-#define prepare_to_draw          {checkX; placate_x();}
++#define prepare_to_draw          {checkX(); placate_x();}
++#define prepare_to_draw_NULL     {checkX(NULL); placate_x();}
+ #define done_drawing             XFlush(dpy)
+ extern void placate_x();
+ 

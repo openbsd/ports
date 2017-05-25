@@ -1,0 +1,158 @@
+$OpenBSD: patch-graphics_c,v 1.1 2017/05/25 18:09:55 espie Exp $
+
+Index: graphics.c
+--- graphics.c.orig
++++ graphics.c
+@@ -553,7 +553,7 @@ NODE *lback(NODE *arg) {
+ }
+ 
+ NODE *lshowturtle(NODE *args) {
+-    prepare_to_draw;
++    prepare_to_draw_NULL;
+     if (!turtle_shown) {
+ 	turtle_shown = TRUE;
+ 	draw_turtle();
+@@ -563,7 +563,7 @@ NODE *lshowturtle(NODE *args) {
+ }
+ 
+ NODE *lhideturtle(NODE *args) {
+-    prepare_to_draw;
++    prepare_to_draw_NULL;
+     if (turtle_shown) {
+ 	draw_turtle();
+ 	turtle_shown = FALSE;
+@@ -581,7 +581,7 @@ NODE *lsetheading(NODE *arg) {
+     
+     val = numeric_arg(arg);
+     if (NOT_THROWING) {
+-	prepare_to_draw;
++	prepare_to_draw_NULL;
+ 	draw_turtle();
+ 	if (nodetype(val) == INT)
+ 	    turtle_heading = (FLONUM)getint(val);
+@@ -685,7 +685,7 @@ NODE *lscrunch(NODE *args) {
+ }
+ 
+ NODE *lhome(NODE *args) {
+-    prepare_to_draw;
++    prepare_to_draw_NULL;
+     out_of_bounds = FALSE;
+     setpos_bynumber((FLONUM)0.0, (FLONUM)0.0);
+     draw_turtle();
+@@ -841,7 +841,7 @@ NODE *lsety(NODE *args) {
+ }
+ 
+ NODE *lwrap(NODE *args) {
+-    prepare_to_draw;
++    prepare_to_draw_NULL;
+     draw_turtle();
+     current_mode = wrapmode;
+     while (turtle_x > turtle_right_max) {
+@@ -864,7 +864,7 @@ NODE *lwrap(NODE *args) {
+ 
+ NODE *lfence(NODE *args) {
+     (void)lwrap(args);	    /* get turtle inside the fence */
+-    prepare_to_draw;
++    prepare_to_draw_NULL;
+     draw_turtle();
+     current_mode = fencemode;
+     draw_turtle();
+@@ -873,7 +873,7 @@ NODE *lfence(NODE *args) {
+ }
+ 
+ NODE *lwindow(NODE *args) {
+-    prepare_to_draw;
++    prepare_to_draw_NULL;
+     draw_turtle();
+     current_mode = windowmode;
+     draw_turtle();
+@@ -892,7 +892,7 @@ NODE *lturtlemode(NODE *args) {
+ }
+ 
+ NODE *lfill(NODE *args) {
+-    prepare_to_draw;
++    prepare_to_draw_NULL;
+     draw_turtle();
+     logofill();
+     draw_turtle();
+@@ -914,7 +914,7 @@ NODE *llabel(NODE *arg) {
+     *print_stringptr = '\0';
+ 	
+     if (NOT_THROWING) {
+-	prepare_to_draw;
++	prepare_to_draw_NULL;
+ 	draw_turtle();
+ 	theLength = strlen(textbuf);
+ #ifdef mac
+@@ -1027,7 +1027,7 @@ NODE *lsetpencolor(NODE *arg) {
+     NODE *val;
+ 
+     if (NOT_THROWING) {
+-	prepare_to_draw;
++	prepare_to_draw_NULL;
+ 	if (is_list(car(arg))) {
+ 	    val = make_intnode(-1);
+ 	    lsetpalette(cons(val,arg));
+@@ -1044,7 +1044,7 @@ NODE *lsetbackground(NODE *arg) {
+     NODE *val;
+ 
+     if (NOT_THROWING) {
+-	prepare_to_draw;
++	prepare_to_draw_NULL;
+ 	if (is_list(car(arg))) {
+ 	    val = make_intnode(-2);
+ 	    lsetpalette(cons(val,arg));
+@@ -1064,7 +1064,7 @@ NODE *lsetpalette(NODE *args) {
+ 	if (slotnum < -2) {
+ 	    err_logo(BAD_DATA_UNREC, slot);
+ 	} else if (NOT_THROWING && ((slotnum > 7) || (slotnum < 0))) {
+-		prepare_to_draw;
++		prepare_to_draw_NULL;
+ 		set_palette(slotnum,
+ 			    (unsigned int)getint(car(arg)),
+ 			    (unsigned int)getint(cadr(arg)),
+@@ -1117,7 +1117,7 @@ NODE *lsetpensize(NODE *args) {
+     NODE *arg;
+ 
+     if (NOT_THROWING) {
+-	prepare_to_draw;
++	prepare_to_draw_NULL;
+ 	if (is_list(car(args))) {
+ 	    arg = pos_int_vector_arg(args);
+ 	    set_pen_width((int)getint(car(arg)));
+@@ -1141,7 +1141,7 @@ NODE *lsetpenpattern(NODE *args) {    
+ 	arg = err_logo(BAD_DATA, arg);
+ 	
+     if (NOT_THROWING) {
+-	prepare_to_draw;
++	prepare_to_draw_NULL;
+ 	set_list_pen_pattern(arg);
+ 	save_pattern();
+ 	done_drawing;
+@@ -1157,7 +1157,7 @@ NODE *lsetscrunch(NODE *args) {
+     ynode = numeric_arg(cdr(args));
+ 
+     if (NOT_THROWING) {
+-	prepare_to_draw;
++	prepare_to_draw_NULL;
+ 	draw_turtle();
+ 	x_scale = (nodetype(xnode) == FLOATT) ? getfloat(xnode) :
+ 			       (FLONUM)getint(xnode);
+@@ -1294,7 +1294,7 @@ NODE *larc(NODE *arg) {
+ 	else
+ 	    radius = getfloat(val2);
+ 
+-	prepare_to_draw;
++	prepare_to_draw_NULL;
+ 	draw_turtle();
+ 
+ 	/* save and force turtle state */
+@@ -1671,7 +1671,7 @@ NODE *lloadpict(NODE *args) {
+     lopenread(args);
+ #endif
+     if (NOT_THROWING) {
+-	prepare_to_draw;
++	prepare_to_draw_NULL;
+ 	fp = (FILE *)file_list->n_obj;
+ 	restore_palette(fp);
+ 	fread(&record_index, sizeof(FIXNUM), 1, fp);
