@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 
-# $OpenBSD: update-patches,v 1.15 2017/05/24 09:22:48 espie Exp $
+# $OpenBSD: update-patches,v 1.16 2017/05/25 23:15:41 espie Exp $
 # Copyright (c) 2017
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
@@ -42,6 +42,7 @@ if ($patchorig ne '.orig') {
 	say "PATCHORIG=$patchorig";
 }
 my $force = defined($ENV{FORCE_REGEN});
+my $verbose = defined($ENV{PATCH_VERBOSE});
 
 # protect against dirty stuff
 $wrkdist =~ s/\/$//g;
@@ -56,7 +57,7 @@ if (!-d $wrkdist) {
 	say "WRKDIST=$wrkdist is not a directory";
 	exit 1;
 }
-my ($actual, $saved, $done);
+my ($actual, $saved, $done, $nochange);
 my @edit;
 
 my $kw_re = qr{\$(
@@ -161,7 +162,7 @@ sub may_fuzz_patch
 
 	return unless $fuzzed;
 
-	say "*** Patch for $stem fuzzed because of CVS keywords";
+	say "*** Patch for $stem fuzzed because of CVS keywords" if $verbose;
 	@$list = ($h1, $h2);
 
 	for my $chunk (@{$patch}) {
@@ -175,7 +176,7 @@ sub may_fuzz_patch
 sub create_patch
 {
 	my ($src, $dst, $stem) = @_;
-	say "Processing $stem";
+	say "Processing $stem" if $verbose;
 	open(my $file, "-|", "diff", "-u", "-p", "-a", @diff_args, "-L",
 		"$stem.orig", "-L", $stem, "--", $src, $dst) or die;
 	my @lines = <$file>;
@@ -244,6 +245,16 @@ sub patch_name
 	return "patch-$arg";
 }
 
+sub description
+{
+	my $p = shift;
+	if ($p->{filename} ne patch_name($p->{stem})) {
+		return "$p->{filename} for $p->{stem}";
+	} else {
+		return "for $p->{stem}";
+	}
+}
+
 sub patches_differ
 {
 	my ($a, $b) = @_;
@@ -259,6 +270,12 @@ sub patches_differ
 	return 0;
 }
 
+sub identical_msg
+{
+	my $name = shift;
+	return "$name and $name$distorig are identical";
+}
+
 # figure out which files to work with
 find({wanted =>
     sub {
@@ -267,9 +284,12 @@ find({wanted =>
 	return unless m/\Q$patchorig\E$/;
 	return if $_ eq 'Oops.rej.orig';
 	return if m/\Q$distorig\E$/;
+	# avoid double reporting patches
 	my $src = $File::Find::name;
 	my $dst = $src;
 	$dst =~ s/\Q$patchorig\E$//;
+	# don't double-report
+	return if $dst =~ m/^(.*)\.beforesubst$/ && -f $1.$patchorig;
 	my $stem = $dst;
 	$stem =~ s/^\Q$wrkdist\E\///;
 	my $attach = '';
@@ -282,7 +302,11 @@ find({wanted =>
 	}
 	require File::Compare;
 	if (File::Compare::compare($src, $dst) == 0) {
-		say "Files $stem$patchorig and $stem$attach are identical";
+		if ($verbose) {
+			say identical_msg($stem);
+		} else {
+			$nochange->{$stem} = 1;
+		}
 		return;
 	}
 	my $p = create_patch($src, $dst, $stem);
@@ -326,11 +350,12 @@ for my $k (sort keys %$actual) {
 		write_patch($o);
 		next unless $differ;
 
-		print "Patch $o->{filename} for $o->{stem} updated";
+		say "Patch ", description($o), " updated";
 		system {"diff"} ('diff', '-u', @diff_args, '--', 
-		    $o->{filename}.".orig", $o->{filename});
+		    $o->{filename}.".orig", $o->{filename}) if $verbose;
 		push(@edit, $o->{filename});
 	} else {
+		say "New patch ", description($p);
 		write_patch($p);
 		# register it as known so we don't reparse
 		$saved->{$p->{stem}} = $p;
@@ -356,16 +381,19 @@ if (chdir($patchdir)) {
 for my $k (sort keys %$saved) {
 	my $p = $saved->{"$k"};
 	if (!$p->{accounted}) {
-		say "*** $p->{filename} not accounted for";
+		if ($nochange->{$p->{stem}}) {
+			say identical_msg($p->{stem});
+		}
+		say "*** Patch ", description($p), " not accounted for";
 	}
 	my ($warned_newline, $warned_keyword) = (0, 0);
 	for my $l (@{$p->{patch}}) {
 		if ($l =~ m/^\\ No newline at end of file/) {
-			say "*** $p->{filename} misses newline at end of file" 
+			say "*** Patch ", description($p), " misses newline at end of file" 
 			    unless $warned_newline;
 			$warned_newline = 1;
 		} elsif ($l =~ m/$kw_re/) {
-			say "*** $p->{filename} contains CVS keyword" 
+			say "*** Patch ",  description($p), " contains CVS keyword" 
 			    unless $warned_keyword;
 			$warned_keyword = 1;
 		}
