@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.92 2017/03/29 13:27:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.93 2017/05/25 11:51:27 espie Exp $
 
 BROKEN-i386=		hangs during build while running g-ir-scanner
 
@@ -20,7 +20,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += EGL GL ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xt Xxf86vm atk-1.0
 WANTLIB += atk-bridge-2.0 atspi c cairo cairo-gobject dbus-1 drm
-WANTLIB += enchant epoxy estdc++ expat ffi fontconfig freetype
+WANTLIB += enchant epoxy ${LIBECXX} expat ffi fontconfig freetype
 WANTLIB += gbm gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0 girepository-1.0
 WANTLIB += glapi glib-2.0 gmodule-2.0 gobject-2.0 gpg-error graphite2
 WANTLIB += gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstfft-1.0 gstpbutils-1.0
