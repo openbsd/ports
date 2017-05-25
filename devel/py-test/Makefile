@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2017/05/24 12:19:42 shadchin Exp $
+# $OpenBSD: Makefile,v 1.28 2017/05/25 08:54:31 sthen Exp $
 
 COMMENT=		cross-project testing tool for Python
 
@@ -23,6 +23,7 @@ MODPY_SETUPTOOLS=	Yes
 FLAVORS=		python3
 FLAVOR?=
 
+BUILD_DEPENDS=		devel/py-setuptools_scm${MODPY_FLAVOR}
 RUN_DEPENDS=		devel/py-py${MODPY_FLAVOR}>=1.4.30
 TEST_DEPENDS=		${RUN_DEPENDS} \
 			devel/py-hypothesis${MODPY_FLAVOR} \
