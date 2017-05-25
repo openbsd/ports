@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2016/12/25 14:34:39 zhuk Exp $
+# $OpenBSD: Makefile,v 1.8 2017/05/25 12:44:20 espie Exp $
 
 V =		4.1
 COMMENT =	Qt5 library for Telegram messaging service
@@ -23,6 +23,8 @@ MODULES =	devel/qmake x11/qt5
 LIB_DEPENDS =	x11/qt5/qtmultimedia
 
 NO_TEST =	Yes
+
+CXXFLAGS +=	-Wno-c++11-narrowing
 
 post-configure:
 	perl -pi -e "s,1\.0$$,${LIBqtelegram-ae_VERSION},g" ${WRKSRC}/Makefile
