@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.47 2017/04/10 11:45:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.48 2017/05/25 22:25:25 sthen Exp $
+
+NOT_FOR_ARCHS=	aarch64
 
 COMMENT=	GNU debugger
 CATEGORIES=	devel
