@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2017/04/10 11:46:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2017/05/25 13:24:10 espie Exp $
 
 COMMENT=	web proxy with antivirus filter
 
@@ -31,3 +31,12 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/INSTALL ${WRKSRC}/COPYING ${PREFIX}/share/doc/havp
 
 .include <bsd.port.mk>
+
+# old gcc doesn't give a shit about push_back...
+# but formally: 
+# void push_back( const T& value );
+# void push_back( T&& value );  (in C++11)
+# so we need T&& with clang
+.if ${PROPERTIES:Mclang}
+CFLAGS +=	-std=c++11
+.endif
