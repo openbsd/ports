@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2017/02/27 20:51:03 jca Exp $
+# $OpenBSD: Makefile,v 1.76 2017/05/25 22:57:42 sthen Exp $
 
 MULTI_PACKAGES = -graphics -main
 
@@ -40,10 +40,15 @@ CONFIGURE_ENV+=OPENBSD_LOCALBASE="${LOCALBASE}"
 
 USE_GMAKE=	Yes
 
-BUILD_DEPENDS +=	devel/gdb
 RUN_DEPENDS-graphics +=	lang/ocaml
-WANTLIB-main =		c curses iberty m pthread z
+WANTLIB-main =		c curses m pthread
 WANTLIB-graphics =	X11
+
+.if ${MACHINE_ARCH} != aarch64
+# for libbfd; devel/gdb doesn't build on aarch64 yet.
+BUILD_DEPENDS +=	devel/gdb
+WANTLIB-main +=		iberty z
+.endif
 
 .include <bsd.port.arch.mk>
 
