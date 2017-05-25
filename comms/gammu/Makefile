@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2017/04/05 08:02:05 kirby Exp $
+# $OpenBSD: Makefile,v 1.5 2017/05/25 18:07:53 kirby Exp $
 
 COMMENT =		Gnu All Mobile Management Utilities
 
-DISTNAME =		gammu-1.38.2
+DISTNAME =		gammu-1.38.3
 
 SHARED_LIBS += 		Gammu 1.0 # 8.1
 SHARED_LIBS += 		gsmsd 1.0 # 8.1
