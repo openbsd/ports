@@ -1,0 +1,14 @@
+$OpenBSD: patch-jffi_jni_GNUmakefile,v 1.1 2017/05/25 11:23:02 espie Exp $
+
+Index: jffi/jni/GNUmakefile
+--- jffi/jni/GNUmakefile.orig
++++ jffi/jni/GNUmakefile
+@@ -68,7 +68,7 @@ WERROR = -Werror
+ ifneq ($(OS),darwin)
+   WFLAGS += -Wundef $(WERROR)
+ endif
+-WFLAGS += -W -Wall -Wno-unused -Wno-parentheses
++WFLAGS += -W -Wall -Wno-unused -Wno-parentheses -Wno-unused-parameter
+ PICFLAGS = -fPIC
+ SOFLAGS = # Filled in for each OS specifically
+ FFI_MMAP_EXEC = -DFFI_MMAP_EXEC_WRIT
