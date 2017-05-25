@@ -1,11 +1,12 @@
-$OpenBSD: patch-config,v 1.2 2016/05/04 08:07:03 sthen Exp $
+$OpenBSD: patch-config,v 1.3 2017/05/25 14:39:24 sthen Exp $
 
 Don't misdetect OpenBSD/i386 as a.out when /usr/lib/libc.so.XX.Y.a
 is present (for /etc/rc rebuildlibs).
 
---- config.orig	Tue May  3 14:44:42 2016
-+++ config	Wed May  4 08:55:11 2016
-@@ -753,6 +753,7 @@ case "$GUESSOS" in
+Index: config
+--- config.orig
++++ config
+@@ -762,6 +762,7 @@ case "$GUESSOS" in
    sparc64-*-*bsd*)	OUT="BSD-sparc64" ;;
    ia64-*-*bsd*)		OUT="BSD-ia64" ;;
    amd64-*-*bsd*)	OUT="BSD-x86_64" ;;
