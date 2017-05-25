@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_include_xm_hashmap_h,v 1.1 2017/05/25 11:03:31 espie Exp $
+
+Index: src/include/xm_hashmap.h
+--- src/include/xm_hashmap.h.orig
++++ src/include/xm_hashmap.h
+@@ -14,7 +14,7 @@
+ namespace HashNamespace=std;
+ #endif
+ struct hashcmp_str {
+-  bool operator()(const char* s1, const char* s2) {
++  bool operator()(const char* s1, const char* s2) const {
+     if(s1 == NULL || s2 == NULL) {
+       return false;
+     }

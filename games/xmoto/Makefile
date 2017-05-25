@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2017/04/10 11:46:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2017/05/25 11:03:31 espie Exp $
 
 COMMENT =	challenging 2D motocross platform game
 
@@ -45,6 +45,7 @@ CONFIGURE_ENV =		CPPFLAGS="`pkg-config --cflags libpng sqlite3 sdl ${MODLUA_DEP}
 			LDFLAGS="`pkg-config --libs libpng sdl ${MODLUA_DEP}` -lGL"
 AUTOMAKE_VERSION =	1.11
 AUTOCONF_VERSION =	2.68
+CXXFLAGS +=		-Wno-mismatched-tags
 
 NO_TEST =		Yes
 

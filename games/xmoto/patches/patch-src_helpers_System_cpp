@@ -1,7 +1,8 @@
-$OpenBSD: patch-src_helpers_System_cpp,v 1.1 2012/04/15 08:49:05 kirby Exp $
---- src/helpers/System.cpp.orig	Sat Sep 10 22:34:36 2011
-+++ src/helpers/System.cpp	Sat Sep 10 22:35:18 2011
-@@ -81,7 +81,7 @@ std::string System::getMemoryInfo() {
+$OpenBSD: patch-src_helpers_System_cpp,v 1.2 2017/05/25 11:03:31 espie Exp $
+Index: src/helpers/System.cpp
+--- src/helpers/System.cpp.orig
++++ src/helpers/System.cpp
+@@ -87,7 +87,7 @@ std::string System::getMemoryInfo() {
    std::string v_res;
  
  // note that apple don't know getline
