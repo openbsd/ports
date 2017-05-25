@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2016/03/18 21:38:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.65 2017/05/25 11:27:08 espie Exp $
 
 COMMENT=	Emacs Lisp-like runtime library
 
@@ -39,6 +39,8 @@ CONFIGURE_ARGS+=	--enable-static \
 # lazy binding failed!
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -pthread" \
 			LDFLAGS="-L${LOCALBASE}/lib -liconv -lintl -pthread"
+
+CFLAGS +=	-fgnu89-inline
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/rep-xgettext.jl
