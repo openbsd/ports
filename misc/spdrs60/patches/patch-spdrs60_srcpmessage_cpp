@@ -1,0 +1,45 @@
+$OpenBSD: patch-spdrs60_srcpmessage_cpp,v 1.1 2017/05/25 00:14:40 espie Exp $
+
+Index: spdrs60/srcpmessage.cpp
+--- spdrs60/srcpmessage.cpp.orig
++++ spdrs60/srcpmessage.cpp
+@@ -553,9 +553,9 @@ unsigned int GaMessage::getValue() const
+  *   INIT <bus> GL <addr> <prot> <protv> <maxsteps> <fcount>
+  *    0     1   2    3      4       5         6         7
+  */
+-GlMessage::GlMessage(Type type = mtGlInit, unsigned int abus = 1,
+-        unsigned int addr = 1, Protocol prot = proDCC, unsigned int pv = 1,
+-        unsigned int maxvs = 14, unsigned int fc = 1):
++GlMessage::GlMessage(Type type, unsigned int abus,
++        unsigned int addr, Protocol prot, unsigned int pv,
++        unsigned int maxvs, unsigned int fc):
+     SrcpMessage(type, abus), address(addr), protocol(prot),
+     pversion(pv), maxvsteps(maxvs), fcount(fc), fmap(0)
+ {
+@@ -566,7 +566,7 @@ GlMessage::GlMessage(Type type = mtGlInit, unsigned in
+  *   SET <bus> GL <addr> <drivemode> <currentv> <maxv> <f1> . . <fn>
+  *    0    1   2    3         4          5        6      7
+  */
+-GlMessage::GlMessage(Type type = mtGlInit, unsigned int abus = 1,
++GlMessage::GlMessage(Type type, unsigned int abus = 1,
+         unsigned int addr = 1, unsigned int fc = 1, unsigned int dm = 1,
+         unsigned int cv = 0, unsigned int mv = 14,
+         unsigned int map = 0):
+@@ -579,7 +579,7 @@ GlMessage::GlMessage(Type type = mtGlInit, unsigned in
+  *   SET <bus> GL <addr> <drivemode> <currentv> <maxv> <f1> . . <fn>
+  *    0    1   2    3         4          5        6      7
+  */
+-GlMessage::GlMessage(Type type = mtGlInit, unsigned int abus = 1,
++GlMessage::GlMessage(Type type, unsigned int abus = 1,
+         unsigned int addr = 1, unsigned int dm = 1,
+         unsigned int cv = 0, unsigned int mv = 14, bool f0 = false):
+     SrcpMessage(type, abus), address(addr), drivemode(dm),
+@@ -773,7 +773,7 @@ void GlMessage::setFunctionMap(unsigned int map = 0)
+  *   TERM <bus> GL <addr>
+  *    0     1   2    3
+  */
+-GlMessage::GlMessage(Type type = mtGlGet, unsigned int abus = 1,
++GlMessage::GlMessage(Type type, unsigned int abus = 1,
+         unsigned int addr = 1):
+     SrcpMessage(type, abus), address(addr)
+ {

@@ -1,0 +1,19 @@
+$OpenBSD: patch-spdrs60_srcpmessage_h,v 1.1 2017/05/25 00:14:40 espie Exp $
+
+Index: spdrs60/srcpmessage.h
+--- spdrs60/srcpmessage.h.orig
++++ spdrs60/srcpmessage.h
+@@ -251,9 +251,10 @@ class GlMessage: public SrcpMessage
+             };
+ 
+         /* mtGlInit */
+-        GlMessage(Type type, unsigned int abus, unsigned int addr,
+-                Protocol prot, unsigned int pv, unsigned int maxvs,
+-                unsigned int fc);
++        GlMessage(Type type = mtGlInit, unsigned int abus = 1, 
++		unsigned int addr = 1, Protocol prot = proDCC, 
++		unsigned int pv = 1, unsigned int maxvs = 14,
++                unsigned int fc = 1);
+         /* mtGlSet (all funtions)*/
+         GlMessage(Type type, unsigned int abus,
+                 unsigned int addr, unsigned int fc, unsigned int dm,
