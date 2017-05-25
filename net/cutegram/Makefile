@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2016/12/25 14:34:39 zhuk Exp $
+# $OpenBSD: Makefile,v 1.6 2017/05/25 13:03:28 espie Exp $
 
 V =		2.4.0
 COMMENT =	Qt5 Telegram messaging service client
@@ -31,6 +31,8 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+3,-guic \
 		x11/qt5/qtgraphicaleffects \
 		x11/qt5/qtquickcontrols
+
+CXXFLAGS +=	-Wno-c++11-narrowing
 
 NO_TEST =	Yes
 
