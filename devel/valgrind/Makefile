@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2016/03/31 07:22:01 uebayasi Exp $
+# $OpenBSD: Makefile,v 1.15 2017/05/25 19:19:41 espie Exp $
 
 ONLY_FOR_ARCHS =	amd64
 
@@ -33,6 +33,7 @@ BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS} \
 			devel/libelf
 
+
 pre-configure:
 	@cd ${WRKSRC} && \
 	env \
@@ -41,3 +42,8 @@ pre-configure:
 		/bin/sh ./autogen.sh
 
 .include <bsd.port.mk>
+
+.if ${PROPERTIES:Mclang}
+# replace -lgcc
+MAKE_FLAGS =	TOOL_LDADD_COMMON=-lcompiler_rt
+.endif
