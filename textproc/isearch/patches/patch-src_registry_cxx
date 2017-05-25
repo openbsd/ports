@@ -1,0 +1,54 @@
+$OpenBSD: patch-src_registry_cxx,v 1.1 2017/05/25 14:14:43 espie Exp $
+
+Index: src/registry.cxx
+--- src/registry.cxx.orig
++++ src/registry.cxx
+@@ -40,7 +40,7 @@ Description:	Class REGISTRY - Structured Profile Regis
+ Author:		Nassib Nassar, nrn@cnidr.org
+ @@@*/
+ 
+-#include <fstream.h>
++#include <fstream>
+ #include <stdlib.h>
+ #include "registry.hxx"
+ 
+@@ -50,7 +50,7 @@ REGISTRY::REGISTRY(const STRING& Title) {
+ 	Child = 0;
+ }
+ 
+-REGISTRY::REGISTRY(const PCHR Title) {
++REGISTRY::REGISTRY(const char* Title) {
+ 	Data = Title;
+ 	Next = 0;
+ 	Child = 0;
+@@ -393,3 +393,30 @@ REGISTRY::~REGISTRY() {
+ 		delete Child;
+ 	}
+ }
++
++// XXX single definition for const strings 
++const char* IsearchDefaultDbName = "ISEARCH";
++const char* IsearchVersion = "1.14";
++
++const char* Bib1AttributeSet = "1.2.840.10003.3.1";
++const char* StasAttributeSet = "1.2.840.10003.3.1000.6.1";
++
++const char* IsearchAttributeSet = "1.2.840.10003.3.1000.34.1";
++
++const char* SutrsRecordSyntax = "1.2.840.10003.5.101";
++const char* UsmarcRecordSyntax = "1.2.840.10003.5.10";
++const char* HtmlRecordSyntax = "1.2.840.10003.5.1000.34.1";
++
++const char* DbExtDbInfo = ".dbi";
++const char* DbExtIndex = ".inx";
++const char* DbExtMdt = ".mdt";
++const char* DbExtMdtKeyIndex = ".mdk";
++const char* DbExtMdtGpIndex = ".mdg";
++const char* DbExtDfd = ".dfd";
++const char* DbExtIndexQueue1 = ".iq1";
++const char* DbExtIndexQueue2 = ".iq2";
++const char* DbExtTemp = ".tmp";
++const char* DbExtDict = ".dic";
++const char* DbExtSparse = ".spr";
++const char* DbExtCentroid = ".cen";
++

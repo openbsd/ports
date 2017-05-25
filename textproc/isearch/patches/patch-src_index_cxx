@@ -1,7 +1,16 @@
-$OpenBSD: patch-src_index_cxx,v 1.1 2000/04/21 23:42:11 espie Exp $
---- src/index.cxx.orig	Sat Apr 22 01:29:57 2000
-+++ src/index.cxx	Sat Apr 22 01:30:04 2000
-@@ -530,7 +530,7 @@ GPTYPE INDEX::BuildGpList(
+$OpenBSD: patch-src_index_cxx,v 1.2 2017/05/25 14:14:43 espie Exp $
+Index: src/index.cxx
+--- src/index.cxx.orig
++++ src/index.cxx
+@@ -56,6 +56,7 @@ Author:		Nassib Nassar, nrn@cnidr.org
+ #include "dictionary.hxx"
+ #include "../doctype/doctype.hxx"
+ #endif
++using std::cerr;
+ 
+ // const INT StopWordSize = 400;
+ const INT StopWordSize = (sizeof(stoplist)/sizeof(stoplist[0]));
+@@ -530,7 +531,7 @@ GPTYPE INDEX::BuildGpList(
  }
  
  GDT_BOOLEAN INDEX::ValidateInField(const GPTYPE HitGp, const STRING& FieldName,

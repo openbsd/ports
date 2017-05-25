@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_idb_hxx,v 1.1 2017/05/25 14:14:43 espie Exp $
+
+Index: src/idb.hxx
+--- src/idb.hxx.orig
++++ src/idb.hxx
+@@ -115,7 +115,7 @@ friend class DICTIONARY; (public)
+ 	void SetDebugSkip(const INT Skip);
+ 	INT IsSystemFile(const STRING& FileName);
+ 	void KillAll();
+-	void ComposeDbFn(PSTRING StringBuffer, const PCHR Suffix) const;
++	void ComposeDbFn(PSTRING StringBuffer, const char* Suffix) const;
+ 	void GetDbFileStem(PSTRING StringBuffer) const;
+ 	void GetDbVersionNumber(PSTRING StringBuffer) const;
+ 	void GetIsearchVersionNumber(PSTRING StringBuffer) const;
+@@ -128,7 +128,7 @@ friend class DICTIONARY; (public)
+ 			  GPTYPE* GpBuffer, INT GpLength);
+ 	INT IsStopWord(CHR* WordStart, INT WordMaximum) const;
+ //	void SelectRegions(const RECORD& Record, FCT* RegionsPtr) const;
+-	PFILE ffopen(const STRING& FileName, const PCHR Type);
++	PFILE ffopen(const STRING& FileName, const char* Type);
+ 	INT ffclose(PFILE FilePointer);
+ 	GDT_BOOLEAN IsWrongEndian() const;
+ 	void SetWrongEndian();

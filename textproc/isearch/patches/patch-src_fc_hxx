@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_fc_hxx,v 1.1 2017/05/25 14:14:43 espie Exp $
+
+Index: src/fc.hxx
+--- src/fc.hxx.orig
++++ src/fc.hxx
+@@ -8,7 +8,8 @@ Author:		Nassib Nassar, nrn@cnidr.org
+ #ifndef FC_HXX
+ #define FC_HXX
+ 
+-#include <iostream.h>
++#include <iostream>
++using std::ostream;
+ #include "defs.hxx"
+ 
+ class FC {

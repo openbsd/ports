@@ -1,0 +1,77 @@
+$OpenBSD: patch-src_defs_hxx,v 1.1 2017/05/25 14:14:43 espie Exp $
+
+Index: src/defs.hxx
+--- src/defs.hxx.orig
++++ src/defs.hxx
+@@ -48,25 +48,25 @@ Author:		Nassib Nassar, nrn@cnidr.org
+ #endif
+ #include "gdt.h"
+ 
+-const PCHR IsearchDefaultDbName = "ISEARCH";
++extern const char* IsearchDefaultDbName;
+ 
+-const PCHR IsearchVersion = "1.14";
++extern const char* IsearchVersion;
+ const INT IsearchMagicNumber = 6;
+ 
+ typedef UINT4 GPTYPE;
+ typedef GPTYPE* PGPTYPE;
+ 
+-const PCHR Bib1AttributeSet = "1.2.840.10003.3.1";
+-const PCHR StasAttributeSet = "1.2.840.10003.3.1000.6.1";
++extern const char* Bib1AttributeSet;
++extern const char* StasAttributeSet;
+ 
+-const PCHR IsearchAttributeSet = "1.2.840.10003.3.1000.34.1";
++extern const char* IsearchAttributeSet;
+ const INT IsearchFieldAttr = 1;
+ const INT IsearchWeightAttr = 2;
+ 
+ // Record Syntaxes
+-const PCHR SutrsRecordSyntax = "1.2.840.10003.5.101";
+-const PCHR UsmarcRecordSyntax = "1.2.840.10003.5.10";
+-const PCHR HtmlRecordSyntax = "1.2.840.10003.5.1000.34.1";
++extern const char* SutrsRecordSyntax;
++extern const char* UsmarcRecordSyntax;
++extern const char* HtmlRecordSyntax;
+ 
+ // Op Types
+ const INT TypeOperand = 1;
+@@ -92,24 +92,24 @@ const INT IndexingStatusIndexing = 2;
+ const INT IndexingStatusMerging = 3;
+ const INT IndexingStatusParsingFiles = 4;
+ 
+-const PCHR DbExtDbInfo = ".dbi";
+-const PCHR DbExtIndex = ".inx";
+-const PCHR DbExtMdt = ".mdt";
+-const PCHR DbExtMdtKeyIndex = ".mdk";
+-const PCHR DbExtMdtGpIndex = ".mdg";
+-const PCHR DbExtDfd = ".dfd";
+-const PCHR DbExtIndexQueue1 = ".iq1";
+-const PCHR DbExtIndexQueue2 = ".iq2";
+-const PCHR DbExtTemp = ".tmp";
+-const PCHR DbExtDict = ".dic";
+-const PCHR DbExtSparse = ".spr";
+-const PCHR DbExtCentroid = ".cen";
++extern const char* DbExtDbInfo;
++extern const char* DbExtIndex;
++extern const char* DbExtMdt;
++extern const char* DbExtMdtKeyIndex;
++extern const char* DbExtMdtGpIndex;
++extern const char* DbExtDfd;
++extern const char* DbExtIndexQueue1;
++extern const char* DbExtIndexQueue2;
++extern const char* DbExtTemp;
++extern const char* DbExtDict;
++extern const char* DbExtSparse;
++extern const char* DbExtCentroid;
+ 
+ #ifdef PLATFORM_MSVC
+ #define strcasecmp stricmp
+ #define strncasecmp strnicmp
+ #endif
+ 
+-#define COUT cout
++#define COUT std::cout
+ 
+ #endif

@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_Isearch_cxx,v 1.1 2017/05/25 14:14:43 espie Exp $
+
+Index: src/Isearch.cxx
+--- src/Isearch.cxx.orig
++++ src/Isearch.cxx
+@@ -42,9 +42,11 @@ Author:		Nassib Nassar, nrn@cnidr.org
+ 
+ #include <stdio.h>
+ #include <string.h>
+-#include <iostream.h>
+-#include <iomanip.h>
++#include <iostream>
++#include <iomanip>
+ #include <locale.h>
++using std::cin;
++using std::setw;
+ 
+ #include "idb.hxx"
+ #include "string.hxx"

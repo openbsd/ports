@@ -1,0 +1,14 @@
+$OpenBSD: patch-doctype_colondoc_cxx,v 1.1 2017/05/25 14:14:43 espie Exp $
+
+Index: doctype/colondoc.cxx
+--- doctype/colondoc.cxx.orig
++++ doctype/colondoc.cxx
+@@ -116,7 +116,7 @@ Author:		Edward C. Zimmermann, edz@bsn.com
+ Distribution:   Isite modifications by A. Warnock (warnock@clark.net)
+ @@@-*/
+ 
+-#include <iostream.h>
++#include <iostream>
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>

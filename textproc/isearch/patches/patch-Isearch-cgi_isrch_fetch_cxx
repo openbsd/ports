@@ -1,0 +1,14 @@
+$OpenBSD: patch-Isearch-cgi_isrch_fetch_cxx,v 1.1 2017/05/25 14:14:43 espie Exp $
+
+Index: Isearch-cgi/isrch_fetch.cxx
+--- Isearch-cgi/isrch_fetch.cxx.orig
++++ Isearch-cgi/isrch_fetch.cxx
+@@ -40,7 +40,7 @@ Description:    CGI app that searches against Iindex-e
+ Author:         Kevin Gamiel, kgamiel@cnidr.org
+ @@@*/
+ 
+-#include <iostream.h>
++#include <iostream>
+ #include "gdt.h"
+ #include <stdio.h>
+ #include <sys/types.h>

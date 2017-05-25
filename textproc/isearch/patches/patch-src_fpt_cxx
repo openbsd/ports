@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_fpt_cxx,v 1.1 2017/05/25 14:14:43 espie Exp $
+
+Index: src/fpt.cxx
+--- src/fpt.cxx.orig
++++ src/fpt.cxx
+@@ -84,7 +84,7 @@ void FPT::LowPriority(const INT Index) {
+ 	Table[Index-1].SetPriority(Highest);
+ }
+ 
+-PFILE FPT::ffopen(const STRING& FileName, const PCHR Type) {
++PFILE FPT::ffopen(const STRING& FileName, const char* Type) {
+ 	// Check if file is already open
+ 	INT z;
+ 	z = Lookup(FileName);

@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_idb_cxx,v 1.1 2017/05/25 14:14:43 espie Exp $
+
+Index: src/idb.cxx
+--- src/idb.cxx.orig
++++ src/idb.cxx
+@@ -252,7 +252,7 @@ void IDB::GetRecordDfdt(const STRING& Key, PDFDT DfdtB
+ 	}
+ }
+ 
+-void IDB::ComposeDbFn(PSTRING StringBuffer, const PCHR Suffix) const {
++void IDB::ComposeDbFn(PSTRING StringBuffer, const char* Suffix) const {
+ 	GetDbFileStem(StringBuffer);
+ 	StringBuffer->Cat(Suffix);
+ }
+@@ -757,7 +757,7 @@ void IDB::SelectRegions(const RECORD& Record, FCT* Reg
+ }
+ */
+ 
+-PFILE IDB::ffopen(const STRING& FileName, const PCHR Type) {
++PFILE IDB::ffopen(const STRING& FileName, const char* Type) {
+ //	return MainFpt.ffopen(FileName, Type);
+ 	return fopen(FileName, Type);
+ }

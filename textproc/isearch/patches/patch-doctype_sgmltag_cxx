@@ -1,0 +1,14 @@
+$OpenBSD: patch-doctype_sgmltag_cxx,v 1.1 2017/05/25 14:14:43 espie Exp $
+
+Index: doctype/sgmltag.cxx
+--- doctype/sgmltag.cxx.orig
++++ doctype/sgmltag.cxx
+@@ -49,7 +49,7 @@ Changes:	1.02
+ 			- Misc Error checking
+ @@@*/
+ 
+-#include <iostream.h>
++#include <iostream>
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>

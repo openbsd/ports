@@ -1,0 +1,26 @@
+$OpenBSD: patch-src_idbobj_hxx,v 1.1 2017/05/25 14:14:43 espie Exp $
+
+Index: src/idbobj.hxx
+--- src/idbobj.hxx.orig
++++ src/idbobj.hxx
+@@ -51,6 +51,7 @@ Author:		Nassib Nassar, nrn@cnidr.org
+ #include "result.hxx"
+ #include "strlist.hxx"
+ #include "record.hxx"
++using std::cout;
+ 
+ class IDBOBJ {
+ friend class INDEX;
+@@ -75,10 +76,10 @@ friend class IRSET; (public)
+ 	virtual void GetDocTypeOptions(PSTRLIST StringListBuffer) const { };
+ //	virtual void GetRecordData(const RESULT& ResultRecord, 
+ //	                           PSTRING StringBuffer) const { };
+-	virtual void ComposeDbFn(PSTRING StringBuffer, const PCHR Suffix) 
++	virtual void ComposeDbFn(PSTRING StringBuffer, const char* Suffix) 
+ 	  const { };
+ 	virtual void DocTypeAddRecord(const RECORD& NewRecord) { };
+-	virtual PFILE ffopen(const STRING& FileName, const PCHR Type) 
++	virtual PFILE ffopen(const STRING& FileName, const char* Type) 
+ 	  { return 0; };
+ 	virtual INT ffclose(PFILE FilePointer) { return 0; };
+ 	virtual INT GpFwrite(GPTYPE* Ptr, SIZE_T Size, SIZE_T NumElements, 

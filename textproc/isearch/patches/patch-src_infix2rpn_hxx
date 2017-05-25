@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_infix2rpn_hxx,v 1.1 2017/05/25 14:14:43 espie Exp $
+
+Index: src/infix2rpn.hxx
+--- src/infix2rpn.hxx.orig
++++ src/infix2rpn.hxx
+@@ -62,8 +62,8 @@ class INFIX2RPN { (public)
+ private:
+ 	void ProcessOp(const operators op, STRSTACK *TheStack,  STRING *result);
+ 	void RegisterError(const STRING &Error);
+-	CHR *op2string(const operators op);
+-	CHR *StandardizeOpName(const STRING op);
++	const char* op2string(const operators op);
++	const char* StandardizeOpName(const STRING op);
+ 	INT TermsWithNoOps;
+ 	STRING ErrorMessage;
+ 

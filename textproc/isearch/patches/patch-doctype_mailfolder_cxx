@@ -1,0 +1,23 @@
+$OpenBSD: patch-doctype_mailfolder_cxx,v 1.1 2017/05/25 14:14:43 espie Exp $
+
+Index: doctype/mailfolder.cxx
+--- doctype/mailfolder.cxx.orig
++++ doctype/mailfolder.cxx
+@@ -115,7 +115,7 @@ Author:		Edward C. Zimmermann, edz@bsn.com
+ Distribution:   Isite modifications by A. Warnock (warnock@clark.net)
+ @@@-*/
+ 
+-#include <iostream.h>
++#include <iostream>
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
+@@ -181,7 +181,7 @@ GDT_BOOLEAN MAILFOLDER::accept_tag(const PCHR tag) con
+ #if RESTRICT_MAIL_FIELDS
+   // Mail tags that we want, if it is not
+   // here then we igonre it.
+-  static char * Keywords[] = {
++  static const char * Keywords[] = {
+     /* Must be sorted! */
+     "Bcc",
+     "Cc",

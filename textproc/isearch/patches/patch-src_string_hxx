@@ -1,7 +1,21 @@
-$OpenBSD: patch-src_string_hxx,v 1.1 2010/05/22 11:54:14 espie Exp $
---- src/string.hxx.orig	Sat May 22 13:45:31 2010
-+++ src/string.hxx	Sat May 22 13:45:53 2010
-@@ -67,7 +67,7 @@ class STRING { (public)
+$OpenBSD: patch-src_string_hxx,v 1.2 2017/05/25 14:14:43 espie Exp $
+Index: src/string.hxx
+--- src/string.hxx.orig
++++ src/string.hxx
+@@ -43,7 +43,11 @@ Author:		Nassib Nassar, nrn@cnidr.org
+ #ifndef STRING_HXX
+ #define STRING_HXX
+ 
+-#include <iostream.h>
++#include <iostream>
++using std::ostream;
++using std::ofstream;
++using std::endl;
++using std::cout;
+ #include "gdt.h"
+ 
+ #ifdef METRICS
+@@ -67,7 +71,7 @@ class STRING { (public)
  	STRING& operator=(const INT IntValue);
  	STRING& operator=(const DOUBLE DoubleValue);
  	STRING& operator=(const STRING& OtherString);
@@ -10,7 +24,7 @@ $OpenBSD: patch-src_string_hxx,v 1.1 2010/05/22 11:54:14 espie Exp $
   	STRING& operator+=(const UCHR Character);
   	STRING& operator+=(const CHR* CString);
   	STRING& operator+=(const STRING& OtherString);
-@@ -134,7 +134,7 @@ class STRING { (public)
+@@ -134,7 +138,7 @@ class STRING { (public)
  	void StrBuffAlloc(INT BufferSizeRequest);
  	~STRING();
  private:

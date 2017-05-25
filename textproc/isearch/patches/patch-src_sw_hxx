@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_sw_hxx,v 1.1 2017/05/25 14:14:43 espie Exp $
+
+Index: src/sw.hxx
+--- src/sw.hxx.orig
++++ src/sw.hxx
+@@ -1,5 +1,5 @@
+ // 400 words
+-char   *stoplist[] = {
++const char   *stoplist[] = {
+   "0",
+   "1",
+   "2",

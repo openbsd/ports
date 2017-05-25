@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_fpt_hxx,v 1.1 2017/05/25 14:14:43 espie Exp $
+
+Index: src/fpt.hxx
+--- src/fpt.hxx.orig
++++ src/fpt.hxx
+@@ -18,7 +18,7 @@ class FPT {
+ public:
+ 	FPT();
+ 	FPT(const INT TableSize);
+-	PFILE ffopen(const STRING& FileName, const PCHR Type);
++	PFILE ffopen(const STRING& FileName, const char* Type);
+ 	INT ffclose(PFILE FilePointer);
+ 	void CloseAll();
+ 	~FPT();

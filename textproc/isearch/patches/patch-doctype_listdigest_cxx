@@ -1,0 +1,14 @@
+$OpenBSD: patch-doctype_listdigest_cxx,v 1.1 2017/05/25 14:14:43 espie Exp $
+
+Index: doctype/listdigest.cxx
+--- doctype/listdigest.cxx.orig
++++ doctype/listdigest.cxx
+@@ -114,7 +114,7 @@ Author:		Edward C. Zimmermann, edz@bsn.com
+ Copyright:	Basis Systeme netzwerk, Munich
+ @@@-*/
+ 
+-#include <iostream.h>
++#include <iostream>
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>

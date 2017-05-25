@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_marclib_cxx,v 1.1 2017/05/25 14:14:43 espie Exp $
+
+Index: src/marclib.cxx
+--- src/marclib.cxx.orig
++++ src/marclib.cxx
+@@ -442,7 +442,7 @@ int subfcopy(char *To, char *From,int flag)
+ /*          returns -1 for no match and 0 for match                 */
+ /********************************************************************/
+ 
+-int tagcmp(char *pattag, char *comptag)
++int tagcmp(const char *pattag, const char *comptag)
+ {
+ 	int i;
+ 	for (i = 0; i < 3; i++) {
+@@ -466,7 +466,7 @@ int tagcmp(char *pattag, char *comptag)
+ /*            field. Startf lets it start from later in a field list.*/
+ /*            Permits "wildcard" comparisons using tagcmp            */
+ /*********************************************************************/
+-MARC_FIELD *GetField(MARC_REC *rec,MARC_FIELD *startf,char *buffer,char *tag)
++MARC_FIELD *GetField(MARC_REC *rec,MARC_FIELD *startf,char *buffer,const char *tag)
+ {
+ 	MARC_FIELD *f;
+    

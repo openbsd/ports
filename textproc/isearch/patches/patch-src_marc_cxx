@@ -1,0 +1,42 @@
+$OpenBSD: patch-src_marc_cxx,v 1.1 2017/05/25 14:14:43 espie Exp $
+
+Index: src/marc.cxx
+--- src/marc.cxx.orig
++++ src/marc.cxx
+@@ -50,6 +50,7 @@
+ #include "memcntl.h"
+ #include "marclib.hxx"
+ #include "marc.hxx"
++using std::cerr;
+ 
+ MARC::MARC(STRING & Data)
+ {
+@@ -97,12 +98,12 @@ char fieldbuffer[FIELDBUFSIZE];
+ char linebuffer[FIELDBUFSIZE];
+ 
+ typedef struct {
+-	char *label;
+-	char *tags;
+-	char *subfields;
+-        char *beginpunct;
+-	char *subfsep;
+-	char *endpunct;
++	const char *label;
++	const char *tags;
++	const char *subfields;
++        const char *beginpunct;
++	const char *subfsep;
++	const char *endpunct;
+         int  newfield;
+ 	int  print_all;
+ 	int  print_indicators;
+@@ -243,7 +244,8 @@ void MARC::Print(FILE *fp)
+ char *format_field(MARC_FIELD *mf,DISP_FORMAT *format,char *buff,int repeat)
+ {
+ 	MARC_SUBFIELD *subf;
+-	register char *linend, *c;
++	register char *linend;
++	const char *c;
+         int pos, count, ok;
+ 	
+ 	linend = buff;

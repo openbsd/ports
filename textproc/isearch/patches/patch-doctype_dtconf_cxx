@@ -1,0 +1,24 @@
+$OpenBSD: patch-doctype_dtconf_cxx,v 1.1 2017/05/25 14:14:43 espie Exp $
+
+Index: doctype/dtconf.cxx
+--- doctype/dtconf.cxx.orig
++++ doctype/dtconf.cxx
+@@ -40,7 +40,9 @@ Description:	Document Type configuration utility for I
+ Author:		Nassib Nassar, nrn@cnidr.org
+ @@@*/
+ 
+-#include <iostream.h>
++#include <iostream>
++using std::cout;
++using std::endl;
+ #include <stdio.h>
+ #include <string.h>
+ #include <ctype.h>
+@@ -52,6 +54,7 @@ Author:		Nassib Nassar, nrn@cnidr.org
+ static char DtName[MAXDT][MAXSTR];
+ static char DtFn[MAXDT][MAXSTR];
+ 
++int
+ main() {
+ 	printf("\n");
+ 	printf("Configuring Isearch for the following document types (see dtconf.inf):\n");

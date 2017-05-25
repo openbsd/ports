@@ -1,0 +1,78 @@
+$OpenBSD: patch-doctype_html_cxx,v 1.1 2017/05/25 14:14:43 espie Exp $
+
+Index: doctype/html.cxx
+--- doctype/html.cxx.orig
++++ doctype/html.cxx
+@@ -115,7 +115,7 @@ Author:   	Edward C. Zimmermann, edz@bsn.com
+ Copyright:	Basis Systeme netzwerk, Munich
+ @@@-*/
+ 
+-#include <iostream.h>
++#include <iostream>
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <ctype.h>
+@@ -182,7 +182,7 @@ static int IsHTMLAttributeTag (const char *tag)
+ {
+   // HTML Attributes where we are also interested in values
+   static struct {
+-    char *tag;
++    const char *tag;
+     unsigned char len;
+   } Tags[] = {
+ /*- UNSORTED LIST (lowercase names) -*/ 
+@@ -356,7 +356,7 @@ static int IgnoreHTMLTag (const char *tag)
+ #endif
+ 
+ // Search for the next occurance of an element of tags in tag_list
+-static const char *find_next_tag (char *const *tag_list, char *const *tags)
++static const char *find_next_tag (const char *const *tag_list, const char *const *tags)
+ {
+   if (*tag_list == NULL)
+     return NULL;
+@@ -450,12 +450,12 @@ void HTML::ParseFields (PRECORD NewRecord)
+ 	  if (StrCaseCmp (*tags_ptr, "dd") == 0)
+ 	    {
+ 	      // Look for nearest <DT> or </DL>
+-	      static char *tags[] = {"dt", "/dl", NULL};
++	      static const char *tags[] = {"dt", "/dl", NULL};
+ 	      p = find_next_tag (tags_ptr, tags);
+ 	      if (p == NULL)
+ 		{
+ 		  // Some bogus uses
+-		  static char *tags[] = {"dd", "/ul", "/ol", NULL};
++		  static const char *tags[] = {"dd", "/ul", "/ol", NULL};
+ 		  p = find_next_tag (tags_ptr, tags);
+ 		  if (p)
+ 		    {
+@@ -469,12 +469,12 @@ void HTML::ParseFields (PRECORD NewRecord)
+ 	  else if (StrCaseCmp (*tags_ptr, "dt") == 0)
+ 	    {
+ 	      // look for next <DD> or </DL>
+-	      static char *tags[] = {"DD", "/DL", NULL};
++	      static const char *tags[] = {"DD", "/DL", NULL};
+ 	      p = find_next_tag (tags_ptr, tags);
+ 	      if (p == NULL)
+ 		{
+ 		  // Some bogus uses
+-		  static char *tags[] = {"dt", "/ul", "/ol", NULL};
++		  static const char *tags[] = {"dt", "/ul", "/ol", NULL};
+ 		  p = find_next_tag (tags_ptr, tags);
+ 		  if (p)
+ 		    {
+@@ -488,13 +488,13 @@ void HTML::ParseFields (PRECORD NewRecord)
+ 	  else if (StrCaseCmp (*tags_ptr, "li") == 0)
+ 	    {
+ 	      // look for next <LI>, </OL> or </UL>
+-	      static char *tags[] = {"li", "/ol", "/ul", NULL};
++	      static const char *tags[] = {"li", "/ol", "/ul", NULL};
+ 	      p = find_next_tag (tags_ptr, tags);
+ 	    }
+ 	  else if (StrCaseCmp (*tags_ptr, "tl") == 0)
+ 	    {
+ 	      // look for nearest <TL> or </TLI>
+-	      static char *tags[] = {"tl", "/tli", NULL};
++	      static const char *tags[] = {"tl", "/tli", NULL};
+ 	      p = find_next_tag (tags_ptr, tags);
+ 	    }
+ 	}			// end code to handle some HTML minimized tags

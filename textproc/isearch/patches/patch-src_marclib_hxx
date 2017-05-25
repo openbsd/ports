@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_marclib_hxx,v 1.1 2017/05/25 14:14:43 espie Exp $
+
+Index: src/marclib.hxx
+--- src/marclib.hxx.orig
++++ src/marclib.hxx
+@@ -60,7 +60,7 @@ void codeconvert(char *string);
+ char charconvert(char c);
+ int subfcopy(char *To, char *From,int flag);
+ int tagcmp(char *pattag, char *comptag);
+-MARC_FIELD *GetField(MARC_REC *rec,MARC_FIELD *startf,char *buffer,char *tag);
++MARC_FIELD *GetField(MARC_REC *rec,MARC_FIELD *startf,char *buffer,const char *tag);
+ MARC_SUBFIELD *GetSubf(MARC_FIELD *f, char *buffer, char code);
+ char *normalize(char *in, char *out);
+ /*

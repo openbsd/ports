@@ -1,6 +1,16 @@
-$OpenBSD: patch-doctype_medline_cxx,v 1.2 2010/05/22 11:54:14 espie Exp $
---- doctype/medline.cxx.orig	Wed Dec  4 22:02:08 1996
-+++ doctype/medline.cxx	Sat May 22 12:55:04 2010
+$OpenBSD: patch-doctype_medline_cxx,v 1.3 2017/05/25 14:14:43 espie Exp $
+Index: doctype/medline.cxx
+--- doctype/medline.cxx.orig
++++ doctype/medline.cxx
+@@ -117,7 +117,7 @@ Copyright:	Basis Systeme netzwerk, Munich
+ 
+ // TODO: Clean-up Record parser and fix to leave off junk between records
+ 
+-#include <iostream.h>
++#include <iostream>
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
 @@ -182,7 +182,7 @@ void MEDLINE::ParseRecords (const RECORD& FileRecord)
  
    // Search for Medline Seperator

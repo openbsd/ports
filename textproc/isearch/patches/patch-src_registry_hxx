@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_registry_hxx,v 1.1 2017/05/25 14:14:43 espie Exp $
+
+Index: src/registry.hxx
+--- src/registry.hxx.orig
++++ src/registry.hxx
+@@ -50,7 +50,7 @@ Author:		Nassib Nassar, nrn@cnidr.org
+ class REGISTRY {
+ public:
+ 	REGISTRY(const STRING& Title);
+-	REGISTRY(const PCHR Title);
++	REGISTRY(const char* Title);
+ 	REGISTRY& operator=(const REGISTRY& OtherRegistry);
+ 	void SetData(const STRLIST& Position, const STRLIST& Value);
+ 	void AddData(const STRLIST& Position, const STRLIST& Value);

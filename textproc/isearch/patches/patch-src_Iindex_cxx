@@ -1,6 +1,16 @@
-$OpenBSD: patch-src_Iindex_cxx,v 1.1 2010/06/07 20:49:34 espie Exp $
---- src/Iindex.cxx.orig	Mon Jun  7 22:29:38 2010
-+++ src/Iindex.cxx	Mon Jun  7 22:30:50 2010
+$OpenBSD: patch-src_Iindex_cxx,v 1.2 2017/05/25 14:14:43 espie Exp $
+Index: src/Iindex.cxx
+--- src/Iindex.cxx.orig
++++ src/Iindex.cxx
+@@ -43,7 +43,7 @@ Author:		Nassib Nassar, nrn@cnidr.org
+ #include <stdlib.h>
+ #include <errno.h>
+ #include <string.h>
+-#include <iostream.h>
++#include <iostream>
+ #include <locale.h>
+ 
+ #if defined(_MSDOS) || defined(_WIN32)
 @@ -149,7 +149,7 @@ void AddFile(PIDB IdbPtr, STRING& PathName, STRING& Fi
  	   }
  	 }

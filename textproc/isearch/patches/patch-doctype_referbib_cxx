@@ -1,0 +1,14 @@
+$OpenBSD: patch-doctype_referbib_cxx,v 1.1 2017/05/25 14:14:43 espie Exp $
+
+Index: doctype/referbib.cxx
+--- doctype/referbib.cxx.orig
++++ doctype/referbib.cxx
+@@ -113,7 +113,7 @@ Description:	Class REFERBIB - Refer bibliographic reco
+ Author:		Edward C. Zimmermann, edz@bsn.com
+ @@@-*/
+ 
+-#include <iostream.h>
++#include <iostream>
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>

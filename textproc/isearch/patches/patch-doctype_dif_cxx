@@ -1,0 +1,14 @@
+$OpenBSD: patch-doctype_dif_cxx,v 1.1 2017/05/25 14:14:43 espie Exp $
+
+Index: doctype/dif.cxx
+--- doctype/dif.cxx.orig
++++ doctype/dif.cxx
+@@ -6,7 +6,7 @@ Author:		Archie Warnock, warnock@clark.net
+                 Bug fixes from Ed Zimmerman
+ @@@*/
+ 
+-#include <iostream.h>
++#include <iostream>
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>

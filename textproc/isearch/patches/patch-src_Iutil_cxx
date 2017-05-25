@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_Iutil_cxx,v 1.1 2017/05/25 14:14:43 espie Exp $
+
+Index: src/Iutil.cxx
+--- src/Iutil.cxx.orig
++++ src/Iutil.cxx
+@@ -46,7 +46,8 @@ Author:		Nassib Nassar, nrn@cnidr.org
+ #endif
+ #include <errno.h>
+ #include <string.h>
+-#include <iostream.h>
++#include <iostream>
++using std::cin;
+ #include <locale.h>
+ 
+ #if defined(_MSDOS) || defined(_WIN32)

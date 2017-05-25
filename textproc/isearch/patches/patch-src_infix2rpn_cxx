@@ -1,0 +1,31 @@
+$OpenBSD: patch-src_infix2rpn_cxx,v 1.1 2017/05/25 14:14:43 espie Exp $
+
+Index: src/infix2rpn.cxx
+--- src/infix2rpn.cxx.orig
++++ src/infix2rpn.cxx
+@@ -40,6 +40,7 @@ IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFT
+ #include "string.hxx"
+ #include "strlist.hxx"
+ #include "strstack.hxx"
++using std::cerr;
+ 
+ INFIX2RPN::INFIX2RPN()  {
+ //nothin.
+@@ -181,7 +182,7 @@ STRING TmpVal = "";
+ 
+ //standardizes the various possible representations of
+ //the various operators.
+-CHR *INFIX2RPN::StandardizeOpName(const STRING op) {
++const char* INFIX2RPN::StandardizeOpName(const STRING op) {
+         if ( (op ^= "AND") || (op == "&&") )
+                 return "AND";
+         else if ( (op ^= "OR") || (op == "||") )
+@@ -200,7 +201,7 @@ CHR *INFIX2RPN::StandardizeOpName(const STRING op) {
+ 
+ 
+ //converts the internal operator token name to a standard string
+-CHR *INFIX2RPN::op2string(const operators op) {
++const char* INFIX2RPN::op2string(const operators op) {
+         switch(op) {
+                 case LeftParen:
+                 case NOP:
