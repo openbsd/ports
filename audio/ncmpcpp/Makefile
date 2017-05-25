@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.56 2017/04/10 11:45:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.57 2017/05/25 10:35:32 espie Exp $
 
-BROKEN-alpha =		error: looser throw specifier for 'virtual OutOfBounds::~OutOfBounds()
+BROKEN-alpha =		error: looser throw specifier for 'virtual OutOfBounds::~OutOfBounds()'
 BROKEN-hppa =		bindings.h:85:4: error: type 'Binding' is not a direct base of 'Binding'
 
 COMMENT =		ncurses mpd client inspired by ncmpc
@@ -22,7 +22,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB += boost_filesystem-mt boost_locale-mt boost_program_options-mt
 WANTLIB += boost_regex-mt boost_system-mt boost_thread-mt c crypto curl
 WANTLIB += ereadline m mpdclient ncursesw nghttp2 pthread ssl ${LIBCXX} tag
-WANTLIB += termcap z
+WANTLIB += termcap z ${LIBECXX}
 
 MASTER_SITES =		${HOMEPAGE}stable/
 
@@ -32,10 +32,9 @@ LIB_DEPENDS =		audio/libmpdclient>=2.4 \
 			devel/readline \
 			net/curl
 
-MODULES =		devel/gettext gcc4
+MODULES =		devel/gettext 
 
-MODGCC4_ARCHS =		*
-MODGCC4_LANGS =		c++
+WANT_CXX =		base gcc
 
 FAKE_FLAGS =		docdir="${PREFIX}/share/examples/ncmpcpp/"
 
@@ -51,8 +50,10 @@ CONFIGURE_ARGS =	--enable-clock \
 CONFIGURE_ENV =		BOOST_LIB_SUFFIX="-mt" \
 			CPPFLAGS="-DBOOST_RESULT_OF_USE_DECLTYPE \
 				  -D_XOPEN_SOURCE_EXTENDED \
+				  -isystem ${LOCALBASE}/include \
 				  -isystem ${LOCALBASE}/include/ereadline \
 				  -pthread" \
+			LDFLAGS='-L${LOCALBASE}/lib' \
 			ICU_CFLAGS="icu-is-not-really-needed" \
 			ICU_LIBS="icu-is-not-really-needed" \
 			ax_cv_lib_readline="-L${LOCALBASE}/lib -lereadline -ltermcap"
