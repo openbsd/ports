@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2017/03/07 09:12:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2017/05/25 17:06:26 sthen Exp $
 
 COMMENT=	tty-based e-mail client, Mutt with patches
 
-V=		20170306
-DISTNAME=	neomutt-$V
+GH_ACCOUNT=	neomutt
+GH_PROJECT=	neomutt
+GH_TAGNAME=	neomutt-20170428
+DISTNAME=	${GH_TAGNAME}
 
 CATEGORIES=	mail
 HOMEPAGE=	http://www.neomutt.org/
@@ -16,8 +18,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 # uses pledge()
 WANTLIB+=	c crypto iconv idn intl ncursesw ssl z
 
-MASTER_SITES=	https://github.com/neomutt/neomutt/releases/download/neomutt-$V/
-
 LIB_DEPENDS+=	devel/gettext \
 		devel/libidn
 BUILD_DEPENDS+=	textproc/docbook-xsl \
@@ -29,7 +29,11 @@ FLAVOR?=
 FLAVOR_COMMA=	${FLAVOR_EXT:S/-/,/g}
 SUBST_VARS=	FLAVOR_COMMA
 
-CONFIGURE_STYLE= gnu
+AUTOCONF_VERSION= 2.69
+AUTOMAKE_VERSION= 1.15
+CONFIGURE_STYLE= autoconf
+BUILD_DEPENDS+=	${MODGNU_AUTOCONF_DEPENDS} \
+		${MODGNU_AUTOMAKE_DEPENDS}
 
 CONFIGURE_ARGS+= --enable-compressed \
 		--enable-external_dotlock \
@@ -82,6 +86,10 @@ WANTLIB+=	kyotocabinet pthread
 CONFIGURE_ARGS+= --with-kyotocabinet \
 		--without-qdbm
 .endif
+
+post-patch:
+	cd ${WRKSRC}; AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+	    AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autoreconf --install
 
 post-install:
 	@mv -f ${PREFIX}/share/doc/mutt/samples/* ${PREFIX}/share/examples/mutt

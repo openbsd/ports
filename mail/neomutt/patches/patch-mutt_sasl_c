@@ -1,14 +1,25 @@
-$OpenBSD: patch-mutt_sasl_c,v 1.1.1.1 2016/10/18 10:47:15 sthen Exp $
+$OpenBSD: patch-mutt_sasl_c,v 1.2 2017/05/25 17:06:26 sthen Exp $
 
 Pledge
 
---- mutt_sasl.c.orig	Fri Aug 26 23:53:14 2016
-+++ mutt_sasl.c	Thu Sep  1 18:11:34 2016
-@@ -86,7 +86,6 @@ static sasl_callback_t mutt_sasl_callbacks[5];
+Index: mutt_sasl.c
+--- mutt_sasl.c.orig
++++ mutt_sasl.c
+@@ -28,6 +28,8 @@
+ #include "account.h"
+ #include "mutt_socket.h"
  
- static sasl_secret_t *secret_ptr = NULL;
++int mutt_sasl_start (void);
++
+ static int getnameinfo_err(int ret)
+ {
+   int err;
+@@ -123,7 +125,7 @@ static int mutt_sasl_cb_log(void *context, int priorit
  
--static int mutt_sasl_start (void);
+ /* mutt_sasl_start: called before doing a SASL exchange - initialises library
+  *   (if necessary). */
+-static int mutt_sasl_start(void)
++int mutt_sasl_start(void)
+ {
+   static unsigned char sasl_init = 0;
  
- /* callbacks */
- static int mutt_sasl_cb_log (void* context, int priority, const char* message);
