@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_include_xmmsclient_xmmsclient++_coll_h,v 1.1 2017/05/25 10:34:11 espie Exp $
+work-around. maybe coll_ should be const ref ?
+
+Index: src/include/xmmsclient/xmmsclient++/coll.h
+--- src/include/xmmsclient/xmmsclient++/coll.h.orig
++++ src/include/xmmsclient/xmmsclient++/coll.h
+@@ -612,7 +612,7 @@ namespace Xmms 
+ 
+ 		template< typename keyT, typename valT >
+ 		AbstractElement< keyT, valT >::AbstractElement( const Coll& coll, keyT index )
+-			: coll_ (coll), index_( index )
++			: coll_ (const_cast<Coll&>(coll)), index_( index )
+ 		{
+ 			xmmsv_coll_ref( coll_.getColl() );
+ 		}
