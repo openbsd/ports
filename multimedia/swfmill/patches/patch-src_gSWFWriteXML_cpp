@@ -1,0 +1,77 @@
+$OpenBSD: patch-src_gSWFWriteXML_cpp,v 1.1 2017/05/25 19:33:20 espie Exp $
+
+Index: src/gSWFWriteXML.cpp
+--- src/gSWFWriteXML.cpp.orig
++++ src/gSWFWriteXML.cpp
+@@ -12,7 +12,7 @@ xmlChar *toXmlChar(const Context *ctx, const char *fro
+ 	if (ctx->convertEncoding) {
+ 		size_t len = strlen(from_str);
+ 		iconv_t cd = iconv_open("UTF-8", ctx->swf_encoding);
+-		if (cd < 0) {
++		if (cd == iconv_t(-1)) {
+ 			fprintf(stderr, "iconv_open failed.\n");
+ 			return xmlCharStrdup("");
+ 		}
+@@ -3096,7 +3096,7 @@ void UnknownFilter::writeXML( xmlNodePtr xml, Context 
+ 				tmpstr[l] = 0;
+ 				xmlNewTextChild( node, NULL, (const xmlChar *)"data", (const xmlChar *)tmpstr );
+ 			}
+-			delete tmpstr;
++			delete [] tmpstr;
+ 		}
+ 	}
+ 
+@@ -3874,7 +3874,7 @@ void UnknownTag::writeXML( xmlNodePtr xml, Context *ct
+ 				tmpstr[l] = 0;
+ 				xmlNewTextChild( node, NULL, (const xmlChar *)"data", (const xmlChar *)tmpstr );
+ 			}
+-			delete tmpstr;
++			delete [] tmpstr;
+ 		}
+ 	}
+ 
+@@ -4228,7 +4228,7 @@ void DefineFontInfo::writeXML( xmlNodePtr xml, Context
+ 				tmpstr[l] = 0;
+ 				xmlNewTextChild( node, NULL, (const xmlChar *)"nameData", (const xmlChar *)tmpstr );
+ 			}
+-			delete tmpstr;
++			delete [] tmpstr;
+ 		}
+ 	}
+ 
+@@ -4626,7 +4626,7 @@ void DefineFontInfo2::writeXML( xmlNodePtr xml, Contex
+ 				tmpstr[l] = 0;
+ 				xmlNewTextChild( node, NULL, (const xmlChar *)"nameData", (const xmlChar *)tmpstr );
+ 			}
+-			delete tmpstr;
++			delete [] tmpstr;
+ 		}
+ 	}
+ 
+@@ -6057,7 +6057,7 @@ void SoundStreamBlock::writeXML( xmlNodePtr xml, Conte
+ 				tmpstr[l] = 0;
+ 				xmlNewTextChild( node, NULL, (const xmlChar *)"data", (const xmlChar *)tmpstr );
+ 			}
+-			delete tmpstr;
++			delete [] tmpstr;
+ 		}
+ 	}
+ 
+@@ -7138,7 +7138,7 @@ void UnknownAction::writeXML( xmlNodePtr xml, Context 
+ 				tmpstr[l] = 0;
+ 				xmlNewTextChild( node, NULL, (const xmlChar *)"data", (const xmlChar *)tmpstr );
+ 			}
+-			delete tmpstr;
++			delete [] tmpstr;
+ 		}
+ 	}
+ 
+@@ -9647,7 +9647,7 @@ void UnknownOpCode::writeXML( xmlNodePtr xml, Context 
+ 				tmpstr[l] = 0;
+ 				xmlNewTextChild( node, NULL, (const xmlChar *)"data", (const xmlChar *)tmpstr );
+ 			}
+-			delete tmpstr;
++			delete [] tmpstr;
+ 		}
+ 	}
+ 
