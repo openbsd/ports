@@ -1,7 +1,8 @@
-$OpenBSD: patch-fixstr_c,v 1.1.1.1 2001/07/28 16:31:47 lebel Exp $
---- fixstr.c.orig	Sat Aug  8 05:48:02 1998
-+++ fixstr.c	Fri Jul 27 20:59:03 2001
-@@ -15,7 +15,9 @@ to be far arrays. You don't need to run 
+$OpenBSD: patch-fixstr_c,v 1.2 2017/05/25 18:37:14 espie Exp $
+Index: fixstr.c
+--- fixstr.c.orig
++++ fixstr.c
+@@ -15,7 +15,9 @@ to be far arrays. You don't need to run this for the u
  Thus it can be broken. */
  
  #include <stdio.h>

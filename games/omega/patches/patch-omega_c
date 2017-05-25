@@ -1,7 +1,8 @@
-$OpenBSD: patch-omega_c,v 1.1.1.1 2001/07/28 16:31:47 lebel Exp $
---- omega.c.orig	Fri Jan  1 22:59:47 1999
-+++ omega.c	Fri Jul 27 21:06:36 2001
-@@ -187,7 +187,7 @@ void initrand(int environment, int level
+$OpenBSD: patch-omega_c,v 1.2 2017/05/25 18:37:14 espie Exp $
+Index: omega.c
+--- omega.c.orig
++++ omega.c
+@@ -187,7 +187,7 @@ void initrand(int environment, int level)
      store = RANDFUNCTION();
    /* Pseudo Random Seed */
    if (environment == E_RANDOM)

@@ -1,0 +1,67 @@
+$OpenBSD: patch-compress_c,v 1.1 2017/05/25 18:37:14 espie Exp $
+
+Index: compress.c
+--- compress.c.orig
++++ compress.c
+@@ -296,6 +296,9 @@ static char rcs_ident[] = "$Header: /home/wtanksle/cvs
+ #include <stdio.h>
+ #include <ctype.h>
+ #include <signal.h>
++#include <stdlib.h>
++#include <string.h>
++#include <unistd.h>
+ #include <fcntl.h>
+ #include <sys/types.h>
+ #include <sys/stat.h>
+@@ -303,6 +306,10 @@ static char rcs_ident[] = "$Header: /home/wtanksle/cvs
+ #include <sys/ioctl.h>
+ #endif
+ 
++void compress(void);
++void decompress(void);
++void copystat(char *, char *);
++
+ int n_bits;				/* number of bits/code */
+ int maxbits = BITS;			/* user settable max # bits/code */
+ code_int maxcode;			/* maximum code, given n_bits */
+@@ -460,6 +467,7 @@ FILE *infile, *outfile;
+  * procedure needs no input table, but tracks the way the table was built.
+  */
+ 
++void
+ do_compression( decomp, file )
+ int decomp;
+ char *file;
+@@ -663,6 +671,7 @@ long int out_count = 0;			/* # of codes output (for de
+  * questions about this implementation to ames!jaw.
+  */
+ 
++void
+ compress()
+ {
+     register long fcode;
+@@ -931,6 +940,7 @@ code_int  code;
+  * with those of the compress() routine.  See the definitions above.
+  */
+ 
++void
+ decompress() {
+     register char_type *stackp;
+     register int finchar;
+@@ -1093,7 +1103,7 @@ getcode() {
+     return code;
+ }
+ 
+-#ifndef __GO32__
++#if 0
+ char *
+ rindex(s, c)		/* For those who don't have it in libc.a */
+ register char *s, c;
+@@ -1227,6 +1237,7 @@ writeerr()
+     exit ( 1 );
+ }
+ 
++void
+ copystat(ifname, ofname)
+ char *ifname, *ofname;
+ {
