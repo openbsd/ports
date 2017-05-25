@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.48 2017/05/25 22:25:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.49 2017/05/25 22:59:13 sthen Exp $
 
+# adjust lang/ocaml if gdb is ported to aarch64
 NOT_FOR_ARCHS=	aarch64
 
 COMMENT=	GNU debugger
