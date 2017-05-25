@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2016/06/03 08:11:09 kirby Exp $
+# $OpenBSD: Makefile,v 1.34 2017/05/25 16:31:41 sthen Exp $
 
 COMMENT-main =		daemon for controlling APC UPSes
 COMMENT-cgi =		CGI scripts for web monitoring
@@ -8,6 +8,7 @@ DISTNAME =		apcupsd-3.14.14
 PKGNAME-main =		${DISTNAME}
 PKGNAME-cgi =		${DISTNAME:S/-/-cgi-/}
 PKGNAME-x11 =		${DISTNAME:S/-/-x11-/}
+REVISION =		0
 
 CATEGORIES =		sysutils
 
@@ -18,8 +19,10 @@ MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
+WANTLIB =		${LIBCXX} c m pthread
+
 LIB_DEPENDS-main = 	devel/libusb-compat
-WANTLIB-main =		c pthread usb
+WANTLIB-main =		${WANTLIB} usb
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=apcupsd/}
 
@@ -52,7 +55,7 @@ MULTI_PACKAGES =	-main
 MULTI_PACKAGES +=	-cgi
 PREFIX-cgi =		${WEB_ROOT}
 CONFIGURE_ARGS +=	--enable-cgi
-WANTLIB-cgi =		c pthread gd
+WANTLIB-cgi =		${WANTLIB} gd
 LIB_DEPENDS-cgi =	graphics/gd
 RUN_DEPENDS-cgi =
 
@@ -63,11 +66,12 @@ LIB_DEPENDS-x11 =	devel/gconf2 \
 			x11/gtk+2
 RUN_DEPENDS-x11 =	devel/desktop-file-utils
 
+WANTLIB-x11 += ${WANTLIB}
 WANTLIB-x11 += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
-WANTLIB-x11 += Xrandr Xrender atk-1.0 c cairo fontconfig freetype
-WANTLIB-x11 += gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB-x11 += gobject-2.0 gthread-2.0 gtk-x11-2.0 intl pango-1.0 pangocairo-1.0
-WANTLIB-x11 += pangoft2-1.0 pthread z
+WANTLIB-x11 += Xrandr Xrender atk-1.0 cairo fontconfig freetype gconf-2
+WANTLIB-x11 += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
+WANTLIB-x11 += gthread-2.0 gtk-x11-2.0 intl pango-1.0 pangocairo-1.0
+WANTLIB-x11 += pangoft2-1.0 z
 .endif
 
 FAKE_FLAGS =		sysconfdir=${TRUEPREFIX}/share/examples/apcupsd/etc
