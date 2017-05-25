@@ -1,7 +1,22 @@
-$OpenBSD: patch-src_metamail_uue_c,v 1.1 2012/03/17 11:00:06 sthen Exp $
---- src/metamail/uue.c.orig	Sat Mar 17 10:57:45 2012
-+++ src/metamail/uue.c	Sat Mar 17 10:58:17 2012
-@@ -30,7 +30,7 @@ FILE *outfp;
+$OpenBSD: patch-src_metamail_uue_c,v 1.2 2017/05/25 17:47:08 espie Exp $
+Index: src/metamail/uue.c
+--- src/metamail/uue.c.orig
++++ src/metamail/uue.c
+@@ -1,10 +1,13 @@
+ #include <stdio.h>
++#include <string.h>
+ 
+ /*
+  * hack to metamail to decode uuencoded bodyparts
+  * Written by Keith Moore, February 1992
+  */
+ 
++void fromuue(FILE *, FILE *, char **, int *);
++
+ uueget (ptr, outfp, n)
+ char *ptr;
+ FILE *outfp;
+@@ -30,7 +33,7 @@ FILE *outfp;
  }
  
  
@@ -10,7 +25,15 @@ $OpenBSD: patch-src_metamail_uue_c,v 1.1 2012/03/17 11:00:06 sthen Exp $
  char *buf;
  int size;
  FILE *fp;
-@@ -70,7 +70,7 @@ int *ctptr;
+@@ -62,6 +65,7 @@ FILE *fp;
+ }
+ 
+ 
++void
+ fromuue (infp, outfp, boundaries, ctptr)
+ FILE *infp, *outfp;
+ char **boundaries;
+@@ -70,7 +74,7 @@ int *ctptr;
      char buf[63];
  
      while (1) {
@@ -19,7 +42,7 @@ $OpenBSD: patch-src_metamail_uue_c,v 1.1 2012/03/17 11:00:06 sthen Exp $
  	    fprintf (stderr, "Premature EOF!\n");
  	    return;
  	}
-@@ -82,7 +82,7 @@ int *ctptr;
+@@ -82,7 +86,7 @@ int *ctptr;
  	}
      }	
      while (1) {

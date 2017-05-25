@@ -1,6 +1,7 @@
-$OpenBSD: patch-src_metamail_codes_c,v 1.1 2012/03/17 10:57:23 sthen Exp $
---- src/metamail/codes.c.orig	Mon Sep 20 14:13:22 1993
-+++ src/metamail/codes.c	Sat Mar 17 10:51:52 2012
+$OpenBSD: patch-src_metamail_codes_c,v 1.2 2017/05/25 17:47:08 espie Exp $
+Index: src/metamail/codes.c
+--- src/metamail/codes.c.orig
++++ src/metamail/codes.c
 @@ -13,6 +13,7 @@ OF THIS MATERIAL FOR ANY PURPOSE.  IT IS PROVIDED "AS 
  WITHOUT ANY EXPRESS OR IMPLIED WARRANTIES.
  */
@@ -9,3 +10,29 @@ $OpenBSD: patch-src_metamail_codes_c,v 1.1 2012/03/17 10:57:23 sthen Exp $
  #include <ctype.h>
  #include <config.h>
  
+@@ -31,6 +32,9 @@ static char index_64[128] = {
+     41,42,43,44, 45,46,47,48, 49,50,51,-1, -1,-1,-1,-1
+ };
+ 
++void from64(FILE *, FILE *, char **, int *, int);
++void fromqp(FILE *, FILE *, char **, int *);
++
+ #define char64(c)  (((c) < 0 || (c) > 127) ? -1 : index_64[(c)])
+ 
+ /*
+@@ -174,6 +178,7 @@ int PortableNewlines;
+ }
+ #endif
+ 
++void
+ from64(infile, outfile, boundaries, boundaryct, PortableNewlines) 
+ FILE *infile, *outfile;
+ char **boundaries;
+@@ -350,6 +355,7 @@ FILE *infile, *outfile;
+     }
+ }
+ 
++void
+ fromqp(infile, outfile, boundaries, boundaryct) 
+ FILE *infile, *outfile;
+ char **boundaries;

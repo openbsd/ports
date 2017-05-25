@@ -1,6 +1,7 @@
-$OpenBSD: patch-src_richmail_richtext_c,v 1.1 2012/03/17 10:57:23 sthen Exp $
---- src/richmail/richtext.c.orig	Wed Feb  9 16:31:18 1994
-+++ src/richmail/richtext.c	Sat Mar 17 10:51:52 2012
+$OpenBSD: patch-src_richmail_richtext_c,v 1.2 2017/05/25 17:47:08 espie Exp $
+Index: src/richmail/richtext.c
+--- src/richmail/richtext.c.orig
++++ src/richmail/richtext.c
 @@ -15,12 +15,13 @@ WITHOUT ANY EXPRESS OR IMPLIED WARRANTIES.
  
  #include <stdio.h>
@@ -16,11 +17,45 @@ $OpenBSD: patch-src_richmail_richtext_c,v 1.1 2012/03/17 10:57:23 sthen Exp $
  #ifdef AMIGA
  extern char *strchr();
  #endif
-@@ -30,6 +31,7 @@ unsigned _stklen=16384;	/* Increase stack size under M
+@@ -30,6 +31,10 @@ unsigned _stklen=16384;	/* Increase stack size under M
  #endif
  
  int iso2022_fputc ();
++static void fputsmovingright(struct charsetmember *, FILE *);
 +static int lc2strcmp(char *, char *);
++static void ResetTerminalCodes(int, int, int, int, char *, char *, int, 
++    char *, char *, int, char *, char *, int);
  
  /*
   * ########################################################################
+@@ -79,7 +84,7 @@ static int FakeTerminal;
+ extern tputs();
+ #endif
+ 
+-static outputc(), realoutputc(), MakeWorkingMargins(), Pause(), fputsmovingright(), ResetTerminalCodes(), FinalizeTerminal(), outputstr(), FPUTS();
++static outputc(), realoutputc(), MakeWorkingMargins(), Pause(), FinalizeTerminal(), outputstr(), FPUTS();
+ 
+ #define	OUTC(c)		(outputc((RCHAR)(c)))
+ 
+@@ -905,7 +910,7 @@ static Pause()
+ /* Leading spaces should be output as MoveRight, to avoid 
+    having margins that are underlined or reverse video */
+ 
+-static fputsmovingright(s, fp)
++static void fputsmovingright(s, fp)
+ struct charsetmember *s;
+ FILE *fp;
+ {
+@@ -925,9 +930,9 @@ FILE *fp;
+     }
+ }
+ 
+-static ResetTerminalCodes(FakeTerminal, standout, underline, bold, standoutbuf, standendbuf,
+-                    modifiedstandout, StartUnderline, StopUnderline, modifiedunderline,
+-                    BoldOn, BoldOff, modifiedbold)
++static void ResetTerminalCodes(FakeTerminal, standout, underline, bold, 
++	standoutbuf, standendbuf, modifiedstandout, StartUnderline, 
++	StopUnderline, modifiedunderline, BoldOn, BoldOff, modifiedbold)
+ char *standoutbuf, *standendbuf, *StartUnderline, *StopUnderline,
+     *BoldOn, *BoldOff;
+ {

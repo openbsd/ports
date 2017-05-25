@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_richmail_iso2022_c,v 1.1 2017/05/25 17:47:08 espie Exp $
+
+Index: src/richmail/iso2022.c
+--- src/richmail/iso2022.c.orig
++++ src/richmail/iso2022.c
+@@ -41,6 +41,7 @@
+ 
+ #include <stdio.h>
+ #include <ctype.h>
++#include <string.h>
+ #include "richlex.h"
+ #include "richset.h"
+ 
+@@ -73,6 +74,7 @@ static	int	OutAsciiMode;
+ /*
+  * Initialise the ISO-2022 character set processor.
+  */
++void
+ iso2022_init (name)
+ char	*name;
+ {
