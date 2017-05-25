@@ -1,0 +1,71 @@
+$OpenBSD: patch-libs_pbd_pbd_stl_delete_h,v 1.1 2017/05/25 09:02:05 espie Exp $
+stupid hack needs updating for current libc++
+
+Index: libs/pbd/pbd/stl_delete.h
+--- libs/pbd/pbd/stl_delete.h.orig
++++ libs/pbd/pbd/stl_delete.h
+@@ -23,7 +23,7 @@
+ /* To actually use any of these deletion functions, you need to
+    first include the revelant container type header.
+ */
+-#if defined(_CPP_VECTOR) || defined(_GLIBCXX_VECTOR) || defined(__SGI_STL_VECTOR)
++#if defined(_LIBCPP_VECTOR) || defined(_GLIBCXX_VECTOR) || defined(__SGI_STL_VECTOR)
+ template<class T> void vector_delete (std::vector<T *> *vec) 
+ {
+ 	typename std::vector<T *>::iterator i;
+@@ -33,9 +33,9 @@ template<class T> void vector_delete (std::vector<T *>
+ 	}
+ 	vec->clear ();
+ }
+-#endif // _CPP_VECTOR || _GLIBCXX_VECTOR || __SGI_STL_VECTOR
++#endif // _LIBCPP_VECTOR || _GLIBCXX_VECTOR || __SGI_STL_VECTOR
+ 
+-#if defined(_CPP_MAP) || defined(_GLIBCXX_MAP) || defined(__SGI_STL_MAP)
++#if defined(_LIBCPP_MAP) || defined(_GLIBCXX_MAP) || defined(__SGI_STL_MAP)
+ template<class K, class T> void map_delete (std::map<K, T *> *m) 
+ {
+ 	typename std::map<K, T *>::iterator i;
+@@ -45,9 +45,9 @@ template<class K, class T> void map_delete (std::map<K
+ 	}
+ 	m->clear ();
+ }
+-#endif // _CPP_MAP || _GLIBCXX_MAP || __SGI_STL_MAP
++#endif // _LIBCPP_MAP || _GLIBCXX_MAP || __SGI_STL_MAP
+ 
+-#if defined(_CPP_LIST) || defined(_GLIBCXX_LIST) || defined(__SGI_STL_LIST)
++#if defined(_LIBCPP_LIST) || defined(_GLIBCXX_LIST) || defined(__SGI_STL_LIST)
+ template<class T> void list_delete (std::list<T *> *l) 
+ {
+ 	typename std::list<T *>::iterator i;
+@@ -58,9 +58,9 @@ template<class T> void list_delete (std::list<T *> *l)
+ 
+ 	l->clear ();
+ }
+-#endif // _CPP_LIST || _GLIBCXX_LIST || __SGI_STL_LIST
++#endif // _LIBCPP_LIST || _GLIBCXX_LIST || __SGI_STL_LIST
+ 
+-#if defined(_CPP_SLIST) || defined(_GLIBCXX_SLIST) || defined(__SGI_STL_SLIST)
++#if defined(_LIBCPP_SLIST) || defined(_GLIBCXX_SLIST) || defined(__SGI_STL_SLIST)
+ template<class T> void slist_delete (std::slist<T *> *l) 
+ {
+ 	typename std::slist<T *>::iterator i;
+@@ -71,9 +71,9 @@ template<class T> void slist_delete (std::slist<T *> *
+ 
+ 	l->clear ();
+ }
+-#endif // _CPP_SLIST || _GLIBCXX_SLIST || __SGI_STL_SLIST
++#endif // _LIBCPP_SLIST || _GLIBCXX_SLIST || __SGI_STL_SLIST
+ 
+-#if defined(_CPP_SET) || defined(_GLIBCXX_SET) || defined(__SGI_STL_SET)
++#if defined(_LIBCPP_SET) || defined(_GLIBCXX_SET) || defined(__SGI_STL_SET)
+ template<class T> void set_delete (std::set<T *> *sset) 
+ {
+ 	typename std::set<T *>::iterator i;
+@@ -83,6 +83,6 @@ template<class T> void set_delete (std::set<T *> *sset
+ 	}
+ 	sset->erase (sset->begin(), sset->end());
+ }
+-#endif // _CPP_SET || _GLIBCXX_SET || __SGI_STL_SET
++#endif // _LIBCPP_SET || _GLIBCXX_SET || __SGI_STL_SET
+ 
+ #endif // __libmisc_stl_delete_h__

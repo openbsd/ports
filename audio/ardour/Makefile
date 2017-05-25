@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2016/10/28 13:46:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2017/05/25 09:02:05 espie Exp $
 
 # XXX check if still needed at next update
 CXXFLAGS +=		-std=c++11
@@ -8,7 +8,7 @@ ONLY_FOR_ARCHS =	amd64 i386 powerpc
 COMMENT =		digital audio workstation
 
 DISTNAME =		ardour-2.8.16
-REVISION =		4
+REVISION =		5
 
 CATEGORIES =		audio
 HOMEPAGE =		http://ardour.org
@@ -40,9 +40,11 @@ MODULES =		devel/gettext \
 			devel/scons
 
 # c++11
-MODULES +=		gcc4
-MODGCC4_ARCHS=		*
-MODGCC4_LANGS=		c++
+WANT_CXX =	base gcc
+CXXFLAGS +=	-Wno-c++11-narrowing
+
+# XXX so that it gets in *after* -Wall
+CFLAGS +=	-Wno-mismatched-tags
 
 NO_TEST=	Yes
 
@@ -51,8 +53,8 @@ MODSCONS_ENV=	CC="${CC}" \
 		CCFLAGS="${CFLAGS}" \
 		CXXFLAGS="${CXXFLAGS}" \
 		LINKFLAGS="${LDFLAGS}" \
-		CPPPATH="${LOCALBASE}/include ${X11BASE}/include" \
-		LIBPATH="${LOCALBASE}/lib ${X11BASE}/lib" \
+		CPPPATH="${LOCALBASE}/include:${X11BASE}/include" \
+		LIBPATH="${LOCALBASE}/lib:${X11BASE}/lib" \
 		PREFIX="${TRUEPREFIX}" \
 		debug=0 \
 		DIST_LIBDIR=lib \
@@ -79,7 +81,7 @@ LIB_DEPENDS =		audio/aubio \
 			textproc/liblrdf \
 			x11/gnome/libgnomecanvasmm
 
-SUBST_VARS =		CFLAGS CXXFLAGS
+SUBST_VARS =		CFLAGS CXXFLAGS LOCALBASE
 
 post-extract:
 	cp ${FILESDIR}/sndio_midiport.h ${WRKSRC}/libs/midi++2/midi++/

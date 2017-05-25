@@ -1,0 +1,16 @@
+$OpenBSD: patch-libs_ardour_ardour_io_h,v 1.1 2017/05/25 09:02:05 espie Exp $
+this field must be public
+
+Index: libs/ardour/ardour/io.h
+--- libs/ardour/ardour/io.h.orig
++++ libs/ardour/ardour/io.h
+@@ -357,7 +357,9 @@ class IO : public PBD::StatefulDestructible
+ 
+ 	void cycle_start (nframes_t);
+ 
++  public:
+ 	static bool connecting_legal;
++  protected:
+ 	static bool ports_legal;
+ 
+   private:

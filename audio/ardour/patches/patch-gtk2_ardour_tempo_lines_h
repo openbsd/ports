@@ -1,0 +1,15 @@
+$OpenBSD: patch-gtk2_ardour_tempo_lines_h,v 1.1 2017/05/25 09:02:05 espie Exp $
+allocator *has to match*
+
+Index: gtk2_ardour/tempo_lines.h
+--- gtk2_ardour/tempo_lines.h.orig
++++ gtk2_ardour/tempo_lines.h
+@@ -45,7 +45,7 @@ class TempoLines { (public)
+ 	void hide();
+ 
+ private:
+-#ifdef GTKOSX
++#if defined(GTKOSX) || defined(__clang__)
+ 	typedef std::map<double, ArdourCanvas::SimpleLine*, std::less<double> > Lines;
+ #else
+ 	typedef std::map<double, ArdourCanvas::SimpleLine*, std::less<double>, MapAllocator> Lines;

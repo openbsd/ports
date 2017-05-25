@@ -1,0 +1,13 @@
+$OpenBSD: patch-libs_pbd_fpu_cc,v 1.1 2017/05/25 09:02:05 espie Exp $
+upgrade to something that libc++ is happy with
+
+Index: libs/pbd/fpu.cc
+--- libs/pbd/fpu.cc.orig
++++ libs/pbd/fpu.cc
+@@ -1,4 +1,5 @@
+-#define _XOPEN_SOURCE 600
++#define _XOPEN_SOURCE 700
++#define _BSD_SOURCE
+ #include <cstdlib>
+ #include <stdint.h>
+ #include <cstring>

@@ -1,0 +1,21 @@
+$OpenBSD: patch-gtk2_ardour_connection_editor_h,v 1.1 2017/05/25 09:02:05 espie Exp $
+we already depend on boost...
+
+Index: gtk2_ardour/connection_editor.h
+--- gtk2_ardour/connection_editor.h.orig
++++ gtk2_ardour/connection_editor.h
+@@ -20,12 +20,8 @@
+ #ifndef __ardour_gtk_connection_editor_h__
+ #define __ardour_gtk_connection_editor_h__
+ 
+-#if __GNUC__ >= 3
+-#include <ext/slist>
+-using __gnu_cxx::slist;
+-#else
+-#include <slist.h>
+-#endif
++#include <boost/container/slist.hpp>
++using boost::container::slist;
+ 
+ #include <gtkmm.h>
+ 

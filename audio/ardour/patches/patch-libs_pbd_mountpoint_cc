@@ -1,0 +1,14 @@
+$OpenBSD: patch-libs_pbd_mountpoint_cc,v 1.1 2017/05/25 09:02:05 espie Exp $
+get free from somewhere
+
+Index: libs/pbd/mountpoint.cc
+--- libs/pbd/mountpoint.cc.orig
++++ libs/pbd/mountpoint.cc
+@@ -95,6 +95,7 @@ mountpoint (string path)
+ #include <sys/param.h>
+ #include <sys/ucred.h>
+ #include <sys/mount.h>
++#include <stdlib.h>
+ 
+ string
+ mountpoint (string path)

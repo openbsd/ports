@@ -1,0 +1,15 @@
+$OpenBSD: patch-libs_ardour_audiosource_cc,v 1.1 2017/05/25 09:02:05 espie Exp $
+type error
+
+Index: libs/ardour/audiosource.cc
+--- libs/ardour/audiosource.cc.orig
++++ libs/ardour/audiosource.cc
+@@ -161,7 +161,7 @@ AudioSource::touch_peakfile ()
+ 	struct utimbuf tbuf;
+ 	
+ 	tbuf.actime = statbuf.st_atime;
+-	tbuf.modtime = time ((time_t) 0);
++	tbuf.modtime = time ((time_t *) 0);
+ 	
+ 	utime (peakpath.c_str(), &tbuf);
+ }

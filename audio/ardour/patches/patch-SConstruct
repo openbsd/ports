@@ -1,6 +1,10 @@
-$OpenBSD: patch-SConstruct,v 1.4 2015/12/17 23:14:16 ajacoutot Exp $
---- SConstruct.orig	Sun Dec  2 20:19:45 2012
-+++ SConstruct	Fri Dec 18 00:11:54 2015
+$OpenBSD: patch-SConstruct,v 1.5 2017/05/25 09:02:05 espie Exp $
+Remove custom optimize flags. Add flags after warning flags so we can remove
+some warnings
+
+Index: SConstruct
+--- SConstruct.orig
++++ SConstruct
 @@ -441,7 +441,6 @@ deps = \
  	'gtk+-2.0'             : '2.8.1',
  	'libxml-2.0'           : '2.6.0',
@@ -47,17 +51,39 @@ $OpenBSD: patch-SConstruct,v 1.4 2015/12/17 23:14:16 ajacoutot Exp $
  if config[config_cpu] == 'powerpc' and env['DIST_TARGET'] != 'none':
      # Apple/PowerPC optimization options
      #
-@@ -860,6 +863,9 @@ if env['UNIVERSAL'] == 1:
+@@ -839,11 +842,6 @@ if env['ARCH'] != '':
+ #
+ 
+ opt_flags[:0] = [
+-    "-O3",
+-    "-fomit-frame-pointer",
+-    "-ffast-math",
+-    "-fstrength-reduce",
+-    "-pipe"
+     ]
+ 
+ if env['DEBUG'] == 1:
+@@ -860,14 +858,15 @@ if env['UNIVERSAL'] == 1:
      env.Append(CCFLAGS="-arch i386 -arch ppc")
      env.Append(LINKFLAGS="-arch i386 -arch ppc")
  
-+env.Append(CFLAGS="${CFLAGS}")
-+env.Append(CXXFLAGS="${CXXFLAGS}")
-+env.Append(LINKFLAGS="-Wl,-rpath,${LOCALBASE}/lib/ardour2")
- 
+-
  #
- # warnings flags
-@@ -930,6 +936,7 @@ libraries['vamphost'] = LibraryInfo (LIBS='vamphostsdk
+-# warnings flags
++# warnings flags and user
+ #
+ 
+-env.Append(CCFLAGS="-Wall")
+-env.Append(CXXFLAGS="-Woverloaded-virtual")
++env.Append(CCFLAGS="-Wall ${CFLAGS}")
++env.Append(CXXFLAGS="-Woverloaded-virtual ${CXXFLAGS}")
+ 
++env.Append(LINKFLAGS="-Wl,-rpath,${LOCALBASE}/lib/ardour2")
++
+ if env['EXTRA_WARN']:
+     env.Append(CCFLAGS="-Wextra -pedantic -ansi")
+     env.Append(CXXFLAGS="-ansi")
+@@ -930,6 +929,7 @@ libraries['vamphost'] = LibraryInfo (LIBS='vamphostsdk
  
  env['RUBBERBAND'] = False
  
@@ -65,7 +91,20 @@ $OpenBSD: patch-SConstruct,v 1.4 2015/12/17 23:14:16 ajacoutot Exp $
  conf = Configure (env)
  
  if conf.CheckHeader ('fftw3.h'):
-@@ -1062,6 +1069,11 @@ elif conf.CheckCHeader('/System/Library/Frameworks/Cor
+@@ -953,8 +953,11 @@ conf.Finish()
+ #
+ # Check for libusb
+ 
+-libraries['usb'] = LibraryInfo ()
++libraries['usb'] = LibraryInfo ( )
+ prep_libcheck(env, libraries['usb'])
++# I have no idea why this does not work
++libraries['usb'].Append(CPPPATH = [ '${LOCALBASE}/include' ])
++libraries['usb'].Append(LIBPATH = [ '${LOCALBASE}/lib' ])
+ 
+ conf = Configure (libraries['usb'])
+ if conf.CheckLib ('usb', 'usb_interrupt_write'):
+@@ -1062,6 +1065,11 @@ elif conf.CheckCHeader('/System/Library/Frameworks/Cor
      env['SYSMIDI'] = 'CoreMIDI'
      subst_dict['%MIDITAG%'] = "ardour"
      subst_dict['%MIDITYPE%'] = "coremidi"
@@ -77,7 +116,7 @@ $OpenBSD: patch-SConstruct,v 1.4 2015/12/17 23:14:16 ajacoutot Exp $
  else:
      print "It appears you don't have the required MIDI libraries installed. For Linux this means you are missing the development package for ALSA libraries."
      sys.exit (1)
-@@ -1284,11 +1296,7 @@ subst_dict['%INSTALL_PREFIX%'] = install_prefix;
+@@ -1284,11 +1292,7 @@ subst_dict['%INSTALL_PREFIX%'] = install_prefix;
  subst_dict['%FINAL_PREFIX%'] = final_prefix;
  subst_dict['%PREFIX%'] = final_prefix;
  

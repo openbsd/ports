@@ -1,12 +1,13 @@
-$OpenBSD: patch-gtk2_ardour_gain_meter_cc,v 1.1 2016/10/28 13:46:17 ajacoutot Exp $
+$OpenBSD: patch-gtk2_ardour_gain_meter_cc,v 1.2 2017/05/25 09:02:05 espie Exp $
 
 From 65c2e089ab263c83bff7d2e945b80c53f80b749b Mon Sep 17 00:00:00 2001
 From: Nils Philippsen <nils@tiptoe.de>
 Date: Thu, 4 Aug 2016 09:48:47 +0200
 Subject: [PATCH] workaround changes in glibmm 2.49.x
 
---- gtk2_ardour/gain_meter.cc.orig	Fri Oct 28 13:15:13 2016
-+++ gtk2_ardour/gain_meter.cc	Fri Oct 28 13:15:59 2016
+Index: gtk2_ardour/gain_meter.cc
+--- gtk2_ardour/gain_meter.cc.orig
++++ gtk2_ardour/gain_meter.cc
 @@ -63,7 +63,7 @@ Glib::RefPtr<Gdk::Pixbuf> GainMeter::slider;
  void
  GainMeter::setup_slider_pix ()
@@ -16,3 +17,17 @@ Subject: [PATCH] workaround changes in glibmm 2.49.x
  		throw failed_constructor();
  	}
  }
+@@ -89,11 +89,11 @@ GainMeterBase::GainMeterBase (Session& s, 
+ 	if (horizontal) {
+ 		gain_slider = manage (new HSliderController (pix,
+ 							     &gain_adjustment,
+-							     false));
++							     nullptr));
+ 	} else {
+ 		gain_slider = manage (new VSliderController (pix,
+ 							     &gain_adjustment,
+-							     false));
++							     nullptr));
+ 	}
+ 
+ 	level_meter = new LevelMeter(_session);

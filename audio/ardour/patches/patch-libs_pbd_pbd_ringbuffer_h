@@ -1,0 +1,27 @@
+$OpenBSD: patch-libs_pbd_pbd_ringbuffer_h,v 1.1 2017/05/25 09:02:05 espie Exp $
+indentation really looks like hell. put loop body on a different line
+to silence warnings
+
+Index: libs/pbd/pbd/ringbuffer.h
+--- libs/pbd/pbd/ringbuffer.h.orig
++++ libs/pbd/pbd/ringbuffer.h
+@@ -30,12 +30,13 @@ class RingBuffer 
+ 	RingBuffer (guint sz) {
+ //	size = ffs(sz); /* find first [bit] set is a single inlined assembly instruction. But it looks like the API rounds up so... */
+ 	guint power_of_two;
+-	for (power_of_two = 1; 1U<<power_of_two < sz; power_of_two++);
+-		size = 1<<power_of_two;
+-		size_mask = size;
+-		size_mask -= 1;
+-		buf = new T[size];
+-		reset ();
++	for (power_of_two = 1; 1U<<power_of_two < sz; power_of_two++)
++		;
++	size = 1<<power_of_two;
++	size_mask = size;
++	size_mask -= 1;
++	buf = new T[size];
++	reset ();
+ 
+ 	};
+ 	
