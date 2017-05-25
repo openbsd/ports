@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2017/05/25 17:06:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2017/05/25 18:42:31 sthen Exp $
 
 COMMENT=	tty-based e-mail client, Mutt with patches
 
 GH_ACCOUNT=	neomutt
 GH_PROJECT=	neomutt
 GH_TAGNAME=	neomutt-20170428
+REVISION=	0
 DISTNAME=	${GH_TAGNAME}
 
 CATEGORIES=	mail
@@ -33,8 +34,8 @@ AUTOCONF_VERSION= 2.69
 AUTOMAKE_VERSION= 1.15
 CONFIGURE_STYLE= autoconf
 BUILD_DEPENDS+=	${MODGNU_AUTOCONF_DEPENDS} \
-		${MODGNU_AUTOMAKE_DEPENDS}
-
+		${MODGNU_AUTOMAKE_DEPENDS} \
+		devel/gettext-tools
 CONFIGURE_ARGS+= --enable-compressed \
 		--enable-external_dotlock \
 		--disable-fcntl \
@@ -47,7 +48,7 @@ CONFIGURE_ARGS+= --enable-compressed \
 		--enable-smtp \
 		--mandir=${PREFIX}/man \
 		--with-curses \
-		--with-docdir="${PREFIX}/share/doc/mutt" \
+		--with-docdir="${PREFIX}/share/doc/neomutt" \
 		--without-tokyocabinet \
 		--without-gdbm \
 		--with-idn \
@@ -56,7 +57,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		ISPELL="${LOCALBASE}/bin/ispell"
 SYSCONFDIR=	${BASESYSCONFDIR}/mutt
-FAKE_FLAGS=	sysconfdir="${PREFIX}/share/examples/mutt"
+FAKE_FLAGS=	sysconfdir="${PREFIX}/share/examples/neomutt"
 
 DEBUG+=		-g
 #CONFIGURE_ARGS+= --enable-debug
@@ -92,8 +93,8 @@ post-patch:
 	    AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autoreconf --install
 
 post-install:
-	@mv -f ${PREFIX}/share/doc/mutt/samples/* ${PREFIX}/share/examples/mutt
+	@mv -f ${PREFIX}/share/doc/neomutt/samples/* ${PREFIX}/share/examples/neomutt
 	@perl -pi -e "s,/usr/bin/gpg,${LOCALBASE}/bin/gpg," \
-		${PREFIX}/share/examples/mutt/gpg.rc
+		${PREFIX}/share/examples/neomutt/gpg.rc
 
 .include <bsd.port.mk>
