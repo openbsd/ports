@@ -1,0 +1,22 @@
+$OpenBSD: patch-strhandle_cc,v 1.1 2017/05/25 11:15:41 espie Exp $
+
+Index: strhandle.cc
+--- strhandle.cc.orig
++++ strhandle.cc
+@@ -24,14 +24,14 @@ char *str_cutat(char *str, char cut)
+ /* Like str_cutat, but the beginning of str is copied to buffer at left */
+ char *str_splitat(char const * const str, char *left, char cut)
+ {
+-    char *pos = strchr(str,cut);
++    const char *pos = strchr(str,cut);
+     if (!pos) {
+         strcpy(left,str);
+         return NULL;
+     }
+     strncpy(left,str,pos-str);
+     left[pos-str] = '\0';
+-    return pos+1;
++    return const_cast<char *>(pos+1);
+ }
+ 
+ 
