@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2016/04/29 08:57:52 jca Exp $
+# $OpenBSD: Makefile,v 1.6 2017/05/26 18:57:47 espie Exp $
 
 COMMENT =	manual tiling window manager
 DISTNAME =	herbstluftwm-0.7.0
@@ -11,14 +11,11 @@ MAINTAINER =	Florian Stinglmayr <florian@n0la.org>
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += X11 Xext Xinerama c estdc++ glib-2.0 intl m pthread
+WANTLIB += X11 Xext Xinerama c glib-2.0 intl m pthread ${LIBECXX}
 
 MASTER_SITES =	http://herbstluftwm.org/tarballs/
 
-MODULES =	gcc4
-
-MODGCC4_LANGS=	c++
-MODGCC4_ARCHS=	*
+WANT_CXX =	base gcc
 
 LIB_DEPENDS +=	devel/glib2
 
@@ -26,8 +23,9 @@ RUN_DEPENDS +=	devel/desktop-file-utils \
 		shells/bash \
 		x11/dzen2,-gadgets
 
+CPPFLAGS +=	-I${LOCALBASE}/include
 USE_GMAKE =	Yes
-MAKE_FLAGS =	LDFLAGS= VERBOSE= COLOR=0
+MAKE_FLAGS =	LDFLAGS= VERBOSE= COLOR=0 CC='${CC}' LDXX='${CXX}' CXX='${CXX}'
 
 BASEDIR =	${PREFIX}/share/examples/herbstluftwm
 FAKE_FLAGS =	SYSCONFDIR="${BASEDIR}" \
