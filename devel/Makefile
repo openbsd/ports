@@ -1354,6 +1354,8 @@
      SUBDIR += py-html5lib,python3
      SUBDIR += py-hypothesis
      SUBDIR += py-hypothesis,python3
+     SUBDIR += py-icalendar
+     SUBDIR += py-icalendar,python3
      SUBDIR += py-iniparse
      SUBDIR += py-incremental
      SUBDIR += py-incremental,python3
