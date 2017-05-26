@@ -1,0 +1,13 @@
+$OpenBSD: patch-Makefile,v 1.1 2017/05/26 10:36:44 mestre Exp $
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -1474,7 +1474,6 @@ Q3CPPOBJ = \
+   $(B)/tools/cpp/eval.o \
+   $(B)/tools/cpp/include.o \
+   $(B)/tools/cpp/hideset.o \
+-  $(B)/tools/cpp/getopt.o \
+   $(B)/tools/cpp/unix.o
+ 
+ $(B)/tools/cpp/%.o: $(Q3CPPDIR)/%.c
