@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2015/11/16 14:31:29 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2017/05/26 21:17:12 ajacoutot Exp $
 @conflict argyll-*
 @bin bin/applycal
 @bin bin/average
@@ -55,6 +55,7 @@ share/color/argyll/ref/CMP_DT_003.cht
 share/color/argyll/ref/CMP_Digital_Target-4.cht
 share/color/argyll/ref/CMP_Digital_Target-4.cie
 share/color/argyll/ref/CMP_Digital_Target-4.ti2
+share/color/argyll/ref/CMP_Digital_Target-7.cht
 share/color/argyll/ref/ClayRGB1998.icm
 share/color/argyll/ref/ColorChecker.cht
 share/color/argyll/ref/ColorChecker.cie
@@ -127,6 +128,7 @@ share/doc/argyllcms/ArgyllFlow.jpg
 share/doc/argyllcms/ArgyllFlowThumb.jpg
 share/doc/argyllcms/CMP_DT_003.jpg
 share/doc/argyllcms/CMP_Digital_Target-4.jpg
+share/doc/argyllcms/CMP_Digital_Target-7.jpg
 share/doc/argyllcms/CRTspectrum.jpg
 share/doc/argyllcms/ChangesSummary.html
 share/doc/argyllcms/Chroma4.jpg
@@ -176,6 +178,7 @@ share/doc/argyllcms/Installing_Linux.html
 share/doc/argyllcms/Installing_MSWindows.html
 share/doc/argyllcms/Installing_OSX.html
 share/doc/argyllcms/JETI_1211.jpg
+share/doc/argyllcms/JETI_1501.jpg
 share/doc/argyllcms/K10A.jpg
 share/doc/argyllcms/Kgraph1.jpg
 share/doc/argyllcms/Kgraph2.jpg
@@ -191,6 +194,7 @@ share/doc/argyllcms/LabSteps.jpg
 share/doc/argyllcms/License.txt
 share/doc/argyllcms/License2.txt
 share/doc/argyllcms/License3.txt
+share/doc/argyllcms/License4.txt
 share/doc/argyllcms/Limitations.html
 share/doc/argyllcms/MinorTools.html
 share/doc/argyllcms/NEC_EyeOne_Display_2_NEC2690WUXi2.ccmx
@@ -223,6 +227,7 @@ share/doc/argyllcms/SpyderChecker.jpg
 share/doc/argyllcms/SpyderChecker24.jpg
 share/doc/argyllcms/VideoEOTFs.html
 share/doc/argyllcms/WideGamutColmters.html
+share/doc/argyllcms/XRGA.html
 share/doc/argyllcms/YellowGreen.jpg
 share/doc/argyllcms/afiles
 share/doc/argyllcms/applycal.html
