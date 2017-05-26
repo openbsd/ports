@@ -1,7 +1,9 @@
-# $OpenBSD: Makefile,v 1.216 2017/04/28 17:35:11 espie Exp $
+# $OpenBSD: Makefile,v 1.217 2017/05/26 17:54:31 espie Exp $
 
 # Everything is a Freaking GLib/GTK+ problem
 CFLAGS +=		-g
+# and gtk is not THAT clean
+CFLAGS += -Wno-expansion-to-defined
 INSTALL_STRIP=		# empty
 
 COMMENT-main=		multi-platform graphical toolkit
@@ -86,7 +88,3 @@ post-install:
 	rm ${PREFIX}/bin/gtk-update-icon-cache
 
 .include <bsd.port.mk>
-
-.if ${PROPERTIES:Mclang}
-CFLAGS += -Wno-expansion-to-defined
-.endif
