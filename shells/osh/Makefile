@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2017/04/24 18:07:25 pascal Exp $
+# $OpenBSD: Makefile,v 1.12 2017/05/26 21:27:10 pascal Exp $
 
 COMMENT =		Sixth Edition UNIX Shell
 
-V =			4.3.1
+V =			4.3.2
 DISTNAME =		osh-$V
 EPOCH =			0
 
