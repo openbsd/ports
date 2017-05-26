@@ -1,7 +1,8 @@
-$OpenBSD: patch-libtiff_tif_luv_c,v 1.7 2016/11/29 20:00:35 naddy Exp $
---- libtiff/tif_luv.c.orig	Thu Sep  8 15:23:57 2016
-+++ libtiff/tif_luv.c	Thu Nov 24 21:44:23 2016
-@@ -743,7 +743,7 @@ LogLuvEncodeTile(TIFF* tif, uint8* bp, tmsize_t cc, ui
+$OpenBSD: patch-libtiff_tif_luv_c,v 1.8 2017/05/26 20:50:57 naddy Exp $
+Index: libtiff/tif_luv.c
+--- libtiff/tif_luv.c.orig
++++ libtiff/tif_luv.c
+@@ -744,7 +744,7 @@ LogLuvEncodeTile(TIFF* tif, uint8* bp, tmsize_t cc, ui
  
  #define itrunc(x,m)	((m)==SGILOGENCODE_NODITHER ? \
  				(int)(x) : \
