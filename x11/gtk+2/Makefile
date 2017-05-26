@@ -1,9 +1,7 @@
-# $OpenBSD: Makefile,v 1.217 2017/05/26 17:54:31 espie Exp $
+# $OpenBSD: Makefile,v 1.218 2017/05/26 18:02:01 ajacoutot Exp $
 
 # Everything is a Freaking GLib/GTK+ problem
 CFLAGS +=		-g
-# and gtk is not THAT clean
-CFLAGS += -Wno-expansion-to-defined
 INSTALL_STRIP=		# empty
 
 COMMENT-main=		multi-platform graphical toolkit
@@ -70,6 +68,8 @@ MODPY_ADJ_FILES=	gtk/gtk-builder-convert
 MODGNOME_TOOLS=		gobject-introspection gtk-update-icon-cache
 
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include/freetype2
+
+CFLAGS +=xi		 -Wno-expansion-to-defined
 
 TEST_IS_INTERACTIVE=	x11
 
