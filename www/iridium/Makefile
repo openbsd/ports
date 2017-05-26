@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2017/04/28 22:22:36 robert Exp $
+# $OpenBSD: Makefile,v 1.61 2017/05/26 09:52:16 espie Exp $
 
 USE_WXNEEDED=		Yes
 
@@ -30,10 +30,9 @@ PERMIT_PACKAGE_FTP =	Yes
 MASTER_SITES=		https://downloads.iridiumbrowser.de/source/ \
 			http://nerd.hu/distfiles/
 
-MODULES=	lang/clang lang/python gcc4
+MODULES=	lang/python
 
-MODCLANG_ARCHS=	*
-MODCLANG_LANGS=	c++
+WANT_CXX =	base clang gcc
 
 MODPY_RUNDEP=	No
 
@@ -48,7 +47,7 @@ WANTLIB += png pthread
 WANTLIB += xml2 xslt
 WANTLIB += sndio
 WANTLIB += Xcomposite
-WANTLIB += estdc++>=17
+WANTLIB += ${LIBECXX}
 WANTLIB += Xi Xtst
 WANTLIB += Xdamage
 WANTLIB += Xcursor Xrandr gio-2.0
@@ -73,14 +72,14 @@ BUILD_DEPENDS=	archivers/bzip2 \
 		x11/gnome/libgnome-keyring \
 		devel/ninja \
 		x11/gtk+3 \
-		lang/gcc/4.9,-c++>=4.9,<4.10
+		${MODGCC4_CPPDEP}
 LIB_DEPENDS=	devel/libexecinfo \
 		security/nss \
 		devel/gconf2 \
 		textproc/libxslt \
 		x11/gtk+2 \
 		print/cups,-libs \
-		lang/gcc/4.9,-libs>=4.9,<4.10
+		${MODGCC4_CPPLIBDEP}
 
 .include <bsd.own.mk>
 

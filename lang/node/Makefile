@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2017/03/24 22:23:10 abieber Exp $
+# $OpenBSD: Makefile,v 1.57 2017/05/26 09:52:16 espie Exp $
 
 # XXX:
 # - Needs __ARM_NR_cacheflush (or the like) to work on arm-based ports.
@@ -17,6 +17,7 @@ DISTFILES =		node-pledge-{}${PLEDGE_VER}.tar.gz:0 ${DISTNAME}.tar.gz
 
 DISTNAME =		node-${NODE_VERSION}
 PKGNAME =		${DISTNAME:S/v//g}
+REVISION =		0
 
 MASTER_SITES0 =		https://github.com/qbit/node-pledge/archive/
 
@@ -31,13 +32,11 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =		${HOMEPAGE}dist/${NODE_VERSION}/
 
-MODULES =		gcc4 \
-			lang/python
+MODULES =		lang/python
 
-MODGCC4_LANGS =		c c++
-MODGCC4_ARCHS =		*
+WANT_CXX =		base gcc
 
-WANTLIB += c execinfo kvm m pthread util z
+WANTLIB += c execinfo kvm m pthread util z ${LIBECXX}
 
 LIB_DEPENDS =		devel/libexecinfo
 
@@ -46,7 +45,7 @@ USE_GMAKE =		Yes
 BUILD_DEPENDS =		sysutils/flock
 
 RUN_DEPENDS =		devel/gmake \
-			lang/gcc/${MODGCC4_VERSION},-c++ \
+			${MODGCC4_CPPDEP} \
 			sysutils/flock
 
 TEST_TARGET =		test
