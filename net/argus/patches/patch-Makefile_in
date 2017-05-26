@@ -1,6 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.4 2015/01/26 13:12:17 steven Exp $
---- Makefile.in.orig	Mon Aug 11 20:49:58 2014
-+++ Makefile.in	Mon Sep 29 23:42:01 2014
+$OpenBSD: patch-Makefile_in,v 1.5 2017/05/26 11:43:43 espie Exp $
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
 @@ -34,7 +34,7 @@ prefix = @prefix@
  exec_prefix = @exec_prefix@
  datarootdir = @datarootdir@
@@ -10,6 +11,15 @@ $OpenBSD: patch-Makefile_in,v 1.4 2015/01/26 13:12:17 steven Exp $
  
  
  #### End of system configuration section. ####
+@@ -55,7 +55,7 @@ DISTFILES = AUTHORS COPYING ChangeLog INSTALL MANIFEST
+ .PHONY: install installdirs all
+ 
+ all: force
+-	@-for d in $(DIRS);\
++	@for d in $(DIRS);\
+ 	do \
+ 		(cd $$d; echo "### Making in" `pwd`;\
+ 			$(MAKE) $(MFLAGS) ;\
 @@ -70,10 +70,6 @@ install:  force
  		(mkdir -p $(DESTDIR)@sbindir@; chmod 755 $(DESTDIR)@sbindir@)
  	[ -d $(DESTDIR)@bindir@ ] || \
