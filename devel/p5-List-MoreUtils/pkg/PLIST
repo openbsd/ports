@@ -1,16 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/05/22 21:39:31 bluhm Exp $
-${P5ARCH}/
-${P5ARCH}/List/
-${P5ARCH}/List/MoreUtils/
-${P5ARCH}/List/MoreUtils.pm
-${P5ARCH}/List/MoreUtils/Contributing.pod
-${P5ARCH}/List/MoreUtils/PP.pm
-${P5ARCH}/List/MoreUtils/XS.pm
-${P5ARCH}/auto/
-${P5ARCH}/auto/List/
-${P5ARCH}/auto/List/MoreUtils/
-${P5ARCH}/auto/List/MoreUtils/MoreUtils.so
+@comment $OpenBSD: PLIST,v 1.5 2017/05/26 12:34:33 bluhm Exp $
+${P5SITE}/List/
+${P5SITE}/List/MoreUtils/
+${P5SITE}/List/MoreUtils.pm
+${P5SITE}/List/MoreUtils/Contributing.pod
+${P5SITE}/List/MoreUtils/PP.pm
 @man man/man3p/List::MoreUtils.3p
 @man man/man3p/List::MoreUtils::Contributing.3p
 @man man/man3p/List::MoreUtils::PP.3p
-@man man/man3p/List::MoreUtils::XS.3p
