@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.40 2017/05/17 08:50:24 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.41 2017/05/26 12:10:31 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
@@ -1082,6 +1082,19 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/emr/schedule-hbase-back
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/emr/socks.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/emr/ssh.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/emr/wait.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/events/
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/events/delete-rule.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/events/describe-rule.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/events/disable-rule.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/events/enable-rule.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/events/list-rule-names-by-target.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/events/list-rules.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/events/list-targets-by-rule.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/events/put-events.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/events/put-rule.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/events/put-targets.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/events/remove-targets.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/events/test-event-pattern.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/glacier/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/glacier/abort-multipart-upload.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/glacier/add-tags-to-vault.rst
