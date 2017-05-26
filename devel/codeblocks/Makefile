@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2017/04/12 18:12:33 landry Exp $
+# $OpenBSD: Makefile,v 1.38 2017/05/26 14:50:15 espie Exp $
 
 BROKEN-alpha=	sqvm.cpp:394:1: internal compiler error: Segmentation fault
 BROKEN-arm=	wxwidgets va_list c++ mangling requires gcc < 4.4
@@ -42,7 +42,7 @@ WANTLIB += pcre pixman-1 png pthread pthread-stubs sndio ${LIBCXX}
 WANTLIB += tiff usbhid wx_base wx_base_net wx_base_odbc wx_base_xml
 WANTLIB += wx_gtk2_adv wx_gtk2_aui wx_gtk2_core wx_gtk2_dbgrid
 WANTLIB += wx_gtk2_html wx_gtk2_qa wx_gtk2_richtext wx_gtk2_xrc
-WANTLIB += xcb xcb-render xcb-shm z
+WANTLIB += xcb xcb-render xcb-shm z ${LIBECXX}
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=codeblocks/Sources/${V}/}
 
@@ -61,9 +61,7 @@ RUN_DEPENDS=	devel/desktop-file-utils \
 		x11/gtk+3,-guic
 
 # XXX <command-line>:0: internal compiler error: Segmentation fault
-MODULES +=	gcc4
-MODGCC4_ARCHS=	*
-MODGCC4_LANGS=	c++
+WANT_CXX =	base gcc
 
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.15
@@ -72,6 +70,8 @@ BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
 			devel/libtool
 
 CONFIGURE_STYLE=gnu
+# nullptr test must pass
+CXXFLAGS +=	-std=c++11 -Wno-c++11-narrowing
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-contrib-plugins=all
