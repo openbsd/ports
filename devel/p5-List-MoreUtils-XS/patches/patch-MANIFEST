@@ -1,0 +1,16 @@
+$OpenBSD: patch-MANIFEST,v 1.1.1.1 2017/05/26 16:41:57 bluhm Exp $
+
+Index: MANIFEST
+--- MANIFEST.orig
++++ MANIFEST
+@@ -3,10 +3,6 @@ Changes
+ dhash.h
+ GPL-1
+ inc/Config/AutoConf/LMU.pm
+-inc/inc_Capture-Tiny/Capture/Tiny.pm
+-inc/inc_Config-AutoConf/Config/AutoConf.pm
+-inc/latest.pm
+-inc/latest/private.pm
+ lib/List/MoreUtils/XS.pm
+ LICENSE
+ Makefile.PL
