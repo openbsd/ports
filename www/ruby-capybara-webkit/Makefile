@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.16 2017/05/15 20:53:33 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2017/05/26 15:43:18 ajacoutot Exp $
+
+BROKEN =	unrecognized command line option "-std=gnu++0x"
 
 COMMENT =	capybara driver that uses WebKit
 
