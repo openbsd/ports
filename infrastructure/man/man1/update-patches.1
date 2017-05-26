@@ -1,4 +1,4 @@
-.\"	$OpenBSD: update-patches.1,v 1.5 2017/05/17 11:31:17 espie Exp $
+.\"	$OpenBSD: update-patches.1,v 1.6 2017/05/26 10:50:28 espie Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: May 17 2017 $
+.Dd $Mdocdate: May 26 2017 $
 .Dt UPDATE-PATCHES 1
 .Os
 .Sh NAME
@@ -87,6 +87,10 @@ Path to existing and generated patches.
 Extension to match for finding original files.
 .It Ev PATCH_LIST
 Only compare new patches to existing patches matching that pattern.
+.It Ev PATCH_VERBOSE
+Force
+.Nm
+to tell about everything it does.
 .It Ev WRKDIST
 Directory to scan for files to compare.
 .El
