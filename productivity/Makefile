@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2017/05/08 17:01:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.75 2017/05/26 19:45:23 jung Exp $
 
      SUBDIR =
      SUBDIR += akonadi
@@ -20,6 +20,7 @@
      SUBDIR += gtg
      SUBDIR += homebank
      SUBDIR += impressive
+     SUBDIR += khal
      SUBDIR += kmymoney
      SUBDIR += ledger
      SUBDIR += libalkimia
