@@ -1,4 +1,18 @@
-# $OpenBSD: Makefile,v 1.254 2017/04/10 11:46:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.255 2017/05/26 15:30:49 sthen Exp $
+
+# XXX uses -fblocks on clang, or nested functions on gcc.
+#
+# on clang/ld.bfd arches, the configure test fails to link. test looks like this:
+#
+#    echo 'int main(){return ^{return 42;}();}' | \
+#         clang -o /tmp/blockstest -fblocks -x c -L/usr/local/lib -lBlocksRuntime -
+#
+# -> undefined reference to `_NSConcreteGlobalBlock'
+#
+# on clang/ld.lld arches, it builds ok but runtime fails: dlopen()ing the .so modules
+# at runtime fails with undefined symbols from the BlocksRuntime lib.
+#
+BROKEN-aarch64=		linker problems with BlocksRuntime that only show up at runtime
 
 COMMENT-main=		open source multi-protocol PBX and telephony toolkit
 
@@ -232,7 +246,14 @@ FULLPKGPATH$i ?=	${PKGPATH},$i
 RUN_DEPENDS$i +=	asterisk-${VER}:telephony/asterisk
 .endfor
 
+.if ${PROPERTIES:Mclang}
+BUILD_DEPENDS+=		devel/blocksruntime
+.endif
+
 post-patch:
+.if ${PROPERTIES:Mclang}
+	sed -i.beforesubst -e 's, -ftrampolines,,' ${WRKSRC}/Makefile
+.endif
 	cd ${WRKSRC}; \
 	    AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
 	    AUTOCONF_VERSION=${AUTOCONF_VERSION} \
