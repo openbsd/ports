@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2016/07/08 14:23:45 bluhm Exp $
+# $OpenBSD: Makefile,v 1.24 2017/05/26 21:46:17 bluhm Exp $
 
-COMMENT =		library for inspection of data on various network layers
+COMMENT =	library for inspection of data on various network layers
 
-DISTNAME =		Net-Inspect-0.326
+DISTNAME =	Net-Inspect-0.327
 
-CATEGORIES =		net
+CATEGORIES =	net
 
 MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
@@ -12,9 +12,9 @@ MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		cpan
-PKG_ARCH =		*
-BUILD_DEPENDS =		${RUN_DEPENDS}
 RUN_DEPENDS =		net/p5-Net-Pcap \
 			www/p5-libwww
+
+PKG_ARCH =		*
 
 .include <bsd.port.mk>
