@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.255 2017/05/26 15:30:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.256 2017/05/26 15:42:45 sthen Exp $
 
 # XXX uses -fblocks on clang, or nested functions on gcc.
 #
@@ -16,7 +16,7 @@ BROKEN-aarch64=		linker problems with BlocksRuntime that only show up at runtime
 
 COMMENT-main=		open source multi-protocol PBX and telephony toolkit
 
-VER=			13.15.0
+VER=			13.15.1
 PORTROACH=		limitw:0,odd
 DISTNAME=		asterisk-${VER:S/beta/-beta/:S/rc/-rc/}
 PKGNAME-main=		asterisk-${VER}
