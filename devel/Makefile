@@ -1328,6 +1328,7 @@
      SUBDIR += py-fastimport
      SUBDIR += py-fastimport,python3
      SUBDIR += py-fpconst
+     SUBDIR += py-freezegun
      SUBDIR += py-funcsigs
      SUBDIR += py-funcsigs,python3
      SUBDIR += py-functools32
