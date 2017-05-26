@@ -1,0 +1,3 @@
+This is an attempt at making an iCalendar package for Python, to parse and
+generate iCalendar files.  The inspiration has come from the email package in
+the standard lib, yet efficient and powerful.
