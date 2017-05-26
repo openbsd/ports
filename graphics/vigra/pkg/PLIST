@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/11/24 08:10:01 kirby Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/05/26 05:42:58 kirby Exp $
 bin/vigra-config
 include/vigra/
 include/vigra/accessor.hxx
@@ -18,6 +18,7 @@ include/vigra/basicgeometry.hxx
 include/vigra/basicimage.hxx
 include/vigra/basicimageview.hxx
 include/vigra/bessel.hxx
+include/vigra/binary_forest.hxx
 include/vigra/bit_array.hxx
 include/vigra/blockify.hxx
 include/vigra/blockwise_convolution.hxx
@@ -56,6 +57,7 @@ include/vigra/eigensystem.hxx
 include/vigra/error.hxx
 include/vigra/fftw.hxx
 include/vigra/fftw3.hxx
+include/vigra/filter_iterator.hxx
 include/vigra/fixedpoint.hxx
 include/vigra/flatmorphology.hxx
 include/vigra/functorexpression.hxx
@@ -141,10 +143,12 @@ include/vigra/numpy_array_taggedshape.hxx
 include/vigra/numpy_array_traits.hxx
 include/vigra/orientedtensorfilters.hxx
 include/vigra/overlapped_blocks.hxx
+include/vigra/permutation.hxx
 include/vigra/pixelneighborhood.hxx
 include/vigra/polygon.hxx
 include/vigra/polynomial.hxx
 include/vigra/polynomial_registration.hxx
+include/vigra/polytope.hxx
 include/vigra/print_backtrace.hxx
 include/vigra/priority_queue.hxx
 include/vigra/project2ellipse.hxx
@@ -172,6 +176,12 @@ include/vigra/random_forest/rf_ridge_split.hxx
 include/vigra/random_forest/rf_split.hxx
 include/vigra/random_forest/rf_visitors.hxx
 include/vigra/random_forest/splices.hxx
+include/vigra/random_forest_3/
+include/vigra/random_forest_3.hxx
+include/vigra/random_forest_3/random_forest.hxx
+include/vigra/random_forest_3/random_forest_common.hxx
+include/vigra/random_forest_3/random_forest_visitors.hxx
+include/vigra/random_forest_3_hdf5_impex.hxx
 include/vigra/random_forest_deprec.hxx
 include/vigra/random_forest_hdf5_impex.hxx
 include/vigra/rational.hxx
