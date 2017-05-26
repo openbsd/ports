@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.149 2017/04/17 12:18:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.150 2017/05/26 18:58:52 ajacoutot Exp $
 
 COMMENT=		official media player for GNOME
 
@@ -63,12 +63,6 @@ MODGNOME_TOOLS += desktop-file-utils gobject-introspection gtk-update-icon-cache
 MODGNOME_TOOLS += vala yelp
 
 CONFIGURE_STYLE=	gnu
-
-pre-configure:
-# XXX cc1: error: unrecognized command line option "-Wno-unused-but-set-variable"
-	find ${WRKSRC} -name Makefile.in | xargs -r \
-		sed -i 's,-Wno-unused-but-set-variable,,' \
-		${WRKSRC}/src/Makefile.in
 
 post-install:
 	rm ${PREFIX}/lib/totem/plugins/*/*.{a,la}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2017/04/16 15:39:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.44 2017/05/26 18:58:52 ajacoutot Exp $
 
 COMMENT=		directory tree analyzer for GNOME
 
@@ -21,9 +21,5 @@ MODGNOME_TOOLS += desktop-file-utils gobject-introspection yelp
 MODGNOME_TOOLS += gtk-update-icon-cache
 
 CONFIGURE_STYLE=	gnu
-
-pre-configure:
-# XXX cc1: error: unrecognized command line option "-Wno-unused-but-set-variable"
-	sed -i 's,-Wno-unused-but-set-variable,,' ${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.mk>

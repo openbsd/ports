@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.154 2017/05/21 17:49:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.155 2017/05/26 18:58:52 ajacoutot Exp $
 
 COMMENT=	GNOME terminal
 
@@ -36,12 +36,6 @@ MODGNOME_TOOLS=	desktop-file-utils vala yelp
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS +=	--enable-debug
-
-pre-configure:
-# XXX cc1: error: unrecognized command line option
-	sed -i -e 's,-Wno-unused-but-set-variable,,' \
-		-e 's,-Wno-suggest-attribute=format,,' \
-		${WRKSRC}/src/Makefile.in
 
 post-install:
 	rm ${PREFIX}/lib/nautilus/extensions-3.0/*.{a,la}
