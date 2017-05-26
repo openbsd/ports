@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2017/05/26 05:42:58 kirby Exp $
+# $OpenBSD: Makefile,v 1.4 2017/05/26 12:12:01 kirby Exp $
 
 COMMENT =		image processing and analysis library
 
@@ -43,7 +43,5 @@ CONFIGURE_ARGS =	-DWITH_VIGRANUMPY=0 \
 			-DAUTOEXEC_TESTS:BOOL=OFF
 
 CXXFLAGS += 		-std=c++11 -pthread
-
-WRKDIST = 		${WRKDIR}/vigra-e46259f9d511a5dc01d7e4548a596f33f72f3bef
 
 .include <bsd.port.mk>
