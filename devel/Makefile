@@ -834,6 +834,7 @@
      SUBDIR += p5-Lchown
      SUBDIR += p5-List-Cycle
      SUBDIR += p5-List-MoreUtils
+     SUBDIR += p5-List-MoreUtils-XS
      SUBDIR += p5-Locale-Hebrew
      SUBDIR += p5-Locale-Maketext-Fuzzy
      SUBDIR += p5-Locale-Maketext-Gettext
