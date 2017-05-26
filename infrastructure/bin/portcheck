@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.110 2016/04/28 17:30:28 zhuk Exp $
+# $OpenBSD: portcheck,v 1.111 2017/05/26 20:40:31 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -129,10 +129,23 @@ shift $(($OPTIND - 1))
 pkgpath=
 
 if [[ -z $portsdir ]]; then
+	# idea from DPB/Vars.pm
+	test_mf=$(cat <<EOF
+COMMENT = test
+CATEGORIES = test
+PKGPATH = test/a
+DISTNAME = test
+PERMIT_PACKAGE_CDROM=Yes
+IGNORE=Yes
+_MAKEFILE_INC_DONE=Yes
+ECHO_MSG=:
+.include <bsd.port.mk>
+SIGNING_PARAMETERS ?=
+EOF
+	)
 	IFS=:
-	testp=/usr/ports/devel/quirks
 	set -A portsdir_path -- \
-		$( (cd $testp && make show=PORTSDIR_PATH 2>/dev/null) || true)
+		$( (echo "$test_mf" | make -C / -f - show=PORTSDIR_PATH 2>/dev/null) || true)
 	unset IFS
 	if ((${#portsdir_path[@]} > 0)); then
 		for p in "${portsdir_path[@]}"; do
