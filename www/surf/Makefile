@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2015/12/23 20:40:03 jung Exp $
+# $OpenBSD: Makefile,v 1.23 2017/05/26 20:37:56 jung Exp $
 
 COMMENT =	simple webbrowser based on webkit/gtk+
 
-DISTNAME =	surf-0.7
+DISTNAME =	surf-2.0
 CATEGORIES =	www
 HOMEPAGE =	http://surf.suckless.org/
 
@@ -11,18 +11,16 @@ MAINTAINER=	Joerg Jung <jung@openbsd.org>
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
-WANTLIB += Xrandr Xrender atk-1.0 c cairo fontconfig freetype
-WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
-WANTLIB += gtk-x11-2.0 javascriptcoregtk-1.0 pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pthread soup-2.4 webkitgtk-1.0 z
+WANTLIB += X11 atk-1.0 c cairo cairo-gobject gdk-3 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gobject-2.0 gtk-3 javascriptcoregtk-4.0
+WANTLIB += pango-1.0 pangocairo-1.0 soup-2.4 webkit2gtk-4.0 intl
 
 MASTER_SITES =	http://dl.suckless.org/surf/
 
-MODULES =	devel/gettext
-
-LIB_DEPENDS =	www/webkit>=1.6.1v0
-RUN_DEPENDS =	x11/dmenu
+LIB_DEPENDS =	devel/gettext \
+		www/webkitgtk4
+RUN_DEPENDS =	x11/dmenu \
+		net/curl
 
 # webkit browsing
 RUN_DEPENDS +=	multimedia/gstreamer1/plugins-libav

@@ -1,43 +1,22 @@
-$OpenBSD: patch-config_def_h,v 1.4 2015/12/23 20:40:03 jung Exp $
---- config.def.h.orig	Sat Dec 19 15:59:30 2015
-+++ config.def.h	Sat Dec 19 20:45:50 2015
-@@ -16,9 +16,9 @@ static gfloat zoomlevel = 1.0;       /* Default zoom l
- 
- /* Soup default features */
- static char *cookiefile     = "~/.surf/cookies.txt";
--static char *cookiepolicies = "Aa@"; /* A: accept all; a: accept nothing,
-+static char *cookiepolicies = "@Aa"; /* A: accept all; a: accept nothing,
-                                       * @: accept all except third party */
--static char *cafile         = "/etc/ssl/certs/ca-certificates.crt";
-+static char *cafile         = "/etc/ssl/cert.pem";
- static Bool strictssl       = FALSE; /* Refuse untrusted SSL connections */
- static time_t sessiontime   = 3600;
- 
-@@ -29,11 +29,11 @@ static Bool enablediskcache       = TRUE;
- static int diskcachebytes         = 5 * 1024 * 1024;
- static Bool enableplugins         = TRUE;
- static Bool enablescripts         = TRUE;
--static Bool enableinspector       = TRUE;
-+static Bool enableinspector       = FALSE;
- static Bool enablestyle           = TRUE;
- static Bool loadimages            = TRUE;
- static Bool hidebackground        = FALSE;
--static Bool allowgeolocation      = TRUE;
-+static Bool allowgeolocation      = FALSE;
- 
- #define SETPROP(p, q) { \
- 	.v = (char *[]){ "/bin/sh", "-c", \
-@@ -48,10 +48,9 @@ static Bool allowgeolocation      = TRUE;
+$OpenBSD: patch-config_def_h,v 1.5 2017/05/26 20:37:56 jung Exp $
+Index: config.def.h
+--- config.def.h.orig
++++ config.def.h
+@@ -30,7 +30,7 @@ static Parameter defconfig[ParameterLast] = {
+ 	SETB(SiteQuirks,         1),
+ 	SETB(SpellChecking,      0),
+ 	SETV(SpellLanguages,     ((char *[]){ "en_US", NULL })),
+-	SETB(StrictSSL,          0),
++	SETB(StrictSSL,          1),
+ 	SETB(Style,              1),
+ 	SETF(ZoomLevel,          1.0),
+ };
+@@ -58,7 +58,7 @@ static WebKitFindOptions findopts = WEBKIT_FIND_OPTION
  /* DOWNLOAD(URI, referer) */
  #define DOWNLOAD(d, r) { \
- 	.v = (char *[]){ "/bin/sh", "-c", \
--	     "st -e /bin/sh -c \"curl -L -J -O --user-agent '$1'" \
--	     " --referer '$2' -b $3 -c $3 '$0';" \
--	     " sleep 5;\"", \
--	     d, useragent, r, cookiefile, NULL \
-+	     "xterm -e \"ftp -c '$2' -U '$1' '$0';" \
-+	     "sleep 5;\"", \
-+	     d, useragent, cookiefile, NULL \
- 	} \
- }
- 
+         .v = (const char *[]){ "/bin/sh", "-c", \
+-             "st -e /bin/sh -c \"curl -g -L -J -O --user-agent '$1'" \
++             "xterm -e /bin/sh -c \"curl -g -L -J -O --user-agent '$1'" \
+              " --referer '$2' -b $3 -c $3 '$0';" \
+              " sleep 5;\"", \
+              d, useragent, r, cookiefile, NULL \
