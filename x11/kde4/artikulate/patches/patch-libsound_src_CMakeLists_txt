@@ -1,0 +1,15 @@
+$OpenBSD: patch-libsound_src_CMakeLists_txt,v 1.1 2017/05/26 17:51:10 zhuk Exp $
+Fix build.
+
+Index: libsound/src/CMakeLists.txt
+--- libsound/src/CMakeLists.txt.orig
++++ libsound/src/CMakeLists.txt
+@@ -26,7 +26,7 @@
+ find_package(QtGStreamer 1.1.90 REQUIRED)
+ 
+ include_directories(
+-    ${QTGSTREAMER_INCLUDE_DIR}
++    ${QTGSTREAMER_INCLUDES}
+ )
+ 
+ set(sound_LIB_SRCS
