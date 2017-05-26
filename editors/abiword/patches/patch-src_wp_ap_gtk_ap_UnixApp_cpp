@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_wp_ap_gtk_ap_UnixApp_cpp,v 1.1 2017/05/26 14:51:27 espie Exp $
+
+Index: src/wp/ap/gtk/ap_UnixApp.cpp
+--- src/wp/ap/gtk/ap_UnixApp.cpp.orig
++++ src/wp/ap/gtk/ap_UnixApp.cpp
+@@ -863,7 +863,7 @@ static bool is_so (const char *file) {
+ 	if (len < (strlen(G_MODULE_SUFFIX) + 2)) // this is ".so" and at least one char for the filename
+ 		return false;
+ 	const char *suffix = file+(len-3);
+-	if(0 == strcmp (suffix, "."G_MODULE_SUFFIX))
++	if(0 == strcmp (suffix, "." G_MODULE_SUFFIX))
+ 		return true;
+ 	return false;
+ }
