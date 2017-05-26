@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.111 2017/05/26 20:40:31 zhuk Exp $
+# $OpenBSD: portcheck,v 1.112 2017/05/26 20:55:09 jca Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -1688,6 +1688,25 @@ check_files_dir() {
 }
 
 # Checks made:
+#   * The patch is not empty.
+#   * The patch contains an OpenBSD RCS tag.
+check_patch() {
+	local F=$1
+
+	test -f "$F" || {
+		err "$F is not a file"
+		return
+	}
+
+	if [ -s "$F" ]; then
+		head -n 1 -- "$F" | egrep -q '^\$OpenBSD.*\$$' ||
+		    err "$F does not have \$OpenBSD\$ RCS tag at the top"
+	else
+		err "$F is empty and should be removed"
+	fi
+}
+
+# Checks made:
 #   * Each patch contains OpenBSD RCS tag.
 #   * Directory is not empty and consists only of plain files starting
 #     with 'patch-' and not ending with '.orig'.
@@ -1706,10 +1725,7 @@ check_patches_dir() {
 
 	patch-*)
 		empty=false
-		test -f "$F" ||
-			err "$F is not a file"
-		$rootrun || head -n 1 -- "$F" | egrep -q '^\$OpenBSD.*\$$' ||
-			err "$F does not have \$OpenBSD\$ RCS tag at the top"
+		$rootrun || check_patch "$F"
 		;;
 
 	*)
