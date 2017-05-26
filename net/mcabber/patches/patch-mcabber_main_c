@@ -1,7 +1,8 @@
-$OpenBSD: patch-mcabber_main_c,v 1.1 2016/03/24 20:04:25 mestre Exp $
---- mcabber/main.c.orig	Sat Feb 27 12:41:08 2016
-+++ mcabber/main.c	Thu Mar 24 17:36:48 2016
-@@ -455,6 +455,19 @@ int main(int argc, char **argv)
+$OpenBSD: patch-mcabber_main_c,v 1.2 2017/05/26 10:34:53 mestre Exp $
+Index: mcabber/main.c
+--- mcabber/main.c.orig
++++ mcabber/main.c
+@@ -453,6 +453,19 @@ int main(int argc, char **argv)
    if (ret == -2)
      exit(EXIT_FAILURE);
  
@@ -14,7 +15,7 @@ $OpenBSD: patch-mcabber_main_c,v 1.1 2016/03/24 20:04:25 mestre Exp $
 +  } else {
 +    if (pledge("stdio rpath wpath cpath fattr inet dns tty", NULL) == -1) {
 +      fprintf(stderr, "Cannot pledge: %s\n", strerror(errno));
-+      exit(EXIT_FAILURE);exit(EXIT_FAILURE);
++      exit(EXIT_FAILURE);
 +    }
 +  }
 +
