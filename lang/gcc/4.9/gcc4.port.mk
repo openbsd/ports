@@ -1,4 +1,4 @@
-# $OpenBSD: gcc4.port.mk,v 1.6 2017/05/22 08:04:07 espie Exp $
+# $OpenBSD: gcc4.port.mk,v 1.7 2017/05/26 09:37:05 espie Exp $
 
 MODGCC4_ARCHS ?=
 MODGCC4_LANGS ?=
@@ -31,6 +31,7 @@ COMPILER_VERSION ?= gcc2
 
 MODGCC4STDCPP = estdc++
 MODGCC4_CPPLIBDEP = lang/gcc/4.9,-libs>=4.9,<4.10
+MODGCC4_CPPDEP =    lang/gcc/4.9,-c++>=4.9,<4.10
 MODGCC4_CPPWANTLIB = estdc++>=17
 MODGCC4_ATOMICWANTLIB = atomic
 
@@ -43,7 +44,7 @@ _MODGCC4_LINKS += egcc gcc egcc cc
 .  endif
 
 .  if ${MODGCC4_LANGS:L:Mc++}
-BUILD_DEPENDS += lang/gcc/4.9,-c++>=4.9,<4.10
+BUILD_DEPENDS += ${MODGCC4_CPPDEP}
 LIB_DEPENDS += ${MODGCC4_CPPLIBDEP}
 WANTLIB += ${MODGCC4_CPPWANTLIB}
 _MODGCC4_LINKS += eg++ g++ eg++ c++
