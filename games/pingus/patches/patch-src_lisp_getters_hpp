@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_lisp_getters_hpp,v 1.1 2017/05/26 18:09:15 espie Exp $
+don't get how this ever compiled. you can't convert a shared_ptr into a ptr
+without an explicit get.
+
+Index: src/lisp/getters.hpp
+--- src/lisp/getters.hpp.orig
++++ src/lisp/getters.hpp
+@@ -30,7 +30,7 @@ static inline bool property_get(const Lisp* lisp, T& v
+   if(lisp->get_list_size() != 2)
+     return false;
+   
+-  const Lisp* el = lisp->get_list_elem(1);
++  const Lisp* el = lisp->get_list_elem(1).get();
+   return get(el, val);
+ }
+ 
