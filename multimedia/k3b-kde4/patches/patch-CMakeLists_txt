@@ -1,0 +1,23 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2017/05/26 22:01:39 zhuk Exp $
+Unbreak the Clang case.
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -106,10 +106,14 @@ if(K3B_BUILD_FFMPEG_DECODER_PLUGIN)
+     include(CMakePushCheckState)
+     cmake_push_check_state()
+ 
+-    if(CMAKE_COMPILER_IS_GNUCC)
++    # the c_std_99 in COMPILER_FEATURES is available only since CMake 3.8
++    list(APPEND COMPATIBLE_COMPILERS "Clang")
++    list(APPEND COMPATIBLE_COMPILERS "GNU")
++    list(FIND COMPATIBLE_COMPILERS ${CMAKE_C_COMPILER_ID} COMPAT_ID)
++    if(COMPAT_ID GREATER_EQUAL 0)
+       # FindKDE4Internal.cmake screws things up
+       set(CMAKE_REQUIRED_FLAGS ${CMAKE_REQUIRED_FLAGS} -std=c99)
+-    endif(CMAKE_COMPILER_IS_GNUCC)
++    endif()
+ 
+     if(FFMPEG_INCLUDE_DIR_OLD_STYLE)
+       set(CMAKE_REQUIRED_INCLUDES ${CMAKE_REQUIRED_INCLUDES} ${FFMPEG_INCLUDE_DIR_OLD_STYLE})
