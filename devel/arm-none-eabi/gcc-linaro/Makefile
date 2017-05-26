@@ -1,4 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2017/05/08 09:04:54 patrick Exp $
+# $OpenBSD: Makefile,v 1.7 2017/05/26 08:09:59 sthen Exp $
+
+# see ${WRKBUILD}/arm-none-eabi/libgcc/config.log
+BROKEN-i386=	ICE: Floating point exception from xgcc during libgcc autoconf "checking for suffix of object files"
+BROKEN-armv7=	error during libgcc autoconf "checking for suffix of object files", probably similar to i386
 
 COMMENT=	gcc for ${CONFIG} cross-development, Linaro version
 
