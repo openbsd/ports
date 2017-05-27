@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2014/08/30 21:54:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2017/05/27 04:58:08 espie Exp $
 
 COMMENT=	Berkeley's implementation of the logo programming language
 DISTNAME=	ucblogo-5.5
@@ -21,9 +21,9 @@ CONFIGURE_ARGS+=--x-includes=${X11BASE}/include \
 		--x-libraries=${X11BASE}/lib
 
 pre-configure:
-	@perl -pi -e 's:\@logopath@:${LOCALBASE}/share/ucblogo:g;' \
-		${WRKSRC}/init.c
-	@perl -pi -e 's:\@logohelp@:${LOCALBASE}/share/ucblogo/helpfiles:g;' \
+	@perl -pi.beforesubst \
+	    -e 's:\@logopath@:${LOCALBASE}/share/ucblogo:g;' \
+	    -e 's:\@logohelp@:${LOCALBASE}/share/ucblogo/helpfiles:g;' \
 		${WRKSRC}/init.c
 
 do-install:
