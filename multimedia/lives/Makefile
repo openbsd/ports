@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2017/04/10 11:46:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2017/05/27 10:36:42 zhuk Exp $
 
 COMMENT =		video editor and a VJ tool
 
 V =			1.0.10
 DISTNAME =		LiVES-${V}
 PKGNAME =		${DISTNAME:L}
-REVISION =		5
+REVISION =		6
 
 SHARED_LIBS +=		weed		0.0 # 0.2
 SHARED_LIBS +=		weed_slice	0.0 # 0.2
@@ -18,13 +18,13 @@ MASTER_SITES =		http://www.xs4all.nl/%7Esalsaman/lives/current/
 # GPL v3+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += GL SDL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 c cairo drm dv
+WANTLIB += SDL X11 Xcomposite Xcursor Xdamage Xext Xfixes
+WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo dv
 WANTLIB += expat ffi fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
 WANTLIB += gthread-2.0 gtk-x11-2.0 harfbuzz m mjpegutils ogg oil-0.3
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png
-WANTLIB += pthread pthread-stubs sndio ${LIBCXX} theora usbhid xcb
+WANTLIB += pthread pthread-stubs sndio theora usbhid xcb
 WANTLIB += xcb-render xcb-shm z
 
 MODULES =		devel/gettext
@@ -51,6 +51,10 @@ CONFIGURE_ARGS +=	--disable-jack \
 			--disable-static
 
 WRKDIST =		${WRKDIR}/${DISTNAME:L}
+
+pre-configure:
+	find ${WRKSRC} -name Makefile.in -print0 | \
+		xargs -0r perl -pi -e 's/ -O3/ ${CFLAGS} -std=gnu89/g'
 
 pre-install:
 	@cd ${WRKDIST}/po && ${MAKE_PROGRAM} update-po
