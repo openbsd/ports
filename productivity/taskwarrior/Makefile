@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2017/03/17 07:15:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2017/05/27 05:04:07 espie Exp $
 
 COMMENT =	command line todo list manager
 
@@ -16,15 +16,13 @@ MASTER_SITES =	${HOMEPAGE}download/
 PERMIT_PACKAGE_CDROM =		Yes
 
 # Needs C++11; linker issues with clang
-MODULES =		gcc4 \
-			devel/cmake \
+WANT_CXX =		base gcc
+MODULES =		devel/cmake \
 			lang/lua \
 			lang/python
-MODGCC4_LANGS =		c++
-MODGCC4_ARCHS =		*
 MODLUA_SA =		Yes
 
-WANTLIB += c gnutls m pthread
+WANTLIB += c gnutls m pthread ${LIBECXX}
 
 LIB_DEPENDS =		security/gnutls
 
