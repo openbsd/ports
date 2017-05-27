@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2017/05/14 11:27:52 gsoares Exp $
+# $OpenBSD: Makefile,v 1.42 2017/05/27 04:41:43 espie Exp $
 
 COMMENT =		C/C++ static checker
 
@@ -13,7 +13,7 @@ MAINTAINER =		Gleydson Soares <gsoares@openbsd.org>
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		c execinfo m pcre
+WANTLIB =		c execinfo m pcre ${LIBECXX}
 
 BUILD_DEPENDS =		textproc/docbook-xsl
 
@@ -33,9 +33,8 @@ MAKE_FLAGS =		BIN=${PREFIX}/bin SRCDIR=build \
 			CPPFLAGS="-DHAVE_RULES -DTIXML_USE_STL -Ilib -I${PREFIX}/include" \
 			LDFLAGS="-L${PREFIX}/lib -lpcre -lexecinfo"
 
-MODULES =		lang/python gcc4
-MODGCC4_LANGS =		c++
-MODGCC4_ARCHS =		*
+MODULES =		lang/python
+WANT_CXX =		base gcc
 MODPY_RUNDEP =		No
 CONFIGURE_STYLE =	none
 

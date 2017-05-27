@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2017/04/08 18:21:07 landry Exp $
+# $OpenBSD: Makefile,v 1.42 2017/05/27 04:41:43 espie Exp $
 
 BROKEN-hppa =	undefined reference to __sync atomic ops
 BROKEN-mips64 =	undefined reference to __sync atomic ops
@@ -20,7 +20,7 @@ MAINTAINER =	David Carlier <devnexen@gmail.com>
 # LGPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB +=	c m pthread sndio
+WANTLIB +=	c m pthread sndio ${LIBECXX}
 
 MASTER_SITES =	${HOMEPAGE:S,.html,-releases/,}
 EXTRACT_SUFX =	.tar.bz2
@@ -48,11 +48,11 @@ CONFIGURE_ARGS =-DCMAKE_BUILD_TYPE=OpenBSD \
 		-DALSOFT_NO_CONFIG_UTIL=On
 
 MODULES =	devel/cmake lang/clang gcc4
+
+WANT_CXX =	base clang gcc
 # clang fails on those architectures
 MODGCC4_ARCHS =	sparc64 powerpc
-MODGCC4_LANGS =	c c++
 MODCLANG_ARCHS =	aarch64 amd64 arm i386 mips64 mips64el
-MODCLANG_LANGS =	c c++
 
 SEPARATE_BUILD =Yes
 NO_TEST =	Yes

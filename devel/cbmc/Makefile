@@ -1,4 +1,4 @@
-#$OpenBSD: Makefile,v 1.2 2016/11/02 21:05:38 sthen Exp $
+#$OpenBSD: Makefile,v 1.3 2017/05/27 04:41:43 espie Exp $
 
 COMMENT =	Bounded Model Checker for C and C++ programs
 
@@ -18,14 +18,12 @@ MAINTAINER =	Mages Simon <mages.simon@googlemail.com>
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c m
+WANTLIB += c m ${LIBECXX}
 
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX} minisat2_2.2.1.orig.tar.gz:0
 MASTER_SITES0 =	${MASTER_SITE_DEBIAN:=main/m/minisat2/}
 
-MODULES =	lang/clang
-MODCLANG_LANGS = c++
-MODCLANG_ARCHS = *
+WANT_CXX =	base clang
 
 BUILD_DEPENDS =	devel/bison
 
