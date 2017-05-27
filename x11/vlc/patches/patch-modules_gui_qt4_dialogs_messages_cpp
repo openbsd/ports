@@ -1,10 +1,10 @@
-$OpenBSD: patch-modules_gui_qt4_dialogs_messages_cpp,v 1.1 2017/05/22 10:22:25 espie Exp $
+$OpenBSD: patch-modules_gui_qt4_dialogs_messages_cpp,v 1.2 2017/05/27 08:40:14 ajacoutot Exp $
 Use qt4 atomics there, they're portable (taken from FreeBSD)
 
 Index: modules/gui/qt4/dialogs/messages.cpp
 --- modules/gui/qt4/dialogs/messages.cpp.orig
 +++ modules/gui/qt4/dialogs/messages.cpp
-@@ -143,7 +143,7 @@ MessagesDialog::~MessagesDialog()
+@@ -145,7 +145,7 @@ MessagesDialog::~MessagesDialog()
  
  void MessagesDialog::changeVerbosity( int i_verbosity )
  {
@@ -13,7 +13,7 @@ Index: modules/gui/qt4/dialogs/messages.cpp
  }
  
  void MessagesDialog::updateConfig()
-@@ -337,7 +337,7 @@ void MessagesDialog::MsgCallback( void *self, int type
+@@ -339,7 +339,7 @@ void MessagesDialog::MsgCallback( void *self, int type
  {
      MessagesDialog *dialog = (MessagesDialog *)self;
      char *str;

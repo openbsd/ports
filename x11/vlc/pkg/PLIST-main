@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.40 2016/03/03 12:01:18 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.41 2017/05/27 08:40:14 ajacoutot Exp $
 @pkgpath x11/vlc
 %%amd64%%
 %%i386%%
@@ -453,8 +453,6 @@ share/icons/hicolor/32x32/apps/vlc.png
 share/icons/hicolor/32x32/apps/vlc.xpm
 share/icons/hicolor/48x48/apps/vlc-xmas.png
 share/icons/hicolor/48x48/apps/vlc.png
-share/locale/ach/
-share/locale/ach/LC_MESSAGES/
 share/locale/ach/LC_MESSAGES/vlc.mo
 share/locale/af/LC_MESSAGES/vlc.mo
 share/locale/am/LC_MESSAGES/vlc.mo

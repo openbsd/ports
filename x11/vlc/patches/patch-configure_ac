@@ -1,6 +1,7 @@
-$OpenBSD: patch-configure_ac,v 1.32 2016/03/03 12:01:17 ajacoutot Exp $
---- configure.ac.orig	Mon Jan 18 16:29:29 2016
-+++ configure.ac	Wed Mar  2 19:49:15 2016
+$OpenBSD: patch-configure_ac,v 1.33 2017/05/27 08:40:14 ajacoutot Exp $
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
 @@ -134,8 +134,6 @@ case "${host_os}" in
      ;;
    openbsd*)
@@ -10,7 +11,7 @@ $OpenBSD: patch-configure_ac,v 1.32 2016/03/03 12:01:17 ajacoutot Exp $
      ;;
    netbsd*)
      SYS=netbsd
-@@ -949,35 +947,6 @@ AC_ARG_ENABLE(optimizations,
+@@ -952,35 +950,6 @@ AC_ARG_ENABLE(optimizations,
  dnl Check for various optimization flags
  AS_IF([test "${enable_optimizations}" != "no"], [
  
@@ -43,10 +44,10 @@ $OpenBSD: patch-configure_ac,v 1.32 2016/03/03 12:01:17 ajacoutot Exp $
 -    ])
 -  ])
 -
-   dnl Check for -ffast-math
-   VLC_SAVE_FLAGS
-   CFLAGS="${CFLAGS} -ffast-math"
-@@ -1611,7 +1580,7 @@ AS_IF([test "${enable_live555}" != "no" -a -n "${CXX}"
+   dnl Check for fast maths
+   RDC_PROG_CC_FFLAGS([no-math-errno unsafe-math-optimizations no-rounding-math no-signaling-nans cx-limited-range])
+   AC_LANG_PUSH(C++)
+@@ -1605,7 +1574,7 @@ AS_IF([test "${enable_live555}" != "no" -a -n "${CXX}"
      ], [
        AS_IF([test "${SYS}" != "os2"], [
          LIVE555_PREFIX=${LIVE555_PREFIX-"/usr"}
@@ -55,7 +56,7 @@ $OpenBSD: patch-configure_ac,v 1.32 2016/03/03 12:01:17 ajacoutot Exp $
        ], [
          LIVE555_PREFIX=${LIVE555_PREFIX-"/usr/lib/live"}
          CPPFLAGS_live555="-I${LIVE555_PREFIX}/liveMedia/include -I${LIVE555_PREFIX}/groupsock/include -I${LIVE555_PREFIX}/BasicUsageEnvironment/include -I${LIVE555_PREFIX}/UsageEnvironment/include"
-@@ -3736,47 +3705,18 @@ AC_ARG_ENABLE(qt, [
+@@ -3730,47 +3699,18 @@ AC_ARG_ENABLE(qt, [
    ])
  ])
  AS_IF([test "${enable_qt}" != "no"], [

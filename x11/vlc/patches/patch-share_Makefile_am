@@ -1,6 +1,7 @@
-$OpenBSD: patch-share_Makefile_am,v 1.3 2015/05/24 07:16:31 ajacoutot Exp $
---- share/Makefile.am.orig	Sun Nov 16 13:57:59 2014
-+++ share/Makefile.am	Fri May  8 19:20:57 2015
+$OpenBSD: patch-share_Makefile_am,v 1.4 2017/05/27 08:40:14 ajacoutot Exp $
+Index: share/Makefile.am
+--- share/Makefile.am.orig
++++ share/Makefile.am
 @@ -46,7 +46,6 @@ EXTRA_DIST += \
  
  nobase_vlcdata_DATA =
@@ -9,14 +10,16 @@ $OpenBSD: patch-share_Makefile_am,v 1.3 2015/05/24 07:16:31 ajacoutot Exp $
  nobase_vlcdata_DATA += $(DIST_skins2)
  endif
  if KDE_SOLID
-@@ -77,10 +76,6 @@ skins2_default_vlt_FILES = \
+@@ -77,12 +76,6 @@ skins2_default_vlt_FILES = \
  
  skins2/default.vlt: $(skins2_default_vlt_FILES)
- 	mkdir -p skins2
--	(cd "$(srcdir)/skins2"; find default -print0 | \
--		LC_ALL=C sort -z | \
--		tar cvv --exclude .svn --no-recursion --null -T -) | \
--	gzip -n > skins2/default.vlt
+ 	$(AM_V_at)mkdir -p skins2
+-	$(AM_V_at)rm -f -- skins2/default.vlt.tmp
+-	$(AM_V_GEN)GZIP=--no-name \
+-	tar cvvzf skins2/default.vlt.tmp \
+-		--owner=root --group=root --directory="$(srcdir)/skins2" \
+-		default/
+-	$(AM_V_at)mv -f -- skins2/default.vlt.tmp skins2/default.vlt
  
  #
  # LUA
