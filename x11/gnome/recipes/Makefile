@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2017/05/27 05:07:48 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2017/05/27 15:08:43 jasper Exp $
 
 COMMENT =		recipe manager for GNOME
 
 GNOME_PROJECT =		gnome-recipes
-GNOME_VERSION =		1.0.0
+GNOME_VERSION =		1.4.4
 
 CATEGORIES =		misc
 
@@ -11,32 +11,39 @@ CATEGORIES =		misc
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		devel/dconf \
+			devel/meson \
+			lang/python \
 			x11/gnome
 
 WANT_CXX =		base gcc
 MODGCC4_LANGS =		c
 
-WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
-WANTLIB += Xinerama Xrandr Xrender archive atk-1.0 atk-bridge-2.0
-WANTLIB += atspi bz2 c cairo cairo-gobject canberra crypto dbus-1
-WANTLIB += enchant epoxy expat ffi fontconfig freetype gdk-3 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gnome-autoar-0 gobject-2.0
-WANTLIB += graphite2 gspell-1 gthread-2.0 gtk-3 harfbuzz iconv
-WANTLIB += intl ltdl lz4 lzma m ogg pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png pthread pthread-stubs ${LIBCXX} vorbis
-WANTLIB += vorbisfile xcb xcb-render xcb-shm z
+MODPY_RUNDEP =		No
+MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
-LIB_DEPENDS =		archivers/libarchive \
-			audio/libcanberra \
+WANTLIB += c cairo canberra gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB += gnome-autoar-0 gobject-2.0 gspell-1 gtk-3 intl m pango-1.0
+WANTLIB += pangocairo-1.0 soup-2.4
+WNATLIB += ${LIBCXX}
+
+LIB_DEPENDS =		audio/libcanberra \
+			devel/libsoup \
 			textproc/gspell \
 			x11/gnome/autoar
+RUN_DEPENDS =		archivers/gtar
 
 MODGNOME_TOOLS =	desktop-file-utils gobject-introspection \
 			gtk-update-icon-cache shared-mime-info vala
 
-CONFIGURE_STYLE =	gnu
+MODPY_ADJ_FILES =	meson_post_install.py \
+			src/list_to_c.py
 
-# Prevent picking up git(1) during configure
-CONFIGURE_ENV +=	GIT=/usr/bin/true
+# meson detects 'cc' in ${WRKBUILD}/bin/ as the compiler to use.
+# that's good.
+# it then writes 'cc' into build.ninja which doesn't use the PATH
+# and ands up calling /usr/bin/cc instead of ${WRKBUILD}/bin/cc.
+# not good.
+pre-build:
+	sed -i 's, cc , egcc ,' ${WRKBUILD}/build.ninja
 
 .include <bsd.port.mk>

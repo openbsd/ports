@@ -1,0 +1,43 @@
+$OpenBSD: patch-meson_build,v 1.1 2017/05/27 15:08:43 jasper Exp $
+
+- remove git(1) invocatoins
+- don't enter tests/ for it breaks the build atm:
+  ../gnome-recipes-1.4.4/tests/../src/gr-ingredient.c:36:30: fatal error: no-ingredients.inc: No such file or directory
+
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -18,22 +18,9 @@ libgd_dep = libgd.get_variable('libgd_dep')
+ 
+ # Extract LIBGD_INFO
+ libgd_path = join_paths([meson.source_root(), 'subprojects', 'libgd'])
+-git_run = run_command('git', ['-C', libgd_path, 'log', '-1', '--pretty=%h'])
+-if git_run.returncode() == 0
+-  conf.set_quoted('LIBGD_INFO', git_run.stdout().strip())
+-else
+-  message('Failed to extract git commit hash for libgd:\n' + git_run.stderr())
+-  conf.set_quoted('LIBGD_INFO', 'unknown')
+-endif
++conf.set_quoted('LIBGD_INFO', 'unknown')
++conf.set_quoted('COMMIT_ID', 'unknown')
+ 
+-git_run = run_command('git', ['-C', meson.source_root(), 'describe'])
+-if git_run.returncode() == 0
+-  conf.set_quoted('COMMIT_ID', git_run.stdout().strip())
+-else
+-  message('Failed to extract git commit ID for recipes:\n' + git_run.stderr())
+-  conf.set_quoted('COMMIT_ID', 'unknown')
+-endif
+-
+ # Options + dependency checking is overly verbose and repetitive right now, but
+ # there is work ongoing to fix it: https://github.com/mesonbuild/meson/pull/1330
+ autoar_dep = []
+@@ -107,7 +94,6 @@ subdir('tools')
+ subdir('data')
+ subdir('po')
+ subdir('po-data')
+-subdir('tests')
+ subdir('help')
+ 
+ meson.add_install_script('meson_post_install.py')

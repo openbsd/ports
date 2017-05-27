@@ -1,0 +1,28 @@
+$OpenBSD: patch-src_gr-recipe-formatter_c,v 1.1 2017/05/27 15:08:43 jasper Exp $
+
+No _NL_MEASUREMENT_MEASUREMENT? Then you'll get metric units!
+
+Index: src/gr-recipe-formatter.c
+--- src/gr-recipe-formatter.c.orig
++++ src/gr-recipe-formatter.c
+@@ -48,15 +48,18 @@ get_temperature_unit (void)
+         GSettings *settings = gr_settings_get ();
+         unit =  g_settings_get_enum (settings, "temperature-unit");
+         if (unit == GR_TEMPERATURE_UNIT_LOCALE) {
++#ifdef _NL_MEASUREMENT_MEASUREMENT
+                 const gchar *fmt;
+-
+                 fmt = nl_langinfo (_NL_MEASUREMENT_MEASUREMENT);
+                 if (fmt && *fmt == 2)
+                         unit = GR_TEMPERATURE_UNIT_FAHRENHEIT;
+                 else
+                         unit = GR_TEMPERATURE_UNIT_CELSIUS;
++#else
++	unit = GR_TEMPERATURE_UNIT_CELSIUS;
++#endif
+         }
+-
++	
+         return unit;
+ }
+ 
