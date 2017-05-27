@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2017/01/02 20:38:53 bentley Exp $
+# $OpenBSD: Makefile,v 1.15 2017/05/27 04:45:18 espie Exp $
 
 COMMENT-main =		Game Boy Color/Advance emulator
 COMMENT-qt =		Game Boy Color/Advance emulator with GUI
@@ -31,17 +31,15 @@ cWANTLIB =		GL GLU MagickCore-6.Q16 MagickWand-6.Q16 SDL2 \
 			pthread swscale termcap z zip epoxy
 WANTLIB-main =		${cWANTLIB}
 WANTLIB-qt =		${cWANTLIB} Qt5Core Qt5Gui Qt5Multimedia \
-			Qt5Network Qt5OpenGL Qt5Widgets estdc++ mgba
+			Qt5Network Qt5OpenGL Qt5Widgets ${LIBECXX} mgba
 WANTLIB-libretro =	m pthread
 
 GH_ACCOUNT =		mgba-emu
 GH_PROJECT =		mgba
 GH_TAGNAME =		$V
 
-MODULES =		devel/cmake \
-			gcc4
-MODGCC4_ARCHS =		*
-MODGCC4_LANGS =		c c++
+MODULES =		devel/cmake
+WANT_CXX =		base gcc
 LIB_DEPENDS-main =	archivers/libzip \
 			graphics/ImageMagick \
 			graphics/ffmpeg \

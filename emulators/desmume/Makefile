@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2017/04/10 11:45:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2017/05/27 04:45:18 espie Exp $
 
 USE_WXNEEDED =	Yes
 
@@ -38,10 +38,10 @@ CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 MODULES =	devel/gettext \
-		gcc4 \
 		textproc/intltool
-MODGCC4_ARCHS =	*
-MODGCC4_LANGS =	c c++
+
+
+WANT_CXX =	base gcc
 
 CONFIGURE_STYLE =	gnu
 
