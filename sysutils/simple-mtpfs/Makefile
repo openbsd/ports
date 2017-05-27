@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2017/01/07 19:14:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2017/05/27 17:31:46 espie Exp $
 
 COMMENT=		MTP device filesystem
 
@@ -15,12 +15,10 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c fuse m mtp pthread usb-1.0
+WANTLIB += c fuse m mtp pthread usb-1.0 ${LIBECXX}
 
 # c++11
-MODULES +=		gcc4
-MODGCC4_LANGS=		c++
-MODGCC4_ARCHS=		*
+WANT_CXX =		base gcc
 
 CONFIGURE_STYLE=	gnu
 
@@ -33,6 +31,11 @@ AUTOMAKE_VERSION=	1.15
 BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS} \
 			devel/gettext
+
+CPPFLAGS +=	-I${LOCALBASE}/include
+LDFLAGS +=	-L${LOCALBASE}/lib
+
+CONFIGURE_ENV +=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 pre-configure:
 	cd ${WRKSRC} && \
