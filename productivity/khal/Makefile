@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/05/26 19:43:03 jung Exp $
+# $OpenBSD: Makefile,v 1.2 2017/05/27 20:09:38 kili Exp $
 
 COMMENT =		standards based terminal calendar
 
@@ -19,6 +19,8 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 MODPY_VERSION =         ${MODPY_DEFAULT_VERSION_3}
+
+BUILD_DEPENDS=		devel/py-setuptools_scm${MODPY_FLAVOR}
 
 RUN_DEPENDS =		devel/py-atomicwrites${MODPY_FLAVOR} \
 			devel/py-click${MODPY_FLAVOR} \
