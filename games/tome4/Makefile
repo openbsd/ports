@@ -1,7 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2017/03/27 18:28:29 jca Exp $
+# $OpenBSD: Makefile,v 1.6 2017/05/27 05:16:18 espie Exp $
 
 COMMENT-main =	graphical sdl rogue-like game
 COMMENT-data =	data for Tales of Maj'Eyal
+
+# '
 
 V =		1.5.1
 PKGNAME-main =	tome4-${V}
@@ -38,13 +40,13 @@ LIB_DEPENDS-data =
 WANTLIB-data =
 
 # The build system hardcodes the use of the "gcc" command
-MODULES =	gcc4
-MODGCC4_ARCHS =	*
+WANT_CXX =	base gcc
+MODGCC4_LANGS =	c
 
 NO_TEST =	YES
 
 USE_GMAKE =	YES
-MAKE_FLAGS =	verbose=1
+MAKE_FLAGS =	verbose=1 CC='${CC}'
 MAKE_ENV =	config=release
 
 GAMEDIR =	${PREFIX}/share/tome4
