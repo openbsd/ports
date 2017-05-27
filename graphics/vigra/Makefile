@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.4 2017/05/26 12:12:01 kirby Exp $
+# $OpenBSD: Makefile,v 1.5 2017/05/27 17:43:22 zhuk Exp $
 
 COMMENT =		image processing and analysis library
+ONLY_FOR_ARCHS =	${CXX11_ARCHS}
 
 GH_ACCOUNT =		ukoethe
 GH_PROJECT =		vigra
@@ -22,9 +23,9 @@ WANTLIB += Half Iex IlmImf IlmThread Imath boost_atomic-mt boost_chrono-mt
 WANTLIB += boost_date_time-mt boost_system-mt boost_thread-mt
 WANTLIB += fftw3 jpeg m png pthread tiff z
 
-MODULES =		devel/cmake gcc4
-MODGCC4_LANGS += 	c++
-MODGCC4_ARCHS = 	*
+WANT_CXX =		base gcc
+
+MODULES =		devel/cmake
 BUILD_DEPENDS = 	math/fftw3,float
 LIB_DEPENDS =		devel/boost \
 			graphics/jpeg \
@@ -39,9 +40,13 @@ CONFIGURE_ARGS =	-DWITH_VIGRANUMPY=0 \
 			-DWITH_OPENEXR=1 \
 			-DWITH_HDF5=0 \
 			-DCREATE_CTEST_TARGETS=ON \
-			-DAUTOBUILD_TESTS=ON \
 			-DAUTOEXEC_TESTS:BOOL=OFF
 
 CXXFLAGS += 		-std=c++11 -pthread
+
+# Actually, there are tests, but they do work only on GCC.
+# If you want to play, just add -DAUTOBUILD_TESTS=ON to CONFIGURE_ARGS.
+# Building tests does not affect packaging.
+NO_TEST =		Yes
 
 .include <bsd.port.mk>
