@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2017/05/24 13:06:47 kirby Exp $
+# $OpenBSD: Makefile,v 1.33 2017/05/27 08:18:46 espie Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386
 
@@ -17,11 +17,10 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += GL GLEW GLU Qt5Core Qt5Gui Qt5Script Qt5Widgets SDL2 X11
 WANTLIB += Xrandr c crypto fontconfig freetype fribidi harfbuzz iconv
 WANTLIB += intl m ogg openal physfs png pthread theora vorbis
-WANTLIB += vorbisfile z
+WANTLIB += vorbisfile z ${LIBECXX}
 
-MODULES=	x11/qt5 gcc4
-MODGCC4_ARCHS =	*
-MODGCC4_LANGS +=c++
+MODULES=	x11/qt5
+WANT_CXX =	base gcc
 
 LIB_DEPENDS=	audio/libogg \
 		audio/libvorbis \
@@ -49,7 +48,13 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		ac_cv_path_MOC4="${LOCALBASE}/bin/moc4" \
 		ac_cv_path_UIC4="${LOCALBASE}/bin/uic4"
 
+# XXX this is a horrible hack to make sure we get to our glm
+# which is 100% incompatible with ports glm
+MAKE_FLAGS += "DEFS=-DHAVE_CONFIG_H -I${WRKSRC}/includefirst"
+
 pre-configure:
+	mkdir -p ${WRKSRC}/includefirst
+	ln -sf ${WRKSRC}/3rdparty/glm ${WRKSRC}/includefirst/glm
 .for _prog in git svn svnversion
 	@cd ${WRKDIR}/bin && ln -sf /usr/bin/true ${_prog}
 .endfor
