@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2016/08/20 05:16:01 bentley Exp $
+# $OpenBSD: Makefile,v 1.9 2017/05/27 10:54:47 espie Exp $
 
 COMMENT =	Enhanced Duke Nukem 3D engine
 RDATE =		20160610
@@ -25,7 +25,7 @@ BUILD_DEPENDS += devel/nasm
 .endif
 
 WANTLIB += c m ogg png pthread vorbis vorbisfile vpx z
-WANTLIB += SDL2 SDL2_mixer FLAC execinfo
+WANTLIB += SDL2 SDL2_mixer FLAC execinfo ${LIBECXX}
 
 LIB_DEPENDS =	audio/libvorbis \
 		audio/flac \
@@ -42,9 +42,7 @@ RUN_DEPENDS =	games/duke3ddata
 
 MASTER_SITES =	http://dukeworld.duke4.net/eduke32/synthesis/${RDATE}-${RTAG}/
 
-MODULES =	gcc4
-MODGCC4_LANGS =	c c++ 
-MODGCC4_ARCHS =	*
+WANT_CXX =	base gcc
 
 # make sure we can see compilation output, respect CC/CXX, don't strip!
 MAKE_ENV =	PRETTY_OUTPUT=0 \
@@ -95,3 +93,9 @@ MAKE_FLAGS +=	MISCLINKOPTS=-nopie
 .endif
 
 .include <bsd.port.mk>
+.if ${PROPERTIES:Mclang}
+# lto doesn't work with binutils, at all
+MAKE_FLAGS +=	LDFLAGS=-fuse-ld=/usr/bin/ld.lld
+# alternately, we could disable LTO
+# MAKE_FLAGS +=	LTO=0
+.endif
