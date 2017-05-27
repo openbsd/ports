@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: gitea.rc,v 1.2 2017/05/27 13:53:07 ajacoutot Exp $
+# $OpenBSD: gitea.rc,v 1.3 2017/05/27 19:57:07 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/sbin/gitea"
 daemon_user="_gitea"
@@ -8,6 +8,7 @@ daemon_flags="web"
 
 . /etc/rc.d/rc.subr
 
+rc_bg=YES
 rc_reload=NO
 
 rc_start() {

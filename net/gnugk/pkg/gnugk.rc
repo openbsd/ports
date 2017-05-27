@@ -1,11 +1,13 @@
 #!/bin/sh
 #
-# $OpenBSD: gnugk.rc,v 1.2 2017/05/27 13:53:06 ajacoutot Exp $
+# $OpenBSD: gnugk.rc,v 1.3 2017/05/27 19:57:06 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/bin/gnugk"
 daemon_flags="-t -c ${SYSCONFDIR}/gatekeeper.ini -u _gnugk -o /var/log/gnugk/gnugk.log"
 
 . /etc/rc.d/rc.subr
+
+rc_bg=YES
 
 rc_reload() {
 	echo reload | nc 127.0.0.1 7000

@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: mlvpn.rc,v 1.2 2017/05/27 13:53:07 ajacoutot Exp $
+# $OpenBSD: mlvpn.rc,v 1.3 2017/05/27 19:57:06 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/sbin/mlvpn"
 daemon_flags="-c ${SYSCONFDIR}/mlvpn/mlvpn.conf --user _mlvpn"
@@ -8,5 +8,6 @@ daemon_flags="-c ${SYSCONFDIR}/mlvpn/mlvpn.conf --user _mlvpn"
 . /etc/rc.d/rc.subr
 
 pexp="mlvpn: .*priv.*"
+rc_bg=YES
 
 rc_cmd $1

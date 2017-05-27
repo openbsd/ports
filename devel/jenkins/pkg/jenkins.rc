@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: jenkins.rc,v 1.9 2017/05/27 13:53:06 ajacoutot Exp $
+# $OpenBSD: jenkins.rc,v 1.10 2017/05/27 19:57:06 ajacoutot Exp $
 
 daemon=$(${LOCALBASE}/bin/javaPathHelper -c jenkins)
 daemon_flags="-Djava.io.tmpdir=/var/cache/jenkins -jar ${TRUEPREFIX}/share/jenkins/jenkins.war --httpPort=8000 --httpsPort=-1 --ajp13Port=-1"
@@ -8,6 +8,7 @@ daemon_user="_jenkins"
 
 . /etc/rc.d/rc.subr
 
+rc_bg=YES
 rc_reload=NO
 
 # Move Jenkins' exploded .war files away from a location

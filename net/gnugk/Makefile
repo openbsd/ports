@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2017/05/27 13:55:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.69 2017/05/27 19:57:06 ajacoutot Exp $
 
 BROKEN-hppa=	libpt.so.7.0: undefined reference to __sync_fetch_and_or_4
 
@@ -6,7 +6,7 @@ COMMENT=	H.323 gatekeeper
 
 DISTNAME=	gnugk-4.2-2
 PKGNAME=	gnugk-4.2.2
-REVISION=	2
+REVISION=	3
 WRKDIST=	${WRKDIR}/gnugk-4.2
 
 CATEGORIES=	net telephony

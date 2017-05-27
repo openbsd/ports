@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: q2ded.rc,v 1.2 2017/05/27 13:53:06 ajacoutot Exp $
+# $OpenBSD: q2ded.rc,v 1.3 2017/05/27 19:57:06 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/bin/q2ded"
 daemon_user="_yquake2"
@@ -8,7 +8,7 @@ daemon_user="_yquake2"
 . /etc/rc.d/rc.subr
 
 pexp="${daemon}.*"
-
+rc_bg=YES
 rc_reload=NO
 
 rc_cmd $1

@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: zeya.rc,v 1.2 2017/05/27 13:53:06 ajacoutot Exp $
+# $OpenBSD: zeya.rc,v 1.3 2017/05/27 19:57:06 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/sbin/zeya"
 daemon_flags="--path=/var/tmp"
@@ -9,7 +9,7 @@ daemon_user="_zeya"
 . /etc/rc.d/rc.subr
 
 pexp="${MODPY_BIN} ${daemon}${daemon_flags:+ ${daemon_flags}}"
-
+rc_bg=YES
 rc_reload=NO
 
 rc_cmd $1

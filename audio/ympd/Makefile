@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2017/05/27 13:55:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2017/05/27 19:57:05 ajacoutot Exp $
 
 COMMENT=	Music Player Daemon web client
 
@@ -7,7 +7,7 @@ GH_PROJECT =	ympd
 GH_TAGNAME =	v1.3.0
 DISTNAME =	ympd-1.3.0
 
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	audio www
 

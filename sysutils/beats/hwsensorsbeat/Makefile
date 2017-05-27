@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2017/05/27 13:55:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2017/05/27 19:57:07 ajacoutot Exp $
 
 COMMENT =	lightweight shipper for hw.sensors data
 
 BEAT =		hwsensorsbeat
 VERSION =	0.1.2
-REVISION =	2
+REVISION =	3
 
 GH_ACCOUNT =	jasperla
 GH_PROJECT =	${BEAT}

@@ -1,11 +1,12 @@
 #!/bin/sh
 #
-# $OpenBSD: deadwood.rc,v 1.2 2017/05/27 13:53:07 ajacoutot Exp $
+# $OpenBSD: deadwood.rc,v 1.3 2017/05/27 19:57:06 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/sbin/Deadwood"
 
 . /etc/rc.d/rc.subr
 
+rc_bg=YES
 rc_reload=NO
 
 rc_cmd $1

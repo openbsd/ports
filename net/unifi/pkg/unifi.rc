@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: unifi.rc,v 1.5 2017/05/27 13:53:07 ajacoutot Exp $
+# $OpenBSD: unifi.rc,v 1.6 2017/05/27 19:57:08 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/share/unifi/lib/ace.jar"
 daemon_user="_unifi"
@@ -8,8 +8,9 @@ daemon_user="_unifi"
 . /etc/rc.d/rc.subr
 
 java="$(${LOCALBASE}/bin/javaPathHelper -c unifi)"
-pexp="${java}${daemon_flags:+ ${daemon_flags}} -jar ${daemon} start"
 
+pexp="${java}${daemon_flags:+ ${daemon_flags}} -jar ${daemon} start"
+rc_bg=YES
 rc_reload=NO
 
 rc_start() {

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2017/05/27 13:55:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2017/05/27 19:57:06 ajacoutot Exp $
 
 COMMENT =		link-aggregation VPN software
 
@@ -6,7 +6,7 @@ V =			2.2.2
 DISTNAME =		mlvpn-$V
 DISTFILES =		${DISTNAME}{$V}.tar.gz
 WRKDIST =		${WRKDIR}/MLVPN-$V
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		net
 

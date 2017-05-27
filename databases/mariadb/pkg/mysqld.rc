@@ -1,12 +1,13 @@
 #!/bin/sh
 #
-# $OpenBSD: mysqld.rc,v 1.3 2017/05/27 13:53:06 ajacoutot Exp $
+# $OpenBSD: mysqld.rc,v 1.4 2017/05/27 19:57:06 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/bin/mysqld_safe"
 
 . /etc/rc.d/rc.subr
 
 pexp="${TRUEPREFIX}/libexec/mysqld .*"
+rc_bg=YES
 rc_reload=NO
 
 rc_cmd $1

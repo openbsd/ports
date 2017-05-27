@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2017/05/27 13:55:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2017/05/27 19:57:08 ajacoutot Exp $
 
 COMMENT=	controller for Ubiquiti uniFi (AP/routing/switching/voip)
 
@@ -10,7 +10,7 @@ V=		${VERSION:C/-.*//}
 DISTFILES=	unifi-$V{UniFi.unix}.zip unifi_sh_api-$V{unifi_sh_api}
 EXTRACT_ONLY=	unifi-$V.zip
 PKGNAME=	unifi-$V
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	net
 

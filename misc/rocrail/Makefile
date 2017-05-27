@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2017/05/27 13:55:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2017/05/27 19:57:06 ajacoutot Exp $
 
 COMMENT-main =		model railroad control daemon
 COMMENT-gui =		model railroad control daemon client
@@ -10,8 +10,8 @@ PKGNAME-main =		rocrail-${VERSION}.${REV}
 PKGNAME-gui =		rocview-${VERSION}.${REV}
 CATEGORIES =		misc x11
 
-REVISION-main =		3
-REVISION-gui =		2
+REVISION-main =		4
+REVISION-gui =		3
 
 HOMEPAGE =		http://www.rocrail.net/
 MAINTAINER =		Sebastian Reitenbach <sebastia@openbsd.org>

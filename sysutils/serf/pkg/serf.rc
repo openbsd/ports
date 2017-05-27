@@ -1,12 +1,14 @@
 #!/bin/sh
 #
-# $OpenBSD: serf.rc,v 1.2 2017/05/27 13:53:07 ajacoutot Exp $
+# $OpenBSD: serf.rc,v 1.3 2017/05/27 19:57:07 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/bin/serf agent"
 daemon_flags="-syslog"
 daemon_user="_serf"
 
 . /etc/rc.d/rc.subr
+
+rc_bg=YES
 
 rc_stop() {
 	pkill -INT -T "${daemon_rtable}" -xf "${pexp}"
