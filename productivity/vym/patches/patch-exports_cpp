@@ -1,0 +1,39 @@
+$OpenBSD: patch-exports_cpp,v 1.1 2017/05/27 09:51:12 zhuk Exp $
+Unbreak build with Clang.
+
+Index: exports.cpp
+--- exports.cpp.orig
++++ exports.cpp
+@@ -556,10 +556,11 @@ void ExportKDE4Bookmarks::doExport() 
+     dia.setShowAgainName("/exports/overwrite/KDE4Bookmarks");
+     if (dia.exec()==QDialog::Accepted)
+     {
+-        model->exportXML(tmpDir.path(),false);
++        QString fpath = tmpDir.path()+"/"+model->getMapName()+".xml";
++        model->exportXML(tmpDir.path(),fpath,false);
+ 
+         XSLTProc p;
+-        p.setInputFile (tmpDir.path()+"/"+model->getMapName()+".xml");
++        p.setInputFile (fpath);
+         p.setOutputFile (tmpDir.home().path()+"/.kde4/share/apps/konqueror/bookmarks.xml");
+         p.setXSLFile (vymBaseDir.path()+"/styles/vym2kdebookmarks.xsl");
+         p.process();
+@@ -586,7 +587,8 @@ void ExportFirefoxBookmarks::doExport() 
+     dia.setShowAgainName("/vym/warnings/overwriteImportBookmarks");
+     if (dia.exec()==QDialog::Accepted)
+     {
+-        model->exportXML(tmpDir.path(),false);
++        QString fpath = tmpDir.path()+"/"+model->getMapName()+".xml";
++        model->exportXML(tmpDir.path(),fpath,false);
+ 
+         /*
+     XSLTProc p;
+@@ -998,7 +1000,7 @@ void ExportHTML::doExport(bool useDialog) 
+ ////////////////////////////////////////////////////////////////////////
+ void ExportTaskjuggler::doExport() 
+ {
+-    model->exportXML(tmpDir.path(),false);
++    model->exportXML(tmpDir.path(),"",false);
+ 
+     XSLTProc p;
+     p.setInputFile (tmpDir.path()+"/"+model->getMapName()+".xml");
