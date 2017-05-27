@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.25 2016/09/13 16:12:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.26 2017/05/27 13:55:58 ajacoutot Exp $
 
 COMMENT=	icecast source for streaming Ogg Vorbis
 
 DISTNAME=	ices-2.0.2
 CATEGORIES=	net audio
-REVISION=	1
+REVISION=	2
 
 HOMEPAGE=	http://www.icecast.org/ices.php
 

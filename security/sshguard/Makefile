@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2014/03/25 12:31:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2017/05/27 13:55:58 ajacoutot Exp $
 
 COMMENT=	protect against brute force attacks on sshd and others
 
 DISTNAME=	sshguard-1.5
-REVISION=	1
+REVISION=	2
 CATEGORIES=	security
 
 # BSD

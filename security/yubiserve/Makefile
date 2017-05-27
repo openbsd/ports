@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2016/10/01 11:54:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2017/05/27 13:55:58 ajacoutot Exp $
 
 COMMENT=	standalone Yubikey and OATH/HOTP validation server
 DISTNAME=	yubico-yubiserve-3.1
-REVISION=	6
+REVISION=	7
 EXTRACT_SUFX=	.zip
 UNZIP=		unzip -a
 PKGNAME=	${DISTNAME:S/yubico-//}

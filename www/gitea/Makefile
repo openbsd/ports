@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2017/04/05 00:57:47 danj Exp $
+# $OpenBSD: Makefile,v 1.3 2017/05/27 13:55:59 ajacoutot Exp $
 
 COMMENT =		compact self-hosted Git service
 
 GH_ACCOUNT =		go-gitea
 GH_PROJECT =		gitea
 GH_TAGNAME =		v1.1.0
+REVISION =		0
 
 CATEGORIES =		www devel
 
