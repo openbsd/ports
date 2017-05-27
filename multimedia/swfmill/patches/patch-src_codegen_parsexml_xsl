@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_codegen_parsexml_xsl,v 1.1 2017/05/27 12:20:43 espie Exp $
+
+Index: src/codegen/parsexml.xsl
+--- src/codegen/parsexml.xsl.orig
++++ src/codegen/parsexml.xsl
+@@ -19,7 +19,7 @@ char *fromXmlChar(const Context *ctx, const xmlChar *f
+ 	if (ctx-&gt;convertEncoding) {
+ 		size_t len = strlen((const char *)from_str);
+ 		iconv_t cd = iconv_open(ctx-&gt;swf_encoding, "UTF-8");
+-		if (cd &lt; 0) {
++		if (cd == iconv_t(-1)) {
+ 			fprintf(stderr, "iconv_open failed.\n");
+ 			char *buf = new char[1];
+ 			buf[0] = '\0';
+@@ -339,7 +339,7 @@ void <xsl:value-of select="@name"/>::parseXML( xmlNode
+ 				<xsl:value-of select="@name"/> = new unsigned char[ lout ];
+ 				memcpy( <xsl:value-of select="@name"/>, dst, lout );
+ 			}
+-			delete dst;
++			delete [] dst;
+ 			xmlFree( xmld );
+ 		}
+ 	}
