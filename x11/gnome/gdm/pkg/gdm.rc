@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: gdm.rc,v 1.40 2017/05/27 19:57:08 ajacoutot Exp $
+# $OpenBSD: gdm.rc,v 1.41 2017/05/27 21:00:51 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/sbin/gdm"
 
@@ -13,19 +13,6 @@ rc_pre() {
 	# XXX OpenBSD needs an implementation of XDG_RUNTIME_DIR
 	rm -rf /var/db/gdm/.cache/gnome-shell/runtime-state-*
 }
-
-if [ -n "${INRC}" ]; then
-# on boot: wait for ttys to be initialized in bg so we we don't hang in _rc_wait
-rc_start() {
-	( local i=0
-	while ! pgrep -qf "^/usr/libexec/getty "; do
-		sleep 1
-		[ $((i++)) -ge 10 ] && return 1
-	done
-	${rcexec} "${daemon} ${daemon_flags}" ) &
-	rc_check() { return 0; } # ignore status, we're waiting for getty
-}
-fi
 
 rc_stop() {
 	pkill -9 -xf "${pexp}"
