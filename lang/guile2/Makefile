@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2017/05/10 13:29:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2017/05/27 04:56:48 espie Exp $
 
 COMMENT=		GNU's Ubiquitous Intelligent Language for Extension
 
+# '
 VERSION=		2.2.2
 DISTNAME=		guile-${VERSION}
 PKGNAME=		guile2-${VERSION}
@@ -23,8 +24,8 @@ WANTLIB += unistring
 MASTER_SITES=		${MASTER_SITE_GNU:=guile/}
 
 # internal compiler error: in unify_nodes, at tree-ssa-structalias.c:1231
-MODULES +=		gcc4
-MODGCC4_ARCHS=		*
+WANT_CXX =		base gcc
+MODGCC4_LANGS =		c
 
 USE_GMAKE=		Yes
 
