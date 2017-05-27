@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: mfi.rc,v 1.2 2014/10/03 11:53:23 jasper Exp $
+# $OpenBSD: mfi.rc,v 1.3 2017/05/27 13:53:07 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/share/mfi/lib/ace.jar"
 daemon_user="_mfi"
@@ -13,7 +13,7 @@ pexp="${java} -jar ${daemon} start"
 rc_reload=NO
 
 rc_start() {
-	${rcexec} "${java} -jar ${daemon} start" &
+	${rcexec} "${java} -jar ${daemon} start"
 }
 
 rc_stop() {

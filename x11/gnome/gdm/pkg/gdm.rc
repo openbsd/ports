@@ -1,12 +1,11 @@
 #!/bin/sh
 #
-# $OpenBSD: gdm.rc,v 1.38 2017/04/16 12:43:20 ajacoutot Exp $
+# $OpenBSD: gdm.rc,v 1.39 2017/05/27 13:53:07 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/sbin/gdm"
 
 . /etc/rc.d/rc.subr
 
-rc_bg=YES
 rc_reload=NO
 
 rc_pre() {
@@ -15,19 +14,15 @@ rc_pre() {
 }
 
 if [ -n "${INRC}" ]; then
-# on boot: make sure we don't hang in _rc_wait
-_rc_wait() {
-	return 0
-}
-# on boot: wait for ttys to be initialized
+# on boot: wait for ttys to be initialized in bg so we we don't hang in _rc_wait
 rc_start() {
-	unset rc_bg
 	( local i=0
 	while ! pgrep -qf "^/usr/libexec/getty "; do
 		sleep 1
 		[ $((i++)) -ge 10 ] && return 1
 	done
-	${rcexec} "${daemon} ${daemon_flags} &" ) &
+	${rcexec} "${daemon} ${daemon_flags}" ) &
+	rc_check() { return 0; } # ignore status, we're waiting for getty
 }
 fi
 

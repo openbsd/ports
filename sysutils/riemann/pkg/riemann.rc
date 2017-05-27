@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: riemann.rc,v 1.2 2016/12/31 15:25:18 ajacoutot Exp $
+# $OpenBSD: riemann.rc,v 1.3 2017/05/27 13:53:07 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/bin/riemann"
 daemon_user="_riemann"
@@ -10,10 +10,9 @@ daemon_user="_riemann"
 java="$(${LOCALBASE}/bin/javaPathHelper -c clojure)"
 
 pexp="${java}.*riemann.*"
-rc_bg=YES
 
 rc_start() {
-	${rcexec} "JAVA_CMD=\"${java}\" ${daemon} ${_bg}"
+	${rcexec} "JAVA_CMD=\"${java}\" ${daemon}"
 }
 
 rc_cmd $1

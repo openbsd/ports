@@ -1,13 +1,12 @@
 #!/bin/sh
 #
-# $OpenBSD: sshguard.rc,v 1.1 2011/03/07 17:44:16 rpointel Exp $
+# $OpenBSD: sshguard.rc,v 1.2 2017/05/27 13:53:07 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/sbin/sshguard"
 daemon_flags="-l /var/log/authlog"
 
 . /etc/rc.d/rc.subr
 
-rc_bg=YES
 rc_reload=NO
 
 rc_cmd $1

@@ -1,13 +1,12 @@
 #!/bin/sh
 #
-# $OpenBSD: filebeat.rc,v 1.2 2017/04/27 09:14:40 jasper Exp $
+# $OpenBSD: filebeat.rc,v 1.3 2017/05/27 13:53:07 ajacoutot Exp $
 
 daemon="${PREFIX}/bin/filebeat"
 daemon_flags="-path.config ${SYSCONFDIR}/filebeat"
 
 . /etc/rc.d/rc.subr
 
-rc_bg=YES
 rc_reload=NO
 
 rc_cmd $1

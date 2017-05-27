@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: slim.rc,v 1.9 2015/12/21 10:17:32 ajacoutot Exp $
+# $OpenBSD: slim.rc,v 1.10 2017/05/27 13:53:07 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/bin/slim -d"
 
@@ -9,11 +9,7 @@ daemon="${TRUEPREFIX}/bin/slim -d"
 rc_reload=NO
 
 if [ -n "${INRC}" ]; then
-# on boot: make sure we don't hang in _rc_wait
-_rc_wait() {
-	return 0
-}
-# on boot: wait for ttys to be initialized
+# on boot: wait for ttys to be initialized in bg so we we don't hang in _rc_wait
 rc_start() {
 	( local i=0
 	while ! pgrep -qf "^/usr/libexec/getty "; do
@@ -21,6 +17,7 @@ rc_start() {
 		[ $((i++)) -ge 10 ] && return 1
 	done
 	${rcexec} "${daemon} ${daemon_flags}" ) &
+	rc_check() { return 0; } # ignore status, we're waiting for getty
 }
 fi
 

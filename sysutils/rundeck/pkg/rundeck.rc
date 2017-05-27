@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: rundeck.rc,v 1.1.1.1 2016/10/10 17:19:47 jasper Exp $
+# $OpenBSD: rundeck.rc,v 1.2 2017/05/27 13:53:07 ajacoutot Exp $
 
 daemon=$(${LOCALBASE}/bin/javaPathHelper -c rundeck)
 daemon_flags="-XX:MaxPermSize=256m -Xmx1024m -Djava.io.tmpdir=/var/cache/rundeck -jar ${RDECK_BASE}/rundeck-launcher.jar -b ${RDECK_BASE}"
@@ -8,7 +8,6 @@ daemon_user="_rundeck"
 
 . /etc/rc.d/rc.subr
 
-rc_bg=YES
 rc_reload=NO
 
 rc_pre() {

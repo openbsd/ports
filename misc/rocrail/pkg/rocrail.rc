@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: rocrail.rc,v 1.2 2011/11/17 12:33:31 ajacoutot Exp $
+# $OpenBSD: rocrail.rc,v 1.3 2017/05/27 13:53:06 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/bin/rocrail"
 daemon_user="_rocrail"
@@ -8,7 +8,6 @@ daemon_flags="-w /var/rocrail -l ${TRUEPREFIX}/lib/rocrail -img ${TRUEPREFIX}/sh
 
 . /etc/rc.d/rc.subr
 
-rc_bg=YES
 rc_reload=NO
 
 rc_cmd $1

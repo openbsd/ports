@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: unifi.rc,v 1.4 2016/02/12 13:46:45 sthen Exp $
+# $OpenBSD: unifi.rc,v 1.5 2017/05/27 13:53:07 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/share/unifi/lib/ace.jar"
 daemon_user="_unifi"
@@ -13,7 +13,7 @@ pexp="${java}${daemon_flags:+ ${daemon_flags}} -jar ${daemon} start"
 rc_reload=NO
 
 rc_start() {
-	${rcexec} "${java} ${daemon_flags} -jar ${daemon} start" &
+	${rcexec} "${java} ${daemon_flags} -jar ${daemon} start"
 }
 
 rc_stop() {

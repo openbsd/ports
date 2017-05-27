@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: puppetdb.rc,v 1.4 2014/08/29 10:51:39 sebastia Exp $
+# $OpenBSD: puppetdb.rc,v 1.5 2017/05/27 13:53:06 ajacoutot Exp $
 
 daemon=$(${LOCALBASE}/bin/javaPathHelper -c puppetdb)
 daemon_flags="-cp ${PREFIX}/share/puppetdb/puppetdb.jar clojure.main -m com.puppetlabs.puppetdb.core services -c ${SYSCONFDIR}/puppetdb/conf.d/"
@@ -8,7 +8,6 @@ daemon_timeout=120
 
 . /etc/rc.d/rc.subr
 
-rc_bg=YES
 rc_reload=NO
 
 rc_cmd $1

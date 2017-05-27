@@ -1,13 +1,12 @@
 #!/bin/sh
 #
-# $OpenBSD: heartbeat.rc,v 1.1.1.1 2017/04/29 14:16:10 jasper Exp $
+# $OpenBSD: heartbeat.rc,v 1.2 2017/05/27 13:53:07 ajacoutot Exp $
 
 daemon="${PREFIX}/bin/heartbeat"
 daemon_flags="-path.config ${SYSCONFDIR}/heartbeat/"
 
 . /etc/rc.d/rc.subr
 
-rc_bg=YES
 rc_reload=NO
 
 rc_cmd $1

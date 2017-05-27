@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: kibana.rc,v 1.2 2016/12/17 12:13:22 jasper Exp $
+# $OpenBSD: kibana.rc,v 1.3 2017/05/27 13:53:07 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/kibana/bin/kibana"
 daemon_user="_kibana"
@@ -8,8 +8,6 @@ daemon_user="_kibana"
 . /etc/rc.d/rc.subr
 
 pexp="${TRUEPREFIX}/bin/node ${TRUEPREFIX}/kibana/bin/../src/cli${daemon_flags:+ ${daemon_flags}}"
-
-rc_bg=YES
 rc_reload=NO
 
 rc_cmd $1

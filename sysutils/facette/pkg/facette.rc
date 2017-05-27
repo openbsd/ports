@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: facette.rc,v 1.1.1.1 2016/08/30 17:34:00 landry Exp $
+# $OpenBSD: facette.rc,v 1.2 2017/05/27 13:53:07 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/bin/facette"
 daemon_user="_facette"
@@ -10,7 +10,6 @@ daemon_user="_facette"
 
 . /etc/rc.d/rc.subr
 
-rc_bg=YES
 rc_reload=NO
 
 rc_cmd $1

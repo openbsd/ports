@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: snort2pf.rc,v 1.2 2015/07/15 20:59:43 ajacoutot Exp $
+# $OpenBSD: snort2pf.rc,v 1.3 2017/05/27 13:53:07 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/sbin/snort2pf"
 
@@ -8,7 +8,6 @@ daemon="${TRUEPREFIX}/sbin/snort2pf"
 
 pexp="perl: snort2pf .*"
 
-rc_bg=YES
 rc_reload=NO
 
 rc_cmd $1
