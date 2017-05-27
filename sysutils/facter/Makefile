@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2017/05/14 20:36:21 sebastia Exp $
+# $OpenBSD: Makefile,v 1.40 2017/05/27 09:27:36 ajacoutot Exp $
 
 # XXXTODO: Subpackage facter.jar for use with puppetserver
 COMMENT =		collect and display system facts
@@ -32,6 +32,7 @@ LIB_DEPENDS =		devel/boost>=1.58 \
 			net/curl
 
 BUILD_DEPENDS =		devel/cpp-hocon \
+			devel/gettext-tools \
 			devel/leatherman
 
 CONFIGURE_ARGS+=	-DFACTER_RUBY="${LOCALBASE}/lib/libruby${MODRUBY_BINREV}.so" \
