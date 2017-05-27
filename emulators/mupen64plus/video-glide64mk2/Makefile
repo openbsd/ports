@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2017/02/19 06:16:25 bentley Exp $
+# $OpenBSD: Makefile,v 1.11 2017/05/27 08:41:44 espie Exp $
 
 COMMENT =		n64 emulator video plugin
 REVISION =		3
@@ -6,11 +6,9 @@ REVISION =		3
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-MODULES =		gcc4
-MODGCC4_LANGS =		c++
-MODGCC4_ARCHS =		*
+WANT_CXX =		base gcc
 
-WANTLIB =		GL SDL2 boost_filesystem boost_system c m png pthread z
+WANTLIB =		GL SDL2 boost_filesystem boost_system c m png pthread z ${LIBECXX}
 LIB_DEPENDS =		devel/boost devel/sdl2 graphics/png
 
 MUPEN64PLUS_MOD = 	video-glide64mk2

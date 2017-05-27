@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_Glide64_3dmath_cpp,v 1.1 2017/05/27 08:41:44 espie Exp $
+
+Index: src/Glide64/3dmath.cpp
+--- src/Glide64/3dmath.cpp.orig
++++ src/Glide64/3dmath.cpp
+@@ -271,7 +271,11 @@ void MulMatricesSSE(float m1[4][4],float m2[4][4],floa
+     tmp = _mm_shuffle_ps (tmp, tmp, 3 + (3 << 2) + (3 << 4) + (3 << 6));
+     destrow += tmp * row3;
+ 
++#if defined(__clang__)
++    _mm_storeu_ps(r[i], destrow);
++#else
+     __builtin_ia32_storeups(r[i], destrow);
++#endif
+   }
+  #elif !defined(NO_ASM) && !defined(NOSSE)
+   __asm
