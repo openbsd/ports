@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2017/04/18 16:28:50 pascal Exp $
+# $OpenBSD: Makefile,v 1.8 2017/05/27 04:51:02 espie Exp $
 
 COMMENT =		jump 'n' run game
 
@@ -17,15 +17,14 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += GL GLEW GLU SDL2 SDL2_image boost_date_time-mt boost_filesystem-mt
 WANTLIB += boost_system-mt c curl m ogg openal pthread vorbis
-WANTLIB += vorbisfile
+WANTLIB += vorbisfile ${LIBECXX}
 
 MASTER_SITES =		https://github.com/SuperTux/supertux/releases/download/v${V}/
 
 MAKE_ENV +=		CXXFLAGS="${CXXFLAGS}"
 
-MODULES +=		devel/cmake gcc4
-MODGCC4_ARCHS =		*
-MODGCC4_LANGS =		c c++
+MODULES +=		devel/cmake
+WANT_CXX =		base gcc
 RUN_DEPENDS =		devel/desktop-file-utils
 LIB_DEPENDS =		devel/sdl2-image \
 			graphics/glew \
