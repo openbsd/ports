@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2017/04/28 10:42:42 landry Exp $
+# $OpenBSD: Makefile,v 1.12 2017/05/27 04:54:31 espie Exp $
 
 COMMENT =	geospatial routing extension for PostgreSQL
 
@@ -16,11 +16,10 @@ MAINTAINER =	Landry Breuil <landry@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB +=	CGAL boost_system-mt boost_thread-mt gmp m pthread
-WANTLIB +=	boost_atomic-mt boost_chrono-mt boost_date_time-mt
+WANTLIB +=	boost_atomic-mt boost_chrono-mt boost_date_time-mt ${LIBECXX}
 
-MODULES =	databases/postgresql devel/cmake gcc4
-MODGCC4_ARCHS =	*
-MODGCC4_LANGS =	c c++
+MODULES =	databases/postgresql devel/cmake
+WANT_CXX =	base gcc
 
 LIB_DEPENDS =	math/cgal
 RUN_DEPENDS =	geo/postgis

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2016/11/08 21:57:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2017/05/27 04:54:31 espie Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 powerpc
 
@@ -20,14 +20,13 @@ MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += GL GLU ICE SM X11 Xext Xrandr c curl freetype jpeg
-WANTLIB += m ogg openal png pthread vorbis vorbisfile z
+WANTLIB += m ogg openal png pthread vorbis vorbisfile z ${LIBECXX}
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=supertuxkart/SuperTuxKart/}
 EXTRACT_SUFX =		.tar.xz
 
-MODULES =		devel/cmake gcc4
-MODGCC4_LANGS =		c c++
-MODGCC4_ARCHS =		*
+MODULES =		devel/cmake
+WANT_CXX =		base gcc
 
 RUN_DEPENDS =		devel/desktop-file-utils
 LIB_DEPENDS =		audio/openal>=0.0.8p7 \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2015/12/28 18:57:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2017/05/27 04:54:31 espie Exp $
 
 COMMENT=	C++ mathematics header-only library for OpenGL software
 
@@ -14,11 +14,9 @@ HOMEPAGE=	http://glm.g-truc.net/
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
 
-MODULES=	devel/cmake \
-		gcc4
+MODULES=	devel/cmake 
 
-MODGCC4_ARCHS=	*
-MODGCC4_LANGS=	c++
+WANT_CXX =	base gcc
 
 # it's kind-of a NO_BUILD port, but doing so means you can't
 # run the tests.

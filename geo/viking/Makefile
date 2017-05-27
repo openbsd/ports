@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2016/11/04 11:35:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2017/05/27 04:54:31 espie Exp $
 
 COMMENT =	GPS track manager
 
@@ -22,10 +22,10 @@ WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pthread sqlite3 ssl z
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=viking/}
 EXTRACT_SUFX = .tar.bz2
 
-MODULES =	gcc4 devel/gettext textproc/intltool x11/gnome
+MODULES =	devel/gettext textproc/intltool x11/gnome
 
+WANT_CXX =	base gcc
 MODGCC4_ARCHS =		amd64 i386 powerpc sparc64
-MODGCC4_LANGS =		c c++
 
 CONFIGURE_STYLE =	gnu
 # to ensure X11 libs are found when checking for -lmapnik
