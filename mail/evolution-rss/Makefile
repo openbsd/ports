@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2017/04/17 16:53:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.67 2017/05/27 04:59:05 espie Exp $
 
 COMMENT=		RSS reader plugin for evolution
 
@@ -22,7 +22,7 @@ WANTLIB += atk-1.0 atk-bridge-2.0 atspi bz2 c cairo cairo-gobject
 WANTLIB += camel-1.2 canberra canberra-gtk3 crypto cryptui db
 WANTLIB += dbus-1 dbus-glib-1 drm ebackend-1.2 ebook-1.2 ebook-contacts-1.2
 WANTLIB += ecal-1.2 edata-book-1.2 edataserver-1.2 edataserverui-1.2
-WANTLIB += enchant epoxy estdc++ expat ffi fontconfig freetype
+WANTLIB += enchant epoxy ${LIBECXX} expat ffi fontconfig freetype
 WANTLIB += gailutil-3 gbm gck-1 gcr-base-3 gcr-ui-3 gcrypt gdk-3
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glapi glib-2.0 gmodule-2.0 gnome-autoar-0
 WANTLIB += gnome-autoar-gtk-0 gnome-desktop-3 gobject-2.0 gpg-error
