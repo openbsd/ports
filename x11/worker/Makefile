@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2016/12/30 17:31:21 jsg Exp $
+# $OpenBSD: Makefile,v 1.21 2017/05/27 05:09:04 espie Exp $
 
 BROKEN-hppa =	no atomic ops
 COMMENT =	Midnight Commander-like file manager for X
@@ -11,13 +11,11 @@ HOMEPAGE =	http://www.boomerangsworld.de/
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += ICE SM X11 Xext Xft Xinerama Xrender c expat
-WANTLIB += fontconfig freetype m pthread pthread-stubs xcb z
+WANTLIB += fontconfig freetype m pthread pthread-stubs xcb z ${LIBECXX}
 
 MASTER_SITES =	http://www.boomerangsworld.de/cms/worker/downloads/
 
-MODULES =	gcc4
-MODGCC4_ARCHS =	*
-MODGCC4_LANGS =	c c++
+WANT_CXX =	base gcc
 
 RUN_DEPENDS =	devel/desktop-file-utils
 
