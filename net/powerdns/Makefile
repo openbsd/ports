@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.51 2017/01/20 08:26:39 florian Exp $
+# $OpenBSD: Makefile,v 1.52 2017/05/27 06:21:43 espie Exp $
 
-BROKEN-hppa =		undefined reference to `__sync_fetch_and_add_4'
+BROKEN-hppa =		undefined reference to '__sync_fetch_and_add_4'
 
 COMMENT-main=		modular authoritative nameserver (with database support)
 COMMENT-mysql=		MySQL database access module for PowerDNS
@@ -24,11 +24,9 @@ MULTI_PACKAGES=		-main -mysql -pgsql -ldap
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-MODULES +=	gcc4
-MODGCC4_ARCHS =	*
-MODGCC4_LANGS =	c++
+WANT_CXX =	base gcc
 
-WANTLIB += m pthread
+WANTLIB += m pthread ${LIBECXX}
 #WANTLIB += ${MODGCC4_CPPWANTLIB}
 
 WANTLIB-main += ${WANTLIB}

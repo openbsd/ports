@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2017/03/23 11:58:44 danj Exp $
+# $OpenBSD: Makefile,v 1.4 2017/05/27 06:21:43 espie Exp $
 
 COMMENT=		highly DNS-, DoS- and abuse-aware loadbalancer
 
@@ -16,7 +16,7 @@ MAINTAINER=		Peter van Dijk <peter.van.dijk@powerdns.com>
 # GPLv2 only
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ${MODLUA_WANTLIB} c curses edit m protobuf pthread z
+WANTLIB += ${MODLUA_WANTLIB} c curses edit m protobuf pthread z ${LIBECXX}
 
 MASTER_SITES=		https://downloads.powerdns.com/releases/
 
@@ -32,9 +32,7 @@ CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LIBEDIT_CFLAGS=' '
 SYSCONFDIR=		${BASESYSCONFDIR}/dnsdist
 
-MODULES+=		gcc4
-MODGCC4_ARCHS=		*
-MODGCC4_LANGS=		c++
+WANT_CXX =		base gcc
 
 MODULES+=		lang/lua
 MODLUA_VERSION=		5.3
