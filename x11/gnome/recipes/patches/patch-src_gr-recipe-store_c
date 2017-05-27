@@ -1,13 +1,7 @@
-$OpenBSD: patch-src_gr-recipe-store_c,v 1.1 2017/05/27 15:08:43 jasper Exp $
+$OpenBSD: patch-src_gr-recipe-store_c,v 1.2 2017/05/27 15:51:36 jasper Exp $
 
 tar: unknown option -- -
-usage: tar {crtux}[014578befHhjLmNOoPpqsvwXZz]
-           [blocking-factor | archive | replstr] [-C directory] [-I file]
-           [file ...]
-       tar {-crtux} [-014578eHhjLmNOoPpqvwXZz] [-b blocking-factor]
-           [-C directory] [-f archive] [-I file] [-s replstr] [file ...]
-zsh: segmentation fault (core dumped)  gnome-recipes
-
+https://bugzilla.gnome.org/show_bug.cgi?id=783154
 
 Index: src/gr-recipe-store.c
 --- src/gr-recipe-store.c.orig
