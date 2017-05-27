@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.163 2017/05/07 20:33:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.164 2017/05/27 06:38:23 espie Exp $
 
 USE_WXNEEDED=	Yes
 
@@ -25,14 +25,13 @@ WANTLIB=	SDL X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama \
 		glib-2.0 gnutls gobject-2.0 gthread-2.0 gtk-x11-2.0 intl \
 		iscsi jpeg lzo2 m ncursesw nettle nfs pango-1.0 pangocairo-1.0 \
 		pangoft2-1.0 pixman-1 png pthread pthread-stubs ssh2 \
-		usb-1.0 util vte z
+		usb-1.0 util vte z ${LIBECXX}
 
 # Using gcc4 for the TLS emulation layer
-MODULES=	lang/python \
-		gcc4
+WANT_CXX =	base gcc
 
-MODGCC4_ARCHS=	*
-MODGCC4_LANGS=	c++
+MODULES=	lang/python
+
 
 BUILD_DEPENDS=	devel/gettext-tools \
 		textproc/texi2html
