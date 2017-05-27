@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2016/09/12 22:20:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2017/05/27 05:07:48 espie Exp $
 
 COMMENT =	website access log visualization
 
@@ -14,11 +14,9 @@ PERMIT_PACKAGE_CDROM =	Yes
 MASTER_SITES =	https://github.com/acaudwell/Logstalgia/releases/download/${DISTNAME}/
 
 WANTLIB += GL GLEW GLU SDL2 SDL2_image c freetype iconv m pcre png pthread
-WANTLIB += z
+WANTLIB += z ${LIBECXX}
 
-MODULES =	gcc4
-MODGCC4_ARCHS = *
-MODGCC4_LANGS = c c++
+WANT_CXX =	base gcc
 
 CONFIGURE_STYLE =gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \

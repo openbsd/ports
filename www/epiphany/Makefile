@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.153 2017/05/13 15:47:52 espie Exp $
+# $OpenBSD: Makefile,v 1.154 2017/05/27 05:07:48 espie Exp $
 
 COMMENT=	GNOME web browser based on webkit
 
@@ -53,7 +53,8 @@ MODULES=	devel/dconf \
 		x11/gnome \
 		gcc4
 
-MODGCC4_ARCHS=*
+WANT_CXX =	base gcc
+MODGCC4_LANGS =	c
 
 MODGNOME_TOOLS=	desktop-file-utils gtk-update-icon-cache yelp
 

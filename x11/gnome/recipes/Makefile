@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2017/04/13 07:38:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2017/05/27 05:07:48 espie Exp $
 
 COMMENT =		recipe manager for GNOME
 
@@ -10,11 +10,11 @@ CATEGORIES =		misc
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
 
-MODULES =		gcc4 \
-			devel/dconf \
+MODULES =		devel/dconf \
 			x11/gnome
 
-MODGCC4_ARCHS =		*
+WANT_CXX =		base gcc
+MODGCC4_LANGS =		c
 
 WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender archive atk-1.0 atk-bridge-2.0
