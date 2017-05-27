@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.78 2017/03/07 21:49:22 pascal Exp $
+# $OpenBSD: Makefile,v 1.79 2017/05/27 06:54:39 espie Exp $
 
 ONLY_FOR_ARCHS = amd64 i386
 
@@ -20,16 +20,17 @@ WANTLIB += OpenImageIO X11 Xi Xrender Xxf86vm avcodec avdevice avformat
 WANTLIB += avutil boost_date_time-mt boost_filesystem-mt boost_regex-mt
 WANTLIB += boost_system-mt boost_thread-mt c freetype jpeg m openal
 WANTLIB += openjpeg png pthread ${MODPY_WANTLIB} swscale tiff tinyxml
-WANTLIB += util yaml-cpp z boost_atomic-mt boost_chrono-mt
+WANTLIB += util yaml-cpp z boost_atomic-mt boost_chrono-mt ${LIBECXX}
 
 MASTER_SITES =	http://download.blender.org/source/ \
 		http://mirror.cs.umn.edu/blender.org/source/
 
 MODULES =	devel/cmake \
 		lang/python \
-		gcc4
-MODGCC4_ARCHS = *
-MODGCC4_LANGS += c++
+
+
+WANT_CXX =	base gcc
+
 MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 CONFIGURE_ARGS =	-DPYTHON_INCLUDE_DIR="${MODPY_INCDIR}" \
@@ -59,6 +60,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 NO_TEST =	Yes
 
 CXXFLAGS +=	-I${LOCALBASE}/include -I${X11BASE}/include -pthread
+CFLAGS +=	-I${LOCALBASE}/include
 
 MODPY_ADJ_FILES =	release/bin/blender-thumbnailer.py \
 			release/scripts/modules/blend_render_info.py

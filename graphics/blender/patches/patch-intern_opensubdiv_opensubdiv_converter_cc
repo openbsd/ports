@@ -1,0 +1,13 @@
+$OpenBSD: patch-intern_opensubdiv_opensubdiv_converter_cc,v 1.1 2017/05/27 06:54:40 espie Exp $
+
+Index: intern/opensubdiv/opensubdiv_converter.cc
+--- intern/opensubdiv/opensubdiv_converter.cc.orig
++++ intern/opensubdiv/opensubdiv_converter.cc
+@@ -24,6 +24,7 @@
+  */
+ 
+ #include <cstdio>
++#include <cstdlib>
+ #include <vector>
+ 
+ #ifdef _MSC_VER
