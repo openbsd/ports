@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2017/05/27 08:01:33 akfaew Exp $
+# $OpenBSD: Makefile,v 1.60 2017/05/27 20:02:49 kili Exp $
 
 COMMENT=		IRC proxy to connect to AIM, ICQ, Jabber and Yahoo
 
@@ -24,7 +24,8 @@ EXAMPLEDIR=		${PREFIX}/share/examples/bitlbee
 DOCS=			${WRKSRC}/doc/user-guide/user-guide.html
 DOCDIR=			${PREFIX}/share/doc/bitlbee/
 
-BUILD_DEPENDS=		textproc/libxslt
+BUILD_DEPENDS=		textproc/docbook-xsl \
+			textproc/libxslt
 MODULES=		lang/python
 MODPY_RUNDEP=		No
 LIB_DEPENDS=		devel/glib2
