@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2017/04/21 13:27:47 kurt Exp $
+# $OpenBSD: Makefile,v 1.41 2017/05/27 16:54:57 espie Exp $
 
 ONLY_FOR_ARCHS-java =	i386 amd64
 
@@ -24,7 +24,7 @@ HOMEPAGE =		http://www.abisource.com/projects/link-grammar/
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += hunspell-1.6 m sqlite3
+WANTLIB += hunspell-1.6 m sqlite3 ${LIBECXX}
 
 WANTLIB-main += ${WANTLIB} c pthread
 
@@ -40,9 +40,7 @@ MODULES =		lang/python
 MODPY_ADJ_FILES =	bindings/python-examples/tests.py
 
 # -std=c++03
-MODULES +=		lang/clang
-MODCLANG_ARCHS =	*
-MODCLANG_LANGS =	c++
+WANT_CXX =		base clang
 
 MULTI_PACKAGES =	-main -java -python
 PSEUDO_FLAVORS =	no_java
