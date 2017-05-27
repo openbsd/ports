@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2017/05/23 13:00:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.78 2017/05/27 14:39:34 ajacoutot Exp $
 
 BROKEN-alpha=		ICE hp5590.c:1141: error: unrecognizable insn
 
@@ -42,6 +42,7 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=		--sbindir=${PREFIX}/libexec \
 			--with-docdir=${PREFIX}/share/doc/sane-backends \
+			--without-api-spec \
 			--without-gphoto2 \
 			--with-group=553 \
 			--enable-pthread \
