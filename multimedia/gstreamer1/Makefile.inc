@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.40 2017/05/08 10:46:14 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.41 2017/05/27 05:02:07 espie Exp $
 
 # Most frequent usage of the GStreamer packages:
 # core		base library
@@ -49,13 +49,10 @@ TEST_DEPENDS +=	${BASE_PKGPATH}
 
 MODULES +=		lang/python
 
-.if ${MACHINE_ARCH:Mpowerpc}
-MODULES +=		gcc4
-MODGCC4_ARCHS=		*
-.else
-MODULES +=		lang/clang
-MODCLANG_ARCHS=		*
-.endif
+WANT_CXX =		base gcc clang
+MODGCC4_LANGS ?=	c
+MODCLANG_LANGS ?=	c
+MODGCC4_ARCHS =		powerpc
 
 # python is only used to generate documentation
 MODPY_RUNDEP=		No

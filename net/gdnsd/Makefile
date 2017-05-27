@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2016/08/17 20:58:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2017/05/27 05:02:07 espie Exp $
 
 COMMENT=		geographically-aware, authoritative-only DNS server
 
@@ -19,8 +19,9 @@ WANTLIB=		c ev m pthread
 MASTER_SITES=		https://github.com/gdnsd/gdnsd/releases/download/v$V/
 
 USE_GMAKE=		Yes
-MODULES=		gcc4 # for thread-local storage
-MODGCC4_ARCHS=		*
+# TLS
+WANT_CXX =		base gcc
+MODGCC4_LANGS =		c
 
 BUILD_DEPENDS=		devel/ragel
 # used for tests
