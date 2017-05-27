@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.58 2015/07/19 08:22:14 jca Exp $
+# $OpenBSD: Makefile,v 1.59 2017/05/27 08:01:33 akfaew Exp $
 
 COMMENT=		IRC proxy to connect to AIM, ICQ, Jabber and Yahoo
 
-DISTNAME=		bitlbee-3.4
-REVISION=		0
+DISTNAME=		bitlbee-3.5.1
 CATEGORIES=		net
 
 HOMEPAGE=		http://bitlbee.org/
@@ -13,7 +12,7 @@ MAINTAINER=		Tom Doherty <tom@singlesecond.com>
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB +=		c m pthread glib-2.0 gmodule-2.0 ssl crypto
+WANTLIB +=		c m pthread glib-2.0 gmodule-2.0 ssl crypto intl
 
 MASTER_SITES=		http://get.bitlbee.org/src/
 
@@ -25,7 +24,9 @@ EXAMPLEDIR=		${PREFIX}/share/examples/bitlbee
 DOCS=			${WRKSRC}/doc/user-guide/user-guide.html
 DOCDIR=			${PREFIX}/share/doc/bitlbee/
 
-BUILD_DEPENDS=		textproc/xmlto
+BUILD_DEPENDS=		textproc/libxslt
+MODULES=		lang/python
+MODPY_RUNDEP=		No
 LIB_DEPENDS=		devel/glib2
 
 CONFIGURE_STYLE=	simple
@@ -62,6 +63,9 @@ NO_TEST=		Yes
 pre-configure:
 	find ${WRKSRC} -name Makefile | \
 	    xargs perl -pi -e 's,@\$$\(CC\),\$$(CC),g'
+
+post-build:
+	${MAKE_PROGRAM} -C ${WRKSRC}/doc/user-guide user-guide.html
 
 post-install:
 	${INSTALL_DATA_DIR} ${DOCDIR}
