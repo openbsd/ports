@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.38 2017/02/25 15:21:24 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.39 2017/05/27 14:04:25 jasper Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
@@ -62,6 +62,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/alpine/
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/alpine.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/alpine/base/
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/alpine/base.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/alpine/base/host.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/alpine/base/package.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/alpine/base/process.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/alpine/base/service.rb
@@ -91,6 +92,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/base/ipfilter.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/base/ipnat.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/base/iptables.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/base/kernel_module.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/base/kvm_guest.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/base/localhost.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/base/lxc_container.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/base/mail_alias.rb
@@ -141,6 +143,9 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/debian/v8/
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/debian/v8.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/debian/v8/port.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/debian/v8/service.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/elementary/
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/elementary.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/elementary/base.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/eos/
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/eos.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/eos/base.rb
@@ -172,6 +177,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/freebsd/base/port.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/freebsd/base/routing_table.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/freebsd/base/service.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/freebsd/base/user.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/freebsd/base/zfs.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/freebsd/v6/
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/freebsd/v6.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/freebsd/v6/package.rb
@@ -204,6 +210,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/linux/base/inventory.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/linux/base/ip6tables.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/linux/base/iptables.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/linux/base/kernel_module.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/linux/base/kvm_guest.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/linux/base/lxc_container.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/linux/base/package.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/linux/base/ppa.rb
