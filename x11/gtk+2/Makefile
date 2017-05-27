@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.218 2017/05/26 18:02:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.219 2017/05/27 12:37:16 ajacoutot Exp $
 
 # Everything is a Freaking GLib/GTK+ problem
 CFLAGS +=		-g
@@ -69,7 +69,7 @@ MODGNOME_TOOLS=		gobject-introspection gtk-update-icon-cache
 
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include/freetype2
 
-CFLAGS +=xi		 -Wno-expansion-to-defined
+CFLAGS +=		 -Wno-expansion-to-defined
 
 TEST_IS_INTERACTIVE=	x11
 
