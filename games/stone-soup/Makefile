@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2016/10/01 12:58:18 stsp Exp $
+# $OpenBSD: Makefile,v 1.27 2017/05/27 16:41:41 espie Exp $
 
 BROKEN-hppa =	ICE on dgn-shoals.cc:638
 BROKEN-arm=	tilegen.elf loops burning cpu
@@ -16,9 +16,10 @@ PKGNAME=	stone-soup-${VERSION}
 WRKDIST = 	${WRKDIR}/stone_soup-${VERSION}
 WRKSRC = 	${WRKDIST}/source
 USE_GMAKE = 	Yes
-CFLAGS += 	"-I${LOCALBASE}/include -I${LOCALBASE}/include/SDL2"
-CXXFLAGS += 	"-I${LOCALBASE}/include -I${LOCALBASE}/include/SDL2"
-MAKE_FLAGS = 	CC="${CC}" CXX="${CXX}" HOSTCXX="${CXX}" \
+CFLAGS += 	-I${LOCALBASE}/include -I${LOCALBASE}/include/SDL2
+CXXFLAGS += 	-I${LOCALBASE}/include -I${LOCALBASE}/include/SDL2
+MAKE_FLAGS = 	CC="${CC}" GCC="${GCC}" GXX="${CXX}" \
+		CXX="${CXX}" HOSTCXX="${CXX}" \
 		LUA_INCLUDE_DIR=${MODLUA_INCL_DIR} \
 		LUA_LIB=${MODLUA_LIB} \
 		SQLITE_INCLUDE_DIR=${LOCALBASE}/include \
@@ -26,14 +27,13 @@ MAKE_FLAGS = 	CC="${CC}" CXX="${CXX}" HOSTCXX="${CXX}" \
 		INSTALL_UGRP=root:wheel \
 		prefix=${PREFIX} \
 		SAVEDIR="~/.crawl" \
-		NO_YACC=1
+		NO_YACC=1 V=1
 
 MAKE_ENV +=	MODLUA_DEP_VERSION=${MODLUA_DEP_VERSION}
-MODGCC4_ARCHS = *
-MODGCC4_LANGS = c++
-MODULES = 	gcc4 lang/lua
+WANT_CXX =	base gcc
+MODULES = 	lang/lua
 MODLUA_VERSION = 	5.1
-WANTLIB = 	c m ${MODLUA_WANTLIB} sqlite3
+WANTLIB = 	c m ${MODLUA_WANTLIB} sqlite3 ${LIBECXX}
 
 BUILD_DEPENDS = graphics/pngcrush
 LIB_DEPENDS = 	databases/sqlite3
