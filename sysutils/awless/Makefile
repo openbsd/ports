@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2017/05/23 07:26:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2017/05/27 07:26:23 ajacoutot Exp $
 
 COMMENT=		easy-to-use CLI to manage AWS
 
-GH_TAGNAME=		v0.0.24
+GH_TAGNAME=		v0.0.25
 GH_ACCOUNT=		wallix
 GH_PROJECT=		awless
 
