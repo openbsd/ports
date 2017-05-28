@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2017/04/10 11:46:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2017/05/28 08:15:35 awolk Exp $
 
 COMMENT =		native Gtk+ Twitter client
 
-V =			1.4.2
+V =			1.5
 DISTNAME =		corebird-${V}
 MASTER_SITES =		https://github.com/baedert/corebird/releases/download/${V}/
 

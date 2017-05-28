@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2017/01/19 19:31:59 awolk Exp $
+@comment $OpenBSD: PLIST,v 1.5 2017/05/28 08:15:35 awolk Exp $
 @bin bin/corebird
 @man man/man1/corebird.1
 share/appdata/
@@ -33,6 +33,7 @@ share/locale/es_VE/LC_MESSAGES/corebird.mo
 share/locale/fa/LC_MESSAGES/corebird.mo
 share/locale/fi/LC_MESSAGES/corebird.mo
 share/locale/fr/LC_MESSAGES/corebird.mo
+share/locale/ga/LC_MESSAGES/corebird.mo
 share/locale/gl/LC_MESSAGES/corebird.mo
 share/locale/hi/LC_MESSAGES/corebird.mo
 share/locale/hu/LC_MESSAGES/corebird.mo
