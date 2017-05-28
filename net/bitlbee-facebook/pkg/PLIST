@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/05/28 11:59:36 akfaew Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/05/28 14:16:12 ajacoutot Exp $
 lib/bitlbee/
-lib/bitlbee/facebook.la
+@comment lib/bitlbee/facebook.la
 lib/bitlbee/facebook.so
-share/doc/pkg-readmes/${FULLPKGNAME}

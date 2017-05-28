@@ -1,8 +1,0 @@
-$OpenBSD: README,v 1.1.1.1 2017/05/28 11:59:36 akfaew Exp $
-
-+-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
-+-----------------------------------------------------------------------
-
-General usage instructions are available in the bitlbee wiki:
-https://wiki.bitlbee.org/HowtoFacebookMQTT

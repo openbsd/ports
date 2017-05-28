@@ -1,2 +1,5 @@
 The Facebook protocol plugin for bitlbee. This plugin uses the Facebook
 Mobile API.
+
+General usage instructions are available in the bitlbee wiki:
+https://wiki.bitlbee.org/HowtoFacebookMQT
