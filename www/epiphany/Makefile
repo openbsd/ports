@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.154 2017/05/27 05:07:48 espie Exp $
+# $OpenBSD: Makefile,v 1.155 2017/05/28 12:13:06 espie Exp $
 
 COMMENT=	GNOME web browser based on webkit
 
@@ -50,8 +50,7 @@ LIB_DEPENDS=	devel/libexecinfo \
 RUN_DEPENDS +=	multimedia/gstreamer1/plugins-libav
 
 MODULES=	devel/dconf \
-		x11/gnome \
-		gcc4
+		x11/gnome
 
 WANT_CXX =	base gcc
 MODGCC4_LANGS =	c
