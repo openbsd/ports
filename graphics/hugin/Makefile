@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2016/11/24 19:21:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.51 2017/05/28 19:29:27 espie Exp $
 
 BROKEN-hppa =	run dep on enblend-enfuse which will not build on hppa
 
@@ -38,6 +38,7 @@ WANTLIB += png pthread sqlite3 tiff vigraimpex wx_base>=3
 WANTLIB += wx_base_net>=3 wx_base_xml>=3 wx_gtk2_adv>=3
 WANTLIB += wx_gtk2_aui>=3 wx_gtk2_core>=3 wx_gtk2_gl>=3
 WANTLIB += wx_gtk2_qa wx_gtk2_html>=3 wx_gtk2_xrc>=3 z ${MODPY_WANTLIB}
+WANTLIB += ${LIBECXX}
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=hugin/}
 
@@ -60,9 +61,7 @@ LIB_DEPENDS =		devel/boost>=1.58 \
 			graphics/vigra \
 			x11/wxWidgets>=2.8.12p7
 
-MODULES =		devel/cmake lang/python gcc4
-MODGCC4_ARCHS = 	*
-MODGCC4_LANGS += 	c++
+MODULES =		devel/cmake lang/python
 CONFIGURE_ENV =		MANDIR=man
 CONFIGURE_ARGS +=	-DBUILD_HSI=ON
 NO_TEST =		Yes
