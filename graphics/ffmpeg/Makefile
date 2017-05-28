@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.159 2017/05/28 11:52:06 espie Exp $
+# $OpenBSD: Makefile,v 1.160 2017/05/28 11:59:52 zhuk Exp $
 
 COMMENT=	audio/video converter and streamer
 
@@ -8,6 +8,7 @@ PKGNAME=	ffmpeg-${V}
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	http://comstyle.com/source/
 EXTRACT_SUFX=	.tar.xz
+REVISION=	0
 
 SHARED_LIBS=	avcodec		22.2 \
 		avdevice	10.0 \
