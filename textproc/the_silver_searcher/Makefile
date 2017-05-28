@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2017/05/06 13:24:46 fcambus Exp $
+# $OpenBSD: Makefile,v 1.26 2017/05/28 18:56:30 espie Exp $
 
 COMMENT =	code searching tool, with a focus on speed (ag)
 
@@ -14,8 +14,9 @@ PERMIT_PACKAGE_CDROM =	Yes
 # uses pledge()
 WANTLIB += c lzma pcre pthread z
 
-MODULES =	gcc4
-MODGCC4_ARCHS =	* # needed for TLS
+# TLS
+WANT_CXX =	base gcc
+MODGCC4_LANGS =	c
 
 MASTER_SITES =	http://geoff.greer.fm/ag/releases/
 
