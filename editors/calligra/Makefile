@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2016/09/12 20:58:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2017/05/28 16:20:08 espie Exp $
 
 COMMENT =	K Desktop Environment, office suite
 HOMEPAGE =	https://www.calligra-suite.org/
@@ -163,7 +163,8 @@ CONFIGURE_ARGS +=	-DWITH_Cauchy:BOOL=Off \
 			-DWITH_LibWps:BOOL=Off \
 			-DWITH_Spnav:BOOL=Off \
 			-DWITH_Vc:BOOL=Off \
-			-DWITH_XBase:BOOL=Off
+			-DWITH_XBase:BOOL=Off \
+			-DPQXX_INCLUDE_DIR:PATH=${LOCALBASE}/include
 
 # Karbon wants SVG support through a shareware plugin for pstoedit
 CONFIGURE_ARGS +=	-DWITH_Pstoedit:BOOL=Off
