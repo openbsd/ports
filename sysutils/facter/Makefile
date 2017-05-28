@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2017/05/27 09:27:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2017/05/28 12:37:10 zhuk Exp $
 
 # XXXTODO: Subpackage facter.jar for use with puppetserver
 COMMENT =		collect and display system facts
@@ -61,8 +61,3 @@ post-install:
 	mv ${PREFIX}/bin/facter-${VERSION} ${PREFIX}/bin/facter
 
 .include <bsd.port.mk>
-
-# Drop build-time from 8 minutes to 6 seconds for a primed-build
-.if ${USE_CCACHE:L} == "yes" && ${NO_CCACHE:L} == "no"
-CONFIGURE_ENV +=	CXX="ccache eg++"
-.endif
