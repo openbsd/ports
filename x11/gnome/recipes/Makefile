@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2017/05/27 15:08:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2017/05/28 16:18:23 espie Exp $
 
 COMMENT =		recipe manager for GNOME
 
@@ -44,6 +44,11 @@ MODPY_ADJ_FILES =	meson_post_install.py \
 # and ands up calling /usr/bin/cc instead of ${WRKBUILD}/bin/cc.
 # not good.
 pre-build:
-	sed -i 's, cc , egcc ,' ${WRKBUILD}/build.ninja
+	${FIX_COMPILER}
 
 .include <bsd.port.mk>
+.if ${PROPERTIES:Mclang}
+FIX_COMPILER = :
+.else
+FIX_COMPILER = sed -i 's, cc , egcc ,' ${WRKBUILD}/build.ninja
+.endif
