@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2017/05/16 07:43:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.51 2017/05/28 18:58:11 espie Exp $
 
 COMMENT=		IDE for GNOME
 
@@ -46,7 +46,6 @@ MODULES=		devel/dconf \
 
 # sync with devel/spidermonkey
 WANT_CXX =		base gcc
-MODGCC4_LANGS=		c c++
 
 MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 

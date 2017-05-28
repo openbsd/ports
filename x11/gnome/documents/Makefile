@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.79 2017/05/13 12:53:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.80 2017/05/28 18:58:11 espie Exp $
 
 TRACKER_API=		1.0
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += EGL GL ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xt Xxf86vm atk-1.0
 WANTLIB += atk-bridge-2.0 atspi cairo cairo-gobject dbus-1 drm
-WANTLIB += enchant epoxy estdc++ evdocument3 evview3 expat ffi
+WANTLIB += enchant epoxy ${LIBECXX} evdocument3 evview3 expat ffi
 WANTLIB += fontconfig freetype gbm gcrypt gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 girepository-1.0 gjs glapi glib-2.0 gmodule-2.0
 WANTLIB += gnome-desktop-3 gobject-2.0 gpg-error graphite2 gstapp-1.0
