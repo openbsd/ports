@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/10/31 09:40:05 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/05/28 08:47:19 jasper Exp $
 bin/pcre2-config
 @bin bin/pcre2grep
 @bin bin/pcre2test
@@ -26,6 +26,7 @@ lib/pkgconfig/libpcre2-posix.pc
 @man man/man3/pcre2.3
 @man man/man3/pcre2_callout_enumerate.3
 @man man/man3/pcre2_code_copy.3
+@man man/man3/pcre2_code_copy_with_tables.3
 @man man/man3/pcre2_code_free.3
 @man man/man3/pcre2_compile.3
 @man man/man3/pcre2_compile_context_copy.3
@@ -65,6 +66,7 @@ lib/pkgconfig/libpcre2-posix.pc
 @man man/man3/pcre2_set_character_tables.3
 @man man/man3/pcre2_set_compile_recursion_guard.3
 @man man/man3/pcre2_set_match_limit.3
+@man man/man3/pcre2_set_max_pattern_length.3
 @man man/man3/pcre2_set_newline.3
 @man man/man3/pcre2_set_offset_limit.3
 @man man/man3/pcre2_set_parens_nest_limit.3
@@ -114,6 +116,7 @@ share/doc/pcre2/html/pcre2-config.html
 share/doc/pcre2/html/pcre2.html
 share/doc/pcre2/html/pcre2_callout_enumerate.html
 share/doc/pcre2/html/pcre2_code_copy.html
+share/doc/pcre2/html/pcre2_code_copy_with_tables.html
 share/doc/pcre2/html/pcre2_code_free.html
 share/doc/pcre2/html/pcre2_compile.html
 share/doc/pcre2/html/pcre2_compile_context_copy.html
@@ -153,6 +156,7 @@ share/doc/pcre2/html/pcre2_set_callout.html
 share/doc/pcre2/html/pcre2_set_character_tables.html
 share/doc/pcre2/html/pcre2_set_compile_recursion_guard.html
 share/doc/pcre2/html/pcre2_set_match_limit.html
+share/doc/pcre2/html/pcre2_set_max_pattern_length.html
 share/doc/pcre2/html/pcre2_set_newline.html
 share/doc/pcre2/html/pcre2_set_offset_limit.html
 share/doc/pcre2/html/pcre2_set_parens_nest_limit.html
