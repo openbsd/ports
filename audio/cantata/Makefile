@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2017/05/13 17:40:26 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2017/05/28 18:49:43 espie Exp $
 
 COMMENT =	Qt-based MPD client
 
@@ -19,7 +19,6 @@ MODULES =	devel/gettext \
 
 # because qt5
 WANT_CXX =	base gcc
-MODGCC4_LANGS =		c c++
 
 RUN_DEPENDS +=	devel/desktop-file-utils
 RUN_DEPENDS +=	x11/gtk+3,-guic
