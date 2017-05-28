@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.533 2017/05/24 14:56:50 shadchin Exp $
+# $OpenBSD: Makefile,v 1.534 2017/05/28 13:53:12 jasper Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -411,6 +411,7 @@
      SUBDIR += py-unidecode,python3
      SUBDIR += py-vatnumber
      SUBDIR += py-vobject
+     SUBDIR += py-vobject,python3
      SUBDIR += py-webencodings
      SUBDIR += py-webencodings,python3
      SUBDIR += py-xml
