@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.2 2017/05/28 13:23:50 jasper Exp $
-bin/change_tz
-bin/ics_diff
+@comment $OpenBSD: PLIST,v 1.3 2017/05/28 13:52:31 jasper Exp $
+bin/change_tz${MODPY_BIN_SUFFIX}
+bin/ics_diff${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/vobject/
 lib/python${MODPY_VERSION}/site-packages/vobject-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/vobject-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -12,20 +12,21 @@ lib/python${MODPY_VERSION}/site-packages/vobject-${MODPY_EGG_VERSION}-py${MODPY_
 lib/python${MODPY_VERSION}/site-packages/vobject-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/vobject-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/zip-safe
 lib/python${MODPY_VERSION}/site-packages/vobject/__init__.py
-lib/python${MODPY_VERSION}/site-packages/vobject/__init__.pyc
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/vobject/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/vobject/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/vobject/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/vobject/${MODPY_PYCACHE}behavior.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/vobject/${MODPY_PYCACHE}change_tz.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/vobject/${MODPY_PYCACHE}hcalendar.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/vobject/${MODPY_PYCACHE}icalendar.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/vobject/${MODPY_PYCACHE}ics_diff.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/vobject/${MODPY_PYCACHE}vcard.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/vobject/${MODPY_PYCACHE}win32tz.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/vobject/base.py
-lib/python${MODPY_VERSION}/site-packages/vobject/base.pyc
 lib/python${MODPY_VERSION}/site-packages/vobject/behavior.py
-lib/python${MODPY_VERSION}/site-packages/vobject/behavior.pyc
 lib/python${MODPY_VERSION}/site-packages/vobject/change_tz.py
-lib/python${MODPY_VERSION}/site-packages/vobject/change_tz.pyc
 lib/python${MODPY_VERSION}/site-packages/vobject/hcalendar.py
-lib/python${MODPY_VERSION}/site-packages/vobject/hcalendar.pyc
 lib/python${MODPY_VERSION}/site-packages/vobject/icalendar.py
-lib/python${MODPY_VERSION}/site-packages/vobject/icalendar.pyc
 lib/python${MODPY_VERSION}/site-packages/vobject/ics_diff.py
-lib/python${MODPY_VERSION}/site-packages/vobject/ics_diff.pyc
 lib/python${MODPY_VERSION}/site-packages/vobject/vcard.py
-lib/python${MODPY_VERSION}/site-packages/vobject/vcard.pyc
 lib/python${MODPY_VERSION}/site-packages/vobject/win32tz.py
-lib/python${MODPY_VERSION}/site-packages/vobject/win32tz.pyc
