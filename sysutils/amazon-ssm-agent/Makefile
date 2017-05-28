@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2017/05/28 09:25:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2017/05/28 11:49:39 ajacoutot Exp $
 
 COMMENT=		AWS SSM agent
 
@@ -19,7 +19,11 @@ BUILD_DEPENDS=		lang/go
 
 NO_TEST=		Yes
 
+.if ${MACHINE_ARCH} == "amd64"
 ALL_TARGET=		build-openbsd
+.elif ${MACHINE_ARCH} == "i386"
+ALL_TARGET=		build-openbsd-386
+.endif
 
 USE_GMAKE=		Yes
 MAKE_ENV=		SKIP_CHECKSTYLE=Yes
@@ -38,7 +42,7 @@ do-install:
 		${PREFIX}/share/examples/amazon-ssm-agent/amazon/ssm
 # don't strip(1) go binaries
 	${INSTALL_SCRIPT} \
-			${WRKBUILD}/bin/openbsd_${MACHINE_ARCH}/{amazon-ssm-agent,ssm-cli} \
+			${WRKBUILD}/bin/openbsd_${MACHINE_ARCH:S/i386/386/}/{amazon-ssm-agent,ssm-cli} \
 			${PREFIX}/bin
 	${INSTALL_DATA} \
 		${WRKBUILD}/bin/{seelog_unix.xml,amazon-ssm-agent.json.template} \
