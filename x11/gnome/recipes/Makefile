@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2017/05/28 16:18:23 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2017/05/28 17:20:11 jasper Exp $
 
 COMMENT =		recipe manager for GNOME
 
 GNOME_PROJECT =		gnome-recipes
 GNOME_VERSION =		1.4.4
+REVISION =		0
 
 CATEGORIES =		misc
 
@@ -15,8 +16,7 @@ MODULES =		devel/dconf \
 			lang/python \
 			x11/gnome
 
-WANT_CXX =		base gcc
-MODGCC4_LANGS =		c
+WANT_CXX =		base clang
 
 MODPY_RUNDEP =		No
 MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
@@ -44,11 +44,6 @@ MODPY_ADJ_FILES =	meson_post_install.py \
 # and ands up calling /usr/bin/cc instead of ${WRKBUILD}/bin/cc.
 # not good.
 pre-build:
-	${FIX_COMPILER}
+	sed -i 's, cc , clang ,' ${WRKBUILD}/build.ninja
 
 .include <bsd.port.mk>
-.if ${PROPERTIES:Mclang}
-FIX_COMPILER = :
-.else
-FIX_COMPILER = sed -i 's, cc , egcc ,' ${WRKBUILD}/build.ninja
-.endif
