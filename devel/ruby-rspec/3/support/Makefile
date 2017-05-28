@@ -1,6 +1,6 @@
-#  $OpenBSD: Makefile,v 1.8 2016/07/04 07:36:10 jasper Exp $
+#  $OpenBSD: Makefile,v 1.9 2017/05/28 08:04:06 jasper Exp $
 
 COMMENT =		support utilities for RSpec gems
-DISTNAME =		rspec-support-3.5.0
+DISTNAME =		rspec-support-3.6.0
 
 .include <bsd.port.mk>

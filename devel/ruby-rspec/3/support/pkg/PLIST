@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2016/07/04 07:36:10 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2017/05/28 08:04:06 jasper Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/Changelog.md
@@ -22,6 +22,11 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/support/object_formatter.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/support/recursive_const_methods.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/support/reentrant_mutex.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/support/ruby_features.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rspec/support/source/
+${GEM_LIB}/gems/${DISTNAME}/lib/rspec/support/source.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rspec/support/source/location.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rspec/support/source/node.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rspec/support/source/token.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/support/spec/
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/support/spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/support/spec/deprecation_helpers.rb

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2015/11/17 10:23:47 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2017/05/28 08:04:05 jasper Exp $
 @option no-default-conflict
 @conflict ${MODRUBY_PREFIX}-rspec-expectations->=2,<4
 ${GEM_LIB}/cache/${DISTNAME}.gem
@@ -12,6 +12,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/expectations/
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/expectations.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rspec/expectations/block_snippet_extractor.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/expectations/configuration.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/expectations/expectation_target.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/expectations/fail_with.rb
