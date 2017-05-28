@@ -1,8 +1,11 @@
-# $OpenBSD: Makefile,v 1.60 2017/05/27 20:02:49 kili Exp $
+# $OpenBSD: Makefile,v 1.61 2017/05/28 11:53:51 akfaew Exp $
 
 COMMENT=		IRC proxy to connect to AIM, ICQ, Jabber and Yahoo
 
-DISTNAME=		bitlbee-3.5.1
+V=			3.5.1
+DISTNAME=		bitlbee-$V
+PKGSPEC=		bitlbee-=$V
+REVISION=		0
 CATEGORIES=		net
 
 HOMEPAGE=		http://bitlbee.org/
@@ -41,7 +44,7 @@ CONFIGURE_ARGS+=	--bindir=${PREFIX}/libexec \
 USE_GMAKE=		Yes
 MAKE_ENV=		"CC=${CC}" "CFLAGS=${CFLAGS}"
 FAKE_FLAGS=		ETCDIR=${EXAMPLEDIR}
-FAKE_TARGET=		install install-etc
+FAKE_TARGET=		install install-etc install-dev
 SUBST_VARS=		DB_DIR
 
 FLAVORS =		libpurple otr
