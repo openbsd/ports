@@ -1,12 +1,12 @@
-$OpenBSD: patch-agent_ssm_service_go,v 1.1.1.1 2017/01/04 09:05:40 ajacoutot Exp $
---- agent/ssm/service.go.orig	Wed Jul 20 20:08:03 2016
-+++ agent/ssm/service.go	Mon Jan  2 18:32:52 2017
-@@ -128,6 +128,8 @@ func (svc *sdkService) UpdateInstanceInformation(
+$OpenBSD: patch-agent_ssm_service_go,v 1.2 2017/05/28 09:25:31 ajacoutot Exp $
+--- agent/ssm/service.go.orig	Mon Feb 13 21:42:41 2017
++++ agent/ssm/service.go	Fri Feb 24 09:50:45 2017
+@@ -203,7 +203,7 @@ func (svc *sdkService) UpdateInstanceInformation(
+ 	switch goOS {
+ 	case "windows":
  		params.PlatformType = aws.String(ssm.PlatformTypeWindows)
- 	case "linux":
+-	case "linux", "freebsd":
++	case "linux", "freebsd", "openbsd":
  		params.PlatformType = aws.String(ssm.PlatformTypeLinux)
-+	case "openbsd":
-+		params.PlatformType = aws.String(ssm.PlatformTypeLinux)
  	default:
  		return nil, fmt.Errorf("Cannot report platform type of unrecognized OS. %v", goOS)
- 	}

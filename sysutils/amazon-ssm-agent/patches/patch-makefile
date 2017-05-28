@@ -1,21 +1,8 @@
-$OpenBSD: patch-makefile,v 1.1.1.1 2017/01/04 09:05:40 ajacoutot Exp $
-
-From f5807f6ca41abe547d1e84f835965ca5f526c5d4 Mon Sep 17 00:00:00 2001
-From: Melonia Mendonca <meloniam@amazon.com>
-Date: Thu, 21 Jul 2016 17:29:07 -0700
-Subject: [PATCH] Copying version files only if build file path exists
-
---- makefile.orig	Wed Jul 20 20:08:03 2016
-+++ makefile	Tue Jan  3 12:58:11 2017
-@@ -6,6 +6,7 @@ ifneq ("$(wildcard $(BUILDFILE_PATH))","")
- 	GOTEMPPATH := $(BGO_SPACE)/build/private
- 	GOTEMPCOPYPATH := $(GOTEMPPATH)/src/github.com/aws/amazon-ssm-agent
- 	GOPATH := $(GOTEMPPATH):$(BGO_SPACE)/vendor:$(GOPATH)
-+	TEMPVERSIONPATH := $(GOTEMPCOPYPATH)/agent/version
- 	FINALIZE := $(shell command -v bgo-final 2>/dev/null)
- 
- else
-@@ -27,12 +28,12 @@ export GOPATH
+$OpenBSD: patch-makefile,v 1.2 2017/05/28 09:25:31 ajacoutot Exp $
+Index: makefile
+--- makefile.orig
++++ makefile
+@@ -36,12 +36,12 @@ export BRAZIL_BUILD
  
  checkstyle::
  #   Run checkstyle script
@@ -25,43 +12,23 @@ Subject: [PATCH] Copying version files only if build file path exists
  coverage:: build-linux
  	$(BGO_SPACE)/Tools/src/coverage.sh github.com/aws/amazon-ssm-agent/agent/...
  
--build:: build-linux build-windows build-linux-386 build-windows-386
-+build:: build-linux build-openbsd build-windows build-linux-386 build-windows-386
+-build:: build-linux build-freebsd build-windows build-linux-386 build-windows-386
++build:: build-linux build-freebsd build-openbsd build-windows build-linux-386 build-windows-386
  
- prepack:: prepack-linux prepack-linux-386 prepack-windows prepack-windows-386
+ prepack:: cpy-plugins prepack-linux prepack-linux-386 prepack-windows prepack-windows-386
  
-@@ -63,9 +64,12 @@ pre-build:
- 	cp $(BGO_SPACE)/seelog_windows.xml.template $(BGO_SPACE)/bin/
- 	cp $(BGO_SPACE)/VERSION $(BGO_SPACE)/bin/
- 	cp $(BGO_SPACE)/agent/integration-cli/integration-cli.json $(BGO_SPACE)/bin/
--	# Copying the version files that were generated in pre-build
-+ifneq ("$(wildcard $(BUILDFILE_PATH))","")
-+	@echo "Copying version files generated in pre-build "
-+	mkdir -p $(TEMPVERSIONPATH)
- 	cp $(BGO_SPACE)/VERSION $(GOTEMPCOPYPATH)
--	cp $(BGO_SPACE)/agent/version/version.go $(GOTEMPCOPYPATH)/agent/version/
-+	cp $(BGO_SPACE)/agent/version/version.go $(TEMPVERSIONPATH)
-+endif
- 	exit 0
- 
- .PHONY: build-linux
-@@ -75,6 +79,19 @@ build-linux: checkstyle copy-src pre-build
+@@ -119,6 +119,14 @@ build-freebsd: checkstyle copy-src pre-build
+ 	GOOS=freebsd GOARCH=amd64 go build -ldflags "-s -w" -o $(BGO_SPACE)/bin/freebsd_amd64/amazon-ssm-agent -v \
  	$(BGO_SPACE)/agent/agent.go $(BGO_SPACE)/agent/agent_unix.go $(BGO_SPACE)/agent/agent_parser.go
- 	GOOS=linux GOARCH=amd64 go build -ldflags "-s -w" -o $(BGO_SPACE)/bin/linux_amd64/updater -v \
- 	$(BGO_SPACE)/agent/update/updater/updater.go $(BGO_SPACE)/agent/update/updater/updater_unix.go
+ 	GOOS=freebsd GOARCH=amd64 $(GO_BUILD) -ldflags "-s -w" -o $(BGO_SPACE)/bin/freebsd_amd64/ssm-cli -v \
++            $(BGO_SPACE)/agent/cli-main/cli-main.go
 +
 +.PHONY: build-openbsd
 +build-openbsd: checkstyle copy-src pre-build
 +	@echo "Build for openbsd agent"
 +	GOOS=openbsd GOARCH=amd64 go build -ldflags "-s -w" -o $(BGO_SPACE)/bin/openbsd_amd64/amazon-ssm-agent -v \
 +	$(BGO_SPACE)/agent/agent.go $(BGO_SPACE)/agent/agent_unix.go $(BGO_SPACE)/agent/agent_parser.go
-+
-+install-openbsd:
-+	@echo "Install for openbsd agent"
-+	install -m 555 $(BGO_SPACE)/bin/openbsd_amd64/amazon-ssm-agent $(DESTDIR)$(PREFIX)/sbin/
-+	mkdir -p $(DESTDIR)$(SYSCONFDIR)/amazon/ssm
-+	install -m 644 $(BGO_SPACE)/bin/amazon-ssm-agent.json.template $(DESTDIR)$(SYSCONFDIR)/amazon/ssm
-+	install -m 644 $(BGO_SPACE)/bin/seelog_unix.xml $(DESTDIR)$(SYSCONFDIR)/amazon/ssm/seelog_unix.xml.template
++	GOOS=openbsd GOARCH=amd64 $(GO_BUILD) -ldflags "-s -w" -o $(BGO_SPACE)/bin/openbsd_amd64/ssm-cli -v \
+             $(BGO_SPACE)/agent/cli-main/cli-main.go
  
  .PHONY: build-darwin
- build-darwin: checkstyle copy-src pre-build
