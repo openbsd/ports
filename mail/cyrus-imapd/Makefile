@@ -1,20 +1,20 @@
-# $OpenBSD: Makefile,v 1.103 2017/05/28 15:46:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.104 2017/05/28 15:48:36 ajacoutot Exp $
 
-COMMENT=	Cyrus IMAP server
+COMMENT=		Cyrus IMAP server
 
-V=		3.0.1
-DISTNAME=	cyrus-imapd-${V}
+V=			3.0.1
+DISTNAME=		cyrus-imapd-${V}
 
 SHARED_LIBS +=	cyrus                     0.0 # 0.0
 SHARED_LIBS +=	cyrus_imap                0.0 # 0.0
 SHARED_LIBS +=	cyrus_min                 0.0 # 0.0
 SHARED_LIBS +=	cyrus_sieve               0.0 # 0.0
 
-CATEGORIES=	mail
+CATEGORIES=		mail
 
-HOMEPAGE=	http://www.cyrusimap.org/
+HOMEPAGE=		http://www.cyrusimap.org/
 
-MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
+MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # CMU - see COPYING file in package
 PERMIT_PACKAGE_CDROM=	yes
@@ -23,46 +23,46 @@ WANTLIB += c com_err crypto icudata icuuc jansson m pcre pcreposix
 WANTLIB += pthread sasl2 ssl ${LIBCXX} uuid z
 WANTLIB += perl # uses perl ABI
 
-MASTER_SITES=	http://cyrusimap.org/releases/ \
-		ftp://ftp.cyrusimap.org/cyrus-imapd/ \
-		ftp://ftp.cyrusimap.org/cyrus-imapd/OLD-VERSIONS/
+MASTER_SITES=		http://cyrusimap.org/releases/ \
+			ftp://ftp.cyrusimap.org/cyrus-imapd/ \
+			ftp://ftp.cyrusimap.org/cyrus-imapd/OLD-VERSIONS/
 
-USE_GMAKE=	Yes
+USE_GMAKE=		Yes
 
-BUILD_DEPENDS=	textproc/py-sphinx
+BUILD_DEPENDS=		textproc/py-sphinx
 
-LIB_DEPENDS=	devel/jansson \
-		devel/pcre \
-		security/cyrus-sasl2 \
-		sysutils/e2fsprogs \
-		textproc/icu4c
+LIB_DEPENDS=		devel/jansson \
+			devel/pcre \
+			security/cyrus-sasl2 \
+			sysutils/e2fsprogs \
+			textproc/icu4c
 
-CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		cyrus_cv_sse42=no
-CONFIGURE_ARGS=	--bindir=${PREFIX}/cyrus/bin \
-		--libexec=${PREFIX}/cyrus/libexec \
-		--sbindir=${PREFIX}/cyrus/sbin \
-		--with-sasl=${LOCALBASE} \
-		--with-cyrus-group=_cyrus \
-		--with-cyrus-user=_cyrus \
-		--with-syslogfacility=MAIL \
-		--disable-gssapi \
-		--enable-autocreate \
-		--enable-idled \
-		--enable-murder \
-		--enable-nntp
+CONFIGURE_STYLE=	gnu
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib" \
+			cyrus_cv_sse42=no
+CONFIGURE_ARGS=		--bindir=${PREFIX}/cyrus/bin \
+			--libexec=${PREFIX}/cyrus/libexec \
+			--sbindir=${PREFIX}/cyrus/sbin \
+			--with-sasl=${LOCALBASE} \
+			--with-cyrus-group=_cyrus \
+			--with-cyrus-user=_cyrus \
+			--with-syslogfacility=MAIL \
+			--disable-gssapi \
+			--enable-autocreate \
+			--enable-idled \
+			--enable-murder \
+			--enable-nntp
 
 # XXX FLAVOR
-CONFIGURE_ARGS+=--without-snmp
+CONFIGURE_ARGS +=	--without-snmp
 
 # XXX notyet; FLAVOR
-CONFIGURE_ARGS+=--without-clamav \
-		--disable-http
+CONFIGURE_ARGS +=	--without-clamav \
+			--disable-http
 
 # --mandir is overriden by the ports infrastructure
-FAKE_FLAGS=	mandir=${PREFIX}/cyrus/man
+FAKE_FLAGS=		mandir=${PREFIX}/cyrus/man
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/{doc,examples}/cyrus-imapd
