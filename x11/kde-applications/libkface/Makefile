@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/07/08 22:54:49 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2017/05/28 15:54:08 rsadowski Exp $
 
 COMMENT =		face detection library for KDE
 DISTNAME =		libkface-${VERSION}
@@ -17,12 +17,6 @@ WANTLIB += opencv_legacy opencv_ml opencv_nonfree opencv_objdetect
 WANTLIB += opencv_ocl opencv_photo opencv_video
 
 LIB_DEPENDS =		graphics/opencv
-
-# XXX should fix OpenCV CMake config on Java-enabled archs instead!
-.include <bsd.port.arch.mk>
-.if ${ARCH} == "amd64"
-BUILD_DEPENDS +=        graphics/opencv,-java
-.endif
 
 MODKDE4_USE =		libs
 

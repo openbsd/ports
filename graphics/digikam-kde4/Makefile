@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2017/04/29 09:24:28 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.25 2017/05/28 15:54:08 rsadowski Exp $
 
 COMMENT-kipi =		KDE image plugins collection
 COMMENT-main =		KDE photo management utility
@@ -179,11 +179,6 @@ FLAVOR ?=
 TEST_IS_INTERACTIVE =	X11
 
 .include <bsd.port.arch.mk>
-
-# XXX should fix OpenCV CMake config on Java-enabled archs instead!
-.if ${ARCH} == "amd64"
-BUILD_DEPENDS +=        graphics/opencv,-java
-.endif
 
 #.if ${ARCH} == "i386"
 CONFIGURE_ENV =		CXXFLAGS="${CXXFLAGS} -DOPENBSD_LIBKDCRAW_NO_CRASH=0"
