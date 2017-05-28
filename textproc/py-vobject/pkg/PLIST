@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/12/06 13:38:47 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/05/28 13:23:50 jasper Exp $
 bin/change_tz
 bin/ics_diff
 lib/python${MODPY_VERSION}/site-packages/vobject/
@@ -7,6 +7,7 @@ lib/python${MODPY_VERSION}/site-packages/vobject-${MODPY_EGG_VERSION}-py${MODPY_
 lib/python${MODPY_VERSION}/site-packages/vobject-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/vobject-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
 lib/python${MODPY_VERSION}/site-packages/vobject-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/vobject-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/pbr.json
 lib/python${MODPY_VERSION}/site-packages/vobject-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/vobject-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/vobject-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/zip-safe
