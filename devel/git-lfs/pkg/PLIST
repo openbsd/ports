@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2017/01/13 08:55:13 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2017/05/28 08:22:18 jasper Exp $
 @bin bin/git-lfs
 @man man/man1/git-lfs-checkout.1
 @man man/man1/git-lfs-clean.1
@@ -8,11 +8,14 @@
 @man man/man1/git-lfs-fetch.1
 @man man/man1/git-lfs-filter-process.1
 @man man/man1/git-lfs-fsck.1
-@man man/man1/git-lfs-init.1
 @man man/man1/git-lfs-install.1
+@man man/man1/git-lfs-lock.1
+@man man/man1/git-lfs-locks.1
 @man man/man1/git-lfs-logs.1
 @man man/man1/git-lfs-ls-files.1
 @man man/man1/git-lfs-pointer.1
+@man man/man1/git-lfs-post-checkout.1
+@man man/man1/git-lfs-post-merge.1
 @man man/man1/git-lfs-pre-push.1
 @man man/man1/git-lfs-prune.1
 @man man/man1/git-lfs-pull.1
@@ -20,8 +23,8 @@
 @man man/man1/git-lfs-smudge.1
 @man man/man1/git-lfs-status.1
 @man man/man1/git-lfs-track.1
-@man man/man1/git-lfs-uninit.1
 @man man/man1/git-lfs-uninstall.1
+@man man/man1/git-lfs-unlock.1
 @man man/man1/git-lfs-untrack.1
 @man man/man1/git-lfs-update.1
 @man man/man1/git-lfs.1
