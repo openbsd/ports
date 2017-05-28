@@ -1,13 +1,8 @@
-# $OpenBSD: Makefile,v 1.102 2017/05/09 07:33:33 ajacoutot Exp $
-
-# WARNING: mmap(2) is not fully POSIX on OpenBSD so cyrus needs to
-# map_refresh on every lock which will incure a performance penalty
-# under high load. See this bugreport for details:
-#    http://bugzilla.cyrusimap.org/show_bug.cgi?id=3370
+# $OpenBSD: Makefile,v 1.103 2017/05/28 15:46:11 ajacoutot Exp $
 
 COMMENT=	Cyrus IMAP server
 
-V=		2.5.11
+V=		3.0.1
 DISTNAME=	cyrus-imapd-${V}
 
 SHARED_LIBS +=	cyrus                     0.0 # 0.0
@@ -24,30 +19,36 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 # CMU - see COPYING file in package
 PERMIT_PACKAGE_CDROM=	yes
 
-WANTLIB += c com_err crypto db jansson m pcre pcreposix pthread sasl2
-WANTLIB += ssl uuid z
+WANTLIB += c com_err crypto icudata icuuc jansson m pcre pcreposix
+WANTLIB += pthread sasl2 ssl ${LIBCXX} uuid z
 WANTLIB += perl # uses perl ABI
 
 MASTER_SITES=	http://cyrusimap.org/releases/ \
 		ftp://ftp.cyrusimap.org/cyrus-imapd/ \
 		ftp://ftp.cyrusimap.org/cyrus-imapd/OLD-VERSIONS/
 
-LIB_DEPENDS=	databases/db/v4 \
-		devel/jansson \
+USE_GMAKE=	Yes
+
+BUILD_DEPENDS=	textproc/py-sphinx
+
+LIB_DEPENDS=	devel/jansson \
 		devel/pcre \
 		security/cyrus-sasl2 \
-		sysutils/e2fsprogs
+		sysutils/e2fsprogs \
+		textproc/icu4c
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--with-cyrus-prefix=${PREFIX}/cyrus \
-		--with-bdb-libdir=${LOCALBASE}/lib/db4 \
-		--with-bdb-incdir=${LOCALBASE}/include/db4 \
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		cyrus_cv_sse42=no
+CONFIGURE_ARGS=	--bindir=${PREFIX}/cyrus/bin \
+		--libexec=${PREFIX}/cyrus/libexec \
+		--sbindir=${PREFIX}/cyrus/sbin \
 		--with-sasl=${LOCALBASE} \
 		--with-cyrus-group=_cyrus \
 		--with-cyrus-user=_cyrus \
 		--with-syslogfacility=MAIL \
+		--disable-gssapi \
 		--enable-autocreate \
 		--enable-idled \
 		--enable-murder \
@@ -60,39 +61,23 @@ CONFIGURE_ARGS+=--without-snmp
 CONFIGURE_ARGS+=--without-clamav \
 		--disable-http
 
-SENDMAILREF=	lib/imapoptions man/imapd.conf.5
-SIEVEREF=	lib/imapoptions man/imapd.conf.5 \
-		tools/masssievec tools/rehash tools/translatesieve \
-		tools/upgradesieve doc/install-upgrade.html
-
-pre-configure:
-.for i in lib/imapoptions man/imapd.conf.5
-	sed -i -e "s,/usr/cyrus,${PREFIX}/cyrus,g;" \
-		-e "s,/usr/local/bin/gdb,/usr/bin/gdb,g" \
-		${WRKSRC}/${i}
-.endfor
-
-.for i in ${SENDMAILREF}
-	sed -i "s,/usr/lib/sendmail,/usr/sbin/sendmail,g" ${WRKSRC}/${i}
-.endfor
-
-.for i in ${SIEVEREF}
-	sed -i "s,/usr/sieve,/var/sieve,g" ${WRKSRC}/${i}
-.endfor
+# --mandir is overriden by the ports infrastructure
+FAKE_FLAGS=	mandir=${PREFIX}/cyrus/man
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/{doc,examples/cyrus-imapd}
-	cp -R ${WRKSRC}/doc ${PREFIX}/share/doc/cyrus-imapd
+	${INSTALL_DATA_DIR} ${PREFIX}/share/{doc,examples}/cyrus-imapd
+	cp -R ${WRKSRC}/doc/[!examples]* ${PREFIX}/share/doc/cyrus-imapd
+	cp -R ${WRKSRC}/doc/examples/* ${PREFIX}/share/examples/cyrus-imapd
 	${INSTALL_DATA} ${WRKSRC}/COPYING ${PREFIX}/share/doc/cyrus-imapd
 	cp -R ${WRKSRC}/tools ${PREFIX}/share/examples/cyrus-imapd/
-	${INSTALL_DATA} ${WRKSRC}/master/conf/*.conf \
-		${PREFIX}/share/examples/cyrus-imapd/
 	${INSTALL_DATA} ${FILESDIR}/imapd.conf \
 		${PREFIX}/share/examples/cyrus-imapd/
-	mv ${PREFIX}/man ${PREFIX}/cyrus/man
-	rm -rf ${PREFIX}/libdata/perl5/${MACHINE_ARCH}-openbsd \
+	rm -r ${PREFIX}/libdata/perl5/${MACHINE_ARCH}-openbsd \
 		${PREFIX}/share/doc/cyrus-imapd/text \
-		${PREFIX}/share/examples/cyrus-imapd/tools/vzic \
-		${PREFIX}/cyrus/man/[!man]*
+		${PREFIX}/share/examples/cyrus-imapd/tools/vzic
+# cleanup
+	rm -r ${PREFIX}/share/doc/cyrus-imapd/html/{_*,.buildinfo}
+	find ${PREFIX}/share/{doc,examples}/cyrus-imapd -name '.gitignore' -or \
+		-name '*.orig' -exec rm '{}' \+
 
 .include <bsd.port.mk>

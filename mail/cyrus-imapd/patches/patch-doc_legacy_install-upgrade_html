@@ -1,0 +1,14 @@
+$OpenBSD: patch-doc_legacy_install-upgrade_html,v 1.1 2017/05/28 15:46:11 ajacoutot Exp $
+
+Index: doc/legacy/install-upgrade.html
+--- doc/legacy/install-upgrade.html.orig
++++ doc/legacy/install-upgrade.html
+@@ -725,7 +725,7 @@ regular basis to purge old netnews posts.
+ <ul>
+ <li> Upgrading from the Cyrus IMAP server version 1.6.13 or earlier:
+ if you use Sieve, you should run the "<tt>tools/upgradesieve</tt>"
+-script, as the format of the "<tt>/usr/sieve</tt>" directory has
++script, as the format of the "<tt>/var/sieve</tt>" directory has
+ changed slightly.
+ 
+ <p>timsieved, included in this release, will handle maintenance of Sieve

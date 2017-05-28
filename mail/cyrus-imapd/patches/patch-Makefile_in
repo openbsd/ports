@@ -1,12 +1,13 @@
-$OpenBSD: patch-Makefile_in,v 1.4 2016/10/18 07:20:17 ajacoutot Exp $
---- Makefile.in.orig	Tue Oct 18 00:15:30 2016
-+++ Makefile.in	Tue Oct 18 09:05:58 2016
-@@ -564,7 +564,7 @@ imap_libcyrus_imap_la_OBJECTS = $(am_imap_libcyrus_ima
- imap_libcyrus_imap_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
- 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CCLD) \
- 	$(imap_libcyrus_imap_la_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) \
+$OpenBSD: patch-Makefile_in,v 1.5 2017/05/28 15:46:11 ajacoutot Exp $
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -627,7 +627,7 @@ imap_libcyrus_imap_la_OBJECTS = $(am_imap_libcyrus_ima
+ imap_libcyrus_imap_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
+ 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CXXLD) \
+ 	$(imap_libcyrus_imap_la_CXXFLAGS) $(CXXFLAGS) $(AM_LDFLAGS) \
 -	$(LDFLAGS) -o $@
 +	$(LDFLAGS) -lpthread -o $@
  @SERVER_TRUE@am_imap_libcyrus_imap_la_rpath = -rpath $(libdir)
- lib_libcyrus_la_DEPENDENCIES = $(am__DEPENDENCIES_1) \
- 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
+ lib_libcyrus_la_DEPENDENCIES = libcrc32.la $(am__DEPENDENCIES_1) \
+ 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \

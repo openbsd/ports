@@ -1,0 +1,14 @@
+$OpenBSD: patch-tools_translatesieve,v 1.1 2017/05/28 15:46:11 ajacoutot Exp $
+
+Index: tools/translatesieve
+--- tools/translatesieve.orig
++++ tools/translatesieve
+@@ -72,7 +72,7 @@ $| = 1;
+ # change ownership as appropriate?
+ die "must not run as root" if ($< == 0);
+ 
+-my $sievedir = "/usr/sieve";
++my $sievedir = "/var/sieve";
+ my $userprefix = "Other Users";
+ my $sharedprefix = "Shared Folders";
+ # The following two settings used to default to 0,but that changed

@@ -1,0 +1,14 @@
+$OpenBSD: patch-tools_rehash,v 1.1 2017/05/28 15:46:11 ajacoutot Exp $
+
+Index: tools/rehash
+--- tools/rehash.orig
++++ tools/rehash
+@@ -69,7 +69,7 @@ my @configs = ($imapdconf);
+ my $confdir = "/var/imap";
+ my @parts;
+ my $yn = "y";
+-my $sievedir = "/usr/sieve";
++my $sievedir = "/var/sieve";
+ my $nosievedir = 0;
+ my $hashimapspool = 0;
+ my $fulldirhash = 0;

@@ -1,0 +1,32 @@
+$OpenBSD: patch-man_imapd_conf_5,v 1.11 2017/05/28 15:46:11 ajacoutot Exp $
+
+Index: man/imapd.conf.5
+--- man/imapd.conf.5.orig
++++ man/imapd.conf.5
+@@ -1025,7 +1025,7 @@ resources (principals).  If not set (the default), the
+ Debug command to be used by processes started with \-D option.  The string
+ is a C format string that gets 3 options: the first is the name of the
+ executable (without path).  The second is the pid (integer) and the third
+-is the service ID.  Example: /usr/local/bin/gdb /usr/cyrus/bin/%s %d
++is the service ID.  Example: /usr/bin/gdb /usr/local/cyrus/bin/%s %d
+ .UNINDENT
+ .UNINDENT
+ .sp
+@@ -3287,7 +3287,7 @@ Allowed values: \fIflat\fP, \fIskiplist\fP, \fItwoskip
+ .UNINDENT
+ .UNINDENT
+ .sp
+-\fBsendmail:\fP /usr/lib/sendmail
++\fBsendmail:\fP /usr/sbin/sendmail
+ .INDENT 0.0
+ .INDENT 3.5
+ The pathname of the sendmail executable.  Sieve invokes sendmail
+@@ -3454,7 +3454,7 @@ per draft\-ietf\-vacation\-seconds.txt .
+ .UNINDENT
+ .UNINDENT
+ .sp
+-\fBsievedir:\fP /usr/sieve
++\fBsievedir:\fP /var/sieve
+ .INDENT 0.0
+ .INDENT 3.5
+ If sieveusehomedir is false, this directory is searched for Sieve

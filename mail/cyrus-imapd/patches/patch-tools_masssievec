@@ -1,0 +1,14 @@
+$OpenBSD: patch-tools_masssievec,v 1.1 2017/05/28 15:46:11 ajacoutot Exp $
+
+Index: tools/masssievec
+--- tools/masssievec.orig
++++ tools/masssievec
+@@ -76,7 +76,7 @@ if(!defined($imapdconf)) {
+     $imapdconf = "/etc/imapd.conf";
+ }
+ 
+-$sievedir = "/usr/sieve";
++$sievedir = "/var/sieve";
+ 
+ if(! -x $SIEVEC) {
+     print "$SIEVEC is not executable\n";
