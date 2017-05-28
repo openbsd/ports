@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2016/04/04 16:09:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2017/05/28 16:23:28 espie Exp $
 
 COMMENT=	Scheme Underground's implementation of R5RS
+# '
 
-V=		1.9
+V=		1.9.2
 DISTNAME=	scheme48-$V
-REVISION=	2
 CATEGORIES=	lang
 
 HOMEPAGE=	http://www.s48.org/

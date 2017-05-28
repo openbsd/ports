@@ -1,10 +1,11 @@
-$OpenBSD: patch-Makefile_in,v 1.4 2013/02/08 14:39:50 jturner Exp $
+$OpenBSD: patch-Makefile_in,v 1.5 2017/05/28 16:23:28 espie Exp $
 
 Fix fake-stage.
 
---- Makefile.in.orig	Thu Dec 27 11:46:24 2012
-+++ Makefile.in	Thu Feb  7 20:52:25 2013
-@@ -71,8 +71,8 @@ VERSION = 1.`cat $(srcdir)/build/minor-version-number`
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -72,8 +72,8 @@ VERSION = 1.`cat $(srcdir)/build/minor-version-number`
  RUNNABLE = scheme48
  CONFIG_SCRIPT = scheme48-config
  MANPAGE = $(RUNNABLE).$(manext)
@@ -15,7 +16,7 @@ Fix fake-stage.
  
  distdir = /tmp
  
-@@ -469,7 +469,7 @@ doc/html/manual.html: doc/manual.pdf
+@@ -470,7 +470,7 @@ doc/html/manual.html: doc/manual.pdf
  
  doc: doc/manual.pdf doc/manual.ps doc/html/manual.html
  
@@ -24,12 +25,13 @@ Fix fake-stage.
  
  install-no-doc: enough dirs
  # install the VM
-@@ -532,8 +532,6 @@ install-no-doc: enough dirs
+@@ -532,9 +532,6 @@ install-no-doc: enough dirs
+ 	chmod +x $$config_script
  # install the external modules
  	$(INSTALL_PROGRAM) $(EXTERNALS) $(DESTDIR)$(LIB)/
- # install the documentation
+-# install the documentation
 -	$(srcdir)/mkinstalldirs $(DESTDIR)$(docdir)
--	$(INSTALL_DATA) $(srcdir)/COPYING $(docdir)
+-	$(INSTALL_DATA) $(srcdir)/COPYING $(DESTDIR)$(docdir)
  
  install-doc: dirs doc
  	$(srcdir)/mkinstalldirs $(DESTDIR)$(docdir)
