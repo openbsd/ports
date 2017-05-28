@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2017/05/13 15:44:09 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2017/05/28 18:55:04 espie Exp $
 
 COMMENT =		creates DjVu files from PDF files
 
@@ -24,7 +24,6 @@ MASTER_SITES =		https://github.com/jwilk/pdf2djvu/releases/download/${V}/ \
 EXTRACT_SUFX =		.tar.xz
 
 WANT_CXX =		base gcc
-MODGCC4_LANGS =		c c++
 
 # https://code.google.com/p/pdf2djvu/wiki/BuildDepends
 LIB_DEPENDS =		devel/gettext\

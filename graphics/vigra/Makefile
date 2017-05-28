@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2017/05/27 17:43:22 zhuk Exp $
+# $OpenBSD: Makefile,v 1.6 2017/05/28 18:55:04 espie Exp $
 
 COMMENT =		image processing and analysis library
 ONLY_FOR_ARCHS =	${CXX11_ARCHS}
@@ -21,7 +21,7 @@ PERMIT_PACKAGE_CDROM = 	Yes
 
 WANTLIB += Half Iex IlmImf IlmThread Imath boost_atomic-mt boost_chrono-mt
 WANTLIB += boost_date_time-mt boost_system-mt boost_thread-mt
-WANTLIB += fftw3 jpeg m png pthread tiff z
+WANTLIB += fftw3 jpeg m png pthread tiff z ${LIBECXX}
 
 WANT_CXX =		base gcc
 

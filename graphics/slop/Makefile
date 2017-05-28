@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2017/04/18 11:14:10 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.12 2017/05/28 18:55:04 espie Exp $
 
 V =		5.3.37
 COMMENT =	query for a selection and print to stdout (select operation)
@@ -17,11 +17,10 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += GL GLU ICE SM X11 Xext Xrender c m pthread ${LIBCXX}
 
-MODULES =	devel/cmake \
-		gcc4
+MODULES =	devel/cmake
 
-MODGCC4_LANGS =	c++
-MODGCC4_ARCHS =	${GCC3_ARCHS} ${GCC4_ARCHS}
+
+WANT_CXX =	base gcc
 
 BUILD_DEPENDS +=	graphics/glm
 
