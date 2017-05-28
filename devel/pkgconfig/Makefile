@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.39 2016/04/29 08:37:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.40 2017/05/28 08:29:33 jasper Exp $
 
 COMMENT=		tool for managing library compile/link flags
 
 # note if updating; metaauto is also built from the pkg-config distfile.
 IGNORE=			Replaced with BSD clone in OpenBSD 4.1
-VERSION=		0.29.1
+VERSION=		0.29.2
 DISTNAME=		pkg-config-${VERSION}
 PKGNAME=		pkgconfig-${VERSION}
 CATEGORIES=		devel
