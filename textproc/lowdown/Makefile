@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2017/03/18 09:53:37 benoit Exp $
+# $OpenBSD: Makefile,v 1.4 2017/05/29 11:03:50 anton Exp $
 
 COMMENT = 		simple markdown translator
 
-DISTNAME = 		lowdown-0.1.10
+DISTNAME = 		lowdown-0.1.11
 CATEGORIES = 		textproc
 
 HOMEPAGE = 		https://kristaps.bsd.lv/lowdown/
-MAINTAINER =		Anton Lindqvist <anton.lindqvist@gmail.com>
+MAINTAINER =		Anton Lindqvist <anton@openbsd.org>
 
 # ISC
 PERMIT_PACKAGE_CDROM = 	Yes
