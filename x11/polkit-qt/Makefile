@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2017/04/10 11:46:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2017/05/29 08:28:02 espie Exp $
 
 COMMENT=	PolicyKit authentication agent for Qt
 
@@ -56,7 +56,7 @@ CONFIGURE_ARGS= -DCMAKE_SHARED_LINKER_FLAGS:STRING="-L${LOCALBASE}/lib"
 FULLPKGNAME=	polkit-qt5-${V}
 MODULES+=	x11/qt5
 CONFIGURE_ARGS+=-DUSE_QT5=Yes \
-		-DOPENBSD_STDCPP=estdc++
+		-DOPENBSD_STDCPP=${OPENBSD_STDCPP}
 WANTLIB+=	Qt5Core Qt5DBus Qt5Gui Qt5Widgets
 PKGSTEM=	polkit-qt5-
 CMAKESTEM=	PolkitQt5-1
@@ -79,3 +79,8 @@ pre-configure:
 	${SUBST_CMD} ${WRKSRC}/PolkitQt-1Config.cmake.in
 
 .include <bsd.port.mk>
+.if ${PROPERTIES:Mclang}
+OPENBSD_STDCPP = c++ c++abi pthread
+.else
+OPENBSD_STDCPP = estdc++
+.endif
