@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2017/04/10 11:46:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2017/05/29 14:21:10 espie Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386
 
@@ -45,9 +45,11 @@ SUBST_VARS+= 	V8_ARCH
 MAKE_FLAGS+=	library=shared ARCHES=${V8_ARCH} MODES=${V8_RELEASE} \
 		DEFAULT_ARCHES=${V8_ARCH}
 
+# XXX explicitly pass -Wl,-z,wxneeded because USE_WXNEEDED is a nop with clang
+# as clang explicitly calls the linker with a full path by default
 MAKE_ENV+=	V=1 CXX="${CXX}" LINK="${CXX} ${LDFLAGS}" CCFLAGS+="${CFLAGS}" \
 		CXXFLAGS="${CXXFLAGS} -I${WRKSRC}/src -I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
+		LDFLAGS="-Wl,-z,wxneeded -L${LOCALBASE}/lib -L${X11BASE}/lib" \
 		PATH=${WRKSRC}/bin:${PATH}
 
 NO_CCACHE=	Yes
