@@ -1,7 +1,8 @@
-$OpenBSD: patch-setup_py,v 1.2 2016/10/31 16:01:22 phessler Exp $
---- setup.py.orig	Sun Oct 30 19:18:00 2016
-+++ setup.py	Sun Oct 30 19:19:55 2016
-@@ -72,7 +72,9 @@ setup(name=PACKAGE_NAME,
+$OpenBSD: patch-setup_py,v 1.3 2017/05/29 17:41:38 sthen Exp $
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -80,7 +80,9 @@ setup(name=PACKAGE_NAME,
            libraries=libraries)],
        # scripts=['tests/pcapytests.py', 'tests/96pings.pcap'],
        data_files=[

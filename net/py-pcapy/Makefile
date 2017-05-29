@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.14 2017/04/10 11:46:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2017/05/29 17:41:38 sthen Exp $
 
 COMMENT =		libpcap module for Python
 
-MODPY_EGG_VERSION =	0.10.10
+MODPY_EGG_VERSION =	0.11.1
 GH_ACCOUNT =		CoreSecurity
 GH_PROJECT =		pcapy
 GH_TAGNAME =		${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		net devel
 
@@ -16,7 +15,7 @@ HOMEPAGE =		https://www.coresecurity.com/corelabs-research/open-source-tools/pca
 # Apache
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += 		${MODPY_WANTLIB} m ${LIBCXX} pcap
+WANTLIB += 		${MODPY_WANTLIB} ${LIBCXX} m pcap
 
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
@@ -26,6 +25,7 @@ FLAVOR ?=
 
 MAKE_ENV +=		LDSHARED="${CC} -shared -fPIC"
 MAKE_ENV +=		LDFLAGS="-L${LOCALBASE}/lib"
+TEST_DEPENDS =		${BASE_PKGPATH}
 
 # fix msdos line-endings
 pre-patch:
@@ -33,5 +33,8 @@ pre-patch:
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/setup.py
+
+do-test:
+	cd ${WRKSRC}/tests; ${MODPY_BIN} pcapytests.py
 
 .include <bsd.port.mk>
