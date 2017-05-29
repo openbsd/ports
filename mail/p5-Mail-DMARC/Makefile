@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2016/07/06 14:27:13 giovanni Exp $
+# $OpenBSD: Makefile,v 1.8 2017/05/29 15:05:06 giovanni Exp $
 
 COMMENT=	Perl implementation of DMARC
 
-DISTNAME=	Mail-DMARC-1.20160612
+DISTNAME=	Mail-DMARC-1.20170222
 MAINTAINER=	Giovanni Bechis <giovanni@openbsd.org>
 
 CATEGORIES=	mail
@@ -35,14 +35,17 @@ RUN_DEPENDS=	converters/p5-JSON \
 		security/p5-Net_SSLeay \
 		textproc/p5-Regexp-Common>=2013031301 \
 		textproc/p5-XML-LibXML \
+		www/p5-CGI \
 		www/p5-HTTP-Message \
 		www/p5-URI \
 		www/p5-libwww
 
 TEST_DEPENDS=	${RUN_DEPENDS} \
+		databases/p5-DBD-SQLite \
 		devel/p5-Test-Exception \
 		devel/p5-Test-File-ShareDir \
-		devel/p5-Test-Output
+		devel/p5-Test-Output \
+		textproc/p5-XML-Validator-Schema
 
 CONFIGURE_STYLE= modbuild
 
