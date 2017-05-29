@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.6 2017/05/16 17:15:40 jasper Exp $
+$OpenBSD: README,v 1.7 2017/05/29 14:44:40 jasper Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -50,3 +50,11 @@ Either copy your existing key and certificate to the locations
 in ${SYSCONFDIR} and owned by (and only readable by) the user _radicale,
 or, generate a self-signed RSA server certificate as described
 in ssl(8) (but changing /etc/ssl to ${SYSCONFDIR}/radicale).
+
+Preparing for Radicale 2
+========================
+Before upgrading to Radicale 2, please run
+`${PREFIX}/bin/radicale --export-storage /path/to/storage` with
+radicale 1. This exported storage can be used directly by Radicale 2
+after the upgrade.
+For more information please refer to http://radicale.org/1to2/
