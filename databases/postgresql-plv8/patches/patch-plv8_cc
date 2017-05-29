@@ -1,10 +1,25 @@
-$OpenBSD: patch-plv8_cc,v 1.1 2015/01/08 15:03:35 sthen Exp $
+$OpenBSD: patch-plv8_cc,v 1.2 2017/05/29 15:38:20 espie Exp $
 
 https://code.google.com/p/plv8js/source/detail?r=094df45dce2a879d1814b792aeb46b38f0f0ef87&name=r1.4
 
---- plv8.cc.orig	Wed Dec 24 18:18:58 2014
-+++ plv8.cc	Wed Dec 24 18:20:58 2014
-@@ -47,22 +47,12 @@ PG_FUNCTION_INFO_V1(plcoffee_call_validator);
+Index: plv8.cc
+--- plv8.cc.orig
++++ plv8.cc
+@@ -8,6 +8,13 @@
+ #include "plv8.h"
+ #include <new>
+ 
++// XXX this is a horrible hack!!!!
++// plv8 tries to preserve itself from C++ constructs, BUT it includes
++// some postgresql includes that *will* include math.h, and with libc++
++// THAT one contains C++ constructs in C++ mode, so include it *FIRST*
++// (barf, blech, yuck)
++#include <math.h>
++
+ extern "C" {
+ #define delete		delete_
+ #define namespace	namespace_
+@@ -47,22 +54,12 @@ PG_FUNCTION_INFO_V1(plcoffee_call_validator);
  PG_FUNCTION_INFO_V1(plls_call_handler);
  PG_FUNCTION_INFO_V1(plls_call_validator);
  
@@ -27,7 +42,7 @@ https://code.google.com/p/plv8js/source/detail?r=094df45dce2a879d1814b792aeb46b3
  #endif
  } // extern "C"
  
-@@ -307,26 +297,26 @@ common_pl_call_handler(PG_FUNCTION_ARGS, Dialect diale
+@@ -307,26 +304,26 @@ common_pl_call_handler(PG_FUNCTION_ARGS, Dialect diale
  }
  
  Datum
@@ -58,7 +73,7 @@ https://code.google.com/p/plv8js/source/detail?r=094df45dce2a879d1814b792aeb46b3
  {
  	InlineCodeBlock *codeblock = (InlineCodeBlock *) DatumGetPointer(PG_GETARG_DATUM(0));
  
-@@ -354,19 +344,19 @@ common_pl_inline_handler(PG_FUNCTION_ARGS, Dialect dia
+@@ -354,19 +351,19 @@ common_pl_inline_handler(PG_FUNCTION_ARGS, Dialect dia
  }
  
  Datum
@@ -81,7 +96,7 @@ https://code.google.com/p/plv8js/source/detail?r=094df45dce2a879d1814b792aeb46b3
  {
  	return common_pl_inline_handler(fcinfo, PLV8_DIALECT_LIVESCRIPT);
  }
-@@ -688,7 +678,7 @@ CallTrigger(PG_FUNCTION_ARGS, plv8_exec_env *xenv)
+@@ -688,7 +685,7 @@ CallTrigger(PG_FUNCTION_ARGS, plv8_exec_env *xenv)
  }
  
  static Datum
@@ -90,7 +105,7 @@ https://code.google.com/p/plv8js/source/detail?r=094df45dce2a879d1814b792aeb46b3
  {
  	Oid				fn_oid = PG_GETARG_OID(0);
  	HeapTuple		tuple;
-@@ -746,19 +736,19 @@ common_pl_call_validator(PG_FUNCTION_ARGS, Dialect dia
+@@ -746,19 +743,19 @@ common_pl_call_validator(PG_FUNCTION_ARGS, Dialect dia
  }
  
  Datum
