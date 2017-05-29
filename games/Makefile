@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.345 2017/05/16 19:36:54 landry Exp $
+# $OpenBSD: Makefile,v 1.346 2017/05/29 19:54:32 mglocker Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -220,6 +220,7 @@
      SUBDIR += snipe2d
      SUBDIR += solarus
      SUBDIR += spacehulk
+     SUBDIR += spaceinvaders
      SUBDIR += spacezero
      SUBDIR += spatial
      SUBDIR += speeddreams
