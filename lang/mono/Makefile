@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.107 2017/05/29 13:28:59 zhuk Exp $
+# $OpenBSD: Makefile,v 1.108 2017/05/29 17:50:43 sthen Exp $
 
+# XXX also see -Wl,-z,wxneeded below; clang bypasses the wrapper
 USE_WXNEEDED=	Yes
 
 COMMENT=	cross platform, open source .NET developement framework
