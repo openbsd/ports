@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2017/05/28 17:20:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2017/05/29 16:52:01 jasper Exp $
 
 COMMENT =		recipe manager for GNOME
 
 GNOME_PROJECT =		gnome-recipes
 GNOME_VERSION =		1.4.4
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		misc
 
@@ -33,7 +33,8 @@ LIB_DEPENDS =		audio/libcanberra \
 RUN_DEPENDS =		archivers/gtar
 
 MODGNOME_TOOLS =	desktop-file-utils gobject-introspection \
-			gtk-update-icon-cache shared-mime-info vala
+			gtk-update-icon-cache shared-mime-info vala \
+			yelp
 
 MODPY_ADJ_FILES =	meson_post_install.py \
 			src/list_to_c.py
