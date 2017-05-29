@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2017/05/29 18:49:24 mglocker Exp $
+# $OpenBSD: Makefile,v 1.4 2017/05/29 19:49:53 mglocker Exp $
 
 COMMENT =		curses-based version of the Space Invaders game
 DISTNAME =		spaceinvaders-0.8
 CATEGORIES =		games
-REVISION =		0
 HOMEPAGE =		http://www.nazgul.ch/dev_spaceinvaders.html
 MAINTAINER =		Marcus Glocker <marcus@nazgul.ch>
 
