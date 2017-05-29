@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2017/02/06 15:53:11 shadchin Exp $
+# $OpenBSD: Makefile,v 1.8 2017/05/29 15:36:31 shadchin Exp $
 
 COMMENT =		test utilities working with files and commands
 
-MODPY_EGG_VERSION =	0.3
-PKGNAME =		py-testpath-${MODPY_EGG_VERSION}
-REVISION =		3
+MODPY_EGG_VERSION =	0.3.1
+DISTNAME =		testpath-${MODPY_EGG_VERSION}
+PKGNAME =		py-${DISTNAME}
 
 CATEGORIES =		devel
 
@@ -12,36 +12,27 @@ HOMEPAGE =		https://github.com/jupyter/testpath
 
 MAINTAINER =		Alexandr Shadchin <shadchin@openbsd.org>
 
-GH_ACCOUNT =		jupyter
-GH_PROJECT =		testpath
-GH_TAGNAME =		${MODPY_EGG_VERSION}
-
-BUILD_DEPENDS =		textproc/py-sphinx${MODPY_FLAVOR}
-TEST_DEPENDS +=		${RUN_DEPENDS} \
-			devel/py-nose${MODPY_FLAVOR}
-RUN_DEPENDS +=		devel/py-pathlib${MODPY_FLAVOR}
-
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		lang/python
 
+MODPY_PI =		Yes
+
 FLAVORS =		python3
 FLAVOR ?=
 
-MAKE_ENV +=	PYTHONPATH=${WRKSRC} SPHINXBUILD=${LOCALBASE}/bin/sphinx-build${MODPY_BIN_SUFFIX}
+BUILD_DEPENDS =		textproc/py-sphinx${MODPY_FLAVOR}
+RUN_DEPENDS =		devel/py-pathlib${MODPY_FLAVOR}
+TEST_DEPENDS =		${RUN_DEPENDS} \
+			devel/py-nose${MODPY_FLAVOR}
 
-# Does not use any setup.py based build system
-do-build:
-	${MODPY_BIN} -m compileall ${WRKBUILD}/testpath/
+post-build:
 	cd ${WRKSRC}/doc && PYTHONPATH=${WRKSRC} \
 		${LOCALBASE}/bin/sphinx-build${MODPY_BIN_SUFFIX} -N . _build/html
 
-PREFIX_SITE = ${PREFIX}/lib/python${MODPY_VERSION}/site-packages
 DOCDIR = ${PREFIX}/share/doc/${MODPY_PY_PREFIX}testpath
-do-install:
-	${INSTALL_DATA_DIR} ${PREFIX_SITE}
-	cp -r ${WRKBUILD}/testpath ${PREFIX_SITE}
+post-install:
 	cp -r ${WRKBUILD}/doc/_build/html ${DOCDIR}
 	rm ${DOCDIR}/.buildinfo
 	chown -R ${SHAREOWN}:${SHAREGRP} ${DOCDIR}

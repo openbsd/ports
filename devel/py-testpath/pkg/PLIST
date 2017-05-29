@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2016/04/15 08:53:49 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.5 2017/05/29 15:36:31 shadchin Exp $
 lib/python${MODPY_VERSION}/site-packages/testpath/
+lib/python${MODPY_VERSION}/site-packages/testpath-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/testpath/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/testpath/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/testpath/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
@@ -14,6 +15,13 @@ lib/python${MODPY_VERSION}/site-packages/testpath/commands.py
 lib/python${MODPY_VERSION}/site-packages/testpath/env.py
 lib/python${MODPY_VERSION}/site-packages/testpath/tempdir.py
 share/doc/${MODPY_PY_PREFIX}testpath/
+share/doc/${MODPY_PY_PREFIX}testpath/.doctrees/
+share/doc/${MODPY_PY_PREFIX}testpath/.doctrees/commands.doctree
+share/doc/${MODPY_PY_PREFIX}testpath/.doctrees/env.doctree
+share/doc/${MODPY_PY_PREFIX}testpath/.doctrees/environment.pickle
+share/doc/${MODPY_PY_PREFIX}testpath/.doctrees/fsasserts.doctree
+share/doc/${MODPY_PY_PREFIX}testpath/.doctrees/index.doctree
+share/doc/${MODPY_PY_PREFIX}testpath/.doctrees/tempdir.doctree
 share/doc/${MODPY_PY_PREFIX}testpath/_sources/
 share/doc/${MODPY_PY_PREFIX}testpath/_sources/commands.txt
 share/doc/${MODPY_PY_PREFIX}testpath/_sources/env.txt
