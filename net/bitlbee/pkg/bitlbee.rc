@@ -1,0 +1,12 @@
+#!/bin/sh
+#
+# $OpenBSD: bitlbee.rc,v 1.1 2017/05/29 12:11:07 sthen Exp $
+
+daemon="${TRUEPREFIX}/sbin/bitlbee -F"
+daemon_user="_bitlbee"
+
+. /etc/rc.d/rc.subr
+
+rc_reload=NO
+
+rc_cmd $1

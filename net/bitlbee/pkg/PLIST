@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2017/05/28 11:53:52 akfaew Exp $
+@comment $OpenBSD: PLIST,v 1.18 2017/05/29 12:11:07 sthen Exp $
 @pkgpath net/bitlbee,no_ssl
 @newgroup _bitlbee:509
 @newuser _bitlbee:509:_bitlbee:daemon:Bitlbee Account:/nonexistent:/sbin/nologin
@@ -59,3 +59,6 @@ share/examples/bitlbee/motd.txt
 @owner _bitlbee
 @group _bitlbee
 @sample ${DB_DIR}/
+@owner
+@group
+@rcscript ${RCDIR}/bitlbee
