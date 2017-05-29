@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.68 2017/04/10 11:46:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.69 2017/05/29 12:13:43 sthen Exp $
 
 COMMENT=	graphical adventure game interpreter
 V=		1.9.0
+REVISION=	0
 DISTNAME=	scummvm-${V}
 CATEGORIES=	games x11 emulators
 MASTER_SITES=	http://www.scummvm.org/frs/scummvm/${V}/
@@ -13,12 +14,16 @@ MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += FLAC SDL2 c faad freetype jpeg m mad png pthread sndio ${LIBCXX}
+WANTLIB += FLAC SDL2 c faad freetype jpeg m mad png sndio ${LIBECXX}
 WANTLIB += theoradec z
 
 .if ${MACHINE_ARCH} == "i386"
 BUILD_DEPENDS=	devel/nasm
 .endif
+
+# GCC 4.2.1 miscompiles this on at least ppc, so play safe and
+# just use a newer compiler everywhere.
+WANT_CXX=	base gcc
 
 RUN_DEPENDS=	devel/desktop-file-utils
 LIB_DEPENDS=	audio/libmad \
