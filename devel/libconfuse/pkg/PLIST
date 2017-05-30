@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2016/11/06 06:53:05 jca Exp $
+@comment $OpenBSD: PLIST,v 1.6 2017/05/30 20:44:14 ajacoutot Exp $
 include/confuse.h
 lib/libconfuse.a
 lib/libconfuse.la
@@ -116,6 +116,8 @@ share/doc/confuse/manual/search/variables_9.html
 share/doc/confuse/manual/search/variables_9.js
 share/doc/confuse/manual/search/variables_a.html
 share/doc/confuse/manual/search/variables_a.js
+share/doc/confuse/manual/search/variables_b.html
+share/doc/confuse/manual/search/variables_b.js
 share/doc/confuse/manual/simple_8c-example.html
 share/doc/confuse/manual/splitbar.png
 share/doc/confuse/manual/structcfg__defvalue__t.html
