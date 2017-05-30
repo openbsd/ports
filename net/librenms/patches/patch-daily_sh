@@ -1,6 +1,8 @@
-$OpenBSD: patch-daily_sh,v 1.15 2017/01/31 22:43:30 sthen Exp $
---- daily.sh.orig	Tue Jan 31 22:32:18 2017
-+++ daily.sh	Tue Jan 31 22:39:00 2017
+$OpenBSD: patch-daily_sh,v 1.16 2017/05/30 21:05:44 sthen Exp $
+
+Index: daily.sh
+--- daily.sh.orig
++++ daily.sh
 @@ -25,10 +25,10 @@ LIBRENMS_DIR=$(dirname "$DAILY_SCRIPT")
  
  # set log_file, using librenms $config['log_dir'], if set

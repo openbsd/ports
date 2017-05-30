@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.40 2017/05/05 09:37:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.41 2017/05/30 21:05:44 sthen Exp $
 
 COMMENT =	auto-discovering network management/monitoring system
 
 GH_ACCOUNT =	librenms
 GH_PROJECT =	librenms
 # used below
-GH_TAGNAME =	1.27
+GH_TAGNAME =	1.28
 
 EPOCH =		0
-REVISION =	0
 
 CATEGORIES =	net www
 
@@ -67,5 +66,6 @@ do-install:
 	cd ${INSTDIR}; sed -i 's,%PHP%,${MODPHP_BIN},' daily.sh poller-wrapper.py validate.php; \
 	    sed -i 's,%LNMS_VERSION%,${GH_TAGNAME},' html/pages/about.inc.php
 	cp /usr/share/snmp/mibs/OPENBSD-* ${INSTDIR}/mibs/
+	rm -r ${INSTDIR}/tests
 
 .include <bsd.port.mk>

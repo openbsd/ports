@@ -1,4 +1,6 @@
-$OpenBSD: patch-poller-wrapper_py,v 1.9 2017/05/01 13:22:18 sthen Exp $
+$OpenBSD: patch-poller-wrapper_py,v 1.10 2017/05/30 21:05:44 sthen Exp $
+
+Index: poller-wrapper.py
 --- poller-wrapper.py.orig
 +++ poller-wrapper.py
 @@ -53,7 +53,7 @@ config_file = ob_install_dir + '/config.php'

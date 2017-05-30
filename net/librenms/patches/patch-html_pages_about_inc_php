@@ -1,4 +1,4 @@
-$OpenBSD: patch-html_pages_about_inc_php,v 1.8 2017/05/05 09:37:13 sthen Exp $
+$OpenBSD: patch-html_pages_about_inc_php,v 1.9 2017/05/30 21:05:44 sthen Exp $
 
 Index: html/pages/about.inc.php
 --- html/pages/about.inc.php.orig
