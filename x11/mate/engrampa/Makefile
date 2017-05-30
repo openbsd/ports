@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/04/30 19:01:28 robert Exp $
+# $OpenBSD: Makefile,v 1.2 2017/05/30 19:20:17 robert Exp $
 
 COMMENT=	file archiver for the MATE desktop
 
 CATEGORIES=	archivers
 
 MATE_PROJECT=	engrampa
-MATE_VERSION=	1.18.1
+MATE_VERSION=	1.18.2
 
 USE_WXNEEDED=	Yes
 
