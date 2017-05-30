@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/04/30 19:01:24 robert Exp $
+# $OpenBSD: Makefile,v 1.2 2017/05/30 21:16:43 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += atril
-     SUBDIR += calc
      SUBDIR += caja
      SUBDIR += caja-extensions
+     SUBDIR += calc
      SUBDIR += control-center
      SUBDIR += desktop
      SUBDIR += engrampa
