@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2017/05/30 21:32:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2017/05/30 21:35:01 ajacoutot Exp $
+
+USE_WXNEEDED=	Yes
 
 COMMENT=	powerful text editor for the MATE desktop
 
@@ -7,8 +9,6 @@ CATEGORIES=	textproc
 MATE_PROJECT=	pluma
 MATE_VERSION=	1.18.2
 REVISION=	0
-
-USE_WXNEEDED=	Yes
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
