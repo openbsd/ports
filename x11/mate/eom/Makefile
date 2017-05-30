@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2017/05/30 19:20:35 robert Exp $
+# $OpenBSD: Makefile,v 1.3 2017/05/30 21:32:08 ajacoutot Exp $
 
 COMMENT=	image viewer for the MATE desktop
 
@@ -6,6 +6,7 @@ CATEGORIES=	graphics
 
 MATE_PROJECT=	eom
 MATE_VERSION=	1.18.2
+REVISION=	0
 
 USE_WXNEEDED=	Yes
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/04/30 19:01:27 robert Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/05/30 21:32:08 ajacoutot Exp $
 @bin bin/mate-about-me
 @bin bin/mate-appearance-properties
 @bin bin/mate-at-properties
@@ -50,8 +50,8 @@ lib/pkgconfig/mate-keybindings.pc
 lib/pkgconfig/mate-slab.pc
 lib/pkgconfig/mate-window-settings-2.0.pc
 lib/window-manager-settings/
-lib/window-manager-settings/libmarco.a
-lib/window-manager-settings/libmarco.la
+@comment lib/window-manager-settings/libmarco.a
+@comment lib/window-manager-settings/libmarco.la
 lib/window-manager-settings/libmarco.so
 @man man/man1/mate-about-me.1
 @man man/man1/mate-appearance-properties.1

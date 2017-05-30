@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/04/30 19:01:28 robert Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/05/30 21:32:08 ajacoutot Exp $
 @bin bin/pluma
 include/pluma/
 include/pluma/pluma-app.h
@@ -54,32 +54,32 @@ lib/pluma/plugins/externaltools/outputpanel.py
 lib/pluma/plugins/externaltools/outputpanel.pyc
 lib/pluma/plugins/externaltools/outputpanel.pyo
 lib/pluma/plugins/filebrowser.plugin
-lib/pluma/plugins/libchangecase.a
-lib/pluma/plugins/libchangecase.la
+@comment lib/pluma/plugins/libchangecase.a
+@comment lib/pluma/plugins/libchangecase.la
 lib/pluma/plugins/libchangecase.so
-lib/pluma/plugins/libdocinfo.a
-lib/pluma/plugins/libdocinfo.la
+@comment lib/pluma/plugins/libdocinfo.a
+@comment lib/pluma/plugins/libdocinfo.la
 lib/pluma/plugins/libdocinfo.so
-lib/pluma/plugins/libfilebrowser.a
-lib/pluma/plugins/libfilebrowser.la
+@comment lib/pluma/plugins/libfilebrowser.a
+@comment lib/pluma/plugins/libfilebrowser.la
 lib/pluma/plugins/libfilebrowser.so
-lib/pluma/plugins/libmodelines.a
-lib/pluma/plugins/libmodelines.la
+@comment lib/pluma/plugins/libmodelines.a
+@comment lib/pluma/plugins/libmodelines.la
 lib/pluma/plugins/libmodelines.so
-lib/pluma/plugins/libsort.a
-lib/pluma/plugins/libsort.la
+@comment lib/pluma/plugins/libsort.a
+@comment lib/pluma/plugins/libsort.la
 lib/pluma/plugins/libsort.so
-lib/pluma/plugins/libspell.a
-lib/pluma/plugins/libspell.la
+@comment lib/pluma/plugins/libspell.a
+@comment lib/pluma/plugins/libspell.la
 lib/pluma/plugins/libspell.so
-lib/pluma/plugins/libtaglist.a
-lib/pluma/plugins/libtaglist.la
+@comment lib/pluma/plugins/libtaglist.a
+@comment lib/pluma/plugins/libtaglist.la
 lib/pluma/plugins/libtaglist.so
-lib/pluma/plugins/libtime.a
-lib/pluma/plugins/libtime.la
+@comment lib/pluma/plugins/libtime.a
+@comment lib/pluma/plugins/libtime.la
 lib/pluma/plugins/libtime.so
-lib/pluma/plugins/libtrailsave.a
-lib/pluma/plugins/libtrailsave.la
+@comment lib/pluma/plugins/libtrailsave.a
+@comment lib/pluma/plugins/libtrailsave.la
 lib/pluma/plugins/libtrailsave.so
 lib/pluma/plugins/modelines.plugin
 lib/pluma/plugins/pythonconsole/

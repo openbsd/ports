@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/04/30 19:01:25 robert Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/05/30 21:32:08 ajacoutot Exp $
 include/mate-mixer/
 include/mate-mixer/libmatemixer/
 include/mate-mixer/libmatemixer/matemixer-app-info.h
@@ -21,11 +21,11 @@ lib/libmatemixer/
 lib/libmatemixer.a
 lib/libmatemixer.la
 @lib lib/libmatemixer.so.${LIBmatemixer_VERSION}
-lib/libmatemixer/libmatemixer-null.a
-lib/libmatemixer/libmatemixer-null.la
+@comment lib/libmatemixer/libmatemixer-null.a
+@comment lib/libmatemixer/libmatemixer-null.la
 lib/libmatemixer/libmatemixer-null.so
-lib/libmatemixer/libmatemixer-pulse.a
-lib/libmatemixer/libmatemixer-pulse.la
+@comment lib/libmatemixer/libmatemixer-pulse.a
+@comment lib/libmatemixer/libmatemixer-pulse.la
 lib/libmatemixer/libmatemixer-pulse.so
 lib/pkgconfig/libmatemixer.pc
 share/gtk-doc/html/libmatemixer/

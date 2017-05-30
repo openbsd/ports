@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2017/05/30 19:20:35 robert Exp $
+@comment $OpenBSD: PLIST,v 1.3 2017/05/30 21:32:08 ajacoutot Exp $
 @bin bin/eom
 include/eom-2.20/
 include/eom-2.20/eom/
@@ -28,14 +28,14 @@ include/eom-2.20/eom/eom-window.h
 lib/eom/
 lib/eom/plugins/
 lib/eom/plugins/fullscreen.plugin
-lib/eom/plugins/libfullscreen.a
-lib/eom/plugins/libfullscreen.la
+@comment lib/eom/plugins/libfullscreen.a
+@comment lib/eom/plugins/libfullscreen.la
 lib/eom/plugins/libfullscreen.so
-lib/eom/plugins/libreload.a
-lib/eom/plugins/libreload.la
+@comment lib/eom/plugins/libreload.a
+@comment lib/eom/plugins/libreload.la
 lib/eom/plugins/libreload.so
-lib/eom/plugins/libstatusbar-date.a
-lib/eom/plugins/libstatusbar-date.la
+@comment lib/eom/plugins/libstatusbar-date.a
+@comment lib/eom/plugins/libstatusbar-date.la
 lib/eom/plugins/libstatusbar-date.so
 lib/eom/plugins/reload.plugin
 lib/eom/plugins/statusbar-date.plugin

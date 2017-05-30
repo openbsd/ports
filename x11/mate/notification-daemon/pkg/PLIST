@@ -1,18 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/04/30 19:01:28 robert Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/05/30 21:32:08 ajacoutot Exp $
 @bin bin/mate-notification-properties
 lib/mate-notification-daemon/
 lib/mate-notification-daemon/engines/
-lib/mate-notification-daemon/engines/libcoco.a
-lib/mate-notification-daemon/engines/libcoco.la
+@comment lib/mate-notification-daemon/engines/libcoco.a
+@comment lib/mate-notification-daemon/engines/libcoco.la
 lib/mate-notification-daemon/engines/libcoco.so
-lib/mate-notification-daemon/engines/libnodoka.a
-lib/mate-notification-daemon/engines/libnodoka.la
+@comment lib/mate-notification-daemon/engines/libnodoka.a
+@comment lib/mate-notification-daemon/engines/libnodoka.la
 lib/mate-notification-daemon/engines/libnodoka.so
-lib/mate-notification-daemon/engines/libslider.a
-lib/mate-notification-daemon/engines/libslider.la
+@comment lib/mate-notification-daemon/engines/libslider.a
+@comment lib/mate-notification-daemon/engines/libslider.la
 lib/mate-notification-daemon/engines/libslider.so
-lib/mate-notification-daemon/engines/libstandard.a
-lib/mate-notification-daemon/engines/libstandard.la
+@comment lib/mate-notification-daemon/engines/libstandard.a
+@comment lib/mate-notification-daemon/engines/libstandard.la
 lib/mate-notification-daemon/engines/libstandard.so
 @bin libexec/mate-notification-daemon
 @man man/man1/mate-notification-properties.1

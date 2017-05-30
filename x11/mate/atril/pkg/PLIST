@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/04/30 19:01:28 robert Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/05/30 21:32:08 ajacoutot Exp $
 @bin bin/atril
 @bin bin/atril-previewer
 @bin bin/atril-thumbnailer
@@ -60,35 +60,35 @@ lib/atril/3/backends/
 lib/atril/3/backends/comicsdocument.atril-backend
 lib/atril/3/backends/djvudocument.atril-backend
 lib/atril/3/backends/epubdocument.atril-backend
-lib/atril/3/backends/libcomicsdocument.a
-lib/atril/3/backends/libcomicsdocument.la
+@comment lib/atril/3/backends/libcomicsdocument.a
+@comment lib/atril/3/backends/libcomicsdocument.la
 lib/atril/3/backends/libcomicsdocument.so
-lib/atril/3/backends/libdjvudocument.a
-lib/atril/3/backends/libdjvudocument.la
+@comment lib/atril/3/backends/libdjvudocument.a
+@comment lib/atril/3/backends/libdjvudocument.la
 lib/atril/3/backends/libdjvudocument.so
-lib/atril/3/backends/libepubdocument.a
-lib/atril/3/backends/libepubdocument.la
+@comment lib/atril/3/backends/libepubdocument.a
+@comment lib/atril/3/backends/libepubdocument.la
 lib/atril/3/backends/libepubdocument.so
-lib/atril/3/backends/libpdfdocument.a
-lib/atril/3/backends/libpdfdocument.la
+@comment lib/atril/3/backends/libpdfdocument.a
+@comment lib/atril/3/backends/libpdfdocument.la
 lib/atril/3/backends/libpdfdocument.so
-lib/atril/3/backends/libpsdocument.a
-lib/atril/3/backends/libpsdocument.la
+@comment lib/atril/3/backends/libpsdocument.a
+@comment lib/atril/3/backends/libpsdocument.la
 lib/atril/3/backends/libpsdocument.so
-lib/atril/3/backends/libtiffdocument.a
-lib/atril/3/backends/libtiffdocument.la
+@comment lib/atril/3/backends/libtiffdocument.a
+@comment lib/atril/3/backends/libtiffdocument.la
 lib/atril/3/backends/libtiffdocument.so
-lib/atril/3/backends/libxpsdocument.a
-lib/atril/3/backends/libxpsdocument.la
+@comment lib/atril/3/backends/libxpsdocument.a
+@comment lib/atril/3/backends/libxpsdocument.la
 lib/atril/3/backends/libxpsdocument.so
-lib/atril/3/backends/pdfdocument.atril-backend
-lib/atril/3/backends/psdocument.atril-backend
+@comment lib/atril/3/backends/pdfdocument.atril-backend
+@comment lib/atril/3/backends/psdocument.atril-backend
 lib/atril/3/backends/tiffdocument.atril-backend
 lib/atril/3/backends/xpsdocument.atril-backend
 lib/caja/
 lib/caja/extensions-2.0/
-lib/caja/extensions-2.0/libatril-properties-page.a
-lib/caja/extensions-2.0/libatril-properties-page.la
+@comment lib/caja/extensions-2.0/libatril-properties-page.a
+@comment lib/caja/extensions-2.0/libatril-properties-page.la
 lib/caja/extensions-2.0/libatril-properties-page.so
 lib/libatrildocument.a
 lib/libatrildocument.la

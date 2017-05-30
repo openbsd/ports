@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/04/30 19:01:28 robert Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/05/30 21:32:08 ajacoutot Exp $
 @bin bin/engrampa
 lib/caja/
 lib/caja/extensions-2.0/
-lib/caja/extensions-2.0/libcaja-engrampa.a
-lib/caja/extensions-2.0/libcaja-engrampa.la
+@comment lib/caja/extensions-2.0/libcaja-engrampa.a
+@comment lib/caja/extensions-2.0/libcaja-engrampa.la
 lib/caja/extensions-2.0/libcaja-engrampa.so
 libexec/engrampa/
 @bin libexec/engrampa-server

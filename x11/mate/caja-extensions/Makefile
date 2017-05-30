@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/04/30 19:01:28 robert Exp $
+# $OpenBSD: Makefile,v 1.2 2017/05/30 21:32:08 ajacoutot Exp $
 
 COMMENT=	extensions for Caja, the MATE file manager
 
 MATE_PROJECT=	caja-extensions
 MATE_VERSION=	1.18.1
+REVISION=	0
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
