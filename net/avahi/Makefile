@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.122 2017/05/16 19:31:34 landry Exp $
+# $OpenBSD: Makefile,v 1.123 2017/05/30 18:53:37 ajacoutot Exp $
 
 ONLY_FOR_ARCHS-mono=	${MONO_ARCHS}
 
@@ -22,7 +22,7 @@ PKGNAME-mono=		mono-avahi-${V}
 PKGNAME-python=		py-avahi-${V}
 PKGNAME-ui=		avahi-ui-${V}
 
-REVISION-main=		0
+REVISION-main=		1
 REVISION-gui=		1
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>

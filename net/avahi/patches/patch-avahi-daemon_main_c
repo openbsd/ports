@@ -1,0 +1,16 @@
+$OpenBSD: patch-avahi-daemon_main_c,v 1.10 2017/05/30 18:53:37 ajacoutot Exp $
+
+Index: avahi-daemon/main.c
+--- avahi-daemon/main.c.orig
++++ avahi-daemon/main.c
+@@ -1140,8 +1140,10 @@ static int run_server(DaemonConfig *c) {
+ 
+     ignore_signal(SIGPIPE);
+ 
++#ifndef __OpenBSD__
+     if (!(nss_support = avahi_nss_support()))
+         avahi_log_warn("WARNING: No NSS support for mDNS detected, consider installing nss-mdns!");
++#endif
+ 
+     if (!(simple_poll_api = avahi_simple_poll_new())) {
+         avahi_log_error("Failed to create main loop object.");
