@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2017/05/30 21:52:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2017/05/30 21:59:34 ajacoutot Exp $
 
 PKG_ARCH=		*
 
@@ -20,6 +20,8 @@ BUILD_DEPENDS=		x11/icon-naming-utils
 # make sure we have gtk-update-icon-cache and can display svg icons.
 MODGNOME_TOOLS +=		gtk-update-icon-cache
 RUN_DEPENDS +=			x11/gnome/librsvg
+
+CONFIGURE_STYLE=	gnu
 
 # do not enforce build dependency on gtk-update-icon-cache
 CONFIGURE_ENV +=		ac_cv_path_GTK_UPDATE_ICON_CACHE=/usr/bin/true

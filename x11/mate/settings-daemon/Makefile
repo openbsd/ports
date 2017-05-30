@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2017/05/30 21:44:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2017/05/30 21:59:34 ajacoutot Exp $
 
 COMMENT=		MATE settings daemon
 
@@ -42,5 +42,7 @@ RUN_DEPENDS=		sysutils/consolekit
 FAKE_FLAGS=		desktopdir=${PREFIX}/share/examples/mate-settings-daemon/xdg/autostart \
 			sysconfdir=${PREFIX}/share/examples/mate-settings-daemon \
 			DBUS_SYS_DIR=${PREFIX}/share/examples/mate-settings-daemon/dbus-1/system.d
+
+CONFIGURE_STYLE=	gnu
 
 .include <bsd.port.mk>

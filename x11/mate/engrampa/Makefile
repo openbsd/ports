@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2017/05/30 21:52:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2017/05/30 21:59:34 ajacoutot Exp $
 
 USE_WXNEEDED=		Yes
 
@@ -34,5 +34,7 @@ LIB_DEPENDS=		devel/json-glib \
 CONFIGURE_ARGS=		--disable-packagekit
 
 MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache
+
+CONFIGURE_STYLE=	gnu
 
 .include <bsd.port.mk>

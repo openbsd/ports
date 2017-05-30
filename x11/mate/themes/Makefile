@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2017/05/30 19:23:59 robert Exp $
+# $OpenBSD: Makefile,v 1.3 2017/05/30 21:59:34 ajacoutot Exp $
 
 COMMENT=		standard MATE themes
 
@@ -20,5 +20,7 @@ MODGNOME_TOOLS=		gtk-update-icon-cache
 # https://mail.gnome.org/archives/desktop-devel-list/2011-March/msg00017.html
 # we need to depend on gtk-engines2 in order for the gtk2 themes to work.
 RUN_DEPENDS +=		x11/gtk-engines2
+
+CONFIGURE_STYLE=	gnu
 
 .include <bsd.port.mk>

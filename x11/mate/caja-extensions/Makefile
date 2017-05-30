@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2017/05/30 21:52:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2017/05/30 21:59:34 ajacoutot Exp $
 
 COMMENT=		extensions for Caja, the MATE file manager
 
@@ -28,5 +28,7 @@ LIB_DEPENDS=		net/gupnp/core \
 			x11/dbus-glib \
 			x11/mate/desktop \
 			x11/mate/caja
+
+CONFIGURE_STYLE=	gnu
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2017/05/30 21:44:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2017/05/30 21:59:34 ajacoutot Exp $
 
 COMMENT=		mixer library for MATE desktop
 
@@ -20,5 +20,7 @@ WANTLIB += sndfile vorbis vorbisenc
 MODULES=		x11/gnome
 
 LIB_DEPENDS=		audio/pulseaudio
+
+CONFIGURE_STYLE=	gnu
 
 .include <bsd.port.mk>

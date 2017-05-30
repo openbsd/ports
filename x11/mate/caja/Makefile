@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2017/05/30 21:44:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2017/05/30 21:59:34 ajacoutot Exp $
 
 COMMENT=		file manager for the MATE desktop
 
@@ -37,5 +37,7 @@ LIB_DEPENDS=		devel/libnotify \
 
 MODGNOME_TOOLS=		shared-mime-info gobject-introspection \
 			gtk-update-icon-cache
+
+CONFIGURE_STYLE=	gnu
 
 .include <bsd.port.mk>

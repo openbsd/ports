@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2017/05/30 21:44:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2017/05/30 21:59:34 ajacoutot Exp $
 
 COMMENT=		implementation of the FreeDesktop menu spec for MATE
 
@@ -24,6 +24,8 @@ LIB_DEPENDS=		devel/glib2
 MODGNOME_TOOLS=		gobject-introspection
 
 FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/mate-menus
+
+CONFIGURE_STYLE=	gnu
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/layout/mate-applications.menu

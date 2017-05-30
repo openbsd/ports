@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2017/05/30 21:52:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2017/05/30 21:59:34 ajacoutot Exp $
 
 USE_WXNEEDED=		Yes
 
@@ -31,6 +31,8 @@ LIB_DEPENDS=		devel/libpeas \
 			x11/gtksourceview3
 
 MODGNOME_TOOLS=		desktop-file-utils
+
+CONFIGURE_STYLE=	gnu
 
 CONFIGURE_ARGS=		--disable-tests
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2017/05/30 21:52:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2017/05/30 21:59:34 ajacoutot Exp $
 
 COMMENT=		MATE support utilities
 
@@ -28,5 +28,7 @@ LIB_DEPENDS=		devel/libgtop2 \
 			x11/mate/panel
 
 MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache
+
+CONFIGURE_STYLE=	gnu
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2017/05/30 19:22:52 robert Exp $
+# $OpenBSD: Makefile,v 1.3 2017/05/30 21:59:34 ajacoutot Exp $
 
 COMMENT=		panel component for MATE
 
@@ -41,5 +41,7 @@ RUN_DEPENDS=		x11/mate/settings-daemon \
 
 MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache \
 			gobject-introspection
+
+CONFIGURE_STYLE=	gnu
 
 .include <bsd.port.mk>

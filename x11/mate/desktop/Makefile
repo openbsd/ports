@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/04/30 19:01:24 robert Exp $
+# $OpenBSD: Makefile,v 1.2 2017/05/30 21:59:34 ajacoutot Exp $
 
 COMMENT=		components for the MATE desktop
 
@@ -28,6 +28,8 @@ LIB_DEPENDS=		x11/gtk+3 \
 			devel/startup-notification
 
 MODGNOME_TOOLS=		desktop-file-utils gobject-introspection
+
+CONFIGURE_STYLE=	gnu
 
 # https://bugzilla.gnome.org/show_bug.cgi?id=590059
 CONFIGURE_ARGS +=	--with-pnp-ids-path=${LOCALBASE}/share/hwdata \

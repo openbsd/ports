@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2017/05/30 21:44:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2017/05/30 21:59:34 ajacoutot Exp $
 
 COMMENT=		the MATE window manager
 
@@ -31,5 +31,7 @@ RUN_DEPENDS=		x11/gnome/zenity
 
 MODULES=		devel/dconf \
 			x11/gnome
+
+CONFIGURE_STYLE=	gnu
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2017/05/30 21:44:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2017/05/30 21:59:34 ajacoutot Exp $
 
 COMMENT=		MATE session manager
 
@@ -31,5 +31,7 @@ RUN_DEPENDS=		x11/gnome/keyring \
 			x11/mate/settings-daemon \
 			x11/mate/themes \
 			sysutils/consolekit
+
+CONFIGURE_STYLE=	gnu
 
 .include <bsd.port.mk>

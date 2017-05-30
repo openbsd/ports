@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2017/05/30 21:52:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2017/05/30 21:59:34 ajacoutot Exp $
 
 COMMENT=		MATE terminal
 
@@ -28,5 +28,7 @@ RUN_DEPENDS=		devel/gsettings-desktop-schemas
 LIB_DEPENDS=		devel/vte3
 
 MODGNOME_TOOLS=		desktop-file-utils
+
+CONFIGURE_STYLE=	gnu
 
 .include <bsd.port.mk>

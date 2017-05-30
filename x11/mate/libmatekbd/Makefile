@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/04/30 19:01:24 robert Exp $
+# $OpenBSD: Makefile,v 1.2 2017/05/30 21:59:34 ajacoutot Exp $
 
 COMMENT=		MATE keyboard configuration library
 
@@ -28,5 +28,7 @@ LIB_DEPENDS=		x11/gnome/libxklavier \
 			x11/gtk+3
 
 MODGNOME_TOOLS=		gobject-introspection
+
+CONFIGURE_STYLE=	gnu
 
 .include <bsd.port.mk>
