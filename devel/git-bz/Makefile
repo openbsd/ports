@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/05/09 15:28:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2017/05/30 20:12:46 ajacoutot Exp $
 
 COMMENT=		command line integration of git with Bugzilla
 
-# git checkout Sep 6 10:15:00 2013
-# 5ae7a500636ddc28bcf7a18427f388c8790623b3
-DISTNAME=		git-bz-20130906
+# http://git.fishsoup.net/cgit/git-bz/
+DISTNAME=		git-bz-e17bbae7
+EXTRACT_SUFX=		.tar.bz2
+PKGNAME=		git-bz-20150908
 
 CATEGORIES=		devel
 
@@ -32,6 +33,8 @@ NO_TEST=		Yes
 USE_GMAKE=		Yes
 
 CONFIGURE_SCRIPT=	${LOCALBASE}/bin/bash configure
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	simple
+CONFIGURE_ARGS=		--bindir=${PREFIX}/bin \
+			--mandir=${PREFIX}/man
 
 .include <bsd.port.mk>
