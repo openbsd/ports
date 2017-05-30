@@ -1,0 +1,14 @@
+$OpenBSD: patch-lib_src_facts_glib_load_average_resolver_cc,v 1.1 2017/05/30 18:01:27 zhuk Exp $
+Unbreak on Clang.
+
+Index: lib/src/facts/glib/load_average_resolver.cc
+--- lib/src/facts/glib/load_average_resolver.cc.orig
++++ lib/src/facts/glib/load_average_resolver.cc
+@@ -1,6 +1,7 @@
+ #include <internal/facts/glib/load_average_resolver.hpp>
+ #include <leatherman/logging/logging.hpp>
+ #include <cstdlib>
++#include <array>
+ 
+ #ifdef __sun
+ #include <sys/loadavg.h>

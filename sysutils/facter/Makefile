@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2017/05/28 12:37:10 zhuk Exp $
+# $OpenBSD: Makefile,v 1.42 2017/05/30 18:01:27 zhuk Exp $
 
 # XXXTODO: Subpackage facter.jar for use with puppetserver
 COMMENT =		collect and display system facts
@@ -8,6 +8,7 @@ DISTNAME =		facter-${VERSION}
 SHARED_LIBS +=  	facter                    3.1 # 3.2
 PKGSPEC =		facter->=3.0,<4.0
 CATEGORIES =		sysutils
+REVISION =		0
 
 MAINTAINER =		Sebastian Reitenbach <sebastia@openbsd.org>
 
@@ -16,24 +17,26 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =		https://downloads.puppetlabs.com/facter/
 
-MODULES +=		devel/cmake \
-			lang/ruby \
-			gcc4
-MODGCC4_ARCHS =		*
-MODGCC4_LANGS =		c++
+WANT_CXX =		base gcc
+MODULES =		devel/cmake \
+			lang/ruby
 
 WANTLIB += boost_atomic-mt boost_chrono-mt boost_date_time-mt
-WANTLIB += boost_filesystem-mt boost_locale-mt boost_log-mt boost_log_setup-mt
+WANTLIB += boost_filesystem-mt boost_locale-mt
 WANTLIB += boost_program_options-mt boost_regex-mt boost_system-mt
 WANTLIB += boost_thread-mt c crypto curl m pthread yaml-cpp
+WANTLIB += ${LIBECXX} cpp-hocon
+WANTLIB += leatherman_curl leatherman_dynamic_library
+WANTLIB += leatherman_execution leatherman_file_util leatherman_locale
+WANTLIB += leatherman_logging leatherman_ruby leatherman_util
 
 LIB_DEPENDS =		devel/boost>=1.58 \
+			devel/cpp-hocon \
+			devel/leatherman>=0.12.1p1 \
 			devel/yaml-cpp \
 			net/curl
 
-BUILD_DEPENDS =		devel/cpp-hocon \
-			devel/gettext-tools \
-			devel/leatherman
+BUILD_DEPENDS =		devel/gettext-tools
 
 CONFIGURE_ARGS+=	-DFACTER_RUBY="${LOCALBASE}/lib/libruby${MODRUBY_BINREV}.so" \
 			-DRUBY_LIB_INSTALL="${PREFIX}/lib/ruby/vendor_ruby/${MODRUBY_REV}" \
@@ -49,6 +52,9 @@ LIBfacter_MINOR =	${LIBfacter_VERSION:E}
 SUBST_VARS +=		MODRUBY_BINREV MODRUBY_REV LIBfacter_MAJOR LIBfacter_MINOR
 
 CXXFLAGS +=		-pthread
+
+post-extract:
+	rm -f ${WRKDIST}/cmake/FindRuby.cmake
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/CMakeLists.txt ${WRKSRC}/lib/CMakeLists.txt \

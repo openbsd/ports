@@ -1,0 +1,13 @@
+$OpenBSD: patch-cmake_FindCPPHOCON_cmake,v 1.1 2017/05/30 18:01:27 zhuk Exp $
+Use library name stem, as intended.
+
+Index: cmake/FindCPPHOCON.cmake
+--- cmake/FindCPPHOCON.cmake.orig
++++ cmake/FindCPPHOCON.cmake
+@@ -1,5 +1,5 @@
+ include(FindDependency)
+-find_dependency(CPPHOCON DISPLAY "cpp-hocon" HEADERS "hocon/config.hpp" LIBRARIES "libcpp-hocon.a")
++find_dependency(CPPHOCON DISPLAY "cpp-hocon" HEADERS "hocon/config.hpp" LIBRARIES "cpp-hocon")
+ 
+ include(FeatureSummary)
+ set_package_properties(CPPHOCON PROPERTIES DESCRIPTION "A C++ parser for the HOCON configuration language" URL "https://github.com/puppetlabs/cpp-hocon")

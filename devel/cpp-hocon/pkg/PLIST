@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/08/12 08:40:40 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/05/30 18:01:27 zhuk Exp $
 include/hocon/
 include/hocon/config.hpp
 include/hocon/config_exception.hpp
@@ -26,4 +26,4 @@ include/hocon/path.hpp
 include/hocon/program_options.hpp
 include/hocon/types.hpp
 include/hocon/version.h
-lib/libcpp-hocon.a
+@lib lib/libcpp-hocon.so.${LIBcpp-hocon_VERSION}

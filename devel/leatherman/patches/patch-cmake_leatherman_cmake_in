@@ -1,0 +1,27 @@
+$OpenBSD: patch-cmake_leatherman_cmake_in,v 1.1 2017/05/30 18:01:27 zhuk Exp $
+
+Index: cmake/leatherman.cmake.in
+--- cmake/leatherman.cmake.in.orig
++++ cmake/leatherman.cmake.in
+@@ -73,21 +73,11 @@ endmacro()
+ # Installs targets using common cross-platform configuration.
+ # On Windows shared libraries go in bin, import and archive libraries
+ # go in lib. On Linux shared libraries go in lib. Binaries go in bin.
+-#
+-# Also always drop the prefix; give the target its expected name.
+-# We often have binaries and related dynamic libraries, and this
+-# simplifies giving them different but related names, such as
+-# `facter` and `libfacter`.
+ macro(leatherman_install)
+     install(TARGETS ${ARGV}
+         RUNTIME DESTINATION bin
+         LIBRARY DESTINATION lib${LIB_SUFFIX}
+         ARCHIVE DESTINATION lib${LIB_SUFFIX})
+-    foreach(ARG ${ARGV})
+-        if (TARGET ${ARG})
+-            set_target_properties(${ARG} PROPERTIES PREFIX "" IMPORT_PREFIX "")
+-        endif()
+-    endforeach()
+ endmacro()
+ 
+ # Usage: add_cppcheck_dirs(dir1 dir2)

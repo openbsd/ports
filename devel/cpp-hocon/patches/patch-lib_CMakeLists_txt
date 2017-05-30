@@ -1,0 +1,32 @@
+$OpenBSD: patch-lib_CMakeLists_txt,v 1.1 2017/05/30 18:01:27 zhuk Exp $
+Unbreak due to upstream fixing problems created by leatherman, and we
+have leatherman fixed in the first place.
+
+Index: lib/CMakeLists.txt
+--- lib/CMakeLists.txt.orig
++++ lib/CMakeLists.txt
+@@ -76,19 +76,19 @@ set(PROJECT_SOURCES
+ add_library(libprojectsrc OBJECT ${PROJECT_SOURCES})
+ set_target_properties(libprojectsrc PROPERTIES POSITION_INDEPENDENT_CODE true)
+ 
+-add_library(lib${PROJECT_NAME} $<TARGET_OBJECTS:libprojectsrc>)
+-set_target_properties(lib${PROJECT_NAME} PROPERTIES VERSION "${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}.${PROJECT_VERSION_PATCH}")
+-target_link_libraries(lib${PROJECT_NAME}
++add_library(${PROJECT_NAME} $<TARGET_OBJECTS:libprojectsrc>)
++set_target_properties(${PROJECT_NAME} PROPERTIES VERSION "${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}.${PROJECT_VERSION_PATCH}")
++target_link_libraries(${PROJECT_NAME}
+     ${LEATHERMAN_LIBRARIES}
+     ${Boost_LIBRARIES}
+     )
+ 
+ # Generate the export header for restricting symbols exported from the library.
+ # Restricting symbols has several advantages, noted at https://gcc.gnu.org/wiki/Visibility.
+-symbol_exports(lib${PROJECT_NAME} "${CMAKE_CURRENT_LIST_DIR}/inc/hocon/export.h")
++symbol_exports(${PROJECT_NAME} "${CMAKE_CURRENT_LIST_DIR}/inc/hocon/export.h")
+ 
+ # This correctly handles DLL installation on Windows.
+-leatherman_install(lib${PROJECT_NAME})
++leatherman_install(${PROJECT_NAME})
+ install(DIRECTORY inc/hocon DESTINATION include)
+ 
+ add_subdirectory(tests)
