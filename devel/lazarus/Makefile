@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2017/03/24 22:55:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2017/05/30 08:23:32 espie Exp $
 
-BROKEN-i386 =	build fails fairly often, "EAccessViolation: Access violation"
+BROKEN =	build fails fairly often, "EAccessViolation: Access violation"
 
 ONLY_FOR_ARCHS =	amd64 i386
 
