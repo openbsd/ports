@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/04/30 19:01:26 robert Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/05/30 19:19:38 robert Exp $
 @bin bin/caja
 @bin bin/caja-autorun-software
 @bin bin/caja-connect-server
@@ -37,6 +37,7 @@ share/applications/caja.desktop
 share/applications/mate-network-scheme.desktop
 share/caja/
 share/caja/browser.xml
+share/caja/caja-desktop-3.14.css
 share/caja/caja-desktop.css
 share/caja/caja-extras.placeholder
 share/caja/caja-suggested.placeholder
