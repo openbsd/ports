@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.124 2017/05/12 10:15:21 edd Exp $
+# $OpenBSD: Makefile,v 1.125 2017/05/30 19:17:10 rsadowski Exp $
 
      SUBDIR =
      SUBDIR += abiword
@@ -7,7 +7,6 @@
      SUBDIR += beaver
      SUBDIR += bvi
      SUBDIR += calligra
-     SUBDIR += calligra-l10n
      SUBDIR += cooledit
      SUBDIR += cooledit,python
      SUBDIR += dhex
