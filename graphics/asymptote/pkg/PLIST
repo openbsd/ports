@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2017/05/04 11:13:52 edd Exp $
+@comment $OpenBSD: PLIST,v 1.7 2017/05/30 19:56:35 edd Exp $
 @bin bin/asy
 @info info/asy-faq.info
 @info info/asymptote.info
@@ -441,7 +441,6 @@ share/examples/asymptote/xxsq01.asy
 share/examples/asymptote/xxsq01x-1.asy
 share/examples/asymptote/xxsq01y.asy
 share/examples/asymptote/yingyang.asy
-share/texmf-local/
 share/texmf-local/tex/
 share/texmf-local/tex/context/
 share/texmf-local/tex/context/third/

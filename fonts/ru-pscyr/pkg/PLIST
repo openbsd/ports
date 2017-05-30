@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2017/05/04 11:13:52 edd Exp $
+@comment $OpenBSD: PLIST,v 1.3 2017/05/30 19:56:35 edd Exp $
 @pkgpath russion/pscyr
-share/texmf-local/
 share/texmf-local/doc/
 share/texmf-local/doc/fonts/
 share/texmf-local/doc/fonts/pscyr/

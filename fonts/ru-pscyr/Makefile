@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2017/05/04 11:13:52 edd Exp $
+# $OpenBSD: Makefile,v 1.5 2017/05/30 19:56:35 edd Exp $
 
 COMMENT=		cyrillic PostScript Type1 fonts to use with TeX
 
 DISTNAME=		pscyr-0.4c_patch2
 PKGNAME=		ru-${DISTNAME}
-REVISION=		6
+REVISION=		7
 CATEGORIES=		fonts print
 
 MAINTAINER=		Alexander Yurchenko <grange@openbsd.org>

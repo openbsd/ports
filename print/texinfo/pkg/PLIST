@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2017/05/04 11:13:52 edd Exp $
+@comment $OpenBSD: PLIST,v 1.5 2017/05/30 19:56:35 edd Exp $
 @bin bin/ginfo
 @bin bin/ginstall-info
 bin/gmakeinfo
@@ -78,8 +78,6 @@ share/locale/pt_BR/LC_MESSAGES/texinfo.mo
 share/locale/pt_BR/LC_MESSAGES/texinfo_document.mo
 share/locale/ro/LC_MESSAGES/texinfo.mo
 share/locale/ru/LC_MESSAGES/texinfo.mo
-share/locale/rw/
-share/locale/rw/LC_MESSAGES/
 share/locale/rw/LC_MESSAGES/texinfo.mo
 share/locale/sl/LC_MESSAGES/texinfo.mo
 share/locale/sv/LC_MESSAGES/texinfo.mo
@@ -477,7 +475,6 @@ share/texinfo/lib/libintl-perl/lib/Locale/Util.pm
 share/texinfo/lib/libintl-perl/lib/Locale/gettext_pp.pm
 share/texinfo/texindex.awk
 share/texinfo/texinfo.dtd
-share/texmf-local/
 share/texmf-local/tex/
 share/texmf-local/tex/generic/
 share/texmf-local/tex/generic/epsf/

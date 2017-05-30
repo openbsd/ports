@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.32 2017/05/04 11:13:52 edd Exp $
+# $OpenBSD: Makefile,v 1.33 2017/05/30 19:56:35 edd Exp $
 
 COMMENT=	LaTeX to HTML converter
 
 DISTNAME=	latex2html-2015
-REVISION=	0
+REVISION=	1
 CATEGORIES=	textproc www
 
 HOMEPAGE=	http://www.latex2html.org/

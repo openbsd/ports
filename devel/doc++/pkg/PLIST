@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2017/05/04 11:13:52 edd Exp $
+@comment $OpenBSD: PLIST,v 1.11 2017/05/30 19:56:35 edd Exp $
 @bin bin/doc++
 @bin bin/docify
 @bin bin/promote
@@ -40,7 +40,6 @@ share/locale/fr/LC_MESSAGES/doc++.mo
 share/locale/ja/LC_MESSAGES/doc++.mo
 share/locale/ro/LC_MESSAGES/doc++.mo
 share/locale/ru/LC_MESSAGES/doc++.mo
-share/texmf-local/
 share/texmf-local/tex/
 share/texmf-local/tex/latex/
 share/texmf-local/tex/latex/doc++/

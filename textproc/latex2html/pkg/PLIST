@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2017/05/04 11:13:52 edd Exp $
+@comment $OpenBSD: PLIST,v 1.9 2017/05/30 19:56:35 edd Exp $
 bin/latex2html
 bin/pstoimg
 bin/texexpand
@@ -352,7 +352,6 @@ share/latex2html/versions/table.pl
 share/latex2html/versions/techexpl.pl
 share/latex2html/versions/unicode.pl
 share/latex2html/versions/utf8.pl
-share/texmf-local/
 share/texmf-local/tex/
 share/texmf-local/tex/latex/
 share/texmf-local/tex/latex/html/

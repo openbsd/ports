@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/05/10 11:30:25 pirofti Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/05/30 19:56:35 edd Exp $
 bin/latexml
 bin/latexmlc
 bin/latexmlfind
@@ -630,7 +630,6 @@ ${P5SITE}/LaTeXML/texmf/lxRDFa.sty
 @man man/man3p/LaTeXML::Util::Pack.3p
 @man man/man3p/LaTeXML::Util::Pathname.3p
 @man man/man3p/LaTeXML::Util::WWW.3p
-share/texmf-local/
 share/texmf-local/tex/
 share/texmf-local/tex/latex/
 share/texmf-local/tex/latex/latexml/
