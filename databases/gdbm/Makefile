@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.40 2017/05/08 15:44:56 schwarze Exp $
+# $OpenBSD: Makefile,v 1.41 2017/05/30 06:48:37 jasper Exp $
 
 COMMENT=		GNU dbm
 
-VERSION=		1.12
+VERSION=		1.13
 DISTNAME=		gdbm-${VERSION}
-REVISION=		0
 CATEGORIES=		databases
 
-SHARED_LIBS +=	gdbm                 4.1      # 4.1
+SHARED_LIBS +=	gdbm                 4.2      # 4.0
 
 HOMEPAGE=		https://www.gnu.org/software/gdbm/
 
@@ -18,14 +17,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 LIB_DEPENDS=		devel/gettext
 
-WANTLIB +=		c iconv intl
+WANTLIB +=		c iconv intl ncurses readline
 
 CONFIGURE_STYLE= 	gnu
-
-# needed for gsort
-TEST_DEPENDS +=		sysutils/coreutils
-
-post-extract:
-	sed -i 's,sort,gsort,g' ${WRKSRC}/tests/testsuite
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2014/03/27 07:57:44 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.9 2017/05/30 06:48:37 jasper Exp $
 @bin bin/gdbm_dump
 @bin bin/gdbm_load
 @bin bin/gdbmtool
@@ -11,6 +11,7 @@ lib/libgdbm.la
 @man man/man1/gdbm_load.1
 @man man/man1/gdbmtool.1
 @man man/man3/gdbm.3
+share/locale/da/LC_MESSAGES/gdbm.mo
 share/locale/de/LC_MESSAGES/gdbm.mo
 share/locale/eo/LC_MESSAGES/gdbm.mo
 share/locale/fi/LC_MESSAGES/gdbm.mo
