@@ -1,13 +1,14 @@
-$OpenBSD: patch-plan_CMakeLists_txt,v 1.1.1.1 2014/07/12 10:44:18 zhuk Exp $
---- plan/CMakeLists.txt.orig	Sat Jul 12 09:21:33 2014
-+++ plan/CMakeLists.txt	Sat Jul 12 09:22:17 2014
-@@ -4,6 +4,9 @@ project(kplato)
+$OpenBSD: patch-plan_CMakeLists_txt,v 1.2 2017/05/30 18:57:20 rsadowski Exp $
+
+Index: plan/CMakeLists.txt
+--- plan/CMakeLists.txt.orig
++++ plan/CMakeLists.txt
+@@ -4,6 +4,8 @@ project(kplato)
  # set kplato debug area
  add_definitions( -DKDE_DEFAULT_DEBUG_AREA=42000 )
  
-+# avoid build failure inside boost
 +add_definitions( -DBOOST_NO_EXCEPTIONS )
 +
- if(KDE4_BUILD_TESTS)
-     # only with this definition will the KPLATO_TEST_EXPORT macro do something
-     add_definitions(-DCOMPILING_TESTS)
+ if (KF5AkonadiContact_FOUND)
+     # disable for now: there is a bug
+     # it only works if you use kde contacts (of course) but many use other stuff, so gets dissapointed

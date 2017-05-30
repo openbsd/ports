@@ -1,0 +1,14 @@
+$OpenBSD: patch-plugins_videoshape_SelectVideoWidget_cpp,v 1.1 2017/05/30 18:57:20 rsadowski Exp $
+
+Index: plugins/videoshape/SelectVideoWidget.cpp
+--- plugins/videoshape/SelectVideoWidget.cpp.orig
++++ plugins/videoshape/SelectVideoWidget.cpp
+@@ -22,7 +22,7 @@
+ 
+ #include <klocalizedstring.h>
+ #include <kfilewidget.h>
+-#include <phonon/BackendCapabilities>
++#include <kde4/phonon/BackendCapabilities>
+ 
+ #include <QVBoxLayout>
+ #include <QCheckBox>

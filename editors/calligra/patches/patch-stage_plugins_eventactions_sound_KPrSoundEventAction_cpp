@@ -1,0 +1,14 @@
+$OpenBSD: patch-stage_plugins_eventactions_sound_KPrSoundEventAction_cpp,v 1.1 2017/05/30 18:57:20 rsadowski Exp $
+
+Index: stage/plugins/eventactions/sound/KPrSoundEventAction.cpp
+--- stage/plugins/eventactions/sound/KPrSoundEventAction.cpp.orig
++++ stage/plugins/eventactions/sound/KPrSoundEventAction.cpp
+@@ -19,7 +19,7 @@
+ 
+ #include "KPrSoundEventAction.h"
+ 
+-#include <phonon/mediaobject.h>
++#include <kde4/phonon/mediaobject.h>
+ #include <KoXmlNS.h>
+ #include <KoXmlReader.h>
+ #include <KoXmlWriter.h>

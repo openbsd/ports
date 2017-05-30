@@ -1,0 +1,22 @@
+$OpenBSD: patch-plugins_colorengines_lcms2_tests_CMakeLists_txt,v 1.1 2017/05/30 18:57:20 rsadowski Exp $
+
+Index: plugins/colorengines/lcms2/tests/CMakeLists.txt
+--- plugins/colorengines/lcms2/tests/CMakeLists.txt.orig
++++ plugins/colorengines/lcms2/tests/CMakeLists.txt
+@@ -33,14 +33,14 @@ endmacro()
+ 
+ ########### next target ###############
+ 
+-colorengine_lcms_add_unit_test(TestKoLcmsColorProfile
++colorengine_lcms_add_unit_test(colorengine_TestKoLcmsColorProfile
+     TestKoLcmsColorProfile.cpp
+     LINK_LIBRARIES kowidgets pigmentcms KF5::I18n ${LCMS2_LIBRARIES} Qt5::Test
+ )
+ 
+ ########### next target ###############
+ 
+-colorengine_lcms_add_unit_test(TestKoColorSpaceRegistry
++colorengine_lcms_add_unit_test(colorengine_TestKoColorSpaceRegistry
+     TestKoColorSpaceRegistry.cpp
+     LINK_LIBRARIES kowidgets pigmentcms KF5::I18n ${LCMS2_LIBRARIES} Qt5::Test
+ )

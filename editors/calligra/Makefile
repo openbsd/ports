@@ -1,154 +1,117 @@
-# $OpenBSD: Makefile,v 1.18 2017/05/28 16:20:08 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2017/05/30 18:57:20 rsadowski Exp $
 
 COMMENT =	K Desktop Environment, office suite
 HOMEPAGE =	https://www.calligra-suite.org/
-DISTNAME =	calligra-2.9.11
+VERSION =	3.0.1
+DISTNAME =	calligra-${VERSION}
 CATEGORIES =	editors
 
 DIST_SUBDIR =	kde
-MASTER_SITES =	${MASTER_SITE_KDE:=stable/${DISTNAME}/}
+MASTER_SITES =	${MASTER_SITE_KDE:=stable/calligra/${VERSION}/}
 
-MAINTAINER =	Rafael Sadowski <rafael@sizeofvoid.org>
+MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
 # GPLv2+, LGPLv2+ and GNU FDLv1.2
 PERMIT_PACKAGE_CDROM =	Yes
 DPB_PROPERTIES =	parallel
 
-MODULES =	x11/kde4 \
+MODULES =	devel/kf5 \
 		multimedia/phonon
-
-MODKDE4_USE =	pim
 
 SHARED_LIBS =   RtfReader                 50.0 # 0.0
 SHARED_LIBS +=  basicflakes               50.0 # 0.0
-SHARED_LIBS +=  braindumpcore             50.0 # 9.0
-SHARED_LIBS +=  calligradb                50.0 # 0.0
-SHARED_LIBS +=  calligrakdchart           50.0 # 0.0
-SHARED_LIBS +=  calligrakdgantt           50.0 # 0.0
 SHARED_LIBS +=  calligrasheetscommon      50.0 # 9.0
 SHARED_LIBS +=  calligrasheetsodf         50.0 # 9.0
 SHARED_LIBS +=  calligrastageprivate      50.0 # 0.0
 SHARED_LIBS +=  flake                     50.0 # 0.0
-SHARED_LIBS +=  flowprivate               50.0 # 0.0
 SHARED_LIBS +=  karboncommon              50.0 # 0.0
 SHARED_LIBS +=  karbonui                  50.0 # 0.0
-SHARED_LIBS +=  kexicore                  50.0 # 0.0
-SHARED_LIBS +=  kexidatatable             50.0 # 0.0
-SHARED_LIBS +=  kexidataviewcommon        50.0 # 0.0
-SHARED_LIBS +=  kexidb                    50.0 # 0.0
-SHARED_LIBS +=  kexiextendedwidgets       50.0 # 0.0
-SHARED_LIBS +=  kexiformutils             50.0 # 0.0
-SHARED_LIBS +=  kexiguiutils              50.0 # 0.0
-SHARED_LIBS +=  keximain                  50.0 # 0.0
-SHARED_LIBS +=  keximigrate               50.0 # 0.0
-SHARED_LIBS +=  kexirelationsview         50.0 # 0.0
-SHARED_LIBS +=  kexiutils                 50.0 # 0.0
-SHARED_LIBS +=  kformdesigner             50.0 # 0.0
-SHARED_LIBS +=  kokross                   50.0 # 0.0
 SHARED_LIBS +=  komain                    50.0 # 0.0
-SHARED_LIBS +=  koodf                     50.0 # 0.0
-SHARED_LIBS +=  kopageapp                 50.0 # 0.0
-SHARED_LIBS +=  koplugin                  50.0 # 0.0
-SHARED_LIBS +=  koproperty                50.0 # 0.0
-SHARED_LIBS +=  kordf                     50.0 # 0.0
-SHARED_LIBS +=  koreport                  50.0 # 0.0
-SHARED_LIBS +=  kotext                    50.0 # 0.0
-SHARED_LIBS +=  kowidgets                 50.0 # 0.0
-SHARED_LIBS +=  kowidgetutils             50.0 # 0.0
-SHARED_LIBS +=  kowv2                     50.0 # 0.0
-SHARED_LIBS +=  kplatokernel              50.0 # 0.0
-SHARED_LIBS +=  kplatomodels              50.0 # 0.0
-SHARED_LIBS +=  kplatoui                  50.0 # 0.0
-SHARED_LIBS +=  kritaimage                50.0 # 0.0
-SHARED_LIBS +=  kritalibbrush             50.0 # 0.0
-SHARED_LIBS +=  kritalibpaintop           50.0 # 0.0
-SHARED_LIBS +=  kritaui                   50.0 # 0.0
-SHARED_LIBS +=  kundo2                    50.0 # 0.0
-SHARED_LIBS +=  pigmentcms                50.0 # 0.0
-SHARED_LIBS +=  planprivate               50.0 # 0.0
-SHARED_LIBS +=  planworkapp               50.0 # 0.0
-SHARED_LIBS +=  planworkfactory           50.0 # 0.0
-SHARED_LIBS +=  rcps_plan                 50.0 # 0.0
-SHARED_LIBS +=  kformula                  50.0 # 13.0
 SHARED_LIBS +=  komsooxml                 50.0 # 13.0
+SHARED_LIBS +=  koodf                     50.0 # 0.0
 SHARED_LIBS +=  koodf2                    50.0 # 13.0
 SHARED_LIBS +=  koodfreader               50.0 # 13.0
+SHARED_LIBS +=  kopageapp                 50.0 # 0.0
+SHARED_LIBS +=  koplugin                  50.0 # 0.0
+SHARED_LIBS +=  kotext                    50.0 # 0.0
 SHARED_LIBS +=  kotextlayout              50.0 # 13.0
 SHARED_LIBS +=  kovectorimage             50.0 # 13.0
 SHARED_LIBS +=  koversion                 0.0 # 14.0
-SHARED_LIBS +=  kritacolor                0.0 # 14.0
+SHARED_LIBS +=  kowidgets                 50.0 # 0.0
+SHARED_LIBS +=  kowidgetutils             50.0 # 0.0
+SHARED_LIBS +=  kowv2                     50.0 # 0.0
+SHARED_LIBS +=  kundo2                    50.0 # 0.0
+SHARED_LIBS +=  pigmentcms                50.0 # 0.0
 SHARED_LIBS +=  wordsprivate              14.0 # 1.0
-SHARED_LIBS +=  kritaglobal               0.0 # 14.0
-SHARED_LIBS +=  kritapsd                  0.0 # 14.0
+SHARED_LIBS +=  koformula                 15.0 # 1.0
+SHARED_LIBS +=  kostore                   15.0 # 1.0
+SHARED_LIBS +=  kdeinit5_calligrasheets   0.0 # 0.0
+SHARED_LIBS +=  kdeinit5_calligrawords    0.0 # 0.0
+SHARED_LIBS +=  kdeinit5_karbon           0.0 # 0.0
 
-WANTLIB =  c m pthread z
-WANTLIB += GL GLEW GLU Half ICE Iex IlmImf IlmThread Imath SM X11 Xext Xi
-WANTLIB += fontconfig
-WANTLIB += lib/qt4/QtDeclarative lib/qt4/QtWebKit lib/qt4/QtDBus
-WANTLIB += lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg lib/qt4/QtOpenGL
-WANTLIB += lib/qt4/QtScript lib/qt4/QtXml lib/qt4/QtSql
-WANTLIB += ${KDE4LIB}/akonadi-contact ${KDE4LIB}/akonadi-kde
-WANTLIB += ${KDE4LIB}/kabc ${KDE4LIB}/kactivities
-WANTLIB += ${KDE4LIB}/kcalcore ${KDE4LIB}/kcmutils ${KDE4LIB}/kdcraw
-WANTLIB += ${KDE4LIB}/kdeclarative
-WANTLIB += ${KDE4LIB}/kdeui ${KDE4LIB}/kfile ${KDE4LIB}/khtml
-WANTLIB += ${KDE4LIB}/kio ${KDE4LIB}/kjs ${KDE4LIB}/kmime
-WANTLIB += ${KDE4LIB}/knotifyconfig
-WANTLIB += ${KDE4LIB}/kparts ${KDE4LIB}/kpimutils ${KDE4LIB}/kresources
-WANTLIB += ${KDE4LIB}/krosscore ${KDE4LIB}/krossui
-WANTLIB += ${KDE4LIB}/marblewidget
-WANTLIB += ${KDE4LIB}/nepomuk ${KDE4LIB}/nepomukutils
-WANTLIB += ${KDE4LIB}/okularcore
-WANTLIB += ${KDE4LIB}/phonon_sexperimental ${KDE4LIB}/threadweaver
-WANTLIB += OpenColorIO exiv2 fftw3 freetype glib-2.0 gsl iconv icui18n icuuc
-WANTLIB += jpeg lcms2 mysqlclient openjpeg png poppler poppler-qt4 pqxx
-WANTLIB += qca2 soprano sqlite3 sybdb tiff
-WANTLIB += boost_system-mt curl ktexteditor gslcblas
+WANTLIB += Half ICE Iex IlmImf IlmThread Imath KF5Activities KF5Archive
+WANTLIB += KF5Auth KF5Bookmarks KF5Codecs KF5Completion KF5ConfigCore
+WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5Crash
+WANTLIB += KF5DBusAddons KF5GuiAddons KF5I18n KF5IconThemes KF5ItemViews
+WANTLIB += KF5JS KF5JobWidgets KF5KCMUtils KF5KDELibs4Support
+WANTLIB += KF5KHtml KF5KIOCore KF5KIOFileWidgets KF5KIOWidgets
+WANTLIB += KF5Notifications KF5NotifyConfig KF5Parts KF5Service
+WANTLIB += KF5Solid KF5SonnetCore KF5SonnetUi KF5TextWidgets KF5UnitConversion
+WANTLIB += KF5Wallet KF5WidgetsAddons KF5WindowSystem KF5XmlGui
+WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5OpenGL Qt5PrintSupport
+WANTLIB += Qt5Qml Qt5Quick Qt5Sql Qt5Svg Qt5WebKit Qt5WebKitWidgets
+WANTLIB += Qt5Widgets Qt5X11Extras Qt5Xml SM X11 Xext c fontconfig
+WANTLIB += freetype gsl iconv jpeg lcms2 m openjpeg phonon4qt5experimental
+WANTLIB += poppler poppler-qt5 pthread z
 
-# kexi needs headers in postgresql,{-main,-server}
-# kexi needs all db drivers to be present while building
-BUILD_DEPENDS =	devel/boost \
-		databases/mariadb \
-		databases/postgresql,-main \
-		databases/postgresql,-server \
+BUILD_DEPENDS +=devel/boost \
 		math/eigen3 \
-		productivity/librcps
+		productivity/librcps \
+		devel/gettext-tools \
+		devel/kf5/kdoctools \
+		devel/kf5/threadweaver \
+		devel/kf5/kross
 
-# kexi needs all db driver installed to run,
-# assuming sqlite3 is in base...
-RUN_DEPENDS =	databases/mariadb \
-		databases/postgresql,-main \
-		databases/postgresql,-server \
-		devel/desktop-file-utils \
+RUN_DEPENDS +=	devel/desktop-file-utils \
+		devel/gettext \
+		devel/kf5/ktexteditor \
 		misc/shared-mime-info \
 		productivity/librcps \
 		x11/gtk+3,-guic
 
-LIB_DEPENDS =	converters/libiconv \
-		databases/freetds \
-		databases/libpqxx>=3,<5 \
-		databases/mariadb \
+LIB_DEPENDS +=	x11/qt5/qtwebkit \
+		converters/libiconv \
+		graphics/openexr \
+		devel/kf5/karchive \
+		devel/kf5/kcodecs\
+		devel/kf5/kcompletion \
+		devel/kf5/kconfig \
+		devel/kf5/kconfigwidgets \
+		devel/kf5/kcoreaddons \
+		devel/kf5/kdbusaddons \
+		devel/kf5/kguiaddons\
+		devel/kf5/ki18n \
+		devel/kf5/kiconthemes \
+		devel/kf5/kitemviews \
+		devel/kf5/kdelibs4support \
+		devel/kf5/kio \
+		devel/kf5/kparts \
+		devel/kf5/ktextwidgets \
+		devel/kf5/sonnet \
+		devel/kf5/kwallet \
+		devel/kf5/kwidgetsaddons \
+		devel/kf5/kwindowsystem \
+		devel/kf5/kxmlgui \
+		devel/kf5/knotifications \
+		devel/kf5/kactivities \
+		devel/kf5/knotifyconfig \
+		devel/kf5/kcmutils \
+		devel/kf5/khtml \
 		devel/gsl \
-		graphics/exiv2 \
-		graphics/glew \
 		graphics/jpeg \
-		graphics/lcms2 \
-		graphics/opencolorio \
 		graphics/openjpeg \
-		graphics/png \
-		graphics/tiff \
-		math/fftw3,double \
-		net/curl \
-		print/poppler,,-qt4 \
-		security/qca2 \
-		textproc/icu4c \
-		${MODKDE4_DEP_DIR}/libkdcraw \
-		${MODKDE4_DEP_DIR}/marble \
-		${MODKDE4_DEP_DIR}/okular
-
-# XXX FindPqxx.cmake should be fixed instead of hardcoding version here
-CONFIGURE_ARGS =	-DPQXX_VERSION=4.0.1 \
-	-DOPENJPEG_INCLUDE_DIR=${LOCALBASE}/include/openjpeg-1.5
+		graphics/lcms2 \
+		print/poppler,,-qt5
 
 # Stuff we don't have ATM. Do not bother about CreateResources, it's
 # pure optional run-time dependency.
@@ -158,23 +121,12 @@ CONFIGURE_ARGS +=	-DWITH_Cauchy:BOOL=Off \
 			-DWITH_LibEtonyek:BOOL=Off \
 			-DWITH_LibOdfGen:BOOL=Off \
 			-DWITH_LibVisio:BOOL=Off \
-			-DWITH_LibWpd:BOOL=Off \
 			-DWITH_LibWpg:BOOL=Off \
 			-DWITH_LibWps:BOOL=Off \
-			-DWITH_Spnav:BOOL=Off \
-			-DWITH_Vc:BOOL=Off \
-			-DWITH_XBase:BOOL=Off \
-			-DPQXX_INCLUDE_DIR:PATH=${LOCALBASE}/include
+			-DWITH_Spnav:BOOL=Off
 
 # Karbon wants SVG support through a shareware plugin for pstoedit
 CONFIGURE_ARGS +=	-DWITH_Pstoedit:BOOL=Off
-
-# XXX Silently ignore non-existent dependencies
-CONFIGURE_ARGS +=	-DCMAKE_POLICY_DEFAULT_CMP0046=OLD
-CONFIGURE_ARGS +=	-DCMAKE_POLICY_DEFAULT_CMP0054=OLD
-CONFIGURE_ARGS +=	-DCMAKE_POLICY_DEFAULT_CMP0064=OLD
-# XXX Don't treat ``DEFINITIONS`` as a built-in directory property
-CONFIGURE_ARGS +=	-DCMAKE_POLICY_DEFAULT_CMP0059=OLD
 
 # Running D-Bus daemon is required
 TEST_IS_INTERACTIVE =	X11

@@ -1,0 +1,14 @@
+$OpenBSD: patch-plugins_videoshape_VideoThumbnailer_cpp,v 1.1 2017/05/30 18:57:20 rsadowski Exp $
+
+Index: plugins/videoshape/VideoThumbnailer.cpp
+--- plugins/videoshape/VideoThumbnailer.cpp.orig
++++ plugins/videoshape/VideoThumbnailer.cpp
+@@ -23,7 +23,7 @@
+ #include "VideoData.h"
+ #include "VideoDebug.h"
+ 
+-#include <phonon/experimental/videoframe2.h>
++#include <kde4/phonon/experimental/videoframe2.h>
+ #include <QTime>
+ #include <QVBoxLayout>
+ #include <QVarLengthArray>
