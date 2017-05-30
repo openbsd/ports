@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/04/30 19:01:28 robert Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/05/30 19:20:35 robert Exp $
 @bin bin/eom
 include/eom-2.20/
 include/eom-2.20/eom/
@@ -45,6 +45,7 @@ share/appdata/
 share/appdata/eom.appdata.xml
 share/applications/eom.desktop
 share/eom/
+share/eom/eom-3.18.css
 share/eom/eom-image-properties-dialog.ui
 share/eom/eom-multiple-save-as-dialog.ui
 share/eom/eom-preferences-dialog.ui
