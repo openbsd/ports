@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2017/03/08 17:23:25 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2017/05/30 13:12:30 sthen Exp $
 @option is-branch
 @conflict freeradius-*
 @conflict radiusd-cistron-*
@@ -431,6 +431,8 @@ share/examples/freeradius/mods-available/mac2ip
 @sample ${FREERADIUS_ETC}/mods-available/mac2ip
 share/examples/freeradius/mods-available/mac2vlan
 @sample ${FREERADIUS_ETC}/mods-available/mac2vlan
+share/examples/freeradius/mods-available/moonshot-targeted-ids
+@sample ${FREERADIUS_ETC}/mods-available/moonshot-targeted-ids
 share/examples/freeradius/mods-available/mschap
 @sample ${FREERADIUS_ETC}/mods-available/mschap
 share/examples/freeradius/mods-available/ntlm_auth
@@ -567,6 +569,14 @@ share/examples/freeradius/mods-config/sql/main/sqlite/queries.conf
 @sample ${FREERADIUS_ETC}/mods-config/sql/main/sqlite/queries.conf
 share/examples/freeradius/mods-config/sql/main/sqlite/schema.sql
 @sample ${FREERADIUS_ETC}/mods-config/sql/main/sqlite/schema.sql
+share/examples/freeradius/mods-config/sql/moonshot-targeted-ids/
+@sample ${FREERADIUS_ETC}/mods-config/sql/moonshot-targeted-ids/
+share/examples/freeradius/mods-config/sql/moonshot-targeted-ids/sqlite/
+@sample ${FREERADIUS_ETC}/mods-config/sql/moonshot-targeted-ids/sqlite/
+share/examples/freeradius/mods-config/sql/moonshot-targeted-ids/sqlite/queries.conf
+@sample ${FREERADIUS_ETC}/mods-config/sql/moonshot-targeted-ids/sqlite/queries.conf
+share/examples/freeradius/mods-config/sql/moonshot-targeted-ids/sqlite/schema.sql
+@sample ${FREERADIUS_ETC}/mods-config/sql/moonshot-targeted-ids/sqlite/schema.sql
 @comment share/examples/freeradius/mods-config/unbound/
 @comment share/examples/freeradius/mods-config/unbound/default.conf
 share/examples/freeradius/mods-enabled/
@@ -751,6 +761,7 @@ share/freeradius/dictionary.compat
 share/freeradius/dictionary.compatible
 share/freeradius/dictionary.cosine
 share/freeradius/dictionary.dante
+share/freeradius/dictionary.dellemc
 share/freeradius/dictionary.dhcp
 share/freeradius/dictionary.digium
 share/freeradius/dictionary.dlink

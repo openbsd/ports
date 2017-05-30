@@ -1,10 +1,11 @@
-$OpenBSD: patch-src_main_detail_c,v 1.4 2017/03/08 17:23:25 sthen Exp $
+$OpenBSD: patch-src_main_detail_c,v 1.5 2017/05/30 13:12:30 sthen Exp $
 
 Cope with 32-bit arch with 64-bit time variables.
 
---- src/main/detail.c.orig	Mon Mar  6 13:58:04 2017
-+++ src/main/detail.c	Wed Mar  8 16:52:04 2017
-@@ -783,7 +783,7 @@ open_file:
+Index: src/main/detail.c
+--- src/main/detail.c.orig
++++ src/main/detail.c
+@@ -784,7 +784,7 @@ open_file:
  	 */
   alloc_packet:
  	if (data->done_entry) {
