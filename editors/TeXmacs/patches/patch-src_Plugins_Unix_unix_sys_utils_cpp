@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_Plugins_Unix_unix_sys_utils_cpp,v 1.1 2017/05/30 22:06:39 espie Exp $
+
+Index: src/Plugins/Unix/unix_sys_utils.cpp
+--- src/Plugins/Unix/unix_sys_utils.cpp.orig
++++ src/Plugins/Unix/unix_sys_utils.cpp
+@@ -20,6 +20,7 @@
+ 
+ // for thread safe strings
+ #include <string>
++#include <pthread.h>
+  
+ int
+ unix_system (string s) {

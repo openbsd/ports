@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_Plugins_Qt_QTMSockets_cpp,v 1.1 2017/05/30 22:06:39 espie Exp $
+
+Index: src/Plugins/Qt/QTMSockets.cpp
+--- src/Plugins/Qt/QTMSockets.cpp.orig
++++ src/Plugins/Qt/QTMSockets.cpp
+@@ -19,6 +19,7 @@
+ #include <unistd.h>
+ #include <sys/types.h>
+ #include <sys/socket.h>
++#include <sys/select.h>
+ #include <netinet/in.h>
+ #include <netdb.h>
+ #include <stdint.h>

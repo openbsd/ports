@@ -1,6 +1,7 @@
-$OpenBSD: patch-configure_in,v 1.1.1.1 2016/04/05 23:30:54 jca Exp $
---- configure.in.orig	Thu Dec  3 16:29:48 2015
-+++ configure.in	Mon Apr  4 12:37:17 2016
+$OpenBSD: patch-configure_in,v 1.2 2017/05/30 22:06:39 espie Exp $
+Index: configure.in
+--- configure.in.orig
++++ configure.in
 @@ -16,23 +16,6 @@ AC_CONFIG_HEADERS([src/System/config.h:src/System/conf
  AC_CANONICAL_HOST
  
@@ -45,7 +46,16 @@ $OpenBSD: patch-configure_in,v 1.1.1.1 2016/04/05 23:30:54 jca Exp $
     done
  #        done
  # guile-config doesn't return the need of libnintl
-@@ -1097,7 +1082,8 @@ no) unset QT_PLUGINS_LIST
+@@ -888,6 +873,8 @@ case "$GXX_VERSION" in
+      ;;
+ esac
+ 
++# XXX remove shitz with clang
++CONFIG_BSHARED=""
+ #--------------------------------------------------------------------
+ # Check for expat and xcb libraries which exist only on certain OS
+ #--------------------------------------------------------------------
+@@ -1097,7 +1084,8 @@ no) unset QT_PLUGINS_LIST
  esac
  
  [[[ $enable_qt == no ]]] &&  unset QT_PLUGINS_LIST
@@ -55,3 +65,12 @@ $OpenBSD: patch-configure_in,v 1.1.1.1 2016/04/05 23:30:54 jca Exp $
  do [[ -d $QT_PLUGINS_PATH/$p ]] || AC_MSG_ERROR(QT plugins not found!)
  done
      
+@@ -1284,7 +1272,7 @@ case "$GXX_VERSION" in
+     CONFIG_CXXWARNING="";
+   ;;
+   *)
+-    CONFIG_CXXWARNING="-Wall -Wno-return-type"
++    CONFIG_CXXWARNING="-Wall -Wno-return-type -Wno-invalid-source-encoding"
+   ;;
+ esac
+ 
