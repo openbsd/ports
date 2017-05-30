@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2017/05/24 08:30:20 espie Exp $
+# $OpenBSD: Makefile,v 1.65 2017/05/30 07:54:36 espie Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS} ${CLANG_ARCHS}
 
@@ -73,10 +73,10 @@ CXXFLAGS +=	-Wno-c++11-extensions -Wno-keyword-macro \
 		-Wno-expansion-to-defined -Wno-unused-local-typedef
 
 CFLAGS +=	-Wno-string-plus-int
-COMPILER =	clang
+TOOLSET =	clang
 CONFIG =	${FILESDIR}/user.hpp
 .else
-COMPILER =	gcc
+TOOLSET =	gcc
 CONFIG =	user.hpp
 .endif
 
@@ -100,7 +100,7 @@ BOOTSTRAP=	--with-bjam=${WRKSRC}/bjam \
 		--with-python=${MODPY_BIN} \
 		--with-python-root=${LOCALBASE} \
 		--with-python-version=${MODPY_VERSION} \
-		--with-toolset=${COMPILER} \
+		--with-toolset=${TOOLSET} \
 		--without-icu \
 		--without-libraries=context,coroutine
 
@@ -117,7 +117,7 @@ SUBST_VARS+=	SO_VERSION
 
 do-configure:
 	echo "using python : ${MODPY_DEFAULT_VERSION_3} : ${LOCALBASE}/bin/python${MODPY_DEFAULT_VERSION_3} : ${LOCALBASE}/include/python${MODPY_DEFAULT_VERSION_3}$$(python${MODPY_DEFAULT_VERSION_3}-config --abiflags) ;" >> ${WRKSRC}/tools/build/user-config.jam
-	echo "using ${COMPILER} : : ${CXX} ;" >>${WRKSRC}/tools/build/user-config.jam
+	echo "using ${TOOLSET} : : ${CXX} ;" >>${WRKSRC}/tools/build/user-config.jam
 	@${SUBST_CMD} ${WRKSRC}/Jamroot
 	@cd ${WRKSRC}/libs/config && \
 	    ${SETENV} ${CONFIGURE_ENV} /bin/sh ./configure && \
