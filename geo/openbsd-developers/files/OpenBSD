@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.141 2017/04/11 16:31:18 rsadowski Exp $
+# $OpenBSD: OpenBSD,v 1.142 2017/05/30 10:47:25 anton Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -157,6 +157,7 @@
 57.698		11.967		"jakob"		# Jakob Schlyter
 57.717		11.967		"niklas"	# Niklas Hallqvist
 57.98668	15.634456	"halex"		# Alexander Hall
+59.33		18.07		"anton"		# Anton Lindqvist
 59.33		18.08		"art"		# Artur Grabowski
 59.43		17.81		"maja"		# Mats O Jansson
 
