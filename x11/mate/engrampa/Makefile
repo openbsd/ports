@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2017/05/30 21:35:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2017/05/30 21:44:57 ajacoutot Exp $
 
 USE_WXNEEDED=	Yes
 
@@ -8,7 +8,7 @@ CATEGORIES=	archivers
 
 MATE_PROJECT=	engrampa
 MATE_VERSION=	1.18.2
-REVISION=	0
+REVISION=	1
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

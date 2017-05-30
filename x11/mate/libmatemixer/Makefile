@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2017/05/30 21:32:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2017/05/30 21:44:57 ajacoutot Exp $
 
 COMMENT=		mixer library for MATE desktop
 
 MATE_PROJECT=		libmatemixer
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  matemixer                 0.0 # 0.0
 

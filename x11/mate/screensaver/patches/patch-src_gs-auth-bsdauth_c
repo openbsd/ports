@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_gs-auth-bsdauth_c,v 1.1.1.1 2017/04/30 19:01:28 robert Exp $
+$OpenBSD: patch-src_gs-auth-bsdauth_c,v 1.2 2017/05/30 21:44:57 ajacoutot Exp $
 --- src/gs-auth-bsdauth.c.orig	Sun Feb 26 15:04:20 2017
 +++ src/gs-auth-bsdauth.c	Sun Feb 26 15:04:20 2017
 @@ -0,0 +1,102 @@
-+/* $OpenBSD: patch-src_gs-auth-bsdauth_c,v 1.1.1.1 2017/04/30 19:01:28 robert Exp $
++/* $OpenBSD: patch-src_gs-auth-bsdauth_c,v 1.2 2017/05/30 21:44:57 ajacoutot Exp $
 + * gs-auth-bsdauth.c --- verifying typed passwords with bsd_auth(3)
 + *
 + * Copyright (c) 1993-1998 Jamie Zawinski <jwz@jwz.org>
@@ -67,7 +67,7 @@ $OpenBSD: patch-src_gs-auth-bsdauth_c,v 1.1.1.1 2017/04/30 19:01:28 robert Exp $
 +
 +gboolean
 +gs_auth_verify_user (const char       *username,
-+                     const char       *display, 
++                     const char       *display,
 +                     GSAuthMessageFunc func,
 +                     gpointer          data,
 +                     GError          **error)

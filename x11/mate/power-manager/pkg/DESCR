@@ -1,4 +1,3 @@
-MATE Power Manager is a session daemon for the MATEE desktop
-environment that makes it easy to manage your laptop or desktop system.
-It listens for system events and responds with user-configurable
-actions.
+MATE Power Manager is a session daemon for the MATEE desktop environment that
+makes it easy to manage your laptop or desktop system. It listens for system
+events and responds with user-configurable actions.

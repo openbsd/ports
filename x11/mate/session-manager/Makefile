@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/04/30 19:01:25 robert Exp $
+# $OpenBSD: Makefile,v 1.2 2017/05/30 21:44:57 ajacoutot Exp $
 
 COMMENT=		MATE session manager
 
 MATE_PROJECT=		mate-session-manager
+REVISION=		0
 
 CATEGORIES=		x11
 
