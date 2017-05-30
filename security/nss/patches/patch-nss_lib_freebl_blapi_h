@@ -1,7 +1,6 @@
-$OpenBSD: patch-nss_lib_freebl_blapi_h,v 1.4 2016/10/06 12:10:22 landry Exp $
+$OpenBSD: patch-nss_lib_freebl_blapi_h,v 1.5 2017/05/30 18:57:01 ajacoutot Exp $
 
-From firefox in pkgsrc:
-SHA1_Update conflicts with openssl which may be dynamically loaded
+Prevent clashing symbol with libcrypto (bad ld.so(1)!).
 
 --- nss/lib/freebl/blapi.h.orig	Mon Sep 26 08:00:51 2016
 +++ nss/lib/freebl/blapi.h	Mon Oct  3 10:11:50 2016
