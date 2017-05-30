@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.12 2016/06/30 07:19:23 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.13 2017/05/30 08:08:15 espie Exp $
 
 COMMENT ?=	real-time, concurrent and distributed functional language
 
@@ -45,6 +45,11 @@ ${_n}=${_v}
 ${_n:S/_VSN//}=${_n:S/_VSN//:L}-${_v}
 SUBST_VARS+=${_n:S/_VSN//}
 .endfor
+
+# XXX COMPILER var clashes with the clang selection mechanism
+# fortunately erlang doesn't care, so just set CHOSEN_COMPILER to something
+# to avoid the mechanism entirely
+CHOSEN_COMPILER = irrelevant
 
 SUBST_VARS+=SYSTEM_VSN MAJ_V
 
