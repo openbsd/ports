@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.17 2017/04/28 16:58:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2017/05/30 14:13:33 espie Exp $
 
-BROKEN=			needs thread local storage
+# need some kind of tls
+ONLY_FOR_ARCHS =	${CLANG_ARCHS}
 
 COMMENT=		framework for creating extensible applications
 
@@ -31,7 +32,7 @@ BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
 			devel/libtool
 
 pre-configure:
-	perl -pi -e 's,^prefix=.*,prefix=\@prefix\@,g' \
+	perl -pi.beforesubst -e 's,^prefix=.*,prefix=\@prefix\@,g' \
 		${WRKSRC}/Mono.Addins/mono-addins.pc.in \
 		${WRKSRC}/Mono.Addins.Gui/mono-addins-gui.pc.in \
 		${WRKSRC}/Mono.Addins.MSBuild/mono-addins-msbuild.pc.in \
