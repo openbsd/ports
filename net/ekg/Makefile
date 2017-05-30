@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2015/12/19 20:47:03 bentley Exp $
+# $OpenBSD: Makefile,v 1.9 2017/05/30 15:29:39 fcambus Exp $
 
 COMMENT=	Gadu-Gadu IM protocol client
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	c crypto gadu ncurses pthread ssl z
 
-MASTER_SITES=	${HOMEPAGE}
+MASTER_SITES=	${HOMEPAGE}archive/
 
 LIB_DEPENDS=	net/libgadu
 
