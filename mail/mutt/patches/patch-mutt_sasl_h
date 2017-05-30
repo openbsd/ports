@@ -1,9 +1,10 @@
-$OpenBSD: patch-mutt_sasl_h,v 1.2 2016/04/04 14:55:36 sthen Exp $
+$OpenBSD: patch-mutt_sasl_h,v 1.3 2017/05/30 21:21:47 sthen Exp $
 
-Pledge
+Pledge.
 
---- mutt_sasl.h.orig	Sun Jan 17 05:20:10 2016
-+++ mutt_sasl.h	Sun Jan 17 05:19:32 2016
+Index: mutt_sasl.h
+--- mutt_sasl.h.orig
++++ mutt_sasl.h
 @@ -25,6 +25,7 @@
  
  #include "mutt_socket.h"
