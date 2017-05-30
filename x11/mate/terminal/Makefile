@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2017/05/30 21:44:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2017/05/30 21:52:18 ajacoutot Exp $
 
-COMMENT=	MATE terminal
+COMMENT=		MATE terminal
 
-MATE_PROJECT=	mate-terminal
-MATE_VERSION=	1.18.1
-REVISION=	0
+MATE_PROJECT=		mate-terminal
+MATE_VERSION=		1.18.1
+REVISION=		0
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -19,14 +19,14 @@ WANTLIB += gdk-3 gdk_pixbuf-2.0 gmp gnutls graphite2 gtk-3 harfbuzz
 WANTLIB += hogweed idn2 nettle p11-kit pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 png tasn1 unistring vte-2.91 pcre2-8
 
-MODULES=	devel/dconf \
-		x11/gnome
+MODULES=		devel/dconf \
+			x11/gnome
 
-BUILD_DEPENDS=	devel/gsettings-desktop-schemas
-RUN_DEPENDS=	devel/gsettings-desktop-schemas
+BUILD_DEPENDS=		devel/gsettings-desktop-schemas
+RUN_DEPENDS=		devel/gsettings-desktop-schemas
 
-LIB_DEPENDS=	devel/vte3
+LIB_DEPENDS=		devel/vte3
 
-MODGNOME_TOOLS=	desktop-file-utils
+MODGNOME_TOOLS=		desktop-file-utils
 
 .include <bsd.port.mk>

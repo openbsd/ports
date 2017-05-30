@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2017/05/30 21:44:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2017/05/30 21:52:18 ajacoutot Exp $
 
-COMMENT=	media tools for the MATE desktop
+COMMENT=		media tools for the MATE desktop
 
-MATE_PROJECT=	mate-media
-REVISION=	0
+MATE_PROJECT=		mate-media
+REVISION=		0
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -20,16 +20,16 @@ WANTLIB += pangocairo-1.0 pangoft2-1.0 vorbis vorbisfile
 WANTLIB += dconf lzma mate-desktop-2 matemixer xml2
 WANTLIB += X11-xcb startup-notification-1 xcb-util
 
-MODULES=	devel/dconf \
-		x11/gnome
+MODULES=		devel/dconf \
+			x11/gnome
 
-LIB_DEPENDS=	audio/libcanberra,-gtk3 \
-		x11/mate/desktop \
-		x11/mate/libmatemixer
+LIB_DEPENDS=		audio/libcanberra,-gtk3 \
+			x11/mate/desktop \
+			x11/mate/libmatemixer
 
-MODGNOME_TOOLS=	desktop-file-utils gtk-update-icon-cache
+MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache
 
-FAKE_FLAGS=	desktopdir=${PREFIX}/share/examples/mate-media/xdg/autostart \
-		sysconfdir=${PREFIX}/share/examples/mate-media
+FAKE_FLAGS=		desktopdir=${PREFIX}/share/examples/mate-media/xdg/autostart \
+			sysconfdir=${PREFIX}/share/examples/mate-media
 
 .include <bsd.port.mk>

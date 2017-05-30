@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2017/05/30 21:32:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2017/05/30 21:52:17 ajacoutot Exp $
 
-COMMENT=	extensions for Caja, the MATE file manager
+COMMENT=		extensions for Caja, the MATE file manager
 
-MATE_PROJECT=	caja-extensions
-MATE_VERSION=	1.18.1
-REVISION=	0
+MATE_PROJECT=		caja-extensions
+MATE_VERSION=		1.18.1
+REVISION=		0
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -21,12 +21,12 @@ WANTLIB += graphite2 gssdp-1.0 gtk-3 gupnp-1.0 harfbuzz lzma
 WANTLIB += mate-desktop-2 pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += png soup-2.4 startup-notification-1 xml2
 
-MODULES=	devel/dconf \
-		x11/gnome
+MODULES=		devel/dconf \
+			x11/gnome
 
-LIB_DEPENDS=	net/gupnp/core \
-		x11/dbus-glib \
-		x11/mate/desktop \
-		x11/mate/caja
+LIB_DEPENDS=		net/gupnp/core \
+			x11/dbus-glib \
+			x11/mate/desktop \
+			x11/mate/caja
 
 .include <bsd.port.mk>

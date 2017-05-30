@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.5 2017/05/30 21:44:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2017/05/30 21:52:18 ajacoutot Exp $
 
-USE_WXNEEDED=	Yes
+USE_WXNEEDED=		Yes
 
-COMMENT=	file archiver for the MATE desktop
+COMMENT=		file archiver for the MATE desktop
 
-CATEGORIES=	archivers
+CATEGORIES=		archivers
 
-MATE_PROJECT=	engrampa
-MATE_VERSION=	1.18.2
-REVISION=	1
+MATE_PROJECT=		engrampa
+MATE_VERSION=		1.18.2
+REVISION=		1
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -22,17 +22,17 @@ WANTLIB += atk-1.0 atk-bridge-2.0 atspi cairo-gobject cairo
 WANTLIB += caja-extension dbus-1 gdk-3 graphite2 gtk-3 harfbuzz
 WANTLIB += json-glib-1.0 pango-1.0 pangocairo-1.0 pangoft2-1.0
 
-MODULES=	devel/dconf \
-		x11/gnome
+MODULES=		devel/dconf \
+			x11/gnome
 
-RUN_DEPENDS=	archivers/gtar \
-		archivers/unzip
+RUN_DEPENDS=		archivers/gtar \
+			archivers/unzip
 
-LIB_DEPENDS=	devel/json-glib \
-		x11/mate/caja
+LIB_DEPENDS=		devel/json-glib \
+			x11/mate/caja
 
-CONFIGURE_ARGS=	--disable-packagekit
+CONFIGURE_ARGS=		--disable-packagekit
 
-MODGNOME_TOOLS=	desktop-file-utils gtk-update-icon-cache
+MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache
 
 .include <bsd.port.mk>

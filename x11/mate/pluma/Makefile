@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.5 2017/05/30 21:44:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2017/05/30 21:52:18 ajacoutot Exp $
 
-USE_WXNEEDED=	Yes
+USE_WXNEEDED=		Yes
 
-COMMENT=	powerful text editor for the MATE desktop
+COMMENT=		powerful text editor for the MATE desktop
 
-CATEGORIES=	textproc
+CATEGORIES=		textproc
 
-MATE_PROJECT=	pluma
-MATE_VERSION=	1.18.2
-REVISION=	1
+MATE_PROJECT=		pluma
+MATE_VERSION=		1.18.2
+REVISION=		1
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -23,15 +23,15 @@ WANTLIB += enchant gdk-3 gdk_pixbuf-2.0 girepository-1.0 graphite2
 WANTLIB += gtk-3 gtksourceview-3.0 harfbuzz lzma pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 peas-1.0 peas-gtk-1.0 png xml2
 
-MODULES=	devel/dconf \
-		x11/gnome
+MODULES=		devel/dconf \
+			x11/gnome
 
-LIB_DEPENDS=	devel/libpeas \
-		textproc/enchant \
-		x11/gtksourceview3
+LIB_DEPENDS=		devel/libpeas \
+			textproc/enchant \
+			x11/gtksourceview3
 
-MODGNOME_TOOLS=	desktop-file-utils
+MODGNOME_TOOLS=		desktop-file-utils
 
-CONFIGURE_ARGS=	--disable-tests
+CONFIGURE_ARGS=		--disable-tests
 
 .include <bsd.port.mk>

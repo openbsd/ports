@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.3 2017/05/30 21:44:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2017/05/30 21:52:17 ajacoutot Exp $
 
-USE_WXNEEDED=	Yes
+USE_WXNEEDED=		Yes
 
-COMMENT=	document viewer for the MATE desktop
+COMMENT=		document viewer for the MATE desktop
 
-CATEGORIES=	graphics
+CATEGORIES=		graphics
 
 SHARED_LIBS +=  atrildocument             3.0 # 3.0
 SHARED_LIBS +=  atrilview                 3.0 # 3.0
 
-MATE_PROJECT=	atril
-REVISION=	1
+MATE_PROJECT=		atril
+REVISION=		1
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -33,22 +33,22 @@ WANTLIB += pangocairo-1.0 pangoft2-1.0 png poppler-glib poppler secret-1
 WANTLIB += soup-2.4 spectre tasn1 tiff unistring webkit2gtk-4.0 webp xml2
 WANTLIB += z xslt
 
-MODULES=	devel/dconf \
-		x11/gnome
+MODULES=		devel/dconf \
+			x11/gnome
 
-LIB_DEPENDS=	databases/sqlite3 \
-		multimedia/gstreamer1/plugins-base \
-		print/poppler \
-		print/libspectre \
-		graphics/djvulibre \
-		graphics/libgxps \
-		textproc/enchant \
-		textproc/icu4c \
-		www/webkitgtk4 \
-		x11/mate/caja
-BUILD_DEPENDS=	devel/gsettings-desktop-schemas
-RUN_DEPENDS=	devel/gsettings-desktop-schemas
+LIB_DEPENDS=		databases/sqlite3 \
+			multimedia/gstreamer1/plugins-base \
+			print/poppler \
+			print/libspectre \
+			graphics/djvulibre \
+			graphics/libgxps \
+			textproc/enchant \
+			textproc/icu4c \
+			www/webkitgtk4 \
+			x11/mate/caja
+BUILD_DEPENDS=		devel/gsettings-desktop-schemas
+RUN_DEPENDS=		devel/gsettings-desktop-schemas
 
-MODGNOME_TOOLS=	desktop-file-utils gtk-update-icon-cache
+MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache
 
 .include <bsd.port.mk>
