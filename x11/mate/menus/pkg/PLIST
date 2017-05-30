@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/04/30 19:01:25 robert Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/05/30 21:22:15 ajacoutot Exp $
 include/mate-menus/
 include/mate-menus/matemenu-tree.h
 lib/girepository-1.0/
@@ -7,8 +7,8 @@ lib/libmate-menu.a
 lib/libmate-menu.la
 @lib lib/libmate-menu.so.${LIBmate-menu_VERSION}
 lib/pkgconfig/libmate-menu.pc
-lib/python${MODPY_VERSION}/site-packages/matemenu.a
-lib/python${MODPY_VERSION}/site-packages/matemenu.la
+@comment lib/python${MODPY_VERSION}/site-packages/matemenu.a
+@comment lib/python${MODPY_VERSION}/site-packages/matemenu.la
 lib/python${MODPY_VERSION}/site-packages/matemenu.so
 share/examples/mate-menus/
 share/examples/mate-menus/xdg/
