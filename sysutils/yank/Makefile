@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/03/11 17:59:31 fcambus Exp $
+# $OpenBSD: Makefile,v 1.2 2017/05/30 10:26:07 anton Exp $
 
 COMMENT =	yank terminal output to clipboard
 
 GH_ACCOUNT =	mptre
 GH_PROJECT =	yank
 GH_TAGNAME =	v0.8.2
+REVISION =	0
 
 CATEGORIES =	sysutils
 
-MAINTAINER =	Anton Lindqvist <anton.lindqvist@gmail.com>
+MAINTAINER =	Anton Lindqvist <anton@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes

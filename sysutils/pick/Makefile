@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.2 2017/05/02 20:17:31 fcambus Exp $
+# $OpenBSD: Makefile,v 1.3 2017/05/30 10:26:07 anton Exp $
 
 COMMENT =	fuzzy select anything
 
 V =		1.6.1
 DISTNAME =	pick-${V}
+REVISION =	0
 
 CATEGORIES =	sysutils
 
 HOMEPAGE =	https://github.com/calleerlandsson/pick
 
-MAINTAINER =	Anton Lindqvist <anton.lindqvist@gmail.com>
+MAINTAINER =	Anton Lindqvist <anton@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
