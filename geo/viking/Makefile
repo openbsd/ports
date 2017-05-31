@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2017/05/27 04:54:31 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2017/05/31 08:08:16 espie Exp $
 
 COMMENT =	GPS track manager
 
@@ -24,8 +24,8 @@ EXTRACT_SUFX = .tar.bz2
 
 MODULES =	devel/gettext textproc/intltool x11/gnome
 
-WANT_CXX =	base gcc
-MODGCC4_ARCHS =		amd64 i386 powerpc sparc64
+COMPILER =	gcc
+MODGCC4_ARCHS =	amd64 i386 powerpc sparc64
 
 CONFIGURE_STYLE =	gnu
 # to ensure X11 libs are found when checking for -lmapnik

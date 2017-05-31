@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2017/05/11 01:26:37 danj Exp $
+# $OpenBSD: Makefile,v 1.10 2017/05/31 08:08:17 espie Exp $
 # Some of this comes from www/firefox-esr as apropos, since Tor
 # browser is a fork of ESR.  It is a good idea to look at that
 # Makefile when editing this one (ESR versions not always the same).
@@ -39,9 +39,8 @@ MOZILLA_AUTOCONF_DIRS +=	. js/src
 MODPY_RUNDEP =		No
 
 # necessary glue to build with the correct compiler after fx 17
-MODULES +=		lang/clang
+COMPILER =		clang
 MODCLANG_ARCHS =	amd64 i386
-MODCLANG_LANGS =	c c++
 
 # Regression tests are too hard to adapt to run here
 NO_TEST =		Yes

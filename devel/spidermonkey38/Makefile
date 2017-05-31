@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2017/05/28 18:49:43 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2017/05/31 08:08:15 espie Exp $
 
 # jsapi-tests crashes in js::MarkRangeConservatively() on hppa (SIGSEGV in js/src/jsgc.cpp:1142)
 # jsapi-tests crashes in js::Bindings::switchToScriptStorage() on alpha (SIGBUS in jsutil.h:235)
@@ -32,7 +32,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 MODULES =		lang/python
 
 # sync with games/0ad/base x11/gnome/builder x11/gnome/shell x11/gnome/gjs
-WANT_CXX =		base gcc
+COMPILER =		gcc
 
 WANTLIB += c m pthread readline nspr4 ncurses plc4 plds4 z
 

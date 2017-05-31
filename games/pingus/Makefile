@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2017/05/26 18:09:15 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2017/05/31 08:08:15 espie Exp $
 
 COMMENT=	free Lemmings-like game
 
@@ -19,7 +19,7 @@ WANTLIB += SDL_mixer>=3 SDL_image>=2 boost_signals ${LIBECXX}
 
 MODULES=	devel/scons
 
-WANT_CXX =	base gcc
+COMPILER =	gcc
 
 LIB_DEPENDS=	converters/libiconv \
 		devel/sdl-mixer \

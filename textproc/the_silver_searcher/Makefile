@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2017/05/28 18:56:30 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2017/05/31 08:08:17 espie Exp $
 
 COMMENT =	code searching tool, with a focus on speed (ag)
 
@@ -15,8 +15,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB += c lzma pcre pthread z
 
 # TLS
-WANT_CXX =	base gcc
-MODGCC4_LANGS =	c
+COMPILER =	gcc
+COMPILER_LANGS =	c
 
 MASTER_SITES =	http://geoff.greer.fm/ag/releases/
 
@@ -29,6 +29,6 @@ CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include"
 FAKE_FLAGS =		bashcompdir=${PREFIX}/share/bash-completion/completions
 
 # not included in distfile, only in repository. requires cram.
-NO_TEST =	YES
+NO_TEST =	Yes
 
 .include <bsd.port.mk>

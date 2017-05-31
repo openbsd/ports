@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.318 2017/05/22 10:25:02 espie Exp $
+# $OpenBSD: Makefile,v 1.319 2017/05/31 08:08:17 espie Exp $
 
 COMMENT =	Mozilla web browser
 
@@ -26,7 +26,7 @@ MODULES =	www/mozilla devel/gettext lang/python
 
 MODPY_RUNDEP =	No
 
-WANT_CXX =		base clang
+COMPILER =	clang
 MODCLANG_ARCHS =	amd64 i386
 
 # firefox >= 44 doesnt build with base libevent

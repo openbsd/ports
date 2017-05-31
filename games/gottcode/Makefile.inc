@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.10 2017/04/10 11:46:18 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.11 2017/05/31 08:08:15 espie Exp $
 
 CATEGORIES =	games
 PKGNAME ?=	${DISTNAME:S/-src//}
@@ -16,7 +16,6 @@ QT5 ?=		No
 .if ${QT5} == "Yes"
 MODULES +=	x11/qt5
 MODGCC4_ARCHS =	i386 amd64 powerpc sparc64
-MODGCC4_LANGS =	c++
 WANTLIB +=	GL Qt5Core Qt5Gui Qt5Widgets
 .else
 MODULES +=	x11/qt4

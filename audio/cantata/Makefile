@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2017/05/28 18:49:43 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2017/05/31 08:08:15 espie Exp $
 
 COMMENT =	Qt-based MPD client
 
@@ -16,9 +16,6 @@ PERMIT_PACKAGE_CDROM =	Yes
 MODULES =	devel/gettext \
 		devel/cmake \
 		x11/qt5
-
-# because qt5
-WANT_CXX =	base gcc
 
 RUN_DEPENDS +=	devel/desktop-file-utils
 RUN_DEPENDS +=	x11/gtk+3,-guic

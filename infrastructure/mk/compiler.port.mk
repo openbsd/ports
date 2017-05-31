@@ -1,6 +1,6 @@
-# $OpenBSD: modules.port.mk,v 1.11 2017/05/31 08:08:16 espie Exp $
+# $OpenBSD: compiler.port.mk,v 1.1 2017/05/31 08:08:16 espie Exp $
 #
-#  Copyright (c) 2001 Marc Espie
+#  Copyright (c) 2017 Marc Espie
 # 
 #  Redistribution and use in source and binary forms, with or without
 #  modification, are permitted provided that the following conditions
@@ -23,45 +23,47 @@
 #  OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
 #  SUCH DAMAGE.
 # 
-# Recursive module support
-#
 
-.undef _MODULES_KEEP_GOING
-
-_COMPILER=
-.if defined(COMPILER) && !defined(CHOSEN_COMPILER)
-COMPILER_LANGS ?= c c++
-ONLY_FOR_ARCHS ?= ${CXX11_ARCHS}
-.  if ${PROPERTIES:Mclang}
-CHOSEN_COMPILER = base
-.  else
-_COMPILER=compiler
-.  endif
-.endif
-
-.for _m in ${_COMPILER} ${MODULES:L}
-.  if "${_m:M*/*}" != ""
-.    for _d in ${PORTSDIR_PATH:S/:/ /g}
-.      if empty(_MODULES_DONE:M${_m}) && exists(${_d}/${_m}/${_m:T}.port.mk)
-.        include "${_d}/${_m}/${_m:T}.port.mk"
-_MODULES_DONE += ${_m}
-_MODULES_KEEP_GOING = Yep
+.for c in ${COMPILER:L}
+.  if "$c" == "base"
+.  elif "$c" == "gcc" || "$c" == "gcc4"
+.    if !defined(CHOSEN_COMPILER)
+MODGCC4_ARCHS ?=	*
+_MODGCC4_ARCH_USES = 	No
+.      if ${MODGCC4_ARCHS} != ""
+.        for _i in ${MODGCC4_ARCHS}
+.          if !empty(MACHINE_ARCH:M${_i})
+_MODGCC4_ARCH_USES = 	Yes
+.          endif
+.        endfor
 .      endif
-.    endfor
-.  endif
-.  if empty(_MODULES_DONE:M${_m})
-.    if exists(${PORTSDIR}/infrastructure/mk/${_m}.port.mk)
-.      include "${PORTSDIR}/infrastructure/mk/${_m}.port.mk"
-_MODULES_DONE += ${_m}
-_MODULES_KEEP_GOING = Yep
-.    else
-ERRORS += "Fatal: Missing support for module ${_m}."
+.      if ${_MODGCC4_ARCH_USES:L} == "yes"
+MODULES +=		gcc4
+MODGCC4_LANGS +=	${COMPILER_LANGS}
+CHOSEN_COMPILER = 	gcc
+.      endif
 .    endif
+.  elif "$c" == "clang"
+.    if !defined(CHOSEN_COMPILER)
+MODCLANG_ARCHS ?=	*
+_MODCLANG_ARCH_USES = 	No
+.      if ${MODCLANG_ARCHS} != ""
+.        for _i in ${MODCLANG_ARCHS}
+.          if !empty(MACHINE_ARCH:M${_i})
+_MODCLANG_ARCH_USES = 	Yes
+.          endif
+.        endfor
+.      endif
+.      if ${_MODCLANG_ARCH_USES:L} == "yes"
+MODULES +=		lang/clang
+MODCLANG_LANGS +=	${COMPILER_LANGS}
+CHOSEN_COMPILER = 	clang
+.      endif
+.    endif
+.  else
+ERRORS += "Fatal: unknown keyword $c in COMPILER"
+CHOSEN_COMPILER = error
 .  endif
 .endfor
-
-
-# Tail recursion
-.if defined(_MODULES_KEEP_GOING)
-.  include "${PORTSDIR}/infrastructure/mk/modules.port.mk"
-.endif
+# okay we went through, we didn't find anything
+CHOSEN_COMPILER ?= old

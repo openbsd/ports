@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2017/05/25 09:02:05 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2017/05/31 08:08:15 espie Exp $
 
 # XXX check if still needed at next update
 CXXFLAGS +=		-std=c++11
@@ -40,7 +40,7 @@ MODULES =		devel/gettext \
 			devel/scons
 
 # c++11
-WANT_CXX =	base gcc
+COMPILER =	gcc
 CXXFLAGS +=	-Wno-c++11-narrowing
 
 # XXX so that it gets in *after* -Wall

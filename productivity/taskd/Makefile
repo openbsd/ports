@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2017/05/27 05:04:07 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2017/05/31 08:08:17 espie Exp $
 
 COMMENT =	lightweight server providing access to task data
 
@@ -15,9 +15,9 @@ MASTER_SITES =	${HOMEPAGE}/download/
 # MIT
 PERMIT_PACKAGE_CDROM =		Yes
 
-MODULES =		devel/cmake
+MODULES =	devel/cmake
 
-WANT_CXX =		base gcc
+COMPILER =	gcc
 
 WANTLIB += c gnutls m pthread ${LIBECXX}
 

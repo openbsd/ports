@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2017/05/27 08:18:46 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2017/05/31 08:08:16 espie Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386
 
@@ -20,7 +20,7 @@ WANTLIB += intl m ogg openal physfs png pthread theora vorbis
 WANTLIB += vorbisfile z ${LIBECXX}
 
 MODULES=	x11/qt5
-WANT_CXX =	base gcc
+COMPILER =	gcc
 
 LIB_DEPENDS=	audio/libogg \
 		audio/libvorbis \

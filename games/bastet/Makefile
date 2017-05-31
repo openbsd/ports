@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2017/05/24 15:29:55 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2017/05/31 08:08:15 espie Exp $
 
 # Block.s: Assembler messages:
 # Block.s:73: Error: junk `(%rip)' after expression
@@ -24,7 +24,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =	boost_program_options c ncurses m ${LIBECXX}
 
-WANT_CXX =	base clang
+COMPILER =	clang
 
 LIB_DEPENDS =	devel/boost
 

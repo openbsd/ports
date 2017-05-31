@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2017/05/10 13:29:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2017/05/31 08:08:17 espie Exp $
 
 COMMENT =		suite of solitaire card games
 
@@ -32,10 +32,11 @@ MODGNOME_TOOLS =	desktop-file-utils gtk-update-icon-cache yelp
 MODGNOME_CPPFLAGS =	-I${LOCALBASE}/include/guile/2.0
 
 MODGCONF2_SCHEMAS_DIR =	aisleriot
+CFLAGS += -Wno-strict-prototypes
 
 # need to matche lang/guile2
-MODULES +=		gcc4
-MODGCC4_ARCHS =		*
+COMPILER =		gcc
+COMPILER_LANGS =	c
 
 LIB_DEPENDS =		audio/libcanberra,-gtk3 \
 			lang/guile2

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2017/05/27 04:56:48 espie Exp $
+# $OpenBSD: Makefile,v 1.36 2017/05/31 08:08:16 espie Exp $
 
 USE_WXNEEDED =		Yes
 
@@ -37,8 +37,8 @@ EXTRACT_SUFX =		.tgz
 
 # GCC4 is only needed by the TLS flavor. "places" and "futures" only work
 # correctly on amd64 for this version.
-WANT_CXX =		base gcc
-MODGCC4_LANGS =		c
+COMPILER =		gcc
+COMPILER_LANGS =	c
 MODGCC4_ARCHS =		arm amd64
 
 LIB_DEPENDS =		converters/libiconv \

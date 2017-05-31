@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2017/05/22 13:52:55 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2017/05/31 08:08:16 espie Exp $
 
 # http://rawpedia.rawtherapee.com/The_Floating_Point_Engine
 ONLY_FOR_ARCHS = 	amd64
@@ -29,7 +29,7 @@ EXTRACT_SUFX = 		.tar.xz
 MODULES =		devel/cmake
 
 # c++11
-WANT_CXX =		base gcc
+COMPILER =		gcc
 
 RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+3,-guic

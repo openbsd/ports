@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2017/05/27 04:47:41 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2017/05/31 08:08:15 espie Exp $
 
 COMMENT =		PC-9801 emulator
 
@@ -23,7 +23,7 @@ EXTRACT_SUFX =		.tar.bz2
 
 MODULES =		devel/gettext 
 
-WANT_CXX =		base gcc
+COMPILER =		gcc
 
 LIB_DEPENDS =		devel/sdl2-mixer \
 			devel/libusb1 \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.82 2017/05/17 16:26:51 espie Exp $
+# $OpenBSD: Makefile,v 1.83 2017/05/31 08:08:15 espie Exp $
 
 # XXX
 # sndio: what to do with (channel) map
@@ -35,7 +35,7 @@ MASTER_SITES=		http://freedesktop.org/software/pulseaudio/releases/
 MODULES=		textproc/intltool
 
 # C++11
-WANT_CXX =		base gcc
+COMPILER =		gcc
 
 USE_GMAKE=		Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2017/05/13 17:40:26 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2017/05/31 08:08:15 espie Exp $
 
 # XXX check if still needed at next update
 CXXFLAGS +=		-std=c++11
@@ -18,7 +18,7 @@ MODULES =		devel/gettext \
 			textproc/intltool
 
 # c++11
-WANT_CXX =		base gcc
+COMPILER =		gcc
 
 USE_GMAKE =		Yes
 

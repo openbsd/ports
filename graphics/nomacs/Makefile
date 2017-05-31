@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2017/05/28 18:55:04 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2017/05/31 08:08:16 espie Exp $
 
 COMMENT =		small and fast Qt image viewer
 
@@ -24,7 +24,7 @@ WANTLIB += pthread raw tiff quazip
 MODULES =		devel/cmake \
 			x11/qt5 \
 
-WANT_CXX = 		base gcc
+COMPILER =		gcc
 
 RUN_DEPENDS =		devel/desktop-file-utils
 

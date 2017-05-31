@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2017/05/30 18:01:27 zhuk Exp $
+# $OpenBSD: Makefile,v 1.10 2017/05/31 08:08:15 espie Exp $
 
 COMMENT =		collection of C++ and CMake utility libraries
 
@@ -25,7 +25,7 @@ MAINTAINER =		Sebastian Reitenbach <sebastia@openbsd.org>
 # Apachev2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANT_CXX =		base gcc
+COMPILER =		gcc
 MODULES =		devel/cmake lang/python
 MODPY_BUILDDEP =	No
 MODPY_ADJ_FILES =	${WRKSRC}/scripts/cpplint.py

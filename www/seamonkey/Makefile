@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.201 2017/05/22 13:58:24 espie Exp $
+# $OpenBSD: Makefile,v 1.202 2017/05/31 08:08:17 espie Exp $
 
 COMMENT-main =		Mozilla application suite
 COMMENT-lightning =	Mozilla Seamonkey calendar extension
@@ -33,7 +33,8 @@ MODULES =	www/mozilla devel/gettext lang/python
 MODPY_RUNDEP =	No
 
 # necessary glue to build with the correct compiler after fx 17
-WANT_CXX =	base gcc clang
+COMPILER =		gcc clang
+
 MODGCC4_ARCHS =		powerpc sparc64 alpha
 MODCLANG_ARCHS =	amd64 i386
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2017/05/24 01:27:40 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2017/05/31 08:08:15 espie Exp $
 
 COMMENT =		historical real-time strategy game
 
@@ -36,7 +36,7 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 MODULES =		lang/python
 
 # sync with devel/spidermonkey
-WANT_CXX =		base gcc
+COMPILER =		gcc
 
 MODPY_RUNDEP =		No
 MODPY_ADJ_FILES =	../../../libraries/source/cxxtest-4.4/bin/cxxtestgen

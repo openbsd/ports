@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2017/05/27 05:09:04 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2017/05/31 08:08:18 espie Exp $
 
 COMMENT =	featherweight lemon-scented bar
 
@@ -19,8 +19,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c xcb xcb-randr xcb-xinerama
 
-WANT_CXX =		base gcc
-MODGCC4_LANGS =		c
+COMPILER =		gcc
+COMPILER_LANGS =	c
 
 MAKE_ENV =		LDFLAGS="-L${X11BASE}/lib"
 

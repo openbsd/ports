@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2017/05/13 09:49:50 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2017/05/31 08:08:15 espie Exp $
 
 COMMENT =		physics library
 
@@ -35,7 +35,7 @@ WANTLIB += m
 
 MODULES =		devel/cmake
 
-WANT_CXX =		base gcc
+COMPILER =		gcc
 BUILD_DEPENDS =		graphics/freeglut
 
 CONFIGURE_ARGS +=	-DBUILD_SHARED_LIBS=ON \

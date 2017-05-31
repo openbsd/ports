@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2017/05/27 05:09:04 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2017/05/31 08:08:18 espie Exp $
 
 BROKEN-hppa =	no atomic ops
 COMMENT =	Midnight Commander-like file manager for X
@@ -15,7 +15,7 @@ WANTLIB += fontconfig freetype m pthread pthread-stubs xcb z ${LIBECXX}
 
 MASTER_SITES =	http://www.boomerangsworld.de/cms/worker/downloads/
 
-WANT_CXX =	base gcc
+COMPILER =	gcc
 
 RUN_DEPENDS =	devel/desktop-file-utils
 

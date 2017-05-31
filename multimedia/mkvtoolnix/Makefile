@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2017/05/23 20:56:36 espie Exp $
+# $OpenBSD: Makefile,v 1.67 2017/05/31 08:08:16 espie Exp $
 
 COMMENT=	create, alter and inspect Matroska files
 
@@ -22,7 +22,7 @@ MODULES=	devel/gettext \
 
 MODRUBY_RUNDEP=	No
 
-WANT_CXX =	base gcc
+COMPILER =	gcc
 
 BUILD_DEPENDS=	devel/ruby-rake
 LIB_DEPENDS=	audio/flac \

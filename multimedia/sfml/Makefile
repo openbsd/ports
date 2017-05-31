@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2017/05/13 09:49:50 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2017/05/31 08:08:16 espie Exp $
 
 COMMENT =		simple and fast multimedia library
 
@@ -29,8 +29,7 @@ MASTER_SITES =		http://www.sfml-dev.org/download/sfml/${V}/
 
 MODULES =		devel/cmake
 
-WANT_CXX =	base gcc
-MODGCC4_LANGS =		c c++
+COMPILER =		gcc
 
 LIB_DEPENDS =		audio/openal \
 			graphics/jpeg \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2017/05/23 20:57:50 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2017/05/31 08:08:17 espie Exp $
 
 COMMENT =	software version control visualization tool
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 MASTER_SITES =	https://github.com/acaudwell/Gource/releases/download/${DISTNAME}/
 
 CONFIGURE_STYLE =	gnu noman
-WANT_CXX =		base gcc
+COMPILER =		gcc
 
 
 WANTLIB += GL GLEW GLU SDL2 SDL2_image boost_filesystem boost_system

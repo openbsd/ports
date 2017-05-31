@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2017/05/22 13:54:51 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2017/05/31 08:08:17 espie Exp $
 
 COMMENT =		command line double-entry accounting ledger
 
@@ -23,7 +23,7 @@ WANTLIB += c gmp m mpfr pthread ${LIBECXX}
 
 MODULES =		devel/cmake \
 			lang/python
-WANT_CXX =		base gcc
+COMPILER =		gcc
 
 BUILD_DEPENDS =		devel/utfcpp
 LIB_DEPENDS =		devel/boost \

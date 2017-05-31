@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2017/05/23 17:54:54 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2017/05/31 08:08:15 espie Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 
@@ -28,7 +28,7 @@ GH_PROJECT =		openmw
 GH_TAGNAME =		openmw-$V
 
 MODULES =		devel/cmake x11/qt4
-WANT_CXX =		base gcc
+COMPILER =		gcc
 BUILD_DEPENDS = 	sysutils/e2fsprogs
 LIB_DEPENDS =		audio/openal \
 			devel/bullet \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2017/05/13 09:49:50 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2017/05/31 08:08:17 espie Exp $
 
 COMMENT =	crypto and TLS for C++11
 
@@ -27,7 +27,7 @@ EXTRACT_SUFX =		.tgz
 MODULES =		lang/python
 MODPY_RUNDEP =		No
 
-WANT_CXX =		base gcc
+COMPILER =		gcc
 LIB_DEPENDS =		archivers/bzip2 \
 			archivers/xz
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2017/05/28 12:13:22 zhuk Exp $
+# $OpenBSD: Makefile,v 1.45 2017/05/31 08:08:15 espie Exp $
 
 BROKEN-hppa =	undefined reference to __sync atomic ops
 BROKEN-mips64 =	undefined reference to __sync atomic ops
@@ -50,9 +50,9 @@ CONFIGURE_ARGS =-DCMAKE_BUILD_TYPE=OpenBSD \
 
 MODULES =	devel/cmake
 
-WANT_CXX =	base clang gcc
+COMPILER =		clang gcc
 # clang fails on those architectures
-MODGCC4_ARCHS =	sparc64 powerpc
+MODGCC4_ARCHS =		sparc64 powerpc
 MODCLANG_ARCHS =	aarch64 amd64 arm i386 mips64 mips64el
 
 SEPARATE_BUILD =Yes

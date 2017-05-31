@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2017/05/27 04:54:31 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2017/05/31 08:08:16 espie Exp $
 
 COMMENT=	C++ mathematics header-only library for OpenGL software
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=	devel/cmake 
 
-WANT_CXX =	base gcc
+COMPILER = 	gcc
 
 # it's kind-of a NO_BUILD port, but doing so means you can't
 # run the tests.

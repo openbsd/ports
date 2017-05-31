@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.144 2017/05/27 05:07:48 espie Exp $
+# $OpenBSD: Makefile,v 1.145 2017/05/31 08:08:18 espie Exp $
 
 USE_WXNEEDED=		Yes
 
@@ -39,8 +39,8 @@ MODULES=		devel/dconf \
 			x11/gnome
 
 # sync with devel/spidermonkey38
-WANT_CXX =		base gcc
-MODGCC4_LANGS=		c
+COMPILER =		gcc
+COMPILER_LANGS =	c
 
 MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 

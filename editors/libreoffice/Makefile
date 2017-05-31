@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.158 2017/04/23 13:42:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.159 2017/05/31 08:08:15 espie Exp $
 
 USE_WXNEEDED=	Yes
 
@@ -165,9 +165,7 @@ BUILD_DEPENDS+=	archivers/zip \
 # and librsvg is only dlopen()ed if found
 BUILD_DEPENDS +=	x11/gnome/librsvg
 
-MODULES+=	gcc4
-MODGCC4_ARCHS=	*
-MODGCC4_LANGS=	c++
+COMPILER =	gcc
 
 MODULES+=	lang/python \
 		devel/gettext
@@ -194,7 +192,7 @@ LIB_DEPENDS-main=x11/gtk+2 \
 		textproc/redland \
 		textproc/hunspell
 
-WANTLIB-main=	estdc++ gdk-x11-2.0>=400.14 gtk-x11-2.0>=400.14 \
+WANTLIB-main=	${LIBECXX} gdk-x11-2.0>=400.14 gtk-x11-2.0>=400.14 \
 		xslt>=3 curl>=7 neon>=24 pq>=2 \
 		icuuc>=0 icui18n \
 		rdf>=0
@@ -235,7 +233,7 @@ LIB_DEPENDS-kde=	x11/kde4/libs \
 			${MODGCC4_CPPLIBDEP}
 WANTLIB-kde+=		ICE SM Xext icuuc
 WANTLIB-kde+=		GL GLEW GLU
-WANTLIB-kde+=		X11 estdc++ glib-2.0 intl m pthread
+WANTLIB-kde+=		X11 ${LIBECXX} glib-2.0 intl m pthread
 WANTLIB-kde+=		QtCore QtGui QtNetwork kdecore kdeui kfile kio
 
 .include <bsd.port.arch.mk>
@@ -250,7 +248,7 @@ RUN_DEPENDS-java=	${MODJAVA_RUN_DEPENDS} \
 			databases/db/v4,-java \
 			editors/libreoffice \
 			java/javaPathHelper
-WANTLIB-java=		c estdc++ m pthread
+WANTLIB-java=		c ${LIBECXX} m pthread
 
 USE_GMAKE=	Yes
 NO_TEST=	Yes

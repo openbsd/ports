@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2017/05/27 05:16:18 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2017/05/31 08:08:16 espie Exp $
 
 COMMENT-main =	graphical sdl rogue-like game
 COMMENT-data =	data for Tales of Maj'Eyal
@@ -39,19 +39,20 @@ RUN_DEPENDS-main =	games/tome4,-data
 LIB_DEPENDS-data =
 WANTLIB-data =
 
-# The build system hardcodes the use of the "gcc" command
-WANT_CXX =	base gcc
-MODGCC4_LANGS =	c
+COMPILER =	gcc
+COMPILER_LANGS =	c
 
-NO_TEST =	YES
 
-USE_GMAKE =	YES
+NO_TEST =	Yes
+
+USE_GMAKE =	Yes
 MAKE_FLAGS =	verbose=1 CC='${CC}'
 MAKE_ENV =	config=release
 
 GAMEDIR =	${PREFIX}/share/tome4
 SUBST_VARS +=	GAMEDIR V
 
+# The build system hardcodes the use of the "gcc" command
 do-configure:
 	sed -i 's/gcc /${CC} /g' ${WRKSRC}/build/te4core.lua
 	${SUBST_CMD} ${WRKSRC}/src/getself.c

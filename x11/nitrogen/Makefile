@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2017/05/17 14:14:27 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2017/05/31 08:08:18 espie Exp $
 
 # XXX check if still needed at next update
 CXXFLAGS +=		-std=c++11
@@ -24,7 +24,7 @@ WANTLIB += pangoft2-1.0 pangomm-1.4 pthread sigc-2.0 z $(LIBESTDC)
 MASTER_SITES=		${HOMEPAGE}/files/
 
 # c++11
-WANT_CXX =		base gcc
+COMPILER =		gcc
 
 LIB_DEPENDS=		devel/gettext \
 			x11/gtk2mm

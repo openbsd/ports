@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2017/05/27 05:07:48 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2017/05/31 08:08:17 espie Exp $
 
 COMMENT =		CPU, RAM memory, and load monitor for use with tmux(1)
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		devel/cmake
 
-WANT_CXX =		base gcc clang
+COMPILER =		gcc clang
 MODGCC4_ARCHS =		alpha arm hppa mips64 mips64el powerpc sparc64
 MODCLANG_ARCHS =	amd64 i386
 

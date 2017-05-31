@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2017/05/27 05:02:07 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2017/05/31 08:08:16 espie Exp $
 
 COMMENT=		documentation for gtk3mm
 
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 MODULES=		x11/gnome
 
 # c++14
-WANT_CXX =		base clang
+COMPILER =		clang
 
 PKG_ARCH=		*
 

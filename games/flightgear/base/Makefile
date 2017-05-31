@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2016/09/23 09:16:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2017/05/31 08:08:15 espie Exp $
 
 COMMENT =		modern, open-source flight simulator
 
@@ -8,7 +8,7 @@ REVISION =		0
 WANTLIB += GL GLU OpenThreads SimGearCore SimGearScene X11 Xi
 WANTLIB += Xmu c curl glut m openal osg osgDB osgFX osgGA osgParticle
 WANTLIB += osgSim osgText osgUtil osgViewer png pthread sqlite3
-WANTLIB += z
+WANTLIB += z ${LIBECXX}
 #WANTLIB += GL GLU ICE OpenThreads SM SimGearCore SimGearScene
 #WANTLIB += X11 Xext Xft Xi Xinerama Xmu bz2 c curl fltk fltk_forms
 #WANTLIB += fltk_gl fltk_images glut m openal osg osgDB osgFX osgGA
@@ -17,9 +17,9 @@ WANTLIB += z
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=flightgear/}
 
-MODULES =	devel/cmake gcc4
-MODGCC4_ARCHS =	*
-MODGCC4_LANGS =	c++
+MODULES =	devel/cmake
+COMPILER =	gcc
+
 BUILD_DEPENDS =	devel/boost \
 		devel/plib
 LIB_DEPENDS =	databases/sqlite3 \

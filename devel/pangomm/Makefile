@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2017/05/13 09:49:50 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2017/05/31 08:08:15 espie Exp $
 
 COMMENT =		C++ interface for pango
 
@@ -25,7 +25,7 @@ WANTLIB += pthread-stubs sigc-2.0 xcb xcb-render xcb-shm z
 MODULES =		x11/gnome
 
 # c++11
-WANT_CXX =		base gcc
+COMPILER =		gcc
 
 LIB_DEPENDS =		devel/glib2mm \
 			devel/pango \

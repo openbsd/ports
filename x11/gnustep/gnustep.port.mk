@@ -1,4 +1,4 @@
-# $OpenBSD: gnustep.port.mk,v 1.28 2016/06/03 11:43:41 sebastia Exp $
+# $OpenBSD: gnustep.port.mk,v 1.29 2017/05/31 08:08:18 espie Exp $
 
 # until tested on others
 ONLY_FOR_ARCHS ?=	alpha i386 amd64 macppc
@@ -8,12 +8,11 @@ CATEGORIES +=	x11/gnustep
 USE_GMAKE ?=	Yes
 MAKE_FILE ?=	GNUmakefile
 
-MODULES +=			lang/clang
 BUILD_DEPENDS +=		x11/gnustep/make
 MODGNUSTEP_RUN_DEPENDS +=	x11/gnustep/make
 
-MODCLANG_ARCHS =		amd64 i386
-MODCLANG_LANGS =		c++
+COMPILER =		clang
+MODCLANG_ARCHS =	amd64 i386
 
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
 CONFIGURE_ENV +=	CC="clang" CXX="clang++" CPP="clang -E"

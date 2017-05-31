@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2017/05/26 09:52:16 espie Exp $
+# $OpenBSD: Makefile,v 1.62 2017/05/31 08:08:17 espie Exp $
 
 USE_WXNEEDED=		Yes
 
@@ -32,7 +32,7 @@ MASTER_SITES=		https://downloads.iridiumbrowser.de/source/ \
 
 MODULES=	lang/python
 
-WANT_CXX =	base clang gcc
+COMPILER =	clang gcc
 
 MODPY_RUNDEP=	No
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.245 2017/05/23 20:56:06 espie Exp $
+# $OpenBSD: Makefile,v 1.246 2017/05/31 08:08:16 espie Exp $
 
 COMMENT-main =		Mozilla e-mail, rss and usenet client
 COMMENT-lightning =	Mozilla Thunderbird calendar extension
@@ -32,7 +32,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 MODULES =	www/mozilla devel/gettext lang/python
 MODPY_RUNDEP =	No
 
-WANT_CXX =		base clang
+COMPILER =	clang
 MODCLANG_ARCHS =	amd64 i386
 
 MOZILLA_USE_BUNDLED_LIBEVENT =	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2017/05/27 05:07:48 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2017/05/31 08:08:17 espie Exp $
 
 COMMENT =	user interface library from pwmt
 DISTNAME =	girara-0.2.7
@@ -23,8 +23,8 @@ LIB_DEPENDS =	x11/gtk+3 \
 		devel/libnotify
 
 # c11
-WANT_CXX =	base gcc
-MODGCC4_LANGS =	c
+COMPILER =	gcc
+COMPILER_LANGS =	c
 
 USE_GMAKE =	Yes
 

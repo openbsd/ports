@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2017/05/13 15:44:09 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2017/05/31 08:08:16 espie Exp $
 
 COMMENT=		C++ bindings for GStreamer
 
@@ -32,10 +32,6 @@ post-install:
 	# does nothing (overrides Makefile.inc)
 
 # c++11
-.include <bsd.port.arch.mk>
-.if !${PROPERTIES:Mclang}
-MODGCC4_LANGS=		c++
-MODCLANG_LANGS=		c++
-.endif
-
+# note that Makefile.inc has "c" as default
+COMPILER_LANGS = c c++
 .include <bsd.port.mk>

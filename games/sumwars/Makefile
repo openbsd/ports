@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2017/05/25 09:30:04 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2017/05/31 08:08:16 espie Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 
@@ -34,7 +34,7 @@ MODULES =		devel/cmake \
 			lang/lua
 MODLUA_VERSION =	5.2
 
-WANT_CXX =		base gcc
+COMPILER =		gcc
 LIB_DEPENDS =		x11/cegui \
 			audio/freealut \
 			audio/libvorbis \

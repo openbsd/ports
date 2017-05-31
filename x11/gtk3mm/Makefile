@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2017/05/13 09:49:51 espie Exp $
+# $OpenBSD: Makefile,v 1.37 2017/05/31 08:08:18 espie Exp $
 
 COMMENT=		C++ interface for gtk3+
 
@@ -31,7 +31,7 @@ WANTLIB += z
 MODULES=		x11/gnome
 
 # c++11
-WANT_CXX =		base gcc
+COMPILER =		gcc
 
 LIB_DEPENDS=		devel/atk2mm \
 			devel/pangomm \

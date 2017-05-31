@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2017/05/13 09:49:50 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2017/05/31 08:08:16 espie Exp $
 
 COMMENT=	GiNaC is Not a Computer Algebra System (CAS)
 
@@ -20,7 +20,7 @@ WANTLIB=	c m ncurses readline ${LIBCXX} gmp cln
 
 MODULES =	lang/python
 
-WANT_CXX =	base gcc
+COMPILER =	gcc
 
 LIB_DEPENDS=	devel/cln
 

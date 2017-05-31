@@ -1,4 +1,4 @@
-#$OpenBSD: Makefile,v 1.3 2017/05/27 04:41:43 espie Exp $
+#$OpenBSD: Makefile,v 1.4 2017/05/31 08:08:15 espie Exp $
 
 COMMENT =	Bounded Model Checker for C and C++ programs
 
@@ -23,7 +23,7 @@ WANTLIB += c m ${LIBECXX}
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX} minisat2_2.2.1.orig.tar.gz:0
 MASTER_SITES0 =	${MASTER_SITE_DEBIAN:=main/m/minisat2/}
 
-WANT_CXX =	base clang
+COMPILER =	clang
 
 BUILD_DEPENDS =	devel/bison
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2017/05/13 15:44:09 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2017/05/31 08:08:17 espie Exp $
 
 COMMENT =	D-Bus menu implementation for Qt
 V =		0.9.3
@@ -20,7 +20,7 @@ MASTER_SITES =	http://archive.ubuntu.com/ubuntu/pool/main/libd/libdbusmenu-qt/
 EXTRACT_SUFX =	.orig.tar.gz
 
 MODULES =	devel/cmake
-WANT_CXX =	base gcc
+COMPILER =	gcc
 
 FLAVORS =	qt5
 FLAVOR ?=

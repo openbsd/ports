@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.160 2017/05/28 11:59:52 zhuk Exp $
+# $OpenBSD: Makefile,v 1.161 2017/05/31 08:08:16 espie Exp $
 
 COMMENT=	audio/video converter and streamer
 
@@ -33,10 +33,9 @@ WANTLIB=	SDL X11 Xext Xv ass bz2 c crypto fontconfig freetype fribidi \
 		vorbisenc vpx>=5 x264 x265>=2 xcb xcb-shape xcb-shm xcb-xfixes \
 		xvidcore z
 
-WANT_CXX =	base clang
-
+COMPILER =	clang
 MODCLANG_ARCHS=	amd64
-MODCLANG_LANGS=	c
+COMPILER_LANGS =	c
 
 BUILD_DEPENDS=	textproc/texi2html
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"

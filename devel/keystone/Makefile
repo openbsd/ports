@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2017/05/22 20:34:10 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2017/05/31 08:08:15 espie Exp $
 
 COMMENT =	multi-platform, multi-architecture assembler framework
 
@@ -23,7 +23,7 @@ WANTLIB +=	c m
 MODULES =	devel/cmake
 
 # atomics
-WANT_CXX =	base clang
+COMPILER =	clang
 
 
 CONFIGURE_ARGS = -DBUILD_SHARED_LIBS=ON

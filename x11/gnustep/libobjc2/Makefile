@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2017/04/19 21:10:10 sebastia Exp $
+# $OpenBSD: Makefile,v 1.18 2017/05/31 08:08:18 espie Exp $
 
 COMMENT =	GNUstep libobjc2 objective-c runtime
 BROKEN-hppa =	missing asm impl in block_trampolines.S
@@ -19,11 +19,11 @@ SHARED_LIBS +=  objcxx	0.0
 
 HOMEPAGE =	http://www.gnustep.org/
 
-MODULES =	devel/cmake lang/clang
+MODULES =	devel/cmake 
 WANTLIB += 	m ${LIBCXX} pthread
 
-MODCLANG_ARCHS =	amd64 i386
-MODCLANG_LANGS =	c++
+COMPILER =	clang
+MODCLANG_ARCHS =amd64 i386
 
 MAKE_ENV +=	CPPFLAGS+=${CPPFLAGS}
 MAKE_FLAGS +=	LIBOBJCLIBNAME=objc2 \

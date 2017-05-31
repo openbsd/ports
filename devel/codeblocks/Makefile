@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2017/05/26 14:50:15 espie Exp $
+# $OpenBSD: Makefile,v 1.39 2017/05/31 08:08:15 espie Exp $
 
 BROKEN-alpha=	sqvm.cpp:394:1: internal compiler error: Segmentation fault
 BROKEN-arm=	wxwidgets va_list c++ mangling requires gcc < 4.4
@@ -61,7 +61,7 @@ RUN_DEPENDS=	devel/desktop-file-utils \
 		x11/gtk+3,-guic
 
 # XXX <command-line>:0: internal compiler error: Segmentation fault
-WANT_CXX =	base gcc
+COMPILER =		gcc
 
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.15

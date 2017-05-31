@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2017/05/28 18:55:04 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2017/05/31 08:08:16 espie Exp $
 
 V =		5.3.37
 COMMENT =	query for a selection and print to stdout (select operation)
@@ -20,7 +20,7 @@ WANTLIB += GL GLU ICE SM X11 Xext Xrender c m pthread ${LIBCXX}
 MODULES =	devel/cmake
 
 
-WANT_CXX =	base gcc
+COMPILER =	gcc
 
 BUILD_DEPENDS +=	graphics/glm
 

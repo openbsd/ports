@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2017/05/29 15:43:21 espie Exp $
+# $OpenBSD: Makefile,v 1.53 2017/05/31 08:08:16 espie Exp $
 
 BROKEN-hppa =	run dep on enblend-enfuse which will not build on hppa
 
@@ -62,7 +62,8 @@ LIB_DEPENDS =		devel/boost>=1.58 \
 			x11/wxWidgets>=2.8.12p7
 
 MODULES =		devel/cmake lang/python
-WANT_CXX =		base gcc
+COMPILER =		gcc
+
 CONFIGURE_ENV =		MANDIR=man
 CONFIGURE_ARGS +=	-DBUILD_HSI=ON
 NO_TEST =		Yes

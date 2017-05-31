@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.155 2017/05/28 12:13:06 espie Exp $
+# $OpenBSD: Makefile,v 1.156 2017/05/31 08:08:17 espie Exp $
 
 COMMENT=	GNOME web browser based on webkit
 
@@ -52,8 +52,8 @@ RUN_DEPENDS +=	multimedia/gstreamer1/plugins-libav
 MODULES=	devel/dconf \
 		x11/gnome
 
-WANT_CXX =	base gcc
-MODGCC4_LANGS =	c
+COMPILER =	gcc
+COMPILER_LANGS =	c
 
 MODGNOME_TOOLS=	desktop-file-utils gtk-update-icon-cache yelp
 

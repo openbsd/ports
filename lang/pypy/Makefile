@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2017/05/23 20:55:13 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2017/05/31 08:08:16 espie Exp $
 
 ONLY_FOR_ARCHS =	amd64
 
@@ -58,8 +58,8 @@ SUPDISTFILES =		${BOOTSTRAP-amd64}:0
 MODULES +=		lang/python lang/tcl x11/tk
 MODPY_VERSION =		2.7
 
-WANT_CXX =		base gcc
-MODGCC4_LANGS =		c
+COMPILER =		gcc
+COMPILER_LANGS =	c
 
 USE_GMAKE =		Yes
 BUILD_DEPENDS =		textproc/py-sphinx \

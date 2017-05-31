@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2017/05/24 10:31:21 espie Exp $
+# $OpenBSD: Makefile,v 1.63 2017/05/31 08:08:17 espie Exp $
 
 BROKEN-arm =	needs atomic ops; __sync_add_and_fetch_4
 BROKEN-hppa =	needs atomic ops; __sync_add_and_fetch_4
@@ -47,7 +47,7 @@ WANTLIB += yajl ${LIBECXX}
 
 MODULES =		devel/cmake
 
-WANT_CXX =		base gcc
+COMPILER =		gcc
 
 PSEUDO_FLAVORS =	test
 FLAVOR ?=

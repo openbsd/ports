@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2017/05/27 05:07:48 espie Exp $
+# $OpenBSD: Makefile,v 1.48 2017/05/31 08:08:17 espie Exp $
 
 BROKEN-alpha =	MetalinkParserStateV4Impl.cc:219:1: internal compiler error: Segmentation fault
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =		https://github.com/aria2/aria2/releases/download/release-${V}/
 
-WANT_CXX =		base gcc
+COMPILER =		gcc
 
 LIB_DEPENDS =		databases/sqlite3 \
 			devel/gettext \

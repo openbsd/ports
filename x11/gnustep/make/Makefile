@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2017/04/19 21:13:25 sebastia Exp $
+# $OpenBSD: Makefile,v 1.47 2017/05/31 08:08:18 espie Exp $
 
 # WARNING: this port does NOT use the x11/gnustep MODULE
 
@@ -17,8 +17,9 @@ MODULES =	lang/clang
 BUILD_DEPENDS =	x11/gnustep/libobjc2
 RUN_DEPENDS=	archivers/gtar
 
+WANTLIB =	${LIBECXX}
+COMPILER =	clang
 MODCLANG_ARCHS =	amd64 i386
-MODCLANG_LANGS =	c++
 
 USE_GMAKE=	Yes
 MAKE_FILE=	GNUmakefile

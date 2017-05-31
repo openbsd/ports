@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2016/09/12 22:20:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2017/05/31 08:08:17 espie Exp $
 
 BROKEN-sparc64=	gcj blows during build
 COMMENT=	pdf swiss army knife
@@ -19,9 +19,11 @@ HOMEPAGE =	http://www.pdflabs.com/tools/pdftk-server/
 
 MASTER_SITES =	http://www.pdflabs.com/tools/pdftk-the-pdf-toolkit/
 
-MODULES=	gcc4
-MODGCC4_ARCHS=	*
-MODGCC4_LANGS=	java c++
+COMPILER =	gcc
+MODULES =	gcc4
+MODGCC4_ARCHS =	*
+MODGCC4_LANGS=	java
+
 LIB_DEPENDS=	${MODGCC4_GCJLIBDEP} \
 		converters/libiconv
 

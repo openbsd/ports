@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2017/04/12 18:12:33 landry Exp $
+# $OpenBSD: Makefile,v 1.40 2017/05/31 08:08:15 espie Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 powerpc sparc64 alpha
 USE_WXNEEDED =		Yes
@@ -17,11 +17,10 @@ SO_VERSION =		0.0
 MOZILLA_LIBS =		mozgnome mozalloc xul
 
 # necessary glue to build with the correct compiler after fx 17
-MODULES +=		gcc4 lang/clang
+COMPILER =		gcc clang
 MODGCC4_ARCHS =		powerpc sparc64 alpha i386 amd64
-MODGCC4_LANGS =		c c++
 MODCLANG_ARCHS =
-MODCLANG_LANGS =	c c++
+
 # gecko24 doesnt use icu - don't depend uselessly on it
 MOZILLA_USE_BUNDLED_ICU=	Yes
 

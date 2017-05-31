@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2017/05/25 11:31:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.59 2017/05/31 08:08:17 espie Exp $
 
 # patches/patch-Source_JavaScriptCore_javascriptcoregtk_pc_in
 # patches/patch-Source_WebKit2_webkit2gtk-web-extension_pc_in
@@ -49,7 +49,7 @@ MODULES =		devel/cmake \
 			lang/ruby \
 			x11/gnome
 
-WANT_CXX =		base gcc
+COMPILER =		gcc
 
 MODRUBY_RUNDEP =	No
 MODPY_RUNDEP =		No

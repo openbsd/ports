@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2017/05/28 18:49:43 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2017/05/31 08:08:16 espie Exp $
 
 COMMENT =	Context Free Design Grammar
 
@@ -24,7 +24,7 @@ BUILD_DEPENDS =	devel/bison
 
 LIB_DEPENDS =	graphics/png
 
-WANT_CXX =	base gcc
+COMPILER =	gcc
 
 USE_GMAKE =	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2017/05/27 04:45:18 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2017/05/31 08:08:15 espie Exp $
 
 COMMENT-main =		Game Boy Color/Advance emulator
 COMMENT-qt =		Game Boy Color/Advance emulator with GUI
@@ -39,7 +39,7 @@ GH_PROJECT =		mgba
 GH_TAGNAME =		$V
 
 MODULES =		devel/cmake
-WANT_CXX =		base gcc
+COMPILER =		gcc
 LIB_DEPENDS-main =	archivers/libzip \
 			graphics/ImageMagick \
 			graphics/ffmpeg \

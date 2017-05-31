@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2017/05/24 23:59:42 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2017/05/31 08:08:16 espie Exp $
 
 COMMENT =		2D animation software studio
 BROKEN-alpha =		[keyframe_lock_past_on_icon.png] Bus error (core dumped)
@@ -38,7 +38,7 @@ MODULES =		devel/gettext \
 			textproc/intltool
 
 # c++11
-WANT_CXX =		base gcc
+COMPILER =		gcc
 
 BUILD_DEPENDS =		devel/etl>=0.04.19
 RUN_DEPENDS =		devel/desktop-file-utils \

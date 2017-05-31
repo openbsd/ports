@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2017/05/22 08:04:39 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2017/05/31 08:08:18 espie Exp $
 
 BROKEN-hppa =		missing atomic ops
 BROKEN-alpha =		missing atomic ops
@@ -49,7 +49,7 @@ DISTFILES =		ogre-$V${EXTRACT_SUFX}{v${V:S/./-/g}${EXTRACT_SUFX}}
 CONFIGURE_ARGS +=	-DOGRE_INSTALL_SAMPLES=1
 
 MODULES =		devel/cmake
-WANT_CXX =		base gcc
+COMPILER =		gcc
 LIB_DEPENDS =		graphics/freeimage \
 			archivers/zziplib \
 			devel/boost

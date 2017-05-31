@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2017/05/31 07:25:20 benoit Exp $
+# $OpenBSD: Makefile,v 1.46 2017/05/31 08:08:17 espie Exp $
 
 COMMENT =		convert source code to markup formats
 
@@ -27,7 +27,7 @@ BUILD_DEPENDS =		devel/boost
 LIB_DEPENDS =		${MODLUA_LIB_DEPENDS}
 
 # c++11
-WANT_CXX =		base gcc
+COMPILER =		gcc
 
 MAKE_FILE =		makefile
 MAKE_FLAGS =		CXX=${CXX} \

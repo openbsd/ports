@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.81 2017/05/28 18:49:43 espie Exp $
+# $OpenBSD: Makefile,v 1.82 2017/05/31 08:08:15 espie Exp $
 
 COMMENT=		terminal emulation library
 
@@ -30,7 +30,7 @@ WANTLIB += unistring
 
 MODULES=		x11/gnome
 
-WANT_CXX =	base gcc
+COMPILER =		gcc
 
 BUILD_DEPENDS=		devel/gperf
 # src/box_drawing_generate.sh

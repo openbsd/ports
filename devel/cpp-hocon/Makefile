@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2017/05/30 18:01:27 zhuk Exp $
+# $OpenBSD: Makefile,v 1.7 2017/05/31 08:08:15 espie Exp $
 
 COMMENT =		C++ parser for the HOCON configuration language
 
@@ -23,7 +23,7 @@ WANTLIB += boost_program_options-mt boost_system-mt boost_thread-mt
 WANTLIB += leatherman_locale leatherman_util
 
 
-WANT_CXX =		base gcc
+COMPILER =		gcc
 
 CXXFLAGS +=		-pthread
 

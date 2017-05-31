@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.196 2017/05/21 17:27:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.197 2017/05/31 08:08:17 espie Exp $
 
 COMMENT-main=	WWW and FTP proxy cache and accelerator
 COMMENT-ldap=	LDAP authentication/ACL support for Squid
@@ -29,7 +29,7 @@ MASTER_SITES=	${HOMEPAGE}Versions/v${V:C/^([0-9]).*/\1/}/${V:C/([0-9.]{3}).*/\1/
 		http://ftp.mirrorservice.org/sites/ftp.squid-cache.org/pub/archive/${V:C/([0-9.]{3}).*/\1/}/
 
 # C++11
-WANT_CXX=	base gcc
+COMPILER =	gcc
 
 LIB_DEPENDS+=	security/gnutls
 BUILD_DEPENDS+=	devel/cppunit

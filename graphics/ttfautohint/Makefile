@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2017/05/27 04:54:31 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2017/05/31 08:08:16 espie Exp $
 
 COMMENT=		automated hinting process based on FreeType's autohinter #'
 
@@ -18,7 +18,7 @@ MASTER_SITES =		http://download.savannah.gnu.org/releases/freetype/
 
 MODULES =		devel/gettext
 
-WANT_CXX =		base gcc
+COMPILER =		gcc
 
 WANTLIB += c freetype glib-2.0 graphite2 harfbuzz m pcre pthread
 WANTLIB += z ${LIBECXX}

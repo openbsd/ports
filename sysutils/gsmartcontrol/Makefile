@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2017/05/13 17:40:26 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2017/05/31 08:08:17 espie Exp $
 
 # XXX check if still needed at next update
 CXXFLAGS +=		-std=c++11
@@ -28,7 +28,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gsmartcontrol/}
 MODULES=	devel/gettext
 
 # c++11
-WANT_CXX =	base gcc
+COMPILER =	gcc
 
 RUN_DEPENDS=	devel/desktop-file-utils \
 		sysutils/smartmontools \

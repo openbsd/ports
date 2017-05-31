@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2017/05/28 18:49:43 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2017/05/31 08:08:15 espie Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 
@@ -22,7 +22,7 @@ GH_TAGNAME =		1.4.1
 
 MODULES =		devel/cmake
 
-WANT_CXX =		base gcc
+COMPILER =		gcc
 
 LIB_DEPENDS =		devel/sdl2 \
 			audio/openal \

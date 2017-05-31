@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2017/01/03 19:16:08 landry Exp $
+# $OpenBSD: Makefile,v 1.5 2017/05/31 08:08:15 espie Exp $
 
 PKG_ARCH=		*
 
@@ -21,9 +21,7 @@ MODULES=		lang/python
 # see FILESDIR/unoconv.in
 # should really be the following, but using the module is easier
 # RUN_DEPENDS +=	STEM->=4.9,<4.10:lang/gcc/4.9,-libs
-MODULES +=		gcc4
-MODGCC4_ARCHS=		*
-MODGCC4_LANGS=		c++
+COMPILER =		gcc
 
 NO_BUILD=		Yes
 NO_TEST=		Yes
@@ -45,9 +43,14 @@ do-install:
 	cd ${WRKBUILD} && \
 		${SETENV} ${MAKE_ENV} ${_FAKE_SETUP} \
 		${MAKE_PROGRAM} ${ALL_FAKE_FLAGS} -f ${MAKE_FILE} install-links
+
+.include <bsd.port.arch.mk>
+.if !${PROPERTIES:Mclang}
+post-install:
 	mv ${PREFIX}/bin/unoconv ${PREFIX}/bin/unoconv.py
 	${SUBST_CMD} -m 0555 -o ${BINOWN} -g ${BINGRP} \
 		-c ${FILESDIR}/unoconv.in \
 		${PREFIX}/bin/unoconv
+.endif
 
 .include <bsd.port.mk>

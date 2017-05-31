@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2017/05/15 12:50:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2017/05/31 08:08:18 espie Exp $
 
 COMMENT =	KDE mathematical applications
 DISTNAME =	cantor-${MODKDE4_VERSION}
@@ -21,8 +21,13 @@ WANTLIB += lib/R/lib/R lib/R/lib/Rblas lib/R/lib/Rlapack
 WANTLIB += cln glib-2.0 qalculate soprano spectre xml2
 WANTLIB += luajit-${MODLUA_DEFAULT_VERSION} gfortran
 
+# XXX module order is important there. Since we get x11/kde4 from
+# Makefile.inc, it's listed too late to influence modgcc, since
+# it's already been read
 MODULES =	devel/gettext lang/lua lang/python gcc4 # XXX fortran
-MODGCC4_LANGS +=fortran
+COMPILER =	gcc
+MODGCC4_ARCHS =	*
+MODGCC4_LANGS =	fortran
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+3,-guic

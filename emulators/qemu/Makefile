@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.164 2017/05/27 06:38:23 espie Exp $
+# $OpenBSD: Makefile,v 1.165 2017/05/31 08:08:15 espie Exp $
 
 USE_WXNEEDED=	Yes
 
@@ -28,7 +28,7 @@ WANTLIB=	SDL X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama \
 		usb-1.0 util vte z ${LIBECXX}
 
 # Using gcc4 for the TLS emulation layer
-WANT_CXX =	base gcc
+COMPILER =	gcc
 
 MODULES=	lang/python
 

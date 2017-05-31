@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2017/05/23 20:55:37 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2017/05/31 08:08:16 espie Exp $
 
 PORTROACH =		limit:^0
 
@@ -21,7 +21,7 @@ WANTLIB +=		sigc-2.0 ${LIBECXX}
 MODULES =		lang/lua
 
 # c++11
-WANT_CXX =		base gcc
+COMPILER =		gcc
 
 LIB_DEPENDS +=		${MODLUA_LIB_DEPENDS} \
 			devel/glib2mm \

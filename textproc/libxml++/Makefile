@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2017/05/13 09:49:50 espie Exp $
+# $OpenBSD: Makefile,v 1.35 2017/05/31 08:08:17 espie Exp $
 
 PORTROACH=		limit:^2
 
@@ -26,7 +26,7 @@ MODULES=		devel/gettext \
 			x11/gnome
 
 # c++11
-WANT_CXX =		base gcc
+COMPILER =		gcc
 
 LIB_DEPENDS=		devel/glib2mm \
 			textproc/libxml

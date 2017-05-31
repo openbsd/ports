@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2017/05/28 18:55:04 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2017/05/31 08:08:16 espie Exp $
 
 V =		4.4.62
 COMMENT =	desktop screenshot utility (make image)
@@ -18,7 +18,7 @@ WANTLIB += slopy z ${LIBCXX}
 
 MODULES =	devel/cmake
 
-WANT_CXX =	base gcc
+COMPILER =	gcc
 
 BUILD_DEPENDS =		graphics/glm
 

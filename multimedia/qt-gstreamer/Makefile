@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2017/05/27 05:02:07 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2017/05/31 08:08:16 espie Exp $
 
 COMMENT =	Qt bindings to GStreamer 1.x
 
@@ -30,7 +30,7 @@ MASTER_SITES =		http://gstreamer.freedesktop.org/src/qt-gstreamer/
 EXTRACT_SUFX =		.tar.xz
 
 MODULES =		devel/cmake x11/qt4
-WANT_CXX =		base gcc
+COMPILER =		gcc
 
 BUILD_DEPENDS =		devel/boost
 LIB_DEPENDS =		multimedia/gstreamer1/core \

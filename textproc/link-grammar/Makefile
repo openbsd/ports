@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2017/05/27 16:54:57 espie Exp $
+# $OpenBSD: Makefile,v 1.42 2017/05/31 08:08:17 espie Exp $
 
 ONLY_FOR_ARCHS-java =	i386 amd64
 
@@ -40,7 +40,7 @@ MODULES =		lang/python
 MODPY_ADJ_FILES =	bindings/python-examples/tests.py
 
 # -std=c++03
-WANT_CXX =		base clang
+COMPILER =		clang
 
 MULTI_PACKAGES =	-main -java -python
 PSEUDO_FLAVORS =	no_java

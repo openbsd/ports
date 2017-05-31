@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2017/05/25 11:26:15 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2017/05/31 08:08:16 espie Exp $
 
 BROKEN-powerpc =	undefined reference to __atomic_fetch_add_8
 
@@ -33,7 +33,7 @@ MODULES =		devel/cmake \
 			lang/python \
 			x11/qt4 \
 
-WANT_CXX =		base gcc
+COMPILER =		gcc
 
 BUILD_DEPENDS =		textproc/txt2man
 

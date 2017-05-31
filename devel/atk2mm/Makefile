@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2017/05/13 09:49:50 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2017/05/31 08:08:15 espie Exp $
 
 COMMENT=		C++ binding for the ATK library
 
@@ -23,7 +23,7 @@ WANTLIB += m pcre pthread sigc-2.0
 MODULES=		devel/gettext \
 			x11/gnome
 # c++11
-WANT_CXX =	base gcc
+COMPILER =		gcc 
 
 LIB_DEPENDS=		devel/glib2mm \
 			devel/atk

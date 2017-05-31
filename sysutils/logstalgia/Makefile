@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2017/05/27 05:07:48 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2017/05/31 08:08:17 espie Exp $
 
 COMMENT =	website access log visualization
 
@@ -16,7 +16,7 @@ MASTER_SITES =	https://github.com/acaudwell/Logstalgia/releases/download/${DISTN
 WANTLIB += GL GLEW GLU SDL2 SDL2_image c freetype iconv m pcre png pthread
 WANTLIB += z ${LIBECXX}
 
-WANT_CXX =	base gcc
+COMPILER =	gcc
 
 CONFIGURE_STYLE =gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \

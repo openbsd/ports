@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2017/05/28 18:58:11 espie Exp $
+# $OpenBSD: Makefile,v 1.52 2017/05/31 08:08:18 espie Exp $
 
 USE_WXNEEDED=		Yes
 
@@ -29,7 +29,7 @@ WANTLIB += iconv intl
 MODULES=		x11/gnome
 
 # sync with devel/spidermonkey38
-WANT_CXX =		base gcc
+COMPILER =		gcc
 
 MODPY_RUNDEP=		No
 MODPY_BUILDDEP= 	No

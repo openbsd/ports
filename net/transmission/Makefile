@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.115 2017/05/15 18:51:38 espie Exp $
+# $OpenBSD: Makefile,v 1.116 2017/05/31 08:08:17 espie Exp $
 
 COMMENT-main=	BitTorrent command line and daemon client
 COMMENT-gtk=	BitTorrent client with GTK+ interface
@@ -26,8 +26,8 @@ ONLY_FOR_ARCHS-qt=	${MODGCC4_ARCHS} ${CLANG_ARCHS}
 # keep in sync with lang/gcc/${MODGCC4_VERSION}/Makefile
 MODGCC4_ARCHS=  amd64 arm hppa i386 mips64 mips64el powerpc sparc64
 
-WANT_CXX =	base gcc
-MODGCC4_LANGS=	c
+COMPILER =	gcc
+COMPILER_LANGS =	c
 
 
 PSEUDO_FLAVORS=	no_gtk no_qt
@@ -85,7 +85,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${WRKSRC}/third-party -I${LOCALBASE}/include" \
 
 .if ${BUILD_PACKAGES:M-qt}
 MODULES+=		devel/qmake x11/qt5
-MODGCC4_LANGS+=		c++
+COMPILER_LANGS +=	c++
 # avoid setting LINK=
 MODQT5_USE_GCC4_MODULE=	No
 MODQMAKE_PROJECTS=	qt/qtr.pro

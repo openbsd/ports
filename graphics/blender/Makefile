@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.79 2017/05/27 06:54:39 espie Exp $
+# $OpenBSD: Makefile,v 1.80 2017/05/31 08:08:16 espie Exp $
 
 ONLY_FOR_ARCHS = amd64 i386
 
@@ -29,7 +29,7 @@ MODULES =	devel/cmake \
 		lang/python \
 
 
-WANT_CXX =	base gcc
+COMPILER =	gcc
 
 MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 

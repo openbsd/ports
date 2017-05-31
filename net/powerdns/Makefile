@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2017/05/27 06:21:43 espie Exp $
+# $OpenBSD: Makefile,v 1.53 2017/05/31 08:08:17 espie Exp $
 
 BROKEN-hppa =		undefined reference to '__sync_fetch_and_add_4'
 
@@ -24,7 +24,7 @@ MULTI_PACKAGES=		-main -mysql -pgsql -ldap
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANT_CXX =	base gcc
+COMPILER =		gcc
 
 WANTLIB += m pthread ${LIBECXX}
 #WANTLIB += ${MODGCC4_CPPWANTLIB}

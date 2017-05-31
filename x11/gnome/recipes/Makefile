@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2017/05/29 16:52:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2017/05/31 08:08:18 espie Exp $
 
 COMMENT =		recipe manager for GNOME
 
@@ -16,7 +16,8 @@ MODULES =		devel/dconf \
 			lang/python \
 			x11/gnome
 
-WANT_CXX =		base clang
+COMPILER =		clang
+COMPILER_LANGS =	c
 
 MODPY_RUNDEP =		No
 MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2017/05/23 21:01:46 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2017/05/31 08:08:17 espie Exp $
 
 # XXX check if still needed at next update
 CXXFLAGS +=		-std=c++11
@@ -28,7 +28,7 @@ MODULES =		devel/gettext
 # XXX should use lua module
 
 # c++11
-WANT_CXX =		base gcc
+COMPILER =		gcc
 
 USE_GROFF =		Yes
 

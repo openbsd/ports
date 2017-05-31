@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2017/02/09 07:51:55 landry Exp $
+# $OpenBSD: Makefile,v 1.8 2017/05/31 08:08:16 espie Exp $
 
 COMMENT =		OSM data to PostgreSQL converter
 #https://github.com/openstreetmap/osm2pgsql/issues/634
@@ -18,12 +18,11 @@ PERMIT_PACKAGE_CDROM =	Yes
 USE_GMAKE =		Yes
 
 WANTLIB += boost_system-mt boost_filesystem-mt bz2 c expat
-WANTLIB += geos m pthread pq proj z ${MODLUA_WANTLIB}
+WANTLIB += geos m pthread pq proj z ${MODLUA_WANTLIB} ${LIBECXX}
 
 # postgresql needs to be first otherwise tests are done by cmake module
 MODULES =		databases/postgresql    \
 			devel/cmake		\
-			gcc4			\
 			lang/python		\
 			lang/lua
 
@@ -39,8 +38,7 @@ TEST_DEPENDS =		databases/py-psycopg2	\
 			geo/postgis		\
 			databases/postgresql,-contrib
 
-MODGCC4_ARCHS =		*
-MODGCC4_LANGS +=	c++
+COMPILER =		gcc
 
 MODPY_ADJ_FILES =	tests/regression-test.py
 
