@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.19 2015/05/17 15:18:37 robert Exp $
+@comment $OpenBSD: PLIST,v 1.20 2017/05/31 20:16:49 rsadowski Exp $
 bin/pcre-config
-bin/pcregrep
-bin/pcretest
+@bin bin/pcregrep
+@bin bin/pcretest
 include/pcre.h
 include/pcre_scanner.h
 include/pcre_stringpiece.h
