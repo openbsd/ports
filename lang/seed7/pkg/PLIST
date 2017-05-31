@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2015/11/30 08:09:57 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.21 2017/05/31 12:34:52 benoit Exp $
 @bin bin/make7
 @bin bin/s7
 @bin bin/s7c
@@ -108,10 +108,12 @@ lib/seed7/lib/environment.s7i
 lib/seed7/lib/external_file.s7i
 lib/seed7/lib/field.s7i
 lib/seed7/lib/file.s7i
+lib/seed7/lib/filesys.s7i
 lib/seed7/lib/float.s7i
 lib/seed7/lib/font.s7i
 lib/seed7/lib/forloop.s7i
 lib/seed7/lib/ftp.s7i
+lib/seed7/lib/ftpserv.s7i
 lib/seed7/lib/getf.s7i
 lib/seed7/lib/gethttp.s7i
 lib/seed7/lib/gethttps.s7i
@@ -124,10 +126,12 @@ lib/seed7/lib/hashsetof.s7i
 lib/seed7/lib/hmac.s7i
 lib/seed7/lib/html.s7i
 lib/seed7/lib/html_ent.s7i
+lib/seed7/lib/http_response.s7i
 lib/seed7/lib/httpserv.s7i
 lib/seed7/lib/idxarray.s7i
 lib/seed7/lib/image.s7i
 lib/seed7/lib/inflate.s7i
+lib/seed7/lib/inflatefile.s7i
 lib/seed7/lib/inifile.s7i
 lib/seed7/lib/integer.s7i
 lib/seed7/lib/keybd.s7i
@@ -188,6 +192,7 @@ lib/seed7/lib/struct.s7i
 lib/seed7/lib/subrange.s7i
 lib/seed7/lib/syntax.s7i
 lib/seed7/lib/tar.s7i
+lib/seed7/lib/tar_cmds.s7i
 lib/seed7/lib/tdes.s7i
 lib/seed7/lib/tee.s7i
 lib/seed7/lib/text.s7i
@@ -202,6 +207,7 @@ lib/seed7/lib/vecfont10.s7i
 lib/seed7/lib/vecfont18.s7i
 lib/seed7/lib/vector3d.s7i
 lib/seed7/lib/vectorfont.s7i
+lib/seed7/lib/wildcard.s7i
 lib/seed7/lib/window.s7i
 lib/seed7/lib/wrinum.s7i
 lib/seed7/lib/x509cert.s7i
@@ -242,6 +248,7 @@ share/examples/seed7/cellauto.sd7
 share/examples/seed7/celsius.sd7
 share/examples/seed7/chk_all.sd7
 share/examples/seed7/chkbig.sd7
+share/examples/seed7/chkbin.sd7
 share/examples/seed7/chkbool.sd7
 share/examples/seed7/chkchr.sd7
 share/examples/seed7/chkcmd.sd7
@@ -261,6 +268,8 @@ share/examples/seed7/clock2.sd7
 share/examples/seed7/clock3.sd7
 share/examples/seed7/cmpfil.sd7
 share/examples/seed7/comanche.sd7
+share/examples/seed7/db7.sd7
+share/examples/seed7/diff7.sd7
 share/examples/seed7/dirtst.sd7
 share/examples/seed7/dirx.sd7
 share/examples/seed7/dna_base.s7i
@@ -271,6 +280,7 @@ share/examples/seed7/eliza.sd7
 share/examples/seed7/err.sd7
 share/examples/seed7/fannkuch.sd7
 share/examples/seed7/fib.sd7
+share/examples/seed7/find7.sd7
 share/examples/seed7/fractree.sd7
 share/examples/seed7/ftp7.sd7
 share/examples/seed7/ftpserv.sd7
@@ -281,6 +291,7 @@ share/examples/seed7/gtksvtst.sd7
 share/examples/seed7/hal.sd7
 share/examples/seed7/hamu.sd7
 share/examples/seed7/hanoi.sd7
+share/examples/seed7/hd.sd7
 share/examples/seed7/hello.sd7
 share/examples/seed7/ide7.sd7
 share/examples/seed7/indigo.dna
