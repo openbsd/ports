@@ -1,19 +1,19 @@
-# $OpenBSD: Makefile,v 1.42 2017/05/16 08:45:54 benoit Exp $
+# $OpenBSD: Makefile,v 1.43 2017/05/31 11:21:17 benoit Exp $
 
-COMMENT=	translate common internet acronyms
+COMMENT =	translate common internet acronyms
 
-DISTNAME =	wtf-20170512
-CATEGORIES=	games
+DISTNAME =	wtf-20170529
+CATEGORIES =	games
 
 # Public Domain
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=bsdwtf/}
+MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=bsdwtf/}
 
-NO_BUILD=	Yes
-NO_TEST=	Yes
+NO_BUILD =	Yes
+NO_TEST =	Yes
 
-PKG_ARCH=	*
+PKG_ARCH =	*
 
 do-configure:
 	@perl -pi -e "s#/usr#${PREFIX}#" ${WRKSRC}/wtf{,.6}
