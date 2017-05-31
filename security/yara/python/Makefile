@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2016/09/14 20:40:53 rpointel Exp $
+# $OpenBSD: Makefile,v 1.3 2017/05/31 04:27:51 rpointel Exp $
 
 COMMENT = Python extension that gives access to YARA
 
 GH_PROJECT = 	yara-python
 
+MODPY_EGG_VERSION =	${VERSION}
 PKGNAME = py-yara-${VERSION}
 
 WANTLIB += pthread ${MODPY_WANTLIB} yara
@@ -17,8 +18,8 @@ MAKE_FLAG +=	CPPFLAGS="-I${LOCALBASE}/include/yara/"
 pre-configure:
 	        ${SUBST_CMD} ${WRKSRC}/setup.py
 
-BUILD_DEPENDS = security/yara/main
-RUN_DEPENDS = 	security/yara/main
+BUILD_DEPENDS = security/yara/main=${VERSION}
+RUN_DEPENDS = 	security/yara/main=${VERSION}
 
 TEST_DEPENDS =	security/yara/python
 
