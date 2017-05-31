@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2016/03/20 19:57:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2017/05/31 11:42:57 benoit Exp $
 
 COMMENT=		check for HTML errors in a string or file
 
 MODULES=		cpan
 PKG_ARCH=		*
-DISTNAME=		HTML-Lint-2.22
-REVISION=		0
+DISTNAME =		HTML-Lint-2.26
 CATEGORIES=		www
 
 # perl
