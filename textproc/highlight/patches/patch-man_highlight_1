@@ -1,7 +1,8 @@
-$OpenBSD: patch-man_highlight_1,v 1.6 2013/06/05 07:33:22 benoit Exp $
---- man/highlight.1.orig	Mon May 27 23:58:43 2013
-+++ man/highlight.1	Tue Jun  4 09:18:30 2013
-@@ -187,13 +187,13 @@
+$OpenBSD: patch-man_highlight_1,v 1.7 2017/05/31 07:25:20 benoit Exp $
+Index: man/highlight.1
+--- man/highlight.1.orig
++++ man/highlight.1
+@@ -196,13 +196,13 @@ Reformatting code (-F)  will only work with C, C++, C#
  The wrapping options might cause faulty highlighting of long single line comments.
  .SH FILES
  The configuration files are stored in
@@ -17,4 +18,4 @@ $OpenBSD: patch-man_highlight_1,v 1.6 2013/06/05 07:33:22 benoit Exp $
 +.I ${SYSCONFDIR}/highlight/.
  .PP
  See README how to install own scripts in the home directory.
- .SH Examples
+ .SH EXAMPLES
