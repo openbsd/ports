@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2017/05/31 08:08:15 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2017/05/31 15:03:27 espie Exp $
 
 PKG_ARCH=		*
 
 COMMENT=		UNiversal Office CONVerter
 
 DISTNAME=		unoconv-0.7
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		converters textproc
 
@@ -45,12 +45,15 @@ do-install:
 		${MAKE_PROGRAM} ${ALL_FAKE_FLAGS} -f ${MAKE_FILE} install-links
 
 .include <bsd.port.arch.mk>
-.if !${PROPERTIES:Mclang}
+.if ${PROPERTIES:Mclang}
+PKG_ARGS += -DPRELOAD_WRAPPER=0
+.else
 post-install:
 	mv ${PREFIX}/bin/unoconv ${PREFIX}/bin/unoconv.py
 	${SUBST_CMD} -m 0555 -o ${BINOWN} -g ${BINGRP} \
 		-c ${FILESDIR}/unoconv.in \
 		${PREFIX}/bin/unoconv
+PKG_ARGS += -DPRELOAD_WRAPPER=1
 .endif
 
 .include <bsd.port.mk>
