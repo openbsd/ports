@@ -1,4 +1,4 @@
-# $OpenBSD: modules.port.mk,v 1.11 2017/05/31 08:08:16 espie Exp $
+# $OpenBSD: modules.port.mk,v 1.12 2017/05/31 08:53:39 espie Exp $
 #
 #  Copyright (c) 2001 Marc Espie
 # 
@@ -30,6 +30,9 @@
 
 _COMPILER=
 .if defined(COMPILER) && !defined(CHOSEN_COMPILER)
+.  if defined(_MODULES_DONE) && ${_MODULES_DONE:Mgcc4}
+ERRORS += "Fatal: COMPILER coming from a file included *after* the gcc module"
+.  endif
 COMPILER_LANGS ?= c c++
 ONLY_FOR_ARCHS ?= ${CXX11_ARCHS}
 .  if ${PROPERTIES:Mclang}
