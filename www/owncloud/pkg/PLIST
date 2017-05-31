@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.66 2017/05/23 08:57:27 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.67 2017/05/31 07:31:05 ajacoutot Exp $
 @unexec-delete rm -f /var/www/conf/modules/httpd-owncloud.conf
 conf/modules.sample/httpd-owncloud.conf.dist
 @sample /var/www/conf/modules.sample/
@@ -216,6 +216,7 @@ owncloud/apps/configreport/lib/AppInfo/
 owncloud/apps/configreport/lib/AppInfo/Application.php
 owncloud/apps/configreport/lib/Command/
 owncloud/apps/configreport/lib/Command/ConfigReport.php
+owncloud/apps/configreport/lib/ConfigReportEvent.php
 owncloud/apps/configreport/lib/Controller/
 owncloud/apps/configreport/lib/Controller/ReportController.php
 owncloud/apps/configreport/lib/Http/
@@ -4635,6 +4636,8 @@ owncloud/core/doc/admin/_images/openstack.png
 owncloud/core/doc/admin/_images/oracle-1.png
 owncloud/core/doc/admin/_images/ownbrander-1.png
 owncloud/core/doc/admin/_images/ownbrander-11.png
+owncloud/core/doc/admin/_images/owncloud-market-custom-groups-install.png
+owncloud/core/doc/admin/_images/owncloud-market-custom-groups.png
 owncloud/core/doc/admin/_images/phpinfo.png
 owncloud/core/doc/admin/_images/preview_images.png
 owncloud/core/doc/admin/_images/rackspace.png
@@ -4741,7 +4744,6 @@ owncloud/core/doc/admin/_sources/configuration_user/reset_admin_password.txt
 owncloud/core/doc/admin/_sources/configuration_user/reset_user_password.txt
 owncloud/core/doc/admin/_sources/configuration_user/user_auth_ftp_smb_imap.txt
 owncloud/core/doc/admin/_sources/configuration_user/user_auth_ldap.txt
-owncloud/core/doc/admin/_sources/configuration_user/user_auth_ldap_cleanup.txt
 owncloud/core/doc/admin/_sources/configuration_user/user_configuration.txt
 owncloud/core/doc/admin/_sources/configuration_user/user_provisioning_api.txt
 owncloud/core/doc/admin/_sources/contents.txt
@@ -4966,7 +4968,6 @@ owncloud/core/doc/admin/configuration_user/reset_admin_password.html
 owncloud/core/doc/admin/configuration_user/reset_user_password.html
 owncloud/core/doc/admin/configuration_user/user_auth_ftp_smb_imap.html
 owncloud/core/doc/admin/configuration_user/user_auth_ldap.html
-owncloud/core/doc/admin/configuration_user/user_auth_ldap_cleanup.html
 owncloud/core/doc/admin/configuration_user/user_configuration.html
 owncloud/core/doc/admin/configuration_user/user_provisioning_api.html
 owncloud/core/doc/admin/contents.html
@@ -5041,12 +5042,15 @@ owncloud/core/doc/admin/searchindex.js
 owncloud/core/doc/admin/whats_new_admin.html
 owncloud/core/doc/user/
 owncloud/core/doc/user/_images/
+owncloud/core/doc/user/_images/add-user-to-guests.png
 owncloud/core/doc/user/_images/contact_thunderbird-Symbol_Gear.jpg
 owncloud/core/doc/user/_images/contact_thunderbird-Symbol_Impeller.jpg
 owncloud/core/doc/user/_images/contact_thunderbird-URL_config.jpg
+owncloud/core/doc/user/_images/content-shared-with-guest-user.png
 owncloud/core/doc/user/_images/create_public_share-6.png
 owncloud/core/doc/user/_images/create_public_share-8.png
 owncloud/core/doc/user/_images/create_public_share-9.png
+owncloud/core/doc/user/_images/custom-group-manage-group-members.png
 owncloud/core/doc/user/_images/direct-share-1.png
 owncloud/core/doc/user/_images/encryption1.png
 owncloud/core/doc/user/_images/encryption2.png
@@ -5089,12 +5093,16 @@ owncloud/core/doc/user/_images/oc_connect.png
 owncloud/core/doc/user/_images/oc_personal_settings_dropdown.png
 owncloud/core/doc/user/_images/osx_webdav1.png
 owncloud/core/doc/user/_images/osx_webdav2.png
+owncloud/core/doc/user/_images/owncloud-create-custom-group-annotated.png
+owncloud/core/doc/user/_images/owncloud-share-to-custom-group.png
 owncloud/core/doc/user/_images/personal_settings.png
 owncloud/core/doc/user/_images/private-link.png
 owncloud/core/doc/user/_images/quota1.png
+owncloud/core/doc/user/_images/rename-custom-group.png
 owncloud/core/doc/user/_images/settings_devices.png
 owncloud/core/doc/user/_images/settings_devices_add.png
 owncloud/core/doc/user/_images/settings_sessions.png
+owncloud/core/doc/user/_images/share-with-guest-users.png
 owncloud/core/doc/user/_images/video_player_2.png
 owncloud/core/doc/user/_images/webdav_dolphin.png
 owncloud/core/doc/user/_images/webdav_gnome3_nautilus.png
@@ -5130,6 +5138,8 @@ owncloud/core/doc/user/_sources/pim/sync_thunderbird.txt
 owncloud/core/doc/user/_sources/pim/troubleshooting.txt
 owncloud/core/doc/user/_sources/session_management.txt
 owncloud/core/doc/user/_sources/userpreferences.txt
+owncloud/core/doc/user/_sources/webdav-api/
+owncloud/core/doc/user/_sources/webdav-api/index.txt
 owncloud/core/doc/user/_sources/webinterface.txt
 owncloud/core/doc/user/_sources/whats_new.txt
 owncloud/core/doc/user/_static/
@@ -5258,6 +5268,8 @@ owncloud/core/doc/user/search.html
 owncloud/core/doc/user/searchindex.js
 owncloud/core/doc/user/session_management.html
 owncloud/core/doc/user/userpreferences.html
+owncloud/core/doc/user/webdav-api/
+owncloud/core/doc/user/webdav-api/index.html
 owncloud/core/doc/user/webinterface.html
 owncloud/core/doc/user/whats_new.html
 owncloud/core/fonts/
