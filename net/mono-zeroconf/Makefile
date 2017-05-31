@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2016/11/11 11:52:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2017/05/31 07:55:05 espie Exp $
 
 COMMENT=		Zero Configuration Networking library for Mono
 
@@ -19,8 +19,8 @@ MODMONO_GMCS_COMPAT=	Yes
 
 USE_GMAKE=		Yes
 
-BUILD_DEPENDS=		net/avahi,-mono
-RUN_DEPENDS=		net/avahi,-mono
+BUILD_DEPENDS=		net/avahi,,-mono
+RUN_DEPENDS=		net/avahi,,-mono
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--disable-mdnsresponder

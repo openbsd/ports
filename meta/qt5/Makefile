@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/12/25 13:34:44 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2017/05/31 07:55:05 espie Exp $
 
 COMMENT-main =		C++ general-purpose toolkit, meta-package
 COMMENT-examples =	examples for Qt5, meta-package
@@ -50,7 +50,7 @@ RUN_DEPENDS-examples =	\
 			x11/qt5/qt3d,-examples=${MODQT5_VERSION} \
 			x11/qt5/qtbase,-examples=${MODQT5_VERSION} \
 			x11/qt5/qtcanvas3d,-examples=${MODQT5_VERSION} \
-			x11/qt5/qtdeclarative,-examples=${MODQT5_VERSION} \
+			x11/qt5/qtdeclarative,,-examples=${MODQT5_VERSION} \
 			x11/qt5/qtenginio,-examples=${MODQT5_VERSION:C/^[0-9]+/1/} \
 			x11/qt5/qtlocation,-examples=${MODQT5_VERSION} \
 			x11/qt5/qtmultimedia,-examples=${MODQT5_VERSION} \
@@ -61,7 +61,7 @@ RUN_DEPENDS-examples =	\
 			x11/qt5/qtserialbus,-examples=${MODQT5_VERSION} \
 			x11/qt5/qtserialport,-examples=${MODQT5_VERSION} \
 			x11/qt5/qtsvg,-examples=${MODQT5_VERSION} \
-			x11/qt5/qttools,-examples=${MODQT5_VERSION} \
+			x11/qt5/qttools,,-examples=${MODQT5_VERSION} \
 			x11/qt5/qtwebchannel,-examples=${MODQT5_VERSION} \
 			x11/qt5/qtwebsockets,-examples=${MODQT5_VERSION} \
 			x11/qt5/qtxmlpatterns,-examples=${MODQT5_VERSION} \
@@ -72,7 +72,7 @@ RUN_DEPENDS-html =	\
 			x11/qt5/qt3d,-html=${MODQT5_VERSION} \
 			x11/qt5/qtactiveqt,-html=${MODQT5_VERSION} \
 			x11/qt5/qtcanvas3d,-html=${MODQT5_VERSION} \
-			x11/qt5/qtdeclarative,-html=${MODQT5_VERSION} \
+			x11/qt5/qtdeclarative,,-html=${MODQT5_VERSION} \
 			x11/qt5/qtdoc,-html=${MODQT5_VERSION} \
 			x11/qt5/qtenginio,-html=${MODQT5_VERSION:C/^[0-9]+/1/} \
 			x11/qt5/qtgraphicaleffects,-html=${MODQT5_VERSION} \
@@ -98,7 +98,7 @@ RUN_DEPENDS-qch =	\
 			x11/qt5/qt3d,-qch=${MODQT5_VERSION} \
 			x11/qt5/qtactiveqt,-qch=${MODQT5_VERSION} \
 			x11/qt5/qtcanvas3d,-qch=${MODQT5_VERSION} \
-			x11/qt5/qtdeclarative,-qch=${MODQT5_VERSION} \
+			x11/qt5/qtdeclarative,,-qch=${MODQT5_VERSION} \
 			x11/qt5/qtdoc,-qch=${MODQT5_VERSION} \
 			x11/qt5/qtenginio,-qch=${MODQT5_VERSION:C/^[0-9]+/1/} \
 			x11/qt5/qtgraphicaleffects,-qch=${MODQT5_VERSION} \
