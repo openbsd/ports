@@ -51,7 +51,8 @@ stored in specialized tables, e.g.,:
     SUPDISTFILES 
     USE_*
     README
-    WANT_CXX
+    COMPILER
+    COMPILER_LANGS
 
 This information is mostly unchanged, except for replacing Yes/No variables
 with 1/0. Variables not present in a given port are left undefined.
