@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2017/05/27 10:54:47 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2017/05/31 08:10:01 espie Exp $
 
 COMMENT =	Enhanced Duke Nukem 3D engine
 RDATE =		20160610
@@ -7,6 +7,7 @@ DISTNAME =	eduke32_src_${RDATE}-${RTAG}
 PKGNAME =	eduke32-2.0.0.${RTAG}
 EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	games x11
+REVISION =	0
 
 HOMEPAGE =	http://www.eduke32.com/
 
@@ -24,10 +25,11 @@ BUILD_DEPENDS = archivers/unzip \
 BUILD_DEPENDS += devel/nasm
 .endif
 
-WANTLIB += c m ogg png pthread vorbis vorbisfile vpx z
+WANTLIB += c m ogg png pthread vorbis vorbisfile vpx z lz4
 WANTLIB += SDL2 SDL2_mixer FLAC execinfo ${LIBECXX}
 
-LIB_DEPENDS =	audio/libvorbis \
+LIB_DEPENDS =	archivers/lz4 \
+		audio/libvorbis \
 		audio/flac \
 		devel/sdl2 \
 		devel/sdl2-mixer \
@@ -42,7 +44,7 @@ RUN_DEPENDS =	games/duke3ddata
 
 MASTER_SITES =	http://dukeworld.duke4.net/eduke32/synthesis/${RDATE}-${RTAG}/
 
-WANT_CXX =	base gcc
+COMPILER =	gcc
 
 # make sure we can see compilation output, respect CC/CXX, don't strip!
 MAKE_ENV =	PRETTY_OUTPUT=0 \
@@ -59,6 +61,7 @@ post-extract:
 	# check for data files in correct location
 	@sed -i "s,/usr/share/games/eduke32,${TRUEPREFIX}/share/duke3d," \
 		${WRKSRC}/source/common.c
+	rm ${WRKSRC}/build/include/lz4.h ${WRKSRC}/build/src/lz4.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/eduke32 ${PREFIX}/bin

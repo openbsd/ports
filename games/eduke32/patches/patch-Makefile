@@ -1,0 +1,22 @@
+$OpenBSD: patch-Makefile,v 1.1 2017/05/31 08:10:01 espie Exp $
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -50,7 +50,6 @@ ENGINE_OBJS = \
+     textfont \
+     smalltextfont \
+     kplib \
+-    lz4 \
+     osd \
+     pragmas \
+     scriptfile \
+@@ -472,6 +471,8 @@ endif
+ ifeq ($(PLATFORM),BSD)
+     LIBS += -lFLAC -lvorbisfile -lvorbis -logg -lexecinfo
+ endif
++
++LIBS +=	-llz4
+ 
+ ifeq ($(PLATFORM),DARWIN)
+     # LIBDIRS += -L$(AUDIOLIB_ROOT)/third-party/Apple/lib
