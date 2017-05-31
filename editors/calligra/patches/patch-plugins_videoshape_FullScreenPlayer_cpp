@@ -1,4 +1,4 @@
-$OpenBSD: patch-plugins_videoshape_FullScreenPlayer_cpp,v 1.1 2017/05/30 18:57:20 rsadowski Exp $
+$OpenBSD: patch-plugins_videoshape_FullScreenPlayer_cpp,v 1.2 2017/05/31 22:02:09 rsadowski Exp $
 
 Index: plugins/videoshape/FullScreenPlayer.cpp
 --- plugins/videoshape/FullScreenPlayer.cpp.orig
@@ -12,11 +12,11 @@ Index: plugins/videoshape/FullScreenPlayer.cpp
 -#include <phonon/mediaobject.h>
 -#include <phonon/VolumeSlider>
 -#include <phonon/SeekSlider>
-+#include <kde4/phonon/videowidget.h>
-+#include <kde4/phonon/audiooutput.h>
-+#include <kde4/phonon/mediaobject.h>
-+#include <kde4/phonon/VolumeSlider>
-+#include <kde4/phonon/SeekSlider>
++#include <phonon4qt5/phonon/videowidget.h>
++#include <phonon4qt5/phonon/audiooutput.h>
++#include <phonon4qt5/phonon/mediaobject.h>
++#include <phonon4qt5/phonon/VolumeSlider>
++#include <phonon4qt5/phonon/SeekSlider>
  
  #include <QUrl>
  #include <QVBoxLayout>

@@ -1,4 +1,4 @@
-$OpenBSD: patch-plugins_videoshape_VideoThumbnailer_h,v 1.1 2017/05/30 18:57:20 rsadowski Exp $
+$OpenBSD: patch-plugins_videoshape_VideoThumbnailer_h,v 1.2 2017/05/31 22:02:09 rsadowski Exp $
 
 Index: plugins/videoshape/VideoThumbnailer.h
 --- plugins/videoshape/VideoThumbnailer.h.orig
@@ -10,9 +10,9 @@ Index: plugins/videoshape/VideoThumbnailer.h
 -#include <phonon/MediaObject>
 -#include <phonon/Global>
 -#include <phonon/experimental/videodataoutput2.h>
-+#include <kde4/phonon/MediaObject>
-+#include <kde4/phonon/Global>
-+#include <kde4/phonon/experimental/videodataoutput2.h>
++#include <phonon4qt5/phonon/MediaObject>
++#include <phonon4qt5/phonon/Global>
++#include <phonon4qt5/phonon/experimental/videodataoutput2.h>
  
  #include <QObject>
  #include <QImage>

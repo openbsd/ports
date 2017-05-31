@@ -1,4 +1,4 @@
-$OpenBSD: patch-plugins_videoshape_FullScreenPlayer_h,v 1.1 2017/05/30 18:57:20 rsadowski Exp $
+$OpenBSD: patch-plugins_videoshape_FullScreenPlayer_h,v 1.2 2017/05/31 22:02:09 rsadowski Exp $
 
 Index: plugins/videoshape/FullScreenPlayer.h
 --- plugins/videoshape/FullScreenPlayer.h.orig
@@ -8,7 +8,7 @@ Index: plugins/videoshape/FullScreenPlayer.h
  
  #include <QWidget>
 -#include <phonon/Global>
-+#include <kde4/phonon/Global>
++#include <phonon4qt5/phonon/Global>
  
  namespace Phonon
  {
