@@ -1,8 +1,6 @@
-$OpenBSD: patch-src_app_qgisapp_cpp,v 1.18 2017/05/23 09:16:29 landry Exp $
+$OpenBSD: patch-src_app_qgisapp_cpp,v 1.19 2017/05/31 11:49:28 landry Exp $
 Fix paths to docs
 
-Last chunk:
-https://github.com/qgis/QGIS/commit/af8fb04f396b8dce8eaae1d939fbe371ba05e6fb
 Index: src/app/qgisapp.cpp
 --- src/app/qgisapp.cpp.orig
 +++ src/app/qgisapp.cpp
@@ -15,7 +13,7 @@ Index: src/app/qgisapp.cpp
  
    connect( mActionHelpContents, SIGNAL( triggered() ), this, SLOT( helpContents() ) );
    connect( mActionHelpAPI, SIGNAL( triggered() ), this, SLOT( apiDocumentation() ) );
-@@ -9162,7 +9162,7 @@ void QgisApp::helpContents()
+@@ -9160,7 +9160,7 @@ void QgisApp::helpContents()
  
  void QgisApp::apiDocumentation()
  {
@@ -24,7 +22,7 @@ Index: src/app/qgisapp.cpp
    {
      openURL( "api/index.html" );
    }
-@@ -9191,7 +9191,7 @@ void QgisApp::openURL( QString url, bool useQgisDocDir
+@@ -9189,7 +9189,7 @@ void QgisApp::openURL( QString url, bool useQgisDocDir
    // open help in user browser
    if ( useQgisDocDirectory )
    {
@@ -33,12 +31,3 @@ Index: src/app/qgisapp.cpp
    }
  #ifdef Q_OS_MACX
    /* Use Mac OS X Launch Services which uses the user's default browser
-@@ -9315,7 +9315,7 @@ QgsVectorLayer* QgisApp::addVectorLayer( const QString
-       Q_ASSERT( elements.size() >= 4 );
-       if ( layer->name() != elements.at( 1 ) )
-       {
--        layer->setName( QStringLiteral( "%1 %2 %3" ).arg( layer->name(), elements.at( 1 ), elements.at( 3 ) ) );
-+        layer->setName( QString( "%1 %2 %3" ).arg( layer->name(), elements.at( 1 ), elements.at( 3 ) ) );
-       }
- 
-       myList << layer;
