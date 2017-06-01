@@ -1,0 +1,20 @@
+Krita is a raster graphics editor based on Qt 5 and the KDE Frameworks 5. Krita
+is designed to be a digital painting application. It has been influenced to
+some extent by software like Corel Painter and SAI. Krita packs with some key
+features different from most of its kind, including the ability to work with
+both bitmap and vector illustration.
+
+Core features:
+
+- An adaptive multi-modal interface which works on the desktop and touchscreens
+- A large set of default brushes
+- Customizable brush presets
+- Multiple brush engines, supports pressure sensitivity, tilt and other
+  features of graphics tablets
+- Wrap around mode canvas for creating and visualizing seamlessly tiled
+  textures
+- OpenGL powered canvas with high-bit-depth monitor support
+- Filters with real-time preview
+- A layer engine that allows deeply nested and grouped layers
+- Vector, clone, external-file and dynamic filter-effect layers
+- Supports a wide range of file formats and color models
