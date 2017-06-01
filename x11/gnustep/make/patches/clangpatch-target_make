@@ -1,0 +1,16 @@
+$OpenBSD: clangpatch-target_make,v 1.1 2017/06/01 13:37:08 espie Exp $
+
+XXX this is a supplementary patch for clang, on top of a file
+that's normally patched.
+
+Index: target.make
+--- target.make.orig
++++ target.make
+@@ -69,6 +69,7 @@ ifeq ($(findstring sysv4.2, $(GNUSTEP_TARGET_OS)), sys
+   TARGET_SYSTEM_LIBS = $(CONFIG_SYSTEM_LIBS) -lsocket -lnsl -lm
+ endif
+ 
++TARGET_SYSTEM_LIBS += -lc++abi
+ #
+ # Specific settings for building shared libraries, static libraries,
+ # and bundles on various systems
