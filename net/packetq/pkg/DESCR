@@ -1,0 +1,4 @@
+packetq is a command line tool to run SQL queries directly on PCAP files,
+the results can be output as JSON (default), formatted/compact CSV and
+XML. It also contains a very simplistic web-server in order to inspect
+PCAP files remotely.
