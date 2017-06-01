@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile.inc,v 1.9 2013/03/11 11:46:12 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.10 2017/06/01 11:47:06 espie Exp $
 
 DIST_SUBDIR=	gnustep
 
 MAINTAINER?=	Sebastian Reitenbach <sebastia@openbsd.org>
 
+# simplified BSD (libobjc2)
 # GPLv3 - LGPLv3 (GNUStep core apps and libs)
 # GPLv2 - LGPLv2
 PERMIT_PACKAGE_CDROM?=   Yes
