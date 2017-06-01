@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2015/09/11 12:39:27 pea Exp $
+# $OpenBSD: Makefile,v 1.23 2017/06/01 19:18:56 schwarze Exp $
 
 COMMENT = 	lightweight connection pooler for PostgreSQL
 
 V = 		1.6.1
 DISTNAME = 	pgbouncer-${V}
+REVISION =	0
 
 CATEGORIES = 	databases
 
@@ -27,7 +28,6 @@ CONFIGURE_ARGS = 	--with-libevent=${LOCALBASE} --without-cares
 MAKE_FLAGS+=		V=1
 
 USE_GMAKE = 		Yes
-USE_GROFF =		Yes
 
 # The actual regress tests are (cd ${WRKSRC}/test; ./test.sh)
 # They want to create full postgres install and also play with 

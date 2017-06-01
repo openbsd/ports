@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2016/12/18 18:21:40 jeremy Exp $
+# $OpenBSD: Makefile,v 1.25 2017/06/01 19:18:56 schwarze Exp $
 
 COMMENT=	PostgreSQL tools from Skype
 
 MODPY_EGG_VERSION=	3.1.1
 DISTNAME=		skytools-${MODPY_EGG_VERSION}
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	databases
 
@@ -27,7 +27,6 @@ RUN_DEPENDS=    databases/py-psycopg2
 
 NO_TEST=	Yes
 USE_GMAKE=	Yes
-USE_GROFF =	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--with-python=${MODPY_BIN}
