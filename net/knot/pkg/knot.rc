@@ -1,10 +1,10 @@
 #!/bin/sh
 #
-# $OpenBSD: knot.rc,v 1.4 2015/04/14 06:38:23 ajacoutot Exp $
+# $OpenBSD: knot.rc,v 1.5 2017/06/01 13:42:01 jca Exp $
 
 daemon="${PREFIX}/sbin/knotd -d"
 knotc="${PREFIX}/sbin/knotc"
-knotcheckconf="${knotc} checkconf"
+knotcheckconf="${knotc} conf-check"
 
 . /etc/rc.d/rc.subr
 

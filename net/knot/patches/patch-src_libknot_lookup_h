@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_libknot_lookup_h,v 1.1 2017/06/01 13:42:01 jca Exp $
+Index: src/libknot/lookup.h
+--- src/libknot/lookup.h.orig
++++ src/libknot/lookup.h
+@@ -25,6 +25,7 @@
+ #pragma once
+ 
+ #include <string.h>
++#include <strings.h>
+ 
+ /*!
+  * \brief A general purpose lookup table.
