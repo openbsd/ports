@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_gldrv_hashtable_3d_h,v 1.1 2017/06/01 11:29:12 espie Exp $
+
+Index: src/gldrv/hashtable_3d.h
+--- src/gldrv/hashtable_3d.h.orig
++++ src/gldrv/hashtable_3d.h
+@@ -37,7 +37,7 @@ class Hashtable3d
+     }
+ public:
+ ///Hashes a single value to a value on the collide table truncated to all 3d constraints.  Consider using a swizzle
+-    int hash_int( const double aye )
++    static int hash_int( const double aye )
+     {
+         return ( (int) ( ( (aye < 0) ? (aye
+                                         -COLLIDETABLEACCURACY) : aye )

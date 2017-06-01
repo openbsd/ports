@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2017/04/10 11:46:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2017/06/01 11:29:12 espie Exp $
 
 COMMENT =		3D space simulator
 
@@ -41,6 +41,9 @@ CONFIGURE_ARGS +=	--with-python-version=${MODPY_VERSION} \
 			--disable-cegui \
 			--disable-ffmpeg \
 			--with-data-dir="${TRUEPREFIX}/share/vegastrike"
+
+CXXFLAGS +=	-Wno-undefined-var-template -Wno-unused-volatile-lvalue
+
 CONFIGURE_ENV =	\
 	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
 	LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"

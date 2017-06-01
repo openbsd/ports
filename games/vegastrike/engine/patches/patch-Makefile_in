@@ -1,6 +1,18 @@
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2014/04/18 15:14:09 pascal Exp $
---- Makefile.in.orig.port	Sat May 26 17:13:54 2012
-+++ Makefile.in	Sat May 26 17:14:04 2012
+$OpenBSD: patch-Makefile_in,v 1.2 2017/06/01 11:29:12 espie Exp $
+explicitly pass -Wno-#warnings as it's a bitch to pass thru configure
+
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -711,7 +711,7 @@ CPPFLAGS = @CPPFLAGS@
+ CXX = @CXX@
+ CXXCPP = @CXXCPP@
+ CXXDEPMODE = @CXXDEPMODE@
+-CXXFLAGS = @CXXFLAGS@
++CXXFLAGS = @CXXFLAGS@ '-Wno-\#warnings'
+ CYGPATH_W = @CYGPATH_W@
+ DEFS = @DEFS@
+ DEPDIR = @DEPDIR@
 @@ -1894,7 +1894,7 @@ base_maker_SOURCES = \
    src/xml_support.h
  

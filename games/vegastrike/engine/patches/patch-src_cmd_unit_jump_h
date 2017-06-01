@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_cmd_unit_jump_h,v 1.1 2017/06/01 11:29:12 espie Exp $
+
+Index: src/cmd/unit_jump.h
+--- src/cmd/unit_jump.h.orig
++++ src/cmd/unit_jump.h
+@@ -108,7 +108,7 @@ bool GameUnit< UnitType >::TransferUnitToSystem( unsig
+                      (tester = *i) != NULL; ++i)
+                     if (tester->isUnit() == UNITPTR && tester != this)
+                         if ( ( this->LocalPosition()-tester->LocalPosition() ).Magnitude() < this->rSize()+tester->rSize() )
+-                            SetCurPosition( this->LocalPosition()+this->cumulative_transformation_matrix.getR()
++                            this->SetCurPosition( this->LocalPosition()+this->cumulative_transformation_matrix.getR()
+                                            *( 4*( this->rSize()+tester->rSize() ) ) );
+             DealPossibleJumpDamage( this );
+             static int jumparrive = AUDCreateSound( vs_config->getVariable( "unitaudio", "jumparrive", "sfx43.wav" ), false );

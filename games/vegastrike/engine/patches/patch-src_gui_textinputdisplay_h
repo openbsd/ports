@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_gui_textinputdisplay_h,v 1.1 2017/06/01 11:29:12 espie Exp $
+
+Index: src/gui/textinputdisplay.h
+--- src/gui/textinputdisplay.h.orig
++++ src/gui/textinputdisplay.h
+@@ -20,7 +20,7 @@
+  */
+ 
+ #ifndef __TEXTINPUTDISPLAY_H__
+-#define __TEXTINPUTISPLAY_H__
++#define __TEXTINPUTDISPLAY_H__
+ 
+ #include "staticdisplay.h"
+ #include <vector>

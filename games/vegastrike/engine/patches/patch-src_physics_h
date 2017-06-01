@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_physics_h,v 1.1 2017/06/01 11:29:12 espie Exp $
+
+Index: src/physics.h
+--- src/physics.h.orig
++++ src/physics.h
+@@ -27,7 +27,6 @@
+ static const float oocc = (float) 0.0000000000000000111265005605; //1/c^2
+ static const float c    = (float) 299792458.0;
+ static const float co10 = (float) 29979245.8;
+-float copysign( float x, float y );
+ 
+ struct Force
+ {

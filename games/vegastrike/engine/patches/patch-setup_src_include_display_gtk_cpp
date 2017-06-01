@@ -1,0 +1,32 @@
+$OpenBSD: patch-setup_src_include_display_gtk_cpp,v 1.1 2017/06/01 11:29:12 espie Exp $
+
+Index: setup/src/include/display_gtk.cpp
+--- setup/src/include/display_gtk.cpp.orig
++++ setup/src/include/display_gtk.cpp
+@@ -109,7 +109,7 @@ void ShowMain(void) {
+ 				break;
+ 			}
+ 			i++;
+-		} while ((NEWCUR = NEWCUR->next) > 0);
++		} while ((NEWCUR = NEWCUR->next) != 0);
+ //		printf("\n\n");
+ 		gtk_widget_show (menu);
+ 		gtk_container_add(GTK_CONTAINER(vbox), menu);
+@@ -124,7 +124,7 @@ void ShowMain(void) {
+ 			gtk_widget_show(hbox);
+ 		}
+ 		column++;
+-	} while ((CURRENT = CURRENT->next) > 0);
++	} while ((CURRENT = CURRENT->next) != 0);
+ 	if (column != 1) {
+ 		gtk_container_add(GTK_CONTAINER(main_vbox), hbox);
+ 		gtk_widget_show(hbox);
+@@ -180,7 +180,7 @@ void AddCats(GtkWidget *vbox, char *group, char *def) 
+ //		gtk_signal_connect(GTK_OBJECT(button), "clicked", GTK_SIGNAL_FUNC(ClickButton), CUR);
+ #endif
+ 		CUR->button = button;
+-	} while ((CUR = CUR->next) > 0);
++	} while ((CUR = CUR->next) != 0);
+ }
+ 
+ void ClickButton(GtkWidget *w, struct catagory *CUR) {

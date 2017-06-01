@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_audio_Exceptions_h,v 1.1 2017/06/01 11:29:12 espie Exp $
+order of initialization matters.
+
+Index: src/audio/Exceptions.h
+--- src/audio/Exceptions.h.orig
++++ src/audio/Exceptions.h
+@@ -87,7 +87,7 @@ namespace Audio {
+     public:
+         CorruptStreamException(const CorruptStreamException &other) : Exception(other) {}
+         explicit CorruptStreamException(bool _fatal) 
+-            : Exception(fatal ? "Fatal corruption on stream" : "Recoverable corruption on stream"),
++            : Exception(_fatal ? "Fatal corruption on stream" : "Recoverable corruption on stream"),
+               fatal(_fatal) 
+         {}
+         

@@ -1,0 +1,14 @@
+$OpenBSD: patch-setup_src_include_general_cpp,v 1.1 2017/06/01 11:29:12 espie Exp $
+
+Index: setup/src/include/general.cpp
+--- setup/src/include/general.cpp.orig
++++ setup/src/include/general.cpp
+@@ -121,7 +121,7 @@ char *replace(char *line, char *search, char *replace,
+ 	if (calc > LENGTH) { return line; }
+ 	length = strlen(line);
+ 	strcpy(current, line);
+-	while ((location = strstr(current, search)) > 0) {
++	while ((location = strstr(current, search)) != 0) {
+ 		chr_new[0] = '\0';
+ 		calc = strlen(current) - strlen(search) + strlen(replace);
+ 		if (calc > LENGTH) { strcpy(line, current); free(current); free(chr_new); return line; }

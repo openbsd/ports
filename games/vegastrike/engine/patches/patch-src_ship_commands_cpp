@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_ship_commands_cpp,v 1.1 2017/06/01 11:29:12 espie Exp $
+
+Index: src/ship_commands.cpp
+--- src/ship_commands.cpp.orig
++++ src/ship_commands.cpp
+@@ -5,15 +5,6 @@
+ #include "universe_util.h"
+ #include "gldrv/winsys.h"
+ 
+-static inline float fmin( float a, float b )
+-{
+-    return (a < b) ? a : b;
+-}
+-static inline float fmax( float a, float b )
+-{
+-    return (a > b) ? a : b;
+-}
+-
+ class ShipCommands
+ {
+     Functor< ShipCommands > *csetkps;

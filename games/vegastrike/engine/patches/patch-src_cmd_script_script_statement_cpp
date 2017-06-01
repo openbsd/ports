@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_cmd_script_script_statement_cpp,v 1.1 2017/06/01 11:29:12 espie Exp $
+ludicrous "concatenation"
+
+Index: src/cmd/script/script_statement.cpp
+--- src/cmd/script/script_statement.cpp.orig
++++ src/cmd/script/script_statement.cpp
+@@ -77,7 +77,7 @@ void Mission::doIf( missionNode *node, int mode )
+ 
+         int nr_subnodes = node->subnodes.size();
+         if (nr_subnodes != 3) {
+-            fatalError( node, mode, "an if-statement needs exact three subnodes, not "+nr_subnodes );
++            fatalError( node, mode, "an if-statement needs exactly three subnodes" );
+             printf( "nr_of_subnodes: %d\n", nr_subnodes );
+ 
+             assert( 0 );

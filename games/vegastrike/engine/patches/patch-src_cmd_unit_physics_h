@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_cmd_unit_physics_h,v 1.1 2017/06/01 11:29:12 espie Exp $
+
+Index: src/cmd/unit_physics.h
+--- src/cmd/unit_physics.h.orig
++++ src/cmd/unit_physics.h
+@@ -41,8 +41,6 @@
+ #include "networking/lowlevel/vsnet_clientstate.h"
+ #include "networking/netclient.h"
+ 
+-extern float copysign( float x, float y );
+-
+ extern unsigned int apply_float_to_unsigned_int( float tmp ); //short fix
+ 
+ template < class UnitType >

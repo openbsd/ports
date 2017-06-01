@@ -1,6 +1,10 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2014/04/18 15:14:09 pascal Exp $
---- configure.orig.port	Mon Aug 26 19:07:12 2013
-+++ configure	Mon Aug 26 19:07:24 2013
+$OpenBSD: patch-configure,v 1.2 2017/06/01 11:29:12 espie Exp $
+Bogus python lib, doesn't link too well with clang.
+
+
+Index: configure
+--- configure.orig
++++ configure
 @@ -10520,10 +10520,6 @@ rm -f conftest.err conftest.$ac_objext conftest.$ac_ex
  fi
  DEBUG_NOOPT="-O0 -g"
@@ -12,3 +16,13 @@ $OpenBSD: patch-configure,v 1.1.1.1 2014/04/18 15:14:09 pascal Exp $
  
  # Check whether --enable-permissive or --disable-permissive was given.
  if test "${enable_permissive+set}" = set; then
+@@ -10980,7 +10976,8 @@ then
+ 	    if test "x$is_macosx" = "xyes" ; then
+ 	    	    PYTHON_LIBS="$i/libpython${PYTHON_SHORT}.a"
+ 	    else
+-	    	    PYTHON_LIBS="$i/libpython${PYTHON_SHORT}.a"
++		    PYTHON_LIBS="-L$i -lpython${PYTHON_SHORT}"
++	    	    #PYTHON_LIBS="$i/libpython${PYTHON_SHORT}.a"
+ 	    fi
+             FOUND_LIBPYTHON_SO=yes
+ 	    break

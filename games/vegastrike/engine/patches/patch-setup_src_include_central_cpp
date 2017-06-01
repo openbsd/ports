@@ -1,0 +1,59 @@
+$OpenBSD: patch-setup_src_include_central_cpp,v 1.1 2017/06/01 11:29:12 espie Exp $
+
+Index: setup/src/include/central.cpp
+--- setup/src/include/central.cpp.orig
++++ setup/src/include/central.cpp
+@@ -34,7 +34,7 @@ void SetGroup(char *group, char *setting) {
+ 	do {
+ 		if (CURRENT->name == NULL) { continue; }
+ 		if (strcmp(group, CURRENT->name) == 0) { CURRENT->setting = NewString(setting); return; }
+-	} while ((CURRENT = CURRENT->next) > 0);
++	} while ((CURRENT = CURRENT->next) != 0);
+ }
+ void SetInfo(char *catagory, char *info) {
+ 	struct catagory *CURRENT;
+@@ -42,7 +42,7 @@ void SetInfo(char *catagory, char *info) {
+ 	do {
+ 		if (CURRENT->name == NULL) { continue; }
+ 		if (strcmp(catagory, CURRENT->name) == 0) { CURRENT->info = NewString(info); return; }
+-	} while ((CURRENT = CURRENT->next) > 0);
++	} while ((CURRENT = CURRENT->next) != 0);
+ }
+ 
+ char *GetInfo(char *catagory) {
+@@ -54,7 +54,7 @@ char *GetInfo(char *catagory) {
+ 			if (CURRENT->info) { return CURRENT->info; }
+ 			else { return catagory; }
+ 		}
+-	} while ((CURRENT = CURRENT->next) > 0);
++	} while ((CURRENT = CURRENT->next) != 0);
+ 	return catagory;
+ }
+ 
+@@ -64,7 +64,7 @@ char *GetSetting(char *group) {
+ 	do {
+ 		if (CUR->name == NULL) { continue; }
+ 		if (strcmp(CUR->name, group) == 0) { return CUR->setting; }
+-	} while ((CUR = CUR->next) > 0);
++	} while ((CUR = CUR->next) != 0);
+ 	return '\0';
+ }
+ 
+@@ -74,7 +74,7 @@ struct catagory *GetCatStruct(char *name) {
+ 	do {
+ 		if (CUR->name == NULL) { continue; }
+ 		if (strcmp(CUR->name, name) == 0) { return CUR; }
+-	} while ((CUR = CUR->next) > 0);
++	} while ((CUR = CUR->next) != 0);
+ 	return 0;
+ }
+ 
+@@ -84,7 +84,7 @@ struct group *GetGroupStruct(char *name) {
+         do {
+                 if (CUR->name == NULL) { continue; }
+                 if (strcmp(CUR->name, name) == 0) { return CUR; }
+-        } while ((CUR = CUR->next) > 0);
++        } while ((CUR = CUR->next) != 0);
+         return 0;
+ }
+ 

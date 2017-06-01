@@ -1,0 +1,32 @@
+$OpenBSD: patch-setup_src_include_file_cpp,v 1.1 2017/06/01 11:29:12 espie Exp $
+
+Index: setup/src/include/file.cpp
+--- setup/src/include/file.cpp.orig
++++ setup/src/include/file.cpp
+@@ -167,7 +167,7 @@ void LoadConfig( void )
+         n_parm = next_parm( parm );                     //next_parm is a line splitter included with general.c
+         if (strcmp( "groups", parm ) == 0) {
+             parm = n_parm;
+-            while ( ( n_parm = next_parm( parm ) ) > 0 ) {
++            while ( ( n_parm = next_parm( parm ) ) != 0 ) {
+                 G_CURRENT->name = NewString( parm );
+                 G_NEXT = (struct group*) malloc( sizeof (struct group) );
+                 if (G_NEXT == 0) {
+@@ -188,7 +188,7 @@ void LoadConfig( void )
+             n_parm = next_parm( parm );
+             group  = NewString( parm );
+             parm   = n_parm;
+-            while ( ( n_parm = next_parm( parm ) ) > 0 ) {
++            while ( ( n_parm = next_parm( parm ) ) != 0 ) {
+                 C_CURRENT->name = NewString( parm );
+                 C_NEXT = (struct catagory*) malloc( sizeof (struct catagory) );
+                 if (C_NEXT == 0) {
+@@ -318,7 +318,7 @@ void Modconfig( int setting, char *name, char *group )
+         parm++;
+         if (strcmp( name, parm ) == 0) {commenting = setting; } else {
+             parm = n_parm;
+-            while ( ( n_parm = next_parm( parm ) ) > 0 ) {
++            while ( ( n_parm = next_parm( parm ) ) != 0 ) {
+                 if (parm[0] == '<') break;
+                 if (strcmp( name, parm ) == 0) {
+                     commenting = setting;
