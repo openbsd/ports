@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1007 2017/05/28 12:03:02 akfaew Exp $
+# $OpenBSD: Makefile,v 1.1008 2017/06/01 21:36:12 fcambus Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -455,6 +455,7 @@
      SUBDIR += p5-XML-RPC
      SUBDIR += p5-Zonemaster
      SUBDIR += p5-flowd
+     SUBDIR += packetq
      SUBDIR += packit
      SUBDIR += pavuk
      SUBDIR += pavuk,no_x11
