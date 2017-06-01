@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2017/05/05 10:21:47 jsg Exp $
+# $OpenBSD: Makefile,v 1.23 2017/06/01 20:47:38 espie Exp $
 
 ONLY_FOR_ARCHS = powerpc i386 amd64
 # arm needs missing EABI symbols
@@ -54,3 +54,7 @@ do-test:
 	${WRKSRC}/src/luajit -e "print('hello world')" | grep "^hello world$$"
 
 .include <bsd.port.mk>
+.if ${PROPERTIES:Mclang}
+MAKE_FLAGS += TARGET_LDFLAGS='-lc++abi -lpthread'
+WANTLIB +=	c++abi pthread
+.endif
