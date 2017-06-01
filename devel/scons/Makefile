@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2015/12/01 08:26:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2017/06/01 19:58:04 schwarze Exp $
 
 COMMENT=	Python-based build system
 
 VERSION =	2.4.1
 DISTNAME=	scons-${VERSION}
+REVISION =	0
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.scons.org/
@@ -15,7 +16,6 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=scons/}
 
 MODULES=	lang/python
 
-USE_GROFF =	Yes
 NO_TEST=	Yes
 
 SUBST_VARS+=	VERSION

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.169 2017/05/10 08:05:04 benoit Exp $
+# $OpenBSD: Makefile,v 1.170 2017/06/01 19:58:04 schwarze Exp $
 
 COMMENT-main =	GIT - Tree History Storage Tool
 COMMENT-svn =	GIT - subversion interoperability tools
@@ -9,6 +9,7 @@ DISTNAME =	git-${V}
 PKGNAME-main =	${DISTNAME}
 PKGNAME-svn =	git-svn-${V}
 PKGNAME-x11 =	git-x11-${V}
+REVISION =	0
 CATEGORIES =	devel
 
 HOMEPAGE =	http://git-scm.com/
@@ -76,7 +77,6 @@ CONFIGURE_ENV =		CPPFLAGS="-I${WRKSRC} -I${LOCALBASE}/include" \
 			DIFF=diff TAR=tar
 
 USE_GMAKE =		Yes
-USE_GROFF =		Yes
 
 TEST_DEPENDS =		archivers/gtar \
 			archivers/unzip \
