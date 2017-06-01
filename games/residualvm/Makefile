@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2017/05/29 12:13:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2017/06/01 11:57:42 espie Exp $
 
 COMMENT =		interpreter for some LucasArts 3D games
 
@@ -32,7 +32,7 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 
 # GCC 4.2.1 miscompiles this on at least ppc, so play safe and
 # just use a newer compiler everywhere.
-WANT_CXX =		base gcc
+COMPILER =		gcc
 
 SEPARATE_BUILD =	Yes
 USE_GMAKE =		Yes
