@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2017/05/23 13:00:47 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.24 2017/06/01 07:42:48 sthen Exp $
 @newgroup _saned:553
 @newuser _saned:553:_saned:daemon:SANE Scanner Daemon:/var/empty:/sbin/nologin
 @extraunexec rm -rf /var/spool/lock/sane/*
@@ -72,7 +72,6 @@ lib/sane/libsane-niash.so
 lib/sane/libsane-p5.so
 lib/sane/libsane-pie.so
 lib/sane/libsane-pieusb.so
-lib/sane/libsane-pint.so
 lib/sane/libsane-pixma.so
 lib/sane/libsane-plustek.so
 lib/sane/libsane-plustek_pp.so
@@ -159,7 +158,6 @@ lib/sane/libsane-xerox_mfp.so
 @man man/man5/sane-p5.5
 @man man/man5/sane-pie.5
 @man man/man5/sane-pieusb.5
-@man man/man5/sane-pint.5
 @man man/man5/sane-pixma.5
 @man man/man5/sane-plustek.5
 @man man/man5/sane-plustek_pp.5
