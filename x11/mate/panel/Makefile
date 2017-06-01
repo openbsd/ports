@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2017/05/30 21:59:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2017/06/01 06:08:09 ajacoutot Exp $
 
 COMMENT=		panel component for MATE
 
@@ -6,6 +6,7 @@ SHARED_LIBS +=  mate-panel-applet-4       1.1 # 1.1
 
 MATE_PROJECT=		mate-panel
 MATE_VERSION=		1.18.2
+REVISION=		0
 
 CATEGORIES=		x11
 
@@ -40,7 +41,7 @@ RUN_DEPENDS=		x11/mate/settings-daemon \
 			x11/mate/screensaver
 
 MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache \
-			gobject-introspection
+			gobject-introspection yelp
 
 CONFIGURE_STYLE=	gnu
 

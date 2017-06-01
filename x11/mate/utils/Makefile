@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2017/05/30 21:59:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2017/06/01 06:08:09 ajacoutot Exp $
 
 COMMENT=		MATE support utilities
 
@@ -6,7 +6,7 @@ SHARED_LIBS +=  matedict                  6.7 # 6.7
 
 MATE_PROJECT=		mate-utils
 MATE_VERSION=		1.18.2
-REVISION=		0
+REVISION=		1
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -27,7 +27,7 @@ MODULES=		devel/dconf \
 LIB_DEPENDS=		devel/libgtop2 \
 			x11/mate/panel
 
-MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache
+MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache yelp
 
 CONFIGURE_STYLE=	gnu
 

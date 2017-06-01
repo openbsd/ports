@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2017/05/30 21:59:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2017/06/01 06:08:09 ajacoutot Exp $
 
 USE_WXNEEDED=		Yes
 
@@ -8,7 +8,7 @@ CATEGORIES=		textproc
 
 MATE_PROJECT=		pluma
 MATE_VERSION=		1.18.2
-REVISION=		1
+REVISION=		2
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -30,7 +30,7 @@ LIB_DEPENDS=		devel/libpeas \
 			textproc/enchant \
 			x11/gtksourceview3
 
-MODGNOME_TOOLS=		desktop-file-utils
+MODGNOME_TOOLS=		desktop-file-utils yelp
 
 CONFIGURE_STYLE=	gnu
 

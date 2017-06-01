@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2017/05/30 21:59:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2017/06/01 06:08:09 ajacoutot Exp $
 
 USE_WXNEEDED=		Yes
 
@@ -8,7 +8,7 @@ CATEGORIES=		archivers
 
 MATE_PROJECT=		engrampa
 MATE_VERSION=		1.18.2
-REVISION=		1
+REVISION=		2
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -33,7 +33,7 @@ LIB_DEPENDS=		devel/json-glib \
 
 CONFIGURE_ARGS=		--disable-packagekit
 
-MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache
+MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache yelp
 
 CONFIGURE_STYLE=	gnu
 

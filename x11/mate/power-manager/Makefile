@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2017/05/30 21:44:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2017/06/01 06:08:09 ajacoutot Exp $
 
 COMMENT=		MATE power manager
 
 MATE_PROJECT=		mate-power-manager
-REVISION=		0
+REVISION=		1
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -22,7 +22,7 @@ WANTLIB += pangocairo-1.0 pangoft2-1.0 upower-glib vorbis vorbisfile
 MODULES=		devel/dconf \
 			x11/gnome
 
-MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache
+MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache yelp
 
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.69

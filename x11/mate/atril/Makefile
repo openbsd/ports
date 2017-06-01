@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2017/05/30 21:59:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2017/06/01 06:08:09 ajacoutot Exp $
 
 USE_WXNEEDED=		Yes
 
@@ -10,7 +10,7 @@ SHARED_LIBS +=  atrildocument             3.0 # 3.0
 SHARED_LIBS +=  atrilview                 3.0 # 3.0
 
 MATE_PROJECT=		atril
-REVISION=		1
+REVISION=		2
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -49,7 +49,7 @@ LIB_DEPENDS=		databases/sqlite3 \
 BUILD_DEPENDS=		devel/gsettings-desktop-schemas
 RUN_DEPENDS=		devel/gsettings-desktop-schemas
 
-MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache
+MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache yelp
 
 CONFIGURE_STYLE=	gnu
 

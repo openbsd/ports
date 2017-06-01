@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2017/05/30 21:59:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2017/06/01 06:08:09 ajacoutot Exp $
 
 COMMENT=		MATE terminal
 
 MATE_PROJECT=		mate-terminal
 MATE_VERSION=		1.18.1
-REVISION=		0
+REVISION=		1
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -27,7 +27,7 @@ RUN_DEPENDS=		devel/gsettings-desktop-schemas
 
 LIB_DEPENDS=		devel/vte3
 
-MODGNOME_TOOLS=		desktop-file-utils
+MODGNOME_TOOLS=		desktop-file-utils yelp
 
 CONFIGURE_STYLE=	gnu
 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2017/05/30 21:59:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2017/06/01 06:08:09 ajacoutot Exp $
 
 COMMENT=		MATE calculator
 
 MATE_PROJECT=		mate-calc
-REVISION=		0
+REVISION=		1
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -20,7 +20,7 @@ LIB_DEPENDS=		x11/gtk+3
 BUILD_DEPENDS=		devel/gsettings-desktop-schemas
 RUN_DEPENDS=		devel/gsettings-desktop-schemas
 
-MODGNOME_TOOLS=		desktop-file-utils
+MODGNOME_TOOLS=		desktop-file-utils yelp
 
 CONFIGURE_STYLE=	gnu
 
