@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.38 2016/08/02 08:17:20 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.39 2017/06/01 22:26:08 giovanni Exp $
 @pkgpath ${BASE_PKGPATH},altivec
 bin/gimp
 @bin bin/gimp-2.8
@@ -274,6 +274,7 @@ lib/gimp/2.0/plug-ins/
 @bin lib/gimp/2.0/plug-ins/colorify
 @bin lib/gimp/2.0/plug-ins/colormap-remap
 lib/gimp/2.0/plug-ins/colorxhtml.py
+lib/gimp/2.0/plug-ins/colorxhtml.pyc
 @bin lib/gimp/2.0/plug-ins/compose
 @bin lib/gimp/2.0/plug-ins/contrast-normalize
 @bin lib/gimp/2.0/plug-ins/contrast-retinex
@@ -320,6 +321,7 @@ lib/gimp/2.0/plug-ins/colorxhtml.py
 @bin lib/gimp/2.0/plug-ins/file-jpeg
 @bin lib/gimp/2.0/plug-ins/file-mng
 lib/gimp/2.0/plug-ins/file-openraster.py
+lib/gimp/2.0/plug-ins/file-openraster.pyc
 @bin lib/gimp/2.0/plug-ins/file-pat
 @bin lib/gimp/2.0/plug-ins/file-pcx
 @bin lib/gimp/2.0/plug-ins/file-pdf-load
@@ -349,6 +351,7 @@ lib/gimp/2.0/plug-ins/file-openraster.py
 @bin lib/gimp/2.0/plug-ins/filter-pack
 @bin lib/gimp/2.0/plug-ins/flame
 lib/gimp/2.0/plug-ins/foggify.py
+lib/gimp/2.0/plug-ins/foggify.pyc
 @bin lib/gimp/2.0/plug-ins/fractal-explorer
 @bin lib/gimp/2.0/plug-ins/fractal-trace
 @bin lib/gimp/2.0/plug-ins/gfig
@@ -356,6 +359,7 @@ lib/gimp/2.0/plug-ins/foggify.py
 @bin lib/gimp/2.0/plug-ins/gradient-flare
 @bin lib/gimp/2.0/plug-ins/gradient-map
 lib/gimp/2.0/plug-ins/gradients-save-as-css.py
+lib/gimp/2.0/plug-ins/gradients-save-as-css.pyc
 @bin lib/gimp/2.0/plug-ins/grid
 @bin lib/gimp/2.0/plug-ins/guillotine
 @bin lib/gimp/2.0/plug-ins/help
@@ -387,8 +391,11 @@ lib/gimp/2.0/plug-ins/gradients-save-as-css.py
 @bin lib/gimp/2.0/plug-ins/oilify
 @bin lib/gimp/2.0/plug-ins/pagecurl
 lib/gimp/2.0/plug-ins/palette-offset.py
+lib/gimp/2.0/plug-ins/palette-offset.pyc
 lib/gimp/2.0/plug-ins/palette-sort.py
+lib/gimp/2.0/plug-ins/palette-sort.pyc
 lib/gimp/2.0/plug-ins/palette-to-gradient.py
+lib/gimp/2.0/plug-ins/palette-to-gradient.pyc
 @bin lib/gimp/2.0/plug-ins/photocopy
 @bin lib/gimp/2.0/plug-ins/pixelize
 @bin lib/gimp/2.0/plug-ins/plasma
@@ -397,9 +404,13 @@ lib/gimp/2.0/plug-ins/palette-to-gradient.py
 @bin lib/gimp/2.0/plug-ins/print
 @bin lib/gimp/2.0/plug-ins/procedure-browser
 lib/gimp/2.0/plug-ins/${MODPY_PY_PREFIX}slice.py
+lib/gimp/2.0/plug-ins/${MODPY_PY_PREFIX}slice.pyc
 lib/gimp/2.0/plug-ins/pyconsole.py
+lib/gimp/2.0/plug-ins/pyconsole.pyc
 lib/gimp/2.0/plug-ins/python-console.py
+lib/gimp/2.0/plug-ins/python-console.pyc
 lib/gimp/2.0/plug-ins/python-eval.py
+lib/gimp/2.0/plug-ins/python-eval.pyc
 @bin lib/gimp/2.0/plug-ins/qbist
 @bin lib/gimp/2.0/plug-ins/red-eye-removal
 @bin lib/gimp/2.0/plug-ins/ripple
@@ -417,6 +428,7 @@ lib/gimp/2.0/plug-ins/python-eval.py
 @bin lib/gimp/2.0/plug-ins/sparkle
 @bin lib/gimp/2.0/plug-ins/sphere-designer
 lib/gimp/2.0/plug-ins/text-brush.py
+lib/gimp/2.0/plug-ins/text-brush.pyc
 @bin lib/gimp/2.0/plug-ins/threshold-alpha
 @bin lib/gimp/2.0/plug-ins/tile
 @bin lib/gimp/2.0/plug-ins/tile-glass
@@ -441,20 +453,20 @@ lib/gimp/2.0/python/gimp.so
 lib/gimp/2.0/python/gimpcolor.so
 lib/gimp/2.0/python/gimpenums.py
 lib/gimp/2.0/python/gimpenums.pyc
-lib/gimp/2.0/python/gimpenums.pyo
+lib/gimp/2.0/python/gimpenums.${MODPY_PYOEXTENSION}
 lib/gimp/2.0/python/gimpfu.py
 lib/gimp/2.0/python/gimpfu.pyc
-lib/gimp/2.0/python/gimpfu.pyo
+lib/gimp/2.0/python/gimpfu.${MODPY_PYOEXTENSION}
 lib/gimp/2.0/python/gimpplugin.py
 lib/gimp/2.0/python/gimpplugin.pyc
-lib/gimp/2.0/python/gimpplugin.pyo
+lib/gimp/2.0/python/gimpplugin.${MODPY_PYOEXTENSION}
 lib/gimp/2.0/python/gimpshelf.py
 lib/gimp/2.0/python/gimpshelf.pyc
-lib/gimp/2.0/python/gimpshelf.pyo
+lib/gimp/2.0/python/gimpshelf.${MODPY_PYOEXTENSION}
 lib/gimp/2.0/python/gimpthumb.so
 lib/gimp/2.0/python/gimpui.py
 lib/gimp/2.0/python/gimpui.pyc
-lib/gimp/2.0/python/gimpui.pyo
+lib/gimp/2.0/python/gimpui.${MODPY_PYOEXTENSION}
 lib/gimp/2.0/python/pygimp-logo.png
 lib/libgimp-2.0.a
 lib/libgimp-2.0.la
@@ -1250,11 +1262,11 @@ share/gtk-doc/html/libgimp/home.png
 share/gtk-doc/html/libgimp/index.html
 share/gtk-doc/html/libgimp/left-insensitive.png
 share/gtk-doc/html/libgimp/left.png
-share/gtk-doc/html/libgimp/libgimp-Gimp.html
 share/gtk-doc/html/libgimp/libgimp-GimpItemComboBox.html
 share/gtk-doc/html/libgimp/libgimp-GimpProcView.html
 share/gtk-doc/html/libgimp/libgimp-data.html
 share/gtk-doc/html/libgimp/libgimp-general.html
+share/gtk-doc/html/libgimp/libgimp-gimp.html
 share/gtk-doc/html/libgimp/libgimp-gimpbrush.html
 share/gtk-doc/html/libgimp/libgimp-gimpbrushes.html
 share/gtk-doc/html/libgimp/libgimp-gimpbrushmenu.html

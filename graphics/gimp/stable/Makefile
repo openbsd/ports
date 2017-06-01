@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.114 2017/02/18 17:33:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.115 2017/06/01 22:26:08 giovanni Exp $
 
 COMMENT=	GNU Image Manipulation Program
 
-DISTNAME=	gimp-2.8.18
-REVISION=	4
+DISTNAME=	gimp-2.8.22
 
 SHARED_LIBS+=	gimp-2.0	272.0	# 800.0
 SHARED_LIBS+=	gimpbase-2.0	272.0	# 800.0
@@ -17,7 +16,7 @@ SHARED_LIBS+=	gimpwidgets-2.0	272.0	# 800.0
 
 CATEGORIES=	graphics
 MAINTAINER=	Giovanni Bechis <giovanni@openbsd.org>
-	
+
 DIR=		gimp/v2.8
 MASTER_SITES=	http://download.gimp.org/pub/${DIR}/ \
 		http://mirrors.go-parts.com/gimp/${DIR}/ \
@@ -32,7 +31,8 @@ BUILD_DEPENDS=	textproc/libxslt \
 RUN_DEPENDS=	devel/desktop-file-utils \
 		x11/gtk+3,-guic \
 		x11/py-gtk2
-LIB_DEPENDS=	devel/libexecinfo \
+LIB_DEPENDS=	archivers/bzip2 \
+		devel/libexecinfo \
 		x11/gtk+2 \
 		graphics/aalib \
 		x11/dbus-glib \
@@ -59,7 +59,7 @@ WANTLIB += jbig2dec jpeg lcms lcms2 lzma m mng ncurses nettle nghttp2
 WANTLIB += openjp2 p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
 WANTLIB += pixman-1 png poppler poppler-glib pthread pthread-stubs
 WANTLIB += rsvg-2 ssl tasn1 tiff wmf-0.2 wmflite-0.2 xcb xcb-render
-WANTLIB += xcb-shm xml2 z
+WANTLIB += xcb-shm xml2 unistring z
 
 MODULES=	devel/gettext \
 		textproc/intltool \
@@ -69,12 +69,14 @@ USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+=--enable-gimp-console \
 		--with-libcurl \
+		--with-pdbgen \
 		--without-gvfs \
 		--without-webkit
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 post-install:
+	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py ${PREFIX}/lib/gimp/2.0/plug-ins
 	@rm ${PREFIX}/lib/gimp/2.0/modules/*.{a,la}
 	@rm ${PREFIX}/lib/gimp/2.0/python/*.{a,la}
 

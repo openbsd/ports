@@ -1,10 +1,10 @@
-$OpenBSD: patch-app_Makefile_in,v 1.4 2017/05/04 11:46:39 espie Exp $
+$OpenBSD: patch-app_Makefile_in,v 1.5 2017/06/01 22:26:08 giovanni Exp $
 Pass linker flags without support from compiler
 
 Index: app/Makefile.in
 --- app/Makefile.in.orig
 +++ app/Makefile.in
-@@ -653,33 +653,33 @@ INCLUDES = \
+@@ -728,33 +728,33 @@ INCLUDES = \
  
  # FIXME: core should not depend on xcf
  workaround_that_core_depends_on_xcf = \
