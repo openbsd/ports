@@ -1,0 +1,23 @@
+$OpenBSD: patch-packet_packet_c,v 1.1 2017/06/02 14:30:27 sthen Exp $
+
+Not yet enabled, requires additional sockopts:
+
+SOL_SOCKET:	SO_REUSEADDR, SO_REUSEPORT
+IPPROTO_IPV6:	IPV6_CHECKSUM
+
+Index: packet/packet.c
+--- packet/packet.c.orig
++++ packet/packet.c
+@@ -65,6 +65,12 @@ int drop_elevated_permissions(
+     }
+ #endif
+ 
++#ifdef __OpenBSD__
++    if (0 && pledge("stdio inet", NULL) == -1) {
++        return -1;
++    }
++#endif
++
+     return 0;
+ }
+ 

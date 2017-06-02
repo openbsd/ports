@@ -1,5 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.8 2012/05/29 23:43:47 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.9 2017/06/02 14:30:27 sthen Exp $
 !%%gtk%%
+@man man/man8/mtr-packet.8
 @man man/man8/mtr.8
-@mode 4555
 @bin sbin/mtr
+@mode 4555
+@bin sbin/mtr-packet
+@mode
+share/bash-completion/
+share/bash-completion/completions/
+share/bash-completion/completions/mtr
