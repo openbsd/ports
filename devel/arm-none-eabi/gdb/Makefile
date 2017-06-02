@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2016/09/23 10:52:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2017/06/02 23:17:08 schwarze Exp $
 
 COMMENT=	gdb for arm-none-eabi cross-development
 
 DISTNAME=	gdb-7.9.1
 EXTRACT_SUFX=	.tar.xz
-REVISION=	1
+REVISION=	2
 
 HOMEPAGE=	https://www.gnu.org/software/gdb/
 

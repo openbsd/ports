@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2017/04/06 10:24:26 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2017/06/02 23:17:08 schwarze Exp $
 
 COMMENT=	newlib for arm-none-eabi cross-development
 
@@ -23,7 +23,6 @@ RUN_DEPENDS=	devel/arm-none-eabi/gcc-linaro
 # cope with user settings in /etc/mk.conf
 MAKE_FLAGS=	CFLAGS="-I${LOCALBASE}/include"
 USE_GMAKE=	Yes
-USE_GROFF=	No
 CONFIGURE_ARGS+=--enable-interwork \
 		--enable-multilib
 

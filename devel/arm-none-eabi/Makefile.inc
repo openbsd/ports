@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.2 2016/12/06 17:24:02 patrick Exp $
+# $OpenBSD: Makefile.inc,v 1.3 2017/06/02 23:17:07 schwarze Exp $
 
 CONFIG?=	arm-none-eabi
 PKGNAME?=	${CONFIG}-${DISTNAME}
@@ -17,5 +17,3 @@ CONFIGURE_ARGS+=--target=${CONFIG}  \
 		--disable-werror
 
 EXTRACT_SUFX?=	.tar.bz2
-
-USE_GROFF?=	Yes
