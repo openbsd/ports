@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2017/05/31 08:08:17 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2017/06/02 09:20:04 espie Exp $
 
 BROKEN-sparc64=	gcj blows during build
 COMMENT=	pdf swiss army knife
@@ -19,10 +19,12 @@ HOMEPAGE =	http://www.pdflabs.com/tools/pdftk-server/
 
 MASTER_SITES =	http://www.pdflabs.com/tools/pdftk-the-pdf-toolkit/
 
-COMPILER =	gcc
+# one of the only remaining direct users of gcc4, because it requires
+# a C++ compiler that can talk to the gcj runtime, and pdftk itself is 
+# firmly tied to gcj.
 MODULES =	gcc4
 MODGCC4_ARCHS =	*
-MODGCC4_LANGS=	java
+MODGCC4_LANGS=	java c++
 
 LIB_DEPENDS=	${MODGCC4_GCJLIBDEP} \
 		converters/libiconv
@@ -42,9 +44,7 @@ GCJFLAGS?=	${CXXFLAGS}
 CPPFLAGS+=	-fdollars-in-identifiers \
 		-DPATH_DELIM=0x2f \
 		-DASK_ABOUT_WARNINGS=false \
-		-DUNBLOCK_SIGNALS \
-		-I$(LOCALBASE)/include/c++/4.2.4 \
-		-I$(LOCALBASE)/lib/gcc/$(CONFIG)/4.2.4/include
+		-DUNBLOCK_SIGNALS
 CXXFLAGS+=	-L$(LOCALBASE)/lib
 LDLIBS+=	-lgcj -liconv -lz -pthread
 
