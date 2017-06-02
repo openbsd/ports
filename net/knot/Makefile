@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2017/06/01 13:42:01 jca Exp $
+# $OpenBSD: Makefile,v 1.15 2017/06/02 04:26:23 jca Exp $
 
 COMMENT =		authoritative DNS server
 
 DISTNAME =		knot-2.4.2
+REVISION =		0
 
 SHARED_LIBS +=	zscanner             1.0      # .1.0
 SHARED_LIBS +=	knot                 1.0      # .5.0
@@ -18,20 +19,20 @@ MAINTAINER =		Pierre Emeriaud <petrus.lt+openbsd@gmail.com>, \
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c curses edit ffi gmp gnutls hogweed idn idn2 jansson
-WANTLIB += m nettle p11-kit pthread tasn1 unistring urcu urcu-common
-WANTLIB += z
+WANTLIB += c curses edit ffi gmp gnutls hogweed iconv idn idn2
+WANTLIB += intl jansson m nettle p11-kit pthread tasn1 unistring
+WANTLIB += urcu urcu-common z
 
 MASTER_SITES =		https://secure.nic.cz/files/knot-dns/
 EXTRACT_SUFX =		.tar.xz
 
-MODULES =		devel/gettext
 # Needs TLS emulation, and atomic builtins on arm
 COMPILER =		base gcc
 COMPILER_LANGS =	c
 
 BUILD_DEPENDS =		devel/bison
-LIB_DEPENDS =		devel/libidn \
+LIB_DEPENDS =		devel/gettext \
+			devel/libidn \
 			devel/liburcu \
 			devel/jansson \
 			security/gnutls
