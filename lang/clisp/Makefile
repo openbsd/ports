@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.45 2015/12/20 15:40:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.46 2017/06/02 08:29:19 schwarze Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 powerpc sparc64
 
 COMMENT =		ANSI Common Lisp implementation
 
 DISTNAME=		clisp-2.49
+REVISION =		0
 CATEGORIES=		lang
 HOMEPAGE=		http://clisp.cons.org/
 
@@ -21,7 +22,6 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=clisp/}
 EXTRACT_SUFX=		.tar.bz2
 
 USE_GMAKE=		Yes
-USE_GROFF =		Yes
 
 SEPARATE_BUILD=		Yes
 

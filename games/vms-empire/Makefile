@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2016/01/07 08:24:20 benoit Exp $
+# $OpenBSD: Makefile,v 1.6 2017/06/02 08:29:19 schwarze Exp $
 
 COMMENT =		turn-based empire game
 
 DISTNAME =		vms-empire-1.14
+REVISION =		0
 
 CATEGORIES =		games
 
@@ -20,9 +21,6 @@ MAKE_FLAGS =		CC="${CC}" \
 
 RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+3,-guic
-
-# docbook-generated lists using \h
-USE_GROFF =		Yes
 
 NO_TEST =		Yes
 

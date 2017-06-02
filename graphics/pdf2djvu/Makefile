@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2017/05/31 08:08:16 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2017/06/02 08:29:19 schwarze Exp $
 
 COMMENT =		creates DjVu files from PDF files
 
 V =			0.9.6rc20170321
 DISTNAME =		pdf2djvu-${V}
+REVISION =		0
 
 CATEGORIES =		graphics
 
@@ -32,9 +33,6 @@ LIB_DEPENDS =		devel/gettext\
 			graphics/GraphicsMagick \
 			print/poppler
 TEST_DEPENDS =		devel/py-nose
-
-# Weird things like "API specificationu[3]d for details"
-USE_GROFF =		Yes
 
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	gnu
