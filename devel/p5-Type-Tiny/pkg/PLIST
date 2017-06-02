@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/11/24 18:30:47 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/06/02 06:57:35 benoit Exp $
 ${P5SITE}/Devel/
 ${P5SITE}/Devel/TypeTiny/
 ${P5SITE}/Devel/TypeTiny/Perl56Compat.pm
@@ -53,6 +53,7 @@ ${P5SITE}/Types/Common/String.pm
 ${P5SITE}/Types/Standard/
 ${P5SITE}/Types/Standard.pm
 ${P5SITE}/Types/Standard/ArrayRef.pm
+${P5SITE}/Types/Standard/CycleTuple.pm
 ${P5SITE}/Types/Standard/Dict.pm
 ${P5SITE}/Types/Standard/HashRef.pm
 ${P5SITE}/Types/Standard/Map.pm
@@ -98,6 +99,7 @@ ${P5SITE}/Types/TypeTiny.pm
 @man man/man3p/Types::Common::String.3p
 @man man/man3p/Types::Standard.3p
 @man man/man3p/Types::Standard::ArrayRef.3p
+@man man/man3p/Types::Standard::CycleTuple.3p
 @man man/man3p/Types::Standard::Dict.3p
 @man man/man3p/Types::Standard::HashRef.3p
 @man man/man3p/Types::Standard::Map.3p
