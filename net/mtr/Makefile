@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.62 2017/06/02 14:30:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.63 2017/06/02 16:50:16 sthen Exp $
 
 COMMENT=	Matt's traceroute - network diagnostic tool#'
 
 GH_ACCOUNT=	traviscross
 GH_PROJECT=	mtr
 GH_TAGNAME=	v0.92
+REVISION=	0
 
 CATEGORIES=	net
 
@@ -48,6 +49,8 @@ CONFIGURE_ARGS+=	--without-glib \
 .endif
 
 post-patch:
+	printf '#!/bin/sh\necho -n ${GH_TAGNAME:S/v//}\n' \
+	    > ${WRKSRC}/build-aux/git-version-gen
 	cd ${WRKSRC}; AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 	    AUTOMAKE_VERSION=${AUTOMAKE_VERSION} ./bootstrap.sh
 	touch ${WRKSRC}/config.h.in

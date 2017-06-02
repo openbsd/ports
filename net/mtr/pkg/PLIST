@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.9 2017/06/02 14:30:27 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.10 2017/06/02 16:50:16 sthen Exp $
+@newgroup _mtr:790
+@newuser _mtr:790:_mtr::mtr user:/nonexistent:/sbin/nologin
 !%%gtk%%
 @man man/man8/mtr-packet.8
 @man man/man8/mtr.8
