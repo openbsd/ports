@@ -1,26 +1,27 @@
-$OpenBSD: patch-ui_qt_capture_filter_syntax_worker_cpp,v 1.2 2016/02/27 18:01:42 sthen Exp $
+$OpenBSD: patch-ui_qt_capture_filter_syntax_worker_cpp,v 1.3 2017/06/02 01:52:01 sthen Exp $
 
 cope with old libpcap
 
---- ui/qt/capture_filter_syntax_worker.cpp.orig	Fri Feb 26 19:58:22 2016
-+++ ui/qt/capture_filter_syntax_worker.cpp	Sat Feb 27 17:29:02 2016
-@@ -85,11 +85,14 @@ void CaptureFilterSyntaxWorker::start() {
- 
-             device = g_array_index(global_capture_opts.all_ifaces, interface_t, if_idx);
-             if (!device.locked && device.selected) {
+Index: ui/qt/capture_filter_syntax_worker.cpp
+--- ui/qt/capture_filter_syntax_worker.cpp.orig
++++ ui/qt/capture_filter_syntax_worker.cpp
+@@ -89,11 +89,14 @@ void CaptureFilterSyntaxWorker::start() {
+                 if (device.if_info.extcap == NULL || strlen(device.if_info.extcap) == 0)
+                 {
+ #endif
 +#ifdef DLT_USER0
-                 if (device.active_dlt >= DLT_USER0 && device.active_dlt <= DLT_USER15) {
-                     // Capture filter for DLT_USER is unknown
-                     state = SyntaxLineEdit::Deprecated;
-                     err_str = "Unable to check capture filter";
--                } else {
-+                } else
+                     if (device.active_dlt >= DLT_USER0 && device.active_dlt <= DLT_USER15) {
+                         // Capture filter for DLT_USER is unknown
+                         state = SyntaxLineEdit::Deprecated;
+                         err_str = "Unable to check capture filter";
+-                    } else {
++                    } else
 +#endif
-+		{
-                     active_dlts.insert(device.active_dlt);
-                 }
-             }
-@@ -101,7 +104,7 @@ void CaptureFilterSyntaxWorker::start() {
++                    {
+                         active_dlts.insert(device.active_dlt);
+                     }
+ #ifdef HAVE_EXTCAP
+@@ -117,7 +120,7 @@ void CaptureFilterSyntaxWorker::start() {
  #ifdef PCAP_NETMASK_UNKNOWN
              pc_err = pcap_compile(pd, &fcode, filter.toUtf8().constData(), 1 /* Do optimize */, PCAP_NETMASK_UNKNOWN);
  #else

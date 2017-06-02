@@ -1,12 +1,13 @@
-$OpenBSD: patch-ui_qt_compiled_filter_output_cpp,v 1.2 2016/10/14 11:00:22 sthen Exp $
+$OpenBSD: patch-ui_qt_compiled_filter_output_cpp,v 1.3 2017/06/02 01:52:01 sthen Exp $
 
 cope with old libpcap
 
---- ui/qt/compiled_filter_output.cpp.orig	Tue Oct  4 19:27:59 2016
-+++ ui/qt/compiled_filter_output.cpp	Thu Oct 13 10:59:39 2016
-@@ -87,7 +87,7 @@ void CompiledFilterOutput::compileFilter()
-             } else {
-                 pcap_t *pd = pcap_open_dead(device.active_dlt, WTAP_MAX_PACKET_SIZE);
+Index: ui/qt/compiled_filter_output.cpp
+--- ui/qt/compiled_filter_output.cpp.orig
++++ ui/qt/compiled_filter_output.cpp
+@@ -89,7 +89,7 @@ void CompiledFilterOutput::compileFilter()
+                 if (pd == NULL)
+                     break;
                  g_mutex_lock(pcap_compile_mtx);
 -                if (pcap_compile(pd, &fcode, compile_filter_.toUtf8().constData(), 1, 0) < 0) {
 +                if (pcap_compile(pd, &fcode, (char *)compile_filter_.toUtf8().constData(), 1, 0) < 0) {
