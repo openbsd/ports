@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.36 2016/12/21 14:16:30 feinerer Exp $
+# $OpenBSD: Makefile,v 1.37 2017/06/02 10:13:25 feinerer Exp $
 
 COMMENT=		GPL computer algebra system based on DOE Macsyma
 
-VERSION=		5.39.0
+VERSION=		5.40.0
 DISTNAME=		maxima-${VERSION}
 CATEGORIES=		math
 
@@ -26,7 +26,8 @@ MODPY_RUNDEP =		No
 
 BUILD_DEPENDS =		print/texinfo
 LIB_DEPENDS=		lang/ecl
-RUN_DEPENDS =		misc/rlwrap \
+RUN_DEPENDS =		devel/desktop-file-utils \
+			misc/rlwrap \
 			misc/shared-mime-info
 
 SUBST_VARS=		VERSION
