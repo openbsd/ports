@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2017/05/07 21:44:43 stu Exp $
+# $OpenBSD: Makefile,v 1.32 2017/06/02 20:47:12 schwarze Exp $
 
 COMMENT =		table/matrix widget extension to Tcl/Tk
 
@@ -6,7 +6,7 @@ V =			2.10
 
 DISTNAME =		Tktable${V}
 PKGNAME =		Tktable-${V}
-REVISION =		4
+REVISION =		5
 CATEGORIES =		x11
 HOMEPAGE =		http://tktable.sourceforge.net/
 MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
@@ -27,7 +27,6 @@ CONFIGURE_ARGS +=	--with-tcl=${MODTCL_LIBDIR} \
 			--with-tk=${MODTK_LIBDIR} \
 			--with-tkinclude=${MODTK_INCDIR}
 
-USE_GROFF =		Yes
 TEST_IS_INTERACTIVE =	X11
 TEST_TARGET =		test
 SUBST_VARS +=		TKTABLE_VER

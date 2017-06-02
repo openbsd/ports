@@ -1,0 +1,50 @@
+$OpenBSD: patch-doc_tkTable_n,v 1.3 2017/06/02 20:47:13 schwarze Exp $
+
+Macros that clash with official man(7) macros must be defined
+after .TH, or they fail to override the official ones because .TH
+typically reloads the official macro file.
+
+There is no proper fix: you shouldn't go and define private macros
+in the first place.  Upstream could rename the macro (risking a clash
+with something else, or risking portability to very old formatters if
+going beyond a two-character macro name).  This is just a workaound.
+
+Index: doc/tkTable.n
+--- doc/tkTable.n.orig
++++ doc/tkTable.n
+@@ -208,17 +208,6 @@
+ .LP
+ See the \\fBoptions\\fR manual entry for details on the standard options.
+ ..
+-'\"	# OP - start of full description for a single option
+-.de OP
+-.LP
+-.nf
+-.ta 4c
+-Command-Line Name:	\\fB\\$1\\fR
+-Database Name:	\\fB\\$2\\fR
+-Database Class:	\\fB\\$3\\fR
+-.fi
+-.IP
+-..
+ '\"	# CS - begin code excerpt
+ .de CS
+ .RS
+@@ -234,6 +223,17 @@ Database Class:	\\fB\\$3\\fR
+ \\$1\l'|0\(ul'\\$2
+ ..
+ .TH table n 2.8 Tk "Tk Table Extension"
++'\"	# OP - start of full description for a single option
++.de OP
++.LP
++.nf
++.ta 4c
++Command-Line Name:	\\fB\\$1\\fR
++Database Name:	\\fB\\$2\\fR
++Database Class:	\\fB\\$3\\fR
++.fi
++.IP
++..
+ .HS table tk
+ .BS
+ .SH NAME
