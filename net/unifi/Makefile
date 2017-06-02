@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2017/06/02 16:12:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.40 2017/06/02 22:37:49 kili Exp $
 
 COMMENT=	controller for Ubiquiti uniFi (wifi/routing/switching/voip)
 
@@ -14,7 +14,7 @@ PKGNAME=	unifi-$V
 # newer unifi uses newer snappy-java, but upstream stopped distributing
 # openbsd .so's. use a locally built one to replace.
 MASTER_SITES0=	https://spacehopper.org/mirrors/
-SUPDISTFILES=	snappy-java-1.1.2.6.jar:0
+DISTFILES+=	snappy-java-1.1.2.6.jar:0
 
 CATEGORIES=	net
 
