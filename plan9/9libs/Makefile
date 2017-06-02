@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2016/09/01 10:53:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.24 2017/06/02 22:41:28 schwarze Exp $
 
 # varargs misuse, and unportable software
 ONLY_FOR_ARCHS= 	i386 sparc64
@@ -6,7 +6,7 @@ ONLY_FOR_ARCHS= 	i386 sparc64
 COMMENT=		Plan 9 compatibility libraries
 
 DISTNAME=		9libs-1.0
-REVISION=		7
+REVISION=		8
 CATEGORIES=		plan9 devel
 SHARED_LIBS=		Xg	0.0 \
 			frame	0.0 \
@@ -26,7 +26,6 @@ MASTER_SITES=		${HOMEPAGE}
 
 SEPARATE_BUILD=		Yes
 USE_GMAKE=		Yes
-USE_GROFF =		Yes
 CONFIGURE_STYLE=	gnu
 
 CONFIGURE_ARGS+=        --includedir=${PREFIX}/include/9libs
