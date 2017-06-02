@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2017/05/16 11:02:44 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.27 2017/06/02 16:12:38 sthen Exp $
 @newgroup _unifi:732
 @newuser _unifi:732:_unifi:daemon:unifi user:/usr/local/share/unifi:/sbin/nologin
 bin/unifi
@@ -17,35 +17,35 @@ share/unifi/data/
 share/unifi/dl/
 share/unifi/dl/firmware/
 share/unifi/dl/firmware/BZ2/
-share/unifi/dl/firmware/BZ2/3.7.51.6230/
-share/unifi/dl/firmware/BZ2/3.7.51.6230/firmware.bin
+share/unifi/dl/firmware/BZ2/3.7.58.6385/
+share/unifi/dl/firmware/BZ2/3.7.58.6385/firmware.bin
 share/unifi/dl/firmware/U2HSR/
-share/unifi/dl/firmware/U2HSR/3.7.51.6230/
-share/unifi/dl/firmware/U2HSR/3.7.51.6230/firmware.bin
+share/unifi/dl/firmware/U2HSR/3.7.58.6385/
+share/unifi/dl/firmware/U2HSR/3.7.58.6385/firmware.bin
 share/unifi/dl/firmware/U2IW/
-share/unifi/dl/firmware/U2IW/3.7.51.6230/
-share/unifi/dl/firmware/U2IW/3.7.51.6230/firmware.bin
+share/unifi/dl/firmware/U2IW/3.7.58.6385/
+share/unifi/dl/firmware/U2IW/3.7.58.6385/firmware.bin
 share/unifi/dl/firmware/U2Sv2/
-share/unifi/dl/firmware/U2Sv2/3.7.51.6230/
-share/unifi/dl/firmware/U2Sv2/3.7.51.6230/firmware.bin
+share/unifi/dl/firmware/U2Sv2/3.7.58.6385/
+share/unifi/dl/firmware/U2Sv2/3.7.58.6385/firmware.bin
 share/unifi/dl/firmware/U7E/
-share/unifi/dl/firmware/U7E/3.7.51.6230/
-share/unifi/dl/firmware/U7E/3.7.51.6230/firmware.bin
+share/unifi/dl/firmware/U7E/3.7.58.6385/
+share/unifi/dl/firmware/U7E/3.7.58.6385/firmware.bin
 share/unifi/dl/firmware/U7HD/
-share/unifi/dl/firmware/U7HD/3.7.51.6230/
-share/unifi/dl/firmware/U7HD/3.7.51.6230/firmware.bin
+share/unifi/dl/firmware/U7HD/3.7.58.6385/
+share/unifi/dl/firmware/U7HD/3.7.58.6385/firmware.bin
 share/unifi/dl/firmware/U7P/
-share/unifi/dl/firmware/U7P/3.7.51.6230/
-share/unifi/dl/firmware/U7P/3.7.51.6230/firmware.bin
+share/unifi/dl/firmware/U7P/3.7.58.6385/
+share/unifi/dl/firmware/U7P/3.7.58.6385/firmware.bin
 share/unifi/dl/firmware/U7PG2/
-share/unifi/dl/firmware/U7PG2/3.7.51.6230/
-share/unifi/dl/firmware/U7PG2/3.7.51.6230/firmware.bin
+share/unifi/dl/firmware/U7PG2/3.7.58.6385/
+share/unifi/dl/firmware/U7PG2/3.7.58.6385/firmware.bin
 share/unifi/dl/firmware/US24P250/
-share/unifi/dl/firmware/US24P250/3.7.51.6230/
-share/unifi/dl/firmware/US24P250/3.7.51.6230/firmware.bin
+share/unifi/dl/firmware/US24P250/3.7.58.6385/
+share/unifi/dl/firmware/US24P250/3.7.58.6385/firmware.bin
 share/unifi/dl/firmware/USXG/
-share/unifi/dl/firmware/USXG/3.7.51.6230/
-share/unifi/dl/firmware/USXG/3.7.51.6230/firmware.bin
+share/unifi/dl/firmware/USXG/3.7.58.6385/
+share/unifi/dl/firmware/USXG/3.7.58.6385/firmware.bin
 share/unifi/dl/firmware/bundles.json
 share/unifi/dl/firmware/p2N/
 share/unifi/dl/firmware/p2N/3.3.22.4024/
@@ -94,7 +94,7 @@ share/unifi/lib/servo-core-0.9.4.jar
 share/unifi/lib/servo-graphite-0.9.4.jar
 share/unifi/lib/slf4j-api-1.7.6.jar
 share/unifi/lib/slf4j-log4j12-1.7.6.jar
-share/unifi/lib/snappy-java-1.0.5.jar
+share/unifi/lib/snappy-java-1.1.2.6.jar
 share/unifi/lib/spring-beans-3.2.8.RELEASE.jar
 share/unifi/lib/spring-context-3.2.8.RELEASE.jar
 share/unifi/lib/spring-core-3.2.8.RELEASE.jar
@@ -276,6 +276,13 @@ share/unifi/webapps/ROOT/app-unifi/images/devices/uap/U7IW/static.png
 share/unifi/webapps/ROOT/app-unifi/images/devices/uap/U7IW/static@2x.png
 share/unifi/webapps/ROOT/app-unifi/images/devices/uap/U7IW/success.png
 share/unifi/webapps/ROOT/app-unifi/images/devices/uap/U7IW/success@2x.png
+share/unifi/webapps/ROOT/app-unifi/images/devices/uap/U7IWP/
+share/unifi/webapps/ROOT/app-unifi/images/devices/uap/U7IWP/danger.png
+share/unifi/webapps/ROOT/app-unifi/images/devices/uap/U7IWP/danger@2x.png
+share/unifi/webapps/ROOT/app-unifi/images/devices/uap/U7IWP/static.png
+share/unifi/webapps/ROOT/app-unifi/images/devices/uap/U7IWP/static@2x.png
+share/unifi/webapps/ROOT/app-unifi/images/devices/uap/U7IWP/success.png
+share/unifi/webapps/ROOT/app-unifi/images/devices/uap/U7IWP/success@2x.png
 share/unifi/webapps/ROOT/app-unifi/images/devices/uap/U7MSH/
 share/unifi/webapps/ROOT/app-unifi/images/devices/uap/U7MSH/danger.png
 share/unifi/webapps/ROOT/app-unifi/images/devices/uap/U7MSH/danger@2x.png
