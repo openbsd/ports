@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.291 2017/04/12 21:49:32 sthen Exp $
+$OpenBSD: user.list,v 1.292 2017/06/02 16:47:23 sthen Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -298,3 +298,4 @@ id  user		group		port options
 787 _gitea		_gitea		www/gitea
 788 _dnsdist		_dnsdist	net/dnsdist
 789 _ftpsesame		_ftpsesame	net/ftpsesame
+790 _mtr		_mtr		net/mtr
