@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.46 2017/06/02 08:29:19 schwarze Exp $
+# $OpenBSD: Makefile,v 1.47 2017/06/02 23:43:00 kili Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 powerpc sparc64
 
 COMMENT =		ANSI Common Lisp implementation
 
 DISTNAME=		clisp-2.49
-REVISION =		0
+REVISION =		1
 CATEGORIES=		lang
 HOMEPAGE=		http://clisp.cons.org/
 
