@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.32 2017/03/14 09:38:10 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.33 2017/06/02 07:20:02 ajacoutot Exp $
 @bin bin/shotwell
 lib/libshotwell-authenticator.a
 lib/libshotwell-authenticator.la
@@ -480,6 +480,8 @@ share/locale/kk/LC_MESSAGES/shotwell.mo
 share/locale/km/LC_MESSAGES/shotwell.mo
 share/locale/kn/LC_MESSAGES/shotwell.mo
 share/locale/ko/LC_MESSAGES/shotwell.mo
+share/locale/ky/
+share/locale/ky/LC_MESSAGES/
 share/locale/ky/LC_MESSAGES/shotwell.mo
 share/locale/lt/LC_MESSAGES/shotwell.mo
 share/locale/lv/LC_MESSAGES/shotwell.mo

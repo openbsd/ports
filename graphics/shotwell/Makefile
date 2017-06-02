@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.79 2017/05/13 17:52:28 espie Exp $
+# $OpenBSD: Makefile,v 1.80 2017/06/02 07:20:02 ajacoutot Exp $
 
 COMMENT =		digital photo organizer
 
-GNOME_VERSION =		0.26.1
+GNOME_VERSION =		0.26.2
 GNOME_PROJECT =		shotwell
 
 CATEGORIES =		graphics
