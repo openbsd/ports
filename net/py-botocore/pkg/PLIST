@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.55 2017/05/25 10:05:23 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.56 2017/06/02 06:49:54 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/botocore/
 lib/python${MODPY_VERSION}/site-packages/botocore-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/botocore-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -212,6 +212,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/cognito-identity/2014-06-
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cognito-idp/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cognito-idp/2016-04-18/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cognito-idp/2016-04-18/examples-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/cognito-idp/2016-04-18/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cognito-idp/2016-04-18/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cognito-sync/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cognito-sync/2014-06-30/
