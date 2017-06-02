@@ -1,21 +1,21 @@
-# $OpenBSD: Makefile,v 1.4 2016/03/20 19:57:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2017/06/02 07:41:47 benoit Exp $
 
-COMMENT=		interface to bit.ly shortening site
+COMMENT =		interface to bit.ly shortening site
 
-DISTNAME =		WWW-Shorten-Bitly-1.17
-CATEGORIES=		www
+DISTNAME =		WWW-Shorten-Bitly-2.001
+CATEGORIES =		www
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
-MODULES=		cpan
-PKG_ARCH=		*
+MODULES =		cpan
+PKG_ARCH =		*
 
-BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		converters/p5-JSON-Any \
-			textproc/p5-XML-Simple \
-			www/p5-WWW-Shorten
-
-MAKE_ENV +=		TEST_POD=1
+BUILD_DEPENDS = 	${RUN_DEPENDS}
+RUN_DEPENDS =		converters/p5-JSON-MaybeXS \
+			www/p5-WWW-Shorten \
+			devel/p5-Path-Tiny \
+			devel/p5-File-HomeDir \
+			www/p5-LWP-Protocol-https
 
 .include <bsd.port.mk>
