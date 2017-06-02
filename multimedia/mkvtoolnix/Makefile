@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.67 2017/05/31 08:08:16 espie Exp $
+# $OpenBSD: Makefile,v 1.68 2017/06/02 10:51:56 schwarze Exp $
 
 COMMENT=	create, alter and inspect Matroska files
 
 DISTNAME=	mkvtoolnix-9.7.1
+REVISION=	0
 CATEGORIES=	multimedia x11
 MASTER_SITES=	${HOMEPAGE}sources/
 EXTRACT_SUFX=	.tar.xz
@@ -35,7 +36,6 @@ LIB_DEPENDS=	audio/flac \
 
 MAKE_ENV+=	V=1
 
-USE_GROFF=	Yes
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.69
 CONFIGURE_ARGS=	--disable-optimization \

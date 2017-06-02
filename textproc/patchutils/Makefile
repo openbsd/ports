@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2015/10/18 13:37:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2017/06/02 10:51:56 schwarze Exp $
 
 COMMENT=	small tools to operate on patch files
 
 DISTNAME=	patchutils-0.3.4
+REVISION=	0
 EXTRACT_SUFX=	.tar.xz
 
 CATEGORIES=	textproc devel
@@ -24,7 +25,6 @@ RUN_DEPENDS=	devel/gpatch
 TEST_DEPENDS=	misc/rpm \
 		shells/bash
 TEST_FLAGS=	PATCH=${LOCALBASE}/bin/gpatch
-USE_GROFF=	Yes
 
 # only needed for tests
 USE_GMAKE=	Yes

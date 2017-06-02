@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.27 2017/04/10 11:46:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2017/06/02 10:51:56 schwarze Exp $
 
 COMMENT =	XMPP transport/gateway
 
 DISTNAME =	spectrum-1.4.8
 CATEGORIES =	net
-REVISION =	5
+REVISION =	6
 
 HOMEPAGE =	http://spectrum.im/
 MASTER_SITES =	https://github.com/downloads/hanzz/libtransport/
@@ -31,7 +31,6 @@ RUN_DEPENDS =	net/py-xmpppy
 SPVARDIR =	/var/spectrum
 
 CONFIGURE_ENV += LDFLAGS=-pthread
-USE_GROFF =	Yes
 NO_TEST =	Yes
 SUBST_VARS =	SPVARDIR
 

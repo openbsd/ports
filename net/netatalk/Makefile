@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.61 2016/06/29 16:14:44 espie Exp $
+# $OpenBSD: Makefile,v 1.62 2017/06/02 10:51:56 schwarze Exp $
 
 PORTROACH=	limit:^2
 
 COMMENT=	AFP file and print services for IP networks
 
 DISTNAME=	netatalk-2.2.5
-REVISION=	7
+REVISION=	8
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=netatalk/}
 EXTRACT_SUFX=	.tar.bz2
@@ -21,7 +21,6 @@ MODULES=	devel/gettext
 LIB_DEPENDS=	databases/db/v4 \
 		security/libgcrypt 
 
-USE_GROFF=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--disable-cups \
 		--disable-overwrite \
