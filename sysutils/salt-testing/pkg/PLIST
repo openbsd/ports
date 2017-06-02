@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2015/07/11 07:03:20 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2017/06/02 07:04:49 ajacoutot Exp $
 bin/github-commit-status
 bin/salt-jenkins-build
 lib/python${MODPY_VERSION}/site-packages/SaltTesting-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
@@ -17,8 +17,6 @@ lib/python${MODPY_VERSION}/site-packages/salttesting/cherrypytest/case.pyc
 lib/python${MODPY_VERSION}/site-packages/salttesting/ext/
 lib/python${MODPY_VERSION}/site-packages/salttesting/ext/__init__.py
 lib/python${MODPY_VERSION}/site-packages/salttesting/ext/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/salttesting/ext/caller.py
-lib/python${MODPY_VERSION}/site-packages/salttesting/ext/caller.pyc
 lib/python${MODPY_VERSION}/site-packages/salttesting/ext/console.py
 lib/python${MODPY_VERSION}/site-packages/salttesting/ext/console.pyc
 lib/python${MODPY_VERSION}/site-packages/salttesting/ext/os_data.py
