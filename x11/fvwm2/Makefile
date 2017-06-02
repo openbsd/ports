@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2016/03/20 20:31:56 naddy Exp $
+# $OpenBSD: Makefile,v 1.61 2017/06/02 11:33:16 schwarze Exp $
 
 COMMENT-main=	multiple virtual desktop window manager, with icons
 COMMENT-fvicons=multiple virtual desktop window manager icons
@@ -9,7 +9,9 @@ DISTNAME=	fvwm-${VERSION}
 PKGNAME-main=	fvwm2+fvicons-${VERSION}
 FULLPKGNAME-fvicons=fvicons-${VERSION}
 PKGNAME-fvwm2=	fvwm2-${VERSION}
-REVISION=	0
+REVISION-main=	1
+REVISION-fvwm2=	1
+REVISION-fvicons=0
 
 CATEGORIES=     x11
 
@@ -51,8 +53,6 @@ WANTLIB-fvicons=
 FULLPKGPATH-fvicons=	${PKGPATH},-fvicons
 
 SUBST_VARS=	VERSION
-
-USE_GROFF =	Yes
 
 SEPARATE_BUILD= Yes
 CONFIGURE_STYLE= gnu

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.82 2017/04/10 11:46:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.83 2017/06/02 11:33:16 schwarze Exp $
 
 COMMENT =	window manager based on the original Blackbox code
 DISTNAME =	fluxbox-1.3.7
 CATEGORIES =	x11
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	http://fluxbox.org/
 
@@ -24,7 +24,6 @@ CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 USE_GMAKE =	Yes
-USE_GROFF =	Yes
 
 NO_TEST =	Yes
 

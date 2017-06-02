@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2015/05/09 10:17:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2017/06/02 11:33:16 schwarze Exp $
 
 COMMENT=		stand-alone tray for EWMH-compliant window managers
 
 DISTNAME=		stalonetray-0.8.3
+REVISION=		0
 CATEGORIES=		x11 sysutils
 
 HOMEPAGE=		http://stalonetray.sourceforge.net/
@@ -18,7 +19,6 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--disable-debug
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-USE_GROFF =		Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/stalonetray

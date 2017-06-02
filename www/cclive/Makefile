@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2017/05/31 08:08:17 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2017/06/02 11:33:16 schwarze Exp $
 
 # XXX check if still needed at next update
 CXXFLAGS +=		-std=c++11
@@ -7,7 +7,7 @@ COMMENT =		media download tool
 
 DISTNAME =		cclive-0.9.3
 EXTRACT_SUFX =		.tar.xz
-REVISION = 		2
+REVISION = 		3
 
 CATEGORIES =		www
 
@@ -29,8 +29,6 @@ MODULES =		devel/gettext
 
 # c++11
 COMPILER =		gcc
-
-USE_GROFF =		Yes
 
 LIB_DEPENDS =		devel/boost \
 			devel/glib2mm \
