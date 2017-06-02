@@ -1,6 +1,7 @@
-$OpenBSD: patch-x86-mingw32-build_sh_conf,v 1.2 2011/11/17 14:41:58 pirofti Exp $
---- x86-mingw32-build.sh.conf.orig	Thu Mar 11 00:16:55 2010
-+++ x86-mingw32-build.sh.conf	Thu Nov 17 16:01:32 2011
+$OpenBSD: patch-x86-mingw32-build_sh_conf,v 1.3 2017/06/02 12:26:21 pirofti Exp $
+Index: x86-mingw32-build.sh.conf
+--- x86-mingw32-build.sh.conf.orig
++++ x86-mingw32-build.sh.conf
 @@ -35,17 +35,17 @@
  #    the `x86-mingw32-build.sh.hosts' file for the `mirror' field
  #    in the following URL, to establish a default download host.
@@ -40,7 +41,7 @@ $OpenBSD: patch-x86-mingw32-build_sh_conf,v 1.2 2011/11/17 14:41:58 pirofti Exp 
  #
  # 8) User preferences for configuration options.  These have been
  #    preconfigured to match the setup of the prebuilt compiler suite,
-@@ -129,13 +129,13 @@
+@@ -129,16 +129,17 @@
       option GCC_BASE_OPTIONS            --enable-threads=win32
       option GCC_BASE_OPTIONS            --disable-win32-registry
  #
@@ -61,3 +62,7 @@ $OpenBSD: patch-x86-mingw32-build_sh_conf,v 1.2 2011/11/17 14:41:58 pirofti Exp 
  #
       option CFLAGS_FOR_BINUTILS          -O2
       option CFLAGS_FOR_BINUTILS          -fno-exceptions
++     option CFLAGS_FOR_BINUTILS          -fbracket-depth=1024
+ #
+      option LDFLAGS_FOR_BINUTILS         -s
+ #
