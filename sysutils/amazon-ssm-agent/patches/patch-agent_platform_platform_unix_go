@@ -1,8 +1,8 @@
-$OpenBSD: patch-agent_platform_platform_unix_go,v 1.2 2017/05/28 09:25:31 ajacoutot Exp $
+$OpenBSD: patch-agent_platform_platform_unix_go,v 1.3 2017/06/02 06:39:56 ajacoutot Exp $
 Index: agent/platform/platform_unix.go
 --- agent/platform/platform_unix.go.orig
 +++ agent/platform/platform_unix.go
-@@ -112,6 +112,18 @@ func getPlatformDetails(log log.T) (name string, versi
+@@ -140,6 +140,18 @@ func getPlatformDetails(log log.T) (name string, versi
  		data := strings.Split(string(contentsBytes), " ")
  		name = strings.TrimSpace(data[0])
  		version = strings.TrimSpace(data[1])
@@ -10,7 +10,7 @@ Index: agent/platform/platform_unix.go
 +		log.Debugf(fetchingDetailsMessage, unameCommand)
 +
 +		if contentsBytes, err = exec.Command(unameCommand, "-sr").Output(); err != nil {
-+			log.Debugf(fetchingDetailsMessage, lsbReleaseCommand, err)
++			log.Debugf(fetchingDetailsMessage, unameCommand, err)
 +			return
 +		}
 +		log.Debugf(commandOutputMessage, contentsBytes)
