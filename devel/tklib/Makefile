@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2017/05/14 09:02:01 stu Exp $
+# $OpenBSD: Makefile,v 1.18 2017/06/02 19:54:15 schwarze Exp $
 
 COMMENT =	Tk Standard Library
 
 DISTNAME =	tklib-0.6pl3
+REVISION =	0
 CATEGORIES =	devel x11/tk
 HOMEPAGE =	http://core.tcl.tk/tklib/home
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
@@ -18,7 +19,6 @@ MODULES =	x11/tk
 BUILD_DEPENDS =	devel/tcllib
 RUN_DEPENDS =	devel/tcllib ${MODTK_RUN_DEPENDS}
 TEST_DEPENDS =	devel/tcllib ${MODTK_BUILD_DEPENDS}
-USE_GROFF =	Yes
 TEST_IS_INTERACTIVE =	X11
 NO_BUILD =	Yes
 PKG_ARCH =	*

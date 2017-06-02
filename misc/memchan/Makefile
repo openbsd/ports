@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2016/03/18 23:12:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2017/06/02 19:54:15 schwarze Exp $
 
 COMMENT =		in-memory channels for Tcl
 
 DISTNAME =		Memchan2.3
 PKGNAME =		memchan-2.3
-REVISION =		0
+REVISION =		1
 SHARED_LIBS =		Memchan23 0.0
 CATEGORIES =		misc
 HOMEPAGE =		http://memchan.sourceforge.net/
@@ -27,7 +27,6 @@ FAKE_FLAGS =		PKG_DIR=memchan \
 			INSTALL_PROGRAM='${INSTALL_DATA}'
 
 SEPARATE_BUILD =	Yes
-USE_GROFF =		Yes
 CONFIGURE_STYLE =	gnu
 
 CONFIGURE_ARGS +=	--with-tcl=${MODTCL_LIBDIR} \

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.27 2017/05/14 09:01:31 stu Exp $
+# $OpenBSD: Makefile,v 1.28 2017/06/02 19:54:15 schwarze Exp $
 
 COMMENT =	Tcl Standard Library
 
 DISTNAME =	tcllib-1.18pl0
+REVISION =	0
 CATEGORIES =	devel lang/tcl
 HOMEPAGE =	http://sourceforge.net/projects/tcllib/
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
@@ -17,7 +18,6 @@ GH_COMMIT =	2c76222353983a97336a7158bafb3292512e7655
 MODULES =	x11/tk
 BUILD_DEPENDS =	${MODTCL_BUILD_DEPENDS}
 RUN_DEPENDS =	${MODTCL_RUN_DEPENDS}
-USE_GROFF =	Yes
 NO_BUILD =	Yes
 PKG_ARCH =	*
 

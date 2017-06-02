@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2017/05/10 01:22:33 stu Exp $
+# $OpenBSD: Makefile,v 1.8 2017/06/02 19:54:15 schwarze Exp $
 
 COMMENT =		Tcl Database Connectivity
 
@@ -6,6 +6,7 @@ V =			1.0.4
 
 DISTNAME =		tdbc${V}
 PKGNAME =		tdbc-${V}
+REVISION =		0
 SHARED_LIBS =		tdbc${V:S/.//g} 0.0
 CATEGORIES =		databases
 HOMEPAGE =		http://tdbc.tcl.tk/
@@ -27,7 +28,6 @@ FAKE_FLAGS =		PKG_DIR=tdbc \
 			pkglibdir='$$(libdir)/tcl/$$(PKG_DIR)'
 
 SEPARATE_BUILD =	Yes
-USE_GROFF =		Yes
 CONFIGURE_STYLE =	gnu
 
 CONFIGURE_ARGS +=	--with-tcl=${MODTCL_LIBDIR} \
