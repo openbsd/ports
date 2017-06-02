@@ -1,0 +1,16 @@
+$OpenBSD: patch-boost_log_detail_event_hpp,v 1.1 2017/06/02 02:21:06 espie Exp $
+choosing the event model requires _POSIX defines that live in unistd,
+so make sure this is always included to keep things consistent.
+
+Index: boost/log/detail/event.hpp
+--- boost/log/detail/event.hpp.orig
++++ boost/log/detail/event.hpp
+@@ -19,6 +19,8 @@
+ #pragma once
+ #endif
+ 
++#include <unistd.h>
++
+ #ifndef BOOST_LOG_NO_THREADS
+ 
+ #if defined(BOOST_THREAD_PLATFORM_PTHREAD)
