@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.27 2016/11/07 10:51:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2017/06/02 08:56:32 schwarze Exp $
 
 COMMENT =	bayesian spam filter
 
 DISTNAME =	bogofilter-1.2.4
 CATEGORIES =	mail
-REVISION =	1
+REVISION =	2
 
 MAINTAINER =	Marc Espie <espie@openbsd.org>
 
@@ -16,7 +16,6 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =		c iconv m
 LIB_DEPENDS =		converters/libiconv
-USE_GROFF =		Yes
 
 FLAVORS =		db4 sqlite3 qdbm
 FLAVOR ?=

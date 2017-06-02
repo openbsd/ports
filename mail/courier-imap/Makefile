@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.109 2017/02/09 14:46:36 giovanni Exp $
+# $OpenBSD: Makefile,v 1.110 2017/06/02 08:56:32 schwarze Exp $
 
 COMMENT-main=		imap server for maildir format mailboxes
 COMMENT-pop3=		pop3 server for maildir format mailboxes
@@ -8,6 +8,7 @@ DISTNAME=		courier-imap-${V}
 PKGNAME-main=		${DISTNAME}
 FULLPKGNAME-pop3=	courier-pop3-${V}
 FULLPKGPATH-pop3=	mail/courier-imap,-pop3
+REVISION=		0
 
 CATEGORIES=		mail
 
@@ -26,7 +27,6 @@ WANTLIB-pop3=		c courierauth courierauthcommon courierauthsasl
 WANTLIB-pop3+=		idn pcre ${MODGETTEXT_WANTLIB}
 
 USE_GMAKE=		Yes
-USE_GROFF=		Yes
 CONFIGURE_STYLE=	autoconf automake
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.15
