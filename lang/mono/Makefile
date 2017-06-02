@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.108 2017/05/29 17:50:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.109 2017/06/02 23:25:03 schwarze Exp $
 
 # XXX also see -Wl,-z,wxneeded below; clang bypasses the wrapper
 USE_WXNEEDED=	Yes
@@ -7,7 +7,7 @@ COMMENT=	cross platform, open source .NET developement framework
 
 V=		4.6.2
 DISTNAME=	mono-${V}.6
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	lang devel
 
@@ -35,7 +35,6 @@ MODULES=	lang/mono \
 MODMONO_DEPS=	No
 
 USE_GMAKE=	Yes
-USE_GROFF =	Yes
 
 SUBST_VARS=	LIBTOOL
 
