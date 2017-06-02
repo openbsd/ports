@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2014/10/21 05:09:43 stu Exp $
+# $OpenBSD: Makefile,v 1.12 2017/06/02 20:22:01 schwarze Exp $
 
 COMMENT =		enhanced Tk console
 
 DISTNAME =		tkcon-2.5
-REVISION =		4
+REVISION =		5
 CATEGORIES =		x11 x11/tk
 HOMEPAGE =		http://sourceforge.net/projects/tkcon/
 MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
@@ -15,7 +15,6 @@ MODULES =		x11/tk
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=tkcon/}
 BUILD_DEPENDS =		devel/tcllib>=1.11.1
 RUN_DEPENDS =		${MODTK_RUN_DEPENDS}
-USE_GROFF =		Yes
 NO_BUILD =		Yes
 NO_TEST =		Yes
 PKG_ARCH =		*

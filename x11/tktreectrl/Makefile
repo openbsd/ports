@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2017/05/10 14:28:42 stu Exp $
+# $OpenBSD: Makefile,v 1.17 2017/06/02 20:22:01 schwarze Exp $
 
 COMMENT =		tree widget extension for Tk
 
 V =			2.4.1
 
 DISTNAME =		tktreectrl-${V}
-REVISION =		1
+REVISION =		2
 EPOCH =			0
 CATEGORIES =		x11
 HOMEPAGE =		http://tktreectrl.sourceforge.net/
@@ -22,7 +22,6 @@ BUILD_DEPENDS =		${MODTK_BUILD_DEPENDS}
 RUN_DEPENDS =		${MODTK_RUN_DEPENDS}
 FAKE_FLAGS =		PKG_DIR=tktreectrl INSTALL_PROGRAM='$$(INSTALL_DATA)'
 SEPARATE_BUILD =	Yes
-USE_GROFF =		Yes
 CONFIGURE_STYLE =	gnu
 
 CONFIGURE_ARGS +=	--libdir=${MODTCL_TCLDIR} \

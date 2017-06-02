@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2017/05/07 20:50:20 stu Exp $
+# $OpenBSD: Makefile,v 1.6 2017/06/02 20:22:01 schwarze Exp $
 
 COMMENT =	confine pointer and keyboard events to a Tk window sub-tree
 
 DISTNAME =	byzi-0.2
+REVISION =	0
 CATEGORIES =	x11
 HOMEPAGE =	http://github.com/aryler/Byzi
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
@@ -21,7 +22,6 @@ BUILD_DEPENDS =	${MODTK_BUILD_DEPENDS}
 RUN_DEPENDS =	${MODTK_RUN_DEPENDS}
 FAKE_FLAGS =	PKG_DIR=byzi
 SEPARATE_BUILD =Yes
-USE_GROFF =	Yes
 CONFIGURE_STYLE=gnu
 
 CONFIGURE_ARGS+=--with-tcl=${MODTCL_LIBDIR} \
