@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2016/11/21 06:43:39 bentley Exp $
+# $OpenBSD: Makefile,v 1.10 2017/06/03 14:28:40 schwarze Exp $
 
 COMMENT =		command line client application for Mega
 
 DISTNAME =		megatools-1.9.98
+REVISION =		0
 
 CATEGORIES =		net
 
@@ -25,8 +26,6 @@ LIB_DEPENDS =		devel/glib2 \
 RUN_DEPENDS =		net/glib2-networking
 
 USE_GMAKE =		Yes
-# DocBook-generated bulleted lists
-USE_GROFF =		Yes
 CONFIGURE_STYLE =	gnu
 
 CONFIGURE_ARGS =	--disable-introspection

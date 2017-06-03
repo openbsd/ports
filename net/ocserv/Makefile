@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2017/05/03 07:39:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2017/06/03 14:28:40 schwarze Exp $
 
 COMMENT=	server implementing the AnyConnect SSL VPN protocol
 
 DISTNAME=	ocserv-0.11.8
+REVISION=	0
 EXTRACT_SUFX=	.tar.xz
 
 CATEGORIES=	net
@@ -35,9 +36,6 @@ TEST_DEPENDS=	net/openconnect \
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.69
 USE_GMAKE=	Yes
-USE_GROFF=	Yes # missing flags
-# .NOP \f\*[B-Font]\-s\f[] \f\*[I-Font]file\f[], \f\*[B-Font]\-\-socket\-file\f[]=\f\*[I-Font]file\f[]
-# There's also "ERROR: skipping unknown macro: .an-trap" but this is probably unimportant
 CONFIGURE_ARGS=	--enable-local-libopts \
 		--without-http-parser \
 		--without-pcl-lib
