@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2017/06/02 04:26:23 jca Exp $
+# $OpenBSD: Makefile,v 1.16 2017/06/03 10:44:41 jca Exp $
 
 COMMENT =		authoritative DNS server
 
@@ -46,6 +46,10 @@ CONFIGURE_ARGS +=	--with-storage=${LOCALSTATEDIR}/db/knot \
 
 CONFIGURE_ENV =		ac_cv_path_PDFLATEX="false" \
 			ac_cv_path_SPHINXBUILD="false"
+
+.if ${MACHINE_ARCH} == "i386"
+CFLAGS += -march=i586
+.endif
 
 post-install:
 	mv ${WRKINST}/etc/knot/ ${PREFIX}/share/examples/knot/
