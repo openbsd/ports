@@ -1,11 +1,11 @@
-$OpenBSD: patch-mutt_sasl_c,v 1.3 2017/05/25 18:42:31 sthen Exp $
+$OpenBSD: patch-mutt_sasl_c,v 1.4 2017/06/03 13:09:06 sthen Exp $
 
 Pledge
 
 Index: mutt_sasl.c
 --- mutt_sasl.c.orig
 +++ mutt_sasl.c
-@@ -123,7 +123,7 @@ static int mutt_sasl_cb_log(void *context, int priorit
+@@ -126,7 +126,7 @@ static int mutt_sasl_cb_log(void *context, int priorit
  
  /* mutt_sasl_start: called before doing a SASL exchange - initialises library
   *   (if necessary). */

@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2017/05/25 18:42:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2017/06/03 13:09:06 sthen Exp $
 
 COMMENT=	tty-based e-mail client, Mutt with patches
 
 GH_ACCOUNT=	neomutt
 GH_PROJECT=	neomutt
-GH_TAGNAME=	neomutt-20170428
-REVISION=	0
+GH_TAGNAME=	neomutt-20170602
 DISTNAME=	${GH_TAGNAME}
 
 CATEGORIES=	mail
@@ -36,16 +35,10 @@ CONFIGURE_STYLE= autoconf
 BUILD_DEPENDS+=	${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS} \
 		devel/gettext-tools
-CONFIGURE_ARGS+= --enable-compressed \
-		--enable-external_dotlock \
+CONFIGURE_ARGS+= --enable-dotlock \
 		--disable-fcntl \
 		--enable-flock \
-		--enable-imap \
-		--enable-nntp \
 		--disable-notmuch \
-		--enable-pop \
-		--enable-sidebar \
-		--enable-smtp \
 		--mandir=${PREFIX}/man \
 		--with-curses \
 		--with-docdir="${PREFIX}/share/doc/neomutt" \

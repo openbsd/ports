@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2017/05/25 18:42:31 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2017/06/03 13:09:06 sthen Exp $
 @conflict mutt-*
 @bin bin/mutt
 @bin bin/mutt_dotlock
@@ -19,19 +19,16 @@ share/doc/neomutt/ChangeLog
 share/doc/neomutt/ChangeLog.neomutt
 share/doc/neomutt/INSTALL
 share/doc/neomutt/LICENSE.md
-share/doc/neomutt/NEWS
 share/doc/neomutt/PGP-Notes.txt
-share/doc/neomutt/README
-share/doc/neomutt/README.SECURITY
 share/doc/neomutt/README.SSL
-share/doc/neomutt/README.neomutt
-share/doc/neomutt/README.notmuch
-share/doc/neomutt/TODO
+share/doc/neomutt/README.md
 share/doc/neomutt/advancedusage.html
-share/doc/neomutt/applying-patches.txt
 share/doc/neomutt/configuration.html
-share/doc/neomutt/devel-notes.txt
 share/doc/neomutt/gettingstarted.html
+share/doc/neomutt/hcache-bench/
+share/doc/neomutt/hcache-bench/README.md
+share/doc/neomutt/hcache-bench/muttrc
+share/doc/neomutt/hcache-bench/neomutt-hcache-bench.sh
 share/doc/neomutt/index.html
 share/doc/neomutt/intro.html
 share/doc/neomutt/keybase/
@@ -46,34 +43,15 @@ share/doc/neomutt/keybase/pagerMode.png
 share/doc/neomutt/keybase/pgpdecrypt.sh
 share/doc/neomutt/keybase/pgpverify.sh
 share/doc/neomutt/keybase/verify.sh
+share/doc/neomutt/lua/
+share/doc/neomutt/lua/test_lua-api_runner.muttrc
+share/doc/neomutt/lua/test_lua-api_spec.lua
 share/doc/neomutt/manual.html
 share/doc/neomutt/manual.txt
 share/doc/neomutt/mimesupport.html
 share/doc/neomutt/miscellany.html
-share/doc/neomutt/muttrc.attach-headers-color
-share/doc/neomutt/muttrc.compress
-share/doc/neomutt/muttrc.cond-date
-share/doc/neomutt/muttrc.encrypt-to-self
-share/doc/neomutt/muttrc.forgotten-attachment
-share/doc/neomutt/muttrc.ifdef
-share/doc/neomutt/muttrc.index-color
-share/doc/neomutt/muttrc.initials
-share/doc/neomutt/muttrc.keywords
-share/doc/neomutt/muttrc.limit-current-thread
-share/doc/neomutt/muttrc.nested-if
-share/doc/neomutt/muttrc.new-mail
-share/doc/neomutt/muttrc.nntp
-share/doc/neomutt/muttrc.notmuch
-share/doc/neomutt/muttrc.progress
-share/doc/neomutt/muttrc.quasi-delete
-share/doc/neomutt/muttrc.reply-with-xorig
-share/doc/neomutt/muttrc.sidebar
-share/doc/neomutt/muttrc.skip-quoted
-share/doc/neomutt/muttrc.status-color
-share/doc/neomutt/muttrc.timeout
 share/doc/neomutt/neomutt-syntax.vim
 share/doc/neomutt/optionalfeatures.html
-share/doc/neomutt/patch-notes.txt
 share/doc/neomutt/reference.html
 share/doc/neomutt/samples/
 share/doc/neomutt/security.html
@@ -90,7 +68,6 @@ share/examples/neomutt/Muttrc.dist
 @sample ${SYSCONFDIR}/Muttrc
 share/examples/neomutt/Pine.rc
 share/examples/neomutt/Tin.rc
-share/examples/neomutt/ca-bundle.crt
 share/examples/neomutt/colors.default
 share/examples/neomutt/colors.linux
 share/examples/neomutt/gpg.rc
@@ -116,7 +93,6 @@ share/examples/neomutt/iconv/iconv.solaris-2.7.rc
 @comment share/examples/neomutt/mime.types
 share/examples/neomutt/mime.types.dist
 @sample ${SYSCONFDIR}/mime.types
-share/examples/neomutt/mutt_xtitle
 share/examples/neomutt/pgp2.rc
 share/examples/neomutt/pgp5.rc
 share/examples/neomutt/pgp6.rc
