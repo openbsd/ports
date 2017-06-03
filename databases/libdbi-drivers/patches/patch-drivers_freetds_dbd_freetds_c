@@ -1,10 +1,11 @@
-$OpenBSD: patch-drivers_freetds_dbd_freetds_c,v 1.1 2011/07/08 11:32:17 jasper Exp $
+$OpenBSD: patch-drivers_freetds_dbd_freetds_c,v 1.2 2017/06/03 16:24:05 steven Exp $
 
 From FreeBSD.
 
---- drivers/freetds/dbd_freetds.c.orig	Mon Dec 31 23:10:44 2007
-+++ drivers/freetds/dbd_freetds.c	Fri Jul  8 13:29:38 2011
-@@ -454,6 +454,7 @@ dbi_result_t *dbd_list_tables(dbi_conn_t * conn, const
+Index: drivers/freetds/dbd_freetds.c
+--- drivers/freetds/dbd_freetds.c.orig
++++ drivers/freetds/dbd_freetds.c
+@@ -474,6 +474,7 @@ dbi_result_t *dbd_list_tables(dbi_conn_t * conn, const
  {
      dbi_result_t *res;
      char *sql_cmd;
@@ -12,7 +13,7 @@ From FreeBSD.
  
      if (db == NULL || db[0] == '\0') {
  	/* Use current database */
-@@ -461,7 +462,6 @@ dbi_result_t *dbd_list_tables(dbi_conn_t * conn, const
+@@ -481,7 +482,6 @@ dbi_result_t *dbd_list_tables(dbi_conn_t * conn, const
  	return res;
      }
  
@@ -20,7 +21,7 @@ From FreeBSD.
      if (conn->current_db)
  	/* Reserved current DB name */
  	current_db = strdup(conn->current_db);
-@@ -509,9 +509,9 @@ size_t dbd_quote_string(dbi_driver_t * driver, const c
+@@ -529,9 +529,9 @@ size_t dbd_quote_string(dbi_driver_t * driver, const c
  {
      /* foo's -> 'foo''s' */
      size_t len;
@@ -31,7 +32,7 @@ From FreeBSD.
  
      len = _dbd_freetds_escape_chars(dest + 1, orig, strlen(orig), escaped);
  
-@@ -560,6 +560,8 @@ dbi_result_t *dbd_query(dbi_conn_t * conn, const char 
+@@ -580,6 +580,8 @@ dbi_result_t *dbd_query(dbi_conn_t * conn, const char 
       * everything else will be filled in by DBI */
  
      unsigned int idx = 0;
@@ -40,7 +41,7 @@ From FreeBSD.
      dbi_result_t *result = NULL;
      dbi_row_t *row = NULL;
      FREETDSCON *tdscon = (FREETDSCON *) conn->connection;
-@@ -629,9 +631,6 @@ dbi_result_t *dbd_query(dbi_conn_t * conn, const char 
+@@ -649,9 +651,6 @@ dbi_result_t *dbd_query(dbi_conn_t * conn, const char 
  		    return NULL;
  		}
  
@@ -50,7 +51,7 @@ From FreeBSD.
  		_translate_freetds_type(datafmt[idx], &type, &attribs);
  		/* Fill fields value in result */
  		_dbd_result_add_field(result, idx, datafmt[idx]->name, type, attribs);
-@@ -885,6 +884,7 @@ dbi_row_t *_dbd_freetds_buffers_binding(dbi_conn_t * c
+@@ -976,6 +975,7 @@ dbi_row_t *_dbd_freetds_buffers_binding(dbi_conn_t * c
      dbi_row_t *row = NULL;
      unsigned int idx = 0;
      void *addr = NULL;
@@ -58,7 +59,7 @@ From FreeBSD.
  
      FREETDSCON *tdscon = (FREETDSCON *) conn->connection;
  
-@@ -912,8 +912,7 @@ dbi_row_t *_dbd_freetds_buffers_binding(dbi_conn_t * c
+@@ -1003,8 +1003,7 @@ dbi_row_t *_dbd_freetds_buffers_binding(dbi_conn_t * c
  		    dstfmt.format = CS_FMT_UNUSED;
  
  		    addr = malloc(sizeof(CS_NUMERIC_TYPE));

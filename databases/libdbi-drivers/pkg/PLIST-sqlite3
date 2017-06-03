@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-sqlite3,v 1.2 2016/03/19 10:24:33 sthen Exp $
+@comment $OpenBSD: PLIST-sqlite3,v 1.3 2017/06/03 16:24:05 steven Exp $
 lib/dbd/
 lib/dbd/libdbdsqlite3.a
 lib/dbd/libdbdsqlite3.la
@@ -6,23 +6,14 @@ lib/dbd/libdbdsqlite3.so
 share/doc/libdbi-drivers/
 share/doc/libdbi-drivers/dbd_sqlite3/
 share/doc/libdbi-drivers/dbd_sqlite3.pdf
-share/doc/libdbi-drivers/dbd_sqlite3/c102.html
-share/doc/libdbi-drivers/dbd_sqlite3/c120.html
-share/doc/libdbi-drivers/dbd_sqlite3/c128.html
-share/doc/libdbi-drivers/dbd_sqlite3/c26.html
+share/doc/libdbi-drivers/dbd_sqlite3/c134.html
 share/doc/libdbi-drivers/dbd_sqlite3/c34.html
-share/doc/libdbi-drivers/dbd_sqlite3/c39.html
 share/doc/libdbi-drivers/dbd_sqlite3/c47.html
-share/doc/libdbi-drivers/dbd_sqlite3/c94.html
+share/doc/libdbi-drivers/dbd_sqlite3/c98.html
 share/doc/libdbi-drivers/dbd_sqlite3/copying-fdl.html
-share/doc/libdbi-drivers/dbd_sqlite3/f15.html
 share/doc/libdbi-drivers/dbd_sqlite3/f23.html
 share/doc/libdbi-drivers/dbd_sqlite3/index.html
-share/doc/libdbi-drivers/dbd_sqlite3/x123.html
-share/doc/libdbi-drivers/dbd_sqlite3/x131.html
-share/doc/libdbi-drivers/dbd_sqlite3/x195.html
-share/doc/libdbi-drivers/dbd_sqlite3/x203.html
-share/doc/libdbi-drivers/dbd_sqlite3/x42.html
+share/doc/libdbi-drivers/dbd_sqlite3/x137.html
+share/doc/libdbi-drivers/dbd_sqlite3/x209.html
 share/doc/libdbi-drivers/dbd_sqlite3/x50.html
-share/doc/libdbi-drivers/dbd_sqlite3/x56.html
 share/doc/libdbi-drivers/dbd_sqlite3/x64.html

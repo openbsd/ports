@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.30 2017/04/10 11:45:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2017/06/03 16:24:05 steven Exp $
 
-V =			0.8.3-1
-REVISION =		12
+V =			0.9.0
 COMMENT-main =		mysql driver for libdbi
 COMMENT-pgsql =		pgsql driver for libdbi
 COMMENT-sqlite =	sqlite driver for libdbi
@@ -26,13 +25,18 @@ PERMIT_PACKAGE_CDROM =	Yes
 CONFIGURE_STYLE =	gnu
 
 CONFIGURE_ARGS =	--disable-docs \
+			--with-dbi-incdir=${LOCALBASE}/include \
 			--with-dbi-libdir=${LOCALBASE}/lib \
 			--with-mysql \
 			--with-pgsql \
 			--with-pgsql-incdir="${LOCALBASE}/include -I${LOCALBASE}/include/postgresql" \
 			--with-pgsql-libdir=${LOCALBASE}/lib/postgresql \
 			--with-sqlite \
+			--with-sqlite-incdir=${LOCALBASE}/include \
+			--with-sqlite-libdir=${LOCALBASE}/lib \
 			--with-sqlite3 \
+			--with-sqlite3-incdir=${LOCALBASE}/include \
+			--with-sqlite3-libdir=${LOCALBASE}/lib \
 			--with-freetds \
 			--with-freetds-incdir=${LOCALBASE}/include \
 			--with-freetds-libdir=${LOCALBASE}/lib
@@ -59,6 +63,7 @@ RUN_DEPENDS-sqlite3 =
 
 WANTLIB-freetds =	ct dbi iconv m pthread ffi gcrypt gmp gnutls
 WANTLIB-freetds +=	gpg-error hogweed idn2 intl nettle p11-kit tasn1 z
+WANTLIB-freetds +=	unistring
 
 LIB_DEPENDS-freetds =	databases/freetds \
 			databases/libdbi
@@ -68,7 +73,12 @@ TEST_DEPENDS =	databases/libdbi-drivers,-main \
 			databases/libdbi-drivers,-pgsql \
 			databases/libdbi-drivers,-sqlite \
 			databases/libdbi-drivers,-sqlite3 \
-			databases/libdbi-drivers,-freetds
+			databases/libdbi-drivers,-freetds \
+			databases/mariadb,-server \
+			databases/postgresql,-server
+
+pre-configure:
+	chmod +x ${WRKSRC}/tests/test_freetds.sh	
 
 post-install:
 .for d in mysql pgsql sqlite sqlite3

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2016/03/19 10:24:33 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2017/06/03 16:24:05 steven Exp $
 lib/dbd/
 lib/dbd/libdbdmysql.a
 lib/dbd/libdbdmysql.la
@@ -6,21 +6,21 @@ lib/dbd/libdbdmysql.so
 share/doc/libdbi-drivers/
 share/doc/libdbi-drivers/dbd_mysql/
 share/doc/libdbi-drivers/dbd_mysql.pdf
-share/doc/libdbi-drivers/dbd_mysql/c168.html
-share/doc/libdbi-drivers/dbd_mysql/c173.html
-share/doc/libdbi-drivers/dbd_mysql/c35.html
-share/doc/libdbi-drivers/dbd_mysql/c39.html
+share/doc/libdbi-drivers/dbd_mysql/c101.html
+share/doc/libdbi-drivers/dbd_mysql/c177.html
+share/doc/libdbi-drivers/dbd_mysql/c180.html
 share/doc/libdbi-drivers/dbd_mysql/c40.html
+share/doc/libdbi-drivers/dbd_mysql/c43.html
 share/doc/libdbi-drivers/dbd_mysql/c44.html
-share/doc/libdbi-drivers/dbd_mysql/c93.html
+share/doc/libdbi-drivers/dbd_mysql/c47.html
 share/doc/libdbi-drivers/dbd_mysql/c98.html
 share/doc/libdbi-drivers/dbd_mysql/copying-fdl.html
-share/doc/libdbi-drivers/dbd_mysql/f24.html
 share/doc/libdbi-drivers/dbd_mysql/f29.html
+share/doc/libdbi-drivers/dbd_mysql/f32.html
 share/doc/libdbi-drivers/dbd_mysql/index.html
-share/doc/libdbi-drivers/dbd_mysql/x171.html
-share/doc/libdbi-drivers/dbd_mysql/x176.html
-share/doc/libdbi-drivers/dbd_mysql/x42.html
+share/doc/libdbi-drivers/dbd_mysql/x180.html
+share/doc/libdbi-drivers/dbd_mysql/x183.html
 share/doc/libdbi-drivers/dbd_mysql/x47.html
-share/doc/libdbi-drivers/dbd_mysql/x56.html
+share/doc/libdbi-drivers/dbd_mysql/x50.html
 share/doc/libdbi-drivers/dbd_mysql/x61.html
+share/doc/libdbi-drivers/dbd_mysql/x64.html

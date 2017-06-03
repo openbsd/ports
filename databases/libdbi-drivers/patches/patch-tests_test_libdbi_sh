@@ -1,0 +1,14 @@
+$OpenBSD: patch-tests_test_libdbi_sh,v 1.1 2017/06/03 16:24:05 steven Exp $
+
+Index: tests/test_libdbi.sh
+--- tests/test_libdbi.sh.orig
++++ tests/test_libdbi.sh
+@@ -13,7 +13,7 @@ olddir=`pwd`
+ cd ..  
+ rootdir=`pwd`
+ for f in `find drivers -name 'libdbd*.so'` ; do
+-  ln -vs $rootdir/$f $olddir/.plugins
++  ln -s $rootdir/$f $olddir/.plugins
+ done
+ cd $olddir
+ 

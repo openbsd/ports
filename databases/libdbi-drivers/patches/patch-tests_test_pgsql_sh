@@ -1,0 +1,14 @@
+$OpenBSD: patch-tests_test_pgsql_sh,v 1.1 2017/06/03 16:24:05 steven Exp $
+
+Index: tests/test_pgsql.sh
+--- tests/test_pgsql.sh.orig
++++ tests/test_pgsql.sh
+@@ -42,7 +42,7 @@ ABSMYTMPDIR="`cd \"$D\" 2>/dev/null && pwd || echo \"$
+ # depends on language-pack-en | language-pack-en
+ # because initdb acquires encoding from locale
+ export LC_ALL="en_US.UTF-8"
+-${BINDIR}/initdb -D ${MYTMPDIR}
++${BINDIR}/initdb -D ${MYTMPDIR} --no-locale
+ # the non-interactive standalone server is not available in older PGSQL versions
+ #${BINDIR}/postgres -D ${MYTMPDIR} -h '' -k ${MYTMPDIR} &
+ ${BINDIR}/postmaster -D ${MYTMPDIR} -h '' -k ${ABSMYTMPDIR} &
