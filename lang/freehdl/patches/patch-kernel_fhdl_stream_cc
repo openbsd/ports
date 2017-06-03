@@ -1,0 +1,15 @@
+$OpenBSD: patch-kernel_fhdl_stream_cc,v 1.1 2017/06/03 14:25:16 espie Exp $
+const correct
+
+Index: kernel/fhdl_stream.cc
+--- kernel/fhdl_stream.cc.orig
++++ kernel/fhdl_stream.cc
+@@ -60,7 +60,7 @@ fhdl_ostream_t::bind_to_socket(int s) 
+ }
+ 
+ fhdl_ostream_t &
+-fhdl_ostream_t::operator<<(char *p) 
++fhdl_ostream_t::operator<<(const char *p) 
+ {
+   if (!socket_connection)
+     *str << p;

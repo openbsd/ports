@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2017/04/10 11:46:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2017/06/03 14:25:16 espie Exp $
 
 COMMENT=	open-source (C++ generating) VHDL simulator
 
 DISTNAME=	freehdl-0.0.7
 CATEGORIES=	lang cad
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS +=  ieee                      0.0 # 0.0
 SHARED_LIBS +=  freehdl-cdfggen           0.0 # 0.0
@@ -23,6 +23,7 @@ MASTER_SITES=	${HOMEPAGE}/~enaroska/
 WANTLIB += c m ${LIBCXX}
 
 USE_GMAKE=	Yes
+CXXFLAGS +=	-Wno-parentheses-equality
 
 # Configure checks for gnu libtool, but the build will use "our" libtool
 BUILD_DEPENDS=  devel/libtool
