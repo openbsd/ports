@@ -1,0 +1,17 @@
+$OpenBSD: patch-dic_header_cpp,v 1.1 2017/06/03 13:03:34 espie Exp $
+You can't take a ref to a vector<bool> element in a portable manner.
+
+Index: dic/header.cpp
+--- dic/header.cpp.orig
++++ dic/header.cpp
+@@ -675,8 +675,8 @@ void Header::print(ostream &out) const
+         fmter % centerAndConvert(wstring(1, m_letters[i]), sz("Letter"));
+         fmter % centerAndConvert(str(wformat(L"%1%") % m_points[i]), sz("Points"));
+         fmter % centerAndConvert(str(wformat(L"%1%") % m_frequency[i]), sz("Frequency"));
+-        fmter % centerAndConvert(str(wformat(L"%1%") % m_vowels[i]), sz("Vowel"));
+-        fmter % centerAndConvert(str(wformat(L"%1%") % m_consonants[i]), sz("Consonant"));
++        fmter % centerAndConvert(str(wformat(L"%1%") % int(m_vowels[i])), sz("Vowel"));
++        fmter % centerAndConvert(str(wformat(L"%1%") % int(m_consonants[i])), sz("Consonant"));
+         map<wchar_t, vector<wstring> >::const_iterator it =
+             m_displayAndInputData.find(m_letters[i]);
+         if (it != m_displayAndInputData.end())
