@@ -1,0 +1,38 @@
+$OpenBSD: patch-parser_c,v 1.17 2017/06/03 09:40:42 pirofti Exp $
+
+Fix CVE-2017-9049 and CVE-2017-9050.
+
+Index: parser.c
+--- parser.c.orig
++++ parser.c
+@@ -3312,6 +3312,7 @@ xmlParseNameComplex(xmlParserCtxtPtr ctxt) {
+     int len = 0, l;
+     int c;
+     int count = 0;
++    size_t startPosition = 0;
+ 
+ #ifdef DEBUG
+     nbParseNameComplex++;
+@@ -3323,6 +3324,7 @@ xmlParseNameComplex(xmlParserCtxtPtr ctxt) {
+     GROW;
+     if (ctxt->instate == XML_PARSER_EOF)
+         return(NULL);
++    startPosition = CUR_PTR - BASE_PTR;
+     c = CUR_CHAR(l);
+     if ((ctxt->options & XML_PARSE_OLD10) == 0) {
+         /*
+@@ -3420,9 +3422,11 @@ xmlParseNameComplex(xmlParserCtxtPtr ctxt) {
+         xmlFatalErr(ctxt, XML_ERR_NAME_TOO_LONG, "Name");
+         return(NULL);
+     }
+-    if ((*ctxt->input->cur == '\n') && (ctxt->input->cur[-1] == '\r'))
+-        return(xmlDictLookup(ctxt->dict, ctxt->input->cur - (len + 1), len));
+-    return(xmlDictLookup(ctxt->dict, ctxt->input->cur - len, len));
++
++    if (BASE_PTR + startPosition + len > ctxt->input->end)
++	return(NULL);
++
++    return(xmlDictLookup(ctxt->dict, BASE_PTR + startPosition, len));
+ }
+ 
+ /**

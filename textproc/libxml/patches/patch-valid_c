@@ -1,0 +1,23 @@
+$OpenBSD: patch-valid_c,v 1.1 2017/06/03 09:40:42 pirofti Exp $
+
+Fix CVE-2017-9047 and CVE-2017-9048.
+
+Index: valid.c
+--- valid.c.orig
++++ valid.c
+@@ -1270,6 +1270,7 @@ xmlSnprintfElementContent(char *buf, int size, xmlElem
+ 		}
+ 		strcat(buf, (char *) content->prefix);
+ 		strcat(buf, ":");
++		len += xmlStrlen(content->prefix);
+ 	    }
+ 	    if (size - len < xmlStrlen(content->name) + 10) {
+ 		strcat(buf, " ...");
+@@ -1319,6 +1320,7 @@ xmlSnprintfElementContent(char *buf, int size, xmlElem
+ 		xmlSnprintfElementContent(buf, size, content->c2, 0);
+ 	    break;
+     }
++    if (size - strlen(buf) <= 2) return;
+     if (englob)
+         strcat(buf, ")");
+     switch (content->ocur) {
