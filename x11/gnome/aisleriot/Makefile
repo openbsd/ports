@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2017/05/31 08:08:17 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2017/06/03 11:17:58 espie Exp $
 
 COMMENT =		suite of solitaire card games
 
@@ -43,7 +43,8 @@ LIB_DEPENDS =		audio/libcanberra,-gtk3 \
 
 BUILD_DEPENDS =		shells/bash
 
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE =	autoconf
+AUTOCONF_VERSION =	2.69
 
 CONFIGURE_ARGS =	--with-card-theme-formats=svg
 
