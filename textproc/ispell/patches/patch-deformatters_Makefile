@@ -1,0 +1,20 @@
+$OpenBSD: patch-deformatters_Makefile,v 1.1 2017/06/03 12:46:37 sthen Exp $
+
+Index: deformatters/Makefile
+--- deformatters/Makefile.orig
++++ deformatters/Makefile
+@@ -77,12 +77,12 @@ all:	$(PROGRAMS)
+ defmt-c: defmt-c.o
+ 	@. ../config.sh; \
+ 	  set -x; \
+-	  $$CC $$CFLAGS -o $@ $<
++	  $$CC $$CFLAGS -o $@ $>
+ 
+ defmt-sh: defmt-sh.o
+ 	@. ../config.sh; \
+ 	  set -x; \
+-	  $$CC $$CFLAGS -o $@ $<
++	  $$CC $$CFLAGS -o $@ $>
+ 
+ .c.o:
+ 	@. ../config.sh; \

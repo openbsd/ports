@@ -1,0 +1,13 @@
+$OpenBSD: patch-lookup_c,v 1.1 2017/06/03 12:46:37 sthen Exp $
+
+Index: lookup.c
+--- lookup.c.orig
++++ lookup.c
+@@ -85,6 +85,7 @@ static char Rcs_Id[] =
+  *
+  */
+ 
++#include <fcntl.h>
+ #include "config.h"
+ #include "ispell.h"
+ #include "proto.h"

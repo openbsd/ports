@@ -1,7 +1,8 @@
-$OpenBSD: patch-languages_english_english_3,v 1.1 2011/07/08 09:52:50 jasper Exp $
---- languages/english/english.3.orig	Thu Jun  7 01:49:16 2001
-+++ languages/english/english.3	Fri Jul  8 11:47:35 2011
-@@ -5200,6 +5200,7 @@ dirk
+$OpenBSD: patch-languages_english_english_3,v 1.2 2017/06/03 12:46:37 sthen Exp $
+Index: languages/english/english.3
+--- languages/english/english.3.orig
++++ languages/english/english.3
+@@ -5167,6 +5167,7 @@ dirk
  dirndl
  disaccredit
  disafforest
@@ -9,7 +10,7 @@ $OpenBSD: patch-languages_english_english_3,v 1.1 2011/07/08 09:52:50 jasper Exp
  disbranch
  disbud
  discalced
-@@ -5234,7 +5235,6 @@ dispersity
+@@ -5201,7 +5202,6 @@ dispersity
  dispersoid
  displayable
  disproven

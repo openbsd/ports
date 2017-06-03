@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2015/12/03 21:24:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.65 2017/06/03 12:46:37 sthen Exp $
 
 COMMENT-main=		interactive spelling checker
 COMMENT-dutch=		ispell dictionary for Dutch
@@ -10,8 +10,10 @@ COMMENT-slovak=		ispell dictionary for Slovak
 COMMENT-spanish=	ispell dictionary for Spanish
 COMMENT-swedish=	ispell dictionary for Swedish
 
-VERSION=	3.2.06
+VERSION=	3.4.00
 DISTNAME=	ispell-${VERSION}
+PKGNAME-main=	${DISTNAME}
+
 CATEGORIES=	textproc
 
 HOMEPAGE=	http://fmg-www.cs.ucla.edu/geoff/ispell.html
@@ -56,14 +58,8 @@ EXTRACT_ONLY=	${DISTNAME}.tar.gz \
 
 SUBST_VARS+=	VERSION
 
-PKGNAME-main=	${DISTNAME}
-REVISION-main=	9
 MULTI_PACKAGES=	-main -dutch -french -german -swedish -russian -portuguese \
 		-slovak -spanish
-.for i in ${MULTI_PACKAGES}
-PKGNAME$i?=	ispell$i-${VERSION}
-REVISION$i?=	6
-.endfor
 
 # ispell: BSD-like
 # dictionaries: GPL or BSD-like
@@ -99,7 +95,7 @@ post-extract:
 	mv espa~nol.words+ spanish.words+)
 
 pre-configure:
-	@sed "s%/usr/local%${PREFIX}%g" ${WRKSRC}/local.h.samp > \
+	@sed "s%/usr/local%${PREFIX}%g" ${WRKSRC}/local.h.bsd > \
 		${WRKSRC}/local.h
 	@echo "#define CFLAGS \"${CFLAGS}\"" >> ${WRKSRC}/local.h
 	@echo "#define CC \"${CC}\"" >> ${WRKSRC}/local.h
@@ -146,13 +142,13 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKDIST}/icombine ${PREFIX}/bin/icombine
 	${INSTALL_SCRIPT} ${WRKDIST}/ispell-config ${PREFIX}/bin/ispell-config
 
-	${INSTALL_MAN} ${WRKDIST}/ispell.1 ${PREFIX}/man/man1/ispell.1
+	${INSTALL_MAN} ${WRKDIST}/ispell.1 ${PREFIX}/man/man1/
 	ln -s ispell.1 ${PREFIX}/man/man1/buildhash.1
 	ln -s ispell.1 ${PREFIX}/man/man1/munchlist.1
 	ln -s ispell.1 ${PREFIX}/man/man1/findaffix.1
 	ln -s ispell.1 ${PREFIX}/man/man1/tryaffix.1
-	${INSTALL_MAN} ${WRKDIST}/ispell.4 ${PREFIX}/man/man4/ispell.4
-	ln -s ispell.4 ${PREFIX}/man/man4/english.4
+	${INSTALL_MAN} ${WRKDIST}/ispell.5 ${PREFIX}/man/man5/
+	ln -s ispell.5 ${PREFIX}/man/man5/english.5
 
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/ispell
 

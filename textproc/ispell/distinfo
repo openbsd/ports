@@ -1,7 +1,7 @@
 SHA256 (ispell/espa~nol-1.7.tar.gz) = biGAAkf2Uk0ZzgnduqD338Bkiv8HN/sWTbuEPWQqDF4=
 SHA256 (ispell/francais-IREQ-1.4.tar.gz) = Fs9AvXJJc7KbIPL/7EiYelsOJDRXdBVDHfjBK3QyrOw=
 SHA256 (ispell/hk2-deutsch.tar.gz) = bMjWntAr96PuWPooXjaS0iZxrurCJAoxgSU3tuC65lU=
-SHA256 (ispell/ispell-3.2.06.tar.gz) = NKJ/xKIIm9UHSqz2kyNzF3DltgWi/JoFPTifRbAceWY=
+SHA256 (ispell/ispell-3.4.00.tar.gz) = XcQuRYY18hgDLTrpKVKOVYex5yR1ZPDp+dd9XMq3rsI=
 SHA256 (ispell/ispell-nl-1.0.0.tar.gz) = aq+Ky0VtX8Ip5mgmUs7y2RQIndOPZN7Qpu/YFhyEE+g=
 SHA256 (ispell/ispell-sk-0.3.2.tar.gz) = W4o+V+Kng8LgmYSCPnjvdY/ylUt8FlzqO6RoDk3KZXs=
 SHA256 (ispell/ispell.pt-20091013.tar.gz) = NSSP9LpUhMpWuH/9f3wHq23MQTb85dT0xkBhOnR4w7Y=
@@ -10,7 +10,7 @@ SHA256 (ispell/rus-ispell-0.99e7.tar.gz) = g5IZ371cijeO8hw+bFmxn/ekh3dG12e+vVeBD
 SIZE (ispell/espa~nol-1.7.tar.gz) = 424599
 SIZE (ispell/francais-IREQ-1.4.tar.gz) = 326207
 SIZE (ispell/hk2-deutsch.tar.gz) = 375750
-SIZE (ispell/ispell-3.2.06.tar.gz) = 580742
+SIZE (ispell/ispell-3.4.00.tar.gz) = 638770
 SIZE (ispell/ispell-nl-1.0.0.tar.gz) = 480570
 SIZE (ispell/ispell-sk-0.3.2.tar.gz) = 618244
 SIZE (ispell/ispell.pt-20091013.tar.gz) = 180587
