@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.151 2017/05/31 19:59:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.152 2017/06/03 13:17:41 sthen Exp $
 
 DPB_PROPERTIES =	parallel
 
 COMMENT-main =		open-source LDAP software (client)
 COMMENT-server =	open-source LDAP software (server)
 
-DISTNAME =		openldap-2.4.44
+DISTNAME =		openldap-2.4.45
 PKGNAME-main =		${DISTNAME:S/-/-client-/}
 PKGNAME-server =	${DISTNAME:S/-/-server-/}
-REVISION-main =		4
-REVISION-server =	5
 
 # overwrite -main pkgname/path to strip FLAVOR, aci only affects the server
 FULLPKGNAME-main =	${DISTNAME:S/-/-client-/}${FLAVOR_EXT:S/-aci//}
@@ -122,7 +120,7 @@ CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include/sasl -I${LOCALBASE}/include/db
 			LDFLAGS="-L${LOCALBASE}/lib/db4 -L${LOCALBASE}/lib"
 
 RUN_DEPENDS-server =	databases/openldap,-main
-WANTLIB-server +=	${WANTLIB} perl util m icudata icuuc uuid
+WANTLIB-server +=	${WANTLIB} perl m icudata icuuc uuid
 WANTLIB-server +=	${LIBCXX} lib/db4/db>=4
 
 pre-build:
