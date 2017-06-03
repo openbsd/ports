@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2015/10/29 18:25:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2017/06/03 16:23:09 steven Exp $
 
 COMMENT =		database-independent abstraction layer
-DISTNAME =		libdbi-0.8.4
+DISTNAME =		libdbi-0.9.0
 CATEGORIES =		databases
-SHARED_LIBS +=		dbi 0.0 # .0.5
-REVISION =		0
+SHARED_LIBS +=		dbi 1.0
 
 HOMEPAGE =		http://libdbi.sourceforge.net/
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=libdbi/}

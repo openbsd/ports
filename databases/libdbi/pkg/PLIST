@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/03/28 07:38:09 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2017/06/03 16:23:09 steven Exp $
 include/dbi/
 include/dbi/dbd.h
 include/dbi/dbi-dev.h
@@ -6,26 +6,30 @@ include/dbi/dbi.h
 lib/libdbi.a
 lib/libdbi.la
 @lib lib/libdbi.so.${LIBdbi_VERSION}
+lib/pkgconfig/dbi.pc
 share/doc/libdbi/
 share/doc/libdbi/driver-guide/
 share/doc/libdbi/driver-guide.pdf
 share/doc/libdbi/driver-guide/contact.html
 share/doc/libdbi/driver-guide/copying-fdl.html
+share/doc/libdbi/driver-guide/databasedirectories.html
 share/doc/libdbi/driver-guide/description.html
 share/doc/libdbi/driver-guide/drivercaps.html
+share/doc/libdbi/driver-guide/driverdata.html
 share/doc/libdbi/driver-guide/driverfuncs-dbquery.html
 share/doc/libdbi/driver-guide/driverfuncs-infrastructure.html
 share/doc/libdbi/driver-guide/driverfuncs-publicdbquery.html
 share/doc/libdbi/driver-guide/driverfuncs.html
+share/doc/libdbi/driver-guide/driverinfrastructure.html
 share/doc/libdbi/driver-guide/gnugpl.html
 share/doc/libdbi/driver-guide/helperfuncs.html
 share/doc/libdbi/driver-guide/index.html
 share/doc/libdbi/driver-guide/intro.html
-share/doc/libdbi/driver-guide/requireddrivercaps.html
-share/doc/libdbi/driver-guide/settingdrivercaps.html
 share/doc/libdbi/driver-guide/terminology.html
 share/doc/libdbi/programmers-guide/
 share/doc/libdbi/programmers-guide.pdf
+share/doc/libdbi/programmers-guide/addtoproject.html
+share/doc/libdbi/programmers-guide/buildinstall.html
 share/doc/libdbi/programmers-guide/connerrors.html
 share/doc/libdbi/programmers-guide/contact.html
 share/doc/libdbi/programmers-guide/copying-fdl.html
@@ -35,6 +39,9 @@ share/doc/libdbi/programmers-guide/errornumbers.html
 share/doc/libdbi/programmers-guide/gnugpl.html
 share/doc/libdbi/programmers-guide/index.html
 share/doc/libdbi/programmers-guide/intro.html
+share/doc/libdbi/programmers-guide/libdbi-and-drivers-versions.html
+share/doc/libdbi/programmers-guide/loadinglibdbi.html
+share/doc/libdbi/programmers-guide/package-library-version.html
 share/doc/libdbi/programmers-guide/quickstart-code.html
 share/doc/libdbi/programmers-guide/quickstart-debriefing.html
 share/doc/libdbi/programmers-guide/quickstart.html
@@ -48,6 +55,10 @@ share/doc/libdbi/programmers-guide/reference-field.html
 share/doc/libdbi/programmers-guide/reference-query.html
 share/doc/libdbi/programmers-guide/reference-results.html
 share/doc/libdbi/programmers-guide/reference.html
+share/doc/libdbi/programmers-guide/savepoints.html
 share/doc/libdbi/programmers-guide/terminology.html
-share/doc/libdbi/programmers-guide/x267.html
-share/doc/libdbi/programmers-guide/x276.html
+share/doc/libdbi/programmers-guide/threads.html
+share/doc/libdbi/programmers-guide/transactions-savepoints.html
+share/doc/libdbi/programmers-guide/transactions.html
+share/doc/libdbi/programmers-guide/version-at-runtime.html
+share/doc/libdbi/programmers-guide/versioning.html

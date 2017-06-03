@@ -1,12 +1,13 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2014/03/28 07:38:09 ajacoutot Exp $
---- Makefile.in.orig	Wed Sep  1 01:22:52 2010
-+++ Makefile.in	Fri Mar 28 08:35:53 2014
-@@ -195,7 +195,7 @@ top_builddir = @top_builddir@
+$OpenBSD: patch-Makefile_in,v 1.3 2017/06/03 16:23:09 steven Exp $
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -291,7 +291,7 @@ top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
  AUTOMAKE_OPTIONS = foreign dist-zip
  ACLOCAL_AMFLAGS = -I m4
 -SUBDIRS = src include @docs_subdirs@
 +SUBDIRS = src include
- EXTRA_DIST = AUTHORS COPYING ChangeLog INSTALL README README.win32 README.osx TODO NEWS libdbi.spec.in config.h.in Makefile.w32 autogen.sh drivers/example/AUTHORS drivers/example/Makefile.am drivers/example/README drivers/example/TODO drivers/example/.cvsignore drivers/example/dbd_example.c drivers/example/dbd_example.h drivers/example/dbd_example.sgml
- all: config.h
- 	$(MAKE) $(AM_MAKEFLAGS) all-recursive
+ EXTRA_DIST = AUTHORS COPYING ChangeLog INSTALL README README.win32 README.osx TODO NEWS UPGRADING libdbi.spec.in config.h.in Makefile.w32 autogen.sh drivers/example/AUTHORS drivers/example/Makefile.am drivers/example/README drivers/example/TODO drivers/example/.cvsignore drivers/example/dbd_example.c drivers/example/dbd_example.h drivers/example/dbd_example.sgml
+ 
+ # we use exec here to install the .pc file with the library, not with
