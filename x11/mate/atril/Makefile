@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2017/06/01 06:08:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2017/06/03 09:57:19 ajacoutot Exp $
 
 USE_WXNEEDED=		Yes
 
@@ -10,7 +10,7 @@ SHARED_LIBS +=  atrildocument             3.0 # 3.0
 SHARED_LIBS +=  atrilview                 3.0 # 3.0
 
 MATE_PROJECT=		atril
-REVISION=		2
+REVISION=		3
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -20,10 +20,10 @@ WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xt Xxf86vm bz2
 WANTLIB += c crypto drm epoxy expat ffi fontconfig freetype gbm
 WANTLIB += gio-2.0 glapi glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += iconv intl m pcre pixman-1 pthread pthread-stubs sqlite3
-WANTLIB += stdc++ xcb xcb-dri2 xcb-glx xcb-render xcb-shm xcb-xfixes
+WANTLIB += ${LIBCXX} xcb xcb-dri2 xcb-glx xcb-render xcb-shm xcb-xfixes
 WANTLIB += archive atk-1.0 atk-bridge-2.0 atspi avahi-common
 WANTLIB += cairo-gobject cairo caja-extension dbus-1 djvulibre
-WANTLIB += enchant estdc++ gailutil-3 gcrypt gdk-3 gdk_pixbuf-2.0
+WANTLIB += enchant ${LIBECXX} gailutil-3 gcrypt gdk-3 gdk_pixbuf-2.0
 WANTLIB += gmp gpg-error graphite2 gs gstapp-1.0 gstaudio-1.0
 WANTLIB += gstbase-1.0 gstfft-1.0 gstpbutils-1.0 gstreamer-1.0 gsttag-1.0
 WANTLIB += gstvideo-1.0 gtk-3 gxps harfbuzz-icu harfbuzz hogweed hyphen
