@@ -1,30 +1,30 @@
-# $OpenBSD: Makefile,v 1.28 2017/05/02 07:00:02 benoit Exp $
+# $OpenBSD: Makefile,v 1.29 2017/06/03 09:20:32 benoit Exp $
 
-COMMENT=		ZX Spectrum emulator file format library
-DISTNAME=		libspectrum-1.3.3
-SHARED_LIBS=		spectrum 7.2	# 12.6
-CATEGORIES=		devel
+COMMENT =		ZX Spectrum emulator file format library
+DISTNAME =		libspectrum-1.3.4
+SHARED_LIBS =		spectrum 7.3	# 13.7
+CATEGORIES =		devel
 
-HOMEPAGE=		http://fuse-emulator.sourceforge.net/libspectrum.php
+HOMEPAGE =		http://fuse-emulator.sourceforge.net/libspectrum.php
 
-MAINTAINER=		Benoit Lecocq <benoit@openbsd.org>
+MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB+=		FLAC audiofile bz2 gcrypt glib-2.0 gpg-error iconv
-WANTLIB+=		intl m ogg pcre pthread z
+WANTLIB +=		FLAC audiofile bz2 gcrypt glib-2.0 gpg-error iconv
+WANTLIB +=		intl m ogg pcre pthread z
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=fuse-emulator/}
+MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=fuse-emulator/}
 
-LIB_DEPENDS=		devel/glib2 \
+LIB_DEPENDS =		devel/glib2 \
 			security/libgcrypt \
 			archivers/bzip2 \
 			devel/libaudiofile
 
-USE_GMAKE=		Yes
+USE_GMAKE =		Yes
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE =	gnu
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/libspectrum
