@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.324 2017/05/31 08:08:17 espie Exp $
+# $OpenBSD: Makefile,v 1.325 2017/06/03 15:01:46 espie Exp $
 
 USE_WXNEEDED=		Yes
 
@@ -157,7 +157,7 @@ pre-configure:
 do-configure:
 	@cd ${WRKSRC} && env -i ${MAKE_ENV} build/linux/unbundle/replace_gn_files.py \
 		--system-libraries ${GN_SYSTEM_LIBS}
-	@cd ${WRKSRC}/tools/gn && env -i ${MAKE_ENV} ${MODPY_BIN} bootstrap/bootstrap.py \
+	@cd ${WRKSRC}/tools/gn && env -i ${MAKE_ENV} LDFLAGS=-L${LOCALBASE}/lib ${MODPY_BIN} bootstrap/bootstrap.py \
 		--no-clean -s --gn-gen-args "${GN_ARGS}"
 	@cd ${WRKSRC} && env -i ${CONFIGURE_ENV} ${WRKSRC}/out/${BUILDTYPE}/gn \
 		gen --args="${GN_ARGS}" out/Release
