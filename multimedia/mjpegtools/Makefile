@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.39 2017/05/24 09:26:35 espie Exp $
+# $OpenBSD: Makefile,v 1.40 2017/06/03 16:14:00 schwarze Exp $
 
 COMMENT=		tools to edit/modify/encode video streams
 
 DISTNAME=		mjpegtools-2.0.0
-REVISION=		3
+REVISION=		4
 CATEGORIES=		multimedia
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=mjpeg/}
 
@@ -35,7 +35,6 @@ LIB_DEPENDS=		devel/sdl \
 			multimedia/libdv \
 			x11/gtk+2 \
 
-USE_GROFF=		Yes
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.68
 CONFIGURE_ARGS+=	--with-x \

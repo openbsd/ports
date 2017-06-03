@@ -1,0 +1,20 @@
+$OpenBSD: patch-docs_mjpegtools_1,v 1.1 2017/06/03 16:14:00 schwarze Exp $
+
+A manual page without SH NAME and DESCRIPTION is a really bad idea
+and cannot be expected to render readably.
+
+Index: docs/mjpegtools.1
+--- docs/mjpegtools.1.orig
++++ docs/mjpegtools.1
+@@ -1,9 +1,8 @@
+ .\"
+ .TH "MJPEG tools" "MJPEG Linux Square" "MJPEG tools manual"
+-.LP
+-
++.SH NAME
+ MJPEG HOWTO - An introduction to the MJPEG-toolsPraschinger Bernhardv1.50MJPEG capture/editting/replay and MPEG encoding toolset description
+-.PP
++.SH DESCRIPTION
+ Introduction
+ 
+ .PP
