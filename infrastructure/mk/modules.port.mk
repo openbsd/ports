@@ -1,4 +1,4 @@
-# $OpenBSD: modules.port.mk,v 1.12 2017/05/31 08:53:39 espie Exp $
+# $OpenBSD: modules.port.mk,v 1.13 2017/06/03 15:02:26 espie Exp $
 #
 #  Copyright (c) 2001 Marc Espie
 # 
@@ -35,7 +35,8 @@ ERRORS += "Fatal: COMPILER coming from a file included *after* the gcc module"
 .  endif
 COMPILER_LANGS ?= c c++
 ONLY_FOR_ARCHS ?= ${CXX11_ARCHS}
-.  if ${PROPERTIES:Mclang}
+.  if ${PROPERTIES:Mclang} && !${COMPILER:Mgcc-only}
+# XXX just ignore clang in base then, compiler will grab gcc4
 CHOSEN_COMPILER = base
 .  else
 _COMPILER=compiler

@@ -1,4 +1,4 @@
-# $OpenBSD: compiler.port.mk,v 1.1 2017/05/31 08:08:16 espie Exp $
+# $OpenBSD: compiler.port.mk,v 1.2 2017/06/03 15:02:26 espie Exp $
 #
 #  Copyright (c) 2017 Marc Espie
 # 
@@ -26,7 +26,7 @@
 
 .for c in ${COMPILER:L}
 .  if "$c" == "base"
-.  elif "$c" == "gcc" || "$c" == "gcc4"
+.  elif "$c" == "gcc" || "$c" == "gcc4" || "$c" == "gcc-only"
 .    if !defined(CHOSEN_COMPILER)
 MODGCC4_ARCHS ?=	*
 _MODGCC4_ARCH_USES = 	No
