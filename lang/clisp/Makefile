@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2017/06/02 23:43:00 kili Exp $
+# $OpenBSD: Makefile,v 1.48 2017/06/04 21:09:15 kili Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 powerpc sparc64
 
@@ -37,6 +37,7 @@ CONFIGURE_ARGS=		--fsstnd=openbsd \
 			--without-dynamic-modules
 
 CONFIGURE_ENV =		ac_cv_prog_DVIPDF='' \
+			ac_cv_prog_GROFF='' \
 			ac_cv_prog_PS2PDF=''
 
 .if ${MACHINE_ARCH} == "sparc64"
