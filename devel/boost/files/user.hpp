@@ -105,3 +105,5 @@
 // not autoconfiged but necessary
 #define BOOST_ASIO_HAS_UNISTD_H
 #define BOOST_HAS_THREADS
+// prevent some warnings all over the place
+#define BOOST_PP_VARIADICS_MSVC 0
