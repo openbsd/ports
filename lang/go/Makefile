@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.43 2017/05/27 11:18:27 pea Exp $
+# $OpenBSD: Makefile,v 1.44 2017/06/04 18:04:03 jsing Exp $
 
 ONLY_FOR_ARCHS =	${GO_ARCHS}
 
 COMMENT =		Go programming language
 
 VERSION =		1.8.3
+REVISION =		0
 EXTRACT_SUFX =		.src.tar.gz
 DISTNAME = 		go${VERSION}
 PKGNAME = 		go-${VERSION}
@@ -60,7 +61,8 @@ do-build:
 		GOROOT=${WRKDIST} \
 		GOBIN=${WRKDIST}/bin \
 		GOROOT_FINAL=${GOROOT} \
-		GOROOT_BOOTSTRAP=${GOROOT_BOOTSTRAP} ./make.bash --no-banner
+		GOROOT_BOOTSTRAP=${GOROOT_BOOTSTRAP} \
+		./make.bash --no-banner
 
 do-test:
 	@cd ${WRKSRC} && \
@@ -74,9 +76,9 @@ do-install:
 	${INSTALL_PROGRAM} -p ${WRKDIST}/bin/go{,fmt} ${GOROOT}/bin
 
 	@cd ${PREFIX}/bin && \
-		ln -s ../go/bin/go go
+		ln -sf ../go/bin/go go
 	@cd ${PREFIX}/bin && \
-		ln -s ../go/bin/gofmt gofmt
+		ln -sf ../go/bin/gofmt gofmt
 
 	@cd ${WRKDIST} && \
 		find . -type f -maxdepth 1 \
