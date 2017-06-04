@@ -1,0 +1,17 @@
+$OpenBSD: patch-settings_cc,v 1.1 2017/06/04 11:45:31 sthen Exp $
+
+Cope with ghostscript pre-9.16. If updating GS, this patch is likely to
+trigger a failure and should be removed.
+
+Index: settings.cc
+--- settings.cc.orig
++++ settings.cc
+@@ -83,7 +83,7 @@ const bool havegl=false;
+ mode_t mask;
+   
+ string systemDir=ASYMPTOTE_SYSDIR;
+-string defaultEPSdriver="eps2write";
++string defaultEPSdriver="epswrite";
+ 
+ #ifndef __MSDOS__
+   
