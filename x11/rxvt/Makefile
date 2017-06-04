@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2015/06/22 16:58:58 kirby Exp $
+# $OpenBSD: Makefile,v 1.53 2017/06/04 01:01:19 schwarze Exp $
 
 COMMENT-main=	color, low memory usage, xterm replacement
 COMMENT-clock=	analog clock for X11 w/appoint. reminder and mail notify
@@ -6,9 +6,9 @@ COMMENT-clock=	analog clock for X11 w/appoint. reminder and mail notify
 VER=		2.7.10
 DISTNAME=	rxvt-${VER}
 PKGNAME-main=	rxvt-${VER}
-REVISION-main=	10
+REVISION-main=	11
 PKGNAME-clock=	rclock-${VER}
-REVISION-clock=	3
+REVISION-clock=	4
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=rxvt/} \
 		ftp://ftp.fu-berlin.de/unix/X11/terms/rxvt/ \
@@ -28,7 +28,6 @@ WANTLIB-main=		${WANTLIB} Xau Xdmcp pthread-stubs xcb
 MULTI_PACKAGES=	-main -clock
 
 LIBTOOL_FLAGS=		--tag=disable-shared
-USE_GROFF =		Yes
 CONFIGURE_STYLE= 	gnu
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/autoconf
 CONFIGURE_ARGS=		--enable-utmp \
@@ -49,5 +48,6 @@ NO_TEST=		Yes
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${FILESDIR}/rxvt.desktop ${PREFIX}/share/applications
+	${INSTALL_MAN} ${WRKSRC}/doc/rxvt.tbl ${PREFIX}/man/man1/rxvt.1
 
 .include <bsd.port.mk>
