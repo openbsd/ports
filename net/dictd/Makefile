@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2015/09/18 19:35:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2017/06/04 03:25:50 schwarze Exp $
 
 COMMENT-main=	Dictionary Server Protocol client
 COMMENT-server=	Dictionary Server Protocol server
@@ -8,8 +8,8 @@ DISTNAME=	dictd-$V
 
 PKGNAME-main=	dictd-client-$V
 PKGNAME-server=	dictd-server-$V
-REVISION-main=	2
-REVISION-server=0
+REVISION-main=	3
+REVISION-server=1
 
 CATEGORIES=	net education
 
@@ -22,7 +22,6 @@ WANTLIB=		c z
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=dict/}
 
 USE_GMAKE=	Yes
-USE_GROFF =	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--without-local-zlib \
 		--enable-dictorg
