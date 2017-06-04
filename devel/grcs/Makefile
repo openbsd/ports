@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2016/04/12 15:13:43 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2017/06/04 00:26:16 schwarze Exp $
 
 COMMENT=	GNU versions of the rcs utilities
 
 DISTNAME=	rcs-5.9.4
 PKGNAME=	g${DISTNAME}
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	devel
 
@@ -21,7 +21,6 @@ EXTRACT_SUFX=	.tar.xz
 RUN_DEPENDS=	textproc/gdiff
 BUILD_DEPENDS=	textproc/gdiff
 
-USE_GROFF=	Yes
 USE_GMAKE=	Yes
 
 CONFIGURE_STYLE=autoconf
