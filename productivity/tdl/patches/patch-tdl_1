@@ -1,0 +1,20 @@
+$OpenBSD: patch-tdl_1,v 1.1 2017/06/04 01:24:07 schwarze Exp $
+
+Fix wrong control character escaping.
+We cannot use \& because we are inside a tbl(7)
+that stupidly uses the ampersand as the tab character...
+
+Index: tdl.1
+--- tdl.1.orig
++++ tdl.1
+@@ -840,8 +840,8 @@ l l.
+ +1d-08 & 8am tomorrow
+ +1w-08 & 8am on the same day as today next week
+ +6h-08 & 8am on the day containing the time 6 hours ahead of now
+-\.-08 & 8am today
+-\.-20 & 8pm today
++\%.-08 & 8am today
++\%.-20 & 8pm today
+ 20011020 & absolute : 12 noon on 20th October 2001
+ 011020 & absolute : 12 noon on 20th October 2001 (current century)
+ 1020 & absolute : 12 noon on 20th October 2001 (current century and year)
