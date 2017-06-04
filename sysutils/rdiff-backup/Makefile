@@ -1,10 +1,10 @@
-#	$OpenBSD: Makefile,v 1.20 2015/08/24 10:01:10 sthen Exp $
+#	$OpenBSD: Makefile,v 1.21 2017/06/04 02:58:48 schwarze Exp $
 
 COMMENT = 	incremental backup
 
 MODPY_EGG_VERSION =	1.2.8
 DISTNAME =	rdiff-backup-${MODPY_EGG_VERSION}
-REVISION =	7
+REVISION =	8
 CATEGORIES =	sysutils
 
 HOMEPAGE = 	http://www.nongnu.org/rdiff-backup/
@@ -22,7 +22,6 @@ MASTER_SITES = 		${MASTER_SITE_SAVANNAH:=rdiff-backup/}
 
 MODULES	= 		lang/python
 
-USE_GROFF =		Yes
 NO_TEST = 		Yes
 
 .include <bsd.port.mk>
