@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2017/05/10 01:20:34 stu Exp $
+# $OpenBSD: Makefile,v 1.18 2017/06/04 23:21:02 schwarze Exp $
 
 COMMENT =		Tool Command Language
 
 P =			6
 DISTNAME =		tcl8.6.${P}
 PKGNAME =		tcl-8.6.${P}
+REVISION =		0
 SHARED_LIBS =		tcl86 1.${P}
 CATEGORIES =		lang lang/tcl
 HOMEPAGE =		http://www.tcl.tk/
@@ -29,7 +30,6 @@ FAKE_FLAGS =		INSTALL_DATA_DIR="${INSTALL_DATA_DIR}" \
 
 TEST_FLAGS =		HOME=${TESTHOME} TESTFLAGS="${TESTFLAGS}"
 SEPARATE_BUILD =	Yes
-USE_GROFF =		Yes
 CONFIGURE_STYLE =	gnu old
 
 CONFIGURE_ARGS +=	--includedir="${PREFIX}/include/tcl8.6" \

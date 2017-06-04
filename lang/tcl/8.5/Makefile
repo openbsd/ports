@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.40 2017/05/12 21:44:33 stu Exp $
+# $OpenBSD: Makefile,v 1.41 2017/06/04 23:21:01 schwarze Exp $
 
 COMMENT =		Tool Command Language
 
 DISTNAME =		tcl8.5.19
 PKGNAME =		tcl-8.5.19
+REVISION =		0
 SHARED_LIBS =		tcl85 1.8
 CATEGORIES =		lang lang/tcl
 HOMEPAGE =		http://www.tcl.tk/
@@ -27,7 +28,6 @@ FAKE_FLAGS =		INSTALL_DATA_DIR="${INSTALL_DATA_DIR}" \
 
 TEST_FLAGS =		HOME=${TESTHOME} TESTFLAGS="${TESTFLAGS}"
 SEPARATE_BUILD =	Yes
-USE_GROFF =		Yes
 CONFIGURE_STYLE =	gnu old
 
 CONFIGURE_ARGS +=	--includedir="${PREFIX}/include/tcl8.5" \
