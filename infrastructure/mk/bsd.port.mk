@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1352 2017/05/31 08:08:16 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1353 2017/06/04 23:22:57 sthen Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -117,7 +117,7 @@ _ALL_VARIABLES += HOMEPAGE DISTNAME \
 	MAINTAINER AUTOCONF_VERSION AUTOMAKE_VERSION CONFIGURE_ARGS \
 	GH_ACCOUNT GH_COMMIT GH_PROJECT GH_TAGNAME PORTROACH \
 	PORTROACH_COMMENT MAKEFILE_LIST USE_WXNEEDED COMPILER \
-	COMPILER_LANGS
+	COMPILER_LANGS COMPILER_LINKS
 _ALL_VARIABLES_PER_ARCH += BROKEN
 # and stuff needing to be MULTI_PACKAGE'd
 _ALL_VARIABLES_INDEXED += COMMENT PKGNAME \
@@ -372,6 +372,9 @@ BASELOCALSTATEDIR ?= ${VARBASE}
 # Defaut localstatedir for gnu ports
 LOCALSTATEDIR ?= ${BASELOCALSTATEDIR}
 
+# Used to build wrapper scripts to run compilers, appended by compiler MODULES
+COMPILER_LINKS ?=
+
 RCDIR ?= /etc/rc.d
 USE_WXNEEDED ?= No
 USE_GMAKE ?= No
@@ -409,14 +412,13 @@ MAKE_FLAGS += LIBTOOL="${_LIBTOOL}" ${_lt_libs}
 MAKE_FLAGS += SHARED_LIBS_LOG=${WRKBUILD}/shared_libs.log
 USE_CCACHE ?= No
 NO_CCACHE ?= No
+CCACHE_ENV ?=
 .if ${USE_CCACHE:L} == "yes" && ${NO_CCACHE:L} == "no" && ${NO_BUILD:L} == "no"
 CCACHE_DIR ?= ${WRKOBJDIR_${PKGPATH}}/.ccache
-MAKE_ENV += CCACHE_DIR=${CCACHE_DIR}
-.  if defined(CCACHE_ENV)
-MAKE_ENV += ${CCACHE_ENV}
-.  endif
+MAKE_ENV += CCACHE_DIR=${CCACHE_DIR} ${CCACHE_ENV}
 CONFIGURE_ENV += CCACHE_DIR=${CCACHE_DIR}
 BUILD_DEPENDS += devel/ccache
+COMPILER_WRAPPER = ccache
 .endif
 
 # by default, installation (fake) does not need -jN.
@@ -741,6 +743,19 @@ PATCH_DIST_ARGS += -C
 TAR ?= /bin/tar
 UNZIP ?= unzip
 BZIP2 ?= bzip2
+
+
+# setup locations of base-system compilers, used in patch target to write
+# compiler-wrappers..
+.if ${PROPERTIES:Mclang}
+COMPILER_LINKS += clang /usr/bin/clang c++ /usr/bin/clang++ 
+.endif
+.if ! ${COMPILER_LINKS:Mcc}
+COMPILER_LINKS += cc /usr/bin/cc
+.endif
+.if ! ${COMPILER_LINKS:Mc++}
+COMPILER_LINKS += c++ /usr/bin/c++ 
+.endif
 
 
 # copy selected info from bsd.own.mk
@@ -2438,13 +2453,6 @@ ${_WRKDIR_COOKIE}:
 .endif
 	@install -d ${WRKOBJDIR_MODE} `dirname ${WRKDIR}`
 	@mkdir -p ${WRKDIR} ${WRKDIR}/bin
-.if ${USE_CCACHE:L} == "yes" && ${NO_CCACHE:L} == "no"
-	@${ECHO_MSG} "===>  Enabling ccache for ${FULLPKGNAME}${_MASTER}"
-	@ln -sf ${LOCALBASE}/bin/ccache ${WRKDIR}/bin/gcc
-	@ln -sf ${LOCALBASE}/bin/ccache ${WRKDIR}/bin/g++
-	@ln -sf ${LOCALBASE}/bin/ccache ${WRKDIR}/bin/cc
-	@ln -sf ${LOCALBASE}/bin/ccache ${WRKDIR}/bin/c++
-.endif
 .if ${FAKE_AS_ROOT:L} != "yes"
 	@install -m ${BINMODE} ${_INSTALL_WRAPPER} ${WRKDIR}/bin/install
 .endif
@@ -2588,9 +2596,14 @@ ${_PATCH_COOKIE}: ${_EXTRACT_COOKIE}
 # End of PATCH.
 .endif
 .if ${USE_WXNEEDED:L} == "yes"
-	@printf '#!/bin/sh\nexec /usr/bin/ld -z wxneeded $$@\n' > ${WRKDIR}/bin/ld
+	@printf '#!/bin/sh\nexec /usr/bin/ld -z wxneeded "$$@"\n' > ${WRKDIR}/bin/ld
 	@chmod 555 ${WRKDIR}/bin/ld
 .endif
+.for _wrap _comp in ${COMPILER_LINKS}
+	@echo '===>  Compiler link: ${_wrap} -> ${COMPILER_WRAPPER:= }${_comp}'
+	@printf '#!/bin/sh\nexec ${COMPILER_WRAPPER} ${_comp} -B ${WRKDIR}/bin "$$@"\n' > ${WRKDIR}/bin/${_wrap}
+	@chmod 555 ${WRKDIR}/bin/${_wrap}
+.endfor
 .if target(post-patch)
 	@${_MAKESYS} post-patch
 .endif

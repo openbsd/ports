@@ -1,4 +1,4 @@
-# $OpenBSD: gcc4.port.mk,v 1.7 2017/05/26 09:37:05 espie Exp $
+# $OpenBSD: gcc4.port.mk,v 1.8 2017/06/04 23:22:57 sthen Exp $
 
 MODGCC4_ARCHS ?=
 MODGCC4_LANGS ?=
@@ -29,25 +29,25 @@ _MODGCC4_ARCH_USES = Yes
 
 COMPILER_VERSION ?= gcc2
 
+_MODGCC4_LINKS =
 MODGCC4STDCPP = estdc++
 MODGCC4_CPPLIBDEP = lang/gcc/4.9,-libs>=4.9,<4.10
 MODGCC4_CPPDEP =    lang/gcc/4.9,-c++>=4.9,<4.10
 MODGCC4_CPPWANTLIB = estdc++>=17
 MODGCC4_ATOMICWANTLIB = atomic
 
-_MODGCC4_LINKS =
 .if ${_MODGCC4_ARCH_USES:L} == "yes"
 
 .  if ${MODGCC4_LANGS:L:Mc}
 BUILD_DEPENDS += lang/gcc/4.9>=4.9,<4.10
-_MODGCC4_LINKS += egcc gcc egcc cc
+COMPILER_LINKS += gcc ${LOCALBASE}/bin/egcc cc ${LOCALBASE}/bin/egcc
 .  endif
 
 .  if ${MODGCC4_LANGS:L:Mc++}
 BUILD_DEPENDS += ${MODGCC4_CPPDEP}
 LIB_DEPENDS += ${MODGCC4_CPPLIBDEP}
 WANTLIB += ${MODGCC4_CPPWANTLIB}
-_MODGCC4_LINKS += eg++ g++ eg++ c++
+COMPILER_LINKS += c++ ${LOCALBASE}/bin/eg++ g++ ${LOCALBASE}/bin/eg++
 .  endif
 
 .  if ${MODGCC4_LANGS:L:Mfortran}
@@ -58,37 +58,27 @@ WANTLIB += gfortran>=3
 WANTLIB += quadmath
 .endif
 LIB_DEPENDS += lang/gcc/4.9,-libs>=4.9,<4.10
-_MODGCC4_LINKS += egfortran gfortran
+COMPILER_LINKS += gfortran ${LOCALBASE}/bin/egfortran
 .  endif
 
 .  if ${MODGCC4_LANGS:L:Mjava}
 BUILD_DEPENDS += lang/gcc/4.9,-java>=4.9,<4.10
 MODGCC4_GCJWANTLIB = gcj
 MODGCC4_GCJLIBDEP = lang/gcc/4.9,-java>=4.9,<4.10
-_MODGCC4_LINKS += egcj gcj egcjh gcjh egjar gjar egij gij
+COMPILER_LINKS += gcj ${LOCALBASE}/bin/egcj
+_MODGCC4_LINKS += gcjh gjar gij
 .  endif
 
 #.  if ${MODGCC4_LANGS:L:Mgo}
 #BUILD_DEPENDS += lang/gcc/4.9,-go>=4.9,<4.10
 #WANTLIB += go
 #LIB_DEPENDS += lang/gcc/4.9,-go>=4.9,<4.10
-#_MODGCC4_LINKS += egccgo gccgo
+#COMPILER_LINKS += gccgo ${LOCALBASE}/bin/egccgo
 #.  endif
 .endif
 
 .if !empty(_MODGCC4_LINKS)
-.  if "${USE_CCACHE:L}" == "yes" && "${NO_CCACHE:L}" != "yes"
-.    for _src _dest in ${_MODGCC4_LINKS}
-MODGCC4_post-patch +=	rm -f ${WRKDIR}/bin/${_dest};
-MODGCC4_post-patch +=	echo '\#!/bin/sh' >${WRKDIR}/bin/${_dest};
-MODGCC4_post-patch +=	echo exec ccache ${LOCALBASE}/bin/${_src} \"\$$@\"
-MODGCC4_post-patch +=	>>${WRKDIR}/bin/${_dest};
-MODGCC4_post-patch +=	chmod +x ${WRKDIR}/bin/${_dest};
-.    endfor
-.  else
-.    for _src _dest in ${_MODGCC4_LINKS}
-MODGCC4_post-patch += ln -sf ${LOCALBASE}/bin/${_src} ${WRKDIR}/bin/${_dest};
-.    endfor
-.  endif
+.  for _src in ${_MODGCC4_LINKS}
+MODGCC4_post-patch += ln -sf ${LOCALBASE}/bin/e${_src} ${WRKDIR}/bin/${_src};
+.  endfor
 .endif
-

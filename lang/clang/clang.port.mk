@@ -1,4 +1,4 @@
-# $OpenBSD: clang.port.mk,v 1.21 2017/03/14 17:30:30 ajacoutot Exp $
+# $OpenBSD: clang.port.mk,v 1.22 2017/06/04 23:22:57 sthen Exp $
 
 MODCLANG_VERSION=	4.0.0
 
@@ -27,36 +27,19 @@ _MODCLANG_ARCH_USES = Yes
 .  endfor
 .endif
 
-_MODCLANG_LINKS =
 .if ${_MODCLANG_ARCH_USES:L} == "yes"
 
 BUILD_DEPENDS += devel/llvm>=${MODCLANG_VERSION}
-_MODCLANG_LINKS = clang gcc clang cc
+COMPILER_LINKS = gcc ${LOCALBASE}/bin/clang cc ${LOCALBASE}/bin/clang
 
 .  if ${MODCLANG_LANGS:L:Mc++}
-_MODCLANG_LINKS += clang++ g++ clang++ c++
+COMPILER_LINKS += g++ ${LOCALBASE}/bin/clang++ c++ ${LOCALBASE}/bin/clang++
 # uses libestdc++
 MODULES += gcc4
 MODCLANG_CPPLIBDEP = ${MODGCC4_CPPLIBDEP}
 LIB_DEPENDS += ${MODCLANG_CPPLIBDEP}
 MODCLANG_CPPWANTLIB = ${MODGCC4_CPPWANTLIB}
 WANTLIB += ${MODCLANG_CPPWANTLIB}
-.  endif
-.endif
-
-.if !empty(_MODCLANG_LINKS)
-.  if "${USE_CCACHE:L}" == "yes" && "${NO_CCACHE:L}" != "yes"
-.    for _src _dest in ${_MODCLANG_LINKS}
-MODCLANG_post-patch +=	rm -f ${WRKDIR}/bin/${_dest};
-MODCLANG_post-patch +=	echo '\#!/bin/sh' >${WRKDIR}/bin/${_dest};
-MODCLANG_post-patch +=	echo exec ccache ${LOCALBASE}/bin/${_src} \"\$$@\"
-MODCLANG_post-patch +=	>>${WRKDIR}/bin/${_dest};
-MODCLANG_post-patch +=	chmod +x ${WRKDIR}/bin/${_dest};
-.    endfor
-.  else
-.    for _src _dest in ${_MODCLANG_LINKS}
-MODCLANG_post-patch += ln -sf ${LOCALBASE}/bin/${_src} ${WRKDIR}/bin/${_dest};
-.    endfor
 .  endif
 .endif
 
