@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2017/06/02 12:26:21 pirofti Exp $
+# $OpenBSD: Makefile,v 1.11 2017/06/04 22:25:31 espie Exp $
 
 COMMENT =	development environment for native Windows applications
 
@@ -59,6 +59,12 @@ TOOLCHAIN =	${TOOL_BINUTILS}-src${TOOL_SUFX}:0			\
 MINGW32_TMP =	${WRKBUILD}/tmp
 MINGW32_OUT =	${WRKBUILD}/out
 MINGW32_DIR =	${WRKINST}/${LOCALBASE}/mingw32
+
+.include <bsd.port.arch.mk>
+.if ${PROPERTIES:Mclang}
+do-configure:
+	echo "option CFLAGS_FOR_BINUTILS -fbracket-depth=1024"   >>${WRKSRC}/x86-mingw32-build.sh.conf
+.endif
 
 do-build:
 	env MINGW32_TMP=${MINGW32_TMP} FULLDISTDIR=${FULLDISTDIR} \
