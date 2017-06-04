@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/12/04 17:19:18 jsing Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/06/04 17:50:16 jsing Exp $
 %%amd64%%
 %%i386%%
 go/
@@ -576,7 +576,6 @@ go/bootstrap/pkg${GOCFG}/regexp/syntax.a
 go/bootstrap/pkg${GOCFG}/runtime/
 go/bootstrap/pkg${GOCFG}/runtime.a
 go/bootstrap/pkg${GOCFG}/runtime.h
-go/bootstrap/pkg${GOCFG}/runtime/cgo.a
 go/bootstrap/pkg${GOCFG}/runtime/debug.a
 go/bootstrap/pkg${GOCFG}/runtime/pprof.a
 go/bootstrap/pkg${GOCFG}/runtime/race.a
