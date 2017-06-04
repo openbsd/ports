@@ -1,0 +1,41 @@
+$OpenBSD: patch-configure,v 1.1 2017/06/04 10:57:59 espie Exp $
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -12407,35 +12407,6 @@ fi
+ 
+ 
+ 
+-# Copied from http://stackoverflow.com/a/10682813/9832 and tweaked for C (as
+-# opposed to C++)
+-#
+-# AX_CHECK_CFLAGS(ADDITIONAL-CFLAGS, ACTION-IF-FOUND, ACTION-IF-NOT-FOUND)
+-#
+-# checks whether the $(CC) compiler accepts the ADDITIONAL-CFLAGS
+-# if so, they are added to the CXXFLAGS
+-
+-
+-  { $as_echo "$as_me:${as_lineno-$LINENO}: checking whether compiler accepts \"-fms-extensions\"" >&5
+-$as_echo_n "checking whether compiler accepts \"-fms-extensions\"... " >&6; }
+-  cat > conftest.c << EOF
+-  int main(){
+-    return 0;
+-  }
+-EOF
+-  if $CC $CFLAGS -o conftest.o conftest.c -fms-extensions > /dev/null 2>&1
+-  then
+-    { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+-$as_echo "yes" >&6; }
+-    CFLAGS="${CFLAGS} -fms-extensions"
+-
+-  else
+-    { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+-$as_echo "no" >&6; }
+-
+-  fi
+-
+-
+ # We will add this back for non-debug builds in the common.mk file
+ CFLAGS=`echo ${CFLAGS} | sed 's/-O2//'`
+ CXXFLAGS=`echo ${CXXFLAGS} | sed 's/-O2//'`

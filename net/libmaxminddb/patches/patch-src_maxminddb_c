@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_maxminddb_c,v 1.1 2017/06/04 10:57:59 espie Exp $
+
+Index: src/maxminddb.c
+--- src/maxminddb.c.orig
++++ src/maxminddb.c
+@@ -1582,7 +1582,7 @@ LOCAL int decode_one(MMDB_s *mmdb, uint32_t offset,
+         free(string);
+ #endif
+     } else if (type == MMDB_DATA_TYPE_BYTES) {
+-        entry_data->bytes = &mem[offset];
++        entry_data->u.bytes = &mem[offset];
+         entry_data->data_size = size;
+     }
+ 
+@@ -2025,7 +2025,7 @@ LOCAL MMDB_entry_data_list_s *dump_entry_data_list(
+     case MMDB_DATA_TYPE_BYTES:
+         {
+             char *hex_string =
+-                bytes_to_hex((uint8_t *)entry_data_list->entry_data.bytes,
++                bytes_to_hex((uint8_t *)entry_data_list->entry_data.u.bytes,
+                              entry_data_list->entry_data.data_size);
+             if (NULL == hex_string) {
+                 *status = MMDB_OUT_OF_MEMORY_ERROR;
