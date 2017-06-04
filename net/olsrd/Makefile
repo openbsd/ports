@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.28 2017/05/13 22:27:20 stsp Exp $
+# $OpenBSD: Makefile,v 1.29 2017/06/04 11:45:04 stsp Exp $
 
 COMMENT-main=		OLSR routing daemon
 COMMENT-gui=		OLSR routing daemon GUI
 
-VERSION=		0.9.0.3
+VERSION=		0.9.6.1
 DISTNAME=		olsrd-${VERSION}
 PKGNAME-main=		olsrd-${VERSION}
 PKGNAME-gui=		olsrd-gui-${VERSION}
@@ -41,7 +41,10 @@ NO_TEST=	Yes
 MODULES=	devel/gettext
 
 ALL_TARGET=	build_all
-MAKE_FLAGS=	DEBUG=0 CC="${CC}" OS=obsd LIBNET=1
+MAKE_FLAGS=	CC="${CC}" OS=obsd LIBNET=1
+.ifdef DEBUG
+MAKE_FLAGS+=	DEBUG=1
+.endif
 CPPFLAGS+=	"-I${PREFIX}/libnet-1.1"
 FAKE_FLAGS=	SBINDIR=${DESTDIR}/${PREFIX}/sbin \
 		ETCDIR=${DESTDIR}/${PREFIX}/share/examples/olsrd \

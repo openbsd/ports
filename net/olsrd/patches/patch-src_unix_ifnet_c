@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_unix_ifnet_c,v 1.3 2017/05/13 22:27:20 stsp Exp $
+$OpenBSD: patch-src_unix_ifnet_c,v 1.4 2017/06/04 11:45:04 stsp Exp $
 
 Index: src/unix/ifnet.c
 --- src/unix/ifnet.c.orig
 +++ src/unix/ifnet.c
-@@ -646,7 +646,10 @@ chk_if_up(struct olsr_if *iface, int debuglvl __attrib
+@@ -632,7 +632,10 @@ chk_if_up(struct olsr_if *iface, int debuglvl __attrib
      /* Find broadcast address */
      if (iface->cnf->ipv4_multicast.v4.s_addr) {
        /* Specified broadcast */
@@ -14,4 +14,4 @@ Index: src/unix/ifnet.c
 +      sin->sin_family = AF_INET;
      } else {
        /* Autodetect */
-       if (ioctl(olsr_cnf->ioctl_s, SIOCGIFBRDADDR, &ifr) < 0) {
+       struct sockaddr* ifrb;
