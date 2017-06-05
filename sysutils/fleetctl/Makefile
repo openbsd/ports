@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/09/08 17:12:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2017/06/05 07:52:34 jasper Exp $
 
 COMMENT =		controller for fleet, the distributed init system
 
 GH_PROJECT =		fleet
 GH_ACCOUNT =		coreos
-GH_TAGNAME =		v0.11.8
+GH_TAGNAME =		v1.0.0
 
 CATEGORIES =		sysutils
 
@@ -21,7 +21,7 @@ BUILD_DEPENDS =		shells/bash
 NO_TEST =		Yes
 
 do-build:
-	cd ${WRKSRC} && ${SHELL} build
+	cd ${WRKSRC} && ${LOCALBASE}/bin/bash build
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/fleetctl ${PREFIX}/bin/
