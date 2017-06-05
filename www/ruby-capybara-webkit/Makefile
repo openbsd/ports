@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2017/05/26 15:43:18 ajacoutot Exp $
-
-BROKEN =	unrecognized command line option "-std=gnu++0x"
+# $OpenBSD: Makefile,v 1.18 2017/06/05 23:55:19 jeremy Exp $
 
 COMMENT =	capybara driver that uses WebKit
 
 DISTNAME =	capybara-webkit-1.11.1
-REVISION =	2
+REVISION =	3
 CATEGORIES =	www
 
 HOMEPAGE=	https://github.com/thoughtbot/capybara-webkit
@@ -13,8 +11,11 @@ HOMEPAGE=	https://github.com/thoughtbot/capybara-webkit
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
-MODULES =	lang/ruby
+MODULES =	lang/ruby gcc4
 CONFIGURE_STYLE = ruby gem ext
+
+MODGCC4_ARCHS =	amd64 i386
+MODGCC4_LANGS =	c++
 
 USE_WXNEEDED =	Yes
 MAKE_ENV =	QMAKE=qmake-qt5 LDFLAGS="-Wl,-z,wxneeded"

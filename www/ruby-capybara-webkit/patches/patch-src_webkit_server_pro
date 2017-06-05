@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_webkit_server_pro,v 1.1 2016/09/23 15:25:23 jeremy Exp $
+$OpenBSD: patch-src_webkit_server_pro,v 1.2 2017/06/05 23:55:19 jeremy Exp $
 --- src/webkit_server.pro.orig	Wed May  4 06:52:17 2016
-+++ src/webkit_server.pro	Tue Sep 20 15:03:47 2016
++++ src/webkit_server.pro	Thu Mar 23 23:01:28 2017
 @@ -1,6 +1,9 @@
  TEMPLATE = app
  TARGET = webkit_server
@@ -11,3 +11,12 @@ $OpenBSD: patch-src_webkit_server_pro,v 1.1 2016/09/23 15:25:23 jeremy Exp $
  PROJECT_DIR = $$_PRO_FILE_PWD_
  BUILD_DIR = $${PROJECT_DIR}/build
  PRECOMPILED_DIR = $${BUILD_DIR}
+@@ -189,7 +192,7 @@ lessThan(QT_MAJOR_VERSION, 5) {
+     error(At least Qt 4.8.0 is required to run capybara-webkit.)
+   }
+ }
+-CONFIG += console precompile_header
++CONFIG += console
+ CONFIG -= app_bundle
+ PRECOMPILED_HEADER = stable.h
+ 
