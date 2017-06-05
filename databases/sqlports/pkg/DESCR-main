@@ -51,6 +51,7 @@ holds all the information retrieved through various variables, e.g.,:
     README
     COMPILER
     COMPILER_LANGS
+    COMPILER_LINKS
 
 This information is mostly unchanged, except for replacing Yes/No variables
 with 1/0. Variables not present in a given port are left undefined.
@@ -59,6 +60,7 @@ README corresponds to README files (full text value) and only exists when
 such files are present.
 
 Note that USE_LIBTOOL is 3-valued: 2 is gnu, 1 is yes, undef is no.
+Note that USE_WXNEEDED is 3-valued: 2 is special, 1 is yes, undef is no.
 
 The FULLPKGPATH is complete, including flavor and pseudo-flavors markers.
 For every port with MULTI_PACKAGES settings, one entry is written for 

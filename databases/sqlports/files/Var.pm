@@ -1,4 +1,4 @@
-# $OpenBSD: Var.pm,v 1.24 2015/04/19 12:08:02 espie Exp $
+# $OpenBSD: Var.pm,v 1.25 2017/06/05 14:48:09 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -256,6 +256,18 @@ sub values
 	}
 }
 
+package YesNoSpecialVar;
+our @ISA = qw(ValuedVar);
+
+sub values
+{
+	return { 
+		yes => 1,
+		special => 2,
+		no => undef
+	}
+}
+
 # variable is always defined, but we don't need to store empty values.
 package DefinedVar;
 our @ISA = qw(AnyVar);
@@ -487,6 +499,11 @@ sub table() { 'PseudoFlavors' }
 package ArchListVar;
 our @ISA = qw(DefinedListKeyVar);
 sub keyword_table() { 'Arch' }
+
+package CompilerLinksVar;
+our @ISA = qw(DefinedListKeyVar);
+sub table() { 'CompilerLinks' }
+sub keyword_table() { 'Compiler' }
 
 package OnlyForArchListVar;
 our @ISA = qw(ArchListVar);

@@ -1,4 +1,4 @@
-# $OpenBSD: Info.pm,v 1.21 2017/05/31 08:39:21 espie Exp $
+# $OpenBSD: Info.pm,v 1.22 2017/06/05 14:48:09 espie Exp $
 #
 # Copyright (c) 2012 Marc Espie <espie@openbsd.org>
 #
@@ -32,6 +32,7 @@ our $vars = {
     CATEGORIES => 'CategoriesVar',
     COMES_WITH => 'DefinedVar',
     COMMENT => 'AnyVar',
+    COMPILER_LINKS => 'CompilerLinksVar',
     CONFIGURE_ARGS => 'ConfigureArgsVar',
     CONFIGURE_STYLE => 'ConfigureVar',
     DESCR => 'DescrVar',
@@ -95,7 +96,7 @@ our $vars = {
     USE_GMAKE => 'YesNoVar',
     USE_GROFF => 'YesNoVar',
     USE_LIBTOOL => 'YesNoGnuVar',
-    USE_WXNEEDED => 'YesNoVar',
+    USE_WXNEEDED => 'YesNoSpecialVar',
     COMPILER => 'DefinedVar',
     COMPILER_LANGS => 'DefinedVar',
     WANTLIB => 'WantlibVar',
