@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2017/03/24 08:51:35 fcambus Exp $
+# $OpenBSD: Makefile,v 1.8 2017/06/05 07:57:11 fcambus Exp $
 
 COMMENT =	MESS port with advanced video support for monitors and TVs
 
-V =		3.4
+V =		3.5
 DISTNAME =	advancemame-$V
 PKGNAME =	advancemess-$V
-REVISION =	0
 
 CATEGORIES =	emulators games
 
