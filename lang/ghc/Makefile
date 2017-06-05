@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.148 2017/05/01 19:31:08 kili Exp $
+# $OpenBSD: Makefile,v 1.149 2017/06/05 20:20:49 sthen Exp $
 
 COMMENT =		compiler for the functional language Haskell
 
@@ -37,7 +37,7 @@ RUN_DEPENDS =
 # We can't use the wrapper script, because it then gets hardcoded into
 # the packaged ghc. So we explicitely use -Wl,-z,wxneeded (see
 # CONFIGURE_ENV below)
-# USE_WXNEEDED =		Yes
+USE_WXNEEDED =		special
 
 WANTLIB +=		c iconv m ncursesw pthread util
 
