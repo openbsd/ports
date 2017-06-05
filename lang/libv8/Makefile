@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2017/05/29 14:21:10 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2017/06/05 10:17:41 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386
 
 COMMENT=	V8 JavaScript for clients and servers
 
 V8_VERSION=	3.12.19
-REVISION=	4
+REVISION=	5
 EPOCH=		0
 V8_ARCH=	${MACHINE_ARCH:S/amd64/x64/:S/i386/ia32/}
 V8_RELEASE=	release
@@ -45,11 +45,9 @@ SUBST_VARS+= 	V8_ARCH
 MAKE_FLAGS+=	library=shared ARCHES=${V8_ARCH} MODES=${V8_RELEASE} \
 		DEFAULT_ARCHES=${V8_ARCH}
 
-# XXX explicitly pass -Wl,-z,wxneeded because USE_WXNEEDED is a nop with clang
-# as clang explicitly calls the linker with a full path by default
 MAKE_ENV+=	V=1 CXX="${CXX}" LINK="${CXX} ${LDFLAGS}" CCFLAGS+="${CFLAGS}" \
 		CXXFLAGS="${CXXFLAGS} -I${WRKSRC}/src -I${LOCALBASE}/include" \
-		LDFLAGS="-Wl,-z,wxneeded -L${LOCALBASE}/lib -L${X11BASE}/lib" \
+		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 		PATH=${WRKSRC}/bin:${PATH}
 
 NO_CCACHE=	Yes

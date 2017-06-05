@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.109 2017/06/02 23:25:03 schwarze Exp $
+# $OpenBSD: Makefile,v 1.110 2017/06/05 10:17:41 ajacoutot Exp $
 
-# XXX also see -Wl,-z,wxneeded below; clang bypasses the wrapper
 USE_WXNEEDED=	Yes
 
 COMMENT=	cross platform, open source .NET developement framework
 
 V=		4.6.2
 DISTNAME=	mono-${V}.6
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	lang devel
 
@@ -50,7 +49,7 @@ LIB_DEPENDS=	converters/libiconv
 TEST_DEPENDS=	lang/python/${MODPY_VERSION}
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -Wl,-z,wxneeded" \
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
 		CPPFLAGS="-I${LOCALBASE}/include" \
 		ac_cv_header_execinfo_h=no \
 		ac_cv_header_pthread_np_h=yes
