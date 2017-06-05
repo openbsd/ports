@@ -1,4 +1,4 @@
-$OpenBSD: README-common,v 1.6 2014/08/15 15:45:38 ajacoutot Exp $
+$OpenBSD: README-common,v 1.7 2017/06/05 16:03:32 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -58,9 +58,6 @@ CUPS). For more information, see:
 
 Scanning
 ========
-The first thing to do is to make the hpaio backend available to SANE:
-simply add "hpaio" to the sane-backends configuration file. As root:
-    echo "hpaio" >> ${SYSCONFDIR}/sane.d/dll.conf
 
 Installing a scanner automatically using the HP tools
 -----------------------------------------------------

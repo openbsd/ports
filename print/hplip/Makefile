@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.155 2017/05/23 13:01:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.156 2017/06/05 16:03:32 ajacoutot Exp $
 
 PORTROACH=		skipv:${V}_py2.5
 
@@ -20,7 +20,8 @@ PKGNAME-hpcups=		hpcups-${V}
 PKGNAME-hpijs=		hpijs-${V}
 PKGNAME-gui=		hplip-gui-${V}
 
-REVISION-hpaio=		0
+REVISION-common=	0
+REVISION-hpaio=		1
 
 SHARED_LIBS +=  hpdiscovery          0.0      # 0.1
 SHARED_LIBS +=  hpmud                2.0      # 0.6
@@ -186,9 +187,10 @@ pre-configure:
 		${WRKSRC}/logcapture.py
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/hplip/db
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/hplip/{db,sane.d/dll.d}
 	${SUBST_DATA} ${FILESDIR}/hplip.state \
 		${PREFIX}/share/examples/hplip/db/hplip.state
+	echo 'hpaio' >${PREFIX}/share/examples/hplip/sane.d/dll.d/hpaio
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
 		${PREFIX}/share/hplip
 	rm -r ${WRKINST}/usr/{lib,share}
