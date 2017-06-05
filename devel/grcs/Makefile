@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2017/06/04 00:26:16 schwarze Exp $
+# $OpenBSD: Makefile,v 1.11 2017/06/05 19:44:26 schwarze Exp $
 
 COMMENT=	GNU versions of the rcs utilities
 
@@ -20,6 +20,11 @@ EXTRACT_SUFX=	.tar.xz
 
 RUN_DEPENDS=	textproc/gdiff
 BUILD_DEPENDS=	textproc/gdiff
+
+# Uses soelim(1) and pic(1) for preprocessing at build time,
+# but the resulting man(7) manuals work with mandoc(1),
+# so USE_GROFF is not needed.
+BUILD_DEPENDS+=	textproc/groff
 
 USE_GMAKE=	Yes
 
