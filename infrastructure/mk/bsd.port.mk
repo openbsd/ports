@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1354 2017/06/05 07:10:06 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1355 2017/06/05 21:53:12 sthen Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -745,16 +745,27 @@ UNZIP ?= unzip
 BZIP2 ?= bzip2
 
 
-# setup locations of base-system compilers, used in patch target to write
-# compiler-wrappers..
+# setup locations of compilers from the base system or environment variables.
+# MODULES for compilers (gcc4.port.mk, clang.port.mk) also append to this,
+# used to write wrappers to WRKDIR/bin which is at the head of the PATH.
 .if ${PROPERTIES:Mclang}
 COMPILER_LINKS += clang /usr/bin/clang clang++ /usr/bin/clang++ 
 .endif
 .if ! ${COMPILER_LINKS:Mcc}
+.  if ${CC} == cc
+# use the full path for cc/c++ to avoid the script executing itself.
 COMPILER_LINKS += cc /usr/bin/cc
+.  else
+# handle "make CC=foo".
+COMPILER_LINKS += cc ${CC}
+.  endif
 .endif
 .if ! ${COMPILER_LINKS:Mc++}
-COMPILER_LINKS += c++ /usr/bin/c++ 
+.  if ${CXX} == c++
+COMPILER_LINKS += c++ /usr/bin/c++
+.  else
+COMPILER_LINKS += c++ ${CXX}
+.  endif
 .endif
 
 
