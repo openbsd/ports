@@ -1,29 +1,29 @@
-# $OpenBSD: Makefile,v 1.3 2017/01/03 19:26:58 landry Exp $
+# $OpenBSD: Makefile,v 1.4 2017/06/05 08:01:39 jasper Exp $
 
-COMMENT=	Python bindings for Augeas
+COMMENT =		Python bindings for Augeas
 
-MODPY_EGG_VERSION= 0.5.0
-DISTNAME=	python-augeas-${MODPY_EGG_VERSION}
-PKGNAME=	${DISTNAME:S/python-/py-/}
-REVISION=	1
+MODPY_EGG_VERSION = 	1.0.2
+DISTNAME =		python-augeas-${MODPY_EGG_VERSION}
+PKGNAME =		${DISTNAME:S/python-/py-/}
 
-CATEGORIES=	sysutils
+CATEGORIES =		sysutils
 
-MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
+MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # LGPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
-FLAVORS=	python3
-FLAVOR?=
+MODULES =		lang/python
+MODPY_PI =		Yes
+MODPY_SETUPTOOLS =	Yes
 
-MODULES=	lang/python
-MODPY_PI=	Yes
+FLAVORS =		python3
+FLAVOR? =
 
 # dlopen()s libaugeas
-RUN_DEPENDS=	sysutils/augeas
-TEST_DEPENDS=	${BUILD_PKGPATH} \
-		${RUN_DEPENDS}
+RUN_DEPENDS =		sysutils/augeas
+TEST_DEPENDS =		${BUILD_PKGPATH} \
+			${RUN_DEPENDS}
 
 do-test:
 	cd ${WRKSRC}/test; ${MODPY_BIN} test_augeas.py
