@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1353 2017/06/04 23:22:57 sthen Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1354 2017/06/05 07:10:06 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -748,7 +748,7 @@ BZIP2 ?= bzip2
 # setup locations of base-system compilers, used in patch target to write
 # compiler-wrappers..
 .if ${PROPERTIES:Mclang}
-COMPILER_LINKS += clang /usr/bin/clang c++ /usr/bin/clang++ 
+COMPILER_LINKS += clang /usr/bin/clang clang++ /usr/bin/clang++ 
 .endif
 .if ! ${COMPILER_LINKS:Mcc}
 COMPILER_LINKS += cc /usr/bin/cc
