@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2017/03/24 08:51:35 fcambus Exp $
+# $OpenBSD: Makefile,v 1.9 2017/06/05 07:26:30 fcambus Exp $
 
 COMMENT =	MAME port with advanced video support for monitors and TVs
 
-V =		3.4
+V =		3.5
 DISTNAME =	advancemame-$V
-REVISION =	0
 
 CATEGORIES =	emulators games
 
