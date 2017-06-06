@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.57 2017/06/04 09:34:14 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.58 2017/06/06 08:57:11 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/botocore/
 lib/python${MODPY_VERSION}/site-packages/botocore-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/botocore-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -409,6 +409,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/iot-data/2015-05-28/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/iot-data/2015-05-28/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/iot/2015-05-28/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/iot/2015-05-28/examples-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/iot/2015-05-28/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/iot/2015-05-28/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/kinesis/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/kinesis/2013-12-02/
