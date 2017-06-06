@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2017/06/05 08:01:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2017/06/06 08:52:02 ajacoutot Exp $
 
 COMMENT =		Python bindings for Augeas
 
 MODPY_EGG_VERSION = 	1.0.2
 DISTNAME =		python-augeas-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/python-/py-/}
+REVISION =		0
 
 CATEGORIES =		sysutils
 
@@ -20,8 +21,14 @@ MODPY_SETUPTOOLS =	Yes
 FLAVORS =		python3
 FLAVOR? =
 
+BUILD_DEPENDS =		devel/py-cffi${MODPY_FLAVOR} \
+			sysutils/augeas
+
+RUN_DEPENDS =		devel/py-cffi${MODPY_FLAVOR}
+
 # dlopen()s libaugeas
-RUN_DEPENDS =		sysutils/augeas
+RUN_DEPENDS +=		sysutils/augeas
+
 TEST_DEPENDS =		${BUILD_PKGPATH} \
 			${RUN_DEPENDS}
 
