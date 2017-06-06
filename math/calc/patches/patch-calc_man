@@ -1,7 +1,8 @@
-$OpenBSD: patch-calc_man,v 1.3 2016/01/27 14:22:02 sthen Exp $
---- calc.man.orig	Mon Oct  6 09:40:08 2014
-+++ calc.man	Wed Jan 27 14:09:24 2016
-@@ -554,7 +554,7 @@ may have to be replaced by:
+$OpenBSD: patch-calc_man,v 1.4 2017/06/06 14:32:00 sthen Exp $
+Index: calc.man
+--- calc.man.orig
++++ calc.man
+@@ -550,7 +550,7 @@ may have to be replaced by:
  .sp 1
  .in +5n
  .nf
@@ -10,7 +11,7 @@ $OpenBSD: patch-calc_man,v 1.3 2016/01/27 14:22:02 sthen Exp $
  .fi
  .in -5n
  
-@@ -627,8 +627,8 @@ searches in succession:
+@@ -657,8 +657,8 @@ searches in succession:
  .sp 1
  .in +5n
  .nf
