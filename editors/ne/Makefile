@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2015/08/25 13:18:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2017/06/06 09:24:31 benoit Exp $
 
 COMMENT =	nice console editor
-DISTNAME =	ne-3.0.1
+DISTNAME =	ne-3.1.1
 CATEGORIES =	editors
-REVISION =	0
 
 HOMEPAGE =	http://ne.di.unimi.it/
+MAINTAINER =	Brian Callahan <bcallah@devio.us>
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
@@ -14,6 +14,7 @@ WANTLIB += c curses m
 
 MASTER_SITES =	http://ne.di.unimi.it/
 
+USE_GMAKE =	Yes
 MAKE_FILE =	makefile
 MAKE_FLAGS =	CC="${CC}" OPTS="${CFLAGS}"
 ALL_TARGET =	build
