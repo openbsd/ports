@@ -1,21 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.12 2012/06/15 08:30:25 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.13 2017/06/06 17:41:11 ajacoutot Exp $
 @bin bin/xpad
 @man man/man1/xpad.1
 share/applications/xpad.desktop
-share/icons/
-share/icons/hicolor/
-share/icons/hicolor/scalable/
-share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/xpad.svg
-share/locale/af/
-share/locale/af/LC_MESSAGES/
 share/locale/af/LC_MESSAGES/xpad.mo
 share/locale/bg/LC_MESSAGES/xpad.mo
 share/locale/cs/LC_MESSAGES/xpad.mo
 share/locale/da/LC_MESSAGES/xpad.mo
 share/locale/de/LC_MESSAGES/xpad.mo
-share/locale/en_GB/
-share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/xpad.mo
 share/locale/es/LC_MESSAGES/xpad.mo
 share/locale/et/LC_MESSAGES/xpad.mo
@@ -32,17 +24,16 @@ share/locale/nl/LC_MESSAGES/xpad.mo
 share/locale/pt/LC_MESSAGES/xpad.mo
 share/locale/ro/LC_MESSAGES/xpad.mo
 share/locale/ru/LC_MESSAGES/xpad.mo
-share/locale/rw/
-share/locale/rw/LC_MESSAGES/
 share/locale/rw/LC_MESSAGES/xpad.mo
 share/locale/sv/LC_MESSAGES/xpad.mo
-share/locale/th/
-share/locale/th/LC_MESSAGES/
 share/locale/th/LC_MESSAGES/xpad.mo
 share/locale/tr/LC_MESSAGES/xpad.mo
 share/locale/vi/LC_MESSAGES/xpad.mo
 share/locale/zh_CN/LC_MESSAGES/xpad.mo
 share/locale/zh_TW/LC_MESSAGES/xpad.mo
+share/xpad/
+share/xpad/help/
+share/xpad/help/xpad-user-help.txt
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/update-desktop-database
