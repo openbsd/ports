@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2016/11/14 17:31:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2017/06/06 14:17:44 sthen Exp $
 
 COMMENT=		JVM-based scripting language for web apps (open-source CFML)
 
-V=			5.1.0.34
+V=			5.1.4.19
 DISTNAME=		lucee-$V
 EXTRACT_SUFX=		.war
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX}{$V}
