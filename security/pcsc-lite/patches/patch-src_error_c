@@ -1,0 +1,40 @@
+$OpenBSD: patch-src_error_c,v 1.1 2017/06/06 14:58:39 dcoppa Exp $
+
+Index: src/error.c
+--- src/error.c.orig
++++ src/error.c
+@@ -81,9 +81,7 @@ PCSC_API const char* pcsc_stringify_error(const LONG p
+  */
+ PCSC_API const char* pcsc_stringify_error(const LONG pcscError)
+ {
+-	/* Use a Thread-local storage so that the returned buffer
+-	 * is thread safe */
+-	static __thread char strError[75];
++	static char strError[75];
+ 	const char *msg = NULL;
+ 
+ 	switch (pcscError)
+@@ -228,16 +226,16 @@ PCSC_API const char* pcsc_stringify_error(const LONG p
+ 			pcscError);
+ 	};
+ 
+-	if (msg)
+-		(void)strncpy(strError, msg, sizeof(strError));
+-	else
++	if (msg) {
++		return msg;
++	} else {
+ 		(void)snprintf(strError, sizeof(strError)-1, "Unknown error: 0x%08lX",
+ 			pcscError);
++		/* add a null byte */
++		strError[sizeof(strError)-1] = '\0';
+ 
+-	/* add a null byte */
+-	strError[sizeof(strError)-1] = '\0';
+-
+-	return strError;
++		return strError;
++	}
+ }
+ #endif
+ 
