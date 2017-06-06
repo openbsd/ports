@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.29 2017/04/19 23:07:53 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2017/06/06 15:05:44 schwarze Exp $
 
 COMMENT=	jigsaw puzzle game for X11
 
 DISTNAME=	xjig-2.4
-REVISION =	2
+REVISION =	3
 CATEGORIES=	games
 
 MASTER_SITES=	${MASTER_SITE_XCONTRIB:=games/}
@@ -13,8 +13,6 @@ EXTRACT_SUFX=	.tgz
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	X11 Xau Xdmcp Xext c m pthread-stubs ${LIBCXX} xcb
-
-USE_GROFF =	Yes
 
 MAKE_FILE=	Makefile.Linux
 
