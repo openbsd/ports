@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2017/05/30 10:26:07 anton Exp $
+# $OpenBSD: Makefile,v 1.3 2017/06/06 08:15:50 anton Exp $
 
 COMMENT =	yank terminal output to clipboard
 
 GH_ACCOUNT =	mptre
 GH_PROJECT =	yank
-GH_TAGNAME =	v0.8.2
-REVISION =	0
+GH_TAGNAME =	v0.8.3
 
 CATEGORIES =	sysutils
 
