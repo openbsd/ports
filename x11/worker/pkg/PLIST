@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/05/09 15:13:31 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.5 2017/06/06 16:50:43 benoit Exp $
 @bin bin/worker
 man/fr/
 man/fr/man1/
@@ -99,6 +99,10 @@ share/worker/config-updates/update-3.6.0-utf8.conf
 share/worker/config-updates/update-3.6.0.conf
 share/worker/config-updates/update-3.7.0-utf8.conf
 share/worker/config-updates/update-3.7.0.conf
+share/worker/config-updates/update-3.8.4-utf8.conf
+share/worker/config-updates/update-3.8.4.conf
+share/worker/config-updates/update-3.9.0-utf8.conf
+share/worker/config-updates/update-3.9.0.conf
 share/worker/hints-english
 share/worker/hints-english.utf8
 share/worker/scripts/
