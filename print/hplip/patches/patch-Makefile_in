@@ -1,6 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.49 2017/04/18 18:18:35 ajacoutot Exp $
---- Makefile.in.orig	Wed Apr 12 08:36:54 2017
-+++ Makefile.in	Tue Apr 18 20:04:23 2017
+$OpenBSD: patch-Makefile_in,v 1.50 2017/06/06 09:15:46 ajacoutot Exp $
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
 @@ -95,7 +95,7 @@ DIST_COMMON = $(am__configure_deps) \
  @HPLIP_BUILD_TRUE@@LIBUSB01_BUILD_TRUE@am__append_5 = io/hpmud/musb_libusb01.c 
  @HPLIP_BUILD_TRUE@@LIBUSB01_BUILD_TRUE@am__append_6 = -lusb
@@ -19,7 +20,7 @@ $OpenBSD: patch-Makefile_in,v 1.49 2017/04/18 18:18:35 ajacoutot Exp $
  @FULL_BUILD_TRUE@@GUI_BUILD_TRUE@@HPLIP_BUILD_TRUE@@QT3_INSTALL_TRUE@am__append_19 = ui/colorcalform2_base.ui ui/settingsdialog_base.ui ui/aligntype6form1_base.ui \
  @FULL_BUILD_TRUE@@GUI_BUILD_TRUE@@HPLIP_BUILD_TRUE@@QT3_INSTALL_TRUE@	ui/aboutdlg_base.ui ui/imagepropertiesdlg_base.ui ui/paperedgealignform_base.ui ui/aligntype6form2_base.ui \
  @FULL_BUILD_TRUE@@GUI_BUILD_TRUE@@HPLIP_BUILD_TRUE@@QT3_INSTALL_TRUE@	ui/nodevicesform_base.ui ui/cleaningform_base.ui ui/colorcalform_base.ui ui/devmgr4_base.ui ui/loadpaperform_base.ui \
-@@ -4780,13 +4780,13 @@ cups_drv = prnt/drv/hpcups.drv
+@@ -4828,13 +4828,13 @@ cups_drv = prnt/drv/hpcups.drv
  @HPLIP_BUILD_TRUE@@SCAN_BUILD_TRUE@        scan/sane/bb_ledm.c scan/sane/http.h scan/sane/http.c scan/sane/sclpml.c scan/sane/sclpml.h common/utils.c common/utils.h \
  @HPLIP_BUILD_TRUE@@SCAN_BUILD_TRUE@	scan/sane/escl.h scan/sane/escli.h scan/sane/escl.c
  
@@ -35,7 +36,7 @@ $OpenBSD: patch-Makefile_in,v 1.49 2017/04/18 18:18:35 ajacoutot Exp $
  #libsane_hpaio_la_CFLAGS = -DWITH_NONAMESPACES -DSOAP_DEBUG
  @HPLIP_BUILD_TRUE@@SCAN_BUILD_TRUE@libsane_hpaio_la_CFLAGS =  \
  @HPLIP_BUILD_TRUE@@SCAN_BUILD_TRUE@	$(DBUS_CFLAGS) -Iprotocol \
-@@ -4802,7 +4802,7 @@ cups_drv = prnt/drv/hpcups.drv
+@@ -4850,7 +4850,7 @@ cups_drv = prnt/drv/hpcups.drv
  @HPLIP_BUILD_TRUE@	-DCONFDIR=\"$(hplip_confdir)\" -Iprotocol \
  @HPLIP_BUILD_TRUE@	$(am__append_8) $(am__append_10)
  @HPLIP_BUILD_TRUE@libhpmud_la_LDFLAGS = -version-info 0:6:0 -lpthread \
@@ -44,7 +45,7 @@ $OpenBSD: patch-Makefile_in,v 1.49 2017/04/18 18:18:35 ajacoutot Exp $
  @HPLIP_BUILD_TRUE@	$(am__append_11)
  @HPLIP_BUILD_TRUE@libhpmud_la_SOURCES = io/hpmud/hpmud.c \
  @HPLIP_BUILD_TRUE@	io/hpmud/mlc.c io/hpmud/model.c \
-@@ -4843,7 +4843,7 @@ cups_drv = prnt/drv/hpcups.drv
+@@ -4891,7 +4891,7 @@ cups_drv = prnt/drv/hpcups.drv
  @HPLIP_BUILD_TRUE@pstotiff_SCRIPTS = fax/filters/pstotiff
  
  # hplip.state
@@ -53,7 +54,7 @@ $OpenBSD: patch-Makefile_in,v 1.49 2017/04/18 18:18:35 ajacoutot Exp $
  @HPLIP_BUILD_TRUE@dist_hplip_state_DATA = 
  @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@dist_hplip_SCRIPTS = hpssd.py __init__.py hpdio.py
  @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@cmddir = $(hplipdir)
-@@ -5048,7 +5048,7 @@ cups_drv = prnt/drv/hpcups.drv
+@@ -5096,7 +5096,7 @@ cups_drv = prnt/drv/hpcups.drv
  @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@hppgsz_SOURCES = prnt/hpijs/PrinterProperties.cpp prnt/hpijs/PrinterProperties.h prnt/hpijs/bug.h
  @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@hppgsz_CXXFLAGS = $(libapdk_la_CXXFLAGS)
  @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@hppgsz_CFLAGS = $(libapdk_la_CFLAGS)
@@ -62,7 +63,7 @@ $OpenBSD: patch-Makefile_in,v 1.49 2017/04/18 18:18:35 ajacoutot Exp $
  
  # hplip.desktop
  @FULL_BUILD_TRUE@@GUI_BUILD_TRUE@@HPLIP_BUILD_TRUE@hplip_desktopdir = $(icondir)
-@@ -5113,8 +5113,8 @@ libapdk_la_CFLAGS = $(libapdk_la_CXXFLAGS) -Iprnt/hpij
+@@ -5161,8 +5161,8 @@ libapdk_la_CFLAGS = $(libapdk_la_CXXFLAGS) -Iprnt/hpij
  
  @HPIJS_INSTALL_TRUE@hpijs_CXXFLAGS = $(libapdk_la_CXXFLAGS)
  @HPIJS_INSTALL_TRUE@hpijs_CFLAGS = $(libapdk_la_CFLAGS)
@@ -73,7 +74,7 @@ $OpenBSD: patch-Makefile_in,v 1.49 2017/04/18 18:18:35 ajacoutot Exp $
  
  # hpcups
  #if NEW_HPCUPS
-@@ -5154,7 +5154,7 @@ libapdk_la_CFLAGS = $(libapdk_la_CXXFLAGS) -Iprnt/hpij
+@@ -5202,7 +5202,7 @@ libapdk_la_CFLAGS = $(libapdk_la_CXXFLAGS) -Iprnt/hpij
  @HPCUPS_INSTALL_TRUE@	common/utils.c common/utils.h
  
  @HPCUPS_INSTALL_TRUE@hpcups_CXXFLAGS = $(APDK_ENDIAN_FLAG) $(DBUS_CFLAGS)
@@ -82,7 +83,7 @@ $OpenBSD: patch-Makefile_in,v 1.49 2017/04/18 18:18:35 ajacoutot Exp $
  
  #else
  #hpcupsdir = $(cupsfilterdir)
-@@ -5163,15 +5163,15 @@ libapdk_la_CFLAGS = $(libapdk_la_CXXFLAGS) -Iprnt/hpij
+@@ -5211,15 +5211,15 @@ libapdk_la_CFLAGS = $(libapdk_la_CXXFLAGS) -Iprnt/hpij
  #hpcups_CXXFLAGS = $(libapdk_la_CXXFLAGS)
  #hpcups_CFLAGS = $(libapdk_la_CFLAGS)
  #if HPCUPS_ONLY_BUILD
