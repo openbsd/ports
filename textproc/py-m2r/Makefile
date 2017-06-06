@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/05/06 09:51:45 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2017/06/06 08:56:56 benoit Exp $
 
 COMMENT =		markdown to reStructuredText converter
 
-MODPY_EGG_VERSION =	0.1.5
+MODPY_EGG_VERSION =	0.1.6
 
 DISTNAME =		m2r-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
