@@ -1,13 +1,14 @@
-$OpenBSD: patch-tools_clang_lib_Basic_Targets_cpp,v 1.24 2017/03/14 17:29:45 ajacoutot Exp $
+$OpenBSD: patch-tools_clang_lib_Basic_Targets_cpp,v 1.25 2017/06/06 14:12:59 robert Exp $
 
 - Enable support for __float128 in Clang on OpenBSD/X86
 - Set ABIs correctly for OpenBSD/arm; soft float and aapcs-linux
 - Hook up OpenBSD AArch64 support
 - Set the Int64Type / IntMaxType types correctly for OpenBSD/mips64
 
---- tools/clang/lib/Basic/Targets.cpp.orig	Wed Feb  8 20:35:17 2017
-+++ tools/clang/lib/Basic/Targets.cpp	Mon Feb 27 15:31:50 2017
-@@ -545,6 +545,8 @@ class OpenBSDTargetInfo : public OSTargetInfo<Target> 
+Index: tools/clang/lib/Basic/Targets.cpp
+--- tools/clang/lib/Basic/Targets.cpp.orig
++++ tools/clang/lib/Basic/Targets.cpp
+@@ -545,18 +545,18 @@ class OpenBSDTargetInfo : public OSTargetInfo<Target> 
      Builder.defineMacro("__ELF__");
      if (Opts.POSIXThreads)
        Builder.defineMacro("_REENTRANT");
@@ -16,9 +17,9 @@ $OpenBSD: patch-tools_clang_lib_Basic_Targets_cpp,v 1.24 2017/03/14 17:29:45 aja
    }
  public:
    OpenBSDTargetInfo(const llvm::Triple &Triple, const TargetOptions &Opts)
-@@ -552,11 +554,11 @@ class OpenBSDTargetInfo : public OSTargetInfo<Target> 
-     this->TLSSupported = false;
- 
+       : OSTargetInfo<Target>(Triple, Opts) {
+-    this->TLSSupported = false;
+-
        switch (Triple.getArch()) {
 -        default:
          case llvm::Triple::x86:
@@ -31,7 +32,7 @@ $OpenBSD: patch-tools_clang_lib_Basic_Targets_cpp,v 1.24 2017/03/14 17:29:45 aja
            this->MCountName = "__mcount";
            break;
          case llvm::Triple::mips64:
-@@ -5144,6 +5146,8 @@ class ARMTargetInfo : public TargetInfo { (public)
+@@ -5144,6 +5144,8 @@ class ARMTargetInfo : public TargetInfo { (public)
        default:
          if (Triple.getOS() == llvm::Triple::NetBSD)
            setABI("apcs-gnu");
@@ -40,7 +41,7 @@ $OpenBSD: patch-tools_clang_lib_Basic_Targets_cpp,v 1.24 2017/03/14 17:29:45 aja
          else
            setABI("aapcs");
          break;
-@@ -5925,7 +5929,8 @@ class AArch64TargetInfo : public TargetInfo {
+@@ -5925,7 +5927,8 @@ class AArch64TargetInfo : public TargetInfo {
  public:
    AArch64TargetInfo(const llvm::Triple &Triple, const TargetOptions &Opts)
        : TargetInfo(Triple), ABI("aapcs") {
@@ -50,7 +51,7 @@ $OpenBSD: patch-tools_clang_lib_Basic_Targets_cpp,v 1.24 2017/03/14 17:29:45 aja
        WCharType = SignedInt;
  
        // NetBSD apparently prefers consistency across ARM targets to consistency
-@@ -7535,7 +7540,11 @@ class MipsTargetInfo : public TargetInfo { (public)
+@@ -7535,7 +7538,11 @@ class MipsTargetInfo : public TargetInfo { (public)
  
    void setN64ABITypes() {
      setN32N64ABITypes();
@@ -63,7 +64,7 @@ $OpenBSD: patch-tools_clang_lib_Basic_Targets_cpp,v 1.24 2017/03/14 17:29:45 aja
      IntMaxType = Int64Type;
      LongWidth = LongAlign = 64;
      PointerWidth = PointerAlign = 64;
-@@ -8574,6 +8583,8 @@ static TargetInfo *AllocateTarget(const llvm::Triple &
+@@ -8574,6 +8581,8 @@ static TargetInfo *AllocateTarget(const llvm::Triple &
        return new LinuxTargetInfo<AArch64leTargetInfo>(Triple, Opts);
      case llvm::Triple::NetBSD:
        return new NetBSDTargetInfo<AArch64leTargetInfo>(Triple, Opts);
