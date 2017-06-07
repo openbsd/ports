@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2016/09/14 20:40:53 rpointel Exp $
+# $OpenBSD: Makefile,v 1.4 2017/06/07 12:24:52 rpointel Exp $
 
 COMMENT = pattern matching swiss knife
 
@@ -13,8 +13,8 @@ SHARED_LIBS +=  yara                      0.0 # 0.0
 CONFIGURE_STYLE =       gnu
 CONFIGURE_ARGS +=	--with-crypto \
 			--enable-magic
-CONFIGURE_ENV +=	LDFLAGS="-L${LOCALBASE}/lib/eopenssl -L${LOCALBASE}/lib" \
-			CFLAGS="-I${LOCALBASE}/include/eopenssl -I${LOCALBASE}/include"
+CONFIGURE_ENV +=	LDFLAGS="-L${LOCALBASE}/lib" \
+			CFLAGS="-I${LOCALBASE}/include"
 
 pre-patch:
 	cd ${WRKSRC} && \
@@ -23,9 +23,7 @@ pre-patch:
 
 BUILD_DEPENDS +=	devel/libtool \
 			${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS} \
-			${RUN_DEPENDS}
-RUN_DEPENDS +=		security/openssl
+			${MODGNU_AUTOMAKE_DEPENDS}
 
 LIB_DEPENDS +=		devel/libmagic
 
