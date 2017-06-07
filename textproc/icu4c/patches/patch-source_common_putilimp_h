@@ -1,8 +1,8 @@
-$OpenBSD: patch-source_common_putilimp_h,v 1.10 2017/05/24 15:44:42 ajacoutot Exp $
+$OpenBSD: patch-source_common_putilimp_h,v 1.11 2017/06/07 09:58:30 ajacoutot Exp $
 
-hppa and sparc don't have atomic builtins:
+hppa doesn't have atomic builtins:
 __sync_val_compare_and_swap, __sync_add_and_fetch, __sync_sub_and_fetch
-don't assume having GNUC >= 401 implies they're here...
+don't assume having GNUC >= 404 implies they're here...
 
 Index: source/common/putilimp.h
 --- source/common/putilimp.h.orig
@@ -12,7 +12,7 @@ Index: source/common/putilimp.h
  #elif U_PLATFORM == U_PF_MINGW
      #define U_HAVE_GCC_ATOMICS 0
 -#elif U_GCC_MAJOR_MINOR >= 404 || defined(__clang__)
-+#elif U_GCC_MAJOR_MINOR >= 404 && !defined(__hppa__) && (defined(__sparc__) && ! defined(__sparcv9__)) || defined(__clang__)
++#elif U_GCC_MAJOR_MINOR >= 404 && !defined(__hppa__) || defined(__clang__)
      /* TODO: Intel icc and IBM xlc on AIX also support gcc atomics.  (Intel originated them.)
       *       Add them for these compilers.
       * Note: Clang sets __GNUC__ defines for version 4.2, so misses the 4.4 test here.
