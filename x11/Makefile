@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.591 2017/06/07 01:24:27 danj Exp $
+# $OpenBSD: Makefile,v 1.592 2017/06/07 17:39:44 robert Exp $
 
      SUBDIR =
      SUBDIR += Xaw3d
@@ -156,6 +156,7 @@
      SUBDIR += lumina
      SUBDIR += lupe
      SUBDIR += lxrandr
+     SUBDIR += mate
      SUBDIR += menu-cache
      SUBDIR += mlterm
      SUBDIR += moka-icon-theme
