@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2016/12/28 21:48:21 pascal Exp $
+# $OpenBSD: Makefile,v 1.7 2017/06/07 23:34:02 brynet Exp $
 
 ONLY_FOR_ARCHS = amd64 arm hppa i386 mips64 mips64el powerpc sparc64
 DPB_PROPERTIES = parallel
 
 V = 6.3.0
+REVISION = 0
 FULL_VERSION = $V
 FULL_PKGVERSION = $V
 
@@ -44,7 +45,6 @@ SHARED_LIBS =	estdc++		18.0 \
 		gcj-tools	5.0 \
 		gij		5.0 \
 		objc		7.0 \
-		ssp		5.0 \
 		lto_plugin      4.0 \
 		go		4.0 \
 		itm		3.0 \

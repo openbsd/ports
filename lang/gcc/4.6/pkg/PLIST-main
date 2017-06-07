@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.8 2016/06/29 16:14:41 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.9 2017/06/07 23:34:02 brynet Exp $
 @option is-branch
 @bin bin/ecpp
 @bin bin/egcc
@@ -14,7 +14,6 @@
 lib/gcc/
 lib/gcc/${CONFIG}/
 lib/gcc/${CONFIG}/${V}/
-lib/gcc/${CONFIG}/${V}/include/
 lib/gcc/${CONFIG}/${V}/include-fixed/
 lib/gcc/${CONFIG}/${V}/include-fixed/README
 lib/gcc/${CONFIG}/${V}/include-fixed/limits.h
@@ -29,11 +28,6 @@ lib/gcc/${CONFIG}/${V}/include-fixed/sys/param.h
 lib/gcc/${CONFIG}/${V}/include-fixed/sys/types.h
 lib/gcc/${CONFIG}/${V}/include-fixed/syslimits.h
 lib/gcc/${CONFIG}/${V}/include-fixed/wchar.h
-lib/gcc/${CONFIG}/${V}/include/ssp/
-lib/gcc/${CONFIG}/${V}/include/ssp/ssp.h
-lib/gcc/${CONFIG}/${V}/include/ssp/stdio.h
-lib/gcc/${CONFIG}/${V}/include/ssp/string.h
-lib/gcc/${CONFIG}/${V}/include/ssp/unistd.h
 lib/gcc/${CONFIG}/${V}/include/tgmath.h
 lib/gcc/${CONFIG}/${V}/include/unwind.h
 lib/gcc/${CONFIG}/${V}/install-tools/
@@ -47,11 +41,6 @@ lib/gcc/${CONFIG}/${V}/install-tools/mkheaders.conf
 lib/gcc/${CONFIG}/${V}/libgcc.a
 lib/gcc/${CONFIG}/${V}/libgcov.a
 @comment lib/libiberty.a
-lib/libssp.a
-lib/libssp.la
-@lib lib/libssp.so.${LIBssp_VERSION}
-lib/libssp_nonshared.a
-lib/libssp_nonshared.la
 libexec/gcc/
 libexec/gcc/${CONFIG}/
 libexec/gcc/${CONFIG}/${V}/

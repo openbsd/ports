@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.47 2017/03/04 21:59:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.48 2017/06/07 23:34:02 brynet Exp $
 
 ONLY_FOR_ARCHS = amd64 arm hppa i386 mips64 mips64el powerpc sparc64
 DPB_PROPERTIES = parallel
 
 V = 4.9.4
-REVISION = 4
+REVISION = 5
 FULL_VERSION = $V
 FULL_PKGVERSION = $V
 
@@ -39,19 +39,18 @@ PKGNAME-objc =  gobjc-${FULL_PKGVERSION}
 PKGNAME-ada =   gnat-${FULL_PKGVERSION}
 PKGSPEC-main = gcc->=4.9,<4.10
 
-SHARED_LIBS =	estdc++		17.0 \
-		gfortran	6.0 \
-		gcj		4.0 \
+SHARED_LIBS =	estdc++		17.1 \
+		gfortran	6.1 \
+		gcj		4.1 \
 		gcj-tools	4.0 \
-		gij		4.0 \
-		objc		6.0 \
-		ssp		4.0 \
-		lto_plugin      3.0 \
+		gij		4.1 \
+		objc		6.1 \
+		lto_plugin      3.1 \
 		go		3.0 \
-		itm		2.0 \
-		atomic		1.0 \
-		quadmath	1.0 \
-		cilkrts		0.0
+		itm		2.1 \
+		atomic		1.1 \
+		quadmath	1.1 \
+		cilkrts		0.1
 
 PSEUDO_FLAVORS = no_java no_ada full
 FLAVOR ?= 

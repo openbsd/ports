@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.10 2016/09/01 10:56:58 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.11 2017/06/07 23:34:02 brynet Exp $
 @option is-branch
 @bin bin/ecpp
 @bin bin/egcc
@@ -23,12 +23,6 @@ lib/gcc/${CONFIG}/${V}/include-fixed/
 lib/gcc/${CONFIG}/${V}/include-fixed/README
 lib/gcc/${CONFIG}/${V}/include-fixed/limits.h
 lib/gcc/${CONFIG}/${V}/include-fixed/syslimits.h
-lib/gcc/${CONFIG}/${V}/include/
-lib/gcc/${CONFIG}/${V}/include/ssp/
-lib/gcc/${CONFIG}/${V}/include/ssp/ssp.h
-lib/gcc/${CONFIG}/${V}/include/ssp/stdio.h
-lib/gcc/${CONFIG}/${V}/include/ssp/string.h
-lib/gcc/${CONFIG}/${V}/include/ssp/unistd.h
 lib/gcc/${CONFIG}/${V}/install-tools/
 lib/gcc/${CONFIG}/${V}/install-tools/fixinc_list
 lib/gcc/${CONFIG}/${V}/install-tools/gsyslimits.h
@@ -239,11 +233,6 @@ lib/gcc/${CONFIG}/${V}/plugin/include/varasm.h
 lib/gcc/${CONFIG}/${V}/plugin/include/vec.h
 lib/gcc/${CONFIG}/${V}/plugin/include/version.h
 lib/libatomic.a
-lib/libssp.a
-lib/libssp.la
-@lib lib/libssp.so.${LIBssp_VERSION}
-lib/libssp_nonshared.a
-lib/libssp_nonshared.la
 @comment %%alpha%%
 %%amd64%%
 %%arm%%
