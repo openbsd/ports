@@ -1,7 +1,9 @@
-# $OpenBSD: Makefile,v 1.50 2017/04/24 07:52:21 jca Exp $
+# $OpenBSD: Makefile,v 1.51 2017/06/07 23:21:33 mlarkin Exp $
 
 # Other archs have not been tested
 ONLY_FOR_ARCHS =	amd64
+
+USE_WXNEEDED=		Yes
 
 # i386: src/emu/cpu/i386/pentops.inc: error: integer constant is too large for 'long' type
 
@@ -14,7 +16,7 @@ V =			160
 DISTNAME =		mame0${V}s
 PKGNAME-main =		sdlmame-0.${V}
 PKGNAME-tools =		sdlmame-tools-0.${V}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		emulators games
 
