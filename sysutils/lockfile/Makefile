@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/05/08 19:35:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2017/06/07 01:07:06 schwarze Exp $
 
 COMMENT=	semaphore-file tool for shell scripting
 
 DISTNAME=	procmail-3.22
 PKGNAME=	lockfile-3.22
+REVISION=	0
 CATEGORIES=	sysutils
 
 MASTER_SITES=	${HOMEPAGE} \
@@ -21,7 +22,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c m
 
-USE_GROFF=	Yes
 NO_TEST=	Yes
 
 MAKE_FLAGS=	BASENAME="${PREFIX}" CC="${CC}" CFLAGS0="${CFLAGS}" \

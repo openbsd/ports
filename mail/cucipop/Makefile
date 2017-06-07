@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2013/03/11 11:23:50 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2017/06/07 01:07:06 schwarze Exp $
 
 COMMENT=	Cubic Circle's POP3 daemon
 
 DISTNAME=	cucipop-1.31
-REVISION=	0
+REVISION=	1
 CATEGORIES=	mail
 
 MASTER_SITES=	ftp://ftp.informatik.rwth-aachen.de/pub/packages/cucipop/
@@ -17,7 +17,6 @@ PERMIT_PACKAGE_FTP=	Yes
 WANTLIB=		c
 
 MAKE_FLAGS=	CFLAGS="${CFLAGS} -DINET6" LDFLAGS="" MD5_OBJ=""
-USE_GROFF =	Yes
 
 pre-configure:
 .for f in cucipop.8 makevpopdb.8
