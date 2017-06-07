@@ -1,3 +1,0 @@
-You need to change theme, otherwise you might experience problems related to
-SILC-specific features (e.g. signed messages): /SET theme plugin
-You may want to run silc script when working with SILC: /SCRIPT LOAD silc
