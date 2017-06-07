@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.41 2015/05/08 19:38:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.42 2017/06/07 02:17:01 schwarze Exp $
 
 COMMENT=	filtering local mail delivery agent
 
 DISTNAME=	procmail-3.22
 CATEGORIES=	mail
-REVISION=	6
+REVISION=	7
 
 MASTER_SITES=	${HOMEPAGE} \
 		http://mirror.switch.ch/ftp/mirror/procmail/ \
@@ -24,7 +24,6 @@ WANTLIB=		c m
 FLAVORS=	lmtp
 FLAVOR?=
 
-USE_GROFF =	Yes
 .if ${FLAVOR:Mlmtp}
 CFLAGS+=	-DLMTP
 .endif

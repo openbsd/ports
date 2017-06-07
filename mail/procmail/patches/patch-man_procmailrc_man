@@ -1,0 +1,16 @@
+$OpenBSD: patch-man_procmailrc_man,v 1.1 2017/06/07 02:17:01 schwarze Exp $
+
+Fix escaping error that causes information loss.
+
+Index: man/procmailrc.man
+--- man/procmailrc.man.orig
++++ man/procmailrc.man
+@@ -779,7 +779,7 @@ one trailing newline will be stripped.
+ .PP
+ Some non-optimal and non-obvious regexps set MATCH to an incorrect
+ value.  The regexp can be made to work by removing one or more unneeded
+-'*', '+', or '?' operator on the left-hand side of the \e/ token.
++\&'*', '+', or '?' operator on the left-hand side of the \e/ token.
+ .SH MISCELLANEOUS
+ If the regular expression contains `\fB@TO_key@\fP' it will be substituted by
+ .na
