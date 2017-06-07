@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/12/25 14:54:49 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.3 2017/06/07 17:03:38 rsadowski Exp $
 @bin bin/kcookiejar5
 @bin bin/ktelnetservice5
 @bin bin/ktrash5
@@ -52,6 +52,7 @@ include/KF5/KIOCore/KIO/TransferJob
 include/KF5/KIOCore/KIO/UDSEntry
 include/KF5/KIOCore/KMountPoint
 include/KF5/KIOCore/KNFSShare
+include/KF5/KIOCore/KPasswdServerClient
 include/KF5/KIOCore/KProtocolInfo
 include/KF5/KIOCore/KProtocolManager
 include/KF5/KIOCore/KRecentDocument
@@ -115,6 +116,7 @@ include/KF5/KIOCore/kio/udsentry.h
 include/KF5/KIOCore/kiocore_export.h
 include/KF5/KIOCore/kmountpoint.h
 include/KF5/KIOCore/knfsshare.h
+include/KF5/KIOCore/kpasswdserverclient.h
 include/KF5/KIOCore/kprotocolinfo.h
 include/KF5/KIOCore/kprotocolmanager.h
 include/KF5/KIOCore/krecentdocument.h
@@ -268,14 +270,17 @@ lib/qt5/plugins/kcm_webshortcuts.so
 lib/qt5/plugins/kf5/kded/
 lib/qt5/plugins/kf5/kded/kcookiejar.so
 lib/qt5/plugins/kf5/kded/proxyscout.so
+lib/qt5/plugins/kf5/kded/remotenotifier.so
 lib/qt5/plugins/kf5/kio/
 lib/qt5/plugins/kf5/kio/file.so
 lib/qt5/plugins/kf5/kio/ftp.so
 lib/qt5/plugins/kf5/kio/ghelp.so
 lib/qt5/plugins/kf5/kio/help.so
 lib/qt5/plugins/kf5/kio/http.so
+lib/qt5/plugins/kf5/kio/remote.so
 lib/qt5/plugins/kf5/kio/trash.so
 lib/qt5/plugins/kf5/kiod/
+lib/qt5/plugins/kf5/kiod/kioexecd.so
 lib/qt5/plugins/kf5/kiod/kpasswdserver.so
 lib/qt5/plugins/kf5/kiod/kssld.so
 lib/qt5/plugins/kf5/urifilters/
@@ -298,6 +303,7 @@ share/dbus-1/interfaces/kf5_org.kde.KSlaveLauncher.xml
 share/dbus-1/interfaces/kf5_org.kde.kio.FileUndoManager.xml
 share/dbus-1/services/org.kde.kcookiejar5.service
 share/dbus-1/services/org.kde.kiod5.service
+share/dbus-1/services/org.kde.kioexecd.service
 share/dbus-1/services/org.kde.kpasswdserver.service
 share/dbus-1/services/org.kde.kssld5.service
 share/doc/HTML/ca/kcontrol5/
@@ -481,6 +487,9 @@ share/doc/HTML/es/kcontrol5/trash/index.docbook
 share/doc/HTML/es/kcontrol5/useragent/
 share/doc/HTML/es/kcontrol5/useragent/index.cache.bz2
 share/doc/HTML/es/kcontrol5/useragent/index.docbook
+share/doc/HTML/es/kcontrol5/webshortcuts/
+share/doc/HTML/es/kcontrol5/webshortcuts/index.cache.bz2
+share/doc/HTML/es/kcontrol5/webshortcuts/index.docbook
 share/doc/HTML/es/kioslave5/
 share/doc/HTML/es/kioslave5/data/
 share/doc/HTML/es/kioslave5/data/index.cache.bz2
@@ -645,6 +654,59 @@ share/doc/HTML/nl/kioslave5/telnet/index.docbook
 share/doc/HTML/nl/kioslave5/webdav/
 share/doc/HTML/nl/kioslave5/webdav/index.cache.bz2
 share/doc/HTML/nl/kioslave5/webdav/index.docbook
+share/doc/HTML/pt/kcontrol5/
+share/doc/HTML/pt/kcontrol5/cache/
+share/doc/HTML/pt/kcontrol5/cache/index.cache.bz2
+share/doc/HTML/pt/kcontrol5/cache/index.docbook
+share/doc/HTML/pt/kcontrol5/cookies/
+share/doc/HTML/pt/kcontrol5/cookies/index.cache.bz2
+share/doc/HTML/pt/kcontrol5/cookies/index.docbook
+share/doc/HTML/pt/kcontrol5/netpref/
+share/doc/HTML/pt/kcontrol5/netpref/index.cache.bz2
+share/doc/HTML/pt/kcontrol5/netpref/index.docbook
+share/doc/HTML/pt/kcontrol5/proxy/
+share/doc/HTML/pt/kcontrol5/proxy/index.cache.bz2
+share/doc/HTML/pt/kcontrol5/proxy/index.docbook
+share/doc/HTML/pt/kcontrol5/smb/
+share/doc/HTML/pt/kcontrol5/smb/index.cache.bz2
+share/doc/HTML/pt/kcontrol5/smb/index.docbook
+share/doc/HTML/pt/kcontrol5/trash/
+share/doc/HTML/pt/kcontrol5/trash/index.cache.bz2
+share/doc/HTML/pt/kcontrol5/trash/index.docbook
+share/doc/HTML/pt/kcontrol5/useragent/
+share/doc/HTML/pt/kcontrol5/useragent/index.cache.bz2
+share/doc/HTML/pt/kcontrol5/useragent/index.docbook
+share/doc/HTML/pt/kcontrol5/webshortcuts/
+share/doc/HTML/pt/kcontrol5/webshortcuts/index.cache.bz2
+share/doc/HTML/pt/kcontrol5/webshortcuts/index.docbook
+share/doc/HTML/pt/kioslave5/
+share/doc/HTML/pt/kioslave5/data/
+share/doc/HTML/pt/kioslave5/data/index.cache.bz2
+share/doc/HTML/pt/kioslave5/data/index.docbook
+share/doc/HTML/pt/kioslave5/file/
+share/doc/HTML/pt/kioslave5/file/index.cache.bz2
+share/doc/HTML/pt/kioslave5/file/index.docbook
+share/doc/HTML/pt/kioslave5/ftp/
+share/doc/HTML/pt/kioslave5/ftp/index.cache.bz2
+share/doc/HTML/pt/kioslave5/ftp/index.docbook
+share/doc/HTML/pt/kioslave5/help/
+share/doc/HTML/pt/kioslave5/help/documentationnotfound/
+share/doc/HTML/pt/kioslave5/help/documentationnotfound/index.cache.bz2
+share/doc/HTML/pt/kioslave5/help/documentationnotfound/index.docbook
+share/doc/HTML/pt/kioslave5/help/index.cache.bz2
+share/doc/HTML/pt/kioslave5/help/index.docbook
+share/doc/HTML/pt/kioslave5/http/
+share/doc/HTML/pt/kioslave5/http/index.cache.bz2
+share/doc/HTML/pt/kioslave5/http/index.docbook
+share/doc/HTML/pt/kioslave5/mailto/
+share/doc/HTML/pt/kioslave5/mailto/index.cache.bz2
+share/doc/HTML/pt/kioslave5/mailto/index.docbook
+share/doc/HTML/pt/kioslave5/telnet/
+share/doc/HTML/pt/kioslave5/telnet/index.cache.bz2
+share/doc/HTML/pt/kioslave5/telnet/index.docbook
+share/doc/HTML/pt/kioslave5/webdav/
+share/doc/HTML/pt/kioslave5/webdav/index.cache.bz2
+share/doc/HTML/pt/kioslave5/webdav/index.docbook
 share/doc/HTML/pt_BR/
 share/doc/HTML/pt_BR/kcontrol5/
 share/doc/HTML/pt_BR/kcontrol5/cache/
@@ -737,6 +799,9 @@ share/doc/HTML/sr/kcontrol5/smb/index.docbook
 share/doc/HTML/sr/kcontrol5/useragent/
 share/doc/HTML/sr/kcontrol5/useragent/index.cache.bz2
 share/doc/HTML/sr/kcontrol5/useragent/index.docbook
+share/doc/HTML/sr/kcontrol5/webshortcuts/
+share/doc/HTML/sr/kcontrol5/webshortcuts/index.cache.bz2
+share/doc/HTML/sr/kcontrol5/webshortcuts/index.docbook
 share/doc/HTML/sr/kioslave5/
 share/doc/HTML/sr/kioslave5/data/
 share/doc/HTML/sr/kioslave5/data/index.cache.bz2
@@ -785,6 +850,9 @@ share/doc/HTML/sr@latin/kcontrol5/smb/index.docbook
 share/doc/HTML/sr@latin/kcontrol5/useragent/
 share/doc/HTML/sr@latin/kcontrol5/useragent/index.cache.bz2
 share/doc/HTML/sr@latin/kcontrol5/useragent/index.docbook
+share/doc/HTML/sr@latin/kcontrol5/webshortcuts/
+share/doc/HTML/sr@latin/kcontrol5/webshortcuts/index.cache.bz2
+share/doc/HTML/sr@latin/kcontrol5/webshortcuts/index.docbook
 share/doc/HTML/sr@latin/kioslave5/
 share/doc/HTML/sr@latin/kioslave5/data/
 share/doc/HTML/sr@latin/kioslave5/data/index.cache.bz2
@@ -1087,11 +1155,13 @@ share/kservices5/useragentstrings/chrome22oncurrent.desktop
 share/kservices5/useragentstrings/chrome23oncurrent.desktop
 share/kservices5/useragentstrings/chrome24oncurrent.desktop
 share/kservices5/useragentstrings/chrome50oncurrent.desktop
+share/kservices5/useragentstrings/chrome570oncurrent.desktop
 share/kservices5/useragentstrings/firefox15oncurrent.desktop
 share/kservices5/useragentstrings/firefox16oncurrent.desktop
 share/kservices5/useragentstrings/firefox20oncurrent.desktop
 share/kservices5/useragentstrings/firefox30oncurrent.desktop
 share/kservices5/useragentstrings/firefox36oncurrent.desktop
+share/kservices5/useragentstrings/firefox520oncurrent.desktop
 share/kservices5/useragentstrings/googlebot.desktop
 share/kservices5/useragentstrings/ie401onwinnt4.desktop
 share/kservices5/useragentstrings/ie50onppc.desktop

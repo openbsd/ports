@@ -1,16 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/12/25 14:54:48 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.3 2017/06/07 17:03:37 rsadowski Exp $
 @bin bin/checkXML5
 @bin bin/meinproc5
-include/KF5/XsltKde/
-include/KF5/XsltKde/xslt.h
-include/KF5/XsltKde/xslt_kde.h
+include/KF5/KDocTools/
+include/KF5/KDocTools/docbookxslt.h
+include/KF5/KDocTools/kdoctools_export.h
 lib/cmake/KF5DocTools/
 lib/cmake/KF5DocTools/KF5DocToolsConfig.cmake
 lib/cmake/KF5DocTools/KF5DocToolsConfigVersion.cmake
 lib/cmake/KF5DocTools/KF5DocToolsMacros.cmake
 lib/cmake/KF5DocTools/KF5DocToolsTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5DocTools/KF5DocToolsTargets.cmake
-lib/libKF5XsltKde.a
+@lib lib/libKF5DocTools.so.${LIBKF5DocTools_VERSION}
 @man man/man1/checkXML5.1
 @man man/man7/kf5options.7
 @man man/man7/qt5options.7

@@ -1,14 +1,15 @@
-$OpenBSD: patch-src_runtime_kwalletd_backend_blowfish_cc,v 1.2 2016/12/25 14:54:49 zhuk Exp $
+$OpenBSD: patch-src_runtime_kwalletd_backend_blowfish_cc,v 1.3 2017/06/07 17:03:39 rsadowski Exp $
 Unbreak build.
---- src/runtime/kwalletd/backend/blowfish.cc.orig	Sat Nov  5 15:59:12 2016
-+++ src/runtime/kwalletd/backend/blowfish.cc	Sat Dec  3 16:23:16 2016
+Index: src/runtime/kwalletd/backend/blowfish.cc
+--- src/runtime/kwalletd/backend/blowfish.cc.orig
++++ src/runtime/kwalletd/backend/blowfish.cc
 @@ -38,18 +38,18 @@
  BlowFish::BlowFish()
  {
      _blksz = 8;
--    _key = 0L;
+-    _key = nullptr;
 -    _init = false;
-+    key = 0L;
++    key = nullptr;
 +    initialized = false;
  }
  
@@ -82,9 +83,9 @@ Unbreak build.
  BlowFish::~BlowFish()
  {
 -    delete[](unsigned char *)_key;
--    _key = 0L;
+-    _key = nullptr;
 +    delete[](unsigned char *)key;
-+    key = 0L;
++    key = nullptr;
  }
  
  int BlowFish::keyLen() const

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2016/12/25 14:54:49 zhuk Exp $
+# $OpenBSD: Makefile,v 1.3 2017/06/07 17:03:38 rsadowski Exp $
 
 COMMENT =	KDE Gettext-based UI text internationalization
 DISTNAME =	ki18n-${VERSION}
 
-SHARED_LIBS =	KF5I18n		1.0
+SHARED_LIBS =	KF5I18n		2.0
 
 WANTLIB =	Qt5Core Qt5Script intl m
 
@@ -12,9 +12,7 @@ MODULES =	lang/python
 BUILD_DEPENDS =	devel/gettext-tools
 
 LIB_DEPENDS =	devel/gettext \
-			x11/qt5/qtscript
-
-CONFIGURE_ARGS =	-DCMAKE_POLICY_DEFAULT_CMP0037=OLD
+		x11/qt5/qtscript
 
 # for tests
 PORTHOME =	${WRKDIR}

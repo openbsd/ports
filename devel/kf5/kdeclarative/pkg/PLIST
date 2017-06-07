@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/12/25 14:54:48 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.3 2017/06/07 17:03:37 rsadowski Exp $
 @bin bin/kpackagelauncherqml
 include/KF5/KDeclarative/
 include/KF5/KDeclarative/CalendarEvents/
@@ -49,6 +49,9 @@ lib/cmake/KF5Declarative/KF5DeclarativeTargets.cmake
 lib/qml/org/kde/draganddrop/
 lib/qml/org/kde/draganddrop/libdraganddropplugin.so
 lib/qml/org/kde/draganddrop/qmldir
+lib/qml/org/kde/kconfig/
+lib/qml/org/kde/kconfig/libkconfigplugin.so
+lib/qml/org/kde/kconfig/qmldir
 lib/qml/org/kde/kcoreaddons/
 lib/qml/org/kde/kcoreaddons/libkcoreaddonsplugin.so
 lib/qml/org/kde/kcoreaddons/qmldir

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/12/25 14:54:49 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.3 2017/06/07 17:03:38 rsadowski Exp $
 include/KF5/KNewStuff3/
 include/KF5/KNewStuff3/KNS3/
 include/KF5/KNewStuff3/KNS3/Button
@@ -44,6 +44,7 @@ include/KF5/KNewStuff3/knscore/engine.h
 include/KF5/KNewStuff3/knscore/entryinternal.h
 include/KF5/KNewStuff3/knscore/installation.h
 include/KF5/KNewStuff3/knscore/itemsmodel.h
+include/KF5/KNewStuff3/knscore/knewstuffcore_export.h
 include/KF5/KNewStuff3/knscore/provider.h
 include/KF5/KNewStuff3/knscore/question.h
 include/KF5/KNewStuff3/knscore/questionlistener.h
@@ -129,6 +130,7 @@ share/kf5/knewstuff/
 share/kf5/knewstuff/pics/
 share/kf5/knewstuff/pics/thumb_frame.png
 share/kf5/mkspecs/qt_KNewStuff.pri
+share/kf5/mkspecs/qt_KNewStuffCore.pri
 share/locale/af/LC_MESSAGES/knewstuff5.mo
 share/locale/ar/LC_MESSAGES/knewstuff5.mo
 share/locale/as/LC_MESSAGES/knewstuff5.mo

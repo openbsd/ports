@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2017/04/06 10:25:20 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2017/06/07 17:03:36 rsadowski Exp $
 
 COMMENT =	KDE file search and metadata handling framework
 VERSION =	15.04.26
 DISTNAME =	baloo-${VERSION}
 PKGNAME =	kf5-${DISTNAME}
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS =	KF5Baloo		1.0
 SHARED_LIBS +=	KF5BalooXapian		1.0
@@ -61,9 +61,5 @@ CONFIGURE_ARGS +=	-DCMAKE_POLICY_DEFAULT_CMP0063=OLD
 
 PORTHOME =		${WRKDIR}
 TEST_IS_INTERACTIVE =	X11
-
-#post-extract:
-#	mkdir -p ${WRKSRC}/cmake
-#	cp ${FILESDIR}/FindInotify.cmake ${WRKSRC}/cmake
 
 .include <bsd.port.mk>

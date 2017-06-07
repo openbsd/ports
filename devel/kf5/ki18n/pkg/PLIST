@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/12/25 14:54:49 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.3 2017/06/07 17:03:38 rsadowski Exp $
 include/KF5/
 include/KF5/KI18n/
 include/KF5/KI18n/KLocalizedContext
@@ -19,6 +19,8 @@ lib/cmake/KF5I18n/KF5I18nConfig.cmake
 lib/cmake/KF5I18n/KF5I18nConfigVersion.cmake
 lib/cmake/KF5I18n/KF5I18nTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5I18n/KF5I18nTargets.cmake
+lib/cmake/KF5I18n/build-pofiles.cmake
+lib/cmake/KF5I18n/build-tsfiles.cmake
 lib/cmake/KF5I18n/kf5i18nuic.cmake
 lib/cmake/KF5I18n/ts-pmap-compile.py
 @lib lib/libKF5I18n.so.${LIBKF5I18n_VERSION}
@@ -95,6 +97,9 @@ share/locale/id/LC_MESSAGES/ki18n5.mo
 share/locale/is/LC_MESSAGES/ki18n5.mo
 share/locale/it/LC_MESSAGES/ki18n5.mo
 share/locale/ja/LC_MESSAGES/ki18n5.mo
+share/locale/ja/LC_SCRIPTS/
+share/locale/ja/LC_SCRIPTS/ki18n5/
+share/locale/ja/LC_SCRIPTS/ki18n5/ki18n5.js
 share/locale/ka/LC_MESSAGES/ki18n5.mo
 share/locale/kk/LC_MESSAGES/ki18n5.mo
 share/locale/km/LC_MESSAGES/ki18n5.mo

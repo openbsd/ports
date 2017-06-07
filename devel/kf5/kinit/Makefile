@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2016/12/25 14:54:49 zhuk Exp $
+# $OpenBSD: Makefile,v 1.3 2017/06/07 17:03:38 rsadowski Exp $
 
 COMMENT =	speed up for applications inside KDE workspaces
 DISTNAME =	kinit-${VERSION}
 
-SHARED_LIBS =	kdeinit5_klauncher	1.0
+SHARED_LIBS =	kdeinit5_klauncher	2.0
 
 WANTLIB =  KF5Completion KF5ConfigCore KF5CoreAddons KF5Crash
 WANTLIB += KF5I18n KF5JobWidgets KF5KIOCore KF5KIOWidgets KF5Service

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/12/25 14:54:48 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.3 2017/06/07 17:03:37 rsadowski Exp $
 @bin bin/kdebugdialog5
 @bin bin/kf5-config
 include/KF5/KDELibs4Support/
@@ -1055,6 +1055,9 @@ share/doc/HTML/en/kdebugdialog5/index.docbook
 share/doc/HTML/es/kcontrol5/kcm_ssl/
 share/doc/HTML/es/kcontrol5/kcm_ssl/index.cache.bz2
 share/doc/HTML/es/kcontrol5/kcm_ssl/index.docbook
+share/doc/HTML/es/kdebugdialog5/
+share/doc/HTML/es/kdebugdialog5/index.cache.bz2
+share/doc/HTML/es/kdebugdialog5/index.docbook
 share/doc/HTML/it/kcontrol5/kcm_ssl/
 share/doc/HTML/it/kcontrol5/kcm_ssl/index.cache.bz2
 share/doc/HTML/it/kcontrol5/kcm_ssl/index.docbook
@@ -1067,6 +1070,12 @@ share/doc/HTML/nl/kcontrol5/kcm_ssl/index.docbook
 share/doc/HTML/nl/kdebugdialog5/
 share/doc/HTML/nl/kdebugdialog5/index.cache.bz2
 share/doc/HTML/nl/kdebugdialog5/index.docbook
+share/doc/HTML/pt/kcontrol5/kcm_ssl/
+share/doc/HTML/pt/kcontrol5/kcm_ssl/index.cache.bz2
+share/doc/HTML/pt/kcontrol5/kcm_ssl/index.docbook
+share/doc/HTML/pt/kdebugdialog5/
+share/doc/HTML/pt/kdebugdialog5/index.cache.bz2
+share/doc/HTML/pt/kdebugdialog5/index.docbook
 share/doc/HTML/pt_BR/kcontrol5/kcm_ssl/
 share/doc/HTML/pt_BR/kcontrol5/kcm_ssl/details.png
 share/doc/HTML/pt_BR/kcontrol5/kcm_ssl/index.cache.bz2

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/05/26 23:58:59 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/06/07 17:03:39 rsadowski Exp $
 include/KF5/
 include/KF5/KWidgetsAddons/
 include/KF5/KWidgetsAddons/KAcceleratorManager
@@ -23,6 +23,7 @@ include/KF5/KWidgetsAddons/KFontAction
 include/KF5/KWidgetsAddons/KFontChooser
 include/KF5/KWidgetsAddons/KFontRequester
 include/KF5/KWidgetsAddons/KFontSizeAction
+include/KF5/KWidgetsAddons/KGradientSelector
 include/KF5/KWidgetsAddons/KGuiItem
 include/KF5/KWidgetsAddons/KLed
 include/KF5/KWidgetsAddons/KMessageBox
@@ -30,14 +31,18 @@ include/KF5/KWidgetsAddons/KMessageBoxDontAskAgainInterface
 include/KF5/KWidgetsAddons/KMessageBoxNotifyInterface
 include/KF5/KWidgetsAddons/KMessageWidget
 include/KF5/KWidgetsAddons/KMimeTypeChooser
+include/KF5/KWidgetsAddons/KMimeTypeChooserDialog
 include/KF5/KWidgetsAddons/KMimeTypeEditor
 include/KF5/KWidgetsAddons/KMultiTabBar
+include/KF5/KWidgetsAddons/KMultiTabBarButton
+include/KF5/KWidgetsAddons/KMultiTabBarTab
 include/KF5/KWidgetsAddons/KNewPasswordDialog
 include/KF5/KWidgetsAddons/KNewPasswordWidget
 include/KF5/KWidgetsAddons/KPageDialog
 include/KF5/KWidgetsAddons/KPageModel
 include/KF5/KWidgetsAddons/KPageView
 include/KF5/KWidgetsAddons/KPageWidget
+include/KF5/KWidgetsAddons/KPageWidgetItem
 include/KF5/KWidgetsAddons/KPageWidgetModel
 include/KF5/KWidgetsAddons/KPasswordDialog
 include/KF5/KWidgetsAddons/KPixmapRegionSelectorDialog
@@ -63,6 +68,7 @@ include/KF5/KWidgetsAddons/KToggleFullScreenAction
 include/KF5/KWidgetsAddons/KToolBarLabelAction
 include/KF5/KWidgetsAddons/KToolBarPopupAction
 include/KF5/KWidgetsAddons/KToolBarSpacerAction
+include/KF5/KWidgetsAddons/KToolTipWidget
 include/KF5/KWidgetsAddons/KUrlLabel
 include/KF5/KWidgetsAddons/KViewStateMaintainerBase
 include/KF5/KWidgetsAddons/KViewStateSerializer
@@ -130,6 +136,7 @@ include/KF5/KWidgetsAddons/ktogglefullscreenaction.h
 include/KF5/KWidgetsAddons/ktoolbarlabelaction.h
 include/KF5/KWidgetsAddons/ktoolbarpopupaction.h
 include/KF5/KWidgetsAddons/ktoolbarspaceraction.h
+include/KF5/KWidgetsAddons/ktooltipwidget.h
 include/KF5/KWidgetsAddons/kurllabel.h
 include/KF5/KWidgetsAddons/kviewstatemaintainerbase.h
 include/KF5/KWidgetsAddons/kviewstateserializer.h

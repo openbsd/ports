@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/12/25 14:54:48 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.3 2017/06/07 17:03:36 rsadowski Exp $
 @man man/man7/ecm-developer.7
 @man man/man7/ecm-find-modules.7
 @man man/man7/ecm-kde-modules.7
@@ -12,6 +12,7 @@ share/ECM/cmake/ECMConfigVersion.cmake
 share/ECM/find-modules/
 share/ECM/find-modules/ECMFindModuleHelpersStub.cmake
 share/ECM/find-modules/FindEGL.cmake
+share/ECM/find-modules/FindInotify.cmake
 share/ECM/find-modules/FindKF5.cmake
 share/ECM/find-modules/FindLibGit2.cmake
 share/ECM/find-modules/FindOpenEXR.cmake
@@ -24,6 +25,7 @@ share/ECM/find-modules/FindWayland.cmake
 share/ECM/find-modules/FindWaylandScanner.cmake
 share/ECM/find-modules/FindX11_XCB.cmake
 share/ECM/find-modules/FindXCB.cmake
+share/ECM/find-modules/GeneratePythonBindingUmbrellaModule.cmake
 share/ECM/find-modules/Qt5Ruleset.py
 share/ECM/find-modules/rules_engine.py
 share/ECM/find-modules/run-sip.py
@@ -45,6 +47,7 @@ share/ECM/modules/ECMFindModuleHelpers.cmake
 share/ECM/modules/ECMGenerateHeaders.cmake
 share/ECM/modules/ECMGeneratePkgConfigFile.cmake
 share/ECM/modules/ECMGeneratePriFile.cmake
+share/ECM/modules/ECMGenerateQmlTypes.cmake
 share/ECM/modules/ECMInstallIcons.cmake
 share/ECM/modules/ECMMarkAsTest.cmake
 share/ECM/modules/ECMMarkNonGuiExecutable.cmake
@@ -62,6 +65,8 @@ share/ECM/modules/ECMUseFindModules.cmake
 share/ECM/modules/ECMVersionHeader.h.in
 share/ECM/modules/ECMWinResolveSymlinks.cmake
 share/ECM/modules/ecm_uninstall.cmake.in
+share/ECM/test-modules/
+share/ECM/test-modules/test_execute_and_compare.cmake
 share/ECM/toolchain/
 share/ECM/toolchain/Android.cmake
 share/ECM/toolchain/deployment-file.json.in

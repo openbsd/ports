@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/05/26 23:58:58 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/06/07 17:03:37 rsadowski Exp $
 @bin bin/kgendesignerplugin
 lib/cmake/KF5DesignerPlugin/
 lib/cmake/KF5DesignerPlugin/KF5DesignerPluginConfig.cmake
@@ -6,6 +6,7 @@ lib/cmake/KF5DesignerPlugin/KF5DesignerPluginConfigVersion.cmake
 lib/cmake/KF5DesignerPlugin/KF5DesignerPluginMacros.cmake
 lib/cmake/KF5DesignerPlugin/KF5DesignerPluginTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5DesignerPlugin/KF5DesignerPluginTargets.cmake
+lib/qt5/plugins/designer/
 lib/qt5/plugins/designer/kdewebkit5widgets.so
 lib/qt5/plugins/designer/kf5widgets.so
 @man man/man1/kgendesignerplugin.1

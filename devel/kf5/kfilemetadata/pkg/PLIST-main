@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2016/12/25 14:54:48 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2017/06/07 17:03:38 rsadowski Exp $
 include/KF5/KFileMetaData/
 include/KF5/KFileMetaData/KFileMetaData/
 include/KF5/KFileMetaData/KFileMetaData/ExtractionResult
@@ -50,4 +50,3 @@ lib/qt5/plugins/kf5/kfilemetadata/kfilemetadata_popplerextractor.so
 lib/qt5/plugins/kf5/kfilemetadata/kfilemetadata_taglibextractor.so
 lib/qt5/plugins/kf5/kfilemetadata/writers/
 lib/qt5/plugins/kf5/kfilemetadata/writers/kfilemetadata_taglibwriter.so
-share/locale/et/LC_MESSAGES/kfilemetadata.mo

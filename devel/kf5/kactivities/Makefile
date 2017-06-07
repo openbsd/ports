@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2017/05/24 19:38:09 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2017/06/07 17:03:37 rsadowski Exp $
 
 COMMENT =	core components for the KDE Activity concept
 DISTNAME =	kactivities-${VERSION}
 PKGNAME =	kf5-${DISTNAME}
 
-SHARED_LIBS =	KF5Activities		1.0
+SHARED_LIBS =	KF5Activities		2.0
 
 WANTLIB += KF5ConfigCore KF5CoreAddons KF5KIOCore KF5Service Qt5Core
 WANTLIB += Qt5DBus Qt5Gui Qt5Network Qt5Qml Qt5Quick Qt5Sql c
