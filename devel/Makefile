@@ -1282,6 +1282,7 @@
      SUBDIR += py-clint
      SUBDIR += py-clint,python3
      SUBDIR += py-cloudpickle
+     SUBDIR += py-cloudpickle,python3
      SUBDIR += py-codestyle
      SUBDIR += py-codestyle,python3
      SUBDIR += py-colorama
