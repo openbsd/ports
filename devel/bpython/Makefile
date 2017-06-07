@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.13 2017/05/17 11:34:17 landry Exp $
+# $OpenBSD: Makefile,v 1.14 2017/06/07 14:40:21 benoit Exp $
 
 COMMENT=	fancy interface to the Python interpreter
 
-MODPY_EGG_VERSION=0.15
+MODPY_EGG_VERSION=0.16
 DISTNAME=	bpython-${MODPY_EGG_VERSION}
 CATEGORIES=	devel
 
 HOMEPAGE=	http://bpython-interpreter.org/
+MAINTAINER=	Brian Callahan <bcallah@devio.us>
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
