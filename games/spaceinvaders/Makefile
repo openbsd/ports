@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.4 2017/05/29 19:49:53 mglocker Exp $
+# $OpenBSD: Makefile,v 1.5 2017/06/08 10:25:01 mglocker Exp $
 
 COMMENT =		curses-based version of the Space Invaders game
-DISTNAME =		spaceinvaders-0.8
+DISTNAME =		spaceinvaders-1.4
 CATEGORIES =		games
 HOMEPAGE =		http://www.nazgul.ch/dev_spaceinvaders.html
 MAINTAINER =		Marcus Glocker <marcus@nazgul.ch>
@@ -12,11 +12,6 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB = 		c curses
 MASTER_SITES = 		http://www.nazgul.ch/dev/
 NO_TEST =		Yes
-CFLAGS +=		-Wall -Wstrict-prototypes
-
-do-build:
-	${CC} ${CFLAGS} -o ${WRKSRC}/spaceinvaders ${WRKSRC}/spaceinvaders.c \
-	    -lcurses
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/spaceinvaders ${PREFIX}/bin
