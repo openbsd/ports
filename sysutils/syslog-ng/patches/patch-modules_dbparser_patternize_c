@@ -1,10 +1,10 @@
-$OpenBSD: patch-modules_dbparser_patternize_c,v 1.1 2013/11/30 10:02:12 steven Exp $
---- modules/dbparser/patternize.c.orig	Tue Aug 13 11:25:18 2013
-+++ modules/dbparser/patternize.c	Wed Oct  9 23:26:32 2013
-@@ -119,9 +119,8 @@ ptz_find_frequent_words(GPtrArray *logs, guint support
+$OpenBSD: patch-modules_dbparser_patternize_c,v 1.2 2017/06/08 18:19:37 steven Exp $
+--- modules/dbparser/patternize.c.orig	Wed Dec 21 15:57:44 2016
++++ modules/dbparser/patternize.c	Sun Feb  5 23:58:37 2017
+@@ -117,9 +117,8 @@ ptz_find_frequent_words(GPtrArray *logs, guint support
+         {
            msg_progress("Finding frequent words",
-                        evt_tag_str("phase", "caching"),
-                        NULL);
+                        evt_tag_str("phase", "caching"));
 -          srand(time(NULL));
            cachesize = (guint) ((logs->len * PTZ_WORDLIST_CACHE));
 -          cacheseed = rand();

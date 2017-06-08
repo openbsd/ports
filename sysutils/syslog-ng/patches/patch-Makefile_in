@@ -1,13 +1,13 @@
-$OpenBSD: patch-Makefile_in,v 1.9 2016/05/01 11:19:09 steven Exp $
+$OpenBSD: patch-Makefile_in,v 1.10 2017/06/08 18:19:37 steven Exp $
 temporary hack until libtool is fixed.
---- Makefile.in.orig	Tue Oct 27 09:09:48 2015
-+++ Makefile.in	Sat Nov 21 01:24:57 2015
-@@ -5196,7 +5196,7 @@ lib/compat/lib_libsyslog_ng_la-strtok_r.lo:  \
- 	lib/compat/$(DEPDIR)/$(am__dirstamp)
- 
+--- Makefile.in.orig	Wed Dec 21 16:00:32 2016
++++ Makefile.in	Sun Feb  5 23:53:33 2017
+@@ -6203,7 +6203,7 @@ lib/str-repr/lib_libsyslog_ng_la-encode.lo:  \
+ 	lib/str-repr/$(am__dirstamp) \
+ 	lib/str-repr/$(DEPDIR)/$(am__dirstamp)
  lib/libsyslog-ng.la: $(lib_libsyslog_ng_la_OBJECTS) $(lib_libsyslog_ng_la_DEPENDENCIES) $(EXTRA_lib_libsyslog_ng_la_DEPENDENCIES) lib/$(am__dirstamp)
 -	$(AM_V_CCLD)$(lib_libsyslog_ng_la_LINK) -rpath $(libdir) $(lib_libsyslog_ng_la_OBJECTS) $(lib_libsyslog_ng_la_LIBADD) $(LIBS)
 +	$(AM_V_CCLD)$(lib_libsyslog_ng_la_LINK) -rpath $(libdir) -version-info 0:0:0 $(lib_libsyslog_ng_la_OBJECTS) $(lib_libsyslog_ng_la_LIBADD) $(LIBS)
- modules/afamqp/$(am__dirstamp):
- 	@$(MKDIR_P) modules/afamqp
- 	@: > modules/afamqp/$(am__dirstamp)
+ modules/add-contextual-data/$(am__dirstamp):
+ 	@$(MKDIR_P) modules/add-contextual-data
+ 	@: > modules/add-contextual-data/$(am__dirstamp)

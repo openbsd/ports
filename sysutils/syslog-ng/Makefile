@@ -1,54 +1,56 @@
-# $OpenBSD: Makefile,v 1.55 2016/05/01 11:19:09 steven Exp $
+# $OpenBSD: Makefile,v 1.56 2017/06/08 18:19:37 steven Exp $
 
 COMMENT=	syslogd replacement
 
-V =		3.7.2
-REL =		3.7
+V =		3.9.1
+REL =		3.9
 DISTNAME =	syslog-ng-$V
 CATEGORIES =	sysutils
 
 MAINTAINER =	Steven Mestdagh <steven@openbsd.org>
 
-HOMEPAGE =	http://www.balabit.com/network-security/syslog-ng/
+HOMEPAGE =	https://syslog-ng.org/
 
 # GPL v2
 PERMIT_PACKAGE_CDROM =		Yes
 
 MASTER_SITES =	http://github.com/balabit/syslog-ng/releases/download/${DISTNAME}/
 
-SHARED_LIBS =	syslog-ng		3.0 \
-		syslog-ng-${REL}	3.0
+SHARED_LIBS =	syslog-ng		4.0 \
+		syslog-ng-${REL}	4.0
 
 MODULES =	devel/gettext
 
 WANTLIB =	c m pcre crypto ssl evtlog dbi ivykis pthread \
-		glib-2.0 gmodule-2.0 gthread-2.0 json-c
+		glib-2.0 gmodule-2.0 gthread-2.0 json-c \
+		curl nghttp2 z GeoIP
 
 LIB_DEPENDS =	devel/glib2 \
 		devel/json-c \
 		devel/libivykis \
 		sysutils/eventlog \
-		databases/libdbi
+		databases/libdbi>=0.9.0 \
+		net/curl \
+		net/GeoIP
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--disable-tcp-wrapper \
 			--with-pidfile-dir=/var/run \
 			--enable-json \
-			--with-libmongo-client=no \
+			--with-mongoc=no \
 			--with-librabbitmq-client=no \
 			--disable-python \
 			--disable-mongodb \
 			--disable-amqp \
 			--disable-stomp \
-			--disable-geoip \
+			--enable-geoip \
 			--without-libnet \
 			--with-ivykis=system \
+			--with-libcurl=${LOCALBASE} \
 			--enable-sql \
 			--enable-manpages
 CONFIGURE_ENV +=	OPENSSL_CFLAGS="-I/usr/include/openssl" \
-			OPENSSL_LIBS="-lssl -lcrypto" \
-			LIBDBI_CFLAGS="-I/usr/include/openssl" \
-			LIBDBI_LIBS="-ldbi"
+			OPENSSL_LIBS="-lssl -lcrypto" 
 # json-c only installs libjson-c.pc; syslog-ng checks for libjson.pc
 CONFIGURE_ENV +=	JSON_C_CFLAGS="`pkg-config json-c --cflags`" \
 			JSON_C_LIBS="`pkg-config json-c --libs`"

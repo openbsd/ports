@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.21 2016/05/01 11:19:09 steven Exp $
+@comment $OpenBSD: PLIST,v 1.22 2017/06/08 18:19:37 steven Exp $
+@bin bin/dqtool
 @bin bin/loggen
 @bin bin/pdbtool
 bin/update-patterndb
@@ -24,6 +25,7 @@ include/syslog-ng/compat/compat.h
 include/syslog-ng/compat/getutent.h
 include/syslog-ng/compat/glib.h
 include/syslog-ng/compat/lfs.h
+include/syslog-ng/compat/openssl_support.h
 include/syslog-ng/compat/pio.h
 include/syslog-ng/compat/socket.h
 include/syslog-ng/compat/string.h
@@ -38,6 +40,7 @@ include/syslog-ng/debugger/debugger.h
 include/syslog-ng/debugger/tracer.h
 include/syslog-ng/dnscache.h
 include/syslog-ng/driver.h
+include/syslog-ng/fdhelpers.h
 include/syslog-ng/file-perms.h
 include/syslog-ng/filter/
 include/syslog-ng/filter/filter-call.h
@@ -52,6 +55,7 @@ include/syslog-ng/filter/filter-pipe.h
 include/syslog-ng/filter/filter-pri.h
 include/syslog-ng/filter/filter-re.h
 include/syslog-ng/filter/filter-tags.h
+include/syslog-ng/find-crlf.h
 include/syslog-ng/gprocess.h
 include/syslog-ng/gsockaddr.h
 include/syslog-ng/gsocket.h
@@ -67,7 +71,18 @@ include/syslog-ng/libtest/template_lib.h
 include/syslog-ng/libtest/testutils.h
 include/syslog-ng/logmatcher.h
 include/syslog-ng/logmpx.h
-include/syslog-ng/logmsg.h
+include/syslog-ng/logmsg/
+include/syslog-ng/logmsg/gsockaddr-serialize.h
+include/syslog-ng/logmsg/logmsg-serialize-fixup.h
+include/syslog-ng/logmsg/logmsg-serialize.h
+include/syslog-ng/logmsg/logmsg.h
+include/syslog-ng/logmsg/nvtable-serialize-endianutils.h
+include/syslog-ng/logmsg/nvtable-serialize.h
+include/syslog-ng/logmsg/nvtable.h
+include/syslog-ng/logmsg/serialization.h
+include/syslog-ng/logmsg/tags-serialize.h
+include/syslog-ng/logmsg/tags.h
+include/syslog-ng/logmsg/timestamp-serialize.h
 include/syslog-ng/logpipe.h
 include/syslog-ng/logproto/
 include/syslog-ng/logproto/logproto-buffered-server.h
@@ -96,11 +111,18 @@ include/syslog-ng/mainloop-worker.h
 include/syslog-ng/mainloop.h
 include/syslog-ng/memtrace.h
 include/syslog-ng/messages.h
-include/syslog-ng/misc.h
 include/syslog-ng/ml-batched-timer.h
 include/syslog-ng/module-config.h
+include/syslog-ng/modules/
+include/syslog-ng/modules/add-contextual-data/
+include/syslog-ng/modules/add-contextual-data/add-contextual-data-parser.h
+include/syslog-ng/modules/add-contextual-data/add-contextual-data-selector.h
+include/syslog-ng/modules/add-contextual-data/add-contextual-data-template-selector.h
+include/syslog-ng/modules/add-contextual-data/add-contextual-data.h
+include/syslog-ng/modules/add-contextual-data/context-info-db.h
+include/syslog-ng/modules/add-contextual-data/contextual-data-record-scanner.h
+include/syslog-ng/modules/add-contextual-data/csv-contextual-data-record-scanner.h
 include/syslog-ng/msg-format.h
-include/syslog-ng/nvtable.h
 include/syslog-ng/parse-number.h
 include/syslog-ng/parser/
 include/syslog-ng/parser/parser-expr-parser.h
@@ -117,6 +139,7 @@ include/syslog-ng/pragma-parser.h
 include/syslog-ng/presented-persistable-state.h
 include/syslog-ng/rcptid.h
 include/syslog-ng/reloc.h
+include/syslog-ng/resolved-configurable-paths.h
 include/syslog-ng/rewrite/
 include/syslog-ng/rewrite/rewrite-expr-parser.h
 include/syslog-ng/rewrite/rewrite-expr.h
@@ -124,9 +147,14 @@ include/syslog-ng/rewrite/rewrite-groupset.h
 include/syslog-ng/rewrite/rewrite-set-tag.h
 include/syslog-ng/rewrite/rewrite-set.h
 include/syslog-ng/rewrite/rewrite-subst.h
+include/syslog-ng/rewrite/rewrite-unset.h
 include/syslog-ng/ringbuffer.h
 include/syslog-ng/run-id.h
+include/syslog-ng/scanner/
+include/syslog-ng/scanner/csv-scanner/
+include/syslog-ng/scanner/csv-scanner/csv-scanner.h
 include/syslog-ng/scratch-buffers.h
+include/syslog-ng/seqnum.h
 include/syslog-ng/serialize.h
 include/syslog-ng/service-management.h
 include/syslog-ng/stats/
@@ -138,10 +166,14 @@ include/syslog-ng/stats/stats-registry.h
 include/syslog-ng/stats/stats-syslog.h
 include/syslog-ng/stats/stats.h
 include/syslog-ng/str-format.h
-include/syslog-ng/stringutils.h
+include/syslog-ng/str-repr/
+include/syslog-ng/str-repr/decode.h
+include/syslog-ng/str-repr/encode.h
+include/syslog-ng/str-utils.h
+include/syslog-ng/string-list.h
 include/syslog-ng/syslog-names.h
+include/syslog-ng/syslog-ng-config.h
 include/syslog-ng/syslog-ng.h
-include/syslog-ng/tags.h
 include/syslog-ng/template/
 include/syslog-ng/template/common-template-typedefs.h
 include/syslog-ng/template/compiler.h
@@ -165,28 +197,41 @@ include/syslog-ng/transport/transport-pipe.h
 include/syslog-ng/transport/transport-socket.h
 include/syslog-ng/transport/transport-tls.h
 include/syslog-ng/type-hinting.h
+include/syslog-ng/userdb.h
 include/syslog-ng/utf8utils.h
 include/syslog-ng/uuid.h
-include/syslog-ng/value-pairs.h
+include/syslog-ng/value-pairs/
+include/syslog-ng/value-pairs/cmdline.h
+include/syslog-ng/value-pairs/evttag.h
+include/syslog-ng/value-pairs/transforms.h
+include/syslog-ng/value-pairs/value-pairs.h
 include/syslog-ng/versioning.h
-include/syslog-ng/vptransform.h
-@lib lib/libsyslog-ng-3.7.so.${LIBsyslog-ng-3.7_VERSION}
+@lib lib/libsyslog-ng-3.9.so.${LIBsyslog-ng-3.9_VERSION}
+lib/libsyslog-ng-native-connector.a
 lib/libsyslog-ng.a
 lib/libsyslog-ng.la
 @lib lib/libsyslog-ng.so.${LIBsyslog-ng_VERSION}
+lib/pkgconfig/syslog-ng-add-contextual-data.pc
+lib/pkgconfig/syslog-ng-native-connector.pc
 lib/pkgconfig/syslog-ng-test.pc
 lib/pkgconfig/syslog-ng.pc
 lib/syslog-ng/
+lib/syslog-ng/libadd-contextual-data.so
 lib/syslog-ng/libaffile.so
 lib/syslog-ng/libafprog.so
 lib/syslog-ng/libafsocket.so
 lib/syslog-ng/libafsql.so
 lib/syslog-ng/libafuser.so
 lib/syslog-ng/libbasicfuncs.so
+lib/syslog-ng/libcef.so
 lib/syslog-ng/libconfgen.so
 lib/syslog-ng/libcryptofuncs.so
 lib/syslog-ng/libcsvparser.so
+lib/syslog-ng/libcurl.so
+lib/syslog-ng/libdate.so
 lib/syslog-ng/libdbparser.so
+lib/syslog-ng/libdisk-buffer.so
+lib/syslog-ng/libgeoip-plugin.so
 lib/syslog-ng/libgraphite.so
 lib/syslog-ng/libjson-plugin.so
 lib/syslog-ng/libkvformat.so
@@ -210,4 +255,51 @@ share/examples/syslog-ng/scl.conf
 share/examples/syslog-ng/syslog-ng.conf
 share/examples/syslog-ng/syslog-ng.conf.openbsd
 @sample ${SYSCONFDIR}/syslog-ng.conf
+share/syslog-ng/
+share/syslog-ng/include/
+share/syslog-ng/include/scl/
+share/syslog-ng/include/scl/apache/
+share/syslog-ng/include/scl/apache/apache.conf
+share/syslog-ng/include/scl/cim/
+share/syslog-ng/include/scl/cim/template.conf
+share/syslog-ng/include/scl/elasticsearch/
+share/syslog-ng/include/scl/elasticsearch/plugin.conf
+share/syslog-ng/include/scl/graphite/
+share/syslog-ng/include/scl/graphite/README
+share/syslog-ng/include/scl/graphite/plugin.conf
+share/syslog-ng/include/scl/hdfs/
+share/syslog-ng/include/scl/hdfs/plugin.conf
+share/syslog-ng/include/scl/kafka/
+share/syslog-ng/include/scl/kafka/plugin.conf
+share/syslog-ng/include/scl/loggly/
+share/syslog-ng/include/scl/loggly/loggly.conf
+share/syslog-ng/include/scl/logmatic/
+share/syslog-ng/include/scl/logmatic/logmatic.conf
+share/syslog-ng/include/scl/mbox/
+share/syslog-ng/include/scl/mbox/mbox.conf
+share/syslog-ng/include/scl/nodejs/
+share/syslog-ng/include/scl/nodejs/plugin.conf
+share/syslog-ng/include/scl/pacct/
+share/syslog-ng/include/scl/pacct/plugin.conf
+share/syslog-ng/include/scl/rewrite/
+share/syslog-ng/include/scl/rewrite/cc-mask.conf
+share/syslog-ng/include/scl/solaris/
+share/syslog-ng/include/scl/solaris/plugin.conf
+share/syslog-ng/include/scl/syslogconf/
+share/syslog-ng/include/scl/syslogconf/README
+share/syslog-ng/include/scl/syslogconf/convert-syslogconf.awk
+share/syslog-ng/include/scl/syslogconf/plugin.conf
+share/syslog-ng/include/scl/system/
+share/syslog-ng/include/scl/system/plugin.conf
+share/syslog-ng/tools/
+share/syslog-ng/tools/cfg-grammar.y
+share/syslog-ng/tools/lex-rules.am
+share/syslog-ng/tools/merge-grammar.pl
+share/syslog-ng/tools/system-expand.sh
+share/syslog-ng/xsd/
+share/syslog-ng/xsd/patterndb-1.xsd
+share/syslog-ng/xsd/patterndb-2.xsd
+share/syslog-ng/xsd/patterndb-3.xsd
+share/syslog-ng/xsd/patterndb-4.xsd
+share/syslog-ng/xsd/patterndb-5.xsd
 @rcscript ${RCDIR}/syslog_ng

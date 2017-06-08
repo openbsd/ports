@@ -1,7 +1,9 @@
-$OpenBSD: patch-configure,v 1.4 2016/05/01 11:19:09 steven Exp $
---- configure.orig	Sun Apr  3 20:18:45 2016
-+++ configure	Sun Apr  3 20:19:27 2016
-@@ -16790,7 +16790,7 @@ fi
+$OpenBSD: patch-configure,v 1.5 2017/06/08 18:19:37 steven Exp $
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -17316,7 +17316,7 @@ fi
   else
      pkg_failed=untried
  fi

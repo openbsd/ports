@@ -1,12 +1,12 @@
-$OpenBSD: patch-libtest_mock-transport_c,v 1.1 2013/11/30 10:02:12 steven Exp $
+$OpenBSD: patch-libtest_mock-transport_c,v 1.2 2017/06/08 18:19:37 steven Exp $
 get struct iovec
---- libtest/mock-transport.c.orig	Sat Oct  5 08:42:43 2013
-+++ libtest/mock-transport.c	Sat Oct  5 08:42:56 2013
+--- libtest/mock-transport.c.orig	Wed Dec 21 15:57:44 2016
++++ libtest/mock-transport.c	Sun Feb  5 23:56:16 2017
 @@ -26,6 +26,7 @@
  #include "gsockaddr.h"
  
  #include <string.h>
 +#include <sys/uio.h>
+ #include <errno.h>
  
  typedef struct
- {
