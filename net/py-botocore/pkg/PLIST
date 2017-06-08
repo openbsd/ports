@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.58 2017/06/06 08:57:11 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.59 2017/06/08 07:25:12 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/botocore/
 lib/python${MODPY_VERSION}/site-packages/botocore-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/botocore-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -381,6 +381,9 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/glacier/2012-06-01/exampl
 lib/python${MODPY_VERSION}/site-packages/botocore/data/glacier/2012-06-01/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/glacier/2012-06-01/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/glacier/2012-06-01/waiters-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/greengrass/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/greengrass/2017-06-07/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/greengrass/2017-06-07/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/health/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/health/2016-08-04/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/health/2016-08-04/examples-1.json
