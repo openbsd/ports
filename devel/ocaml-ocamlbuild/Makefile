@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/07/06 21:31:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2017/06/08 13:43:24 espie Exp $
 
 COMMENT =	ocamlbuild
 CATEGORIES =	devel
@@ -24,6 +24,8 @@ MAKE_ENV += OCAML_NATIVE=true
 MAKE_ENV += OCAML_NATIVE=false
 .endif
 
+# simply avoid stupid check that's missing DESTDIR
+FAKE_FLAGS += CHECK_IF_PREINSTALLED=false
 
 USE_GMAKE =		Yes
 
