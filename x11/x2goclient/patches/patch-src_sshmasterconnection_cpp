@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_sshmasterconnection_cpp,v 1.1.1.1 2017/06/08 18:05:04 rsadowski Exp $
+
+Increase the thread stack size to the default size on Linux, fixes
+a crash.
+
+--- src/sshmasterconnection.cpp.orig	Wed Feb 22 05:11:35 2017
++++ src/sshmasterconnection.cpp	Wed Feb 22 20:59:17 2017
+@@ -159,7 +159,7 @@ SshMasterConnection::SshMasterConnection (QObject* par
+         QString proxylogin, QString proxypassword, QString proxykey,
+         bool proxyautologin, bool proxyKrbLogin ) : QThread ( parent )
+ {
+-#if defined ( Q_OS_DARWIN )
++#if defined ( Q_OS_DARWIN ) || defined(__OpenBSD__)
+     // Mac OS X provides only 512KB stack space for secondary threads.
+     // As we put a 512KB buffer on the stack later on, we need a bigger stack space.
+     setStackSize (sizeof (char) * 1024 * 1024 * 2);

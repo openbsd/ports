@@ -1,0 +1,22 @@
+$OpenBSD: patch-x2goclient_pro,v 1.1.1.1 2017/06/08 18:05:04 rsadowski Exp $
+--- x2goclient.pro.orig	Wed Feb 22 05:11:35 2017
++++ x2goclient.pro	Wed Feb 22 22:18:23 2017
+@@ -130,7 +130,8 @@ SOURCES += src/sharewidget.cpp \
+            src/compat.cpp \
+            src/pulsemanager.cpp
+ 
+-LIBS += -lssh
++LIBS += -lssh -lldap -lcups -lX11 -lXpm
++
+ win32:LIBS += -lAdvAPI32 -lshell32 -lUser32
+ 
+ plugin {
+@@ -172,7 +173,7 @@ else:message("No translation files in project")
+ 
+ TEMPLATE = app
+ DEPENDPATH += .
+-INCLUDEPATH += src
++INCLUDEPATH += src $(X11BASE)/include
+ RESOURCES += res/resources.qrc
+ 
+ exists(res/txt/git-info) {

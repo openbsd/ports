@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_sshprocess_cpp,v 1.1.1.1 2017/06/08 18:05:04 rsadowski Exp $
+--- src/sshprocess.cpp.orig	Tue Jul 28 22:40:25 2015
++++ src/sshprocess.cpp	Tue Jul 28 22:41:01 2015
+@@ -23,6 +23,8 @@
+ #include <QUuid>
+ 
+ #include <QProcess>
++#include <sys/types.h>
++#include <sys/socket.h>
+ #ifndef Q_OS_WIN
+ #include <arpa/inet.h>
+ #include <netinet/tcp.h>
