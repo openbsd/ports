@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2016/08/15 23:29:08 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.7 2017/06/08 17:44:44 czarkoff Exp $
 
 COMMENT =		high performance, concurrent HTTP client library
 
@@ -25,12 +25,11 @@ RUN_DEPENDS =		devel/py-backports-ssl-match-hostname \
 			devel/py-six
 TEST_DEPENDS =		devel/py-test
 
-MAKE_ENV =		PYTHONPATH="${WRKSRC}/lib.openbsd-6.0-amd64-2.7"
-
 post-patch:
 	@rm -R ${WRKSRC}/src/geventhttpclient/tests/__pycache__
 
 do-test:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} py.test src/geventhttpclient/tests
+	@cd ${WRKSRC} && ${SETENV} PYTHONPATH="`ls -d ${WRKSRC}/lib.*`" \
+		py.test src/geventhttpclient/tests
 
 .include <bsd.port.mk>
