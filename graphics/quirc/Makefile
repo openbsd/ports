@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/08/26 10:14:14 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.2 2017/06/08 15:50:46 czarkoff Exp $
 
+V =			1.0
 COMMENT =		QR decoder library
-DISTNAME =		libquirc-0.0.20160815
+DISTNAME =		libquirc-$V
 GH_ACCOUNT =		dlbeer
 GH_PROJECT =		quirc
-GH_COMMIT =		5b262480091d5f84a67a4a56c728fc8b39844339
+GH_TAGNAME =		v$V
 CATEGORIES =		graphics
 
 SHARED_LIBS +=		quirc 0.0 # 1.0
