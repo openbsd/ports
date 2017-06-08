@@ -1,6 +1,7 @@
-$OpenBSD: patch-src_config_c,v 1.8 2016/12/26 14:53:25 czarkoff Exp $
---- src/config.c.orig	Fri Dec 23 15:43:25 2016
-+++ src/config.c	Sun Dec 25 15:52:59 2016
+$OpenBSD: patch-src_config_c,v 1.9 2017/06/08 14:29:37 czarkoff Exp $
+Index: src/config.c
+--- src/config.c.orig
++++ src/config.c
 @@ -378,7 +378,7 @@ static const char *default_video_device(void)
  #endif
  
@@ -70,7 +71,7 @@ $OpenBSD: patch-src_config_c,v 1.8 2016/12/26 14:53:25 czarkoff Exp $
  	(void)re_fprintf(f, "#module\t\t\t" MOD_PRE "aubridge" MOD_EXT "\n");
  	(void)re_fprintf(f, "#module\t\t\t" MOD_PRE "aufile" MOD_EXT "\n");
  
-@@ -659,9 +659,10 @@ int config_write_template(const char *file, const stru
+@@ -659,9 +659,9 @@ int config_write_template(const char *file, const stru
  #else
  	(void)re_fprintf(f, "#module\t\t\t" MOD_PRE "avcodec" MOD_EXT "\n");
  #endif
@@ -80,11 +81,10 @@ $OpenBSD: patch-src_config_c,v 1.8 2016/12/26 14:53:25 czarkoff Exp $
 +	(void)re_fprintf(f, "module\t\t\t" MOD_PRE "vp8" MOD_EXT "\n");
 +	(void)re_fprintf(f, "module\t\t\t" MOD_PRE "vp9" MOD_EXT "\n");
 +	(void)re_fprintf(f, "module\t\t\t" MOD_PRE "h265" MOD_EXT "\n");
-+	(void)re_fprintf(f, "#module\t\t\t" MOD_PRE "daala" MOD_EXT "\n");
  
  	(void)re_fprintf(f, "\n# Video filter Modules (in encoding order)\n");
  	(void)re_fprintf(f, "#module\t\t\t" MOD_PRE "selfview" MOD_EXT "\n");
-@@ -682,14 +683,14 @@ int config_write_template(const char *file, const stru
+@@ -682,14 +682,14 @@ int config_write_template(const char *file, const stru
  	(void)re_fprintf(f, "module\t\t\t" MOD_PRE "dshow" MOD_EXT "\n");
  
  #else
@@ -104,7 +104,7 @@ $OpenBSD: patch-src_config_c,v 1.8 2016/12/26 14:53:25 czarkoff Exp $
  	(void)re_fprintf(f, "#module\t\t\t" MOD_PRE "cairo" MOD_EXT "\n");
  	(void)re_fprintf(f, "#module\t\t\t" MOD_PRE "vidbridge" MOD_EXT "\n");
  
-@@ -700,16 +701,16 @@ int config_write_template(const char *file, const stru
+@@ -700,16 +700,16 @@ int config_write_template(const char *file, const stru
  #ifdef LINUX
  	(void)re_fprintf(f, "#module\t\t\t" MOD_PRE "directfb" MOD_EXT "\n");
  #endif
@@ -125,7 +125,7 @@ $OpenBSD: patch-src_config_c,v 1.8 2016/12/26 14:53:25 czarkoff Exp $
  
  	(void)re_fprintf(f, "\n# Media NAT modules\n");
  	(void)re_fprintf(f, "module\t\t\t" MOD_PRE "stun" MOD_EXT "\n");
-@@ -718,8 +719,8 @@ int config_write_template(const char *file, const stru
+@@ -718,8 +718,8 @@ int config_write_template(const char *file, const stru
  	(void)re_fprintf(f, "#module\t\t\t" MOD_PRE "natpmp" MOD_EXT "\n");
  
  	(void)re_fprintf(f, "\n# Media encryption modules\n");
@@ -136,7 +136,7 @@ $OpenBSD: patch-src_config_c,v 1.8 2016/12/26 14:53:25 czarkoff Exp $
  	(void)re_fprintf(f, "#module\t\t\t" MOD_PRE "zrtp" MOD_EXT "\n");
  	(void)re_fprintf(f, "\n");
  
-@@ -764,8 +765,8 @@ int config_write_template(const char *file, const stru
+@@ -764,8 +764,8 @@ int config_write_template(const char *file, const stru
  	(void)re_fprintf(f, "\n");
  	(void)re_fprintf(f, "http_listen\t\t0.0.0.0:8000\n");
  

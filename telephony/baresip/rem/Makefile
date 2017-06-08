@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2016/12/03 10:13:06 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.7 2017/06/08 14:29:37 czarkoff Exp $
 
 COMMENT =		library for real-time audio and video processing
 
-V =			0.5.0
+V =			0.5.1
 DISTNAME =		rem-${V}
-SHARED_LIBS =		rem	0.2
+SHARED_LIBS =		rem	0.3
 CATEGORIES +=		multimedia devel
 
 WANTLIB += m re
