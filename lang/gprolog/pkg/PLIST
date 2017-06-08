@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2009/12/27 19:30:21 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2017/06/08 15:25:57 espie Exp $
 bin/fd2c
 bin/gplc
 bin/gprolog
@@ -10,6 +10,7 @@ libdata/gprolog/
 libdata/gprolog/COPYING
 libdata/gprolog/ChangeLog
 libdata/gprolog/NEWS
+libdata/gprolog/README
 libdata/gprolog/VERSION
 libdata/gprolog/bin/
 @bin libdata/gprolog/bin/fd2c
@@ -19,6 +20,7 @@ libdata/gprolog/bin/
 @bin libdata/gprolog/bin/ma2asm
 @bin libdata/gprolog/bin/pl2wam
 @bin libdata/gprolog/bin/wam2ma
+libdata/gprolog/gprolog.ico
 libdata/gprolog/include/
 libdata/gprolog/include/fd_to_c.h
 libdata/gprolog/include/gprolog.h
@@ -34,11 +36,9 @@ libdata/gprolog/lib/liblinedit.a
 libdata/gprolog/lib/top_level.o
 share/doc/gprolog/
 share/doc/gprolog/compil-scheme.eps
-share/doc/gprolog/compil-scheme.gif
 share/doc/gprolog/compil-scheme.pdf
 share/doc/gprolog/contents_motif.gif
 share/doc/gprolog/debug-box.eps
-share/doc/gprolog/debug-box.gif
 share/doc/gprolog/debug-box.pdf
 share/doc/gprolog/gprolog.chm
 share/doc/gprolog/gprolog.dvi
@@ -125,6 +125,8 @@ share/doc/gprolog/html/gprolog073.html
 share/doc/gprolog/html/index.html
 share/doc/gprolog/html/next_motif.gif
 share/doc/gprolog/html/previous_motif.gif
+share/doc/gprolog/logo.eps
+share/doc/gprolog/logo.pdf
 share/examples/gprolog/
 share/examples/gprolog/ExamplesC/
 share/examples/gprolog/ExamplesC/Makefile
@@ -154,6 +156,7 @@ share/examples/gprolog/ExamplesFD/eq10.pl
 share/examples/gprolog/ExamplesFD/eq20.pl
 share/examples/gprolog/ExamplesFD/five.pl
 share/examples/gprolog/ExamplesFD/gardner.pl
+share/examples/gprolog/ExamplesFD/interval.pl
 share/examples/gprolog/ExamplesFD/langford.pl
 share/examples/gprolog/ExamplesFD/magic.pl
 share/examples/gprolog/ExamplesFD/magsq.pl

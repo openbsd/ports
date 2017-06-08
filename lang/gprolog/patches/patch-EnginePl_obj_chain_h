@@ -1,11 +1,13 @@
-$OpenBSD: patch-EnginePl_obj_chain_h,v 1.1 2009/12/27 19:30:21 jasper Exp $
---- EnginePl/obj_chain.h.orig	Wed May  9 03:20:35 2007
-+++ EnginePl/obj_chain.h	Wed May  9 03:21:54 2007
-@@ -84,6 +84,6 @@ static long obj_chain_start = (long) OBJ_CTOR;
+$OpenBSD: patch-EnginePl_obj_chain_h,v 1.2 2017/06/08 15:25:57 espie Exp $
+Index: EnginePl/obj_chain.h
+--- EnginePl/obj_chain.h.orig
++++ EnginePl/obj_chain.h
+@@ -95,7 +95,7 @@ static PlLong obj_chain_start = (PlLong) OBJ_CTOR;
  
  
  
--#if defined(_MSC_VER) || defined(M_ix86_darwin)
-+#if defined(_MSC_VER) || defined(M_ix86_darwin) || defined(__OpenBSD__)
+-#if (defined(_MSC_VER) || defined(M_darwin)) && !defined(OBJ_CHAIN_REVERSE_ORDER)
++#if (defined(_MSC_VER) || defined(M_darwin) || defined(__OpenBSD__)) && !defined(OBJ_CHAIN_REVERSE_ORDER)
  #define OBJ_CHAIN_REVERSE_ORDER
  #endif
+ 

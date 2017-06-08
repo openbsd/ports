@@ -1,0 +1,13 @@
+$OpenBSD: patch-configure_in,v 1.4 2017/06/08 15:25:57 espie Exp $
+
+Index: configure.in
+--- configure.in.orig
++++ configure.in
+@@ -474,6 +474,7 @@ dnl -fomit-frame-pointer does not work on MinGW (teste
+         powerpc*darwin*)   CFLAGS_MACHINE='-mpowerpc -no-cpp-precomp';;
+         x86_64*solaris*)   CFLAGS_MACHINE='-m64';;
+         x86_64*darwin*)    CFLAGS_MACHINE='-march=x86-64 -m64';;
++	*openbsd*)	   CFLAGS_MACHINE='-fno-pie -nopie';;
+     esac
+ 
+     case "$host" in
