@@ -1,26 +1,24 @@
-# $OpenBSD: Makefile,v 1.7 2017/05/13 01:52:38 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2017/06/08 14:27:47 czarkoff Exp $
 
 COMMENT =		ZRTP library
 
-DISTNAME =		libzrtp-0.20130317
-REVISION =		3
+DISTNAME =		libzrtp-0.20170606
 CATEGORIES =		telephony security
-
-HOMEPAGE =		https://github.com/traviscross/libzrtp
 
 MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
 
 # AGPLv3
 PERMIT_PACKAGE_CDROM =	Yes
 
-GH_ACCOUNT =		traviscross
+GH_ACCOUNT =		juha-h
 GH_PROJECT =		libzrtp
-GH_COMMIT =		4cb5110147d2bb7e0466eec8ec838d8372ef54c9
+GH_COMMIT =		edf1d3ecece9e01ff10dadc176a9ea57aaa7e53b
 
 BUILD_DEPENDS =		${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS} \
 			devel/libtool
 CONFIGURE_STYLE =	gnu
+CONFIGURE_ARGS =	--disable-docs
 AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.9
 .include <bsd.port.arch.mk>
