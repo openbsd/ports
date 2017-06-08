@@ -1,8 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 09:09:45 espie Exp $
-libexec/teapop
-@man man/man8/teapop.8
-sbin/cronpopauth.pl
-share/examples/teapop/
-share/examples/teapop/teapop.passwd
-@sample ${SYSCONFDIR}/teapop.passwd
-@comment var/

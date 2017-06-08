@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.355 2017/04/30 20:28:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.356 2017/06/08 12:53:38 sthen Exp $
 
      SUBDIR =
      SUBDIR += abook
@@ -226,7 +226,6 @@
      SUBDIR += swaks
      SUBDIR += sylpheed
      SUBDIR += sympa
-     SUBDIR += teapop
      SUBDIR += thunderbird-i18n
      SUBDIR += tmda
      SUBDIR += tnef
