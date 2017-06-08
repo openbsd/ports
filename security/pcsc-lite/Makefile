@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.36 2017/06/06 14:58:39 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.37 2017/06/08 19:34:03 dcoppa Exp $
 
 COMMENT=	resource manager for PC/SC
 
 V=		1.8.21
 DISTNAME=	pcsc-lite-${V}
+REVISION=	0
 CATEGORIES=	security
 
 SHARED_LIBS+=	pcsclite	1.0 # 1.0.0
@@ -22,7 +23,11 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=		c pthread usb-1.0
 
-MODULES=		lang/python
+MODULES=		gcc4 \
+			lang/python
+
+MODGCC4_ARCHS=		*
+MODGCC4_LANGS=		c
 
 LIB_DEPENDS=		devel/libusb1
 
