@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.592 2017/06/07 17:39:44 robert Exp $
+# $OpenBSD: Makefile,v 1.593 2017/06/08 19:43:22 rsadowski Exp $
 
      SUBDIR =
      SUBDIR += Xaw3d
@@ -325,6 +325,7 @@
      SUBDIR += wxSVG
      SUBDIR += wxWidgets
      SUBDIR += x11vnc
+     SUBDIR += x2goclient
      SUBDIR += x2vnc
      SUBDIR += x2x
      SUBDIR += xaniroc
