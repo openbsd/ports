@@ -1,9 +1,10 @@
-# $OpenBSD: qmake.port.mk,v 1.5 2016/12/25 13:37:27 zhuk Exp $
+# $OpenBSD: qmake.port.mk,v 1.6 2017/06/09 10:34:41 espie Exp $
 
 .if empty(CONFIGURE_STYLE)
 CONFIGURE_STYLE =	qmake
 .endif
 
+DPB_PROPERTIES +=	nojunk
 .if ${MODULES:Mx11/qt?} == ${MODULES}
 ERRORS +=	qmake port module requires one of the x11/qt* modules
 .endif
