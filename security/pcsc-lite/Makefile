@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2017/06/08 19:34:03 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.38 2017/06/09 22:12:54 sthen Exp $
 
 COMMENT=	resource manager for PC/SC
 
@@ -23,11 +23,11 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=		c pthread usb-1.0
 
-MODULES=		gcc4 \
-			lang/python
+MODULES+=		lang/python
 
-MODGCC4_ARCHS=		*
-MODGCC4_LANGS=		c
+# thread-local storage
+COMPILER=		gcc
+COMPILER_LANGS=		c
 
 LIB_DEPENDS=		devel/libusb1
 
