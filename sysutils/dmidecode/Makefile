@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2015/09/08 19:31:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2017/06/09 13:32:29 sthen Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386
 
 COMMENT=	dump DMI/SMBIOS contents in human-readable format
-DISTNAME=	dmidecode-3.0
+DISTNAME=	dmidecode-3.1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://savannah.nongnu.org/download/dmidecode/
+MASTER_SITES=	${MASTER_SITE_SAVANNAH:=dmidecode/}
 
 HOMEPAGE=	http://www.nongnu.org/dmidecode/
 
