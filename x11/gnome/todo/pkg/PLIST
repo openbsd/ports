@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2017/04/25 08:43:11 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2017/06/09 07:10:50 ajacoutot Exp $
 @bin bin/gnome-todo
 include/gnome-todo/
 include/gnome-todo/engine/
@@ -38,6 +38,7 @@ share/gir-1.0/Gtd-1.0.gir
 share/glib-2.0/schemas/org.gnome.todo.background.gschema.xml
 share/glib-2.0/schemas/org.gnome.todo.enums.xml
 share/glib-2.0/schemas/org.gnome.todo.gschema.xml
+share/glib-2.0/schemas/org.gnome.todo.txt.gschema.xml
 share/gnome-todo/
 share/gnome-todo/org.gnome.Todo.Autostart.desktop
 share/gtk-doc/html/gnome-todo/
@@ -76,6 +77,7 @@ share/icons/hicolor/48x48/apps/org.gnome.Todo.png
 share/icons/hicolor/512x512/apps/org.gnome.Todo.png
 share/icons/hicolor/symbolic/apps/org.gnome.Todo-symbolic.svg
 share/locale/ar/LC_MESSAGES/gnome-todo.mo
+share/locale/be/LC_MESSAGES/gnome-todo.mo
 share/locale/ca/LC_MESSAGES/gnome-todo.mo
 share/locale/cs/LC_MESSAGES/gnome-todo.mo
 share/locale/da/LC_MESSAGES/gnome-todo.mo

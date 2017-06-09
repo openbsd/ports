@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2017/05/10 07:36:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2017/06/09 07:10:50 ajacoutot Exp $
 
 COMMENT=		simple task management application
 
 GNOME_PROJECT=		gnome-todo
-GNOME_VERSION=		3.24.1
+GNOME_VERSION=		3.24.2
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
