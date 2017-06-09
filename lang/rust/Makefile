@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2017/05/18 06:39:49 landry Exp $
+# $OpenBSD: Makefile,v 1.44 2017/06/09 12:03:35 krw Exp $
 
 # snapshots are only available for amd64 and i386, for now
 ONLY_FOR_ARCHS =	amd64 i386
@@ -84,7 +84,7 @@ MODGCC4_LANGS =		c++
 MODGCC4_ARCHS =		*	# patches required for base clang
 
 # need to be keep in sync
-LIBESTDC_VERSION =	17.0
+LIBESTDC_VERSION =	17.1
 
 # note: RUSTFLAGS extra flags passed to rust
 # 		-L modgcc-libs : disambiguate libestdc++.so
