@@ -1,0 +1,23 @@
+$OpenBSD: patch-configure,v 1.10 2017/06/09 15:09:51 dcoppa Exp $
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -16001,7 +16001,7 @@ rm -f core conftest.err conftest.$ac_objext conftest.$
+ 
+ echo "$as_me: this is boost.m4 serial 26" >&5
+ boost_save_IFS=$IFS
+-boost_version_req=1.60
++boost_version_req=1.58
+ IFS=.
+ set x $boost_version_req 0 0 0
+ IFS=$boost_save_IFS
+@@ -19500,7 +19500,7 @@ CPPFLAGS=$boost_thread_save_CPPFLAGS
+ 
+ 
+ 
+-LDFLAGS+="$LDFLAGS $BOOST_THREAD_LDFLAGS"
++LDFLAGS="$LDFLAGS $BOOST_THREAD_LDFLAGS"
+ LIBS="$LIBS $BOOST_THREAD_LIBS"
+ 
+ # icu

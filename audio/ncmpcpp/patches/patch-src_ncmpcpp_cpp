@@ -1,34 +1,35 @@
-$OpenBSD: patch-src_ncmpcpp_cpp,v 1.12 2016/11/01 09:31:57 dcoppa Exp $
+$OpenBSD: patch-src_ncmpcpp_cpp,v 1.13 2017/06/09 15:09:51 dcoppa Exp $
 
 OpenBSD lacks sigignore(), use the one from NetBSD
 
---- src/ncmpcpp.cpp.orig	Mon Oct 31 12:24:35 2016
-+++ src/ncmpcpp.cpp	Tue Nov  1 10:10:03 2016
-@@ -68,6 +68,18 @@ namespace
- #		endif // __sun && __SVR4
- 	}
+Index: src/ncmpcpp.cpp
+--- src/ncmpcpp.cpp.orig
++++ src/ncmpcpp.cpp
+@@ -68,6 +68,18 @@ void sighandler(int sig)
+ #endif // __sun && __SVR4
+ }
  
-+	int n_sigignore(int sig)
-+	{
-+		struct sigaction sa;
++int n_sigignore(int sig)
++{
++	struct sigaction sa;
 +
-+		sa.sa_handler = SIG_IGN;
-+		if (sigemptyset(&sa.sa_mask) != 0)
-+			return (-1);
-+		sa.sa_flags = 0;
++	sa.sa_handler = SIG_IGN;
++	if (sigemptyset(&sa.sa_mask) != 0)
++		return (-1);
++	sa.sa_flags = 0;
 +
-+		return (sigaction(sig, &sa, NULL));
-+	}
++	return (sigaction(sig, &sa, NULL));
++}
 +
- 	void do_at_exit()
- 	{
- 		// restore old cerr buffer
-@@ -107,7 +119,7 @@ int main(int argc, char **argv)
- 	signal(SIGPIPE, sighandler);
+ void do_at_exit()
+ {
+ 	// restore old cerr & clog buffers
+@@ -108,7 +120,7 @@ int main(int argc, char **argv)
+ 	cerr_buffer = std::cerr.rdbuf();
+ 	std::cerr.rdbuf(errorlog.rdbuf());
+ 	
+-	sigignore(SIGPIPE);
++	n_sigignore(SIGPIPE);
  	signal(SIGWINCH, sighandler);
- 	// ignore Ctrl-C
--	sigignore(SIGINT);
-+	n_sigignore(SIGINT);
- #	endif // !WIN32
  
- 	NC::initScreen(Config.colors_enabled, Config.mouse_support);
+ 	Mpd.setNoidleCallback(Status::update);
