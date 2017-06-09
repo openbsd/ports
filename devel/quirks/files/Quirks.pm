@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.495 2017/06/08 12:53:38 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.496 2017/06/09 11:13:18 czarkoff Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -977,6 +977,7 @@ my $obsolete_reason = {
 	'rxvt' => 2,
 	'irssi-silc' => 3,
 	'teapop' => 3,
+	'daala' => 6,
 };
 
 # reasons for obsolete packages
