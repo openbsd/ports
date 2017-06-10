@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2015/03/16 20:27:06 landry Exp $
+@comment $OpenBSD: PLIST,v 1.10 2017/06/10 07:29:40 landry Exp $
 include/tumbler-1/
 include/tumbler-1/tumbler/
 include/tumbler-1/tumbler/tumbler-abstract-thumbnailer.h
@@ -52,7 +52,6 @@ share/gtk-doc/html/tumbler/extension-api.html
 share/gtk-doc/html/tumbler/extension-tutorial.html
 share/gtk-doc/html/tumbler/home.png
 share/gtk-doc/html/tumbler/index.html
-share/gtk-doc/html/tumbler/index.sgml
 share/gtk-doc/html/tumbler/left-insensitive.png
 share/gtk-doc/html/tumbler/left.png
 share/gtk-doc/html/tumbler/miscellaneous.html
@@ -90,6 +89,7 @@ share/locale/fi/LC_MESSAGES/tumbler.mo
 share/locale/fr/LC_MESSAGES/tumbler.mo
 share/locale/gl/LC_MESSAGES/tumbler.mo
 share/locale/he/LC_MESSAGES/tumbler.mo
+share/locale/hr/LC_MESSAGES/tumbler.mo
 share/locale/hu/LC_MESSAGES/tumbler.mo
 share/locale/id/LC_MESSAGES/tumbler.mo
 share/locale/is/LC_MESSAGES/tumbler.mo
