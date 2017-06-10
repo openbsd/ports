@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.52 2017/05/27 14:05:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.53 2017/06/10 11:19:41 jasper Exp $
 
 COMMENT=	monitoring and managing daemons utility
 
-DISTNAME=	monit-5.22.0
+DISTNAME=	monit-5.23.0
 
 CATEGORIES=	sysutils
 
 HOMEPAGE=	http://www.mmonit.com/monit/
-
-MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # AGPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
