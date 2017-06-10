@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.12 2016/04/26 07:41:48 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.13 2017/06/10 14:44:59 jasper Exp $
 @bin bin/bijiben
 @bin libexec/bijiben-shell-search-provider
 share/appdata/org.gnome.bijiben.appdata.xml
 share/applications/org.gnome.bijiben.desktop
 share/bijiben/
 share/bijiben/Default.css
+share/bijiben/bijiben.js
 share/bijiben/icons/
 share/bijiben/icons/hicolor/
 share/bijiben/icons/hicolor/16x16/
@@ -223,6 +224,28 @@ share/help/pt_BR/bijiben/notebooks.page
 share/help/pt_BR/bijiben/rename.page
 share/help/pt_BR/bijiben/search.page
 share/help/pt_BR/bijiben/share.page
+share/help/sv/
+share/help/sv/bijiben/
+share/help/sv/bijiben/colors.page
+share/help/sv/bijiben/create.page
+share/help/sv/bijiben/cut-copy-paste.page
+share/help/sv/bijiben/delete-permanent.page
+share/help/sv/bijiben/delete-restore.page
+share/help/sv/bijiben/delete.page
+share/help/sv/bijiben/figures/
+share/help/sv/bijiben/figures/hicolor_apps_16x16_bijiben.png
+share/help/sv/bijiben/figures/hicolor_apps_48x48_bijiben.png
+share/help/sv/bijiben/figures/notes-3-12.png
+share/help/sv/bijiben/format-list.page
+share/help/sv/bijiben/format-text.page
+share/help/sv/bijiben/index.page
+share/help/sv/bijiben/introduction.page
+share/help/sv/bijiben/legal.xml
+share/help/sv/bijiben/new-window.page
+share/help/sv/bijiben/notebooks.page
+share/help/sv/bijiben/rename.page
+share/help/sv/bijiben/search.page
+share/help/sv/bijiben/share.page
 share/icons/hicolor/16x16/apps/org.gnome.bijiben.png
 share/icons/hicolor/22x22/apps/org.gnome.bijiben.png
 share/icons/hicolor/24x24/apps/org.gnome.bijiben.png
@@ -240,10 +263,12 @@ share/locale/da/LC_MESSAGES/bijiben.mo
 share/locale/de/LC_MESSAGES/bijiben.mo
 share/locale/el/LC_MESSAGES/bijiben.mo
 share/locale/en_AU/LC_MESSAGES/bijiben.mo
+share/locale/en_GB/LC_MESSAGES/bijiben.mo
 share/locale/eo/LC_MESSAGES/bijiben.mo
 share/locale/es/LC_MESSAGES/bijiben.mo
 share/locale/et/LC_MESSAGES/bijiben.mo
 share/locale/eu/LC_MESSAGES/bijiben.mo
+share/locale/fa/LC_MESSAGES/bijiben.mo
 share/locale/fi/LC_MESSAGES/bijiben.mo
 share/locale/fr/LC_MESSAGES/bijiben.mo
 share/locale/fur/LC_MESSAGES/bijiben.mo
@@ -252,6 +277,7 @@ share/locale/gl/LC_MESSAGES/bijiben.mo
 share/locale/he/LC_MESSAGES/bijiben.mo
 share/locale/hu/LC_MESSAGES/bijiben.mo
 share/locale/id/LC_MESSAGES/bijiben.mo
+share/locale/is/LC_MESSAGES/bijiben.mo
 share/locale/it/LC_MESSAGES/bijiben.mo
 share/locale/ja/LC_MESSAGES/bijiben.mo
 share/locale/kk/LC_MESSAGES/bijiben.mo
@@ -279,6 +305,7 @@ share/locale/te/LC_MESSAGES/bijiben.mo
 share/locale/tg/LC_MESSAGES/bijiben.mo
 share/locale/tr/LC_MESSAGES/bijiben.mo
 share/locale/uk/LC_MESSAGES/bijiben.mo
+share/locale/vi/LC_MESSAGES/bijiben.mo
 share/locale/zh_CN/LC_MESSAGES/bijiben.mo
 share/locale/zh_HK/LC_MESSAGES/bijiben.mo
 share/locale/zh_TW/LC_MESSAGES/bijiben.mo
