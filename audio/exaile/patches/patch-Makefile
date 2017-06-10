@@ -1,6 +1,7 @@
-$OpenBSD: patch-Makefile,v 1.6 2013/01/11 10:17:19 giovanni Exp $
---- Makefile.orig	Thu Nov 15 18:28:50 2012
-+++ Makefile	Thu Jan  3 18:01:36 2013
+$OpenBSD: patch-Makefile,v 1.7 2017/06/10 14:18:37 giovanni Exp $
+Index: Makefile
+--- Makefile.orig
++++ Makefile
 @@ -1,17 +1,17 @@
 -PYTHON2_CMD	?= `command -v python2`
 +PYTHON2_CMD	?= ${MODPY_BIN}
@@ -14,8 +15,8 @@ $OpenBSD: patch-Makefile,v 1.6 2013/01/11 10:17:19 giovanni Exp $
  EXAILEBINDIR  = ${DESTDIR}${PREFIX}/bin
 -EXAILELIBDIR 	= ${DESTDIR}${PREFIX}${LIBINSTALLDIR}/exaile
 -EXAILESHAREDIR 	= ${DESTDIR}${PREFIX}/share/exaile
-+EXAILELIBDIR 	= $(DESTDIR)${MODPY_SITEPKG}/exaile
-+EXAILESHAREDIR 	= $(DESTDIR)${TRUEPREFIX}/share/exaile
++EXAILELIBDIR 	= ${DESTDIR}${MODPY_SITEPKG}/exaile
++EXAILESHAREDIR 	= ${DESTDIR}${TRUEPREFIX}/share/exaile
  EXAILECONFDIR 	= ${DESTDIR}${XDGCONFDIR}/exaile
  
  .PHONY: dist test coverage clean sanitycheck
@@ -25,7 +26,7 @@ $OpenBSD: patch-Makefile,v 1.6 2013/01/11 10:17:19 giovanni Exp $
  	@echo "Ready to install..."
  
  # The no_locale stuff is by request of BSD people, please ensure
-@@ -52,10 +52,9 @@ make-install-dirs:
+@@ -53,10 +53,10 @@ make-install-dirs:
  	mkdir -p ${EXAILESHAREDIR}/data/ui/widgets
  	mkdir -p ${EXAILESHAREDIR}/data/migrations
  	mkdir -p ${EXAILESHAREDIR}/data/migrations/migration_200907100931
@@ -34,12 +35,13 @@ $OpenBSD: patch-Makefile,v 1.6 2013/01/11 10:17:19 giovanni Exp $
 -	mkdir -p ${DESTDIR}${PREFIX}/share/man/man1
 -	mkdir -p ${DESTDIR}${PREFIX}/share/dbus-1/services
 +	mkdir -p ${DESTDIR}${TRUEPREFIX}/share/pixmaps
++	mkdir -p ${DESTDIR}${TRUEPREFIX}/share/appdata
 +	mkdir -p ${DESTDIR}${TRUEPREFIX}/share/applications
 +	mkdir -p ${DESTDIR}${TRUEPREFIX}/share/dbus-1/services
  	mkdir -p ${EXAILECONFDIR}
  
  uninstall:
-@@ -105,7 +104,7 @@ install-target: make-install-dirs
+@@ -108,7 +108,7 @@ install-target: make-install-dirs
  	install -m 644 data/images/scalable/*.svg ${EXAILESHAREDIR}/data/images/scalable
  	install -m 644 data/images/*.png ${EXAILESHAREDIR}/data/images
  	install -m 644 data/images/128x128/exaile.png \
@@ -48,18 +50,20 @@ $OpenBSD: patch-Makefile,v 1.6 2013/01/11 10:17:19 giovanni Exp $
  	install -m 644 data/ui/*.ui ${EXAILESHAREDIR}/data/ui
  	install -m 644 data/ui/panel/*.ui ${EXAILESHAREDIR}/data/ui/panel
  	install -m 644 data/ui/preferences/*.ui ${EXAILESHAREDIR}/data/ui/preferences
-@@ -114,8 +113,8 @@ install-target: make-install-dirs
+@@ -117,10 +117,10 @@ install-target: make-install-dirs
  	install -m 644 data/migrations/migration_200907100931/*.py \
  	    	${EXAILESHAREDIR}/data/migrations/migration_200907100931/
  	install -m 644 data/exaile.desktop \
--		${DESTDIR}${PREFIX}/share/applications/	
+-		${DESTDIR}${PREFIX}/share/applications/
++		${DESTDIR}${TRUEPREFIX}/share/applications/
+ 	install -m 644 data/exaile.appdata.xml \
+ 		${DESTDIR}${PREFIX}/share/appdata/	
 -	-install -m 644 exaile.1.gz ${DESTDIR}${PREFIX}/share/man/man1/
-+		$(DESTDIR)${TRUEPREFIX}/share/applications/	
-+	-install -m 644 exaile.1 $(DESTDIR)${TRUEPREFIX}/man/man1/
++	-install -m 644 exaile.1.gz ${DESTDIR}${TRUEPREFIX}/share/man/man1/
  	install -m 644 data/config/settings.ini ${EXAILECONFDIR}
  	tools/generate-launcher "${DESTDIR}" "${PREFIX}" "${LIBINSTALLDIR}" \
  		"${PYTHON2_CMD}" && \
-@@ -130,10 +129,10 @@ locale:
+@@ -135,10 +135,10 @@ locale:
  install-locale:
  	for f in `find po -name exaile.mo` ; do \
  	  install -d -m 755 \

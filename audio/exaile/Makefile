@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.32 2015/10/07 05:50:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2017/06/10 14:18:37 giovanni Exp $
 
 COMMENT =	music manager and player for GTK+ written in Python
 
-V =		3.3
-P =		1
+V =		3.4
+P =		0
 DISTNAME =	exaile-${V}.${P}
-REVISION =	5
 
 CATEGORIES =	audio x11
 
 HOMEPAGE =	http://www.exaile.org/
+MAINTAINER =	Brian Callahan <bcallah@devio.us>
 
 MASTER_SITES = http://www.launchpad.net/exaile/$V.x/$V.$P/+download/
 
@@ -40,6 +40,7 @@ TEST_TARGET=	test
 PORTHOME =	${WRKDIR}
 TEST_DEPENDS=	devel/py-nose \
 		devel/py-mox
+TEST_ENV=	EXAILE_DIR=${WRKOBJ}/test
 
 CONFIGURE_STYLE =none
 SUBST_VARS +=	MODPY_SITEPKG
