@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/11/19 21:02:24 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/06/11 15:22:55 jasper Exp $
 bin/log4cpp-config
 include/log4cpp/
 include/log4cpp/AbortAppender.hh
@@ -11,6 +11,7 @@ include/log4cpp/BufferingAppender.hh
 include/log4cpp/Category.hh
 include/log4cpp/CategoryStream.hh
 include/log4cpp/Configurator.hh
+include/log4cpp/DailyRollingFileAppender.hh
 include/log4cpp/Export.hh
 include/log4cpp/FactoryParams.hh
 include/log4cpp/FileAppender.hh

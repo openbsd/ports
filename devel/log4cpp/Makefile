@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2017/04/10 11:45:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2017/06/11 15:22:55 jasper Exp $
 
 COMMENT=	library of C++ classes for flexible logging
 
-DISTNAME=	log4cpp-1.1.1
-REVISION=	0
+DISTNAME=	log4cpp-1.1.2
 WRKDIST=	${WRKDIR}/log4cpp
 
 SHARED_LIBS +=	log4cpp              0.0      # 5.6
