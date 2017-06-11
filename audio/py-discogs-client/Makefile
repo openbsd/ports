@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2017/06/11 21:14:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2017/06/11 21:17:44 sthen Exp $
 
 COMMENT =	Python interface to Discogs website
 
@@ -25,5 +25,7 @@ FLAVOR ?=
 RUN_DEPENDS =	devel/py-six${MODPY_FLAVOR} \
 		security/py-oauthlib${MODPY_FLAVOR} \
 		www/py-requests${MODPY_FLAVOR}
+
+TEST_DEPENDS =	${RUN_DEPENDS}
 
 .include <bsd.port.mk>
