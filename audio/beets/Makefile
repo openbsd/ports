@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2017/01/10 14:43:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2017/06/11 14:08:39 sthen Exp $
 
 COMMENT =	CLI tools to manage music collections
 
-MODPY_EGG_VERSION = 1.4.3
+MODPY_EGG_VERSION = 1.4.4
 DISTNAME =	beets-${MODPY_EGG_VERSION}
 CATEGORIES =	audio
 
@@ -16,14 +16,15 @@ PERMIT_PACKAGE_CDROM =  Yes
 MODULES =	lang/python
 MODPY_SETUPTOOLS = Yes
 MODPY_PI =	Yes
-NO_TEST =	Yes
 USE_GROFF =	Yes
 
-# py3 support is currently experimental; packagers are requested not
-# to use it yet.
+# not yet:
 # MODPY_VERSION = ${MODPY_DEFAULT_VERSION_3}
 
-RUN_DEPENDS =	audio/py-discogs-client${MODPY_FLAVOR}>=2.0.2 \
+# remove when switching to py3
+RUN_DEPENDS+=	devel/py-enum34>=1.0.4
+
+RUN_DEPENDS+=	audio/py-discogs-client${MODPY_FLAVOR}>=2.0.2 \
 		audio/py-last${MODPY_FLAVOR} \
 		audio/py-mutagen${MODPY_FLAVOR} \
 		devel/py-six${MODPY_FLAVOR} \
@@ -32,15 +33,23 @@ RUN_DEPENDS =	audio/py-discogs-client${MODPY_FLAVOR}>=2.0.2 \
 		textproc/py-yaml${MODPY_FLAVOR} \
 		www/py-requests${MODPY_FLAVOR}
 
-# need py3 flavours for these before we can switch
-RUN_DEPENDS +=	audio/py-musicbrainzngs${MODPY_FLAVOR} \
+# XXX need py3 flavours for these before we can switch
+RUN_DEPENDS+=	audio/py-musicbrainzngs${MODPY_FLAVOR} \
 		devel/py-algorithm-munkres${MODPY_FLAVOR}
-
-# remove when switching to py3
-RUN_DEPENDS+=	devel/py-enum34>=1.0.4
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/man/beet.1 ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/man/beetsconfig.5 ${PREFIX}/man/man5
+
+# also wants responses, rarfile: currently fetches from pypi at test time
+TEST_DEPENDS=	${RUN_DEPENDS} \
+		audio/py-mpd2${MODPY_FLAVOR} \
+		devel/py-mock${MODPY_FLAVOR} \
+		devel/py-xdg${MODPY_FLAVOR} \
+		www/py-beautifulsoup4${MODPY_FLAVOR} \
+		www/py-flask${MODPY_FLAVOR}
+
+do-test:
+	${MODPY_TEST_TARGET}
 
 .include <bsd.port.mk>
