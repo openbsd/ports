@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2015/11/19 19:13:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2017/06/11 09:02:43 dcoppa Exp $
 
 COMMENT =	minimalistic console file manager
 
 MODPY_EGG_VERSION = 1.7.2
 DISTNAME =	ranger-${MODPY_EGG_VERSION}
+REVISION =	0
 
 CATEGORIES =	sysutils misc
 
@@ -21,6 +22,10 @@ RUN_DEPENDS =	archivers/libarchive \
 
 TEST_DEPENDS =	devel/gmake \
 		sysutils/ggrep
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/doc/ranger.1 \
+		${WRKSRC}/ranger/ext/img_display.py
 
 do-test:
 	cd ${WRKSRC}; PYTHON=${MODPY_BIN} gmake test

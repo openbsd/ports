@@ -1,0 +1,14 @@
+$OpenBSD: patch-doc_ranger_1,v 1.1 2017/06/11 09:02:43 dcoppa Exp $
+
+Index: doc/ranger.1
+--- doc/ranger.1.orig
++++ doc/ranger.1
+@@ -1329,7 +1329,7 @@ docstrings.  Using this will disable the <F1> key on c
+ .IP "W3MIMGDISPLAY_PATH" 8
+ .IX Item "W3MIMGDISPLAY_PATH"
+ By changing this variable, you can change the path of the executable file for
+-image previews.  By default, it is set to \fI/usr/lib/w3m/w3mimgdisplay\fR.
++image previews.  By default, it is set to \fI${LOCALBASE}/libexec/w3m/w3mimgdisplay\fR.
+ .SH "EXAMPLES"
+ .IX Header "EXAMPLES"
+ There are various examples on how to extend ranger with plugins or combine
