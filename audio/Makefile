@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.385 2017/06/11 14:47:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.386 2017/06/11 21:14:21 sthen Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -191,6 +191,7 @@
      SUBDIR += py-audio,python3
      SUBDIR += py-cddb
      SUBDIR += py-discogs-client
+     SUBDIR += py-discogs-client,python3
      SUBDIR += py-eyed3
      SUBDIR += py-id3
      SUBDIR += py-last
