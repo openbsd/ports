@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2016/05/14 13:58:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2017/06/11 15:10:09 jasper Exp $
 
 COMMENT=		inline and side-by-side colored and incremental diff
 
-MODPY_EGG_VERSION=	0.9.8
+MODPY_EGG_VERSION=	1.0
 DISTNAME=		cdiff-${MODPY_EGG_VERSION}
 
 CATEGORIES=		textproc
