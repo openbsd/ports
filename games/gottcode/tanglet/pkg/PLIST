@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/04/06 15:02:36 landry Exp $
+@comment $OpenBSD: PLIST,v 1.3 2017/06/11 20:32:19 landry Exp $
 @bin bin/tanglet
 @man man/man6/tanglet.6
 share/appdata/
@@ -17,6 +17,7 @@ share/icons/hicolor/48x48/apps/tanglet.png
 share/icons/hicolor/512x512/apps/tanglet.png
 share/icons/hicolor/64x64/apps/tanglet.png
 share/icons/hicolor/scalable/apps/tanglet.svg
+share/mime/packages/tanglet.xml
 share/pixmaps/
 share/pixmaps/tanglet.xpm
 share/tanglet/
@@ -63,7 +64,6 @@ share/tanglet/data/nl/name
 share/tanglet/data/nl/words
 share/tanglet/translations/
 share/tanglet/translations/tanglet_cs.qm
-share/tanglet/translations/tanglet_csb.qm
 share/tanglet/translations/tanglet_de.qm
 share/tanglet/translations/tanglet_en.qm
 share/tanglet/translations/tanglet_es.qm
@@ -80,6 +80,8 @@ share/tanglet/translations/tanglet_ro.qm
 share/tanglet/translations/tanglet_szl.qm
 share/tanglet/translations/tanglet_tr.qm
 share/tanglet/translations/tanglet_uk.qm
+@exec %D/bin/update-mime-database %D/share/mime
+@unexec-delete %D/bin/update-mime-database %D/share/mime
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/update-desktop-database

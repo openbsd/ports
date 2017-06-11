@@ -1,19 +1,43 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/04/06 14:59:52 landry Exp $
+@comment $OpenBSD: PLIST,v 1.3 2017/06/11 20:32:19 landry Exp $
 @bin bin/cutemaze
+share/appdata/
+share/appdata/cutemaze.appdata.xml
 share/applications/cutemaze.desktop
 share/cutemaze/
 share/cutemaze/translations/
+share/cutemaze/translations/cutemaze_cs.qm
 share/cutemaze/translations/cutemaze_de.qm
 share/cutemaze/translations/cutemaze_en.qm
+share/cutemaze/translations/cutemaze_eo.qm
 share/cutemaze/translations/cutemaze_es.qm
+share/cutemaze/translations/cutemaze_fi.qm
 share/cutemaze/translations/cutemaze_fr.qm
 share/cutemaze/translations/cutemaze_he.qm
+share/cutemaze/translations/cutemaze_lt.qm
+share/cutemaze/translations/cutemaze_nl.qm
 share/cutemaze/translations/cutemaze_pl.qm
 share/cutemaze/translations/cutemaze_pt_BR.qm
 share/cutemaze/translations/cutemaze_ro.qm
 share/cutemaze/translations/cutemaze_ru.qm
 share/cutemaze/translations/cutemaze_tr.qm
+share/icons/hicolor/1024x1024/
+share/icons/hicolor/1024x1024/apps/
+share/icons/hicolor/1024x1024/apps/cutemaze.png
+share/icons/hicolor/128x128/apps/cutemaze.png
+share/icons/hicolor/16x16/apps/cutemaze.png
+share/icons/hicolor/22x22/apps/cutemaze.png
+share/icons/hicolor/24x24/apps/cutemaze.png
+share/icons/hicolor/256x256/apps/cutemaze.png
+share/icons/hicolor/32x32/apps/cutemaze.png
 share/icons/hicolor/48x48/apps/cutemaze.png
+share/icons/hicolor/512x512/apps/cutemaze.png
+share/icons/hicolor/64x64/apps/cutemaze.png
+share/icons/hicolor/scalable/apps/cutemaze.svg
+share/man/
+share/man/man6/
+@man share/man/man6/cutemaze.6
+share/pixmaps/
+share/pixmaps/cutemaze.xpm
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/update-desktop-database

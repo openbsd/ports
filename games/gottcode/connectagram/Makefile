@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2016/12/25 14:34:39 zhuk Exp $
+# $OpenBSD: Makefile,v 1.7 2017/06/11 20:32:19 landry Exp $
 
 GAME =		connectagram
 COMMENT =	word unscrambling game
-DISTNAME =	${GAME}-1.2.1-src
-QT5 =	Yes
+DISTNAME =	${GAME}-1.2.4-src
 WANTLIB +=	Qt5Network
-REVISION =	1
 
 .include <bsd.port.mk>

@@ -1,9 +1,7 @@
-# $OpenBSD: Makefile,v 1.7 2016/12/25 14:34:39 zhuk Exp $
+# $OpenBSD: Makefile,v 1.8 2017/06/11 20:32:19 landry Exp $
 
 GAME =		peg-e
 COMMENT =	basic peg solitaire game
-DISTNAME =	${GAME}-1.2.1-src
-QT5=Yes
-REVISION =	2
+DISTNAME =	${GAME}-1.2.2-src
 
 .include <bsd.port.mk>

@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2016/12/25 14:34:39 zhuk Exp $
+# $OpenBSD: Makefile,v 1.8 2017/06/11 20:32:19 landry Exp $
 
 GAME =		tanglet
 COMMENT =	word finding game
-DISTNAME =	${GAME}-1.3.1-src
+DISTNAME =	${GAME}-1.4.0-src
 WANTLIB +=	z
-QT5 =		Yes
 
-REVISION =	3
+RUN_DEPENDS +=	misc/shared-mime-info
 
 post-install:
 	mv ${PREFIX}/share/man/man6/${GAME}.6 ${PREFIX}/man/man6

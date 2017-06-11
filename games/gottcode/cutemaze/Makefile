@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2015/04/06 14:59:52 landry Exp $
+# $OpenBSD: Makefile,v 1.4 2017/06/11 20:32:19 landry Exp $
 
 GAME =		cutemaze
 COMMENT =	simple maze game
-DISTNAME =	${GAME}-1.1.1-src
-WANTLIB +=	QtSvg
+DISTNAME =	${GAME}-1.2.0-src
+WANTLIB +=	Qt5Svg
+
+LIB_DEPENDS +=	x11/qt5/qtsvg
 
 .include <bsd.port.mk>

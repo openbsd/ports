@@ -1,8 +1,9 @@
-$OpenBSD: patch-peg-e_pro,v 1.1 2015/06/08 06:42:14 czarkoff Exp $
---- peg-e.pro.orig	Sun Jun  7 23:01:55 2015
-+++ peg-e.pro	Sun Jun  7 23:02:05 2015
-@@ -86,7 +86,7 @@ macx {
- 	qm.path = $$PREFIX/share/peg-e/translations
+$OpenBSD: patch-peg-e_pro,v 1.2 2017/06/11 20:32:19 landry Exp $
+Index: peg-e.pro
+--- peg-e.pro.orig
++++ peg-e.pro
+@@ -93,7 +93,7 @@ macx {
+ 	qm.CONFIG += no_check_exist
  
  	man.files = doc/peg-e.6
 -	man.path = $$PREFIX/share/man/man6
