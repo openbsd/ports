@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2017/06/11 14:50:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2017/06/11 21:20:30 sthen Exp $
 
 COMMENT =	CLI tools to manage music collections
 
@@ -24,7 +24,8 @@ USE_GROFF =	Yes
 # remove when switching to py3
 RUN_DEPENDS+=	devel/py-enum34>=1.0.4
 
-RUN_DEPENDS+=	audio/py-last${MODPY_FLAVOR} \
+RUN_DEPENDS+=	audio/py-discogs-client${MODPY_FLAVOR}>=2.0.2 \
+		audio/py-last${MODPY_FLAVOR} \
 		audio/py-musicbrainzngs${MODPY_FLAVOR} \
 		audio/py-mutagen${MODPY_FLAVOR} \
 		devel/py-algorithm-munkres${MODPY_FLAVOR} \
@@ -33,9 +34,6 @@ RUN_DEPENDS+=	audio/py-last${MODPY_FLAVOR} \
 		textproc/py-unidecode${MODPY_FLAVOR} \
 		textproc/py-yaml${MODPY_FLAVOR} \
 		www/py-requests${MODPY_FLAVOR}
-
-# XXX need py3 flavours for these before we can switch
-RUN_DEPENDS+=	audio/py-discogs-client${MODPY_FLAVOR}>=2.0.2
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/man/beet.1 ${PREFIX}/man/man1
