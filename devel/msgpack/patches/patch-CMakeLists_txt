@@ -1,10 +1,11 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2016/12/21 19:17:15 jasper Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2017/06/11 16:15:52 jasper Exp $
 
 Kill -g -O3.
 
---- CMakeLists.txt.orig	Sun Nov 27 11:17:25 2016
-+++ CMakeLists.txt	Sun Nov 27 11:17:48 2016
-@@ -192,9 +192,9 @@ ENDIF ()
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -229,9 +229,9 @@ ENDIF ()
  
  IF ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang" OR "${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
      IF (MSGPACK_ENABLE_SHARED)

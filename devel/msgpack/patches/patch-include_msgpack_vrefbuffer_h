@@ -1,0 +1,16 @@
+$OpenBSD: patch-include_msgpack_vrefbuffer_h,v 1.1 2017/06/11 16:15:52 jasper Exp $
+
+https://github.com/msgpack/msgpack-c/pull/601
+
+Index: include/msgpack/vrefbuffer.h
+--- include/msgpack/vrefbuffer.h.orig
++++ include/msgpack/vrefbuffer.h
+@@ -13,7 +13,7 @@
+ #include "zone.h"
+ #include <stdlib.h>
+ 
+-#if defined(unix) || defined(__unix) || defined(__APPLE__)
++#if defined(unix) || defined(__unix) || defined(__APPLE__) || defined(__OpenBSD__)
+ #include <sys/uio.h>
+ #else
+ struct iovec {

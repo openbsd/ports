@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/12/21 19:17:15 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/06/11 16:15:52 jasper Exp $
 include/msgpack/
 include/msgpack.h
 include/msgpack.hpp
@@ -14,6 +14,7 @@ include/msgpack/adaptor/boost/msgpack_variant.hpp
 include/msgpack/adaptor/boost/msgpack_variant_decl.hpp
 include/msgpack/adaptor/boost/optional.hpp
 include/msgpack/adaptor/boost/string_ref.hpp
+include/msgpack/adaptor/boost/string_view.hpp
 include/msgpack/adaptor/carray.hpp
 include/msgpack/adaptor/char_ptr.hpp
 include/msgpack/adaptor/check_container_size.hpp
@@ -83,6 +84,7 @@ include/msgpack/pack.hpp
 include/msgpack/pack_decl.hpp
 include/msgpack/pack_define.h
 include/msgpack/pack_template.h
+include/msgpack/parse_return.hpp
 include/msgpack/predef/
 include/msgpack/predef.h
 include/msgpack/predef/architecture/
@@ -549,6 +551,7 @@ include/msgpack/unpack.h
 include/msgpack/unpack.hpp
 include/msgpack/unpack_decl.hpp
 include/msgpack/unpack_define.h
+include/msgpack/unpack_exception.hpp
 include/msgpack/unpack_template.h
 include/msgpack/util.h
 include/msgpack/v1/
@@ -564,6 +567,7 @@ include/msgpack/v1/adaptor/boost/msgpack_variant.hpp
 include/msgpack/v1/adaptor/boost/msgpack_variant_decl.hpp
 include/msgpack/v1/adaptor/boost/optional.hpp
 include/msgpack/v1/adaptor/boost/string_ref.hpp
+include/msgpack/v1/adaptor/boost/string_view.hpp
 include/msgpack/v1/adaptor/carray.hpp
 include/msgpack/v1/adaptor/char_ptr.hpp
 include/msgpack/v1/adaptor/check_container_size.hpp
@@ -644,11 +648,13 @@ include/msgpack/v1/object_fwd.hpp
 include/msgpack/v1/object_fwd_decl.hpp
 include/msgpack/v1/pack.hpp
 include/msgpack/v1/pack_decl.hpp
+include/msgpack/v1/parse_return.hpp
 include/msgpack/v1/preprocessor.hpp
 include/msgpack/v1/sbuffer.hpp
 include/msgpack/v1/sbuffer_decl.hpp
 include/msgpack/v1/unpack.hpp
 include/msgpack/v1/unpack_decl.hpp
+include/msgpack/v1/unpack_exception.hpp
 include/msgpack/v1/version.hpp
 include/msgpack/v1/versioning.hpp
 include/msgpack/v1/vrefbuffer.hpp
@@ -683,21 +689,27 @@ include/msgpack/v2/adaptor/raw_decl.hpp
 include/msgpack/v2/adaptor/size_equal_only_decl.hpp
 include/msgpack/v2/adaptor/v4raw_decl.hpp
 include/msgpack/v2/cpp_config_decl.hpp
+include/msgpack/v2/create_object_visitor.hpp
 include/msgpack/v2/detail/
 include/msgpack/v2/detail/cpp03_zone_decl.hpp
 include/msgpack/v2/detail/cpp11_zone_decl.hpp
 include/msgpack/v2/fbuffer_decl.hpp
 include/msgpack/v2/iterator_decl.hpp
 include/msgpack/v2/meta_decl.hpp
+include/msgpack/v2/null_visitor.hpp
 include/msgpack/v2/object.hpp
 include/msgpack/v2/object_decl.hpp
 include/msgpack/v2/object_fwd.hpp
 include/msgpack/v2/object_fwd_decl.hpp
 include/msgpack/v2/pack_decl.hpp
+include/msgpack/v2/parse.hpp
+include/msgpack/v2/parse_return.hpp
 include/msgpack/v2/sbuffer_decl.hpp
 include/msgpack/v2/unpack.hpp
 include/msgpack/v2/unpack_decl.hpp
 include/msgpack/v2/vrefbuffer_decl.hpp
+include/msgpack/v2/x3_parse.hpp
+include/msgpack/v2/x3_unpack.hpp
 include/msgpack/v2/zbuffer_decl.hpp
 include/msgpack/v2/zone_decl.hpp
 include/msgpack/version.h
@@ -713,6 +725,12 @@ include/msgpack/zbuffer_decl.hpp
 include/msgpack/zone.h
 include/msgpack/zone.hpp
 include/msgpack/zone_decl.hpp
+lib/cmake/
+lib/cmake/msgpack/
+lib/cmake/msgpack/msgpack-config-version.cmake
+lib/cmake/msgpack/msgpack-config.cmake
+lib/cmake/msgpack/msgpack-targets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/msgpack/msgpack-targets.cmake
 lib/libmsgpackc.a
 @lib lib/libmsgpackc.so.${LIBmsgpackc_VERSION}
 lib/pkgconfig/msgpack.pc
