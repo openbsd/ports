@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.15 2017/05/30 20:44:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2017/06/11 15:38:25 jasper Exp $
 
 COMMENT=		configuration file parser library
-V=			3.1
+V=			3.2
 DISTNAME=		confuse-${V}
 PKGNAME=		lib${DISTNAME}
 SHARED_LIBS +=  confuse              2.1      # 2.0
@@ -21,15 +21,5 @@ LIB_DEPENDS=		devel/gettext
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV+=		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include"
-
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/confuse/manual/search
-	${INSTALL_DATA} ${WRKSRC}/doc/html/search/* \
-		${PREFIX}/share/doc/confuse/manual/search
-	${INSTALL_DATA} ${WRKSRC}/doc/html/{*html,*png,*css,*js} \
-		${PREFIX}/share/doc/confuse/manual/
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/confuse/tutorial
-	${INSTALL_DATA} ${WRKSRC}/doc/tutorial-html/* \
-		${PREFIX}/share/doc/confuse/tutorial
 
 .include <bsd.port.mk>
