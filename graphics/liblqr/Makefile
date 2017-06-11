@@ -1,21 +1,19 @@
-# $OpenBSD: Makefile,v 1.12 2016/03/18 21:38:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2017/06/11 15:29:13 rsadowski Exp $
 
 COMMENT = 			seam-carving smart rescale library
 CATEGORIES =			graphics devel
 
 HOMEPAGE = 			http://liblqr.wikidot.com/
-DISTNAME = 			liblqr-1-0.4.1
-PKGNAME = 			liblqr-0.4.1
+DISTNAME = 			liblqr-1-0.4.2
+PKGNAME = 			liblqr-0.4.2
 MASTER_SITES =			${HOMEPAGE}local--files/en:download-page/
 EXTRACT_SUFX =			.tar.bz2
-REVISION =                      0
 
 # Library is LGPLv3, examples are GPLv3
 PERMIT_PACKAGE_CDROM =		Yes
 
 CONFIGURE_STYLE =		gnu
 SEPARATE_BUILD =		simple
-#CONFIGURE_ENV =			CFLAGS="${CFLAGS} ${COPTS}"
 
 SHARED_LIBS +=	lqr-1           1.0           # .0.0
 
