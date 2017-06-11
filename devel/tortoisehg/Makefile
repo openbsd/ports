@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.28 2017/05/06 18:04:42 juanfra Exp $
+# $OpenBSD: Makefile,v 1.29 2017/06/11 01:11:45 juanfra Exp $
 
 COMMENT =		series of applications for Mercurial
 
 # Change also the mercurial version in run_depends
-MODPY_EGG_VERSION =	4.2
+MODPY_EGG_VERSION =	4.2.1
 DISTNAME =		tortoisehg-${MODPY_EGG_VERSION}
 
 CATEGORIES =		devel
