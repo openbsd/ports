@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.5 2016/12/28 08:21:41 zhuk Exp $
+# $OpenBSD: Makefile.inc,v 1.6 2017/06/11 17:47:45 rsadowski Exp $
 
 .if !defined(CATEGORIES)
 ERRORS +=		"Fatal: missing CATEGORIES"
@@ -11,13 +11,13 @@ MAINTAINER ?=		KDE porting team <openbsd-kde@googlegroups.com>
 # LGPLv2.1+, GPLv2+
 PERMIT_PACKAGE_CDROM ?=	Yes
 
-MASTER_SITES ?=		${MASTER_SITE_KDE:=stable/applications/${VERSION}/src/}
-
 KDE5 ?=			No
 .if ${KDE5:L} == "yes"
 MODULES :=		devel/kf5 ${MODULES}
-VERSION ?=		16.04.0
+VERSION ?=		17.04.1
+MASTER_SITES ?=		${MASTER_SITE_KDE:=stable/applications/${VERSION}/src/}
 .else
 MODULES :=		x11/kde4 ${MODULES}
 VERSION ?=		15.08.3
+MASTER_SITES ?=		${MASTER_SITE_KDE:=Attic/applications/${VERSION}/src/}
 .endif
