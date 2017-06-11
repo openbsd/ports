@@ -1,7 +1,9 @@
-$OpenBSD: patch-src_openvpn_route_c,v 1.9 2017/05/21 16:12:43 jca Exp $
+$OpenBSD: patch-src_openvpn_route_c,v 1.10 2017/06/11 12:15:50 jca Exp $
 
 - add support for on-link routes
+
 - add support for non-0 routing tables
+  https://github.com/OpenVPN/openvpn/commit/3dd30bfe5fdf9f34afe7f847b4e30156982d9ff0
 
 --- src/openvpn/route.c.orig	Thu Mar 23 02:34:21 2017
 +++ src/openvpn/route.c	Wed Apr 12 18:06:40 2017

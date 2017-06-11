@@ -1,10 +1,13 @@
-$OpenBSD: patch-src_openvpn_tun_c,v 1.13 2017/04/16 20:14:17 stsp Exp $
+$OpenBSD: patch-src_openvpn_tun_c,v 1.14 2017/06/11 12:15:50 jca Exp $
 
 - no need for link0 any more, we have separate tap interfaces
-- fix bus error in write_tun_header() due to misaligned access
 
---- src/openvpn/tun.c.orig	Wed Mar 22 16:34:21 2017
-+++ src/openvpn/tun.c	Sun Apr 16 17:36:51 2017
+- fix bus error in write_tun_header() due to misaligned access
+  https://github.com/OpenVPN/openvpn/commit/3e4e300d6c5ea9c320e62def79e5b70f8e255248
+
+Index: src/openvpn/tun.c
+--- src/openvpn/tun.c.orig
++++ src/openvpn/tun.c
 @@ -1201,7 +1201,7 @@ do_ifconfig(struct tuntap *tt,
          if (tun)
          {
@@ -43,13 +46,13 @@ $OpenBSD: patch-src_openvpn_tun_c,v 1.13 2017/04/16 20:14:17 stsp Exp $
          u_int32_t type;
          struct iovec iv[2];
 -        struct ip *iph;
-+        struct ip iph;
++        struct openvpn_iphdr *iph;
  
 -        iph = (struct ip *) buf;
-+        memcpy(&iph, buf, sizeof(iph));
++        iph = (struct openvpn_iphdr *) buf;
  
 -        if (iph->ip_v == 6)
-+        if (iph.ip_v == 6)
++        if (OPENVPN_IPH_GET_VER(iph->version_len) == 6)
          {
              type = htonl(AF_INET6);
          }
