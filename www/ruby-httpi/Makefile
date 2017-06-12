@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2016/01/10 20:39:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2017/06/12 10:57:57 ajacoutot Exp $
 
 COMMENT =		common interface for Ruby's HTTP libraries
 
 DISTNAME =		httpi-2.4.1
+REVISION =		0
 
 HOMEPAGE =		http://httpirb.com/
 

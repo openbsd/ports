@@ -9,4 +9,3 @@ the Maildir.
 This allows reading your email while offline without the need for the mail
 reader (MUA) to support IMAP disconnected operations. Need an attachment from a
 message without internet connection? It's fine, the message is still there.
-

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2015/09/29 10:52:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2017/06/12 10:57:57 ajacoutot Exp $
 
 COMMENT =	Mozilla sync server
 
 PART =	full
 MODPY_EGG_VERSION =	1.0
 PKGNAME =	mozilla-sync-${MODPY_EGG_VERSION}.pre20120901
-REVISION =	2
+REVISION =	3
 
 RUN_DEPENDS +=	www/mozilla-sync/core
 RUN_DEPENDS +=	www/mozilla-sync/reg

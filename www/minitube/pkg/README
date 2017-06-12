@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.2 2015/06/03 10:21:03 dcoppa Exp $
+$OpenBSD: README,v 1.3 2017/06/12 10:57:57 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -53,4 +53,3 @@ environment variables into your ~/.profile or ~/.xinitrc:
 
 PHONON_GST_VIDEOMODE=opengl
 QT_GL_USE_OPENGL1ENGINE=1
-

@@ -1,4 +1,4 @@
-$Id: README,v 1.2 2014/07/22 10:55:41 ajacoutot Exp $
+$Id: README,v 1.3 2017/06/12 10:57:57 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -26,4 +26,3 @@ ${VARBASE}/rbldnsd/var/
 Note that rbldnsd will refuse to start if you do not supply the "-b"
 option and an "IP address <forward slash> port number" argument for
 binding, as shown above.
-

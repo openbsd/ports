@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.2 2011/06/02 13:41:42 ajacoutot Exp $
+$OpenBSD: README,v 1.3 2017/06/12 10:57:58 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -12,4 +12,3 @@ To build the qwt examples:
 
 A qwt example binary will be built in each subdirectory of
 ${TRUEPREFIX}/share/examples/qwt.
-

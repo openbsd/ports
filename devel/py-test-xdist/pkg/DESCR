@@ -15,4 +15,3 @@ which again a full run is performed.
 
 Multi-Platform coverage: you can specify different Python interpreters
 or different platforms and run tests in parallel on all of them.
-

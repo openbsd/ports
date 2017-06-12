@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.30 2013/07/19 11:57:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.31 2017/06/12 10:57:57 ajacoutot Exp $
 
 COMMENT=	speech synthesizer
 DISTNAME=	rsynth-2.0
-REVISION=	2
+REVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	ftp://svr-ftp.eng.cam.ac.uk/pub/comp.speech/synthesis/
 

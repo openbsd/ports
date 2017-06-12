@@ -6,4 +6,3 @@ Features include:
   manipulation logic e.g. "What day is it in 2 days, 5 hours from now?"
 - Conversion between locations (time zones) using your local zoneinfo database
 - strftime style formatting
-

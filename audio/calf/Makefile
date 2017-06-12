@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2017/04/19 11:16:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2017/06/12 10:57:57 ajacoutot Exp $
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS} ${CLANG_ARCHS}
 
 COMMENT =		CALF LADSPA plugins
 DISTNAME =		calf-0.0.18.5
-REVISION =		12
+REVISION =		13
 CATEGORIES =		audio
 
 HOMEPAGE =		http://tap-plugins.sourceforge.net/

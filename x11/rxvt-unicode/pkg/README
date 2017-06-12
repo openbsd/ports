@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.2 2013/03/14 09:21:17 dcoppa Exp $
+$OpenBSD: README,v 1.3 2017/06/12 10:57:58 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -20,4 +20,3 @@ the default terminal type name via the user's "~/.Xdefaults" file.
 e.g.:
 
 URxvt*termName: rxvt-256color
-

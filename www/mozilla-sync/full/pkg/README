@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1.1.1 2012/09/01 16:11:36 landry Exp $
+$OpenBSD: README,v 1.2 2017/06/12 10:57:57 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -74,4 +74,3 @@ http://sync.example.com/weave-password-reset
 
 If you encounter a sync error, check that you really did configure
 fallback_node before starting the server.
-

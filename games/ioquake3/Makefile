@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2017/05/31 23:50:54 abieber Exp $
+# $OpenBSD: Makefile,v 1.16 2017/06/12 10:57:57 ajacoutot Exp $
 
 BROKEN-i386=	need to free up a register
 ONLY_FOR_ARCHS= amd64 i386
@@ -10,6 +10,7 @@ DISTNAME=	ioquake3-2017.05.31
 GH_ACCOUNT=	ioquake
 GH_PROJECT=	ioq3
 GH_COMMIT=	8a50e2aa09e05149f4d0b72b148da12caa56f73f
+REVISION=	0
 
 CATEGORIES=	games
 

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2016/11/23 00:45:51 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.4 2017/06/12 10:57:57 ajacoutot Exp $
 
 COMMENT =		testing module for YAML implementations
 
 DISTNAME =		Test-YAML-1.06
 CATEGORIES =		devel
+REVISION =		0
 
 MAINTAINER =		Andrew Fresh <afresh1@openbsd.org>
 

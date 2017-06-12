@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/10/27 07:53:24 fcambus Exp $
+# $OpenBSD: Makefile,v 1.2 2017/06/12 10:57:57 ajacoutot Exp $
 
 COMMENT =	UTF-8 support module for Lua and LuaJIT
 
@@ -8,6 +8,7 @@ PKGNAME =	lua-utf8-${V}
 GH_ACCOUNT =	starwing
 GH_PROJECT =	luautf8
 GH_TAGNAME =	${V}
+REVISION =	0
 
 CATEGORIES =	converters
 

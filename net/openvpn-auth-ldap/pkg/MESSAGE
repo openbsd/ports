@@ -6,4 +6,3 @@ The config directive must point to an auth-ldap configuration file - a sample
 configuration file can be found at:
 
 	${TRUEPREFIX}/share/examples/openvpn-auth-ldap/auth-ldap.conf
-

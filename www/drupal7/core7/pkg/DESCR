@@ -16,4 +16,3 @@ of your site.
 
 - sensible security: mixed sites where the login url goes through https do
 work without needing to change everything all over the place
-

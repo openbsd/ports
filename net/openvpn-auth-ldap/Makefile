@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2016/11/12 21:18:05 jca Exp $
+# $OpenBSD: Makefile,v 1.10 2017/06/12 10:57:57 ajacoutot Exp $
 
 COMMENT =		LDAP authentication plugin for OpenVPN 2.x
 
 VERSION =		2.0.3
-REVISION =		3
+REVISION =		4
 DISTNAME =		auth-ldap-${VERSION}
 PKGNAME =		openvpn-${DISTNAME}
 CATEGORIES =		net security
