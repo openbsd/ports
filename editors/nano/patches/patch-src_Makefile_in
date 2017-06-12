@@ -1,21 +1,13 @@
-$OpenBSD: patch-src_Makefile_in,v 1.12 2017/04/20 20:38:02 naddy Exp $
---- src/Makefile.in.orig	Wed Apr 12 10:16:26 2017
-+++ src/Makefile.in	Thu Apr 20 22:11:32 2017
-@@ -1413,7 +1413,7 @@ nano_SOURCES = browser.c \
+$OpenBSD: patch-src_Makefile_in,v 1.13 2017/06/12 16:30:32 naddy Exp $
+Index: src/Makefile.in
+--- src/Makefile.in.orig
++++ src/Makefile.in
+@@ -1443,7 +1443,7 @@ nano_SOURCES = browser.c \
  		utils.c \
  		winio.c 
  
--nano_LDADD = @LIBINTL@ $(top_builddir)/lib/libgnu.a
-+nano_LDADD = @LTLIBINTL@ $(top_builddir)/lib/libgnu.a
+-nano_LDADD = @LIBINTL@ $(top_builddir)/lib/libgnu.a $(LIB_CLOCK_GETTIME)
++nano_LDADD = @LTLIBINTL@ $(top_builddir)/lib/libgnu.a $(LIB_CLOCK_GETTIME)
  all: all-am
  
  .SUFFIXES:
-@@ -1743,7 +1743,7 @@ uninstall-am: uninstall-binPROGRAMS
- nano.o: revision.h
- winio.o: revision.h
- 
--revision.h: update_revision
-+revision.h:
- 	@[ -f $@ ] || touch $@
- 	@echo "#define $(SOMETHING)" | cmp -s $@ - || \
- 	echo "#define $(SOMETHING)" > $@
