@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2017/04/30 17:52:15 landry Exp $
+# $OpenBSD: Makefile,v 1.48 2017/06/12 17:22:42 danj Exp $
 
 COMMENT-main =		system metrics collection engine
 COMMENT-mysql =		collectd mysql plugin
@@ -11,7 +11,7 @@ COMMENT-memcachec =	collectd memcachec plugin
 COMMENT-nut =		collectd nut plugin
 COMMENT-riemann =	collectd riemann plugin
 
-V =			5.7.1
+V =			5.7.2
 DISTNAME =		collectd-$V
 PKGNAME-main =		collectd-$V
 PKGNAME-mysql =		collectd-mysql-$V
@@ -63,7 +63,7 @@ RUN_DEPENDS-snmp =	collectd-$V:${BASE_PKGPATH},-main
 LIB_DEPENDS-virt =	sysutils/libvirt
 WANTLIB-virt =		avahi-client avahi-common c dbus-1 ffi gmp gnutls hogweed \
 			nettle p11-kit ssh2 tasn1 util virt crypto curl iconv \
-			idn2 intl lzma m nghttp2 pthread ssl xml2 z
+			idn2 intl lzma m nghttp2 pthread ssl unistring xml2 z
 RUN_DEPENDS-virt =	collectd-$V:${BASE_PKGPATH},-main
 
 LIB_DEPENDS-python =	${MODPY_LIB_DEPENDS}
@@ -72,7 +72,7 @@ RUN_DEPENDS-python =	collectd-$V:${BASE_PKGPATH},-main \
 			${MODPY_RUN_DEPENDS}
 
 LIB_DEPENDS-memcachec =	devel/libmemcached
-WANTLIB-memcachec =	memcached sasl2 pthread
+WANTLIB-memcachec =	m memcached sasl2 pthread
 RUN_DEPENDS-memcachec =	collectd-$V:${BASE_PKGPATH},-main
 
 LIB_DEPENDS-nut =	nut->=2.7.3p0:sysutils/nut
@@ -80,8 +80,9 @@ RUN_DEPENDS-nut =	collectd-$V:${BASE_PKGPATH},-main
 WANTLIB-nut =		crypto pthread ssl upsclient
 
 LIB_DEPENDS-riemann =	sysutils/riemann-c-client
-WANTLIB-riemann =	c gmp gnutls ffi hogweed intl iconv idn2 \
-			nettle protobuf-c p11-kit pthread riemann-client tasn1 z
+WANTLIB-riemann =	c gmp gnutls ffi hogweed intl iconv idn2 nettle \
+			protobuf-c p11-kit pthread riemann-client tasn1 \
+			unistring z
 RUN_DEPENDS-riemann =	collectd-$V:${BASE_PKGPATH},-main
 
 LIB_DEPENDS +=	net/curl \
