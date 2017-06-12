@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.87 2017/04/11 20:25:55 naddy Exp $
+# $OpenBSD: Makefile,v 1.88 2017/06/12 20:37:30 naddy Exp $
 
 COMMENT=	fast console MPEG audio player and decoder library
 
-DISTNAME=	mpg123-1.24.0
-SHARED_LIBS=	mpg123		6.1	# 43.0
+DISTNAME=	mpg123-1.25.0
+SHARED_LIBS=	mpg123		6.2	# 44.0
 SHARED_LIBS+=	out123		1.0	# 2.1
 CATEGORIES=	audio
 HOMEPAGE=	https://www.mpg123.de/
@@ -27,7 +27,6 @@ CONFIGURE_ARGS=	--enable-static \
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/build
-MAKE_ENV=	RM='rm -f'
 
 .if   ${MACHINE_ARCH} == "amd64"
 # no support for AVX instructions in as(1)
@@ -41,9 +40,9 @@ CONFIGURE_ARGS+=--with-cpu=arm_nofpu
 
 # Do not build static modules
 pre-patch:
-	@cd ${WRKSRC}; mv Makefile.in Makefile.in.bak; sed '\
+	@cd ${WRKSRC}; mv Makefile.in Makefile.in.beforesubst; sed '\
 	    /^src_libout123_modules_.*_la_LINK =/ { \
 		N; s/\$$(LIBTOOLFLAGS)/& --tag=disable-static/; \
-	    }' Makefile.in.bak >Makefile.in
+	    }' Makefile.in.beforesubst >Makefile.in
 
 .include <bsd.port.mk>
