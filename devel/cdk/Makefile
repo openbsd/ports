@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2016/04/12 11:41:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2017/06/12 23:48:04 schwarze Exp $
 
 COMMENT=	curses development kit
 
 V=		5.0-20060507
 DISTNAME=	cdk-${V}
 PKGNAME=	cdk-${V:S/-/./}
-REVISION =	2
+REVISION =	3
 
 EXTRACT_SUFX=	.tgz
 
@@ -26,13 +26,7 @@ MASTER_SITES=	http://invisible-mirror.net/archives/cdk/ \
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--with-ncurses \
 		--with-libtool=${LIBTOOL}
-USE_GROFF =	Yes
 
 NO_TEST=	Yes
-
-# format tables in man pages
-post-build:
-	cd ${WRKSRC}/man && for m in *.[1-9] ; do \
-		mv $$m $$m.bak && tbl $$m.bak > $$m ; done
 
 .include <bsd.port.mk>
