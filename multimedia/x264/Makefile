@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2017/03/01 08:53:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2017/06/12 08:54:55 ajacoutot Exp $
 
 COMMENT=	free H.264/MPEG-4 AVC encoder
 
@@ -22,8 +22,8 @@ PERMIT_PACKAGE_FTP=	Yes
 
 WANTLIB=	c m pthread
 
-MODULES=	lang/clang
-
+COMPILER=	clang
+COMPILER_LANGS=	c
 MODCLANG_ARCHS=	amd64 i386
 
 .if ${MACHINE_ARCH} == "amd64"
