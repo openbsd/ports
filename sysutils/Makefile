@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.440 2017/05/16 17:36:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.441 2017/06/12 09:16:12 mglocker Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -273,6 +273,7 @@
      SUBDIR += stan
      SUBDIR += stow
      SUBDIR += stress
+     SUBDIR += sunxi-tools
      SUBDIR += superscript
      SUBDIR += supervisor
      SUBDIR += supuner
