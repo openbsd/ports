@@ -1,17 +1,9 @@
-# $OpenBSD: Makefile,v 1.37 2017/02/18 14:17:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2017/06/12 23:17:17 schwarze Exp $
 
 COMMENT =	compiler cache
 
 DISTNAME =	ccache-3.3.4
 CATEGORIES =	devel
-
-# The ccache(1) manual page causes ERRORs with mandoc(1),
-# so normally this port would require USE_GROFF.
-# However, the actual formatting issues are not very serious,
-# and USE_GROFF would cause a circular dependency
-# because the textproc/groff port can use ccache.
-# When updating, please check that mandoc(1) still
-# does not drop any content from the ccache(1) manual.
 
 HOMEPAGE =	http://ccache.samba.org/
 
