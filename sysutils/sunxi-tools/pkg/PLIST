@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/06/12 09:05:56 mglocker Exp $
+bin/bin2fex
+bin/fel-gpio
+bin/fex2bin
+@bin bin/sunxi-bootinfo
+@bin bin/sunxi-fel
+@bin bin/sunxi-fexc
+@bin bin/sunxi-nand-part
+@bin bin/sunxi-pio
+share/examples/sunxi-tools/
+share/examples/sunxi-tools/README.md
