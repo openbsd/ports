@@ -518,7 +518,6 @@
      SUBDIR += p5-Algorithm-IncludeExclude
      SUBDIR += p5-Algorithm-MarkovChain
      SUBDIR += p5-Algorithm-Munkres
-     SUBDIR += p5-Algorithm-Munkres,python3
      SUBDIR += p5-Algorithm-Permute
      SUBDIR += p5-Alien-wxWidgets
      SUBDIR += p5-Any-Moose
@@ -1227,6 +1226,7 @@
      SUBDIR += py-SOAPpy
      SUBDIR += py-addons
      SUBDIR += py-algorithm-munkres
+     SUBDIR += py-algorithm-munkres,python3
      SUBDIR += py-altgraph
      SUBDIR += py-apipkg
      SUBDIR += py-apipkg,python3
