@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2017/05/27 19:57:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.55 2017/06/12 21:31:20 schwarze Exp $
 
 # archs with atomic ops
 ONLY_FOR_ARCHS-server=	alpha aarch64 amd64 i386 mips64 mips64el powerpc sparc64
@@ -13,7 +13,7 @@ DISTNAME=	mariadb-${VERSION}
 PKGNAME-main=	mariadb-client-${VERSION}
 PKGNAME-server=	mariadb-server-${VERSION}
 PKGNAME-tests= 	mariadb-tests-${VERSION}
-REVISION=	2
+REVISION=	3
 EPOCH=		1
 
 CATEGORIES=	databases
@@ -48,7 +48,6 @@ RUN_DEPENDS-server=	${BASE_PKGPATH}>=10.0v1,<10.1v1 \
 LIB_DEPENDS-server=	${BASE_PKGPATH}>=10.0v1,<10.1v1
 LIB_DEPENDS-tests=	${BASE_PKGPATH}>=10.0v1,<10.1v1
 
-USE_GROFF=	Yes
 CONFIGURE_ARGS+=-DCMAKE_INSTALL_PREFIX="${PREFIX}" \
 		-DINSTALL_DOCDIR="share/doc/mysql" \
 		-DINSTALL_DOCREADMEDIR="share/doc/mysql" \
