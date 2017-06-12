@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.130 2017/03/20 08:14:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.131 2017/06/12 08:56:43 ajacoutot Exp $
 
 COMMENT=	multimedia decoding library
 
 DISTNAME=	xine-lib-1.2.8
-REVISION=	0
+REVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	https://xine-lib.alioth.debian.org/releases/
 EXTRACT_SUFX=	.tar.xz
@@ -20,18 +20,17 @@ PERMIT_PACKAGE_FTP=	Yes
 
 WANTLIB += FLAC GL GLU ICE SDL SM X11 X11-xcb Xdamage Xext Xfixes
 WANTLIB += Xinerama Xv XvMCW Xxf86vm avcodec avformat avutil
-WANTLIB += bluray c cdio drm dvdnav dvdread expat fontconfig
-WANTLIB += freetype glapi iso9660 jpeg lzma m mng modplug mpcdec
-WANTLIB += ogg postproc pthread pthread-stubs sndio speex theora
+WANTLIB += bluray c cdio drm dvdnav dvdread execinfo expat fontconfig
+WANTLIB += freetype glapi iconv intl iso9660 jpeg lzma m mng modplug
+WANTLIB += mpcdec ogg postproc pthread pthread-stubs sndio speex theora
 WANTLIB += usbhid v4l2 v4lconvert vcdinfo vorbis xcb xcb-dri2
 WANTLIB += xcb-glx xcb-shape xcb-shm xcb-xv xdg-basedir xml2 z
 
 XINEAPI_REV=	2.6
 SUBST_VARS+=	XINEAPI_REV
 
-MODULES=	devel/gettext \
-		lang/clang
-
+COMPILER=	clang
+COMPILER_LANGS=	c
 MODCLANG_ARCHS=	amd64 i386
 
 BUILD_DEPENDS=	textproc/xmlto
@@ -42,6 +41,8 @@ LIB_DEPENDS=	audio/flac \
 		audio/libvorbis \
 		audio/musepack \
 		audio/speex \
+		converters/libiconv \
+		devel/gettext \
 		devel/sdl \
 		graphics/ffmpeg \
 		graphics/jpeg \
