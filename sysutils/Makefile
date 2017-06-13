@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.441 2017/06/12 09:16:12 mglocker Exp $
+# $OpenBSD: Makefile,v 1.442 2017/06/13 21:47:42 fcambus Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -18,6 +18,7 @@
      SUBDIR += backuppc
      SUBDIR += bacula
      SUBDIR += bchunk
+     SUBDIR += bdfresize
      SUBDIR += beats
      SUBDIR += binwalk
      SUBDIR += bitrot
