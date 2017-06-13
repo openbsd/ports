@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2017/04/10 11:46:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.45 2017/06/13 07:43:56 ajacoutot Exp $
 
 COMMENT=	MS-Explorer like file manager for X
 
@@ -16,9 +16,10 @@ WANTLIB += ${LIBCXX} util z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xfe/}
 
+MODULES=	textproc/intltool
+
 LIB_DEPENDS=	devel/fox
 
-BUILD_DEPENDS=	textproc/intltool
 RUN_DEPENDS=	devel/desktop-file-utils
 
 USE_GMAKE=	Yes

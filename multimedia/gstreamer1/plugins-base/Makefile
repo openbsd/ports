@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2017/05/08 10:46:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.53 2017/06/13 07:43:55 ajacoutot Exp $
 
 COMMENT=		base elements for GStreamer
 
@@ -57,8 +57,7 @@ AUTOMAKE_VERSION=	1.14
 BUILD_DEPENDS +=	${MODGNU_AUTOMAKE_DEPENDS} \
 			${MODGNU_AUTOCONF_DEPENDS}
 BUILD_DEPENDS +=	devel/libtool # libtoolize(1)
-BUILD_DEPENDS +=	devel/gettext-tools # autopoint(1)
-BUILD_DEPENDS +=	textproc/intltool # share/aclocal/intltool.m4
+MODULES +=		textproc/intltool # share/aclocal/intltool.m4, autopoint
 
 post-extract:
 	cp -R ${FILESDIR} ${WRKSRC}/ext/sndio

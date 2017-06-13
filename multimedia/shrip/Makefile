@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2016/05/07 12:40:58 pascal Exp $
+# $OpenBSD: Makefile,v 1.7 2017/06/13 07:43:56 ajacoutot Exp $
 
 COMMENT =		shell client for ogmrip
 
@@ -18,8 +18,9 @@ WANTLIB += ogmrip-mplayer pcre pthread xml2 z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=ogmrip/}
 
-MODULES =		devel/gettext
-BUILD_DEPENDS =		textproc/intltool
+MODULES =		devel/gettext \
+			textproc/intltool
+
 LIB_DEPENDS =		multimedia/ogmrip,-main
 
 CONFIGURE_STYLE =	gnu

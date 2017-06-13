@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2017/04/18 09:09:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2017/06/13 07:43:56 ajacoutot Exp $
 
 COMMENT=		media aggregator and podcast client
 
@@ -17,9 +17,9 @@ GH_ACCOUNT=		gpodder
 GH_PROJECT=		gpodder
 GH_TAGNAME=		${DISTNAME}
 
-MODULES=		lang/python
+MODULES=		lang/python \
+			textproc/intltool
 
-BUILD_DEPENDS=		textproc/intltool
 RUN_DEPENDS=		devel/desktop-file-utils \
 			devel/gettext \
 			net/mygpoclient \
