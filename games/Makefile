@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.346 2017/05/29 19:54:32 mglocker Exp $
+# $OpenBSD: Makefile,v 1.347 2017/06/13 09:26:40 kirby Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -129,6 +129,7 @@
      SUBDIR += instead-launcher
      SUBDIR += ioquake3
      SUBDIR += irrlamb
+     SUBDIR += ja2-stracciatella
      SUBDIR += jag
      SUBDIR += jbrickshooter
      SUBDIR += kbilliards
