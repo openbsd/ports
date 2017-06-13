@@ -1,0 +1,14 @@
+$OpenBSD: patch-Makefile_am,v 1.3 2017/06/13 08:02:57 czarkoff Exp $
+
+Index: Makefile.am
+--- Makefile.am.orig
++++ Makefile.am
+@@ -49,7 +49,7 @@ libzrtp_a_CPPFLAGS = \
+ 			-I$(top_srcdir)/third_party/bgaes \
+ 			-I$(top_srcdir)/third_party/bnlib
+ 
+-libzrtp_a_LIBADD = $(top_srcdir)/third_party/bnlib/libbn.a
++libzrtp_a_LIBADD = $(top_srcdir)/third_party/bnlib/*.o
+ 
+ libzrtp_a_SOURCES = $(top_srcdir)/src/zrtp.c \
+ 					$(top_srcdir)/src/zrtp_crc.c \
