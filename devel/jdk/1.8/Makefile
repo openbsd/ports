@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2017/05/08 17:52:46 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2017/06/13 14:22:57 schwarze Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_WXNEEDED=	Yes
@@ -12,7 +12,7 @@ PKGNAME=	jdk-${V}
 PKGNAME-main=	jdk-${V}
 PKGNAME-jre=	jre-${V}
 EPOCH=		0
-REVISION=	4
+REVISION=	5
 
 DIST_SUBDIR=	jdk
 DISTNAME=	openjdk-8u121b13-bsd-port-20170201
@@ -39,7 +39,6 @@ MAINTAINER=	Kurt Miller <kurt@openbsd.org>
 # GPLv2 w/CLASSPATH exception
 PERMIT_PACKAGE_CDROM=	Yes
 
-USE_GROFF =	Yes
 NO_TEST=	Yes
 
 APACHE_ANT=	apache-ant-1.9.7-bin.tar.gz
