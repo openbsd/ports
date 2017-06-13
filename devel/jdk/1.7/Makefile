@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.85 2017/04/10 11:45:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.86 2017/06/13 14:26:56 schwarze Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_WXNEEDED=	Yes
@@ -47,7 +47,6 @@ MAINTAINER=	Kurt Miller <kurt@openbsd.org>
 # GPLv2 w/CLASSPATH exception
 PERMIT_PACKAGE_CDROM=	Yes
 
-USE_GROFF =	Yes
 NO_TEST=	Yes
 
 APACHE_ANT=	apache-ant-1.9.3-bin.tar.gz
