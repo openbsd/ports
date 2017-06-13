@@ -1,0 +1,15 @@
+$OpenBSD: patch-t_t0001-init_sh,v 1.1 2017/06/13 15:02:23 dcoppa Exp $
+
+Index: t/t0001-init.sh
+--- t/t0001-init.sh.orig
++++ t/t0001-init.sh
+@@ -315,7 +315,8 @@ test_expect_success 'init with separate gitdir' '
+ 	test_path_is_dir realgitdir/refs
+ '
+ 
+-test_expect_success 'init in long base path' '
++# See http://marc.info/?l=openbsd-tech&m=149625643324856
++test_expect_failure 'init in long base path' '
+ 	# exceed initial buffer size of strbuf_getcwd()
+ 	component=123456789abcdef &&
+ 	test_when_finished "chmod 0700 $component; rm -rf $component" &&

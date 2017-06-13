@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.172 2017/06/12 08:40:02 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.173 2017/06/13 15:02:23 dcoppa Exp $
 
 COMMENT-main =	GIT - Tree History Storage Tool
 COMMENT-svn =	GIT - subversion interoperability tools
@@ -9,7 +9,7 @@ DISTNAME =	git-${V}
 PKGNAME-main =	${DISTNAME}
 PKGNAME-svn =	git-svn-${V}
 PKGNAME-x11 =	git-x11-${V}
-REVISION =	0
+REVISION =	1
 CATEGORIES =	devel
 
 HOMEPAGE =	http://git-scm.com/
@@ -113,7 +113,7 @@ post-install:
 	${INSTALL_DATA} ${WRKBUILD}/gitweb/README ${PREFIX}/share/gitweb
 
 do-test:
-	cd ${WRKSRC} && ${MAKE_ENV} ${MAKE_PROGRAM} \
+	cd ${WRKSRC} && ${MAKE_ENV} GIT_TEST_OPTS="--immediate" ${MAKE_PROGRAM} \
 		HOME=${WRKDIST}/t test
 
 .include <bsd.port.mk>
