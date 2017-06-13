@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.1009 2017/06/07 21:59:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.1010 2017/06/13 14:02:25 naddy Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
      SUBDIR += adns
      SUBDIR += adsuck
      SUBDIR += aggregate
-     SUBDIR += aiccu
      SUBDIR += aimsniff
      SUBDIR += aircontrol
      SUBDIR += amule
