@@ -1,0 +1,37 @@
+# $OpenBSD: Makefile,v 1.1.1.1 2017/06/13 09:24:23 kirby Exp $
+
+COMMENT =	Jagged Alliance 2 engine
+
+GH_ACCOUNT =	ja2-stracciatella
+GH_PROJECT =	ja2-stracciatella
+GH_TAGNAME =	v0.15.1
+
+CATEGORIES =	games
+
+HOMEPAGE =	http://ja2-stracciatella.github.io/
+
+MAINTAINER =	Nils Reusse <n.reusse@hxgn.net>
+
+# SFI-SCLA / public domain
+PERMIT_PACKAGE_CDROM =	No commercial use allowed by SFI-SCLA
+PERMIT_PACKAGE_FTP =	Yes
+
+WANTLIB +=	boost_filesystem boost_system c m pthread SDL ${LIBCXX}
+
+LIB_DEPENDS =	devel/sdl \
+		devel/boost
+
+RUN_DEPENDS =	x11/gtk+3,-guic \
+		devel/desktop-file-utils
+
+USE_GMAKE =	Yes
+MAKE_FLAGS =	Q= WITH_UNITTESTS=0 WITH_DEBUGINFO=1 \
+		CXX=c++
+
+NO_TEST =	Yes
+
+# strip BOM, gcc 4.2.1 doesn't understand it
+post-extract:
+	perl -pi -e 's,\xef\xbb\xbf,,' ${WRKSRC}/Build/Utils/_*Text.cc
+
+.include <bsd.port.mk>

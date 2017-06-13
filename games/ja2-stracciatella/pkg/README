@@ -1,0 +1,17 @@
+$OpenBSD: README,v 1.1.1.1 2017/06/13 09:24:23 kirby Exp $
+
++-------------------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-------------------------------------------------------------------------------
+
+You need the original game files to play.  You can purchase the game
+on gog.com.  Install on another OS and get a copy of the "Data" folder
+(rename it to "data").  Start the game once to create the config file
+and point data_dir to the folder *containing the data folder* in your
+~/.ja2/ja2.ini.
+
+See ja2(6) for more information.
+
+You might get hit by a SDL bug affecting the behaviour of the mouse
+cursor, so to start the game in fullscreen, you can use
+`SDL_VIDEO_X11_DGAMOUSE=0 ja2 -fullscreen'.
