@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2016/11/25 15:02:43 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.36 2017/06/13 20:30:26 schwarze Exp $
 
 # archs with atomic ops
 ONLY_FOR_ARCHS =	alpha amd64 i386 mips64 mips64el powerpc sparc64
@@ -9,6 +9,7 @@ COMMENT =		movie player based on MPlayer/mplayer2
 GH_ACCOUNT =		mpv-player
 GH_PROJECT =		mpv
 GH_TAGNAME =		v0.22.0
+REVISION =		0
 
 CATEGORIES =		multimedia x11
 
@@ -97,7 +98,6 @@ MAKE_ENV +=		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 MAKE_ENV +=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include"
 MAKE_FLAGS =		-o "${WRKBUILD}" -t "${WRKSRC}" --destdir="${DESTDIR}"
 
-USE_GROFF =		Yes
 NO_TEST =		Yes
 
 WRKBUILD =		${WRKSRC}/${MACHINE_ARCH}

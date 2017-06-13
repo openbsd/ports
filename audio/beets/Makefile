@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2017/06/11 21:20:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2017/06/13 20:30:26 schwarze Exp $
 
 COMMENT =	CLI tools to manage music collections
 
 MODPY_EGG_VERSION = 1.4.4
 DISTNAME =	beets-${MODPY_EGG_VERSION}
+REVISION =	0
 CATEGORIES =	audio
 
 MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
@@ -16,7 +17,6 @@ PERMIT_PACKAGE_CDROM =  Yes
 MODULES =	lang/python
 MODPY_SETUPTOOLS = Yes
 MODPY_PI =	Yes
-USE_GROFF =	Yes
 
 # not yet:
 # MODPY_VERSION = ${MODPY_DEFAULT_VERSION_3}
