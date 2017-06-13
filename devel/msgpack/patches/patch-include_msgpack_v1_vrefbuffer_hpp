@@ -1,0 +1,28 @@
+$OpenBSD: patch-include_msgpack_v1_vrefbuffer_hpp,v 1.1 2017/06/13 17:30:18 jasper Exp $
+
+From 1a3fcc3a226f80598256a9acf881ef104f54ab3d Mon Sep 17 00:00:00 2001
+From: Takatoshi Kondo <redboltz@gmail.com>
+Date: Tue, 13 Jun 2017 12:50:53 +0900
+Subject: [PATCH] Prevent iovec redefinition on C++.
+
+Index: include/msgpack/v1/vrefbuffer.hpp
+--- include/msgpack/v1/vrefbuffer.hpp.orig
++++ include/msgpack/v1/vrefbuffer.hpp
+@@ -1,7 +1,7 @@
+ //
+ // MessagePack for C++ zero-copy buffer implementation
+ //
+-// Copyright (C) 2008-2013 FURUHASHI Sadayuki and KONDO Takatoshi
++// Copyright (C) 2008-2017 FURUHASHI Sadayuki and KONDO Takatoshi
+ //
+ //    Distributed under the Boost Software License, Version 1.0.
+ //    (See accompanying file LICENSE_1_0.txt or copy at
+@@ -22,7 +22,7 @@
+ #endif
+ #endif // defined(_MSC_VER)
+ 
+-#ifndef _WIN32
++#if defined(unix) || defined(__unix) || defined(__APPLE__) || defined(__OpenBSD__)
+ #include <sys/uio.h>
+ #else
+ struct iovec {
