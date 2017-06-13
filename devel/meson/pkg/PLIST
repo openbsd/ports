@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2017/04/23 10:49:07 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2017/06/13 07:05:21 ajacoutot Exp $
 bin/meson
 bin/mesonconf
 bin/mesonintrospect
@@ -13,7 +13,6 @@ lib/python${MODPY_VERSION}/site-packages/mesonbuild/${MODPY_PYCACHE}astinterpret
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/${MODPY_PYCACHE}build.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/${MODPY_PYCACHE}compilers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/${MODPY_PYCACHE}coredata.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/mesonbuild/${MODPY_PYCACHE}dependencies.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/${MODPY_PYCACHE}environment.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/${MODPY_PYCACHE}interpreter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/${MODPY_PYCACHE}interpreterbase.${MODPY_PYC_MAGIC_TAG}pyc
@@ -44,7 +43,20 @@ lib/python${MODPY_VERSION}/site-packages/mesonbuild/backend/xcodebackend.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/build.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/compilers.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/coredata.py
-lib/python${MODPY_VERSION}/site-packages/mesonbuild/dependencies.py
+lib/python${MODPY_VERSION}/site-packages/mesonbuild/dependencies/
+lib/python${MODPY_VERSION}/site-packages/mesonbuild/dependencies/__init__.py
+lib/python${MODPY_VERSION}/site-packages/mesonbuild/dependencies/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mesonbuild/dependencies/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mesonbuild/dependencies/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mesonbuild/dependencies/${MODPY_PYCACHE}dev.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mesonbuild/dependencies/${MODPY_PYCACHE}misc.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mesonbuild/dependencies/${MODPY_PYCACHE}platform.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mesonbuild/dependencies/${MODPY_PYCACHE}ui.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mesonbuild/dependencies/base.py
+lib/python${MODPY_VERSION}/site-packages/mesonbuild/dependencies/dev.py
+lib/python${MODPY_VERSION}/site-packages/mesonbuild/dependencies/misc.py
+lib/python${MODPY_VERSION}/site-packages/mesonbuild/dependencies/platform.py
+lib/python${MODPY_VERSION}/site-packages/mesonbuild/dependencies/ui.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/environment.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/interpreter.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/interpreterbase.py
@@ -83,13 +95,16 @@ lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/${MODPY_PYCACHE}cleantrees.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/${MODPY_PYCACHE}commandrunner.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/${MODPY_PYCACHE}coverage.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/${MODPY_PYCACHE}delwithsuffix.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/${MODPY_PYCACHE}depfixer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/${MODPY_PYCACHE}dirchanger.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/${MODPY_PYCACHE}dist.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/${MODPY_PYCACHE}gettext.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/${MODPY_PYCACHE}gtkdochelper.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/${MODPY_PYCACHE}meson_exe.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/${MODPY_PYCACHE}meson_install.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/${MODPY_PYCACHE}msgfmthelper.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/${MODPY_PYCACHE}regen_checker.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/${MODPY_PYCACHE}scanbuild.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/${MODPY_PYCACHE}symbolextractor.${MODPY_PYC_MAGIC_TAG}pyc
@@ -98,13 +113,16 @@ lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/${MODPY_PYCACHE}vcst
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/${MODPY_PYCACHE}yelphelper.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/cleantrees.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/commandrunner.py
+lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/coverage.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/delwithsuffix.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/depfixer.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/dirchanger.py
+lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/dist.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/gettext.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/gtkdochelper.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/meson_exe.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/meson_install.py
+lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/msgfmthelper.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/regen_checker.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/scanbuild.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/symbolextractor.py
