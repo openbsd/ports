@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.56 2017/06/08 18:19:37 steven Exp $
+# $OpenBSD: Makefile,v 1.57 2017/06/13 00:22:33 schwarze Exp $
 
 COMMENT=	syslogd replacement
 
 V =		3.9.1
 REL =		3.9
 DISTNAME =	syslog-ng-$V
+REVISION =	0
 CATEGORIES =	sysutils
 
 MAINTAINER =	Steven Mestdagh <steven@openbsd.org>
@@ -55,7 +56,6 @@ CONFIGURE_ENV +=	OPENSSL_CFLAGS="-I/usr/include/openssl" \
 CONFIGURE_ENV +=	JSON_C_CFLAGS="`pkg-config json-c --cflags`" \
 			JSON_C_LIBS="`pkg-config json-c --libs`"
 USE_GMAKE =	Yes
-USE_GROFF =	Yes
 
 SYSCONFDIR =	${BASESYSCONFDIR}/syslog-ng
 CFLAGS +=	-I${LOCALBASE}/include
