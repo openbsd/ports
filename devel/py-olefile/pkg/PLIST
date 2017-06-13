@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/03/07 20:44:53 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/06/13 18:42:52 feinerer Exp $
 lib/python${MODPY_VERSION}/site-packages/OleFileIO_PL.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}OleFileIO_PL.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/olefile/
 lib/python${MODPY_VERSION}/site-packages/olefile-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/olefile/CONTRIBUTORS.txt
@@ -7,21 +9,7 @@ lib/python${MODPY_VERSION}/site-packages/olefile/LICENSE.txt
 lib/python${MODPY_VERSION}/site-packages/olefile/README.html
 lib/python${MODPY_VERSION}/site-packages/olefile/README.rst
 lib/python${MODPY_VERSION}/site-packages/olefile/__init__.py
-lib/python${MODPY_VERSION}/site-packages/olefile/doc/
-lib/python${MODPY_VERSION}/site-packages/olefile/doc/API.html
-lib/python${MODPY_VERSION}/site-packages/olefile/doc/API.md
-lib/python${MODPY_VERSION}/site-packages/olefile/doc/Contribute.html
-lib/python${MODPY_VERSION}/site-packages/olefile/doc/Contribute.md
-lib/python${MODPY_VERSION}/site-packages/olefile/doc/Home.html
-lib/python${MODPY_VERSION}/site-packages/olefile/doc/Home.md
-lib/python${MODPY_VERSION}/site-packages/olefile/doc/Install.html
-lib/python${MODPY_VERSION}/site-packages/olefile/doc/Install.md
-lib/python${MODPY_VERSION}/site-packages/olefile/doc/License.html
-lib/python${MODPY_VERSION}/site-packages/olefile/doc/License.md
-lib/python${MODPY_VERSION}/site-packages/olefile/doc/OLE_Overview.html
-lib/python${MODPY_VERSION}/site-packages/olefile/doc/OLE_Overview.md
-lib/python${MODPY_VERSION}/site-packages/olefile/doc/OLE_VBA_sample.png
-lib/python${MODPY_VERSION}/site-packages/olefile/olefile.html
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/olefile/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/olefile/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/olefile/${MODPY_PYCACHE}olefile.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/olefile/olefile.py
-lib/python${MODPY_VERSION}/site-packages/olefile/olefile2.html
-lib/python${MODPY_VERSION}/site-packages/olefile/olefile2.py
