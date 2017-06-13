@@ -1,0 +1,15 @@
+$OpenBSD: patch-charresize_c,v 1.1.1.1 2017/06/13 21:46:16 fcambus Exp $
+
+Fix conflicting types for 'malloc' error.
+
+Index: charresize.c
+--- charresize.c.orig
++++ charresize.c
+@@ -46,7 +46,6 @@ static int	bit[8] = { 0x80, 0x40, 0x20, 0x10, 0x08, 0x
+ void
+ processChar(void)
+ {
+-  char	*malloc();
+   char	*srcimage;
+   int	*dstgray;
+ 
