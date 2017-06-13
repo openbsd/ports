@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/12/28 14:10:36 zhuk Exp $
+# $OpenBSD: Makefile,v 1.3 2017/06/13 12:31:44 schwarze Exp $
 
 COMMENT=	PostgreSQL RDBMS (previous version, for pg_upgrade)
 
@@ -27,7 +27,6 @@ MAKE_FILE=	GNUmakefile
 SUBST_VARS=	VERSION
 
 USE_GMAKE=	Yes
-USE_GROFF=	Yes
 
 CONFIGURE_STYLE=gnu
 
