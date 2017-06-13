@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.28 2017/01/17 03:10:21 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.29 2017/06/13 07:47:51 czarkoff Exp $
 
 COMMENT =		pure Python implementation of Git file formats and protocols
 
-MODPY_EGG_VERSION =	0.16.3
+MODPY_EGG_VERSION =	0.17.3
 DISTNAME =		dulwich-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
@@ -26,6 +26,7 @@ RUN_DEPENDS =		net/py-geventhttpclient
 TEST_DEPENDS =		${RUN_DEPENDS} \
 			devel/git,-main \
 			devel/py-fastimport \
+			devel/py-greenlet \
 			devel/py-mock
 
 MAKE_ENV +=		LC_CTYPE=en_US.UTF-8
