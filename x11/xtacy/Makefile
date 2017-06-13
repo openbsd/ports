@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2013/03/11 11:46:19 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2017/06/13 17:05:50 schwarze Exp $
 
 COMMENT=	X11 trippy color-cycling toy
 
 DISTNAME=	xtacy114
 PKGNAME=	xtacy-1.14
-REVISION=	1
+REVISION=	2
 CATEGORIES=	x11
 
 MASTER_SITES=	http://www.gweep.net/~jer/
@@ -16,7 +16,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	X11 Xau Xdmcp Xext c m 
 
-USE_GROFF =	Yes
 CONFIGURE_STYLE=imake
 
 WRKDIST=	${WRKDIR}/Xtacy
