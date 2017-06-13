@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2017/05/30 15:29:39 fcambus Exp $
+# $OpenBSD: Makefile,v 1.10 2017/06/13 07:43:15 fcambus Exp $
 
 COMMENT=	Gadu-Gadu IM protocol client
 
@@ -30,5 +30,9 @@ CONFIGURE_ARGS=	--enable-dynamic \
 		--without-libungif
 
 NO_TEST=	Yes
+
+pre-configure:
+	# External libgadu support
+	@cd ${WRKSRC}/src && sed -i 's|"libgadu.h"|<libgadu.h>|' *.c *.h
 
 .include <bsd.port.mk>
