@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2017/05/15 19:56:03 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.60 2017/06/14 19:42:53 schwarze Exp $
 
 COMMENT-main =	another eDonkey P2P file sharing client
 COMMENT-web =	webserver interface to amuled
@@ -6,7 +6,7 @@ COMMENT-daemon =stand-alone daemon/cmdline for amule
 
 V =		2.3.2
 DISTNAME =	aMule-$V
-REVISION =	2
+REVISION =	3
 CATEGORIES =	net
 
 HOMEPAGE =	http://www.amule.org/
@@ -60,7 +60,6 @@ WANTLIB-web =		${WANTLIB} ${commonWANTLIB} \
 			png readline termcap
 
 USE_GMAKE =		Yes
-USE_GROFF =		Yes
 
 CONFIGURE_STYLE =	autoconf
 AUTOCONF_VERSION =	2.65
