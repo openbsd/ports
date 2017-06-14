@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.49 2017/05/03 17:51:26 jca Exp $
+# $OpenBSD: Makefile,v 1.50 2017/06/14 15:24:50 schwarze Exp $
 
 COMMENT=	window manager, continuation of the Bowman NeXTSTEP clone
 
 V=		2.2.12
-REVISION=	0
+REVISION=	1
 DISTNAME=	AfterStep-${V}
 PKGNAME=	${DISTNAME:L}
 CATEGORIES=     x11
@@ -40,7 +40,6 @@ CFLAGS +=	${CPPFLAGS}
 
 NO_TEST=	Yes
 USE_GMAKE=	Yes
-USE_GROFF =	Yes
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \

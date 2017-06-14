@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_ASDocGen_ASDocGen_c,v 1.1 2017/06/14 15:24:50 schwarze Exp $
+
+Do not use *.orig files for building, duh.
+
+Index: src/ASDocGen/ASDocGen.c
+--- src/ASDocGen/ASDocGen.c.orig
++++ src/ASDocGen/ASDocGen.c
+@@ -859,7 +859,8 @@ gen_faq_doc( const char *source_dir, const char *dest_
+ 	list_len = my_scandir ((char*)faq_dir, &list, ignore_dots, NULL);
+ 	for (i = 0; i < list_len; i++)
+ 	{	
+-		if ( !S_ISDIR (list[i]->d_mode) )
++		if ( !S_ISDIR (list[i]->d_mode) &&
++		     strstr(list[i]->d_name, ".orig") == NULL )
+ 			convert_xml_file( faq_dir, list[i]->d_name, &state );
+ 		free(list[i]);
+ 	}

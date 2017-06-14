@@ -1,0 +1,41 @@
+$OpenBSD: patch-src_ASDocGen_source_FAQ_03-GettingAndInstalling,v 1.1 2017/06/14 15:24:50 schwarze Exp $
+
+Fix a weird encoding error
+that screwed up the content with both groff and mandoc.
+The byte 0x98 is not a tilde, neither in UTF-8 nor in LATIN-1.
+For clarity, write out $HOME in full.
+
+Index: src/ASDocGen/source/FAQ/03-GettingAndInstalling
+--- src/ASDocGen/source/FAQ/03-GettingAndInstalling.orig
++++ src/ASDocGen/source/FAQ/03-GettingAndInstalling
+@@ -35,9 +35,9 @@ XPM, PPM, BMP, ICO, XCF, GIF.
+ <section><title>3.3. Can I install AfterStep without being root?</title>
+ <para>
+ Yes, before compiling AfterStep, do this:
+-<literallayout><code>mkdir &tilde;/bin
+-mkdir -p &tilde;/man/man1
+-./configure --prefix &tilde;/
++<literallayout><code>mkdir $HOME/bin
++mkdir -p $HOME/man/man1
++./configure --prefix $HOME/
+ </code></literallayout>
+ Then follow the normal install directions, allowing you to <code>make install</code> without being
+ root.
+@@ -49,7 +49,7 @@ root.
+ <para>
+ Install AfterStep 2.0 and then run it. It will start with default configuration that you may or maynot like.
+ If you wish to try and reuse your old configuration files, then copy them over from your old 
+-&tilde;/GNUstep/Library/AfterStep/ directory and into &tilde;/.afterstep/. 
++$HOME/GNUstep/Library/AfterStep/ directory and into $HOME/.afterstep/. 
+ Restart AfterStep to make changes effective. If some of the features do not work quite right - 
+ feel free to submit bug report along with your configuration files.
+ </para><para>
+@@ -61,7 +61,7 @@ These approach will allow you to take advantage of man
+ 
+ <section><title>3.4. How do I upgrade AfterStep from AfterStep version higher then 2.0.0?</title>
+ <para>
+-Make sure that all configuration files that you ever changed are in your home directory at &tilde;/.afterstep/, as
++Make sure that all configuration files that you ever changed are in your home directory at $HOME/.afterstep/, as
+ installing afterstep will replace everything in global shared location (/usr/local/share/afterstep).
+ Install afterstep and run. You should not have any trouble.
+ </para>
