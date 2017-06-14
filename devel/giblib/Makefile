@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.20 2015/03/16 18:07:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2017/06/14 21:21:43 rsadowski Exp $
 
 COMMENT=		utility library including a imlib2 wrapper
 
 DISTNAME=		giblib-1.2.4
-REVISION =		6
+REVISION =		7
 SHARED_LIBS=		giblib	1.6	# .1.6
 
 CATEGORIES=		devel
-
-HOMEPAGE=		http://www.linuxbrit.co.uk/giblib/
 
 MAINTAINER=		Victor Sahlstedt <salan@legonet.org>
 
@@ -16,7 +14,7 @@ MAINTAINER=		Victor Sahlstedt <salan@legonet.org>
 PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=		X11 Xext freetype m xcb z
 
-MASTER_SITES=		http://www.linuxbrit.co.uk/downloads/
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=project/slackbuildsdirectlinks/giblib/}
 
 LIB_DEPENDS=		graphics/imlib2
 WANTLIB +=		Imlib2>=1
