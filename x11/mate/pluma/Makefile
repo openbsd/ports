@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2017/06/03 09:57:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2017/06/14 20:21:32 ajacoutot Exp $
 
 USE_WXNEEDED=		Yes
 
@@ -8,7 +8,7 @@ CATEGORIES=		textproc
 
 MATE_PROJECT=		pluma
 MATE_VERSION=		1.18.2
-REVISION=		3
+REVISION=		4
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -25,6 +25,9 @@ WANTLIB += pangoft2-1.0 peas-1.0 peas-gtk-1.0 png xml2
 
 MODULES=		devel/dconf \
 			x11/gnome
+
+BUILD_DEPENDS=		devel/iso-codes
+RUN_DEPENDS=		devel/iso-codes
 
 LIB_DEPENDS=		devel/libpeas \
 			textproc/enchant \
