@@ -1,6 +1,7 @@
-$OpenBSD: patch-src_shared_qbs_src_lib_corelib_tools_processutils_cpp,v 1.2 2017/04/28 16:00:10 rsadowski Exp $
---- src/shared/qbs/src/lib/corelib/tools/processutils.cpp.orig	Thu Jan  5 18:01:57 2017
-+++ src/shared/qbs/src/lib/corelib/tools/processutils.cpp	Thu Jan 26 23:22:01 2017
+$OpenBSD: patch-src_shared_qbs_src_lib_corelib_tools_processutils_cpp,v 1.3 2017/06/14 17:11:20 rsadowski Exp $
+Index: src/shared/qbs/src/lib/corelib/tools/processutils.cpp
+--- src/shared/qbs/src/lib/corelib/tools/processutils.cpp.orig
++++ src/shared/qbs/src/lib/corelib/tools/processutils.cpp
 @@ -49,6 +49,11 @@
  #   include "fileinfo.h"
  #   include <unistd.h>
@@ -11,7 +12,7 @@ $OpenBSD: patch-src_shared_qbs_src_lib_corelib_tools_processutils_cpp,v 1.2 2017
 +#   include <fcntl.h>
 +#   include <kvm.h>
  #elif defined(Q_OS_BSD4)
- # include <QFile>
+ # include <QtCore/qfile.h>
  #   include <sys/cdefs.h>
 @@ -94,6 +99,19 @@ QString processNameByPid(qint64 pid)
      sprintf(exePath, "/proc/%lld/exe", pid);

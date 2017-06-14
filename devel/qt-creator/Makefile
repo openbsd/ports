@@ -1,32 +1,27 @@
-# $OpenBSD: Makefile,v 1.23 2017/05/31 08:08:15 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2017/06/14 17:11:20 rsadowski Exp $
 
 COMMENT =		cross-platform IDE for use with Qt
-V = 			4.2.2
+V = 			4.3.0
 DISTNAME =		qt-creator-opensource-src-${V}
 PKGNAME =		qt-creator-${V}
-REVISION =		0
-
-# TODO:
-# * Verify that patch for src/shared/qbs/src/lib/corelib/tools/processutils.cpp
-#   does what it is supposed to do.
 
 SHARED_LIBS +=	Aggregation               0.0 # 0.0
-SHARED_LIBS +=	CPlusPlus                 0.0 # 0.0
-SHARED_LIBS +=	ExtensionSystem           1.0 # 0.0
+SHARED_LIBS +=	CPlusPlus                 1.0 # 0.0
+SHARED_LIBS +=	ExtensionSystem           2.0 # 0.0
 SHARED_LIBS +=	GLSL                      0.0 # 0.0
 SHARED_LIBS +=	LanguageUtils             0.0 # 0.0
-SHARED_LIBS +=	QmlDebug                  1.0 # 0.0
+SHARED_LIBS +=	QmlDebug                  2.0 # 0.0
 SHARED_LIBS +=	QmlEditorWidgets          0.0 # 0.0
-SHARED_LIBS +=	QmlJS                     1.0 # 0.0
+SHARED_LIBS +=	QmlJS                     2.0 # 0.0
 SHARED_LIBS +=	QtcSsh                    0.0 # 0.0
-SHARED_LIBS +=	Utils                     1.0 # 0.0
-SHARED_LIBS +=	qbscore                   1.0 # 0.0
-SHARED_LIBS +=	Clangbackendipc           1.1 # 1.0
+SHARED_LIBS +=	Utils                     2.0 # 0.0
+SHARED_LIBS +=	qbscore                   2.0 # 0.0
+SHARED_LIBS +=	Clangbackendipc           2.1 # 1.0
 SHARED_LIBS +=	Sqlite                    1.1 # 1.0
-SHARED_LIBS +=	Timeline                  1.1 # 1.0
+SHARED_LIBS +=	Timeline                  2.1 # 1.0
 SHARED_LIBS +=	qbsqtprofilesetup         1.4 # 1.4
-SHARED_LIBS +=  Modeling                  1.0 # 1.0
-SHARED_LIBS +=  FlameGraph                0.0 # 4.2
+SHARED_LIBS +=	Modeling                  1.0 # 1.0
+SHARED_LIBS +=	FlameGraph                0.0 # 4.2
 
 MAKE_FLAGS =	BUILD_TESTS=1
 .for _l _v in ${SHARED_LIBS}
@@ -36,6 +31,8 @@ MAKE_FLAGS +=	LIB${_l}_VERSION=${_v}
 CATEGORIES =	devel editors
 
 HOMEPAGE =	https://www.qt.io/ide/
+
+MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
 # GPLv3 with the "Qt Company GPL Exception 1.0"
 PERMIT_PACKAGE_CDROM =	Yes
@@ -47,7 +44,8 @@ WANTLIB += Qt5Xml c kvm m pthread ${LIBECXX}
 
 MASTER_SITES =	https://download.qt.io/official_releases/qtcreator/${V:R}/${V}/
 
-MODULES =	x11/qt5 devel/qmake
+MODULES =	x11/qt5 \
+		devel/qmake
 MODQMAKE_INSTALL_ROOT =		${PREFIX}
 # qtcreator.sh is created with custom LINK?= in Makefile
 MODQT5_USE_GCC4_MODULE =	No

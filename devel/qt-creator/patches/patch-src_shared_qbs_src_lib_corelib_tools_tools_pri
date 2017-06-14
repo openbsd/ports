@@ -1,12 +1,16 @@
-$OpenBSD: patch-src_shared_qbs_src_lib_corelib_tools_tools_pri,v 1.2 2017/04/28 16:00:10 rsadowski Exp $
---- src/shared/qbs/src/lib/corelib/tools/tools.pri.orig	Thu Jan  5 18:01:57 2017
-+++ src/shared/qbs/src/lib/corelib/tools/tools.pri	Thu Jan 26 23:22:01 2017
-@@ -93,6 +93,8 @@ osx {
+$OpenBSD: patch-src_shared_qbs_src_lib_corelib_tools_tools_pri,v 1.3 2017/06/14 17:11:20 rsadowski Exp $
+Index: src/shared/qbs/src/lib/corelib/tools/tools.pri
+--- src/shared/qbs/src/lib/corelib/tools/tools.pri.orig
++++ src/shared/qbs/src/lib/corelib/tools/tools.pri
+@@ -102,6 +102,11 @@ osx {
      LIBS += -framework Security
  }
  
-+openbsd:LIBS += -lkvm
++openbsd {
++    LIBS += -lkvm
++}
 +
- win32 {
-     SOURCES += $$PWD/filetime_win.cpp
- }
++
+ qbs_enable_unit_tests {
+     HEADERS += $$PWD/tst_tools.h
+     SOURCES += $$PWD/tst_tools.cpp
