@@ -1,4 +1,4 @@
-# $OpenBSD: mozilla.port.mk,v 1.105 2017/04/12 18:13:33 landry Exp $
+# $OpenBSD: mozilla.port.mk,v 1.106 2017/06/14 05:22:28 landry Exp $
 
 ONLY_FOR_ARCHS ?=	amd64 i386
 # ppc: firefox-esr/thunderbird xpcshell segfaults during startup compilation
@@ -22,14 +22,14 @@ MAINTAINER ?=	Landry Breuil <landry@openbsd.org>
 MOZILLA_DIST ?=	${MOZILLA_PROJECT}
 MOZILLA_DIST_VERSION ?=	${MOZILLA_VERSION:C/rc.//}
 
-HOMEPAGE ?=	http://www.mozilla.org/projects/${MOZILLA_DIST}
+HOMEPAGE ?=	https://www.mozilla.org/projects/${MOZILLA_DIST}
 
 .if ${MOZILLA_VERSION:M*rc?}
 MASTER_SITES ?=	https://ftp.mozilla.org/pub/mozilla.org/${MOZILLA_DIST}/candidates/${MOZILLA_DIST_VERSION}-candidates/build${MOZILLA_VERSION:C/.*(.)/\1/}/source/
 # first is the CDN and only has last releases
 # ftp.m.o has all the betas/candidate builds but should only be used as fallback
 .else
-MASTER_SITES ?=	http://releases.mozilla.org/pub/mozilla.org/${MOZILLA_DIST}/releases/${MOZILLA_DIST_VERSION}/source/ \
+MASTER_SITES ?=	https://releases.mozilla.org/pub/mozilla.org/${MOZILLA_DIST}/releases/${MOZILLA_DIST_VERSION}/source/ \
 		https://ftp.mozilla.org/pub/mozilla.org/${MOZILLA_DIST}/releases/${MOZILLA_DIST_VERSION}/source/
 .endif
 
@@ -45,13 +45,13 @@ MODMOZ_BUILD_DEPENDS =	devel/autoconf/2.13 \
 			archivers/zip>=2.3
 
 .if !defined(MOZILLA_USE_BUNDLED_NSS)
-MODMOZ_LIB_DEPENDS +=	security/nss>=3.29.5
+MODMOZ_LIB_DEPENDS +=	security/nss>=3.30.1
 MODMOZ_WANTLIB +=	nss3 nssutil3 smime3 ssl3
 CONFIGURE_ARGS +=	--with-system-nss
 .endif
 
 .if !defined(MOZILLA_USE_BUNDLED_NSPR)
-MODMOZ_LIB_DEPENDS +=	devel/nspr>=4.13.1
+MODMOZ_LIB_DEPENDS +=	devel/nspr>=4.14
 MODMOZ_WANTLIB +=	nspr4 plc4 plds4
 CONFIGURE_ARGS +=	--with-system-nspr
 .endif
@@ -128,9 +128,6 @@ CONFIGURE_ARGS +=	--with-system-zlib=/usr	\
 		--disable-dbus
 
 FLAVORS +=	debug
-.if ${PKGPATH} == "www/mozilla-firefox"
-FLAVORS += gtk3
-.endif
 FLAVOR ?=
 
 .if ${FLAVOR:Mdebug}
@@ -139,7 +136,7 @@ CONFIGURE_ARGS +=	--enable-debug-symbols=-g \
 INSTALL_STRIP =
 .endif
 
-.if ${FLAVOR:Mgtk3} || defined(MOZILLA_USE_GTK3)
+.if defined(MOZILLA_USE_GTK3)
 # https://bugzilla.mozilla.org/show_bug.cgi?id=983843
 CONFIGURE_ARGS +=	--with-system-cairo
 CONFIGURE_ARGS +=	--enable-default-toolkit=cairo-gtk3
