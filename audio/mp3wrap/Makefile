@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2015/01/21 06:13:46 bentley Exp $
+# $OpenBSD: Makefile,v 1.5 2017/06/14 20:43:53 schwarze Exp $
 
 COMMENT=	utility for mp3 wrapping
 
 DISTNAME=	mp3wrap-0.5-src
 PKGNAME=	${DISTNAME:S/-src//}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES=	audio
 
@@ -20,6 +20,5 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mp3wrap/}
 CONFIGURE_STYLE=gnu
 
 WRKDIST=	${WRKDIR}/${DISTNAME:S/-src//}
-USE_GROFF =	Yes
 
 .include <bsd.port.mk>
