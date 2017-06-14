@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.39 2016/06/29 16:14:44 espie Exp $
+# $OpenBSD: Makefile,v 1.40 2017/06/14 01:41:58 schwarze Exp $
 
 COMMENT=	Pretty Good Privacy 5.0i (world wide use)
 
 DISTNAME=	pgp50i-unix-src
 PKGNAME=	pgp-5.0i
-REVISION =	0
+REVISION =	1
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.no.pgpi.com/pub/pgp/5.0/unix/ \
 		ftp://ftp.cz.pgpi.com/pub/pgp/5.0/unix/ \
@@ -21,7 +21,6 @@ PERMIT_PACKAGE_FTP=	Yes
 WANTLIB=		c m
 
 CONFIGURE_STYLE= gnu
-USE_GROFF =	Yes
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/config
 
 WRKDIST=	${WRKDIR}/pgp50i/src
