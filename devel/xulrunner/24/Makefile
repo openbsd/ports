@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2017/05/31 08:08:15 espie Exp $
+# $OpenBSD: Makefile,v 1.41 2017/06/14 05:23:10 landry Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 powerpc sparc64 alpha
 USE_WXNEEDED =		Yes
@@ -10,7 +10,7 @@ MOZILLA_PROJECT =	xulrunner
 MOZILLA_DIST =		firefox
 PKGSPEC-devel =		xulrunner-devel->=24.0,<31.0
 PKGSPEC-main =		xulrunner->=24.0,<31.0
-REVISION-main =		18
+REVISION-main =		19
 REVISION-devel =	13
 
 SO_VERSION =		0.0
