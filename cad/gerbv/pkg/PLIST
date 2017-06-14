@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.8 2015/03/16 18:07:37 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.9 2017/06/14 08:02:46 benoit Exp $
 @bin bin/gerbv
-include/gerbv-2.5.0/
-include/gerbv-2.5.0/gerbv.h
+include/gerbv-2.6.2/
+include/gerbv-2.6.2/gerbv.h
+@comment lib/charset.alias
 lib/libgerbv.a
 lib/libgerbv.la
 @lib lib/libgerbv.so.${LIBgerbv_VERSION}
@@ -21,6 +22,8 @@ share/icons/hicolor/24x24/apps/gerbv-24.png
 share/icons/hicolor/32x32/apps/gerbv-32.png
 share/icons/hicolor/48x48/apps/gerbv-48.png
 share/icons/hicolor/scalable/apps/gerbv.svg
+@comment share/locale/locale.alias
+share/locale/ru/LC_MESSAGES/gerbv.mo
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
