@@ -1,0 +1,18 @@
+$OpenBSD: patch-js_src_jit_ProcessExecutableMemory_h,v 1.1 2017/06/14 05:30:05 landry Exp $
+
+https://bugzilla.mozilla.org/show_bug.cgi?id=1347139
+
+--- js/src/jit/ProcessExecutableMemory.h.orig	Sat Apr 22 09:20:46 2017
++++ js/src/jit/ProcessExecutableMemory.h	Sat Apr 22 09:22:00 2017
+@@ -13,8 +13,9 @@ namespace js {
+ namespace jit {
+ 
+ // Limit on the number of bytes of executable memory to prevent JIT spraying
+-// attacks.
+-#if JS_BITS_PER_WORD == 32
++// attacks. Default datasize is 768Mb on OpenBSD, keep MaxCodeBytesPerProcess
++// low there otherwise the js engine hits ulimit quickly.
++#if JS_BITS_PER_WORD == 32 || defined(__OpenBSD__)
+ static const size_t MaxCodeBytesPerProcess = 140 * 1024 * 1024;
+ #else
+ static const size_t MaxCodeBytesPerProcess = 1 * 1024 * 1024 * 1024;
