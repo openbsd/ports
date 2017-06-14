@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2017/05/01 22:32:59 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2017/06/14 20:01:14 schwarze Exp $
 
 COMMENT =	string library designed for network communication
 
 V =		1.0.15
 DISTNAME =	vstr-$V
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS =	vstr-1.0	0.0 \
 		vstr		0.0
@@ -23,7 +23,6 @@ TEST_FLAGS =		CPPFLAGS="${CPPFLAGS} -I${WRKSRC}/include"
 
 SEPARATE_BUILD =	Yes
 USE_GMAKE =		Yes
-USE_GROFF =		Yes
 CONFIGURE_STYLE =	gnu
 
 .include <bsd.port.mk>
