@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.31 2017/04/10 11:45:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2017/06/14 18:34:10 schwarze Exp $
 
 COMMENT=	C++ wrapper for the Simple DirectMedia Layer
 
 VERSION=	0.1.8
 DISTNAME=	SDLmm-${VERSION}
 PKGNAME=	sdlmm-${VERSION}
-REVISION=	12
+REVISION=	13
 CATEGORIES=	devel
 
 SHARED_LIBS +=	SDLmm                9.0      # .8.0
@@ -22,7 +22,6 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=sdlmm/}
 LIB_DEPENDS=	converters/libiconv \
 		devel/sdl
 
-USE_GROFF=	Yes
 SEPARATE_BUILD= Yes
 CONFIGURE_STYLE= gnu
 
