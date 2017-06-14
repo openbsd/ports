@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2017/04/16 14:04:52 danj Exp $
+# $OpenBSD: Makefile,v 1.11 2017/06/14 22:20:10 schwarze Exp $
 
 COMMENT=		command line image viewer
 
 GH_ACCOUNT=		phillipberndt
 GH_PROJECT=		pqiv
 GH_TAGNAME=		2.8.5
+REVISION=		0
 
 CATEGORIES=		graphics
 
@@ -24,7 +25,6 @@ LIB_DEPENDS=		x11/gtk+3
 MAKE_FLAGS=		CC="${CC}" CFLAGS="${CFLAGS}" VERBOSE=1
 
 USE_GMAKE=		Yes
-USE_GROFF=		Yes
 NO_TEST=		Yes
 
 MAKE_FILE = 		GNUmakefile
