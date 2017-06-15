@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST-examples,v 1.1.1.1 2017/06/15 08:36:13 zhuk Exp $
+lib/qt5/examples/speech/
+lib/qt5/examples/speech/hello_speak/
+lib/qt5/examples/speech/hello_speak/doc/
+lib/qt5/examples/speech/hello_speak/doc/images/
+lib/qt5/examples/speech/hello_speak/doc/images/hellospeak-example.png
+lib/qt5/examples/speech/hello_speak/doc/src/
+lib/qt5/examples/speech/hello_speak/doc/src/hellospeakex.qdoc
+lib/qt5/examples/speech/hello_speak/hello_speak.pro
+lib/qt5/examples/speech/hello_speak/main.cpp
+lib/qt5/examples/speech/hello_speak/mainwindow.cpp
+lib/qt5/examples/speech/hello_speak/mainwindow.h
+lib/qt5/examples/speech/hello_speak/mainwindow.ui
+lib/qt5/examples/speech/speech.pro

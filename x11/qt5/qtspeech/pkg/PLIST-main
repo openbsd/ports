@@ -1,0 +1,30 @@
+@comment $OpenBSD: PLIST-main,v 1.1.1.1 2017/06/15 08:36:13 zhuk Exp $
+include/X11/qt5/QtTextToSpeech/
+include/X11/qt5/QtTextToSpeech/${VERSION}/
+include/X11/qt5/QtTextToSpeech/${VERSION}/QtTextToSpeech/
+include/X11/qt5/QtTextToSpeech/${VERSION}/QtTextToSpeech/private/
+include/X11/qt5/QtTextToSpeech/${VERSION}/QtTextToSpeech/private/qtexttospeech_p.h
+include/X11/qt5/QtTextToSpeech/${VERSION}/QtTextToSpeech/private/qvoice_p.h
+include/X11/qt5/QtTextToSpeech/QTextToSpeech
+include/X11/qt5/QtTextToSpeech/QTextToSpeechEngine
+include/X11/qt5/QtTextToSpeech/QTextToSpeechPlugin
+include/X11/qt5/QtTextToSpeech/QVoice
+include/X11/qt5/QtTextToSpeech/QtTextToSpeech
+include/X11/qt5/QtTextToSpeech/QtTextToSpeechDepends
+include/X11/qt5/QtTextToSpeech/QtTextToSpeechVersion
+include/X11/qt5/QtTextToSpeech/qtexttospeech.h
+include/X11/qt5/QtTextToSpeech/qtexttospeech_global.h
+include/X11/qt5/QtTextToSpeech/qtexttospeechengine.h
+include/X11/qt5/QtTextToSpeech/qtexttospeechplugin.h
+include/X11/qt5/QtTextToSpeech/qttexttospeechversion.h
+include/X11/qt5/QtTextToSpeech/qvoice.h
+lib/pkgconfig/Qt5TextToSpeech.pc
+lib/qt5/cmake/Qt5TextToSpeech/
+lib/qt5/cmake/Qt5TextToSpeech/Qt5TextToSpeechConfig.cmake
+lib/qt5/cmake/Qt5TextToSpeech/Qt5TextToSpeechConfigVersion.cmake
+lib/qt5/libQt5TextToSpeech.la
+lib/qt5/libQt5TextToSpeech.prl
+@lib lib/qt5/libQt5TextToSpeech.so.${LIBQt5TextToSpeech_VERSION}
+lib/qt5/mkspecs/modules/qt_lib_texttospeech.pri
+lib/qt5/mkspecs/modules/qt_lib_texttospeech_private.pri
+lib/qt5/pkgconfig/Qt5TextToSpeech.pc

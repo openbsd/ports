@@ -1,0 +1,8 @@
+The module enables a Qt application to support accessibility features such as
+text-to-speech, which is useful for end-users who are visually challenged or
+cannot access the application for whatever reason. The most common use case
+where text-to-speech comes in handy is when the end-user is driving and cannot
+attend the incoming messages on the phone.  In such a scenario, the messaging
+application can read out the incoming message.
+
+This package contains sources for QtSpeech usage examples.
