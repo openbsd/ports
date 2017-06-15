@@ -1,4 +1,4 @@
-$OpenBSD: README-common,v 1.7 2017/06/05 16:03:32 ajacoutot Exp $
+$OpenBSD: README-common,v 1.8 2017/06/15 14:40:37 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -100,7 +100,7 @@ Plugin installation
 Some devices will not work properly without a corresponding proprietary
 binary plugin. HPLIP plugins automated installation is not available on
 OpenBSD but it can be installed manually by running the following as
-root:
+root (or as a regular user with su(1) rights):
     cd /tmp
     ftp http://www.openprinting.org/download/printdriver/auxfiles/HP/plugins/hplip-${V}-plugin.run
     /bin/sh ./hplip-${V}-plugin.run --keep 2>/dev/null
