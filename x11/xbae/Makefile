@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2016/08/28 10:14:09 jca Exp $
+# $OpenBSD: Makefile,v 1.24 2017/06/15 01:00:42 schwarze Exp $
 
 COMMENT=	Motif-based table widget
 
 DISTNAME=	xbae-4.60.4
-REVISION=	15
+REVISION=	16
 
 SHARED_LIBS=	Xbae 4.60
 
@@ -21,7 +21,6 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xbae/}
 
 LIB_DEPENDS+=	converters/libiconv \
 		x11/motif
-USE_GROFF =	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	 --datadir=${PREFIX}/share/doc \
 		 --enable-production
