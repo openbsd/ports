@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2017/03/17 08:33:17 pea Exp $
+@comment $OpenBSD: PLIST,v 1.23 2017/06/15 10:55:42 rsadowski Exp $
 bin/gajim
 bin/gajim-history-manager
 bin/gajim-remote
@@ -999,6 +999,7 @@ share/gajim/icons/hicolor/scalable/apps/
 share/gajim/icons/hicolor/scalable/apps/gajim.svg
 share/gajim/plugins/
 share/gajim/plugins/plugin_installer/
+share/gajim/plugins/plugin_installer/DST_Root_CA_X3.pem
 share/gajim/plugins/plugin_installer/__init__.py
 share/gajim/plugins/plugin_installer/config_dialog.ui
 share/gajim/plugins/plugin_installer/manifest.ini
@@ -1334,9 +1335,9 @@ share/gajim/src/music_track_listener.${MODPY_PYOEXTENSION}
 share/gajim/src/negotiation.py
 share/gajim/src/negotiation.pyc
 share/gajim/src/negotiation.${MODPY_PYOEXTENSION}
-share/gajim/src/network_manager_listener.py
-share/gajim/src/network_manager_listener.pyc
-share/gajim/src/network_manager_listener.${MODPY_PYOEXTENSION}
+share/gajim/src/network_watcher.py
+share/gajim/src/network_watcher.pyc
+share/gajim/src/network_watcher.${MODPY_PYOEXTENSION}
 share/gajim/src/notify.py
 share/gajim/src/notify.pyc
 share/gajim/src/notify.${MODPY_PYOEXTENSION}
