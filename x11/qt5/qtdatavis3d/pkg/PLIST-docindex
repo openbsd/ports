@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST-docindex,v 1.1.1.1 2017/06/15 08:28:52 zhuk Exp $
+share/doc/qt5/qtdatavisualization/
+share/doc/qt5/qtdatavisualization/qtdatavisualization.index
