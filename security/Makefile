@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.457 2017/05/24 18:38:05 bluhm Exp $
+# $OpenBSD: Makefile,v 1.458 2017/06/15 07:52:33 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -315,9 +315,6 @@
      SUBDIR += ruby-openid
      SUBDIR += ruby-yadis
      SUBDIR += samdump2
-     SUBDIR += samhain
-     SUBDIR += samhain,mysql
-     SUBDIR += samhain,postgresql
      SUBDIR += scanlogd
      SUBDIR += scanssh
      SUBDIR += scrypt

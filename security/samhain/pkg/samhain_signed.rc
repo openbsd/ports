@@ -1,9 +1,0 @@
-#!/bin/sh
-#
-# $OpenBSD: samhain_signed.rc,v 1.2 2012/09/07 13:39:43 ajacoutot Exp $
-
-daemon="${TRUEPREFIX}/sbin/samhain.signed -t check"
-
-. /etc/rc.d/rc.subr
-
-rc_cmd $1
