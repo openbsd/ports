@@ -1,4 +1,4 @@
-# $OpenBSD: qmake.port.mk,v 1.6 2017/06/09 10:34:41 espie Exp $
+# $OpenBSD: qmake.port.mk,v 1.7 2017/06/15 08:54:46 zhuk Exp $
 
 .if empty(CONFIGURE_STYLE)
 CONFIGURE_STYLE =	qmake
@@ -26,6 +26,11 @@ MODQMAKE_ARGS +=	PREFIX=${PREFIX} \
 			QMAKE_LFLAGS_RELEASE="${LDFLAGS}"
 
 .if !${MODULES:Mx11/qt3} || ${MODQT_QMAKE} != ${MODQT3_QMAKE}
+MODQMAKE_RECURSIVE ?=	Yes
+.else
+MODQMAKE_RECURSIVE =	No
+.endif
+.if ${MODQMAKE_RECURSIVE:L} == "yes"
 MODQMAKE_ARGS +=	-recursive
 .endif
 
