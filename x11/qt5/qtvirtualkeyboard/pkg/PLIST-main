@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST-main,v 1.1.1.1 2017/06/15 08:37:08 zhuk Exp $
+lib/qt5/cmake/Qt5Gui/Qt5Gui_QVirtualKeyboardPlugin.cmake
+lib/qt5/plugins/platforminputcontexts/libqtvirtualkeyboardplugin.so
+lib/qt5/qml/QtQuick/VirtualKeyboard/
+lib/qt5/qml/QtQuick/VirtualKeyboard/Styles/
+lib/qt5/qml/QtQuick/VirtualKeyboard/Styles/libqtvirtualkeyboardstylesplugin.so
+lib/qt5/qml/QtQuick/VirtualKeyboard/Styles/plugins.qmltypes
+lib/qt5/qml/QtQuick/VirtualKeyboard/Styles/qmldir
+lib/qt5/qml/QtQuick/VirtualKeyboard/plugins.qmltypes
+lib/qt5/qml/QtQuick/VirtualKeyboard/qmldir
