@@ -1,0 +1,13 @@
+Qt Remote Objects (QtRO) is an inter-process communication (IPC) module
+developed for Qt. The idea is to extend existing Qt's functionalities to enable
+an easy exchange of information between processes or computers.
+
+One of the key features of Qt to enable this is the distinction between an
+objects API (defined by its Q_Property, Signals and Slots) and the
+implementation of that API. The purpose of QtRO is to meet the expected API,
+even if the true QObject is in a different process. A Slot called on a copy of
+an object (called a Replica) is forwarded to the true object (called a Source)
+for handling. Updates to the Source, either property changes or emitted Signals,
+are forwarded to every Replica.
+
+This package contains actual libraries to be used by apps.
