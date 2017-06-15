@@ -1,0 +1,10 @@
+A Qt 5 module that adds support for getting events from gamepad devices
+on multiple platforms.
+
+This module provides classes that can:
+ - read input events from game controllers (Button and Axis events),
+   both from C++ and Qt Quick (QML);
+ - provide a queryable input state (by processing events);
+ - provide key bindings.
+
+This package contains actual libraries to be used by apps.

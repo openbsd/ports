@@ -1,0 +1,39 @@
+@comment $OpenBSD: PLIST-main,v 1.1.1.1 2017/06/15 08:30:14 zhuk Exp $
+include/X11/qt5/QtGamepad/
+include/X11/qt5/QtGamepad/${VERSION}/
+include/X11/qt5/QtGamepad/${VERSION}/QtGamepad/
+include/X11/qt5/QtGamepad/${VERSION}/QtGamepad/private/
+include/X11/qt5/QtGamepad/${VERSION}/QtGamepad/private/qgamepadbackend_p.h
+include/X11/qt5/QtGamepad/${VERSION}/QtGamepad/private/qgamepadbackendfactory_p.h
+include/X11/qt5/QtGamepad/${VERSION}/QtGamepad/private/qgamepadbackendplugin_p.h
+include/X11/qt5/QtGamepad/${VERSION}/QtGamepad/private/qtgamepad-config_p.h
+include/X11/qt5/QtGamepad/QGamepad
+include/X11/qt5/QtGamepad/QGamepadKeyNavigation
+include/X11/qt5/QtGamepad/QGamepadManager
+include/X11/qt5/QtGamepad/QtGamepad
+include/X11/qt5/QtGamepad/QtGamepadDepends
+include/X11/qt5/QtGamepad/QtGamepadVersion
+include/X11/qt5/QtGamepad/qgamepad.h
+include/X11/qt5/QtGamepad/qgamepadkeynavigation.h
+include/X11/qt5/QtGamepad/qgamepadmanager.h
+include/X11/qt5/QtGamepad/qtgamepad-config.h
+include/X11/qt5/QtGamepad/qtgamepadglobal.h
+include/X11/qt5/QtGamepad/qtgamepadversion.h
+@lib lib/libQt5Gamepad.so.${LIBQt5Gamepad_VERSION}
+lib/pkgconfig/Qt5Gamepad.pc
+lib/qt5/cmake/Qt5Gamepad/
+lib/qt5/cmake/Qt5Gamepad/Qt5GamepadConfig.cmake
+lib/qt5/cmake/Qt5Gamepad/Qt5GamepadConfigVersion.cmake
+lib/qt5/cmake/Qt5Gamepad/Qt5Gamepad_QSdl2GamepadBackendPlugin.cmake
+lib/qt5/libQt5Gamepad.la
+lib/qt5/libQt5Gamepad.prl
+@lib lib/qt5/libQt5Gamepad.so.${LIBQt5Gamepad_VERSION}
+lib/qt5/mkspecs/modules/qt_lib_gamepad.pri
+lib/qt5/mkspecs/modules/qt_lib_gamepad_private.pri
+lib/qt5/pkgconfig/Qt5Gamepad.pc
+lib/qt5/plugins/gamepads/
+lib/qt5/plugins/gamepads/libsdl2gamepad.so
+lib/qt5/qml/QtGamepad/
+lib/qt5/qml/QtGamepad/libdeclarative_gamepad.so
+lib/qt5/qml/QtGamepad/plugins.qmltypes
+lib/qt5/qml/QtGamepad/qmldir
