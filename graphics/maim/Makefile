@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.17 2017/05/31 08:08:16 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2017/06/15 18:03:59 rsadowski Exp $
 
-V =		4.4.62
+V =		5.4.63
 COMMENT =	desktop screenshot utility (make image)
 CATEGORIES =	graphics x11
 
