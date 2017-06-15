@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2017/05/31 08:08:16 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2017/06/15 18:02:17 rsadowski Exp $
 
 COMMENT=	C++ mathematics header-only library for OpenGL software
 
-GH_TAGNAME=	0.9.7.1
+GH_TAGNAME=	0.9.8.4
 GH_PROJECT=	glm
 GH_ACCOUNT=	g-truc
 DISTNAME=	${GH_PROJECT}-${GH_TAGNAME}
@@ -14,13 +14,15 @@ HOMEPAGE=	http://glm.g-truc.net/
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
 
-MODULES=	devel/cmake 
+MODULES=	devel/cmake
 
-COMPILER = 	gcc
+COMPILER =	gcc
 
 # it's kind-of a NO_BUILD port, but doing so means you can't
 # run the tests.
-CONFIGURE_ARGS+=	-DGLM_TEST_ENABLE=BOOLEAN=ON
+CONFIGURE_ARGS+=-DGLM_TEST_ENABLE=BOOLEAN=ON
+
+CXXFLAGS+=	Wno-long-long
 
 PKG_ARCH=	*
 
