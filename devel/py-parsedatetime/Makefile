@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2017/04/11 09:28:00 rpointel Exp $
+# $OpenBSD: Makefile,v 1.9 2017/06/16 14:35:11 sthen Exp $
 
 COMMENT=		parse human-readable date/time text
 
-MODPY_EGG_VERSION =	2.3
+MODPY_EGG_VERSION =	2.4
 DISTNAME=		parsedatetime-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 
