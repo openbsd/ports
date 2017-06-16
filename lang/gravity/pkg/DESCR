@@ -1,0 +1,9 @@
+Gravity is a powerful, dynamically typed, lightweight, embeddable
+programming language written in C without any external dependencies
+(except for stdlib). It is a class-based concurrent scripting language
+with modern Swift-like syntax.
+
+Gravity supports procedural programming, object-oriented programming,
+functional programming and data-driven programming. Thanks to special
+built-in methods, it can also be used as a prototype-based programming
+language.
