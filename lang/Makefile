@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.198 2017/03/27 15:40:40 fcambus Exp $
+# $OpenBSD: Makefile,v 1.199 2017/06/16 03:37:21 bcallah Exp $
 
      SUBDIR =
      SUBDIR += STk
@@ -33,6 +33,7 @@
      SUBDIR += go
      SUBDIR += go-bootstrap
      SUBDIR += gprolog
+     SUBDIR += gravity
      SUBDIR += guile
      SUBDIR += guile2
      SUBDIR += hs-haskell-src
