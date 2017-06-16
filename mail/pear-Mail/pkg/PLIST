@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.6 2016/06/02 14:21:02 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.7 2017/06/16 14:07:30 sthen Exp $
+@comment pear/doc/Mail/
+@comment pear/doc/Mail/LICENSE
 @group daemon
 pear/lib/.registry/mail.reg
 pear/lib/Mail/
