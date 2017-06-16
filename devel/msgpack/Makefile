@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2017/06/13 17:30:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2017/06/16 18:55:07 jasper Exp $
 
 COMMENT =		MessagePack implementation for C and C++
 
-V = 			2.1.2
+V = 			2.1.3
 DISTNAME =		msgpack-${V}
-REVISION =		0
 SHARED_LIBS +=	msgpackc                  1.0 # 2.0
 
 CATEGORIES =		devel
