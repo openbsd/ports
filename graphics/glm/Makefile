@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2017/06/15 18:02:17 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.6 2017/06/16 09:34:36 czarkoff Exp $
 
 COMMENT=	C++ mathematics header-only library for OpenGL software
 
@@ -22,7 +22,7 @@ COMPILER =	gcc
 # run the tests.
 CONFIGURE_ARGS+=-DGLM_TEST_ENABLE=BOOLEAN=ON
 
-CXXFLAGS+=	Wno-long-long
+CXXFLAGS+=	-Wno-long-long
 
 PKG_ARCH=	*
 
