@@ -1,11 +1,11 @@
---- Makefile.orig	Mon Jun 18 14:29:22 2007
-+++ Makefile	Sun Nov  4 10:39:02 2007
-@@ -71,7 +71,7 @@ distname = evilwm-$(version)
- #DEFINES += -DXDEBUG  # show some X calls
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -74,7 +74,6 @@ OPT_CPPFLAGS += -DVWM
+ CC = gcc
  
- DEFINES += -DVERSION=\"$(version)\" $(DEBIAN)
--CFLAGS  += $(INCLUDES) $(DEFINES) -Os -Wall
-+CFLAGS  += $(INCLUDES) $(DEFINES)
- #CFLAGS  += $(INCLUDES) $(DEFINES) -g -Wall
- CFLAGS  += -W -Wstrict-prototypes -Wpointer-arith -Wcast-align -Wcast-qual -Wshadow -Waggregate-return -Wnested-externs -Winline -Wwrite-strings -Wundef -Wsign-compare -Wmissing-prototypes -Wredundant-decls
- LDFLAGS += $(LDPATH) $(LIBS)
+ # Override if desired:
+-CFLAGS = -Os
+ WARN = -Wall -W -Wstrict-prototypes -Wpointer-arith -Wcast-align \
+ 	-Wshadow -Waggregate-return -Wnested-externs -Winline -Wwrite-strings \
+ 	-Wundef -Wsign-compare -Wmissing-prototypes -Wredundant-decls

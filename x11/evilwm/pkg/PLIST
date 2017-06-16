@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2005/09/27 08:14:52 alek Exp $
-bin/evilwm
+@comment $OpenBSD: PLIST,v 1.5 2017/06/16 05:48:53 rsadowski Exp $
+@bin bin/evilwm
 @man man/man1/evilwm.1
 share/doc/evilwm/
 share/doc/evilwm/README
