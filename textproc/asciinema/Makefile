@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.2 2017/01/03 19:27:51 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2017/06/16 15:12:16 ajacoutot Exp $
 
 COMMENT=		terminal session recorder
 
-MODPY_EGG_VERSION=	1.3.0
+MODPY_EGG_VERSION=	1.4.0
 
 # MODPY_PI does not work
 GH_PROJECT=		asciinema
 GH_ACCOUNT=		asciinema
 GH_TAGNAME=		v${MODPY_EGG_VERSION}
-REVISION=		0
 
-CATEGORIES=		textproc
+CATEGORIES=		textproc graphics
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
