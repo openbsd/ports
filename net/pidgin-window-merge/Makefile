@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/06/15 16:29:20 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.2 2017/06/16 07:23:51 ajacoutot Exp $
 
 COMMENT =		merge Buddy List with a conversation window in Pidgin
 DISTNAME =		pidgin-window-merge-0.0.20130511
@@ -21,8 +21,8 @@ WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png pthread pthread-stubs purple xcb xcb-render xcb-shm
 WANTLIB += xml2 z
 
-BUILD_DEPENDS =		devel/autoconf/2.69 \
-			devel/automake/1.15 \
+BUILD_DEPENDS =		${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS} \
 			devel/libtool \
 			net/pidgin
 LIB_DEPENDS =		net/pidgin,-libpurple \
