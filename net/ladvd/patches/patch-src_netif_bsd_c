@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_netif_bsd_c,v 1.1 2017/06/16 15:05:00 sthen Exp $
+
+We have 64-bit media_list.
+
+Index: src/netif_bsd.c
+--- src/netif_bsd.c.orig
++++ src/netif_bsd.c
+@@ -474,7 +474,7 @@ static int netif_physical(int sockfd, struct netif *ne
+ 
+ #if HAVE_NET_IF_MEDIA_H
+     struct ifmediareq ifmr = {};
+-    int *media_list;
++    uint64_t *media_list;
+ 
+     strlcpy(ifmr.ifm_name, netif->name, sizeof(ifmr.ifm_name));
+ 
+@@ -498,7 +498,7 @@ static int netif_physical(int sockfd, struct netif *ne
+ 	return(EXIT_FAILURE);
+     }
+ 
+-    media_list = my_malloc(ifmr.ifm_count * sizeof(int));
++    media_list = my_malloc(ifmr.ifm_count * sizeof(uint64_t));
+     ifmr.ifm_ulist = media_list;
+ 
+     if (ioctl(sockfd, SIOCGIFMEDIA, (caddr_t)&ifmr) < 0) {

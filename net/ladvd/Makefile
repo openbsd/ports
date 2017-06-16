@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2015/10/05 16:29:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2017/06/16 15:05:00 sthen Exp $
 
 COMMENT =		link advertisement (LLDP/CDP etc) daemon
 
-DISTNAME =		ladvd-1.0.4
-REVISION =		3
 CATEGORIES =		net
 
+DISTNAME =		ladvd-1.1.1
+MASTER_SITES =		https://github.com/sspans/ladvd/files/1065794/
 HOMEPAGE =		http://blinkenlights.nl/software/ladvd/
 
 MAINTAINER =		Paul de Weerd <weerd@weirdnet.nl>
@@ -13,10 +13,7 @@ MAINTAINER =		Paul de Weerd <weerd@weirdnet.nl>
 # ISC
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		${HOMEPAGE}
-
-AUTOCONF_VERSION =	2.65
-CONFIGURE_STYLE =	autoconf
+CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--with-user=_ladvd --with-chroot-dir=/var/empty
 
 WANTLIB =		c event pcap
