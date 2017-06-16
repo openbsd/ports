@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2014/11/15 22:23:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2017/06/16 14:12:04 sthen Exp $
 
 COMMENT=	network socket interface support for PHP
 
-DISTNAME=	Net_Socket-1.0.14
+DISTNAME=	Net_Socket-1.2.2
 CATEGORIES=	net
 
 MODULES=	www/pear
