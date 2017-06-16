@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2016/11/04 17:06:12 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.22 2017/06/16 19:01:05 jasper Exp $
 @bin bin/birdfont
 @bin bin/birdfont-autotrace
 @bin bin/birdfont-export
@@ -26,6 +26,7 @@ share/icons/hicolor/256x256/apps/birdfont.png
 share/icons/hicolor/48x48/apps/birdfont.png
 share/locale/cs/LC_MESSAGES/birdfont.mo
 share/locale/de/LC_MESSAGES/birdfont.mo
+share/locale/es/LC_MESSAGES/birdfont.mo
 share/locale/it/LC_MESSAGES/birdfont.mo
 share/locale/nl/LC_MESSAGES/birdfont.mo
 share/locale/pt_BR/LC_MESSAGES/birdfont.mo
