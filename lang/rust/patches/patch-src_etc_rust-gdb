@@ -1,8 +1,9 @@
-$OpenBSD: patch-src_etc_rust-gdb,v 1.2 2017/02/15 12:52:35 landry Exp $
+$OpenBSD: patch-src_etc_rust-gdb,v 1.3 2017/06/17 02:06:53 danj Exp $
 only compatible with egdb (gdb from ports)
---- src/etc/rust-gdb.orig	Tue Jan 31 01:29:51 2017
-+++ src/etc/rust-gdb	Sun Feb  5 15:40:37 2017
-@@ -12,12 +12,17 @@
+Index: src/etc/rust-gdb
+--- src/etc/rust-gdb.orig
++++ src/etc/rust-gdb
+@@ -12,6 +12,11 @@
  # Exit if anything fails
  set -e
  
@@ -14,10 +15,12 @@ only compatible with egdb (gdb from ports)
  # Find out where the pretty printer Python module is
  RUSTC_SYSROOT=`rustc --print=sysroot`
  GDB_PYTHON_MODULE_DIRECTORY="$RUSTC_SYSROOT/lib/rustlib/etc"
- 
+@@ -19,7 +24,7 @@ GDB_PYTHON_MODULE_DIRECTORY="$RUSTC_SYSROOT/lib/rustli
  # Run GDB with the additional arguments that load the pretty printers
--PYTHONPATH="$PYTHONPATH:$GDB_PYTHON_MODULE_DIRECTORY" gdb \
-+PYTHONPATH="$PYTHONPATH:$GDB_PYTHON_MODULE_DIRECTORY" egdb \
+ # Set the environment variable `RUST_GDB` to overwrite the call to a
+ # different/specific command (defaults to `gdb`).
+-RUST_GDB="${RUST_GDB:-gdb}"
++RUST_GDB="${RUST_GDB:-egdb}"
+ PYTHONPATH="$PYTHONPATH:$GDB_PYTHON_MODULE_DIRECTORY" ${RUST_GDB} \
    -d "$GDB_PYTHON_MODULE_DIRECTORY" \
    -iex "add-auto-load-safe-path $GDB_PYTHON_MODULE_DIRECTORY" \
-   "$@"

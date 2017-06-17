@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2017/06/09 12:03:35 krw Exp $
+# $OpenBSD: Makefile,v 1.45 2017/06/17 02:06:53 danj Exp $
 
 # snapshots are only available for amd64 and i386, for now
 ONLY_FOR_ARCHS =	amd64 i386
@@ -8,18 +8,17 @@ DPB_PROPERTIES =	parallel
 COMMENT-main =		compiler for Rust Language
 COMMENT-doc =		html documentation for rustc
 
-V =			1.17.0
-REVISION =		0
+V =			1.18.0
 DISTNAME =		rustc-${V}-src
 
 # rustc bootstrap version
-RBV-amd64 =		1.17.0-20170426
-RBV-i386 =		1.17.0-20170426
+RBV-amd64 =		1.18.0-20170611
+RBV-i386 =		1.18.0-20170611
 RBV =			${RBV-${MACHINE_ARCH}}
 
 # cargo bootstrap version
-CBV-amd64 =		0.18.0-20170426
-CBV-i386 =		0.18.0-20170426
+CBV-amd64 =		0.19.0-20170611
+CBV-i386 =		0.19.0-20170611
 CBV =			${CBV-${MACHINE_ARCH}}
 
 PKGNAME =		rust-${V}
@@ -150,14 +149,6 @@ do-configure:
 	cp ${LOCALBASE}/lib/libestdc++.so.${LIBESTDC_VERSION} \
 		${WRKDIR}/modgcc-libs
 
-# hack to build doc using generated stage2 instead of with stage0
-# (rustdoc isn't included in our bootstrap)
-post-configure:
-	echo '#!/bin/sh' > ${WRKDIR}/rustc-bootstrap-${MACHINE_ARCH}-${RBV}/bin/rustdoc
-	echo 'LD_LIBRARY_PATH="${WRKBUILD}/build/${TRIPLE_ARCH}/stage2/lib" exec "${WRKBUILD}/build/${TRIPLE_ARCH}/stage2/bin/rustdoc" "$$@"' \
-		>> ${WRKDIR}/rustc-bootstrap-${MACHINE_ARCH}-${RBV}/bin/rustdoc
-	chmod 755 ${WRKDIR}/rustc-bootstrap-${MACHINE_ARCH}-${RBV}/bin/rustdoc
-
 BUILD_BIN = cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
 	    ${MODPY_BIN} ${WRKSRC}/src/bootstrap/bootstrap.py
 
@@ -207,17 +198,19 @@ bootstrap: build
 		COMPONENTS="rustc rust-std" \
 		FAKE_SETUP=""
 	rm -rf ${BOOTSTRAPDIR}/{man,share} \
-		${BOOTSTRAPDIR}/bin/{rust-gdb,rustdoc}
-	mv ${BOOTSTRAPDIR}/bin/rustc{,.bin}
-	strip ${BOOTSTRAPDIR}/bin/rustc.bin \
-		${BOOTSTRAPDIR}/lib/lib*.so \
+		${BOOTSTRAPDIR}/bin/rust-gdb
+	strip ${BOOTSTRAPDIR}/lib/lib*.so \
 		${BOOTSTRAPDIR}/lib/rustlib/${TRIPLE_ARCH}/lib/lib*.so
-	cp ${WRKDIR}/rustc-bootstrap-${MACHINE_ARCH}-${RBV}/bin/rustc \
-		${BOOTSTRAPDIR}/bin/rustc
+.for _bin in rustc rustdoc
+	mv ${BOOTSTRAPDIR}/bin/${_bin} \
+		${BOOTSTRAPDIR}/bin/${_bin}.bin
+	strip ${BOOTSTRAPDIR}/bin/${_bin}.bin
+	cp ${WRKDIR}/rustc-bootstrap-${MACHINE_ARCH}-${RBV}/bin/${_bin} \
+		${BOOTSTRAPDIR}/bin/${_bin}
 	LD_LIBRARY_PATH="${BOOTSTRAPDIR}/lib" \
-		ldd ${BOOTSTRAPDIR}/bin/rustc.bin \
+		ldd ${BOOTSTRAPDIR}/bin/${_bin}.bin \
 		| sed -ne 's,.* \(/.*/lib/lib.*\.so.[.0-9]*\)$$,\1,p' \
 		| xargs -r -J % cp % \
 			${BOOTSTRAPDIR}/lib
-
+.endfor
 .include <bsd.port.mk>
