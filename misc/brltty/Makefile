@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2016/03/16 21:19:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2017/06/17 16:58:24 schwarze Exp $
 
 COMMENT=	access software for a blind person using a braille terminal
 
 DISTNAME=	brltty-3.6
-REVISION=	1
+REVISION=	2
 CATEGORIES=	misc
 HOMEPAGE=	http://mielke.cc/brltty
 MASTER_SITES=	${HOMEPAGE}/releases/
@@ -22,7 +22,6 @@ CONFIGURE_ARGS=	--with-install-root=${WRKINST} \
 		--without-flite --without-x
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/aux
 
-USE_GROFF =	Yes
 NO_TEST=	Yes
 SEPARATE_BUILD=	Yes
 
