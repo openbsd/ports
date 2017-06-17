@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.78 2017/04/12 18:01:08 landry Exp $
+# $OpenBSD: Makefile,v 1.79 2017/06/17 21:58:59 zhuk Exp $
 
 COMMENT-main =		KDE core libraries
 COMMENT-en_US =		KDE en_US locale data
 COMMENT-langlist =	list of languages supported by KDE
 CATEGORIES =		devel
 V =			4.14.10
-REVISION-main =		7
+REVISION-main =		8
 DISTNAME =		kdelibs-$V
 PKGNAME-main =		${DISTNAME}
 PKGNAME-en_US =		kde4-locale-en_US-$V
@@ -26,7 +26,7 @@ SHARED_LIBS +=	kdeui                50.2      # .5.0
 SHARED_LIBS +=	kdnssd               50.2      # .2.0
 SHARED_LIBS +=	khtml                50.2      # .5.0
 SHARED_LIBS +=	kimproxy             50.2      # .4.0
-SHARED_LIBS +=	kio                  50.2      # .5.0
+SHARED_LIBS +=	kio                  50.3      # .5.0
 SHARED_LIBS +=	kjs                  50.2      # .2.0
 SHARED_LIBS +=	kjsembed             50.2      # .4.0
 SHARED_LIBS +=	kmediaplayer         50.2      # .4.0
