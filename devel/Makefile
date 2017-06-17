@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1620 2017/06/17 07:04:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.1621 2017/06/17 07:07:56 jasper Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1306,6 +1306,7 @@
      SUBDIR += py-cparser
      SUBDIR += py-cparser,python3
      SUBDIR += py-curtsies
+     SUBDIR += py-curtsies,python3
      SUBDIR += py-dateutil
      SUBDIR += py-dateutil,python3
      SUBDIR += py-decorator
