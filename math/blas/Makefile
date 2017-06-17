@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.25 2015/12/03 21:24:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2017/06/17 15:25:37 schwarze Exp $
 
 COMMENT=	Basic Linear Algebra Subprograms
 
 VERSION=	1.0
 DISTNAME=	blas
 PKGNAME=	${DISTNAME}-${VERSION}
-REVISION=	7
+REVISION=	8
 SHARED_LIBS=	blas	2.0
 
 CATEGORIES=	math
@@ -34,7 +34,6 @@ MAKE_ENV=	SHLIB_MAJOR=${LIBblas_VERSION:R} \
 		SHLIB_MINOR=${LIBblas_VERSION:E} \
 		FC=${FC}
 FAKE_FLAGS=	LIBDIR=${LOCALBASE}/lib DEBUGLIBS=no
-USE_GROFF =	Yes
 
 MANSRC=		${WRKDIR}/manpages/blas/man/manl
 
