@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 11:41:29 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2017/06/17 01:31:46 schwarze Exp $
 
 COMMENT=		Perl shell
 
 DISTNAME=		psh-1.8.1
 PKGNAME=		${DISTNAME:S/p/perl/}
-REVISION=		0
+REVISION=		1
 CATEGORIES=		shells
 
 HOMEPAGE=		http://www.focusresearch.com/gregor/sw/psh/
@@ -19,7 +19,6 @@ RUN_DEPENDS=		devel/p5-Term-ReadLine-Gnu \
 			devel/p5-BSD-Resource
 
 CONFIGURE_STYLE=	perl
-USE_GROFF =		Yes
 
 PKG_ARCH=		*
 
