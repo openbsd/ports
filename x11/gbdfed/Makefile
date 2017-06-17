@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2017/05/27 21:13:48 fcambus Exp $
+# $OpenBSD: Makefile,v 1.19 2017/06/17 16:51:03 schwarze Exp $
 
 COMMENT=	GTK-based BDF font editor
 
 DISTNAME=	gbdfed-1.6
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	x11 fonts
 
@@ -19,8 +19,6 @@ WANTLIB += z gdk-x11-2.0 gdk_pixbuf-2.0 gtk-x11-2.0
 
 MASTER_SITES=	https://www.distfiles.pl/
 EXTRACT_SUFX=	.tbz2
-
-USE_GROFF =	Yes
 
 MODULES=	devel/gettext
 LIB_DEPENDS=	x11/gtk+2
