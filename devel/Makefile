@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1621 2017/06/17 07:07:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.1622 2017/06/17 13:25:55 jasper Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -42,6 +42,7 @@
      SUBDIR += boris
      SUBDIR += bouml
      SUBDIR += bpython
+     SUBDIR += bpython,python3
      SUBDIR += bullet
      SUBDIR += bzr
      SUBDIR += bzr-svn

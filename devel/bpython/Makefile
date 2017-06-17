@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.15 2017/06/11 17:44:26 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.16 2017/06/17 13:25:55 jasper Exp $
 
 COMMENT=	fancy interface to the Python interpreter
 
 MODPY_EGG_VERSION=0.16
 DISTNAME=	bpython-${MODPY_EGG_VERSION}
 CATEGORIES=	devel
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	https://bpython-interpreter.org/
-MAINTAINER=	Brian Callahan <bcallah@devio.us>
+MAINTAINER=	Brian Callahan <bcallah@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
@@ -19,17 +19,36 @@ MODULES=	lang/python
 
 MODPY_SETUPTOOLS=Yes
 
+FLAVORS =	python3
+FLAVOR ?=
+
+.if ${FLAVOR:Mpython3}
+PKGNAME =	bpython${MODPY_MAJOR_VERSION}-${MODPY_EGG_VERSION}
+.endif
+
 RUN_DEPENDS=	devel/desktop-file-utils \
-		devel/py-curtsies \
-		devel/py-greenlet \
-		devel/py-six \
-		devel/py-urwid \
-		textproc/py-pygments \
-		www/py-requests
-BUILD_DEPENDS=	devel/py-babel \
-		textproc/py-sphinx
-TEST_DEPENDS=	devel/py-mock \
-		devel/py-twisted \
+		devel/py-curtsies${MODPY_FLAVOR} \
+		devel/py-greenlet${MODPY_FLAVOR} \
+		devel/py-six${MODPY_FLAVOR} \
+		devel/py-urwid${MODPY_FLAVOR} \
+		textproc/py-pygments${MODPY_FLAVOR} \
+		www/py-requests${MODPY_FLAVOR}
+BUILD_DEPENDS=	devel/py-babel${MODPY_FLAVOR} \
+		textproc/py-sphinx${MODPY_FLAVOR}
+TEST_DEPENDS=	devel/py-mock${MODPY_FLAVOR} \
+		devel/py-twisted${MODPY_FLAVOR} \
 		${RUN_DEPENDS}
+
+# de-conflict flavors
+post-install:
+.for b in bpdb bpython bpython-curses bpython-urwid
+	mv ${PREFIX}/bin/$b{,${MODPY_BIN_SUFFIX}}
+.endfor
+	mv ${PREFIX}/man/man1/bpython{,${MODPY_BIN_SUFFIX}}.1
+	mv ${PREFIX}/man/man5/bpython-config{,${MODPY_BIN_SUFFIX}}.5
+	mv ${PREFIX}/share/appdata/bpython{,${MODPY_BIN_SUFFIX}}.appdata.xml
+	mv ${PREFIX}/share/applications/bpython{,${MODPY_BIN_SUFFIX}}.desktop
+	mv ${PREFIX}/share/pixmaps/bpython{,${MODPY_BIN_SUFFIX}}.png
+
 
 .include <bsd.port.mk>
