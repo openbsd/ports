@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.74 2017/04/10 11:45:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.75 2017/06/17 17:22:04 schwarze Exp $
 
 COMMENT=		send/receive faxes and share modems
 DISTNAME=		hylafax-6.0.6
-REVISION=		5
+REVISION=		6
 CATEGORIES=		comms
 
 HOMEPAGE=		http://www.HylaFAX.org/
@@ -30,7 +30,6 @@ LIB_DEPENDS=		graphics/jbigkit \
 
 CONFIGURE_STYLE=	simple
 USE_GMAKE=		Yes
-USE_GROFF =		Yes
 
 CONFIGURE_ARGS=		--nointeractive \
 			--disable-pam \
