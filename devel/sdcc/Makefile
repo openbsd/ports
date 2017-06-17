@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2017/06/14 07:38:17 benoit Exp $
+# $OpenBSD: Makefile,v 1.15 2017/06/17 01:50:10 bcallah Exp $
 
 COMMENT=	Small Device C Compiler
 BROKEN-sparc64=	illegal operands building SDCCval.c
@@ -6,11 +6,12 @@ BROKEN-alpha=	sdcc segfaults when building the device library
 
 DISTNAME=	sdcc-src-3.6.0
 PKGNAME=	${DISTNAME:S/-src//}
+REVISION =	0
 EXTRACT_SUFX=	.tar.bz2
 CATEGORIES=	devel
 
 HOMEPAGE=	http://sdcc.sourceforge.net/
-MAINTAINER=	Brian Callahan <bcallah@devio.us>
+MAINTAINER=	Brian Callahan <bcallah@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -18,7 +19,8 @@ WANTLIB=		c m ${LIBCXX} readline termcap z
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=sdcc/}
 
-BUILD_DEPENDS=		${RUN_DEPENDS}
+BUILD_DEPENDS=		${RUN_DEPENDS} \
+			devel/boost
 RUN_DEPENDS=		devel/gputils
 
 CONFIGURE_STYLE=	gnu
