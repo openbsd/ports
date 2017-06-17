@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.30 2017/02/10 12:10:39 mestre Exp $
+# $OpenBSD: Makefile,v 1.31 2017/06/17 13:14:49 schwarze Exp $
 
 COMMENT=		console jabber client
 DISTNAME=		mcabber-1.0.5
+REVISION=		0
 CATEGORIES=		net
 
 HOMEPAGE=		https://mcabber.com/
@@ -28,7 +29,6 @@ LIB_DEPENDS=		devel/glib2 \
 RUN_DEPENDS=		devel/desktop-file-utils
 
 USE_GMAKE =		Yes
-USE_GROFF =		Yes
 LIBTOOL_FLAGS=		--tag=disable-static
 
 CONFIGURE_STYLE=	gnu
