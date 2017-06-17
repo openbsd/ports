@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2016/08/14 21:29:44 steven Exp $
+# $OpenBSD: Makefile,v 1.15 2017/06/17 17:45:23 schwarze Exp $
 
 COMMENT =	utilities to read and parse Argus data
 
 DISTNAME =	argus-clients-3.0.8.2
-REVISION =	0
+REVISION =	1
 CATEGORIES =	net
 
 HOMEPAGE =	http://qosient.com/argus/
@@ -28,7 +28,6 @@ CONFIGURE_ARGS +=	--with-libft=yes \
 			--without-sasl
 MODGNU_CONFIG_GUESS_DIRS = ${WRKSRC}/config
 BUILD_DEPENDS =	devel/bison
-USE_GROFF =	Yes
 
 MAKE_FLAGS =	CCOPT="${CFLAGS}" COMPATLIB="-lm -lz -L${LOCALBASE}/lib -lft"
 FAKE_FLAGS =	docdir=${PREFIX}/share/doc/argus-clients/
