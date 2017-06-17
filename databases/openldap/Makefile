@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.152 2017/06/03 13:17:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.153 2017/06/17 00:42:37 schwarze Exp $
 
 DPB_PROPERTIES =	parallel
 
@@ -8,6 +8,7 @@ COMMENT-server =	open-source LDAP software (server)
 DISTNAME =		openldap-2.4.45
 PKGNAME-main =		${DISTNAME:S/-/-client-/}
 PKGNAME-server =	${DISTNAME:S/-/-server-/}
+REVISION =		0
 
 # overwrite -main pkgname/path to strip FLAVOR, aci only affects the server
 FULLPKGNAME-main =	${DISTNAME:S/-/-client-/}${FLAVOR_EXT:S/-aci//}
@@ -43,9 +44,6 @@ EXTRACT_SUFX =		.tgz
 SEPARATE_BUILD =	Yes
 AUTOCONF_VERSION =	2.65
 CONFIGURE_STYLE =	autoconf
-
-# formatting is ok with mandoc, but it uses soelim
-USE_GROFF =		Yes
 
 FLAVOR ?=
 FLAVORS =		aci gssapi
@@ -107,6 +105,8 @@ TEST_TARGET =	test
 
 MULTI_PACKAGES =	-main -server
 
+# formatting is ok with mandoc, but soelim is used at build time
+BUILD_DEPENDS +=	textproc/groff
 LIB_DEPENDS +=		security/cyrus-sasl2 
 WANTLIB +=		pthread sasl2
 CPPFLAGS +=		-I${LOCALBASE}/include/sasl
