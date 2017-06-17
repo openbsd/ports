@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.92 2017/04/10 11:46:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.93 2017/06/17 00:16:20 schwarze Exp $
 
 COMMENT-main=		UPS monitoring program supporting many brands
 COMMENT-cgi=		CGIs for monitoring Nut-based UPSs
@@ -12,7 +12,9 @@ PKGNAME-cgi=		${DISTNAME:S/-/-cgi-/}
 PKGNAME-snmp=		${DISTNAME:S/-/-snmp-/}
 PKGNAME-xml=		${DISTNAME:S/-/-xml-/}
 
-REVISION-main=		0
+REVISION-main=		1
+REVISION-snmp=		0
+REVISION-xml=		0
 
 SHARED_LIBS +=	upsclient            4.0      # .4.0
 SHARED_LIBS +=	nutclient            0.0      # .0.0
@@ -47,7 +49,6 @@ BUILD_DEPENDS+=		textproc/asciidoc>=8.6.8 \
 
 WEB_ROOT=		/var/www
 SUBST_VARS=		BASESYSCONFDIR WEB_ROOT
-USE_GROFF=		Yes
 
 CONFIGURE_STYLE=	gnu
 SYSCONFDIR=		${BASESYSCONFDIR}/nut
