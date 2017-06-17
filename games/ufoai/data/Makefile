@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2014/09/29 18:23:15 kirby Exp $
+# $OpenBSD: Makefile,v 1.7 2017/06/17 07:43:27 kirby Exp $
 
 COMMENT =		UFO:AI data
 
 DISTNAME =		ufoai-${V}-data
 PKGNAME = 		ufoai-data-${V}
+REVISION = 		0
 
 EXTRACT_SUFX =		.tar
 

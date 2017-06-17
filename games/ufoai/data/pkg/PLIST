@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2014/09/29 18:23:15 kirby Exp $
+@comment $OpenBSD: PLIST,v 1.4 2017/06/17 07:43:27 kirby Exp $
 share/ufoai/
 share/ufoai/base/
 share/ufoai/base/ai/
@@ -674,7 +674,9 @@ share/ufoai/base/maps/military_convoy/mc_craft_drop_firebird.bsp
 share/ufoai/base/maps/military_convoy/mc_craft_drop_herakles.bsp
 share/ufoai/base/maps/military_convoy/mc_craft_drop_raptor.bsp
 share/ufoai/base/maps/military_convoy/mc_main.bsp
+share/ufoai/base/maps/mine.bsp
 share/ufoai/base/maps/neighbourhood.bsp
+share/ufoai/base/maps/office.bsp
 share/ufoai/base/maps/oriental/
 share/ufoai/base/maps/oriental.bsp
 share/ufoai/base/maps/oriental.ump
@@ -949,6 +951,7 @@ share/ufoai/base/maps/village2/vil_b2x2_house02.bsp
 share/ufoai/base/maps/village2/vil_b2x2_house03.bsp
 share/ufoai/base/maps/village2/vil_b2x2_house05.bsp
 share/ufoai/base/maps/village2/vil_b2x2_house08.bsp
+share/ufoai/base/maps/village2/vil_b2x2_house09.bsp
 share/ufoai/base/maps/village2/vil_b2x4_house04.bsp
 share/ufoai/base/maps/village2/vil_b2x4_house06.bsp
 share/ufoai/base/maps/village2/vil_b2x4_house07.bsp
@@ -964,6 +967,8 @@ share/ufoai/base/maps/village2/vil_p2x2_garden01.bsp
 share/ufoai/base/maps/village2/vil_p2x2_playground01.bsp
 share/ufoai/base/maps/village2/vil_p2x2_playground02.bsp
 share/ufoai/base/maps/village2/vil_p4x4_fountain01.bsp
+share/ufoai/base/maps/village2/vil_sc_ne01.bsp
+share/ufoai/base/maps/village2/vil_sc_nw01.bsp
 share/ufoai/base/maps/village2/vil_sc_sw01.bsp
 share/ufoai/base/maps/village2/vil_sh1x1_01.bsp
 share/ufoai/base/maps/village2/vil_sh_01.bsp
