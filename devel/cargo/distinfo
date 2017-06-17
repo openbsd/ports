@@ -8,7 +8,7 @@ SHA256 (rust/../cargo/chrono-0.2.25.tar.gz) = khP3zXwn6VwrV8SfDmmx6mWycTjahKFwEz
 SHA256 (rust/../cargo/cmake-0.1.22.tar.gz) = 0Y1omH7UxRbcw+eRNlm/pAdvUYLupKfgA4uwYJU+dqw=
 SHA256 (rust/../cargo/crossbeam-0.2.10.tar.gz) = DF6iFWZMomTaip2cO+gNLq8wkjwlnQPocDiOuSdQj5c=
 SHA256 (rust/../cargo/curl-0.4.6.tar.gz) = yQ4SQO80DdQCet5Dnlx8IGTdncZSaCEXvVDRSGo63Xs=
-SHA256 (rust/../cargo/curl-sys-0.3.11.tar.gz) = I+flRNxeG6QsSkpni9R5hehLnD9NNATClwBiKgKducM=
+SHA256 (rust/../cargo/curl-sys-0.3.10.tar.gz) = wNkJ3EAq6AtvewEYwDkgNDYGG52aPKXSwlRtk+CmGqo=
 SHA256 (rust/../cargo/docopt-0.7.0.tar.gz) = qzLqbihNh5hwZvIanoCac8FHIFce80UW8IkLPTVcz9g=
 SHA256 (rust/../cargo/dtoa-0.4.1.tar.gz) = gMi3H9cRRpkKl0L8Bty73hkWGiZ+CtTlcsNRYvRXjJA=
 SHA256 (rust/../cargo/env_logger-0.4.2.tar.gz) = 44VvFpcJhgb8bLl6k96Iyj87w1u4eMclkg5uguzwXoM=
@@ -27,7 +27,7 @@ SHA256 (rust/../cargo/itoa-0.3.1.tar.gz) = 6y9AT7xm/ZqsE+mYJIUF5+yyrY5Eq2OIaExfs
 SHA256 (rust/../cargo/kernel32-sys-0.2.2.tar.gz) = dQdiSylINDHAui2Crs6Mps26k4K/9N3Q90kFYMBWCY0=
 SHA256 (rust/../cargo/lazy_static-0.2.5.tar.gz) = RzLFY7miGkBlZcR0fap7RnQvCCkRrkdT85DcnsfuGpc=
 SHA256 (rust/../cargo/libc-0.2.21.tar.gz) = iO6BiF+fBL/5keMG/qfBxgpfD55Anpn2tA4zEaM2MTU=
-SHA256 (rust/../cargo/libgit2-sys-0.6.8.tar.gz) = aL7R0RmNpdKwR69o/XFhPd+qPVtoeXGBsz6dhUcmO0s=
+SHA256 (rust/../cargo/libgit2-sys-0.6.7.tar.gz) = 2VH9XsyuB8dOjCwQdbBeoeQ75/iVIkWvjChA0UgLHZU=
 SHA256 (rust/../cargo/libssh2-sys-0.2.5.tar.gz) = keE1ZFwuGYo5VSyMdoa7W4OxuZ9kgxwECmwnmKEZWTQ=
 SHA256 (rust/../cargo/libz-sys-1.0.13.tar.gz) = 5e6RKkXWhtOT1ayH+sFboLoY2q4U6OdUPGPr9/t+lww=
 SHA256 (rust/../cargo/log-0.3.7.tar.gz) = UUHsoCd1p2LMbNVk2NLFD2fA6jo3LL8cUVkrPgKeEK0=
@@ -46,7 +46,7 @@ SHA256 (rust/../cargo/num-rational-0.1.36.tar.gz) = wtxeoEAgqPGDGK5IXHUfjPocDmnc
 SHA256 (rust/../cargo/num-traits-0.1.37.tar.gz) = 4cv6N4Hz/nPcBTIb7VKgbS1JHqp2TFIzXPQ5nwRuzpk=
 SHA256 (rust/../cargo/num_cpus-1.3.0.tar.gz) = oYw5JGZAnFC4c2lBSiaAyT5zmu3rSY6yv/fX61aXROI=
 SHA256 (rust/../cargo/openssl-0.9.10.tar.gz) = 2KoOt6rUTw2m992hPdtFWdkaD0DPqxULH3atWznsUj8=
-SHA256 (rust/../cargo/openssl-probe-0.1.0.tar.gz) = dW1JyEJEg6PfO11zURK02iIQnO2agpTx9c34D7OBCRk=
+SHA256 (rust/../cargo/openssl-probe-0.1.1.tar.gz) = 2Y3wJw1ATM08BQpB1XnFLR2xU3UWi7NHHgTsD183ja8=
 SHA256 (rust/../cargo/openssl-sys-0.9.10.tar.gz) = FPW/0SBU12RRC4hxUtVkuhHZmuJOp9dAeBd49kZiBXY=
 SHA256 (rust/../cargo/pkg-config-0.3.9.tar.gz) = OotMa4FlzRoc1LmxIJeBMTifZL2vRWQ1yqQeYw7bqQM=
 SHA256 (rust/../cargo/psapi-sys-0.1.0.tar.gz) = q81dGgfTYOKXJ/dXqd7LPOi8bg76iWnPqtZpqDF6JHg=
@@ -69,7 +69,7 @@ SHA256 (rust/../cargo/shell-escape-0.1.3.tar.gz) = 3VzJZIHVRYOUe/6IvzDCPVP4g8bNA
 SHA256 (rust/../cargo/strsim-0.6.0.tar.gz) = tNFcgQUZqRz4d+fjbmP+BogVxngYFDny8p4lYhR8NpQ=
 SHA256 (rust/../cargo/syn-0.11.9.tar.gz) = SAyDRwHKujVIqpkeVGdygb46VBSp0J3b307XSlaanRk=
 SHA256 (rust/../cargo/synom-0.11.3.tar.gz) = o5MGbtkBDrrtYLnq+jc9SxuqwYbdfgCFVbD3ArUZRbY=
-SHA256 (rust/../cargo/tar-0.4.11.tar.gz) = wjdPMYu+LFrGyD3WJA1fGnMQb3LTmz99b42GN8e0Jdg=
+SHA256 (rust/../cargo/tar-0.4.10.tar.gz) = HrO/bskoQ8qT9Pz7X8bf4wU0gVsUeIXbS1dZuOL/fVI=
 SHA256 (rust/../cargo/tempdir-0.3.5.tar.gz) = h5dKb1wd+zRNczBVYBZQBZozY94qYQSBkpO6/2YhMtY=
 SHA256 (rust/../cargo/term-0.4.5.tar.gz) = 0WivOTCzac/iRRMlUFedR9/Yc9aUcHVaGcLGVo272Yk=
 SHA256 (rust/../cargo/thread-id-2.0.0.tar.gz) = qVOdtWAQLRzvRri3jOc3/wu2Tn4Y01sqVoj30JfQ/wM=
@@ -77,7 +77,7 @@ SHA256 (rust/../cargo/thread-id-3.0.0.tar.gz) = RDfJdVjHDRKeQGKaWzhbP7H/rDAeY5QT
 SHA256 (rust/../cargo/thread_local-0.2.7.tar.gz) = hXbbv8rvlkFFLVzw35sOfuq3aUlW3TO7YVFfuPGM/dU=
 SHA256 (rust/../cargo/thread_local-0.3.3.tar.gz) = yFBIxiYNF89IbOrjKC2ftrkL4iC/WyjEAPVIX/wp8Mc=
 SHA256 (rust/../cargo/time-0.1.36.tar.gz) = IRtjwRIgY1bvH/mxk1X0N0D8P4WWDFmKk9Oj07p76t4=
-SHA256 (rust/../cargo/toml-0.3.1.tar.gz) = NHTzxurzLu209KZqJiFPAg+Cim2Ww344o146N5u8/RE=
+SHA256 (rust/../cargo/toml-0.3.2.tar.gz) = vYatnr7iRv3t1hDg9tBYe3VKPYFDjbkwokTQSA7Xh48=
 SHA256 (rust/../cargo/unicode-bidi-0.2.5.tar.gz) = 06B4691iwOcacJw9U9KvaT/gn+k/v/g0SuviibePkDI=
 SHA256 (rust/../cargo/unicode-normalization-0.1.4.tar.gz) = 4o+jdCb87rXPj0HuJz+qfILEfcj7pYU0AoQeZl/Nhv8=
 SHA256 (rust/../cargo/unicode-xid-0.0.4.tar.gz) = jB+GDX0pzwLLLz81n9NZka89MLrFLFfSZaPEYQdMtNw=
@@ -90,9 +90,9 @@ SHA256 (rust/../cargo/void-1.0.2.tar.gz) = agLkiF7TvA8t6Q6m3UXry7ZtrP/gNUf627Dur
 SHA256 (rust/../cargo/winapi-0.2.8.tar.gz) = Fn3J1pSam4V/NFEnXpEcP0QlWELB96dvM8VRA6kJCHo=
 SHA256 (rust/../cargo/winapi-build-0.1.1.tar.gz) = LTFe7js0rKR5ey2msT7Ygmbm1hJWKgxGOQr4KZ/Gmbw=
 SHA256 (rust/../cargo/ws2_32-sys-0.2.1.tar.gz) = 1Zzv69DIkvot1t5YHpNzAdhVLLREic3/A1xhh8tj+l4=
-SHA256 (rust/cargo-bootstrap-amd64-0.18.0-20170426.tar.gz) = vDQ1ae0x2F+6/4m67xvA1PLmhOy4GNJGljv5mYoIlh4=
-SHA256 (rust/cargo-bootstrap-i386-0.18.0-20170426.tar.gz) = AP4CtBLKal98GvtVFaquMWKU51lBBge5P/rw8dLTt+g=
-SHA256 (rust/rustc-1.17.0-src.tar.gz) = S6ujiVt18kkt9s5aKKkWMH7NHAiNwf0C2/qKjoYXT4c=
+SHA256 (rust/cargo-bootstrap-amd64-0.19.0-20170611.tar.gz) = mewH5qIC1Tvmab4Bt//1sgDkWqkMX8wtUWY+SDHMi9I=
+SHA256 (rust/cargo-bootstrap-i386-0.19.0-20170611.tar.gz) = /dcGxnItU6WMo+9SsxaEhhEqhq6RLUkL0O67J/UZsQo=
+SHA256 (rust/rustc-1.18.0-src.tar.gz) = 0tw26ZueImlIiyvN3eQ8I05r3gPt9wy6gqAn/0nDYRE=
 SIZE (rust/../cargo/advapi32-sys-0.2.0.tar.gz) = 7217
 SIZE (rust/../cargo/aho-corasick-0.5.3.tar.gz) = 252052
 SIZE (rust/../cargo/aho-corasick-0.6.3.tar.gz) = 24963
@@ -103,7 +103,7 @@ SIZE (rust/../cargo/chrono-0.2.25.tar.gz) = 98296
 SIZE (rust/../cargo/cmake-0.1.22.tar.gz) = 12504
 SIZE (rust/../cargo/crossbeam-0.2.10.tar.gz) = 32993
 SIZE (rust/../cargo/curl-0.4.6.tar.gz) = 57831
-SIZE (rust/../cargo/curl-sys-0.3.11.tar.gz) = 2980301
+SIZE (rust/../cargo/curl-sys-0.3.10.tar.gz) = 3197115
 SIZE (rust/../cargo/docopt-0.7.0.tar.gz) = 41313
 SIZE (rust/../cargo/dtoa-0.4.1.tar.gz) = 73264
 SIZE (rust/../cargo/env_logger-0.4.2.tar.gz) = 10386
@@ -122,7 +122,7 @@ SIZE (rust/../cargo/itoa-0.3.1.tar.gz) = 73340
 SIZE (rust/../cargo/kernel32-sys-0.2.2.tar.gz) = 24537
 SIZE (rust/../cargo/lazy_static-0.2.5.tar.gz) = 5865
 SIZE (rust/../cargo/libc-0.2.21.tar.gz) = 132909
-SIZE (rust/../cargo/libgit2-sys-0.6.8.tar.gz) = 4217027
+SIZE (rust/../cargo/libgit2-sys-0.6.7.tar.gz) = 4235960
 SIZE (rust/../cargo/libssh2-sys-0.2.5.tar.gz) = 412200
 SIZE (rust/../cargo/libz-sys-1.0.13.tar.gz) = 602795
 SIZE (rust/../cargo/log-0.3.7.tar.gz) = 16352
@@ -141,7 +141,7 @@ SIZE (rust/../cargo/num-rational-0.1.36.tar.gz) = 12556
 SIZE (rust/../cargo/num-traits-0.1.37.tar.gz) = 20492
 SIZE (rust/../cargo/num_cpus-1.3.0.tar.gz) = 6779
 SIZE (rust/../cargo/openssl-0.9.10.tar.gz) = 101113
-SIZE (rust/../cargo/openssl-probe-0.1.0.tar.gz) = 5638
+SIZE (rust/../cargo/openssl-probe-0.1.1.tar.gz) = 5668
 SIZE (rust/../cargo/openssl-sys-0.9.10.tar.gz) = 31422
 SIZE (rust/../cargo/pkg-config-0.3.9.tar.gz) = 11055
 SIZE (rust/../cargo/psapi-sys-0.1.0.tar.gz) = 973
@@ -164,7 +164,7 @@ SIZE (rust/../cargo/shell-escape-0.1.3.tar.gz) = 6441
 SIZE (rust/../cargo/strsim-0.6.0.tar.gz) = 8500
 SIZE (rust/../cargo/syn-0.11.9.tar.gz) = 62342
 SIZE (rust/../cargo/synom-0.11.3.tar.gz) = 17120
-SIZE (rust/../cargo/tar-0.4.11.tar.gz) = 38443
+SIZE (rust/../cargo/tar-0.4.10.tar.gz) = 36587
 SIZE (rust/../cargo/tempdir-0.3.5.tar.gz) = 10605
 SIZE (rust/../cargo/term-0.4.5.tar.gz) = 37496
 SIZE (rust/../cargo/thread-id-2.0.0.tar.gz) = 6108
@@ -172,7 +172,7 @@ SIZE (rust/../cargo/thread-id-3.0.0.tar.gz) = 6240
 SIZE (rust/../cargo/thread_local-0.2.7.tar.gz) = 10954
 SIZE (rust/../cargo/thread_local-0.3.3.tar.gz) = 10964
 SIZE (rust/../cargo/time-0.1.36.tar.gz) = 28333
-SIZE (rust/../cargo/toml-0.3.1.tar.gz) = 54005
+SIZE (rust/../cargo/toml-0.3.2.tar.gz) = 54035
 SIZE (rust/../cargo/unicode-bidi-0.2.5.tar.gz) = 26886
 SIZE (rust/../cargo/unicode-normalization-0.1.4.tar.gz) = 278063
 SIZE (rust/../cargo/unicode-xid-0.0.4.tar.gz) = 16034
@@ -185,6 +185,6 @@ SIZE (rust/../cargo/void-1.0.2.tar.gz) = 2356
 SIZE (rust/../cargo/winapi-0.2.8.tar.gz) = 455145
 SIZE (rust/../cargo/winapi-build-0.1.1.tar.gz) = 669
 SIZE (rust/../cargo/ws2_32-sys-0.2.1.tar.gz) = 4697
-SIZE (rust/cargo-bootstrap-amd64-0.18.0-20170426.tar.gz) = 7813144
-SIZE (rust/cargo-bootstrap-i386-0.18.0-20170426.tar.gz) = 7514429
-SIZE (rust/rustc-1.17.0-src.tar.gz) = 31570599
+SIZE (rust/cargo-bootstrap-amd64-0.19.0-20170611.tar.gz) = 7925141
+SIZE (rust/cargo-bootstrap-i386-0.19.0-20170611.tar.gz) = 7677538
+SIZE (rust/rustc-1.18.0-src.tar.gz) = 33111774

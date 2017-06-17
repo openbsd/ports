@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.13 2017/05/19 10:10:27 landry Exp $
+# $OpenBSD: Makefile,v 1.14 2017/06/17 02:08:10 danj Exp $
 COMMENT = package manager for Rust language
 
 ONLY_FOR_ARCHS =	amd64 i386
 
 # cargo version
-CARGO_VERSION =		0.18.0
-RUSTC_VERSION =		1.17.0
+CARGO_VERSION =		0.19.0
+RUSTC_VERSION =		1.18.0
 
 # cargo version used for bootstrapping
-BV-amd64 =		0.18.0-20170426
-BV-i386 =		0.18.0-20170426
+BV-amd64 =		0.19.0-20170611
+BV-i386 =		0.19.0-20170611
 BOOTSTRAP_VERSION =	${BV-${MACHINE_ARCH}}
 
 PKGNAME =	cargo-${CARGO_VERSION}
@@ -31,7 +31,7 @@ MODCARGO_DIST_SUBDIR = ../cargo
 #
 PERMIT_PACKAGE_CDROM = Yes
 
-WANTLIB = c crypto curl git2 m pthread ssh2 ssl z
+WANTLIB = c crypto curl git2 m pthread ssh2 ssl
 
 MODCARGO_CRATES +=	advapi32-sys-0.2.0	# MIT
 MODCARGO_CRATES +=	aho-corasick-0.5.3	# Unlicense/MIT
@@ -43,7 +43,7 @@ MODCARGO_CRATES +=	chrono-0.2.25	# MIT/Apache-2.0
 MODCARGO_CRATES +=	cmake-0.1.22	# MIT/Apache-2.0
 MODCARGO_CRATES +=	crossbeam-0.2.10	# Apache-2.0/MIT
 MODCARGO_CRATES +=	curl-0.4.6	# MIT
-MODCARGO_CRATES +=	curl-sys-0.3.11	# MIT
+MODCARGO_CRATES +=	curl-sys-0.3.10	# MIT
 MODCARGO_CRATES +=	docopt-0.7.0	# Unlicense/MIT
 MODCARGO_CRATES +=	dtoa-0.4.1	# MIT/Apache-2.0
 MODCARGO_CRATES +=	env_logger-0.4.2	# MIT/Apache-2.0
@@ -62,7 +62,7 @@ MODCARGO_CRATES +=	itoa-0.3.1	# MIT/Apache-2.0
 MODCARGO_CRATES +=	kernel32-sys-0.2.2	# MIT
 MODCARGO_CRATES +=	lazy_static-0.2.5	# MIT
 MODCARGO_CRATES +=	libc-0.2.21	# MIT/Apache-2.0
-MODCARGO_CRATES +=	libgit2-sys-0.6.8	# MIT/Apache-2.0
+MODCARGO_CRATES +=	libgit2-sys-0.6.7	# MIT/Apache-2.0
 MODCARGO_CRATES +=	libssh2-sys-0.2.5	# MIT/Apache-2.0
 MODCARGO_CRATES +=	libz-sys-1.0.13	# MIT/Apache-2.0
 MODCARGO_CRATES +=	log-0.3.7	# MIT/Apache-2.0
@@ -81,7 +81,7 @@ MODCARGO_CRATES +=	num-rational-0.1.36	# MIT/Apache-2.0
 MODCARGO_CRATES +=	num-traits-0.1.37	# MIT/Apache-2.0
 MODCARGO_CRATES +=	num_cpus-1.3.0	# MIT/Apache-2.0
 MODCARGO_CRATES +=	openssl-0.9.10	# Apache-2.0
-MODCARGO_CRATES +=	openssl-probe-0.1.0	# MIT/Apache-2.0
+MODCARGO_CRATES +=	openssl-probe-0.1.1	# MIT/Apache-2.0
 MODCARGO_CRATES +=	openssl-sys-0.9.10	# MIT
 MODCARGO_CRATES +=	pkg-config-0.3.9	# MIT/Apache-2.0
 MODCARGO_CRATES +=	psapi-sys-0.1.0	# MIT
@@ -104,7 +104,7 @@ MODCARGO_CRATES +=	shell-escape-0.1.3	# MIT/Apache-2.0
 MODCARGO_CRATES +=	strsim-0.6.0	# MIT
 MODCARGO_CRATES +=	syn-0.11.9	# MIT/Apache-2.0
 MODCARGO_CRATES +=	synom-0.11.3	# MIT/Apache-2.0
-MODCARGO_CRATES +=	tar-0.4.11	# MIT/Apache-2.0
+MODCARGO_CRATES +=	tar-0.4.10	# MIT/Apache-2.0
 MODCARGO_CRATES +=	tempdir-0.3.5	# MIT/Apache-2.0
 MODCARGO_CRATES +=	term-0.4.5	# MIT/Apache-2.0
 MODCARGO_CRATES +=	thread-id-2.0.0	# Apache-2.0
@@ -112,7 +112,7 @@ MODCARGO_CRATES +=	thread-id-3.0.0	# Apache-2.0
 MODCARGO_CRATES +=	thread_local-0.2.7	# Apache-2.0/MIT
 MODCARGO_CRATES +=	thread_local-0.3.3	# Apache-2.0/MIT
 MODCARGO_CRATES +=	time-0.1.36	# MIT/Apache-2.0
-MODCARGO_CRATES +=	toml-0.3.1	# MIT/Apache-2.0
+MODCARGO_CRATES +=	toml-0.3.2	# MIT/Apache-2.0
 MODCARGO_CRATES +=	unicode-bidi-0.2.5	# MIT / Apache-2.0
 MODCARGO_CRATES +=	unicode-normalization-0.1.4	# MIT/Apache-2.0
 MODCARGO_CRATES +=	unicode-xid-0.0.4	# MIT/Apache-2.0
