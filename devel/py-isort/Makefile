@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2017/01/03 19:19:48 landry Exp $
+# $OpenBSD: Makefile,v 1.4 2017/06/18 21:41:36 shadchin Exp $
 
 COMMENT =		Python utility / library to sort Python imports
 
-MODPY_EGG_VERSION =	4.2.5
+MODPY_EGG_VERSION =	4.2.15
 DISTNAME =		isort-${MODPY_EGG_VERSION}
 PKGNAME =		py-isort-${MODPY_EGG_VERSION}
-REVISION =		0
 
 CATEGORIES =		devel
 
@@ -24,9 +23,10 @@ MODPY_SETUPTOOLS =	Yes
 FLAVORS =		python3
 FLAVOR ?=
 
-NO_TEST =		Yes
+TEST_DEPENDS =		devel/py-mock${MODPY_FLAVOR} \
+			devel/py-test${MODPY_FLAVOR}
 
 post-install:
-	mv ${PREFIX}/bin/isort ${PREFIX}/bin/isort${MODPY_BIN_SUFFIX}
+	mv ${PREFIX}/bin/isort{,${MODPY_BIN_SUFFIX}}
 
 .include <bsd.port.mk>
