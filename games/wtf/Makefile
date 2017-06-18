@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.43 2017/05/31 11:21:17 benoit Exp $
+# $OpenBSD: Makefile,v 1.44 2017/06/18 16:55:49 bcallah Exp $
 
 COMMENT =	translate common internet acronyms
 
-DISTNAME =	wtf-20170529
+DISTNAME =	wtf-20170614
 CATEGORIES =	games
+
+MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # Public Domain
 PERMIT_PACKAGE_CDROM =	Yes
