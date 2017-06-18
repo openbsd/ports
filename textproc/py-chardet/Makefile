@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2017/05/18 15:18:39 shadchin Exp $
+# $OpenBSD: Makefile,v 1.11 2017/06/18 21:58:45 shadchin Exp $
 
 COMMENT=		character encoding auto-detection in Python
 
-MODPY_EGG_VERSION=	3.0.3
+MODPY_EGG_VERSION=	3.0.4
 DISTNAME=		chardet-${MODPY_EGG_VERSION}
 PKGNAME=		py-chardet-${MODPY_EGG_VERSION}
 
@@ -21,8 +21,8 @@ MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
 BUILD_DEPENDS =		devel/py-test-runner${MODPY_FLAVOR}
-
-NO_TEST =		Yes
+TEST_DEPENDS =		devel/py-hypothesis${MODPY_FLAVOR} \
+			devel/py-test${MODPY_FLAVOR}
 
 FLAVORS =		python3
 FLAVOR ?=
