@@ -1,7 +1,8 @@
-$OpenBSD: patch-mpegsound_mpegsound_h,v 1.1 2010/01/11 07:51:26 jakemsr Exp $
---- mpegsound/mpegsound.h.orig	Sat Jan 24 07:25:11 2009
-+++ mpegsound/mpegsound.h	Sun Dec 27 16:39:14 2009
-@@ -433,6 +433,36 @@ class Rawplayer : public Soundplayer (private)
+$OpenBSD: patch-mpegsound_mpegsound_h,v 1.2 2017/06/18 14:56:03 bcallah Exp $
+Index: mpegsound/mpegsound.h
+--- mpegsound/mpegsound.h.orig
++++ mpegsound/mpegsound.h
+@@ -430,6 +430,36 @@ class Rawplayer : public Soundplayer (private)
  
  #endif /* WANT_OSS */
  
@@ -38,7 +39,7 @@ $OpenBSD: patch-mpegsound_mpegsound_h,v 1.1 2010/01/11 07:51:26 jakemsr Exp $
  #ifdef WANT_ESD
  // Class for playing raw data via Enlightened Sound Daemon
  class EsdPlayer : public Soundplayer
-@@ -957,7 +987,7 @@ class Fileplayer
+@@ -954,7 +984,7 @@ class Fileplayer
  {
  public:
  	enum audiodriver_t {

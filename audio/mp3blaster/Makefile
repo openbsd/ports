@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.20 2017/04/26 14:58:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2017/06/18 14:56:03 bcallah Exp $
 
 COMMENT=	text console audio player with an interactive interface
 
-DISTNAME=	mp3blaster-3.2.5
-REVISION=	2
+DISTNAME=	mp3blaster-3.2.6
 CATEGORIES=	audio
 HOMEPAGE=	http://mp3blaster.sourceforge.net/
+MAINTAINER=	Brian Callahan <bcallah@openbsd.org>
 
-# GPLv2
+# GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	c m ncurses ogg pthread sidplay sndio ${LIBCXX} vorbis vorbisfile
