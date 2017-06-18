@@ -1,24 +1,22 @@
-# $OpenBSD: Makefile,v 1.2 2017/01/03 19:19:48 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2017/06/18 20:52:50 shadchin Exp $
 
 COMMENT =		discover and load entry points from installed packages
 
-MODPY_EGG_VERSION =	0.2.2
-PKGNAME =		py-entrypoints-${MODPY_EGG_VERSION}
+MODPY_EGG_VERSION =	0.2.3
+DISTNAME =		entrypoints-${MODPY_EGG_VERSION}
+PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
-REVISION =		0
 
 HOMEPAGE =		https://github.com/takluyver/entrypoints
 
 MAINTAINER =		Alexandr Shadchin <shadchin@openbsd.org>
 
-GH_ACCOUNT =		takluyver
-GH_PROJECT =		entrypoints
-GH_TAGNAME =		${MODPY_EGG_VERSION}
-
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		lang/python
+
+MODPY_PI =		Yes
 
 TEST_DEPENDS =		devel/py-test${MODPY_FLAVOR}
 
