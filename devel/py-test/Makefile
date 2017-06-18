@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.28 2017/05/25 08:54:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2017/06/18 21:43:20 shadchin Exp $
 
 COMMENT=		cross-project testing tool for Python
 
-MODPY_EGG_VERSION=	3.1.0
+MODPY_EGG_VERSION=	3.1.2
 DISTNAME=		pytest-${MODPY_EGG_VERSION}
 PKGNAME=		py-test-${MODPY_EGG_VERSION}
 
