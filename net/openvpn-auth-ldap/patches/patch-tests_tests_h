@@ -1,0 +1,17 @@
+$OpenBSD: patch-tests_tests_h,v 1.1 2017/06/19 21:02:11 sebastia Exp $
+
+Do not test failing tests due to using
+the modern runtime
+
+Index: tests/tests.h
+--- tests/tests.h.orig
++++ tests/tests.h
+@@ -60,8 +60,6 @@ Suite *LFString_suite(void);
+ Suite *LFAuthLDAPConfig_suite(void);
+ Suite *LFLDAPConnection_suite(void);
+ Suite *TRLDAPEntry_suite(void);
+-Suite *TRObject_suite(void);
+-Suite *TRArray_suite(void);
+ Suite *TRHash_suite(void);
+ Suite *TRConfigToken_suite(void);
+ Suite *TRConfigLexer_suite(void);

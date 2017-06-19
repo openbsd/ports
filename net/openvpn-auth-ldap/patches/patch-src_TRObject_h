@@ -1,0 +1,43 @@
+$OpenBSD: patch-src_TRObject_h,v 1.1 2017/06/19 21:02:11 sebastia Exp $
+
+Index: src/TRObject.h
+--- src/TRObject.h.orig
++++ src/TRObject.h
+@@ -40,20 +40,29 @@
+ #endif
+ 
+ #include <stdbool.h>
++#ifdef MODERN_RUNTIME
++#import <Foundation/NSObject.h>
++#else
+ #include <objc/Object.h>
++#endif
+ 
+ #include "auth-ldap.h"
+ 
+ @protocol TRObject
++#ifndef MODERN_RUNTIME
+ /* Reference counting */
+ - (id) retain;
+ - (void) release;
+ 
+ /* Equality */
+ - (BOOL) isEqual: (id) anObject;
++#endif
+ @end
+ 
+ 
++#ifdef MODERN_RUNTIME
++@interface TRObject : NSObject <TRObject>
++#else
+ @interface TRObject : Object <TRObject> {
+ 	unsigned int _refCount;
+ }
+@@ -66,6 +75,7 @@
+ 
+ - (void) dealloc;
+ 
++#endif
+ @end
+ 
+ #endif /* TROBJECT_H */

@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_TRObject_m,v 1.1 2017/06/19 21:02:11 sebastia Exp $
+
+Index: src/TRObject.m
+--- src/TRObject.m.orig
++++ src/TRObject.m
+@@ -53,6 +53,7 @@
+  * Additionally, we implement brain-dead, non-thread-safe
+  * reference counting.
+  */ 
++#ifndef MODERN_RUNTIME
+ @interface Object (AppleAddedAReallyStupidGCCWarning)
+ - (void) dealloc;
+ @end
+@@ -102,4 +103,7 @@
+ 		[self dealloc];
+ }
+ 
++#else
++@implementation TRObject
++#endif
+ @end

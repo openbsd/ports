@@ -1,0 +1,47 @@
+$OpenBSD: patch-src_auth-ldap_m,v 1.1 2017/06/19 21:02:11 sebastia Exp $
+
+Index: src/auth-ldap.m
+--- src/auth-ldap.m.orig
++++ src/auth-ldap.m
+@@ -48,7 +48,12 @@
+ #include <TRPacketFilter.h>
+ #include <TRPFAddress.h>
+ #include <TRLog.h>
++#ifdef MODERN_RUNTIME
++#import <Foundation/NSAutoreleasePool.h>
+ 
++static NSAutoreleasePool *pool;
++#endif
++
+ /* Plugin Context */
+ typedef struct ldap_ctx {
+ 	LFAuthLDAPConfig *config;
+@@ -166,7 +171,7 @@ static LFString *createSearchFilter(LFString *template
+ 	const char userFormat[] = "%u";
+ 
+ 	/* Copy the template */
+-	templateString = [[LFString alloc] initWithString: template];
++	templateString = [(LFString *)[LFString alloc] initWithString: template];
+ 
+ 	/* Initialize the result */
+ 	result = [[LFString alloc] init];
+@@ -550,6 +555,10 @@ openvpn_plugin_func_v1(openvpn_plugin_handle_t handle,
+ 	TRLDAPEntry *ldapUser = nil;
+ 	int ret = OPENVPN_PLUGIN_FUNC_ERROR;
+ 
++#ifdef MODERN_RUNTIME
++        pool = [[NSAutoreleasePool alloc] init];
++#endif
++
+ 	username = get_env("username", envp);
+ 	password = get_env("password", envp);
+ 	remoteAddress = get_env("ifconfig_pool_remote_ip", envp);
+@@ -613,5 +622,8 @@ cleanup:
+ 		[ldapUser release];
+ 	if (ldap)
+ 		[ldap release];
++#ifdef MODERN_RUNTIME
++	[pool release];
++#endif
+ 	return (ret);
+ }
