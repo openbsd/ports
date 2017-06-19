@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.23 2017/05/31 08:08:15 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2017/06/19 19:57:07 natano Exp $
 
 COMMENT =	Qt4-based featureful music player
 
 V =		1.2.3
 DISTNAME =	clementine-${V}
 CATEGORIES =	audio x11
-REVISION =	5
+REVISION =	6
 
 HOMEPAGE =	http://clementine-player.org/
 
@@ -70,9 +70,11 @@ CONFIGURE_ARGS =	-DENABLE_SOUNDMENU:Bool=Off \
 CONFIGURE_ARGS +=	-DFORCE_BUNDLED_GMOCK=Yes
 
 # Use system SQLite
-CONFIGURE_ARGS +=	-DSTATIC_SQLITE:Bool=No \
-			-DI_HATE_MY_USERS:Bool=Yes \
-			-DMY_USERS_WILL_SUFFER_BECAUSE_OF_ME:Bool=Yes
+# XXX Currently not possible, because devel/sqlite3 is built without
+# -DSQLITE_ENABLE_FTS3_TOKENIZER.
+#CONFIGURE_ARGS +=	-DSTATIC_SQLITE:Bool=No \
+#			-DI_HATE_MY_USERS:Bool=Yes \
+#			-DMY_USERS_WILL_SUFFER_BECAUSE_OF_ME:Bool=Yes
 
 # stupidity
 CONFIGURE_ARGS +=	-DBUILD_WERROR:Bool=No
