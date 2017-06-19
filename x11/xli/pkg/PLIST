@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/06/19 17:14:19 bcallah Exp $
+@conflict xloadimage-*
+@bin bin/xli
+@bin bin/xlito
+bin/xsetbg
+bin/xview
+@man man/man1/xli.1
+@man man/man1/xlito.1
+@man man/man1/xsetbg.1
+@man man/man1/xview.1

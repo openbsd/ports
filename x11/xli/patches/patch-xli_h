@@ -1,0 +1,15 @@
+$OpenBSD: patch-xli_h,v 1.1.1.1 2017/06/19 17:14:19 bcallah Exp $
+
+Missing string.h include.
+
+Index: xli.h
+--- xli.h.orig
++++ xli.h
+@@ -12,6 +12,7 @@
+ #include "copyright.h"
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <string.h>
+ #include <math.h>
+ #ifndef VMS
+ #include <unistd.h>

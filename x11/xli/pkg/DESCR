@@ -1,0 +1,12 @@
+xli is an image display program for X. It is a fork of xloadimage.
+
+A variety of options are available to modify images prior to viewing.
+These options include clipping, dithering, depth reduction, zoom (either
+X or Y axis independently or both at once), brightening or darkening,
+input gamma correction, and image merging. When applicable, these
+options are done automatically (eg. a color image to be displayed on a
+monochrome screen will be dithered automatically). A utility (xlito) is
+provided that allows these viewing options to be appended to the image
+files.
+
+xli can also be used to set the X background image if called as xsetbg.
