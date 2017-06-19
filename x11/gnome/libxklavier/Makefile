@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.54 2017/04/13 07:38:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.55 2017/06/19 08:38:03 landry Exp $
 
 COMMENT=		utility library for XKB
 
 GNOME_PROJECT=		libxklavier
-GNOME_VERSION=		5.3
-REVISION=		3
+GNOME_VERSION=		5.4
+EXTRACT_SUFX=		.tar.bz2
 
-SHARED_LIBS +=  xklavier             17.0     # .19.0
+SHARED_LIBS +=  xklavier             17.1     # .20.0
 
 HOMEPAGE=		http://www.freedesktop.org/wiki/Software/LibXklavier
+MASTER_SITES=	https://people.freedesktop.org/~svu/
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes

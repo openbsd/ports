@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2015/03/16 18:07:58 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.13 2017/06/19 08:38:03 landry Exp $
 include/libxklavier/
 include/libxklavier/xkl-enum-types.h
 include/libxklavier/xkl_config_item.h
@@ -15,8 +15,6 @@ lib/libxklavier.la
 lib/pkgconfig/libxklavier.pc
 share/gir-1.0/
 share/gir-1.0/Xkl-1.0.gir
-share/gtk-doc/
-share/gtk-doc/html/
 share/gtk-doc/html/libxklavier/
 share/gtk-doc/html/libxklavier/XklConfigItem.html
 share/gtk-doc/html/libxklavier/XklConfigRec.html
