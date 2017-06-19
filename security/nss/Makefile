@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.76 2017/05/30 18:57:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.77 2017/06/19 04:48:49 landry Exp $
 
 COMMENT=		libraries to support development of security-enabled apps
 
-VERSION=		3.30.2
+VERSION=		3.31
 DISTNAME=		nss-${VERSION}
-REVISION=		0
 
-SO_VERSION=		47.0
+SO_VERSION=		48.0
 .for _lib in freebl3 nss3 nssckbi nssdbm3 nssutil3 smime3 softokn3 ssl3
 SHARED_LIBS+=		${_lib} ${SO_VERSION}
 .endfor
@@ -19,7 +18,7 @@ HOMEPAGE=		https://developer.mozilla.org/en-US/docs/Mozilla/Projects/NSS
 PERMIT_PACKAGE_CDROM=	Yes
 
 #for regular releases
-MASTER_SITES=		http://ftp.mozilla.org/pub/mozilla.org/security/nss/releases/${DISTNAME:U:C/[-.]/_/g}_RTM/src/
+MASTER_SITES=		https://ftp.mozilla.org/pub/mozilla.org/security/nss/releases/${DISTNAME:U:C/[-.]/_/g}_RTM/src/
 
 LIB_DEPENDS=		databases/sqlite3 \
 			devel/nspr>=4.12
