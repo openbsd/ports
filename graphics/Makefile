@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.437 2017/06/01 16:38:40 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.438 2017/06/19 18:27:05 landry Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -227,6 +227,7 @@
      SUBDIR += py-matplotlib
      SUBDIR += py-matplotlib,python3
      SUBDIR += py-opengl
+     SUBDIR += py-opengl,python3
      SUBDIR += py-pyx
      SUBDIR += py-sane
      SUBDIR += py-sane,python3
