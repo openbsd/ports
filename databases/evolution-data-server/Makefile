@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.225 2017/05/08 18:01:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.226 2017/06/19 12:05:23 ajacoutot Exp $
 
 # XXX add libphonenumber support when a cpp release is out
 
 COMMENT=		unified backend for PIM programs
 
 GNOME_PROJECT=		evolution-data-server
-GNOME_VERSION=		3.24.2
+GNOME_VERSION=		3.24.3
 
 CATEGORIES=		databases productivity
 
