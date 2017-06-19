@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.121 2017/05/07 14:50:14 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.122 2017/06/19 10:22:05 espie Exp $
 .\"
 .\" Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: May 7 2017 $
+.Dd $Mdocdate: June 19 2017 $
 .Dt DPB 1
 .Os
 .Sh NAME
@@ -1446,10 +1446,6 @@ connects to external hosts through
 relying on
 .Xr ssh_config 5
 for any special cases.
-.Pp
-.Nm
-requires ssh protocol 2, and won't work with ssh 1.
-Currently, it doesn't even report a problem, it just won't start jobs.
 .Pp
 When fetching distfiles,
 .Nm
