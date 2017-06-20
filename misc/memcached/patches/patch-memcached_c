@@ -1,6 +1,7 @@
-$OpenBSD: patch-memcached_c,v 1.11 2016/09/02 14:20:31 giovanni Exp $
---- memcached.c.orig	Fri Jun 24 19:41:24 2016
-+++ memcached.c	Thu Jun 30 00:02:09 2016
+$OpenBSD: patch-memcached_c,v 1.12 2017/06/20 19:52:26 giovanni Exp $
+Index: memcached.c
+--- memcached.c.orig
++++ memcached.c
 @@ -23,6 +23,7 @@
  #include <sys/uio.h>
  #include <ctype.h>
@@ -9,7 +10,7 @@ $OpenBSD: patch-memcached_c,v 1.11 2016/09/02 14:20:31 giovanni Exp $
  
  /* some POSIX systems need the following definition
   * to get mlockall flags out of sys/mman.h.  */
-@@ -6100,6 +6101,32 @@ int main (int argc, char **argv) {
+@@ -6679,6 +6680,32 @@ int main (int argc, char **argv) {
  
      if (pid_file != NULL) {
          save_pid(pid_file);
