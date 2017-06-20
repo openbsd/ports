@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Vars.pm,v 1.50 2017/05/09 14:18:28 espie Exp $
+# $OpenBSD: Vars.pm,v 1.51 2017/06/20 15:48:12 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -95,7 +95,8 @@ sub run_pipe
 	$core->start_pipe(sub {
 		my $shell = shift;
 		close STDERR;
-		open STDERR, '>&', STDOUT or DPB::Util->die_bang("bad redirect");
+		open STDERR, '>&', STDOUT or 
+		    DPB::Util->die_bang("bad redirect");
 		$class->run_command($core, $shell, $grabber, $subdirs, $skip,
 		    'dump-vars', "DPB=$dpb", "BATCH=Yes", "REPORT_PROBLEM=:");
 	}, "LISTING");
