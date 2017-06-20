@@ -1,0 +1,14 @@
+$OpenBSD: patch-dimbuilder_CMakeLists_txt,v 1.1.1.1 2017/06/20 17:12:15 landry Exp $
+
+no libdl on OpenBSD
+
+Index: dimbuilder/CMakeLists.txt
+--- dimbuilder/CMakeLists.txt.orig
++++ dimbuilder/CMakeLists.txt
+@@ -29,6 +29,3 @@ target_include_directories(dimbuilder PRIVATE
+ if (PDAL_HAVE_JSONCPP)
+     target_link_libraries(dimbuilder PRIVATE ${PDAL_JSONCPP_LIB_NAME})
+ endif()
+-if (UNIX AND NOT APPLE)
+-    target_link_libraries(dimbuilder PRIVATE dl)
+-endif()

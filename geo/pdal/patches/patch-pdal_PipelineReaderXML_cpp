@@ -1,0 +1,25 @@
+$OpenBSD: patch-pdal_PipelineReaderXML_cpp,v 1.1.1.1 2017/06/20 17:12:15 landry Exp $
+
+no wordexp on OpenBSD
+
+Index: pdal/PipelineReaderXML.cpp
+--- pdal/PipelineReaderXML.cpp.orig
++++ pdal/PipelineReaderXML.cpp
+@@ -43,7 +43,7 @@
+ 
+ #include <boost/property_tree/xml_parser.hpp>
+ 
+-#ifndef _WIN32
++#ifndef __OpenBSD__
+ #include <wordexp.h>
+ #endif
+ 
+@@ -158,7 +158,7 @@ Option PipelineReaderXML::parseElement_Option(const pt
+     if (name == "filename")
+     {
+         std::string path = value;
+-#ifndef _WIN32
++#ifndef __OpenBSD__
+         wordexp_t result;
+         if (wordexp(path.c_str(), &result, 0) == 0)
+         {

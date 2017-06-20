@@ -1,0 +1,7 @@
+PDAL is a C++ BSD library for translating and manipulating point cloud
+data. It is very much like the GDAL library which handles raster and
+vector data.
+
+In addition to the library code, PDAL provides a suite of command-line
+applications that users can conveniently use to process, filter,
+translate, and query point cloud data.

@@ -1,0 +1,21 @@
+$OpenBSD: patch-pdal_util_CMakeLists_txt,v 1.1.1.1 2017/06/20 17:12:15 landry Exp $
+
+no libdl on OpenBSD
+
+Index: pdal/util/CMakeLists.txt
+--- pdal/util/CMakeLists.txt.orig
++++ pdal/util/CMakeLists.txt
+@@ -22,13 +22,6 @@ target_link_libraries(${PDAL_UTIL_LIB_NAME}
+ target_include_directories(${PDAL_UTIL_LIB_NAME} PRIVATE
+     ${PDAL_VENDOR_DIR}/pdalboost)
+ 
+-if (UNIX AND NOT APPLE)
+-    target_link_libraries(${PDAL_UTIL_LIB_NAME}
+-        PRIVATE
+-            dl
+-    )
+-endif()
+-
+ set_target_properties(${PDAL_UTIL_LIB_NAME} PROPERTIES
+     VERSION "${PDAL_BUILD_VERSION}"
+     SOVERSION "${PDAL_API_VERSION}"

@@ -1,0 +1,24 @@
+$OpenBSD: patch-pdal_util_Utils_cpp,v 1.1.1.1 2017/06/20 17:12:15 landry Exp $
+
+ditch libexecinfo dependency
+
+Index: pdal/util/Utils.cpp
+--- pdal/util/Utils.cpp.orig
++++ pdal/util/Utils.cpp
+@@ -44,7 +44,6 @@
+ #include <cxxabi.h>
+ #include <sys/ioctl.h>
+ #include <sys/wait.h>  // WIFEXITED, WEXITSTATUS
+-#include <execinfo.h> // backtrace
+ #include <dlfcn.h> // dladdr
+ #endif
+ 
+@@ -604,7 +603,7 @@ double Utils::normalizeLongitude(double longitude)
+ std::vector<std::string> Utils::backtrace()
+ {
+     std::vector<std::string> lines;
+-#ifndef WIN32
++#ifndef __OpenBSD__
+     const int MAX_STACK_SIZE(100);
+     void* buffer[MAX_STACK_SIZE];
+     std::vector<std::string> prefixes;

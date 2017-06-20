@@ -1,0 +1,15 @@
+$OpenBSD: patch-cmake_modules_FindGEOS_cmake,v 1.1.1.1 2017/06/20 17:12:15 landry Exp $
+
+Make sure we find libgeos with our soname
+
+Index: cmake/modules/FindGEOS.cmake
+--- cmake/modules/FindGEOS.cmake.orig
++++ cmake/modules/FindGEOS.cmake
+@@ -106,6 +106,7 @@ ELSE(WIN32)
+             ARGS --libs
+             OUTPUT_VARIABLE GEOS_CONFIG_LIBS )
+ 
++        FIND_LIBRARY(GEOS_LIBRARY geos)
+         ## split off the link dirs (for rpath)
+         ## use regular expression to match wildcard equivalent "-L*<endchar>"
+         ## with <endchar> is a space or a semicolon
