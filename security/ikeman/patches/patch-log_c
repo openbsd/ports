@@ -1,0 +1,29 @@
+$OpenBSD: patch-log_c,v 1.1 2017/06/20 14:59:39 sthen Exp $
+
+Index: log.c
+--- log.c.orig
++++ log.c
+@@ -17,13 +17,9 @@
+  * OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+  */
+ 
+-#include <sys/param.h>
+-#include <sys/queue.h>
+ #include <sys/socket.h>
+-#include <sys/tree.h>
+-
++#include <sys/types.h>
+ #include <netinet/in.h>
+-
+ #include <errno.h>
+ #include <netdb.h>
+ #include <stdarg.h>
+@@ -31,7 +27,7 @@
+ #include <stdlib.h>
+ #include <string.h>
+ #include <syslog.h>
+-#include <event.h>
++#include <time.h>
+ 
+ #include "ikeman.h"
+ 
