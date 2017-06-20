@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.12 2017/04/14 16:43:40 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.13 2017/06/20 15:46:18 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -30,10 +30,7 @@ sub run
 {
 	my ($self, $core) = @_;
 	my $job = $core->job;
-	$job->{logger}->run_as(
-	    sub {
-		$self->redirect_fh($job->{logfh}, $job->{log});
-	    });
+	$self->redirect_fh($job->{logfh}, $job->{log});
 	exit(!$job->{file}->checksum($job->{file}->tempfilename));
 }
 
@@ -111,10 +108,7 @@ sub run
 	my $job = $core->job;
 	my $site = $self->{site};
 	$site =~ s/^\"(.*)\"$/$1/;
-	$job->{logger}->run_as(
-	    sub {
-		$self->redirect($job->{log});
-	    });
+	$job->{logger}->redirect($job->{log});
 	if ($job->{file}{sz} == 0) {
 		print STDERR "No size in distinfo\n";
 		exit(1);

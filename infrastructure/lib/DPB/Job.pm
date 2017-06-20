@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Job.pm,v 1.11 2017/04/14 16:43:40 espie Exp $
+# $OpenBSD: Job.pm,v 1.12 2017/06/20 15:46:18 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -59,15 +59,6 @@ sub finalize
 {
 	my ($self, $core) = @_;
 	return $core->{status} == 0;
-}
-
-sub redirect
-{
-	my ($self, $log) = @_;
-	close STDOUT;
-	open STDOUT, '>>', $log or DPB::Util->die_bang("Can't write to $log");
-	close STDERR;
-	open STDERR, '>&STDOUT' or DPB::Util->die_bang("bad redirect");
 }
 
 sub redirect_fh
