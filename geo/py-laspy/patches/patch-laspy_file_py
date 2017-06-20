@@ -1,0 +1,14 @@
+$OpenBSD: patch-laspy_file_py,v 1.1.1.1 2017/06/20 17:14:47 landry Exp $
+
+Index: laspy/file.py
+--- laspy/file.py.orig
++++ laspy/file.py
+@@ -158,7 +158,7 @@ class File(object):
+ 
+     def visualize(self, mode = "default", dim = "intensity"):
+         try:
+-            import glviewer
++            from laspy import glviewer
+             glviewer.run_glviewer(self, mode= mode, dim = dim)
+             return(0)
+         except Exception as err:

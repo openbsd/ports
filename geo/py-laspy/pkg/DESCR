@@ -1,0 +1,7 @@
+Laspy is a pythonic library for reading, modifying and writing LAS
+files. Support for LAZ is limited to reading LAS version 1.0-1.4
+files. Laspy is compatible with Python 2.6+ and 3.5+.
+
+Laspy includes a set of command line tools which can be used to do basic
+file operations like format translation and validation as well as
+comparing LAS files.
