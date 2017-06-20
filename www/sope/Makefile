@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2017/05/09 20:49:15 sebastia Exp $
+# $OpenBSD: Makefile,v 1.67 2017/06/20 19:26:34 giovanni Exp $
 
 PORTROACH+=		limit:^2
 
@@ -6,7 +6,7 @@ COMMENT-main=		Skyrix Object Publishing Environment
 COMMENT-mysql=		SOPE MySQL adaptor
 COMMENT-postgres=	SOPE PostgreSQL adaptor
 
-VERSION =		2.3.20
+VERSION =		2.3.21
 DISTNAME =		SOPE-${VERSION}
 PKGNAME-main =		sope-${VERSION}
 PKGNAME-mysql =		sope-mysql-${VERSION}
@@ -36,7 +36,7 @@ MODGNUSTEP_NEEDS_GUI=	No
 BUILD_DEPENDS =		shells/bash
 
 WANTLIB-main = 		c crypto ssl iconv lber ldap lzma xml2 z \
-			${MODGNUSTEP_WANTLIB}
+			${MODGNUSTEP_WANTLIB} ${LIBCXX}
 WANTLIB-mysql = 	GDLAccess mysqlclient crypto ssl z \
 			${MODGNUSTEP_WANTLIB}
 WANTLIB-postgres = 	GDLAccess EOControl pq ${MODGNUSTEP_WANTLIB}
