@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_bsd_kernel_routes_c,v 1.2 2017/06/04 11:45:04 stsp Exp $
+$OpenBSD: patch-src_bsd_kernel_routes_c,v 1.3 2017/06/20 15:14:10 stsp Exp $
 
 Index: src/bsd/kernel_routes.c
 --- src/bsd/kernel_routes.c.orig
@@ -49,7 +49,58 @@ Index: src/bsd/kernel_routes.c
  
    /* walk to the end of the header */
    walker = buff + sizeof(struct rt_msghdr);
-@@ -389,6 +405,9 @@ add_del_route6(const struct rt_entry *rt, int add)
+@@ -322,13 +338,15 @@ add_del_route6(const struct rt_entry *rt, int add)
+   nexthop = olsr_get_nh(rt);
+   if (0 != (rtm->rtm_flags & RTF_GATEWAY)) {
+     memcpy(&sin6.sin6_addr.s6_addr, &nexthop->gateway.v6, sizeof(struct in6_addr));
+-    memset(&sin6.sin6_addr.s6_addr, 0, 8);
+-    sin6.sin6_addr.s6_addr[0] = 0xfe;
+-    sin6.sin6_addr.s6_addr[1] = 0x80;
+-    sin6.sin6_scope_id = nexthop->iif_index;
++    if (IN6_IS_ADDR_LINKLOCAL(&sin6.sin6_addr))
++      sin6.sin6_scope_id = nexthop->iif_index;
+ #ifdef __KAME__
+-    *(u_int16_t *) & sin6.sin6_addr.s6_addr[2] = htons(sin6.sin6_scope_id);
+-    sin6.sin6_scope_id = 0;
++  if (IN6_IS_ADDR_LINKLOCAL(&sin6.sin6_addr))
++    {
++      uint16_t tmp16 = htons(sin6.sin6_scope_id);
++      memcpy(&sin6.sin6_addr.s6_addr[2], &tmp16, sizeof(uint16_t));
++      sin6.sin6_scope_id = 0;
++    }
+ #endif /* __KAME__ */
+     memcpy(walker, &sin6, sizeof(sin6));
+     walker += sin_size;
+@@ -336,22 +354,15 @@ add_del_route6(const struct rt_entry *rt, int add)
+   }
+   else {
+     /*
+-     * Host is directly reachable, so add
+-     * the output interface MAC address.
++     * Host is directly reachable, add a cloning route.
+      */
+-    memcpy(&sin6.sin6_addr.s6_addr, &rt->rt_dst.prefix.v6, sizeof(struct in6_addr));
+-    memset(&sin6.sin6_addr.s6_addr, 0, 8);
+-    sin6.sin6_addr.s6_addr[0] = 0xfe;
+-    sin6.sin6_addr.s6_addr[1] = 0x80;
++    sdl.sdl_index = nexthop->iif_index;
+     sin6.sin6_scope_id = nexthop->iif_index;
+-#ifdef __KAME__
+-    *(u_int16_t *) & sin6.sin6_addr.s6_addr[2] = htons(sin6.sin6_scope_id);
+-    sin6.sin6_scope_id = 0;
+-#endif /* __KAME__ */
+-    memcpy(walker, &sin6, sizeof(sin6));
+-    walker += sin_size;
++    memcpy(walker, &sdl, sizeof(sdl));
++    walker += sdl_size;
+     rtm->rtm_addrs |= RTA_GATEWAY;
+-    rtm->rtm_flags |= RTF_GATEWAY;
++    rtm->rtm_flags |= RTF_CLONING;
++    rtm->rtm_flags &= ~RTF_GATEWAY;
+   }
+ 
+   /**********************************************************************
+@@ -389,12 +400,21 @@ add_del_route6(const struct rt_entry *rt, int add)
      drtm->rtm_index = 0;
      drtm->rtm_flags = olsr_rt_flags(rt, add);
      drtm->rtm_seq = ++seq;
@@ -59,3 +110,15 @@ Index: src/bsd/kernel_routes.c
  
      walker = dbuff + sizeof(struct rt_msghdr);
      memcpy(&sin6.sin6_addr.s6_addr, &rt->rt_dst.prefix.v6, sizeof(struct in6_addr));
+     memcpy(walker, &sin6, sizeof(sin6));
+     walker += sin_size;
+     drtm->rtm_addrs = RTA_DST;
++    if (0 == (drtm->rtm_flags & RTF_HOST)) {
++      olsr_prefix_to_netmask((union olsr_ip_addr *)&sin6.sin6_addr, rt->rt_dst.prefix_len);
++      memcpy(walker, &sin6, sizeof(sin6));
++      walker += sin_size;
++      drtm->rtm_addrs |= RTA_NETMASK;
++    }
+     drtm->rtm_msglen = (unsigned short)(walker - dbuff);
+     len = write(olsr_cnf->rts, dbuff, drtm->rtm_msglen);
+     if (len < 0) {

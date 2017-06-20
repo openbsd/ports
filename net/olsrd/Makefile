@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2017/06/04 11:45:04 stsp Exp $
+# $OpenBSD: Makefile,v 1.30 2017/06/20 15:14:10 stsp Exp $
 
 COMMENT-main=		OLSR routing daemon
 COMMENT-gui=		OLSR routing daemon GUI
@@ -7,7 +7,7 @@ VERSION=		0.9.6.1
 DISTNAME=		olsrd-${VERSION}
 PKGNAME-main=		olsrd-${VERSION}
 PKGNAME-gui=		olsrd-gui-${VERSION}
-PKGNAME-plugins=	olsrd-plugins-${VERSION}
+REVISION-main=		0
 
 CATEGORIES=	net
 
@@ -23,8 +23,7 @@ MULTI_PACKAGES= -main -gui
 
 BUILD_DEPENDS=	devel/bison
 
-LIB_DEPENDS-main= net/libnet/1.1
-WANTLIB-main=	c lib/libnet-1.1/net=11
+WANTLIB-main=	c
 
 LIB_DEPENDS-gui= x11/gtk+2
 WANTLIB-gui=	${MODGETTEXT_WANTLIB}
@@ -41,11 +40,12 @@ NO_TEST=	Yes
 MODULES=	devel/gettext
 
 ALL_TARGET=	build_all
-MAKE_FLAGS=	CC="${CC}" OS=obsd LIBNET=1
+MAKE_FLAGS=	CC="${CC}" OS=obsd VERBOSE=1
 .ifdef DEBUG
 MAKE_FLAGS+=	DEBUG=1
+.else
+MAKE_FLAGS+=	DEBUG=0
 .endif
-CPPFLAGS+=	"-I${PREFIX}/libnet-1.1"
 FAKE_FLAGS=	SBINDIR=${DESTDIR}/${PREFIX}/sbin \
 		ETCDIR=${DESTDIR}/${PREFIX}/share/examples/olsrd \
 		LIBDIR=${DESTDIR}/${PREFIX}/lib/olsrd-plugins \
@@ -56,7 +56,7 @@ pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/plugin_loader.c
 
 post-build:
-	cd ${WRKSRC}/gui/linux-gtk; ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM}
+	cd ${WRKSRC}/gui/linux-gtk; ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS}
 
 INSTALL_TARGET=	install_all
 

@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_bsd_net_c,v 1.4 2017/06/04 11:45:04 stsp Exp $
+$OpenBSD: patch-src_bsd_net_c,v 1.5 2017/06/20 15:14:10 stsp Exp $
 
 Index: src/bsd/net.c
 --- src/bsd/net.c.orig
@@ -47,7 +47,39 @@ Index: src/bsd/net.c
  #endif /* defined __FreeBSD__ || defined __FreeBSD_kernel__ */
  
  #ifdef __APPLE__
-@@ -747,39 +742,12 @@ olsr_select(int nfds, fd_set * readfds, fd_set * write
+@@ -192,9 +187,17 @@ net_os_set_global_ifoptions(void) {
+ 
+   /* do not accept ICMP redirects */
+ 
+-#if defined(__OpenBSD__) || defined(__NetBSD__)
+-  if (olsr_cnf->ip_version == AF_INET)
++#if defined(__OpenBSD__)
++  if (olsr_cnf->ip_version == AF_INET) {
+     name = "net.inet.icmp.rediraccept";
++    ignore_redir = set_sysctl_int(name, 0);
++  } else {
++    /* OpenBSD enables icmp6 rediraccept only if IPv6 autoconf is used. */
++    ignore_redir = 1;
++  }
++#elif defined(__NetBSD__)
++  if (olsr_cnf->ip_version == AF_INET) {
++    name = "net.inet.icmp.rediraccept";
+   else
+     name = "net.inet6.icmp6.rediraccept";
+ 
+@@ -341,6 +344,11 @@ getsocket(int bufspace, struct interface_olsr *ifp __a
+     return -1;
+   }
+ 
++  if (setsockopt(sock, IPPROTO_IP, IP_MULTICAST_IF, &ifp->int_addr.sin_addr.s_addr, sizeof(struct in_addr)) < 0) {
++    perror("Set multicast if");
++    return -1;
++  }
++
+   if(bufspace > 0) {
+     for (on = bufspace;; on -= 1024) {
+       if (setsockopt(sock, SOL_SOCKET, SO_RCVBUF, (char *)&on, sizeof(on)) == 0)
+@@ -747,39 +755,12 @@ olsr_select(int nfds, fd_set * readfds, fd_set * write
  int
  check_wireless_interface(char *ifname)
  {
