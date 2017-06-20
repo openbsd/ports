@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Util.pm,v 1.6 2015/04/16 15:49:29 espie Exp $
+# $OpenBSD: Util.pm,v 1.7 2017/06/20 15:47:49 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -48,7 +48,8 @@ sub time2string
 sub die_bang
 {
 	my ($class, $msg) = @_;
-	$class->die("$msg: $!", @_);
+	delete $SIG{__DIE__};
+	CORE::die("$msg: $!");
 }
 
 sub die
@@ -62,4 +63,4 @@ sub die
 	CORE::die("$msg\n");
 }
 
-1
+1;
