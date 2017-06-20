@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: User.pm,v 1.22 2016/10/21 00:45:43 espie Exp $
+# $OpenBSD: User.pm,v 1.23 2017/06/20 15:47:05 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -269,6 +269,26 @@ sub user
 {
 	my $self = shift;
 	return $self->{user};
+}
+
+sub write_error
+{
+	my ($self, $name) = @_;
+	DPB::Util->die_bang($self->user->user." can't write to $name");
+}
+
+sub redirect
+{
+	my ($self, $log) = @_;
+	$self->user->run_as(
+	    sub {
+		close STDOUT;
+		CORE::open STDOUT, '>>', $log or DPB::Util->die_bang(
+		    $self->user->user." can't write to $log");
+		close STDERR;
+		CORE::open STDERR, '>&STDOUT' or 
+		    DPB::Util->die_bang("bad redirect");
+	    });
 }
 
 # since we don't want to keep too many open files, encapsulate
