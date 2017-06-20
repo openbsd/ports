@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.825 2017/06/05 20:43:38 sebastia Exp $
+# $OpenBSD: Makefile,v 1.826 2017/06/20 21:33:10 shadchin Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -448,6 +448,7 @@
      SUBDIR += py-tornado,python3
      SUBDIR += py-urlgrabber
      SUBDIR += py-urllib3
+     SUBDIR += py-urllib3,python3
      SUBDIR += py-waitress
      SUBDIR += py-webdav
      SUBDIR += py-weberror
