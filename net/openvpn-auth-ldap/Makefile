@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2017/06/19 21:02:11 sebastia Exp $
+# $OpenBSD: Makefile,v 1.12 2017/06/20 22:29:38 jca Exp $
 
 COMMENT =		LDAP authentication plugin for OpenVPN 2.x
 
@@ -37,8 +37,6 @@ CONFIGURE_ARGS += --prefix=${LOCALBASE} \
 		  --with-check=${LOCALBASE} \
 		  --with-openldap=${LOCALBASE} \
 		  --with-openvpn=${LOCALBASE}/include/openvpn
-
-#TEST_TARGET =		test
 
 SAMPLES_DIR =		${PREFIX}/share/examples/openvpn-auth-ldap
 
