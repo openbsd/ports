@@ -1,9 +1,10 @@
-$OpenBSD: patch-gst-libs_ext_libav_configure,v 1.13 2016/11/30 11:08:02 ajacoutot Exp $
---- gst-libs/ext/libav/configure.orig	Tue Nov 29 14:56:08 2016
-+++ gst-libs/ext/libav/configure	Wed Nov 30 11:31:45 2016
-@@ -5097,7 +5097,7 @@ die_license_disabled version3 libvo_amrwbenc
- 
- enabled version3 && { enabled gpl && enable gplv3 || enable lgplv3; }
+$OpenBSD: patch-gst-libs_ext_libav_configure,v 1.14 2017/06/20 11:48:53 ajacoutot Exp $
+Index: gst-libs/ext/libav/configure
+--- gst-libs/ext/libav/configure.orig
++++ gst-libs/ext/libav/configure
+@@ -5180,7 +5180,7 @@ EOF
+     exit 1
+ fi
  
 -disabled optimizations || check_cflags -fomit-frame-pointer
 +enabled x86_32 && check_cflags -fomit-frame-pointer

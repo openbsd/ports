@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2017/05/08 10:46:25 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2017/06/20 11:48:53 ajacoutot Exp $
 @bin bin/gst-inspect-${API}
 @bin bin/gst-launch-${API}
 @bin bin/gst-stats-${API}
@@ -160,6 +160,7 @@ libexec/gstreamer-${API}/
 @mode
 @man man/man1/gst-inspect-${API}.1
 @man man/man1/gst-launch-${API}.1
+@man man/man1/gst-stats-${API}.1
 @man man/man1/gst-typefind-${API}.1
 share/aclocal/gst-element-check-${API}.m4
 share/bash-completion/completions/gst-inspect-${API}
