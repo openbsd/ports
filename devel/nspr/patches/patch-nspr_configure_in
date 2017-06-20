@@ -1,7 +1,16 @@
-$OpenBSD: patch-nspr_configure_in,v 1.7 2016/03/01 21:02:30 landry Exp $
---- nspr/configure.in.orig	Fri Feb 12 14:51:25 2016
-+++ nspr/configure.in	Tue Mar  1 21:13:55 2016
-@@ -2126,9 +2126,11 @@ tools are selected during the Xcode/Developer Tools in
+$OpenBSD: patch-nspr_configure_in,v 1.8 2017/06/20 06:38:53 landry Exp $
+Index: nspr/configure.in
+--- nspr/configure.in.orig
++++ nspr/configure.in
+@@ -1389,6 +1389,7 @@ case "$target" in
+     changequote([,])
+     if test "$HOST_DARWIN_MAJOR" -ge 15 ; then
+         AC_DEFINE(HAS_CONNECTX)
++    fi
+     AS='$(CC) -x assembler-with-cpp'
+     CFLAGS="$CFLAGS -Wall -fno-common"
+     case "${target_cpu}" in
+@@ -2167,9 +2168,11 @@ tools are selected during the Xcode/Developer Tools in
      AC_DEFINE(OPENBSD)
      AC_DEFINE(HAVE_BSD_FLOCK)
      AC_DEFINE(HAVE_SOCKLEN_T)
