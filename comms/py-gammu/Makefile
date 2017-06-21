@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2017/06/10 08:44:00 kirby Exp $
+# $OpenBSD: Makefile,v 1.4 2017/06/21 01:03:28 kirby Exp $
 
 COMMENT =		python bindings for Gammu
 
-MODPY_EGG_VERSION = 	2.8
+MODPY_EGG_VERSION = 	2.9
 DISTNAME =		python-gammu-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/python/py/}
 
