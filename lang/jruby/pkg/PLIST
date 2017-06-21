@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.37 2017/03/08 16:32:26 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.38 2017/06/21 15:38:00 jeremy Exp $
 bin/jruby
 jruby/
 jruby/bin/
@@ -45,7 +45,6 @@ jruby/lib/ruby/gems/1.8/specifications/default/minitest-5.4.1.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/net-telnet-0.1.1.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/power_assert-0.2.3.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/psych-2.2.4-java.gemspec
-jruby/lib/ruby/gems/1.8/specifications/default/racc-1.4.14-java.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/rake-10.4.2.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/rdoc-4.2.0.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/test-unit-3.1.1.gemspec
@@ -202,9 +201,14 @@ jruby/lib/ruby/stdlib/getoptlong.rb
 jruby/lib/ruby/stdlib/hoe/
 jruby/lib/ruby/stdlib/hoe/minitest.rb
 jruby/lib/ruby/stdlib/io/
-jruby/lib/ruby/stdlib/io/bsd_console.rb
+jruby/lib/ruby/stdlib/io/console/
 jruby/lib/ruby/stdlib/io/console.rb
-jruby/lib/ruby/stdlib/io/linux_console.rb
+jruby/lib/ruby/stdlib/io/console/bsd_console.rb
+jruby/lib/ruby/stdlib/io/console/common.rb
+jruby/lib/ruby/stdlib/io/console/linux_console.rb
+jruby/lib/ruby/stdlib/io/console/native_console.rb
+jruby/lib/ruby/stdlib/io/console/stty_console.rb
+jruby/lib/ruby/stdlib/io/console/stub_console.rb
 jruby/lib/ruby/stdlib/io/nonblock.rb
 jruby/lib/ruby/stdlib/ipaddr.rb
 jruby/lib/ruby/stdlib/irb/
@@ -538,24 +542,10 @@ jruby/lib/ruby/stdlib/psych/y.rb
 jruby/lib/ruby/stdlib/psych_jars.rb
 jruby/lib/ruby/stdlib/pty.rb
 jruby/lib/ruby/stdlib/racc/
-jruby/lib/ruby/stdlib/racc.rb
-jruby/lib/ruby/stdlib/racc/compat.rb
 jruby/lib/ruby/stdlib/racc/cparse-jruby.jar
-jruby/lib/ruby/stdlib/racc/debugflags.rb
-jruby/lib/ruby/stdlib/racc/exception.rb
-jruby/lib/ruby/stdlib/racc/grammar.rb
-jruby/lib/ruby/stdlib/racc/grammarfileparser.rb
-jruby/lib/ruby/stdlib/racc/info.rb
-jruby/lib/ruby/stdlib/racc/iset.rb
-jruby/lib/ruby/stdlib/racc/logfilegenerator.rb
-jruby/lib/ruby/stdlib/racc/parser-text.rb
 jruby/lib/ruby/stdlib/racc/parser.rb
-jruby/lib/ruby/stdlib/racc/parserfilegenerator.rb
-jruby/lib/ruby/stdlib/racc/pre-setup
-jruby/lib/ruby/stdlib/racc/sourcetext.rb
-jruby/lib/ruby/stdlib/racc/state.rb
-jruby/lib/ruby/stdlib/racc/statetransitiontable.rb
-jruby/lib/ruby/stdlib/racc/static.rb
+jruby/lib/ruby/stdlib/racc/rdoc/
+jruby/lib/ruby/stdlib/racc/rdoc/grammar.en.rdoc
 jruby/lib/ruby/stdlib/rake/
 jruby/lib/ruby/stdlib/rake.rb
 jruby/lib/ruby/stdlib/rake/alt_system.rb
@@ -1096,6 +1086,7 @@ jruby/lib/ruby/stdlib/rubygems/security/policies.rb
 jruby/lib/ruby/stdlib/rubygems/security/policy.rb
 jruby/lib/ruby/stdlib/rubygems/security/signer.rb
 jruby/lib/ruby/stdlib/rubygems/security/trust_dir.rb
+jruby/lib/ruby/stdlib/rubygems/security_option.rb
 jruby/lib/ruby/stdlib/rubygems/server.rb
 jruby/lib/ruby/stdlib/rubygems/source/
 jruby/lib/ruby/stdlib/rubygems/source.rb
