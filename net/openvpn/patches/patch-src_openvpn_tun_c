@@ -1,14 +1,11 @@
-$OpenBSD: patch-src_openvpn_tun_c,v 1.14 2017/06/11 12:15:50 jca Exp $
+$OpenBSD: patch-src_openvpn_tun_c,v 1.15 2017/06/21 12:51:09 jca Exp $
 
 - no need for link0 any more, we have separate tap interfaces
-
-- fix bus error in write_tun_header() due to misaligned access
-  https://github.com/OpenVPN/openvpn/commit/3e4e300d6c5ea9c320e62def79e5b70f8e255248
 
 Index: src/openvpn/tun.c
 --- src/openvpn/tun.c.orig
 +++ src/openvpn/tun.c
-@@ -1201,7 +1201,7 @@ do_ifconfig(struct tuntap *tt,
+@@ -1200,7 +1200,7 @@ do_ifconfig(struct tuntap *tt,
          if (tun)
          {
              argv_printf(&argv,
@@ -17,7 +14,7 @@ Index: src/openvpn/tun.c
                          IFCONFIG_PATH,
                          actual,
                          ifconfig_local,
-@@ -1213,7 +1213,7 @@ do_ifconfig(struct tuntap *tt,
+@@ -1212,7 +1212,7 @@ do_ifconfig(struct tuntap *tt,
          {
              remote_end = create_arbitrary_remote( tt );
              argv_printf(&argv,
@@ -26,7 +23,7 @@ Index: src/openvpn/tun.c
                          IFCONFIG_PATH,
                          actual,
                          ifconfig_local,
-@@ -1224,8 +1224,13 @@ do_ifconfig(struct tuntap *tt,
+@@ -1223,8 +1223,13 @@ do_ifconfig(struct tuntap *tt,
          }
          else
          {
@@ -41,18 +38,3 @@ Index: src/openvpn/tun.c
                          IFCONFIG_PATH,
                          actual,
                          ifconfig_local,
-@@ -1654,11 +1659,11 @@ write_tun_header(struct tuntap *tt, uint8_t *buf, int 
-     {
-         u_int32_t type;
-         struct iovec iv[2];
--        struct ip *iph;
-+        struct openvpn_iphdr *iph;
- 
--        iph = (struct ip *) buf;
-+        iph = (struct openvpn_iphdr *) buf;
- 
--        if (iph->ip_v == 6)
-+        if (OPENVPN_IPH_GET_VER(iph->version_len) == 6)
-         {
-             type = htonl(AF_INET6);
-         }
