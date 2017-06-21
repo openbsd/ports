@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2017/05/26 19:45:23 jung Exp $
+# $OpenBSD: Makefile,v 1.76 2017/06/21 07:15:11 fcambus Exp $
 
      SUBDIR =
      SUBDIR += akonadi
@@ -42,6 +42,7 @@
      SUBDIR += taskwarrior
      SUBDIR += tdl
      SUBDIR += thinkingrock
+     SUBDIR += tudu
      SUBDIR += vdirsyncer
      SUBDIR += vit
      SUBDIR += vym
