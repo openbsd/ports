@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2016/05/28 19:44:19 jung Exp $
+# $OpenBSD: Makefile,v 1.3 2017/06/21 20:56:07 jung Exp $
 
 ONLY_FOR_ARCHS =	${APM_ARCHS}
 
 COMMENT =		dwm status bar statistics
 
-DISTNAME =		dstat-0.4
+DISTNAME =		dstat-0.5
 
 CATEGORIES =		x11 sysutils
 
@@ -15,7 +15,7 @@ MAINTAINER =		Joerg Jung <jung@openbsd.org>
 # ISC
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		X11 c
+WANTLIB =		X11 c util
 
 MASTER_SITES =		${HOMEPAGE}/dl/
 
