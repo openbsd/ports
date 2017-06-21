@@ -1,0 +1,14 @@
+$OpenBSD: patch-rlelib_c,v 1.1 2017/06/21 10:26:11 espie Exp $
+gratuitous old include
+
+Index: rlelib.c
+--- rlelib.c.orig
++++ rlelib.c
+@@ -12,7 +12,6 @@
+  */
+ 
+ #include "xli.h"
+-#include <varargs.h>
+ #include <ctype.h>
+ #include "rle.h"
+ 
