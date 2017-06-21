@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2017/06/17 01:50:10 bcallah Exp $
+# $OpenBSD: Makefile,v 1.16 2017/06/21 14:14:22 espie Exp $
 
 COMMENT=	Small Device C Compiler
 BROKEN-sparc64=	illegal operands building SDCCval.c
@@ -25,7 +25,8 @@ RUN_DEPENDS=		devel/gputils
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	docdir=${PREFIX}/share/doc/sdcc
-CONFIGURE_ENV+=		sdcc_cv_CCggdb="no" \
+CONFIGURE_ENV+=		sdcc_cv_CCggdb=no \
+                        sdcc_cv_c_fms_extensions=no \
 			CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
