@@ -1,0 +1,14 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2017/06/21 07:14:05 fcambus Exp $
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -300,7 +300,7 @@ echo "ERROR: ${CXX} cannot create executables" >&2 ;
+ do_remove
+ exit 1
+  fi
+-CXXFLAGS="${CXXFLAGS} -Wall -O2"
++CXXFLAGS="${CXXFLAGS} -Wall"
+ CPPFLAGS="${CPPFLAGS} "
+ SRCS="${SRCS} tudu.cc data.cc editor.cc interface.cc window.cc text.cc parser.cc config.cc date.cc screen.cc sched.cc cmd.cc"
+ check_include() {

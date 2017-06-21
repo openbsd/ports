@@ -1,0 +1,3 @@
+TuDu is a command line program to manage hierarchical todos. Each task
+has a title, a long text description, a deadline (tudu warns you when the
+date is close), and a scheduled date. There are categories and priorities.
