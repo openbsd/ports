@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.49 2017/04/26 16:36:03 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.50 2017/06/22 08:49:30 ajacoutot Exp $
 
 COMMENT=	free open source planetarium
 
-DISTNAME=	stellarium-0.15.2
+DISTNAME=	stellarium-0.16.0
 
 CATEGORIES=	astro x11
 
@@ -36,6 +36,9 @@ CONFIGURE_ARGS=	-Wno-dev \
 		-DCMAKE_C_FLAGS="${CFLAGS} -I${X11BASE}/include" \
 		-DCMAKE_CXX_FLAGS="${CXXFLAGS} -I${X11BASE}/include" \
 		-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen:Bool=Yes
+
+# XXX needs FindQt5Positioning.cmake
+CONFIGURE_ARGS=	-DENABLE_GPS=0 -DENABLE_LIBGPS=0
 
 PORTHOME=	${WRKDIR}
 
