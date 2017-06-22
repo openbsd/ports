@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.104 2017/05/28 15:48:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.105 2017/06/22 08:54:16 ajacoutot Exp $
 
 COMMENT=		Cyrus IMAP server
 
-V=			3.0.1
+V=			3.0.2
 DISTNAME=		cyrus-imapd-${V}
 
 SHARED_LIBS +=	cyrus                     0.0 # 0.0

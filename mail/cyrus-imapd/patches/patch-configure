@@ -1,10 +1,10 @@
-$OpenBSD: patch-configure,v 1.31 2017/05/28 15:46:11 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.32 2017/06/22 08:54:16 ajacoutot Exp $
 Index: configure
 --- configure.orig
 +++ configure
-@@ -25589,7 +25589,7 @@ $as_echo "$as_me: WARNING: Perl not found: Administrat
- elif test "${with_perl}" != "no"; then
-     PERL="${with_perl}"
+@@ -25909,7 +25909,7 @@ elif test "${with_perl}" != "no"; then
+ 
+ 
      case "${target_os}" in
 -        linux*|netbsd*|freebsd*|dragonfly*)
 +        linux*|netbsd*|freebsd*|dragonfly*|openbsd*)
