@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2017/01/21 12:56:49 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2017/06/22 20:18:22 jasper Exp $
 bin/pyghmicons
 bin/pyghmiutil
 bin/virshbmc
@@ -69,6 +69,8 @@ lib/python${MODPY_VERSION}/site-packages/pyghmi/ipmi/private/__init__.py
 lib/python${MODPY_VERSION}/site-packages/pyghmi/ipmi/private/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/pyghmi/ipmi/private/constants.py
 lib/python${MODPY_VERSION}/site-packages/pyghmi/ipmi/private/constants.pyc
+lib/python${MODPY_VERSION}/site-packages/pyghmi/ipmi/private/localsession.py
+lib/python${MODPY_VERSION}/site-packages/pyghmi/ipmi/private/localsession.pyc
 lib/python${MODPY_VERSION}/site-packages/pyghmi/ipmi/private/serversession.py
 lib/python${MODPY_VERSION}/site-packages/pyghmi/ipmi/private/serversession.pyc
 lib/python${MODPY_VERSION}/site-packages/pyghmi/ipmi/private/session.py
