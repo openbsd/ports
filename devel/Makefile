@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1622 2017/06/17 13:25:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.1623 2017/06/22 23:10:45 bcallah Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1370,6 +1370,10 @@
      SUBDIR += py-ipykernel,python3
      SUBDIR += py-ipython_genutils
      SUBDIR += py-ipython_genutils,python3
+     SUBDIR += py-iso3166
+     SUBDIR += py-iso3166,python3
+     SUBDIR += py-iso639
+     SUBDIR += py-iso639,python3
      SUBDIR += py-isodate
      SUBDIR += py-isodate,python3
      SUBDIR += py-isort
