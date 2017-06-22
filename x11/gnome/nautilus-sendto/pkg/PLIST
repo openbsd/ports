@@ -1,8 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.18 2016/06/13 09:05:55 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.19 2017/06/22 10:04:20 ajacoutot Exp $
 @conflict nautilus-sendto-pidgin-*
 @pkgpath x11/gnome/nautilus-sendto,-main
 @bin bin/nautilus-sendto
 @man man/man1/nautilus-sendto.1
+share/appdata/
+share/appdata/nautilus-sendto.metainfo.xml
 share/locale/af/LC_MESSAGES/nautilus-sendto.mo
 share/locale/an/LC_MESSAGES/nautilus-sendto.mo
 share/locale/ar/LC_MESSAGES/nautilus-sendto.mo
@@ -34,8 +36,6 @@ share/locale/eu/LC_MESSAGES/nautilus-sendto.mo
 share/locale/fa/LC_MESSAGES/nautilus-sendto.mo
 share/locale/fi/LC_MESSAGES/nautilus-sendto.mo
 share/locale/fr/LC_MESSAGES/nautilus-sendto.mo
-share/locale/fur/
-share/locale/fur/LC_MESSAGES/
 share/locale/fur/LC_MESSAGES/nautilus-sendto.mo
 share/locale/ga/LC_MESSAGES/nautilus-sendto.mo
 share/locale/gd/LC_MESSAGES/nautilus-sendto.mo
@@ -43,6 +43,7 @@ share/locale/gl/LC_MESSAGES/nautilus-sendto.mo
 share/locale/gu/LC_MESSAGES/nautilus-sendto.mo
 share/locale/he/LC_MESSAGES/nautilus-sendto.mo
 share/locale/hi/LC_MESSAGES/nautilus-sendto.mo
+share/locale/hr/LC_MESSAGES/nautilus-sendto.mo
 share/locale/hu/LC_MESSAGES/nautilus-sendto.mo
 share/locale/id/LC_MESSAGES/nautilus-sendto.mo
 share/locale/is/LC_MESSAGES/nautilus-sendto.mo

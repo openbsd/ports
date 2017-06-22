@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.66 2017/05/06 21:37:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.67 2017/06/22 10:04:20 ajacoutot Exp $
 
 COMMENT=		applications integration into Nautilus
 
 GNOME_PROJECT=		nautilus-sendto
-GNOME_VERSION=		3.8.4
+GNOME_VERSION=		3.8.5
 
 CATEGORIES=		mail net
 
@@ -16,14 +16,14 @@ WANTLIB += intl pcre pthread z
 MODULES=		x11/gnome
 
 MODGNOME_TOOLS=		gobject-introspection
+
 LIB_DEPENDS=		devel/glib2
 
 FAKE_FLAGS=		schemadir=${PREFIX}/share/schemas/nautilus-sendto
 
 CONFIGURE_STYLE=	gnu
 
-# fix build with clang
-# based on upstream 86fd0a3c
-CFLAGS +=		-Wno-error=format-nonliteral
+# fix build with clang (see patch-src_nautilus-sendto_c)
+CFLAGS=		-Wno-error=format-nonliteral
 
 .include <bsd.port.mk>
