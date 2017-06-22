@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2017/05/27 15:08:43 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2017/06/22 20:09:44 jasper Exp $
 @bin bin/gnome-recipes
 share/appdata/
 share/appdata/org.gnome.Recipes.appdata.xml
@@ -131,16 +131,28 @@ share/locale/cs/LC_MESSAGES/gnome-recipes-data.mo
 share/locale/cs/LC_MESSAGES/gnome-recipes.mo
 share/locale/de/LC_MESSAGES/gnome-recipes-data.mo
 share/locale/de/LC_MESSAGES/gnome-recipes.mo
+share/locale/en_GB/LC_MESSAGES/gnome-recipes.mo
 share/locale/es/LC_MESSAGES/gnome-recipes-data.mo
 share/locale/es/LC_MESSAGES/gnome-recipes.mo
+share/locale/fi/LC_MESSAGES/gnome-recipes.mo
+share/locale/fur/LC_MESSAGES/gnome-recipes-data.mo
+share/locale/fur/LC_MESSAGES/gnome-recipes.mo
+share/locale/hu/LC_MESSAGES/gnome-recipes-data.mo
+share/locale/hu/LC_MESSAGES/gnome-recipes.mo
+share/locale/id/LC_MESSAGES/gnome-recipes.mo
+share/locale/ko/LC_MESSAGES/gnome-recipes.mo
+share/locale/nb/LC_MESSAGES/gnome-recipes.mo
 share/locale/nl/LC_MESSAGES/gnome-recipes-data.mo
 share/locale/nl/LC_MESSAGES/gnome-recipes.mo
-share/locale/pl/LC_MESSAGES/gnome-recipes-data.mo
 share/locale/pl/LC_MESSAGES/gnome-recipes.mo
 share/locale/pt_BR/LC_MESSAGES/gnome-recipes-data.mo
 share/locale/pt_BR/LC_MESSAGES/gnome-recipes.mo
+share/locale/sk/LC_MESSAGES/gnome-recipes.mo
+share/locale/sl/LC_MESSAGES/gnome-recipes-data.mo
+share/locale/sl/LC_MESSAGES/gnome-recipes.mo
 share/locale/sr/LC_MESSAGES/gnome-recipes-data.mo
 share/locale/sr/LC_MESSAGES/gnome-recipes.mo
+share/locale/sv/LC_MESSAGES/gnome-recipes.mo
 share/mime/packages/org.gnome.Recipes-mime.xml
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
