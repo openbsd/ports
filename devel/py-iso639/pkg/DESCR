@@ -1,0 +1,3 @@
+iso-639 is a Python library for the ISO 639 standard. It supports
+ISO 639-1 for two-letter language codes, ISO 639-2 and ISO 639-3 for
+three-letter language codes, and ISO 639-5 for language group codes.
