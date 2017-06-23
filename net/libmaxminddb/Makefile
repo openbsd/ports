@@ -1,18 +1,20 @@
-# $OpenBSD: Makefile,v 1.13 2017/06/04 10:57:59 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2017/06/23 11:40:36 fcambus Exp $
 
 COMMENT-main =	library for MaxMind GeoIP2/GeoLite2 IP geolocation databases
 COMMENT-db =	GeoIP2 GeoLite2 database: IPv4/v6 address to country
 COMMENT-city =	GeoIP2 GeoLite2 database: IPv4/v6 address to city
+COMMENT-asn =	GeoIP2 GeoLite2 database: IPv4/v6 address to AS number
 
 V =		1.2.1
-D =		20170503
+D =		20170608
 DISTNAME =	libmaxminddb-${V}
 PKGNAME-main =	libmaxminddb-${V}
 PKGNAME-db =	geolite2-country-${D}
 PKGNAME-city =	geolite2-city-${D}
+PKGNAME-asn =	geolite2-asn-${D}
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
 		geolite2-data-$D.tar.xz:0
-REVISION =	0
+REVISION-main =	0
 
 SHARED_LIBS +=	maxminddb	0.0	# 0.7
 
@@ -31,7 +33,7 @@ WANTLIB-main +=	c m
 MASTER_SITES =	${HOMEPAGE}/releases/download/${V}/
 MASTER_SITES0 =	https://www.distfiles.pl/
 
-MULTI_PACKAGES = -main -db -city
+MULTI_PACKAGES = -main -db -city -asn
 RUN_DEPENDS-main = net/libmaxminddb,-db
 
 TEST_DEPENDS = devel/p5-IPC-Run3
@@ -56,14 +58,15 @@ geolite2:
 	echo "see https://www.maxmind.com and https://dev.maxmind.com/geoip/geoip2/geolite2/." >> README; \
 	echo "Distributed under Creative Commons Attribution-ShareAlike 4.0 International License." >> README; \
 	echo "Created at `date -z UTC` and intended for OS packaging purposes." >> README; \
-	ftp https://geolite.maxmind.com/download/geoip/database/GeoLite2-{Country,City}.{md5,mmdb.gz}; \
-	gunzip *gz; \
-	for file in GeoLite2-Country GeoLite2-City; do \
-		if [ "`md5 -q $$file.mmdb`" != "`cat $$file.md5`" ]; then \
-			echo "ERROR: $$file.mmdb is corrupt"; \
+	ftp https://geolite.maxmind.com/download/geoip/database/GeoLite2-{Country,City,ASN}.tar.gz{,.md5}; \
+	for file in GeoLite2-Country GeoLite2-City GeoLite2-ASN; do \
+		if [ "`md5 -q $$file.tar.gz`" != "`cat $$file.tar.gz.md5`" ]; then \
+			echo "ERROR: $$file.tar.gz is corrupt"; \
 			exit; \
 		fi; \
+		tar xfz $$file.tar.gz; \
 	done; \
+	mv */*mmdb .; \
 	cd ..; \
 	tar cf - data/README data/*.mmdb | xz -T 0 > $$distfile; \
 	echo "Distfile created in: $$tmp";
