@@ -1,5 +1,0 @@
-surf2 is a version of surf webbrowser based on webkit v2 API. It is
-able to display websites and follow links. It supports the Xembedded
-protocol which makes it possible to embed it into another application.
-Furthermore one can point surf to another URI by setting its
-XProperties.

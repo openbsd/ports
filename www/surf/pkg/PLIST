@@ -1,3 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/11/08 12:17:18 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/06/23 19:50:42 czarkoff Exp $
+@pkgpath www/surf2
 @bin bin/surf
 @man man/man1/surf.1
