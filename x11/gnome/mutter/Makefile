@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.71 2017/05/21 17:48:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.72 2017/06/23 19:02:41 jasper Exp $
 
 COMMENT=		window and compositing manager
 
 GNOME_PROJECT=		mutter
-GNOME_VERSION=		3.24.2
+GNOME_VERSION=		3.24.3
 
 API_SUFFIX =	-0
 SHARED_LIBS +=  mutter-0                    0.0 # 0.0
