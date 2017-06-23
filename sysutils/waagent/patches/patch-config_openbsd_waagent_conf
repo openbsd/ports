@@ -1,0 +1,26 @@
+$OpenBSD: patch-config_openbsd_waagent_conf,v 1.1.1.1 2017/06/23 12:37:09 reyk Exp $
+
+disable extensions and autoupdate
+
+Index: config/openbsd/waagent.conf
+--- config/openbsd/waagent.conf.orig
++++ config/openbsd/waagent.conf
+@@ -84,6 +84,9 @@ OS.PasswordPath=/etc/master.passwd
+ #
+ # Pid.File=/var/run/waagent.pid
+ 
++# Enable or disable extensions, default is enabled
++Extension.Enabled=n
++
+ #
+ # Extension.LogDir=/var/log/azure
+ 
+@@ -94,7 +97,7 @@ OS.PasswordPath=/etc/master.passwd
+ # OS.EnableRDMA=y
+ 
+ # Enable or disable goal state processing auto-update, default is enabled
+-# AutoUpdate.Enabled=y
++AutoUpdate.Enabled=n
+ 
+ # Determine the update family, this should not be changed
+ # AutoUpdate.GAFamily=Prod
