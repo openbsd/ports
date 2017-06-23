@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.442 2017/06/13 21:47:42 fcambus Exp $
+# $OpenBSD: Makefile,v 1.443 2017/06/23 12:46:44 reyk Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -312,6 +312,7 @@
      SUBDIR += virt-manager
      SUBDIR += vmdktool
      SUBDIR += vmwh
+     SUBDIR += waagent
      SUBDIR += whowatch
      SUBDIR += wmapm
      SUBDIR += wmcb
