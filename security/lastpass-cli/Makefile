@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2017/02/08 10:49:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2017/06/23 10:58:32 sthen Exp $
 
 COMMENT =	LastPass command line interface tool
 
 GH_ACCOUNT =	lastpass
 GH_PROJECT =	lastpass-cli
-GH_TAGNAME =	v1.1.2
+GH_TAGNAME =	v1.2.0
 CATEGORIES =	security
 
 MAINTAINER =	Bjorn Ketelaars <bjorn.ketelaars@hydroxide.nl>
@@ -19,12 +19,17 @@ MODULES =	devel/cmake
 BUILD_DEPENDS=	textproc/asciidoc
 LIB_DEPENDS =	net/curl \
 		textproc/libxml
+TEST_DEPENDS=	${BUILD_DEPENDS} \
+		shells/bash
 
-NO_TEST =	Yes
 ALL_TARGET =	all doc-man
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/lpass ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKBUILD}/lpass.1 ${PREFIX}/man/man1
+
+do-test:
+	cd ${WRKSRC}/test && sed -i 's,#!/bin/bash,#!${LOCALBASE}/bin/bash,' *
+	cd ${WRKSRC} && make test
 
 .include <bsd.port.mk>
