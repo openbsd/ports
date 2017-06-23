@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.87 2017/05/31 08:08:15 espie Exp $
+# $OpenBSD: Makefile,v 1.88 2017/06/23 12:49:55 ajacoutot Exp $
 
 # g++3 chokes on the code
 NOT_FOR_ARCHS=		${GCC3_ARCHS}
@@ -6,15 +6,15 @@ NOT_FOR_ARCHS=		${GCC3_ARCHS}
 COMMENT=		C++ interface for glib2
 
 GNOME_PROJECT=		glibmm
-GNOME_VERSION=		2.50.1
+GNOME_VERSION=		2.52.0
 PKGNAME=		glib2mm-${GNOME_VERSION}
 
 V=			2.4
 SUBST_VARS=		V
 
 SHARED_LIBS +=  glibmm_generate_extra_defs-2.4 13.2     # 4.0
-SHARED_LIBS +=  glibmm-2.4           13.4     # 4.0
-SHARED_LIBS +=  giomm-2.4            13.4     # 4.0
+SHARED_LIBS +=  glibmm-2.4           13.5     # 4.0
+SHARED_LIBS +=  giomm-2.4            13.5     # 4.0
 
 CATEGORIES=		devel
 

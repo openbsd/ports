@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.38 2016/10/28 13:42:42 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.39 2017/06/23 12:49:55 ajacoutot Exp $
 @conflict glib2mm-docs-*
 @pkgpath devel/glib2mm,-main
 @pkgpath devel/glib2mm,-docs
@@ -1653,6 +1653,7 @@ share/doc/glibmm-${V}/reference/html/since_2_44.html
 share/doc/glibmm-${V}/reference/html/since_2_46.html
 share/doc/glibmm-${V}/reference/html/since_2_48.html
 share/doc/glibmm-${V}/reference/html/since_2_50.html
+share/doc/glibmm-${V}/reference/html/since_2_52.html
 share/doc/glibmm-${V}/reference/html/since_2_6.html
 share/doc/glibmm-${V}/reference/html/since_2_8.html
 share/doc/glibmm-${V}/reference/html/splitbar.png
