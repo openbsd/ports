@@ -1,0 +1,25 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2017/06/24 00:20:17 czarkoff Exp $
+
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -22,8 +22,8 @@ datarootdir=@datarootdir@
+ localedir=@localedir@
+ gettext_package=@GETTEXT_PACKAGE@
+ 
+-CFLAGS=@CFLAGS@ @PURPLE_CFLAGS@ @DEFS@ -DENABLE_NLS -DLOCALEDIR='"$(localedir)"' -Wall -Wextra -Wno-deprecated-declarations -Wno-unused-parameter -I${srcdir} -I. -fno-strict-aliasing -fPIC -D_FORTIFY_SOURCE=2
+-LDFLAGS=@LDFLAGS@ @OPENSSL_LIBS@ @PURPLE_LIBS@ @LIBS@ -rdynamic -ggdb
++CFLAGS=@CFLAGS@ @PURPLE_CFLAGS@ @DEFS@ -DENABLE_NLS -DLOCALEDIR='"$(localedir)"' -I${srcdir} -I. -fno-strict-aliasing -fPIC
++LDFLAGS=@LDFLAGS@ @OPENSSL_LIBS@ @PURPLE_LIBS@ @LIBS@ -rdynamic
+ DIR_PERM=0755
+ FILE_PERM=0644
+ 
+@@ -81,7 +81,7 @@ tgl/Makefile.in:
+ 	@echo "tgl/Makefile.in not found. Maybe you need to 'git submodule update --init --recursive' ?" && exit 1
+ 
+ tgl/Makefile: tgl/Makefile.in Makefile
+-	cd tgl && ./configure -q ${CRYPTO_FLAG} --disable-extf CFLAGS="@CFLAGS@" LDFLAGS="@LDFLAGS@"
++	cd tgl && ./configure -q ${CRYPTO_FLAG} --disable-extf CFLAGS="@CFLAGS@" LDFLAGS="@LDFLAGS@" CC="@CC@"
+ 
+ tgl/libs/libtgl.a: tgl/Makefile
+ 	+${MAKE} -C tgl libs/libtgl.a

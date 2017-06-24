@@ -1,0 +1,39 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/06/24 00:20:17 czarkoff Exp $
+lib/purple-2/telegram-purple.so
+share/appdata/
+share/appdata/telegram-purple.metainfo.xml
+share/locale/bg/LC_MESSAGES/telegram-purple.mo
+share/locale/cs_CZ/
+share/locale/cs_CZ/LC_MESSAGES/
+share/locale/cs_CZ/LC_MESSAGES/telegram-purple.mo
+share/locale/de_DE/
+share/locale/de_DE/LC_MESSAGES/
+share/locale/de_DE/LC_MESSAGES/telegram-purple.mo
+share/locale/es_AR/
+share/locale/es_AR/LC_MESSAGES/
+share/locale/es_AR/LC_MESSAGES/telegram-purple.mo
+share/locale/fr/LC_MESSAGES/telegram-purple.mo
+share/locale/it_IT/
+share/locale/it_IT/LC_MESSAGES/
+share/locale/it_IT/LC_MESSAGES/telegram-purple.mo
+share/locale/nl/LC_MESSAGES/telegram-purple.mo
+share/locale/pl_PL/
+share/locale/pl_PL/LC_MESSAGES/
+share/locale/pl_PL/LC_MESSAGES/telegram-purple.mo
+share/locale/ru_RU/
+share/locale/ru_RU/LC_MESSAGES/
+share/locale/ru_RU/LC_MESSAGES/telegram-purple.mo
+share/locale/sq/LC_MESSAGES/telegram-purple.mo
+share/locale/uk/LC_MESSAGES/telegram-purple.mo
+share/pixmaps/
+share/pixmaps/pidgin/
+share/pixmaps/pidgin/protocols/
+share/pixmaps/pidgin/protocols/16/
+share/pixmaps/pidgin/protocols/16/telegram.png
+share/pixmaps/pidgin/protocols/22/
+share/pixmaps/pidgin/protocols/22/telegram.png
+share/pixmaps/pidgin/protocols/48/
+share/pixmaps/pidgin/protocols/48/telegram.png
+share/purple/server.tglpub
+@sample ${SYSCONFDIR}/telegram-purple/
+@sample ${SYSCONFDIR}/telegram-purple/server.tglpub
