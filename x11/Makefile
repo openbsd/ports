@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.594 2017/06/19 17:15:26 bcallah Exp $
+# $OpenBSD: Makefile,v 1.595 2017/06/24 19:36:07 fcambus Exp $
 
      SUBDIR =
      SUBDIR += Xaw3d
@@ -165,7 +165,6 @@
      SUBDIR += mouseclock
      SUBDIR += mowitz
      SUBDIR += mplayer
-     SUBDIR += mrxvt
      SUBDIR += mterm
      SUBDIR += mxconns
      SUBDIR += nagstamon
