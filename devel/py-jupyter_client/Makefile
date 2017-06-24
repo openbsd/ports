@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2017/04/22 21:25:42 shadchin Exp $
+# $OpenBSD: Makefile,v 1.6 2017/06/24 09:52:46 shadchin Exp $
 
 COMMENT =		Jupyter protocol implementation and client libraries
 
-MODPY_EGG_VERSION =	5.0.1
+MODPY_EGG_VERSION =	5.1.0
 DISTNAME =		jupyter_client-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
@@ -17,21 +17,21 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		lang/python
 
+MODPY_PI =		Yes
+MODPY_SETUPTOOLS =	Yes
+
+FLAVORS =		python3
+FLAVOR ?=
+
 RUN_DEPENDS =		devel/py-dateutil${MODPY_FLAVOR} \
 			devel/py-jupyter_core${MODPY_FLAVOR}>=4.3.0 \
 			devel/py-traitlets${MODPY_FLAVOR} \
 			net/py-zmq${MODPY_FLAVOR}
 TEST_DEPENDS =		${RUN_DEPENDS} \
 			devel/ipython${MODPY_FLAVOR}>=5.1.0 \
-			devel/py-nose${MODPY_FLAVOR} \
-			devel/py-nose-warnings-filters${MODPY_FLAVOR} \
 			devel/py-ipykernel${MODPY_FLAVOR}>=4.5.2 \
+			devel/py-test${MODPY_FLAVOR} \
 			net/py-msgpack${MODPY_FLAVOR}
-
-MODPY_PI =		Yes
-
-FLAVORS =		python3
-FLAVOR ?=
 
 .if !${FLAVOR:Mpython3}
 TEST_DEPENDS +=		devel/py-mock
@@ -39,8 +39,9 @@ TEST_DEPENDS +=		devel/py-mock
 
 post-install:
 	mv ${PREFIX}/bin/jupyter-kernelspec{,${MODPY_BIN_SUFFIX}}
+	mv ${PREFIX}/bin/jupyter-run{,${MODPY_BIN_SUFFIX}}
 
 do-test:
-	cd ${WRKSRC} && ${LOCALBASE}/bin/nosetests${MODPY_BIN_SUFFIX} jupyter_client
+	cd ${WRKSRC} && ${MODPY_BIN} -m pytest jupyter_client
 
 .include <bsd.port.mk>
