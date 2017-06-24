@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2015/01/10 19:22:16 stsp Exp $
+@comment $OpenBSD: PLIST,v 1.7 2017/06/24 12:31:59 stsp Exp $
 @conflict apr-mt-*
 @pkgpath devel/apr,mt
 bin/apr-1-config
@@ -6,6 +6,7 @@ include/apr-1/
 include/apr-1/apr.h
 include/apr-1/apr_allocator.h
 include/apr-1/apr_atomic.h
+include/apr-1/apr_cstr.h
 include/apr-1/apr_dso.h
 include/apr-1/apr_env.h
 include/apr-1/apr_errno.h
@@ -21,6 +22,7 @@ include/apr-1/apr_inherit.h
 include/apr-1/apr_lib.h
 include/apr-1/apr_mmap.h
 include/apr-1/apr_network_io.h
+include/apr-1/apr_perms_set.h
 include/apr-1/apr_poll.h
 include/apr-1/apr_pools.h
 include/apr-1/apr_portable.h
@@ -42,7 +44,9 @@ include/apr-1/apr_user.h
 include/apr-1/apr_version.h
 include/apr-1/apr_want.h
 lib/apr-1/
+lib/apr-1/apr_common.m4
 lib/apr-1/apr_rules.mk
+lib/apr-1/find_apr.m4
 lib/apr-1/make_exports.awk
 lib/apr-1/make_var_export.awk
 lib/apr-1/mkdir.sh
