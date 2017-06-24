@@ -1,0 +1,31 @@
+$OpenBSD: patch-gnome-session_gsm-system_c,v 1.3 2017/06/24 07:36:39 ajacoutot Exp $
+
+From f708bbbf2df41ea9683f7667c745d0297e584968 Mon Sep 17 00:00:00 2001
+From: Ray Strode <rstrode@redhat.com>
+Date: Tue, 20 Jun 2017 16:51:00 -0400
+Subject: system: add api for detecting if this is the last session for a user
+
+Index: gnome-session/gsm-system.c
+--- gnome-session/gsm-system.c.orig
++++ gnome-session/gsm-system.c
+@@ -97,6 +97,7 @@ gsm_system_null_init_iface (GsmSystemInterface *iface)
+         iface->remove_inhibitor  = (void *) do_nothing;
+         iface->prepare_shutdown  = (void *) do_nothing;
+         iface->complete_shutdown = (void *) do_nothing;
++        iface->is_last_session_for_user = (void *) return_false;
+ }
+ 
+ static void
+@@ -216,6 +217,12 @@ gboolean
+ gsm_system_is_login_session (GsmSystem *system)
+ {
+         return GSM_SYSTEM_GET_IFACE (system)->is_login_session (system);
++}
++
++gboolean
++gsm_system_is_last_session_for_user (GsmSystem *system)
++{
++        return GSM_SYSTEM_GET_IFACE (system)->is_last_session_for_user (system);
+ }
+ 
+ /**

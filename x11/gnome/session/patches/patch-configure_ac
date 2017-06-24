@@ -1,0 +1,18 @@
+$OpenBSD: patch-configure_ac,v 1.1 2017/06/24 07:36:39 ajacoutot Exp $
+
+https://wiki.gnome.org/Projects/GnomeCommon/Migration
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -20,8 +20,8 @@ PKG_PROG_PKG_CONFIG()
+ LT_PREREQ([2.2.6])
+ LT_INIT([dlopen disable-static])
+ 
+-GNOME_MAINTAINER_MODE_DEFINES
+-GNOME_COMPILE_WARNINGS([maximum])
++# GNOME_MAINTAINER_MODE_DEFINES
++# GNOME_COMPILE_WARNINGS([maximum])
+ 
+ AC_ARG_ENABLE(deprecation_flags,
+               [AS_HELP_STRING([--enable-deprecation-flags],

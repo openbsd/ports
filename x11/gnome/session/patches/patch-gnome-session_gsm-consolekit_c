@@ -1,0 +1,31 @@
+$OpenBSD: patch-gnome-session_gsm-consolekit_c,v 1.16 2017/06/24 07:36:39 ajacoutot Exp $
+
+From f708bbbf2df41ea9683f7667c745d0297e584968 Mon Sep 17 00:00:00 2001
+From: Ray Strode <rstrode@redhat.com>
+Date: Tue, 20 Jun 2017 16:51:00 -0400
+Subject: system: add api for detecting if this is the last session for a user
+
+Index: gnome-session/gsm-consolekit.c
+--- gnome-session/gsm-consolekit.c.orig
++++ gnome-session/gsm-consolekit.c
+@@ -1039,6 +1039,12 @@ gsm_consolekit_complete_shutdown (GsmSystem *system)
+                 gsm_consolekit_attempt_stop (system);
+ }
+ 
++static gboolean
++gsm_consolekit_is_last_session_for_user (GsmSystem *system)
++{
++        return FALSE;
++}
++
+ static void
+ gsm_consolekit_system_init (GsmSystemInterface *iface)
+ {
+@@ -1057,6 +1063,7 @@ gsm_consolekit_system_init (GsmSystemInterface *iface)
+         iface->remove_inhibitor = gsm_consolekit_remove_inhibitor;
+         iface->prepare_shutdown = gsm_consolekit_prepare_shutdown;
+         iface->complete_shutdown = gsm_consolekit_complete_shutdown;
++        iface->is_last_session_for_user = gsm_consolekit_is_last_session_for_user;
+ }
+ 
+ GsmConsolekit *

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.262 2017/06/21 13:47:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.263 2017/06/24 07:36:39 ajacoutot Exp $
 
 COMMENT=		GNOME session
 
@@ -52,5 +52,19 @@ CONFIGURE_STYLE=	gnu
 
 CONFIGURE_ARGS=		--disable-systemd \
 			--enable-consolekit
+
+### patch-gnome-session_Makefile_am
+AUTOCONF_VERSION=	2.69
+AUTOMAKE_VERSION=	1.15
+BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS} \
+			devel/libtool
+
+pre-configure:
+	cd ${WRKSRC} && \
+		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
+		autoreconf -fi
+###
 
 .include <bsd.port.mk>
