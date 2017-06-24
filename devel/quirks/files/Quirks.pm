@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.500 2017/06/23 19:50:42 czarkoff Exp $
+# $OpenBSD: Quirks.pm,v 1.501 2017/06/24 19:40:24 fcambus Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -984,6 +984,7 @@ my $obsolete_reason = {
 	'samhain-server' => 5,
 	'texapp' => 6,
 	'surf2' => 5,
+	'mrxvt' => 2,
 };
 
 # reasons for obsolete packages
