@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1012 2017/06/21 20:30:39 bcallah Exp $
+# $OpenBSD: Makefile,v 1.1013 2017/06/24 00:25:12 czarkoff Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -667,6 +667,7 @@
      SUBDIR += tcpstat
      SUBDIR += tcptrace
      SUBDIR += tcptraceroute
+     SUBDIR += telegram-purple
      SUBDIR += telepathy
      SUBDIR += thcrut
      SUBDIR += tinc
