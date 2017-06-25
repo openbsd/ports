@@ -1,7 +1,8 @@
-$OpenBSD: patch-BUILD_gn,v 1.8 2017/04/28 14:21:00 robert Exp $
---- BUILD.gn.orig.port	Wed Apr 19 21:06:27 2017
-+++ BUILD.gn	Thu Apr 27 19:55:58 2017
-@@ -453,7 +453,7 @@ group("both_gn_and_gyp") {
+$OpenBSD: patch-BUILD_gn,v 1.9 2017/06/25 21:53:56 robert Exp $
+Index: BUILD.gn
+--- BUILD.gn.orig
++++ BUILD.gn
+@@ -330,7 +330,7 @@ group("gn_all") {
      }
    }
  
@@ -10,7 +11,7 @@ $OpenBSD: patch-BUILD_gn,v 1.8 2017/04/28 14:21:00 robert Exp $
      deps += [
        "//breakpad:breakpad_unittests",
        "//breakpad:core-2-minidump",
-@@ -490,8 +490,6 @@ group("both_gn_and_gyp") {
+@@ -367,8 +367,6 @@ group("gn_all") {
        "//net:disk_cache_memory_test",
        "//net:quic_client",
        "//net:quic_server",
@@ -19,7 +20,7 @@ $OpenBSD: patch-BUILD_gn,v 1.8 2017/04/28 14:21:00 robert Exp $
      ]
  
      if (use_dbus) {
-@@ -549,10 +547,6 @@ group("both_gn_and_gyp") {
+@@ -426,10 +424,6 @@ group("gn_all") {
          "//chrome/test:sync_performance_tests",
          "//chrome/test/chromedriver:chromedriver",
          "//chrome/test/chromedriver:chromedriver_tests",
@@ -30,7 +31,7 @@ $OpenBSD: patch-BUILD_gn,v 1.8 2017/04/28 14:21:00 robert Exp $
          "//media/cast:generate_barcode_video",
          "//media/cast:generate_timecode_audio",
          "//net:crash_cache",
-@@ -598,10 +592,6 @@ group("both_gn_and_gyp") {
+@@ -475,10 +469,6 @@ group("gn_all") {
  
    if (is_android || (is_linux && !is_chromeos)) {
      deps += [
@@ -41,7 +42,7 @@ $OpenBSD: patch-BUILD_gn,v 1.8 2017/04/28 14:21:00 robert Exp $
        "//components/network_hints/browser",
        "//content/public/app:browser",
        "//content/public/app:child",
-@@ -684,7 +674,7 @@ group("both_gn_and_gyp") {
+@@ -557,7 +547,7 @@ group("gn_all") {
        deps +=
            [ "//chrome/installer/mini_installer:next_version_mini_installer" ]
      }
@@ -50,7 +51,7 @@ $OpenBSD: patch-BUILD_gn,v 1.8 2017/04/28 14:21:00 robert Exp $
      deps += [ "//breakpad:symupload($host_toolchain)" ]
    }
  
-@@ -935,7 +925,7 @@ if (!is_ios) {
+@@ -921,7 +911,7 @@ if (!is_ios) {
        data_deps += [ "//content/shell:content_shell_crash_service" ]
      }
  
@@ -59,7 +60,7 @@ $OpenBSD: patch-BUILD_gn,v 1.8 2017/04/28 14:21:00 robert Exp $
        data_deps += [ "//breakpad:minidump_stackwalk($host_toolchain)" ]
      }
  
-@@ -943,7 +933,7 @@ if (!is_ios) {
+@@ -929,7 +919,7 @@ if (!is_ios) {
        data_deps += [ "//breakpad:dump_syms($host_toolchain)" ]
      }
  

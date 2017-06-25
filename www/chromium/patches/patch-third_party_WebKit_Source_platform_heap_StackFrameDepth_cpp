@@ -1,6 +1,7 @@
-$OpenBSD: patch-third_party_WebKit_Source_platform_heap_StackFrameDepth_cpp,v 1.9 2017/03/14 12:18:54 robert Exp $
---- third_party/WebKit/Source/platform/heap/StackFrameDepth.cpp.orig.port	Fri Mar 10 10:07:30 2017
-+++ third_party/WebKit/Source/platform/heap/StackFrameDepth.cpp	Fri Mar 10 10:07:57 2017
+$OpenBSD: patch-third_party_WebKit_Source_platform_heap_StackFrameDepth_cpp,v 1.10 2017/06/25 21:53:56 robert Exp $
+Index: third_party/WebKit/Source/platform/heap/StackFrameDepth.cpp
+--- third_party/WebKit/Source/platform/heap/StackFrameDepth.cpp.orig
++++ third_party/WebKit/Source/platform/heap/StackFrameDepth.cpp
 @@ -15,6 +15,11 @@
  extern "C" void* __libc_stack_end;  // NOLINT
  #endif
@@ -12,4 +13,4 @@ $OpenBSD: patch-third_party_WebKit_Source_platform_heap_StackFrameDepth_cpp,v 1.
 +
  namespace blink {
  
- static const char* s_avoidOptimization = nullptr;
+ static const char* g_avoid_optimization = nullptr;

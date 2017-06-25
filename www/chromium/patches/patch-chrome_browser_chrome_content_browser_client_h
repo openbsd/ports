@@ -1,7 +1,8 @@
-$OpenBSD: patch-chrome_browser_chrome_content_browser_client_h,v 1.26 2017/04/28 14:21:00 robert Exp $
---- chrome/browser/chrome_content_browser_client.h.orig.port	Wed Apr 19 21:06:29 2017
-+++ chrome/browser/chrome_content_browser_client.h	Thu Apr 27 19:55:59 2017
-@@ -270,7 +270,7 @@ class ChromeContentBrowserClient : public content::Con
+$OpenBSD: patch-chrome_browser_chrome_content_browser_client_h,v 1.27 2017/06/25 21:53:56 robert Exp $
+Index: chrome/browser/chrome_content_browser_client.h
+--- chrome/browser/chrome_content_browser_client.h.orig
++++ chrome/browser/chrome_content_browser_client.h
+@@ -271,7 +271,7 @@ class ChromeContentBrowserClient : public content::Con
        content::RenderFrameHost* render_frame_host,
        blink::WebPageVisibilityState* visibility_state) override;
  

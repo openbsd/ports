@@ -1,0 +1,32 @@
+$OpenBSD: patch-gpu_ipc_common_gpu_memory_buffer_support_cc,v 1.1 2017/06/25 21:53:56 robert Exp $
+
+Index: gpu/ipc/common/gpu_memory_buffer_support.cc
+--- gpu/ipc/common/gpu_memory_buffer_support.cc.orig
++++ gpu/ipc/common/gpu_memory_buffer_support.cc
+@@ -7,7 +7,7 @@
+ #include "base/logging.h"
+ #include "build/build_config.h"
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+ #include "ui/gfx/client_native_pixmap_factory.h"
+ #endif
+ 
+@@ -17,7 +17,7 @@ gfx::GpuMemoryBufferType GetNativeGpuMemoryBufferType(
+ #if defined(OS_MACOSX)
+   return gfx::IO_SURFACE_BUFFER;
+ #endif
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   return gfx::NATIVE_PIXMAP;
+ #endif
+   return gfx::EMPTY_BUFFER;
+@@ -47,7 +47,7 @@ bool IsNativeGpuMemoryBufferConfigurationSupported(gfx
+   return false;
+ #endif
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   if (!gfx::ClientNativePixmapFactory::GetInstance()) {
+     // unittests don't have to set ClientNativePixmapFactory.
+     return false;

@@ -1,0 +1,23 @@
+$OpenBSD: patch-chrome_browser_flag_descriptions_cc,v 1.1 2017/06/25 21:53:56 robert Exp $
+
+Index: chrome/browser/flag_descriptions.cc
+--- chrome/browser/flag_descriptions.cc.orig
++++ chrome/browser/flag_descriptions.cc
+@@ -1598,7 +1598,7 @@ const char kForceUiDirectionLtr[] = "Left-to-right";
+ 
+ const char kForceUiDirectionRtl[] = "Right-to-left";
+ 
+-#if defined(OS_WIN) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_BSD)
+ 
+ const char kEnableInputImeApiName[] = "Enable Input IME API";
+ 
+@@ -2791,7 +2791,7 @@ const char kEnableAdjustableLargeCursorDescription[] =
+     "Make size of accessibility large cursor adjustable.";
+ 
+ #if defined(OS_CHROMEOS) || defined(OS_LINUX) || defined(OS_MACOSX) || \
+-    defined(OS_WIN)
++    defined(OS_WIN) || defined(OS_BSD)
+ 
+ const char kOmniboxEntitySuggestionsName[] = "Omnibox entity suggestions";
+ 

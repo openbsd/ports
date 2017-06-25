@@ -1,0 +1,13 @@
+$OpenBSD: patch-third_party_swiftshader_src_Common_Socket_cpp,v 1.1 2017/06/25 21:53:56 robert Exp $
+
+Index: third_party/swiftshader/src/Common/Socket.cpp
+--- third_party/swiftshader/src/Common/Socket.cpp.orig
++++ third_party/swiftshader/src/Common/Socket.cpp
+@@ -20,6 +20,7 @@
+ 	#include <unistd.h>
+ 	#include <netdb.h>
+ 	#include <netinet/in.h>
++	#include <sys/select.h>
+ #endif
+ 
+ namespace sw

@@ -1,0 +1,19 @@
+$OpenBSD: patch-v8_src_trap-handler_handler-inside_cc,v 1.1 2017/06/25 21:53:56 robert Exp $
+
+Index: v8/src/trap-handler/handler-inside.cc
+--- v8/src/trap-handler/handler-inside.cc.orig
++++ v8/src/trap-handler/handler-inside.cc
+@@ -36,11 +36,13 @@ namespace trap_handler {
+ 
+ namespace {
+ 
++#if V8_TRAP_HANDLER_SUPPORTED && V8_OS_LINUX
+ bool IsKernelGeneratedSignal(siginfo_t* info) {
+   return info->si_code > 0 && info->si_code != SI_USER &&
+          info->si_code != SI_QUEUE && info->si_code != SI_TIMER &&
+          info->si_code != SI_ASYNCIO && info->si_code != SI_MESGQ;
+ }
++#endif
+ 
+ #if V8_TRAP_HANDLER_SUPPORTED
+ class SigUnmaskStack {

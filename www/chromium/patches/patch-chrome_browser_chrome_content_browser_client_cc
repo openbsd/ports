@@ -1,7 +1,8 @@
-$OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.35 2017/04/28 14:21:00 robert Exp $
---- chrome/browser/chrome_content_browser_client.cc.orig.port	Fri Apr 28 07:26:43 2017
-+++ chrome/browser/chrome_content_browser_client.cc	Fri Apr 28 07:28:20 2017
-@@ -244,7 +244,7 @@
+$OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.36 2017/06/25 21:53:56 robert Exp $
+Index: chrome/browser/chrome_content_browser_client.cc
+--- chrome/browser/chrome_content_browser_client.cc.orig
++++ chrome/browser/chrome_content_browser_client.cc
+@@ -249,7 +249,7 @@
  #include "mash/public/interfaces/launchable.mojom.h"
  #include "services/service_manager/public/cpp/interface_factory.h"
  #include "services/service_manager/public/interfaces/interface_provider_spec.mojom.h"
@@ -10,7 +11,7 @@ $OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.35 2017/04/2
  #include "chrome/browser/chrome_browser_main_linux.h"
  #elif defined(OS_ANDROID)
  #include "chrome/browser/android/app_hooks.h"
-@@ -261,7 +261,7 @@
+@@ -266,7 +266,7 @@
  #include "chrome/browser/payments/payment_request_factory.h"
  #endif
  
@@ -19,7 +20,7 @@ $OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.35 2017/04/2
  #include "chrome/browser/webshare/share_service_impl.h"
  #endif
  
-@@ -289,7 +289,7 @@
+@@ -294,7 +294,7 @@
  #include "chrome/browser/ui/views/chrome_browser_main_extra_parts_views.h"
  #endif
  
@@ -28,7 +29,7 @@ $OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.35 2017/04/2
  #include "chrome/browser/ui/views/chrome_browser_main_extra_parts_views_linux.h"
  #endif
  
-@@ -1023,7 +1023,7 @@ content::BrowserMainParts* ChromeContentBrowserClient:
+@@ -1038,7 +1038,7 @@ content::BrowserMainParts* ChromeContentBrowserClient:
    main_parts = new ChromeBrowserMainPartsMac(parameters);
  #elif defined(OS_CHROMEOS)
    main_parts = new chromeos::ChromeBrowserMainPartsChromeos(parameters);
@@ -37,7 +38,7 @@ $OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.35 2017/04/2
    main_parts = new ChromeBrowserMainPartsLinux(parameters);
  #elif defined(OS_ANDROID)
    main_parts = new ChromeBrowserMainPartsAndroid(parameters);
-@@ -1039,7 +1039,7 @@ content::BrowserMainParts* ChromeContentBrowserClient:
+@@ -1054,7 +1054,7 @@ content::BrowserMainParts* ChromeContentBrowserClient:
    // Construct additional browser parts. Stages are called in the order in
    // which they are added.
  #if defined(TOOLKIT_VIEWS)
@@ -46,7 +47,7 @@ $OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.35 2017/04/2
    main_parts->AddParts(new ChromeBrowserMainExtraPartsViewsLinux());
  #else
    main_parts->AddParts(new ChromeBrowserMainExtraPartsViews());
-@@ -1680,7 +1680,7 @@ void ChromeContentBrowserClient::AppendExtraCommandLin
+@@ -1704,7 +1704,7 @@ void ChromeContentBrowserClient::AppendExtraCommandLin
      command_line->AppendSwitchASCII(switches::kMetricsClientID,
                                      client_info->client_id);
    }
@@ -55,7 +56,7 @@ $OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.35 2017/04/2
    if (breakpad::IsCrashReporterEnabled()) {
      std::string switch_value;
      std::unique_ptr<metrics::ClientInfo> client_info =
-@@ -2972,7 +2972,7 @@ void ChromeContentBrowserClient::GetAdditionalFileSyst
+@@ -2982,7 +2982,7 @@ void ChromeContentBrowserClient::GetAdditionalFileSyst
    }
  }
  
@@ -64,7 +65,7 @@ $OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.35 2017/04/2
  void ChromeContentBrowserClient::GetAdditionalMappedFilesForChildProcess(
      const base::CommandLine& command_line,
      int child_process_id,
-@@ -3205,7 +3205,7 @@ void ChromeContentBrowserClient::RegisterRenderFrameMo
+@@ -3219,7 +3219,7 @@ void ChromeContentBrowserClient::RegisterRenderFrameMo
    }
  #endif
  

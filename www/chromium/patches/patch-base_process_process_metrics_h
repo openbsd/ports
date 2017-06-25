@@ -1,7 +1,17 @@
-$OpenBSD: patch-base_process_process_metrics_h,v 1.6 2017/03/14 12:18:53 robert Exp $
---- base/process/process_metrics.h.orig.port	Thu Mar  9 21:04:26 2017
-+++ base/process/process_metrics.h	Fri Mar 10 07:46:16 2017
-@@ -257,7 +257,7 @@ BASE_EXPORT void SetFdLimit(unsigned int max_descripto
+$OpenBSD: patch-base_process_process_metrics_h,v 1.7 2017/06/25 21:53:56 robert Exp $
+Index: base/process/process_metrics.h
+--- base/process/process_metrics.h.orig
++++ base/process/process_metrics.h
+@@ -205,7 +205,7 @@ class BASE_EXPORT ProcessMetrics {
+   // otherwise.
+   bool GetIOCounters(IoCounters* io_counters) const;
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   // Returns the number of file descriptors currently open by the process, or
+   // -1 on error.
+   int GetOpenFdCount() const;
+@@ -289,7 +289,7 @@ BASE_EXPORT void SetFdLimit(unsigned int max_descripto
  #endif  // defined(OS_POSIX)
  
  #if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || \

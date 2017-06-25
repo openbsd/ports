@@ -1,7 +1,8 @@
-$OpenBSD: patch-content_browser_ppapi_plugin_process_host_cc,v 1.7 2017/04/28 14:21:00 robert Exp $
---- content/browser/ppapi_plugin_process_host.cc.orig.port	Wed Apr 19 21:06:33 2017
-+++ content/browser/ppapi_plugin_process_host.cc	Thu Apr 27 19:56:01 2017
-@@ -55,7 +55,7 @@
+$OpenBSD: patch-content_browser_ppapi_plugin_process_host_cc,v 1.8 2017/06/25 21:53:56 robert Exp $
+Index: content/browser/ppapi_plugin_process_host.cc
+--- content/browser/ppapi_plugin_process_host.cc.orig
++++ content/browser/ppapi_plugin_process_host.cc
+@@ -54,7 +54,7 @@
  
  namespace content {
  
@@ -10,7 +11,7 @@ $OpenBSD: patch-content_browser_ppapi_plugin_process_host_cc,v 1.7 2017/04/28 14
  ZygoteHandle g_ppapi_zygote;
  #endif  // defined(OS_POSIX) && !defined(OS_ANDROID) && !defined(OS_MACOSX)
  
-@@ -111,7 +111,7 @@ class PpapiPluginSandboxedProcessLauncherDelegate
+@@ -110,7 +110,7 @@ class PpapiPluginSandboxedProcessLauncherDelegate
      return true;
    }
  
@@ -19,7 +20,7 @@ $OpenBSD: patch-content_browser_ppapi_plugin_process_host_cc,v 1.7 2017/04/28 14
    ZygoteHandle* GetZygote() override {
      const base::CommandLine& browser_command_line =
          *base::CommandLine::ForCurrentProcess();
-@@ -205,7 +205,7 @@ PpapiPluginProcessHost* PpapiPluginProcessHost::Create
+@@ -204,7 +204,7 @@ PpapiPluginProcessHost* PpapiPluginProcessHost::Create
    return NULL;
  }
  

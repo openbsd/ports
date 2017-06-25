@@ -1,7 +1,8 @@
-$OpenBSD: patch-chrome_browser_browser_resources_grd,v 1.34 2017/04/28 14:21:00 robert Exp $
---- chrome/browser/browser_resources.grd.orig.port	Wed Apr 19 21:06:29 2017
-+++ chrome/browser/browser_resources.grd	Thu Apr 27 19:55:59 2017
-@@ -383,7 +383,7 @@
+$OpenBSD: patch-chrome_browser_browser_resources_grd,v 1.35 2017/06/25 21:53:56 robert Exp $
+Index: chrome/browser/browser_resources.grd
+--- chrome/browser/browser_resources.grd.orig
++++ chrome/browser/browser_resources.grd
+@@ -404,7 +404,7 @@
          <include name="IDR_ABOUT_VOICESEARCH_JS" file="resources\about_voicesearch.js" type="BINDATA" />
          <include name="IDR_PLUGIN_DB_JSON" file="resources\plugin_metadata\plugins_chromeos.json" type="BINDATA" />
        </if>
@@ -10,3 +11,12 @@ $OpenBSD: patch-chrome_browser_browser_resources_grd,v 1.34 2017/04/28 14:21:00 
          <include name="IDR_PLUGIN_DB_JSON" file="resources\plugin_metadata\plugins_linux.json" type="BINDATA" />
        </if>
        <if expr="is_android">
+@@ -657,7 +657,7 @@
+       <if expr="not is_android and not is_ios">
+         <include name="IDR_SSL_ERROR_ASSISTANT_PB" file="${root_gen_dir}/chrome/browser/resources/ssl/ssl_error_assistant/ssl_error_assistant.pb" use_base_dir="false" type="BINDATA" />
+       </if>
+-      <if expr="is_android or is_linux">
++      <if expr="is_android or is_posix">
+         <include name="IDR_SANDBOX_INTERNALS_HTML" file="resources\sandbox_internals\sandbox_internals.html" flattenhtml="true" allowexternalscript="true" type="BINDATA" compress="gzip" />
+         <include name="IDR_SANDBOX_INTERNALS_JS" file="resources\sandbox_internals\sandbox_internals.js" type="BINDATA" compress="gzip" />
+       </if>

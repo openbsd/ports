@@ -1,7 +1,8 @@
-$OpenBSD: patch-chrome_browser_ui_webui_options_browser_options_handler_h,v 1.18 2017/03/14 12:18:53 robert Exp $
---- chrome/browser/ui/webui/options/browser_options_handler.h.orig.port	Thu Mar  9 21:04:29 2017
-+++ chrome/browser/ui/webui/options/browser_options_handler.h	Fri Mar 10 07:46:20 2017
-@@ -210,7 +210,8 @@ class BrowserOptionsHandler
+$OpenBSD: patch-chrome_browser_ui_webui_options_browser_options_handler_h,v 1.19 2017/06/25 21:53:56 robert Exp $
+Index: chrome/browser/ui/webui/options/browser_options_handler.h
+--- chrome/browser/ui/webui/options/browser_options_handler.h.orig
++++ chrome/browser/ui/webui/options/browser_options_handler.h
+@@ -215,7 +215,8 @@ class BrowserOptionsHandler
  
    void ObserveThemeChanged();
    void ThemesReset(const base::ListValue* args);

@@ -1,12 +1,13 @@
-$OpenBSD: patch-ui_resources_ui_resources_grd,v 1.6 2015/10/14 16:42:07 robert Exp $
---- ui/resources/ui_resources.grd.orig.port	Wed Oct 14 07:59:01 2015
-+++ ui/resources/ui_resources.grd	Wed Oct 14 07:59:13 2015
+$OpenBSD: patch-ui_resources_ui_resources_grd,v 1.7 2017/06/25 21:53:56 robert Exp $
+Index: ui/resources/ui_resources.grd
+--- ui/resources/ui_resources.grd.orig
++++ ui/resources/ui_resources.grd
 @@ -15,7 +15,7 @@
        <!-- KEEP THESE IN ALPHABETICAL ORDER!  DO NOT ADD TO RANDOM PLACES JUST
             BECAUSE YOUR RESOURCES ARE FUNCTIONALLY RELATED OR FALL UNDER THE
             SAME CONDITIONALS. -->
 -      <if expr="is_linux and use_aura">
-+      <if expr="(is_linux or is_bsd) and use_aura">
++      <if expr="is_posix and use_aura">
          <structure type="chrome_scaled_image" name="IDR_AURA_CURSOR_BIG_ALIAS" file="common/pointers/alias_big.png" />
          <structure type="chrome_scaled_image" name="IDR_AURA_CURSOR_BIG_CELL" file="common/pointers/cell_big.png" />
          <structure type="chrome_scaled_image" name="IDR_AURA_CURSOR_BIG_COL_RESIZE" file="common/pointers/sb_h_double_arrow_big.png" />

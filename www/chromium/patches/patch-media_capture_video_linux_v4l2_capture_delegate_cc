@@ -1,6 +1,7 @@
-$OpenBSD: patch-media_capture_video_linux_v4l2_capture_delegate_cc,v 1.4 2017/03/14 12:18:54 robert Exp $
---- media/capture/video/linux/v4l2_capture_delegate.cc.orig.port	Thu Mar  9 21:04:34 2017
-+++ media/capture/video/linux/v4l2_capture_delegate.cc	Fri Mar 10 19:56:24 2017
+$OpenBSD: patch-media_capture_video_linux_v4l2_capture_delegate_cc,v 1.5 2017/06/25 21:53:56 robert Exp $
+Index: media/capture/video/linux/v4l2_capture_delegate.cc
+--- media/capture/video/linux/v4l2_capture_delegate.cc.orig
++++ media/capture/video/linux/v4l2_capture_delegate.cc
 @@ -4,8 +4,10 @@
  
  #include "media/capture/video/linux/v4l2_capture_delegate.h"
@@ -12,9 +13,9 @@ $OpenBSD: patch-media_capture_video_linux_v4l2_capture_delegate_cc,v 1.4 2017/03
  #include <poll.h>
  #include <sys/fcntl.h>
  #include <sys/ioctl.h>
-@@ -21,10 +23,10 @@
- #include "media/capture/video/blob_utils.h"
- #include "media/capture/video/linux/video_capture_device_linux.h"
+@@ -23,10 +25,10 @@
+ 
+ using media::mojom::MeteringMode;
  
 -#if LINUX_VERSION_CODE < KERNEL_VERSION(4, 6, 0)
 +// #if LINUX_VERSION_CODE < KERNEL_VERSION(4, 6, 0)

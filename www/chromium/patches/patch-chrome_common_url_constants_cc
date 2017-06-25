@@ -1,7 +1,8 @@
-$OpenBSD: patch-chrome_common_url_constants_cc,v 1.20 2017/04/28 14:21:00 robert Exp $
---- chrome/common/url_constants.cc.orig.port	Wed Apr 19 21:06:30 2017
-+++ chrome/common/url_constants.cc	Thu Apr 27 19:56:00 2017
-@@ -143,7 +143,7 @@ const char kChromeUIMdCupsSettingsURL[] = "chrome://md
+$OpenBSD: patch-chrome_common_url_constants_cc,v 1.21 2017/06/25 21:53:56 robert Exp $
+Index: chrome/common/url_constants.cc
+--- chrome/common/url_constants.cc.orig
++++ chrome/common/url_constants.cc
+@@ -145,7 +145,7 @@ const char kChromeUICleanupToolURL[] = "chrome://clean
  const char kChromeUIMetroFlowURL[] = "chrome://make-metro/";
  #endif
  
@@ -10,7 +11,25 @@ $OpenBSD: patch-chrome_common_url_constants_cc,v 1.20 2017/04/28 14:21:00 robert
  const char kChromeUITabModalConfirmDialogURL[] =
      "chrome://tab-modal-confirm-dialog/";
  #endif
-@@ -337,7 +337,7 @@ const char kChromeOSAssetPath[] = "/usr/share/chromeos
+@@ -161,7 +161,7 @@ const char kChromeUICastURL[] = "chrome://cast/";
+ #endif
+ #endif
+ 
+-#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
+ const char kChromeUIDiscardsHost[] = "discards";
+ const char kChromeUIDiscardsURL[] = "chrome://discards/";
+ #endif
+@@ -283,7 +283,7 @@ const char kChromeUIPrintHost[] = "print";
+ const char kChromeUILinuxProxyConfigHost[] = "linux-proxy-config";
+ #endif
+ 
+-#if defined(OS_LINUX) || defined(OS_ANDROID)
++#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
+ const char kChromeUISandboxHost[] = "sandbox";
+ #endif
+ 
+@@ -340,7 +340,7 @@ const char kChromeUICleanupToolHost[] = "cleanup";
  const char kChromeUIMetroFlowHost[] = "make-metro";
  #endif
  
@@ -19,3 +38,12 @@ $OpenBSD: patch-chrome_common_url_constants_cc,v 1.20 2017/04/28 14:21:00 robert
  const char kChromeUITabModalConfirmDialogHost[] = "tab-modal-confirm-dialog";
  #endif
  
+@@ -732,7 +732,7 @@ const char* const kChromeHostURLs[] = {
+ #if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID)
+     kChromeUILinuxProxyConfigHost,
+ #endif
+-#if defined(OS_LINUX) || defined(OS_ANDROID)
++#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
+     kChromeUISandboxHost,
+ #endif
+ #if defined(OS_WIN)

@@ -1,6 +1,7 @@
-$OpenBSD: patch-media_audio_audio_manager_cc,v 1.6 2017/04/28 14:21:00 robert Exp $
---- media/audio/audio_manager.cc.orig.port	Wed Apr 19 21:06:35 2017
-+++ media/audio/audio_manager.cc	Thu Apr 27 19:56:02 2017
+$OpenBSD: patch-media_audio_audio_manager_cc,v 1.7 2017/06/25 21:53:56 robert Exp $
+Index: media/audio/audio_manager.cc
+--- media/audio/audio_manager.cc.orig
++++ media/audio/audio_manager.cc
 @@ -93,7 +93,7 @@ class AudioManagerHelper : public base::PowerObserver 
    }
  #endif
@@ -19,7 +20,7 @@ $OpenBSD: patch-media_audio_audio_manager_cc,v 1.6 2017/04/28 14:21:00 robert Ex
    std::string app_name_;
  #endif
  
-@@ -342,7 +342,7 @@ void AudioManager::StartHangMonitorIfNeeded(
+@@ -340,7 +340,7 @@ void AudioManager::StartHangMonitorIfNeeded(
    GetHelper()->StartHangTimer(std::move(task_runner));
  }
  

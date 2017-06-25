@@ -1,6 +1,7 @@
-$OpenBSD: patch-content_common_sandbox_init_openbsd_cc,v 1.6 2016/07/12 06:05:32 robert Exp $
---- content/common/sandbox_init_openbsd.cc.orig.port	Mon Jul 11 19:28:28 2016
-+++ content/common/sandbox_init_openbsd.cc	Tue Jul 12 07:50:19 2016
+$OpenBSD: patch-content_common_sandbox_init_openbsd_cc,v 1.7 2017/06/25 21:53:56 robert Exp $
+Index: content/common/sandbox_init_openbsd.cc
+--- content/common/sandbox_init_openbsd.cc.orig
++++ content/common/sandbox_init_openbsd.cc
 @@ -0,0 +1,77 @@
 +/*
 + * Copyright (c) 2016 Robert Nagy <robert@openbsd.org>
@@ -44,7 +45,7 @@ $OpenBSD: patch-content_common_sandbox_init_openbsd_cc,v 1.6 2016/07/12 06:05:32
 +  } else if (process_type == switches::kRendererProcess) {
 +    // prot_exec needed by v8
 +    // flock needed by sqlite3 locking
-+    if (pledge("stdio rpath flock prot_exec recvfd sendfd", NULL) == -1) {
++    if (pledge("stdio rpath flock prot_exec recvfd sendfd ps", NULL) == -1) {
 +      LOG(ERROR) << "pledge() failed, errno: " << errno;
 +      _exit(1);
 +    }

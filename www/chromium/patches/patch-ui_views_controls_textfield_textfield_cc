@@ -1,6 +1,7 @@
-$OpenBSD: patch-ui_views_controls_textfield_textfield_cc,v 1.22 2017/04/28 14:21:00 robert Exp $
---- ui/views/controls/textfield/textfield.cc.orig.port	Fri Apr 28 07:37:58 2017
-+++ ui/views/controls/textfield/textfield.cc	Fri Apr 28 07:38:43 2017
+$OpenBSD: patch-ui_views_controls_textfield_textfield_cc,v 1.23 2017/06/25 21:53:56 robert Exp $
+Index: ui/views/controls/textfield/textfield.cc
+--- ui/views/controls/textfield/textfield.cc.orig
++++ ui/views/controls/textfield/textfield.cc
 @@ -54,7 +54,7 @@
  #include "ui/base/win/osk_display_manager.h"
  #endif
@@ -36,7 +37,7 @@ $OpenBSD: patch-ui_views_controls_textfield_textfield_cc,v 1.22 2017/04/28 14:21
    return flags & ui::EF_CONTROL_DOWN;
  #else
    return false;
-@@ -606,7 +606,7 @@ bool Textfield::OnMousePressed(const ui::MouseEvent& e
+@@ -607,7 +607,7 @@ bool Textfield::OnMousePressed(const ui::MouseEvent& e
      ShowImeIfNeeded();
    }
  
@@ -45,7 +46,7 @@ $OpenBSD: patch-ui_views_controls_textfield_textfield_cc,v 1.22 2017/04/28 14:21
    if (!handled && !had_focus && event.IsOnlyMiddleMouseButton())
      RequestFocus();
  #endif
-@@ -645,7 +645,7 @@ bool Textfield::OnKeyPressed(const ui::KeyEvent& event
+@@ -646,7 +646,7 @@ bool Textfield::OnKeyPressed(const ui::KeyEvent& event
    if (!textfield)
      return handled;
  
@@ -54,7 +55,7 @@ $OpenBSD: patch-ui_views_controls_textfield_textfield_cc,v 1.22 2017/04/28 14:21
    ui::TextEditKeyBindingsDelegateAuraLinux* delegate =
        ui::GetTextEditKeyBindingsDelegate();
    std::vector<ui::TextEditCommandAuraLinux> commands;
-@@ -785,7 +785,7 @@ void Textfield::AboutToRequestFocusFromTabTraversal(bo
+@@ -789,7 +789,7 @@ void Textfield::AboutToRequestFocusFromTabTraversal(bo
  }
  
  bool Textfield::SkipDefaultKeyEventProcessing(const ui::KeyEvent& event) {
@@ -63,7 +64,7 @@ $OpenBSD: patch-ui_views_controls_textfield_textfield_cc,v 1.22 2017/04/28 14:21
    // Skip any accelerator handling that conflicts with custom keybindings.
    ui::TextEditKeyBindingsDelegateAuraLinux* delegate =
        ui::GetTextEditKeyBindingsDelegate();
-@@ -1076,7 +1076,7 @@ void Textfield::WriteDragDataForView(View* sender,
+@@ -1080,7 +1080,7 @@ void Textfield::WriteDragDataForView(View* sender,
  
    SkBitmap bitmap;
    float raster_scale = ScaleFactorForDragFromWidget(GetWidget());
@@ -72,7 +73,7 @@ $OpenBSD: patch-ui_views_controls_textfield_textfield_cc,v 1.22 2017/04/28 14:21
    // Desktop Linux Aura does not yet support transparency in drag images.
    SkColor color = GetBackgroundColor();
  #else
-@@ -1873,7 +1873,7 @@ bool Textfield::PasteSelectionClipboard() {
+@@ -1877,7 +1877,7 @@ bool Textfield::PasteSelectionClipboard() {
  }
  
  void Textfield::UpdateSelectionClipboard() {

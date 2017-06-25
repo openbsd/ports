@@ -1,30 +1,32 @@
-$OpenBSD: patch-third_party_WebKit_Source_platform_fonts_FontPlatformData_h,v 1.4 2017/03/14 12:18:54 robert Exp $
---- third_party/WebKit/Source/platform/fonts/FontPlatformData.h.orig.port	Thu Mar  9 21:04:45 2017
-+++ third_party/WebKit/Source/platform/fonts/FontPlatformData.h	Fri Mar 10 07:46:25 2017
+$OpenBSD: patch-third_party_WebKit_Source_platform_fonts_FontPlatformData_h,v 1.5 2017/06/25 21:53:56 robert Exp $
+
+Index: third_party/WebKit/Source/platform/fonts/FontPlatformData.h
+--- third_party/WebKit/Source/platform/fonts/FontPlatformData.h.orig
++++ third_party/WebKit/Source/platform/fonts/FontPlatformData.h
 @@ -47,7 +47,7 @@
- #include "wtf/text/CString.h"
- #include "wtf/text/StringImpl.h"
+ #include "platform/wtf/text/StringImpl.h"
+ #include "third_party/skia/include/core/SkRefCnt.h"
  
 -#if OS(LINUX) || OS(ANDROID)
 +#if OS(LINUX) || OS(ANDROID) || OS(OPENBSD)
  #include "platform/fonts/linux/FontRenderStyle.h"
  #endif  // OS(LINUX) || OS(ANDROID)
  
-@@ -151,7 +151,7 @@ class PLATFORM_EXPORT FontPlatformData {
-   PassRefPtr<OpenTypeVerticalData> verticalData() const;
-   PassRefPtr<SharedBuffer> openTypeTable(SkFontTableTag) const;
+@@ -147,7 +147,7 @@ class PLATFORM_EXPORT FontPlatformData {
+   PassRefPtr<OpenTypeVerticalData> VerticalData() const;
+   PassRefPtr<SharedBuffer> OpenTypeTable(SkFontTableTag) const;
  
 -#if OS(LINUX) || OS(ANDROID)
 +#if OS(LINUX) || OS(ANDROID) || OS(OPENBSD)
    // The returned styles are all actual styles without
    // FontRenderStyle::NoPreference.
-   const FontRenderStyle& getFontRenderStyle() const { return m_style; }
-@@ -179,7 +179,7 @@ class PLATFORM_EXPORT FontPlatformData {
-   FontOrientation m_orientation;
+   const FontRenderStyle& GetFontRenderStyle() const { return style_; }
+@@ -177,7 +177,7 @@ class PLATFORM_EXPORT FontPlatformData {
+   FontOrientation orientation_;
  
   private:
 -#if OS(LINUX) || OS(ANDROID)
 +#if OS(LINUX) || OS(ANDROID) || OS(OPENBSD)
-   FontRenderStyle m_style;
+   FontRenderStyle style_;
  #endif
  

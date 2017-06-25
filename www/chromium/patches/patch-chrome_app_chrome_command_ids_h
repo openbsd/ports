@@ -1,7 +1,8 @@
-$OpenBSD: patch-chrome_app_chrome_command_ids_h,v 1.2 2017/04/28 14:21:00 robert Exp $
---- chrome/app/chrome_command_ids.h.orig.port	Wed Apr 19 21:06:28 2017
-+++ chrome/app/chrome_command_ids.h	Thu Apr 27 19:55:58 2017
-@@ -71,7 +71,7 @@
+$OpenBSD: patch-chrome_app_chrome_command_ids_h,v 1.3 2017/06/25 21:53:56 robert Exp $
+Index: chrome/app/chrome_command_ids.h
+--- chrome/app/chrome_command_ids.h.orig
++++ chrome/app/chrome_command_ids.h
+@@ -67,7 +67,7 @@
  #define IDC_VISIT_DESKTOP_OF_LRU_USER_2 34049
  #define IDC_VISIT_DESKTOP_OF_LRU_USER_3 34050
  

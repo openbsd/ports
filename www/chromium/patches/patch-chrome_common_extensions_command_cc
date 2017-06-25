@@ -1,7 +1,8 @@
-$OpenBSD: patch-chrome_common_extensions_command_cc,v 1.6 2016/12/10 15:35:25 robert Exp $
---- chrome/common/extensions/command.cc.orig.port	Fri Dec  2 00:02:09 2016
-+++ chrome/common/extensions/command.cc	Fri Dec  2 17:44:53 2016
-@@ -302,7 +302,7 @@ std::string Command::CommandPlatform() {
+$OpenBSD: patch-chrome_common_extensions_command_cc,v 1.7 2017/06/25 21:53:56 robert Exp $
+Index: chrome/common/extensions/command.cc
+--- chrome/common/extensions/command.cc.orig
++++ chrome/common/extensions/command.cc
+@@ -303,7 +303,7 @@ std::string Command::CommandPlatform() {
    return values::kKeybindingPlatformMac;
  #elif defined(OS_CHROMEOS)
    return values::kKeybindingPlatformChromeOs;

@@ -1,21 +1,23 @@
-$OpenBSD: patch-content_renderer_webscrollbarbehavior_impl_aura_cc,v 1.1 2017/01/26 17:08:25 robert Exp $
---- content/renderer/webscrollbarbehavior_impl_aura.cc.orig.port	Tue Jan  3 20:44:20 2017
-+++ content/renderer/webscrollbarbehavior_impl_aura.cc	Tue Jan  3 20:44:45 2017
-@@ -14,7 +14,7 @@ bool WebScrollbarBehaviorImpl::shouldCenterOnThumb(
-       blink::WebPointerProperties::Button mouseButton,
-       bool shiftKeyPressed,
-       bool altKeyPressed) {
+$OpenBSD: patch-content_renderer_webscrollbarbehavior_impl_aura_cc,v 1.2 2017/06/25 21:53:56 robert Exp $
+
+Index: content/renderer/webscrollbarbehavior_impl_aura.cc
+--- content/renderer/webscrollbarbehavior_impl_aura.cc.orig
++++ content/renderer/webscrollbarbehavior_impl_aura.cc
+@@ -14,7 +14,7 @@ bool WebScrollbarBehaviorImpl::ShouldCenterOnThumb(
+     blink::WebPointerProperties::Button mouseButton,
+     bool shiftKeyPressed,
+     bool altKeyPressed) {
 -#if (defined(OS_LINUX) && !defined(OS_CHROMEOS))
-+#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
-   if (mouseButton == blink::WebPointerProperties::Button::Middle)
++#if ((defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS))
+   if (mouseButton == blink::WebPointerProperties::Button::kMiddle)
      return true;
  #endif
-@@ -29,7 +29,7 @@ bool WebScrollbarBehaviorImpl::shouldSnapBackToDragOri
+@@ -29,7 +29,7 @@ bool WebScrollbarBehaviorImpl::ShouldSnapBackToDragOri
  // Disable snapback on desktop Linux to better integrate with the desktop
  // behavior.  Typically, Linux apps do not implement scrollbar snapback (this is
  // true for at least GTK and QT apps).
 -#if (defined(OS_LINUX) && !defined(OS_CHROMEOS))
-+#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
++#if ((defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS))
    return false;
  #endif
  

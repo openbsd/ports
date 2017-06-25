@@ -1,10 +1,12 @@
-$OpenBSD: patch-third_party_WebKit_Source_web_PopupMenuImpl_cpp,v 1.10 2017/04/28 14:21:00 robert Exp $
---- third_party/WebKit/Source/web/PopupMenuImpl.cpp.orig.port	Wed Apr 19 21:06:50 2017
-+++ third_party/WebKit/Source/web/PopupMenuImpl.cpp	Thu Apr 27 19:56:03 2017
-@@ -154,7 +154,7 @@ class PopupMenuImpl::ItemIterationContext {
-         m_isInGroup(false),
-         m_buffer(buffer) {
-     DCHECK(m_buffer);
+$OpenBSD: patch-third_party_WebKit_Source_web_PopupMenuImpl_cpp,v 1.11 2017/06/25 21:53:56 robert Exp $
+
+Index: third_party/WebKit/Source/web/PopupMenuImpl.cpp
+--- third_party/WebKit/Source/web/PopupMenuImpl.cpp.orig
++++ third_party/WebKit/Source/web/PopupMenuImpl.cpp
+@@ -155,7 +155,7 @@ class PopupMenuImpl::ItemIterationContext {
+         is_in_group_(false),
+         buffer_(buffer) {
+     DCHECK(buffer_);
 -#if OS(LINUX)
 +#if OS(LINUX) || OS(OPENBSD)
      // On other platforms, the <option> background color is the same as the

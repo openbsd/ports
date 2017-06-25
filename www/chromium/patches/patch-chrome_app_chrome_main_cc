@@ -1,0 +1,14 @@
+$OpenBSD: patch-chrome_app_chrome_main_cc,v 1.1 2017/06/25 21:53:56 robert Exp $
+
+Index: chrome/app/chrome_main.cc
+--- chrome/app/chrome_main.cc.orig
++++ chrome/app/chrome_main.cc
+@@ -97,7 +97,7 @@ int ChromeMain(int argc, const char** argv) {
+   ALLOW_UNUSED_LOCAL(command_line);
+ #endif
+ 
+-#if defined(OS_LINUX) || defined(OS_MACOSX)
++#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_BSD)
+   if (command_line->HasSwitch(switches::kHeadless)) {
+ #if defined(OS_MACOSX)
+     SetUpBundleOverrides();

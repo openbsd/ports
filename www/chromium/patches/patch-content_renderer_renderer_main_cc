@@ -1,6 +1,7 @@
-$OpenBSD: patch-content_renderer_renderer_main_cc,v 1.12 2017/04/28 14:21:00 robert Exp $
---- content/renderer/renderer_main.cc.orig.port	Fri Apr 28 07:33:33 2017
-+++ content/renderer/renderer_main.cc	Fri Apr 28 09:32:21 2017
+$OpenBSD: patch-content_renderer_renderer_main_cc,v 1.13 2017/06/25 21:53:56 robert Exp $
+Index: content/renderer/renderer_main.cc
+--- content/renderer/renderer_main.cc.orig
++++ content/renderer/renderer_main.cc
 @@ -34,6 +34,7 @@
  #include "ppapi/features/features.h"
  #include "third_party/WebKit/public/platform/scheduler/renderer/renderer_scheduler.h"
@@ -10,7 +11,7 @@ $OpenBSD: patch-content_renderer_renderer_main_cc,v 1.12 2017/04/28 14:21:00 rob
  
  #if defined(OS_ANDROID)
 @@ -62,6 +63,12 @@
- #include "ui/ozone/public/client_native_pixmap_factory.h"
+ #include "ui/ozone/public/client_native_pixmap_factory_ozone.h"
  #endif
  
 +#if defined(OS_BSD)

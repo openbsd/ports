@@ -1,0 +1,31 @@
+$OpenBSD: patch-chrome_browser_ui_webui_sandbox_internals_ui_cc,v 1.1 2017/06/25 21:53:56 robert Exp $
+
+Index: chrome/browser/ui/webui/sandbox_internals_ui.cc
+--- chrome/browser/ui/webui/sandbox_internals_ui.cc.orig
++++ chrome/browser/ui/webui/sandbox_internals_ui.cc
+@@ -16,14 +16,14 @@
+ #include "content/public/browser/web_ui.h"
+ #include "content/public/browser/web_ui_data_source.h"
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+ #include "content/public/browser/zygote_host_linux.h"
+ #include "content/public/common/sandbox_linux.h"
+ #endif
+ 
+ namespace {
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+ static void SetSandboxStatusData(content::WebUIDataSource* source) {
+   // Get expected sandboxing status of renderers.
+   const int status =
+@@ -56,7 +56,7 @@ content::WebUIDataSource* CreateDataSource() {
+   source->AddResourcePath("sandbox_internals.js", IDR_SANDBOX_INTERNALS_JS);
+   source->UseGzip(std::unordered_set<std::string>());
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   SetSandboxStatusData(source);
+   source->SetJsonPath("strings.js");
+ #endif

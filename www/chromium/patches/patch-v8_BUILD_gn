@@ -1,8 +1,9 @@
-$OpenBSD: patch-v8_BUILD_gn,v 1.7 2017/04/28 14:21:00 robert Exp $
---- v8/BUILD.gn.orig.port	Wed Apr 19 21:07:57 2017
-+++ v8/BUILD.gn	Thu Apr 27 19:56:06 2017
-@@ -2336,7 +2336,7 @@ v8_component("v8_libbase") {
-     sources += [ "src/base/platform/platform-posix.cc" ]
+$OpenBSD: patch-v8_BUILD_gn,v 1.8 2017/06/25 21:53:56 robert Exp $
+Index: v8/BUILD.gn
+--- v8/BUILD.gn.orig
++++ v8/BUILD.gn
+@@ -2462,7 +2462,7 @@ v8_component("v8_libbase") {
+     ]
    }
  
 -  if (is_linux) {
@@ -10,7 +11,7 @@ $OpenBSD: patch-v8_BUILD_gn,v 1.7 2017/04/28 14:21:00 robert Exp $
      sources += [
        "src/base/debug/stack_trace_posix.cc",
        "src/base/platform/platform-linux.cc",
-@@ -2346,6 +2346,12 @@ v8_component("v8_libbase") {
+@@ -2472,6 +2472,12 @@ v8_component("v8_libbase") {
        "dl",
        "rt",
      ]
@@ -23,7 +24,7 @@ $OpenBSD: patch-v8_BUILD_gn,v 1.7 2017/04/28 14:21:00 robert Exp $
    } else if (is_android) {
      if (current_toolchain == host_toolchain) {
        libs = [
-@@ -2475,6 +2481,8 @@ v8_source_set("fuzzer_support") {
+@@ -2601,6 +2607,8 @@ v8_source_set("fuzzer_support") {
  if (current_toolchain == v8_snapshot_toolchain) {
    v8_executable("mksnapshot") {
      visibility = [ ":*" ]  # Only targets in this file can depend on this.

@@ -1,0 +1,14 @@
+$OpenBSD: patch-chrome_browser_background_background_mode_optimizer_cc,v 1.1 2017/06/25 21:53:56 robert Exp $
+
+Index: chrome/browser/background/background_mode_optimizer.cc
+--- chrome/browser/background/background_mode_optimizer.cc.orig
++++ chrome/browser/background/background_mode_optimizer.cc
+@@ -30,7 +30,7 @@ std::unique_ptr<BackgroundModeOptimizer> BackgroundMod
+           switches::kKeepAliveForTest))
+     return nullptr;
+ 
+-#if defined(OS_WIN) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_BSD)
+   if (base::FeatureList::IsEnabled(features::kBackgroundModeAllowRestart))
+     return base::WrapUnique(new BackgroundModeOptimizer());
+ #endif  // defined(OS_WIN) || defined(OS_LINUX)

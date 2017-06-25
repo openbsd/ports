@@ -1,6 +1,8 @@
-$OpenBSD: patch-media_base_video_frame_cc,v 1.8 2017/03/14 12:18:54 robert Exp $
---- media/base/video_frame.cc.orig.port	Thu Mar  9 21:04:34 2017
-+++ media/base/video_frame.cc	Fri Mar 10 07:46:24 2017
+$OpenBSD: patch-media_base_video_frame_cc,v 1.9 2017/06/25 21:53:56 robert Exp $
+
+Index: media/base/video_frame.cc
+--- media/base/video_frame.cc.orig
++++ media/base/video_frame.cc
 @@ -53,7 +53,7 @@ static std::string StorageTypeToString(
        return "OWNED_MEMORY";
      case VideoFrame::STORAGE_SHMEM:
@@ -43,6 +45,6 @@ $OpenBSD: patch-media_base_video_frame_cc,v 1.8 2017/03/14 12:18:54 robert Exp $
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
- int VideoFrame::dmabuf_fd(size_t plane) const {
+ int VideoFrame::DmabufFd(size_t plane) const {
    DCHECK_EQ(storage_type_, STORAGE_DMABUFS);
    DCHECK(IsValidPlane(plane, format_));

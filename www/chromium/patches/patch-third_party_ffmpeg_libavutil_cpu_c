@@ -1,7 +1,8 @@
-$OpenBSD: patch-third_party_ffmpeg_libavutil_cpu_c,v 1.5 2017/03/14 12:18:54 robert Exp $
---- third_party/ffmpeg/libavutil/cpu.c.orig.port	Thu Mar  9 21:05:23 2017
-+++ third_party/ffmpeg/libavutil/cpu.c	Fri Mar 10 07:46:25 2017
-@@ -39,10 +39,7 @@
+$OpenBSD: patch-third_party_ffmpeg_libavutil_cpu_c,v 1.6 2017/06/25 21:53:56 robert Exp $
+Index: third_party/ffmpeg/libavutil/cpu.c
+--- third_party/ffmpeg/libavutil/cpu.c.orig
++++ third_party/ffmpeg/libavutil/cpu.c
+@@ -34,10 +34,7 @@
  #if HAVE_GETPROCESSAFFINITYMASK || HAVE_WINRT
  #include <windows.h>
  #endif

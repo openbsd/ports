@@ -1,0 +1,14 @@
+$OpenBSD: patch-ipc_ipc_channel_mojo_cc,v 1.1 2017/06/25 21:53:56 robert Exp $
+
+Index: ipc/ipc_channel_mojo.cc
+--- ipc/ipc_channel_mojo.cc.orig
++++ ipc/ipc_channel_mojo.cc
+@@ -228,7 +228,7 @@ MojoResult UnwrapAttachment(mojom::SerializedHandlePtr
+ }
+ 
+ base::ProcessId GetSelfPID() {
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   if (int global_pid = Channel::GetGlobalPid())
+     return global_pid;
+ #endif  // OS_LINUX

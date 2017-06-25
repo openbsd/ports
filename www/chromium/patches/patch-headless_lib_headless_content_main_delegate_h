@@ -1,0 +1,14 @@
+$OpenBSD: patch-headless_lib_headless_content_main_delegate_h,v 1.1 2017/06/25 21:53:56 robert Exp $
+
+Index: headless/lib/headless_content_main_delegate.h
+--- headless/lib/headless_content_main_delegate.h.orig
++++ headless/lib/headless_content_main_delegate.h
+@@ -44,7 +44,7 @@ class HEADLESS_EXPORT HeadlessContentMainDelegate
+ 
+   HeadlessBrowserImpl* browser() const { return browser_.get(); }
+ 
+-#if !defined(OS_MACOSX) && defined(OS_POSIX) && !defined(OS_ANDROID)
++#if !defined(OS_MACOSX) && defined(OS_POSIX) && !defined(OS_ANDROID) && !defined(OS_BSD)
+   void ZygoteForked() override;
+ #endif
+ 

@@ -1,0 +1,14 @@
+$OpenBSD: patch-headless_lib_headless_content_main_delegate_cc,v 1.1 2017/06/25 21:53:56 robert Exp $
+
+Index: headless/lib/headless_content_main_delegate.cc
+--- headless/lib/headless_content_main_delegate.cc.orig
++++ headless/lib/headless_content_main_delegate.cc
+@@ -214,7 +214,7 @@ int HeadlessContentMainDelegate::RunProcess(
+   return 0;
+ }
+ 
+-#if !defined(OS_MACOSX) && defined(OS_POSIX) && !defined(OS_ANDROID)
++#if !defined(OS_MACOSX) && defined(OS_POSIX) && !defined(OS_ANDROID) && !defined(OS_BSD)
+ void HeadlessContentMainDelegate::ZygoteForked() {
+   const base::CommandLine& command_line(
+       *base::CommandLine::ForCurrentProcess());

@@ -1,6 +1,8 @@
-$OpenBSD: patch-base_sys_info_openbsd_cc,v 1.10 2016/09/01 16:28:11 robert Exp $
---- base/sys_info_openbsd.cc.orig.port	Thu Sep  1 00:03:26 2016
-+++ base/sys_info_openbsd.cc	Thu Sep  1 11:44:07 2016
+$OpenBSD: patch-base_sys_info_openbsd_cc,v 1.11 2017/06/25 21:53:56 robert Exp $
+
+Index: base/sys_info_openbsd.cc
+--- base/sys_info_openbsd.cc.orig
++++ base/sys_info_openbsd.cc
 @@ -29,6 +29,8 @@ int64_t AmountOfMemory(int pages_name) {
  
  namespace base {
@@ -10,7 +12,7 @@ $OpenBSD: patch-base_sys_info_openbsd_cc,v 1.10 2016/09/01 16:28:11 robert Exp $
  // static
  int SysInfo::NumberOfProcessors() {
    int mib[] = { CTL_HW, HW_NCPU };
-@@ -43,24 +45,10 @@ int SysInfo::NumberOfProcessors() {
+@@ -43,26 +45,10 @@ int SysInfo::NumberOfProcessors() {
  
  // static
  int64_t SysInfo::AmountOfPhysicalMemory() {
@@ -19,6 +21,8 @@ $OpenBSD: patch-base_sys_info_openbsd_cc,v 1.10 2016/09/01 16:28:11 robert Exp $
 -
 -// static
 -int64_t SysInfo::AmountOfAvailablePhysicalMemory() {
+-  // We should add inactive file-backed memory also but there is no such
+-  // information from OpenBSD unfortunately.
 -  return AmountOfMemory(_SC_AVPHYS_PAGES);
 -}
 -

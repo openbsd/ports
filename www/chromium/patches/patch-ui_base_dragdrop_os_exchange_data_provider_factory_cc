@@ -1,6 +1,7 @@
-$OpenBSD: patch-ui_base_dragdrop_os_exchange_data_provider_factory_cc,v 1.1 2017/02/23 17:30:49 robert Exp $
---- ui/base/dragdrop/os_exchange_data_provider_factory.cc.orig.port	Sat Feb  4 11:46:23 2017
-+++ ui/base/dragdrop/os_exchange_data_provider_factory.cc	Sat Feb  4 12:23:07 2017
+$OpenBSD: patch-ui_base_dragdrop_os_exchange_data_provider_factory_cc,v 1.2 2017/06/25 21:53:56 robert Exp $
+Index: ui/base/dragdrop/os_exchange_data_provider_factory.cc
+--- ui/base/dragdrop/os_exchange_data_provider_factory.cc.orig
++++ ui/base/dragdrop/os_exchange_data_provider_factory.cc
 @@ -8,7 +8,7 @@
  
  #if defined(USE_X11) && !defined(OS_CHROMEOS)
@@ -10,7 +11,7 @@ $OpenBSD: patch-ui_base_dragdrop_os_exchange_data_provider_factory_cc,v 1.1 2017
  #include "ui/base/dragdrop/os_exchange_data_provider_aura.h"
  #elif defined(OS_MACOSX)
  #include "ui/base/dragdrop/os_exchange_data_provider_builder_mac.h"
-@@ -34,7 +34,7 @@ OSExchangeDataProviderFactory::CreateProvider() {
+@@ -42,7 +42,7 @@ OSExchangeDataProviderFactory::CreateProvider() {
  
  #if defined(USE_X11) && !defined(OS_CHROMEOS)
    return base::MakeUnique<OSExchangeDataProviderAuraX11>();

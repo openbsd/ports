@@ -1,7 +1,8 @@
-$OpenBSD: patch-components_tracing_common_process_metrics_memory_dump_provider_cc,v 1.1 2017/04/28 14:21:00 robert Exp $
---- components/tracing/common/process_metrics_memory_dump_provider.cc.orig.port	Fri Apr 28 09:45:24 2017
-+++ components/tracing/common/process_metrics_memory_dump_provider.cc	Fri Apr 28 09:46:17 2017
-@@ -56,7 +56,7 @@ base::LazyInstance<
+$OpenBSD: patch-components_tracing_common_process_metrics_memory_dump_provider_cc,v 1.2 2017/06/25 21:53:56 robert Exp $
+Index: components/tracing/common/process_metrics_memory_dump_provider.cc
+--- components/tracing/common/process_metrics_memory_dump_provider.cc.orig
++++ components/tracing/common/process_metrics_memory_dump_provider.cc
+@@ -57,7 +57,7 @@ base::LazyInstance<
               std::unique_ptr<ProcessMetricsMemoryDumpProvider>>>::Leaky
      g_dump_providers_map = LAZY_INSTANCE_INITIALIZER;
  
@@ -10,7 +11,7 @@ $OpenBSD: patch-components_tracing_common_process_metrics_memory_dump_provider_c
  const char kClearPeakRssCommand[] = "5";
  
  const uint32_t kMaxLineSize = 4096;
-@@ -196,7 +196,7 @@ std::unique_ptr<base::ProcessMetrics> CreateProcessMet
+@@ -197,7 +197,7 @@ std::unique_ptr<base::ProcessMetrics> CreateProcessMet
      base::ProcessId process) {
    if (process == base::kNullProcessId)
      return base::ProcessMetrics::CreateCurrentProcessMetrics();
@@ -19,7 +20,7 @@ $OpenBSD: patch-components_tracing_common_process_metrics_memory_dump_provider_c
    // Just pass ProcessId instead of handle since they are the same in linux and
    // android.
    return base::ProcessMetrics::CreateProcessMetrics(process);
-@@ -217,7 +217,7 @@ uint64_t ProcessMetricsMemoryDumpProvider::rss_bytes_f
+@@ -218,7 +218,7 @@ uint64_t ProcessMetricsMemoryDumpProvider::rss_bytes_f
  ProcessMetricsMemoryDumpProvider::FactoryFunction
      ProcessMetricsMemoryDumpProvider::factory_for_testing = nullptr;
  
@@ -28,7 +29,7 @@ $OpenBSD: patch-components_tracing_common_process_metrics_memory_dump_provider_c
  
  // static
  FILE* ProcessMetricsMemoryDumpProvider::proc_smaps_for_testing = nullptr;
-@@ -620,7 +620,7 @@ bool ProcessMetricsMemoryDumpProvider::DumpProcessTota
+@@ -628,7 +628,7 @@ bool ProcessMetricsMemoryDumpProvider::DumpProcessTota
  
  #if !defined(OS_IOS)
    peak_rss_bytes = process_metrics_->GetPeakWorkingSetSize();
@@ -37,7 +38,7 @@ $OpenBSD: patch-components_tracing_common_process_metrics_memory_dump_provider_c
    if (is_rss_peak_resettable_) {
      std::string clear_refs_file =
          "/proc/" +
-@@ -670,7 +670,7 @@ bool ProcessMetricsMemoryDumpProvider::DumpProcessTota
+@@ -672,7 +672,7 @@ bool ProcessMetricsMemoryDumpProvider::DumpProcessTota
  void ProcessMetricsMemoryDumpProvider::PollFastMemoryTotal(
      uint64_t* memory_total) {
    *memory_total = 0;
@@ -46,7 +47,7 @@ $OpenBSD: patch-components_tracing_common_process_metrics_memory_dump_provider_c
    int statm_fd = fast_polling_statm_fd_for_testing;
    if (statm_fd == -1) {
      if (!fast_polling_statm_fd_.is_valid()) {
-@@ -698,7 +698,7 @@ void ProcessMetricsMemoryDumpProvider::PollFastMemoryT
+@@ -700,7 +700,7 @@ void ProcessMetricsMemoryDumpProvider::PollFastMemoryT
  }
  
  void ProcessMetricsMemoryDumpProvider::SuspendFastMemoryPolling() {

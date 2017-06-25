@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.325 2017/06/03 15:01:46 espie Exp $
+# $OpenBSD: Makefile,v 1.326 2017/06/25 21:53:56 robert Exp $
 
 USE_WXNEEDED=		Yes
 
@@ -7,7 +7,7 @@ DPB_PROPERTIES=		parallel
 
 COMMENT=		Chromium browser
 
-V=			58.0.3029.110
+V=			59.0.3071.109
 
 DISTNAME=		chromium-${V}
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX}
@@ -39,12 +39,12 @@ MODPY_RUNDEP=	No
 PATCHORIG=	.orig.port
 
 # uses pledge()
-WANTLIB += X11 Xext Xfixes Xrender Xss c cairo cups dbus-1 event
-WANTLIB += execinfo expat fontconfig freetype gconf-2 gdk-x11-2.0
-WANTLIB += gdk_pixbuf-2.0 glib-2.0 gobject-2.0 gtk-x11-2.0
-WANTLIB += m pango-1.0 pangocairo-1.0
-WANTLIB += png pthread
-WANTLIB += xml2 xslt
+WANTLIB += X11 Xext Xfixes Xrender Xss c cups dbus-1 event
+WANTLIB += execinfo fontconfig freetype gconf-2
+WANTLIB += gdk_pixbuf-2.0 glib-2.0 gobject-2.0
+WANTLIB += m
+WANTLIB += pthread
+WANTLIB += xslt
 WANTLIB += sndio
 WANTLIB += Xcomposite
 WANTLIB += ${LIBECXX}
@@ -52,8 +52,11 @@ WANTLIB += Xi Xtst
 WANTLIB += Xdamage
 WANTLIB += Xcursor Xrandr gio-2.0
 WANTLIB += nspr4 nss3 nssutil3 smime3
-WANTLIB += atk-1.0 gmodule-2.0
+WANTLIB += gmodule-2.0
 WANTLIB += X11-xcb xcb
+WANTLIB += GL expat
+WANTLIB += atk-1.0 cairo gdk-3 gtk-3 pango-1.0
+WANTLIB += pangocairo-1.0
 
 RUN_DEPENDS=	devel/xdg-utils \
 		devel/desktop-file-utils \
@@ -77,7 +80,7 @@ LIB_DEPENDS=	devel/libexecinfo \
 		security/nss \
 		devel/gconf2 \
 		textproc/libxslt \
-		x11/gtk+2 \
+		x11/gtk+3 \
 		print/cups,-libs \
 		${MODGCC4_CPPLIBDEP}
 
@@ -101,7 +104,6 @@ BUILDDIR=	${WRKSRC}/out/${BUILDTYPE}
 # removes them from the bundled third_party directory and replaces them
 # with hooks to use them from the system.
 GN_SYSTEM_LIBS=	libevent \
-		libxml \
 		libxslt \
 		yasm
 
@@ -113,6 +115,7 @@ GN_ARGS=	enable_nacl=false \
 		use_sndio=true \
 		use_cups=true \
 		use_experimental_allocator_shim=false \
+		use_gtk3=true \
 		is_clang=true \
 		use_sysroot=false \
 		treat_warnings_as_errors=false \

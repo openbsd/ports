@@ -1,0 +1,14 @@
+$OpenBSD: patch-chrome_common_chrome_features_h,v 1.1 2017/06/25 21:53:56 robert Exp $
+
+Index: chrome/common/chrome_features.h
+--- chrome/common/chrome_features.h.orig
++++ chrome/common/chrome_features.h
+@@ -42,7 +42,7 @@ extern const base::Feature kAutoDismissingDialogs;
+ extern const base::Feature kAutomaticTabDiscarding;
+ #endif  // defined(OS_WIN) || defined(OS_MACOSX)
+ 
+-#if defined(OS_WIN) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_BSD)
+ extern const base::Feature kBackgroundModeAllowRestart;
+ #endif  // defined(OS_WIN) || defined(OS_LINUX)
+ 

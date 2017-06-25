@@ -1,6 +1,8 @@
-$OpenBSD: patch-third_party_WebKit_Source_wtf_StackUtil_cpp,v 1.1 2017/03/14 12:18:54 robert Exp $
---- third_party/WebKit/Source/wtf/StackUtil.cpp.orig.port	Thu Mar  9 21:04:46 2017
-+++ third_party/WebKit/Source/wtf/StackUtil.cpp	Fri Mar 10 21:23:12 2017
+$OpenBSD: patch-third_party_WebKit_Source_platform_wtf_StackUtil_cpp,v 1.1 2017/06/25 21:53:56 robert Exp $
+
+Index: third_party/WebKit/Source/platform/wtf/StackUtil.cpp
+--- third_party/WebKit/Source/platform/wtf/StackUtil.cpp.orig
++++ third_party/WebKit/Source/platform/wtf/StackUtil.cpp
 @@ -16,6 +16,11 @@
  extern "C" void* __libc_stack_end;  // NOLINT
  #endif
@@ -12,20 +14,20 @@ $OpenBSD: patch-third_party_WebKit_Source_wtf_StackUtil_cpp,v 1.1 2017/03/14 12:
 +
  namespace WTF {
  
- size_t getUnderestimatedStackSize() {
-@@ -60,6 +65,8 @@ size_t getUnderestimatedStackSize() {
+ size_t GetUnderestimatedStackSize() {
+@@ -60,6 +65,8 @@ size_t GetUnderestimatedStackSize() {
    //    low as 512k.
    //
    return 512 * 1024;
 +#elif OS(OPENBSD)
-+  return 512 * 1024;
++  return 512*1024;
  #elif OS(MACOSX)
    // pthread_get_stacksize_np() returns too low a value for the main thread on
    // OSX 10.9,
-@@ -95,12 +102,18 @@ size_t getUnderestimatedStackSize() {
+@@ -95,12 +102,18 @@ size_t GetUnderestimatedStackSize() {
  }
  
- void* getStackStart() {
+ void* GetStackStart() {
 -#if defined(__GLIBC__) || OS(ANDROID) || OS(FREEBSD)
 +#if defined(__GLIBC__) || OS(ANDROID) || OS(FREEBSD) || OS(OPENBSD)
    pthread_attr_t attr;

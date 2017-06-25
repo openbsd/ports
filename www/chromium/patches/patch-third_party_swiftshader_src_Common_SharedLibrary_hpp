@@ -1,0 +1,14 @@
+$OpenBSD: patch-third_party_swiftshader_src_Common_SharedLibrary_hpp,v 1.1 2017/06/25 21:53:56 robert Exp $
+
+Index: third_party/swiftshader/src/Common/SharedLibrary.hpp
+--- third_party/swiftshader/src/Common/SharedLibrary.hpp.orig
++++ third_party/swiftshader/src/Common/SharedLibrary.hpp
+@@ -92,7 +92,7 @@ void *loadLibrary(const char *(&names)[n], const char 
+ 
+ 	inline void *getLibraryHandle(const char *path)
+ 	{
+-		#ifdef __ANDROID__
++		#if defined(__ANDROID__) || defined(__OpenBSD__)
+ 			// bionic doesn't support RTLD_NOLOAD before L
+ 			return dlopen(path, RTLD_NOW | RTLD_LOCAL);
+ 		#else

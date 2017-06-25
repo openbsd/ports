@@ -1,7 +1,8 @@
-$OpenBSD: patch-net_socket_udp_socket_posix_cc,v 1.3 2017/04/28 14:21:00 robert Exp $
---- net/socket/udp_socket_posix.cc.orig.port	Wed Apr 19 21:06:36 2017
-+++ net/socket/udp_socket_posix.cc	Thu Apr 27 19:56:03 2017
-@@ -59,7 +59,7 @@ const int kBindRetries = 10;
+$OpenBSD: patch-net_socket_udp_socket_posix_cc,v 1.4 2017/06/25 21:53:56 robert Exp $
+Index: net/socket/udp_socket_posix.cc
+--- net/socket/udp_socket_posix.cc.orig
++++ net/socket/udp_socket_posix.cc
+@@ -60,7 +60,7 @@ const int kBindRetries = 10;
  const int kPortStart = 1024;
  const int kPortEnd = 65535;
  
@@ -10,7 +11,7 @@ $OpenBSD: patch-net_socket_udp_socket_posix_cc,v 1.3 2017/04/28 14:21:00 robert 
  
  // Returns IPv4 address in network order.
  int GetIPv4AddressFromIndex(int socket, uint32_t index, uint32_t* address) {
-@@ -765,7 +765,7 @@ int UDPSocketPosix::SetMulticastOptions() {
+@@ -759,7 +759,7 @@ int UDPSocketPosix::SetMulticastOptions() {
    if (multicast_interface_ != 0) {
      switch (addr_family_) {
        case AF_INET: {
@@ -19,7 +20,7 @@ $OpenBSD: patch-net_socket_udp_socket_posix_cc,v 1.3 2017/04/28 14:21:00 robert 
          ip_mreqn mreq;
          mreq.imr_ifindex = multicast_interface_;
          mreq.imr_address.s_addr = htonl(INADDR_ANY);
-@@ -840,7 +840,7 @@ int UDPSocketPosix::JoinGroup(const IPAddress& group_a
+@@ -834,7 +834,7 @@ int UDPSocketPosix::JoinGroup(const IPAddress& group_a
        if (addr_family_ != AF_INET)
          return ERR_ADDRESS_INVALID;
  

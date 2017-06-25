@@ -1,0 +1,16 @@
+$OpenBSD: patch-content_browser_zygote_host_zygote_host_impl_linux_h,v 1.1 2017/06/25 21:53:56 robert Exp $
+
+Index: content/browser/zygote_host/zygote_host_impl_linux.h
+--- content/browser/zygote_host/zygote_host_impl_linux.h.orig
++++ content/browser/zygote_host/zygote_host_impl_linux.h
+@@ -37,8 +37,10 @@ class CONTENT_EXPORT ZygoteHostImpl : public ZygoteHos
+   int GetRendererSandboxStatus() const override;
+ 
+   pid_t LaunchZygote(base::CommandLine* cmd_line, base::ScopedFD* control_fd);
++#if !defined(OS_OPENBSD)
+   void AdjustRendererOOMScore(base::ProcessHandle process_handle,
+                               int score) override;
++#endif
+ 
+  private:
+   friend struct base::DefaultSingletonTraits<ZygoteHostImpl>;

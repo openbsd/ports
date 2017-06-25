@@ -1,9 +1,10 @@
-$OpenBSD: patch-chrome_browser_sync_chrome_sync_client_cc,v 1.10 2017/04/28 14:21:00 robert Exp $
---- chrome/browser/sync/chrome_sync_client.cc.orig.port	Wed Apr 19 21:06:30 2017
-+++ chrome/browser/sync/chrome_sync_client.cc	Thu Apr 27 19:55:59 2017
-@@ -639,7 +639,7 @@ void ChromeSyncClient::RegisterDesktopDataTypes(
+$OpenBSD: patch-chrome_browser_sync_chrome_sync_client_cc,v 1.11 2017/06/25 21:53:56 robert Exp $
+Index: chrome/browser/sync/chrome_sync_client.cc
+--- chrome/browser/sync/chrome_sync_client.cc.orig
++++ chrome/browser/sync/chrome_sync_client.cc
+@@ -653,7 +653,7 @@ void ChromeSyncClient::RegisterDesktopDataTypes(
    }
- #endif
+ #endif  // BUILDFLAG(ENABLE_APP_LIST)
  
 -#if defined(OS_LINUX) || defined(OS_WIN) || defined(OS_CHROMEOS)
 +#if defined(OS_LINUX) || defined(OS_WIN) || defined(OS_CHROMEOS) || defined(OS_BSD)

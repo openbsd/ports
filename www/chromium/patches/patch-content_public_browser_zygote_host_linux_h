@@ -1,0 +1,19 @@
+$OpenBSD: patch-content_public_browser_zygote_host_linux_h,v 1.1 2017/06/25 21:53:56 robert Exp $
+
+Index: content/public/browser/zygote_host_linux.h
+--- content/public/browser/zygote_host_linux.h.orig
++++ content/public/browser/zygote_host_linux.h
+@@ -30,11 +30,13 @@ class ZygoteHost {
+   // after the first render has been forked.
+   virtual int GetRendererSandboxStatus() const = 0;
+ 
++#if !defined(OS_OPENBSD)
+   // Adjust the OOM score of the given renderer's PID.  The allowed
+   // range for the score is [0, 1000], where higher values are more
+   // likely to be killed by the OOM killer.
+   virtual void AdjustRendererOOMScore(base::ProcessHandle process_handle,
+                                       int score) = 0;
++#endif
+ };
+ 
+ }  // namespace content

@@ -1,16 +1,40 @@
-$OpenBSD: patch-chrome_browser_ui_webui_about_ui_cc,v 1.39 2017/04/28 14:21:00 robert Exp $
---- chrome/browser/ui/webui/about_ui.cc.orig.port	Wed Apr 19 21:06:30 2017
-+++ chrome/browser/ui/webui/about_ui.cc	Thu Apr 27 19:56:00 2017
-@@ -76,7 +76,7 @@
- #include "chrome/browser/ui/webui/theme_source.h"
- #endif
+$OpenBSD: patch-chrome_browser_ui_webui_about_ui_cc,v 1.40 2017/06/25 21:53:56 robert Exp $
+
+Index: chrome/browser/ui/webui/about_ui.cc
+--- chrome/browser/ui/webui/about_ui.cc.orig
++++ chrome/browser/ui/webui/about_ui.cc
+@@ -420,7 +420,7 @@ std::string ChromeURLs() {
+   return html;
+ }
  
--#if defined(OS_LINUX) || defined(OS_OPENBSD)
-+#if defined(OS_LINUX)
- #include "content/public/browser/zygote_host_linux.h"
- #include "content/public/common/sandbox_linux.h"
- #endif
-@@ -644,7 +644,7 @@ class AboutDnsHandler : public base::RefCountedThreadS
+-#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
+ 
+ const char kAboutDiscardsRunCommand[] = "run";
+ 
+@@ -540,10 +540,13 @@ std::string AboutDiscards(const std::string& path) {
+                                    chrome::kChromeUIDiscardsURL,
+                                    kAboutDiscardsRunCommand));
+ 
++#if !defined(OS_BSD)
+   base::SystemMemoryInfoKB meminfo;
+   base::GetSystemMemoryInfo(&meminfo);
++#endif
+   output.append("<h3>System memory information in MB</h3>");
+   output.append("<table>");
++#if !defined(OS_BSD)
+   // Start with summary statistics.
+   output.append(AddStringRow(
+       "Total", base::IntToString(meminfo.total / 1024)));
+@@ -575,6 +578,7 @@ std::string AboutDiscards(const std::string& path) {
+   output.append(AddStringRow(
+       "Graphics", base::IntToString(meminfo.gem_size / 1024 / 1024)));
+ #endif  // OS_CHROMEOS
++#endif
+   output.append("</table>");
+   AppendFooter(&output);
+   return output;
+@@ -642,7 +646,7 @@ class AboutDnsHandler : public base::RefCountedThreadS
    DISALLOW_COPY_AND_ASSIGN(AboutDnsHandler);
  };
  
@@ -19,23 +43,15 @@ $OpenBSD: patch-chrome_browser_ui_webui_about_ui_cc,v 1.39 2017/04/28 14:21:00 r
  std::string AboutLinuxProxyConfig() {
    std::string data;
    AppendHeader(&data, 0,
-@@ -660,6 +660,7 @@ std::string AboutLinuxProxyConfig() {
-   return data;
- }
- 
-+#if !defined(OS_BSD)
- void AboutSandboxRow(std::string* data, int name_id, bool good) {
-   data->append("<tr><td>");
-   data->append(l10n_util::GetStringUTF8(name_id));
-@@ -760,6 +761,7 @@ void AboutUIHTMLSource::StartDataRequest(
-     else if (path == kKeyboardUtilsPath)
-       idr = IDR_KEYBOARD_UTILS_JS;
+@@ -717,14 +721,14 @@ void AboutUIHTMLSource::StartDataRequest(
+     } else {
+       response = raw_response.as_string();
+     }
+-#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
+   } else if (source_name_ == chrome::kChromeUIDiscardsHost) {
+     response = AboutDiscards(path);
  #endif
-+#endif
- 
-     base::StringPiece raw_response =
-         ResourceBundle::GetSharedInstance().GetRawDataResource(idr);
-@@ -794,7 +796,7 @@ void AboutUIHTMLSource::StartDataRequest(
    } else if (source_name_ == chrome::kChromeUIDNSHost) {
      AboutDnsHandler::Start(profile(), callback);
      return;
@@ -43,13 +59,4 @@ $OpenBSD: patch-chrome_browser_ui_webui_about_ui_cc,v 1.39 2017/04/28 14:21:00 r
 +#if defined(OS_LINUX) || defined(OS_BSD)
    } else if (source_name_ == chrome::kChromeUILinuxProxyConfigHost) {
      response = AboutLinuxProxyConfig();
- #endif
-@@ -803,7 +805,7 @@ void AboutUIHTMLSource::StartDataRequest(
-     ChromeOSCreditsHandler::Start(path, callback);
-     return;
- #endif
--#if defined(OS_LINUX) || defined(OS_OPENBSD)
-+#if defined(OS_LINUX)
-   } else if (source_name_ == chrome::kChromeUISandboxHost) {
-     response = AboutSandbox();
  #endif

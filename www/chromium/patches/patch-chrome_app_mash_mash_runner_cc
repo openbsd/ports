@@ -1,7 +1,8 @@
-$OpenBSD: patch-chrome_app_mash_mash_runner_cc,v 1.5 2017/04/28 14:21:00 robert Exp $
---- chrome/app/mash/mash_runner.cc.orig.port	Wed Apr 19 21:06:28 2017
-+++ chrome/app/mash/mash_runner.cc	Thu Apr 27 19:55:58 2017
-@@ -263,7 +263,7 @@ int MashMain() {
+$OpenBSD: patch-chrome_app_mash_mash_runner_cc,v 1.6 2017/06/25 21:53:56 robert Exp $
+Index: chrome/app/mash/mash_runner.cc
+--- chrome/app/mash/mash_runner.cc.orig
++++ chrome/app/mash/mash_runner.cc
+@@ -302,7 +302,7 @@ int MashMain() {
    // TODO(sky): wire this up correctly.
    service_manager::InitializeLogging();
  

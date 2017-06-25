@@ -1,0 +1,15 @@
+$OpenBSD: patch-chrome_browser_extensions_api_webrtc_audio_private_webrtc_audio_private_api_cc,v 1.1 2017/06/25 21:53:56 robert Exp $
+
+Index: chrome/browser/extensions/api/webrtc_audio_private/webrtc_audio_private_api.cc
+--- chrome/browser/extensions/api/webrtc_audio_private/webrtc_audio_private_api.cc.orig
++++ chrome/browser/extensions/api/webrtc_audio_private/webrtc_audio_private_api.cc
+@@ -563,7 +563,9 @@ bool WebrtcAudioPrivateSetAudioExperimentsFunction::Ru
+       return false;
+     }
+ 
++#if !defined(__OpenBSD__)
+     host->SetEchoCanceller3(*params->audio_experiments.enable_aec3);
++#endif
+   }
+ 
+   SendResponse(true);

@@ -1,8 +1,9 @@
-$OpenBSD: patch-third_party_webrtc_base_platform_thread_cc,v 1.4 2017/04/28 14:21:00 robert Exp $
---- third_party/webrtc/base/platform_thread.cc.orig.port	Wed Apr 19 21:07:52 2017
-+++ third_party/webrtc/base/platform_thread.cc	Thu Apr 27 19:56:04 2017
-@@ -14,7 +14,9 @@
- #include "webrtc/base/checks.h"
+$OpenBSD: patch-third_party_webrtc_base_platform_thread_cc,v 1.5 2017/06/25 21:53:56 robert Exp $
+Index: third_party/webrtc/base/platform_thread.cc
+--- third_party/webrtc/base/platform_thread.cc.orig
++++ third_party/webrtc/base/platform_thread.cc
+@@ -16,7 +16,9 @@
+ #include "webrtc/base/trace_event.h"
  
  #if defined(WEBRTC_LINUX)
 +#if !defined(__OpenBSD__)
@@ -11,7 +12,7 @@ $OpenBSD: patch-third_party_webrtc_base_platform_thread_cc,v 1.4 2017/04/28 14:2
  #include <sys/syscall.h>
  #endif
  
-@@ -27,10 +29,12 @@ PlatformThreadId CurrentThreadId() {
+@@ -29,10 +31,12 @@ PlatformThreadId CurrentThreadId() {
  #elif defined(WEBRTC_POSIX)
  #if defined(WEBRTC_MAC) || defined(WEBRTC_IOS)
    ret = pthread_mach_thread_np(pthread_self());
@@ -25,7 +26,7 @@ $OpenBSD: patch-third_party_webrtc_base_platform_thread_cc,v 1.4 2017/04/28 14:2
  #else
    // Default implementation for nacl and solaris.
    ret = reinterpret_cast<pid_t>(pthread_self());
-@@ -57,6 +61,7 @@ bool IsThreadRefEqual(const PlatformThreadRef& a, cons
+@@ -59,6 +63,7 @@ bool IsThreadRefEqual(const PlatformThreadRef& a, cons
  }
  
  void SetCurrentThreadName(const char* name) {
@@ -33,7 +34,7 @@ $OpenBSD: patch-third_party_webrtc_base_platform_thread_cc,v 1.4 2017/04/28 14:2
  #if defined(WEBRTC_WIN)
    struct {
      DWORD dwType;
-@@ -74,6 +79,7 @@ void SetCurrentThreadName(const char* name) {
+@@ -76,6 +81,7 @@ void SetCurrentThreadName(const char* name) {
    prctl(PR_SET_NAME, reinterpret_cast<unsigned long>(name));
  #elif defined(WEBRTC_MAC) || defined(WEBRTC_IOS)
    pthread_setname_np(name);

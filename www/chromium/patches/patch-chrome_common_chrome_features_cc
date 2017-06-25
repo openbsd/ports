@@ -1,0 +1,14 @@
+$OpenBSD: patch-chrome_common_chrome_features_cc,v 1.1 2017/06/25 21:53:56 robert Exp $
+
+Index: chrome/common/chrome_features.cc
+--- chrome/common/chrome_features.cc.orig
++++ chrome/common/chrome_features.cc
+@@ -52,7 +52,7 @@ const base::Feature kAutomaticTabDiscarding{"Automatic
+                                             base::FEATURE_ENABLED_BY_DEFAULT};
+ #endif  // defined(OS_WIN) || defined(OS_MACOSX)
+ 
+-#if defined(OS_WIN) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_BSD)
+ // Enables the Restart background mode optimization. When all Chrome UI is
+ // closed and it goes in the background, allows to restart the browser to
+ // discard memory.

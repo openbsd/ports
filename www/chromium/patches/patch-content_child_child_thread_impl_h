@@ -1,7 +1,8 @@
-$OpenBSD: patch-content_child_child_thread_impl_h,v 1.2 2017/03/14 12:18:54 robert Exp $
---- content/child/child_thread_impl.h.orig.port	Thu Mar  9 21:04:32 2017
-+++ content/child/child_thread_impl.h	Fri Mar 10 07:46:23 2017
-@@ -116,7 +116,7 @@ class CONTENT_EXPORT ChildThreadImpl
+$OpenBSD: patch-content_child_child_thread_impl_h,v 1.3 2017/06/25 21:53:56 robert Exp $
+Index: content/child/child_thread_impl.h
+--- content/child/child_thread_impl.h.orig
++++ content/child/child_thread_impl.h
+@@ -112,7 +112,7 @@ class CONTENT_EXPORT ChildThreadImpl
    static std::unique_ptr<base::SharedMemory> AllocateSharedMemory(
        size_t buf_size);
  

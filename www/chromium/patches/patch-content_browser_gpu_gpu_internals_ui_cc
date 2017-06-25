@@ -1,6 +1,7 @@
-$OpenBSD: patch-content_browser_gpu_gpu_internals_ui_cc,v 1.12 2017/04/28 14:21:00 robert Exp $
---- content/browser/gpu/gpu_internals_ui.cc.orig.port	Wed Apr 19 21:06:33 2017
-+++ content/browser/gpu/gpu_internals_ui.cc	Thu Apr 27 19:56:01 2017
+$OpenBSD: patch-content_browser_gpu_gpu_internals_ui_cc,v 1.13 2017/06/25 21:53:56 robert Exp $
+Index: content/browser/gpu/gpu_internals_ui.cc
+--- content/browser/gpu/gpu_internals_ui.cc.orig
++++ content/browser/gpu/gpu_internals_ui.cc
 @@ -43,7 +43,7 @@
  #include "third_party/skia/include/core/SkMilestone.h"
  #include "ui/gl/gpu_switching_manager.h"
@@ -19,7 +20,7 @@ $OpenBSD: patch-content_browser_gpu_gpu_internals_ui_cc,v 1.12 2017/04/28 14:21:
  #include "ui/base/x/x11_util.h"       // nogncheck
  #include "ui/gfx/x/x11_atom_cache.h"  // nogncheck
  #endif
-@@ -204,7 +204,7 @@ base::DictionaryValue* GpuInfoAsDictionaryValue() {
+@@ -206,7 +206,7 @@ base::DictionaryValue* GpuInfoAsDictionaryValue() {
                                               gpu_info.gl_ws_version));
    basic_info->Append(NewDescriptionValuePair("Window system binding extensions",
                                               gpu_info.gl_ws_extensions));

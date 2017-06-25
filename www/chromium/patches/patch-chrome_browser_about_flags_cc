@@ -1,30 +1,50 @@
-$OpenBSD: patch-chrome_browser_about_flags_cc,v 1.34 2017/04/28 14:21:00 robert Exp $
---- chrome/browser/about_flags.cc.orig.port	Wed Apr 19 21:06:29 2017
-+++ chrome/browser/about_flags.cc	Thu Apr 27 19:55:59 2017
-@@ -856,7 +856,7 @@ const FeatureEntry kFeatureEntries[] = {
-      kOsLinux | kOsCrOS | kOsWin | kOsAndroid,
-      ENABLE_DISABLE_VALUE_TYPE(switches::kEnableSmoothScrolling,
-                                switches::kDisableSmoothScrolling)},
--#if defined(USE_AURA) || defined(OS_LINUX)
-+#if defined(USE_AURA) || defined(OS_LINUX) || defined(OS_BSD)
-     {"overlay-scrollbars", IDS_FLAGS_OVERLAY_SCROLLBARS_NAME,
-      IDS_FLAGS_OVERLAY_SCROLLBARS_DESCRIPTION,
-      // Uses the system preference on Mac (a different implementation).
-@@ -1374,7 +1374,7 @@ const FeatureEntry kFeatureEntries[] = {
+$OpenBSD: patch-chrome_browser_about_flags_cc,v 1.35 2017/06/25 21:53:56 robert Exp $
+
+Index: chrome/browser/about_flags.cc
+--- chrome/browser/about_flags.cc.orig
++++ chrome/browser/about_flags.cc
+@@ -732,7 +732,7 @@ const FeatureEntry::FeatureVariation
+          arraysize(kSpeculativeResourcePrefetchingLearning), nullptr}};
+ 
+ #if defined(OS_CHROMEOS) || defined(OS_LINUX) || defined(OS_MACOSX) || \
+-    defined(OS_WIN)
++    defined(OS_WIN) || defined(OS_BSD)
+ const FeatureEntry::FeatureParam kPauseBackgroundTabsMinimalEngagment[] = {
+     {pausetabs::kFeatureName, pausetabs::kModeParamMinimal}};
+ 
+@@ -1588,7 +1588,7 @@ const FeatureEntry kFeatureEntries[] = {
       ENABLE_DISABLE_VALUE_TYPE(switches::kEnableTranslateNewUX,
                                 switches::kDisableTranslateNewUX)},
  #endif  // OS_MACOSX
 -#if defined(OS_LINUX) || defined(OS_WIN) || defined(OS_CHROMEOS)
 +#if defined(OS_LINUX) || defined(OS_WIN) || defined(OS_CHROMEOS) || defined(OS_BSD)
-     {"translate-2016q2-ui", IDS_FLAGS_TRANSLATE_2016Q2_UI_NAME,
-      IDS_FLAGS_TRANSLATE_2016Q2_UI_DESCRIPTION, kOsCrOS | kOsWin | kOsLinux,
-      FEATURE_VALUE_TYPE(translate::kTranslateUI2016Q2)},
-@@ -1802,7 +1802,7 @@ const FeatureEntry kFeatureEntries[] = {
-      IDS_FLAGS_ENABLE_MATERIAL_DESIGN_EXTENSIONS_DESCRIPTION, kOsDesktop,
+     {"translate-2016q2-ui", flag_descriptions::kTranslate2016q2UiName,
+      flag_descriptions::kTranslate2016q2UiDescription,
+      kOsCrOS | kOsWin | kOsLinux,
+@@ -2071,7 +2071,7 @@ const FeatureEntry kFeatureEntries[] = {
+      flag_descriptions::kEnableMaterialDesignExtensionsDescription, kOsDesktop,
       FEATURE_VALUE_TYPE(features::kMaterialDesignExtensions)},
  #endif  // ENABLE_EXTENSIONS
 -#if defined(OS_WIN) || defined(OS_LINUX)
 +#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_BSD)
-     {"enable-input-ime-api", IDS_FLAGS_ENABLE_INPUT_IME_API_NAME,
-      IDS_FLAGS_ENABLE_INPUT_IME_API_DESCRIPTION, kOsWin | kOsLinux,
+     {"enable-input-ime-api", flag_descriptions::kEnableInputImeApiName,
+      flag_descriptions::kEnableInputImeApiDescription, kOsWin | kOsLinux,
       ENABLE_DISABLE_VALUE_TYPE(switches::kEnableInputImeAPI,
+@@ -2623,7 +2623,7 @@ const FeatureEntry kFeatureEntries[] = {
+      FEATURE_VALUE_TYPE(omnibox::kNewOmniboxAnswerTypes)},
+ 
+ #if defined(OS_CHROMEOS) || defined(OS_LINUX) || defined(OS_MACOSX) || \
+-    defined(OS_WIN)
++    defined(OS_WIN) || defined(OS_BSD)
+     {"omnibox-entity-suggestions",
+      flag_descriptions::kOmniboxEntitySuggestionsName,
+      flag_descriptions::kOmniboxEntitySuggestionsDescription, kOsDesktop,
+@@ -2690,7 +2690,7 @@ const FeatureEntry kFeatureEntries[] = {
+ #endif  // OS_ANDROID
+ 
+ #if defined(OS_CHROMEOS) || defined(OS_LINUX) || defined(OS_MACOSX) || \
+-    defined(OS_WIN)
++    defined(OS_WIN) || defined(OS_BSD)
+     {pausetabs::kFeatureName, flag_descriptions::kPauseBackgroundTabsName,
+      flag_descriptions::kPauseBackgroundTabsDescription, kOsDesktop,
+      FEATURE_WITH_PARAMS_VALUE_TYPE(pausetabs::kFeature,

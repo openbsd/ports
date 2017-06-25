@@ -1,12 +1,23 @@
-$OpenBSD: patch-third_party_WebKit_Source_platform_fonts_FontCache_cpp,v 1.5 2017/04/28 14:21:00 robert Exp $
---- third_party/WebKit/Source/platform/fonts/FontCache.cpp.orig.port	Wed Apr 19 21:06:50 2017
-+++ third_party/WebKit/Source/platform/fonts/FontCache.cpp	Thu Apr 27 19:56:03 2017
+$OpenBSD: patch-third_party_WebKit_Source_platform_fonts_FontCache_cpp,v 1.6 2017/06/25 21:53:56 robert Exp $
+
+Index: third_party/WebKit/Source/platform/fonts/FontCache.cpp
+--- third_party/WebKit/Source/platform/fonts/FontCache.cpp.orig
++++ third_party/WebKit/Source/platform/fonts/FontCache.cpp
 @@ -63,7 +63,7 @@ using namespace WTF;
  
  namespace blink {
  
 -#if !OS(WIN) && !OS(LINUX)
 +#if !OS(WIN) && !OS(LINUX) && !OS(OPENBSD)
- FontCache::FontCache() : m_purgePreventCount(0), m_fontManager(nullptr) {}
+ FontCache::FontCache() : purge_prevent_count_(0), font_manager_(nullptr) {}
  #endif  // !OS(WIN) && !OS(LINUX)
  
+@@ -104,7 +104,7 @@ FontCache* FontCache::GetFontCache() {
+ FontPlatformData* FontCache::SystemFontPlatformData(
+     const FontDescription& font_description) {
+   const AtomicString& family = FontCache::SystemFontFamily();
+-#if OS(LINUX)
++#if OS(LINUX) || OS(OPENBSD)
+   if (family.IsEmpty() || family == FontFamilyNames::system_ui)
+     return nullptr;
+ #else

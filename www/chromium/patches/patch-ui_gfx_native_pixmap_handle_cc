@@ -1,0 +1,23 @@
+$OpenBSD: patch-ui_gfx_native_pixmap_handle_cc,v 1.1 2017/06/25 21:53:56 robert Exp $
+
+Index: ui/gfx/native_pixmap_handle.cc
+--- ui/gfx/native_pixmap_handle.cc.orig
++++ ui/gfx/native_pixmap_handle.cc
+@@ -4,7 +4,7 @@
+ 
+ #include "ui/gfx/native_pixmap_handle.h"
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+ #include "base/posix/eintr_wrapper.h"
+ #endif
+ 
+@@ -29,7 +29,7 @@ NativePixmapHandle::NativePixmapHandle(const NativePix
+ 
+ NativePixmapHandle::~NativePixmapHandle() {}
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+ NativePixmapHandle CloneHandleForIPC(const NativePixmapHandle& handle) {
+   NativePixmapHandle clone;
+   std::vector<base::ScopedFD> scoped_fds;

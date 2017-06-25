@@ -1,7 +1,8 @@
-$OpenBSD: patch-base_BUILD_gn,v 1.7 2017/04/28 14:21:00 robert Exp $
---- base/BUILD.gn.orig.port	Wed Apr 19 21:06:28 2017
-+++ base/BUILD.gn	Thu Apr 27 22:44:28 2017
-@@ -1508,6 +1508,27 @@ component("base") {
+$OpenBSD: patch-base_BUILD_gn,v 1.8 2017/06/25 21:53:56 robert Exp $
+Index: base/BUILD.gn
+--- base/BUILD.gn.orig
++++ base/BUILD.gn
+@@ -1510,6 +1510,27 @@ component("base") {
      }
    }
  
@@ -29,7 +30,7 @@ $OpenBSD: patch-base_BUILD_gn,v 1.7 2017/04/28 14:21:00 robert Exp $
    # iOS
    if (is_ios) {
      set_sources_assignment_filter([])
-@@ -2338,6 +2359,8 @@ test("base_unittests") {
+@@ -2356,6 +2377,8 @@ test("base_unittests") {
      # TODO(krasin): remove CFI_CAST_CHECK, see https://crbug.com/626794.
      defines += [ "CFI_CAST_CHECK" ]
    }

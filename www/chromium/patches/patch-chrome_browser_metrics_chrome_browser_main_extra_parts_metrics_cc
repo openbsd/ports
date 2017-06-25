@@ -1,9 +1,10 @@
-$OpenBSD: patch-chrome_browser_metrics_chrome_browser_main_extra_parts_metrics_cc,v 1.5 2016/12/10 15:35:25 robert Exp $
---- chrome/browser/metrics/chrome_browser_main_extra_parts_metrics.cc.orig.port	Fri Dec  2 00:02:07 2016
-+++ chrome/browser/metrics/chrome_browser_main_extra_parts_metrics.cc	Fri Dec  2 17:44:52 2016
-@@ -40,8 +40,10 @@
- #include "chrome/browser/metrics/tab_usage_recorder.h"
- #endif  // !defined(OS_ANDROID)
+$OpenBSD: patch-chrome_browser_metrics_chrome_browser_main_extra_parts_metrics_cc,v 1.6 2017/06/25 21:53:56 robert Exp $
+Index: chrome/browser/metrics/chrome_browser_main_extra_parts_metrics.cc
+--- chrome/browser/metrics/chrome_browser_main_extra_parts_metrics.cc.orig
++++ chrome/browser/metrics/chrome_browser_main_extra_parts_metrics.cc
+@@ -37,8 +37,10 @@
+ #include <cpu-features.h>
+ #endif  // defined(OS_ANDROID) && defined(__arm__)
  
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
 +#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
