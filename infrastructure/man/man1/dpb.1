@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.122 2017/06/19 10:22:05 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.123 2017/06/25 18:30:38 schwarze Exp $
 .\"
 .\" Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: June 19 2017 $
+.Dd $Mdocdate: June 25 2017 $
 .Dt DPB 1
 .Os
 .Sh NAME
@@ -1142,7 +1142,7 @@ if it is defined:
 Affinity information.
 One file per full pkgpath, with slash replaced by dots
 like so:
-.Pa affinity/lang.ghc,-main.
+.Pa affinity/lang.ghc,-main .
 .It Pa affinity.log
 On startup
 .Nm
@@ -1463,11 +1463,11 @@ and restart it.
 .Xr dpb-replay 1 ,
 .Xr proot 1 ,
 .Xr pkgpath 7
-.Sh AUTHOR
-Marc Espie
 .Sh HISTORY
 The original
 .Nm dpb
 command was written by Nikolay Sturm.
 This version is a complete rewrite from scratch using all the stuff
 we learnt over the years to make it better.
+.Sh AUTHORS
+.An Marc Espie
