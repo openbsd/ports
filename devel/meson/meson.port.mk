@@ -1,4 +1,4 @@
-# $OpenBSD: meson.port.mk,v 1.4 2017/06/25 11:07:19 ajacoutot Exp $
+# $OpenBSD: meson.port.mk,v 1.5 2017/06/25 11:16:38 ajacoutot Exp $
 
 BUILD_DEPENDS +=	devel/meson>=0.39.1
 SEPARATE_BUILD ?=	Yes
@@ -15,6 +15,10 @@ CONFIGURE_STYLE=	meson
 .if ! empty(INSTALL_STRIP)
 CONFIGURE_ARGS +=	--strip
 .endif
+
+# don't use "-Wl,--no-undefined when linking", we are BSD: it's fine to have
+# undefined references to libc functions
+CONFIGURE_ARGS +=	-Db_lundef=false
 
 MODMESON_configure=	${SETENV} CC="${CC}" CFLAGS="${CFLAGS}" CXX="${CXX}" \
 				CXXFLAGS="${CXXFLAGS}" LDFLAGS="${LDFLAGS}" \
