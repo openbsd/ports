@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.8 2017/06/25 11:25:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2017/06/25 12:05:53 ajacoutot Exp $
 
 COMMENT=		library to use HTTPSEverywhere in desktop applications
 
 GNOME_VERSION=		0.4.6
 GNOME_PROJECT=		libhttpseverywhere
+REVISION=		0
 
-SHARED_LIBS=		httpseverywhere-0.4 0.4 # 0.4.1
+SHARED_LIBS=		httpseverywhere-0.4 0.4
 
 CATEGORIES=		security net
 
@@ -27,10 +28,11 @@ LIB_DEPENDS=		archivers/libarchive \
 			devel/libgee \
 			devel/libsoup
 
-# XXX the meson MODULE should handle these
+### XXX the meson MODULE should handle these
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/meson.build
 post-install:
-	rm ${PREFIX}/lib/libhttpseverywhere-0.4.so{,.?}
+	rm ${PREFIX}/lib/libhttpseverywhere-0.4.so
+###
 
 .include <bsd.port.mk>
