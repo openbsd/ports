@@ -1,0 +1,16 @@
+$OpenBSD: patch-includes_process_config_inc_php,v 1.1 2017/06/25 22:34:36 sthen Exp $
+
+Index: includes/process_config.inc.php
+--- includes/process_config.inc.php.orig
++++ includes/process_config.inc.php
+@@ -29,8 +29,8 @@ if (empty($config['email_from'])) {
+ 
+ // We need rrdtool so ensure it's set
+ if (empty($config['rrdtool'])) {
+-    $config['rrdtool'] = '/usr/bin/rrdtool';
++    $config['rrdtool'] = '/usr/local/bin/rrdtool';
+ }
+ if (empty($config['rrdtool_version'])) {
+-    $config['rrdtool_version'] = 1.4;
++    $config['rrdtool_version'] = 1.6;
+ }
