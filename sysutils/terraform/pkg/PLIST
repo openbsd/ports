@@ -1,2 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.4 2016/08/03 08:28:27 ajacoutot Exp $
-@bin bin/terraform
+@comment $OpenBSD: PLIST,v 1.5 2017/06/25 15:10:58 ajacoutot Exp $
+@bin bin/terraform-provider-${PROVIDER}

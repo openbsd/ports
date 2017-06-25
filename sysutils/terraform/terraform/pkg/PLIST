@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST,v 1.1 2017/06/25 15:11:00 ajacoutot Exp $
+@bin bin/terraform
