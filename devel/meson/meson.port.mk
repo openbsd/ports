@@ -1,4 +1,4 @@
-# $OpenBSD: meson.port.mk,v 1.5 2017/06/25 11:16:38 ajacoutot Exp $
+# $OpenBSD: meson.port.mk,v 1.6 2017/06/25 11:24:29 ajacoutot Exp $
 
 BUILD_DEPENDS +=	devel/meson>=0.39.1
 SEPARATE_BUILD ?=	Yes
@@ -19,6 +19,13 @@ CONFIGURE_ARGS +=	--strip
 # don't use "-Wl,--no-undefined when linking", we are BSD: it's fine to have
 # undefined references to libc functions
 CONFIGURE_ARGS +=	-Db_lundef=false
+
+# from ${LOCALBASE}/bin/meson:
+# Warn if the locale is not UTF-8. This can cause various unfixable issues
+# such as os.stat not being able to decode filenames with unicode in them.
+# There is no way to reset both the preferred encoding and the filesystem
+# encoding, so we can just warn about it.
+MAKE_ENV +=		LC_CTYPE="en_US.UTF-8"
 
 MODMESON_configure=	${SETENV} CC="${CC}" CFLAGS="${CFLAGS}" CXX="${CXX}" \
 				CXXFLAGS="${CXXFLAGS}" LDFLAGS="${LDFLAGS}" \
