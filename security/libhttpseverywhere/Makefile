@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2017/06/22 09:44:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2017/06/25 09:49:48 ajacoutot Exp $
 
 COMMENT=		library to use HTTPSEverywhere in desktop applications
 
@@ -28,7 +28,7 @@ LIB_DEPENDS=		archivers/libarchive \
 			devel/libsoup
 
 # prevent undefined references to libc functions
-CONFIGURE_ARGS=		-D b_lundef=false
+CONFIGURE_ARGS=		-Db_lundef=false
 
 # XXX the meson MODULE should handle these
 pre-configure:
