@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.83 2016/12/26 12:38:36 zhuk Exp $
+# $OpenBSD: Makefile,v 1.84 2017/06/25 18:10:39 phessler Exp $
 
      SUBDIR =
      SUBDIR += arc
@@ -11,6 +11,7 @@
      SUBDIR += fuse-zip
      SUBDIR += gcab
      SUBDIR += gcpio
+     SUBDIR += geteltorito
      SUBDIR += gshar+gunshar
      SUBDIR += gtar
      SUBDIR += gtar,static
