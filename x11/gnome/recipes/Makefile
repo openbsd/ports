@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2017/06/22 20:09:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2017/06/25 11:07:58 ajacoutot Exp $
 
 COMMENT =		recipe manager for GNOME
 
@@ -38,13 +38,5 @@ MODGNOME_TOOLS =	desktop-file-utils gobject-introspection \
 
 MODPY_ADJ_FILES =	meson_post_install.py \
 			src/list_to_c.py
-
-# meson detects 'cc' in ${WRKBUILD}/bin/ as the compiler to use.
-# that's good.
-# it then writes 'cc' into build.ninja which doesn't use the PATH
-# and ands up calling /usr/bin/cc instead of ${WRKBUILD}/bin/cc.
-# not good.
-pre-build:
-	sed -i 's, cc , clang ,' ${WRKBUILD}/build.ninja
 
 .include <bsd.port.mk>
