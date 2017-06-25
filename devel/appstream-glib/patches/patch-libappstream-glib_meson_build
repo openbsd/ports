@@ -1,0 +1,15 @@
+$OpenBSD: patch-libappstream-glib_meson_build,v 1.1 2017/06/25 12:05:09 ajacoutot Exp $
+
+Index: libappstream-glib/meson.build
+--- libappstream-glib/meson.build.orig
++++ libappstream-glib/meson.build
+@@ -124,8 +124,7 @@ mapfile = 'appstream-glib.map'
+ vflag = '-Wl,--version-script,@0@/@1@'.format(meson.current_source_dir(), mapfile)
+ asglib = shared_library(
+   'appstream-glib', sources,
+-  soversion : lt_current,
+-  version : lt_version,
++  soversion : '${LIBappstream-glib_VERSION}',
+   dependencies : deps,
+   c_args : cargs,
+   include_directories : include_directories('..'),

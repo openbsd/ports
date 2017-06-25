@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.26 2017/05/09 07:18:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2017/06/25 12:05:09 ajacoutot Exp $
 
 COMMENT=		library for AppStream metadata
 
-DISTNAME=		appstream-glib-0.6.13
+DISTNAME=		appstream-glib-0.7.0
 EXTRACT_SUFX=		.tar.xz
 
-SHARED_LIBS +=  appstream-glib       2.4      # 8.12
-SHARED_LIBS +=  appstream-builder    2.1      # 8.12
+SHARED_LIBS +=  appstream-glib       3.0
+SHARED_LIBS +=  appstream-builder    3.0
 
 CATEGORIES=		devel
 
@@ -17,24 +17,21 @@ HOMEPAGE=		http://people.freedesktop.org/~hughsient/appstream-glib/
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
-WANTLIB += Xinerama Xrandr Xrender archive atk-1.0 atk-bridge-2.0
-WANTLIB += atspi bz2 c cairo cairo-gobject crypto dbus-1 epoxy
-WANTLIB += expat ffi fontconfig freetype gcab-1.0 gdk-3 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
-WANTLIB += gthread-2.0 gtk-3 harfbuzz iconv intl json-glib-1.0
-WANTLIB += lz4 lzma m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
-WANTLIB += pixman-1 png pthread pthread-stubs soup-2.4 sqlite3
-WANTLIB += uuid xcb xcb-render xcb-shm xml2 yaml-0 z
+WANTLIB += archive c cairo fontconfig freetype gcab-1.0 gdk-3
+WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += intl json-glib-1.0 pango-1.0 soup-2.4 uuid yaml
 
 MASTER_SITES=		http://people.freedesktop.org/~hughsient/appstream-glib/releases/
 
-MODULES=		textproc/intltool \
+MODULES=		devel/meson \
+			textproc/intltool \
 			x11/gnome
 
-MODGNOME_TOOLS=		docbook
+MODGNOME_TOOLS=		gobject-introspection
 
-USE_GMAKE=		Yes
+# C11
+COMPILER=		clang
+COMPILER_LANGS=		c
 
 BUILD_DEPENDS=		devel/gperf
 
@@ -46,16 +43,16 @@ LIB_DEPENDS=		archivers/gcab \
 			sysutils/e2fsprogs \
 			x11/gtk+3
 
-CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		--disable-rpm
+CONFIGURE_ARGS=		-Denable-rpm=false
 
 # requires libstemmer
-CONFIGURE_ARGS +=	--disable-stemmer
+CONFIGURE_ARGS +=	-Denable-stemmer=false
 
-# our old gcc does not handle some of the warning flags
-MAKE_FLAGS=		WARNINGFLAGS_C=
-
+### XXX the meson MODULE should handle these
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/libappstream-{builder,glib}/meson.build
 post-install:
-	rm ${PREFIX}/lib/asb-plugins-5/*.{a,la}
+	rm ${PREFIX}/lib/libappstream-{builder,glib}.so
+###
 
 .include <bsd.port.mk>

@@ -1,0 +1,15 @@
+$OpenBSD: patch-libappstream-builder_meson_build,v 1.1 2017/06/25 12:05:09 ajacoutot Exp $
+
+Index: libappstream-builder/meson.build
+--- libappstream-builder/meson.build.orig
++++ libappstream-builder/meson.build
+@@ -58,8 +58,7 @@ mapfile = 'appstream-builder.map'
+ vflag = '-Wl,--version-script,@0@/@1@'.format(meson.current_source_dir(), mapfile)
+ asbuilder = shared_library(
+   'appstream-builder', sources,
+-  soversion : lt_current,
+-  version : lt_version,
++  soversion : '${LIBappstream-builder_VERSION}',
+   dependencies : deps,
+   c_args : asbuilder_cargs,
+   include_directories : [
