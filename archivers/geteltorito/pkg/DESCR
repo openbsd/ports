@@ -1,0 +1,10 @@
+geteltorito will extract the initial/default boot image from a CD if
+existant. It will not extract any of other possibly existing bootimages
+that are allowed by the El Torito standard.
+The imagedata are written to STDOUT all other information is written to
+STDERR (eg type and size of image).
+If you want to write the image to a file instead of STDOUT you can
+secify the filename wanted on the commandline using option -o <filename>
+
+call: 	 geteltorito CD-image > toritoimagefile
+example: geteltorito /dev/cd0c  > /tmp/bootimage
