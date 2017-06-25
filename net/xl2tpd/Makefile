@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2016/11/21 14:19:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2017/06/25 10:31:47 landry Exp $
 
 COMMENT=	l2tp client/server
 
-DISTNAME=	xl2tpd-1.3.8
-REVISION=	0
 GH_ACCOUNT=	xelerance
 GH_PROJECT=	xl2tpd
-GH_COMMIT=	cec1ebe1523bf248f134647dd6030a333d93e19b
+GH_TAGNAME=	v1.3.9
 
 CATEGORIES=	net
 
@@ -15,7 +13,7 @@ HOMEPAGE=	http://www.xelerance.com/services/software/xl2tpd/
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c m util
+WANTLIB += c util
 
 FAKE_FLAGS=	DESTDIR= MANDIR=${WRKINST}${PREFIX}/man
 NO_TEST=	Yes
