@@ -1,7 +1,8 @@
-$OpenBSD: patch-daemon_http-tx-mgr_c,v 1.4 2017/03/16 09:08:22 kirby Exp $
---- daemon/http-tx-mgr.c.orig	Tue Feb 21 09:00:11 2017
-+++ daemon/http-tx-mgr.c	Sun Mar 12 15:35:02 2017
-@@ -66,6 +66,10 @@
+$OpenBSD: patch-daemon_http-tx-mgr_c,v 1.5 2017/06/26 12:42:22 kirby Exp $
+Index: daemon/http-tx-mgr.c
+--- daemon/http-tx-mgr.c.orig
++++ daemon/http-tx-mgr.c
+@@ -68,6 +68,10 @@
  #define USER_AGENT_OS "BSD"
  #endif
  
