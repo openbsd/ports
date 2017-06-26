@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.1 2017/06/25 15:10:58 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2017/06/26 09:06:57 espie Exp $
 
 DIST_SUBDIR=		terraform
 
@@ -19,8 +19,7 @@ MODULES=		lang/go
 COMMENT ?=		Terraform ${PROVIDER} provider
 GH_ACCOUNT ?=		terraform-providers
 GH_PROJECT ?=		terraform-provider-${PROVIDER}
-DESCR ?=		${.CURDIR}/../pkg/DESCR
-PLIST ?=		${.CURDIR}/../pkg/PLIST
+PKGDIR ?=		${.CURDIR}/../pkg
 RUN_DEPENDS +=		sysutils/terraform/terraform
 SUBST_VARS +=		^PROVIDER
 .endif
