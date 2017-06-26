@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2017/03/07 10:07:13 rpointel Exp $
+# $OpenBSD: Makefile,v 1.3 2017/06/26 13:59:54 espie Exp $
 
 COMMENT =		access the BitLocker Drive Encryption encrypted volumes
 
@@ -21,7 +21,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += bfio c crypto fuse m pthread util ${MODPY_WANTLIB}
 
-CONFIGURE_STYLE =	simple
+CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--mandir=${PREFIX}/man \
 			--enable-python \
 			--with-pyprefix=${LOCALBASE} \
