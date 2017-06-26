@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2017/06/25 12:05:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2017/06/26 13:36:18 ajacoutot Exp $
 
 COMMENT=		library for AppStream metadata
 
@@ -27,7 +27,7 @@ MODULES=		devel/meson \
 			textproc/intltool \
 			x11/gnome
 
-MODGNOME_TOOLS=		gobject-introspection
+MODGNOME_TOOLS=		docbook gobject-introspection
 
 # C11
 COMPILER=		clang
