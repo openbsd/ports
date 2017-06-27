@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2017/05/31 08:08:16 espie Exp $
+# $OpenBSD: Makefile,v 1.59 2017/06/27 12:04:08 abieber Exp $
 
 # XXX:
 # - Needs __ARM_NR_cacheflush (or the like) to work on arm-based ports.
@@ -10,14 +10,13 @@ USE_WXNEEDED =		Yes
 
 COMMENT =		V8 JavaScript for clients and servers
 
-NODE_VERSION =		v6.10.1
+NODE_VERSION =		v6.11.0
 
 PLEDGE_VER =		1.1.0
 DISTFILES =		node-pledge-{}${PLEDGE_VER}.tar.gz:0 ${DISTNAME}.tar.gz
 
 DISTNAME =		node-${NODE_VERSION}
 PKGNAME =		${DISTNAME:S/v//g}
-REVISION =		0
 
 MASTER_SITES0 =		https://github.com/qbit/node-pledge/archive/
 

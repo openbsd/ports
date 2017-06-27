@@ -1,7 +1,8 @@
-$OpenBSD: patch-tools_test_py,v 1.1 2015/10/24 02:46:47 abieber Exp $
---- tools/test.py.orig	Thu Oct 22 13:48:11 2015
-+++ tools/test.py	Thu Oct 22 14:55:03 2015
-@@ -773,9 +773,9 @@ class Context(object):
+$OpenBSD: patch-tools_test_py,v 1.2 2017/06/27 12:04:08 abieber Exp $
+Index: tools/test.py
+--- tools/test.py.orig
++++ tools/test.py
+@@ -882,9 +882,9 @@ class Context(object):
  
    def GetVm(self, arch, mode):
      if arch == 'none':

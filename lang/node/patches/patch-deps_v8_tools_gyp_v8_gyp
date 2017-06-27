@@ -1,7 +1,8 @@
-$OpenBSD: patch-deps_v8_tools_gyp_v8_gyp,v 1.2 2015/10/24 02:46:47 abieber Exp $
---- deps/v8/tools/gyp/v8.gyp.orig	Wed Jan 14 10:31:51 2015
-+++ deps/v8/tools/gyp/v8.gyp	Wed Jan 14 10:33:01 2015
-@@ -110,7 +110,7 @@
+$OpenBSD: patch-deps_v8_tools_gyp_v8_gyp,v 1.3 2017/06/27 12:04:08 abieber Exp $
+Index: deps/v8/tools/gyp/v8.gyp
+--- deps/v8/tools/gyp/v8.gyp.orig
++++ deps/v8/tools/gyp/v8.gyp
+@@ -86,7 +86,7 @@
                },
              }],
              ['soname_version!=""', {

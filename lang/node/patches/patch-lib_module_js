@@ -1,14 +1,15 @@
-$OpenBSD: patch-lib_module_js,v 1.5 2016/01/29 20:12:04 abieber Exp $
---- lib/module.js.orig	Sun Jan 17 11:41:55 2016
-+++ lib/module.js	Sun Jan 17 11:45:54 2016
-@@ -478,7 +478,10 @@ Module._initPaths = function() {
-     var homeDir = process.env.HOME;
+$OpenBSD: patch-lib_module_js,v 1.6 2017/06/27 12:04:08 abieber Exp $
+Index: lib/module.js
+--- lib/module.js.orig
++++ lib/module.js
+@@ -625,7 +625,10 @@ Module._initPaths = function() {
+   } else {
+     prefixDir = path.resolve(process.execPath, '..', '..');
    }
- 
--  var paths = [path.resolve(process.execPath, '..', '..', 'lib', 'node')];
+-  var paths = [path.resolve(prefixDir, 'lib', 'node')];
 +  var paths = [
-+    path.resolve(process.execPath, '..', '..', 'lib', 'node'),
-+    path.resolve(process.execPath, '..', '..', 'lib', 'node_modules')
++    path.resolve(prefixDir, 'lib', 'node'),
++    path.resolve(prefixDir, 'lib', 'node_modules'),
 +  ];
  
    if (homeDir) {

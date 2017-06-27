@@ -1,18 +1,19 @@
-$OpenBSD: patch-Makefile,v 1.1 2016/01/29 20:12:04 abieber Exp $
---- Makefile.orig	Wed Dec 23 09:53:36 2015
-+++ Makefile	Wed Jan 27 14:13:12 2016
-@@ -59,7 +59,7 @@ config.gypi: configure
- 		$(error No $@, please run ./configure first)
- 	fi
+$OpenBSD: patch-Makefile,v 1.2 2017/06/27 12:04:08 abieber Exp $
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -83,7 +83,7 @@ out/Makefile: common.gypi deps/uv/uv.gyp deps/http_par
+ config.gypi: configure
+ 	$(error Missing or stale $@, please run ./$<)
  
 -install: all
 +install: all build-pledge
  	$(PYTHON) tools/install.py $@ '$(DESTDIR)' '$(PREFIX)'
  
  uninstall:
-@@ -131,6 +131,12 @@ test/addons/.buildstamp: $(ADDONS_BINDING_GYPS) | test
+@@ -185,6 +185,12 @@ test/addons/.buildstamp: config.gypi \
  # Just goes to show that recursive make really is harmful...
- # TODO(bnoordhuis) Force rebuild after gyp or node-gyp update.
+ # TODO(bnoordhuis) Force rebuild after gyp update.
  build-addons: $(NODE_EXE) test/addons/.buildstamp
 +
 +build-pledge: $(NODE_EXE)

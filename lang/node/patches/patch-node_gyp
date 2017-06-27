@@ -1,6 +1,7 @@
-$OpenBSD: patch-node_gyp,v 1.5 2017/01/23 16:47:04 abieber Exp $
---- node.gyp.orig	Wed Oct 19 16:02:10 2016
-+++ node.gyp	Thu Nov  3 08:23:16 2016
+$OpenBSD: patch-node_gyp,v 1.6 2017/06/27 12:04:08 abieber Exp $
+Index: node.gyp
+--- node.gyp.orig
++++ node.gyp
 @@ -522,7 +522,7 @@
              'NODE_PLATFORM="darwin"',
            ],
@@ -18,5 +19,5 @@ $OpenBSD: patch-node_gyp,v 1.5 2017/01/23 16:47:04 abieber Exp $
 +        [ 'OS=="openbsd"', {
 +          'ldflags': [ '-rdynamic' ],
          }],
-         [ '(OS=="freebsd" or OS=="linux") and node_shared=="false"', {
+         [ '(OS=="freebsd" or OS=="linux") and node_shared=="false" and coverage=="false"', {
            'ldflags': [ '-Wl,-z,noexecstack',
