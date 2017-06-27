@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/05/04 10:52:37 henning Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/06/27 12:41:26 sthen Exp $
 roundcubemail/plugins/ldapAliasSync/
 roundcubemail/plugins/ldapAliasSync/COPYING
 roundcubemail/plugins/ldapAliasSync/README.md
+roundcubemail/plugins/ldapAliasSync/composer.json
 roundcubemail/plugins/ldapAliasSync/config-default.inc.php
 @sample roundcubemail/plugins/ldapAliasSync/config.inc.php
 roundcubemail/plugins/ldapAliasSync/ldapAliasSync.php
