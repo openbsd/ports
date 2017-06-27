@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.219 2017/04/10 11:46:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.220 2017/06/27 08:13:05 ajacoutot Exp $
 
 COMMENT-main=		Common Unix Printing System
 COMMENT-libs=		CUPS libraries and headers
@@ -121,6 +121,6 @@ post-install:
 	rm -rf ${PREFIX}/share/applications
 
 # Remove systemV files
-	rm -rf ${WRKINST}/etc/rc.d/rc*.d
+	rm -rf ${WRKINST}/etc/rc.d/{init,rc*}.d
 
 .include <bsd.port.mk>
