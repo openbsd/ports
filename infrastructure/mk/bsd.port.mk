@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1356 2017/06/19 13:27:00 visa Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1357 2017/06/27 15:47:10 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1926,6 +1926,7 @@ ${_PACKAGE_COOKIE${_S}}:
 .  else
 	@${_MAKE} ${_PACKAGE_COOKIE_DEPS}
 # What PACKAGE normally does:
+	@${_MAKE} generate-readmes
 	@${ECHO_MSG} "===>  Building package for ${FULLPKGNAME${_S}}"
 	@${ECHO_MSG} "Create ${_PACKAGE_COOKIE${_S}}"
 	@cd ${.CURDIR} && \
@@ -2357,6 +2358,7 @@ _extra_info += DEPPATHS${_s}="$$(${SETENV} FLAVOR=${FLAVOR:Q} SUBPACKAGE=${_s} P
 _internal-plist _internal-update-plist: _internal-fake ${_FAKESUDO_CHECK_COOKIE}
 	@${ECHO_MSG} "===>  Updating plist for ${FULLPKGNAME}${_MASTER}"
 	@mkdir -p ${PKGDIR}
+	@${_MAKE} generate-readmes
 	@DESTDIR=${WRKINST} \
 	PREFIX=${TRUEPREFIX} \
 	INSTALL_PRE_COOKIE=${_INSTALL_PRE_COOKIE} \
@@ -2788,22 +2790,26 @@ ${_FAKE_COOKIE}: ${_BUILD_COOKIE} ${_FAKESUDO_CHECK_COOKIE}
 .if target(_hook-post-install)
 	@${_SUDOMAKESYS} _hook-post-install ${FAKE_SETUP}
 .endif
+	@${_FAKESUDO} ${_MAKE_COOKIE} $@
+
+# XXX this is a separate step that is "always on" and doesn't generate
+# cookies
+generate-readmes: ${_FAKE_COOKIE}
 .if ${MULTI_PACKAGES} == "-"
-	@if test -e ${PKGDIR}/README; then \
-		r=${WRKINST}${_README_DIR}/${FULLPKGNAME}; \
+	@r=${WRKINST}${_README_DIR}/${FULLPKGNAME}; \
+	if test -e ${PKGDIR}/README; then \
 		echo "Installing ${PKGDIR}/README as $$r"; \
 		${_FAKESUDO} ${SUBST_CMD} ${_SHAREOWNGRP} -m ${SHAREMODE} -c ${PKGDIR}/README $$r; \
 	fi
 .else
 .  for _s in ${MULTI_PACKAGES}
-	@if test -e ${PKGDIR}/README${_s}; then \
-		r=${WRKINST}${_README_DIR}/${FULLPKGNAME${_s}}; \
+	@r=${WRKINST}${_README_DIR}/${FULLPKGNAME${_s}}; \
+	if test -e ${PKGDIR}/README${_s}; then \
 		echo "Installing ${PKGDIR}/README${_s} as $$r"; \
 		${_FAKESUDO} ${SUBST_CMD${_s}} ${_SHAREOWNGRP} -m ${SHAREMODE} -c ${PKGDIR}/README${_s} $$r; \
 	fi
 .  endfor
 .endif
-	@mkdir -p ${PKGDIR}
 	@cd ${PKGDIR} && for i in *.rc; do \
 		if test X"$$i" != "X*.rc"; then \
 			r=${WRKINST}${RCDIR}/$${i%.rc}; \
@@ -2811,8 +2817,6 @@ ${_FAKE_COOKIE}: ${_BUILD_COOKIE} ${_FAKESUDO_CHECK_COOKIE}
 			${_FAKESUDO} ${SUBST_CMD} ${_BINOWNGRP} -m ${BINMODE} -c $$i $$r; \
 		fi; \
 	done
-
-	@${_FAKESUDO} ${_MAKE_COOKIE} $@
 
 print-plist:
 	@${_PKG_CREATE} -n -q ${PKG_ARGS${SUBPACKAGE}} ${_PACKAGE_COOKIE${SUBPACKAGE}}
@@ -3446,7 +3450,7 @@ _all_phony = ${_recursive_depends_targets} \
     show-required-by subpackage uninstall _print-metadata \
 	run-depends-args lib-depends-args all-lib-depends-args wantlib-args \
 	port-wantlib-args fake-wantlib-args no-wantlib-args no-lib-depends-args \
-	_recurse-show-run-depends show-run-depends
+	_recurse-show-run-depends show-run-depends generate-readmes
 
 .if defined(_DEBUG_TARGETS)
 .  for _t in ${_all_phony}
