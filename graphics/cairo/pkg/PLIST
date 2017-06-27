@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2016/04/04 16:09:09 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.21 2017/06/27 13:14:24 ajacoutot Exp $
 @bin bin/cairo-sphinx
 bin/cairo-trace
 include/cairo/
@@ -101,7 +101,6 @@ share/gtk-doc/html/cairo/index-1.6.html
 share/gtk-doc/html/cairo/index-1.8.html
 share/gtk-doc/html/cairo/index-all.html
 share/gtk-doc/html/cairo/index.html
-share/gtk-doc/html/cairo/index.sgml
 share/gtk-doc/html/cairo/language-bindings.html
 share/gtk-doc/html/cairo/left-insensitive.png
 share/gtk-doc/html/cairo/left.png
