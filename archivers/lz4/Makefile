@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.13 2017/01/05 22:04:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2017/06/27 01:35:20 sthen Exp $
 
-SHARED_LIBS +=	lz4                       1.0 # 0.0
+SHARED_LIBS +=	lz4                       1.1 # 0.0
 
 COMMENT=	fast BSD-licensed data compression
 
 GH_ACCOUNT=	lz4
 GH_PROJECT=	lz4
-GH_TAGNAME=	v1.7.4.2
+GH_TAGNAME=	v1.7.5
 
 CATEGORIES=	archivers
 
@@ -27,9 +27,9 @@ MAKE_FLAGS=	CC="${CC}" \
 		SHARED_EXT_VER="so.${LIBlz4_VERSION}"
 FAKE_FLAGS=	PREFIX=${PREFIX}
 
-# XXX upstream are shipping a "test" directory, breaking the "make test"
-# target in their Makefile.
-pre-test:
-	rm -rf ${WRKSRC}/test
+post-install:
+	mv ${PREFIX}/libdata/pkgconfig/* ${PREFIX}/lib/pkgconfig/
+	rmdir ${PREFIX}/libdata/pkgconfig
+	rm ${PREFIX}/lib/liblz4.so{.1,}
 
 .include <bsd.port.mk>
