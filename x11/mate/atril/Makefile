@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2017/06/03 09:57:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2017/06/27 15:14:36 espie Exp $
 
 USE_WXNEEDED=		Yes
 
@@ -52,5 +52,6 @@ RUN_DEPENDS=		devel/gsettings-desktop-schemas
 MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache yelp
 
 CONFIGURE_STYLE=	gnu
+CONFIGURE_ENV +=	ac_cv_lib_kpathsea_kpse_init_prog=no
 
 .include <bsd.port.mk>
