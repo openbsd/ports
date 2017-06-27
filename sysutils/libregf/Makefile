@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2017/04/05 11:56:51 rpointel Exp $
+# $OpenBSD: Makefile,v 1.3 2017/06/27 12:21:07 espie Exp $
 
 COMMENT =	library and tools to access the Windows NT Registry File
 
@@ -23,7 +23,7 @@ WANTLIB += bfio c fuse fwsi m pthread util ${MODPY_WANTLIB}
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--enable-python \
-			--with-libfwsi=${LOCALBASE}
+			--with-libfwnt=${LOCALBASE}
 
 WRKDIST =	${WRKDIR}/${PKGNAME}
 
