@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.347 2017/06/13 09:26:40 kirby Exp $
+# $OpenBSD: Makefile,v 1.348 2017/06/28 16:44:50 bcallah Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -175,6 +175,7 @@
      SUBDIR += oolite
      SUBDIR += openarena
      SUBDIR += openmw
+     SUBDIR += openrct2
      SUBDIR += opensonic
      SUBDIR += openttd
      SUBDIR += openttd-data
