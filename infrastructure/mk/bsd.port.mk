@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1357 2017/06/27 15:47:10 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1358 2017/06/28 10:20:28 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1926,7 +1926,7 @@ ${_PACKAGE_COOKIE${_S}}:
 .  else
 	@${_MAKE} ${_PACKAGE_COOKIE_DEPS}
 # What PACKAGE normally does:
-	@${_MAKE} generate-readmes
+	@${_MAKE} _internal-generate-readmes
 	@${ECHO_MSG} "===>  Building package for ${FULLPKGNAME${_S}}"
 	@${ECHO_MSG} "Create ${_PACKAGE_COOKIE${_S}}"
 	@cd ${.CURDIR} && \
@@ -2197,7 +2197,7 @@ _internal-all _internal-build _internal-checksum _internal-configure \
 	_internal-install _internal-install-all _internal-manpages-check \
 	_internal-package _internal-patch _internal-plist _internal-test \
 	_internal-subpackage _internal-subupdate _internal-uninstall \
-	_internal-update _internal-update-or-install \
+	_internal-update _internal-update-or-install _internal-generate-readmes \
 	_internal-update-or-install-all _internal-update-plist \
 	lib-depends-check port-lib-depends-check update-patches:
 .  if !defined(IGNORE_SILENT)
@@ -2358,7 +2358,7 @@ _extra_info += DEPPATHS${_s}="$$(${SETENV} FLAVOR=${FLAVOR:Q} SUBPACKAGE=${_s} P
 _internal-plist _internal-update-plist: _internal-fake ${_FAKESUDO_CHECK_COOKIE}
 	@${ECHO_MSG} "===>  Updating plist for ${FULLPKGNAME}${_MASTER}"
 	@mkdir -p ${PKGDIR}
-	@${_MAKE} generate-readmes
+	@${_MAKE} _internal-generate-readmes
 	@DESTDIR=${WRKINST} \
 	PREFIX=${TRUEPREFIX} \
 	INSTALL_PRE_COOKIE=${_INSTALL_PRE_COOKIE} \
@@ -2391,7 +2391,7 @@ update-patches:
 
 .for _t in extract patch distpatch configure build all install fake \
 	subupdate fetch fetch-all checksum test prepare install-depends \
-	test-depends clean manpages-check plist update-plist \
+	test-depends clean manpages-check plist update-plist generate-readmes \
 	update update-or-install update-or-install-all package install-all
 .  if defined(_LOCK)
 ${_t}:
@@ -2794,7 +2794,7 @@ ${_FAKE_COOKIE}: ${_BUILD_COOKIE} ${_FAKESUDO_CHECK_COOKIE}
 
 # XXX this is a separate step that is "always on" and doesn't generate
 # cookies
-generate-readmes: ${_FAKE_COOKIE}
+_internal-generate-readmes: ${_FAKE_COOKIE}
 .if ${MULTI_PACKAGES} == "-"
 	@r=${WRKINST}${_README_DIR}/${FULLPKGNAME}; \
 	if test -e ${PKGDIR}/README; then \
@@ -3450,7 +3450,7 @@ _all_phony = ${_recursive_depends_targets} \
     show-required-by subpackage uninstall _print-metadata \
 	run-depends-args lib-depends-args all-lib-depends-args wantlib-args \
 	port-wantlib-args fake-wantlib-args no-wantlib-args no-lib-depends-args \
-	_recurse-show-run-depends show-run-depends generate-readmes
+	_recurse-show-run-depends show-run-depends
 
 .if defined(_DEBUG_TARGETS)
 .  for _t in ${_all_phony}

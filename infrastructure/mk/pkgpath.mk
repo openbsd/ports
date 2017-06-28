@@ -1,4 +1,4 @@
-# $OpenBSD: pkgpath.mk,v 1.66 2017/05/17 11:16:38 espie Exp $
+# $OpenBSD: pkgpath.mk,v 1.67 2017/06/28 10:20:28 espie Exp $
 # ex:ts=4 sw=4 filetype=make:
 #	pkgpath.mk - 2003 Marc Espie
 #	This file is in the public domain.
@@ -131,7 +131,7 @@ REPORT_PROBLEM ?= exit 1
 
 _recursive_targets = \
 	all build checksum configure deinstall distclean extract fake fetch \
-	fetch-all full-all-depends full-build-depends \
+	fetch-all full-all-depends full-build-depends generate-readmes \
 	full-test-depends full-run-depends \
 	install install-all \
 	license-check manpages-check package patch \
