@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2017/06/11 14:08:39 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.17 2017/06/28 17:59:31 sthen Exp $
 bin/beet
 lib/python${MODPY_VERSION}/site-packages/beets/
 lib/python${MODPY_VERSION}/site-packages/beets-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -102,6 +102,7 @@ lib/python${MODPY_VERSION}/site-packages/beetsplug/${MODPY_PYCACHE}freedesktop.$
 lib/python${MODPY_VERSION}/site-packages/beetsplug/${MODPY_PYCACHE}fromfilename.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/${MODPY_PYCACHE}ftintitle.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/${MODPY_PYCACHE}fuzzy.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/beetsplug/${MODPY_PYCACHE}gmusic.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/${MODPY_PYCACHE}hook.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/${MODPY_PYCACHE}ihate.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/${MODPY_PYCACHE}importadded.${MODPY_PYC_MAGIC_TAG}pyc
@@ -160,6 +161,7 @@ lib/python${MODPY_VERSION}/site-packages/beetsplug/freedesktop.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/fromfilename.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/ftintitle.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/fuzzy.py
+lib/python${MODPY_VERSION}/site-packages/beetsplug/gmusic.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/hook.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/ihate.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/importadded.py
