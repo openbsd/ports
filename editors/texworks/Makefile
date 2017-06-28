@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2017/04/14 12:59:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2017/06/28 19:30:39 kili Exp $
 
 COMMENT-main =		easy to use LaTeX and ConTeXt editor
 COMMENT-python =	Python scripting for TeXworks
@@ -11,6 +11,10 @@ DISTNAME =		texworks-${V}-r${R}
 PKGNAME-main =		texworks-${V}
 PKGNAME-lua =		texworks-lua-${V}
 PKGNAME-python =	texworks-python-${V}
+
+REVISION-main =		0
+REVISION-lua =		0
+REVISION-python =	0
 
 EPOCH =			0
 
@@ -32,17 +36,20 @@ MODQMAKE_PROJECTS =	plugins-src/TWLuaPlugin/TWLuaPlugin.pro \
 			plugins-src/TWPythonPlugin/TWPythonPlugin.pro \
 			TeXworks.pro
 
+# c++-11 required for poppler
+COMPILER =		gcc
+
 WANTLIB += ICE QtDBus QtGui QtScript QtScriptTools QtXml SM X11
 WANTLIB += Xext Xi Xinerama Xrender c fontconfig freetype hunspell-1.6
-WANTLIB += m poppler-qt4 pthread ${LIBCXX} z
+WANTLIB += m poppler-qt4 pthread z
 
 WANTLIB-lua =	${MODLUA_WANTLIB}
 WANTLIB-lua +=	ICE QtCore QtGui QtXml SM X11 Xext Xi Xinerama Xrender
-WANTLIB-lua +=	fontconfig freetype m ${LIBCXX} pthread
+WANTLIB-lua +=	fontconfig freetype m pthread ${LIBECXX}
 
 WANTLIB-python =  ${MODPY_WANTLIB}
 WANTLIB-python += ICE QtCore QtGui QtXml SM X11 Xext Xi Xinerama Xrender
-WANTLIB-python += fontconfig freetype m ${LIBCXX} pthread
+WANTLIB-python += fontconfig freetype m pthread ${LIBECXX}
 
 MULTI_PACKAGES =	-main -lua -python
 
