@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.10 2015/07/10 07:06:07 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.11 2017/06/28 16:26:55 bcallah Exp $
 bin/scons
 bin/scons-${VERSION}
+bin/scons-configure-cache
+bin/scons-configure-cache-${VERSION}
 bin/scons-time
 bin/scons-time-${VERSION}
 bin/sconsign
@@ -95,6 +97,8 @@ lib/scons-${VERSION}/SCons/Scanner/Prog.py
 lib/scons-${VERSION}/SCons/Scanner/Prog.pyc
 lib/scons-${VERSION}/SCons/Scanner/RC.py
 lib/scons-${VERSION}/SCons/Scanner/RC.pyc
+lib/scons-${VERSION}/SCons/Scanner/SWIG.py
+lib/scons-${VERSION}/SCons/Scanner/SWIG.pyc
 lib/scons-${VERSION}/SCons/Scanner/__init__.py
 lib/scons-${VERSION}/SCons/Scanner/__init__.pyc
 lib/scons-${VERSION}/SCons/Script/
@@ -392,20 +396,8 @@ lib/scons-${VERSION}/SCons/__init__.pyc
 lib/scons-${VERSION}/SCons/compat/
 lib/scons-${VERSION}/SCons/compat/__init__.py
 lib/scons-${VERSION}/SCons/compat/__init__.pyc
-lib/scons-${VERSION}/SCons/compat/_scons_builtins.py
-lib/scons-${VERSION}/SCons/compat/_scons_builtins.pyc
-lib/scons-${VERSION}/SCons/compat/_scons_collections.py
-lib/scons-${VERSION}/SCons/compat/_scons_collections.pyc
 lib/scons-${VERSION}/SCons/compat/_scons_dbm.py
 lib/scons-${VERSION}/SCons/compat/_scons_dbm.pyc
-lib/scons-${VERSION}/SCons/compat/_scons_hashlib.py
-lib/scons-${VERSION}/SCons/compat/_scons_hashlib.pyc
-lib/scons-${VERSION}/SCons/compat/_scons_io.py
-lib/scons-${VERSION}/SCons/compat/_scons_io.pyc
-lib/scons-${VERSION}/SCons/compat/_scons_sets.py
-lib/scons-${VERSION}/SCons/compat/_scons_sets.pyc
-lib/scons-${VERSION}/SCons/compat/_scons_subprocess.py
-lib/scons-${VERSION}/SCons/compat/_scons_subprocess.pyc
 lib/scons-${VERSION}/SCons/cpp.py
 lib/scons-${VERSION}/SCons/cpp.pyc
 lib/scons-${VERSION}/SCons/dblite.py

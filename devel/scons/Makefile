@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.25 2017/06/01 19:58:04 schwarze Exp $
+# $OpenBSD: Makefile,v 1.26 2017/06/28 16:26:55 bcallah Exp $
 
 COMMENT=	Python-based build system
 
-VERSION =	2.4.1
+VERSION =	2.5.1
 DISTNAME=	scons-${VERSION}
-REVISION =	0
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.scons.org/
+MAINTAINER=	Brian Callahan <bcallah@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
