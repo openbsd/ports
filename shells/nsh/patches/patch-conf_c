@@ -1,6 +1,7 @@
-$OpenBSD: patch-conf_c,v 1.8 2017/01/26 12:30:02 naddy Exp $
---- conf.c.orig	Sun Jun  5 20:22:35 2016
-+++ conf.c	Thu Jan 26 13:26:04 2017
+$OpenBSD: patch-conf_c,v 1.9 2017/06/28 16:34:59 sthen Exp $
+Index: conf.c
+--- conf.c.orig
++++ conf.c
 @@ -36,6 +36,7 @@
  #include <net/route.h>
  #include <net/pfvar.h>
@@ -9,3 +10,13 @@ $OpenBSD: patch-conf_c,v 1.8 2017/01/26 12:30:02 naddy Exp $
  #include <net/if_pfsync.h>
  #include <net/if_pflow.h>
  #include <ifaddrs.h>
+@@ -557,9 +558,6 @@ void conf_interfaces(FILE *output, char *only)
+ 			conf_pflow(output, ifs, ifnp->if_name);
+ 			conf_mpw(output, ifs, ifnp->if_name);
+ 			conf_ifxflags(output, ifs, ifnp->if_name);
+-			if (timeslot_status(ifs, ifnp->if_name, tmp,
+-			    sizeof(tmp)) == 1) 
+-				fprintf(output, " timeslots %s\n", tmp);
+ 			if (conf_dhcrelay(ifnp->if_name, tmp, sizeof(tmp))
+ 			    > 0)
+ 				fprintf(output, " dhcrelay %s\n", tmp);

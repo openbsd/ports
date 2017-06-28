@@ -1,0 +1,16 @@
+$OpenBSD: patch-externs_h,v 1.1 2017/06/28 16:34:59 sthen Exp $
+
+Index: externs.h
+--- externs.h.orig
++++ externs.h
+@@ -491,10 +491,6 @@ void show_trunk(int ifs, char *ifname);
+ /* who.c */
+ int who(int, char **);
+ 
+-/* timeslot.c */
+-int inttimeslot(char *, int, int, char **);
+-int timeslot_status(int, char *, char *, int);
+-
+ /* arp.c */
+ int arpget(const char *);
+ int arpset(int, char **);

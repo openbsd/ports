@@ -1,0 +1,13 @@
+$OpenBSD: patch-arp_c,v 1.1 2017/06/28 16:34:59 sthen Exp $
+
+Index: arp.c
+--- arp.c.orig
++++ arp.c
+@@ -35,6 +35,7 @@
+ #include <sys/file.h>
+ #include <sys/socket.h>
+ #include <sys/sysctl.h>
++#include <sys/time.h>
+ #include <sys/ioctl.h>
+ #include <net/bpf.h>
+ #include <net/if.h>

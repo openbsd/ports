@@ -1,4 +1,4 @@
-$OpenBSD: patch-stats_c,v 1.7 2017/05/18 10:40:08 mpi Exp $
+$OpenBSD: patch-stats_c,v 1.8 2017/06/28 16:34:59 sthen Exp $
 Index: stats.c
 --- stats.c.orig
 +++ stats.c
@@ -16,7 +16,7 @@ Index: stats.c
  #include <netinet/udp.h>
  #include <netinet/udp_var.h>
  #include <netinet/ip_ipsp.h>
-@@ -576,16 +576,16 @@ ipip_stats()
+@@ -576,16 +574,16 @@ ipip_stats()
  #define p(f, m) if (ipipstat.f || sflag <= 1) \
      printf(m, ipipstat.f, plural(ipipstat.f))
  
