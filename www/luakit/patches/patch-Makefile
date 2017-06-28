@@ -1,13 +1,28 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2012/10/28 23:43:00 abieber Exp $
---- Makefile.orig	Mon Oct  1 11:38:55 2012
-+++ Makefile	Mon Oct  1 11:39:09 2012
-@@ -37,13 +37,13 @@ globalconf.h: globalconf.h.in
- $(OBJS): $(HEADS) config.mk
+$OpenBSD: patch-Makefile,v 1.2 2017/06/28 13:06:48 abieber Exp $
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -13,7 +13,7 @@ OBJS  = $(foreach obj,$(SRCS:.c=.o),$(obj))
+ EXT_SRCS = $(filter-out $(TSRC),$(wildcard extension/*.c) $(wildcard extension/clib/*.c) $(wildcard common/*.c)) $(wildcard common/clib/*.c) $(TSRC)
+ EXT_OBJS = $(foreach obj,$(EXT_SRCS:.c=.o),$(obj))
  
- .c.o:
+-all: options newline luakit luakit.1.gz luakit.so apidoc
++all: options newline luakit luakit.1 luakit.so
+ 
+ default: all
+ 	@echo "[DEPRECATED] Use of the 'default' target is deprecated. Please use 'all' target as a replacement."
+@@ -49,21 +49,21 @@ buildopts.h: buildopts.h.in
+ $(filter-out $(EXT_OBJS),$(OBJS)) $(EXT_OBJS): $(HEADS) config.mk
+ 
+ $(filter-out $(EXT_OBJS),$(OBJS)) : %.o : %.c
 -	@echo $(CC) -c $< -o $@
 +	@echo $(CC) -c $(CFLAGS) $(CPPFLAGS) $< -o $@
  	@$(CC) -c $(CFLAGS) $(CPPFLAGS) $< -o $@
+ 
+ $(EXT_OBJS) : %.o : %.c
+-	@echo $(CC) -c $< -o $@
++	@echo $(CC) -c $(CFLAGS) -DLUAKIT_WEB_EXTENSION -fpic $(CPPFLAGS) $< -o $@
+ 	@$(CC) -c $(CFLAGS) -DLUAKIT_WEB_EXTENSION -fpic $(CPPFLAGS) $< -o $@
  
  widgets/webview.o: $(wildcard widgets/webview/*.c)
  
@@ -16,4 +31,42 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2012/10/28 23:43:00 abieber Exp $
 +	@echo $(CC) -o $@ $(OBJS) $(LDFLAGS)
  	@$(CC) -o $@ $(OBJS) $(LDFLAGS)
  
- luakit.1: luakit
+ luakit.so: $(EXT_OBJS)
+-	@echo $(CC) -o $@ $(EXT_OBJS)
++	@echo $(CC) -o $@ $(EXT_OBJS) $(LDFLAGS)
+ 	@$(CC) -o $@ $(EXT_OBJS) -shared $(LDFLAGS)
+ 
+ luakit.1: luakit.1.in
+@@ -83,16 +83,12 @@ doc: buildopts.h $(THEAD) $(TSRC)
+ 	doxygen -s doc/luakit.doxygen
+ 
+ clean:
+-	rm -rf doc/apidocs doc/html luakit $(OBJS) $(EXT_OBJS) $(TSRC) $(THEAD) buildopts.h luakit.1 luakit.1.gz luakit.so
++	rm -rf doc/apidocs doc/html luakit $(OBJS) $(EXT_OBJS) $(TSRC) $(THEAD) buildopts.h luakit.1 luakit.so
+ 
+ install: all
+ 	install -d $(INSTALLDIR)/share/luakit/
+ 	install -d $(DOCDIR) $(DOCDIR)/classes $(DOCDIR)/modules $(DOCDIR)/pages
+ 	install -m644 README.md AUTHORS COPYING* $(DOCDIR)
+-	install -m644 doc/apidocs/classes/* $(DOCDIR)/classes
+-	install -m644 doc/apidocs/modules/* $(DOCDIR)/modules
+-	install -m644 doc/apidocs/pages/* $(DOCDIR)/pages
+-	install -m644 doc/apidocs/*.html $(DOCDIR)
+ 	install -d $(INSTALLDIR)/share/luakit/lib $(INSTALLDIR)/share/luakit/lib/lousy $(INSTALLDIR)/share/luakit/lib/lousy/widget
+ 	install -m644 lib/*.* $(INSTALLDIR)/share/luakit/lib
+ 	install -m644 lib/lousy/*.* $(INSTALLDIR)/share/luakit/lib/lousy
+@@ -107,7 +103,7 @@ install: all
+ 	install -d $(APPDIR)
+ 	install -m644 extras/luakit.desktop $(APPDIR)
+ 	install -d $(MANPREFIX)/man1/
+-	install -m644 luakit.1.gz $(MANPREFIX)/man1/
++	install -m644 luakit.1 $(MANPREFIX)/man1/
+ 	mkdir -p resources
+ 	find resources -type d -exec install -d $(INSTALLDIR)/share/luakit/'{}' \;
+ 	find resources -type f -exec sh -c 'f="{}"; install -m644 "$$f" "$(INSTALLDIR)/share/luakit/$$(dirname $$f)"' \;
+@@ -124,4 +120,4 @@ run-tests: luakit luakit.so tests/util.so
+ 	@$(LUA_BIN_NAME) tests/run_test.lua
+ 
+ newline: options;@echo
+-.PHONY: all clean options install newline apidoc doc default
++.PHONY: all clean options install newline doc default
