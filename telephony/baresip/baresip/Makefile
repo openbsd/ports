@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2017/06/13 08:02:57 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.17 2017/06/28 10:20:25 czarkoff Exp $
 
 COMMENT-main =		modular SIP User-Agent with audio and video support
 COMMENT-gtk2 =		GTK+2-based modules for baresip
 
-V =			0.5.3
-REVISION =		0
+V =			0.5.4
 DISTNAME =		baresip-$V
 PKGNAME-main =		baresip-$V
 PKGNAME-gtk2 =		baresip-gtk2-$V
@@ -32,11 +31,11 @@ LIB_DEPENDS-main =	audio/gsm \
 			graphics/png \
 			multimedia/libv4l \
 			multimedia/libvpx>=1.3.0 \
-			telephony/baresip/re>=0.4.16 \
-			telephony/baresip/rem \
+			telephony/baresip/re>=0.5.4 \
+			telephony/baresip/rem>=0.5.0 \
 			telephony/spandsp
 LIB_DEPENDS-gtk2 =	multimedia/gstreamer1/plugins-base \
-			telephony/baresip/re>=0.4.16 \
+			telephony/baresip/re>=0.5.4 \
 			x11/gtk+2,-main
 RUN_DEPENDS-gtk2 =	telephony/baresip/baresip,-main>=$V \
 
