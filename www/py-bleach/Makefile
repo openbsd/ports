@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/02/19 19:23:13 shadchin Exp $
+# $OpenBSD: Makefile,v 1.2 2017/06/28 18:03:20 shadchin Exp $
 
 COMMENT =		easy whitelist-based HTML-sanitizing tool
 
-MODPY_EGG_VERSION =	1.5.0
+MODPY_EGG_VERSION =	2.0.0
 DISTNAME =		bleach-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		www
@@ -16,16 +16,17 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		lang/python
 
-RUN_DEPENDS =		devel/py-html5lib${MODPY_FLAVOR} \
-			devel/py-six${MODPY_FLAVOR}
-TEST_DEPENDS =		${RUN_DEPENDS} \
-			devel/py-test${MODPY_FLAVOR}
-
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
 FLAVORS =		python3
 FLAVOR ?=
+
+RUN_DEPENDS =		devel/py-html5lib${MODPY_FLAVOR} \
+			devel/py-six${MODPY_FLAVOR}
+BUILD_DEPENDS =		devel/py-test-runner${MODPY_FLAVOR}
+TEST_DEPENDS =		${RUN_DEPENDS} \
+			devel/py-test${MODPY_FLAVOR}
 
 do-test:
 	cd ${WRKSRC} && ${MODPY_BIN} -m pytest
