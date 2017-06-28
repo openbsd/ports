@@ -1,4 +1,4 @@
-$OpenBSD: patch-hydra-gtk_make_xhydra_sh,v 1.1 2017/02/28 12:47:56 benoit Exp $
+$OpenBSD: patch-hydra-gtk_make_xhydra_sh,v 1.2 2017/06/28 13:16:49 ajacoutot Exp $
 --- hydra-gtk/make_xhydra.sh.orig	Thu Aug 11 09:48:55 2016
 +++ hydra-gtk/make_xhydra.sh	Sat Oct  8 19:43:11 2016
 @@ -2,13 +2,13 @@
@@ -17,10 +17,3 @@ $OpenBSD: patch-hydra-gtk_make_xhydra_sh,v 1.1 2017/02/28 12:47:56 benoit Exp $
  test -e src/xhydra || {
    echo "Error: could not compile. Analyse this:"
    cat errors
-@@ -16,5 +16,5 @@ test -e src/xhydra || {
-   echo 'Do not worry, as I said, xhydra is really optional. ./hydra is ready to go!'
-   exit 0
- }
--cp -v src/xhydra ..
-+cp src/xhydra ..
- echo "The GTK GUI is ready, type \"./xhydra\" to start"

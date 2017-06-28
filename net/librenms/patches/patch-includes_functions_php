@@ -1,4 +1,4 @@
-$OpenBSD: patch-includes_functions_php,v 1.9 2017/06/25 22:34:36 sthen Exp $
+$OpenBSD: patch-includes_functions_php,v 1.10 2017/06/28 13:16:49 ajacoutot Exp $
 
 Index: includes/functions.php
 --- includes/functions.php.orig
@@ -8,7 +8,7 @@ Index: includes/functions.php
      }
  
 -    $ex = shell_exec("bash -c '( [ ! -d ".trim($config['rrd_dir'])."/".$host." ] || rm -vrf ".trim($config['rrd_dir'])."/".$host." 2>&1 ) && echo -n OK'");
-+    $ex = shell_exec("sh -c '( [ ! -d ".trim($config['rrd_dir'])."/".$host." ] || rm -rf ".trim($config['rrd_dir'])."/".$host." 2>&1 ) && echo -n OK'");
++    $ex = shell_exec("sh -c '( [ ! -d ".trim($config['rrd_dir'])."/".$host." ] || rm -vrf ".trim($config['rrd_dir'])."/".$host." 2>&1 ) && echo -n OK'");
      $tmp = explode("\n", $ex);
      if ($tmp[sizeof($tmp)-1] != "OK") {
          $ret .= "Could not remove files:\n$ex\n";

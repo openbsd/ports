@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.79 2016/11/19 15:42:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.80 2017/06/28 13:16:49 ajacoutot Exp $
 
 COMMENT=	toolkit for manipulation and conversion of graphic images
 
@@ -42,9 +42,9 @@ TEST_FLAGS=	pkgdir="${WRKINST}${PREFIX}" \
 		resultdir="${WRKDIR}/tests" \
           	RGBDEF="${WRKINST}${PREFIX}/share/netpbm/rgb.txt"
 
-# cp -v, head -c, mv -T, seq
+# head -c, mv -T, seq
 pre-test:
-	@for i in cp head mv seq; do \
+	@for i in head mv seq; do \
 		ln -sf ${LOCALBASE}/bin/g$$i ${WRKDIR}/bin/$$i; \
 	done
 	@sed -i '1 s:^.*bin/bash:#!${LOCALBASE}/bin/bash:' \

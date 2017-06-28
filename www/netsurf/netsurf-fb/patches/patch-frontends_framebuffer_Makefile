@@ -1,4 +1,4 @@
-$OpenBSD: patch-frontends_framebuffer_Makefile,v 1.1 2016/11/30 07:35:00 bentley Exp $
+$OpenBSD: patch-frontends_framebuffer_Makefile,v 1.2 2017/06/28 13:16:49 ajacoutot Exp $
 --- frontends/framebuffer/Makefile.orig	Sat Nov 19 06:37:41 2016
 +++ frontends/framebuffer/Makefile	Mon Nov 21 02:23:58 2016
 @@ -21,9 +21,6 @@ CFLAGS += '-DNETSURF_FB_FONT_CURSIVE="$(NETSURF_FB_FON
@@ -11,14 +11,3 @@ $OpenBSD: patch-frontends_framebuffer_Makefile,v 1.1 2016/11/30 07:35:00 bentley
  	  -D_POSIX_C_SOURCE=200809L
  
  LDFLAGS += -lm
-@@ -173,8 +170,8 @@ NETSURF_FRAMEBUFFER_RESOURCE_LIST := adblock.css credi
- install-framebuffer:
- 	$(Q)mkdir -p $(DESTDIR)$(NETSURF_FRAMEBUFFER_BIN)
- 	$(Q)mkdir -p $(DESTDIR)$(NETSURF_FRAMEBUFFER_RESOURCES)
--	$(Q)cp -v $(EXETARGET) $(DESTDIR)/$(NETSURF_FRAMEBUFFER_BIN)netsurf-fb
--	$(Q)for F in $(NETSURF_FRAMEBUFFER_RESOURCE_LIST); do cp -vL $(FRONTEND_RESOURCES_DIR)/$$F $(DESTDIR)/$(NETSURF_FRAMEBUFFER_RESOURCES); done
-+	$(Q)cp $(EXETARGET) $(DESTDIR)/$(NETSURF_FRAMEBUFFER_BIN)netsurf-fb
-+	$(Q)for F in $(NETSURF_FRAMEBUFFER_RESOURCE_LIST); do cp -L $(FRONTEND_RESOURCES_DIR)/$$F $(DESTDIR)/$(NETSURF_FRAMEBUFFER_RESOURCES); done
- 	$(Q)$(SPLIT_MESSAGES) -l en -p fb -f messages resources/FatMessages | gzip -9n > $(DESTDIR)$(NETSURF_FRAMEBUFFER_RESOURCES)messages
- 
- # ----------------------------------------------------------------------------
