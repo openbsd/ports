@@ -1,0 +1,58 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/06/28 16:43:46 bcallah Exp $
+@bin bin/openrct2
+@lib lib/libopenrct2.so.${LIBopenrct2_VERSION}
+@man man/man6/openrct2.6
+share/applications/openrct2.desktop
+share/doc/openrct2/
+share/doc/openrct2/changelog.txt
+share/doc/openrct2/contributors.md
+share/doc/openrct2/licence.txt
+share/doc/openrct2/readme.txt
+share/icons/hicolor/128x128/apps/openrct2.png
+share/icons/hicolor/16x16/apps/openrct2.png
+share/icons/hicolor/256x256/apps/openrct2.png
+share/icons/hicolor/32x32/apps/openrct2.png
+share/icons/hicolor/64x64/apps/openrct2.png
+share/icons/hicolor/scalable/apps/openrct2.svg
+share/openrct2/
+share/openrct2/g2.dat
+share/openrct2/language/
+share/openrct2/language/ca-ES.txt
+share/openrct2/language/cs-CZ.txt
+share/openrct2/language/de-DE.txt
+share/openrct2/language/en-GB.txt
+share/openrct2/language/en-US.txt
+share/openrct2/language/es-ES.txt
+share/openrct2/language/fi-FI.txt
+share/openrct2/language/fr-FR.txt
+share/openrct2/language/hu-HU.txt
+share/openrct2/language/it-IT.txt
+share/openrct2/language/ja-JP.txt
+share/openrct2/language/ko-KR.txt
+share/openrct2/language/nb-NO.txt
+share/openrct2/language/nl-NL.txt
+share/openrct2/language/pl-PL.txt
+share/openrct2/language/pt-BR.txt
+share/openrct2/language/ru-RU.txt
+share/openrct2/language/sv-SE.txt
+share/openrct2/language/zh-CN.txt
+share/openrct2/language/zh-TW.txt
+share/openrct2/shaders/
+share/openrct2/shaders/copyframebuffer.frag
+share/openrct2/shaders/copyframebuffer.vert
+share/openrct2/shaders/drawimage.frag
+share/openrct2/shaders/drawimage.vert
+share/openrct2/shaders/drawline.frag
+share/openrct2/shaders/drawline.vert
+share/openrct2/shaders/fillrect.frag
+share/openrct2/shaders/fillrect.vert
+share/openrct2/title/
+share/openrct2/title/openrct2.parkseq
+share/openrct2/title/rct1.parkseq
+share/openrct2/title/rct1aa.parkseq
+share/openrct2/title/rct1aall.parkseq
+share/openrct2/title/rct2.parkseq
+@exec %D/bin/update-desktop-database  
+@unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

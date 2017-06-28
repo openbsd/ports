@@ -1,0 +1,34 @@
+$OpenBSD: patch-src_openrct2_CMakeLists_txt,v 1.1.1.1 2017/06/28 16:43:46 bcallah Exp $
+
+Version the SO.
+Don't define DEBUG.
+
+Index: src/openrct2/CMakeLists.txt
+--- src/openrct2/CMakeLists.txt.orig
++++ src/openrct2/CMakeLists.txt
+@@ -129,6 +129,7 @@ endif ()
+ set(PROJECT libopenrct2)
+ project(${PROJECT})
+ add_library(${PROJECT} SHARED ${OPENRCT2_CORE_SOURCES} ${OPENRCT2_CORE_MM_SOURCES} ${RCT2_SECTIONS})
++set_target_properties(${PROJECT} PROPERTIES SOVERSION ${LIBopenrct2_VERSION})
+ set_target_properties(${PROJECT} PROPERTIES PREFIX "")
+ set_target_properties(${PROJECT} PROPERTIES COMPILE_FLAGS "-Wundef")
+ 
+@@ -189,7 +190,7 @@ endif ()
+ 
+ if (APPLE OR STATIC OR ${CMAKE_SYSTEM_NAME} MATCHES "BSD")
+     find_library(ICONV_LIBRARIES NAMES iconv libiconv libiconv-2 c)
+-    target_link_libraries(${PROJECT} ${ICONV_LIBRARIES})
++    target_link_libraries(${PROJECT} ${ICONV_LIBRARIES} -L${OPENBSD_X11BASE}/lib)
+ endif()
+ 
+ # Includes
+@@ -218,7 +219,7 @@ endif()
+ set(DEBUG_LEVEL 0 CACHE STRING "Select debug level for compilation. Use value in range 0–3.")
+ set(COMMON_COMPILE_OPTIONS "${COMMON_COMPILE_OPTIONS} -fstrict-aliasing -Werror -Wundef -Wmissing-declarations -Winit-self -Wall -Wno-unknown-pragmas -Wno-unused-function -Wno-missing-braces ")
+ set(COMMON_COMPILE_OPTIONS "${COMMON_COMPILE_OPTIONS} -Wno-comment -Wshadow  -Wmissing-declarations -Wnonnull")
+-set(COMMON_COMPILE_OPTIONS "${COMMON_COMPILE_OPTIONS} -DDEBUG=${DEBUG_LEVEL}")
++set(COMMON_COMPILE_OPTIONS "${COMMON_COMPILE_OPTIONS}")
+ 
+ # On mingw all code is already PIC, this will avoid compiler error on redefining this option
+ if (NOT MINGW)

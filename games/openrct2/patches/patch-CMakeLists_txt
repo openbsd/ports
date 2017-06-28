@@ -1,0 +1,49 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2017/06/28 16:43:46 bcallah Exp $
+
+Don't gzip man page and put it in the right place.
+Don't try to execute git.
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -20,33 +20,9 @@ option(PORTABLE "Create a portable build (-rpath=$ORIG
+ option(DOWNLOAD_TITLE_SEQUENCES "Download title sequences during installation." ON)
+ 
+ # Define current git branch
+-execute_process(
+-    COMMAND git rev-parse --abbrev-ref HEAD
+-    WORKING_DIRECTORY ${ROOT_DIR}
+-    OUTPUT_VARIABLE OPENRCT2_BRANCH
+-    OUTPUT_STRIP_TRAILING_WHITESPACE
+-    ERROR_QUIET
+-)
+ add_definitions(-DOPENRCT2_BRANCH="${OPENRCT2_BRANCH}")
+ 
+-# Define commit hash
+-execute_process(
+-    COMMAND git rev-parse HEAD
+-    WORKING_DIRECTORY ${ROOT_DIR}
+-    OUTPUT_VARIABLE OPENRCT2_COMMIT_SHA1
+-    OUTPUT_STRIP_TRAILING_WHITESPACE
+-    ERROR_QUIET
+-)
+-add_definitions(-DOPENRCT2_COMMIT_SHA1="${OPENRCT2_COMMIT_SHA1}")
+-
+ # Define short commit hash
+-execute_process(
+-    COMMAND git rev-parse --short HEAD
+-    WORKING_DIRECTORY ${ROOT_DIR}
+-    OUTPUT_VARIABLE OPENRCT2_COMMIT_SHA1_SHORT
+-    OUTPUT_STRIP_TRAILING_WHITESPACE
+-    ERROR_QUIET
+-)
+ 
+ # Tagged builds are not meant to display commit info
+ if (NOT OPENRCT2_COMMIT_SHA1_SHORT STREQUAL "HEAD")
+@@ -154,5 +130,4 @@ install(FILES "resources/logo/icon_x128.png" DESTINATI
+ install(FILES "resources/logo/icon_x256.png" DESTINATION "share/icons/hicolor/256x256/apps" RENAME "openrct2.png")
+ install(FILES "resources/logo/icon_flag.svg" DESTINATION "share/icons/hicolor/scalable/apps" RENAME "openrct2.svg")
+ install(FILES "distribution/linux/openrct2.desktop" DESTINATION "share/applications")
+-install(DIRECTORY "distribution/man/" DESTINATION "share/man/man6" FILES_MATCHING PATTERN "*.6")
+-install(CODE "execute_process(COMMAND find \$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/share/man/man6 -type f -exec gzip -f \"{}\" \;)")
++install(DIRECTORY "distribution/man/" DESTINATION "man/man6" FILES_MATCHING PATTERN "*.6")

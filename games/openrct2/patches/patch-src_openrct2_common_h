@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_openrct2_common_h,v 1.1.1.1 2017/06/28 16:43:46 bcallah Exp $
+
+OpenBSD is missing the _Static_assert macro (should be in <assert.h>).
+
+Index: src/openrct2/common.h
+--- src/openrct2/common.h.orig
++++ src/openrct2/common.h
+@@ -224,6 +224,7 @@ typedef uint16 rct_string_id;
+     #define RESTRICT
+ #endif
+ 
++#define static_assert _Static_assert
+ #define assert_struct_size(x, y) static_assert(sizeof(x) == (y), "Improper struct size")
+ 
+ #ifdef PLATFORM_X86
