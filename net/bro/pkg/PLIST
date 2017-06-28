@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2017/04/12 10:58:36 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2017/06/28 09:56:09 ajacoutot Exp $
 @conflict brotli-*
 @extraunexec rm -rf ${LOCALSTATEDIR}/{log,spool}/bro
 @bin bin/adtrace
@@ -41,6 +41,8 @@ lib/python${MODPY_VERSION}/site-packages/BroControl/execute.py
 lib/python${MODPY_VERSION}/site-packages/BroControl/execute.pyc
 lib/python${MODPY_VERSION}/site-packages/BroControl/install.py
 lib/python${MODPY_VERSION}/site-packages/BroControl/install.pyc
+lib/python${MODPY_VERSION}/site-packages/BroControl/lock.py
+lib/python${MODPY_VERSION}/site-packages/BroControl/lock.pyc
 lib/python${MODPY_VERSION}/site-packages/BroControl/node.py
 lib/python${MODPY_VERSION}/site-packages/BroControl/node.pyc
 lib/python${MODPY_VERSION}/site-packages/BroControl/options.py
@@ -106,7 +108,6 @@ share/bro/base/bif/messaging.bif.bro
 share/bro/base/bif/pcap.bif.bro
 share/bro/base/bif/plugins/
 share/bro/base/bif/plugins/Bro_ARP.events.bif.bro
-share/bro/base/bif/plugins/Bro_AYIYA.events.bif.bro
 share/bro/base/bif/plugins/Bro_AsciiReader.ascii.bif.bro
 share/bro/base/bif/plugins/Bro_AsciiWriter.ascii.bif.bro
 share/bro/base/bif/plugins/Bro_BackDoor.events.bif.bro
@@ -130,7 +131,6 @@ share/bro/base/bif/plugins/Bro_FileExtract.functions.bif.bro
 share/bro/base/bif/plugins/Bro_FileHash.events.bif.bro
 share/bro/base/bif/plugins/Bro_Finger.events.bif.bro
 share/bro/base/bif/plugins/Bro_GSSAPI.events.bif.bro
-share/bro/base/bif/plugins/Bro_GSSAPI.types.bif.bro
 share/bro/base/bif/plugins/Bro_GTPv1.events.bif.bro
 share/bro/base/bif/plugins/Bro_Gnutella.events.bif.bro
 share/bro/base/bif/plugins/Bro_HTTP.events.bif.bro
@@ -155,7 +155,6 @@ share/bro/base/bif/plugins/Bro_NetBIOS.events.bif.bro
 share/bro/base/bif/plugins/Bro_NetBIOS.functions.bif.bro
 share/bro/base/bif/plugins/Bro_NoneWriter.none.bif.bro
 share/bro/base/bif/plugins/Bro_PE.events.bif.bro
-share/bro/base/bif/plugins/Bro_PIA.events.bif.bro
 share/bro/base/bif/plugins/Bro_POP3.events.bif.bro
 share/bro/base/bif/plugins/Bro_RADIUS.events.bif.bro
 share/bro/base/bif/plugins/Bro_RDP.events.bif.bro
@@ -218,7 +217,6 @@ share/bro/base/bif/plugins/Bro_X509.events.bif.bro
 share/bro/base/bif/plugins/Bro_X509.functions.bif.bro
 share/bro/base/bif/plugins/Bro_X509.types.bif.bro
 share/bro/base/bif/plugins/Bro_XMPP.events.bif.bro
-share/bro/base/bif/plugins/Bro_ZIP.events.bif.bro
 share/bro/base/bif/plugins/__load__.bro
 share/bro/base/bif/reporter.bif.bro
 share/bro/base/bif/stats.bif.bro
@@ -643,6 +641,8 @@ share/bro/policy/protocols/http/software-browser-plugins.bro
 share/bro/policy/protocols/http/software.bro
 share/bro/policy/protocols/http/var-extraction-cookies.bro
 share/bro/policy/protocols/http/var-extraction-uri.bro
+share/bro/policy/protocols/krb/
+share/bro/policy/protocols/krb/ticket-logging.bro
 share/bro/policy/protocols/modbus/
 share/bro/policy/protocols/modbus/known-masters-slaves.bro
 share/bro/policy/protocols/modbus/track-memmap.bro
@@ -693,6 +693,7 @@ share/broctl/scripts/archive-log
 share/broctl/scripts/check-config
 share/broctl/scripts/crash-diag
 share/broctl/scripts/delete-log
+share/broctl/scripts/expire-crash
 share/broctl/scripts/expire-logs
 share/broctl/scripts/helpers/
 share/broctl/scripts/helpers/check-pid
