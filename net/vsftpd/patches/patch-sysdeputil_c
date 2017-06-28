@@ -1,6 +1,7 @@
-$OpenBSD: patch-sysdeputil_c,v 1.4 2012/10/05 02:27:50 brad Exp $
---- sysdeputil.c.orig	Sun Sep 16 00:18:04 2012
-+++ sysdeputil.c	Wed Oct  3 05:41:21 2012
+$OpenBSD: patch-sysdeputil_c,v 1.5 2017/06/28 15:03:42 sthen Exp $
+Index: sysdeputil.c
+--- sysdeputil.c.orig
++++ sysdeputil.c
 @@ -25,6 +25,10 @@
    #define _LARGEFILE64_SOURCE 1
  #endif
@@ -12,16 +13,25 @@ $OpenBSD: patch-sysdeputil_c,v 1.4 2012/10/05 02:27:50 brad Exp $
  /* For INT_MAX */
  #include <limits.h>
  
-@@ -114,6 +118,12 @@
-   #else
-     #undef VSF_SYSDEP_HAVE_UTMPX
+@@ -116,6 +120,12 @@
    #endif
-+#endif
-+
+ #endif
+ 
 +#if defined(__OpenBSD__)
 +  #include <stdlib.h>
 +  #undef VSF_SYSDEP_HAVE_SHADOW
 +  #define VSF_SYSDEP_HAVE_SETPROCTITLE
- #endif
- 
++#endif
++
  #ifdef __hpux
+   #include <sys/socket.h>
+   #ifdef SF_DISCONNECT
+@@ -243,7 +253,7 @@ vsf_sysdep_check_auth(struct mystr* p_user_str,
+                       const struct mystr* p_remote_host)
+ {
+   const char* p_crypted;
+-  const struct passwd* p_pwd = getpwnam(str_getbuf(p_user_str));
++  const struct passwd* p_pwd = getpwnam_shadow(str_getbuf(p_user_str));
+   (void) p_remote_host;
+   if (p_pwd == NULL)
+   {
