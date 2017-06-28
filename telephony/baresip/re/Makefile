@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2017/06/08 14:29:37 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.16 2017/06/28 10:20:08 czarkoff Exp $
 
 COMMENT =		portable library for real-time communications
 
-V =			0.5.3
+V =			0.5.4
 DISTNAME =		re-${V}
-SHARED_LIBS =		re	3.0
+SHARED_LIBS =		re	4.0
 CATEGORIES +=		devel
 
 WANTLIB = crypto pthread ssl z
