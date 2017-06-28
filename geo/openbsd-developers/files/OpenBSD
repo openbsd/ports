@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.142 2017/05/30 10:47:25 anton Exp $
+# $OpenBSD: OpenBSD,v 1.143 2017/06/28 22:07:50 job Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -100,6 +100,7 @@
 48.8571		2.44		"chl"		# Charles Longeau
 48.864185	2.355328	"ajacoutot"	# Antoine Jacoutot
 48.87		2.33		"espie"		# Marc Espie
+48.87		2.35		"job"		# Job Snijders
 49.0120		8.4165		"schwarze"	# Ingo Schwarze
 49.033		2.0666		"benoit"	# Benoit Lecocq
 49.0816		-0.2885		"eric"		# Eric Faurot
