@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2016/11/17 09:55:51 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.9 2017/06/29 07:29:07 sebastia Exp $
 ${GEM_BIN}/r10k${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -35,22 +35,9 @@ ${GEM_LIB}/gems/${DISTNAME}/integration/
 ${GEM_LIB}/gems/${DISTNAME}/integration/Gemfile
 ${GEM_LIB}/gems/${DISTNAME}/integration/README.mkd
 ${GEM_LIB}/gems/${DISTNAME}/integration/Rakefile
-${GEM_LIB}/gems/${DISTNAME}/integration/configs/
-${GEM_LIB}/gems/${DISTNAME}/integration/configs/README.mkd
-${GEM_LIB}/gems/${DISTNAME}/integration/configs/pe/
-${GEM_LIB}/gems/${DISTNAME}/integration/configs/pe/centos-5-64mda
-${GEM_LIB}/gems/${DISTNAME}/integration/configs/pe/centos-6-64mda
-${GEM_LIB}/gems/${DISTNAME}/integration/configs/pe/centos-7-64mda
-${GEM_LIB}/gems/${DISTNAME}/integration/configs/pe/debian-6-64mda
-${GEM_LIB}/gems/${DISTNAME}/integration/configs/pe/debian-7-64mda
-${GEM_LIB}/gems/${DISTNAME}/integration/configs/pe/redhat-6-64mda
-${GEM_LIB}/gems/${DISTNAME}/integration/configs/pe/redhat-7-64mda
-${GEM_LIB}/gems/${DISTNAME}/integration/configs/pe/sles-11-64mda
-${GEM_LIB}/gems/${DISTNAME}/integration/configs/pe/sles-12-64mda
-${GEM_LIB}/gems/${DISTNAME}/integration/configs/pe/ubuntu-1004-64mda
-${GEM_LIB}/gems/${DISTNAME}/integration/configs/pe/ubuntu-1204-64mda
-${GEM_LIB}/gems/${DISTNAME}/integration/configs/pe/ubuntu-1404-64mda
-${GEM_LIB}/gems/${DISTNAME}/integration/configs/pe/ubuntu-1604-64mda
+${GEM_LIB}/gems/${DISTNAME}/integration/component/
+${GEM_LIB}/gems/${DISTNAME}/integration/component/pre-suite/
+${GEM_LIB}/gems/${DISTNAME}/integration/component/pre-suite/05_install_dev_r10k.rb
 ${GEM_LIB}/gems/${DISTNAME}/integration/files/
 ${GEM_LIB}/gems/${DISTNAME}/integration/files/README.mkd
 ${GEM_LIB}/gems/${DISTNAME}/integration/files/hiera.yaml
@@ -79,9 +66,9 @@ ${GEM_LIB}/gems/${DISTNAME}/integration/manifests/
 ${GEM_LIB}/gems/${DISTNAME}/integration/manifests/README.mkd
 ${GEM_LIB}/gems/${DISTNAME}/integration/pre-suite/
 ${GEM_LIB}/gems/${DISTNAME}/integration/pre-suite/00_pe_install.rb
-${GEM_LIB}/gems/${DISTNAME}/integration/pre-suite/01_git_config.rb
-${GEM_LIB}/gems/${DISTNAME}/integration/pre-suite/02_pe_r10k.rb
-${GEM_LIB}/gems/${DISTNAME}/integration/pre-suite/03_test_utils.rb
+${GEM_LIB}/gems/${DISTNAME}/integration/pre-suite/10_git_config.rb
+${GEM_LIB}/gems/${DISTNAME}/integration/pre-suite/20_pe_r10k.rb
+${GEM_LIB}/gems/${DISTNAME}/integration/pre-suite/30_test_utils.rb
 ${GEM_LIB}/gems/${DISTNAME}/integration/pre-suite/README.mkd
 ${GEM_LIB}/gems/${DISTNAME}/integration/scripts/
 ${GEM_LIB}/gems/${DISTNAME}/integration/scripts/README.mkd

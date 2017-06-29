@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2017/05/09 13:45:59 sebastia Exp $
+# $OpenBSD: Makefile,v 1.13 2017/06/29 07:29:07 sebastia Exp $
 
 COMMENT =	Puppet module management
 
-DISTNAME =	r10k-2.5.4
+DISTNAME =	r10k-2.5.5
 CATEGORIES =	sysutils
 HOMEPAGE =	https://github.com/puppetlabs/r10k
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
