@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.30 2017/05/25 00:04:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2017/06/29 01:42:27 jca Exp $
 
 COMMENT=	library to determine file type
 
 # update devel/py-libmagic in sync with this
 V=		5.31
+REVISION=	0
 DISTNAME=	file-${V}
 PKGNAME=	libmagic-${V}
 
@@ -21,5 +22,6 @@ WANTLIB += z
 MASTER_SITES=	ftp://ftp.astron.com/pub/file/
 
 CONFIGURE_STYLE= gnu
+CONFIGURE_ARGS=	--enable-fsect-man5
 
 .include <bsd.port.mk>

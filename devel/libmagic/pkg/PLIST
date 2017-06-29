@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/09/29 23:29:24 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.6 2017/06/29 01:42:27 jca Exp $
 @comment @bin bin/file
 include/magic.h
 lib/libmagic.a
@@ -6,5 +6,5 @@ lib/libmagic.la
 @lib lib/libmagic.so.${LIBmagic_VERSION}
 @comment @man man/man1/file.1
 @man man/man3/libmagic.3
-@man man/man4/magic.4
+@man man/man5/magic.5
 share/misc/magic.mgc
