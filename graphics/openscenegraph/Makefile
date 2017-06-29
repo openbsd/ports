@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2017/04/10 11:46:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2017/06/29 09:35:45 ajacoutot Exp $
 
 PORTROACH =		limitw:1,even
 
@@ -7,7 +7,7 @@ COMMENT =		3D graphics toolkit
 V =			3.4.0
 DISTNAME =		OpenSceneGraph-${V}
 PKGNAME =		openscenegraph-${V}
-REVISION =		0
+REVISION =		1
 
 SUBST_VARS +=		V
 
@@ -40,18 +40,17 @@ MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 # OSGPL (see LICENSE.txt)
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += GL Half Iex IlmImf IlmThread QtGui QtOpenGL X11 Xrandr
-WANTLIB += avcodec avdevice avformat avresample avutil c cairo curl
-WANTLIB += freetype gdk_pixbuf-2.0 gif gio-2.0 glib-2.0 gobject-2.0
-WANTLIB += jasper jpeg m png poppler-glib pthread rsvg-2 ${LIBCXX}
-WANTLIB += swresample swscale tiff z SDL
+WANTLIB += GL Half Iex IlmImf IlmThread QtGui QtOpenGL SDL X11
+WANTLIB += Xrandr avcodec avdevice avformat avresample avutil
+WANTLIB += c cairo curl freetype gdk_pixbuf-2.0 gif gio-2.0 glib-2.0
+WANTLIB += gobject-2.0 intl jasper jpeg m png poppler-glib pthread
+WANTLIB += rsvg-2 ${LIBCXX} swresample swscale tiff z
 
 MASTER_SITES =		${HOMEPAGE}/downloads/stable_releases/OpenSceneGraph-$V/source/
 EXTRACT_SUFX =		.zip
 
 MODULES =		devel/cmake \
-			x11/qt4 \
-			devel/gettext
+			x11/qt4
 LIB_DEPENDS =		graphics/openexr \
 			graphics/ffmpeg \
 			graphics/gdk-pixbuf2 \

@@ -1,7 +1,8 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.5 2015/09/22 18:49:15 pascal Exp $
---- CMakeLists.txt.orig	Wed Aug 12 08:38:59 2015
-+++ CMakeLists.txt	Thu Sep 10 20:45:13 2015
-@@ -658,7 +658,8 @@ ELSE()
+$OpenBSD: patch-CMakeLists_txt,v 1.6 2017/06/29 09:35:45 ajacoutot Exp $
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -658,13 +658,15 @@ ELSE()
      FIND_PACKAGE(COLLADA)
      FIND_PACKAGE(FBX)
      FIND_PACKAGE(ZLIB)
@@ -11,7 +12,15 @@ $OpenBSD: patch-CMakeLists_txt,v 1.5 2015/09/22 18:49:15 pascal Exp $
      FIND_PACKAGE(OpenVRML)
      FIND_PACKAGE(Performer)
      FIND_PACKAGE(GDAL)
-@@ -848,12 +849,6 @@ IF(CYGWIN)
+     FIND_PACKAGE(GTA)
+     FIND_PACKAGE(CURL)
+-    FIND_PACKAGE(LibVNCServer)
++#    FIND_PACKAGE(LibVNCServer)
++    SET(LIBVNCSERVER_FOUND "NO")
+     FIND_PACKAGE(OurDCMTK)
+     FIND_PACKAGE(FFmpeg)
+     FIND_PACKAGE(GStreamer COMPONENTS app pbutils)
+@@ -848,12 +850,6 @@ IF(CYGWIN)
    SET(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -D_DEBUG")
  ENDIF()
  
