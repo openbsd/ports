@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_email_c,v 1.1 2017/06/29 00:33:59 danj Exp $
+
+2048 is not enough to get getgrnam_r result
+
+Index: src/email.c
+--- src/email.c.orig
++++ src/email.c
+@@ -403,7 +403,7 @@ static void *open_connection(void __attribute__((unuse
+   {
+     struct group sg;
+     struct group *grp;
+-    char grbuf[2048];
++    char grbuf[4096];
+     int status;
+ 
+     grp = NULL;
