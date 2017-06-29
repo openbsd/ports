@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2017/06/24 10:27:15 robert Exp $
+# $OpenBSD: Makefile,v 1.5 2017/06/29 13:52:38 robert Exp $
 
 COMMENT=		standard MATE themes
 
@@ -12,7 +12,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		x11/gnome
 
-BUILD_DEPENDS=		x11/gtk+3
+BUILD_DEPENDS=		x11/gtk+2 \
+			x11/gtk+3
 
 MODGNOME_TOOLS=		gtk-update-icon-cache
 
