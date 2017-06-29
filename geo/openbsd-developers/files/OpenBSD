@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.143 2017/06/28 22:07:50 job Exp $
+# $OpenBSD: OpenBSD,v 1.144 2017/06/29 09:37:45 job Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -100,7 +100,6 @@
 48.8571		2.44		"chl"		# Charles Longeau
 48.864185	2.355328	"ajacoutot"	# Antoine Jacoutot
 48.87		2.33		"espie"		# Marc Espie
-48.87		2.35		"job"		# Job Snijders
 49.0120		8.4165		"schwarze"	# Ingo Schwarze
 49.033		2.0666		"benoit"	# Benoit Lecocq
 49.0816		-0.2885		"eric"		# Eric Faurot
@@ -126,6 +125,7 @@
 51.6		-114.1		"deraadt"	# Theo de Raadt
 51.67938	5.1194		"weerd"		# Paul de Weerd
 51.86681	-0.1875		"jacekm"	# Jacek Masiulaniec
+52.37		4.89		"job"		# Job Snijders
 52.49		13.41		"stsp"		# Stefan Sperling
 52.47		13.34		"uwe"		# Uwe Stuehler
 52.26		4.63		"camield"	# Camiel Dobbelaar
