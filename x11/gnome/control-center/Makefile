@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2017/06/28 12:22:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2017/06/29 13:54:13 ajacoutot Exp $
 
 # XXX change proxy settings without network-manager?
 
@@ -6,7 +6,7 @@ COMMENT=		GNOME control center
 
 GNOME_PROJECT=		gnome-control-center
 GNOME_VERSION=		3.24.2
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		x11
 
@@ -105,13 +105,5 @@ pre-configure:
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
 		autoreconf -fi
 ###
-
-# XXX should probably live in a common package
-# get_os_info() in panels/info/cc-info-panel.c
-SUBST_VARS=		OSREV
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gnome-control-center
-	${SUBST_CMD} -c -o root -g wheel -m 0644 ${FILESDIR}/os-release.in \
-		${PREFIX}/share/examples/gnome-control-center/os-release
 
 .include <bsd.port.mk>

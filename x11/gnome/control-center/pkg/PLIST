@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2017/06/28 12:22:28 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2017/06/29 13:54:13 ajacoutot Exp $
 @conflict control-center-1*
 @conflict control-center2-*
 @conflict gnome-media-<2.91.2p3
@@ -30,9 +30,6 @@ share/applications/gnome-user-accounts-panel.desktop
 share/bash-completion/completions/gnome-control-center
 share/dbus-1/services/org.gnome.ControlCenter.SearchProvider.service
 share/dbus-1/services/org.gnome.ControlCenter.service
-share/examples/gnome-control-center/
-share/examples/gnome-control-center/os-release
-@sample ${SYSCONFDIR}/os-release
 share/gettext/its/gnome-keybindings.its
 share/gettext/its/gnome-keybindings.loc
 share/gnome-control-center/
