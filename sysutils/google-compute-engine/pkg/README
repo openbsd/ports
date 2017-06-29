@@ -1,0 +1,13 @@
+$OpenBSD: README,v 1.1.1.1 2017/06/29 14:35:10 ajacoutot Exp $
+
++-------------------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-------------------------------------------------------------------------------
+
+Configuring google_compute_engine scripts to run at boot
+========================================================
+
+The rc.d(8) scripts are not enabled by default, you can enable them using the
+following command as root:
+
+	rcctl enable google_compute_engine
