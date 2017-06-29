@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.215 2017/04/17 10:24:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.216 2017/06/29 08:38:36 ajacoutot Exp $
 
 COMMENT=		powerful desktop search tool and indexer
 
 GNOME_PROJECT=		tracker
-GNOME_VERSION=		1.12.0
+GNOME_VERSION=		1.12.1
 
 # there is already audio/tracker, so this port has to live
 # as meta-tracker
@@ -20,10 +20,10 @@ SUBST_VARS=		TRACKER_API
 
 SHARED_LIBS +=  tracker-common       3.3      # unknown
 SHARED_LIBS +=  tracker-data         3.3      # unknown
-SHARED_LIBS +=  tracker-sparql-1.0   1.2      # 1200.0
+SHARED_LIBS +=  tracker-sparql-1.0   1.2      # 1201.0
 SHARED_LIBS +=  tracker-extract      0.1      # unknown
-SHARED_LIBS +=  tracker-miner-1.0    1.1      # 1200.0
-SHARED_LIBS +=  tracker-control-1.0  1.1      # 1200.0
+SHARED_LIBS +=  tracker-miner-1.0    1.1      # 1201.0
+SHARED_LIBS +=  tracker-control-1.0  1.1      # 1201.0
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
