@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2017/05/17 13:30:05 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.14 2017/06/29 12:00:38 landry Exp $
 @newgroup _rspamd:756
 @newuser _rspamd:756:_rspamd:daemon:Rspamd Account:/nonexistent:/sbin/nologin
 @bin bin/rspamadm
@@ -36,6 +36,8 @@ share/examples/rspamd/modules.d/
 @sample ${SYSCONFDIR}/rspamd/modules.d/
 share/examples/rspamd/modules.d/antivirus.conf
 @sample ${SYSCONFDIR}/rspamd/modules.d/antivirus.conf
+share/examples/rspamd/modules.d/arc.conf
+@sample ${SYSCONFDIR}/rspamd/modules.d/arc.conf
 share/examples/rspamd/modules.d/asn.conf
 @sample ${SYSCONFDIR}/rspamd/modules.d/asn.conf
 share/examples/rspamd/modules.d/chartable.conf
@@ -76,6 +78,8 @@ share/examples/rspamd/modules.d/metric_exporter.conf
 @sample ${SYSCONFDIR}/rspamd/modules.d/metric_exporter.conf
 share/examples/rspamd/modules.d/mid.conf
 @sample ${SYSCONFDIR}/rspamd/modules.d/mid.conf
+share/examples/rspamd/modules.d/milter_headers.conf
+@sample ${SYSCONFDIR}/rspamd/modules.d/milter_headers.conf
 share/examples/rspamd/modules.d/mime_types.conf
 @sample ${SYSCONFDIR}/rspamd/modules.d/mime_types.conf
 share/examples/rspamd/modules.d/multimap.conf
@@ -96,12 +100,12 @@ share/examples/rspamd/modules.d/regexp.conf
 @sample ${SYSCONFDIR}/rspamd/modules.d/regexp.conf
 share/examples/rspamd/modules.d/replies.conf
 @sample ${SYSCONFDIR}/rspamd/modules.d/replies.conf
-share/examples/rspamd/modules.d/rmilter_headers.conf
-@sample ${SYSCONFDIR}/rspamd/modules.d/rmilter_headers.conf
 share/examples/rspamd/modules.d/rspamd_update.conf
 @sample ${SYSCONFDIR}/rspamd/modules.d/rspamd_update.conf
 share/examples/rspamd/modules.d/spamassassin.conf
 @sample ${SYSCONFDIR}/rspamd/modules.d/spamassassin.conf
+share/examples/rspamd/modules.d/spamtrap.conf
+@sample ${SYSCONFDIR}/rspamd/modules.d/spamtrap.conf
 share/examples/rspamd/modules.d/spf.conf
 @sample ${SYSCONFDIR}/rspamd/modules.d/spf.conf
 share/examples/rspamd/modules.d/surbl.conf
@@ -136,11 +140,24 @@ share/examples/rspamd/worker-fuzzy.inc
 @sample ${SYSCONFDIR}/rspamd/worker-fuzzy.inc
 share/examples/rspamd/worker-normal.inc
 @sample ${SYSCONFDIR}/rspamd/worker-normal.inc
+share/examples/rspamd/worker-proxy.inc
+@sample ${SYSCONFDIR}/rspamd/worker-proxy.inc
 share/rspamd/
 share/rspamd/effective_tld_names.dat
+share/rspamd/lib/
+share/rspamd/lib/auth_results.lua
+share/rspamd/lib/dkim_sign_tools.lua
+share/rspamd/lib/fun.lua
+share/rspamd/lib/global_functions.lua
+share/rspamd/lib/lua_redis.lua
+share/rspamd/lib/lua_util.lua
+share/rspamd/lib/maps.lua
+share/rspamd/lib/meta_functions.lua
 share/rspamd/lua/
 share/rspamd/lua/antivirus.lua
+share/rspamd/lua/arc.lua
 share/rspamd/lua/asn.lua
+share/rspamd/lua/bayes_expiry.lua
 share/rspamd/lua/clickhouse.lua
 share/rspamd/lua/dcc.lua
 share/rspamd/lua/dkim_signing.lua
@@ -152,7 +169,6 @@ share/rspamd/lua/fann_redis.lua
 share/rspamd/lua/fann_scores.lua
 share/rspamd/lua/force_actions.lua
 share/rspamd/lua/forged_recipients.lua
-share/rspamd/lua/fun.lua
 share/rspamd/lua/fuzzy_collect.lua
 share/rspamd/lua/greylist.lua
 share/rspamd/lua/hfilter.lua
@@ -162,6 +178,7 @@ share/rspamd/lua/maillist.lua
 share/rspamd/lua/metadata_exporter.lua
 share/rspamd/lua/metric_exporter.lua
 share/rspamd/lua/mid.lua
+share/rspamd/lua/milter_headers.lua
 share/rspamd/lua/mime_types.lua
 share/rspamd/lua/multimap.lua
 share/rspamd/lua/mx_check.lua
@@ -170,10 +187,10 @@ share/rspamd/lua/phishing.lua
 share/rspamd/lua/ratelimit.lua
 share/rspamd/lua/rbl.lua
 share/rspamd/lua/replies.lua
-share/rspamd/lua/rmilter_headers.lua
 share/rspamd/lua/rspamd_update.lua
 share/rspamd/lua/settings.lua
 share/rspamd/lua/spamassassin.lua
+share/rspamd/lua/spamtrap.lua
 share/rspamd/lua/trie.lua
 share/rspamd/lua/url_redirector.lua
 share/rspamd/lua/url_reputation.lua
@@ -181,7 +198,6 @@ share/rspamd/lua/url_tags.lua
 share/rspamd/lua/whitelist.lua
 share/rspamd/rules/
 share/rspamd/rules/forwarding.lua
-share/rspamd/rules/global_functions.lua
 share/rspamd/rules/headers_checks.lua
 share/rspamd/rules/html.lua
 share/rspamd/rules/http_headers.lua

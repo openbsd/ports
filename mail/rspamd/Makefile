@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.37 2017/05/28 09:35:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.38 2017/06/29 12:00:38 landry Exp $
 
 COMMENT=	event-driven spam filtering system in C/Lua
 
 GH_ACCOUNT=	vstakhov
 GH_PROJECT=	rspamd
-GH_TAGNAME=	1.5.8
+GH_TAGNAME=	1.6.1
 
 CATEGORIES=	mail
 
@@ -13,7 +13,7 @@ HOMEPAGE=	https://rspamd.com/
 # Apache License 2.0
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c crypto event fann gd glib-2.0 gthread-2.0 icudata icui18n icuuc
+WANTLIB += c crypto event fann glib-2.0 gthread-2.0 icudata icui18n icuuc
 WANTLIB += intl luajit-5.1 m magic pcre pthread sqlite3 ssl
 
 MODULES=	devel/cmake
@@ -22,7 +22,6 @@ LIB_DEPENDS=	databases/sqlite3 \
 		devel/gettext \
 		devel/glib2 \
 		devel/pcre \
-		graphics/gd \
 		lang/luajit \
 		math/fann \
 		textproc/icu4c
