@@ -1,0 +1,302 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2017/06/29 15:56:14 bcallah Exp $
+
+Enable compiler on OpenBSD.
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -2371,10 +2371,6 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
+ 
+ 
+ 
+-# Check whether $1 is in dl.
+-
+-
+-
+ #
+ # Platform ids.
+ #
+@@ -2593,11 +2589,11 @@ $as_echo "netbsd" >&6; }
+ 
+ $as_echo "#define HAVE_OPENBSD 1" >>confdefs.h
+ 
+-  { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: configuring interpreter-only on OpenBSD" >&5
+-$as_echo "$as_me: WARNING: configuring interpreter-only on OpenBSD" >&2;}
++
++$as_echo "#define HAVE_IEEE_754 1" >>confdefs.h
++
+   { $as_echo "$as_me:${as_lineno-$LINENO}: result: openbsd" >&5
+ $as_echo "openbsd" >&6; }
+-  enable_compiler=no
+   ;;
+ #
+ # Others, untested.
+@@ -2695,7 +2691,7 @@ fi
+ 
+ { $as_echo "$as_me:${as_lineno-$LINENO}: initialising..." >&5
+ $as_echo "$as_me: initialising..." >&6;}
+-am__api_version='1.14'
++am__api_version='1.15'
+ 
+ # Find a good install program.  We prefer a C program (faster),
+ # so one script is as good as another.  But avoid the broken or
+@@ -2867,8 +2863,8 @@ test "$program_suffix" != NONE &&
+ ac_script='s/[\\$]/&&/g;s/;s,x,x,$//'
+ program_transform_name=`$as_echo "$program_transform_name" | sed "$ac_script"`
+ 
+-# expand $ac_aux_dir to an absolute path
+-am_aux_dir=`cd $ac_aux_dir && pwd`
++# Expand $ac_aux_dir to an absolute path.
++am_aux_dir=`cd "$ac_aux_dir" && pwd`
+ 
+ if test x"${MISSING+set}" != xset; then
+   case $am_aux_dir in
+@@ -2887,7 +2883,7 @@ else
+ $as_echo "$as_me: WARNING: 'missing' script is too old or missing" >&2;}
+ fi
+ 
+-if test x"${install_sh}" != xset; then
++if test x"${install_sh+set}" != xset; then
+   case $am_aux_dir in
+   *\ * | *\	*)
+     install_sh="\${SHELL} '$am_aux_dir/install-sh'" ;;
+@@ -3215,8 +3211,8 @@ MAKEINFO=${MAKEINFO-"${am_missing_run}makeinfo"}
+ # <http://lists.gnu.org/archive/html/automake/2012-07/msg00014.html>
+ mkdir_p='$(MKDIR_P)'
+ 
+-# We need awk for the "check" target.  The system "awk" is bad on
+-# some platforms.
++# We need awk for the "check" target (and possibly the TAP driver).  The
++# system "awk" is bad on some platforms.
+ # Always define AMTAR for backward compatibility.  Yes, it's still used
+ # in the wild :-(  We should find a proper way to deprecate it ...
+ AMTAR='$${TAR-tar}'
+@@ -3275,6 +3271,7 @@ END
+ fi
+ 
+ 
++
+ ac_config_headers="$ac_config_headers source/a68g-config.h"
+ 
+ 
+@@ -18570,220 +18567,6 @@ fi
+ 
+ done
+ 
+-  ac_fn_c_check_decl "$LINENO" "dlopen" "ac_cv_have_decl_dlopen" "
+-#include <dlfcn.h>
+-
+-"
+-if test "x$ac_cv_have_decl_dlopen" = xyes; then :
+-
+-else
+-  enable_compiler=no
+-fi
+-
+-  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for dlopen in -ldl" >&5
+-$as_echo_n "checking for dlopen in -ldl... " >&6; }
+-if ${ac_cv_lib_dl_dlopen+:} false; then :
+-  $as_echo_n "(cached) " >&6
+-else
+-  ac_check_lib_save_LIBS=$LIBS
+-LIBS="-ldl  $LIBS"
+-cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+-/* end confdefs.h.  */
+-
+-/* Override any GCC internal prototype to avoid an error.
+-   Use char because int might match the return type of a GCC
+-   builtin and then its argument prototype would still apply.  */
+-#ifdef __cplusplus
+-extern "C"
+-#endif
+-char dlopen ();
+-int
+-main ()
+-{
+-return dlopen ();
+-  ;
+-  return 0;
+-}
+-_ACEOF
+-if ac_fn_c_try_link "$LINENO"; then :
+-  ac_cv_lib_dl_dlopen=yes
+-else
+-  ac_cv_lib_dl_dlopen=no
+-fi
+-rm -f core conftest.err conftest.$ac_objext \
+-    conftest$ac_exeext conftest.$ac_ext
+-LIBS=$ac_check_lib_save_LIBS
+-fi
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_dl_dlopen" >&5
+-$as_echo "$ac_cv_lib_dl_dlopen" >&6; }
+-if test "x$ac_cv_lib_dl_dlopen" = xyes; then :
+-  a68g_unexpected=yes
+-else
+-  enable_compiler=no
+-fi
+-
+-
+-  if test "x$enable_compiler" = "xyes"; then
+-    ac_fn_c_check_decl "$LINENO" "dlsym" "ac_cv_have_decl_dlsym" "
+-#include <dlfcn.h>
+-
+-"
+-if test "x$ac_cv_have_decl_dlsym" = xyes; then :
+-
+-else
+-  enable_compiler=no
+-fi
+-
+-  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for dlsym in -ldl" >&5
+-$as_echo_n "checking for dlsym in -ldl... " >&6; }
+-if ${ac_cv_lib_dl_dlsym+:} false; then :
+-  $as_echo_n "(cached) " >&6
+-else
+-  ac_check_lib_save_LIBS=$LIBS
+-LIBS="-ldl  $LIBS"
+-cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+-/* end confdefs.h.  */
+-
+-/* Override any GCC internal prototype to avoid an error.
+-   Use char because int might match the return type of a GCC
+-   builtin and then its argument prototype would still apply.  */
+-#ifdef __cplusplus
+-extern "C"
+-#endif
+-char dlsym ();
+-int
+-main ()
+-{
+-return dlsym ();
+-  ;
+-  return 0;
+-}
+-_ACEOF
+-if ac_fn_c_try_link "$LINENO"; then :
+-  ac_cv_lib_dl_dlsym=yes
+-else
+-  ac_cv_lib_dl_dlsym=no
+-fi
+-rm -f core conftest.err conftest.$ac_objext \
+-    conftest$ac_exeext conftest.$ac_ext
+-LIBS=$ac_check_lib_save_LIBS
+-fi
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_dl_dlsym" >&5
+-$as_echo "$ac_cv_lib_dl_dlsym" >&6; }
+-if test "x$ac_cv_lib_dl_dlsym" = xyes; then :
+-  a68g_unexpected=yes
+-else
+-  enable_compiler=no
+-fi
+-
+-
+-    ac_fn_c_check_decl "$LINENO" "dlerror" "ac_cv_have_decl_dlerror" "
+-#include <dlfcn.h>
+-
+-"
+-if test "x$ac_cv_have_decl_dlerror" = xyes; then :
+-
+-else
+-  enable_compiler=no
+-fi
+-
+-  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for dlerror in -ldl" >&5
+-$as_echo_n "checking for dlerror in -ldl... " >&6; }
+-if ${ac_cv_lib_dl_dlerror+:} false; then :
+-  $as_echo_n "(cached) " >&6
+-else
+-  ac_check_lib_save_LIBS=$LIBS
+-LIBS="-ldl  $LIBS"
+-cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+-/* end confdefs.h.  */
+-
+-/* Override any GCC internal prototype to avoid an error.
+-   Use char because int might match the return type of a GCC
+-   builtin and then its argument prototype would still apply.  */
+-#ifdef __cplusplus
+-extern "C"
+-#endif
+-char dlerror ();
+-int
+-main ()
+-{
+-return dlerror ();
+-  ;
+-  return 0;
+-}
+-_ACEOF
+-if ac_fn_c_try_link "$LINENO"; then :
+-  ac_cv_lib_dl_dlerror=yes
+-else
+-  ac_cv_lib_dl_dlerror=no
+-fi
+-rm -f core conftest.err conftest.$ac_objext \
+-    conftest$ac_exeext conftest.$ac_ext
+-LIBS=$ac_check_lib_save_LIBS
+-fi
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_dl_dlerror" >&5
+-$as_echo "$ac_cv_lib_dl_dlerror" >&6; }
+-if test "x$ac_cv_lib_dl_dlerror" = xyes; then :
+-  a68g_unexpected=yes
+-else
+-  enable_compiler=no
+-fi
+-
+-
+-    ac_fn_c_check_decl "$LINENO" "dlclose" "ac_cv_have_decl_dlclose" "
+-#include <dlfcn.h>
+-
+-"
+-if test "x$ac_cv_have_decl_dlclose" = xyes; then :
+-
+-else
+-  enable_compiler=no
+-fi
+-
+-  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for dlclose in -ldl" >&5
+-$as_echo_n "checking for dlclose in -ldl... " >&6; }
+-if ${ac_cv_lib_dl_dlclose+:} false; then :
+-  $as_echo_n "(cached) " >&6
+-else
+-  ac_check_lib_save_LIBS=$LIBS
+-LIBS="-ldl  $LIBS"
+-cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+-/* end confdefs.h.  */
+-
+-/* Override any GCC internal prototype to avoid an error.
+-   Use char because int might match the return type of a GCC
+-   builtin and then its argument prototype would still apply.  */
+-#ifdef __cplusplus
+-extern "C"
+-#endif
+-char dlclose ();
+-int
+-main ()
+-{
+-return dlclose ();
+-  ;
+-  return 0;
+-}
+-_ACEOF
+-if ac_fn_c_try_link "$LINENO"; then :
+-  ac_cv_lib_dl_dlclose=yes
+-else
+-  ac_cv_lib_dl_dlclose=no
+-fi
+-rm -f core conftest.err conftest.$ac_objext \
+-    conftest$ac_exeext conftest.$ac_ext
+-LIBS=$ac_check_lib_save_LIBS
+-fi
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_dl_dlclose" >&5
+-$as_echo "$ac_cv_lib_dl_dlclose" >&6; }
+-if test "x$ac_cv_lib_dl_dlclose" = xyes; then :
+-  a68g_unexpected=yes
+-else
+-  enable_compiler=no
+-fi
+-
+-
+-  fi
+   if test "x$enable_compiler" = "xyes"; then
+     { $as_echo "$as_me:${as_lineno-$LINENO}: checking for dlopen in -ldl" >&5
+ $as_echo_n "checking for dlopen in -ldl... " >&6; }

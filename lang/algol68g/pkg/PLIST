@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/06/29 15:56:14 bcallah Exp $
+@bin bin/a68g
+include/algol68g/
+include/algol68g/a68g-config.h
+include/algol68g/a68g.h
+@man man/man1/a68g.1
+share/doc/algol68g/
+share/doc/algol68g/AUTHORS
+share/doc/algol68g/COPYING
+share/doc/algol68g/NEWS
+share/doc/algol68g/README

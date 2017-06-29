@@ -1,0 +1,6 @@
+The Algol 68 Genie project preserves and promotes Algol 68 out of
+educational as well as scientific-historical interest, by making
+available a recent checkout compiler-interpreter written from scratch
+together with extensive documentation for both the language and this new
+implementation. Algol 68 Genie is a fast compiler-interpreter which
+ranks among the most complete implementations of the language.
