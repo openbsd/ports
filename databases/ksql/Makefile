@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2016/09/23 09:16:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2017/06/29 13:41:50 jturner Exp $
 
 COMMENT =		yet another SQLite wrapper
 
-DISTNAME =		ksql-0.0.9
-REVISION =		0
+DISTNAME =		ksql-0.1.2
 CATEGORIES =		databases
 
 MAINTAINER =		James Turner <james@calminferno.net>
@@ -16,13 +15,11 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 # not directly linked to this static lib, but depends on API
 LIB_DEPENDS =		databases/sqlite3
-WANTLIB =		sqlite3
 
-NO_CONFIGURE =		Yes
+CONFIGURE_STYLE =	simple
+CONFIGURE_ARGS =	PREFIX="${WRKINST}${PREFIX}" CPPFLAGS="-I${LOCALBASE}/include"
 
 ALL_TARGET =		libksql.a
-
-MAKE_FLAGS =		CPPFLAGS="-I${LOCALBASE}/include"
 
 NO_TEST =		Yes
 
