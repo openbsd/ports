@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.37 2017/03/03 09:29:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2017/06/29 13:59:03 jca Exp $
 
 COMMENT=		error codes for GnuPG related software
 
 DISTNAME=		libgpg-error-1.27
+REVISION=		0
 CATEGORIES=		security devel
 EXTRACT_SUFX=		.tar.bz2
 

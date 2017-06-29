@@ -1,0 +1,17 @@
+$OpenBSD: patch-doc_gpgrt_info,v 1.1 2017/06/29 13:59:03 jca Exp $
+
+install-info --delete needs a dir entry that matches the .info file
+name.
+
+Index: doc/gpgrt.info
+--- doc/gpgrt.info.orig
++++ doc/gpgrt.info
+@@ -13,7 +13,7 @@ Copyright (C) 2014 g10 Code GmbH
+      License".
+ INFO-DIR-SECTION Libraries
+ START-INFO-DIR-ENTRY
+-* libgpg-error: (gnupg).   Error codes and common code for GnuPG.
++* libgpg-error: (gpgrt).   Error codes and common code for GnuPG.
+ END-INFO-DIR-ENTRY
+ 
+ 
