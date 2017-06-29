@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.31 2017/06/29 01:42:27 jca Exp $
+# $OpenBSD: Makefile,v 1.32 2017/06/29 08:40:38 ajacoutot Exp $
 
 COMMENT=	library to determine file type
 
 # update devel/py-libmagic in sync with this
 V=		5.31
-REVISION=	0
+REVISION=	1
 DISTNAME=	file-${V}
 PKGNAME=	libmagic-${V}
 

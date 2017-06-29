@@ -1,4 +1,4 @@
-libmagic is a library to which attempts to classify files. There ar
+libmagic is a library which attempts to classify files. There are
 three sets of tests, performed in the following order:
 
 - filesystem tests
