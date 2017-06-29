@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.327 2017/06/26 17:16:30 robert Exp $
+# $OpenBSD: Makefile,v 1.328 2017/06/29 19:00:28 robert Exp $
 
 USE_WXNEEDED=		Yes
 
@@ -7,11 +7,10 @@ DPB_PROPERTIES=		parallel
 
 COMMENT=		Chromium browser
 
-V=			59.0.3071.109
-REVISION=		0
+V=			59.0.3071.115
 
 DISTNAME=		chromium-${V}
-DISTFILES=		${DISTNAME}${EXTRACT_SUFX}
+DISTFILES=		${DISTNAME}-unofficial${EXTRACT_SUFX}
 
 CATEGORIES=		www
 
@@ -28,8 +27,8 @@ FLAVOR?=
 PERMIT_PACKAGE_CDROM=	patents
 PERMIT_PACKAGE_FTP =	Yes
 
-MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/
-MASTER_SITES0=	http://nerd.hu/distfiles/
+MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/ \
+		http://nerd.hu/distfiles/
 
 MODULES=	lang/python
 
