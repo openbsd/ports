@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2015/09/20 20:55:07 kili Exp $
+@comment $OpenBSD: PLIST,v 1.12 2017/06/30 13:49:09 dcoppa Exp $
 @bin bin/Canonicalise
 @bin bin/CanonicaliseLazy
 @bin bin/DtdToHaskell
@@ -85,6 +85,8 @@ lib/ghc/${DISTNAME}/Text/XML/HaXml/Validate.hi
 lib/ghc/${DISTNAME}/Text/XML/HaXml/Validate.p_hi
 lib/ghc/${DISTNAME}/Text/XML/HaXml/Verbatim.hi
 lib/ghc/${DISTNAME}/Text/XML/HaXml/Verbatim.p_hi
+lib/ghc/${DISTNAME}/Text/XML/HaXml/Version.hi
+lib/ghc/${DISTNAME}/Text/XML/HaXml/Version.p_hi
 lib/ghc/${DISTNAME}/Text/XML/HaXml/Wrappers.hi
 lib/ghc/${DISTNAME}/Text/XML/HaXml/Wrappers.p_hi
 lib/ghc/${DISTNAME}/Text/XML/HaXml/XmlContent/
@@ -142,6 +144,7 @@ share/doc/hs-${DISTNAME}/html/Text-XML-HaXml-Types.html
 share/doc/hs-${DISTNAME}/html/Text-XML-HaXml-Util.html
 share/doc/hs-${DISTNAME}/html/Text-XML-HaXml-Validate.html
 share/doc/hs-${DISTNAME}/html/Text-XML-HaXml-Verbatim.html
+share/doc/hs-${DISTNAME}/html/Text-XML-HaXml-Version.html
 share/doc/hs-${DISTNAME}/html/Text-XML-HaXml-Wrappers.html
 share/doc/hs-${DISTNAME}/html/Text-XML-HaXml-XmlContent-Haskell.html
 share/doc/hs-${DISTNAME}/html/Text-XML-HaXml-XmlContent-Parser.html
@@ -222,6 +225,7 @@ share/doc/hs-${DISTNAME}/html/mini_Text-XML-HaXml-Types.html
 share/doc/hs-${DISTNAME}/html/mini_Text-XML-HaXml-Util.html
 share/doc/hs-${DISTNAME}/html/mini_Text-XML-HaXml-Validate.html
 share/doc/hs-${DISTNAME}/html/mini_Text-XML-HaXml-Verbatim.html
+share/doc/hs-${DISTNAME}/html/mini_Text-XML-HaXml-Version.html
 share/doc/hs-${DISTNAME}/html/mini_Text-XML-HaXml-Wrappers.html
 share/doc/hs-${DISTNAME}/html/mini_Text-XML-HaXml-XmlContent-Haskell.html
 share/doc/hs-${DISTNAME}/html/mini_Text-XML-HaXml-XmlContent-Parser.html
