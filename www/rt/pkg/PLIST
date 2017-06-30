@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2015/10/14 17:45:44 robert Exp $
+@comment $OpenBSD: PLIST,v 1.20 2017/06/30 16:43:53 pirofti Exp $
 bin/rt
 bin/rt-crontool
 bin/rt-mailgate
@@ -8,6 +8,7 @@ libdata/perl5/site_perl/RT/ACE.pm
 libdata/perl5/site_perl/RT/ACL.pm
 libdata/perl5/site_perl/RT/Action/
 libdata/perl5/site_perl/RT/Action.pm
+libdata/perl5/site_perl/RT/Action/AddPriority.pm
 libdata/perl5/site_perl/RT/Action/AutoOpen.pm
 libdata/perl5/site_perl/RT/Action/AutoOpenInactive.pm
 libdata/perl5/site_perl/RT/Action/Autoreply.pm
@@ -23,10 +24,15 @@ libdata/perl5/site_perl/RT/Action/NotifyOwnerOrAdminCc.pm
 libdata/perl5/site_perl/RT/Action/OpenOnStarted.pm
 libdata/perl5/site_perl/RT/Action/RecordComment.pm
 libdata/perl5/site_perl/RT/Action/RecordCorrespondence.pm
+libdata/perl5/site_perl/RT/Action/SLA.pm
+libdata/perl5/site_perl/RT/Action/SLA_SetDue.pm
+libdata/perl5/site_perl/RT/Action/SLA_SetStarts.pm
 libdata/perl5/site_perl/RT/Action/SendEmail.pm
 libdata/perl5/site_perl/RT/Action/SendForward.pm
 libdata/perl5/site_perl/RT/Action/SetPriority.pm
 libdata/perl5/site_perl/RT/Action/SetStatus.pm
+libdata/perl5/site_perl/RT/Action/UpdateParentTimeWorked.pm
+libdata/perl5/site_perl/RT/Action/UpdateUserTimeWorked.pm
 libdata/perl5/site_perl/RT/Action/UserDefined.pm
 libdata/perl5/site_perl/RT/Approval/
 libdata/perl5/site_perl/RT/Approval.pm
@@ -38,13 +44,24 @@ libdata/perl5/site_perl/RT/Approval/Rule/Passed.pm
 libdata/perl5/site_perl/RT/Approval/Rule/Rejected.pm
 libdata/perl5/site_perl/RT/Article.pm
 libdata/perl5/site_perl/RT/Articles.pm
+libdata/perl5/site_perl/RT/Asset.pm
+libdata/perl5/site_perl/RT/Assets.pm
 libdata/perl5/site_perl/RT/Attachment.pm
 libdata/perl5/site_perl/RT/Attachments.pm
 libdata/perl5/site_perl/RT/Attribute.pm
 libdata/perl5/site_perl/RT/Attributes.pm
+libdata/perl5/site_perl/RT/Authen/
+libdata/perl5/site_perl/RT/Authen/ExternalAuth/
+libdata/perl5/site_perl/RT/Authen/ExternalAuth.pm
+libdata/perl5/site_perl/RT/Authen/ExternalAuth/DBI/
+libdata/perl5/site_perl/RT/Authen/ExternalAuth/DBI.pm
+libdata/perl5/site_perl/RT/Authen/ExternalAuth/DBI/Cookie.pm
+libdata/perl5/site_perl/RT/Authen/ExternalAuth/LDAP.pm
 libdata/perl5/site_perl/RT/Base.pm
 libdata/perl5/site_perl/RT/CachedGroupMember.pm
 libdata/perl5/site_perl/RT/CachedGroupMembers.pm
+libdata/perl5/site_perl/RT/Catalog.pm
+libdata/perl5/site_perl/RT/Catalogs.pm
 libdata/perl5/site_perl/RT/Class.pm
 libdata/perl5/site_perl/RT/Classes.pm
 libdata/perl5/site_perl/RT/Condition/
@@ -58,7 +75,11 @@ libdata/perl5/site_perl/RT/Condition/PriorityChange.pm
 libdata/perl5/site_perl/RT/Condition/PriorityExceeds.pm
 libdata/perl5/site_perl/RT/Condition/QueueChange.pm
 libdata/perl5/site_perl/RT/Condition/ReopenTicket.pm
+libdata/perl5/site_perl/RT/Condition/SLA.pm
+libdata/perl5/site_perl/RT/Condition/SLA_RequireDueSet.pm
+libdata/perl5/site_perl/RT/Condition/SLA_RequireStartsSet.pm
 libdata/perl5/site_perl/RT/Condition/StatusChange.pm
+libdata/perl5/site_perl/RT/Condition/TimeWorkedChange.pm
 libdata/perl5/site_perl/RT/Condition/UserDefined.pm
 libdata/perl5/site_perl/RT/Config.pm
 libdata/perl5/site_perl/RT/Crypt/
@@ -76,6 +97,8 @@ libdata/perl5/site_perl/RT/CustomFieldValues.pm
 libdata/perl5/site_perl/RT/CustomFieldValues/External.pm
 libdata/perl5/site_perl/RT/CustomFieldValues/Groups.pm
 libdata/perl5/site_perl/RT/CustomFields.pm
+libdata/perl5/site_perl/RT/CustomRole.pm
+libdata/perl5/site_perl/RT/CustomRoles.pm
 libdata/perl5/site_perl/RT/Dashboard/
 libdata/perl5/site_perl/RT/Dashboard.pm
 libdata/perl5/site_perl/RT/Dashboard/Mailer.pm
@@ -85,6 +108,12 @@ libdata/perl5/site_perl/RT/DependencyWalker/
 libdata/perl5/site_perl/RT/DependencyWalker.pm
 libdata/perl5/site_perl/RT/DependencyWalker/FindDependencies.pm
 libdata/perl5/site_perl/RT/EmailParser.pm
+libdata/perl5/site_perl/RT/ExternalStorage/
+libdata/perl5/site_perl/RT/ExternalStorage.pm
+libdata/perl5/site_perl/RT/ExternalStorage/AmazonS3.pm
+libdata/perl5/site_perl/RT/ExternalStorage/Backend.pm
+libdata/perl5/site_perl/RT/ExternalStorage/Disk.pm
+libdata/perl5/site_perl/RT/ExternalStorage/Dropbox.pm
 libdata/perl5/site_perl/RT/Generated.pm
 libdata/perl5/site_perl/RT/Generated.pm.in
 libdata/perl5/site_perl/RT/Graph/
@@ -106,9 +135,17 @@ libdata/perl5/site_perl/RT/Interface/
 libdata/perl5/site_perl/RT/Interface/CLI.pm
 libdata/perl5/site_perl/RT/Interface/Email/
 libdata/perl5/site_perl/RT/Interface/Email.pm
+libdata/perl5/site_perl/RT/Interface/Email/Action/
+libdata/perl5/site_perl/RT/Interface/Email/Action/Defaults.pm
+libdata/perl5/site_perl/RT/Interface/Email/Action/Resolve.pm
+libdata/perl5/site_perl/RT/Interface/Email/Action/Take.pm
 libdata/perl5/site_perl/RT/Interface/Email/Auth/
-libdata/perl5/site_perl/RT/Interface/Email/Auth/Crypt.pm
 libdata/perl5/site_perl/RT/Interface/Email/Auth/MailFrom.pm
+libdata/perl5/site_perl/RT/Interface/Email/Authz/
+libdata/perl5/site_perl/RT/Interface/Email/Authz/Default.pm
+libdata/perl5/site_perl/RT/Interface/Email/Authz/RequireEncrypted.pm
+libdata/perl5/site_perl/RT/Interface/Email/Crypt.pm
+libdata/perl5/site_perl/RT/Interface/Email/Role.pm
 libdata/perl5/site_perl/RT/Interface/REST.pm
 libdata/perl5/site_perl/RT/Interface/Web/
 libdata/perl5/site_perl/RT/Interface/Web.pm
@@ -121,8 +158,10 @@ libdata/perl5/site_perl/RT/Interface/Web/QueryBuilder.pm
 libdata/perl5/site_perl/RT/Interface/Web/QueryBuilder/Tree.pm
 libdata/perl5/site_perl/RT/Interface/Web/Request.pm
 libdata/perl5/site_perl/RT/Interface/Web/Session.pm
+libdata/perl5/site_perl/RT/LDAPImport.pm
 libdata/perl5/site_perl/RT/Lifecycle/
 libdata/perl5/site_perl/RT/Lifecycle.pm
+libdata/perl5/site_perl/RT/Lifecycle/Asset.pm
 libdata/perl5/site_perl/RT/Lifecycle/Ticket.pm
 libdata/perl5/site_perl/RT/Link.pm
 libdata/perl5/site_perl/RT/Links.pm
@@ -143,6 +182,8 @@ libdata/perl5/site_perl/RT/ObjectCustomField.pm
 libdata/perl5/site_perl/RT/ObjectCustomFieldValue.pm
 libdata/perl5/site_perl/RT/ObjectCustomFieldValues.pm
 libdata/perl5/site_perl/RT/ObjectCustomFields.pm
+libdata/perl5/site_perl/RT/ObjectCustomRole.pm
+libdata/perl5/site_perl/RT/ObjectCustomRoles.pm
 libdata/perl5/site_perl/RT/ObjectScrip.pm
 libdata/perl5/site_perl/RT/ObjectScrips.pm
 libdata/perl5/site_perl/RT/ObjectTopic.pm
@@ -174,6 +215,7 @@ libdata/perl5/site_perl/RT/Report/Tickets.pm
 libdata/perl5/site_perl/RT/Report/Tickets/Entry.pm
 libdata/perl5/site_perl/RT/Rule.pm
 libdata/perl5/site_perl/RT/Ruleset.pm
+libdata/perl5/site_perl/RT/SLA.pm
 libdata/perl5/site_perl/RT/SQL.pm
 libdata/perl5/site_perl/RT/SavedSearch.pm
 libdata/perl5/site_perl/RT/SavedSearches.pm
@@ -215,7 +257,6 @@ libdata/perl5/site_perl/RT/Shredder/Plugin/SQLDump.pm
 libdata/perl5/site_perl/RT/Shredder/Plugin/Summary.pm
 libdata/perl5/site_perl/RT/Shredder/Plugin/Tickets.pm
 libdata/perl5/site_perl/RT/Shredder/Plugin/Users.pm
-libdata/perl5/site_perl/RT/Shredder/Record.pm
 libdata/perl5/site_perl/RT/Squish/
 libdata/perl5/site_perl/RT/Squish.pm
 libdata/perl5/site_perl/RT/Squish/CSS.pm
@@ -227,7 +268,9 @@ libdata/perl5/site_perl/RT/Templates.pm
 libdata/perl5/site_perl/RT/Test/
 libdata/perl5/site_perl/RT/Test.pm
 libdata/perl5/site_perl/RT/Test/Apache.pm
+libdata/perl5/site_perl/RT/Test/Assets.pm
 libdata/perl5/site_perl/RT/Test/Email.pm
+libdata/perl5/site_perl/RT/Test/ExternalStorage.pm
 libdata/perl5/site_perl/RT/Test/GnuPG.pm
 libdata/perl5/site_perl/RT/Test/SMIME.pm
 libdata/perl5/site_perl/RT/Test/Shredder.pm
@@ -241,6 +284,7 @@ libdata/perl5/site_perl/RT/Transactions.pm
 libdata/perl5/site_perl/RT/URI/
 libdata/perl5/site_perl/RT/URI.pm
 libdata/perl5/site_perl/RT/URI/a.pm
+libdata/perl5/site_perl/RT/URI/asset.pm
 libdata/perl5/site_perl/RT/URI/base.pm
 libdata/perl5/site_perl/RT/URI/fsck_com_article.pm
 libdata/perl5/site_perl/RT/URI/fsck_com_rt.pm
@@ -254,8 +298,10 @@ sbin/rt-dump-metadata
 sbin/rt-email-dashboards
 sbin/rt-email-digest
 sbin/rt-email-group-admin
+sbin/rt-externalize-attachments
 sbin/rt-fulltext-indexer
 sbin/rt-importer
+sbin/rt-ldapimport
 sbin/rt-preferences-viewer
 sbin/rt-serializer
 sbin/rt-server
@@ -279,7 +325,9 @@ share/doc/rt3/UPGRADING-3.6
 share/doc/rt3/UPGRADING-3.8
 share/doc/rt3/UPGRADING-4.0
 share/doc/rt3/UPGRADING-4.2
+share/doc/rt3/UPGRADING-4.4
 share/doc/rt3/UPGRADING.mysql
+share/doc/rt3/assets.pod
 share/doc/rt3/authentication.pod
 share/doc/rt3/automating_rt.pod
 share/doc/rt3/backups.pod
@@ -287,27 +335,42 @@ share/doc/rt3/charts.pod
 share/doc/rt3/customizing/
 share/doc/rt3/customizing/approvals.pod
 share/doc/rt3/customizing/articles_introduction.pod
+share/doc/rt3/customizing/assets/
+share/doc/rt3/customizing/assets/tutorial.pod
+share/doc/rt3/customizing/assets/tutorialdata
 share/doc/rt3/customizing/lifecycles.pod
 share/doc/rt3/customizing/search_result_columns.pod
+share/doc/rt3/customizing/sla.pod
 share/doc/rt3/customizing/styling_rt.pod
 share/doc/rt3/customizing/templates.pod
 share/doc/rt3/customizing/timezones_in_charts.pod
 share/doc/rt3/dashboards.pod
+share/doc/rt3/dashboards_reporting.pod
 share/doc/rt3/extending/
 share/doc/rt3/extending/clickable_links.pod
 share/doc/rt3/extending/external_custom_fields.pod
+share/doc/rt3/extending/mail_plugins.pod
 share/doc/rt3/extending/using_forms_widgets.pod
 share/doc/rt3/extensions.pod
+share/doc/rt3/format-strings.pod
 share/doc/rt3/full_text_indexing.pod
 share/doc/rt3/glossary.pod
 share/doc/rt3/hacking.pod
 share/doc/rt3/images/
 share/doc/rt3/images/action-decline.png
+share/doc/rt3/images/added-terms.png
+share/doc/rt3/images/advanced-search.png
+share/doc/rt3/images/complicated-search-arrows.png
+share/doc/rt3/images/current-search.png
 share/doc/rt3/images/customize-dashboards-menu.png
 share/doc/rt3/images/dashboard-chart.png
 share/doc/rt3/images/dashboard-content-invoices.png
+share/doc/rt3/images/dashboard-content.png
 share/doc/rt3/images/dashboard-search-sorting.png
 share/doc/rt3/images/dashboard-subscription.png
+share/doc/rt3/images/dashboards-search-results.png
+share/doc/rt3/images/delete-term.png
+share/doc/rt3/images/deleted-term.png
 share/doc/rt3/images/general-owner-chart.png
 share/doc/rt3/images/general-owner-lastupdated-chart.png
 share/doc/rt3/images/general-status-chart.png
@@ -315,19 +378,31 @@ share/doc/rt3/images/global-lifecycle-group-rights.png
 share/doc/rt3/images/lifecycle-choices.png
 share/doc/rt3/images/order-history-example.png
 share/doc/rt3/images/queue-created-started-chart.png
+share/doc/rt3/images/saved-dashboard.png
+share/doc/rt3/images/search-arrows.png
+share/doc/rt3/images/search-criteria.png
+share/doc/rt3/images/search-results.png
+share/doc/rt3/images/sorting-display-columns.png
+share/doc/rt3/images/subscriptions.png
 share/doc/rt3/images/theme_editor_defaults.png
+share/doc/rt3/images/with-created-before.png
+share/doc/rt3/images/with-newline.png
+share/doc/rt3/images/without-newline.png
 share/doc/rt3/incremental-export/
 share/doc/rt3/incremental-export/README
 share/doc/rt3/incremental-export/Record_Local.pm
 share/doc/rt3/incremental-export/schema.mysql
 share/doc/rt3/initialdata.pod
 share/doc/rt3/network-diagram.svg
+share/doc/rt3/query_builder.pod
 share/doc/rt3/reminders.pod
 share/doc/rt3/reporting/
 share/doc/rt3/reporting/feeds.pod
 share/doc/rt3/rt_perl.pod
 share/doc/rt3/schema.dot
 share/doc/rt3/security.pod
+share/doc/rt3/subscriptions_feeds.pod
+share/doc/rt3/ticket_metadata.pod
 share/doc/rt3/web_deployment.pod
 share/doc/rt3/writing_extensions.pod
 share/doc/rt3/writing_portlets.pod
@@ -338,7 +413,6 @@ share/examples/rt3/
 share/examples/rt3/RT_Config.pm
 @mode 0600
 @sample ${SYSCONFDIR}/rt3/RT_Config.pm
-@mode
 @mode 0444
 share/examples/rt3/RT_SiteConfig.pm
 @mode 0600
@@ -413,6 +487,8 @@ share/examples/rt3/upgrade/3.3.0/acl.SQLite
 @sample ${SYSCONFDIR}/rt3/upgrade/3.3.0/acl.SQLite
 share/examples/rt3/upgrade/3.3.0/acl.mysql
 @sample ${SYSCONFDIR}/rt3/upgrade/3.3.0/acl.mysql
+share/examples/rt3/upgrade/3.3.0/indexes
+@sample ${SYSCONFDIR}/rt3/upgrade/3.3.0/indexes
 share/examples/rt3/upgrade/3.3.0/schema.Oracle
 @sample ${SYSCONFDIR}/rt3/upgrade/3.3.0/schema.Oracle
 share/examples/rt3/upgrade/3.3.0/schema.Pg
@@ -467,10 +543,8 @@ share/examples/rt3/upgrade/3.7.3/schema.mysql
 @sample ${SYSCONFDIR}/rt3/upgrade/3.7.3/schema.mysql
 share/examples/rt3/upgrade/3.7.81/
 @sample ${SYSCONFDIR}/rt3/upgrade/3.7.81/
-share/examples/rt3/upgrade/3.7.81/schema.Oracle
-@sample ${SYSCONFDIR}/rt3/upgrade/3.7.81/schema.Oracle
-share/examples/rt3/upgrade/3.7.81/schema.mysql
-@sample ${SYSCONFDIR}/rt3/upgrade/3.7.81/schema.mysql
+share/examples/rt3/upgrade/3.7.81/indexes
+@sample ${SYSCONFDIR}/rt3/upgrade/3.7.81/indexes
 share/examples/rt3/upgrade/3.7.82/
 @sample ${SYSCONFDIR}/rt3/upgrade/3.7.82/
 share/examples/rt3/upgrade/3.7.82/content
@@ -506,8 +580,8 @@ share/examples/rt3/upgrade/3.8.3/
 @sample ${SYSCONFDIR}/rt3/upgrade/3.8.3/
 share/examples/rt3/upgrade/3.8.3/content
 @sample ${SYSCONFDIR}/rt3/upgrade/3.8.3/content
-share/examples/rt3/upgrade/3.8.3/schema.Pg
-@sample ${SYSCONFDIR}/rt3/upgrade/3.8.3/schema.Pg
+share/examples/rt3/upgrade/3.8.3/indexes
+@sample ${SYSCONFDIR}/rt3/upgrade/3.8.3/indexes
 share/examples/rt3/upgrade/3.8.4/
 @sample ${SYSCONFDIR}/rt3/upgrade/3.8.4/
 share/examples/rt3/upgrade/3.8.4/content
@@ -849,6 +923,122 @@ share/examples/rt3/upgrade/4.2.8/
 @sample ${SYSCONFDIR}/rt3/upgrade/4.2.8/
 share/examples/rt3/upgrade/4.2.8/content
 @sample ${SYSCONFDIR}/rt3/upgrade/4.2.8/content
+share/examples/rt3/upgrade/4.3.0/
+@sample ${SYSCONFDIR}/rt3/upgrade/4.3.0/
+share/examples/rt3/upgrade/4.3.0/content
+@sample ${SYSCONFDIR}/rt3/upgrade/4.3.0/content
+share/examples/rt3/upgrade/4.3.1/
+@sample ${SYSCONFDIR}/rt3/upgrade/4.3.1/
+share/examples/rt3/upgrade/4.3.1/content
+@sample ${SYSCONFDIR}/rt3/upgrade/4.3.1/content
+share/examples/rt3/upgrade/4.3.1/schema.Oracle
+@sample ${SYSCONFDIR}/rt3/upgrade/4.3.1/schema.Oracle
+share/examples/rt3/upgrade/4.3.1/schema.Pg
+@sample ${SYSCONFDIR}/rt3/upgrade/4.3.1/schema.Pg
+share/examples/rt3/upgrade/4.3.1/schema.SQLite
+@sample ${SYSCONFDIR}/rt3/upgrade/4.3.1/schema.SQLite
+share/examples/rt3/upgrade/4.3.1/schema.mysql
+@sample ${SYSCONFDIR}/rt3/upgrade/4.3.1/schema.mysql
+share/examples/rt3/upgrade/4.3.10/
+@sample ${SYSCONFDIR}/rt3/upgrade/4.3.10/
+share/examples/rt3/upgrade/4.3.10/acl.Pg
+@sample ${SYSCONFDIR}/rt3/upgrade/4.3.10/acl.Pg
+share/examples/rt3/upgrade/4.3.10/content
+@sample ${SYSCONFDIR}/rt3/upgrade/4.3.10/content
+share/examples/rt3/upgrade/4.3.10/schema.Oracle
+@sample ${SYSCONFDIR}/rt3/upgrade/4.3.10/schema.Oracle
+share/examples/rt3/upgrade/4.3.10/schema.Pg
+@sample ${SYSCONFDIR}/rt3/upgrade/4.3.10/schema.Pg
+share/examples/rt3/upgrade/4.3.10/schema.SQLite
+@sample ${SYSCONFDIR}/rt3/upgrade/4.3.10/schema.SQLite
+share/examples/rt3/upgrade/4.3.10/schema.mysql
+@sample ${SYSCONFDIR}/rt3/upgrade/4.3.10/schema.mysql
+share/examples/rt3/upgrade/4.3.11/
+@sample ${SYSCONFDIR}/rt3/upgrade/4.3.11/
+share/examples/rt3/upgrade/4.3.11/content
+@sample ${SYSCONFDIR}/rt3/upgrade/4.3.11/content
+share/examples/rt3/upgrade/4.3.12/
+@sample ${SYSCONFDIR}/rt3/upgrade/4.3.12/
+share/examples/rt3/upgrade/4.3.12/acl.Pg
+@sample ${SYSCONFDIR}/rt3/upgrade/4.3.12/acl.Pg
+share/examples/rt3/upgrade/4.3.12/schema.Oracle
+@sample ${SYSCONFDIR}/rt3/upgrade/4.3.12/schema.Oracle
+share/examples/rt3/upgrade/4.3.12/schema.Pg
+@sample ${SYSCONFDIR}/rt3/upgrade/4.3.12/schema.Pg
+share/examples/rt3/upgrade/4.3.12/schema.SQLite
+@sample ${SYSCONFDIR}/rt3/upgrade/4.3.12/schema.SQLite
+share/examples/rt3/upgrade/4.3.12/schema.mysql
+@sample ${SYSCONFDIR}/rt3/upgrade/4.3.12/schema.mysql
+share/examples/rt3/upgrade/4.3.13/
+@sample ${SYSCONFDIR}/rt3/upgrade/4.3.13/
+share/examples/rt3/upgrade/4.3.13/schema.Oracle
+@sample ${SYSCONFDIR}/rt3/upgrade/4.3.13/schema.Oracle
+share/examples/rt3/upgrade/4.3.13/schema.Pg
+@sample ${SYSCONFDIR}/rt3/upgrade/4.3.13/schema.Pg
+share/examples/rt3/upgrade/4.3.13/schema.SQLite
+@sample ${SYSCONFDIR}/rt3/upgrade/4.3.13/schema.SQLite
+share/examples/rt3/upgrade/4.3.13/schema.mysql
+@sample ${SYSCONFDIR}/rt3/upgrade/4.3.13/schema.mysql
+share/examples/rt3/upgrade/4.3.2/
+@sample ${SYSCONFDIR}/rt3/upgrade/4.3.2/
+share/examples/rt3/upgrade/4.3.2/content
+@sample ${SYSCONFDIR}/rt3/upgrade/4.3.2/content
+share/examples/rt3/upgrade/4.3.2/schema.Oracle
+@sample ${SYSCONFDIR}/rt3/upgrade/4.3.2/schema.Oracle
+share/examples/rt3/upgrade/4.3.2/schema.Pg
+@sample ${SYSCONFDIR}/rt3/upgrade/4.3.2/schema.Pg
+share/examples/rt3/upgrade/4.3.2/schema.SQLite
+@sample ${SYSCONFDIR}/rt3/upgrade/4.3.2/schema.SQLite
+share/examples/rt3/upgrade/4.3.2/schema.mysql
+@sample ${SYSCONFDIR}/rt3/upgrade/4.3.2/schema.mysql
+share/examples/rt3/upgrade/4.3.3/
+@sample ${SYSCONFDIR}/rt3/upgrade/4.3.3/
+share/examples/rt3/upgrade/4.3.3/schema.Oracle
+@sample ${SYSCONFDIR}/rt3/upgrade/4.3.3/schema.Oracle
+share/examples/rt3/upgrade/4.3.3/schema.Pg
+@sample ${SYSCONFDIR}/rt3/upgrade/4.3.3/schema.Pg
+share/examples/rt3/upgrade/4.3.3/schema.SQLite
+@sample ${SYSCONFDIR}/rt3/upgrade/4.3.3/schema.SQLite
+share/examples/rt3/upgrade/4.3.3/schema.mysql
+@sample ${SYSCONFDIR}/rt3/upgrade/4.3.3/schema.mysql
+share/examples/rt3/upgrade/4.3.5/
+@sample ${SYSCONFDIR}/rt3/upgrade/4.3.5/
+share/examples/rt3/upgrade/4.3.5/content
+@sample ${SYSCONFDIR}/rt3/upgrade/4.3.5/content
+share/examples/rt3/upgrade/4.3.6/
+@sample ${SYSCONFDIR}/rt3/upgrade/4.3.6/
+share/examples/rt3/upgrade/4.3.6/content
+@sample ${SYSCONFDIR}/rt3/upgrade/4.3.6/content
+share/examples/rt3/upgrade/4.3.7/
+@sample ${SYSCONFDIR}/rt3/upgrade/4.3.7/
+share/examples/rt3/upgrade/4.3.7/schema.Oracle
+@sample ${SYSCONFDIR}/rt3/upgrade/4.3.7/schema.Oracle
+share/examples/rt3/upgrade/4.3.7/schema.Pg
+@sample ${SYSCONFDIR}/rt3/upgrade/4.3.7/schema.Pg
+share/examples/rt3/upgrade/4.3.7/schema.SQLite
+@sample ${SYSCONFDIR}/rt3/upgrade/4.3.7/schema.SQLite
+share/examples/rt3/upgrade/4.3.7/schema.mysql
+@sample ${SYSCONFDIR}/rt3/upgrade/4.3.7/schema.mysql
+share/examples/rt3/upgrade/4.3.8/
+@sample ${SYSCONFDIR}/rt3/upgrade/4.3.8/
+share/examples/rt3/upgrade/4.3.8/content
+@sample ${SYSCONFDIR}/rt3/upgrade/4.3.8/content
+share/examples/rt3/upgrade/4.3.8/schema.Oracle
+@sample ${SYSCONFDIR}/rt3/upgrade/4.3.8/schema.Oracle
+share/examples/rt3/upgrade/4.3.8/schema.Pg
+@sample ${SYSCONFDIR}/rt3/upgrade/4.3.8/schema.Pg
+share/examples/rt3/upgrade/4.3.8/schema.SQLite
+@sample ${SYSCONFDIR}/rt3/upgrade/4.3.8/schema.SQLite
+share/examples/rt3/upgrade/4.3.8/schema.mysql
+@sample ${SYSCONFDIR}/rt3/upgrade/4.3.8/schema.mysql
+share/examples/rt3/upgrade/4.3.9/
+@sample ${SYSCONFDIR}/rt3/upgrade/4.3.9/
+share/examples/rt3/upgrade/4.3.9/content
+@sample ${SYSCONFDIR}/rt3/upgrade/4.3.9/content
+share/examples/rt3/upgrade/4.4.1/
+@sample ${SYSCONFDIR}/rt3/upgrade/4.4.1/
+share/examples/rt3/upgrade/4.4.1/content
+@sample ${SYSCONFDIR}/rt3/upgrade/4.4.1/content
 share/examples/rt3/upgrade/generate-rtaddressregexp
 @sample ${SYSCONFDIR}/rt3/upgrade/generate-rtaddressregexp
 share/examples/rt3/upgrade/generate-rtaddressregexp.in
@@ -865,10 +1055,6 @@ share/examples/rt3/upgrade/shrink-transactions-table
 @sample ${SYSCONFDIR}/rt3/upgrade/shrink-transactions-table
 share/examples/rt3/upgrade/shrink-transactions-table.in
 @sample ${SYSCONFDIR}/rt3/upgrade/shrink-transactions-table.in
-share/examples/rt3/upgrade/split-out-cf-categories
-@sample ${SYSCONFDIR}/rt3/upgrade/split-out-cf-categories
-share/examples/rt3/upgrade/split-out-cf-categories.in
-@sample ${SYSCONFDIR}/rt3/upgrade/split-out-cf-categories.in
 share/examples/rt3/upgrade/switch-templates-to
 @sample ${SYSCONFDIR}/rt3/upgrade/switch-templates-to
 share/examples/rt3/upgrade/switch-templates-to.in
@@ -881,8 +1067,16 @@ share/examples/rt3/upgrade/upgrade-articles
 @sample ${SYSCONFDIR}/rt3/upgrade/upgrade-articles
 share/examples/rt3/upgrade/upgrade-articles.in
 @sample ${SYSCONFDIR}/rt3/upgrade/upgrade-articles.in
+share/examples/rt3/upgrade/upgrade-assets
+@sample ${SYSCONFDIR}/rt3/upgrade/upgrade-assets
+share/examples/rt3/upgrade/upgrade-assets.in
+@sample ${SYSCONFDIR}/rt3/upgrade/upgrade-assets.in
 share/examples/rt3/upgrade/upgrade-mysql-schema.pl
 @sample ${SYSCONFDIR}/rt3/upgrade/upgrade-mysql-schema.pl
+share/examples/rt3/upgrade/upgrade-sla
+@sample ${SYSCONFDIR}/rt3/upgrade/upgrade-sla
+share/examples/rt3/upgrade/upgrade-sla.in
+@sample ${SYSCONFDIR}/rt3/upgrade/upgrade-sla.in
 share/examples/rt3/upgrade/vulnerable-passwords
 @sample ${SYSCONFDIR}/rt3/upgrade/vulnerable-passwords
 share/examples/rt3/upgrade/vulnerable-passwords.in
@@ -906,12 +1100,28 @@ share/rt3/html/Admin/Articles/Classes/index.html
 share/rt3/html/Admin/Articles/Elements/
 share/rt3/html/Admin/Articles/Elements/Topics
 share/rt3/html/Admin/Articles/index.html
+share/rt3/html/Admin/Assets/
+share/rt3/html/Admin/Assets/Catalogs/
+share/rt3/html/Admin/Assets/Catalogs/Create.html
+share/rt3/html/Admin/Assets/Catalogs/CustomFields.html
+share/rt3/html/Admin/Assets/Catalogs/Elements/
+share/rt3/html/Admin/Assets/Catalogs/Elements/EditBasics
+share/rt3/html/Admin/Assets/Catalogs/GroupRights.html
+share/rt3/html/Admin/Assets/Catalogs/Modify.html
+share/rt3/html/Admin/Assets/Catalogs/Roles.html
+share/rt3/html/Admin/Assets/Catalogs/UserRights.html
+share/rt3/html/Admin/Assets/Catalogs/index.html
+share/rt3/html/Admin/Assets/index.html
 share/rt3/html/Admin/CustomFields/
 share/rt3/html/Admin/CustomFields/GroupRights.html
 share/rt3/html/Admin/CustomFields/Modify.html
 share/rt3/html/Admin/CustomFields/Objects.html
 share/rt3/html/Admin/CustomFields/UserRights.html
 share/rt3/html/Admin/CustomFields/index.html
+share/rt3/html/Admin/CustomRoles/
+share/rt3/html/Admin/CustomRoles/Modify.html
+share/rt3/html/Admin/CustomRoles/Objects.html
+share/rt3/html/Admin/CustomRoles/index.html
 share/rt3/html/Admin/Elements/
 share/rt3/html/Admin/Elements/AddCustomFieldValue
 share/rt3/html/Admin/Elements/ConfigureDashboardsInMenu
@@ -947,6 +1157,7 @@ share/rt3/html/Admin/Elements/UpgradeHistory
 share/rt3/html/Admin/Elements/UpgradeHistoryRow
 share/rt3/html/Admin/Global/
 share/rt3/html/Admin/Global/CustomFields/
+share/rt3/html/Admin/Global/CustomFields/Catalog-Assets.html
 share/rt3/html/Admin/Global/CustomFields/Class-Article.html
 share/rt3/html/Admin/Global/CustomFields/Groups.html
 share/rt3/html/Admin/Global/CustomFields/Queue-Tickets.html
@@ -974,6 +1185,7 @@ share/rt3/html/Admin/Groups/index.html
 share/rt3/html/Admin/Queues/
 share/rt3/html/Admin/Queues/CustomField.html
 share/rt3/html/Admin/Queues/CustomFields.html
+share/rt3/html/Admin/Queues/DefaultValues.html
 share/rt3/html/Admin/Queues/GroupRights.html
 share/rt3/html/Admin/Queues/History.html
 share/rt3/html/Admin/Queues/Modify.html
@@ -1037,7 +1249,6 @@ share/rt3/html/Approvals/autohandler
 share/rt3/html/Approvals/index.html
 share/rt3/html/Articles/
 share/rt3/html/Articles/Article/
-share/rt3/html/Articles/Article/Delete.html
 share/rt3/html/Articles/Article/Display.html
 share/rt3/html/Articles/Article/Edit.html
 share/rt3/html/Articles/Article/Elements/
@@ -1077,6 +1288,49 @@ share/rt3/html/Articles/Elements/SubjectOverride
 share/rt3/html/Articles/Elements/UpdatedArticles
 share/rt3/html/Articles/Topics.html
 share/rt3/html/Articles/index.html
+share/rt3/html/Asset/
+share/rt3/html/Asset/Create.html
+share/rt3/html/Asset/CreateInCatalog.html
+share/rt3/html/Asset/CreateLinkedTicket.html
+share/rt3/html/Asset/Display.html
+share/rt3/html/Asset/Elements/
+share/rt3/html/Asset/Elements/AddCatalogPeople
+share/rt3/html/Asset/Elements/AssetSearchBasics
+share/rt3/html/Asset/Elements/AssetSearchCFs
+share/rt3/html/Asset/Elements/AssetSearchPeople
+share/rt3/html/Asset/Elements/CreateInCatalog
+share/rt3/html/Asset/Elements/CreateLinkedTicket
+share/rt3/html/Asset/Elements/EditBasics
+share/rt3/html/Asset/Elements/EditCatalogPeople
+share/rt3/html/Asset/Elements/EditDates
+share/rt3/html/Asset/Elements/EditPeople
+share/rt3/html/Asset/Elements/EditRoleMembers
+share/rt3/html/Asset/Elements/Search
+share/rt3/html/Asset/Elements/SelectCatalog
+share/rt3/html/Asset/Elements/SelectRoleType
+share/rt3/html/Asset/Elements/SelectStatus
+share/rt3/html/Asset/Elements/ShowBasics
+share/rt3/html/Asset/Elements/ShowCatalog
+share/rt3/html/Asset/Elements/ShowDates
+share/rt3/html/Asset/Elements/ShowLinks
+share/rt3/html/Asset/Elements/ShowPeople
+share/rt3/html/Asset/Elements/ShowRoleMembers
+share/rt3/html/Asset/Elements/ShowSummary
+share/rt3/html/Asset/Elements/TSVExport
+share/rt3/html/Asset/Helpers/
+share/rt3/html/Asset/Helpers/CreateInCatalog
+share/rt3/html/Asset/Helpers/CreateLinkedTicket
+share/rt3/html/Asset/History.html
+share/rt3/html/Asset/Modify.html
+share/rt3/html/Asset/ModifyCFs.html
+share/rt3/html/Asset/ModifyDates.html
+share/rt3/html/Asset/ModifyLinks.html
+share/rt3/html/Asset/ModifyPeople.html
+share/rt3/html/Asset/Search/
+share/rt3/html/Asset/Search/Bulk.html
+share/rt3/html/Asset/Search/Results.tsv
+share/rt3/html/Asset/Search/index.html
+share/rt3/html/Asset/index.html
 share/rt3/html/Dashboards/
 share/rt3/html/Dashboards/Elements/
 share/rt3/html/Dashboards/Elements/DashboardsForObject
@@ -1089,6 +1343,7 @@ share/rt3/html/Dashboards/Elements/ShowPortlet/
 share/rt3/html/Dashboards/Elements/ShowPortlet/component
 share/rt3/html/Dashboards/Elements/ShowPortlet/dashboard
 share/rt3/html/Dashboards/Elements/ShowPortlet/search
+share/rt3/html/Dashboards/Elements/SubscriptionRecipients
 share/rt3/html/Dashboards/Modify.html
 share/rt3/html/Dashboards/Queries.html
 share/rt3/html/Dashboards/Render.html
@@ -1100,10 +1355,10 @@ share/rt3/html/Download/CustomFieldValue/
 share/rt3/html/Download/CustomFieldValue/dhandler
 share/rt3/html/Elements/
 share/rt3/html/Elements/AddLinks
+share/rt3/html/Elements/AttachmentWarning
 share/rt3/html/Elements/BulkCustomFields
 share/rt3/html/Elements/BulkLinks
 share/rt3/html/Elements/CSRF
-share/rt3/html/Elements/Callback
 share/rt3/html/Elements/Checkbox
 share/rt3/html/Elements/CollectionAsTable/
 share/rt3/html/Elements/CollectionAsTable/Header
@@ -1120,6 +1375,7 @@ share/rt3/html/Elements/Crypt/SelectKeyForSigning
 share/rt3/html/Elements/Crypt/SignEncryptWidget
 share/rt3/html/Elements/CryptStatus
 share/rt3/html/Elements/Dashboards
+share/rt3/html/Elements/DoAuth
 share/rt3/html/Elements/EditCustomField
 share/rt3/html/Elements/EditCustomFieldAutocomplete
 share/rt3/html/Elements/EditCustomFieldBinary
@@ -1135,11 +1391,13 @@ share/rt3/html/Elements/EditCustomFieldSelect
 share/rt3/html/Elements/EditCustomFieldText
 share/rt3/html/Elements/EditCustomFieldWikitext
 share/rt3/html/Elements/EditCustomFields
+share/rt3/html/Elements/EditLink
 share/rt3/html/Elements/EditLinks
 share/rt3/html/Elements/EditPassword
 share/rt3/html/Elements/EditTimeValue
 share/rt3/html/Elements/EmailInput
 share/rt3/html/Elements/Error
+share/rt3/html/Elements/FindAsset
 share/rt3/html/Elements/FindUser
 share/rt3/html/Elements/FoldStanzaJS
 share/rt3/html/Elements/Footer
@@ -1159,6 +1417,7 @@ share/rt3/html/Elements/MakeClicky
 share/rt3/html/Elements/Menu
 share/rt3/html/Elements/MessageBox
 share/rt3/html/Elements/MyAdminQueues
+share/rt3/html/Elements/MyAssets
 share/rt3/html/Elements/MyRT
 share/rt3/html/Elements/MyReminders
 share/rt3/html/Elements/MySupportQueues
@@ -1166,16 +1425,23 @@ share/rt3/html/Elements/PageLayout
 share/rt3/html/Elements/PersonalQuickbar
 share/rt3/html/Elements/QueriesAsComment
 share/rt3/html/Elements/QueryString
+share/rt3/html/Elements/QueueList
 share/rt3/html/Elements/QueueSummaryByLifecycle
 share/rt3/html/Elements/QueueSummaryByStatus
 share/rt3/html/Elements/QuickCreate
 share/rt3/html/Elements/Quicksearch
 share/rt3/html/Elements/RT__Article/
 share/rt3/html/Elements/RT__Article/ColumnMap
+share/rt3/html/Elements/RT__Asset/
+share/rt3/html/Elements/RT__Asset/ColumnMap
+share/rt3/html/Elements/RT__Catalog/
+share/rt3/html/Elements/RT__Catalog/ColumnMap
 share/rt3/html/Elements/RT__Class/
 share/rt3/html/Elements/RT__Class/ColumnMap
 share/rt3/html/Elements/RT__CustomField/
 share/rt3/html/Elements/RT__CustomField/ColumnMap
+share/rt3/html/Elements/RT__CustomRole/
+share/rt3/html/Elements/RT__CustomRole/ColumnMap
 share/rt3/html/Elements/RT__Dashboard/
 share/rt3/html/Elements/RT__Dashboard/ColumnMap
 share/rt3/html/Elements/RT__Group/
@@ -1190,6 +1456,8 @@ share/rt3/html/Elements/RT__Template/
 share/rt3/html/Elements/RT__Template/ColumnMap
 share/rt3/html/Elements/RT__Ticket/
 share/rt3/html/Elements/RT__Ticket/ColumnMap
+share/rt3/html/Elements/RT__Transaction/
+share/rt3/html/Elements/RT__Transaction/ColumnMap
 share/rt3/html/Elements/RT__User/
 share/rt3/html/Elements/RT__User/ColumnMap
 share/rt3/html/Elements/Refresh
@@ -1216,13 +1484,16 @@ share/rt3/html/Elements/SelectOwnerAutocomplete
 share/rt3/html/Elements/SelectOwnerDropdown
 share/rt3/html/Elements/SelectPriority
 share/rt3/html/Elements/SelectQueue
+share/rt3/html/Elements/SelectQueueAutocomplete
 share/rt3/html/Elements/SelectResultsPerPage
+share/rt3/html/Elements/SelectSLA
 share/rt3/html/Elements/SelectStatus
 share/rt3/html/Elements/SelectTimeUnits
 share/rt3/html/Elements/SelectTimezone
 share/rt3/html/Elements/SelectUsers
 share/rt3/html/Elements/SelectWatcherType
 share/rt3/html/Elements/SetupSessionCookie
+share/rt3/html/Elements/ShortcutHelp
 share/rt3/html/Elements/ShowCustomFieldBinary
 share/rt3/html/Elements/ShowCustomFieldCustomGroupings
 share/rt3/html/Elements/ShowCustomFieldDate
@@ -1232,6 +1503,8 @@ share/rt3/html/Elements/ShowCustomFieldText
 share/rt3/html/Elements/ShowCustomFieldWikitext
 share/rt3/html/Elements/ShowCustomFields
 share/rt3/html/Elements/ShowHistory
+share/rt3/html/Elements/ShowHistoryHeader
+share/rt3/html/Elements/ShowHistoryPage
 share/rt3/html/Elements/ShowLink
 share/rt3/html/Elements/ShowLinks
 share/rt3/html/Elements/ShowLinksOfType
@@ -1248,13 +1521,10 @@ share/rt3/html/Elements/ShowTransactionAttachments
 share/rt3/html/Elements/ShowUser
 share/rt3/html/Elements/ShowUserEmailFrequency
 share/rt3/html/Elements/SimpleSearch
+share/rt3/html/Elements/SingleUserRoleInput
 share/rt3/html/Elements/Submit
 share/rt3/html/Elements/TSVExport
 share/rt3/html/Elements/Tabs
-share/rt3/html/Elements/TicketList
-share/rt3/html/Elements/TitleBox
-share/rt3/html/Elements/TitleBoxEnd
-share/rt3/html/Elements/TitleBoxStart
 share/rt3/html/Elements/ValidateCustomFields
 share/rt3/html/Elements/WidgetBar
 share/rt3/html/Errors/
@@ -1265,17 +1535,30 @@ share/rt3/html/Errors/WebRemoteUser/NoRemoteUser
 share/rt3/html/Errors/WebRemoteUser/UserAutocreateDefaultsOnLogin
 share/rt3/html/Errors/WebRemoteUser/Wrapper
 share/rt3/html/Helpers/
+share/rt3/html/Helpers/AddTimeWorked
 share/rt3/html/Helpers/Autocomplete/
 share/rt3/html/Helpers/Autocomplete/CustomFieldValues
 share/rt3/html/Helpers/Autocomplete/Groups
 share/rt3/html/Helpers/Autocomplete/Owners
+share/rt3/html/Helpers/Autocomplete/Queues
 share/rt3/html/Helpers/Autocomplete/Tickets
 share/rt3/html/Helpers/Autocomplete/Users
 share/rt3/html/Helpers/Autocomplete/autohandler
+share/rt3/html/Helpers/BuildFormatString
+share/rt3/html/Helpers/PreviewScrips
+share/rt3/html/Helpers/ShortcutHelp
+share/rt3/html/Helpers/ShowSimplifiedRecipients
+share/rt3/html/Helpers/SpawnLinkedTicket
+share/rt3/html/Helpers/TicketAttachments
 share/rt3/html/Helpers/TicketHistory
+share/rt3/html/Helpers/TicketHistoryPage
+share/rt3/html/Helpers/TicketTimer
 share/rt3/html/Helpers/Toggle/
 share/rt3/html/Helpers/Toggle/ShowRequestor
 share/rt3/html/Helpers/Toggle/TicketBookmark
+share/rt3/html/Helpers/Upload/
+share/rt3/html/Helpers/Upload/Add
+share/rt3/html/Helpers/Upload/Delete
 share/rt3/html/Helpers/UserInfo
 share/rt3/html/Helpers/autohandler
 share/rt3/html/Install/
@@ -1323,10 +1606,11 @@ share/rt3/html/NoAuth/js/dhandler
 share/rt3/html/NoAuth/rss/
 share/rt3/html/NoAuth/rss/dhandler
 share/rt3/html/Prefs/
+share/rt3/html/Prefs/AboutMe.html
 share/rt3/html/Prefs/DashboardsInMenu.html
 share/rt3/html/Prefs/MyRT.html
 share/rt3/html/Prefs/Other.html
-share/rt3/html/Prefs/Quicksearch.html
+share/rt3/html/Prefs/QueueList.html
 share/rt3/html/Prefs/Search.html
 share/rt3/html/Prefs/SearchOptions.html
 share/rt3/html/REST/
@@ -1390,6 +1674,7 @@ share/rt3/html/Search/Elements/NewListActions
 share/rt3/html/Search/Elements/PickBasics
 share/rt3/html/Search/Elements/PickCFs
 share/rt3/html/Search/Elements/PickCriteria
+share/rt3/html/Search/Elements/PickCustomRoles
 share/rt3/html/Search/Elements/PickObjectCFs
 share/rt3/html/Search/Elements/PickTicketCFs
 share/rt3/html/Search/Elements/ResultsRSSView
@@ -1405,7 +1690,6 @@ share/rt3/html/Search/Elements/SelectPersonType
 share/rt3/html/Search/Elements/SelectSearchObject
 share/rt3/html/Search/Elements/SelectSearchesForObjects
 share/rt3/html/Search/Results.html
-share/rt3/html/Search/Results.rdf
 share/rt3/html/Search/Results.tsv
 share/rt3/html/Search/Simple.html
 share/rt3/html/Search/index.html
@@ -1414,6 +1698,13 @@ share/rt3/html/SelfService/Article/
 share/rt3/html/SelfService/Article/Display.html
 share/rt3/html/SelfService/Article/Search.html
 share/rt3/html/SelfService/Article/autohandler
+share/rt3/html/SelfService/Asset/
+share/rt3/html/SelfService/Asset/CreateLinkedTicket.html
+share/rt3/html/SelfService/Asset/Display.html
+share/rt3/html/SelfService/Asset/Helpers/
+share/rt3/html/SelfService/Asset/Helpers/CreateLinkedTicket
+share/rt3/html/SelfService/Asset/History.html
+share/rt3/html/SelfService/Asset/index.html
 share/rt3/html/SelfService/Attachment/
 share/rt3/html/SelfService/Attachment/dhandler
 share/rt3/html/SelfService/Closed.html
@@ -1429,6 +1720,9 @@ share/rt3/html/SelfService/Helpers/
 share/rt3/html/SelfService/Helpers/Autocomplete/
 share/rt3/html/SelfService/Helpers/Autocomplete/CustomFieldValues
 share/rt3/html/SelfService/Helpers/Autocomplete/Users
+share/rt3/html/SelfService/Helpers/ShortcutHelp
+share/rt3/html/SelfService/Helpers/Upload/
+share/rt3/html/SelfService/Helpers/Upload/Add
 share/rt3/html/SelfService/Prefs.html
 share/rt3/html/SelfService/Update.html
 share/rt3/html/SelfService/index.html
@@ -1447,16 +1741,17 @@ share/rt3/html/Ticket/Elements/Bookmark
 share/rt3/html/Ticket/Elements/ClickToShowHistory
 share/rt3/html/Ticket/Elements/DelayShowHistory
 share/rt3/html/Ticket/Elements/EditBasics
-share/rt3/html/Ticket/Elements/EditCustomFields
 share/rt3/html/Ticket/Elements/EditDates
 share/rt3/html/Ticket/Elements/EditMerge
 share/rt3/html/Ticket/Elements/EditPeople
 share/rt3/html/Ticket/Elements/EditTransactionCustomFields
 share/rt3/html/Ticket/Elements/EditWatchers
-share/rt3/html/Ticket/Elements/LoadTextAttachments
-share/rt3/html/Ticket/Elements/PreviewScrips
+share/rt3/html/Ticket/Elements/PopupTimerLink
 share/rt3/html/Ticket/Elements/Reminders
+share/rt3/html/Ticket/Elements/ScrollShowHistory
 share/rt3/html/Ticket/Elements/SelectStatus
+share/rt3/html/Ticket/Elements/ShowAssets
+share/rt3/html/Ticket/Elements/ShowAssetsOnCreate
 share/rt3/html/Ticket/Elements/ShowAttachments
 share/rt3/html/Ticket/Elements/ShowBasics
 share/rt3/html/Ticket/Elements/ShowCustomFields
@@ -1472,7 +1767,6 @@ share/rt3/html/Ticket/Elements/ShowRequestorTickets
 share/rt3/html/Ticket/Elements/ShowRequestorTicketsActive
 share/rt3/html/Ticket/Elements/ShowRequestorTicketsAll
 share/rt3/html/Ticket/Elements/ShowRequestorTicketsInactive
-share/rt3/html/Ticket/Elements/ShowSimplifiedRecipients
 share/rt3/html/Ticket/Elements/ShowSummary
 share/rt3/html/Ticket/Elements/ShowTime
 share/rt3/html/Ticket/Elements/ShowUpdateStatus
@@ -1501,15 +1795,16 @@ share/rt3/html/Tools/MyReminders.html
 share/rt3/html/Tools/index.html
 share/rt3/html/User/
 share/rt3/html/User/Elements/
+share/rt3/html/User/Elements/AssetList
 share/rt3/html/User/Elements/Portlets/
 share/rt3/html/User/Elements/Portlets/ActiveTickets
 share/rt3/html/User/Elements/Portlets/CreateTicket
 share/rt3/html/User/Elements/Portlets/ExtraInfo
 share/rt3/html/User/Elements/Portlets/InactiveTickets
+share/rt3/html/User/Elements/Portlets/UserAssets
 share/rt3/html/User/Elements/TicketList
 share/rt3/html/User/Elements/UserInfo
 share/rt3/html/User/History.html
-share/rt3/html/User/Prefs.html
 share/rt3/html/User/Search.html
 share/rt3/html/User/Summary.html
 share/rt3/html/Widgets/
@@ -1586,7 +1881,6 @@ share/rt3/po/lv.po
 share/rt3/po/nb.po
 share/rt3/po/nl.po
 share/rt3/po/nn.po
-share/rt3/po/oc.po
 share/rt3/po/pl.po
 share/rt3/po/pt.po
 share/rt3/po/pt_BR.po
@@ -1602,7 +1896,8 @@ share/rt3/po/zh_CN.po
 share/rt3/po/zh_TW.po
 share/rt3/static/
 share/rt3/static/RichText/
-share/rt3/static/RichText/LICENSE.md
+share/rt3/static/RichText/adapters/
+share/rt3/static/RichText/adapters/jquery.js
 share/rt3/static/RichText/ckeditor.js
 share/rt3/static/RichText/config.js
 share/rt3/static/RichText/contents.css
@@ -1637,6 +1932,7 @@ share/rt3/static/RichText/lang/he.js
 share/rt3/static/RichText/lang/hi.js
 share/rt3/static/RichText/lang/hr.js
 share/rt3/static/RichText/lang/hu.js
+share/rt3/static/RichText/lang/id.js
 share/rt3/static/RichText/lang/is.js
 share/rt3/static/RichText/lang/it.js
 share/rt3/static/RichText/lang/ja.js
@@ -1657,13 +1953,16 @@ share/rt3/static/RichText/lang/pt-br.js
 share/rt3/static/RichText/lang/pt.js
 share/rt3/static/RichText/lang/ro.js
 share/rt3/static/RichText/lang/ru.js
+share/rt3/static/RichText/lang/si.js
 share/rt3/static/RichText/lang/sk.js
 share/rt3/static/RichText/lang/sl.js
+share/rt3/static/RichText/lang/sq.js
 share/rt3/static/RichText/lang/sr-latn.js
 share/rt3/static/RichText/lang/sr.js
 share/rt3/static/RichText/lang/sv.js
 share/rt3/static/RichText/lang/th.js
 share/rt3/static/RichText/lang/tr.js
+share/rt3/static/RichText/lang/tt.js
 share/rt3/static/RichText/lang/ug.js
 share/rt3/static/RichText/lang/uk.js
 share/rt3/static/RichText/lang/vi.js
@@ -1675,6 +1974,7 @@ share/rt3/static/RichText/plugins/a11yhelp/dialogs/
 share/rt3/static/RichText/plugins/a11yhelp/dialogs/a11yhelp.js
 share/rt3/static/RichText/plugins/a11yhelp/dialogs/lang/
 share/rt3/static/RichText/plugins/a11yhelp/dialogs/lang/_translationstatus.txt
+share/rt3/static/RichText/plugins/a11yhelp/dialogs/lang/af.js
 share/rt3/static/RichText/plugins/a11yhelp/dialogs/lang/ar.js
 share/rt3/static/RichText/plugins/a11yhelp/dialogs/lang/bg.js
 share/rt3/static/RichText/plugins/a11yhelp/dialogs/lang/ca.js
@@ -1683,20 +1983,27 @@ share/rt3/static/RichText/plugins/a11yhelp/dialogs/lang/cy.js
 share/rt3/static/RichText/plugins/a11yhelp/dialogs/lang/da.js
 share/rt3/static/RichText/plugins/a11yhelp/dialogs/lang/de.js
 share/rt3/static/RichText/plugins/a11yhelp/dialogs/lang/el.js
+share/rt3/static/RichText/plugins/a11yhelp/dialogs/lang/en-gb.js
 share/rt3/static/RichText/plugins/a11yhelp/dialogs/lang/en.js
 share/rt3/static/RichText/plugins/a11yhelp/dialogs/lang/eo.js
 share/rt3/static/RichText/plugins/a11yhelp/dialogs/lang/es.js
 share/rt3/static/RichText/plugins/a11yhelp/dialogs/lang/et.js
 share/rt3/static/RichText/plugins/a11yhelp/dialogs/lang/fa.js
 share/rt3/static/RichText/plugins/a11yhelp/dialogs/lang/fi.js
+share/rt3/static/RichText/plugins/a11yhelp/dialogs/lang/fo.js
+share/rt3/static/RichText/plugins/a11yhelp/dialogs/lang/fr-ca.js
 share/rt3/static/RichText/plugins/a11yhelp/dialogs/lang/fr.js
+share/rt3/static/RichText/plugins/a11yhelp/dialogs/lang/gl.js
 share/rt3/static/RichText/plugins/a11yhelp/dialogs/lang/gu.js
 share/rt3/static/RichText/plugins/a11yhelp/dialogs/lang/he.js
 share/rt3/static/RichText/plugins/a11yhelp/dialogs/lang/hi.js
 share/rt3/static/RichText/plugins/a11yhelp/dialogs/lang/hr.js
 share/rt3/static/RichText/plugins/a11yhelp/dialogs/lang/hu.js
+share/rt3/static/RichText/plugins/a11yhelp/dialogs/lang/id.js
 share/rt3/static/RichText/plugins/a11yhelp/dialogs/lang/it.js
 share/rt3/static/RichText/plugins/a11yhelp/dialogs/lang/ja.js
+share/rt3/static/RichText/plugins/a11yhelp/dialogs/lang/km.js
+share/rt3/static/RichText/plugins/a11yhelp/dialogs/lang/ko.js
 share/rt3/static/RichText/plugins/a11yhelp/dialogs/lang/ku.js
 share/rt3/static/RichText/plugins/a11yhelp/dialogs/lang/lt.js
 share/rt3/static/RichText/plugins/a11yhelp/dialogs/lang/lv.js
@@ -1710,158 +2017,112 @@ share/rt3/static/RichText/plugins/a11yhelp/dialogs/lang/pt-br.js
 share/rt3/static/RichText/plugins/a11yhelp/dialogs/lang/pt.js
 share/rt3/static/RichText/plugins/a11yhelp/dialogs/lang/ro.js
 share/rt3/static/RichText/plugins/a11yhelp/dialogs/lang/ru.js
+share/rt3/static/RichText/plugins/a11yhelp/dialogs/lang/si.js
 share/rt3/static/RichText/plugins/a11yhelp/dialogs/lang/sk.js
 share/rt3/static/RichText/plugins/a11yhelp/dialogs/lang/sl.js
+share/rt3/static/RichText/plugins/a11yhelp/dialogs/lang/sq.js
+share/rt3/static/RichText/plugins/a11yhelp/dialogs/lang/sr-latn.js
+share/rt3/static/RichText/plugins/a11yhelp/dialogs/lang/sr.js
 share/rt3/static/RichText/plugins/a11yhelp/dialogs/lang/sv.js
+share/rt3/static/RichText/plugins/a11yhelp/dialogs/lang/th.js
 share/rt3/static/RichText/plugins/a11yhelp/dialogs/lang/tr.js
+share/rt3/static/RichText/plugins/a11yhelp/dialogs/lang/tt.js
 share/rt3/static/RichText/plugins/a11yhelp/dialogs/lang/ug.js
 share/rt3/static/RichText/plugins/a11yhelp/dialogs/lang/uk.js
 share/rt3/static/RichText/plugins/a11yhelp/dialogs/lang/vi.js
 share/rt3/static/RichText/plugins/a11yhelp/dialogs/lang/zh-cn.js
-share/rt3/static/RichText/plugins/about/
-share/rt3/static/RichText/plugins/about/dialogs/
-share/rt3/static/RichText/plugins/about/dialogs/about.js
-share/rt3/static/RichText/plugins/about/dialogs/logo_ckeditor.png
+share/rt3/static/RichText/plugins/a11yhelp/dialogs/lang/zh.js
 share/rt3/static/RichText/plugins/clipboard/
 share/rt3/static/RichText/plugins/clipboard/dialogs/
 share/rt3/static/RichText/plugins/clipboard/dialogs/paste.js
-share/rt3/static/RichText/plugins/colordialog/
-share/rt3/static/RichText/plugins/colordialog/dialogs/
-share/rt3/static/RichText/plugins/colordialog/dialogs/colordialog.js
 share/rt3/static/RichText/plugins/dialog/
 share/rt3/static/RichText/plugins/dialog/dialogDefinition.js
-share/rt3/static/RichText/plugins/div/
-share/rt3/static/RichText/plugins/div/dialogs/
-share/rt3/static/RichText/plugins/div/dialogs/div.js
-share/rt3/static/RichText/plugins/fakeobjects/
-share/rt3/static/RichText/plugins/fakeobjects/images/
-share/rt3/static/RichText/plugins/fakeobjects/images/spacer.gif
 share/rt3/static/RichText/plugins/find/
 share/rt3/static/RichText/plugins/find/dialogs/
 share/rt3/static/RichText/plugins/find/dialogs/find.js
-share/rt3/static/RichText/plugins/flash/
-share/rt3/static/RichText/plugins/flash/dialogs/
-share/rt3/static/RichText/plugins/flash/dialogs/flash.js
-share/rt3/static/RichText/plugins/flash/images/
-share/rt3/static/RichText/plugins/flash/images/placeholder.png
-share/rt3/static/RichText/plugins/forms/
-share/rt3/static/RichText/plugins/forms/dialogs/
-share/rt3/static/RichText/plugins/forms/dialogs/button.js
-share/rt3/static/RichText/plugins/forms/dialogs/checkbox.js
-share/rt3/static/RichText/plugins/forms/dialogs/form.js
-share/rt3/static/RichText/plugins/forms/dialogs/hiddenfield.js
-share/rt3/static/RichText/plugins/forms/dialogs/radio.js
-share/rt3/static/RichText/plugins/forms/dialogs/select.js
-share/rt3/static/RichText/plugins/forms/dialogs/textarea.js
-share/rt3/static/RichText/plugins/forms/dialogs/textfield.js
-share/rt3/static/RichText/plugins/forms/images/
-share/rt3/static/RichText/plugins/forms/images/hiddenfield.gif
 share/rt3/static/RichText/plugins/icons.png
-share/rt3/static/RichText/plugins/iframe/
-share/rt3/static/RichText/plugins/iframe/dialogs/
-share/rt3/static/RichText/plugins/iframe/dialogs/iframe.js
-share/rt3/static/RichText/plugins/iframe/images/
-share/rt3/static/RichText/plugins/iframe/images/placeholder.png
-share/rt3/static/RichText/plugins/image/
-share/rt3/static/RichText/plugins/image/dialogs/
-share/rt3/static/RichText/plugins/image/dialogs/image.js
-share/rt3/static/RichText/plugins/image/images/
-share/rt3/static/RichText/plugins/image/images/noimage.png
+share/rt3/static/RichText/plugins/icons_hidpi.png
 share/rt3/static/RichText/plugins/link/
 share/rt3/static/RichText/plugins/link/dialogs/
 share/rt3/static/RichText/plugins/link/dialogs/anchor.js
 share/rt3/static/RichText/plugins/link/dialogs/link.js
 share/rt3/static/RichText/plugins/link/images/
 share/rt3/static/RichText/plugins/link/images/anchor.png
+share/rt3/static/RichText/plugins/link/images/hidpi/
+share/rt3/static/RichText/plugins/link/images/hidpi/anchor.png
 share/rt3/static/RichText/plugins/liststyle/
 share/rt3/static/RichText/plugins/liststyle/dialogs/
 share/rt3/static/RichText/plugins/liststyle/dialogs/liststyle.js
 share/rt3/static/RichText/plugins/magicline/
 share/rt3/static/RichText/plugins/magicline/images/
+share/rt3/static/RichText/plugins/magicline/images/hidpi/
+share/rt3/static/RichText/plugins/magicline/images/hidpi/icon-rtl.png
+share/rt3/static/RichText/plugins/magicline/images/hidpi/icon.png
+share/rt3/static/RichText/plugins/magicline/images/icon-rtl.png
 share/rt3/static/RichText/plugins/magicline/images/icon.png
-share/rt3/static/RichText/plugins/pagebreak/
-share/rt3/static/RichText/plugins/pagebreak/images/
-share/rt3/static/RichText/plugins/pagebreak/images/pagebreak.gif
 share/rt3/static/RichText/plugins/pastefromword/
 share/rt3/static/RichText/plugins/pastefromword/filter/
 share/rt3/static/RichText/plugins/pastefromword/filter/default.js
-share/rt3/static/RichText/plugins/preview/
-share/rt3/static/RichText/plugins/preview/preview.html
 share/rt3/static/RichText/plugins/scayt/
 share/rt3/static/RichText/plugins/scayt/LICENSE.md
 share/rt3/static/RichText/plugins/scayt/README.md
 share/rt3/static/RichText/plugins/scayt/dialogs/
 share/rt3/static/RichText/plugins/scayt/dialogs/options.js
 share/rt3/static/RichText/plugins/scayt/dialogs/toolbar.css
-share/rt3/static/RichText/plugins/showblocks/
-share/rt3/static/RichText/plugins/showblocks/images/
-share/rt3/static/RichText/plugins/showblocks/images/block_address.png
-share/rt3/static/RichText/plugins/showblocks/images/block_blockquote.png
-share/rt3/static/RichText/plugins/showblocks/images/block_div.png
-share/rt3/static/RichText/plugins/showblocks/images/block_h1.png
-share/rt3/static/RichText/plugins/showblocks/images/block_h2.png
-share/rt3/static/RichText/plugins/showblocks/images/block_h3.png
-share/rt3/static/RichText/plugins/showblocks/images/block_h4.png
-share/rt3/static/RichText/plugins/showblocks/images/block_h5.png
-share/rt3/static/RichText/plugins/showblocks/images/block_h6.png
-share/rt3/static/RichText/plugins/showblocks/images/block_p.png
-share/rt3/static/RichText/plugins/showblocks/images/block_pre.png
-share/rt3/static/RichText/plugins/smiley/
-share/rt3/static/RichText/plugins/smiley/dialogs/
-share/rt3/static/RichText/plugins/smiley/dialogs/smiley.js
-share/rt3/static/RichText/plugins/smiley/images/
-share/rt3/static/RichText/plugins/smiley/images/angel_smile.gif
-share/rt3/static/RichText/plugins/smiley/images/angry_smile.gif
-share/rt3/static/RichText/plugins/smiley/images/broken_heart.gif
-share/rt3/static/RichText/plugins/smiley/images/confused_smile.gif
-share/rt3/static/RichText/plugins/smiley/images/cry_smile.gif
-share/rt3/static/RichText/plugins/smiley/images/devil_smile.gif
-share/rt3/static/RichText/plugins/smiley/images/embaressed_smile.gif
-share/rt3/static/RichText/plugins/smiley/images/embarrassed_smile.gif
-share/rt3/static/RichText/plugins/smiley/images/envelope.gif
-share/rt3/static/RichText/plugins/smiley/images/heart.gif
-share/rt3/static/RichText/plugins/smiley/images/kiss.gif
-share/rt3/static/RichText/plugins/smiley/images/lightbulb.gif
-share/rt3/static/RichText/plugins/smiley/images/omg_smile.gif
-share/rt3/static/RichText/plugins/smiley/images/regular_smile.gif
-share/rt3/static/RichText/plugins/smiley/images/sad_smile.gif
-share/rt3/static/RichText/plugins/smiley/images/shades_smile.gif
-share/rt3/static/RichText/plugins/smiley/images/teeth_smile.gif
-share/rt3/static/RichText/plugins/smiley/images/thumbs_down.gif
-share/rt3/static/RichText/plugins/smiley/images/thumbs_up.gif
-share/rt3/static/RichText/plugins/smiley/images/tongue_smile.gif
-share/rt3/static/RichText/plugins/smiley/images/tounge_smile.gif
-share/rt3/static/RichText/plugins/smiley/images/whatchutalkingabout_smile.gif
-share/rt3/static/RichText/plugins/smiley/images/wink_smile.gif
 share/rt3/static/RichText/plugins/specialchar/
 share/rt3/static/RichText/plugins/specialchar/dialogs/
 share/rt3/static/RichText/plugins/specialchar/dialogs/lang/
 share/rt3/static/RichText/plugins/specialchar/dialogs/lang/_translationstatus.txt
+share/rt3/static/RichText/plugins/specialchar/dialogs/lang/af.js
+share/rt3/static/RichText/plugins/specialchar/dialogs/lang/ar.js
+share/rt3/static/RichText/plugins/specialchar/dialogs/lang/bg.js
 share/rt3/static/RichText/plugins/specialchar/dialogs/lang/ca.js
 share/rt3/static/RichText/plugins/specialchar/dialogs/lang/cs.js
 share/rt3/static/RichText/plugins/specialchar/dialogs/lang/cy.js
+share/rt3/static/RichText/plugins/specialchar/dialogs/lang/da.js
 share/rt3/static/RichText/plugins/specialchar/dialogs/lang/de.js
 share/rt3/static/RichText/plugins/specialchar/dialogs/lang/el.js
+share/rt3/static/RichText/plugins/specialchar/dialogs/lang/en-gb.js
 share/rt3/static/RichText/plugins/specialchar/dialogs/lang/en.js
 share/rt3/static/RichText/plugins/specialchar/dialogs/lang/eo.js
+share/rt3/static/RichText/plugins/specialchar/dialogs/lang/es.js
 share/rt3/static/RichText/plugins/specialchar/dialogs/lang/et.js
 share/rt3/static/RichText/plugins/specialchar/dialogs/lang/fa.js
 share/rt3/static/RichText/plugins/specialchar/dialogs/lang/fi.js
+share/rt3/static/RichText/plugins/specialchar/dialogs/lang/fr-ca.js
 share/rt3/static/RichText/plugins/specialchar/dialogs/lang/fr.js
+share/rt3/static/RichText/plugins/specialchar/dialogs/lang/gl.js
 share/rt3/static/RichText/plugins/specialchar/dialogs/lang/he.js
 share/rt3/static/RichText/plugins/specialchar/dialogs/lang/hr.js
+share/rt3/static/RichText/plugins/specialchar/dialogs/lang/hu.js
+share/rt3/static/RichText/plugins/specialchar/dialogs/lang/id.js
 share/rt3/static/RichText/plugins/specialchar/dialogs/lang/it.js
+share/rt3/static/RichText/plugins/specialchar/dialogs/lang/ja.js
+share/rt3/static/RichText/plugins/specialchar/dialogs/lang/km.js
+share/rt3/static/RichText/plugins/specialchar/dialogs/lang/ko.js
 share/rt3/static/RichText/plugins/specialchar/dialogs/lang/ku.js
+share/rt3/static/RichText/plugins/specialchar/dialogs/lang/lt.js
 share/rt3/static/RichText/plugins/specialchar/dialogs/lang/lv.js
 share/rt3/static/RichText/plugins/specialchar/dialogs/lang/nb.js
 share/rt3/static/RichText/plugins/specialchar/dialogs/lang/nl.js
 share/rt3/static/RichText/plugins/specialchar/dialogs/lang/no.js
+share/rt3/static/RichText/plugins/specialchar/dialogs/lang/pl.js
 share/rt3/static/RichText/plugins/specialchar/dialogs/lang/pt-br.js
+share/rt3/static/RichText/plugins/specialchar/dialogs/lang/pt.js
+share/rt3/static/RichText/plugins/specialchar/dialogs/lang/ru.js
+share/rt3/static/RichText/plugins/specialchar/dialogs/lang/si.js
 share/rt3/static/RichText/plugins/specialchar/dialogs/lang/sk.js
+share/rt3/static/RichText/plugins/specialchar/dialogs/lang/sl.js
+share/rt3/static/RichText/plugins/specialchar/dialogs/lang/sq.js
 share/rt3/static/RichText/plugins/specialchar/dialogs/lang/sv.js
+share/rt3/static/RichText/plugins/specialchar/dialogs/lang/th.js
 share/rt3/static/RichText/plugins/specialchar/dialogs/lang/tr.js
+share/rt3/static/RichText/plugins/specialchar/dialogs/lang/tt.js
 share/rt3/static/RichText/plugins/specialchar/dialogs/lang/ug.js
+share/rt3/static/RichText/plugins/specialchar/dialogs/lang/uk.js
+share/rt3/static/RichText/plugins/specialchar/dialogs/lang/vi.js
 share/rt3/static/RichText/plugins/specialchar/dialogs/lang/zh-cn.js
+share/rt3/static/RichText/plugins/specialchar/dialogs/lang/zh.js
 share/rt3/static/RichText/plugins/specialchar/dialogs/specialchar.js
 share/rt3/static/RichText/plugins/table/
 share/rt3/static/RichText/plugins/table/dialogs/
@@ -1869,16 +2130,6 @@ share/rt3/static/RichText/plugins/table/dialogs/table.js
 share/rt3/static/RichText/plugins/tabletools/
 share/rt3/static/RichText/plugins/tabletools/dialogs/
 share/rt3/static/RichText/plugins/tabletools/dialogs/tableCell.js
-share/rt3/static/RichText/plugins/templates/
-share/rt3/static/RichText/plugins/templates/dialogs/
-share/rt3/static/RichText/plugins/templates/dialogs/templates.css
-share/rt3/static/RichText/plugins/templates/dialogs/templates.js
-share/rt3/static/RichText/plugins/templates/templates/
-share/rt3/static/RichText/plugins/templates/templates/default.js
-share/rt3/static/RichText/plugins/templates/templates/images/
-share/rt3/static/RichText/plugins/templates/templates/images/template1.gif
-share/rt3/static/RichText/plugins/templates/templates/images/template2.gif
-share/rt3/static/RichText/plugins/templates/templates/images/template3.gif
 share/rt3/static/RichText/plugins/wsc/
 share/rt3/static/RichText/plugins/wsc/LICENSE.md
 share/rt3/static/RichText/plugins/wsc/README.md
@@ -1887,29 +2138,34 @@ share/rt3/static/RichText/plugins/wsc/dialogs/ciframe.html
 share/rt3/static/RichText/plugins/wsc/dialogs/tmpFrameset.html
 share/rt3/static/RichText/plugins/wsc/dialogs/wsc.css
 share/rt3/static/RichText/plugins/wsc/dialogs/wsc.js
+share/rt3/static/RichText/plugins/wsc/dialogs/wsc_ie.js
 share/rt3/static/RichText/skins/
-share/rt3/static/RichText/skins/kama/
-share/rt3/static/RichText/skins/kama/dialog.css
-share/rt3/static/RichText/skins/kama/dialog_ie.css
-share/rt3/static/RichText/skins/kama/dialog_ie7.css
-share/rt3/static/RichText/skins/kama/dialog_ie8.css
-share/rt3/static/RichText/skins/kama/dialog_iequirks.css
-share/rt3/static/RichText/skins/kama/dialog_opera.css
-share/rt3/static/RichText/skins/kama/editor.css
-share/rt3/static/RichText/skins/kama/editor_ie.css
-share/rt3/static/RichText/skins/kama/editor_ie7.css
-share/rt3/static/RichText/skins/kama/editor_ie8.css
-share/rt3/static/RichText/skins/kama/editor_iequirks.css
-share/rt3/static/RichText/skins/kama/icons.png
-share/rt3/static/RichText/skins/kama/images/
-share/rt3/static/RichText/skins/kama/images/dialog_sides.gif
-share/rt3/static/RichText/skins/kama/images/dialog_sides.png
-share/rt3/static/RichText/skins/kama/images/dialog_sides_rtl.png
-share/rt3/static/RichText/skins/kama/images/mini.gif
-share/rt3/static/RichText/skins/kama/images/sprites.png
-share/rt3/static/RichText/skins/kama/images/sprites_ie6.png
-share/rt3/static/RichText/skins/kama/images/toolbar_start.gif
-share/rt3/static/RichText/skins/kama/readme.md
+share/rt3/static/RichText/skins/flat/
+share/rt3/static/RichText/skins/flat/dialog.css
+share/rt3/static/RichText/skins/flat/dialog_ie.css
+share/rt3/static/RichText/skins/flat/dialog_ie7.css
+share/rt3/static/RichText/skins/flat/dialog_ie8.css
+share/rt3/static/RichText/skins/flat/dialog_iequirks.css
+share/rt3/static/RichText/skins/flat/editor.css
+share/rt3/static/RichText/skins/flat/editor_gecko.css
+share/rt3/static/RichText/skins/flat/editor_ie.css
+share/rt3/static/RichText/skins/flat/editor_ie7.css
+share/rt3/static/RichText/skins/flat/editor_ie8.css
+share/rt3/static/RichText/skins/flat/editor_iequirks.css
+share/rt3/static/RichText/skins/flat/icons.png
+share/rt3/static/RichText/skins/flat/icons_hidpi.png
+share/rt3/static/RichText/skins/flat/images/
+share/rt3/static/RichText/skins/flat/images/arrow.png
+share/rt3/static/RichText/skins/flat/images/close.png
+share/rt3/static/RichText/skins/flat/images/hidpi/
+share/rt3/static/RichText/skins/flat/images/hidpi/close.png
+share/rt3/static/RichText/skins/flat/images/hidpi/lock-open.png
+share/rt3/static/RichText/skins/flat/images/hidpi/lock.png
+share/rt3/static/RichText/skins/flat/images/hidpi/refresh.png
+share/rt3/static/RichText/skins/flat/images/lock-open.png
+share/rt3/static/RichText/skins/flat/images/lock.png
+share/rt3/static/RichText/skins/flat/images/refresh.png
+share/rt3/static/RichText/skins/flat/readme.md
 share/rt3/static/RichText/styles.js
 share/rt3/static/css/
 share/rt3/static/css/aileron/
@@ -1925,6 +2181,7 @@ share/rt3/static/css/aileron/msie6.css
 share/rt3/static/css/aileron/nav.css
 share/rt3/static/css/aileron/ticket-lists.css
 share/rt3/static/css/aileron/ticket-search.css
+share/rt3/static/css/aileron/ticket-timer.css
 share/rt3/static/css/aileron/ticket.css
 share/rt3/static/css/ballard/
 share/rt3/static/css/ballard/base.css
@@ -1937,12 +2194,17 @@ share/rt3/static/css/ballard/msie6.css
 share/rt3/static/css/ballard/nav.css
 share/rt3/static/css/ballard/ticket-lists.css
 share/rt3/static/css/ballard/ticket-search.css
+share/rt3/static/css/ballard/ticket-timer.css
 share/rt3/static/css/base/
 share/rt3/static/css/base/accordion.css
 share/rt3/static/css/base/admin.css
 share/rt3/static/css/base/articles.css
+share/rt3/static/css/base/assets.css
 share/rt3/static/css/base/charts.css
+share/rt3/static/css/base/chosen.css
 share/rt3/static/css/base/collection.css
+share/rt3/static/css/base/dropzone.css
+share/rt3/static/css/base/dropzone.customized.css
 share/rt3/static/css/base/farbtastic.css
 share/rt3/static/css/base/forms.css
 share/rt3/static/css/base/history-folding.css
@@ -1951,6 +2213,7 @@ share/rt3/static/css/base/jquery-ui-timepicker-addon.css
 share/rt3/static/css/base/jquery-ui.css
 share/rt3/static/css/base/jquery-ui.custom.modified.css
 share/rt3/static/css/base/jquery.modal.css
+share/rt3/static/css/base/keyboard-shortcuts.css
 share/rt3/static/css/base/login.css
 share/rt3/static/css/base/main.css
 share/rt3/static/css/base/misc.css
@@ -1966,6 +2229,7 @@ share/rt3/static/css/base/superfish.css
 share/rt3/static/css/base/tablesorter.css
 share/rt3/static/css/base/theme-editor.css
 share/rt3/static/css/base/ticket-form.css
+share/rt3/static/css/base/ticket-timer.css
 share/rt3/static/css/base/ticket.css
 share/rt3/static/css/base/tools.css
 share/rt3/static/css/base/yui-fonts.css
@@ -1995,6 +2259,7 @@ share/rt3/static/css/rudder/nav.css
 share/rt3/static/css/rudder/ticket-forms.css
 share/rt3/static/css/rudder/ticket-lists.css
 share/rt3/static/css/rudder/ticket-search.css
+share/rt3/static/css/rudder/ticket-timer.css
 share/rt3/static/css/rudder/ticket.css
 share/rt3/static/css/web2/
 share/rt3/static/css/web2/base.css
@@ -2007,8 +2272,12 @@ share/rt3/static/css/web2/msie6.css
 share/rt3/static/css/web2/nav.css
 share/rt3/static/css/web2/ticket-lists.css
 share/rt3/static/css/web2/ticket-search.css
+share/rt3/static/css/web2/ticket-timer.css
 share/rt3/static/images/
 share/rt3/static/images/bpslogo.png
+share/rt3/static/images/chosen-sprite.png
+share/rt3/static/images/chosen-sprite@2x.png
+share/rt3/static/images/close.png
 share/rt3/static/images/css/
 share/rt3/static/images/css/cb-light.gif
 share/rt3/static/images/css/cb.gif
@@ -2032,7 +2301,6 @@ share/rt3/static/images/css/light-arrow.png
 share/rt3/static/images/css/rolldown-arrow.gif
 share/rt3/static/images/css/rolldown-arrow.png
 share/rt3/static/images/css/rollup-arrow.gif
-share/rt3/static/images/empty_star.gif
 share/rt3/static/images/eyedropper.png
 share/rt3/static/images/farbtastic/
 share/rt3/static/images/farbtastic/marker.png
@@ -2040,9 +2308,6 @@ share/rt3/static/images/farbtastic/mask.png
 share/rt3/static/images/farbtastic/wheel.png
 share/rt3/static/images/favicon.png
 share/rt3/static/images/jquery_ui/
-share/rt3/static/images/jquery_ui/animated-overlay.gif
-share/rt3/static/images/jquery_ui/ui-bg_flat_0_aaaaaa_40x100.png
-share/rt3/static/images/jquery_ui/ui-bg_flat_75_ffffff_40x100.png
 share/rt3/static/images/jquery_ui/ui-bg_glass_55_fbf9ee_1x400.png
 share/rt3/static/images/jquery_ui/ui-bg_glass_65_ffffff_1x400.png
 share/rt3/static/images/jquery_ui/ui-bg_glass_75_dadada_1x400.png
@@ -2054,25 +2319,33 @@ share/rt3/static/images/jquery_ui/ui-icons_2e83ff_256x240.png
 share/rt3/static/images/jquery_ui/ui-icons_454545_256x240.png
 share/rt3/static/images/jquery_ui/ui-icons_888888_256x240.png
 share/rt3/static/images/jquery_ui/ui-icons_cd0a0a_256x240.png
-share/rt3/static/images/star.gif
+share/rt3/static/images/pause.png
+share/rt3/static/images/star-empty.png
+share/rt3/static/images/star-full.png
+share/rt3/static/images/stopwatch.png
+share/rt3/static/images/submit.png
 share/rt3/static/images/tablesorter/
 share/rt3/static/images/tablesorter/asc.gif
 share/rt3/static/images/tablesorter/bg.gif
 share/rt3/static/images/tablesorter/desc.gif
 share/rt3/static/images/test.png
+share/rt3/static/images/unpause.png
 share/rt3/static/js/
+share/rt3/static/js/assets.js
 share/rt3/static/js/autocomplete.js
 share/rt3/static/js/cascaded.js
+share/rt3/static/js/chosen.jquery.min.js
 share/rt3/static/js/combobox.js
+share/rt3/static/js/dropzone.min.js
 share/rt3/static/js/event-registration.js
 share/rt3/static/js/farbtastic.js
 share/rt3/static/js/forms.js
 share/rt3/static/js/history-folding.js
 share/rt3/static/js/i18n.js
-share/rt3/static/js/jquery-1.9.1.min.js
-share/rt3/static/js/jquery-ui-1.10.0.custom.min.js
+share/rt3/static/js/jquery-1.11.3.min.js
 share/rt3/static/js/jquery-ui-patch-datepicker.js
 share/rt3/static/js/jquery-ui-timepicker-addon.js
+share/rt3/static/js/jquery-ui.min.js
 share/rt3/static/js/jquery.cookie.js
 share/rt3/static/js/jquery.event.hover-1.0.js
 share/rt3/static/js/jquery.modal-defaults.js
@@ -2080,7 +2353,9 @@ share/rt3/static/js/jquery.modal.min.js
 share/rt3/static/js/jquery.supposition.js
 share/rt3/static/js/jquery.tablesorter.min.js
 share/rt3/static/js/jquery_noconflict.js
+share/rt3/static/js/keyboard-shortcuts.js
 share/rt3/static/js/late.js
+share/rt3/static/js/mousetrap.min.js
 share/rt3/static/js/superfish.js
 share/rt3/static/js/supersubs.js
 share/rt3/static/js/titlebox-state.js

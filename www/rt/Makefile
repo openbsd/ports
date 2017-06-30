@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.36 2017/05/27 19:57:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.37 2017/06/30 16:43:53 pirofti Exp $
 
 COMMENT=		industrial-grade ticketing system
 
-DISTNAME=		rt-4.2.12
+DISTNAME=		rt-4.4.1
 CATEGORIES=		www
-REVISION =		2
 
 MAINTAINER=		Robert Nagy <robert@openbsd.org>
 
@@ -13,13 +12,17 @@ HOMEPAGE=		http://www.bestpractical.com/rt/
 MASTER_SITES=		https://download.bestpractical.com/pub/rt/release/ \
 			http://www.fsck.com/pub/rt/release/
 
-RUN_DEPENDS=		converters/p5-Convert-Color \
+RUN_DEPENDS=		converters/p5-Convert-ASN1 \
+			converters/p5-Convert-Color \
 			converters/p5-DateManip \
 			converters/p5-JSON \
 			databases/p5-DBD-mysql \
 			databases/p5-DBI \
 			databases/p5-DBIx-SearchBuilder \
+			databases/p5-Data-Page \
+			devel/p5-Business-Hours \
 			devel/p5-Class-ReturnValue \
+			devel/p5-Data-UUID \
 			devel/p5-Data-GUID \
 			devel/p5-Data-ICal \
 			devel/p5-Date-Extract \
@@ -34,11 +37,13 @@ RUN_DEPENDS=		converters/p5-Convert-Color \
 			devel/p5-Locale-Maketext-Fuzzy \
 			devel/p5-Locale-Maketext-Lexicon \
 			devel/p5-Log-Dispatch \
+			devel/p5-Module-Pluggable \
 			devel/p5-Module-Refresh \
 			devel/p5-Module-Versions-Report \
 			devel/p5-PerlIO-eol \
 			devel/p5-Regexp-IPv6 \
 			devel/p5-Role-Basic \
+			devel/p5-Scope-Upper \
 			devel/p5-Symbol-Global-Name \
 			devel/p5-Time-modules \
 			devel/p5-Tree-Simple \
@@ -52,10 +57,13 @@ RUN_DEPENDS=		converters/p5-Convert-Color \
 			mail/p5-MIME-tools \
 			math/graphviz,-main \
 			math/p5-GraphViz \
+			math/p5-Set-IntSpan \
 			net/p5-Net-CIDR \
+			net/p5-Net-IP \
 			net/p5-Regexp-Common-net-CIDR \
 			security/gnupg \
 			security/p5-Crypt-Eksblowfish \
+			security/p5-Crypt-SSLeay \
 			security/p5-Crypt-X509 \
 			security/p5-GnuPG-Interface \
 			security/p5-Text-Password-Pronounceable \
@@ -73,7 +81,9 @@ RUN_DEPENDS=		converters/p5-Convert-Color \
 			www/p5-Apache-Session \
 			www/p5-CGI-Emulate-PSGI \
 			www/p5-CGI-PSGI \
+			www/p5-CSS-Minifier-XS \
 			www/p5-CSS-Squish \
+			www/p5-Data-Page-Pageset \
 			www/p5-HTML-Format \
 			www/p5-HTML-FormatText-WithLinks \
 			www/p5-HTML-FormatText-WithLinks-AndTables \
@@ -84,6 +94,7 @@ RUN_DEPENDS=		converters/p5-Convert-Color \
 			www/p5-HTML-Tree \
 			www/p5-HTTP-Server-Simple-Mason \
 			www/p5-JavaScript-Minifier \
+			www/p5-JavaScript-Minifier-XS \
 			www/p5-Starlet \
 			www/p5-Starman \
 			www/p5-libwww
@@ -129,10 +140,9 @@ RUN_DEPENDS+=		databases/p5-DBD-mysql
 # needs an initialized database and /etc/rt3/RT_Config.pm to be present
 TEST_IS_INTERACTIVE=	Yes
 TEST_TARGET=		test
-
-pre-configure:
-	@perl -pi -e 's#%%PREFIX%%#${PREFIX}#' ${WRKSRC}/config.layout
-	@perl -pi -e 's#%%SYSCONFDIR%%#${SYSCONFDIR}#' ${WRKSRC}/config.layout
+TEST_DEPENDS=		devel/p5-Log-Dispatch-Perl
+# fill these in with appropriate values
+TEST_ENV=		RT_DBA_USER=rt_user RT_DBA_PASSWORD=1234
 
 post-install:
 	@mv ${PREFIX}/sbin/standalone_httpd ${PREFIX}/sbin/rt-standalone_httpd

@@ -1,5 +1,5 @@
---- Makefile.in.orig	Tue Jul 28 21:37:33 2015
-+++ Makefile.in	Mon Oct  5 20:40:02 2015
+--- Makefile.in.orig	Mon Jul 18 23:20:17 2016
++++ Makefile.in	Mon Mar 20 10:06:19 2017
 @@ -57,7 +57,13 @@ CC				=	@CC@
  
  RT_LAYOUT		=	@rt_layout_name@
@@ -15,7 +15,7 @@
  CONFIG_FILE		=	$(CONFIG_FILE_PATH)/RT_Config.pm
  SITE_CONFIG_FILE	=	$(CONFIG_FILE_PATH)/RT_SiteConfig.pm
  
-@@ -283,13 +289,13 @@ fixperms:
+@@ -285,13 +291,13 @@ fixperms:
  
  	chmod $(RT_READABLE_DIR_MODE) $(DESTDIR)$(RT_BIN_PATH)
  
@@ -34,10 +34,10 @@
  	chmod 0440 $(DESTDIR)$(CONFIG_FILE)
  	chmod 0640 $(DESTDIR)$(SITE_CONFIG_FILE)
 @@ -304,7 +310,7 @@ fixperms:
+ 
+ 	# Make upgrade scripts executable if they are in the source.
  	#
- 	# Note that we use the deprecated (by GNU/POSIX find) -perm +0NNN syntax
- 	# instead of -perm /0NNN since BSD find doesn't support the latter.
--	( cd etc/upgrade && find . -type f -not -name '*.in' -perm +0111 -print ) | while read file ; do \
+-	( cd etc/upgrade && find . -type f -not -name '*.in' -perm @FINDPERM@0111 -print ) | while read file ; do \
 +	( cd etc/upgrade && find . -type f \! -name '*.in' -perm +0111 -print ) | while read file ; do \
  		chmod a+x "$(DESTDIR)$(RT_ETC_PATH)/upgrade/$$file" ; \
  	done
@@ -59,12 +59,13 @@
  @COMMENT_INPLACE_LAYOUT@	@echo "Installed configuration. About to install RT in  $(RT_PATH)"
  
  test: 
-@@ -453,15 +460,15 @@ doc-install:
+@@ -453,16 +460,16 @@ doc-install:
  
  
  etc-install:
 -@COMMENT_INPLACE_LAYOUT@	[ -d $(DESTDIR)$(RT_ETC_PATH) ] || $(INSTALL) -m 0755 -d $(DESTDIR)$(RT_ETC_PATH)
 +@COMMENT_INPLACE_LAYOUT@	[ -d $(DESTDIR)$(CONFIG_FILE_PATH) ] || $(INSTALL) -m 0755 -d $(DESTDIR)$(CONFIG_FILE_PATH)
+ @COMMENT_INPLACE_LAYOUT@	[ -d "$(DESTDIR)$(RT_ETC_PATH)/RT_SiteConfig.d" ] || $(INSTALL) -m 0755 -d "$(DESTDIR)$(RT_ETC_PATH)/RT_SiteConfig.d"
  @COMMENT_INPLACE_LAYOUT@	for file in $(ETC_FILES) ; do \
 -@COMMENT_INPLACE_LAYOUT@	    $(INSTALL) -m 0644 "etc/$$file" "$(DESTDIR)$(RT_ETC_PATH)/" ; \
 +@COMMENT_INPLACE_LAYOUT@	    $(INSTALL) -m 0644 -o root -g wheel "etc/$$file" "$(DESTDIR)$(CONFIG_FILE_PATH)/" ; \
