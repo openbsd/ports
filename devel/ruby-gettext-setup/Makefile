@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2017/05/09 13:44:03 sebastia Exp $
+# $OpenBSD: Makefile,v 1.5 2017/06/30 08:31:20 sebastia Exp $
 
 COMMENT=		Ruby gem to ease i18n
 
-DISTNAME =		gettext-setup-0.24
+DISTNAME =		gettext-setup-0.25
 CATEGORIES =		devel
 HOMEPAGE =	https://github.com/puppetlabs/gettext-setup-gem
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
