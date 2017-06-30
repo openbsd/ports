@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2017/04/06 20:34:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2017/06/30 19:45:14 naddy Exp $
 
 COMMENT=	encode, inspect, and decode Opus files
 
@@ -12,8 +12,7 @@ MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	http://downloads.xiph.org/releases/opus/ \
-		https://ftp.mozilla.org/pub/mozilla.org/opus/
+MASTER_SITES=	https://archive.mozilla.org/pub/opus/
 
 LIB_DEPENDS=	audio/flac audio/libogg audio/opus
 WANTLIB=	FLAC c m ogg opus sndio

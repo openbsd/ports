@@ -15,8 +15,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =		crypto m ogg opus ssl
 
-MASTER_SITES =		http://downloads.xiph.org/releases/opus/ \
-			https://ftp.mozilla.org/pub/mozilla.org/opus/
+MASTER_SITES =		https://archive.mozilla.org/pub/opus/
 
 LIB_DEPENDS =		audio/libogg \
 			audio/opus
