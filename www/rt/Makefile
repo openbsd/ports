@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.37 2017/06/30 16:43:53 pirofti Exp $
+# $OpenBSD: Makefile,v 1.38 2017/06/30 22:22:45 naddy Exp $
 
 COMMENT=		industrial-grade ticketing system
 
 DISTNAME=		rt-4.4.1
+REVISION=		0
 CATEGORIES=		www
 
 MAINTAINER=		Robert Nagy <robert@openbsd.org>
@@ -20,7 +21,6 @@ RUN_DEPENDS=		converters/p5-Convert-ASN1 \
 			databases/p5-DBI \
 			databases/p5-DBIx-SearchBuilder \
 			databases/p5-Data-Page \
-			devel/p5-Business-Hours \
 			devel/p5-Class-ReturnValue \
 			devel/p5-Data-UUID \
 			devel/p5-Data-GUID \
@@ -56,6 +56,7 @@ RUN_DEPENDS=		converters/p5-Convert-ASN1 \
 			mail/p5-MIME-Types \
 			mail/p5-MIME-tools \
 			math/graphviz,-main \
+			math/p5-Business-Hours \
 			math/p5-GraphViz \
 			math/p5-Set-IntSpan \
 			net/p5-Net-CIDR \
