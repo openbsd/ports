@@ -1,6 +1,6 @@
-$OpenBSD: patch-config_defaults_inc_php,v 1.9 2016/11/29 11:42:00 sthen Exp $
---- config/defaults.inc.php.orig	Sun Nov 27 16:07:49 2016
-+++ config/defaults.inc.php	Tue Nov 29 11:37:21 2016
+$OpenBSD: patch-config_defaults_inc_php,v 1.10 2017/06/30 13:26:22 sthen Exp $
+--- config/defaults.inc.php.orig	Wed Apr 26 19:52:25 2017
++++ config/defaults.inc.php	Wed Apr 26 22:18:17 2017
 @@ -25,7 +25,7 @@ $config = array();
  // For examples see http://pear.php.net/manual/en/package.database.mdb2.intro-dsn.php
  // NOTE: for SQLite use absolute path (Linux): 'sqlite:////full/path/to/sqlite.db?mode=0646'
@@ -10,7 +10,7 @@ $OpenBSD: patch-config_defaults_inc_php,v 1.9 2016/11/29 11:42:00 sthen Exp $
  
  // Database DSN for read-only operations (if empty write database will be used)
  // useful for database replication
-@@ -725,7 +725,7 @@ $config['spellcheck_dictionary'] = false;
+@@ -737,7 +737,7 @@ $config['spellcheck_dictionary'] = false;
  // Since Google shut down their public spell checking service, the default settings
  // connect to http://spell.roundcube.net which is a hosted service provided by Roundcube.
  // You can connect to any other googie-compliant service by setting 'spellcheck_uri' accordingly.

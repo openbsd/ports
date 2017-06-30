@@ -1,7 +1,8 @@
-$OpenBSD: patch-bin_update_sh,v 1.4 2016/05/22 19:22:22 sthen Exp $
---- bin/update.sh.orig	Sun May 22 12:06:45 2016
-+++ bin/update.sh	Sun May 22 14:22:49 2016
-@@ -250,7 +250,7 @@ if ($RCI->configured) {
+$OpenBSD: patch-bin_update_sh,v 1.5 2017/06/30 13:26:22 sthen Exp $
+Index: bin/update.sh
+--- bin/update.sh.orig
++++ bin/update.sh
+@@ -254,7 +254,7 @@ if ($RCI->configured) {
        echo "\n    }\n\n";
      }
  

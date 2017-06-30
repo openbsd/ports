@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.117 2017/04/28 21:50:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.118 2017/06/30 13:26:22 sthen Exp $
 
 COMMENT=	imap4 webmail client
 
-V=		1.2.5
+V=		1.3.0
 DISTNAME=	roundcubemail-$V
 PKGNAME=	roundcubemail-${V:S/-rc/rc/}
 EXTRACT_SUFX=	-complete.tar.gz
@@ -26,8 +26,7 @@ TINSTDIR=	${TRUEPREFIX}/roundcubemail
 SUBST_VARS=	INSTDIR TINSTDIR MODPHP_BIN
 
 MODULES=	lang/php
-RUN_DEPENDS=	lang/php/${MODPHP_VERSION},-mcrypt \
-		lang/php/${MODPHP_VERSION},-pspell \
+RUN_DEPENDS=	lang/php/${MODPHP_VERSION},-pspell \
 		lang/php/${MODPHP_VERSION},-zip
 
 do-configure:
