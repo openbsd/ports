@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2017/05/09 20:58:53 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.6 2017/06/30 08:21:18 sebastia Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
@@ -8,6 +8,7 @@ ${GEM_LIB}/gems/${DISTNAME}/Gemfile
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE.txt
 ${GEM_LIB}/gems/${DISTNAME}/README.md
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile
+${GEM_LIB}/gems/${DISTNAME}/appveyor.yml
 ${GEM_LIB}/gems/${DISTNAME}/jenkins.sh
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet-syntax/
