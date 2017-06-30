@@ -1,0 +1,17 @@
+$OpenBSD: patch-lib_inc_facter_facts_vm_hpp,v 1.1 2017/06/30 08:06:45 sebastia Exp $
+
+Index: lib/inc/facter/facts/vm.hpp
+--- lib/inc/facter/facts/vm.hpp.orig
++++ lib/inc/facter/facts/vm.hpp
+@@ -137,6 +137,11 @@ namespace facter { namespace facts {
+          * The name for Solaris ldom
+          */
+         constexpr static char const* ldom = "ldom";
++
++        /**
++         * The name for OpenBSD vmm
++         */
++        constexpr static char const* vmm = "vmm";
+     };
+ 
+ }}  // namespace facter::facts

@@ -1,0 +1,18 @@
+$OpenBSD: patch-lib_src_facts_openbsd_dmi_resolver_cc,v 1.1 2017/06/30 08:06:45 sebastia Exp $
+
+Index: lib/src/facts/openbsd/dmi_resolver.cc
+--- lib/src/facts/openbsd/dmi_resolver.cc.orig
++++ lib/src/facts/openbsd/dmi_resolver.cc
+@@ -13,7 +13,11 @@ namespace facter { namespace facts { namespace openbsd
+         result.bios_vendor = sysctl_lookup(HW_VENDOR);
+         result.uuid = sysctl_lookup(HW_UUID);
+         result.serial_number = sysctl_lookup(HW_SERIALNO);
+-        result.product_name = sysctl_lookup(HW_PRODUCT);
++        if (sysctl_lookup(HW_PRODUCT).length() > 0) {
++            result.product_name = sysctl_lookup(HW_PRODUCT);
++        } else {
++            result.product_name = sysctl_lookup(HW_VENDOR);
++        }
+         result.bios_version = sysctl_lookup(HW_VERSION);
+ 
+         return result;
