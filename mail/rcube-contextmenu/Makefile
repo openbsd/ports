@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.12 2015/06/05 06:00:21 robert Exp $
+# $OpenBSD: Makefile,v 1.13 2017/06/30 13:26:33 sthen Exp $
 
 COMMENT=	roundcube plugin: context-sensitive menus
 
 GH_ACCOUNT=	JohnDoh
 GH_PROJECT=	Roundcube-Plugin-Context-Menu
-GH_TAGNAME=	2.1.2
+GH_TAGNAME=	2.3
 DISTNAME=	contextmenu-${GH_TAGNAME}
 PKGNAME=	rcube-${DISTNAME}
 CATEGORIES=	mail www
 HOMEPAGE=	http://www.tehinterweb.co.uk/roundcube/\#picontextmenu
-REVISION=	0
 
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
@@ -26,7 +25,7 @@ TINSTDIR=	${TRUEPREFIX}/roundcubemail/plugins
 SUBST_VARS=	INSTDIR TINSTDIR
 
 MODULES=	lang/php
-RUN_DEPENDS=	mail/roundcubemail>=1.1
+RUN_DEPENDS=	mail/roundcubemail>=1.3
 
 do-install:
 	${INSTALL_DATA_DIR} ${INSTDIR}/contextmenu
