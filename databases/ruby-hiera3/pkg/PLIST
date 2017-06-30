@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2017/05/10 10:46:05 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.7 2017/06/30 08:16:25 sebastia Exp $
 @conflict ruby22-hiera-<3.0.0
 ${GEM_BIN}/hiera${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
@@ -24,7 +24,9 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/hiera/interpolate.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/hiera/noop_logger.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/hiera/puppet_logger.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/hiera/recursive_guard.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/hiera/util/
 ${GEM_LIB}/gems/${DISTNAME}/lib/hiera/util.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/hiera/util/win32.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/hiera/version.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/
 ${GEM_LIB}/gems/${DISTNAME}/spec/spec_helper.rb
