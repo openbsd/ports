@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/06/30 13:26:43 uaa Exp $
+bin/osirrox
+bin/xorrecord
+@bin bin/xorriso
+bin/xorriso-tcltk
+bin/xorrisofs
+@info info/xorrecord.info
+@info info/xorriso.info
+@info info/xorrisofs.info
+@man man/man1/xorrecord.1
+@man man/man1/xorriso.1
+@man man/man1/xorrisofs.1
