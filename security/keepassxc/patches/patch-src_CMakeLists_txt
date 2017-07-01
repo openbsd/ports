@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_CMakeLists_txt,v 1.1 2017/07/01 16:48:57 rsadowski Exp $
+
+Index: src/CMakeLists.txt
+--- src/CMakeLists.txt.orig
++++ src/CMakeLists.txt
+@@ -149,7 +149,7 @@ if(APPLE)
+         core/ScreenLockListenerMac.cpp
+         )
+ endif()
+-if(${CMAKE_SYSTEM_NAME} STREQUAL "Linux")
++if(${CMAKE_SYSTEM_NAME} STREQUAL "Linux" OR ${CMAKE_SYSTEM_NAME} STREQUAL "OpenBSD")
+     set(keepassx_SOURCES ${keepassx_SOURCES}
+         core/ScreenLockListenerDBus.h
+         core/ScreenLockListenerDBus.cpp
