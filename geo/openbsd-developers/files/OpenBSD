@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.144 2017/06/29 09:37:45 job Exp $
+# $OpenBSD: OpenBSD,v 1.145 2017/07/01 12:56:04 mortimer Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -65,6 +65,7 @@
 45.095683	-93.4982	"jim"		# Jim Razmus II
 45.2002		5.7222		"ratchov"	# Alexandre Ratchov
 45.3333		4.3167		"syl"		# Sylvestre Gallon
+45.34		-75.79		"mortimer"	# Todd Mortimer
 45.43		12.13		"michele"	# Michele Marchetto
 45.4745		-73.6556	"msf"		# Mathieu Sauve-Frankel
 45.5		-122.5		"joshe"		# Joshua Elsasser
