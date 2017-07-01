@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.501 2017/06/24 19:40:24 fcambus Exp $
+# $OpenBSD: Quirks.pm,v 1.502 2017/07/01 17:32:31 rsadowski Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -865,7 +865,6 @@ my $obsolete_reason = {
 	'kdewebdev' => 5,
 	'kmplayer' => 6,
 	'kountdown' => 3,
-	'krusader' => 2,
 	'kslide' => 3,
 	'ktimeclock' => 6,
 	'okle' => 2,
