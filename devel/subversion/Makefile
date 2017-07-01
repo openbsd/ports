@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.154 2016/11/29 16:31:00 stsp Exp $
+# $OpenBSD: Makefile,v 1.155 2017/07/01 14:14:27 stsp Exp $
 
 COMMENT-main=		subversion revision control system
 COMMENT-perl=		perl interface to subversion
@@ -222,9 +222,9 @@ post-build:
 
 do-test:
 	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
-		${ALL_TEST_FLAGS} check FS_TYPE=bdb
+		${ALL_TEST_FLAGS} check FS_TYPE=bdb CLEANUP=1
 	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
-		${ALL_TEST_FLAGS} check FS_TYPE=fsfs
+		${ALL_TEST_FLAGS} check FS_TYPE=fsfs CLEANUP=1
 .if ${BUILD_PACKAGES:M-perl}
 	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
 		${ALL_TEST_FLAGS} TMPDIR=${WRKBUILD} check-swig-pl
