@@ -1,6 +1,9 @@
-$OpenBSD: patch-src_email_c,v 1.1 2017/06/29 00:33:59 danj Exp $
+$OpenBSD: patch-src_email_c,v 1.2 2017/07/01 13:35:30 danj Exp $
 
 2048 is not enough to get getgrnam_r result
+
+Committed upstream:
+https://github.com/collectd/collectd/commit/24bdf52decaf93359aab0364fb11420af5cd4a21
 
 Index: src/email.c
 --- src/email.c.orig
