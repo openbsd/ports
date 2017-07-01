@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2017/06/30 13:26:43 uaa Exp $
+$OpenBSD: patch-configure,v 1.2 2017/07/01 15:13:10 ajacoutot Exp $
 --- configure.orig	Fri Sep 16 22:51:36 2016
 +++ configure	Fri Jun 30 00:29:56 2017
 @@ -2529,6 +2529,10 @@ test -n "$target_alias" &&
@@ -6,8 +6,8 @@ $OpenBSD: patch-configure,v 1.1.1.1 2017/06/30 13:26:43 uaa Exp $
  
  case $target_os in
 +openbsd*)
-+        LDFLAGS="$LDFLAGS -L/usr/local/lib"
-+        CPPFLAGS="$CPPFLAGS -I/usr/local/include"
++        LDFLAGS="$LDFLAGS -L${LOCALBASE}/lib"
++        CPPFLAGS="$CPPFLAGS -I${LOCALBASE}/include"
 +        ;;
  freebsd*)
          LDFLAGS="$LDFLAGS -L/usr/local/lib"
