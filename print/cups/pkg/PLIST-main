@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.26 2016/10/05 18:28:17 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.27 2017/07/01 11:05:41 ajacoutot Exp $
 @conflict LPRng-*
 @pkgpath print/cups
 @pkgpath print/cups,ldap
@@ -622,15 +622,11 @@ share/doc/cups/es/index.html
 share/doc/cups/help/
 share/doc/cups/help/accounting.html
 share/doc/cups/help/api-admin.html
-share/doc/cups/help/api-array.html
-share/doc/cups/help/api-cups.html
-share/doc/cups/help/api-filedir.html
 share/doc/cups/help/api-filter.html
-share/doc/cups/help/api-httpipp.html
-share/doc/cups/help/api-overview.html
 share/doc/cups/help/api-ppd.html
 share/doc/cups/help/api-raster.html
 share/doc/cups/help/cgi.html
+share/doc/cups/help/cupspm.html
 share/doc/cups/help/encryption.html
 share/doc/cups/help/glossary.html
 share/doc/cups/help/kerberos.html
@@ -772,6 +768,7 @@ share/locale/it/cups_it.po
 share/locale/ja/cups_ja.po
 share/locale/pt_BR/cups_pt_BR.po
 share/locale/ru/cups_ru.po
+share/locale/zh_CN/cups_zh_CN.po
 @extraunexec rm -rf /var/cache/cups
 @extraunexec rm -rf /var/spool/cups
 @rcscript ${RCDIR}/cupsd

@@ -1,10 +1,11 @@
-$OpenBSD: patch-config-scripts_cups-sharedlibs_m4,v 1.10 2016/09/19 09:16:51 ajacoutot Exp $
---- config-scripts/cups-sharedlibs.m4.orig	Wed Sep 14 01:39:47 2016
-+++ config-scripts/cups-sharedlibs.m4	Sat Sep 17 15:26:03 2016
+$OpenBSD: patch-config-scripts_cups-sharedlibs_m4,v 1.11 2017/07/01 11:05:41 ajacoutot Exp $
+Index: config-scripts/cups-sharedlibs.m4
+--- config-scripts/cups-sharedlibs.m4.orig
++++ config-scripts/cups-sharedlibs.m4
 @@ -33,14 +33,14 @@ if test x$enable_shared != xno; then
  			DSOFLAGS="$DSOFLAGS -Wl,-h\`basename \$@\` -G \$(OPTIM)"
  			;;
- 		Linux | GNU | *BSD*)
+ 		linux* | gnu* | *bsd*)
 -			LIBCUPS="lib$cupsbase.so.2"
 -			LIBCUPSCGI="libcupscgi.so.1"
 -			LIBCUPSIMAGE="libcupsimage.so.2"
@@ -20,5 +21,5 @@ $OpenBSD: patch-config-scripts_cups-sharedlibs_m4,v 1.10 2016/09/19 09:16:51 aja
 -			DSOFLAGS="$DSOFLAGS -Wl,-soname,\`basename \$@\` -shared \$(OPTIM)"
 +			DSOFLAGS="$DSOFLAGS -shared \$(OPTIM)"
  			;;
- 		Darwin*)
+ 		darwin*)
  			LIBCUPS="lib$cupsbase.2.dylib"
