@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile,v 1.7 2017/07/02 20:46:12 espie Exp $
+$OpenBSD: patch-Makefile,v 1.8 2017/07/02 21:04:48 espie Exp $
 
 Index: Makefile
 --- Makefile.orig
@@ -10,7 +10,7 @@ Index: Makefile
 -.y.c:
 -	${YACC.y} -d -b ${.TARGET:R} -o ${.TARGET} ${.IMPSRC}
 +sf-grammer.c sf-grammer.h: sf-grammer.y
-+	${YACC.y} -d -b ${.TARGET:R} -o ${.TARGET} sf-grammer.y
++	${YACC.y} -d -b ${.TARGET:R} -o sf-grammer.c sf-grammer.y
 +
 +sf-scanner.o: sf-grammer.h
  
