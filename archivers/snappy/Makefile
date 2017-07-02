@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.4 2017/04/10 11:45:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2017/07/02 13:45:36 fcambus Exp $
 
 COMMENT =	fast compression/decompression library
 
 V =		1.1.4
 DISTNAME =	snappy-${V}
+REVISION =	0
 
 SHARED_LIBS =	snappy	0.0	# 4.1
 
 CATEGORIES =	archivers
-
-MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 HOMEPAGE =	http://google.github.io/snappy/
 
