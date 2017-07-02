@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2017/01/10 11:07:25 kirby Exp $
+# $OpenBSD: Makefile,v 1.3 2017/07/02 00:51:50 bcallah Exp $
 
 COMMENT =		free chess database and analyzer
-DISTNAME =		chessx-1.4.0
+DISTNAME =		chessx-1.4.6
 CATEGORIES =		games
 HOMEPAGE =		http://chessx.sourceforge.net/
 MAINTAINER =		Roman Yakovlev <obsd@51t.ru>
