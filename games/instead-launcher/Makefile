@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2017/04/10 11:46:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2017/07/02 00:55:18 bcallah Exp $
 
 COMMENT =		package manager for Instead game engine
-V =			0.6.3
+V =			0.7.0
 DISTNAME =		instead-launcher_${V}
 PKGNAME =		${DISTNAME:C/_/-/}
 CATEGORIES =		games
