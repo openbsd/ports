@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2017/06/06 16:50:43 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.6 2017/07/02 00:59:11 bcallah Exp $
 @bin bin/worker
 man/fr/
 man/fr/man1/
@@ -7,6 +7,8 @@ man/it/
 man/it/man1/
 @man man/it/man1/worker.1
 @man man/man1/worker.1
+share/appdata/
+share/appdata/worker.appdata.xml
 share/applications/worker.desktop
 share/pixmaps/
 share/pixmaps/WorkerIcon.xpm
