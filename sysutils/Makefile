@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.444 2017/06/29 14:35:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.445 2017/07/02 03:06:14 jca Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -323,6 +323,7 @@
      SUBDIR += xbatt
      SUBDIR += xbattbar
      SUBDIR += xjobs
+     SUBDIR += xorriso
      SUBDIR += xps
      SUBDIR += xstatbar
      SUBDIR += xuvmstat
