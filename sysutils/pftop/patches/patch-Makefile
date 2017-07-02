@@ -1,14 +1,17 @@
-$OpenBSD: patch-Makefile,v 1.6 2017/07/02 18:26:56 jca Exp $
+$OpenBSD: patch-Makefile,v 1.7 2017/07/02 20:46:12 espie Exp $
 
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -16,6 +16,8 @@ LDADD+= -lcurses
+@@ -16,7 +16,9 @@ LDADD+= -lcurses
  MANDIR=${LOCALBASE}/man/cat
  BINDIR=${LOCALBASE}/sbin
  
-+BUILDFIRST=	sf-grammer.c sf-grammer.h
+-.y.c:
+-	${YACC.y} -d -b ${.TARGET:R} -o ${.TARGET} ${.IMPSRC}
++sf-grammer.c sf-grammer.h: sf-grammer.y
++	${YACC.y} -d -b ${.TARGET:R} -o ${.TARGET} sf-grammer.y
 +
- .y.c:
- 	${YACC.y} -d -b ${.TARGET:R} -o ${.TARGET} ${.IMPSRC}
++sf-scanner.o: sf-grammer.h
  
+ .include <bsd.prog.mk>
