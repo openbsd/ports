@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2017/07/01 23:10:35 uaa Exp $
+# $OpenBSD: Makefile,v 1.4 2017/07/02 03:04:21 jca Exp $
 
 COMMENT =	ISO 9660 Rock Ridge Filesystem Manipulator
 
@@ -21,8 +21,5 @@ LIB_DEPENDS =		archivers/bzip2 \
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib ${LDFLAGS}"
-
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/configure
 
 .include <bsd.port.mk>
