@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.93 2017/05/13 17:40:26 espie Exp $
+# $OpenBSD: Makefile,v 1.94 2017/07/03 18:52:55 jasper Exp $
 
 # XXX: PORTROACH set below to override the value from gnome.port.mk
 
 COMMENT=		people aggregation library
 
 GNOME_PROJECT=		folks
-GNOME_VERSION=		0.11.3
+GNOME_VERSION=		0.11.4
 
 # MODULE_VERSION in config.h
 API_V=			43
-REVISION=		4
 
 SHARED_LIBS +=  folks                5.5      # 43.3
 SHARED_LIBS +=  folks-dummy          0.0      # 43.3
@@ -62,26 +61,6 @@ CONFIGURE_ARGS +=	--disable-bluez-backend
 
 # https://git.gnome.org/browse/folks/commit/Makefile.am?id=8ebe13c457660de380521874a006425083151741
 CONFIGURE_ARGS += 	--disable-fatal-warnings
-
-########################################
-# XXX: Remove when updating
-GH_PROJECT=		folks
-GH_ACCOUNT=		gnome
-GH_COMMIT=		2f8018ff090820f3eb56357dc5490e4c8fea86bb
-EXTRACT_SUFX=		.tar.gz
-MASTER_SITES=		https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/archive/
-AUTOCONF_VERSION=	2.69
-AUTOMAKE_VERSION=	1.15
-BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS} \
-			devel/libtool
-
-pre-configure:
-	cd ${WRKSRC} && \
-		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-		NOCONFIGURE=1 ./autogen.sh
-########################################
 
 post-install:
 	rm ${PREFIX}/lib/folks/${API_V}/backends/*/*.{a,la}
