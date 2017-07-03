@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2017/05/30 19:56:35 edd Exp $
+@comment $OpenBSD: PLIST,v 1.6 2017/07/03 10:24:55 feinerer Exp $
 @bin bin/ginfo
 @bin bin/ginstall-info
 bin/gmakeinfo
@@ -14,6 +14,8 @@ info/gtexinfo.info-1
 info/gtexinfo.info-2
 info/gtexinfo.info-3
 lib/texinfo/
+@comment lib/texinfo/MiscXS.la
+lib/texinfo/MiscXS.so
 @comment lib/texinfo/XSParagraph.la
 lib/texinfo/XSParagraph.so
 @man man/man1/ginfo.1
@@ -33,7 +35,9 @@ share/locale/ca.us-ascii/LC_MESSAGES/texinfo_document.mo
 share/locale/ca/LC_MESSAGES/texinfo.mo
 share/locale/ca/LC_MESSAGES/texinfo_document.mo
 share/locale/cs/LC_MESSAGES/texinfo.mo
+share/locale/cs/LC_MESSAGES/texinfo_document.mo
 share/locale/da/LC_MESSAGES/texinfo.mo
+share/locale/da/LC_MESSAGES/texinfo_document.mo
 share/locale/de.us-ascii/
 share/locale/de.us-ascii/LC_MESSAGES/
 share/locale/de.us-ascii/LC_MESSAGES/texinfo_document.mo
@@ -89,7 +93,6 @@ share/locale/zh_CN/LC_MESSAGES/texinfo.mo
 share/locale/zh_TW/LC_MESSAGES/texinfo.mo
 share/texinfo/
 share/texinfo/DebugTexinfo/
-share/texinfo/DebugTexinfo/DebugCount.pm
 share/texinfo/DebugTexinfo/DebugTree.pm
 share/texinfo/Pod-Simple-Texinfo/
 share/texinfo/Pod-Simple-Texinfo/Pod/
@@ -121,10 +124,13 @@ share/texinfo/Texinfo/Convert/XSParagraph/
 share/texinfo/Texinfo/Convert/XSParagraph/TestXS.pm
 share/texinfo/Texinfo/Documentlanguages.pm
 share/texinfo/Texinfo/Encoding.pm
+share/texinfo/Texinfo/MiscXS.pm
 share/texinfo/Texinfo/ModulePath.pm
 share/texinfo/Texinfo/Parser.pm
 share/texinfo/Texinfo/Report.pm
 share/texinfo/Texinfo/Structuring.pm
+share/texinfo/Texinfo/Transformations.pm
+share/texinfo/Texinfo/XSLoader.pm
 share/texinfo/htmlxref.cnf
 share/texinfo/init/
 share/texinfo/init/book.pm
