@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.145 2017/07/01 12:56:04 mortimer Exp $
+# $OpenBSD: OpenBSD,v 1.146 2017/07/03 03:45:17 pd Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -25,6 +25,7 @@
 35.698		139.713		"mcbride"	# Ryan Thomas McBride
 36.134		-86.70		"david"		# David Krause
 37.25230	-121.81576	"mlarkin"	# Mike Larkin
+37.40203	-122.06842	"pd"		# Pratik Vyas
 37.3706		-122.0138	"ckuethe"	# Chris Kuethe
 37.515049	-122.339528	"marc"		# Marco S. Hyman
 37.75		-122.41		"matthew"	# Matthew Dempsky
