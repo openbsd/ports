@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2015/05/22 11:31:15 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2017/07/03 17:29:06 rsadowski Exp $
 @bin bin/4channels
 @bin bin/dcraw_emu
 @bin bin/dcraw_half
@@ -30,4 +30,3 @@ share/doc/libraw/COPYRIGHT
 share/doc/libraw/Changelog.txt
 share/doc/libraw/LICENSE.CDDL
 share/doc/libraw/LICENSE.LGPL
-share/doc/libraw/LICENSE.LibRaw.pdf
