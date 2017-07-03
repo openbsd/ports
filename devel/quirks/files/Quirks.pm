@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.502 2017/07/01 17:32:31 rsadowski Exp $
+# $OpenBSD: Quirks.pm,v 1.503 2017/07/03 22:15:47 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -411,6 +411,7 @@ my $stem_extensions = {
 	'ja-w3m' => 'w3m',
 	'markdown' => 'py-markdown',
 	'netperf-wrapper' => 'flent',
+	'kamailio-xmlrpc' => 'kamailio-xml',
 };
 
 my $obsolete_reason = {
