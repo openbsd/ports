@@ -1,7 +1,8 @@
-$OpenBSD: patch-vcl_unx_generic_plugadapt_salplug_cxx,v 1.1 2016/03/01 21:39:58 robert Exp $
---- vcl/unx/generic/plugadapt/salplug.cxx.orig.port	Tue Mar  1 22:26:29 2016
-+++ vcl/unx/generic/plugadapt/salplug.cxx	Tue Mar  1 22:26:55 2016
-@@ -171,7 +171,7 @@ static SalInstance* autodetect_plugin()
+$OpenBSD: patch-vcl_unx_generic_plugadapt_salplug_cxx,v 1.2 2017/07/03 08:32:10 robert Exp $
+Index: vcl/unx/generic/plugadapt/salplug.cxx
+--- vcl/unx/generic/plugadapt/salplug.cxx.orig
++++ vcl/unx/generic/plugadapt/salplug.cxx
+@@ -172,7 +172,7 @@ static SalInstance* autodetect_plugin()
  #if ENABLE_KDE4
          "kde4",
  #endif
@@ -10,7 +11,7 @@ $OpenBSD: patch-vcl_unx_generic_plugadapt_salplug_cxx,v 1.1 2016/03/01 21:39:58 
      };
  
      static const char* const pKDEFallbackList[] =
-@@ -179,12 +179,12 @@ static SalInstance* autodetect_plugin()
+@@ -180,12 +180,12 @@ static SalInstance* autodetect_plugin()
  #if ENABLE_KDE4
          "kde4",
  #endif
@@ -25,7 +26,7 @@ $OpenBSD: patch-vcl_unx_generic_plugadapt_salplug_cxx,v 1.1 2016/03/01 21:39:58 
      };
  
      static const char* const pHeadlessFallbackList[] =
-@@ -244,7 +244,7 @@ SalInstance *CreateSalInstance()
+@@ -245,7 +245,7 @@ SalInstance *CreateSalInstance()
  
      // fallback, try everything
      static const char* const pPlugin[] = {
