@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2017/06/02 16:12:38 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.28 2017/07/03 22:01:47 sthen Exp $
 @newgroup _unifi:732
 @newuser _unifi:732:_unifi:daemon:unifi user:/usr/local/share/unifi:/sbin/nologin
 bin/unifi
@@ -17,35 +17,38 @@ share/unifi/data/
 share/unifi/dl/
 share/unifi/dl/firmware/
 share/unifi/dl/firmware/BZ2/
-share/unifi/dl/firmware/BZ2/3.7.58.6385/
-share/unifi/dl/firmware/BZ2/3.7.58.6385/firmware.bin
+share/unifi/dl/firmware/BZ2/3.8.3.6587/
+share/unifi/dl/firmware/BZ2/3.8.3.6587/firmware.bin
 share/unifi/dl/firmware/U2HSR/
-share/unifi/dl/firmware/U2HSR/3.7.58.6385/
-share/unifi/dl/firmware/U2HSR/3.7.58.6385/firmware.bin
+share/unifi/dl/firmware/U2HSR/3.8.3.6587/
+share/unifi/dl/firmware/U2HSR/3.8.3.6587/firmware.bin
 share/unifi/dl/firmware/U2IW/
-share/unifi/dl/firmware/U2IW/3.7.58.6385/
-share/unifi/dl/firmware/U2IW/3.7.58.6385/firmware.bin
+share/unifi/dl/firmware/U2IW/3.8.3.6587/
+share/unifi/dl/firmware/U2IW/3.8.3.6587/firmware.bin
 share/unifi/dl/firmware/U2Sv2/
-share/unifi/dl/firmware/U2Sv2/3.7.58.6385/
-share/unifi/dl/firmware/U2Sv2/3.7.58.6385/firmware.bin
+share/unifi/dl/firmware/U2Sv2/3.8.3.6587/
+share/unifi/dl/firmware/U2Sv2/3.8.3.6587/firmware.bin
 share/unifi/dl/firmware/U7E/
-share/unifi/dl/firmware/U7E/3.7.58.6385/
-share/unifi/dl/firmware/U7E/3.7.58.6385/firmware.bin
+share/unifi/dl/firmware/U7E/3.8.3.6587/
+share/unifi/dl/firmware/U7E/3.8.3.6587/firmware.bin
 share/unifi/dl/firmware/U7HD/
-share/unifi/dl/firmware/U7HD/3.7.58.6385/
-share/unifi/dl/firmware/U7HD/3.7.58.6385/firmware.bin
+share/unifi/dl/firmware/U7HD/3.8.3.6587/
+share/unifi/dl/firmware/U7HD/3.8.3.6587/firmware.bin
 share/unifi/dl/firmware/U7P/
-share/unifi/dl/firmware/U7P/3.7.58.6385/
-share/unifi/dl/firmware/U7P/3.7.58.6385/firmware.bin
+share/unifi/dl/firmware/U7P/3.8.3.6587/
+share/unifi/dl/firmware/U7P/3.8.3.6587/firmware.bin
 share/unifi/dl/firmware/U7PG2/
-share/unifi/dl/firmware/U7PG2/3.7.58.6385/
-share/unifi/dl/firmware/U7PG2/3.7.58.6385/firmware.bin
+share/unifi/dl/firmware/U7PG2/3.8.3.6587/
+share/unifi/dl/firmware/U7PG2/3.8.3.6587/firmware.bin
 share/unifi/dl/firmware/US24P250/
-share/unifi/dl/firmware/US24P250/3.7.58.6385/
-share/unifi/dl/firmware/US24P250/3.7.58.6385/firmware.bin
+share/unifi/dl/firmware/US24P250/3.8.3.6587/
+share/unifi/dl/firmware/US24P250/3.8.3.6587/firmware.bin
+share/unifi/dl/firmware/US24PL2/
+share/unifi/dl/firmware/US24PL2/3.8.3.6587/
+share/unifi/dl/firmware/US24PL2/3.8.3.6587/firmware.bin
 share/unifi/dl/firmware/USXG/
-share/unifi/dl/firmware/USXG/3.7.58.6385/
-share/unifi/dl/firmware/USXG/3.7.58.6385/firmware.bin
+share/unifi/dl/firmware/USXG/3.8.3.6587/
+share/unifi/dl/firmware/USXG/3.8.3.6587/firmware.bin
 share/unifi/dl/firmware/bundles.json
 share/unifi/dl/firmware/p2N/
 share/unifi/dl/firmware/p2N/3.3.22.4024/
@@ -101,11 +104,11 @@ share/unifi/lib/spring-core-3.2.8.RELEASE.jar
 share/unifi/lib/spring-expression-3.2.8.RELEASE.jar
 share/unifi/lib/spring-test-3.2.8.RELEASE.jar
 share/unifi/lib/sshj-0.9.0.jar
-share/unifi/lib/tomcat-embed-core-7.0.77.jar
-share/unifi/lib/tomcat-embed-el-7.0.77.jar
-share/unifi/lib/tomcat-embed-jasper-7.0.77.jar
-share/unifi/lib/tomcat-embed-logging-juli-7.0.77.jar
-share/unifi/lib/tomcat-embed-logging-log4j-7.0.77.jar
+share/unifi/lib/tomcat-embed-core-7.0.78.jar
+share/unifi/lib/tomcat-embed-el-7.0.78.jar
+share/unifi/lib/tomcat-embed-jasper-7.0.78.jar
+share/unifi/lib/tomcat-embed-logging-juli-7.0.78.jar
+share/unifi/lib/tomcat-embed-logging-log4j-7.0.78.jar
 share/unifi/lib/urlrewritefilter-4.0.4.jar
 @owner _unifi
 share/unifi/logs
@@ -407,7 +410,10 @@ share/unifi/webapps/ROOT/app-unifi/images/diagrams/port-discarding.svg
 share/unifi/webapps/ROOT/app-unifi/images/diagrams/port-mirror.svg
 share/unifi/webapps/ROOT/app-unifi/images/diagrams/port-poe-plus.svg
 share/unifi/webapps/ROOT/app-unifi/images/diagrams/port-poe.svg
+share/unifi/webapps/ROOT/app-unifi/images/diagrams/port-spacer-round.png
 share/unifi/webapps/ROOT/app-unifi/images/diagrams/port-spacer.png
+share/unifi/webapps/ROOT/app-unifi/images/diagrams/port-uplink.svg
+share/unifi/webapps/ROOT/app-unifi/images/diagrams/port-warning.svg
 share/unifi/webapps/ROOT/app-unifi/images/dpi/
 share/unifi/webapps/ROOT/app-unifi/images/dpi/amazon.com/
 share/unifi/webapps/ROOT/app-unifi/images/dpi/amazon.com/favicon.ico
@@ -507,10 +513,6 @@ share/unifi/webapps/ROOT/app-unifi/js/main.hotspot.js
 share/unifi/webapps/ROOT/app-unifi/js/main.manage.js
 share/unifi/webapps/ROOT/app-unifi/js/main.overview.js
 share/unifi/webapps/ROOT/app-unifi/js/main.wizard.js
-share/unifi/webapps/ROOT/app-unifi/js/vendor.hotspot.js
-share/unifi/webapps/ROOT/app-unifi/js/vendor.manage.js
-share/unifi/webapps/ROOT/app-unifi/js/vendor.overview.js
-share/unifi/webapps/ROOT/app-unifi/js/vendor.wizard.js
 share/unifi/webapps/ROOT/app-unifi/locales/
 share/unifi/webapps/ROOT/app-unifi/locales/ca/
 share/unifi/webapps/ROOT/app-unifi/locales/ca/account.json
@@ -964,6 +966,7 @@ share/unifi/webapps/ROOT/app-unifi/locales/zh_CN/switchStats.json
 share/unifi/webapps/ROOT/app-unifi/locales/zh_CN/transactions.json
 share/unifi/webapps/ROOT/app-unifi/locales/zh_CN/vouchers.json
 share/unifi/webapps/ROOT/app-unifi/locales/zh_CN/wizard.json
+share/unifi/webapps/ROOT/app-unifi/migration.html
 share/unifi/webapps/ROOT/pages/
 share/unifi/webapps/ROOT/pages/voucher.jsp
 @owner _unifi
