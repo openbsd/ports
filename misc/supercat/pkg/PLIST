@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/04/11 22:19:36 okan Exp $
-bin/spc
+@comment $OpenBSD: PLIST,v 1.2 2017/07/03 05:43:56 bcallah Exp $
+@bin bin/spc
 @man man/man1/spc.1
 share/examples/supercat/
 @sample ${SYSCONFDIR}/supercat/
