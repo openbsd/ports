@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_modules_rls_utils_h,v 1.1 2017/07/03 22:14:20 sthen Exp $
+
+Index: src/modules/rls/utils.h
+--- src/modules/rls/utils.h.orig
++++ src/modules/rls/utils.h
+@@ -26,6 +26,6 @@
+ 
+ #include "../../core/ut.h"
+ 
+-extern str* normalize_sip_uri(const str *uri);
++extern str* normalize_sip_uri(str *uri);
+ 
+ #endif

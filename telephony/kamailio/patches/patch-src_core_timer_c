@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_core_timer_c,v 1.1 2017/07/03 22:14:20 sthen Exp $
+--- src/core/timer.c.orig	Mon May 15 22:55:54 2017
++++ src/core/timer.c	Mon May 15 22:57:05 2017
+@@ -244,7 +244,11 @@ int init_timer()
+ 
+ 	/* initial values */
+ 	memset(timer_lst, 0, sizeof(struct timer_lists));
++#ifdef HAVE_ARC4RANDOM
++	*ticks=arc4random();
++#else
+ 	*ticks=random(); /* random value for start, for debugging */
++#endif
+ 	prev_ticks=last_ticks=last_adj_check=*ticks;
+ 	*running_timer=0;
+ 	if (gettimeofday(&start_time, 0)<0){

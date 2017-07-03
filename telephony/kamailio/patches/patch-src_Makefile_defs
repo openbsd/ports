@@ -1,0 +1,83 @@
+$OpenBSD: patch-src_Makefile_defs,v 1.1 2017/07/03 22:14:20 sthen Exp $
+Index: src/Makefile.defs
+--- src/Makefile.defs.orig
++++ src/Makefile.defs
+@@ -316,9 +316,9 @@ ppc_macros= __powerpc __powerpc__ __POWERPC__ __ppc__ 
+ ppc64_macros= __ppc64__ _ARCH_PPC64
+ 
+ mips_macros= __mips__ __mips _MIPS_ARCH_MIPS1
+-mips2_macros= _MIPS_ISA_MIPS2 _MIPS_ISA_MIPS3 _MIPS_ISA_MIPS4 \
++mips2_macros= _MIPS_ISA_MIPS2 _MIPS_ISA_MIPS4 \
+ 			_MIPS_ARCH_MIPS2 _MIPS_ARCH_MIPS3 _MIPS_ARCH_MIPS4
+-mips64_macros= _MIPS_ISA_MIPS64 _MIPS_ARCH_MIPS64
++mips64_macros= _MIPS_ISA_MIPS64 _MIPS_ARCH_MIPS64 _MIPS_ISA_MIPS3
+ 
+ alpha_macros= __alpha__ __alpha _M_ALPHA_
+ 
+@@ -867,16 +867,12 @@ ifeq	($(ARCH), i386)
+ ifeq		($(CC_NAME), gcc)
+ 				C_DEFS+=-DCC_GCC_LIKE_ASM
+ 				#common stuff
+-				CFLAGS=-g $(CC_OPT) -funroll-loops  -Wcast-align $(PROFILE)
++				CFLAGS=
+ 			#if gcc 6.0+, 5.0+, 4.5+ or 4.2+
+ ifeq (,$(strip $(filter-out 4.2+ 4.5+ 5.0+ 6.0+,$(CC_SHORTVER))))
+ $(call				set_if_empty,CPUTYPE,athlon64)
+-					CFLAGS+=-m32 -minline-all-stringops \
+-							-falign-loops \
+-							-ftree-vectorize \
+-							-fno-strict-overflow \
+-							-mtune=$(CPUTYPE)
+-					LDFLAGS+=-m32
++					CFLAGS+=
++					LDFLAGS+=
+ else
+ 			#if gcc 4.0+
+ ifeq			($(CC_SHORTVER), 4.x)
+@@ -924,8 +920,8 @@ else		# CC_NAME, gcc
+ ifeq		($(CC_NAME), clang)
+ $(call                          set_if_empty,CPUTYPE,athlon64)
+ 					C_DEFS+=-DCC_GCC_LIKE_ASM
+-					CFLAGS+=-g -m32 $(CC_OPT) -mtune=$(CPUTYPE)
+-					LDFLAGS+=-m32
++					CFLAGS+=
++					LDFLAGS+=
+ else			# CC_NAME, clang
+ ifeq		($(CC_NAME), icc)
+ 			C_DEFS+=-DCC_GCC_LIKE_ASM
+@@ -949,7 +945,7 @@ ifeq	($(ARCH), x86_64)
+ ifeq		($(CC_NAME), gcc)
+ 				C_DEFS+=-DCC_GCC_LIKE_ASM
+ 				#common stuff
+-				CFLAGS=-g $(CC_OPT) -funroll-loops  -Wcast-align $(PROFILE)
++				CFLAGS=
+ 			#if gcc 4.5+
+ 			# don't add '-mtune=$(CPUTYPE)' - gcc failure
+ ifeq			($(CC_SHORTVER),$(filter $(CC_SHORTVER),4.5+ 5.0+ 6.0+))
+@@ -963,12 +959,8 @@ else
+ 			#if gcc 4.2+
+ ifeq			($(CC_SHORTVER), 4.2+)
+ $(call				set_if_empty,CPUTYPE,opteron)
+-					CFLAGS+=-m64 -minline-all-stringops \
+-							-falign-loops \
+-							-ftree-vectorize \
+-							-fno-strict-overflow \
+-							-mtune=$(CPUTYPE)
+-					LDFLAGS+=-m64
++					CFLAGS+=
++					LDFLAGS+=
+ else
+ 			#if gcc 4.0+
+ ifeq			($(CC_SHORTVER), 4.x)
+@@ -1017,9 +1009,8 @@ else		# CC_NAME, gcc
+ ifeq            ($(CC_NAME), clang)
+ $(call                          set_if_empty,CPUTYPE,opteron)
+ 					C_DEFS+=-DCC_GCC_LIKE_ASM
+-                                        CFLAGS+=-g -m64 \
+-                                                $(CC_OPT)
+-                                        LDFLAGS+=-m64
++                                        CFLAGS+=
++                                        LDFLAGS+=
+ else      	# CC_NAME, clang
+ ifeq		($(CC_NAME), icc)
+ 			C_DEFS+=-DCC_GCC_LIKE_ASM

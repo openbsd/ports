@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_core_rand_fastrand_h,v 1.1 2017/07/03 22:14:20 sthen Exp $
+--- src/core/rand/fastrand.h.orig	Mon May 15 22:50:42 2017
++++ src/core/rand/fastrand.h	Mon May 15 22:51:20 2017
+@@ -22,9 +22,10 @@
+ #ifndef _fastrand_h
+ #define _fastrand_h
+ 
+-
++#ifndef HAVE_ARC4RANDOM
+ /* side effect: seeds also random w/ seed */
+ void fastrand_seed(unsigned int seed);
++#endif
+ /* generate a 32 bit random number */
+ unsigned int fastrand(void);
+ /* generate a random number between 0 and max inclusive ( 0 <= r <= max)

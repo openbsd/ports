@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_modules_db_berkeley_bdb_lib_c,v 1.1 2017/07/03 22:14:20 sthen Exp $
+--- src/modules/db_berkeley/bdb_lib.c.orig	Mon May 15 23:34:21 2017
++++ src/modules/db_berkeley/bdb_lib.c	Mon May 15 23:34:56 2017
+@@ -666,7 +666,7 @@ int bdblib_create_journal(bdb_db_p _db_p, bdb_table_p 
+ {
+ 	char *s;
+ 	char fn[1024];
+-	char d[64];
++	char d[128];
+ 	FILE *fp = NULL;
+ 	struct tm *t;
+ 	int bl;
+@@ -686,7 +686,7 @@ int bdblib_create_journal(bdb_db_p _db_p, bdb_table_p 
+ 	s+=_tp->name.len;
+ 	
+ 	t = localtime( &tim );
+-	bl=strftime(d,128,"-%Y%m%d%H%M%S.jnl",t);
++	bl=strftime(d,sizeof(d),"-%Y%m%d%H%M%S.jnl",t);
+ 	strncpy(s, d, bl);
+ 	s+= bl;
+ 	*s = 0;

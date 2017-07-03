@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_core_msg_translator_c,v 1.1 2017/07/03 22:14:20 sthen Exp $
+--- src/core/msg_translator.c.orig	Mon May 15 22:35:06 2017
++++ src/core/msg_translator.c	Mon May 15 22:42:28 2017
+@@ -522,7 +522,11 @@ static inline int lump_check_opt(	struct lump *l,
+ 				return 1;
+ 			}
+ 		case COND_IF_RAND:
++#ifdef HAVE_ARC4RANDOM
++			if(arc4random()>=KAM_RAND_MAX/2) {
++#else
+ 			if(kam_rand()>=KAM_RAND_MAX/2) {
++#endif
+ 				LUMP_SET_COND_TRUE(l);
+ 				return 1;
+ 			} else return 0;
+@@ -2317,6 +2321,7 @@ char * build_res_buf_from_sip_req( unsigned int code, 
+ 
+ 	body = 0;
+ 	buf=0;
++	pvia=0;
+ 	received_buf=rport_buf=warning_buf=content_len_buf=0;
+ 	received_len=rport_len=warning_len=content_len_len=0;
+ 

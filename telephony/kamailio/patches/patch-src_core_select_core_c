@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_core_select_core_c,v 1.1 2017/07/03 22:14:20 sthen Exp $
+--- src/core/select_core.c.orig	Mon May 15 22:51:55 2017
++++ src/core/select_core.c	Mon May 15 22:53:45 2017
+@@ -1513,7 +1513,11 @@ int select_sys_unique(str* res, select_t* s, struct si
+ 		for (i = UNIQUE_ID_FIX_LEN, cb = 0, x = 0; i < UNIQUE_ID_FIX_LEN+UNIQUE_ID_RAND_LEN; i++) {
+ 			if (!cb) {
+ 				cb = rb;
++#ifdef HAVE_ARC4RANDOM
++				x = arc4random();
++#else
+ 				x = kam_rand();
++#endif
+ 			}
+ 			uniq_id[i] = fourbits2char[x & 0x0F];
+ 			x >>= rb;

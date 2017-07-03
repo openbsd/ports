@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_modules_nat_traversal_nat_traversal_c,v 1.1 2017/07/03 22:14:20 sthen Exp $
+
+Index: src/modules/nat_traversal/nat_traversal.c
+--- src/modules/nat_traversal/nat_traversal.c.orig
++++ src/modules/nat_traversal/nat_traversal.c
+@@ -1687,7 +1687,7 @@ restore_keepalive_state(void)
+     res = fscanf(f, STATE_FILE_HEADER); // skip header
+ 
+     while (true) {
+-        res = fscanf(f, "%63s %63s %ld %ld", uri, socket, &rtime, &stime);
++        res = fscanf(f, "%63s %63s %lld %lld", uri, socket, &rtime, &stime);
+         if (res == EOF) {
+             if (ferror(f))
+                 LM_ERR("error while reading keepalive state file: %s\n", strerror(errno));

@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD:
+# $OpenBSD: kamailio.rc,v 1.3 2017/07/03 22:14:20 sthen Exp $
 
 daemon="${TRUEPREFIX}/sbin/kamailio"
 

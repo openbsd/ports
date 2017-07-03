@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_modules_auth_identity_auth_crypt_c,v 1.1 2017/07/03 22:14:20 sthen Exp $
+
+Index: src/modules/auth_identity/auth_crypt.c
+--- src/modules/auth_identity/auth_crypt.c.orig
++++ src/modules/auth_identity/auth_crypt.c
+@@ -114,7 +114,7 @@ int check_x509_subj(X509 *pcert, str* sdom)
+ 
+ 			if (actname->type == GEN_DNS || actname->type == GEN_URI) {
+ 				/* we've found one */
+-#if OPENSSL_VERSION_NUMBER >= 0x010100000L
++#if OPENSSL_VERSION_NUMBER >= 0x010100000L && !defined(LIBRESSL_VERSION_NUMBER)
+ 				altptr = (char *)ASN1_STRING_get0_data(actname->d.ia5);
+ #else
+ 				altptr = (char *)ASN1_STRING_data(actname->d.ia5);

@@ -1,0 +1,43 @@
+$OpenBSD: patch-src_core_list_h,v 1.1 2017/07/03 22:14:20 sthen Exp $
+--- src/core/list.h.orig	Mon May 15 22:31:06 2017
++++ src/core/list.h	Mon May 15 22:34:38 2017
+@@ -33,6 +33,8 @@
+ #ifndef _SER_LIST_H
+ #define	_SER_LIST_H
+ 
++#include <sys/queue.h>
++
+ /* #include <sys/cdefs.h> - not needed and not present on all the systems */
+ 
+ /*
+@@ -133,6 +135,7 @@ struct qm_trace {
+ #define	TRASHIT(x)
+ #endif	/* QUEUE_MACRO_DEBUG */
+ 
++#ifndef SLIST_HEAD
+ /*
+  * Singly-linked List declarations.
+  */
+@@ -204,6 +207,7 @@ struct {								\
+ #define	SLIST_REMOVE_HEAD(head, field) do {				\
+ 	SLIST_FIRST((head)) = SLIST_NEXT(SLIST_FIRST((head)), field);	\
+ } while (0)
++#endif /* SLIST_HEAD */
+ 
+ /*
+  * Singly-linked Tail queue declarations.
+@@ -300,6 +304,7 @@ struct {								\
+ 		(head)->stqh_last = &STAILQ_FIRST((head));		\
+ } while (0)
+ 
++#ifndef LIST_HEAD
+ /*
+  * List declarations.
+  */
+@@ -513,5 +518,6 @@ struct {								\
+ 	TRASHIT((elm)->field.tqe_prev);					\
+ 	QMD_TRACE_ELEM(&(elm)->field);					\
+ } while (0)
++#endif /* LIST_HEAD */
+ 
+ #endif /* !_LIST_H */

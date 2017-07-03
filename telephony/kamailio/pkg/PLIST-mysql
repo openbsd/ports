@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-mysql,v 1.4 2015/11/20 10:09:52 sthen Exp $
+@comment $OpenBSD: PLIST-mysql,v 1.5 2017/07/03 22:14:20 sthen Exp $
 lib/kamailio/kamctl/kamctl.mysql
 lib/kamailio/kamctl/kamdbctl.mysql
 lib/kamailio/modules/db_mysql.so
@@ -11,7 +11,6 @@ share/kamailio/mysql/avpops-create.sql
 share/kamailio/mysql/carrierroute-create.sql
 share/kamailio/mysql/cpl-create.sql
 share/kamailio/mysql/dialog-create.sql
-share/kamailio/mysql/dialog_ng-create.sql
 share/kamailio/mysql/dialplan-create.sql
 share/kamailio/mysql/dispatcher-create.sql
 share/kamailio/mysql/domain-create.sql
@@ -21,6 +20,7 @@ share/kamailio/mysql/group-create.sql
 share/kamailio/mysql/htable-create.sql
 share/kamailio/mysql/imc-create.sql
 share/kamailio/mysql/ims_charging_create.sql
+share/kamailio/mysql/ims_dialog-create.sql
 share/kamailio/mysql/ims_usrloc_pcscf-create.sql
 share/kamailio/mysql/ims_usrloc_scscf-create.sql
 share/kamailio/mysql/lcr-create.sql
@@ -35,11 +35,13 @@ share/kamailio/mysql/presence-create.sql
 share/kamailio/mysql/purple-create.sql
 share/kamailio/mysql/registrar-create.sql
 share/kamailio/mysql/rls-create.sql
+share/kamailio/mysql/rtpengine-create.sql
 share/kamailio/mysql/rtpproxy-create.sql
 share/kamailio/mysql/sca-create.sql
 share/kamailio/mysql/siptrace-create.sql
 share/kamailio/mysql/speeddial-create.sql
 share/kamailio/mysql/standard-create.sql
+share/kamailio/mysql/topos-create.sql
 share/kamailio/mysql/uac-create.sql
 share/kamailio/mysql/uid_auth_db-create.sql
 share/kamailio/mysql/uid_avp_db-create.sql

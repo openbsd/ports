@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-postgresql,v 1.4 2015/11/20 10:09:52 sthen Exp $
+@comment $OpenBSD: PLIST-postgresql,v 1.5 2017/07/03 22:14:20 sthen Exp $
 lib/kamailio/kamctl/kamctl.pgsql
 lib/kamailio/kamctl/kamdbctl.pgsql
 lib/kamailio/modules/db_postgres.so
@@ -31,11 +31,13 @@ share/kamailio/postgres/presence-create.sql
 share/kamailio/postgres/purple-create.sql
 share/kamailio/postgres/registrar-create.sql
 share/kamailio/postgres/rls-create.sql
+share/kamailio/postgres/rtpengine-create.sql
 share/kamailio/postgres/rtpproxy-create.sql
 share/kamailio/postgres/sca-create.sql
 share/kamailio/postgres/siptrace-create.sql
 share/kamailio/postgres/speeddial-create.sql
 share/kamailio/postgres/standard-create.sql
+share/kamailio/postgres/topos-create.sql
 share/kamailio/postgres/uac-create.sql
 share/kamailio/postgres/uid_auth_db-create.sql
 share/kamailio/postgres/uid_avp_db-create.sql

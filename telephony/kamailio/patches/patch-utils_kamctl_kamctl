@@ -1,6 +1,6 @@
-$OpenBSD: patch-utils_kamctl_kamctl,v 1.4 2015/11/20 10:09:52 sthen Exp $
---- utils/kamctl/kamctl.orig	Fri Oct  2 15:35:18 2015
-+++ utils/kamctl/kamctl	Mon Oct 19 14:00:40 2015
+$OpenBSD: patch-utils_kamctl_kamctl,v 1.5 2017/07/03 22:14:20 sthen Exp $
+--- utils/kamctl/kamctl.orig	Wed Apr  5 16:32:39 2017
++++ utils/kamctl/kamctl	Mon May 15 21:48:56 2017
 @@ -75,7 +75,7 @@ fi
  if [ -f "$MYLIBDIR/kamctl.base" ]; then
  	. "$MYLIBDIR/kamctl.base"
@@ -10,12 +10,3 @@ $OpenBSD: patch-utils_kamctl_kamctl,v 1.4 2015/11/20 10:09:52 sthen Exp $
  	exit -1
  fi
  
-@@ -1900,7 +1900,7 @@ kamailio_stop() {
- options_ping() {
- 	myhost=`get_my_host`
- 	require_ctlengine
--	CMD="t_uac_dlg OPTIONS \"$1\" \".\" \".\" \"From:sip:daemon@$myhost"$'\r\n'"To:<$1>"$'\r\n'"Contact:sip:daemon@$myhost"$'\r\n'"\""
-+	CMD="t_uac_dlg OPTIONS \"$1\" \".\" \".\" \"From:sip:daemon@$myhost"$(printf '\r\n')"To:<$1>"$'\r\n'"Contact:sip:daemon@$myhost"$(printf '\r\n')"\""
- 	RET=`$CTLCMD $CMD | head -1`
- 	print_status $RET
- }

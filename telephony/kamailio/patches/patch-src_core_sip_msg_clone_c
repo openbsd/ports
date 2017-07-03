@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_core_sip_msg_clone_c,v 1.1 2017/07/03 22:14:20 sthen Exp $
+--- src/core/sip_msg_clone.c.orig	Mon May 15 22:54:19 2017
++++ src/core/sip_msg_clone.c	Mon May 15 22:55:18 2017
+@@ -183,7 +183,7 @@ static inline struct via_body* via_body_cloner( char* 
+ 
+ 		if ( org_via->param_lst )
+ 		{
+-			struct via_param *vp, *new_vp, *last_new_vp;
++			struct via_param *vp, *new_vp = NULL, *last_new_vp;
+ 			for( vp=org_via->param_lst, last_new_vp=0 ; vp ; vp=vp->next )
+ 			{
+ 				new_vp = (struct via_param*)(*p);

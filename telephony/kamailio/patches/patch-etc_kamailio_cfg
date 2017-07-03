@@ -1,13 +1,13 @@
-$OpenBSD: patch-etc_kamailio_cfg,v 1.4 2015/11/20 10:09:52 sthen Exp $
---- etc/kamailio.cfg.orig	Fri Oct  2 15:35:17 2015
-+++ etc/kamailio.cfg	Mon Oct 19 14:00:40 2015
-@@ -150,6 +150,9 @@ log_facility=LOG_LOCAL0
- fork=yes
- children=4
+$OpenBSD: patch-etc_kamailio_cfg,v 1.5 2017/07/03 22:14:20 sthen Exp $
+--- etc/kamailio.cfg.orig	Wed Apr  5 16:32:38 2017
++++ etc/kamailio.cfg	Mon May 15 21:48:56 2017
+@@ -160,6 +160,9 @@ log_facility=LOG_LOCAL0
+ /* number of SIP routing processes */
+ children=8
  
 +user="_kamailio"
 +group="_kamailio"
 +
  /* uncomment the next line to disable TCP (default on) */
- #disable_tcp=yes
+ # disable_tcp=yes
  
