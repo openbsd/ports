@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2017/05/27 19:57:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2017/07/04 11:59:46 sthen Exp $
 
 COMMENT=	recursive DNS resolver
 
-DISTNAME=	deadwood-3.2.09
+DISTNAME=	deadwood-3.2.10
 PKGNAME=	${DISTNAME:S/^/maradns-/}
 EXTRACT_SUFX=	.tar.bz2
 CATEGORIES=	net
-REVISION=	1
 
 HOMEPAGE=	http://maradns.samiam.org/deadwood
 
