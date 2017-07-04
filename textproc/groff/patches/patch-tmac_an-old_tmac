@@ -1,8 +1,17 @@
-$OpenBSD: patch-tmac_an-old_tmac,v 1.5 2014/11/06 22:15:22 schwarze Exp $
+$OpenBSD: patch-tmac_an-old_tmac,v 1.6 2017/07/04 17:44:13 schwarze Exp $
+Set default operating system name (local change).
 Tweak page headers (local change).
---- tmac/an-old.tmac.orig	Sun Oct 12 23:00:09 2014
-+++ tmac/an-old.tmac	Sun Oct 12 23:27:06 2014
-@@ -153,8 +153,8 @@
+Index: tmac/an-old.tmac
+--- tmac/an-old.tmac.orig
++++ tmac/an-old.tmac
+@@ -147,14 +147,14 @@
+ .    ds an-section "\\$2\"
+ .    ds an-extra1 "\\$3\"
+ .    ie (\\n[.$] > 3)    .ds an-extra2 "\\$4\"
+-.    el                  .ds an-extra2 \"Sun Release 4.0
++.    el                  .ds an-extra2 OpenBSD
+ .
+ .    ie (\\n[.$] > 4)    .ds an-extra3 "\\$5\"
  .    el \{ .ie '\\$2'1'  .ds an-extra3 General Commands Manual
  .    el \{ .ie '\\$2'2'  .ds an-extra3 System Calls Manual
  .    el \{ .ie '\\$2'3'  .ds an-extra3 Library Functions Manual

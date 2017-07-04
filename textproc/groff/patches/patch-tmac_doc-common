@@ -1,10 +1,12 @@
-$OpenBSD: patch-tmac_doc-common,v 1.8 2015/02/16 15:45:11 schwarze Exp $
+$OpenBSD: patch-tmac_doc-common,v 1.9 2017/07/04 17:44:13 schwarze Exp $
 chunks 1-3: Tweak page headers (local change).
-chunk 4: Default value for the .Os macro (local change).
-chunk 5: Avoid groff warning "unbalanced .el request" (to be sent upstream).
-chunk 6: Do not use an ugly double dash in the NAME line (local change).
---- tmac/doc-common.orig	Tue Nov  4 09:38:35 2014
-+++ tmac/doc-common	Mon Feb 16 12:54:26 2015
+chunk 4: Set default operating system name (local change).
+chunk 5: Default value for the .Os macro (local change).
+chunk 6: Avoid groff warning "unbalanced .el request" (merged upstream).
+chunk 7: Do not use an ugly double dash in the NAME line (local change).
+Index: tmac/doc-common
+--- tmac/doc-common.orig
++++ tmac/doc-common
 @@ -234,12 +234,10 @@
  .
  .\" an alternative, more detailed scheme for naming the manual sections
@@ -57,7 +59,7 @@ chunk 6: Do not use an ugly double dash in the NAME line (local change).
  .\" NS override this in `mdoc.local', if necessary
  .
 -.ds doc-default-operating-system BSD
-+.ds doc-default-operating-system OpenBSD\~ports
++.ds doc-default-operating-system OpenBSD
  .
  .
  .\" NS doc-operating-system global string
