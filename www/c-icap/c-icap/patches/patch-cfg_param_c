@@ -1,14 +1,14 @@
-$OpenBSD: patch-cfg_param_c,v 1.4 2015/09/08 18:17:49 sthen Exp $
---- cfg_param.c.orig	Thu Aug 27 10:01:51 2015
-+++ cfg_param.c	Fri Aug 28 10:38:53 2015
-@@ -49,8 +49,8 @@ struct ci_server_conf CI_CONF = {
+$OpenBSD: patch-cfg_param_c,v 1.5 2017/07/04 11:06:27 sthen Exp $
+--- cfg_param.c.orig	Mon Mar 13 11:05:50 2017
++++ cfg_param.c	Tue Mar 28 14:28:18 2017
+@@ -53,8 +53,8 @@ struct ci_server_conf CI_CONF = {
  #else
-      "/var/tmp/", /*TMPDIR*/ "/var/run/c-icap/c-icap.pid", /*PIDFILE*/ "/var/run/c-icap/c-icap.ctl",   /*COMMANDS_SOCKET; */
+     "/var/tmp/", /*TMPDIR*/ "/var/run/c-icap/c-icap.pid", /*PIDFILE*/ "/var/run/c-icap/c-icap.ctl",   /*COMMANDS_SOCKET; */
  #endif
--     NULL,                      /* RUN_USER */
--     NULL,                      /* RUN_GROUP */
-+     "_c-icap",                 /* RUN_USER */
-+     "_c-icap",                 /* RUN_GROUP */
+-    NULL,                      /* RUN_USER */
+-    NULL,                      /* RUN_GROUP */
++    "_c-icap",                 /* RUN_USER */
++    "_c-icap",                 /* RUN_GROUP */
  #ifdef _WIN32
-      CONFDIR "\\c-icap.conf",   /*cfg_file */
-      CONFDIR "\\c-icap.magic",  /*magics_file */
+     CONFDIR "\\c-icap.conf",   /*cfg_file */
+     CONFDIR "\\c-icap.magic",  /*magics_file */

@@ -1,0 +1,14 @@
+$OpenBSD: patch-openssl_net_io_ssl_c,v 1.1 2017/07/04 11:06:27 sthen Exp $
+
+Index: openssl/net_io_ssl.c
+--- openssl/net_io_ssl.c.orig
++++ openssl/net_io_ssl.c
+@@ -731,7 +731,7 @@ int ci_tls_connect_nonblock(ci_connection_t *connectio
+         /*SSL_new increases the reference count for ctx*/
+         ssl = SSL_new(ctx);
+ 
+-#if defined(OPENSSL_VERSION_NUMBER) && OPENSSL_VERSION_NUMBER >= 0x1000201fL
++#if defined(OPENSSL_VERSION_NUMBER) && OPENSSL_VERSION_NUMBER >= 0x1000201fL && !defined(LIBRESSL_VERSION_NUMBER)
+         if (SSL_CTX_get_verify_mode(ctx) & SSL_VERIFY_PEER) {
+             X509_VERIFY_PARAM *param = SSL_get0_param(ssl);
+             /* Enable automatic hostname checks */

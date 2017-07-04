@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2015/09/08 18:17:49 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2017/07/04 11:06:27 sthen Exp $
 @newgroup _c-icap:716
 @newuser _c-icap:716:_c-icap:daemon:c-icap user:/nonexistent:/sbin/nologin
 @extraunexec rm -rf /var/log/c-icap/*
@@ -30,6 +30,8 @@ include/c_icap/md5.h
 include/c_icap/mem.h
 include/c_icap/module.h
 include/c_icap/net_io.h
+include/c_icap/net_io_ssl.h
+include/c_icap/port.h
 include/c_icap/proc_mutex.h
 include/c_icap/proc_threads_queues.h
 include/c_icap/registry.h

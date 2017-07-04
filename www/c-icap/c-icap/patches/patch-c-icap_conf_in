@@ -1,7 +1,7 @@
-$OpenBSD: patch-c-icap_conf_in,v 1.7 2016/04/22 20:08:04 sthen Exp $
---- c-icap.conf.in.orig	Tue Mar 29 10:27:15 2016
-+++ c-icap.conf.in	Fri Apr 22 20:39:55 2016
-@@ -335,7 +335,7 @@ RemoteProxyUserHeaderEncoded on
+$OpenBSD: patch-c-icap_conf_in,v 1.8 2017/07/04 11:06:27 sthen Exp $
+--- c-icap.conf.in.orig	Mon Mar 27 09:17:57 2017
++++ c-icap.conf.in	Tue Mar 28 14:27:46 2017
+@@ -407,7 +407,7 @@ RemoteProxyUserHeaderEncoded on
  # Default:
  #	No value
  # Example:
@@ -10,7 +10,7 @@ $OpenBSD: patch-c-icap_conf_in,v 1.7 2016/04/22 20:08:04 sthen Exp $
  
  # TAG: GroupSourceByGroup
  # Format: GroupSourceByGroup LookupTable
-@@ -347,7 +347,7 @@ RemoteProxyUserHeaderEncoded on
+@@ -419,7 +419,7 @@ RemoteProxyUserHeaderEncoded on
  # Default:
  #	No set
  # Example:
@@ -19,7 +19,7 @@ $OpenBSD: patch-c-icap_conf_in,v 1.7 2016/04/22 20:08:04 sthen Exp $
  
  # TAG: GroupSourceByUser
  # Format: GroupSourceByUser LookupTable
-@@ -359,7 +359,7 @@ RemoteProxyUserHeaderEncoded on
+@@ -431,7 +431,7 @@ RemoteProxyUserHeaderEncoded on
  # Default:
  #	No set
  # Example:
@@ -28,7 +28,7 @@ $OpenBSD: patch-c-icap_conf_in,v 1.7 2016/04/22 20:08:04 sthen Exp $
  
  # TAG: acl
  # Format: acl name type[{param}] value1 [value2] [...]
-@@ -515,7 +515,7 @@ RemoteProxyUserHeaderEncoded on
+@@ -599,7 +599,7 @@ RemoteProxyUserHeaderEncoded on
  #	information about the c-icap server.
  # Default:
  #	ServerLog @prefix@/var/log/server.log
@@ -37,7 +37,7 @@ $OpenBSD: patch-c-icap_conf_in,v 1.7 2016/04/22 20:08:04 sthen Exp $
  
  # TAG: AccessLog
  # Format: AccessLog LogFile [LogFormat] [[!]acl1] [[!]acl2] [...]
-@@ -530,7 +530,7 @@ ServerLog @prefix@/var/log/server.log
+@@ -614,7 +614,7 @@ ServerLog @prefix@/var/log/server.log
  #	AccessLog @prefix@/var/log/access.log
  # Example:
  #	AccessLog @prefix@/var/log/access.log MyFormat all
@@ -46,7 +46,7 @@ $OpenBSD: patch-c-icap_conf_in,v 1.7 2016/04/22 20:08:04 sthen Exp $
  
  # TAG: Logger
  # Format: Logger LoggerName
-@@ -539,8 +539,7 @@ AccessLog @prefix@/var/log/access.log
+@@ -623,8 +623,7 @@ AccessLog @prefix@/var/log/access.log
  #	uses files for access and server logging.
  # Default:
  #	Logger file_logger
@@ -55,8 +55,8 @@ $OpenBSD: patch-c-icap_conf_in,v 1.7 2016/04/22 20:08:04 sthen Exp $
 +Logger sys_logger
  
  # TAG: Module
- # Format: Module Type ModuleFile
-@@ -618,6 +617,7 @@ Service echo srv_echo.so
+ # Format: Module Type ModuleFile [forceUnload=off]
+@@ -714,6 +713,7 @@ Service echo srv_echo.so
  # Example:
  #	Module logger sys_logger.so
  #	Logger sys_logger
