@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.38 2017/06/28 15:03:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.39 2017/07/04 11:16:38 benoit Exp $
 
 COMMENT=		FTP daemon which aims to be secure
 
 DISTNAME=		vsftpd-3.0.3
-REVISION=		0
+REVISION =		1
 CATEGORIES=		net
 
 HOMEPAGE=		http://vsftpd.beasts.org/
-
-MAINTAINER=		Benoit Lecocq <benoit@openbsd.org>
 
 # GPLv2+OpenSSL exemption
 PERMIT_PACKAGE_CDROM=	Yes
