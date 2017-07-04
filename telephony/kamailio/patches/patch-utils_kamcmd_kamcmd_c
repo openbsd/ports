@@ -1,0 +1,41 @@
+$OpenBSD: patch-utils_kamcmd_kamcmd_c,v 1.1 2017/07/04 08:29:27 sthen Exp $
+
+Index: utils/kamcmd/kamcmd.c
+--- utils/kamcmd/kamcmd.c.orig
++++ utils/kamcmd/kamcmd.c
+@@ -211,7 +211,11 @@ static char* trim_ws(char* l)
+ 
+ int gen_cookie()
+ {
++#ifdef HAVE_ARC4RANDOM
++	return arc4random();
++#else
+ 	return rand();
++#endif
+ }
+ 
+ 
+@@ -472,8 +476,13 @@ int connect_unix_sock(char* name, int type)
+ 			if (sock_dir==0)
+ 				sock_dir="/tmp";
+ retry:
++#ifdef HAVE_ARC4RANDOM
+ 			ret=snprintf(mysun.sun_path, UNIX_PATH_MAX, "%s/" NAME "_%d",
++							sock_dir, arc4random());
++#else
++			ret=snprintf(mysun.sun_path, UNIX_PATH_MAX, "%s/" NAME "_%d",
+ 							sock_dir, rand());
++#endif
+ 			if ((ret<0) ||(ret>=UNIX_PATH_MAX)){
+ 				fprintf(stderr, "ERROR: buffer overflow while trying to"
+ 							"generate unix datagram socket name");
+@@ -2062,7 +2071,9 @@ int main(int argc, char** argv)
+ 	}
+ 
+ 	/* init the random number generator */
++#ifndef HAVE_ARC4RANDOM
+ 	srand(getpid()+time(0)); /* we don't need very strong random numbers */
++#endif
+ 
+ 	if (sock_name==0){
+ 		fprintf(stderr, "ERROR: no server socket address specified\n");

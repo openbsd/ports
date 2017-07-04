@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.40 2017/07/03 22:14:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.41 2017/07/04 08:29:27 sthen Exp $
 
 COMMENT-main =		mature and flexible open source SIP server
 
 VERSION =		5.0.2
+REVISION-main =		0
 
 DISTNAME =		kamailio-${VERSION}_src
 
@@ -16,7 +17,7 @@ PKGNAME-carrierroute =	kamailio-carrierroute-${VERSION}
 PKGNAME-snmpstats =	kamailio-snmpstats-${VERSION}
 PKGNAME-perl =		kamailio-perl-${VERSION}
 PKGNAME-presence =	kamailio-presence-${VERSION}
-#PKGNAME-radius =	kamailio-radius-${VERSION}	TODO
+PKGNAME-radius =	kamailio-radius-${VERSION}
 
 CATEGORIES =		telephony
 MAINTAINER =		Roman Kravchuk <kravchuk.kp@gmail.com>
@@ -33,8 +34,7 @@ SHARED_LIBS +=		srutils	3.0	# 1.0
 
 MAKE_ENV =		CC="${CC}" \
 			CC_EXTRA_OPTS="${CFLAGS} -DOPENSSL_NO_BUF_FREELISTS -DHAVE_ARC4RANDOM -I${LOCALBASE}/include" \
-			LD_EXTRA_OPTS="${LDFLAGS} -pthread -L${LOCALBASE}/lib" \
-			QUIET=verbose
+			LD_EXTRA_OPTS="${LDFLAGS} -pthread -L${LOCALBASE}/lib"
 
 MASTER_SITES =		http://www.kamailio.org/pub/kamailio/${VERSION}/src/
 WRKDIST =		${WRKDIR}/kamailio-${VERSION}
@@ -64,6 +64,8 @@ MAKE_FLAGS =	LIBDIR=lib \
 		cfg_dir=share/examples/kamailio/ \
 		cfg_target=${SYSCONFDIR}/kamailio/ \
 		run_target=${VARBASE}/run/kamailio/ \
+		QUIET=verbose \
+		RADCLI=1 \
 		SCTP=0 \
 		group_include="${KAMAILIO_GROUPS}" \
 		LIBsrdb1_VERSION=${LIBsrdb1_VERSION} \
@@ -155,15 +157,14 @@ WANTLIB-presence +=	curl iconv lzma m pthread xml2 z \
 LIB_DEPENDS-presence =	telephony/kamailio,-main
 .endif
 
-# TODO
-#PSEUDO_FLAVORS +=	no_radius
-#.if !${FLAVOR:Mno_radius}
-#MULTI_PACKAGES +=	-radius
-#COMMENT-radius =	kamailio RADIUS modules
-#KAMAILIO_GROUPS +=	kradius
-#WANTLIB-radius =	freeradius-client
-#LIB_DEPENDS-radius =	net/freeradius-client
-#.endif
+PSEUDO_FLAVORS +=	no_radius
+.if !${FLAVOR:Mno_radius}
+MULTI_PACKAGES +=	-radius
+COMMENT-radius =	kamailio RADIUS modules
+KAMAILIO_GROUPS +=	kradius
+WANTLIB-radius =	pthread radcli
+LIB_DEPENDS-radius =	net/radcli
+.endif
 
 .for i in ${MULTI_PACKAGES:S/-main//}
 FULLPKGNAME$i ?=	kamailio$i-${VERSION}

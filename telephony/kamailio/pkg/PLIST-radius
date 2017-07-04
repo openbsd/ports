@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST-radius,v 1.3 2017/07/04 08:29:27 sthen Exp $
+lib/kamailio/modules/acc_radius.so
+lib/kamailio/modules/auth_radius.so
+lib/kamailio/modules/misc_radius.so
+lib/kamailio/modules/peering.so
+share/doc/kamailio/modules/README.acc_radius
+share/doc/kamailio/modules/README.auth_radius
+share/doc/kamailio/modules/README.misc_radius
+share/doc/kamailio/modules/README.peering
