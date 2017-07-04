@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.160 2017/07/03 08:32:10 robert Exp $
+# $OpenBSD: Makefile,v 1.161 2017/07/04 08:17:55 robert Exp $
 
 USE_WXNEEDED=	Yes
 
@@ -19,6 +19,8 @@ PKGNAME-kde=	libreoffice-kde-${VERSION}
 PKGNAME-java=	libreoffice-java-${VERSION}
 CATEGORIES=	editors productivity
 DPB_PROPERTIES=	parallel tag:kde4
+
+REVISION-main=	0
 
 EPOCH=		0
 
@@ -217,6 +219,7 @@ WANTLIB-main+=	poppler
 
 RUN_DEPENDS-main=	devel/desktop-file-utils \
 			devel/libexecinfo \
+			devel/xdg-utils \
 			graphics/glew \
 			misc/shared-mime-info \
 			security/nss \
@@ -367,7 +370,8 @@ pre-patch:
 	touch ${WRKSRC}/src.downloaded ${WRKSRC}/autogen.lastrun
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/configure
+	${SUBST_CMD} ${WRKSRC}/configure ${WRKSRC}/shell/source/unix/exec/shellexec.cxx \
+		${WRKSRC}/shell/source/unix/misc/senddoc.sh
 
 post-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/soffice.sh ${PREFIX}/bin/soffice
