@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.174 2017/06/26 07:19:15 benoit Exp $
+# $OpenBSD: Makefile,v 1.175 2017/07/04 13:27:12 jca Exp $
 
 COMMENT-main =	GIT - Tree History Storage Tool
 COMMENT-svn =	GIT - subversion interoperability tools
 COMMENT-x11 =	GIT - graphical tools
 
 V =		2.13.2
+REVISION-main =	0
 DISTNAME =	git-${V}
 PKGNAME-main =	${DISTNAME}
 PKGNAME-svn =	git-svn-${V}
@@ -24,7 +25,7 @@ EXTRACT_ONLY =		${DISTNAME}${EXTRACT_SUFX}
 
 MASTER_SITES =		https://www.kernel.org/pub/software/scm/git/
 
-MODULES =		devel/gettext x11/tk lang/python
+MODULES =		x11/tk lang/python
 
 MODPY_BUILDDEP =	No
 MODPY_RUNDEP =		No
@@ -32,17 +33,18 @@ MODPY_ADJ_FILES =	contrib/hooks/multimail/git_multimail.py \
 			contrib/hooks/multimail/migrate-mailhook-config \
 			contrib/hooks/multimail/post-receive.example
 
-BUILD_DEPENDS =		devel/p5-Error
+BUILD_DEPENDS =		devel/gettext-tools \
+			devel/p5-Error
 
 MULTI_PACKAGES =	-main -svn -x11
 
-WANTLIB-main =		c expat crypto curl pthread ssl z ${MODGETTEXT_WANTLIB}
+WANTLIB-main =		c crypto curl expat iconv intl pthread ssl z
+
 RUN_DEPENDS-main =	net/rsync \
 			devel/p5-Error \
-			devel/cvsps \
-			${MODGETTEXT_RUN_DEPENDS}
-LIB_DEPENDS-main =	net/curl \
-			${MODGETTEXT_LIB_DEPENDS}
+			devel/cvsps
+LIB_DEPENDS-main =	devel/gettext \
+			net/curl
 
 RUN_DEPENDS-svn =	${BASE_PKGPATH} \
 			devel/subversion,-perl \
