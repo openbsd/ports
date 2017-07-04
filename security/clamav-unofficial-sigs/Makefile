@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.14 2015/12/08 15:21:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2017/07/04 11:09:44 sthen Exp $
 
 COMMENT =	fetch and update unofficial signatures for ClamAV
 
 V =		4.9.2
-REVISION =	1
+REVISION =	2
 DISTNAME =	clamav-unofficial-sigs-$V
 DISTFILES =	${DISTNAME}{$V}.tar.gz
 
 CATEGORIES =	security mail
-
-MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 
 HOMEPAGE =	https://github.com/extremeshok/clamav-unofficial-sigs
 

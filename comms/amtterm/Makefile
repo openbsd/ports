@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2015/08/12 14:54:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2017/07/04 11:09:44 sthen Exp $
 
 COMMENT-term=	cli client for Intel AMT serial-over-lan
 COMMENT-main=	client and tools for Intel AMT serial-over-lan
 
 V=		1.4
 DISTNAME=	amtterm-$V
+REVISION=	0
 PKGNAME-main=	amtterm-$V
 PKGNAME-term=	amtterm-cli-$V
 MULTI_PACKAGES=	-main -term
@@ -12,8 +13,6 @@ MULTI_PACKAGES=	-main -term
 CATEGORIES=	comms sysutils net
 
 HOMEPAGE=	https://www.kraxel.org/blog/linux/amtterm/
-
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes

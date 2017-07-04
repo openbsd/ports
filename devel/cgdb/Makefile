@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2014/11/26 11:44:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2017/07/04 11:09:44 sthen Exp $
 
 COMMENT=	curses GDB interface
 DISTNAME=	cgdb-0.6.8
+REVISION=	0
 CATEGORIES=	devel
 HOMEPAGE=	http://cgdb.me/
-
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
