@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.70 2017/06/20 19:28:25 giovanni Exp $
-
-PORTROACH+=	limit:^2
+# $OpenBSD: Makefile,v 1.71 2017/07/05 21:11:50 sebastia Exp $
 
 COMMENT = 	web based groupware server
 
-VERSION =	2.3.21
+VERSION =	3.2.9
 DISTNAME =	SOGo-${VERSION}
 PKGNAME =	sogo-${VERSION}
 
-SHARED_LIBS +=	GDLContentStore 2.0
-SHARED_LIBS +=	NGCards		2.0
-SHARED_LIBS +=	SOGo		3.0
-SHARED_LIBS +=	SOGoUI		2.0
+SHARED_LIBS +=	GDLContentStore 3.0
+SHARED_LIBS +=	NGCards		3.0
+SHARED_LIBS +=	SOGo		4.0
+SHARED_LIBS +=	SOGoUI		2.1
 
 CATEGORIES =	www
 HOMEPAGE =	http://www.sogo.nu/
@@ -74,6 +72,12 @@ post-install:
 	${INSTALL_SCRIPT} -c -o ${SHAREOWN} -g ${SHAREGRP} \
 		${WRKSRC}/Scripts/sql-update-2.2.17_to_2.3.0-mysql.sh \
 		${PREFIX}/share/doc/sogo/sql-update-2.2.17_to_2.3.0-mysql.sh
+	${INSTALL_SCRIPT} -c -o ${SHAREOWN} -g ${SHAREGRP} \
+		${WRKSRC}/Scripts/sql-update-3.0.0-to-combined.sh \
+		${PREFIX}/share/doc/sogo/sql-update-3.0.0-to-combined.sh
+	${INSTALL_SCRIPT} -c -o ${SHAREOWN} -g ${SHAREGRP} \
+		${WRKSRC}/Scripts/sql-update-3.0.0-to-combined-mysql.sh \
+		${PREFIX}/share/doc/sogo/sql-update-3.0.0-to-combined-mysql.sh
 	${INSTALL_SCRIPT} -c -o ${SHAREOWN} -g ${SHAREGRP} \
 		${WRKSRC}/Scripts/updates.php \
 		${PREFIX}/share/doc/sogo/updates.php

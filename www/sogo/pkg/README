@@ -1,4 +1,4 @@
-# $OpenBSD: README,v 1.20 2016/05/02 10:38:27 sebastia Exp $
+# $OpenBSD: README,v 1.21 2017/07/05 21:11:50 sebastia Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -275,3 +275,14 @@ will ask you for the database credentials.
 
 # su _sogo "${TRUEPREFIX}/share/doc/sogo/sql-update-2.2.17_to_2.3.0-postgres.sh"
 # su _sogo "${TRUEPREFIX}/share/doc/sogo/sql-update-2.2.17_to_2.3.0-mysql.sh"
+
+Upgrade SOGo from < 3.0.0
+=========================
+With version 3.X you can update the database schema to the optional
+9-table model. The conversion is not required, and you should only do it
+when you are sure you know what you are doing.
+The scripts require you have configured sogo via /etc/sogo/sogo.conf,
+as well as they have to run with bash. Use at your own risk.
+
+# su _sogo "${TRUEPREFIX}/bin/bash ${TRUEPREFIX}/share/doc/sogo/sql-update-3.0.0-to-combined.sh"
+# su _sogo "${TRUEPREFIX}/bin/bash ${TRUEPREFIX}/share/doc/sogo/sql-update-3.0.0-to-combined-mysql.sh"
