@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_qt_qtbase_qmake_generators_unix_unixmake_h,v 1.1 2017/07/05 11:54:22 sthen Exp $
+
+Index: src/qt/qtbase/qmake/generators/unix/unixmake.h
+--- src/qt/qtbase/qmake/generators/unix/unixmake.h.orig
++++ src/qt/qtbase/qmake/generators/unix/unixmake.h
+@@ -69,6 +69,7 @@ class UnixMakefileGenerator : public MakefileGenerator
+ 
+ private:
+     void init2();
++    void separateInternalLibdirs(ProStringList &libs, ProStringList &libdirsInt, QString prefix);
+ };
+ 
+ inline UnixMakefileGenerator::~UnixMakefileGenerator()

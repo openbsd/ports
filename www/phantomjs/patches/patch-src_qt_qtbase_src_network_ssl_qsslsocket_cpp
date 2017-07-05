@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_qt_qtbase_src_network_ssl_qsslsocket_cpp,v 1.1 2017/07/05 11:54:22 sthen Exp $
+
+Index: src/qt/qtbase/src/network/ssl/qsslsocket.cpp
+--- src/qt/qtbase/src/network/ssl/qsslsocket.cpp.orig
++++ src/qt/qtbase/src/network/ssl/qsslsocket.cpp
+@@ -2591,14 +2591,7 @@ bool QSslSocketPrivate::rootCertOnDemandLoadingSupport
+ */
+ QList<QByteArray> QSslSocketPrivate::unixRootCertDirectories()
+ {
+-    return QList<QByteArray>() <<  "/etc/ssl/certs/" // (K)ubuntu, OpenSUSE, Mandriva, MeeGo ...
+-                               << "/usr/lib/ssl/certs/" // Gentoo, Mandrake
+-                               << "/usr/share/ssl/" // Centos, Redhat, SuSE
+-                               << "/usr/local/ssl/" // Normal OpenSSL Tarball
+-                               << "/var/ssl/certs/" // AIX
+-                               << "/usr/local/ssl/certs/" // Solaris
+-                               << "/etc/openssl/certs/" // BlackBerry
+-                               << "/opt/openssl/certs/"; // HP-UX
++    return QList<QByteArray>() <<  "/etc/ssl/";
+ }
+ 
+ /*!

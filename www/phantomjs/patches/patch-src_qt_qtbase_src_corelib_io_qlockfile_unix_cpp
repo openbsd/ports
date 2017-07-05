@@ -1,0 +1,41 @@
+$OpenBSD: patch-src_qt_qtbase_src_corelib_io_qlockfile_unix_cpp,v 1.1 2017/07/05 11:54:22 sthen Exp $
+
+Index: src/qt/qtbase/src/corelib/io/qlockfile_unix.cpp
+--- src/qt/qtbase/src/corelib/io/qlockfile_unix.cpp.orig
++++ src/qt/qtbase/src/corelib/io/qlockfile_unix.cpp
+@@ -60,6 +60,9 @@
+ #   include <sys/cdefs.h>
+ #   include <sys/param.h>
+ #   include <sys/sysctl.h>
++# elif defined(__OpenBSD__)
++#   include <sys/param.h>
++#   include <sys/sysctl.h>
+ # else
+ #   include <libutil.h>
+ # endif
+@@ -246,6 +249,12 @@ QString QLockFilePrivate::processNameByPid(qint64 pid)
+     if (sysctl(mib, 4, NULL, &len, NULL, 0) < 0)
+         return QString();
+     kinfo_proc *proc = static_cast<kinfo_proc *>(malloc(len));
++# elif defined(__OpenBSD__)
++    struct kinfo_proc kp, *proc = &kp;
++    int mib[6] = { CTL_KERN, KERN_PROC, KERN_PROC_PID, (int)pid, sizeof(struct kinfo_proc), 1 };
++    size_t len = 0;
++    if (sysctl(mib, 6, proc, &len, NULL, 0) < 0)
++        return QString();
+ # else
+     kinfo_proc *proc = kinfo_getproc(pid);
+ # endif
+@@ -261,8 +270,12 @@ QString QLockFilePrivate::processNameByPid(qint64 pid)
+         return QString();
+     }
+ # endif
++# if defined(__OpenBSD__)
++    QString name = QFile::decodeName(proc->p_comm);
++# else
+     QString name = QFile::decodeName(proc->ki_comm);
+     free(proc);
++# endif
+     return name;
+ #else
+     return QString();

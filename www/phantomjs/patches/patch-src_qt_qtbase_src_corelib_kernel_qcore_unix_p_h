@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_qt_qtbase_src_corelib_kernel_qcore_unix_p_h,v 1.1 2017/07/05 11:54:22 sthen Exp $
+
+Index: src/qt/qtbase/src/corelib/kernel/qcore_unix_p.h
+--- src/qt/qtbase/src/corelib/kernel/qcore_unix_p.h.orig
++++ src/qt/qtbase/src/corelib/kernel/qcore_unix_p.h
+@@ -54,6 +54,7 @@
+ 
+ #include <string.h>
+ #include <sys/types.h>
++#include <sys/select.h>
+ #include <sys/stat.h>
+ #include <unistd.h>
+ 

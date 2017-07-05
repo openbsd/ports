@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_qt_qtbase_src_3rdparty_forkfd_forkfd_c,v 1.1 2017/07/05 11:54:22 sthen Exp $
+
+Index: src/qt/qtbase/src/3rdparty/forkfd/forkfd.c
+--- src/qt/qtbase/src/3rdparty/forkfd/forkfd.c.orig
++++ src/qt/qtbase/src/3rdparty/forkfd/forkfd.c
+@@ -55,7 +55,7 @@
+ #  endif
+ #endif
+ 
+-#if _POSIX_VERSION-0 >= 200809L || _XOPEN_VERSION-0 >= 500
++#if (_POSIX_VERSION-0 >= 200809L || _XOPEN_VERSION-0 >= 500) && !defined(__OpenBSD__)
+ #  define HAVE_WAITID   1
+ #endif
+ 

@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_qt_qtwebkit_Source_JavaScriptCore_jsc_pro,v 1.1 2017/07/05 11:54:22 sthen Exp $
+
+Index: src/qt/qtwebkit/Source/JavaScriptCore/jsc.pro
+--- src/qt/qtwebkit/Source/JavaScriptCore/jsc.pro.orig
++++ src/qt/qtwebkit/Source/JavaScriptCore/jsc.pro
+@@ -30,4 +30,5 @@ wince* {
+ # Prevent warnings about difference in visibility on Mac OS X
+ contains(QT_CONFIG, reduce_exports):CONFIG += hide_symbols
+ unix:contains(QT_CONFIG, reduce_relocations):CONFIG += bsymbolic_functions
++openbsd:DEFINES *= ASSEMBLER_WX_EXCLUSIVE=1
+ 

@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_qt_qtbase_src_testlib_qtestcase_cpp,v 1.1 2017/07/05 11:54:22 sthen Exp $
+
+Index: src/qt/qtbase/src/testlib/qtestcase.cpp
+--- src/qt/qtbase/src/testlib/qtestcase.cpp.orig
++++ src/qt/qtbase/src/testlib/qtestcase.cpp
+@@ -3246,8 +3246,7 @@ char *QTest::toString(const char *str)
+ {
+     if (!str)
+         return 0;
+-    char *msg = new char[strlen(str) + 1];
+-    return qstrcpy(msg, str);
++    return qstrdup(str);
+ }
+ 
+ /*! \internal

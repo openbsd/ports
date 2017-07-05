@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_qt_qtbase_src_network_kernel_qdnslookup_unix_cpp,v 1.1 2017/07/05 11:54:22 sthen Exp $
+
+Index: src/qt/qtbase/src/network/kernel/qdnslookup_unix.cpp
+--- src/qt/qtbase/src/network/kernel/qdnslookup_unix.cpp.orig
++++ src/qt/qtbase/src/network/kernel/qdnslookup_unix.cpp
+@@ -41,7 +41,9 @@
+ #include <sys/types.h>
+ #include <netinet/in.h>
+ #include <arpa/nameser.h>
+-#include <arpa/nameser_compat.h>
++#ifndef Q_OS_OPENBSD
++# include <arpa/nameser_compat.h>
++#endif
+ #include <resolv.h>
+ 
+ #if defined(__GNU_LIBRARY__) && !defined(__UCLIBC__)
+@@ -51,6 +53,8 @@
+ QT_BEGIN_NAMESPACE
+ 
+ #ifndef QT_NO_LIBRARY
++
++typedef struct __res_state*	res_state;
+ 
+ typedef int (*dn_expand_proto)(const unsigned char *, const unsigned char *, const unsigned char *, char *, int);
+ static dn_expand_proto local_dn_expand = 0;

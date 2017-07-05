@@ -1,0 +1,29 @@
+$OpenBSD: patch-src_qt_qtbase_src_corelib_io_qstorageinfo_unix_cpp,v 1.1 2017/07/05 11:54:22 sthen Exp $
+
+Index: src/qt/qtbase/src/corelib/io/qstorageinfo_unix.cpp
+--- src/qt/qtbase/src/corelib/io/qstorageinfo_unix.cpp.orig
++++ src/qt/qtbase/src/corelib/io/qstorageinfo_unix.cpp
+@@ -68,8 +68,8 @@
+ 
+ #if defined(Q_OS_BSD4)
+ #  if defined(Q_OS_NETBSD)
+-     define QT_STATFSBUF struct statvfs
+-     define QT_STATFS    ::statvfs
++#    define QT_STATFSBUF struct statvfs
++#    define QT_STATFS    ::statvfs
+ #  else
+ #    define QT_STATFSBUF struct statfs
+ #    define QT_STATFS    ::statfs
+@@ -506,9 +506,9 @@ void QStorageInfoPrivate::retrieveVolumeInfo()
+         valid = true;
+         ready = true;
+ 
+-        bytesTotal = statfs_buf.f_blocks * statfs_buf.f_frsize;
+-        bytesFree = statfs_buf.f_bfree * statfs_buf.f_frsize;
+-        bytesAvailable = statfs_buf.f_bavail * statfs_buf.f_frsize;
++        bytesTotal = statfs_buf.f_blocks * statfs_buf.f_bsize;
++        bytesFree = statfs_buf.f_bfree * statfs_buf.f_bsize;
++        bytesAvailable = statfs_buf.f_bavail * statfs_buf.f_bsize;
+ #if defined(Q_OS_ANDROID) || defined (Q_OS_BSD4)
+ #if defined(_STATFS_F_FLAGS)
+         readOnly = (statfs_buf.f_flags & ST_RDONLY) != 0;

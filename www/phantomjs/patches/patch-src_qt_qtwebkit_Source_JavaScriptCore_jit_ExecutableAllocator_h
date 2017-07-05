@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_qt_qtwebkit_Source_JavaScriptCore_jit_ExecutableAllocator_h,v 1.1 2017/07/05 11:54:22 sthen Exp $
+
+Index: src/qt/qtwebkit/Source/JavaScriptCore/jit/ExecutableAllocator.h
+--- src/qt/qtwebkit/Source/JavaScriptCore/jit/ExecutableAllocator.h.orig
++++ src/qt/qtwebkit/Source/JavaScriptCore/jit/ExecutableAllocator.h
+@@ -104,7 +104,8 @@ class DemandExecutableAllocator;
+ #if ENABLE(EXECUTABLE_ALLOCATOR_FIXED)
+ #if CPU(ARM) || CPU(MIPS)
+ static const size_t fixedExecutableMemoryPoolSize = 16 * 1024 * 1024;
+-#elif CPU(X86_64) && !CPU(X32)
++#elif CPU(X86_64) && !CPU(X32) && !OS(OPENBSD)
++// default limits on OpenBSD are far less than 1GB
+ static const size_t fixedExecutableMemoryPoolSize = 1024 * 1024 * 1024;
+ #else
+ static const size_t fixedExecutableMemoryPoolSize = 32 * 1024 * 1024;

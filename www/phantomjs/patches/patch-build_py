@@ -1,0 +1,17 @@
+$OpenBSD: patch-build_py,v 1.1 2017/07/05 11:54:22 sthen Exp $
+
+Index: build.py
+--- build.py.orig
++++ build.py
+@@ -205,6 +205,11 @@ class PhantomJSBuilder(object):
+             if self.options.silent:
+                 platformOptions.append("-silent")
+ 
++	    if platform.system() == "OpenBSD":
++		platformOptions.extend(
++		    os.getenv("QT5_CONFIGURE_ARGS", "").split()
++                )
++
+             if platform.system() == "Darwin":
+                 # Mac OS specific options
+                 # NOTE: fontconfig is not required on Darwin (we use Core Text for font enumeration)

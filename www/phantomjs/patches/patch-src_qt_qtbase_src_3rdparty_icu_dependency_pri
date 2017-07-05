@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_qt_qtbase_src_3rdparty_icu_dependency_pri,v 1.1 2017/07/05 11:54:22 sthen Exp $
+
+Index: src/qt/qtbase/src/3rdparty/icu_dependency.pri
+--- src/qt/qtbase/src/3rdparty/icu_dependency.pri.orig
++++ src/qt/qtbase/src/3rdparty/icu_dependency.pri
+@@ -10,7 +10,4 @@ win32 {
+     }
+ } else {
+     LIBS_PRIVATE += -licui18n -licuuc -licudata
+-    CONFIG(static) {
+-      LIBS_PRIVATE += -ldl
+-    }
+ }

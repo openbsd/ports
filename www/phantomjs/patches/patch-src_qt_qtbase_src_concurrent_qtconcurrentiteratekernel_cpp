@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_qt_qtbase_src_concurrent_qtconcurrentiteratekernel_cpp,v 1.1 2017/07/05 11:54:22 sthen Exp $
+
+Index: src/qt/qtbase/src/concurrent/qtconcurrentiteratekernel.cpp
+--- src/qt/qtbase/src/concurrent/qtconcurrentiteratekernel.cpp.orig
++++ src/qt/qtbase/src/concurrent/qtconcurrentiteratekernel.cpp
+@@ -71,7 +71,7 @@ static qint64 getticks()
+ 
+ static qint64 getticks()
+ {
+-#if defined(_POSIX_TIMERS) && (_POSIX_TIMERS > 0)
++#if defined(Q_OS_OPENBSD) || (defined(_POSIX_TIMERS) && (_POSIX_TIMERS > 0))
+     clockid_t clockId;
+ 
+ #ifndef _POSIX_THREAD_CPUTIME

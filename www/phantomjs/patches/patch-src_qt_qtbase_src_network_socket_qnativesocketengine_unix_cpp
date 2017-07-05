@@ -1,0 +1,89 @@
+$OpenBSD: patch-src_qt_qtbase_src_network_socket_qnativesocketengine_unix_cpp,v 1.1 2017/07/05 11:54:22 sthen Exp $
+
+Index: src/qt/qtbase/src/network/socket/qnativesocketengine_unix.cpp
+--- src/qt/qtbase/src/network/socket/qnativesocketengine_unix.cpp.orig
++++ src/qt/qtbase/src/network/socket/qnativesocketengine_unix.cpp
+@@ -43,6 +43,7 @@
+ #include <time.h>
+ #include <errno.h>
+ #include <fcntl.h>
++#include <poll.h>
+ #ifndef QT_NO_IPV6IFNAME
+ #include <net/if.h>
+ #endif
+@@ -589,7 +590,9 @@ int QNativeSocketEnginePrivate::nativeAccept()
+             setError(QAbstractSocket::SocketResourceError, NotSocketErrorString);
+             break;
+         case EPROTONOSUPPORT:
++#ifdef EPROTO
+         case EPROTO:
++#endif
+         case EAFNOSUPPORT:
+         case EINVAL:
+             setError(QAbstractSocket::UnsupportedSocketOperationError, ProtocolUnsupportedErrorString);
+@@ -1150,48 +1153,31 @@ int QNativeSocketEnginePrivate::nativeSelect(int timeo
+ 
+ int QNativeSocketEnginePrivate::nativeSelect(int timeout, bool selectForRead) const
+ {
+-    fd_set fds;
+-    FD_ZERO(&fds);
+-    FD_SET(socketDescriptor, &fds);
++    struct pollfd pd;
+ 
+-    struct timespec tv;
+-    tv.tv_sec = timeout / 1000;
+-    tv.tv_nsec = (timeout % 1000) * 1000 * 1000;
+-
+-    int retval;
+-    if (selectForRead)
+-        retval = qt_safe_select(socketDescriptor + 1, &fds, 0, 0, timeout < 0 ? 0 : &tv);
+-    else
+-        retval = qt_safe_select(socketDescriptor + 1, 0, &fds, 0, timeout < 0 ? 0 : &tv);
+-
+-    return retval;
++    memset(&pd, 0, sizeof(struct pollfd));
++    pd.fd = socketDescriptor;
++    pd.events = selectForRead ? POLLIN : POLLOUT;
++    return poll(&pd, 1, timeout);
+ }
+ 
+ int QNativeSocketEnginePrivate::nativeSelect(int timeout, bool checkRead, bool checkWrite,
+                        bool *selectForRead, bool *selectForWrite) const
+ {
+-    fd_set fdread;
+-    FD_ZERO(&fdread);
+-    if (checkRead)
+-        FD_SET(socketDescriptor, &fdread);
+-
+-    fd_set fdwrite;
+-    FD_ZERO(&fdwrite);
+-    if (checkWrite)
+-        FD_SET(socketDescriptor, &fdwrite);
+-
+-    struct timespec tv;
+-    tv.tv_sec = timeout / 1000;
+-    tv.tv_nsec = (timeout % 1000) * 1000 * 1000;
+-
++    struct pollfd pd;
+     int ret;
+-    ret = qt_safe_select(socketDescriptor + 1, &fdread, &fdwrite, 0, timeout < 0 ? 0 : &tv);
+ 
+-    if (ret <= 0)
+-        return ret;
+-    *selectForRead = FD_ISSET(socketDescriptor, &fdread);
+-    *selectForWrite = FD_ISSET(socketDescriptor, &fdwrite);
+-
++    memset(&pd, 0, sizeof(struct pollfd));
++    pd.fd = socketDescriptor;
++    if (checkRead)
++        pd.events |= POLLIN;
++    if (checkWrite)
++        pd.events |= POLLOUT;
++    ret = poll(&pd, 1, timeout);
++    if (ret > 0) {
++        *selectForRead = ((pd.events & POLLIN) == POLLIN);   
++        *selectForWrite = ((pd.events & POLLOUT) == POLLOUT);   
++    }
+     return ret;
+ }
+ #endif // Q_OS_BLACKBERRY

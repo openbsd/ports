@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_qt_qtbase_src_corelib_tools_qbytearray_h,v 1.1 2017/07/05 11:54:22 sthen Exp $
+
+Index: src/qt/qtbase/src/corelib/tools/qbytearray.h
+--- src/qt/qtbase/src/corelib/tools/qbytearray.h.orig
++++ src/qt/qtbase/src/corelib/tools/qbytearray.h
+@@ -77,7 +77,9 @@ inline uint qstrnlen(const char *str, uint maxlen)
+     return length;
+ }
+ 
++#ifndef Q_OS_OPENBSD
+ Q_CORE_EXPORT char *qstrcpy(char *dst, const char *src);
++#endif
+ Q_CORE_EXPORT char *qstrncpy(char *dst, const char *src, uint len);
+ 
+ Q_CORE_EXPORT int qstrcmp(const char *str1, const char *str2);

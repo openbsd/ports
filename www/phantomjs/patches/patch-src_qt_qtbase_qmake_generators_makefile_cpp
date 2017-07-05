@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_qt_qtbase_qmake_generators_makefile_cpp,v 1.1 2017/07/05 11:54:22 sthen Exp $
+
+Index: src/qt/qtbase/qmake/generators/makefile.cpp
+--- src/qt/qtbase/qmake/generators/makefile.cpp.orig
++++ src/qt/qtbase/qmake/generators/makefile.cpp
+@@ -666,7 +666,7 @@ MakefileGenerator::init()
+         }
+     }
+ 
+-    if(noIO() || !doDepends() || project->isActiveConfig("GNUmake"))
++    if(noIO() || !doDepends())
+         QMakeSourceFileInfo::setDependencyMode(QMakeSourceFileInfo::NonRecursive);
+     for(x = 0; x < compilers.count(); ++x)
+         initCompiler(compilers.at(x));

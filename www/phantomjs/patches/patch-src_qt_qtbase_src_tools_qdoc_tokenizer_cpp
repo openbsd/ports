@@ -1,0 +1,34 @@
+$OpenBSD: patch-src_qt_qtbase_src_tools_qdoc_tokenizer_cpp,v 1.1 2017/07/05 11:54:22 sthen Exp $
+
+Index: src/qt/qtbase/src/tools/qdoc/tokenizer.cpp
+--- src/qt/qtbase/src/tools/qdoc/tokenizer.cpp.orig
++++ src/qt/qtbase/src/tools/qdoc/tokenizer.cpp
+@@ -483,7 +483,7 @@ int Tokenizer::getToken()
+         }
+     }
+ 
+-    strcpy(yyLex, "end-of-input");
++    strlcpy(yyLex, "end-of-input", yyLexBufSize);
+     yyLexLen = strlen(yyLex);
+     return Tok_Eoi;
+ }
+@@ -581,8 +581,8 @@ void Tokenizer::start(const Location& loc)
+     yyTokLoc = loc;
+     yyCurLoc = loc;
+     yyCurLoc.start();
+-    strcpy(yyPrevLex, "beginning-of-input");
+-    strcpy(yyLex, "beginning-of-input");
++    strlcpy(yyPrevLex, "beginning-of-input", yyLexBufSize);
++    strlcpy(yyLex, "beginning-of-input", yyLexBufSize);
+     yyLexLen = strlen(yyLex);
+     yyBraceDepth = 0;
+     yyParenDepth = 0;
+@@ -674,7 +674,7 @@ int Tokenizer::getTokenAfterPreprocessor()
+           yyPrevLex. This way, we skip over the preprocessor
+           directive.
+         */
+-        qstrcpy(yyLex, yyPrevLex);
++        strlcpy(yyLex, yyPrevLex, yyLexBufSize);
+ 
+         /*
+           If getToken() meets another #, it will call
