@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 11:06:04 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2017/07/05 19:43:17 jeremy Exp $
 
 COMMENT =	Sega Saturn emulator
 
 DISTNAME =	yabause-0.9.10
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	emulators games
 HOMEPAGE =	http://yabause.org/
-
-MAINTAINER =	Jeremy Evans <jeremy@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
