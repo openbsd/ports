@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/04/25 18:28:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2017/07/05 10:22:06 sthen Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64
 
 COMMENT=	simple tool to dump cpuid information
 
 PKGNAME=	cpuid-20160409
+REVISION=	0
 DISTFILES=
 
 CATEGORIES=	sysutils
-
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # ISC
 PERMIT_PACKAGE_CDROM=	Yes

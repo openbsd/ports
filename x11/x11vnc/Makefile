@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.45 2017/05/27 19:57:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.46 2017/07/05 10:22:06 sthen Exp $
 
 COMMENT =		VNC server for real X displays
 
 DISTNAME =		x11vnc-0.9.13
-REVISION =		8
+REVISION =		9
 
 CATEGORIES =		x11
 HOMEPAGE =		http://www.karlrunge.com/x11vnc/
-
-MAINTAINER =		Stuart Henderson <sthen@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes

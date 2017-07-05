@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.4 2017/03/28 14:36:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2017/07/05 10:22:05 sthen Exp $
 
 COMMENT=	tool for editing version-control repository history
 
 DISTNAME=	reposurgeon-3.42
+REVISION=	0
 EXTRACT_SUFX=	.tar.xz
 
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.catb.org/esr/reposurgeon/
-
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

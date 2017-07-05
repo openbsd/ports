@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/05/25 11:48:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2017/07/05 10:22:05 sthen Exp $
 
 COMMENT=	implementation of Apple "Blocks" runtime interfaces
 
@@ -7,12 +7,11 @@ GH_PROJECT=	blocksruntime
 GH_COMMIT=	b5c5274daf1e0e46ecc9ad8f6f69889bce0a0a5d
 
 DISTNAME=	blocksruntime-0.20140704
+REVISION=	0
 
 CATEGORIES=	devel
 
 HOMEPAGE=	http://mackyle.github.io/blocksruntime/
-
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # MIT/UIUC
 PERMIT_PACKAGE_CDROM=	Yes

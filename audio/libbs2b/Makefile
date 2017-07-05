@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2017/04/10 11:45:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2017/07/05 10:22:05 sthen Exp $
 
 COMMENT=	Bauer stereophonic-to-binaural DSP
+REVISION=	0
 
 DISTNAME=	libbs2b-3.1.0
 
@@ -9,8 +10,6 @@ SHARED_LIBS +=	bs2b                      0.0 # 0.0
 CATEGORIES=	audio
 
 HOMEPAGE=	http://bs2b.sourceforge.net/
-
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.18 2015/12/30 10:01:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2017/07/05 10:22:06 sthen Exp $
 
 COMMENT=	web-based MySQL management
 
 V=		1.2
 DISTNAME=	chive_$V
 PKGNAME=	${DISTNAME:S/_/-/}
-REVISION=	4
+REVISION=	5
 
 CATEGORIES=	www databases
 
 HOMEPAGE=	http://www.chive-project.com/
-
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # Chive: GPLv3+
 # Yii framework: BSD

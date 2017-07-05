@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.9 2016/01/16 13:39:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2017/07/05 10:22:06 sthen Exp $
 
 COMMENT=	keep X clipboard and cutbuffer in sync
 
 V=		0.10.0
 DISTNAME=	autocutsel-$V
+REVISION=	0
 
 CATEGORIES=	x11
 
 HOMEPAGE=	http://www.nongnu.org/autocutsel/
-
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes

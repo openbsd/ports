@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2017/05/27 19:57:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2017/07/05 10:22:05 sthen Exp $
 
 COMMENT =		link-aggregation VPN software
 
@@ -6,13 +6,11 @@ V =			2.2.2
 DISTNAME =		mlvpn-$V
 DISTFILES =		${DISTNAME}{$V}.tar.gz
 WRKDIST =		${WRKDIR}/MLVPN-$V
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		net
 
 HOMEPAGE =		http://www.mlvpn.fr/
-
-MAINTAINER =		Stuart Henderson <sthen@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes

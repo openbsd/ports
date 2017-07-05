@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.5 2016/01/26 13:29:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2017/07/05 10:22:06 sthen Exp $
 
 COMMENT=	tool for reverse-engineering and analysing firmware blobs
 
 MODPY_EGG_VERSION = 1.2.2_1
-REVISION=	2
+REVISION=	3
 DISTNAME=	binwalk-1.2.2-1
 PKGNAME=	binwalk-1.2.2.1
 
 CATEGORIES=	sysutils
 
 HOMEPAGE=	http://binwalk.org/
-
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes

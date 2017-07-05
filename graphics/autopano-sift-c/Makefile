@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.14 2017/04/10 11:46:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2017/07/05 10:22:05 sthen Exp $
 
 COMMENT =		identify control points from groups of overlapping images
 
 DISTNAME =		autopano-sift-C-2.5.1
-REVISION=		1
+REVISION=		2
 PKGNAME =		${DISTNAME:L}
 
 CATEGORIES =		graphics
 
 HOMEPAGE =		http://hugin.sourceforge.net/
-
-MAINTAINER =		Stuart Henderson <sthen@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	US patent, see README

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2015/12/03 21:24:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2017/07/05 10:22:05 sthen Exp $
 
 COMMENT=	GM and GS compatible SoundFont bank for MIDI
 
 V=		1.44
-REVISION=	0
+REVISION=	1
 PKGNAME=	generaluser-gs-soundfont-$V
 DISTNAME=	GeneralUser_GS_$V-FluidSynth
 EXTRACT_SUFX=	.zip
@@ -11,8 +11,6 @@ EXTRACT_SUFX=	.zip
 CATEGORIES=	audio
 
 HOMEPAGE=	http://www.schristiancollins.com/generaluser.php
-
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # see LICENSE.TXT
 PERMIT_PACKAGE_CDROM=	probably OK, but disabled on CDs for safety
