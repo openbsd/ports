@@ -1,18 +1,16 @@
-# $OpenBSD: Makefile,v 1.67 2017/06/20 19:26:34 giovanni Exp $
-
-PORTROACH+=		limit:^2
+# $OpenBSD: Makefile,v 1.68 2017/07/05 21:09:09 sebastia Exp $
 
 COMMENT-main=		Skyrix Object Publishing Environment
 COMMENT-mysql=		SOPE MySQL adaptor
 COMMENT-postgres=	SOPE PostgreSQL adaptor
 
-VERSION =		2.3.21
+VERSION =		3.2.9
 DISTNAME =		SOPE-${VERSION}
 PKGNAME-main =		sope-${VERSION}
 PKGNAME-mysql =		sope-mysql-${VERSION}
 PKGNAME-postgres =	sope-postgres-${VERSION}
 
-SO_MAJOR=	3
+SO_MAJOR=	4
 SO_MINOR=	0
 .for _lib in DOM EOControl GDLAccess NGExtensions NGLdap NGMime \
 		NGObjWeb NGStreams SaxObjC WEExtensions \
