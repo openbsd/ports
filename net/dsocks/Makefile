@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2017/07/02 20:33:06 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2017/07/06 05:49:10 espie Exp $
 
 COMMENT=		SOCKS client wrapper for *BSD
 DISTNAME=		dsocks-1.7
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=		${MASTER_SITE_GOOGLECODE:=dsocks/}
 
-MAKE_FLAGS=		CFLAGS="-Wall -MD -MP ${CFLAGS}" \
+MAKE_FLAGS=		CFLAGS="-Wall ${CFLAGS}" \
 			SHLIB_MAJOR=${LIBdsocks_VERSION:R} \
 			SHLIB_MINOR=${LIBdsocks_VERSION:E}
 
