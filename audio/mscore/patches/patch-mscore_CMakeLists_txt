@@ -1,30 +1,30 @@
-$OpenBSD: patch-mscore_CMakeLists_txt,v 1.5 2015/08/22 02:47:27 bcallah Exp $
---- mscore/CMakeLists.txt.orig	Thu Jul 16 17:02:34 2015
-+++ mscore/CMakeLists.txt	Fri Aug 21 18:16:55 2015
-@@ -474,7 +474,6 @@ else (MINGW)
-       ${ALSA_LIB}
-       ${QT_LIBRARIES}
-       z
--      dl
-       pthread
-       )
-     if (USE_PORTAUDIO)
-@@ -504,15 +503,15 @@ else (MINGW)
-      endif (USE_PORTMIDI)
-      target_link_libraries(mscore ${OsxFrameworks})
-    else (APPLE)
--       target_link_libraries(mscore rt)
-+       target_link_libraries(mscore)
-    endif (APPLE)
+$OpenBSD: patch-mscore_CMakeLists_txt,v 1.6 2017/07/06 08:01:09 bcallah Exp $
+Index: mscore/CMakeLists.txt
+--- mscore/CMakeLists.txt.orig
++++ mscore/CMakeLists.txt
+@@ -493,7 +493,6 @@ else (MINGW)
+             ${ALSA_LIB}
+             ${QT_LIBRARIES}
+             z
+-            dl
+             pthread
+             )
  
-    # gold does not use indirect shared libraries for symbol resolution, Linux only
-    if (NOT APPLE)
-       if(USE_JACK)
--         target_link_libraries(mscore dl)
-+         target_link_libraries(mscore)
-       endif(USE_JACK)
--      target_link_libraries(mscore rt)
-+      target_link_libraries(mscore)
-    endif (NOT APPLE)
+@@ -545,7 +544,7 @@ else (MINGW)
+             endif (USE_PORTMIDI)
+             target_link_libraries(mscore ${OsxFrameworks})
+       else (APPLE)
+-            target_link_libraries(mscore rt)
++            target_link_libraries(mscore)
+       endif (APPLE)
  
-    if (APPLE)
+       # gold does not use indirect shared libraries for symbol resolution, Linux only
+@@ -553,7 +552,7 @@ else (MINGW)
+             if (USE_JACK)
+                   target_link_libraries(mscore dl)
+             endif (USE_JACK)
+-                  target_link_libraries(mscore rt)
++                  target_link_libraries(mscore)
+       endif (NOT APPLE)
+ 
+       if (APPLE)
