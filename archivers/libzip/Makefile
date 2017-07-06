@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.14 2016/08/27 07:49:48 jca Exp $
+# $OpenBSD: Makefile,v 1.15 2017/07/06 07:57:33 bcallah Exp $
 
 COMMENT=		library for reading, creating and modifying zip archives
 
-DISTNAME=		libzip-1.1.3
+DISTNAME=		libzip-1.2.0
 CATEGORIES=		archivers
-SHARED_LIBS +=  zip                  1.1      # 4.0
+SHARED_LIBS +=  zip                  2.0      # 4.0
 
-HOMEPAGE=		http://www.nih.at/libzip/
+HOMEPAGE=		https://www.nih.at/libzip/
+MAINTAINER=		Brian Callahan <bcallah@openbsd.org>
 
 # BSD-3
 PERMIT_PACKAGE_CDROM=	Yes
