@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2017/04/28 22:18:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2017/07/06 08:03:28 bcallah Exp $
 
 COMMENT=	check mp3 files for errors
 
-DISTNAME=	checkmate-0.20
+DISTNAME=	checkmate-0.21
 
 CATEGORIES=	audio
 
