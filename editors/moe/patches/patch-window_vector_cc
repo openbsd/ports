@@ -1,7 +1,8 @@
-$OpenBSD: patch-window_vector_cc,v 1.1 2017/04/29 22:36:16 naddy Exp $
+$OpenBSD: patch-window_vector_cc,v 1.2 2017/07/06 07:16:11 bcallah Exp $
+Index: window_vector.cc
 --- window_vector.cc.orig
 +++ window_vector.cc
-@@ -1026,7 +1026,7 @@ const char * Window_vector::copyright_update()
+@@ -1030,7 +1030,7 @@ const char * Window_vector::copyright_update()
      {
      int year = 1900 + t->tm_year;
      while( year )
