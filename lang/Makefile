@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.200 2017/06/29 15:56:43 bcallah Exp $
+# $OpenBSD: Makefile,v 1.201 2017/07/06 21:25:38 espie Exp $
 
      SUBDIR =
      SUBDIR += STk
@@ -82,7 +82,7 @@
      SUBDIR += ruby
      SUBDIR += rust
      SUBDIR += sbcl
-     SUBDIR += sbcl,threads
+#     SUBDIR += sbcl,threads
      SUBDIR += scala
      SUBDIR += scheme-report
      SUBDIR += scheme48

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2017/02/06 12:23:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2017/07/06 21:25:38 espie Exp $
 
 # not yet ported to other arches
 ONLY_FOR_ARCHS =	amd64 i386 powerpc
@@ -29,6 +29,9 @@ MODGCC4_LANGS=		c
 WANTLIB=		c m util
 
 PSEUDO_FLAVORS=		native_bootstrap
+
+# XXX threads flavor does not work reliably it won't even pass its self-test
+# on amd64 all the time
 FLAVORS=		threads
 FLAVOR?=
 
