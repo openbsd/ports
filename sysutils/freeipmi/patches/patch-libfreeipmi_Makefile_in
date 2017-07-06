@@ -1,7 +1,8 @@
-$OpenBSD: patch-libfreeipmi_Makefile_in,v 1.6 2016/11/19 14:39:51 sthen Exp $
---- libfreeipmi/Makefile.in.orig	Wed Nov  2 22:52:45 2016
-+++ libfreeipmi/Makefile.in	Sat Nov 19 14:28:53 2016
-@@ -400,7 +400,7 @@ LIBIPMIMONITORING_VERSION_MAJOR = @LIBIPMIMONITORING_V
+$OpenBSD: patch-libfreeipmi_Makefile_in,v 1.7 2017/07/06 13:55:05 sthen Exp $
+Index: libfreeipmi/Makefile.in
+--- libfreeipmi/Makefile.in.orig
++++ libfreeipmi/Makefile.in
+@@ -504,7 +504,7 @@ LIBIPMIMONITORING_VERSION_MAJOR = @LIBIPMIMONITORING_V
  LIBIPMIMONITORING_VERSION_MINOR = @LIBIPMIMONITORING_VERSION_MINOR@
  LIBIPMIMONITORING_VERSION_PATCH = @LIBIPMIMONITORING_VERSION_PATCH@
  LIBOBJS = @LIBOBJS@
@@ -10,7 +11,7 @@ $OpenBSD: patch-libfreeipmi_Makefile_in,v 1.6 2016/11/19 14:39:51 sthen Exp $
  LIBTOOL = @LIBTOOL@
  LIPO = @LIPO@
  LN_S = @LN_S@
-@@ -503,7 +503,7 @@ libfreeipmi_la_CPPFLAGS = \
+@@ -611,7 +611,7 @@ libfreeipmi_la_CPPFLAGS = \
  	-I$(top_builddir)/libfreeipmi/include \
  	-I$(top_srcdir)/libfreeipmi/include \
  	-I$(top_srcdir)/libfreeipmi \
