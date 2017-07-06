@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.7 2017/03/12 16:28:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2017/07/06 13:20:51 sthen Exp $
 
 COMMENT=	2D barcodes / DataMatrix creation tool
 
-V=		0.2.7
+V=		0.3.0
 GH_ACCOUNT=	rdoeffinger
 GH_PROJECT=	iec16022
 GH_TAGNAME=	v$V
 
-SHARED_LIBS +=  iec16022                  2.0 # unknown
+SHARED_LIBS +=  iec16022                  3.0 # unknown
 
 CATEGORIES=	graphics
 
