@@ -1,7 +1,16 @@
-$OpenBSD: patch-src_LYReadCFG_c,v 1.4 2017/04/30 12:08:32 fcambus Exp $
---- src/LYReadCFG.c.orig	Thu Nov 24 16:35:29 2016
-+++ src/LYReadCFG.c	Sat Apr 29 11:09:38 2017
-@@ -1537,7 +1537,6 @@ static Config_Type Config_Table [] =
+$OpenBSD: patch-src_LYReadCFG_c,v 1.5 2017/07/07 10:17:28 fcambus Exp $
+Index: src/LYReadCFG.c
+--- src/LYReadCFG.c.orig
++++ src/LYReadCFG.c
+@@ -1508,7 +1508,6 @@ static Config_Type Config_Table [] =
+      PARSE_FUN(RC_DISPLAY_CHARSET_CHOICE, parse_display_charset_choice),
+ #endif
+      PARSE_SET(RC_DONT_WRAP_PRE,        dont_wrap_pre),
+-     PARSE_ADD(RC_DOWNLOADER,           downloaders),
+      PARSE_SET(RC_EMACS_KEYS_ALWAYS_ON, emacs_keys),
+      PARSE_FUN(RC_ENABLE_LYNXRC,        enable_lynxrc),
+      PARSE_SET(RC_ENABLE_SCROLLBACK,    enable_scrollback),
+@@ -1537,7 +1536,6 @@ static Config_Type Config_Table [] =
  #endif
       PARSE_Env(RC_FTP_PROXY,            0),
       PARSE_STR(RC_GLOBAL_EXTENSION_MAP, global_extension_map),
@@ -9,7 +18,7 @@ $OpenBSD: patch-src_LYReadCFG_c,v 1.4 2017/04/30 12:08:32 fcambus Exp $
       PARSE_Env(RC_GOPHER_PROXY,         0),
       PARSE_SET(RC_GOTOBUFFER,           goto_buffer),
       PARSE_PRG(RC_GZIP_PATH,            ppGZIP),
-@@ -1655,7 +1654,6 @@ static Config_Type Config_Table [] =
+@@ -1655,7 +1653,6 @@ static Config_Type Config_Table [] =
       PARSE_SET(RC_PERSISTENT_COOKIES,   persistent_cookies),
  #endif /* USE_PERSISTENT_COOKIES */
       PARSE_STR(RC_PERSONAL_EXTENSION_MAP, personal_extension_map),
@@ -17,7 +26,15 @@ $OpenBSD: patch-src_LYReadCFG_c,v 1.4 2017/04/30 12:08:32 fcambus Exp $
       PARSE_LST(RC_POSITIONABLE_EDITOR,  positionable_editor),
       PARSE_STR(RC_PREFERRED_CHARSET,    pref_charset),
       PARSE_ENU(RC_PREFERRED_ENCODING,   LYAcceptEncoding, tbl_preferred_encoding),
-@@ -1766,11 +1764,9 @@ static Config_Type Config_Table [] =
+@@ -1668,7 +1665,6 @@ static Config_Type Config_Table [] =
+      PARSE_FUN(RC_PRETTYSRC_SPEC,       psrcspec_fun),
+      PARSE_SET(RC_PRETTYSRC_VIEW_NO_ANCHOR_NUM, psrcview_no_anchor_numbering),
+ #endif
+-     PARSE_ADD(RC_PRINTER,              printers),
+      PARSE_SET(RC_QUIT_DEFAULT_YES,     LYQuitDefaultYes),
+      PARSE_INT(RC_READ_TIMEOUT,         reading_timeout),
+      PARSE_FUN(RC_REFERER_WITH_QUERY,   referer_with_query_fun),
+@@ -1767,11 +1763,9 @@ static Config_Type Config_Table [] =
       PARSE_PRG(RC_UUDECODE_PATH,        ppUUDECODE),
       PARSE_SET(RC_VERBOSE_IMAGES,       verbose_img),
       PARSE_SET(RC_VI_KEYS_ALWAYS_ON,    vi_keys),
