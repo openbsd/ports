@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1624 2017/06/28 18:05:51 shadchin Exp $
+# $OpenBSD: Makefile,v 1.1625 2017/07/07 17:08:02 jasper Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1332,6 +1332,8 @@
      SUBDIR += py-extras,python3
      SUBDIR += py-fastimport
      SUBDIR += py-fastimport,python3
+     SUBDIR += py-flexmock
+     SUBDIR += py-flexmock,python3
      SUBDIR += py-fpconst
      SUBDIR += py-freezegun
      SUBDIR += py-freezegun,python3
