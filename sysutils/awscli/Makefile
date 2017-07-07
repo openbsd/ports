@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.166 2017/07/01 11:23:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.167 2017/07/07 13:52:23 ajacoutot Exp $
 
 COMMENT=		universal command line environment for AWS
 
-MODPY_EGG_VERSION=	1.11.115
+MODPY_EGG_VERSION=	1.11.117
 DISTNAME=		awscli-${MODPY_EGG_VERSION}
 
 CATEGORIES=		sysutils
@@ -25,7 +25,7 @@ RUN_DEPENDS=		security/py-rsa \
 
 # !!! check setup.py for exact dependencies version
 RUN_DEPENDS +=		devel/py-colorama=0.3.7
-RUN_DEPENDS +=		net/py-botocore=1.5.78
+RUN_DEPENDS +=		net/py-botocore=1.5.80
 RUN_DEPENDS +=		net/py-s3transfer=0.1.10
 
 NO_TEST=		Yes
