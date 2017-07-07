@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.107 2017/04/10 11:46:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.108 2017/07/07 16:01:58 sthen Exp $
 
 # XXX building this port while a version is already installed on the
 # system will lead to unexpected hidden dependencies!!!
@@ -10,7 +10,7 @@ COMMENT-mysql=		Bacula libbaccats support for MySQL
 COMMENT-pgsql=		Bacula libbaccats support for PostgreSQL
 COMMENT-sqlite3=	Bacula libbaccats support for SQLite3
 
-V=			7.4.7
+V=			9.0.0
 DISTNAME=		bacula-$V
 PKGNAME-main=		bacula-client-$V
 PKGNAME-server=		bacula-server-$V
@@ -21,12 +21,13 @@ PKGNAME-sqlite3=	bacula-sqlite3-$V
 
 CATEGORIES=		sysutils
 
-SHARED_LIBS +=  bac                  6.0
-SHARED_LIBS +=  baccfg               6.0
-SHARED_LIBS +=  bacfind              5.1
-SHARED_LIBS +=  bacsql               5.0
+SHARED_LIBS +=  bac                  7.0
+SHARED_LIBS +=  baccfg               7.0
+SHARED_LIBS +=  bacfind              6.0
+SHARED_LIBS +=  bacsd                1.0
+SHARED_LIBS +=  bacsql               6.0
 
-BACCATS_LIBV =	3.0
+BACCATS_LIBV =	4.0
 SHARED_LIBS +=  baccats              ${BACCATS_LIBV}
 SHARED_LIBS +=  baccats-mysql        ${BACCATS_LIBV}
 SHARED_LIBS +=  baccats-postgresql   ${BACCATS_LIBV}
@@ -49,6 +50,7 @@ MODULES=		devel/gettext
 LOCALSTATEDIR=		${BASELOCALSTATEDIR}/bacula
 SYSCONFDIR=		${BASESYSCONFDIR}/bacula
 
+PATCHORIG=		.orig.port
 CONFIGURE_STYLE=	gnu
 USE_GMAKE=		Yes
 NO_TEST=		Yes
@@ -90,6 +92,7 @@ CONFIGURE_ARGS +=	--with-mysql \
 			--with-sqlite3
 
 MAKE_FLAGS=		NO_ECHO=
+LIBTOOL_FLAGS=		--tag=disable-static
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
@@ -153,7 +156,7 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/examples/autochangers/chio-changer-openbsd \
 		${PREFIX}/libexec/bacula/chio-changer-openbsd.dist
 	rm ${PREFIX}/libexec/bacula/updatedb/update*.in
-	rm ${PREFIX}/lib/libbaccats.{a,la}
+	rm ${PREFIX}/lib/libbaccats.la
 	mv ${PREFIX}/libexec/bacula/query.sql{,.dist}
 	mv ${PREFIX}/libexec/bacula/mtx-changer.conf{,.dist}
 	rm ${PREFIX}/sbin/bacula

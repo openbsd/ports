@@ -1,7 +1,8 @@
-$OpenBSD: patch-configure,v 1.19 2016/07/08 12:59:13 sthen Exp $
---- configure.orig	Wed Jul  6 20:03:41 2016
-+++ configure	Fri Jul  8 13:41:32 2016
-@@ -4808,7 +4808,7 @@ $as_echo "no" >&6; }
+$OpenBSD: patch-configure,v 1.20 2017/07/07 16:01:58 sthen Exp $
+Index: configure
+--- configure.orig
++++ configure
+@@ -4832,7 +4832,7 @@ $as_echo "no" >&6; }
  fi
  
  
@@ -10,7 +11,7 @@ $OpenBSD: patch-configure,v 1.19 2016/07/08 12:59:13 sthen Exp $
     as_fn_error $? "Unable to find C++ compiler" "$LINENO" 5
  fi
  
-@@ -16699,7 +16699,7 @@ if test x$use_libtool != xno; then
+@@ -16723,7 +16723,7 @@ if test x$use_libtool != xno; then
     LIBTOOL_INSTALL_TARGET="libtool-install"
     LIBTOOL_UNINSTALL_TARGET="libtool-uninstall"
     LIBTOOL_CLEAN_TARGET="libtool-clean"
@@ -19,7 +20,7 @@ $OpenBSD: patch-configure,v 1.19 2016/07/08 12:59:13 sthen Exp $
     FD_PLUGIN_DIR="src/plugins/fd"
     have_plugins=yes
  else
-@@ -22362,7 +22362,7 @@ if eval test \"x\$"$as_ac_Header"\" = x"yes"; then :
+@@ -22386,7 +22386,7 @@ if eval test \"x\$"$as_ac_Header"\" = x"yes"; then :
  
  $as_echo "#define HAVE_READLINE 1" >>confdefs.h
  
@@ -28,7 +29,7 @@ $OpenBSD: patch-configure,v 1.19 2016/07/08 12:59:13 sthen Exp $
  		    got_readline="yes"
  
  else
-@@ -22401,7 +22401,7 @@ $as_echo "#define HAVE_READLINE 1" >>confdefs.h
+@@ -22425,7 +22425,7 @@ $as_echo "#define HAVE_READLINE 1" >>confdefs.h
  
  			got_readline="yes"
  			CONS_INC="-I${TOP_DIR}/depkgs/readline"
@@ -37,7 +38,7 @@ $OpenBSD: patch-configure,v 1.19 2016/07/08 12:59:13 sthen Exp $
  			CONS_LDFLAGS="-L${TOP_DIR}/depkgs/readline"
  			PRTREADLINE_SRC="${TOP_DIR}/depkgs/readline"
  
-@@ -30736,6 +30736,7 @@ netbsd)
+@@ -30975,6 +30975,7 @@ netbsd)
     DISTVER=`uname -a |awk '{print $3}'`
     lld="qd"
     llu="qu"
@@ -45,7 +46,7 @@ $OpenBSD: patch-configure,v 1.19 2016/07/08 12:59:13 sthen Exp $
     TAPEDRIVE="/dev/nrst0"
     PSCMD="ps -ax -o pid,command"
     PTHREAD_LIB="-pthread"
-@@ -30754,6 +30755,7 @@ openbsd)
+@@ -30993,6 +30994,7 @@ openbsd)
         platforms/openbsd/bacula-fd \
         platforms/openbsd/bacula-sd \
         platforms/openbsd/bacula-dir"

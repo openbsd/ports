@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.21 2016/01/19 22:51:10 sthen Exp $
+@comment $OpenBSD: PLIST-server,v 1.22 2017/07/07 16:01:58 sthen Exp $
 @conflict bacula-<2.2.7
 @conflict bacula-client-<5.2.6p2
 @pkgpath sysutils/bacula,-server,mysql
@@ -6,12 +6,14 @@
 @pkgpath sysutils/bacula,-server,sqlite3
 @newuser _bacula-sd:599:_bacula:daemon:Bacula Storage Daemon:/nonexistent:/sbin/nologin
 @extraunexec rm -rf /var/bacula
-lib/libbacsql.a
+lib/libbacsd.la
+@lib lib/libbacsd.so.${LIBbacsd_VERSION}
 lib/libbacsql.la
 @lib lib/libbacsql.so.${LIBbacsql_VERSION}
 libexec/bacula/bacula
 libexec/bacula/bacula-ctl-dir
 libexec/bacula/bacula-ctl-sd
+libexec/bacula/baculabackupreport
 libexec/bacula/btraceback.dbx
 libexec/bacula/btraceback.gdb
 libexec/bacula/btraceback.mdb
@@ -24,7 +26,6 @@ libexec/bacula/delete_catalog_backup
 libexec/bacula/disk-changer
 libexec/bacula/drop_bacula_database
 libexec/bacula/drop_bacula_tables
-libexec/bacula/dvd-handler
 libexec/bacula/grant_bacula_privileges
 libexec/bacula/make_bacula_tables
 libexec/bacula/make_catalog_backup

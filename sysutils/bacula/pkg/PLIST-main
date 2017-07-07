@@ -1,29 +1,31 @@
-@comment $OpenBSD: PLIST-main,v 1.23 2015/08/15 07:50:02 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.24 2017/07/07 16:01:58 sthen Exp $
 @conflict bacula-server-<5.2.1
 @pkgpath sysutils/bacula,-client
 @newgroup _bacula:591
 @newuser _bacula:591:_bacula:daemon:Bacula Director:/nonexistent:/sbin/nologin
 @comment lib/bpipe-fd.a
 lib/bpipe-fd.so
-lib/libbac.a
 lib/libbac.la
 @lib lib/libbac.so.${LIBbac_VERSION}
-lib/libbaccfg.a
 lib/libbaccfg.la
 @lib lib/libbaccfg.so.${LIBbaccfg_VERSION}
-lib/libbacfind.a
 lib/libbacfind.la
 @lib lib/libbacfind.so.${LIBbacfind_VERSION}
 libexec/bacula/
 libexec/bacula/bacula-ctl-fd
 libexec/bacula/bacula_config
 libexec/bacula/bconsole
+libexec/bacula/tapealert
 @man man/man8/bacula-fd.8
 @man man/man8/bconsole.8
 @man man/man8/bregex.8
 @man man/man8/bwild.8
 @bin sbin/bacula-fd
+@bin sbin/bbconsjson
 @bin sbin/bconsole
+@bin sbin/bdirjson
+@bin sbin/bfdjson
+@bin sbin/bsdjson
 share/doc/bacula/
 share/doc/bacula/ChangeLog
 share/doc/bacula/INSTALL

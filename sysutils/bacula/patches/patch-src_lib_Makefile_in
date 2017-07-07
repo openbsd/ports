@@ -1,16 +1,17 @@
-$OpenBSD: patch-src_lib_Makefile_in,v 1.5 2015/08/15 07:50:02 ajacoutot Exp $
---- src/lib/Makefile.in.orig	Thu Aug 13 15:52:24 2015
-+++ src/lib/Makefile.in	Fri Aug 14 10:16:42 2015
-@@ -104,7 +104,7 @@ libbac.a: $(LIBBAC_OBJS)
+$OpenBSD: patch-src_lib_Makefile_in,v 1.6 2017/07/07 16:01:58 sthen Exp $
+Index: src/lib/Makefile.in
+--- src/lib/Makefile.in.orig
++++ src/lib/Makefile.in
+@@ -103,7 +103,7 @@ libbac.a: $(LIBBAC_OBJS)
  
- libbac.la: Makefile $(LIBBAC_LOBJS)
+ libbac.la: Makefile $(LIBBAC_LOBJS) 
  	@echo "Making $@ ..."
--	$(LIBTOOL_LINK) $(CXX) $(DEFS) $(DEBUG) $(LDFLAGS) -o $@ $(LIBBAC_LOBJS) -export-dynamic -rpath $(libdir) -release $(LIBBAC_LT_RELEASE) $(WRAPLIBS) $(CAP_LIBS) $(ZLIBS) $(OPENSSL_LIBS) $(LIBS) $(DLLIBS)
+-	$(LIBTOOL_LINK) $(CXX) $(DEFS) $(DEBUG) $(LDFLAGS) -o $@ $(LIBBAC_LOBJS) -export-dynamic -rpath $(libdir) -release $(LIBBAC_LT_RELEASE) $(WRAPLIBS) $(CAP_LIBS) $(ZLIBS) $(OPENSSL_LIBS) $(LIBS) $(DLLIBS) 
 +	$(LIBTOOL_LINK) $(CXX) $(DEFS) $(DEBUG) $(LDFLAGS) -o $@ $(LIBBAC_LOBJS) -export-dynamic -rpath $(libdir) $(WRAPLIBS) $(CAP_LIBS) $(ZLIBS) $(OPENSSL_LIBS) $(LIBS) $(DLLIBS)
  
  libbaccfg.a: $(LIBBACCFG_OBJS)
  	@echo "Making $@ ..."
-@@ -113,7 +113,7 @@ libbaccfg.a: $(LIBBACCFG_OBJS)
+@@ -112,7 +112,7 @@ libbaccfg.a: $(LIBBACCFG_OBJS)
  
  libbaccfg.la: Makefile $(LIBBACCFG_LOBJS)
  	@echo "Making $@ ..."
