@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.336 2017/05/24 14:07:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.337 2017/07/07 19:58:35 landry Exp $
 
      SUBDIR =
      SUBDIR += apache-couchdb
      SUBDIR += architect
      SUBDIR += barman
+     SUBDIR += citus
      SUBDIR += db
      SUBDIR += directoryassistant
      SUBDIR += evolution-data-server
