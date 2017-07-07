@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.1 2017/06/25 15:10:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2017/07/07 12:48:13 ajacoutot Exp $
 
 PROVIDER=		spotinst
 GH_TAGNAME=		v0.1.0
+REVISION=		0
 
 .include <bsd.port.mk>
