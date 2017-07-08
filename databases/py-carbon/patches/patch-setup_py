@@ -1,20 +1,21 @@
-$OpenBSD: patch-setup_py,v 1.2 2015/12/29 08:58:47 jasper Exp $
---- setup.py.orig	Fri Nov 27 20:02:03 2015
-+++ setup.py	Tue Dec 29 09:57:19 2015
-@@ -15,7 +15,7 @@ else:
- 
- storage_dirs = [ ('storage/whisper',[]), ('storage/lists',[]),
-                  ('storage/log',[]), ('storage/rrd',[]) ]
+$OpenBSD: patch-setup_py,v 1.3 2017/07/08 16:09:46 jasper Exp $
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -54,7 +54,7 @@ else:
+ storage_dirs = [ ('storage/ceres', []), ('storage/whisper',[]),
+                  ('storage/lists',[]), ('storage/log',[]),
+                  ('storage/rrd',[]) ]
 -conf_files = [ ('conf', glob('conf/*.example')) ]
 +conf_files = [ ('${GRAPHITE_EGDIR}', glob('conf/*.example')) ]
  
  install_files = storage_dirs + conf_files
  
-@@ -24,7 +24,6 @@ install_files = storage_dirs + conf_files
+@@ -63,7 +63,6 @@ install_files = storage_dirs + conf_files
  init_scripts = [ ('examples/init.d', ['distro/redhat/init.d/carbon-cache',
                                        'distro/redhat/init.d/carbon-relay',
                                        'distro/redhat/init.d/carbon-aggregator']) ]
 -install_files += init_scripts
  
- 
- setup(
+ try:
+     setup(

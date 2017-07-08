@@ -1,12 +1,13 @@
-$OpenBSD: patch-setup_cfg,v 1.1.1.1 2012/10/11 18:00:30 jasper Exp $
---- setup.cfg.orig	Tue Oct  9 02:24:46 2012
-+++ setup.cfg	Tue Oct  9 02:25:36 2012
-@@ -1,6 +1,6 @@
+$OpenBSD: patch-setup_cfg,v 1.2 2017/07/08 16:09:46 jasper Exp $
+Index: setup.cfg
+--- setup.cfg.orig
++++ setup.cfg
+@@ -4,6 +4,6 @@ requires = python-twisted
+ post-install = distro/redhat/misc/postinstall
+ 
  [install]
 -prefix = /opt/graphite
 -install-lib = %(prefix)s/lib
 +prefix = ${PREFIX}
 +install-lib = ${MODPY_SITEPKG}
  
- [bdist_rpm]
- requires = python-twisted
