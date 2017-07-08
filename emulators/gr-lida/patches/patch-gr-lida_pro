@@ -1,0 +1,31 @@
+$OpenBSD: patch-gr-lida_pro,v 1.1.1.1 2017/07/08 20:17:29 juanfra Exp $
+--- gr-lida.pro.orig	Tue Sep 23 02:09:33 2014
++++ gr-lida.pro	Tue Sep 23 02:13:43 2014
+@@ -177,13 +177,15 @@ use_zlib {
+ 
+ # ###### Install
+ !win32 {
++    isEmpty(PREFIX):PREFIX = /usr/local
++    DATADIR = $$PREFIX/share
+     target.files = bin/gr-lida
+-    target.path = /usr/bin
++    target.path = $$PREFIX/bin
+     pixmaps.files = gr-lida.svg \
+         gr-lida.png
+-    pixmaps.path = /usr/share/pixmaps
++    pixmaps.path = $$DATADIR/pixmaps
+     desktop.files = res/gr-lida.desktop
+-    desktop.path = /usr/share/applications
++    desktop.path = $$DATADIR/applications
+     docs.files = doc/AUTHORS.txt \
+         doc/COPYING.txt \
+         doc/INSTALL.txt \
+@@ -192,7 +194,7 @@ use_zlib {
+         doc/NEWS.txt \
+         doc/THANKS.txt \
+         doc/TODO.txt
+-    docs.path = /usr/share/doc/gr-lida
++    docs.path = $$DATADIR/doc/gr-lida
+     INSTALLS += target \
+         pixmaps \
+         desktop \

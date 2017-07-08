@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/07/08 20:17:29 juanfra Exp $
+@bin bin/gr-lida
+share/applications/gr-lida.desktop
+share/doc/gr-lida/
+share/doc/gr-lida/AUTHORS.txt
+share/doc/gr-lida/COPYING.txt
+share/doc/gr-lida/INSTALL.txt
+share/doc/gr-lida/LEEME.txt
+share/doc/gr-lida/LICENSE.txt
+share/doc/gr-lida/NEWS.txt
+share/doc/gr-lida/THANKS.txt
+share/doc/gr-lida/TODO.txt
+share/pixmaps/
+share/pixmaps/gr-lida.png
+share/pixmaps/gr-lida.svg
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

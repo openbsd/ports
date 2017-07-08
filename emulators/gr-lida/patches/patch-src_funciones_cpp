@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_funciones_cpp,v 1.1.1.1 2017/07/08 20:17:29 juanfra Exp $
+--- src/funciones.cpp.orig	Sun Aug 18 16:37:11 2013
++++ src/funciones.cpp	Sat Sep 27 23:24:18 2014
+@@ -867,7 +867,7 @@ stGrlCfg Funciones::cargarGRLConfig(QString iniFileNam
+ 	#else
+ 		config.VDMSoundDisp = false;
+ 	#endif
+-		config.IdiomaSelect        = settings.value("IdiomaSelect"       , "es_ES").toString();
++		config.IdiomaSelect        = settings.value("IdiomaSelect"       , "en_EN").toString();
+ 		config.OpenPdfExternal     = settings.value("OpenPdfExternal"    , false  ).toBool();
+ 		config.url_xmldb           = settings.value("url_xmldb"          , "gr-lida.js").toString();
+ 		config.FormatoFecha        = settings.value("FormatoFecha"       , "dd/MM/yyyy HH:mm:ss").toString();
