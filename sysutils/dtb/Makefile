@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2017/05/05 10:49:28 jsg Exp $
+# $OpenBSD: Makefile,v 1.8 2017/07/08 03:25:40 jsg Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS} ${CLANG_ARCHS}
 
 COMMENT=	Device Tree Blobs
-DISTNAME=	linux-4.11
+DISTNAME=	linux-4.12
 PKGNAME=	${DISTNAME:S/linux/dtb/}
 CATEGORIES=	sysutils
 HOMEPAGE=	http://www.devicetree.org
@@ -30,6 +30,7 @@ do-build:
 	    cd ${WRKSRC}/arch/${ARCH}/boot/dts/$$vendor ; \
 	    for dts in `ls *.dts` ; do \
 	        clang-cpp -nostdinc -I . -I include -I${WRKSRC}/include \
+		    -I ${WRKSRC}/scripts/dtc/include-prefixes \
 		    -undef -D__DTS__ -x assembler-with-cpp $$dts \
 		    | dtc -I dts -O dtb -o `echo "$$dts" \
 		    | sed -e 's/\.dts$$/\.dtb/'` - ; \
