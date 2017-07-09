@@ -1,0 +1,15 @@
+$OpenBSD: patch-Makefile,v 1.1 2017/07/09 14:05:37 espie Exp $
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -1,8 +1,7 @@
+ PROG=		moo
+-SRCS=		moo.c scan.c
++SRCS=		moo.y scan.l
+ CPPFLAGS+=	-I${.CURDIR}
+ COPTS+=		-Wall -W -Wno-unused -Wshadow -pedantic -std=c99
+-CLEANFILES+=	moo.c y.tab.h scan.c lex.yy.c
+ 
+ LOCALBASE?=/usr/local
+ BINDIR=${LOCALBASE}/bin

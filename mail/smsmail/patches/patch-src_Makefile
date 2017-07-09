@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_Makefile,v 1.1 2017/07/09 14:05:37 espie Exp $
+
+Index: src/Makefile
+--- src/Makefile.orig
++++ src/Makefile
+@@ -3,8 +3,6 @@
+ PROG=		smsmail
+ SRCS=		smsmail.c parse.y scan.l
+ 
+-CLEANFILES+=	y.tab.h
+-
+ CFLAGS+=	-pthread -Wall -I/usr/local/include -DLDAP_DEPRECATED
+ LDADD+=		-L/usr/local/lib -lldap_r -llber -lpthread
+ LINTFLAGS+=	-u

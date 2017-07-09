@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_scan_l,v 1.1 2017/07/09 14:05:37 espie Exp $
+
+Index: src/scan.l
+--- src/scan.l.orig
++++ src/scan.l
+@@ -19,7 +19,7 @@
+ 
+ #include <string.h>
+ 
+-#include "y.tab.h"
++#include "parse.h"
+ 
+ %}
+ 
