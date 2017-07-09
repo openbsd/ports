@@ -1,8 +1,8 @@
-$OpenBSD: patch-xl_main_py,v 1.4 2017/06/10 14:18:37 giovanni Exp $
+$OpenBSD: patch-xl_main_py,v 1.5 2017/07/09 10:03:05 bcallah Exp $
 Index: xl/main.py
 --- xl/main.py.orig
 +++ xl/main.py
-@@ -686,6 +686,8 @@ class Exaile(object):
+@@ -698,6 +698,8 @@ class Exaile(object):
                  context.iteration(True)
              except:
                  pass

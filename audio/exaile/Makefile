@@ -1,23 +1,21 @@
-# $OpenBSD: Makefile,v 1.33 2017/06/10 14:18:37 giovanni Exp $
+# $OpenBSD: Makefile,v 1.34 2017/07/09 10:03:05 bcallah Exp $
 
 COMMENT =	music manager and player for GTK+ written in Python
 
-V =		3.4
-P =		0
-DISTNAME =	exaile-${V}.${P}
+V =		3.4.5
+DISTNAME =	exaile-${V}
 
 CATEGORIES =	audio x11
 
 HOMEPAGE =	http://www.exaile.org/
-MAINTAINER =	Brian Callahan <bcallah@devio.us>
+MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
-MASTER_SITES = http://www.launchpad.net/exaile/$V.x/$V.$P/+download/
+MASTER_SITES =	https://github.com/exaile/exaile/releases/download/${V}/
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-MODULES =	devel/gettext \
-		lang/python
+MODULES =	lang/python
 
 COMMON_DEPENDS =x11/dbus-python>=0.82.1 \
 		devel/py-notify>=0.1.1 \
@@ -30,7 +28,8 @@ COMMON_DEPENDS =x11/dbus-python>=0.82.1 \
 		multimedia/gstreamer-0.10/plugins-ffmpeg \
 		multimedia/gstreamer-0.10/py-gstreamer
 
-BUILD_DEPENDS =	${COMMON_DEPENDS}
+BUILD_DEPENDS =	${COMMON_DEPENDS} \
+		devel/gettext-tools
 RUN_DEPENDS =	${COMMON_DEPENDS} \
 		devel/desktop-file-utils
 

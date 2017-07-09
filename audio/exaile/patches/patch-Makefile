@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile,v 1.7 2017/06/10 14:18:37 giovanni Exp $
+$OpenBSD: patch-Makefile,v 1.8 2017/07/09 10:03:05 bcallah Exp $
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
@@ -26,11 +26,12 @@ Index: Makefile
  	@echo "Ready to install..."
  
  # The no_locale stuff is by request of BSD people, please ensure
-@@ -53,10 +53,10 @@ make-install-dirs:
+@@ -53,11 +53,10 @@ make-install-dirs:
  	mkdir -p ${EXAILESHAREDIR}/data/ui/widgets
  	mkdir -p ${EXAILESHAREDIR}/data/migrations
  	mkdir -p ${EXAILESHAREDIR}/data/migrations/migration_200907100931
 -	mkdir -p ${DESTDIR}${PREFIX}/share/pixmaps
+-	mkdir -p ${DESTDIR}${PREFIX}/share/appdata
 -	mkdir -p ${DESTDIR}${PREFIX}/share/applications
 -	mkdir -p ${DESTDIR}${PREFIX}/share/man/man1
 -	mkdir -p ${DESTDIR}${PREFIX}/share/dbus-1/services
@@ -41,7 +42,7 @@ Index: Makefile
  	mkdir -p ${EXAILECONFDIR}
  
  uninstall:
-@@ -108,7 +108,7 @@ install-target: make-install-dirs
+@@ -110,7 +109,7 @@ install-target: make-install-dirs
  	install -m 644 data/images/scalable/*.svg ${EXAILESHAREDIR}/data/images/scalable
  	install -m 644 data/images/*.png ${EXAILESHAREDIR}/data/images
  	install -m 644 data/images/128x128/exaile.png \
@@ -50,7 +51,7 @@ Index: Makefile
  	install -m 644 data/ui/*.ui ${EXAILESHAREDIR}/data/ui
  	install -m 644 data/ui/panel/*.ui ${EXAILESHAREDIR}/data/ui/panel
  	install -m 644 data/ui/preferences/*.ui ${EXAILESHAREDIR}/data/ui/preferences
-@@ -117,10 +117,10 @@ install-target: make-install-dirs
+@@ -119,10 +118,10 @@ install-target: make-install-dirs
  	install -m 644 data/migrations/migration_200907100931/*.py \
  	    	${EXAILESHAREDIR}/data/migrations/migration_200907100931/
  	install -m 644 data/exaile.desktop \
@@ -63,7 +64,7 @@ Index: Makefile
  	install -m 644 data/config/settings.ini ${EXAILECONFDIR}
  	tools/generate-launcher "${DESTDIR}" "${PREFIX}" "${LIBINSTALLDIR}" \
  		"${PYTHON2_CMD}" && \
-@@ -135,10 +135,10 @@ locale:
+@@ -137,10 +136,10 @@ locale:
  install-locale:
  	for f in `find po -name exaile.mo` ; do \
  	  install -d -m 755 \
