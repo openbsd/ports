@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/04/15 12:53:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2017/07/09 18:18:37 jasper Exp $
 
 COMMENT =		improved screen locker
 
 GH_ACCOUNT =		i3
 GH_PROJECT =		i3lock
-# XXX: Remove when upgrading
-GH_COMMIT =		80d4452ec680bcb0e57418f69d44d88ded82047c
-DISTNAME =		i3lock-2.9
+GH_TAGNAME =		2.9.1
 
 CATEGORIES =		x11
 
@@ -17,7 +15,7 @@ MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c cairo ev m xcb xcb-composite xcb-dpms xcb-image xcb-shm
+WANTLIB += c cairo ev m xcb xcb-image xcb-shm
 WANTLIB += xcb-util xcb-xinerama xcb-xkb xkbcommon xkbcommon-x11
 
 LIB_DEPENDS =		devel/libev \
