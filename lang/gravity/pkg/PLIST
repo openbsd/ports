@@ -1,4 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/06/16 03:36:44 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/07/09 18:33:22 bcallah Exp $
 @bin bin/gravity
-share/gravity/
-share/gravity/LICENSE
