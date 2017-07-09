@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1013 2017/06/24 00:25:12 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.1014 2017/07/09 11:01:56 czarkoff Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -53,7 +53,6 @@
      SUBDIR += crawl
      SUBDIR += ctrace
      SUBDIR += curl
-     SUBDIR += cutegram
      SUBDIR += cvsync
      SUBDIR += czmq
      SUBDIR += daq
