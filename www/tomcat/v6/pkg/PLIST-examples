@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.17 2017/03/23 18:35:30 dcoppa Exp $
+@comment $OpenBSD: PLIST-examples,v 1.18 2017/07/10 16:52:03 dcoppa Exp $
 @option is-branch
 @owner _tomcat
 @group _tomcat
@@ -1490,6 +1490,7 @@ webapps/docs/api/org/apache/tomcat/util/net/SSLSupport.CipherData.html
 webapps/docs/api/org/apache/tomcat/util/net/SSLSupport.html
 webapps/docs/api/org/apache/tomcat/util/net/SecureNioChannel.ApplicationBufferHandler.html
 webapps/docs/api/org/apache/tomcat/util/net/SecureNioChannel.html
+webapps/docs/api/org/apache/tomcat/util/net/SendfileKeepAliveState.html
 webapps/docs/api/org/apache/tomcat/util/net/SendfileState.html
 webapps/docs/api/org/apache/tomcat/util/net/ServerSocketFactory.html
 webapps/docs/api/org/apache/tomcat/util/net/SocketProperties.html

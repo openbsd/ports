@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.37 2017/03/23 18:35:30 dcoppa Exp $
+@comment $OpenBSD: PLIST-examples,v 1.38 2017/07/10 16:52:03 dcoppa Exp $
 @option is-branch
 @owner _tomcat
 @group _tomcat
@@ -454,6 +454,7 @@ webapps/docs/api/org/apache/catalina/realm/package-summary.html
 webapps/docs/api/org/apache/catalina/realm/package-tree.html
 webapps/docs/api/org/apache/catalina/security/
 webapps/docs/api/org/apache/catalina/security/Constants.html
+webapps/docs/api/org/apache/catalina/security/DeployXmlPermission.html
 webapps/docs/api/org/apache/catalina/security/SecurityClassLoad.html
 webapps/docs/api/org/apache/catalina/security/SecurityConfig.html
 webapps/docs/api/org/apache/catalina/security/SecurityListener.html
@@ -1355,6 +1356,8 @@ webapps/docs/api/org/apache/tomcat/jdbc/pool/PoolProperties.html
 webapps/docs/api/org/apache/tomcat/jdbc/pool/PoolUtilities.html
 webapps/docs/api/org/apache/tomcat/jdbc/pool/PooledConnection.html
 webapps/docs/api/org/apache/tomcat/jdbc/pool/ProxyConnection.html
+webapps/docs/api/org/apache/tomcat/jdbc/pool/StatementFacade.StatementProxy.html
+webapps/docs/api/org/apache/tomcat/jdbc/pool/StatementFacade.html
 webapps/docs/api/org/apache/tomcat/jdbc/pool/TrapException.html
 webapps/docs/api/org/apache/tomcat/jdbc/pool/Validator.html
 webapps/docs/api/org/apache/tomcat/jdbc/pool/XADataSource.html
@@ -1743,6 +1746,7 @@ webapps/docs/api/org/apache/tomcat/util/net/SSLSupport.html
 webapps/docs/api/org/apache/tomcat/util/net/SSLUtil.html
 webapps/docs/api/org/apache/tomcat/util/net/SecureNioChannel.ApplicationBufferHandler.html
 webapps/docs/api/org/apache/tomcat/util/net/SecureNioChannel.html
+webapps/docs/api/org/apache/tomcat/util/net/SendfileKeepAliveState.html
 webapps/docs/api/org/apache/tomcat/util/net/SendfileState.html
 webapps/docs/api/org/apache/tomcat/util/net/ServerSocketFactory.html
 webapps/docs/api/org/apache/tomcat/util/net/SocketProperties.html

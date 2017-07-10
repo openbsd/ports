@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.24 2017/03/23 18:35:30 dcoppa Exp $
+@comment $OpenBSD: PLIST-examples,v 1.25 2017/07/10 16:52:03 dcoppa Exp $
 @option is-branch
 @owner _tomcat
 @group _tomcat
@@ -182,6 +182,7 @@ webapps/docs/api/org/apache/catalina/core/
 webapps/docs/api/org/apache/catalina/core/AccessLogAdapter.html
 webapps/docs/api/org/apache/catalina/core/ApplicationContext.html
 webapps/docs/api/org/apache/catalina/core/ApplicationContextFacade.html
+webapps/docs/api/org/apache/catalina/core/ApplicationFilterChain.html
 webapps/docs/api/org/apache/catalina/core/ApplicationFilterConfig.html
 webapps/docs/api/org/apache/catalina/core/ApplicationFilterFactory.html
 webapps/docs/api/org/apache/catalina/core/ApplicationFilterRegistration.html
@@ -434,6 +435,7 @@ webapps/docs/api/org/apache/catalina/realm/package-summary.html
 webapps/docs/api/org/apache/catalina/realm/package-tree.html
 webapps/docs/api/org/apache/catalina/security/
 webapps/docs/api/org/apache/catalina/security/Constants.html
+webapps/docs/api/org/apache/catalina/security/DeployXmlPermission.html
 webapps/docs/api/org/apache/catalina/security/SecurityClassLoad.html
 webapps/docs/api/org/apache/catalina/security/SecurityConfig.html
 webapps/docs/api/org/apache/catalina/security/SecurityListener.html
@@ -613,6 +615,7 @@ webapps/docs/api/org/apache/catalina/tribes/ChannelReceiver.html
 webapps/docs/api/org/apache/catalina/tribes/ChannelSender.html
 webapps/docs/api/org/apache/catalina/tribes/ErrorHandler.html
 webapps/docs/api/org/apache/catalina/tribes/Heartbeat.html
+webapps/docs/api/org/apache/catalina/tribes/JmxChannel.html
 webapps/docs/api/org/apache/catalina/tribes/ManagedChannel.html
 webapps/docs/api/org/apache/catalina/tribes/Member.html
 webapps/docs/api/org/apache/catalina/tribes/MembershipListener.html
@@ -629,6 +632,7 @@ webapps/docs/api/org/apache/catalina/tribes/group/ExtendedRpcCallback.html
 webapps/docs/api/org/apache/catalina/tribes/group/GroupChannel.HeartbeatThread.html
 webapps/docs/api/org/apache/catalina/tribes/group/GroupChannel.InterceptorIterator.html
 webapps/docs/api/org/apache/catalina/tribes/group/GroupChannel.html
+webapps/docs/api/org/apache/catalina/tribes/group/GroupChannelMBean.html
 webapps/docs/api/org/apache/catalina/tribes/group/InterceptorPayload.html
 webapps/docs/api/org/apache/catalina/tribes/group/Response.html
 webapps/docs/api/org/apache/catalina/tribes/group/RpcCallback.html
@@ -639,11 +643,13 @@ webapps/docs/api/org/apache/catalina/tribes/group/RpcMessage.NoRpcChannelReply.h
 webapps/docs/api/org/apache/catalina/tribes/group/RpcMessage.html
 webapps/docs/api/org/apache/catalina/tribes/group/interceptors/
 webapps/docs/api/org/apache/catalina/tribes/group/interceptors/DomainFilterInterceptor.html
+webapps/docs/api/org/apache/catalina/tribes/group/interceptors/DomainFilterInterceptorMBean.html
 webapps/docs/api/org/apache/catalina/tribes/group/interceptors/FragmentationInterceptor.FragCollection.html
 webapps/docs/api/org/apache/catalina/tribes/group/interceptors/FragmentationInterceptor.FragKey.html
 webapps/docs/api/org/apache/catalina/tribes/group/interceptors/FragmentationInterceptor.html
 webapps/docs/api/org/apache/catalina/tribes/group/interceptors/GzipInterceptor.html
 webapps/docs/api/org/apache/catalina/tribes/group/interceptors/MessageDispatchInterceptor.html
+webapps/docs/api/org/apache/catalina/tribes/group/interceptors/MessageDispatchInterceptorMBean.html
 webapps/docs/api/org/apache/catalina/tribes/group/interceptors/NonBlockingCoordinator.CoordinationEvent.html
 webapps/docs/api/org/apache/catalina/tribes/group/interceptors/NonBlockingCoordinator.CoordinationMessage.html
 webapps/docs/api/org/apache/catalina/tribes/group/interceptors/NonBlockingCoordinator.html
@@ -652,10 +658,14 @@ webapps/docs/api/org/apache/catalina/tribes/group/interceptors/OrderInterceptor.
 webapps/docs/api/org/apache/catalina/tribes/group/interceptors/OrderInterceptor.html
 webapps/docs/api/org/apache/catalina/tribes/group/interceptors/SimpleCoordinator.html
 webapps/docs/api/org/apache/catalina/tribes/group/interceptors/StaticMembershipInterceptor.html
+webapps/docs/api/org/apache/catalina/tribes/group/interceptors/StaticMembershipInterceptorMBean.html
 webapps/docs/api/org/apache/catalina/tribes/group/interceptors/TcpFailureDetector.html
+webapps/docs/api/org/apache/catalina/tribes/group/interceptors/TcpFailureDetectorMBean.html
 webapps/docs/api/org/apache/catalina/tribes/group/interceptors/TcpPingInterceptor.PingThread.html
 webapps/docs/api/org/apache/catalina/tribes/group/interceptors/TcpPingInterceptor.html
+webapps/docs/api/org/apache/catalina/tribes/group/interceptors/TcpPingInterceptorMBean.html
 webapps/docs/api/org/apache/catalina/tribes/group/interceptors/ThroughputInterceptor.html
+webapps/docs/api/org/apache/catalina/tribes/group/interceptors/ThroughputInterceptorMBean.html
 webapps/docs/api/org/apache/catalina/tribes/group/interceptors/TwoPhaseCommitInterceptor.MapEntry.html
 webapps/docs/api/org/apache/catalina/tribes/group/interceptors/TwoPhaseCommitInterceptor.html
 webapps/docs/api/org/apache/catalina/tribes/group/interceptors/package-frame.html
@@ -676,6 +686,11 @@ webapps/docs/api/org/apache/catalina/tribes/io/XByteBuffer.html
 webapps/docs/api/org/apache/catalina/tribes/io/package-frame.html
 webapps/docs/api/org/apache/catalina/tribes/io/package-summary.html
 webapps/docs/api/org/apache/catalina/tribes/io/package-tree.html
+webapps/docs/api/org/apache/catalina/tribes/jmx/
+webapps/docs/api/org/apache/catalina/tribes/jmx/JmxRegistry.html
+webapps/docs/api/org/apache/catalina/tribes/jmx/package-frame.html
+webapps/docs/api/org/apache/catalina/tribes/jmx/package-summary.html
+webapps/docs/api/org/apache/catalina/tribes/jmx/package-tree.html
 webapps/docs/api/org/apache/catalina/tribes/membership/
 webapps/docs/api/org/apache/catalina/tribes/membership/Constants.html
 webapps/docs/api/org/apache/catalina/tribes/membership/McastService.html
@@ -683,6 +698,7 @@ webapps/docs/api/org/apache/catalina/tribes/membership/McastServiceImpl.Receiver
 webapps/docs/api/org/apache/catalina/tribes/membership/McastServiceImpl.RecoveryThread.html
 webapps/docs/api/org/apache/catalina/tribes/membership/McastServiceImpl.SenderThread.html
 webapps/docs/api/org/apache/catalina/tribes/membership/McastServiceImpl.html
+webapps/docs/api/org/apache/catalina/tribes/membership/McastServiceMBean.html
 webapps/docs/api/org/apache/catalina/tribes/membership/MemberImpl.html
 webapps/docs/api/org/apache/catalina/tribes/membership/Membership.MbrEntry.html
 webapps/docs/api/org/apache/catalina/tribes/membership/Membership.html
@@ -727,10 +743,12 @@ webapps/docs/api/org/apache/catalina/tribes/transport/bio/package-summary.html
 webapps/docs/api/org/apache/catalina/tribes/transport/bio/package-tree.html
 webapps/docs/api/org/apache/catalina/tribes/transport/nio/
 webapps/docs/api/org/apache/catalina/tribes/transport/nio/NioReceiver.html
+webapps/docs/api/org/apache/catalina/tribes/transport/nio/NioReceiverMBean.html
 webapps/docs/api/org/apache/catalina/tribes/transport/nio/NioReplicationTask.html
 webapps/docs/api/org/apache/catalina/tribes/transport/nio/NioSender.html
 webapps/docs/api/org/apache/catalina/tribes/transport/nio/ParallelNioSender.html
 webapps/docs/api/org/apache/catalina/tribes/transport/nio/PooledParallelSender.html
+webapps/docs/api/org/apache/catalina/tribes/transport/nio/PooledParallelSenderMBean.html
 webapps/docs/api/org/apache/catalina/tribes/transport/nio/package-frame.html
 webapps/docs/api/org/apache/catalina/tribes/transport/nio/package-summary.html
 webapps/docs/api/org/apache/catalina/tribes/transport/nio/package-tree.html
@@ -1423,6 +1441,8 @@ webapps/docs/api/org/apache/tomcat/jdbc/pool/PoolProperties.html
 webapps/docs/api/org/apache/tomcat/jdbc/pool/PoolUtilities.html
 webapps/docs/api/org/apache/tomcat/jdbc/pool/PooledConnection.html
 webapps/docs/api/org/apache/tomcat/jdbc/pool/ProxyConnection.html
+webapps/docs/api/org/apache/tomcat/jdbc/pool/StatementFacade.StatementProxy.html
+webapps/docs/api/org/apache/tomcat/jdbc/pool/StatementFacade.html
 webapps/docs/api/org/apache/tomcat/jdbc/pool/TrapException.html
 webapps/docs/api/org/apache/tomcat/jdbc/pool/Validator.html
 webapps/docs/api/org/apache/tomcat/jdbc/pool/XADataSource.html
@@ -1549,6 +1569,8 @@ webapps/docs/api/org/apache/tomcat/util/buf/Constants.html
 webapps/docs/api/org/apache/tomcat/util/buf/HexUtils.html
 webapps/docs/api/org/apache/tomcat/util/buf/MessageBytes.html
 webapps/docs/api/org/apache/tomcat/util/buf/StringCache.html
+webapps/docs/api/org/apache/tomcat/util/buf/StringUtils.Function.html
+webapps/docs/api/org/apache/tomcat/util/buf/StringUtils.html
 webapps/docs/api/org/apache/tomcat/util/buf/UDecoder.html
 webapps/docs/api/org/apache/tomcat/util/buf/UEncoder.SafeCharsSet.html
 webapps/docs/api/org/apache/tomcat/util/buf/UEncoder.html
@@ -1665,6 +1687,7 @@ webapps/docs/api/org/apache/tomcat/util/digester/ArrayStack.html
 webapps/docs/api/org/apache/tomcat/util/digester/CallMethodRule.html
 webapps/docs/api/org/apache/tomcat/util/digester/CallParamRule.html
 webapps/docs/api/org/apache/tomcat/util/digester/Digester.html
+webapps/docs/api/org/apache/tomcat/util/digester/DocumentProperties.Charset.html
 webapps/docs/api/org/apache/tomcat/util/digester/DocumentProperties.Encoding.html
 webapps/docs/api/org/apache/tomcat/util/digester/DocumentProperties.html
 webapps/docs/api/org/apache/tomcat/util/digester/FactoryCreateRule.html
@@ -1690,6 +1713,7 @@ webapps/docs/api/org/apache/tomcat/util/http/
 webapps/docs/api/org/apache/tomcat/util/http/CookieProcessor.html
 webapps/docs/api/org/apache/tomcat/util/http/CookieProcessorBase.html
 webapps/docs/api/org/apache/tomcat/util/http/FastHttpDateFormat.html
+webapps/docs/api/org/apache/tomcat/util/http/HttpMessages.html
 webapps/docs/api/org/apache/tomcat/util/http/LegacyCookieProcessor.html
 webapps/docs/api/org/apache/tomcat/util/http/MimeHeaders.html
 webapps/docs/api/org/apache/tomcat/util/http/Parameters.FailReason.html
@@ -1857,6 +1881,7 @@ webapps/docs/api/org/apache/tomcat/util/net/SSLUtilBase.html
 webapps/docs/api/org/apache/tomcat/util/net/SecureNio2Channel.html
 webapps/docs/api/org/apache/tomcat/util/net/SecureNioChannel.html
 webapps/docs/api/org/apache/tomcat/util/net/SendfileDataBase.html
+webapps/docs/api/org/apache/tomcat/util/net/SendfileKeepAliveState.html
 webapps/docs/api/org/apache/tomcat/util/net/SendfileState.html
 webapps/docs/api/org/apache/tomcat/util/net/SocketBufferHandler.html
 webapps/docs/api/org/apache/tomcat/util/net/SocketEvent.html
@@ -1962,6 +1987,7 @@ webapps/docs/api/org/apache/tomcat/websocket/WrappedMessageHandler.html
 webapps/docs/api/org/apache/tomcat/websocket/WsContainerProvider.html
 webapps/docs/api/org/apache/tomcat/websocket/WsExtension.html
 webapps/docs/api/org/apache/tomcat/websocket/WsExtensionParameter.html
+webapps/docs/api/org/apache/tomcat/websocket/WsFrameBase.ReadState.html
 webapps/docs/api/org/apache/tomcat/websocket/WsFrameBase.html
 webapps/docs/api/org/apache/tomcat/websocket/WsFrameClient.html
 webapps/docs/api/org/apache/tomcat/websocket/WsHandshakeResponse.html
