@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2017/05/31 08:08:17 espie Exp $
+# $OpenBSD: Makefile,v 1.54 2017/07/10 07:42:13 florian Exp $
 
 BROKEN-hppa =		undefined reference to '__sync_fetch_and_add_4'
 
@@ -7,7 +7,7 @@ COMMENT-mysql=		MySQL database access module for PowerDNS
 COMMENT-pgsql=		PGSQL database access module for PowerDNS
 COMMENT-ldap=		LDAP module for PowerDNS
 
-V=			4.0.3
+V=			4.0.4
 DISTNAME=		pdns-${V}
 EXTRACT_SUFX =		.tar.bz2
 PKGNAME=		powerdns-${V}
