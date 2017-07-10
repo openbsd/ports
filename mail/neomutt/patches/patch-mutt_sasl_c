@@ -1,4 +1,4 @@
-$OpenBSD: patch-mutt_sasl_c,v 1.4 2017/06/03 13:09:06 sthen Exp $
+$OpenBSD: patch-mutt_sasl_c,v 1.5 2017/07/10 10:17:27 sthen Exp $
 
 Pledge
 
@@ -12,5 +12,5 @@ Index: mutt_sasl.c
 -static int mutt_sasl_start(void)
 +int mutt_sasl_start(void)
  {
-   static unsigned char sasl_init = 0;
+   static bool sasl_init = false;
  

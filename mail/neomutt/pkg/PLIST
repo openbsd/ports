@@ -1,12 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.5 2017/06/03 13:09:06 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2017/07/10 10:17:27 sthen Exp $
 @conflict mutt-*
 @bin bin/mutt
-@bin bin/mutt_dotlock
 @bin bin/pgpewrap
 @bin bin/pgpring
 bin/smime_keys
 @man man/man1/mutt.1
-@man man/man1/mutt_dotlock.1
 @man man/man1/pgpewrap.1
 @man man/man1/pgpring.1
 @man man/man1/smime_keys.1
@@ -14,15 +12,20 @@ bin/smime_keys
 @man man/man5/mmdf.5
 @man man/man5/muttrc.5
 share/doc/neomutt/
+share/doc/neomutt/CODE_OF_CONDUCT.md
 share/doc/neomutt/COPYRIGHT
-share/doc/neomutt/ChangeLog
-share/doc/neomutt/ChangeLog.neomutt
+share/doc/neomutt/ChangeLog.md
 share/doc/neomutt/INSTALL
 share/doc/neomutt/LICENSE.md
 share/doc/neomutt/PGP-Notes.txt
 share/doc/neomutt/README.SSL
 share/doc/neomutt/README.md
 share/doc/neomutt/advancedusage.html
+share/doc/neomutt/colorschemes/
+share/doc/neomutt/colorschemes/neonwolf-256.muttrc
+share/doc/neomutt/colorschemes/solarized-dark-256.muttrc
+share/doc/neomutt/colorschemes/vombatidae.mutt
+share/doc/neomutt/colorschemes/zenburn.muttrc
 share/doc/neomutt/configuration.html
 share/doc/neomutt/gettingstarted.html
 share/doc/neomutt/hcache-bench/
@@ -43,6 +46,12 @@ share/doc/neomutt/keybase/pagerMode.png
 share/doc/neomutt/keybase/pgpdecrypt.sh
 share/doc/neomutt/keybase/pgpverify.sh
 share/doc/neomutt/keybase/verify.sh
+share/doc/neomutt/logo/
+share/doc/neomutt/logo/mutt-128.png
+share/doc/neomutt/logo/mutt-256.png
+share/doc/neomutt/logo/mutt-32.png
+share/doc/neomutt/logo/mutt-64.png
+share/doc/neomutt/logo/mutt.svg
 share/doc/neomutt/lua/
 share/doc/neomutt/lua/test_lua-api_runner.muttrc
 share/doc/neomutt/lua/test_lua-api_spec.lua
