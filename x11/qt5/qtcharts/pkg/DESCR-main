@@ -1,0 +1,5 @@
+Qt Charts enables creating stylish, interactive, data centric user interfaces.
+Qt Charts uses the Graphics View Framework for ease of integration. The chart
+components can be used as QWidget or QGraphicsWidget objects or QML types.
+
+This package contains actual libraries to be used by apps.
