@@ -1,8 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/01/10 12:44:01 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2017/07/10 19:04:12 sthen Exp $
 @shell bin/nsh
 bin/save-ro.sh
 bin/save-rw.sh
-bin/save.sh
+@owner root
+@group bin
+@mode 755
+@sample bin/save.sh
+@owner
+@group
+@mode
 share/doc/nsh/
 share/doc/nsh/COPYRIGHT
 share/doc/nsh/MANUAL
