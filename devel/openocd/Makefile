@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2017/01/01 20:58:23 uaa Exp $
+# $OpenBSD: Makefile,v 1.13 2017/07/10 13:47:41 uaa Exp $
 
 COMMENT =	Open On-Chip Debugging
 
-DISTNAME =	openocd-0.9.0
+DISTNAME =	openocd-0.10.0
 CATEGORIES =	devel
 
 HOMEPAGE =	http://openocd.sourceforge.net/
-
-MAINTAINER =	Sylvestre Gallon <ccna.syl@gmail.com>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
@@ -33,8 +31,11 @@ CONFIGURE_ARGS = --disable-werror \
 		--enable-stlink \
 		--enable-ti-icdi \
 		--enable-usb-blaster-2 \
+		--enable-usb-blaster \
 		--enable-osbdm \
 		--enable-opendous \
+		--enable-openjtag \
+		--enable-presto \
 		--enable-aice \
 		--enable-buspirate \
 		--disable-internal-jimtcl
