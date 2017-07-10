@@ -1,0 +1,39 @@
+$OpenBSD: patch-MANUAL,v 1.1 2017/07/10 20:10:36 sthen Exp $
+
+Index: MANUAL
+--- MANUAL.orig
++++ MANUAL
+@@ -128,14 +128,12 @@ At this point, you should inspect and edit /etc/nshrc 
+ it does exactly what you want.  Since it reads the entire configuration out of
+ the kernel, you may find things that you did not intend to save permanently.
+ 
+-You may wish to use nsh to control sshd, pf, inetd, and other daemons that
++You may wish to use nsh to control sshd, pf, ntpd, and other daemons that
+ OpenBSD normally executes out of /etc/rc and /etc/netstart. To disable the
+ automatic start of these daemons and services, tell OpenBSD not to load
+ them.
+ 
+-echo sshd_flags=NO >>/etc/rc.conf.local
+-echo pf=NO >>/etc/rc.conf.local
+-echo inetd=NO >>/etc/rc.conf.local
++rcctl disable sshd pf ntpd
+ 
+ Remove any networking config from /etc/ that conflicts with nsh, such
+ as /etc/hostname.*, /etc/mygate, and daemons from /etc/rc.conf.local that
+@@ -145,11 +143,14 @@ their configuration file through NSH.)
+ 
+ Add nsh's start command to the top of /etc/rc.local:
+ 
+-nsh -i /etc/nshrc | tee /var/run/nsh.out
++/usr/local/bin/nsh -i /etc/nshrc
+ 
+ You may even want verbose output to see how nsh parses its' rc file:
+ 
+-nsh -vi /etc/nshrc | tee /var/run/nsh.out
++/usr/local/bin/nsh -vi /etc/nshrc
++
++In case you miss it during boot, system console output is also logged in the
++kernel message buffer and can be seen with "dmesg -s".
+ 
+ You are done.  When NSH starts from /etc/rc.local, it will automatically load up
+ the network configuration into the kernel.  At this point, you are free to
