@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2017/04/10 11:45:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2017/07/10 14:44:05 ajacoutot Exp $
 
 COMMENT=	wysiwyw (what you see is what you want) editing platform
 
 DISTNAME=	TeXmacs-1.99.4-src
 PKGNAME=	${DISTNAME:S/-src//}
 CATEGORIES=	editors print x11
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	http://texmacs.org/
 
@@ -35,5 +35,8 @@ ALL_TARGET=
 
 post-extract:
 	rm -f ${WRKDIST}/plugins/mathematica/bin/realpath.py
+
+post-install:
+	gunzip ${PREFIX}/man/man1/*.gz
 
 .include <bsd.port.mk>

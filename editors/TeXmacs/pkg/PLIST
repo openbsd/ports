@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/04/05 23:30:54 jca Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/07/10 14:44:05 ajacoutot Exp $
 bin/fig2ps
 bin/texmacs
 include/TeXmacs.h
@@ -47,8 +47,8 @@ libexec/TeXmacs/bin/tm_texgraph
 libexec/TeXmacs/bin/tm_xypic
 libexec/TeXmacs/bin/tmstree.sci
 libexec/TeXmacs/lib/
-@man man/man1/fig2ps.1.gz
-@man man/man1/texmacs.1.gz
+@man man/man1/fig2ps.1
+@man man/man1/texmacs.1
 share/TeXmacs/
 share/TeXmacs/LICENSE
 share/TeXmacs/doc/
