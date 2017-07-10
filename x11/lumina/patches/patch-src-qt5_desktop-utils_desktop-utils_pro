@@ -1,0 +1,11 @@
+$OpenBSD: patch-src-qt5_desktop-utils_desktop-utils_pro,v 1.1 2017/07/10 14:49:33 ajacoutot Exp $
+--- src-qt5/desktop-utils/desktop-utils.pro.orig	Tue Jul  4 14:04:29 2017
++++ src-qt5/desktop-utils/desktop-utils.pro	Tue Jul  4 14:04:39 2017
+@@ -11,6 +11,6 @@ SUBDIRS+= lumina-fm \
+ 	lumina-calculator \
+ 	lumina-archiver \
+ #	lumina-notify \
+-	lumina-mediaplayer \
++#	lumina-mediaplayer \
+ 	lumina-xdg-entry
+ #	lumina-terminal

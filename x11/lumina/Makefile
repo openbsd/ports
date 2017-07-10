@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2017/01/09 10:10:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2017/07/10 14:49:33 ajacoutot Exp $
 
 COMMENT=		Lumina Desktop Environment
 
 GH_ACCOUNT=		trueos
 GH_PROJECT=		lumina
-GH_TAGNAME=		v1.2.0-p1
-PKGNAME=		lumina-1.2.0pl1
+GH_TAGNAME=		v1.3.0-p1
+PKGNAME=		lumina-1.3.0pl1
 
 CATEGORIES=		x11
 
@@ -28,7 +28,8 @@ RUN_DEPENDS=		devel/desktop-file-utils \
 			multimedia/gstreamer1/plugins-base \
 			x11/fluxbox \
 			x11/numlockx \
-			x11/xscreensaver
+			x11/xscreensaver \
+			x11/gtk+3,-guic
 
 LIB_DEPENDS=		x11/qt5/qtmultimedia \
 			x11/qt5/qtsvg \
@@ -52,5 +53,6 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/lumina
 	mv ${WRKINST}/etc/luminaDesktop.conf.dist \
 		${PREFIX}/share/examples/lumina/luminaDesktop.conf
+	gunzip ${PREFIX}/man/man{1,8}/*.gz
 
 .include <bsd.port.mk>
