@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.59 2017/06/05 15:26:32 sthen Exp $
+@comment $OpenBSD: PLIST-server,v 1.60 2017/07/11 23:04:43 sthen Exp $
 @conflict dovecot-sqlite-*
 @pkgpath mail/dovecot
 @pkgpath mail/dovecot,-server,bdb
@@ -363,6 +363,7 @@ include/dovecot/mailbox-list-fs.h
 include/dovecot/mailbox-list-index-storage.h
 include/dovecot/mailbox-list-index-sync.h
 include/dovecot/mailbox-list-index.h
+include/dovecot/mailbox-list-iter-private.h
 include/dovecot/mailbox-list-iter.h
 include/dovecot/mailbox-list-maildir.h
 include/dovecot/mailbox-list-notify-tree.h
@@ -455,6 +456,7 @@ include/dovecot/ostream-metawrap.h
 include/dovecot/ostream-null.h
 include/dovecot/ostream-private.h
 include/dovecot/ostream-rawlog.h
+include/dovecot/ostream-unix.h
 include/dovecot/ostream-zlib.h
 include/dovecot/ostream.h
 include/dovecot/passdb-blocking.h
@@ -498,6 +500,7 @@ include/dovecot/push-notification-triggers.h
 include/dovecot/push-notification-txn-mbox.h
 include/dovecot/push-notification-txn-msg.h
 include/dovecot/qp-decoder.h
+include/dovecot/qp-encoder.h
 include/dovecot/quota-fs.h
 include/dovecot/quota-plugin.h
 include/dovecot/quota-private.h
