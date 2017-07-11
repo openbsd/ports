@@ -1,0 +1,19 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2017/07/11 18:50:19 landry Exp $
+
+Fix libxml2 include dirs var name, needs cmake 3.7.2p3
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -89,9 +89,9 @@ exec_program(${PG_CONFIG} ARGS --libs OUTPUT_VARIABLE 
+ # libxml2
+ 
+ find_package (LibXml2 REQUIRED)
+-mark_as_advanced (CLEAR LIBXML2_INCLUDE_DIR)
++mark_as_advanced (CLEAR LIBXML2_INCLUDE_DIRS)
+ mark_as_advanced (CLEAR LIBXML2_LIBRARIES)
+-include_directories (${LIBXML2_INCLUDE_DIR})
++include_directories (${LIBXML2_INCLUDE_DIRS})
+ 
+ 
+ #------------------------------------------------------------------------------

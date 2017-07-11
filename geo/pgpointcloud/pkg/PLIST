@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/07/11 18:50:19 landry Exp $
+lib/postgresql/
+lib/postgresql/pointcloud-1.1.so
+share/postgresql/
+share/postgresql/extension/
+share/postgresql/extension/pointcloud--1.1.0.sql
+share/postgresql/extension/pointcloud.control
+share/postgresql/extension/pointcloud_postgis--1.0.sql
+share/postgresql/extension/pointcloud_postgis.control

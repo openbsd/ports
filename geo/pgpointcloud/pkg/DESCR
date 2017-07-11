@@ -1,0 +1,11 @@
+LIDAR sensors quickly produce millions of points with large numbers of
+variables measured on each point. The challenge for a point cloud database
+extension is efficiently storing this data while allowing high fidelity access
+to the many variables stored.
+
+PostgreSQL Pointcloud deals with all this variability by using a "schema
+document" to describe the contents of any particular LIDAR point. Each point
+contains a number of dimensions, and each dimension can be of any data type,
+with scaling and/or offsets applied to move between the actual value and the
+value stored in the database. The schema document format used by PostgreSQL
+Pointcloud is the same one used by the [PDAL](http://pointcloud.org) library.
