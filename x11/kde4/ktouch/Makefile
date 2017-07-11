@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2015/05/28 10:17:29 pascal Exp $
+# $OpenBSD: Makefile,v 1.8 2017/07/11 23:10:11 zhuk Exp $
 
 COMMENT =	touch typing learning tool for KDE
 DISTNAME =	ktouch-${MODKDE4_VERSION}
-REVISION =	1
+REVISION =	2
 
 WANTLIB =  c m pthread
 WANTLIB += ICE SM X11 Xext xkbfile
@@ -13,6 +13,7 @@ WANTLIB += ${KDE4LIB}/kcmutils ${KDE4LIB}/kdeclarative ${KDE4LIB}/kdeui
 WANTLIB += ${KDE4LIB}/kio ${KDE4LIB}/plasma
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/gtk+3,-guic
+		x11/gtk+3,-guic \
+		x11/kde4/kqtquickcharts
 
 .include <bsd.port.mk>
