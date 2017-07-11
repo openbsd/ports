@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.79 2017/06/17 21:58:59 zhuk Exp $
+# $OpenBSD: Makefile,v 1.80 2017/07/11 20:42:34 rsadowski Exp $
 
 COMMENT-main =		KDE core libraries
 COMMENT-en_US =		KDE en_US locale data
 COMMENT-langlist =	list of languages supported by KDE
 CATEGORIES =		devel
 V =			4.14.10
-REVISION-main =		8
+REVISION-main =		9
 DISTNAME =		kdelibs-$V
 PKGNAME-main =		${DISTNAME}
 PKGNAME-en_US =		kde4-locale-en_US-$V
@@ -79,7 +79,7 @@ WANTLIB-main += lib/qt4/QtScript lib/qt4/QtSql lib/qt4/QtSvg
 WANTLIB-main += lib/qt4/QtWebKit lib/qt4/QtXml
 WANTLIB-main += aspell attica bz2 dbusmenu-qt enchant exslt fam
 WANTLIB-main += gif lib/inotify/inotify jasper jpeg lzma
-WANTLIB-main += png polkit-qt-core-1 qca2 soprano sopranoclient
+WANTLIB-main += png polkit-qt-core-1 qca soprano sopranoclient
 WANTLIB-main += streamanalyzer streams xml2 xslt
 
 MULTI_PACKAGES =	-main -langlist -en_US
@@ -120,7 +120,7 @@ LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			graphics/giflib \
 			graphics/jasper \
 			graphics/openexr \
-			security/qca2 \
+			security/qca \
 			sysutils/gamin \
 			textproc/aspell/core \
 			textproc/enchant \

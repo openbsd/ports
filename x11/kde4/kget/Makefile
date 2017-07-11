@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2015/06/26 09:18:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2017/07/11 20:42:34 rsadowski Exp $
 
 COMMENT =	download manager for KDE
 DISTNAME =	kget-${MODKDE4_VERSION}
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	net
 HOMEPAGE =	http://projects.kde.org/projects/kde/kdenetwork/kget
@@ -19,7 +19,7 @@ WANTLIB += ${KDE4LIB}/kworkspace ${KDE4LIB}/nepomuk
 WANTLIB += ${KDE4LIB}/nepomukcore ${KDE4LIB}/nepomukutils
 WANTLIB += ${KDE4LIB}/nepomukwidgets ${KDE4LIB}/plasma ${KDE4LIB}/solid
 WANTLIB += assuan gpg-error gpgme++-pthread gpgme-pthread mms
-WANTLIB += qca2 qgpgme soprano
+WANTLIB += qca qgpgme soprano
 
 MODULES =	devel/gettext multimedia/phonon
 MODKDE4_USE =	pim workspace
@@ -30,7 +30,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 
 LIB_DEPENDS =	multimedia/libmms \
 		net/libktorrent,${MODKDE4_FLAVOR} \
-		security/qca2 \
+		security/qca \
 		${MODKDE4_DEP_DIR}/nepomuk-core>=${MODKDE4_DEP_VERSION} \
 		${MODKDE4_DEP_DIR}/nepomuk-widgets>=${MODKDE4_DEP_VERSION}
 

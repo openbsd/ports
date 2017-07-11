@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2016/01/06 11:05:34 zhuk Exp $
+# $OpenBSD: Makefile,v 1.20 2017/07/11 20:42:34 rsadowski Exp $
 
 COMMENT =	KDE document viewer
 DISTNAME =	okular-${MODKDE4_VERSION}
-REVISION =	3
+REVISION =	4
 
 SHARED_LIBS =	okularcore		51.0	# 1.7
 
@@ -15,7 +15,7 @@ WANTLIB += ${KDE4LIB}/kio ${KDE4LIB}/kjs ${KDE4LIB}/kjsapi
 WANTLIB += ${KDE4LIB}/kparts ${KDE4LIB}/kprintutils ${KDE4LIB}/kpty
 WANTLIB += ${KDE4LIB}/nepomuk ${KDE4LIB}/nepomukutils
 WANTLIB += ${KDE4LIB}/qmobipocket
-WANTLIB += chm djvulibre epub freetype jpeg kscreen poppler-qt4 qca2 qimageblitz
+WANTLIB += chm djvulibre epub freetype jpeg kscreen poppler-qt4 qca qimageblitz
 WANTLIB += qjson soprano solid spectre threadweaver tiff
 
 MODULES =	multimedia/phonon
@@ -30,7 +30,7 @@ LIB_DEPENDS = 	devel/chmlib \
 		graphics/tiff \
 		print/libspectre \
 		print/poppler,,-qt4 \
-		security/qca2 \
+		security/qca \
 		textproc/ebook-tools \
 		x11/libkscreen<5 \
 		${MODKDE4_DEP_DIR}/graphics-mobipocket>=${MODKDE4_DEP_VERSION} \

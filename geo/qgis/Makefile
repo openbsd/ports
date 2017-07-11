@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.69 2017/06/25 13:35:42 landry Exp $
+# $OpenBSD: Makefile,v 1.70 2017/07/11 20:42:34 rsadowski Exp $
 
 COMMENT =	desktop geographical information system
 
 DISTNAME =	qgis-2.18.10
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	geo x11
+REVISION =	0
 
 SHARED_LIBS =	qgis_core	17.1 \
 		qgis_app	5.0 \
@@ -31,7 +32,7 @@ MODULES =	devel/cmake \
 COMPILER =	gcc
 
 BUILD_DEPENDS =	x11/py-qt4>=4.8.4 \
-		security/qca-ossl \
+		security/qca,-ossl \
 		editors/py-qscintilla \
 		devel/bison>=2.4 \
 		geo/gdal,-python
@@ -39,7 +40,7 @@ BUILD_DEPENDS =	x11/py-qt4>=4.8.4 \
 
 RUN_DEPENDS =	x11/py-qt4>=4.8.4 \
 		www/py-requests \
-		security/qca-ossl \
+		security/qca,-ossl \
 		geo/gdal,-python \
 		databases/py-psycopg2 \
 		editors/py-qscintilla \
@@ -58,14 +59,14 @@ LIB_DEPENDS =	${MODPY_LIB_DEPENDS} \
 		geo/spatialindex \
 		devel/gsl \
 		devel/qjson \
-		security/qca2 \
+		security/qca \
 		databases/postgresql
 
 WANTLIB += 	ICE SM X11 Xext Xi Xinerama Xrender c expat \
 		fontconfig freetype glib-2.0 gobject-2.0 gthread-2.0 lcms m \
 		mng png pthread util z proj \
 		QtGui QtNetwork QtXml QtSql QtCore QtScript QtSvg \
-		QtWebKit gdal geos_c gsl gslcblas pq qwt fcgi qca2 \
+		QtWebKit gdal geos_c gsl gslcblas pq qwt fcgi qca \
 		QtTest spatialindex spatialite sqlite3 qscintilla2 qjson
 WANTLIB += ${MODPY_WANTLIB} jpeg tiff
 

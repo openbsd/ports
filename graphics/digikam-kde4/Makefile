@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2017/05/28 15:54:08 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.26 2017/07/11 20:42:34 rsadowski Exp $
 
 COMMENT-kipi =		KDE image plugins collection
 COMMENT-main =		KDE photo management utility
@@ -16,8 +16,8 @@ PKGNAME-kipi =		kipi-plugins-${VERSION}
 PKGNAME-main =		${PKGNAME}
 PKGNAME-mediawiki =	libmediawiki-1.0.0
 
-REVISION-main =		0
-REVISION-kipi =		1
+REVISION-main =		1
+REVISION-kipi =		2
 REVISION-mediawiki =	4
 
 EXTRACT_SUFX =		.tar.bz2
@@ -58,7 +58,7 @@ WANTLIB-kipi += ${KDE4LIB}/threadweaver
 WANTLIB-kipi += opencv_core opencv_highgui opencv_imgproc opencv_objdetect
 WANTLIB-kipi += exslt gdk_pixbuf-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gpod
 WANTLIB-kipi += gthread-2.0 jpeg
-WANTLIB-kipi += qjson kgeomap kqoauth kvkontakte mediawiki png qca2 soprano
+WANTLIB-kipi += qjson kgeomap kqoauth kvkontakte mediawiki png qca soprano
 WANTLIB-kipi += tiff xml2 xslt MagickCore-6.Q16
 WANTLIB-kipi += QtGLib-2.0 QtGStreamer-1.0 QtGStreamerUtils-1.0
 
@@ -82,7 +82,7 @@ WANTLIB-main += opencv_legacy opencv_ml opencv_nonfree opencv_objdetect
 WANTLIB-main += opencv_ocl opencv_photo opencv_video
 WANTLIB-main += akonadi-contact akonadi-kde baloocore baloofiles baloopim
 WANTLIB-main += balooqueryparser exif gphoto2 gphoto2_port jasper jpeg
-WANTLIB-main += kface kgeomap lcms2 lensfun lqr-1 pgf png soprano
+WANTLIB-main += kface kgeomap lcms2 lensfun lqr-1 pgf png qca soprano
 WANTLIB-main += sqlite tiff usb
 
 WANTLIB-mediawiki =  ${WANTLIB-common}
@@ -128,7 +128,7 @@ LIB_DEPENDS-kipi =	${LIB_DEPENDS-common} \
 			graphics/tiff \
 			multimedia/qt-gstreamer \
 			net/libkvkontakte \
-			security/qca2 \
+			security/qca \
 			security/kqoauth \
 			x11/kde-applications/libkgeomap>=15.04.3 \
 			${MODKDE4_DEP_DIR}/libkdcraw \

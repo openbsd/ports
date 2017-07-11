@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2017/04/25 19:05:53 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.13 2017/07/11 20:42:34 rsadowski Exp $
 
 CATEGORIES =	net
 COMMENT =	KTorrent engine
 V =		1.3.1
 DISTNAME =	libktorrent-$V
 HOMEPAGE =	http://ktorrent.pwsp.net/
-REVISION =	8
+REVISION =	9
 
 EXTRACT_SUFX =	.tar.bz2
 
@@ -18,7 +18,7 @@ WANTLIB =  m pthread
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtSvg lib/qt4/QtXml
 WANTLIB += lib/qt4/QtNetwork
 WANTLIB += ${KDE4LIB}/kdeui ${KDE4LIB}/kio ${KDE4LIB}/solid
-WANTLIB += gcrypt gmp qca2
+WANTLIB += gcrypt gmp qca
 
 MASTER_SITES =	${HOMEPAGE}downloads/${V:C/^./4/}/
 
@@ -31,7 +31,7 @@ BUILD_DEPENDS =	devel/boost \
 
 LIB_DEPENDS =	devel/gmp \
 		security/libgcrypt \
-		security/qca2
+		security/qca
 
 CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen:Bool=Yes
 

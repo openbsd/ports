@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2015/08/12 12:33:02 zhuk Exp $
+# $OpenBSD: Makefile,v 1.7 2017/07/11 20:42:34 rsadowski Exp $
 
 CATEGORIES =	net
 COMMENT =	IRC client for KDE 4
@@ -6,7 +6,7 @@ V =		1.5
 DISTNAME =	konversation-$V
 MAINTAINER =	KDE porting team <openbsd-kde@googlegroups.com>
 HOMEPAGE =	http://konversation.kde.org/
-REVISION =	2
+REVISION =	3
 
 WANTLIB =  c m pthread
 WANTLIB += lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtGui
@@ -16,7 +16,7 @@ WANTLIB += ${KDE4LIB}/kemoticons ${KDE4LIB}/kidletime
 WANTLIB += ${KDE4LIB}/kio ${KDE4LIB}/knotifyconfig ${KDE4LIB}/kparts
 WANTLIB += ${KDE4LIB}/kresources ${KDE4LIB}/nepomuk
 WANTLIB += ${KDE4LIB}/nepomukutils ${KDE4LIB}/solid
-WANTLIB += qca2 soprano
+WANTLIB += qca soprano
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/konversation/$V/src/}
 
@@ -29,7 +29,7 @@ MODKDE4_USE =	pim
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+3,-guic
 
-LIB_DEPENDS =	security/qca2
+LIB_DEPENDS =	security/qca
 
 post-install:
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \

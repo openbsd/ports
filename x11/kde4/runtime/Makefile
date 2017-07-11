@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2017/05/03 16:21:09 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.33 2017/07/11 20:42:34 rsadowski Exp $
 
 COMMENT-main =		KDE core run-time components
 COMMENT-locale =	KDE locale data files
@@ -64,7 +64,7 @@ RUN_DEPENDS-main =	${RUN_DEPENDS} \
 RUN_DEPENDS-main +=	x11/dbus,-suid
 
 # QCA2 is useless without this
-RUN_DEPENDS-main +=	security/qca-ossl
+RUN_DEPENDS-main +=	security/qca,-ossl
 
 LIB_DEPENDS-locale =
 LIB_DEPENDS-main =	${LIB_DEPENDS} \

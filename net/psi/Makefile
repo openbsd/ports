@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2017/04/10 11:46:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2017/07/11 20:42:34 rsadowski Exp $
 
 COMMENT=	multiplatform Jabber client
 
 DISTNAME=	psi-0.15
-REVISION=	3
+REVISION=	4
 CATEGORIES=	net
 
 HOMEPAGE=	http://psi-im.org/
@@ -16,25 +16,24 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += ICE QtDBus QtGui QtNetwork QtXml SM X11 Xext Xi Xinerama
 WANTLIB += Xrender Xss c enchant fontconfig freetype glib-2.0
-WANTLIB += gmodule-2.0 m pthread qca2 ${LIBCXX} z
+WANTLIB += gmodule-2.0 m pthread qca ${LIBCXX} z
 
 MODULES=		x11/qt4 \
 			devel/gettext
 
 USE_GMAKE=		Yes
 
-LIB_DEPENDS=		security/qca2 \
+LIB_DEPENDS=		security/qca \
 			textproc/enchant
 RUN_DEPENDS=		devel/desktop-file-utils \
-			security/qca-gnupg \
-			security/qca-ossl \
+			security/qca,-gnupg \
+			security/qca,-ossl \
 			x11/gtk+3,-guic
 
 CONFIGURE_STYLE=	simple
 
 CONFIGURE_ARGS+=	--prefix=${LOCALBASE} \
 			--qtdir=${MODQT4_QTDIR} \
-			--with-qca-inc=${LOCALBASE}/include/QtCrypto \
 			--disable-growl
 
 # For QSettings to write its setup
