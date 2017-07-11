@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST-gnupg,v 1.1 2017/07/11 20:40:44 rsadowski Exp $
+@pkgpath security/qca-gnupg
+lib/qca/crypto/libqca-gnupg.so

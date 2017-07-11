@@ -1,0 +1,12 @@
+$OpenBSD: patch-QcaConfig_cmake_in,v 1.1 2017/07/11 20:40:44 rsadowski Exp $
+
+Index: QcaConfig.cmake.in
+--- QcaConfig.cmake.in.orig
++++ QcaConfig.cmake.in
+@@ -5,3 +5,6 @@ if(NOT TARGET @QCA_LIB_NAME@)
+ endif()
+ 
+ set(Qca_LIBRARY @QCA_LIB_NAME@)
++set(Qca_INCLUDE_DIRS "@QCA_FULL_INCLUDE_INSTALL_DIR@")
++set(Qca_INCLUDE_DIR "@QCA_FULL_INCLUDE_INSTALL_DIR@")
++set(Qca_LIBRARY_DIR "@QCA_LIBRARY_INSTALL_DIR@")

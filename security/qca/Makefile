@@ -1,32 +1,53 @@
-# $OpenBSD: Makefile,v 1.18 2017/04/10 11:46:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2017/07/11 20:40:44 rsadowski Exp $
 
-COMMENT=	Qt Cryptographic Architecture
+COMMENT-main =	Qt Cryptographic Architecture for Qt4
+COMMENT-ossl =	SSL/TLS plugin
+COMMENT-gnupg =	GnuPG plugin
 
-DISTNAME=	qca-1.0
-REVISION=	8
-CATEGORIES=	security
-SHARED_LIBS=	qca	2.0
+VERSION =	2.1.3
+DISTNAME =	qca-${VERSION}
 
-HOMEPAGE=	http://delta.affinix.com/qca/
+PKGNAME-main =	qca-${VERSION}
+PKGNAME-ossl =	qca-ossl-${VERSION}
+PKGNAME-gnupg =	qca-gnupg-${VERSION}
 
-MAINTAINER=	Gerardo Santana Gomez Garrido <gerardo.santana@gmail.com>
+CATEGORIES =	security
 
-# LGPL
-PERMIT_PACKAGE_CDROM=	Yes
+SHARED_LIBS +=  qca                   3.0 # 2.1
 
-WANTLIB += m pthread ${LIBCXX}
+HOMEPAGE =	https://userbase.kde.org/QCA
 
-MASTER_SITES=		http://delta.affinix.com/download/qca/
-EXTRACT_SUFX=		.tar.bz2
+# LGPLv2.1
+PERMIT_PACKAGE_CDROM =	Yes
 
-MODULES=		x11/qt3 devel/qmake
+WANTLIB += QtCore c m ${LIBCXX}
+WANTLIB-ossl += QtCore crypto m qca ssl ${LIBCXX}
+WANTLIB-gnupg += QtCore m qca ${LIBCXX}
 
-NO_TEST=		Yes
+MASTER_SITES =	${MASTER_SITE_KDE:=stable/qca/${VERSION}/src/}
+EXTRACT_SUFX =	.tar.xz
 
-do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/lib/qt3
-	${INSTALL_DATA} ${WRKBUILD}/libqca.so.${LIBqca_VERSION} ${PREFIX}/lib/qt3
-	cd ${PREFIX}/lib && ln -s qt3/libqca.so.${LIBqca_VERSION}
-	${INSTALL_DATA} ${WRKSRC}/src/qca.h ${PREFIX}/include
+# Plugins: qca-botan qca-cyrus-sasl qca-gcrypt qca-gnupg qca-logger
+# qca-nss qca-ossl qca-pkcs11 qca-softstore
+MULTI_PACKAGES =	-main -ossl -gnupg
+
+CFLAGS +=		-DOPENSSL_NO_SSL2 \
+			-DOPENSSL_NO_SSL3_METHOD
+
+CONFIGURE_ARGS =	-DCMAKE_INSTALL_PREFIX=${LOCALBASE} \
+			-DQCA_MAN_INSTALL_DIR=${LOCALBASE}/man \
+			-DQCA_BINARY_INSTALL_DIR=${PREFIX}/bin \
+			-DBUILD_PLUGINS="ossl;gnupg" \
+			-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen:Bool=ON \
+			-DQT4_BUILD:Bool=ON
+
+MODULES =		devel/cmake
+
+LIB_DEPENDS =		x11/qt4
+
+LIB_DEPENDS-ossl +=	${BUILD_PKGPATH},-main
+LIB_DEPENDS-gnupg +=	${BUILD_PKGPATH},-main
+
+RUN_DEPENDS-gnupg +=	security/gnupg
 
 .include <bsd.port.mk>

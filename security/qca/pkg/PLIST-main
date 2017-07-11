@@ -1,0 +1,40 @@
+@comment $OpenBSD: PLIST-main,v 1.1 2017/07/11 20:40:44 rsadowski Exp $
+@conflict qca-<=1.0
+@conflict qca2-<=2.0.3
+@pkgpath security/qca
+@pkgpath security/qca2
+@bin bin/mozcerts
+@bin bin/qcatool
+certs/
+certs/rootcerts.pem
+include/QtCrypto/
+include/QtCrypto/QtCrypto
+include/QtCrypto/qca.h
+include/QtCrypto/qca_basic.h
+include/QtCrypto/qca_cert.h
+include/QtCrypto/qca_core.h
+include/QtCrypto/qca_export.h
+include/QtCrypto/qca_keystore.h
+include/QtCrypto/qca_publickey.h
+include/QtCrypto/qca_safetimer.h
+include/QtCrypto/qca_securelayer.h
+include/QtCrypto/qca_securemessage.h
+include/QtCrypto/qca_support.h
+include/QtCrypto/qca_textfilter.h
+include/QtCrypto/qca_tools.h
+include/QtCrypto/qca_version.h
+include/QtCrypto/qcaprovider.h
+include/QtCrypto/qpipe.h
+lib/cmake/Qca/
+lib/cmake/Qca/QcaConfig.cmake
+lib/cmake/Qca/QcaConfigVersion.cmake
+lib/cmake/Qca/QcaTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/Qca/QcaTargets.cmake
+lib/qca/
+lib/qca/crypto/
+@lib lib/libqca.so.${LIBqca_VERSION}
+lib/pkgconfig/qca2.pc
+@man man/man1/qcatool.1
+mkspecs/
+mkspecs/features/
+mkspecs/features/crypto.prf
