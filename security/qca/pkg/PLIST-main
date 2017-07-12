@@ -1,12 +1,10 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2017/07/11 20:40:44 rsadowski Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2017/07/12 17:02:27 rsadowski Exp $
 @conflict qca-<=1.0
 @conflict qca2-<=2.0.3
 @pkgpath security/qca
 @pkgpath security/qca2
 @bin bin/mozcerts
 @bin bin/qcatool
-certs/
-certs/rootcerts.pem
 include/QtCrypto/
 include/QtCrypto/QtCrypto
 include/QtCrypto/qca.h
@@ -30,10 +28,10 @@ lib/cmake/Qca/QcaConfig.cmake
 lib/cmake/Qca/QcaConfigVersion.cmake
 lib/cmake/Qca/QcaTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qca/QcaTargets.cmake
-lib/qca/
-lib/qca/crypto/
 @lib lib/libqca.so.${LIBqca_VERSION}
 lib/pkgconfig/qca2.pc
+lib/qca/
+lib/qca/crypto/
 @man man/man1/qcatool.1
 mkspecs/
 mkspecs/features/
