@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/12/25 14:54:48 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.3 2017/07/12 00:05:04 zhuk Exp $
 @bin bin/kactivities-cli
 include/KF5/KActivities/
 include/KF5/KActivities/KActivities/
@@ -24,7 +24,7 @@ lib/cmake/KF5Activities/KF5ActivitiesLibraryTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5Activities/KF5ActivitiesLibraryTargets.cmake
 @lib lib/libKF5Activities.so.${LIBKF5Activities_VERSION}
 lib/pkgconfig/libKActivities.pc
-lib/qml/org/kde/activities/
-lib/qml/org/kde/activities/libkactivitiesextensionplugin.so
-lib/qml/org/kde/activities/qmldir
+lib/qt5/qml/org/kde/activities/
+lib/qt5/qml/org/kde/activities/libkactivitiesextensionplugin.so
+lib/qt5/qml/org/kde/activities/qmldir
 share/kf5/mkspecs/qt_KActivities.pri
