@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2017/04/10 11:45:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2017/07/12 23:13:08 kili Exp $
 
 COMMENT =		editor for the TikZ language
 
 V =			0.10
 DISTNAME =		ktikz_${V}
 PKGNAME =		KtikZ-${V}
+
+REVISION =		0
 
 CATEGORIES =		editors
 HOMEPAGE =		http://www.hackenberger.at/blog/ktikz-editor-for-the-tikz-language/
@@ -16,7 +18,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 MASTER_SITES =		http://www.hackenberger.at/ktikz/
 
 WANTLIB += ICE QtGui QtXml SM X11 Xext Xi Xinerama Xrender c fontconfig
-WANTLIB += freetype m pthread ${LIBCXX} poppler-qt4
+WANTLIB += freetype m pthread poppler-qt4
 
 MODULES =		devel/qmake \
 			x11/qt4
@@ -26,6 +28,9 @@ MODQMAKE_ARGS=          DESKTOPDIR=${LOCALBASE}/share/applications \
 			MANDIR=${LOCALBASE}/man \
 			LRELEASECOMMAND=${LOCALBASE}/bin/lrelease4 \
 			QCOLLECTIONGENERATORCOMMAND=${LOCALBASE}/lib/qt4/bin/qcollectiongenerator
+
+# c++-11 reqwuired for poppler
+COMPILER=		gcc
 
 MAKE_ENV =		MAKEOBJDIR=.
 WRKDIST =		${WRKDIR}/ktikz
