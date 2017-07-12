@@ -1,7 +1,8 @@
-$OpenBSD: patch-build_tools_cflags_xml,v 1.8 2016/03/29 23:24:46 sthen Exp $
---- build_tools/cflags.xml.orig	Tue Mar 29 20:39:33 2016
-+++ build_tools/cflags.xml	Tue Mar 29 23:51:01 2016
-@@ -134,7 +134,7 @@
+$OpenBSD: patch-build_tools_cflags_xml,v 1.9 2017/07/12 19:55:29 sthen Exp $
+Index: build_tools/cflags.xml
+--- build_tools/cflags.xml.orig
++++ build_tools/cflags.xml
+@@ -130,7 +130,7 @@
  		</member>
  		<member name="BUILD_NATIVE" displayname="Allow compiler to generate code optimized for the CPU on which the build is performed.">
  			<support_level>core</support_level>

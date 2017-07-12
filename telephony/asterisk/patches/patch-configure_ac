@@ -1,9 +1,10 @@
-$OpenBSD: patch-configure_ac,v 1.46 2017/04/07 21:32:20 sthen Exp $
+$OpenBSD: patch-configure_ac,v 1.47 2017/07/12 19:55:29 sthen Exp $
 
 c-client requires both kerbV libs *and* (separately) libssl.
 
---- configure.ac.orig	Fri Apr  7 16:49:39 2017
-+++ configure.ac	Fri Apr  7 21:42:55 2017
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
 @@ -60,7 +60,7 @@ AC_SUBST([astvarrundir],      ['${localstatedir}/run/a
  
  case "${host_os}" in
