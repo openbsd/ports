@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2017/07/12 17:15:38 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.22 2017/07/12 18:09:29 rsadowski Exp $
 
 COMMENT-main =	Qt Cryptographic Architecture for Qt4
 COMMENT-ossl =	SSL/TLS plugin
@@ -40,7 +40,7 @@ CONFIGURE_ARGS =	-DCMAKE_INSTALL_PREFIX=${LOCALBASE} \
 			-DQCA_BINARY_INSTALL_DIR=${PREFIX}/bin \
 			-DBUILD_PLUGINS="ossl;gnupg" \
 			-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen:Bool=ON \
-			-Dqca_CERTSTORE=${SYSCONFDIR}/ssl/cert.pem \
+			-Dqca_CERTSTORE=/etc/ssl/cert.pem \
 			-DQT4_BUILD:Bool=ON
 
 MODULES =		devel/cmake
