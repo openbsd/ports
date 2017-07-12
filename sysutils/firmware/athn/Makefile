@@ -1,15 +1,17 @@
-# $OpenBSD: Makefile,v 1.5 2014/01/09 22:48:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2017/07/12 09:02:28 sthen Exp $
 
 FW_DRIVER=	athn
 FW_VER=		1.1
-REVISION=	1
+REVISION=	2
 
 EXTRACT_SUFX=	.tgz
 WRKDIST=	${WRKDIR}
 
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_FTP =	Yes
+# can be redistributed, but shouldn't be in normal packages directory as
+# this is only meant for use with fw_update.
+PERMIT_PACKAGE_CDROM=	firmware
+PERMIT_PACKAGE_FTP=	firmware
+PERMIT_DISTFILES_FTP=	Yes
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/LICENCE.atheros_firmware ${PREFIX}/firmware/athn-license

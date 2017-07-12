@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.3 2013/03/11 11:41:30 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.4 2017/07/12 09:02:28 sthen Exp $
 
 COMMENT ?=	firmware binary images for ${FW_DRIVER}(4) driver
 
@@ -18,3 +18,15 @@ PKG_ARCH ?=	*
 PREFIX ?=	/etc
 NO_BUILD ?=	Yes
 NO_TEST ?=	Yes
+
+.if ${PERMIT_PACKAGE_FTP:L:Myes} || ${PERMIT_PACKAGE_CDROM:L:Myes}
+#
+# This is a special-purpose directory. Packages produced from this should
+# not be included in package directories on normal mirrors, but only on
+# firmware.openbsd.org mirrors and installed by fw_update.
+#
+# PERMIT_* should be set so that packages produced during bulk builds do
+# not get included in the main package directories.
+#
+ERRORS += "Fatal: packages for fw_update should not have PERMIT_*=Yes"
+.endif
