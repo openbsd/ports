@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.55 2017/05/10 14:51:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.56 2017/07/13 10:35:29 jca Exp $
+
+BROKEN-powerpc=		undefined reference to __sync_add_and_fetch_8
 
 TRACKER_API=		1.0
 
