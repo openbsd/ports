@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1358 2017/06/28 10:20:28 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1359 2017/07/13 11:43:55 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -302,6 +302,7 @@ _MODULES_DONE =
 .  include "${PORTSDIR}/infrastructure/mk/modules.port.mk"
 .endif
 
+COMPILER_LIBCXX ?= ${LIBCXX}
 ###
 ### Variable setup that can happen after modules
 ###

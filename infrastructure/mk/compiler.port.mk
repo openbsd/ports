@@ -1,4 +1,4 @@
-# $OpenBSD: compiler.port.mk,v 1.2 2017/06/03 15:02:26 espie Exp $
+# $OpenBSD: compiler.port.mk,v 1.3 2017/07/13 11:43:55 espie Exp $
 #
 #  Copyright (c) 2017 Marc Espie
 # 
@@ -67,3 +67,10 @@ CHOSEN_COMPILER = error
 .endfor
 # okay we went through, we didn't find anything
 CHOSEN_COMPILER ?= old
+.if $(CHOSEN_COMPILER) == "clang" || $(CHOSEN_COMPILER) == "gcc"
+.  if ${COMPILER_LANGS:Mc++}
+COMPILER_LIBCXX = ${LIBECXX}
+.  endif
+.endif
+
+
