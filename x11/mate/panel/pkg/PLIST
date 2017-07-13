@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/04/30 19:01:24 robert Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/07/13 08:52:23 robert Exp $
 @bin bin/mate-desktop-item-edit
 @bin bin/mate-panel
 @bin bin/mate-panel-test-applets
@@ -40,6 +40,7 @@ share/gtk-doc/html/mate-panel-applet/applet-porting.html
 share/gtk-doc/html/mate-panel-applet/applet-writing.html
 share/gtk-doc/html/mate-panel-applet/home.png
 share/gtk-doc/html/mate-panel-applet/index.html
+share/gtk-doc/html/mate-panel-applet/index.sgml
 share/gtk-doc/html/mate-panel-applet/left-insensitive.png
 share/gtk-doc/html/mate-panel-applet/left.png
 share/gtk-doc/html/mate-panel-applet/mate-panel-applet-Panel-Applet-MateConf-Utilities.html
