@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2017/05/30 21:59:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2017/07/13 08:46:46 robert Exp $
 
 COMMENT=		media tools for the MATE desktop
 
 MATE_PROJECT=		mate-media
-REVISION=		0
+MATE_VERSION=		1.18.1
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
