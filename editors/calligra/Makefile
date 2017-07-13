@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2017/05/31 22:02:09 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.21 2017/07/13 11:58:14 zhuk Exp $
 
 COMMENT =	K Desktop Environment, office suite
 HOMEPAGE =	https://www.calligra-suite.org/
 VERSION =	3.0.1
 DISTNAME =	calligra-${VERSION}
 CATEGORIES =	editors
-REVISION =	0
+REVISION =	1
 
 DIST_SUBDIR =	kde
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/calligra/${VERSION}/}
