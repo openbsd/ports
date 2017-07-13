@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1626 2017/07/09 11:01:56 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.1627 2017/07/13 01:30:55 danj Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1406,6 +1406,8 @@
      SUBDIR += py-modulegraph
      SUBDIR += py-monthdelta
      SUBDIR += py-mox
+     SUBDIR += py-monotonic
+     SUBDIR += py-monotonic,python3
      SUBDIR += py-mxDateTime
      SUBDIR += py-nbconvert
      SUBDIR += py-nbconvert,python3
