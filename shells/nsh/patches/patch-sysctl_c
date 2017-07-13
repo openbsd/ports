@@ -1,0 +1,16 @@
+$OpenBSD: patch-sysctl_c,v 1.5 2017/07/13 17:01:14 sthen Exp $
+
+removed from base
+
+Index: sysctl.c
+--- sysctl.c.orig
++++ sysctl.c
+@@ -124,8 +124,6 @@ struct ipsysctl ip6sysctls[] = {
+ { "forwarding",		{ CTL_NET, PF_INET6, IPPROTO_IPV6, IPV6CTL_FORWARDING, MIB_STOP, 0 },	0, 1    },
+ { "multipath",		{ CTL_NET, PF_INET6, IPPROTO_IPV6, IPV6CTL_MULTIPATH, MIB_STOP, 0 },	0, 1	},
+ { "mforwarding",	{ CTL_NET, PF_INET6, IPPROTO_IPV6, IPV6CTL_MFORWARDING, MIB_STOP, 0 },	0, 1	},
+-{ "maxifprefixes",	{ CTL_NET, PF_INET6, IPPROTO_IPV6, IPV6CTL_MAXIFPREFIXES, MIB_STOP, 0 }, DEFAULT_MAXIFPREFIXES, 0	},
+-{ "maxifdefrouters",	{ CTL_NET, PF_INET6, IPPROTO_IPV6, IPV6CTL_MAXIFDEFROUTERS, MIB_STOP, 0 }, DEFAULT_MAXIFDEFROUTERS, 0 },
+ { "maxdynroutes", 	{ CTL_NET, PF_INET6, IPPROTO_IPV6, IPV6CTL_MAXDYNROUTES, MIB_STOP, 0 },	DEFAULT_MAXDYNROUTES, 0 },
+ { "ifq-maxlen",		{ CTL_NET, PF_INET6, IPPROTO_IPV6, IPV6CTL_IFQUEUE, IFQCTL_MAXLEN, MIB_STOP }, IFQ_MAXLEN, 0 },
+ { 0, { 0, 0, 0, 0, 0, 0 }, 0, 0 }
