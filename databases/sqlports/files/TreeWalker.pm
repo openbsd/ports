@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: TreeWalker.pm,v 1.5 2017/05/12 18:18:09 espie Exp $
+# $OpenBSD: TreeWalker.pm,v 1.6 2017/07/13 11:46:14 espie Exp $
 #
 # Copyright (c) 2006-2013 Marc Espie <espie@openbsd.org>
 #
@@ -65,7 +65,8 @@ sub dump_dirs
 		close STDERR;
 		open STDERR, '>&STDOUT';
 		exec {'make'} ("make", "dump-vars", 'LIBCXX=$${LIBCXX}',
-		    'LIBECXX=$${LIBECXX}');
+		    'LIBECXX=$${LIBECXX}', 
+		    'COMPILER_LIBCXX=$${COMPILER_LIBCXX}');
 		die $!;
 	}
 }
