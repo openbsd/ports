@@ -6,3 +6,6 @@ IPv4 and IPv6 addresses and subnets
 MAC addresses, OUI and IAB identifiers, IEEE EUI-64 identifiers
 arbitrary (non-aligned) IP address ranges and IP address sets
 various non-CIDR IP range formats such as nmap and glob-style formats
+
+An interactive shell ("netaddr") is also available; ipython must be
+available to use it.
