@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.123 2017/05/30 18:53:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.124 2017/07/13 07:36:39 ajacoutot Exp $
 
 ONLY_FOR_ARCHS-mono=	${MONO_ARCHS}
 
@@ -10,9 +10,10 @@ COMMENT-mono=		mono (.NET) bindings for avahi
 COMMENT-python=		python bindings for avahi
 COMMENT-ui=		common avahi-ui header for gtk+2 and gtk+3
 
-V=			0.6.32
-DISTNAME=		avahi-${V}
-CATEGORIES=		net devel
+V=			0.7
+GH_ACCOUNT=		lathiat
+GH_PROJECT=		avahi
+GH_TAGNAME=		v${V}
 
 PKGNAME-main=		avahi-${V}
 PKGNAME-gtk=		avahi-gtk-${V}
@@ -22,27 +23,24 @@ PKGNAME-mono=		mono-avahi-${V}
 PKGNAME-python=		py-avahi-${V}
 PKGNAME-ui=		avahi-ui-${V}
 
-REVISION-main=		1
-REVISION-gui=		1
+CATEGORIES=		net devel
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
-SHARED_LIBS +=  avahi-common         0.0      # 8.3
-SHARED_LIBS +=  avahi-core           0.0      # 7.2
-SHARED_LIBS +=  avahi-client         0.0      # 5.9
-SHARED_LIBS +=  avahi-glib           0.0      # 1.2
-SHARED_LIBS +=  avahi-gobject        0.0      # 0.4
-SHARED_LIBS +=  dns_sd               0.0      # 1.0
-SHARED_LIBS +=  howl                 0.0      # 0.0
-SHARED_LIBS +=  avahi-ui             0.0      # 1.4
-SHARED_LIBS +=  avahi-ui-gtk3        0.0      # 1.4
+SHARED_LIBS +=  avahi-common         0.1      # 8.3
+SHARED_LIBS +=  avahi-core           0.1      # 7.2
+SHARED_LIBS +=  avahi-client         0.1      # 5.9
+SHARED_LIBS +=  avahi-glib           0.1      # 1.2
+SHARED_LIBS +=  avahi-gobject        0.1      # 0.5
+SHARED_LIBS +=  dns_sd               0.1      # 1.0
+SHARED_LIBS +=  howl                 0.1      # 0.0
+SHARED_LIBS +=  avahi-ui             0.1      # 1.4
+SHARED_LIBS +=  avahi-ui-gtk3        0.1      # 1.4
 
 HOMEPAGE=		http://www.avahi.org/
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
-
-MASTER_SITES=		https://github.com/lathiat/avahi/releases/download/v${V}/
 
 PSEUDO_FLAVORS=		no_gui no_mono bootstrap
 FLAVOR?=		no_gui no_mono bootstrap
@@ -91,8 +89,8 @@ CONFIGURE_ARGS+=	--disable-mono \
 .if ${BUILD_PACKAGES:M-gui}
 ### common
 MODULES+=		lang/python
-BUILD_DEPENDS+=		lang/python/${MODPY_VERSION},-gdbm \
-			x11/py-gtk2 \
+BUILD_DEPENDS+=		devel/py-gobject3 \
+			lang/python/${MODPY_VERSION},-gdbm \
 			x11/dbus-python
 
 ### -gtk
@@ -128,9 +126,11 @@ LIB_DEPENDS-gui=	${BUILD_PKGPATH},-gtk3
 RUN_DEPENDS-gui=	${MODPY_RUN_DEPENDS} \
 			${BUILD_PKGPATH},-python \
 			x11/dbus-python \
-			x11/py-gtk2 \
 			devel/py-twisted \
 			devel/desktop-file-utils
+
+# pygobject GTK2 introspection (not provided by indirect dependencies)
+RUN_DEPENDS-gui +=	x11/gtk+2
 
 WANTLIB-gui += X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB-gui += Xi Xinerama Xrandr Xrender atk-1.0 avahi-client
@@ -158,7 +158,7 @@ WANTLIB-ui +=		#empty
 CONFIGURE_ARGS+=	--disable-gtk \
 			--disable-gtk3 \
 			--disable-python \
-			--disable-pygtk \
+			--disable-pygobject \
 			--disable-python-dbus
 .endif
 
@@ -206,21 +206,26 @@ PC_FILES=		avahi-ui.pc avahi-client.pc avahi-compat-howl.pc \
 
 PORTHOME=		${WRKBUILD}
 
+AUTOCONF_VERSION=	2.69
+AUTOMAKE_VERSION=	1.15
+BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS} \
+			devel/libtool
+
 pre-configure:
 	find ${WRKSRC} -name Makefile.in -exec \
 		sed -i -e 's,LIBINTL,INTLLIBS,g;' \
 			-e 's,LIBICONV,LTLIBICONV,g' {} \;
 	find ${WRKSRC}/man -name '*.[1-9]*' | xargs \
 		sed -i 's,/etc/avahi,${SYSCONFDIR}/avahi,g'
-	sed -i 's,dbus_connection_disconnect,dbus_connection_close,g' \
-		${WRKSRC}/avahi-client/client.c \
-		${WRKSRC}/avahi-daemon/dbus-protocol.c
-	sed -i 's,-ldl,,g' ${WRKSRC}/configure \
-		${WRKSRC}/avahi-client/Makefile.in \
-		${WRKSRC}/avahi-daemon/Makefile.in
 	for i in ${PC_FILES}; do \
 		sed -i -e 's,Libs:,Libs: -pthread,;' \
 			-e 's,Cflags:,Cflags: -pthread,' ${WRKSRC}/$${i}.in; done
+	cd ${WRKSRC} && ${SETENV} \
+		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
+		NOCONFIGURE=1 \
+		/bin/sh ./autogen.sh
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/avahi
@@ -231,6 +236,6 @@ post-install:
 		${PREFIX}/share/dbus-1/system-services
 	# XXX DLLMAP_FILES won't work here since the files are generated during the build process
 	find ${PREFIX} -name avahi-sharp.dll.config -or -name avahi-ui-sharp.dll.config | \
-		xargs perl -pi -e 's,\.so(\.[0-9])+,\.so,g'
+		xargs -r sed -i 's,\.so(\.[0-9])+,\.so,g'
 
 .include <bsd.port.mk>

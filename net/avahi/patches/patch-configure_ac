@@ -1,0 +1,14 @@
+$OpenBSD: patch-configure_ac,v 1.5 2017/07/13 07:36:39 ajacoutot Exp $
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -958,7 +958,7 @@ AC_DEFINE_UNQUOTED(AVAHI_AUTOIPD_GROUP,"$AVAHI_AUTOIPD
+ #
+ # Avahi runtime dir
+ #
+-avahi_runtime_dir="/run"
++avahi_runtime_dir="/var/run"
+ avahi_socket="${avahi_runtime_dir}/avahi-daemon/socket"
+ AC_SUBST(avahi_runtime_dir)
+ AC_SUBST(avahi_socket)

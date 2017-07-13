@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.17 2016/11/11 07:56:23 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.18 2017/07/13 07:36:39 ajacoutot Exp $
 @conflict avahi-qt3-*
 @conflict avahi-qt4-*
 @conflict howl-*
@@ -127,7 +127,6 @@ lib/pkgconfig/avahi-gobject.pc
 @bin sbin/avahi-dnsconfd
 share/avahi/
 share/avahi/avahi-service.dtd
-share/avahi/service-types
 share/dbus-1/interfaces/
 share/dbus-1/interfaces/org.freedesktop.Avahi.AddressResolver.xml
 share/dbus-1/interfaces/org.freedesktop.Avahi.DomainBrowser.xml
@@ -198,6 +197,7 @@ share/locale/ko/LC_MESSAGES/avahi.mo
 share/locale/lv/LC_MESSAGES/avahi.mo
 share/locale/ms/LC_MESSAGES/avahi.mo
 share/locale/nl/LC_MESSAGES/avahi.mo
+share/locale/oc/LC_MESSAGES/avahi.mo
 share/locale/pl/LC_MESSAGES/avahi.mo
 share/locale/pt_BR/LC_MESSAGES/avahi.mo
 share/locale/ro/LC_MESSAGES/avahi.mo
