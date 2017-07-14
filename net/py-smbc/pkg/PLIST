@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.3 2017/07/14 16:09:22 ajacoutot Exp $
+lib/python${MODPY_VERSION}/site-packages/_smbc.so
+lib/python${MODPY_VERSION}/site-packages/pysmbc-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/smbc/
+lib/python${MODPY_VERSION}/site-packages/smbc/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/smbc/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/smbc/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/smbc/${MODPY_PYCACHE}xattr.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/smbc/xattr.py
