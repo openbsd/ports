@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.143 2017/06/06 14:12:59 robert Exp $
+# $OpenBSD: Makefile,v 1.144 2017/07/14 17:14:03 sthen Exp $
 
 # XXX: Remember to bump MODCLANG_VERSION in lang/clang/clang.port.mk when
 # updating this port.
@@ -11,12 +11,11 @@ MULTI_PACKAGES =	-main -python
 COMMENT-main =	modular, fast C/C++/ObjC compiler, static analyzer and tools
 COMMENT-python =	Python bindings for Clang
 
-LLVM_V =	4.0.0
+LLVM_V =	4.0.1
 DISTNAME =	llvm-${LLVM_V}.src
 PKGNAME =	llvm-${LLVM_V}
 PKGNAME-main =	llvm-${LLVM_V}
 PKGNAME-python =	py-llvm-${LLVM_V}
-REVISION-main =	4
 CATEGORIES =	devel
 DISTFILES =	llvm-${LLVM_V}.src${EXTRACT_SUFX} \
 		cfe-${LLVM_V}.src${EXTRACT_SUFX} \
@@ -38,18 +37,21 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB =	c m pthread z
 
 MODULES =	devel/cmake \
-		lang/python \
-		gcc4
+		lang/python
 
-MODGCC4_LANGS = c c++
-MODGCC4_ARCHS = *
+COMPILER =	gcc4
+
+LLVM_GCC4_ARCHS =	amd64 arm i386 powerpc mips64 mips64el sparc64
 
 TEST_DEPENDS =		devel/dejagnu \
-			shells/bash \
-			lang/gcc/${MODGCC4_VERSION},-c++
+			shells/bash
 BUILD_DEPENDS +=	textproc/py-sphinx
-RUN_DEPENDS +=		devel/gtest \
-			lang/gcc/${MODGCC4_VERSION},-c++
+RUN_DEPENDS +=		devel/gtest
+
+.if ${MACHINE_ARCH:M${LLVM_GCC4_ARCHS}}
+TEST_DEPENDS +=		lang/gcc/${MODGCC4_VERSION},-c++
+RUN_DEPENDS +=		lang/gcc/${MODGCC4_VERSION},-c++
+.endif
 
 # clang python module loads libclang.so dynamically with cdll.LoadLibrary()
 WANTLIB-python =	clang

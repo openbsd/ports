@@ -1,9 +1,10 @@
-$OpenBSD: patch-tools_clang_lib_Driver_ToolChains_cpp,v 1.10 2017/02/10 09:37:43 ajacoutot Exp $
+$OpenBSD: patch-tools_clang_lib_Driver_ToolChains_cpp,v 1.11 2017/07/14 17:14:03 sthen Exp $
 
 Use the integrated assembler by default on Sparc and Mips64.
 
---- tools/clang/lib/Driver/ToolChains.cpp.orig	Wed Jan 25 19:51:14 2017
-+++ tools/clang/lib/Driver/ToolChains.cpp	Wed Jan 25 20:44:55 2017
+Index: tools/clang/lib/Driver/ToolChains.cpp
+--- tools/clang/lib/Driver/ToolChains.cpp.orig
++++ tools/clang/lib/Driver/ToolChains.cpp
 @@ -2919,15 +2919,20 @@ bool Generic_GCC::IsIntegratedAssemblerDefault() const
    case llvm::Triple::ppc64:
    case llvm::Triple::ppc64le:
@@ -36,7 +37,7 @@ Use the integrated assembler by default on Sparc and Mips64.
  }
  
  Tool *OpenBSD::buildAssembler() const {
-@@ -3618,6 +3622,50 @@ Tool *OpenBSD::buildAssembler() const {
+@@ -3618,6 +3622,63 @@ Tool *OpenBSD::buildAssembler() const {
  }
  
  Tool *OpenBSD::buildLinker() const { return new tools::openbsd::Linker(*this); }
@@ -51,7 +52,15 @@ Use the integrated assembler by default on Sparc and Mips64.
 +
 +    getDriver().Diag(diag::err_drv_invalid_stdlib_name) << A->getAsString(Args);
 +  }
-+  return ToolChain::CST_Libstdcxx;
++
++  switch (getArch()) {
++  case llvm::Triple::aarch64:
++    return ToolChain::CST_Libcxx;
++    break;
++  default:
++    return ToolChain::CST_Libstdcxx;
++    break;
++  }
 +}
 +
 +void OpenBSD::AddClangCXXStdlibIncludeArgs(const ArgList &DriverArgs,
@@ -60,15 +69,20 @@ Use the integrated assembler by default on Sparc and Mips64.
 +      DriverArgs.hasArg(options::OPT_nostdincxx))
 +    return;
 +
-+  /* XXX handle libc++ includes */
-+
-+  addSystemInclude(DriverArgs, CC1Args,
-+                   getDriver().SysRoot + "${LOCALBASE}/include/c++/${GCC_VER}");
-+
-+  addSystemInclude(DriverArgs, CC1Args,
-+                   getDriver().SysRoot + "${LOCALBASE}/include/c++/${GCC_VER}/${GCC_CONFIG}");
-+  addSystemInclude(DriverArgs, CC1Args,
-+                   getDriver().SysRoot + "${LOCALBASE}/include/c++/${GCC_VER}/backward");
++  switch (GetCXXStdlibType(DriverArgs)) {
++  case ToolChain::CST_Libcxx:
++    addSystemInclude(DriverArgs, CC1Args,
++                     getDriver().SysRoot + "/usr/include/c++/v1");
++    break;
++  case ToolChain::CST_Libstdcxx:
++    addSystemInclude(DriverArgs, CC1Args,
++                     getDriver().SysRoot + "${LOCALBASE}/include/c++/${GCC_VER}");
++    addSystemInclude(DriverArgs, CC1Args,
++                     getDriver().SysRoot + "${LOCALBASE}/include/c++/${GCC_VER}/${GCC_CONFIG}");
++    addSystemInclude(DriverArgs, CC1Args,
++                     getDriver().SysRoot + "${LOCALBASE}/include/c++/${GCC_VER}/backward");
++    break;
++  }
 +}
 +
 +void OpenBSD::AddCXXStdlibLibArgs(const ArgList &Args,

@@ -1,75 +1,16 @@
-$OpenBSD: patch-tools_clang_lib_Basic_Targets_cpp,v 1.25 2017/06/06 14:12:59 robert Exp $
+$OpenBSD: patch-tools_clang_lib_Basic_Targets_cpp,v 1.26 2017/07/14 17:14:03 sthen Exp $
 
-- Enable support for __float128 in Clang on OpenBSD/X86
-- Set ABIs correctly for OpenBSD/arm; soft float and aapcs-linux
-- Hook up OpenBSD AArch64 support
-- Set the Int64Type / IntMaxType types correctly for OpenBSD/mips64
+Enable TLS support but default to the emulatated TLS model.
 
 Index: tools/clang/lib/Basic/Targets.cpp
 --- tools/clang/lib/Basic/Targets.cpp.orig
 +++ tools/clang/lib/Basic/Targets.cpp
-@@ -545,18 +545,18 @@ class OpenBSDTargetInfo : public OSTargetInfo<Target> 
-     Builder.defineMacro("__ELF__");
-     if (Opts.POSIXThreads)
-       Builder.defineMacro("_REENTRANT");
-+    if (this->HasFloat128)
-+      Builder.defineMacro("__FLOAT128__");
-   }
+@@ -551,8 +551,6 @@ class OpenBSDTargetInfo : public OSTargetInfo<Target> 
  public:
    OpenBSDTargetInfo(const llvm::Triple &Triple, const TargetOptions &Opts)
        : OSTargetInfo<Target>(Triple, Opts) {
 -    this->TLSSupported = false;
 -
        switch (Triple.getArch()) {
--        default:
          case llvm::Triple::x86:
          case llvm::Triple::x86_64:
--        case llvm::Triple::arm:
--        case llvm::Triple::sparc:
-+          this->HasFloat128 = true;
-+          // FALLTHROUGH
-+        default:
-           this->MCountName = "__mcount";
-           break;
-         case llvm::Triple::mips64:
-@@ -5144,6 +5144,8 @@ class ARMTargetInfo : public TargetInfo { (public)
-       default:
-         if (Triple.getOS() == llvm::Triple::NetBSD)
-           setABI("apcs-gnu");
-+        else if (Triple.getOS() == llvm::Triple::OpenBSD)
-+          setABI("aapcs-linux");
-         else
-           setABI("aapcs");
-         break;
-@@ -5925,7 +5927,8 @@ class AArch64TargetInfo : public TargetInfo {
- public:
-   AArch64TargetInfo(const llvm::Triple &Triple, const TargetOptions &Opts)
-       : TargetInfo(Triple), ABI("aapcs") {
--    if (getTriple().getOS() == llvm::Triple::NetBSD) {
-+    if (getTriple().getOS() == llvm::Triple::NetBSD ||
-+        getTriple().getOS() == llvm::Triple::OpenBSD) {
-       WCharType = SignedInt;
- 
-       // NetBSD apparently prefers consistency across ARM targets to consistency
-@@ -7535,7 +7538,11 @@ class MipsTargetInfo : public TargetInfo { (public)
- 
-   void setN64ABITypes() {
-     setN32N64ABITypes();
--    Int64Type = SignedLong;
-+    if (getTriple().getOS() == llvm::Triple::OpenBSD) {
-+      Int64Type = SignedLongLong;
-+    } else {
-+      Int64Type = SignedLong;
-+    }
-     IntMaxType = Int64Type;
-     LongWidth = LongAlign = 64;
-     PointerWidth = PointerAlign = 64;
-@@ -8574,6 +8581,8 @@ static TargetInfo *AllocateTarget(const llvm::Triple &
-       return new LinuxTargetInfo<AArch64leTargetInfo>(Triple, Opts);
-     case llvm::Triple::NetBSD:
-       return new NetBSDTargetInfo<AArch64leTargetInfo>(Triple, Opts);
-+    case llvm::Triple::OpenBSD:
-+      return new OpenBSDTargetInfo<AArch64leTargetInfo>(Triple, Opts);
-     default:
-       return new AArch64leTargetInfo(Triple, Opts);
-     }

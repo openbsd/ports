@@ -1,10 +1,11 @@
-$OpenBSD: patch-tools_clang_lib_Driver_Tools_cpp,v 1.42 2017/06/06 14:12:59 robert Exp $
+$OpenBSD: patch-tools_clang_lib_Driver_Tools_cpp,v 1.43 2017/07/14 17:14:03 sthen Exp $
 
 - Select proper SPARCv9 variant for the external assembler
-- Set ABIs correctly for OpenBSD/arm; soft float and aapcs-linux
 - Make LLVM create strict aligned code for OpenBSD/arm64
 - Disable -fstrict-aliasing per default on OpenBSD
-- Always use --eh-frame-hdr on OpenBSD, even for -static
+- Enable TLS support but default to the emulatated TLS model
+- Enable -fwrapv by default
+- Link to -lcompiler_rt instead of -lgcc
 
 Index: tools/clang/lib/Driver/Tools.cpp
 --- tools/clang/lib/Driver/Tools.cpp.orig
@@ -18,27 +19,7 @@ Index: tools/clang/lib/Driver/Tools.cpp
    } else {
      return llvm::StringSwitch<const char *>(Name)
            .Case("v8", "-Av8")
-@@ -962,6 +962,10 @@ arm::FloatABI arm::getARMFloatABI(const ToolChain &TC,
-       }
-       break;
- 
-+    case llvm::Triple::OpenBSD:
-+      ABI = FloatABI::Soft;
-+      break;
-+
-     default:
-       switch (Triple.getEnvironment()) {
-       case llvm::Triple::GNUEABIHF:
-@@ -1251,6 +1255,8 @@ void Clang::AddARMTargetArgs(const llvm::Triple &Tripl
-     default:
-       if (Triple.getOS() == llvm::Triple::NetBSD)
-         ABIName = "apcs-gnu";
-+      else if (Triple.getOS() == llvm::Triple::OpenBSD)
-+        ABIName = "aapcs-linux";
-       else
-         ABIName = "aapcs";
-       break;
-@@ -2635,7 +2641,9 @@ getAArch64MicroArchFeaturesFromMcpu(const Driver &D, S
+@@ -2641,7 +2641,9 @@ getAArch64MicroArchFeaturesFromMcpu(const Driver &D, S
    return getAArch64MicroArchFeaturesFromMtune(D, CPU, Args, Features);
  }
  
@@ -49,7 +30,7 @@ Index: tools/clang/lib/Driver/Tools.cpp
                                       std::vector<StringRef> &Features) {
    Arg *A;
    bool success = true;
-@@ -2677,9 +2685,11 @@ static void getAArch64TargetFeatures(const Driver &D, 
+@@ -2683,9 +2685,11 @@ static void getAArch64TargetFeatures(const Driver &D, 
    }
  
    if (Arg *A = Args.getLastArg(options::OPT_mno_unaligned_access,
@@ -62,7 +43,7 @@ Index: tools/clang/lib/Driver/Tools.cpp
  
    if (Args.hasArg(options::OPT_ffixed_x18))
      Features.push_back("+reserve-x18");
-@@ -2754,7 +2764,7 @@ static void getTargetFeatures(const ToolChain &TC, con
+@@ -2760,7 +2764,7 @@ static void getTargetFeatures(const ToolChain &TC, con
      break;
    case llvm::Triple::aarch64:
    case llvm::Triple::aarch64_be:
@@ -71,27 +52,7 @@ Index: tools/clang/lib/Driver/Tools.cpp
      break;
    case llvm::Triple::x86:
    case llvm::Triple::x86_64:
-@@ -3845,9 +3855,10 @@ ParsePICArgs(const ToolChain &ToolChain, const ArgList
-   // OpenBSD-specific defaults for PIE
-   if (Triple.getOS() == llvm::Triple::OpenBSD) {
-     switch (ToolChain.getArch()) {
-+    case llvm::Triple::arm:
-+    case llvm::Triple::aarch64:
-     case llvm::Triple::mips64:
-     case llvm::Triple::mips64el:
--    case llvm::Triple::sparcel:
-     case llvm::Triple::x86:
-     case llvm::Triple::x86_64:
-       IsPICLevelTwo = false; // "-fpie"
-@@ -3855,6 +3866,7 @@ ParsePICArgs(const ToolChain &ToolChain, const ArgList
- 
-     case llvm::Triple::ppc:
-     case llvm::Triple::sparc:
-+    case llvm::Triple::sparcel:
-     case llvm::Triple::sparcv9:
-       IsPICLevelTwo = true; // "-fPIE"
-       break;
-@@ -4466,9 +4478,12 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+@@ -4474,9 +4478,12 @@ void Clang::ConstructJob(Compilation &C, const JobActi
        OFastEnabled ? options::OPT_Ofast : options::OPT_fstrict_aliasing;
    // We turn strict aliasing off by default if we're in CL mode, since MSVC
    // doesn't do any TBAA.
@@ -106,31 +67,27 @@ Index: tools/clang/lib/Driver/Tools.cpp
      CmdArgs.push_back("-relaxed-aliasing");
    if (!Args.hasFlag(options::OPT_fstruct_path_tbaa,
                      options::OPT_fno_struct_path_tbaa))
-@@ -5359,7 +5374,8 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+@@ -5367,7 +5374,8 @@ void Clang::ConstructJob(Compilation &C, const JobActi
    Args.AddLastArg(CmdArgs, options::OPT_fno_operator_names);
    // Emulated TLS is enabled by default on Android, and can be enabled manually
    // with -femulated-tls.
 -  bool EmulatedTLSDefault = Triple.isAndroid() || Triple.isWindowsCygwinEnvironment();
 +  bool EmulatedTLSDefault = Triple.isAndroid() || Triple.isOSOpenBSD() ||
-+			    Triple.isWindowsCygwinEnvironment();
++                            Triple.isWindowsCygwinEnvironment();
    if (Args.hasFlag(options::OPT_femulated_tls, options::OPT_fno_emulated_tls,
                     EmulatedTLSDefault))
      CmdArgs.push_back("-femulated-tls");
-@@ -8907,12 +8923,12 @@ void openbsd::Linker::ConstructJob(Compilation &C, con
-     CmdArgs.push_back("__start");
-   }
+@@ -5462,7 +5470,8 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+                                       options::OPT_fno_strict_overflow)) {
+     if (A->getOption().matches(options::OPT_fno_strict_overflow))
+       CmdArgs.push_back("-fwrapv");
+-  }
++  } else if (getToolChain().getTriple().isOSOpenBSD())
++      CmdArgs.push_back("-fwrapv");
  
-+  CmdArgs.push_back("--eh-frame-hdr");
-   if (Args.hasArg(options::OPT_static)) {
-     CmdArgs.push_back("-Bstatic");
-   } else {
-     if (Args.hasArg(options::OPT_rdynamic))
-       CmdArgs.push_back("-export-dynamic");
--    CmdArgs.push_back("--eh-frame-hdr");
-     CmdArgs.push_back("-Bdynamic");
-     if (Args.hasArg(options::OPT_shared)) {
-       CmdArgs.push_back("-shared");
-@@ -8952,15 +8968,17 @@ void openbsd::Linker::ConstructJob(Compilation &C, con
+   if (Arg *A = Args.getLastArg(options::OPT_freroll_loops,
+                                options::OPT_fno_reroll_loops))
+@@ -8960,16 +8969,20 @@ void openbsd::Linker::ConstructJob(Compilation &C, con
      }
    }
  
@@ -143,14 +100,41 @@ Index: tools/clang/lib/Driver/Tools.cpp
    Args.AddAllArgs(CmdArgs, {options::OPT_L, options::OPT_T_Group,
                              options::OPT_e, options::OPT_s, options::OPT_t,
                              options::OPT_Z_Flag, options::OPT_r});
-+
-+  std::string Triple = getToolChain().getTripleString();
-+  if (Triple.substr(0, 5) == "amd64")
-+    Triple.replace(0, 5, "x86_64");
-+  CmdArgs.push_back(
-+      Args.MakeArgString("-L${LOCALBASE}/lib/gcc/" + Triple + "/${GCC_VER}"));
-+  CmdArgs.push_back(
-+      Args.MakeArgString("-L${LOCALBASE}/lib"));
  
++  if (getToolChain().GetCXXStdlibType(Args) == ToolChain::CST_Libstdcxx) {
++    std::string Triple = getToolChain().getTripleString();
++    if (Triple.substr(0, 5) == "amd64")
++      Triple.replace(0, 5, "x86_64");
++    CmdArgs.push_back(
++        Args.MakeArgString("-L${LOCALBASE}/lib/gcc/" + Triple + "/${GCC_VER}"));
++    CmdArgs.push_back(
++        Args.MakeArgString("-L${LOCALBASE}/lib"));
++  }
++
    AddLinkerInputs(getToolChain(), Inputs, Args, CmdArgs, JA);
  
+   if (!Args.hasArg(options::OPT_nostdlib, options::OPT_nodefaultlibs)) {
+@@ -8983,7 +8996,10 @@ void openbsd::Linker::ConstructJob(Compilation &C, con
+ 
+     // FIXME: For some reason GCC passes -lgcc before adding
+     // the default system libraries. Just mimic this for now.
+-    CmdArgs.push_back("-lgcc");
++    if (getToolChain().GetCXXStdlibType(Args) == ToolChain::CST_Libcxx)
++      CmdArgs.push_back("-lcompiler_rt");
++    else
++      CmdArgs.push_back("-lgcc");
+ 
+     if (Args.hasArg(options::OPT_pthread)) {
+       if (!Args.hasArg(options::OPT_shared) && Args.hasArg(options::OPT_pg))
+@@ -8999,7 +9015,10 @@ void openbsd::Linker::ConstructJob(Compilation &C, con
+         CmdArgs.push_back("-lc");
+     }
+ 
+-    CmdArgs.push_back("-lgcc");
++    if (getToolChain().GetCXXStdlibType(Args) == ToolChain::CST_Libcxx)
++      CmdArgs.push_back("-lcompiler_rt");
++    else
++      CmdArgs.push_back("-lgcc");
+   }
+ 
+   if (!Args.hasArg(options::OPT_nostdlib, options::OPT_nostartfiles)) {

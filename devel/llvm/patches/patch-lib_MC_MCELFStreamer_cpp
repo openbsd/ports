@@ -1,0 +1,19 @@
+$OpenBSD: patch-lib_MC_MCELFStreamer_cpp,v 1.1 2017/07/14 17:14:03 sthen Exp $
+
+Index: lib/MC/MCELFStreamer.cpp
+--- lib/MC/MCELFStreamer.cpp.orig
++++ lib/MC/MCELFStreamer.cpp
+@@ -91,8 +91,11 @@ void MCELFStreamer::InitSections(bool NoExecStack) {
+   SwitchSection(Ctx.getObjectFileInfo()->getTextSection());
+   EmitCodeAlignment(4);
+ 
+-  if (NoExecStack)
+-    SwitchSection(Ctx.getAsmInfo()->getNonexecutableStackSection(Ctx));
++  if (NoExecStack) {
++    MCSection *s = Ctx.getAsmInfo()->getNonexecutableStackSection(Ctx);
++    if (s) 
++	SwitchSection(s);
++  }
+ }
+ 
+ void MCELFStreamer::EmitLabel(MCSymbol *S) {
