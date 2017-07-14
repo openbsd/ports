@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1 2015/09/24 15:14:11 sthen Exp $
+$OpenBSD: README,v 1.2 2017/07/14 09:43:37 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -12,22 +12,26 @@ one or more routable IPv6 subnet that can be assigned to interfaces
 facing your local network.
 
 Here is a sample configuration achieving this, fetching addresses over the
-pppoe0 interface and assigning it to multiple local networks. In this example,
-dhcpcd's router solicitation support is disabled (noipv6rs) - the kernel's
-support should be used instead ("rtsol" in /etc/hostname.pppoe0). It fetches
-addresses over pppoe0 and assigns them to "downstream" interfaces em0, vlan3
-and vlan5. These interfaces are listed explicitly so that dhcpcd doesn't
-touch other interfaces at all.
+pppoe0 interface and assigning it to multiple local networks.
 
-noipv6rs
+-- -- -- -- -- --
 ipv6only
 duid
 persistent
 option rapid_commit
 require dhcp_server_identifier
-nohook lookup-hostname
+
+# disable running any hooks; not typically required for simple DHCPv6-PD setup
+script /usr/bin/true
+
+# Disable dhcpcd's own router solicitation support; allow the kernel
+# to do this instead by setting "inet6 autoconf" in hostname.pppoe0
+noipv6rs
+
+# List interfaces explicitly so that dhcpcd doesn't touch others
 allowinterfaces pppoe0 em0 vlan3 vlan5
 
 interface pppoe0
-  iaid 1
-  ia_pd 2 em0/1 vlan3/2 vlan5/3
+	# request prefix delegation for downstream interfaces.
+	ia_pd 2 em0/1 vlan3/2 vlan5/3
+-- -- -- -- -- --
