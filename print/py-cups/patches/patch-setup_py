@@ -1,0 +1,14 @@
+$OpenBSD: patch-setup_py,v 1.9 2017/07/14 16:11:14 ajacoutot Exp $
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -38,7 +38,8 @@ import sys
+ VERSION="1.9.73"
+ libraries=["cups"]
+ 
+-if sys.platform == "darwin" or sys.platform.startswith("freebsd"):
++if sys.platform == "darwin" or sys.platform.startswith("freebsd") or \
++   sys.platform.startswith("openbsd"):
+ 	libraries.append ("iconv")
+ 
+ setup (name="pycups",
