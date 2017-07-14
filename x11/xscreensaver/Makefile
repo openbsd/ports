@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.92 2017/07/07 10:10:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.93 2017/07/14 11:36:43 ajacoutot Exp $
 
 COMMENT=		screen saver and locker for the X Window System
 
 DISTNAME=		xscreensaver-5.37
+REVISION=		0
 
 CATEGORIES=		x11
 
@@ -59,16 +60,5 @@ post-install:
 .for i in deco circuit
 	mv ${PREFIX}/man/man6/$i.6 ${PREFIX}/man/man6/xscreensaver-$i.6
 .endfor
-
-# create dot.desktop files from xscreensaver xml files for use
-# by freedesktop compliant screensavers
-	cp ${FILESDIR}/migrate-xscreensaver-config.sh ${WRKSRC}/hacks/config
-	cp ${FILESDIR}/xscreensaver-config.xsl ${WRKSRC}/hacks/config
-	cd ${WRKSRC}/hacks/config && \
-		for i in ${WRKSRC}/hacks/config/*.xml; do \
-			/bin/sh migrate-xscreensaver-config.sh $${i} ; done
-	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/screensavers/
-	${INSTALL_DATA} ${WRKSRC}/hacks/config/*.desktop \
-		${PREFIX}/share/applications/screensavers/
 
 .include <bsd.port.mk>
