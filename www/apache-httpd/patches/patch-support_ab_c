@@ -1,0 +1,14 @@
+$OpenBSD: patch-support_ab_c,v 1.4 2017/07/14 17:10:46 sthen Exp $
+
+Index: support/ab.c
+--- support/ab.c.orig
++++ support/ab.c
+@@ -2514,7 +2514,7 @@ int main(int argc, const char * const argv[])
+         exit(1);
+     }
+     SSL_CTX_set_options(ssl_ctx, SSL_OP_ALL);
+-#if OPENSSL_VERSION_NUMBER >= 0x10100000L
++#if OPENSSL_VERSION_NUMBER >= 0x10100000L && (!defined(LIBRESSL_VERSION_NUMBER) || LIBRESSL_VERSION_NUMBER >= 0x2060000fL)
+     SSL_CTX_set_max_proto_version(ssl_ctx, max_prot);
+     SSL_CTX_set_min_proto_version(ssl_ctx, min_prot);
+ #endif
