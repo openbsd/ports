@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.505 2017/07/11 20:52:04 rsadowski Exp $
+# $OpenBSD: Quirks.pm,v 1.506 2017/07/14 16:15:07 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -424,8 +424,6 @@ my $obsolete_reason = {
 	'splitvt' => 0,
 	'bricolage' => 1,
 	'xinha' => 1,
-	'py-cups' => 0,
-	'system-config-printer' => 0,
 	'ruby-postgres' => 3,
 	'metasploit' => 2,
 	'childsplay-plugins' => 3,
