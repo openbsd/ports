@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.108 2017/07/07 16:01:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.109 2017/07/14 21:43:22 sthen Exp $
 
 # XXX building this port while a version is already installed on the
 # system will lead to unexpected hidden dependencies!!!
@@ -10,7 +10,7 @@ COMMENT-mysql=		Bacula libbaccats support for MySQL
 COMMENT-pgsql=		Bacula libbaccats support for PostgreSQL
 COMMENT-sqlite3=	Bacula libbaccats support for SQLite3
 
-V=			9.0.0
+V=			9.0.1
 DISTNAME=		bacula-$V
 PKGNAME-main=		bacula-client-$V
 PKGNAME-server=		bacula-server-$V
@@ -38,7 +38,7 @@ HOMEPAGE=		http://www.bacula.org/
 
 MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
 
-WANTLIB += c pthread crypto ssl z m ${LIBCXX}
+WANTLIB += c pthread crypto ssl z m ${COMPILER_LIBCXX}
 
 # AGPLv3 with exception for OpenSSL (majority),
 # FDL (docs), LGPL (some libraries), and PD
