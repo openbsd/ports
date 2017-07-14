@@ -1,0 +1,1 @@
+depends on Qt5 but installs QML files outside PREFIX/lib/qt5/qml/
