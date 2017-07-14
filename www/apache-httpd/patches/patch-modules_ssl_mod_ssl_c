@@ -1,0 +1,23 @@
+$OpenBSD: patch-modules_ssl_mod_ssl_c,v 1.3 2017/07/14 17:04:12 sthen Exp $
+
+Index: modules/ssl/mod_ssl.c
+--- modules/ssl/mod_ssl.c.orig
++++ modules/ssl/mod_ssl.c
+@@ -337,7 +337,7 @@ static apr_status_t ssl_cleanup_pre_config(void *data)
+ #if HAVE_ENGINE_LOAD_BUILTIN_ENGINES
+     ENGINE_cleanup();
+ #endif
+-#if OPENSSL_VERSION_NUMBER >= 0x1000200fL
++#if OPENSSL_VERSION_NUMBER >= 0x1000200fL && !defined(LIBRESSL_VERSION_NUMBER)
+     SSL_COMP_free_compression_methods();
+ #endif
+ 
+@@ -390,7 +390,7 @@ static int ssl_hook_pre_config(apr_pool_t *pconf,
+     /* We must register the library in full, to ensure our configuration
+      * code can successfully test the SSL environment.
+      */
+-#if OPENSSL_VERSION_NUMBER < 0x10100000L
++#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
+     CRYPTO_malloc_init();
+ #else
+     OPENSSL_malloc_init();

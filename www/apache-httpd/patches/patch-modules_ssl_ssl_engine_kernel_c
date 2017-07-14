@@ -1,0 +1,23 @@
+$OpenBSD: patch-modules_ssl_ssl_engine_kernel_c,v 1.1 2017/07/14 17:04:12 sthen Exp $
+
+Index: modules/ssl/ssl_engine_kernel.c
+--- modules/ssl/ssl_engine_kernel.c.orig
++++ modules/ssl/ssl_engine_kernel.c
+@@ -1733,7 +1733,7 @@ static void modssl_proxy_info_log(conn_rec *c,
+  * so we need to increment here to prevent them from
+  * being freed.
+  */
+-#if OPENSSL_VERSION_NUMBER < 0x10100000L
++#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
+ #define modssl_set_cert_info(info, cert, pkey) \
+     *cert = info->x509; \
+     CRYPTO_add(&(*cert)->references, +1, CRYPTO_LOCK_X509); \
+@@ -1923,7 +1923,7 @@ int ssl_callback_NewSessionCacheEntry(SSL *ssl, SSL_SE
+  *  of our other Apache pre-forked server processes.
+  */
+ SSL_SESSION *ssl_callback_GetSessionCacheEntry(SSL *ssl,
+-                                               IDCONST unsigned char *id,
++                                               unsigned char *id,
+                                                int idlen, int *do_copy)
+ {
+     /* Get Apache context back through OpenSSL context */

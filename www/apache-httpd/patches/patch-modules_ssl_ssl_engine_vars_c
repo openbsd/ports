@@ -1,0 +1,23 @@
+$OpenBSD: patch-modules_ssl_ssl_engine_vars_c,v 1.3 2017/07/14 17:04:12 sthen Exp $
+
+Index: modules/ssl/ssl_engine_vars.c
+--- modules/ssl/ssl_engine_vars.c.orig
++++ modules/ssl/ssl_engine_vars.c
+@@ -529,7 +529,7 @@ static char *ssl_var_lookup_ssl_cert(apr_pool_t *p, re
+         resdup = FALSE;
+     }
+     else if (strcEQ(var, "A_SIG")) {
+-#if OPENSSL_VERSION_NUMBER < 0x10100000L
++#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
+         nid = OBJ_obj2nid((ASN1_OBJECT *)(xs->cert_info->signature->algorithm));
+ #else
+         const ASN1_OBJECT *paobj;
+@@ -541,7 +541,7 @@ static char *ssl_var_lookup_ssl_cert(apr_pool_t *p, re
+         resdup = FALSE;
+     }
+     else if (strcEQ(var, "A_KEY")) {
+-#if OPENSSL_VERSION_NUMBER < 0x10100000L
++#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
+         nid = OBJ_obj2nid((ASN1_OBJECT *)(xs->cert_info->key->algor->algorithm));
+ #else
+         ASN1_OBJECT *paobj;

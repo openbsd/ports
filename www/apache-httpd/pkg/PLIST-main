@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.15 2016/07/05 14:32:16 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.16 2017/07/14 17:04:12 sthen Exp $
 @pkgpath www/apache-httpd${FLAVOR_COMMA}
 @pkgpath www/apache-httpd-openbsd
 @bin bin/ab
@@ -338,34 +338,42 @@ share/doc/apache2/handler.html.zh-cn.utf8
 share/doc/apache2/howto/
 share/doc/apache2/howto/access.html
 share/doc/apache2/howto/access.html.en
+share/doc/apache2/howto/access.html.es
 share/doc/apache2/howto/access.html.fr
 share/doc/apache2/howto/auth.html
 share/doc/apache2/howto/auth.html.en
+share/doc/apache2/howto/auth.html.es
 share/doc/apache2/howto/auth.html.fr
 share/doc/apache2/howto/auth.html.ja.utf8
 share/doc/apache2/howto/auth.html.ko.euc-kr
 share/doc/apache2/howto/auth.html.tr.utf8
 share/doc/apache2/howto/cgi.html
 share/doc/apache2/howto/cgi.html.en
+share/doc/apache2/howto/cgi.html.es
 share/doc/apache2/howto/cgi.html.fr
 share/doc/apache2/howto/cgi.html.ja.utf8
 share/doc/apache2/howto/cgi.html.ko.euc-kr
 share/doc/apache2/howto/htaccess.html
 share/doc/apache2/howto/htaccess.html.en
+share/doc/apache2/howto/htaccess.html.es
 share/doc/apache2/howto/htaccess.html.fr
 share/doc/apache2/howto/htaccess.html.ja.utf8
 share/doc/apache2/howto/htaccess.html.ko.euc-kr
 share/doc/apache2/howto/htaccess.html.pt-br
 share/doc/apache2/howto/http2.html
 share/doc/apache2/howto/http2.html.en
+share/doc/apache2/howto/http2.html.es
+share/doc/apache2/howto/http2.html.fr
 share/doc/apache2/howto/index.html
 share/doc/apache2/howto/index.html.en
+share/doc/apache2/howto/index.html.es
 share/doc/apache2/howto/index.html.fr
 share/doc/apache2/howto/index.html.ja.utf8
 share/doc/apache2/howto/index.html.ko.euc-kr
 share/doc/apache2/howto/index.html.zh-cn.utf8
 share/doc/apache2/howto/public_html.html
 share/doc/apache2/howto/public_html.html.en
+share/doc/apache2/howto/public_html.html.es
 share/doc/apache2/howto/public_html.html.fr
 share/doc/apache2/howto/public_html.html.ja.utf8
 share/doc/apache2/howto/public_html.html.ko.euc-kr
@@ -492,6 +500,7 @@ share/doc/apache2/mod/core.html.ja.utf8
 share/doc/apache2/mod/core.html.tr.utf8
 share/doc/apache2/mod/directive-dict.html
 share/doc/apache2/mod/directive-dict.html.en
+share/doc/apache2/mod/directive-dict.html.es
 share/doc/apache2/mod/directive-dict.html.fr
 share/doc/apache2/mod/directive-dict.html.ja.utf8
 share/doc/apache2/mod/directive-dict.html.ko.euc-kr
@@ -616,6 +625,8 @@ share/doc/apache2/mod/mod_autoindex.html.fr
 share/doc/apache2/mod/mod_autoindex.html.ja.utf8
 share/doc/apache2/mod/mod_autoindex.html.ko.euc-kr
 share/doc/apache2/mod/mod_autoindex.html.tr.utf8
+share/doc/apache2/mod/mod_brotli.html
+share/doc/apache2/mod/mod_brotli.html.en
 share/doc/apache2/mod/mod_buffer.html
 share/doc/apache2/mod/mod_buffer.html.en
 share/doc/apache2/mod/mod_buffer.html.fr
