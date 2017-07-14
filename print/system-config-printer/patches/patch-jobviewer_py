@@ -1,0 +1,16 @@
+$OpenBSD: patch-jobviewer_py,v 1.1 2017/07/14 16:12:00 ajacoutot Exp $
+
+Fix libgnome-keyring interaction.
+
+Index: jobviewer.py
+--- jobviewer.py.orig
++++ jobviewer.py
+@@ -57,7 +57,7 @@ try:
+     gi.require_version('GnomeKeyring', '1.0')
+     from gi.repository import GnomeKeyring
+     USE_KEYRING=True
+-except ImportError:
++except (ImportError, ValueError):
+     USE_KEYRING=False
+ 
+ import gettext

@@ -1,0 +1,13 @@
+$OpenBSD: patch-cupshelpers_cupshelpers_py,v 1.10 2017/07/14 16:12:00 ajacoutot Exp $
+Index: cupshelpers/cupshelpers.py
+--- cupshelpers/cupshelpers.py.orig
++++ cupshelpers/cupshelpers.py
+@@ -734,7 +734,7 @@ def missingExecutables(ppd):
+ 
+     # First, a local function.  How to check that something exists
+     # in a path:
+-    def pathcheck (name, path="/usr/bin:/bin"):
++    def pathcheck (name, path="/usr/bin:/bin:${LOCALBASE}/bin"):
+         if name == "-":
+             # A filter of "-" means that no filter is required,
+             # i.e. the device accepts the given format as-is.

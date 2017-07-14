@@ -1,0 +1,38 @@
+$OpenBSD: patch-firewallsettings_py,v 1.1 2017/07/14 16:12:00 ajacoutot Exp $
+
+Disable Linux specific firewall checks.
+
+Index: firewallsettings.py
+--- firewallsettings.py.orig
++++ firewallsettings.py
+@@ -219,27 +219,13 @@ class SystemConfigFirewall:
+             debugprint ("Exception: %r" % exc)
+ 
+     def write (self):
+-        try:
+-            self._fw.write (json.dumps (self._fw_data[0]))
+-        except:
+-            pass
++        pass
+ 
+     def _check_any_allowed (self, search):
+-        (args, filename) = self._get_fw_data ()
+-        if filename is None: return True
+-        isect = set (search).intersection (set (args))
+-        return len (isect) != 0
++        return True
+ 
+-
+     def add_service (self, service):
+-        try:
+-            (args, filename) = self._fw_data
+-        except AttributeError:
+-            (args, filename) = self._get_fw_data ()
+-        if filename is None: return
+-
+-        args.append ("--service=" + service)
+-        self._fw_data = (args, filename)
++        pass
+ 
+     def check_ipp_client_allowed (self):
+         return self._check_any_allowed (set(["--port=%s:%s" %
