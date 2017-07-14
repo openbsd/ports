@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.328 2017/06/29 19:00:28 robert Exp $
+# $OpenBSD: Makefile,v 1.329 2017/07/14 20:39:29 robert Exp $
 
 USE_WXNEEDED=		Yes
 
@@ -8,6 +8,7 @@ DPB_PROPERTIES=		parallel
 COMMENT=		Chromium browser
 
 V=			59.0.3071.115
+REVISION=		0
 
 DISTNAME=		chromium-${V}
 DISTFILES=		${DISTNAME}-unofficial${EXTRACT_SUFX}
