@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.112 2017/05/26 20:55:09 jca Exp $
+# $OpenBSD: portcheck,v 1.113 2017/07/14 07:42:51 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -941,6 +941,14 @@ sub_checks() {
 #     not under ${PREFIx}/share/{man,info}.
 #
 #   * Manual pages shouldn't be compressed.
+#
+#   * If port installs QML files, it should depend on either x11/qt4,-main
+#     or x11/qt5/qtdeclarative,-main
+#
+#   * Qt5-QML files should live under PREFIX/lib/qt5/qml/.
+#
+#   * Qt5-QML-enabled port depend on x11/qt5/qtdeclarative.
+#
 check_plist() {
 	$debugging && echo "CALLED: check_plist($*)" >&2
 
@@ -1002,6 +1010,9 @@ check_plist() {
 
 	local regsh=false unregsh=false
 	local regsh_exec=false unregsh_exec=false
+
+	local qml_found=false qt5_qml_found=false non_qt5_qml_found=false
+	local qt4_dep=false qt5_dep=false qt5declarative_dep=false
 
 	# Temporary ones
 	local app l theme varname py
@@ -1143,6 +1154,25 @@ check_plist() {
 			;;
 		share/locale/*/*/*.mo)
 			translation_found=true
+			;;
+
+		"@depend x11/qt4,-main"*)
+			qt4_dep=true
+			;;
+		"@depend x11/qt5/qtdeclarative,-main"*)
+			qt5declarative_dep=true
+			qt5_dep=true
+			;;
+		"@depend x11/qt5/"*)
+			qt5_dep=true
+			;;
+		lib/qt5/qml/*)
+			qml_found=true
+			qt5_qml_found=true
+			;;
+		*/qmldir)
+			qml_found=true
+			non_qt5_qml_found=true
 			;;
 
 		share/dbus-1/system-services/*)
@@ -1328,6 +1358,20 @@ check_plist() {
 		[[ $fullpkgname != gettext-* ]] &&
 		err "${portref}translation file(s) found without" \
 		    "devel/gettext dependency in RUN_DEPENDS"
+
+	# QML
+	$qml_found && ! $qt4_dep && ! $qt5_dep &&
+		[[ $fullpkgname != qt4-[0-9]* ]] &&
+		[[ $fullpkgname != qtdeclarative-[0-9]* ]] &&
+		err "${portref}looks like providing QML files without" \
+		    "Qt dependency"
+	$qt5_qml_found && ! $qt5declarative_dep &&
+		[[ $fullpkgname != qtdeclarative-[0-9]* ]] &&
+		err "${portref}provides Qt5 QML files without" \
+		    "x11/qt5/qtdeclarative dependency"
+	$qt5_dep && ! $qt4_dep && $non_qt5_qml_found &&
+		err "${portref}depends on Qt5 but installs QML files" \
+		    "outside PREFIX/lib/qt5/qml/"
 
 	# dbus,-suid
 	if $dbus_suid_dep_needed && ! $dbus_suid_dep; then
