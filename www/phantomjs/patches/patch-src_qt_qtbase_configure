@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_qt_qtbase_configure,v 1.1 2017/07/05 11:54:22 sthen Exp $
+$OpenBSD: patch-src_qt_qtbase_configure,v 1.2 2017/07/14 22:15:31 sthen Exp $
 
 Index: src/qt/qtbase/configure
 --- src/qt/qtbase/configure.orig
@@ -14,7 +14,20 @@ Index: src/qt/qtbase/configure
  CFG_POSIX_FALLOCATE=auto
  CFG_MREMAP=auto
  CFG_GETADDRINFO=auto
-@@ -3591,7 +3591,7 @@ if [ -z "$CFG_BUILD_PARTS" ]; then
+@@ -2798,7 +2798,11 @@ if [ -z "$PLATFORM" ]; then
+         "
+         ;;
+      OpenBSD:*)
+-        PLATFORM=openbsd-g++
++	if cc -v 2>&1|grep -q clang; then
++	    PLATFORM=openbsd-clang
++	else
++	    PLATFORM=openbsd-g++
++	fi
+         ;;
+      NetBSD:*)
+         PLATFORM=netbsd-g++
+@@ -3591,7 +3595,7 @@ if [ -z "$CFG_BUILD_PARTS" ]; then
      fi
  fi
  for nobuild in $CFG_NOBUILD_PARTS; do
@@ -23,7 +36,20 @@ Index: src/qt/qtbase/configure
  done
  if echo $CFG_BUILD_PARTS | grep -v libs >/dev/null 2>&1; then
  #    echo
-@@ -4064,7 +4064,7 @@ if true; then ###[ '!' -f "$outpath/bin/qmake" ];
+@@ -3906,7 +3910,11 @@ fi
+ # is where the resulting variable is written to
+ setBootstrapVariable()
+ {
+-    getQMakeConf "$1" | echo ${2-$1} = `if [ -n "$3" ]; then sed "$3"; else cat; fi` >> "$mkfile"
++    if [ -n "$2" -a -n "$(eval echo \"\$$2\")" ]; then
++        echo ${2-$1} = "$(eval echo \"\$$2\")"
++    else
++        getQMakeConf "$1" | echo ${2-$1} = `if [ -n "$3" ]; then sed "$3"; else cat; fi` >> "$mkfile"
++    fi
+ }
+ 
+ # build qmake
+@@ -4064,7 +4072,7 @@ if true; then ###[ '!' -f "$outpath/bin/qmake" ];
  
      if [ "$OPT_VERBOSE" = yes ]; then
          # Show the output of make
@@ -32,7 +58,7 @@ Index: src/qt/qtbase/configure
      else
          # Hide the output of make
          # Use bash to print dots, if we have it, and stdout is a tty.
-@@ -4072,9 +4072,9 @@ if true; then ###[ '!' -f "$outpath/bin/qmake" ];
+@@ -4072,9 +4080,9 @@ if true; then ###[ '!' -f "$outpath/bin/qmake" ];
              bash -c 'set -o pipefail
                  cd "$0/qmake"; "$1" | while read line; do
                      builtin echo -n .

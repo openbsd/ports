@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_qt_qtbase_src_corelib_plugin_qlibrary_unix_cpp,v 1.1 2017/07/14 22:15:31 sthen Exp $
+
+Index: src/qt/qtbase/src/corelib/plugin/qlibrary_unix.cpp
+--- src/qt/qtbase/src/corelib/plugin/qlibrary_unix.cpp.orig
++++ src/qt/qtbase/src/corelib/plugin/qlibrary_unix.cpp
+@@ -106,9 +106,8 @@ QStringList QLibraryPrivate::suffixes_sys(const QStrin
+ #else
+     if (!fullVersion.isEmpty()) {
+         suffixes << QString::fromLatin1(".so.%1").arg(fullVersion);
+-    } else {
+-        suffixes << QLatin1String(".so");
+     }
++    suffixes << QLatin1String(".so");
+ #endif
+ # ifdef Q_OS_MAC
+     if (!fullVersion.isEmpty()) {
