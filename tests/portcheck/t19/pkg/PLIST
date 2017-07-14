@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/07/14 07:43:43 zhuk Exp $
+include/KF5/
+include/KF5/KHolidays/
+include/KF5/KHolidays/KHolidays/
+include/KF5/KHolidays/KHolidays/AstroSeasons
+include/KF5/kholidays_version.h
+lib/cmake/KF5Holidays/
+lib/cmake/KF5Holidays/KF5HolidaysConfig.cmake
+lib/cmake/KF5Holidays/KF5HolidaysConfigVersion.cmake
+share/qt5/qml/org/
+share/qt5/qml/org/kde/
+share/qt5/qml/org/kde/kholidays/
+share/qt5/qml/org/kde/kholidays/libkholidaysdeclarativeplugin.so
+share/qt5/qml/org/kde/kholidays/qmldir
