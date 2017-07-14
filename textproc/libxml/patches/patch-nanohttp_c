@@ -1,0 +1,20 @@
+$OpenBSD: patch-nanohttp_c,v 1.3 2017/07/14 18:12:05 bluhm Exp $
+
+CVE-2017-7376
+https://github.com/GNOME/libxml2/commit/5dca9eea1bd4263bfa4d037ab2443de1cd730f7e
+
+Index: nanohttp.c
+--- nanohttp.c.orig
++++ nanohttp.c
+@@ -1423,9 +1423,9 @@ retry:
+     if (ctxt->port != 80) {
+ 	/* reserve space for ':xxxxx', incl. potential proxy */
+ 	if (proxy)
+-	    blen += 12;
++	    blen += 17;
+ 	else
+-	    blen += 6;
++	    blen += 11;
+     }
+     bp = (char*)xmlMallocAtomic(blen);
+     if ( bp == NULL ) {

@@ -1,6 +1,9 @@
-$OpenBSD: patch-valid_c,v 1.1 2017/06/03 09:40:42 pirofti Exp $
+$OpenBSD: patch-valid_c,v 1.2 2017/07/14 18:12:05 bluhm Exp $
 
 Fix CVE-2017-9047 and CVE-2017-9048.
+
+CVE-2017-9663
+https://github.com/GNOME/libxml2/commit/92b9e8c8b3787068565a1820ba575d042f9eec66
 
 Index: valid.c
 --- valid.c.orig
@@ -21,3 +24,24 @@ Index: valid.c
      if (englob)
          strcat(buf, ")");
      switch (content->ocur) {
+@@ -4621,6 +4623,12 @@ xmlNodePtr elem, const xmlChar *prefix, xmlNsPtr ns, c
+ 	}
+     }
+ 
++    /*
++     * Casting ns to xmlAttrPtr is wrong. We'd need separate functions
++     * xmlAddID and xmlAddRef for namespace declarations, but it makes
++     * no practical sense to use ID types anyway.
++     */
++#if 0
+     /* Validity Constraint: ID uniqueness */
+     if (attrDecl->atype == XML_ATTRIBUTE_ID) {
+         if (xmlAddID(ctxt, doc, value, (xmlAttrPtr) ns) == NULL)
+@@ -4632,6 +4640,7 @@ xmlNodePtr elem, const xmlChar *prefix, xmlNsPtr ns, c
+         if (xmlAddRef(ctxt, doc, value, (xmlAttrPtr) ns) == NULL)
+ 	    ret = 0;
+     }
++#endif
+ 
+     /* Validity Constraint: Notation Attributes */
+     if (attrDecl->atype == XML_ATTRIBUTE_NOTATION) {
