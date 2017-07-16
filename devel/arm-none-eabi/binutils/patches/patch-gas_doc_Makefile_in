@@ -1,7 +1,8 @@
-$OpenBSD: patch-gas_doc_Makefile_in,v 1.1.1.1 2015/05/28 23:28:25 bmercer Exp $
---- gas/doc/Makefile.in.orig	Tue Oct 14 03:32:03 2014
-+++ gas/doc/Makefile.in	Thu Apr 30 14:47:49 2015
-@@ -82,7 +82,7 @@ CONFIG_CLEAN_VPATH_FILES =
+$OpenBSD: patch-gas_doc_Makefile_in,v 1.2 2017/07/16 12:44:19 kettenis Exp $
+Index: gas/doc/Makefile.in
+--- gas/doc/Makefile.in.orig
++++ gas/doc/Makefile.in
+@@ -99,7 +99,7 @@ CONFIG_CLEAN_VPATH_FILES =
  depcomp =
  am__depfiles_maybe =
  SOURCES =
