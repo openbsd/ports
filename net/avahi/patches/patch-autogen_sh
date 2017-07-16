@@ -1,0 +1,16 @@
+$OpenBSD: patch-autogen_sh,v 1.1 2017/07/16 09:27:58 ajacoutot Exp $
+
+Index: autogen.sh
+--- autogen.sh.orig
++++ autogen.sh
+@@ -17,8 +17,8 @@
+ # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307
+ # USA.
+ 
+-AM_VERSION=1.11
+-AC_VERSION=2.63
++AM_VERSION=${AUTOMAKE_VERSION}
++AC_VERSION=${AUTOCONF_VERSION}
+ 
+ run_versioned() {
+     local P
