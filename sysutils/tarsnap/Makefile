@@ -1,9 +1,7 @@
-# $OpenBSD: Makefile,v 1.12 2016/03/10 17:37:31 jturner Exp $
-
-PORTROACH=		limit:.*[^a-z]$$
+# $OpenBSD: Makefile,v 1.13 2017/07/16 01:52:10 jturner Exp $
 
 COMMENT=		client for the tarsnap.com online encrypted backup service
-V=			1.0.37
+V=			1.0.38
 DISTNAME=		tarsnap-autoconf-${V}
 PKGNAME=		tarsnap-${V}
 CATEGORIES=		sysutils
@@ -16,7 +14,7 @@ PERMIT_PACKAGE_CDROM=	restrictive licence
 PERMIT_PACKAGE_FTP=	restrictive licence
 PERMIT_DISTFILES_FTP=	restrictive licence
 
-WANTLIB += bz2>=10 c crypto lzma pthread z
+WANTLIB += bz2>=10 c crypto lzma z
 
 MASTER_SITES=		https://www.tarsnap.com/download/
 EXTRACT_SUFX=		.tgz
