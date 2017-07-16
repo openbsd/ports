@@ -1,0 +1,40 @@
+$OpenBSD: patch-Types_h,v 1.1 2017/07/16 09:38:44 robert Exp $
+
+Index: Types.h
+--- Types.h.orig
++++ Types.h
+@@ -55,6 +55,9 @@ class T_data : public vector < unsigned char >
+     return &*(vector < unsigned char >::begin());
+   }
+ 
++  // Avoid overriding clear() when using libc++. Fiddling with STL internals
++  // doesn't really seem like a good idea to me anyway.
++  #ifndef _LIBCPP_VECTOR
+   void clear()
+   {
+     #if defined(__STL_USE_STD_ALLOCATORS) || defined(__GLIBCPP_INTERNAL_VECTOR_H)
+@@ -95,12 +98,16 @@ class T_data : public vector < unsigned char >
+ 
+     #endif  /* #if defined(__STL_USE_STD_ALLOCATORS) || defined(__GLIBCPP_INTERNAL_VECTOR_H) */
+   }
++  #endif /* #ifdef _LIBCPP_VECTOR */
+ };
+ 
+ class T_messages : public vector < Message * >
+ {
+   public:
+ 
++  // Avoid overriding clear() when using libc++. Fiddling with STL internals
++  // doesn't really seem like a good idea to me anyway.
++  #ifndef _LIBCPP_VECTOR
+   void clear()
+   {
+     #if defined(__STL_USE_STD_ALLOCATORS) || defined(__GLIBCPP_INTERNAL_VECTOR_H)
+@@ -141,6 +148,7 @@ class T_messages : public vector < Message * >
+ 
+     #endif /* #if defined(__STL_USE_STD_ALLOCATORS) || defined(__GLIBCPP_INTERNAL_VECTOR_H) */
+   }
++  #endif /* #ifndef _LIBCPP_VECTOR */
+ };
+ 
+ typedef md5_byte_t * T_checksum;
