@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2017/04/10 11:46:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2017/07/16 19:18:54 espie Exp $
 
 V =		2.1
 COMMENT =	scrabble game
@@ -33,7 +33,7 @@ BUILD_DEPENDS =	devel/boost \
 		devel/libexecinfo
 RUN_DEPENDS =	devel/desktop-file-utils
 LIB_DEPENDS =	textproc/arabica devel/libconfig
-WANTLIB +=	lib/qt4/QtGui lib/qt4/QtNetwork c m pthread ${LIBCXX}
+WANTLIB +=	lib/qt4/QtGui lib/qt4/QtNetwork c m pthread ${COMPILER_LIBCXX}
 WANTLIB +=	arabica config++ expat ncursesw
 
 post-configure:

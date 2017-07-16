@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2017/05/15 19:56:03 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.64 2017/07/16 19:19:00 espie Exp $
 
 COMMENT =	command-driven interactive function plotting program
 
@@ -15,7 +15,7 @@ HOMEPAGE =	http://www.gnuplot.info/
 # http://gnuplot.cvs.sourceforge.net/gnuplot/gnuplot/Copyright
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c m ncurses readline ${LIBCXX} z
+WANTLIB += c m ncurses readline ${COMPILER_LIBCXX} z
 
 BUILD_DEPENDS =	emacs->=24:editors/emacs
 

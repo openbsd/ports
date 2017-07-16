@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2017/04/10 11:45:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2017/07/16 19:18:48 espie Exp $
 
 COMMENT =	crossplatform music editor for creating Commodore 64 music
 
@@ -18,7 +18,7 @@ MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB +=	SDL c m pthread ${LIBCXX}
+WANTLIB +=	SDL c m pthread ${COMPILER_LIBCXX}
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=goattracker2/}GoatTracker%202/${V}/
 

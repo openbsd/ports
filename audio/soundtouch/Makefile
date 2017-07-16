@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2017/04/10 11:45:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2017/07/16 19:18:49 espie Exp $
 
 COMMENT=	tempo/pitch audio processing library
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=	${HOMEPAGE}
 
-WANTLIB=	c m ${LIBCXX}
+WANTLIB=	c m ${COMPILER_LIBCXX}
 
 BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS} \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2017/04/10 11:45:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2017/07/16 19:18:54 espie Exp $
 
 BROKEN-arm=	mktileset buggy, loops at high CPU use
 
@@ -12,7 +12,7 @@ HOMEPAGE=	http://crimson.seul.org/
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += SDL SDL_mixer SDL_net SDL_ttf c m pthread ${LIBCXX} z
+WANTLIB += SDL SDL_mixer SDL_net SDL_ttf c m pthread ${COMPILER_LIBCXX} z
 
 USE_GMAKE=	Yes
 USE_GROFF =	Yes

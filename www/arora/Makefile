@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2017/04/19 11:16:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2017/07/16 19:19:03 espie Exp $
 
 COMMENT=	simple Qt4-based browser using WebKit
 
@@ -16,7 +16,7 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += QtGui QtNetwork QtScript QtSql QtWebKit c m pthread ${LIBCXX}
+WANTLIB += QtGui QtNetwork QtScript QtSql QtWebKit c m pthread ${COMPILER_LIBCXX}
 WANTLIB += ICE SM X11 Xext Xi Xinerama Xrender fontconfig freetype
 
 MODULES=	devel/qmake x11/qt4

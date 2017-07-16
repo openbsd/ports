@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.115 2017/04/13 07:08:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.116 2017/07/16 19:19:04 espie Exp $
 
 COMMENT-main=		GNOME Data Access library
 COMMENT-ldap=		LDAP backend for libgda
@@ -122,7 +122,7 @@ RUN_DEPENDS-ui=		${RUN_DEPENDS} \
 
 ### -mysql
 WANTLIB-mysql += ${WANTLIB}
-WANTLIB-mysql += crypto gda-${GDA_MAJOR} mysqlclient ssl ${LIBCXX}
+WANTLIB-mysql += crypto gda-${GDA_MAJOR} mysqlclient ssl ${COMPILER_LIBCXX}
 
 RUN_DEPENDS-mysql=	# empty
 LIB_DEPENDS-mysql=	x11/gnome/libgda \

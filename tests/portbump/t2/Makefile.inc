@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.6 2017/04/10 11:46:34 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.7 2017/07/16 19:19:02 espie Exp $
 
 COMMENT-main=		server-side HTML-embedded scripting language
 COMMENT-fastcgi=	stand-alone FastCGI version of PHP
@@ -311,7 +311,7 @@ PHPXS_SUBST+= -e 's,${i},${${i}},'
 MODULES=		devel/gettext
 
 WANTLIB-main+=		c crypto m pthread ssl xml2>=8 z ${MODGETTEXT_WANTLIB}
-# php 5.4/5.5 : WANTLIB-main += ${LIBCXX}
+# php 5.4/5.5 : WANTLIB-main += ${COMPILER_LIBCXX}
 WANTLIB-fastcgi=	${WANTLIB-main}
 LIB_DEPENDS-main=	textproc/libxml
 RUN_DEPENDS-main=	${MODGETTEXT_RUN_DEPENDS} \

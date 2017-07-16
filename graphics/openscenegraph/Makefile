@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2017/06/29 09:35:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2017/07/16 19:18:57 espie Exp $
 
 PORTROACH =		limitw:1,even
 
@@ -44,7 +44,7 @@ WANTLIB += GL Half Iex IlmImf IlmThread QtGui QtOpenGL SDL X11
 WANTLIB += Xrandr avcodec avdevice avformat avresample avutil
 WANTLIB += c cairo curl freetype gdk_pixbuf-2.0 gif gio-2.0 glib-2.0
 WANTLIB += gobject-2.0 intl jasper jpeg m png poppler-glib pthread
-WANTLIB += rsvg-2 ${LIBCXX} swresample swscale tiff z
+WANTLIB += rsvg-2 ${COMPILER_LIBCXX} swresample swscale tiff z
 
 MASTER_SITES =		${HOMEPAGE}/downloads/stable_releases/OpenSceneGraph-$V/source/
 EXTRACT_SUFX =		.zip

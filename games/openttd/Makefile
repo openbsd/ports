@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2017/04/13 07:37:08 bentley Exp $
+# $OpenBSD: Makefile,v 1.52 2017/07/16 19:18:54 espie Exp $
 
 COMMENT=	open source clone of the game Transport Tycoon Deluxe
 
@@ -16,7 +16,7 @@ MAINTAINER =	Anthony J. Bentley <anthony@anjbe.name>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += SDL c fontconfig freetype icudata icui18n icuuc
-WANTLIB += lzma lzo2 m png pthread ${LIBCXX} xdg-basedir z
+WANTLIB += lzma lzo2 m png pthread ${COMPILER_LIBCXX} xdg-basedir z
 
 MASTER_SITES=		https://binaries.openttd.org/releases/$V/
 

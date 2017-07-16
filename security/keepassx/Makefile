@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2017/04/10 11:46:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2017/07/16 19:19:01 espie Exp $
 
 COMMENT =	management tool for sensitive data
 
@@ -20,7 +20,7 @@ MODULES =	x11/qt4 \
 
 CONFIGURE_ARGS=	-DWITH_CXX11=no
 
-WANTLIB += QtGui X11 Xi Xtst c gcrypt m ${LIBCXX} z
+WANTLIB += QtGui X11 Xi Xtst c gcrypt m ${COMPILER_LIBCXX} z
 
 LIB_DEPENDS =	security/libgcrypt
 

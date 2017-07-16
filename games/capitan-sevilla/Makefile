@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2017/05/05 11:59:27 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2017/07/16 19:18:53 espie Exp $
 
 COMMENT =		platform game set in Seville and in space
 VERSION = 		1.0.3
@@ -11,7 +11,7 @@ REVISION =		1
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB = 	alleg c freetype m ogg png pthread ${LIBCXX} vorbis vorbisfile z
+WANTLIB = 	alleg c freetype m ogg png pthread ${COMPILER_LIBCXX} vorbis vorbisfile z
 
 MASTER_SITES =		http://computeremuzone.com/pc/juegos/
 EXTRACT_SUFX = 		.tar.bz2

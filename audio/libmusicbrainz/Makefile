@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2017/04/10 11:45:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2017/07/16 19:18:48 espie Exp $
 
 PORTROACH=		limit:^3
 
@@ -14,7 +14,7 @@ HOMEPAGE=		http://musicbrainz.org/
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += discid m neon ${LIBCXX}
+WANTLIB += discid m neon ${COMPILER_LIBCXX}
 
 MASTER_SITES=		ftp://ftp.musicbrainz.org/pub/musicbrainz/ \
 			http://uk.musicbrainz.org/pub/musicbrainz/

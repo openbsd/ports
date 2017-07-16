@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2017/04/10 11:46:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2017/07/16 19:19:02 espie Exp $
 
 COMMENT=	text search engine by CNIDR
 
@@ -9,7 +9,7 @@ CATEGORIES=	textproc databases
 
 # License: BSD
 PERMIT_PACKAGE_CDROM=	Yes
-WANTLIB=		c m ${LIBCXX} 
+WANTLIB=		c m ${COMPILER_LIBCXX} 
 
 MASTER_SITES=	ftp://ftp.cnidr.org/pub/software/Isearch/
 

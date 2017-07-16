@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2017/05/31 08:08:15 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2017/07/16 19:18:53 espie Exp $
 
 COMMENT =		flexible keyboardless emulator frontend
 
@@ -13,7 +13,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += GL GLU SDL2 boost_date_time-mt boost_filesystem-mt
 WANTLIB += boost_locale-mt boost_system-mt c curl freeimage freetype
-WANTLIB += m pthread ${LIBECXX}
+WANTLIB += m pthread ${COMPILER_LIBCXX}
 
 GH_ACCOUNT =		Aloshi
 GH_PROJECT =		EmulationStation

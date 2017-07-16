@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2017/04/10 11:46:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2017/07/16 19:18:55 espie Exp $
 
 COMMENT =	Tetris and Pong played simultaneously on one playing field
 DISTNAME =	tong-1.3
@@ -10,7 +10,7 @@ HOMEPAGE =	http://www.nongnu.org/tong/
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += SDL SDL_image SDL_mixer c m pthread ${LIBCXX}
+WANTLIB += SDL SDL_image SDL_mixer c m pthread ${COMPILER_LIBCXX}
 
 MASTER_SITES =	http://www.nongnu.org/tong/
 

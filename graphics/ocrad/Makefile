@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2017/04/10 11:46:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2017/07/16 19:18:57 espie Exp $
 
 COMMENT=	OCR program for pnm files
 
@@ -11,7 +11,7 @@ MAINTAINER=	William Yodlowsky <william@openbsd.org>
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	c m ${LIBCXX}
+WANTLIB=	c m ${COMPILER_LIBCXX}
 
 MASTER_SITES=	${MASTER_SITE_GNU:=ocrad/}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2017/05/28 08:15:35 awolk Exp $
+# $OpenBSD: Makefile,v 1.13 2017/07/16 19:18:57 espie Exp $
 
 COMMENT =		native Gtk+ Twitter client
 
@@ -24,7 +24,7 @@ WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gspell-1 gstbase-1.0
 WANTLIB += gstreamer-1.0 gstvideo-1.0 gthread-2.0 gtk-3 harfbuzz
 WANTLIB += json-glib-1.0 lzma m orc-0.4 pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
-WANTLIB += rest-0.7 soup-2.4 soup-gnome-2.4 sqlite3 ${LIBCXX} xcb
+WANTLIB += rest-0.7 soup-2.4 soup-gnome-2.4 sqlite3 ${COMPILER_LIBCXX} xcb
 WANTLIB += xcb-render xcb-shm xml2 z
 
 MODULES =		devel/dconf \

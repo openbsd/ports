@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2017/05/25 16:31:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2017/07/16 19:19:02 espie Exp $
 
 COMMENT-main =		daemon for controlling APC UPSes
 COMMENT-cgi =		CGI scripts for web monitoring
@@ -19,7 +19,7 @@ MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		${LIBCXX} c m pthread
+WANTLIB =		${COMPILER_LIBCXX} c m pthread
 
 LIB_DEPENDS-main = 	devel/libusb-compat
 WANTLIB-main =		${WANTLIB} usb

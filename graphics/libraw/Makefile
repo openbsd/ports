@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2017/07/03 17:29:06 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.26 2017/07/16 19:18:57 espie Exp $
 
 BROKEN-hppa =		undefined reference to __sync_fetch_and_add_4
 
@@ -16,7 +16,7 @@ HOMEPAGE =		https://www.libraw.org/
 # LGPL v2.1 OR CDDL v1.0 OR their own
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c jasper jpeg lcms2 m pthread ${LIBCXX}
+WANTLIB += c jasper jpeg lcms2 m pthread ${COMPILER_LIBCXX}
 
 MASTER_SITES =		https://www.libraw.org/data/
 

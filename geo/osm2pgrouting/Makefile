@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2017/04/10 11:46:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2017/07/16 19:18:50 espie Exp $
 
 V =			2.0.0
 COMMENT =		convert OSM data to PgRouting format
@@ -10,7 +10,7 @@ HOMEPAGE =		http://pgrouting.org
 # GPLv2 only
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += 		c expat m pq ${LIBCXX}
+WANTLIB += 		c expat m pq ${COMPILER_LIBCXX}
 
 GH_ACCOUNT =		pgRouting
 GH_PROJECT =		osm2pgrouting

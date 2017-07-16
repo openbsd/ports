@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2017/05/12 14:11:54 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2017/07/16 19:18:54 espie Exp $
 
 BROKEN-sparc64 =	Illegal operands error building SDL_gfxPrimitives.cpp
 
@@ -23,7 +23,7 @@ LIB_DEPENDS =		devel/sdl-net		\
 			devel/sdl-ttf
 
 WANTLIB +=		SDL SDL_image SDL_mixer SDL_net SDL_ttf X11 Xau
-WANTLIB +=		Xdmcp Xext Xrandr Xrender c freetype m pthread ${LIBCXX}
+WANTLIB +=		Xdmcp Xext Xrandr Xrender c freetype m pthread ${COMPILER_LIBCXX}
 
 USE_GMAKE =		Yes
 MODULES +=		devel/cmake \

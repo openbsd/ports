@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2017/06/12 10:57:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2017/07/16 19:19:03 espie Exp $
 
 MULTI_PACKAGES=		-main -mysql -pgsql
 
@@ -62,7 +62,7 @@ WANTLIB-main=		${WANTLIB} c sqlite3
 
 LIB_DEPENDS-mysql=	${BASE_PKGPATH},-main \
 			databases/mariadb
-WANTLIB-mysql=		${WANTLIB} crypto mysqlclient rdf ${LIBCXX}
+WANTLIB-mysql=		${WANTLIB} crypto mysqlclient rdf ${COMPILER_LIBCXX}
 
 LIB_DEPENDS-pgsql=	${BASE_PKGPATH},-main \
 			databases/postgresql

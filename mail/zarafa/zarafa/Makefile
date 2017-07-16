@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.204 2017/05/12 15:11:18 espie Exp $
+# $OpenBSD: Makefile,v 1.205 2017/07/16 19:18:59 espie Exp $
 
 COMMENT-main=	MS Exchange groupware suite replacement
 COMMENT-mapi=	zarafa MAPI extensions for PHP
@@ -57,7 +57,7 @@ WANTLIB-main += ${WANTLIB} ${MODPY_WANTLIB}
 WANTLIB-main += c ical icalss lber-2.4
 WANTLIB-main += mysqlclient ncurses sasl2 ssl util xml2
 WANTLIB-main += ldap_r-2.4 gsoapssl++
-WANTLIB-main += ffi gmp gnutls hogweed nettle p11-kit ${LIBCXX} tasn1
+WANTLIB-main += ffi gmp gnutls hogweed nettle p11-kit ${COMPILER_LIBCXX} tasn1
 
 RUN_DEPENDS-main=${MODGETTEXT_RUN_DEPENDS} \
 		${MODPY_RUN_DEPENDS} \
@@ -79,7 +79,7 @@ LIB_DEPENDS-main= ${MODGETTEXT_LIB_DEPENDS} \
 WANTLIB-mapi += ${WANTLIB}
 WANTLIB-mapi += freebusy ical icalmapi icalss inetmapi mapi
 WANTLIB-mapi += xml2
-WANTLIB-mapi += ffi gmp gnutls hogweed nettle p11-kit ${LIBCXX} tasn1
+WANTLIB-mapi += ffi gmp gnutls hogweed nettle p11-kit ${COMPILER_LIBCXX} tasn1
 WANTLIB-mapi += zcp_common_mapi zcp_common_util
 
 LIB_DEPENDS-mapi= ${BASE_PKGPATH}>=${V}

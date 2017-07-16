@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2017/04/10 11:46:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.59 2017/07/16 19:19:01 espie Exp $
 
 COMMENT=	DTP program
 DISTNAME=	scribus-1.4.5
@@ -11,7 +11,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB +=	QtGui QtNetwork QtXml c cairo cups execinfo
 WANTLIB +=	fontconfig freetype hyphen jpeg lcms2 m podofo pthread
-WANTLIB +=	${LIBCXX} tiff util xml2 z ${MODPY_WANTLIB}
+WANTLIB +=	${COMPILER_LIBCXX} tiff util xml2 z ${MODPY_WANTLIB}
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=scribus/}
 

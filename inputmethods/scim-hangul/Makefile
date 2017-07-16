@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2017/04/10 11:46:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2017/07/16 19:18:57 espie Exp $
 
 COMMENT=	scim input method module for hangul
 
@@ -18,7 +18,7 @@ WANTLIB+= fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB+= glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
 WANTLIB+= gtk-x11-2.0 hangul harfbuzz m pango-1.0 pangocairo-1.0
 WANTLIB+= pangoft2-1.0 pcre pixman-1 png pthread-stubs pthread scim-1.0
-WANTLIB+= scim-gtkutils-1.0 scim-x11utils-1.0 ${LIBCXX} xcb xcb-render
+WANTLIB+= scim-gtkutils-1.0 scim-x11utils-1.0 ${COMPILER_LIBCXX} xcb xcb-render
 WANTLIB+= xcb-shm z
 
 MODULES=	devel/gettext

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2017/04/10 11:45:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2017/07/16 19:18:51 espie Exp $
 
 COMMENT =	compares and merges multiple files or directories
 
@@ -13,7 +13,7 @@ MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=kdiff3/}
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =	ICE QtGui SM X11 Xext Xi Xinerama Xrender
-WANTLIB +=	c fontconfig freetype m pthread ${LIBCXX}
+WANTLIB +=	c fontconfig freetype m pthread ${COMPILER_LIBCXX}
 
 MODULES =	x11/qt4 devel/qmake
 

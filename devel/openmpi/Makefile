@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2017/05/14 14:30:03 schwarze Exp $
+# $OpenBSD: Makefile,v 1.22 2017/07/16 19:18:51 espie Exp $
 
 BROKEN-arm =		configure: error: No atomic primitives available for arm-unknown-openbsd6.0
 BROKEN-hppa =		error: Could not determine global symbol label prefix
@@ -28,7 +28,7 @@ BUILD_DEPENDS +=	${MODFORTRAN_BUILD_DEPENDS}
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB	+=		c m pthread ${LIBCXX} util z
+WANTLIB	+=		c m pthread ${COMPILER_LIBCXX} util z
 
 MASTER_SITES =		${HOMEPAGE}/software/ompi/v${V:C/^([0-9]+\.[0-9]+).*/\1/}/downloads/
 

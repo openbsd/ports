@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2017/04/10 11:46:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2017/07/16 19:18:54 espie Exp $
 
 COMMENT=	sdl port of xkobo
 DISTNAME=	KoboDeluxe-0.5.1
@@ -20,7 +20,7 @@ PATCH_LIST=patch-* extra-hard
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	SDL c m pthread ${LIBCXX} SDL_image
+WANTLIB=	SDL c m pthread ${COMPILER_LIBCXX} SDL_image
 
 LIB_DEPENDS=	devel/sdl-image
 

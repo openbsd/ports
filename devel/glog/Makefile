@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2017/04/10 11:45:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2017/07/16 19:18:51 espie Exp $
 
 COMMENT =		C++ application-level logging library
 
@@ -16,7 +16,7 @@ MAINTAINER =		Vincent Auclair <auclair.vincent@gmail.com>
 # New BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += gflags m pthread ${LIBCXX}
+WANTLIB += gflags m pthread ${COMPILER_LIBCXX}
 
 MASTER_SITES =		${HOMEPAGE}/files/
 

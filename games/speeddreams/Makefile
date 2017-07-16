@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2017/04/10 11:46:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2017/07/16 19:18:55 espie Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 
@@ -24,7 +24,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB-main += GL GLU ICE OpenThreads SDL2 SM X11 Xext Xrandr c enet
 WANTLIB-main += expat jpeg m ogg openal osg osgDB osgFX osgGA osgParticle
-WANTLIB-main += osgShadow osgUtil osgViewer png pthread ${LIBCXX} vorbis
+WANTLIB-main += osgShadow osgUtil osgViewer png pthread ${COMPILER_LIBCXX} vorbis
 WANTLIB-main += vorbisfile z
 WANTLIB-data = #empty
 

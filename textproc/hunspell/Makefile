@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2017/04/12 18:09:01 landry Exp $
+# $OpenBSD: Makefile,v 1.16 2017/07/16 19:19:02 espie Exp $
 
 COMMENT =	spelling, stemming, morphological analysis and generation
 
@@ -17,7 +17,7 @@ HOMEPAGE =	http://hunspell.github.io/
 # GPL/LGPL/MPL
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c m ncurses ncursesw readline ${LIBCXX}
+WANTLIB += c m ncurses ncursesw readline ${COMPILER_LIBCXX}
 
 MODULES =		devel/gettext
 

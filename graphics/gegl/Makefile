@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2017/05/17 09:58:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.57 2017/07/16 19:18:56 espie Exp $
 
 PORTROACH=		limit:^0\.2
 
@@ -53,7 +53,7 @@ LIB_DEPENDS-main= 	${LIB_DEPENDS} \
 			x11/gnome/librsvg \
 			graphics/babl>=0.1.10
 
-WANTLIB-plugins += ${WANTLIB} ${LIBCXX} ${LIBECXX}
+WANTLIB-plugins += ${WANTLIB} ${COMPILER_LIBCXX} ${COMPILER_LIBCXX}
 WANTLIB-plugins += gsm mp3lame ogg IlmImf avutil bz2 speex
 WANTLIB-plugins += vorbis vorbisenc x264 avcodec avformat vpx
 WANTLIB-plugins += Half Iex IexMath IlmThread Imath xvidcore

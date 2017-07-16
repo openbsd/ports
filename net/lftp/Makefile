@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.116 2017/06/29 08:49:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.117 2017/07/16 19:18:58 espie Exp $
 
 COMMENT=	shell-like command line ftp and sftp client
 
@@ -14,7 +14,7 @@ MAINTAINER=	Rafael Sadowski <rafael@sizeofvoid.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c crypto curses ereadline expat iconv idn intl m ssl
-WANTLIB += ${LIBCXX} util z
+WANTLIB += ${COMPILER_LIBCXX} util z
 
 # lftp needs add_history_time()
 LIB_DEPENDS=	devel/libidn \

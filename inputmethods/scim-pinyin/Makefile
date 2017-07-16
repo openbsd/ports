@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2017/04/10 11:46:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2017/07/16 19:18:57 espie Exp $
 
 COMMENT=	scim input method module for pinyin
 
@@ -19,7 +19,7 @@ WANTLIB+= gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB+= graphite2 gthread-2.0 gtk-x11-2.0 gtk-x11-2.0 harfbuzz m
 WANTLIB+= pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png
 WANTLIB+= pthread-stubs pthread scim-1.0 scim-gtkutils-1.0
-WANTLIB+= scim-x11utils-1.0 ${LIBCXX} xcb xcb-render xcb-shm z
+WANTLIB+= scim-x11utils-1.0 ${COMPILER_LIBCXX} xcb xcb-render xcb-shm z
 
 MODULES=	devel/gettext
 

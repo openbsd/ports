@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2017/04/17 14:21:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2017/07/16 19:19:00 espie Exp $
 
 COMMENT=	extensible open standard audio/video container library
 
@@ -16,7 +16,7 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 # LGPLv2.1+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	ebml m ${LIBCXX}
+WANTLIB=	ebml m ${COMPILER_LIBCXX}
 
 LIB_DEPENDS=	textproc/libebml>=1.3.4
 

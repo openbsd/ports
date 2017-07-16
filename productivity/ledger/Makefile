@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2017/05/31 08:08:17 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2017/07/16 19:19:01 espie Exp $
 
 COMMENT =		command line double-entry accounting ledger
 
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += boost_date_time-mt boost_filesystem-mt boost_iostreams-mt
 WANTLIB += boost_regex-mt boost_system-mt boost_unit_test_framework-mt
-WANTLIB += c gmp m mpfr pthread ${LIBECXX}
+WANTLIB += c gmp m mpfr pthread ${COMPILER_LIBCXX}
 
 MODULES =		devel/cmake \
 			lang/python

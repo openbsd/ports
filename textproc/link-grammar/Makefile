@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2017/05/31 08:08:17 espie Exp $
+# $OpenBSD: Makefile,v 1.43 2017/07/16 19:19:03 espie Exp $
 
 ONLY_FOR_ARCHS-java =	i386 amd64
 
@@ -24,7 +24,7 @@ HOMEPAGE =		http://www.abisource.com/projects/link-grammar/
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += hunspell-1.6 m sqlite3 ${LIBECXX}
+WANTLIB += hunspell-1.6 m sqlite3 ${COMPILER_LIBCXX}
 
 WANTLIB-main += ${WANTLIB} c pthread
 

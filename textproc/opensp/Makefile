@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2017/04/10 11:46:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2017/07/16 19:19:03 espie Exp $
 
 COMMENT=	object-oriented SGML parser
 
@@ -17,7 +17,7 @@ HOMEPAGE=	http://openjade.sourceforge.net/
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=	devel/gettext textproc/intltool
-WANTLIB=	c m pthread ${LIBCXX}
+WANTLIB=	c m pthread ${COMPILER_LIBCXX}
 USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE} \

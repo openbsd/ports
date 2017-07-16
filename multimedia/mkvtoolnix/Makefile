@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2017/06/02 10:51:56 schwarze Exp $
+# $OpenBSD: Makefile,v 1.69 2017/07/16 19:19:00 espie Exp $
 
 COMMENT=	create, alter and inspect Matroska files
 
@@ -16,7 +16,7 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	FLAC boost_filesystem-mt boost_regex-mt boost_system-mt \
-		c ebml m magic matroska ogg pthread vorbis z ${LIBECXX}
+		c ebml m magic matroska ogg pthread vorbis z ${COMPILER_LIBCXX}
 
 MODULES=	devel/gettext \
 		lang/ruby

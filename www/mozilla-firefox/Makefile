@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.321 2017/06/30 05:24:36 landry Exp $
+# $OpenBSD: Makefile,v 1.322 2017/07/16 19:19:03 espie Exp $
 
 COMMENT =	Mozilla web browser
 
@@ -36,7 +36,7 @@ MOZILLA_USE_GTK3 = Yes
 # firefox >= 53 needs rust and cargo
 BUILD_DEPENDS +=	lang/rust devel/cargo
 
-WANTLIB += X11-xcb pixman-1 pthread-stubs xcb xcb-shm ${LIBECXX}
+WANTLIB += X11-xcb pixman-1 pthread-stubs xcb xcb-shm ${COMPILER_LIBCXX}
 
 # Regression tests are too hard to adapt to run here
 NO_TEST =	Yes

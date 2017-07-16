@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.151 2017/05/27 13:55:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.152 2017/07/16 19:19:05 espie Exp $
 
 COMMENT-main =		K Desktop Environment, basic applications
 COMMENT-samba =		K Desktop Environment, samba support
@@ -65,7 +65,7 @@ LIB_DEPENDS-samba =	${LIB_DEPENDS} \
 			x11/kde/libs3 \
 			net/samba,-main
 
-WANTLIB =  crypto expat m pthread pthread-stubs ssl ${LIBCXX} util z
+WANTLIB =  crypto expat m pthread pthread-stubs ssl ${COMPILER_LIBCXX} util z
 WANTLIB += ICE SM X11 Xext Xfixes Xrender Xt freetype fontconfig xcb
 WANTLIB += ${KDE}/DCOP ${KDE}/kdecore>=6 ${KDE}/kdefx ${KDE}/kdesu
 WANTLIB += ${KDE}/kdeui ${KDE}/kio ${KDE}/kwalletclient

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2017/04/19 09:13:28 benoit Exp $
+# $OpenBSD: Makefile,v 1.28 2017/07/16 19:18:52 espie Exp $
 
 COMMENT =		file editor/viewer/analyzer for executables
 
@@ -13,7 +13,7 @@ MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		c m ncurses ${LIBCXX}
+WANTLIB =		c m ncurses ${COMPILER_LIBCXX}
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=hte/}
 

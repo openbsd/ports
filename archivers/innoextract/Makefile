@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2017/04/10 11:45:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2017/07/16 19:18:47 espie Exp $
 
 COMMENT=	unpack Inno Setup installers
 
@@ -15,7 +15,7 @@ MAINTAINER=	Donovan Watteau <tsoomi@gmail.com>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	boost_filesystem-mt boost_iostreams-mt boost_program_options-mt
-WANTLIB+=	boost_system-mt c iconv lzma m pthread ${LIBCXX}
+WANTLIB+=	boost_system-mt c iconv lzma m pthread ${COMPILER_LIBCXX}
 
 LIB_DEPENDS=	archivers/xz \
 		converters/libiconv \

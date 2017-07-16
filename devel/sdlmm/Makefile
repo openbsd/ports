@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2017/06/14 18:34:10 schwarze Exp $
+# $OpenBSD: Makefile,v 1.33 2017/07/16 19:18:52 espie Exp $
 
 COMMENT=	C++ wrapper for the Simple DirectMedia Layer
 
@@ -15,7 +15,7 @@ HOMEPAGE=	http://sdlmm.sourceforge.net/
 # LGPLv2+
 PERMIT_PACKAGE_CDROM=   Yes
 
-WANTLIB +=	SDL iconv m pthread sndio ${LIBCXX} usbhid
+WANTLIB +=	SDL iconv m pthread sndio ${COMPILER_LIBCXX} usbhid
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=sdlmm/}
 

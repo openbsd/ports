@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2017/04/10 11:46:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.39 2017/07/16 19:18:59 espie Exp $
 
 COMMENT=	virtual machine designed for interpreted languages
 
@@ -17,7 +17,7 @@ MASTER_SITES=	http://ftp.parrot.org/releases/all/$V/ \
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += GL GLU c glut gmp icudata icuuc m ncurses pthread
-WANTLIB += readline ${LIBCXX} util z ffi
+WANTLIB += readline ${COMPILER_LIBCXX} util z ffi
 
 MODULES =		devel/gettext
 BUILD_DEPENDS=		graphics/glew \

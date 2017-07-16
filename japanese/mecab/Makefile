@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2017/04/10 11:46:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2017/07/16 19:18:57 espie Exp $
 
 # .libs/libmecab.so.0.0: undefined reference to `__sync_val_compare_and_swap_4'
 # .libs/libmecab.so.0.0: undefined reference to `__sync_add_and_fetch_4'
@@ -23,7 +23,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MULTI_PACKAGES = -main -ipadic
 
-WANTLIB-main =	c iconv m pthread ${LIBCXX}
+WANTLIB-main =	c iconv m pthread ${COMPILER_LIBCXX}
 WANTLIB-ipadic =
 
 MASTER_SITES =	${MASTER_SITE_GOOGLECODE:=mecab/}

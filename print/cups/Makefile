@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.221 2017/07/01 11:05:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.222 2017/07/16 19:19:01 espie Exp $
 
 COMMENT-main=		Common Unix Printing System
 COMMENT-libs=		CUPS libraries and headers
@@ -27,7 +27,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv2 - LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += avahi-client avahi-common gnutls iconv m pthread ${LIBCXX} z
+WANTLIB += avahi-client avahi-common gnutls iconv m pthread ${COMPILER_LIBCXX} z
 
 WANTLIB-main += ${WANTLIB}
 WANTLIB-main += c cups cupscgi cupsimage cupsmime cupsppdc dbus-1 usb-1.0

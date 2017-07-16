@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2017/05/31 08:08:16 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2017/07/16 19:18:57 espie Exp $
 
 # http://rawpedia.rawtherapee.com/The_Floating_Point_Engine
 ONLY_FOR_ARCHS = 	amd64
@@ -21,7 +21,7 @@ WANTLIB += canberra canberra-gtk3 expat fftw3f gdk-3 gdk_pixbuf-2.0
 WANTLIB += gdkmm-3.0 gio-2.0 giomm-2.4 glib-2.0 glibmm-2.4 gobject-2.0
 WANTLIB += gthread-2.0 gtk-3 gtkmm-3.0 intl iptcdata jpeg lcms2
 WANTLIB += m pango-1.0 pangocairo-1.0 pangomm-1.4 png pthread
-WANTLIB += sigc-2.0 tiff z ${LIBECXX}
+WANTLIB += sigc-2.0 tiff z ${COMPILER_LIBCXX}
 
 MASTER_SITES =		http://www.rawtherapee.com/shared/source/
 EXTRACT_SUFX = 		.tar.xz

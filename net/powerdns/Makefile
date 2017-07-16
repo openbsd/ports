@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2017/07/10 07:42:13 florian Exp $
+# $OpenBSD: Makefile,v 1.55 2017/07/16 19:18:58 espie Exp $
 
 BROKEN-hppa =		undefined reference to '__sync_fetch_and_add_4'
 
@@ -26,7 +26,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 COMPILER =		gcc
 
-WANTLIB += m pthread ${LIBECXX}
+WANTLIB += m pthread ${COMPILER_LIBCXX}
 #WANTLIB += ${MODGCC4_CPPWANTLIB}
 
 WANTLIB-main += ${WANTLIB}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2017/06/09 15:09:51 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.60 2017/07/16 19:18:48 espie Exp $
 
 BROKEN-alpha =		error: looser throw specifier for 'virtual OutOfBounds::~OutOfBounds()'
 BROKEN-hppa =		bindings.h:85:4: error: type 'Binding' is not a direct base of 'Binding'
@@ -22,7 +22,7 @@ WANTLIB += boost_date_time-mt boost_filesystem-mt boost_locale-mt
 WANTLIB += boost_program_options-mt boost_regex-mt boost_system-mt
 WANTLIB += boost_thread-mt c crypto curl ereadline m mpdclient
 WANTLIB += ncursesw nghttp2 pthread ssl ${LIBCXX} tag termcap z
-WANTLIB += ${LIBECXX}
+WANTLIB += ${COMPILER_LIBCXX}
 
 MASTER_SITES =		${HOMEPAGE}stable/
 

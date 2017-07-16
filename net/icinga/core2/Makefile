@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2017/05/31 08:08:17 espie Exp $
+# $OpenBSD: Makefile,v 1.64 2017/07/16 19:18:58 espie Exp $
 
 BROKEN-arm =	needs atomic ops; __sync_add_and_fetch_4
 BROKEN-hppa =	needs atomic ops; __sync_add_and_fetch_4
@@ -43,7 +43,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB += boost_atomic-mt boost_chrono-mt boost_date_time-mt
 WANTLIB += boost_program_options-mt boost_regex-mt boost_system-mt
 WANTLIB += boost_thread-mt crypto execinfo m pthread ssl
-WANTLIB += yajl ${LIBECXX}
+WANTLIB += yajl ${COMPILER_LIBCXX}
 
 MODULES =		devel/cmake
 

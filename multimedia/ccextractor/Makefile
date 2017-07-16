@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2017/04/10 11:46:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2017/07/16 19:19:00 espie Exp $
 
 MAINTAINER = 	Marc Espie <espie@openbsd.org>
 CATEGORIES =	multimedia
@@ -27,6 +27,6 @@ do-install:
 		${INSTALL_DATA} $$i ${DOCDIR}; \
 	done
 
-WANTLIB +=	c m ${LIBCXX} 
+WANTLIB +=	c m ${COMPILER_LIBCXX} 
 
 .include <bsd.port.mk>

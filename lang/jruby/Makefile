@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2017/06/21 15:38:00 jeremy Exp $
+# $OpenBSD: Makefile,v 1.65 2017/07/16 19:18:59 espie Exp $
 
 # Runtime failures on i386 in IO#pos and IO#rewind
 ONLY_FOR_ARCHS = amd64
@@ -29,7 +29,7 @@ MODJAVA_VER =	1.8+
 MODJAVA_JRERUN = Yes
 USE_GMAKE =	Yes
 
-WANTLIB =	c m pthread ${LIBCXX}
+WANTLIB =	c m pthread ${COMPILER_LIBCXX}
 
 BUILD_DEPENDS =	devel/apache-ant \
 		shells/bash \

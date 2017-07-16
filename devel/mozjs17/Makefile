@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2017/04/10 11:45:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2017/07/16 19:18:51 espie Exp $
 
 # based on ffx 17 engine
 # jsapi-tests crashes in js::MarkRangeConservatively() on hppa (SIGSEGV in js/src/jsgc.cpp:1142)
@@ -28,7 +28,7 @@ MAINTAINER =	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 # MPL
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c m pthread readline nspr4 ncurses plc4 plds4 ${LIBCXX} z
+WANTLIB += c m pthread readline nspr4 ncurses plc4 plds4 ${COMPILER_LIBCXX} z
 
 MODULES =	lang/python
 MODPY_RUNDEP =	No

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2017/04/10 11:46:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.52 2017/07/16 19:19:04 espie Exp $
 
 COMMENT =		ruby web application server/nginx module
 BROKEN-alpha =		.got subsegment exceeds 64K (size 83312)
@@ -25,7 +25,7 @@ MODULES =		devel/gettext \
 
 CONFIGURE_STYLE =	gem ext
 
-WANTLIB =	${MODRUBY_WANTLIB} crypto curl kvm nghttp2 pcre pthread ssl ${LIBCXX} z
+WANTLIB =	${MODRUBY_WANTLIB} crypto curl kvm nghttp2 pcre pthread ssl ${COMPILER_LIBCXX} z
 
 # Make devel/gmake a BUILD_DEPEND instead of USE_GMAKE, as the port also uses
 # BSD make. Depend on gsed as embedded libuv picks it up if present.

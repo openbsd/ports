@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2017/04/30 15:38:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.57 2017/07/16 19:18:48 espie Exp $
 
 COMMENT=	front-end to external cd audio rippers and mp3 encoders
 
@@ -20,7 +20,7 @@ WANTLIB += cdda_paranoia crypto curl fontconfig freetype gconf-2
 WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gnome-2 gnomecanvas-2 gnomeui-2 gnomevfs-2 gobject-2.0
 WANTLIB += gthread-2.0 gtk-x11-2.0 id3 intl m nghttp2 pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 popt pthread ssl ${LIBCXX} vte z
+WANTLIB += pangocairo-1.0 pangoft2-1.0 popt pthread ssl ${COMPILER_LIBCXX} vte z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=grip/}
 

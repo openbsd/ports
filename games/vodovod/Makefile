@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2017/05/24 18:49:31 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2017/07/16 19:18:55 espie Exp $
 
 COMMENT=	combine pipes to lead water from the house to the tank
 
@@ -12,7 +12,7 @@ HOMEPAGE=	http://home.gna.org/vodovod/
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	SDL c m pthread ${LIBCXX} SDL_image SDL_mixer
+WANTLIB=	SDL c m pthread ${COMPILER_LIBCXX} SDL_image SDL_mixer
 
 MASTER_SITES=	http://download.gna.org/vodovod/
 

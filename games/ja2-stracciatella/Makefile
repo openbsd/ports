@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/06/13 09:24:23 kirby Exp $
+# $OpenBSD: Makefile,v 1.2 2017/07/16 19:18:56 espie Exp $
 
 COMMENT =	Jagged Alliance 2 engine
 
@@ -16,7 +16,7 @@ MAINTAINER =	Nils Reusse <n.reusse@hxgn.net>
 PERMIT_PACKAGE_CDROM =	No commercial use allowed by SFI-SCLA
 PERMIT_PACKAGE_FTP =	Yes
 
-WANTLIB +=	boost_filesystem boost_system c m pthread SDL ${LIBCXX}
+WANTLIB +=	boost_filesystem boost_system c m pthread SDL ${COMPILER_LIBCXX}
 
 LIB_DEPENDS =	devel/sdl \
 		devel/boost

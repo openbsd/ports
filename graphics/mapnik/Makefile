@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2017/05/31 08:08:16 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2017/07/16 19:18:57 espie Exp $
 
 BROKEN =	undefined reference to '_ZN6icu_5613UnicodeStringC1EOS0_'
 
@@ -28,7 +28,7 @@ WANTLIB += boost_program_options-mt boost_regex-mt harfbuzz webp
 WANTLIB += boost_system-mt c cairo expat fontconfig
 WANTLIB += freetype gdal glib-2.0 gobject-2.0 icuuc jpeg m pcre pixman-1
 WANTLIB += png>=17.0 pq proj pthread pthread-stubs sqlite3 tiff
-WANTLIB += xcb xcb-render xcb-shm z ${LIBECXX}
+WANTLIB += xcb xcb-render xcb-shm z ${COMPILER_LIBCXX}
 
 MASTER_SITES =	http://mapnik.s3.amazonaws.com/dist/v3.0.10/
 MODULES =	devel/gettext \

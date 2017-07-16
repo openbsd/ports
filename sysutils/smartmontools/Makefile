@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2017/04/21 17:08:01 giovanni Exp $
+# $OpenBSD: Makefile,v 1.31 2017/07/16 19:19:02 espie Exp $
 
 ONLY_FOR_ARCHS=		amd64 i386 powerpc
 
@@ -14,7 +14,7 @@ MAINTAINER=		Giovanni Bechis <giovanni@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		c m ${LIBCXX} util
+WANTLIB=		c m ${COMPILER_LIBCXX} util
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=smartmontools/}
 
 SEPARATE_BUILD=		Yes

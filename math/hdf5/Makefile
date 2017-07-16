@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2017/06/28 10:16:40 feinerer Exp $
+# $OpenBSD: Makefile,v 1.12 2017/07/16 19:19:00 espie Exp $
 
 COMMENT =		Hierarchical Data Format 5 Technology suite
 
@@ -19,7 +19,7 @@ MAINTAINER =		Ingo Feinerer <feinerer@logic.at>
 # https://www.hdfgroup.org/ftp/HDF5/current/src/unpacked/COPYING
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c m ${LIBCXX} z
+WANTLIB += c m ${COMPILER_LIBCXX} z
 
 MASTER_SITES =		https://support.hdfgroup.org/ftp/HDF5/current18/src/ \
 			https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-${V}/src/

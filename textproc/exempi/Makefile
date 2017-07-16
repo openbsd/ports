@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2017/04/10 11:46:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2017/07/16 19:19:02 espie Exp $
 
 # g++3 chokes on the code
 NOT_FOR_ARCHS=	${GCC3_ARCHS}
@@ -16,7 +16,7 @@ HOMEPAGE =		http://libopenraw.freedesktop.org/wiki/Exempi
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c expat m pthread ${LIBCXX} z
+WANTLIB += c expat m pthread ${COMPILER_LIBCXX} z
 
 # configure checks for libiconv but it's unused
 BUILD_DEPENDS =		converters/libiconv

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2017/04/10 11:45:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2017/07/16 19:18:48 espie Exp $
 
 COMMENT=	decoding library for KDE Multimedia
 
@@ -18,7 +18,7 @@ DISTFILES=	30375-${DISTNAME}${EXTRACT_SUFX}
 # LGPLv2
 PERMIT_PACKAGE_CDROM=   Yes
 
-WANTLIB=	FLAC c ltdl m mad ogg pthread samplerate sndio speex ${LIBCXX} \
+WANTLIB=	FLAC c ltdl m mad ogg pthread samplerate sndio speex ${COMPILER_LIBCXX} \
 		vorbis vorbisenc vorbisfile z
 
 LIB_DEPENDS=	audio/flac \

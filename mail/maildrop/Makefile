@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2017/06/02 08:56:32 schwarze Exp $
+# $OpenBSD: Makefile,v 1.59 2017/07/16 19:18:59 espie Exp $
 
 COMMENT-main=		mail delivery agent with filtering abilities
 COMMENT-utils=		quota tools for the Courier mail suite
@@ -86,7 +86,7 @@ LIB_DEPENDS=		devel/libidn \
 
 WANTLIB =		c idn courier-unicode
 
-WANTLIB-main=		${WANTLIB} gdbm m ${LIBCXX} gdbm>=3 pcre>=1 courierauth
+WANTLIB-main=		${WANTLIB} gdbm m ${COMPILER_LIBCXX} gdbm>=3 pcre>=1 courierauth
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			databases/gdbm \
 			devel/pcre \

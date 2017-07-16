@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2017/06/01 11:44:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2017/07/16 19:18:56 espie Exp $
 
 COMMENT=		graph based image processing framework (API version 0.3)
 
@@ -24,7 +24,7 @@ WANTLIB += fontconfig freetype gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 harfbuzz
 WANTLIB += iconv intl jasper jpeg json-glib-1.0 lcms2 lzma m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
-WANTLIB += pthread-stubs raw rsvg-2 ${LIBCXX} tiff webp xcb xcb-render
+WANTLIB += pthread-stubs raw rsvg-2 ${COMPILER_LIBCXX} tiff webp xcb xcb-render
 WANTLIB += xcb-shm xml2 z
 
 MASTER_SITES=		http://download.gimp.org/pub/gegl/${API_VERSION}/

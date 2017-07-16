@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2017/04/10 11:46:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2017/07/16 19:18:55 espie Exp $
 
 COMMENT =	politics and government game with liberal bias
 DISTNAME =	liberalcrimesquad-4.07.0
@@ -10,7 +10,7 @@ HOMEPAGE =	http://lcs.wikidot.com/
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c iconv m ncurses ${LIBCXX}
+WANTLIB += c iconv m ncurses ${COMPILER_LIBCXX}
 
 MASTER_SITES =	http://mirrors.nycbug.org/pub/distfiles/
 

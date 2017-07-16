@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2017/04/10 11:46:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.47 2017/07/16 19:19:00 espie Exp $
 
 COMMENT =	Victor Shoup's Number Theory Library
 
@@ -13,7 +13,7 @@ MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		m gmp ${LIBCXX}
+WANTLIB =		m gmp ${COMPILER_LIBCXX}
 
 MASTER_SITES =		${HOMEPAGE}
 

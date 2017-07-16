@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2017/04/10 11:46:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.48 2017/07/16 19:19:05 espie Exp $
 
 COMMENT-main=	python Qt4 bindings
 COMMENT-docs=	py-qt4 documentation
@@ -24,7 +24,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += GL ICE QtDBus QtDeclarative QtDesigner QtGui QtHelp QtMultimedia
 WANTLIB += QtNetwork QtOpenGL QtScript QtScriptTools QtSql QtSvg QtTest
 WANTLIB += QtWebKit QtXml QtXmlPatterns SM X11 Xext Xi Xinerama Xrender
-WANTLIB += c dbus-1 fontconfig freetype m phonon pthread ${LIBCXX}
+WANTLIB += c dbus-1 fontconfig freetype m phonon pthread ${COMPILER_LIBCXX}
 WANTLIB += ${MODPY_WANTLIB}
 
 MULTI_PACKAGES=	-main -docs

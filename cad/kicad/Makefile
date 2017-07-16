@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2017/04/10 11:45:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2017/07/16 19:18:49 espie Exp $
 
 COMMENT-main=	schematic and PCB editing software
 COMMENT-docs=	documentation for the kicad library of components
@@ -44,7 +44,7 @@ RUN_DEPENDS-main=	cad/kicad-library \
 
 LIB_DEPENDS=	x11/wxWidgets
 
-WANTLIB-main += ${WANTLIB} GL GLU c m pthread ${LIBCXX}
+WANTLIB-main += ${WANTLIB} GL GLU c m pthread ${COMPILER_LIBCXX}
 WANTLIB-main += ICE SM X11 Xext wx_base wx_base_net wx_gtk2_adv wx_gtk2_aui
 WANTLIB-main += wx_gtk2_core wx_gtk2_gl wx_gtk2_html z
 WANTLIB-docs=

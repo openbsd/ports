@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2017/04/10 11:46:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2017/07/16 19:19:02 espie Exp $
 
 COMMENT=		implementation of the iCalendar protocols and data units
 
@@ -19,7 +19,7 @@ HOMEPAGE=		https://libical.github.io/libical/
 # MPL/LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += icui18n icuuc m pthread ${LIBCXX}
+WANTLIB += icui18n icuuc m pthread ${COMPILER_LIBCXX}
 
 MODULES=		devel/cmake
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2017/04/10 11:46:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2017/07/16 19:19:02 espie Exp $
 
 COMMENT =		fuzzy hashing program and library
 
@@ -15,7 +15,7 @@ MAINTAINER =		Lawrence Teo <lteo@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		c m ${LIBCXX}
+WANTLIB =		c m ${COMPILER_LIBCXX}
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=ssdeep/}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2017/04/10 11:45:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2017/07/16 19:18:49 espie Exp $
 
 COMMENT =		provides functions to access serial ports
 
@@ -26,7 +26,7 @@ MODULES =		devel/qmake x11/qt4
 FAKE_FLAGS =		INSTALL_ROOT=${WRKINST}
 NO_TEST =		Yes
 
-WANTLIB += m pthread ${LIBCXX}
+WANTLIB += m pthread ${COMPILER_LIBCXX}
 
 .for l v in $(SHARED_LIBS)
 MAKE_FLAGS +=   LIB$l_VERSION=$v

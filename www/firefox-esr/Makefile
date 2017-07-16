@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2017/06/30 05:26:23 landry Exp $
+# $OpenBSD: Makefile,v 1.60 2017/07/16 19:19:03 espie Exp $
 
 COMMENT =	Firefox web browser, Extended Support Release
 
@@ -31,7 +31,7 @@ MOZILLA_USE_BUNDLED_LIBEVENT =	Yes
 # firefox >= 46 defaults to gtk+3
 MOZILLA_USE_GTK3 = Yes
 
-WANTLIB += X11-xcb pixman-1 pthread-stubs xcb xcb-shm ${LIBECXX}
+WANTLIB += X11-xcb pixman-1 pthread-stubs xcb xcb-shm ${COMPILER_LIBCXX}
 
 # Regression tests are too hard to adapt to run here
 NO_TEST =	Yes

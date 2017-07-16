@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.256 2017/07/11 23:04:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.257 2017/07/16 19:18:59 espie Exp $
 
 COMMENT-server=	compact IMAP/POP3 server
 COMMENT-ldap=	LDAP authentication / dictionary support for Dovecot
@@ -37,7 +37,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB-server=	bz2 c crypto iconv lz4 lzma pthread sqlite3 ssl z
 WANTLIB-ldap=	crypto lber-2.4 ldap-2.4 sasl2 ssl lib/dovecot/dovecot
-WANTLIB-mysql=	crypto m lib/mysql/mysqlclient pthread ssl ${LIBCXX} z
+WANTLIB-mysql=	crypto m lib/mysql/mysqlclient pthread ssl ${COMPILER_LIBCXX} z
 WANTLIB-postgresql= crypto pq>=4 ssl
 
 LIB_DEPENDS+=	archivers/bzip2 \

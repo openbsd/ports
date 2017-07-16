@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2017/05/17 20:09:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2017/07/16 19:18:52 espie Exp $
 
 COMMENT =	C++ unit test framework
 
@@ -23,7 +23,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 SEPARATE_BUILD =	Yes
 
-WANTLIB =		m ${LIBCXX}
+WANTLIB =		m ${COMPILER_LIBCXX}
 
 MODULES +=		devel/cmake
 CONFIGURE_ARGS =	-DBUILD_SHARED_LIBS=ON \

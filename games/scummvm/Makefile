@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2017/06/01 11:57:42 espie Exp $
+# $OpenBSD: Makefile,v 1.71 2017/07/16 19:18:55 espie Exp $
 
 COMMENT=	graphical adventure game interpreter
 V=		1.9.0
@@ -14,7 +14,7 @@ MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += FLAC SDL2 c faad freetype jpeg m mad png sndio ${LIBECXX}
+WANTLIB += FLAC SDL2 c faad freetype jpeg m mad png sndio ${COMPILER_LIBCXX}
 WANTLIB += theoradec z
 
 .if ${MACHINE_ARCH} == "i386"

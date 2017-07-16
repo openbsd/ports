@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2017/04/10 11:45:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2017/07/16 19:18:48 espie Exp $
 
 COMMENT=		interactive console id3 tag editor
 
@@ -11,7 +11,7 @@ HOMEPAGE=		http://code.fluffytapeworm.com/projects/id3ed/
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		c curses m readline ${LIBCXX}
+WANTLIB=		c curses m readline ${COMPILER_LIBCXX}
 
 MASTER_SITES=		${HOMEPAGE}
 

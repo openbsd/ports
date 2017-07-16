@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2017/05/31 08:08:17 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2017/07/16 19:19:02 espie Exp $
 
 COMMENT =	website access log visualization
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 MASTER_SITES =	https://github.com/acaudwell/Logstalgia/releases/download/${DISTNAME}/
 
 WANTLIB += GL GLEW GLU SDL2 SDL2_image c freetype iconv m pcre png pthread
-WANTLIB += z ${LIBECXX}
+WANTLIB += z ${COMPILER_LIBCXX}
 
 COMPILER =	gcc
 

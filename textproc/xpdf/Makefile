@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.87 2017/04/10 11:46:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.88 2017/07/16 19:19:03 espie Exp $
 
 COMMENT=	PDF viewer for X11
 
@@ -28,7 +28,7 @@ MAKE_ENV+=MOTIFLIB='-L${LOCALBASE}/lib -lXm'
 RUN_DEPENDS=	print/ghostscript/gnu-fonts
 
 WANTLIB=	ICE SM X11 Xext Xpm Xt freetype Xm \
-		c m png pthread ${LIBCXX} z
+		c m png pthread ${COMPILER_LIBCXX} z
 
 NO_TEST=	Yes
 

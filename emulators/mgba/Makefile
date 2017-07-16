@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2017/05/31 08:08:15 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2017/07/16 19:18:53 espie Exp $
 
 COMMENT-main =		Game Boy Color/Advance emulator
 COMMENT-qt =		Game Boy Color/Advance emulator with GUI
@@ -31,7 +31,7 @@ cWANTLIB =		GL GLU MagickCore-6.Q16 MagickWand-6.Q16 SDL2 \
 			pthread swscale termcap z zip epoxy
 WANTLIB-main =		${cWANTLIB}
 WANTLIB-qt =		${cWANTLIB} Qt5Core Qt5Gui Qt5Multimedia \
-			Qt5Network Qt5OpenGL Qt5Widgets ${LIBECXX} mgba
+			Qt5Network Qt5OpenGL Qt5Widgets ${COMPILER_LIBCXX} mgba
 WANTLIB-libretro =	m pthread
 
 GH_ACCOUNT =		mgba-emu

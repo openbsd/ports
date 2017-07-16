@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2017/05/08 20:13:47 kili Exp $
+# $OpenBSD: Makefile,v 1.17 2017/07/16 19:18:53 espie Exp $
 
 COMMENT =	2D arcade game
 
@@ -14,7 +14,7 @@ MAINTAINER =	Matthias Kilian <kili@openbsd.org>
 # LGPLv2.1, BSD, GPLv2, "Public Domain", "Fair use".
 PERMIT_PACKAGE_CDROM =		Yes
 
-WANTLIB =	SDL2 SDL2_image SDL2_mixer SDL2_net SDL2_ttf c m pthread ${LIBCXX} z
+WANTLIB =	SDL2 SDL2_image SDL2_mixer SDL2_net SDL2_ttf c m pthread ${COMPILER_LIBCXX} z
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=blobwars/}
 

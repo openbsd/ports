@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2017/04/10 11:45:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2017/07/16 19:18:52 espie Exp $
 
 COMMENT =		C++ logging library
 DISTNAME =		rlog-1.4
@@ -10,7 +10,7 @@ REVISION =		0
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		m pthread ${LIBCXX}
+WANTLIB =		m pthread ${COMPILER_LIBCXX}
 MASTER_SITES =		${MASTER_SITE_GOOGLECODE:=rlog/}
 CONFIGURE_STYLE =	gnu
 

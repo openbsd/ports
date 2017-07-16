@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2017/05/15 19:54:22 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.72 2017/07/16 19:18:56 espie Exp $
 
 COMMENT=	library for dynamic creation of images
 
@@ -15,7 +15,7 @@ HOMEPAGE=	http://www.libgd.org/
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c expat fontconfig freetype iconv jpeg m png pthread
-WANTLIB += pthread-stubs ${LIBCXX} tiff webp z
+WANTLIB += pthread-stubs ${COMPILER_LIBCXX} tiff webp z
 
 MASTER_SITES=	https://github.com/libgd/libgd/releases/download/${PKGNAME}/
 

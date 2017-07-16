@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2017/04/10 11:46:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2017/07/16 19:19:00 espie Exp $
 
 COMMENT=		ogg mux/demuxer
 DISTNAME=		ogmtools-1.5
@@ -11,7 +11,7 @@ HOMEPAGE=		http://www.bunkus.org/videotools/ogmtools/
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c m ${LIBCXX} ogg dvdread vorbis vorbisenc
+WANTLIB += c m ${COMPILER_LIBCXX} ogg dvdread vorbis vorbisenc
 
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu

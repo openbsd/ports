@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2017/04/10 11:46:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2017/07/16 19:18:56 espie Exp $
 
 COMMENT =		fractal image generator
 
@@ -17,7 +17,7 @@ HOMEPAGE =		http://gnofract4d.sourceforge.net
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += ${MODPY_WANTLIB}
-WANTLIB += m png pthread ${LIBCXX}
+WANTLIB += m png pthread ${COMPILER_LIBCXX}
 
 MODULES =		lang/python
 

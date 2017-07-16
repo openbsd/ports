@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2017/05/31 08:08:16 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2017/07/16 19:19:00 espie Exp $
 
 COMMENT =	Qt bindings to GStreamer 1.x
 
@@ -24,7 +24,7 @@ WANTLIB += lib/qt4/QtCore lib/qt4/QtDeclarative lib/qt4/QtGui
 WANTLIB += lib/qt4/QtOpenGL lib/qt4/QtScript
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstpbutils-1.0
-WANTLIB += gstreamer-1.0 gstvideo-1.0 ${LIBECXX}
+WANTLIB += gstreamer-1.0 gstvideo-1.0 ${COMPILER_LIBCXX}
 
 MASTER_SITES =		http://gstreamer.freedesktop.org/src/qt-gstreamer/
 EXTRACT_SUFX =		.tar.xz

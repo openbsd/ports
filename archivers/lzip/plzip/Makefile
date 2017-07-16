@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2017/04/28 20:40:46 juanfra Exp $
+# $OpenBSD: Makefile,v 1.10 2017/07/16 19:18:47 espie Exp $
 
 COMMENT =		multi-threaded data compressor based on lzlib
 
@@ -10,7 +10,7 @@ MASTER_SITES =		${MASTER_SITE_SAVANNAH:=lzip/plzip/}
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		c lz m pthread ${LIBCXX}
+WANTLIB =		c lz m pthread ${COMPILER_LIBCXX}
 
 LIB_DEPENDS =		archivers/lzip/lzlib
 

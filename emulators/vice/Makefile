@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2017/04/10 11:45:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2017/07/16 19:18:53 espie Exp $
 
 COMMENT =		versatile Commodore emulator
 
@@ -11,7 +11,7 @@ HOMEPAGE =		http://vice-emu.sourceforge.net/
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += FLAC GL SDL c gif jpeg m ogg png pthread readline ${LIBCXX}
+WANTLIB += FLAC GL SDL c gif jpeg m ogg png pthread readline ${COMPILER_LIBCXX}
 WANTLIB += termcap vorbis vorbisenc vorbisfile z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=vice-emu/}

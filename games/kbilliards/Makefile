@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2017/04/10 11:46:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2017/07/16 19:18:54 espie Exp $
 
 COMMENT= 		billiard game
 CATEGORIES=		x11 x11/kde games
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += FLAC ICE SM X11 Xext Xfixes Xrender Xt art_lgpl_2
 WANTLIB += audiofile bz2 c expat fam fontconfig freetype glib-2.0
 WANTLIB += gmodule-2.0 gthread-2.0 idn m mad ogg pcre png 
-WANTLIB += pthread pthread-stubs sndio ${LIBCXX} util vorbis
+WANTLIB += pthread pthread-stubs sndio ${COMPILER_LIBCXX} util vorbis
 WANTLIB += vorbisenc vorbisfile xcb z
 WANTLIB += X11-xcb Xdamage Xxf86vm drm glapi xcb-dri2 xcb-glx
 WANTLIB += ${KDE}/DCOP ${KDE}/artsflow ${KDE}/artsflow_idl

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2017/04/10 11:45:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2017/07/16 19:18:49 espie Exp $
 
 COMMENT=	Ruby interface to the id3lib C++ library
 
@@ -12,7 +12,7 @@ CATEGORIES=	audio
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=	lang/ruby
-WANTLIB=	iconv id3>=4 ${LIBCXX} z
+WANTLIB=	iconv id3>=4 ${COMPILER_LIBCXX} z
 LIB_DEPENDS=	audio/id3lib \
 		converters/libiconv
 

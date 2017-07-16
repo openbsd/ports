@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2017/05/08 15:40:05 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2017/07/16 19:19:04 espie Exp $
 
 COMMENT =		equinox desktop library
 
@@ -11,7 +11,7 @@ SHARED_LIBS +=		$l	${API_VER}
 .endfor
 
 WANTLIB += X11 Xau Xcursor Xdmcp Xext Xfixes Xft Xinerama c dbus-1
-WANTLIB += fltk fltk_images fontconfig jpeg m png pthread ${LIBCXX} z
+WANTLIB += fltk fltk_images fontconfig jpeg m png pthread ${COMPILER_LIBCXX} z
 
 MODULES =		lang/python
 BUILD_DEPENDS =		devel/jam

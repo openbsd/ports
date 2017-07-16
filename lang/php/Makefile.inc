@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.94 2017/06/12 11:48:34 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.95 2017/07/16 19:18:59 espie Exp $
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
 
@@ -59,7 +59,7 @@ AUTOCONF_VERSION?=	2.69
 CONFIGURE_ENV+=		CFLAGS="${CFLAGS} -I${LOCALBASE}/include -pthread" \
 			LDFLAGS="-L${LOCALBASE}/lib -pthread" \
 			EXTENSION_DIR=${MODULES_DIR} \
-			LIBCXX="${LIBCXX}" \
+			COMPILER_LIBCXX="${LIBCXX}" \
 			lt_cv_path_SED=/usr/bin/sed
 # configure detects us as having decimal fp support but it's not built in
 # in libgcc. https://bugs.php.net/bug.php?id=68114
@@ -175,7 +175,7 @@ COMMENT-intl=		intl library support for php5
 CONFIGURE_ARGS+=	--enable-intl=shared \
 			--with-icu-dir=${LOCALBASE}
 LIB_DEPENDS-intl=	textproc/icu4c
-WANTLIB-intl=		${LIBCXX} icudata icui18n icuio icuuc m pthread
+WANTLIB-intl=		${COMPILER_LIBCXX} icudata icui18n icuio icuuc m pthread
 
 # imap
 MULTI_PACKAGES+=	-imap
@@ -344,9 +344,9 @@ PHPXS_SUBST+= -e 's,${i},${${i}},'
 .endfor
 
 WANTLIB-main+=		c crypto iconv intl lzma m pthread ssl xml2>=8 z
-WANTLIB-main+=		ncurses readline ${LIBCXX}
+WANTLIB-main+=		ncurses readline ${COMPILER_LIBCXX}
 
-# php 5.4/5.5 : WANTLIB-main += ${LIBCXX}
+# php 5.4/5.5 : WANTLIB-main += ${COMPILER_LIBCXX}
 WANTLIB-fastcgi=	${WANTLIB-main}
 LIB_DEPENDS-main=	devel/gettext \
 			textproc/libxml

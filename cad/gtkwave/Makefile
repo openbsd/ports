@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2017/04/28 17:55:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2017/07/16 19:18:49 espie Exp $
 
 COMMENT=		GTK+-based electronic waveform viewer
 
@@ -14,7 +14,7 @@ WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 bz2 c cairo fontconfig freetype
 WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
 WANTLIB += gtk-x11-2.0 intl lzma m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pthread ${LIBCXX} z
+WANTLIB += pthread ${COMPILER_LIBCXX} z
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gtkwave/}
 

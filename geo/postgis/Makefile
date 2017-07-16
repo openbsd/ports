@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2017/07/03 17:02:15 landry Exp $
+# $OpenBSD: Makefile,v 1.38 2017/07/16 19:18:50 espie Exp $
 
 V =	2.3.3
 COMMENT=	geographic objects support for PostgreSQL
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c crypto curl expat freexl gdal geos geos_c geotiff gif
 WANTLIB += jasper jpeg json-c lzma m nghttp2 openjp2 pcre png pq>=5.3
-WANTLIB += proj pthread qhull spatialite sqlite3 ssl ${LIBCXX} tiff webp xml2 z
+WANTLIB += proj pthread qhull spatialite sqlite3 ssl ${COMPILER_LIBCXX} tiff webp xml2 z
 
 MASTER_SITES=	http://download.osgeo.org/postgis/source/
 

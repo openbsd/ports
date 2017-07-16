@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2017/04/10 11:46:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2017/07/16 19:19:04 espie Exp $
 
 COMMENT =	compiz configuration system library
 
@@ -10,7 +10,7 @@ SHARED_LIBS =	compizconfig	0.0 # 0.0
 
 MASTER_SITES =	http://releases.compiz.org/${V}/
 
-WANTLIB += X11 iconv lzma m pthread ${LIBCXX} xcb xml2 z
+WANTLIB += X11 iconv lzma m pthread ${COMPILER_LIBCXX} xcb xml2 z
 
 MODULES =	textproc/intltool
 

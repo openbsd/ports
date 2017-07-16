@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2017/04/19 11:16:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2017/07/16 19:18:48 espie Exp $
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS} ${CLANG_ARCHS}
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB =		ICE SM QtGui QtXml X11 Xext Xft Xinerama c fltk jack \
 			fftw3f fluidsynth fontconfig freetype m ncurses ogg \
 			pthread readline samplerate sndfile sndio vorbis \
-			vorbisenc vorbisfile z ${LIBCXX}
+			vorbisenc vorbisfile z ${COMPILER_LIBCXX}
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=lmms/}
 EXTRACT_SUFX =		.tar.bz2

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2017/04/23 22:18:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2017/07/16 19:19:02 espie Exp $
 
 COMMENT=		color-able replacement for tail(1)
 
@@ -12,7 +12,7 @@ MAINTAINER=		Robert Nagy <robert@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		c m ${LIBCXX}
+WANTLIB=		c m ${COMPILER_LIBCXX}
 
 CONFIGURE_STYLE=	gnu
 

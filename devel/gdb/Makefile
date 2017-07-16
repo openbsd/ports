@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2017/05/25 22:59:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.50 2017/07/16 19:18:51 espie Exp $
 
 # adjust lang/ocaml if gdb is ported to aarch64
 NOT_FOR_ARCHS=	aarch64
@@ -21,7 +21,7 @@ EXTRACT_SUFX=	.tar.xz
 
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/gdb
 
-WANTLIB = c expat kvm m ncurses pthread ${MODPY_WANTLIB} ${LIBCXX} util
+WANTLIB = c expat kvm m ncurses pthread ${MODPY_WANTLIB} ${COMPILER_LIBCXX} util
 
 #SEPARATE_BUILD = Yes
 CONFIGURE_STYLE=gnu

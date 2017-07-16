@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2017/04/10 11:45:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2017/07/16 19:18:48 espie Exp $
 
 BROKEN-alpha =	arctar.c:384: internal compiler error: in extract_insn, at recog.c:2077
 
@@ -16,7 +16,7 @@ MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB +=	FLAC SDL adplug binio c iconv m mad ncurses ogg pthread
-WANTLIB +=	sidplay ${LIBCXX} vorbis vorbisfile z
+WANTLIB +=	sidplay ${COMPILER_LIBCXX} vorbis vorbisfile z
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=opencubicplayer/}
 

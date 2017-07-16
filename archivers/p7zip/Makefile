@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2017/07/02 18:38:24 jca Exp $
+# $OpenBSD: Makefile,v 1.41 2017/07/16 19:18:47 espie Exp $
 
 COMMENT-main=	file archiver with high compression ratio
 COMMENT-rar=	rar modules for p7zip
@@ -22,7 +22,7 @@ PERMIT_PACKAGE_CDROM=		Yes
 PERMIT_PACKAGE_FTP=		Yes
 
 # uses pledge()
-WANTLIB=	m pthread ${LIBCXX}
+WANTLIB=	m pthread ${COMPILER_LIBCXX}
 WANTLIB-main=	${WANTLIB} c
 WANTLIB-rar=	${WANTLIB}
 

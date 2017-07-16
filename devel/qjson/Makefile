@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2017/04/10 11:45:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2017/07/16 19:18:52 espie Exp $
 
 CATEGORIES =	devel
 
@@ -15,7 +15,7 @@ SHARED_LIBS =	qjson	1.0
 MODULES =	devel/cmake \
 		x11/qt4
 
-WANTLIB += QtGui m ${LIBCXX}
+WANTLIB += QtGui m ${COMPILER_LIBCXX}
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM =		Yes

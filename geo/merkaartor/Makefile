@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2017/04/10 11:46:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2017/07/16 19:18:50 espie Exp $
 
 COMMENT =	OpenStreetMap editor
 
@@ -24,7 +24,7 @@ LIB_DEPENDS =	devel/proj \
 		geo/gdal
 
 WANTLIB += QtGui QtNetwork QtSvg QtWebKit QtXml c m proj pthread gdal
-WANTLIB += ${LIBCXX} z ICE SM X11 Xext Xi Xinerama Xrender fontconfig freetype
+WANTLIB += ${COMPILER_LIBCXX} z ICE SM X11 Xext Xi Xinerama Xrender fontconfig freetype
 
 do-configure:
 	cd ${WRKSRC} && env ${CONFIGURE_ENV} qmake4 PROJ=1 NODEBUG=1 RELEASE=1 \

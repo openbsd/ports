@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2017/05/14 21:18:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2017/07/16 19:19:03 espie Exp $
 
 COMMENT =		simple, small and efficient C++ XML parser
 
@@ -14,7 +14,7 @@ HOMEPAGE =		http://www.grinninglizard.com/tinyxml2/index.html
 # zlib
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB +=		m ${LIBCXX}
+WANTLIB +=		m ${COMPILER_LIBCXX}
 
 GH_ACCOUNT =		leethomason
 GH_PROJECT =		tinyxml2

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2017/04/10 11:46:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2017/07/16 19:18:56 espie Exp $
 
 COMMENT=	visualize and manipulate mathematical models
 
@@ -13,7 +13,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=k3dsurf/}
 
-WANTLIB=	GL GLU X11 Xext Xmu c m pthread ${LIBCXX}
+WANTLIB=	GL GLU X11 Xext Xmu c m pthread ${COMPILER_LIBCXX}
 
 MODULES=	x11/qt3 devel/qmake
 NO_TEST=	Yes

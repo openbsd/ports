@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2017/06/12 10:57:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.51 2017/07/16 19:19:03 espie Exp $
 
 COMMENT =	standalone YouTube.com video browser/player
 
@@ -22,7 +22,7 @@ MODULES =	devel/qmake x11/qt4
 WANTLIB +=	ICE SM X11 Xext Xi Xinerama Xrender c fontconfig
 WANTLIB +=	freetype lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
 WANTLIB +=	lib/qt4/QtScript lib/qt4/QtSql lib/qt4/QtXml m
-WANTLIB +=	phonon pthread ${LIBCXX}
+WANTLIB +=	phonon pthread ${COMPILER_LIBCXX}
 
 RUN_DEPENDS =	multimedia/gstreamer-0.10/plugins-good \
 		multimedia/gstreamer-0.10/plugins-ffmpeg \

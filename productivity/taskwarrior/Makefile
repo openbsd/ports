@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2017/05/31 08:08:17 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2017/07/16 19:19:01 espie Exp $
 
 COMMENT =	command line todo list manager
 
@@ -22,7 +22,7 @@ MODULES =		devel/cmake \
 			lang/python
 MODLUA_SA =		Yes
 
-WANTLIB += c gnutls m pthread ${LIBECXX}
+WANTLIB += c gnutls m pthread ${COMPILER_LIBCXX}
 
 LIB_DEPENDS =		security/gnutls
 

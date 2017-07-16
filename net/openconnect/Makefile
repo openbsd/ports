@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2017/04/10 11:46:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.42 2017/07/16 19:18:58 espie Exp $
 
 COMMENT=	client for Cisco AnyConnect SSL VPN
 
@@ -56,7 +56,7 @@ CONFIGURE_ARGS+= --without-libpcsclite \
 		--without-libproxy \
 		--without-libpskc
 .else
-WANTLIB+=	ltdl pcsclite proxy pskc ${LIBCXX} xmlsec1 xslt
+WANTLIB+=	ltdl pcsclite proxy pskc ${COMPILER_LIBCXX} xmlsec1 xslt
 LIB_DEPENDS+=	net/libproxy>=0.4.6p7 \
 		security/oath-toolkit,-pskc \
 		security/pcsc-lite

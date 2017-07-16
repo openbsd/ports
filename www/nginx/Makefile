@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.110 2017/07/02 16:47:46 robert Exp $
+# $OpenBSD: Makefile,v 1.111 2017/07/16 19:19:03 espie Exp $
 
 BROKEN-arm=	src/core/ngx_rwlock.c:116:2: error: \#error ngx_atomic_cmp_set() is not defined!
 BROKEN-hppa=	src/core/ngx_rwlock.c:116:2: error: \#error ngx_atomic_cmp_set() is not defined!
@@ -66,7 +66,7 @@ WANTLIB-xslt=		exslt xml2 xslt
 WANTLIB-naxsi=
 WANTLIB-lua=		${MODLUA_WANTLIB} m
 WANTLIB-perl=		c m perl
-WANTLIB-passenger=	m pthread ${LIBCXX}
+WANTLIB-passenger=	m pthread ${COMPILER_LIBCXX}
 
 BUILD_DEPENDS+=		${MODRUBY_PKG_PREFIX}-passenger-*:www/ruby-passenger
 

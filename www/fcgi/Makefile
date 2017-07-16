@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2017/04/10 11:46:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2017/07/16 19:19:03 espie Exp $
 
 COMMENT=		FastCGI Development Kit
 
@@ -19,7 +19,7 @@ MAINTAINER=		Adam Montague <amontague@siriushosting.com>
 # http://www.fastcgi.com/archives/fastcgi-developers/2010-June/000559.html
 PERMIT_PACKAGE_CDROM=   Yes
 
-WANTLIB=		c m ${LIBCXX}
+WANTLIB=		c m ${COMPILER_LIBCXX}
 WANTLIB += perl # uses perl ABI
 
 MASTER_SITES=		${HOMEPAGE}/dist/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2017/04/24 06:36:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.65 2017/07/16 19:18:51 espie Exp $
 
 BROKEN-hppa=		no atomic primitives
 
@@ -26,7 +26,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += freetype glib-2.0 graphite2 iconv intl m pcre pthread
-WANTLIB += ${LIBCXX} z
+WANTLIB += ${COMPILER_LIBCXX} z
 
 MASTER_SITES=		http://www.freedesktop.org/software/harfbuzz/release/
 

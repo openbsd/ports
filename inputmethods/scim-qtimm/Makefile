@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2017/04/10 11:46:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2017/07/16 19:18:57 espie Exp $
 
 COMMENT=	scim plugin for qt
 
@@ -12,7 +12,7 @@ HOMEPAGE=	https://sourceforge.net/projects/scim/
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += X11 m pthread scim-1.0 scim-x11utils-1.0 ${LIBCXX} xcb
+WANTLIB += X11 m pthread scim-1.0 scim-x11utils-1.0 ${COMPILER_LIBCXX} xcb
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=scim/}
 EXTRACT_SUFX=	.tar.bz2

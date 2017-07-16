@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2017/05/31 20:16:49 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.65 2017/07/16 19:18:52 espie Exp $
 
 COMMENT=	perl-compatible regular expression library
 
@@ -22,7 +22,7 @@ MAINTAINER=	Robert Nagy <robert@openbsd.org>
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c curses m readline ${LIBCXX}
+WANTLIB += c curses m readline ${COMPILER_LIBCXX}
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--enable-pcre8 \

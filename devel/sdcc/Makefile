@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2017/06/21 14:14:22 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2017/07/16 19:18:52 espie Exp $
 
 COMMENT=	Small Device C Compiler
 BROKEN-sparc64=	illegal operands building SDCCval.c
@@ -15,7 +15,7 @@ MAINTAINER=	Brian Callahan <bcallah@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-WANTLIB=		c m ${LIBCXX} readline termcap z
+WANTLIB=		c m ${COMPILER_LIBCXX} readline termcap z
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=sdcc/}
 

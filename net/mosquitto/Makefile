@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2017/04/15 20:49:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2017/07/16 19:18:58 espie Exp $
 
 COMMENT =		opensource MQTT broker
 
@@ -15,7 +15,7 @@ MAINTAINER =		Edd Barrett <edd@openbsd.org>
 # EPL/EDL
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB +=		c crypto m pthread ssl ${LIBCXX}
+WANTLIB +=		c crypto m pthread ssl ${COMPILER_LIBCXX}
 
 CFLAGS +=		-I${LOCALBASE}/include
 MASTER_SITES =		http://mosquitto.org/files/source/

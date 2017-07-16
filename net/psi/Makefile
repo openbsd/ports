@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2017/07/11 20:42:34 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.25 2017/07/16 19:18:58 espie Exp $
 
 COMMENT=	multiplatform Jabber client
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += ICE QtDBus QtGui QtNetwork QtXml SM X11 Xext Xi Xinerama
 WANTLIB += Xrender Xss c enchant fontconfig freetype glib-2.0
-WANTLIB += gmodule-2.0 m pthread qca ${LIBCXX} z
+WANTLIB += gmodule-2.0 m pthread qca ${COMPILER_LIBCXX} z
 
 MODULES=		x11/qt4 \
 			devel/gettext

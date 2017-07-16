@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2017/05/31 08:08:17 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2017/07/16 19:19:01 espie Exp $
 
 COMMENT =	lightweight server providing access to task data
 
@@ -19,7 +19,7 @@ MODULES =	devel/cmake
 
 COMPILER =	gcc
 
-WANTLIB += c gnutls m pthread ${LIBECXX}
+WANTLIB += c gnutls m pthread ${COMPILER_LIBCXX}
 
 LIB_DEPENDS =	security/gnutls
 

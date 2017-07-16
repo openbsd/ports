@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2017/04/28 11:39:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.51 2017/07/16 19:18:54 espie Exp $
 
 COMMENT=	gtk+2 chess board interface
 
@@ -16,7 +16,7 @@ WANTLIB =	X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama \
 		gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 \
 		gobject-2.0 gtk-x11-2.0 intl m pango-1.0 \
 		pangocairo-1.0 pangoft2-1.0 png pthread \
-		sndio ${LIBCXX} z
+		sndio ${COMPILER_LIBCXX} z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=eboard/}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2017/04/10 11:46:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2017/07/16 19:18:58 espie Exp $
 
 COMMENT=	event-driven I/O for Ruby using the Reactor pattern
 
@@ -12,7 +12,7 @@ PERMIT_PACKAGE_CDROM=	yes
 
 MODULES=	lang/ruby
 
-WANTLIB=	crypto ssl ${LIBCXX}
+WANTLIB=	crypto ssl ${COMPILER_LIBCXX}
 
 CONFIGURE_STYLE=ruby gem ext
 

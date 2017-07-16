@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.107 2017/06/09 08:44:52 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.108 2017/07/16 19:18:48 espie Exp $
 
 BROKEN-hppa =		no atomic ops
 COMMENT =		Music Player Daemon
@@ -17,7 +17,7 @@ WANTLIB =		FLAC audiofile avcodec avformat avutil \
 			id3tag iso9660 m mikmod mp3lame mpcdec \
 			mpdclient ogg opus pthread samplerate \
 			shout sndfile sndio speex sqlite3 theora \
-			vorbis vorbisenc yajl z ${LIBECXX}
+			vorbis vorbisenc yajl z ${COMPILER_LIBCXX}
 
 MASTER_SITES =		http://www.musicpd.org/download/mpd/${VER:R}/
 

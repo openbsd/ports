@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2017/04/10 11:45:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2017/07/16 19:18:53 espie Exp $
 
 COMMENT =		n64 emulator signal co-processor plugin
 REVISION =		3
@@ -11,7 +11,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WRKDIST =		${WRKDIR}/mupen64plus-${MUPEN64PLUS_MOD}
 
-WANTLIB =		c m ${LIBCXX}
+WANTLIB =		c m ${COMPILER_LIBCXX}
 
 MUPEN64PLUS_MOD = 	rsp-z64
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2017/04/10 11:46:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.50 2017/07/16 19:18:56 espie Exp $
 
 COMMENT=	image processing tools with stable ABI
 
@@ -21,7 +21,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=		ICE SM X11 Xau Xdmcp Xext bz2 c freetype iconv \
 			jasper jbig jpeg lcms2 ltdl lzma m png16 pthread \
-			pthread-stubs ${LIBCXX} tiff webp wmflite-0.2 xcb xml2 z
+			pthread-stubs ${COMPILER_LIBCXX} tiff webp wmflite-0.2 xcb xml2 z
 WANTLIB+= perl # uses perl ABI
 
 LIB_DEPENDS=		archivers/bzip2 \

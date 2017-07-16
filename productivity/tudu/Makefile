@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/06/21 07:14:05 fcambus Exp $
+# $OpenBSD: Makefile,v 1.2 2017/07/16 19:19:01 espie Exp $
 
 COMMENT =	hierarchical todos manager
 
@@ -13,7 +13,7 @@ MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 # GPLv3 only
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB +=	c m ncursesw ${LIBCXX}
+WANTLIB +=	c m ncursesw ${COMPILER_LIBCXX}
 
 MASTER_SITES =	${HOMEPAGE}
 

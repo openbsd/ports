@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2017/05/31 08:08:17 espie Exp $
+# $OpenBSD: Makefile,v 1.49 2017/07/16 19:19:03 espie Exp $
 
 BROKEN-alpha =	MetalinkParserStateV4Impl.cc:219:1: internal compiler error: Segmentation fault
 
@@ -27,7 +27,7 @@ BUILD_DEPENDS =		devel/m4 \
 
 TEST_DEPENDS =		${BUILD_DEPENDS}
 
-WANTLIB += c cares crypto expat iconv intl m pthread sqlite3 ssh2 ssl z ${LIBECXX}
+WANTLIB += c cares crypto expat iconv intl m pthread sqlite3 ssh2 ssl z ${COMPILER_LIBCXX}
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \

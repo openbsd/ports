@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2017/05/31 08:08:15 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2017/07/16 19:18:54 espie Exp $
 
 COMMENT=	free Lemmings-like game
 
@@ -15,7 +15,7 @@ MASTER_SITES=	${MASTER_SITE_GOOGLECODE:=pingus/}
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += GL SDL X11 Xi c iconv m png pthread z
-WANTLIB += SDL_mixer>=3 SDL_image>=2 boost_signals ${LIBECXX}
+WANTLIB += SDL_mixer>=3 SDL_image>=2 boost_signals ${COMPILER_LIBCXX}
 
 MODULES=	devel/scons
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.116 2017/05/31 08:08:17 espie Exp $
+# $OpenBSD: Makefile,v 1.117 2017/07/16 19:18:59 espie Exp $
 
 COMMENT-main=	BitTorrent command line and daemon client
 COMMENT-gtk=	BitTorrent client with GTK+ interface
@@ -49,7 +49,7 @@ WANTLIB-gtk=	${WANTLIB-common} ICE SM X11 Xcomposite Xcursor Xdamage \
 		xcb-render xcb-shm epoxy nghttp2 iconv
 WANTLIB-qt=	${WANTLIB-common} ${MODQT_WANTLIB} \
 		GL Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets \
-		fontconfig freetype $(LIBECXX)
+		fontconfig freetype $(COMPILER_LIBCXX)
 
 MODULES+=	textproc/intltool
 

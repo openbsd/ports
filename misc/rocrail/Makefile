@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2017/05/27 19:57:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2017/07/16 19:19:00 espie Exp $
 
 COMMENT-main =		model railroad control daemon
 COMMENT-gui =		model railroad control daemon client
@@ -23,7 +23,7 @@ MASTER_SITES =		http://bugs.launchpad.net/rocrail/sunrise/2.0/+download/
 
 MULTI_PACKAGES =	-main -gui
 WANTLIB +=		c pthread
-WANTLIB-gui += 		${WANTLIB} m ${LIBCXX}
+WANTLIB-gui += 		${WANTLIB} m ${COMPILER_LIBCXX}
 WANTLIB-gui += 		wx_base wx_base_net wx_base_odbc wx_base_xml wx_gtk2_adv
 WANTLIB-gui += 		wx_gtk2_aui wx_gtk2_core wx_gtk2_dbgrid wx_gtk2_html
 WANTLIB-gui += 		wx_gtk2_qa wx_gtk2_richtext wx_gtk2_xrc

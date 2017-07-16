@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2017/04/10 11:46:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2017/07/16 19:18:57 espie Exp $
 
 COMMENT=	convert PNG images to Windows .ico files
 
@@ -13,7 +13,7 @@ MAINTAINER=	Wilbern Cobb <wcobb@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-WANTLIB=		c m ${LIBCXX} z png>=3
+WANTLIB=		c m ${COMPILER_LIBCXX} z png>=3
 
 LIB_DEPENDS=	graphics/png
 

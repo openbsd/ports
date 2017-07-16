@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2017/05/31 08:08:16 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2017/07/16 19:18:50 espie Exp $
 
 COMMENT =		OSM data to PostgreSQL converter
 #https://github.com/openstreetmap/osm2pgsql/issues/634
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 USE_GMAKE =		Yes
 
 WANTLIB += boost_system-mt boost_filesystem-mt bz2 c expat
-WANTLIB += geos m pthread pq proj z ${MODLUA_WANTLIB} ${LIBECXX}
+WANTLIB += geos m pthread pq proj z ${MODLUA_WANTLIB} ${COMPILER_LIBCXX}
 
 # postgresql needs to be first otherwise tests are done by cmake module
 MODULES =		databases/postgresql    \

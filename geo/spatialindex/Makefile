@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2017/04/10 11:46:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2017/07/16 19:18:50 espie Exp $
 
 COMMENT =	library for spatial indexing and querying
 DISTNAME=	spatialindex-src-1.8.5
@@ -14,6 +14,6 @@ HOMEPAGE =	http://libspatialindex.github.com/
 MASTER_SITES =	http://download.osgeo.org/libspatialindex/
 
 CONFIGURE_STYLE =	gnu
-WANTLIB =	m pthread ${LIBCXX}
+WANTLIB =	m pthread ${COMPILER_LIBCXX}
 
 .include <bsd.port.mk>

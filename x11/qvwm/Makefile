@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2017/04/10 11:46:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2017/07/16 19:19:05 espie Exp $
 
 COMMENT=	Windows 95/98/NT like window manager
 
@@ -11,7 +11,7 @@ HOMEPAGE=	http://www.csg.is.titech.ac.jp/~kourai/qvwm/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-WANTLIB=		ICE SM X11 Xext Xpm Xss c m sndio ${LIBCXX}
+WANTLIB=		ICE SM X11 Xext Xpm Xss c m sndio ${COMPILER_LIBCXX}
 
 CONFIGURE_STYLE= gnu
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2017/04/10 11:45:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2017/07/16 19:18:50 espie Exp $
 
 COMMENT=	C++ reference implementation of the Atlas protocol
 
@@ -23,7 +23,7 @@ PERMIT_PACKAGE_CDROM=   Yes
 MASTER_SITES=	ftp://ftp.ecs.soton.ac.uk/pub/worldforge/acorn/0.4/src/ \
 		http://kafka.i-site.com/~novalis/mirrors/acorn/0.4/src/
 
-WANTLIB+=	m ${LIBCXX}
+WANTLIB+=	m ${COMPILER_LIBCXX}
 
 
 SEPARATE_BUILD=	Yes

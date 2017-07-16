@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2017/05/04 23:00:48 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2017/07/16 19:18:54 espie Exp $
 
 COMMENT=	Oxyd/Rock'n'Roll clone
 
@@ -14,7 +14,7 @@ HOMEPAGE=	http://www.nongnu.org/enigma/
 # GPLv2
 PERMIT_PACKAGE_CDROM=   Yes
 
-WANTLIB=	SDL c m enet pthread ${LIBCXX} z SDL_image>=1 \
+WANTLIB=	SDL c m enet pthread ${COMPILER_LIBCXX} z SDL_image>=1 \
 		SDL_mixer>=2 SDL_ttf>=7 png>=8 zipios>=1 \
 		xerces-c
 

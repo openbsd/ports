@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2017/06/30 08:05:08 sebastia Exp $
+# $OpenBSD: Makefile,v 1.12 2017/07/16 19:18:52 espie Exp $
 
 COMMENT =		collection of C++ and CMake utility libraries
 
@@ -29,7 +29,7 @@ MODULES =		devel/cmake lang/python
 MODPY_BUILDDEP =	No
 MODPY_ADJ_FILES =	${WRKSRC}/scripts/cpplint.py
 
-WANTLIB =  ${LIBECXX} m
+WANTLIB =  ${COMPILER_LIBCXX} m
 WANTLIB += boost_atomic-mt boost_chrono-mt boost_date_time-mt
 WANTLIB += boost_filesystem-mt boost_locale-mt boost_log-mt boost_log_setup-mt
 WANTLIB += boost_regex-mt boost_system-mt boost_thread-mt curl

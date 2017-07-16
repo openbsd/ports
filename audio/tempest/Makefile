@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2017/04/10 11:45:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2017/07/16 19:18:49 espie Exp $
 
 COMMENT=	sends AM radio signals using a monitor
 
@@ -12,7 +12,7 @@ HOMEPAGE=	http://www.erikyyy.de/tempest/
 
 PERMIT_PACKAGE_CDROM=   Yes
 
-WANTLIB += SDL c m pthread ${LIBCXX}
+WANTLIB += SDL c m pthread ${COMPILER_LIBCXX}
 
 MASTER_SITES=	${HOMEPAGE}
 

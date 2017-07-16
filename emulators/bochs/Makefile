@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2017/04/23 13:25:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.70 2017/07/16 19:18:53 espie Exp $
 
 COMMENT=	x86 machine simulator
 
@@ -11,7 +11,7 @@ HOMEPAGE=	http://bochs.sourceforge.net/
 # LGPLv2.1+ and MIT
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	c m pthread ${LIBCXX} termlib
+WANTLIB=	c m pthread ${COMPILER_LIBCXX} termlib
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--enable-all-optimizations \

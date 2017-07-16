@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2017/04/10 11:46:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2017/07/16 19:19:00 espie Exp $
 
 COMMENT=		minimalistic Boolean satisfiability solver
 
@@ -18,7 +18,7 @@ DISTFILES=		${DISTNAME}${EXTRACT_SUFX} \
 			MiniSat.pdf
 EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
 
-WANTLIB +=		c m ${LIBCXX} z
+WANTLIB +=		c m ${COMPILER_LIBCXX} z
 
 USE_GMAKE=		Yes
 ALL_TARGET=		minisat

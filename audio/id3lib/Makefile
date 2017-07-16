@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2017/04/10 11:45:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2017/07/16 19:18:48 espie Exp $
 
 COMMENT=		library for manipulating ID3v1 and ID3v2 tags
 
@@ -13,7 +13,7 @@ HOMEPAGE=		http://id3lib.sourceforge.net/
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		c m ${LIBCXX} z
+WANTLIB=		c m ${COMPILER_LIBCXX} z
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=id3lib/}
 

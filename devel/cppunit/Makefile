@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2017/04/10 11:45:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2017/07/16 19:18:51 espie Exp $
 
 COMMENT=	c++ unit testing framework
 DISTNAME=	cppunit-1.12.1
@@ -13,7 +13,7 @@ HOMEPAGE=	http://cppunit.sourceforge.net/
 PERMIT_PACKAGE_CDROM=	Yes
 
 USE_GMAKE=		Yes
-WANTLIB=		c m ${LIBCXX}
+WANTLIB=		c m ${COMPILER_LIBCXX}
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--disable-doxygen

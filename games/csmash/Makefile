@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2017/04/10 11:45:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2017/07/16 19:18:54 espie Exp $
 
 COMMENT=	Cannon Smash 3D table tennis
 
@@ -26,7 +26,7 @@ WANTLIB+=	GL GLU ICE Xcomposite Xcursor Xdamage Xfixes \
 		Xi Xinerama Xmu Xrandr Xrender Xt atk-1.0 c cairo \
 		fontconfig freetype gio-2.0 glib-2.0 \
 		gobject-2.0 pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-		pthread ${LIBCXX} z X11 Xext m SDL \
+		pthread ${COMPILER_LIBCXX} z X11 Xext m SDL \
 		gdk_pixbuf-2.0 SDL_image SDL_mixer gdk-x11-2.0 gtk-x11-2.0
 
 CONFIGURE_STYLE= gnu

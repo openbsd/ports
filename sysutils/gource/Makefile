@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2017/05/31 08:08:17 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2017/07/16 19:19:02 espie Exp $
 
 COMMENT =	software version control visualization tool
 
@@ -18,7 +18,7 @@ COMPILER =		gcc
 
 
 WANTLIB += GL GLEW GLU SDL2 SDL2_image boost_filesystem boost_system
-WANTLIB += c freetype m pcre png pthread z ${LIBECXX}
+WANTLIB += c freetype m pcre png pthread z ${COMPILER_LIBCXX}
 
 BUILD_DEPENDS =		graphics/glm
 LIB_DEPENDS =           devel/boost \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2017/05/31 08:08:15 espie Exp $
+# $OpenBSD: Makefile,v 1.46 2017/07/16 19:18:48 espie Exp $
 
 BROKEN-hppa =	undefined reference to __sync atomic ops
 BROKEN-mips64 =	undefined reference to __sync atomic ops
@@ -21,7 +21,7 @@ MAINTAINER =	David Carlier <devnexen@gmail.com>
 # LGPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB +=	c m pthread sndio ${LIBECXX}
+WANTLIB +=	c m pthread sndio ${COMPILER_LIBCXX}
 
 MASTER_SITES =	${HOMEPAGE:S,.html,-releases/,}
 EXTRACT_SUFX =	.tar.bz2

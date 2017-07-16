@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2017/07/11 20:42:34 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.26 2017/07/16 19:18:48 espie Exp $
 
 COMMENT =	Qt4-based featureful music player
 
@@ -26,7 +26,7 @@ WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += gstapp-0.10 gstbase-0.10 gstcdda-0.10 gstreamer-0.10
 WANTLIB += gsttag-0.10
 WANTLIB += cdio chromaprint gpod execinfo fftw3 lastfm mtp mygpo-qt
-WANTLIB += protobuf qca qjson tag>=5.0 usb-1.0 xml2 ${LIBECXX}
+WANTLIB += protobuf qca qjson tag>=5.0 usb-1.0 xml2 ${COMPILER_LIBCXX}
 # those are dlopen'ed
 WANTLIB += plist
 

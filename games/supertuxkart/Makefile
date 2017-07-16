@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2017/05/31 08:08:16 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2017/07/16 19:18:55 espie Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 powerpc
 
@@ -20,7 +20,7 @@ MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += GL GLU ICE SM X11 Xext Xrandr c curl freetype jpeg
-WANTLIB += m ogg openal png pthread vorbis vorbisfile z ${LIBECXX}
+WANTLIB += m ogg openal png pthread vorbis vorbisfile z ${COMPILER_LIBCXX}
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=supertuxkart/SuperTuxKart/}
 EXTRACT_SUFX =		.tar.xz

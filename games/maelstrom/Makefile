@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2017/04/10 11:46:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2017/07/16 19:18:54 espie Exp $
 
 COMMENT =		asteroid-like game
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 CONFIGURE_STYLE = 	gnu
 
-WANTLIB =		SDL c m pthread ${LIBCXX} SDL_net
+WANTLIB =		SDL c m pthread ${COMPILER_LIBCXX} SDL_net
 LIB_DEPENDS =		devel/sdl-net
 
 pre-configure:

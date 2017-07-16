@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2017/05/12 15:11:17 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2017/07/16 19:18:52 espie Exp $
 
 BROKEN-alpha =	relocation truncated to fit: GPRELHIGH against symbol default_target_hard_regs
 
@@ -20,7 +20,7 @@ DIST_SUBDIR =		ti-msp430gcc-$V
 DISTFILES =		msp430-gcc-source.tar.bz2 \
 			msp430-gcc-support-files.zip
 
-WANTLIB += c gmp m mpc mpfr ${LIBCXX} z
+WANTLIB += c gmp m mpc mpfr ${COMPILER_LIBCXX} z
 
 BUILD_DEPENDS =		archivers/bzip2 \
 			archivers/unzip \

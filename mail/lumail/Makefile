@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2017/05/31 08:08:16 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2017/07/16 19:18:59 espie Exp $
 
 PORTROACH =		limit:^0
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB +=		c gio-2.0 glib-2.0 glibmm-2.4 gmime-2.6 gobject-2.0
 WANTLIB +=		intl ${MODLUA_WANTLIB} m ncursesw pcrecpp pthread
-WANTLIB +=		sigc-2.0 ${LIBECXX}
+WANTLIB +=		sigc-2.0 ${COMPILER_LIBCXX}
 
 MODULES =		lang/lua
 

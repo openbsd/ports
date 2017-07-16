@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2017/04/17 15:43:02 landry Exp $
+# $OpenBSD: Makefile,v 1.17 2017/07/16 19:19:06 espie Exp $
 
 COMMENT =	Xfce4 alternative applications menu panel plugin
 
@@ -14,6 +14,6 @@ CONFIGURE_STYLE =	cmake
 MODXFCE_ICON_CACHE=	Yes
 
 WANTLIB += cairo exo-1 garcon-1 gdk-x11-2.0 gio-2.0 glib-2.0 gobject-2.0
-WANTLIB += gtk-x11-2.0 ${LIBCXX} xfce4ui-1 xfce4util gdk_pixbuf-2.0
+WANTLIB += gtk-x11-2.0 ${COMPILER_LIBCXX} xfce4ui-1 xfce4util gdk_pixbuf-2.0
 
 .include <bsd.port.mk>

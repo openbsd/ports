@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.83 2017/05/31 08:08:15 espie Exp $
+# $OpenBSD: Makefile,v 1.84 2017/07/16 19:18:49 espie Exp $
 
 # XXX
 # sndio: what to do with (channel) map
@@ -28,7 +28,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += FLAC ICE SM X11 X11-xcb Xext Xi Xtst c crypto dbus-1
 WANTLIB += execinfo gdbm glib-2.0 iconv intl ltdl m ogg pcre pthread
-WANTLIB += sndfile sndio speexdsp ssl vorbis vorbisenc xcb $(LIBECXX)
+WANTLIB += sndfile sndio speexdsp ssl vorbis vorbisenc xcb $(COMPILER_LIBCXX)
 
 MASTER_SITES=		http://freedesktop.org/software/pulseaudio/releases/
 

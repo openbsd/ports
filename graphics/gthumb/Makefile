@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.99 2017/04/20 19:02:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.100 2017/07/16 19:18:56 espie Exp $
 
 COMMENT=	image viewer and browser for GNOME
 
@@ -24,7 +24,7 @@ WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += graphite2 gstreamer-1.0 gstvideo-1.0 gthread-2.0 gtk-3
 WANTLIB += harfbuzz jpeg json-glib-1.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
-WANTLIB += rsvg-2 secret-1 soup-2.4 ${LIBCXX} tiff lcms2 raw
+WANTLIB += rsvg-2 secret-1 soup-2.4 ${COMPILER_LIBCXX} tiff lcms2 raw
 WANTLIB += webkit2gtk-4.0 webp xcb xcb-render xcb-shm z iconv intl
 
 MODULES=	devel/dconf \

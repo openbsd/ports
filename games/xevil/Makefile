@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2017/05/02 23:26:32 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2017/07/16 19:18:55 espie Exp $
 #
 
 PORTROACH_COMMENT =	2.02r2 is newer than 2.02
@@ -20,7 +20,7 @@ EXTRACT_SUFX=	.zip
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	X11 Xpm c m pthread-stubs ${LIBCXX} xcb
+WANTLIB=	X11 Xpm c m pthread-stubs ${COMPILER_LIBCXX} xcb
 
 USE_GMAKE=	Yes
 

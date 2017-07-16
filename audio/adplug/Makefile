@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2017/04/18 21:13:03 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2017/07/16 19:18:49 espie Exp $
 
 COMMENT =	AdLib sound player library
 
@@ -14,7 +14,7 @@ MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 # LGPLv2.1+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB +=	binio c m ${LIBCXX}
+WANTLIB +=	binio c m ${COMPILER_LIBCXX}
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=adplug/}
 

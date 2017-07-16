@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2017/04/10 11:46:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.54 2017/07/16 19:19:03 espie Exp $
 
 COMMENT =		fast and light graphical web browser
 
@@ -12,7 +12,7 @@ HOMEPAGE =		http://www.dillo.org/
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += X11 Xau Xcursor Xdmcp Xext Xfixes Xft Xinerama c crypto
-WANTLIB += fltk fontconfig iconv jpeg m png pthread ssl ${LIBCXX} z
+WANTLIB += fltk fontconfig iconv jpeg m png pthread ssl ${COMPILER_LIBCXX} z
 
 MASTER_SITES =	http://www.dillo.org/download/
 

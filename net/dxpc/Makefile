@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2017/04/10 11:46:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2017/07/16 19:18:57 espie Exp $
 
 COMMENT =	X11 over a low bandwidth link
 VERSION =	3.8.2
@@ -15,7 +15,7 @@ MASTER_SITES =		http://www.vigor.nu/dxpc/${VERSION}/
 HOMEPAGE =		http://www.vigor.nu/dxpc/
 
 LIB_DEPENDS =		archivers/lzo
-WANTLIB =		c m ${LIBCXX} lzo
+WANTLIB =		c m ${COMPILER_LIBCXX} lzo
 
 USE_X11 = 		Yes
 

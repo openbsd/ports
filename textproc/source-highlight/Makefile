@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2017/04/10 11:46:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2017/07/16 19:19:03 espie Exp $
 
 COMMENT=	create a document with syntax highlighting
 
@@ -11,7 +11,7 @@ HOMEPAGE=	https://www.gnu.org/software/src-highlite/
 # GPLv3
 PERMIT_PACKAGE_CDROM=   Yes
 
-WANTLIB=	c m ${LIBCXX} boost_regex-mt pthread
+WANTLIB=	c m ${COMPILER_LIBCXX} boost_regex-mt pthread
 
 MASTER_SITES=	${MASTER_SITE_GNU:=src-highlite/}
 

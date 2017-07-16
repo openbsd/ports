@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2017/07/02 00:59:11 bcallah Exp $
+# $OpenBSD: Makefile,v 1.25 2017/07/16 19:19:05 espie Exp $
 
 BROKEN-hppa =	no atomic ops
 COMMENT =	Midnight Commander-like file manager for X
@@ -12,7 +12,7 @@ MAINTAINER =	Brian Callahan <bcallah@devio.us>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += ICE SM X11 Xext Xft Xinerama Xrender c expat
-WANTLIB += fontconfig freetype m pthread pthread-stubs xcb z ${LIBECXX}
+WANTLIB += fontconfig freetype m pthread pthread-stubs xcb z ${COMPILER_LIBCXX}
 
 MASTER_SITES =	http://www.boomerangsworld.de/cms/worker/downloads/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2017/05/31 08:08:17 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2017/07/16 19:19:02 espie Exp $
 
 COMMENT=		MTP device filesystem
 
@@ -15,7 +15,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c fuse m mtp pthread usb-1.0 ${LIBECXX}
+WANTLIB += c fuse m mtp pthread usb-1.0 ${COMPILER_LIBCXX}
 
 # c++11
 COMPILER =		gcc

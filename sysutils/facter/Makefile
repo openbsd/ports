@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2017/06/30 08:06:45 sebastia Exp $
+# $OpenBSD: Makefile,v 1.45 2017/07/16 19:19:02 espie Exp $
 
 # XXXTODO: Subpackage facter.jar for use with puppetserver
 COMMENT =		collect and display system facts
@@ -25,7 +25,7 @@ WANTLIB += boost_atomic-mt boost_chrono-mt boost_date_time-mt
 WANTLIB += boost_filesystem-mt boost_locale-mt
 WANTLIB += boost_program_options-mt boost_regex-mt boost_system-mt
 WANTLIB += boost_thread-mt c crypto curl m pthread yaml-cpp
-WANTLIB += ${LIBECXX} cpp-hocon
+WANTLIB += ${COMPILER_LIBCXX} cpp-hocon
 WANTLIB += leatherman_curl leatherman_dynamic_library
 WANTLIB += leatherman_execution leatherman_file_util leatherman_locale
 WANTLIB += leatherman_logging leatherman_ruby leatherman_util

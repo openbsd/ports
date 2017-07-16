@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2017/04/10 11:45:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2017/07/16 19:18:51 espie Exp $
 
 COMMENT =	perfect hash functions, to help write parsers
 
@@ -13,7 +13,7 @@ HOMEPAGE =	https://www.gnu.org/software/gperf/
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		c m ${LIBCXX}
+WANTLIB =		c m ${COMPILER_LIBCXX}
 
 MASTER_SITES =	${MASTER_SITE_GNU:=gperf/}
 

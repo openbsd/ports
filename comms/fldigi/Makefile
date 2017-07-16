@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2017/05/24 14:05:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2017/07/16 19:18:49 espie Exp $
 
 COMMENT=	soundcard-based software modem for Amateur Radio use
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += X11 Xau Xcursor Xdmcp Xext Xfixes Xft Xinerama c fltk
 WANTLIB += fltk_images fontconfig hamlib iconv intl jpeg m png
-WANTLIB += portaudio pthread samplerate sndfile ${LIBCXX} z
+WANTLIB += portaudio pthread samplerate sndfile ${COMPILER_LIBCXX} z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=fldigi/}
 

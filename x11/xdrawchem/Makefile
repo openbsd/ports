@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2017/04/10 11:46:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2017/07/16 19:19:06 espie Exp $
 
 COMMENT=	two-dimensional molecule drawing program
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += GL ICE SM X11 X11-xcb Xau Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xft Xi Xinerama Xmu Xrandr Xrender Xt Xxf86vm c drm expat
 WANTLIB += fontconfig freetype glapi jpeg lcms m mng openbabel>=4 png
-WANTLIB += pthread pthread-stubs ${LIBCXX} xcb xcb-dri2 xcb-glx z
+WANTLIB += pthread pthread-stubs ${COMPILER_LIBCXX} xcb xcb-dri2 xcb-glx z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xdrawchem/}
 

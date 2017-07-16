@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.161 2017/07/04 08:17:55 robert Exp $
+# $OpenBSD: Makefile,v 1.162 2017/07/16 19:18:52 espie Exp $
 
 USE_WXNEEDED=	Yes
 
@@ -18,7 +18,6 @@ PKGNAME-main=	libreoffice-${VERSION}
 PKGNAME-kde=	libreoffice-kde-${VERSION}
 PKGNAME-java=	libreoffice-java-${VERSION}
 CATEGORIES=	editors productivity
-DPB_PROPERTIES=	parallel tag:kde4
 
 REVISION-main=	0
 
@@ -192,7 +191,7 @@ LIB_DEPENDS-main=x11/gtk+2 \
 		textproc/redland \
 		textproc/hunspell
 
-WANTLIB-main=	${LIBECXX} gdk-x11-2.0>=400.14 gtk-x11-2.0>=400.14 \
+WANTLIB-main=	${COMPILER_LIBCXX} gdk-x11-2.0>=400.14 gtk-x11-2.0>=400.14 \
 		xslt>=3 curl>=7 neon>=24 pq>=2 \
 		icuuc>=0 icui18n \
 		rdf>=0
@@ -234,7 +233,7 @@ LIB_DEPENDS-kde=	x11/kde4/libs \
 			${MODGCC4_CPPLIBDEP}
 WANTLIB-kde+=		ICE SM Xext icuuc
 WANTLIB-kde+=		GL GLEW GLU
-WANTLIB-kde+=		X11 ${LIBECXX} glib-2.0 intl m pthread
+WANTLIB-kde+=		X11 ${COMPILER_LIBCXX} glib-2.0 intl m pthread
 WANTLIB-kde+=		QtCore QtGui QtNetwork kdecore kdeui kfile kio
 
 .include <bsd.port.arch.mk>
@@ -249,7 +248,7 @@ RUN_DEPENDS-java=	${MODJAVA_RUN_DEPENDS} \
 			databases/db/v4,-java \
 			editors/libreoffice \
 			java/javaPathHelper
-WANTLIB-java=		c ${LIBECXX} m pthread
+WANTLIB-java=		c ${COMPILER_LIBCXX} m pthread
 
 USE_GMAKE=	Yes
 NO_TEST=	Yes

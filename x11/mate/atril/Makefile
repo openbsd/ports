@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2017/06/27 15:14:36 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2017/07/16 19:19:04 espie Exp $
 
 USE_WXNEEDED=		Yes
 
@@ -20,7 +20,7 @@ WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xt Xxf86vm bz2
 WANTLIB += c crypto drm epoxy expat ffi fontconfig freetype gbm
 WANTLIB += gio-2.0 glapi glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += iconv intl m pcre pixman-1 pthread pthread-stubs sqlite3
-WANTLIB += ${LIBCXX} xcb xcb-dri2 xcb-glx xcb-render xcb-shm xcb-xfixes
+WANTLIB += ${COMPILER_LIBCXX} xcb xcb-dri2 xcb-glx xcb-render xcb-shm xcb-xfixes
 WANTLIB += archive atk-1.0 atk-bridge-2.0 atspi avahi-common
 WANTLIB += cairo-gobject cairo caja-extension dbus-1 djvulibre
 WANTLIB += enchant ${LIBECXX} gailutil-3 gcrypt gdk-3 gdk_pixbuf-2.0

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2017/05/10 02:20:22 schwarze Exp $
+# $OpenBSD: Makefile,v 1.30 2017/07/16 19:18:56 espie Exp $
 
 COMMENT=	portable DjVu viewer and browser plugin
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += GL ICE QtGui QtNetwork QtOpenGL SM X11 Xext Xi Xinerama
 WANTLIB += Xrender c djvulibre fontconfig freetype glib-2.0 m
-WANTLIB += pcre pthread ${LIBCXX} tiff
+WANTLIB += pcre pthread ${COMPILER_LIBCXX} tiff
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=djvu/}
 

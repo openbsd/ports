@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2017/04/24 01:10:37 jca Exp $
+# $OpenBSD: Makefile,v 1.9 2017/07/16 19:19:02 espie Exp $
 
 COMMENT =	cron-like daemon but reacting to filesystem events
 
@@ -14,7 +14,7 @@ MASTER_SITES =	http://inotify.aiken.cz/download/incron/
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB +=	lib/inotify/inotify c m pthread ${LIBCXX}
+WANTLIB +=	lib/inotify/inotify c m pthread ${COMPILER_LIBCXX}
 
 BUILD_DEPENDS =	devel/argp-standalone
 LIB_DEPENDS =	devel/libinotify

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.90 2017/07/04 07:42:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.91 2017/07/16 19:19:01 espie Exp $
 
 COMMENT =		personal and small-business financial-accounting software
 
@@ -36,7 +36,7 @@ WANTLIB += gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-x11-2.0 guile
 WANTLIB += harfbuzz harfbuzz-icu iconv icudata icui18n icuuc intl
 WANTLIB += javascriptcoregtk-1.0 jpeg ltdl lzma m orc-0.4 pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
-WANTLIB += pthread-stubs secret-1 soup-2.4 sqlite3 ${LIBCXX} webkitgtk-1.0
+WANTLIB += pthread-stubs secret-1 soup-2.4 sqlite3 ${COMPILER_LIBCXX} webkitgtk-1.0
 WANTLIB += webp xcb xcb-dri2 xcb-glx xcb-render xcb-shm xcb-xfixes
 WANTLIB += xml2 xslt z
 

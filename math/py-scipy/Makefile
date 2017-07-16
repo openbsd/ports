@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2017/04/10 11:46:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2017/07/16 19:19:00 espie Exp $
 
 BROKEN-sparc64 =	ICE in scipy/optimize/minpack/qrsolv.f:189
 BROKEN-hppa =		ICE in scipy/special/specfun/specfun.f:5151
@@ -18,7 +18,7 @@ MAINTAINER=		Daniel Dickman <daniel@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += ${MODFORTRAN_WANTLIB} ${MODPY_WANTLIB}
-WANTLIB += blas lapack m pthread ${LIBCXX} util
+WANTLIB += blas lapack m pthread ${COMPILER_LIBCXX} util
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=scipy/}
 HOMEPAGE=		http://numeric.scipy.org/

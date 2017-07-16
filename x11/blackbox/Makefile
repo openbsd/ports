@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2017/04/25 15:00:55 espie Exp $
+# $OpenBSD: Makefile,v 1.57 2017/07/16 19:19:04 espie Exp $
 
 COMMENT=	small & pretty window manager for 8 and more bits displays
 
@@ -14,7 +14,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=blackboxwm/}
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += X11 Xext Xft Xrender c expat fontconfig freetype iconv m
-WANTLIB += pthread-stubs ${LIBCXX} xcb z
+WANTLIB += pthread-stubs ${COMPILER_LIBCXX} xcb z
 
 LIB_DEPENDS=		converters/libiconv
 

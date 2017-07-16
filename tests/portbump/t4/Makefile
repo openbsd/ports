@@ -175,7 +175,7 @@ LIB_DEPENDS-qt3= ${MODGETTEXT_LIB_DEPENDS} \
 WANTLIB-qt3=	GL ICE SM X11 Xcursor Xext Xfixes Xft Xi \
 		Xinerama Xmu Xrandr Xrender Xt expat fontconfig \
 		freetype jpeg lcms m mng png pthread xcb z \
-		avahi-common ${LIBCXX} ${MODQT3_WANTLIB} ${MODGETTEXT_WANTLIB} \
+		avahi-common ${COMPILER_LIBCXX} ${MODQT3_WANTLIB} ${MODGETTEXT_WANTLIB} \
 		Xdamage Xxf86vm drm pthread-stubs
 .else
 CONFIGURE_ARGS+= --disable-qt3
@@ -187,7 +187,7 @@ MODULES+=	x11/qt4
 LIB_DEPENDS-qt4= ${MODGETTEXT_LIB_DEPENDS} \
 		x11/qt4 \
 		${BUILD_PKGPATH}
-WANTLIB-qt4=	QtCore avahi-common m ${LIBCXX} ${MODGETTEXT_WANTLIB} \
+WANTLIB-qt4=	QtCore avahi-common m ${COMPILER_LIBCXX} ${MODGETTEXT_WANTLIB} \
 		pthread
 .else
 CONFIGURE_ARGS+= --disable-qt4

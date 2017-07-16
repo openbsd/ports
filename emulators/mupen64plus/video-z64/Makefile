@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2017/04/10 11:45:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2017/07/16 19:18:53 espie Exp $
 
 COMMENT =		n64 emulator video plugin
 REVISION =		5
@@ -11,7 +11,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WRKDIST =		${WRKDIR}/mupen64plus-${MUPEN64PLUS_MOD}
 
-WANTLIB =		GL GLEW GLU SDL c m pthread ${LIBCXX}
+WANTLIB =		GL GLEW GLU SDL c m pthread ${COMPILER_LIBCXX}
 LIB_DEPENDS =		graphics/glew>=1.12.0 \
 			devel/sdl
 

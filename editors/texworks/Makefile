@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2017/07/02 08:23:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.36 2017/07/16 19:18:52 espie Exp $
 
 COMMENT-main =		easy to use LaTeX and ConTeXt editor
 COMMENT-python =	Python scripting for TeXworks
@@ -45,11 +45,11 @@ WANTLIB += m poppler-qt4 pthread z
 
 WANTLIB-lua =	${MODLUA_WANTLIB}
 WANTLIB-lua +=	ICE QtCore QtGui QtXml SM X11 Xext Xi Xinerama Xrender
-WANTLIB-lua +=	fontconfig freetype m pthread ${LIBECXX}
+WANTLIB-lua +=	fontconfig freetype m pthread ${COMPILER_LIBCXX}
 
 WANTLIB-python =  ${MODPY_WANTLIB}
 WANTLIB-python += ICE QtCore QtGui QtXml SM X11 Xext Xi Xinerama Xrender
-WANTLIB-python += fontconfig freetype m pthread ${LIBECXX}
+WANTLIB-python += fontconfig freetype m pthread ${COMPILER_LIBCXX}
 
 MULTI_PACKAGES =	-main -lua -python
 

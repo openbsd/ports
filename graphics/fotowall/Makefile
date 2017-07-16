@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2017/06/12 10:57:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2017/07/16 19:18:57 espie Exp $
 
 COMMENT =	Pictures collage & creativity tool
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += GL ICE QtGui QtNetwork QtOpenGL QtSvg QtXml SM X11
 WANTLIB += Xext Xi Xinerama Xrender c fontconfig freetype m pthread
-WANTLIB += ${LIBCXX}
+WANTLIB += ${COMPILER_LIBCXX}
 
 MASTER_SITES =		${MASTER_SITE_GOOGLECODE:=fotowall/}
 

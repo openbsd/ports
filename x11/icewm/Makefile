@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2017/04/10 11:46:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.61 2017/07/16 19:19:05 espie Exp $
 
 COMMENT=	small and fast window manager
 
@@ -13,7 +13,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += ICE SM X11 Xext Xft Xinerama Xrandr Xrender c fontconfig
 WANTLIB += freetype gdk_pixbuf-2.0 gdk_pixbuf_xlib-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 iconv intl m pthread ${LIBCXX}
+WANTLIB += gmodule-2.0 gobject-2.0 iconv intl m pthread ${COMPILER_LIBCXX}
 WANTLIB += z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=icewm/}

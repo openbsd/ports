@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2017/05/08 21:40:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.28 2017/07/16 19:18:58 espie Exp $
 
 COMMENT=	Sandia Internet path characterization tool
 
@@ -9,7 +9,7 @@ CATEGORIES=	net
 MASTER_SITES=	${HOMEPAGE}
 
 PERMIT_PACKAGE_CDROM=	Yes
-WANTLIB=		c m pcap ${LIBCXX} 
+WANTLIB=		c m pcap ${COMPILER_LIBCXX} 
 
 HOMEPAGE=	http://www.kitchenlab.org/www/bmah/Software/pchar/
 

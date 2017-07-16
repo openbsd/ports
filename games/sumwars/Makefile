@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2017/05/31 08:08:16 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2017/07/16 19:18:55 espie Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 
@@ -24,7 +24,7 @@ WANTLIB += CEGUIBase-0 CEGUIOgreRenderer-0 OIS OgreMain OgreRTShaderSystem
 WANTLIB += OgreTerrain X11 Xrandr alut boost_chrono-mt boost_date_time-mt
 WANTLIB += boost_filesystem-mt boost_system-mt boost_thread-mt
 WANTLIB += c enet m ogg openal physfs pthread tinyxml vorbis
-WANTLIB += vorbisfile boost_atomic-mt ${MODLUA_WANTLIB} ${LIBECXX}
+WANTLIB += vorbisfile boost_atomic-mt ${MODLUA_WANTLIB} ${COMPILER_LIBCXX}
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=sumwars/}
 EXTRACT_SUFX =		.tar.bz2

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2017/06/13 14:22:57 schwarze Exp $
+# $OpenBSD: Makefile,v 1.24 2017/07/16 19:18:51 espie Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_WXNEEDED=	Yes
@@ -75,7 +75,7 @@ BUILD_DEPENDS+=	archivers/zip \
 LIB_DEPENDS=	converters/libiconv \
 		graphics/giflib
 
-WANTLIB=	X11 Xext Xi Xrender Xtst c freetype gif iconv m pthread ${LIBCXX} z
+WANTLIB=	X11 Xext Xi Xrender Xtst c freetype gif iconv m pthread ${COMPILER_LIBCXX} z
 
 USE_GMAKE=	Yes
 GMAKE=		${LOCALBASE}/bin/gmake

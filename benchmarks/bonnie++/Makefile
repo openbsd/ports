@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2017/05/24 14:04:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2017/07/16 19:18:49 espie Exp $
 
 COMMENT=	enhanced performance test of filesystem I/O
 
@@ -12,7 +12,7 @@ HOMEPAGE=	http://www.coker.com.au/bonnie++/
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	c m pthread ${LIBCXX}
+WANTLIB=	c m pthread ${COMPILER_LIBCXX}
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= autoconf dest

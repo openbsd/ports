@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2017/05/17 16:03:32 espie Exp $
+# $OpenBSD: Makefile,v 1.43 2017/07/16 19:18:58 espie Exp $
 # Much help came from Alexandre Anriot, Robert Nagy, Bernd Ahlers,
 # and, last but not least, Pedro la Peu.
 
@@ -50,8 +50,8 @@ FLAVOR?=
 
 MULTI_PACKAGES=		-main -gpsmap
 
-WANTLIB-main=		c m ncurses panel pcap ${LIBCXX}
-WANTLIB-gpsmap=		c expat m pthread ${LIBCXX} z \
+WANTLIB-main=		c m ncurses panel pcap ${COMPILER_LIBCXX}
+WANTLIB-gpsmap=		c expat m pthread ${COMPILER_LIBCXX} z \
 			MagickCore-6.Q16 gmp>=6
 LIB_DEPENDS-gpsmap=	graphics/ImageMagick \
 			devel/gmp

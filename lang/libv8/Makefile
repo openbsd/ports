@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2017/06/05 10:17:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2017/07/16 19:18:59 espie Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386
 
@@ -30,7 +30,7 @@ BUILD_DEPENDS=	devel/gyp
 
 LIB_DEPENDS=	devel/libexecinfo
 
-WANTLIB +=	c execinfo m pthread ssl ${LIBCXX} 
+WANTLIB +=	c execinfo m pthread ssl ${COMPILER_LIBCXX} 
 
 USE_GMAKE=	Yes
 

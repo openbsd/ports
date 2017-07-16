@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2017/06/06 15:05:44 schwarze Exp $
+# $OpenBSD: Makefile,v 1.31 2017/07/16 19:18:55 espie Exp $
 
 COMMENT=	jigsaw puzzle game for X11
 
@@ -12,7 +12,7 @@ EXTRACT_SUFX=	.tgz
 # License: BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	X11 Xau Xdmcp Xext c m pthread-stubs ${LIBCXX} xcb
+WANTLIB=	X11 Xau Xdmcp Xext c m pthread-stubs ${COMPILER_LIBCXX} xcb
 
 MAKE_FILE=	Makefile.Linux
 

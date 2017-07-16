@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.257 2017/07/12 19:55:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.258 2017/07/16 19:19:02 espie Exp $
 
 # XXX uses -fblocks on clang, or nested functions on gcc.
 #
@@ -39,7 +39,7 @@ WANTLIB-main += ilbccodec jansson lzma m nghttp2 ogg opencore-amrnb
 WANTLIB-main += opencore-amrwb pj pjlib-util pjmedia pjmedia-audiodev
 WANTLIB-main += pjmedia-codec pjmedia-videodev pjnath pjsip pjsip-simple
 WANTLIB-main += pjsip-ua pjsua pjsua2 portaudio pthread resample spandsp
-WANTLIB-main += speex speexdsp sqlite3 ssl ${LIBCXX} termcap tiff uriparser
+WANTLIB-main += speex speexdsp sqlite3 ssl ${COMPILER_LIBCXX} termcap tiff uriparser
 WANTLIB-main += uuid vorbis vorbisenc vorbisfile xml2 xslt z
 
 SHARED_LIBS=		asteriskssl 0.0		# 1

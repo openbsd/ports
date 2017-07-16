@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.81 2017/05/26 20:50:57 naddy Exp $
+# $OpenBSD: Makefile,v 1.82 2017/07/16 19:18:57 espie Exp $
 
 COMMENT=	tools and library routines for working with TIFF images
 
@@ -12,7 +12,7 @@ MASTER_SITES=	http://download.osgeo.org/libtiff/
 HOMEPAGE=	http://www.simplesystems.org/libtiff/
 
 LIB_DEPENDS=	graphics/jpeg
-WANTLIB=	c m ${LIBCXX} z jpeg
+WANTLIB=	c m ${COMPILER_LIBCXX} z jpeg
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

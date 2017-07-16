@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2017/05/31 08:08:18 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2017/07/16 19:19:05 espie Exp $
 
 COMMENT =	manual tiling window manager
 DISTNAME =	herbstluftwm-0.7.0
@@ -11,7 +11,7 @@ MAINTAINER =	Florian Stinglmayr <florian@n0la.org>
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += X11 Xext Xinerama c glib-2.0 intl m pthread ${LIBECXX}
+WANTLIB += X11 Xext Xinerama c glib-2.0 intl m pthread ${COMPILER_LIBCXX}
 
 MASTER_SITES =	http://herbstluftwm.org/tarballs/
 

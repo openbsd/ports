@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2017/05/04 14:02:00 espie Exp $
+# $OpenBSD: Makefile,v 1.38 2017/07/16 19:18:49 espie Exp $
 
 COMMENT=	GNOME multimode HF terminal
 
@@ -22,7 +22,7 @@ WANTLIB += fftw fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gnome-2 gnomecanvas-2
 WANTLIB += gnomeui-2 gnomevfs-2 gobject-2.0 gthread-2.0 gtk-x11-2.0
 WANTLIB += hamlib m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1
-WANTLIB += png popt pthread pthread-stubs sndio ${LIBCXX} xcb xcb-render
+WANTLIB += png popt pthread pthread-stubs sndio ${COMPILER_LIBCXX} xcb xcb-render
 WANTLIB += xcb-shm z
 
 MODULES=		devel/gettext \

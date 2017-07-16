@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2017/05/31 08:08:16 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2017/07/16 19:18:55 espie Exp $
 
 COMMENT =		jump 'n' run game
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += GL GLEW GLU SDL2 SDL2_image boost_date_time-mt boost_filesystem-mt
 WANTLIB += boost_system-mt c curl m ogg openal pthread vorbis
-WANTLIB += vorbisfile ${LIBECXX}
+WANTLIB += vorbisfile ${COMPILER_LIBCXX}
 
 MASTER_SITES =		https://github.com/SuperTux/supertux/releases/download/v${V}/
 

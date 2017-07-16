@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2017/05/31 08:08:16 espie Exp $
+# $OpenBSD: Makefile,v 1.62 2017/07/16 19:18:56 espie Exp $
 
 COMMENT =	SVG vector drawing application
 
@@ -26,7 +26,7 @@ WANTLIB += gtkspell harfbuzz iconv intl jbig jpeg lcms2 lzma m
 WANTLIB += openjp2 pango-1.0 pangocairo-1.0 pangoft2-1.0 pangomm-1.4
 WANTLIB += pcre pixman-1 png poppler poppler-glib popt potrace
 WANTLIB += pthread pthread-stubs sigc-2.0 ${LIBCXX} tiff webp xcb
-WANTLIB += xcb-render xcb-shm xml2 xslt ${LIBECXX}
+WANTLIB += xcb-render xcb-shm xml2 xslt ${COMPILER_LIBCXX}
 
 MODULES=	textproc/intltool \
 		lang/python \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2017/05/31 08:08:16 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2017/07/16 19:18:57 espie Exp $
 
 COMMENT =		library set for simulations, games and visualizations
 
@@ -20,7 +20,7 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=flightgear/}
 EXTRACT_SUFX =		.tar.bz2
 
 WANTLIB += GL GLU OpenThreads curl expat m openal osg osgDB osgGA osgParticle
-WANTLIB += osgSim osgText osgUtil osgViewer pthread z ${LIBECXX}
+WANTLIB += osgSim osgText osgUtil osgViewer pthread z ${COMPILER_LIBCXX}
 
 MODULES =		devel/cmake
 COMPILER =		gcc

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.249 2017/06/25 07:44:45 landry Exp $
+# $OpenBSD: Makefile,v 1.250 2017/07/16 19:18:59 espie Exp $
 
 COMMENT-main =		Mozilla e-mail, rss and usenet client
 COMMENT-lightning =	Mozilla Thunderbird calendar extension
@@ -53,7 +53,7 @@ CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include"
 
 LIB_DEPENDS-lightning = STEM->=${MOZILLA_VERSION:S/b/beta/}:${BUILD_PKGPATH},-main
 WANTLIB-lightning =	lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/xul \
-			c m $(LIBECXX) nspr4 plc4 plds4 pthread
+			c m $(COMPILER_LIBCXX) nspr4 plc4 plds4 pthread
 
 WANTLIB += X11-xcb pixman-1 pthread-stubs xcb xcb-shm
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2017/04/16 20:27:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2017/07/16 19:18:49 espie Exp $
 
 BROKEN-hppa=	undefined reference to __sync_fetch_and_add_8
 BROKEN-powerpc=	undefined reference to __sync_fetch_and_add_8
@@ -20,7 +20,7 @@ HOMEPAGE=	http://fallabs.com/kyotocabinet/
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c m pthread ${LIBCXX} z
+WANTLIB += c m pthread ${COMPILER_LIBCXX} z
 
 MASTER_SITES=	${HOMEPAGE}pkg/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2017/04/10 11:45:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2017/07/16 19:18:51 espie Exp $
 
 COMMENT =	C++ toolkit for GUI
 CATEGORIES =	devel
@@ -35,7 +35,7 @@ SUBST_VARS =	FOX
 
 WANTLIB += GL GLU X11 X11-xcb Xcursor Xdamage Xext Xfixes Xft
 WANTLIB += Xrandr Xrender Xxf86vm bz2 c drm expat fontconfig freetype
-WANTLIB += glapi jpeg m png pthread pthread-stubs ${LIBCXX} tiff
+WANTLIB += glapi jpeg m png pthread pthread-stubs ${COMPILER_LIBCXX} tiff
 WANTLIB += xcb xcb-dri2 xcb-glx z
 
 .include <bsd.port.mk>

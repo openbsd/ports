@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2017/04/10 11:46:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.58 2017/07/16 19:19:06 espie Exp $
 
 COMMENT=	draw pictures of the earth textured by an image
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += X11 c charset fontconfig freetype gif glib-2.0 gobject-2.0
 WANTLIB += iconv intl jpeg m pango-1.0 pangoft2-1.0 png pthread
-WANTLIB += ${LIBCXX} z
+WANTLIB += ${COMPILER_LIBCXX} z
 
 LIB_DEPENDS=		devel/gettext \
 			devel/pango \

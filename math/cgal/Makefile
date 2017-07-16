@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2017/04/10 11:46:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2017/07/16 19:19:00 espie Exp $
 
 BROKEN-mips64 =		ICE on Interval_nt.h:98
 
@@ -27,7 +27,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += GL GLU boost_system-mt boost_thread-mt gmp m mpfr pthread
 WANTLIB += boost_atomic-mt boost_chrono-mt boost_date_time-mt
-WANTLIB += ${LIBCXX} z lib/qt4/QtGui lib/qt4/QtOpenGL lib/qt4/QtSvg
+WANTLIB += ${COMPILER_LIBCXX} z lib/qt4/QtGui lib/qt4/QtOpenGL lib/qt4/QtSvg
 
 EXTRACT_SUFX =		.tar.xz
 

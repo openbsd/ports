@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2017/05/31 08:08:15 espie Exp $
+# $OpenBSD: Makefile,v 1.36 2017/07/16 19:18:53 espie Exp $
 
 COMMENT =	emulates the Super Nintendo Entertainment System
 BROKEN-alpha =	ICE/failure on filter/hq2x.cpp
@@ -18,7 +18,7 @@ WANTLIB += SDL X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender Xv atk-1.0 c cairo fontconfig freetype
 WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
 WANTLIB += gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 png pthread xml2 z ${LIBECXX}
+WANTLIB += pangoft2-1.0 png pthread xml2 z ${COMPILER_LIBCXX}
 
 MASTER_SITES =	https://sites.google.com/site/bearoso/snes9x/
 EXTRACT_SUFX =	.tar.bz2

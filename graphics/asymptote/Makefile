@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2017/06/04 22:22:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2017/07/16 19:18:56 espie Exp $
 
 NOT_FOR_ARCHS=		${CLANG_ARCHS} # hangs during build, while running
 # ../asy -dir ../base -config "" -render=0 -f pdf -noprc cube.asy
@@ -24,7 +24,7 @@ EXTRACT_SUFX=		.tgz
 MODULES=		lang/python
 
 WANTLIB += GL GLU OSMesa c fftw3 gc glut gsl gslcblas m ncurses pthread
-WANTLIB += readline sigsegv ${LIBCXX} z
+WANTLIB += readline sigsegv ${COMPILER_LIBCXX} z
 
 BUILD_DEPENDS=		print/texlive/base \
 			print/texinfo

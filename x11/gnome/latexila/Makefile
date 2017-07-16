@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2017/06/25 09:21:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.53 2017/07/16 19:19:04 espie Exp $
 
 COMMENT=		integrated LaTeX environment for GNOME
 
@@ -17,7 +17,7 @@ WANTLIB += fontconfig freetype gdk-3 gdk_pixbuf-2.0 gee-0.8 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gspell-1
 WANTLIB += gtef-2 gthread-2.0 gtk-3 gtksourceview-3.0 harfbuzz
 WANTLIB += iconv intl lzma m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png pthread pthread-stubs ${LIBCXX} uchardet
+WANTLIB += pcre pixman-1 png pthread pthread-stubs ${COMPILER_LIBCXX} uchardet
 WANTLIB += xcb xcb-render xcb-shm xml2 z
 
 MODULES=		devel/dconf \

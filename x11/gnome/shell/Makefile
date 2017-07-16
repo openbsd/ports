@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.145 2017/05/31 08:08:18 espie Exp $
+# $OpenBSD: Makefile,v 1.146 2017/07/16 19:19:04 espie Exp $
 
 USE_WXNEEDED=		Yes
 
@@ -31,7 +31,7 @@ WANTLIB += vorbisenc vorbisfile webkit2gtk-4.0 xcb xcb-dri2 xcb-glx
 WANTLIB += xcb-randr xcb-render xcb-res xcb-shm xcb-util xcb-xfixes
 WANTLIB += xcb-xkb xkbcommon xkbcommon-x11 xkbfile xml2 z
 WANTLIB += GL Xt enchant gstapp-1.0 gstfft-1.0 gstpbutils-1.0
-WANTLIB += hyphen jpeg notify nssutil3 ${LIBCXX} webp xslt
+WANTLIB += hyphen jpeg notify nssutil3 ${COMPILER_LIBCXX} webp xslt
 
 
 MODULES=		devel/dconf \

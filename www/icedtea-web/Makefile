@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2017/04/21 17:04:35 giovanni Exp $
+# $OpenBSD: Makefile,v 1.24 2017/07/16 19:19:03 espie Exp $
 
 COMMENT =	Java web browser plugin
 DISTNAME =	icedtea-web-1.6.2
@@ -32,7 +32,7 @@ BUILD_DEPENDS =	${RUN_DEPENDS} \
 
 USE_GMAKE =	Yes
 LIB_DEPENDS =	devel/glib2
-WANTLIB += glib-2.0 m ${LIBCXX}
+WANTLIB += glib-2.0 m ${COMPILER_LIBCXX}
 
 post-patch:
 	${SUBST_CMD} ${WRKSRC}/launcher/launchers.in

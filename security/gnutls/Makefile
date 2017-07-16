@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.138 2017/07/05 06:45:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.139 2017/07/16 19:19:01 espie Exp $
 
 COMMENT=		GNU Transport Layer Security library
 
@@ -26,7 +26,7 @@ MASTER_SITES=		ftp://ftp.gnutls.org/gcrypt/gnutls/v${V:R}/ \
 
 .include <bsd.port.arch.mk>
 .if ${PROPERTIES:Mclang} || ${MACHINE_ARCH} != amd64
-WANTLIB += ${LIBCXX}
+WANTLIB += ${COMPILER_LIBCXX}
 .else
 # assembly instructions
 MODULES +=	lang/clang

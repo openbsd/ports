@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2017/04/10 11:46:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.44 2017/07/16 19:19:03 espie Exp $
 
 COMMENT =	fast, compact and portable XSL/XSLT processor
 
@@ -14,7 +14,7 @@ HOMEPAGE =	http://freshmeat.net/projects/sablotron/
 # MPL1.1 / GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =	c expat iconv m ncurses readline ${LIBCXX}
+WANTLIB =	c expat iconv m ncurses readline ${COMPILER_LIBCXX}
 
 MASTER_SITES =	http://www.arcane-labs.net/download/OpenBSD/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2017/04/19 18:14:56 jca Exp $
+# $OpenBSD: Makefile,v 1.17 2017/07/16 19:18:59 espie Exp $
 
 COMMENT=	simple interactive POP3 client
 
@@ -8,7 +8,7 @@ CATEGORIES=	mail
 
 # GPL
 PERMIT_PACKAGE_CDROM=   Yes
-WANTLIB=		c m readline ${LIBCXX} termcap
+WANTLIB=		c m readline ${COMPILER_LIBCXX} termcap
 
 MAKE_FLAGS= \
 	CC='${CXX}' \

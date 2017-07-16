@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2017/05/02 15:13:39 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2017/07/16 19:18:49 espie Exp $
 
 PORTROACH=	limit:[0-9]\.[0-9]\.[0-9][0-9]$
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=qucs/}
 
-WANTLIB += ICE SM X11 c m pthread ${LIBCXX}
+WANTLIB += ICE SM X11 c m pthread ${COMPILER_LIBCXX}
 
 MODULES=	x11/qt3
 

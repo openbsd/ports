@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2017/05/27 07:55:27 fcambus Exp $
+# $OpenBSD: Makefile,v 1.27 2017/07/16 19:18:53 espie Exp $
 
 COMMENT =		Atari 2600 VCS emulator
 
@@ -15,7 +15,7 @@ MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		c ${LIBCXX} m z pthread SDL>=1.2 png
+WANTLIB =		c ${COMPILER_LIBCXX} m z pthread SDL>=1.2 png
 
 MASTER_SITES =		https://github.com/stella-emu/stella/releases/download/release-${V}/
 

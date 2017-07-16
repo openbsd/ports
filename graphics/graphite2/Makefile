@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2017/05/06 07:57:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2017/07/16 19:18:56 espie Exp $
 
 COMMENT=	rendering for complex writing systems
 
@@ -16,7 +16,7 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c m ${LIBCXX}
+WANTLIB += c m ${COMPILER_LIBCXX}
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=silgraphite/}
 

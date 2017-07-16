@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2017/04/10 11:45:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2017/07/16 19:18:54 espie Exp $
 
 COMMENT=	astrosmash clone for X
 
@@ -11,7 +11,7 @@ HOMEPAGE=	http://sarrazip.com/dev/cosmosmash.html
 # GPLv2+
 PERMIT_PACKAGE_CDROM=   Yes
 
-WANTLIB += SDL SDL_image SDL_mixer c flatzebra-0.1 m pthread ${LIBCXX}
+WANTLIB += SDL SDL_image SDL_mixer c flatzebra-0.1 m pthread ${COMPILER_LIBCXX}
 WANTLIB += FLAC iconv jpeg mikmod ogg png smpeg sndio tiff usbhid
 WANTLIB += vorbis vorbisfile webp z
 

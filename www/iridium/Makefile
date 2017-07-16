@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2017/05/31 08:08:17 espie Exp $
+# $OpenBSD: Makefile,v 1.63 2017/07/16 19:19:03 espie Exp $
 
 USE_WXNEEDED=		Yes
 
@@ -47,7 +47,7 @@ WANTLIB += png pthread
 WANTLIB += xml2 xslt
 WANTLIB += sndio
 WANTLIB += Xcomposite
-WANTLIB += ${LIBECXX}
+WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += Xi Xtst
 WANTLIB += Xdamage
 WANTLIB += Xcursor Xrandr gio-2.0

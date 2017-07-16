@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2017/04/10 11:46:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2017/07/16 19:18:55 espie Exp $
 
 COMMENT =	multi-way scrolling shoot'em up for X11, addictive
 #'
@@ -22,7 +22,7 @@ MAINTAINER =	Marc Espie <espie@openbsd.org>
 # GPL
 PERMIT_PACKAGE_CDROM =	Yes
 	
-WANTLIB =	X11 Xau Xdmcp Xext c m pthread-stubs ${LIBCXX} xcb
+WANTLIB =	X11 Xau Xdmcp Xext c m pthread-stubs ${COMPILER_LIBCXX} xcb
 
 CONFIGURE_STYLE =	imake
 

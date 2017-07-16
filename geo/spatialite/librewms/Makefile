@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2017/04/10 11:46:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2017/07/16 19:18:50 espie Exp $
 
 COMMENT =	WMS viewer built on top of spatialite and rasterlite2
 DISTNAME =	librewms-1.0.0
@@ -20,7 +20,7 @@ WANTLIB += gdk_pixbuf-2.0 geos geos_c geotiff gif gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-x11-2.0
 WANTLIB += harfbuzz iodbc jpeg lzma m mspack nghttp2 pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png proj pthread
-WANTLIB += pthread-stubs rasterlite2 sndio spatialite sqlite3 ssl ${LIBCXX}
+WANTLIB += pthread-stubs rasterlite2 sndio spatialite sqlite3 ssl ${COMPILER_LIBCXX}
 WANTLIB += tiff usbhid webp wx_base wx_base_net wx_base_odbc wx_base_xml
 WANTLIB += wx_gtk2_adv wx_gtk2_aui wx_gtk2_core wx_gtk2_dbgrid
 WANTLIB += wx_gtk2_html wx_gtk2_qa wx_gtk2_richtext wx_gtk2_xrc xcb

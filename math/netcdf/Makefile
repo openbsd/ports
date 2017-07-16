@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2017/05/08 13:31:58 schwarze Exp $ 
+# $OpenBSD: Makefile,v 1.29 2017/07/16 19:19:00 espie Exp $ 
 
 BROKEN-powerpc=	fails to build
 BROKEN-hppa =	fails to configure
@@ -23,7 +23,7 @@ BUILD_DEPENDS =	${MODFORTRAN_BUILD_DEPENDS}
 # BSD-like
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		c m ${LIBCXX}
+WANTLIB=		c m ${COMPILER_LIBCXX}
 
 MASTER_SITES=		ftp://ftp.unidata.ucar.edu/pub/netcdf/
 

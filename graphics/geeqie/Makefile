@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2017/04/10 11:46:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2017/07/16 19:18:56 espie Exp $
 
 COMMENT=		lightweight Gtk+2 based image viewer
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += atk-1.0 c cairo cairo-gobject exiv2 gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gobject-2.0 gthread-2.0 gtk-3 intl
-WANTLIB += jpeg lcms2 m pango-1.0 pangocairo-1.0 pthread ${LIBCXX}
+WANTLIB += jpeg lcms2 m pango-1.0 pangocairo-1.0 pthread ${COMPILER_LIBCXX}
 WANTLIB += tiff
 
 MASTER_SITES=		http://geeqie.org/

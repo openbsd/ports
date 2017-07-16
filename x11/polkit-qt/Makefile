@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2017/05/29 08:28:02 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2017/07/16 19:19:04 espie Exp $
 
 COMMENT=	PolicyKit authentication agent for Qt
 
@@ -65,7 +65,7 @@ FULLPKGNAME=	polkit-qt4-${V}
 MODULES+=	x11/qt4
 CONFIGURE_ARGS+=-DUSE_QT4=Yes \
 		-DOPENBSD_STDCPP=
-WANTLIB+=	QtDBus QtGui ${LIBCXX}
+WANTLIB+=	QtDBus QtGui ${COMPILER_LIBCXX}
 PKGSTEM=	polkit-qt-
 CMAKESTEM=	PolkitQt-1
 .endif

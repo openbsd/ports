@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2017/04/10 11:46:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2017/07/16 19:19:05 espie Exp $
 
 COMMENT=	OpenSSH client and daemon for NX
 
@@ -9,7 +9,7 @@ REVISION=	7
 
 CATEGORIES=	net
 
-WANTLIB += Xcomp c crypto jpeg m png ${LIBCXX} util z
+WANTLIB += Xcomp c crypto jpeg m png ${COMPILER_LIBCXX} util z
 
 MASTER_SITES=	https://distfiles.nl/
 

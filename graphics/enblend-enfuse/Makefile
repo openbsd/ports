@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2017/07/05 10:22:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2017/07/16 19:18:56 espie Exp $
 
 ONLY_FOR_ARCHS = ${GCC4_ARCHS} ${CLANG_ARCHS}
 .if (${MACHINE_ARCH} != "i386" && ${MACHINE_ARCH} != "amd64" && ${MACHINE_ARCH} != "arm64")
@@ -21,7 +21,7 @@ HOMEPAGE =	http://enblend.sourceforge.net/
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += Half Iex IexMath IlmImf IlmThread Imath c gsl gslcblas
-WANTLIB += jpeg lcms2 m png pthread tiff vigraimpex z ${LIBECXX}
+WANTLIB += jpeg lcms2 m png pthread tiff vigraimpex z ${COMPILER_LIBCXX}
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=enblend/}
 

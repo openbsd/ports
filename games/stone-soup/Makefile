@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2017/05/31 08:08:16 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2017/07/16 19:18:55 espie Exp $
 
 BROKEN-hppa =	ICE on dgn-shoals.cc:638
 BROKEN-arm=	tilegen.elf loops burning cpu
@@ -33,7 +33,7 @@ MAKE_ENV +=	MODLUA_DEP_VERSION=${MODLUA_DEP_VERSION}
 COMPILER =	gcc
 MODULES = 	lang/lua
 MODLUA_VERSION = 	5.1
-WANTLIB = 	c m ${MODLUA_WANTLIB} sqlite3 ${LIBECXX}
+WANTLIB = 	c m ${MODLUA_WANTLIB} sqlite3 ${COMPILER_LIBCXX}
 
 BUILD_DEPENDS = graphics/pngcrush
 LIB_DEPENDS = 	databases/sqlite3

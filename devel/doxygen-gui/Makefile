@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2017/04/21 19:44:31 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.4 2017/07/16 19:18:52 espie Exp $
 
 # Memory hog, stuck for days on the same file (configoptions.cpp) during build.
 # XXX check with different optimizer level? see doc/install.doc
@@ -20,7 +20,7 @@ MAINTAINER=	Rafael Sadowski <rafael@sizeofvoid.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += QtGui QtXml c m ${LIBCXX}
+WANTLIB += QtGui QtXml c m ${COMPILER_LIBCXX}
 
 MASTER_SITES=	http://ftp.stack.nl/pub/users/dimitri/ \
 		ftp://ftp.stack.nl/pub/users/dimitri/

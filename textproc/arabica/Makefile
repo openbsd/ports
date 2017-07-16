@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2017/04/10 11:46:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2017/07/16 19:19:02 espie Exp $
 
 COMMENT =	XML and HTML processing toolkit
 DISTNAME =	arabica-2010-November
@@ -18,6 +18,6 @@ CONFIGURE_STYLE =	gnu
 
 BUILD_DEPENDS =	devel/boost
 CONFIGURE_ENV =	CPPFLAGS='-I${LOCALBASE}/include'
-WANTLIB +=	c expat m ${LIBCXX}
+WANTLIB +=	c expat m ${COMPILER_LIBCXX}
 
 .include <bsd.port.mk>

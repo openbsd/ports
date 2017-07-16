@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.146 2017/04/13 07:38:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.147 2017/07/16 19:19:04 espie Exp $
 
 COMMENT=		lightweight GNOME text editor
 
@@ -18,7 +18,7 @@ WANTLIB += freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 girepository-1.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
 WANTLIB += gtk-3 gtksourceview-3.0 harfbuzz m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre peas-1.0 peas-gtk-1.0 pixman-1 png
-WANTLIB += pthread pthread-stubs ${LIBCXX} xcb xcb-render
+WANTLIB += pthread pthread-stubs ${COMPILER_LIBCXX} xcb xcb-render
 WANTLIB += xcb-shm xml2 z lzma epoxy iconv intl gspell-1
 
 MODULES=		devel/dconf \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2017/05/31 08:08:15 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2017/07/16 19:18:50 espie Exp $
 
 COMMENT =		C++ parser for the HOCON configuration language
 
@@ -17,7 +17,7 @@ SHARED_LIBS =		cpp-hocon	0.0
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		devel/cmake
-WANTLIB =  ${LIBECXX} m
+WANTLIB =  ${COMPILER_LIBCXX} m
 WANTLIB += boost_atomic-mt boost_chrono-mt boost_date_time-mt boost_locale-mt
 WANTLIB += boost_program_options-mt boost_system-mt boost_thread-mt
 WANTLIB += leatherman_locale leatherman_util

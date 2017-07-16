@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2017/06/02 23:17:08 schwarze Exp $
+# $OpenBSD: Makefile,v 1.9 2017/07/16 19:18:51 espie Exp $
 
 # see ${WRKBUILD}/arm-none-eabi/libgcc/config.log
 BROKEN-i386=	ICE: Floating point exception from xgcc during libgcc autoconf "checking for suffix of object files"
@@ -26,7 +26,7 @@ ERRORS+=	"either aarch64 or arm FLAVOR should be set"
 GCC_VERSION=	6.3.1
 SUBST_VARS+=	VERSION CONFIG GCC_VERSION
 
-WANTLIB=	c m ${LIBCXX} gmp mpfr mpc
+WANTLIB=	c m ${COMPILER_LIBCXX} gmp mpfr mpc
 DIST_SUBDIR=	gcc
 
 MAKE_GXX=	No

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2017/06/27 12:04:08 abieber Exp $
+# $OpenBSD: Makefile,v 1.60 2017/07/16 19:18:59 espie Exp $
 
 # XXX:
 # - Needs __ARM_NR_cacheflush (or the like) to work on arm-based ports.
@@ -35,7 +35,7 @@ MODULES =		lang/python
 
 COMPILER =		gcc
 
-WANTLIB += c execinfo kvm m pthread util z ${LIBECXX}
+WANTLIB += c execinfo kvm m pthread util z ${COMPILER_LIBCXX}
 
 LIB_DEPENDS =		devel/libexecinfo
 

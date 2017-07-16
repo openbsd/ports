@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2017/04/10 11:46:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.47 2017/07/16 19:19:05 espie Exp $
 
 COMMENT=		OpenGL widget for GTK+2 GUI toolkit
 
@@ -20,7 +20,7 @@ WANTLIB += gmodule-2.0 gobject-2.0 gtk-x11-2.0 m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread-stubs
 WANTLIB += xcb xcb-shm z
 WANTLIB += X11-xcb Xxf86vm drm ffi glapi graphite2 gthread-2.0
-WANTLIB += harfbuzz pthread ${LIBCXX} xcb-dri2 xcb-glx xcb-render
+WANTLIB += harfbuzz pthread ${COMPILER_LIBCXX} xcb-dri2 xcb-glx xcb-render
 
 EXTRACT_SUFX=		.tar.bz2
 

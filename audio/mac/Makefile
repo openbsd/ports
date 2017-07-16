@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2017/04/10 11:45:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2017/07/16 19:18:48 espie Exp $
 
 ONLY_FOR_ARCHS= amd64 arm i386
 
@@ -18,7 +18,7 @@ MAINTAINER=	Vlad Glagolev <stealth@sourcemage.org>
 # http://www.monkeysaudio.com/license.html
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	c m ${LIBCXX}
+WANTLIB=	c m ${COMPILER_LIBCXX}
 
 MASTER_SITES=	http://bsd.cenkes.org/myports/
 

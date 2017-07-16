@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2017/06/12 10:57:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2017/07/16 19:18:48 espie Exp $
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS} ${CLANG_ARCHS}
 
@@ -18,7 +18,7 @@ WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glade-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
 WANTLIB += gtk-x11-2.0 harfbuzz jack lzma m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
-WANTLIB += ${LIBCXX} xcb xcb-render xcb-shm xml2 z
+WANTLIB += ${COMPILER_LIBCXX} xcb xcb-render xcb-shm xml2 z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=calf/}
 

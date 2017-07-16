@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2017/04/10 11:46:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2017/07/16 19:18:58 espie Exp $
 
 COMMENT=	UCB/LBNL Network Animator
 
@@ -16,7 +16,7 @@ HOMEPAGE=	http://nsnam.sourceforge.net/
 PERMIT_PACKAGE_CDROM=   Yes
 
 MODULES	+=		x11/tk
-WANTLIB +=		X11 Xext c m otcl ${LIBCXX} z
+WANTLIB +=		X11 Xext c m otcl ${COMPILER_LIBCXX} z
 WANTLIB +=		${MODTK_WANTLIB}
 LIB_DEPENDS +=		${MODTK_LIB_DEPENDS}
 

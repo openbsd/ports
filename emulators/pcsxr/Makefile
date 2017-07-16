@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2017/07/05 19:43:16 jeremy Exp $
+# $OpenBSD: Makefile,v 1.17 2017/07/16 19:18:53 espie Exp $
 
 COMMENT =	Playstation 1 emulator
 
@@ -18,7 +18,7 @@ WANTLIB += dbus-1 drm epoxy expat ffi fontconfig freetype gdk-3
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glapi glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += graphite2 gthread-2.0 gtk-3 harfbuzz m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
-WANTLIB += pthread-stubs sndio ${LIBCXX} usbhid xcb xcb-dri2 xcb-glx
+WANTLIB += pthread-stubs sndio ${COMPILER_LIBCXX} usbhid xcb xcb-dri2 xcb-glx
 WANTLIB += xcb-render xcb-shm z
 
 MASTER_SITES =	http://www.elsasser.org/openbsd/distfiles/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2017/04/27 21:37:04 landry Exp $
+# $OpenBSD: Makefile,v 1.16 2017/07/16 19:19:01 espie Exp $
 
 COMMENT=	lightweight PDF document viewer with vi bindings
 
@@ -17,7 +17,7 @@ MODULES=	devel/gettext \
 
 WANTLIB += atk-1.0 c cairo cairo-gobject gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gobject-2.0 gthread-2.0 gtk-3 m pango-1.0
-WANTLIB += pangocairo-1.0 poppler-glib pthread ${LIBCXX}
+WANTLIB += pangocairo-1.0 poppler-glib pthread ${COMPILER_LIBCXX}
 
 LIB_DEPENDS=	x11/gtk+3 \
 		print/poppler

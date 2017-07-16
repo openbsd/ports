@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2017/04/10 11:46:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2017/07/16 19:18:57 espie Exp $
 
 COMMENT =		viewers for OpenEXR
 V =			2.2.0
@@ -16,7 +16,7 @@ WANTLIB += GL GLU Half Iex IexMath IlmCtl IlmCtlMath IlmCtlSimd
 WANTLIB += IlmImf IlmImfCtl IlmThread Imath X11 X11-xcb Xau Xcursor
 WANTLIB += Xdamage Xdmcp Xext Xfixes Xft Xinerama Xrender Xxf86vm
 WANTLIB += c drm expat fltk fltk_gl fontconfig freetype glapi
-WANTLIB += m pthread pthread-stubs ${LIBCXX} xcb xcb-dri2 xcb-glx
+WANTLIB += m pthread pthread-stubs ${COMPILER_LIBCXX} xcb xcb-dri2 xcb-glx
 WANTLIB += z
 
 MASTER_SITES =		${MASTER_SITE_SAVANNAH:=openexr/}

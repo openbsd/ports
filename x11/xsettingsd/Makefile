@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2017/04/16 19:40:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2017/07/16 19:19:06 espie Exp $
 
 COMMENT=	lightweight XSETTINGS daemon
 
@@ -12,7 +12,7 @@ CATEGORIES=	x11
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += X11 Xau Xdmcp c m pthread-stubs ${LIBCXX} xcb
+WANTLIB += X11 Xau Xdmcp c m pthread-stubs ${COMPILER_LIBCXX} xcb
 
 MODULES=	devel/scons
 

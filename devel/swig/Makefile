@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2017/04/10 11:45:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.63 2017/07/16 19:18:52 espie Exp $
 
 COMMENT =	simplified wrapper and interface generator
 
@@ -14,7 +14,7 @@ HOMEPAGE =	http://www.swig.org/
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =	c m pcre ${LIBCXX} z
+WANTLIB =	c m pcre ${COMPILER_LIBCXX} z
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=swig/}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2017/05/06 02:51:13 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2017/07/16 19:18:54 espie Exp $
 
 COMMENT =		improved opensource version of Dune 2
 
@@ -15,7 +15,7 @@ MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 # GPLv2/CC-BY-SA
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		SDL SDL_mixer c enet m pthread ${LIBCXX}
+WANTLIB =		SDL SDL_mixer c enet m pthread ${COMPILER_LIBCXX}
 
 MASTER_SITES = 		${MASTER_SITE_SOURCEFORGE:=dunelegacy/}
 MASTER_SITES0 =		http://www.myway.de/richieland/

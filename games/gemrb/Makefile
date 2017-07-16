@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2017/04/10 11:46:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2017/07/16 19:18:55 espie Exp $
 
 SHARED_LIBS += 		gemrb_core 0.0
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=gemrb/}
 
-WANTLIB += SDL SDL_mixer c freetype iconv m openal png pthread ${LIBCXX}
+WANTLIB += SDL SDL_mixer c freetype iconv m openal png pthread ${COMPILER_LIBCXX}
 WANTLIB += vlc vorbisfile z ${MODPY_WANTLIB}
 
 MODULES =		devel/cmake \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2017/05/31 08:08:15 espie Exp $
+# $OpenBSD: Makefile,v 1.44 2017/07/16 19:18:51 espie Exp $
 
 COMMENT =		C/C++ static checker
 
@@ -13,7 +13,7 @@ MAINTAINER =		Gleydson Soares <gsoares@openbsd.org>
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		c execinfo m pcre ${LIBECXX}
+WANTLIB =		c execinfo m pcre ${COMPILER_LIBCXX}
 
 BUILD_DEPENDS =		textproc/docbook-xsl
 

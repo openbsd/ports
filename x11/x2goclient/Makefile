@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/06/08 18:05:04 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2017/07/16 19:19:06 espie Exp $
 
 COMMENT =	Qt4 client for the X2Go system
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += ICE QtGui QtNetwork QtSvg SM X11 Xext Xi Xinerama Xpm
 WANTLIB += Xrender c cups fontconfig freetype ldap m pthread ssh
-WANTLIB += ${LIBCXX}
+WANTLIB += ${COMPILER_LIBCXX}
 
 MASTER_SITES =	http://code.x2go.org/releases/source/x2goclient/
 

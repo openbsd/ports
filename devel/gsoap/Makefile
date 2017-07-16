@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2017/04/10 11:45:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2017/07/16 19:18:52 espie Exp $
 
 COMMENT=		SOAP/REST Web Services and XML-Based apps toolkit
 
@@ -30,7 +30,7 @@ AUTOCONF_VERSION=	2.67
 AUTOMAKE_VERSION=	1.11
 
 
-WANTLIB += c crypto m pthread ssl ${LIBCXX} z
+WANTLIB += c crypto m pthread ssl ${COMPILER_LIBCXX} z
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gsoap2/gSOAP/}
 

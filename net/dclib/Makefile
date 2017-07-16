@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2017/04/10 11:46:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2017/07/16 19:18:57 espie Exp $
 
 COMMENT=	Library for direct-connect protocol
 
@@ -14,7 +14,7 @@ MAINTAINER=	Andrew Sveikauskas <asveikau@mail.rochester.edu>
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += bz2 crypto iconv lzma m pthread ssl ${LIBCXX} xml2 z
+WANTLIB += bz2 crypto iconv lzma m pthread ssl ${COMPILER_LIBCXX} xml2 z
 
 MASTER_SITES=	https://spacehopper.org/mirrors/berlios/dcgui/
 

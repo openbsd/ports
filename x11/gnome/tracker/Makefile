@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.216 2017/06/29 08:38:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.217 2017/07/16 19:19:04 espie Exp $
 
 COMMENT=		powerful desktop search tool and indexer
 
@@ -40,7 +40,7 @@ WANTLIB += iconv icudata icui18n icuuc intl iptcdata jpeg json-glib-1.0
 WANTLIB += kvm lcms2 lz4 lzma m mediaart-2.0 openjp2 orc-0.4 osinfo-1.0
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png poppler poppler-glib pthread pthread-stubs soup-2.4
-WANTLIB += sqlite3 ${LIBCXX} tag tag_c tiff totem-plparser upower-glib
+WANTLIB += sqlite3 ${COMPILER_LIBCXX} tag tag_c tiff totem-plparser upower-glib
 WANTLIB += util uuid xcb xcb-render xcb-shm xml2 xslt z
 
 MODULES=		devel/dconf \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2017/04/19 15:40:25 jca Exp $
+# $OpenBSD: Makefile,v 1.15 2017/07/16 19:18:48 espie Exp $
 
 COMMENT =	Open Fingerprint Architecture library
 
@@ -13,7 +13,7 @@ PERMIT_PACKAGE_CDROM =		Yes
 
 MASTER_SITES =	${MASTER_SITE_GOOGLECODE:=musicip-libofa/}
 
-WANTLIB +=	m pthread ${LIBCXX} fftw3
+WANTLIB +=	m pthread ${COMPILER_LIBCXX} fftw3
 
 # needed to build the examples
 BUILD_DEPENDS =	net/curl \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2017/04/10 11:45:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2017/07/16 19:18:53 espie Exp $
 
 COMMENT =	Atari Jaguar emulator
 
@@ -16,7 +16,7 @@ MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB +=	GL ICE QtGui QtOpenGL SDL SM X11 Xext Xi Xinerama Xrender
-WANTLIB +=	c fontconfig freetype m pthread ${LIBCXX} z
+WANTLIB +=	c fontconfig freetype m pthread ${COMPILER_LIBCXX} z
 
 MASTER_SITES=	https://icculus.org/virtualjaguar/tarballs/
 

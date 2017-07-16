@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2017/04/10 11:46:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2017/07/16 19:18:58 espie Exp $
 
 COMMENT=	high-performance and extensible DHCP server engine from ISC
 
@@ -34,7 +34,7 @@ MAINTAINER=	Patrik Lundin <patrik@sigterm.se>
 # MPL 2.0
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += boost_system c crypto log4cplus m pthread ${LIBCXX}
+WANTLIB += boost_system c crypto log4cplus m pthread ${COMPILER_LIBCXX}
 
 MASTER_SITES=	${MASTER_SITE_ISC:=kea/${VERSION}/}
 

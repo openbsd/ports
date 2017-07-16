@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2017/06/13 07:43:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.46 2017/07/16 19:19:06 espie Exp $
 
 COMMENT=	MS-Explorer like file manager for X
 
@@ -12,7 +12,7 @@ HOMEPAGE=	http://roland65.free.fr/xfe/
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += FOX-1.6 X11 Xft Xrandr c fontconfig freetype m png pthread
-WANTLIB += ${LIBCXX} util z
+WANTLIB += ${COMPILER_LIBCXX} util z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xfe/}
 

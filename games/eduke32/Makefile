@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2017/05/31 08:10:01 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2017/07/16 19:18:54 espie Exp $
 
 COMMENT =	Enhanced Duke Nukem 3D engine
 RDATE =		20160610
@@ -26,7 +26,7 @@ BUILD_DEPENDS += devel/nasm
 .endif
 
 WANTLIB += c m ogg png pthread vorbis vorbisfile vpx z lz4
-WANTLIB += SDL2 SDL2_mixer FLAC execinfo ${LIBECXX}
+WANTLIB += SDL2 SDL2_mixer FLAC execinfo ${COMPILER_LIBCXX}
 
 LIB_DEPENDS =	archivers/lz4 \
 		audio/libvorbis \

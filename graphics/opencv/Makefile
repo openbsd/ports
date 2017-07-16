@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2017/04/19 11:16:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.41 2017/07/16 19:18:57 espie Exp $
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS} ${CLANG_ARCHS}
 
@@ -43,11 +43,11 @@ WANTLIB-main += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB-main += gobject-2.0 gstapp-1.0 gstbase-1.0 gstpbutils-1.0 gstreamer-1.0
 WANTLIB-main += gstriff-1.0 gstvideo-1.0 gthread-2.0 gtk-x11-2.0 intl
 WANTLIB-main += jasper jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB-main += png pthread ${LIBCXX} swscale tiff z
+WANTLIB-main += png pthread ${COMPILER_LIBCXX} swscale tiff z
 
 WANTLIB-docs =
 
-WANTLIB-java =  m pthread ${LIBCXX}
+WANTLIB-java =  m pthread ${COMPILER_LIBCXX}
 WANTLIB-java += opencv_calib3d opencv_contrib opencv_core opencv_features2d
 WANTLIB-java += opencv_flann opencv_gpu opencv_highgui opencv_imgproc
 WANTLIB-java += opencv_legacy opencv_ml opencv_nonfree opencv_objdetect

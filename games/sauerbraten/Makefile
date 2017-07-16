@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2017/04/10 11:46:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2017/07/16 19:18:55 espie Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64
 
@@ -38,7 +38,7 @@ RUN_DEPENDS-main +=	${BASE_PKGPATH},-data
 LIB_DEPENDS-main=	devel/sdl-mixer \
 			devel/sdl-image \
 			net/enet
-WANTLIB-main=		GL X11 SDL SDL_image SDL_mixer c enet m pthread ${LIBCXX} z
+WANTLIB-main=		GL X11 SDL SDL_image SDL_mixer c enet m pthread ${COMPILER_LIBCXX} z
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sauer_client ${PREFIX}/libexec

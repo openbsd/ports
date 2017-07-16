@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2017/04/10 11:45:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2017/07/16 19:18:50 espie Exp $
 
 COMMENT =		easy to use database connection pool Library
 
@@ -33,7 +33,7 @@ LIB_DEPENDS+=   databases/sqlite3
 .if ${FLAVOR:Mmysql}
 LIB_DEPENDS+=   databases/mariadb
 WANTLIB += lib/mysql/mysqlclient
-WANTLIB += crypto m ssl ${LIBCXX} z
+WANTLIB += crypto m ssl ${COMPILER_LIBCXX} z
 CONFIGURE_ARGS+= --with-mysql
 .endif
 

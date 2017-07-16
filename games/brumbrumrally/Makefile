@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2017/06/07 14:50:17 benoit Exp $
+# $OpenBSD: Makefile,v 1.6 2017/07/16 19:18:54 espie Exp $
 
 BROKEN-alpha =		OOM on src/hqx/hq4x.cpp
 
@@ -14,7 +14,7 @@ MAINTAINER =		Brian Callahan <bcallah@devio.us>
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += SDL SDL_image SDL_net c m pthread ${LIBCXX}
+WANTLIB += SDL SDL_image SDL_net c m pthread ${COMPILER_LIBCXX}
 
 MASTER_SITES =		http://dataapa.net/brumbrumrally/files/
 

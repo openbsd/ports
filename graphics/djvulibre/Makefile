@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2017/05/10 02:20:22 schwarze Exp $
+# $OpenBSD: Makefile,v 1.39 2017/07/16 19:18:56 espie Exp $
 
 COMMENT=	view, decode and encode DjVu files
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=djvu/}
 
-WANTLIB=	c iconv m jpeg pthread ${LIBCXX} tiff z
+WANTLIB=	c iconv m jpeg pthread ${COMPILER_LIBCXX} tiff z
 
 LIB_DEPENDS=	converters/libiconv \
 		graphics/jpeg \

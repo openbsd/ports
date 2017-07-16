@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2017/04/10 11:46:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2017/07/16 19:18:55 espie Exp $
 
 COMMENT=	economic and military simulation game
 
@@ -17,7 +17,7 @@ MASTER_SITES =	https://launchpad.net/widelands/build${V}/build-${V}/+download/
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB +=	GL GLEW SDL SDL_gfx SDL_image SDL_mixer SDL_net SDL_ttf
-WANTLIB +=	c m png pthread ${LIBCXX} z execinfo ${MODLUA_WANTLIB}
+WANTLIB +=	c m png pthread ${COMPILER_LIBCXX} z execinfo ${MODLUA_WANTLIB}
 WANTLIB +=	boost_signals-mt
 
 LIB_DEPENDS =	devel/boost \

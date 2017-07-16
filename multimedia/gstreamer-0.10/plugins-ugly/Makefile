@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2017/04/10 11:46:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.41 2017/07/16 19:19:00 espie Exp $
 
 COMMENT-main=		ugly elements for GStreamer
 COMMENT-sidplay=	sidplay element for GStreamer (plugins-ugly)
@@ -32,7 +32,7 @@ WANTLIB-main += gstsdp-0.10 gsttag-0.10 gstvideo-0.10 orc-0.4 twolame
 WANTLIB-main += x264
 
 WANTLIB-sidplay += ${WANTLIB}
-WANTLIB-sidplay += gstbase-0.10 sidplay ${LIBCXX}
+WANTLIB-sidplay += gstbase-0.10 sidplay ${COMPILER_LIBCXX}
 
 WANTLIB-lame += ${WANTLIB}
 WANTLIB-lame += gstaudio-0.10 gstbase-0.10 gstinterfaces-0.10 gstpbutils-0.10

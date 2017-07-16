@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2017/04/10 11:45:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2017/07/16 19:18:48 espie Exp $
 
 COMMENT =	console-based OPL2 audio player
 
@@ -13,7 +13,7 @@ MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB +=	SDL adplug binio c iconv m pthread sndio ${LIBCXX} usbhid
+WANTLIB +=	SDL adplug binio c iconv m pthread sndio ${COMPILER_LIBCXX} usbhid
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=adplug/}
 

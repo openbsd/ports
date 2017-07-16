@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.159 2017/07/10 23:05:54 zhuk Exp $
+# $OpenBSD: Makefile,v 1.160 2017/07/16 19:18:51 espie Exp $
 
 DPB_PROPERTIES =parallel
 
@@ -19,7 +19,7 @@ MASTER_SITES =	${HOMEPAGE}files/v${VER:R}/
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += archive c curl expat form jsoncpp m ncurses pthread
-WANTLIB += ${LIBCXX} z
+WANTLIB += ${COMPILER_LIBCXX} z
 
 # XXX: Ninja is broken on m88k
 .if ${MACHINE_ARCH} != "m88k"

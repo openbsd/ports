@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2017/04/10 11:46:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.54 2017/07/16 19:19:04 espie Exp $
 
 # no libGL (toolchain issue)
 NOT_FOR_ARCHS=	m88k
@@ -24,7 +24,7 @@ HOMEPAGE=	http://www.fltk.org/
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += GL GLU X11 Xau Xcursor Xdmcp Xext Xfixes Xft Xinerama
-WANTLIB += c fontconfig jpeg m png pthread ${LIBCXX} z
+WANTLIB += c fontconfig jpeg m png pthread ${COMPILER_LIBCXX} z
 
 MASTER_SITES=	http://fltk.org/pub/fltk/${VER}/
 

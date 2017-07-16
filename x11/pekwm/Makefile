@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2017/04/10 11:46:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2017/07/16 19:19:05 espie Exp $
 
 COMMENT=	aewm++ based pretty themable window manager
 
@@ -13,7 +13,7 @@ MAINTAINER=	Timo Myyra <timo.myyra@wickedbsd.net>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += ICE SM X11 Xext Xft Xinerama Xpm Xrandr c iconv jpeg m png
-WANTLIB += ${LIBCXX}
+WANTLIB += ${COMPILER_LIBCXX}
 
 MASTER_SITES=	${HOMEPAGE}/files/
 EXTRACT_SUFX=	.tar.bz2

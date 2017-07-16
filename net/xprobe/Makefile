@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2017/04/21 13:58:00 jca Exp $
+# $OpenBSD: Makefile,v 1.20 2017/07/16 19:18:59 espie Exp $
 
 COMMENT=		ICMP active OS fingerprint scanner
 
@@ -10,7 +10,7 @@ HOMEPAGE=		http://xprobe.sourceforge.net/
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
-WANTLIB=		c m pcap ${LIBCXX}
+WANTLIB=		c m pcap ${COMPILER_LIBCXX}
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=xprobe/}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2017/06/25 08:50:41 landry Exp $
+# $OpenBSD: Makefile,v 1.48 2017/07/16 19:18:50 espie Exp $
 
 MULTI_PACKAGES=	-utils -main -php -perl
 
@@ -47,7 +47,7 @@ WANTLIB += gdal geos_c cairo fribidi gif harfbuzz
 LIB_DEPENDS-utils =	STEM->=${V}:${BUILD_PKGPATH},-main
 LIB_DEPENDS-php =	STEM->=${V}:${BUILD_PKGPATH},-main
 LIB_DEPENDS-perl =	STEM->=${V}:${BUILD_PKGPATH},-main
-WANTLIB-main =	${WANTLIB} c fcgi pthread ${LIBCXX}
+WANTLIB-main =	${WANTLIB} c fcgi pthread ${COMPILER_LIBCXX}
 WANTLIB-utils =	${WANTLIB} c mapserver pthread
 WANTLIB-php =	${WANTLIB} mapserver
 WANTLIB-perl =	${WANTLIB} mapserver perl

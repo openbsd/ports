@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2017/04/10 11:45:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2017/07/16 19:18:48 espie Exp $
 
 COMMENT=	computer music toolkit
 HOMEPAGE=	http://www.ladspa.org/
@@ -14,7 +14,7 @@ MASTER_SITES=	${HOMEPAGE:=download/}
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += m ${LIBCXX}
+WANTLIB += m ${COMPILER_LIBCXX}
 
 BUILD_DEPENDS=	audio/ladspa
 

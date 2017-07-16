@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2017/05/31 08:08:17 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2017/07/16 19:18:58 espie Exp $
 
 COMMENT=		highly DNS-, DoS- and abuse-aware loadbalancer
 
@@ -16,7 +16,7 @@ MAINTAINER=		Peter van Dijk <peter.van.dijk@powerdns.com>
 # GPLv2 only
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ${MODLUA_WANTLIB} c curses edit m protobuf pthread z ${LIBECXX}
+WANTLIB += ${MODLUA_WANTLIB} c curses edit m protobuf pthread z ${COMPILER_LIBCXX}
 
 MASTER_SITES=		https://downloads.powerdns.com/releases/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2017/05/03 18:36:05 fcambus Exp $
+# $OpenBSD: Makefile,v 1.14 2017/07/16 19:18:49 espie Exp $
 
 COMMENT=	Commodore 64 music player and SID chip emulator
 
@@ -12,7 +12,7 @@ MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		c m sidplay>=1 sndio ${LIBCXX}
+WANTLIB=		c m sidplay>=1 sndio ${COMPILER_LIBCXX}
 
 MASTER_SITES=	https://www.distfiles.pl/
 EXTRACT_SUFX=	.tgz

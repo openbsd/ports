@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2017/05/31 08:08:16 espie Exp $
+# $OpenBSD: Makefile,v 1.35 2017/07/16 19:18:55 espie Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += GL GLEW GLU Qt5Core Qt5Gui Qt5Script Qt5Widgets SDL2 X11
 WANTLIB += Xrandr c crypto fontconfig freetype fribidi harfbuzz iconv
 WANTLIB += intl m ogg openal physfs png pthread theora vorbis
-WANTLIB += vorbisfile z ${LIBECXX}
+WANTLIB += vorbisfile z ${COMPILER_LIBCXX}
 
 MODULES=	x11/qt5
 COMPILER =	gcc

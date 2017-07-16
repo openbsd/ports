@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2017/06/17 17:22:04 schwarze Exp $
+# $OpenBSD: Makefile,v 1.76 2017/07/16 19:18:49 espie Exp $
 
 COMMENT=		send/receive faxes and share modems
 DISTNAME=		hylafax-6.0.6
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 FLAVORS=		a4
 FLAVOR?=
 
-WANTLIB=		c jbig m ${LIBCXX} tiff util z
+WANTLIB=		c jbig m ${COMPILER_LIBCXX} tiff util z
 MODULES=		devel/gettext
 
 BUILD_DEPENDS=		print/ghostscript/gnu

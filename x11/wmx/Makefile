@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2017/04/10 11:46:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2017/07/16 19:19:05 espie Exp $
 
 COMMENT=	minimal window manager
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_FTP=	no license
 PERMIT_DISTFILES_FTP=	no license
 
 WANTLIB += ICE SM X11 Xau Xcomposite Xdmcp Xext Xft Xpm Xrender c expat
-WANTLIB += fontconfig freetype m pthread-stubs ${LIBCXX} xcb z
+WANTLIB += fontconfig freetype m pthread-stubs ${COMPILER_LIBCXX} xcb z
 
 CONFIGURE_STYLE=	gnu
 

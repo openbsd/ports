@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2017/06/14 17:11:20 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.25 2017/07/16 19:18:52 espie Exp $
 
 COMMENT =		cross-platform IDE for use with Qt
 V = 			4.3.0
@@ -40,7 +40,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB += GL Qt5Concurrent Qt5Core Qt5Designer Qt5DesignerComponents
 WANTLIB += Qt5Gui Qt5Help Qt5Network Qt5PrintSupport Qt5Qml Qt5Quick
 WANTLIB += Qt5QuickWidgets Qt5Script Qt5Sql Qt5Svg Qt5Widgets
-WANTLIB += Qt5Xml c kvm m pthread ${LIBECXX}
+WANTLIB += Qt5Xml c kvm m pthread ${COMPILER_LIBCXX}
 
 MASTER_SITES =	https://download.qt.io/official_releases/qtcreator/${V:R}/${V}/
 

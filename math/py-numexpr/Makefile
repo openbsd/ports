@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/04/23 17:45:20 shadchin Exp $
+# $OpenBSD: Makefile,v 1.2 2017/07/16 19:19:00 espie Exp $
 
 COMMENT =		fast numerical expression evaluator for NumPy
 
@@ -12,7 +12,7 @@ MAINTAINER =		Alexandr Shadchin <shadchin@openbsd.org>
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB +=		m pthread ${MODPY_WANTLIB} ${LIBCXX}
+WANTLIB +=		m pthread ${MODPY_WANTLIB} ${COMPILER_LIBCXX}
 
 MODULES =		lang/python
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2017/04/10 11:46:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2017/07/16 19:19:01 espie Exp $
 
 COMMENT =		library for nipper
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP =	Yes
 
 EXTRACT_SUFX =		.tgz
 
-WANTLIB=		m ${LIBCXX}
+WANTLIB=		m ${COMPILER_LIBCXX}
 MODULES +=		devel/cmake
 
 NO_TEST =		Yes

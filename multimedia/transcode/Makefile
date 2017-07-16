@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2017/04/17 10:00:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.67 2017/07/16 19:19:01 espie Exp $
 
 COMMENT=	video stream processing tools
 
@@ -19,7 +19,7 @@ WANTLIB += avformat avutil bz2 c crypto dv dvdread freetype gsm jpeg
 WANTLIB += m mp3lame mpeg2 mpeg2convert ogg opus postproc pthread
 WANTLIB += pthread-stubs quicktime sndio speex ssl theora
 WANTLIB += usbhid vorbis vorbisenc vorbisfile vpx x264 xcb xml2 z
-WANTLIB += lzma ${LIBCXX} swresample x265
+WANTLIB += lzma ${COMPILER_LIBCXX} swresample x265
 
 # xvidcore is dlopen()d so check-lib-depends shows it as Extra, however we
 # want to track changes to the ABI to ensure transcode is updated if needed.

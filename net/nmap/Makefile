@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.125 2017/06/14 02:54:36 benoit Exp $
+# $OpenBSD: Makefile,v 1.126 2017/07/16 19:18:58 espie Exp $
 
 COMMENT-main=	scan ports and fingerprint stack of network hosts
 COMMENT-zenmap=	graphical frontend for nmap
@@ -42,7 +42,7 @@ CONFIGURE_ARGS=	--with-libpcap=included \
 		--without-nmap-update \
 		--disable-nls
 
-WANTLIB-main=	c crypto m ssl ${LIBCXX} pcre ${MODLUA_WANTLIB}
+WANTLIB-main=	c crypto m ssl ${COMPILER_LIBCXX} pcre ${MODLUA_WANTLIB}
 LIB_DEPENDS-main=devel/pcre \
 		${MODLUA_LIB_DEPENDS}
 

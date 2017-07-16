@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2017/06/03 14:25:16 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2017/07/16 19:18:59 espie Exp $
 
 COMMENT=	open-source (C++ generating) VHDL simulator
 
@@ -20,7 +20,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=	${HOMEPAGE}/~enaroska/
 
-WANTLIB += c m ${LIBCXX}
+WANTLIB += c m ${COMPILER_LIBCXX}
 
 USE_GMAKE=	Yes
 CXXFLAGS +=	-Wno-parentheses-equality

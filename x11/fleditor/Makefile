@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2017/04/10 11:46:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2017/07/16 19:19:04 espie Exp $
 
 COMMENT=		text editor widget for FLTK
 
@@ -15,7 +15,7 @@ HOMEPAGE=		http://www.robertk.com/source/
 # LPGL
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += m ${LIBCXX}
+WANTLIB += m ${COMPILER_LIBCXX}
 
 MASTER_SITES=		http://www.robertk.com/source/fl_editor/
 EXTRACT_SUFX=		.tgz

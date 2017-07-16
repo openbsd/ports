@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.105 2017/06/22 08:54:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.106 2017/07/16 19:18:59 espie Exp $
 
 COMMENT=		Cyrus IMAP server
 
@@ -20,7 +20,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 PERMIT_PACKAGE_CDROM=	yes
 
 WANTLIB += c com_err crypto icudata icuuc jansson m pcre pcreposix
-WANTLIB += pthread sasl2 ssl ${LIBCXX} uuid z
+WANTLIB += pthread sasl2 ssl ${COMPILER_LIBCXX} uuid z
 WANTLIB += perl # uses perl ABI
 
 MASTER_SITES=		http://cyrusimap.org/releases/ \

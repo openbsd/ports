@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.145 2017/04/19 11:16:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.146 2017/07/16 19:19:06 espie Exp $
 
 USE_WXNEEDED =		Yes # QtWebKit
 
@@ -159,10 +159,10 @@ LIB_DEPENDS =
 WANTLIB =
 RUN_DEPENDS =
 
-commonWANTLIB =		c pthread GL m ${LIBCXX}
+commonWANTLIB =		c pthread GL m ${COMPILER_LIBCXX}
 commonWANTLIB+=		${WANTLIB}
 
-sqlWANTLIB =		m lib/qt4/QtCore>=4 QtSql ${LIBCXX} pthread
+sqlWANTLIB =		m lib/qt4/QtCore>=4 QtSql ${COMPILER_LIBCXX} pthread
 
 RUN_DEPENDS-main=	${MODGETTEXT_RUN_DEPENDS}
 LIB_DEPENDS-main =	${LIB_DEPENDS} \

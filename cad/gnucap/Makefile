@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2017/05/01 19:29:26 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2017/07/16 19:18:49 espie Exp $
 
 # gcc spins compiling d_mos7
 NOT_FOR_ARCHS=		m88k
@@ -14,7 +14,7 @@ HOMEPAGE=		http://www.gnucap.org/
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		c m ${LIBCXX} readline termcap
+WANTLIB=		c m ${COMPILER_LIBCXX} readline termcap
 
 MASTER_SITES=		${HOMEPAGE}dist/ \
 			http://www.geda.seul.org/dist/

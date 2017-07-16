@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2017/04/24 07:52:21 jca Exp $
+# $OpenBSD: Makefile,v 1.44 2017/07/16 19:18:53 espie Exp $
 
 # Other archs have not been tested
 ONLY_FOR_ARCHS =	amd64
@@ -23,7 +23,7 @@ PERMIT_PACKAGE_FTP =	unclear license
 PERMIT_DISTFILES_FTP =	unclear license
 
 WANTLIB += SDL SDL_ttf X11 Xinerama c expat fontconfig freetype
-WANTLIB += m pthread ${LIBCXX} util z
+WANTLIB += m pthread ${COMPILER_LIBCXX} util z
 
 MASTER_SITES =		https://github.com/mamedev/mame/releases/download/mame0${V}/
 MASTER_SITES1 =		https://spacehopper.org/mirrors/

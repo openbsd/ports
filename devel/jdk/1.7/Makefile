@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.86 2017/06/13 14:26:56 schwarze Exp $
+# $OpenBSD: Makefile,v 1.87 2017/07/16 19:18:51 espie Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_WXNEEDED=	Yes
@@ -80,7 +80,7 @@ BUILD_DEPENDS+=	archivers/zip \
 		print/cups,-libs
 LIB_DEPENDS=	converters/libiconv
 WANTLIB=	X11 Xext Xi Xtst Xrender c freetype iconv m pthread sndio \
-		${LIBCXX} z
+		${COMPILER_LIBCXX} z
 
 USE_GMAKE=	Yes
 

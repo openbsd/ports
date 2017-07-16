@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2017/04/19 11:16:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2017/07/16 19:18:56 espie Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS} ${CLANG_ARCHS}
 
@@ -26,7 +26,7 @@ WANTLIB += GL Half Iex IlmImf IlmThread Imath boost_filesystem-mt
 WANTLIB += boost_iostreams-mt boost_program_options-mt boost_regex-mt
 WANTLIB += boost_system-mt boost_thread-mt boost_wave-mt c
 WANTLIB += lib/qt4/QtCore lib/qt4/QtGui lib/qt4/QtOpenGL
-WANTLIB += m png pthread ${LIBCXX} tiff tiffxx z
+WANTLIB += m png pthread ${COMPILER_LIBCXX} tiff tiffxx z
 
 MODULES=	devel/cmake
 

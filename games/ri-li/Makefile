@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2017/04/10 11:46:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2017/07/16 19:18:55 espie Exp $
 
 COMMENT=	drive a toy wood engine
 
@@ -10,7 +10,7 @@ HOMEPAGE=	http://ri-li.sourceforge.net
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += SDL SDL_mixer c m pthread ${LIBCXX}
+WANTLIB += SDL SDL_mixer c m pthread ${COMPILER_LIBCXX}
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ri-li/}
 EXTRACT_SUFX=	.tar.bz2

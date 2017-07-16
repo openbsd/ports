@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2017/06/03 16:24:05 steven Exp $
+# $OpenBSD: Makefile,v 1.32 2017/07/16 19:18:49 espie Exp $
 
 V =			0.9.0
 COMMENT-main =		mysql driver for libdbi
@@ -41,7 +41,7 @@ CONFIGURE_ARGS =	--disable-docs \
 			--with-freetds-incdir=${LOCALBASE}/include \
 			--with-freetds-libdir=${LOCALBASE}/lib
 
-WANTLIB-main =		crypto m pthread ssl ${LIBCXX} z mysqlclient dbi
+WANTLIB-main =		crypto m pthread ssl ${COMPILER_LIBCXX} z mysqlclient dbi
 LIB_DEPENDS-main =	databases/mariadb \
 			databases/libdbi
 RUN_DEPENDS-main =

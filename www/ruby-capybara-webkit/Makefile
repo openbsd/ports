@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2017/06/05 23:55:19 jeremy Exp $
+# $OpenBSD: Makefile,v 1.19 2017/07/16 19:19:04 espie Exp $
 
 COMMENT =	capybara driver that uses WebKit
 
@@ -20,7 +20,7 @@ MODGCC4_LANGS =	c++
 USE_WXNEEDED =	Yes
 MAKE_ENV =	QMAKE=qmake-qt5 LDFLAGS="-Wl,-z,wxneeded"
 WANTLIB +=	GL Qt5Core Qt5Gui Qt5Network Qt5WebKit Qt5WebKitWidgets
-WANTLIB +=	Qt5Widgets ${LIBCXX}
+WANTLIB +=	Qt5Widgets ${COMPILER_LIBCXX}
 
 BUILD_DEPENDS =	${RUN_DEPENDS}
 RUN_DEPENDS =	www/ruby-capybara,${MODRUBY_FLAVOR}>=2.3.0,<2.8.0

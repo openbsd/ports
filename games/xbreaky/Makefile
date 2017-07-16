@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2017/04/10 11:46:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2017/07/16 19:18:55 espie Exp $
 
 COMMENT=	breakout game for the X Window System
 
@@ -11,7 +11,7 @@ HOMEPAGE=	http://xbreaky.sourceforge.net/
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=   Yes
-WANTLIB=		X11 Xpm c m pthread-stubs sndio ${LIBCXX} xcb
+WANTLIB=		X11 Xpm c m pthread-stubs sndio ${COMPILER_LIBCXX} xcb
 
 NO_TEST=	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.198 2017/06/03 21:04:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.199 2017/07/16 19:19:04 espie Exp $
 
 COMMENT-main=	WWW and FTP proxy cache and accelerator
 COMMENT-ldap=	LDAP authentication/ACL support for Squid
@@ -22,7 +22,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c m nettle pthread
 
-cWANTLIB=	${WANTLIB} ${LIBECXX} ffi gmp gnutls hogweed iconv
+cWANTLIB=	${WANTLIB} ${COMPILER_LIBCXX} ffi gmp gnutls hogweed iconv
 cWANTLIB+=	idn2 intl p11-kit tasn1 unistring z
 
 # bzr repository at https://code.launchpad.net/squid

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2017/04/18 20:16:33 benoit Exp $
+# $OpenBSD: Makefile,v 1.40 2017/07/16 19:19:01 espie Exp $
 
 COMMENT =		convert HTML pages to PDF/PS format
 
@@ -14,7 +14,7 @@ MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c crypto m ssl z jpeg png ${LIBCXX}
+WANTLIB += c crypto m ssl z jpeg png ${COMPILER_LIBCXX}
 
 DISTFILES =		${DISTNAME}-source${EXTRACT_SUFX}
 MASTER_SITES =		http://www.msweet.org/files/project1/ \

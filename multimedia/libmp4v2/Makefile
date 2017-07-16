@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2017/04/10 11:46:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2017/07/16 19:19:00 espie Exp $
 
 COMMENT =		read and manipulate the MP4 container format
 
@@ -15,7 +15,7 @@ HOMEPAGE =		https://code.google.com/p/mp4v2/
 PERMIT_PACKAGE_CDROM =	Patents
 PERMIT_PACKAGE_FTP =	Yes
 
-WANTLIB =		c m ${LIBCXX}
+WANTLIB =		c m ${COMPILER_LIBCXX}
 
 MASTER_SITES =		${MASTER_SITE_GOOGLECODE:=mp4v2/}
 EXTRACT_SUFX =		.tar.bz2

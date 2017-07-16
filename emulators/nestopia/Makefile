@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2017/04/10 11:45:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2017/07/16 19:18:53 espie Exp $
 
 COMMENT-main =		accurate Nintendo Entertainment System emulator
 COMMENT-libretro =	Nintendo Entertainment System core for retroarch
@@ -23,7 +23,7 @@ MAINTAINER =		Anthony J. Bentley <anthony@anjbe.name>
 PERMIT_PACKAGE_CDROM =		Yes
 
 WANTLIB-main += SDL2 ao c gdk-3 gdk_pixbuf-2.0 glib-2.0 gobject-2.0
-WANTLIB-main += gtk-3 m pthread ${LIBCXX} z archive epoxy
+WANTLIB-main += gtk-3 m pthread ${COMPILER_LIBCXX} z archive epoxy
 WANTLIB-libretro =	m pthread
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=nestopiaue/}

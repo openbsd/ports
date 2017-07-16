@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2017/04/17 10:59:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.57 2017/07/16 19:19:04 espie Exp $
 
 COMMENT=		color profile manager for GNOME
 
@@ -19,7 +19,7 @@ WANTLIB += glib-2.0 gmodule-2.0 gmp gnutls gobject-2.0 graphite2
 WANTLIB += gthread-2.0 gtk-3 harfbuzz hogweed iconv idn2 intl jpeg
 WANTLIB += lcms2 ltdl m nettle ogg p11-kit pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pcre2-8 pixman-1 png pthread pthread-stubs
-WANTLIB += ${LIBCXX} tasn1 tiff vorbis vorbisfile vte-2.91 xcb xcb-render
+WANTLIB += ${COMPILER_LIBCXX} tasn1 tiff vorbis vorbisfile vte-2.91 xcb xcb-render
 WANTLIB += xcb-shm z unistring
 
 MODULES=		x11/gnome

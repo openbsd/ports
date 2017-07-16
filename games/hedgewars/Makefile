@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2017/05/27 19:57:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2017/07/16 19:18:55 espie Exp $
 
 COMMENT-main =		Worms-like strategy game
 COMMENT-server =	Worms-like strategy game, server
@@ -24,7 +24,7 @@ MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB-main += QtGui QtNetwork SDL SDL_image SDL_mixer SDL_net SDL_ttf
-WANTLIB-main += c m physfs png pthread ${LIBCXX} util z
+WANTLIB-main += c m physfs png pthread ${COMPILER_LIBCXX} util z
 WANTLIB-main += ${MODLUA_WANTLIB} ${MODQT4_WANTLIB}
 
 # dlopen()ed; do not remove.

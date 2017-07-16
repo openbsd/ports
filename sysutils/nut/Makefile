@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.93 2017/06/17 00:16:20 schwarze Exp $
+# $OpenBSD: Makefile,v 1.94 2017/07/16 19:19:02 espie Exp $
 
 COMMENT-main=		UPS monitoring program supporting many brands
 COMMENT-cgi=		CGIs for monitoring Nut-based UPSs
@@ -29,7 +29,7 @@ MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 COMMON +=	c crypto pthread
-WANTLIB-main +=	${COMMON} ltdl m ssl ${LIBCXX} usb usb-1.0
+WANTLIB-main +=	${COMMON} ltdl m ssl ${COMPILER_LIBCXX} usb usb-1.0
 WANTLIB-xml +=	${COMMON} ${MODGETTEXT_WANTLIB} expat neon proxy ssl z
 WANTLIB-cgi +=	${COMMON} ${MODGETTEXT_WANTLIB} X11 expat fontconfig
 WANTLIB-cgi +=	freetype gd jpeg m png ssl upsclient xcb z

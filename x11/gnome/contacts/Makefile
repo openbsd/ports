@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2017/04/13 07:38:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.61 2017/07/16 19:19:04 espie Exp $
 
 COMMENT=		contacts manager for GNOME
 
@@ -27,7 +27,7 @@ WANTLIB += hogweed iconv icudata icui18n icuuc idn2 intl javascriptcoregtk-4.0
 WANTLIB += json-glib-1.0 lzma m nettle nspr4 nss3 orc-0.4 p11-kit
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += plc4 plds4 png pthread pthread-stubs secret-1 smime3
-WANTLIB += softokn3 soup-2.4 sqlite3 ssl3 ${LIBCXX} tasn1 telepathy-glib
+WANTLIB += softokn3 soup-2.4 sqlite3 ssl3 ${COMPILER_LIBCXX} tasn1 telepathy-glib
 WANTLIB += webkit2gtk-4.0 xcb xcb-dri2 xcb-glx xcb-render xcb-shm
 WANTLIB += xcb-xfixes xml2 z unistring
 

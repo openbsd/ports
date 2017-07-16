@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2017/04/10 11:45:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2017/07/16 19:18:50 espie Exp $
 
 COMMENT-main=	perl bindings for Xapian
 COMMENT-python=	python bindings for Xapian
@@ -25,7 +25,7 @@ MASTER_SITES=	http://oligarchy.co.uk/xapian/${V}/
 
 LIB_DEPENDS=		databases/xapian-core
 
-WANTLIB += m ${LIBCXX} uuid z xapian
+WANTLIB += m ${COMPILER_LIBCXX} uuid z xapian
 WANTLIB-main = ${WANTLIB} perl # uses perl ABI
 
 AUTOCONF_VERSION=	2.68

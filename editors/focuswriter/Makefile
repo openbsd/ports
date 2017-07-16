@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2017/04/12 18:12:33 landry Exp $
+# $OpenBSD: Makefile,v 1.13 2017/07/16 19:18:52 espie Exp $
 
 COMMENT =	simple, distraction-free writing environment
 
@@ -22,7 +22,7 @@ RUN_DEPENDS +=	devel/desktop-file-utils \
 		x11/gtk+3,-guic
 LIB_DEPENDS +=	textproc/hunspell
 WANTLIB +=	ICE SM X11 Xext Xi Xinerama Xrender fontconfig freetype
-WANTLIB +=	QtNetwork z QtGui c m pthread ${LIBCXX} hunspell-1.6
+WANTLIB +=	QtNetwork z QtGui c m pthread ${COMPILER_LIBCXX} hunspell-1.6
 
 NO_TEST =	Yes
 

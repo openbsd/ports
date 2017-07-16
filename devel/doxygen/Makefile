@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2017/04/21 19:43:38 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.42 2017/07/16 19:18:51 espie Exp $
 
 # Memory hog, stuck for days on the same file (configoptions.cpp) during build.
 # XXX check with different optimizer level? see doc/install.doc
@@ -20,7 +20,7 @@ MAINTAINER=	Rafael Sadowski <rafael@sizeofvoid.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c iconv m pthread ${LIBCXX} xapian z
+WANTLIB += c iconv m pthread ${COMPILER_LIBCXX} xapian z
 
 MASTER_SITES=	http://ftp.stack.nl/pub/users/dimitri/ \
 		ftp://ftp.stack.nl/pub/users/dimitri/
