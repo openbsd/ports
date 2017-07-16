@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.54 2017/05/18 14:09:06 landry Exp $
+# $OpenBSD: Makefile,v 1.55 2017/07/16 06:50:12 landry Exp $
 
 COMMENT=	Xfce4 vte-based terminal
 
-XFCE_VERSION=	0.8.5.1
+XFCE_VERSION=	0.8.6
 XFCE_GOODIE=	xfce4-terminal
 
 # GPLv2
