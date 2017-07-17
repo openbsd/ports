@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.144 2017/07/14 17:14:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.145 2017/07/17 18:07:41 landry Exp $
 
 # XXX: Remember to bump MODCLANG_VERSION in lang/clang/clang.port.mk when
 # updating this port.
 
 ONLY_FOR_ARCHS = ${LLVM_ARCHS}
+BROKEN-powerpc =	relocation truncated to fit: R_PPC_PLTREL24
 
 DPB_PROPERTIES = parallel
 
