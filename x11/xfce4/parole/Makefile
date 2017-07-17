@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.40 2017/07/16 19:19:06 espie Exp $
+# $OpenBSD: Makefile,v 1.41 2017/07/17 14:06:39 landry Exp $
 
 COMMENT =	Xfce4 media player
 
-XFCE_VERSION =	0.9.1
+XFCE_VERSION =	0.9.2
 XFCE_GOODIE =	parole
 CATEGORIES +=	audio
 
@@ -27,6 +27,7 @@ MODXFCE_PURGE_LA =	lib/parole-0
 
 LIB_DEPENDS =	multimedia/gstreamer1/core \
 		multimedia/gstreamer1/plugins-base \
+		x11/dbus-glib \
 		x11/xfce4/libxfce4ui \
 		audio/taglib \
 		devel/libnotify
