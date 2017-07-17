@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.42 2015/10/13 06:30:47 bentley Exp $
+# $OpenBSD: Makefile,v 1.43 2017/07/17 08:05:27 benoit Exp $
 
 COMMENT =	creating & editing GIF images and animations
 
-DISTNAME =	gifsicle-1.88
+DISTNAME =	gifsicle-1.89
 CATEGORIES =	graphics
 
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
