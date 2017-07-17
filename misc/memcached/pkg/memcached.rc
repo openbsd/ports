@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: memcached.rc,v 1.2 2016/03/09 14:50:11 giovanni Exp $
+# $OpenBSD: memcached.rc,v 1.3 2017/07/17 08:35:08 landry Exp $
 
 daemon="${TRUEPREFIX}/bin/memcached -d"
 daemon_flags="-u _memcached"
@@ -8,5 +8,9 @@ daemon_flags="-u _memcached"
 . /etc/rc.d/rc.subr
 
 rc_reload=NO
+
+rc_pre() {
+	/usr/bin/install -d -o _memcached -g _memcached -m 0750 /var/run/memcached
+}
 
 rc_cmd $1

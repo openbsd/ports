@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1 2014/11/04 15:11:05 giovanni Exp $
+$OpenBSD: README,v 1.2 2017/07/17 08:35:08 landry Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -9,3 +9,8 @@ use it, it should be firewalled accordingly. You may wish
 to add a rule such as the following to /etc/pf.conf:
 
   block on $ext_if proto tcp to ($ext_if) port 11211
+
+An alternative is to listen on a unix socket in /var/run/memcached/sock,
+granting write permissions to users in group _memcached.
+
+#rcctl set memcached flags '-u _memcached -s /var/run/memcached/sock -a 0660'

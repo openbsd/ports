@@ -1,4 +1,4 @@
-$OpenBSD: patch-memcached_c,v 1.12 2017/06/20 19:52:26 giovanni Exp $
+$OpenBSD: patch-memcached_c,v 1.13 2017/07/17 08:35:08 landry Exp $
 Index: memcached.c
 --- memcached.c.orig
 +++ memcached.c
@@ -10,7 +10,7 @@ Index: memcached.c
  
  /* some POSIX systems need the following definition
   * to get mlockall flags out of sys/mman.h.  */
-@@ -6679,6 +6680,32 @@ int main (int argc, char **argv) {
+@@ -6733,6 +6734,32 @@ int main (int argc, char **argv) {
  
      if (pid_file != NULL) {
          save_pid(pid_file);
