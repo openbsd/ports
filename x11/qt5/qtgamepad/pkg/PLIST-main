@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2017/06/15 08:30:14 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2017/07/17 08:34:38 zhuk Exp $
 include/X11/qt5/QtGamepad/
 include/X11/qt5/QtGamepad/${VERSION}/
 include/X11/qt5/QtGamepad/${VERSION}/QtGamepad/

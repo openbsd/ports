@@ -1,8 +1,12 @@
-$OpenBSD: patch-Tools_qmake_config_tests_gccdepends_gccdepends_pro,v 1.1.1.1 2016/12/25 14:13:13 zhuk Exp $
+$OpenBSD: patch-Tools_qmake_config_tests_gccdepends_gccdepends_pro,v 1.2 2017/07/17 08:34:39 zhuk Exp $
 Unbreak configure stage.
---- Tools/qmake/config.tests/gccdepends/gccdepends.pro.orig	Tue Feb 17 07:57:00 2015
-+++ Tools/qmake/config.tests/gccdepends/gccdepends.pro	Wed Apr  8 00:38:31 2015
-@@ -3,25 +3,20 @@ OBJECTS_DIR = obj
+Index: Tools/qmake/config.tests/gccdepends/gccdepends.pro
+--- Tools/qmake/config.tests/gccdepends/gccdepends.pro.orig
++++ Tools/qmake/config.tests/gccdepends/gccdepends.pro
+@@ -1,27 +1,22 @@
+ TEMPLATE = aux
+-OBJECTS_DIR = obj
++#OBJECTS_DIR = obj
  QMAKE_CXXFLAGS += -MD
  
  base_filename = empty

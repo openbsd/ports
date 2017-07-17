@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST-examples,v 1.1.1.1 2016/12/25 14:13:13 zhuk Exp $
+@comment $OpenBSD: PLIST-examples,v 1.2 2017/07/17 08:34:37 zhuk Exp $
 @conflict qt5-examples-<5.6
-lib/qt5/examples/
 lib/qt5/examples/README
 lib/qt5/examples/corelib/
 lib/qt5/examples/corelib/corelib.pro
@@ -36,6 +35,15 @@ lib/qt5/examples/corelib/json/savegame/level.cpp
 lib/qt5/examples/corelib/json/savegame/level.h
 lib/qt5/examples/corelib/json/savegame/main.cpp
 lib/qt5/examples/corelib/json/savegame/savegame.pro
+lib/qt5/examples/corelib/mimetypes/
+lib/qt5/examples/corelib/mimetypes/mimetypebrowser/
+lib/qt5/examples/corelib/mimetypes/mimetypebrowser/main.cpp
+lib/qt5/examples/corelib/mimetypes/mimetypebrowser/mainwindow.cpp
+lib/qt5/examples/corelib/mimetypes/mimetypebrowser/mainwindow.h
+lib/qt5/examples/corelib/mimetypes/mimetypebrowser/mimetypebrowser.pro
+lib/qt5/examples/corelib/mimetypes/mimetypebrowser/mimetypemodel.cpp
+lib/qt5/examples/corelib/mimetypes/mimetypebrowser/mimetypemodel.h
+lib/qt5/examples/corelib/mimetypes/mimetypes.pro
 lib/qt5/examples/corelib/threads/
 lib/qt5/examples/corelib/threads/README
 lib/qt5/examples/corelib/threads/mandelbrot/
@@ -251,6 +259,8 @@ lib/qt5/examples/network/securesocketclient/sslclient.cpp
 lib/qt5/examples/network/securesocketclient/sslclient.h
 lib/qt5/examples/network/securesocketclient/sslclient.ui
 lib/qt5/examples/network/securesocketclient/sslerrors.ui
+lib/qt5/examples/network/shared/
+lib/qt5/examples/network/shared/sctpchannels.h
 lib/qt5/examples/network/threadedfortuneserver/
 lib/qt5/examples/network/threadedfortuneserver/dialog.cpp
 lib/qt5/examples/network/threadedfortuneserver/dialog.h
@@ -313,6 +323,13 @@ lib/qt5/examples/opengl/2dpainting/widget.h
 lib/qt5/examples/opengl/2dpainting/window.cpp
 lib/qt5/examples/opengl/2dpainting/window.h
 lib/qt5/examples/opengl/README
+lib/qt5/examples/opengl/computegles31/
+lib/qt5/examples/opengl/computegles31/Qt-logo-medium.png
+lib/qt5/examples/opengl/computegles31/computegles31.pro
+lib/qt5/examples/opengl/computegles31/computegles31.qrc
+lib/qt5/examples/opengl/computegles31/glwindow.cpp
+lib/qt5/examples/opengl/computegles31/glwindow.h
+lib/qt5/examples/opengl/computegles31/main.cpp
 lib/qt5/examples/opengl/contextinfo/
 lib/qt5/examples/opengl/contextinfo/contextinfo.pro
 lib/qt5/examples/opengl/contextinfo/main.cpp
@@ -2197,7 +2214,6 @@ lib/qt5/examples/xml/
 lib/qt5/examples/xml/README
 lib/qt5/examples/xml/dombookmarks/
 lib/qt5/examples/xml/dombookmarks/dombookmarks.pro
-lib/qt5/examples/xml/dombookmarks/frank.xbel
 lib/qt5/examples/xml/dombookmarks/jennifer.xbel
 lib/qt5/examples/xml/dombookmarks/main.cpp
 lib/qt5/examples/xml/dombookmarks/mainwindow.cpp
@@ -2219,7 +2235,6 @@ lib/qt5/examples/xml/rsslisting/rsslisting.cpp
 lib/qt5/examples/xml/rsslisting/rsslisting.h
 lib/qt5/examples/xml/rsslisting/rsslisting.pro
 lib/qt5/examples/xml/saxbookmarks/
-lib/qt5/examples/xml/saxbookmarks/frank.xbel
 lib/qt5/examples/xml/saxbookmarks/jennifer.xbel
 lib/qt5/examples/xml/saxbookmarks/main.cpp
 lib/qt5/examples/xml/saxbookmarks/mainwindow.cpp
@@ -2230,7 +2245,6 @@ lib/qt5/examples/xml/saxbookmarks/xbelgenerator.h
 lib/qt5/examples/xml/saxbookmarks/xbelhandler.cpp
 lib/qt5/examples/xml/saxbookmarks/xbelhandler.h
 lib/qt5/examples/xml/streambookmarks/
-lib/qt5/examples/xml/streambookmarks/frank.xbel
 lib/qt5/examples/xml/streambookmarks/jennifer.xbel
 lib/qt5/examples/xml/streambookmarks/main.cpp
 lib/qt5/examples/xml/streambookmarks/mainwindow.cpp

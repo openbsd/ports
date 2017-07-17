@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.1.1.1 2016/12/25 14:13:16 zhuk Exp $
-lib/qt5/examples/
+@comment $OpenBSD: PLIST-examples,v 1.2 2017/07/17 08:34:38 zhuk Exp $
 lib/qt5/examples/canvas3d/
 lib/qt5/examples/canvas3d/3rdparty/
 lib/qt5/examples/canvas3d/3rdparty/ThreeJSLoader.js

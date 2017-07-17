@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2017/07/16 19:19:05 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2017/07/17 08:34:38 zhuk Exp $
 
 QT5NAME =		QtGamepad
 COMMENT-main =		Qt5 gamepad events handling components
@@ -7,7 +7,7 @@ MULTI_PACKAGES =	-main -examples -qch -html -docindex
 
 SHARED_LIBS =		Qt5Gamepad		0.0
 
-WANTLIB =  ${COMPILER_LIBCXX}
+WANTLIB =  ${COMPILER_LIBCXX} pthread
 WANTLIB += GL Qt5Core Qt5Gui Qt5Network Qt5Qml Qt5Quick SDL2 m
 
 LIB_DEPENDS =		devel/sdl2 \

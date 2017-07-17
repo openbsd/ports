@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2016/12/25 14:13:18 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2017/07/17 08:34:38 zhuk Exp $
 @conflict qt5-<5.6
 include/X11/qt5/QtSensors/
 include/X11/qt5/QtSensors/${VERSION}/
@@ -12,7 +12,9 @@ include/X11/qt5/QtSensors/${VERSION}/QtSensors/private/qcompass_p.h
 include/X11/qt5/QtSensors/${VERSION}/QtSensors/private/qdistancesensor_p.h
 include/X11/qt5/QtSensors/${VERSION}/QtSensors/private/qgyroscope_p.h
 include/X11/qt5/QtSensors/${VERSION}/QtSensors/private/qholstersensor_p.h
+include/X11/qt5/QtSensors/${VERSION}/QtSensors/private/qhumiditysensor_p.h
 include/X11/qt5/QtSensors/${VERSION}/QtSensors/private/qirproximitysensor_p.h
+include/X11/qt5/QtSensors/${VERSION}/QtSensors/private/qlidsensor_p.h
 include/X11/qt5/QtSensors/${VERSION}/QtSensors/private/qlightsensor_p.h
 include/X11/qt5/QtSensors/${VERSION}/QtSensors/private/qmagnetometer_p.h
 include/X11/qt5/QtSensors/${VERSION}/QtSensors/private/qorientationsensor_p.h
@@ -25,6 +27,7 @@ include/X11/qt5/QtSensors/${VERSION}/QtSensors/private/qsensorgesture_p.h
 include/X11/qt5/QtSensors/${VERSION}/QtSensors/private/qsensorgesturemanagerprivate_p.h
 include/X11/qt5/QtSensors/${VERSION}/QtSensors/private/qtapsensor_p.h
 include/X11/qt5/QtSensors/${VERSION}/QtSensors/private/qtiltsensor_p.h
+include/X11/qt5/QtSensors/${VERSION}/QtSensors/private/qtsensors-config_p.h
 include/X11/qt5/QtSensors/${VERSION}/QtSensors/private/sensorlog_p.h
 include/X11/qt5/QtSensors/${VERSION}/QtSensors/private/simulatorgesturescommon_p.h
 include/X11/qt5/QtSensors/QAccelerometer
@@ -51,9 +54,15 @@ include/X11/qt5/QtSensors/QGyroscopeReading
 include/X11/qt5/QtSensors/QHolsterFilter
 include/X11/qt5/QtSensors/QHolsterReading
 include/X11/qt5/QtSensors/QHolsterSensor
+include/X11/qt5/QtSensors/QHumidityFilter
+include/X11/qt5/QtSensors/QHumidityReading
+include/X11/qt5/QtSensors/QHumiditySensor
 include/X11/qt5/QtSensors/QIRProximityFilter
 include/X11/qt5/QtSensors/QIRProximityReading
 include/X11/qt5/QtSensors/QIRProximitySensor
+include/X11/qt5/QtSensors/QLidFilter
+include/X11/qt5/QtSensors/QLidReading
+include/X11/qt5/QtSensors/QLidSensor
 include/X11/qt5/QtSensors/QLightFilter
 include/X11/qt5/QtSensors/QLightReading
 include/X11/qt5/QtSensors/QLightSensor
@@ -101,7 +110,9 @@ include/X11/qt5/QtSensors/qcompass.h
 include/X11/qt5/QtSensors/qdistancesensor.h
 include/X11/qt5/QtSensors/qgyroscope.h
 include/X11/qt5/QtSensors/qholstersensor.h
+include/X11/qt5/QtSensors/qhumiditysensor.h
 include/X11/qt5/QtSensors/qirproximitysensor.h
+include/X11/qt5/QtSensors/qlidsensor.h
 include/X11/qt5/QtSensors/qlightsensor.h
 include/X11/qt5/QtSensors/qmagnetometer.h
 include/X11/qt5/QtSensors/qorientationsensor.h
@@ -119,6 +130,7 @@ include/X11/qt5/QtSensors/qsensorplugin.h
 include/X11/qt5/QtSensors/qsensorsglobal.h
 include/X11/qt5/QtSensors/qtapsensor.h
 include/X11/qt5/QtSensors/qtiltsensor.h
+include/X11/qt5/QtSensors/qtsensors-config.h
 include/X11/qt5/QtSensors/qtsensorsversion.h
 @lib lib/libQt5Sensors.so.${LIBQt5Sensors_VERSION}
 lib/pkgconfig/Qt5Sensors.pc

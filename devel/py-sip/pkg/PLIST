@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2016/08/30 15:59:24 landry Exp $
+@comment $OpenBSD: PLIST,v 1.9 2017/07/17 08:34:39 zhuk Exp $
 @bin bin/sip${MODPY_BIN_SUFFIX}
 include/python${MODPY_VERSION}${MODPY_LIB_SUFFIX}/sip.h
 lib/python${MODPY_VERSION}/site-packages/sip.pyi
@@ -9,17 +9,17 @@ lib/python${MODPY_VERSION}/site-packages/sip.so
 lib/python${MODPY_VERSION}/site-packages/sipconfig.py
 lib/python${MODPY_VERSION}/site-packages/sipdistutils.py
 share/doc/${MODPY_PY_PREFIX}sip/
-share/doc/${MODPY_PY_PREFIX}sip/annotations.txt
-share/doc/${MODPY_PY_PREFIX}sip/build_system.txt
-share/doc/${MODPY_PY_PREFIX}sip/c_api.txt
-share/doc/${MODPY_PY_PREFIX}sip/command_line.txt
-share/doc/${MODPY_PY_PREFIX}sip/directives.txt
-share/doc/${MODPY_PY_PREFIX}sip/distutils.txt
-share/doc/${MODPY_PY_PREFIX}sip/embedding.txt
-share/doc/${MODPY_PY_PREFIX}sip/incompatibilities.txt
-share/doc/${MODPY_PY_PREFIX}sip/index.txt
-share/doc/${MODPY_PY_PREFIX}sip/installation.txt
-share/doc/${MODPY_PY_PREFIX}sip/introduction.txt
-share/doc/${MODPY_PY_PREFIX}sip/python_api.txt
-share/doc/${MODPY_PY_PREFIX}sip/specification_files.txt
-share/doc/${MODPY_PY_PREFIX}sip/using.txt
+share/doc/${MODPY_PY_PREFIX}sip/annotations.rst.txt
+share/doc/${MODPY_PY_PREFIX}sip/build_system.rst.txt
+share/doc/${MODPY_PY_PREFIX}sip/c_api.rst.txt
+share/doc/${MODPY_PY_PREFIX}sip/command_line.rst.txt
+share/doc/${MODPY_PY_PREFIX}sip/directives.rst.txt
+share/doc/${MODPY_PY_PREFIX}sip/distutils.rst.txt
+share/doc/${MODPY_PY_PREFIX}sip/embedding.rst.txt
+share/doc/${MODPY_PY_PREFIX}sip/incompatibilities.rst.txt
+share/doc/${MODPY_PY_PREFIX}sip/index.rst.txt
+share/doc/${MODPY_PY_PREFIX}sip/installation.rst.txt
+share/doc/${MODPY_PY_PREFIX}sip/introduction.rst.txt
+share/doc/${MODPY_PY_PREFIX}sip/python_api.rst.txt
+share/doc/${MODPY_PY_PREFIX}sip/specification_files.rst.txt
+share/doc/${MODPY_PY_PREFIX}sip/using.rst.txt

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.1.1.1 2017/06/15 08:28:52 zhuk Exp $
+@comment $OpenBSD: PLIST-examples,v 1.2 2017/07/17 08:34:38 zhuk Exp $
 lib/qt5/examples/datavisualization/
 lib/qt5/examples/datavisualization/audiolevels/
 lib/qt5/examples/datavisualization/audiolevels/audiolevels.cpp

@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2016/12/28 01:41:24 zhuk Exp $
+# $OpenBSD: Makefile,v 1.3 2017/07/17 08:34:39 zhuk Exp $
 
 QT5NAME =		QtWebView
-COMMENT-main =		lightweight web viewing component for Qt5
+COMMENT-main =		simple web viewing component for Qt5
 
 SHARED_LIBS =		Qt5WebView		0.0
 

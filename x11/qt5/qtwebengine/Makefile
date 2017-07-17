@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2016/12/28 01:41:24 zhuk Exp $
+# $OpenBSD: Makefile,v 1.3 2017/07/17 08:34:39 zhuk Exp $
 
 # Many parts are copied from www/chromium port, so keep in sync
 
-ONLY_FOR_ARCHS =	i386 amd64
+ONLY_FOR_ARCHS =	${CLANG_ARCHS} amd64
 QT5NAME =		QtWebEngine
 COMMENT-main =		Chromium-based web engine for Qt5
 CATEGORIES =		www
@@ -18,13 +18,8 @@ WANTLIB-main =		${WANTLIB}
 PERMIT_PACKAGE_CDROM=   patents
 PERMIT_PACKAGE_FTP =    Yes
 
-MODULES =		lang/python gcc4
-MODULES =		lang/clang lang/python gcc4
-#MODGCC4_ARCHS =
-#MODGCC4_LANGS =
-#MODQT5_USE_GCC4_MODULE =No
-#MODCLANG_ARCHS =	*
-#MODCLANG_LANGS =	c++
+COMPILER =		base clang gcc
+MODULES =		lang/python
 MODPY_RUNDEP =		No
 
 BUILD_DEPENDS =		\
@@ -34,11 +29,15 @@ BUILD_DEPENDS =		\
 RUN_DEPENDS =		sysutils/pciutils
 
 LIB_DEPENDS =		\
+			archivers/minizip \
 			audio/pulseaudio \
 			archivers/snappy \
+			devel/glib2 \
+			devel/harfbuzz \
+			devel/jsoncpp \
+			devel/protobuf \
 			graphics/libwebp \
 			graphics/png \
-			multimedia/libvpx \
 			security/libsrtp \
 			x11/qt5/qtdeclarative>=${QT5_VERSION},<${QT5_NEXT_VERSION} \
 			x11/qt5/qtwebchannel>=${QT5_VERSION},<${QT5_NEXT_VERSION}
@@ -49,76 +48,141 @@ FLAVOR ?=
 
 PATCHORIG =		.orig.port
 
-MODQMAKE_ARGS =		\
-			WEBENGINE_CONFIG+=use_proprietary_codecs
-#			WEBENGINE_CONFIG+=use_system_minizip
-
-# SEPARATE_BUILD =	No
-
-GYP_DEFS =	-Duse_system_bzip2=1 \
-		-Duse_system_libevent=1 \
-		-Duse_system_libjpeg=0 \
-		-Duse_system_libpng=1 \
-		-Duse_system_libusb=0 \
-		-Duse_system_libvpx=0 \
-		-Duse_system_libxml=1 \
-		-Duse_system_sqlite=0 \
-		-Duse_system_yasm=1 \
-		-Duse_system_zlib=0 \
-		-Duse_system_ssl=0 \
-		-Duse_system_icu=0 \
-		-Ddisable_nacl=1 \
-		-Dlinux_breakpad=0 \
-		-Duse_allocator=none \
-		-Dlinux_strip_binary=0 \
-		-Dlinux_use_heapchecker=0 \
-		-Denable_webrtc=1 \
-		-Denable_one_click_signin=1 \
-		-Duse_kerberos=0 \
-		-Duse_sndio=1 \
-		-Duse_aura=1 \
-		-Dclang_use_chrome_plugins=0 \
-		-Dwerror= \
-		-Dno_gc_sections=1 \
-		-Ddisable_fatal_linker_warnings=1 \
-		-Dv8_use_external_startup_data=0 \
-		-Dlibraries_for_target='-lestdc++' \
-		-DOS=openbsd
-
-#		-Dclang=1 \
+GN_ARGS=	enable_nacl=false \
+		is_debug=false \
+		enable_webrtc=false \
+		enable_one_click_signin=true \
+		use_kerberos=false \
+		use_sndio=true \
+		use_cups=true \
+		use_experimental_allocator_shim=false \
+		use_gtk3=true \
+		is_clang=true \
+		use_sysroot=false \
+		treat_warnings_as_errors=false \
+		clang_use_chrome_plugins=false \
+		use_allocator=\"none\" \
+		is_official_build=true \
+		fieldtrial_testing_like_official_build=true \
+		extra_cppflags=\"-idirafter ${LOCALBASE}/include -idirafter ${X11BASE}/include\" \
+		extra_ldflags=\"-L${LOCALBASE}/lib -L${X11BASE}/lib\"
 
 # Note: these keys are for OpenBSD use ONLY. For your own distribution,
 # please get your own set of keys. It's free!
-GYP_DEFS +=	-Dgoogle_api_key='AIzaSyA015yecfJyWi8UQpneQVrNzIKlxjv4MhI' \
-		-Dgoogle_default_client_id='451220141585.apps.googleusercontent.com' \
-		-Dgoogle_default_client_secret='nQcDyaBvDyCeDrsRqKIWSHJn' \
-		-Dffmpeg_branding=Chrome \
-		-Dproprietary_codecs=1
+GN_ARGS+=	google_api_key=\"AIzaSyA015yecfJyWi8UQpneQVrNzIKlxjv4MhI\" \
+		google_default_client_id=\"451220141585.apps.googleusercontent.com\" \
+		google_default_client_secret=\"nQcDyaBvDyCeDrsRqKIWSHJn\" \
+		ffmpeg_branding=\"Chrome\" \
+		proprietary_codecs=true
 
-.for d in ${GYP_DEFS}
-MODQMAKE_ARGS +=GYP_CONFIG+=$d
-.endfor
+.if ${FLAVOR:Mdebug}
+GN_ARGS+=	remove_webcore_debug_symbols=true
+.endif
 
-post-extract:
-	cd ${CHROMESRC}/third_party/ffmpeg/chromium/config/Chrome; \
-	cp -pR linux openbsd
-.for f t in linux openbsd desktop_linux desktop_openbsd
-	cp ${WRKSRC}/src/core/config/$f.pri ${WRKSRC}/src/core/config/$t.pri
+MODQMAKE_ARGS =	\
+		WEBENGINE_CONFIG+=use_proprietary_codecs \
+		WEBENGINE_CONFIG+=use_system_ffmpeg \
+		WEBENGINE_CONFIG+=use_system_icu \
+		WEBENGINE_CONFIG+=use_system_jsoncpp \
+		WEBENGINE_CONFIG+=use_system_libevent \
+		WEBENGINE_CONFIG+=use_system_libsrtp \
+		WEBENGINE_CONFIG+=use_system_libwebp \
+		WEBENGINE_CONFIG+=use_system_libxslt \
+		WEBENGINE_CONFIG+=use_system_minizip \
+		WEBENGINE_CONFIG+=use_system_opus \
+		WEBENGINE_CONFIG+=use_system_snappy \
+		WEBENGINE_CONFIG+=use_system_vpx \
+
+.for _v in ${GN_ARGS}
+MODQMAKE_ARGS :=	${MODQMAKE_ARGS} WEBENGINE_CONFIG+=${_v}
 .endfor
 
 CHROMESRC =	${WRKSRC}/src/3rdparty/chromium
 
-post-patch:
-	perl -pi.linux \
-		-e 's,(OS\s*==\s*"linux"),($$1 or  os_bsd == 1),g;' \
-		-e 's,(OS\s*!=\s*"linux"),($$1 and os_bsd != 1),g;' \
-		${WRKSRC}/src/3rdparty/chromium/third_party/ffmpeg/ffmpeg_generated.gypi
+MAKE_ENV =	V=1
+
+post-extract:
+	cd ${CHROMESRC}/third_party/ffmpeg/chromium/config/Chrome; \
+	rm -Rf openbsd; \
+	cp -pR linux openbsd
+.for f t in linux openbsd desktop_linux desktop_openbsd
+	cp ${WRKDIST}/src/core/config/$f.pri ${WRKDIST}/src/core/config/$t.pri
+.endfor
+# check if needed
+.for _arch in x64 ia32
+.  for _dir in avcodec avformat avutil
+	@cp -pR ${CHROMESRC}/third_party/ffmpeg/chromium/config/Chrome/linux/${_arch}/lib${_dir} \
+		${CHROMESRC}/third_party/ffmpeg/chromium/config/Chrome/openbsd/${_arch}/lib${_dir}
+.  endfor
+.endfor
+	@cd ${CHROMESRC}; \
+	${MODPY_BIN} build/linux/unbundle/remove_bundled_libraries.py \
+	    ${UNBUNDLE_LIST:C,^,base/third_party/,}; \
+	${MODPY_BIN} build/linux/unbundle/replace_gn_files.py \
+	    --system-libraries ${UNBUNDLE_LIST}
+
+UNBUNDLE_LIST =	libevent
 
 pre-configure:
-	ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
-	cp ${FILESDIR}/sandbox_init_openbsd.{cc,h} ${CHROMESRC}/content/common/
-	mkdir -p ${CHROMESRC}/media/audio/sndio ${CHROMESRC}/media/audio/openbsd
-	cp ${FILESDIR}/sndio_{out,in}put.{cc,h} ${CHROMESRC}/media/audio/sndio
-	cp ${FILESDIR}/audio_manager_openbsd.{cc,h} ${CHROMESRC}/media/audio/openbsd
+	@ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
+	@mkdir -p ${CHROMESRC}/media/audio/sndio ${CHROMESRC}/media/audio/openbsd
+	@cp ${FILESDIR}/sndio_{out,in}put.{cc,h} ${CHROMESRC}/media/audio/sndio
+	@cp ${FILESDIR}/audio_manager_openbsd.{cc,h} ${CHROMESRC}/media/audio/openbsd
+	@mkdir -p ${CHROMESRC}/third_party/node/openbsd/node-openbsd/bin
+	@ln -sf ${TRUEPREFIX}/bin/node ${CHROMESRC}/third_party/node/openbsd/node-openbsd/bin/node
 
 .include <bsd.port.mk>
+
+
+#
+# Utility targets to make it easier syncing with www/chromium port
+#
+
+sync-patches: ${_EXTRACT_COOKIE}
+	@! test -e ${_PATCH_COOKIE} || { \
+		echo "$@ should be run on unpatched source, e.g., after 'make extract'" >&2; \
+		false; \
+	}
+	@echo "===> removing old auto-copied patches"
+	@cd ${PATCHDIR}; for p in patch-*; do \
+		test "$$p" = "$${p%.orig}" || continue; \
+		egrep -s '^--- src/3rdparty/chromium/' $$p || continue; \
+		fgrep -q 'Automatically copied from www/chromium.' $$p || continue; \
+		rm $$p; \
+	done
+	@echo
+	@echo "===> copying new patches, preserving existing ones"
+	@added= ; skipped= ; \
+	cd ${PORTSDIR}/www/chromium/patches; for p in patch-*; do \
+		test "$$p" = "$${p%.orig}" || continue; \
+		f=$$(awk '/^\+\+\+ / {print $$2}' $$p); \
+		test -f ${WRKDIST}/src/3rdparty/chromium/$$f || continue; \
+		np=patch-src_3rdparty_chromium_$${p##*/patch-}; \
+		if [ -e ${PATCHDIR}/$$np ]; then \
+			skipped="$$skipped $$np"; \
+			continue; \
+		fi; \
+		added="$$added $$np"; \
+		perl -p -e '$$. == 1 && s,.*,\$$OpenBSD\$$,;' \
+		        -e '$$. == 2 && print "Automatically copied from www/chromium.\n\n";' \
+		        -e 's,^Index: ,$$&src/3rdparty/chromium/,;' \
+		        -e 's,^--- ,$$&src/3rdparty/chromium/,;' \
+		        -e 's,^\+\+\+ ,$$&src/3rdparty/chromium/,;' \
+		        <$$p >${PATCHDIR}/$$np; \
+	done; \
+	echo; \
+	echo "===> checking new patches for appliability"; \
+	failed= ; \
+	cd ${WRKDIST}; for p in $$added; do \
+		if ! patch -f -C <${PATCHDIR}/$$p >/dev/null 2>&1; then \
+			if patch -f -C -R <${PATCHDIR}/$$p >/dev/null 2>&1; then \
+				echo "$$p is already there, removing"; \
+				rm ${PATCHDIR}/$$p; \
+			else \
+				failed="$$failed $$p"; \
+			fi; \
+		fi; \
+	done; \
+	echo; \
+	echo "===> listing patches requring manual handling"; \
+	for f in $$skipped $$failed; do echo $$f; done

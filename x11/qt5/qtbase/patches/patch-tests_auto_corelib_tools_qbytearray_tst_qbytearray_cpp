@@ -1,8 +1,9 @@
-$OpenBSD: patch-tests_auto_corelib_tools_qbytearray_tst_qbytearray_cpp,v 1.1.1.1 2016/12/25 14:13:12 zhuk Exp $
+$OpenBSD: patch-tests_auto_corelib_tools_qbytearray_tst_qbytearray_cpp,v 1.2 2017/07/17 08:34:37 zhuk Exp $
 Unbreak tests since we avoid strcpy.
---- tests/auto/corelib/tools/qbytearray/tst_qbytearray.cpp.orig	Mon Jul 18 09:38:33 2016
-+++ tests/auto/corelib/tools/qbytearray/tst_qbytearray.cpp	Mon Jul 18 09:44:00 2016
-@@ -77,7 +77,6 @@ private slots:
+Index: tests/auto/corelib/tools/qbytearray/tst_qbytearray.cpp
+--- tests/auto/corelib/tools/qbytearray/tst_qbytearray.cpp.orig
++++ tests/auto/corelib/tools/qbytearray/tst_qbytearray.cpp
+@@ -72,7 +72,6 @@ private slots:
      void qvsnprintf();
      void qstrlen();
      void qstrnlen();
@@ -10,7 +11,7 @@ Unbreak tests since we avoid strcpy.
      void qstrncpy();
      void qstricmp_data();
      void qstricmp();
-@@ -775,19 +774,6 @@ void tst_QByteArray::qstrnlen()
+@@ -789,19 +788,6 @@ void tst_QByteArray::qstrnlen()
      QCOMPARE(::qstrnlen(src, 19), (uint)19);
      QCOMPARE(::qstrnlen(src, 21), (uint)20);
      QCOMPARE(::qstrnlen(src, 20), (uint)20);

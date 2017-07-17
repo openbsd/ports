@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST-qch,v 1.1.1.1 2016/12/25 14:13:13 zhuk Exp $
-share/doc/qt5/qtwebkit/
+@comment $OpenBSD: PLIST-qch,v 1.2 2017/07/17 08:34:39 zhuk Exp $
 share/doc/qt5/qtwebkit.qch

@@ -1,8 +1,58 @@
-$OpenBSD: patch-src_testlib_qtestcase_cpp,v 1.1.1.1 2016/12/25 14:13:11 zhuk Exp $
+$OpenBSD: patch-src_testlib_qtestcase_cpp,v 1.2 2017/07/17 08:34:37 zhuk Exp $
 Get rid of qstrcpy.
---- src/testlib/qtestcase.cpp.orig	Fri Sep 16 08:49:42 2016
-+++ src/testlib/qtestcase.cpp	Wed Nov 23 00:38:31 2016
-@@ -3584,8 +3584,7 @@ char *QTest::toString(const char *str)
+Index: src/testlib/qtestcase.cpp
+--- src/testlib/qtestcase.cpp.orig
++++ src/testlib/qtestcase.cpp
+@@ -2432,37 +2432,37 @@ template <> Q_TESTLIB_EXPORT char *QTest::toString<cha
+     char *msg = new char[16];
+     switch (c) {
+     case 0x00:
+-        qstrcpy(msg, "'\\0'");
++        strlcat(msg, "'\\0'", 16);
+         break;
+     case 0x07:
+-        qstrcpy(msg, "'\\a'");
++        strlcat(msg, "'\\a'", 16);
+         break;
+     case 0x08:
+-        qstrcpy(msg, "'\\b'");
++        strlcat(msg, "'\\b'", 16);
+         break;
+     case 0x09:
+-        qstrcpy(msg, "'\\t'");
++        strlcat(msg, "'\\t'", 16);
+         break;
+     case 0x0a:
+-        qstrcpy(msg, "'\\n'");
++        strlcat(msg, "'\\n'", 16);
+         break;
+     case 0x0b:
+-        qstrcpy(msg, "'\\v'");
++        strlcat(msg, "'\\v'", 16);
+         break;
+     case 0x0c:
+-        qstrcpy(msg, "'\\f'");
++        strlcat(msg, "'\\f'", 16);
+         break;
+     case 0x0d:
+-        qstrcpy(msg, "'\\r'");
++        strlcat(msg, "'\\r'", 16);
+         break;
+     case 0x22:
+-        qstrcpy(msg, "'\\\"'");
++        strlcat(msg, "'\\\"'", 16);
+         break;
+     case 0x27:
+-        qstrcpy(msg, "'\\\''");
++        strlcat(msg, "'\\\''", 16);
+         break;
+     case 0x5c:
+-        qstrcpy(msg, "'\\\\'");
++        strlcat(msg, "'\\\\'", 16);
+         break;
+     default:
+         if (c < 0x20 || c >= 0x7F)
+@@ -2479,8 +2479,7 @@ char *QTest::toString(const char *str)
  {
      if (!str)
          return 0;

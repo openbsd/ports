@@ -1,4 +1,4 @@
-# $OpenBSD: qt5.port.mk,v 1.15 2017/05/31 08:08:18 espie Exp $
+# $OpenBSD: qt5.port.mk,v 1.16 2017/07/17 08:34:37 zhuk Exp $
 
 # This fragment defines MODQT_* variables to make it easier to substitute
 # qt3/qt4/qt5 in a port.
@@ -117,6 +117,7 @@ _MODQT5_SETUP +=	CC=cc CXX=c++ LINK_C=cc LINK=c++
 .include "Makefile.version"
 
 MODQT5_VERSION =	${QT5_VERSION}
+MODQT5_WEBKIT_VERSION =	${QT5_WEBKIT_VERSION}
 MODQT_VERSION ?=	${MODQT5_VERSION}
 
 _MODQT5_PKGMATCH !=

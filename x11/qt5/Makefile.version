@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile.version,v 1.1.1.1 2016/12/25 14:13:11 zhuk Exp $
+# $OpenBSD: Makefile.version,v 1.2 2017/07/17 08:34:37 zhuk Exp $
 # Common source for Qt5 version
 
-QT5_VERSION =		5.6.2
-QT5_DIST_VERSION =	5.6.2
+QT5_VERSION =		5.9.1
+QT5_DIST_VERSION =	5.9.1
+QT5_WEBKIT_VERSION =	5.9.0
 
 # This one is used for building dependencies for examples and documentation,
 # which obviously should be in sync with core packages.
-QT5_NEXT_VERSION =	5.7
+QT5_NEXT_VERSION =	5.10
 
 # Enginio has own versioning
 ENGINIO_VERSION =	${QT5_VERSION:C/^5/1/}

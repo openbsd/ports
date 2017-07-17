@@ -1,6 +1,9 @@
-$OpenBSD: patch-src_3rdparty_chromium_base_posix_unix_domain_socket_linux_cc,v 1.1.1.1 2016/12/25 14:13:19 zhuk Exp $
---- src/3rdparty/chromium/base/posix/unix_domain_socket_linux.cc.orig.port	Sat Aug  6 18:55:11 2016
-+++ src/3rdparty/chromium/base/posix/unix_domain_socket_linux.cc	Sat Aug  6 19:52:02 2016
+$OpenBSD: patch-src_3rdparty_chromium_base_posix_unix_domain_socket_linux_cc,v 1.2 2017/07/17 08:34:39 zhuk Exp $
+Automatically copied from www/chromium.
+
+Index: src/3rdparty/chromium/base/posix/unix_domain_socket_linux.cc
+--- src/3rdparty/chromium/base/posix/unix_domain_socket_linux.cc.orig
++++ src/3rdparty/chromium/base/posix/unix_domain_socket_linux.cc
 @@ -5,7 +5,10 @@
  #include "base/posix/unix_domain_socket_linux.h"
  
@@ -17,11 +20,11 @@ $OpenBSD: patch-src_3rdparty_chromium_base_posix_unix_domain_socket_linux_cc,v 1
  const size_t UnixDomainSocket::kMaxFileDescriptors = 16;
  
 +#ifndef SCM_CREDENTIALS
-+#  define SCM_CREDENTIALS	0x9001
++#  define SCM_CREDENTIALS      0x9001
 +#endif
 +
 +#ifndef SO_PASSCRED
-+#  define SO_PASSCRED	0x9002
++#  define SO_PASSCRED  0x9002
 +#endif
 +
  #if !defined(OS_NACL_NONSFI)

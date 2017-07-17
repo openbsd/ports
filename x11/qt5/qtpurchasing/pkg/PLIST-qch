@@ -1,2 +1,2 @@
-@comment $OpenBSD: PLIST-qch,v 1.1.1.1 2017/06/15 08:32:16 zhuk Exp $
+@comment $OpenBSD: PLIST-qch,v 1.2 2017/07/17 08:34:38 zhuk Exp $
 share/doc/qt5/qtpurchasing.qch

@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.2 2016/12/28 01:41:24 zhuk Exp $
+# $OpenBSD: Makefile,v 1.3 2017/07/17 08:34:39 zhuk Exp $
 
 QT5NAME =		QtWebChannel
 COMMENT-main =		Qt5 seamless HTML/JavaScript integration
-REVISION-qch =		0
-REVISION-html =		0
 
-SHARED_LIBS =		Qt5WebChannel		1.0
+SHARED_LIBS =		Qt5WebChannel		1.1
 
 MULTI_PACKAGES =	-main -examples -qch -html -docindex
 
-WANTLIB =		GL Qt5Core Qt5Gui Qt5Network Qt5Qml Qt5Quick m pthread
+WANTLIB =  ${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5Network Qt5Qml Qt5Quick m pthread
 
 BUILD_DEPENDS =		x11/qt5/qtwebsockets>=${QT5_VERSION:R},<${QT5_NEXT_VERSION}
 RUN_DEPENDS =		x11/qt5/qtwebsockets>=${QT5_VERSION:R},<${QT5_NEXT_VERSION}

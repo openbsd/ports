@@ -1,8 +1,9 @@
-$OpenBSD: patch-src_gui_image_qxbmhandler_cpp,v 1.1.1.1 2016/12/25 14:13:11 zhuk Exp $
+$OpenBSD: patch-src_gui_image_qxbmhandler_cpp,v 1.2 2017/07/17 08:34:37 zhuk Exp $
 Avoid confusing warning from linker.
---- src/gui/image/qxbmhandler.cpp.orig	Tue Feb 17 07:56:48 2015
-+++ src/gui/image/qxbmhandler.cpp	Wed Apr  8 00:38:30 2015
-@@ -232,11 +232,7 @@ static bool write_xbm_image(const QImage &sourceImage,
+Index: src/gui/image/qxbmhandler.cpp
+--- src/gui/image/qxbmhandler.cpp.orig
++++ src/gui/image/qxbmhandler.cpp
+@@ -241,11 +241,7 @@ static bool write_xbm_image(const QImage &sourceImage,
              }
          }
      }

@@ -1,13 +1,14 @@
-$OpenBSD: patch-src_3rdparty_chromium_build_compiler_version_py,v 1.1.1.1 2016/12/25 14:13:18 zhuk Exp $
-Fix configure.
---- src/3rdparty/chromium/build/compiler_version.py.orig.port	Wed Aug  3 23:02:32 2016
-+++ src/3rdparty/chromium/build/compiler_version.py	Wed Aug  3 23:04:16 2016
-@@ -62,7 +62,7 @@ def GetVersion(compiler, tool):
+$OpenBSD: patch-src_3rdparty_chromium_build_compiler_version_py,v 1.2 2017/07/17 08:34:39 zhuk Exp $
+Automatically copied from www/chromium.
+
+--- src/3rdparty/chromium/build/compiler_version.py.orig.port	Tue Jan  3 20:48:31 2017
++++ src/3rdparty/chromium/build/compiler_version.py	Tue Jan  3 20:48:44 2017
+@@ -58,7 +58,7 @@ def GetVersion(compiler, tool):
        # Unmodified: GNU assembler (GNU Binutils) 2.24
        # Ubuntu: GNU assembler (GNU Binutils for Ubuntu) 2.22
        # Fedora: GNU assembler version 2.23.2
 -      version_re = re.compile(r"^GNU [^ ]+ .* (\d+).(\d+).*?$", re.M)
-+      version_re = re.compile(r"^GNU [^ ]+.* (\d+).(\d+).*?$", re.M)
-     elif tool == "linker":
-       compiler = compiler + " -Xlinker --version"
-       # Using BFD linker
++      version_re = re.compile(r"^GNU assembler (\d+).(\d+)")
+     else:
+       raise Exception("Unknown tool %s" % tool)
+ 

@@ -1,10 +1,11 @@
-$OpenBSD: patch-src_network_kernel_qdnslookup_unix_cpp,v 1.1.1.1 2016/12/25 14:13:11 zhuk Exp $
+$OpenBSD: patch-src_network_kernel_qdnslookup_unix_cpp,v 1.2 2017/07/17 08:34:37 zhuk Exp $
 Unbreak compilation.
---- src/network/kernel/qdnslookup_unix.cpp.orig	Fri Sep 16 08:49:42 2016
-+++ src/network/kernel/qdnslookup_unix.cpp	Wed Nov 23 00:38:30 2016
-@@ -53,6 +53,8 @@ QT_BEGIN_NAMESPACE
+Index: src/network/kernel/qdnslookup_unix.cpp
+--- src/network/kernel/qdnslookup_unix.cpp.orig
++++ src/network/kernel/qdnslookup_unix.cpp
+@@ -62,6 +62,8 @@ QT_BEGIN_NAMESPACE
  
- #ifndef QT_NO_LIBRARY
+ #if QT_CONFIG(library)
  
 +typedef struct __res_state*	res_state;
 +

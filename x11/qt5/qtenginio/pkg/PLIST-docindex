@@ -1,8 +1,0 @@
-@comment $OpenBSD: PLIST-docindex,v 1.2 2017/02/15 09:55:20 zhuk Exp $
-@conflict qtenginio-html-<1.6.2p0
-share/doc/qt5/qtenginio/
-share/doc/qt5/qtenginio/qtenginio.index
-share/doc/qt5/qtenginiooverview/
-share/doc/qt5/qtenginiooverview/qtenginiooverview.index
-share/doc/qt5/qtenginioqml/
-share/doc/qt5/qtenginioqml/qtenginioqml.index

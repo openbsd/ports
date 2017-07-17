@@ -1,7 +1,8 @@
-$OpenBSD: patch-mkspecs_features_qt_module_prf,v 1.1.1.1 2016/12/25 14:13:11 zhuk Exp $
---- mkspecs/features/qt_module.prf.orig	Fri Sep 16 08:49:42 2016
-+++ mkspecs/features/qt_module.prf	Wed Nov 23 00:37:09 2016
-@@ -193,6 +193,8 @@ equals(QT_ARCH, i386):contains(QT_CPU_FEATURES.$$QT_AR
+$OpenBSD: patch-mkspecs_features_qt_module_prf,v 1.2 2017/07/17 08:34:37 zhuk Exp $
+Index: mkspecs/features/qt_module.prf
+--- mkspecs/features/qt_module.prf.orig
++++ mkspecs/features/qt_module.prf
+@@ -209,6 +209,8 @@ equals(QT_ARCH, i386):contains(QT_CPU_FEATURES.$$QT_AR
  
  android: CONFIG += qt_android_deps no_linker_version_script
  

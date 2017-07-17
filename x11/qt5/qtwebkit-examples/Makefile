@@ -1,17 +1,19 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/06/15 08:41:48 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2017/07/17 08:34:39 zhuk Exp $
 
 QT5NAME =		QtWebkitExamples
 PKG_ARCH =		*
 COMMENT =		examples for old Qt5 Webkit
 DISTNAME =		qtwebkit-examples-opensource-src-${VERSION}
+VERSION =		${QT5_WEBKIT_VERSION}
+DIST_VERSION =		${QT5_WEBKIT_VERSION}
 
 CATEGORIES =		www
 
 MASTER_SITES =		http://download.qt.io/community_releases/${DIST_VERSION:R}/${DIST_VERSION}-final/
 
 LIB_DEPENDS- =
-BUILD_DEPENDS =		x11/qt5/qtwebkit>=${QT5_VERSION:R},<${QT5_NEXT_VERSION}
-RUN_DEPENDS =		x11/qt5/qtwebkit>=${QT5_VERSION:R},<${QT5_NEXT_VERSION}
+BUILD_DEPENDS =		x11/qt5/qtwebkit>=${QT5_WEBKIT_VERSION:R},<${QT5_NEXT_VERSION}
+RUN_DEPENDS =		x11/qt5/qtwebkit>=${QT5_WEBKIT_VERSION:R},<${QT5_NEXT_VERSION}
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/qt5/examples

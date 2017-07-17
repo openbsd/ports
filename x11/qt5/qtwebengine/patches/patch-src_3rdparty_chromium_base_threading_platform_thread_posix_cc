@@ -1,17 +1,17 @@
-$OpenBSD: patch-src_3rdparty_chromium_base_threading_platform_thread_posix_cc,v 1.1.1.1 2016/12/25 14:13:19 zhuk Exp $
---- src/3rdparty/chromium/base/threading/platform_thread_posix.cc.orig.port	Thu Aug  4 15:25:08 2016
-+++ src/3rdparty/chromium/base/threading/platform_thread_posix.cc	Thu Aug  4 15:27:05 2016
-@@ -58,10 +58,13 @@ void* ThreadFunc(void* params) {
-   if (!thread_params->joinable)
-     base::ThreadRestrictions::SetSingletonAllowed(false);
+$OpenBSD: patch-src_3rdparty_chromium_base_threading_platform_thread_posix_cc,v 1.2 2017/07/17 08:34:39 zhuk Exp $
+Automatically copied from www/chromium.
+
+
+XXX pledge(2)
+
+--- src/3rdparty/chromium/base/threading/platform_thread_posix.cc.orig.port	Wed Oct 12 21:02:53 2016
++++ src/3rdparty/chromium/base/threading/platform_thread_posix.cc	Wed Oct 19 12:55:56 2016
+@@ -56,7 +56,7 @@ void* ThreadFunc(void* params) {
+     if (!thread_params->joinable)
+       base::ThreadRestrictions::SetSingletonAllowed(false);
  
-+  // avoid crashes caused by pledge(2)
-+#if !defined(OS_BSD)
-   if (thread_params->priority != ThreadPriority::NORMAL) {
-     PlatformThread::SetThreadPriority(PlatformThread::CurrentHandle(),
-                                       thread_params->priority);
-   }
-+#endif
- 
-   // Stash the id in the handle so the calling thread has a complete
-   // handle, and unblock the parent thread.
+-#if !defined(OS_NACL)
++#if !defined(OS_NACL) && !defined(OS_BSD)
+     // Threads on linux/android may inherit their priority from the thread
+     // where they were created. This explicitly sets the priority of all new
+     // threads.

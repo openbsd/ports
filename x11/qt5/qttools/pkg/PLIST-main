@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2016/12/25 14:13:14 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2017/07/17 08:34:39 zhuk Exp $
 @conflict qt5-<5.6
 bin/assistant-qt5
 bin/designer-qt5
@@ -10,32 +10,6 @@ bin/qcollectiongenerator-qt5
 bin/qdbus-qt5
 bin/qdoc-qt5
 bin/qtdiag-qt5
-include/X11/qt5/QtCLucene/
-include/X11/qt5/QtCLucene/${VERSION}/
-include/X11/qt5/QtCLucene/${VERSION}/QtCLucene/
-include/X11/qt5/QtCLucene/${VERSION}/QtCLucene/private/
-include/X11/qt5/QtCLucene/${VERSION}/QtCLucene/private/qanalyzer_p.h
-include/X11/qt5/QtCLucene/${VERSION}/QtCLucene/private/qclucene-config_p.h
-include/X11/qt5/QtCLucene/${VERSION}/QtCLucene/private/qclucene_global_p.h
-include/X11/qt5/QtCLucene/${VERSION}/QtCLucene/private/qdocument_p.h
-include/X11/qt5/QtCLucene/${VERSION}/QtCLucene/private/qfield_p.h
-include/X11/qt5/QtCLucene/${VERSION}/QtCLucene/private/qfilter_p.h
-include/X11/qt5/QtCLucene/${VERSION}/QtCLucene/private/qhits_p.h
-include/X11/qt5/QtCLucene/${VERSION}/QtCLucene/private/qindexreader_p.h
-include/X11/qt5/QtCLucene/${VERSION}/QtCLucene/private/qindexwriter_p.h
-include/X11/qt5/QtCLucene/${VERSION}/QtCLucene/private/qquery_p.h
-include/X11/qt5/QtCLucene/${VERSION}/QtCLucene/private/qqueryparser_p.h
-include/X11/qt5/QtCLucene/${VERSION}/QtCLucene/private/qreader_p.h
-include/X11/qt5/QtCLucene/${VERSION}/QtCLucene/private/qsearchable_p.h
-include/X11/qt5/QtCLucene/${VERSION}/QtCLucene/private/qsort_p.h
-include/X11/qt5/QtCLucene/${VERSION}/QtCLucene/private/qterm_p.h
-include/X11/qt5/QtCLucene/${VERSION}/QtCLucene/private/qtoken_p.h
-include/X11/qt5/QtCLucene/${VERSION}/QtCLucene/private/qtokenizer_p.h
-include/X11/qt5/QtCLucene/${VERSION}/QtCLucene/private/qtokenstream_p.h
-include/X11/qt5/QtCLucene/QtCLucene
-include/X11/qt5/QtCLucene/QtCLuceneDepends
-include/X11/qt5/QtCLucene/QtCLuceneVersion
-include/X11/qt5/QtCLucene/qtcluceneversion.h
 include/X11/qt5/QtDesigner/
 include/X11/qt5/QtDesigner/${VERSION}/
 include/X11/qt5/QtDesigner/${VERSION}/QtDesigner/
@@ -224,18 +198,14 @@ include/X11/qt5/QtHelp/
 include/X11/qt5/QtHelp/${VERSION}/
 include/X11/qt5/QtHelp/${VERSION}/QtHelp/
 include/X11/qt5/QtHelp/${VERSION}/QtHelp/private/
-include/X11/qt5/QtHelp/${VERSION}/QtHelp/private/qclucenefieldnames_p.h
 include/X11/qt5/QtHelp/${VERSION}/QtHelp/private/qhelpcollectionhandler_p.h
 include/X11/qt5/QtHelp/${VERSION}/QtHelp/private/qhelpdatainterface_p.h
 include/X11/qt5/QtHelp/${VERSION}/QtHelp/private/qhelpdbreader_p.h
 include/X11/qt5/QtHelp/${VERSION}/QtHelp/private/qhelpengine_p.h
 include/X11/qt5/QtHelp/${VERSION}/QtHelp/private/qhelpgenerator_p.h
 include/X11/qt5/QtHelp/${VERSION}/QtHelp/private/qhelpprojectdata_p.h
-include/X11/qt5/QtHelp/${VERSION}/QtHelp/private/qhelpsearchindex_default_p.h
-include/X11/qt5/QtHelp/${VERSION}/QtHelp/private/qhelpsearchindexreader_clucene_p.h
 include/X11/qt5/QtHelp/${VERSION}/QtHelp/private/qhelpsearchindexreader_default_p.h
 include/X11/qt5/QtHelp/${VERSION}/QtHelp/private/qhelpsearchindexreader_p.h
-include/X11/qt5/QtHelp/${VERSION}/QtHelp/private/qhelpsearchindexwriter_clucene_p.h
 include/X11/qt5/QtHelp/${VERSION}/QtHelp/private/qhelpsearchindexwriter_default_p.h
 include/X11/qt5/QtHelp/QHelpContentItem
 include/X11/qt5/QtHelp/QHelpContentModel
@@ -248,6 +218,7 @@ include/X11/qt5/QtHelp/QHelpIndexWidget
 include/X11/qt5/QtHelp/QHelpSearchEngine
 include/X11/qt5/QtHelp/QHelpSearchQuery
 include/X11/qt5/QtHelp/QHelpSearchQueryWidget
+include/X11/qt5/QtHelp/QHelpSearchResult
 include/X11/qt5/QtHelp/QHelpSearchResultWidget
 include/X11/qt5/QtHelp/QtHelp
 include/X11/qt5/QtHelp/QtHelpDepends
@@ -282,7 +253,6 @@ include/X11/qt5/QtUiTools/QtUiToolsDepends
 include/X11/qt5/QtUiTools/QtUiToolsVersion
 include/X11/qt5/QtUiTools/qtuitoolsversion.h
 include/X11/qt5/QtUiTools/quiloader.h
-@lib lib/libQt5CLucene.so.${LIBQt5CLucene_VERSION}
 @lib lib/libQt5Designer.so.${LIBQt5Designer_VERSION}
 @lib lib/libQt5DesignerComponents.so.${LIBQt5DesignerComponents_VERSION}
 @lib lib/libQt5Help.so.${LIBQt5Help_VERSION}
@@ -302,6 +272,7 @@ lib/pkgconfig/Qt5UiTools.pc
 @bin lib/qt5/bin/qdoc
 @bin lib/qt5/bin/qhelpconverter
 @bin lib/qt5/bin/qhelpgenerator
+@bin lib/qt5/bin/qtattributionsscanner
 @bin lib/qt5/bin/qtdiag
 @bin lib/qt5/bin/qtpaths
 @bin lib/qt5/bin/qtplugininfo
@@ -323,9 +294,6 @@ lib/qt5/cmake/Qt5UiPlugin/Qt5UiPluginConfigVersion.cmake
 lib/qt5/cmake/Qt5UiTools/
 lib/qt5/cmake/Qt5UiTools/Qt5UiToolsConfig.cmake
 lib/qt5/cmake/Qt5UiTools/Qt5UiToolsConfigVersion.cmake
-lib/qt5/libQt5CLucene.la
-lib/qt5/libQt5CLucene.prl
-@lib lib/qt5/libQt5CLucene.so.${LIBQt5CLucene_VERSION}
 lib/qt5/libQt5Designer.la
 lib/qt5/libQt5Designer.prl
 @lib lib/qt5/libQt5Designer.so.${LIBQt5Designer_VERSION}
@@ -338,7 +306,6 @@ lib/qt5/libQt5Help.prl
 lib/qt5/libQt5UiTools.a
 lib/qt5/libQt5UiTools.la
 lib/qt5/libQt5UiTools.prl
-lib/qt5/mkspecs/modules/qt_lib_clucene_private.pri
 lib/qt5/mkspecs/modules/qt_lib_designer.pri
 lib/qt5/mkspecs/modules/qt_lib_designer_private.pri
 lib/qt5/mkspecs/modules/qt_lib_designercomponents_private.pri

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2017/07/10 14:07:40 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2017/07/17 08:34:38 zhuk Exp $
 include/X11/qt5/QtCharts/
 include/X11/qt5/QtCharts/${VERSION}/
 include/X11/qt5/QtCharts/${VERSION}/QtCharts/

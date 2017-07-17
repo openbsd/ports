@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.1.1.1 2017/07/10 14:07:40 zhuk Exp $
+@comment $OpenBSD: PLIST-examples,v 1.2 2017/07/17 08:34:38 zhuk Exp $
 lib/qt5/examples/charts/
 lib/qt5/examples/charts/areachart/
 lib/qt5/examples/charts/areachart/areachart.pro

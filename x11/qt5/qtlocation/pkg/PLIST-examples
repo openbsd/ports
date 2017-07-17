@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.1.1.1 2016/12/25 14:13:18 zhuk Exp $
-lib/qt5/examples/
+@comment $OpenBSD: PLIST-examples,v 1.2 2017/07/17 08:34:38 zhuk Exp $
 lib/qt5/examples/location/
 lib/qt5/examples/location/location.pro
 lib/qt5/examples/location/mapviewer/
@@ -30,6 +29,7 @@ lib/qt5/examples/location/mapviewer/map/
 lib/qt5/examples/location/mapviewer/map/CircleItem.qml
 lib/qt5/examples/location/mapviewer/map/ImageItem.qml
 lib/qt5/examples/location/mapviewer/map/MapComponent.qml
+lib/qt5/examples/location/mapviewer/map/MapSliders.qml
 lib/qt5/examples/location/mapviewer/map/Marker.qml
 lib/qt5/examples/location/mapviewer/map/MiniMap.qml
 lib/qt5/examples/location/mapviewer/map/PolygonItem.qml

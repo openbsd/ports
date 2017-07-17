@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_plugins_sqldrivers_configure_json,v 1.1 2017/07/17 08:34:37 zhuk Exp $
+Allow libiodbc to be picked up.
+
+Index: src/plugins/sqldrivers/configure.json
+--- src/plugins/sqldrivers/configure.json.orig
++++ src/plugins/sqldrivers/configure.json
+@@ -97,8 +97,8 @@
+             "test": "unix/odbc",
+             "sources": [
+                 { "libs": "-lodbc32", "condition": "config.win32" },
+-                { "libs": "-liodbc", "condition": "config.darwin" },
+-                { "libs": "-lodbc", "condition": "!config.win32 && !config.darwin" }
++                { "libs": "-liodbc", "condition": "config.darwin || config.bsd" },
++                { "libs": "-lodbc", "condition": "!config.win32 && !config.darwin && !config.bsd" }
+             ]
+         },
+         "sqlite2": {

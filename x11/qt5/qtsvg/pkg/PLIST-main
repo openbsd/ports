@@ -1,11 +1,10 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2016/12/25 14:13:18 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2017/07/17 08:34:39 zhuk Exp $
 @conflict qt5-<5.6
 include/X11/qt5/QtSvg/
 include/X11/qt5/QtSvg/${VERSION}/
 include/X11/qt5/QtSvg/${VERSION}/QtSvg/
 include/X11/qt5/QtSvg/${VERSION}/QtSvg/private/
 include/X11/qt5/QtSvg/${VERSION}/QtSvg/private/qsvgfont_p.h
-include/X11/qt5/QtSvg/${VERSION}/QtSvg/private/qsvgfunctions_wince_p.h
 include/X11/qt5/QtSvg/${VERSION}/QtSvg/private/qsvggraphics_p.h
 include/X11/qt5/QtSvg/${VERSION}/QtSvg/private/qsvghandler_p.h
 include/X11/qt5/QtSvg/${VERSION}/QtSvg/private/qsvgnode_p.h

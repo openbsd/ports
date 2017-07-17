@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: chrome,v 1.1.1.1 2016/12/25 14:13:19 zhuk Exp $
+# $OpenBSD: chrome,v 1.2 2017/07/17 08:34:39 zhuk Exp $
 
 DATASIZE="716800"
 OPENFILES="400"

@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.1.1.1 2016/12/25 14:13:18 zhuk Exp $
-lib/qt5/examples/
+@comment $OpenBSD: PLIST-examples,v 1.2 2017/07/17 08:34:38 zhuk Exp $
 lib/qt5/examples/sensors/
 lib/qt5/examples/sensors/accelbubble/
 lib/qt5/examples/sensors/accelbubble/Info.plist
@@ -39,6 +38,7 @@ lib/qt5/examples/sensors/grue/lib/
 lib/qt5/examples/sensors/grue/lib/gruesensor.cpp
 lib/qt5/examples/sensors/grue/lib/gruesensor.h
 lib/qt5/examples/sensors/grue/lib/gruesensor_p.h
+lib/qt5/examples/sensors/grue/lib/lib.pri
 lib/qt5/examples/sensors/grue/lib/lib.pro
 lib/qt5/examples/sensors/grue/main.cpp
 lib/qt5/examples/sensors/grue/plugin/

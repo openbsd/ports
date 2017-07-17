@@ -1,20 +1,17 @@
-# $OpenBSD: Makefile.inc,v 1.5 2017/04/19 11:16:03 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.6 2017/07/17 08:34:37 zhuk Exp $
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS} ${CLANG_ARCHS}
 BROKEN-powerpc =	never built - gcc ICE
 
 .include "Makefile.version"
 
-# DIST_VERSION should be defined when patch distfile gets issued,
+# DIST_VERSION should be defined, e.g., when patch distfile gets issued,
 # e.g.: qtbase-opensource-src-5.5.1-1.tar.gz
 
 VERSION ?=		${QT5_VERSION}
 DIST_VERSION ?=		${QT5_DIST_VERSION}
 NEXT_VERSION ?=		${QT5_NEXT_VERSION}
-DISTNAME ?=		${QT5NAME:L}-opensource-src-${VERSION}
-
-# hope it won't be forgotten on the next port update
-REVISION-examples =	0
+DISTNAME ?=		${QT5NAME:L}-opensource-src-${DIST_VERSION}
 
 PKGNAME ?=		${DISTNAME:C/-opensource-src//:C/-${DIST_VERSION}/-${VERSION}/}
 PKGNAME-main ?=		${PKGNAME}
@@ -66,6 +63,7 @@ PERMIT_PACKAGE_CDROM ?=	Yes
 
 MASTER_SITES ?=		http://download.qt.io/official_releases/qt/${QT5_DIST_VERSION:R}/${QT5_DIST_VERSION}/submodules/
 DIST_SUBDIR ?=		qt
+EXTRACT_SUFX ?=		.tar.xz
 
 CONFIGURE_STYLE ?=	qmake
 MODULES +=		devel/qmake x11/qt5
@@ -123,7 +121,7 @@ QT5_DOC_DEPS =
 . for _d in ${LIB_DEPENDS:Mx11/qt5/*} ${BUILD_DEPENDS:Mx11/qt5/*}
 QT5_DOC_DEPS :=	${QT5_DOC_DEPS} ${_d:C/(,.*)?(>=.*)?$/,,-docindex=${QT5_VERSION}/}
 . endfor
-BUILD_DEPENDS +=	${QT5_DOC_DEPS:C/qtbase,,-docindex/qtbase-docs,-docindex/:C/qtenginio,,-docindex=.*/qtenginio,-docindex=${ENGINIO_VERSION}/}
+BUILD_DEPENDS +=	${QT5_DOC_DEPS:C/qtbase,,-docindex/qtbase-docs,-docindex/}
 # x11/qt5/qtbase is added after Makefile.inc is processed
 . if !${PKGPATH:Mx11/qt5/qtbase-docs*}
 BUILD_DEPENDS +=	x11/qt5/qtbase-docs,-docindex=${QT5_VERSION}
@@ -162,8 +160,6 @@ NO_TEST =		Yes
 .endif
 
 SUBST_VARS +=		VERSION
-
-WRKDIST ?=	${WRKDIR}/${DISTNAME:C/${DIST_VERSION}/${VERSION}/}
 
 PROGRAMS5 =	assistant designer linguist lrelease lupdate moc pixeltool \
 		qcollectiongenerator qdbus qdoc qmake qml qtdiag rcc uic
@@ -273,7 +269,7 @@ gen_pkg_plist:
 	sed -Ei '\,^(@.* )?share/doc/qt5/.*\.qch,d' ${PKGDIR}/PLIST-main
 .endif
 .if ${BUILD_PACKAGES:M-html}
-	echo '@comment $$OpenBSD: Makefile.inc,v 1.5 2017/04/19 11:16:03 sthen Exp $$' >${PKGDIR}/PLIST-html
+	echo '@comment $$OpenBSD: Makefile.inc,v 1.6 2017/07/17 08:34:37 zhuk Exp $$' >${PKGDIR}/PLIST-html
 	egrep '^(@.* )?share/doc/qt5/' ${PKGDIR}/PLIST-main >>${PKGDIR}/PLIST-html
 	sed -Ei '\,^(@.* )?share/doc/qt5/,d' ${PKGDIR}/PLIST-main
 .endif

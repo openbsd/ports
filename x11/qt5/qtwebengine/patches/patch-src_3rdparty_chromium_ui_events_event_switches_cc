@@ -1,7 +1,10 @@
-$OpenBSD: patch-src_3rdparty_chromium_ui_events_event_switches_cc,v 1.1.1.1 2016/12/25 14:13:19 zhuk Exp $
---- src/3rdparty/chromium/ui/events/event_switches.cc.orig.port	Sat Aug  6 12:49:24 2016
-+++ src/3rdparty/chromium/ui/events/event_switches.cc	Sat Aug  6 12:49:39 2016
-@@ -27,7 +27,7 @@ const char kTouchEventsDisabled[] = "disabled";
+$OpenBSD: patch-src_3rdparty_chromium_ui_events_event_switches_cc,v 1.2 2017/07/17 08:34:39 zhuk Exp $
+Automatically copied from www/chromium.
+
+Index: src/3rdparty/chromium/ui/events/event_switches.cc
+--- src/3rdparty/chromium/ui/events/event_switches.cc.orig
++++ src/3rdparty/chromium/ui/events/event_switches.cc
+@@ -28,7 +28,7 @@ const char kTouchEventsDisabled[] = "disabled";
  const char kCompensateForUnstablePinchZoom[] =
      "compensate-for-unstable-pinch-zoom";
  

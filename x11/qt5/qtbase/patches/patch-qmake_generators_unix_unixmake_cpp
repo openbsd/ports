@@ -1,12 +1,14 @@
-$OpenBSD: patch-qmake_generators_unix_unixmake_cpp,v 1.1.1.1 2016/12/25 14:13:12 zhuk Exp $
+$OpenBSD: patch-qmake_generators_unix_unixmake_cpp,v 1.2 2017/07/17 08:34:37 zhuk Exp $
 1. Always prepend project directory to list of linking directories,
    to avoid picking up wrong library from system.
 2. Try to avoid picking up system libraries instead of locally built ones.
 3. Don't special case GNU make, BSD make isn't that bad, too.
 4. Respect OpenBSD shared library naming rules.
---- qmake/generators/unix/unixmake.cpp.orig	Fri Sep 16 08:49:42 2016
-+++ qmake/generators/unix/unixmake.cpp	Mon Dec 12 22:47:27 2016
-@@ -42,7 +42,27 @@
+5. Do not strip shared libraries.
+Index: qmake/generators/unix/unixmake.cpp
+--- qmake/generators/unix/unixmake.cpp.orig
++++ qmake/generators/unix/unixmake.cpp
+@@ -37,7 +37,27 @@
  
  QT_BEGIN_NAMESPACE
  
@@ -34,7 +36,7 @@ $OpenBSD: patch-qmake_generators_unix_unixmake_cpp,v 1.1.1.1 2016/12/25 14:13:12
  UnixMakefileGenerator::init()
  {
      ProStringList &configs = project->values("CONFIG");
-@@ -102,6 +122,10 @@ UnixMakefileGenerator::init()
+@@ -101,6 +121,10 @@ UnixMakefileGenerator::init()
      if(!project->isEmpty("QMAKE_INCDIR"))
          project->values("INCLUDEPATH") += project->values("QMAKE_INCDIR");
      ProStringList ldadd;
@@ -45,7 +47,7 @@ $OpenBSD: patch-qmake_generators_unix_unixmake_cpp,v 1.1.1.1 2016/12/25 14:13:12
      if(!project->isEmpty("QMAKE_LIBDIR")) {
          const ProStringList &libdirs = project->values("QMAKE_LIBDIR");
          for(int i = 0; i < libdirs.size(); ++i) {
-@@ -119,8 +143,17 @@ UnixMakefileGenerator::init()
+@@ -118,8 +142,17 @@ UnixMakefileGenerator::init()
          }
          ldadd += project->values("QMAKE_FRAMEWORKPATH_FLAGS");
      }
@@ -64,7 +66,7 @@ $OpenBSD: patch-qmake_generators_unix_unixmake_cpp,v 1.1.1.1 2016/12/25 14:13:12
      if (!project->isEmpty("QMAKE_RPATHDIR") && !project->isEmpty("QMAKE_LFLAGS_RPATH")) {
          const ProStringList &rpathdirs = project->values("QMAKE_RPATHDIR");
          for (int i = 0; i < rpathdirs.size(); ++i) {
-@@ -146,14 +179,17 @@ UnixMakefileGenerator::init()
+@@ -145,14 +178,17 @@ UnixMakefileGenerator::init()
          }
      }
      if (!project->isEmpty("QMAKE_RPATHLINKDIR")) {
@@ -84,7 +86,7 @@ $OpenBSD: patch-qmake_generators_unix_unixmake_cpp,v 1.1.1.1 2016/12/25 14:13:12
          include_deps = true; //do not generate deps
  
      MakefileGenerator::init();
-@@ -388,6 +424,9 @@ UnixMakefileGenerator::findLibraries(bool linkPrl, boo
+@@ -423,6 +459,9 @@ UnixMakefileGenerator::findLibraries(bool linkPrl, boo
      static const char * const lflags[] = { "QMAKE_LIBS", "QMAKE_LIBS_PRIVATE", 0 };
      for (int i = 0; lflags[i]; i++) {
          ProStringList &l = project->values(lflags[i]);
@@ -94,7 +96,7 @@ $OpenBSD: patch-qmake_generators_unix_unixmake_cpp,v 1.1.1.1 2016/12/25 14:13:12
          for (ProStringList::Iterator it = l.begin(); it != l.end(); ) {
              QString opt = (*it).toQString();
              if(opt.startsWith("-")) {
-@@ -511,6 +550,13 @@ UnixMakefileGenerator::findLibraries(bool linkPrl, boo
+@@ -546,6 +585,13 @@ UnixMakefileGenerator::findLibraries(bool linkPrl, boo
              }
          }
      }
@@ -108,7 +110,7 @@ $OpenBSD: patch-qmake_generators_unix_unixmake_cpp,v 1.1.1.1 2016/12/25 14:13:12
      return false;
  }
  
-@@ -554,6 +600,7 @@ UnixMakefileGenerator::defaultInstall(const QString &t
+@@ -589,6 +635,7 @@ UnixMakefileGenerator::defaultInstall(const QString &t
      } else if(project->first("TEMPLATE") == "app") {
          target = "$(QMAKE_TARGET)";
      } else if(project->first("TEMPLATE") == "lib") {
@@ -116,7 +118,7 @@ $OpenBSD: patch-qmake_generators_unix_unixmake_cpp,v 1.1.1.1 2016/12/25 14:13:12
              if (!project->isActiveConfig("staticlib")
                      && !project->isActiveConfig("plugin")
                      && !project->isActiveConfig("unversioned_libname")) {
-@@ -563,6 +610,7 @@ UnixMakefileGenerator::defaultInstall(const QString &t
+@@ -598,6 +645,7 @@ UnixMakefileGenerator::defaultInstall(const QString &t
                      links << "$(TARGET0)";
                  }
              }
@@ -124,3 +126,12 @@ $OpenBSD: patch-qmake_generators_unix_unixmake_cpp,v 1.1.1.1 2016/12/25 14:13:12
      }
      for(int i = 0; i < targets.size(); ++i) {
          QString src = targets.at(i).toQString(),
+@@ -674,6 +722,8 @@ UnixMakefileGenerator::defaultInstall(const QString &t
+         } else if (project->first("TEMPLATE") == "lib" && project->isActiveConfig("staticlib")) {
+             if(!project->isEmpty("QMAKE_RANLIB"))
+                 ret += QString("\n\t$(RANLIB) ") + dst_targ;
++        } else if (project->first("TEMPLATE") == "lib") {
++            // do not strip shared libraries
+         } else if (!project->isActiveConfig("debug_info") && !project->isActiveConfig("nostrip")
+                    && !project->isEmpty("QMAKE_STRIP")) {
+             ret += "\n\t-$(STRIP)";

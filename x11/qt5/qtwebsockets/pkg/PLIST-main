@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2016/12/25 14:13:18 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2017/07/17 08:34:39 zhuk Exp $
 @conflict qt5-<5.6
 include/X11/qt5/QtWebSockets/
 include/X11/qt5/QtWebSockets/${VERSION}/
@@ -17,6 +17,7 @@ include/X11/qt5/QtWebSockets/${VERSION}/QtWebSockets/private/qwebsocketserver_p.
 include/X11/qt5/QtWebSockets/QMaskGenerator
 include/X11/qt5/QtWebSockets/QWebSocket
 include/X11/qt5/QtWebSockets/QWebSocketCorsAuthenticator
+include/X11/qt5/QtWebSockets/QWebSocketProtocol
 include/X11/qt5/QtWebSockets/QWebSocketServer
 include/X11/qt5/QtWebSockets/QtWebSockets
 include/X11/qt5/QtWebSockets/QtWebSocketsDepends

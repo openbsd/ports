@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_gsttools_qgstutils_cpp,v 1.1 2017/07/17 08:34:38 zhuk Exp $
+Allow our V4L2 to be used.
+
+Index: src/gsttools/qgstutils.cpp
+--- src/gsttools/qgstutils.cpp.orig
++++ src/gsttools/qgstutils.cpp
+@@ -60,7 +60,11 @@ template<typename T, int N> static int lengthOf(const 
+ 
+ #if QT_CONFIG(linux_v4l)
+ #  include <private/qcore_unix_p.h>
+-#  include <linux/videodev2.h>
++#  if defined(__OpenBSD__)
++#    include <sys/videoio.h>
++#  else
++#    include <linux/videodev2.h>
++#  endif
+ #endif
+ 
+ #include "qgstreamervideoinputdevicecontrol_p.h"

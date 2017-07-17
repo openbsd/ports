@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-html,v 1.1.1.1 2017/07/10 14:07:40 zhuk Exp $
+@comment $OpenBSD: PLIST-html,v 1.2 2017/07/17 08:34:38 zhuk Exp $
 share/doc/qt5/qtcharts/examples-manifest.xml
 share/doc/qt5/qtcharts/images/
 share/doc/qt5/qtcharts/images/api_category_axis.png

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2017/06/15 08:33:50 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2017/07/17 08:34:38 zhuk Exp $
 include/X11/qt5/QtRemoteObjects/
 include/X11/qt5/QtRemoteObjects/${VERSION}/
 include/X11/qt5/QtRemoteObjects/${VERSION}/QtRemoteObjects/
@@ -90,8 +90,6 @@ lib/qt5/mkspecs/modules/qt_lib_remoteobjects_private.pri
 lib/qt5/mkspecs/modules/qt_lib_repparser.pri
 lib/qt5/mkspecs/modules/qt_lib_repparser_private.pri
 lib/qt5/pkgconfig/Qt5RemoteObjects.pc
-lib/qt5/qml/
-lib/qt5/qml/QtQml/
 lib/qt5/qml/QtQml/RemoteObjects/
 lib/qt5/qml/QtQml/RemoteObjects/libqtqmlremoteobjects.so
 lib/qt5/qml/QtQml/RemoteObjects/qmldir

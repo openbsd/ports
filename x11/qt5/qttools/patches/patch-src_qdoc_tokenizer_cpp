@@ -1,8 +1,10 @@
-$OpenBSD: patch-src_qdoc_tokenizer_cpp,v 1.1.1.1 2016/12/25 14:13:14 zhuk Exp $
+$OpenBSD: patch-src_qdoc_tokenizer_cpp,v 1.2 2017/07/17 08:34:39 zhuk Exp $
 No strcpy in Qt on OpenBSD.
---- src/qdoc/tokenizer.cpp.orig	Tue Jul 19 14:53:38 2016
-+++ src/qdoc/tokenizer.cpp	Tue Jul 19 14:55:45 2016
-@@ -484,7 +484,7 @@ int Tokenizer::getToken()
+
+Index: src/qdoc/tokenizer.cpp
+--- src/qdoc/tokenizer.cpp.orig
++++ src/qdoc/tokenizer.cpp
+@@ -479,7 +479,7 @@ int Tokenizer::getToken()
          }
      }
  
@@ -11,7 +13,7 @@ No strcpy in Qt on OpenBSD.
      yyLexLen = strlen(yyLex);
      return Tok_Eoi;
  }
-@@ -582,8 +582,8 @@ void Tokenizer::start(const Location& loc)
+@@ -577,8 +577,8 @@ void Tokenizer::start(const Location& loc)
      yyTokLoc = loc;
      yyCurLoc = loc;
      yyCurLoc.start();
@@ -22,7 +24,7 @@ No strcpy in Qt on OpenBSD.
      yyLexLen = strlen(yyLex);
      yyBraceDepth = 0;
      yyParenDepth = 0;
-@@ -675,7 +675,7 @@ int Tokenizer::getTokenAfterPreprocessor()
+@@ -670,7 +670,7 @@ int Tokenizer::getTokenAfterPreprocessor()
            yyPrevLex. This way, we skip over the preprocessor
            directive.
          */

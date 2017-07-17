@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-html,v 1.3 2017/01/05 09:52:36 zhuk Exp $
+@comment $OpenBSD: PLIST-html,v 1.4 2017/07/17 08:34:38 zhuk Exp $
 share/doc/qt5/qtquickcontrols/applicationwindow.html
 share/doc/qt5/qtquickcontrols/controls.html
 share/doc/qt5/qtquickcontrols/controlsstyling.html
@@ -37,7 +37,6 @@ share/doc/qt5/qtquickcontrols/images/menubar-action.png
 share/doc/qt5/qtquickcontrols/images/menubar.png
 share/doc/qt5/qtquickcontrols/images/piemenu-menuitem-example.png
 share/doc/qt5/qtquickcontrols/images/progressbar.png
-share/doc/qt5/qtquickcontrols/images/qtquickcontrols-example-basiclayouts.png
 share/doc/qt5/qtquickcontrols/images/qtquickcontrols-example-calendar.png
 share/doc/qt5/qtquickcontrols/images/qtquickcontrols-example-filesystembrowser.png
 share/doc/qt5/qtquickcontrols/images/qtquickcontrols-example-gallery-android-dark.png
@@ -234,12 +233,6 @@ share/doc/qt5/qtquickcontrols/qml-qtquick-controls-treeview-members.html
 share/doc/qt5/qtquickcontrols/qml-qtquick-controls-treeview.html
 share/doc/qt5/qtquickcontrols/qtquick-controls-qmlmodule.html
 share/doc/qt5/qtquickcontrols/qtquick-controls-styles-qmlmodule.html
-share/doc/qt5/qtquickcontrols/qtquickcontrols-basiclayouts-basiclayouts-pro.html
-share/doc/qt5/qtquickcontrols/qtquickcontrols-basiclayouts-basiclayouts-qmlproject.html
-share/doc/qt5/qtquickcontrols/qtquickcontrols-basiclayouts-example.html
-share/doc/qt5/qtquickcontrols/qtquickcontrols-basiclayouts-main-qml.html
-share/doc/qt5/qtquickcontrols/qtquickcontrols-basiclayouts-resources-qrc.html
-share/doc/qt5/qtquickcontrols/qtquickcontrols-basiclayouts-src-main-cpp.html
 share/doc/qt5/qtquickcontrols/qtquickcontrols-calendar-calendar-pro.html
 share/doc/qt5/qtquickcontrols/qtquickcontrols-calendar-example.html
 share/doc/qt5/qtquickcontrols/qtquickcontrols-calendar-qml-main-qml.html
@@ -507,37 +500,3 @@ share/doc/qt5/qtquickextras/qtquickextras.qhp.sha1
 share/doc/qt5/qtquickextras/style/
 share/doc/qt5/qtquickextras/style/offline-simple.css
 share/doc/qt5/qtquickextras/style/offline.css
-share/doc/qt5/qtquicklayouts/images/
-share/doc/qt5/qtquicklayouts/images/arrow_bc.png
-share/doc/qt5/qtquicklayouts/images/bgrContent.png
-share/doc/qt5/qtquicklayouts/images/btn_next.png
-share/doc/qt5/qtquicklayouts/images/btn_prev.png
-share/doc/qt5/qtquicklayouts/images/bullet_dn.png
-share/doc/qt5/qtquicklayouts/images/bullet_sq.png
-share/doc/qt5/qtquicklayouts/images/columnlayout.png
-share/doc/qt5/qtquicklayouts/images/gridlayout.png
-share/doc/qt5/qtquicklayouts/images/home.png
-share/doc/qt5/qtquicklayouts/images/ico_note.png
-share/doc/qt5/qtquicklayouts/images/ico_note_attention.png
-share/doc/qt5/qtquicklayouts/images/ico_out.png
-share/doc/qt5/qtquicklayouts/images/logo.png
-share/doc/qt5/qtquicklayouts/images/rowlayout-minimum.png
-share/doc/qt5/qtquicklayouts/images/rowlayout.png
-share/doc/qt5/qtquicklayouts/qml-qtquick-layouts-columnlayout-members.html
-share/doc/qt5/qtquicklayouts/qml-qtquick-layouts-columnlayout.html
-share/doc/qt5/qtquicklayouts/qml-qtquick-layouts-gridlayout-members.html
-share/doc/qt5/qtquicklayouts/qml-qtquick-layouts-gridlayout.html
-share/doc/qt5/qtquicklayouts/qml-qtquick-layouts-layout-members.html
-share/doc/qt5/qtquicklayouts/qml-qtquick-layouts-layout.html
-share/doc/qt5/qtquicklayouts/qml-qtquick-layouts-rowlayout-members.html
-share/doc/qt5/qtquicklayouts/qml-qtquick-layouts-rowlayout.html
-share/doc/qt5/qtquicklayouts/qml-qtquick-layouts-stacklayout-members.html
-share/doc/qt5/qtquicklayouts/qml-qtquick-layouts-stacklayout.html
-share/doc/qt5/qtquicklayouts/qtquick-layouts-qmlmodule.html
-share/doc/qt5/qtquicklayouts/qtquicklayouts-index.html
-share/doc/qt5/qtquicklayouts/qtquicklayouts-overview.html
-share/doc/qt5/qtquicklayouts/qtquicklayouts.qhp
-share/doc/qt5/qtquicklayouts/qtquicklayouts.qhp.sha1
-share/doc/qt5/qtquicklayouts/style/
-share/doc/qt5/qtquicklayouts/style/offline-simple.css
-share/doc/qt5/qtquicklayouts/style/offline.css

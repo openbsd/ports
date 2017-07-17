@@ -1,17 +1,13 @@
-$OpenBSD: patch-src_assistant_assistant_assistant_pro,v 1.1.1.1 2016/12/25 14:13:14 zhuk Exp $
-Avoid (circular) dependency on Webkit in -main subpackage.
---- src/assistant/assistant/assistant.pro.orig	Thu Dec 15 13:19:19 2016
-+++ src/assistant/assistant/assistant.pro	Thu Dec 15 13:19:39 2016
-@@ -1,8 +1,8 @@
+$OpenBSD: patch-src_assistant_assistant_assistant_pro,v 1.2 2017/07/17 08:34:39 zhuk Exp $
+Force using qtextbrowser: no W^X violations and no
+circular dependencies.
+
+Index: src/assistant/assistant/assistant.pro
+--- src/assistant/assistant/assistant.pro.orig
++++ src/assistant/assistant/assistant.pro
+@@ -1,4 +1,4 @@
 -qtHaveModule(webkitwidgets):!contains(QT_CONFIG, static) {
--    BROWSER = qtwebkit
--} else {
-+# qtHaveModule(webkitwidgets):!contains(QT_CONFIG, static) {
-+#     BROWSER = qtwebkit
-+# } else {
++qtHaveModule(webkitwidgets):!contains(QT_CONFIG, static):!openbsd {
+     BROWSER = qtwebkit
+ } else {
      BROWSER = qtextbrowser
--}
-+# }
- 
- QT += widgets network help sql help
- qtHaveModule(printsupport): QT += printsupport

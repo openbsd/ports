@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.1.1.1 2016/12/25 14:13:18 zhuk Exp $
-lib/qt5/examples/
+@comment $OpenBSD: PLIST-examples,v 1.2 2017/07/17 08:34:39 zhuk Exp $
 lib/qt5/examples/svg/
 lib/qt5/examples/svg/draganddrop/
 lib/qt5/examples/svg/draganddrop/delayedencoding/
@@ -39,8 +38,6 @@ lib/qt5/examples/svg/embedded/desktopservices/resources/photo.png
 lib/qt5/examples/svg/embedded/embedded.pro
 lib/qt5/examples/svg/embedded/fluidlauncher/
 lib/qt5/examples/svg/embedded/fluidlauncher/config.xml
-lib/qt5/examples/svg/embedded/fluidlauncher/config_wince/
-lib/qt5/examples/svg/embedded/fluidlauncher/config_wince/config.xml
 lib/qt5/examples/svg/embedded/fluidlauncher/demoapplication.cpp
 lib/qt5/examples/svg/embedded/fluidlauncher/demoapplication.h
 lib/qt5/examples/svg/embedded/fluidlauncher/fluidlauncher.cpp
@@ -187,6 +184,8 @@ lib/qt5/examples/svg/svgviewer/doc/images/
 lib/qt5/examples/svg/svgviewer/doc/images/svgviewer-example.png
 lib/qt5/examples/svg/svgviewer/doc/src/
 lib/qt5/examples/svg/svgviewer/doc/src/svgviewer.qdoc
+lib/qt5/examples/svg/svgviewer/exportdialog.cpp
+lib/qt5/examples/svg/svgviewer/exportdialog.h
 lib/qt5/examples/svg/svgviewer/files/
 lib/qt5/examples/svg/svgviewer/files/bubbles.svg
 lib/qt5/examples/svg/svgviewer/files/cubic.svg

@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.1.1.1 2016/12/25 14:13:18 zhuk Exp $
-lib/qt5/examples/
+@comment $OpenBSD: PLIST-examples,v 1.2 2017/07/17 08:34:39 zhuk Exp $
 lib/qt5/examples/websockets/
 lib/qt5/examples/websockets/doc/
 lib/qt5/examples/websockets/doc/echoclient.qdoc

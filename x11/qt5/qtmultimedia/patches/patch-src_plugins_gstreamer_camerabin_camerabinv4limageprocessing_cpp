@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_plugins_gstreamer_camerabin_camerabinv4limageprocessing_cpp,v 1.1 2017/07/17 08:34:38 zhuk Exp $
+Allow our V4L2 to be used.
+
+Index: src/plugins/gstreamer/camerabin/camerabinv4limageprocessing.cpp
+--- src/plugins/gstreamer/camerabin/camerabinv4limageprocessing.cpp.orig
++++ src/plugins/gstreamer/camerabin/camerabinv4limageprocessing.cpp
+@@ -43,7 +43,11 @@
+ #include <QDebug>
+ 
+ #include <private/qcore_unix_p.h>
+-#include <linux/videodev2.h>
++#if defined(__OpenBSD__)
++#  include <sys/videoio.h>
++#else
++#  include <linux/videodev2.h>
++#endif
+ 
+ QT_BEGIN_NAMESPACE
+ 

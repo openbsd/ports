@@ -1,23 +1,11 @@
-$OpenBSD: patch-src_core_config_desktop_openbsd_pri,v 1.1.1.1 2016/12/25 14:13:19 zhuk Exp $
---- src/core/config/desktop_openbsd.pri.orig.port	Fri Aug  5 00:59:30 2016
-+++ src/core/config/desktop_openbsd.pri	Fri Aug  5 01:21:27 2016
-@@ -1,10 +1,15 @@
--GYP_ARGS += "-D qt_os=\"desktop_linux\""
-+GYP_ARGS += "-D qt_os=\"desktop_openbsd\""
- 
+$OpenBSD: patch-src_core_config_desktop_openbsd_pri,v 1.2 2017/07/17 08:34:39 zhuk Exp $
+
+Index: src/core/config/desktop_openbsd.pri
+--- src/core/config/desktop_openbsd.pri.orig
++++ src/core/config/desktop_openbsd.pri
+@@ -1,4 +1,4 @@
 -include(linux.pri)
 +include(openbsd.pri)
  
- GYP_CONFIG += \
--    desktop_linux=1 \
-+    desktop_openbsd=1 \
-     enable_plugins=1 \
- 
--linux-clang: GYP_CONFIG += clang=1 host_clang=1 clang_use_chrome_plugins=0 make_clang_dir=/usr
-+openbsd-clang: GYP_CONFIG += \
-+    clang=1 \
-+    host_clang=1 \
-+    clang_use_chrome_plugins=0 \
-+    make_clang_dir=$$LOCALBASE
-+
- else: GYP_CONFIG += clang=0 host_clang=0
+ gn_args += \
+     use_sysroot=false \

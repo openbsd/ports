@@ -1,8 +1,9 @@
-$OpenBSD: patch-config_tests_unix_openssl_openssl_cpp,v 1.1.1.1 2016/12/25 14:13:11 zhuk Exp $
+$OpenBSD: patch-config_tests_unix_openssl_openssl_cpp,v 1.2 2017/07/17 08:34:37 zhuk Exp $
 LibreSSL _is_ fine.
---- config.tests/unix/openssl/openssl.cpp.orig	Tue Nov 29 22:59:59 2016
-+++ config.tests/unix/openssl/openssl.cpp	Tue Dec 13 01:00:21 2016
-@@ -39,10 +39,10 @@
+Index: config.tests/unix/openssl/openssl.cpp
+--- config.tests/unix/openssl/openssl.cpp.orig
++++ config.tests/unix/openssl/openssl.cpp
+@@ -45,10 +45,10 @@
  
  #include <openssl/ssl.h>
  

@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_corelib_global_qcompilerdetection_h,v 1.1 2017/07/17 08:34:37 zhuk Exp $
+Unbreak tests.
+
+Index: src/corelib/global/qcompilerdetection.h
+--- src/corelib/global/qcompilerdetection.h.orig
++++ src/corelib/global/qcompilerdetection.h
+@@ -756,7 +756,7 @@
+ #      define Q_COMPILER_TEMPLATE_ALIAS
+ #    endif
+ #    if __has_feature(cxx_thread_local)
+-#      if !defined(__FreeBSD__) /* FreeBSD clang fails on __cxa_thread_atexit */
++#      if !defined(__FreeBSD__) && !defined(__OpenBSD__) /* FreeBSD clang fails on __cxa_thread_atexit */
+ #        define Q_COMPILER_THREAD_LOCAL
+ #      endif
+ #    endif

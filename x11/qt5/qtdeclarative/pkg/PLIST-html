@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-html,v 1.2 2016/12/28 01:41:23 zhuk Exp $
+@comment $OpenBSD: PLIST-html,v 1.3 2017/07/17 08:34:38 zhuk Exp $
 share/doc/qt5/qtqml/examples-manifest.xml
 share/doc/qt5/qtqml/images/
 share/doc/qt5/qtqml/images/arrow_bc.png
@@ -63,6 +63,8 @@ share/doc/qt5/qtqml/qml-qtqml-instantiator-members.html
 share/doc/qt5/qtqml/qml-qtqml-instantiator.html
 share/doc/qt5/qtqml/qml-qtqml-locale-members.html
 share/doc/qt5/qtqml/qml-qtqml-locale.html
+share/doc/qt5/qtqml/qml-qtqml-loggingcategory-members.html
+share/doc/qt5/qtqml/qml-qtqml-loggingcategory.html
 share/doc/qt5/qtqml/qml-qtqml-models-delegatemodel-members.html
 share/doc/qt5/qtqml/qml-qtqml-models-delegatemodel.html
 share/doc/qt5/qtqml/qml-qtqml-models-delegatemodelgroup-members.html
@@ -163,6 +165,7 @@ share/doc/qt5/qtqml/qqmlpropertyvaluesource.html
 share/doc/qt5/qtqml/qqmlscriptstring-members.html
 share/doc/qt5/qtqml/qqmlscriptstring.html
 share/doc/qt5/qtqml/qtjavascript.html
+share/doc/qt5/qtqml/qtqml-attribution-masm.html
 share/doc/qt5/qtqml/qtqml-cppclasses-topic.html
 share/doc/qt5/qtqml/qtqml-cppintegration-contextproperties.html
 share/doc/qt5/qtqml/qtqml-cppintegration-data.html
@@ -373,7 +376,9 @@ share/doc/qt5/qtqml/qtqml-typesystem-topic.html
 share/doc/qt5/qtqml/qtqml-xmlhttprequest-data-xml.html
 share/doc/qt5/qtqml/qtqml-xmlhttprequest-example.html
 share/doc/qt5/qtqml/qtqml-xmlhttprequest-get-qml.html
+share/doc/qt5/qtqml/qtqml-xmlhttprequest-getform-ui-qml.html
 share/doc/qt5/qtqml/qtqml-xmlhttprequest-main-cpp.html
+share/doc/qt5/qtqml/qtqml-xmlhttprequest-methods-js.html
 share/doc/qt5/qtqml/qtqml-xmlhttprequest-xmlhttprequest-pro.html
 share/doc/qt5/qtqml/qtqml-xmlhttprequest-xmlhttprequest-qml.html
 share/doc/qt5/qtqml/qtqml-xmlhttprequest-xmlhttprequest-qmlproject.html
@@ -400,6 +405,7 @@ share/doc/qt5/qtquick/images/btn_next.png
 share/doc/qt5/qtquick/images/btn_prev.png
 share/doc/qt5/qtquick/images/bullet_dn.png
 share/doc/qt5/qtquick/images/bullet_sq.png
+share/doc/qt5/qtquick/images/columnlayout.png
 share/doc/qt5/qtquick/images/custom-geometry-example.png
 share/doc/qt5/qtquick/images/declarative-adv-tutorial1.png
 share/doc/qt5/qtquick/images/declarative-adv-tutorial2.png
@@ -470,6 +476,7 @@ share/doc/qt5/qtquick/images/gridLayout_aligncenter.png
 share/doc/qt5/qtquick/images/gridLayout_aligntop.png
 share/doc/qt5/qtquick/images/gridLayout_aligntopleft.png
 share/doc/qt5/qtquick/images/gridLayout_example.png
+share/doc/qt5/qtquick/images/gridlayout.png
 share/doc/qt5/qtquick/images/gridview-highlight.png
 share/doc/qt5/qtquick/images/gridview-layout-lefttoright-ltr-btt.png
 share/doc/qt5/qtquick/images/gridview-layout-lefttoright-ltr-ttb.png
@@ -589,7 +596,6 @@ share/doc/qt5/qtquick/images/qml-item-canvas-translate.png
 share/doc/qt5/qtquick/images/qml-item-canvas-translatey.png
 share/doc/qt5/qtquick/images/qml-keyinteraction-example.png
 share/doc/qt5/qtquick/images/qml-listview-sections-example.png
-share/doc/qt5/qtquick/images/qml-localstorage-example.png
 share/doc/qt5/qtquick/images/qml-modelviews-example.png
 share/doc/qt5/qtquick/images/qml-mousearea-example.png
 share/doc/qt5/qtquick/images/qml-mousearea-snippet.png
@@ -626,6 +632,7 @@ share/doc/qt5/qtquick/images/qtquick-demo-samegame-med-2.png
 share/doc/qt5/qtquick/images/qtquick-demo-stocqt.png
 share/doc/qt5/qtquick/images/qtquick-demo-tweetsearch-med-1.png
 share/doc/qt5/qtquick/images/qtquick-demo-tweetsearch-med-2.png
+share/doc/qt5/qtquick/images/qtquicklayouts-example-layouts.png
 share/doc/qt5/qtquick/images/qtquickwidgets-example.png
 share/doc/qt5/qtquick/images/rect-color.png
 share/doc/qt5/qtquick/images/rendercontrol-example.jpg
@@ -633,6 +640,8 @@ share/doc/qt5/qtquick/images/repeater-index.png
 share/doc/qt5/qtquick/images/repeater-modeldata.png
 share/doc/qt5/qtquick/images/repeater-simple.png
 share/doc/qt5/qtquick/images/repeater.png
+share/doc/qt5/qtquick/images/rowlayout-minimum.png
+share/doc/qt5/qtquick/images/rowlayout.png
 share/doc/qt5/qtquick/images/screen-and-window-dimensions.jpg
 share/doc/qt5/qtquick/images/sg-renderloop-singlethreaded.jpg
 share/doc/qt5/qtquick/images/sg-renderloop-threaded.jpg
@@ -642,6 +651,7 @@ share/doc/qt5/qtquick/images/spriteenginegraph.png
 share/doc/qt5/qtquick/images/star.png
 share/doc/qt5/qtquick/images/textureinsgnode-example.jpg
 share/doc/qt5/qtquick/images/textureinthread-example.jpg
+share/doc/qt5/qtquick/images/touchpoint-metrics.png
 share/doc/qt5/qtquick/images/translate.png
 share/doc/qt5/qtquick/images/twotextureproviders-example.jpg
 share/doc/qt5/qtquick/images/verticalpositioner_example.png
@@ -692,6 +702,8 @@ share/doc/qt5/qtquick/qml-qtquick-behavior-members.html
 share/doc/qt5/qtquick/qml-qtquick-behavior.html
 share/doc/qt5/qtquick/qml-qtquick-borderimage-members.html
 share/doc/qt5/qtquick/qml-qtquick-borderimage.html
+share/doc/qt5/qtquick/qml-qtquick-borderimagemesh-members.html
+share/doc/qt5/qtquick/qml-qtquick-borderimagemesh.html
 share/doc/qt5/qtquick/qml-qtquick-canvas-members.html
 share/doc/qt5/qtquick/qml-qtquick-canvas-obsolete.html
 share/doc/qt5/qtquick/qml-qtquick-canvas.html
@@ -733,6 +745,8 @@ share/doc/qt5/qtquick/qml-qtquick-gradient-members.html
 share/doc/qt5/qtquick/qml-qtquick-gradient.html
 share/doc/qt5/qtquick/qml-qtquick-gradientstop-members.html
 share/doc/qt5/qtquick/qml-qtquick-gradientstop.html
+share/doc/qt5/qtquick/qml-qtquick-graphicsinfo-members.html
+share/doc/qt5/qtquick/qml-qtquick-graphicsinfo.html
 share/doc/qt5/qtquick/qml-qtquick-grid-members.html
 share/doc/qt5/qtquick/qml-qtquick-grid.html
 share/doc/qt5/qtquick/qml-qtquick-gridmesh-members.html
@@ -755,6 +769,16 @@ share/doc/qt5/qtquick/qml-qtquick-keys-members.html
 share/doc/qt5/qtquick/qml-qtquick-keys.html
 share/doc/qt5/qtquick/qml-qtquick-layoutmirroring-members.html
 share/doc/qt5/qtquick/qml-qtquick-layoutmirroring.html
+share/doc/qt5/qtquick/qml-qtquick-layouts-columnlayout-members.html
+share/doc/qt5/qtquick/qml-qtquick-layouts-columnlayout.html
+share/doc/qt5/qtquick/qml-qtquick-layouts-gridlayout-members.html
+share/doc/qt5/qtquick/qml-qtquick-layouts-gridlayout.html
+share/doc/qt5/qtquick/qml-qtquick-layouts-layout-members.html
+share/doc/qt5/qtquick/qml-qtquick-layouts-layout.html
+share/doc/qt5/qtquick/qml-qtquick-layouts-rowlayout-members.html
+share/doc/qt5/qtquick/qml-qtquick-layouts-rowlayout.html
+share/doc/qt5/qtquick/qml-qtquick-layouts-stacklayout-members.html
+share/doc/qt5/qtquick/qml-qtquick-layouts-stacklayout.html
 share/doc/qt5/qtquick/qml-qtquick-listview-members.html
 share/doc/qt5/qtquick/qml-qtquick-listview.html
 share/doc/qt5/qtquick/qml-qtquick-loader-members.html
@@ -800,6 +824,7 @@ share/doc/qt5/qtquick/qml-qtquick-particles-emitter.html
 share/doc/qt5/qtquick/qml-qtquick-particles-friction-members.html
 share/doc/qt5/qtquick/qml-qtquick-particles-friction.html
 share/doc/qt5/qtquick/qml-qtquick-particles-gravity-members.html
+share/doc/qt5/qtquick/qml-qtquick-particles-gravity-obsolete.html
 share/doc/qt5/qtquick/qml-qtquick-particles-gravity.html
 share/doc/qt5/qtquick/qml-qtquick-particles-groupgoal-members.html
 share/doc/qt5/qtquick/qml-qtquick-particles-groupgoal.html
@@ -920,6 +945,7 @@ share/doc/qt5/qtquick/qml-qtquick-stategroup.html
 share/doc/qt5/qtquick/qml-qtquick-systempalette-members.html
 share/doc/qt5/qtquick/qml-qtquick-systempalette.html
 share/doc/qt5/qtquick/qml-qtquick-text-members.html
+share/doc/qt5/qtquick/qml-qtquick-text-obsolete.html
 share/doc/qt5/qtquick/qml-qtquick-text.html
 share/doc/qt5/qtquick/qml-qtquick-textedit-members.html
 share/doc/qt5/qtquick/qml-qtquick-textedit.html
@@ -928,6 +954,7 @@ share/doc/qt5/qtquick/qml-qtquick-textinput.html
 share/doc/qt5/qtquick/qml-qtquick-textmetrics-members.html
 share/doc/qt5/qtquick/qml-qtquick-textmetrics.html
 share/doc/qt5/qtquick/qml-qtquick-touchpoint-members.html
+share/doc/qt5/qtquick/qml-qtquick-touchpoint-obsolete.html
 share/doc/qt5/qtquick/qml-qtquick-touchpoint.html
 share/doc/qt5/qtquick/qml-qtquick-transform-members.html
 share/doc/qt5/qtquick/qml-qtquick-transform.html
@@ -958,10 +985,12 @@ share/doc/qt5/qtquick/qml-qtquick-xmllistmodel-xmlrole-members.html
 share/doc/qt5/qtquick/qml-qtquick-xmllistmodel-xmlrole.html
 share/doc/qt5/qtquick/qml-qtquick-yanimator-members.html
 share/doc/qt5/qtquick/qml-qtquick-yanimator.html
-share/doc/qt5/qtquick/qml-qttest-signalspy-members.html
+share/doc/qt5/qtquick/qml-qttest-signals${MODPY_PY_PREFIX}members.html
 share/doc/qt5/qtquick/qml-qttest-signalspy.html
 share/doc/qt5/qtquick/qml-qttest-testcase-members.html
 share/doc/qt5/qtquick/qml-qttest-testcase.html
+share/doc/qt5/qtquick/qml-qttest-toucheventsequence-members.html
+share/doc/qt5/qtquick/qml-qttest-toucheventsequence.html
 share/doc/qt5/qtquick/qml-quaternion.html
 share/doc/qt5/qtquick/qml-tutorial.html
 share/doc/qt5/qtquick/qml-tutorial1.html
@@ -1003,6 +1032,7 @@ share/doc/qt5/qtquick/qquickview.html
 share/doc/qt5/qtquick/qquickwidget-members.html
 share/doc/qt5/qtquick/qquickwidget.html
 share/doc/qt5/qtquick/qquickwindow-members.html
+share/doc/qt5/qtquick/qquickwindow-obsolete.html
 share/doc/qt5/qtquick/qquickwindow.html
 share/doc/qt5/qtquick/qsgabstractrenderer-members.html
 share/doc/qt5/qtquick/qsgabstractrenderer.html
@@ -1030,6 +1060,8 @@ share/doc/qt5/qtquick/qsggeometry-texturedpoint2d.html
 share/doc/qt5/qtquick/qsggeometry.html
 share/doc/qt5/qtquick/qsggeometrynode-members.html
 share/doc/qt5/qtquick/qsggeometrynode.html
+share/doc/qt5/qtquick/qsgimagenode-members.html
+share/doc/qt5/qtquick/qsgimagenode.html
 share/doc/qt5/qtquick/qsgmaterial-members.html
 share/doc/qt5/qtquick/qsgmaterial.html
 share/doc/qt5/qtquick/qsgmaterialshader-members.html
@@ -1043,6 +1075,14 @@ share/doc/qt5/qtquick/qsgopacitynode-members.html
 share/doc/qt5/qtquick/qsgopacitynode.html
 share/doc/qt5/qtquick/qsgopaquetexturematerial-members.html
 share/doc/qt5/qtquick/qsgopaquetexturematerial.html
+share/doc/qt5/qtquick/qsgrectanglenode-members.html
+share/doc/qt5/qtquick/qsgrectanglenode.html
+share/doc/qt5/qtquick/qsgrendererinterface-members.html
+share/doc/qt5/qtquick/qsgrendererinterface.html
+share/doc/qt5/qtquick/qsgrendernode-members.html
+share/doc/qt5/qtquick/qsgrendernode-renderstate-members.html
+share/doc/qt5/qtquick/qsgrendernode-renderstate.html
+share/doc/qt5/qtquick/qsgrendernode.html
 share/doc/qt5/qtquick/qsgsimplematerial-members.html
 share/doc/qt5/qtquick/qsgsimplematerial.html
 share/doc/qt5/qtquick/qsgsimplematerialshader-members.html
@@ -1063,6 +1103,7 @@ share/doc/qt5/qtquick/qsgvertexcolormaterial-members.html
 share/doc/qt5/qtquick/qsgvertexcolormaterial.html
 share/doc/qt5/qtquick/qt-labs-folderlistmodel-qmlmodule.html
 share/doc/qt5/qtquick/qt-labs-settings-qmlmodule.html
+share/doc/qt5/qtquick/qt-labs-sharedimage-qmlmodule.html
 share/doc/qt5/qtquick/qtquick-animation-animation-pro.html
 share/doc/qt5/qtquick/qtquick-animation-animation-qml.html
 share/doc/qt5/qtquick/qtquick-animation-animation-qmlproject.html
@@ -1194,8 +1235,6 @@ share/doc/qt5/qtquick/qtquick-demos-rssnews-rssnews-pro.html
 share/doc/qt5/qtquick/qtquick-demos-rssnews-rssnews-qml.html
 share/doc/qt5/qtquick/qtquick-demos-rssnews-rssnews-qmlproject.html
 share/doc/qt5/qtquick/qtquick-demos-rssnews-rssnews-qrc.html
-share/doc/qt5/qtquick/qtquick-demos-samegame-content-bbsettings-qml.html
-share/doc/qt5/qtquick/qtquick-demos-samegame-content-blackberry-settings-qml.html
 share/doc/qt5/qtquick/qtquick-demos-samegame-content-block-qml.html
 share/doc/qt5/qtquick/qtquick-demos-samegame-content-blockemitter-qml.html
 share/doc/qt5/qtquick/qtquick-demos-samegame-content-button-qml.html
@@ -1228,12 +1267,14 @@ share/doc/qt5/qtquick/qtquick-demos-samegame-samegame-pro.html
 share/doc/qt5/qtquick/qtquick-demos-samegame-samegame-qml.html
 share/doc/qt5/qtquick/qtquick-demos-samegame-samegame-qmlproject.html
 share/doc/qt5/qtquick/qtquick-demos-samegame-samegame-qrc.html
+share/doc/qt5/qtquick/qtquick-demos-stocqt-content-banner-qml.html
 share/doc/qt5/qtquick/qtquick-demos-stocqt-content-button-qml.html
 share/doc/qt5/qtquick/qtquick-demos-stocqt-content-checkbox-qml.html
 share/doc/qt5/qtquick/qtquick-demos-stocqt-content-qmldir.html
 share/doc/qt5/qtquick/qtquick-demos-stocqt-content-settings-qml.html
 share/doc/qt5/qtquick/qtquick-demos-stocqt-content-stockchart-qml.html
 share/doc/qt5/qtquick/qtquick-demos-stocqt-content-stockinfo-qml.html
+share/doc/qt5/qtquick/qtquick-demos-stocqt-content-stocklistdelegate-qml.html
 share/doc/qt5/qtquick/qtquick-demos-stocqt-content-stocklistmodel-qml.html
 share/doc/qt5/qtquick/qtquick-demos-stocqt-content-stocklistview-qml.html
 share/doc/qt5/qtquick/qtquick-demos-stocqt-content-stockmodel-qml.html
@@ -1325,13 +1366,23 @@ share/doc/qt5/qtquick/qtquick-keyinteraction-keyinteraction-qml.html
 share/doc/qt5/qtquick/qtquick-keyinteraction-keyinteraction-qmlproject.html
 share/doc/qt5/qtquick/qtquick-keyinteraction-keyinteraction-qrc.html
 share/doc/qt5/qtquick/qtquick-keyinteraction-main-cpp.html
+share/doc/qt5/qtquick/qtquick-layouts-example.html
+share/doc/qt5/qtquick/qtquick-layouts-layouts-pro.html
+share/doc/qt5/qtquick/qtquick-layouts-layouts-qml.html
+share/doc/qt5/qtquick/qtquick-layouts-layouts-qmlproject.html
+share/doc/qt5/qtquick/qtquick-layouts-layouts-qrc.html
+share/doc/qt5/qtquick/qtquick-layouts-main-cpp.html
+share/doc/qt5/qtquick/qtquick-layouts-qmlmodule.html
 share/doc/qt5/qtquick/qtquick-localstorage-example.html
-share/doc/qt5/qtquick/qtquick-localstorage-localstorage-hello-qml.html
+share/doc/qt5/qtquick/qtquick-localstorage-localstorage-database-js.html
+share/doc/qt5/qtquick/qtquick-localstorage-localstorage-header-qml.html
 share/doc/qt5/qtquick/qtquick-localstorage-localstorage-localstorage-pro.html
 share/doc/qt5/qtquick/qtquick-localstorage-localstorage-localstorage-qml.html
-share/doc/qt5/qtquick/qtquick-localstorage-localstorage-localstorage-qmlproject.html
 share/doc/qt5/qtquick/qtquick-localstorage-localstorage-localstorage-qrc.html
 share/doc/qt5/qtquick/qtquick-localstorage-localstorage-main-cpp.html
+share/doc/qt5/qtquick/qtquick-localstorage-localstorage-mybutton-qml.html
+share/doc/qt5/qtquick/qtquick-localstorage-localstorage-mydelegate-qml.html
+share/doc/qt5/qtquick/qtquick-localstorage-localstorage-mymodel-qml.html
 share/doc/qt5/qtquick/qtquick-localstorage-localstorage-pro.html
 share/doc/qt5/qtquick/qtquick-localstorage-qmlmodule.html
 share/doc/qt5/qtquick/qtquick-models-abstractitemmodel-abstractitemmodel-pro.html
@@ -1451,11 +1502,15 @@ share/doc/qt5/qtquick/qtquick-quick-accessibility-content-slider-qml.html
 share/doc/qt5/qtquick/qtquick-quick-accessibility-example.html
 share/doc/qt5/qtquick/qtquick-quick-accessibility-main-cpp.html
 share/doc/qt5/qtquick/qtquick-quick-accessibility-quick-accessibility-pro.html
+share/doc/qt5/qtquick/qtquick-quickwidgets-quickwidget-customgl-qml.html
 share/doc/qt5/qtquick/qtquick-quickwidgets-quickwidget-example.html
+share/doc/qt5/qtquick/qtquick-quickwidgets-quickwidget-fbitem-cpp.html
+share/doc/qt5/qtquick/qtquick-quickwidgets-quickwidget-fbitem-h.html
 share/doc/qt5/qtquick/qtquick-quickwidgets-quickwidget-main-cpp.html
 share/doc/qt5/qtquick/qtquick-quickwidgets-quickwidget-quickwidget-pro.html
 share/doc/qt5/qtquick/qtquick-quickwidgets-quickwidget-quickwidget-qrc.html
 share/doc/qt5/qtquick/qtquick-quickwidgets-quickwidget-rotatingsquare-qml.html
+share/doc/qt5/qtquick/qtquick-quickwidgets-quickwidget-rotatingsquaretab-qml.html
 share/doc/qt5/qtquick/qtquick-rendercontrol-cuberenderer-cpp.html
 share/doc/qt5/qtquick/qtquick-rendercontrol-cuberenderer-h.html
 share/doc/qt5/qtquick/qtquick-rendercontrol-demo-qml.html
@@ -1665,17 +1720,22 @@ share/doc/qt5/qtquick/qtquick-views-views-qrc.html
 share/doc/qt5/qtquick/qtquick-views-visualdatamodel-dragselection-qml.html
 share/doc/qt5/qtquick/qtquick-views-visualdatamodel-slideshow-qml.html
 share/doc/qt5/qtquick/qtquick-views-visualdatamodel-visualdatamodel-qmlproject.html
+share/doc/qt5/qtquick/qtquick-visualcanvas-adaptations-d3d12.html
+share/doc/qt5/qtquick/qtquick-visualcanvas-adaptations-openvg.html
+share/doc/qt5/qtquick/qtquick-visualcanvas-adaptations-software.html
+share/doc/qt5/qtquick/qtquick-visualcanvas-adaptations.html
 share/doc/qt5/qtquick/qtquick-visualcanvas-coordinates.html
 share/doc/qt5/qtquick/qtquick-visualcanvas-scenegraph-renderer.html
 share/doc/qt5/qtquick/qtquick-visualcanvas-scenegraph.html
 share/doc/qt5/qtquick/qtquick-visualcanvas-topic.html
 share/doc/qt5/qtquick/qtquick-visualcanvas-visualparent.html
 share/doc/qt5/qtquick/qtquick-visualtypes-topic.html
+share/doc/qt5/qtquick/qtquick-window-allscreens-qml.html
+share/doc/qt5/qtquick/qtquick-window-currentscreen-qml.html
 share/doc/qt5/qtquick/qtquick-window-example.html
 share/doc/qt5/qtquick/qtquick-window-main-cpp.html
 share/doc/qt5/qtquick/qtquick-window-qmlmodule.html
 share/doc/qt5/qtquick/qtquick-window-resources-icon-svg.html
-share/doc/qt5/qtquick/qtquick-window-screeninfo-qml.html
 share/doc/qt5/qtquick/qtquick-window-splash-qml.html
 share/doc/qt5/qtquick/qtquick-window-window-pro.html
 share/doc/qt5/qtquick/qtquick-window-window-qml.html
@@ -1684,6 +1744,8 @@ share/doc/qt5/qtquick/qtquick-xmllistmodel-qmlmodule.html
 share/doc/qt5/qtquick/qtquick.qhp
 share/doc/qt5/qtquick/qtquick.qhp.sha1
 share/doc/qt5/qtquick/qtquick.tags
+share/doc/qt5/qtquick/qtquicklayouts-index.html
+share/doc/qt5/qtquick/qtquicklayouts-overview.html
 share/doc/qt5/qtquick/qtquickwidgets-module.html
 share/doc/qt5/qtquick/qttest-qmlmodule.html
 share/doc/qt5/qtquick/style/

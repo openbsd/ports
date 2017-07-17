@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.1.1.1 2016/12/25 14:13:14 zhuk Exp $
-lib/qt5/examples/
+@comment $OpenBSD: PLIST-examples,v 1.2 2017/07/17 08:34:38 zhuk Exp $
 lib/qt5/examples/multimedia/
 lib/qt5/examples/multimedia/audiodecoder/
 lib/qt5/examples/multimedia/audiodecoder/audiodecoder.cpp
@@ -72,6 +71,7 @@ lib/qt5/examples/multimedia/declarative-camera/CameraListPopup.qml
 lib/qt5/examples/multimedia/declarative-camera/CameraPropertyButton.qml
 lib/qt5/examples/multimedia/declarative-camera/CameraPropertyPopup.qml
 lib/qt5/examples/multimedia/declarative-camera/FocusButton.qml
+lib/qt5/examples/multimedia/declarative-camera/Info.plist
 lib/qt5/examples/multimedia/declarative-camera/PhotoCaptureControls.qml
 lib/qt5/examples/multimedia/declarative-camera/PhotoPreview.qml
 lib/qt5/examples/multimedia/declarative-camera/Popup.qml
@@ -300,8 +300,6 @@ lib/qt5/examples/multimedia/video/qmlvideofilter_opencl/qmlvideofilter_opencl.qr
 lib/qt5/examples/multimedia/video/qmlvideofilter_opencl/rgbframehelper.h
 lib/qt5/examples/multimedia/video/qmlvideofx/
 lib/qt5/examples/multimedia/video/qmlvideofx/Info.plist
-lib/qt5/examples/multimedia/video/qmlvideofx/android/
-lib/qt5/examples/multimedia/video/qmlvideofx/android/AndroidManifest.xml
 lib/qt5/examples/multimedia/video/qmlvideofx/filereader.cpp
 lib/qt5/examples/multimedia/video/qmlvideofx/filereader.h
 lib/qt5/examples/multimedia/video/qmlvideofx/images/
@@ -483,3 +481,5 @@ lib/qt5/examples/multimediawidgets/videowidget/main.cpp
 lib/qt5/examples/multimediawidgets/videowidget/videoplayer.cpp
 lib/qt5/examples/multimediawidgets/videowidget/videoplayer.h
 lib/qt5/examples/multimediawidgets/videowidget/videowidget.pro
+lib/qt5/examples/shared/
+lib/qt5/examples/shared/shared.pri

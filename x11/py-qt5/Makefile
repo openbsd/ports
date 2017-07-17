@@ -1,24 +1,22 @@
-# $OpenBSD: Makefile,v 1.10 2017/01/21 18:25:02 zhuk Exp $
+# $OpenBSD: Makefile,v 1.11 2017/07/17 08:34:39 zhuk Exp $
 
-COMMENT-main=	python Qt5 bindings
-COMMENT-docs=	py-qt5 documentation
+COMMENT	=	python Qt5 bindings
 
-V=		5.7
+V=		5.9
 DISTNAME=	PyQt5_gpl-${V}
 PKGNAME=	py-qt5-${V}
-PKGNAME-main=	py-qt5-${V}
-PKGNAME-docs=	py-qt5-docs-${V}
-REVISION-main=	3
 
 CATEGORIES=	x11 devel
 
 HOMEPAGE=	http://www.riverbankcomputing.co.uk/software/pyqt/intro
+MAINTAINER=	KDE porting team <openbsd-kde@googlegroups.com>
 
 # GPLv3 with exceptions for use with certain named open-source licenses
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ${MODPY_WANTLIB} c dbus-1 m pthread
-WANTLIB += Enginio GL Qt5Bluetooth Qt5Core Qt5DBus Qt5Designer
+WANTLIB =  ${COMPILER_LIBCXX} ${MODPY_WANTLIB}
+WANTLIB += dbus-1 glib-2.0 m pthread pulse pulse-mainloop-glib
+WANTLIB += GL Qt5Bluetooth Qt5Core Qt5DBus Qt5Designer
 WANTLIB += Qt5Gui Qt5Help Qt5Multimedia Qt5MultimediaWidgets Qt5Network
 WANTLIB += Qt5OpenGL Qt5Positioning Qt5PrintSupport Qt5Qml Qt5Quick
 WANTLIB += Qt5QuickWidgets Qt5Sensors Qt5SerialPort Qt5Sql Qt5Svg
@@ -26,31 +24,15 @@ WANTLIB += Qt5Test Qt5WebChannel Qt5WebKit Qt5WebKitWidgets Qt5WebSockets
 WANTLIB += Qt5Widgets Qt5X11Extras Qt5Xml Qt5XmlPatterns
 WANTLIB += Qt5Location Qt5Nfc
 
-MULTI_PACKAGES=	-main -docs
-
-WANTLIB-docs=
-LIB_DEPENDS-docs=
-RUN_DEPENDS-docs=
-PKG_ARCH-docs=	*
-
 FLAVORS =	python3
 FLAVOR ?=
 
-.if ${FLAVOR:Mpython3}
-FULLPKGNAME-main=	${PKGNAME-main:S/^py-/py3-/}
-FULLPKGPATH-main=	x11/py-qt5,-main${MODPY_FLAVOR}
-FULLPKGNAME-docs=	${PKGNAME-docs:S/^py-/py3-/}
-FULLPKGPATH-docs=	x11/py-qt5,-docs${MODPY_FLAVOR}
-.endif
-REVISION-docs=		0
-
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	devel/py-sip${MODPY_FLAVOR}>=4.18.1 \
+RUN_DEPENDS=	devel/py-sip${MODPY_FLAVOR}>=4.19.1 \
 		x11/dbus-python${MODPY_FLAVOR}
 LIB_DEPENDS=	${MODPY_LIB_DEPENDS} \
 		x11/qt5/qtconnectivity \
 		x11/qt5/qtdeclarative \
-		x11/qt5/qtenginio \
 		x11/qt5/qtlocation \
 		x11/qt5/qtmultimedia \
 		x11/qt5/qtserialport \
@@ -106,9 +88,6 @@ pre-configure:
 
 post-install:
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py ${WRKINST}/${MODPY_SITEPKG}
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/${MODPY_PY_PREFIX}qt5
-	cp -R ${WRKSRC}/doc/* ${PREFIX}/share/doc/${MODPY_PY_PREFIX}qt5
-	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/doc/${MODPY_PY_PREFIX}qt5/*
 .for b in pylupdate pyrcc pyuic
 	mv -f ${PREFIX}/bin/$b5 ${PREFIX}/bin/$b5${MODPY_BIN_SUFFIX}
 .endfor

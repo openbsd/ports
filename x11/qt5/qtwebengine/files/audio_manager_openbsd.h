@@ -8,13 +8,19 @@
 #include <set>
 
 #include "base/compiler_specific.h"
+#include "base/macros.h"
+#include "base/memory/ref_counted.h"
+#include "base/threading/thread.h"
 #include "media/audio/audio_manager_base.h"
 
 namespace media {
 
 class MEDIA_EXPORT AudioManagerOpenBSD : public AudioManagerBase {
  public:
-  AudioManagerOpenBSD(AudioLogFactory* audio_log_factory);
+  AudioManagerOpenBSD(
+      scoped_refptr<base::SingleThreadTaskRunner> task_runner,
+      scoped_refptr<base::SingleThreadTaskRunner> worker_task_runner,
+      AudioLogFactory* audio_log_factory);
 
   // Implementation of AudioManager.
   bool HasAudioOutputDevices() override;
@@ -24,17 +30,24 @@ class MEDIA_EXPORT AudioManagerOpenBSD : public AudioManagerBase {
   void GetAudioOutputDeviceNames(AudioDeviceNames* device_names) override;
   AudioParameters GetInputStreamParameters(
       const std::string& device_id) override;
+  const char* GetName() override;
 
   // Implementation of AudioManagerBase.
   AudioOutputStream* MakeLinearOutputStream(
-      const AudioParameters& params) override;
+      const AudioParameters& params,
+      const LogCallback& log_callback) override;
   AudioOutputStream* MakeLowLatencyOutputStream(
       const AudioParameters& params,
-      const std::string& device_id) override;
+      const std::string& device_id,
+      const LogCallback& log_callback) override;
   AudioInputStream* MakeLinearInputStream(
-      const AudioParameters& params, const std::string& device_id) override;
+      const AudioParameters& params,
+      const std::string& device_id,
+      const LogCallback& log_callback) override;
   AudioInputStream* MakeLowLatencyInputStream(
-      const AudioParameters& params, const std::string& device_id) override;
+      const AudioParameters& params,
+      const std::string& device_id,
+      const LogCallback& log_callback) override;
 
  protected:
   ~AudioManagerOpenBSD() override;
@@ -47,9 +60,6 @@ class MEDIA_EXPORT AudioManagerOpenBSD : public AudioManagerBase {
   // Called by MakeLinearOutputStream and MakeLowLatencyOutputStream.
   AudioOutputStream* MakeOutputStream(const AudioParameters& params);
   AudioInputStream* MakeInputStream(const AudioParameters& params);
-
-  // Flag to indicate whether the pulse library has been initialized or not.
-  bool pulse_library_is_initialized_;
 
   DISALLOW_COPY_AND_ASSIGN(AudioManagerOpenBSD);
 };

@@ -1,41 +1,15 @@
-$OpenBSD: patch-src_3rdparty_chromium_third_party_skia_src_gpu_GrAutoLocaleSetter_h,v 1.1.1.1 2016/12/25 14:13:19 zhuk Exp $
---- src/3rdparty/chromium/third_party/skia/src/gpu/GrAutoLocaleSetter.h.orig.port	Sat Aug  6 12:09:46 2016
-+++ src/3rdparty/chromium/third_party/skia/src/gpu/GrAutoLocaleSetter.h	Sat Aug  6 12:15:44 2016
-@@ -18,6 +18,10 @@
+$OpenBSD: patch-src_3rdparty_chromium_third_party_skia_src_gpu_GrAutoLocaleSetter_h,v 1.2 2017/07/17 08:34:39 zhuk Exp $
+Automatically copied from www/chromium.
+
+Index: src/3rdparty/chromium/third_party/skia/src/gpu/GrAutoLocaleSetter.h
+--- src/3rdparty/chromium/third_party/skia/src/gpu/GrAutoLocaleSetter.h.orig
++++ src/3rdparty/chromium/third_party/skia/src/gpu/GrAutoLocaleSetter.h
+@@ -22,7 +22,7 @@
  #include <xlocale.h>
  #endif
  
-+#if !defined(SK_BUILD_FOR_WIN) && !defined(SK_BUILD_FOR_ANDROID) && !defined(__UCLIBC__) && !defined(__OpenBSD__)
-+# define SK_OTHER_LOCALE
-+#endif
-+
- /**
-  * Helper class for ensuring that we don't use the wrong locale when building shaders. Android
-  * doesn't support locale in the NDK, so this is a no-op there.
-@@ -28,7 +32,7 @@ class GrAutoLocaleSetter { (public)
- #if defined(SK_BUILD_FOR_WIN)
-         fOldPerThreadLocale = _configthreadlocale(_ENABLE_PER_THREAD_LOCALE);
-         fOldLocale = setlocale(LC_ALL, name);
--#elif !defined(SK_BUILD_FOR_ANDROID) && !defined(__UCLIBC__)
-+#elif defined(SK_OTHER_LOCALE)
-         fLocale = newlocale(LC_ALL, name, 0);
-         if (fLocale) {
-             fOldLocale = uselocale(fLocale);
-@@ -42,7 +46,7 @@ class GrAutoLocaleSetter { (public)
- #if defined(SK_BUILD_FOR_WIN)
-         setlocale(LC_ALL, fOldLocale);
-         _configthreadlocale(fOldPerThreadLocale);
--#elif !defined(SK_BUILD_FOR_ANDROID) && !defined(__UCLIBC__)
-+#elif defined(SK_OTHER_LOCALE)
-         if (fLocale) {
-              uselocale(fOldLocale);
-              freelocale(fLocale);
-@@ -54,7 +58,7 @@ class GrAutoLocaleSetter { (public)
- #if defined(SK_BUILD_FOR_WIN)
-     int fOldPerThreadLocale;
-     const char* fOldLocale;
--#elif !defined(SK_BUILD_FOR_ANDROID) && !defined(__UCLIBC__)
-+#elif defined(SK_OTHER_LOCALE)
-     locale_t fOldLocale;
-     locale_t fLocale;
- #endif
+-#if defined(SK_BUILD_FOR_ANDROID) || defined(__UCLIBC__) || defined(_NEWLIB_VERSION)
++#if defined(SK_BUILD_FOR_ANDROID) || defined(__UCLIBC__) || defined(_NEWLIB_VERSION) || defined(__OpenBSD__)
+ #define HAVE_LOCALE_T 0
+ #else
+ #define HAVE_LOCALE_T 1

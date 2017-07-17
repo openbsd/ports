@@ -3,8 +3,10 @@
 // found in the LICENSE file.
 
 #include "base/logging.h"
-#include "media/audio/audio_parameters.h"
+#include "base/time/time.h"
+#include "base/time/default_tick_clock.h"
 #include "media/audio/audio_manager_base.h"
+#include "media/base/audio_timestamp_helper.h"
 #include "media/audio/sndio/sndio_output.h"
 
 namespace media {
@@ -12,7 +14,7 @@ namespace media {
 void sndio_onmove(void *arg, int delta) {
   SndioAudioOutputStream* self = static_cast<SndioAudioOutputStream*>(arg);
 
-  self->hw_delay = delta * self->params.GetBytesPerFrame();
+  self->hw_delay = delta;
 }
 
 void sndio_onvol(void *arg, unsigned int vol) {
@@ -33,6 +35,7 @@ SndioAudioOutputStream::SndioAudioOutputStream(const AudioParameters& params,
     : manager(manager),
       params(params),
       audio_bus(AudioBus::Create(params)),
+      bytes_per_frame(params.GetBytesPerFrame()),
       state(kClosed),
       mutex(PTHREAD_MUTEX_INITIALIZER) {
 }
@@ -148,7 +151,8 @@ void SndioAudioOutputStream::RealTimeThread(void) {
     pthread_mutex_unlock(&mutex);
 
     // Get data to play
-    count = source->OnMoreData(audio_bus.get(), hw_delay, 0);
+    const base::TimeDelta delay = AudioTimestampHelper::FramesToTime(hw_delay, params.sample_rate() * 1000);
+    count = source->OnMoreData(delay, base::TimeTicks::Now(), 0, audio_bus.get());
     audio_bus->ToInterleaved(count, params.bits_per_sample() / 8, buffer);
     if (count == 0) {
       // We have to submit something to the device

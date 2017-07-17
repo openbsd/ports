@@ -1,148 +1,33 @@
-$OpenBSD: patch-src_3rdparty_chromium_third_party_webrtc_base_network_cc,v 1.1.1.1 2016/12/25 14:13:19 zhuk Exp $
---- src/3rdparty/chromium/third_party/webrtc/base/network.cc.orig.port	Sat Aug  6 18:49:22 2016
-+++ src/3rdparty/chromium/third_party/webrtc/base/network.cc	Sun Aug  7 08:56:30 2016
-@@ -15,10 +15,16 @@
- #include "webrtc/base/network.h"
- 
- #if defined(WEBRTC_POSIX)
-+#if defined(WEBRTC_BSD)
-+#include <sys/param.h>
-+#include <sys/sysctl.h>
-+#include <netinet/in.h>
-+#include <net/if.h>
-+
+$OpenBSD: patch-src_3rdparty_chromium_third_party_webrtc_base_network_cc,v 1.2 2017/07/17 08:34:39 zhuk Exp $
+Automatically copied from www/chromium.
+
+Index: src/3rdparty/chromium/third_party/webrtc/base/network.cc
+--- src/3rdparty/chromium/third_party/webrtc/base/network.cc.orig
++++ src/3rdparty/chromium/third_party/webrtc/base/network.cc
+@@ -14,7 +14,7 @@
  // linux/if.h can't be included at the same time as the posix sys/if.h, and
  // it's transitively required by linux/route.h, so include that version on
  // linux instead of the standard posix one.
 -#if defined(WEBRTC_LINUX)
-+#elif defined(WEBRTC_LINUX)
++#if defined(WEBRTC_LINUX) && !defined(WEBRTC_BSD)
  #include <linux/if.h>
  #include <linux/route.h>
  #elif !defined(__native_client__)
-@@ -571,8 +577,116 @@ bool BasicNetworkManager::CreateNetworks(bool include_
+@@ -656,7 +656,7 @@ bool BasicNetworkManager::CreateNetworks(bool include_
  }
  #endif  // WEBRTC_WIN
  
 -#if defined(WEBRTC_LINUX)
-+#if defined(WEBRTC_BSD)
-+#define ROUNDUP(a) \
-+        ((a) > 0 ? (1 + (((a) - 1) | (sizeof(long) - 1))) : sizeof(long))
-+#define ADVANCE(x) (((char*)(x) += ROUNDUP((x)->sa_len))
-+
-+// XXX route priorities are not taken into account
++#if defined(WEBRTC_LINUX) && !defined(WEBRTC_BSD)
  bool IsDefaultRoute(const std::string& network_name) {
-+  char *buf = NULL, *tbuf, *next, *lim, ifname[IF_NAMESIZE];
-+  size_t buflen = 2048, len;
-+  int mib[] = { CTL_NET, PF_ROUTE, 0, 0, NET_RT_DUMP, 0, getrtable() };
-+  int i, rv;
-+  struct rt_msghdr *rtm;
-+  struct sockaddr *dst, *mask, *sa;
-+
-+  do {
-+    // Assuming that attacker could force use to exhaust free memory,
-+    // we'd better get false-positive than false-negative for non-default
-+    // route check.
-+    if (buflen > SSIZE_MAX / 2) {
-+      LOG(LS_WARNING) << "The PF_ROUTE sysctl() wants too much memory";
-+      break;
-+    }
-+    tbuf = (char*)realloc(buf, buflen * 2);
-+    if (tbuf == NULL) {
-+      LOG(LS_WARNING) << "Couldn't allocate memory for PF_ROUTE sysctl";
-+      break;
-+    }
-+    len = buflen *= 2;
-+    rv = sysctl(mib, sizeof(mib)/sizeof(mib[0]), buf, &len, NULL, 0);
-+  } while (rv == -1 && errno == ENOMEM);
-+
-+  if (rv == -1 && errno != ENOMEM) {
-+    char errstr[NL_TEXTMAX];
-+    strerror_r(errno, errstr, NL_TEXTMAX);
-+    LOG(LS_WARNING) << "The PF_ROUTE sysctl() failed: " << errstr << ", skipping"
-+                    << "route check (assuming everything is a default route).";
-+    return true;
-+  }
-+
-+  lim = buf + len;
-+  for (next = buf; next < lim; next += rtm->rtm_msglen) {
-+    rtm = (struct rt_msghdr*)next;
-+    if (rtm->rtm_version != RTM_VERSION)
-+      return true;    // this binary needs to be rebuilt against new OS libs
-+    if ((rtm->rtm_flags & (RTF_GATEWAY|RTF_STATIC|RTF_LLINFO)) == 0)
-+      continue;
-+    if ((rtm->rtm_flags & (RTF_LOCAL|RTF_BROADCAST)) != 0)
-+      continue;
-+    if ((rtm->rtm_flags & (RTF_UP|RTF_HOST)) != RTF_UP)
-+      continue;
-+
-+    if (if_indextoname(rtm->m_rtm.rtm_index, ifname) == NULL)
-+      continue;       // the interface has been gone
-+    if (network_name != ifname)
-+      continue;
-+    if (!rtm->rtm_addrs)
-+      continue;
-+    sa = (struct sockaddr *)((char*)rtm + rtm->rtm_hdrlen);
-+    for (i = 1; i; i <<= 1, sa = ) {
-+      if (!(i & rtm->rtm_addrs))
-+        continue;
-+      switch (i) {
-+      case RTA_DST:
-+        dst = sa;
-+        break;
-+      case RTA_MASK:
-+        mask = sa;
-+        break;
-+      }
-+      ADVANCE(sa);
-+    }
-+
-+    if (dst == NULL || mask == NULL)
-+      continue;
-+    switch (dst->sa_family) {
-+      case AF_INET:
-+        sin = (struct sockaddr_in*)dst;
-+        if (sin->sin_addr.s_addr != 0)
-+          continue;
-+        sin = (struct sockaddr_in*)mask;
-+        if (sin->sin_addr.s_addr != 0)
-+          continue;
-+        break;
-+
-+      case AF_INET6:
-+        sin6 = (struct sockaddr_in6*)sa;
-+        for (i = 0; i < sizeof(sin6->s6_addr32)/sizeof(sin6->s6_addr32[0]); i++)
-+          if (sin6->s6_addr32[i] != 0)
-+            goto next6;
-+        sin6 = (struct sockaddr_in*)mask;
-+        for (i = 0; i < sizeof(sin6->s6_addr32)/sizeof(sin6->s6_addr32[0]); i++)
-+          if (sin6->s6_addr32[i] != 0)
-+            goto next6;
-+        break;
-+next6:
-+        continue;
-+
-+      default:
-+        continue;
-+    }
-+
-+    return true;
-+  }
-+
-+  return false;
-+}
-+#undef ADVANCE
-+#undef ROUNDUP
-+#elif defined(WEBRTC_LINUX)
-+bool IsDefaultRoute(const std::string& network_name) {
    FileStream fs;
    if (!fs.Open("/proc/net/route", "r", NULL)) {
-     LOG(LS_WARNING) << "Couldn't read /proc/net/route, skipping default "
-@@ -617,7 +731,7 @@ bool BasicNetworkManager::IsIgnoredNetwork(const Netwo
+@@ -699,7 +699,7 @@ bool BasicNetworkManager::IsIgnoredNetwork(const Netwo
        strncmp(network.name().c_str(), "vboxnet", 7) == 0) {
      return true;
    }
 -#if defined(WEBRTC_LINUX)
-+#if defined(WEBRTC_LINUX) || defined(WEBRTC_BSD)
++#if defined(WEBRTC_LINUX) && !defined(WEBRTC_BSD)
    // Make sure this is a default route, if we're ignoring non-defaults.
    if (ignore_non_default_routes_ && !IsDefaultRoute(network.name())) {
      return true;

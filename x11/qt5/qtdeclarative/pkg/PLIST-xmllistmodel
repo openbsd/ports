@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST-xmllistmodel,v 1.1 2017/07/17 08:34:38 zhuk Exp $
+lib/qt5/qml/QtQuick/XmlListModel/
+lib/qt5/qml/QtQuick/XmlListModel/libqmlxmllistmodelplugin.so
+lib/qt5/qml/QtQuick/XmlListModel/plugins.qmltypes
+lib/qt5/qml/QtQuick/XmlListModel/qmldir

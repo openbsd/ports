@@ -1,15 +1,15 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2016/12/25 14:13:14 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2017/07/17 08:34:38 zhuk Exp $
 @conflict qt5-<5.6
 include/X11/qt5/QtMultimedia/
 include/X11/qt5/QtMultimedia/${VERSION}/
 include/X11/qt5/QtMultimedia/${VERSION}/QtMultimedia/
 include/X11/qt5/QtMultimedia/${VERSION}/QtMultimedia/private/
 include/X11/qt5/QtMultimedia/${VERSION}/QtMultimedia/private/gstvideoconnector_p.h
-include/X11/qt5/QtMultimedia/${VERSION}/QtMultimedia/private/playlistfileparser_p.h
 include/X11/qt5/QtMultimedia/${VERSION}/QtMultimedia/private/qabstractvideobuffer_p.h
 include/X11/qt5/QtMultimedia/${VERSION}/QtMultimedia/private/qaudiobuffer_p.h
 include/X11/qt5/QtMultimedia/${VERSION}/QtMultimedia/private/qaudiodevicefactory_p.h
 include/X11/qt5/QtMultimedia/${VERSION}/QtMultimedia/private/qaudiohelpers_p.h
+include/X11/qt5/QtMultimedia/${VERSION}/QtMultimedia/private/qaudiosystempluginext_p.h
 include/X11/qt5/QtMultimedia/${VERSION}/QtMultimedia/private/qcamera_p.h
 include/X11/qt5/QtMultimedia/${VERSION}/QtMultimedia/private/qdeclarativevideooutput_backend_p.h
 include/X11/qt5/QtMultimedia/${VERSION}/QtMultimedia/private/qdeclarativevideooutput_p.h
@@ -20,7 +20,6 @@ include/X11/qt5/QtMultimedia/${VERSION}/QtMultimedia/private/qgstreameraudioinpu
 include/X11/qt5/QtMultimedia/${VERSION}/QtMultimedia/private/qgstreameraudioprobecontrol_p.h
 include/X11/qt5/QtMultimedia/${VERSION}/QtMultimedia/private/qgstreamerbufferprobe_p.h
 include/X11/qt5/QtMultimedia/${VERSION}/QtMultimedia/private/qgstreamerbushelper_p.h
-include/X11/qt5/QtMultimedia/${VERSION}/QtMultimedia/private/qgstreamergltexturerenderer_p.h
 include/X11/qt5/QtMultimedia/${VERSION}/QtMultimedia/private/qgstreamermessage_p.h
 include/X11/qt5/QtMultimedia/${VERSION}/QtMultimedia/private/qgstreamermirtexturerenderer_p.h
 include/X11/qt5/QtMultimedia/${VERSION}/QtMultimedia/private/qgstreamervideoinputdevicecontrol_p.h
@@ -55,10 +54,13 @@ include/X11/qt5/QtMultimedia/${VERSION}/QtMultimedia/private/qmediaserviceprovid
 include/X11/qt5/QtMultimedia/${VERSION}/QtMultimedia/private/qmediastoragelocation_p.h
 include/X11/qt5/QtMultimedia/${VERSION}/QtMultimedia/private/qmemoryvideobuffer_p.h
 include/X11/qt5/QtMultimedia/${VERSION}/QtMultimedia/private/qmultimediautils_p.h
+include/X11/qt5/QtMultimedia/${VERSION}/QtMultimedia/private/qplaylistfileparser_p.h
 include/X11/qt5/QtMultimedia/${VERSION}/QtMultimedia/private/qsamplecache_p.h
 include/X11/qt5/QtMultimedia/${VERSION}/QtMultimedia/private/qsgvideonode_p.h
 include/X11/qt5/QtMultimedia/${VERSION}/QtMultimedia/private/qsoundeffect_pulse_p.h
 include/X11/qt5/QtMultimedia/${VERSION}/QtMultimedia/private/qsoundeffect_qaudio_p.h
+include/X11/qt5/QtMultimedia/${VERSION}/QtMultimedia/private/qtmultimedia-config_p.h
+include/X11/qt5/QtMultimedia/${VERSION}/QtMultimedia/private/qtmultimediaglobal_p.h
 include/X11/qt5/QtMultimedia/${VERSION}/QtMultimedia/private/qtmultimediaquickdefs_p.h
 include/X11/qt5/QtMultimedia/${VERSION}/QtMultimedia/private/qvideoframe_p.h
 include/X11/qt5/QtMultimedia/${VERSION}/QtMultimedia/private/qvideoframeconversionhelper_p.h
@@ -238,7 +240,9 @@ include/X11/qt5/QtMultimedia/qradiotuner.h
 include/X11/qt5/QtMultimedia/qradiotunercontrol.h
 include/X11/qt5/QtMultimedia/qsound.h
 include/X11/qt5/QtMultimedia/qsoundeffect.h
+include/X11/qt5/QtMultimedia/qtmultimedia-config.h
 include/X11/qt5/QtMultimedia/qtmultimediadefs.h
+include/X11/qt5/QtMultimedia/qtmultimediaglobal.h
 include/X11/qt5/QtMultimedia/qtmultimediaversion.h
 include/X11/qt5/QtMultimedia/qvideodeviceselectorcontrol.h
 include/X11/qt5/QtMultimedia/qvideoencodersettingscontrol.h
@@ -264,7 +268,6 @@ include/X11/qt5/QtMultimediaWidgets/
 include/X11/qt5/QtMultimediaWidgets/${VERSION}/
 include/X11/qt5/QtMultimediaWidgets/${VERSION}/QtMultimediaWidgets/
 include/X11/qt5/QtMultimediaWidgets/${VERSION}/QtMultimediaWidgets/private/
-include/X11/qt5/QtMultimediaWidgets/${VERSION}/QtMultimediaWidgets/private/qeglimagetexturesurface_p.h
 include/X11/qt5/QtMultimediaWidgets/${VERSION}/QtMultimediaWidgets/private/qpaintervideosurface_p.h
 include/X11/qt5/QtMultimediaWidgets/${VERSION}/QtMultimediaWidgets/private/qvideowidget_p.h
 include/X11/qt5/QtMultimediaWidgets/QCameraViewfinder

@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST-examples,v 1.1.1.1 2016/12/25 14:13:18 zhuk Exp $
-lib/qt5/examples/
+@comment $OpenBSD: PLIST-examples,v 1.2 2017/07/17 08:34:38 zhuk Exp $
 lib/qt5/examples/serialbus/
 lib/qt5/examples/serialbus/can/
+lib/qt5/examples/serialbus/can/bitratebox.cpp
+lib/qt5/examples/serialbus/can/bitratebox.h
 lib/qt5/examples/serialbus/can/can.pro
 lib/qt5/examples/serialbus/can/can.qrc
 lib/qt5/examples/serialbus/can/connectdialog.cpp

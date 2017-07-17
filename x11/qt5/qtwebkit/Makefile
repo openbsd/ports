@@ -1,26 +1,28 @@
-# $OpenBSD: Makefile,v 1.2 2016/12/28 01:41:24 zhuk Exp $
+# $OpenBSD: Makefile,v 1.3 2017/07/17 08:34:39 zhuk Exp $
 
 QT5NAME =		QtWebkit
 COMMENT-main =		old Webkit integration framework for Qt
 USE_WXNEEDED =		Yes
 DPB_PROPERTIES =	parallel
-REVISION-qch =		0
-REVISION-html =		0
+VERSION =		${QT5_WEBKIT_VERSION}
+DIST_VERSION =		${QT5_WEBKIT_VERSION}
 
-SHARED_LIBS +=		Qt5WebKit		2.0
-SHARED_LIBS +=		Qt5WebKitWidgets	2.0
+SHARED_LIBS +=		Qt5WebKit		2.1
+SHARED_LIBS +=		Qt5WebKitWidgets	2.1
 
 CATEGORIES =		www
 
-WANTLIB =  GL Qt5Core Qt5Gui Qt5Network Qt5OpenGL Qt5PrintSupport Qt5Qml
-WANTLIB += Qt5Quick Qt5Sql Qt5Widgets X11 Xext Xrender c gio-2.0 glib-2.0
+WANTLIB =  ${COMPILER_LIBCXX}
+WANTLIB += Qt5Core Qt5Gui Qt5Network Qt5OpenGL Qt5Positioning Qt5PrintSupport
+WANTLIB += Qt5Qml Qt5Quick Qt5Sensors Qt5Sql Qt5WebChannel Qt5Widgets
+WANTLIB += GL X11 Xext Xrender c gio-2.0 glib-2.0
 WANTLIB += gobject-2.0 gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstpbutils-1.0
 WANTLIB += gstreamer-1.0 gstvideo-1.0 icudata icui18n icuuc jpeg lzma
-WANTLIB += m png pthread sqlite3 webp xml2 xslt z
+WANTLIB += m png pthread sqlite3 webp xml2 xslt z gstfft-1.0
 
 MULTI_PACKAGES =	-main -html -qch -docindex
 
-MASTER_SITES =		http://download.qt.io/community_releases/${VERSION:R}/${VERSION}/
+MASTER_SITES =		http://download.qt.io/community_releases/${DIST_VERSION:R}/${DIST_VERSION}-final/
 
 MODULES =		devel/gettext perl lang/python lang/ruby
 MODPY_RUNDEP =		No
@@ -43,7 +45,10 @@ LIB_DEPENDS =		archivers/xz \
 			multimedia/gstreamer1/plugins-base \
 			textproc/icu4c \
 			textproc/libxslt \
-			x11/qt5/qtdeclarative>=${QT5_VERSION},<${QT5_NEXT_VERSION}
+			x11/qt5/qtdeclarative>=${QT5_VERSION},<${QT5_NEXT_VERSION} \
+			x11/qt5/qtlocation>=${QT5_VERSION},<${QT5_NEXT_VERSION} \
+			x11/qt5/qtsensors>=${QT5_VERSION},<${QT5_NEXT_VERSION} \
+			x11/qt5/qtwebchannel>=${QT5_VERSION},<${QT5_NEXT_VERSION}
 
 MAKE_ENV =		NINJA_PATH="${LOCALBASE}/bin/ninja" \
 			PYTHON=${MODPY_BIN} \
@@ -55,6 +60,8 @@ MAKE_FLAGS =		PYTHON=${MODPY_BIN} \
 FLAVORS =		debug
 PSEUDO_FLAVORS =	no_html no_tests
 FLAVOR ?=
+
+MODQMAKE_ARGS =		WEBKIT_CONFIG+=web_audio
 
 # See qtbase/tests/README for details
 TEST_IS_INTERACTIVE =	X11

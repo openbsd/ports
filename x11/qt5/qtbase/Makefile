@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2017/05/13 11:06:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2017/07/17 08:34:37 zhuk Exp $
 
 DISTNAME =		qtbase-opensource-src-${DIST_VERSION}
 QT5NAME =		Qt5 core
@@ -16,61 +16,57 @@ PKGNAME-psql =		qt5-postgresql-${VERSION}
 PKGNAME-sqlite2 =	qt5-sqlite2-${VERSION}
 PKGNAME-tds =		qt5-tds-${VERSION}
 
-REVISION-main =		4
-
 PKG_ARCH-global =	*
 PKG_ARCH-examples =	*
 
 DPB_PROPERTIES =	parallel
 
-SHARED_LIBS +=	Qt5Concurrent		2.0
-SHARED_LIBS +=	Qt5Core			2.0
-SHARED_LIBS +=	Qt5DBus			2.0
-SHARED_LIBS +=	Qt5Gui			2.0
-SHARED_LIBS +=	Qt5Network		2.0
-SHARED_LIBS +=	Qt5OpenGL		2.0
-SHARED_LIBS +=	Qt5PrintSupport		2.0
-SHARED_LIBS +=	Qt5Sql			2.0
-SHARED_LIBS +=	Qt5Test			2.0
-SHARED_LIBS +=	Qt5Widgets		2.0
-SHARED_LIBS +=	Qt5Xml			2.0
-SHARED_LIBS +=	Qt5EglDeviceIntegration	1.0
-SHARED_LIBS +=	Qt5XcbQpa		1.0
+SHARED_LIBS +=	Qt5Concurrent		2.1
+SHARED_LIBS +=	Qt5Core			2.1
+SHARED_LIBS +=	Qt5DBus			2.1
+SHARED_LIBS +=	Qt5Gui			2.1
+SHARED_LIBS +=	Qt5Network		2.1
+SHARED_LIBS +=	Qt5OpenGL		2.1
+SHARED_LIBS +=	Qt5PrintSupport		2.1
+SHARED_LIBS +=	Qt5Sql			2.1
+SHARED_LIBS +=	Qt5Test			2.1
+SHARED_LIBS +=	Qt5Widgets		2.1
+SHARED_LIBS +=	Qt5Xml			2.1
+SHARED_LIBS +=	Qt5EglDeviceIntegration	1.1
+SHARED_LIBS +=	Qt5XcbQpa		1.1
+SHARED_LIBS +=	Qt5EglFSDeviceIntegration	0.0
+SHARED_LIBS +=	Qt5EglFsKmsSupport	0.0
 
-WANTLIB-main =  ${WANTLIB}
-WANTLIB-main += EGL GL ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage
-WANTLIB-main += Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo
-WANTLIB-main += cups dbus-1 execinfo fontconfig freetype gdk-x11-2.0
-WANTLIB-main += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 gthread-2.0
-WANTLIB-main += gtk-x11-2.0 harfbuzz icudata icui18n icuuc iodbc jpeg
-WANTLIB-main += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre16 png
-WANTLIB-main += proxy pthread sqlite3 xcb xcb-glx xcb-icccm xcb-image
+WANTLIB-main =  ${WANTLIB} ${COMPILER_LIBCXX}
+WANTLIB-main += EGL GL ICE SM X11 X11-xcb
+WANTLIB-main += Xext Xi atk-1.0 c cairo cairo-gobject cups
+WANTLIB-main += dbus-1 drm execinfo fontconfig freetype gbm gdk-3 gdk_pixbuf-2.0
+WANTLIB-main += gio-2.0 glib-2.0 gobject-2.0 gtk-3 gthread-2.0 harfbuzz
+WANTLIB-main += icudata icui18n icuuc iodbc jpeg m pango-1.0 pangocairo-1.0
+WANTLIB-main += pcre2-16 png pthread sqlite3 xcb xcb-glx xcb-icccm xcb-image
 WANTLIB-main += xcb-keysyms xcb-randr xcb-render xcb-render-util xcb-shape
 WANTLIB-main += xcb-shm xcb-sync xcb-xfixes xcb-xinerama xcb-xkb xkbcommon
 WANTLIB-main += xkbcommon-x11 z
-WANTLIB-main += drm gbm
 
 # SSL libs are dlopen()d
 WANTLIB-main += ssl crypto
 
 WANTLIB-global =
 
-WANTLIB-mysql =		${MODGCC4_CPPWANTLIB} Qt5Core Qt5Sql
-WANTLIB-mysql +=	crypto m pthread mysqlclient_r ssl z
+WANTLIB-mysql =		${COMPILER_LIBCXX} Qt5Core Qt5Sql
+WANTLIB-mysql +=	m pthread mysqlclient_r
 
-WANTLIB-psql =		${MODGCC4_CPPWANTLIB} Qt5Core Qt5Sql
+WANTLIB-psql =		${COMPILER_LIBCXX} Qt5Core Qt5Sql
 WANTLIB-psql +=		m pthread pq
 
-WANTLIB-sqlite2 =	${MODGCC4_CPPWANTLIB} Qt5Core Qt5Sql
+WANTLIB-sqlite2 =	${COMPILER_LIBCXX} Qt5Core Qt5Sql
 WANTLIB-sqlite2 +=	m pthread sqlite
 
-WANTLIB-tds =		${MODGCC4_CPPWANTLIB} Qt5Core Qt5Sql
+WANTLIB-tds =		${COMPILER_LIBCXX} Qt5Core Qt5Sql
 WANTLIB-tds +=		m pthread sybdb
 
 # there is no -sqlite3 because it's heavily used by Qt itself (.qch files)
 MULTI_PACKAGES =	-main -examples -global -mysql -psql -sqlite2 -tds
-
-MODULES =		devel/gettext
 
 # qmake module is used only for running tests and setting vars
 MODQT_DEPS =		No
@@ -84,13 +80,18 @@ LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			devel/harfbuzz \
 			devel/libexecinfo \
 			devel/pango \
+			devel/pcre2 \
 			graphics/cairo \
 			graphics/gdk-pixbuf2 \
-			net/libproxy \
 			print/cups,-libs \
 			textproc/icu4c \
-			x11/gtk+2 \
+			x11/gnome/at-spi2-core \
+			x11/gtk+3 \
 			x11/xkbcommon
+
+# those come from gthread-2.0, not used by Qt itself
+WANTLIB-main +=		intl
+LIB_DEPENDS-main +=	devel/gettext
 
 LIB_DEPENDS-global =
 
@@ -110,15 +111,18 @@ LIB_DEPENDS-tds =	${BASE_PKGPATH},-main>=${VERSION:R},<${QT5_NEXT_VERSION} \
 			${MODGCC4_CPPLIBDEP} \
 			databases/freetds
 
-# nothing in qtbase links to pulseaudio, but configure checks
-# are recorded
+# Nothing in qtbase links to pulseaudio, but configure checks
+# are recorded.
+# The atspi is checked at configure time and used via D-Bus.
 BUILD_DEPENDS =		audio/pulseaudio \
 			geo/geoclue \
-			x11/dbus
+			x11/dbus \
+			x11/gnome/at-spi2-core
 
 RUN_DEPENDS-main =	${RUN_DEPENDS} \
 			geo/geoclue \
-			x11/dbus
+			x11/dbus \
+			x11/gnome/at-spi2-core
 RUN_DEPENDS-global =
 RUN_DEPENDS-examples =
 RUN_DEPENDS-mysql =
@@ -174,10 +178,11 @@ CONFIGURE_ARGS +=	-sysconfdir ${SYSCONFDIR} \
 			-R${X11BASE}/lib \
 			-L${X11BASE}/lib
 
+# switch to c++14 after getting GCC 5.0 enabled by default via COMPILER?
+CONFIGURE_ARGS +=	-c++std c++11
+
 # other options
-CONFIGURE_ARGS +=	-c++11 \
-			-no-alsa \
-			-no-journald \
+CONFIGURE_ARGS +=	-no-journald \
 			-no-mtdev \
 			-opengl desktop \
 			-system-harfbuzz \
@@ -199,6 +204,7 @@ CONFIGURE_ARGS +=	-no-ssse3 -no-sse3
 CONFIGURE_ARGS +=	-no-sse2
 .endif
 
+MODQMAKE_ENV +=		${TEST_ENV}
 CONFIGURE_ENV +=	${MODQMAKE_ENV}
 MAKE_ENV +=		${MODQMAKE_ENV}
 
@@ -209,11 +215,17 @@ TEST_IS_INTERACTIVE =	X11
 TEST_DEPENDS =		audio/sox
 #			kde4-minimal-*|kdebase-*:meta/kde4,-minimal
 
+post-extract:
+	mkdir -p ${WRKDIST}/mkspecs/openbsd-clang
+	cp ${FILESDIR}/clang-qmake.conf ${WRKDIST}/mkspecs/openbsd-clang/qmake.conf
+	cp ${WRKDIST}/mkspecs/openbsd-g++/qplatformdefs.h ${WRKDIST}/mkspecs/openbsd-clang/
+
 pre-configure:
 	@gccbasedir=`ecpp -print-search-dirs | awk '/^install:/{print $$2}'`; \
 	perl ${PORTSDIR}/infrastructure/bin/pkg_subst \
 	    -D OPENBSD_INCDIR_PREPEND="$${gccbasedir}include" \
-	    ${WRKSRC}/mkspecs/openbsd-g++/qmake.conf
+	    ${WRKSRC}/mkspecs/openbsd-g++/qmake.conf \
+	    ${WRKSRC}/mkspecs/openbsd-clang/qmake.conf
 
 do-test:
 	#
@@ -223,6 +235,7 @@ do-test:
 	#
 	${MODQMAKE_configure}
 	${MODQMAKE_build}
+	${MODQMAKE_test}
 
 post-install:
 	# often-used includes directory

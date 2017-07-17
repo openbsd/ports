@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2017/06/15 08:28:52 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2017/07/17 08:34:38 zhuk Exp $
 include/X11/qt5/QtDataVisualization/
 include/X11/qt5/QtDataVisualization/${VERSION}/
 include/X11/qt5/QtDataVisualization/${VERSION}/QtDataVisualization/
@@ -151,6 +151,7 @@ include/X11/qt5/QtDataVisualization/qtouch3dinputhandler.h
 include/X11/qt5/QtDataVisualization/qutils.h
 include/X11/qt5/QtDataVisualization/qvalue3daxis.h
 include/X11/qt5/QtDataVisualization/qvalue3daxisformatter.h
+@lib lib/libQt5DataVisualization.so.${LIBQt5DataVisualization_VERSION}
 lib/pkgconfig/Qt5DataVisualization.pc
 lib/qt5/cmake/Qt5DataVisualization/
 lib/qt5/cmake/Qt5DataVisualization/Qt5DataVisualizationConfig.cmake

@@ -1,16 +1,15 @@
-$OpenBSD: patch-src_corelib_tools_qbytearray_cpp,v 1.1.1.1 2016/12/25 14:13:11 zhuk Exp $
+$OpenBSD: patch-src_corelib_tools_qbytearray_cpp,v 1.2 2017/07/17 08:34:37 zhuk Exp $
 Get rid of strcpy().
---- src/corelib/tools/qbytearray.cpp.orig	Wed May 25 18:46:17 2016
-+++ src/corelib/tools/qbytearray.cpp	Sun Jul 10 14:15:13 2016
-@@ -151,12 +151,15 @@ int qAllocMore(int alloc, int extra) Q_DECL_NOTHROW
- 
- char *qstrdup(const char *src)
+Index: src/corelib/tools/qbytearray.cpp
+--- src/corelib/tools/qbytearray.cpp.orig
++++ src/corelib/tools/qbytearray.cpp
+@@ -248,10 +248,13 @@ char *qstrdup(const char *src)
  {
-+    size_t sz = strlen(src) + 1;
      if (!src)
          return 0;
 -    char *dst = new char[strlen(src) + 1];
 -    return qstrcpy(dst, src);
++    size_t sz = strlen(src) + 1;
 +    char *dst = new char[sz];
 +    memcpy(dst, src, sz);
 +    return dst;
@@ -20,7 +19,7 @@ Get rid of strcpy().
  /*! \relates QByteArray
  
      Copies all the characters up to and including the '\\0' from \a
-@@ -184,6 +187,7 @@ char *qstrcpy(char *dst, const char *src)
+@@ -279,6 +282,7 @@ char *qstrcpy(char *dst, const char *src)
      return strcpy(dst, src);
  #endif
  }
@@ -28,7 +27,7 @@ Get rid of strcpy().
  
  /*! \relates QByteArray
  
-@@ -200,8 +204,6 @@ char *qstrcpy(char *dst, const char *src)
+@@ -295,8 +299,6 @@ char *qstrcpy(char *dst, const char *src)
      \note When compiling with Visual C++ compiler version 14.00
      (Visual C++ 2005) or later, internally the function strncpy_s
      will be used.

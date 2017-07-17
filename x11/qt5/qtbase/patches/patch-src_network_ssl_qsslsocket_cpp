@@ -1,12 +1,13 @@
-$OpenBSD: patch-src_network_ssl_qsslsocket_cpp,v 1.1.1.1 2016/12/25 14:13:11 zhuk Exp $
+$OpenBSD: patch-src_network_ssl_qsslsocket_cpp,v 1.2 2017/07/17 08:34:37 zhuk Exp $
 Use the only valid SSL certs source on OpenBSD.
---- src/network/ssl/qsslsocket.cpp.orig	Fri Sep 16 08:49:42 2016
-+++ src/network/ssl/qsslsocket.cpp	Fri Nov 25 10:00:51 2016
-@@ -2584,15 +2584,7 @@ bool QSslSocketPrivate::rootCertOnDemandLoadingSupport
+Index: src/network/ssl/qsslsocket.cpp
+--- src/network/ssl/qsslsocket.cpp.orig
++++ src/network/ssl/qsslsocket.cpp
+@@ -2650,15 +2650,7 @@ bool QSslSocketPrivate::rootCertOnDemandLoadingSupport
  */
  QList<QByteArray> QSslSocketPrivate::unixRootCertDirectories()
  {
--    return QList<QByteArray>() <<  "/etc/ssl/certs/" // (K)ubuntu, OpenSUSE, Mandriva, MeeGo ...
+-    return QList<QByteArray>() <<  "/etc/ssl/certs/" // (K)ubuntu, OpenSUSE, Mandriva ...
 -                               << "/usr/lib/ssl/certs/" // Gentoo, Mandrake
 -                               << "/usr/share/ssl/" // Centos, Redhat, SuSE
 -                               << "/usr/local/ssl/" // Normal OpenSSL Tarball

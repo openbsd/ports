@@ -1,9 +1,10 @@
-$OpenBSD: patch-qmake_generators_unix_unixmake_h,v 1.1.1.1 2016/12/25 14:13:11 zhuk Exp $
+$OpenBSD: patch-qmake_generators_unix_unixmake_h,v 1.2 2017/07/17 08:34:37 zhuk Exp $
 Always prepend project directory to list of linking directories,
 to avoid picking up wrong library from system.
---- qmake/generators/unix/unixmake.h.orig	Wed May 25 18:46:17 2016
-+++ qmake/generators/unix/unixmake.h	Sun Jul 10 02:32:24 2016
-@@ -71,6 +71,7 @@ class UnixMakefileGenerator : public MakefileGenerator
+Index: qmake/generators/unix/unixmake.h
+--- qmake/generators/unix/unixmake.h.orig
++++ qmake/generators/unix/unixmake.h
+@@ -66,6 +66,7 @@ class UnixMakefileGenerator : public MakefileGenerator
  
  private:
      void init2();

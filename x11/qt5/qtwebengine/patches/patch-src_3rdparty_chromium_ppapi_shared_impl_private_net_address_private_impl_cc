@@ -1,13 +1,17 @@
-$OpenBSD: patch-src_3rdparty_chromium_ppapi_shared_impl_private_net_address_private_impl_cc,v 1.1.1.1 2016/12/25 14:13:19 zhuk Exp $
---- src/3rdparty/chromium/ppapi/shared_impl/private/net_address_private_impl.cc.orig.port	Sat Aug  6 12:38:33 2016
-+++ src/3rdparty/chromium/ppapi/shared_impl/private/net_address_private_impl.cc	Sat Aug  6 12:38:59 2016
-@@ -12,6 +12,9 @@
- #include <arpa/inet.h>
- #include <sys/socket.h>
+$OpenBSD: patch-src_3rdparty_chromium_ppapi_shared_impl_private_net_address_private_impl_cc,v 1.2 2017/07/17 08:34:39 zhuk Exp $
+Automatically copied from www/chromium.
+
+--- src/3rdparty/chromium/ppapi/shared_impl/private/net_address_private_impl.cc.orig.port	Wed Feb 24 00:02:01 2016
++++ src/3rdparty/chromium/ppapi/shared_impl/private/net_address_private_impl.cc	Thu Mar  3 09:43:26 2016
+@@ -28,7 +28,10 @@
  #include <sys/types.h>
-+#if defined(OS_BSD)
-+# include <netinet/in.h>
-+#endif
  #endif
  
- #include <string.h>
+-#if defined(OS_MACOSX)
++#include <sys/types.h>
++#include <netinet/in.h>
++
++#if defined(OS_MACOSX) || defined(OS_BSD)
+ // This is a bit evil, but it's standard operating procedure for |s6_addr|....
+ #define s6_addr16 __u6_addr.__u6_addr16
+ #endif

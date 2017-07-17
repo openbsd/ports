@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2016/12/25 14:13:27 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2017/07/17 08:34:39 zhuk Exp $
 @conflict qt5-<5.6
 include/X11/qt5/QtXmlPatterns/
 include/X11/qt5/QtXmlPatterns/${VERSION}/
@@ -285,6 +285,7 @@ include/X11/qt5/QtXmlPatterns/${VERSION}/QtXmlPatterns/private/qtracefn_p.h
 include/X11/qt5/QtXmlPatterns/${VERSION}/QtXmlPatterns/private/qtreatas_p.h
 include/X11/qt5/QtXmlPatterns/${VERSION}/QtXmlPatterns/private/qtriplecontainer_p.h
 include/X11/qt5/QtXmlPatterns/${VERSION}/QtXmlPatterns/private/qtruthpredicate_p.h
+include/X11/qt5/QtXmlPatterns/${VERSION}/QtXmlPatterns/private/qtxmlpatterns-config_p.h
 include/X11/qt5/QtXmlPatterns/${VERSION}/QtXmlPatterns/private/qtypeavailablefn_p.h
 include/X11/qt5/QtXmlPatterns/${VERSION}/QtXmlPatterns/private/qtypechecker_p.h
 include/X11/qt5/QtXmlPatterns/${VERSION}/QtXmlPatterns/private/qunaryexpression_p.h
@@ -397,6 +398,7 @@ include/X11/qt5/QtXmlPatterns/qabstractxmlnodemodel.h
 include/X11/qt5/QtXmlPatterns/qabstractxmlreceiver.h
 include/X11/qt5/QtXmlPatterns/qsimplexmlnodemodel.h
 include/X11/qt5/QtXmlPatterns/qsourcelocation.h
+include/X11/qt5/QtXmlPatterns/qtxmlpatterns-config.h
 include/X11/qt5/QtXmlPatterns/qtxmlpatternsglobal.h
 include/X11/qt5/QtXmlPatterns/qtxmlpatternsversion.h
 include/X11/qt5/QtXmlPatterns/qxmlformatter.h

@@ -1,9 +1,10 @@
-$OpenBSD: patch-src_network_ssl_qsslcontext_openssl_cpp,v 1.2 2017/01/27 16:13:08 zhuk Exp $
+$OpenBSD: patch-src_network_ssl_qsslcontext_openssl_cpp,v 1.3 2017/07/17 08:34:37 zhuk Exp $
 Unbreak build with LibreSSL.
 See also https://github.com/libressl-portable/openbsd/issues/33
---- src/network/ssl/qsslcontext_openssl.cpp.orig	Fri Sep 16 08:49:42 2016
-+++ src/network/ssl/qsslcontext_openssl.cpp	Fri Jan 27 18:57:24 2017
-@@ -345,10 +345,9 @@ init_context:
+Index: src/network/ssl/qsslcontext_openssl.cpp
+--- src/network/ssl/qsslcontext_openssl.cpp.orig
++++ src/network/ssl/qsslcontext_openssl.cpp
+@@ -356,10 +356,9 @@ init_context:
          if (q_SSLeay() >= 0x10002000L) {
              // SSL_CTX_ctrl wants a non-const pointer as last argument,
              // but let's avoid a copy into a temporary array
@@ -16,4 +17,4 @@ See also https://github.com/libressl-portable/openbsd/issues/33
 +                                qcurves.size())) {
                  sslContext->errorStr = msgErrorSettingEllipticCurves(QSslSocketBackendPrivate::getErrorsFromOpenSsl());
                  sslContext->errorCode = QSslError::UnspecifiedError;
-                 return sslContext;
+             }

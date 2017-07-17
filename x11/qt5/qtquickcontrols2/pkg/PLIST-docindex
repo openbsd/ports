@@ -1,4 +1,8 @@
-@comment $OpenBSD: PLIST-docindex,v 1.1 2016/12/28 01:41:24 zhuk Exp $
+@comment $OpenBSD: PLIST-docindex,v 1.2 2017/07/17 08:34:38 zhuk Exp $
 @conflict qtquickcontrols2-html-<5.6.2p0
-share/doc/qt5/qtlabscontrols/
-share/doc/qt5/qtlabscontrols/qtlabscontrols.index
+share/doc/qt5/qtlabscalendar/
+share/doc/qt5/qtlabscalendar/qtlabscalendar.index
+share/doc/qt5/qtlabsplatform/
+share/doc/qt5/qtlabsplatform/qtlabsplatform.index
+share/doc/qt5/qtquickcontrols2/
+share/doc/qt5/qtquickcontrols2/qtquickcontrols2.index

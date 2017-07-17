@@ -1,4 +1,4 @@
-$OpenBSD: patch-mkspecs_openbsd-g++_qmake_conf,v 1.1.1.1 2016/12/25 14:13:11 zhuk Exp $
+$OpenBSD: patch-mkspecs_openbsd-g++_qmake_conf,v 1.2 2017/07/17 08:34:37 zhuk Exp $
 1. Un-hardcode system paths.
 2. Make sure some paths are listed before others, needed to 
    make sure egcc won't pick up /usr/include before its own 
@@ -6,8 +6,9 @@ $OpenBSD: patch-mkspecs_openbsd-g++_qmake_conf,v 1.1.1.1 2016/12/25 14:13:11 zhu
 3. Respect OpenBSD shared library naming rules.
 4. Use common GCC options to avoid duplication.
 5. Allow C++11 to work.
---- mkspecs/openbsd-g++/qmake.conf.orig	Fri Sep 16 08:49:42 2016
-+++ mkspecs/openbsd-g++/qmake.conf	Sat Dec 17 14:16:53 2016
+Index: mkspecs/openbsd-g++/qmake.conf
+--- mkspecs/openbsd-g++/qmake.conf.orig
++++ mkspecs/openbsd-g++/qmake.conf
 @@ -5,23 +5,31 @@
  MAKEFILE_GENERATOR      = UNIX
  QMAKE_PLATFORM          = openbsd
@@ -17,15 +18,13 @@ $OpenBSD: patch-mkspecs_openbsd-g++_qmake_conf,v 1.1.1.1 2016/12/25 14:13:11 zhu
  include(../common/bsd/bsd.conf)
  
  # Addon software goes into /usr/local on OpenBSD, by default we will look there
--QMAKE_INCDIR            = /usr/local/include
--QMAKE_LIBDIR            = /usr/local/lib
 +LOCALBASE               = $$(LOCALBASE)
 +isEmpty(LOCALBASE) {
 +  LOCALBASE             = /usr/local
 +}
 +QMAKE_INCDIR_PREPEND    = ${OPENBSD_INCDIR_PREPEND}
-+QMAKE_INCDIR            = $$LOCALBASE/include
-+QMAKE_LIBDIR            = $$LOCALBASE/lib
+ QMAKE_INCDIR_POST       = /usr/local/include
+ QMAKE_LIBDIR_POST       = /usr/local/lib
  
  # System provided X11 defaults to X11R6 path on OpenBSD
 -QMAKE_INCDIR_X11        = /usr/X11R6/include

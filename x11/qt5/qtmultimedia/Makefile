@@ -1,22 +1,21 @@
-# $OpenBSD: Makefile,v 1.2 2016/12/28 01:41:24 zhuk Exp $
+# $OpenBSD: Makefile,v 1.3 2017/07/17 08:34:38 zhuk Exp $
 
 QT5NAME =		QtMultimedia
 COMMENT-main =		Qt5 multimedia components
-REVISION-qch =		0
-REVISION-html =		0
 
 MULTI_PACKAGES =	-main -examples -qch -html -docindex
 
-SHARED_LIBS =	Qt5Multimedia		2.0
-SHARED_LIBS +=	Qt5MultimediaQuick_p	2.0
-SHARED_LIBS +=  Qt5MultimediaWidgets	2.0
+SHARED_LIBS =	Qt5Multimedia		2.1
+SHARED_LIBS +=	Qt5MultimediaQuick_p	2.1
+SHARED_LIBS +=  Qt5MultimediaWidgets	2.1
 #SHARED_LIBS +=  fftreal		2.0
-SHARED_LIBS +=  qgsttools_p		2.0
+SHARED_LIBS +=  qgsttools_p		2.1
 
-WANTLIB =  GL Qt5Core Qt5Gui Qt5Network Qt5OpenGL Qt5Qml Qt5Quick
+WANTLIB =  ${COMPILER_LIBCXX}
+WANTLIB += GL Qt5Core Qt5Gui Qt5Network Qt5OpenGL Qt5Qml Qt5Quick
 WANTLIB += Qt5Widgets glib-2.0 gobject-2.0 gstapp-1.0 gstaudio-1.0
 WANTLIB += gstbase-1.0 gstpbutils-1.0 gstphotography-1.0 gstreamer-1.0
-WANTLIB += gstvideo-1.0 intl m openal pthread pulse
+WANTLIB += gstvideo-1.0 intl m openal pthread pulse pulse-mainloop-glib
 
 BUILD_DEPENDS =		multimedia/gstreamer1/mm
 
@@ -31,10 +30,17 @@ LIB_DEPENDS =		audio/openal \
 			multimedia/gstreamer1/plugins-bad \
 			x11/qt5/qtdeclarative>=${QT5_VERSION},<${QT5_NEXT_VERSION}
 
+# XXX will pick up libresourceqt5 if installed, see the
+# https://git.merproject.org/mer-core/libresourceqt/
+
+# do not build documentation by default, to avoid circular dependency
+# via qtdeclarative-docindex
+
 FLAVORS =		debug
-PSEUDO_FLAVORS =	no_examples no_qch no_html
-FLAVOR ?=
+PSEUDO_FLAVORS =	bootstrap no_examples no_qch no_html
+FLAVOR ?=		bootstrap no_examples no_qch no_html
 
 MODQMAKE_ARGS =		GST_VERSION=1.0
+MODQMAKE_RECURSIVE =	No
 
 .include <bsd.port.mk>

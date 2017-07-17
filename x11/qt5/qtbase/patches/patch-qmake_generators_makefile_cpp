@@ -1,8 +1,9 @@
-$OpenBSD: patch-qmake_generators_makefile_cpp,v 1.1.1.1 2016/12/25 14:13:11 zhuk Exp $
+$OpenBSD: patch-qmake_generators_makefile_cpp,v 1.2 2017/07/17 08:34:37 zhuk Exp $
 Don't special case GNU make, BSD make isn't that bad, too.
---- qmake/generators/makefile.cpp.orig	Wed May 25 18:46:17 2016
-+++ qmake/generators/makefile.cpp	Sun Jul 10 02:32:52 2016
-@@ -674,7 +674,7 @@ MakefileGenerator::init()
+Index: qmake/generators/makefile.cpp
+--- qmake/generators/makefile.cpp.orig
++++ qmake/generators/makefile.cpp
+@@ -671,7 +671,7 @@ MakefileGenerator::init()
          }
      }
  

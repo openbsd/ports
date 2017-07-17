@@ -1,0 +1,12 @@
+$OpenBSD: patch-config_tests_qpa_xcb-xlib_xcb-xlib_pro,v 1.1 2017/07/17 08:34:37 zhuk Exp $
+
+Fix configure check for libxcb.
+
+Index: config.tests/qpa/xcb-xlib/xcb-xlib.pro
+--- config.tests/qpa/xcb-xlib/xcb-xlib.pro.orig
++++ config.tests/qpa/xcb-xlib/xcb-xlib.pro
+@@ -1,2 +1,4 @@
+ SOURCES = xcb-xlib.cpp
+ CONFIG -= qt
++INCLUDEPATH += $$QMAKE_INCDIR_X11
++LIBS += $$QMAKE_LIBS_X11

@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2016/12/28 01:41:23 zhuk Exp $
+# $OpenBSD: Makefile,v 1.3 2017/07/17 08:34:38 zhuk Exp $
 
 QT5NAME =		QtImageFormats
 COMMENT-main =		support for additional image formats in Qt5
-REVISION-qch =		0
-REVISION-html =		0
 
 MULTI_PACKAGES =	-main -qch -html -docindex
 
-WANTLIB =	GL Qt5Core Qt5Gui jasper m mng pthread tiff webp
+WANTLIB =  ${COMPILER_LIBCXX}
+WANTLIB += GL Qt5Core Qt5Gui jasper m mng pthread tiff webp webpdemux
 
 LIB_DEPENDS =		graphics/jasper \
 			graphics/tiff \

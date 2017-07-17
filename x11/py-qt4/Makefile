@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2017/07/16 19:19:05 espie Exp $
+# $OpenBSD: Makefile,v 1.49 2017/07/17 08:34:39 zhuk Exp $
 
 COMMENT-main=	python Qt4 bindings
 COMMENT-docs=	py-qt4 documentation
@@ -6,12 +6,11 @@ COMMENT-docs=	py-qt4 documentation
 # XXX Be particularly careful when testing updates. 
 #     API breaks often - do runtime tests, not just build tests.
 
-V=		4.11.4
-DISTNAME=	PyQt-x11-gpl-${V}
+V=		4.12
+DISTNAME=	PyQt4_gpl_x11-${V}
 PKGNAME=	py-qt4-${V}
 PKGNAME-main=	py-qt4-${V}
 PKGNAME-docs=	py-qt4-docs-${V}
-REVISION-main=	0
 EPOCH=		0
 
 CATEGORIES=	x11 devel

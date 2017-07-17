@@ -1,8 +1,9 @@
-$OpenBSD: patch-src_corelib_global_qversiontagging_cpp,v 1.1.1.1 2016/12/25 14:13:12 zhuk Exp $
+$OpenBSD: patch-src_corelib_global_qversiontagging_cpp,v 1.2 2017/07/17 08:34:37 zhuk Exp $
 Disable symbol versioning, fixes linking.
---- src/corelib/global/qversiontagging.cpp.orig	Fri Sep 16 08:49:42 2016
-+++ src/corelib/global/qversiontagging.cpp	Tue Nov 29 14:17:49 2016
-@@ -36,11 +36,12 @@
+Index: src/corelib/global/qversiontagging.cpp
+--- src/corelib/global/qversiontagging.cpp.orig
++++ src/corelib/global/qversiontagging.cpp
+@@ -42,11 +42,12 @@
  #define SYM QT_MANGLE_NAMESPACE(qt_version_tag)
  //#define SSYM QT_STRINGIFY(SYM)
  
