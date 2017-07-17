@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.509 2017/07/17 10:07:24 zhuk Exp $
+# $OpenBSD: Quirks.pm,v 1.510 2017/07/17 21:09:01 fcambus Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -992,6 +992,7 @@ my $obsolete_reason = {
 	'qtenginio-examples' => 3,
 	'qtenginio-html' => 3,
 	'qtenginio-qch' => 3,
+	'crxvt' => 2,
 };
 
 # reasons for obsolete packages
