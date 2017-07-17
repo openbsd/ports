@@ -1,12 +1,13 @@
-$OpenBSD: patch-src_main_print-olympus_c,v 1.2 2017/01/14 17:15:51 ajacoutot Exp $
+$OpenBSD: patch-src_main_print-olympus_c,v 1.3 2017/07/17 08:17:10 ajacoutot Exp $
 
 error: #error "Unable to determine endianness, aborting compilation!"
 
---- src/main/print-olympus.c.orig	Sun Jan  8 02:03:59 2017
-+++ src/main/print-olympus.c	Sat Jan 14 18:07:17 2017
-@@ -41,6 +41,16 @@
- #define inline __inline__
- #endif
+Index: src/main/print-olympus.c
+--- src/main/print-olympus.c.orig
++++ src/main/print-olympus.c
+@@ -46,6 +46,16 @@
+ //#define S6145_YMC
+ //#define CANONSELPHYNEO_CMY
  
 +#ifndef __BYTE_ORDER
 +#define __BYTE_ORDER _BYTE_ORDER
