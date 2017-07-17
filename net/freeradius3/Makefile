@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2017/05/31 08:08:17 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2017/07/17 23:15:05 sthen Exp $
 
 PORTROACH=	limit:^3\.
 
@@ -11,8 +11,9 @@ COMMENT-mysql=	freeradius mysql rlm addon
 COMMENT-pgsql=	freeradius pgsql rlm addon
 COMMENT-python=	freeradius python rlm addon
 
-V=		3.0.14
+V=		3.0.15
 DISTNAME=	freeradius-server-$V
+EXTRACT_SUFX=	.tar.bz2
 
 PKGNAME-main=	freeradius-$V
 PKGNAME-freetds= freeradius-freetds-$V
@@ -26,8 +27,8 @@ PKGNAME-python=	freeradius-python-$V
 CATEGORIES=	net security
 
 MASTER_SITES=	http://ftp.cc.uoc.gr/mirrors/ftp.freeradius.org/ \
-		ftp://ftp.freeradius.org/pub/radius/ \
-		ftp://ftp.freeradius.org/pub/radius/old/
+		ftp://ftp.freeradius.org/pub/freeradius/ \
+		ftp://ftp.freeradius.org/pub/freeradius/old/
 
 HOMEPAGE=	http://www.freeradius.org/
 

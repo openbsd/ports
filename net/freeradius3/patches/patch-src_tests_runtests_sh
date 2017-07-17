@@ -1,9 +1,0 @@
-$OpenBSD: patch-src_tests_runtests_sh,v 1.1.1.1 2015/11/12 12:59:37 sthen Exp $
---- src/tests/runtests.sh.orig	Wed Apr 22 18:21:34 2015
-+++ src/tests/runtests.sh	Thu Jun 25 16:37:42 2015
-@@ -1,4 +1,4 @@
--#!/bin/bash
-+#!/bin/sh
- 
- : ${BIN_PATH=./}
- : ${PORT=12340}
