@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.508 2017/07/17 08:42:58 zhuk Exp $
+# $OpenBSD: Quirks.pm,v 1.509 2017/07/17 10:07:24 zhuk Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -987,6 +987,11 @@ my $obsolete_reason = {
 	'libqtelegram-aseman-edition' => 5,
 	'qca-tls' => 3,
 	'py-qt5-docs' => 3,
+	'qtenginio' => 3,
+	'qtenginio-docindex' => 3,
+	'qtenginio-examples' => 3,
+	'qtenginio-html' => 3,
+	'qtenginio-qch' => 3,
 };
 
 # reasons for obsolete packages
