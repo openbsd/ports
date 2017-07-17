@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2017/07/16 19:18:47 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2017/07/17 22:45:19 zhuk Exp $
 
 COMMENT =	Qt/C++ wrapper for ZIP/UNZIP package
 DISTNAME =	quazip-0.7.3
@@ -30,6 +30,7 @@ FULLPKGNAME =		${PKGNAME:C/-/-qt5-/}
 MODULES +=		x11/qt5
 WANTLIB +=		Qt5Core
 CONFIGURE_ARGS =	-DBUILD_WITH_QT4=No
+CONFIGURE_ENV =		CXXFLAGS="${CXXFLAGS} -std=c++11"
 CMAKENAME =		QuaZip5
 .else
 MODULES +=		x11/qt4
@@ -37,6 +38,7 @@ WANTLIB +=		${COMPILER_LIBCXX}
 CONFIGURE_ARGS =	-DBUILD_WITH_QT4=Yes
 CMAKENAME =		QuaZip
 .endif
+REVISION =		0
 
 LIBNAME =		${CMAKENAME:L}
 SUBST_VARS =		CMAKENAME LIBNAME
