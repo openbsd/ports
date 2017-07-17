@@ -1,7 +1,7 @@
-# $OpenBSD: phonon.port.mk,v 1.7 2016/05/27 02:50:05 zhuk Exp $
+# $OpenBSD: phonon.port.mk,v 1.8 2017/07/17 21:17:47 zhuk Exp $
 .if ${MODULES:Mx11/qt5} || ${MODULES:Mdevel/kf5}
 MODPHONON_WANTLIB =	phonon4qt5
-MODPHONON_LIB_DEPENDS =	phonon-qt5->=4.8.0:multimedia/phonon,qt5
+MODPHONON_LIB_DEPENDS =	phonon-qt5->=4.9.1:multimedia/phonon-qt5
 .else
 MODPHONON_WANTLIB =	${MODKDE4_LIB_DIR}/phonon_s
 MODPHONON_LIB_DEPENDS =	phonon->=4.8.0:multimedia/phonon

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2015/11/19 18:42:21 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.7 2017/07/17 21:17:47 zhuk Exp $
 ${PHONON_INCLUDE_DIR}/
 ${PHONON_INCLUDE_DIR}/KDE/
 ${PHONON_INCLUDE_DIR}/KDE/Phonon/
@@ -164,7 +164,28 @@ ${PHONON_INCLUDE_DIR}/phonon/volumefadereffect.h
 ${PHONON_INCLUDE_DIR}/phonon/volumefaderinterface.h
 ${PHONON_INCLUDE_DIR}/phonon/volumeslider.h
 lib/cmake/
+lib/cmake/phonon_s/
+lib/cmake/phonon_s/PhononConfig.cmake
+lib/cmake/phonon_s/PhononConfigVersion.cmake
+lib/cmake/phonon_s/PhononTargets${MODKDE4_CMAKE_PREFIX}.cmake
+lib/cmake/phonon_s/PhononTargets.cmake
+lib/kde4/
+${KDE4LIB}/
+@lib ${KDE4LIB}/libphonon_s.so.${LIBphonon_s_VERSION}
+@lib ${KDE4LIB}/libphonon_sexperimental.so.${LIBphonon_sexperimental_VERSION}
+@lib lib/libphonon_s.so.${LIBphonon_s_VERSION}
+@lib lib/libphonon_sexperimental.so.${LIBphonon_sexperimental_VERSION}
+lib/pkgconfig/phonon_s.pc
+lib/qt4/mkspecs/modules/qt_phonon_s.pri
 share/dbus-1/
 share/dbus-1/interfaces/
-%%qt5%%
-!%%qt5%%
+share/dbus-1/interfaces/org.kde.Phonon.AudioOutput.xml
+share/phonon_s/
+share/phonon_s/buildsystem/
+share/phonon_s/buildsystem/COPYING-CMAKE-SCRIPTS
+share/phonon_s/buildsystem/FindPhononInternal.cmake
+share/phonon_s/buildsystem/MacroEnsureVersion.cmake
+share/phonon_s/buildsystem/MacroLogFeature.cmake
+share/phonon_s/buildsystem/MacroOptionalFindPackage.cmake
+share/phonon_s/buildsystem/PhononMacros.cmake
+share/phonon_s/buildsystem/cmake_uninstall.cmake.in
