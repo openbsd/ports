@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2017/06/18 16:55:02 bcallah Exp $
+# $OpenBSD: Makefile,v 1.18 2017/07/17 19:48:29 bcallah Exp $
 
 COMMENT=	fancy interface to the Python interpreter
 
-MODPY_EGG_VERSION=0.16
+MODPY_EGG_VERSION=0.17
 DISTNAME=	bpython-${MODPY_EGG_VERSION}
 CATEGORIES=	devel
-REVISION=	1
 
 HOMEPAGE=	https://bpython-interpreter.org/
 MAINTAINER=	Brian Callahan <bcallah@openbsd.org>

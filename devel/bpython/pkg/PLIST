@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2017/06/17 13:25:55 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2017/07/17 19:48:29 bcallah Exp $
 bin/bpdb${MODPY_BIN_SUFFIX}
 bin/bpython${MODPY_BIN_SUFFIX}
 bin/bpython-curses${MODPY_BIN_SUFFIX}
@@ -106,7 +106,6 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/bpython/test/${MODPY_PY
 lib/python${MODPY_VERSION}/site-packages/bpython/test/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bpython/test/${MODPY_PYCACHE}test_args.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bpython/test/${MODPY_PYCACHE}test_autocomplete.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/bpython/test/${MODPY_PYCACHE}test_bpython.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bpython/test/${MODPY_PYCACHE}test_config.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bpython/test/${MODPY_PYCACHE}test_crashers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bpython/test/${MODPY_PYCACHE}test_curtsies.${MODPY_PYC_MAGIC_TAG}pyc
@@ -122,7 +121,6 @@ lib/python${MODPY_VERSION}/site-packages/bpython/test/${MODPY_PYCACHE}test_inter
 lib/python${MODPY_VERSION}/site-packages/bpython/test/${MODPY_PYCACHE}test_keys.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bpython/test/${MODPY_PYCACHE}test_line_properties.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bpython/test/${MODPY_PYCACHE}test_manual_readline.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/bpython/test/${MODPY_PYCACHE}test_pager.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bpython/test/${MODPY_PYCACHE}test_preprocess.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bpython/test/${MODPY_PYCACHE}test_repl.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bpython/test/${MODPY_PYCACHE}test_simpleeval.${MODPY_PYC_MAGIC_TAG}pyc
@@ -144,7 +142,6 @@ lib/python${MODPY_VERSION}/site-packages/bpython/test/test.config
 lib/python${MODPY_VERSION}/site-packages/bpython/test/test.theme
 lib/python${MODPY_VERSION}/site-packages/bpython/test/test_args.py
 lib/python${MODPY_VERSION}/site-packages/bpython/test/test_autocomplete.py
-lib/python${MODPY_VERSION}/site-packages/bpython/test/test_bpython.py
 lib/python${MODPY_VERSION}/site-packages/bpython/test/test_config.py
 lib/python${MODPY_VERSION}/site-packages/bpython/test/test_crashers.py
 lib/python${MODPY_VERSION}/site-packages/bpython/test/test_curtsies.py
@@ -160,7 +157,6 @@ lib/python${MODPY_VERSION}/site-packages/bpython/test/test_interpreter.py
 lib/python${MODPY_VERSION}/site-packages/bpython/test/test_keys.py
 lib/python${MODPY_VERSION}/site-packages/bpython/test/test_line_properties.py
 lib/python${MODPY_VERSION}/site-packages/bpython/test/test_manual_readline.py
-lib/python${MODPY_VERSION}/site-packages/bpython/test/test_pager.py
 lib/python${MODPY_VERSION}/site-packages/bpython/test/test_preprocess.py
 lib/python${MODPY_VERSION}/site-packages/bpython/test/test_repl.py
 lib/python${MODPY_VERSION}/site-packages/bpython/test/test_simpleeval.py
