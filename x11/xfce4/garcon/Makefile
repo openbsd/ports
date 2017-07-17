@@ -1,18 +1,15 @@
-# $OpenBSD: Makefile,v 1.18 2016/11/03 16:20:40 landry Exp $
+# $OpenBSD: Makefile,v 1.19 2017/07/17 14:05:26 landry Exp $
 
 COMMENT =	Xfce4 freedesktop.org compliant menu implementation
 
 XFCE_PROJECT =	garcon
-XFCE_VERSION =	0.4.0
-REVISION =	0
+XFCE_VERSION =	0.6.1
 
 SHARED_LIBS +=	garcon-1	0.0
-SHARED_LIBS +=  garcon-gtk2-1	0.0 # 0.0
-
+SHARED_LIBS +=	garcon-gtk2-1	0.0 # 0.0
+SHARED_LIBS +=	garcon-gtk3-1   0.0 # 0.0
 
 HOMEPAGE=	http://www.xfce.org/projects/libraries/
-
-MASTER_SITES ?=	http://archive.xfce.org/src/libs/${XFCE_PROJECT:L}/${XFCE_BRANCH}/
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -28,6 +25,8 @@ WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 graphite2
 WANTLIB += gtk-x11-2.0 harfbuzz m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pixman-1 png pthread-stubs startup-notification-1 xcb
 WANTLIB += xcb-render xcb-shm xcb-util xfce4ui-1
+WANTLIB += atk-bridge-2.0 atspi cairo-gobject dbus-1 epoxy gdk-3
+WANTLIB += gtk-3 xfce4ui-2
 
 FAKE_FLAGS =	menudir=${PREFIX}/share/examples/garcon
 

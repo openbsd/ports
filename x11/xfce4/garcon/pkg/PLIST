@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2015/03/16 20:24:26 landry Exp $
+@comment $OpenBSD: PLIST,v 1.10 2017/07/17 14:05:26 landry Exp $
 @conflict xfdesktop-<=4.7.0
 include/garcon-1/
 include/garcon-1/garcon/
@@ -7,6 +7,7 @@ include/garcon-1/garcon/garcon-environment.h
 include/garcon-1/garcon/garcon-marshal.h
 include/garcon-1/garcon/garcon-menu-directory.h
 include/garcon-1/garcon/garcon-menu-element.h
+include/garcon-1/garcon/garcon-menu-item-action.h
 include/garcon-1/garcon/garcon-menu-item-cache.h
 include/garcon-1/garcon/garcon-menu-item-pool.h
 include/garcon-1/garcon/garcon-menu-item.h
@@ -21,12 +22,19 @@ include/garcon-gtk2-1/
 include/garcon-gtk2-1/garcon-gtk/
 include/garcon-gtk2-1/garcon-gtk/garcon-gtk-menu.h
 include/garcon-gtk2-1/garcon-gtk/garcon-gtk.h
+include/garcon-gtk3-1/
+include/garcon-gtk3-1/garcon-gtk/
+include/garcon-gtk3-1/garcon-gtk/garcon-gtk-menu.h
+include/garcon-gtk3-1/garcon-gtk/garcon-gtk.h
 lib/libgarcon-1.la
 @lib lib/libgarcon-1.so.${LIBgarcon-1_VERSION}
 lib/libgarcon-gtk2-1.la
 @lib lib/libgarcon-gtk2-1.so.${LIBgarcon-gtk2-1_VERSION}
+lib/libgarcon-gtk3-1.la
+@lib lib/libgarcon-gtk3-1.so.${LIBgarcon-gtk3-1_VERSION}
 lib/pkgconfig/garcon-1.pc
 lib/pkgconfig/garcon-gtk2-1.pc
+lib/pkgconfig/garcon-gtk3-1.pc
 share/desktop-directories/
 share/desktop-directories/xfce-accessories.directory
 share/desktop-directories/xfce-development.directory
@@ -69,7 +77,6 @@ share/gtk-doc/html/garcon/garcon-parsing.html
 share/gtk-doc/html/garcon/garcon.devhelp2
 share/gtk-doc/html/garcon/home.png
 share/gtk-doc/html/garcon/index.html
-share/gtk-doc/html/garcon/index.sgml
 share/gtk-doc/html/garcon/left-insensitive.png
 share/gtk-doc/html/garcon/left.png
 share/gtk-doc/html/garcon/object-tree.html
@@ -79,6 +86,7 @@ share/gtk-doc/html/garcon/right.png
 share/gtk-doc/html/garcon/style.css
 share/gtk-doc/html/garcon/up-insensitive.png
 share/gtk-doc/html/garcon/up.png
+share/locale/am/LC_MESSAGES/garcon.mo
 share/locale/ar/LC_MESSAGES/garcon.mo
 share/locale/ast/LC_MESSAGES/garcon.mo
 share/locale/bg/LC_MESSAGES/garcon.mo
