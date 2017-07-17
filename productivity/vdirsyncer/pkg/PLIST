@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/03/17 07:53:49 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/07/17 00:09:56 danj Exp $
 bin/vdirsyncer
 lib/python${MODPY_VERSION}/site-packages/vdirsyncer/
 lib/python${MODPY_VERSION}/site-packages/vdirsyncer-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -18,6 +18,7 @@ lib/python${MODPY_VERSION}/site-packages/vdirsyncer/${MODPY_PYCACHE}http.${MODPY
 lib/python${MODPY_VERSION}/site-packages/vdirsyncer/${MODPY_PYCACHE}metasync.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/vdirsyncer/${MODPY_PYCACHE}repair.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/vdirsyncer/${MODPY_PYCACHE}sync.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/vdirsyncer/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/vdirsyncer/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/vdirsyncer/${MODPY_PYCACHE}vobject.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/vdirsyncer/cli/
@@ -44,6 +45,7 @@ lib/python${MODPY_VERSION}/site-packages/vdirsyncer/storage/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/vdirsyncer/storage/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/vdirsyncer/storage/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/vdirsyncer/storage/${MODPY_PYCACHE}dav.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/vdirsyncer/storage/${MODPY_PYCACHE}etesync.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/vdirsyncer/storage/${MODPY_PYCACHE}filesystem.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/vdirsyncer/storage/${MODPY_PYCACHE}google.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/vdirsyncer/storage/${MODPY_PYCACHE}http.${MODPY_PYC_MAGIC_TAG}pyc
@@ -52,6 +54,7 @@ lib/python${MODPY_VERSION}/site-packages/vdirsyncer/storage/${MODPY_PYCACHE}remo
 lib/python${MODPY_VERSION}/site-packages/vdirsyncer/storage/${MODPY_PYCACHE}singlefile.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/vdirsyncer/storage/base.py
 lib/python${MODPY_VERSION}/site-packages/vdirsyncer/storage/dav.py
+lib/python${MODPY_VERSION}/site-packages/vdirsyncer/storage/etesync.py
 lib/python${MODPY_VERSION}/site-packages/vdirsyncer/storage/filesystem.py
 lib/python${MODPY_VERSION}/site-packages/vdirsyncer/storage/google.py
 lib/python${MODPY_VERSION}/site-packages/vdirsyncer/storage/http.py
@@ -59,10 +62,7 @@ lib/python${MODPY_VERSION}/site-packages/vdirsyncer/storage/memory.py
 lib/python${MODPY_VERSION}/site-packages/vdirsyncer/storage/remotestorage.py
 lib/python${MODPY_VERSION}/site-packages/vdirsyncer/storage/singlefile.py
 lib/python${MODPY_VERSION}/site-packages/vdirsyncer/sync.py
-lib/python${MODPY_VERSION}/site-packages/vdirsyncer/utils/
-lib/python${MODPY_VERSION}/site-packages/vdirsyncer/utils/__init__.py
-lib/python${MODPY_VERSION}/site-packages/vdirsyncer/utils/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/vdirsyncer/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/vdirsyncer/utils.py
 lib/python${MODPY_VERSION}/site-packages/vdirsyncer/version.py
 lib/python${MODPY_VERSION}/site-packages/vdirsyncer/vobject.py
 share/doc/vdirsyncer/
@@ -77,6 +77,7 @@ share/doc/vdirsyncer/_sources/changelog.txt
 share/doc/vdirsyncer/_sources/config.txt
 share/doc/vdirsyncer/_sources/contact.txt
 share/doc/vdirsyncer/_sources/contributing.txt
+share/doc/vdirsyncer/_sources/donations.txt
 share/doc/vdirsyncer/_sources/index.txt
 share/doc/vdirsyncer/_sources/installation.txt
 share/doc/vdirsyncer/_sources/keyring.txt
@@ -85,11 +86,21 @@ share/doc/vdirsyncer/_sources/packaging.txt
 share/doc/vdirsyncer/_sources/partial-sync.txt
 share/doc/vdirsyncer/_sources/problems.txt
 share/doc/vdirsyncer/_sources/ssl-tutorial.txt
-share/doc/vdirsyncer/_sources/supported.txt
 share/doc/vdirsyncer/_sources/tutorial.txt
 share/doc/vdirsyncer/_sources/tutorials/
+share/doc/vdirsyncer/_sources/tutorials/baikal.txt
 share/doc/vdirsyncer/_sources/tutorials/claws-mail.txt
+share/doc/vdirsyncer/_sources/tutorials/davmail.txt
+share/doc/vdirsyncer/_sources/tutorials/fastmail.txt
+share/doc/vdirsyncer/_sources/tutorials/google.txt
+share/doc/vdirsyncer/_sources/tutorials/icloud.txt
 share/doc/vdirsyncer/_sources/tutorials/index.txt
+share/doc/vdirsyncer/_sources/tutorials/nextcloud.txt
+share/doc/vdirsyncer/_sources/tutorials/owncloud.txt
+share/doc/vdirsyncer/_sources/tutorials/radicale.txt
+share/doc/vdirsyncer/_sources/tutorials/systemd-timer.txt
+share/doc/vdirsyncer/_sources/tutorials/todoman.txt
+share/doc/vdirsyncer/_sources/tutorials/xandikos.txt
 share/doc/vdirsyncer/_sources/vdir.txt
 share/doc/vdirsyncer/_sources/when.txt
 share/doc/vdirsyncer/_static/
@@ -132,6 +143,7 @@ share/doc/vdirsyncer/changelog.html
 share/doc/vdirsyncer/config.html
 share/doc/vdirsyncer/contact.html
 share/doc/vdirsyncer/contributing.html
+share/doc/vdirsyncer/donations.html
 share/doc/vdirsyncer/genindex.html
 share/doc/vdirsyncer/index.html
 share/doc/vdirsyncer/installation.html
@@ -144,11 +156,21 @@ share/doc/vdirsyncer/problems.html
 share/doc/vdirsyncer/search.html
 share/doc/vdirsyncer/searchindex.js
 share/doc/vdirsyncer/ssl-tutorial.html
-share/doc/vdirsyncer/supported.html
 share/doc/vdirsyncer/tutorial.html
 share/doc/vdirsyncer/tutorials/
+share/doc/vdirsyncer/tutorials/baikal.html
 share/doc/vdirsyncer/tutorials/claws-mail.html
+share/doc/vdirsyncer/tutorials/davmail.html
+share/doc/vdirsyncer/tutorials/fastmail.html
+share/doc/vdirsyncer/tutorials/google.html
+share/doc/vdirsyncer/tutorials/icloud.html
 share/doc/vdirsyncer/tutorials/index.html
+share/doc/vdirsyncer/tutorials/nextcloud.html
+share/doc/vdirsyncer/tutorials/owncloud.html
+share/doc/vdirsyncer/tutorials/radicale.html
+share/doc/vdirsyncer/tutorials/systemd-timer.html
+share/doc/vdirsyncer/tutorials/todoman.html
+share/doc/vdirsyncer/tutorials/xandikos.html
 share/doc/vdirsyncer/vdir.html
 share/doc/vdirsyncer/when.html
 share/examples/vdirsyncer/
