@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.122 2017/05/13 17:40:26 espie Exp $
+# $OpenBSD: Makefile,v 1.123 2017/07/18 04:51:43 zhuk Exp $
 
 COMMENT-main=	PDF rendering library
 COMMENT-qt4=	qt4 interface to PDF rendering library
@@ -12,6 +12,7 @@ PKGNAME-main=	poppler-$V
 PKGNAME-utils=	poppler-utils-$V
 PKGNAME-qt4=	poppler-qt4-$V
 PKGNAME-qt5=	poppler-qt5-$V
+REVISION-qt5=	0
 
 EXTRACT_SUFX=	.tar.xz
 
@@ -106,7 +107,8 @@ CONFIGURE_ARGS+=--enable-xpdf-headers \
 		--enable-utils \
 		--enable-zlib \
 		--disable-gtk-test \
-		--disable-libnss
+		--disable-libnss \
+		POPPLER_QT5_CXXFLAGS="-std=c++11"
 
 CONFIGURE_ENV+= CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
@@ -128,5 +130,7 @@ post-configure:
 		         -e    's,^CPP = \S+,override CPP = ${MAIN_CC},;' \
 		         -e    's,^CXX = \S+,override CXX = ${MAIN_CXX},;' \
 		         -e 's,^CXXCPP = \S+,override CXXCPP = ${MAIN_CXX},;'
+	find ${WRKBUILD}/qt5 -name Makefile -print0 | xargs -0 \
+		perl -pi -e     's,^CXXFLAGS =.*,$$& \$$(POPPLER_QT5_CXXFLAGS),;'
 
 .include <bsd.port.mk>
