@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.13 2017/07/18 04:12:11 zhuk Exp $
+# $OpenBSD: Makefile.inc,v 1.14 2017/07/18 04:48:46 zhuk Exp $
 
 CATEGORIES =	games
 PKGNAME ?=	${DISTNAME:S/-src//}
@@ -22,7 +22,8 @@ RUN_DEPENDS +=	devel/desktop-file-utils x11/gtk+3,-guic
 MAKE_FLAGS +=	CXX=${CXX} \
 		QMAKE_CXXFLAGS="${CXXFLAGS}"
 
-# XXX qmake 5.9 regression? - translations are not installed
-SEPARATE_BUILD ?=	No
+pre-configure:
+	sed -i.qmfix -e 's/\(qm\.files =\).*/\1 $$$$replace(TRANSLATIONS, .ts, .qm)/' \
+		${WRKSRC}/*.pro
 
 NO_TEST =	Yes
