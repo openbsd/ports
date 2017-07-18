@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.45 2017/07/01 11:14:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.46 2017/07/18 10:22:23 sebastia Exp $
 
 COMMENT=		distributed RESTful search and analytics
 
-V=			5.4.3
+V=			5.5.0
 DISTNAME=		elasticsearch-$V
 CATEGORIES=		textproc
 
