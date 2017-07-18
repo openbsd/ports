@@ -1,0 +1,14 @@
+$OpenBSD: patch-libs_ui_KisResourceBundleManifest_cpp,v 1.1 2017/07/18 11:00:41 zhuk Exp $
+Fix build with Qt 5.9.
+
+Index: libs/ui/KisResourceBundleManifest.cpp
+--- libs/ui/KisResourceBundleManifest.cpp.orig
++++ libs/ui/KisResourceBundleManifest.cpp
+@@ -22,7 +22,6 @@
+ #include <QDomElement>
+ #include <QDomNode>
+ #include <QDomNodeList>
+-#include <QForeachContainer>
+ 
+ #include <KoXmlNS.h>
+ #include <KoXmlReader.h>
