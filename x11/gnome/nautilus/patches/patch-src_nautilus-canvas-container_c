@@ -1,12 +1,13 @@
-$OpenBSD: patch-src_nautilus-canvas-container_c,v 1.4 2017/04/17 10:35:15 ajacoutot Exp $
+$OpenBSD: patch-src_nautilus-canvas-container_c,v 1.5 2017/07/18 07:27:38 ajacoutot Exp $
 
 nautilus-canvas-container.c:5783: error: #pragma GCC diagnostic not allowed inside functions
 nautilus-canvas-container.c:5784: error: #pragma GCC diagnostic not allowed inside functions
 nautilus-canvas-container.c:5792: error: #pragma GCC diagnostic not allowed inside functions
 
---- src/nautilus-canvas-container.c.orig	Wed Mar 15 17:49:45 2017
-+++ src/nautilus-canvas-container.c	Mon Apr 17 12:25:00 2017
-@@ -5798,8 +5798,6 @@ get_text_ellipsis_limit_for_zoom (char       **strs,
+Index: src/nautilus-canvas-container.c
+--- src/nautilus-canvas-container.c.orig
++++ src/nautilus-canvas-container.c
+@@ -5813,8 +5813,6 @@ get_text_ellipsis_limit_for_zoom (char       **strs,
  
      if (strs != NULL)
      {
@@ -15,7 +16,7 @@ nautilus-canvas-container.c:5792: error: #pragma GCC diagnostic not allowed insi
          for (p = strs; *p != NULL; p++)
          {
              if (sscanf (*p, str, limit))
-@@ -5807,7 +5805,6 @@ get_text_ellipsis_limit_for_zoom (char       **strs,
+@@ -5822,7 +5820,6 @@ get_text_ellipsis_limit_for_zoom (char       **strs,
                  success = TRUE;
              }
          }
