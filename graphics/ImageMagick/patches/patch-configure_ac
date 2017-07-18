@@ -1,6 +1,7 @@
-$OpenBSD: patch-configure_ac,v 1.14 2016/11/13 20:54:46 sthen Exp $
---- configure.ac.orig	Tue Nov  8 12:30:03 2016
-+++ configure.ac	Sun Nov 13 18:14:28 2016
+$OpenBSD: patch-configure_ac,v 1.15 2017/07/18 16:05:12 sthen Exp $
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
 @@ -1341,7 +1341,7 @@ fi
  
  # Assume that delegate headers reside under same directory as ImageMagick
@@ -10,7 +11,7 @@ $OpenBSD: patch-configure_ac,v 1.14 2016/11/13 20:54:46 sthen Exp $
  
  #
  # Find the X11 RGB database
-@@ -2847,7 +2847,7 @@ AC_SUBST([PERLMAINCC])
+@@ -2882,7 +2882,7 @@ AC_SUBST([PERLMAINCC])
  #
  
  # Path to ImageMagick header files
@@ -19,7 +20,7 @@ $OpenBSD: patch-configure_ac,v 1.14 2016/11/13 20:54:46 sthen Exp $
  INCLUDE_PATH="${INCLUDE_DIR}/${INCLUDE_RELATIVE_PATH}"
  DEFINE_INCLUDE_PATH="${INCLUDE_DIR}/${INCLUDE_RELATIVE_PATH}/"
  case "${build_os}" in
-@@ -2870,7 +2870,7 @@ AC_DEFINE_UNQUOTED(INCLUDEARCH_PATH,"$DEFINE_INCLUDE_P
+@@ -2905,7 +2905,7 @@ AC_DEFINE_UNQUOTED(INCLUDEARCH_PATH,"$DEFINE_INCLUDE_P
  AC_SUBST(INCLUDEARCH_PATH)
  
  # Subdirectory under lib to place ImageMagick lib files
@@ -28,7 +29,7 @@ $OpenBSD: patch-configure_ac,v 1.14 2016/11/13 20:54:46 sthen Exp $
  AC_DEFINE_UNQUOTED(LIBRARY_RELATIVE_PATH,"$LIBRARY_RELATIVE_PATH",[Subdirectory of lib where ImageMagick architecture dependent files are installed.])
  
  # Path to ImageMagick bin directory
-@@ -2961,7 +2961,7 @@ AC_SUBST(FILTER_PATH)
+@@ -2996,7 +2996,7 @@ AC_SUBST(FILTER_PATH)
  
  #
  # Path to ImageMagick documentation files
@@ -37,7 +38,7 @@ $OpenBSD: patch-configure_ac,v 1.14 2016/11/13 20:54:46 sthen Exp $
  DOCUMENTATION_PATH="${DOC_DIR}/${DOCUMENTATION_RELATIVE_PATH}"
  DEFINE_DOCUMENTATION_PATH="${DOC_DIR}/${DOCUMENTATION_RELATIVE_PATH}/"
  case "${build_os}" in
-@@ -2981,7 +2981,7 @@ AC_ARG_ENABLE([docs],
+@@ -3016,7 +3016,7 @@ AC_ARG_ENABLE([docs],
  AM_CONDITIONAL([INSTALL_DOC], [test "$wantdocs" = "yes"])
  
  # Subdirectory to place architecture-dependent configuration files
@@ -46,7 +47,7 @@ $OpenBSD: patch-configure_ac,v 1.14 2016/11/13 20:54:46 sthen Exp $
  AC_DEFINE_UNQUOTED(CONFIGURE_RELATIVE_PATH,"$CONFIGURE_RELATIVE_PATH",[Subdirectory of lib where architecture-dependent configuration files live.])
  CONFIGURE_PATH="${SYSCONF_DIR}/${CONFIGURE_RELATIVE_PATH}/"
  DEFINE_CONFIGURE_PATH="${SYSCONF_DIR}/${CONFIGURE_RELATIVE_PATH}/"
-@@ -2994,7 +2994,7 @@ AC_DEFINE_UNQUOTED(CONFIGURE_PATH,"$DEFINE_CONFIGURE_P
+@@ -3029,7 +3029,7 @@ AC_DEFINE_UNQUOTED(CONFIGURE_PATH,"$DEFINE_CONFIGURE_P
  AC_SUBST(CONFIGURE_PATH)
  
  # Subdirectory to place architecture-independent configuration files
