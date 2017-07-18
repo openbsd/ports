@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/02/21 09:50:29 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/07/18 09:42:52 rpointel Exp $
 @bin bin/vmdkinfo
 @bin bin/vmdkmount
 include/libvmdk/
 include/libvmdk.h
+include/libvmdk/codepage.h
 include/libvmdk/definitions.h
 include/libvmdk/error.h
 include/libvmdk/extern.h
