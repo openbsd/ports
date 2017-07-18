@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2017/04/08 06:52:18 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2017/07/18 09:41:17 rpointel Exp $
 @conflict py-artifacts-*
 @conflict py3-artifacts-*
 bin/stats.py
@@ -32,13 +32,13 @@ share/artifacts/antivirus.yaml
 share/artifacts/applications.yaml
 share/artifacts/cloud_services.yaml
 share/artifacts/config_files.yaml
-share/artifacts/darwin.yaml
 share/artifacts/installed_modules.yaml
 share/artifacts/java.yaml
 share/artifacts/kaspersky_careto.yaml
 share/artifacts/legacy.yaml
 share/artifacts/linux.yaml
 share/artifacts/linux_proc.yaml
+share/artifacts/macos.yaml
 share/artifacts/ntfs.yaml
 share/artifacts/unix_common.yaml
 share/artifacts/webbrowser.yaml
