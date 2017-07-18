@@ -1,4 +1,4 @@
-# $OpenBSD: clang.port.mk,v 1.23 2017/07/14 17:14:03 sthen Exp $
+# $OpenBSD: clang.port.mk,v 1.24 2017/07/18 09:19:00 espie Exp $
 
 MODCLANG_VERSION=	4.0.1
 
@@ -30,10 +30,13 @@ _MODCLANG_ARCH_USES = Yes
 .if ${_MODCLANG_ARCH_USES:L} == "yes"
 
 BUILD_DEPENDS += devel/llvm>=${MODCLANG_VERSION}
-COMPILER_LINKS = gcc ${LOCALBASE}/bin/clang cc ${LOCALBASE}/bin/clang
+COMPILER_LINKS = gcc ${LOCALBASE}/bin/clang cc ${LOCALBASE}/bin/clang \
+	clang ${LOCALBASE}/bin/clang
 
 .  if ${MODCLANG_LANGS:L:Mc++}
-COMPILER_LINKS += g++ ${LOCALBASE}/bin/clang++ c++ ${LOCALBASE}/bin/clang++
+COMPILER_LINKS += g++ ${LOCALBASE}/bin/clang++ c++ ${LOCALBASE}/bin/clang++ \
+	clang++ ${LOCALBASE}/bin/clang++
+
 # uses libestdc++
 MODULES += gcc4
 MODCLANG_CPPLIBDEP = ${MODGCC4_CPPLIBDEP}
