@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.12 2017/06/11 20:32:19 landry Exp $
+# $OpenBSD: Makefile.inc,v 1.13 2017/07/18 04:12:11 zhuk Exp $
 
 CATEGORIES =	games
 PKGNAME ?=	${DISTNAME:S/-src//}
@@ -21,5 +21,8 @@ RUN_DEPENDS +=	devel/desktop-file-utils x11/gtk+3,-guic
 
 MAKE_FLAGS +=	CXX=${CXX} \
 		QMAKE_CXXFLAGS="${CXXFLAGS}"
+
+# XXX qmake 5.9 regression? - translations are not installed
+SEPARATE_BUILD ?=	No
 
 NO_TEST =	Yes
