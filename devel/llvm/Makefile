@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.146 2017/07/18 21:35:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.147 2017/07/18 23:52:32 sthen Exp $
 
 # XXX: Remember to bump MODCLANG_VERSION in lang/clang/clang.port.mk when
 # updating this port.
@@ -40,7 +40,7 @@ WANTLIB =	c m pthread z
 MODULES =	devel/cmake \
 		lang/python
 
-COMPILER =	base gcc4
+COMPILER =	gcc4
 
 LLVM_GCC4_ARCHS =	amd64 arm i386 powerpc mips64 mips64el sparc64
 
