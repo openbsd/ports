@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2016/08/13 14:00:00 tb Exp $
+# $OpenBSD: Makefile,v 1.16 2017/07/18 14:49:38 tb Exp $
 
 COMMENT=		simple X screen locker
 
+# slock-1.4 drops bsd-auth support; CVE-2016-6866 doesn't affect HAVE_BSD_AUTH
 DISTNAME=		slock-1.3
 REVISION=		1
 
