@@ -1,0 +1,27 @@
+$OpenBSD: patch-src_fw_paravirt_c,v 1.1 2017/07/19 19:33:51 sthen Exp $
+
+Allow detection of >4GB RAM. Normally seabios only allows this with the
+qemu config device which VMM doesn't have.
+
+Index: src/fw/paravirt.c
+--- src/fw/paravirt.c.orig
++++ src/fw/paravirt.c
+@@ -489,6 +489,18 @@ qemu_cfg_e820(void)
+     dprintf(1, "RamSizeOver4G: 0x%016llx [cmos]\n", RamSizeOver4G);
+ }
+ 
++void
++vmm_check_high_mem(void)
++{
++    // Check for memory over 4Gig in cmos
++    u64 high = ((rtc_read(CMOS_MEM_HIGHMEM_LOW) << 16)
++                | ((u32)rtc_read(CMOS_MEM_HIGHMEM_MID) << 24)
++                | ((u64)rtc_read(CMOS_MEM_HIGHMEM_HIGH) << 32));
++    RamSizeOver4G = high;
++    e820_add(0x100000000ull, high, E820_RAM);
++    dprintf(1, "RamSizeOver4G: 0x%016llx [cmos]\n", RamSizeOver4G);
++}
++
+ // Populate romfile entries for legacy fw_cfg ports (that predate the
+ // "file" interface).
+ static void

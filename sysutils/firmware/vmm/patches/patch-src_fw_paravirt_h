@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_fw_paravirt_h,v 1.1 2017/07/19 19:33:51 sthen Exp $
+
+Allow detection of >4GB RAM. Normally seabios only allows this with the
+qemu config device which VMM doesn't have.
+
+Index: src/fw/paravirt.h
+--- src/fw/paravirt.h.orig
++++ src/fw/paravirt.h
+@@ -59,4 +59,5 @@ int qemu_cfg_write_file(void *src, struct romfile_s *f
+ int qemu_cfg_write_file_simple(void *src, u16 key, u32 offset, u32 len);
+ u16 qemu_get_romfile_key(struct romfile_s *file);
+ 
++void vmm_check_high_mem(void);
+ #endif

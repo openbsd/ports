@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_post_c,v 1.1 2017/07/19 19:33:51 sthen Exp $
+
+Allow detection of >4GB RAM. Normally seabios only allows this with the
+qemu config device which VMM doesn't have.
+
+Index: src/post.c
+--- src/post.c.orig
++++ src/post.c
+@@ -106,6 +106,7 @@ interface_init(void)
+ 
+     // Setup romfile items.
+     qemu_cfg_init();
++    vmm_check_high_mem();
+     coreboot_cbfs_init();
+     multiboot_init();
+ 
