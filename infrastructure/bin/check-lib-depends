@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-lib-depends,v 1.40 2017/04/11 16:02:15 espie Exp $
+# $OpenBSD: check-lib-depends,v 1.41 2017/07/19 14:16:13 espie Exp $
 # Copyright (c) 2004-2010 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -195,6 +195,24 @@ sub depwalk
 package CheckLibDepends::State;
 our @ISA = qw(OpenBSD::AddCreateDelete::State);
 
+sub parse_variable
+{
+	my ($state, $opt) = @_;
+	# this looks a bit like the subst module, but goes much further
+	if ($opt =~ m/^([^=]+)\=(.*)$/o) {
+		my ($k, $v) = ($1, $2);
+		$v =~ s/^\'(.*)\'$/$1/;
+		$v =~ s/^\"(.*)\"$/$1/;
+		my @list = split(/\s+/, $v);
+		for my $l (@list) {
+			$l =~ s/\>\=\d.*//;	# zap extra version req
+		}
+		# the order matters!
+		push(@{$state->{possibilities}}, [$k, \@list]);
+	} else {
+		$state->usage("Incorrect -S option");
+	}
+}
 
 sub handle_options
 {
@@ -202,10 +220,14 @@ sub handle_options
 
 	$state->{opt}{i} = 0;
 	$state->{opt}{S} = sub {
-		$state->{subst}->parse_option(shift);
+		$state->parse_variable(shift);
 	};
-	$state->SUPER::handle_options('oid:D:fB:qS:s:O:',
-		'[-fiomqx] [-B destdir] [-d pkgrepo] [-O dest] [-S var=value] [-s source]');
+	$state->{opt}{F} = sub {
+		my $v = shift;
+		$state->{may_be_missing}{$v} = 1;
+	};
+	$state->SUPER::handle_options('oid:D:fF:B:qS:s:O:',
+		'[-fiomqx] [-B destdir] [-d pkgrepo] [-F fuzz] [-O dest] [-S var=value] [-s source]');
 
 	$state->{destdir} = $state->opt('B');
 	if ($state->opt('O')) {
@@ -458,8 +480,11 @@ sub report_lib_issue
 
 sub has_all_libs
 {
-	my ($self, $libs, $list) = @_;
+	my ($self, $absent, $libs, $list) = @_;
 	for my $l (@$list) {
+		if ($absent->{$l}) {
+			next;
+		}
 		if (!defined $libs->{$l}) {
 			return 0;
 		}
@@ -470,19 +495,18 @@ sub has_all_libs
 sub backsubst
 {
 	my ($self, $h, $state) = @_;
-	my $doit = {};
-	# try backsubsting each list
-	while (my ($k, $v) = each %{$state->{subst}->hash}) {
-		my @l = split(/\s+/, $v);
-		if ($self->has_all_libs($h, \@l)) {
-			$doit->{$k} = \@l;
-		}
-	}
-	while (my ($k, $list) = each %$doit) {
+	return unless defined $state->{possibilities};
+	for my $p (@{$state->{possibilities}}) {
+		my ($v, $list) = @$p;
+		next unless $self->has_all_libs($h, $state->{may_be_missing},
+		    $list);
 		for my $l (@$list) {
+			if ($state->{may_be_missing}{$l}) {
+				$state->{cant_be_extra} = 1;
+			}
 			delete $h->{$l};
 		}
-		$h->{'${'.$k.'}'} = 1;
+		$h->{'${'.$v.'}'} = 1;
 	}
 }
 
@@ -493,8 +517,6 @@ sub print_list
 	$self->backsubst($h, $state);
 	my $line = "";
 	for my $k (sort keys %$h) {
-		next if $k eq 'c++abi';
-		$k =~ s/^(std)?c\+\+$/\${LIBCXX}/;
 		if (length $line > 50) {
 			$state->say_with_context("#1#2", $head, $line);
 			$line = "";
@@ -571,6 +593,9 @@ sub analyze
 	for my $k (keys %$has_libs) {
 		my $v = $has_libs->{$k};
 		next if $v == 2;
+		my $l = $k;
+		$l =~ s/\.\d+//;
+		next if defined $state->{cant_be_extra}{$l};
 		$extra->{$k} = 1;
 	}
 	unless ($state->{quiet} && keys %{$r->{wantlib}} == 0) {

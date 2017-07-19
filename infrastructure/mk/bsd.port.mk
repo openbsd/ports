@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1359 2017/07/13 11:43:55 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1360 2017/07/19 14:16:13 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1833,6 +1833,10 @@ _check_lib_depends =:
 
 _CHECK_LIB_DEPENDS = PORTSDIR=${PORTSDIR} ${_PERLSCRIPT}/check-lib-depends
 _CHECK_LIB_DEPENDS += -d ${_PKG_REPO} -B ${WRKINST}
+_CHECK_LIB_DEPENDS += -S COMPILER_LIBCXX="${COMPILER_LIBCXX}"
+_CHECK_LIB_DEPENDS += -S LIBECXX="${LIBECXX}"
+_CHECK_LIB_DEPENDS += -S LIBCXX="${LIBCXX}"
+#_CHECK_LIB_DEPENDS += -F pthread
 
 .for _s in ${MULTI_PACKAGES}
 .  if ${STATIC_PLIST${_s}:L} == "no"
