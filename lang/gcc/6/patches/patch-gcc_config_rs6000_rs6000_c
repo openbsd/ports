@@ -1,4 +1,4 @@
-$OpenBSD: patch-gcc_config_rs6000_rs6000_c,v 1.2 2016/12/28 21:48:21 pascal Exp $
+$OpenBSD: patch-gcc_config_rs6000_rs6000_c,v 1.3 2017/07/19 09:23:16 pascal Exp $
 
 Disable code which passes ".machine ppc" to the assembler as it breaks
 use of some CPU features. Notably breaks -maltivec which breaks build of
@@ -6,9 +6,10 @@ Mozilla ports including xulrunner.
 
 Borrowed from https://github.com/sba1/adtools/commit/b24ae065714a2390d7718d2c348fe5cfa40c2b48
 
---- gcc/config/rs6000/rs6000.c.orig	Wed Dec 14 00:56:17 2016
-+++ gcc/config/rs6000/rs6000.c	Fri Dec 23 18:25:15 2016
-@@ -5775,6 +5775,8 @@ rs6000_file_start (void)
+Index: gcc/config/rs6000/rs6000.c
+--- gcc/config/rs6000/rs6000.c.orig
++++ gcc/config/rs6000/rs6000.c
+@@ -5832,6 +5832,8 @@ rs6000_file_start (void)
    if (!(rs6000_default_cpu && rs6000_default_cpu[0])
        && !global_options_set.x_rs6000_cpu_index)
      {
@@ -17,7 +18,7 @@ Borrowed from https://github.com/sba1/adtools/commit/b24ae065714a2390d7718d2c348
        fputs ("\t.machine ", asm_out_file);
        if ((rs6000_isa_flags & OPTION_MASK_MODULO) != 0)
  	fputs ("power9\n", asm_out_file);
-@@ -5792,6 +5794,7 @@ rs6000_file_start (void)
+@@ -5849,6 +5851,7 @@ rs6000_file_start (void)
  	fputs ("ppc64\n", asm_out_file);
        else
  	fputs ("ppc\n", asm_out_file);

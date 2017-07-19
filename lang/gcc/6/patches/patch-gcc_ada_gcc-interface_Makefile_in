@@ -1,6 +1,7 @@
-$OpenBSD: patch-gcc_ada_gcc-interface_Makefile_in,v 1.4 2016/12/28 21:48:21 pascal Exp $
---- gcc/ada/gcc-interface/Makefile.in.orig	Tue Oct 11 22:03:58 2016
-+++ gcc/ada/gcc-interface/Makefile.in	Fri Dec 23 18:24:59 2016
+$OpenBSD: patch-gcc_ada_gcc-interface_Makefile_in,v 1.5 2017/07/19 09:23:16 pascal Exp $
+Index: gcc/ada/gcc-interface/Makefile.in
+--- gcc/ada/gcc-interface/Makefile.in.orig
++++ gcc/ada/gcc-interface/Makefile.in
 @@ -419,6 +419,10 @@ ATOMICS_TARGET_PAIRS = \
    a-szunau.adb<a-szunau-shared.adb \
    a-szuzti.adb<a-szuzti-shared.adb
@@ -12,7 +13,7 @@ $OpenBSD: patch-gcc_ada_gcc-interface_Makefile_in,v 1.4 2016/12/28 21:48:21 pasc
  ATOMICS_BUILTINS_TARGET_PAIRS = \
    s-atocou.adb<s-atocou-builtin.adb
  
-@@ -1505,6 +1509,252 @@ ifeq ($(strip $(filter-out %86 freebsd%,$(target_cpu) 
+@@ -1533,6 +1537,252 @@ ifeq ($(strip $(filter-out %86 freebsd%,$(target_cpu) 
    MISCLIB = -lutil
  endif
  
@@ -265,7 +266,7 @@ $OpenBSD: patch-gcc_ada_gcc-interface_Makefile_in,v 1.4 2016/12/28 21:48:21 pasc
  # x86-64 FreeBSD
  ifeq ($(strip $(filter-out %86_64 freebsd%,$(target_cpu) $(target_os))),)
    LIBGNAT_TARGET_PAIRS = \
-@@ -2447,7 +2697,7 @@ LIBGNAT_OBJS = adadecode.o adaint.o argv.o aux-io.o 		
+@@ -2488,7 +2738,7 @@ LIBGNAT_OBJS = adadecode.o adaint.o argv.o aux-io.o 		
  #  from ADA_INCLUDE_SRCS.
  
  LIBGNAT_SRCS = $(patsubst %.o,%.c,$(LIBGNAT_OBJS))			\

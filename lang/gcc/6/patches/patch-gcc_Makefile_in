@@ -1,9 +1,10 @@
-$OpenBSD: patch-gcc_Makefile_in,v 1.1.1.1 2016/09/04 16:20:19 pascal Exp $
+$OpenBSD: patch-gcc_Makefile_in,v 1.2 2017/07/19 09:23:16 pascal Exp $
 
 Disable fixincludes madness
 
---- gcc/Makefile.in.orig	Fri Apr 15 13:49:39 2016
-+++ gcc/Makefile.in	Tue Aug 23 18:14:33 2016
+Index: gcc/Makefile.in
+--- gcc/Makefile.in.orig
++++ gcc/Makefile.in
 @@ -261,9 +261,6 @@ endif
  NO_PIE_CFLAGS = @NO_PIE_CFLAGS@
  NO_PIE_FLAG = @NO_PIE_FLAG@
@@ -23,7 +24,7 @@ Disable fixincludes madness
  
  # Native compiler that we use.  This may be C++ some day.
  COMPILER_FOR_BUILD = $(CXX_FOR_BUILD)
-@@ -2907,7 +2902,7 @@ stmp-fixinc: gsyslimits.h macro_list fixinc_list \
+@@ -2909,7 +2904,7 @@ stmp-fixinc: gsyslimits.h macro_list fixinc_list \
  	      gcc_dir=`${PWD_COMMAND}` ; \
  	      export TARGET_MACHINE srcdir SHELL MACRO_LIST && \
  	      cd $(build_objdir)/fixincludes && \

@@ -1,6 +1,7 @@
-$OpenBSD: patch-gcc_config_sparc_sparc_c,v 1.1.1.1 2016/09/04 16:20:18 pascal Exp $
---- gcc/config/sparc/sparc.c.orig	Wed Jun  8 14:34:25 2016
-+++ gcc/config/sparc/sparc.c	Wed Aug 31 09:57:05 2016
+$OpenBSD: patch-gcc_config_sparc_sparc_c,v 1.2 2017/07/19 09:23:16 pascal Exp $
+Index: gcc/config/sparc/sparc.c
+--- gcc/config/sparc/sparc.c.orig
++++ gcc/config/sparc/sparc.c
 @@ -44,6 +44,7 @@ along with GCC; see the file COPYING3.  If not see
  #include "varasm.h"
  #include "output.h"
@@ -9,7 +10,7 @@ $OpenBSD: patch-gcc_config_sparc_sparc_c,v 1.1.1.1 2016/09/04 16:20:18 pascal Ex
  #include "explow.h"
  #include "expr.h"
  #include "debug.h"
-@@ -5606,6 +5607,9 @@ sparc_expand_prologue (void)
+@@ -5609,6 +5610,9 @@ sparc_expand_prologue (void)
    /* Load the GOT register if needed.  */
    if (crtl->uses_pic_offset_table)
      load_got_register ();

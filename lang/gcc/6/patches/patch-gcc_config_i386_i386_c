@@ -1,8 +1,9 @@
 Backport: https://gcc.gnu.org/git/?p=gcc.git;a=commitdiff;h=b44e9be23d38be8997ae64d7509ac22cb4c556d6
 
-$OpenBSD: patch-gcc_config_i386_i386_c,v 1.4 2017/06/07 23:34:02 brynet Exp $
---- gcc/config/i386/i386.c.orig	Wed Dec 14 10:44:07 2016
-+++ gcc/config/i386/i386.c	Wed Jun  7 16:10:33 2017
+$OpenBSD: patch-gcc_config_i386_i386_c,v 1.5 2017/07/19 09:23:16 pascal Exp $
+Index: gcc/config/i386/i386.c
+--- gcc/config/i386/i386.c.orig
++++ gcc/config/i386/i386.c
 @@ -2476,6 +2476,8 @@ struct ix86_frame
    HOST_WIDE_INT reg_save_offset;
    HOST_WIDE_INT sse_reg_save_offset;
@@ -29,22 +30,13 @@ $OpenBSD: patch-gcc_config_i386_i386_c,v 1.4 2017/06/07 23:34:02 brynet Exp $
    frame->nregs = ix86_nsaved_regs ();
    frame->nsseregs = ix86_nsaved_sseregs ();
  
-@@ -12839,6 +12842,9 @@ ix86_expand_prologue (void)
+@@ -12838,6 +12841,9 @@ ix86_expand_prologue (void)
+ 	  RTX_FRAME_RELATED_P (insn) = 1;
  	}
      }
- 
++
 +  if (warn_stack_larger_than && frame.local_size > stack_larger_than_size)
 +    warning (OPT_Wstack_larger_than_, "stack usage is %lld bytes", frame.local_size);
-+
+ 
    int_registers_saved = (frame.nregs == 0);
    sse_registers_saved = (frame.nsseregs == 0);
- 
-@@ -29372,7 +29378,7 @@ ix86_local_alignment (tree exp, machine_mode mode,
- 		  != TYPE_MAIN_VARIANT (va_list_type_node)))
- 	  && TYPE_SIZE (type)
- 	  && TREE_CODE (TYPE_SIZE (type)) == INTEGER_CST
--	  && wi::geu_p (TYPE_SIZE (type), 16)
-+	  && wi::geu_p (TYPE_SIZE (type), 128)
- 	  && align < 128)
- 	return 128;
-     }

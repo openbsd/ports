@@ -1,32 +1,31 @@
-# $OpenBSD: Makefile,v 1.8 2017/07/16 19:18:59 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2017/07/19 09:23:16 pascal Exp $
 
 ONLY_FOR_ARCHS = amd64 arm hppa i386 mips64 mips64el powerpc sparc64
 DPB_PROPERTIES = parallel
 
-V = 6.3.0
-REVISION = 0
+V = 6.4.0
 FULL_VERSION = $V
 FULL_PKGVERSION = $V
 
-ADASTRAP_LIBC-amd64 = 89.2
+ADASTRAP_LIBC-amd64 = 89.5
 ADASTRAP_LIBM-amd64 = 10.0
 ADASTRAP-amd64 = adastrap-amd64-$V-0.tar.xz
 ADASTRAP_LIBC-arm = 88.0
 ADASTRAP_LIBM-arm = 9.0
 ADASTRAP-arm = adastrap-arm-4.9.4-0.tar.xz
-ADASTRAP_LIBC-hppa = 89.2
+ADASTRAP_LIBC-hppa = 89.5
 ADASTRAP_LIBM-hppa = 10.0
 ADASTRAP-hppa = adastrap-hppa-$V-0.tar.xz
-ADASTRAP_LIBC-i386 = 89.2
+ADASTRAP_LIBC-i386 = 89.5
 ADASTRAP_LIBM-i386 = 10.0
 ADASTRAP-i386 = adastrap-i386-$V-0.tar.xz
-ADASTRAP_LIBC-mips64 = 89.2
+ADASTRAP_LIBC-mips64 = 89.5
 ADASTRAP_LIBM-mips64 = 10.0
 ADASTRAP-mips64 = adastrap-mips64-$V-0.tar.xz
-ADASTRAP_LIBC-powerpc = 89.2
+ADASTRAP_LIBC-powerpc = 89.5
 ADASTRAP_LIBM-powerpc = 10.0
 ADASTRAP-powerpc = adastrap-powerpc-$V-0.tar.xz
-ADASTRAP_LIBC-sparc64 = 89.2
+ADASTRAP_LIBC-sparc64 = 89.6
 ADASTRAP_LIBM-sparc64 = 10.0
 ADASTRAP-sparc64 = adastrap-sparc64-$V-0.tar.xz
 
@@ -67,13 +66,13 @@ MAINTAINER =	Pascal Stumpf <pascal@stumpf.co>
 .include <bsd.port.arch.mk>
 
 DISTNAME =   	gcc-${FULL_VERSION}
-DISTFILES =	${DISTNAME}.tar.bz2
+DISTFILES =	${DISTNAME}.tar.xz
 # there's no ecj-4.9.jar
 ECJ =		ecj-4.5.jar
 SUPDISTFILES =	${ADASTRAP-amd64}:0 ${ADASTRAP-arm}:0 ${ADASTRAP-hppa}:0 \
 		${ADASTRAP-i386}:0 ${ADASTRAP-mips64}:0 ${ADASTRAP-powerpc}:0 \
 		${ADASTRAP-sparc64}:0 ${ECJ}:1
-EXTRACT_ONLY =	${DISTNAME}.tar.bz2
+EXTRACT_ONLY =	${DISTNAME}.tar.xz
 
 BUILD_DEPENDS +=	devel/bison \
 			devel/libexecinfo
