@@ -1,0 +1,17 @@
+$OpenBSD: patch-plugins-root_check_dhcp_c,v 1.1 2017/07/19 12:14:29 zhuk Exp $
+Fix stack smashing.
+
+Upstream merge request:
+https://github.com/monitoring-plugins/monitoring-plugins/pull/1500
+--- plugins-root/check_dhcp.c.orig	Wed Jul 19 12:53:55 2017
++++ plugins-root/check_dhcp.c	Wed Jul 19 13:46:40 2017
+@@ -323,7 +323,8 @@ int get_hardware_address(int sock,char *interface_name
+ #elif defined(__bsd__)
+ 						/* King 2004	see ACKNOWLEDGEMENTS */
+ 
+-        int                     mib[6], len;
++        int                     mib[6];
++        size_t                  len;
+         char                    *buf;
+         unsigned char           *ptr;
+         struct if_msghdr        *ifm;
