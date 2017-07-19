@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.147 2017/07/18 23:52:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.148 2017/07/19 13:44:20 espie Exp $
 
 # XXX: Remember to bump MODCLANG_VERSION in lang/clang/clang.port.mk when
 # updating this port.
@@ -38,21 +38,19 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB =	c m pthread z
 
 MODULES =	devel/cmake \
-		lang/python
+		lang/python \
+		gcc4
 
-COMPILER =	gcc4
-
-LLVM_GCC4_ARCHS =	amd64 arm i386 powerpc mips64 mips64el sparc64
+MODGCC4_LANGS = c c++
+MODGCC4_ARCH =	*
 
 TEST_DEPENDS =		devel/dejagnu \
 			shells/bash
 BUILD_DEPENDS +=	textproc/py-sphinx
 RUN_DEPENDS +=		devel/gtest
 
-.if ${MACHINE_ARCH:M${LLVM_GCC4_ARCHS}}
 TEST_DEPENDS +=		lang/gcc/${MODGCC4_VERSION},-c++
 RUN_DEPENDS +=		lang/gcc/${MODGCC4_VERSION},-c++
-.endif
 
 # clang python module loads libclang.so dynamically with cdll.LoadLibrary()
 WANTLIB-python =	clang
