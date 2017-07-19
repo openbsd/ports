@@ -1,23 +1,22 @@
-# $OpenBSD: Makefile,v 1.10 2017/06/01 12:06:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2017/07/19 22:16:30 juanfra Exp $
 
 COMMENT =		zstandard fast real-time compression algorithm
 
 GH_ACCOUNT =		facebook
 GH_PROJECT =		zstd
-GH_TAGNAME =		v1.2.0
+GH_TAGNAME =		v1.3.0
 
 CATEGORIES =		archivers
 
 HOMEPAGE =		https://facebook.github.io/zstd/
-
-MAINTAINER =		Juan Francisco Cantero Hurtado <juanfra@openbsd.org>
 
 # BSD 3 clauses. zstd doesn't use known patented code or algorithms, however
 # the project includes an additional patent grant in the file PATENTS.
 # https://github.com/facebook/zstd/issues/335
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		c pthread z
+WANTLIB =		c lzma pthread z
+LIB_DEPENDS =		archivers/xz
 
 COMPILER =		gcc
 COMPILER_LANGS =	c
