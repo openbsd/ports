@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-es,v 1.5 2016/01/20 16:19:25 sthen Exp $
+@comment $OpenBSD: PLIST-es,v 1.6 2017/07/19 15:07:38 sthen Exp $
 @option no-default-conflict
 @conflict asterisk-core-sounds-es-${MODAS_CODEC}-*
 share/asterisk/
@@ -366,6 +366,7 @@ ${MODAS_INST}/phonetic/w_p.${MODAS_CODEC}
 ${MODAS_INST}/phonetic/x_p.${MODAS_CODEC}
 ${MODAS_INST}/phonetic/y_p.${MODAS_CODEC}
 ${MODAS_INST}/phonetic/z_p.${MODAS_CODEC}
+${MODAS_INST}/please-try-again.${MODAS_CODEC}
 ${MODAS_INST}/priv-callee-options.${MODAS_CODEC}
 ${MODAS_INST}/priv-callpending.${MODAS_CODEC}
 ${MODAS_INST}/priv-introsaved.${MODAS_CODEC}

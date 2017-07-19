@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-en_GB,v 1.4 2016/01/20 16:19:25 sthen Exp $
+@comment $OpenBSD: PLIST-en_GB,v 1.5 2017/07/19 15:07:38 sthen Exp $
 @option no-default-conflict
 @conflict asterisk-core-sounds-en_GB-${MODAS_CODEC}-*
 @conflict asterisk-extra-sounds-en_GB-${MODAS_CODEC}-<1.5
@@ -76,6 +76,8 @@ ${MODAS_INST}/confbridge-begin-glorious-a.${MODAS_CODEC}
 ${MODAS_INST}/confbridge-begin-glorious-b.${MODAS_CODEC}
 ${MODAS_INST}/confbridge-begin-glorious-c.${MODAS_CODEC}
 ${MODAS_INST}/confbridge-begin-leader.${MODAS_CODEC}
+${MODAS_INST}/confbridge-binaural-off.${MODAS_CODEC}
+${MODAS_INST}/confbridge-binaural-on.${MODAS_CODEC}
 ${MODAS_INST}/confbridge-conf-begin.${MODAS_CODEC}
 ${MODAS_INST}/confbridge-conf-end.${MODAS_CODEC}
 ${MODAS_INST}/confbridge-dec-list-vol-in.${MODAS_CODEC}
@@ -346,6 +348,7 @@ ${MODAS_INST}/letters/z.${MODAS_CODEC}
 ${MODAS_INST}/letters/zed.${MODAS_CODEC}
 ${MODAS_INST}/location.${MODAS_CODEC}
 ${MODAS_INST}/lowercase.${MODAS_CODEC}
+${MODAS_INST}/minute.${MODAS_CODEC}
 ${MODAS_INST}/minutes.${MODAS_CODEC}
 ${MODAS_INST}/num-was-successfully.${MODAS_CODEC}
 ${MODAS_INST}/number-not-answering.${MODAS_CODEC}
@@ -411,6 +414,7 @@ ${MODAS_INST}/queue-thereare.${MODAS_CODEC}
 ${MODAS_INST}/queue-youarenext.${MODAS_CODEC}
 ${MODAS_INST}/removed.${MODAS_CODEC}
 ${MODAS_INST}/screen-callee-options.${MODAS_CODEC}
+${MODAS_INST}/second.${MODAS_CODEC}
 ${MODAS_INST}/seconds.${MODAS_CODEC}
 ${MODAS_INST}/silence/
 ${MODAS_INST}/silence/1.${MODAS_CODEC}
