@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.148 2017/07/19 13:44:20 espie Exp $
+# $OpenBSD: Makefile,v 1.149 2017/07/19 17:15:38 sthen Exp $
 
 # XXX: Remember to bump MODCLANG_VERSION in lang/clang/clang.port.mk when
 # updating this port.
@@ -42,7 +42,7 @@ MODULES =	devel/cmake \
 		gcc4
 
 MODGCC4_LANGS = c c++
-MODGCC4_ARCH =	*
+MODGCC4_ARCHS =	*
 
 TEST_DEPENDS =		devel/dejagnu \
 			shells/bash
