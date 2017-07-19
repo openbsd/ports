@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-lib-depends,v 1.41 2017/07/19 14:16:13 espie Exp $
+# $OpenBSD: check-lib-depends,v 1.42 2017/07/19 14:17:20 espie Exp $
 # Copyright (c) 2004-2010 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -594,7 +594,7 @@ sub analyze
 		my $v = $has_libs->{$k};
 		next if $v == 2;
 		my $l = $k;
-		$l =~ s/\.\d+//;
+		$l =~ s/\.\d+$//;
 		next if defined $state->{cant_be_extra}{$l};
 		$extra->{$k} = 1;
 	}
