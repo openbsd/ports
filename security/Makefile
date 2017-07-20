@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.459 2017/07/11 20:50:27 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.460 2017/07/20 18:35:17 rsadowski Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -290,6 +290,7 @@
      SUBDIR += py-service_identity
      SUBDIR += py-service_identity,python3
      SUBDIR += qca
+     SUBDIR += qca-qt5
      SUBDIR += qoauth
      SUBDIR += qtkeychain
      SUBDIR += qtkeychain,qt5
