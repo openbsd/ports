@@ -1,0 +1,2 @@
+Test::Deep::JSON provides json($expected) function to expect that target can be
+parsed as a JSON string and matches (by cmp_deeply) with $expected.
