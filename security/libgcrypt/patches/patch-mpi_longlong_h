@@ -1,6 +1,6 @@
-$OpenBSD: patch-mpi_longlong_h,v 1.8 2016/06/15 21:21:21 ajacoutot Exp $
+$OpenBSD: patch-mpi_longlong_h,v 1.9 2017/07/20 06:16:00 ajacoutot Exp $
 
-Fix build on sparc.
+Fix build on alpha.
 
 --- mpi/longlong.h.orig	Wed Jun  8 18:18:15 2016
 +++ mpi/longlong.h	Wed Jun 15 23:15:28 2016
@@ -20,12 +20,3 @@ Fix build on sparc.
  #endif /* __alpha */
  
  /***************************************
-@@ -1293,7 +1295,7 @@ typedef unsigned int UTItype __attribute__ ((mode (TI)
- 	     "rJ" ((USItype)(al)),                                      \
- 	     "rI" ((USItype)(bl))                                       \
- 	   __CLOBBER_CC)
--# if defined (__sparc_v8__) || defined(__sparcv8)
-+# if defined (__sparc_v8__) || defined(__sparcv8) || defined (__sparc__)
- /* Don't match immediate range because, 1) it is not often useful,
-    2) the 'I' flag thinks of the range as a 13 bit signed interval,
-    while we want to match a 13 bit interval, sign extended to 32 bits,
