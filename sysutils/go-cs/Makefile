@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2017/07/12 07:54:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2017/07/20 09:29:04 ajacoutot Exp $
 
 COMMENT=		concurrent ssh client
 
-GH_TAGNAME=		v0.8
+GH_TAGNAME=		v0.9
 GH_ACCOUNT=		akosela
 GH_PROJECT=		go-cs
 
