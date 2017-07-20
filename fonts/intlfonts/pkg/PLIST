@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/03/31 09:45:10 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2017/07/20 21:59:37 rsadowski Exp $
 @pkgpath japanese/intlfonts
 share/fonts/
 @fontdir share/fonts/ja/
@@ -11,9 +11,9 @@ share/fonts/ja/j78-16.pcf.gz
 share/fonts/ja/j83-18.pcf.gz
 share/fonts/ja/j83-18b.pcf.gz
 share/fonts/ja/j83-18i.pcf.gz
-share/fonts/ja/j83-32.pcf.gz
-share/fonts/ja/j83-48.pcf.gz
 share/fonts/ja/j90-16.pcf.gz
+share/fonts/ja/jiskan32.pcf.gz
+share/fonts/ja/jiskan48.pcf.gz
 share/fonts/ja/jksp16.pcf.gz
 share/fonts/ja/jksp24.pcf.gz
 share/fonts/ja/jksp40.pcf.gz
