@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1360 2017/07/19 14:16:13 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1361 2017/07/20 07:31:48 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -750,7 +750,12 @@ BZIP2 ?= bzip2
 # MODULES for compilers (gcc4.port.mk, clang.port.mk) also append to this,
 # used to write wrappers to WRKDIR/bin which is at the head of the PATH.
 .if ${PROPERTIES:Mclang}
-COMPILER_LINKS += clang /usr/bin/clang clang++ /usr/bin/clang++ 
+.  if !${COMPILER_LINKS:Mclang}
+COMPILER_LINKS += clang /usr/bin/clang 
+.  endif
+.  if !${COMPILER_LINKS:Mclang++}
+COMPILER_LINKS += clang++ /usr/bin/clang++ 
+.  endif
 .endif
 .if ! ${COMPILER_LINKS:Mcc}
 .  if ${CC} == cc
