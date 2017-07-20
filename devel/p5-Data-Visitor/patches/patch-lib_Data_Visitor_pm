@@ -1,0 +1,17 @@
+$OpenBSD: patch-lib_Data_Visitor_pm,v 1.1 2017/07/20 13:54:35 bluhm Exp $
+
+Data::Alias is broken with Perl 5.24.1, do not use it.
+https://rt.cpan.org/Public/Bug/Display.html?id=118854
+
+Index: lib/Data/Visitor.pm
+--- lib/Data/Visitor.pm.orig
++++ lib/Data/Visitor.pm
+@@ -22,7 +22,7 @@ use namespace::clean -except => 'meta';
+ # the double not makes this no longer undef, so exempt from useless constant warnings in older perls
+ use constant DEBUG => not not our $DEBUG || $ENV{DATA_VISITOR_DEBUG};
+ 
+-use constant HAS_DATA_ALIAS => load_optional_class('Data::Alias');
++use constant HAS_DATA_ALIAS => 0;
+ 
+ has tied_as_objects => (
+ 	isa => "Bool",

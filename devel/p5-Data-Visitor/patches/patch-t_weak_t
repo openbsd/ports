@@ -1,0 +1,14 @@
+$OpenBSD: patch-t_weak_t,v 1.1 2017/07/20 13:54:35 bluhm Exp $
+
+Index: t/weak.t
+--- t/weak.t.orig
++++ t/weak.t
+@@ -3,7 +3,7 @@
+ use strict;
+ use warnings;
+ 
+-use Test::More;
++use Test::More skip_all => 'Data::Alias is broken';
+ 
+ use Test::Requires 'Data::Alias';
+ 

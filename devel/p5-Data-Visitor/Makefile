@@ -1,23 +1,22 @@
-# $OpenBSD: Makefile,v 1.21 2016/03/20 19:56:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2017/07/20 13:54:35 bluhm Exp $
 
 COMMENT=	visitor-style traversal of Perl data structures
 
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME=	Data-Visitor-0.27
+DISTNAME=	Data-Visitor-0.30
 CATEGORIES=	devel
-REVISION=	0
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
 
-RUN_DEPENDS=	devel/p5-Data-Alias \
+RUN_DEPENDS=	devel/p5-Class-Load>=0.06 \
 		devel/p5-Moose>=0.89 \
 		devel/p5-Task-Weaken \
-		devel/p5-Tie-ToObject \
-		devel/p5-namespace-clean
+		devel/p5-Tie-ToObject>=0.01 \
+		devel/p5-namespace-clean>=0.19
 
-TEST_DEPENDS=devel/p5-Test-MockObject>=1.04 \
-		devel/p5-Test-use-ok
+TEST_DEPENDS=	devel/p5-Test-Requires \
+		devel/p5-Test-Script>=1.05
 
 .include <bsd.port.mk>
