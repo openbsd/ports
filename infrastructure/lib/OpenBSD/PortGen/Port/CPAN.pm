@@ -1,4 +1,4 @@
-# $OpenBSD: CPAN.pm,v 1.3 2017/05/09 13:37:08 tsg Exp $
+# $OpenBSD: CPAN.pm,v 1.4 2017/07/20 20:42:41 sthen Exp $
 #
 # Copyright (c) 2015 Giannis Tsaraias <tsg@openbsd.org>
 #
@@ -34,7 +34,7 @@ sub ecosystem_prefix
 sub base_url
 {
 	my $self = shift;
-	return 'https://api.metacpan.org/v0/';
+	return 'https://fastapi.metacpan.org/v1/';
 }
 
 sub get_dist_info
