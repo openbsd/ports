@@ -1,0 +1,5 @@
+This is a Test::Deep plugin that provides the sub is_type to indicate
+that the data being tested must validate against the passed type.
+This is an actual type object, not a string name -- for example
+something provided via MooseX::Types, or a plain old coderef that
+returns a bool (such as what might be used in a Moo type constraint)
