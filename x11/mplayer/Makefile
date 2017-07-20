@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.276 2017/07/16 19:19:05 espie Exp $
+# $OpenBSD: Makefile,v 1.277 2017/07/20 21:47:23 espie Exp $
 
 COMMENT=	movie player supporting many formats
 
@@ -22,12 +22,13 @@ WANTLIB=	EGL GL SDL X11 Xext Xinerama Xss Xv Xxf86dga Xxf86vm ass \
 		avcodec avformat avutil bluray bs2b bz2 c cdda_interface \
 		cdda_paranoia crypto dv dvdnav dvdread enca fontconfig \
 		freetype fribidi gif iconv jpeg m mng mp3lame ncurses png \
-		postproc pthread sndio ssl ${COMPILER_LIBCXX} swscale swresample util \
-		x264 xvidcore z
+		postproc pthread sndio ssl ${COMPILER_LIBCXX} swscale \
+		swresample util x264 xvidcore z
 
-MODULES+=	lang/clang
 
+COMPILER =	clang
 MODCLANG_ARCHS=	amd64 i386
+COMPILER_LANGS =	c
 
 LIB_DEPENDS=	archivers/bzip2 \
 		audio/cdparanoia \
