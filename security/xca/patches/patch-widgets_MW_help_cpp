@@ -1,0 +1,16 @@
+$OpenBSD: patch-widgets_MW_help_cpp,v 1.1 2017/07/20 07:40:55 espie Exp $
+
+Index: widgets/MW_help.cpp
+--- widgets/MW_help.cpp.orig
++++ widgets/MW_help.cpp
+@@ -67,8 +67,8 @@ void MainWindow::about()
+ 	{
+ 		version = QString("<table border=0 width=500><tr>"
+ 				"<td>Compile time:</td>"
+-				"<td>"OPENSSL_VERSION_TEXT"</td>"
+-				"<td>QT version: "QT_VERSION_STR"</td>"
++				"<td>" OPENSSL_VERSION_TEXT "</td>"
++				"<td>QT version: " QT_VERSION_STR "</td>"
+ 				"</tr><tr>"
+ 				"<td>Run time:</td>"
+ 				"<td>%1</td>"
