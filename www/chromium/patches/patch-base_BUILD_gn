@@ -1,7 +1,16 @@
-$OpenBSD: patch-base_BUILD_gn,v 1.8 2017/06/25 21:53:56 robert Exp $
+$OpenBSD: patch-base_BUILD_gn,v 1.9 2017/07/20 19:36:44 robert Exp $
 Index: base/BUILD.gn
 --- base/BUILD.gn.orig
 +++ base/BUILD.gn
+@@ -1128,7 +1128,7 @@ component("base") {
+   ]
+ 
+   # Needed for <atomic> if using newer C++ library than sysroot
+-  if (!use_sysroot && (is_android || (is_linux && !is_chromecast))) {
++  if (!use_sysroot && (is_android || (is_linux && !is_chromecast)) && !is_clang) {
+     libs = [ "atomic" ]
+   }
+ 
 @@ -1510,6 +1510,27 @@ component("base") {
      }
    }

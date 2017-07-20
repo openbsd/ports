@@ -1,4 +1,4 @@
-$OpenBSD: patch-build_toolchain_gcc_toolchain_gni,v 1.6 2017/06/25 21:53:56 robert Exp $
+$OpenBSD: patch-build_toolchain_gcc_toolchain_gni,v 1.7 2017/07/20 19:36:44 robert Exp $
 Index: build/toolchain/gcc_toolchain.gni
 --- build/toolchain/gcc_toolchain.gni.orig
 +++ build/toolchain/gcc_toolchain.gni
@@ -14,21 +14,20 @@ Index: build/toolchain/gcc_toolchain.gni
  # This template defines a toolchain for something that works like gcc
  # (including clang).
  #
-@@ -317,7 +322,7 @@ template("gcc_toolchain") {
-       # POSIX-like toolchains such as NaCl on Windows).
-       ar_wrapper =
-           rebase_path("//build/toolchain/gcc_ar_wrapper.py", root_build_dir)
--      command = "$python_path \"$ar_wrapper\"$whitelist_flag --output={{output}} --ar=\"$ar\" {{arflags}} rcsD @\"$rspfile\""
-+      command = "$python_path \"$ar_wrapper\"$whitelist_flag --output={{output}} --ar=\"$ar\" {{arflags}} rcs @\"$rspfile\""
-       description = "AR {{output}}"
-       rspfile_content = "{{inputs}}"
-       outputs = [
-@@ -548,7 +553,7 @@ template("clang_toolchain") {
+@@ -548,12 +553,12 @@ template("clang_toolchain") {
    }
  
    gcc_toolchain(target_name) {
 -    prefix = rebase_path("$clang_base_path/bin", root_build_dir)
-+    prefix = "/usr/local/bin"
-     cc = "$prefix/clang"
-     cxx = "$prefix/clang++"
+-    cc = "$prefix/clang"
+-    cxx = "$prefix/clang++"
++    prefix = "/usr/bin"
++    cc = "cc"
++    cxx = "c++"
      ld = cxx
+     readelf = "${toolprefix}readelf"
+-    ar = "${prefix}/llvm-ar"
++    ar = "${prefix}/ar"
+     nm = "${toolprefix}nm"
+ 
+     forward_variables_from(invoker,

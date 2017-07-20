@@ -1,0 +1,14 @@
+$OpenBSD: patch-third_party_pdfium_third_party_base_logging_h,v 1.1 2017/07/20 19:36:44 robert Exp $
+
+Index: third_party/pdfium/third_party/base/logging.h
+--- third_party/pdfium/third_party/base/logging.h.orig
++++ third_party/pdfium/third_party/base/logging.h
+@@ -10,7 +10,7 @@
+ 
+ #ifndef _WIN32
+ #define NULL_DEREF_IF_POSSIBLE \
+-  *(reinterpret_cast<volatile char*>(NULL) + 42) = 0x42;
++  *(static_cast<volatile char*>(nullptr) + 42) = 0x42;
+ #else
+ #define NULL_DEREF_IF_POSSIBLE
+ #endif

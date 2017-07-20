@@ -1,0 +1,13 @@
+$OpenBSD: clang-third_party_WebKit_Source_platform_BUILD_gn,v 1.1 2017/07/20 19:36:44 robert Exp $
+
+Index: third_party/WebKit/Source/platform/BUILD.gn
+--- third_party/WebKit/Source/platform/BUILD.gn.orig
++++ third_party/WebKit/Source/platform/BUILD.gn
+@@ -172,6 +172,7 @@ executable("character_data_generator") {
+     "//build/win:default_exe_manifest",
+     "//third_party/icu",
+   ]
++  libs = [ "c++abi" ]
+ }
+ 
+ # This isn't strictly necessary since we can just add the deps to "platform",
