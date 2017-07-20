@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.8 2017/05/27 19:57:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2017/07/20 23:33:46 awolk Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64 sparc64
 
 COMMENT=	Yamagi Quake II
 N=		yquake2
-V=		6.00
+V=		7.01
 PKGNAME=	${N}-${V}
 DISTNAME=	quake2-${V}
-REVISION=	2
 CATEGORIES=	games
 
 HOMEPAGE=	http://www.yamagi.org/quake2/
@@ -36,5 +35,10 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/${N}/baseq2
 	${INSTALL_PROGRAM} ${WRKBUILD}/release/baseq2/game.so \
 	    ${PREFIX}/share/${N}/baseq2/
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/${N}
+	${INSTALL_PROGRAM} ${WRKBUILD}/release/ref_gl1.so \
+	    ${PREFIX}/lib/${N}/
+	${INSTALL_PROGRAM} ${WRKBUILD}/release/ref_gl3.so \
+	    ${PREFIX}/lib/${N}/
 
 .include <bsd.port.mk>

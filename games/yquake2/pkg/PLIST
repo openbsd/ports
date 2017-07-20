@@ -1,8 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/06/28 20:50:22 awolk Exp $
+@comment $OpenBSD: PLIST,v 1.3 2017/07/20 23:33:46 awolk Exp $
 @newgroup _yquake2:779
 @newuser _yquake2:779:_yquake2:daemon:Yamagi Quake II Server:/var/yquake2:/sbin/nologin
 @bin bin/q2ded
 @bin bin/quake2
+lib/yquake2/
+lib/yquake2/ref_gl1.so
+lib/yquake2/ref_gl3.so
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/yquake2/
 share/yquake2/baseq2/

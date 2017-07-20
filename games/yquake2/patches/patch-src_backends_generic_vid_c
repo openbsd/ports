@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_backends_generic_vid_c,v 1.1 2017/07/20 23:33:46 awolk Exp $
+
+Index: src/backends/generic/vid.c
+--- src/backends/generic/vid.c.orig
++++ src/backends/generic/vid.c
+@@ -342,7 +342,7 @@ VID_LoadRefresh(void)
+ 	Com_Printf("----- refresher initialization -----\n");
+ 
+ 	snprintf(reflib_name, sizeof(reflib_name), "ref_%s.%s", vid_renderer->string, lib_ext);
+-	snprintf(reflib_path, sizeof(reflib_path), "%s%s", Sys_GetBinaryDir(), reflib_name);
++	snprintf(reflib_path, sizeof(reflib_path), "/usr/local/lib/yquake2/%s", reflib_name);
+ 
+ 	Com_Printf("LoadLibrary(%s)\n", reflib_name);
+ 	GetRefAPI = Sys_LoadLibrary(reflib_path, "GetRefAPI", &reflib_handle);
