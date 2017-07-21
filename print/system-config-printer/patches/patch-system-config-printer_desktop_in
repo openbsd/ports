@@ -1,0 +1,13 @@
+$OpenBSD: patch-system-config-printer_desktop_in,v 1.6 2017/07/21 13:41:45 ajacoutot Exp $
+
+GNOME already comes with a CUPS configuration tool in gnome-control-center.
+
+Index: system-config-printer.desktop.in
+--- system-config-printer.desktop.in.orig
++++ system-config-printer.desktop.in
+@@ -5,4 +5,5 @@ Exec=system-config-printer
+ Terminal=false
+ Type=Application
+ Icon=printer
++NotShowIn=GNOME;
+ StartupNotify=true

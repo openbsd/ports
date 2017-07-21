@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.46 2017/07/14 16:12:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.47 2017/07/21 13:41:45 ajacoutot Exp $
 
 COMMENT=		printer (CUPS) administration tool
 
 GH_ACCOUNT=		zdohnal
 GH_PROJECT=		system-config-printer
 GH_TAGNAME=		v1.5.9
+REVISION=		0
 
 CATEGORIES=		print sysutils
 
@@ -39,8 +40,9 @@ RUN_DEPENDS +=		devel/libnotify \
 			x11/gnome/libgnome-keyring \
 			x11/gtk+3
 
-# package is only useful if cups is installed
-RUN_DEPENDS +=		print/cups
+# only useful if cups is installed but don't enforce the dependency because
+# gnome-control-center requires system-config-printer and we may not want cups
+#RUN_DEPENDS +=		print/cups
 
 USE_GMAKE=		Yes
 
