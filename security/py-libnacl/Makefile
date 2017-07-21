@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2017/06/20 07:29:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2017/07/21 09:06:31 ajacoutot Exp $
 
 COMMENT=		python bindings for libsodium/tweetnacl based on ctypes
 
-MODPY_EGG_VERSION=	1.5.1
+MODPY_EGG_VERSION=	1.5.2
 DISTNAME=		libnacl-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 
