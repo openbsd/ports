@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.331 2017/07/20 19:36:44 robert Exp $
+# $OpenBSD: Makefile,v 1.332 2017/07/21 10:59:57 robert Exp $
+
+.include <bsd.port.arch.mk>
 
 USE_WXNEEDED=		Yes
 
@@ -36,6 +38,10 @@ MODULES=	lang/python
 COMPILER =	clang gcc
 
 MODPY_RUNDEP=	No
+
+.if ${PROPERTIES:Mclang}    
+PATCH_LIST=	patch-* clang-*                            
+.endif                      
 
 PATCHORIG=	.orig.port
 
