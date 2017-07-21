@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2016/03/19 17:51:34 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.16 2017/07/21 08:55:05 ajacoutot Exp $
 @conflict consolekit-*
 @extra /var/log/ConsoleKit/history
 @bin bin/ck-history
@@ -7,6 +7,7 @@
 include/ConsoleKit/
 include/ConsoleKit/ck-connector/
 include/ConsoleKit/ck-connector/ck-connector.h
+include/ConsoleKit/libconsolekit.h
 lib/ConsoleKit/
 lib/ConsoleKit/run-seat.d/
 lib/ConsoleKit/run-session.d/
@@ -16,13 +17,19 @@ lib/ConsoleKit/scripts/ck-system-hybridsleep
 lib/ConsoleKit/scripts/ck-system-restart
 lib/ConsoleKit/scripts/ck-system-stop
 lib/ConsoleKit/scripts/ck-system-suspend
+lib/girepository-1.0/libconsolekit-1.0.typelib
 lib/libck-connector.a
 lib/libck-connector.la
 @lib lib/libck-connector.so.${LIBck-connector_VERSION}
+lib/libconsolekit.a
+lib/libconsolekit.la
+@lib lib/libconsolekit.so.${LIBconsolekit_VERSION}
 lib/pkgconfig/ck-connector.pc
+lib/pkgconfig/libconsolekit.pc
 @bin libexec/ck-collect-session-info
 @bin libexec/ck-get-x11-display-device
 @bin libexec/ck-get-x11-server-pid
+@bin libexec/ck-remove-directory
 @man man/man1/ck-history.1
 @man man/man1/ck-launch-session.1
 @man man/man1/ck-list-sessions.1
@@ -52,6 +59,7 @@ share/examples/consolekit/dbus-1/
 @sample ${SYSCONFDIR}/dbus-1/system.d/
 share/examples/consolekit/dbus-1/ConsoleKit.conf
 @sample ${SYSCONFDIR}/dbus-1/system.d/ConsoleKit.conf
+share/gir-1.0/libconsolekit-1.0.gir
 share/locale/bg/LC_MESSAGES/ConsoleKit2.mo
 share/locale/es/LC_MESSAGES/ConsoleKit2.mo
 share/locale/es_419/
