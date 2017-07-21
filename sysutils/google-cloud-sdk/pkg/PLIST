@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.68 2017/07/13 07:48:11 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.69 2017/07/21 09:12:52 ajacoutot Exp $
 google-cloud-sdk/
 google-cloud-sdk/VERSION
 google-cloud-sdk/bin/
@@ -18,8 +18,6 @@ google-cloud-sdk/bin/gcloud
 google-cloud-sdk/bin/git-credential-gcloud.sh
 google-cloud-sdk/bin/gsutil
 google-cloud-sdk/lib/
-google-cloud-sdk/lib/__init__.py
-google-cloud-sdk/lib/__init__.pyc
 google-cloud-sdk/lib/gcloud.py
 google-cloud-sdk/lib/gcloud.pyc
 google-cloud-sdk/lib/googlecloudsdk/
@@ -516,15 +514,11 @@ google-cloud-sdk/lib/googlecloudsdk/api_lib/ml/speech/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/ml/speech/__init__.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/ml/speech/exceptions.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/ml/speech/exceptions.pyc
-google-cloud-sdk/lib/googlecloudsdk/api_lib/ml/speech/operations.py
-google-cloud-sdk/lib/googlecloudsdk/api_lib/ml/speech/operations.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/ml/speech/speech_api_client.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/ml/speech/speech_api_client.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/ml/video/
 google-cloud-sdk/lib/googlecloudsdk/api_lib/ml/video/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/ml/video/__init__.pyc
-google-cloud-sdk/lib/googlecloudsdk/api_lib/ml/video/operations_poller.py
-google-cloud-sdk/lib/googlecloudsdk/api_lib/ml/video/operations_poller.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/ml/video/util.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/ml/video/util.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/ml/video/video_client.py
@@ -859,6 +853,8 @@ google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/images/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/images/__init__.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/images/flags.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/images/flags.pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/images/policy.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/images/policy.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/instance_groups/
 google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/instance_groups/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/instance_groups/__init__.pyc
@@ -1166,6 +1162,11 @@ google-cloud-sdk/lib/googlecloudsdk/command_lib/functions/deploy/util.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/functions/deploy/util.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/functions/flags.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/functions/flags.pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/genomics/
+google-cloud-sdk/lib/googlecloudsdk/command_lib/genomics/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/genomics/__init__.pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/genomics/completers.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/genomics/completers.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/iam/
 google-cloud-sdk/lib/googlecloudsdk/command_lib/iam/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/iam/__init__.pyc
@@ -1189,6 +1190,8 @@ google-cloud-sdk/lib/googlecloudsdk/command_lib/iot/util.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/kms/
 google-cloud-sdk/lib/googlecloudsdk/command_lib/kms/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/kms/__init__.pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/kms/completers.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/kms/completers.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/kms/flags.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/kms/flags.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/logs/
@@ -3285,6 +3288,11 @@ google-cloud-sdk/lib/surface/compute/instances/list.py
 google-cloud-sdk/lib/surface/compute/instances/list.pyc
 google-cloud-sdk/lib/surface/compute/instances/move.py
 google-cloud-sdk/lib/surface/compute/instances/move.pyc
+google-cloud-sdk/lib/surface/compute/instances/network_interfaces/
+google-cloud-sdk/lib/surface/compute/instances/network_interfaces/__init__.py
+google-cloud-sdk/lib/surface/compute/instances/network_interfaces/__init__.pyc
+google-cloud-sdk/lib/surface/compute/instances/network_interfaces/update.py
+google-cloud-sdk/lib/surface/compute/instances/network_interfaces/update.pyc
 google-cloud-sdk/lib/surface/compute/instances/remove_labels.py
 google-cloud-sdk/lib/surface/compute/instances/remove_labels.pyc
 google-cloud-sdk/lib/surface/compute/instances/remove_metadata.py
@@ -5327,8 +5335,6 @@ google-cloud-sdk/lib/surface/topic/resource_keys.pyc
 google-cloud-sdk/lib/surface/version.py
 google-cloud-sdk/lib/surface/version.pyc
 google-cloud-sdk/lib/third_party/
-google-cloud-sdk/lib/third_party/__init__.py
-google-cloud-sdk/lib/third_party/__init__.pyc
 google-cloud-sdk/lib/third_party/antlr3/
 google-cloud-sdk/lib/third_party/antlr3/LICENSE
 google-cloud-sdk/lib/third_party/antlr3/__init__.py
