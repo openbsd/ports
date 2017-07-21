@@ -1,9 +1,18 @@
-$OpenBSD: patch-src_network_ssl_qsslsocket_openssl_symbols_cpp,v 1.2 2017/07/17 08:34:37 zhuk Exp $
+$OpenBSD: patch-src_network_ssl_qsslsocket_openssl_symbols_cpp,v 1.3 2017/07/21 15:28:25 zhuk Exp $
 Unbreak build with LibreSSL.
 See also https://github.com/libressl-portable/openbsd/issues/33
 Index: src/network/ssl/qsslsocket_openssl_symbols.cpp
 --- src/network/ssl/qsslsocket_openssl_symbols.cpp.orig
 +++ src/network/ssl/qsslsocket_openssl_symbols.cpp
+@@ -151,7 +151,7 @@ DEFINEFUNC3(int, BIO_read, BIO *a, a, void *b, b, int 
+ DEFINEFUNC(BIO_METHOD *, BIO_s_mem, void, DUMMYARG, return 0, return)
+ DEFINEFUNC3(int, BIO_write, BIO *a, a, const void *b, b, int c, c, return -1, return)
+ DEFINEFUNC(int, BN_num_bits, const BIGNUM *a, a, return 0, return)
+-#if OPENSSL_VERSION_NUMBER >= 0x10100000L
++#if !defined(BN_is_word)
+ DEFINEFUNC2(int, BN_is_word, BIGNUM *a, a, BN_ULONG w, w, return 0, return)
+ #endif
+ DEFINEFUNC2(BN_ULONG, BN_mod_word, const BIGNUM *a, a, BN_ULONG w, w, return static_cast<BN_ULONG>(-1), return)
 @@ -461,6 +461,8 @@ DEFINEFUNC5(int, PKCS12_parse, PKCS12 *p12, p12, const
  DEFINEFUNC2(PKCS12 *, d2i_PKCS12_bio, BIO *bio, bio, PKCS12 **pkcs12, pkcs12, return 0, return);
  DEFINEFUNC(void, PKCS12_free, PKCS12 *pkcs12, pkcs12, return, DUMMYARG)
@@ -13,12 +22,28 @@ Index: src/network/ssl/qsslsocket_openssl_symbols.cpp
  #define RESOLVEFUNC(func) \
      if (!(_q_##func = _q_PTR_##func(libs.first->resolve(#func)))     \
          && !(_q_##func = _q_PTR_##func(libs.second->resolve(#func)))) \
-@@ -1027,6 +1029,8 @@ bool q_resolveOpenSslSymbols()
-     RESOLVEFUNC(PKCS12_parse)
+@@ -790,7 +792,7 @@ bool q_resolveOpenSslSymbols()
+     RESOLVEFUNC(EC_GROUP_get_degree)
+ #endif
+     RESOLVEFUNC(BN_num_bits)
+-#if OPENSSL_VERSION_NUMBER >= 0x10100000L
++#if !defined(BN_is_word)
+     RESOLVEFUNC(BN_is_word)
+ #endif
+     RESOLVEFUNC(BN_mod_word)
+@@ -1028,12 +1030,13 @@ bool q_resolveOpenSslSymbols()
      RESOLVEFUNC(d2i_PKCS12_bio)
      RESOLVEFUNC(PKCS12_free)
-+
-+    RESOLVEFUNC(SSL_CTX_set1_groups)
  
++    RESOLVEFUNC(SSL_CTX_set1_groups)
++
      delete libs.first;
      delete libs.second;
+-    if (!_q_SSLeay || q_SSLeay() >= 0x10100000L) {
++    if (!_q_SSLeay) {
+         // OpenSSL 1.1 deprecated and removed SSLeay. We consider a failure to
+         // resolve this symbol as a failure to resolve symbols.
+-        // The right operand of '||' above ... a bit of paranoia.
+         qCWarning(lcSsl, "Incompatible version of OpenSSL");
+         return false;
+     }
