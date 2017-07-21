@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2017/01/11 08:43:00 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2017/07/21 09:02:13 ajacoutot Exp $
 bin/ioflo
 bin/ioflo2
 lib/python${MODPY_VERSION}/site-packages/ioflo/
@@ -153,12 +153,14 @@ lib/python${MODPY_VERSION}/site-packages/ioflo/aio/test/tls/
 lib/python${MODPY_VERSION}/site-packages/ioflo/aio/test/tls/certs/
 lib/python${MODPY_VERSION}/site-packages/ioflo/aio/test/tls/certs/client.pem
 lib/python${MODPY_VERSION}/site-packages/ioflo/aio/test/tls/certs/client_cert.pem
+lib/python${MODPY_VERSION}/site-packages/ioflo/aio/test/tls/certs/client_csr.pem
 lib/python${MODPY_VERSION}/site-packages/ioflo/aio/test/tls/certs/client_key.pem
 lib/python${MODPY_VERSION}/site-packages/ioflo/aio/test/tls/certs/localhost.crt
 lib/python${MODPY_VERSION}/site-packages/ioflo/aio/test/tls/certs/localhost.key
 lib/python${MODPY_VERSION}/site-packages/ioflo/aio/test/tls/certs/localhost.pem
 lib/python${MODPY_VERSION}/site-packages/ioflo/aio/test/tls/certs/server.pem
 lib/python${MODPY_VERSION}/site-packages/ioflo/aio/test/tls/certs/server_cert.pem
+lib/python${MODPY_VERSION}/site-packages/ioflo/aio/test/tls/certs/server_csr.pem
 lib/python${MODPY_VERSION}/site-packages/ioflo/aio/test/tls/certs/server_key.pem
 lib/python${MODPY_VERSION}/site-packages/ioflo/aio/test/tls/creating_certs.txt
 lib/python${MODPY_VERSION}/site-packages/ioflo/aio/udp/
