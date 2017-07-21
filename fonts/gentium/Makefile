@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2016/11/04 15:53:59 rpe Exp $
+# $OpenBSD: Makefile,v 1.4 2017/07/21 06:56:10 rsadowski Exp $
 
 TYPEFACE =		gentium
 V =			5.000
@@ -11,7 +11,7 @@ HOMEPAGE =		http://software.sil.org/gentium/
 # SIL OFL 1.1
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		http://software.sil.org/downloads/gentium/
+MASTER_SITES =		http://software.sil.org/downloads/r/gentium/
 
 MODULES =		font
 
