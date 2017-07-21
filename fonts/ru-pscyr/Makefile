@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2017/05/30 19:56:35 edd Exp $
+# $OpenBSD: Makefile,v 1.6 2017/07/21 06:57:46 rsadowski Exp $
 
 COMMENT=		cyrillic PostScript Type1 fonts to use with TeX
 
@@ -13,7 +13,8 @@ MAINTAINER=		Alexander Yurchenko <grange@openbsd.org>
 PERMIT_PACKAGE_CDROM=	may not sell
 PERMIT_PACKAGE_FTP=	Yes
 
-MASTER_SITES=		ftp://ftp.vsu.ru/pub/tex/font-packs/pscyr/
+MASTER_SITES=		http://tex.imm.uran.ru/texserver/fonts/pscyr/ \
+			ftp://ftp.vsu.ru/pub/tex/font-packs/pscyr/
 DISTFILES=		PSCyr-0.4c-patch2-tex.tar.gz \
 			PSCyr-0.4c-patch2-type1.tar.gz
 
