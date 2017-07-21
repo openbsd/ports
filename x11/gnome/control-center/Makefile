@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2017/07/16 19:20:57 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2017/07/21 13:24:55 ajacoutot Exp $
 
 # XXX change proxy settings without network-manager?
 
@@ -6,7 +6,7 @@ COMMENT=		GNOME control center
 
 GNOME_PROJECT=		gnome-control-center
 GNOME_VERSION=		3.24.2
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		x11
 
@@ -106,5 +106,7 @@ pre-configure:
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
 		autoreconf -fi
 ###
+
+	${SUBST_CMD} ${WRKSRC}/panels/printers/pp-host.c
 
 .include <bsd.port.mk>
