@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2017/04/20 08:44:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2017/07/22 12:51:48 ajacoutot Exp $
 
 COMMENT=		.NET language binding for the GTK+2 toolkit
 
 MAJOR=			12
-MINOR=			43
+MINOR=			45
 VERSION=		2.${MAJOR}.${MINOR}
 
 DISTNAME=		gtk-sharp-${VERSION}
