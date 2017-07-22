@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.17 2017/01/30 15:42:04 bluhm Exp $
+# $OpenBSD: Makefile,v 1.18 2017/07/22 17:45:38 ajacoutot Exp $
 
 COMMENT-main =		mother of Mail Transfer Agents
 COMMENT-libmilter =	mail filter support library for sendmail
 
-V=			8.15.2
+V=			8.16.0.21
 DISTNAME =		sendmail.${V}
 PKGNAME-main =		sendmail-${V}
 PKGNAME-libmilter =	libmilter-${V}
-REVISION-main =		2
 FULLPKGNAME-libmilter =	libmilter-${V}
 FULLPKGPATH-libmilter =	mail/sendmail,-libmilter
 
@@ -16,6 +15,8 @@ SHARED_LIBS =		milter	4.0
 CATEGORIES =		mail
 
 HOMEPAGE =		http://www.sendmail.org/
+
+MAINTAINER =		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # Sendmail License / BSD3 / BSD4 / Public Domain / CDDL (contrib/ directory)
 PERMIT_PACKAGE_CDROM =	Yes

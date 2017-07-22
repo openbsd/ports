@@ -1,10 +1,11 @@
-$OpenBSD: patch-cf_m4_proto_m4,v 1.1 2016/12/14 14:28:55 jca Exp $
+$OpenBSD: patch-cf_m4_proto_m4,v 1.2 2017/07/22 17:45:38 ajacoutot Exp $
 
 - net/uucp uses login _uucp
 
---- cf/m4/proto.m4.orig	Wed Dec 14 14:33:56 2016
-+++ cf/m4/proto.m4	Wed Dec 14 14:34:08 2016
-@@ -723,6 +723,7 @@ ifdef(`_USE_CT_FILE_', `', `#')Ft`'ifdef(`confCT_FILE'
+Index: cf/m4/proto.m4
+--- cf/m4/proto.m4.orig
++++ cf/m4/proto.m4
+@@ -733,6 +733,7 @@ ifdef(`_USE_CT_FILE_', `', `#')Ft`'ifdef(`confCT_FILE'
  Troot
  Tdaemon
  ifdef(`_NO_UUCP_', `dnl', `Tuucp')
