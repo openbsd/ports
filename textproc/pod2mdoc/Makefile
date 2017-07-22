@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.8 2016/01/11 09:35:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2017/07/22 20:33:19 bentley Exp $
 
 COMMENT =		convert POD data to mdoc input
 
 DISTNAME =		pod2mdoc-0.2
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		textproc
 
-HOMEPAGE =		http://mdocml.bsd.lv/pod2mdoc/
+HOMEPAGE =		http://mandoc.bsd.lv/pod2mdoc/
 
 MAINTAINER =		Anthony J. Bentley <anthony@anjbe.name>
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c util
 
-MASTER_SITES =		http://mdocml.bsd.lv/pod2mdoc/snapshots/
+MASTER_SITES =		http://mandoc.bsd.lv/pod2mdoc/snapshots/
 EXTRACT_SUFX =		.tgz
 
 MAKE_FLAGS =		CC="${CC}" \
