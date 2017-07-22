@@ -1,23 +1,26 @@
-$OpenBSD: patch-setup_py,v 1.3 2016/04/12 15:54:26 ajacoutot Exp $
---- setup.py.orig	Mon Mar 14 16:08:41 2016
-+++ setup.py	Tue Apr 12 17:50:50 2016
-@@ -20,13 +20,13 @@ def get_data_files():
-         (os.path.join('share', 'devedeng'), ['data/languages.lst']),
-         (os.path.join('share', 'devedeng', 'backgrounds'), glob('data/pixmaps/backgrounds/*')),
+$OpenBSD: patch-setup_py,v 1.4 2017/07/22 15:18:24 ajacoutot Exp $
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -22,7 +22,7 @@ def get_data_files():
+         (os.path.join('share', 'devedeng', 'backgrounds'),
+          glob('data/pixmaps/backgrounds/*')),
          (os.path.join('share', 'doc', 'devedeng', 'html'), glob('doc/*')),
--        (os.path.join('share','man','man1'), ['data/devede.1.gz'])
-+        (os.path.join('man','man1'), ['data/devede.1'])
+-        (os.path.join('share', 'man', 'man1'), ['data/devede.1.gz'])
++        (os.path.join('man', 'man1'), ['data/devede.1'])
      ]
  
      for lang_name in [f for f in os.listdir('locale')]:
-         mofile = os.path.join('locale', lang_name,'LC_MESSAGES','devedeng.mo')
-         # translations must be always in /usr/share because Gtk.builder only search there. If someone knows how to fix this...
--        target = os.path.join('/usr','share', 'locale', lang_name, 'LC_MESSAGES') # share/locale/fr/LC_MESSAGES/
-+        target = os.path.join('${PREFIX}','share', 'locale', lang_name, 'LC_MESSAGES') # share/locale/fr/LC_MESSAGES/
+@@ -31,7 +31,7 @@ def get_data_files():
+         # translations must be always in /usr/share because Gtk.builder only
+         # search there. If someone knows how to fix this...
+         # share/locale/fr/LC_MESSAGES/
+-        target = os.path.join('/usr', 'share', 'locale',
++        target = os.path.join('${PREFIX}', 'share', 'locale',
+                               lang_name, 'LC_MESSAGES')
          data_files.append((target, [mofile]))
  
-     return data_files
-@@ -53,11 +53,6 @@ def compile_translations():
+@@ -61,11 +61,6 @@ def compile_translations():
          pass
  
  compile_translations()
