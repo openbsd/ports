@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2016/08/26 11:57:38 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.4 2017/07/22 22:33:56 ajacoutot Exp $
 
 COMMENT=	Motif toolkit
 
-DISTNAME=	motif-2.3.6
+DISTNAME=	motif-2.3.7
 
-REVISION=	0
-
-SHARED_LIBS=	Mrm	4.1 \
-		Uil	5.0 \
-		Xm	6.1
+SHARED_LIBS +=  Xm                   6.1      # 4.4
+SHARED_LIBS +=  Mrm                  4.1      # 4.4
+SHARED_LIBS +=  Uil                  5.0      # 4.4
 
 CATEGORIES=	x11
 HOMEPAGE=	http://motif.ics.com/
