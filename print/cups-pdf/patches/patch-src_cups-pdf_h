@@ -1,24 +1,25 @@
-$OpenBSD: patch-src_cups-pdf_h,v 1.4 2012/04/11 17:29:50 ajacoutot Exp $
---- src/cups-pdf.h.orig	Tue Oct  4 18:45:10 2011
-+++ src/cups-pdf.h	Wed Apr 11 19:16:36 2012
-@@ -19,7 +19,7 @@
+$OpenBSD: patch-src_cups-pdf_h,v 1.5 2017/07/22 20:41:10 ajacoutot Exp $
+Index: src/cups-pdf.h
+--- src/cups-pdf.h.orig
++++ src/cups-pdf.h
+@@ -18,7 +18,7 @@
  /  they are reasonable for most systems.			     */
  
  /* location of the configuration file */
--#define CPCONFIG "/etc/cups/cups-pdf.conf"
-+#define CPCONFIG "${SYSCONFDIR}/cups/cups-pdf.conf"
+-#define CP_CONFIG_PATH "/etc/cups"
++#define CP_CONFIG_PATH "${SYSCONFDIR}/cups"
  
  
- 
-@@ -69,9 +69,9 @@ static struct {
- static void _set_defaults() {
-   snprintf(conf.anondirname,BUFSIZE,"%s","/var/spool/cups-pdf/ANONYMOUS");
-   snprintf(conf.anonuser,BUFSIZE,"%s","nobody");
--  snprintf(conf.ghostscript,BUFSIZE,"/usr/bin/gs");
-+  snprintf(conf.ghostscript,BUFSIZE,"${LOCALBASE}/bin/gs");
-   snprintf(conf.gscall,BUFSIZE,"%s","%s -q -dCompatibilityLevel=%s -dNOPAUSE -dBATCH -dSAFER -sDEVICE=pdfwrite -sOutputFile=\"%s\" -dAutoRotatePages=/PageByPage -dAutoFilterColorImages=false -dColorImageFilter=/FlateEncode -dPDFSETTINGS=/prepress -c .setpdfwrite -f %s");
--  snprintf(conf.grp,BUFSIZE,"%s","lp");
-+  snprintf(conf.grp,BUFSIZE,"%s","_cups");
-   snprintf(conf.gstmp,BUFSIZE,"%s","TMPDIR=/var/tmp");
-   snprintf(conf.log,BUFSIZE,"%s","/var/log/cups");
-   snprintf(conf.pdfver,BUFSIZE,"%s","1.4");
+ /* --- DO NOT EDIT BELOW THIS LINE --- */
+@@ -57,9 +57,9 @@ struct {
+ } configData[] = {
+   { "AnonDirName", SEC_CONF|SEC_PPD, { "/var/spool/cups-pdf/ANONYMOUS" } },
+   { "AnonUser", SEC_CONF|SEC_PPD, { "nobody" } },
+-  { "GhostScript", SEC_CONF|SEC_PPD, { "/usr/bin/gs" } },
++  { "GhostScript", SEC_CONF|SEC_PPD, { "${LOCALBASE}/bin/gs" } },
+   { "GSCall", SEC_CONF|SEC_PPD, { "%s -q -dCompatibilityLevel=%s -dNOPAUSE -dBATCH -dSAFER -sDEVICE=pdfwrite -sOutputFile=\"%s\" -dAutoRotatePages=/PageByPage -dAutoFilterColorImages=false -dColorImageFilter=/FlateEncode -dPDFSETTINGS=/prepress -c .setpdfwrite -f %s" } },
+-  { "Grp", SEC_CONF|SEC_PPD, { "lp" } },
++  { "Grp", SEC_CONF|SEC_PPD, { "_cups" } },
+   { "GSTmp", SEC_CONF|SEC_PPD, { "TMPDIR=/var/tmp" } },
+   { "Log", SEC_CONF|SEC_PPD, { "/var/log/cups" } },
+   { "PDFVer", SEC_CONF|SEC_PPD|SEC_LPOPT, { "1.4" } },

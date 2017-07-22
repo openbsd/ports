@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/11 11:37:53 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2017/07/22 20:41:10 ajacoutot Exp $
 
 COMMENT=		PDF backend for CUPS
 
-DISTNAME=		cups-pdf-2.6.1
+DISTNAME=		cups-pdf-3.0.1
 CATEGORIES=		print
-REVISION=		0
 
 HOMEPAGE=		http://www.cups-pdf.de/
 MASTER_SITES=		${HOMEPAGE}src/
@@ -13,14 +12,12 @@ DISTFILES=		${DISTNAME:S/pdf-/pdf_/}.tar.gz
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c
+WANTLIB += c cups
 
-RUN_DEPENDS=		print/ghostscript/gnu \
-			mail/p5-MIME-Lite \
-			mail/p5-MIME-tools
+RUN_DEPENDS=		print/ghostscript/gnu
 
 # package is only useful if cups is installed
-RUN_DEPENDS +=	print/cups
+RUN_DEPENDS +=		print/cups
 
 NO_TEST=		Yes
 
@@ -29,24 +26,21 @@ pre-configure:
 		${WRKSRC}/src/cups-pdf.h
 
 do-build:
-	cd ${WRKDIR} && \
-	${CC} ${CFLAGS} -o bin/cups-pdf ${WRKDIR}/${DISTNAME}/src/cups-pdf.c
+	cd ${WRKSRC} && \
+		${CC} ${CFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib \
+			-lcups -o cups-pdf src/cups-pdf.c
 
 do-install:
 	${INSTALL_PROGRAM_DIR} ${PREFIX}/libexec/cups/backend
 	${INSTALL_DATA_DIR} ${PREFIX}/share/cups/model
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/cups
-	${INSTALL_PROGRAM} ${WRKDIR}/bin/cups-pdf \
+	${INSTALL_DATA_DIR} ${PREFIX}/share/{doc,examples}/cups-pdf
+	${INSTALL_PROGRAM} ${WRKBUILD}/cups-pdf \
 		${PREFIX}/libexec/cups/backend/cups-pdf
-	${INSTALL_SCRIPT} ${WRKBUILD}/contrib/cups-pdf-dispatch-0.1/cups-pdf-dispatch \
-		${PREFIX}/bin
-	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/extra/CUPS-PDF.ppd \
+	${INSTALL_DATA} ${WRKSRC}/extra/cups-pdf.conf \
+		${PREFIX}/share/examples/cups-pdf/
+	${INSTALL_DATA} ${WRKSRC}/extra/*.ppd \
 		${PREFIX}/share/cups/model/
-	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/extra/cups-pdf.conf \
-		${PREFIX}/share/examples/cups/
-	${INSTALL_DATA} ${WRKBUILD}/contrib/cups-pdf-dispatch-0.1/cups-pdf-dispatch.conf \
-		${PREFIX}/share/examples/cups/
-	${INSTALL_DATA} ${WRKBUILD}/contrib/cups-pdf-dispatch-0.1/examples/cups-pdf-dispatch-ldap.conf \
-		${PREFIX}/share/examples/cups/
+	${INSTALL_DATA} ${WRKSRC}/README \
+		${PREFIX}/share/doc/cups-pdf/
 
 .include <bsd.port.mk>

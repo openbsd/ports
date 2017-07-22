@@ -1,17 +1,18 @@
-$OpenBSD: patch-extra_cups-pdf_conf,v 1.4 2012/04/11 17:29:50 ajacoutot Exp $
---- extra/cups-pdf.conf.orig	Tue Oct  4 18:44:54 2011
-+++ extra/cups-pdf.conf	Wed Apr 11 19:17:59 2012
-@@ -40,7 +40,7 @@
+$OpenBSD: patch-extra_cups-pdf_conf,v 1.5 2017/07/22 20:41:10 ajacoutot Exp $
+Index: extra/cups-pdf.conf
+--- extra/cups-pdf.conf.orig
++++ extra/cups-pdf.conf
+@@ -48,7 +48,7 @@
  ##  root_squash! 
  ### Default: /var/spool/cups-pdf/${USER}
  
 -#Out /var/spool/cups-pdf/${USER}
 +Out ${HOME}
  
- ### Key: AnonDirName
+ ### Key: AnonDirName (config)
  ##  ABSOLUTE path for anonymously created PDF files
-@@ -180,9 +180,9 @@
- ### Key: Grp
+@@ -188,9 +188,9 @@
+ ### Key: Grp (config)
  ##  group cups-pdf is supposed to run as - this will also be the gid for all
  ##  created directories and log files
 -### Default: lp
@@ -20,9 +21,9 @@ $OpenBSD: patch-extra_cups-pdf_conf,v 1.4 2012/04/11 17:29:50 ajacoutot Exp $
 -#Grp lp
 +#Grp _cups
  
- 
- ###########################################################################
-@@ -220,9 +220,9 @@
+ ### Key: AllowUnsafeOptions (config)
+ ##  DON'T CHANGE THIS SETTING UNLESS YOU ABSOLUTELY KNOW WHAT YOU ARE DOING
+@@ -236,9 +236,9 @@
  ##  location of GhostScript binary (gs) 
  ##  MacOSX: for using pstopdf (recommended) set this to /usr/bin/pstopdf
  ##          or its proper location on your system
@@ -32,9 +33,9 @@ $OpenBSD: patch-extra_cups-pdf_conf,v 1.4 2012/04/11 17:29:50 ajacoutot Exp $
 -#GhostScript /usr/bin/gs
 +#GhostScript ${LOCALBASE}/bin/gs
  
- ### Key: GSTmp
+ ### Key: GSTmp (config)
  ##  location of temporary files during GhostScript operation 
-@@ -253,7 +253,7 @@
+@@ -269,7 +269,7 @@
  ##  set this to an empty value to use no postprocessing
  ### Default: <empty>
  
