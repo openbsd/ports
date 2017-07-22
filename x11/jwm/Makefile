@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.24 2016/08/29 09:13:37 jca Exp $
+# $OpenBSD: Makefile,v 1.25 2017/07/22 22:18:49 ajacoutot Exp $
 
 COMMENT=		Joe's Window Manager#'
 
-DISTNAME=		jwm-2.3.6
-REVISION=		0
+DISTNAME=		jwm-2.3.7
 
 CATEGORIES=		x11
 
@@ -20,6 +19,7 @@ MASTER_SITES=		http://www.joewing.net/projects/jwm/releases/
 EXTRACT_SUFX=		.tar.xz
 
 BUILD_DEPENDS=		devel/gettext-tools
+
 LIB_DEPENDS=		devel/fribidi \
 			devel/glib2 \
 			x11/gnome/librsvg
