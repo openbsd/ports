@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.2 2016/01/11 09:35:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2017/07/22 21:46:11 bentley Exp $
 
 COMMENT =		convert Texinfo data to mdoc input
 
 DISTNAME =		texi2mdoc-0.1.2
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		textproc
 
-HOMEPAGE =		http://mdocml.bsd.lv/texi2mdoc/
+HOMEPAGE =		http://mandoc.bsd.lv/texi2mdoc/
 
 MAINTAINER =		Anthony J. Bentley <anthony@anjbe.name>
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c
 
-MASTER_SITES =		http://mdocml.bsd.lv/texi2mdoc/snapshots/
+MASTER_SITES =		http://mandoc.bsd.lv/texi2mdoc/snapshots/
 EXTRACT_SUFX =		.tgz
 
 MAKE_FLAGS =		CC="${CC}"
