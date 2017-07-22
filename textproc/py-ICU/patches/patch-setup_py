@@ -1,7 +1,8 @@
-$OpenBSD: patch-setup_py,v 1.3 2016/12/05 16:16:55 ajacoutot Exp $
---- setup.py.orig	Fri Nov 11 19:59:29 2016
-+++ setup.py	Mon Dec  5 09:46:49 2016
-@@ -14,6 +14,7 @@ INCLUDES = {
+$OpenBSD: patch-setup_py,v 1.4 2017/07/22 20:53:21 ajacoutot Exp $
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -40,6 +40,7 @@ INCLUDES = {
      'darwin': ['/usr/local/include'],
      'linux': [],
      'freebsd': ['/usr/local/include'],
@@ -9,15 +10,15 @@ $OpenBSD: patch-setup_py,v 1.3 2016/12/05 16:16:55 ajacoutot Exp $
      'win32': ['c:/icu/include'],
      'sunos5': [],
  }
-@@ -22,6 +23,7 @@ CFLAGS = {
-     'darwin': ['-DPYICU_VER="%s"' %(VERSION)],
-     'linux': ['-DPYICU_VER="%s"' %(VERSION)],
-     'freebsd': ['-DPYICU_VER="%s"' %(VERSION)],
-+    'openbsd': ['-DPYICU_VER="%s"' %(VERSION)],
+@@ -48,6 +49,7 @@ CFLAGS = {
+     'darwin': ['-DPYICU_VER="%s"' %(VERSION), '-std=c++11'],
+     'linux': ['-DPYICU_VER="%s"' %(VERSION), '-std=c++11'],
+     'freebsd': ['-DPYICU_VER="%s"' %(VERSION), '-std=c++11'],
++    'openbsd': ['-DPYICU_VER="%s"' %(VERSION), '-std=c++11'],
      'win32': ['/Zc:wchar_t', '/EHsc', '/DPYICU_VER=\\"%s\\"' %(VERSION)],
-     'sunos5': ['-DPYICU_VER="%s"' %(VERSION)],
+     'sunos5': ['-DPYICU_VER="%s"' %(VERSION), '-std=c++11'],
  }
-@@ -31,6 +33,7 @@ DEBUG_CFLAGS = {
+@@ -57,6 +59,7 @@ DEBUG_CFLAGS = {
      'darwin': ['-O0', '-g', '-DDEBUG'],
      'linux': ['-O0', '-g', '-DDEBUG'],
      'freebsd': ['-O0', '-g', '-DDEBUG'],
@@ -25,7 +26,7 @@ $OpenBSD: patch-setup_py,v 1.3 2016/12/05 16:16:55 ajacoutot Exp $
      'win32': ['/Od', '/DDEBUG'],
      'sunos5': ['-DDEBUG'],
  }
-@@ -39,6 +42,7 @@ LFLAGS = {
+@@ -65,6 +68,7 @@ LFLAGS = {
      'darwin': ['-L/usr/local/lib'],
      'linux': [],
      'freebsd': ['-L/usr/local/lib'],
@@ -33,7 +34,7 @@ $OpenBSD: patch-setup_py,v 1.3 2016/12/05 16:16:55 ajacoutot Exp $
      'win32': ['/LIBPATH:c:/icu/lib'],
      'sunos5': [],
  }
-@@ -47,6 +51,7 @@ LIBRARIES = {
+@@ -73,6 +77,7 @@ LIBRARIES = {
      'darwin': ['icui18n', 'icuuc', 'icudata'],
      'linux': ['icui18n', 'icuuc', 'icudata'],
      'freebsd': ['icui18n', 'icuuc', 'icudata'],
@@ -41,7 +42,7 @@ $OpenBSD: patch-setup_py,v 1.3 2016/12/05 16:16:55 ajacoutot Exp $
      'win32': ['icuin', 'icuuc', 'icudt'],
      'sunos5': ['icui18n', 'icuuc', 'icudata'],
  }
-@@ -56,6 +61,8 @@ if platform.startswith(('linux', 'gnu')):
+@@ -82,6 +87,8 @@ if platform.startswith(('linux', 'gnu')):
      platform = 'linux'
  elif platform.startswith('freebsd'):
      platform = 'freebsd'

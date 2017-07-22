@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/12/30 11:06:05 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2017/07/22 20:53:21 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/PyICU-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/PyICU-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/PyICU-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
@@ -6,8 +6,10 @@ lib/python${MODPY_VERSION}/site-packages/PyICU-${MODPY_EGG_VERSION}-py${MODPY_VE
 lib/python${MODPY_VERSION}/site-packages/PyICU-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/PyICU.py
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}PyICU.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}docs.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}icu.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/_icu.so
-lib/python${MODPY_VERSION}/site-packages/docs.py
-lib/python${MODPY_VERSION}/site-packages/icu.py
+lib/python${MODPY_VERSION}/site-packages/icu/
+lib/python${MODPY_VERSION}/site-packages/icu/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/icu/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/icu/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/icu/${MODPY_PYCACHE}docs.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/icu/docs.py
