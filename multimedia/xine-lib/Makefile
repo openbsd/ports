@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.131 2017/06/12 08:56:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.132 2017/07/23 09:52:14 zhuk Exp $
 
 COMMENT=	multimedia decoding library
 
@@ -60,8 +60,6 @@ CFLAGS+=	-ffast-math
 MAKE_ENV=	V=1
 
 USE_GMAKE=	Yes
-# Uses GNU libtool -weak feature
-USE_LIBTOOL=	gnu
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.69
 CONFIGURE_ARGS+=--disable-a52dec \
