@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2017/04/14 18:26:45 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.16 2017/07/23 10:08:42 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/_pygit2.so
 lib/python${MODPY_VERSION}/site-packages/pygit2/
 lib/python${MODPY_VERSION}/site-packages/pygit2-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -28,7 +28,7 @@ lib/python${MODPY_VERSION}/site-packages/pygit2/${MODPY_PYCACHE}settings.${MODPY
 lib/python${MODPY_VERSION}/site-packages/pygit2/${MODPY_PYCACHE}submodule.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygit2/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygit2/_build.py
-lib/python${MODPY_VERSION}/site-packages/pygit2/_libgit2${PY3_SUFFIX}.so
+lib/python${MODPY_VERSION}/site-packages/pygit2/_libgit2${MODPY_ABI3SO}.so
 lib/python${MODPY_VERSION}/site-packages/pygit2/_run.py
 lib/python${MODPY_VERSION}/site-packages/pygit2/blame.py
 lib/python${MODPY_VERSION}/site-packages/pygit2/config.py
