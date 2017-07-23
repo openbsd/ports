@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2017/04/25 09:20:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2017/07/23 10:01:10 zhuk Exp $
 
 COMMENT-main=		UW e-mail client
 COMMENT-c-client=	UW c-client mail access routines
@@ -58,9 +58,6 @@ LIB_DEPENDS=		devel/gettext
 BUILD_DEPENDS=		textproc/aspell/core
 RUN_DEPENDS-main=	textproc/aspell/core
 RUN_DEPENDS-pico=	textproc/aspell/core
-
-# Link error: c-client not found!
-USE_LIBTOOL=		gnu
 
 SHLIB=			libc-client.so.${LIBc-client_VERSION}
 MAKE_FLAGS=		EXTRACFLAGS="${CFLAGS}" \
