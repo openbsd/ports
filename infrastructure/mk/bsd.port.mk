@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1361 2017/07/20 07:31:48 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1362 2017/07/23 09:27:15 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1841,7 +1841,7 @@ _CHECK_LIB_DEPENDS += -d ${_PKG_REPO} -B ${WRKINST}
 _CHECK_LIB_DEPENDS += -S COMPILER_LIBCXX="${COMPILER_LIBCXX}"
 _CHECK_LIB_DEPENDS += -S LIBECXX="${LIBECXX}"
 _CHECK_LIB_DEPENDS += -S LIBCXX="${LIBCXX}"
-#_CHECK_LIB_DEPENDS += -F pthread
+_CHECK_LIB_DEPENDS += -F pthread
 
 .for _s in ${MULTI_PACKAGES}
 .  if ${STATIC_PLIST${_s}:L} == "no"
