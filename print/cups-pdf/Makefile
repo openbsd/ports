@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2017/07/22 20:41:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2017/07/23 10:51:01 ajacoutot Exp $
 
 COMMENT=		PDF backend for CUPS
 
 DISTNAME=		cups-pdf-3.0.1
 CATEGORIES=		print
+REVISION=		0
 
 HOMEPAGE=		http://www.cups-pdf.de/
 MASTER_SITES=		${HOMEPAGE}src/
@@ -14,6 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c cups
 
+LIB_DEPENDS=		print/cups,-libs
 RUN_DEPENDS=		print/ghostscript/gnu
 
 # package is only useful if cups is installed
