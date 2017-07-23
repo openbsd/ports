@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2017/04/16 20:36:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.75 2017/07/23 10:41:22 zhuk Exp $
 
 COMMENT=	Secure Internet Live Conferencing (SILC) client
 
@@ -30,7 +30,7 @@ SUBST_VARS=	CONFDIR
 
 # XXX this doesn't yet work with our libtool, it will get confused and
 # pick up libraries from silc-toolkit instead of its own unshared libraries.
-USE_LIBTOOL=	gnu
+#USE_LIBTOOL=	gnu
 LIBTOOL_FLAGS=	--tag=disable-shared
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.69
