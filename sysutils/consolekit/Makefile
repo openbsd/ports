@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2017/07/21 08:55:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.62 2017/07/23 21:12:27 ajacoutot Exp $
 
 COMMENT=		framework for defining and tracking users, sessions & seats
 
@@ -43,6 +43,7 @@ AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.15
 BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS} \
+			devel/gettext-tools \
 			devel/libtool
 
 pre-configure:
