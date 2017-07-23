@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.39 2017/07/16 19:19:05 espie Exp $
+# $OpenBSD: Makefile,v 1.40 2017/07/23 09:03:17 ajacoutot Exp $
 
 COMMENT=		C++ library to create, manipulate and render SVG files
 
-DISTNAME=		wxsvg-1.5.6
+DISTNAME=		wxsvg-1.5.12
 EPOCH=			0
-REVISION=		0
 CATEGORIES=		x11 graphics
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=wxsvg/}
 EXTRACT_SUFX=		.tar.bz2
@@ -16,19 +15,19 @@ HOMEPAGE=		http://wxsvg.sourceforge.net/
 # Modified LGPL
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ICE SDL SM X11 Xcomposite Xcursor Xdamage Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 avcodec
-WANTLIB += avformat avutil bz2 c cairo crypto expat ffi
-WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
-WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gsm gthread-2.0
-WANTLIB += gtk-x11-2.0 harfbuzz iconv intl iodbc jpeg m mp3lame
-WANTLIB += mspack ogg opus pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png pthread pthread-stubs sndio speex
-WANTLIB += ssl ${COMPILER_LIBCXX} swresample swscale tiff usbhid vorbis vorbisenc
-WANTLIB += vpx wx_base wx_base_net wx_base_odbc wx_base_xml wx_gtk2_adv
-WANTLIB += wx_gtk2_aui wx_gtk2_core wx_gtk2_dbgrid wx_gtk2_html
-WANTLIB += wx_gtk2_qa wx_gtk2_richtext wx_gtk2_xrc x264 x265 xcb
-WANTLIB += xcb-render xcb-shm xvidcore z
+WANTLIB += ${COMPILER_LIBCXX} ICE SDL SM X11 Xcomposite Xcursor
+WANTLIB += Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm
+WANTLIB += atk-1.0 avcodec avformat avutil bz2 c cairo crypto
+WANTLIB += exif expat ffi fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
+WANTLIB += gsm gthread-2.0 gtk-x11-2.0 harfbuzz iconv intl iodbc
+WANTLIB += jpeg m mp3lame mspack ogg opus pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
+WANTLIB += sndio speex ssl swresample swscale tiff usbhid vorbis
+WANTLIB += vorbisenc vpx wx_base wx_base_net wx_base_odbc wx_base_xml
+WANTLIB += wx_gtk2_adv wx_gtk2_aui wx_gtk2_core wx_gtk2_dbgrid
+WANTLIB += wx_gtk2_html wx_gtk2_qa wx_gtk2_richtext wx_gtk2_xrc
+WANTLIB += x264 x265 xcb xcb-render xcb-shm xvidcore z
 
 # comes from multimedia/libvpx using lang/clang MODULE on i386|amd64 only
 # which includes gcc4 MODULE with adds gcc-libs in dependency scope
@@ -36,8 +35,9 @@ WANTLIB += xcb-render xcb-shm xvidcore z
 WANTLIB += $(LIBECXX)
 .endif
 
-LIB_DEPENDS=		graphics/ffmpeg \
-			graphics/cairo \
+LIB_DEPENDS=		graphics/cairo \
+			graphics/ffmpeg \
+			graphics/libexif \
 			x11/wxWidgets
 
 CONFIGURE_STYLE=	gnu
