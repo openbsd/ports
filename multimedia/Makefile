@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.97 2017/07/17 21:17:47 zhuk Exp $
+# $OpenBSD: Makefile,v 1.98 2017/07/23 00:47:09 bcallah Exp $
 
      SUBDIR =
      SUBDIR += atomicparsley
@@ -70,6 +70,7 @@
      SUBDIR += sfml
      SUBDIR += shrip
      SUBDIR += streamdvd
+     SUBDIR += streamlink
      SUBDIR += subrip
      SUBDIR += subtitleripper
      SUBDIR += swfmill
