@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2017/07/23 09:26:29 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2017/07/23 10:47:39 zhuk Exp $
 
 COMMENT=	Extensible Binary Meta Language library
 
@@ -19,8 +19,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	m ${COMPILER_LIBCXX}
 
-USE_GMAKE=	Yes
-USE_LIBTOOL=	gnu
 CONFIGURE_STYLE=	gnu
 
 .include <bsd.port.mk>
