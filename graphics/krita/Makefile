@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/06/01 16:36:52 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2017/07/23 09:21:37 espie Exp $
 
 COMMENT =	advanced drawing and image manipulation
 
@@ -29,6 +29,7 @@ SHARED_LIBS +=  kritalibpaintop           51.0 # 0.0
 SHARED_LIBS +=  kritaui                   51.0 # 0.0
 
 CATEGORIES =	graphics
+DPB_PROPERTIES =	parallel
 
 HOMEPAGE =	https://krita.org
 
