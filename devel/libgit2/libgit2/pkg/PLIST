@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2017/04/14 18:26:40 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.11 2017/07/23 10:08:27 ajacoutot Exp $
 include/git2/
 include/git2.h
 include/git2/annotated_commit.h
@@ -80,5 +80,6 @@ include/git2/transport.h
 include/git2/tree.h
 include/git2/types.h
 include/git2/version.h
+include/git2/worktree.h
 @lib lib/libgit2.so.${LIBgit2_VERSION}
 lib/pkgconfig/libgit2.pc
