@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2016/11/04 11:35:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2017/07/23 10:08:56 zhuk Exp $
 
 COMMENT =		DeaDBeeF is an audio player
 DISTNAME =		deadbeef-0.7.2
@@ -55,7 +55,6 @@ LIB_DEPENDS =		archivers/libzip \
 			x11/gtk+3
 
 USE_GMAKE =		Yes
-USE_LIBTOOL =		gnu
 LIBTOOL_FLAGS =		--tag=disable-static
 
 NO_TEST =		Yes
