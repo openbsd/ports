@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2017/07/16 19:19:04 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2017/07/23 09:26:29 espie Exp $
 
 COMMENT=	displays the date and resembles the toolbar
 
 DISTNAME=	bbdate-0.2.4
-REVISION=	0
+REVISION =	1
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=bbtools/}
 HOMEPAGE=	http://bbtools.sourceforge.net/download.php?file=3

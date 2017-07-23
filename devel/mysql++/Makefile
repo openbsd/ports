@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.44 2017/07/16 19:18:51 espie Exp $
+# $OpenBSD: Makefile,v 1.45 2017/07/23 09:26:26 espie Exp $
 
 ONLY_FOR_ARCHS=		${GCC4_ARCHS} ${CLANG_ARCHS}
 
 COMMENT =		C++ API for MySQL
 
 DISTNAME =		mysql++-3.1.0
-REVISION =		5
+REVISION =		6
 
 SHARED_LIBS += mysqlpp	4.0	# 3
 

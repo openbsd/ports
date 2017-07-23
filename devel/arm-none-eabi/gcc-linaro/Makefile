@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2017/07/16 19:18:51 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2017/07/23 09:26:26 espie Exp $
 
 # see ${WRKBUILD}/arm-none-eabi/libgcc/config.log
 BROKEN-i386=	ICE: Floating point exception from xgcc during libgcc autoconf "checking for suffix of object files"
@@ -8,7 +8,7 @@ COMMENT=	gcc for ${CONFIG} cross-development, Linaro version
 
 VERSION=	6.3-2017.02
 DISTNAME=	gcc-linaro-${VERSION}
-REVISION=	0
+REVISION=	1
 EXTRACT_SUFX=	.tar.xz
 PKGNAME=	${CONFIG}-gcc-linaro-${VERSION:S/-/./g}
 

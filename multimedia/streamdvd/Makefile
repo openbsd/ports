@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2017/07/16 19:19:01 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2017/07/23 09:26:28 espie Exp $
 
 COMMENT=	fast tool to backup video DVDs 'on the fly'
 
 DISTNAME=	streamdvd-0.4
-REVISION=	1
+REVISION =	2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.badabum.de/down/
 

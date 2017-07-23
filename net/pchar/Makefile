@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.28 2017/07/16 19:18:58 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2017/07/23 09:26:28 espie Exp $
 
 COMMENT=	Sandia Internet path characterization tool
 
 DISTNAME=	pchar-1.5
-REVISION=	0
+REVISION =	1
 CATEGORIES=	net
 
 MASTER_SITES=	${HOMEPAGE}

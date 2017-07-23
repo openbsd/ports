@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2017/07/16 19:18:58 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2017/07/23 09:26:28 espie Exp $
 
 COMMENT=		network traffic and bandwidth usage in real time
 
 DISTNAME=		nload-0.7.4
-REVISION=		1
+REVISION =		2
 CATEGORIES=		net
 
 HOMEPAGE=		http://www.roland-riegel.de/nload/

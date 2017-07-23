@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2017/07/16 19:18:48 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2017/07/23 09:26:25 espie Exp $
 
 COMMENT =		CAPS LADSPA plugins
 
 V =			0.9.24
 DISTNAME =		caps_${V}
+REVISION =		0
 PKGNAME =		caps-plugins-${V}
 CATEGORIES =		audio
 EXTRACT_SUFX =		.tar.bz2

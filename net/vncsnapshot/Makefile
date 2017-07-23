@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2017/07/16 19:18:59 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2017/07/23 09:26:28 espie Exp $
 
 COMMENT=		connect to VNC server and save screen images
 
@@ -6,7 +6,7 @@ V=			1.2a
 PORTROACH=		ignore:1
 DISTNAME=		vncsnapshot-$V-src
 PKGNAME=		vncsnapshot-$V
-REVISION=		0
+REVISION =		1
 
 CATEGORIES=		net
 

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2017/07/16 19:19:01 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2017/07/23 09:26:28 espie Exp $
 
 COMMENT=	PDF transformation and inspection utility
 
 DISTNAME=	qpdf-6.0.0
+REVISION =	0
 
 SHARED_LIBS +=  qpdf                 3.0      # 17.0
 

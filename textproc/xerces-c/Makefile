@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2017/07/16 19:19:03 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2017/07/23 09:26:29 espie Exp $
 
 COMMENT=	c++ validating XML parser
 
 DISTNAME=	xerces-c-src_2_8_0
 PKGNAME=	xerces-c-2.8.0
-REVISION=	3
+REVISION =	4
 CATEGORIES=	textproc devel
 
 SO_VERSION=	0.0 # .28.0

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.40 2017/07/16 19:19:01 espie Exp $
+# $OpenBSD: Makefile,v 1.41 2017/07/23 09:26:28 espie Exp $
 
 COMMENT =		convert HTML pages to PDF/PS format
 
 V =			1.8.29
 DISTNAME =		htmldoc-${V}
 CATEGORIES =		print www
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE =		http://www.msweet.org/projects.php?Z1
 

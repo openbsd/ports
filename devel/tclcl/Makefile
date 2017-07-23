@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.31 2017/07/16 19:18:52 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2017/07/23 09:26:27 espie Exp $
 
 COMMENT=	Tcl/C++ interface used by ns and nam
 
 V=		1.20
 DISTNAME=	tclcl-src-$V
 PKGNAME=	tclcl-$V
-REVISION =	0
+REVISION =	1
 CATEGORIES=	devel
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
 

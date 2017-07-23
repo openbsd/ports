@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2017/07/16 19:19:02 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2017/07/23 09:26:29 espie Exp $
 
 COMMENT =		display a tree of processes
 
 DISTNAME =		dtpstree-1.0.3
-REVISION =		0
+REVISION =		1
 CATEGORIES =		sysutils
 
 HOMEPAGE =		http://code.douglasthrift.net/trac/dtpstree

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.25 2017/07/16 19:19:05 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2017/07/23 09:26:30 espie Exp $
 
 COMMENT=	minimal window manager
 
 DISTNAME=	wmx-8
 CATEGORIES=	x11
-REVISION=	0
+REVISION =	1
 
 HOMEPAGE=	http://www.all-day-breakfast.com/wmx/
 MASTER_SITES=	${HOMEPAGE}

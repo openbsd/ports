@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.35 2017/07/16 19:18:49 espie Exp $
+# $OpenBSD: Makefile,v 1.36 2017/07/23 09:26:26 espie Exp $
 
 COMMENT=	library functions to access Microsoft Word/Excel files
 
-REVISION =	1
+REVISION =	2
 DISTNAME=	wv2-0.4.2
 SHARED_LIBS +=	wv2                  4.0      # .1.8
 CATEGORIES=	converters

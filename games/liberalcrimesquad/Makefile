@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2017/07/16 19:18:55 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2017/07/23 09:26:27 espie Exp $
 
 COMMENT =	politics and government game with liberal bias
 DISTNAME =	liberalcrimesquad-4.07.0
 CATEGORIES =	games
-REVISION =	1
+REVISION =	2
 
 HOMEPAGE =	http://lcs.wikidot.com/
 

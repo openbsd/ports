@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.25 2017/07/16 19:18:59 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2017/07/23 09:26:28 espie Exp $
 
 COMMENT=		anti-spam SMTP server
 DISTNAME=		avenger-0.8.3
+REVISION =		0
 CATEGORIES=		mail
 
 HOMEPAGE=		http://www.mailavenger.org/

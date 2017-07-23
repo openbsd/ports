@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.35 2017/07/16 19:18:57 espie Exp $
+# $OpenBSD: Makefile,v 1.36 2017/07/23 09:26:28 espie Exp $
 
 COMMENT =	X11 over a low bandwidth link
 VERSION =	3.8.2
 DISTNAME =	dxpc-${VERSION}
-REVISION =	0
+REVISION =	1
 CATEGORIES =	net x11
 
 MAINTAINER =	Marc Espie <espie@openbsd.org>

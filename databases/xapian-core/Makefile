@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2017/07/16 19:18:50 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2017/07/23 09:26:26 espie Exp $
 
 COMMENT=	search engine library
 
 V=		1.2.15
 PORTROACH=	limitw:1,even
 DISTNAME=	xapian-core-${V}
-REVISION=	1
+REVISION =	2
 
 SHARED_LIBS +=  xapian	3.1	# .28.2
 

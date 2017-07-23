@@ -1,4 +1,4 @@
-# $OpenBSD: arch-defines.mk,v 1.39 2017/05/16 13:38:36 espie Exp $
+# $OpenBSD: arch-defines.mk,v 1.40 2017/07/23 09:26:27 espie Exp $
 #
 # ex:ts=4 sw=4 filetype=make:
 #
@@ -50,6 +50,6 @@ PROPERTIES += ${PROP:L}
 LIBCXX = c++ c++abi pthread
 LIBECXX = c++ c++abi pthread
 .else
-LIBCXX = stdc++
-LIBECXX = estdc++>=17
+LIBCXX = stdc++ pthread
+LIBECXX = estdc++>=17 pthread
 .endif

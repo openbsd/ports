@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2017/07/16 19:18:48 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2017/07/23 09:26:25 espie Exp $
 
 COMMENT =	music collection manager and player
 DISTNAME =	gogglesmm-0.12.7
 EXTRACT_SUFX =	.tar.xz
-REVISION =	8
+REVISION =	9
 CATEGORIES =	audio x11
 
 HOMEPAGE =	https://gogglesmm.github.io/

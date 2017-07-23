@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2017/07/16 19:18:48 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2017/07/23 09:26:25 espie Exp $
 
 COMMENT =	fast compression/decompression library
 
 V =		1.1.4
 DISTNAME =	snappy-${V}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS =	snappy	0.0	# 4.1
 

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2017/07/16 19:18:59 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2017/07/23 09:26:28 espie Exp $
 
 COMMENT=	open-source (C++ generating) VHDL simulator
 
 DISTNAME=	freehdl-0.0.7
 CATEGORIES=	lang cad
-REVISION=	1
+REVISION =	2
 
 SHARED_LIBS +=  ieee                      0.0 # 0.0
 SHARED_LIBS +=  freehdl-cdfggen           0.0 # 0.0

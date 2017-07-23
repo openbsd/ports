@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.29 2017/07/16 19:19:04 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2017/07/23 09:26:29 espie Exp $
 
 COMMENT=	X keygrabber for blackbox
 
 DISTNAME=	bbkeys-0.9.0
-REVISION=	4
+REVISION =	5
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=bbkeys/}
 

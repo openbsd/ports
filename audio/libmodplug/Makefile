@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2017/07/16 19:18:48 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2017/07/23 09:26:26 espie Exp $
 
 COMMENT =		library for decoding mod-like music formats
 
 DISTNAME =		libmodplug-0.8.8.5
 CATEGORIES =		audio
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE =		http://modplug-xmms.sourceforge.net/
 

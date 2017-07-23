@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2017/07/16 19:19:03 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2017/07/23 09:26:29 espie Exp $
 
 COMMENT=	simple and small C++ XML parser
 
 V=		2.6.2
-REVISION=	0
+REVISION =	1
 DISTNAME=	tinyxml_${V:S/./_/g}
 PKGNAME=	tinyxml-${V}
 EXTRACT_SUFX=	.zip

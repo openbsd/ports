@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2017/07/16 19:18:47 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2017/07/23 09:26:25 espie Exp $
 
 COMMENT =	command line implementation of the PAR v2.0 specification
 
 V =		0.6.14
 DISTNAME =	par2cmdline-$V
 DISTFILES =	${DISTNAME}{v$V}.tar.gz
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	archivers
 

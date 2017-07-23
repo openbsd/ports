@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2017/07/16 19:18:48 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2017/07/23 09:26:25 espie Exp $
 
 COMMENT=	linux audio developer simple plugin API
 HOMEPAGE=	http://www.ladspa.org/
 CATEGORIES=	audio devel
 
 V=		1.13
-REVISION=	0
+REVISION =	1
 
 DISTNAME=	ladspa_sdk_${V}
 WRKDIST=	${WRKDIR}/ladspa_sdk

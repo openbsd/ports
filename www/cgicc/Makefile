@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2017/07/16 19:19:03 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2017/07/23 09:26:29 espie Exp $
 
 COMMENT=	c++ compliant CGI applications libraries
 
 DISTNAME=	cgicc-3.2.16
+REVISION =	0
 
 CATEGORIES=	www devel
 SHARED_LIBS=	cgicc	5.0

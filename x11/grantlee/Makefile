@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2017/07/16 19:19:04 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2017/07/23 09:26:29 espie Exp $
 
 COMMENT =		template and text document library for Qt4
 PKG_VERSION =		0.5.1
-REVISION =		0
+REVISION =		1
 PLIST_VERSION =		${PKG_VERSION:R}
 DISTNAME =		grantlee-${PKG_VERSION}
 CATEGORIES =		devel x11

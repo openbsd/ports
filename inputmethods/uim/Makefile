@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2017/07/16 19:18:57 espie Exp $
+# $OpenBSD: Makefile,v 1.56 2017/07/23 09:26:28 espie Exp $
 
 DPB_PROPERTIES=		tag:kde3
 
@@ -22,7 +22,7 @@ PKGNAME-qt4=		uim-qt4-$V
 REVISION-gtk=		1
 REVISION-gtk3=		2
 REVISION-kde=		1
-REVISION-main=		1
+REVISION-main=		2
 REVISION-qt=		1
 REVISION-qt4=		1
 

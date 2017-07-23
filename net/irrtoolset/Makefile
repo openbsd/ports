@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2017/07/16 19:18:58 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2017/07/23 09:26:28 espie Exp $
 
 COMMENT=	toolset for internet routing registries
 
 V=		5.0.1
-REVISION=	0
+REVISION =	1
 DISTNAME=	irrtoolset-$V
 
 CATEGORIES=	net

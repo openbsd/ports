@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2017/07/16 19:19:04 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2017/07/23 09:26:29 espie Exp $
 
 COMMENT=	web search application
 
 V=		1.2.15
 PORTROACH=	limitw:1,even
 DISTNAME=	xapian-omega-${V}
+REVISION =	0
 
 CATEGORIES=	www textproc
 

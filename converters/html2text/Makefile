@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2017/07/16 19:18:49 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2017/07/23 09:26:26 espie Exp $
 
 PORTROACH=		limit:.*[^a]$$
 
 COMMENT=		advanced HTML-to-text converter
 
 DISTNAME=		html2text-1.3.2a
-REVISION=		1
+REVISION =		2
 CATEGORIES=		converters textproc
 
 

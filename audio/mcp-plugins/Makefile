@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2017/07/16 19:18:48 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2017/07/23 09:26:26 espie Exp $
 
 COMMENT =		MCP LADSPA plugins
 
 DISTNAME =		MCP-plugins-0.4.0
 PKGNAME =		${DISTNAME:L}
-REVISION =		0
+REVISION =		1
 CATEGORIES =		audio
 
 HOMEPAGE =		http://kokkinizita.net/linuxaudio/ladspa/index.html

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2017/07/16 19:19:03 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2017/07/23 09:26:29 espie Exp $
 
 COMMENT=	SGML parser and entity manager
 
 DISTNAME=	lq-sp-1.3.4.12
-REVISION=	0
+REVISION =	1
 CATEGORIES=	textproc
 HOMEPAGE=	http://www.htmlhelp.com/tools/validator/offline/
 

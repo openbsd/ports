@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2017/07/16 19:18:52 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2017/07/23 09:26:27 espie Exp $
 
 COMMENT =		state machine compiler
 
 DISTNAME =		ragel-6.9
-REVISION =		0
+REVISION =		1
 CATEGORIES =		devel
 
 HOMEPAGE =		http://www.colm.net/open-source/ragel/

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2017/07/16 19:18:49 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2017/07/23 09:26:26 espie Exp $
 
 COMMENT =	tools for LiDAR processing
 DISTNAME =	lastools-0.20170108
 GH_ACCOUNT =	LAStools
 GH_PROJECT =	LAStools
 GH_TAGNAME =	f00fa125075ea984993057c5916d746cb605835c
+REVISION =	0
 
 CATEGORIES =	converters textproc devel
 

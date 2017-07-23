@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2017/07/16 19:18:58 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2017/07/23 09:26:28 espie Exp $
 COMMENT =		Qt/C++ library wrapper for the GPodder
 DISTNAME =		libmygpo-qt.1.0.7
 PKGNAME =		${DISTNAME:S/./-/}
-REVISION =		1
+REVISION =		2
 
 SHARED_LIBS =		mygpo-qt	0.0
 

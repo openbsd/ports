@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2017/07/16 19:18:51 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2017/07/23 09:26:26 espie Exp $
 
 COMMENT =		unit testing framework
 
 DISTNAME =		cpptest-1.1.2
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=  cpptest                   0.0 # 0.7
 

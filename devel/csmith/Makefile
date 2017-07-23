@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2017/07/16 19:18:51 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2017/07/23 09:26:26 espie Exp $
 
 COMMENT=	fuzzer for C compilers
 
 DISTNAME=	csmith-2.2.0
-REVISION=	0
+REVISION =	1
 
 CATEGORIES=	devel
 

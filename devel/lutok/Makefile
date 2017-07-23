@@ -2,6 +2,7 @@
 
 COMMENT =		lightweight C++ API for Lua
 DISTNAME =		lutok-0.4
+REVISION =		0
 
 SHARED_LIBS +=		lutok                     0.0 # 2.0
 CATEGORIES =		devel

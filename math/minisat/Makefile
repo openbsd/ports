@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2017/07/16 19:19:00 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2017/07/23 09:26:28 espie Exp $
 
 COMMENT=		minimalistic Boolean satisfiability solver
 
 DISTNAME=		minisat-2.2.0
-REVISION=		0
+REVISION =		1
 CATEGORIES=		math
 
 HOMEPAGE=		http://minisat.se/

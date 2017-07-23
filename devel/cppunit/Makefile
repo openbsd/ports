@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2017/07/16 19:18:51 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2017/07/23 09:26:26 espie Exp $
 
 COMMENT=	c++ unit testing framework
 DISTNAME=	cppunit-1.12.1
 SHARED_LIBS +=	cppunit              3.0      # .1.0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=cppunit/}
-REVISION=	0
+REVISION =	2
 
 HOMEPAGE=	http://cppunit.sourceforge.net/
 

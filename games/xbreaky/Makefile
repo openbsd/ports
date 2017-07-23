@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2017/07/16 19:18:55 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2017/07/23 09:26:27 espie Exp $
 
 COMMENT=	breakout game for the X Window System
 
 DISTNAME=	xbreaky-0.0.5
-REVISION =	2
+REVISION =	3
 CATEGORIES=	games x11
 MASTER_SITES=	${HOMEPAGE}
 

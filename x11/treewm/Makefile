@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2017/07/16 19:19:05 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2017/07/23 09:26:30 espie Exp $
 
 COMMENT=		tree window manager
 DISTNAME=		treewm-0.4.5
-REVISION=		2
+REVISION =		3
 CATEGORIES=		x11
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=treewm/}

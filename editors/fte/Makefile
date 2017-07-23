@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2017/07/16 19:18:52 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2017/07/23 09:26:27 espie Exp $
 
 COMMENT=	powerful and intuitive editor for programmers
 
 DISTNAME=	fte-20090118
+REVISION =	0
 CATEGORIES=	editors devel
 
 HOMEPAGE=	http://fte.sourceforge.net/

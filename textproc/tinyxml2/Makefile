@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2017/07/16 19:19:03 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2017/07/23 09:26:29 espie Exp $
 
 COMMENT =		simple, small and efficient C++ XML parser
 
 V =			4.0.1
 DISTNAME =		tinyxml2-$V
+REVISION =		0
 
 SHARED_LIBS +=		tinyxml2	1.0 # 3.0
 

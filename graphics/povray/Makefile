@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.34 2017/07/16 19:18:57 espie Exp $
+# $OpenBSD: Makefile,v 1.35 2017/07/23 09:26:27 espie Exp $
 
 COMMENT=	3D image rendering package
 
 DISTNAME=	povray-3.6.1
-REVISION=	8
+REVISION =	9
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://www.povray.org/

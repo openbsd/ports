@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.24 2017/07/16 19:19:03 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2017/07/23 09:26:29 espie Exp $
 
 COMMENT =	Java web browser plugin
 DISTNAME =	icedtea-web-1.6.2
-REVISION =	1
+REVISION =	2
 CATEGORIES =	www
 
 MAINTAINER =	Giovanni Bechis <giovanni@openbsd.org>

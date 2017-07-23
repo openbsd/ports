@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2017/07/16 19:19:00 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2017/07/23 09:26:28 espie Exp $
 
 COMMENT=		command line MPEG audio/video/system file toolbox
 
 DISTNAME=		mpgtx-1.3.1
+REVISION =		0
 CATEGORIES=		multimedia sysutils
 
 HOMEPAGE=		http://mpgtx.sourceforge.net/

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.44 2017/07/16 19:19:03 espie Exp $
+# $OpenBSD: Makefile,v 1.45 2017/07/23 09:26:29 espie Exp $
 
 COMMENT =	fast, compact and portable XSL/XSLT processor
 
 V =		1.0.3
 DISTNAME =	Sablot-${V}
 PKGNAME =	sablotron-${V}
-REVISION =	2
+REVISION =	3
 SHARED_LIBS =	sablot	103.0	# .100.3
 CATEGORIES =	textproc
 

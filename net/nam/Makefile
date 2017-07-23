@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.38 2017/07/16 19:18:58 espie Exp $
+# $OpenBSD: Makefile,v 1.39 2017/07/23 09:26:28 espie Exp $
 
 COMMENT=	UCB/LBNL Network Animator
 
 V=		1.15
 DISTNAME=	nam-src-$V
 PKGNAME=	nam-$V
+REVISION =	0
 CATEGORIES=	net
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
 

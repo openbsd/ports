@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.10 2017/07/16 19:18:53 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2017/07/23 09:26:27 espie Exp $
 
 COMMENT =		n64 emulator signal co-processor plugin
-REVISION =		3
+REVISION =		4
 
 # XXX upstream was inconsistent with numbering this release (2.0 vs 2.0.0)
 VERSION =		2.0.0

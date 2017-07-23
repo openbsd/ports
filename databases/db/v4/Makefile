@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2017/07/16 19:18:49 espie Exp $
+# $OpenBSD: Makefile,v 1.71 2017/07/23 09:26:26 espie Exp $
 
 COMMENT-java=	Java bindings for Berkeley DB, revision ${REV}
 
@@ -12,7 +12,7 @@ PKGSPEC-tcl =   db-tcl->=4,<5|db-tcl->=4v0,<5v0
 PKGNAME-java=	db-java-${VERSION}
 PKGNAME-tcl=	db-tcl-${VERSION}
 EPOCH-main=	0
-REVISION-main = 3
+REVISION-main = 4
 EPOCH-java=	0
 EPOCH-tcl=	0
 REVISION-java =	5

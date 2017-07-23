@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2017/07/16 19:18:57 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2017/07/23 09:26:27 espie Exp $
 
 COMMENT =	PGF image format handling library
 V =		6.12.24
 DISTNAME =	libpgf-$V-src
+REVISION =	0
 PKGNAME =	${DISTNAME:C/-src//}
 
 SHARED_LIBS =	pgf		0.0

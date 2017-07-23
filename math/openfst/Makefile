@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2017/07/16 19:19:00 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2017/07/23 09:26:28 espie Exp $
 
 COMMENT =		weighted finite-state transducers library
 
@@ -6,7 +6,7 @@ COMMENT =		weighted finite-state transducers library
 NOT_FOR_ARCHS=		${GCC3_ARCHS}
 
 DISTNAME =		openfst-1.3.1
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=		fst                       0.0 # 0.0
 SHARED_LIBS +=		fstscript                 0.0 # 0.0

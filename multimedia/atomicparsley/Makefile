@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2017/07/16 19:19:00 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2017/07/23 09:26:28 espie Exp $
 
 COMMENT=	read and set MPEG-4/3GPP metadata tags
 
 V=		0.9.6
 DISTNAME=	atomicparsley-$V
+REVISION =	0
 DISTFILES=	${DISTNAME}{$V}.tar.bz2
 WRKDIST=	${WRKDIR}/wez-atomicparsley-da2f6e4fc120
 

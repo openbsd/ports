@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2017/07/16 19:18:54 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2017/07/23 09:26:27 espie Exp $
 
 COMMENT=	dungeon crawl
 CATEGORIES=	games
@@ -9,7 +9,7 @@ DISTNAME=	dc400b26-src
 EXTRACT_SUFX=	.tbz2
 V=		4.0.0b26
 PKGNAME=	dungeon-crawl-$V
-REVISION=	0
+REVISION =	1
 
 BUILD_DEPENDS+=	archivers/bzip2
 

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2017/07/16 19:18:48 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2017/07/23 09:26:25 espie Exp $
 
 COMMENT=		library for manipulating ID3v1 and ID3v2 tags
 
 VERSION=		3.8
 DISTNAME=		id3lib-${VERSION}.3
-REVISION=		4
+REVISION =		5
 CATEGORIES=     	audio
 SHARED_LIBS +=	id3                  4.0      # .3.8
 

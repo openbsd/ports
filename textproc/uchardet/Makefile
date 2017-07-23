@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2017/07/16 19:19:03 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2017/07/23 09:26:29 espie Exp $
 
 COMMENT=	universal charset detection library and tool
 
 DISTNAME=	uchardet-0.0.1
-REVISION=	1
+REVISION =	2
 
 SHARED_LIBS +=	uchardet                  0.0 # 0.0
 

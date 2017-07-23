@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2017/07/16 19:19:02 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2017/07/23 09:26:29 espie Exp $
 
 COMMENT =		top-like monitor for Apache
 
 DISTNAME =		apachetop-0.12.6
-REVISION =		0
+REVISION =		1
 CATEGORIES =		sysutils
 
 MAINTAINER =		Gonzalo L. R. <gonzalo@openbsd.org>

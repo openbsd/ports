@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2017/07/16 19:18:52 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2017/07/23 09:26:27 espie Exp $
 
 CATEGORIES =	devel
 
@@ -7,6 +7,7 @@ COMMENT=	Qt-based library that maps JSON data to QVariant objects
 GH_ACCOUNT =	flavio
 GH_PROJECT =	qjson
 GH_TAGNAME =	0.9.0
+REVISION =	0
 
 HOMEPAGE =	http://qjson.sourceforge.net/
 

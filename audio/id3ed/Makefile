@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2017/07/16 19:18:48 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2017/07/23 09:26:25 espie Exp $
 
 COMMENT=		interactive console id3 tag editor
 
 DISTNAME=		id3ed-1.10.4
-REVISION=		2
+REVISION =		3
 CATEGORIES=		audio
 
 HOMEPAGE=		http://code.fluffytapeworm.com/projects/id3ed/
