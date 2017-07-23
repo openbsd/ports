@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_contrib_net_h,v 1.1 2017/07/23 12:39:37 zhuk Exp $
+make net_send static, avoids conflict with net_send in libknot.
+
+Index: src/contrib/net.h
+--- src/contrib/net.h.orig
++++ src/contrib/net.h
+@@ -100,6 +100,7 @@ bool net_is_stream(int sock);
+  */
+ int net_accept(int sock, struct sockaddr_storage *addr);
+ 
++#if 0
+ /*!
+  * \brief Send a message on a socket.
+  *
+@@ -118,6 +119,7 @@ int net_accept(int sock, struct sockaddr_storage *addr
+  */
+ ssize_t net_send(int sock, const uint8_t *buffer, size_t size,
+                  const struct sockaddr *addr, int timeout_ms);
++#endif
+ 
+ /*!
+  * \brief Receive a message from a socket.

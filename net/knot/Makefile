@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2017/06/29 17:10:06 jca Exp $
+# $OpenBSD: Makefile,v 1.18 2017/07/23 12:39:37 zhuk Exp $
 
 COMMENT =		authoritative DNS server
 
 DISTNAME =		knot-2.4.5
+REVISION =		0
 
 SHARED_LIBS +=	zscanner             1.0      # .1.0
 SHARED_LIBS +=	knot                 1.1      # .5.0
@@ -36,8 +37,6 @@ LIB_DEPENDS =		devel/gettext \
 			devel/jansson \
 			security/gnutls
 
-USE_GMAKE =		Yes
-USE_LIBTOOL=		gnu
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--with-storage=${LOCALSTATEDIR}/db/knot \
 			--with-libidn \

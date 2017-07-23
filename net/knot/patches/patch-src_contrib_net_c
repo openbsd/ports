@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_contrib_net_c,v 1.1 2017/07/23 12:39:37 zhuk Exp $
+make net_send static, avoids conflict with net_send in libknot.
+
+Index: src/contrib/net.c
+--- src/contrib/net.c.orig
++++ src/contrib/net.c
+@@ -467,6 +467,7 @@ static ssize_t send_data(int sock, struct msghdr *msg,
+ 
+ /* -- generic stream and datagram I/O -------------------------------------- */
+ 
++static
+ ssize_t net_send(int sock, const uint8_t *buffer, size_t size,
+                  const struct sockaddr *addr, int timeout_ms)
+ {
