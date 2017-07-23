@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2017/07/16 19:18:58 espie Exp $
+# $OpenBSD: Makefile,v 1.51 2017/07/23 10:39:47 zhuk Exp $
 
 COMMENT=		BitTorrent library written in C++
 
@@ -31,7 +31,6 @@ MODGCC4_LANGS=		c++
 
 BUILD_DEPENDS=		devel/cppunit
 
-USE_LIBTOOL=		gnu
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.69
 CONFIGURE_ARGS=		--enable-static \
