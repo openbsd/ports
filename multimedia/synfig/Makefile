@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2017/07/16 19:19:01 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2017/07/23 10:49:37 zhuk Exp $
 
 COMMENT =		2D animation software
 REVISION =		4
@@ -44,9 +44,6 @@ LIB_DEPENDS =		archivers/xz \
 			graphics/openexr \
 			multimedia/mlt \
 			textproc/libxml++
-
-# .libs/libsynfig.so.0.0: undefined reference to `lt_libltdlc_LTX_preloaded_symbols'
-USE_LIBTOOL=		gnu
 
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			CXXFLAGS="-std=c++11" \
