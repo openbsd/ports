@@ -1,0 +1,17 @@
+$OpenBSD: patch-external_libmspub_ExternalProject_libmspub_mk,v 1.1 2017/07/23 18:54:02 robert Exp $
+
+Index: external/libmspub/ExternalProject_libmspub.mk
+--- external/libmspub/ExternalProject_libmspub.mk.orig
++++ external/libmspub/ExternalProject_libmspub.mk
+@@ -35,8 +35,10 @@ $(call gb_ExternalProject_get_state_target,libmspub,bu
+ 			--disable-werror \
+ 			--disable-weffc \
+ 			$(if $(verbose),--disable-silent-rules,--enable-silent-rules) \
++			CPPFLAGS="-fPIC" \
+ 			CXXFLAGS="$(CXXFLAGS) $(if $(SYSTEM_BOOST),$(BOOST_CPPFLAGS),-I$(call gb_UnpackedTarball_get_dir,boost)) \
+-				-DBOOST_ERROR_CODE_HEADER_ONLY -DBOOST_SYSTEM_NO_DEPRECATED" \
++				-DBOOST_ERROR_CODE_HEADER_ONLY -DBOOST_SYSTEM_NO_DEPRECATED \
++				$(if $(SYSTEM_ICU),-I/usr/local/include,-I$(call gb_UnpackedTarball_get_dir,icu))" \
+ 			$(if $(CROSS_COMPILING),--build=$(BUILD_PLATFORM) --host=$(HOST_PLATFORM)) \
+ 		&& $(MAKE) \
+ 	)

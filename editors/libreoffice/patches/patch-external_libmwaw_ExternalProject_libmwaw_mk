@@ -1,0 +1,13 @@
+$OpenBSD: patch-external_libmwaw_ExternalProject_libmwaw_mk,v 1.1 2017/07/23 18:54:02 robert Exp $
+
+Index: external/libmwaw/ExternalProject_libmwaw.mk
+--- external/libmwaw/ExternalProject_libmwaw.mk.orig
++++ external/libmwaw/ExternalProject_libmwaw.mk
+@@ -36,6 +36,7 @@ $(call gb_ExternalProject_get_state_target,libmwaw,bui
+ 			$(if $(ENABLE_DEBUG),--enable-debug,--disable-debug) \
+ 			$(if $(verbose),--disable-silent-rules,--enable-silent-rules) \
+ 			--disable-werror \
++			CPPFLAGS="-fPIC" \
+ 			CXXFLAGS="$(CXXFLAGS) $(CXXFLAGS_CXX11)" \
+ 			$(if $(filter LINUX,$(OS)),$(if $(SYSTEM_REVENGE),, \
+ 				'LDFLAGS=-Wl$(COMMA)-z$(COMMA)origin \
