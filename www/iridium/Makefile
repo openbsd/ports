@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.63 2017/07/16 19:19:03 espie Exp $
+# $OpenBSD: Makefile,v 1.64 2017/07/23 19:03:33 robert Exp $
+
+.include <bsd.port.arch.mk>
 
 USE_WXNEEDED=		Yes
 
@@ -11,6 +13,8 @@ V=			58.0
 DISTNAME=		iridium-browser-${V}
 PKGNAME=		iridium-${V}
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX}
+
+REVISION=		0
 
 CATEGORIES=		www
 
@@ -35,6 +39,10 @@ MODULES=	lang/python
 COMPILER =	clang gcc
 
 MODPY_RUNDEP=	No
+
+.if ${PROPERTIES:Mclang}
+PATCH_LIST=	patch-* clang-*
+.endif
 
 PATCHORIG=	.orig.port
 
