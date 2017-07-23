@@ -1,5 +1,6 @@
-$OpenBSD: patch-src_corelib_global_qcompilerdetection_h,v 1.1 2017/07/17 08:34:37 zhuk Exp $
-Unbreak tests.
+$OpenBSD: patch-src_corelib_global_qcompilerdetection_h,v 1.2 2017/07/23 21:33:14 zhuk Exp $
+1. Unbreak tests.
+2. Make sure [[nodiscard]] is not used without explicit C++17 request.
 
 Index: src/corelib/global/qcompilerdetection.h
 --- src/corelib/global/qcompilerdetection.h.orig
@@ -13,3 +14,21 @@ Index: src/corelib/global/qcompilerdetection.h
  #        define Q_COMPILER_THREAD_LOCAL
  #      endif
  #    endif
+@@ -1172,7 +1172,7 @@
+ #  define Q_DECL_ALIGN(n)   alignas(n)
+ #endif
+ 
+-#if QT_HAS_CPP_ATTRIBUTE(nodiscard)         // P0188R1
++#if defined(__cplusplus) && __cplusplus >= 201703L         // P0188R1
+ #  undef Q_REQUIRED_RESULT
+ #  define Q_REQUIRED_RESULT [[nodiscard]]
+ #endif
+@@ -1345,7 +1345,7 @@
+         Q_ASSUME_IMPL(valueOfExpression);\
+     } while (0)
+ 
+-#if defined(__cplusplus)
++#if defined(__cplusplus) && __cplusplus >= 201703L
+ #if QT_HAS_CPP_ATTRIBUTE(fallthrough)
+ #  define Q_FALLTHROUGH() [[fallthrough]]
+ #elif QT_HAS_CPP_ATTRIBUTE(clang::fallthrough)
