@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.44 2016/08/27 16:13:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2017/07/23 09:30:23 ajacoutot Exp $
 
 COMMENT-main=		LDAP client API for Python
 COMMENT-examples=	example programs for the LDAP client API for Python
 
-MODPY_EGG_VERSION =	2.4.27
+MODPY_EGG_VERSION =	2.4.41
 DISTNAME=		python-ldap-${MODPY_EGG_VERSION}
 PKGNAME-main=		py-ldap-${MODPY_EGG_VERSION}
 PKGNAME-examples=	py-ldap-examples-${MODPY_EGG_VERSION}
@@ -27,8 +27,11 @@ MODPY_SETUPTOOLS=	Yes
 LIB_DEPENDS-main=	${MODPY_LIB_DEPENDS} \
 			databases/openldap
 
-RUN_DEPENDS-main=	${RUN_DEPENDS} \
+RUN_DEPENDS-main=	${MODPY_RUN_DEPENDS} \
 			devel/py-asn1-modules
+
+TEST_DEPENDS=		${RUN_DEPENDS-main} \
+			databases/openldap,-server
 
 pre-configure:
 	sed -i -e 's,/opt/openldap-RE24/lib,${LOCALBASE}/lib,;' \
@@ -41,10 +44,5 @@ post-install:
 	cd ${WRKSRC}; tar cf - Demo | tar xf - -C \
 		${PREFIX}/share/examples/py-ldap
 	find ${PREFIX} -name '.cvsignore' -exec rm '{}' \+
-
-do-test: fake
-	cd ${WRKSRC}/Tests/Lib && ${MAKE_ENV} \
-		PYTHONPATH=${WRKINST}${MODPY_SITEPKG} \
-		${MODPY_BIN} ./test_ldapurl.py
 
 .include <bsd.port.mk>
