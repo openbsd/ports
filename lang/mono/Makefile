@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.110 2017/06/05 10:17:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.111 2017/07/23 06:41:25 ajacoutot Exp $
 
 USE_WXNEEDED=	Yes
 
 COMMENT=	cross platform, open source .NET developement framework
 
 V=		4.6.2
-DISTNAME=	mono-${V}.6
-REVISION=	2
+DISTNAME=	mono-${V}.16
 
 CATEGORIES=	lang devel
 
@@ -80,10 +79,10 @@ FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/runtime/mono-wrapper.in \
 		${WRKSRC}/runtime/monodis-wrapper.in
-	perl -pi -e 's,^prefix=.*,prefix=\@prefix\@,g;' \
+	sed -i -e 's,^prefix=.*,prefix=\@prefix\@,g;' \
 		-e 's,^exec_prefix=.*,exec_prefix=\@prefix\@,g' \
 		${WRKSRC}/data/*.pc.in
-	perl -pi -e 's,/usr/bin/env python,${MODPY_BIN},g' \
+	sed -i -e 's,/usr/bin/env python,${MODPY_BIN},g' \
 		${WRKSRC}/mono/tests/gc-descriptors/gen-descriptor-tests.py
 
 
