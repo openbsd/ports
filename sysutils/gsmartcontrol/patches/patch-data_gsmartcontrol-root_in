@@ -1,49 +1,19 @@
-$OpenBSD: patch-data_gsmartcontrol-root_in,v 1.2 2015/05/09 15:24:44 ajacoutot Exp $
---- data/gsmartcontrol-root.in.orig	Sun Feb 19 15:57:50 2012
-+++ data/gsmartcontrol-root.in	Sat May  9 17:14:41 2015
+$OpenBSD: patch-data_gsmartcontrol-root_in,v 1.3 2017/07/23 12:32:53 ajacoutot Exp $
+Index: data/gsmartcontrol-root.in
+--- data/gsmartcontrol-root.in.orig
++++ data/gsmartcontrol-root.in
 @@ -1,4 +1,4 @@
 -#!/usr/bin/env bash
 +#!/bin/sh
  ############################################################################
  # Copyright:
- #      (C) 2008 - 2012  Alexander Shaduri <ashaduri 'at' gmail.com>
-@@ -74,8 +74,8 @@ fi
- # sux requires xterm to ask for the password.
- # xdg-su is basically like this script, except worse :)
- # su-to-root is a debian/ubuntu official method (although gksu is available).
--gnome_sus="su-to-root gnomesu gksu kdesu beesu xdg-su sux";
--kde_sus="su-to-root kdesu gnomesu gksu beesu xdg-su sux";
-+gnome_sus="gksu-polkit";
-+kde_sus="kdesu";
- other_sus="$gnome_sus";
- 
- 
+ #      (C) 2008 - 2014  Alexander Shaduri <ashaduri 'at' gmail.com>
 @@ -92,7 +92,7 @@ fi
  
  if [ "$GSMARTCONTROL_SU" = "" ]; then
  	for subin in $candidates; do
 -		which $subin &>/dev/null
-+		which $subin > /dev/null 2>&1
++		which $subin >/dev/null 2>&1
  		if [ $? -eq 0 ]; then
  			found_su="$subin";
  			break;
-@@ -101,7 +101,7 @@ if [ "$GSMARTCONTROL_SU" = "" ]; then
- 
- 	if [ "$found_su" = "" ]; then
- 		xmessage "Error launching ${prog_name}: No suitable su mechanism found.
--Try installing kdesu, gnomesu, gksu, beesu or sux first.";
-+Try installing kdesu or gksu-polkit first.";
- 		exit 1;
- 	fi
- fi
-@@ -148,7 +148,9 @@ elif [ "$found_su" = "beesu" ]; then
- elif [ "$found_su" = "su-to-root" ]; then
- 	full_cmd="$found_su -X -c '$EXEC_BIN $final_args_quoted'";
- 
--else  # gnomesu, kdesu, xdg-su
-+elif [ "$found_su" = "$gnome_sus" ]; then
-+	full_cmd="$found_su $EXEC_BIN $@";
-+else  # kdesu, xdg-su
- 	full_cmd="$found_su -c '$EXEC_BIN $final_args_quoted'";
- fi
- 

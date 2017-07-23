@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/06/15 08:32:17 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2017/07/23 12:32:53 ajacoutot Exp $
 @bin bin/gsmartcontrol
 bin/gsmartcontrol-root
 @man man/man1/gsmartcontrol-root.1
@@ -36,6 +36,8 @@ share/icons/hicolor/256x256/apps/gsmartcontrol.png
 share/icons/hicolor/32x32/apps/gsmartcontrol.png
 share/icons/hicolor/48x48/apps/gsmartcontrol.png
 share/icons/hicolor/64x64/apps/gsmartcontrol.png
+share/metainfo/
+share/metainfo/gsmartcontrol.appdata.xml
 share/pixmaps/
 share/pixmaps/gsmartcontrol.png
 share/pixmaps/gsmartcontrol.xpm
