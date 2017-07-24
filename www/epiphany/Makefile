@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.156 2017/05/31 08:08:17 espie Exp $
+# $OpenBSD: Makefile,v 1.157 2017/07/24 18:26:51 jasper Exp $
 
 COMMENT=	GNOME web browser based on webkit
 
 GNOME_PROJECT=	epiphany
-GNOME_VERSION=	3.24.2
+GNOME_VERSION=	3.24.3
 MAJOR_V=	${GNOME_VERSION:R}
 SUBST_VARS=	MAJOR_V
 
@@ -17,8 +17,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += EGL GL ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xt Xxf86vm atk-1.0
-WANTLIB += atk-bridge-2.0 atspi avahi-client avahi-common avahi-glib
-WANTLIB += avahi-gobject c cairo cairo-gobject dbus-1 drm enchant
+WANTLIB += atk-bridge-2.0 atspi c cairo cairo-gobject dbus-1 drm enchant
 WANTLIB += epoxy $(LIBECXX) execinfo expat ffi fontconfig freetype
 WANTLIB += gbm gck-1 gcr-base-3 gcr-ui-3 gcrypt gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glapi glib-2.0 gmodule-2.0 gnome-desktop-3
@@ -30,7 +29,7 @@ WANTLIB += javascriptcoregtk-4.0 jpeg lzma m notify orc-0.4 p11-kit
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png pthread pthread-stubs secret-1 soup-2.4 sqlite3
 WANTLIB += webkit2gtk-4.0 webp xcb xcb-dri2 xcb-glx xcb-render
-WANTLIB += xcb-shm xcb-xfixes xml2 xslt z
+WANTLIB += xcb-shm xcb-xfixes xml2 xslt z json-glib-1.0
 
 BUILD_DEPENDS=	devel/iso-codes \
 		devel/gsettings-desktop-schemas
@@ -41,7 +40,6 @@ RUN_DEPENDS=	devel/iso-codes \
 LIB_DEPENDS=	devel/libexecinfo \
 		devel/libnotify \
 		multimedia/gstreamer1/plugins-base \
-		net/avahi \
 		www/webkitgtk4 \
 		x11/gnome/desktop \
 		x11/gnome/gcr
