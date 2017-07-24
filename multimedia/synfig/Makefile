@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.14 2017/07/23 10:49:37 zhuk Exp $
+# $OpenBSD: Makefile,v 1.15 2017/07/24 17:11:22 sthen Exp $
 
 COMMENT =		2D animation software
-REVISION =		4
+REVISION =		5
 
 V=			1.0.1
 DISTNAME =		synfig-$V
@@ -45,10 +45,12 @@ LIB_DEPENDS =		archivers/xz \
 			multimedia/mlt \
 			textproc/libxml++
 
+# XXX crash during multimedia/synfigstudio build with default -O2
+CXXFLAGS+=		-O1 -std=c++11
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
-			CXXFLAGS="-std=c++11" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE =	autoconf
+AUTOCONF_VERSION =	2.69
 CONFIGURE_ARGS =	--without-included-ltdl
 
 FAKE_FLAGS =		sysconfdir=${PREFIX}/share/examples/synfig
