@@ -1,0 +1,14 @@
+$OpenBSD: patch-support_utils_cpp,v 1.1 2017/07/24 00:08:25 espie Exp $
+
+Index: support/utils.cpp
+--- support/utils.cpp.orig
++++ support/utils.cpp
+@@ -773,7 +773,7 @@ QString Utils::helper(const QString &app)
+     #elif defined Q_OS_MAC
+     return fixPath(QCoreApplication::applicationDirPath())+app;
+     #else
+-    return QString(INSTALL_PREFIX "/"LINUX_LIB_DIR"/")+QCoreApplication::applicationName()+constDirSep+app;
++    return QString(INSTALL_PREFIX "/" LINUX_LIB_DIR "/")+QCoreApplication::applicationName()+constDirSep+app;
+     #endif
+ }
+ 
