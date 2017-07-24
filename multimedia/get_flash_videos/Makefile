@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.31 2016/05/13 07:56:55 nigel Exp $
+# $OpenBSD: Makefile,v 1.32 2017/07/24 21:20:20 nigel Exp $
 
 COMMENT=	download flash video files from various sites
 
-V=		1.25.92
+V=		1.25.93
 DISTNAME=	get_flash_videos-$V
 PKGNAME=	${DISTNAME}
 CATEGORIES=	multimedia

@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.11 2016/05/13 07:56:55 nigel Exp $
+@comment $OpenBSD: PLIST,v 1.12 2017/07/24 21:20:20 nigel Exp $
 bin/get_flash_videos
 ${P5SITE}/FlashVideo/
 ${P5SITE}/FlashVideo/Downloader.pm
-${P5SITE}/FlashVideo/FFmpegDownloader.pm
 ${P5SITE}/FlashVideo/Generic.pm
 ${P5SITE}/FlashVideo/HLSDownloader.pm
 ${P5SITE}/FlashVideo/JSON.pm
@@ -125,13 +124,11 @@ ${P5SITE}/FlashVideo/Site/Truveo.pm
 ${P5SITE}/FlashVideo/Site/Tudou.pm
 ${P5SITE}/FlashVideo/Site/Tv.pm
 ${P5SITE}/FlashVideo/Site/Tv3.pm
-${P5SITE}/FlashVideo/Site/Tv3play.pm
 ${P5SITE}/FlashVideo/Site/Tv4play.pm
-${P5SITE}/FlashVideo/Site/Tv6play.pm
-${P5SITE}/FlashVideo/Site/Tv8play.pm
 ${P5SITE}/FlashVideo/Site/Tva.pm
 ${P5SITE}/FlashVideo/Site/Tvnz.pm
 ${P5SITE}/FlashVideo/Site/Ustream.pm
+${P5SITE}/FlashVideo/Site/Viafree.pm
 ${P5SITE}/FlashVideo/Site/Video44.pm
 ${P5SITE}/FlashVideo/Site/Videobb.pm
 ${P5SITE}/FlashVideo/Site/Videofun.pm
