@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2017/07/16 19:19:01 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2017/07/24 21:06:37 robert Exp $
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS} ${CLANG_ARCHS}
 
@@ -8,6 +8,7 @@ PORTROACH =	limit:^1\.10\.
 VERSION =	1.10.16
 DISTNAME =	Botan-${VERSION}
 PKGNAME =	botan-${VERSION}
+REVISION =	0
 
 SHARED_LIBS =	botan-1.10	1.0
 
@@ -46,6 +47,7 @@ CONFIGURE_ARGS =	--cpu=${MACHINE_ARCH} \
 			--with-bzip2 \
 			--with-gnump \
 			--with-openssl \
+			--with-tr1-implementation=boost \
 			--with-zlib \
 			--without-sphinx
 
