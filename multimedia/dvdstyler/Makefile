@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.33 2017/07/16 19:19:00 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2017/07/24 17:08:18 ajacoutot Exp $
+
+BROKEN=			needs a fix for newer x11/wxSVG
 
 COMMENT=		DVD authoring application
 
