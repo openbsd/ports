@@ -1,9 +1,9 @@
-#	$OpenBSD: Makefile,v 1.44 2017/07/08 03:43:39 jsg Exp $
+#	$OpenBSD: Makefile,v 1.45 2017/07/24 12:46:45 gsoares Exp $
 
 ONLY_FOR_ARCHS= i386 amd64
 
 COMMENT=	instrumented fuzzer
-DISTNAME=	afl-2.45b
+DISTNAME=	afl-2.49b
 EXTRACT_SUFX=	.tgz
 CATEGORIES=	devel
 
