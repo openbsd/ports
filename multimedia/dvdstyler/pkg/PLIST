@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2015/04/28 07:40:36 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2017/07/25 08:18:53 ajacoutot Exp $
 @bin bin/dvdstyler
 @man man/man1/dvdstyler.1
 share/applications/dvdstyler.desktop
@@ -210,14 +210,10 @@ share/locale/eu/LC_MESSAGES/dvdstyler.mo
 share/locale/fi/LC_MESSAGES/dvdstyler.mo
 share/locale/fr/LC_MESSAGES/dvdstyler.mo
 share/locale/hu/LC_MESSAGES/dvdstyler.mo
-share/locale/hy/
-share/locale/hy/LC_MESSAGES/
 share/locale/hy/LC_MESSAGES/dvdstyler.mo
 share/locale/it/LC_MESSAGES/dvdstyler.mo
 share/locale/ja/LC_MESSAGES/dvdstyler.mo
 share/locale/ko/LC_MESSAGES/dvdstyler.mo
-share/locale/mk/
-share/locale/mk/LC_MESSAGES/
 share/locale/mk/LC_MESSAGES/dvdstyler.mo
 share/locale/nb/LC_MESSAGES/dvdstyler.mo
 share/locale/nl/LC_MESSAGES/dvdstyler.mo
@@ -232,8 +228,6 @@ share/locale/sr/LC_MESSAGES/dvdstyler.mo
 share/locale/sv/LC_MESSAGES/dvdstyler.mo
 share/locale/tr/LC_MESSAGES/dvdstyler.mo
 share/locale/uk/LC_MESSAGES/dvdstyler.mo
-share/locale/uz/
-share/locale/uz/LC_MESSAGES/
 share/locale/uz/LC_MESSAGES/dvdstyler.mo
 share/locale/vi/LC_MESSAGES/dvdstyler.mo
 share/locale/zh_CN/LC_MESSAGES/dvdstyler.mo

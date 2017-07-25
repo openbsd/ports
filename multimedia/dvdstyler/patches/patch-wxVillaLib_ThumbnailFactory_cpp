@@ -1,0 +1,15 @@
+$OpenBSD: patch-wxVillaLib_ThumbnailFactory_cpp,v 1.1 2017/07/25 08:18:53 ajacoutot Exp $
+
+ThumbnailFactory.cpp:371: error: call of overloaded 'abs(float)' is ambiguous
+
+Index: wxVillaLib/ThumbnailFactory.cpp
+--- wxVillaLib/ThumbnailFactory.cpp.orig
++++ wxVillaLib/ThumbnailFactory.cpp
+@@ -17,6 +17,7 @@
+ #include <wx/wx.h>
+ #include <wx/filename.h>
+ #include <sys/stat.h>
++#include <cmath>
+ #include "utils.h"
+ 
+ #ifdef GNOME2
