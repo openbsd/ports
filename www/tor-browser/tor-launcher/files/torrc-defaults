@@ -5,8 +5,9 @@ AvoidDiskWrites 1
 Log notice stdout
 # Bind to this address to listen to connections from SOCKS-speaking
 # applications.
-SocksPort 9150
-ControlPort 9151
+## XXX I think these two directives are actually screwing us over:
+#SocksPort 9150
+#ControlPort 9151
 CookieAuthentication 1
 GeoIPFile ${LOCALBASE}/share/tor/geoip
 GeoIPv6File ${LOCALBASE}/share/tor/geoip6

@@ -8,9 +8,9 @@ pref("extensions.https_everywhere.toolbar_hint_shown", true);
 
 # NoScript Preferences:
 pref("capability.policy.maonoscript.javascript.enabled", "allAccess");
-pref("capability.policy.maonoscript.sites", "about: about:tbupdate chrome: resource: blob: mediasource: moz-safe-about:");
-pref("noscript.default", "about: about:tbupdate chrome: resource: blob: mediasource: moz-safe-about:");
-pref("noscript.mandatory", "about: about:tbupdate chrome: resource: blob: mediasource: moz-safe-about:");
+pref("capability.policy.maonoscript.sites", "about: about:tbupdate chrome: resource: blob: mediasource: moz-safe-about: about:neterror about:certerror about:feeds about:tabcrashed about:cache");
+pref("noscript.default", "about: about:tbupdate chrome: resource: blob: mediasource: moz-safe-about: about:neterror about:certerror about:feeds about:tabcrashed about:cache");
+pref("noscript.mandatory", "about: about:tbupdate chrome: resource: blob: mediasource: moz-safe-about: about:neterror about:certerror about:feeds about:tabcrashed about:cache");
 pref("noscript.ABE.enabled", false);
 pref("noscript.ABE.notify", false);
 pref("noscript.ABE.wanIpAsLocal", false);
@@ -55,6 +55,10 @@ pref("noscript.restrictSubdocScripting", true);
 pref("noscript.showVolatilePrivatePermissionsToggle", false);
 pref("noscript.volatilePrivatePermissions", true);
 pref("noscript.clearClick", 0);
+// Workaround for bug 22362: Disable XSS filter for now as it freezes the
+// browser in some circumstances.
+pref("noscript.filterXGet", false);
+pref("noscript.filterXPost", false);
 # Tor Launcher preferences (default bridges):
 pref("extensions.torlauncher.default_bridge_recommended_type", "obfs4");
 
@@ -92,6 +96,9 @@ pref("extensions.torlauncher.default_bridge.obfs4.19", "obfs4 192.95.36.142:443 
 pref("extensions.torlauncher.default_bridge.obfs4.20", "obfs4 85.17.30.79:443 FC259A04A328A07FED1413E9FC6526530D9FD87A cert=RutxZlu8BtyP+y0NX7bAVD41+J/qXNhHUrKjFkRSdiBAhIHIQLhKQ2HxESAKZprn/lR3KA iat-mode=0");
 pref("extensions.torlauncher.default_bridge.obfs4.21", "obfs4 38.229.1.78:80 C8CBDB2464FC9804A69531437BCF2BE31FDD2EE4 cert=Hmyfd2ev46gGY7NoVxA9ngrPF2zCZtzskRTzoWXbxNkzeVnGFPWmrTtILRyqCTjHR+s9dg iat-mode=1");
 /**/pref/**/(/**/"extensions.torlauncher.default_bridge.obfs4.22"/**/, /**/"obfs4 38.229.33.83:80 0BAC39417268B96B9F514E7F63FA6FBA1A788955 cert=VwEFpk9F/UN9JED7XpG1XOjm/O8ZCXK80oPecgWnNDZDv5pdkhq1OpbAH0wNqOT6H6BmRQ iat-mode=1");
+pref("extensions.torlauncher.default_bridge.obfs4.23", "obfs4 [2001:470:b381:bfff:216:3eff:fe23:d6c3]:443 CDF2E852BF539B82BD10E27E9115A31734E378C2 cert=qUVQ0srL1JI/vO6V6m/24anYXiJD3QP2HgzUKQtQ7GRqqUvs7P+tG43RtAqdhLOALP7DJQ iat-mode=1");
+pref("extensions.torlauncher.default_bridge.obfs4.24", "obfs4 37.218.240.34:40035 88CD36D45A35271963EF82E511C8827A24730913 cert=eGXYfWODcgqIdPJ+rRupg4GGvVGfh25FWaIXZkit206OSngsp7GAIiGIXOJJROMxEqFKJg iat-mode=1");
+pref("extensions.torlauncher.default_bridge.obfs4.25", "obfs4 37.218.245.14:38224 D9A82D2F9C2F65A18407B1D2B764F130847F8B5D cert=bjRaMrr1BRiAW8IE9U5z27fQaYgOhX1UCmOpg2pFpoMvo6ZgQMzLsaTzzQNTlm7hNcb+Sg iat-mode=0");
 
 pref("extensions.torlauncher.default_bridge.meek-amazon.1", "meek 0.0.2.0:2 B9E7141C594AF25699E0079C1F0146F409495296 url=https://d2cly7j4zqgua7.cloudfront.net/ front=a0.awsstatic.com");
 pref("extensions.torlauncher.default_bridge.meek-azure.1", "meek 0.0.2.0:3 97700DFE9F483596DDA6264C4D7DF7641E1E39CE url=https://meek.azureedge.net/ front=ajax.aspnetcdn.com");

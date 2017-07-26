@@ -1,14 +1,15 @@
-$OpenBSD: patch-security_nss_Makefile,v 1.1.1.1 2016/11/13 21:15:43 landry Exp $
+$OpenBSD: patch-security_nss_Makefile,v 1.2 2017/07/26 20:50:39 sthen Exp $
 
 Taken from security/nss
---- security/nss/Makefile.orig	Tue May 31 07:26:30 2016
-+++ security/nss/Makefile	Wed Jun  1 18:35:53 2016
+Index: security/nss/Makefile
+--- security/nss/Makefile.orig
++++ security/nss/Makefile
 @@ -46,7 +46,7 @@ include $(CORE_DEPTH)/coreconf/rules.mk
  # (7) Execute "local" rules. (OPTIONAL).                              #
  #######################################################################
  
--nss_build_all: build_nspr all
-+nss_build_all: all
+-nss_build_all: build_nspr all latest
++nss_build_all: all latest
  
  nss_clean_all: clobber_nspr clobber
  

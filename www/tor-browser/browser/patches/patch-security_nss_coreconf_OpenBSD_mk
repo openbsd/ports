@@ -1,8 +1,9 @@
-$OpenBSD: patch-security_nss_coreconf_OpenBSD_mk,v 1.1.1.1 2016/11/13 21:15:43 landry Exp $
+$OpenBSD: patch-security_nss_coreconf_OpenBSD_mk,v 1.2 2017/07/26 20:50:39 sthen Exp $
 
 Taken from security/nss
---- security/nss/coreconf/OpenBSD.mk.orig	Fri Sep 11 16:39:07 2015
-+++ security/nss/coreconf/OpenBSD.mk	Fri Sep 11 16:39:45 2015
+Index: security/nss/coreconf/OpenBSD.mk
+--- security/nss/coreconf/OpenBSD.mk.orig
++++ security/nss/coreconf/OpenBSD.mk
 @@ -24,7 +24,7 @@ OS_LIBS			+= -pthread
  DSO_LDOPTS		+= -pthread
  endif
@@ -10,7 +11,7 @@ Taken from security/nss
 -DLL_SUFFIX		= so.1.0
 +DLL_SUFFIX		= so.${SO_VERSION}
  
- OS_CFLAGS		= $(DSO_CFLAGS) $(OS_REL_CFLAGS) -ansi -Wall -Wno-switch -pipe -DOPENBSD
+ OS_CFLAGS		= $(DSO_CFLAGS) $(OS_REL_CFLAGS) -Wall -Wno-switch -pipe -DOPENBSD
  
 @@ -35,7 +35,7 @@ ARCH			= openbsd
  DSO_CFLAGS		= -fPIC -DPIC

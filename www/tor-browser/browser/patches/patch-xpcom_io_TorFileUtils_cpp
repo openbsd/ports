@@ -1,10 +1,25 @@
-$OpenBSD: patch-xpcom_io_TorFileUtils_cpp,v 1.1.1.1 2016/11/13 21:15:43 landry Exp $
+$OpenBSD: patch-xpcom_io_TorFileUtils_cpp,v 1.2 2017/07/26 20:50:39 sthen Exp $
 
-Honor the --enable-tor-data-in-home-dir configure option.  Hopefully
-this goes away soon c.f. https://trac.torproject.org/projects/tor/ticket/20497
---- xpcom/io/TorFileUtils.cpp.orig	Wed Sep  7 02:07:10 2016
-+++ xpcom/io/TorFileUtils.cpp	Thu Sep 22 12:55:26 2016
-@@ -15,7 +15,17 @@ TorBrowser_GetUserDataDir(nsIFile *aExeFile, nsIFile**
+Autoconf is gone now so the old configure patch to add
+--enable-tor-browser-data-in-home-dir will never fly.  Hard-code it on
+for now on OpenBSD and try to get something similar done under the new
+Pyton config regime (encouraged by tbb devs on IRC).  c.f.
+https://trac.torproject.org/projects/tor/ticket/20557
+Index: xpcom/io/TorFileUtils.cpp
+--- xpcom/io/TorFileUtils.cpp.orig
++++ xpcom/io/TorFileUtils.cpp
+@@ -6,6 +6,10 @@
+ 
+ #include "TorFileUtils.h"
+ 
++#ifdef __OpenBSD__
++# define TOR_BROWSER_DATA_IN_HOME_DIR 1
++#endif
++
+ static nsresult GetAppRootDir(nsIFile *aExeFile, nsIFile** aFile);
+ 
+ //-----------------------------------------------------------------------------
+@@ -15,7 +19,17 @@ TorBrowser_GetUserDataDir(nsIFile *aExeFile, nsIFile**
    NS_ENSURE_ARG_POINTER(aFile);
    nsCOMPtr<nsIFile> tbDataDir;
  

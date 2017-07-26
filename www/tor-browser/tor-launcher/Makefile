@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.6 2017/05/11 01:26:37 danj Exp $
+# $OpenBSD: Makefile,v 1.7 2017/07/26 20:50:39 sthen Exp $
 
 ADDON_NAME =		tor-launcher
-V =			0.2.10.3
-REVISION =		1
+V =			0.2.12.2
 COMMENT =		Tor Browser add-on to manage tor instance
 GUID =			tor-launcher@torproject.org
 PKGNAME =		${TB_NAME}

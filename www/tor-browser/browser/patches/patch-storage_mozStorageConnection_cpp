@@ -1,9 +1,10 @@
-$OpenBSD: patch-storage_mozStorageConnection_cpp,v 1.1.1.1 2016/11/13 21:15:43 landry Exp $
+$OpenBSD: patch-storage_mozStorageConnection_cpp,v 1.2 2017/07/26 20:50:39 sthen Exp $
 
 Brought over from www/firefox-esr 45.1.1
---- storage/mozStorageConnection.cpp.orig	Tue May 31 07:26:30 2016
-+++ storage/mozStorageConnection.cpp	Wed Jun  1 18:34:14 2016
-@@ -743,6 +743,13 @@ Connection::initializeInternal()
+Index: storage/mozStorageConnection.cpp
+--- storage/mozStorageConnection.cpp.orig
++++ storage/mozStorageConnection.cpp
+@@ -782,6 +782,13 @@ Connection::initializeInternal()
      return convertResultCode(srv);
    }
  

@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1.1.1 2016/11/13 21:18:48 landry Exp $
+$OpenBSD: README,v 1.2 2017/07/26 20:50:39 sthen Exp $
 
 +-----------------------------------------------------------------------
 | ${FULLPKGNAME} on OpenBSD
@@ -8,7 +8,16 @@ To start Tor Browser:
 
   $ tor-browser
 
-This will create a ~/TorBrowser-Data directory if it does not exist.
+This will create a ~/TorBrowser-Data directory tree if it does not
+exist.
+
+As of the 7.0.2 release Tor Browser keeps its data in ~/TorBrowser-Data/Data.
+In 6.5.2 it was ~/TorBrowser-Data/Browser.  If you wish to preserve either
+your tor configuration (bridges, etc) or your browser profile across
+the updated to 7.0.2 please do the following BEFORE starting tor-browser
+after you upgrade:
+
+  $ mv ~/TorBrowser-Data/Browser ~/TorBrowser-Data/Data
 
 Tor Browser uses its own instance of the tor server running on a
 different port than the net/tor port is configured to use by default.
@@ -18,12 +27,14 @@ daemon you have running via the standard mechanism (e.g. rcctl start
 tor).
 
 The tor instance used by Tor Browser stores its configuration in
-~/TorBrowser-Data/Browser/torrc; the tor daemon state lives in
-~/TorBrowser-Data/Browser/tor_data.  When you use Tor Browser to
-change your configuration (e.g. add bridges) the above torrc is
-updated.  You can also add bridges by editing your torrc yourself.
-Make sure Tor Browser is not running before doing so if you use this
-method; if Tor Browser is running it might overwrite your torrc.
+~/TorBrowser-Data/Data/torrc; the tor daemon state lives in
+~/TorBrowser-Data/Data/tor_data.
+
+When you use Tor Browser to change your configuration (e.g. add
+bridges) the above torrc is updated.  You can also add bridges by
+editing your torrc yourself.  Make sure Tor Browser is not running
+before doing so if you use this method; if Tor Browser is running it
+might overwrite your torrc.
 
 NOTE: The OpenBSD Tor Browser ports do not yet include Pluggable
 Transports (PT).  This means that not all features are yet available,
