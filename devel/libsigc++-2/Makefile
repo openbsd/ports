@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.38 2017/05/31 08:08:15 espie Exp $
+# $OpenBSD: Makefile,v 1.39 2017/07/26 23:35:43 sthen Exp $
 
 COMMENT=		callback framework for C++
 
 GNOME_VERSION=		2.10.0
+REVISION=		0
 GNOME_PROJECT=		libsigc++
 CATEGORIES=		devel
 
