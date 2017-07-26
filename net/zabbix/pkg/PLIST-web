@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-web,v 1.29 2017/01/08 19:24:53 robert Exp $
+@comment $OpenBSD: PLIST-web,v 1.30 2017/07/26 17:54:44 robert Exp $
 @pkgpath net/zabbix,-web,mysql
 @pkgpath net/zabbix,-web,pgsql
 @sample conf/modules.sample/
@@ -747,6 +747,10 @@ zabbix/locale/bg/
 zabbix/locale/bg/LC_MESSAGES/
 zabbix/locale/bg/LC_MESSAGES/frontend.mo
 zabbix/locale/bg/LC_MESSAGES/frontend.po
+zabbix/locale/ca/
+zabbix/locale/ca/LC_MESSAGES/
+zabbix/locale/ca/LC_MESSAGES/frontend.mo
+zabbix/locale/ca/LC_MESSAGES/frontend.po
 zabbix/locale/cs/
 zabbix/locale/cs/LC_MESSAGES/
 zabbix/locale/cs/LC_MESSAGES/frontend.mo

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.17 2017/01/08 19:24:53 robert Exp $
+@comment $OpenBSD: PLIST-server,v 1.18 2017/07/26 17:54:44 robert Exp $
 @conflict zabbix-agent-<=1.8.3p5
 @man man/man8/zabbix_proxy.8
 @man man/man8/zabbix_server.8
@@ -19,6 +19,7 @@ share/examples/zabbix/zabbix_server.conf
 @mode
 @group
 share/zabbix/
+share/zabbix/alertscripts/
 share/zabbix/data/
 share/zabbix/data/images/
 share/zabbix/dbpatches/
@@ -53,6 +54,7 @@ share/zabbix/dbpatches/2.0/postgresql/patch.sql
 share/zabbix/dbpatches/2.0/postgresql/rc4_rc5.sql
 share/zabbix/dbpatches/2.2/
 share/zabbix/dbpatches/2.2/README
+share/zabbix/externalscripts/
 share/zabbix/schema/
 share/zabbix/schema/mysql/
 share/zabbix/schema/mysql/data.sql
