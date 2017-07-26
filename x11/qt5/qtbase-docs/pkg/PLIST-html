@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-html,v 1.2 2017/07/17 08:34:37 zhuk Exp $
+@comment $OpenBSD: PLIST-html,v 1.3 2017/07/26 22:48:36 espie Exp $
 share/doc/qt5/qmake/images/
 share/doc/qt5/qmake/images/arrow_bc.png
 share/doc/qt5/qmake/images/bgrContent.png
@@ -2172,7 +2172,7 @@ share/doc/qt5/qtsql/images/btn_next.png
 share/doc/qt5/qtsql/images/btn_prev.png
 share/doc/qt5/qtsql/images/bullet_dn.png
 share/doc/qt5/qtsql/images/bullet_sq.png
-share/doc/qt5/qtsql/images/cachedtable-example.png
+@comment share/doc/qt5/qtsql/images/cachedtable-example.png
 share/doc/qt5/qtsql/images/drilldown-example.png
 share/doc/qt5/qtsql/images/foreignkeys.png
 share/doc/qt5/qtsql/images/home.png
@@ -2181,15 +2181,15 @@ share/doc/qt5/qtsql/images/ico_note_attention.png
 share/doc/qt5/qtsql/images/ico_out.png
 share/doc/qt5/qtsql/images/insertrowinmodelview.png
 share/doc/qt5/qtsql/images/logo.png
-share/doc/qt5/qtsql/images/masterdetail-example.png
+@comment share/doc/qt5/qtsql/images/masterdetail-example.png
 share/doc/qt5/qtsql/images/noforeignkeys.png
 share/doc/qt5/qtsql/images/qdatawidgetmapper-simple.png
-share/doc/qt5/qtsql/images/querymodel-example.png
+@comment share/doc/qt5/qtsql/images/querymodel-example.png
 share/doc/qt5/qtsql/images/relationaltable.png
-share/doc/qt5/qtsql/images/relationaltablemodel-example.png
+@comment share/doc/qt5/qtsql/images/relationaltablemodel-example.png
 share/doc/qt5/qtsql/images/sql-widget-mapper.png
 share/doc/qt5/qtsql/images/sqlbrowser-demo.png
-share/doc/qt5/qtsql/images/tablemodel-example.png
+@comment share/doc/qt5/qtsql/images/tablemodel-example.png
 share/doc/qt5/qtsql/images/used-in-examples/
 share/doc/qt5/qtsql/images/used-in-examples/books/
 share/doc/qt5/qtsql/images/used-in-examples/books/images/
@@ -2204,8 +2204,8 @@ share/doc/qt5/qtsql/images/used-in-examples/masterdetail/
 share/doc/qt5/qtsql/images/used-in-examples/masterdetail/images/
 share/doc/qt5/qtsql/images/used-in-examples/masterdetail/images/icon.png
 share/doc/qt5/qtsql/images/used-in-examples/masterdetail/images/image.png
-share/doc/qt5/qtsql/images/widgetmapper-sql-mapping-table.png
-share/doc/qt5/qtsql/images/widgetmapper-sql-mapping.png
+@comment share/doc/qt5/qtsql/images/widgetmapper-sql-mapping-table.png
+@comment share/doc/qt5/qtsql/images/widgetmapper-sql-mapping.png
 share/doc/qt5/qtsql/qsql.html
 share/doc/qt5/qtsql/qsqldatabase-members.html
 share/doc/qt5/qtsql/qsqldatabase.html
@@ -2418,7 +2418,7 @@ share/doc/qt5/qtwidgets/images/addressbook-tutorial-part6-screenshot.png
 share/doc/qt5/qtwidgets/images/addressbook-tutorial-part7-screenshot.png
 share/doc/qt5/qtwidgets/images/addressbook-tutorial-screenshot.png
 share/doc/qt5/qtwidgets/images/affine-demo.png
-share/doc/qt5/qtwidgets/images/analogclock-example.png
+@comment share/doc/qt5/qtwidgets/images/analogclock-example.png
 share/doc/qt5/qtwidgets/images/analogclock-viewport.png
 share/doc/qt5/qtwidgets/images/animatedtiles-example.png
 share/doc/qt5/qtwidgets/images/appchooser-example.png
@@ -2450,11 +2450,11 @@ share/doc/qt5/qtwidgets/images/buttonbox-maclayout-horizontal.png
 share/doc/qt5/qtwidgets/images/buttonbox-maclayout-vertical.png
 share/doc/qt5/qtwidgets/images/buttonbox-winlayout-horizontal.png
 share/doc/qt5/qtwidgets/images/buttonbox-winlayout-vertical.png
-share/doc/qt5/qtwidgets/images/calculator-example.png
+@comment share/doc/qt5/qtwidgets/images/calculator-example.png
 share/doc/qt5/qtwidgets/images/calculator-ugly.png
 share/doc/qt5/qtwidgets/images/calendar-example.png
-share/doc/qt5/qtwidgets/images/calendarwidgetexample.png
-share/doc/qt5/qtwidgets/images/charactermap-example.png
+@comment share/doc/qt5/qtwidgets/images/calendarwidgetexample.png
+@comment share/doc/qt5/qtwidgets/images/charactermap-example.png
 share/doc/qt5/qtwidgets/images/chart-example.png
 share/doc/qt5/qtwidgets/images/checkbox.png
 share/doc/qt5/qtwidgets/images/checkboxes-exclusive.png
@@ -2465,7 +2465,7 @@ share/doc/qt5/qtwidgets/images/classwizard-flow.png
 share/doc/qt5/qtwidgets/images/classwizard.png
 share/doc/qt5/qtwidgets/images/clock.png
 share/doc/qt5/qtwidgets/images/codecs-example.png
-share/doc/qt5/qtwidgets/images/codeeditor-example.png
+@comment share/doc/qt5/qtwidgets/images/codeeditor-example.png
 share/doc/qt5/qtwidgets/images/collidingmice-example.png
 share/doc/qt5/qtwidgets/images/coloreditorfactoryimage.png
 share/doc/qt5/qtwidgets/images/columnview.png
@@ -2491,7 +2491,7 @@ share/doc/qt5/qtwidgets/images/designer-validator-highlighter.png
 share/doc/qt5/qtwidgets/images/desktop-examples.png
 share/doc/qt5/qtwidgets/images/diagramscene.png
 share/doc/qt5/qtwidgets/images/dialog-examples.png
-share/doc/qt5/qtwidgets/images/digitalclock-example.png
+@comment share/doc/qt5/qtwidgets/images/digitalclock-example.png
 share/doc/qt5/qtwidgets/images/dirview-example.png
 share/doc/qt5/qtwidgets/images/dockwidget.png
 share/doc/qt5/qtwidgets/images/dockwidgetimage.png
@@ -2592,7 +2592,7 @@ share/doc/qt5/qtwidgets/images/icons_size_groupbox.png
 share/doc/qt5/qtwidgets/images/icons_size_spinbox.png
 share/doc/qt5/qtwidgets/images/imagecomposition-example.png
 share/doc/qt5/qtwidgets/images/imagegestures-example.jpg
-share/doc/qt5/qtwidgets/images/imageviewer-example.png
+@comment share/doc/qt5/qtwidgets/images/imageviewer-example.png
 share/doc/qt5/qtwidgets/images/imageviewer-fit_to_window_1.png
 share/doc/qt5/qtwidgets/images/imageviewer-fit_to_window_2.png
 share/doc/qt5/qtwidgets/images/imageviewer-original_size.png
@@ -2737,7 +2737,7 @@ share/doc/qt5/qtwidgets/images/selection-single.png
 share/doc/qt5/qtwidgets/images/selection2.png
 share/doc/qt5/qtwidgets/images/settingseditor-example.png
 share/doc/qt5/qtwidgets/images/shapedclock-dragging.png
-share/doc/qt5/qtwidgets/images/shapedclock-example.png
+@comment share/doc/qt5/qtwidgets/images/shapedclock-example.png
 share/doc/qt5/qtwidgets/images/shareddirmodel.png
 share/doc/qt5/qtwidgets/images/sharedmodel-tableviews.png
 share/doc/qt5/qtwidgets/images/sharedselection-tableviews.png
@@ -2772,7 +2772,7 @@ share/doc/qt5/qtwidgets/images/stylepluginexample.png
 share/doc/qt5/qtwidgets/images/styles-3d.png
 share/doc/qt5/qtwidgets/images/styles-aliasing.png
 share/doc/qt5/qtwidgets/images/styles-disabledwood.png
-share/doc/qt5/qtwidgets/images/styles-enabledwood.png
+@comment share/doc/qt5/qtwidgets/images/styles-enabledwood.png
 share/doc/qt5/qtwidgets/images/styles-woodbuttons.png
 share/doc/qt5/qtwidgets/images/stylesheet-border-image-normal.png
 share/doc/qt5/qtwidgets/images/stylesheet-border-image-stretched.png
@@ -2798,7 +2798,7 @@ share/doc/qt5/qtwidgets/images/swipegesture.png
 share/doc/qt5/qtwidgets/images/syntaxhighlighter-example.png
 share/doc/qt5/qtwidgets/images/system-tray.png
 share/doc/qt5/qtwidgets/images/systemtray-editor.png
-share/doc/qt5/qtwidgets/images/systemtray-example.png
+@comment share/doc/qt5/qtwidgets/images/systemtray-example.png
 share/doc/qt5/qtwidgets/images/tab.png
 share/doc/qt5/qtwidgets/images/tabWidget-stylesheet1.png
 share/doc/qt5/qtwidgets/images/tabWidget-stylesheet2.png
@@ -3120,7 +3120,7 @@ share/doc/qt5/qtwidgets/images/widgets-tutorial-nestedlayouts.png
 share/doc/qt5/qtwidgets/images/widgets-tutorial-toplevel.png
 share/doc/qt5/qtwidgets/images/widgets-tutorial-windowlayout.png
 share/doc/qt5/qtwidgets/images/wiggly-example.png
-share/doc/qt5/qtwidgets/images/windowflags-example.png
+@comment share/doc/qt5/qtwidgets/images/windowflags-example.png
 share/doc/qt5/qtwidgets/images/windowflags_controllerwindow.png
 share/doc/qt5/qtwidgets/images/windowflags_previewwindow.png
 share/doc/qt5/qtwidgets/images/windows-checkbox.png

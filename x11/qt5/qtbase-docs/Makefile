@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2017/07/17 08:34:37 zhuk Exp $
+# $OpenBSD: Makefile,v 1.5 2017/07/26 22:48:36 espie Exp $
 
 # to build those we need both qtbase and qttools installed
 
@@ -12,6 +12,7 @@ DPB_PROPERTIES =	parallel
 
 MULTI_PACKAGES =	-qch -html -docindex
 SUBPACKAGE ?=		-qch
+REVISION-html =		0
 
 ALL_TARGET =		docs
 FAKE_TARGET =		install_docs
