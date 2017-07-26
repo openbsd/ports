@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/06/14 18:59:52 danj Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/07/26 19:20:12 jasper Exp $
 include/snappy-c.h
 include/snappy-sinksource.h
 include/snappy-stubs-public.h
@@ -6,6 +6,7 @@ include/snappy.h
 lib/libsnappy.a
 lib/libsnappy.la
 @lib lib/libsnappy.so.${LIBsnappy_VERSION}
+lib/pkgconfig/snappy.pc
 share/doc/snappy/
 share/doc/snappy/COPYING
 share/doc/snappy/ChangeLog

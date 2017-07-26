@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2017/07/23 09:26:25 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2017/07/26 19:20:12 jasper Exp $
 
 COMMENT =	fast compression/decompression library
 
-V =		1.1.4
-DISTNAME =	snappy-${V}
-REVISION =	1
+GH_TAGNAME =	1.1.6
+GH_PROJECT =	snappy
+GH_ACCOUNT =	google
 
 SHARED_LIBS =	snappy	0.0	# 4.1
 
@@ -15,12 +15,22 @@ HOMEPAGE =	http://google.github.io/snappy/
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB +=	m ${COMPILER_LIBCXX}
+WANTLIB +=		m ${COMPILER_LIBCXX}
 
-MASTER_SITES =	https://github.com/google/snappy/releases/download/${V}/
+BUILD_DEPENDS=          ${MODGNU_AUTOCONF_DEPENDS} \
+                        ${MODGNU_AUTOMAKE_DEPENDS} \
+                        devel/libtool
+# XXX Depends on libtool macros
 
-CONFIGURE_STYLE = gnu
+USE_GMAKE =		Yes
+AUTOMAKE_VERSION =	1.14
+AUTOCONF_VERSION =	2.69
+CONFIGURE_STYLE = 	autoconf no-autoheader
 
 CONFIGURE_ARGS += --disable-gtest
+
+post-patch:
+	cd ${WRKBUILD} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} ./autogen.sh
 
 .include <bsd.port.mk>
