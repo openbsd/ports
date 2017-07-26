@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-hpcups,v 1.11 2015/11/17 08:57:45 ajacoutot Exp $
+@comment $OpenBSD: PLIST-hpcups,v 1.12 2017/07/26 08:15:54 ajacoutot Exp $
 @conflict hpijs-<=3.2.11
 @conflict hplip-<3.13.8p1
 @mode 0700
@@ -7,7 +7,7 @@ libexec/cups/backend/hpfax
 @mode
 @bin libexec/cups/filter/hpcups
 @bin libexec/cups/filter/hpcupsfax
-libexec/cups/filter/hpps
+@bin libexec/cups/filter/hpps
 libexec/cups/filter/pstotiff
 share/cups/drv/hp/hpcups.drv
 share/examples/hplip/cups/
