@@ -1,6 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2017/07/19 19:33:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2017/07/26 22:39:58 jca Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386
+
+# XXX errors with with clang
+# ./src/string.c:24:16: error: invalid output constraint '=Qi' in asm
+CC =		/usr/bin/gcc
 
 FW_DRIVER=	vmm
 FW_VER=		1.10.2
