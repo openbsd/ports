@@ -1,0 +1,12 @@
+$OpenBSD: patch-bfd_Makefile_in,v 1.1.1.1 2017/07/26 21:45:23 pascal Exp $
+--- bfd/Makefile.in.orig	Thu Mar  2 09:23:53 2017
++++ bfd/Makefile.in	Sun Apr 30 00:59:14 2017
+@@ -371,7 +371,7 @@ AUTOMAKE_OPTIONS = 1.11 no-dist foreign
+ ACLOCAL_AMFLAGS = -I . -I .. -I ../config
+ INCDIR = $(srcdir)/../include
+ CSEARCH = -I. -I$(srcdir) -I$(INCDIR)
+-SUBDIRS = doc po
++SUBDIRS = po
+ bfddocdir = doc
+ libbfd_la_LDFLAGS = $(am__append_1) -release `cat libtool-soversion` \
+ 	@SHARED_LDFLAGS@ $(am__empty)

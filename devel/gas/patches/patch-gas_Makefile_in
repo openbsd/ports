@@ -1,0 +1,12 @@
+$OpenBSD: patch-gas_Makefile_in,v 1.1.1.1 2017/07/26 21:45:23 pascal Exp $
+--- gas/Makefile.in.orig	Sat Apr 29 21:28:58 2017
++++ gas/Makefile.in	Sat Apr 29 21:29:23 2017
+@@ -2682,7 +2682,7 @@ cgen.@OBJEXT@: cgen.c cgen.h cgen-desc.h subsegs.h \
+ .PHONY: install-exec-local install-data-local
+ .PHONY: install-exec-bindir install-exec-tooldir
+ 
+-install-exec-local: install-exec-bindir @install_tooldir@
++install-exec-local: install-exec-bindir
+ 
+ install-exec-bindir: $(noinst_PROGRAMS)
+ 	$(mkinstalldirs) $(DESTDIR)$(bindir)

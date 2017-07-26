@@ -1,0 +1,11 @@
+$OpenBSD: patch-gas_configure_tgt,v 1.1.1.1 2017/07/26 21:45:23 pascal Exp $
+--- gas/configure.tgt.orig	Sat Apr 29 20:39:19 2017
++++ gas/configure.tgt	Sat Apr 29 20:40:02 2017
+@@ -125,6 +125,7 @@ case ${generic_target} in
+   aarch64*-*-elf | aarch64*-*-rtems*)	fmt=elf;;
+   aarch64*-*-fuchsia*)			fmt=elf;;
+   aarch64*-*-linux*)			fmt=elf em=linux ;;
++  aarch64-*-openbsd*)			fmt=elf;;
+ 
+   alpha-*-*vms*)			fmt=evax ;;
+   alpha-*-osf*)				fmt=ecoff ;;

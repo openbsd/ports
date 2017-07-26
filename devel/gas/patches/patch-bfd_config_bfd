@@ -1,0 +1,15 @@
+$OpenBSD: patch-bfd_config_bfd,v 1.1.1.1 2017/07/26 21:45:23 pascal Exp $
+--- bfd/config.bfd.orig	Sat Apr 29 20:13:49 2017
++++ bfd/config.bfd	Sat Apr 29 20:15:04 2017
+@@ -260,6 +260,11 @@ case "${targ}" in
+     targ_selvecs="aarch64_elf64_be_vec arm_elf32_le_vec arm_elf32_be_vec"
+     want64=true
+     ;;
++  aarch64-*-openbsd*)
++    targ_defvec=aarch64_elf64_le_vec
++    targ_selvecs="aarch64_elf64_be_vec arm_elf32_le_vec arm_elf32_be_vec"
++    want64=true
++    ;;
+   aarch64-*-fuchsia*)
+     targ_defvec=aarch64_elf64_le_vec
+     targ_selvecs="aarch64_elf64_be_vec arm_elf32_le_vec arm_elf32_be_vec"
