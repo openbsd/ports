@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1362 2017/07/23 09:27:15 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1363 2017/07/26 14:21:22 sthen Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -2489,7 +2489,7 @@ ${_WRKDIR_COOKIE}:
 		echo "*** $$0 was called without gettext-tools dependency ***" >&2\n\
 		exit 1\n' > ${WRKDIR}/bin/msgfmt
 	@chmod 555 ${WRKDIR}/bin/msgfmt
-.  for name in msgcat msginit
+.  for name in msgcat msginit autopoint
 	@ln -sf msgfmt ${WRKDIR}/bin/${name}
 .  endfor
 .endif
