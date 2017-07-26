@@ -1,18 +1,15 @@
-# $OpenBSD: Makefile,v 1.17 2017/06/28 13:06:48 abieber Exp $
+# $OpenBSD: Makefile,v 1.18 2017/07/26 14:19:45 abieber Exp $
 
 BROKEN-powerpc = help2man: can't get `--help' info from ./luakit
 
 COMMENT =	fast, small, webkit based browser written in lua
 
 # Date of the most recent upstream commit.
-VERSION =	2017.06.24
 GH_ACCOUNT =	luakit
-GH_COMMIT =	2de65f50d7f6dd0af5b94b638f59e05cf64946c9
+GH_TAGNAME =	2017.07.26
 GH_PROJECT =	luakit
 
 EPOCH =		0
-
-DISTNAME =	luakit-${VERSION}
 
 CATEGORIES =	www
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2017/06/28 13:06:48 abieber Exp $
+@comment $OpenBSD: PLIST,v 1.4 2017/07/26 14:19:45 abieber Exp $
 @bin bin/luakit
 @man man/man1/luakit.1
 share/applications/luakit.desktop
@@ -24,7 +24,6 @@ share/examples/luakit/window.lua
 share/luakit/
 share/luakit/doc/
 share/luakit/doc/AUTHORS
-share/luakit/doc/COPYING
 share/luakit/doc/COPYING.GPLv3
 share/luakit/doc/README.md
 share/luakit/doc/classes/
@@ -61,7 +60,6 @@ share/luakit/lib/history.lua
 share/luakit/lib/history_chrome.lua
 share/luakit/lib/image_css.lua
 share/luakit/lib/image_css_wm.lua
-share/luakit/lib/introspector.lua
 share/luakit/lib/introspector_chrome.lua
 share/luakit/lib/jquery.min.js
 share/luakit/lib/lousy/
@@ -88,7 +86,6 @@ share/luakit/lib/lousy/widget/tabi.lua
 share/luakit/lib/lousy/widget/tablist.lua
 share/luakit/lib/lousy/widget/uri.lua
 share/luakit/lib/markdown.lua
-share/luakit/lib/mixed_content.lua
 share/luakit/lib/newtab_chrome.lua
 share/luakit/lib/noscript.lua
 share/luakit/lib/open_editor.lua
@@ -115,10 +112,16 @@ share/luakit/resources/icons/
 share/luakit/resources/icons/COPYING
 share/luakit/resources/icons/tab-icon-chrome.png
 share/luakit/resources/icons/tab-icon-chrome@2x.png
+share/luakit/resources/icons/tab-icon-crash.png
+share/luakit/resources/icons/tab-icon-crash@2x.png
+share/luakit/resources/icons/tab-icon-error.png
+share/luakit/resources/icons/tab-icon-error@2x.png
 share/luakit/resources/icons/tab-icon-page.png
 share/luakit/resources/icons/tab-icon-page@2x.png
 share/luakit/resources/icons/tab-icon-private.png
 share/luakit/resources/icons/tab-icon-private@2x.png
+share/luakit/resources/icons/tab-icon-security-error.png
+share/luakit/resources/icons/tab-icon-security-error@2x.png
 share/pixmaps/
 share/pixmaps/luakit.png
 @exec %D/bin/update-desktop-database
