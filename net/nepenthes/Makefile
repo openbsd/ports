@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.46 2017/07/23 09:26:28 espie Exp $
+# $OpenBSD: Makefile,v 1.47 2017/07/26 22:45:28 sthen Exp $
 #
 
 COMMENT=	determine the malware activity on a network
 
 DISTNAME=	nepenthes-0.2.2
 EPOCH=		1
-REVISION =	6
+REVISION =	7
 
 CATEGORIES=	net
 

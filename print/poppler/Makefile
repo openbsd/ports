@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.123 2017/07/18 04:51:43 zhuk Exp $
+# $OpenBSD: Makefile,v 1.124 2017/07/26 22:45:29 sthen Exp $
 
 COMMENT-main=	PDF rendering library
 COMMENT-qt4=	qt4 interface to PDF rendering library
@@ -12,7 +12,10 @@ PKGNAME-main=	poppler-$V
 PKGNAME-utils=	poppler-utils-$V
 PKGNAME-qt4=	poppler-qt4-$V
 PKGNAME-qt5=	poppler-qt5-$V
-REVISION-qt5=	0
+REVISION-qt5=	1
+REVISION-main=	0
+REVISION-qt4=	0
+REVISION-utils=	0
 
 EXTRACT_SUFX=	.tar.xz
 

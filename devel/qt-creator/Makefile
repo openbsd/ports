@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.26 2017/07/20 18:05:23 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.27 2017/07/26 22:45:18 sthen Exp $
 
 COMMENT =		cross-platform IDE for use with Qt
 V = 			4.3.1
 DISTNAME =		qt-creator-opensource-src-${V}
 PKGNAME =		qt-creator-${V}
+REVISION =		0
 
 SHARED_LIBS +=	Aggregation               0.0 # 0.0
 SHARED_LIBS +=	CPlusPlus                 1.0 # 0.0

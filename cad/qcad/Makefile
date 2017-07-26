@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.28 2017/07/16 19:18:49 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2017/07/26 22:45:16 sthen Exp $
 
 COMMENT=	Qt-based 2D CAD system
 
 V=		2.0.5.0
 DISTNAME=	qcad-${V}-1-community.src
 PKGNAME=	qcad-${V}
-REVISION=	4
+REVISION=	5
 CATEGORIES=	cad graphics
 
 HOMEPAGE=	http://www.ribbonsoft.com/qcad.html

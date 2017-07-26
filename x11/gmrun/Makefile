@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2017/07/16 19:19:04 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2017/07/26 22:45:32 sthen Exp $
 
 COMMENT=		X11 program launcher
 
 DISTNAME=		gmrun-0.9.2
-REVISION=		4
+REVISION=		5
 
 CATEGORIES=		x11
 

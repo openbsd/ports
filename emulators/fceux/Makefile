@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2017/07/16 19:18:53 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2017/07/26 22:45:19 sthen Exp $
 
 COMMENT =		emulator for Nintendo Entertainment System
 
@@ -6,6 +6,7 @@ V =			2.2.3
 DISTNAME =		fceux-${V}.src
 PKGNAME =		fceux-${V}
 CATEGORIES =		emulators games
+REVISION =		0
 
 HOMEPAGE =		http://fceux.com/
 

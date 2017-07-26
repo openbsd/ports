@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2017/07/23 09:26:26 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2017/07/26 22:45:15 sthen Exp $
 
 ONLY_FOR_ARCHS= amd64 arm i386
 
@@ -6,7 +6,7 @@ COMMENT=	Monkey's audio lossless codec
 
 DISTNAME=	mac-3.99-u4-b5
 PKGNAME=	mac-3.99.4.5
-REVISION =	2
+REVISION =	3
 SHARED_LIBS +=  mac                  0.0      # .2.0
 CATEGORIES=	audio
 

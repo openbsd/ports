@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2017/07/16 19:18:53 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2017/07/26 22:45:20 sthen Exp $
 
 COMMENT=	cute and addictive action-puzzle game
 
 DISTNAME= 	amoebax-0.2.1
-REVISION=       0
+REVISION=       1
 
 CATEGORIES=	games
 EXTRACT_SUFX=	.tar.bz2

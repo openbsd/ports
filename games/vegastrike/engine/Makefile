@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2017/07/16 19:18:55 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2017/07/26 22:45:22 sthen Exp $
 
 COMMENT =		3D space simulator
 
 DISTNAME =		vegastrike-src-${V}
 PKGNAME =		vegastrike-${V}
-REVISION =		0
+REVISION =		1
 
 WANTLIB += GL GLU OgreMain SDL X11 Xcomposite Xcursor Xdamage
 WANTLIB += Xext Xfixes Xi Xinerama Xmu Xrandr Xrender atk-1.0

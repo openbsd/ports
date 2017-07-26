@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.31 2017/07/16 19:18:56 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2017/07/26 22:45:23 sthen Exp $
 
 COMMENT=	lightweight video thumbnailer for file managers
 
 DISTNAME=	ffmpegthumbnailer-2.0.8
-REVISION=	4
+REVISION=	5
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	${MASTER_SITE_GOOGLECODE:=ffmpegthumbnailer/}
 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.32 2017/07/23 09:26:27 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2017/07/26 22:45:22 sthen Exp $
 
 COMMENT=	jigsaw puzzle game for X11
 
 DISTNAME=	xjig-2.4
-REVISION =	4
+REVISION =	5
 CATEGORIES=	games
 
 MASTER_SITES=	${MASTER_SITE_XCONTRIB:=games/}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2017/07/16 19:19:00 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2017/07/26 22:45:26 sthen Exp $
 
 COMMENT-main =		model railroad control daemon
 COMMENT-gui =		model railroad control daemon client
@@ -10,8 +10,8 @@ PKGNAME-main =		rocrail-${VERSION}.${REV}
 PKGNAME-gui =		rocview-${VERSION}.${REV}
 CATEGORIES =		misc x11
 
-REVISION-main =		4
-REVISION-gui =		3
+REVISION-main =		5
+REVISION-gui =		4
 
 HOMEPAGE =		http://www.rocrail.net/
 MAINTAINER =		Sebastian Reitenbach <sebastia@openbsd.org>

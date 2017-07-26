@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2017/07/16 19:18:53 espie Exp $
+# $OpenBSD: Makefile,v 1.42 2017/07/26 22:45:20 sthen Exp $
 
 COMMENT=	graphical multiplayer 3D tank war game
 
@@ -6,7 +6,7 @@ DISTNAME=	bzflag-2.4.2
 CATEGORIES=	games x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=bzflag/}
 EXTRACT_SUFX=	.tar.bz2
-REVISION=	4
+REVISION=	5
 
 HOMEPAGE=	http://www.bzflag.org/
 

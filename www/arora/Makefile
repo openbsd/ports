@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2017/07/16 19:19:03 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2017/07/26 22:45:31 sthen Exp $
 
 COMMENT=	simple Qt4-based browser using WebKit
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS} ${CLANG_ARCHS}
 
 DISTNAME=	arora-0.11.0
-REVISION=	7
+REVISION=	8
 CATEGORIES=	www
 MASTER_SITES=	https://arora.googlecode.com/files/
 

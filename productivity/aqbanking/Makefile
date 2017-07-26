@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2017/07/16 19:19:01 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2017/07/26 22:45:29 sthen Exp $
 
 COMMENT=	online banking interface and financial data framework
 
@@ -6,7 +6,7 @@ COMMENT=	online banking interface and financial data framework
 DISTNAME=	aqbanking-5.5.1
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}{download.php?package=03\&release=118\&file=01}
 WRKDIST=	${WRKDIR}/aqbanking-5.5.1
-REVISION=	2
+REVISION=	3
 
 SHARED_LIBS +=	aqbanking            2.0      # 39.2
 SHARED_LIBS +=	aqbankingpp          0.0      # unknown

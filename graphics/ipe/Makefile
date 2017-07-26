@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2017/07/16 19:18:56 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2017/07/26 22:45:24 sthen Exp $
 
 COMMENT =		extensible drawing editor
 
@@ -6,7 +6,7 @@ V =			7.1.2
 SUBST_VARS +=		V
 DISTNAME =		ipe-${V}-src
 PKGNAME =		ipe-${V}
-REVISION =		4
+REVISION =		5
 
 # their libraries would be installed as libxxx.so.${V}, overide this.
 SHLIB_VERSION =	0.0

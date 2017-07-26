@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2017/07/16 19:18:56 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2017/07/26 22:45:24 sthen Exp $
 
 PORTROACH=		limit:^1
 
@@ -8,7 +8,7 @@ GNOME_PROJECT=		goocanvas
 GNOME_VERSION=		1.0.0
 SHARED_LIBS +=  goocanvas            1.0      # .6.0
 CATEGORIES=		graphics
-REVISION=		4
+REVISION=		5
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes

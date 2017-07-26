@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2017/07/16 19:19:00 espie Exp $
+# $OpenBSD: Makefile,v 1.66 2017/07/26 22:45:26 sthen Exp $
 
 COMMENT-main=		service daemon that monitors one or more GPSes
 COMMENT-x11=		GUI test apps using gpsd
@@ -13,9 +13,9 @@ SHARED_LIBS=		gps	19.0 \
 			gpsd	0.0
 CATEGORIES=		misc geo
 
-REVISION-main=		8
-REVISION-php=		8
-REVISION-x11=		3
+REVISION-main=		9
+REVISION-php=		9
+REVISION-x11=		4
 
 HOMEPAGE=		http://www.catb.org/gpsd/
 

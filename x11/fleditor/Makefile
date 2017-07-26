@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.31 2017/07/23 09:26:29 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2017/07/26 22:45:32 sthen Exp $
 
 COMMENT=		text editor widget for FLTK
 
 V=			0.4.5
 DISTNAME=		fl_editor-${V}
 PKGNAME=		fleditor-${V}
-REVISION =		6
+REVISION =		7
 
 SHARED_LIBS=		fleditor 3.0
 CATEGORIES=		x11

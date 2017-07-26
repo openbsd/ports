@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2017/07/23 09:26:28 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2017/07/26 22:45:29 sthen Exp $
 
 COMMENT=		reminder/task program aimed at developers
 
 DISTNAME=		devtodo-0.1.20
-REVISION =		2
+REVISION =		3
 CATEGORIES=		productivity devel
 
 HOMEPAGE=		http://swapoff.org/devtodo1.html

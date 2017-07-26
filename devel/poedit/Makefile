@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2017/07/16 19:18:52 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2017/07/26 22:45:18 sthen Exp $
 
 COMMENT=	cross-platform gettext catalogs (PO-files) editor
 
 DISTNAME=	poedit-1.3.7
-REVISION=	8
+REVISION=	9
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.poedit.net/

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2017/07/16 19:18:48 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2017/07/26 22:45:14 sthen Exp $
 
 COMMENT =	console-based OPL2 audio player
 
 DISTNAME =	adplay-1.7
+REVISION =	0
 
 CATEGORIES =	audio
 

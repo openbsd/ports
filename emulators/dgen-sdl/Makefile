@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2017/07/16 19:18:53 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2017/07/26 22:45:19 sthen Exp $
 
 BROKEN-alpha =		OOM or ICE on hqx/src/hq4x_32.c
 BROKEN-hppa =		OOM or ICE on hqx/src/hq4x_32.c
@@ -8,6 +8,7 @@ DISTNAME =		dgen-sdl-1.33
 CATEGORIES =		emulators games
 HOMEPAGE =		http://dgen.sourceforge.net/
 MAINTAINER =		Edd Barrett <edd@openbsd.org>
+REVISION =		0
 
 FLAVORS =		debugger
 FLAVOR ?=

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2017/07/16 19:19:05 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2017/07/26 22:45:33 sthen Exp $
 
 COMMENT=	viewer for IETF RFCs
 
@@ -18,6 +18,7 @@ BUILD_DEPENDS=	x11/qt4>=4.8.7p6
 GH_ACCOUNT=	saghul
 GH_PROJECT=	qrfcview-osx
 GH_TAGNAME=	1.0.0
+REVISION=	0
 
 MODULES=	devel/qmake x11/qt4
 

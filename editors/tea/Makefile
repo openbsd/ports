@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2017/07/16 19:18:52 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2017/07/26 22:45:19 sthen Exp $
 
 COMMENT=	powerful and simple GTK editor
 
 DISTNAME=	teagtk-17.6.6
-REVISION=	7
+REVISION=	8
 CATEGORIES=	editors x11
 MASTER_SITES=	http://semiletov.org/tea/dloads/ \
 		${MASTER_SITE_SOURCEFORGE:=tea-editor/}

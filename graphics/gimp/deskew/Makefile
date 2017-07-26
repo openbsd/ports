@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2017/07/23 09:26:27 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2017/07/26 22:45:24 sthen Exp $
 
 COMMENT =		deskew plug-in for GIMP
 DISTNAME =		gimp-deskew-plugin-0.0.20141025
 GH_ACCOUNT =		prokoudine
 GH_PROJECT =		gimp-deskew-plugin
 GH_COMMIT =		b9214ddc8acf9ff5b01afdd44a9bdf96fe7d6e8e
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		graphics x11
 

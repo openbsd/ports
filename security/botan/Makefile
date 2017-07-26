@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2017/07/24 21:06:37 robert Exp $
+# $OpenBSD: Makefile,v 1.26 2017/07/26 22:45:29 sthen Exp $
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS} ${CLANG_ARCHS}
 
@@ -8,7 +8,7 @@ PORTROACH =	limit:^1\.10\.
 VERSION =	1.10.16
 DISTNAME =	Botan-${VERSION}
 PKGNAME =	botan-${VERSION}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS =	botan-1.10	1.0
 

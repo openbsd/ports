@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.77 2017/07/16 19:19:01 espie Exp $
+# $OpenBSD: Makefile,v 1.78 2017/07/26 22:45:29 sthen Exp $
 
 
 COMMENT=	graphical frontend for LaTeX (nearly WYSIWYG)
 
 DISTNAME=	lyx-2.2.0
-REVISION=	0
+REVISION=	1
 CATEGORIES=	print editors
 
 HOMEPAGE=	http://www.lyx.org/

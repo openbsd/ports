@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2017/07/16 19:18:52 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2017/07/26 22:45:18 sthen Exp $
 
 COMMENT =		c protocol buffers
 
@@ -7,6 +7,7 @@ GH_ACCOUNT =		protobuf-c
 GH_PROJECT =		protobuf-c
 GH_TAGNAME =		v${V}
 DISTNAME =		${GH_PROJECT}-${V}
+REVISION =		0
 
 SHARED_LIBS =		protobuf-c 1.0	# 1.0
 

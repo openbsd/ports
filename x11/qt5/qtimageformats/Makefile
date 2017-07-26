@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.3 2017/07/17 08:34:38 zhuk Exp $
+# $OpenBSD: Makefile,v 1.4 2017/07/26 22:45:34 sthen Exp $
 
 QT5NAME =		QtImageFormats
+REVISION =		0
 COMMENT-main =		support for additional image formats in Qt5
 
 MULTI_PACKAGES =	-main -qch -html -docindex

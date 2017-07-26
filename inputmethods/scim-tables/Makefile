@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2017/07/16 19:18:57 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2017/07/26 22:45:25 sthen Exp $
 
 COMMENT=	input method data tables for scim
 
 DISTNAME=	scim-tables-0.5.8
-REVISION=	8
+REVISION=	9
 
 CATEGORIES=	inputmethods chinese japanese korean
 

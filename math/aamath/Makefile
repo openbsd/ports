@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2017/07/23 09:26:28 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2017/07/26 22:45:26 sthen Exp $
 
 COMMENT=		ASCII art mathematics
 
 DISTNAME=		aamath-0.3
-REVISION =		1
+REVISION =		2
 CATEGORIES=		math
 
 HOMEPAGE=		http://fuse.superglue.se/aamath/

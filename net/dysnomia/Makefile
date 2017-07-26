@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2017/07/16 19:18:58 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2017/07/26 22:45:27 sthen Exp $
 
 CATEGORIES = 	net audio www
 COMMENT = 	interface to the deezer on-demand music system
@@ -6,7 +6,7 @@ HOMEPAGE = 	http://dysnomia-project.org/
 MASTER_SITES = 	${HOMEPAGE}
 
 DISTNAME = 	dysnomia-en-0.3.4
-REVISION=	1
+REVISION=	2
 EXTRACT_SUFX = 	.tgz
 
 # GPLv2 or later

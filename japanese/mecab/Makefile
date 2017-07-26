@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2017/07/16 19:18:57 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2017/07/26 22:45:25 sthen Exp $
 
 # .libs/libmecab.so.0.0: undefined reference to `__sync_val_compare_and_swap_4'
 # .libs/libmecab.so.0.0: undefined reference to `__sync_add_and_fetch_4'
@@ -8,9 +8,10 @@ COMMENT-main =	japanese morphological analyzer engine
 COMMENT-ipadic = IPA japanese dictionary for mecab
 
 DISTNAME =	mecab-0.996
-REVISION-ipadic = 1
+REVISION-ipadic = 2
 PKGNAME-main =	${DISTNAME}
 PKGNAME-ipadic = mecab-ipadic-2.7.0
+REVISION-main =	0
 
 SHARED_LIBS =	mecab	0.0 # 2.0
 

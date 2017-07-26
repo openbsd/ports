@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2017/04/25 06:22:08 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.19 2017/07/26 22:45:17 sthen Exp $
 
 COMMENT =	RDF framework
 CATEGORIES =	databases devel textproc sysutils
 HOMEPAGE =	http://soprano.sourceforge.net/
 DISTNAME =	soprano-2.9.4
-REVISION =	2
+REVISION =	3
 
 SHARED_LIBS =	soprano                   2.1
 SHARED_LIBS +=	sopranoclient             2.1

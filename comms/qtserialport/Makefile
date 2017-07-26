@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2017/07/16 19:18:49 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2017/07/26 22:45:16 sthen Exp $
 
 COMMENT =		provides functions to access serial ports
 
@@ -8,7 +8,7 @@ V =			5.4.2
 DISTNAME =		qtserialport-v${V}
 PKGNAME =		${DISTNAME:S/v//}
 PKGSPEC =		qtserialport-<5.6
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		comms
 

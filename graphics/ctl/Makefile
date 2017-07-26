@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2017/07/16 19:18:56 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2017/07/26 22:45:23 sthen Exp $
 
 COMMENT =		Color Transformation Language interpreter
 
@@ -23,6 +23,7 @@ GH_ACCOUNT =		ampas
 GH_PROJECT =		ctl
 GH_TAGNAME =		ctl-${V}
 MASTER_SITES =		${MASTER_SITES_GITHUB}
+REVISION =		0
 
 MODULES =		devel/cmake
 LIB_DEPENDS =		graphics/openexr \

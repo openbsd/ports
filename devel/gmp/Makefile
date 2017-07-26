@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.34 2017/07/23 09:26:26 espie Exp $
+# $OpenBSD: Makefile,v 1.35 2017/07/26 22:45:17 sthen Exp $
 
 COMMENT=	library for arbitrary precision arithmetic
 
 DISTNAME=	gmp-6.1.2
-REVISION =	0
+REVISION =	1
 SHARED_LIBS +=  gmp                  10.0     # 13.2
 SHARED_LIBS +=  gmpxx                2.0      # 9.2
 CATEGORIES=	devel math

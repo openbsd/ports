@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.38 2017/07/23 09:26:27 espie Exp $
+# $OpenBSD: Makefile,v 1.39 2017/07/26 22:45:19 sthen Exp $
 
 COMMENT=		ARM/M88k/MIPS/PowerPC/SuperH machines emulator
 
 DISTNAME =		gxemul-0.6.0.1
 CATEGORIES=		emulators
-REVISION =		2
+REVISION =		3
 
 HOMEPAGE=		http://gxemul.sourceforge.net/
 

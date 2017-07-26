@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2017/07/16 19:18:58 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2017/07/26 22:45:27 sthen Exp $
 
 COMMENT =		GTK+2 IRC Client
 DISTNAME =		hexchat-2.12.3
 EXTRACT_SUFX =		.tar.xz
 CATEGORIES =		net x11
+REVISION =		0
 
 HOMEPAGE =		http://hexchat.github.io/
 MAINTAINER =		Florian Stinglmayr <florian@n0la.org>

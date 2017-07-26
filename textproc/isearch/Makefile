@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.26 2017/07/23 09:26:29 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2017/07/26 22:45:30 sthen Exp $
 
 COMMENT=	text search engine by CNIDR
 
 DISTNAME=	Isearch-1.14
 PKGNAME=	${DISTNAME:L}
-REVISION =	1
+REVISION =	2
 CATEGORIES=	textproc databases
 
 # License: BSD

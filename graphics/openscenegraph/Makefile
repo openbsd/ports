@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2017/07/16 19:18:57 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2017/07/26 22:45:24 sthen Exp $
 
 PORTROACH =		limitw:1,even
 
@@ -7,7 +7,7 @@ COMMENT =		3D graphics toolkit
 V =			3.4.0
 DISTNAME =		OpenSceneGraph-${V}
 PKGNAME =		openscenegraph-${V}
-REVISION =		1
+REVISION =		2
 
 SUBST_VARS +=		V
 

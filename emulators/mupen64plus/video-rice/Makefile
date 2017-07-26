@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.13 2017/07/16 19:18:53 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2017/07/26 22:45:20 sthen Exp $
 
 COMMENT =		n64 emulator opengl video plugin
-REVISION =		2
+REVISION =		3
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes

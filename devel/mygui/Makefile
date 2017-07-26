@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2017/07/16 19:18:51 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2017/07/26 22:45:18 sthen Exp $
 
 COMMENT =		library for creating GUIs for games and 3D applications
 
@@ -7,6 +7,7 @@ GH_ACCOUNT = 		MyGUI
 GH_PROJECT = 		mygui
 GH_TAGNAME = 		MyGUI${V}
 DISTNAME = 		mygui-${V}
+REVISION =              0
 
 SHARED_LIBS +=		MyGUIEngine 0.0
 SHARED_LIBS +=		MyGUI.OgrePlatform 0.0

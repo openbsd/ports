@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.12 2017/07/16 19:18:53 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2017/07/26 22:45:20 sthen Exp $
 
 COMMENT =		n64 emulator video plugin
-REVISION =		5
+REVISION =		6
 
 # XXX upstream was inconsistent with numbering this release (2.0 vs 2.0.0)
 VERSION =		2.0.0

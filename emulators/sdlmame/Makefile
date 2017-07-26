@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2017/07/16 19:18:53 espie Exp $
+# $OpenBSD: Makefile,v 1.53 2017/07/26 22:45:20 sthen Exp $
 
 # Other archs have not been tested
 ONLY_FOR_ARCHS =	amd64
@@ -16,7 +16,7 @@ V =			160
 DISTNAME =		mame0${V}s
 PKGNAME-main =		sdlmame-0.${V}
 PKGNAME-tools =		sdlmame-tools-0.${V}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		emulators games
 

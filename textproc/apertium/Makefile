@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2017/07/16 19:19:02 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2017/07/26 22:45:30 sthen Exp $
 
 COMMENT =		rule-based machine translation platform
 
 V =			3.4
 DISTNAME =		apertium-3.4.0
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=  apertium3-$V              0.0 # 0.0
 SHARED_LIBS +=  apertium3                 0.0 # 0.0

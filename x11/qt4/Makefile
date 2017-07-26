@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.146 2017/07/16 19:19:06 espie Exp $
+# $OpenBSD: Makefile,v 1.147 2017/07/26 22:45:33 sthen Exp $
 
 USE_WXNEEDED =		Yes # QtWebKit
 
@@ -25,13 +25,14 @@ PKGNAME-main =		qt4-${PKGVERSION}
 PKGNAME-debug =		qt4-debug-${PKGVERSION}
 FULLPKGNAME-html =	qt4-html-${PKGVERSION}
 FULLPKGPATH-html =	${BASE_PKGPATH},-html
-REVISION-main =		11
-REVISION-mysql =	0
-REVISION-postgresql =	0
-REVISION-sqlite2 =	0
-REVISION-tds =		0
+REVISION-main =		12
+REVISION-mysql =	1
+REVISION-postgresql =	1
+REVISION-sqlite2 =	1
+REVISION-tds =		1
 REVISION-debug =	0
-REVISION-examples =	1
+REVISION-examples =	2
+REVISION-html =		0
 
 # XXX qmake include parser is bogus
 DPB_PROPERTIES =	parallel	nojunk

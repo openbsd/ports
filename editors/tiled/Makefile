@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2017/07/16 19:18:52 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2017/07/26 22:45:19 sthen Exp $
 
 COMMENT =		tile map editor
 
 V =			0.9.1
 DISTNAME =		tiled-qt-${V}
 PKGNAME =		tiled-${V}
-REVISION =		2
+REVISION =		3
 
 SHARED_LIBS +=		tiled                     0.0 # 1.0
 

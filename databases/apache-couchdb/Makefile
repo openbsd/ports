@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.31 2017/07/16 19:18:49 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2017/07/26 22:45:16 sthen Exp $
 
 COMMENT =	distributed, document-oriented database
 
 COUCH_VER =	1.6.1
 DISTNAME =	apache-couchdb-${COUCH_VER}
-REVISION =	8
+REVISION =	9
 CATEGORIES =	databases
 
 HOMEPAGE =	http://couchdb.apache.org/

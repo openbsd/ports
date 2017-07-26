@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2017/07/16 19:18:52 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2017/07/26 22:45:19 sthen Exp $
 
 COMMENT=		flexible and small GTK+ editor
 
@@ -6,6 +6,7 @@ VERSION=		3.5.2
 DISTNAME=		scite${VERSION:S/.//g}
 PKGNAME=		scite-${VERSION}
 CATEGORIES=		editors x11
+REVISION=		0
 
 HOMEPAGE=		http://www.scintilla.org/SciTE.html
 

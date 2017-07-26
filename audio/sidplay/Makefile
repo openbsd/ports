@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2017/07/23 09:26:26 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2017/07/26 22:45:15 sthen Exp $
 
 COMMENT=	Commodore 64 music player and SID chip emulator
 
 DISTNAME=	sidplay-base-1.0.9
 PKGNAME=	${DISTNAME:S/-base//}
-REVISION =	2
+REVISION =	3
 CATEGORIES=	audio
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>

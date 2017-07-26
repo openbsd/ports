@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2017/07/16 19:18:55 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2017/07/26 22:45:22 sthen Exp $
 
 COMMENT =		sidescrolling space shmup
 
 V =			1.5.1.1
 DISTNAME =		starfighter-$V-src
 PKGNAME =		starfighter-$V
+REVISION =		0
 
 CATEGORIES =		games
 

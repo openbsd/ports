@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.3 2017/07/17 08:34:38 zhuk Exp $
+# $OpenBSD: Makefile,v 1.4 2017/07/26 22:45:34 sthen Exp $
 
 QT5NAME =		QtGamepad
+REVISION =		0
 COMMENT-main =		Qt5 gamepad events handling components
 
 MULTI_PACKAGES =	-main -examples -qch -html -docindex

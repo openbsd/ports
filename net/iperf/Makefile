@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2017/07/16 19:18:58 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2017/07/26 22:45:27 sthen Exp $
 
 COMMENT=	tool for measuring maximum TCP and UDP bandwidth
 
 DISTNAME=	iperf-2.0.5
-REVISION=	4
+REVISION=	5
 CATEGORIES=	net
 
 HOMEPAGE=	http://sourceforge.net/projects/iperf/

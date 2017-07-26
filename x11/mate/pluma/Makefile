@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2017/07/16 19:19:04 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2017/07/26 22:45:33 sthen Exp $
 
 USE_WXNEEDED=		Yes
 
@@ -8,7 +8,7 @@ CATEGORIES=		textproc
 
 MATE_PROJECT=		pluma
 MATE_VERSION=		1.18.2
-REVISION=		4
+REVISION=		5
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.277 2017/07/20 21:47:23 espie Exp $
+# $OpenBSD: Makefile,v 1.278 2017/07/26 22:45:33 sthen Exp $
 
 COMMENT=	movie player supporting many formats
 
 V=		20161008
 FFMPEG_V=	20170610
 DISTNAME=	mplayer-${V}
-REVISION=	4
+REVISION=	5
 CATEGORIES=	x11 multimedia
 MASTER_SITES=	http://comstyle.com/source/
 EXTRACT_SUFX=	.tar.xz

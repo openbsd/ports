@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2017/07/16 19:18:52 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2017/07/26 22:45:19 sthen Exp $
 
 BROKEN-hppa=	video/mmxflags_asm.S:54: Error: unknown pseudo-op: `.note.gnu'
 COMMENT=	MPEG video player library with sound support
@@ -6,6 +6,7 @@ COMMENT=	MPEG video player library with sound support
 DISTNAME=	smpeg2-2.0.0
 CATEGORIES=	devel graphics
 MASTER_SITES=	http://www.libsdl.org/projects/smpeg/release/
+REVISION=	0
 
 SHARED_LIBS=	smpeg2	2.0
 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2017/07/23 09:26:26 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2017/07/26 22:45:16 sthen Exp $
 
 COMMENT =	tool for programming Wouxun transcievers
 
 DISTNAME =	owx-20110917
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	comms
 

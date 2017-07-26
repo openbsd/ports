@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2017/07/16 19:19:01 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2017/07/26 22:45:29 sthen Exp $
 
 PORTROACH=	limit:^1\.
 PORTROACH_COMMENT=	the 2.x version has a different user interface
@@ -6,6 +6,7 @@ PORTROACH_COMMENT=	the 2.x version has a different user interface
 COMMENT=	software PKCS\#11 cryptographic token
 
 DISTNAME=	softhsm-1.3.8
+REVISION=	0
 
 CATEGORIES=	security
 

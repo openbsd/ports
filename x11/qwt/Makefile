@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2017/07/16 19:19:05 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2017/07/26 22:45:34 sthen Exp $
 
 COMMENT =		Qt Widgets for Technical Applications
 DISTNAME =		qwt-5.2.1
 SHARED_LIBS =		qwt 6.0
 CATEGORIES =		x11
 EXTRACT_SUFX =		.tar.bz2
-REVISION =		5
+REVISION =		6
 
 HOMEPAGE =		http://qwt.sourceforge.net/
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=qwt/}

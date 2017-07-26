@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2017/07/23 09:26:25 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2017/07/26 22:45:15 sthen Exp $
 
 COMMENT=	computer music toolkit
 HOMEPAGE=	http://www.ladspa.org/
@@ -7,7 +7,7 @@ CATEGORIES=	audio devel
 DISTNAME=	cmt_src_1.15
 WRKDIST=	${WRKDIR}/cmt
 PKGNAME=	cmt-1.15
-REVISION =	4
+REVISION =	5
 EXTRACT_SUFX=	.tgz
 MASTER_SITES=	${HOMEPAGE:=download/}
 

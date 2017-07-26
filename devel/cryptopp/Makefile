@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2017/07/16 19:18:51 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2017/07/26 22:45:17 sthen Exp $
 
 COMMENT = 	C++ library of cryptographic algorithms
 CATEGORIES = 	devel security
@@ -7,6 +7,7 @@ HOMEPAGE = 	http://www.cryptopp.com/
 MASTER_SITES = 	${HOMEPAGE}
 DISTNAME = 	cryptopp565
 PKGNAME = 	cryptopp-5.6.5
+REVISION =      0
 
 EXTRACT_SUFX = 	.zip
 WRKDIST = 	${WRKDIR}

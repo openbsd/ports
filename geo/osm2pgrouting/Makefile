@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2017/07/23 09:26:27 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2017/07/26 22:45:23 sthen Exp $
 
 V =			2.0.0
 COMMENT =		convert OSM data to PgRouting format
 DISTNAME =		osm2pgrouting-${V}
-REVISION =		0
+REVISION =		1
 CATEGORIES =		geo
 
 HOMEPAGE =		http://pgrouting.org

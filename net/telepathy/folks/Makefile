@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.94 2017/07/03 18:52:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.95 2017/07/26 22:45:28 sthen Exp $
 
 # XXX: PORTROACH set below to override the value from gnome.port.mk
 
@@ -6,6 +6,7 @@ COMMENT=		people aggregation library
 
 GNOME_PROJECT=		folks
 GNOME_VERSION=		0.11.4
+REVISION=		0
 
 # MODULE_VERSION in config.h
 API_V=			43

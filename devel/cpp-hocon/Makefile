@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2017/07/23 09:26:26 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2017/07/26 22:45:17 sthen Exp $
 
 COMMENT =		C++ parser for the HOCON configuration language
 
 GH_TAGNAME =		0.1.5
 GH_ACCOUNT =		puppetlabs
 GH_PROJECT =		cpp-hocon
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		devel
 

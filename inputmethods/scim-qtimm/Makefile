@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2017/07/16 19:18:57 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2017/07/26 22:45:25 sthen Exp $
 
 COMMENT=	scim plugin for qt
 
 DISTNAME=	scim-qtimm-0.9.4
-REVISION=	7
+REVISION=	8
 
 CATEGORIES=	inputmethods
 

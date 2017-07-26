@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2017/07/16 19:18:59 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2017/07/26 22:45:26 sthen Exp $
 
 COMMENT=	maildir indexer and searcher with emacs frontend
 
 GH_TAGNAME=	0.9.18
 GH_ACCOUNT=	djcb
 GH_PROJECT=	mu
+REVISION=	0
 
 CATEGORIES=	mail
 HOMEPAGE=	http://www.djcbsoftware.nl/code/mu/

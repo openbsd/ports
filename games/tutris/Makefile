@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2017/07/16 19:18:55 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2017/07/26 22:45:22 sthen Exp $
 
 COMMENT=	graphical tetris clone
 DISTNAME=	Tutris-1.0.1
 PKGNAME =	${DISTNAME:L}
-REVISION =	1
+REVISION =	2
 CATEGORIES=	games x11
 
 # GPL

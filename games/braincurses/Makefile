@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2017/07/23 09:26:27 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2017/07/26 22:45:20 sthen Exp $
 
 COMMENT=	clone of the Mastermind game
 
 DISTNAME=	braincurses-0.5b
-REVISION =	0
+REVISION =	1
 CATEGORIES=	games
 HOMEPAGE=	http://sourceforge.net/projects/braincurses/
 

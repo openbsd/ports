@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2017/07/16 19:18:50 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2017/07/26 22:45:23 sthen Exp $
 
 COMMENT =	CLI tools for spatialite
 PROJECT =	spatialite-tools
 DISTNAME =	${PROJECT}-4.3.0
-REVISION =	0
+REVISION =	1
 
 LIB_DEPENDS +=	converters/libiconv \
 		databases/sqlite3 \

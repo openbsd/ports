@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2017/07/16 19:18:47 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2017/07/26 22:45:14 sthen Exp $
 
 COMMENT=	unpack Inno Setup installers
 
 DISTNAME=	innoextract-1.6
+REVISION=	0
 
 CATEGORIES=	archivers
 HOMEPAGE=	https://constexpr.org/innoextract/

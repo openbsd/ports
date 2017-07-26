@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2017/07/16 19:18:58 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2017/07/26 22:45:28 sthen Exp $
 
 COMMENT=	network traffic probe with web ui and dpi
 
 DISTNAME=	ntopng-2.4-stable
 PKGNAME=	${DISTNAME:S/-stable//}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	net
 

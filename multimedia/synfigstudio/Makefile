@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2017/07/16 19:19:01 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2017/07/26 22:45:27 sthen Exp $
 
 COMMENT =		2D animation software studio
 BROKEN-alpha =		[keyframe_lock_past_on_icon.png] Bus error (core dumped)
@@ -8,7 +8,7 @@ BROKEN-sparc64 =	terminate called after throwing an instance of 'synfig::Excepti
 V =			1.0.1
 DISTNAME =		synfigstudio-$V
 API_V =			1.0
-REVISION =		3
+REVISION =		4
 
 SHARED_LIBS +=  synfigapp                 1.0 # 0.0
 

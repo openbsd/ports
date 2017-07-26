@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2017/07/16 19:18:51 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2017/07/26 22:45:18 sthen Exp $
 
 COMMENT =	compares and merges multiple files or directories
 
 DISTNAME =	kdiff3-0.9.98
-REVISION =	0
+REVISION =	1
 CATEGORIES =	devel x11/kde
 HOMEPAGE =	http://kdiff3.sourceforge.net/
 

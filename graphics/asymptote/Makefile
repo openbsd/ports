@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2017/07/16 19:18:56 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2017/07/26 22:45:23 sthen Exp $
 
 NOT_FOR_ARCHS=		${CLANG_ARCHS} # hangs during build, while running
 # ../asy -dir ../base -config "" -render=0 -f pdf -noprc cube.asy
@@ -10,7 +10,7 @@ BROKEN-hppa=		ghostscript segfaults during build
 
 DISTNAME=		asymptote-2.41.src
 PKGNAME=		asymptote-2.41
-REVISION=		0
+REVISION=		1
 CATEGORIES=		graphics
 
 HOMEPAGE=		http://asymptote.sourceforge.net/

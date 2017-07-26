@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2017/07/23 09:26:29 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2017/07/26 22:45:30 sthen Exp $
 
 COMMENT =	spelling, stemming, morphological analysis and generation
 
@@ -7,7 +7,7 @@ GH_ACCOUNT =	hunspell
 GH_PROJECT =	hunspell
 GH_TAGNAME =	v1.6.1
 DISTNAME =	hunspell-1.6.1
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS =	hunspell-1.6 	0.0 #	.0.0
 

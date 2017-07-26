@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2017/07/16 19:18:51 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2017/07/26 22:45:18 sthen Exp $
 
 BROKEN-arm =		configure: error: No atomic primitives available for arm-unknown-openbsd6.0
 BROKEN-hppa =		error: Could not determine global symbol label prefix
@@ -8,7 +8,7 @@ COMMENT =		open source MPI-2 implementation
 
 V=			1.4.1
 DISTNAME =		openmpi-$V
-REVISION =		5
+REVISION =		6
 
 SHARED_LIBS =		mca_common_sm 1.0 \
 			mpi 0.1 \

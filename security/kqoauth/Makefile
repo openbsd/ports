@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2017/07/16 19:19:01 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2017/07/26 22:45:29 sthen Exp $
 
 COMMENT =	OAuth support library for Qt-based applications
 V =		0.97
@@ -6,6 +6,7 @@ DISTNAME =	${V}
 PKGNAME =	kqoauth-${V}
 CATEGORIES =	security devel
 HOMEPAGE =	https://github.com/kypeli/kQOAuth
+REVISION =	0
 
 SHARED_LIBS =	kqoauth		0.0
 

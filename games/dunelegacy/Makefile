@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2017/07/16 19:18:54 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2017/07/26 22:45:20 sthen Exp $
 
 COMMENT =		improved opensource version of Dune 2
 
 DISTNAME =		dunelegacy-0.96.3-src
 PKGNAME =		${DISTNAME:S/-src//}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		games x11
 

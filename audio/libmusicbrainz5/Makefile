@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2017/07/23 09:26:26 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2017/07/26 22:45:15 sthen Exp $
 
 PORTROACH=		limit:^5
 
@@ -7,7 +7,7 @@ COMMENT=		library for audio metadata lookup (v5)
 V=			5.0.1
 DISTNAME=		libmusicbrainz-${V}
 PKGNAME=		libmusicbrainz5-${V}
-REVISION =		3
+REVISION =		4
 
 SHARED_LIBS +=  musicbrainz5              0.0 # 0.0
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2017/05/31 08:08:17 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2017/07/26 22:45:32 sthen Exp $
 
 # XXX check if still needed at next update
 #CXXFLAGS +=		-std=c++11
@@ -10,7 +10,7 @@ V=			1.1.0
 DISTNAME=		fsv2-$V
 PKGNAME=		fsv-$V
 CATEGORIES=		x11
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=	fsvui                     0.0 # 0.0
 

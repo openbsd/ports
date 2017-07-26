@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2017/07/16 19:18:50 espie Exp $
+# $OpenBSD: Makefile,v 1.57 2017/07/26 22:45:16 sthen Exp $
 
 # archs with atomic ops
 ONLY_FOR_ARCHS-server=	alpha aarch64 amd64 i386 mips64 mips64el powerpc sparc64
@@ -13,7 +13,7 @@ DISTNAME=	mariadb-${VERSION}
 PKGNAME-main=	mariadb-client-${VERSION}
 PKGNAME-server=	mariadb-server-${VERSION}
 PKGNAME-tests= 	mariadb-tests-${VERSION}
-REVISION=	3
+REVISION=	4
 EPOCH=		1
 
 CATEGORIES=	databases

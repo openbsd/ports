@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2017/07/16 19:19:04 espie Exp $
+# $OpenBSD: Makefile,v 1.38 2017/07/26 22:45:32 sthen Exp $
 
 TRACKER_API=		1.0
 
@@ -6,6 +6,7 @@ COMMENT=		simple note editor
 
 GNOME_PROJECT=		bijiben
 GNOME_VERSION=		3.24.0
+REVISION=		0
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes

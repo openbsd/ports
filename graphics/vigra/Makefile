@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2017/07/16 19:18:56 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2017/07/26 22:45:25 sthen Exp $
 
 COMMENT =		image processing and analysis library
 ONLY_FOR_ARCHS =	${CXX11_ARCHS}
@@ -7,6 +7,7 @@ GH_ACCOUNT =		ukoethe
 GH_PROJECT =		vigra
 GH_TAGNAME = 		Version-1-11-1
 DISTNAME =		vigra-1.11.1
+REVISION =		0
 
 SHARED_LIBS =		vigraimpex 0.0 # 5.1
 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2017/07/23 09:26:29 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2017/07/26 22:45:32 sthen Exp $
 
 COMMENT=	test tool for slow HTTP reads/posts
 
 DISTNAME =	slowhttptest-1.6
-REVISION =	0
+REVISION =	1
 
 CATEGORIES=	www security
 

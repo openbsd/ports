@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2017/07/23 09:26:26 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2017/07/26 22:45:16 sthen Exp $
 
 COMMENT =		audio plugin API
 
 VERSION =		2.2.1
 DISTNAME =		vamp-plugin-sdk-${VERSION}
-REVISION =		2
+REVISION =		3
 CATEGORIES =		audio
 
 SHARED_LIBS +=		vamp-sdk	1.0

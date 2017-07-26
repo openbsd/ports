@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2017/07/16 19:18:53 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2017/07/26 22:45:20 sthen Exp $
 
 BROKEN-powerpc =CPUCore.cc:2347: error: insn does not satisfy its constraints
 BROKEN-hppa =	OOM when building src/cpu/CPUCore.cc
@@ -7,7 +7,7 @@ BROKEN-alpha =	OOM when building src/cpu/CPUCore.cc
 COMMENT =	MSX home computer emulator
 
 DISTNAME =	openmsx-0.9.1
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	emulators
 

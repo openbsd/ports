@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2017/07/16 19:18:57 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2017/07/26 22:45:24 sthen Exp $
 
 COMMENT=	implementation of the OpenGL Character Renderer
 
 DISTNAME=	quesoglc-0.7.2
-REVISION=	4
+REVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=quesoglc/}
 

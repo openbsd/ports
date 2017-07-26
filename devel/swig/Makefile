@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.64 2017/07/23 09:26:27 espie Exp $
+# $OpenBSD: Makefile,v 1.65 2017/07/26 22:45:19 sthen Exp $
 
 COMMENT =	simplified wrapper and interface generator
 
 SUBST_VARS =	VERSION
 VERSION =	2.0.11
-REVISION =	4
+REVISION =	5
 
 DISTNAME =	swig-${VERSION}
 CATEGORIES =	devel

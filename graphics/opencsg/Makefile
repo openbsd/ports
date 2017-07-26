@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2017/07/16 19:18:57 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2017/07/26 22:45:24 sthen Exp $
 
 COMMENT =		constructive solid geometry rendering library
 
 V =			1.3.2
 DISTNAME =		OpenCSG-${V}
 PKGNAME =		opencsg-${V}
+REVISION =		0
 
 SHARED_LIBS =		opencsg		0.0
 

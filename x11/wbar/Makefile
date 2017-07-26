@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2017/07/23 09:26:30 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2017/07/26 22:45:34 sthen Exp $
 
 COMMENT =		Mac OS-X style lightweight application launcher
 
 DISTNAME =		wbar-2.3.4
 EXTRACT_SUFX =		.tgz
-REVISION =		4
+REVISION =		5
 
 CATEGORIES=		x11
 

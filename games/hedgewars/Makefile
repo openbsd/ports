@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2017/07/16 19:18:55 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2017/07/26 22:45:21 sthen Exp $
 
 COMMENT-main =		Worms-like strategy game
 COMMENT-server =	Worms-like strategy game, server
@@ -8,7 +8,7 @@ MULTI_PACKAGES =	-main -server
 SHARED_LIBS +=  physlayer                 0.0 # 0.0
 
 R =			0.9.22
-REVISION =		7
+REVISION =		8
 V =			$R
 DISTNAME =		hedgewars-src-$V
 PKGNAME-main =		hedgewars-$V

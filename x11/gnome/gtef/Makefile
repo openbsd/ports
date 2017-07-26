@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2017/07/16 19:19:04 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2017/07/26 22:45:32 sthen Exp $
 
 COMMENT=		GTK+ Text Editor Framework
 
 GNOME_PROJECT=		gtef
 GNOME_VERSION=		2.0.1
+REVISION=		0
 
 CATEGORIES=		devel editors
 

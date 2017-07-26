@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2017/07/16 19:18:50 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2017/07/26 22:45:16 sthen Exp $
 
 COMMENT=		GUI client for MySQL
 
@@ -6,6 +6,7 @@ VERSION=		1.0.2
 DISTNAME=		mysqlcc-${VERSION}-src
 PKGNAME=		mysqlcc-${VERSION}
 CATEGORIES=		databases
+REVISION=		0
 
 HOMEPAGE=		http://mysqlcc.sourceforge.net/
 

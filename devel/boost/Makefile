@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.69 2017/07/16 19:18:50 espie Exp $
+# $OpenBSD: Makefile,v 1.70 2017/07/26 22:45:17 sthen Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS} ${CLANG_ARCHS}
 
 COMMENT=	free peer-reviewed portable C++ source libraries
 
 VERSION=	1.58.0
-REVISION=	7
+REVISION=	8
 DISTNAME=	boost_${VERSION:S/./_/g}
 PKGNAME=	boost-${VERSION}
 CATEGORIES=	devel

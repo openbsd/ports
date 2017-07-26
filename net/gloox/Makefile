@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2017/07/16 19:18:58 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2017/07/26 22:45:27 sthen Exp $
 
 COMMENT =	extensible C++ library for XMPP clients and components
 
 DISTNAME =	gloox-1.0.3
-REVISION =	2
+REVISION =	3
 SHARED_LIBS +=	gloox                1.0      # 8.0
 CATEGORIES =	net devel
 

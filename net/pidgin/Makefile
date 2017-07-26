@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.135 2017/07/16 19:18:58 espie Exp $
+# $OpenBSD: Makefile,v 1.136 2017/07/26 22:45:28 sthen Exp $
 
 COMMENT-main=	multi-protocol instant messaging client
 COMMENT-finch=	multi-protocol instant messaging client, console client
@@ -17,9 +17,9 @@ CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pidgin/}
 EXTRACT_SUFX=	.tar.bz2
 
-REVISION-main=		0
-REVISION-finch=		0
-REVISION-libpurple=	0
+REVISION-main=		1
+REVISION-finch=		1
+REVISION-libpurple=	1
 
 SHARED_LIBS=	jabber		0.0 \
 		oscar		0.0 \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2017/07/16 19:18:55 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2017/07/26 22:45:22 sthen Exp $
 
 BROKEN-hppa =	ICE on dgn-shoals.cc:638
 BROKEN-arm=	tilegen.elf loops burning cpu
@@ -12,6 +12,7 @@ VERSION = 	0.18.1
 DISTNAME=	stone_soup-${VERSION}-nodeps
 EXTRACT_SUFX=	.tar.xz
 PKGNAME=	stone-soup-${VERSION}
+REVISION=	0
 
 WRKDIST = 	${WRKDIR}/stone_soup-${VERSION}
 WRKSRC = 	${WRKDIST}/source

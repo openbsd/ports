@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.34 2017/07/16 19:19:04 espie Exp $
+# $OpenBSD: Makefile,v 1.35 2017/07/26 22:45:32 sthen Exp $
 
 COMMENT=	fast-light window manager
 
 DISTNAME=	flwm-1.02
 PKGNAME=	flwm-1.0.2
-REVISION=	0
+REVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	${HOMEPAGE}
 

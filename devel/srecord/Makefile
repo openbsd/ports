@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2017/07/23 09:26:27 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2017/07/26 22:45:19 sthen Exp $
 
 COMMENT=		collection of tools for manipulating EPROM load files
 
 DISTNAME=		srecord-1.64
-REVISION =		0
+REVISION =		1
 CATEGORIES=		devel
 
 SHARED_LIBS +=  srecord              0.0      # 0.0

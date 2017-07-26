@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2017/07/23 09:26:27 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2017/07/26 22:45:22 sthen Exp $
 
 COMMENT-main=		GPS processing toolkit
 COMMENT-devel=		GPStk development libraries and headers
@@ -6,9 +6,9 @@ COMMENT-devel=		GPStk development libraries and headers
 V=			1.5
 DISTNAME=		gpstk${V}
 PKGNAME-main=		gpstk-${V}
-REVISION-main=		6
+REVISION-main=		7
 PKGNAME-devel=		gpstk-devel-${V}
-REVISION-devel=		8
+REVISION-devel=		9
 CATEGORIES=		geo devel
 SHARED_LIBS=		base 15.0 \
 			geomatics 15.0 \

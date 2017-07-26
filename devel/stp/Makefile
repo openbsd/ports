@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2017/07/23 09:26:27 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2017/07/26 22:45:19 sthen Exp $
 
 COMMENT=	decision procedure for bit-vectors and arrays
 
 V=		0.1
 DISTNAME=	stp-ver-${V}-11-18-2008
 PKGNAME=	stp-${V}
-REVISION =	2
+REVISION =	3
 
 CATEGORIES=	devel
 

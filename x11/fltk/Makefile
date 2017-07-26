@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2017/07/16 19:19:04 espie Exp $
+# $OpenBSD: Makefile,v 1.55 2017/07/26 22:45:32 sthen Exp $
 
 # no libGL (toolchain issue)
 NOT_FOR_ARCHS=	m88k
@@ -8,7 +8,7 @@ COMMENT=	Fast-Light Tool Kit
 VER=		1.3.3
 DISTNAME=	fltk-${VER}-source
 PKGNAME=	fltk-${VER}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	x11
 

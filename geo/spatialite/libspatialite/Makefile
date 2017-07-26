@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2017/07/16 19:18:50 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2017/07/26 22:45:23 sthen Exp $
 
 COMMENT=	sqlite extented with spatial SQL capabilities
 PROJECT =	libspatialite
 DISTNAME =	${PROJECT}-4.3.0a
 SHARED_LIBS =	spatialite 1.1 # 8.0.1
-REVISION =	0
+REVISION =	1
 
 LIB_DEPENDS +=	converters/libiconv \
 		databases/sqlite3 \

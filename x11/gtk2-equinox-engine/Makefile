@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2017/07/16 19:19:05 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2017/07/26 22:45:33 sthen Exp $
 
 COMMENT=	Equinox GTK+2 engine
 
 V=		1.50
 DISTNAME=	121881-equinox-${V}
 PKGNAME=	gtk2-equinox-engine-${V}
-REVISION=	3
+REVISION=	4
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		140449-equinox-themes-${V}${EXTRACT_SUFX}

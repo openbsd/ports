@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2017/07/16 19:18:58 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2017/07/26 22:45:28 sthen Exp $
 
 COMMENT=		mouse and keyboard sharing utility
 
@@ -9,6 +9,7 @@ CATEGORIES=		net x11
 GH_ACCOUNT=		synergy
 GH_PROJECT=		synergy
 GH_TAGNAME=		v${VERSION}-stable
+REVISION=		0
 
 HOMEPAGE=		http://synergy-foss.org/
 

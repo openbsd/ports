@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2017/07/16 19:18:52 espie Exp $
+# $OpenBSD: Makefile,v 1.41 2017/07/26 22:45:18 sthen Exp $
 
 COMMENT=	portable tools library
 
@@ -6,7 +6,7 @@ V=		2.12.9
 DISTNAME=	ptlib-${V}
 EXTRACT_SUFX=	.tar.bz2
 SUBST_VARS=	V
-REVISION=	10
+REVISION=	11
 
 SHARED_LIBS=	pt	7.0
 

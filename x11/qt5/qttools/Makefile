@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2017/07/17 08:34:39 zhuk Exp $
+# $OpenBSD: Makefile,v 1.3 2017/07/26 22:45:34 sthen Exp $
 
 QT5NAME =		QtTools
+REVISION =		0
 COMMENT-main =		Qt development tools
 COMMENT-webview =	Webkit-based Qt Designer plugin
 PKGNAME-webview =	qwebview-${VERSION}

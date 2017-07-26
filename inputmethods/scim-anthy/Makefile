@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2017/07/16 19:18:57 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2017/07/26 22:45:25 sthen Exp $
 
 COMMENT =	scim input method module for anthy
 
 DISTNAME =	scim-anthy-1.2.7
 
-REVISION =	6
+REVISION =	7
 
 CATEGORIES =	inputmethods japanese
 

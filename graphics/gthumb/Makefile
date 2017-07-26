@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.100 2017/07/16 19:18:56 espie Exp $
+# $OpenBSD: Makefile,v 1.101 2017/07/26 22:45:24 sthen Exp $
 
 COMMENT=	image viewer and browser for GNOME
 
 GNOME_PROJECT=	gthumb
 GNOME_VERSION=	3.4.5
+REVISION=	0
 
 API_V=		${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 SUBST_VARS=	API_V

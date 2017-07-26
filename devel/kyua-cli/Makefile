@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2017/07/16 19:18:51 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2017/07/26 22:45:18 sthen Exp $
 
 COMMENT =		testing framework
 DISTNAME =		kyua-cli-0.8
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		devel
 HOMEPAGE =		https://github.com/jmmv/kyua

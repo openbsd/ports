@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2017/07/23 09:26:26 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2017/07/26 22:45:17 sthen Exp $
 
 # Memory hog, stuck for days on the same file (configoptions.cpp) during build.
 # XXX check with different optimizer level? see doc/install.doc
@@ -9,7 +9,7 @@ COMMENT=	GUI front-end for doxygen
 
 VERSION=	1.8.13
 DISTNAME=	doxygen-${VERSION}.src
-REVISION =	0
+REVISION =	1
 PKGNAME=	doxygen-gui-${VERSION}
 
 CATEGORIES=	devel textproc

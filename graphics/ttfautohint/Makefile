@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2017/07/16 19:18:57 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2017/07/26 22:45:24 sthen Exp $
 
 COMMENT=		automated hinting process based on FreeType's autohinter #'
 
 V =			1.6
-REVISION =		0
+REVISION =		1
 DISTNAME =		ttfautohint-${V}
 CATEGORIES =		graphics
 

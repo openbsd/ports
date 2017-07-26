@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2017/07/16 19:18:51 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2017/07/26 22:45:18 sthen Exp $
 
 COMMENT=	distributed version control system
 
 VERSION=	1.1
 DISTNAME=	monotone-${VERSION}
 CATEGORIES=	devel
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	http://monotone.ca/
 

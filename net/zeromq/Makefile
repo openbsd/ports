@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2017/07/16 19:18:59 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2017/07/26 22:45:28 sthen Exp $
 
 COMMENT =		open source message queue optimised for performance
 
 DISTNAME =		zeromq-4.1.4
+REVISION =		0
 
 SHARED_LIBS +=  zmq                  4.1      # 5.0
 

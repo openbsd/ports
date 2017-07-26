@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2017/07/16 19:19:02 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2017/07/26 22:45:30 sthen Exp $
 
 COMMENT=		forensic toolkit based on TCT
 
 DISTNAME=		sleuthkit-4.3.0
 CATEGORIES=		sysutils security
+REVISION=		0
 
 SHARED_LIBS +=		tsk	0.0 # 14.0
 

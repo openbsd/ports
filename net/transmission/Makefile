@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.117 2017/07/16 19:18:59 espie Exp $
+# $OpenBSD: Makefile,v 1.118 2017/07/26 22:45:28 sthen Exp $
 
 COMMENT-main=	BitTorrent command line and daemon client
 COMMENT-gtk=	BitTorrent client with GTK+ interface
@@ -9,7 +9,7 @@ DISTNAME=	transmission-${VER}
 PKGNAME-main=	transmission-${VER}
 PKGNAME-gtk=	transmission-gtk-${VER}
 PKGNAME-qt=	transmission-qt-${VER}
-REVISION=	3
+REVISION=	4
 CATEGORIES=	net
 HOMEPAGE=	http://www.transmissionbt.com/
 MAINTAINER=	Josh Grosse <josh@jggimi.net>

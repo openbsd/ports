@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2017/07/16 19:18:57 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2017/07/26 22:45:27 sthen Exp $
 
 COMMENT=		text based IM client
 
 DISTNAME=		centerim-4.22.10
-REVISION=		2
+REVISION=		3
 CATEGORIES=		net
 
 HOMEPAGE=		http://www.centerim.org/

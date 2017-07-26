@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2017/07/23 09:26:29 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2017/07/26 22:45:31 sthen Exp $
 
 COMMENT=	light-weight, simple and fast XML parser for C++
 
 V=		1.7
 DISTNAME=	pugixml-$V
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS +=	pugixml                   0.0 # 1.7
 

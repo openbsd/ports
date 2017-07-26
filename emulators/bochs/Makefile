@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.70 2017/07/16 19:18:53 espie Exp $
+# $OpenBSD: Makefile,v 1.71 2017/07/26 22:45:19 sthen Exp $
 
 COMMENT=	x86 machine simulator
 
 DISTNAME=	bochs-2.6.9
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=bochs/}
+REVISION=	0
 
 HOMEPAGE=	http://bochs.sourceforge.net/
 

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2017/07/23 09:26:29 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2017/07/26 22:45:33 sthen Exp $
 
 COMMENT =		fast, real time 3D engine
 DISTNAME =		irrlicht-1.8.4
-REVISION =		1
+REVISION =		2
 
 SO_VERSION =		3.0
 SHARED_LIBS =		Irrlicht ${SO_VERSION}

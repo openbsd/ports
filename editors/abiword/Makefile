@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.114 2017/07/25 11:25:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.115 2017/07/26 22:45:19 sthen Exp $
 
 # XXX error: 'nullptr' was not declared in this scope
 CXXFLAGS +=	-std=c++11
@@ -11,7 +11,7 @@ COMMENT=	free cross-platform WYSIWYG word processor
 
 VERSION=	3.0.2
 DISTNAME=	abiword-${VERSION}
-REVISION=	0
+REVISION=	1
 
 MAJORVER=	${VERSION:C/..$//}
 SUBST_VARS=	MAJORVER

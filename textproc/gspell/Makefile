@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2017/07/16 19:19:02 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2017/07/26 22:45:30 sthen Exp $
 
 COMMENT=		spell-checking library for GTK+
 
 GNOME_PROJECT=		gspell
 GNOME_VERSION=		1.4.1
+REVISION=		0
 
 CATEGORIES=		textproc
 

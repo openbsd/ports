@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2017/07/16 19:19:01 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2017/07/26 22:45:27 sthen Exp $
 
 COMMENT=	xml2swf and swf2xml processor with import functionalities
 
 DISTNAME=	swfmill-0.3.3
 CATEGORIES=	multimedia
 MASTER_SITES=	${HOMEPAGE}releases/
+REVISION=	0
 
 HOMEPAGE=	http://swfmill.org/
 

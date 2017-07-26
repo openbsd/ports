@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2017/07/16 19:18:49 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2017/07/26 22:45:16 sthen Exp $
 
 PORTROACH=	limit:[0-9]\.[0-9]\.[0-9][0-9]$
 
@@ -6,7 +6,7 @@ COMMENT=	graphical circuit design and simulation tool
 BROKEN-hppa =	OOM on hicumL2V2p23.core.o
 
 DISTNAME=	qucs-0.0.16
-REVISION=	1
+REVISION=	2
 CATEGORIES=	cad
 
 HOMEPAGE=	http://qucs.sourceforge.net/

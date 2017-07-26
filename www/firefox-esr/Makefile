@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2017/07/16 19:19:03 espie Exp $
+# $OpenBSD: Makefile,v 1.61 2017/07/26 22:45:31 sthen Exp $
 
 COMMENT =	Firefox web browser, Extended Support Release
 
@@ -12,6 +12,7 @@ EXTRACT_SUFX =		.tar.xz
 PKGNAME =	${MOZILLA_PROJECT}-esr-${MOZILLA_VERSION:S/esr//}
 SO_VERSION =	4.0
 MOZILLA_LIBS =	xul clearkey lgpllibs mozavcodec mozavutil mozgtk
+REVISION =	0
 
 CATEGORIES =	www
 

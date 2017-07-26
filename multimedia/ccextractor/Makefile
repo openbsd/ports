@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2017/07/23 09:26:28 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2017/07/26 22:45:26 sthen Exp $
 
 MAINTAINER = 	Marc Espie <espie@openbsd.org>
 CATEGORIES =	multimedia
@@ -8,7 +8,7 @@ V =		0.56
 DISTFILES =	ccextractor.${V:S/.//}-src.zip
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=ccextractor/}
 DISTNAME =	ccextractor-$V
-REVISION =	0
+REVISION =	1
 WRKDIST =	${WRKDIR}/ccextractor.$V
 WRKSRC =	${WRKDIST}/src
 

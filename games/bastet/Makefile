@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2017/07/23 09:26:27 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2017/07/26 22:45:20 sthen Exp $
 
 # Block.s: Assembler messages:
 # Block.s:73: Error: junk `(%rip)' after expression
@@ -9,7 +9,7 @@ BROKEN-sparc64 = undefined reference to pthread_mutex_lock
 
 COMMENT =	bastard tetris
 DISTNAME =	bastet-0.43.1.2015083000
-REVISION =	1
+REVISION =	2
 
 GH_ACCOUNT =	fph
 GH_PROJECT =	bastet

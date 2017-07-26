@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2017/07/26 14:45:51 espie Exp $
+# $OpenBSD: Makefile,v 1.44 2017/07/26 22:45:16 sthen Exp $
 
 COMMENT =		audio player daemon with library management
 BROKEN-sparc64 =	waf build goes into an infinite loop
@@ -6,7 +6,7 @@ BROKEN-sparc64 =	waf build goes into an infinite loop
 V =			0.8
 DISTNAME =		xmms2-${V}DrO_o
 PKGNAME =		xmms2-${V}
-REVISION =		6
+REVISION =		7
 
 SHARED_LIBS +=		xmmsclient++		2.0 # 4.0.0
 SHARED_LIBS +=		xmmsclient++-glib	1.0 # 1.0.0

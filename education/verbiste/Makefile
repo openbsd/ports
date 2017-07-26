@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.35 2017/07/16 19:18:52 espie Exp $
+# $OpenBSD: Makefile,v 1.36 2017/07/26 22:45:19 sthen Exp $
 
 COMMENT=	French and Italian conjugation system
 
 DISTNAME=	verbiste-0.1.44
-REVISION=	0
+REVISION=	1
 SHARED_LIBS=	verbiste-0.1	5.0	# .0.0
 CATEGORIES=	education
 HOMEPAGE=	http://sarrazip.com/dev/verbiste.html

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2017/07/23 09:26:26 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2017/07/26 22:45:16 sthen Exp $
 
 COMMENT=	NEC2++ antenna simulator
 
 DISTNAME=	necpp-1.2.3
-REVISION =	4
+REVISION =	5
 CATEGORIES=    	cad hamradio
 
 HOMEPAGE=	http://elec.otago.ac.nz/w/index.php/Necpp

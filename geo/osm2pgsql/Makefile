@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2017/07/16 19:18:50 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2017/07/26 22:45:23 sthen Exp $
 
 COMMENT =		OSM data to PostgreSQL converter
 #https://github.com/openstreetmap/osm2pgsql/issues/634
@@ -7,6 +7,7 @@ BROKEN =		doesnt build with geos 3.6 API
 GH_TAGNAME =		0.90.1
 GH_PROJECT =		osm2pgsql
 GH_ACCOUNT =		openstreetmap
+REVISION =		0
 
 CATEGORIES =		geo databases
 

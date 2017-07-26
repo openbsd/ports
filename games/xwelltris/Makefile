@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2017/07/23 09:26:27 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2017/07/26 22:45:22 sthen Exp $
 
 COMMENT=	2.5 dimensional tetris-like game
 
 DISTNAME=	xwelltris-1.0.1
 DISTFILES=	${DISTNAME}.src.tar.gz
-REVISION =	3
+REVISION =	4
 CATEGORIES=	games x11
 MASTER_SITES=	${HOMEPAGE}src/
 

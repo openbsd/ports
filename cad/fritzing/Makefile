@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.29 2017/07/16 19:18:49 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2017/07/26 22:45:16 sthen Exp $
 
 COMMENT=	interactive electronics designing software
 
 V=		0.9.2
-REVISION=	1
+REVISION=	2
 
 GH_ACCOUNT=	fritzing
 GH_PROJECT=	fritzing-app

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2017/07/16 19:19:03 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2017/07/26 22:45:31 sthen Exp $
 
 # icu4c namespace problem when mixing gcc 4.2 and a c++11 compiler:
 # undefined reference to `_ZN6icu_5713UnicodeStringC1EOS0_'
@@ -8,6 +8,7 @@ COMMENT =		constraint grammar formalism variant
 
 DISTNAME =		cg3-0.9.9~r10800
 PKGNAME =		vislcg3-0.9.9.10800
+REVISION =		0
 
 SHARED_LIBS =		cg3                       0.0 # 0.0
 

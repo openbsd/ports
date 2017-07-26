@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2017/07/23 09:26:29 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2017/07/26 22:45:29 sthen Exp $
 
 COMMENT =		audit network device configuration
 
 V =			0.12.0
 DISTNAME =		nipper-cli-$V
 PKGNAME =		nipper-$V
-REVISION =		2
+REVISION =		3
 CATEGORIES =		security net
 
 HOMEPAGE =		http://nipper.sf.net/

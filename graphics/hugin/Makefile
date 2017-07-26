@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.54 2017/07/16 19:18:56 espie Exp $
+# $OpenBSD: Makefile,v 1.55 2017/07/26 22:45:24 sthen Exp $
 
 BROKEN-hppa =	run dep on enblend-enfuse which will not build on hppa
 
 COMMENT =	panorama image stitcher
 
 DISTNAME =	hugin-2016.2.0
-REVISION =	0
+REVISION =	1
 EXTRACT_SUFX =	.tar.bz2
 
 # not needed for releases, but makes RCs/betas easier to work with

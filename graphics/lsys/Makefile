@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2017/07/16 19:18:57 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2017/07/26 22:45:24 sthen Exp $
 
 COMMENT=	intepreter for Lindenmayer-systems
 
 # CVS checkout on 04-30-2010
 DISTNAME=	lsys-0.8
 CATEGORIES=	graphics math
+REVISION=	0
 
 HOMEPAGE=	http://software.schmorp.de/pkg/lsys
 

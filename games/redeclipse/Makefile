@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2017/07/16 19:18:55 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2017/07/26 22:45:21 sthen Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64
 
@@ -17,6 +17,8 @@ V=		1.5.8
 PKGNAME=	${N}-${V}
 PKGNAME-main=	${N}-${V}
 PKGNAME-data=	${N}-data-${V}
+REVISION-data=	0
+REVISION-main=	0
 
 DISTFILES=	redeclipse-{base/archive/v}${V}${EXTRACT_SUFX}
 

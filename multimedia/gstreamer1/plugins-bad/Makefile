@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.59 2017/07/16 19:20:57 espie Exp $
+# $OpenBSD: Makefile,v 1.60 2017/07/26 22:45:26 sthen Exp $
 
 COMMENT=		bad elements for GStreamer
 
 DISTNAME=		gst-plugins-bad-${V}
 PKGNAME=		${GST_PKGNAME_PREFIX}-plugins-bad-${V}
+REVISION=		0
 
 SHARED_LIBS +=  gstphotography-1.0   3.3      # 1202.0
 SHARED_LIBS +=  gstbasecamerabinsrc-1.0 3.3   # 1202.0

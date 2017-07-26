@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2017/07/16 19:18:56 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2017/07/26 22:45:23 sthen Exp $
 
 COMMENT=		lightweight Gtk+2 based image viewer
 
@@ -6,6 +6,7 @@ DISTNAME=		geeqie-1.3
 EXTRACT_SUFX=		.tar.xz
 CATEGORIES=		graphics
 EPOCH=			0
+REVISION=		0
 
 HOMEPAGE=		http://geeqie.org/
 

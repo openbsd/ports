@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2017/07/16 19:19:05 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2017/07/26 22:45:32 sthen Exp $
 
 COMMENT =		widgets library for graphics engines
 
 V =			0.8.7
 DISTNAME =		cegui-${V}
+REVISION =		0
 
 PATCHORIG =		.orig.port
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2017/07/16 19:19:03 espie Exp $
+# $OpenBSD: Makefile,v 1.44 2017/07/26 22:45:30 sthen Exp $
 
 ONLY_FOR_ARCHS-java =	i386 amd64
 
@@ -12,7 +12,9 @@ DISTNAME =		link-grammar-${VERSION}
 PKGNAME-main =		${DISTNAME}
 PKGNAME-java =		link-grammar-java-${VERSION}
 PKGNAME-python =	py-link-grammar-${VERSION}
-REVISION-java =		0
+REVISION-java =		1
+REVISION-main =		0
+REVISION-python =	0
 
 SHARED_LIBS +=  link-grammar         4.0      # 8.7
 SHARED_LIBS +=  link-grammar-java    4.0      # 8.7

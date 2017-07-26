@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.29 2017/07/23 09:26:27 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2017/07/26 22:45:22 sthen Exp $
 
 COMMENT=	Motif minesweeper game
 
 DISTNAME=	xminehunter-0.4
-REVISION =	4
+REVISION =	5
 CATEGORIES=	games
 
 MASTER_SITES=	${MASTER_SITE_XCONTRIB:=games/}

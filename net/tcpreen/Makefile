@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2017/07/23 09:26:28 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2017/07/26 22:45:28 sthen Exp $
 
 COMMENT=		simple tcp re-engineering tool
 
 DISTNAME=		tcpreen-1.4.4
-REVISION =		2
+REVISION =		3
 CATEGORIES=		net
 
 HOMEPAGE=		http://www.remlab.net/tcpreen/

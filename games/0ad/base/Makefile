@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2017/07/16 19:18:53 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2017/07/26 22:45:20 sthen Exp $
 
 COMMENT =		historical real-time strategy game
 
 DISTNAME =		0ad-${V}-alpha-unix-build
 PKGNAME =		0ad-${V}
+REVISION =		0
 
 USE_WXNEEDED =		Yes
 

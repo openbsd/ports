@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2017/07/16 19:18:55 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2017/07/26 22:45:22 sthen Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 
@@ -7,7 +7,7 @@ COMMENT =		role playing game
 V =			0.5.8
 DISTNAME =		sumwars-${V}-src
 PKGNAME =		sumwars-${V}
-REVISION =		2
+REVISION =		3
 
 SUBST_VARS +=		V
 

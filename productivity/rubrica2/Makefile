@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.29 2017/07/16 19:19:01 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2017/07/26 22:45:29 sthen Exp $
 
 COMMENT=	addressbook manager
 
 DISTNAME=	rubrica2-2.0.7
-REVISION=	11
+REVISION=	12
 EPOCH=		0
 
 CATEGORIES=	productivity x11

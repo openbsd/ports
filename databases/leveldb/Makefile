@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2017/07/16 19:18:49 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2017/07/26 22:45:16 sthen Exp $
 
 #'atomic_pointer.h: error Please implement AtomicPointer for this platform' on other archs
 ONLY_FOR_ARCHS=	i386 amd64
@@ -8,7 +8,7 @@ COMMENT=	fast and lightweight key/value database library
 DISTNAME=	leveldb-1.5.0
 SHARED_LIBS=	leveldb 1.0
 CATEGORIES=	databases
-REVISION=	3
+REVISION=	4
 
 HOMEPAGE=	https://github.com/google/leveldb
 

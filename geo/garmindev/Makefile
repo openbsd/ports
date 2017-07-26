@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2017/07/16 19:18:50 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2017/07/26 22:45:22 sthen Exp $
 
 COMMENT =	garmin gps device driver
 
-REVISION =	1
+REVISION =	2
 DISTNAME =	garmindev-0.3.4
 CATEGORIES =	geo x11
 HOMEPAGE =	http://www.qlandkarte.org/

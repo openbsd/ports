@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.101 2017/05/11 21:23:49 espie Exp $
+# $OpenBSD: Makefile,v 1.102 2017/07/26 22:45:32 sthen Exp $
 
 COMMENT=		API documentation browser for GNOME
 
 GNOME_PROJECT=		devhelp
 GNOME_VERSION=		3.24.0
+REVISION=		0
 
 SHARED_LIBS +=  devhelp-3            0.0      # 2.0
 

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.39 2017/07/16 19:18:48 espie Exp $
+# $OpenBSD: Makefile,v 1.40 2017/07/26 22:45:15 sthen Exp $
 
 COMMENT =		bundle of plugins for gmpc
 
 VERSION =		11.8.16
 DISTNAME =		gmpc-plugins-${VERSION}
-REVISION =		7
+REVISION =		8
 
 CATEGORIES =		audio
 

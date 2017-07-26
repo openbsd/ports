@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2017/07/23 09:26:29 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2017/07/26 22:45:29 sthen Exp $
 
 COMMENT-main =	Qt Cryptographic Architecture for Qt4
 COMMENT-ossl =	SSL/TLS plugin
@@ -10,9 +10,9 @@ DISTNAME =	qca-${VERSION}
 PKGNAME-main =	qca-${VERSION}
 PKGNAME-ossl =	qca-ossl-${VERSION}
 PKGNAME-gnupg =	qca-gnupg-${VERSION}
-REVISION-main =	1
-REVISION-ossl =	0
-REVISION-gnupg =0
+REVISION-main =	2
+REVISION-ossl =	1
+REVISION-gnupg =1
 
 CATEGORIES =	security
 

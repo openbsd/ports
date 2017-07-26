@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2017/07/16 19:19:05 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2017/07/26 22:45:33 sthen Exp $
 
 COMMENT=	Python bindings for wxWidgets C++ class library
 
 V=		2.8.12.0
-REVISION=	3
+REVISION=	4
 DISTNAME=	wxPython-src-$V
 PKGNAME=	py-wxPython-$V
 CATEGORIES=	x11 devel

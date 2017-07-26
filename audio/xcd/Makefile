@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.33 2017/07/23 09:26:26 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2017/07/26 22:45:16 sthen Exp $
 
 COMMENT =	Tcl/Tk CD player
 DISTNAME =	xcd-1.7
-REVISION =	5
+REVISION =	6
 CATEGORIES =	audio
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.28 2017/07/16 19:18:57 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2017/07/26 22:45:25 sthen Exp $
 
 COMMENT =	smart common input method platform
 
 DISTNAME =	scim-1.4.9
-REVISION =	15
+REVISION =	16
 
 SHARED_LIBS +=  scim-1.0           0.0           # .10.4
 SHARED_LIBS +=  scim-x11utils-1.0  0.0           # .10.4

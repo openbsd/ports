@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.37 2017/07/16 19:18:48 espie Exp $
+# $OpenBSD: Makefile,v 1.38 2017/07/26 22:45:14 sthen Exp $
 
 COMMENT=	decoding library for KDE Multimedia
 
 DISTNAME=	akode-2.0.2
-REVISION=	20
+REVISION=	21
 
 SHARED_LIBS +=	akode                2.1      # .2.0
 

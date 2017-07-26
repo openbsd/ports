@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2017/07/16 19:18:49 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2017/07/26 22:45:16 sthen Exp $
 
 COMMENT =	modular, cross-platform and multi-threaded benchmark tool
 DISTNAME =	sysbench-0.4.8
-REVISION =	9
+REVISION =	10
 CATEGORIES =	benchmarks
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=sysbench/}
 

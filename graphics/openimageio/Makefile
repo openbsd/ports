@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2017/05/31 08:08:16 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2017/07/26 22:45:24 sthen Exp $
 
 BROKEN-powerpc =	undefined reference to __atomic_fetch_add_8
 
@@ -9,6 +9,7 @@ GH_PROJECT = 		oiio
 V =			1.6.16
 GH_TAGNAME =		Release-$V
 DISTNAME =		openimageio-${V}
+REVISION =		0
 
 SHARED_LIBS +=		OpenImageIO		4.0 # 1.0
 SHARED_LIBS +=  	OpenImageIO_Util	1.0 # 1.5

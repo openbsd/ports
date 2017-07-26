@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2017/07/19 09:55:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.67 2017/07/26 22:45:18 sthen Exp $
 
 BROKEN-hppa=		no atomic primitives
 
@@ -11,6 +11,8 @@ EXTRACT_SUFX=		.tar.bz2
 
 PKGNAME-main=		harfbuzz-${V}
 PKGNAME-icu=		harfbuzz-icu-${V}
+REVISION-icu=		0
+REVISION-main=		0
 
 SHARED_LIBS +=  harfbuzz             8.7      # 10400.6
 SHARED_LIBS +=  harfbuzz-icu         0.3      # 10400.6

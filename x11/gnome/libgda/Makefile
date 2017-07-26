@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.116 2017/07/16 19:19:04 espie Exp $
+# $OpenBSD: Makefile,v 1.117 2017/07/26 22:45:32 sthen Exp $
 
 COMMENT-main=		GNOME Data Access library
 COMMENT-ldap=		LDAP backend for libgda
@@ -18,11 +18,11 @@ PKGNAME-mysql=		libgda-mysql-${GNOME_VERSION}
 PKGNAME-pgsql=		libgda-pgsql-${GNOME_VERSION}
 PKGNAME-ui=		libgda-ui-${GNOME_VERSION}
 
-REVISION-main=		7
-REVISION-ldap=		1
-REVISION-mysql=		1
-REVISION-pgsql=		1
-REVISION-ui=		3
+REVISION-main=		8
+REVISION-ldap=		2
+REVISION-mysql=		2
+REVISION-pgsql=		2
+REVISION-ui=		4
 
 EPOCH-main=		2
 EPOCH-ldap=		0

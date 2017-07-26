@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2017/07/16 19:18:52 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2017/07/26 22:45:18 sthen Exp $
 
 COMMENT =	qt git repository viewer
 
 # XXX also change MASTER_SITES when updating
 DISTNAME =	qgit-2.5
+REVISION =	0
 
 CATEGORIES =	devel x11
 

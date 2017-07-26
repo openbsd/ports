@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.3 2017/07/17 08:34:39 zhuk Exp $
+# $OpenBSD: Makefile,v 1.4 2017/07/26 22:45:34 sthen Exp $
 
 QT5NAME =		QtXmlPatterns
+REVISION =		0
 COMMENT-main =		Qt5 support for XPath, XQuery, XSLT and XML Schema
 
 SHARED_LIBS =		Qt5XmlPatterns		2.1

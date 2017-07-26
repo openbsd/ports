@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2017/07/23 09:26:29 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2017/07/26 22:45:33 sthen Exp $
 
 COMMENT=		NX X proxy support tool
 
 DASHVERSION=		1
 DISTNAME=		nxproxy-${MAJOR_VERSION}-${DASHVERSION}
 PKGNAME=		nxproxy-${MAJOR_VERSION}.${DASHVERSION}
-REVISION =		2
+REVISION =		3
 
 MASTER_SITES=	${MASTER_SITES_NX:=nxproxy/}
 

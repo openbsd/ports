@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.5 2017/07/23 09:26:25 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2017/07/26 22:45:15 sthen Exp $
 
 COMMENT=	Bauer stereophonic-to-binaural DSP
-REVISION=	1
+REVISION=	2
 
 DISTNAME=	libbs2b-3.1.0
 

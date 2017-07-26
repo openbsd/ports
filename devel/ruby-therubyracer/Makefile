@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2017/07/16 19:18:52 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2017/07/26 22:45:18 sthen Exp $
 
 BROKEN =	port is holding back updates to lang/libv8
 
 COMMENT =	embeds the V8 javascript interpreter into ruby
 
 DISTNAME =	therubyracer-0.11.0
-REVISION =	3
+REVISION =	4
 CATEGORIES =	devel
 
 HOMEPAGE=	https://github.com/cowboyd/therubyracer

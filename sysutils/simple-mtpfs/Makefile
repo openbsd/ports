@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2017/07/16 19:19:02 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2017/07/26 22:45:30 sthen Exp $
 
 COMMENT=		MTP device filesystem
 
@@ -7,6 +7,7 @@ GH_ACCOUNT=		phatina
 GH_PROJECT=		simple-mtpfs
 GH_TAGNAME=		simple-mtpfs-${V}
 DISTNAME=		${GH_PROJECT}-0.3.0
+REVISION=		0
 
 CATEGORIES=		sysutils
 

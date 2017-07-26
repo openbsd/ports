@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.28 2017/07/16 19:18:57 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2017/07/26 22:45:24 sthen Exp $
 
 COMMENT-main=	high dynamic range image format
 COMMENT-tools=	image viewing tools for OpenEXR
 COMMENT-doc=	developer documentation for OpenEXR
 
 V=		2.2.0
-REVISION=	0
+REVISION=	1
 DISTNAME=	openexr-$V
 PKGNAME-main=	OpenEXR-$V
 PKGNAME-tools=  OpenEXR-tools-$V

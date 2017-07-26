@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2017/07/23 09:26:25 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2017/07/26 22:45:14 sthen Exp $
 
 COMMENT =		navigate zip archives through FUSE
 
 DISTNAME =		fuse-zip-0.4.0
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		archivers
 

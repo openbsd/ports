@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2017/07/16 19:18:59 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2017/07/26 22:45:25 sthen Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386
 
 COMMENT=	V8 JavaScript for clients and servers
 
 V8_VERSION=	3.12.19
-REVISION=	5
+REVISION=	6
 EPOCH=		0
 V8_ARCH=	${MACHINE_ARCH:S/amd64/x64/:S/i386/ia32/}
 V8_RELEASE=	release

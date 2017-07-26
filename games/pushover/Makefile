@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2017/07/16 19:18:54 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2017/07/26 22:45:21 sthen Exp $
 
 COMMENT =		puzzle game featuring dominoes
 
 DISTNAME =		pushover-0.0.5
+REVISION =		0
 
 CATEGORIES =		games
 

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2017/07/16 19:19:00 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2017/07/26 22:45:26 sthen Exp $
 
 COMMENT =	scientific plotting and graphing package
 MODPY_EGG_VERSION =	1.23.1
 DISTNAME =	veusz-${MODPY_EGG_VERSION}
 CATEGORIES =	math graphics
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	http://home.gna.org/veusz/
 

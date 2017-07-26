@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.29 2017/07/16 19:18:55 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2017/07/26 22:45:22 sthen Exp $
 
 COMMENT=		Nebulous rewrite of Tower Toppler
 
 DISTNAME=		toppler-1.1.6
-REVISION=		0
+REVISION=		1
 CATEGORIES=		games
 
 HOMEPAGE=		http://toppler.sourceforge.net/

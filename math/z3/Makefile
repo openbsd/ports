@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2017/07/16 19:19:00 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2017/07/26 22:45:26 sthen Exp $
 
 COMMENT =	z3 theorem prover
 
 VERSION =	4.5.0
 DISTNAME =	z3-${VERSION}
+REVISION =	0
 
 GH_ACCOUNT =	Z3Prover
 GH_PROJECT =	z3

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2017/07/23 09:26:27 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2017/07/26 22:45:25 sthen Exp $
 
 COMMENT =	barcode image processing library
 
 GH_ACCOUNT =	glassechidna
 GH_PROJECT =	zxing-cpp
 GH_COMMIT =	0db7f855135222becff193671faae79c083424b6
-REVISION =	0
+REVISION =	1
 
 DISTNAME =	zxing-20160426
 

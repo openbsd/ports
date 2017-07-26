@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.34 2017/07/23 09:26:27 espie Exp $
+# $OpenBSD: Makefile,v 1.35 2017/07/26 22:45:22 sthen Exp $
 
 COMMENT =	multi-way scrolling shoot'em up for X11, addictive
 #'
 
 DISTNAME =	xkobo-1.11
-REVISION =	6
+REVISION =	7
 CATEGORIES =	games
 
 MASTER_SITES =	${MASTER_SITE_XCONTRIB:=games/}  \

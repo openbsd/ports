@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2017/07/16 19:18:51 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2017/07/26 22:45:17 sthen Exp $
 
 COMMENT=		library for Model-View-Controller type across DBus
 
 DISTNAME=		dee-1.0.14
+REVISION=		0
 
 SHARED_LIBS +=  dee-1.0                   0.0 # 5.1
 

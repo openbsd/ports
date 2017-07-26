@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2017/07/16 19:18:54 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2017/07/26 22:45:21 sthen Exp $
 
 COMMENT =		Othello/Reversi-like game
 DISTNAME =		grhino-${V}
 V =			0.16.1
-REVISION=		3
+REVISION=		4
 CATEGORIES =		games
 HOMEPAGE =		http://rhino.sourceforge.net/
 

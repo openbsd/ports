@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2017/07/16 19:18:48 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2017/07/26 22:45:15 sthen Exp $
 
 COMMENT =	graphical music player focused on a clean ui
 DISTNAME =	musique-1.4
 CATEGORIES =	audio
-REVISION =	2
+REVISION =	3
 
 HOMEPAGE =	http://flavio.tordini.org/musique/
 

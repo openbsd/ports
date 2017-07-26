@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2017/07/16 19:18:53 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2017/07/26 22:45:20 sthen Exp $
 
 COMMENT =	Atari Jaguar emulator
 
 DISTNAME =	virtualjaguar-2.1.2
-REVISION =	0
+REVISION =	1
 EXTRACT_SUFX =	.tar.bz2
 
 CATEGORIES =	emulators games

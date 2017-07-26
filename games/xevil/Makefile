@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2017/07/23 09:26:27 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2017/07/26 22:45:22 sthen Exp $
 #
 
 PORTROACH_COMMENT =	2.02r2 is newer than 2.02
@@ -9,7 +9,7 @@ COMMENT=	side-view, fast-action, kill everything type of game
 V=		2.02r2
 DISTNAME=	xevilsrc${V}
 PKGNAME=	xevil-${V}
-REVISION =	3
+REVISION =	4
 
 CATEGORIES=	games
 

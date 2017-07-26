@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.59 2017/07/16 19:18:58 espie Exp $
+# $OpenBSD: Makefile,v 1.60 2017/07/26 22:45:27 sthen Exp $
 
 COMMENT=		jabber server
 DISTNAME=		jabberd-2.0s11
-REVISION=		9
+REVISION=		10
 EPOCH=			1
 CATEGORIES=		net
 HOMEPAGE=		http://jabberd2.org/

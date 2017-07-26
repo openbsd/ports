@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2017/07/16 19:19:05 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2017/07/26 22:45:33 sthen Exp $
 
 COMMENT=	OpenGL extension to GTK+ 2.0 and later
 
 DISTNAME=	gtkglext-1.2.0
-REVISION=	12
+REVISION=	13
 SHARED_LIBS=	gdkglext-x11-1.0	0.0 \
 		gtkglext-x11-1.0	0.0
 CATEGORIES=	x11 graphics devel

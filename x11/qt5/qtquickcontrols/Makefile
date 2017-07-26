@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.5 2017/07/17 08:34:38 zhuk Exp $
+# $OpenBSD: Makefile,v 1.6 2017/07/26 22:45:34 sthen Exp $
 
 QT5NAME =		QtQuickControls
+REVISION =		0
 COMMENT-main =		Qt Quick based UI controls
 
 # XXX need to figure why qdoc sometimes doesn't generate

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2017/07/16 19:18:48 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2017/07/26 22:45:15 sthen Exp $
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS} ${CLANG_ARCHS}
 
 COMMENT =		music studio with tracking, sampling and MIDI
 
 DISTNAME =		lmms-0.4.8
-REVISION =		3
+REVISION =		4
 CATEGORIES =		audio
 
 HOMEPAGE =		http://lmms.sourceforge.net/

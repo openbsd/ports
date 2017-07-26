@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.153 2017/05/31 08:08:17 espie Exp $
+# $OpenBSD: Makefile,v 1.154 2017/07/26 22:45:32 sthen Exp $
 
 USE_WXNEEDED =	Yes
 
@@ -15,7 +15,7 @@ EPOCH =		1
 CATEGORIES =	www
 DPB_PROPERTIES =parallel
 EXTRACT_SUFX =	.tar.xz
-REVISION =	1
+REVISION =	2
 
 HOMEPAGE =	http://webkitgtk.org/
 MASTER_SITES =	${HOMEPAGE}/releases/

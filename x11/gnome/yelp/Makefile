@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.121 2017/05/11 21:23:49 espie Exp $
+# $OpenBSD: Makefile,v 1.122 2017/07/26 22:45:33 sthen Exp $
 
 COMMENT=		GNOME help browser
 
 GNOME_PROJECT=		yelp
 GNOME_VERSION=		3.22.0
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS +=  yelp                 0.0      # unknown
 

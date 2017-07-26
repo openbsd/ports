@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.60 2017/07/16 19:19:05 espie Exp $
+# $OpenBSD: Makefile,v 1.61 2017/07/26 22:45:33 sthen Exp $
 
 COMMENT-main = 		X11 toolkit, accessibility aids
 COMMENT-mono = 		one-colour KDE icon theme
 CATEGORIES =		x11 x11/kde
 VERSION =		3.5.10
-REVISION-mono =		1
-REVISION-main =		19
+REVISION-mono =		2
+REVISION-main =		20
 DISTNAME =		kdeaccessibility-${VERSION}
 PKGNAME-main =		${DISTNAME}
 PKGNAME-mono =		mono-icon-theme-${VERSION}

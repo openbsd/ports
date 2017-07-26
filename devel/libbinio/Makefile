@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2017/07/23 09:26:26 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2017/07/26 22:45:18 sthen Exp $
 
 COMMENT =	binary I/O stream class library
 
 DISTNAME =	libbinio-1.4
-REVISION =	0
+REVISION =	1
 SHARED_LIBS +=	binio	0.0	# 1.0
 CATEGORIES =	devel
 

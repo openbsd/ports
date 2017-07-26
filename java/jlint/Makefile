@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2017/07/23 09:26:28 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2017/07/26 22:45:25 sthen Exp $
 
 COMMENT=	Java program analyzer and checker
 
 DISTNAME=	jlint-3.1.2
-REVISION =	1
+REVISION =	2
 CATEGORIES=	java
 
 HOMEPAGE=	http://jlint.sourceforge.net/

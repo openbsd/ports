@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2017/07/16 19:18:51 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2017/07/26 22:45:18 sthen Exp $
 
 COMMENT=	C++ class library for working with Internet mail
 
@@ -7,7 +7,7 @@ DISTNAME=	libvmime-${VMIME_V}+svn603
 EXTRACT_SUFX=	.tar.bz2
 
 PKGNAME=	libvmime-${VMIME_V}
-REVISION=	9
+REVISION=	10
 
 SHARED_LIBS+=  vmime    3.0     # 0.0
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2017/07/16 19:18:55 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2017/07/26 22:45:22 sthen Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 
@@ -12,6 +12,8 @@ REV =			r6404
 DISTNAME =		speed-dreams-src-base-$V-${REV}
 PKGNAME-main =		speeddreams-$V
 PKGNAME-data =		speeddreams-data-$V
+REVISION-data =		0
+REVISION-main =		0
 
 CATEGORIES =		games
 

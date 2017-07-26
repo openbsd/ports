@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.33 2017/07/16 19:19:00 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2017/07/26 22:45:26 sthen Exp $
 
 COMMENT=	environment for rapid engineering and scientific processing
 BROKEN-hppa =	undefined reference to lapack funcs
 
 V=		4.0
 DISTNAME=	FreeMat-${V}-Source
-REVISION=	2
+REVISION=	3
 PKGNAME=	freemat-${V}
 
 CATEGORIES=	graphics math

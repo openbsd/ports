@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2017/07/23 09:26:27 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2017/07/26 22:45:24 sthen Exp $
 
 COMMENT=	rendering for complex writing systems
 
 DISTNAME=	graphite2-1.3.10
-REVISION =	0
+REVISION =	1
 EXTRACT_SUFX=	.tgz
 
 SHARED_LIBS=	graphite2 1.2 # 3.0.1

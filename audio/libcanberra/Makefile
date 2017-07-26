@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2017/07/16 19:18:48 espie Exp $
+# $OpenBSD: Makefile,v 1.49 2017/07/26 22:45:15 sthen Exp $
 
 COMMENT-main=	implementation of the Freedesktop sound theme spec.
 COMMENT-gtk=	gtk+2 helper for libcanberra
@@ -12,9 +12,9 @@ PKGNAME-main=	${DISTNAME}
 PKGNAME-gtk=	libcanberra-gtk-${V}
 PKGNAME-gtk3=	libcanberra-gtk3-${V}
 
-REVISION-main=	2
-REVISION-gtk=	3
-REVISION-gtk3=	3
+REVISION-main=	3
+REVISION-gtk=	4
+REVISION-gtk3=	4
 
 SHARED_LIBS +=  canberra             2.0      # 2.5
 SHARED_LIBS +=  canberra-gtk3        1.8      # 1.8

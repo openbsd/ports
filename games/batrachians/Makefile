@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2017/07/16 19:18:53 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2017/07/26 22:45:20 sthen Exp $
 
 COMMENT=	clone of the classic Frog Bog game
 
 DISTNAME =	batrachians-0.1.6
 CATEGORIES=	games
+REVISION =	0
 
 HOMEPAGE=	http://sarrazip.com/dev/batrachians.html
 

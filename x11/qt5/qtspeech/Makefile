@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2017/07/16 19:19:05 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2017/07/26 22:45:34 sthen Exp $
 
 QT5NAME =		QtSpeech
+REVISION =		0
 COMMENT-main =		Qt5 text-to-speech components
 
 MULTI_PACKAGES =	-main -examples -qch -html -docindex

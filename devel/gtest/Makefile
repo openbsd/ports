@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2017/07/23 09:26:26 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2017/07/26 22:45:17 sthen Exp $
 
 COMMENT =	C++ unit test framework
 
@@ -7,7 +7,7 @@ GH_ACCOUNT=	google
 GH_PROJECT=	googletest
 GH_TAGNAME=	release-$V
 PKGNAME =	gtest-$V
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS +=	gmock		0.0   # .0.0
 SHARED_LIBS +=	gmock_main	0.0   # .0.0

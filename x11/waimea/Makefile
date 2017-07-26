@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2017/07/23 09:26:30 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2017/07/26 22:45:34 sthen Exp $
 
 COMMENT=		virtual desktop manager for X11
 
 VERSION=		0.4.0
 DISTNAME=		waimea-${VERSION}
-REVISION =		6
+REVISION =		7
 CATEGORIES=		x11
 
 HOMEPAGE=		http://www.freedesktop.org/wiki/Software/waimea

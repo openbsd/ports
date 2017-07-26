@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2017/07/23 09:26:26 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2017/07/26 22:45:18 sthen Exp $
 
 COMMENT=		library for manipulating structured configuration files
 
 DISTNAME=		libconfig-1.5
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=  config               10.0     # 11.0
 SHARED_LIBS +=  config++             10.0     # 11.0

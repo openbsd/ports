@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.26 2017/07/23 09:26:29 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2017/07/26 22:45:31 sthen Exp $
 
 COMMENT=		documentation metadata library
 
 GNOME_PROJECT=		rarian
 GNOME_VERSION=		0.8.1
 EXTRACT_SUFX=		.tar.bz2
-REVISION =		15
+REVISION =		16
 
 SHARED_LIBS +=	rarian               0.0      # .0.0
 

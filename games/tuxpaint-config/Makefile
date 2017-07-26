@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2017/07/16 19:18:55 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2017/07/26 22:45:22 sthen Exp $
 
 COMMENT=	graphical tool to change Tux Paint's settings
 
 DISTNAME=	tuxpaint-config-0.0.13
-REVISION=	0
+REVISION=	1
 CATEGORIES=	games graphics
 
 HOMEPAGE=	http://www.tuxpaint.org/

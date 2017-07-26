@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2017/07/23 09:26:28 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2017/07/26 22:45:25 sthen Exp $
 
 COMMENT=	japanese groff
 
 CATEGORIES=	japanese textproc print
 
 PKGNAME=	ja-groff-1.10_0.99
-REVISION =	1
+REVISION =	2
 DISTNAME=	groff-1.10
 
 PATCHFILES=	jgroff-0.99.diff.gz:0

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.41 2017/07/16 19:18:54 espie Exp $
+# $OpenBSD: Makefile,v 1.42 2017/07/26 22:45:21 sthen Exp $
 
 COMMENT=	chess program
 
 DISTNAME=	gnuchess-6.2.4
 DISTFILES=	${DISTNAME}.tar.gz book_1.02.pgn.gz
+REVISION=	0
 
 CATEGORIES=	games
 HOMEPAGE=	http://www.gnu.org/software/chess/

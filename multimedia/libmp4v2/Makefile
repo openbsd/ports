@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2017/07/23 09:26:28 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2017/07/26 22:45:27 sthen Exp $
 
 COMMENT =		read and manipulate the MP4 container format
 
 DISTNAME =		mp4v2-1.9.1
 PKGNAME =		lib${DISTNAME}
-REVISION =		2
+REVISION =		3
 CATEGORIES =		multimedia audio
 
 SHARED_LIBS =		mp4v2	4.0 #1.9

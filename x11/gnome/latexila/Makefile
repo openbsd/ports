@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.53 2017/07/16 19:19:04 espie Exp $
+# $OpenBSD: Makefile,v 1.54 2017/07/26 22:45:32 sthen Exp $
 
 COMMENT=		integrated LaTeX environment for GNOME
 
 GNOME_PROJECT=		latexila
 GNOME_VERSION=		3.24.2
+REVISION=		0
 
 CATEGORIES=		editors print
 

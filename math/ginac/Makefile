@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.27 2017/07/23 09:26:28 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2017/07/26 22:45:26 sthen Exp $
 
 COMMENT=	GiNaC is Not a Computer Algebra System (CAS)
 
 DISTNAME=	ginac-1.7.2
-REVISION =	0
+REVISION =	1
 SHARED_LIBS +=	ginac	6.0	# 0.5
 CATEGORIES=	math
 

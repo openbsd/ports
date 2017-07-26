@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2017/07/16 19:19:04 espie Exp $
+# $OpenBSD: Makefile,v 1.53 2017/07/26 22:45:31 sthen Exp $
 
 COMMENT =		ruby web application server/nginx module
 BROKEN-alpha =		.got subsegment exceeds 64K (size 83312)
@@ -9,6 +9,7 @@ BROKEN-sparc64 =	rake fails when linking PassengerHelperAgent
 PASS_VERSION =		5.0.30
 NGINX_VERSION =		1.10.2
 DISTNAME =		passenger-${PASS_VERSION}
+REVISION =		0
 
 CATEGORIES =	www
 DISTFILES =	${DISTNAME}.gem \

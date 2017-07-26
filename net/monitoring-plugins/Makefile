@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2017/07/19 12:14:29 zhuk Exp $
+# $OpenBSD: Makefile,v 1.16 2017/07/26 22:45:28 sthen Exp $
 
 COMMENT-main=	monitoring plugins (for Nagios, Icinga, etc)
 COMMENT-dbi=	dbi monitoring plugin
@@ -12,7 +12,7 @@ COMMENT-snmp=	monitoring plugins using snmp
 COMMENT-radius=	RADIUS monitoring plugin
 
 V=		2.2
-REVISION-main=	2
+REVISION-main=	3
 DISTNAME=	monitoring-plugins-$V
 PKGNAME-main=	monitoring-plugins-$V
 PKGNAME-dbi=	monitoring-plugins-dbi-$V
@@ -25,15 +25,15 @@ PKGNAME-samba=	monitoring-plugins-samba-$V
 PKGNAME-snmp=	monitoring-plugins-snmp-$V
 PKGNAME-radius=	monitoring-plugins-radius-$V
 CATEGORIES=	net
-REVISION-dbi=	0
-REVISION-fping=	0
-REVISION-game=	0
-REVISION-ldap=	0
-REVISION-mysql=	0
-REVISION-pgsql=	0
-REVISION-radius=0
-REVISION-samba=	0
-REVISION-snmp=	0
+REVISION-dbi=	1
+REVISION-fping=	1
+REVISION-game=	1
+REVISION-ldap=	1
+REVISION-mysql=	1
+REVISION-pgsql=	1
+REVISION-radius=1
+REVISION-samba=	1
+REVISION-snmp=	1
 
 HOMEPAGE=	https://www.monitoring-plugins.org/
 

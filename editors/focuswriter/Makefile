@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2017/07/16 19:18:52 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2017/07/26 22:45:19 sthen Exp $
 
 COMMENT =	simple, distraction-free writing environment
 
@@ -7,7 +7,7 @@ PKGNAME =	${DISTNAME:S/-src//}
 CATEGORIES =	editors
 EXTRACT_SUFX =	.tar.bz2
 WRKDIST =	${WRKDIR}/${DISTNAME:S/-src//}
-REVISION =	0
+REVISION =	1
 HOMEPAGE =	http://gottcode.org/focuswriter/
 
 MASTER_SITES =	${HOMEPAGE}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2017/07/16 19:18:50 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2017/07/26 22:45:22 sthen Exp $
 
 COMMENT-main=		GPS waypoint, track, and route conversion tool
 COMMENT-tk=		Tk front-end to gpsbabel
@@ -11,9 +11,9 @@ PKGNAME-tk=		gpsbabel-tk-${VERSION}
 PKGNAME-qt=		gpsbabel-qt-${VERSION}
 CATEGORIES=		geo
 
-REVISION-main=		0
-REVISION-tk=		0
-REVISION-qt=		0
+REVISION-main=		1
+REVISION-tk=		1
+REVISION-qt=		1
 
 HOMEPAGE=		http://www.gpsbabel.org/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2017/07/16 19:18:55 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2017/07/26 22:45:22 sthen Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64
 
@@ -14,7 +14,7 @@ MULTI_PACKAGES=	-main -data
 
 N=		sauerbraten
 V=		20130203
-REVISION=	1
+REVISION=	2
 PKGNAME=	${N}-${V}
 PKGNAME-main=	${N}-${V}
 PKGNAME-data=	${N}-data-${V}

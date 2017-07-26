@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2017/07/16 19:18:53 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2017/07/26 22:45:19 sthen Exp $
 
 BROKEN-hppa =	../../include/mednafen/state.h:21:7: error: 'exception_ptr' in namespace 'std' does not name a type
 COMMENT =	emulates numerous game consoles
 
 V =		0.9.39.2
 DISTNAME =	mednafen-${V}
+REVISION =	0
 
 CATEGORIES =	emulators games
 HOMEPAGE =	http://mednafen.fobby.net/

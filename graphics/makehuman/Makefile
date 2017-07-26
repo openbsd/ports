@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.23 2017/07/16 19:18:57 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2017/07/26 22:45:24 sthen Exp $
 
 COMMENT=	parametrical modeling of 3D humanoid characters
 
 DISTNAME=	makehuman-0.9.1-rc1a
 PKGNAME=	makehuman-0.9.1rc1
 CATEGORIES=	graphics
-REVISION=	2
+REVISION=	3
 
 HOMEPAGE=	http://www.dedalo-3d.com/
 

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.31 2017/07/16 19:19:04 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2017/07/26 22:45:32 sthen Exp $
 
 COMMENT =	OpenGL window and compositing manager
 
 V =		0.8.8
 DISTNAME =	compiz-${V}
-REVISION =	2
+REVISION =	3
 
 SHARED_LIBS =	decoration	1.0
 

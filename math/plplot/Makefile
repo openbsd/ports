@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2017/07/23 09:26:28 espie Exp $
+# $OpenBSD: Makefile,v 1.58 2017/07/26 22:45:26 sthen Exp $
 
 COMMENT-main =	advanced 2D and 3D scientific plotting library
 COMMENT-c++ =	C++ interface to plplot
@@ -15,9 +15,9 @@ SHARED_LIBS =	csirocsa	3.0	\
 PKGNAME-main =	${DISTNAME}
 PKGNAME-c++ =	plplot-c++-${VERSION}
 PKGNAME-f77 =	plplot-f77-${VERSION}
-REVISION-main =	9
-REVISION-c++ =	10
-REVISION-f77 =	12
+REVISION-main =	10
+REVISION-c++ =	11
+REVISION-f77 =	13
 
 CATEGORIES =	math graphics
 

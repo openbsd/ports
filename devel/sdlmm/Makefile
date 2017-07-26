@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.33 2017/07/16 19:18:52 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2017/07/26 22:45:18 sthen Exp $
 
 COMMENT=	C++ wrapper for the Simple DirectMedia Layer
 
 VERSION=	0.1.8
 DISTNAME=	SDLmm-${VERSION}
 PKGNAME=	sdlmm-${VERSION}
-REVISION=	13
+REVISION=	14
 CATEGORIES=	devel
 
 SHARED_LIBS +=	SDLmm                9.0      # .8.0

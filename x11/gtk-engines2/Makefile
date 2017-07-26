@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2017/07/16 19:19:04 espie Exp $
+# $OpenBSD: Makefile,v 1.63 2017/07/26 22:45:33 sthen Exp $
 
 PORTROACH=		limit:^2\.20
 
@@ -10,7 +10,7 @@ EXTRACT_SUFX=		.tar.bz2
 
 # warning: PKGNAME does not default to ${DISTNAME}
 PKGNAME=		gtk-engines2-${GNOME_VERSION}
-REVISION=		6
+REVISION=		7
 
 CATEGORIES=		x11
 

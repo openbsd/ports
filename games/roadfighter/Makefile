@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2017/07/16 19:18:55 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2017/07/26 22:45:22 sthen Exp $
 
 COMMENT=	remake of Konami's Road Fighter
 
 DISTNAME=	roadfighter.src_1.0.1269
 PKGNAME=	${DISTNAME:S/.src_/-/}
-REVISION =	1
+REVISION =	2
 WRKDIST=	${WRKDIR}/${DISTNAME:S/.src_/-/}
 
 EXTRACT_SUFX=	.tgz

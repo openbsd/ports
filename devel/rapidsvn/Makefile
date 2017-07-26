@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2017/07/16 19:18:52 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2017/07/26 22:45:18 sthen Exp $
 
 # XXX doesn't build if already installed
 COMMENT=	graphical subversion client
@@ -6,7 +6,7 @@ COMMENT=	graphical subversion client
 VERSION=	0.12.1
 DISTNAME=	rapidsvn-${VERSION}
 CATEGORIES=	devel
-REVISION=	7
+REVISION=	8
 
 HOMEPAGE=	http://www.rapidsvn.org/
 

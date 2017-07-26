@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.54 2017/07/16 19:19:03 espie Exp $
+# $OpenBSD: Makefile,v 1.55 2017/07/26 22:45:31 sthen Exp $
 
 COMMENT =		fast and light graphical web browser
 
 DISTNAME =		dillo-3.0.5
 CATEGORIES =		www
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE =		http://www.dillo.org/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2017/07/16 19:19:01 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2017/07/26 22:45:28 sthen Exp $
 
 COMMENT=	lightweight PDF document viewer with vi bindings
 
@@ -8,6 +8,7 @@ GH_COMMIT =	9ab76264c7818097a38e69a2d7d6b47199fffc1f
 DISTNAME=	apvlv-0.1.5pl0
 CATEGORIES=	print
 HOMEPAGE=	https://naihe2010.github.io/apvlv/
+REVISION=	0
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=   Yes

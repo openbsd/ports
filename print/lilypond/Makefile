@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2017/07/16 19:19:01 espie Exp $
+# $OpenBSD: Makefile,v 1.47 2017/07/26 22:45:29 sthen Exp $
 
 COMMENT-main=		text based music notation system
 COMMENT-docs=		lilypond documentation
@@ -9,7 +9,8 @@ DISTNAME-docs=		${DISTNAME}-1.documentation
 PKGNAME-main=		lilypond-${VERSION}
 PKGNAME-docs=		lilypond-docs-${VERSION}
 CATEGORIES=		print
-REVISION-main=		0
+REVISION-main=		1
+REVISION-docs=		0
 
 DISTFILES=		${DISTNAME}.tar.gz ${DISTNAME-docs}.tar.bz2:0
 EXTRACT_ONLY=		${DISTNAME}.tar.gz

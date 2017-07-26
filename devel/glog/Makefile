@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2017/07/16 19:18:51 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2017/07/26 22:45:17 sthen Exp $
 
 COMMENT =		C++ application-level logging library
 
 DISTNAME =		glog-0.3.1
-REVISION =		1
+REVISION =		2
 
 SHARED_LIBS +=		glog 0.0 # 0.2.1
 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2017/07/16 19:19:02 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2017/07/26 22:45:30 sthen Exp $
 
 COMMENT =	cron-like daemon but reacting to filesystem events
 
 DISTNAME =	incron-0.5.10
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	sysutils
 

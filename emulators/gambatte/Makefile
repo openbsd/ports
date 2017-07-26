@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2017/07/16 19:18:53 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2017/07/26 22:45:19 sthen Exp $
 
 COMMENT-main =		highly accurate Game Boy Color emulator
 COMMENT-qt =		highly accurate Game Boy Color emulator with GUI
@@ -8,8 +8,8 @@ V =			0.5.0.${REV}
 DISTNAME =		gambatte_src-r${REV}
 PKGNAME-main =		gambatte-$V
 PKGNAME-qt =		gambatte-qt-$V
-REVISION-main =		2
-REVISION-qt =		1
+REVISION-main =		3
+REVISION-qt =		2
 
 MULTI_PACKAGES =	-main -qt
 

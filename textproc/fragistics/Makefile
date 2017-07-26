@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2017/07/23 09:26:29 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2017/07/26 22:45:30 sthen Exp $
 
 COMMENT =	Quake 3 statistics program
 
 DISTNAME =	fragistics-1.7.0
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	textproc games
 

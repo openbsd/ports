@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.28 2017/07/16 19:19:02 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2017/07/26 22:45:30 sthen Exp $
 
 COMMENT=	gtk+3 spelling checker
 
 DISTNAME=	gtkspell3-3.0.9
 EXTRACT_SUFX=	.tar.xz
+REVISION=	0
 
 SHARED_LIBS +=  gtkspell3-3          0.3      # 2.0
 

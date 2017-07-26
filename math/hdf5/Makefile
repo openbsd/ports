@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2017/07/23 09:26:28 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2017/07/26 22:45:26 sthen Exp $
 
 COMMENT =		Hierarchical Data Format 5 Technology suite
 
 V =			1.8.19
 DISTNAME =		hdf5-${V}
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=	hdf5		1.1 # 13.0
 SHARED_LIBS +=	hdf5_cpp	4.0 # 14.0

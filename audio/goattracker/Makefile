@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2017/07/16 19:18:48 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2017/07/26 22:45:15 sthen Exp $
 
 COMMENT =	crossplatform music editor for creating Commodore 64 music
 
 V =		2.73
 DISTNAME =	GoatTracker_${V}
 PKGNAME =	goattracker-${V}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	audio
 

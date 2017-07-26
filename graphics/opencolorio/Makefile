@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2017/07/16 19:18:57 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2017/07/26 22:45:24 sthen Exp $
 
 COMMENT =		color management library
 
 V =			20140911
 DISTNAME =		OpenColorIO-$V
 PKGNAME =		opencolorio-$V
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=  OpenColorIO               1.0 # 1.0
 

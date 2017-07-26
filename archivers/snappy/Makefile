@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2017/07/26 19:20:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2017/07/26 22:45:14 sthen Exp $
 
 COMMENT =	fast compression/decompression library
 
 GH_TAGNAME =	1.1.6
 GH_PROJECT =	snappy
 GH_ACCOUNT =	google
+REVISION =	0
 
 SHARED_LIBS =	snappy	0.0	# 4.1
 

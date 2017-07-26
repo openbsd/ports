@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2017/07/23 10:47:39 zhuk Exp $
+# $OpenBSD: Makefile,v 1.20 2017/07/26 22:45:30 sthen Exp $
 
 COMMENT=	Extensible Binary Meta Language library
 
 DISTNAME=	libebml-1.3.4
-REVISION =	0
+REVISION =	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://dl.matroska.org/downloads/libebml/
 EXTRACT_SUFX=	.tar.bz2

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2017/07/16 19:19:06 espie Exp $
+# $OpenBSD: Makefile,v 1.58 2017/07/26 22:45:34 sthen Exp $
 
 COMMENT-main =	C++ cross-platform GUI toolkit
 COMMENT-media =	wxMediaCtrl class for wxWidgets
@@ -7,8 +7,8 @@ V =		2.8.12
 DISTNAME =	wxWidgets-${V}
 PKGNAME-main =	wxWidgets-gtk2-${V}
 PKGNAME-media =	wxWidgets-media-${V}
-REVISION-main =	13
-REVISION-media =8
+REVISION-main =	14
+REVISION-media =9
 CATEGORIES =	x11
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=wxwindows/}
 

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.59 2017/07/16 19:19:01 espie Exp $
+# $OpenBSD: Makefile,v 1.60 2017/07/26 22:45:29 sthen Exp $
 
 COMMENT=	DTP program
 DISTNAME=	scribus-1.4.5
 CATEGORIES=	print
+REVISION=	0
 
 HOMEPAGE=	http://www.scribus.net/
 

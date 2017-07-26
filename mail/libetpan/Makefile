@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2017/07/16 19:18:59 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2017/07/26 22:45:26 sthen Exp $
 
 COMMENT=	mail purpose library
 
@@ -6,6 +6,7 @@ GH_ACCOUNT=	dinhviethoa
 GH_PROJECT=	libetpan
 GH_TAGNAME=	1.8
 CATEGORIES=	mail devel
+REVISION=	0
 
 SHARED_LIBS=	etpan	18.0	# 21.0
 

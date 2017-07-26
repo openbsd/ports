@@ -1,4 +1,4 @@
-#$OpenBSD: Makefile,v 1.6 2017/07/23 09:26:26 espie Exp $
+#$OpenBSD: Makefile,v 1.7 2017/07/26 22:45:17 sthen Exp $
 
 COMMENT =	Bounded Model Checker for C and C++ programs
 
@@ -7,7 +7,7 @@ DISTNAME =	cbmc-5.5
 GH_ACCOUNT =	diffblue
 GH_PROJECT =	cbmc
 GH_TAGNAME =	cbmc-5.5
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	devel
 
