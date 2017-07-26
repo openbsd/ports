@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.31 2016/08/27 10:50:20 jca Exp $
+# $OpenBSD: Makefile,v 1.32 2017/07/26 18:57:59 jasper Exp $
 
 COMMENT=	GNU awk
 
-V=		4.1.3
+V=		4.1.4
 DISTNAME=	gawk-$V
-REVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GNU:=gawk/}
 

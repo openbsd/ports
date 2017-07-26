@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2016/03/27 20:53:15 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.15 2017/07/26 18:57:59 jasper Exp $
 bin/awk
 @bin bin/gawk
 @bin bin/gawk-${V}
@@ -67,6 +67,7 @@ share/locale/de/LC_MESSAGES/gawk.mo
 share/locale/es/LC_MESSAGES/gawk.mo
 share/locale/fi/LC_MESSAGES/gawk.mo
 share/locale/fr/LC_MESSAGES/gawk.mo
+share/locale/id/LC_MESSAGES/gawk.mo
 share/locale/it/LC_MESSAGES/gawk.mo
 share/locale/ja/LC_MESSAGES/gawk.mo
 share/locale/ms/
@@ -76,3 +77,4 @@ share/locale/nl/LC_MESSAGES/gawk.mo
 share/locale/pl/LC_MESSAGES/gawk.mo
 share/locale/sv/LC_MESSAGES/gawk.mo
 share/locale/vi/LC_MESSAGES/gawk.mo
+share/locale/zh_CN/LC_MESSAGES/gawk.mo
