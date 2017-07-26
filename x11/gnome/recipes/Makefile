@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2017/07/23 09:26:29 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2017/07/26 18:40:40 jasper Exp $
 
 COMMENT =		recipe manager for GNOME
 
 GNOME_PROJECT =		gnome-recipes
-GNOME_VERSION =		1.4.6
-REVISION =		0
+GNOME_VERSION =		1.6.0
 
 CATEGORIES =		misc
 
@@ -24,7 +23,7 @@ MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 WANTLIB += c cairo canberra gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gnome-autoar-0 gobject-2.0 gspell-1 gtk-3 intl pango-1.0
-WANTLIB += pangocairo-1.0 soup-2.4
+WANTLIB += pangocairo-1.0 soup-2.4 m
 WANTLIB += ${COMPILER_LIBCXX}
 
 LIB_DEPENDS =		audio/libcanberra \
