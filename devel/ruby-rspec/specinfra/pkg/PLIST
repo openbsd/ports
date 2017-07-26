@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.39 2017/05/27 14:04:25 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.40 2017/07/26 18:41:45 jasper Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
@@ -22,6 +22,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/backend/cmd.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/backend/docker.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/backend/dockerfile.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/backend/exec.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/backend/jexec.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/backend/lxc.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/backend/powershell/
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/backend/powershell/command.rb
@@ -178,6 +179,9 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/freebsd/base/routing_table.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/freebsd/base/service.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/freebsd/base/user.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/freebsd/base/zfs.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/freebsd/v11/
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/freebsd/v11.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/freebsd/v11/interface.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/freebsd/v6/
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/freebsd/v6.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/freebsd/v6/package.rb
@@ -416,12 +420,14 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/host_inventory/block_device.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/host_inventory/cpu.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/host_inventory/domain.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/host_inventory/ec2.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/host_inventory/facter.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/host_inventory/filesystem.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/host_inventory/fqdn.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/host_inventory/group.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/host_inventory/hostname.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/host_inventory/kernel.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/host_inventory/memory.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/host_inventory/ohai.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/host_inventory/platform.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/host_inventory/platform_version.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/host_inventory/user.rb
@@ -473,6 +479,9 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/command/debian/port_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/debian/service_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/debian8/
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/debian8/port_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/command/debian9/
+${GEM_LIB}/gems/${DISTNAME}/spec/command/debian9/port_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/command/debian9/service_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/esxi/
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/esxi/package_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/factory_spec.rb
