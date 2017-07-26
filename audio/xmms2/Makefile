@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2017/07/16 19:18:49 espie Exp $
+# $OpenBSD: Makefile,v 1.43 2017/07/26 14:45:51 espie Exp $
 
 COMMENT =		audio player daemon with library management
 BROKEN-sparc64 =	waf build goes into an infinite loop
@@ -64,7 +64,8 @@ pre-configure:
 # Disable speex and sun because they are broken
 # Disable shared memory support for visualization because it requires semtimedop()
 do-configure:
-	cd ${WRKSRC} && PYTHON=${MODPY_BIN} ${MODPY_BIN} ./waf configure \
+	cd ${WRKSRC} && PYTHON=${MODPY_BIN} CXX='${CXX}' CC='${CC}' \
+	    ${MODPY_BIN} ./waf configure \
 		--prefix=${PREFIX} \
 		--mandir=${PREFIX}/man \
 		--conf-prefix=${PREFIX} \
