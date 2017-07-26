@@ -1,0 +1,14 @@
+$OpenBSD: patch-config_h,v 1.1.1.1 2017/07/26 23:55:47 jca Exp $
+
+Index: config.h
+--- config.h.orig
++++ config.h
+@@ -40,7 +40,7 @@ static const uint8_t borders[] = {3,5,5,4};
+ #define LOOK_INTO "WM_NAME"
+ static const char *ignore_names[] = {"bar", "xclock"};
+ ///--Menus and Programs---///
+-static const char *menucmd[]   = { "", NULL };
++static const char *menucmd[]   = { "dmenu_run", NULL };
+ ///--Custom foo---///
+ static void halfandcentered(const Arg *arg)
+ {

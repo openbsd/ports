@@ -1,0 +1,4 @@
+Fast floating WM, with the particularity that windows have 2 borders,
+written over the XCB library and derived from mcwm written by Michael
+Cardell.  In 2bwm everything is accessible from the keyboard but a
+pointing device can be used for move, resize and raise/lower.

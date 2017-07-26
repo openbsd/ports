@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/07/26 23:55:47 jca Exp $
+@bin bin/2bwm
+@bin bin/hidden
+@man man/man1/2bwm.1
+@man man/man1/hidden.1
