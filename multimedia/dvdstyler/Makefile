@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2017/07/25 08:18:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2017/07/26 13:20:43 espie Exp $
 
 COMMENT=		DVD authoring application
 
@@ -29,7 +29,8 @@ BUILD_DEPENDS=		archivers/zip \
 			multimedia/dvdauthor \
 			multimedia/mjpegtools \
 			sysutils/dvd+rw-tools \
-			textproc/xmlto
+			textproc/xmlto \
+			devel/gettext-tools
 
 RUN_DEPENDS=		devel/desktop-file-utils \
 			multimedia/dvdauthor \
