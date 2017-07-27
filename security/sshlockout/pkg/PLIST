@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/07/27 00:08:17 jca Exp $
+@man man/man8/sshlockout.8
+@bin sbin/sshlockout

@@ -1,0 +1,4 @@
+sshlockout(8) will monitor the ssh syslog output and keep track of
+attempts to login to unknown users as well as preauth failures. If
+5 attempts fail in any one hour period, a permanent entry is added to
+the pf(4) table for the associated IP address.
