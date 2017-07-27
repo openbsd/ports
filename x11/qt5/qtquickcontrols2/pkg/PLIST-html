@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-html,v 1.3 2017/07/17 08:34:38 zhuk Exp $
+@comment $OpenBSD: PLIST-html,v 1.4 2017/07/27 21:28:55 espie Exp $
 share/doc/qt5/qtlabscalendar/images/
 share/doc/qt5/qtlabscalendar/images/arrow_bc.png
 share/doc/qt5/qtlabscalendar/images/bgrContent.png
@@ -113,25 +113,25 @@ share/doc/qt5/qtquickcontrols2/images/qtquickcontrols2-button-custom.png
 share/doc/qt5/qtquickcontrols2/images/qtquickcontrols2-button-flat.gif
 share/doc/qt5/qtquickcontrols2/images/qtquickcontrols2-button-highlighted.gif
 share/doc/qt5/qtquickcontrols2/images/qtquickcontrols2-button.gif
-share/doc/qt5/qtquickcontrols2/images/qtquickcontrols2-chattutorial-chapter1.png
-share/doc/qt5/qtquickcontrols2/images/qtquickcontrols2-chattutorial-chapter2-listview-header.gif
-share/doc/qt5/qtquickcontrols2/images/qtquickcontrols2-chattutorial-chapter2.png
-share/doc/qt5/qtquickcontrols2/images/qtquickcontrols2-chattutorial-chapter3-listview-header.gif
-share/doc/qt5/qtquickcontrols2/images/qtquickcontrols2-chattutorial-chapter3-view-margins.png
-share/doc/qt5/qtquickcontrols2/images/qtquickcontrols2-chattutorial-chapter3.gif
-share/doc/qt5/qtquickcontrols2/images/qtquickcontrols2-chattutorial-chapter4-long-message.png
-share/doc/qt5/qtquickcontrols2/images/qtquickcontrols2-chattutorial-chapter4-message-timestamp.png
-share/doc/qt5/qtquickcontrols2/images/qtquickcontrols2-chattutorial-chapter4.gif
-share/doc/qt5/qtquickcontrols2/images/qtquickcontrols2-chattutorial-chapter5-contacts-material-dark.png
-share/doc/qt5/qtquickcontrols2/images/qtquickcontrols2-chattutorial-chapter5-contacts-material-test.png
-share/doc/qt5/qtquickcontrols2/images/qtquickcontrols2-chattutorial-chapter5-contacts-material.png
-share/doc/qt5/qtquickcontrols2/images/qtquickcontrols2-chattutorial-chapter5-contacts-universal-dark.png
-share/doc/qt5/qtquickcontrols2/images/qtquickcontrols2-chattutorial-chapter5-contacts-universal.png
-share/doc/qt5/qtquickcontrols2/images/qtquickcontrols2-chattutorial-chapter5-conversations-material-dark.png
-share/doc/qt5/qtquickcontrols2/images/qtquickcontrols2-chattutorial-chapter5-conversations-material-test.png
-share/doc/qt5/qtquickcontrols2/images/qtquickcontrols2-chattutorial-chapter5-conversations-material.png
-share/doc/qt5/qtquickcontrols2/images/qtquickcontrols2-chattutorial-chapter5-conversations-universal-dark.png
-share/doc/qt5/qtquickcontrols2/images/qtquickcontrols2-chattutorial-chapter5-conversations-universal.png
+@comment share/doc/qt5/qtquickcontrols2/images/qtquickcontrols2-chattutorial-chapter1.png
+@comment share/doc/qt5/qtquickcontrols2/images/qtquickcontrols2-chattutorial-chapter2-listview-header.gif
+@comment share/doc/qt5/qtquickcontrols2/images/qtquickcontrols2-chattutorial-chapter2.png
+@comment share/doc/qt5/qtquickcontrols2/images/qtquickcontrols2-chattutorial-chapter3-listview-header.gif
+@comment share/doc/qt5/qtquickcontrols2/images/qtquickcontrols2-chattutorial-chapter3-view-margins.png
+@comment share/doc/qt5/qtquickcontrols2/images/qtquickcontrols2-chattutorial-chapter3.gif
+@comment share/doc/qt5/qtquickcontrols2/images/qtquickcontrols2-chattutorial-chapter4-long-message.png
+@comment share/doc/qt5/qtquickcontrols2/images/qtquickcontrols2-chattutorial-chapter4-message-timestamp.png
+@comment share/doc/qt5/qtquickcontrols2/images/qtquickcontrols2-chattutorial-chapter4.gif
+@comment share/doc/qt5/qtquickcontrols2/images/qtquickcontrols2-chattutorial-chapter5-contacts-material-dark.png
+@comment share/doc/qt5/qtquickcontrols2/images/qtquickcontrols2-chattutorial-chapter5-contacts-material-test.png
+@comment share/doc/qt5/qtquickcontrols2/images/qtquickcontrols2-chattutorial-chapter5-contacts-material.png
+@comment share/doc/qt5/qtquickcontrols2/images/qtquickcontrols2-chattutorial-chapter5-contacts-universal-dark.png
+@comment share/doc/qt5/qtquickcontrols2/images/qtquickcontrols2-chattutorial-chapter5-contacts-universal.png
+@comment share/doc/qt5/qtquickcontrols2/images/qtquickcontrols2-chattutorial-chapter5-conversations-material-dark.png
+@comment share/doc/qt5/qtquickcontrols2/images/qtquickcontrols2-chattutorial-chapter5-conversations-material-test.png
+@comment share/doc/qt5/qtquickcontrols2/images/qtquickcontrols2-chattutorial-chapter5-conversations-material.png
+@comment share/doc/qt5/qtquickcontrols2/images/qtquickcontrols2-chattutorial-chapter5-conversations-universal-dark.png
+@comment share/doc/qt5/qtquickcontrols2/images/qtquickcontrols2-chattutorial-chapter5-conversations-universal.png
 share/doc/qt5/qtquickcontrols2/images/qtquickcontrols2-checkbox-custom.png
 share/doc/qt5/qtquickcontrols2/images/qtquickcontrols2-checkbox-tristate.gif
 share/doc/qt5/qtquickcontrols2/images/qtquickcontrols2-checkbox.gif
@@ -154,8 +154,8 @@ share/doc/qt5/qtquickcontrols2/images/qtquickcontrols2-dial.png
 share/doc/qt5/qtquickcontrols2/images/qtquickcontrols2-dialogbuttonbox.png
 share/doc/qt5/qtquickcontrols2/images/qtquickcontrols2-drawer-expanded-wireframe.png
 share/doc/qt5/qtquickcontrols2/images/qtquickcontrols2-drawer.gif
-share/doc/qt5/qtquickcontrols2/images/qtquickcontrols2-flatstyle-creator.png
-share/doc/qt5/qtquickcontrols2/images/qtquickcontrols2-flatstyle.png
+@comment share/doc/qt5/qtquickcontrols2/images/qtquickcontrols2-flatstyle-creator.png
+@comment share/doc/qt5/qtquickcontrols2/images/qtquickcontrols2-flatstyle.png
 share/doc/qt5/qtquickcontrols2/images/qtquickcontrols2-frame-custom.png
 share/doc/qt5/qtquickcontrols2/images/qtquickcontrols2-frame.png
 share/doc/qt5/qtquickcontrols2/images/qtquickcontrols2-gallery-drawer.png
@@ -243,7 +243,7 @@ share/doc/qt5/qtquickcontrols2/images/qtquickcontrols2-switch.png
 share/doc/qt5/qtquickcontrols2/images/qtquickcontrols2-switchdelegate-custom.png
 share/doc/qt5/qtquickcontrols2/images/qtquickcontrols2-switchdelegate.gif
 share/doc/qt5/qtquickcontrols2/images/qtquickcontrols2-tabbar-custom.png
-share/doc/qt5/qtquickcontrols2/images/qtquickcontrols2-tabbar-explicit.png
+@comment share/doc/qt5/qtquickcontrols2/images/qtquickcontrols2-tabbar-explicit.png
 share/doc/qt5/qtquickcontrols2/images/qtquickcontrols2-tabbar-flickable.png
 share/doc/qt5/qtquickcontrols2/images/qtquickcontrols2-tabbar-wireframe.png
 share/doc/qt5/qtquickcontrols2/images/qtquickcontrols2-tabbutton.png
