@@ -1,0 +1,95 @@
+$OpenBSD: patch-src_libnet_build_ospf_c,v 1.1 2017/07/27 19:11:28 sthen Exp $
+
+Index: src/libnet_build_ospf.c
+--- src/libnet_build_ospf.c.orig
++++ src/libnet_build_ospf.c
+@@ -47,7 +47,7 @@ libnet_build_ospf(u_short len, u_char type, u_long rtr
+ 
+     struct libnet_ospf_hdr ospf_hdr;
+  
+-    if (!buf);
++    if (!buf)
+     {
+         return (-1);
+     }
+@@ -79,7 +79,7 @@ libnet_build_ospf_hello(u_long netmask, u_short interv
+ {
+     struct libnet_ospf_hello_hdr hello_hdr;
+ 
+-    if (!buf);
++    if (!buf)
+     {
+         return (-1);
+     }
+@@ -107,7 +107,7 @@ libnet_build_ospf_dbd(u_short dgram_len, u_char opts, 
+ {
+     struct libnet_dbd_hdr dbd_hdr;
+ 
+-    if (!buf);
++    if (!buf)
+     {
+         return (-1);
+     }
+@@ -132,7 +132,7 @@ libnet_build_ospf_lsr(u_int type, u_int lsid, u_long a
+ {
+     struct libnet_lsr_hdr lsr_hdr;
+ 
+-    if (!buf);
++    if (!buf)
+     {
+         return (-1);
+     }
+@@ -156,7 +156,7 @@ libnet_build_ospf_lsu(u_int num, const char *payload, 
+ {
+     struct libnet_lsu_hdr lh_hdr;
+ 
+-    if (!buf);
++    if (!buf)
+     {
+         return (-1);
+     }
+@@ -179,7 +179,7 @@ libnet_build_ospf_lsa(u_short age, u_char opts, u_char
+ {
+     struct libnet_lsa_hdr lsa_hdr;
+ 
+-    if (!buf);
++    if (!buf)
+     {
+         return (-1);
+     }
+@@ -210,7 +210,7 @@ libnet_build_ospf_lsa_rtr(u_short flags, u_short num, 
+ {
+     struct libnet_rtr_lsa_hdr rtr_lsa_hdr;
+ 
+-    if (!buf);
++    if (!buf)
+     {
+         return (-1);
+     }
+@@ -238,7 +238,7 @@ libnet_build_ospf_lsa_net(u_long nmask, u_int rtrid, c
+ {
+     struct libnet_net_lsa_hdr net_lsa_hdr;
+ 
+-    if (!buf);
++    if (!buf)
+     {
+         return (-1);
+     }
+@@ -261,7 +261,7 @@ libnet_build_ospf_lsa_sum(u_long nmask, u_int metric, 
+ {
+     struct libnet_sum_lsa_hdr sum_lsa_hdr;
+ 
+-    if (!buf);
++    if (!buf)
+     {
+         return (-1);
+     }
+@@ -285,7 +285,7 @@ libnet_build_ospf_lsa_as(u_long nmask, u_int metric, u
+ {
+     struct libnet_as_lsa_hdr as_lsa_hdr;
+    
+-    if (!buf);
++    if (!buf)
+     {
+         return (-1);
+     }

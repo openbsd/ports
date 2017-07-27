@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2017/05/08 18:10:25 schwarze Exp $
+# $OpenBSD: Makefile,v 1.20 2017/07/27 19:11:28 sthen Exp $
 
 REV=		1.0
 VERSION=	${REV}.2a
 EPOCH=		0
-REVISION=	4
+REVISION=	5
 SHARED_LIBS=	net	0.0
 PKGSPEC =	libnet->=1.0v0,<1.1v0
 
