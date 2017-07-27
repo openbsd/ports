@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_cmd_cc,v 1.1 2017/07/27 09:32:29 espie Exp $
+
+Index: src/cmd.cc
+--- src/cmd.cc.orig
++++ src/cmd.cc
+@@ -31,6 +31,7 @@
+ 
+ #include <iostream>
+ #include <cstring>
++#include <unistd.h>
+ 
+ using std::string;
+ using std::stringstream;
