@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2017/07/14 22:15:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2017/07/27 10:05:20 sthen Exp $
 
 USE_WXNEEDED =		Yes
 
@@ -10,7 +10,7 @@ COMMENT =		headless WebKit scriptable with a JavaScript API
 
 MASTER_SITES=		${_MASTER_SITE_FREEBSD}
 DISTNAME =		phantomjs-2.1.1
-REVISION =		0
+REVISION =		1
 DISTFILES =		ariya-${DISTNAME}_GH0.tar.gz \
 			Vitallium-phantomjs-3rdparty-win-19051aa_GH0.tar.gz \
 			Vitallium-qtbase-b5cc008_GH0.tar.gz \
@@ -26,7 +26,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 COMPILER =		gcc
 MODULES =		devel/gettext lang/python lang/ruby
 
-WANTLIB +=		${MODGCC4_CPPWANTLIB} X11 Xau Xdmcp c crypto \
+WANTLIB +=		${COMPILER_LIBCXX} X11 Xau Xdmcp c crypto \
 			execinfo expat fontconfig glib-2.0 freetype \
 			graphite2 harfbuzz iconv icudata icui18n icuuc \
 			intl lzma m pcre proxy pthread pthread-stubs \
@@ -35,6 +35,8 @@ WANTLIB +=		${MODGCC4_CPPWANTLIB} X11 Xau Xdmcp c crypto \
 MODPY_RUNDEP =		No
 MODRUBY_RUNDEP =	No
 
+# MODGCC4_CPPLIBDEP will be empty unless gcc4.port.mk is pulled in (i.e.
+# empty on a base=clang arch)
 LIB_DEPENDS =		${MODGCC4_CPPLIBDEP} \
 			databases/sqlite3 \
 			devel/glib2 \

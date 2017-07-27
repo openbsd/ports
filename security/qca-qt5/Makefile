@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/07/20 18:34:41 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2017/07/27 10:05:20 sthen Exp $
 # separate port for Qt5 because it's too different from Qt4 case
 COMMENT =	Qt Cryptographic Architecture
 
@@ -6,6 +6,7 @@ V =		2.1.3
 DISTNAME =	qca-${V}
 PKGNAME =	qca-qt5-${V}
 CATEGORIES =	security
+REVISION =	0
 
 SHARED_LIBS =	qca-qt5		0.0
 
@@ -15,6 +16,7 @@ HOMEPAGE =	https://userbase.kde.org/QCA
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += Qt5Core c m pthread
+WANTLIB += ${COMPILER_LIBCXX}
 
 EXTRACT_SUFX =		.tar.xz
 MASTER_SITES =		${MASTER_SITE_KDE:=stable/qca/${V}/src/}

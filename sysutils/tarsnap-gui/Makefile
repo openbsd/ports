@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2017/01/11 13:44:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2017/07/27 10:05:20 sthen Exp $
 
 COMMENT = 		frontend to the popular Tarsnap backup service
 
 V = 			0.9
 DISTNAME =		tarsnap-gui-${V}
 CATEGORIES =		sysutils
-REVISION =		1
+REVISION =		2
 
 MAINTAINER =		Josh Grosse <josh@jggimi.net>
 
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += 		GL Qt5Core Qt5Gui Qt5Network Qt5Sql Qt5Widgets c m
 WANTLIB += 		pthread
+WANTLIB += ${COMPILER_LIBCXX}
 
 GH_ACCOUNT =		Tarsnap
 GH_PROJECT =		tarsnap-gui

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2017/07/26 14:19:45 abieber Exp $
+# $OpenBSD: Makefile,v 1.19 2017/07/27 10:05:20 sthen Exp $
 
 BROKEN-powerpc = help2man: can't get `--help' info from ./luakit
 
@@ -8,6 +8,7 @@ COMMENT =	fast, small, webkit based browser written in lua
 GH_ACCOUNT =	luakit
 GH_TAGNAME =	2017.07.26
 GH_PROJECT =	luakit
+REVISION =	0
 
 EPOCH =		0
 
@@ -24,6 +25,7 @@ USE_GMAKE =		Yes
 
 COMPILER =	gcc
 
+WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += atk-1.0 c cairo cairo-gobject gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gobject-2.0 gthread-2.0 gtk-3 intl
 WANTLIB += javascriptcoregtk-4.0 luajit-5.1 pango-1.0 pangocairo-1.0

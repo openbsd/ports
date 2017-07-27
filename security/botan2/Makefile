@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2017/05/31 08:08:17 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2017/07/27 10:05:20 sthen Exp $
 
 COMMENT =	crypto and TLS for C++11
 
 VERSION =	2.1.0
 DISTNAME =	Botan-${VERSION}
 PKGNAME =	botan2-${VERSION}
+REVISION =	0
 
 SHARED_LIBS =	botan-2		1.0
 
@@ -18,6 +19,7 @@ MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =		bz2 c m lzma pthread z
+WANTLIB += ${COMPILER_LIBCXX}
 
 MASTER_SITES =		${HOMEPAGE}releases/
 

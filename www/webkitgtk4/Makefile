@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2017/07/25 11:21:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.63 2017/07/27 10:05:20 sthen Exp $
 
 # patches/patch-Source_JavaScriptCore_javascriptcoregtk_pc_in
 # patches/patch-Source_WebKit2_webkit2gtk-web-extension_pc_in
@@ -19,6 +19,7 @@ EXTRACT_SUFX =		.tar.xz
 API =			4.0
 SUBST_VARS =		API
 DPB_PROPERTIES =	parallel
+REVISION =		0
 
 SHARED_LIBS +=  javascriptcoregtk-${API}     2.2 # 18.5
 SHARED_LIBS +=  webkit2gtk-${API}            2.2 # 37.19
@@ -41,6 +42,7 @@ WANTLIB += gstreamer-1.0 gsttag-1.0 gstvideo-1.0 gtk-3 harfbuzz
 WANTLIB += harfbuzz-icu hyphen icudata icui18n icuuc intl jpeg
 WANTLIB += m notify pango-1.0 pangocairo-1.0 png pthread secret-1
 WANTLIB += soup-2.4 sqlite3 webp xml2 xslt z
+WANTLIB += ${COMPILER_LIBCXX}
 
 MASTER_SITES =		http://webkitgtk.org/releases/
 

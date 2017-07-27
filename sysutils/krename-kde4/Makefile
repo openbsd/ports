@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2015/08/12 12:33:03 zhuk Exp $
+# $OpenBSD: Makefile,v 1.7 2017/07/27 10:05:20 sthen Exp $
 
 COMMENT =	powerful batch file renamer for KDE4
 
@@ -10,7 +10,7 @@ DOCFILES =	krename-3.0.12.pdf \
 		krename-3.0.3-ru.pdf
 DISTFILES =	${SRCFILES} ${DOCFILES}
 EXTRACT_ONLY =	${SRCFILES}
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	sysutils x11
 HOMEPAGE =	http://www.krename.net/
@@ -24,6 +24,7 @@ WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg
 WANTLIB += lib/qt4/QtXml
 WANTLIB += ${KDE4LIB}/kdeui ${KDE4LIB}/kio ${KDE4LIB}/kjsapi
 WANTLIB += exiv2 podofo tag
+WANTLIB += ${COMPILER_LIBCXX}
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes

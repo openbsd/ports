@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2016/09/12 21:14:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2017/07/27 10:05:20 sthen Exp $
 
 COMMENT = 	web based groupware server
 
 VERSION =	5.5rc3
 DISTNAME =	opengroupware-${VERSION}
-REVISION =	2
+REVISION =	3
 
 SHARED_LIBS +=  LSAddress                 0.0 # 5.5
 SHARED_LIBS +=  LSFoundation              0.0 # 5.5
@@ -39,6 +39,7 @@ MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 # LGPLv2/GPLv2
 PERMIT_PACKAGE_CDROM =		Yes
 
+WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += c DOM EOControl GDLAccess NGExtensions NGLdap NGMime
 WANTLIB += NGObjWeb NGStreams SaxObjC WEExtensions WOExtensions
 WANTLIB += XmlRpc iconv ldap

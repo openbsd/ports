@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2017/05/31 08:08:17 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2017/07/27 10:05:20 sthen Exp $
 
 COMMENT =		tool to search text in PDF files
 
 DISTNAME =		pdfgrep-2.0.1
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		textproc
 
@@ -18,6 +18,7 @@ COMPILER =		gcc
 
 # uses pledge()
 WANTLIB +=		c m pthread poppler-cpp pcre gcrypt gpg-error
+WANTLIB += ${COMPILER_LIBCXX}
 
 MASTER_SITES =		https://pdfgrep.org/download/
 

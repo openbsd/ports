@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2017/05/22 13:54:20 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2017/07/27 10:05:20 sthen Exp $
 COMMENT =		common classes for finance KDE 4 apps
 CATEGORIES =		productivity x11
 HOMEPAGE =		http://kmymoney2.sourceforge.net
 MAINTAINER =		KDE porting team <openbsd-kde@googlegroups.com>
 V =			5.0.0
 DISTNAME =		libalkimia-$V
+REVISION =		0
 
 SHARED_LIBS =		alkimia		1.0 # 5.0
 
@@ -12,6 +13,7 @@ SHARED_LIBS =		alkimia		1.0 # 5.0
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =		lib/qt4/QtDBus gmp m
+WANTLIB += ${COMPILER_LIBCXX}
 
 MASTER_SITES =		${MASTER_SITE_KDE:=/stable/alkimia/$V/src/}
 

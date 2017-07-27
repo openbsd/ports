@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.72 2017/07/07 10:41:05 sebastia Exp $
+# $OpenBSD: Makefile,v 1.73 2017/07/27 10:05:20 sthen Exp $
 
 COMMENT = 	web based groupware server
 
 VERSION =	3.2.10
 DISTNAME =	SOGo-${VERSION}
 PKGNAME =	sogo-${VERSION}
+REVISION =	0
 
 SHARED_LIBS +=	GDLContentStore 3.0
 SHARED_LIBS +=	NGCards		3.0
@@ -26,6 +27,7 @@ WANTLIB +=		c m pthread crypto memcached SBJson
 WANTLIB +=		DOM EOControl GDLAccess NGExtensions NGLdap
 WANTLIB +=		NGMime NGObjWeb NGStreams SaxObjC WEExtensions
 WANTLIB +=		objc2 gnustep-base curl
+WANTLIB += ${COMPILER_LIBCXX}
 
 LIB_DEPENDS +=		devel/libmemcached \
 			net/curl \

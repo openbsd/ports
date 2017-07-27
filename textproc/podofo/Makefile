@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2017/05/31 08:08:17 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2017/07/27 10:05:20 sthen Exp $
 
 COMMENT=	library and tools to modify and parse PDF documents
 
 DISTNAME=	podofo-0.9.5
+REVISION=	0
 
 SHARED_LIBS +=	podofo                    2.0 # 0.9
 
@@ -16,6 +17,7 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c crypto fontconfig freetype idn jpeg m png pthread tiff z
+WANTLIB += ${COMPILER_LIBCXX}
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=podofo/}
 

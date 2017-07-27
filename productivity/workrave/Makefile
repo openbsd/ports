@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2017/05/31 08:08:17 espie Exp $
+# $OpenBSD: Makefile,v 1.45 2017/07/27 10:05:20 sthen Exp $
 
 # XXX check if still needed at next update
 CXXFLAGS +=		-std=c++11
@@ -7,12 +7,14 @@ COMMENT=		reminder program for prevention of RSI
 
 DISTNAME=		workrave-1.10.1
 CATEGORIES=		productivity x11
+REVISION=		0
 
 HOMEPAGE=		http://www.workrave.org/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
+WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender Xss Xtst atk-1.0 atk-bridge-2.0
 WANTLIB += atkmm-1.6 atspi c cairo cairo-gobject cairomm-1.0 dbus-1

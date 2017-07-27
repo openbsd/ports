@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2015/12/03 21:24:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2017/07/27 10:05:20 sthen Exp $
 
 CATEGORIES =	www
 COMMENT =	Webkit-based KPart for KDE
 HOMEPAGE =	https://projects.kde.org/projects/extragear/base/kwebkitpart
 DISTNAME =	kwebkitpart-1.2
-REVISION =	6
+REVISION =	7
 
 EXTRACT_SUFX =	.tar.bz2
 MASTER_SITES =	ftp://3ps.if.ua/pub/OpenBSD/distfiles/ \
@@ -15,6 +15,7 @@ MASTER_SITES =	ftp://3ps.if.ua/pub/OpenBSD/distfiles/ \
 PERMIT_PACKAGE_CDROM =          Yes
 
 WANTLIB =  c m pthread
+WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
 WANTLIB += lib/qt4/QtSvg lib/qt4/QtWebKit lib/qt4/QtXml
 WANTLIB += ${KDE4LIB}/kdeui ${KDE4LIB}/kio ${KDE4LIB}/kparts
