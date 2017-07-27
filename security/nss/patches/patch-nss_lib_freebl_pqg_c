@@ -1,0 +1,16 @@
+$OpenBSD: patch-nss_lib_freebl_pqg_c,v 1.1 2017/07/27 06:33:25 landry Exp $
+
+https://bugzilla.mozilla.org/show_bug.cgi?id=1384827
+
+Index: nss/lib/freebl/pqg.c
+--- nss/lib/freebl/pqg.c.orig
++++ nss/lib/freebl/pqg.c
+@@ -342,7 +342,7 @@ addToSeed(const SECItem *seed,
+     CHECK_MPI_OK(mp_init(&modulus));
+     SECITEM_TO_MPINT(*seed, &s); /* s = seed */
+     /* seed += addend */
+-    if (addend < MP_DIGIT_MAX) {
++    if (addend < ULONG_MAX) {
+         CHECK_MPI_OK(mp_add_d(&s, (mp_digit)addend, &s));
+     } else {
+         CHECK_MPI_OK(mp_init(&tmp));
