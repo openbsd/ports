@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.112 2017/07/26 22:45:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.113 2017/07/27 22:01:58 robert Exp $
 
 BROKEN-arm=	src/core/ngx_rwlock.c:116:2: error: \#error ngx_atomic_cmp_set() is not defined!
 BROKEN-hppa=	src/core/ngx_rwlock.c:116:2: error: \#error ngx_atomic_cmp_set() is not defined!
@@ -14,7 +14,7 @@ COMMENT-lua=		nginx lua scripting module
 COMMENT-perl=		nginx perl scripting module
 COMMENT-passenger=	nginx passenger (ruby/python/nodejs) integration module
 
-VERSION=	1.12.0
+VERSION=	1.12.1
 DISTNAME=	nginx-${VERSION}
 CATEGORIES=	www
 
@@ -28,17 +28,8 @@ PKGNAME-naxsi=		nginx-naxsi-${VERSION}
 PKGNAME-lua=		nginx-lua-${VERSION}
 PKGNAME-perl=		nginx-perl-${VERSION}
 PKGNAME-passenger=	nginx-passenger-${VERSION}
-REVISION-geoip=		0
-REVISION-image_filter=	0
-REVISION-mailproxy=     0
-REVISION-main=		0
-REVISION-naxsi=		0
-REVISION-passenger=	0
-REVISION-perl=		0
-REVISION-stream=	0
-REVISION-xslt=		0
 
-MASTER_SITES=	http://nginx.org/download/
+MASTER_SITES=	https://nginx.org/download/
 MASTER_SITES0=	https://github.com/simpl/ngx_devel_kit/archive/
 MASTER_SITES1=	https://github.com/nbs-system/naxsi/archive/
 MASTER_SITES2=	https://github.com/openresty/lua-nginx-module/archive/
