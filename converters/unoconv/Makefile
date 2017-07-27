@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2017/05/31 15:03:27 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2017/07/27 11:09:34 sthen Exp $
 
 PKG_ARCH=		*
 
 COMMENT=		UNiversal Office CONVerter
 
 DISTNAME=		unoconv-0.7
-REVISION=		3
+REVISION=		4
 
 CATEGORIES=		converters textproc
 
