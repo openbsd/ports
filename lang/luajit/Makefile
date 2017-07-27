@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2017/06/01 20:47:38 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2017/07/27 17:27:27 sthen Exp $
 
 ONLY_FOR_ARCHS = powerpc i386 amd64
 # arm needs missing EABI symbols
@@ -7,6 +7,7 @@ SHARED_LIBS +=	luajit-${MODLUA_VERSION} 1.0 # 2.0.5
 
 COMMENT =	just-in-time compiler for Lua
 V =		2.0.5
+REVISION =	0
 DISTNAME =	LuaJIT-${V}
 PKGNAME =	${DISTNAME:L}
 
