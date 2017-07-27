@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.4 2017/06/07 17:03:36 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.5 2017/07/27 09:34:37 sthen Exp $
 
 COMMENT =	KDE Plasma integration support for Qt-based apps
 DISTNAME =	frameworkintegration-${VERSION}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS =	KF5Style		2.0
 
 WANTLIB += KF5Attica KF5Auth KF5Codecs KF5ConfigCore KF5ConfigGui
 WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5I18n KF5IconThemes
-WANTLIB += KF5NewStuffCore KF5Notifications KF5WidgetsAddons Qt5Core
+WANTLIB += KF5NewStuffCore KF5Notifications KF5WidgetsAddons ${COMPILER_LIBCXX} Qt5Core
 WANTLIB += Qt5Gui Qt5Network Qt5Widgets Qt5X11Extras Qt5Xml c
 WANTLIB += m xcb
 

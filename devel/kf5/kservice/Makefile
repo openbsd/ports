@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.4 2017/06/07 17:03:38 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.5 2017/07/27 09:34:38 sthen Exp $
 
 COMMENT =		plugin framework for KDE desktop services
 DISTNAME =		kservice-${VERSION}
+REVISION =		0
 
 SHARED_LIBS =		KF5Service		2.0
 
 WANTLIB =  KF5ConfigCore KF5CoreAddons KF5Crash KF5DBusAddons
-WANTLIB += KF5I18n Qt5Core Qt5DBus Qt5Xml c m
+WANTLIB += KF5I18n ${COMPILER_LIBCXX} Qt5Core Qt5DBus Qt5Xml c m
 
 MODULES =		lang/python
 

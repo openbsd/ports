@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2017/06/07 17:03:37 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.5 2017/07/27 09:34:38 sthen Exp $
 
 COMMENT =		legacy support for kdelibs-4.x compatibility
 DISTNAME =		kdelibs4support-${VERSION}
+REVISION =		0
 
 SHARED_LIBS =		KF5KDELibs4Support	2.0
 
@@ -11,7 +12,7 @@ WANTLIB += KF5DBusAddons KF5GlobalAccel KF5GuiAddons KF5I18n KF5IconThemes
 WANTLIB += KF5ItemViews KF5JobWidgets KF5KIOCore KF5KIOFileWidgets
 WANTLIB += KF5KIOWidgets KF5Notifications KF5Parts KF5Service
 WANTLIB += KF5Solid KF5SonnetUi KF5TextWidgets KF5UnitConversion
-WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Core
+WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui ${COMPILER_LIBCXX} Qt5Core
 WANTLIB += Qt5DBus Qt5Designer Qt5Gui Qt5Network Qt5PrintSupport
 WANTLIB += Qt5Svg Qt5Test Qt5Widgets Qt5X11Extras Qt5Xml SM X11
 WANTLIB += Xext c m

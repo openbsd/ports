@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2015/08/12 12:33:02 zhuk Exp $
+# $OpenBSD: Makefile,v 1.9 2017/07/27 09:34:37 sthen Exp $
 
 CATEGORIES =	devel x11
 COMMENT =	integrated development environment for KDE 4
 KDEV_V =	4.7.1
 KDEVPLAT_V =	1.7.1
+REVISION =	0
 DISTNAME =	kdevelop-${KDEV_V}
 HOMEPAGE =	http://www.kdevelop.org/
 
@@ -38,6 +39,7 @@ WANTLIB += kdevplatforminterfaces kdevplatformlanguage
 WANTLIB += kdevplatformoutputview kdevplatformproject kdevplatformshell
 WANTLIB += kdevplatformutil kdevplatformvcs
 WANTLIB += processcore processui qjson soprano sublime
+WANTLIB += ${COMPILER_LIBCXX}
 
 MODULES =	x11/kde4 devel/gettext lang/python
 MODKDE4_USE =	workspace

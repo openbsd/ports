@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2017/06/07 17:03:37 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.4 2017/07/27 09:34:37 sthen Exp $
 
 COMMENT =	string encoding/decoding for KDE
 DISTNAME =	kcodecs-${VERSION}
+REVISION =	0
 
 SHARED_LIBS =	KF5Codecs		2.0
 
-WANTLIB =	Qt5Core m
+WANTLIB =	${COMPILER_LIBCXX} Qt5Core m
 
 .include <bsd.port.mk>

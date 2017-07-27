@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.4 2017/06/07 17:03:39 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.5 2017/07/27 09:34:38 sthen Exp $
 
 COMMENT =		KDE safe desktop-wide storage for passwords
 DISTNAME =		kwallet-${VERSION}
 PKGNAME =		kf5-kwallet-${VERSION}
+REVISION =		0
 
 SHARED_LIBS =		KF5Wallet		2.0
 SHARED_LIBS +=		kwalletbackend5		2.0
 
 WANTLIB += KF5Auth KF5Codecs KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
 WANTLIB += KF5CoreAddons KF5DBusAddons KF5I18n KF5IconThemes KF5Notifications
-WANTLIB += KF5Service KF5WidgetsAddons KF5WindowSystem Qt5Core
+WANTLIB += KF5Service KF5WidgetsAddons KF5WindowSystem ${COMPILER_LIBCXX} Qt5Core
 WANTLIB += Qt5DBus Qt5Gui Qt5Widgets Qt5Xml X11 c gcrypt m pthread
 
 

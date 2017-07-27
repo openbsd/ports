@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2017/05/31 08:08:15 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2017/07/27 09:34:37 sthen Exp $
 
 # XXX check if still needed at next update
 CXXFLAGS +=		-std=c++11
@@ -9,7 +9,7 @@ DISTNAME =		pavucontrol-3.0
 HOMEPAGE =		http://freedesktop.org/software/pulseaudio/pavucontrol/
 MASTER_SITES =		http://freedesktop.org/software/pulseaudio/pavucontrol/
 CATEGORIES =		audio
-REVISION =		0
+REVISION =		1
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
@@ -54,5 +54,6 @@ WANTLIB += canberra gdk_pixbuf-2.0
 WANTLIB += gio-2.0 giomm-2.4 glib-2.0 glibmm-2.4 gobject-2.0
 WANTLIB += m pango-1.0 pangocairo-1.0 pangomm-1.4
 WANTLIB += pthread pulse pulse-mainloop-glib sigc-2.0
+WANTLIB += ${COMPILER_LIBCXX}
 
 .include <bsd.port.mk>

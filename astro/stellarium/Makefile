@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.50 2017/06/22 08:49:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.51 2017/07/27 09:34:37 sthen Exp $
 
 COMMENT=	free open source planetarium
 
 DISTNAME=	stellarium-0.16.0
+REVISION=	0
 
 CATEGORIES=	astro x11
 
@@ -15,7 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += Qt5Concurrent Qt5Core Qt5Gui Qt5Multimedia Qt5MultimediaWidgets
 WANTLIB += Qt5Network Qt5PrintSupport Qt5Script Qt5SerialPort Qt5Widgets
-WANTLIB += c m pthread z
+WANTLIB += c m pthread z ${COMPILER_LIBCXX}
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=stellarium/}
 

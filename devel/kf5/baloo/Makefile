@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2017/07/12 00:05:04 zhuk Exp $
+# $OpenBSD: Makefile,v 1.7 2017/07/27 09:34:37 sthen Exp $
 
 COMMENT =	KDE file search and metadata handling framework
 VERSION =	15.04.26
 DISTNAME =	baloo-${VERSION}
 PKGNAME =	kf5-${DISTNAME}
-REVISION =	3
+REVISION =	4
 
 SHARED_LIBS =	KF5Baloo		1.0
 SHARED_LIBS +=	KF5BalooXapian		1.0
@@ -29,7 +29,7 @@ WANTLIB += KF5KDELibs4Support KF5KIOCore KF5KIOFileWidgets KF5KIOWidgets
 WANTLIB += KF5Notifications KF5Parts KF5Service KF5Solid KF5SonnetUi
 WANTLIB += KF5TextWidgets KF5UnitConversion KF5WidgetsAddons KF5WindowSystem
 WANTLIB += KF5XmlGui
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport Qt5Qml Qt5Sql
+WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport Qt5Qml Qt5Sql
 WANTLIB += Qt5Widgets Qt5Xml c m pthread xapian
 
 BUILD_DEPENDS =	devel/gettext-tools

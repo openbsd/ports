@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2017/05/31 08:08:15 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2017/07/27 09:34:37 sthen Exp $
 
 COMMENT =	Qt-based MPD client
 
 DISTNAME =	cantata-2.0.1
+REVISION =	0
 
 CATEGORIES =	audio
 
@@ -33,6 +34,7 @@ WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Multimedia
 WANTLIB += Qt5Network Qt5Sql Qt5Svg Qt5Widgets Qt5Xml avcodec
 WANTLIB += avformat avutil c cdda_interface cdda_paranoia cddb
 WANTLIB += m mpg123 mtp musicbrainz5 pthread speexdsp tag z
+WANTLIB += ${COMPILER_LIBCXX}
 
 CONFIGURE_ARGS +=	-DCMAKE_INSTALL_PREFIX:Path=${PREFIX} \
 			-DENABLE_LIBVLC=OFF \

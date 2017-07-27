@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2017/06/07 17:03:37 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.4 2017/07/27 09:34:37 sthen Exp $
 
 COMMENT =		Qt5-based API for manipulating file archives
 DISTNAME =		karchive-${VERSION}
+REVISION =		0
 
 SHARED_LIBS =		KF5Archive		2.0
 
-WANTLIB =		Qt5Core bz2 lzma m z
+WANTLIB =		${COMPILER_LIBCXX} Qt5Core bz2 lzma m z
 
 LIB_DEPENDS =		archivers/xz \
 			archivers/bzip2

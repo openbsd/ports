@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2017/06/07 17:03:38 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.4 2017/07/27 09:34:38 sthen Exp $
 
 COMMENT =	KDE Gettext-based UI text internationalization
 DISTNAME =	ki18n-${VERSION}
+REVISION =	0
 
 SHARED_LIBS =	KF5I18n		2.0
 
-WANTLIB =	Qt5Core Qt5Script intl m
+WANTLIB =	${COMPILER_LIBCXX} Qt5Core Qt5Script intl m
 
 MODULES =	lang/python
 

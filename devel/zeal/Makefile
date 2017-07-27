@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2017/02/08 10:50:21 awolk Exp $
+# $OpenBSD: Makefile,v 1.5 2017/07/27 09:34:38 sthen Exp $
 
 # qt5 webkit
 USE_WXNEEDED =	Yes
@@ -8,6 +8,7 @@ COMMENT =	simple offline API documentation browser
 GH_ACCOUNT =	zealdocs
 GH_PROJECT =	zeal
 GH_TAGNAME =	v0.3.1
+REVISION =	0
 
 CATEGORIES =	devel
 
@@ -21,7 +22,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB += GL Qt5Concurrent Qt5Core Qt5Gui Qt5Network Qt5Sql Qt5WebKit
 WANTLIB += Qt5WebKitWidgets Qt5Widgets Qt5X11Extras X11 archive c m pthread xcb
 WANTLIB += xcb-keysyms
-
+WANTLIB += ${COMPILER_LIBCXX}
 
 MODULES =	devel/qmake x11/qt5
 RUN_DEPENDS =	devel/desktop-file-utils x11/gtk+3,-guic

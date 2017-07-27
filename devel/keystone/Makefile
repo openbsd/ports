@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2017/05/31 08:08:15 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2017/07/27 09:34:37 sthen Exp $
 
 COMMENT =	multi-platform, multi-architecture assembler framework
 
 GH_ACCOUNT =	keystone-engine
 GH_PROJECT =	keystone
 GH_TAGNAME =	0.9.1
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS =	keystone	1.0
 
@@ -19,6 +19,7 @@ MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB +=	c m
+WANTLIB += ${COMPILER_LIBCXX}
 
 MODULES =	devel/cmake
 
