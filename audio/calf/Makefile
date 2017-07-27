@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.25 2017/07/26 22:45:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2017/07/27 14:06:31 sthen Exp $
 
-ONLY_FOR_ARCHS =	${GCC4_ARCHS} ${CLANG_ARCHS}
+ONLY_FOR_ARCHS = ${GCC4_ARCHS} ${CLANG_ARCHS}
 
-COMMENT =		CALF LADSPA plugins
-DISTNAME =		calf-0.0.18.5
-REVISION =		14
-CATEGORIES =		audio
+COMMENT =	CALF LADSPA plugins
+DISTNAME =	calf-0.0.18.6
+CATEGORIES =	audio
 
-HOMEPAGE =		http://tap-plugins.sourceforge.net/
+HOMEPAGE =	http://calf-studio-gear.org/
 
 # GPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes
@@ -18,10 +17,11 @@ WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glade-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
 WANTLIB += gtk-x11-2.0 harfbuzz jack lzma m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
-WANTLIB += ${COMPILER_LIBCXX} xcb xcb-render xcb-shm xml2 z
+WANTLIB += xcb xcb-render xcb-shm xml2 z ${COMPILER_LIBCXX}
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=calf/}
+MASTER_SITES =		http://calf-studio-gear.org/files/
 
+COMPILER =		gcc
 RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+3,-guic
 LIB_DEPENDS =		audio/jack \
