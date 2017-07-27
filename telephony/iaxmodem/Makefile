@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2013/10/11 23:51:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2017/07/27 18:45:41 sthen Exp $
 
 COMMENT=	a software fax modem that uses an IAX channel
 
-DISTNAME=	iaxmodem-1.1.0
+DISTNAME=	iaxmodem-1.3.0
 CATEGORIES=	telephony
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=iaxmodem/}
 
@@ -10,8 +10,9 @@ HOMEPAGE=	http://iaxmodem.sourceforge.net/
 
 MAINTAINER=	Todd T. Fries <todd@openbsd.org>
 
-# GPL
+# GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
+
 WANTLIB=	c m tiff util
 
 LIB_DEPENDS=	graphics/tiff
@@ -20,6 +21,8 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
 
 CFLAGS+=	-I${LOCALBASE}/include
+
+NO_TEST=	Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/iaxmodem

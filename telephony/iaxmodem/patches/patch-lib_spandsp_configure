@@ -1,0 +1,14 @@
+$OpenBSD: patch-lib_spandsp_configure,v 1.1 2017/07/27 18:45:41 sthen Exp $
+
+Index: lib/spandsp/configure
+--- lib/spandsp/configure.orig
++++ lib/spandsp/configure
+@@ -19658,7 +19658,7 @@ fi
+ 
+ case "${ax_cv_c_compiler_vendor}" in
+ gnu)
+-    COMP_VENDOR_CFLAGS="-std=gnu99 -ffast-math -Wall -Wunused-variable -Wunused-but-set-variable -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes $COMP_VENDOR_CFLAGS"
++    COMP_VENDOR_CFLAGS="-std=gnu99 -ffast-math -Wall -Wunused-variable -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes $COMP_VENDOR_CFLAGS"
+     if test "$enable_avx" = "yes" ; then
+         COMP_VENDOR_CFLAGS="-mavx $COMP_VENDOR_CFLAGS"
+     fi

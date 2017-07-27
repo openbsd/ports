@@ -1,9 +1,29 @@
-$OpenBSD: patch-iaxmodem_c,v 1.1.1.1 2008/04/21 03:49:22 todd Exp $
---- iaxmodem.c.orig	Thu Feb  7 19:57:47 2008
-+++ iaxmodem.c	Sat Mar 29 03:17:59 2008
-@@ -60,11 +60,13 @@
- #endif
+$OpenBSD: patch-iaxmodem_c,v 1.2 2017/07/27 18:45:41 sthen Exp $
+Index: iaxmodem.c
+--- iaxmodem.c.orig
++++ iaxmodem.c
+@@ -21,16 +21,8 @@
+ #include <string.h>
+ #include <strings.h>
  
+-#if !defined(__OpenBSD__) && !defined(__FreeBSD__)
+-# ifndef USE_UNIX98_PTY
+-#  include <pty.h>
+-# endif /* !USE_UNIX98_PTY */
+-# include <termios.h>
+-#else
+-#if !defined(__FreeBSD__)
+-# include <util.h>
+-#endif
+-#endif
++#include <termios.h>
++#include <util.h>
+ 
+ #include <stdlib.h>
+ #include <unistd.h>
+@@ -61,11 +53,13 @@
+ 
+ #define SPANDSP_EXPOSE_INTERNAL_STRUCTURES 
  #include <spandsp.h>
 -#ifdef STATICLIBS
 +/* #ifdef STATICLIBS */
@@ -16,7 +36,7 @@ $OpenBSD: patch-iaxmodem_c,v 1.1.1.1 2008/04/21 03:49:22 todd Exp $
  
  #ifndef MODEMVER
  #define MODEMVER "0.0.0"
-@@ -163,6 +165,9 @@ int logmode = S_IRUSR | S_IWUSR | S_IRGRP;
+@@ -167,6 +161,9 @@ int logmode = S_IRUSR | S_IWUSR | S_IRGRP;
  #include "compat/headers.h"
  #include "sys/stropts.h"
  #endif
@@ -24,9 +44,9 @@ $OpenBSD: patch-iaxmodem_c,v 1.1.1.1 2008/04/21 03:49:22 todd Exp $
 +#include "compat/strings.c"
 +#endif
  
- void
- printlog(FILE *fp, char *fmt, ...)
-@@ -637,7 +642,8 @@ iaxmodem(const char *config, int nondaemon)
+ #ifdef __FreeBSD__
+ #include "compat/strndup-freebsd.c"
+@@ -666,7 +663,8 @@ iaxmodem(const char *config, int nondaemon)
      int fd;
      char logfile[256];
  

@@ -1,7 +1,8 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2008/04/21 03:49:22 todd Exp $
---- configure.orig	Thu Feb  7 20:58:41 2008
-+++ configure	Thu Mar 27 21:13:17 2008
-@@ -22,6 +22,7 @@ if [ -n "${IAXVER}" ]; then
+$OpenBSD: patch-configure,v 1.2 2017/07/27 18:45:41 sthen Exp $
+Index: configure
+--- configure.orig
++++ configure
+@@ -20,6 +20,7 @@ if [ -n "${IAXVER}" ]; then
  fi
  
  cat Makefile.in | sed -e "s/@VERSION@/${IAXMODEMVER}/g" | \
