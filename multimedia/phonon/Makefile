@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2017/07/17 21:17:47 zhuk Exp $
+# $OpenBSD: Makefile,v 1.23 2017/07/27 09:55:45 sthen Exp $
 
 COMMENT =	multimedia layer for Qt4/KDE4
 CATEGORIES =	multimedia devel
 VERSION =	4.8.3
 DISTNAME =	phonon-${VERSION}
 HOMEPAGE =	http://phonon.kde.org/
-REVISION =	5
+REVISION =	6
 
 # The phonon_s* are for KDE4-only, renamed to avoid clashing with Qt4's one
 # XXX major should be tweaked on any update, to unbreak
@@ -29,6 +29,7 @@ MODKDE4_USE =
 MODKDE4_LIB_LINKS =	Yes
 PHONON_INCLUDE_DIR =	${MODKDE4_INCLUDE_DIR}
 WANTLIB +=		QtDBus QtGui
+WANTLIB += ${COMPILER_LIBCXX}
 
 # Not sure if it's needed at all but doesn't hurt either for now.
 CONFIGURE_ARGS =	-DPHONON_INSTALL_QT_EXTENSIONS_INTO_SYSTEM_QT:Bool=Yes

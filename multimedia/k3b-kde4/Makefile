@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2015/08/12 12:33:02 zhuk Exp $
+# $OpenBSD: Makefile,v 1.9 2017/07/27 09:55:45 sthen Exp $
 
 COMMENT =		CD/DVD creator
 DISTNAME =		k3b-2.0.3a
 CATEGORIES =		multimedia
+REVISION =		0
 
 # bump away from KDE3 version
 SHARED_LIBS =		k3blib		50.1
@@ -26,6 +27,7 @@ WANTLIB += ${KDE4LIB}/kutils ${KDE4LIB}/nepomuk ${KDE4LIB}/nepomukutils
 WANTLIB += ${KDE4LIB}/solid
 WANTLIB += FLAC FLAC++ avcodec avformat avutil dvdread mad mp3lame
 WANTLIB += mpcdec samplerate soprano sndfile tag vorbis
+WANTLIB += ${COMPILER_LIBCXX}
 
 MASTER_SITES =		${MASTER_SITE_KDE:=stable/k3b/}
 

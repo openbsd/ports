@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.33 2017/05/31 08:08:17 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2017/07/27 09:55:45 sthen Exp $
 
 COMMENT=	advanced IRC bouncer
 
 DISTNAME=	znc-1.6.5
 CATEGORIES=	net
 MASTER_SITES=	${HOMEPAGE}releases/
+REVISION=	0
 
 HOMEPAGE=	http://znc.in/
 
@@ -14,6 +15,7 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	c crypto m pthread ssl z
+WANTLIB += ${COMPILER_LIBCXX}
 
 COMPILER =	gcc
 

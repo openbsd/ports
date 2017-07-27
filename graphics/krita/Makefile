@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2017/07/23 09:21:37 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2017/07/27 09:55:45 sthen Exp $
 
 COMMENT =	advanced drawing and image manipulation
 
 VERSION =	3.1.4
 DISTNAME =	krita-${VERSION}
+REVISION =	0
 
 SHARED_LIBS +=  kritabasicflakes          0.0 # 16.0
 SHARED_LIBS +=  kritacolord               0.0 # 16.0
@@ -46,6 +47,7 @@ WANTLIB += Qt5Gui Qt5Multimedia Qt5Network Qt5PrintSupport Qt5Svg
 WANTLIB += Qt5Widgets Qt5X11Extras Qt5Xml SM X11 Xext Xi boost_system-mt
 WANTLIB += c curl exiv2 fftw3 gsl gslcblas jpeg lcms2 m png poppler-qt5
 WANTLIB += pthread raw tiff xcb xcb-util z
+WANTLIB += ${COMPILER_LIBCXX}
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/krita/${VERSION}/}
 EXTRACT_SUFX =	.tar.gz

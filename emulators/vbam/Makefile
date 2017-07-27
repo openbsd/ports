@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2017/05/31 08:08:15 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2017/07/27 09:55:44 sthen Exp $
 
 # XXX check if still needed at next update
 CXXFLAGS +=		-std=c++11 -fpermissive
@@ -9,7 +9,7 @@ BROKEN-hppa =		ICE or OOM on src/filters/hq/c/hq_base.h:421
 
 DISTNAME =		vbam-1.8.0.1054-src
 PKGNAME =		${DISTNAME:S/-src//}
-REVISION =		9
+REVISION =		10
 
 CATEGORIES =		emulators
 
@@ -18,6 +18,7 @@ HOMEPAGE =		http://www.vba-m.com
 # GPLv2+ (see doc/License.txt)
 PERMIT_PACKAGE_CDROM =		Yes
 
+WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += GL GLU ICE SDL SM X11 Xcomposite Xcursor Xdamage Xext
 WANTLIB += Xfixes Xi Xinerama Xmu Xrandr Xrender Xt atk-1.0 atkmm-1.6
 WANTLIB += c cairo cairomm-1.0 fontconfig freetype gdk-x11-2.0

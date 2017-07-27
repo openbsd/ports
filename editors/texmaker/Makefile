@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.35 2017/06/28 19:50:16 kili Exp $
+# $OpenBSD: Makefile,v 1.36 2017/07/27 09:55:44 sthen Exp $
 
 COMMENT=		LaTeX development environment
 DISTNAME=		texmaker-4.5
 CATEGORIES=		editors
-REVISION=		1
+REVISION=		2
 
 HOMEPAGE=		http://www.xm1math.net/texmaker/
 
@@ -15,6 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 MASTER_SITES=		${HOMEPAGE}
 EXTRACT_SUFX=		.tar.bz2
 
+WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += ICE QtGui QtNetwork QtScript QtWebKit QtXml SM X11
 WANTLIB += Xext Xi Xinerama Xrender c fontconfig freetype hunspell-1.6
 WANTLIB += m poppler-qt4 pthread z

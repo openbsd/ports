@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2015/08/12 12:33:02 zhuk Exp $
+# $OpenBSD: Makefile,v 1.8 2017/07/27 09:55:45 sthen Exp $
 
 COMMENT =		non-linear video editor for KDE
 VERSION =		0.9.10
 DISTNAME =		kdenlive-${VERSION}
 CATEGORIES =		multimedia
+REVISION =		0
 
 HOMEPAGE =		http://www.kdenlive.org/
 MAINTAINER =		KDE porting team <openbsd-kde@googlegroups.com>
@@ -19,6 +20,7 @@ WANTLIB += ${KDE4LIB}/kdeui ${KDE4LIB}/kio ${KDE4LIB}/knewstuff3
 WANTLIB += ${KDE4LIB}/knotifyconfig ${KDE4LIB}/krossui
 WANTLIB += ${KDE4LIB}/nepomukcore ${KDE4LIB}/solid
 WANTLIB += mlt mlt++ qjson soprano
+WANTLIB += ${COMPILER_LIBCXX}
 
 MASTER_SITES =		${MASTER_SITE_KDE:=stable/kdenlive/${VERSION}/src/}
 EXTRACT_SUFX =		.tar.bz2

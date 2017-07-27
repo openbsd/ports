@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2017/05/31 08:08:16 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2017/07/27 09:55:45 sthen Exp $
 
 COMMENT =		small and fast Qt image viewer
 
 GH_ACCOUNT =	nomacs
 GH_PROJECT =	nomacs
 GH_TAGNAME =	3.6.1
+REVISION =	0
 
 CATEGORIES =		graphics
 
@@ -20,6 +21,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB += Qt5Concurrent Qt5Core Qt5Gui Qt5Network Qt5PrintSupport
 WANTLIB += Qt5Svg Qt5Widgets c exiv2 lcms2 m opencv_core opencv_imgproc
 WANTLIB += pthread raw tiff quazip
+WANTLIB += ${COMPILER_LIBCXX}
 
 MODULES =		devel/cmake \
 			x11/qt5 \

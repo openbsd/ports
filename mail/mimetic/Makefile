@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2017/05/31 08:08:16 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2017/07/27 09:55:45 sthen Exp $
 
 COMMENT =		C++ MIME library
 
 DISTNAME =		mimetic-0.9.8
 CATEGORIES =		mail devel
-REVISION =		1
+REVISION =		2
 
 SHARED_LIBS =		mimetic	1.0 #0.0
 
@@ -15,6 +15,7 @@ MASTER_SITES =		http://www.codesink.org/download/
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB +=		m
+WANTLIB += ${COMPILER_LIBCXX}
 
 COMPILER =		gcc
 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2016/12/28 21:29:53 zhuk Exp $
+# $OpenBSD: Makefile,v 1.23 2017/07/27 09:55:45 sthen Exp $
 
 COMMENT =		fast Qt IMAP e-mail client
 
 DISTNAME =		trojita-0.7
-REVISION =		1
+REVISION =		2
 
 SHARED_LIBS =		trojita_plugins	2.0 # 2.0
 
@@ -21,6 +21,7 @@ WANTLIB +=		c m pthread z KF5Gpgmepp-pthread KF5QGpgme
 WANTLIB +=		Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Sql Qt5WebKit
 WANTLIB +=		Qt5WebKitWidgets Qt5Widgets qt5keychain gpg-error
 WANTLIB +=		gpgme-pthread mimetic assuan
+WANTLIB += ${COMPILER_LIBCXX}
 
 MODULES =		devel/cmake x11/qt5
 

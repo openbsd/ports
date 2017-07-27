@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.8 2015/08/12 12:27:03 zhuk Exp $
+# $OpenBSD: Makefile,v 1.9 2017/07/27 09:55:45 sthen Exp $
 
 CATEGORIES =	net
 COMMENT =	torrent client for KDE 4
 V =		4.3.1
 DISTNAME =	ktorrent-$V
 HOMEPAGE =	http://ktorrent.pwsp.net/
-REVISION =	4
+REVISION =	5
 
 EXTRACT_SUFX =	.tar.bz2
 
 SHARED_LIBS =	ktcore		0.0
 
-WANTLIB =  c m pthread
+WANTLIB =  c m pthread ${COMPILER_LIBCXX}
 WANTLIB += lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtGui
 WANTLIB += lib/qt4/QtNetwork lib/qt4/QtScript lib/qt4/QtSql
 WANTLIB += lib/qt4/QtSvg lib/qt4/QtWebKit lib/qt4/QtXml

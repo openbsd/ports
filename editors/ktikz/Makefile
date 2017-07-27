@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2017/07/12 23:13:08 kili Exp $
+# $OpenBSD: Makefile,v 1.4 2017/07/27 09:55:44 sthen Exp $
 
 COMMENT =		editor for the TikZ language
 
@@ -6,7 +6,7 @@ V =			0.10
 DISTNAME =		ktikz_${V}
 PKGNAME =		KtikZ-${V}
 
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		editors
 HOMEPAGE =		http://www.hackenberger.at/blog/ktikz-editor-for-the-tikz-language/
@@ -17,6 +17,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =		http://www.hackenberger.at/ktikz/
 
+WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += ICE QtGui QtXml SM X11 Xext Xi Xinerama Xrender c fontconfig
 WANTLIB += freetype m pthread poppler-qt4
 

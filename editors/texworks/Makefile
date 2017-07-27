@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2017/07/26 22:45:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2017/07/27 09:55:44 sthen Exp $
 
 COMMENT-main =		easy to use LaTeX and ConTeXt editor
 COMMENT-python =	Python scripting for TeXworks
@@ -12,9 +12,9 @@ PKGNAME-main =		texworks-${V}
 PKGNAME-lua =		texworks-lua-${V}
 PKGNAME-python =	texworks-python-${V}
 
-REVISION-main =		2
-REVISION-lua =		2
-REVISION-python =	2
+REVISION-main =		3
+REVISION-lua =		3
+REVISION-python =	3
 
 EPOCH =			0
 
@@ -39,6 +39,7 @@ MODQMAKE_PROJECTS =	plugins-src/TWLuaPlugin/TWLuaPlugin.pro \
 # c++-11 required for poppler
 COMPILER =		gcc
 
+WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += ICE QtDBus QtGui QtScript QtScriptTools QtXml SM X11
 WANTLIB += Xext Xi Xinerama Xrender c fontconfig freetype hunspell-1.6
 WANTLIB += m poppler-qt4 pthread z

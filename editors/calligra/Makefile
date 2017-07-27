@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2017/07/17 21:17:47 zhuk Exp $
+# $OpenBSD: Makefile,v 1.23 2017/07/27 09:55:44 sthen Exp $
 
 COMMENT =	K Desktop Environment, office suite
 HOMEPAGE =	https://www.calligra-suite.org/
 VERSION =	3.0.1
 DISTNAME =	calligra-${VERSION}
 CATEGORIES =	editors
-REVISION =	2
+REVISION =	3
 
 DIST_SUBDIR =	kde
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/calligra/${VERSION}/}
@@ -50,6 +50,7 @@ SHARED_LIBS +=  kdeinit5_calligrasheets   0.0 # 0.0
 SHARED_LIBS +=  kdeinit5_calligrawords    0.0 # 0.0
 SHARED_LIBS +=  kdeinit5_karbon           0.0 # 0.0
 
+WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += Half ICE Iex IlmImf IlmThread Imath KF5Activities KF5Archive
 WANTLIB += KF5Auth KF5Bookmarks KF5Codecs KF5Completion KF5ConfigCore
 WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5Crash

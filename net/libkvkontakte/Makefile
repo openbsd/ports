@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/07/10 08:33:05 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2017/07/27 09:55:45 sthen Exp $
 
 COMMENT =		KDE library implementing VK.com API
 VERSION =		4.12.0
 DISTNAME =		libkvkontakte-${VERSION}
+REVISION =		0
 
 SHARED_LIBS =		kvkontakte	0.0
 
@@ -13,7 +14,7 @@ MAINTAINER =		KDE porting team <openbsd-kde@googlegroups.com>
 # LGPLv2.1+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =  m pthread
+WANTLIB =  m pthread ${COMPILER_LIBCXX}
 WANTLIB += QtDBus QtGui QtNetwork QtSvg QtWebKit QtXml
 WANTLIB += ${KDE4LIB}/kdeui ${KDE4LIB}/kdewebkit
 WANTLIB += ${KDE4LIB}/kio ${KDE4LIB}/kparts

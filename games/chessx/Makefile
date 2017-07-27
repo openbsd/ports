@@ -1,16 +1,18 @@
-# $OpenBSD: Makefile,v 1.3 2017/07/02 00:51:50 bcallah Exp $
+# $OpenBSD: Makefile,v 1.4 2017/07/27 09:55:44 sthen Exp $
 
 COMMENT =		free chess database and analyzer
 DISTNAME =		chessx-1.4.6
 CATEGORIES =		games
 HOMEPAGE =		http://chessx.sourceforge.net/
 MAINTAINER =		Roman Yakovlev <obsd@51t.ru>
+REVISION =		0
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =  GL Qt5Core Qt5Gui Qt5Multimedia Qt5Network Qt5PrintSupport
 WANTLIB += Qt5Svg Qt5Widgets Qt5Xml c m pthread quazip5 z
+WANTLIB += ${COMPILER_LIBCXX}
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=chessx/}
 EXTRACT_SUFX =		.tgz

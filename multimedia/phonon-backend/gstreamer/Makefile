@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2017/07/17 21:17:47 zhuk Exp $
+# $OpenBSD: Makefile,v 1.20 2017/07/27 09:55:45 sthen Exp $
 
 COMMENT-main =	GStreamer-based Phonon backend
 COMMENT-icons =	GStreamer-based Phonon backend icons
@@ -7,8 +7,8 @@ DISTNAME =	phonon-backend-gstreamer-${VERSION}
 PKGNAME-main =	${PKGNAME}
 PKGNAME-icons =	phonon-gstreamer-icons-${VERSION}
 HOMEPAGE =	https://projects.kde.org/projects/kdesupport/phonon/phonon-gstreamer
-REVISION-main =	5
-REVISION-icons =1
+REVISION-main =	6
+REVISION-icons =2
 
 FULLPKGNAME-main =	${PKGNAME}
 FULLPKGPATH-main =	${PKGPATH},${FLAVOR},-main
@@ -31,7 +31,7 @@ LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			multimedia/gstreamer1/plugins-base
 
 WANTLIB-icons =
-WANTLIB-main =	${WANTLIB} GL m
+WANTLIB-main =	${WANTLIB} ${COMPILER_LIBCXX} GL m
 WANTLIB-main +=	glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB-main +=	gstaudio-1.0 gstbase-1.0 gstpbutils-1.0
 WANTLIB-main +=	gstreamer-1.0 gstvideo-1.0 gstapp-1.0

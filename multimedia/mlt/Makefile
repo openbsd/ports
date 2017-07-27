@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2017/05/24 16:30:52 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2017/07/27 09:55:45 sthen Exp $
 
 COMMENT-main =		multimedia transformations framework
 COMMENT-gpl2 =		GPLv2-licensed modules for mlt
@@ -6,8 +6,8 @@ VERSION =		6.0.0
 DISTNAME =		mlt-${VERSION}
 PKGNAME-main =		${DISTNAME}
 PKGNAME-gpl2 =		mlt-gpl2-${VERSION}
-REVISION-main =		2
-REVISION-gpl2 =		0
+REVISION-main =		3
+REVISION-gpl2 =		1
 
 # XXX versions should be kept in sync together
 SHARED_LIBS =		mlt		1.1
@@ -23,12 +23,12 @@ MAINTAINER =		KDE porting team <openbsd-kde@googlegroups.com>
 # file gets included, see --enable-gpl3 configure option.
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB-main =  ${MODGCC4_CPPWANTLIB} SDL SDL_image X11 avcodec
+WANTLIB-main =  ${COMPILER_LIBCXX} SDL SDL_image X11 avcodec
 WANTLIB-main += avdevice avformat avutil c cairo exif gdk-x11-2.0
 WANTLIB-main += gdk_pixbuf-2.0 glib-2.0 gobject-2.0 jack m pango-1.0
 WANTLIB-main += pangoft2-1.0 pthread sox swscale xml2 fftw3
 
-WANTLIB-gpl2 =  ${MODGCC4_CPPWANTLIB} ${MODQT4_WANTLIB} lib/qt4/QtGui
+WANTLIB-gpl2 =  ${COMPILER_LIBCXX} ${MODQT4_WANTLIB} lib/qt4/QtGui
 WANTLIB-gpl2 += lib/qt4/QtSvg lib/qt4/QtXml lib/qt4/QtOpenGL
 WANTLIB-gpl2 += X11 exif m mlt mlt++ pthread samplerate
 

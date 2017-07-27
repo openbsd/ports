@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.25 2017/05/31 08:08:16 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2017/07/27 09:55:45 sthen Exp $
 
 COMMENT=		GObject wrapper around exiv2
 
 GNOME_VERSION=		0.10.6
 GNOME_PROJECT=		gexiv2
 PKGNAME=		lib${DISTNAME}
+REVISION=		0
 
 CATEGORIES=		graphics
 
@@ -18,6 +19,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += exiv2 expat ffi glib-2.0 gobject-2.0 iconv intl m pcre
 WANTLIB += pthread z
+WANTLIB += ${COMPILER_LIBCXX}
 
 MODULES=		lang/python \
 			x11/gnome

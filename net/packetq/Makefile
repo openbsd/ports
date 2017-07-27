@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2017/07/12 21:11:47 fcambus Exp $
+# $OpenBSD: Makefile,v 1.4 2017/07/27 09:55:45 sthen Exp $
 
 COMMENT =	run SQL queries directly on PCAP files
 
 DISTNAME =	packetq-1.4.0
+REVISION =	0
 
 CATEGORIES =	net
 
@@ -14,6 +15,7 @@ MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB +=	c m z
+WANTLIB += ${COMPILER_LIBCXX}
 
 MASTER_SITES =	https://www.dns-oarc.net/files/packetq/
 

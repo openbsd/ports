@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2017/07/11 20:42:34 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.8 2017/07/27 09:55:45 sthen Exp $
 
 CATEGORIES =	net
 COMMENT =	IRC client for KDE 4
@@ -6,7 +6,7 @@ V =		1.5
 DISTNAME =	konversation-$V
 MAINTAINER =	KDE porting team <openbsd-kde@googlegroups.com>
 HOMEPAGE =	http://konversation.kde.org/
-REVISION =	3
+REVISION =	4
 
 WANTLIB =  c m pthread
 WANTLIB += lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtGui
@@ -16,7 +16,7 @@ WANTLIB += ${KDE4LIB}/kemoticons ${KDE4LIB}/kidletime
 WANTLIB += ${KDE4LIB}/kio ${KDE4LIB}/knotifyconfig ${KDE4LIB}/kparts
 WANTLIB += ${KDE4LIB}/kresources ${KDE4LIB}/nepomuk
 WANTLIB += ${KDE4LIB}/nepomukutils ${KDE4LIB}/solid
-WANTLIB += qca soprano
+WANTLIB += qca soprano ${COMPILER_LIBCXX}
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/konversation/$V/src/}
 

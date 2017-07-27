@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.17 2017/06/12 10:57:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2017/07/27 09:55:45 sthen Exp $
 
 COMMENT =		seafile client
 
 GH_PROJECT = 		seafile-client
-REVISION =		0
+REVISION =		1
 
 WANTLIB += Qt5Core Qt5Gui Qt5Network Qt5Test Qt5Widgets c ccnet
 WANTLIB += crypto event_core event_extra gio-2.0 glib-2.0 gobject-2.0
 WANTLIB += intl jansson m pthread seafile searpc sqlite3 ssl uuid
+WANTLIB += ${COMPILER_LIBCXX}
 
 MODULES =		devel/cmake x11/qt5
 LIB_DEPENDS =		net/seafile/seafile \

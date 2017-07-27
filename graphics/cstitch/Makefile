@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2017/03/28 12:43:37 awolk Exp $
+# $OpenBSD: Makefile,v 1.5 2017/07/27 09:55:45 sthen Exp $
 
 COMMENT =		convert images to cross stitch patterns
 
 GH_ACCOUNT =		kleintom
 GH_PROJECT =		cstitch
 GH_TAGNAME =		0.9.8
+REVISION =		0
 
 DISTFILES=		${DISTNAME}.tar.gz ${DISTNAME}-icons{icons}.zip:0
 
@@ -24,6 +25,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += GL Qt5Core Qt5Gui Qt5PrintSupport Qt5Widgets Qt5Xml
 WANTLIB += c m pthread
+WANTLIB += ${COMPILER_LIBCXX}
 
 RUN_DEPENDS =		devel/desktop-file-utils x11/gtk+3,-guic
 

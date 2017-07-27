@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2017/07/11 20:42:34 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.27 2017/07/27 09:55:45 sthen Exp $
 
 COMMENT-kipi =		KDE image plugins collection
 COMMENT-main =		KDE photo management utility
@@ -16,9 +16,9 @@ PKGNAME-kipi =		kipi-plugins-${VERSION}
 PKGNAME-main =		${PKGNAME}
 PKGNAME-mediawiki =	libmediawiki-1.0.0
 
-REVISION-main =		1
-REVISION-kipi =		2
-REVISION-mediawiki =	4
+REVISION-main =		2
+REVISION-kipi =		3
+REVISION-mediawiki =	5
 
 EXTRACT_SUFX =		.tar.bz2
 
@@ -40,7 +40,7 @@ MODULES =		x11/kde4 multimedia/phonon devel/gettext
 # Do not use WANTLIB due to gettext module automatically adding to it
 
 WANTLIB-common =  ${MODQT4_WANTLIB} ${MODKDE4_WANTLIB}
-WANTLIB-common += m pthread ${MODGCC4_CPPWANTLIB}
+WANTLIB-common += m pthread ${COMPILER_LIBCXX}
 WANTLIB-common += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtSvg
 WANTLIB-common += ${KDE4LIB}/kdeui
 

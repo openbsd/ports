@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2017/05/31 08:08:16 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2017/07/27 09:55:44 sthen Exp $
 
 COMMENT-main =		squad-based tactical strategy game
 COMMENT-editor = 	UFO:AI map editor
@@ -6,8 +6,8 @@ COMMENT-editor = 	UFO:AI map editor
 DISTNAME =		ufoai-${V}-source
 PKGNAME-main =		${DISTNAME:S/-source//}
 PKGNAME-editor = 	uforadiant-${V}
-REVISION-editor =       1
-REVISION-main =		1
+REVISION-editor =       2
+REVISION-main =		2
 
 EXTRACT_SUFX =		.tar.bz2
 
@@ -15,7 +15,7 @@ MULTI_PACKAGES = 	-main -editor
 
 cWANTLIB += GL SDL c jpeg m ogg png pthread vorbis
 cWANTLIB += z execinfo iconv intl
-cWANTLIB += ${MODGCC4_CPPWANTLIB}
+cWANTLIB += ${COMPILER_LIBCXX}
 
 WANTLIB-main += SDL_mixer SDL_ttf curl mxml theora
 WANTLIB-main += xvidcore ${cWANTLIB}

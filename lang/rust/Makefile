@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2017/06/17 02:06:53 danj Exp $
+# $OpenBSD: Makefile,v 1.46 2017/07/27 09:55:45 sthen Exp $
 
 # snapshots are only available for amd64 and i386, for now
 ONLY_FOR_ARCHS =	amd64 i386
@@ -24,6 +24,8 @@ CBV =			${CBV-${MACHINE_ARCH}}
 PKGNAME =		rust-${V}
 PKGNAME-main =		rust-${V}
 PKGNAME-doc =		rust-doc-${V}
+REVISION-doc =		0
+REVISION-main =		0
 
 MULTI_PACKAGES =	-main -doc
 
@@ -36,7 +38,7 @@ MAINTAINER =		Sebastien Marie <semarie@online.fr>
 # with portions covered by various BSD-like licenses
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB-main =		${WANTLIB} c m pthread z
+WANTLIB-main =		${COMPILER_LIBCXX} c m pthread z
 WANTLIB-doc =
 
 MASTER_SITES =		https://static.rust-lang.org/dist/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2017/05/31 08:08:16 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2017/07/27 09:55:45 sthen Exp $
 
 COMMENT =		simple and fast multimedia library
 
@@ -6,6 +6,7 @@ V =			2.4.0
 DISTNAME =		SFML-${V}-sources
 PKGNAME =		sfml-${V}
 EXTRACT_SUFX =		.zip
+REVISION =		0
 
 SHARED_LIBS +=  sfml-audio                1.0 # 2.1
 SHARED_LIBS +=  sfml-graphics             1.0 # 2.1
@@ -23,7 +24,7 @@ MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += FLAC GL X11-xcb freetype jpeg m ogg openal vorbis vorbisenc
-WANTLIB += vorbisfile xcb xcb-image xcb-randr
+WANTLIB += vorbisfile xcb xcb-image xcb-randr ${COMPILER_LIBCXX}
 
 MASTER_SITES =		http://www.sfml-dev.org/download/sfml/${V}/
 

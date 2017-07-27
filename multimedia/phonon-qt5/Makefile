@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/07/17 21:06:37 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2017/07/27 09:55:45 sthen Exp $
 
 COMMENT =	multimedia layer for Qt4/KDE4
 VERSION =	4.9.1
@@ -21,7 +21,7 @@ MASTER_SITES =		${MASTER_SITE_KDE:=stable/phonon/${VERSION}/}
 EXTRACT_SUFX =		.tar.xz
 
 WANTLIB =		m pulse pulse-mainloop-glib
-WANTLIB +=		Qt5Core Qt5DBus Qt5Gui Qt5Widgets
+WANTLIB +=		Qt5Core Qt5DBus Qt5Gui Qt5Widgets ${COMPILER_LIBCXX}
 
 MODULES =		devel/kf5
 

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2017/07/20 17:06:48 bcallah Exp $
+# $OpenBSD: Makefile,v 1.3 2017/07/27 09:55:44 sthen Exp $
 
 V =		0.1.0
 COMMENT =	open source re-implementation of RollerCoaster Tycoon 2
 DISTNAME =	openrct2-${V}
 CATEGORIES =	games x11
+REVISION =	0
 
 SHARED_LIBS +=	openrct2                  1.0 # 1.0
 
@@ -15,6 +16,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += GL SDL2 c crypto curl fontconfig freetype iconv jansson
 WANTLIB += m png pthread speexdsp ssl z zip
+WANTLIB += ${COMPILER_LIBCXX}
 
 # Upstream does not make proper source releases.
 # See: https://github.com/OpenRCT2/OpenRCT2/issues/5887

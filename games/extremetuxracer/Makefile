@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2017/05/31 08:08:15 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2017/07/27 09:55:44 sthen Exp $
 
 COMMENT =		downhill racing game
 BROKEN-alpha =		cc1plus: error: unrecognized command line option '-std=c++11'
@@ -7,6 +7,7 @@ BROKEN-hppa =		cc1plus: error: unrecognized command line option '-std=c++11'
 V =			0.7.4
 DISTNAME =		etr-$V
 PKGNAME =		extremetuxracer-$V
+REVISION =		0
 
 CATEGORIES =		games
 
@@ -19,6 +20,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += GL GLU X11 c m pthread sfml-audio sfml-graphics sfml-system
 WANTLIB += sfml-window
+WANTLIB += ${COMPILER_LIBCXX}
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=extremetuxracer/}
 EXTRACT_SUFX =		.tar.xz

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.72 2017/07/25 06:47:08 landry Exp $
+# $OpenBSD: Makefile,v 1.73 2017/07/27 09:55:45 sthen Exp $
 
 COMMENT =	desktop geographical information system
 
 DISTNAME =	qgis-2.18.11
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	geo x11
+REVISION =	0
 
 SHARED_LIBS =	qgis_core	17.2 \
 		qgis_app	5.0 \
@@ -68,6 +69,7 @@ WANTLIB += 	ICE SM X11 Xext Xi Xinerama Xrender c expat \
 		QtWebKit gdal geos_c gsl gslcblas pq qwt fcgi qca \
 		QtTest spatialindex spatialite sqlite3 qscintilla2 qjson
 WANTLIB += ${MODPY_WANTLIB} jpeg tiff
+WANTLIB += ${COMPILER_LIBCXX}
 
 CONFIGURE_ENV+=	VERBOSE=1
 CONFIGURE_ARGS =	-DWITH_SERVER=TRUE -DWITH_SERVER_PLUGINS=TRUE -DWITH_PYSPATIALITE=TRUE

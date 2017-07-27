@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2016/12/28 12:50:13 zhuk Exp $
+# $OpenBSD: Makefile,v 1.6 2017/07/27 09:55:44 sthen Exp $
 
 COMMENT =	free clone of Blokus board game
 DISTNAME =	pentobi-10.1
 EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	games x11
-REVISION =	1
+REVISION =	2
 
 HOMEPAGE =	http://pentobi.sourceforge.net/
 
@@ -12,6 +12,7 @@ HOMEPAGE =	http://pentobi.sourceforge.net/
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += Qt5Concurrent Qt5Core Qt5Gui Qt5Widgets X11 c m pthread
+WANTLIB += ${COMPILER_LIBCXX}
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=pentobi/}
 
