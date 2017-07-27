@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.8 2015/05/28 10:17:31 pascal Exp $
+# $OpenBSD: Makefile,v 1.9 2017/07/27 11:57:50 sthen Exp $
 
 COMMENT =	printing management for KDE
 DISTNAME =	print-manager-${MODKDE4_VERSION}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS =	kcupslib		50.0
 
 WANTLIB =  c m pthread
+WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtDeclarative lib/qt4/QtGui
 WANTLIB += lib/qt4/QtNetwork lib/qt4/QtScript lib/qt4/QtSvg
 WANTLIB += lib/qt4/QtXml

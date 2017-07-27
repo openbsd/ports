@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.9 2015/05/28 10:17:29 pascal Exp $
+# $OpenBSD: Makefile,v 1.10 2017/07/27 11:57:49 sthen Exp $
 
 COMMENT =	KDE frontend for remote controls
 DISTNAME =	kremotecontrol-${MODKDE4_VERSION}
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS =	libkremotecontrol	50.0 # 1.0
 
 WANTLIB =  c m pthread
+WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += X11 Xtst
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtScript
 WANTLIB += lib/qt4/QtSvg lib/qt4/QtXml lib/qt4/QtXmlPatterns

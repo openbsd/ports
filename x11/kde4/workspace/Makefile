@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.58 2017/05/27 13:55:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.59 2017/07/27 11:57:51 sthen Exp $
 
 COMMENT =	KDE workspace
 DISTNAME =	kde-workspace-4.11.21
-REVISION =	16
+REVISION =	17
 
 MASTER_SITES =	${MASTER_SITE_KDE:=Attic/applications/15.04.3/src/}
 
@@ -52,6 +52,7 @@ SHARED_LIBS +=	taskmanager			51.0 # 4.7
 SHARED_LIBS +=	weather_ion			51.0 # 6.0
 
 WANTLIB =  c m pthread util z intl
+WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += GL GLU ICE SM X11 X11-xcb XRes Xau Xcomposite Xcursor Xdamage Xdmcp
 WANTLIB += Xext Xfixes Xft Xi Xinerama Xrandr Xrender Xss Xtst Xxf86vm
 WANTLIB += fontconfig freetype xkbfile

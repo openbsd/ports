@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2017/07/11 23:10:11 zhuk Exp $
+# $OpenBSD: Makefile,v 1.9 2017/07/27 11:57:50 sthen Exp $
 
 COMMENT =	touch typing learning tool for KDE
 DISTNAME =	ktouch-${MODKDE4_VERSION}
-REVISION =	2
+REVISION =	3
 
 WANTLIB =  c m pthread
+WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += ICE SM X11 Xext xkbfile
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtDeclarative lib/qt4/QtGui
 WANTLIB += lib/qt4/QtNetwork lib/qt4/QtOpenGL lib/qt4/QtScript

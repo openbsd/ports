@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2015/05/28 10:17:29 pascal Exp $
+# $OpenBSD: Makefile,v 1.6 2017/07/27 11:57:49 sthen Exp $
 
 COMMENT =	KDE remote desktop client
 DISTNAME =	krdc-${MODKDE4_VERSION}
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	net
 HOMEPAGE =	http://projects.kde.org/projects/kde/kdenetwork/krdc
@@ -10,6 +10,7 @@ HOMEPAGE =	http://projects.kde.org/projects/kde/kdenetwork/krdc
 SHARED_LIBS =	krdccore		51.0 # 4.11
 
 WANTLIB =  c m pthread
+WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg
 WANTLIB += lib/qt4/QtXml
 WANTLIB += ${KDE4LIB}/kcmutils ${KDE4LIB}/kdeui ${KDE4LIB}/kdnssd

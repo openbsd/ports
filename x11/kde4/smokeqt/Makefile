@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.10 2015/06/26 09:18:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2017/07/27 11:57:50 sthen Exp $
 
 CATEGORIES =	devel
 COMMENT =	introspective wrappers around Qt
 DISTNAME =	smokeqt-${MODKDE4_VERSION}
-REVISION =	1
+REVISION =	2
 
 WANTLIB = m
+WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtDeclarative
 WANTLIB += lib/qt4/QtGui lib/qt4/QtHelp lib/qt4/QtMultimedia
 WANTLIB += lib/qt4/QtNetwork lib/qt4/QtOpenGL lib/qt4/QtScript

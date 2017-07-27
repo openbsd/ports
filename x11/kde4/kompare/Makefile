@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2015/05/28 10:17:28 pascal Exp $
+# $OpenBSD: Makefile,v 1.5 2017/07/27 11:57:49 sthen Exp $
 
 COMMENT =	file compare utility for KDE
 DISTNAME =	kompare-${MODKDE4_VERSION}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	textproc devel
 HOMEPAGE =	http://projects.kde.org/projects/kde/kdesdk/kompare
@@ -12,6 +12,7 @@ SHARED_LIBS =	komparedialogpages	52.0 # 4.7
 SHARED_LIBS +=	kompareinterface	52.0 # 4.7
 
 WANTLIB =  c m pthread
+WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg
 WANTLIB += lib/qt4/QtXml
 WANTLIB += ${KDE4LIB}/kdeui ${KDE4LIB}/kio ${KDE4LIB}/komparediff2

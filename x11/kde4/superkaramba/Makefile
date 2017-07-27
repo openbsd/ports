@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.9 2015/05/28 10:17:31 pascal Exp $
+# $OpenBSD: Makefile,v 1.10 2017/07/27 11:57:51 sthen Exp $
 
 COMMENT =	interactive desktop widgets for KDE
 DISTNAME =	superkaramba-${MODKDE4_VERSION}
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS =	superkaramba	50.0 # 4.7
 
 WANTLIB =  c m pthread util
+WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += ICE SM X11 Xext Xrender
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtScript
 WANTLIB += lib/qt4/Qt3Support lib/qt4/QtSql lib/qt4/QtSvg lib/qt4/QtXml

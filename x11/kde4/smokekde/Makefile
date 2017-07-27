@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2015/05/28 10:17:31 pascal Exp $
+# $OpenBSD: Makefile,v 1.13 2017/07/27 11:57:50 sthen Exp $
 
 CATEGORIES =	devel
 COMMENT =	introspective wrappers around KDE
 DISTNAME =	smokekde-${MODKDE4_VERSION}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS =	smokeakonadi		52.0 # 3.0
 SHARED_LIBS +=	smokeattica		51.0 # 3.0
@@ -28,6 +28,7 @@ SHARED_LIBS +=	smokesopranoclient	52.0 # 3.0
 SHARED_LIBS +=	smokesopranoserver	52.0 # 3.0
 
 WANTLIB =  m pthread
+WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtGui
 WANTLIB += lib/qt4/QtNetwork lib/qt4/QtOpenGL lib/qt4/QtSql
 WANTLIB += lib/qt4/QtSvg lib/qt4/QtXml

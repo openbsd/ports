@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2015/05/28 10:17:27 pascal Exp $
+# $OpenBSD: Makefile,v 1.9 2017/07/27 11:57:48 sthen Exp $
 
 COMMENT =	Breakout-like game for KDE
 DISTNAME =	kbreakout-${MODKDE4_VERSION}
-REVISION =	1
+REVISION =	2
 
 WANTLIB =  c m pthread
+WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtDeclarative lib/qt4/QtGui
 WANTLIB += lib/qt4/QtNetwork lib/qt4/QtScript lib/qt4/QtSvg
 WANTLIB += lib/qt4/QtXml

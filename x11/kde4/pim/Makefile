@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.31 2017/03/15 09:11:30 jca Exp $
+# $OpenBSD: Makefile,v 1.32 2017/07/27 11:57:50 sthen Exp $
 
 COMMENT =	KDE personal information management
 DISTNAME =	kdepim-4.14.10
 PKGSPEC =	kdepim-${MODKDE4_SPEC}
-REVISION =	2
+REVISION =	3
 DPB_PROPERTIES +=	parallel
 
 MASTER_SITES =	${MASTER_SITE_KDE:=Attic/applications/15.04.3/src/}
@@ -67,6 +67,7 @@ SHARED_LIBS +=	pimsettingexporterprivate	0.0 # 4.14
 MODKDE4_USE =	pim
 
 WANTLIB =  c m pthread z
+WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += ICE SM X11 Xext Xss
 WANTLIB += lib/qt4/Qt3Support lib/qt4/QtDBus
 WANTLIB += lib/qt4/QtGui lib/qt4/QtNetwork

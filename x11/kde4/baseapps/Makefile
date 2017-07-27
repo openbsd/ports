@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2015/06/26 09:18:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2017/07/27 11:57:48 sthen Exp $
 
 COMMENT =	KDE base applications
 DISTNAME =	kde-baseapps-${MODKDE4_VERSION}
-REVISION =	2
+REVISION =	3
 
 SHARED_LIBS =	konq			51.0	# 6.0
 SHARED_LIBS +=	konqsidebarplugin	51.0	# 4.0
@@ -11,6 +11,7 @@ SHARED_LIBS +=	konquerorprivate	51.0	# 4.0
 SHARED_LIBS +=	kbookmarkmodel_private	51.0	# 4.7
 
 WANTLIB =  c m pthread z
+WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += ICE SM X11 Xext Xt Xrender
 WANTLIB += lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtGui
 WANTLIB += lib/qt4/QtNetwork lib/qt4/QtScript lib/qt4/QtSql lib/qt4/QtSvg

@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.24 2017/03/15 09:11:30 jca Exp $
+# $OpenBSD: Makefile,v 1.25 2017/07/27 11:57:50 sthen Exp $
 
 COMMENT =	KDE PIM runtime support
 DISTNAME =	kdepim-runtime-4.14.10
+REVISION =	0
 
 DPB_PROPERTIES =	parallel
 
@@ -15,6 +16,7 @@ SHARED_LIBS +=	maildir			53.0 # 4.7
 SHARED_LIBS +=	folderarchivesettings	1.0
 
 WANTLIB =  c m pthread
+WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtDeclarative lib/qt4/QtGui
 WANTLIB += lib/qt4/QtNetwork lib/qt4/QtScript lib/qt4/QtSvg
 WANTLIB += lib/qt4/QtWebKit lib/qt4/QtXml lib/qt4/QtXmlPatterns

@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.4 2015/05/28 10:17:26 pascal Exp $
+# $OpenBSD: Makefile,v 1.5 2017/07/27 11:57:48 sthen Exp $
 
 COMMENT =	CVS GUI for KDE
 DISTNAME =	cervisia-${MODKDE4_VERSION}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	devel
 HOMEPAGE =	http://projects.kde.org/projects/kde/kdesdk/cervisia
 
 WANTLIB =  c m pthread
+WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtGui
 WANTLIB += lib/qt4/QtNetwork lib/qt4/QtSql lib/qt4/QtSvg lib/qt4/QtXml
 WANTLIB += ${KDE4LIB}/kde3support ${KDE4LIB}/kdesu ${KDE4LIB}/kdeui

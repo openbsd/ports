@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.15 2015/06/26 09:18:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2017/07/27 11:57:50 sthen Exp $
 
 COMMENT =	world maps
 DISTNAME =	marble-${MODKDE4_VERSION}
-REVISION =	2
+REVISION =	3
 
 SHARED_LIBS =	marblewidget		52.0 # 0.12
 SHARED_LIBS +=	astro			 1.0 # 0.17
 
 WANTLIB =  c m pthread z
+WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtDeclarative lib/qt4/QtGui
 WANTLIB += lib/qt4/QtNetwork lib/qt4/QtScript lib/qt4/QtSql
 WANTLIB += lib/qt4/QtSvg lib/qt4/QtWebKit lib/qt4/QtXml

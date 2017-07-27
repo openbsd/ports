@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2015/05/28 10:17:26 pascal Exp $
+# $OpenBSD: Makefile,v 1.6 2017/07/27 11:57:48 sthen Exp $
 
 COMMENT =	language pronunciation improver
 DISTNAME =	artikulate-${MODKDE4_VERSION}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	education
 
@@ -13,6 +13,7 @@ SHARED_LIBS +=	artikulatelearnerprofile	1.0
 SHARED_LIBS +=	artikulatesound			0.0
 
 WANTLIB =  c m pthread
+WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtDeclarative lib/qt4/QtGui
 WANTLIB += lib/qt4/QtNetwork lib/qt4/QtScript lib/qt4/QtSql
 WANTLIB += lib/qt4/QtSvg lib/qt4/QtXml lib/qt4/QtXmlPatterns

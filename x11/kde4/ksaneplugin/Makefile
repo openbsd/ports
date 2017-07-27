@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2015/05/28 10:17:29 pascal Exp $
+# $OpenBSD: Makefile,v 1.6 2017/07/27 11:57:49 sthen Exp $
 
 COMMENT =	scanner interface through libksane for KDE
 DISTNAME =	ksaneplugin-${MODKDE4_VERSION}
-REVISION =	0
+REVISION =	1
 
 WANTLIB =  m pthread
+WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtSvg
 WANTLIB += lib/qt4/QtNetwork lib/qt4/QtXml
 WANTLIB += ${KDE4LIB}/kdeui ${KDE4LIB}/kio ${KDE4LIB}/ksane

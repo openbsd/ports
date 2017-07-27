@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.10 2015/06/26 09:18:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2017/07/27 11:57:49 sthen Exp $
 
 COMMENT =	KDE hangman game
 DISTNAME =	khangman-${MODKDE4_VERSION}
-REVISION =	2
+REVISION =	3
 
 SHARED_LIBS =	khangmanengine		50.0
 
 WANTLIB =  c m pthread
+WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtSvg lib/qt4/QtXml
 WANTLIB += lib/qt4/QtNetwork
 WANTLIB += ${KDE4LIB}/kdeui ${KDE4LIB}/kio ${KDE4LIB}/knewstuff3

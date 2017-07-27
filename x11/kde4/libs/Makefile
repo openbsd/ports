@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.80 2017/07/11 20:42:34 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.81 2017/07/27 11:57:50 sthen Exp $
 
 COMMENT-main =		KDE core libraries
 COMMENT-en_US =		KDE en_US locale data
 COMMENT-langlist =	list of languages supported by KDE
 CATEGORIES =		devel
 V =			4.14.10
-REVISION-main =		9
+REVISION-main =		10
 DISTNAME =		kdelibs-$V
 PKGNAME-main =		${DISTNAME}
 PKGNAME-en_US =		kde4-locale-en_US-$V
@@ -13,6 +13,8 @@ PKGNAME-langlist =	kde4-langlist-$V
 PKG_ARCH-en_US =	*
 PKG_ARCH-langlist =	*
 PKGSPEC-main =		kdelibs-${MODKDE4_SPEC}
+REVISION-en_US =	0
+REVISION-langlist =	0
 
 DPB_PROPERTIES =	parallel tag:kde4
 
@@ -71,6 +73,7 @@ SHARED_LIBS +=	kdeinit4_klauncher		50.2
 WANTLIB-en_US =
 WANTLIB-langlist =
 WANTLIB-main += ${WANTLIB} c m pthread util z
+WANTLIB-main += ${COMPILER_LIBCXX}
 WANTLIB-main += Half ICE Iex IlmImf IlmThread Imath SM X11 Xau Xcursor Xdmcp
 WANTLIB-main += Xext Xfixes Xft Xpm Xrender Xss Xtst
 WANTLIB-main += lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtDeclarative

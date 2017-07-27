@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2015/05/28 10:17:31 pascal Exp $
+# $OpenBSD: Makefile,v 1.11 2017/07/27 11:57:50 sthen Exp $
 
 COMMENT =	KDE 4 bindings for Python
 DISTNAME =	pykde4-${MODKDE4_VERSION}
 PKGNAME =	py-kde-${MODKDE4_VERSION}
-REVISION =	0
+REVISION =	1
 
 MODULES =	lang/python
 
@@ -13,6 +13,7 @@ MODULES =	lang/python
 # /usr/ports/pobj/py-kde-4.9.0/build-i386/sip/kdecore/sipkdecorepart6.cpp:19561: warning:   by 'virtual KConfigGroup sipKConfig::groupImpl(const QByteArray&)'
 
 WANTLIB =  m pthread
+WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg
 WANTLIB += lib/qt4/QtXml
 WANTLIB += ${KDE4LIB}/kcmutils ${KDE4LIB}/kdeui ${KDE4LIB}/kdnssd

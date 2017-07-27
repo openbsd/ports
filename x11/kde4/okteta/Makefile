@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2017/07/11 20:42:34 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.6 2017/07/27 11:57:50 sthen Exp $
 
 COMMENT =	hex file editor for KDE
 DISTNAME =	okteta-${MODKDE4_VERSION}
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	devel sysutils
 HOMEPAGE =	http://projects.kde.org/projects/kde/kdesdk/okteta
@@ -17,6 +17,7 @@ SHARED_LIBS +=  okteta1core               51.0 # 0.8
 SHARED_LIBS +=  okteta1gui                51.0 # 0.8
 
 WANTLIB =  c m pthread
+WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
 WANTLIB += lib/qt4/QtScript lib/qt4/QtScriptTools lib/qt4/QtSvg
 WANTLIB += lib/qt4/QtXml

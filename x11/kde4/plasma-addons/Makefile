@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2017/07/11 20:42:34 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.15 2017/07/27 11:57:50 sthen Exp $
 
 COMMENT =	extra KDE plasmoids
 DISTNAME =	kdeplasma-addons-${MODKDE4_VERSION}
-REVISION =	3
+REVISION =	4
 
 SHARED_LIBS =	lancelot-datamodels		51.1 # 1.7
 SHARED_LIBS +=	lancelot			51.1 # 1.9
@@ -13,6 +13,7 @@ SHARED_LIBS +=	plasmaweather			51.1 # 4.7
 SHARED_LIBS +=	rtm				51.1 # 4.7
 
 WANTLIB =  c m pthread
+WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += ICE SM X11 Xext Xrender Xtst
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtDeclarative lib/qt4/QtGui
 WANTLIB += lib/qt4/QtNetwork lib/qt4/QtScript lib/qt4/QtSql lib/qt4/QtSvg

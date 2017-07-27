@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.6 2015/05/28 10:17:30 pascal Exp $
+# $OpenBSD: Makefile,v 1.7 2017/07/27 11:57:50 sthen Exp $
 
 COMMENT =	Qt4 bindings for Perl
 DISTNAME =	perlqt-${MODKDE4_VERSION}
 PKGNAME =	p5-qt-${MODKDE4_VERSION}
-REVISION =	0
+REVISION =	1
 
 WANTLIB =  c m perl pthread util
+WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtXml
 WANTLIB += ${KDE4LIB}/smokebase ${KDE4LIB}/smokephonon
 WANTLIB += ${KDE4LIB}/smokeqimageblitz ${KDE4LIB}/smokeqsci

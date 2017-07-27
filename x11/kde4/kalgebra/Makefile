@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2015/05/28 10:17:27 pascal Exp $
+# $OpenBSD: Makefile,v 1.11 2017/07/27 11:57:48 sthen Exp $
 
 COMMENT =	scientific calculator for KDE
 DISTNAME =	kalgebra-${MODKDE4_VERSION}
-REVISION =	1
+REVISION =	2
 
 WANTLIB =  c m pthread
+WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += GL GLU
 WANTLIB += lib/qt4/QtDeclarative
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork

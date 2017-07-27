@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2015/05/28 10:17:30 pascal Exp $
+# $OpenBSD: Makefile,v 1.19 2017/07/27 11:57:50 sthen Exp $
 
 COMMENT-main =	KDE RAW picture decoding C++ library
 COMMENT-icons =	icons for libkdcraw
@@ -7,13 +7,14 @@ DISTNAME =	libkdcraw-${MODKDE4_VERSION}
 PKGNAME-main =	${DISTNAME}
 PKGNAME-icons =	kde4-libkdcraw-icons-${MODKDE4_VERSION}
 PKGSPEC-main =	libkdcraw-${MODKDE4_SPEC}
-REVISION-icons =1
-REVISION-main =	1
+REVISION-icons =2
+REVISION-main =	2
 
 SHARED_LIBS =	kdcraw			51.0	# 20.0
 
 WANTLIB-icons =
 WANTLIB-main =  ${WANTLIB} m pthread
+WANTLIB-main += ${COMPILER_LIBCXX}
 WANTLIB-main += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
 WANTLIB-main += lib/qt4/QtSvg lib/qt4/QtXml
 WANTLIB-main += ${KDE4LIB}/kdeui ${KDE4LIB}/kio ${KDE4LIB}/solid

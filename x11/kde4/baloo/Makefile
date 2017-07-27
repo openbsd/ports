@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2017/04/06 10:27:14 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2017/07/27 11:57:48 sthen Exp $
 
 COMMENT =	KDE file search and metadata handling framework
 DISTNAME =	baloo-${MODKDE4_VERSION}
-REVISION =	4
+REVISION =	5
 
 CATEGORIES =	productivity sysutils
 HOMEPAGE =	http://projects.kde.org/projects/kde/kdelibs/baloo
@@ -16,6 +16,7 @@ SHARED_LIBS +=	balooxapian		2.0
 SHARED_LIBS +=	balooqueryparser	0.0
 
 WANTLIB =  c m pthread
+WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
 WANTLIB += lib/qt4/QtSql lib/qt4/QtSvg lib/qt4/QtXml
 WANTLIB += ${KDE4LIB}/akonadi-kde ${KDE4LIB}/akonadi-kmime

@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.12 2015/05/28 10:17:27 pascal Exp $
+# $OpenBSD: Makefile,v 1.13 2017/07/27 11:57:48 sthen Exp $
 
 COMMENT =	KDE advanced text editor
 DISTNAME =	kate-${MODKDE4_VERSION}
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS =	kateinterfaces			50.0 # 4.7
 SHARED_LIBS +=	katepartinterfaces		50.0 # 4.7
 #SHARED_LIBS +=	ktexteditor_codesnippets_core	0.0 # 0.0
 
 WANTLIB =  c m pthread ${MODPY_WANTLIB}
+WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui
 WANTLIB += lib/qt4/QtNetwork lib/qt4/QtScript lib/qt4/QtSql
 WANTLIB += lib/qt4/QtSvg lib/qt4/QtWebKit lib/qt4/QtXml

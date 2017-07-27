@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.5 2017/04/12 18:12:33 landry Exp $
+# $OpenBSD: Makefile,v 1.6 2017/07/27 11:57:50 sthen Exp $
 
 COMMENT =	KDE app localization tools
 DISTNAME =	lokalize-${MODKDE4_VERSION}
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	devel
 HOMEPAGE =	http://projects.kde.org/projects/kde/kdesdk/lokalize
 
 WANTLIB =  c m pthread
+WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
 WANTLIB += lib/qt4/QtScript lib/qt4/QtSql lib/qt4/QtSvg lib/qt4/QtXml
 WANTLIB += ${KDE4LIB}/kdeui ${KDE4LIB}/kfile ${KDE4LIB}/kio

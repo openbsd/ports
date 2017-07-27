@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.17 2015/06/26 09:18:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2017/07/27 11:57:48 sthen Exp $
 
 COMMENT =	KDE image viewer
 DISTNAME =	gwenview-${MODKDE4_VERSION}
 PKGSPEC =	gwenview-${MODKDE4_SPEC}
-REVISION =	2
+REVISION =	3
 
 SHARED_LIBS =	gwenviewlib               52.0 # 4.7
 
 WANTLIB =  c m pthread z
+WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += X11
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
 WANTLIB += lib/qt4/QtSvg lib/qt4/QtXml lib/qt4/QtOpenGL

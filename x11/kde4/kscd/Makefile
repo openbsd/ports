@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2015/06/26 09:18:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2017/07/27 11:57:49 sthen Exp $
 
 COMMENT =	audio CD player for KDE
 DISTNAME =	kscd-${MODKDE4_VERSION}
-REVISION =	2
+REVISION =	3
 
 WANTLIB =  c m pthread
+WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg
 WANTLIB += lib/qt4/QtXml
 WANTLIB += ${KDE4LIB}/kdeui ${KDE4LIB}/kio ${KDE4LIB}/solid

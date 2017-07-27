@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2015/05/28 10:17:29 pascal Exp $
+# $OpenBSD: Makefile,v 1.13 2017/07/27 11:57:49 sthen Exp $
 
 COMMENT =	planetarium simulator for KDE
 DISTNAME =	kstars-${MODKDE4_VERSION}
-REVISION =	1
+REVISION =	2
 
 # Crashed after following actions:
 #   1. Enable OpenGL;
@@ -14,6 +14,7 @@ REVISION =	1
 #   7. Click "OK".
 
 WANTLIB =  c m pthread z
+WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += GL GLU ICE SM X11 Xext
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtDeclarative lib/qt4/QtGui
 WANTLIB += lib/qt4/QtNetwork lib/qt4/QtOpenGL

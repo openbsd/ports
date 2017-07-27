@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.40 2017/03/15 09:11:30 jca Exp $
+# $OpenBSD: Makefile,v 1.41 2017/07/27 11:57:50 sthen Exp $
 
 COMMENT =	libraries for KDE PIM services
 DISTNAME =	kdepimlibs-4.14.10
+REVISION =	0
 
 DPB_PROPERTIES =	parallel
 
@@ -46,6 +47,7 @@ SHARED_LIBS +=  akonadi-socialutils	54.0 # 4.10
 SHARED_LIBS +=	akonadi-xml		2.0  # 4.13
 
 WANTLIB =  c m pthread
+WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSql
 WANTLIB += lib/qt4/QtSvg lib/qt4/QtXml
 WANTLIB += ${KDE4LIB}/kcmutils ${KDE4LIB}/kdeui ${KDE4LIB}/kemoticons

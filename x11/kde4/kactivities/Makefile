@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2017/03/15 09:11:30 jca Exp $
+# $OpenBSD: Makefile,v 1.13 2017/07/27 11:57:48 sthen Exp $
 
 COMMENT =	KDE Activity rooms management
 MODKDE4_VERSION =	4.13.3
 DISTNAME =	kactivities-${MODKDE4_VERSION}
-REVISION =	0
+REVISION =	1
 
 MASTER_SITES =	${MASTER_SITE_KDE:=Attic/${MODKDE4_VERSION}/src/}
 
@@ -11,6 +11,7 @@ SHARED_LIBS =	kactivities		51.0 # 6.0
 SHARED_LIBS +=	kactivities-models	51.0
 
 WANTLIB =  c m pthread
+WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtDeclarative lib/qt4/QtGui lib/qt4/QtNetwork
 WANTLIB += lib/qt4/QtScript lib/qt4/QtSvg lib/qt4/QtXml
 WANTLIB += ${KDE4LIB}/kdeui ${KDE4LIB}/kio ${KDE4LIB}/nepomukcore
