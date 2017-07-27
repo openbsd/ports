@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2017/05/31 08:08:18 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2017/07/27 10:15:29 sthen Exp $
 
 COMMENT=		C++ wrapper for gtksourceview3
 
 GNOME_PROJECT=		gtksourceviewmm
 GNOME_VERSION=		3.18.0
 PKGNAME=		${GNOME_PROJECT}3-${GNOME_VERSION}
-REVISION=		0
+REVISION=		1
 
 MAJOR_VERSION=		3.0
 SUBST_VARS+=		MAJOR_VERSION
@@ -19,6 +19,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # LGPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
+WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atkmm-1.6
 WANTLIB += atspi cairo cairo-gobject cairomm-1.0 dbus-1 epoxy

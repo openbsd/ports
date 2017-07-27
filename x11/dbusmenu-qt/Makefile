@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2017/05/31 08:08:17 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2017/07/27 10:15:28 sthen Exp $
 
 COMMENT =	D-Bus menu implementation for Qt
 V =		0.9.3
@@ -8,7 +8,7 @@ FULLPKGNAME =	${PKGNAME}
 CATEGORIES =	x11 devel
 HOMEPAGE =	https://launchpad.net/libdbusmenu-qt/
 MAINTAINER =	KDE porting team <openbsd-kde@googlegroups.com>
-REVISION =	3
+REVISION =	4
 
 SHARED_LIBS =	dbusmenu-qt	1.0 # 2.7
 SHARED_LIBS +=	dbusmenu-qt5	1.0 # 2.7
@@ -27,14 +27,16 @@ FLAVOR ?=
 
 # XXX run update-plist with qt5 FLAVOR, or it'll go crazy
 
+WANTLIB += ${COMPILER_LIBCXX}
+
 .if ${FLAVOR:Mqt5}
 MODULES +=	x11/qt5
-WANTLIB =	Qt5Core Qt5DBus Qt5Gui Qt5Widgets m
+WANTLIB +=	Qt5Core Qt5DBus Qt5Gui Qt5Widgets m
 CONFIGURE_ARGS=	-DUSE_QT4=No -DUSE_QT5=Yes
 PKGSTEM =	dbusmenu-qt5
 .else
 MODULES +=	x11/qt4
-WANTLIB =	QtDBus QtGui m
+WANTLIB +=	QtDBus QtGui m
 CONFIGURE_ARGS=	-DUSE_QT4=Yes -DUSE_QT5=No
 PKGSTEM =	dbusmenu-qt
 .endif

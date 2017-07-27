@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2017/05/31 08:08:18 espie Exp $
+# $OpenBSD: Makefile,v 1.42 2017/07/27 10:15:28 sthen Exp $
 
 # XXX check if still needed at next update
 CXXFLAGS +=		-std=c++11
@@ -8,7 +8,7 @@ COMMENT=		C++ interface to the graphics library for GNOME
 GNOME_PROJECT=		libgnomecanvasmm
 GNOME_VERSION=		2.26.0
 EXTRACT_SUFX=		.tar.bz2
-REVISION=		12
+REVISION=		13
 
 SHARED_LIBS +=  gnomecanvasmm-2.6         1.0 # 1.6
 
@@ -17,6 +17,7 @@ CATEGORIES=		x11
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 
+WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender art_lgpl_2 atk-1.0 atkmm-1.6 cairo cairomm-1.0
 WANTLIB += expat ffi fontconfig freetype gailutil gdk-x11-2.0

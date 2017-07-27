@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.28 2017/07/01 17:25:03 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.29 2017/07/27 10:15:29 sthen Exp $
 
 COMMENT=	twin panel file manager for KDE
 
 VERSION=	2.6.0
 DISTNAME=	krusader-${VERSION}
+REVISION=	0
 
 CATEGORIES=	x11
 
@@ -14,6 +15,7 @@ MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 
+WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += KF5Archive KF5Auth KF5Bookmarks KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
 WANTLIB += KF5GuiAddons KF5I18n KF5IconThemes KF5ItemViews KF5JobWidgets

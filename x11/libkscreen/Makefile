@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.3 2016/01/06 11:05:34 zhuk Exp $
+# $OpenBSD: Makefile,v 1.4 2017/07/27 10:15:29 sthen Exp $
 
 COMMENT =	KDE screen management software
 CATEGORIES =	x11
 VERSION =	1.0.4
 DISTNAME =	libkscreen-${VERSION}
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS =	kscreen		0.0
 
 WANTLIB =  m pthread
+WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += ICE SM X11 X11-xcb Xext Xrandr xcb xcb-randr
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtSvg
 WANTLIB += ${KDE4LIB}/kdeui

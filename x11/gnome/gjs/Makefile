@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2017/06/21 19:27:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.55 2017/07/27 10:15:28 sthen Exp $
 
 USE_WXNEEDED=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		Javascript bindings for GNOME
 
 GNOME_PROJECT=		gjs
 GNOME_VERSION=		1.48.5
+REVISION=		0
 
 SHARED_LIBS +=  gjs                  5.0      # 0.0
 
@@ -16,6 +17,7 @@ CATEGORIES=		devel
 # contain code from Mozilla which are: MPL1.1/LGPLv2+/GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
+WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += X11 Xext Xrender c cairo cairo-gobject expat ffi fontconfig
 WANTLIB += freetype gio-2.0 girepository-1.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 gthread-2.0 m mozjs-38 ncurses ncursesw

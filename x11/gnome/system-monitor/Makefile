@@ -1,15 +1,17 @@
-# $OpenBSD: Makefile,v 1.72 2017/05/31 08:08:18 espie Exp $
+# $OpenBSD: Makefile,v 1.73 2017/07/27 10:15:29 sthen Exp $
 
 COMMENT=		sytem monitor for GNOME
 
 GNOME_PROJECT=		gnome-system-monitor
 GNOME_VERSION=		3.24.0
+REVISION=		0
 
 CATEGORIES=		sysutils
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
+WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += ICE SM X11 Xau Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atkmm-1.6
 WANTLIB += atspi c cairo cairo-gobject cairomm-1.0 croco-0.6 dbus-1

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2017/05/31 08:08:18 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2017/07/27 10:15:29 sthen Exp $
 
 COMMENT =		Qt-based library for writing accessibility apps
 DISTNAME =		libqaccessibilityclient-0.1.1
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS =		qaccessibilityclient	0.0
 
@@ -14,6 +14,7 @@ MAINTAINER =		KDE porting team <openbsd-kde@googlegroups.com>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =		lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtTest c m pthread
+WANTLIB += ${COMPILER_LIBCXX}
 
 MASTER_SITES =		${MASTER_SITE_KDE:=stable/libqaccessibilityclient/}
 EXTRACT_SUFX =		.tar.bz2

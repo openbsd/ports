@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2017/05/31 08:08:18 espie Exp $
+# $OpenBSD: Makefile,v 1.67 2017/07/27 10:15:29 sthen Exp $
 
 PORTROACH=		limit:^2
 
@@ -7,6 +7,7 @@ COMMENT=		C++ interface for gtk2+
 GNOME_PROJECT=		gtkmm
 GNOME_VERSION=		2.24.5
 PKGNAME=		gtk2mm-${GNOME_VERSION}
+REVISION=		0
 
 CATEGORIES=		x11 devel
 
@@ -20,6 +21,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 
+WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 atkmm-1.6 cairo cairomm-1.0
 WANTLIB += expat ffi fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0

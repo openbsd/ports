@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2016/12/19 11:57:22 zhuk Exp $
+# $OpenBSD: Makefile,v 1.11 2017/07/27 10:15:29 sthen Exp $
 
 COMMENT =	organizer for book/music/video collections for KDE4
 DISTNAME =	tellico-2.3.11
+REVISION =	0
 
 CATEGORIES =	productivity x11
 HOMEPAGE =	http://tellico-project.org/
@@ -11,6 +12,7 @@ MAINTAINER =	KDE porting team <openbsd-kde@googlegroups.com>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =  c m pthread z
+WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg
 WANTLIB += lib/qt4/QtXml
 WANTLIB += ${KDE4LIB}/kabc ${KDE4LIB}/kcal ${KDE4LIB}/kcddb

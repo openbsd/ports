@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2017/05/31 08:08:18 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2017/07/27 10:15:29 sthen Exp $
 
 BROKEN-hppa =		missing atomic ops
 BROKEN-alpha =		missing atomic ops
@@ -10,8 +10,8 @@ V =			1.9.0
 DISTNAME =		ogre-$V
 PKGNAME-main =		ogre-${V}
 PKGNAME-samples =	ogre-samples-${V}
-REVISION-main =		3
-REVISION-samples =	3
+REVISION-main =		4
+REVISION-samples =	4
 
 MULTI_PACKAGES =	-main -samples
 
@@ -36,6 +36,7 @@ WANTLIB += ICE SM X11 Xaw Xext Xt $(MODGCC4_ATOMICWANTLIB)
 WANTLIB += boost_atomic-mt boost_date_time-mt
 WANTLIB += boost_chrono-mt boost_system-mt boost_thread-mt c
 WANTLIB += freeimage freetype m pthread z zzip
+WANTLIB += ${COMPILER_LIBCXX}
 
 WANTLIB-main = ${WANTLIB} GL GLU Xrandr tinyxml
 WANTLIB-samples += ${WANTLIB} OIS OgreMain OgrePaging OgreRTShaderSystem

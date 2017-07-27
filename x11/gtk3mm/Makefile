@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.38 2017/06/23 13:39:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2017/07/27 10:15:29 sthen Exp $
 
 COMMENT=		C++ interface for gtk3+
 
 GNOME_PROJECT=		gtkmm
 GNOME_VERSION=		3.22.1
 PKGNAME=		gtk3mm-${GNOME_VERSION}
+REVISION=		0
 
 CATEGORIES=		x11 devel
 
@@ -18,6 +19,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 
+WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atkmm-1.6
 WANTLIB += atspi cairo cairo-gobject cairomm-1.0 dbus-1 epoxy

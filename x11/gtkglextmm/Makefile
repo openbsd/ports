@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2017/05/31 08:08:18 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2017/07/27 10:15:29 sthen Exp $
 
 # XXX check if still needed at next update
 CXXFLAGS +=		-std=c++11
@@ -6,7 +6,7 @@ CXXFLAGS +=		-std=c++11
 COMMENT =		C++ bindings for gtkglext
 
 DISTNAME =		gtkglextmm-1.2.0
-REVISION =		10
+REVISION =		11
 
 SHARED_LIBS +=		gdkglextmm-x11-1.2        0.0 # 0.0
 SHARED_LIBS +=		gtkglextmm-x11-1.2        0.0 # 0.0
@@ -18,6 +18,7 @@ HOMEPAGE =		http://projects.gnome.org/gtkglext/
 # LGPLv2.1+
 PERMIT_PACKAGE_CDROM =		Yes
 
+WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += GL GLU ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage
 WANTLIB += Xext Xfixes Xi Xinerama Xmu Xrandr Xrender Xt Xxf86vm
 WANTLIB += atk-1.0 atkmm-1.6 cairo cairomm-1.0 drm expat ffi fontconfig
