@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2016/06/03 11:57:56 sebastia Exp $
+# $OpenBSD: Makefile,v 1.9 2017/07/27 11:01:33 sthen Exp $
 
 COMMENT =	GNUstep frontent to libgphoto2
 
 DISTNAME =	Camera-0.8
-REVISION =	5
+REVISION =	6
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	graphics
 
@@ -12,6 +12,7 @@ MASTER_SITES =	http://download.gna.org/gsimageapps/
 
 MODULES =	x11/gnustep
 WANTLIB =	gphoto2 gphoto2_port
+WANTLIB += ${COMPILER_LIBCXX}
 LIB_DEPENDS =	graphics/libgphoto2
 
 WRKDIST = 	${WRKDIR}/Camera

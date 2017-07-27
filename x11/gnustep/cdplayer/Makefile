@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2016/06/03 11:57:56 sebastia Exp $
+# $OpenBSD: Makefile,v 1.12 2017/07/27 11:01:33 sthen Exp $
 
 COMMENT =	GNUstep based CD player
 
 VERSION =	0.5.1
-REVISION =	9
+REVISION =	10
 DISTNAME =	cdplayer-${VERSION}
 
 HOMEPAGE =	http://gsburn.sourceforge.net/
@@ -12,6 +12,7 @@ EXTRACT_SUFX =	.tar.bz2
 
 MODULES =	x11/gnustep
 WANTLIB +=	cdaudio PreferencePanes
+WANTLIB += ${COMPILER_LIBCXX}
 LIB_DEPENDS +=	audio/libcdaudio \
 		x11/gnustep/systempreferences
 

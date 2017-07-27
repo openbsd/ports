@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2016/06/03 11:57:58 sebastia Exp $
+# $OpenBSD: Makefile,v 1.19 2017/07/27 11:01:33 sthen Exp $
 
 COMMENT=	calendaring application based on GNUstep
 
 VERSION=	0.43
-REVISION=	6
+REVISION=	7
 DISTNAME=	SimpleAgenda-${VERSION}
 CATEGORIES+=	productivity
 
@@ -13,6 +13,7 @@ HOMEPAGE=	http://coyote.octets.fr/simpleagenda/
 MODULES =	x11/gnustep
 
 WANTLIB +=	uuid ical Addresses DBusKit
+WANTLIB += ${COMPILER_LIBCXX}
 LIB_DEPENDS =	x11/gnustep/addresses \
 		x11/gnustep/dbuskit \
 		sysutils/e2fsprogs>=1.42.7 \

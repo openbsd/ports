@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2016/06/03 11:57:58 sebastia Exp $
+# $OpenBSD: Makefile,v 1.8 2017/07/27 11:01:33 sthen Exp $
 
 COMMENT =	GNUstep theme with silvered controls
 
 V =		3.1
-REVISION =	5
+REVISION =	6
 DISTNAME =	Silver.theme-${V}
 PKGNAME =	gnustep-silver-theme-${V}
 
@@ -13,6 +13,7 @@ MASTER_SITES =	http://download.gna.org/gnustep-nonfsf/
 # GPLv3
 
 MODULES =		x11/gnustep
+WANTLIB += ${COMPILER_LIBCXX}
 MODGNUSTEP_NEEDS_C =	No
 
 .include <bsd.port.mk>

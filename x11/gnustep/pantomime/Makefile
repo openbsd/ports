@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2017/04/21 17:26:32 sebastia Exp $
+# $OpenBSD: Makefile,v 1.22 2017/07/27 11:01:33 sthen Exp $
 
 COMMENT=	framework to major mail protocols
 
-REVISION =	4
+REVISION =	5
 DISTNAME=	Pantomime-1.2.2
 
 SHLIB_VERSION = 1.3

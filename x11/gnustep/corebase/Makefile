@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2016/06/03 11:57:56 sebastia Exp $
+# $OpenBSD: Makefile,v 1.11 2017/07/27 11:01:33 sthen Exp $
 
 COMMENT =	GNUstep reimplementation of Apple's CoreFoundation
 
 DISTNAME =	gnustep-corebase-0.1.1
-REVISION =	6
+REVISION =	7
 CATEGORIES=	devel
 
 SHARED_LIBS =	gnustep-corebase 0.0
@@ -14,6 +14,7 @@ MASTER_SITES =	${MASTER_SITE_GNUSTEP:=libs/}
 MODULES =	x11/gnustep
 MODGNUSTEP_IS_FRAMEWORK = Yes
 WANTLIB += icudata icui18n icuuc m objc2 pthread
+WANTLIB += ${COMPILER_LIBCXX}
 LIB_DEPENDS +=		textproc/icu4c \
 			x11/gnustep/libobjc2
 

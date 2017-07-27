@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2016/09/01 21:00:41 sebastia Exp $
+# $OpenBSD: Makefile,v 1.19 2017/07/27 11:01:33 sthen Exp $
 
 COMMENT=	GNUstep graphical object relationship modeller
 
 DISTNAME=	gorm-1.2.23
 HOMEPAGE=	http://www.gnustep.org/experience/Gorm.html
 MASTER_SITES=	${MASTER_SITE_GNUSTEP}dev-apps/
+REVISION=	0
 
 SHARED_LIBS=	GormCore		0.1 \
 		GormPrefs		1.0 \
@@ -14,6 +15,7 @@ SHARED_LIBS=	GormCore		0.1 \
 CATEGORIES=	devel
 
 MODULES=	x11/gnustep
+WANTLIB += ${COMPILER_LIBCXX}
 
 MAKE_FLAGS+=	libGormObjCHeaderParser_INTERFACE_VERSION=${LIBGormObjCHeaderParser_VERSION}
 MAKE_FLAGS+=	GormPrefs_INTERFACE_VERSION=${LIBGormPrefs_VERSION}

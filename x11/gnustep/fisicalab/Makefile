@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2016/06/03 11:57:57 sebastia Exp $
+# $OpenBSD: Makefile,v 1.19 2017/07/27 11:01:33 sthen Exp $
 
 COMMENT=	educational application to solve physics problems
 
 VERSION =	0.3.5
-REVISION =	2
+REVISION =	3
 DISTNAME =	fisicalab-${VERSION}-1
 PKGNAME =	fisicalab-${VERSION}.1
 
@@ -14,6 +14,7 @@ MASTER_SITES=	${MASTER_SITE_GNU:=fisicalab/}
 
 MODULES=	x11/gnustep
 WANTLIB =	gsl gslcblas
+WANTLIB += ${COMPILER_LIBCXX}
 LIB_DEPENDS=	devel/gsl
 
 CONFIGURE_STYLE =	gnu

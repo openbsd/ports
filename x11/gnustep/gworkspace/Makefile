@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.35 2017/04/22 22:28:48 nigel Exp $
+# $OpenBSD: Makefile,v 1.36 2017/07/27 11:01:33 sthen Exp $
 
 COMMENT=	GNUstep workspace manager
 
 DISTNAME =	gworkspace-0.9.4
-REVISION =	2
+REVISION =	3
 
 CATEGORIES=	x11
 
@@ -18,6 +18,7 @@ MASTER_SITES=	${MASTER_SITE_GNUSTEP:=usr-apps/}
 
 MODULES=	x11/gnustep
 WANTLIB +=	sqlite3 PDFKit PreferencePanes
+WANTLIB += ${COMPILER_LIBCXX}
 LIB_DEPENDS +=	databases/sqlite3 \
 		x11/gnustep/pdfkit \
 		x11/gnustep/systempreferences

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.63 2017/04/19 21:16:43 sebastia Exp $
+# $OpenBSD: Makefile,v 1.64 2017/07/27 11:01:33 sthen Exp $
 
 COMMENT=	GNUstep base library
 
 DISTNAME=	gnustep-base-1.25.0
+REVISION=	0
 
 SHARED_LIBS=	gnustep-base 10.0
 CATEGORIES=	devel
@@ -14,6 +15,7 @@ HOMEPAGE=	http://www.gnustep.org/
 
 WANTLIB += avahi-client avahi-common c ffi gmp gnutls iconv icudata
 WANTLIB += icui18n icuuc m objc2 pthread lzma xml2 xslt z
+WANTLIB += ${COMPILER_LIBCXX}
 
 .if ${MACHINE_ARCH} != "i386" && ${MACHINE_ARCH} != "amd64"
 WANTLIB += iberty

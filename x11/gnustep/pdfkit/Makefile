@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2017/04/21 17:26:32 sebastia Exp $
+# $OpenBSD: Makefile,v 1.20 2017/07/27 11:01:33 sthen Exp $
 
 COMMENT =	framework for accessing and rendering PDF content
 
-REVISION =	0
+REVISION =	1
 DISTNAME =	PDFKit-1.0.1
 SHARED_LIBS +=	PDFKit	0.0
 
@@ -12,6 +12,7 @@ MASTER_SITES =	${MASTER_SITE_SAVANNAH:=gap/}
 MODULES =		x11/gnustep
 MODGNUSTEP_IS_FRAMEWORK	= Yes
 WANTLIB += 		pthread freetype m z
+WANTLIB += ${COMPILER_LIBCXX}
 BUILD_DEPENDS =		x11/gnustep/gui
 
 CONFIGURE_STYLE =	gnu

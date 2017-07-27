@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2017/04/21 17:26:32 sebastia Exp $
+# $OpenBSD: Makefile,v 1.19 2017/07/27 11:01:33 sthen Exp $
 
 COMMENT=	GNUstep integrated development environment
 
 VERSION =	0.6.2
-REVISION =	4
+REVISION =	5
 DISTNAME=	ProjectCenter-${VERSION}
 CATEGORIES=	devel
 
@@ -15,6 +15,7 @@ SHARED_LIBS=	ProjectCenter 1.1
 RUN_DEPENDS +=	devel/gmake devel/gdb
 MODULES=	x11/gnustep
 WANTLIB +=	util
+WANTLIB += ${COMPILER_LIBCXX}
 
 LIBDIR =	lib/GNUstep/Frameworks/ProjectCenter.framework/Versions/${VERSION}
 MAKE_FLAGS=	ProjectCenter_VERSION=${VERSION} \

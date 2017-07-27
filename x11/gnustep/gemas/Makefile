@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2016/06/03 11:57:57 sebastia Exp $
+# $OpenBSD: Makefile,v 1.15 2017/07/27 11:01:33 sthen Exp $
 
 COMMENT =	simple code editor for GNUstep
 
-REVISION =	3
+REVISION =	4
 DISTNAME =	Gemas-0.4
 PKGNAME =	gnustep-${DISTNAME:L}
 
@@ -11,6 +11,7 @@ MASTER_SITES =	http://download.gna.org/gnustep-nonfsf/
 
 MODULES =	x11/gnustep
 WANTLIB +=	HighlighterKit
+WANTLIB += ${COMPILER_LIBCXX}
 
 LIB_DEPENDS +=	x11/gnustep/highlighterkit
 

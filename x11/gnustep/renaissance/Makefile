@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2016/06/03 11:57:58 sebastia Exp $
+# $OpenBSD: Makefile,v 1.11 2017/07/27 11:01:33 sthen Exp $
 
 COMMENT =	GNUstep layer to write portable GUIs
 
 VERSION =	0.9.0
-REVISION =	8
+REVISION =	9
 DISTNAME =	Renaissance-${VERSION}
 PKGNAME =	gnustep-renaissance-${VERSION}
 
@@ -14,6 +14,7 @@ HOMEPAGE =	http://www.gnustep.it/Renaissance/
 MASTER_SITES =	${HOMEPAGE:=Download/}
 
 MODULES =	x11/gnustep
+WANTLIB += ${COMPILER_LIBCXX}
 
 MAKE_FLAGS =	Renaissance_INTERFACE_VERSION=${LIBRenaissance_VERSION}
 

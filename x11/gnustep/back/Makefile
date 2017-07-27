@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.42 2017/04/19 21:21:30 sebastia Exp $
+# $OpenBSD: Makefile,v 1.43 2017/07/27 11:01:32 sthen Exp $
 
 COMMENT=	GNUstep gui backend
 
 V =		0.25.1
 DISTNAME=	gnustep-back-${V}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES=	devel
 
@@ -16,6 +16,7 @@ MODGNUSTEP_NEEDS_BACK=	No
 
 WANTLIB += 	Xft Xrender cairo Xfixes Xcursor fontconfig
 WANTLIB += 	freetype GL X11 Xext Xmu Xt z
+WANTLIB += ${COMPILER_LIBCXX}
 
 LIB_DEPENDS=	graphics/cairo
 
