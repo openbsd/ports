@@ -1,7 +1,8 @@
-$OpenBSD: patch-media_base_audio_latency_cc,v 1.1 2017/02/23 17:30:49 robert Exp $
---- media/base/audio_latency.cc.orig.port	Sat Feb  4 11:46:23 2017
-+++ media/base/audio_latency.cc	Sat Feb  4 12:20:45 2017
-@@ -83,7 +83,7 @@ int AudioLatency::GetRtcBufferSize(int sample_rate, in
+$OpenBSD: patch-media_base_audio_latency_cc,v 1.2 2017/07/27 14:23:46 robert Exp $
+Index: media/base/audio_latency.cc
+--- media/base/audio_latency.cc.orig
++++ media/base/audio_latency.cc
+@@ -84,7 +84,7 @@ int AudioLatency::GetRtcBufferSize(int sample_rate, in
      return frames_per_buffer;
    }
  

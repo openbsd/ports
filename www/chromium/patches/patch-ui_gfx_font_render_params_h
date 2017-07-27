@@ -1,7 +1,9 @@
-$OpenBSD: patch-ui_gfx_font_render_params_h,v 1.2 2016/09/01 16:28:11 robert Exp $
---- ui/gfx/font_render_params.h.orig.port	Thu Sep  1 00:03:52 2016
-+++ ui/gfx/font_render_params.h	Thu Sep  1 11:12:25 2016
-@@ -106,13 +106,13 @@ GFX_EXPORT FontRenderParams GetFontRenderParams(
+$OpenBSD: patch-ui_gfx_font_render_params_h,v 1.3 2017/07/27 14:23:46 robert Exp $
+
+Index: ui/gfx/font_render_params.h
+--- ui/gfx/font_render_params.h.orig
++++ ui/gfx/font_render_params.h
+@@ -107,14 +107,14 @@ GFX_EXPORT FontRenderParams GetFontRenderParams(
      const FontRenderParamsQuery& query,
      std::string* family_out);
  
@@ -12,8 +14,9 @@ $OpenBSD: patch-ui_gfx_font_render_params_h,v 1.2 2016/09/01 16:28:11 robert Exp
  GFX_EXPORT void ClearFontRenderParamsCacheForTest();
  #endif
  
--#if defined(OS_CHROMEOS) || defined(OS_LINUX)
-+#if defined(OS_CHROMEOS) || defined(OS_LINUX) || defined(OS_BSD)
+ #if defined(OS_CHROMEOS) || defined(OS_LINUX) || \
+-    (defined(OS_ANDROID) && BUILDFLAG(ENABLE_VR))
++    (defined(OS_ANDROID) && BUILDFLAG(ENABLE_VR)) || defined(OS_BSD)
  // Gets the device scale factor to query the FontRenderParams.
  GFX_EXPORT float GetFontRenderParamsDeviceScaleFactor();
  

@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_common_url_constants_h,v 1.21 2017/06/25 21:53:56 robert Exp $
+$OpenBSD: patch-chrome_common_url_constants_h,v 1.22 2017/07/27 14:23:46 robert Exp $
 Index: chrome/common/url_constants.h
 --- chrome/common/url_constants.h.orig
 +++ chrome/common/url_constants.h
@@ -11,8 +11,8 @@ Index: chrome/common/url_constants.h
  extern const char kChromeUITabModalConfirmDialogURL[];
  #endif
  
-@@ -146,7 +146,7 @@ extern const char kChromeUICastURL[];
- #endif
+@@ -144,7 +144,7 @@ extern const char kChromeUIMediaRouterURL[];
+ extern const char kChromeUICastURL[];
  #endif
  
 -#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
@@ -20,7 +20,7 @@ Index: chrome/common/url_constants.h
  extern const char kChromeUIDiscardsHost[];
  extern const char kChromeUIDiscardsURL[];
  #endif
-@@ -263,7 +263,7 @@ extern const char kChromeUIPrintHost[];
+@@ -260,7 +260,7 @@ extern const char kChromeUIPrintHost[];
  extern const char kChromeUILinuxProxyConfigHost[];
  #endif
  
@@ -29,7 +29,7 @@ Index: chrome/common/url_constants.h
  extern const char kChromeUISandboxHost[];
  #endif
  
-@@ -318,7 +318,7 @@ extern const char kChromeUICleanupToolHost[];
+@@ -315,7 +315,7 @@ extern const char kChromeUICleanupToolHost[];
  extern const char kChromeUIMetroFlowHost[];
  #endif
  

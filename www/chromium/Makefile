@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.333 2017/07/26 22:45:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.334 2017/07/27 14:23:46 robert Exp $
 
 .include <bsd.port.arch.mk>
 
@@ -9,11 +9,9 @@ DPB_PROPERTIES=		parallel
 
 COMMENT=		Chromium browser
 
-V=			59.0.3071.115
-REVISION=		2
+V=			60.0.3112.78
 
 DISTNAME=		chromium-${V}
-DISTFILES=		${DISTNAME}-unofficial${EXTRACT_SUFX}
 
 CATEGORIES=		www
 
@@ -47,7 +45,7 @@ PATCHORIG=	.orig.port
 
 # uses pledge()
 WANTLIB += X11 Xext Xfixes Xrender Xss c cups dbus-1 event
-WANTLIB += execinfo fontconfig freetype gconf-2
+WANTLIB += execinfo fontconfig gconf-2
 WANTLIB += gdk_pixbuf-2.0 glib-2.0 gobject-2.0
 WANTLIB += m
 WANTLIB += pthread
@@ -121,7 +119,6 @@ GN_ARGS=	enable_nacl=false \
 		use_kerberos=false \
 		use_sndio=true \
 		use_cups=true \
-		use_experimental_allocator_shim=false \
 		use_gtk3=true \
 		is_clang=true \
 		use_sysroot=false \

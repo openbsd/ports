@@ -1,8 +1,9 @@
-$OpenBSD: patch-content_browser_utility_process_host_impl_cc,v 1.9 2017/06/25 21:53:56 robert Exp $
+$OpenBSD: patch-content_browser_utility_process_host_impl_cc,v 1.10 2017/07/27 14:23:46 robert Exp $
+
 Index: content/browser/utility_process_host_impl.cc
 --- content/browser/utility_process_host_impl.cc.orig
 +++ content/browser/utility_process_host_impl.cc
-@@ -43,7 +43,7 @@
+@@ -44,7 +44,7 @@
  #include "services/service_manager/public/cpp/interface_provider.h"
  #include "ui/base/ui_base_switches.h"
  
@@ -11,16 +12,7 @@ Index: content/browser/utility_process_host_impl.cc
  #include "content/public/browser/zygote_handle_linux.h"
  #endif  // defined(OS_POSIX) && !defined(OS_ANDROID) && !defined(OS_MACOSX)
  
-@@ -54,7 +54,7 @@
- 
- namespace content {
- 
--#if defined(OS_POSIX) && !defined(OS_ANDROID) && !defined(OS_MACOSX)
-+#if defined(OS_POSIX) && !defined(OS_ANDROID) && !defined(OS_MACOSX) && !defined(OS_BSD)
- namespace {
- ZygoteHandle g_utility_zygote;
- }  // namespace
-@@ -73,7 +73,7 @@ class UtilitySandboxedProcessLauncherDelegate
+@@ -68,7 +68,7 @@ class UtilitySandboxedProcessLauncherDelegate
          launch_elevated_(launch_elevated)
  #elif defined(OS_POSIX)
          env_(env)
@@ -29,16 +21,16 @@ Index: content/browser/utility_process_host_impl.cc
          ,
          no_sandbox_(no_sandbox)
  #endif  // !defined(OS_MACOSX)  && !defined(OS_ANDROID)
-@@ -105,7 +105,7 @@ class UtilitySandboxedProcessLauncherDelegate
+@@ -100,7 +100,7 @@ class UtilitySandboxedProcessLauncherDelegate
  
  #elif defined(OS_POSIX)
  
 -#if !defined(OS_MACOSX) && !defined(OS_ANDROID)
 +#if !defined(OS_MACOSX) && !defined(OS_ANDROID) && !defined(OS_BSD)
-   ZygoteHandle* GetZygote() override {
+   ZygoteHandle GetZygote() override {
      if (no_sandbox_ || !exposed_dir_.empty())
        return nullptr;
-@@ -126,7 +126,7 @@ class UtilitySandboxedProcessLauncherDelegate
+@@ -121,7 +121,7 @@ class UtilitySandboxedProcessLauncherDelegate
    bool launch_elevated_;
  #elif defined(OS_POSIX)
    base::EnvironmentMap env_;
@@ -47,12 +39,3 @@ Index: content/browser/utility_process_host_impl.cc
    bool no_sandbox_;
  #endif  // !defined(OS_MACOSX) && !defined(OS_ANDROID)
  #endif  // OS_WIN
-@@ -237,7 +237,7 @@ void UtilityProcessHostImpl::SetName(const base::strin
-   name_ = name;
- }
- 
--#if defined(OS_POSIX) && !defined(OS_ANDROID) && !defined(OS_MACOSX)
-+#if defined(OS_POSIX) && !defined(OS_ANDROID) && !defined(OS_MACOSX) && !defined(OS_BSD)
- // static
- void UtilityProcessHostImpl::EarlyZygoteLaunch() {
-   DCHECK(!g_utility_zygote);

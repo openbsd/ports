@@ -1,7 +1,8 @@
-$OpenBSD: patch-media_audio_audio_manager_h,v 1.5 2017/04/28 14:21:00 robert Exp $
---- media/audio/audio_manager.h.orig.port	Wed Apr 19 21:06:35 2017
-+++ media/audio/audio_manager.h	Thu Apr 27 19:56:02 2017
-@@ -81,7 +81,7 @@ class MEDIA_EXPORT AudioManager {
+$OpenBSD: patch-media_audio_audio_manager_h,v 1.6 2017/07/27 14:23:46 robert Exp $
+Index: media/audio/audio_manager.h
+--- media/audio/audio_manager.h.orig
++++ media/audio/audio_manager.h
+@@ -69,7 +69,7 @@ class MEDIA_EXPORT AudioManager {
    static void StartHangMonitorIfNeeded(
        scoped_refptr<base::SingleThreadTaskRunner> task_runner);
  

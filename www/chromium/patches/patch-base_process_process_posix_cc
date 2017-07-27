@@ -1,8 +1,9 @@
-$OpenBSD: patch-base_process_process_posix_cc,v 1.10 2017/06/25 21:53:56 robert Exp $
+$OpenBSD: patch-base_process_process_posix_cc,v 1.11 2017/07/27 14:23:46 robert Exp $
+
 Index: base/process/process_posix.cc
 --- base/process/process_posix.cc.orig
 +++ base/process/process_posix.cc
-@@ -8,6 +8,7 @@
+@@ -9,6 +9,7 @@
  #include <stdint.h>
  #include <sys/resource.h>
  #include <sys/wait.h>
@@ -10,7 +11,7 @@ Index: base/process/process_posix.cc
  
  #include "base/debug/activity_tracker.h"
  #include "base/files/scoped_file.h"
-@@ -23,6 +24,9 @@
+@@ -24,6 +25,9 @@
  
  namespace {
  
@@ -20,25 +21,25 @@ Index: base/process/process_posix.cc
  #if !defined(OS_NACL_NONSFI)
  
  bool WaitpidWithTimeout(base::ProcessHandle handle,
-@@ -256,12 +260,10 @@ Process Process::DeprecatedGetProcessFromHandle(Proces
+@@ -258,12 +262,10 @@ Process Process::DeprecatedGetProcessFromHandle(Proces
    return Process(handle);
  }
  
--#if !defined(OS_LINUX) && !defined(OS_MACOSX)
+-#if !defined(OS_LINUX) && !defined(OS_MACOSX) && !defined(OS_AIX)
  // static
  bool Process::CanBackgroundProcesses() {
 -  return false;
 +  return true;
  }
--#endif  // !defined(OS_LINUX) && !defined(OS_MACOSX)
+-#endif  // !defined(OS_LINUX) && !defined(OS_MACOSX) && !defined(OS_AIX)
  
  // static
  void Process::TerminateCurrentProcessImmediately(int exit_code) {
-@@ -365,21 +367,23 @@ bool Process::WaitForExitWithTimeout(TimeDelta timeout
+@@ -367,21 +369,23 @@ bool Process::WaitForExitWithTimeout(TimeDelta timeout
    return WaitForExitWithTimeoutImpl(Handle(), exit_code, timeout);
  }
  
--#if !defined(OS_LINUX) && !defined(OS_MACOSX)
+-#if !defined(OS_LINUX) && !defined(OS_MACOSX) && !defined(OS_AIX)
  bool Process::IsProcessBackgrounded() const {
    // See SetProcessBackgrounded().
    DCHECK(IsValid());
@@ -54,7 +55,7 @@ Index: base/process/process_posix.cc
 -  return false;
 +bool Process::SetProcessBackgrounded(bool background) {
 +  DCHECK(IsValid());
-+   
++
 +  if (!CanBackgroundProcesses())
 +    return false;
 +
@@ -63,7 +64,7 @@ Index: base/process/process_posix.cc
 +  DPCHECK(result == 0);
 +  return result == 0;
  }
--#endif  // !defined(OS_LINUX) && !defined(OS_MACOSX)
+-#endif  // !defined(OS_LINUX) && !defined(OS_MACOSX) && !defined(OS_AIX)
  
  int Process::GetPriority() const {
    DCHECK(IsValid());

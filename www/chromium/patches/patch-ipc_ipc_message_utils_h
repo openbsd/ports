@@ -1,8 +1,8 @@
-$OpenBSD: patch-ipc_ipc_message_utils_h,v 1.6 2017/06/25 21:53:56 robert Exp $
+$OpenBSD: patch-ipc_ipc_message_utils_h,v 1.7 2017/07/27 14:23:46 robert Exp $
 Index: ipc/ipc_message_utils.h
 --- ipc/ipc_message_utils.h.orig
 +++ ipc/ipc_message_utils.h
-@@ -208,7 +208,7 @@ struct ParamTraits<unsigned int> {
+@@ -211,7 +211,7 @@ struct ParamTraits<unsigned int> {
  //   3) Android 64 bit also has int64_t typedef'd to long.
  // Since we want to support Android 32<>64 bit IPC, as long as we don't have
  // these traits for 32 bit ARM then that'll catch any errors.

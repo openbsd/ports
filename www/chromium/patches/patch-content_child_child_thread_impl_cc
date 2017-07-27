@@ -1,8 +1,8 @@
-$OpenBSD: patch-content_child_child_thread_impl_cc,v 1.4 2017/06/25 21:53:56 robert Exp $
+$OpenBSD: patch-content_child_child_thread_impl_cc,v 1.5 2017/07/27 14:23:46 robert Exp $
 Index: content/child/child_thread_impl.cc
 --- content/child/child_thread_impl.cc.orig
 +++ content/child/child_thread_impl.cc
-@@ -698,7 +698,7 @@ std::unique_ptr<base::SharedMemory> ChildThreadImpl::A
+@@ -685,7 +685,7 @@ std::unique_ptr<base::SharedMemory> ChildThreadImpl::A
    return base::MakeUnique<base::SharedMemory>(shared_buf, false);
  }
  

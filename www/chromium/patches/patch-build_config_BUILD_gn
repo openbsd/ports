@@ -1,8 +1,8 @@
-$OpenBSD: patch-build_config_BUILD_gn,v 1.8 2017/06/25 21:53:56 robert Exp $
+$OpenBSD: patch-build_config_BUILD_gn,v 1.9 2017/07/27 14:23:46 robert Exp $
 Index: build/config/BUILD.gn
 --- build/config/BUILD.gn.orig
 +++ build/config/BUILD.gn
-@@ -258,7 +258,7 @@ config("default_libs") {
+@@ -255,7 +255,7 @@ config("default_libs") {
        "CoreText.framework",
        "Foundation.framework",
      ]

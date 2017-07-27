@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_WebKit_Source_platform_fonts_FontPlatformData_h,v 1.5 2017/06/25 21:53:56 robert Exp $
+$OpenBSD: patch-third_party_WebKit_Source_platform_fonts_FontPlatformData_h,v 1.6 2017/07/27 14:23:46 robert Exp $
 
 Index: third_party/WebKit/Source/platform/fonts/FontPlatformData.h
 --- third_party/WebKit/Source/platform/fonts/FontPlatformData.h.orig
@@ -12,7 +12,7 @@ Index: third_party/WebKit/Source/platform/fonts/FontPlatformData.h
  #include "platform/fonts/linux/FontRenderStyle.h"
  #endif  // OS(LINUX) || OS(ANDROID)
  
-@@ -147,7 +147,7 @@ class PLATFORM_EXPORT FontPlatformData {
+@@ -151,7 +151,7 @@ class PLATFORM_EXPORT FontPlatformData {
    PassRefPtr<OpenTypeVerticalData> VerticalData() const;
    PassRefPtr<SharedBuffer> OpenTypeTable(SkFontTableTag) const;
  
@@ -21,7 +21,7 @@ Index: third_party/WebKit/Source/platform/fonts/FontPlatformData.h
    // The returned styles are all actual styles without
    // FontRenderStyle::NoPreference.
    const FontRenderStyle& GetFontRenderStyle() const { return style_; }
-@@ -177,7 +177,7 @@ class PLATFORM_EXPORT FontPlatformData {
+@@ -181,7 +181,7 @@ class PLATFORM_EXPORT FontPlatformData {
    FontOrientation orientation_;
  
   private:

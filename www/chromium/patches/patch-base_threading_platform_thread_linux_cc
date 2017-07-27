@@ -1,9 +1,11 @@
-$OpenBSD: patch-base_threading_platform_thread_linux_cc,v 1.13 2017/03/14 12:18:53 robert Exp $
---- base/threading/platform_thread_linux.cc.orig.port	Thu Mar  9 21:04:26 2017
-+++ base/threading/platform_thread_linux.cc	Sat Mar 11 20:23:16 2017
+$OpenBSD: patch-base_threading_platform_thread_linux_cc,v 1.14 2017/07/27 14:23:46 robert Exp $
+
+Index: base/threading/platform_thread_linux.cc
+--- base/threading/platform_thread_linux.cc.orig
++++ base/threading/platform_thread_linux.cc
 @@ -19,7 +19,9 @@
  
- #if !defined(OS_NACL)
+ #if !defined(OS_NACL) && !defined(OS_AIX)
  #include <pthread.h>
 +#if !defined(OS_BSD)
  #include <sys/prctl.h>
@@ -15,8 +17,8 @@ $OpenBSD: patch-base_threading_platform_thread_linux_cc,v 1.13 2017/03/14 12:18:
    ThreadIdNameManager::GetInstance()->SetName(CurrentId(), name);
    tracked_objects::ThreadData::InitializeThreadContext(name);
  
--#if !defined(OS_NACL)
-+#if !defined(OS_NACL) && !defined(OS_BSD)
+-#if !defined(OS_NACL) && !defined(OS_AIX)
++#if !defined(OS_NACL) && !defined(OS_AIX) && !defined(OS_BSD)
    // On linux we can get the thread names to show up in the debugger by setting
    // the process name for the LWP.  We don't want to do this for the main
    // thread because that would rename the process, causing tools like killall

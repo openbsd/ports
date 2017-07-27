@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_common_url_constants_cc,v 1.21 2017/06/25 21:53:56 robert Exp $
+$OpenBSD: patch-chrome_common_url_constants_cc,v 1.22 2017/07/27 14:23:46 robert Exp $
 Index: chrome/common/url_constants.cc
 --- chrome/common/url_constants.cc.orig
 +++ chrome/common/url_constants.cc
@@ -11,8 +11,8 @@ Index: chrome/common/url_constants.cc
  const char kChromeUITabModalConfirmDialogURL[] =
      "chrome://tab-modal-confirm-dialog/";
  #endif
-@@ -161,7 +161,7 @@ const char kChromeUICastURL[] = "chrome://cast/";
- #endif
+@@ -159,7 +159,7 @@ const char kChromeUIMediaRouterURL[] = "chrome://media
+ const char kChromeUICastURL[] = "chrome://cast/";
  #endif
  
 -#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
@@ -20,7 +20,7 @@ Index: chrome/common/url_constants.cc
  const char kChromeUIDiscardsHost[] = "discards";
  const char kChromeUIDiscardsURL[] = "chrome://discards/";
  #endif
-@@ -283,7 +283,7 @@ const char kChromeUIPrintHost[] = "print";
+@@ -280,7 +280,7 @@ const char kChromeUIPrintHost[] = "print";
  const char kChromeUILinuxProxyConfigHost[] = "linux-proxy-config";
  #endif
  
@@ -29,7 +29,7 @@ Index: chrome/common/url_constants.cc
  const char kChromeUISandboxHost[] = "sandbox";
  #endif
  
-@@ -340,7 +340,7 @@ const char kChromeUICleanupToolHost[] = "cleanup";
+@@ -337,7 +337,7 @@ const char kChromeUICleanupToolHost[] = "cleanup";
  const char kChromeUIMetroFlowHost[] = "make-metro";
  #endif
  
@@ -38,7 +38,7 @@ Index: chrome/common/url_constants.cc
  const char kChromeUITabModalConfirmDialogHost[] = "tab-modal-confirm-dialog";
  #endif
  
-@@ -732,7 +732,7 @@ const char* const kChromeHostURLs[] = {
+@@ -731,7 +731,7 @@ const char* const kChromeHostURLs[] = {
  #if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID)
      kChromeUILinuxProxyConfigHost,
  #endif

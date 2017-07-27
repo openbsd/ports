@@ -1,7 +1,8 @@
-$OpenBSD: patch-services_service_manager_public_cpp_standalone_service_standalone_service_cc,v 1.1 2017/03/14 12:18:54 robert Exp $
---- services/service_manager/public/cpp/standalone_service/standalone_service.cc.orig.port	Sat Mar 11 10:07:27 2017
-+++ services/service_manager/public/cpp/standalone_service/standalone_service.cc	Sat Mar 11 10:08:54 2017
-@@ -70,6 +70,8 @@ void RunStandaloneService(const StandaloneServiceCallb
+$OpenBSD: patch-services_service_manager_public_cpp_standalone_service_standalone_service_cc,v 1.2 2017/07/27 14:23:46 robert Exp $
+Index: services/service_manager/public/cpp/standalone_service/standalone_service.cc
+--- services/service_manager/public/cpp/standalone_service/standalone_service.cc.orig
++++ services/service_manager/public/cpp/standalone_service/standalone_service.cc
+@@ -71,6 +71,8 @@ void RunStandaloneService(const StandaloneServiceCallb
        *base::CommandLine::ForCurrentProcess();
    if (command_line.HasSwitch(switches::kEnableSandbox))
      sandbox = InitializeSandbox();

@@ -1,7 +1,8 @@
-$OpenBSD: patch-device_sensors_data_fetcher_shared_memory_h,v 1.1 2017/04/28 14:21:00 robert Exp $
---- device/sensors/data_fetcher_shared_memory.h.orig.port	Thu Apr 27 21:25:00 2017
-+++ device/sensors/data_fetcher_shared_memory.h	Thu Apr 27 21:25:13 2017
-@@ -44,7 +44,7 @@ class DEVICE_SENSOR_EXPORT DataFetcherSharedMemory
+$OpenBSD: patch-device_sensors_data_fetcher_shared_memory_h,v 1.2 2017/07/27 14:23:46 robert Exp $
+Index: device/sensors/data_fetcher_shared_memory.h
+--- device/sensors/data_fetcher_shared_memory.h.orig
++++ device/sensors/data_fetcher_shared_memory.h
+@@ -41,7 +41,7 @@ class DEVICE_SENSOR_EXPORT DataFetcherSharedMemory
    bool Start(ConsumerType consumer_type, void* buffer) override;
    bool Stop(ConsumerType consumer_type) override;
  

@@ -1,27 +1,27 @@
-$OpenBSD: patch-chrome_browser_resources_settings_appearance_page_appearance_page_html,v 1.1 2017/06/25 21:53:56 robert Exp $
+$OpenBSD: patch-chrome_browser_resources_settings_appearance_page_appearance_page_html,v 1.2 2017/07/27 14:23:46 robert Exp $
 
 Index: chrome/browser/resources/settings/appearance_page/appearance_page.html
 --- chrome/browser/resources/settings/appearance_page/appearance_page.html.orig
 +++ chrome/browser/resources/settings/appearance_page/appearance_page.html
-@@ -72,7 +72,7 @@
-                 aria-label="$i18n{themes}"
+@@ -73,7 +73,7 @@
+                 actionable aria-label="$i18n{themes}"
                  aria-describedby="themesSecondary"></button>
-           </div>
+           </a>
 -<if expr="not is_linux or chromeos">
 +<if expr="not is_posix or chromeos">
            <template is="dom-if" if="[[prefs.extensions.theme.id.value]]">
-             <div class="secondary-action">
-               <paper-button id="useDefault" on-tap="onUseDefaultTap_"
+             <div class="separator"></div>
+             <paper-button id="useDefault" on-tap="onUseDefaultTap_"
 @@ -82,7 +82,7 @@
-             </div>
+             </paper-button>
            </template>
  </if>
 -<if expr="is_linux and not chromeos">
 +<if expr="is_posix and not chromeos">
-           <div class="secondary-action" hidden="[[!showThemesSecondary_(
-             prefs.extensions.theme.id.value, useSystemTheme_)]]">
-             <template is="dom-if" if="[[showUseClassic_(
-@@ -150,7 +150,7 @@
+           <div class="settings-row" hidden="[[!showThemesSecondary_(
+               prefs.extensions.theme.id.value, useSystemTheme_)]]"
+               id="themesSecondaryActions">
+@@ -152,7 +152,7 @@
            </settings-toggle-button>
          </div>
          <div class$="settings-box [[getFirst_(pageVisibility.bookmarksBar)]]">

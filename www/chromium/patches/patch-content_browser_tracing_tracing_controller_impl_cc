@@ -1,9 +1,9 @@
-$OpenBSD: patch-content_browser_tracing_tracing_controller_impl_cc,v 1.1 2017/06/25 21:53:56 robert Exp $
+$OpenBSD: patch-content_browser_tracing_tracing_controller_impl_cc,v 1.2 2017/07/27 14:23:46 robert Exp $
 
 Index: content/browser/tracing/tracing_controller_impl.cc
 --- content/browser/tracing/tracing_controller_impl.cc.orig
 +++ content/browser/tracing/tracing_controller_impl.cc
-@@ -412,7 +412,7 @@ void TracingControllerImpl::AddTraceMessageFilter(
+@@ -414,7 +414,7 @@ void TracingControllerImpl::AddTraceMessageFilter(
      return;
    }
  
@@ -12,7 +12,7 @@ Index: content/browser/tracing/tracing_controller_impl.cc
    // On Linux the browser process dumps process metrics for child process due to
    // sandbox.
    tracing::ProcessMetricsMemoryDumpProvider::RegisterForProcess(
-@@ -440,7 +440,7 @@ void TracingControllerImpl::RemoveTraceMessageFilter(
+@@ -442,7 +442,7 @@ void TracingControllerImpl::RemoveTraceMessageFilter(
      return;
    }
  

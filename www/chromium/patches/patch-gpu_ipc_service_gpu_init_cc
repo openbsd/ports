@@ -1,4 +1,5 @@
-$OpenBSD: patch-gpu_ipc_service_gpu_init_cc,v 1.3 2017/06/25 21:53:56 robert Exp $
+$OpenBSD: patch-gpu_ipc_service_gpu_init_cc,v 1.4 2017/07/27 14:23:46 robert Exp $
+
 Index: gpu/ipc/service/gpu_init.cc
 --- gpu/ipc/service/gpu_init.cc.orig
 +++ gpu/ipc/service/gpu_init.cc
@@ -11,7 +12,7 @@ Index: gpu/ipc/service/gpu_init.cc
  bool CanAccessNvidiaDeviceFile() {
    bool res = true;
    base::ThreadRestrictions::AssertIOAllowed();
-@@ -169,7 +169,7 @@ bool GpuInit::InitializeAndStartSandbox(const base::Co
+@@ -183,7 +183,7 @@ bool GpuInit::InitializeAndStartSandbox(const base::Co
    // Get vendor_id, device_id, driver_version from browser process through
    // commandline switches.
    GetGpuInfoFromCommandLine(gpu_info_, command_line);
@@ -20,12 +21,12 @@ Index: gpu/ipc/service/gpu_init.cc
    if (gpu_info_.gpu.vendor_id == 0x10de &&  // NVIDIA
        gpu_info_.driver_vendor == "NVIDIA" && !CanAccessNvidiaDeviceFile())
      return false;
-@@ -181,7 +181,7 @@ bool GpuInit::InitializeAndStartSandbox(const base::Co
- 
+@@ -196,7 +196,7 @@ bool GpuInit::InitializeAndStartSandbox(const base::Co
    sandbox_helper_->PreSandboxStartup();
  
+   bool attempted_startsandbox = false;
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
    // On Chrome OS ARM Mali, GPU driver userspace creates threads when
    // initializing a GL context, so start the sandbox early.
-   if (command_line.HasSwitch(switches::kGpuSandboxStartEarly))
+   if (command_line.HasSwitch(switches::kGpuSandboxStartEarly)) {

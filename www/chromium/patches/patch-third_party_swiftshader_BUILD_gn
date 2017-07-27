@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_swiftshader_BUILD_gn,v 1.1 2017/06/25 21:53:56 robert Exp $
+$OpenBSD: patch-third_party_swiftshader_BUILD_gn,v 1.2 2017/07/27 14:23:46 robert Exp $
 
 Index: third_party/swiftshader/BUILD.gn
 --- third_party/swiftshader/BUILD.gn.orig
 +++ third_party/swiftshader/BUILD.gn
-@@ -85,7 +85,6 @@ config("swiftshader_config") {
+@@ -84,7 +84,6 @@ config("swiftshader_config") {
  
      if (is_linux) {
        ldflags = [

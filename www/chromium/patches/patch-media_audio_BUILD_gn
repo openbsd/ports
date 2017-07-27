@@ -1,8 +1,8 @@
-$OpenBSD: patch-media_audio_BUILD_gn,v 1.7 2017/06/25 21:53:56 robert Exp $
+$OpenBSD: patch-media_audio_BUILD_gn,v 1.8 2017/07/27 14:23:46 robert Exp $
 Index: media/audio/BUILD.gn
 --- media/audio/BUILD.gn.orig
 +++ media/audio/BUILD.gn
-@@ -216,9 +216,19 @@ source_set("audio") {
+@@ -219,9 +219,19 @@ source_set("audio") {
      deps += [ "//media/base/android:media_jni_headers" ]
    }
  
@@ -23,7 +23,7 @@ Index: media/audio/BUILD.gn
  
    if (use_alsa) {
      libs += [ "asound" ]
-@@ -265,7 +275,6 @@ source_set("audio") {
+@@ -268,7 +278,6 @@ source_set("audio") {
        configs += [ ":libpulse" ]
      } else {
        # TODO(ajwong): Technically, this dl should go in the action.

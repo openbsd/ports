@@ -1,14 +1,14 @@
-$OpenBSD: patch-chrome_app_chrome_main_cc,v 1.1 2017/06/25 21:53:56 robert Exp $
+$OpenBSD: patch-chrome_app_chrome_main_cc,v 1.2 2017/07/27 14:23:46 robert Exp $
 
 Index: chrome/app/chrome_main.cc
 --- chrome/app/chrome_main.cc.orig
 +++ chrome/app/chrome_main.cc
-@@ -97,7 +97,7 @@ int ChromeMain(int argc, const char** argv) {
+@@ -92,7 +92,7 @@ int ChromeMain(int argc, const char** argv) {
+   const base::CommandLine* command_line(base::CommandLine::ForCurrentProcess());
    ALLOW_UNUSED_LOCAL(command_line);
- #endif
  
--#if defined(OS_LINUX) || defined(OS_MACOSX)
-+#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN)
++#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN) || defined(OS_BSD)
    if (command_line->HasSwitch(switches::kHeadless)) {
  #if defined(OS_MACOSX)
      SetUpBundleOverrides();

@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_gfx_linux_client_native_pixmap_dmabuf_cc,v 1.1 2017/06/25 21:53:56 robert Exp $
+$OpenBSD: patch-ui_gfx_linux_client_native_pixmap_dmabuf_cc,v 1.2 2017/07/27 14:23:46 robert Exp $
 
 Index: ui/gfx/linux/client_native_pixmap_dmabuf.cc
 --- ui/gfx/linux/client_native_pixmap_dmabuf.cc.orig
@@ -11,16 +11,18 @@ Index: ui/gfx/linux/client_native_pixmap_dmabuf.cc
  #include <linux/version.h>
 +#endif
  #include <stddef.h>
+ #include <sys/ioctl.h>
  #include <sys/mman.h>
- #include <xf86drm.h>
-@@ -17,9 +19,7 @@
+@@ -19,11 +21,7 @@
  #include "base/strings/stringprintf.h"
  #include "base/trace_event/trace_event.h"
  
--#if LINUX_VERSION_CODE < KERNEL_VERSION(4, 6, 0)
+-#if LINUX_VERSION_CODE >= KERNEL_VERSION(4, 11, 0)
+-#include <linux/dma-buf.h>
+-#else
 -#include <linux/types.h>
 -
 +#if defined(__OpenBSD__)
- struct local_dma_buf_sync {
+ struct dma_buf_sync {
    __u64 flags;
  };

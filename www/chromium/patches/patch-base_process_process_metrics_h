@@ -1,22 +1,41 @@
-$OpenBSD: patch-base_process_process_metrics_h,v 1.7 2017/06/25 21:53:56 robert Exp $
+$OpenBSD: patch-base_process_process_metrics_h,v 1.8 2017/07/27 14:23:46 robert Exp $
+
 Index: base/process/process_metrics.h
 --- base/process/process_metrics.h.orig
 +++ base/process/process_metrics.h
-@@ -205,7 +205,7 @@ class BASE_EXPORT ProcessMetrics {
+@@ -215,7 +215,7 @@ class BASE_EXPORT ProcessMetrics {
    // otherwise.
    bool GetIOCounters(IoCounters* io_counters) const;
  
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_AIX)
++#if defined(OS_LINUX) || defined(OS_AIX) || defined(OS_BSD)
    // Returns the number of file descriptors currently open by the process, or
    // -1 on error.
    int GetOpenFdCount() const;
-@@ -289,7 +289,7 @@ BASE_EXPORT void SetFdLimit(unsigned int max_descripto
+@@ -225,7 +225,7 @@ class BASE_EXPORT ProcessMetrics {
+   int GetOpenFdSoftLimit() const;
+ #endif  // defined(OS_LINUX) || defined(OS_AIX)
+ 
+-#if defined(OS_LINUX) || defined(OS_ANDROID)
++#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
+   // Bytes of swap as reported by /proc/[pid]/status.
+   uint64_t GetVmSwapBytes() const;
+ #endif  // defined(OS_LINUX) || defined(OS_ANDROID)
+@@ -304,7 +304,7 @@ BASE_EXPORT void SetFdLimit(unsigned int max_descripto
  #endif  // defined(OS_POSIX)
  
  #if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || \
--    defined(OS_ANDROID)
-+    defined(OS_ANDROID) || defined(OS_BSD)
+-    defined(OS_ANDROID) || defined(OS_AIX) || defined(OS_FUCHSIA)
++    defined(OS_ANDROID) || defined(OS_AIX) || defined(OS_FUCHSIA) || defined(OS_BSD)
  // Data about system-wide memory consumption. Values are in KB. Available on
  // Windows, Mac, Linux, Android and Chrome OS.
  //
+@@ -352,7 +352,7 @@ struct BASE_EXPORT SystemMemoryInfoKB {
+ #endif
+ 
+ #if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_AIX) || \
+-    defined(OS_FUCHSIA)
++    defined(OS_FUCHSIA) || defined(OS_BSD)
+   int buffers = 0;
+   int cached = 0;
+   int active_anon = 0;

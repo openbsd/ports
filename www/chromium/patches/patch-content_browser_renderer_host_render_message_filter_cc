@@ -1,8 +1,8 @@
-$OpenBSD: patch-content_browser_renderer_host_render_message_filter_cc,v 1.9 2017/06/25 21:53:56 robert Exp $
+$OpenBSD: patch-content_browser_renderer_host_render_message_filter_cc,v 1.10 2017/07/27 14:23:46 robert Exp $
 Index: content/browser/renderer_host/render_message_filter.cc
 --- content/browser/renderer_host/render_message_filter.cc.orig
 +++ content/browser/renderer_host/render_message_filter.cc
-@@ -84,7 +84,7 @@
+@@ -83,7 +83,7 @@
  #include "ui/accelerated_widget_mac/window_resize_helper_mac.h"
  #endif
  
@@ -11,7 +11,7 @@ Index: content/browser/renderer_host/render_message_filter.cc
  #include "base/linux_util.h"
  #include "base/threading/platform_thread.h"
  #endif
-@@ -164,7 +164,7 @@ bool RenderMessageFilter::OnMessageReceived(const IPC:
+@@ -161,7 +161,7 @@ bool RenderMessageFilter::OnMessageReceived(const IPC:
  #endif
      IPC_MESSAGE_HANDLER_DELAY_REPLY(ChildProcessHostMsg_HasGpuProcess,
                                      OnHasGpuProcess)
@@ -20,7 +20,7 @@ Index: content/browser/renderer_host/render_message_filter.cc
      IPC_MESSAGE_HANDLER(ChildProcessHostMsg_SetThreadPriority,
                          OnSetThreadPriority)
  #endif
-@@ -285,7 +285,7 @@ void RenderMessageFilter::SendLoadFontReply(IPC::Messa
+@@ -243,7 +243,7 @@ void RenderMessageFilter::SendLoadFontReply(IPC::Messa
  
  #endif  // defined(OS_MACOSX)
  

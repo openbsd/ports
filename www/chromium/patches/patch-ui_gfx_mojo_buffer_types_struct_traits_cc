@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_gfx_mojo_buffer_types_struct_traits_cc,v 1.1 2017/06/25 21:53:56 robert Exp $
+$OpenBSD: patch-ui_gfx_mojo_buffer_types_struct_traits_cc,v 1.2 2017/07/27 14:23:46 robert Exp $
 
 Index: ui/gfx/mojo/buffer_types_struct_traits.cc
 --- ui/gfx/mojo/buffer_types_struct_traits.cc.orig
@@ -21,7 +21,7 @@ Index: ui/gfx/mojo/buffer_types_struct_traits.cc
    mojo::ArrayDataView<mojo::ScopedHandle> handles_data_view;
    data.GetFdsDataView(&handles_data_view);
    for (size_t i = 0; i < handles_data_view.size(); ++i) {
-@@ -89,7 +89,7 @@ const gfx::NativePixmapHandle&
+@@ -74,7 +74,7 @@ const gfx::NativePixmapHandle&
  StructTraits<gfx::mojom::GpuMemoryBufferHandleDataView,
               gfx::GpuMemoryBufferHandle>::
      native_pixmap_handle(const gfx::GpuMemoryBufferHandle& handle) {
@@ -30,7 +30,7 @@ Index: ui/gfx/mojo/buffer_types_struct_traits.cc
    return handle.native_pixmap_handle;
  #else
    static gfx::NativePixmapHandle pixmap_handle;
-@@ -145,7 +145,7 @@ bool StructTraits<gfx::mojom::GpuMemoryBufferHandleDat
+@@ -113,7 +113,7 @@ bool StructTraits<gfx::mojom::GpuMemoryBufferHandleDat
      out->offset = data.offset();
      out->stride = data.stride();
    }

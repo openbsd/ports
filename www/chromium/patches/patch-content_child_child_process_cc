@@ -1,8 +1,8 @@
-$OpenBSD: patch-content_child_child_process_cc,v 1.4 2017/06/25 21:53:56 robert Exp $
+$OpenBSD: patch-content_child_child_process_cc,v 1.5 2017/07/27 14:23:46 robert Exp $
 Index: content/child/child_process.cc
 --- content/child/child_process.cc.orig
 +++ content/child/child_process.cc
-@@ -129,7 +129,7 @@ void ChildProcess::ReleaseProcess() {
+@@ -130,7 +130,7 @@ void ChildProcess::ReleaseProcess() {
      main_thread_->OnProcessFinalRelease();
  }
  

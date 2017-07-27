@@ -1,22 +1,22 @@
-$OpenBSD: patch-tools_gn_bootstrap_bootstrap_py,v 1.8 2017/06/25 21:53:56 robert Exp $
+$OpenBSD: patch-tools_gn_bootstrap_bootstrap_py,v 1.9 2017/07/27 14:23:46 robert Exp $
+
 Index: tools/gn/bootstrap/bootstrap.py
 --- tools/gn/bootstrap/bootstrap.py.orig
 +++ tools/gn/bootstrap/bootstrap.py
-@@ -32,7 +32,8 @@ SRC_ROOT = os.path.dirname(os.path.dirname(GN_ROOT))
- is_win = sys.platform.startswith('win')
+@@ -33,7 +33,8 @@ is_win = sys.platform.startswith('win')
  is_linux = sys.platform.startswith('linux')
  is_mac = sys.platform.startswith('darwin')
--is_posix = is_linux or is_mac
+ is_aix = sys.platform.startswith('aix')
+-is_posix = is_linux or is_mac or is_aix
 +is_openbsd = sys.platform.startswith('openbsd')
-+is_posix = is_linux or is_mac or is_openbsd
++is_posix = is_linux or is_mac or is_aix or is_openbsd
  
  def check_call(cmd, **kwargs):
    logging.debug('Running: %s', ' '.join(cmd))
-@@ -596,6 +597,39 @@ def write_gn_ninja(path, root_gen_dir, options):
-         'include_dirs': [],
-         'cflags': cflags + ['-DHAVE_CONFIG_H'],
-     }
-+
+@@ -652,6 +653,39 @@ def write_gn_ninja(path, root_gen_dir, options):
+         'base/sys_info_linux.cc',
+         'base/threading/platform_thread_linux.cc',
+     ])
 +
 +  if is_openbsd:
 +    ldflags.extend(['-lpthread', '-lexecinfo'])
@@ -29,7 +29,8 @@ Index: tools/gn/bootstrap/bootstrap.py
 +        'tool': 'cxx',
 +    }
 +    static_libraries['base']['sources'].extend([
-+        'base/callback_helpers.cc',
++	'base/task_scheduler/environment_config.cc',
++        'base/memory/shared_memory_handle_posix.cc',
 +        'base/memory/shared_memory_posix.cc',
 +        'base/memory/shared_memory_tracker.cc',
 +        'base/process/memory_stubs.cc',
@@ -41,7 +42,6 @@ Index: tools/gn/bootstrap/bootstrap.py
 +        'base/strings/sys_string_conversions_posix.cc',
 +        'base/sys_info_openbsd.cc',
 +        'base/threading/platform_thread_linux.cc',
-+        'base/trace_event/malloc_dump_provider.cc',
 +    ])
 +    static_libraries['libevent']['include_dirs'].extend([
 +        os.path.join(SRC_ROOT, 'base', 'third_party', 'libevent', 'openbsd')
@@ -49,6 +49,25 @@ Index: tools/gn/bootstrap/bootstrap.py
 +    static_libraries['libevent']['sources'].extend([
 +        'base/third_party/libevent/kqueue.c',
 +    ])
++
+     if is_linux:
+       static_libraries['base']['sources'].extend([
+         'base/allocator/allocator_shim.cc',
+@@ -663,17 +697,6 @@ def write_gn_ninja(path, root_gen_dir, options):
+       ])
+       static_libraries['libevent']['sources'].extend([
+          'base/third_party/libevent/epoll.c',
+-      ])
+-    else:
+-      libs.extend(['-lrt'])
+-      static_libraries['base']['sources'].extend([
+-          'base/process/internal_aix.cc'
+-      ])
+-      static_libraries['libevent']['include_dirs'].extend([
+-          os.path.join(SRC_ROOT, 'base', 'third_party', 'libevent', 'aix')
+-      ])
+-      static_libraries['libevent']['include_dirs'].extend([
+-          os.path.join(SRC_ROOT, 'base', 'third_party', 'libevent', 'compat')
+       ])
  
-   if is_linux:
-     libs.extend(['-lrt', '-latomic'])
+   if is_mac:

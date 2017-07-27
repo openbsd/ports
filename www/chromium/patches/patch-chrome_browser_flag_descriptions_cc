@@ -1,19 +1,19 @@
-$OpenBSD: patch-chrome_browser_flag_descriptions_cc,v 1.1 2017/06/25 21:53:56 robert Exp $
+$OpenBSD: patch-chrome_browser_flag_descriptions_cc,v 1.2 2017/07/27 14:23:46 robert Exp $
 
 Index: chrome/browser/flag_descriptions.cc
 --- chrome/browser/flag_descriptions.cc.orig
 +++ chrome/browser/flag_descriptions.cc
-@@ -1598,7 +1598,7 @@ const char kForceUiDirectionLtr[] = "Left-to-right";
+@@ -1626,7 +1626,7 @@ const char kForceDirectionLtr[] = "Left-to-right";
  
- const char kForceUiDirectionRtl[] = "Right-to-left";
+ const char kForceDirectionRtl[] = "Right-to-left";
  
 -#if defined(OS_WIN) || defined(OS_LINUX)
 +#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_BSD)
  
  const char kEnableInputImeApiName[] = "Enable Input IME API";
  
-@@ -2791,7 +2791,7 @@ const char kEnableAdjustableLargeCursorDescription[] =
-     "Make size of accessibility large cursor adjustable.";
+@@ -2829,7 +2829,7 @@ const char kEnableCustomFeedbackUiDescription[] =
+ #endif  // defined(OS_ANDROID)
  
  #if defined(OS_CHROMEOS) || defined(OS_LINUX) || defined(OS_MACOSX) || \
 -    defined(OS_WIN)

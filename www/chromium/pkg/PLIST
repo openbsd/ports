@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.69 2017/06/25 21:53:57 robert Exp $
+@comment $OpenBSD: PLIST,v 1.70 2017/07/27 14:23:46 robert Exp $
 @pkgpath www/chromium,proprietary
 bin/chrome
 chrome/
@@ -80,10 +80,7 @@ chrome/resources/inspector/Images/accelerometer-front.png
 chrome/resources/inspector/Images/accelerometer-left.png
 chrome/resources/inspector/Images/accelerometer-right.png
 chrome/resources/inspector/Images/accelerometer-top.png
-chrome/resources/inspector/Images/audits_logo.png
-chrome/resources/inspector/Images/audits_logo_2x.png
-chrome/resources/inspector/Images/audits_logo_bw.png
-chrome/resources/inspector/Images/audits_logo_bw_2x.png
+chrome/resources/inspector/Images/audits_logo.svg
 chrome/resources/inspector/Images/breakpoint.png
 chrome/resources/inspector/Images/breakpointConditional.png
 chrome/resources/inspector/Images/breakpointConditional_2x.png
@@ -107,6 +104,7 @@ chrome/resources/inspector/Images/mediumIcons.png
 chrome/resources/inspector/Images/mediumIcons_2x.png
 chrome/resources/inspector/Images/navigationControls.png
 chrome/resources/inspector/Images/navigationControls_2x.png
+chrome/resources/inspector/Images/nodeIcon.png
 chrome/resources/inspector/Images/popoverArrows.png
 chrome/resources/inspector/Images/profileGroupIcon.png
 chrome/resources/inspector/Images/profileIcon.png
@@ -232,16 +230,18 @@ chrome/resources/inspector/layers/
 chrome/resources/inspector/layers/layers_module.js
 chrome/resources/inspector/network/
 chrome/resources/inspector/network/network_module.js
-chrome/resources/inspector/network_group_lookup/
-chrome/resources/inspector/network_group_lookup/network_group_lookup_module.js
 chrome/resources/inspector/object_ui/
 chrome/resources/inspector/object_ui/object_ui_module.js
 chrome/resources/inspector/perf_ui/
 chrome/resources/inspector/perf_ui/perf_ui_module.js
 chrome/resources/inspector/product_registry/
 chrome/resources/inspector/product_registry/product_registry_module.js
+chrome/resources/inspector/product_registry_impl/
+chrome/resources/inspector/product_registry_impl/product_registry_impl_module.js
 chrome/resources/inspector/profiler/
 chrome/resources/inspector/profiler/profiler_module.js
+chrome/resources/inspector/protocol/
+chrome/resources/inspector/protocol/protocol_module.js
 chrome/resources/inspector/quick_open/
 chrome/resources/inspector/quick_open/quick_open_module.js
 chrome/resources/inspector/resources/
@@ -250,6 +250,8 @@ chrome/resources/inspector/sass/
 chrome/resources/inspector/sass/sass_module.js
 chrome/resources/inspector/screencast/
 chrome/resources/inspector/screencast/screencast_module.js
+chrome/resources/inspector/sdk/
+chrome/resources/inspector/sdk/sdk_module.js
 chrome/resources/inspector/security/
 chrome/resources/inspector/security/security_module.js
 chrome/resources/inspector/settings/

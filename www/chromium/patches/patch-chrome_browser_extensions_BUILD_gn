@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_extensions_BUILD_gn,v 1.8 2017/06/25 21:53:56 robert Exp $
+$OpenBSD: patch-chrome_browser_extensions_BUILD_gn,v 1.9 2017/07/27 14:23:46 robert Exp $
 Index: chrome/browser/extensions/BUILD.gn
 --- chrome/browser/extensions/BUILD.gn.orig
 +++ chrome/browser/extensions/BUILD.gn
@@ -12,4 +12,4 @@ Index: chrome/browser/extensions/BUILD.gn
 +
    if (enable_service_discovery) {
      sources += [
-       "api/mdns/dns_sd_delegate.cc",
+       "api/mdns/mdns_api.cc",

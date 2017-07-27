@@ -1,7 +1,8 @@
-$OpenBSD: patch-ipc_ipc_message_utils_cc,v 1.7 2017/04/28 14:21:00 robert Exp $
---- ipc/ipc_message_utils.cc.orig.port	Wed Apr 19 21:06:35 2017
-+++ ipc/ipc_message_utils.cc	Thu Apr 27 19:56:02 2017
-@@ -421,7 +421,7 @@ void ParamTraits<unsigned int>::Log(const param_type& 
+$OpenBSD: patch-ipc_ipc_message_utils_cc,v 1.8 2017/07/27 14:23:46 robert Exp $
+Index: ipc/ipc_message_utils.cc
+--- ipc/ipc_message_utils.cc.orig
++++ ipc/ipc_message_utils.cc
+@@ -419,7 +419,7 @@ void ParamTraits<unsigned int>::Log(const param_type& 
    l->append(base::UintToString(p));
  }
  

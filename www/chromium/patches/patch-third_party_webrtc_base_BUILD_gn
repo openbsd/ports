@@ -1,8 +1,8 @@
-$OpenBSD: patch-third_party_webrtc_base_BUILD_gn,v 1.8 2017/06/25 21:53:56 robert Exp $
+$OpenBSD: patch-third_party_webrtc_base_BUILD_gn,v 1.9 2017/07/27 14:23:46 robert Exp $
 Index: third_party/webrtc/base/BUILD.gn
 --- third_party/webrtc/base/BUILD.gn.orig
 +++ third_party/webrtc/base/BUILD.gn
-@@ -567,16 +567,15 @@ rtc_static_library("rtc_base") {
+@@ -573,16 +573,15 @@ rtc_static_library("rtc_base") {
  
    if (use_x11) {
      libs += [

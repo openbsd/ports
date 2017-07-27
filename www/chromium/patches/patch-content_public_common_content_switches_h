@@ -1,7 +1,8 @@
-$OpenBSD: patch-content_public_common_content_switches_h,v 1.20 2017/04/28 14:21:00 robert Exp $
---- content/public/common/content_switches.h.orig.port	Wed Apr 19 21:06:34 2017
-+++ content/public/common/content_switches.h	Thu Apr 27 19:56:02 2017
-@@ -294,7 +294,7 @@ CONTENT_EXPORT extern const char kDisablePanelFitting[
+$OpenBSD: patch-content_public_common_content_switches_h,v 1.21 2017/07/27 14:23:46 robert Exp $
+Index: content/public/common/content_switches.h
+--- content/public/common/content_switches.h.orig
++++ content/public/common/content_switches.h
+@@ -291,7 +291,7 @@ CONTENT_EXPORT extern const char kDisablePanelFitting[
  CONTENT_EXPORT extern const char kDisableVaapiAcceleratedVideoEncode[];
  #endif
  

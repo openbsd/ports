@@ -1,7 +1,8 @@
-$OpenBSD: patch-ppapi_shared_impl_private_net_address_private_impl_cc,v 1.5 2016/03/06 10:51:14 robert Exp $
---- ppapi/shared_impl/private/net_address_private_impl.cc.orig.port	Wed Feb 24 00:02:01 2016
-+++ ppapi/shared_impl/private/net_address_private_impl.cc	Thu Mar  3 09:43:26 2016
-@@ -28,7 +28,10 @@
+$OpenBSD: patch-ppapi_shared_impl_private_net_address_private_impl_cc,v 1.6 2017/07/27 14:23:46 robert Exp $
+Index: ppapi/shared_impl/private/net_address_private_impl.cc
+--- ppapi/shared_impl/private/net_address_private_impl.cc.orig
++++ ppapi/shared_impl/private/net_address_private_impl.cc
+@@ -29,7 +29,10 @@
  #include <sys/types.h>
  #endif
  

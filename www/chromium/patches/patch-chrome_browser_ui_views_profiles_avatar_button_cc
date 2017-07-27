@@ -1,0 +1,23 @@
+$OpenBSD: patch-chrome_browser_ui_views_profiles_avatar_button_cc,v 1.1 2017/07/27 14:23:46 robert Exp $
+
+Index: chrome/browser/ui/views/profiles/avatar_button.cc
+--- chrome/browser/ui/views/profiles/avatar_button.cc.orig
++++ chrome/browser/ui/views/profiles/avatar_button.cc
+@@ -171,7 +171,7 @@ AvatarButton::AvatarButton(views::ButtonListener* list
+       label()->font_list().DeriveWithHeightUpperBound(kDisplayFontHeight));
+ 
+   bool apply_ink_drop = IsCondensible();
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   DCHECK_EQ(AvatarButtonStyle::THEMED, button_style);
+   apply_ink_drop = true;
+ #endif
+@@ -180,7 +180,7 @@ AvatarButton::AvatarButton(views::ButtonListener* list
+     SetInkDropMode(InkDropMode::ON);
+     SetFocusPainter(nullptr);
+     constexpr int kIconSize = 16;
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+     set_ink_drop_base_color(SK_ColorWHITE);
+     SetBorder(base::MakeUnique<AvatarButtonThemedBorder>());
+     generic_avatar_ = gfx::CreateVectorIcon(kProfileSwitcherOutlineIcon,

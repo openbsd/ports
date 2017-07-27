@@ -1,9 +1,9 @@
-$OpenBSD: patch-content_renderer_render_thread_impl_cc,v 1.19 2017/06/25 21:53:56 robert Exp $
+$OpenBSD: patch-content_renderer_render_thread_impl_cc,v 1.20 2017/07/27 14:23:46 robert Exp $
 
 Index: content/renderer/render_thread_impl.cc
 --- content/renderer/render_thread_impl.cc.orig
 +++ content/renderer/render_thread_impl.cc
-@@ -210,12 +210,21 @@
+@@ -218,12 +218,21 @@
  #include "content/common/external_ipc_dumper.h"
  #endif
  
@@ -25,7 +25,7 @@ Index: content/renderer/render_thread_impl.cc
  using base::ThreadRestrictions;
  using blink::WebDocument;
  using blink::WebFrame;
-@@ -871,7 +880,7 @@ void RenderThreadImpl::Init(
+@@ -912,7 +921,7 @@ void RenderThreadImpl::Init(
    GetConnector()->BindInterface(mojom::kBrowserServiceName,
                                  mojo::MakeRequest(&storage_partition_service_));
  
@@ -34,7 +34,7 @@ Index: content/renderer/render_thread_impl.cc
    ChildProcess::current()->SetIOThreadPriority(base::ThreadPriority::DISPLAY);
    ChildThreadImpl::current()->SetThreadPriority(
        categorized_worker_pool_->background_worker_thread_id(),
-@@ -1078,7 +1087,7 @@ void RenderThreadImpl::InitializeCompositorThread() {
+@@ -1112,7 +1121,7 @@ void RenderThreadImpl::InitializeCompositorThread() {
    compositor_task_runner_->PostTask(
        FROM_HERE,
        base::Bind(base::IgnoreResult(&ThreadRestrictions::SetIOAllowed), false));
@@ -43,7 +43,7 @@ Index: content/renderer/render_thread_impl.cc
    ChildThreadImpl::current()->SetThreadPriority(compositor_thread_->ThreadId(),
                                                  base::ThreadPriority::DISPLAY);
  #endif
-@@ -1383,7 +1392,7 @@ media::GpuVideoAcceleratorFactories* RenderThreadImpl:
+@@ -1416,7 +1425,7 @@ media::GpuVideoAcceleratorFactories* RenderThreadImpl:
    const bool enable_video_accelerator =
        !cmd_line->HasSwitch(switches::kDisableAcceleratedVideoDecode);
    const bool enable_gpu_memory_buffer_video_frames =
@@ -52,7 +52,7 @@ Index: content/renderer/render_thread_impl.cc
        !cmd_line->HasSwitch(switches::kDisableGpuMemoryBufferVideoFrames) &&
        !cmd_line->HasSwitch(switches::kDisableGpuCompositing) &&
        !gpu_channel_host->gpu_info().software_rendering;
-@@ -1726,6 +1735,23 @@ bool RenderThreadImpl::GetRendererMemoryMetrics(
+@@ -1771,6 +1780,23 @@ bool RenderThreadImpl::GetRendererMemoryMetrics(
  #else
    size_t malloc_usage = minfo.hblkhd + minfo.arena;
  #endif
