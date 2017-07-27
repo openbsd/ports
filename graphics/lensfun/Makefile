@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.24 2017/07/26 22:45:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2017/07/27 18:54:14 sthen Exp $
 
 COMMENT=	library to adjust for photographic lens characteristics
 DISTNAME=	lensfun-0.3.2
-REVISION =	1
+REVISION=	2
 
 SHARED_LIBS=	lensfun	2.0
 
@@ -33,7 +33,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/docs/*-3.0.txt ${DOC_DIR}
 
 .include <bsd.port.arch.mk>
-.if !${ARCH:Mamd64} && !${ARCH:Mi386}
+.if !${ARCH:Mamd64}
 CONFIGURE_ARGS+=	-DBUILD_FOR_SSE=OFF
 CONFIGURE_ARGS+=	-DBUILD_FOR_SSE2=OFF
 .endif
