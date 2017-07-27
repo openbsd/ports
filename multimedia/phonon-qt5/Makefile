@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2017/07/27 09:55:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2017/07/27 16:58:48 sthen Exp $
 
 COMMENT =	multimedia layer for Qt4/KDE4
 VERSION =	4.9.1
+REVISION =	0
 DISTNAME =	phonon-${VERSION}
 PKGNAME =	phonon-qt5-${VERSION}
 
