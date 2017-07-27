@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2017/05/31 08:08:15 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2017/07/27 17:29:04 sthen Exp $
 
 COMMENT =		physics library
 
 V =			2.86.1
 DISTNAME =		bullet-${V}
+REVISION =		0
 
 SHARED_LIBS +=  BulletCollision           3.0 # 2.79
 SHARED_LIBS +=  BulletDynamics            3.0 # 2.79
