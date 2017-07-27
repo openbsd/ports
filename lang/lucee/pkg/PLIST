@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/11/14 17:31:39 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2017/07/27 12:42:21 sthen Exp $
 @conflict railo-*
 @pkgpath lang/railo
 @extraunexec rm -rf %D/lucee/config/*
@@ -15,7 +15,7 @@ conf/web-lucee.xml.dist
 @sample webapps/manager/WEB-INF/flex/
 @sample conf/web-lucee.xml
 @owner
-@group
+@group bin
 lib/
 lib/lucee.jar
 @owner _tomcat
@@ -27,7 +27,7 @@ lucee/
 @sample webapps/
 @sample webapps/ROOT/
 @owner
-@group
+@group bin
 webapps/lucee-default/
 webapps/lucee-default/Application.cfc
 webapps/lucee-default/License.txt
@@ -59,6 +59,5 @@ webapps/lucee-default/assets/js/lib/bootstrap.min.js
 webapps/lucee-default/assets/js/lib/jquery-1.10.1.min.js
 webapps/lucee-default/favicon.ico
 webapps/lucee-default/index.cfm
-@group
 @cwd ${LOCALBASE}/share/doc/pkg-readmes
 ${FULLPKGNAME}
