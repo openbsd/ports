@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2017/05/31 08:08:16 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2017/07/27 17:02:38 sthen Exp $
 
 COMMENT=		documentation for gtk3mm
 
 GNOME_PROJECT=		gtkmm-documentation
 GNOME_VERSION=		3.22.0
+REVISION=		0
 
 PKGNAME=		gtk3mm-documentation-${GNOME_VERSION}
 
