@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.57 2016/04/09 20:14:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.58 2017/07/27 14:48:10 espie Exp $
 
 COMMENT=	lame ain't an MP3 encoder
+#'
 
 DISTNAME=	lame-3.99.5
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS +=  mp3lame              2.1      # 0.1
 
@@ -25,7 +26,8 @@ LIB_DEPENDS=	converters/libiconv
 
 USE_GMAKE=	Yes
 
-CONFIGURE_STYLE=gnu
+AUTOCONF_VERSION=2.69
+CONFIGURE_STYLE=autoconf
 CONFIGURE_ARGS=	--enable-mp3rtp \
 		--disable-mp3x \
 		--with-fileio=lame
