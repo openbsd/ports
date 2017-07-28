@@ -1,0 +1,16 @@
+$OpenBSD: patch-tgl_queries_c,v 1.1 2017/07/28 07:11:55 tb Exp $
+
+Avoid vfprintf %s NULL
+
+Index: tgl/queries.c
+--- tgl/queries.c.orig
++++ tgl/queries.c
+@@ -818,7 +818,7 @@ static char *process_html_text (struct tgl_state *TLS,
+ /* {{{ Get config */
+ 
+ static void fetch_dc_option (struct tgl_state *TLS, struct tl_ds_dc_option *DS_DO) {
+-  bl_do_dc_option (TLS, DS_LVAL (DS_DO->flags), DS_LVAL (DS_DO->id), NULL, 0, DS_STR (DS_DO->ip_address), DS_LVAL (DS_DO->port));
++  bl_do_dc_option (TLS, DS_LVAL (DS_DO->flags), DS_LVAL (DS_DO->id), "", 0, DS_STR (DS_DO->ip_address), DS_LVAL (DS_DO->port));
+ }
+ 
+ static int help_get_config_on_answer (struct tgl_state *TLS, struct query *q, void *DS) {

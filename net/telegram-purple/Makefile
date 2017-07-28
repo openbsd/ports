@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/06/24 00:20:17 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.2 2017/07/28 07:11:55 tb Exp $
 
 V =			1.3.1
+REVISION =		0
 COMMENT =		Telegram support for Pidgin
 DISTNAME =		telegram-purple_$V.orig
 PKGNAME =		telegram-purple-$V
