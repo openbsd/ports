@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2017/06/04 22:25:31 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2017/07/28 09:35:40 espie Exp $
 
 COMMENT =	development environment for native Windows applications
 
@@ -64,13 +64,19 @@ MINGW32_DIR =	${WRKINST}/${LOCALBASE}/mingw32
 .if ${PROPERTIES:Mclang}
 do-configure:
 	echo "option CFLAGS_FOR_BINUTILS -fbracket-depth=1024"   >>${WRKSRC}/x86-mingw32-build.sh.conf
+
+# XXX mingw really prefers gcc-named compilers, so let's cheat!!!
+COMPILER_LINKS += gcc /usr/bin/clang g++ /usr/bin/clang++
+
 .endif
+
 
 do-build:
 	env MINGW32_TMP=${MINGW32_TMP} FULLDISTDIR=${FULLDISTDIR} \
 	    MINGW32_OUT=${MINGW32_OUT} MAKE=${MAKE_PROGRAM} \
 	    CONFIG_SHELL=${LOCALBASE}/bin/bash \
 	    AWK=/usr/bin/awk \
+	    PATH=${PORTPATH} \
 	    ac_cv_path_mkdir=/bin/mkdir \
 	    /bin/sh ${WRKBUILD}/${BASENAME}.sh --no-pre-clean --no-post-clean \
 	    --unattended
