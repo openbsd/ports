@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2017/05/11 15:44:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2017/07/28 10:50:45 sthen Exp $
 
 V =			0.3.7
 COMMENT =		document viewer for PDF and other formats with a vi-like UI
@@ -35,8 +35,8 @@ FAKE_FLAGS =	PREFIX=${TRUEPREFIX}
 
 USE_GMAKE =	Yes
 
-MODULES =	gcc4
-MODGCC4_ARCHS =	${GCC3_ARCHS} ${GCC4_ARCHS}
+COMPILER =	gcc
+COMPILER_LANGS = c
 
 TEST_DEPENDS =	devel/check
 TEST_TARGET =	test
