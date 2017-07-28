@@ -1,4 +1,4 @@
-$OpenBSD: patch-ResultTable_cc,v 1.1 2017/05/08 21:40:10 naddy Exp $
+$OpenBSD: patch-ResultTable_cc,v 1.2 2017/07/28 15:45:08 espie Exp $
 
 Index: ResultTable.cc
 --- ResultTable.cc.orig
@@ -12,21 +12,34 @@ Index: ResultTable.cc
      if (data == NULL) {
  	fprintf(stderr, "Couldn't allocate data array for a ResultTable\n");
  	exit(1);
-@@ -909,7 +909,7 @@ void ResultTable::lmsint(double &a, double &b, double 
+@@ -767,6 +767,12 @@ void ResultTable::lms(double &a, double &b, double &r2
+ 
+ }
+ 
++template<typename X>
++X absdiff(X a, X b)
++{
++	return a < b ? b - a : a - b;
++}
++
+ //
+ // ResultTable::lmsint
+ //
+@@ -909,7 +915,7 @@ void ResultTable::lmsint(double &a, double &b, double 
  	l = 0;
  	for (i = 0; i < columns; i++) {
  	    if (partialmins[i] != timeoutresult) {
 -		residuals[l] = abs(partialmins[i] - 
-+		residuals[l] = abs((long)partialmins[i] - 
++		residuals[l] = absdiff(partialmins[i],
  				   ((currentslope * 
  				     column2size(i) /
  				     slopescale) +
-@@ -930,7 +930,7 @@ void ResultTable::lmsint(double &a, double &b, double 
+@@ -930,7 +936,7 @@ void ResultTable::lmsint(double &a, double &b, double 
  	l = 0;
  	for (i = 0; i < columns; i++) {
  	    if (partialmins[i] != timeoutresult) {
 -		ys[l] = abs(partialmins[i] - mediany);
-+		ys[l] = abs((long)partialmins[i] - mediany);
++		ys[l] = absdiff(partialmins[i], mediany);
  		l++;
  	    }
  	}
