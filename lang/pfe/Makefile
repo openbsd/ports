@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.27 2016/03/27 20:53:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.28 2017/07/28 23:34:26 naddy Exp $
 
 BROKEN-powerpc=	does not build, error: lvalue required as increment operand
 
 COMMENT=	Portable Forth Environment
 
 DISTNAME=	pfe-0.33.71
-REVISION=	0
+REVISION=	1
 CATEGORIES=    	lang
 
 SHARED_LIBS +=  pfe                  33.71    # .33.71
@@ -24,14 +24,18 @@ WANTLIB=	c m ncurses
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--mandir=${PREFIX}/man
 
-.if ${MACHINE_ARCH} == "i386"
-CONFIGURE_ARGS+=--with-regs
-.endif
-
 # this renames floating.so to libfloating.so before linking with it
 USE_LIBTOOL=	gnu
 
+# requires gmake
 NO_TEST=	Yes
+
+.include <bsd.port.arch.mk>
+
+# global register variables
+.if ${PROPERTIES:Mclang}
+CONFIGURE_ARGS+=	--without-regs
+.endif
 
 # XXX remove CVS Id  (patch-pfe_Makefile_in)
 post-extract:
