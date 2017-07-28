@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2017/07/27 09:34:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2017/07/28 11:23:44 naddy Exp $
 
 COMMENT =	Qt/C++ wrapper for ZIP/UNZIP package
 DISTNAME =	quazip-0.7.3
-REVISION =	0
+REVISION =	3
 CATEGORIES =	archivers
 
 # keep those in sync
@@ -38,7 +38,6 @@ MODULES +=		x11/qt4
 CONFIGURE_ARGS =	-DBUILD_WITH_QT4=Yes
 CMAKENAME =		QuaZip
 .endif
-REVISION =		2
 
 LIBNAME =		${CMAKENAME:L}
 SUBST_VARS =		CMAKENAME LIBNAME
