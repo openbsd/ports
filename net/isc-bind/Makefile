@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2017/07/10 07:38:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.71 2017/07/28 20:53:33 espie Exp $
 
 COMMENT=	Berkeley Internet Name Daemon: DNS server and tools
 
@@ -6,6 +6,8 @@ V=		9.10.5-P3
 
 DISTNAME=	bind-$V
 PKGNAME=	isc-bind-${V:S/-P/pl/}
+REVISION =	0
+
 
 SHARED_LIBS +=	isc                  3.3      # 170.0
 SHARED_LIBS +=	isccc                0.0      # 140.5
@@ -49,6 +51,14 @@ CONFIGURE_ARGS=	--enable-filter-aaaa \
 		--with-python=${MODPY_BIN}
 
 CONFIGURE_ENV=	STD_CDEFINES="-DDIG_SIGCHASE=1"
+
+.include <bsd.port.arch.mk>
+
+# we don't link with libgcc, use the c++abi unwinder instead
+.if ${PROPERTIES:Mclang}
+MAKE_FLAGS +=	UNWINDERLIB=-lc++abi
+WANTLIB +=	c++abi
+.endif
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/bind9
 

@@ -1,0 +1,21 @@
+$OpenBSD: patch-lib_isc_Makefile_in,v 1.1 2017/07/28 20:53:33 espie Exp $
+
+Index: lib/isc/Makefile.in
+--- lib/isc/Makefile.in.orig
++++ lib/isc/Makefile.in
+@@ -122,13 +122,13 @@ libisc.la: ${OBJS} ${SYMTBLOBJS}
+ 	${LIBTOOL_MODE_LINK} \
+ 		${CC} ${ALL_CFLAGS} ${LDFLAGS} -o libisc.la -rpath ${libdir} \
+ 		-version-info ${LIBINTERFACE}:${LIBREVISION}:${LIBAGE} \
+-		${OBJS} ${SYMTBLOBJS} ${LIBS}
++		${OBJS} ${SYMTBLOBJS} ${LIBS} ${UNWINDERLIB}
+ 
+ libisc-nosymtbl.la: ${OBJS}
+ 	${LIBTOOL_MODE_LINK} \
+ 		${CC} ${ALL_CFLAGS} ${LDFLAGS} -o libisc-nosymtbl.la -rpath ${libdir} \
+ 		-version-info ${LIBINTERFACE}:${LIBREVISION}:${LIBAGE} \
+-		${OBJS} ${LIBS}
++		${OBJS} ${LIBS} ${UNWINDERLIB}
+ 
+ timestamp: libisc.@A@ libisc-nosymtbl.@A@
+ 	touch timestamp
