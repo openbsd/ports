@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2017/07/26 22:45:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2017/07/28 00:03:46 espie Exp $
 
 COMMENT=	Qt-based 2D CAD system
 
@@ -27,7 +27,8 @@ NO_TEST=	Yes
 PORTHOME=	${WRKDIR}
 
 MAKE_ENV+=	QTDIR=${MODQT_LIBDIR} \
-		MAKE=${MAKE_PROGRAM}
+		MAKE=${MAKE_PROGRAM} \
+		CC='${CC}' CXX='${CXX}'
 
 SUBST_VARS=	CXXFLAGS LOCALBASE MODQT_LIBDIR
 
