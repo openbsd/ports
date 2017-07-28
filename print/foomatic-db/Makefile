@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.44 2017/04/04 21:24:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2017/07/28 07:46:46 ajacoutot Exp $
 
 PKG_ARCH=		*
 
 COMMENT=		Foomatic PPD data
 
-V=			20161003
+V=			20170503
 DISTNAME=		foomatic-db-4.0-${V}
 PKGNAME=		foomatic-db-4.0.${V}
-REVISION=		0
 
 CATEGORIES=		print
 
@@ -20,7 +19,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 # tarballs are only available for a 24 hour period
 #MASTER_SITES=		http://www.openprinting.org/download/foomatic/
-MASTER_SITES=		http://pkgs.fedoraproject.org/repo/extras/foomatic-db/foomatic-db-4.0-${V}${EXTRACT_SUFX}/49caa396ebc8324a9d68179fc025fa60/
+MASTER_SITES=		http://pkgs.fedoraproject.org/repo/extras/foomatic-db/foomatic-db-4.0-${V}${EXTRACT_SUFX}/sha512/f2e0f4e70f04cc9d89bd10facf58a5e5d18f4c93e42fd7ac62b9c4679a9e4654d6c2d161cf7deb7f0def9f4fc37708adc78cf55a14d094d1e202b524bb558801/
 
 BUILD_DEPENDS=		print/cups,-libs
 
