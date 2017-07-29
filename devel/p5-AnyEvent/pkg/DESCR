@@ -1,5 +1,5 @@
-AnyEvent provides an identical interface to multiple event loops. This
-allows module authors to utilise an event loop without forcing module users
-to use the same event loop (as only a single event loop can coexist
-peacefully at any one time). The interface itself is vaguely similar but
-not identical to the Event module.
+AnyEvent provides a uniform interface to various event loops.  This
+allows module authors to use event loop functionality without forcing
+module users to use a specific event loop implementation (since
+more than one event loop cannot coexist peacefully).  The interface
+itself is vaguely similar, but not identical to the Event module.
