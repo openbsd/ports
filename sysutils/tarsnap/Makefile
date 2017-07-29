@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.13 2017/07/16 01:52:10 jturner Exp $
+# $OpenBSD: Makefile,v 1.14 2017/07/29 18:21:16 jturner Exp $
 
 COMMENT=		client for the tarsnap.com online encrypted backup service
-V=			1.0.38
+V=			1.0.39
 DISTNAME=		tarsnap-autoconf-${V}
 PKGNAME=		tarsnap-${V}
 CATEGORIES=		sysutils
