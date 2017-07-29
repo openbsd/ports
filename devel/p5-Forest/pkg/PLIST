@@ -1,0 +1,51 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/07/29 10:06:17 bluhm Exp $
+${P5SITE}/Forest/
+${P5SITE}/Forest.pm
+${P5SITE}/Forest/Tree/
+${P5SITE}/Forest/Tree.pm
+${P5SITE}/Forest/Tree/Builder/
+${P5SITE}/Forest/Tree/Builder.pm
+${P5SITE}/Forest/Tree/Builder/Callback.pm
+${P5SITE}/Forest/Tree/Builder/SimpleTextFile.pm
+${P5SITE}/Forest/Tree/Constructor.pm
+${P5SITE}/Forest/Tree/Indexer/
+${P5SITE}/Forest/Tree/Indexer.pm
+${P5SITE}/Forest/Tree/Indexer/SimpleUIDIndexer.pm
+${P5SITE}/Forest/Tree/Loader/
+${P5SITE}/Forest/Tree/Loader.pm
+${P5SITE}/Forest/Tree/Loader/SimpleUIDLoader.pm
+${P5SITE}/Forest/Tree/Pure.pm
+${P5SITE}/Forest/Tree/Reader/
+${P5SITE}/Forest/Tree/Reader.pm
+${P5SITE}/Forest/Tree/Reader/SimpleTextFile.pm
+${P5SITE}/Forest/Tree/Roles/
+${P5SITE}/Forest/Tree/Roles/HasNodeFormatter.pm
+${P5SITE}/Forest/Tree/Roles/JSONable.pm
+${P5SITE}/Forest/Tree/Roles/LoadWithMetaData.pm
+${P5SITE}/Forest/Tree/Roles/MetaData.pm
+${P5SITE}/Forest/Tree/Writer/
+${P5SITE}/Forest/Tree/Writer.pm
+${P5SITE}/Forest/Tree/Writer/ASCIIWithBranches.pm
+${P5SITE}/Forest/Tree/Writer/SimpleASCII.pm
+${P5SITE}/Forest/Tree/Writer/SimpleHTML.pm
+@man man/man3p/Forest.3p
+@man man/man3p/Forest::Tree.3p
+@man man/man3p/Forest::Tree::Builder.3p
+@man man/man3p/Forest::Tree::Builder::Callback.3p
+@man man/man3p/Forest::Tree::Builder::SimpleTextFile.3p
+@man man/man3p/Forest::Tree::Constructor.3p
+@man man/man3p/Forest::Tree::Indexer.3p
+@man man/man3p/Forest::Tree::Indexer::SimpleUIDIndexer.3p
+@man man/man3p/Forest::Tree::Loader.3p
+@man man/man3p/Forest::Tree::Loader::SimpleUIDLoader.3p
+@man man/man3p/Forest::Tree::Pure.3p
+@man man/man3p/Forest::Tree::Reader.3p
+@man man/man3p/Forest::Tree::Reader::SimpleTextFile.3p
+@man man/man3p/Forest::Tree::Roles::HasNodeFormatter.3p
+@man man/man3p/Forest::Tree::Roles::JSONable.3p
+@man man/man3p/Forest::Tree::Roles::LoadWithMetaData.3p
+@man man/man3p/Forest::Tree::Roles::MetaData.3p
+@man man/man3p/Forest::Tree::Writer.3p
+@man man/man3p/Forest::Tree::Writer::ASCIIWithBranches.3p
+@man man/man3p/Forest::Tree::Writer::SimpleASCII.3p
+@man man/man3p/Forest::Tree::Writer::SimpleHTML.3p
