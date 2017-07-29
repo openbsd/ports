@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1632 2017/07/29 10:44:25 bluhm Exp $
+# $OpenBSD: Makefile,v 1.1633 2017/07/29 11:49:36 bluhm Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -564,6 +564,7 @@
      SUBDIR += p5-Catalyst-Manual
      SUBDIR += p5-Catalyst-Plugin-C3
      SUBDIR += p5-Catalyst-Plugin-StackTrace
+     SUBDIR += p5-Check-ISA
      SUBDIR += p5-Class-Accessor
      SUBDIR += p5-Class-Accessor-Chained
      SUBDIR += p5-Class-Accessor-Grouped
