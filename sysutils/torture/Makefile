@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2017/04/16 14:54:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2017/07/29 14:55:55 naddy Exp $
 
 COMMENT =		set of kernel torture tools
 
 DISTNAME =		torture-1.1
-REVISION =		1
+REVISION =		2
 CATEGORIES =		sysutils
 
 MAINTAINER =		Bob Beck <beck@openbsd.org>
