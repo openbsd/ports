@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.55 2017/07/27 10:15:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.56 2017/07/29 07:48:02 jasper Exp $
 
 USE_WXNEEDED=		Yes
 
 COMMENT=		Javascript bindings for GNOME
 
 GNOME_PROJECT=		gjs
-GNOME_VERSION=		1.48.5
-REVISION=		0
+GNOME_VERSION=		1.48.6
 
 SHARED_LIBS +=  gjs                  5.0      # 0.0
 
