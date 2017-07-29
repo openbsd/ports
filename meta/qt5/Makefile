@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2017/07/29 00:07:13 zhuk Exp $
+# $OpenBSD: Makefile,v 1.5 2017/07/29 11:40:15 zhuk Exp $
 
 COMMENT-main =		C++ general-purpose toolkit, meta-package
 COMMENT-examples =	examples for Qt5, meta-package
@@ -6,6 +6,8 @@ COMMENT-examples =	examples for Qt5, meta-package
 PKGNAME =		qt5-${MODQT5_VERSION}
 PKGNAME-main =		${PKGNAME}
 PKGNAME-examples =	qt5-examples-${MODQT5_VERSION}
+
+REVISION-main =		0
 
 MULTI_PACKAGES =	-main -examples
 
@@ -24,8 +26,8 @@ RUN_DEPENDS-main =	\
 			x11/qt5/qtdeclarative,-main=${MODQT5_VERSION} \
 			x11/qt5/qtdeclarative,,-xmllistmodel=${MODQT5_VERSION} \
 			x11/qt5/qtgamepad,-main=${MODQT5_VERSION} \
-			x11/qt5/qtgraphicaleffects,-main=${MODQT5_VERSION} \
-			x11/qt5/qtimageformats,-main=${MODQT5_VERSION} \
+			x11/qt5/qtgraphicaleffects=${MODQT5_VERSION} \
+			x11/qt5/qtimageformats=${MODQT5_VERSION} \
 			x11/qt5/qtlocation,-main=${MODQT5_VERSION} \
 			x11/qt5/qtmultimedia,-main=${MODQT5_VERSION} \
 			x11/qt5/qtnetworkauth,-main=${MODQT5_VERSION} \
@@ -44,9 +46,9 @@ RUN_DEPENDS-main =	\
 			x11/qt5/qttranslations=${MODQT5_VERSION} \
 			x11/qt5/qtvirtualkeyboard,-main=${MODQT5_VERSION} \
 			x11/qt5/qtwebchannel,-main=${MODQT5_VERSION} \
-			x11/qt5/qtwebkit,-main=${MODQT5_WEBKIT_VERSION} \
+			x11/qt5/qtwebkit=${MODQT5_WEBKIT_VERSION} \
 			x11/qt5/qtwebsockets,-main=${MODQT5_VERSION} \
-			x11/qt5/qtx11extras,-main=${MODQT5_VERSION} \
+			x11/qt5/qtx11extras=${MODQT5_VERSION} \
 			x11/qt5/qtxmlpatterns,-main=${MODQT5_VERSION} \
 
 WANTLIB-examples =
