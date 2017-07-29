@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1630 2017/07/26 22:13:34 juanfra Exp $
+# $OpenBSD: Makefile,v 1.1631 2017/07/29 06:33:45 landry Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1765,7 +1765,6 @@
      SUBDIR += xdg-user-dirs
      SUBDIR += xdg-utils
      SUBDIR += xmake
-     SUBDIR += xulrunner
      SUBDIR += yaml-cpp
      SUBDIR += yasm
      SUBDIR += zeal
