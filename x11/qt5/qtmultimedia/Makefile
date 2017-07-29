@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2017/07/26 22:45:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2017/07/29 00:07:14 zhuk Exp $
 
 QT5NAME =		QtMultimedia
 REVISION =		0
 COMMENT-main =		Qt5 multimedia components
 
-MULTI_PACKAGES =	-main -examples -qch -html -docindex
+MULTI_PACKAGES =	-main -examples
 
 SHARED_LIBS =	Qt5Multimedia		2.1
 SHARED_LIBS +=	Qt5MultimediaQuick_p	2.1
@@ -38,8 +38,8 @@ LIB_DEPENDS =		audio/openal \
 # via qtdeclarative-docindex
 
 FLAVORS =		debug
-PSEUDO_FLAVORS =	bootstrap no_examples no_qch no_html
-FLAVOR ?=		bootstrap no_examples no_qch no_html
+PSEUDO_FLAVORS =	bootstrap no_examples
+FLAVOR ?=		bootstrap no_examples
 
 MODQMAKE_ARGS =		GST_VERSION=1.0
 MODQMAKE_RECURSIVE =	No

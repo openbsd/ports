@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2017/07/26 22:45:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2017/07/29 00:07:13 zhuk Exp $
 
 # TODO: port Assimp and switch qt3d to it after Assimp >3.3.1 gets
 # released.
@@ -7,7 +7,7 @@ QT5NAME =		Qt3D
 REVISION =		0
 COMMENT-main =		Qt5 components for 3D graphics
 
-MULTI_PACKAGES =	-main -examples -qch -html -docindex
+MULTI_PACKAGES =	-main -examples
 
 SHARED_LIBS +=  Qt53DCore               1.1
 SHARED_LIBS +=  Qt53DInput              1.1
@@ -33,8 +33,6 @@ LIB_DEPENDS =		x11/qt5/qtdeclarative>=${QT5_VERSION},<${QT5_NEXT_VERSION} \
 			x11/qt5/qtgamepad>=${QT5_VERSION},<${QT5_NEXT_VERSION}
 
 FLAVORS =		debug
-PSEUDO_FLAVORS =	no_examples no_qch no_html
-FLAVOR ?=
 
 MODQMAKE_RECURSIVE =	No
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2017/07/26 22:45:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2017/07/29 00:07:14 zhuk Exp $
 
 QT5NAME =		QtDeclarative
 REVISION =		0
@@ -6,7 +6,7 @@ COMMENT-main =		Qt5 Quick and QML components
 COMMENT-xmllistmodel =	plugin for creating QML models from XML
 PKGNAME-xmllistmodel =	qt5-declarative-xmllistmodel-${VERSION}
 
-MULTI_PACKAGES =	-main -examples -qch -html -docindex -xmllistmodel
+MULTI_PACKAGES =	-main -examples -xmllistmodel
 DPB_PROPERTIES =	parallel
 
 SHARED_LIBS =		Qt5Qml			2.1
@@ -44,8 +44,8 @@ TEST_DEPENDS =		x11/qt5/qtxmlpatterns>=${QT5_VERSION},<${QT5_NEXT_VERSION}
 #     examples and tests).
 
 FLAVORS =		debug
-PSEUDO_FLAVORS =	bootstrap no_examples no_qch no_html no_xmllistmodel no_tests
-FLAVOR ?=		bootstrap no_examples no_qch no_html no_xmllistmodel no_tests
+PSEUDO_FLAVORS =	bootstrap no_examples no_xmllistmodel no_tests
+FLAVOR ?=		bootstrap no_examples no_xmllistmodel no_tests
 
 # Do not use bsd.port.arch.mk here: it's already used by Makefile.inc,
 # and the latter does some magic with BUILD_PACKAGES as well.

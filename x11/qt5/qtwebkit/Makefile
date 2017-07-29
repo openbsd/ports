@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2017/07/26 22:45:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2017/07/29 00:07:15 zhuk Exp $
 
 QT5NAME =		QtWebkit
-REVISION =		0
-COMMENT-main =		old Webkit integration framework for Qt
+REVISION =		1
+COMMENT =		old Webkit integration framework for Qt
 USE_WXNEEDED =		Yes
 DPB_PROPERTIES =	parallel
 VERSION =		${QT5_WEBKIT_VERSION}
@@ -20,8 +20,6 @@ WANTLIB += GL X11 Xext Xrender c gio-2.0 glib-2.0
 WANTLIB += gobject-2.0 gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstpbutils-1.0
 WANTLIB += gstreamer-1.0 gstvideo-1.0 icudata icui18n icuuc jpeg lzma
 WANTLIB += m png pthread sqlite3 webp xml2 xslt z gstfft-1.0
-
-MULTI_PACKAGES =	-main -html -qch -docindex
 
 MASTER_SITES =		http://download.qt.io/community_releases/${DIST_VERSION:R}/${DIST_VERSION}-final/
 
@@ -59,10 +57,9 @@ MAKE_FLAGS =		PYTHON=${MODPY_BIN} \
 			RUBY=${RUBY}
 
 FLAVORS =		debug
-PSEUDO_FLAVORS =	no_html no_tests
-FLAVOR ?=
+PSEUDO_FLAVORS =	no_tests
 
-MODQMAKE_ARGS =		WEBKIT_CONFIG+=web_audio
+#MODQMAKE_ARGS =		WEBKIT_CONFIG+=web_audio
 
 # See qtbase/tests/README for details
 TEST_IS_INTERACTIVE =	X11

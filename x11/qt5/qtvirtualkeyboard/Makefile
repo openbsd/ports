@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2017/07/26 22:45:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2017/07/29 00:07:15 zhuk Exp $
 
 QT5NAME =		QtVirtualKeyboard
 REVISION =		0
 COMMENT-main =		Qt5 virtual keyboard plugin
 
-MULTI_PACKAGES =	-main -examples -qch -html -docindex
+MULTI_PACKAGES =	-main -examples
 
 WANTLIB =  ${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5Network
 WANTLIB += Qt5Qml Qt5Quick Qt5Svg
@@ -15,7 +15,5 @@ LIB_DEPENDS =		textproc/hunspell \
 			x11/qt5/qtsvg>=${QT5_VERSION},<${QT5_NEXT_VERSION}
 
 FLAVORS =		debug
-PSEUDO_FLAVORS =	no_examples no_qch no_html
-FLAVOR ?=
 
 .include <bsd.port.mk>

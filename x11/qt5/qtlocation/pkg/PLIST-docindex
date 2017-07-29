@@ -1,6 +1,0 @@
-@comment $OpenBSD: PLIST-docindex,v 1.1 2016/12/28 01:41:24 zhuk Exp $
-@conflict qtlocation-html-<5.6.2p0
-share/doc/qt5/qtlocation/
-share/doc/qt5/qtlocation/qtlocation.index
-share/doc/qt5/qtpositioning/
-share/doc/qt5/qtpositioning/qtpositioning.index

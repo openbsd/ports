@@ -1,6 +1,0 @@
-@comment $OpenBSD: PLIST-docindex,v 1.1 2016/12/28 01:41:24 zhuk Exp $
-@conflict qtscript-html-<5.6.2p0
-share/doc/qt5/qtscript/
-share/doc/qt5/qtscript/qtscript.index
-share/doc/qt5/qtscripttools/
-share/doc/qt5/qtscripttools/qtscripttools.index

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2017/07/27 17:25:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2017/07/29 00:07:13 zhuk Exp $
 
 DISTNAME =		qtbase-opensource-src-${DIST_VERSION}
 QT5NAME =		Qt5 core
@@ -135,7 +135,6 @@ RUN_DEPENDS-tds =
 CONFIGURE_STYLE =	simple
 
 FLAVORS =		debug
-PSEUDO_FLAVORS =	no_examples
 FLAVOR ?=
 
 # readability macros
@@ -206,6 +205,7 @@ CONFIGURE_ARGS +=	-no-ssse3 -no-sse3
 CONFIGURE_ARGS +=	-no-sse2
 .endif
 
+MODULES =		devel/qmake
 MODQMAKE_ENV +=		${TEST_ENV}
 CONFIGURE_ENV +=	${MODQMAKE_ENV}
 MAKE_ENV +=		${MODQMAKE_ENV}

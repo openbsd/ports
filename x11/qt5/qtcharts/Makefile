@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2017/07/26 22:45:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2017/07/29 00:07:14 zhuk Exp $
 
 QT5NAME =		QtCharts
 REVISION =		0
 COMMENT-main =		Qt5 components for drawing 2D charts
 
-MULTI_PACKAGES =	-main -examples -qch -html -docindex
+MULTI_PACKAGES =	-main -examples
 
 SHARED_LIBS =		Qt5Charts		0.0
 
@@ -15,7 +15,5 @@ WANTLIB += m pthread
 LIB_DEPENDS =		x11/qt5/qtdeclarative>=${QT5_VERSION},<${QT5_NEXT_VERSION}
 
 FLAVORS =		debug
-PSEUDO_FLAVORS =	no_examples no_qch no_html
-FLAVOR ?=
 
 .include <bsd.port.mk>

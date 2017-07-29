@@ -1,4 +1,0 @@
-@comment $OpenBSD: PLIST-qch,v 1.2 2017/07/17 08:34:38 zhuk Exp $
-lib/qt5/
-lib/qt5/qml/
-share/doc/qt5/qtgraphicaleffects.qch

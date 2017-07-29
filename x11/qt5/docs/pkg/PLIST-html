@@ -1,4 +1,36 @@
-@comment $OpenBSD: PLIST-html,v 1.1.1.1 2017/07/28 00:34:44 zhuk Exp $
+@comment $OpenBSD: PLIST-html,v 1.2 2017/07/29 00:07:13 zhuk Exp $
+@conflict qt3d-html-*
+@conflict qtactiveqt-html-*
+@conflict qtbase-html-*
+@conflict qtcanvas3d-html-*
+@conflict qtcharts-html-*
+@conflict qtconnectivity-html-*
+@conflict qtdatavis3d-html-*
+@conflict qtdeclarative-html-*
+@conflict qtdoc-html-*
+@conflict qtgamepad-html-*
+@conflict qtgraphicaleffects-html-*
+@conflict qtimageformats-html-*
+@conflict qtlocation-html-*
+@conflict qtmultimedia-html-*
+@conflict qtnetworkauth-html-*
+@conflict qtpurchasing-html-*
+@conflict qtquickcontrols-html-*
+@conflict qtquickcontrols2-html-*
+@conflict qtremoteobjects-html-*
+@conflict qtscript-html-*
+@conflict qtscxml-html-*
+@conflict qtsensors-html-*
+@conflict qtserialbus-html-*
+@conflict qtserialport-html-*
+@conflict qtspeech-html-*
+@conflict qtsvg-html-*
+@conflict qtvirtualkeyboard-html-*
+@conflict qtwebchannel-html-*
+@conflict qtwebkit-html-*
+@conflict qtwebsockets-html-*
+@conflict qtx11extras-html-*
+@conflict qtxmlpatterns-html-*
 @pkgpath meta/qt5,-html
 @pkgpath x11/qt5/qt3d,-html
 @pkgpath x11/qt5/qtactiveqt,-html
@@ -32,38 +64,6 @@
 @pkgpath x11/qt5/qtwebsockets,-html
 @pkgpath x11/qt5/qtx11extras,-html
 @pkgpath x11/qt5/qtxmlpatterns,-html
-@conflict qt3d-html-*
-@conflict qtactiveqt-html-*
-@conflict qtbase-html-*
-@conflict qtcanvas3d-html-*
-@conflict qtcharts-html-*
-@conflict qtconnectivity-html-*
-@conflict qtdatavis3d-html-*
-@conflict qtdeclarative-html-*
-@conflict qtdoc-html-*
-@conflict qtgamepad-html-*
-@conflict qtgraphicaleffects-html-*
-@conflict qtimageformats-html-*
-@conflict qtlocation-html-*
-@conflict qtmultimedia-html-*
-@conflict qtnetworkauth-html-*
-@conflict qtpurchasing-html-*
-@conflict qtquickcontrols-html-*
-@conflict qtquickcontrols2-html-*
-@conflict qtremoteobjects-html-*
-@conflict qtscript-html-*
-@conflict qtscxml-html-*
-@conflict qtsensors-html-*
-@conflict qtserialbus-html-*
-@conflict qtserialport-html-*
-@conflict qtspeech-html-*
-@conflict qtsvg-html-*
-@conflict qtvirtualkeyboard-html-*
-@conflict qtwebchannel-html-*
-@conflict qtwebkit-html-*
-@conflict qtwebsockets-html-*
-@conflict qtx11extras-html-*
-@conflict qtxmlpatterns-html-*
 share/doc/qt5/html/
 share/doc/qt5/html/01-qdoc-manual.html
 share/doc/qt5/html/03-qdoc-commands-markup.html

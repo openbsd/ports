@@ -1,4 +1,0 @@
-qtdoc contains the main Qt Reference Documentation, which includes overviews,
-Qt topics, and examples not specific to any Qt module.
-
-This package contains compiled qdoc documentation.

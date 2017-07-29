@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2017/07/17 08:34:39 zhuk Exp $
+# $OpenBSD: Makefile,v 1.4 2017/07/29 00:07:15 zhuk Exp $
 
 # Many parts are copied from www/chromium port, so keep in sync
 
@@ -10,7 +10,7 @@ USE_WXNEEDED =		Yes
 
 SHARED_LIBS =		Qt5WebEngine		0.0
 
-MULTI_PACKAGES =	-main -examples -qch -html -docindex
+MULTI_PACKAGES =	-main -examples
 
 WANTLIB-main =		${WANTLIB}
 
@@ -43,8 +43,6 @@ LIB_DEPENDS =		\
 			x11/qt5/qtwebchannel>=${QT5_VERSION},<${QT5_NEXT_VERSION}
 
 FLAVORS =		debug
-PSEUDO_FLAVORS =	no_examples no_qch no_html
-FLAVOR ?=
 
 PATCHORIG =		.orig.port
 
@@ -97,9 +95,12 @@ MODQMAKE_ARGS =	\
 MODQMAKE_ARGS :=	${MODQMAKE_ARGS} WEBENGINE_CONFIG+=${_v}
 .endfor
 
-CHROMESRC =	${WRKSRC}/src/3rdparty/chromium
-
 MAKE_ENV =	V=1
+
+SEPARATE_BUILD =	No
+
+UNBUNDLE_LIST =	libevent
+CHROMESRC =	${WRKDIST}/src/3rdparty/chromium
 
 post-extract:
 	cd ${CHROMESRC}/third_party/ffmpeg/chromium/config/Chrome; \
@@ -115,13 +116,11 @@ post-extract:
 		${CHROMESRC}/third_party/ffmpeg/chromium/config/Chrome/openbsd/${_arch}/lib${_dir}
 .  endfor
 .endfor
-	@cd ${CHROMESRC}; \
-	${MODPY_BIN} build/linux/unbundle/remove_bundled_libraries.py \
-	    ${UNBUNDLE_LIST:C,^,base/third_party/,}; \
-	${MODPY_BIN} build/linux/unbundle/replace_gn_files.py \
-	    --system-libraries ${UNBUNDLE_LIST}
-
-UNBUNDLE_LIST =	libevent
+#	@cd ${CHROMESRC}; \
+#	${MODPY_BIN} build/linux/unbundle/remove_bundled_libraries.py \
+#	    ${UNBUNDLE_LIST:C,^,base/third_party/,}; \
+#	${MODPY_BIN} build/linux/unbundle/replace_gn_files.py \
+#	    --system-libraries ${UNBUNDLE_LIST}
 
 pre-configure:
 	@ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
@@ -186,3 +185,14 @@ sync-patches: ${_EXTRACT_COOKIE}
 	echo; \
 	echo "===> listing patches requring manual handling"; \
 	for f in $$skipped $$failed; do echo $$f; done
+
+zap-extra-patches: extract
+	mkdir -p ${PATCHDIR}.zapped
+	@cd ${PATCHDIR}; for p in patch-*; do \
+		test "$$p" = "$${p%.orig}" || continue; \
+		f=$$(awk '/^\+\+\+ / {print $$2}' $$p); \
+		if ! [ -f ${WRKDIST}/$$f ]; then \
+			echo rm "$$p"; \
+			mv "$$p" ${PATCHDIR}.zapped; \
+		fi; \
+	done

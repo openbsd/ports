@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.58 2017/07/17 08:34:37 zhuk Exp $
+# $OpenBSD: Makefile,v 1.59 2017/07/29 00:07:13 zhuk Exp $
 
      SUBDIR =
+     SUBDIR += docs
      SUBDIR += qt3d
-     SUBDIR += qtactiveqt
      SUBDIR += qtbase
-     SUBDIR += qtbase-docs
      SUBDIR += qtcanvas3d
      SUBDIR += qtcharts
      SUBDIR += qtconnectivity
      SUBDIR += qtdatavis3d
      SUBDIR += qtdeclarative,
-     SUBDIR += qtdoc
      SUBDIR += qtgamepad
      SUBDIR += qtgraphicaleffects
      SUBDIR += qtimageformats

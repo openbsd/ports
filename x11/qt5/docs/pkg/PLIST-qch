@@ -1,4 +1,36 @@
-@comment $OpenBSD: PLIST-qch,v 1.1.1.1 2017/07/28 00:34:44 zhuk Exp $
+@comment $OpenBSD: PLIST-qch,v 1.2 2017/07/29 00:07:13 zhuk Exp $
+@conflict qt3d-qch-*
+@conflict qtactiveqt-qch-*
+@conflict qtbase-qch-*
+@conflict qtcanvas3d-qch-*
+@conflict qtcharts-qch-*
+@conflict qtconnectivity-qch-*
+@conflict qtdatavis3d-qch-*
+@conflict qtdeclarative-qch-*
+@conflict qtdoc-qch-*
+@conflict qtgamepad-qch-*
+@conflict qtgraphicaleffects-qch-*
+@conflict qtimageformats-qch-*
+@conflict qtlocation-qch-*
+@conflict qtmultimedia-qch-*
+@conflict qtnetworkauth-qch-*
+@conflict qtpurchasing-qch-*
+@conflict qtquickcontrols-qch-*
+@conflict qtquickcontrols2-qch-*
+@conflict qtremoteobjects-qch-*
+@conflict qtscript-qch-*
+@conflict qtscxml-qch-*
+@conflict qtsensors-qch-*
+@conflict qtserialbus-qch-*
+@conflict qtserialport-qch-*
+@conflict qtspeech-qch-*
+@conflict qtsvg-qch-*
+@conflict qtvirtualkeyboard-qch-*
+@conflict qtwebchannel-qch-*
+@conflict qtwebkit-qch-*
+@conflict qtwebsockets-qch-*
+@conflict qtx11extras-qch-*
+@conflict qtxmlpatterns-qch-*
 @pkgpath meta/qt5,-qch
 @pkgpath x11/qt5/qt3d,-qch
 @pkgpath x11/qt5/qtactiveqt,-qch
@@ -32,38 +64,6 @@
 @pkgpath x11/qt5/qtwebsockets,-qch
 @pkgpath x11/qt5/qtx11extras,-qch
 @pkgpath x11/qt5/qtxmlpatterns,-qch
-@conflict qt3d-qch-*
-@conflict qtactiveqt-qch-*
-@conflict qtbase-qch-*
-@conflict qtcanvas3d-qch-*
-@conflict qtcharts-qch-*
-@conflict qtconnectivity-qch-*
-@conflict qtdatavis3d-qch-*
-@conflict qtdeclarative-qch-*
-@conflict qtdoc-qch-*
-@conflict qtgamepad-qch-*
-@conflict qtgraphicaleffects-qch-*
-@conflict qtimageformats-qch-*
-@conflict qtlocation-qch-*
-@conflict qtmultimedia-qch-*
-@conflict qtnetworkauth-qch-*
-@conflict qtpurchasing-qch-*
-@conflict qtquickcontrols-qch-*
-@conflict qtquickcontrols2-qch-*
-@conflict qtremoteobjects-qch-*
-@conflict qtscript-qch-*
-@conflict qtscxml-qch-*
-@conflict qtsensors-qch-*
-@conflict qtserialbus-qch-*
-@conflict qtserialport-qch-*
-@conflict qtspeech-qch-*
-@conflict qtsvg-qch-*
-@conflict qtvirtualkeyboard-qch-*
-@conflict qtwebchannel-qch-*
-@conflict qtwebkit-qch-*
-@conflict qtwebsockets-qch-*
-@conflict qtx11extras-qch-*
-@conflict qtxmlpatterns-qch-*
 share/doc/qt5/activeqt.qch
 share/doc/qt5/assistant.qch
 share/doc/qt5/qdoc.qch

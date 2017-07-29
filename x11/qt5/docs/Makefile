@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/07/28 00:34:42 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2017/07/29 00:07:13 zhuk Exp $
 
 COMMENT-html =		HTML documentation for Qt5
 COMMENT-qch =		qdoc-compiled documentation for Qt5
@@ -16,10 +16,42 @@ SUBPACKAGE ?=		-html
 WANTLIB-qch =
 WANTLIB-html =
 
-.include "../qt5.components.mk"
+DOC_COMPONENTS = \
+		qt3d \
+		qtactiveqt \
+		qtbase \
+		qtcanvas3d \
+		qtcharts \
+		qtconnectivity \
+		qtdatavis3d \
+		qtdeclarative \
+		qtdoc \
+		qtgamepad \
+		qtgraphicaleffects \
+		qtimageformats \
+		qtlocation \
+		qtmultimedia \
+		qtnetworkauth \
+		qtpurchasing \
+		qtquickcontrols \
+		qtquickcontrols2 \
+		qtremoteobjects \
+		qtscript \
+		qtscxml \
+		qtsensors \
+		qtserialbus \
+		qtserialport \
+		qtspeech \
+		qtsvg \
+		qttools \
+		qtvirtualkeyboard \
+		qtwebchannel \
+		qtwebkit \
+		qtwebsockets \
+		qtx11extras \
+		qtxmlpatterns
 
 MASTER_SITES0 =	http://download.qt.io/community_releases/${DIST_VERSION:R}/${QT5_WEBKIT_VERSION}-final/
-DOC_COMPONENTS =${QT5_COMPONENTS:Nqttranslations:Nqtwebkit-examples}
 DISTFILES =	${DOC_COMPONENTS:Nqtwebkit:C/$/-opensource-src-${QT5_DIST_VERSION}${EXTRACT_SUFX}/}
 DISTFILES +=	qtwebkit-opensource-src-${QT5_WEBKIT_VERSION}${EXTRACT_SUFX}
 

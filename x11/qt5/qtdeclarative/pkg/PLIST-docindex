@@ -1,6 +1,0 @@
-@comment $OpenBSD: PLIST-docindex,v 1.1 2016/12/28 01:41:23 zhuk Exp $
-@conflict qtdeclarative-html-<5.6.2p0
-share/doc/qt5/qtqml/
-share/doc/qt5/qtqml/qtqml.index
-share/doc/qt5/qtquick/
-share/doc/qt5/qtquick/qtquick.index

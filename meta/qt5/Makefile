@@ -1,17 +1,13 @@
-# $OpenBSD: Makefile,v 1.3 2017/07/17 08:34:37 zhuk Exp $
+# $OpenBSD: Makefile,v 1.4 2017/07/29 00:07:13 zhuk Exp $
 
 COMMENT-main =		C++ general-purpose toolkit, meta-package
 COMMENT-examples =	examples for Qt5, meta-package
-COMMENT-html =		offline HTML documentation for Qt5, meta-package
-COMMENT-qch =		offline QCH documentation for Qt5, meta-package
 
 PKGNAME =		qt5-${MODQT5_VERSION}
 PKGNAME-main =		${PKGNAME}
 PKGNAME-examples =	qt5-examples-${MODQT5_VERSION}
-PKGNAME-html =		qt5-html-${MODQT5_VERSION}
-PKGNAME-qch =		qt5-qch-${MODQT5_VERSION}
 
-MULTI_PACKAGES =	-main -examples -html -qch
+MULTI_PACKAGES =	-main -examples
 
 MODULES =		x11/qt5
 MODQT5_DEPS =		No
@@ -83,75 +79,5 @@ RUN_DEPENDS-examples =	\
 			x11/qt5/qtwebkit-examples=${MODQT5_WEBKIT_VERSION} \
 			x11/qt5/qtwebsockets,-examples=${MODQT5_VERSION} \
 			x11/qt5/qtxmlpatterns,-examples=${MODQT5_VERSION} \
-
-WANTLIB-html =
-LIB_DEPENDS-html =
-RUN_DEPENDS-html =	\
-			x11/qt5/qt3d,-html=${MODQT5_VERSION} \
-			x11/qt5/qtactiveqt,-html=${MODQT5_VERSION} \
-			x11/qt5/qtbase-docs,-html=${MODQT5_VERSION} \
-			x11/qt5/qtcanvas3d,-html=${MODQT5_VERSION} \
-			x11/qt5/qtcharts,-html=${MODQT5_VERSION} \
-			x11/qt5/qtdatavis3d,-html=${MODQT5_VERSION} \
-			x11/qt5/qtdeclarative,,-html=${MODQT5_VERSION} \
-			x11/qt5/qtdoc,-html=${MODQT5_VERSION} \
-			x11/qt5/qtgamepad,-html=${MODQT5_VERSION} \
-			x11/qt5/qtgraphicaleffects,-html=${MODQT5_VERSION} \
-			x11/qt5/qtimageformats,-html=${MODQT5_VERSION} \
-			x11/qt5/qtlocation,-html=${MODQT5_VERSION} \
-			x11/qt5/qtmultimedia,,-html=${MODQT5_VERSION} \
-			x11/qt5/qtnetworkauth,-html=${MODQT5_VERSION} \
-			x11/qt5/qtpurchasing,-html=${MODQT5_VERSION} \
-			x11/qt5/qtquickcontrols,-html=${MODQT5_VERSION} \
-			x11/qt5/qtquickcontrols2,-html=${MODQT5_VERSION} \
-			x11/qt5/qtremoteobjects,-html=${MODQT5_VERSION} \
-			x11/qt5/qtscript,-html=${MODQT5_VERSION} \
-			x11/qt5/qtscxml,-html=${MODQT5_VERSION} \
-			x11/qt5/qtsensors,-html=${MODQT5_VERSION} \
-			x11/qt5/qtserialbus,-html=${MODQT5_VERSION} \
-			x11/qt5/qtserialport,-html=${MODQT5_VERSION} \
-			x11/qt5/qtspeech,-html=${MODQT5_VERSION} \
-			x11/qt5/qtsvg,-html=${MODQT5_VERSION} \
-			x11/qt5/qtvirtualkeyboard,-html=${MODQT5_VERSION} \
-			x11/qt5/qtwebchannel,-html=${MODQT5_VERSION} \
-			x11/qt5/qtwebkit,-html=${MODQT5_WEBKIT_VERSION} \
-			x11/qt5/qtwebsockets,-html=${MODQT5_VERSION} \
-			x11/qt5/qtx11extras,-html=${MODQT5_VERSION} \
-			x11/qt5/qtxmlpatterns,-html=${MODQT5_VERSION} \
-
-WANTLIB-qch =
-LIB_DEPENDS-qch =
-RUN_DEPENDS-qch =	\
-			x11/qt5/qt3d,-qch=${MODQT5_VERSION} \
-			x11/qt5/qtactiveqt,-qch=${MODQT5_VERSION} \
-			x11/qt5/qtbase-docs,-qch=${MODQT5_VERSION} \
-			x11/qt5/qtcanvas3d,-qch=${MODQT5_VERSION} \
-			x11/qt5/qtcharts,-qch=${MODQT5_VERSION} \
-			x11/qt5/qtdatavis3d,-qch=${MODQT5_VERSION} \
-			x11/qt5/qtdeclarative,,-qch=${MODQT5_VERSION} \
-			x11/qt5/qtdoc,-qch=${MODQT5_VERSION} \
-			x11/qt5/qtgamepad,-qch=${MODQT5_VERSION} \
-			x11/qt5/qtgraphicaleffects,-qch=${MODQT5_VERSION} \
-			x11/qt5/qtimageformats,-qch=${MODQT5_VERSION} \
-			x11/qt5/qtlocation,-qch=${MODQT5_VERSION} \
-			x11/qt5/qtmultimedia,,-qch=${MODQT5_VERSION} \
-			x11/qt5/qtnetworkauth,-qch=${MODQT5_VERSION} \
-			x11/qt5/qtpurchasing,-qch=${MODQT5_VERSION} \
-			x11/qt5/qtquickcontrols,-qch=${MODQT5_VERSION} \
-			x11/qt5/qtquickcontrols2,-qch=${MODQT5_VERSION} \
-			x11/qt5/qtremoteobjects,-qch=${MODQT5_VERSION} \
-			x11/qt5/qtscript,-qch=${MODQT5_VERSION} \
-			x11/qt5/qtscxml,-qch=${MODQT5_VERSION} \
-			x11/qt5/qtsensors,-qch=${MODQT5_VERSION} \
-			x11/qt5/qtserialbus,-qch=${MODQT5_VERSION} \
-			x11/qt5/qtserialport,-qch=${MODQT5_VERSION} \
-			x11/qt5/qtspeech,-qch=${MODQT5_VERSION} \
-			x11/qt5/qtsvg,-qch=${MODQT5_VERSION} \
-			x11/qt5/qtvirtualkeyboard,-qch=${MODQT5_VERSION} \
-			x11/qt5/qtwebchannel,-qch=${MODQT5_VERSION} \
-			x11/qt5/qtwebkit,-qch=${MODQT5_WEBKIT_VERSION} \
-			x11/qt5/qtwebsockets,-qch=${MODQT5_VERSION} \
-			x11/qt5/qtx11extras,-qch=${MODQT5_VERSION} \
-			x11/qt5/qtxmlpatterns,-qch=${MODQT5_VERSION} \
 
 .include <bsd.port.mk>

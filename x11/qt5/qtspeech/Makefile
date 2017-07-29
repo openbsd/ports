@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2017/07/26 22:45:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2017/07/29 00:07:15 zhuk Exp $
 
 QT5NAME =		QtSpeech
 REVISION =		0
 COMMENT-main =		Qt5 text-to-speech components
 
-MULTI_PACKAGES =	-main -examples -qch -html -docindex
+MULTI_PACKAGES =	-main -examples
 
 SHARED_LIBS +=  Qt5TextToSpeech		0.0
 
@@ -14,7 +14,5 @@ BUILD_DEPENDS =		x11/qt5/qtmultimedia>=${QT5_VERSION:R},<${QT5_NEXT_VERSION}
 RUN_DEPENDS =		x11/qt5/qtmultimedia>=${QT5_VERSION:R},<${QT5_NEXT_VERSION}
 
 FLAVORS =		debug
-PSEUDO_FLAVORS =	no_examples no_qch no_html
-FLAVOR ?=
 
 .include <bsd.port.mk>

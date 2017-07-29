@@ -1,6 +1,0 @@
-QtWebkit contains classes and functions for embedding web content in applications
-using the Webkit framework.
-
-QtWebkit is not maintained anymore, the QtWebEngine should be used instead.
-
-This package contains QtWebkit HTML documentation.

@@ -1,4 +1,0 @@
-@comment $OpenBSD: PLIST-docindex,v 1.1 2016/12/28 01:41:23 zhuk Exp $
-@conflict qtactiveqt-html-<5.6.2p0
-share/doc/qt5/activeqt/
-share/doc/qt5/activeqt/activeqt.index
