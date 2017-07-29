@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2017/03/12 22:09:27 bluhm Exp $
+# $OpenBSD: Makefile,v 1.20 2017/07/29 20:44:35 bluhm Exp $
 
 COMMENT =	handy web browsing in a Perl object
 
-DISTNAME =	WWW-Mechanize-1.84
+DISTNAME =	WWW-Mechanize-1.86
 
 CATEGORIES =	www
 
@@ -34,11 +34,6 @@ TEST_DEPENDS =		devel/p5-Test-Deep \
 			www/p5-HTTP-Daemon \
 			www/p5-HTTP-Message \
 			www/p5-HTTP-Server-Simple
-
-# Include Live Tests
-.ifdef LIVE_TEST
-CONFIGURE_ARGS +=	--live
-.endif
 
 PKG_ARCH =		*
 
