@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2017/07/27 11:57:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2017/07/29 01:15:52 zhuk Exp $
 
 COMMENT-main =		KDE graphics, styles and screensavers
 COMMENT-emoticons =	KDE emoticons
@@ -14,7 +14,7 @@ PKG_ARCH-mono =		*
 PKG_ARCH-nuvola =	*
 REVISION-emoticons =	2
 REVISION-main =		2
-REVISION-mono =		3
+REVISION-mono =		4
 REVISION-nuvola =	2
 
 PKGSPEC-main =		kdeartwork-${MODKDE4_SPEC}
@@ -36,6 +36,11 @@ WANTLIB-main += soprano
 
 MULTI_PACKAGES =	-main -mono -nuvola -emoticons
 
+KDE3_MONO_DISTNAME =	kdeaccessibility-3.5.10
+MASTER_SITES0 =		${MASTER_SITE_KDE:S@$@Attic/3.5.10/src/@}
+DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
+			${KDE3_MONO_DISTNAME}.tar.bz2:0
+
 BUILD_DEPENDS =		math/eigen3 \
 			x11/xscreensaver
 
@@ -49,5 +54,15 @@ LIB_DEPENDS-mono =
 LIB_DEPENDS-nuvola =
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			${MODKDE4_DEP_DIR}/libkexiv2>=${MODKDE4_DEP_VERSION}
+
+post-extract:
+	@cd ${WRKDIR}/${KDE3_MONO_DISTNAME}/IconThemes/mono; \
+	find . -type f | while read f; do \
+		if [ ! -e ${WRKSRC}/IconThemes/mono/$$f ]; then \
+			mkdir -p $$(dirname ${WRKSRC}/IconThemes/mono/$$f); \
+			echo cp $$PWD/$$f ${WRKSRC}/IconThemes/mono/$$f; \
+			cp $$f ${WRKSRC}/IconThemes/mono/$$f; \
+		fi; \
+	done
 
 .include <bsd.port.mk>
