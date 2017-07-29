@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2016/03/20 19:56:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2017/07/29 13:23:22 bluhm Exp $
 
 COMMENT =	fine grained cloning support for Moose objects
 
@@ -15,7 +15,5 @@ RUN_DEPENDS =		devel/p5-Data-Visitor>=0.24 \
 			devel/p5-Moose>=0.74 \
 			devel/p5-namespace-clean
 BUILD_DEPENDS =		${RUN_DEPENDS}
-
-TEST_DEPENDS =	devel/p5-Test-use-ok
 
 .include <bsd.port.mk>

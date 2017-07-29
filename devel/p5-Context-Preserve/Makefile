@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2017/05/13 07:52:16 benoit Exp $
+# $OpenBSD: Makefile,v 1.9 2017/07/29 13:23:22 bluhm Exp $
 
 COMMENT=		run code after a subroutine call
 
@@ -13,7 +13,6 @@ MODULES=		cpan
 PKG_ARCH=		*
 CPAN_AUTHOR =		ETHER
 
-TEST_DEPENDS =		devel/p5-Test-Exception \
-			devel/p5-Test-use-ok
+TEST_DEPENDS =		devel/p5-Test-Exception
 
 .include <bsd.port.mk>

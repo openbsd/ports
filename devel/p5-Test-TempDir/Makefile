@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2016/03/20 19:56:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2017/07/29 13:23:22 bluhm Exp $
 
 COMMENT=		temporary files support for testing
 
@@ -15,7 +15,6 @@ PKG_ARCH=		*
 RUN_DEPENDS=		devel/p5-MooseX-Types-Path-Class \
 			sysutils/p5-File-NFSLock
 TEST_DEPENDS =		devel/p5-Test-Requires \
-			devel/p5-Directory-Scratch \
-			devel/p5-Test-use-ok
+			devel/p5-Directory-Scratch
 
 .include <bsd.port.mk>

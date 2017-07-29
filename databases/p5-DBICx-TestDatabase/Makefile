@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2016/03/20 19:56:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2017/07/29 13:23:22 bluhm Exp $
 
 COMMENT =	create a temporary database from a DBIx::Class::Schema
 
@@ -14,8 +14,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 RUN_DEPENDS =	databases/p5-DBD-SQLite \
 		databases/p5-SQL-Translator
 
-TEST_DEPENDS =	databases/p5-DBIx-Class \
-		devel/p5-Test-use-ok
+TEST_DEPENDS =	databases/p5-DBIx-Class
 
 CONFIGURE_STYLE =	modinst
 

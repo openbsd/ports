@@ -1,17 +1,14 @@
-# $OpenBSD: Makefile,v 1.10 2016/03/20 19:56:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2017/07/29 13:23:22 bluhm Exp $
 
 COMMENT =	tie to an existing object
 
 MODULES =	cpan
 PKG_ARCH =	*
 DISTNAME =	Tie-ToObject-0.03
-REVISION =	2
+REVISION =	3
 CATEGORIES =	devel
 
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes
-
-BUILD_DEPENDS =	${RUN_DEPENDS}
-RUN_DEPENDS =	devel/p5-Test-use-ok
 
 .include <bsd.port.mk>

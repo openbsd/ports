@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2017/05/13 08:37:23 benoit Exp $
+# $OpenBSD: Makefile,v 1.11 2017/07/29 13:23:22 bluhm Exp $
 
 COMMENT=		automatically apply roles at object creation time
 
@@ -20,8 +20,7 @@ BUILD_DEPENDS=		${RUN_DEPENDS}
 TEST_DEPENDS=		devel/p5-Test-Exception \
 			devel/p5-Test-Fatal \
 			devel/p5-Test-Requires \
-			devel/p5-MooseX-Role-Parameterized \
-			devel/p5-Test-use-ok
+			devel/p5-MooseX-Role-Parameterized
 
 CONFIGURE_STYLE =	modbuild tiny
 

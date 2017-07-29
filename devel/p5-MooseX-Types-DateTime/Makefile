@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2016/03/20 19:56:30 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2017/07/29 13:23:22 bluhm Exp $
 
 COMMENT=		DateTime related constraints and coercions for Moose
 
@@ -17,7 +17,6 @@ RUN_DEPENDS=		devel/p5-DateTime \
 			devel/p5-Moose \
 			devel/p5-MooseX-Types>=0.30			
 BUILD_DEPENDS=		${RUN_DEPENDS}
-TEST_DEPENDS=		devel/p5-Test-use-ok \
-			devel/p5-Test-Fatal
+TEST_DEPENDS=		devel/p5-Test-Fatal
 
 .include <bsd.port.mk>
