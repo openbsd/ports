@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2017/07/27 09:34:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2017/07/30 12:57:16 espie Exp $
 
 COMMENT =	KDE widgets for showing progress of asynchronous jobs
 DISTNAME =	kjobwidgets-${VERSION}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS =	KF5JobWidgets		2.0
 
