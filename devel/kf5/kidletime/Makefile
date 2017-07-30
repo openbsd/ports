@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2017/07/27 09:34:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2017/07/30 14:40:08 espie Exp $
 
 COMMENT =		reporting of idle time of user and system
 DISTNAME =		kidletime-${VERSION}
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS =		KF5IdleTime		2.0
 

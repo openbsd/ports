@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2017/07/27 09:34:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2017/07/30 14:40:08 espie Exp $
 
 COMMENT =	KDE desktop notifications framework
 DISTNAME =	knotifications-${VERSION}
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS =	KF5Notifications	2.0
 
