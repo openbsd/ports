@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2017/07/27 09:34:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2017/07/30 12:50:58 espie Exp $
 
 COMMENT =	KDE convenience classes for DBus
 DISTNAME =	kdbusaddons-${VERSION}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS =	KF5DBusAddons		2.0
 
