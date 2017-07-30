@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2017/07/27 09:55:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2017/07/30 15:00:39 espie Exp $
 
 COMMENT =		fast Qt IMAP e-mail client
 
 DISTNAME =		trojita-0.7
-REVISION =		2
+REVISION =		3
 
 SHARED_LIBS =		trojita_plugins	2.0 # 2.0
 
