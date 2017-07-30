@@ -1,4 +1,4 @@
-$OpenBSD: patch-html_pages_about_inc_php,v 1.9 2017/05/30 21:05:44 sthen Exp $
+$OpenBSD: patch-html_pages_about_inc_php,v 1.10 2017/07/30 17:05:54 sthen Exp $
 
 Index: html/pages/about.inc.php
 --- html/pages/about.inc.php.orig
@@ -11,12 +11,3 @@ Index: html/pages/about.inc.php
  ?>
  <div class="modal fade" id="git_log" tabindex="-1" role="dialog" aria-labelledby="git_log_label" aria-hidden="true">
    <div class="modal-dialog">
-@@ -155,7 +155,7 @@ $mysql_version   = $versions['mysql_ver'];
- $netsnmp_version = $versions['netsnmp_ver'];
- $rrdtool_version = $versions['rrdtool_ver'];
- $schema_version  = $versions['db_schema'];
--$version         = `git rev-parse --short HEAD`;
-+$version         = '%LNMS_VERSION%';
- $version_date    = $versions['local_date'];
- 
- echo "

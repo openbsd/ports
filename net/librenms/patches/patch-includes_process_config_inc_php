@@ -1,16 +1,27 @@
-$OpenBSD: patch-includes_process_config_inc_php,v 1.1 2017/06/25 22:34:36 sthen Exp $
+$OpenBSD: patch-includes_process_config_inc_php,v 1.2 2017/07/30 17:05:54 sthen Exp $
+
+sql-schema/079.sql which will have been added on some systems had a bad
+path for rrdtool until patched. In older librenms versions, rrdtool path from
+the config/php files took priority, which is more suitable for a packages-based
+install, but in newer ones (without patching) it comes from the db.
 
 Index: includes/process_config.inc.php
 --- includes/process_config.inc.php.orig
 +++ includes/process_config.inc.php
-@@ -29,8 +29,8 @@ if (empty($config['email_from'])) {
+@@ -27,13 +27,9 @@ if (empty($config['email_from'])) {
+     $config['email_from'] = '"' . $config['project_name'] . '" <' . $config['email_user'] . '@' . php_uname('n') . '>';
+ }
  
- // We need rrdtool so ensure it's set
- if (empty($config['rrdtool'])) {
+-// We need rrdtool so ensure it's set
+-if (empty($config['rrdtool'])) {
 -    $config['rrdtool'] = '/usr/bin/rrdtool';
-+    $config['rrdtool'] = '/usr/local/bin/rrdtool';
- }
- if (empty($config['rrdtool_version'])) {
+-}
+-if (empty($config['rrdtool_version'])) {
 -    $config['rrdtool_version'] = 1.4;
-+    $config['rrdtool_version'] = 1.6;
- }
+-}
++// Force rrdtool config; it's under packages control.
++$config['rrdtool'] = '/usr/local/bin/rrdtool';
++$config['rrdtool_version'] = 1.6;
+ 
+ if ($config['secure_cookies']) {
+     ini_set('session.cookie_secure', 1);

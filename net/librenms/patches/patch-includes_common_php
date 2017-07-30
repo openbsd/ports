@@ -1,25 +1,30 @@
-$OpenBSD: patch-includes_common_php,v 1.12 2017/05/30 21:05:44 sthen Exp $
+$OpenBSD: patch-includes_common_php,v 1.13 2017/07/30 17:05:54 sthen Exp $
 
 Index: includes/common.php
 --- includes/common.php.orig
 +++ includes/common.php
-@@ -1100,12 +1100,14 @@ function version_info($remote = true)
+@@ -1122,7 +1122,11 @@ function version_info($remote = true)
          $output['local_sha']    = $local_sha;
          $output['local_date']   = $local_date;
          $output['local_branch'] = rtrim(`git rev-parse --abbrev-ref HEAD`);
 +    } else {
-+	$output['local_date']   = filemtime($config['install_dir'].'/CHANGELOG');
++        $output['local_ver']    = '%LNMS_VERSION%';
++        $output['local_date']   = filemtime($config['install_dir'].'/CHANGELOG');
      }
-     $output['db_schema']   = get_db_schema();
++
+     $output['db_schema']   = get_db_schema() ?: '?';
      $output['php_ver']     = phpversion();
-     $output['mysql_ver']   = dbFetchCell('SELECT version()');
-     $output['rrdtool_ver'] = implode(' ', array_slice(explode(' ', shell_exec($config['rrdtool'].' --version |head -n1')), 1, 1));
--    $output['netsnmp_ver'] = str_replace('version: ', '', rtrim(shell_exec($config['snmpget'].' --version 2>&1')));
-+    $output['netsnmp_ver'] = str_replace('version: ', '', rtrim(shell_exec($config['snmpget'].' -V 2>&1')));
+     $output['mysql_ver']   = dbIsConnected() ? dbFetchCell('SELECT version()') : '?';
+@@ -1130,7 +1134,7 @@ function version_info($remote = true)
+         ($config['rrdtool'] ?: 'rrdtool') . ' --version |head -n1'
+     )), 1, 1)));
+     $output['netsnmp_ver'] = str_replace('version: ', '', rtrim(shell_exec(
+-        ($config['snmpget'] ?: 'snmpget').' --version 2>&1'
++        ($config['snmpget'] ?: 'snmpget').' -V 2>&1'
+     )));
  
      return $output;
- }//end version_info()
-@@ -1682,12 +1684,7 @@ function set_numeric($value, $default = 0)
+@@ -1708,12 +1712,7 @@ function set_numeric($value, $default = 0)
  
  function check_git_exists()
  {

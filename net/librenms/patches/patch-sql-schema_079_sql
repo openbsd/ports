@@ -1,0 +1,8 @@
+$OpenBSD: patch-sql-schema_079_sql,v 1.1 2017/07/30 17:05:54 sthen Exp $
+
+Index: sql-schema/079.sql
+--- sql-schema/079.sql.orig
++++ sql-schema/079.sql
+@@ -1 +1 @@
+-INSERT INTO config (config_name,config_value,config_default,config_descr,config_group,config_group_order,config_sub_group,config_sub_group_order,config_hidden,config_disabled) values ('rrdtool','/usr/bin/rrdtool','/usr/bin/rrdtool','Path to rrdtool','external',0,'rrdtool',0,'0','0'), ('rrdtool_tune','false','false','Auto tune maximum value for rrd port files','external',0,'rrdtool',0,'0','0');
++INSERT INTO config (config_name,config_value,config_default,config_descr,config_group,config_group_order,config_sub_group,config_sub_group_order,config_hidden,config_disabled) values ('rrdtool','/usr/local/bin/rrdtool','/usr/local/bin/rrdtool','Path to rrdtool','external',0,'rrdtool',0,'0','0'), ('rrdtool_tune','false','false','Auto tune maximum value for rrd port files','external',0,'rrdtool',0,'0','0');

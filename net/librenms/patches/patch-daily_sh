@@ -1,4 +1,4 @@
-$OpenBSD: patch-daily_sh,v 1.16 2017/05/30 21:05:44 sthen Exp $
+$OpenBSD: patch-daily_sh,v 1.17 2017/07/30 17:05:54 sthen Exp $
 
 Index: daily.sh
 --- daily.sh.orig
@@ -43,7 +43,7 @@ Index: daily.sh
          if [[ "$up" == "0" ]]; then
              $DAILY_SCRIPT no-code-update
              exit
-@@ -161,12 +161,12 @@ main () {
+@@ -163,12 +163,12 @@ main () {
              no-code-update)
                  # Updates of the code are disabled, just check for schema updates
                  # and clean up the db.
