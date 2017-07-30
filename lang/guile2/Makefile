@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.13 2017/05/31 08:08:16 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2017/07/30 06:51:09 ajacoutot Exp $
+
+# When updating, check that x11/gnome/aisleriot MODGNOME_CPPFLAGS references the
+# proper guile2 includes directory
 
 COMMENT=		GNU's Ubiquitous Intelligent Language for Extension
 
