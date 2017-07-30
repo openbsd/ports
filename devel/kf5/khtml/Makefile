@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2017/07/27 09:34:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2017/07/30 15:53:58 espie Exp $
 
 COMMENT =		original KDE HTML rendering engine
 DISTNAME =		khtml-${VERSION}
-REVISION =		1
+REVISION =		2
 
 SHARED_LIBS =		KF5KHtml	2.0
 
