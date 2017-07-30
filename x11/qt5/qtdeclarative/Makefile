@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.5 2017/07/29 00:07:14 zhuk Exp $
+# $OpenBSD: Makefile,v 1.6 2017/07/30 12:16:02 zhuk Exp $
 
 QT5NAME =		QtDeclarative
-REVISION =		0
 COMMENT-main =		Qt5 Quick and QML components
 COMMENT-xmllistmodel =	plugin for creating QML models from XML
 PKGNAME-xmllistmodel =	qt5-declarative-xmllistmodel-${VERSION}
+REVISION-main =		1
+REVISION-examples =	0
+REVISION-xmllistmodel =	0
 
 MULTI_PACKAGES =	-main -examples -xmllistmodel
 DPB_PROPERTIES =	parallel
@@ -51,7 +53,7 @@ FLAVOR ?=		bootstrap no_examples no_xmllistmodel no_tests
 # and the latter does some magic with BUILD_PACKAGES as well.
 
 # avoid circular dependency with qttools
-.if ${FLAVOR:Mno_examples} && ${FLAVOR:Mno_qch} && ${FLAVOR:Mno_html}
+.if ${FLAVOR:Mno_examples}
 MODQT5_DEPS =		No
 LIB_DEPENDS =		x11/qt5/qtbase>=${QT5_VERSION},<${QT5_NEXT_VERSION}
 .endif
