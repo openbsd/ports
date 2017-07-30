@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.15 2017/07/26 22:45:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2017/07/30 12:07:53 fcambus Exp $
 
 COMMENT =	Fasttracker II inspired MOD tracker
 
 GH_ACCOUNT =	milkytracker
 GH_PROJECT =	MilkyTracker
-GH_TAGNAME =	v1.0.0
+GH_TAGNAME =	v1.01.00
 
 PKGNAME =	${DISTNAME:L}
-REVISION =	1
 
 CATEGORIES =	audio
 
@@ -31,6 +30,8 @@ RUN_DEPENDS =	audio/jack \
 
 LIB_DEPENDS =	archivers/zziplib \
 		devel/sdl2
+
+CONFIGURE_ARGS = -DCMAKE_INSTALL_DOCDIR=${PREFIX}/share/doc/milkytracker
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications

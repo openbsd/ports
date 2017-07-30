@@ -1,0 +1,14 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2017/07/30 12:07:53 fcambus Exp $
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -178,7 +178,7 @@ if(UNIX)
+ 
+     # We can't use Brew for these due to OSX target version mismatch
+     # (we're targeting an older version of OSX to increase compatibility)
+-    if(!APPLE)
++    if(NOT APPLE)
+       find_package(LHASA)
+       find_package(ZZIPLIB)
+     endif()
