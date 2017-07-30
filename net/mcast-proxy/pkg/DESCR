@@ -1,0 +1,3 @@
+mcast-proxy is a small daemon that can be used for multicast streaming
+setups.  Run it on your gateway to have set-top boxes in your local
+network able to fetch multicast streams from your IP-TV provider.

@@ -1,0 +1,11 @@
+#!/bin/sh
+#
+# $OpenBSD: mcastproxy.rc,v 1.1.1.1 2017/07/30 21:12:36 jca Exp $
+
+daemon="${TRUEPREFIX}/sbin/mcast-proxy"
+
+. /etc/rc.d/rc.subr
+
+rc_reload=NO
+
+rc_cmd $1
