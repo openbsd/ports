@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.78 2017/07/29 18:33:18 zhuk Exp $
+# $OpenBSD: Makefile,v 1.79 2017/07/30 12:44:59 zhuk Exp $
 
 COMMENT-main =		ssh based config management framework
 COMMENT-html =		offline Ansible documentation in HTML format
@@ -25,7 +25,7 @@ MASTER_SITES =		http://releases.ansible.com/ansible/
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
 
-BUILD_DEPENDS =		textproc/sphinx
+BUILD_DEPENDS =		textproc/py-sphinx
 RUN_DEPENDS =		security/py-crypto \
 			security/py-keyczar \
 			security/py-paramiko \
