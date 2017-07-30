@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2017/06/03 11:17:58 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2017/07/30 06:51:50 ajacoutot Exp $
 
 COMMENT =		suite of solitaire card games
 
@@ -29,7 +29,7 @@ MODGNOME_TOOLS =	desktop-file-utils gtk-update-icon-cache yelp
 
 # make it possible to build when both guile and guile2 are installed
 # (takes precedence over -I${LOCALBASE}/include)
-MODGNOME_CPPFLAGS =	-I${LOCALBASE}/include/guile/2.0
+MODGNOME_CPPFLAGS =	-I${LOCALBASE}/include/guile/2.2
 
 MODGCONF2_SCHEMAS_DIR =	aisleriot
 CFLAGS += -Wno-strict-prototypes
@@ -49,6 +49,7 @@ AUTOCONF_VERSION =	2.69
 CONFIGURE_ARGS =	--with-card-theme-formats=svg
 
 CONFIGURE_ENV =		CONFIG_SHELL="${LOCALBASE}/bin/bash" \
-			GUILE="${LOCALBASE}/bin/guile2"
+			GUILE="${LOCALBASE}/bin/guile2" \
+			GUILE_CONFIG="${LOCALBASE}/bin/guile2-config"
 
 .include <bsd.port.mk>
