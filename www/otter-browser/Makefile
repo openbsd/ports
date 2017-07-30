@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2017/07/27 10:05:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2017/07/30 14:56:23 espie Exp $
 
 COMMENT =		browser aiming to recreate classic Opera (12.x) UI using Qt5
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=otter-browser/}
 DISTNAME =		otter-browser-0.9.12
-REVISION =	1
+REVISION =		2
 
 EXTRACT_SUFX =		.tar.bz2
 
