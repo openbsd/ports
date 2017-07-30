@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2017/07/27 10:05:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2017/07/30 14:42:01 espie Exp $
 
 COMMENT =	management tool for sensitive data
 
@@ -7,7 +7,7 @@ CATEGORIES =	security
 GH_ACCOUNT =	keepassxreboot
 GH_PROJECT =	keepassxc
 GH_TAGNAME =	2.2.0
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	https://keepassxc.org
 
