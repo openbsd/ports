@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2017/05/30 14:13:33 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2017/07/30 07:14:56 ajacoutot Exp $
 
 # need some kind of tls
 ONLY_FOR_ARCHS =	${CLANG_ARCHS}
@@ -39,8 +39,9 @@ pre-configure:
 		${WRKSRC}/Mono.Addins.Setup/mono-addins-setup.pc.in
 
 do-configure:
-	cd ${WRKSRC} && ${SETENV} \
+	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
 		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} ./autogen.sh
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
+		./autogen.sh ${CONFIGURE_ARGS}
 
 .include <bsd.port.mk>
