@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.arm,v 1.5 2017/05/09 04:11:18 jsg Exp $
+@comment $OpenBSD: PFRAG.arm,v 1.6 2017/07/30 05:53:03 jsg Exp $
 @pkgpath sysutils/u-boot,
 share/u-boot/
 share/u-boot/A10-OLinuXino-Lime/
@@ -96,11 +96,11 @@ share/u-boot/Orangepi_mini/u-boot
 share/u-boot/Orangepi_mini/u-boot-sunxi-with-spl.bin
 share/u-boot/Orangepi_mini/u-boot.bin
 share/u-boot/Orangepi_mini/u-boot.img
-share/u-boot/Sinovoip_BPI_M2_plus/
-share/u-boot/Sinovoip_BPI_M2_plus/u-boot
-share/u-boot/Sinovoip_BPI_M2_plus/u-boot-sunxi-with-spl.bin
-share/u-boot/Sinovoip_BPI_M2_plus/u-boot.bin
-share/u-boot/Sinovoip_BPI_M2_plus/u-boot.img
+share/u-boot/Sinovoip_BPI_M2_Plus/
+share/u-boot/Sinovoip_BPI_M2_Plus/u-boot
+share/u-boot/Sinovoip_BPI_M2_Plus/u-boot-sunxi-with-spl.bin
+share/u-boot/Sinovoip_BPI_M2_Plus/u-boot.bin
+share/u-boot/Sinovoip_BPI_M2_Plus/u-boot.img
 share/u-boot/am335x_boneblack/
 share/u-boot/am335x_boneblack/MLO
 share/u-boot/am335x_boneblack/u-boot

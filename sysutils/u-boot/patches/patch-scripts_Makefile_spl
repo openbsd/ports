@@ -1,0 +1,14 @@
+$OpenBSD: patch-scripts_Makefile_spl,v 1.1 2017/07/30 05:53:03 jsg Exp $
+
+Index: scripts/Makefile.spl
+--- scripts/Makefile.spl.orig
++++ scripts/Makefile.spl
+@@ -356,7 +356,7 @@ ifneq ($(cmd_files),)
+ endif
+ 
+ checkdtoc: tools
+-	@if ! ( echo 'import libfdt' | ( PYTHONPATH=tools python )); then \
++	@if ! ( echo 'import libfdt' | ( PYTHONPATH=tools ${MODPY_BIN} )); then \
+ 		echo '*** dtoc needs the Python libfdt library. Either '; \
+ 		echo '*** install it on your system, or try:'; \
+ 		echo '***'; \

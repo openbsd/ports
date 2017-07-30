@@ -1,0 +1,18 @@
+$OpenBSD: patch-tools_rkcommon_c,v 1.1 2017/07/30 05:53:03 jsg Exp $
+
+POSIX errno OpenBSD lacks
+
+Index: tools/rkcommon.c
+--- tools/rkcommon.c.orig
++++ tools/rkcommon.c
+@@ -17,6 +17,10 @@
+ 
+ #define DIV_ROUND_UP(n, d)	(((n) + (d) - 1) / (d))
+ 
++#ifndef EPROTO
++#define EPROTO EIO
++#endif
++
+ enum {
+ 	RK_SIGNATURE		= 0x0ff0aa55,
+ };

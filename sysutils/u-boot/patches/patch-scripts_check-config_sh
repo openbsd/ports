@@ -1,0 +1,20 @@
+$OpenBSD: patch-scripts_check-config_sh,v 1.1 2017/07/30 05:53:03 jsg Exp $
+
+Index: scripts/check-config.sh
+--- scripts/check-config.sh.orig
++++ scripts/check-config.sh
+@@ -27,12 +27,12 @@ new_adhoc="${path}.adhoc"
+ export LC_ALL=C
+ export LC_COLLATE=C
+ 
+-cat ${path} |sed -n 's/^#define \(CONFIG_[A-Za-z0-9_]*\).*/\1/p' |sort |uniq \
++cat ${path} | gsed -n 's/^#define \(CONFIG_[A-Za-z0-9_]*\).*/\1/p' |sort |uniq \
+ 	>${configs}
+ 
+ comm -23 ${configs} ${whitelist} > ${suspects}
+ 
+-cat `find ${srctree} -name "Kconfig*"` |sed -n \
++cat `find ${srctree} -name "Kconfig*"` | gsed -n \
+ 	-e 's/^\s*config *\([A-Za-z0-9_]*\).*$/CONFIG_\1/p' \
+ 	-e 's/^\s*menuconfig \([A-Za-z0-9_]*\).*$/CONFIG_\1/p' \
+ 	|sort |uniq > ${ok}

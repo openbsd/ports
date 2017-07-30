@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.20 2017/05/09 04:11:18 jsg Exp $
+#	$OpenBSD: Makefile,v 1.21 2017/07/30 05:53:03 jsg Exp $
 
 BROKEN-sparc64=	Error: the specified option is not accepted in ISB at operand 1 -- isb sy
 
@@ -6,7 +6,7 @@ FLAVORS=	aarch64 arm
 FLAVOR?=	arm
 
 COMMENT=	U-Boot firmware
-VERSION=	2017.05
+VERSION=	2017.07
 DISTNAME=	u-boot-${VERSION}
 PKGNAME=	u-boot-${FLAVOR}-${VERSION:S/-//}
 FULLPKGNAME=	${PKGNAME}
@@ -22,11 +22,14 @@ EXTRACT_SUFX=	.tar.bz2
 PKG_ARCH=	*
 
 BUILD_DEPENDS=	devel/dtc \
-		devel/swig
+		devel/swig \
+		textproc/gsed
 
 MODULES=	lang/python
 MODPY_RUNDEP=	No
-MODPY_ADJ_FILES=tools/binman/binman
+MODPY_ADJ_FILES=	tools/binman/binman.py \
+			lib/libfdt/pylibfdt/setup.py \
+			tools/dtoc/dtoc.py
 
 MAKE_ENV=	KBUILD_VERBOSE=1 \
 		PYTHON="${MODPY_BIN}"
@@ -44,8 +47,11 @@ NO_TEST=	Yes
 
 .if "${FLAVOR}" == "aarch64"
 BOARDS=\
-	dragonboard410c \
+	bananapi_m64 \
+	nanopi_neo2 \
 	orangepi_pc2 \
+	orangepi_prime \
+	orangepi_win \
 	pine64_plus \
 	rpi_3
 .elif "${FLAVOR}" == "arm"
@@ -83,7 +89,7 @@ SUNXI=\
 	orangepi_plus \
 	orangepi_plus2e \
 	orangepi_zero \
-	Sinovoip_BPI_M2_plus
+	Sinovoip_BPI_M2_Plus
 IMX=\
 	cm_fx6 \
 	mx6cuboxi \
@@ -117,6 +123,9 @@ FILES=\
 
 pre-build:
 	${SUBST_CMD} ${WRKBUILD}/tools/Makefile
+.for f in ${MODPY_ADJ_FILES}
+	${MODPY_BIN_ADJ} ${WRKSRC}/${f}
+.endfor
 
 do-build:
 .for BOARD in ${BOARDS}

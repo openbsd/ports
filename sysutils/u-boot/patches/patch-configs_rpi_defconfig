@@ -1,0 +1,15 @@
+$OpenBSD: patch-configs_rpi_defconfig,v 1.1 2017/07/30 05:53:03 jsg Exp $
+
+revert 25877d4e4c45451c5398aec3de50e0d5befe0e9f
+
+Index: configs/rpi_defconfig
+--- configs/rpi_defconfig.orig
++++ configs/rpi_defconfig
+@@ -13,6 +13,7 @@ CONFIG_CMD_MMC=y
+ CONFIG_CMD_USB=y
+ # CONFIG_CMD_FPGA is not set
+ CONFIG_CMD_GPIO=y
++CONFIG_OF_EMBED=y
+ CONFIG_DM_MMC=y
+ CONFIG_MMC_SDHCI=y
+ CONFIG_MMC_SDHCI_BCM2835=y

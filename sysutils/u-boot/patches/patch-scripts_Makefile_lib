@@ -1,0 +1,14 @@
+$OpenBSD: patch-scripts_Makefile_lib,v 1.3 2017/07/30 05:53:03 jsg Exp $
+
+Index: scripts/Makefile.lib
+--- scripts/Makefile.lib.orig
++++ scripts/Makefile.lib
+@@ -309,7 +309,7 @@ quiet_cmd_dtc = DTC     $@
+ # Bring in any U-Boot-specific include at the end of the file
+ cmd_dtc = mkdir -p $(dir ${dtc-tmp}) ; \
+ 	cat $< $(if $(u_boot_dtsi),\
+-		| sed "$$ a\#include \"$(u_boot_dtsi)\"") | \
++		| gsed "$$ a\#include \"$(u_boot_dtsi)\"") | \
+ 		$(CPP) $(dtc_cpp_flags) -x assembler-with-cpp -o $(dtc-tmp) - ; \
+ 	$(DTC) -O dtb -o $@ -b 0 \
+ 		-i $(dir $<) $(DTC_FLAGS) \

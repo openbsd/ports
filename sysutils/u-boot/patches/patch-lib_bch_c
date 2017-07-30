@@ -1,11 +1,11 @@
-$OpenBSD: patch-lib_bch_c,v 1.1 2017/05/09 04:11:18 jsg Exp $
+$OpenBSD: patch-lib_bch_c,v 1.2 2017/07/30 05:53:03 jsg Exp $
 
 POSIX errno OpenBSD doesn't have yet.
 
 Index: lib/bch.c
 --- lib/bch.c.orig
 +++ lib/bch.c
-@@ -95,6 +95,10 @@
+@@ -99,6 +99,10 @@
  #define dbg(_fmt, args...)     do {} while (0)
  #endif
  
@@ -16,3 +16,19 @@ Index: lib/bch.c
  /*
   * represent a polynomial over GF(2^m)
   */
+@@ -117,7 +121,6 @@ struct gf_poly_deg1 {
+ };
+ 
+ #ifdef USE_HOSTCC
+-#ifndef __BSD_VISIBLE
+ static int fls(int x)
+ {
+ 	int r = 32;
+@@ -146,7 +149,6 @@ static int fls(int x)
+ 	}
+ 	return r;
+ }
+-#endif
+ #endif
+ 
+ /*
