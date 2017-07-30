@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/06/22 23:10:00 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/07/30 16:05:25 nigel Exp $
 lib/python${MODPY_VERSION}/site-packages/iso3166/
 lib/python${MODPY_VERSION}/site-packages/iso3166-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/iso3166-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -7,5 +7,5 @@ lib/python${MODPY_VERSION}/site-packages/iso3166-${MODPY_EGG_VERSION}-py${MODPY_
 lib/python${MODPY_VERSION}/site-packages/iso3166-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
 lib/python${MODPY_VERSION}/site-packages/iso3166-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/iso3166/__init__.py
-${MODPY_COMMENT} lib/python${MODPY_VERSION}/site-packages/iso3166/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/iso3166/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/iso3166/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
