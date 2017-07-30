@@ -1,0 +1,21 @@
+$OpenBSD: patch-lib_Alien_wxWidgets_Utility_pm,v 1.1 2017/07/30 07:20:47 ajacoutot Exp $
+
+Index: lib/Alien/wxWidgets/Utility.pm
+--- lib/Alien/wxWidgets/Utility.pm.orig
++++ lib/Alien/wxWidgets/Utility.pm
+@@ -81,6 +81,7 @@ sub awx_cc_is_gcc {
+     my( $cc ) = @_;
+ 
+     return    scalar( awx_capture( "$cc --version" ) =~ m/g(cc|\+\+)/i ) # 3.x
++           || scalar( awx_capture( "$cc --version" ) =~ m/clang/i) # clang
+            || scalar( awx_capture( "$cc" ) =~ m/gcc/i );          # 2.95
+ }
+ 
+@@ -115,6 +116,7 @@ sub awx_cc_version {
+ 
+     if( $is_gcc ) {
+         my $ver = awx_capture( "$cc --version" );
++        return 3.4 if ($ver =~ m/clang/i);
+         $ver =~ m/(\d+\.\d+)(?:\.\d+)?/ or return 0;
+         return $1;
+     } elsif( $is_msvc ) {
