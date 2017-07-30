@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1016 2017/07/14 16:10:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.1017 2017/07/30 21:16:18 jca Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -232,6 +232,7 @@
      SUBDIR += maradns-deadwood
      SUBDIR += mbrowse
      SUBDIR += mcabber
+     SUBDIR += mcast-proxy
      SUBDIR += meanwhile
      SUBDIR += megatools
      SUBDIR += mfi
