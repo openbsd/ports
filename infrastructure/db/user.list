@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.293 2017/07/29 18:48:44 jasper Exp $
+$OpenBSD: user.list,v 1.294 2017/07/31 08:03:40 ajacoutot Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -300,3 +300,4 @@ id  user		group		port options
 789 _ftpsesame		_ftpsesame	net/ftpsesame
 790 _mtr		_mtr		net/mtr
 791 _orthanc		_orthanc	graphics/orthanc/server
+792 _mcastproxy		_mcastproxy	net/mcast-proxy
