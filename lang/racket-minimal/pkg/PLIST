@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2017/04/28 18:15:42 juanfra Exp $
+@comment $OpenBSD: PLIST,v 1.10 2017/07/31 23:13:12 juanfra Exp $
 @conflict racket-<6.2
 @pkgpath lang/racket
 @bin bin/racket
@@ -234,6 +234,8 @@ share/racket/collects/ffi/unsafe/compiled/cvector_rkt.dep
 share/racket/collects/ffi/unsafe/compiled/cvector_rkt.zo
 share/racket/collects/ffi/unsafe/compiled/define_rkt.dep
 share/racket/collects/ffi/unsafe/compiled/define_rkt.zo
+share/racket/collects/ffi/unsafe/compiled/global_rkt.dep
+share/racket/collects/ffi/unsafe/compiled/global_rkt.zo
 share/racket/collects/ffi/unsafe/compiled/nsalloc_rkt.dep
 share/racket/collects/ffi/unsafe/compiled/nsalloc_rkt.zo
 share/racket/collects/ffi/unsafe/compiled/nsstring_rkt.dep
@@ -244,7 +246,13 @@ share/racket/collects/ffi/unsafe/compiled/try-atomic_rkt.dep
 share/racket/collects/ffi/unsafe/compiled/try-atomic_rkt.zo
 share/racket/collects/ffi/unsafe/custodian.rkt
 share/racket/collects/ffi/unsafe/cvector.rkt
+share/racket/collects/ffi/unsafe/define/
 share/racket/collects/ffi/unsafe/define.rkt
+share/racket/collects/ffi/unsafe/define/compiled/
+share/racket/collects/ffi/unsafe/define/compiled/conventions_rkt.dep
+share/racket/collects/ffi/unsafe/define/compiled/conventions_rkt.zo
+share/racket/collects/ffi/unsafe/define/conventions.rkt
+share/racket/collects/ffi/unsafe/global.rkt
 share/racket/collects/ffi/unsafe/nsalloc.rkt
 share/racket/collects/ffi/unsafe/nsstring.rkt
 share/racket/collects/ffi/unsafe/objc.rkt
@@ -1068,6 +1076,7 @@ share/racket/collects/racket/private/arity.rkt
 share/racket/collects/racket/private/base.rkt
 share/racket/collects/racket/private/case.rkt
 share/racket/collects/racket/private/cert.rkt
+share/racket/collects/racket/private/check.rkt
 share/racket/collects/racket/private/class-c-new.rkt
 share/racket/collects/racket/private/class-c-old.rkt
 share/racket/collects/racket/private/class-internal.rkt
@@ -1084,6 +1093,8 @@ share/racket/collects/racket/private/compiled/case_rkt.dep
 share/racket/collects/racket/private/compiled/case_rkt.zo
 share/racket/collects/racket/private/compiled/cert_rkt.dep
 share/racket/collects/racket/private/compiled/cert_rkt.zo
+share/racket/collects/racket/private/compiled/check_rkt.dep
+share/racket/collects/racket/private/compiled/check_rkt.zo
 share/racket/collects/racket/private/compiled/class-c-new_rkt.dep
 share/racket/collects/racket/private/compiled/class-c-new_rkt.zo
 share/racket/collects/racket/private/compiled/class-c-old_rkt.dep
