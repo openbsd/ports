@@ -1,4 +1,4 @@
-# $OpenBSD: cargo.port.mk,v 1.5 2017/02/15 12:49:43 landry Exp $
+# $OpenBSD: cargo.port.mk,v 1.6 2017/07/31 13:16:08 danj Exp $
 
 CATEGORIES +=	lang/rust
 
@@ -95,8 +95,7 @@ MODCARGO_configure += ;
 .endif
 
 # Build dependencies.
-MODCARGO_BUILD_DEPENDS = devel/cargo \
-			 lang/rust
+MODCARGO_BUILD_DEPENDS = lang/rust
 
 # devel/cargo-generate-vendor is mandatory for hooks.
 BUILD_DEPENDS +=	devel/cargo-generate-vendor
