@@ -1,0 +1,14 @@
+$OpenBSD: patch-external_libabw_ExternalProject_libabw_mk,v 1.1 2017/07/31 15:39:05 robert Exp $
+
+Index: external/libabw/ExternalProject_libabw.mk
+--- external/libabw/ExternalProject_libabw.mk.orig
++++ external/libabw/ExternalProject_libabw.mk
+@@ -34,7 +34,7 @@ $(call gb_ExternalProject_get_state_target,libabw,buil
+ 			--disable-debug \
+ 			--disable-werror \
+ 			$(if $(verbose),--disable-silent-rules,--enable-silent-rules) \
+-			CXXFLAGS="$(CXXFLAGS) $(if $(SYSTEM_BOOST),$(BOOST_CPPFLAGS),\
++			CPPFLAGS="$(CPPFLAGS) $(if $(SYSTEM_BOOST),$(BOOST_CPPFLAGS),\
+ 				-I$(call gb_UnpackedTarball_get_dir,boost)) \
+ 				-DBOOST_ERROR_CODE_HEADER_ONLY -DBOOST_SYSTEM_NO_DEPRECATED" \
+ 			$(if $(CROSS_COMPILING),--build=$(BUILD_PLATFORM) --host=$(HOST_PLATFORM)) \

@@ -1,6 +1,7 @@
-$OpenBSD: patch-external_libebook_ExternalProject_libebook_mk,v 1.1 2015/05/26 08:44:58 robert Exp $
---- external/libebook/ExternalProject_libebook.mk.orig.port	Mon May 25 15:27:20 2015
-+++ external/libebook/ExternalProject_libebook.mk	Mon May 25 15:27:29 2015
+$OpenBSD: patch-external_libebook_ExternalProject_libebook_mk,v 1.2 2017/07/31 15:39:05 robert Exp $
+Index: external/libebook/ExternalProject_libebook.mk
+--- external/libebook/ExternalProject_libebook.mk.orig
++++ external/libebook/ExternalProject_libebook.mk
 @@ -27,7 +27,7 @@ $(eval $(call gb_ExternalProject_use_externals,libeboo
  $(call gb_ExternalProject_get_state_target,libebook,build) :
  	$(call gb_ExternalProject_run,build,\
@@ -10,3 +11,12 @@ $OpenBSD: patch-external_libebook_ExternalProject_libebook_mk,v 1.1 2015/05/26 0
  			--with-pic \
  			--enable-static \
  			--disable-shared \
+@@ -38,7 +38,7 @@ $(call gb_ExternalProject_get_state_target,libebook,bu
+ 			$(if $(verbose),--disable-silent-rules,--enable-silent-rules) \
+ 			--disable-werror \
+ 			--disable-weffc \
+-			CXXFLAGS="$(CXXFLAGS) $(if $(SYSTEM_BOOST),$(BOOST_CPPFLAGS),-I$(call gb_UnpackedTarball_get_dir,boost)) \
++			CPPFLAGS="$(CPPFLAGS) $(if $(SYSTEM_BOOST),$(BOOST_CPPFLAGS),-I$(call gb_UnpackedTarball_get_dir,boost)) \
+ 				-DBOOST_ERROR_CODE_HEADER_ONLY -DBOOST_SYSTEM_NO_DEPRECATED" \
+ 			XML_CFLAGS="$(LIBXML_CFLAGS)" \
+ 			XML_LIBS="$(LIBXML_LIBS)" \

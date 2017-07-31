@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.18 2017/07/03 11:02:02 robert Exp $
+$OpenBSD: patch-configure,v 1.19 2017/07/31 15:39:05 robert Exp $
 
 Index: configure
 --- configure.orig
@@ -62,6 +62,15 @@ Index: configure
  	  test "$am_cv_pathless_PYTHON" = none && break
  	  prog="import sys
  # split strings by '.' and convert to numeric.  Append some zeros
+@@ -33525,7 +33526,7 @@ $as_echo "internal" >&6; }
+     if test "$COM" = "MSC"; then
+         MYTHES_LIBS="${WORKDIR}/LinkTarget/StaticLibrary/mythes.lib"
+     else
+-        MYTHES_LIBS="-L${WORKDIR}/UnpackedTarball/mythes/.libs -lmythes-1.2"
++        MYTHES_LIBS="${WORKDIR}/UnpackedTarball/mythes/.libs/libmythes-1.2.a"
+     fi
+ fi
+ 
 @@ -37157,9 +37158,9 @@ if test "$test_kde4" = "yes" -a "$ENABLE_KDE4" = "TRUE
      qt_incdirs="$QT4INC /usr/include/qt4 /usr/include $x_includes"
      qt_libdirs="$QT4LIB /usr/lib/qt4 /usr/lib $x_libraries"
