@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.512 2017/07/30 20:36:50 landry Exp $
+# $OpenBSD: Quirks.pm,v 1.513 2017/07/31 13:17:52 danj Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -478,6 +478,7 @@ my $stem_extensions = {
 	'qtwebsockets-qch' => 'qt5-qch',
 	'qtx11extras-qch' => 'qt5-qch',
 	'qtxmlpatterns-qch' => 'qt5-qch',
+	'cargo' => 'rust',
 };
 
 my $obsolete_reason = {
