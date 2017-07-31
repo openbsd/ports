@@ -1,15 +1,16 @@
-$OpenBSD: patch-src_librustc_session_filesearch_rs,v 1.4 2017/02/15 12:52:35 landry Exp $
+$OpenBSD: patch-src_librustc_session_filesearch_rs,v 1.5 2017/07/31 13:19:13 danj Exp $
 fallback to LOCALBASE as default sysroot.
---- src/librustc/session/filesearch.rs.orig	Mon Jul  4 20:04:09 2016
-+++ src/librustc/session/filesearch.rs	Tue Jul  5 19:01:38 2016
-@@ -161,7 +161,10 @@ pub fn get_or_default_sysroot() -> PathBuf {
- 
-     match canonicalize(env::current_exe().ok()) {
-         Some(mut p) => { p.pop(); p.pop(); p }
--        None => bug!("can't determine value for sysroot")
-+        None => match option_env!("LOCALBASE") {
-+            Some(dir) => PathBuf::from(dir),
-+            None => bug!("can't determine value for sysroot"),
+Index: src/librustc/session/filesearch.rs
+--- src/librustc/session/filesearch.rs.orig
++++ src/librustc/session/filesearch.rs
+@@ -166,7 +166,10 @@ pub fn get_or_default_sysroot() -> PathBuf {
+                 None => bug!("can't determine value for sysroot")
+             }
+         }
+-        Err(ref e) => panic!(format!("failed to get current_exe: {}", e))
++        Err(ref e) => match option_env!("LOCALBASE") {
++            Some(dir) => return PathBuf::from(dir),
++            None => panic!(format!("failed to get current_exe: {}", e))
 +        }
      }
  }

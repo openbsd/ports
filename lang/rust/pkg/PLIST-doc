@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-doc,v 1.21 2017/06/17 02:06:53 danj Exp $
+@comment $OpenBSD: PLIST-doc,v 1.22 2017/07/31 13:19:13 danj Exp $
 %%i386%%
 share/doc/rust/
 share/doc/rust/html/
@@ -80,6 +80,11 @@ share/doc/rust/html/alloc/rc/sidebar-items.js
 share/doc/rust/html/alloc/rc/struct.Rc.html
 share/doc/rust/html/alloc/rc/struct.Weak.html
 share/doc/rust/html/alloc/sidebar-items.js
+share/doc/rust/html/alloc/str/
+share/doc/rust/html/alloc/str/fn.from_boxed_utf8_unchecked.html
+share/doc/rust/html/alloc/str/from_boxed_utf8_unchecked.v.html
+share/doc/rust/html/alloc/str/index.html
+share/doc/rust/html/alloc/str/sidebar-items.js
 share/doc/rust/html/book/
 share/doc/rust/html/book/README.html
 share/doc/rust/html/book/SUMMARY.html
@@ -236,7 +241,9 @@ share/doc/rust/html/book/second-edition/ch04-01-what-is-ownership.html
 share/doc/rust/html/book/second-edition/ch04-02-references-and-borrowing.html
 share/doc/rust/html/book/second-edition/ch04-03-slices.html
 share/doc/rust/html/book/second-edition/ch05-00-structs.html
-share/doc/rust/html/book/second-edition/ch05-01-method-syntax.html
+share/doc/rust/html/book/second-edition/ch05-01-defining-structs.html
+share/doc/rust/html/book/second-edition/ch05-02-example-structs.html
+share/doc/rust/html/book/second-edition/ch05-03-method-syntax.html
 share/doc/rust/html/book/second-edition/ch06-00-enums.html
 share/doc/rust/html/book/second-edition/ch06-01-defining-an-enum.html
 share/doc/rust/html/book/second-edition/ch06-02-match.html
@@ -306,10 +313,17 @@ share/doc/rust/html/book/second-edition/ch19-03-advanced-traits.html
 share/doc/rust/html/book/second-edition/ch19-04-advanced-types.html
 share/doc/rust/html/book/second-edition/ch19-05-advanced-functions-and-closures.html
 share/doc/rust/html/book/second-edition/ch20-00-final-project-a-web-server.html
+share/doc/rust/html/book/second-edition/ch20-01-single-threaded.html
+share/doc/rust/html/book/second-edition/ch20-02-slow-requests.html
+share/doc/rust/html/book/second-edition/ch20-03-designing-the-interface.html
+share/doc/rust/html/book/second-edition/ch20-04-storing-threads.html
+share/doc/rust/html/book/second-edition/ch20-05-sending-requests-via-channels.html
+share/doc/rust/html/book/second-edition/ch20-06-graceful-shutdown-and-cleanup.html
 share/doc/rust/html/book/second-edition/favicon.png
 share/doc/rust/html/book/second-edition/highlight.css
 share/doc/rust/html/book/second-edition/highlight.js
 share/doc/rust/html/book/second-edition/img/
+share/doc/rust/html/book/second-edition/img/hello.png
 share/doc/rust/html/book/second-edition/img/trpl04-01.svg
 share/doc/rust/html/book/second-edition/img/trpl04-02.svg
 share/doc/rust/html/book/second-edition/img/trpl04-03.svg
@@ -600,10 +614,14 @@ share/doc/rust/html/collections/str/SplitN.t.html
 share/doc/rust/html/collections/str/SplitTerminator.t.html
 share/doc/rust/html/collections/str/SplitWhitespace.t.html
 share/doc/rust/html/collections/str/Utf8Error.t.html
+share/doc/rust/html/collections/str/fn.from_boxed_utf8_unchecked.html
 share/doc/rust/html/collections/str/fn.from_utf8.html
+share/doc/rust/html/collections/str/fn.from_utf8_mut.html
 share/doc/rust/html/collections/str/fn.from_utf8_unchecked.html
 share/doc/rust/html/collections/str/fn.from_utf8_unchecked_mut.html
+share/doc/rust/html/collections/str/from_boxed_utf8_unchecked.v.html
 share/doc/rust/html/collections/str/from_utf8.v.html
+share/doc/rust/html/collections/str/from_utf8_mut.v.html
 share/doc/rust/html/collections/str/from_utf8_unchecked.v.html
 share/doc/rust/html/collections/str/from_utf8_unchecked_mut.v.html
 share/doc/rust/html/collections/str/index.html
@@ -654,6 +672,7 @@ share/doc/rust/html/collections/string/Drain.t.html
 share/doc/rust/html/collections/string/FromUtf16Error.t.html
 share/doc/rust/html/collections/string/FromUtf8Error.t.html
 share/doc/rust/html/collections/string/ParseError.t.html
+share/doc/rust/html/collections/string/Splice.t.html
 share/doc/rust/html/collections/string/String.t.html
 share/doc/rust/html/collections/string/ToString.t.html
 share/doc/rust/html/collections/string/enum.ParseError.html
@@ -662,6 +681,7 @@ share/doc/rust/html/collections/string/sidebar-items.js
 share/doc/rust/html/collections/string/struct.Drain.html
 share/doc/rust/html/collections/string/struct.FromUtf16Error.html
 share/doc/rust/html/collections/string/struct.FromUtf8Error.html
+share/doc/rust/html/collections/string/struct.Splice.html
 share/doc/rust/html/collections/string/struct.String.html
 share/doc/rust/html/collections/string/trait.ToString.html
 share/doc/rust/html/collections/vec/
@@ -669,12 +689,14 @@ share/doc/rust/html/collections/vec.m.html
 share/doc/rust/html/collections/vec/Drain.t.html
 share/doc/rust/html/collections/vec/IntoIter.t.html
 share/doc/rust/html/collections/vec/PlaceBack.t.html
+share/doc/rust/html/collections/vec/Splice.t.html
 share/doc/rust/html/collections/vec/Vec.t.html
 share/doc/rust/html/collections/vec/index.html
 share/doc/rust/html/collections/vec/sidebar-items.js
 share/doc/rust/html/collections/vec/struct.Drain.html
 share/doc/rust/html/collections/vec/struct.IntoIter.html
 share/doc/rust/html/collections/vec/struct.PlaceBack.html
+share/doc/rust/html/collections/vec/struct.Splice.html
 share/doc/rust/html/collections/vec/struct.Vec.html
 share/doc/rust/html/collections/vec_deque/
 share/doc/rust/html/collections/vec_deque/Drain.t.html
@@ -1333,6 +1355,10 @@ share/doc/rust/html/core/intrinsics/fn.powf64.html
 share/doc/rust/html/core/intrinsics/fn.powif32.html
 share/doc/rust/html/core/intrinsics/fn.powif64.html
 share/doc/rust/html/core/intrinsics/fn.pref_align_of.html
+share/doc/rust/html/core/intrinsics/fn.prefetch_read_data.html
+share/doc/rust/html/core/intrinsics/fn.prefetch_read_instruction.html
+share/doc/rust/html/core/intrinsics/fn.prefetch_write_data.html
+share/doc/rust/html/core/intrinsics/fn.prefetch_write_instruction.html
 share/doc/rust/html/core/intrinsics/fn.rintf32.html
 share/doc/rust/html/core/intrinsics/fn.rintf64.html
 share/doc/rust/html/core/intrinsics/fn.roundf32.html
@@ -1391,6 +1417,10 @@ share/doc/rust/html/core/intrinsics/powf64.v.html
 share/doc/rust/html/core/intrinsics/powif32.v.html
 share/doc/rust/html/core/intrinsics/powif64.v.html
 share/doc/rust/html/core/intrinsics/pref_align_of.v.html
+share/doc/rust/html/core/intrinsics/prefetch_read_data.v.html
+share/doc/rust/html/core/intrinsics/prefetch_read_instruction.v.html
+share/doc/rust/html/core/intrinsics/prefetch_write_data.v.html
+share/doc/rust/html/core/intrinsics/prefetch_write_instruction.v.html
 share/doc/rust/html/core/intrinsics/rintf32.v.html
 share/doc/rust/html/core/intrinsics/rintf64.v.html
 share/doc/rust/html/core/intrinsics/roundf32.v.html
@@ -1434,6 +1464,7 @@ share/doc/rust/html/core/iter/
 share/doc/rust/html/core/iter/Chain.t.html
 share/doc/rust/html/core/iter/Cloned.t.html
 share/doc/rust/html/core/iter/Cycle.t.html
+share/doc/rust/html/core/iter/DeprecatedStepBy.t.html
 share/doc/rust/html/core/iter/DoubleEndedIterator.t.html
 share/doc/rust/html/core/iter/Empty.t.html
 share/doc/rust/html/core/iter/Enumerate.t.html
@@ -1496,6 +1527,7 @@ share/doc/rust/html/core/iter/sources/struct.Repeat.html
 share/doc/rust/html/core/iter/struct.Chain.html
 share/doc/rust/html/core/iter/struct.Cloned.html
 share/doc/rust/html/core/iter/struct.Cycle.html
+share/doc/rust/html/core/iter/struct.DeprecatedStepBy.html
 share/doc/rust/html/core/iter/struct.Empty.html
 share/doc/rust/html/core/iter/struct.Enumerate.html
 share/doc/rust/html/core/iter/struct.Filter.html
@@ -1627,6 +1659,7 @@ share/doc/rust/html/core/mem/fn.drop.html
 share/doc/rust/html/core/mem/fn.forget.html
 share/doc/rust/html/core/mem/fn.min_align_of.html
 share/doc/rust/html/core/mem/fn.min_align_of_val.html
+share/doc/rust/html/core/mem/fn.needs_drop.html
 share/doc/rust/html/core/mem/fn.replace.html
 share/doc/rust/html/core/mem/fn.size_of.html
 share/doc/rust/html/core/mem/fn.size_of_val.html
@@ -1638,6 +1671,7 @@ share/doc/rust/html/core/mem/forget.v.html
 share/doc/rust/html/core/mem/index.html
 share/doc/rust/html/core/mem/min_align_of.v.html
 share/doc/rust/html/core/mem/min_align_of_val.v.html
+share/doc/rust/html/core/mem/needs_drop.v.html
 share/doc/rust/html/core/mem/replace.v.html
 share/doc/rust/html/core/mem/sidebar-items.js
 share/doc/rust/html/core/mem/size_of.v.html
@@ -1683,7 +1717,6 @@ share/doc/rust/html/core/ops/BitXor.t.html
 share/doc/rust/html/core/ops/BitXorAssign.t.html
 share/doc/rust/html/core/ops/BoxPlace.t.html
 share/doc/rust/html/core/ops/Boxed.t.html
-share/doc/rust/html/core/ops/Carrier.t.html
 share/doc/rust/html/core/ops/CoerceUnsized.t.html
 share/doc/rust/html/core/ops/Deref.t.html
 share/doc/rust/html/core/ops/DerefMut.t.html
@@ -1716,12 +1749,13 @@ share/doc/rust/html/core/ops/Shr.t.html
 share/doc/rust/html/core/ops/ShrAssign.t.html
 share/doc/rust/html/core/ops/Sub.t.html
 share/doc/rust/html/core/ops/SubAssign.t.html
-share/doc/rust/html/core/ops/enum.RangeInclusive.html
+share/doc/rust/html/core/ops/Try.t.html
 share/doc/rust/html/core/ops/index.html
 share/doc/rust/html/core/ops/sidebar-items.js
 share/doc/rust/html/core/ops/struct.Range.html
 share/doc/rust/html/core/ops/struct.RangeFrom.html
 share/doc/rust/html/core/ops/struct.RangeFull.html
+share/doc/rust/html/core/ops/struct.RangeInclusive.html
 share/doc/rust/html/core/ops/struct.RangeTo.html
 share/doc/rust/html/core/ops/struct.RangeToInclusive.html
 share/doc/rust/html/core/ops/trait.Add.html
@@ -1734,7 +1768,6 @@ share/doc/rust/html/core/ops/trait.BitXor.html
 share/doc/rust/html/core/ops/trait.BitXorAssign.html
 share/doc/rust/html/core/ops/trait.BoxPlace.html
 share/doc/rust/html/core/ops/trait.Boxed.html
-share/doc/rust/html/core/ops/trait.Carrier.html
 share/doc/rust/html/core/ops/trait.CoerceUnsized.html
 share/doc/rust/html/core/ops/trait.Deref.html
 share/doc/rust/html/core/ops/trait.DerefMut.html
@@ -1761,6 +1794,7 @@ share/doc/rust/html/core/ops/trait.Shr.html
 share/doc/rust/html/core/ops/trait.ShrAssign.html
 share/doc/rust/html/core/ops/trait.Sub.html
 share/doc/rust/html/core/ops/trait.SubAssign.html
+share/doc/rust/html/core/ops/trait.Try.html
 share/doc/rust/html/core/option/
 share/doc/rust/html/core/option/IntoIter.t.html
 share/doc/rust/html/core/option/Iter.t.html
@@ -1987,6 +2021,8 @@ share/doc/rust/html/core/sync/atomic/enum.Ordering.html
 share/doc/rust/html/core/sync/atomic/fence.v.html
 share/doc/rust/html/core/sync/atomic/fn.compiler_fence.html
 share/doc/rust/html/core/sync/atomic/fn.fence.html
+share/doc/rust/html/core/sync/atomic/fn.hint_core_should_pause.html
+share/doc/rust/html/core/sync/atomic/hint_core_should_pause.v.html
 share/doc/rust/html/core/sync/atomic/index.html
 share/doc/rust/html/core/sync/atomic/sidebar-items.js
 share/doc/rust/html/core/sync/atomic/struct.AtomicBool.html
@@ -2181,7 +2217,6 @@ share/doc/rust/html/implementors/core/ops/trait.BitXor.js
 share/doc/rust/html/implementors/core/ops/trait.BitXorAssign.js
 share/doc/rust/html/implementors/core/ops/trait.BoxPlace.js
 share/doc/rust/html/implementors/core/ops/trait.Boxed.js
-share/doc/rust/html/implementors/core/ops/trait.Carrier.js
 share/doc/rust/html/implementors/core/ops/trait.CoerceUnsized.js
 share/doc/rust/html/implementors/core/ops/trait.Deref.js
 share/doc/rust/html/implementors/core/ops/trait.DerefMut.js
@@ -2208,6 +2243,7 @@ share/doc/rust/html/implementors/core/ops/trait.Shr.js
 share/doc/rust/html/implementors/core/ops/trait.ShrAssign.js
 share/doc/rust/html/implementors/core/ops/trait.Sub.js
 share/doc/rust/html/implementors/core/ops/trait.SubAssign.js
+share/doc/rust/html/implementors/core/ops/trait.Try.js
 share/doc/rust/html/implementors/core/slice/
 share/doc/rust/html/implementors/core/slice/trait.SliceExt.js
 share/doc/rust/html/implementors/core/slice/trait.SliceIndex.js
@@ -2307,7 +2343,6 @@ share/doc/rust/html/implementors/std/ops/trait.BitXor.js
 share/doc/rust/html/implementors/std/ops/trait.BitXorAssign.js
 share/doc/rust/html/implementors/std/ops/trait.BoxPlace.js
 share/doc/rust/html/implementors/std/ops/trait.Boxed.js
-share/doc/rust/html/implementors/std/ops/trait.Carrier.js
 share/doc/rust/html/implementors/std/ops/trait.CoerceUnsized.js
 share/doc/rust/html/implementors/std/ops/trait.Deref.js
 share/doc/rust/html/implementors/std/ops/trait.DerefMut.js
@@ -2334,6 +2369,7 @@ share/doc/rust/html/implementors/std/ops/trait.Shr.js
 share/doc/rust/html/implementors/std/ops/trait.ShrAssign.js
 share/doc/rust/html/implementors/std/ops/trait.Sub.js
 share/doc/rust/html/implementors/std/ops/trait.SubAssign.js
+share/doc/rust/html/implementors/std/ops/trait.Try.js
 share/doc/rust/html/implementors/std/os/
 share/doc/rust/html/implementors/std/os/openbsd/
 share/doc/rust/html/implementors/std/os/openbsd/fs/
@@ -2381,7 +2417,6 @@ share/doc/rust/html/implementors/std_unicode/u_str/
 share/doc/rust/html/implementors/std_unicode/u_str/trait.UnicodeStr.js
 share/doc/rust/html/index.html
 share/doc/rust/html/intro.html
-share/doc/rust/html/jquery.js
 share/doc/rust/html/main.css
 share/doc/rust/html/main.js
 share/doc/rust/html/nomicon/
@@ -2415,9 +2450,12 @@ share/doc/rust/html/nomicon/dropck.html
 share/doc/rust/html/nomicon/exception-safety.html
 share/doc/rust/html/nomicon/exotic-sizes.html
 share/doc/rust/html/nomicon/favicon.png
+share/doc/rust/html/nomicon/ffi.html
 share/doc/rust/html/nomicon/highlight.css
 share/doc/rust/html/nomicon/highlight.js
 share/doc/rust/html/nomicon/hrtb.html
+share/doc/rust/html/nomicon/img/
+share/doc/rust/html/nomicon/img/safeandunsafe.svg
 share/doc/rust/html/nomicon/index.html
 share/doc/rust/html/nomicon/jquery.js
 share/doc/rust/html/nomicon/leaking.html
@@ -2549,6 +2587,7 @@ share/doc/rust/html/src/alloc/macros.rs.html
 share/doc/rust/html/src/alloc/oom.rs.html
 share/doc/rust/html/src/alloc/raw_vec.rs.html
 share/doc/rust/html/src/alloc/rc.rs.html
+share/doc/rust/html/src/alloc/str.rs.html
 share/doc/rust/html/src/collections/
 share/doc/rust/html/src/collections/binary_heap.rs.html
 share/doc/rust/html/src/collections/borrow.rs.html
@@ -2615,7 +2654,6 @@ share/doc/rust/html/src/core/num/dec2flt/table.rs.html
 share/doc/rust/html/src/core/num/diy_float.rs.html
 share/doc/rust/html/src/core/num/f32.rs.html
 share/doc/rust/html/src/core/num/f64.rs.html
-share/doc/rust/html/src/core/num/float_macros.rs.html
 share/doc/rust/html/src/core/num/flt2dec/
 share/doc/rust/html/src/core/num/flt2dec/decoder.rs.html
 share/doc/rust/html/src/core/num/flt2dec/estimator.rs.html
@@ -2650,6 +2688,7 @@ share/doc/rust/html/src/core/raw.rs.html
 share/doc/rust/html/src/core/result.rs.html
 share/doc/rust/html/src/core/slice/
 share/doc/rust/html/src/core/slice/mod.rs.html
+share/doc/rust/html/src/core/slice/rotate.rs.html
 share/doc/rust/html/src/core/slice/sort.rs.html
 share/doc/rust/html/src/core/str/
 share/doc/rust/html/src/core/str/mod.rs.html
@@ -3241,6 +3280,8 @@ share/doc/rust/html/std/env/var.v.html
 share/doc/rust/html/std/env/var_os.v.html
 share/doc/rust/html/std/env/vars.v.html
 share/doc/rust/html/std/env/vars_os.v.html
+share/doc/rust/html/std/eprint.m.html
+share/doc/rust/html/std/eprintln.m.html
 share/doc/rust/html/std/error/
 share/doc/rust/html/std/error/Error.t.html
 share/doc/rust/html/std/error/index.html
@@ -3840,6 +3881,10 @@ share/doc/rust/html/std/intrinsics/fn.powf64.html
 share/doc/rust/html/std/intrinsics/fn.powif32.html
 share/doc/rust/html/std/intrinsics/fn.powif64.html
 share/doc/rust/html/std/intrinsics/fn.pref_align_of.html
+share/doc/rust/html/std/intrinsics/fn.prefetch_read_data.html
+share/doc/rust/html/std/intrinsics/fn.prefetch_read_instruction.html
+share/doc/rust/html/std/intrinsics/fn.prefetch_write_data.html
+share/doc/rust/html/std/intrinsics/fn.prefetch_write_instruction.html
 share/doc/rust/html/std/intrinsics/fn.rintf32.html
 share/doc/rust/html/std/intrinsics/fn.rintf64.html
 share/doc/rust/html/std/intrinsics/fn.roundf32.html
@@ -3898,6 +3943,10 @@ share/doc/rust/html/std/intrinsics/powf64.v.html
 share/doc/rust/html/std/intrinsics/powif32.v.html
 share/doc/rust/html/std/intrinsics/powif64.v.html
 share/doc/rust/html/std/intrinsics/pref_align_of.v.html
+share/doc/rust/html/std/intrinsics/prefetch_read_data.v.html
+share/doc/rust/html/std/intrinsics/prefetch_read_instruction.v.html
+share/doc/rust/html/std/intrinsics/prefetch_write_data.v.html
+share/doc/rust/html/std/intrinsics/prefetch_write_instruction.v.html
 share/doc/rust/html/std/intrinsics/rintf32.v.html
 share/doc/rust/html/std/intrinsics/rintf64.v.html
 share/doc/rust/html/std/intrinsics/roundf32.v.html
@@ -4073,6 +4122,7 @@ share/doc/rust/html/std/iter/
 share/doc/rust/html/std/iter/Chain.t.html
 share/doc/rust/html/std/iter/Cloned.t.html
 share/doc/rust/html/std/iter/Cycle.t.html
+share/doc/rust/html/std/iter/DeprecatedStepBy.t.html
 share/doc/rust/html/std/iter/DoubleEndedIterator.t.html
 share/doc/rust/html/std/iter/Empty.t.html
 share/doc/rust/html/std/iter/Enumerate.t.html
@@ -4114,6 +4164,7 @@ share/doc/rust/html/std/iter/sidebar-items.js
 share/doc/rust/html/std/iter/struct.Chain.html
 share/doc/rust/html/std/iter/struct.Cloned.html
 share/doc/rust/html/std/iter/struct.Cycle.html
+share/doc/rust/html/std/iter/struct.DeprecatedStepBy.html
 share/doc/rust/html/std/iter/struct.Empty.html
 share/doc/rust/html/std/iter/struct.Enumerate.html
 share/doc/rust/html/std/iter/struct.Filter.html
@@ -4167,6 +4218,10 @@ share/doc/rust/html/std/macro.debug_assert_ne!.html
 share/doc/rust/html/std/macro.debug_assert_ne.html
 share/doc/rust/html/std/macro.env!.html
 share/doc/rust/html/std/macro.env.html
+share/doc/rust/html/std/macro.eprint!.html
+share/doc/rust/html/std/macro.eprint.html
+share/doc/rust/html/std/macro.eprintln!.html
+share/doc/rust/html/std/macro.eprintln.html
 share/doc/rust/html/std/macro.file!.html
 share/doc/rust/html/std/macro.file.html
 share/doc/rust/html/std/macro.format!.html
@@ -4238,6 +4293,7 @@ share/doc/rust/html/std/mem/fn.drop.html
 share/doc/rust/html/std/mem/fn.forget.html
 share/doc/rust/html/std/mem/fn.min_align_of.html
 share/doc/rust/html/std/mem/fn.min_align_of_val.html
+share/doc/rust/html/std/mem/fn.needs_drop.html
 share/doc/rust/html/std/mem/fn.replace.html
 share/doc/rust/html/std/mem/fn.size_of.html
 share/doc/rust/html/std/mem/fn.size_of_val.html
@@ -4250,6 +4306,7 @@ share/doc/rust/html/std/mem/forget.v.html
 share/doc/rust/html/std/mem/index.html
 share/doc/rust/html/std/mem/min_align_of.v.html
 share/doc/rust/html/std/mem/min_align_of_val.v.html
+share/doc/rust/html/std/mem/needs_drop.v.html
 share/doc/rust/html/std/mem/replace.v.html
 share/doc/rust/html/std/mem/sidebar-items.js
 share/doc/rust/html/std/mem/size_of.v.html
@@ -4352,7 +4409,6 @@ share/doc/rust/html/std/ops/BitXor.t.html
 share/doc/rust/html/std/ops/BitXorAssign.t.html
 share/doc/rust/html/std/ops/BoxPlace.t.html
 share/doc/rust/html/std/ops/Boxed.t.html
-share/doc/rust/html/std/ops/Carrier.t.html
 share/doc/rust/html/std/ops/CoerceUnsized.t.html
 share/doc/rust/html/std/ops/Deref.t.html
 share/doc/rust/html/std/ops/DerefMut.t.html
@@ -4385,12 +4441,13 @@ share/doc/rust/html/std/ops/Shr.t.html
 share/doc/rust/html/std/ops/ShrAssign.t.html
 share/doc/rust/html/std/ops/Sub.t.html
 share/doc/rust/html/std/ops/SubAssign.t.html
-share/doc/rust/html/std/ops/enum.RangeInclusive.html
+share/doc/rust/html/std/ops/Try.t.html
 share/doc/rust/html/std/ops/index.html
 share/doc/rust/html/std/ops/sidebar-items.js
 share/doc/rust/html/std/ops/struct.Range.html
 share/doc/rust/html/std/ops/struct.RangeFrom.html
 share/doc/rust/html/std/ops/struct.RangeFull.html
+share/doc/rust/html/std/ops/struct.RangeInclusive.html
 share/doc/rust/html/std/ops/struct.RangeTo.html
 share/doc/rust/html/std/ops/struct.RangeToInclusive.html
 share/doc/rust/html/std/ops/trait.Add.html
@@ -4403,7 +4460,6 @@ share/doc/rust/html/std/ops/trait.BitXor.html
 share/doc/rust/html/std/ops/trait.BitXorAssign.html
 share/doc/rust/html/std/ops/trait.BoxPlace.html
 share/doc/rust/html/std/ops/trait.Boxed.html
-share/doc/rust/html/std/ops/trait.Carrier.html
 share/doc/rust/html/std/ops/trait.CoerceUnsized.html
 share/doc/rust/html/std/ops/trait.Deref.html
 share/doc/rust/html/std/ops/trait.DerefMut.html
@@ -4430,6 +4486,7 @@ share/doc/rust/html/std/ops/trait.Shr.html
 share/doc/rust/html/std/ops/trait.ShrAssign.html
 share/doc/rust/html/std/ops/trait.Sub.html
 share/doc/rust/html/std/ops/trait.SubAssign.html
+share/doc/rust/html/std/ops/trait.Try.html
 share/doc/rust/html/std/option/
 share/doc/rust/html/std/option/IntoIter.t.html
 share/doc/rust/html/std/option/Iter.t.html
@@ -4879,10 +4936,14 @@ share/doc/rust/html/std/str/SplitN.t.html
 share/doc/rust/html/std/str/SplitTerminator.t.html
 share/doc/rust/html/std/str/SplitWhitespace.t.html
 share/doc/rust/html/std/str/Utf8Error.t.html
+share/doc/rust/html/std/str/fn.from_boxed_utf8_unchecked.html
 share/doc/rust/html/std/str/fn.from_utf8.html
+share/doc/rust/html/std/str/fn.from_utf8_mut.html
 share/doc/rust/html/std/str/fn.from_utf8_unchecked.html
 share/doc/rust/html/std/str/fn.from_utf8_unchecked_mut.html
+share/doc/rust/html/std/str/from_boxed_utf8_unchecked.v.html
 share/doc/rust/html/std/str/from_utf8.v.html
+share/doc/rust/html/std/str/from_utf8_mut.v.html
 share/doc/rust/html/std/str/from_utf8_unchecked.v.html
 share/doc/rust/html/std/str/from_utf8_unchecked_mut.v.html
 share/doc/rust/html/std/str/index.html
@@ -4933,6 +4994,7 @@ share/doc/rust/html/std/string/Drain.t.html
 share/doc/rust/html/std/string/FromUtf16Error.t.html
 share/doc/rust/html/std/string/FromUtf8Error.t.html
 share/doc/rust/html/std/string/ParseError.t.html
+share/doc/rust/html/std/string/Splice.t.html
 share/doc/rust/html/std/string/String.t.html
 share/doc/rust/html/std/string/ToString.t.html
 share/doc/rust/html/std/string/enum.ParseError.html
@@ -4941,6 +5003,7 @@ share/doc/rust/html/std/string/sidebar-items.js
 share/doc/rust/html/std/string/struct.Drain.html
 share/doc/rust/html/std/string/struct.FromUtf16Error.html
 share/doc/rust/html/std/string/struct.FromUtf8Error.html
+share/doc/rust/html/std/string/struct.Splice.html
 share/doc/rust/html/std/string/struct.String.html
 share/doc/rust/html/std/string/trait.ToString.html
 share/doc/rust/html/std/stringify.m.html
@@ -5004,6 +5067,8 @@ share/doc/rust/html/std/sync/atomic/enum.Ordering.html
 share/doc/rust/html/std/sync/atomic/fence.v.html
 share/doc/rust/html/std/sync/atomic/fn.compiler_fence.html
 share/doc/rust/html/std/sync/atomic/fn.fence.html
+share/doc/rust/html/std/sync/atomic/fn.hint_core_should_pause.html
+share/doc/rust/html/std/sync/atomic/hint_core_should_pause.v.html
 share/doc/rust/html/std/sync/atomic/index.html
 share/doc/rust/html/std/sync/atomic/sidebar-items.js
 share/doc/rust/html/std/sync/atomic/struct.AtomicBool.html
@@ -5301,12 +5366,14 @@ share/doc/rust/html/std/vec.m.html
 share/doc/rust/html/std/vec/Drain.t.html
 share/doc/rust/html/std/vec/IntoIter.t.html
 share/doc/rust/html/std/vec/PlaceBack.t.html
+share/doc/rust/html/std/vec/Splice.t.html
 share/doc/rust/html/std/vec/Vec.t.html
 share/doc/rust/html/std/vec/index.html
 share/doc/rust/html/std/vec/sidebar-items.js
 share/doc/rust/html/std/vec/struct.Drain.html
 share/doc/rust/html/std/vec/struct.IntoIter.html
 share/doc/rust/html/std/vec/struct.PlaceBack.html
+share/doc/rust/html/std/vec/struct.Splice.html
 share/doc/rust/html/std/vec/struct.Vec.html
 share/doc/rust/html/std/write.m.html
 share/doc/rust/html/std/writeln.m.html
@@ -5406,6 +5473,7 @@ share/doc/rust/html/unstable-book/book.js
 share/doc/rust/html/unstable-book/compiler-flags/
 share/doc/rust/html/unstable-book/compiler-flags.html
 share/doc/rust/html/unstable-book/compiler-flags/linker-flavor.html
+share/doc/rust/html/unstable-book/compiler-flags/remap-path-prefix.html
 share/doc/rust/html/unstable-book/favicon.png
 share/doc/rust/html/unstable-book/highlight.css
 share/doc/rust/html/unstable-book/highlight.js
@@ -5416,6 +5484,7 @@ share/doc/rust/html/unstable-book/language-features.html
 share/doc/rust/html/unstable-book/language-features/abi-msp430-interrupt.html
 share/doc/rust/html/unstable-book/language-features/abi-ptx.html
 share/doc/rust/html/unstable-book/language-features/abi-sysv64.html
+share/doc/rust/html/unstable-book/language-features/abi-thiscall.html
 share/doc/rust/html/unstable-book/language-features/abi-unadjusted.html
 share/doc/rust/html/unstable-book/language-features/abi-vectorcall.html
 share/doc/rust/html/unstable-book/language-features/abi-x86-interrupt.html
@@ -5433,7 +5502,6 @@ share/doc/rust/html/unstable-book/language-features/cfg-target-feature.html
 share/doc/rust/html/unstable-book/language-features/cfg-target-has-atomic.html
 share/doc/rust/html/unstable-book/language-features/cfg-target-thread-local.html
 share/doc/rust/html/unstable-book/language-features/cfg-target-vendor.html
-share/doc/rust/html/unstable-book/language-features/closure-to-fn-coercion.html
 share/doc/rust/html/unstable-book/language-features/compiler-builtins.html
 share/doc/rust/html/unstable-book/language-features/concat-idents.html
 share/doc/rust/html/unstable-book/language-features/conservative-impl-trait.html
@@ -5458,7 +5526,6 @@ share/doc/rust/html/unstable-book/language-features/link-cfg.html
 share/doc/rust/html/unstable-book/language-features/link-llvm-intrinsics.html
 share/doc/rust/html/unstable-book/language-features/linkage.html
 share/doc/rust/html/unstable-book/language-features/log-syntax.html
-share/doc/rust/html/unstable-book/language-features/loop-break-value.html
 share/doc/rust/html/unstable-book/language-features/macro-reexport.html
 share/doc/rust/html/unstable-book/language-features/macro-vis-matcher.html
 share/doc/rust/html/unstable-book/language-features/main.html
@@ -5481,7 +5548,6 @@ share/doc/rust/html/unstable-book/language-features/plugin.html
 share/doc/rust/html/unstable-book/language-features/prelude-import.html
 share/doc/rust/html/unstable-book/language-features/proc-macro.html
 share/doc/rust/html/unstable-book/language-features/quote.html
-share/doc/rust/html/unstable-book/language-features/relaxed-adts.html
 share/doc/rust/html/unstable-book/language-features/repr-align.html
 share/doc/rust/html/unstable-book/language-features/repr-simd.html
 share/doc/rust/html/unstable-book/language-features/rustc-attrs.html
@@ -5521,7 +5587,6 @@ share/doc/rust/html/unstable-book/library-features/coerce-unsized.html
 share/doc/rust/html/unstable-book/library-features/collection-placement.html
 share/doc/rust/html/unstable-book/library-features/collections-range.html
 share/doc/rust/html/unstable-book/library-features/collections.html
-share/doc/rust/html/unstable-book/library-features/command-envs.html
 share/doc/rust/html/unstable-book/library-features/compiler-builtins-lib.html
 share/doc/rust/html/unstable-book/library-features/compiler-fences.html
 share/doc/rust/html/unstable-book/library-features/concat-idents-macro.html
@@ -5554,6 +5619,7 @@ share/doc/rust/html/unstable-book/library-features/fused.html
 share/doc/rust/html/unstable-book/library-features/future-atomic-orderings.html
 share/doc/rust/html/unstable-book/library-features/get-type-id.html
 share/doc/rust/html/unstable-book/library-features/heap-api.html
+share/doc/rust/html/unstable-book/library-features/hint-core-should-pause.html
 share/doc/rust/html/unstable-book/library-features/i128.html
 share/doc/rust/html/unstable-book/library-features/inclusive-range.html
 share/doc/rust/html/unstable-book/library-features/integer-atomics.html
@@ -5564,12 +5630,14 @@ share/doc/rust/html/unstable-book/library-features/io-error-internals.html
 share/doc/rust/html/unstable-book/library-features/io.html
 share/doc/rust/html/unstable-book/library-features/ip.html
 share/doc/rust/html/unstable-book/library-features/iter-rfind.html
+share/doc/rust/html/unstable-book/library-features/iterator-step-by.html
 share/doc/rust/html/unstable-book/library-features/libstd-io-internals.html
 share/doc/rust/html/unstable-book/library-features/libstd-sys-internals.html
 share/doc/rust/html/unstable-book/library-features/libstd-thread-internals.html
 share/doc/rust/html/unstable-book/library-features/linked-list-extras.html
 share/doc/rust/html/unstable-book/library-features/lookup-host.html
 share/doc/rust/html/unstable-book/library-features/manually-drop.html
+share/doc/rust/html/unstable-book/library-features/more-io-inner-methods.html
 share/doc/rust/html/unstable-book/library-features/mpsc-select.html
 share/doc/rust/html/unstable-book/library-features/n16.html
 share/doc/rust/html/unstable-book/library-features/never-type-impls.html
@@ -5578,19 +5646,17 @@ share/doc/rust/html/unstable-book/library-features/offset-to.html
 share/doc/rust/html/unstable-book/library-features/once-poison.html
 share/doc/rust/html/unstable-book/library-features/oom.html
 share/doc/rust/html/unstable-book/library-features/option-entry.html
-share/doc/rust/html/unstable-book/library-features/osstring-shrink-to-fit.html
 share/doc/rust/html/unstable-book/library-features/panic-abort.html
 share/doc/rust/html/unstable-book/library-features/panic-unwind.html
 share/doc/rust/html/unstable-book/library-features/pattern.html
 share/doc/rust/html/unstable-book/library-features/placement-in.html
 share/doc/rust/html/unstable-book/library-features/placement-new-protocol.html
-share/doc/rust/html/unstable-book/library-features/print.html
+share/doc/rust/html/unstable-book/library-features/print-internals.html
 share/doc/rust/html/unstable-book/library-features/proc-macro-internals.html
 share/doc/rust/html/unstable-book/library-features/question-mark-carrier.html
 share/doc/rust/html/unstable-book/library-features/rand.html
 share/doc/rust/html/unstable-book/library-features/range-contains.html
 share/doc/rust/html/unstable-book/library-features/raw.html
-share/doc/rust/html/unstable-book/library-features/reverse-cmp-key.html
 share/doc/rust/html/unstable-book/library-features/rt.html
 share/doc/rust/html/unstable-book/library-features/rustc-private.html
 share/doc/rust/html/unstable-book/library-features/sanitizer-runtime-lib.html
@@ -5599,27 +5665,31 @@ share/doc/rust/html/unstable-book/library-features/shared.html
 share/doc/rust/html/unstable-book/library-features/sip-hash-13.html
 share/doc/rust/html/unstable-book/library-features/slice-concat-ext.html
 share/doc/rust/html/unstable-book/library-features/slice-get-slice.html
+share/doc/rust/html/unstable-book/library-features/slice-rotate.html
 share/doc/rust/html/unstable-book/library-features/slice-rsplit.html
 share/doc/rust/html/unstable-book/library-features/sort-internals.html
 share/doc/rust/html/unstable-book/library-features/sort-unstable.html
+share/doc/rust/html/unstable-book/library-features/splice.html
 share/doc/rust/html/unstable-book/library-features/step-by.html
 share/doc/rust/html/unstable-book/library-features/step-trait.html
+share/doc/rust/html/unstable-book/library-features/str-box-extras.html
 share/doc/rust/html/unstable-book/library-features/str-checked-slicing.html
 share/doc/rust/html/unstable-book/library-features/str-escape.html
 share/doc/rust/html/unstable-book/library-features/str-internals.html
 share/doc/rust/html/unstable-book/library-features/str-mut-extras.html
 share/doc/rust/html/unstable-book/library-features/test.html
-share/doc/rust/html/unstable-book/library-features/thread-id.html
 share/doc/rust/html/unstable-book/library-features/thread-local-internals.html
 share/doc/rust/html/unstable-book/library-features/thread-local-state.html
 share/doc/rust/html/unstable-book/library-features/toowned-clone-into.html
 share/doc/rust/html/unstable-book/library-features/trusted-len.html
 share/doc/rust/html/unstable-book/library-features/try-from.html
+share/doc/rust/html/unstable-book/library-features/try-trait.html
 share/doc/rust/html/unstable-book/library-features/unicode.html
 share/doc/rust/html/unstable-book/library-features/unique.html
 share/doc/rust/html/unstable-book/library-features/unsize.html
 share/doc/rust/html/unstable-book/library-features/utf8-error-error-len.html
 share/doc/rust/html/unstable-book/library-features/vec-remove-item.html
+share/doc/rust/html/unstable-book/library-features/vec-resize-default.html
 share/doc/rust/html/unstable-book/library-features/windows-c.html
 share/doc/rust/html/unstable-book/library-features/windows-handle.html
 share/doc/rust/html/unstable-book/library-features/windows-net.html

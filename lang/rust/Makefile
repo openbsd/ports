@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2017/07/28 09:54:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.48 2017/07/31 13:19:13 danj Exp $
 
 # snapshots are only available for amd64 and i386, for now
 ONLY_FOR_ARCHS =	amd64 i386
@@ -8,23 +8,18 @@ DPB_PROPERTIES =	parallel
 COMMENT-main =		compiler for Rust Language
 COMMENT-doc =		html documentation for rustc
 
-V =			1.18.0
+V =			1.19.0
+CARGO_V =		0.20.0
 DISTNAME =		rustc-${V}-src
 
 # rustc bootstrap version
-RBV-amd64 =		1.18.0-20170611
-RBV-i386 =		1.18.0-20170611
-RBV =			${RBV-${MACHINE_ARCH}}
-
-# cargo bootstrap version
-CBV-amd64 =		0.19.0-20170611
-CBV-i386 =		0.19.0-20170611
-CBV =			${CBV-${MACHINE_ARCH}}
+BV-amd64 =		1.19.0-20170721
+BV-i386 =		1.19.0-20170721
+BV =			${BV-${MACHINE_ARCH}}
 
 PKGNAME =		rust-${V}
 PKGNAME-main =		rust-${V}
 PKGNAME-doc =		rust-doc-${V}
-REVISION =		1
 
 MULTI_PACKAGES =	-main -doc
 
@@ -37,25 +32,21 @@ MAINTAINER =		Sebastien Marie <semarie@online.fr>
 # with portions covered by various BSD-like licenses
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB-main =		${MODGCC4_CPPWANTLIB} c m pthread z
+WANTLIB-main =		${MODGCC4_CPPWANTLIB} c crypto curl git2 m pthread ssh2 ssl z
 WANTLIB-doc =
 
-MASTER_SITES =		https://static.rust-lang.org/dist/
+MASTER_SITES =		https://static.rust-lang.org/dist/ \
+			https://dev-static.rust-lang.org/dist/
 MASTER_SITES0 =		http://kapouay.odns.fr/pub/rust/
-MASTER_SITES1 =		http://kapouay.odns.fr/pub/cargo/
 
 DIST_SUBDIR =		rust
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
-			${RBOOTSTRAP} \
-			${CBOOTSTRAP}
+			${BOOTSTRAP}
 
-RBOOTSTRAP =		${RBOOTSTRAP-${MACHINE_ARCH}}
-CBOOTSTRAP =		${CBOOTSTRAP-${MACHINE_ARCH}}
+BOOTSTRAP =		${BOOTSTRAP-${MACHINE_ARCH}}
 .for m in ${ONLY_FOR_ARCHS}
-RBOOTSTRAP-$m =		rustc-bootstrap-${m}-${RBV-$m}.tar.gz:0
-CBOOTSTRAP-$m =		cargo-bootstrap-${m}-${CBV-$m}.tar.gz:1
-SUPDISTFILES +=		${RBOOTSTRAP-$m} \
-			${CBOOTSTRAP-$m}
+BOOTSTRAP-$m =		rustc-bootstrap-${m}-${BV-$m}.tar.gz:0
+SUPDISTFILES +=		${BOOTSTRAP-$m}
 .endfor
 
 # per MACHINE_ARCH configuration
@@ -74,6 +65,10 @@ MODPY_RUNDEP =		No
 BUILD_DEPENDS +=	devel/llvm \
 			devel/cmake
 
+LIB_DEPENDS +=		net/curl \
+			devel/libgit2/libgit2 \
+			security/libssh2
+
 # libgcc.a path
 CONFIG =		${MACHINE_ARCH}-unknown-openbsd${OSREV}
 SYSV =			4.2.1
@@ -88,7 +83,8 @@ LIBESTDC_VERSION =	17.1
 
 # note: RUSTFLAGS extra flags passed to rust
 # 		-L modgcc-libs : disambiguate libestdc++.so
-MAKE_ENV =		RUSTFLAGS="-L ${WRKDIR}/modgcc-libs"
+MAKE_ENV =		RUSTFLAGS="-L ${WRKDIR}/modgcc-libs" \
+			LIBGIT2_SYS_USE_PKG_CONFIG=1
 
 # build/configuration variables
 SEPARATE_BUILD =	Yes
@@ -115,6 +111,14 @@ TEST_TARGET ?=	src/test/run-pass \
 		src/test/run-fail/pretty \
 		path/to/nowhere
 
+# - disable vendor checksum check on openssl-sys (as we patched it)
+# - SUBSTR cargo testsuite
+SUBST_VARS +=	WRKBUILD
+post-patch:
+	sed -ie 's/"files":{[^}]*}/"files":{}/' \
+		"${WRKSRC}/src/vendor/openssl-sys/.cargo-checksum.json"
+	${SUBST_CMD} ${WRKSRC}/src/tools/cargo/tests/cargotest/support/paths.rs
+
 # - check datasize limit before configuring (and building)
 pre-configure:
 	@if [ `ulimit -d` -lt 2097152 ]; then \
@@ -127,15 +131,23 @@ pre-configure:
 #   at build time)
 do-configure:
 	echo '[build]' >${WRKBUILD}/config.toml
-	echo 'rustc = "${WRKDIR}/rustc-bootstrap-${MACHINE_ARCH}-${RBV}/bin/rustc"' \
+	echo 'rustc = "${WRKDIR}/rustc-bootstrap-${MACHINE_ARCH}-${BV}/bin/rustc"' \
 		>>${WRKBUILD}/config.toml
-	echo 'cargo = "${WRKDIR}/cargo-bootstrap-${MACHINE_ARCH}-${CBV}/cargo"' \
+	echo 'cargo = "${WRKDIR}/rustc-bootstrap-${MACHINE_ARCH}-${BV}/bin/cargo"' \
 		>>${WRKBUILD}/config.toml
-	echo 'prefix = "${LOCALBASE}"' >>${WRKBUILD}/config.toml
+	echo 'python = "${MODPY_BIN}"' >>${WRKBUILD}/config.toml
 	echo 'vendor = true' >>${WRKBUILD}/config.toml
+	echo 'extended = true' >>${WRKBUILD}/config.toml
+	echo 'verbose = 2' >>${WRKBUILD}/config.toml
+
+	echo '[install]' >>${WRKBUILD}/config.toml
+	echo 'prefix = "${LOCALBASE}"' >>${WRKBUILD}/config.toml
+	echo 'sysconfdir = "${SYSCONFDIR}"' >>${WRKBUILD}/config.toml
+	echo 'mandir = "man"' >>${WRKBUILD}/config.toml
 
 	echo '[rust]' >>${WRKBUILD}/config.toml
 	echo 'channel = "stable"' >>${WRKBUILD}/config.toml
+	echo 'rpath = false' >>${WRKBUILD}/config.toml
 	echo 'codegen-tests = false' >>${WRKBUILD}/config.toml
 
 	echo '[dist]' >>${WRKBUILD}/config.toml
@@ -151,19 +163,19 @@ do-configure:
 		${WRKDIR}/modgcc-libs
 
 BUILD_BIN = cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
-	    ${MODPY_BIN} ${WRKSRC}/src/bootstrap/bootstrap.py
+	    ${MODPY_BIN} ${WRKSRC}/x.py
 
 do-build:
-	${BUILD_BIN} dist --verbose --jobs=${MAKE_JOBS}
+	${BUILD_BIN} dist --jobs=${MAKE_JOBS}
 
-COMPONENTS ?=	rustc rust-std rust-docs
+COMPONENTS ?=	rustc-${V} rust-std-${V} rust-docs-${V} cargo-${CARGO_V}
 do-install:
 	rm -rf ${WRKBUILD}/_extractdist
 .for _c in ${COMPONENTS}
 	mkdir ${WRKBUILD}/_extractdist
 	cd ${WRKBUILD}/_extractdist && tar zxf \
-		${WRKBUILD}/build/dist/${_c}-${V}-${TRIPLE_ARCH}.tar.gz
-	cd ${WRKBUILD}/_extractdist/${_c}-${V}-${TRIPLE_ARCH} && ./install.sh \
+		${WRKBUILD}/build/dist/${_c}-${TRIPLE_ARCH}.tar.gz
+	cd ${WRKBUILD}/_extractdist/${_c}-${TRIPLE_ARCH} && ./install.sh \
 		--prefix="${PREFIX}" \
 		--mandir="${PREFIX}/man"
 	rm -rf ${WRKBUILD}/_extractdist
@@ -181,12 +193,20 @@ post-install:
 		${PREFIX}/lib/rustlib/{install.log,uninstall.sh,rust-installer-version} \
 		${PREFIX}/lib/rustlib/components \
 		${PREFIX}/lib/rustlib/manifest-*
+	# install cargo bash-completion
+	mkdir -p ${PREFIX}/share/bash-completion/completions
+	mv ${PREFIX}${SYSCONFDIR}/bash_completion.d/cargo \
+		${PREFIX}/share/bash-completion/completions
+	rmdir ${PREFIX}${SYSCONFDIR}/bash_completion.d \
+		${PREFIX}${SYSCONFDIR}
 	# make a link to libgcc.a inside rustlib
 	ln -fs ${SYSLIBPATH}/libgcc.a \
 		${PREFIX}/lib/rustlib/${TRIPLE_ARCH}/lib
+	# compile python stuff
+	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py ${PREFIX}/lib/rustlib/etc
 
 do-test:
-	${BUILD_BIN} test --verbose --jobs=${MAKE_JOBS} ${TEST_TARGET}
+	${BUILD_BIN} test --jobs=${MAKE_JOBS} ${TEST_TARGET}
 
 # bootstrap target permits to regenerate the bootstrap archive
 BOOTSTRAPDIR=${WRKDIR}/rustc-bootstrap-${MACHINE_ARCH}-${V}-new
@@ -196,22 +216,21 @@ bootstrap: build
 	${MAKE} clean=fake
 	${MAKE} fake \
 		PREFIX="${BOOTSTRAPDIR}" \
-		COMPONENTS="rustc rust-std" \
+		COMPONENTS="rustc-${V} rust-std-${V} cargo-${CARGO_V}" \
 		FAKE_SETUP=""
 	rm -rf ${BOOTSTRAPDIR}/{man,share} \
 		${BOOTSTRAPDIR}/bin/rust-gdb
 	strip ${BOOTSTRAPDIR}/lib/lib*.so \
 		${BOOTSTRAPDIR}/lib/rustlib/${TRIPLE_ARCH}/lib/lib*.so
-.for _bin in rustc rustdoc
+.for _bin in rustc rustdoc cargo
 	mv ${BOOTSTRAPDIR}/bin/${_bin} \
 		${BOOTSTRAPDIR}/bin/${_bin}.bin
 	strip ${BOOTSTRAPDIR}/bin/${_bin}.bin
-	cp ${WRKDIR}/rustc-bootstrap-${MACHINE_ARCH}-${RBV}/bin/${_bin} \
+	cp ${WRKDIR}/rustc-bootstrap-${MACHINE_ARCH}-${BV}/bin/${_bin} \
 		${BOOTSTRAPDIR}/bin/${_bin}
 	LD_LIBRARY_PATH="${BOOTSTRAPDIR}/lib" \
 		ldd ${BOOTSTRAPDIR}/bin/${_bin}.bin \
 		| sed -ne 's,.* \(/.*/lib/lib.*\.so.[.0-9]*\)$$,\1,p' \
-		| xargs -r -J % cp % \
-			${BOOTSTRAPDIR}/lib
+		| xargs -r -J % cp % ${BOOTSTRAPDIR}/lib || true
 .endfor
 .include <bsd.port.mk>
