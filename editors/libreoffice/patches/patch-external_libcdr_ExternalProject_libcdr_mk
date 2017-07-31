@@ -1,0 +1,14 @@
+$OpenBSD: patch-external_libcdr_ExternalProject_libcdr_mk,v 1.1 2017/07/31 21:45:37 robert Exp $
+
+Index: external/libcdr/ExternalProject_libcdr.mk
+--- external/libcdr/ExternalProject_libcdr.mk.orig
++++ external/libcdr/ExternalProject_libcdr.mk
+@@ -36,7 +36,7 @@ $(call gb_ExternalProject_get_state_target,libcdr,buil
+ 			--disable-werror \
+ 			--disable-weffc \
+ 			$(if $(verbose),--disable-silent-rules,--enable-silent-rules) \
+-			CXXFLAGS="$(CXXFLAGS) $(if $(SYSTEM_BOOST),$(BOOST_CPPFLAGS),-I$(call gb_UnpackedTarball_get_dir,boost)) \
++			CPPFLAGS="$(CPPFLAGS) $(if $(SYSTEM_BOOST),$(BOOST_CPPFLAGS),-I$(call gb_UnpackedTarball_get_dir,boost)) \
+ 				-DBOOST_ERROR_CODE_HEADER_ONLY -DBOOST_SYSTEM_NO_DEPRECATED" \
+ 			$(if $(CROSS_COMPILING),--build=$(BUILD_PLATFORM) --host=$(HOST_PLATFORM)) \
+ 		&& $(MAKE) \

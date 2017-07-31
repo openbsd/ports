@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.19 2017/07/31 15:39:05 robert Exp $
+$OpenBSD: patch-configure,v 1.20 2017/07/31 21:45:37 robert Exp $
 
 Index: configure
 --- configure.orig
@@ -62,6 +62,15 @@ Index: configure
  	  test "$am_cv_pathless_PYTHON" = none && break
  	  prog="import sys
  # split strings by '.' and convert to numeric.  Append some zeros
+@@ -33285,7 +33286,7 @@ $as_echo "internal" >&6; }
+     if test "$COM" = "MSC"; then
+         HYPHEN_LIB="${WORKDIR}/LinkTarget/StaticLibrary/hyphen.lib"
+     else
+-        HYPHEN_LIB="-L${WORKDIR}/UnpackedTarball/hyphen/.libs -lhyphen"
++        HYPHEN_LIB="${WORKDIR}/UnpackedTarball/hyphen/.libs/libhyphen.a"
+     fi
+ fi
+ 
 @@ -33525,7 +33526,7 @@ $as_echo "internal" >&6; }
      if test "$COM" = "MSC"; then
          MYTHES_LIBS="${WORKDIR}/LinkTarget/StaticLibrary/mythes.lib"

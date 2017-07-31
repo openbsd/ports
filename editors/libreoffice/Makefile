@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.168 2017/07/31 15:39:05 robert Exp $
+# $OpenBSD: Makefile,v 1.169 2017/07/31 21:45:37 robert Exp $
 
 USE_WXNEEDED=	Yes
 
@@ -11,7 +11,7 @@ COMMENT-java=	optional integration of LibreOffice java features
 BV=		5.2
 VERSION=	${BV}.7.2
 REVISION=	1
-REVISION-main=	4
+REVISION-main=	5
 DISTNAME=	libreoffice-${VERSION}
 WRKDIST=	${WRKDIR}/libreoffice-${VERSION}
 PKGNAME=	libreoffice-${VERSION}
