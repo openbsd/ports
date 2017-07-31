@@ -1,0 +1,22 @@
+$OpenBSD: patch-CorsixTH_CMakeLists_txt,v 1.1.1.1 2017/07/31 22:14:44 bcallah Exp $
+
+Install to the correct location.
+
+Index: CorsixTH/CMakeLists.txt
+--- CorsixTH/CMakeLists.txt.orig
++++ CorsixTH/CMakeLists.txt
+@@ -212,10 +212,10 @@ IF(APPLE)
+     FIXUP_BUNDLE(${CMAKE_INSTALL_PREFIX}/CorsixTH.app \"\" \"\")
+     ")
+ ELSE()
+-  install(TARGETS CorsixTH RUNTIME DESTINATION CorsixTH)
+-  install(DIRECTORY Campaigns Lua Levels DESTINATION CorsixTH PATTERN "*.svn" EXCLUDE)
+-  install(DIRECTORY Bitmap DESTINATION CorsixTH
++  install(TARGETS CorsixTH RUNTIME DESTINATION share/CorsixTH)
++  install(DIRECTORY Campaigns Lua Levels DESTINATION share/CorsixTH PATTERN "*.svn" EXCLUDE)
++  install(DIRECTORY Bitmap DESTINATION share/CorsixTH
+         FILES_MATCHING REGEX ".*\\.(tab|pal|dat|png)$"
+         PATTERN "*.svn" EXCLUDE)
+-  install(FILES CorsixTH.lua ../LICENSE.txt CorsixTH.ico DESTINATION CorsixTH )
++  install(FILES CorsixTH.lua ../LICENSE.txt CorsixTH.ico DESTINATION share/CorsixTH )
+ ENDIF()

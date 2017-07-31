@@ -1,0 +1,21 @@
+$OpenBSD: README,v 1.1.1.1 2017/07/31 22:14:44 bcallah Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+CorsixTH
+========
+CorsixTH requires the original game files from Theme Hospital to work
+properly.  These can come from an original CD or from GOG.com.
+
+CorsixTH will ask you for the location of the game files on first
+launch. Point CorsixTH to the directory on your hard drive containing
+these files.
+
+If using the GOG.com version, you must extract the files from
+setup_theme_hospital_1.0.0.4.exe using archivers/innoextract. The files
+will be in a directory named app. You must keep this directory, though
+it can be renamed and moved to a location of your choosing, and you can
+delete everything else that is extracted from the exe, such as the tmp
+directory.
