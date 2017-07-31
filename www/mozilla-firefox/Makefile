@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.323 2017/07/26 22:45:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.324 2017/07/31 13:19:46 danj Exp $
 
 COMMENT =	Mozilla web browser
 
@@ -34,8 +34,8 @@ MODCLANG_ARCHS =	amd64 i386
 MOZILLA_USE_BUNDLED_LIBEVENT =	Yes
 # firefox >= 46 defaults to gtk+3
 MOZILLA_USE_GTK3 = Yes
-# firefox >= 53 needs rust and cargo
-BUILD_DEPENDS +=	lang/rust devel/cargo
+# firefox >= 53 needs rust
+BUILD_DEPENDS +=	lang/rust
 
 WANTLIB += X11-xcb pixman-1 pthread-stubs xcb xcb-shm ${COMPILER_LIBCXX}
 
