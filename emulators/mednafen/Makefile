@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2017/07/26 22:45:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2017/07/31 19:39:26 jeremy Exp $
 
 BROKEN-hppa =	../../include/mednafen/state.h:21:7: error: 'exception_ptr' in namespace 'std' does not name a type
 COMMENT =	emulates numerous game consoles
@@ -24,7 +24,7 @@ WANTLIB += SDL c m pthread sndfile sndio usbhid z
 WANTLIB += FLAC ogg vorbis vorbisenc ${COMPILER_LIBCXX}
 
 USE_GMAKE =	Yes
-COMPILER =	gcc
+COMPILER =	gcc-only
 
 LIB_DEPENDS =	audio/libsndfile \
 		devel/sdl
