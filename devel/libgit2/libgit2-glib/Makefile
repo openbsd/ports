@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.34 2017/07/23 10:09:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2017/07/31 07:51:57 ajacoutot Exp $
 
 COMMENT=		GLib library wrapping libgit2
 
-V=			0.25.0
+V=			0.26.0
 DISTNAME=		libgit2-glib-$V
-REVISION=		0
 
 SHARED_LIBS +=	git2-glib-1.0        4.0      # 0.0
 
