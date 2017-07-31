@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1633 2017/07/29 11:49:36 bluhm Exp $
+# $OpenBSD: Makefile,v 1.1634 2017/07/31 13:17:19 danj Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -50,7 +50,6 @@
      SUBDIR += capstone
      SUBDIR += catalyst
      SUBDIR += catalyst-tutorial
-     SUBDIR += cargo
      SUBDIR += cargo-generate-vendor
      SUBDIR += cbmc
      SUBDIR += ccache
