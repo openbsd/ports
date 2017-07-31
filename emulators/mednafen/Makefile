@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2017/07/31 19:39:26 jeremy Exp $
+# $OpenBSD: Makefile,v 1.20 2017/07/31 21:26:12 brynet Exp $
 
 BROKEN-hppa =	../../include/mednafen/state.h:21:7: error: 'exception_ptr' in namespace 'std' does not name a type
 COMMENT =	emulates numerous game consoles
 
 V =		0.9.39.2
 DISTNAME =	mednafen-${V}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	emulators games
 HOMEPAGE =	http://mednafen.fobby.net/
@@ -24,7 +24,7 @@ WANTLIB += SDL c m pthread sndfile sndio usbhid z
 WANTLIB += FLAC ogg vorbis vorbisenc ${COMPILER_LIBCXX}
 
 USE_GMAKE =	Yes
-COMPILER =	gcc-only
+COMPILER =	gcc
 
 LIB_DEPENDS =	audio/libsndfile \
 		devel/sdl
@@ -35,7 +35,7 @@ USE_WXNEEDED =	Yes
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		CFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/SDL" \
-			LDFLAGS="-L${LOCALBASE}/lib -pthread"
+			LDFLAGS="-L${LOCALBASE}/lib -pthread -nopie"
 CONFIGURE_ARGS =	--disable-alsa \
 			--disable-rpath \
 			--disable-jack \
