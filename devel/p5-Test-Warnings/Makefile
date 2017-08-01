@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2016/03/20 19:56:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2017/08/01 22:53:11 bluhm Exp $
 
 COMMENT =	test for warnings and the lack of them
 
@@ -11,7 +11,5 @@ MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
 
 # perl_5
 PERMIT_PACKAGE_CDROM =	Yes
-
-TEST_DEPENDS =	devel/p5-Test-Tester>=0.108
 
 .include <bsd.port.mk>

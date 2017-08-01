@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2017/04/17 14:40:01 bluhm Exp $
+# $OpenBSD: Makefile,v 1.16 2017/08/01 22:53:11 bluhm Exp $
 
 COMMENT =	cross-platform basic tests for scripts
 
@@ -14,7 +14,6 @@ PERMIT_PACKAGE_CDROM =	Yes
 MODULES =		cpan
 RUN_DEPENDS =		devel/p5-IPC-Run3>=0.034 \
 			devel/p5-Probe-Perl>=0.01
-TEST_DEPENDS =		devel/p5-Test-Tester
 
 PKG_ARCH =		*
 

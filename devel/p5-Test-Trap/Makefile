@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2016/03/20 19:56:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2017/08/01 22:53:11 bluhm Exp $
 
 COMMENT=		trap exit codes
 
 DISTNAME =		Test-Trap-v0.2.4
 PKGNAME=		p5-${DISTNAME:S/v//}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES=		devel
 
@@ -13,9 +13,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		cpan
 PKG_ARCH=		*
-RUN_DEPENDS=		devel/p5-Data-Dump  \
-			devel/p5-Test-Tester
-BUILD_DEPENDS=		${RUN_DEPENDS}
+RUN_DEPENDS=		devel/p5-Data-Dump
 
 MAKE_ENV=		TEST_POD=Yes
 

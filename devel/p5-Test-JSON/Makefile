@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.8 2016/03/20 19:56:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2017/08/01 22:53:11 bluhm Exp $
 
 COMMENT =	test JSON data
 
 MODULES =	cpan
 PKG_ARCH =	*
 DISTNAME =	Test-JSON-0.11
+REVISION =	0
 CATEGORIES =	devel
 
 # Perl
 PERMIT_PACKAGE_CDROM =		Yes
 
 RUN_DEPENDS =		converters/p5-JSON-Any \
-			devel/p5-Test-Differences \
-			devel/p5-Test-Tester
+			devel/p5-Test-Differences
 
 CONFIGURE_STYLE =	modbuild
 
