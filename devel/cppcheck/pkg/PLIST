@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2017/05/14 11:27:52 gsoares Exp $
+@comment $OpenBSD: PLIST,v 1.9 2017/08/01 23:14:59 jsg Exp $
 @bin bin/cppcheck
 @man man/man1/cppcheck.1
 share/cppcheck/
@@ -8,6 +8,7 @@ share/cppcheck/cfg/cppcheck-cfg.rng
 share/cppcheck/cfg/gnu.cfg
 share/cppcheck/cfg/gtk.cfg
 share/cppcheck/cfg/microsoft_sal.cfg
+share/cppcheck/cfg/motif.cfg
 share/cppcheck/cfg/posix.cfg
 share/cppcheck/cfg/qt.cfg
 share/cppcheck/cfg/sdl.cfg
