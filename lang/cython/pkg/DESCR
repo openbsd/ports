@@ -1,6 +1,6 @@
-Cython is a language that makes writing C extensions for the Python
-language as easy as Python itself. Cython is based on the well-known
-Pyrex, but supports more cutting edge functionality and optimizations.
+Cython is an optimising static compiler for both the Python programming
+language and the extended Cython programming language, which makes writing C
+extensions for the Python language as easy as Python itself.
 
 The Cython language is very close to the Python language, but Cython
 additionally supports calling C functions and declaring C types on

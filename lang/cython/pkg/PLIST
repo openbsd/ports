@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2016/11/05 10:29:38 danj Exp $
+@comment $OpenBSD: PLIST,v 1.6 2017/08/01 20:44:18 juanfra Exp $
 bin/cygdb
 bin/cython
 bin/cythonize
@@ -101,6 +101,8 @@ lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Pipeline.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Pipeline.pyc
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/PyrexTypes.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/PyrexTypes.pyc
+lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Pythran.py
+lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Pythran.pyc
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Scanning.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Scanning.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Scanning.pyc
@@ -289,6 +291,7 @@ lib/python${MODPY_VERSION}/site-packages/Cython/Includes/libcpp/algorithm.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/libcpp/cast.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/libcpp/complex.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/libcpp/deque.pxd
+lib/python${MODPY_VERSION}/site-packages/Cython/Includes/libcpp/functional.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/libcpp/iterator.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/libcpp/limits.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/libcpp/list.pxd
@@ -391,7 +394,7 @@ lib/python${MODPY_VERSION}/site-packages/Cython/Utility/Builtins.c
 lib/python${MODPY_VERSION}/site-packages/Cython/Utility/CConvert.pyx
 lib/python${MODPY_VERSION}/site-packages/Cython/Utility/CMath.c
 lib/python${MODPY_VERSION}/site-packages/Cython/Utility/Capsule.c
-lib/python${MODPY_VERSION}/site-packages/Cython/Utility/CommonTypes.c
+lib/python${MODPY_VERSION}/site-packages/Cython/Utility/CommonStructures.c
 lib/python${MODPY_VERSION}/site-packages/Cython/Utility/Complex.c
 lib/python${MODPY_VERSION}/site-packages/Cython/Utility/Coroutine.c
 lib/python${MODPY_VERSION}/site-packages/Cython/Utility/CpdefEnums.pyx

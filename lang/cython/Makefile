@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2017/04/24 21:00:27 juanfra Exp $
+# $OpenBSD: Makefile,v 1.12 2017/08/01 20:44:18 juanfra Exp $
 
-COMMENT =		C-Extensions for Python
+COMMENT =		optimising static compiler for Python and Cython
 
-MODPY_EGG_VERSION =	0.25.2
+MODPY_EGG_VERSION =	0.26
 DISTNAME =		Cython-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:L}
-
 CATEGORIES =		lang
 
 HOMEPAGE =		http://www.cython.org/
@@ -29,6 +28,6 @@ MAKE_ENV +=		PYTHON=${MODPY_BIN}
 
 do-test:
 	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
-        ${ALL_TEST_FLAGS} -f ${MAKE_FILE} ${TEST_TARGET}
+		${ALL_TEST_FLAGS} -f ${MAKE_FILE} ${TEST_TARGET}
 
 .include <bsd.port.mk>
