@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.438 2017/06/19 18:27:05 landry Exp $
+# $OpenBSD: Makefile,v 1.439 2017/08/01 16:40:03 jasper Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -61,6 +61,7 @@
      SUBDIR += ftgl
      SUBDIR += fyre
      SUBDIR += gd
+     SUBDIR += gdcm
      SUBDIR += gdk-pixbuf2
      SUBDIR += geeqie
      SUBDIR += gegl
