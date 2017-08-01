@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.21 2017/07/30 05:53:03 jsg Exp $
+#	$OpenBSD: Makefile,v 1.22 2017/08/01 23:25:44 jsg Exp $
 
 BROKEN-sparc64=	Error: the specified option is not accepted in ISB at operand 1 -- isb sy
 
@@ -7,6 +7,7 @@ FLAVOR?=	arm
 
 COMMENT=	U-Boot firmware
 VERSION=	2017.07
+REVISION=	0
 DISTNAME=	u-boot-${VERSION}
 PKGNAME=	u-boot-${FLAVOR}-${VERSION:S/-//}
 FULLPKGNAME=	${PKGNAME}
@@ -119,7 +120,8 @@ FILES=\
 	u-boot.bin \
 	u-boot-sunxi-with-spl.bin \
 	u-boot.imx \
-	u-boot-spl.kwb
+	u-boot-spl.kwb \
+	u-boot-with-spl.bin
 
 pre-build:
 	${SUBST_CMD} ${WRKBUILD}/tools/Makefile
@@ -137,6 +139,12 @@ do-build:
 	    ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} \
 	        O="build/${BOARD}" \
 	        -f ${MAKE_FILE} ${ALL_TARGET}
+.if "${BOARD}" == "tinker-rk3288"
+	cd ${WRKSRC}/build/${BOARD} && \
+	    tools/mkimage -n rk3288 -T rksd -d spl/u-boot-spl-dtb.bin \
+	    u-boot-with-spl.bin && \
+	    cat u-boot-dtb.bin >> u-boot-with-spl.bin
+.endif
 .endfor
 
 do-install:
