@@ -1,0 +1,14 @@
+$OpenBSD: patch-Source_MediaStorageAndFileFormat_gdcmFileStreamer_cxx,v 1.1.1.1 2017/08/01 16:38:46 jasper Exp $
+
+Index: Source/MediaStorageAndFileFormat/gdcmFileStreamer.cxx
+--- Source/MediaStorageAndFileFormat/gdcmFileStreamer.cxx.orig
++++ Source/MediaStorageAndFileFormat/gdcmFileStreamer.cxx
+@@ -32,7 +32,7 @@
+ #include <io.h>
+ typedef int64_t off64_t;
+ #else
+-#if defined(__APPLE__) || defined(__FreeBSD__)
++#if defined(__APPLE__) || defined(__FreeBSD__) || defined(__OpenBSD__)
+ #  define off64_t off_t
+ #endif
+ #include <unistd.h> // ftruncate
