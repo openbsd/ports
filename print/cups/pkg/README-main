@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.16 2015/07/07 14:33:34 ajacoutot Exp $
+$OpenBSD: README-main,v 1.17 2017/08/01 12:18:35 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -55,6 +55,14 @@ Alternatively, hotplugd(8) attach/detach scripts can automate this.
 *** WARNING ***
 ulpt(4) needs to be disabled in the kernel (see config(8)) or the printer
 will not be available to libusb.
+
+PARALLEL
+========
+To print to a parallel port attached printer, the CUPS daemon needs access to
+the corresponding devices, e.g:
+    chown _cups /dev/lp[a,t]0
+
+This can be automated at boot time using rc.local(8).
 
 Printer Sharing using mDNS
 ==========================
