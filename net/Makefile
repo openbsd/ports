@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1017 2017/07/30 21:16:18 jca Exp $
+# $OpenBSD: Makefile,v 1.1018 2017/08/01 07:06:55 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -189,7 +189,6 @@
      SUBDIR += ladvd
      SUBDIR += ldns
      SUBDIR += lftp
-     SUBDIR += libaccounts-glib
      SUBDIR += libbgpdump
      SUBDIR += libbind
      SUBDIR += libcares
