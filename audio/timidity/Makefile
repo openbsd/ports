@@ -1,24 +1,25 @@
-# $OpenBSD: Makefile,v 1.46 2015/01/24 11:07:57 schwarze Exp $
+# $OpenBSD: Makefile,v 1.47 2017/08/02 15:21:48 bcallah Exp $
 
 COMMENT=	MIDI to WAV renderer and player
 
 V=		2.13.2
 DISTNAME=	TiMidity++-${V}
 PKGNAME=	timidity-${V}
-REVISION=	5
+REVISION=	6
 CATEGORIES=	audio
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=timidity/}
-MASTER_SITES0=	http://www.anime.net/~goemon/timidity/
-TIINS=		goemon.tgz
+MASTER_SITES0=	https://devio.us/~bcallah/source/
+TIINS=		TimGM6mb-20170802.tar.gz
 DISTFILES=	${TIINS}:0 ${DISTNAME}.tar.gz
 
 HOMEPAGE=	http://timidity.sourceforge.net/
+MAINTAINER=	Brian Callahan <bcallah@openbsd.org>
 
-# GPL, copyrighted patches in goemon patchset
-PERMIT_PACKAGE_CDROM=   copyrighted patches
-PERMIT_PACKAGE_FTP=     copyrighted patches
-PERMIT_DISTFILES_FTP=   copyrighted patches
+# timidity: GPLv2+
+# TimGM6mb: https://musescore.org/en/handbook/soundfonts#list
+#	"License: GNU GPL, version 2; Courtesy of Tim Brechbill"
+PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=		c m ncurses sndio
 
@@ -37,15 +38,14 @@ FLAVOR?=
 
 .if ${FLAVOR:Mgtk2}
 CONFIGURE_ARGS+=--enable-gtk
-MODULES=	devel/gettext
-LIB_DEPENDS+=	x11/gtk+2
-WANTLIB+=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
-		Xi Xinerama Xrandr Xrender atk-1.0 cairo expat \
+LIB_DEPENDS+=	devel/gettext \
+		x11/gtk+2
+WANTLIB+=	X11 Xcomposite Xcursor Xdamage Xext Xfixes \
+		Xi Xinerama Xrandr Xrender atk-1.0 cairo \
 		fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 \
-		glib-2.0 gio-2.0 gmodule-2.0 gobject-2.0 \
-		gtk-x11-2.0 gthread-2.0 pango-1.0 pangocairo-1.0 \
-		pangoft2-1.0 pixman-1 png pthread pthread-stubs xcb \
-		xcb-render xcb-render-util z
+		glib-2.0 gio-2.0 gobject-2.0 \
+		gtk-x11-2.0 intl pango-1.0 pangocairo-1.0 \
+		pangoft2-1.0 pthread z
 .endif
 
 .if ${FLAVOR:Mxaw}
@@ -62,7 +62,6 @@ NO_TEST=	Yes
 
 WRKDIST=	${WRKDIR}
 WRKSRC=		${WRKDIR}/${DISTNAME}
-DATA_DIRS=	gsdrum00 gsdrum08 gsdrum40
 
 post-patch:
 	cp ${FILESDIR}/sndio_a.c \
@@ -76,17 +75,11 @@ pre-configure:
 		--foreign --add-missing --copy
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/timidity/goemon
-	${INSTALL_DATA} ${WRKDIST}/goemon/*.* ${PREFIX}/share/timidity/goemon
-.for DDIR in ${DATA_DIRS}
-	${INSTALL_DATA_DIR} ${PREFIX}/share/timidity/goemon/${DDIR}
-	${INSTALL_DATA} ${WRKDIST}/goemon/${DDIR}/*.* \
-	    ${PREFIX}/share/timidity/goemon/${DDIR}
-.endfor
-	${INSTALL_DATA} ${WRKDIST}/goemon.cfg ${PREFIX}/share/timidity/goemon
-	@echo -e "dir ${TRUEPREFIX}/share/timidity/goemon\nsource goemon.cfg" \
-	    >> ${WRKDIR}/timidity.cfg
+	${INSTALL_DATA_DIR} ${PREFIX}/share/timidity/TimGM6mb
+	${INSTALL_DATA} ${WRKDIST}/TimGM6mb/* \
+		${PREFIX}/share/timidity/TimGM6mb
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/timidity
-	${INSTALL_DATA} ${WRKDIR}/timidity.cfg ${PREFIX}/share/examples/timidity
+	${SUBST_CMD} -c -m 644 ${WRKDIR}/timidity.cfg \
+		${PREFIX}/share/examples/timidity/timidity.cfg
 
 .include <bsd.port.mk>
