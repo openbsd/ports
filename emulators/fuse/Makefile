@@ -1,20 +1,19 @@
-# $OpenBSD: Makefile,v 1.38 2017/06/13 12:57:00 fcambus Exp $
+# $OpenBSD: Makefile,v 1.39 2017/08/02 19:33:55 fcambus Exp $
 
 COMMENT=		Free Unix Spectrum Emulator
-DISTNAME=		fuse-1.3.6
+DISTNAME=		fuse-1.3.7
 CATEGORIES=		emulators
 HOMEPAGE=		http://fuse-emulator.sourceforge.net/
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += X11 Xext ao audiofile bz2 c gcrypt glib-2.0 gpg-error
-WANTLIB += lzma m pcre png pthread spectrum xcb xml2 z
-WANTLIB += FLAC SDL ogg sndio usbhid
+WANTLIB += FLAC ICE SDL SM X11 Xext ao audiofile bz2 c gcrypt
+WANTLIB += glib-2.0 gpg-error iconv intl lzma m ogg pcre png pthread
+WANTLIB += sndio spectrum usbhid xcb xml2 z
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=fuse-emulator/}
 
-MODULES=		devel/gettext
 LIB_DEPENDS=		devel/glib2 \
 			audio/flac \
 			audio/libogg \
@@ -34,19 +33,17 @@ FLAVORS=gtk
 FLAVOR?=
 
 .if ${FLAVOR:Mgtk}
-LIB_DEPENDS+=		x11/gtk+2 \
-			devel/glib2
-CONFIGURE_ARGS+=	--with-gtk2
+LIB_DEPENDS+=		x11/gtk+3
+CONFIGURE_ENV+=		ao_available=yes
 
 WANTLIB += Xcomposite Xcursor Xdamage Xfixes Xi Xinerama Xrandr
-WANTLIB += Xrender atk-1.0 cairo expat ffi fontconfig freetype
-WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += gthread-2.0 gtk-x11-2.0 harfbuzz graphite2
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 pthread-stubs
-WANTLIB += xcb-render xcb-shm
+WANTLIB += Xrender atk-1.0 atk-bridge-2.0 atspi cairo cairo-gobject
+WANTLIB += dbus-1 epoxy expat ffi fontconfig freetype gdk-3 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
+WANTLIB += gtk-3 harfbuzz pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pixman-1 pthread-stubs xcb-render xcb-shm
 .else
 CONFIGURE_ARGS+=	--without-gtk
-WANTLIB += ICE SM
 .endif
 
 .include <bsd.port.mk>
