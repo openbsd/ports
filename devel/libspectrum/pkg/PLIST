@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/05/20 07:01:44 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.5 2017/08/02 04:50:29 benoit Exp $
 include/libspectrum.h
 lib/libspectrum.a
 lib/libspectrum.la
 @lib lib/libspectrum.so.${LIBspectrum_VERSION}
+lib/pkgconfig/libspectrum.pc
 @man man/man3/libspectrum.3
 share/doc/libspectrum/
 share/doc/libspectrum/libspectrum.txt
