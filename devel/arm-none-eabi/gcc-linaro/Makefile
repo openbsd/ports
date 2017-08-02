@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2017/07/26 22:45:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2017/08/02 22:57:59 naddy Exp $
 
 # see ${WRKBUILD}/arm-none-eabi/libgcc/config.log
 BROKEN-i386=	ICE: Floating point exception from xgcc during libgcc autoconf "checking for suffix of object files"
@@ -84,3 +84,10 @@ post-install:
 		${PREFIX}/lib/gcc/${CONFIG}/${VERSION}/
 
 .include <bsd.port.mk>
+
+# The preprocessed source exceeds the suggested implementation limit
+# of 256 for nesting levels of parenthesized expressions within a
+# full-expression as given in Annex B of the C++ standard.
+.if ${PROPERTIES:Mclang}
+CXXFLAGS+=	-fbracket-depth=512
+.endif

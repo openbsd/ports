@@ -1,0 +1,13 @@
+$OpenBSD: patch-libcc1_connection_cc,v 1.1 2017/08/02 22:57:59 naddy Exp $
+
+Index: libcc1/connection.cc
+--- libcc1/connection.cc.orig
++++ libcc1/connection.cc
+@@ -21,6 +21,7 @@ along with GCC; see the file COPYING3.  If not see
+ #include <string>
+ #include <unistd.h>
+ #include <sys/types.h>
++#include <sys/select.h>
+ #include <string.h>
+ #include <errno.h>
+ #include "marshall.hh"
