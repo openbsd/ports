@@ -1,10 +1,10 @@
-$OpenBSD: patch-build_version2code_py,v 1.1.1.1 2011/08/28 18:57:51 bentley Exp $
+$OpenBSD: patch-build_version2code_py,v 1.2 2017/08/03 08:35:06 bentley Exp $
 
 Fix a systrace warning when devel/subversion is installed.
 
---- build/version2code.py.orig	Sun Aug 21 13:24:39 2011
-+++ build/version2code.py	Sun Aug 21 13:24:43 2011
-@@ -7,7 +7,7 @@ from version import extractRevisionString, packageVers
+--- build/version2code.py.orig	Sun Jul 31 13:02:11 2016
++++ build/version2code.py	Sat May  6 20:57:51 2017
+@@ -6,7 +6,7 @@ from version import extractRevisionString, packageVers
  import sys
  
  def iterVersionInclude():

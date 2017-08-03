@@ -1,21 +1,12 @@
-$OpenBSD: patch-build_main_mk,v 1.1 2011/09/07 01:35:41 bentley Exp $
---- build/main.mk.orig	Tue Aug 30 20:40:16 2011
-+++ build/main.mk	Tue Aug 30 20:41:36 2011
-@@ -525,7 +525,7 @@ $(OBJECTS_FULL): $(OBJECTS_PATH)/%.o: $(SOURCES_PATH)/
- 	@echo "Compiling $(patsubst $(SOURCES_PATH)/%,%,$<)..."
- 	@mkdir -p $(@D)
- 	@mkdir -p $(patsubst $(OBJECTS_PATH)%,$(DEPEND_PATH)%,$(@D))
--	@$(COMPILE_ENV) $(CXX) \
-+	$(COMPILE_ENV) $(CXX) \
- 		$(DEPEND_FLAGS) -MMD -MF $(DEPEND_SUBST) \
- 		-o $@ $(CXXFLAGS) $(COMPILE_FLAGS) -c $<
- 	@touch $@ # Force .o file to be newer than .d file.
-@@ -568,7 +568,7 @@ $(BINARY_FULL): $(OBJECTS_FULL) $(RESOURCE_OBJ)
- ifeq ($(OPENMSX_SUBSET),)
- 	@echo "Linking $(notdir $@)..."
- 	@mkdir -p $(@D)
--	@$(LINK_ENV) $(CXX) -o $@ $(CXXFLAGS) $^ $(LINK_FLAGS)
-+	$(LINK_ENV) $(CXX) -o $@ $(CXXFLAGS) $^ $(LINK_FLAGS)
-   ifeq ($(STRIP_SEPARATE),true)
- 	@echo "Stripping $(notdir $@)..."
- 	@strip $@
+$OpenBSD: patch-build_main_mk,v 1.2 2017/08/03 08:35:06 bentley Exp $
+--- build/main.mk.orig	Sat May  6 21:02:40 2017
++++ build/main.mk	Sat May  6 21:02:52 2017
+@@ -374,6 +374,8 @@ else
+   else
+     $(warning Unsupported compiler: $(CXX), please update Makefile)
+   endif
++  # Enable C++11
++  COMPILE_FLAGS+=-std=c++11
+ endif
+ endif
+ 

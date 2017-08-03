@@ -1,24 +1,24 @@
-$OpenBSD: patch-src_utils_DivModBySame_hh,v 1.1 2017/01/03 04:47:42 jca Exp $
+$OpenBSD: patch-src_utils_DivModBySame_hh,v 1.2 2017/08/03 08:35:06 bentley Exp $
 
 Disable arm assembly code that asks for too many registers.
 
---- src/utils/DivModBySame.hh.orig	Mon Jan  2 22:12:14 2017
-+++ src/utils/DivModBySame.hh	Mon Jan  2 22:43:46 2017
-@@ -162,7 +162,7 @@ class DivModBySame (public)
+--- src/utils/DivModBySame.hh.orig	Sun May  7 00:49:55 2017
++++ src/utils/DivModBySame.hh	Sun May  7 00:50:01 2017
+@@ -156,7 +156,7 @@ class DivModBySame (public)
  		);
  		return _cl_;
  	#endif
 -	#elif defined(__arm__)
 +	#elif defined(notdef)
- 		unsigned res;
- 		unsigned dummy;
+ 		uint32_t res;
+ 		uint32_t dummy;
  		asm volatile (
-@@ -223,7 +223,7 @@ class DivModBySame (public)
+@@ -217,7 +217,7 @@ class DivModBySame (public)
  
- 	unsigned mod(uint64 dividend) const
+ 	uint32_t mod(uint64_t dividend) const
  	{
 -	#ifdef __arm__
 +	#ifdef notdef
- 		unsigned res;
- 		unsigned dummy;
+ 		uint32_t res;
+ 		uint32_t dummy;
  		asm volatile (

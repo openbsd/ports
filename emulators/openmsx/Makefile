@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2017/07/26 22:45:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2017/08/03 08:35:06 bentley Exp $
 
 BROKEN-powerpc =CPUCore.cc:2347: error: insn does not satisfy its constraints
 BROKEN-hppa =	OOM when building src/cpu/CPUCore.cc
@@ -6,24 +6,22 @@ BROKEN-alpha =	OOM when building src/cpu/CPUCore.cc
 
 COMMENT =	MSX home computer emulator
 
-DISTNAME =	openmsx-0.9.1
-REVISION =	2
+V =		0.13.0
+DISTNAME =	openmsx-$V
 
 CATEGORIES =	emulators
 
-HOMEPAGE =	http://openmsx.sourceforge.net/
-
-MAINTAINER =	Anthony J. Bentley <anthony@anjbe.name>
+HOMEPAGE =	https://openmsx.org/
 
 PERMIT_PACKAGE_CDROM =	claims GPLv2, but no copyright notices in source files
 PERMIT_PACKAGE_FTP =	claims GPLv2, but no copyright notices in source files
 PERMIT_DISTFILES_FTP =	claims GPLv2, but no copyright notices in source files
 
 WANTLIB += ${MODTCL_LIB}
-WANTLIB += GL GLEW SDL SDL_ttf ao c freetype iconv lzma m ogg png
-WANTLIB += pthread ${COMPILER_LIBCXX} theoradec vorbis xml2 z
+WANTLIB += GL GLEW SDL SDL_ttf c freetype iconv m ogg png
+WANTLIB += pthread ${COMPILER_LIBCXX} theoradec vorbis z
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=openmsx/}
+MASTER_SITES =	https://github.com/openMSX/openMSX/releases/download/RELEASE_${V:S/./_/g}/
 CONFIGURE_STYLE =	simple
 
 MAKE_ENV +=	INSTALL_BASE=${PREFIX}/share/openmsx \
@@ -31,14 +29,13 @@ MAKE_ENV +=	INSTALL_BASE=${PREFIX}/share/openmsx \
 		INSTALL_SHARE_DIR=${PREFIX}/share/openmsx \
 		INSTALL_DOC_DIR=${PREFIX}/share/doc/openmsx
 
-LIB_DEPENDS =	audio/libao \
-		audio/libvorbis \
+COMPILER =	gcc
+LIB_DEPENDS =	audio/libvorbis \
 		converters/libiconv \
 		devel/sdl-ttf \
 		graphics/glew \
 		graphics/png \
 		multimedia/libtheora \
-		textproc/libxml \
 		${MODTCL_LIB_DEPENDS}
 
 NO_TEST =	Yes
@@ -50,8 +47,12 @@ MODPY_RUNDEP =	No
 MAKE_FILE =	GNUmakefile
 USE_GMAKE =	Yes
 
-MAKE_FLAGS =	CC="${CC}" CXX="${CXX}" CFLAGS="${CFLAGS}" \
-		CXXFLAGS="${CXXFLAGS}"
+MAKE_FLAGS =	CC="${CC}" \
+		CXX="${CXX}" \
+		CFLAGS="${CFLAGS}" \
+		CXXFLAGS="${CXXFLAGS}" \
+		OPENMSX_STRIP=false \
+		V=1
 
 # PIE doesn't leave sufficient registers
 .if ${MACHINE_ARCH:Mi386}
