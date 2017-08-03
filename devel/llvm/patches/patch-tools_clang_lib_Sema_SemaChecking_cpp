@@ -1,0 +1,33 @@
+$OpenBSD: patch-tools_clang_lib_Sema_SemaChecking_cpp,v 1.1 2017/08/03 15:54:36 sthen Exp $
+
+Teach Clang about syslog format attribute
+
+Index: tools/clang/lib/Sema/SemaChecking.cpp
+--- tools/clang/lib/Sema/SemaChecking.cpp.orig
++++ tools/clang/lib/Sema/SemaChecking.cpp
+@@ -4714,7 +4714,7 @@ checkFormatStringExpr(Sema &S, const Expr *E, ArrayRef
+ Sema::FormatStringType Sema::GetFormatStringType(const FormatAttr *Format) {
+   return llvm::StringSwitch<FormatStringType>(Format->getType()->getName())
+       .Case("scanf", FST_Scanf)
+-      .Cases("printf", "printf0", FST_Printf)
++      .Cases("printf", "printf0", "syslog", FST_Printf)
+       .Cases("NSString", "CFString", FST_NSString)
+       .Case("strftime", FST_Strftime)
+       .Case("strfmon", FST_Strfmon)
+@@ -4811,6 +4811,7 @@ bool Sema::CheckFormatArguments(ArrayRef<const Expr *>
+     case FST_Kprintf:
+     case FST_FreeBSDKPrintf:
+     case FST_Printf:
++    case FST_Syslog:
+       Diag(FormatLoc, diag::note_format_security_fixit)
+         << FixItHint::CreateInsertion(FormatLoc, "\"%s\", ");
+       break;
+@@ -6352,7 +6353,7 @@ static void CheckFormatString(Sema &S, const FormatStr
+ 
+   if (Type == Sema::FST_Printf || Type == Sema::FST_NSString ||
+       Type == Sema::FST_FreeBSDKPrintf || Type == Sema::FST_OSLog ||
+-      Type == Sema::FST_OSTrace) {
++      Type == Sema::FST_OSTrace || Type == Sema::FST_Syslog) {
+     CheckPrintfHandler H(
+         S, FExpr, OrigFormatExpr, Type, firstDataArg, numDataArgs,
+         (Type == Sema::FST_NSString || Type == Sema::FST_OSTrace), Str,
