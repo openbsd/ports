@@ -1,0 +1,20 @@
+$OpenBSD: patch-remoting_webapp_base_js_platform_js,v 1.1 2017/08/03 21:01:27 robert Exp $
+
+Index: remoting/webapp/base/js/platform.js
+--- remoting/webapp/base/js/platform.js.orig
++++ remoting/webapp/base/js/platform.js
+@@ -107,6 +107,14 @@ remoting.getSystemInfo = function() {
+     return result;
+   }
+ 
++  match = new RegExp('OpenBSD ([a-zA-Z0-9_]*)').exec(userAgent);
++  if (match && (match.length >= 2)) {
++    result.osName = remoting.Os.LINUX;
++    result.osVersion = '';
++    result.cpu = match[1];
++    return result;
++  }
++
+   match = new RegExp('([a-zA-Z]*) Mac OS X ([0-9_]*)').exec(userAgent);
+   if (match && (match.length >= 3)) {
+     result.osName = remoting.Os.MAC;

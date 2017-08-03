@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.334 2017/07/27 14:23:46 robert Exp $
+# $OpenBSD: Makefile,v 1.335 2017/08/03 21:01:27 robert Exp $
 
 .include <bsd.port.arch.mk>
 
@@ -9,7 +9,7 @@ DPB_PROPERTIES=		parallel
 
 COMMENT=		Chromium browser
 
-V=			60.0.3112.78
+V=			60.0.3112.90
 
 DISTNAME=		chromium-${V}
 
@@ -116,6 +116,7 @@ GN_ARGS=	enable_nacl=false \
 		is_debug=false \
 		enable_webrtc=false \
 		enable_one_click_signin=true \
+		enable_remoting=false \
 		use_kerberos=false \
 		use_sndio=true \
 		use_cups=true \

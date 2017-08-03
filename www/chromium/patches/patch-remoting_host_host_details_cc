@@ -1,0 +1,14 @@
+$OpenBSD: patch-remoting_host_host_details_cc,v 1.1 2017/08/03 21:01:27 robert Exp $
+
+Index: remoting/host/host_details.cc
+--- remoting/host/host_details.cc.orig
++++ remoting/host/host_details.cc
+@@ -22,7 +22,7 @@ std::string GetHostOperatingSystemName() {
+   return "Mac";
+ #elif defined(OS_CHROMEOS)
+   return "ChromeOS";
+-#elif defined(OS_LINUX)
++#elif defined(OS_LINUX) || defined(OS_BSD)
+   return "Linux";
+ #elif defined(OS_ANDROID)
+   return "Android";
