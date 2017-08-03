@@ -1,0 +1,175 @@
+$OpenBSD: patch-sourceextraction_c,v 1.1 2017/08/03 20:26:49 naddy Exp $
+
+XXX: Hack around some GCC nested functions not accepted by clang. 
+
+Index: sourceextraction.c
+--- sourceextraction.c.orig
++++ sourceextraction.c
+@@ -60,6 +60,81 @@ void sourceextraction_abort(struct sourceextraction *e
+ 	free(e);
+ }
+ 
++#define BUFSIZE 4096
++
++static inline bool u_getline(char *buffer, int *bytes_read, int *used, int *filled, struct compressedfile *f, const char *p) {
++	do {
++	if (*filled - *used > 0) {
++		char *n;
++
++		p = buffer + *used;
++		n = memchr(p, '\n', *filled - *used);
++		if (n != NULL) {
++			*used += 1 + (n - p);
++			*n = '\0';
++			while (--n >= p && *n == '\r')
++				*n = '\0';
++			return true;
++		}
++	} else { assert (*filled == *used);
++		*filled = 0;
++		*used = 0;
++	}
++	if (*filled == BUFSIZE) {
++		if (*used == 0)
++			/* overlong line */
++			return false;
++		memmove(buffer, buffer + *used, *filled - *used);
++		*filled -= *used;
++		*used = 0;
++	}
++	*bytes_read = uncompress_read(f, buffer + *filled,
++			BUFSIZE - *filled);
++	if (*bytes_read <= 0)
++		return false;
++	*filled += *bytes_read;
++	} while (true);
++}
++
++static inline char u_overlinegetchar(char *buffer, int *bytes_read, int *used, int *filled, struct compressedfile *f) {
++	const char *n;
++	char ch;
++
++	if (*filled - *used > 0) {
++		ch = buffer[*used];
++	} else { assert (*filled == *used);
++		*used = 0;
++		*bytes_read = uncompress_read(f, buffer, BUFSIZE);
++		if (*bytes_read <= 0) {
++			*filled = 0;
++			return '\0';
++		}
++		*filled = *bytes_read;
++		ch = buffer[0];
++	}
++	if (ch == '\n')
++		return '\0';
++
++	/* over rest of the line */
++	n = memchr(buffer + *used, '\n', *filled - *used);
++	if (n != NULL) {
++		*used = 1 + (n - buffer);
++		return ch;
++	}
++	*used = 0;
++	*filled = 0;
++	/* need to read more to get to the end of the line */
++	do { /* these lines can be long */
++		*bytes_read = uncompress_read(f, buffer, BUFSIZE);
++		if (*bytes_read <= 0)
++			return false;
++		n = memchr(buffer, '\n', *bytes_read);
++	} while (n == NULL);
++	*used = 1 + (n - buffer);
++	*filled = *bytes_read;
++	return ch;
++}
++
+ /* with must be a string constant, no pointer! */
+ #define endswith(name, len, with) (len >= sizeof(with) && memcmp(name+(len+1-sizeof(with)), with, sizeof(with)-1) == 0)
+ 
+@@ -128,83 +203,11 @@ bool sourceextraction_needs(struct sourceextraction *e
+ static retvalue parsediff(struct compressedfile *f, /*@null@*/char **section_p, /*@null@*/char **priority_p, bool *found_p) {
+ 	size_t destlength, lines_in, lines_out;
+ 	const char *p, *s; char *garbage;
+-#define BUFSIZE 4096
+ 	char buffer[BUFSIZE];
+ 	int bytes_read, used = 0, filled = 0;
+ 
+-	auto inline bool u_getline(void);
+-	inline bool u_getline(void) {
+-		do {
+-		if (filled - used > 0) {
+-			char *n;
+-
+-			p = buffer + used;
+-			n = memchr(p, '\n', filled - used);
+-			if (n != NULL) {
+-				used += 1 + (n - p);
+-				*n = '\0';
+-				while (--n >= p && *n == '\r')
+-					*n = '\0';
+-				return true;
+-			}
+-		} else { assert (filled == used);
+-			filled = 0;
+-			used = 0;
+-		}
+-		if (filled == BUFSIZE) {
+-			if (used == 0)
+-				/* overlong line */
+-				return false;
+-			memmove(buffer, buffer + used, filled - used);
+-			filled -= used;
+-			used = 0;
+-		}
+-		bytes_read = uncompress_read(f, buffer + filled,
+-				BUFSIZE - filled);
+-		if (bytes_read <= 0)
+-			return false;
+-		filled += bytes_read;
+-		} while (true);
+-	}
+-	auto inline char u_overlinegetchar(void);
+-	inline char u_overlinegetchar(void) {
+-		const char *n;
+-		char ch;
+-
+-		if (filled - used > 0) {
+-			ch = buffer[used];
+-		} else { assert (filled == used);
+-			used = 0;
+-			bytes_read = uncompress_read(f, buffer, BUFSIZE);
+-			if (bytes_read <= 0) {
+-				filled = 0;
+-				return '\0';
+-			}
+-			filled = bytes_read;
+-			ch = buffer[0];
+-		}
+-		if (ch == '\n')
+-			return '\0';
+-
+-		/* over rest of the line */
+-		n = memchr(buffer + used, '\n', filled - used);
+-		if (n != NULL) {
+-			used = 1 + (n - buffer);
+-			return ch;
+-		}
+-		used = 0;
+-		filled = 0;
+-		/* need to read more to get to the end of the line */
+-		do { /* these lines can be long */
+-			bytes_read = uncompress_read(f, buffer, BUFSIZE);
+-			if (bytes_read <= 0)
+-				return false;
+-			n = memchr(buffer, '\n', bytes_read);
+-		} while (n == NULL);
+-		used = 1 + (n - buffer);
+-		filled = bytes_read;
+-		return ch;
+-	}
++#define u_getline()		u_getline(buffer, &bytes_read, &used, &filled, f, p)
++#define u_overlinegetchar()	u_overlinegetchar(buffer, &bytes_read, &used, &filled, f)
+ 
+ 	/* we are assuming the exact format dpkg-source generates here... */
+ 
