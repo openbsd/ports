@@ -1,7 +1,8 @@
-$OpenBSD: patch-doc_Makefile_in,v 1.2 2012/05/01 15:25:26 ajacoutot Exp $
---- doc/Makefile.in.orig	Mon Mar 12 16:44:04 2012
-+++ doc/Makefile.in	Wed Apr 25 16:26:57 2012
-@@ -8,7 +8,7 @@ prefix		= @prefix@
+$OpenBSD: patch-doc_Makefile_in,v 1.3 2017/08/03 14:39:39 sthen Exp $
+Index: doc/Makefile.in
+--- doc/Makefile.in.orig
++++ doc/Makefile.in
+@@ -9,7 +9,7 @@ prefix		= @prefix@
  exec_prefix	= @exec_prefix@
  bindir		= @bindir@
  mandir		= @mandir@
@@ -10,70 +11,33 @@ $OpenBSD: patch-doc_Makefile_in,v 1.2 2012/05/01 15:25:26 ajacoutot Exp $
  infodir		= @infodir@
  datarootdir	= @datarootdir@
  
-@@ -27,12 +27,8 @@ PSTOPDF		= @PSTOPDF@		# BSD/MacOS X utility
- PS2PDF          = @PS2PDF@		# Part of GhostScript
+@@ -24,13 +24,13 @@ PDFOPT		= @PDFOPT@
+ RM_F		= rm -f
+ RM_RF		= rm -rf
+ CP_F		= cp -f
+-CP_UF		= cp -ufv
++CP_UF		= cp -fv
  
- SRCS		= nasmdoc.src inslist.src changes.src
--OUT		= info html nasmdoc.txt nasmdoc.ps nasmdoc.pdf
-+OUT		= info html nasmdoc.txt # nasmdoc.ps nasmdoc.pdf
+ # Auxiliary files referenced by the HTML files
+ HTMLAUX		= nasmdoc.css local.css nasmlogw.png
  
--# exports
--export srcdir
--export PERL
--
- all: $(OUT)
+ SRCS		= nasmdoc.src inslist.src changes.src version.src
+-OUT		= html nasmdoc.txt nasmdoc.pdf
++OUT		= html nasmdoc.txt # nasmdoc.pdf
  
- os2: nasm.inf
-@@ -45,17 +41,17 @@ html: html/nasmdoc0.html
+ .SUFFIXES: .pfa .ph
  
- html/nasmdoc0.html: $(SRCS) rdsrc.pl
- 	mkdir -p html
--	$(PERL) $(srcdir)/rdsrc.pl html < $<
-+	$(PERL) $(srcdir)/rdsrc.pl html < $(srcdir)/nasmdoc.src
- 	mv -f *.html html
- 
- nasmdoc.dip: $(SRCS) rdsrc.pl
--	$(PERL) $(srcdir)/rdsrc.pl dip < $<
-+	$(PERL) $(srcdir)/rdsrc.pl dip < $(srcdir)/nasmdoc.src
- 
- nasmdoc.texi: $(SRCS) rdsrc.pl
--	$(PERL) $(srcdir)/rdsrc.pl texi < $<
-+	$(PERL) $(srcdir)/rdsrc.pl texi < $(srcdir)/nasmdoc.src
- 
- nasmdoc.txt: $(SRCS) rdsrc.pl
--	$(PERL) $(srcdir)/rdsrc.pl txt < $<
-+	$(PERL) $(srcdir)/rdsrc.pl txt < $(srcdir)/nasmdoc.src
- 
- nasmdoc.ps: nasmdoc.dip nasmlogo.eps $(srcdir)/../version genpsdriver.pl \
- 	    genps.pl psfonts.ph pswidth.ph head.ps
-@@ -71,7 +67,7 @@ info: info/nasm.info
- 
- info/nasm.info: nasmdoc.texi
- 	mkdir -p info
--	$(MAKEINFO) $<
-+	$(MAKEINFO) $?
- 	mv -f *.info *.info-* info
- 
- # DVI output from texinfo (optional)
-@@ -80,13 +76,12 @@ nasmdoc.dvi: nasmdoc.texi
- 
- # Rules for building an OS/2 book
- nasmdoc.ipf: nasmdoc.texi
--	$(TEXI2IPF) $< >$@
-+	$(TEXI2IPF) $? >$@
- 
- nasm.inf: nasmdoc.ipf
--	$(IPFC) -i -s $< $@
-+	$(IPFC) -i -s $? $@
+@@ -71,7 +71,6 @@ nasmdoc.pdf: nasmdoc.ps pspdf.pl
+ 	$(PERL) $(srcdir)/pspdf.pl $(PDFOPT) nasmdoc.ps nasmdoc.pdf
  
  clean:
--	-rm -f *.rtf *.hpj *.texi *.gid *.ipf *.dip
- 	-rm -f *.aux *.cp *.fn *.ky *.pg *.log *.toc *.tp *.vr
- 	-rm -f inslist.src
- 
-@@ -100,4 +95,4 @@ install: all
- 	$(INSTALL_DATA) info/* $(INSTALLROOT)$(infodir)
+-	-$(RM_F) *.rtf *.hpj *.texi *.gid *.ipf *.dip
+ 	-$(RM_F) *.aux *.cp *.fn *.ky *.pg *.log *.toc *.tp *.vr
+ 	-$(RM_F) inslist.src version.src
+ 	-$(RM_F) nasmdoc*.ps
+@@ -83,4 +82,4 @@ spotless: clean
+ install: all
  	mkdir -p $(INSTALLROOT)$(docdir)/html
  	$(INSTALL_DATA) html/* $(INSTALLROOT)$(docdir)/html
--	$(INSTALL_DATA) nasmdoc.ps nasmdoc.pdf nasmdoc.txt $(INSTALLROOT)$(docdir)
+-	$(INSTALL_DATA) nasmdoc.pdf nasmdoc.txt $(INSTALLROOT)$(docdir)
 +	$(INSTALL_DATA) internal.doc nasmdoc.txt $(INSTALLROOT)$(docdir)

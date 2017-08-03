@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2009/08/18 17:11:15 okan Exp $
+@comment $OpenBSD: PLIST,v 1.14 2017/08/03 14:39:39 sthen Exp $
 @bin bin/ldrdf
 @bin bin/nasm
 @bin bin/ndisasm
@@ -10,7 +10,6 @@ bin/rdf2srec
 @bin bin/rdfdump
 @bin bin/rdflib
 @bin bin/rdx
-@info info/nasm.info
 @man man/man1/ldrdf.1
 @man man/man1/nasm.1
 @man man/man1/ndisasm.1
@@ -24,9 +23,11 @@ bin/rdf2srec
 @man man/man1/rdx.1
 share/doc/nasm/
 share/doc/nasm/html/
+share/doc/nasm/html/local.css
 share/doc/nasm/html/nasmdo10.html
 share/doc/nasm/html/nasmdo11.html
 share/doc/nasm/html/nasmdo12.html
+share/doc/nasm/html/nasmdoc.css
 share/doc/nasm/html/nasmdoc0.html
 share/doc/nasm/html/nasmdoc1.html
 share/doc/nasm/html/nasmdoc2.html
@@ -40,6 +41,9 @@ share/doc/nasm/html/nasmdoc9.html
 share/doc/nasm/html/nasmdoca.html
 share/doc/nasm/html/nasmdocb.html
 share/doc/nasm/html/nasmdocc.html
+share/doc/nasm/html/nasmdocd.html
+share/doc/nasm/html/nasmdoce.html
 share/doc/nasm/html/nasmdoci.html
+share/doc/nasm/html/nasmlogw.png
 share/doc/nasm/internal.doc
 share/doc/nasm/nasmdoc.txt
