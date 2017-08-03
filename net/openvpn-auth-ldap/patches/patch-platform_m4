@@ -1,0 +1,16 @@
+$OpenBSD: patch-platform_m4,v 1.1 2017/08/03 14:46:33 jca Exp $
+
+Don't clobber LDFLAGS.
+
+Index: platform.m4
+--- platform.m4.orig
++++ platform.m4
+@@ -97,7 +97,7 @@ AC_DEFUN(OD_CONFIG_PLUGIN, [
+ 	    PLUGIN_LD="${CC} -shared"
+ 	    PLUGIN_LD_FLAGS=""
+ 	    PLUGIN_SUFFIX=".so"
+-	    LDFLAGS="-export-dynamic"
++	    LDFLAGS="-export-dynamic ${LDFLAGS}"
+ 	    ;;
+     esac
+ 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2017/07/27 09:55:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2017/08/03 14:46:33 jca Exp $
 
 COMMENT =		LDAP authentication plugin for OpenVPN 2.x
 
@@ -35,10 +35,11 @@ AUTOCONF_VERSION =	2.69
 CONFIGURE_STYLE =	autoconf
 MAKE_FILE =		Makefile
 
-CONFIGURE_ARGS += --prefix=${LOCALBASE} \
-		  --with-check=${LOCALBASE} \
+CONFIGURE_ARGS =  --with-check=${LOCALBASE} \
 		  --with-openldap=${LOCALBASE} \
 		  --with-openvpn=${LOCALBASE}/include/openvpn
+CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib ${LDFLAGS}"
 
 SAMPLES_DIR =		${PREFIX}/share/examples/openvpn-auth-ldap
 
