@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.74 2017/05/05 14:02:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.75 2017/08/03 17:47:07 sthen Exp $
 
 SHARED_LIBS +=	mupdf		6.0
 
 COMMENT =	graphic library, pdf parser, viewer and utilities
 
 V =		1.11
+REVISION =	0
 DISTNAME =	mupdf-$V-source
 PKGNAME =	mupdf-$V
 
@@ -25,9 +26,6 @@ WANTLIB += jpeg m openjp2 pthread ssl z
 
 FLAVORS=	js
 FLAVOR?=
-
-MODULES =	lang/clang
-MODCLANG_ARCHS = ${GCC3_ARCHS} ${GCC4_ARCHS}
 
 # http://git.ghostscript.com/?p=mupdf.git;a=summary
 MASTER_SITES =	http://mupdf.com/downloads/ \
