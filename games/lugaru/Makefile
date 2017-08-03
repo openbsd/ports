@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.5 2017/07/26 22:45:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2017/08/03 08:40:22 bentley Exp $
 
 COMMENT =	third-person rabbit combat action game
 
-DISTNAME =	lugaru-1.1
-REVISION =	0
+DISTNAME =	lugaru-1.2
 
 CATEGORIES =	games
 
 HOMEPAGE =	https://osslugaru.gitlab.io/
+
+MAINTAINER = 	Kaashif Hymabaccus <kaashif@kaashif.co.uk>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
@@ -21,7 +22,6 @@ EXTRACT_SUFX =		.tar.xz
 
 MODULES =		devel/cmake
 
-COMPILER =		gcc
 RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+3,-guic
 LIB_DEPENDS =		audio/libvorbis \
