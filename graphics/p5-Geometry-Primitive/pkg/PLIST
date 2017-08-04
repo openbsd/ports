@@ -1,0 +1,27 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/08/04 09:55:58 bluhm Exp $
+${P5SITE}/Geometry/
+${P5SITE}/Geometry/Primitive/
+${P5SITE}/Geometry/Primitive.pm
+${P5SITE}/Geometry/Primitive/Arc.pm
+${P5SITE}/Geometry/Primitive/Bezier.pm
+${P5SITE}/Geometry/Primitive/Circle.pm
+${P5SITE}/Geometry/Primitive/Dimension.pm
+${P5SITE}/Geometry/Primitive/Ellipse.pm
+${P5SITE}/Geometry/Primitive/Equal.pm
+${P5SITE}/Geometry/Primitive/Line.pm
+${P5SITE}/Geometry/Primitive/Point.pm
+${P5SITE}/Geometry/Primitive/Polygon.pm
+${P5SITE}/Geometry/Primitive/Rectangle.pm
+${P5SITE}/Geometry/Primitive/Shape.pm
+@man man/man3p/Geometry::Primitive.3p
+@man man/man3p/Geometry::Primitive::Arc.3p
+@man man/man3p/Geometry::Primitive::Bezier.3p
+@man man/man3p/Geometry::Primitive::Circle.3p
+@man man/man3p/Geometry::Primitive::Dimension.3p
+@man man/man3p/Geometry::Primitive::Ellipse.3p
+@man man/man3p/Geometry::Primitive::Equal.3p
+@man man/man3p/Geometry::Primitive::Line.3p
+@man man/man3p/Geometry::Primitive::Point.3p
+@man man/man3p/Geometry::Primitive::Polygon.3p
+@man man/man3p/Geometry::Primitive::Rectangle.3p
+@man man/man3p/Geometry::Primitive::Shape.3p
