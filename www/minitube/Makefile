@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.52 2017/07/26 22:45:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.53 2017/08/04 21:55:19 dcoppa Exp $
 
 COMMENT =	standalone YouTube.com video browser/player
 
-DISTNAME =	minitube-2.5.2
-
-REVISION =	3
+GH_ACCOUNT =	flaviotordini
+GH_PROJECT =	minitube
+GH_TAGNAME =	2.8
 
 CATEGORIES =	www multimedia
 
@@ -15,17 +15,13 @@ MAINTAINER =	David Coppa <dcoppa@openbsd.org>
 # GPLv3
 PERMIT_PACKAGE_CDROM =		Yes
 
-MASTER_SITES =	https://distfiles.bsdfrog.org/
+MODULES =	devel/qmake x11/qt5
 
-MODULES =	devel/qmake x11/qt4
+WANTLIB +=	GL Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Qml Qt5Sql
+WANTLIB +=	Qt5Widgets c m phonon4qt5 ${COMPILER_LIBCXX}
 
-WANTLIB +=	ICE SM X11 Xext Xi Xinerama Xrender c fontconfig
-WANTLIB +=	freetype lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
-WANTLIB +=	lib/qt4/QtScript lib/qt4/QtSql lib/qt4/QtXml m
-WANTLIB +=	phonon pthread ${COMPILER_LIBCXX}
-
-RUN_DEPENDS =	multimedia/gstreamer-0.10/plugins-good \
-		multimedia/gstreamer-0.10/plugins-ffmpeg \
+LIB_DEPENDS +=	multimedia/phonon-qt5
+RUN_DEPENDS +=	multimedia/phonon-backend/gstreamer,qt5 \
 		devel/desktop-file-utils \
 		x11/gtk+3,-guic
 
@@ -33,5 +29,8 @@ MAKE_FLAGS =	CXX=${CXX} \
 		LINK=${CXX}
 
 NO_TEST =	Yes
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/minitube.pro
 
 .include <bsd.port.mk>

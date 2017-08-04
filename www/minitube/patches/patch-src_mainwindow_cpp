@@ -1,12 +1,13 @@
-$OpenBSD: patch-src_mainwindow_cpp,v 1.5 2015/10/03 20:28:43 dcoppa Exp $
+$OpenBSD: patch-src_mainwindow_cpp,v 1.6 2017/08/04 21:55:19 dcoppa Exp $
 
 Do not use symbolic icons
 
---- src/mainwindow.cpp.orig	Thu Sep 17 16:14:00 2015
-+++ src/mainwindow.cpp	Fri Oct  2 09:16:24 2015
-@@ -600,7 +600,7 @@ void MainWindow::createActions() {
+Index: src/mainwindow.cpp
+--- src/mainwindow.cpp.orig
++++ src/mainwindow.cpp
+@@ -594,7 +594,7 @@ void MainWindow::createActions() {
      action = new QAction(tr("More..."), this);
-     actions->insert("more-region", action);
+     actionMap.insert("more-region", action);
  
 -    action = new QAction(IconUtils::icon("view-list"), tr("&Related Videos"), this);
 +    action = new QAction(IconUtils::icon("format-justify-fill"), tr("&Related Videos"), this);
