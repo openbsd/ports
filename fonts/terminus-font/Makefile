@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2016/04/24 15:44:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2017/08/04 16:59:39 sthen Exp $
 
 COMMENT =		fixed width fonts especially for long hacking sessions
 
-DISTNAME =		terminus-font-4.40
-REVISION =		0
+DISTNAME =		terminus-font-4.46
 CATEGORIES =		fonts x11
 
 HOMEPAGE =		http://terminus-font.sourceforge.net/
@@ -15,11 +14,16 @@ PERMIT_PACKAGE_CDROM =		Yes
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=terminus-font/}
 
+MODULES +=		lang/python
+MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
+MODPY_RUNDEP =		No
+MAKE_FLAGS =		INT=${MODPY_BIN}
+
 CONFIGURE_STYLE =	simple
 NO_TEST =		Yes
 USE_X11 =		Yes
 
-ALL_TARGET =		pcf
+ALL_TARGET =		pcf pcf-8bit
 
 FONTDIR =		${PREFIX}/share/fonts/terminus
 
