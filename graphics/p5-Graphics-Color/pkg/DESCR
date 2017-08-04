@@ -1,0 +1,7 @@
+Graphics::Color::RGB represents a Color in the sRGB color space.
+Individual color channels are expressed as decimal values from 0
+to 1, 0 being a lack of that color (or opaque in the case of alpha)
+and 1 being full color (or transparent in the case of alpha).  If
+no options are provided then new instance of RGB are opaque white,
+(that is equivalent to red => 1, green => 1, blue => 1, alpha =>
+1).

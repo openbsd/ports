@@ -1,0 +1,21 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/08/04 09:57:56 bluhm Exp $
+${P5SITE}/Graphics/
+${P5SITE}/Graphics/Color/
+${P5SITE}/Graphics/Color.pm
+${P5SITE}/Graphics/Color/CMYK.pm
+${P5SITE}/Graphics/Color/Equal.pm
+${P5SITE}/Graphics/Color/HSL.pm
+${P5SITE}/Graphics/Color/HSV.pm
+${P5SITE}/Graphics/Color/RGB.pm
+${P5SITE}/Graphics/Color/Types.pm
+${P5SITE}/Graphics/Color/YIQ.pm
+${P5SITE}/Graphics/Color/YUV.pm
+@man man/man3p/Graphics::Color.3p
+@man man/man3p/Graphics::Color::CMYK.3p
+@man man/man3p/Graphics::Color::Equal.3p
+@man man/man3p/Graphics::Color::HSL.3p
+@man man/man3p/Graphics::Color::HSV.3p
+@man man/man3p/Graphics::Color::RGB.3p
+@man man/man3p/Graphics::Color::Types.3p
+@man man/man3p/Graphics::Color::YIQ.3p
+@man man/man3p/Graphics::Color::YUV.3p
