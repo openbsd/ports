@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.16 2017/06/12 10:57:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2017/08/04 22:06:51 abieber Exp $
 
 BROKEN-i386=	need to free up a register
 ONLY_FOR_ARCHS= amd64 i386
 
 COMMENT=	clone of the original Quake III Arena
 
-DISTNAME=	ioquake3-2017.05.31
+DISTNAME=	ioquake3-2017.08.03
 
 GH_ACCOUNT=	ioquake
 GH_PROJECT=	ioq3
-GH_COMMIT=	8a50e2aa09e05149f4d0b72b148da12caa56f73f
-REVISION=	0
+GH_COMMIT=	59b1262b82a2d2fa80f7f5ffce098cb4d3459a14
 
 CATEGORIES=	games
 
