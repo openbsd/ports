@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2017/07/26 22:45:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2017/08/04 22:33:18 sthen Exp $
 
 COMMENT =	Enhanced Duke Nukem 3D engine
 RDATE =		20160610
@@ -97,8 +97,11 @@ MAKE_FLAGS +=	MISCLINKOPTS=-nopie
 
 .include <bsd.port.mk>
 .if ${PROPERTIES:Mclang}
+.  if ${MACHINE_ARCH} == i386
+# disable LTO, ld.lld doesn't work here on i386
+MAKE_FLAGS +=	LTO=0
+.  else
 # lto doesn't work with binutils, at all
 MAKE_FLAGS +=	LDFLAGS=-fuse-ld=/usr/bin/ld.lld
-# alternately, we could disable LTO
-# MAKE_FLAGS +=	LTO=0
+.  endif
 .endif
