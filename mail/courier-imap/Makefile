@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.110 2017/06/02 08:56:32 schwarze Exp $
+# $OpenBSD: Makefile,v 1.111 2017/08/04 23:15:45 giovanni Exp $
 
 COMMENT-main=		imap server for maildir format mailboxes
 COMMENT-pop3=		pop3 server for maildir format mailboxes
 
-V=			4.17.3
+V=			4.18.0
 DISTNAME=		courier-imap-${V}
 PKGNAME-main=		${DISTNAME}
 FULLPKGNAME-pop3=	courier-pop3-${V}
 FULLPKGPATH-pop3=	mail/courier-imap,-pop3
-REVISION=		0
 
 CATEGORIES=		mail
 
@@ -21,10 +20,12 @@ MAINTAINER=		Giovanni Bechis <giovanni@openbsd.org>
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 
+COMPILER =		gcc
+
 WANTLIB=		c courierauth courierauthcommon courierauthsasl gdbm
-WANTLIB+=		idn pcre
+WANTLIB+=		idn m pcre ${COMPILER_LIBCXX}
 WANTLIB-pop3=		c courierauth courierauthcommon courierauthsasl
-WANTLIB-pop3+=		idn pcre ${MODGETTEXT_WANTLIB}
+WANTLIB-pop3+=		idn m pcre ${COMPILER_LIBCXX} ${MODGETTEXT_WANTLIB}
 
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	autoconf automake
@@ -93,7 +94,7 @@ CONFIGURE_ARGS+=	--disable-workarounds-for-imap-client-bugs
 MULTI_PACKAGES=		-main -pop3
 
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
-			mail/courier-unicode>=1.3 \
+			mail/courier-unicode>=2.0 \
 			databases/gdbm
 RUN_DEPENDS-pop3=	mail/courier-imap,-main
 
