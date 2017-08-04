@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.156 2017/07/26 22:45:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.157 2017/08/04 16:36:35 sthen Exp $
 
 DPB_PROPERTIES =	parallel
 
@@ -101,7 +101,8 @@ WANTLIB += heimdal/lib/heimsqlite
 
 MODGNU_CONFIG_GUESS_DIRS = ${WRKSRC} ${WRKSRC}/build
 
-TEST_TARGET =	test
+TEST_TARGET =		test
+TEST_DEPENDS =		shells/bash
 
 MULTI_PACKAGES =	-main -server
 
@@ -136,5 +137,8 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/servers/slapd/DB_CONFIG \
 		${PREFIX}/share/examples/openldap
 	@rm -rf ${DESTDIR}${SYSCONFDIR}/openldap
+
+pre-test:
+	sed -i 's,^#!/bin/bash,#!${LOCALBASE}/bin/bash,' ${WRKSRC}/tests/scripts/test064-constraint
 
 .include <bsd.port.mk>
