@@ -1,0 +1,89 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/08/04 09:47:15 bluhm Exp $
+${P5SITE}/Chart/
+${P5SITE}/Chart/Clicker/
+${P5SITE}/Chart/Clicker.pm
+${P5SITE}/Chart/Clicker/Axis/
+${P5SITE}/Chart/Clicker/Axis.pm
+${P5SITE}/Chart/Clicker/Axis/DateTime.pm
+${P5SITE}/Chart/Clicker/Axis/DivisionType/
+${P5SITE}/Chart/Clicker/Axis/DivisionType.pm
+${P5SITE}/Chart/Clicker/Axis/DivisionType/Exact.pm
+${P5SITE}/Chart/Clicker/Axis/DivisionType/LinearExpandGraph.pm
+${P5SITE}/Chart/Clicker/Axis/DivisionType/LinearRounded.pm
+${P5SITE}/Chart/Clicker/Component.pm
+${P5SITE}/Chart/Clicker/Container.pm
+${P5SITE}/Chart/Clicker/Context.pm
+${P5SITE}/Chart/Clicker/Data/
+${P5SITE}/Chart/Clicker/Data/DataSet.pm
+${P5SITE}/Chart/Clicker/Data/Marker.pm
+${P5SITE}/Chart/Clicker/Data/Range.pm
+${P5SITE}/Chart/Clicker/Data/Series/
+${P5SITE}/Chart/Clicker/Data/Series.pm
+${P5SITE}/Chart/Clicker/Data/Series/HighLow.pm
+${P5SITE}/Chart/Clicker/Data/Series/Size.pm
+${P5SITE}/Chart/Clicker/Decoration/
+${P5SITE}/Chart/Clicker/Decoration.pm
+${P5SITE}/Chart/Clicker/Decoration/Annotation.pm
+${P5SITE}/Chart/Clicker/Decoration/Glass.pm
+${P5SITE}/Chart/Clicker/Decoration/Grid.pm
+${P5SITE}/Chart/Clicker/Decoration/Legend/
+${P5SITE}/Chart/Clicker/Decoration/Legend.pm
+${P5SITE}/Chart/Clicker/Decoration/Legend/Tabular.pm
+${P5SITE}/Chart/Clicker/Decoration/MarkerOverlay.pm
+${P5SITE}/Chart/Clicker/Decoration/OverAxis.pm
+${P5SITE}/Chart/Clicker/Decoration/Plot.pm
+${P5SITE}/Chart/Clicker/Drawing/
+${P5SITE}/Chart/Clicker/Drawing/ColorAllocator.pm
+${P5SITE}/Chart/Clicker/Positioned.pm
+${P5SITE}/Chart/Clicker/Renderer/
+${P5SITE}/Chart/Clicker/Renderer.pm
+${P5SITE}/Chart/Clicker/Renderer/Area.pm
+${P5SITE}/Chart/Clicker/Renderer/Bar.pm
+${P5SITE}/Chart/Clicker/Renderer/Bubble.pm
+${P5SITE}/Chart/Clicker/Renderer/CandleStick.pm
+${P5SITE}/Chart/Clicker/Renderer/Line.pm
+${P5SITE}/Chart/Clicker/Renderer/Pie.pm
+${P5SITE}/Chart/Clicker/Renderer/Point.pm
+${P5SITE}/Chart/Clicker/Renderer/PolarArea.pm
+${P5SITE}/Chart/Clicker/Renderer/StackedArea.pm
+${P5SITE}/Chart/Clicker/Renderer/StackedBar.pm
+${P5SITE}/Chart/Clicker/Tutorial.pm
+@man man/man3p/Chart::Clicker.3p
+@man man/man3p/Chart::Clicker::Axis.3p
+@man man/man3p/Chart::Clicker::Axis::DateTime.3p
+@man man/man3p/Chart::Clicker::Axis::DivisionType.3p
+@man man/man3p/Chart::Clicker::Axis::DivisionType::Exact.3p
+@man man/man3p/Chart::Clicker::Axis::DivisionType::LinearExpandGraph.3p
+@man man/man3p/Chart::Clicker::Axis::DivisionType::LinearRounded.3p
+@man man/man3p/Chart::Clicker::Component.3p
+@man man/man3p/Chart::Clicker::Container.3p
+@man man/man3p/Chart::Clicker::Context.3p
+@man man/man3p/Chart::Clicker::Data::DataSet.3p
+@man man/man3p/Chart::Clicker::Data::Marker.3p
+@man man/man3p/Chart::Clicker::Data::Range.3p
+@man man/man3p/Chart::Clicker::Data::Series.3p
+@man man/man3p/Chart::Clicker::Data::Series::HighLow.3p
+@man man/man3p/Chart::Clicker::Data::Series::Size.3p
+@man man/man3p/Chart::Clicker::Decoration.3p
+@man man/man3p/Chart::Clicker::Decoration::Annotation.3p
+@man man/man3p/Chart::Clicker::Decoration::Glass.3p
+@man man/man3p/Chart::Clicker::Decoration::Grid.3p
+@man man/man3p/Chart::Clicker::Decoration::Legend.3p
+@man man/man3p/Chart::Clicker::Decoration::Legend::Tabular.3p
+@man man/man3p/Chart::Clicker::Decoration::MarkerOverlay.3p
+@man man/man3p/Chart::Clicker::Decoration::OverAxis.3p
+@man man/man3p/Chart::Clicker::Decoration::Plot.3p
+@man man/man3p/Chart::Clicker::Drawing::ColorAllocator.3p
+@man man/man3p/Chart::Clicker::Positioned.3p
+@man man/man3p/Chart::Clicker::Renderer.3p
+@man man/man3p/Chart::Clicker::Renderer::Area.3p
+@man man/man3p/Chart::Clicker::Renderer::Bar.3p
+@man man/man3p/Chart::Clicker::Renderer::Bubble.3p
+@man man/man3p/Chart::Clicker::Renderer::CandleStick.3p
+@man man/man3p/Chart::Clicker::Renderer::Line.3p
+@man man/man3p/Chart::Clicker::Renderer::Pie.3p
+@man man/man3p/Chart::Clicker::Renderer::Point.3p
+@man man/man3p/Chart::Clicker::Renderer::PolarArea.3p
+@man man/man3p/Chart::Clicker::Renderer::StackedArea.3p
+@man man/man3p/Chart::Clicker::Renderer::StackedBar.3p
+@man man/man3p/Chart::Clicker::Tutorial.3p

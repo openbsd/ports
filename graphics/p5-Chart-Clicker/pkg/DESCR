@@ -1,0 +1,5 @@
+Chart::Clicker aims to be a powerful, extensible charting package
+that creates really pretty output.  Charts can be saved in png,
+svg, pdf and postscript format.  Clicker leverages the power of
+Graphics::Primitive to create snazzy graphics without being tied
+to specific backend.  You may want to begin with Chart::Clicker::Tutorial.
