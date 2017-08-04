@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2017/07/26 22:45:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2017/08/04 23:05:01 giovanni Exp $
 
-SHARED_LIBS +=  courier-unicode		0.0 # 2.0
+SHARED_LIBS +=  courier-unicode		1.0 # 2.0
 
 COMMENT =		courier unicode library
 
-DISTNAME =		courier-unicode-1.4
-REVISION =		1
+DISTNAME =		courier-unicode-2.0
 
 CATEGORIES =		mail devel
 
@@ -18,6 +17,7 @@ MAINTAINER =		Giovanni Bechis <giovanni@openbsd.org>
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 
+COMPILER =		gcc
 WANTLIB +=		iconv m ${COMPILER_LIBCXX}
 LIB_DEPENDS =		converters/libiconv
 
