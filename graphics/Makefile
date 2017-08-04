@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.439 2017/08/01 16:40:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.440 2017/08/04 12:21:53 bluhm Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -116,8 +116,8 @@
      SUBDIR += jpeg2ps
      SUBDIR += jpegdump
      SUBDIR += jpegpixi
-     SUBDIR += krita
      SUBDIR += k3dsurf
+     SUBDIR += krita
      SUBDIR += l2p
      SUBDIR += lcms
      SUBDIR += lcms2
@@ -179,7 +179,10 @@
      SUBDIR += p5-Cairo
      SUBDIR += p5-Captcha-reCAPTCHA
      SUBDIR += p5-Chart
+     SUBDIR += p5-Chart-Clicker
      SUBDIR += p5-Color-Calc
+     SUBDIR += p5-Color-Library
+     SUBDIR += p5-Color-Scheme
      SUBDIR += p5-GD
      SUBDIR += p5-GD-Barcode
      SUBDIR += p5-GD-Graph
@@ -187,8 +190,12 @@
      SUBDIR += p5-GD-SVG
      SUBDIR += p5-GD-SecurityImage
      SUBDIR += p5-GD-TextUtil
+     SUBDIR += p5-Geometry-Primitive
+     SUBDIR += p5-Graphics-Color
      SUBDIR += p5-Graphics-ColorNames
      SUBDIR += p5-Graphics-ColorNames-WWW
+     SUBDIR += p5-Graphics-Primitive
+     SUBDIR += p5-Graphics-Primitive-Driver-Cairo
      SUBDIR += p5-Image-BioChrome
      SUBDIR += p5-Image-EXIF
      SUBDIR += p5-Image-ExifTool
@@ -198,6 +205,7 @@
      SUBDIR += p5-Image-Size
      SUBDIR += p5-Imager
      SUBDIR += p5-Imager-QRCode
+     SUBDIR += p5-Layout-Manager
      SUBDIR += p5-SVG
      SUBDIR += p5-SVG-Graph
      SUBDIR += p5-Sane
@@ -235,8 +243,8 @@
      SUBDIR += pycha
      SUBDIR += qimageblitz
      SUBDIR += qiv
-     SUBDIR += quirc
      SUBDIR += quesoglc
+     SUBDIR += quirc
      SUBDIR += rawstudio
      SUBDIR += rawtherapee
      SUBDIR += ruby-color
