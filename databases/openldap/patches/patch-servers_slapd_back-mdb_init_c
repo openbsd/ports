@@ -1,13 +1,10 @@
-$OpenBSD: patch-servers_slapd_back-mdb_init_c,v 1.2 2016/02/25 00:45:43 sthen Exp $
-
-XXX maintaining the patch here, but MDB is disabled because last time
-    it was enabled there were still problems even with this.
-
---- servers/slapd/back-mdb/init.c.orig	Fri Feb  5 23:57:45 2016
-+++ servers/slapd/back-mdb/init.c	Fri Feb 12 13:38:28 2016
-@@ -159,6 +159,32 @@ mdb_db_open( BackendDB *be, ConfigReply *cr )
- 	dbhome = mdb->mi_dbenv_home;
- #endif
+$OpenBSD: patch-servers_slapd_back-mdb_init_c,v 1.3 2017/08/04 12:34:56 sthen Exp $
+Index: servers/slapd/back-mdb/init.c
+--- servers/slapd/back-mdb/init.c.orig
++++ servers/slapd/back-mdb/init.c
+@@ -166,6 +166,33 @@ mdb_db_open( BackendDB *be, ConfigReply *cr )
+ 
+ 	flags = mdb->mi_dbenv_flags;
  
 +#ifdef __OpenBSD__
 +	/*
@@ -31,10 +28,11 @@ XXX maintaining the patch here, but MDB is disabled because last time
 +			LDAP_XSTRING(mdb_db_open) ": database \"%s\" does not have writemap. "
 +			"This is required on systems without unified buffer cache.\n",
 +			be->be_suffix[0].bv_val, rc, 0 );
++		rc = MDB_INCOMPATIBLE;
 +		goto fail;
 +	}
 +#endif
 +
- 	Debug( LDAP_DEBUG_TRACE,
- 		LDAP_XSTRING(mdb_db_open) ": database \"%s\": "
- 		"dbenv_open(%s).\n",
+ 	if ( slapMode & SLAP_TOOL_QUICK )
+ 		flags |= MDB_NOSYNC|MDB_WRITEMAP;
+ 
