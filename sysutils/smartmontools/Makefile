@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.33 2017/07/26 22:45:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2017/08/04 23:37:41 juanfra Exp $
 
-ONLY_FOR_ARCHS=		amd64 i386 powerpc
+ONLY_FOR_ARCHS=		amd64 i386 mips64el powerpc
 
 COMMENT=		control and monitor storage systems using SMART
 
