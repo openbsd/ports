@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.6 2017/08/03 15:05:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2017/08/04 17:36:56 sthen Exp $
 
 BROKEN-macppc =			fontforge doesnt validate fonts
 BROKEN-sparc64 =		fontforge doesnt validate fonts
-BROKEN-i386 =			clang-built fontforge hangs, burning cpu - processes stay running even after dpb kills the build
 
 COMMENT =			programming font designed with functionality in mind
 
