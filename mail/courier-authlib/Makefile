@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2017/07/26 22:45:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.64 2017/08/04 23:14:32 giovanni Exp $
 
 COMMENT-main=		authentication library for courier
 COMMENT-ldap=		ldap authentication module for courier-authLib
@@ -6,17 +6,12 @@ COMMENT-mysql=		mysql authentication module for courier-authLib
 COMMENT-pgsql=		pgsql authentication module for courier-authLib
 COMMENT-userdb=		userdb authentication module for courier-authLib
 
-DISTNAME=		courier-authlib-0.67.0
+DISTNAME=		courier-authlib-0.68.0
 PKGNAME-main=		${DISTNAME}
 PKGNAME-ldap=		${DISTNAME:S/lib-/lib-ldap-/}
 PKGNAME-mysql=		${DISTNAME:S/lib-/lib-mysql-/}
 PKGNAME-pgsql=		${DISTNAME:S/lib-/lib-pgsql-/}
 PKGNAME-userdb=		${DISTNAME:S/lib-/lib-userdb-/}
-REVISION-ldap=		0
-REVISION-main=		0
-REVISION-mysql=		0
-REVISION-pgsql=		0
-REVISION-userdb=	0
 
 SHARED_LIBS +=  courierauth          1.0      # .0.0
 SHARED_LIBS +=  courierauthsasl      1.0      # .0.0
@@ -73,7 +68,7 @@ CONFIGURE_ARGS+=	--enable-static \
 
 RUN_DEPENDS-main=	lang/expect
 BUILD_DEPENDS=		lang/expect \
-			mail/courier-unicode
+			mail/courier-unicode>=2.0
 
 DOCS=			COPYING COPYING.GPL INSTALL NEWS README
 
@@ -84,13 +79,13 @@ MULTI_PACKAGES=		-main -ldap -mysql -pgsql -userdb
 PSEUDO_FLAVORS=		no_ldap no_mysql no_pgsql no_userdb
 FLAVOR?=
 
-WANTLIB-main=		c ltdl pthread sqlite3
+WANTLIB-main=		c ltdl m pthread sqlite3 ${COMPILER_LIBCXX}
 
 LIB_DEPENDS-main=	databases/sqlite3 \
 			devel/libtool,-ltdl
 
 WANTLIB-ldap=		crypto ssl courierauthcommon courierauth \
-			ldap-2.4 lber-2.4 sasl2
+			m ldap-2.4 lber-2.4 sasl2 ${COMPILER_LIBCXX}
 RUN_DEPENDS-ldap=
 LIB_DEPENDS-ldap=	${BUILD_PKGPATH} \
 			databases/openldap \
@@ -102,7 +97,8 @@ RUN_DEPENDS-mysql=
 LIB_DEPENDS-mysql=	${BUILD_PKGPATH} \
 			databases/mariadb
 
-WANTLIB-pgsql=		m courierauthcommon courierauth pq crypto ssl
+WANTLIB-pgsql=		m courierauthcommon courierauth pq crypto ssl \
+			${COMPILER_LIBCXX}
 RUN_DEPENDS-pgsql=
 LIB_DEPENDS-pgsql=	${BUILD_PKGPATH} \
 			databases/postgresql
