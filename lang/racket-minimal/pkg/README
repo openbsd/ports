@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.9 2017/03/09 01:56:52 juanfra Exp $
+$OpenBSD: README,v 1.10 2017/08/05 22:49:16 juanfra Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -15,7 +15,7 @@ Limitations
 - Never run "raco pkg" commands as root, even when the commands are suggested
   by upstream. You're going to break the racket package.
 - Racket "places" and "futures" (using threads instead of processes) is
-  only supported on amd64.
+  only supported on amd64 and i386.
 
 FAQ
 ===
