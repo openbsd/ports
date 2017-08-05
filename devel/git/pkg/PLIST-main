@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST-main,v 1.77 2017/05/10 08:05:04 benoit Exp $
+@comment $OpenBSD: PLIST-main,v 1.78 2017/08/05 19:09:05 benoit Exp $
+@pkgpath devel/git
 @newgroup _gitdaemon:778
 @newuser _gitdaemon:778:_gitdaemon:daemon:GIT Daemon:/nonexistent:/sbin/nologin
-@pkgpath devel/git
 @bin bin/git
 bin/git-cvsserver
 @bin bin/git-receive-pack
@@ -367,6 +367,7 @@ libexec/git/mergetools/xxdiff
 @man man/man7/gitglossary.7
 @man man/man7/gitnamespaces.7
 @man man/man7/gitrevisions.7
+@man man/man7/gitsubmodules.7
 @man man/man7/gittutorial-${MODPY_VERSION}
 @man man/man7/gittutorial.7
 @man man/man7/gitworkflows.7
