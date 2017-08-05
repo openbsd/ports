@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.29 2017/04/17 07:31:24 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.30 2017/08/05 10:26:19 jasper Exp $
 include/goa-1.0/
 include/goa-1.0/goa/
 include/goa-1.0/goa/goa-generated.h
@@ -61,6 +61,7 @@ share/icons/hicolor/16x16/apps/im-qq.png
 share/icons/hicolor/16x16/apps/im-sametime.png
 share/icons/hicolor/16x16/apps/im-silc.png
 share/icons/hicolor/16x16/apps/im-sip.png
+share/icons/hicolor/16x16/apps/im-skype.png
 share/icons/hicolor/16x16/apps/im-yahoo.png
 share/icons/hicolor/16x16/apps/im-zephyr.png
 share/icons/hicolor/22x22/apps/goa-account-facebook.png
@@ -90,6 +91,7 @@ share/icons/hicolor/22x22/apps/im-qq.png
 share/icons/hicolor/22x22/apps/im-sametime.png
 share/icons/hicolor/22x22/apps/im-silc.png
 share/icons/hicolor/22x22/apps/im-sip.png
+share/icons/hicolor/22x22/apps/im-skype.png
 share/icons/hicolor/22x22/apps/im-yahoo.png
 share/icons/hicolor/22x22/apps/im-zephyr.png
 share/icons/hicolor/24x24/apps/goa-account-facebook.png
@@ -176,6 +178,7 @@ share/icons/hicolor/48x48/apps/im-qq.png
 share/icons/hicolor/48x48/apps/im-sametime.png
 share/icons/hicolor/48x48/apps/im-silc.png
 share/icons/hicolor/48x48/apps/im-sip.png
+share/icons/hicolor/48x48/apps/im-skype.png
 share/icons/hicolor/48x48/apps/im-yahoo.png
 share/icons/hicolor/48x48/apps/im-zephyr.png
 share/icons/hicolor/96x96/apps/goa-account-facebook.png
