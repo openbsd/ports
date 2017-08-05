@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2017/03/21 19:48:01 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.17 2017/08/05 20:18:11 dcoppa Exp $
 @bin bin/awesome
 bin/awesome-client
 @man man/man1/awesome-client.1
@@ -25,7 +25,10 @@ share/awesome/lib/awful/ewmh.lua
 share/awesome/lib/awful/hotkeys_popup/
 share/awesome/lib/awful/hotkeys_popup/init.lua
 share/awesome/lib/awful/hotkeys_popup/keys/
+share/awesome/lib/awful/hotkeys_popup/keys/firefox.lua
 share/awesome/lib/awful/hotkeys_popup/keys/init.lua
+share/awesome/lib/awful/hotkeys_popup/keys/qutebrowser.lua
+share/awesome/lib/awful/hotkeys_popup/keys/tmux.lua
 share/awesome/lib/awful/hotkeys_popup/keys/vim.lua
 share/awesome/lib/awful/hotkeys_popup/widget.lua
 share/awesome/lib/awful/init.lua
@@ -63,6 +66,7 @@ share/awesome/lib/awful/wibar.lua
 share/awesome/lib/awful/wibox.lua
 share/awesome/lib/awful/widget/
 share/awesome/lib/awful/widget/button.lua
+share/awesome/lib/awful/widget/calendar_popup.lua
 share/awesome/lib/awful/widget/clienticon.lua
 share/awesome/lib/awful/widget/common.lua
 share/awesome/lib/awful/widget/graph.lua
@@ -134,6 +138,7 @@ share/awesome/lib/wibox/layout/fixed.lua
 share/awesome/lib/wibox/layout/flex.lua
 share/awesome/lib/wibox/layout/grid.lua
 share/awesome/lib/wibox/layout/init.lua
+share/awesome/lib/wibox/layout/manual.lua
 share/awesome/lib/wibox/layout/margin.lua
 share/awesome/lib/wibox/layout/mirror.lua
 share/awesome/lib/wibox/layout/ratio.lua
@@ -143,6 +148,7 @@ share/awesome/lib/wibox/layout/stack.lua
 share/awesome/lib/wibox/widget/
 share/awesome/lib/wibox/widget/background.lua
 share/awesome/lib/wibox/widget/base.lua
+share/awesome/lib/wibox/widget/calendar.lua
 share/awesome/lib/wibox/widget/checkbox.lua
 share/awesome/lib/wibox/widget/graph.lua
 share/awesome/lib/wibox/widget/imagebox.lua

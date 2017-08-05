@@ -1,0 +1,14 @@
+$OpenBSD: patch-lib_gears_filesystem_lua,v 1.1 2017/08/05 20:18:11 dcoppa Exp $
+
+Index: lib/gears/filesystem.lua
+--- lib/gears/filesystem.lua.orig
++++ lib/gears/filesystem.lua
+@@ -92,7 +92,7 @@ end
+ --- Get the data dirs according to the XDG basedir specification.
+ -- @treturn table the data dirs (XDG_DATA_DIRS) with a slash at the end of each entry.
+ function filesystem.get_xdg_data_dirs()
+-    local xdg_data_dirs = os.getenv("XDG_DATA_DIRS") or "/usr/share:/usr/local/share"
++    local xdg_data_dirs = os.getenv("XDG_DATA_DIRS") or "${LOCALBASE}/share"
+     return gtable.map(
+         function(dir) return dir .. "/" end,
+         gstring.split(xdg_data_dirs, ":"))

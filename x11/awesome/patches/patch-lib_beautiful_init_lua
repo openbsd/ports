@@ -1,7 +1,8 @@
-$OpenBSD: patch-lib_beautiful_init_lua,v 1.2 2017/03/21 19:48:01 dcoppa Exp $
---- lib/beautiful/init.lua.orig	Sat Mar 18 10:49:46 2017
-+++ lib/beautiful/init.lua	Tue Mar 21 18:07:44 2017
-@@ -88,7 +88,7 @@ local active_font
+$OpenBSD: patch-lib_beautiful_init_lua,v 1.3 2017/08/05 20:18:11 dcoppa Exp $
+Index: lib/beautiful/init.lua
+--- lib/beautiful/init.lua.orig
++++ lib/beautiful/init.lua
+@@ -89,7 +89,7 @@ local active_font
  -- @beautiful beautiful.wallpaper
  
  -- The icon theme name.

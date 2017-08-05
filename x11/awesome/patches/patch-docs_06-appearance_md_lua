@@ -1,0 +1,11 @@
+$OpenBSD: patch-docs_06-appearance_md_lua,v 1.1 2017/08/05 20:18:11 dcoppa Exp $
+
+Index: docs/06-appearance.md.lua
+--- docs/06-appearance.md.lua.orig
++++ docs/06-appearance.md.lua
+@@ -1,4 +1,4 @@
+-#! /usr/bin/lua
++#!${MODLUA_BIN}
+ local args = {...}
+ 
+ local gio = require("lgi").Gio

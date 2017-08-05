@@ -1,7 +1,8 @@
-$OpenBSD: patch-awesomerc_lua,v 1.2 2017/03/21 19:48:01 dcoppa Exp $
---- awesomerc.lua.orig	Sat Mar 18 10:49:46 2017
-+++ awesomerc.lua	Tue Mar 21 18:07:44 2017
-@@ -48,7 +48,7 @@ beautiful.init(awful.util.get_themes_dir() .. "default
+$OpenBSD: patch-awesomerc_lua,v 1.3 2017/08/05 20:18:11 dcoppa Exp $
+Index: awesomerc.lua
+--- awesomerc.lua.orig
++++ awesomerc.lua
+@@ -49,7 +49,7 @@ beautiful.init(gears.filesystem.get_themes_dir() .. "d
  -- @DOC_DEFAULT_APPLICATIONS@
  -- This is used later as the default terminal and editor to run.
  terminal = "xterm"

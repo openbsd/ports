@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.106 2017/03/21 19:48:01 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.107 2017/08/05 20:18:11 dcoppa Exp $
 
 COMMENT=		highly configurable framework window manager
 
-VER=			4.1
+VER=			4.2
 DISTNAME=		awesome-${VER}
 EXTRACT_SUFX=		.tar.xz
 CATEGORIES=		x11
@@ -57,28 +57,23 @@ CONFIGURE_ARGS=		-DCOMPRESS_MANPAGES=off \
 			-DGENERATE_DOC=off \
 			-DSYSCONFDIR=${SYSCONFDIR}
 
-SEPARATE_BUILD=		No
-
 NO_TEST=		Yes
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/awesomeConfig.cmake \
+		${WRKSRC}/docs/06-appearance.md.lua \
 		${WRKSRC}/lib/awful/completion.lua \
 		${WRKSRC}/lib/awful/util.lua \
 		${WRKSRC}/lib/beautiful/init.lua \
+		${WRKSRC}/lib/gears/filesystem.lua \
 		${WRKSRC}/lib/menubar/icon_theme.lua \
-		${WRKSRC}/lib/menubar/menu_gen.lua \
 		${WRKSRC}/lib/naughty/core.lua \
 		${WRKSRC}/themes/default/theme.lua \
 		${WRKSRC}/themes/xresources/theme.lua \
 		${WRKSRC}/utils/awesome-client
 
 post-install:
-	@rm ${WRKINST}${LOCALBASE}/share/awesome/lib/awful/*.{beforesubst,orig} \
-		${WRKINST}${LOCALBASE}/share/awesome/lib/beautiful/*.{beforesubst,orig} \
-		${WRKINST}${LOCALBASE}/share/awesome/lib/menubar/*.{beforesubst,orig} \
-		${WRKINST}${LOCALBASE}/share/awesome/lib/naughty/*.{beforesubst,orig} \
-		${WRKINST}${LOCALBASE}/share/awesome/themes/default/*.{beforesubst,orig} \
+	@rm ${WRKINST}${LOCALBASE}/share/awesome/themes/default/*.{beforesubst,orig} \
 		${WRKINST}${LOCALBASE}/share/awesome/themes/xresources/*.{beforesubst,orig}
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/awesome
 	@mv ${WRKINST}${SYSCONFDIR}/xdg/awesome/rc.lua \
