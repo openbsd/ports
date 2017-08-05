@@ -1,31 +1,22 @@
-# $OpenBSD: Makefile,v 1.258 2017/07/16 19:19:02 espie Exp $
+# $OpenBSD: Makefile,v 1.259 2017/08/05 12:29:21 sthen Exp $
 
-# XXX uses -fblocks on clang, or nested functions on gcc.
-#
-# on clang/ld.bfd arches, the configure test fails to link. test looks like this:
-#
-#    echo 'int main(){return ^{return 42;}();}' | \
-#         clang -o /tmp/blockstest -fblocks -x c -L/usr/local/lib -lBlocksRuntime -
-#
-# -> undefined reference to `_NSConcreteGlobalBlock'
-#
-# on clang/ld.lld arches, it builds ok but runtime fails: dlopen()ing the .so modules
-# at runtime fails with undefined symbols from the BlocksRuntime lib.
-#
-BROKEN-aarch64=		linker problems with BlocksRuntime that only show up at runtime
+BROKEN-aarch64=	linker problems with BlocksRuntime that only show up at runtime
 
-COMMENT-main=		open source multi-protocol PBX and telephony toolkit
+COMMENT-main=	open source multi-protocol PBX and telephony toolkit
 
-VER=			13.17.0
-PORTROACH=		limitw:0,odd
-DISTNAME=		asterisk-${VER:S/beta/-beta/:S/rc/-rc/}
-PKGNAME-main=		asterisk-${VER}
+VER=		13.17.0
+PJ_V=		2.6
+PORTROACH=	limitw:0,odd
+DISTNAME=	asterisk-${VER:S/beta/-beta/:S/rc/-rc/}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} pjproject-${PJ_V}.tar.bz2:0
+PKGNAME-main=	asterisk-${VER}
+REVISION=	0
 
-CATEGORIES=		telephony
+CATEGORIES=	telephony
 
-HOMEPAGE=		http://www.asterisk.org/
+HOMEPAGE=	http://www.asterisk.org/
 
-MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
+MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # Mostly GPL v2 (only). "Specific permission is also granted to link
 # Asterisk with OpenSSL and OpenH323 and distribute the resulting binary
@@ -34,21 +25,35 @@ MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
 PERMIT_PACKAGE_CDROM=	patent licensing clauses
 PERMIT_PACKAGE_FTP=	Yes
 
-WANTLIB-main += c crypto curl execinfo g7221codec gsm iconv iksemel
-WANTLIB-main += ilbccodec jansson lzma m nghttp2 ogg opencore-amrnb
-WANTLIB-main += opencore-amrwb pj pjlib-util pjmedia pjmedia-audiodev
-WANTLIB-main += pjmedia-codec pjmedia-videodev pjnath pjsip pjsip-simple
-WANTLIB-main += pjsip-ua pjsua pjsua2 portaudio pthread resample spandsp
-WANTLIB-main += speex speexdsp sqlite3 ssl ${COMPILER_LIBCXX} termcap tiff uriparser
-WANTLIB-main += uuid vorbis vorbisenc vorbisfile xml2 xslt z
+WANTLIB-main += ${MODGCC4_CPPWANTLIB}
+WANTLIB-main += c crypto curl execinfo gsm iconv iksemel jansson lzma
+WANTLIB-main += m nghttp2 ogg portaudio pthread spandsp sqlite3 ssl
+WANTLIB-main += termcap tiff uriparser uuid vorbis vorbisenc vorbisfile
+WANTLIB-main += xml2 xslt z
 
-SHARED_LIBS=		asteriskssl 0.0		# 1
+# XXX Requires either nested functions (gcc only), or -fblocks (clang).
+#
+# With clang -fblocks, configure test fails on ld.bfd arches:
+#
+#    echo 'int main(){return ^{return 42;}();}' | \
+#         clang -o /tmp/blockstest -fblocks -x c -L/usr/local/lib -lBlocksRuntime -
+#
+# -> undefined reference to `_NSConcreteGlobalBlock'
+#
+# Runtime fails on ld.lld arches: dlopen()ing the .so modules results in
+# undefined symbols from the BlocksRuntime lib.
+#
+COMPILER =		gcc-only
+
+SHARED_LIBS+=		asteriskssl 0.0		# 1
+SHARED_LIBS+=		asteriskpj 0.0		# 2
 
 MULTI_PACKAGES=		-main -calendar -http_post -ldap -odbc \
 			-pgsql -snmp -speex -tds
 PSEUDO_FLAVORS=		${MULTI_PACKAGES:N-main:C/-/no_/g}
 
-LIB_DEPENDS-main=	audio/gsm \
+LIB_DEPENDS-main=	${MODGCC4_CPPLIBDEP} \
+			audio/gsm \
 			audio/libogg \
 			audio/libvorbis \
 			audio/portaudio-svn \
@@ -59,7 +64,6 @@ LIB_DEPENDS-main=	audio/gsm \
 			graphics/tiff \
 			net/curl \
 			sysutils/e2fsprogs \
-			telephony/pjsua,-main \
 			telephony/spandsp \
 			textproc/iksemel \
 			textproc/libxml \
@@ -71,19 +75,7 @@ BUILD_DEPENDS=		security/libsrtp>=1.4.4 # statically linked
 
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/releases/ \
 		http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
-
-# if using bundled pjproject:
-#
-#CONFIGURE_ARGS+= --with-pjproject-bundled
-#PJ_V=		2.5.5
-#MASTER_SITES0=	http://www.pjsip.org/release/${PJ_V}/
-#EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
-#DISTFILES=	${DISTNAME}${EXTRACT_SUFX} pjproject-${PJ_V}.tar.bz2:0
-#
-#	@cd ${WRKSRC}/third-party/; \
-#	    grep 'PJPROJECT_VERSION = ${PJ_V}$$' versions.mak > /dev/null || \
-#	    (echo "PJ_V != PJPROJECT_VERSION; update in port"; \
-#	     grep 'PJPROJECT_VERSION' versions.mak; exit 1)
+MASTER_SITES0=	http://www.pjsip.org/release/${PJ_V}/
 
 USE_GMAKE=		Yes
 
@@ -105,11 +97,13 @@ CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS}" \
 MAKE_FLAGS+=		ASTCFLAGS="${CFLAGS}" \
 			ASTLDFLAGS="${LDFLAGS}" \
 			ASTSSL_SO_VERSION="${LIBasteriskssl_VERSION}" \
+			ASTPJ_SO_VERSION="${LIBasteriskpj_VERSION}" \
 			NOISY_BUILD="Yes" \
 			OPTIMIZE=
 
 CONFIGURE_ARGS+=	--localstatedir=/var \
-			--with-externals-cache=${FULLDISTDIR}
+			--with-externals-cache=${FULLDISTDIR} \
+			--with-pjproject-bundled
 
 CONFIGURE_ARGS+=	--with-asound=no \
 			--with-cap=no \
@@ -161,6 +155,10 @@ CONFIGURE_ARGS+=	--with-imap=no
 
 ## multipackages:
 .include <bsd.port.arch.mk>
+
+#.if ${PROPERTIES:Mclang}
+#BUILD_DEPENDS+=		devel/blocksruntime
+#.endif
 
 # calendar
 COMMENT-calendar=	calendar support for Asterisk
@@ -246,9 +244,19 @@ FULLPKGPATH$i ?=	${PKGPATH},$i
 RUN_DEPENDS$i +=	asterisk-${VER}:telephony/asterisk
 .endfor
 
-.if ${PROPERTIES:Mclang}
-BUILD_DEPENDS+=		devel/blocksruntime
-.endif
+# otherwise asterisk patchset for pjsua gets in the way
+PATCHORIG=		.orig.port
+
+# some of the patches have MS-DOS line endings which patch doesn't like
+post-extract:
+	@cd ${WRKSRC}/third-party/; \
+	    grep 'PJPROJECT_VERSION = ${PJ_V}$$' versions.mak > /dev/null || \
+	    (echo "PJ_V != PJPROJECT_VERSION; update in port"; \
+	     grep 'PJPROJECT_VERSION' versions.mak; exit 1)
+	@perl -i -pe 's/\r$$//' ${WRKSRC}/third-party/pjproject/patches/*patch
+	mv ${WRKDIR}/pjproject-${PJ_V} ${WRKSRC}/third-party/pjproject/source
+	cd ${WRKSRC}/third-party/pjproject; ./apply_patches patches source
+	touch ${WRKSRC}/third-party/pjproject/source/.unpacked
 
 post-patch:
 .if ${PROPERTIES:Mclang}
