@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2016/03/16 21:19:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2017/08/06 20:09:40 sthen Exp $
 
 COMMENT=	software G729A encoder and decoder library
 
-DISTNAME=	bcg729-1.0.1
+DISTNAME=	bcg729-1.0.2
 
-SHARED_LIBS +=	bcg729                    0.0 # unknown
+SHARED_LIBS +=	bcg729                    0.1 # unknown
 
 CATEGORIES=	telephony audio
 
