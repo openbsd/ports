@@ -1,4 +1,4 @@
-$OpenBSD: patch-man_feh_pre,v 1.38 2017/06/09 10:20:22 dcoppa Exp $
+$OpenBSD: patch-man_feh_pre,v 1.39 2017/08/06 08:46:47 dcoppa Exp $
 Index: man/feh.pre
 --- man/feh.pre.orig
 +++ man/feh.pre
@@ -11,7 +11,7 @@ Index: man/feh.pre
  .Pp
  All config files treat lines starting with a
  .Qq #
-@@ -1634,56 +1634,56 @@ Here are some examples of useful option combinations. 
+@@ -1642,56 +1642,56 @@ Here are some examples of useful option combinations. 
  .
  .Bl -tag -width indent
  .
@@ -85,7 +85,7 @@ Index: man/feh.pre
  ~/image/image_name when enter is pressed
  .
  .It feh --start-at ./foo.jpg \&.
-@@ -1728,8 +1728,6 @@ section.
+@@ -1736,8 +1736,6 @@ section.
  .
  .
  .Sh BUGS
