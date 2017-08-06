@@ -1,4 +1,4 @@
-$OpenBSD: patch-cmake_FindLibSpectre_cmake,v 1.1 2017/07/28 09:34:56 espie Exp $
+$OpenBSD: patch-cmake_FindLibSpectre_cmake,v 1.2 2017/08/06 20:04:16 zhuk Exp $
 
 Index: cmake/FindLibSpectre.cmake
 --- cmake/FindLibSpectre.cmake.orig
@@ -12,7 +12,7 @@ Index: cmake/FindLibSpectre.cmake
  
  else(LIBSPECTRE_INCLUDE_DIR AND LIBSPECTRE_LIBRARY)
  
-@@ -33,7 +33,7 @@ if(NOT WIN32)
+@@ -33,19 +33,19 @@ if(NOT WIN32)
       # query pkg-config asking for a libspectre >= LIBSPECTRE_MINIMUM_VERSION
       EXEC_PROGRAM(${PKGCONFIG_EXECUTABLE} ARGS --atleast-version=${LIBSPECTRE_MINIMUM_VERSION} libspectre RETURN_VALUE _return_VALUE OUTPUT_VARIABLE _pkgconfigDevNull )
       if(_return_VALUE STREQUAL "0")
@@ -21,9 +21,11 @@ Index: cmake/FindLibSpectre.cmake
       endif(_return_VALUE STREQUAL "0")
     endif(_SpectreLinkFlags)
  else(NOT WIN32)
-@@ -42,10 +42,10 @@ else(NOT WIN32)
+     # do not use pkg-config on windows
+     find_library(_SpectreLinkFlags NAMES libspectre spectre PATHS ${CMAKE_LIBRARY_PATH})
      
-     find_path(LIBSPECTRE_INCLUDE_DIR spectre.h PATH_SUFFIXES libspectre )
+-    find_path(LIBSPECTRE_INCLUDE_DIR spectre.h PATH_SUFFIXES libspectre )
++    find_path(LIBSPECTRE_INCLUDE_DIR libspectre/spectre.h )
      
 -    set(LIBSPECTRE_INTERNAL_FOUND TRUE)
 +    set(LIBSPECTRE_FOUND TRUE)
@@ -34,8 +36,12 @@ Index: cmake/FindLibSpectre.cmake
    set(LIBSPECTRE_LIBRARY ${_SpectreLinkFlags})
  
    # the cflags for libspectre can contain more than one include path
-@@ -58,7 +58,7 @@ if (LIBSPECTRE_INTERNAL_FOUND)
- endif (LIBSPECTRE_INTERNAL_FOUND)
+@@ -55,10 +55,10 @@ if (LIBSPECTRE_INTERNAL_FOUND)
+     set(LIBSPECTRE_INCLUDE_DIR ${LIBSPECTRE_INCLUDE_DIR} ${_includedir})
+   endforeach(_includedir)
+ 
+-endif (LIBSPECTRE_INTERNAL_FOUND)
++endif (LIBSPECTRE_FOUND)
  
  include(FindPackageHandleStandardArgs)
 -find_package_handle_standard_args(LibSpectre DEFAULT_MSG LIBSPECTRE_LIBRARY LIBSPECTRE_INTERNAL_FOUND)

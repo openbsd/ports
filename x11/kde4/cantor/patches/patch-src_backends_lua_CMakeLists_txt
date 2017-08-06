@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_backends_lua_CMakeLists_txt,v 1.1 2017/08/06 20:04:16 zhuk Exp $
+
+Index: src/backends/lua/CMakeLists.txt
+--- src/backends/lua/CMakeLists.txt.orig
++++ src/backends/lua/CMakeLists.txt
+@@ -1,5 +1,7 @@
+ find_package(KDE4 REQUIRED KIO)
+ 
++include_directories(${LUAJIT_INCLUDE_DIR})
++
+ set(LuaBackend_SRCS
+     luabackend.cpp
+     luasession.cpp
+@@ -16,8 +18,6 @@ install(FILES luabackend.kcfg DESTINATION ${KCFG_INSTA
+ kde4_add_ui_files(LuaBackend_SRCS settings.ui)
+ 
+ kde4_add_plugin( cantor_luabackend ${LuaBackend_SRCS} )
+-
+-include_directories(${LUAJIT_INCLUDE_DIR})
+ 
+ target_link_libraries( cantor_luabackend ${KDE4_KDEUI_LIBS} ${LUAJIT_LIBRARY} cantorlibs ${KDE4_KIO_LIBS})
+ 

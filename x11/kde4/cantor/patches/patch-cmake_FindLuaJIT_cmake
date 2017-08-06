@@ -1,0 +1,23 @@
+$OpenBSD: patch-cmake_FindLuaJIT_cmake,v 1.1 2017/08/06 20:04:16 zhuk Exp $
+The luajit headers are included using <luajit-2.0/...> idiom,
+so use the same for LUAJIT_INCLUDE_DIR.
+Tweak DIR vs. DIRS while there.
+
+Index: cmake/FindLuaJIT.cmake
+--- cmake/FindLuaJIT.cmake.orig
++++ cmake/FindLuaJIT.cmake
+@@ -1,12 +1,12 @@
+ SET (LuaJIT_FOUND FALSE)
+ SET (LUAJIT_LIBRARY_NAME luajit-5.1)
+-SET (LUAJIT_INCLUDE_DIRS /usr/include/luajit-2.0 /usr/local/include/luajit-2.0)
+ 
+-FIND_PATH    (LUAJIT_INCLUDE_DIR lua.h ${LUAJIT_INCLUDE_DIRS} )
++FIND_PATH    (LUAJIT_INCLUDE_DIR luajit-2.0/lua.h)
+ FIND_LIBRARY (LUAJIT_LIBRARY NAMES ${LUAJIT_LIBRARY_NAME} PATHS ${CMAKE_LIBRARY_PATH})
+ 
+ IF (LUAJIT_INCLUDE_DIR AND LUAJIT_LIBRARY)
+     SET (LuaJIT_FOUND TRUE)
++    SET (LUAJIT_INCLUDE_DIRS ${LUAJIT_INCLUDE_DIR})
+ ENDIF (LUAJIT_INCLUDE_DIR AND LUAJIT_LIBRARY)
+ 
+ INCLUDE(FindPackageHandleStandardArgs)
