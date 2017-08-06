@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2017/07/18 10:22:59 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.16 2017/08/06 18:07:50 jasper Exp $
 @newgroup _kibana:766
 @newuser _kibana:766:_kibana:daemon:Kibana user:/nonexistent:/sbin/nologin
 @unexec rm -f ${LOCALBASE}/kibana/data
@@ -12987,6 +12987,8 @@ kibana/node_modules/caniuse-db/features-json/eme.json
 kibana/node_modules/caniuse-db/features-json/eot.json
 kibana/node_modules/caniuse-db/features-json/es5.json
 kibana/node_modules/caniuse-db/features-json/es6-class.json
+kibana/node_modules/caniuse-db/features-json/es6-module-dynamic-import.json
+kibana/node_modules/caniuse-db/features-json/es6-module-nomodule.json
 kibana/node_modules/caniuse-db/features-json/es6-module.json
 kibana/node_modules/caniuse-db/features-json/es6-number.json
 kibana/node_modules/caniuse-db/features-json/eventsource.json
@@ -13048,6 +13050,7 @@ kibana/node_modules/caniuse-db/features-json/input-datetime.json
 kibana/node_modules/caniuse-db/features-json/input-email-tel-url.json
 kibana/node_modules/caniuse-db/features-json/input-event.json
 kibana/node_modules/caniuse-db/features-json/input-file-accept.json
+kibana/node_modules/caniuse-db/features-json/input-file-directory.json
 kibana/node_modules/caniuse-db/features-json/input-file-multiple.json
 kibana/node_modules/caniuse-db/features-json/input-inputmode.json
 kibana/node_modules/caniuse-db/features-json/input-minlength.json
@@ -13749,15 +13752,39 @@ kibana/node_modules/clone/test-apart-ctx.html
 kibana/node_modules/clone/test.html
 kibana/node_modules/clone/test.js
 kibana/node_modules/coa/
-kibana/node_modules/coa/LICENSE
+kibana/node_modules/coa/.npmignore
+kibana/node_modules/coa/.nyc_output/
+kibana/node_modules/coa/.nyc_output/1f2a0db5a6d6559149db56d397f47cfc.json
+kibana/node_modules/coa/.nyc_output/75b82d38f2186df930141082076e11c6.json
+kibana/node_modules/coa/.travis.yml
+kibana/node_modules/coa/GNUmakefile
 kibana/node_modules/coa/README.md
 kibana/node_modules/coa/README.ru.md
+kibana/node_modules/coa/coverage/
+kibana/node_modules/coa/coverage/base.css
+kibana/node_modules/coa/coverage/coa/
+kibana/node_modules/coa/coverage/coa/index.html
+kibana/node_modules/coa/coverage/coa/index.js.html
+kibana/node_modules/coa/coverage/coa/lib/
+kibana/node_modules/coa/coverage/coa/lib/arg.js.html
+kibana/node_modules/coa/coverage/coa/lib/cmd.js.html
+kibana/node_modules/coa/coverage/coa/lib/coaobject.js.html
+kibana/node_modules/coa/coverage/coa/lib/coaparam.js.html
+kibana/node_modules/coa/coverage/coa/lib/color.js.html
+kibana/node_modules/coa/coverage/coa/lib/completion.js.html
+kibana/node_modules/coa/coverage/coa/lib/index.html
+kibana/node_modules/coa/coverage/coa/lib/index.js.html
+kibana/node_modules/coa/coverage/coa/lib/opt.js.html
+kibana/node_modules/coa/coverage/coa/lib/shell.js.html
+kibana/node_modules/coa/coverage/index.html
+kibana/node_modules/coa/coverage/prettify.css
+kibana/node_modules/coa/coverage/prettify.js
+kibana/node_modules/coa/coverage/sort-arrow-sprite.png
+kibana/node_modules/coa/coverage/sorter.js
 kibana/node_modules/coa/index.js
 kibana/node_modules/coa/lib/
 kibana/node_modules/coa/lib/arg.js
 kibana/node_modules/coa/lib/cmd.js
-kibana/node_modules/coa/lib/coaobject.js
-kibana/node_modules/coa/lib/coaparam.js
 kibana/node_modules/coa/lib/color.js
 kibana/node_modules/coa/lib/completion.js
 kibana/node_modules/coa/lib/completion.sh
@@ -13765,6 +13792,15 @@ kibana/node_modules/coa/lib/index.js
 kibana/node_modules/coa/lib/opt.js
 kibana/node_modules/coa/lib/shell.js
 kibana/node_modules/coa/package.json
+kibana/node_modules/coa/qq.js
+kibana/node_modules/coa/src/
+kibana/node_modules/coa/src/arg.coffee
+kibana/node_modules/coa/src/cmd.coffee
+kibana/node_modules/coa/src/color.coffee
+kibana/node_modules/coa/src/completion.coffee
+kibana/node_modules/coa/src/index.coffee
+kibana/node_modules/coa/src/opt.coffee
+kibana/node_modules/coa/src/shell.coffee
 kibana/node_modules/color/
 kibana/node_modules/color-convert/
 kibana/node_modules/color-convert/CHANGELOG.md
@@ -13775,10 +13811,13 @@ kibana/node_modules/color-convert/index.js
 kibana/node_modules/color-convert/package.json
 kibana/node_modules/color-convert/route.js
 kibana/node_modules/color-name/
+kibana/node_modules/color-name/.eslintrc.json
+kibana/node_modules/color-name/.npmignore
 kibana/node_modules/color-name/LICENSE
 kibana/node_modules/color-name/README.md
 kibana/node_modules/color-name/index.js
 kibana/node_modules/color-name/package.json
+kibana/node_modules/color-name/test.js
 kibana/node_modules/color-string/
 kibana/node_modules/color-string/CHANGELOG.md
 kibana/node_modules/color-string/LICENSE
