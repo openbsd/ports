@@ -1,8 +1,8 @@
-$OpenBSD: patch-common_gypi,v 1.7 2017/06/27 12:04:08 abieber Exp $
+$OpenBSD: patch-common_gypi,v 1.8 2017/08/06 15:01:45 abieber Exp $
 Index: common.gypi
 --- common.gypi.orig
 +++ common.gypi
-@@ -400,6 +400,10 @@
+@@ -409,6 +409,10 @@
          'ldflags': [
            '-Wl,--export-dynamic',
          ],

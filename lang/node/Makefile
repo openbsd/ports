@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2017/07/26 22:45:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.63 2017/08/06 15:01:45 abieber Exp $
 
 # XXX:
 # - Needs __ARM_NR_cacheflush (or the like) to work on arm-based ports.
@@ -10,7 +10,7 @@ USE_WXNEEDED =		Yes
 
 COMMENT =		V8 JavaScript for clients and servers
 
-NODE_VERSION =		v6.11.1
+NODE_VERSION =		v6.11.2
 
 PLEDGE_VER =		1.1.0
 DISTFILES =		node-pledge-{}${PLEDGE_VER}.tar.gz:0 ${DISTNAME}.tar.gz
@@ -34,8 +34,6 @@ MASTER_SITES =		${HOMEPAGE}dist/${NODE_VERSION}/
 
 MODULES =		lang/python
 
-COMPILER =		gcc
-
 WANTLIB += c execinfo kvm m pthread util z ${COMPILER_LIBCXX}
 
 LIB_DEPENDS =		devel/libexecinfo
@@ -45,7 +43,6 @@ USE_GMAKE =		Yes
 BUILD_DEPENDS =		sysutils/flock
 
 RUN_DEPENDS =		devel/gmake \
-			${MODGCC4_CPPDEP} \
 			sysutils/flock
 
 TEST_TARGET =		test

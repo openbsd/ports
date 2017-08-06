@@ -1,0 +1,21 @@
+$OpenBSD: patch-node_gypi,v 1.1 2017/08/06 15:01:45 abieber Exp $
+
+Index: node.gypi
+--- node.gypi.orig
++++ node.gypi
+@@ -284,11 +284,14 @@
+         'NODE_PLATFORM="darwin"',
+       ],
+     }],
+-    [ 'OS=="freebsd"', {
++    [ 'OS=="freebsd" or OS=="openbsd"', {
+       'libraries': [
+         '-lutil',
+         '-lkvm',
+       ],
++    }],
++    [ 'OS=="openbsd"', {
++      'ldflags': [ '-rdynamic' ],
+     }],
+     [ 'OS=="aix"', {
+       'defines': [

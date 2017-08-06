@@ -1,8 +1,8 @@
-$OpenBSD: patch-tools_test_py,v 1.2 2017/06/27 12:04:08 abieber Exp $
+$OpenBSD: patch-tools_test_py,v 1.3 2017/08/06 15:01:45 abieber Exp $
 Index: tools/test.py
 --- tools/test.py.orig
 +++ tools/test.py
-@@ -882,9 +882,9 @@ class Context(object):
+@@ -858,9 +858,9 @@ class Context(object):
  
    def GetVm(self, arch, mode):
      if arch == 'none':
