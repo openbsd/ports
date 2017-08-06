@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/08/06 21:55:01 bentley Exp $
+@bin bin/a2play
+include/Audiality2/
+include/Audiality2/a2_drivers.h
+include/Audiality2/a2_dsp.h
+include/Audiality2/a2_interface.h
+include/Audiality2/a2_pitch.h
+include/Audiality2/a2_properties.h
+include/Audiality2/a2_stream.h
+include/Audiality2/a2_types.h
+include/Audiality2/a2_units.h
+include/Audiality2/a2_vm.h
+include/Audiality2/a2_waves.h
+include/Audiality2/audiality2.h
+@lib lib/libaudiality2.so.${LIBaudiality2_VERSION}
+lib/pkgconfig/audiality2.pc

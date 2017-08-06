@@ -1,0 +1,59 @@
+$OpenBSD: patch-test_CMakeLists_txt,v 1.1.1.1 2017/08/06 21:55:01 bentley Exp $
+
+Index: test/CMakeLists.txt
+--- test/CMakeLists.txt.orig
++++ test/CMakeLists.txt
+@@ -18,18 +18,6 @@ function(a2_add_test testname)
+ 	endif(FORCE_32BIT)
+ endfunction(a2_add_test)
+ 
+-a2_add_test(waveupload)
+-a2_add_test(rtsubstate)
+-a2_add_test(renderwave)
+-a2_add_test(renderwave2)
+-a2_add_test(streamupload)
+-a2_add_test(wavestress)
+-a2_add_test(wavestress2)
+-a2_add_test(voicestress)
+-a2_add_test(streamtest)
+-a2_add_test(streamstress)
+-a2_add_test(timingtest)
+-
+ if(SDL_FOUND)
+ 	include_directories(${SDL_INCLUDE_DIR})
+ 	a2_add_test(a2test gui.c)
+@@ -38,12 +26,22 @@ if(SDL_FOUND)
+ 	target_link_libraries(apistress SDLmain)
+ elseif(SDL2_FOUND)
+ 	include_directories(${SDL2_INCLUDE_DIRS})
++	link_directories(${SDL2_LIBDIR})
+ 	a2_add_test(a2test gui.c)
+ 	a2_add_test(apistress)
+ endif(SDL_FOUND)
+ 
+-# Release build: full optimization, no debug features, no debug info
+-set(CMAKE_C_FLAGS_RELEASE "-O3 -DNDEBUG")
++a2_add_test(waveupload)
++a2_add_test(rtsubstate)
++a2_add_test(renderwave)
++a2_add_test(renderwave2)
++a2_add_test(streamupload)
++a2_add_test(wavestress)
++a2_add_test(wavestress2)
++a2_add_test(voicestress)
++a2_add_test(streamtest)
++a2_add_test(streamstress)
++a2_add_test(timingtest)
+ 
+ set(f "-Wall -Wwrite-strings -Wcast-align")
+ set(f "${f} -Wbad-function-cast -Waggregate-return")
+@@ -53,9 +51,3 @@ set(f "${f} -Wmissing-declarations -Wdisabled-optimiza
+ if(CMAKE_C_COMPILER_ID MATCHES "Clang")
+ 	set(f "${f} -Wincompatible-pointer-types")
+ endif()
+-
+-# Debug build: No optimizations, extra debug features, don't fail on warnings
+-set(CMAKE_C_FLAGS_DEBUG "${f} -O0 -g -DDEBUG")
+-
+-# Maintainer build: Few optimizations, lots of warnings, fail on warnings
+-set(CMAKE_C_FLAGS_MAINTAINER "${f} -O1 -g -Werror")

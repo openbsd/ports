@@ -1,0 +1,35 @@
+$OpenBSD: patch-src_CMakeLists_txt,v 1.1.1.1 2017/08/06 21:55:01 bentley Exp $
+
+Index: src/CMakeLists.txt
+--- src/CMakeLists.txt.orig
++++ src/CMakeLists.txt
+@@ -65,6 +65,7 @@ if(SDL_FOUND)
+ elseif(SDL2_FOUND)
+ 	add_definitions(-DA2_HAVE_SDL)
+ 	include_directories(${SDL2_INCLUDE_DIRS})
++	link_directories(${SDL2_LIBDIR})
+ endif(SDL_FOUND)
+ 
+ if(USE_JACK)
+@@ -113,9 +114,6 @@ endif(WIN32)
+ set_target_properties(audiality2 PROPERTIES VERSION ${VERSION_STRING}
+ 	SOVERSION ${VERSION_STRING})
+ 
+-# Release build: full optimization, no debug features, no debug info
+-set(CMAKE_C_FLAGS_RELEASE "-O3 -DNDEBUG")
+-
+ set(f "-Wall -Wwrite-strings -Wcast-align")
+ set(f "${f} -Wbad-function-cast -Waggregate-return")
+ set(f "${f} -Wstrict-prototypes -fno-builtin -Wshadow")
+@@ -124,11 +122,5 @@ set(f "${f} -Wmissing-declarations -Wdisabled-optimiza
+ if(CMAKE_C_COMPILER_ID MATCHES "Clang")
+ 	set(f "${f} -Wincompatible-pointer-types")
+ endif()
+-
+-# Debug build: No optimizations, extra debug features, don't fail on warnings
+-set(CMAKE_C_FLAGS_DEBUG "${f} -O0 -g -DDEBUG")
+-
+-# Maintainer build: Few optimizations, lots of warnings, fail on warnings
+-set(CMAKE_C_FLAGS_MAINTAINER "${f} -O1 -g -Werror")
+ 
+ install(TARGETS audiality2 DESTINATION lib)

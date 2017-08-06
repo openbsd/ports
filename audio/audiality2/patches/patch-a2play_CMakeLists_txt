@@ -1,0 +1,36 @@
+$OpenBSD: patch-a2play_CMakeLists_txt,v 1.1.1.1 2017/08/06 21:55:01 bentley Exp $
+
+Index: a2play/CMakeLists.txt
+--- a2play/CMakeLists.txt.orig
++++ a2play/CMakeLists.txt
+@@ -6,6 +6,8 @@
+ include_directories(${AUDIALITY2_BINARY_DIR}/include)
+ include_directories(${AUDIALITY2_SOURCE_DIR}/include)
+ link_directories(${AUDIALITY2_BINARY_DIR})
++pkg_search_module(SDL2 sdl2)
++link_directories(${SDL2_LIBDIR})
+ 
+ set(AUDIALITY2_LIBRARY audiality2)
+ 
+@@ -16,9 +18,6 @@ if(FORCE_32BIT)
+ 		COMPILE_FLAGS "-m32" LINK_FLAGS "-m32")
+ endif(FORCE_32BIT)
+ 
+-# Release build: full optimization, no debug features, no debug info
+-set(CMAKE_C_FLAGS_RELEASE "-O3 -DNDEBUG")
+-
+ set(f "-Wall -Wwrite-strings -Wcast-align")
+ set(f "${f} -Wbad-function-cast -Waggregate-return")
+ set(f "${f} -Wstrict-prototypes -fno-builtin -Wshadow")
+@@ -27,11 +26,5 @@ set(f "${f} -Wmissing-declarations -Wdisabled-optimiza
+ if(CMAKE_C_COMPILER_ID MATCHES "Clang")
+ 	set(f "${f} -Wincompatible-pointer-types")
+ endif()
+-
+-# Debug build: No optimizations, extra debug features, don't fail on warnings
+-set(CMAKE_C_FLAGS_DEBUG "${f} -O0 -g -DDEBUG")
+-
+-# Maintainer build: Few optimizations, lots of warnings, fail on warnings
+-set(CMAKE_C_FLAGS_MAINTAINER "${f} -O1 -g -Werror")
+ 
+ install(TARGETS a2play DESTINATION bin)
