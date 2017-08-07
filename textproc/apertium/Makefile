@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2017/07/26 22:45:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2017/08/07 07:15:20 bentley Exp $
 
 COMMENT =		rule-based machine translation platform
 
 V =			3.4
-DISTNAME =		apertium-3.4.0
-REVISION =		1
+DISTNAME =		apertium-3.4.2
 
 SHARED_LIBS +=  apertium3-$V              0.0 # 0.0
 SHARED_LIBS +=  apertium3                 0.0 # 0.0
@@ -14,6 +13,8 @@ CATEGORIES =		textproc
 HOMEPAGE =		https://www.apertium.org/
 
 MAINTAINER =		Anthony J. Bentley <anthony@anjbe.name>
+
+USE_GMAKE =		Yes
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
@@ -28,7 +29,7 @@ RUN_DEPENDS =		shells/bash \
 			textproc/libxslt
 LIB_DEPENDS =		converters/libiconv \
 			devel/pcre \
-			textproc/lttoolbox
+			textproc/lttoolbox>=3.3.3
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \

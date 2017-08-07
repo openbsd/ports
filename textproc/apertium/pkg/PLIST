@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/01/01 11:50:01 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/08/07 07:15:20 bentley Exp $
 bin/apertium
 @bin bin/apertium-deshtml
 @bin bin/apertium-deslatex
@@ -49,23 +49,51 @@ bin/apertium-validate-tagger
 bin/apertium-validate-transfer
 include/apertium-${V}/
 include/apertium-${V}/apertium/
+include/apertium-${V}/apertium/a.h
+include/apertium-${V}/apertium/align.h
+include/apertium-${V}/apertium/analysis.h
 include/apertium-${V}/apertium/apertium_re.h
+include/apertium-${V}/apertium/apertium_tagger.h
+include/apertium-${V}/apertium/basic_5_3_1_tagger.h
+include/apertium-${V}/apertium/basic_5_3_2_tagger.h
+include/apertium-${V}/apertium/basic_5_3_3_tagger.h
+include/apertium-${V}/apertium/basic_exception_type.h
+include/apertium-${V}/apertium/basic_stream_tagger.h
+include/apertium-${V}/apertium/basic_stream_tagger_trainer.h
+include/apertium-${V}/apertium/basic_tagger.h
 include/apertium-${V}/apertium/collection.h
 include/apertium-${V}/apertium/constant_manager.h
+include/apertium-${V}/apertium/constructor_eq_delete.h
+include/apertium-${V}/apertium/deserialiser.h
 include/apertium-${V}/apertium/endian_double_util.h
+include/apertium-${V}/apertium/err_exception.h
+include/apertium-${V}/apertium/exception.h
+include/apertium-${V}/apertium/exception_type.h
+include/apertium-${V}/apertium/file_tagger.h
 include/apertium-${V}/apertium/hmm.h
+include/apertium-${V}/apertium/i.h
 include/apertium-${V}/apertium/interchunk.h
 include/apertium-${V}/apertium/interchunk_word.h
 include/apertium-${V}/apertium/latex_accentsmap.h
-include/apertium-${V}/apertium/lextor.h
-include/apertium-${V}/apertium/lextor_data.h
-include/apertium-${V}/apertium/lextor_eval.h
-include/apertium-${V}/apertium/lextor_word.h
+include/apertium-${V}/apertium/lemma.h
+include/apertium-${V}/apertium/lexical_unit.h
+include/apertium-${V}/apertium/linebreak.h
 include/apertium-${V}/apertium/lswpost.h
+include/apertium-${V}/apertium/morpheme.h
 include/apertium-${V}/apertium/morpho_stream.h
+include/apertium-${V}/apertium/optional.h
 include/apertium-${V}/apertium/postchunk.h
+include/apertium-${V}/apertium/serialiser.h
+include/apertium-${V}/apertium/stream.h
+include/apertium-${V}/apertium/stream_5_3_1_tagger.h
+include/apertium-${V}/apertium/stream_5_3_1_tagger_trainer.h
+include/apertium-${V}/apertium/stream_5_3_2_tagger.h
+include/apertium-${V}/apertium/stream_5_3_2_tagger_trainer.h
+include/apertium-${V}/apertium/stream_5_3_3_tagger.h
+include/apertium-${V}/apertium/stream_5_3_3_tagger_trainer.h
+include/apertium-${V}/apertium/streamed_type.h
 include/apertium-${V}/apertium/string_utils.h
-include/apertium-${V}/apertium/tagger.h
+include/apertium-${V}/apertium/tag.h
 include/apertium-${V}/apertium/tagger_data.h
 include/apertium-${V}/apertium/tagger_data_hmm.h
 include/apertium-${V}/apertium/tagger_data_lsw.h
@@ -97,6 +125,8 @@ include/apertium-${V}/apertium/tsx_reader.h
 include/apertium-${V}/apertium/ttag.h
 include/apertium-${V}/apertium/unlocked_cstdio.h
 include/apertium-${V}/apertium/utf_converter.h
+include/apertium-${V}/apertium/wchar_t_exception.h
+include/apertium-${V}/apertium/wchar_t_exception_type.h
 @lib lib/libapertium3-${V}.so.${LIBapertium3-3.4_VERSION}
 lib/libapertium3.a
 lib/libapertium3.la
@@ -113,21 +143,14 @@ lib/pkgconfig/apertium.pc
 @man man/man1/apertium-desxlsx.1
 @man man/man1/apertium-filter-ambiguity.1
 @man man/man1/apertium-gen-deformat.1
-@man man/man1/apertium-gen-lextorbil.1
-@man man/man1/apertium-gen-lextormono.1
 @man man/man1/apertium-gen-modes.1
 @man man/man1/apertium-gen-reformat.1
-@man man/man1/apertium-gen-stopwords-lextor.1
-@man man/man1/apertium-gen-wlist-lextor-translation.1
-@man man/man1/apertium-gen-wlist-lextor.1
 @man man/man1/apertium-interchunk.1
-@man man/man1/apertium-lextor.1
 @man man/man1/apertium-multiple-translations.1
 @man man/man1/apertium-postchunk.1
 @man man/man1/apertium-postlatex-raw.1
 @man man/man1/apertium-postlatex.1
 @man man/man1/apertium-prelatex.1
-@man man/man1/apertium-preprocess-corpus-lextor.1
 @man man/man1/apertium-preprocess-transfer.1
 @man man/man1/apertium-pretransfer.1
 @man man/man1/apertium-rehtml.1
@@ -152,21 +175,27 @@ lib/pkgconfig/apertium.pc
 @man man/man1/apertium-validate-tagger.1
 @man man/man1/apertium-validate-transfer.1
 @man man/man1/apertium.1
-share/aclocal/
 share/aclocal/apertium.m4
 share/apertium/
 share/apertium/apertium-createmodes.awk
 share/apertium/deformat.xsl
 share/apertium/format.dtd
+share/apertium/format.rnc
 share/apertium/interchunk.dtd
+share/apertium/interchunk.rnc
 share/apertium/lexchoice.xsl
 share/apertium/lexchoicebil.xsl
 share/apertium/modes/
 share/apertium/modes.dtd
+share/apertium/modes.rnc
 share/apertium/modes/README
 share/apertium/modes2bash.xsl
+share/apertium/modes2debugmodes.xsl
 share/apertium/new2old.xsl
 share/apertium/postchunk.dtd
+share/apertium/postchunk.rnc
 share/apertium/reformat.xsl
 share/apertium/tagger.dtd
+share/apertium/tagger.rnc
 share/apertium/transfer.dtd
+share/apertium/transfer.rnc
