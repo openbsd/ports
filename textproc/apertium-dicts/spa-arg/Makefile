@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/01/19 01:54:38 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2017/08/07 07:29:21 bentley Exp $
 
 L =	spa-arg
 LANG =	Spanish/Aragonese
 V =	0.4.0
+REVISION =	0
 
 USE_GMAKE =	Yes
 

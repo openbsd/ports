@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/01/19 01:51:59 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/08/07 07:29:21 bentley Exp $
 share/apertium/apertium-spa/
 share/apertium/apertium-spa/apertium-spa.spa.dix
 share/apertium/apertium-spa/apertium-spa.spa.rlx
@@ -7,6 +7,12 @@ share/apertium/apertium-spa/spa.autogen.bin
 share/apertium/apertium-spa/spa.automorf.att.gz
 share/apertium/apertium-spa/spa.automorf.bin
 share/apertium/apertium-spa/spa.autopgen.bin
+share/apertium/apertium-spa/spa.lrx.bin
 share/apertium/apertium-spa/spa.prob
 share/apertium/apertium-spa/spa.rlx.bin
+share/apertium/modes/spa-disam-tagger.mode
+share/apertium/modes/spa-disam.mode
+share/apertium/modes/spa-gener.mode
+share/apertium/modes/spa-morph.mode
+share/apertium/modes/spa-tagger.mode
 share/pkgconfig/apertium-spa.pc

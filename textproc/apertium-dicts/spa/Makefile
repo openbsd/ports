@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/01/19 01:51:59 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2017/08/07 07:29:21 bentley Exp $
 
 L =	spa
 LANG =	Spanish
-V =	0.1.0
+V =	1.0.0
 
 USE_GMAKE =	Yes
 
-BUILD_DEPENDS +=	textproc/vislcg3
+BUILD_DEPENDS +=	textproc/apertium-lex-tools \
+			textproc/vislcg3
 
 .include <bsd.port.mk>
