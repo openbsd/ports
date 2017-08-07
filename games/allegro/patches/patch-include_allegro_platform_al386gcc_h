@@ -1,0 +1,50 @@
+$OpenBSD: patch-include_allegro_platform_al386gcc_h,v 1.1 2017/08/07 14:15:23 sthen Exp $
+
+Index: include/allegro/platform/al386gcc.h
+--- include/allegro/platform/al386gcc.h.orig
++++ include/allegro/platform/al386gcc.h
+@@ -156,7 +156,7 @@ AL_INLINE(fixed, fixadd, (fixed x, fixed y),
+ 	"i" (ERANGE),
+ 	"m" (allegro_errno)
+ 
+-      : "%cc", "memory"                   /* clobbers flags and errno */
++      : "cc", "memory"                   /* clobbers flags and errno */
+       );
+ 
+       return result;
+@@ -194,7 +194,7 @@ AL_INLINE(fixed, fixsub, (fixed x, fixed y),
+ 	"i" (ERANGE),
+ 	"m" (allegro_errno)
+ 
+-      : "%cc", "memory"                   /* clobbers flags and errno */
++      : "cc", "memory"                   /* clobbers flags and errno */
+       );
+ 
+       return result;
+@@ -246,7 +246,7 @@ AL_INLINE(fixed, fixmul, (fixed x, fixed y),
+ 	"i" (ERANGE),
+ 	"m" (allegro_errno)
+ 
+-      : "%cc", "memory"                   /* clobbers flags and errno */
++      : "cc", "memory"                   /* clobbers flags and errno */
+       );
+ 
+       return result;
+@@ -329,7 +329,7 @@ AL_INLINE(fixed, fixdiv, (fixed x, fixed y),
+ 	"i" (ERANGE),
+ 	"m" (allegro_errno)
+ 
+-      : "%cc", "memory"                   /* clobbers flags and memory  */
++      : "cc", "memory"                   /* clobbers flags and memory  */
+       );
+ 
+       return result;
+@@ -388,7 +388,7 @@ AL_INLINE(int, fixceil, (fixed x),
+       "i" (ERANGE),
+       "m" (allegro_errno)
+ 
+-    : "%cc", "memory"		/* clobbers flags and errno */
++    : "cc", "memory"		/* clobbers flags and errno */
+    );
+ 
+    return result;
