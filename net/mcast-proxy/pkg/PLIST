@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.2 2017/07/31 08:03:40 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2017/08/07 12:34:24 sthen Exp $
 @newgroup _mcastproxy:792
 @newuser _mcastproxy:792:792:daemon:Multicast Proxy:/var/empty:/sbin/nologin
-@bin bin/mcast-proxy
 @man man/man5/mcast-proxy.conf.5
 @man man/man8/mcast-proxy.8
+@bin sbin/mcast-proxy
 @rcscript ${RCDIR}/mcastproxy
