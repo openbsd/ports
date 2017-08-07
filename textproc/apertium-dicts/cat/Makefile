@@ -1,11 +1,16 @@
-# $OpenBSD: Makefile,v 1.2 2016/03/02 05:30:12 bentley Exp $
+# $OpenBSD: Makefile,v 1.3 2017/08/07 11:02:50 bentley Exp $
 
 L =	cat
 LANG =	Catalan
-V =	1.0.0
+V =	2.2.0
 
 USE_GMAKE =	Yes
 
 BUILD_DEPENDS +=	textproc/vislcg3
+MODULES =		lang/python
+SUBST_VARS =		MODPY_BIN
+
+pre-build:
+	${SUBST_CMD} ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>

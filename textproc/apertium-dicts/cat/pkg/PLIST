@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/01/19 01:50:47 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/08/07 11:02:50 bentley Exp $
 share/apertium/apertium-cat/
 share/apertium/apertium-cat/apertium-cat.cat.dix
 share/apertium/apertium-cat/apertium-cat.cat.rlx
@@ -10,4 +10,12 @@ share/apertium/apertium-cat/cat.automorf.bin
 share/apertium/apertium-cat/cat.autopgen.bin
 share/apertium/apertium-cat/cat.prob
 share/apertium/apertium-cat/cat.rlx.bin
+share/apertium/apertium-cat/cat_valencia_gva.autogen.bin
+share/apertium/apertium-cat/cat_valencia_gva.autopgen.bin
+share/apertium/apertium-cat/cat_valencia_uni.autogen.bin
+share/apertium/apertium-cat/cat_valencia_uni.autopgen.bin
+share/apertium/modes/cat-disam.mode
+share/apertium/modes/cat-gener.mode
+share/apertium/modes/cat-morph.mode
+share/apertium/modes/cat-tagger.mode
 share/pkgconfig/apertium-cat.pc
