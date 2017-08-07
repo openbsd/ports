@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/01/01 11:53:04 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/08/07 07:14:56 bentley Exp $
 @bin bin/lt-comp
 @bin bin/lt-expand
 @bin bin/lt-print
@@ -48,5 +48,6 @@ share/lttoolbox/
 share/lttoolbox/acx.rng
 share/lttoolbox/acx.xsd
 share/lttoolbox/dix.dtd
+share/lttoolbox/dix.rnc
 share/lttoolbox/dix.rng
 share/lttoolbox/dix.xsd

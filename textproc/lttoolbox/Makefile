@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2017/07/26 22:45:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2017/08/07 07:14:56 bentley Exp $
 
 COMMENT =		finite-state lexical processing toolkit
 
 V =			3.3
-DISTNAME =		lttoolbox-3.3.2
-REVISION =		1
+DISTNAME =		lttoolbox-3.3.3
 
 SHARED_LIBS +=		lttoolbox3-$V             0.0 # 0.0
 SHARED_LIBS +=		lttoolbox3                0.0 # 0.0
