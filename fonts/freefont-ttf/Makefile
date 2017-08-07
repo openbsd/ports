@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.3 2015/03/31 09:45:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2017/08/07 19:41:29 rsadowski Exp $
 
 COMMENT=		free UCS outline fonts
 
-V=			20100919
+V=			20120503
 DISTNAME=		freefont-ttf-$V
-REVISION=		1
 CATEGORIES=		fonts x11
 
-HOMEPAGE=		http://savannah.gnu.org/projects/freefont/
+HOMEPAGE=		https://www.gnu.org/software/freefont/
 
-# GPLv2+
+# GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		${MASTER_SITE_SAVANNAH:=freefont/}
+MASTER_SITES=		${MASTER_SITE_GNU:=freefont/}
+EXTRACT_SUFX=		.zip
 
 WRKDIST=		${WRKDIR}/freefont-$V
 NO_BUILD=		Yes
