@@ -1,10 +1,11 @@
-$OpenBSD: patch-nss_lib_freebl_blapi_h,v 1.5 2017/05/30 18:57:01 ajacoutot Exp $
+$OpenBSD: patch-nss_lib_freebl_blapi_h,v 1.6 2017/08/07 18:48:22 landry Exp $
 
 Prevent clashing symbol with libcrypto (bad ld.so(1)!).
 
---- nss/lib/freebl/blapi.h.orig	Mon Sep 26 08:00:51 2016
-+++ nss/lib/freebl/blapi.h	Mon Oct  3 10:11:50 2016
-@@ -1212,6 +1212,8 @@ extern void SHA1_DestroyContext(SHA1Context *cx, PRBoo
+Index: nss/lib/freebl/blapi.h
+--- nss/lib/freebl/blapi.h.orig
++++ nss/lib/freebl/blapi.h
+@@ -1211,6 +1211,8 @@ extern void SHA1_DestroyContext(SHA1Context *cx, PRBoo
  */
  extern void SHA1_Begin(SHA1Context *cx);
  
