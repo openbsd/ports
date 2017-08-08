@@ -1,29 +1,22 @@
-# $OpenBSD: Makefile,v 1.2 2016/03/17 19:41:22 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2017/08/08 10:20:29 landry Exp $
 
-SUBDIR = be
-SUBDIR += ca
-SUBDIR += cs
+SUBDIR = cs
 SUBDIR += de
 SUBDIR += en-GB
 SUBDIR += en-US
 SUBDIR += es-AR
 SUBDIR += es-ES
-SUBDIR += fi
 SUBDIR += fr
-SUBDIR += gl
 SUBDIR += hu
 SUBDIR += it
 SUBDIR += ja
 SUBDIR += lt
-SUBDIR += nb-NO
 SUBDIR += nl
 SUBDIR += pl
 SUBDIR += pt-PT
 SUBDIR += ru
 SUBDIR += sk
 SUBDIR += sv-SE
-SUBDIR += tr
-SUBDIR += uk
 SUBDIR += zh-CN
 SUBDIR += zh-TW
 

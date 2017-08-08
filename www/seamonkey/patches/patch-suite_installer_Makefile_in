@@ -1,8 +1,9 @@
-$OpenBSD: patch-suite_installer_Makefile_in,v 1.15 2016/12/28 09:14:19 landry Exp $
+$OpenBSD: patch-suite_installer_Makefile_in,v 1.16 2017/08/08 10:20:29 landry Exp $
 Don't install the sdk
---- suite/installer/Makefile.in.orig	Wed Oct  5 09:22:40 2016
-+++ suite/installer/Makefile.in	Tue Nov  1 10:48:27 2016
-@@ -154,8 +154,6 @@ NON_OMNIJAR_FILES = \
+Index: suite/installer/Makefile.in
+--- suite/installer/Makefile.in.orig
++++ suite/installer/Makefile.in
+@@ -158,8 +158,6 @@ NON_OMNIJAR_FILES = \
  	defaults/profile/chrome/userContent-example.css \
  	$(NULL)
  
