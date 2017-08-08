@@ -1,0 +1,13 @@
+$OpenBSD: patch-TaggerOutputProcessor_h,v 1.1 2017/08/08 02:55:35 bentley Exp $
+
+Index: TaggerOutputProcessor.h
+--- TaggerOutputProcessor.h.orig
++++ TaggerOutputProcessor.h
+@@ -11,7 +11,6 @@
+ 
+ #include <cwchar>
+ #include <set>
+-#include <apertium/tagger.h>
+ #include <apertium/tsx_reader.h>
+ #include <apertium/string_utils.h>
+ 

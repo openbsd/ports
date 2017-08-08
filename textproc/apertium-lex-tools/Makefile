@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2017/07/26 22:45:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2017/08/08 02:55:35 bentley Exp $
 
 COMMENT =		module for compiling and processing lexical rules
 
 DISTNAME =		apertium-lex-tools-0.1.0
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		textproc
 
