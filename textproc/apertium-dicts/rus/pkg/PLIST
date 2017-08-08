@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/08/08 07:22:34 bentley Exp $
+share/apertium/apertium-rus/
+share/apertium/apertium-rus/apertium-rus.post-rus.dix
+share/apertium/apertium-rus/apertium-rus.rus.dix
+share/apertium/apertium-rus/apertium-rus.rus.rlx
+share/apertium/apertium-rus/rus.autogen.att.gz
+share/apertium/apertium-rus/rus.autogen.bin
+share/apertium/apertium-rus/rus.automorf.att.gz
+share/apertium/apertium-rus/rus.automorf.bin
+share/apertium/apertium-rus/rus.autopgen.bin
+share/apertium/apertium-rus/rus.prob
+share/apertium/apertium-rus/rus.rlx.bin
+share/apertium/modes/rus-disam.mode
+share/apertium/modes/rus-gener.mode
+share/apertium/modes/rus-morph.mode
+share/apertium/modes/rus-tagger.mode
+share/pkgconfig/apertium-rus.pc
