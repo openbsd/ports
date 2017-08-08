@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.440 2017/08/04 12:21:53 bluhm Exp $
+# $OpenBSD: Makefile,v 1.441 2017/08/08 09:18:36 jca Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -115,6 +115,7 @@
      SUBDIR += jpeg
      SUBDIR += jpeg2ps
      SUBDIR += jpegdump
+     SUBDIR += jpegoptim
      SUBDIR += jpegpixi
      SUBDIR += k3dsurf
      SUBDIR += krita
