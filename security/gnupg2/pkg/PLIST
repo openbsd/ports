@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2017/05/21 11:23:30 pea Exp $
+@comment $OpenBSD: PLIST,v 1.18 2017/08/08 15:55:14 pea Exp $
 @option no-default-conflict
 @option is-branch
 @conflict gnupg->=2
@@ -6,6 +6,7 @@
 @bin bin/dirmngr-client
 @bin bin/gpg-agent
 @bin bin/gpg-connect-agent
+@bin bin/gpg-wks-server
 @bin bin/gpg2
 @bin bin/gpgconf
 @bin bin/gpgparsemail
@@ -25,6 +26,8 @@
 @man man/man1/gpg-agent.1
 @man man/man1/gpg-connect-agent.1
 @man man/man1/gpg-preset-passphrase.1
+@man man/man1/gpg-wks-client.1
+@man man/man1/gpg-wks-server.1
 @man man/man1/gpg2.1
 @man man/man1/gpgconf.1
 @man man/man1/gpgparsemail.1
