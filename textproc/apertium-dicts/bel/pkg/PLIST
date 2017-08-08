@@ -1,0 +1,21 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/08/08 07:21:54 bentley Exp $
+share/apertium/apertium-bel/
+share/apertium/apertium-bel/apertium-bel.bel.dix
+share/apertium/apertium-bel/apertium-bel.bel.rlx
+share/apertium/apertium-bel/apertium-bel.post-bel.dix
+share/apertium/apertium-bel/apertium-bel.post-short-u-1.dix
+share/apertium/apertium-bel/apertium-bel.post-short-u-2.dix
+share/apertium/apertium-bel/bel.autogen.att.gz
+share/apertium/apertium-bel/bel.autogen.bin
+share/apertium/apertium-bel/bel.automorf.att.gz
+share/apertium/apertium-bel/bel.automorf.bin
+share/apertium/apertium-bel/bel.autopgen.bin
+share/apertium/apertium-bel/bel.pgen-short-u-1.bin
+share/apertium/apertium-bel/bel.pgen-short-u-2.bin
+share/apertium/apertium-bel/bel.prob
+share/apertium/apertium-bel/bel.rlx.bin
+share/apertium/modes/bel-disam.mode
+share/apertium/modes/bel-gener.mode
+share/apertium/modes/bel-morph.mode
+share/apertium/modes/bel-tagger.mode
+share/pkgconfig/apertium-bel.pc
