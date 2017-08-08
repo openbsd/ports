@@ -1,18 +1,15 @@
-# $OpenBSD: Makefile,v 1.324 2017/07/31 13:19:46 danj Exp $
+# $OpenBSD: Makefile,v 1.325 2017/08/08 10:17:15 landry Exp $
 
 COMMENT =	Mozilla web browser
+ONLY_FOR_ARCHS =	amd64 i386
 
 # Don't forget to bump www/firefox-i18n after updates.
 
-MOZILLA_VERSION =	54.0.1
-MOZILLA_BRANCH =	release
+MOZILLA_VERSION =	55.0
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
-BROKEN-sparc64 =	xpcshell SIGBUS during fake
-EXTRACT_SUFX =		.tar.xz
-REVISION =		0
 
-SO_VERSION =	72.0
+SO_VERSION =	73.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 MOZILLA_LIBS =	mozavcodec mozavutil mozgtk xul clearkey lgpllibs
@@ -44,14 +41,6 @@ NO_TEST =	Yes
 
 CONFIGURE_STYLE =	simple
 CONFIGURE_ARGS +=	--prefix=${PREFIX}
-
-# to be able to link when building with clang on i386
-.if ${MACHINE_ARCH} == "i386"
-CONFIGURE_ARGS +=	--disable-debug-symbols
-.endif
-
-# relies on pulseaudio for sound and broken at runtime
-#CONFIGURE_ARGS +=	--disable-webrtc
 
 # bug 857628
 CONFIGURE_ARGS +=	--enable-pie
