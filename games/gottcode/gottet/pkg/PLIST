@@ -1,0 +1,45 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/08/08 15:18:36 bcallah Exp $
+@bin bin/gottet
+@man man/man6/gottet.6
+share/applications/gottet.desktop
+share/gottet/
+share/gottet/translations/
+share/gottet/translations/gottet_ca.qm
+share/gottet/translations/gottet_cs.qm
+share/gottet/translations/gottet_de.qm
+share/gottet/translations/gottet_el.qm
+share/gottet/translations/gottet_en.qm
+share/gottet/translations/gottet_es.qm
+share/gottet/translations/gottet_fr.qm
+share/gottet/translations/gottet_he.qm
+share/gottet/translations/gottet_ko.qm
+share/gottet/translations/gottet_lt.qm
+share/gottet/translations/gottet_ms.qm
+share/gottet/translations/gottet_nl.qm
+share/gottet/translations/gottet_pl.qm
+share/gottet/translations/gottet_ro.qm
+share/gottet/translations/gottet_ru.qm
+share/gottet/translations/gottet_tr.qm
+share/gottet/translations/gottet_vi.qm
+share/gottet/translations/gottet_zh_TW.qm
+share/icons/hicolor/1024x1024/
+share/icons/hicolor/1024x1024/apps/
+share/icons/hicolor/1024x1024/apps/gottet.png
+share/icons/hicolor/128x128/apps/gottet.png
+share/icons/hicolor/16x16/apps/gottet.png
+share/icons/hicolor/22x22/apps/gottet.png
+share/icons/hicolor/24x24/apps/gottet.png
+share/icons/hicolor/256x256/apps/gottet.png
+share/icons/hicolor/32x32/apps/gottet.png
+share/icons/hicolor/48x48/apps/gottet.png
+share/icons/hicolor/512x512/apps/gottet.png
+share/icons/hicolor/64x64/apps/gottet.png
+share/icons/hicolor/scalable/apps/gottet.svg
+share/metainfo/
+share/metainfo/gottet.appdata.xml
+share/pixmaps/
+share/pixmaps/gottet.xpm
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
