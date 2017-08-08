@@ -1,6 +1,5 @@
-# $OpenBSD: mozilla.port.mk,v 1.106 2017/06/14 05:22:28 landry Exp $
+# $OpenBSD: mozilla.port.mk,v 1.107 2017/08/08 10:15:12 landry Exp $
 
-ONLY_FOR_ARCHS ?=	amd64 i386
 # ppc: firefox-esr/thunderbird xpcshell segfaults during startup compilation
 # ppc: seamonkey/firefox - failure to link for atomic ops on 64 bits
 # gcc does ICE on alpha at some particular spots:
@@ -34,7 +33,7 @@ MASTER_SITES ?=	https://releases.mozilla.org/pub/mozilla.org/${MOZILLA_DIST}/rel
 .endif
 
 DISTNAME ?=	${MOZILLA_DIST}-${MOZILLA_DIST_VERSION}.source
-EXTRACT_SUFX ?=	.tar.bz2
+EXTRACT_SUFX ?=	.tar.xz
 DIST_SUBDIR ?=	mozilla
 
 MODMOZ_RUN_DEPENDS =	devel/desktop-file-utils
@@ -45,13 +44,13 @@ MODMOZ_BUILD_DEPENDS =	devel/autoconf/2.13 \
 			archivers/zip>=2.3
 
 .if !defined(MOZILLA_USE_BUNDLED_NSS)
-MODMOZ_LIB_DEPENDS +=	security/nss>=3.30.1
+MODMOZ_LIB_DEPENDS +=	security/nss>=3.32
 MODMOZ_WANTLIB +=	nss3 nssutil3 smime3 ssl3
 CONFIGURE_ARGS +=	--with-system-nss
 .endif
 
 .if !defined(MOZILLA_USE_BUNDLED_NSPR)
-MODMOZ_LIB_DEPENDS +=	devel/nspr>=4.14
+MODMOZ_LIB_DEPENDS +=	devel/nspr>=4.16
 MODMOZ_WANTLIB +=	nspr4 plc4 plds4
 CONFIGURE_ARGS +=	--with-system-nspr
 .endif
@@ -74,8 +73,8 @@ CONFIGURE_ARGS +=	--with-system-hunspell
 .endif
 
 .if !defined(MOZILLA_USE_BUNDLED_SQLITE)
-MODMOZ_WANTLIB +=	sqlite3>=35
-MODMOZ_LIB_DEPENDS +=	databases/sqlite3>=3.17.0
+MODMOZ_WANTLIB +=	sqlite3
+MODMOZ_LIB_DEPENDS +=	databases/sqlite3>=3.19.3
 CONFIGURE_ARGS +=	--enable-system-sqlite
 # hack to build against systemwide sqlite3 (# 546162)
 CONFIGURE_ENV +=	ac_cv_sqlite_secure_delete=yes
@@ -96,12 +95,7 @@ MODMOZ_WANTLIB +=	X11 Xext Xrender Xt atk-1.0 c cairo \
 		pthread sndio ${LIBCXX} z
 
 # --no-keep-memory avoids OOM when linking libxul
-# --relax avoids relocation overflow on ppc, needed since sm 2.7b, tb 10.0b, fx 15.0b
-.if ${MACHINE_ARCH} == "powerpc"
-CONFIGURE_ENV +=	LDFLAGS="-Wl,--no-keep-memory -Wl,--relax"
-.else
 CONFIGURE_ENV +=	LDFLAGS="-Wl,--no-keep-memory"
-.endif
 
 WANTLIB +=	${MODMOZ_WANTLIB}
 BUILD_DEPENDS +=${MODMOZ_BUILD_DEPENDS}
@@ -119,7 +113,6 @@ AUTOCONF_VERSION =	2.13
 CONFIGURE_ARGS +=	--with-system-zlib=/usr	\
 		--with-system-bz2=${LOCALBASE}	\
 		--enable-official-branding	\
-		--enable-gio			\
 		--disable-gconf			\
 		--disable-necko-wifi		\
 		--disable-optimize		\
@@ -153,11 +146,7 @@ PORTHOME =	${WRKSRC}
 # from browser/config/mozconfig
 CONFIGURE_ARGS +=--enable-application=${MOZILLA_CODENAME}
 
-.if ${MOZILLA_PROJECT} == "xulrunner"
-WRKDIST ?=	${WRKDIR}/mozilla-${MOZILLA_BRANCH}
-.else
 WRKDIST ?=	${WRKDIR}/${MOZILLA_DIST}-${MOZILLA_DIST_VERSION}
-.endif
 
 # needed for PLIST
 MOZILLA_VER =	${MOZILLA_VERSION:C/b[0-9]*//:C/esr//:C/rc.$//}
@@ -173,12 +162,3 @@ CONFIGURE_ENV +=	ac_cv_path_ax_enable_builddir_sed=/usr/bin/sed
 CONFIGURE_ENV +=	ac_cv_path_SED=/usr/bin/sed
 CONFIGURE_ENV +=	ac_cv_path_mkdir=/bin/mkdir
 CONFIGURE_ENV +=	ac_cv_prog_AWK=/usr/bin/awk
-
-
-pre-configure:
-.for d in ${MOZILLA_AUTOCONF_DIRS}
-	cd ${WRKSRC}/${d} && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF}
-.endfor
-.for f in ${MOZILLA_SUBST_FILES}
-	${SUBST_CMD} ${WRKSRC}/${f}
-.endfor
