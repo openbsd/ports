@@ -1,7 +1,8 @@
-$OpenBSD: patch-lib_morph_c,v 1.1 2008/09/01 20:02:53 sthen Exp $
---- lib/morph.c.orig	Wed Jan  3 21:51:35 2007
-+++ lib/morph.c	Mon Sep  1 20:53:39 2008
-@@ -51,24 +51,24 @@ static struct {
+$OpenBSD: patch-lib_morph_c,v 1.2 2017/08/08 10:26:13 jca Exp $
+Index: lib/morph.c
+--- lib/morph.c.orig
++++ lib/morph.c
+@@ -51,21 +51,21 @@ static struct {
      char *str;
      int strlen;
  } prepositions[NUMPREPS] = {
@@ -37,11 +38,7 @@ $OpenBSD: patch-lib_morph_c,v 1.1 2008/09/01 20:02:53 sthen Exp $
 +    { "between", 7 }
  };
  
--static FILE *exc_fps[NUMPARTS + 1];
-+static FILE *exc_fps[NUMPARTS];
- 
- static int do_init();
- static int strend(char *, char *);
+ static FILE *exc_fps[NUMPARTS + 1];
 @@ -100,7 +100,7 @@ int re_morphinit(void)
  {
      int i;
