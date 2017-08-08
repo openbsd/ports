@@ -1,18 +1,15 @@
-# $OpenBSD: Makefile,v 1.61 2017/07/26 22:45:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.62 2017/08/08 10:18:21 landry Exp $
 
 COMMENT =	Firefox web browser, Extended Support Release
+ONLY_FOR_ARCHS =	amd64 i386
 
-MOZILLA_VERSION =	52.2.1esr
-MOZILLA_BRANCH =	esr52
+MOZILLA_VERSION =	52.3.0esr
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
-BROKEN-sparc64 =	xpcshell SIGBUS during fake
-EXTRACT_SUFX =		.tar.xz
 
 PKGNAME =	${MOZILLA_PROJECT}-esr-${MOZILLA_VERSION:S/esr//}
 SO_VERSION =	4.0
 MOZILLA_LIBS =	xul clearkey lgpllibs mozavcodec mozavutil mozgtk
-REVISION =	0
 
 CATEGORIES =	www
 
@@ -40,16 +37,8 @@ NO_TEST =	Yes
 CONFIGURE_STYLE =	simple
 CONFIGURE_ARGS +=	--prefix=${PREFIX}
 
-# to be able to link when building with clang on i386
-.if ${MACHINE_ARCH} == "i386"
-CONFIGURE_ARGS +=	--disable-debug-symbols
-.endif
-
 # avoid conflict with mainline firefox
 CONFIGURE_ARGS +=	--with-app-name=firefox-esr
-
-# relies on pulseaudio for sound and broken at runtime
-#CONFIGURE_ARGS +=	--disable-webrtc
 
 # bug 857628
 CONFIGURE_ARGS +=	--enable-pie
