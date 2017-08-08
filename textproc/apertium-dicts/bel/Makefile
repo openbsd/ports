@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/08/08 07:21:54 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2017/08/08 07:25:53 bentley Exp $
 
 L =	bel
 LANG =	Belarusian
 V =	0.1.0
-DISTNAME =	apertium-$L-$V
 
 USE_GMAKE =	Yes
 
