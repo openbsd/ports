@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/08/08 07:20:47 bentley Exp $
+share/apertium/apertium-ita/
+share/apertium/apertium-ita/apertium-ita.ita.dix
+share/apertium/apertium-ita/apertium-ita.ita.rlx
+share/apertium/apertium-ita/apertium-ita.ita.tsx
+share/apertium/apertium-ita/ita.autogen.att.gz
+share/apertium/apertium-ita/ita.autogen.bin
+share/apertium/apertium-ita/ita.automorf.att.gz
+share/apertium/apertium-ita/ita.automorf.bin
+share/apertium/apertium-ita/ita.autopgen.bin
+share/apertium/apertium-ita/ita.prob
+share/apertium/apertium-ita/ita.rlx.bin
+share/apertium/modes/ita-disam.mode
+share/apertium/modes/ita-gener.mode
+share/apertium/modes/ita-morph.mode
+share/apertium/modes/ita-tagger.mode
+share/pkgconfig/apertium-ita.pc
