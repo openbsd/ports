@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1635 2017/08/08 21:26:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.1636 2017/08/08 22:11:08 jasper Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1320,6 +1320,7 @@
      SUBDIR += py-distutils-extra
      SUBDIR += py-distutils-extra,python3
      SUBDIR += py-docopt
+     SUBDIR += py-docopt,python3
      SUBDIR += py-doit
      SUBDIR += py-dtopt
      SUBDIR += py-dulwich
