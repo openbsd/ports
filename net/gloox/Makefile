@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.15 2017/07/26 22:45:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2017/08/08 08:57:45 bentley Exp $
 
 COMMENT =	extensible C++ library for XMPP clients and components
 
-DISTNAME =	gloox-1.0.3
-REVISION =	3
-SHARED_LIBS +=	gloox                1.0      # 8.0
+DISTNAME =	gloox-1.0.20
+SHARED_LIBS +=	gloox                2.0      # 8.0
 CATEGORIES =	net devel
 
-HOMEPAGE =	http://camaya.net/gloox/
-MASTER_SITES =	http://camaya.net/download/
+HOMEPAGE =	https://camaya.net/gloox/
+MASTER_SITES =	https://camaya.net/download/
 EXTRACT_SUFX =	.tar.bz2
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 

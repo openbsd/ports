@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_examples_reset_example_cpp,v 1.1 2017/08/08 08:57:45 bentley Exp $
+
+Index: src/examples/reset_example.cpp
+--- src/examples/reset_example.cpp.orig
++++ src/examples/reset_example.cpp
+@@ -23,6 +23,7 @@ using namespace gloox;
+ #include <string>
+ 
+ #include <cstdio> // [s]print[f]
++#include <ctime>
+ 
+ class RosterTest : public ConnectionListener, LogHandler
+ {

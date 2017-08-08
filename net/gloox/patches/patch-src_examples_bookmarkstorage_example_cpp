@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_examples_bookmarkstorage_example_cpp,v 1.1 2017/08/08 08:57:45 bentley Exp $
+
+Index: src/examples/bookmarkstorage_example.cpp
+--- src/examples/bookmarkstorage_example.cpp.orig
++++ src/examples/bookmarkstorage_example.cpp
+@@ -22,6 +22,7 @@ using namespace gloox;
+ #include <string>
+ 
+ #include <cstdio> // [s]print[f]
++#include <ctime>
+ 
+ class BookmarkStorageTest : public BookmarkHandler, ConnectionListener
+ {

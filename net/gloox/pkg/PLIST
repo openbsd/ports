@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.3 2015/05/22 11:31:17 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2017/08/08 08:57:45 bentley Exp $
 bin/gloox-config
 include/gloox/
 include/gloox/adhoc.h
 include/gloox/adhoccommandprovider.h
 include/gloox/adhochandler.h
+include/gloox/adhocplugin.h
 include/gloox/amp.h
 include/gloox/annotations.h
 include/gloox/annotationshandler.h
@@ -16,6 +17,7 @@ include/gloox/bytestream.h
 include/gloox/bytestreamdatahandler.h
 include/gloox/bytestreamhandler.h
 include/gloox/capabilities.h
+include/gloox/carbons.h
 include/gloox/chatstate.h
 include/gloox/chatstatefilter.h
 include/gloox/chatstatehandler.h
@@ -53,15 +55,25 @@ include/gloox/eventhandler.h
 include/gloox/featureneg.h
 include/gloox/flexoff.h
 include/gloox/flexoffhandler.h
+include/gloox/forward.h
 include/gloox/gloox.h
 include/gloox/glooxversion.h
 include/gloox/gpgencrypted.h
 include/gloox/gpgsigned.h
 include/gloox/inbandbytestream.h
 include/gloox/instantmucroom.h
+include/gloox/iodata.h
 include/gloox/iq.h
 include/gloox/iqhandler.h
 include/gloox/jid.h
+include/gloox/jinglecontent.h
+include/gloox/jinglefiletransfer.h
+include/gloox/jingleiceudp.h
+include/gloox/jingleplugin.h
+include/gloox/jinglepluginfactory.h
+include/gloox/jinglesession.h
+include/gloox/jinglesessionhandler.h
+include/gloox/jinglesessionmanager.h
 include/gloox/lastactivity.h
 include/gloox/lastactivityhandler.h
 include/gloox/linklocal.h

@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_tlsopensslserver_cpp,v 1.1 2017/08/08 08:57:45 bentley Exp $
+
+Index: src/tlsopensslserver.cpp
+--- src/tlsopensslserver.cpp.orig
++++ src/tlsopensslserver.cpp
+@@ -50,7 +50,7 @@ namespace gloox
+     return SSL_accept( m_ssl );
+   }
+ 
+-#if defined OPENSSL_VERSION_NUMBER && ( OPENSSL_VERSION_NUMBER < 0x10100000 )
++#if LIBRESSL_VERSION_NUMBER || ( defined OPENSSL_VERSION_NUMBER && ( OPENSSL_VERSION_NUMBER < 0x10100000 ) )
+   int DH_set0_pqg( DH* dh, BIGNUM* p, BIGNUM* q, BIGNUM* g )
+   {
+     /* If the fields p and g in d are NULL, the corresponding input

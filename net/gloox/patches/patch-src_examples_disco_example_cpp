@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_examples_disco_example_cpp,v 1.1 2017/08/08 08:57:45 bentley Exp $
+
+Index: src/examples/disco_example.cpp
+--- src/examples/disco_example.cpp.orig
++++ src/examples/disco_example.cpp
+@@ -24,6 +24,7 @@ using namespace gloox;
+ #include <string>
+ 
+ #include <cstdio> // [s]print[f]
++#include <ctime>
+ 
+ class DiscoTest : public DiscoHandler, ConnectionListener, LogHandler
+ {

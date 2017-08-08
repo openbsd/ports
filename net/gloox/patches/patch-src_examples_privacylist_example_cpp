@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_examples_privacylist_example_cpp,v 1.1 2017/08/08 08:57:45 bentley Exp $
+
+Index: src/examples/privacylist_example.cpp
+--- src/examples/privacylist_example.cpp.orig
++++ src/examples/privacylist_example.cpp
+@@ -22,6 +22,7 @@ using namespace gloox;
+ #include <string>
+ 
+ #include <cstdio> // [s]print[f]
++#include <ctime>
+ 
+ class PLTest : public PrivacyListHandler, ConnectionListener
+ {

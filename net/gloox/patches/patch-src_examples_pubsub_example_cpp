@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_examples_pubsub_example_cpp,v 1.1 2017/08/08 08:57:45 bentley Exp $
+
+Index: src/examples/pubsub_example.cpp
+--- src/examples/pubsub_example.cpp.orig
++++ src/examples/pubsub_example.cpp
+@@ -35,6 +35,8 @@ using namespace gloox;
+ #include <stdio.h>
+ #include <string>
+ 
++#include <ctime>
++
+ #if defined( WIN32 ) || defined( _WIN32 )
+ # include <windows.h>
+ #endif

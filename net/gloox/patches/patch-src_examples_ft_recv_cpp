@@ -1,7 +1,8 @@
-$OpenBSD: patch-src_examples_ft_recv_cpp,v 1.1 2017/04/27 23:15:39 espie Exp $
---- src/examples/ft_recv.cpp.orig	Fri Apr 28 01:11:33 2017
-+++ src/examples/ft_recv.cpp	Fri Apr 28 01:11:46 2017
-@@ -12,6 +12,7 @@ using namespace gloox;
+$OpenBSD: patch-src_examples_ft_recv_cpp,v 1.2 2017/08/08 08:57:45 bentley Exp $
+Index: src/examples/ft_recv.cpp
+--- src/examples/ft_recv.cpp.orig
++++ src/examples/ft_recv.cpp
+@@ -24,6 +24,7 @@ using namespace gloox;
  
  #include <unistd.h>
  #include <stdio.h>

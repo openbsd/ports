@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_examples_adhoc_example_cpp,v 1.1 2017/08/08 08:57:45 bentley Exp $
+
+Index: src/examples/adhoc_example.cpp
+--- src/examples/adhoc_example.cpp.orig
++++ src/examples/adhoc_example.cpp
+@@ -25,6 +25,7 @@ using namespace gloox;
+ #include <string>
+ 
+ #include <cstdio> // [s]print[f]
++#include <ctime>
+ 
+ 
+ class AdhocTest : public ConnectionListener, AdhocCommandProvider, LogHandler

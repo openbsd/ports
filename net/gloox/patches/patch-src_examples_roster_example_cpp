@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_examples_roster_example_cpp,v 1.1 2017/08/08 08:57:45 bentley Exp $
+
+Index: src/examples/roster_example.cpp
+--- src/examples/roster_example.cpp.orig
++++ src/examples/roster_example.cpp
+@@ -27,6 +27,7 @@ using namespace gloox;
+ #include <string>
+ 
+ #include <cstdio> // [s]print[f]
++#include <ctime>
+ 
+ class RosterTest : public RosterListener, ConnectionListener, LogHandler, MessageHandler
+ {

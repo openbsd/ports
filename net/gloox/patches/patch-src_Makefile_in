@@ -1,20 +1,21 @@
-$OpenBSD: patch-src_Makefile_in,v 1.5 2017/04/27 23:15:39 espie Exp $
+$OpenBSD: patch-src_Makefile_in,v 1.6 2017/08/08 08:57:45 bentley Exp $
 
 Do not use the hardcoded make
 
---- src/Makefile.in.orig	Sun Jul 21 21:18:10 2013
-+++ src/Makefile.in	Fri Apr 28 00:18:22 2017
-@@ -349,7 +349,7 @@ libgloox_la_SOURCES = jid.cpp parser.cpp connectiontcp
-                         tlsopensslserver.cpp compressiondefault.cpp \
-                         connectiontlsserver.cpp atomicrefcount.cpp linklocalmanager.cpp linklocalclient.cpp
+Index: src/Makefile.in
+--- src/Makefile.in.orig
++++ src/Makefile.in
+@@ -440,7 +440,7 @@ libgloox_la_SOURCES = jid.cpp parser.cpp connectiontcp
+                         carbons.cpp jinglepluginfactory.cpp jingleiceudp.cpp jinglefiletransfer.cpp \
+                         iodata.cpp
  
--libgloox_la_LDFLAGS = -version-info 8:0:0 -no-undefined -no-allow-shlib-undefined
-+libgloox_la_LDFLAGS = -version-info 8:0:0 -no-undefined
+-libgloox_la_LDFLAGS = -version-info 17:0:0 -no-undefined -no-allow-shlib-undefined
++libgloox_la_LDFLAGS = -version-info 17:0:0 -no-undefined
  libgloox_la_LIBADD = 
  libgloox_la_CFLAGS = $(CPPFLAGS)
  libglooxincludedir = $(includedir)/gloox
-@@ -958,12 +958,12 @@ uninstall-am: uninstall-libLTLIBRARIES \
- 
+@@ -1031,12 +1031,12 @@ uninstall-am: uninstall-libLTLIBRARIES \
+               #-Werror
  
  test:
 -	make -C tests test
