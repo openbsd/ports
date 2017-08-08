@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.41 2017/04/30 11:28:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2017/08/08 21:24:47 jasper Exp $
 
 COMMENT=		fast and easy porn downloader
 
 DISTNAME=		gnaughty-1.2.6
 CATEGORIES +=		net graphics biology productivity education
 CATEGORIES +=		inputmethods benchmarks japanese geo
-REVISION=		0
+CATEGORIES +=		games
+REVISION=		1
 
 HOMEPAGE=		http://gnaughty.sourceforge.net/
 
