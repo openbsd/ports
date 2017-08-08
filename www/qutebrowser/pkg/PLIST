@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2017/02/26 11:08:56 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2017/08/08 21:38:25 jasper Exp $
 bin/qutebrowser
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/
 lib/python${MODPY_VERSION}/site-packages/qutebrowser-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -209,6 +209,7 @@ lib/python${MODPY_VERSION}/site-packages/qutebrowser/config/websettings.py
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/git-commit-id
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/html/
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/html/COPYING.html
+lib/python${MODPY_VERSION}/site-packages/qutebrowser/html/backend-warning.html
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/html/base.html
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/html/bookmarks.html
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/html/dirbrowser.html
@@ -226,6 +227,7 @@ lib/python${MODPY_VERSION}/site-packages/qutebrowser/html/doc/settings.html
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/html/doc/userscripts.html
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/html/error.html
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/html/history.html
+lib/python${MODPY_VERSION}/site-packages/qutebrowser/html/history_nojs.html
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/html/log.html
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/html/no_pdfjs.html
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/html/pre.html
@@ -238,6 +240,7 @@ lib/python${MODPY_VERSION}/site-packages/qutebrowser/img/broken_qutebrowser_logo
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/img/file.svg
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/img/folder.svg
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/javascript/
+lib/python${MODPY_VERSION}/site-packages/qutebrowser/javascript/history.js
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/javascript/pac_utils.js
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/javascript/position_caret.js
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/javascript/scroll.js
