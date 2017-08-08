@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2016/01/19 02:47:14 bentley Exp $
+# $OpenBSD: Makefile,v 1.4 2017/08/08 07:27:45 bentley Exp $
 
      SUBDIR += af-nl
      SUBDIR += arg
      SUBDIR += arg-cat
+     SUBDIR += bel
+     SUBDIR += bel-rus
      SUBDIR += br-fr
      SUBDIR += ca-it
      SUBDIR += cat
@@ -23,7 +25,8 @@
      SUBDIR += es-ro
      SUBDIR += eu-en
      SUBDIR += eu-es
-     SUBDIR += fr-ca
+     SUBDIR += fra
+     SUBDIR += fra-cat
      SUBDIR += fr-es
      SUBDIR += hbs
      SUBDIR += hbs-eng
@@ -33,6 +36,7 @@
      SUBDIR += id-ms
      SUBDIR += is-en
      SUBDIR += is-sv
+     SUBDIR += ita
      SUBDIR += mk-bg
      SUBDIR += mk-en
      SUBDIR += mlt-ara
@@ -43,8 +47,10 @@
      SUBDIR += oc-es
      SUBDIR += pt-ca
      SUBDIR += pt-gl
+     SUBDIR += rus
      SUBDIR += spa
      SUBDIR += spa-arg
+     SUBDIR += spa-ita
      SUBDIR += sv-da
      SUBDIR += urd
      SUBDIR += urd-hin
