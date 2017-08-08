@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2017/07/27 09:55:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2017/08/08 15:15:52 bcallah Exp $
 
 GAME =		tetzle
 COMMENT =	tetromino puzzle game
-DISTNAME =	${GAME}-2.1.0-src
+DISTNAME =	${GAME}-2.1.1-src
 WANTLIB +=	GL
-WANTLIB += ${COMPILER_LIBCXX}
-REVISION =	0
 
 .include <bsd.port.mk>

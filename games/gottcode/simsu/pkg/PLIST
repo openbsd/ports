@@ -1,8 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2016/02/01 07:50:13 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.5 2017/08/08 15:15:52 bcallah Exp $
 @bin bin/simsu
 @man man/man6/simsu.6
-share/appdata/
-share/appdata/simsu.appdata.xml
 share/applications/simsu.desktop
 share/icons/hicolor/1024x1024/
 share/icons/hicolor/1024x1024/apps/
@@ -17,6 +15,8 @@ share/icons/hicolor/48x48/apps/simsu.png
 share/icons/hicolor/512x512/apps/simsu.png
 share/icons/hicolor/64x64/apps/simsu.png
 share/icons/hicolor/scalable/apps/simsu.svg
+share/metainfo/
+share/metainfo/simsu.appdata.xml
 share/pixmaps/
 share/pixmaps/simsu.xpm
 share/simsu/
@@ -41,6 +41,7 @@ share/simsu/translations/simsu_ro.qm
 share/simsu/translations/simsu_ru.qm
 share/simsu/translations/simsu_tr.qm
 share/simsu/translations/simsu_uk.qm
+share/simsu/translations/simsu_zh_TW.qm
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/update-desktop-database

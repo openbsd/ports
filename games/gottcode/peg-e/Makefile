@@ -1,9 +1,7 @@
-# $OpenBSD: Makefile,v 1.9 2017/07/27 09:55:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2017/08/08 15:15:52 bcallah Exp $
 
 GAME =		peg-e
 COMMENT =	basic peg solitaire game
-DISTNAME =	${GAME}-1.2.2-src
-WANTLIB += ${COMPILER_LIBCXX}
-REVISION =	0
+DISTNAME =	${GAME}-1.2.3-src
 
 .include <bsd.port.mk>

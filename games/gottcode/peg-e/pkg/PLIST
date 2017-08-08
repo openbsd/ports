@@ -1,8 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/06/08 06:42:14 czarkoff Exp $
+@comment $OpenBSD: PLIST,v 1.5 2017/08/08 15:15:52 bcallah Exp $
 @bin bin/peg-e
 @man man/man6/peg-e.6
-share/appdata/
-share/appdata/peg-e.appdata.xml
 share/applications/peg-e.desktop
 share/icons/hicolor/1024x1024/
 share/icons/hicolor/1024x1024/apps/
@@ -17,6 +15,8 @@ share/icons/hicolor/48x48/apps/peg-e.png
 share/icons/hicolor/512x512/apps/peg-e.png
 share/icons/hicolor/64x64/apps/peg-e.png
 share/icons/hicolor/scalable/apps/peg-e.svg
+share/metainfo/
+share/metainfo/peg-e.appdata.xml
 share/peg-e/
 share/peg-e/icons/
 share/peg-e/icons/hicolor/
@@ -56,6 +56,7 @@ share/peg-e/translations/pege_pl.qm
 share/peg-e/translations/pege_ro.qm
 share/peg-e/translations/pege_ru.qm
 share/peg-e/translations/pege_tr.qm
+share/peg-e/translations/pege_zh.qm
 share/pixmaps/
 share/pixmaps/peg-e.xpm
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
