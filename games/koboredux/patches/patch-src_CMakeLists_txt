@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_CMakeLists_txt,v 1.1.1.1 2017/08/08 06:35:22 bentley Exp $
+
+Index: src/CMakeLists.txt
+--- src/CMakeLists.txt.orig
++++ src/CMakeLists.txt
+@@ -63,6 +63,7 @@ endif(DEMO_BUILD)
+ 
+ pkg_search_module(SDL2 REQUIRED sdl2)
+ include_directories(${SDL2_INCLUDE_DIRS})
++link_directories(${SDL2_LIBDIR})
+ 
+ pkg_search_module(SDL2IMAGE REQUIRED SDL2_image>=2.0.0)
+ include_directories(${SDL2IMAGE_INCLUDE_DIRS})
+@@ -94,10 +95,6 @@ target_link_libraries(kobord ${SDL2_LIBRARIES} ${SDL2I
+ if(WIN32)
+ 	target_link_libraries(kobord winmm dxguid)
+ endif(WIN32)
+-
+-# Release build: full optimization, no debug features, no debug info
+-set(CMAKE_C_FLAGS_RELEASE "-O3 -DNDEBUG")
+-set(CMAKE_CXX_FLAGS_RELEASE "-O3 -DNDEBUG")
+ 
+ # Maintainer build: No optimizations, lots of warnings, fail on warnings
+ set(f "-O1 -g -DDEBUG -Wall -Wwrite-strings -Wcast-align")

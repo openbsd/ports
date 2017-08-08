@@ -1,0 +1,10 @@
+$OpenBSD: README,v 1.1.1.1 2017/08/08 06:35:22 bentley Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+By default, koboredux contains only low-resolution graphics and sound.
+To play the game in higher quality, purchase the full game from
+https://olofson.itch.io/kobo-redux and copy the sfx/redux/, gfx/redux/,
+and gfx/redux_fullscreen/ directories to ${TRUEPREFIX}/share/koboredux/.

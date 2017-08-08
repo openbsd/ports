@@ -1,0 +1,15 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2017/08/08 06:35:22 bentley Exp $
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -46,9 +46,6 @@ endif(DEMO_BUILD)
+ set(VERSION_STRING "${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_PATCH}")
+ set(PACKAGE "${KOBO_PACKAGE_NAME}-${VERSION_STRING}")
+ 
+-# Release build: full optimization, no debug features, no debug info
+-set(CMAKE_C_FLAGS_RELEASE "-O3 -DNDEBUG")
+-
+ # Maintainer build: No optimizations, lots of warnings, fail on warnings
+ set(f "-O0 -g -Wall -Wwrite-strings -Wcast-align")
+ set(f "${f} -Wbad-function-cast -Waggregate-return")
