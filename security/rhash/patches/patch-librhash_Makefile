@@ -1,0 +1,31 @@
+$OpenBSD: patch-librhash_Makefile,v 1.1.1.1 2017/08/08 22:04:57 dcoppa Exp $
+
+Index: librhash/Makefile
+--- librhash/Makefile.orig
++++ librhash/Makefile
+@@ -2,10 +2,10 @@
+ CC      ?= gcc
+ AR      ?= ar
+ #NOTE: NDEBUG turns off asserts
+-OPTFLAGS   = -O2 -DNDEBUG -fomit-frame-pointer -ffunction-sections -fdata-sections
++OPTFLAGS   = -DNDEBUG -fomit-frame-pointer -ffunction-sections -fdata-sections
+ OPTLDFLAGS =
+-CFLAGS     = $(OPTFLAGS)
+-LDFLAGS    = $(OPTLDFLAGS)
++CFLAGS     += $(OPTFLAGS)
++LDFLAGS    += $(OPTLDFLAGS)
+ ADDCFLAGS  =
+ LIBCFLAGS  =
+ ADDLDFLAGS =
+@@ -187,9 +187,8 @@ test-dll: $(DLLNAME) test_hashes.o
+ 
+ # shared and static libraries
+ $(SONAME): $(SOURCES)
+-	sed -n '1s/.*/{ global:/p; s/^RHASH_API.* \([a-z0-9_]\+\)(.*/  \1;/p; $$s/.*/local: *; };/p' $(SO_HEADERS) > exports.sym
+-	$(CC) -fpic $(ALLCFLAGS) -shared $(SOURCES) -Wl,--version-script,exports.sym,-soname,$(SONAME) $(LIBLDFLAGS) -o $@
+-	ln -s $(SONAME) $(SOLINK)
++	sed -n '1s/.*/{ global:/p; s/^RHASH_API.* \([a-z0-9_]*\)(.*/  \1;/p; $$s/.*/local: *; };/p' $(SO_HEADERS) > exports.sym
++	$(CC) -fpic $(ALLCFLAGS) -shared $(SOURCES) -Wl,--version-script,exports.sym $(LIBLDFLAGS) -o $@
+ # use 'nm -Cg --defined-only $@' to view exported symbols
+ 
+ $(LIBRARY): $(OBJECTS)

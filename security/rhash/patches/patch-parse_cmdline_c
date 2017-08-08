@@ -1,0 +1,14 @@
+$OpenBSD: patch-parse_cmdline_c,v 1.1.1.1 2017/08/08 22:04:57 dcoppa Exp $
+
+Index: parse_cmdline.c
+--- parse_cmdline.c.orig
++++ parse_cmdline.c
+@@ -514,7 +514,7 @@ static const char* find_conf_file(void)
+ 		free(path);
+ 	}
+ 	/* then check for global config */
+-	path = "/etc/" CONF_FILE_NAME;
++	path = "${SYSCONFDIR}/" CONF_FILE_NAME;
+ 	if (is_regular_file(path)) {
+ 		return (conf_opt.config_file = path);
+ 	}

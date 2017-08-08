@@ -1,0 +1,5 @@
+RHash is a console utility and library for computing and verifying
+hash sums of files.
+It supports CRC32, MD4, MD5, SHA1, SHA256, SHA512, Tiger, DC++ TTH,
+BitTorrent BTIH, ED2K, AICH, GOST R 34.11-94, RIPEMD-160, HAS-160,
+EDON-R 256/512, Whirlpool and Snefru-128/256 algorithms.

@@ -1,0 +1,36 @@
+$OpenBSD: patch-find_file_c,v 1.1.1.1 2017/08/08 22:04:57 dcoppa Exp $
+
+commit 369c4014f561b766bb4f724a718f1461b8638e03
+Author: Aleksey <rhash.admin@gmail.com>
+Date:   Wed Apr 5 19:07:19 2017 +0300
+
+fix memory leak
+
+Index: find_file.c
+--- find_file.c.orig
++++ find_file.c
+@@ -189,14 +189,18 @@ file_search_data* create_file_search_data(rsh_tchar** 
+  */
+ void destroy_file_search_data(file_search_data* data)
+ {
+-	size_t i;
+-	/* clean the memory allocated by file_t elements */
+-	for (i = 0; i < data->root_files.size; i++)
++	if (data)
+ 	{
+-		file_t* file = get_root_file(data, i);
+-		file_cleanup(file);
++		size_t i;
++		/* clean the memory allocated by file_t elements */
++		for (i = 0; i < data->root_files.size; i++)
++		{
++			file_t* file = get_root_file(data, i);
++			file_cleanup(file);
++		}
++		rsh_blocks_vector_destroy(&data->root_files);
++		free(data);
+ 	}
+-	rsh_blocks_vector_destroy(&data->root_files);
+ }
+ 
+ void scan_files(file_search_data* data)

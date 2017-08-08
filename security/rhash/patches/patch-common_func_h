@@ -1,0 +1,14 @@
+$OpenBSD: patch-common_func_h,v 1.1.1.1 2017/08/08 22:04:57 dcoppa Exp $
+
+Index: common_func.h
+--- common_func.h.orig
++++ common_func.h
+@@ -14,7 +14,7 @@
+ # ifdef _WIN32
+ #  define LOCALEDIR "./locale"
+ # else /* _WIN32 */
+-#  define LOCALEDIR "/usr/share/locale"
++#  define LOCALEDIR "${TRUEPREFIX}/share/locale"
+ # endif /* _WIN32 */
+ #else
+ # define _(str) (str)
