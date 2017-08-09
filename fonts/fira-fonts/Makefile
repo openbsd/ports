@@ -1,45 +1,43 @@
-# $OpenBSD: Makefile,v 1.6 2015/05/09 22:24:06 juanfra Exp $
+# $OpenBSD: Makefile,v 1.7 2017/08/09 20:09:19 rsadowski Exp $
 
 COMMENT =		Firefox OS typeface
 
-# Version 3.111
-# - Removed the technical reports. The license of the reports doesn't permit
-#   the distribution.
-# - Removed the medium style from the otf directory. Fontconfig often uses
-#   the medium style by default instead of the regular style.
-# - Removed the source directory.
-DISTNAME =		fira-fonts-20140907
-REVISION =		1
+DISTNAME=		fira-fonts-20170227
+
+GH_ACCOUNT =		carrois
+GH_PROJECT =		Fira
+GH_COMMIT =		a606927401bcc3951587339fee53aa882856b51b
 
 CATEGORIES =		fonts x11
 
-# Alternative homepage http://www.carrois.com/fira-3-1/
-HOMEPAGE =		https://mozilla.github.io/Fira/
+HOMEPAGE =		https://carrois.com/typefaces/FiraSans/
 
 # SIL OPEN FONT LICENSE Version 1.1
 PERMIT_PACKAGE_CDROM =	Yes
-
-MASTER_SITES =		http://download.tuxfamily.org/jod/fonts/fira-fonts/ \
-			ftp://download.tuxfamily.org/jod/fonts/fira-fonts/
-EXTRACT_SUFX =		.tar.lz
 
 NO_BUILD =		Yes
 NO_TEST =		Yes
 
 PKG_ARCH =		*
 
-DOC_DIR =		${PREFIX}/share/doc/fira-fonts
 FONTS_DIR =		${PREFIX}/share/fonts/fira
 WEBFONTS_DIR =		${PREFIX}/share/fira-fonts
 
 do-install:
-	${INSTALL_DATA_DIR} ${DOC_DIR} ${FONTS_DIR} ${WEBFONTS_DIR}/webfonts
+	${INSTALL_DATA_DIR} ${FONTS_DIR} ${WEBFONTS_DIR}/webfonts
 	@echo 'This directory contains the web version of the Fira typeface' >\
 		${WEBFONTS_DIR}/README
-	${INSTALL_DATA} ${WRKSRC}/LICENSE ${DOC_DIR}
-	${INSTALL_DATA} ${WRKSRC}/otf/* ${FONTS_DIR}
-	${INSTALL_DATA} ${WRKSRC}/eot/* ${WEBFONTS_DIR}/webfonts
-	${INSTALL_DATA} ${WRKSRC}/woff/* ${WEBFONTS_DIR}/webfonts
-	${INSTALL_DATA} ${WRKSRC}/ttf/* ${WEBFONTS_DIR}/webfonts
+	${INSTALL_DATA} ${WRKSRC}/Fira_Sans_4_2/Fonts/FiraSans_OTF_4203/*/*/* \
+		${FONTS_DIR}
+	${INSTALL_DATA} ${WRKSRC}/Fira_Sans_4_2/Fonts/FiraSans_WEB_4203/*/*/* \
+		${WEBFONTS_DIR}/webfonts
+	${INSTALL_DATA} ${WRKSRC}/Fira_Mono_3_2/Fonts/FiraMono_OTF_32/* \
+		${FONTS_DIR}
+	${INSTALL_DATA} ${WRKSRC}/Fira_Mono_3_2/Fonts/FiraMono_WEB_32/* \
+		${WEBFONTS_DIR}/webfonts
+	${INSTALL_DATA} ${WRKSRC}/Fira_Code_3_2/Fonts/FiraCode_OTF_32/* \
+		${FONTS_DIR}
+	${INSTALL_DATA} ${WRKSRC}/Fira_Code_3_2/Fonts/FiraCode_WEB_32/* \
+		${WEBFONTS_DIR}/webfonts
 
 .include <bsd.port.mk>
