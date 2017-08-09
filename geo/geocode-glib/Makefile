@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2016/04/25 08:13:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2017/08/09 12:46:11 jasper Exp $
 
 COMMENT=	convenience library for the geocoding
 
-GNOME_VERSION=	3.20.1
+GNOME_VERSION=	3.24.0
 GNOME_PROJECT=	geocode-glib
 
-SHARED_LIBS +=	geocode-glib         0.0      # 0.0
+SHARED_LIBS +=	geocode-glib         0.1      # 0.0
 
 CATEGORIES=	geo
 
