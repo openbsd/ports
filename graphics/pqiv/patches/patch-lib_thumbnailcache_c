@@ -1,0 +1,25 @@
+$OpenBSD: patch-lib_thumbnailcache_c,v 1.1 2017/08/09 21:15:22 danj Exp $
+
+Our time_t is 64 bits
+
+Index: lib/thumbnailcache.c
+--- lib/thumbnailcache.c.orig
++++ lib/thumbnailcache.c
+@@ -204,7 +204,7 @@ gboolean check_png_attributes(gchar *file_name, gchar 
+ 					file_uri_match = strncmp(&data[sizeof("Thumb::URI")], file_uri, strlen(file_uri)) == 0;
+ 				}
+ 				else if(strcmp(data, "Thumb::MTime") == 0) {
+-					gchar *file_mtime_str = g_strdup_printf("%lu", file_mtime);
++					gchar *file_mtime_str = g_strdup_printf("%lld", (long long)file_mtime);
+ 					file_mtime_match = strncmp(&data[sizeof("Thumb::MTime")], file_mtime_str, strlen(file_mtime_str)) == 0;
+ 					g_free(file_mtime_str);
+ 				}
+@@ -555,7 +555,7 @@ gboolean store_thumbnail_to_cache(file_t *file, unsign
+ 	gboolean retval = TRUE;
+ 	int file_fd = g_open(thumbnail_file, O_CREAT | O_WRONLY, 0600);
+ 	if(file_fd >= 0) {
+-		gchar *string_mtime = g_strdup_printf("%lu", file_mtime);
++		gchar *string_mtime = g_strdup_printf("%lld", (long long)file_mtime);
+ 		struct png_writer_info writer_info = { file_fd, 0, file_uri, string_mtime };
+ 		if(cairo_surface_write_to_png_stream(file->thumbnail, (cairo_write_func_t)png_writer, &writer_info) != CAIRO_STATUS_SUCCESS) {
+ 			g_unlink(thumbnail_file);
