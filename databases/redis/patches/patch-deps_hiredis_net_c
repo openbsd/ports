@@ -1,12 +1,13 @@
-$OpenBSD: patch-deps_hiredis_net_c,v 1.1 2014/07/12 09:53:57 dcoppa Exp $
---- deps/hiredis/net.c.orig	Mon Jun 23 16:56:18 2014
-+++ deps/hiredis/net.c	Sat Jul 12 11:41:26 2014
-@@ -138,7 +138,7 @@ int redisKeepAlive(redisContext *c, int interval) {
+$OpenBSD: patch-deps_hiredis_net_c,v 1.2 2017/08/09 09:16:09 dcoppa Exp $
+Index: deps/hiredis/net.c
+--- deps/hiredis/net.c.orig
++++ deps/hiredis/net.c
+@@ -141,7 +141,7 @@ int redisKeepAlive(redisContext *c, int interval) {
          return REDIS_ERR;
      }
  #else
--#ifndef __sun
-+#if !defined(__sun) && !defined(__OpenBSD__)
+-#if defined(__GLIBC__) && !defined(__FreeBSD_kernel__)
++#if defined(__GLIBC__) && !defined(__FreeBSD_kernel__) && !defined(__OpenBSD__)
      val = interval;
      if (setsockopt(fd, IPPROTO_TCP, TCP_KEEPIDLE, &val, sizeof(val)) < 0) {
          __redisSetError(c,REDIS_ERR_OTHER,strerror(errno));

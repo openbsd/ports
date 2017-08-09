@@ -1,10 +1,11 @@
-$OpenBSD: patch-src_config_c,v 1.6 2016/05/10 09:38:48 dcoppa Exp $
+$OpenBSD: patch-src_config_c,v 1.7 2017/08/09 09:16:09 dcoppa Exp $
 
 Recognize LOG_DAEMON as a valid facility
 
---- src/config.c.orig	Fri May  6 09:11:36 2016
-+++ src/config.c	Tue May 10 10:09:59 2016
-@@ -54,6 +54,7 @@ configEnum maxmemory_policy_enum[] = {
+Index: src/config.c
+--- src/config.c.orig
++++ src/config.c
+@@ -56,6 +56,7 @@ configEnum maxmemory_policy_enum[] = {
  };
  
  configEnum syslog_facility_enum[] = {
@@ -12,7 +13,7 @@ Recognize LOG_DAEMON as a valid facility
      {"user",    LOG_USER},
      {"local0",  LOG_LOCAL0},
      {"local1",  LOG_LOCAL1},
-@@ -278,7 +279,7 @@ void loadServerConfigFromString(char *config) {
+@@ -298,7 +299,7 @@ void loadServerConfigFromString(char *config) {
              server.syslog_facility =
                  configEnumGetValue(syslog_facility_enum,argv[1]);
              if (server.syslog_facility == INT_MIN) {

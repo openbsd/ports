@@ -1,27 +1,28 @@
-$OpenBSD: patch-src_Makefile,v 1.26 2016/11/01 09:07:19 dcoppa Exp $
---- src/Makefile.orig	Wed Oct 26 09:17:45 2016
-+++ src/Makefile	Tue Nov  1 10:03:38 2016
-@@ -14,8 +14,8 @@
- 
+$OpenBSD: patch-src_Makefile,v 1.27 2017/08/09 09:16:09 dcoppa Exp $
+Index: src/Makefile
+--- src/Makefile.orig
++++ src/Makefile
+@@ -15,8 +15,8 @@
  release_hdr := $(shell sh -c './mkreleasehdr.sh')
  uname_S := $(shell sh -c 'uname -s 2>/dev/null || echo not')
+ uname_M := $(shell sh -c 'uname -m 2>/dev/null || echo not')
 -OPTIMIZATION?=-O2
--DEPENDENCY_TARGETS=hiredis linenoise lua geohash-int
+-DEPENDENCY_TARGETS=hiredis linenoise lua
 +# OPTIMIZATION?=-O2
-+DEPENDENCY_TARGETS=hiredis linenoise geohash-int
++DEPENDENCY_TARGETS=hiredis linenoise
+ NODEPS:=clean distclean
  
  # Default settings
- STD=-std=c99 -pedantic -DREDIS_STATIC=''
-@@ -24,6 +24,7 @@ OPT=$(OPTIMIZATION)
+@@ -26,6 +26,7 @@ OPT=$(OPTIMIZATION)
  
  PREFIX?=/usr/local
  INSTALL_BIN=$(PREFIX)/bin
 +INSTALL_SBIN=$(PREFIX)/sbin
  INSTALL=install
  
- # Default allocator
-@@ -56,7 +57,7 @@ endif
- FINAL_CFLAGS=$(STD) $(WARN) $(OPT) $(DEBUG) $(CFLAGS) $(REDIS_CFLAGS) -I../deps/geohash-int
+ # Default allocator defaults to Jemalloc if it's not an ARM
+@@ -66,7 +67,7 @@ endif
+ FINAL_CFLAGS=$(STD) $(WARN) $(OPT) $(DEBUG) $(CFLAGS) $(REDIS_CFLAGS)
  FINAL_LDFLAGS=$(LDFLAGS) $(REDIS_LDFLAGS) $(DEBUG)
  FINAL_LIBS=-lm
 -DEBUG=-g -ggdb
@@ -29,7 +30,7 @@ $OpenBSD: patch-src_Makefile,v 1.26 2016/11/01 09:07:19 dcoppa Exp $
  
  ifeq ($(uname_S),SunOS)
  	# SunOS
-@@ -90,7 +91,7 @@ endif
+@@ -107,7 +108,7 @@ endif
  endif
  endif
  # Include paths to dependencies
@@ -38,7 +39,7 @@ $OpenBSD: patch-src_Makefile,v 1.26 2016/11/01 09:07:19 dcoppa Exp $
  
  ifeq ($(MALLOC),tcmalloc)
  	FINAL_CFLAGS+= -DUSE_TCMALLOC
-@@ -112,6 +113,10 @@ REDIS_CC=$(QUIET_CC)$(CC) $(FINAL_CFLAGS)
+@@ -129,6 +130,10 @@ REDIS_CC=$(QUIET_CC)$(CC) $(FINAL_CFLAGS)
  REDIS_LD=$(QUIET_LINK)$(CC) $(FINAL_LDFLAGS)
  REDIS_INSTALL=$(QUIET_INSTALL)$(INSTALL)
  
@@ -49,34 +50,34 @@ $OpenBSD: patch-src_Makefile,v 1.26 2016/11/01 09:07:19 dcoppa Exp $
  CCCOLOR="\033[34m"
  LINKCOLOR="\033[34;1m"
  SRCCOLOR="\033[33m"
-@@ -127,7 +132,7 @@ endif
+@@ -144,7 +149,7 @@ endif
  
  REDIS_SERVER_NAME=redis-server
  REDIS_SENTINEL_NAME=redis-sentinel
--REDIS_SERVER_OBJ=adlist.o quicklist.o ae.o anet.o dict.o server.o sds.o zmalloc.o lzf_c.o lzf_d.o pqsort.o zipmap.o sha1.o ziplist.o release.o networking.o util.o object.o db.o replication.o rdb.o t_string.o t_list.o t_set.o t_zset.o t_hash.o config.o aof.o pubsub.o multi.o debug.o sort.o intset.o syncio.o cluster.o crc16.o endianconv.o slowlog.o scripting.o bio.o rio.o rand.o memtest.o crc64.o bitops.o sentinel.o notify.o setproctitle.o blocked.o hyperloglog.o latency.o sparkline.o redis-check-rdb.o geo.o
-+REDIS_SERVER_OBJ=adlist.o quicklist.o ae.o anet.o dict.o server.o sds.o zmalloc.o lzf_c.o lzf_d.o pqsort.o zipmap.o sha1.o ziplist.o release.o networking.o util.o object.o db.o replication.o rdb.o t_string.o t_list.o t_set.o t_zset.o t_hash.o config.o aof.o pubsub.o multi.o debug.o sort.o intset.o syncio.o cluster.o crc16.o endianconv.o slowlog.o scripting.o bio.o rio.o rand.o memtest.o crc64.o bitops.o sentinel.o notify.o setproctitle.o blocked.o hyperloglog.o latency.o sparkline.o redis-check-rdb.o geo.o fpconv.o strbuf.o lua_bit.o lua_cjson.o lua_struct.o lua_cmsgpack.o
- REDIS_GEOHASH_OBJ=../deps/geohash-int/geohash.o ../deps/geohash-int/geohash_helper.o
+-REDIS_SERVER_OBJ=adlist.o quicklist.o ae.o anet.o dict.o server.o sds.o zmalloc.o lzf_c.o lzf_d.o pqsort.o zipmap.o sha1.o ziplist.o release.o networking.o util.o object.o db.o replication.o rdb.o t_string.o t_list.o t_set.o t_zset.o t_hash.o config.o aof.o pubsub.o multi.o debug.o sort.o intset.o syncio.o cluster.o crc16.o endianconv.o slowlog.o scripting.o bio.o rio.o rand.o memtest.o crc64.o bitops.o sentinel.o notify.o setproctitle.o blocked.o hyperloglog.o latency.o sparkline.o redis-check-rdb.o redis-check-aof.o geo.o lazyfree.o module.o evict.o expire.o geohash.o geohash_helper.o childinfo.o defrag.o siphash.o rax.o
++REDIS_SERVER_OBJ=adlist.o quicklist.o ae.o anet.o dict.o server.o sds.o zmalloc.o lzf_c.o lzf_d.o pqsort.o zipmap.o sha1.o ziplist.o release.o networking.o util.o object.o db.o replication.o rdb.o t_string.o t_list.o t_set.o t_zset.o t_hash.o config.o aof.o pubsub.o multi.o debug.o sort.o intset.o syncio.o cluster.o crc16.o endianconv.o slowlog.o scripting.o bio.o rio.o rand.o memtest.o crc64.o bitops.o sentinel.o notify.o setproctitle.o blocked.o hyperloglog.o latency.o sparkline.o redis-check-rdb.o redis-check-aof.o geo.o lazyfree.o module.o evict.o expire.o geohash.o geohash_helper.o childinfo.o defrag.o siphash.o rax.o fpconv.o strbuf.o lua_bit.o lua_cjson.o lua_cmsgpack.o lua_struct.o
  REDIS_CLI_NAME=redis-cli
  REDIS_CLI_OBJ=anet.o adlist.o redis-cli.o zmalloc.o release.o anet.o ae.o crc64.o
-@@ -182,7 +187,7 @@ endif
+ REDIS_BENCHMARK_NAME=redis-benchmark
+@@ -196,7 +201,7 @@ endif
  
  # redis-server
  $(REDIS_SERVER_NAME): $(REDIS_SERVER_OBJ)
--	$(REDIS_LD) -o $@ $^ ../deps/hiredis/libhiredis.a ../deps/lua/src/liblua.a $(REDIS_GEOHASH_OBJ) $(FINAL_LIBS)
-+	$(REDIS_LD) -o $@ $^ ../deps/hiredis/libhiredis.a $(REDIS_GEOHASH_OBJ) $(FINAL_LIBS) -L${LOCALBASE}/lib ${MODLUA_LIB}
+-	$(REDIS_LD) -o $@ $^ ../deps/hiredis/libhiredis.a ../deps/lua/src/liblua.a $(FINAL_LIBS)
++	$(REDIS_LD) -o $@ $^ ../deps/hiredis/libhiredis.a $(FINAL_LIBS) -L${LOCALBASE}/lib ${MODLUA_LIB}
  
  # redis-sentinel
  $(REDIS_SENTINEL_NAME): $(REDIS_SERVER_NAME)
-@@ -222,7 +227,7 @@ distclean: clean
+@@ -239,7 +244,7 @@ distclean: clean
  .PHONY: distclean
  
  test: $(REDIS_SERVER_NAME) $(REDIS_CHECK_AOF_NAME)
 -	@(cd ..; ./runtest)
-+	@(cd ..; ulimit -Sn `ulimit -Hn`; ${TCL_BIN} tests/test_helper.tcl)
++	@(cd ..; ulimit -Sd `ulimit -Hd`; ulimit -Sn `ulimit -Hn`; ulimit -Sp `ulimit -Hp`; ulimit -Ss `ulimit -Hs`; ${TCL_BIN} tests/test_helper.tcl)
  
  test-sentinel: $(REDIS_SENTINEL_NAME)
  	@(cd ..; ./runtest-sentinel)
-@@ -263,10 +268,11 @@ src/help.h:
+@@ -283,10 +288,11 @@ src/help.h:
  	@../utils/generate-command-help.rb > help.h
  
  install: all
