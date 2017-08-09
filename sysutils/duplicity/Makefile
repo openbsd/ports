@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.42 2017/05/19 02:33:27 danj Exp $
+# $OpenBSD: Makefile,v 1.43 2017/08/09 21:41:54 danj Exp $
 
 # optional dependencies
 # py-pyrax
 
 COMMENT =	encrypted backup using rsync algorithm
 
-MODPY_EGG_VERSION = 0.7.12
+MODPY_EGG_VERSION = 0.7.13.1
 DISTNAME =	duplicity-${MODPY_EGG_VERSION}
-REVISION =	0
 
 CATEGORIES =	sysutils
 
@@ -28,7 +27,8 @@ WANTLIB +=	pthread rsync ${MODPY_WANTLIB}
 LIB_DEPENDS +=	net/librsync \
 		${MODPY_LIB_DEPENDS}
 
-RUN_DEPENDS +=	devel/py-pexpect \
+RUN_DEPENDS +=	devel/py-fasteners \
+		devel/py-pexpect \
 		net/ncftp \
 		net/py-boto \
 		gnupg-<2:security/gnupg \
