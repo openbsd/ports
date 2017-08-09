@@ -1,8 +1,8 @@
-$OpenBSD: patch-doc_nano_1,v 1.4 2017/06/12 16:30:32 naddy Exp $
+$OpenBSD: patch-doc_nano_1,v 1.5 2017/08/09 22:05:40 naddy Exp $
 Index: doc/nano.1
 --- doc/nano.1.orig
 +++ doc/nano.1
-@@ -304,8 +304,6 @@ Please report any other bugs that you encounter via:
+@@ -309,8 +309,6 @@ Please report any other bugs that you encounter via:
  
  .SH SEE ALSO
  .BR nanorc (5)

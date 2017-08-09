@@ -1,13 +1,13 @@
-$OpenBSD: patch-src_Makefile_in,v 1.13 2017/06/12 16:30:32 naddy Exp $
+$OpenBSD: patch-src_Makefile_in,v 1.14 2017/08/09 22:05:40 naddy Exp $
 Index: src/Makefile.in
 --- src/Makefile.in.orig
 +++ src/Makefile.in
-@@ -1443,7 +1443,7 @@ nano_SOURCES = browser.c \
+@@ -1444,7 +1444,7 @@ nano_SOURCES = browser.c \
  		utils.c \
- 		winio.c 
+ 		winio.c
  
--nano_LDADD = @LIBINTL@ $(top_builddir)/lib/libgnu.a $(LIB_CLOCK_GETTIME)
-+nano_LDADD = @LTLIBINTL@ $(top_builddir)/lib/libgnu.a $(LIB_CLOCK_GETTIME)
+-nano_LDADD = @LIBINTL@ $(top_builddir)/lib/libgnu.a \
++nano_LDADD = @LTLIBINTL@ $(top_builddir)/lib/libgnu.a \
+ 		$(LIB_CLOCK_GETTIME) $(LIBTHREAD)
+ 
  all: all-am
- 
- .SUFFIXES:
