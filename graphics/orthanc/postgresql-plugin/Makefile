@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/08/09 14:41:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2017/08/09 15:35:51 jasper Exp $
 
 COMMENT =		PostgreSQL backend for Orthanc
 
@@ -24,9 +24,5 @@ CONFIGURE_ARGS +=	-DCMAKE_C_FLAGS="-I${LOCALBASE}/include -pthread" \
 # XXX: undefined references to testing libs, and requires running postgres
 CONFIGURE_ARGS +=	-DBUILD_UNIT_TESTS=Off
 NO_TEST =		Yes
-
-pre-configure:
-	sed -i 's,share/orthanc/plugins,libexec/orthanc/plugins,g' \
-		${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>

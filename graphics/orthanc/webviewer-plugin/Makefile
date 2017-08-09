@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/08/09 14:41:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2017/08/09 15:35:51 jasper Exp $
 
 COMMENT =		web viewer plugin for Orthanc
 
@@ -41,9 +41,5 @@ post-extract:
 .for p in ${PLUGIN_3RDPARTY}
 	cp ${DISTDIR}/$p ${WRKSRC}/ThirdPartyDownloads/
 .endfor
-
-pre-configure:
-	sed -i 's,share/orthanc/plugins,libexec/orthanc/plugins,g' \
-		${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>
