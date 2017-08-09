@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.111 2017/08/04 23:15:45 giovanni Exp $
+# $OpenBSD: Makefile,v 1.112 2017/08/09 20:36:40 giovanni Exp $
 
 COMMENT-main=		imap server for maildir format mailboxes
 COMMENT-pop3=		pop3 server for maildir format mailboxes
 
 V=			4.18.0
 DISTNAME=		courier-imap-${V}
+REVISION=		0
 PKGNAME-main=		${DISTNAME}
 FULLPKGNAME-pop3=	courier-pop3-${V}
 FULLPKGPATH-pop3=	mail/courier-imap,-pop3
@@ -23,9 +24,9 @@ PERMIT_PACKAGE_CDROM=	Yes
 COMPILER =		gcc
 
 WANTLIB=		c courierauth courierauthcommon courierauthsasl gdbm
-WANTLIB+=		idn m pcre ${COMPILER_LIBCXX}
+WANTLIB+=		iconv intl idn m pcre ${COMPILER_LIBCXX}
 WANTLIB-pop3=		c courierauth courierauthcommon courierauthsasl
-WANTLIB-pop3+=		idn m pcre ${COMPILER_LIBCXX} ${MODGETTEXT_WANTLIB}
+WANTLIB-pop3+=		iconv intl idn m pcre ${COMPILER_LIBCXX}
 
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	autoconf automake
@@ -94,13 +95,13 @@ CONFIGURE_ARGS+=	--disable-workarounds-for-imap-client-bugs
 MULTI_PACKAGES=		-main -pop3
 
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
-			mail/courier-unicode>=2.0 \
-			databases/gdbm
+			devel/gettext \
+			databases/gdbm \
+			mail/courier-unicode>=2.0
+
 RUN_DEPENDS-pop3=	mail/courier-imap,-main
 
 WANTLIB-main=		${WANTLIB} ssl crypto courier-unicode
-
-MODULES=		devel/gettext
 
 CNFFILES=		etc/courier/imapd-ssl.dist etc/courier/imapd.dist \
 			etc/courier/pop3d-ssl.dist etc/courier/pop3d.dist \
