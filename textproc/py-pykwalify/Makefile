@@ -1,0 +1,24 @@
+# $OpenBSD: Makefile,v 1.1.1.1 2017/08/09 12:15:44 jasper Exp $
+
+COMMENT =		lib/cli for JSON/YAML schema validation
+
+MODPY_EGG_VERSION =	1.6.0
+DISTNAME =		pykwalify-${MODPY_EGG_VERSION}
+PKGNAME =		py-${DISTNAME}
+
+CATEGORIES =		textproc
+
+# MIT
+PERMIT_PACKAGE_CDROM =	Yes
+
+MODULES =		lang/python
+MODPY_PI =		Yes
+MODPY_SETUPTOOLS =	Yes
+
+FLAVORS =		python3
+FLAVOR ?=
+
+post-install:
+	mv ${PREFIX}/bin/pykwalify{,${MODPY_BIN_SUFFIX}}
+
+.include <bsd.port.mk>
