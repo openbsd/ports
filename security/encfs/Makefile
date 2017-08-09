@@ -1,12 +1,17 @@
-# $OpenBSD: Makefile,v 1.11 2017/07/26 22:45:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2017/08/09 17:57:27 jca Exp $
 
 BROKEN-hppa =	configure: error: Could not link against boost_serialization-boost_serialization
 BROKEN-sparc64 =	configure: error: Could not link against boost_serialization-boost_serialization
+
 COMMENT =		fuse-based cryptographic filesystem
+
 DISTNAME =		encfs-1.7.4
 REVISION =		2
+
 SHARED_LIBS = 		encfs	0.0	# 6.1
+
 CATEGORIES =		security
+
 HOMEPAGE =		http://www.arg0.net/encfs
 
 # GPLv3
@@ -21,7 +26,7 @@ EXTRACT_SUFX =		.tgz
 MODULES =		devel/gettext
 LIB_DEPENDS =		devel/boost \
 			devel/rlog
-			
+
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--with-boost-serialization=boost_serialization \
 			--with-boost-filesystem=boost_filesystem \
