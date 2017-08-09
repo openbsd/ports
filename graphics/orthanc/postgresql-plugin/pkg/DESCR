@@ -1,0 +1,2 @@
+Plugins to use PostgreSQL as the database back-end of Orthanc instead of
+SQLite.

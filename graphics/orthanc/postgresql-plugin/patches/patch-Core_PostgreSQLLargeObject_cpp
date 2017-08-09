@@ -1,0 +1,23 @@
+$OpenBSD: patch-Core_PostgreSQLLargeObject_cpp,v 1.1.1.1 2017/08/09 14:41:54 jasper Exp $
+Fix type nonsense, lo_read() returns int.
+
+Index: Core/PostgreSQLLargeObject.cpp
+--- Core/PostgreSQLLargeObject.cpp.orig
++++ Core/PostgreSQLLargeObject.cpp
+@@ -150,14 +150,14 @@ namespace OrthancPlugins
+       for (size_t position = 0; position < size_; )
+       {
+         size_t remaining = size_ - position;
+-        size_t nbytes = lo_read(pg_, fd_, target + position, remaining);
++        int nbytes = lo_read(pg_, fd_, target + position, remaining);
+ 
+         if (nbytes < 0)
+         {
+           throw PostgreSQLException("Unable to read the large object in the database");
+         }
+ 
+-        position += nbytes;
++        position += (size_t)nbytes;
+       }
+     }
+   };

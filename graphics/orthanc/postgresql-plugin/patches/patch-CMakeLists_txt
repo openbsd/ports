@@ -1,0 +1,36 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2017/08/09 14:41:54 jasper Exp $
+
+Drop version from modules modules.
+https://anonscm.debian.org/viewvc/debian-med/trunk/packages/orthanc-postgresql/trunk/debian/patches/shlibs
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -147,20 +147,17 @@ message("Setting the version of the libraries to ${ORT
+ 
+ add_definitions(-DORTHANC_POSTGRESQL_VERSION="${ORTHANC_POSTGRESQL_VERSION}")
+ 
+-set_target_properties(OrthancPostgreSQLStorage PROPERTIES 
+-  VERSION ${ORTHANC_POSTGRESQL_VERSION} 
+-  SOVERSION ${ORTHANC_POSTGRESQL_VERSION}
+-  )
++set_target_properties(OrthancPostgreSQLStorage PROPERTIES
++  LINK_FLAGS "-Wl,-soname,libOrthancPostgreSQLStorage.so"
++  NO_SONAME ON)
++set_target_properties(OrthancPostgreSQLIndex PROPERTIES
++  LINK_FLAGS "-Wl,-soname,libOrthancPostgreSQLIndex.so"
++  NO_SONAME ON)
+ 
+-set_target_properties(OrthancPostgreSQLIndex PROPERTIES 
+-  VERSION ${ORTHANC_POSTGRESQL_VERSION} 
+-  SOVERSION ${ORTHANC_POSTGRESQL_VERSION}
+-  )
+-
+ install(
+   TARGETS OrthancPostgreSQLStorage OrthancPostgreSQLIndex
+   RUNTIME DESTINATION lib    # Destination for Windows
+-  LIBRARY DESTINATION share/orthanc/plugins    # Destination for Linux
++  LIBRARY DESTINATION libexec/orthanc/plugins    # Destination for Linux
+   )
+ 
+ if (BUILD_UNIT_TESTS)

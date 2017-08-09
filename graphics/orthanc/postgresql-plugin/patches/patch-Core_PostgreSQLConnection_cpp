@@ -1,0 +1,27 @@
+$OpenBSD: patch-Core_PostgreSQLConnection_cpp,v 1.1.1.1 2017/08/09 14:41:54 jasper Exp $
+Allow to connect without specifing password and/or port.
+
+Index: Core/PostgreSQLConnection.cpp
+--- Core/PostgreSQLConnection.cpp.orig
++++ Core/PostgreSQLConnection.cpp
+@@ -79,8 +79,18 @@ namespace OrthancPlugins
+   {
+     if (uri_.empty())
+     {
+-      return ("postgresql://" + username_ + ":" + password_ + "@" + 
+-              host_ + ":" + boost::lexical_cast<std::string>(port_) + "/" + database_);
++      std::string actualUri = "postgresql://" + username_;
++      if (!password_.empty())
++      {
++        actualUri += ":" + password_;
++      }
++      actualUri += "@" + host_;
++      if (port_ > 0)
++      {
++        actualUri += ":" + boost::lexical_cast<std::string>(port_);
++      }
++      actualUri += "/" + database_;
++      return actualUri;
+     }
+     else
+     {
