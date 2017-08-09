@@ -1,0 +1,16 @@
+$OpenBSD: patch-setup_py,v 1.1 2017/08/09 12:33:51 jasper Exp $
+
+The dependency is satisfied, stop complaining about not finding ruamel.yaml
+
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -34,7 +34,7 @@ setup(
+     ],
+     install_requires=(
+         'pykwalify',
+-        'ruamel.yaml<=0.15',
++        'ruamel.yaml',
+         'setuptools',
+     ),
+     tests_require=(

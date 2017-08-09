@@ -1,0 +1,99 @@
+# $OpenBSD: config.yaml.dist,v 1.1 2017/08/09 12:33:51 jasper Exp $
+# Where to look for files to backup, and where to store those backups. See
+# https://borgbackup.readthedocs.io/en/stable/quickstart.html and
+# https://borgbackup.readthedocs.io/en/stable/usage.html#borg-create for details.
+location:
+    # List of source directories to backup (required). Globs are expanded.
+    source_directories:
+        - /home
+        - /etc
+        - /var/log/syslog*
+
+    # Stay in same file system (do not cross mount points).
+    one_file_system: true
+
+    # Alternate Borg remote executable. Defaults to "borg".
+    remote_path: borg1
+
+    # Paths to local or remote repositories (required). Multiple repositories are
+    # backed up to in sequence.
+    repositories:
+        - user@backupserver:sourcehostname.borg
+
+    # Any paths matching these patterns are excluded from backups. Globs are expanded.
+    # See https://borgbackup.readthedocs.io/en/stable/usage.html#borg-help-patterns
+    # for details.
+    exclude_patterns:
+        - '*.pyc'
+        - /home/*/.cache
+        - /etc/ssl
+
+    # Read exclude patterns from one or more separate named files, one pattern per
+    # line.
+    exclude_from:
+        - /etc/borgmatic/excludes
+
+    # Exclude directories that contain a CACHEDIR.TAG file. See
+    # http://www.brynosaurus.com/cachedir/spec.html for details.
+    exclude_caches: true
+
+    # Exclude directories that contain a file with the given filename.
+    exclude_if_present: .nobackup
+
+# Repository storage options. See
+# https://borgbackup.readthedocs.io/en/stable/usage.html#borg-create and
+# https://borgbackup.readthedocs.io/en/stable/usage.html#environment-variables for details.
+storage:
+    # Passphrase to unlock the encryption key with. Only use on repositories that were
+    # initialized with passphrase/repokey encryption. Quote the value if it contains
+    # punctuation, so it parses correctly. And backslash any quote or backslash
+    # literals as well.
+    encryption_passphrase: "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~"
+
+    # Type of compression to use when creating archives. See
+    # https://borgbackup.readthedocs.org/en/stable/usage.html#borg-create for details.
+    # Defaults to no compression.
+    compression: lz4
+
+    # Umask to be used for borg create.
+    umask: 0077
+
+# Retention policy for how many backups to keep in each category. See
+# https://borgbackup.readthedocs.org/en/stable/usage.html#borg-prune for details.
+retention:
+    # Keep all archives within this time interval.
+    keep_within: 3H
+
+    # Number of hourly archives to keep.
+    keep_hourly: 24
+
+    # Number of daily archives to keep.
+    keep_daily: 7
+
+    # Number of weekly archives to keep.
+    keep_weekly: 4
+
+    # Number of monthly archives to keep.
+    keep_monthly: 6
+
+    # Number of yearly archives to keep.
+    keep_yearly: 1
+
+    # When pruning, only consider archive names starting with this prefix.
+    prefix: sourcehostname
+
+# Consistency checks to run after backups. See
+# https://borgbackup.readthedocs.org/en/stable/usage.html#borg-check and
+# https://borgbackup.readthedocs.org/en/stable/usage.html#borg-extract for details.
+consistency:
+    # List of one or more consistency checks to run: "repository", "archives", and/or
+    # "extract". Defaults to "repository" and "archives". Set to "disabled" to disable
+    # all consistency checks. "repository" checks the consistency of the repository,
+    # "archive" checks all of the archives, and "extract" does an extraction dry-run
+    # of just the most recent archive.
+    checks:
+        - repository
+        - archives
+
+    # Restrict the number of checked archives to the last n. Applies only to the "archives" check.
+    check_last: 3

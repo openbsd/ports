@@ -1,0 +1,2 @@
+The configuration file changed from INI to YAML with borgmatic 1.1.0,
+be sure to run ${PREFIX}/bin/upgrade-borgmatic-config after upgrading.
