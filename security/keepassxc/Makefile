@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2017/07/30 14:42:01 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2017/08/09 19:25:27 rsadowski Exp $
 
 COMMENT =	management tool for sensitive data
 
@@ -13,7 +13,7 @@ HOMEPAGE =	https://keepassxc.org
 
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
-# GPLv2
+# GPLv2 or GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets
@@ -35,6 +35,16 @@ CONFIGURE_ARGS=	-DWITH_GUI_TESTS=ON \
 		-DWITH_XC_AUTOTYPE=ON
 
 TEST_IS_INTERACTIVE =	X11
+
+FLAVORS =	yubikey
+FLAVOR ?=
+
+.if ${FLAVOR:Myubikey}
+LIB_DEPENDS +=		security/yubico/yubico-c \
+			security/yubico/yubikey-personalization
+CONFIGURE_ARGS +=	-DWITH_XC_YUBIKEY=ON
+WANTLIB += yubikey ykpers-1
+.endif
 
 post-patch:
 	cd ${WRKSRC}/src/; sed -i -e 's/Q_OS_LINUX/Q_OS_UNIX/g' \
