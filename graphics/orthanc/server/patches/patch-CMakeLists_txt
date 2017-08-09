@@ -1,0 +1,96 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2017/08/09 14:39:32 jasper Exp $
+
+- Forcibly disable tests which fail to compile at this time.
+- Install plugins in a more appropriate location
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -250,16 +250,12 @@ if (ENABLE_PLUGINS)
+     Plugins/Engine/SharedLibrary.cpp
+     )
+ 
+-  list(APPEND ORTHANC_UNIT_TESTS_SOURCES
+-    UnitTestsSources/PluginsTests.cpp
+-    )
+ endif()
+ 
+ 
+ set(ORTHANC_ALL_SOURCES
+   ${ORTHANC_CORE_SOURCES}
+   ${ORTHANC_SERVER_SOURCES}
+-  ${ORTHANC_UNIT_TESTS_SOURCES}
+   Plugins/Samples/ServeFolders/Plugin.cpp
+   Plugins/Samples/ModalityWorklists/Plugin.cpp
+   OrthancServer/main.cpp
+@@ -410,7 +406,7 @@ include_directories(${CMAKE_SOURCE_DIR}/Plugins/Includ
+ add_definitions(
+   -DORTHANC_VERSION="${ORTHANC_VERSION}"
+   -DORTHANC_DATABASE_VERSION=${ORTHANC_DATABASE_VERSION}
+-  -DORTHANC_BUILD_UNIT_TESTS=1
++  -DORTHANC_BUILD_UNIT_TESTS=0
+   -DORTHANC_ENABLE_BASE64=1
+   -DORTHANC_ENABLE_LOGGING=1
+   -DORTHANC_ENABLE_LOGGING_PLUGIN=0
+@@ -519,6 +515,7 @@ install(
+ #####################################################################
+ ## Build the unit tests
+ #####################################################################
++if (ORTHANC_BUILD_UNIT_TESTS)
+ 
+ add_executable(UnitTests
+   ${GTEST_SOURCES}
+@@ -530,6 +527,7 @@ target_link_libraries(UnitTests ServerLibrary CoreLibr
+ if (${OPENSSL_SOURCES_LENGTH} GREATER 0)
+   target_link_libraries(UnitTests OpenSSL)
+ endif()
++endif()
+ 
+ 
+ 
+@@ -562,16 +560,16 @@ if (ENABLE_PLUGINS AND BUILD_SERVE_FOLDERS)
+     ${SERVE_FOLDERS_RESOURCES}
+     )
+ 
+-  set_target_properties(
+-    ServeFolders PROPERTIES 
+-    VERSION ${ORTHANC_VERSION} 
+-    SOVERSION ${ORTHANC_VERSION}
+-    )
++  set_target_properties(
++    ServeFolders PROPERTIES
++    LINK_FLAGS "-Wl,-soname,libServeFolders.so"
++    NO_SONAME ON
++  )
+ 
+   install(
+     TARGETS ServeFolders
+     RUNTIME DESTINATION lib    # Destination for Windows
+-    LIBRARY DESTINATION share/orthanc/plugins    # Destination for Linux
++    LIBRARY DESTINATION libexec/orthanc/plugins    # Destination for Linux
+     )
+ endif()
+ 
+@@ -606,16 +604,16 @@ if (ENABLE_PLUGINS AND BUILD_MODALITY_WORKLISTS)
+     ${MODALITY_WORKLISTS_RESOURCES}
+     )
+ 
+-  set_target_properties(
+-    ModalityWorklists PROPERTIES 
+-    VERSION ${ORTHANC_VERSION} 
+-    SOVERSION ${ORTHANC_VERSION}
+-    )
++  set_target_properties(
++    ModalityWorklists PROPERTIES
++    LINK_FLAGS "-Wl,-soname,libModalityWorklists.so"
++    NO_SONAME ON
++  )
+ 
+   install(
+     TARGETS ModalityWorklists
+     RUNTIME DESTINATION lib    # Destination for Windows
+-    LIBRARY DESTINATION share/orthanc/plugins    # Destination for Linux
++    LIBRARY DESTINATION libexec/orthanc/plugins    # Destination for Linux
+     )
+ endif()
+ 

@@ -1,0 +1,23 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/08/09 14:39:32 jasper Exp $
+@newgroup _orthanc:791
+@newuser _orthanc:791:_orthanc:daemon:Orthanc user:/nonexistent:/sbin/nologin
+@bin bin/OrthancRecoverCompressedFile
+include/orthanc/
+include/orthanc/OrthancCDatabasePlugin.h
+include/orthanc/OrthancCPlugin.h
+include/orthanc/OrthancCppDatabasePlugin.h
+libexec/orthanc/
+libexec/orthanc/plugins/
+libexec/orthanc/plugins/libModalityWorklists.so
+libexec/orthanc/plugins/libServeFolders.so
+@bin sbin/Orthanc
+share/examples/orthanc/
+@sample ${SYSCONFDIR}/orthanc/
+share/examples/orthanc/Configuration.json
+@sample ${SYSCONFDIR}/orthanc/Configuration.json
+@owner _orthanc
+@group _orthanc
+@sample ${VARBASE}/orthanc/
+@group
+@owner
+@rcscript ${RCDIR}/orthanc

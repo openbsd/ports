@@ -1,0 +1,5 @@
+Orthanc aims at providing a simple, yet powerful standalone DICOM
+server. It is designed to improve the DICOM flows in hospitals and to
+support research about the automated analysis of medical images. Orthanc
+lets its users focus on the content of the DICOM files, hiding the
+complexity of the DICOM format and of the DICOM protocol.

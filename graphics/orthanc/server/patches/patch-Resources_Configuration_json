@@ -1,0 +1,28 @@
+$OpenBSD: patch-Resources_Configuration_json,v 1.1.1.1 2017/08/09 14:39:32 jasper Exp $
+
+Index: Resources/Configuration.json
+--- Resources/Configuration.json.orig
++++ Resources/Configuration.json
+@@ -10,12 +10,12 @@
+   // Path to the directory that holds the heavyweight files (i.e. the
+   // raw DICOM instances). Backslashes must be either escaped by
+   // doubling them, or replaced by forward slashes "/".
+-  "StorageDirectory" : "OrthancStorage",
++  "StorageDirectory" : "${VARBASE}/orthanc/",
+ 
+   // Path to the directory that holds the SQLite index (if unset, the
+   // value of StorageDirectory is used). This index could be stored on
+   // a RAM-drive or a SSD device for performance reasons.
+-  "IndexDirectory" : "OrthancStorage",
++  "IndexDirectory" : "${VARBASE}/orthanc",
+ 
+   // Enable the transparent compression of the DICOM instances
+   "StorageCompression" : false,
+@@ -41,6 +41,7 @@
+   // find shared libraries. Backslashes must be either escaped by
+   // doubling them, or replaced by forward slashes "/".
+   "Plugins" : [
++    "${TRUEPREFIX}/libexec/orthanc/plugins/"
+   ],
+ 
+ 

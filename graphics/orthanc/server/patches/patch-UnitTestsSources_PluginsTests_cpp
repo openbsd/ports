@@ -1,0 +1,14 @@
+$OpenBSD: patch-UnitTestsSources_PluginsTests_cpp,v 1.1.1.1 2017/08/09 14:39:32 jasper Exp $
+
+Index: UnitTestsSources/PluginsTests.cpp
+--- UnitTestsSources/PluginsTests.cpp.orig
++++ UnitTestsSources/PluginsTests.cpp
+@@ -65,7 +65,7 @@ TEST(SharedLibrary, Basic)
+   ASSERT_TRUE(l.HasFunction("dlclose"));
+   ASSERT_FALSE(l.HasFunction("world"));
+ 
+-#elif defined(__FreeBSD__)
++#elif defined(__FreeBSD__) || defined(__OpenBSD__)
+   // dlopen() in FreeBSD is supplied by libc, libc.so is
+   // a ldscript, so we can't actually use it. Use thread
+   // library instead - if it works - dlopen() is good.
