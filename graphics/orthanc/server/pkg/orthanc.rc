@@ -1,9 +1,9 @@
 #!/bin/sh
 #
-# $OpenBSD: orthanc.rc,v 1.1.1.1 2017/08/09 14:39:32 jasper Exp $
+# $OpenBSD: orthanc.rc,v 1.2 2017/08/09 15:23:07 jasper Exp $
 
 daemon="${PREFIX}/sbin/Orthanc"
-daemon_flags="${SYSCONFDIR}/orthanc/Configuration.json"
+daemon_flags="--logdir=/var/log/orthanc ${SYSCONFDIR}/orthanc/"
 daemon_user="_orthanc"
 
 . /etc/rc.d/rc.subr
