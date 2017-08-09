@@ -1,21 +1,21 @@
 Nmap is a utility for port scanning large networks, although it works
-fine for single hosts.  The guiding philosophy for the creation of nmap
-was TMTOWTDI (There's More Than One Way To Do It).  This is the Perl
-slogan, but it is equally applicable to scanners.  Sometimes you need
-speed, other times you may need stealth.  In some cases, bypassing
+fine for single hosts. The guiding philosophy for the creation of nmap
+was TMTOWTDI (There's More Than One Way To Do It). This is the Perl
+slogan, but it is equally applicable to scanners. Sometimes you need
+speed, other times you may need stealth. In some cases, bypassing
 firewalls may be required.  Not to mention the fact that you may want to
-scan different protocols (UDP, TCP, ICMP, etc.).  You just can't do all
+scan different protocols (UDP, TCP, ICMP, etc.). You just can't do all
 this with one scanning mode.  And you don't want to have 10 different
-scanners around, all with different interfaces and capabilities.  Thus I
+scanners around, all with different interfaces and capabilities. Thus I
 incorporated virtually every scanning technique I know into nmap.
 Specifically, nmap supports:
 
-     Vanilla TCP connect() scanning, 
-     TCP SYN (half open) scanning, 
-     TCP FIN, Xmas, or NULL (stealth) scanning, 
+     Vanilla TCP connect() scanning,
+     TCP SYN (half open) scanning,
+     TCP FIN, Xmas, or NULL (stealth) scanning,
      TCP ftp proxy (bounce attack) scanning,
-     SYN/FIN scanning using IP fragments (bypasses packet filters), 
-     UDP raw ICMP port unreachable scanning, 
+     SYN/FIN scanning using IP fragments (bypasses packet filters),
+     UDP raw ICMP port unreachable scanning,
      ICMP scanning (ping-sweep),
      TCP Ping scanning,
      Remote OS Identification by TCP/IP Fingerprinting, and 

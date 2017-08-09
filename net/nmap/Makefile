@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.128 2017/07/26 22:45:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.129 2017/08/09 20:43:53 giovanni Exp $
 
 COMMENT-main=	scan ports and fingerprint stack of network hosts
 COMMENT-zenmap=	graphical frontend for nmap
 
-MODPY_EGG_VERSION=	7.50
+MODPY_EGG_VERSION=	7.60
 DISTNAME=		nmap-${MODPY_EGG_VERSION}
 PKGNAME-main=		${DISTNAME}
 PKGNAME-zenmap=		nmap-zenmap-${MODPY_EGG_VERSION}
-REVISION-main =		1
-REVISION-zenmap=	0
 
 CATEGORIES=	net security
 MASTER_SITES=	http://nmap.org/dist/
@@ -44,9 +42,11 @@ CONFIGURE_ARGS=	--with-libpcap=included \
 		--without-nmap-update \
 		--disable-nls
 
-WANTLIB-main=	c crypto m ssl ${COMPILER_LIBCXX} pcre ${MODLUA_WANTLIB}
+WANTLIB-main=	c crypto m ssl ssh2 ${COMPILER_LIBCXX} pcre \
+		${MODLUA_WANTLIB} z
 LIB_DEPENDS-main=devel/pcre \
-		${MODLUA_LIB_DEPENDS}
+		${MODLUA_LIB_DEPENDS} \
+		security/libssh2
 
 RUN_DEPENDS-main=
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.12 2017/06/14 02:54:36 benoit Exp $
+@comment $OpenBSD: PLIST-main,v 1.13 2017/08/09 20:43:53 giovanni Exp $
 @conflict ndiff-*
 @pkgpath net/ndiff
 @pkgpath net/nmap
@@ -84,6 +84,7 @@ share/nmap/nselib/data/psexec/network.lua
 share/nmap/nselib/data/psexec/nmap_service.c
 share/nmap/nselib/data/psexec/nmap_service.vcproj
 share/nmap/nselib/data/psexec/pwdump.lua
+share/nmap/nselib/data/publickeydb
 share/nmap/nselib/data/rtsp-urls.txt
 share/nmap/nselib/data/snmpcommunities.lst
 share/nmap/nselib/data/ssl-fingerprints
@@ -118,12 +119,15 @@ share/nmap/nselib/informix.lua
 share/nmap/nselib/ipOps.lua
 share/nmap/nselib/ipmi.lua
 share/nmap/nselib/ipp.lua
+share/nmap/nselib/irc.lua
 share/nmap/nselib/iscsi.lua
 share/nmap/nselib/isns.lua
 share/nmap/nselib/jdwp.lua
 share/nmap/nselib/json.lua
 share/nmap/nselib/ldap.lua
 share/nmap/nselib/lfs.luadoc
+share/nmap/nselib/libssh2-utility.lua
+share/nmap/nselib/libssh2.luadoc
 share/nmap/nselib/listop.lua
 share/nmap/nselib/lpeg-utility.lua
 share/nmap/nselib/lpeg.luadoc
@@ -168,6 +172,7 @@ share/nmap/nselib/shortport.lua
 share/nmap/nselib/sip.lua
 share/nmap/nselib/slaxml.lua
 share/nmap/nselib/smb.lua
+share/nmap/nselib/smb2.lua
 share/nmap/nselib/smbauth.lua
 share/nmap/nselib/smtp.lua
 share/nmap/nselib/snmp.lua
@@ -329,6 +334,7 @@ share/nmap/scripts/ftp-bounce.nse
 share/nmap/scripts/ftp-brute.nse
 share/nmap/scripts/ftp-libopie.nse
 share/nmap/scripts/ftp-proftpd-backdoor.nse
+share/nmap/scripts/ftp-syst.nse
 share/nmap/scripts/ftp-vsftpd-backdoor.nse
 share/nmap/scripts/ftp-vuln-cve2010-4221.nse
 share/nmap/scripts/ganglia-info.nse
@@ -467,6 +473,7 @@ share/nmap/scripts/http-vuln-cve2015-1635.nse
 share/nmap/scripts/http-vuln-cve2017-1001000.nse
 share/nmap/scripts/http-vuln-cve2017-5638.nse
 share/nmap/scripts/http-vuln-cve2017-5689.nse
+share/nmap/scripts/http-vuln-cve2017-8917.nse
 share/nmap/scripts/http-vuln-misfortune-cookie.nse
 share/nmap/scripts/http-vuln-wnr1000-creds.nse
 share/nmap/scripts/http-waf-detect.nse
@@ -479,6 +486,7 @@ share/nmap/scripts/http-xssed.nse
 share/nmap/scripts/iax2-brute.nse
 share/nmap/scripts/iax2-version.nse
 share/nmap/scripts/icap-info.nse
+share/nmap/scripts/iec-identify.nse
 share/nmap/scripts/ike-version.nse
 share/nmap/scripts/imap-brute.nse
 share/nmap/scripts/imap-capabilities.nse
@@ -595,6 +603,7 @@ share/nmap/scripts/omp2-enum-targets.nse
 share/nmap/scripts/omron-info.nse
 share/nmap/scripts/openlookup-info.nse
 share/nmap/scripts/openvas-otp-brute.nse
+share/nmap/scripts/openwebnet-discovery.nse
 share/nmap/scripts/oracle-brute-stealth.nse
 share/nmap/scripts/oracle-brute.nse
 share/nmap/scripts/oracle-enum-users.nse
@@ -611,6 +620,7 @@ share/nmap/scripts/pop3-brute.nse
 share/nmap/scripts/pop3-capabilities.nse
 share/nmap/scripts/pop3-ntlm-info.nse
 share/nmap/scripts/pptp-version.nse
+share/nmap/scripts/puppet-naivesigning.nse
 share/nmap/scripts/qconn-exec.nse
 share/nmap/scripts/qscan.nse
 share/nmap/scripts/quake1-info.nse
@@ -661,6 +671,7 @@ share/nmap/scripts/smb-ls.nse
 share/nmap/scripts/smb-mbenum.nse
 share/nmap/scripts/smb-os-discovery.nse
 share/nmap/scripts/smb-print-text.nse
+share/nmap/scripts/smb-protocols.nse
 share/nmap/scripts/smb-psexec.nse
 share/nmap/scripts/smb-security-mode.nse
 share/nmap/scripts/smb-server-stats.nse
@@ -675,7 +686,10 @@ share/nmap/scripts/smb-vuln-ms10-054.nse
 share/nmap/scripts/smb-vuln-ms10-061.nse
 share/nmap/scripts/smb-vuln-ms17-010.nse
 share/nmap/scripts/smb-vuln-regsvc-dos.nse
-share/nmap/scripts/smbv2-enabled.nse
+share/nmap/scripts/smb2-capabilities.nse
+share/nmap/scripts/smb2-security-mode.nse
+share/nmap/scripts/smb2-time.nse
+share/nmap/scripts/smb2-vuln-uptime.nse
 share/nmap/scripts/smtp-brute.nse
 share/nmap/scripts/smtp-commands.nse
 share/nmap/scripts/smtp-enum-users.nse
@@ -701,7 +715,11 @@ share/nmap/scripts/snmp-win32-users.nse
 share/nmap/scripts/socks-auth-info.nse
 share/nmap/scripts/socks-brute.nse
 share/nmap/scripts/socks-open-proxy.nse
+share/nmap/scripts/ssh-auth-methods.nse
+share/nmap/scripts/ssh-brute.nse
 share/nmap/scripts/ssh-hostkey.nse
+share/nmap/scripts/ssh-publickey-acceptance.nse
+share/nmap/scripts/ssh-run.nse
 share/nmap/scripts/ssh2-enum-algos.nse
 share/nmap/scripts/sshv1.nse
 share/nmap/scripts/ssl-ccs-injection.nse
