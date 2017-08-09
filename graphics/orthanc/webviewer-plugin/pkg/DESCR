@@ -1,0 +1,3 @@
+Orthanc Web Viewer is a plugin to Orthanc, a lightweight, RESTful Vendor
+Neutral Archive for medical imaging. It extends Orthanc with an
+integrated Web viewer of DICOM images.

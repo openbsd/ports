@@ -1,0 +1,29 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2017/08/09 14:41:22 jasper Exp $
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -187,19 +187,13 @@ message("Setting the version of the library to ${ORTHA
+ 
+ add_definitions(-DORTHANC_WEBVIEWER_VERSION="${ORTHANC_WEBVIEWER_VERSION}")
+ 
+-set_target_properties(OrthancWebViewer PROPERTIES 
+-  VERSION ${ORTHANC_WEBVIEWER_VERSION} 
+-  SOVERSION ${ORTHANC_WEBVIEWER_VERSION})
++set_target_properties(OrthancWebViewer PROPERTIES
++  NO_SONAME ON
++  LINK_FLAGS "-Wl,-soname,libOrthancWebViewer.so"
++)
+ 
+ install(
+   TARGETS OrthancWebViewer
+   RUNTIME DESTINATION lib    # Destination for Windows
+   LIBRARY DESTINATION share/orthanc/plugins    # Destination for Linux
+-  )
+-
+-add_executable(UnitTests
+-  ${CORE_SOURCES}
+-  ${GTEST_SOURCES}
+-  ${JSONCPP_SOURCES}
+-  UnitTestsSources/UnitTestsMain.cpp
+   )
