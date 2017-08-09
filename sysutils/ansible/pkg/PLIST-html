@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-html,v 1.1 2017/07/29 18:33:18 zhuk Exp $
+@comment $OpenBSD: PLIST-html,v 1.2 2017/08/09 12:48:30 jasper Exp $
 share/doc/ansible/html/
 share/doc/ansible/html/YAMLSyntax.html
 share/doc/ansible/html/_static/
@@ -51,12 +51,23 @@ share/doc/ansible/html/dev_guide/developing_modules_in_groups.html
 share/doc/ansible/html/dev_guide/developing_modules_python3.html
 share/doc/ansible/html/dev_guide/developing_plugins.html
 share/doc/ansible/html/dev_guide/developing_program_flow_modules.html
+share/doc/ansible/html/dev_guide/developing_python3.html
 share/doc/ansible/html/dev_guide/developing_rebasing.html
 share/doc/ansible/html/dev_guide/developing_releases.html
 share/doc/ansible/html/dev_guide/developing_test_pr.html
 share/doc/ansible/html/dev_guide/index.html
 share/doc/ansible/html/dev_guide/overview_architecture.html
 share/doc/ansible/html/dev_guide/repomerge.html
+share/doc/ansible/html/dev_guide/testing.html
+share/doc/ansible/html/dev_guide/testing_compile.html
+share/doc/ansible/html/dev_guide/testing_httptester.html
+share/doc/ansible/html/dev_guide/testing_integration.html
+share/doc/ansible/html/dev_guide/testing_integration_legacy.html
+share/doc/ansible/html/dev_guide/testing_pep8.html
+share/doc/ansible/html/dev_guide/testing_running_locally.html
+share/doc/ansible/html/dev_guide/testing_sanity.html
+share/doc/ansible/html/dev_guide/testing_units.html
+share/doc/ansible/html/dev_guide/testing_validate-modules.html
 share/doc/ansible/html/faq.html
 share/doc/ansible/html/galaxy.html
 share/doc/ansible/html/genindex.html
@@ -86,6 +97,7 @@ share/doc/ansible/html/intro_windows.html
 share/doc/ansible/html/modules.html
 share/doc/ansible/html/modules_intro.html
 share/doc/ansible/html/modules_support.html
+share/doc/ansible/html/network_debug_troubleshooting.html
 share/doc/ansible/html/objects.inv
 share/doc/ansible/html/playbooks.html
 share/doc/ansible/html/playbooks_acceleration.html
