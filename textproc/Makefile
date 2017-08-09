@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.537 2017/08/08 22:30:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.538 2017/08/09 12:16:57 jasper Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -396,6 +396,8 @@
      SUBDIR += py-pyRFC3339,python3
      SUBDIR += py-pygments
      SUBDIR += py-pygments,python3
+     SUBDIR += py-pykwalify
+     SUBDIR += py-pykwalify,python3
      SUBDIR += py-rdflib
      SUBDIR += py-rdflib,python3
      SUBDIR += py-rtf
