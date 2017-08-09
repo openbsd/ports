@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2017/08/09 15:23:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2017/08/09 17:02:35 jasper Exp $
 
 COMMENT =		RESTful DICOM server for healthcare and medical research
 
 DISTNAME =		Orthanc-1.3.0
 PKGNAME =		${DISTNAME:L}
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE =		http://www.orthanc-server.com/
 
@@ -64,6 +64,7 @@ pre-configure:
 		${WRKSRC}/CMakeLists.txt \
 		${WRKSRC}/Plugins/Samples/ModalityWorklists/CMakeLists.txt \
 		${WRKSRC}/Plugins/Samples/ServeFolders/CMakeLists.txt
+	${SUBST_CMD} ${WRKSRC}/Resources/CMake/Compiler.cmake
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/orthanc/
