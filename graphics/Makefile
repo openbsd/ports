@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.441 2017/08/08 09:18:36 jca Exp $
+# $OpenBSD: Makefile,v 1.442 2017/08/09 14:43:09 jasper Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -175,6 +175,7 @@
      SUBDIR += openjpeg
      SUBDIR += openscenegraph
      SUBDIR += optipng
+     SUBDIR += orthanc
      SUBDIR += p5-Barcode-DataMatrix
      SUBDIR += p5-Barcode-DataMatrix-PNG
      SUBDIR += p5-Cairo
