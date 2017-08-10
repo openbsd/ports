@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1018 2017/08/01 07:06:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.1019 2017/08/10 16:41:22 sthen Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -540,6 +540,7 @@
      SUBDIR += py-dnslib
      SUBDIR += py-dnslib,python3
      SUBDIR += py-dnspython
+     SUBDIR += py-dnspython,python3
      SUBDIR += py-dpkt
      SUBDIR += py-flowd
      SUBDIR += py-flowtools
