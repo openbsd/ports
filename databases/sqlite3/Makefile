@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.85 2017/06/18 19:02:59 landry Exp $
+# $OpenBSD: Makefile,v 1.86 2017/08/10 16:00:23 landry Exp $
 
 COMMENT=	embedded SQL implementation
 
-DISTNAME =	sqlite-autoconf-3190300
-PKGNAME=	sqlite3-3.19.3
+DISTNAME =	sqlite-autoconf-3200000
+PKGNAME=	sqlite3-3.20.0
 
-SHARED_LIBS +=  sqlite3                   36.0 # 8.6
+SHARED_LIBS +=  sqlite3                   37.0 # 8.6
 
 CATEGORIES=	databases
 
@@ -24,6 +24,7 @@ CONFIGURE_ARGS=	--enable-editline \
 
 # for mozilla
 CFLAGS+=	-DSQLITE_ENABLE_UNLOCK_NOTIFY \
+		-DSQLITE_ENABLE_FTS3 \
 		-DSQLITE_ENABLE_DBSTAT_VTAB
 
 # update p5-DBD-SQLite's Makefile.PL if enabling -DSQLITE_ENABLE_COLUMN_METADATA
