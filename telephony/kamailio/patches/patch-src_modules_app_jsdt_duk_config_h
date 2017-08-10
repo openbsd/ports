@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_modules_app_jsdt_duk_config_h,v 1.1 2017/08/10 18:40:21 jca Exp $
+
+We do have inttypes.h, but gcc-4.2.1 doesn't default to C99 and
+thus doesn't #define __STDC_VERSION__ 199901L.
+
+Index: src/modules/app_jsdt/duk_config.h
+--- src/modules/app_jsdt/duk_config.h.orig
++++ src/modules/app_jsdt/duk_config.h
+@@ -1557,6 +1557,10 @@
+ #define DUK_F_HAVE_INTTYPES
+ #endif
+ 
++#ifndef DUK_F_HAVE_INTTYPES
++#define DUK_F_HAVE_INTTYPES
++#endif
++
+ /* Basic integer typedefs and limits, preferably from inttypes.h, otherwise
+  * through automatic detection.
+  */
