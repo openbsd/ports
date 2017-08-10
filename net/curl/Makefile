@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.126 2017/06/27 19:16:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.127 2017/08/10 19:46:26 naddy Exp $
 
 COMMENT=	get files from FTP, Gopher, HTTP or HTTPS servers
 
-VERSION=	7.54.1
+VERSION=	7.55.0
 DISTNAME=	curl-${VERSION}
-SHARED_LIBS=	curl                 25.10    # 8.0
+SHARED_LIBS=	curl                 25.11    # 8.0
 CATEGORIES=	net
 HOMEPAGE=	https://curl.haxx.se/
 
@@ -14,8 +14,8 @@ MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=	https://curl.haxx.se/download/ \
-		https://dl.uxnr.de/mirror/curl/
-EXTRACT_SUFX=	.tar.lzma
+		https://execve.home.kg/curl/
+EXTRACT_SUFX=	.tar.xz
 
 LIB_DEPENDS=	www/nghttp2
 WANTLIB=	c crypto nghttp2 ssl z
@@ -37,5 +37,9 @@ CONFIGURE_ENV+= \
 
 # Note:
 # use ulimit -p 256 for test
+
+# obsolete file accidentally included in tarball
+post-extract:
+	rm ${WRKSRC}/docs/libcurl/opts/CURLOPT_STRIP_PATH_SLASH.3
 
 .include <bsd.port.mk>

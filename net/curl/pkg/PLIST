@@ -1,10 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.43 2017/04/24 20:33:58 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.44 2017/08/10 19:46:26 naddy Exp $
 @bin bin/curl
 bin/curl-config
 include/curl/
 include/curl/curl.h
-include/curl/curlbuild.h
-include/curl/curlrules.h
 include/curl/curlver.h
 include/curl/easy.h
 include/curl/mprintf.h
@@ -248,6 +246,7 @@ lib/pkgconfig/libcurl.pc
 @man man/man3/CURLOPT_READFUNCTION.3
 @man man/man3/CURLOPT_REDIR_PROTOCOLS.3
 @man man/man3/CURLOPT_REFERER.3
+@man man/man3/CURLOPT_REQUEST_TARGET.3
 @man man/man3/CURLOPT_RESOLVE.3
 @man man/man3/CURLOPT_RESUME_FROM.3
 @man man/man3/CURLOPT_RESUME_FROM_LARGE.3
