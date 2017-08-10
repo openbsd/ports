@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.169 2017/07/31 21:45:37 robert Exp $
+# $OpenBSD: Makefile,v 1.170 2017/08/10 15:55:03 sthen Exp $
+
+BROKEN-i386=	build fails
 
 USE_WXNEEDED=	Yes
 
