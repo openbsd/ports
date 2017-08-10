@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.84 2017/03/24 14:30:14 pea Exp $
+# $OpenBSD: Makefile,v 1.85 2017/08/10 18:38:39 rsadowski Exp $
 
 COMMENT=	Z shell, Bourne shell-compatible
 
-V=		5.3.1
+V=		5.4.1
 DISTNAME=	zsh-$V
 CATEGORIES=	shells
 
 MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
 
-HOMEPAGE=	http://www.zsh.org/
+HOMEPAGE=	https://www.zsh.org/
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=zsh/}
 MASTER_SITES+=	http://www.zsh.org/pub/
