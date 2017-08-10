@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.56 2017/07/05 14:19:52 bcallah Exp $
+# $OpenBSD: Makefile,v 1.57 2017/08/10 00:12:31 bcallah Exp $
 
 BROKEN-hppa =	SIGILL during build
 BROKEN-arm =	gmake: *** [makefile:279: ../bin/make7] Bus error (core dumped)
 
 COMMENT =	high-level, extensible programming language
 
-V =		20170702
+V =		20170807
 DISTNAME =	seed7_05_${V}
 PKGNAME =	seed7-${V}
 
