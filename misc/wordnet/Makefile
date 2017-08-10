@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2017/08/08 10:26:13 jca Exp $
+# $OpenBSD: Makefile,v 1.15 2017/08/10 09:34:41 sthen Exp $
 
 COMMENT=		browser for a large lexical database of English
 
-V=			3.0
-DISTNAME=		WordNet-$V
-PKGNAME=		wordnet-$V
-REVISION=		7
+DISTNAME=		WordNet-3.0
+DISTFILES=		${DISTNAME}${EXTRACT_SUFX} wn3.1.dict.tar.gz:0
+PKGNAME=		wordnet-3.1
 
 CATEGORIES=		misc
 
@@ -19,7 +18,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += X11 Xau Xdmcp Xext Xft Xrender Xss c expat fontconfig
 WANTLIB += freetype m pthread-stubs xcb z ${MODTK_WANTLIB}
 
-MASTER_SITES=		http://wordnet.princeton.edu/3.0/
+MASTER_SITES=		http://wordnetcode.princeton.edu/3.0/
+MASTER_SITES0=		http://wordnetcode.princeton.edu/
 
 MODULES=		x11/tk
 
@@ -51,5 +51,7 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
 	${SUBST_DATA} ${FILESDIR}/wordnet.desktop \
 		${PREFIX}/share/applications/wordnet.desktop
+	rm ${PREFIX}/share/wordnet/dict/*
+	${INSTALL_DATA} ${WRKDIR}/dict/*.* ${PREFIX}/share/wordnet/dict/
 
 .include <bsd.port.mk>
