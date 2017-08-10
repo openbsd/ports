@@ -1,6 +1,21 @@
-$OpenBSD: patch-t_t7004-tag_sh,v 1.1 2017/06/13 15:02:23 dcoppa Exp $
+$OpenBSD: patch-t_t7004-tag_sh,v 1.2 2017/08/10 09:11:07 dcoppa Exp $
 
-test: >: unexpected operator/operand
+commit dff2813391d720e1739d1d83a84ba38b1d4ad615
+Author: Aevar Arnfjoro Bjarmason <avarab@gmail.com>
+Date:   Sun Aug 6 23:38:50 2017 +0000
+
+tests: don't give unportable ">" to "test" built-in, use -gt
+
+Change an argument to test_line_count (which'll ultimately be turned
+into a "test" expression) to use "-gt" instead of ">" for an
+arithmetic test.
+
+This broken on e.g. OpenBSD as of v2.13.0 with my commit
+ac3f5a3468 ("ref-filter: add --no-contains option to
+tag/branch/for-each-ref", 2017-03-24).
+
+Signed-off-by: Aevar Arnfjoro Bjarmason <avarab@gmail.com>
+Signed-off-by: Junio C Hamano <gitster@pobox.com>
 
 Index: t/t7004-tag.sh
 --- t/t7004-tag.sh.orig

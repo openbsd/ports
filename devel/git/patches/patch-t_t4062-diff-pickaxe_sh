@@ -1,15 +1,33 @@
-$OpenBSD: patch-t_t4062-diff-pickaxe_sh,v 1.1 2016/12/04 15:29:46 dcoppa Exp $
+$OpenBSD: patch-t_t4062-diff-pickaxe_sh,v 1.2 2017/08/10 09:11:07 dcoppa Exp $
 
-RE_DUP_MAX is 255 on OpenBSD, while it's 32767 on Linux
+commit 4c7fda8fc1d67481100b8d4e39f9ff6ff878639e
+Author: Rene Scharfe <l.s.r@web.de>
+Date:   Wed Aug 9 16:15:10 2017 +0200
 
---- t/t4062-diff-pickaxe.sh.orig	Sat Dec  3 20:10:24 2016
-+++ t/t4062-diff-pickaxe.sh	Sat Dec  3 20:13:12 2016
-@@ -15,7 +15,7 @@ test_expect_success setup '
+t4062: use less than 256 repetitions in regex
+
+OpenBSD's regex library has a repetition limit (RE_DUP_MAX) of 255.
+That's the minimum acceptable value according to POSIX.  In t4062 we use
+4096 repetitions in the test "-G matches", though, causing it to fail.
+Combine two repetition operators, both less than 256, to arrive at 4096
+zeros instead of using a single one, to fix the test on OpenBSD.
+
+Original-patch-by: David Coppa <dcoppa@openbsd.org>
+Signed-off-by: Rene Scharfe <l.s.r@web.de>
+Signed-off-by: Junio C Hamano <gitster@pobox.com>
+
+Index: t/t4062-diff-pickaxe.sh
+--- t/t4062-diff-pickaxe.sh.orig
++++ t/t4062-diff-pickaxe.sh
+@@ -14,8 +14,10 @@ test_expect_success setup '
+ 	test_tick &&
  	git commit -m "A 4k file"
  '
++
++# OpenBSD only supports up to 255 repetitions, so repeat twice for 64*64=4096.
  test_expect_success '-G matches' '
 -	git diff --name-only -G "^0{4096}$" HEAD^ >out &&
-+	git diff --name-only -G "^0{255}" HEAD^ >out &&
++	git diff --name-only -G "^(0{64}){64}$" HEAD^ >out &&
  	test 4096-zeroes.txt = "$(cat out)"
  '
  
