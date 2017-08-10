@@ -1,9 +1,10 @@
-$OpenBSD: patch-configure,v 1.1 2016/06/23 16:15:58 sthen Exp $
+$OpenBSD: patch-configure,v 1.2 2017/08/10 20:14:56 jung Exp $
 
 Silence warnings about base headers, drowning real warnings.
 
---- configure.orig	Thu Jun 23 16:36:23 2016
-+++ configure	Thu Jun 23 16:36:28 2016
+Index: configure
+--- configure.orig
++++ configure
 @@ -14328,7 +14328,6 @@ for flag in \
      -Wmissing-prototypes \
      -Wold-style-definition \
@@ -12,3 +13,12 @@ Silence warnings about base headers, drowning real warnings.
      -Wshadow \
      -Wsign-conversion \
      -Wstrict-overflow=5 \
+@@ -15978,7 +15977,7 @@ else
+ fi
+ 
+ GDNSD_DEFPATH_CONFIG="${sysconfdir}/${PACKAGE_NAME}"
+-GDNSD_DEFPATH_STATE="${localstatedir}/lib/${PACKAGE_NAME}"
++GDNSD_DEFPATH_STATE="${localstatedir}/${PACKAGE_NAME}"
+ GDNSD_DEFPATH_LIB="${libdir}/${PACKAGE_NAME}"
+ GDNSD_DEFPATH_LIBEXEC="${libexecdir}/${PACKAGE_NAME}"
+ 

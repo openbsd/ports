@@ -1,15 +1,17 @@
-# $OpenBSD: Makefile,v 1.16 2017/05/31 08:08:17 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2017/08/10 20:14:56 jung Exp $
 
 COMMENT=		geographically-aware, authoritative-only DNS server
 
 V=			2.2.4
-REVISION=		0
+REVISION=		1
 DISTNAME=		gdnsd-$V
 EXTRACT_SUFX=		.tar.xz
 
 CATEGORIES=		net
 
 HOMEPAGE=		http://gdnsd.org/
+
+MAINTAINER=		Joerg Jung <jung@openbsd.org>
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
