@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2017/08/09 15:35:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2017/08/10 01:51:19 jasper Exp $
 
 COMMENT =		web viewer plugin for Orthanc
 
@@ -12,7 +12,7 @@ PLUGIN_3RDPARTY =	cornerstone-0.11.0.zip \
 			js-url-1.8.6.zip
 
 DISTNAME =		Orthanc${PLUGIN}-${VERSION}
-DISTFILES =		${DISTNAME}${EXTRACT_SUFX}:0
+DISTFILES =		${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_ONLY =		${DISTNAME}${EXTRACT_SUFX}
 DISTFILES +=		${PLUGIN_3RDPARTY:C/$/:1/}
 
