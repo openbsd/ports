@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2017/05/17 11:35:35 landry Exp $
+# $OpenBSD: Makefile,v 1.11 2017/08/10 16:54:31 sthen Exp $
 
 COMMENT=		stateful programmatic web browsing module
 
-MODPY_EGG_VERSION=	0.2.5
+MODPY_EGG_VERSION=	0.3.5
 DISTNAME=		mechanize-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION=		0
 
 CATEGORIES=		www
 
@@ -16,8 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		lang/python
 MODPY_SETUPTOOLS=	Yes
-
-MASTER_SITES=		${HOMEPAGE}/src/
+MODPY_PI=		Yes
 
 TEST_DEPENDS=	devel/py-twisted
 
@@ -28,6 +26,6 @@ post-install:
 
 do-test: fake
 	cd ${WRKSRC} && \
-		env PYTHONPATH="${WRKINST}${MODPY_LIBDIR}/site-packages/mechanize" ${MODPY_BIN} test.py
+		env PYTHONPATH="${WRKINST}${MODPY_LIBDIR}/site-packages/mechanize" ${MODPY_BIN} run_tests.py
 
 .include <bsd.port.mk>
