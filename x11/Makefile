@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.598 2017/07/26 23:58:50 jca Exp $
+# $OpenBSD: Makefile,v 1.599 2017/08/10 13:32:25 jasper Exp $
 
      SUBDIR =
      SUBDIR += 2bwm
@@ -26,6 +26,7 @@
      SUBDIR += blackbox
      SUBDIR += blast
      SUBDIR += bricons
+     SUBDIR += bspwm
      SUBDIR += bwidget
      SUBDIR += byzi
      SUBDIR += cegui
@@ -266,6 +267,7 @@
      SUBDIR += stumpwm
      SUBDIR += swarp
      SUBDIR += swisswatch
+     SUBDIR += sxhkd
      SUBDIR += tabbed
      SUBDIR += tangerine-icon-theme
      SUBDIR += tango-icon-theme
