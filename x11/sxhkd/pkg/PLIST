@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/08/10 13:30:00 jasper Exp $
+@bin bin/sxhkd
+@man man/man1/sxhkd.1
+share/examples/sxhkd/
+share/examples/sxhkd/background_shell/
+share/examples/sxhkd/background_shell/profile
+share/examples/sxhkd/background_shell/shell
+share/examples/sxhkd/background_shell/sxhkdrc
+share/examples/sxhkd/background_shell/xinitrc
+share/examples/sxhkd/notification/
+share/examples/sxhkd/notification/autostart
+share/examples/sxhkd/notification/pam_environment
+share/examples/sxhkd/notification/sxhkd_notify
+share/examples/sxhkd/notification/xinitrc
