@@ -1,11 +1,12 @@
-$OpenBSD: patch-tests_py,v 1.1 2013/11/08 22:54:29 sthen Exp $
+$OpenBSD: patch-tests_py,v 1.2 2017/08/10 17:27:34 sthen Exp $
 
 >>> print apsw.sqlite3_sourceid()
 OpenBSD
 
---- tests.py.orig	Fri Nov  8 22:50:49 2013
-+++ tests.py	Fri Nov  8 22:50:51 2013
-@@ -402,7 +402,7 @@ class APSW(unittest.TestCase):
+Index: tests.py
+--- tests.py.orig
++++ tests.py
+@@ -426,7 +426,7 @@ class APSW(unittest.TestCase):
          apsw.SQLITE_FCNTL_SIZE_HINT
          apsw.mapping_file_control["SQLITE_FCNTL_SIZE_HINT"]==apsw.SQLITE_FCNTL_SIZE_HINT
          apsw.URIFilename
@@ -14,3 +15,12 @@ OpenBSD
  
      def testConnection(self):
          "Test connection opening"
+@@ -8229,7 +8229,7 @@ def setup(write=write):
+         if sys.platform.startswith("darwin"):
+             write("  gcc -fPIC -bundle -o "+LOADEXTENSIONFILENAME+" -I. -Isqlite3 src/testextension.c\n")
+         else:
+-            write("  gcc -fPIC -shared -o "+LOADEXTENSIONFILENAME+" -I. -Isqlite3 src/testextension.c\n")
++            write("  cc -fPIC -shared -o "+LOADEXTENSIONFILENAME+" -I. -Isqlite3 src/testextension.c\n")
+         del APSW.testLoadExtension
+         sys.stdout.flush()
+ 
