@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2017/08/09 23:02:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2017/08/10 01:46:49 jasper Exp $
 
 COMMENT =		MessagePack implementation for C and C++
 
@@ -21,8 +21,7 @@ MODULES =		devel/cmake gcc4
 MODGCC4_ARCHS =		arm
 MODGCC4_LANGS =		c++
 
-# Requires updated gtest, which breaks protobuf < 3
-CONFIGURE_ARGS +=	-DMSGPACK_BUILD_TESTS=Off
-NO_TEST =		Yes
+BUILD_DEPENDS =		devel/gtest
+TEST_DEPENDS =		devel/gtest
 
 .include <bsd.port.mk>
