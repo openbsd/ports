@@ -1,10 +1,13 @@
-$OpenBSD: patch-if-bsd_c,v 1.1 2017/04/21 16:41:20 sthen Exp $
+$OpenBSD: patch-if-bsd_c,v 1.2 2017/08/10 06:58:39 florian Exp $
 
 Workaround for our old broken behaviour no longer needed.
 Fixed with netinet6/in6.c r1.202.
 
---- if-bsd.c.orig	Fri Apr 21 13:38:38 2017
-+++ if-bsd.c	Fri Apr 21 13:39:38 2017
+netinet6/nd6.h r1.72 removed ND6_IFF_PERFORMNUD
+
+Index: if-bsd.c
+--- if-bsd.c.orig
++++ if-bsd.c
 @@ -985,7 +985,7 @@ if_address6(unsigned char cmd, const struct ipv6_addr 
  	}
  #endif
@@ -14,3 +17,19 @@ Fixed with netinet6/in6.c r1.202.
  	/* BUT OpenBSD does not reset the address lifetime
  	 * for subsequent calls...
  	 * Luckily dhcpcd will remove the lease when it expires so
+@@ -1688,6 +1688,7 @@ ip6_temp_valid_lifetime(__unused const char *ifname)
+ }
+ #endif
+ 
++#if defined(ND6_IFF_AUTO_LINKLOCAL) || defined(ND6_IFF_PERFORMNUD) || defined(ND6_IFF_ACCEPT_RTADV) || defined(ND6_IFF_IFDISABLED)
+ #define del_if_nd6_flag(s, ifname, flag) if_nd6_flag((s), (ifp), (flag), -1)
+ #define get_if_nd6_flag(s, ifname, flag) if_nd6_flag((s), (ifp), (flag),  0)
+ #define set_if_nd6_flag(s, ifname, flag) if_nd6_flag((s), (ifp), (flag),  1)
+@@ -1713,6 +1714,7 @@ if_nd6_flag(int s, const struct interface *ifp, unsign
+ 		return 0;
+ 	return ioctl(s, SIOCSIFINFO_FLAGS, &nd);
+ }
++#endif
+ 
+ static int
+ if_raflush(int s)
