@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.51 2017/08/08 15:55:14 pea Exp $
+# $OpenBSD: Makefile,v 1.52 2017/08/10 14:55:48 pea Exp $
 
 COMMENT =	GNU privacy guard - a free PGP replacement
 
-DISTNAME =	gnupg-2.1.22
+DISTNAME =	gnupg-2.1.23
 CATEGORIES = 	security
 
 MASTER_SITES =	${MASTER_SITE_GNUPG:=gnupg/}
@@ -52,7 +52,8 @@ CONFIGURE_ENV = 	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS += 	docdir=${LOCALBASE}/share/doc/gnupg2 \
 			--enable-gpgtar \
-			--enable-wks-tools
+			--enable-wks-tools \
+			--enable-gpg-is-gpg2
 
 # Avoid conflict with gnupg-1.x
 post-install:
