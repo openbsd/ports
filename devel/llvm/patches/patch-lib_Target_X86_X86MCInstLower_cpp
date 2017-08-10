@@ -1,0 +1,17 @@
+$OpenBSD: patch-lib_Target_X86_X86MCInstLower_cpp,v 1.1 2017/08/10 10:29:01 sthen Exp $
+
+Use int3 trap padding between functions instead of trapsleds with a leading jump.
+
+Index: lib/Target/X86/X86MCInstLower.cpp
+--- lib/Target/X86/X86MCInstLower.cpp.orig
++++ lib/Target/X86/X86MCInstLower.cpp
+@@ -1736,3 +1736,9 @@ void X86AsmPrinter::EmitInstruction(const MachineInstr
+ 
+   EmitAndCountInstruction(TmpInst);
+ }
++
++/// Emit Trap bytes to the specified power of two alignment
++void X86AsmPrinter::EmitTrapToAlignment(unsigned NumBits) const {
++  if (NumBits == 0) return;
++  OutStreamer->EmitValueToAlignment(1u << NumBits, 0xCC, 1);
++}

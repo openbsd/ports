@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.152 2017/08/03 15:54:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.153 2017/08/10 10:29:01 sthen Exp $
 
 # XXX: Remember to bump MODCLANG_VERSION in lang/clang/clang.port.mk when
 # updating this port.
@@ -13,7 +13,7 @@ COMMENT-main =	modular, fast C/C++/ObjC compiler, static analyzer and tools
 COMMENT-python =	Python bindings for Clang
 
 LLVM_V =	4.0.1
-REVISION-main =	2
+REVISION-main =	3
 DISTNAME =	llvm-${LLVM_V}.src
 PKGNAME =	llvm-${LLVM_V}
 PKGNAME-main =	llvm-${LLVM_V}

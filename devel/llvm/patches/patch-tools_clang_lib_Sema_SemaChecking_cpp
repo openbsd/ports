@@ -1,6 +1,7 @@
-$OpenBSD: patch-tools_clang_lib_Sema_SemaChecking_cpp,v 1.1 2017/08/03 15:54:36 sthen Exp $
+$OpenBSD: patch-tools_clang_lib_Sema_SemaChecking_cpp,v 1.2 2017/08/10 10:29:01 sthen Exp $
 
-Teach Clang about syslog format attribute
+- Teach Clang about syslog format attribute
+- Enable the kprintf format attribute
 
 Index: tools/clang/lib/Sema/SemaChecking.cpp
 --- tools/clang/lib/Sema/SemaChecking.cpp.orig
@@ -22,12 +23,24 @@ Index: tools/clang/lib/Sema/SemaChecking.cpp
        Diag(FormatLoc, diag::note_format_security_fixit)
          << FixItHint::CreateInsertion(FormatLoc, "\"%s\", ");
        break;
-@@ -6352,7 +6353,7 @@ static void CheckFormatString(Sema &S, const FormatStr
+@@ -6351,8 +6352,9 @@ static void CheckFormatString(Sema &S, const FormatStr
+   }
  
    if (Type == Sema::FST_Printf || Type == Sema::FST_NSString ||
-       Type == Sema::FST_FreeBSDKPrintf || Type == Sema::FST_OSLog ||
+-      Type == Sema::FST_FreeBSDKPrintf || Type == Sema::FST_OSLog ||
 -      Type == Sema::FST_OSTrace) {
-+      Type == Sema::FST_OSTrace || Type == Sema::FST_Syslog) {
++      Type == Sema::FST_Kprintf || Type == Sema::FST_FreeBSDKPrintf ||
++      Type == Sema::FST_OSLog || Type == Sema::FST_OSTrace ||
++      Type == Sema::FST_Syslog) {
      CheckPrintfHandler H(
          S, FExpr, OrigFormatExpr, Type, firstDataArg, numDataArgs,
          (Type == Sema::FST_NSString || Type == Sema::FST_OSTrace), Str,
+@@ -6362,7 +6364,7 @@ static void CheckFormatString(Sema &S, const FormatStr
+     if (!analyze_format_string::ParsePrintfString(H, Str, Str + StrLen,
+                                                   S.getLangOpts(),
+                                                   S.Context.getTargetInfo(),
+-                                            Type == Sema::FST_FreeBSDKPrintf))
++                Type == Sema::FST_Kprintf || Type == Sema::FST_FreeBSDKPrintf))
+       H.DoneProcessing();
+   } else if (Type == Sema::FST_Scanf) {
+     CheckScanfHandler H(S, FExpr, OrigFormatExpr, Type, firstDataArg,
