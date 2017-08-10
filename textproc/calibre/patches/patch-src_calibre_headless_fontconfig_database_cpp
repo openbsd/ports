@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_calibre_headless_fontconfig_database_cpp,v 1.1 2017/07/18 05:31:45 zhuk Exp $
+$OpenBSD: patch-src_calibre_headless_fontconfig_database_cpp,v 1.2 2017/08/10 04:57:58 jca Exp $
 Subject: [PATCH] Compatibility with qt5-5.9.0
 Commit-Id: 82bd2e1a51df0650cb40894c5dc2b958f601a91d
 
 Index: src/calibre/headless/fontconfig_database.cpp
---- src/calibre/headless/fontconfig_database.cpp
+--- src/calibre/headless/fontconfig_database.cpp.orig
 +++ src/calibre/headless/fontconfig_database.cpp
 @@ -48,14 +48,18 @@
  #include <qpa/qplatformservices.h>
@@ -14,13 +14,13 @@ Index: src/calibre/headless/fontconfig_database.cpp
  #else
 -#include <QtPlatformSupport/private/qfontenginemultifontconfig_p.h>
 +#  include <QtPlatformSupport/private/qfontenginemultifontconfig_p.h>
-+#endif
+ #endif
+-#include <QtGui/private/qfontengine_ft_p.h>
 +#if (QT_VERSION >= QT_VERSION_CHECK(5, 9, 0))
 +#  include <QtFontDatabaseSupport/private/qfontengine_ft_p.h>
 +#else
 +#  include <QtGui/private/qfontengine_ft_p.h>
- #endif
--#include <QtGui/private/qfontengine_ft_p.h>
++#endif
  #include <QtGui/private/qguiapplication_p.h>
  #if (QT_VERSION >= QT_VERSION_CHECK(5, 6, 0))
 -#include <QtGui/private/qhighdpiscaling_p.h>
@@ -28,7 +28,7 @@ Index: src/calibre/headless/fontconfig_database.cpp
  #endif
  
  #include <QtGui/qguiapplication.h>
-@@ -763,7 +767,7 @@ QFontEngine *QFontconfigDatabase::fontEngine(const QFontDef &f, void *usrPtr)
+@@ -763,7 +767,7 @@ QFontEngine *QFontconfigDatabase::fontEngine(const QFo
  
  QFontEngine *QFontconfigDatabase::fontEngine(const QByteArray &fontData, qreal pixelSize, QFont::HintingPreference hintingPreference)
  {
@@ -37,7 +37,7 @@ Index: src/calibre/headless/fontconfig_database.cpp
      if (engine == 0)
          return 0;
  
-@@ -915,7 +919,7 @@ QStringList QFontconfigDatabase::addApplicationFont(const QByteArray &fontData,
+@@ -915,7 +919,7 @@ QStringList QFontconfigDatabase::addApplicationFont(co
  
  QString QFontconfigDatabase::resolveFontFamilyAlias(const QString &family) const
  {
