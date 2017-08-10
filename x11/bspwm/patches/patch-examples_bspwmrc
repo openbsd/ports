@@ -1,0 +1,15 @@
+$OpenBSD: patch-examples_bspwmrc,v 1.1.1.1 2017/08/10 13:30:26 jasper Exp $
+
+Point sxhkd to a minimal working config.
+
+Index: examples/bspwmrc
+--- examples/bspwmrc.orig
++++ examples/bspwmrc
+@@ -1,6 +1,6 @@
+ #! /bin/sh
+ 
+-sxhkd &
++sxhkd -c ${PREFIX}/share/examples/bspwm/sxhkdrc &
+ 
+ bspc monitor -d I II III IV V VI VII VIII IX X
+ 

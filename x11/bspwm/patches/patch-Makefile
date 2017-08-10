@@ -1,0 +1,32 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2017/08/10 13:30:26 jasper Exp $
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -3,12 +3,14 @@ VERSION := $(shell $(VERCMD) || cat VERSION)
+ 
+ CPPFLAGS += -D_POSIX_C_SOURCE=200112L -DVERSION=\"$(VERSION)\"
+ CFLAGS   += -std=c99 -pedantic -Wall -Wextra
+-LDLIBS    = -lm -lxcb -lxcb-util -lxcb-keysyms -lxcb-icccm -lxcb-ewmh -lxcb-randr -lxcb-xinerama
++LDFLAGS  ?=
++LDLIBS   += $(LDFLAGS) -lm -lxcb -lxcb-util -lxcb-keysyms -lxcb-icccm -lxcb-ewmh -lxcb-randr -lxcb-xinerama
+ 
+ PREFIX    ?= /usr/local
+ BINPREFIX ?= $(PREFIX)/bin
+ MANPREFIX ?= $(PREFIX)/share/man
+ DOCPREFIX ?= $(PREFIX)/share/doc/bspwm
++EGPREFIX  ?= $(PREFIX)/share/doc/bspwm/examples
+ BASHCPL   ?= $(PREFIX)/share/bash-completion/completions
+ FISHCPL   ?= $(PREFIX)/share/fish/vendor_completions.d
+ ZSHCPL    ?= $(PREFIX)/share/zsh/site-functions
+@@ -52,8 +54,8 @@ install:
+ 	cp -p contrib/zsh_completion "$(DESTDIR)$(ZSHCPL)"/_bspc
+ 	mkdir -p "$(DESTDIR)$(DOCPREFIX)"
+ 	cp -p $(MD_DOCS) "$(DESTDIR)$(DOCPREFIX)"
+-	mkdir -p "$(DESTDIR)$(DOCPREFIX)"/examples
+-	cp -pr examples/* "$(DESTDIR)$(DOCPREFIX)"/examples
++	mkdir -p "$(DESTDIR)$(EGPREFIX)"
++	cp -pr examples/* "$(DESTDIR)$(EGPREFIX)"
+ 	mkdir -p "$(DESTDIR)$(XSESSIONS)"
+ 	cp -p contrib/freedesktop/bspwm.desktop "$(DESTDIR)$(XSESSIONS)"
+ 

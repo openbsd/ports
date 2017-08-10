@@ -1,0 +1,51 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/08/10 13:30:26 jasper Exp $
+@bin bin/bspc
+@bin bin/bspwm
+@man man/man1/bspc.1
+@man man/man1/bspwm.1
+share/bash-completion/
+share/bash-completion/completions/
+share/bash-completion/completions/bspc
+share/doc/bspwm/
+share/doc/bspwm/CHANGELOG.md
+share/doc/bspwm/CONTRIBUTING.md
+share/doc/bspwm/INSTALL.md
+share/doc/bspwm/MISC.md
+share/doc/bspwm/README.md
+share/doc/bspwm/TODO.md
+share/examples/bspwm/
+share/examples/bspwm/bspwmrc
+share/examples/bspwm/external_rules/
+share/examples/bspwm/external_rules/bspwmrc
+share/examples/bspwm/external_rules/external_rules
+share/examples/bspwm/external_rules/pseudo_automatic_mode/
+share/examples/bspwm/external_rules/pseudo_automatic_mode/README.md
+share/examples/bspwm/external_rules/pseudo_automatic_mode/external_rules
+share/examples/bspwm/loop/
+share/examples/bspwm/loop/bspwmrc
+share/examples/bspwm/loop/profile
+share/examples/bspwm/loop/sxhkdrc
+share/examples/bspwm/loop/wm
+share/examples/bspwm/loop/xinitrc
+share/examples/bspwm/overlapping_borders/
+share/examples/bspwm/overlapping_borders/bspwmrc
+share/examples/bspwm/panel/
+share/examples/bspwm/panel/bspwmrc
+share/examples/bspwm/panel/panel
+share/examples/bspwm/panel/panel_bar
+share/examples/bspwm/panel/panel_colors
+share/examples/bspwm/panel/profile
+share/examples/bspwm/panel/sxhkdrc
+share/examples/bspwm/receptacles/
+share/examples/bspwm/receptacles/README.md
+share/examples/bspwm/receptacles/extract_canvas
+share/examples/bspwm/receptacles/induce_rules
+share/examples/bspwm/sxhkdrc
+share/fish/
+share/fish/vendor_completions.d/
+share/fish/vendor_completions.d/bspc.fish
+share/xsessions/
+share/xsessions/bspwm.desktop
+share/zsh/
+share/zsh/site-functions/
+share/zsh/site-functions/_bspc
