@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.30 2015/12/20 09:59:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.31 2017/08/10 15:08:54 danj Exp $
 
 COMMENT=	synchronize IMAP4 and maildir mailboxes
 
-DISTNAME=	isync-1.2.1
+DISTNAME=	isync-1.2.2
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=isync/}
 
@@ -12,6 +12,8 @@ HOMEPAGE=	http://isync.sourceforge.net/
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB= c crypto db sasl2 ssl z
+
+COMPILER=		clang gcc
 
 LIB_DEPENDS=		databases/db/v4 \
 			security/cyrus-sasl2
