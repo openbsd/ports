@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2015/10/14 17:23:35 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.11 2017/08/10 13:50:37 jasper Exp $
 include/clutter-gtk-${API_VERSION}/
 include/clutter-gtk-${API_VERSION}/clutter-gtk/
 include/clutter-gtk-${API_VERSION}/clutter-gtk/clutter-gtk.h
@@ -32,11 +32,6 @@ share/gtk-doc/html/clutter-gtk-${API_VERSION}/home.png
 share/gtk-doc/html/clutter-gtk-${API_VERSION}/index.html
 share/gtk-doc/html/clutter-gtk-${API_VERSION}/ix01.html
 share/gtk-doc/html/clutter-gtk-${API_VERSION}/ix02.html
-share/gtk-doc/html/clutter-gtk-${API_VERSION}/ix03.html
-share/gtk-doc/html/clutter-gtk-${API_VERSION}/ix04.html
-share/gtk-doc/html/clutter-gtk-${API_VERSION}/ix05.html
-share/gtk-doc/html/clutter-gtk-${API_VERSION}/ix06.html
-share/gtk-doc/html/clutter-gtk-${API_VERSION}/ix07.html
 share/gtk-doc/html/clutter-gtk-${API_VERSION}/left-insensitive.png
 share/gtk-doc/html/clutter-gtk-${API_VERSION}/left.png
 share/gtk-doc/html/clutter-gtk-${API_VERSION}/license.html

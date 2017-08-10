@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.36 2016/10/29 08:30:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.37 2017/08/10 13:50:37 jasper Exp $
 
 COMMENT=		GTK+ widget for clutter
 
 GNOME_PROJECT=		clutter-gtk
-GNOME_VERSION=		1.8.2
+GNOME_VERSION=		1.8.4
 
-SHARED_LIBS +=  clutter-gtk-1.0      0.0      # 800.0
+SHARED_LIBS +=  clutter-gtk-1.0      0.1      # 800.4
 
 WANTLIB += EGL ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0
