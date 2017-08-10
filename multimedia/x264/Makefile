@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.42 2017/06/12 08:54:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.43 2017/08/10 12:01:20 sthen Exp $
 
 COMMENT=	free H.264/MPEG-4 AVC encoder
 
-V=		20170125
+V=		20170717
 DISTNAME=	x264-snapshot-${V}-2245
 PKGNAME=	x264-${V}
 CATEGORIES=	multimedia
 MASTER_SITES=	http://downloads.videolan.org/pub/videolan/x264/snapshots/
 EXTRACT_SUFX=	.tar.bz2
-REVISION=	0
 
-SHARED_LIBS=	x264	17.0
+SHARED_LIBS=	x264	18.0
 
 HOMEPAGE=	http://www.videolan.org/developers/x264.html
 
@@ -27,7 +26,7 @@ COMPILER_LANGS=	c
 MODCLANG_ARCHS=	amd64 i386
 
 .if ${MACHINE_ARCH} == "amd64"
-BUILD_DEPENDS+=	devel/yasm
+BUILD_DEPENDS+=	devel/nasm>=2.13.01
 .endif
 
 USE_GMAKE=	Yes
