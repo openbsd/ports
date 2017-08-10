@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2017/02/18 08:35:17 feinerer Exp $
+# $OpenBSD: Makefile,v 1.3 2017/08/10 13:28:42 jasper Exp $
 
 COMMENT =		extract URLs from MIME email messages or plain text
 
-VERSION =		1.6.2
-DISTNAME =		extract_url-${VERSION}
+GH_ACCOUNT =		m3m0ryh0l3
+GH_PROJECT =		extracturl
+GH_TAGNAME =		v1.6.2
 
 CATEGORIES =		textproc
 
@@ -13,10 +14,6 @@ MAINTAINER =		Ingo Feinerer <feinerer@logic.at>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
-
-GH_ACCOUNT =		m3m0ryh0l3
-GH_PROJECT =		extracturl
-GH_TAGNAME =		v${VERSION}
 
 BUILD_DEPENDS =		mail/p5-MIME-tools \
 			www/p5-HTML-Parser
