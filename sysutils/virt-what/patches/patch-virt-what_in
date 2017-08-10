@@ -1,0 +1,16 @@
+$OpenBSD: patch-virt-what_in,v 1.1.1.1 2017/08/10 12:23:28 jasper Exp $
+
+grep: /proc/cpuinfo: No such file or directory 
+
+Index: virt-what.in
+--- virt-what.in.orig
++++ virt-what.in
+@@ -308,7 +308,7 @@ if ! "$skip_qemu_kvm"; then
+         # option, since /proc/cpuinfo will not contain the QEMU
+         # string. QEMU 2.10 added a new CPUID leaf, so this
+         # problem only triggered for older QEMU
+-        if grep -q 'QEMU' "${root}/proc/cpuinfo"; then
++        if have_cpuinfo && grep -q 'QEMU' "${root}/proc/cpuinfo"; then
+             echo qemu
+         fi
+     fi
