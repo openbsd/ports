@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2017/06/05 07:57:11 fcambus Exp $
+# $OpenBSD: Makefile,v 1.9 2017/08/11 10:37:10 sthen Exp $
 
 COMMENT =	MESS port with advanced video support for monitors and TVs
 
@@ -25,8 +25,7 @@ LIB_DEPENDS =	devel/sdl2
 
 .if ${MACHINE_ARCH} == "i386"
 BUILD_DEPENDS += devel/nasm
-
-CFLAGS +=	 -fno-pie
+CFLAGS +=	 -fno-pie -fomit-frame-pointer
 .endif
 
 CONFIGURE_STYLE = gnu
