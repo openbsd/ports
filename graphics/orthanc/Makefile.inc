@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.3 2017/08/10 01:51:19 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.4 2017/08/11 19:56:58 jasper Exp $
 
 CATEGORIES ?=		graphics/orthanc
 
@@ -8,6 +8,8 @@ MAINTAINER ?=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # Orthanc is GPLv3, some plugins are AGPLv3
 PERMIT_PACKAGE_CDROM =	Yes
+
+BUILD_DEPENDS +=	archivers/unzip
 
 .if defined(PLUGIN)
 DISTNAME ?=		Orthanc${PLUGIN}-${VERSION}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2017/08/09 17:02:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2017/08/11 19:56:58 jasper Exp $
 
 COMMENT =		RESTful DICOM server for healthcare and medical research
 
@@ -29,7 +29,6 @@ MODULES =		devel/cmake \
 
 MODPY_RUNDEP =		No
 
-BUILD_DEPENDS =		archivers/unzip
 LIB_DEPENDS =		databases/sqlite3 \
 			devel/boost \
 			devel/gtest \
