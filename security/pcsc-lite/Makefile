@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.39 2017/06/30 10:50:53 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.40 2017/08/11 10:06:01 dcoppa Exp $
 
 COMMENT=	resource manager for PC/SC
 
 V=		1.8.22
 DISTNAME=	pcsc-lite-${V}
+REVISION=	0
 CATEGORIES=	security
 
 SHARED_LIBS+=	pcsclite	1.0 # 1.0.0
@@ -37,6 +38,7 @@ USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu
 
 CONFIGURE_ARGS=	--disable-libudev \
+		--disable-libsystemd \
 		--without-systemdsystemunitdir \
 		--enable-libusb \
 		--enable-confdir=${SYSCONFDIR}/ccid
