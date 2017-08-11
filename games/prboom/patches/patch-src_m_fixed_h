@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_m_fixed_h,v 1.1 2017/08/11 14:21:22 sthen Exp $
+
+Index: src/m_fixed.h
+--- src/m_fixed.h.orig
++++ src/m_fixed.h
+@@ -113,7 +113,7 @@ static CONSTFUNC fixed_t FixedMul(fixed_t a, fixed_t b
+       : "=a" (result)           /* eax is always the result */
+       : "0" (a),                /* eax is also first operand */
+         "rm" (b)                /* second operand can be reg or mem */
+-      : "%edx", "%cc"           /* edx and condition codes clobbered */
++      : "%edx", "cc"           /* edx and condition codes clobbered */
+       );
+ 
+   return result;
+@@ -186,7 +186,7 @@ static CONSTFUNC fixed_t FixedDiv(fixed_t a, fixed_t b
+ 	  : "0" (a<<16),
+ 	    "d" (a>>16),
+ 	    "rm" (b)
+-	  : "%cc"
++	  : "cc"
+ 	  );
+       return result;
+     }
