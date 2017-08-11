@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_ui_act_c,v 1.9 2017/08/11 09:44:08 dcoppa Exp $
+
+commit 2a8865ad0d7c4976f43d99ed258c84ae4f95b0ce
+Author: Lars-Dominik Braun <lars@6xq.net>
+Date:   Wed Apr 26 14:47:25 2017 +0200
+
+Fix use-after-free when deleting station
+
+Index: src/ui_act.c
+--- src/ui_act.c.orig
++++ src/ui_act.c
+@@ -240,11 +240,13 @@ BarUiActCallback(BarUiActDeleteStation) {
+ 				/* drain playlist */
+ 				PianoDestroyPlaylist (PianoListNextP (app->playlist));
+ 				app->playlist->head.next = NULL;
++				selSong = NULL;
+ 			}
+ 			app->nextStation = NULL;
+ 			/* XXX: usually we shoudn’t touch cur*, but DELETE_STATION destroys
+ 			 * station struct */
+ 			app->curStation = NULL;
++			selStation = NULL;
+ 		}
+ 		BarUiActDefaultEventcmd ("stationdelete");
+ 	}
