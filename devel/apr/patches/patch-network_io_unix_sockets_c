@@ -1,7 +1,8 @@
-$OpenBSD: patch-network_io_unix_sockets_c,v 1.5 2015/01/18 21:27:08 claudio Exp $
---- network_io/unix/sockets.c.orig	Wed Mar 23 19:50:21 2011
-+++ network_io/unix/sockets.c	Wed Jan 14 23:43:33 2015
-@@ -271,7 +271,7 @@ apr_status_t apr_socket_accept(apr_socket_t **new, apr
+$OpenBSD: patch-network_io_unix_sockets_c,v 1.6 2017/08/11 14:23:18 danj Exp $
+Index: network_io/unix/sockets.c
+--- network_io/unix/sockets.c.orig
++++ network_io/unix/sockets.c
+@@ -338,7 +338,7 @@ apr_status_t apr_socket_accept(apr_socket_t **new, apr
          apr_set_option(*new, APR_TCP_NODELAY, 1);
      }
  #endif /* TCP_NODELAY_INHERITED */
@@ -10,7 +11,7 @@ $OpenBSD: patch-network_io_unix_sockets_c,v 1.5 2015/01/18 21:27:08 claudio Exp 
      if (apr_is_option_set(sock, APR_SO_NONBLOCK) == 1) {
          apr_set_option(*new, APR_SO_NONBLOCK, 1);
      }
-@@ -312,6 +312,15 @@ apr_status_t apr_socket_accept(apr_socket_t **new, apr
+@@ -388,6 +388,15 @@ apr_status_t apr_socket_accept(apr_socket_t **new, apr
  apr_status_t apr_socket_connect(apr_socket_t *sock, apr_sockaddr_t *sa)
  {
      int rc;        

@@ -1,7 +1,8 @@
-$OpenBSD: patch-configure,v 1.10 2013/11/03 07:52:01 ajacoutot Exp $
---- configure.orig	Wed Feb  8 00:17:57 2012
-+++ configure	Fri Apr 27 09:51:08 2012
-@@ -6633,6 +6633,11 @@ if test "x$apr_preload_done" != "xyes" ; then
+$OpenBSD: patch-configure,v 1.11 2017/08/11 14:23:18 danj Exp $
+Index: configure
+--- configure.orig
++++ configure
+@@ -6609,6 +6609,11 @@ if test "x$apr_preload_done" != "xyes" ; then
          ;;
      *-openbsd*)
  
@@ -13,8 +14,8 @@ $OpenBSD: patch-configure,v 1.10 2013/11/03 07:52:01 ajacoutot Exp $
    if test "x$CPPFLAGS" = "x"; then
      test "x$silent" != "xyes" && echo "  setting CPPFLAGS to \"-D_POSIX_THREADS\""
      CPPFLAGS="-D_POSIX_THREADS"
-@@ -13934,7 +13939,7 @@ fi
- LIBTOOL_DEPS="$ltmain"
+@@ -14176,7 +14181,7 @@ esac
+ LIBTOOL_DEPS=$ltmain
  
  # Always use our own libtool.
 -LIBTOOL='$(SHELL) $(apr_builddir)/libtool'
@@ -22,7 +23,7 @@ $OpenBSD: patch-configure,v 1.10 2013/11/03 07:52:01 ajacoutot Exp $
  
  
  
-@@ -25452,7 +25457,7 @@ for ac_spec in func:semget func:semctl define:SEM_UNDO
+@@ -26265,7 +26270,7 @@ for ac_spec in func:semget func:semctl define:SEM_UNDO
  done
  if test ".$ac_rc" = .yes; then
      :
