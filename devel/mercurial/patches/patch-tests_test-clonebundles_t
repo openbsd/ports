@@ -1,12 +1,14 @@
-$OpenBSD: patch-tests_test-clonebundles_t,v 1.1 2017/05/03 22:57:10 juanfra Exp $
---- tests/test-clonebundles.t.orig	Wed May  3 15:20:10 2017
-+++ tests/test-clonebundles.t	Wed May  3 15:20:33 2017
+$OpenBSD: patch-tests_test-clonebundles_t,v 1.2 2017/08/11 23:28:01 juanfra Exp $
+
+Index: tests/test-clonebundles.t
+--- tests/test-clonebundles.t.orig
++++ tests/test-clonebundles.t
 @@ -51,7 +51,7 @@ Manifest file with invalid URL aborts
    $ echo 'http://does.not.exist/bundle.hg' > server/.hg/clonebundles.manifest
    $ hg clone http://localhost:$HGPORT 404-url
    applying clone bundle from http://does.not.exist/bundle.hg
--  error fetching bundle: (.* not known|getaddrinfo failed|No address associated with hostname) (re)
-+  error fetching bundle: (.* not known|getaddrinfo failed|No address associated with hostname|no address associated with name) (re)
+-  error fetching bundle: (.* not known|No address associated with hostname) (re) (no-windows !)
++  error fetching bundle: (.* not known|No address associated with hostname|no address associated with name) (re) (no-windows !)
+   error fetching bundle: [Errno 11004] getaddrinfo failed (windows !)
    abort: error applying bundle
    (if this error persists, consider contacting the server operator or disable clone bundles via "--config ui.clonebundles=false")
-   [255]
