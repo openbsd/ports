@@ -1,0 +1,20 @@
+$OpenBSD: patch-doc_config,v 1.1 2017/08/11 09:02:51 dcoppa Exp $
+
+commit 4f72330bb8d04aa14fa380f969013675882b7c1b
+Author: Andrzej Rybczak <andrzej@rybczak.net>
+Date:   Sat Jun 24 16:06:50 2017 +0200
+
+config: change default value of show_duplicate_tags from 'true' to 'yes'
+
+Index: doc/config
+--- doc/config.orig
++++ doc/config
+@@ -301,7 +301,7 @@
+ #
+ #discard_colors_if_item_is_selected = yes
+ #
+-#show_duplicate_tags = true
++#show_duplicate_tags = yes
+ #
+ #incremental_seeking = yes
+ #

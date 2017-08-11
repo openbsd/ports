@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_curses_window_cpp,v 1.1 2017/08/11 09:02:51 dcoppa Exp $
+
+commit a22cd2c68c71481c653d9f6547f2e7b46ce57106
+Author: Hugh Wang <hghwng@gmail.com>
+Date:   Thu Jun 8 00:26:02 2017 +0800
+
+Fix crash when colors are disabled
+
+Index: src/curses/window.cpp
+--- src/curses/window.cpp.orig
++++ src/curses/window.cpp
+@@ -214,6 +214,10 @@ Color Color::End(0, 0, false, true);
+ 
+ int Color::pairNumber() const
+ {
++	// If colors are disabled, return default pair value.
++	if (color_pair_map.empty())
++		return 0;
++
+ 	int result = 0;
+ 	if (isEnd())
+ 		throw std::logic_error("'end' doesn't have a corresponding pair number");
