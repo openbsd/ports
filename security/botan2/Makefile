@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.7 2017/07/27 10:05:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2017/08/11 22:30:38 bluhm Exp $
 
 COMMENT =	crypto and TLS for C++11
 
-VERSION =	2.1.0
+VERSION =	2.2.0
 DISTNAME =	Botan-${VERSION}
 PKGNAME =	botan2-${VERSION}
-REVISION =	0
 
-SHARED_LIBS =	botan-2		1.0
+SHARED_LIBS =	botan-2		2.0
 
 CATEGORIES =	security
 
@@ -19,7 +18,7 @@ MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =		bz2 c m lzma pthread z
-WANTLIB += ${COMPILER_LIBCXX}
+WANTLIB +=		${COMPILER_LIBCXX}
 
 MASTER_SITES =		${HOMEPAGE}releases/
 
@@ -38,7 +37,6 @@ CONFIGURE_STYLE =	simple
 CONFIGURE_SCRIPT =	${WRKSRC}/configure.py
 CONFIGURE_ARGS =	--with-build-dir=${WRKBUILD} \
 			--prefix=${PREFIX} \
-			--destdir=${DESTDIR}${PREFIX} \
 			--distribution-info="`uname -sr`" \
 			--with-bzip2 \
 			--with-lzma \
@@ -67,7 +65,7 @@ post-install:
 	cd ${PREFIX}/share/doc && mv botan-${VERSION} botan-2
 
 .include <bsd.port.mk>
-# clang does not have /usr/local in its path, but more importantly,
+# clang does not have ${LOCALBASE} in its path, but more importantly,
 # if we don't explicitly configure for it, it passes as a good enough gcc,
 # and then we get lots of warnings for unknown warning options...
 .if ${PROPERTIES:Mclang}

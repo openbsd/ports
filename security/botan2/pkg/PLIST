@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2017/04/10 11:10:33 bluhm Exp $
+@comment $OpenBSD: PLIST,v 1.4 2017/08/11 22:30:38 bluhm Exp $
 @bin bin/botan
 include/botan-2/
 include/botan-2/botan/
@@ -46,6 +46,7 @@ include/botan-2/botan/certstor_sql.h
 include/botan-2/botan/cfb.h
 include/botan-2/botan/chacha.h
 include/botan-2/botan/chacha20poly1305.h
+include/botan-2/botan/chacha_rng.h
 include/botan-2/botan/charset.h
 include/botan-2/botan/cipher_filter.h
 include/botan-2/botan/cipher_mode.h
@@ -86,6 +87,7 @@ include/botan-2/botan/ecdsa.h
 include/botan-2/botan/ecgdsa.h
 include/botan-2/botan/ecies.h
 include/botan-2/botan/eckcdsa.h
+include/botan-2/botan/ed25519.h
 include/botan-2/botan/elgamal.h
 include/botan-2/botan/eme.h
 include/botan-2/botan/eme_pkcs.h
@@ -115,6 +117,7 @@ include/botan-2/botan/hex_filt.h
 include/botan-2/botan/hkdf.h
 include/botan-2/botan/hmac.h
 include/botan-2/botan/hmac_drbg.h
+include/botan-2/botan/hotp.h
 include/botan-2/botan/http_util.h
 include/botan-2/botan/idea.h
 include/botan-2/botan/init.h
@@ -177,6 +180,7 @@ include/botan-2/botan/pbkdf.h
 include/botan-2/botan/pbkdf1.h
 include/botan-2/botan/pbkdf2.h
 include/botan-2/botan/pem.h
+include/botan-2/botan/pgp_s2k.h
 include/botan-2/botan/pipe.h
 include/botan-2/botan/pk_algs.h
 include/botan-2/botan/pk_keys.h
@@ -218,13 +222,19 @@ include/botan-2/botan/shake_cipher.h
 include/botan-2/botan/siphash.h
 include/botan-2/botan/siv.h
 include/botan-2/botan/skein_512.h
+include/botan-2/botan/sm2.h
+include/botan-2/botan/sm2_enc.h
+include/botan-2/botan/sm3.h
+include/botan-2/botan/sm4.h
 include/botan-2/botan/sp800_108.h
+include/botan-2/botan/sp800_56a.h
 include/botan-2/botan/sp800_56c.h
 include/botan-2/botan/srp6.h
 include/botan-2/botan/stateful_rng.h
 include/botan-2/botan/stl_compatibility.h
 include/botan-2/botan/stream_cipher.h
 include/botan-2/botan/stream_mode.h
+include/botan-2/botan/streebog.h
 include/botan-2/botan/sym_algo.h
 include/botan-2/botan/symkey.h
 include/botan-2/botan/system_rng.h
@@ -248,6 +258,7 @@ include/botan-2/botan/tls_session.h
 include/botan-2/botan/tls_session_manager.h
 include/botan-2/botan/tls_session_manager_sql.h
 include/botan-2/botan/tls_version.h
+include/botan-2/botan/totp.h
 include/botan-2/botan/tss.h
 include/botan-2/botan/twofish.h
 include/botan-2/botan/types.h
@@ -308,6 +319,7 @@ share/doc/botan-2/manual/index.rst
 share/doc/botan-2/manual/kdf.rst
 share/doc/botan-2/manual/lowlevel.rst
 share/doc/botan-2/manual/mceliece.rst
+share/doc/botan-2/manual/otp.rst
 share/doc/botan-2/manual/packaging.rst
 share/doc/botan-2/manual/passhash.rst
 share/doc/botan-2/manual/pbkdf.rst
