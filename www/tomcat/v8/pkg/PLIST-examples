@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.25 2017/07/10 16:52:03 dcoppa Exp $
+@comment $OpenBSD: PLIST-examples,v 1.26 2017/08/11 09:26:26 dcoppa Exp $
 @option is-branch
 @owner _tomcat
 @group _tomcat
@@ -801,6 +801,8 @@ webapps/docs/api/org/apache/catalina/util/SessionConfig.html
 webapps/docs/api/org/apache/catalina/util/SessionIdGeneratorBase.html
 webapps/docs/api/org/apache/catalina/util/StandardSessionIdGenerator.html
 webapps/docs/api/org/apache/catalina/util/Strftime.html
+webapps/docs/api/org/apache/catalina/util/SystemPropertyReplacerListener.html
+webapps/docs/api/org/apache/catalina/util/TLSUtil.html
 webapps/docs/api/org/apache/catalina/util/TomcatCSS.html
 webapps/docs/api/org/apache/catalina/util/URLEncoder.html
 webapps/docs/api/org/apache/catalina/util/XMLWriter.html
@@ -810,6 +812,7 @@ webapps/docs/api/org/apache/catalina/util/package-tree.html
 webapps/docs/api/org/apache/catalina/valves/
 webapps/docs/api/org/apache/catalina/valves/AbstractAccessLogValve.AccessLogElement.html
 webapps/docs/api/org/apache/catalina/valves/AbstractAccessLogValve.ByteSentElement.html
+webapps/docs/api/org/apache/catalina/valves/AbstractAccessLogValve.ConnectionStatusElement.html
 webapps/docs/api/org/apache/catalina/valves/AbstractAccessLogValve.CookieElement.html
 webapps/docs/api/org/apache/catalina/valves/AbstractAccessLogValve.DateAndTimeElement.html
 webapps/docs/api/org/apache/catalina/valves/AbstractAccessLogValve.DateFormatCache.Cache.html
@@ -963,6 +966,7 @@ webapps/docs/api/org/apache/coyote/ajp/AjpNioProtocol.html
 webapps/docs/api/org/apache/coyote/ajp/AjpProcessor.SocketInputBuffer.html
 webapps/docs/api/org/apache/coyote/ajp/AjpProcessor.SocketOutputBuffer.html
 webapps/docs/api/org/apache/coyote/ajp/AjpProcessor.html
+webapps/docs/api/org/apache/coyote/ajp/AjpProtocol.html
 webapps/docs/api/org/apache/coyote/ajp/Constants.html
 webapps/docs/api/org/apache/coyote/ajp/package-frame.html
 webapps/docs/api/org/apache/coyote/ajp/package-summary.html
@@ -979,6 +983,7 @@ webapps/docs/api/org/apache/coyote/http11/Http11NioProtocol.html
 webapps/docs/api/org/apache/coyote/http11/Http11OutputBuffer.SocketOutputBuffer.html
 webapps/docs/api/org/apache/coyote/http11/Http11OutputBuffer.html
 webapps/docs/api/org/apache/coyote/http11/Http11Processor.html
+webapps/docs/api/org/apache/coyote/http11/Http11Protocol.html
 webapps/docs/api/org/apache/coyote/http11/InputFilter.html
 webapps/docs/api/org/apache/coyote/http11/OutputFilter.html
 webapps/docs/api/org/apache/coyote/http11/filters/
