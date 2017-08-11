@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_ubik_utst_server_c,v 1.1 2017/08/11 14:46:06 sthen Exp $
+
+Index: src/ubik/utst_server.c
+--- src/ubik/utst_server.c.orig
++++ src/ubik/utst_server.c
+@@ -312,7 +312,7 @@ main(argc, argv)
+ 
+     if (code) {
+ 	printf("ubik init failed with code %d\n", code);
+-	return;
++	return -1;
+     }
+ 
+     sc[0] = rxnull_NewServerSecurityObject();

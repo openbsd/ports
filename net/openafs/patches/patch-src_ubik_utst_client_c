@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_ubik_utst_client_c,v 1.1 2017/08/11 14:46:06 sthen Exp $
+
+Index: src/ubik/utst_client.c
+--- src/ubik/utst_client.c.orig
++++ src/ubik/utst_client.c
+@@ -87,7 +87,7 @@ main(argc, argv)
+     /* check code from init */
+     if (code) {
+ 	printf("ubik client init failed with code %d\n", code);
+-	return;
++	return -1;
+     }
+ 
+     /* parse command line for our own operations */

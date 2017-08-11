@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.59 2017/03/05 15:22:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.60 2017/08/11 14:46:05 sthen Exp $
 
+BROKEN-i386=		./kauth.rg, line 141: expected '*' or 'identifier'
 ONLY_FOR_ARCHS=		i386
 
 COMMENT=		OpenAFS distributed filesystem
