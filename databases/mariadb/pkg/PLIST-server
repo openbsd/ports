@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.18 2017/03/13 10:57:00 sthen Exp $
+@comment $OpenBSD: PLIST-server,v 1.19 2017/08/11 19:04:49 sthen Exp $
 @conflict mysql-server-*
 @conflict mytop-*
 @pkgpath databases/mysql,-server
@@ -281,7 +281,6 @@ lib/mysql/plugin/sql_errlog.so
 @man man/man8/mysqld.8
 share/doc/mysql/
 share/doc/mysql/COPYING
-share/doc/mysql/COPYING.LESSER
 share/doc/mysql/CREDITS
 share/doc/mysql/EXCEPTIONS-CLIENT
 share/doc/mysql/INSTALL-BINARY
