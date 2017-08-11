@@ -1,0 +1,15 @@
+$OpenBSD: patch-meson_build,v 1.1 2017/08/11 08:57:16 dcoppa Exp $
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -144,8 +144,7 @@ libmpdclient = library('mpdclient',
+     platform_deps,
+   ],
+   link_args: common_ldflags,
+-  version: meson.project_version(),
+-  soversion: splitted_version[0],
++  soversion: '${LIBmpdclient_VERSION}',
+   install: true
+ )
+ libmpdclient_dep = declare_dependency(link_with: libmpdclient)

@@ -1,23 +1,29 @@
-# $OpenBSD: Makefile,v 1.17 2017/03/23 07:23:53 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.18 2017/08/11 08:57:16 dcoppa Exp $
 
 COMMENT=		library for interfacing MPD
 
-VER=			2.11
+VER=			2.13
 DISTNAME=		libmpdclient-${VER}
-SHARED_LIBS=		mpdclient 2.2	# 2.11
+SHARED_LIBS=		mpdclient 3.0	# 2.13
 CATEGORIES=		audio
-HOMEPAGE=		http://www.musicpd.org/libs/libmpdclient/
+HOMEPAGE=		https://www.musicpd.org/libs/libmpdclient/
 
 MAINTAINER=		David Coppa <dcoppa@openbsd.org>
 
 # 3-BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		http://www.musicpd.org/download/libmpdclient/${VER:R}/
+MASTER_SITES=		https://www.musicpd.org/download/libmpdclient/${VER:R}/
 
-USE_GMAKE=		Yes
+EXTRACT_SUFX=		.tar.xz
 
-CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	--disable-documentation
+MODULES=		devel/meson
+
+### XXX the meson MODULE should handle these
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/meson.build
+post-install:
+	rm ${PREFIX}/lib/libmpdclient.so
+###
 
 .include <bsd.port.mk>
