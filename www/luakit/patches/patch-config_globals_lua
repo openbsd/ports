@@ -1,0 +1,14 @@
+$OpenBSD: patch-config_globals_lua,v 1.1 2017/08/12 19:28:43 abieber Exp $
+
+Index: config/globals.lua
+--- config/globals.lua.orig
++++ config/globals.lua
+@@ -31,7 +31,7 @@ globals.search_engines = {
+ }
+ 
+ -- Set google as fallback search engine
+-globals.search_engines.default = globals.search_engines.google
++globals.search_engines.default = globals.search_engines.duckduckgo
+ -- Use this instead to disable auto-searching
+ --search_engines.default = "%s"
+ 

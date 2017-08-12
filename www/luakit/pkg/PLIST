@@ -1,16 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.4 2017/07/26 14:19:45 abieber Exp $
+@comment $OpenBSD: PLIST,v 1.5 2017/08/12 19:28:43 abieber Exp $
 @bin bin/luakit
 @man man/man1/luakit.1
 share/applications/luakit.desktop
 share/examples/luakit/
 @sample ${SYSCONFDIR}/xdg/
 @sample ${SYSCONFDIR}/xdg/luakit/
-share/examples/luakit/binds.lua
-@sample ${SYSCONFDIR}/xdg/luakit/binds.lua
 share/examples/luakit/globals.lua
 @sample ${SYSCONFDIR}/xdg/luakit/globals.lua
-share/examples/luakit/modes.lua
-@sample ${SYSCONFDIR}/xdg/luakit/modes.lua
 share/examples/luakit/rc.lua
 @sample ${SYSCONFDIR}/xdg/luakit/rc.lua
 share/examples/luakit/theme.lua
@@ -33,6 +29,7 @@ share/luakit/lib/
 share/luakit/lib/adblock.lua
 share/luakit/lib/adblock_chrome.lua
 share/luakit/lib/adblock_wm.lua
+share/luakit/lib/binds.lua
 share/luakit/lib/bookmarks.lua
 share/luakit/lib/bookmarks_chrome.lua
 share/luakit/lib/chrome.lua
@@ -62,6 +59,7 @@ share/luakit/lib/image_css.lua
 share/luakit/lib/image_css_wm.lua
 share/luakit/lib/introspector_chrome.lua
 share/luakit/lib/jquery.min.js
+share/luakit/lib/log_chrome.lua
 share/luakit/lib/lousy/
 share/luakit/lib/lousy/bind.lua
 share/luakit/lib/lousy/init.lua
@@ -85,7 +83,9 @@ share/luakit/lib/lousy/widget/tab.lua
 share/luakit/lib/lousy/widget/tabi.lua
 share/luakit/lib/lousy/widget/tablist.lua
 share/luakit/lib/lousy/widget/uri.lua
+share/luakit/lib/lousy/widget/zoom.lua
 share/luakit/lib/markdown.lua
+share/luakit/lib/modes.lua
 share/luakit/lib/newtab_chrome.lua
 share/luakit/lib/noscript.lua
 share/luakit/lib/open_editor.lua
