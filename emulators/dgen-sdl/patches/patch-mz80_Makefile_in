@@ -1,0 +1,16 @@
+$OpenBSD: patch-mz80_Makefile_in,v 1.1 2017/08/12 22:11:23 sthen Exp $
+
+Fix build with newer nasm.
+
+Index: mz80/Makefile.in
+--- mz80/Makefile.in.orig
++++ mz80/Makefile.in
+@@ -526,7 +526,7 @@ uninstall-am:
+ 
+ 
+ .asm.$(OBJEXT):
+-	@NASM@ -f @NASM_FORMAT@ -o $@ -- $<
++	@NASM@ -f @NASM_FORMAT@ -o $@ $<
+ 
+ $(MAKEZ80): $(DIR)/makez80.c
+ 	$(CC_FOR_BUILD) $(CFLAGS_FOR_BUILD) -o $@ $<

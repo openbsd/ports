@@ -1,0 +1,16 @@
+$OpenBSD: patch-star_Makefile_in,v 1.1 2017/08/12 22:11:23 sthen Exp $
+
+Fix build with newer nasm.
+
+Index: star/Makefile.in
+--- star/Makefile.in.orig
++++ star/Makefile.in
+@@ -521,7 +521,7 @@ uninstall-am:
+ 
+ 
+ .asm.$(OBJEXT):
+-	@NASM@ -f @NASM_FORMAT@ -o $@ -- $<
++	@NASM@ -f @NASM_FORMAT@ -o $@ $<
+ 
+ $(STAR): $(DIR)/star.c
+ 	$(CC_FOR_BUILD) $(CFLAGS_FOR_BUILD) -o $@ $<
