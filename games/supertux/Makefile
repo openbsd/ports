@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2017/07/26 22:45:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2017/08/12 20:15:34 dcoppa Exp $
 
 COMMENT =		jump 'n' run game
 
@@ -36,9 +36,6 @@ LIB_DEPENDS =		devel/sdl2-image \
 
 CONFIGURE_ARGS +=	-DINSTALL_SUBDIR_BIN="${LOCALBASE}/bin" \
 			-DBUILD_SHARED_LIBS=OFF
-
-USE_GMAKE =		Yes
-USE_NINJA =		No
 
 NO_TEST =		Yes
 # XXX compiler bug
