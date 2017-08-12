@@ -1,0 +1,22 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/08/12 19:17:14 danj Exp $
+bin/tarsnapper
+lib/python${MODPY_VERSION}/site-packages/tarsnapper/
+lib/python${MODPY_VERSION}/site-packages/tarsnapper-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/tarsnapper-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/tarsnapper-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/tarsnapper-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/tarsnapper-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/tarsnapper-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
+lib/python${MODPY_VERSION}/site-packages/tarsnapper-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/tarsnapper-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/tarsnapper/__init__.py
+lib/python${MODPY_VERSION}/site-packages/tarsnapper/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/tarsnapper/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/tarsnapper/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/tarsnapper/${MODPY_PYCACHE}expire.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/tarsnapper/${MODPY_PYCACHE}script.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/tarsnapper/${MODPY_PYCACHE}test.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/tarsnapper/config.py
+lib/python${MODPY_VERSION}/site-packages/tarsnapper/expire.py
+lib/python${MODPY_VERSION}/site-packages/tarsnapper/script.py
+lib/python${MODPY_VERSION}/site-packages/tarsnapper/test.py
