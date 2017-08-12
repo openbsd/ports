@@ -1,0 +1,13 @@
+$OpenBSD: patch-main_c,v 1.1 2017/08/12 19:47:32 naddy Exp $
+
+Index: main.c
+--- main.c.orig
++++ main.c
+@@ -111,6 +111,7 @@ static void __run_at(unsigned long addr)
+ 	/* Copy memtest86+ code */
+ 	memmove((void *)addr, &_start, _end - _start);
+ 	/* Jump to the start address */
++dummy:	p = &&dummy;
+ 	p = (ulong *)(addr + startup_32 - _start);
+ 	goto *p;
+ }
