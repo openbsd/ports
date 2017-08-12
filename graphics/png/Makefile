@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.118 2017/04/11 14:15:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.119 2017/08/12 03:05:29 naddy Exp $
 
 COMMENT=	library for manipulating PNG images
 
-VERSION=	1.6.29
+VERSION=	1.6.31
 DISTNAME=	libpng-${VERSION}
 PKGNAME=	png-${VERSION}
 CATEGORIES=	graphics
@@ -10,8 +10,8 @@ DPB_PROPERTIES=	parallel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=libpng/}
 EXTRACT_SUFX=	.tar.xz
 
-SHARED_LIBS=	png16	17.3 \
-		png	17.3
+SHARED_LIBS=	png16	17.4 \
+		png	17.4
 
 HOMEPAGE=	http://www.libpng.org/pub/png/libpng.html
 
