@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2017/08/11 23:05:57 jca Exp $
+# $OpenBSD: Makefile,v 1.13 2017/08/12 19:26:58 jca Exp $
 # $RuOBSD: Makefile,v 1.4 2009/02/07 10:28:55 form Exp $
 
 ONLY_FOR_ARCHS=		amd64 i386
@@ -19,7 +19,7 @@ MASTER_SITES=		${HOMEPAGE}/download/${VERSION}/
 USE_GMAKE=		Yes
 NO_TEST=		Yes
 
-MAKE_ENV=		CC="${CC}" PORTS_CFLAGS="-fno-pie ${CFLAGS}" V=${VERSION}
+MAKE_ENV=		CC="${CC}" V=${VERSION}
 
 post-build:
 	@cd ${WRKBUILD} && sh ${WRKDIST}/makeiso.sh
