@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/08/08 22:04:57 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.2 2017/08/12 18:05:35 dcoppa Exp $
 
 COMMENT =	utility and library for computing hash sums
 
@@ -21,8 +21,6 @@ WANTLIB +=	c
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=rhash/}
 
-TEST_DEPENDS =	sysutils/ggrep
-
 MAKE_FLAGS =	SONAME="librhash.so.${LIBrhash_VERSION}"
 
 FAKE_FLAGS =	PREFIX=${PREFIX} \
@@ -43,8 +41,8 @@ pre-configure:
 		${WRKSRC}/parse_cmdline.c
 
 do-test:
-	cd ${WRKSRC}/tests && \
+	cd ${WRKSRC}/tests && env \
 	LD_PRELOAD=${WRKBUILD}/librhash/librhash.so.${LIBrhash_VERSION} \
-		${SHELL} ./test_rhash.sh --full
+		./test_rhash.sh --full
 
 .include <bsd.port.mk>

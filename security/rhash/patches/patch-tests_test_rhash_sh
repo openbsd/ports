@@ -1,9 +1,9 @@
-$OpenBSD: patch-tests_test_rhash_sh,v 1.1.1.1 2017/08/08 22:04:57 dcoppa Exp $
+$OpenBSD: patch-tests_test_rhash_sh,v 1.2 2017/08/12 18:05:35 dcoppa Exp $
 
 Index: tests/test_rhash.sh
 --- tests/test_rhash.sh.orig
 +++ tests/test_rhash.sh
-@@ -2,14 +2,13 @@
+@@ -2,14 +2,12 @@
  
  if [ "$1" = "--full" ]; then FULL_TEST=1; shift; fi
  
@@ -16,105 +16,15 @@ Index: tests/test_rhash.sh
    exit 1
  fi
 -[ "$rhash" != "../rhash" ] && echo "Testing $rhash"
-+[ "$rhash" != "../rhash_shared" ] && echo "Testing $rhash"
  
  #version="`$rhash -V|sed 's/^.* v//'`"
  HASHOPT="`$rhash --list-hashes|sed 's/ .*$//;/[^3]-/s/-\([0-9R]\)/\1/'|tr A-Z a-z`"
-@@ -43,7 +42,7 @@ check() {
- 
- # match obtained value $1 against given grep-regexp $2
- match_line() {
--  if echo "$1" | grep -vq "$2"; then
-+  if echo "$1" | ggrep -vq "$2"; then
-     printf "obtained: \"%s\"\n" "$1"
-     echo "regexp:  /$2/"
-     return 1;
-@@ -54,7 +53,7 @@ match_line() {
- # match obtained value $1 against given grep-regexp $2
- match() {
-   sub_test=$((sub_test+1));
--  if echo "$1" | grep -vq "$2"; then
-+  if echo "$1" | ggrep -vq "$2"; then
-     print_failed "$3"
-     echo "obtained: \"$1\""
-     echo "regexp:  /$2/"
-@@ -79,7 +78,7 @@ check "$TEST_RESULT" "$TEST_EXPECTED" .
- TEST_RESULT=$( $rhash --simple --gost --gost-cryptopro --gost-reverse test1K.data )
- TEST_EXPECTED="test1K.data  bb4c042bacee51bbabc186107e6020b20991fd4ea119672da24dbe5deeb30b89  06cc52d9a7fb5137d01667d1641683620060391722a56222bb4b14ab332ec9d9"
- check "$TEST_RESULT" "$TEST_EXPECTED" .
--TEST_RESULT=$( $rhash --simple --gost --gost-cryptopro --gost-reverse test1K.data | $rhash -vc - 2>/dev/null | grep test1K.data )
-+TEST_RESULT=$( $rhash --simple --gost --gost-cryptopro --gost-reverse test1K.data | $rhash -vc - 2>/dev/null | ggrep test1K.data )
- match "$TEST_RESULT" "^test1K.data *OK"
- 
- new_test "test handling empty files:  "
-@@ -90,7 +89,7 @@ check "$TEST_RESULT" "d41d8cd98f00b204e9800998ecf8427e
- TEST_RESULT=$( echo -n "" | $rhash -p "%m" - )
- check "$TEST_RESULT" "d41d8cd98f00b204e9800998ecf8427e" .
- # test verification of empty file
--TEST_RESULT=$( $rhash -c test-empty.file | grep "^[^-]" )
-+TEST_RESULT=$( $rhash -c test-empty.file | ggrep "^[^-]" )
- check "$TEST_RESULT" "Everything OK"
- rm test-empty.file
- 
-@@ -121,7 +120,7 @@ TEST_RESULT=$( echo -n "a" | $rhash -p '%f %L %l\n' - 
- TEST_EXPECTED="(stdin) ed2k://|file|(stdin)|1|BDE52CB31DE33E46245E05FBDBD6FB24|h=Q336IN72UWT7ZYK5DXOLT2XK5I3XMZ5Y|/ ed2k://|file|(stdin)|1|bde52cb31de33e46245e05fbdbd6fb24|h=q336in72uwt7zyk5dxolt2xk5i3xmz5y|/"
- check "$TEST_RESULT" "$TEST_EXPECTED" .
- # here we should test checking of ed2k links but it is currently unsupported
--TEST_RESULT=$( $rhash -L test1K.data | $rhash -vc - 2>/dev/null | grep test1K.data )
-+TEST_RESULT=$( $rhash -L test1K.data | $rhash -vc - 2>/dev/null | ggrep test1K.data )
- match "$TEST_RESULT" "^test1K.data *OK"
- 
- if [ "$FULL_TEST" = 1 ]; then
-@@ -139,35 +138,35 @@ if [ "$FULL_TEST" = 1 ]; then
- fi
- 
- new_test "test checking all hashes:   "
--TEST_RESULT=$( $rhash --simple -a test1K.data | $rhash -vc - 2>/dev/null | grep test1K.data )
-+TEST_RESULT=$( $rhash --simple -a test1K.data | $rhash -vc - 2>/dev/null | ggrep test1K.data )
- match "$TEST_RESULT" "^test1K.data *OK"
- 
- new_test "test checking magnet link:  "
--TEST_RESULT=$( $rhash --magnet -a test1K.data | $rhash -vc - 2>&1 | grep -i -e warn -e test1K.data )
-+TEST_RESULT=$( $rhash --magnet -a test1K.data | $rhash -vc - 2>&1 | ggrep -i -e warn -e test1K.data )
- TEST_EXPECTED="^test1K.data *OK"
- match "$TEST_RESULT" "$TEST_EXPECTED"
- 
- new_test "test bsd format checking:   "
--TEST_RESULT=$( $rhash --bsd -a test1K.data | $rhash -vc - 2>&1 | grep -i -e warn -e err )
-+TEST_RESULT=$( $rhash --bsd -a test1K.data | $rhash -vc - 2>&1 | ggrep -i -e warn -e err )
- check "$TEST_RESULT" ""
- 
- new_test "test checking w/o filename: "
- $rhash -p '%c\n%m\n%e\n%h\n%g\n%t\n%a\n' test1K.data > test1K.data.hash
--TEST_RESULT=$( $rhash -vc test1K.data.hash 2>&1 | grep -i -e warn -e err )
-+TEST_RESULT=$( $rhash -vc test1K.data.hash 2>&1 | ggrep -i -e warn -e err )
- TEST_EXPECTED=""
- check "$TEST_RESULT" "$TEST_EXPECTED"
- 
- new_test "test checking embedded crc: "
- echo -n 'A' > 'test_[D3D99E8B].data' && echo -n 'A' > 'test_[D3D99E8C].data'
- # first verify checking an existing crc32 while '--embed-crc' option is set
--TEST_RESULT=$( $rhash -C --simple 'test_[D3D99E8B].data' | $rhash -vc --embed-crc - 2>/dev/null | grep data )
-+TEST_RESULT=$( $rhash -C --simple 'test_[D3D99E8B].data' | $rhash -vc --embed-crc - 2>/dev/null | ggrep data )
- match "$TEST_RESULT" "^test_.*OK" .
--TEST_RESULT=$( $rhash -C --simple 'test_[D3D99E8C].data' | $rhash -vc --embed-crc - 2>/dev/null | grep data )
-+TEST_RESULT=$( $rhash -C --simple 'test_[D3D99E8C].data' | $rhash -vc --embed-crc - 2>/dev/null | ggrep data )
- match "$TEST_RESULT" "^test_.*ERROR, embedded CRC32 should be" .
- # second verify --check-embedded option
--TEST_RESULT=$( $rhash --check-embedded 'test_[D3D99E8B].data' 2>/dev/null | grep data )
-+TEST_RESULT=$( $rhash --check-embedded 'test_[D3D99E8B].data' 2>/dev/null | ggrep data )
- match "$TEST_RESULT" "test_.*OK" .
--TEST_RESULT=$( $rhash --check-embedded 'test_[D3D99E8C].data' 2>/dev/null | grep data )
-+TEST_RESULT=$( $rhash --check-embedded 'test_[D3D99E8C].data' 2>/dev/null | ggrep data )
- match "$TEST_RESULT" "test_.*ERR" .
- mv 'test_[D3D99E8B].data' 'test.data'
- # at last test --embed-crc with --embed-crc-delimiter options
-@@ -177,7 +176,7 @@ rm 'test_[D3D99E8B].data' 'test_[D3D99E8C].data'
- 
- new_test "test wrong sums detection:  "
- echo -n WRONG | $rhash -p '%c\n%m\n%e\n%h\n%g\n%t\n%a\n%w\n' - > test1K.data.hash
--TEST_RESULT=$( $rhash -vc test1K.data.hash 2>&1 | grep 'OK' )
-+TEST_RESULT=$( $rhash -vc test1K.data.hash 2>&1 | ggrep 'OK' )
- check "$TEST_RESULT" ""
- rm test1K.data.hash
- 
+@@ -129,7 +127,7 @@ if [ "$FULL_TEST" = 1 ]; then
+   errors=0
+   for opt in $HASHOPT ; do
+     TEST_RESULT=$( echo -n "a" | $rhash --$opt --simple - )
+-    match "$TEST_RESULT" "\b[0-9a-z]\{8,128\}\b" . || errors=$((errors+1))
++    match "$TEST_RESULT" "[[:<:]][0-9a-z]\{8,128\}[[:>:]]" . || errors=$((errors+1))
+ #    TEST_RESULT=$( echo -n "a" | $rhash --$opt --sfv - | grep -v '^;' )
+ #    match "$TEST_RESULT" "\b[0-9a-zA-Z]\{8,128\}\b" . || errors=$((errors+1))
+ #    TEST_RESULT=$( echo -n "a" | $rhash --$opt --bsd - )
