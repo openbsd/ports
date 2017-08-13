@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2017/08/13 13:23:03 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.21 2017/08/13 15:07:23 rsadowski Exp $
 
 V =		5.4.65
 COMMENT =	desktop screenshot utility (make image)
@@ -14,7 +14,7 @@ MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL ICE SM X11 Xcomposite Xext Xfixes
-WANTLIB += Xrandr Xrender c icuuc jpeg m png slop
+WANTLIB += Xrandr Xrender c icuuc jpeg m png slopy z
 
 MODULES =		devel/cmake
 
