@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.7 2014/11/01 18:46:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2017/08/13 21:06:43 afresh1 Exp $
 
 PKG_ARCH=		*
 
 COMMENT=		Nagios plugin to monitor OpenBGPd peers
-DISTNAME=		check_openbgpd-1.5
-REVISION=		3
+DISTNAME=		check_openbgpd-1.10
 CATEGORIES=		sysutils net
 
 MAINTAINER=		Andrew Fresh <afresh1@openbsd.org>
 
 HOMEPAGE=		http://openbsd.somedomain.net/nagios/
-MASTER_SITES=		http://monitoringexchange.org/attachment/download/Check-Plugins/Software/Misc/check_openbgpd/
+MASTER_SITES=		${HOMEPAGE}
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
