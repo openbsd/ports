@@ -1,0 +1,29 @@
+$OpenBSD: patch-bridges_source_cpp_uno_gcc3_linux_intel_share_hxx,v 1.1 2017/08/13 17:12:48 robert Exp $
+
+Index: bridges/source/cpp_uno/gcc3_linux_intel/share.hxx
+--- bridges/source/cpp_uno/gcc3_linux_intel/share.hxx.orig
++++ bridges/source/cpp_uno/gcc3_linux_intel/share.hxx
+@@ -33,6 +33,23 @@
+ #include <uno/any2.h>
+ #include "uno/mapping.h"
+ 
++namespace __cxxabiv1
++{
++    struct __class_type_info : public std::type_info
++    {
++        explicit __class_type_info( const char *__n ) : type_info( __n ) { }
++        virtual ~__class_type_info();
++    };
++
++    struct __si_class_type_info : public __class_type_info
++    {
++        explicit __si_class_type_info( const char *__n, const __class_type_info *__b ) :
++            __class_type_info( __n ), __base_type( __b ) { }
++        virtual ~__si_class_type_info();
++        const __class_type_info *__base_type;
++    };
++}
++
+ namespace CPPU_CURRENT_NAMESPACE
+ {
+ 
