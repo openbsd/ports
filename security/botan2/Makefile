@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2017/08/11 22:30:38 bluhm Exp $
+# $OpenBSD: Makefile,v 1.9 2017/08/13 14:40:18 bluhm Exp $
 
 COMMENT =	crypto and TLS for C++11
 
 VERSION =	2.2.0
+REVISION =	0
 DISTNAME =	Botan-${VERSION}
 PKGNAME =	botan2-${VERSION}
 
@@ -17,7 +18,7 @@ MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 # BSD 2-Clause
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		bz2 c m lzma pthread z
+WANTLIB =		bz2 c crypto m lzma pthread z
 WANTLIB +=		${COMPILER_LIBCXX}
 
 MASTER_SITES =		${HOMEPAGE}releases/
@@ -40,6 +41,7 @@ CONFIGURE_ARGS =	--with-build-dir=${WRKBUILD} \
 			--distribution-info="`uname -sr`" \
 			--with-bzip2 \
 			--with-lzma \
+			--with-openssl \
 			--with-zlib \
 			--without-sphinx
 
@@ -54,15 +56,22 @@ SUBST_VARS =		CXX CXXFLAGS LIBbotan-2_VERSION
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/build-data/cc/gcc.txt
 	${SUBST_CMD} ${WRKSRC}/src/build-data/os/openbsd.txt
+	${SUBST_CMD} ${WRKSRC}/src/tests/main.cpp
 	ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
 
 do-test:
-	cd ${WRKSRC} && LD_LIBRARY_PATH=${WRKBUILD} ${WRKBUILD}/botan-test
+	LD_LIBRARY_PATH=${WRKBUILD} ${WRKBUILD}/botan-test \
+	    --data-dir=${WRKSRC}/src/tests/data
 
 post-install:
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
 	    ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/botan2.py
 	cd ${PREFIX}/share/doc && mv botan-${VERSION} botan-2
+	${INSTALL_PROGRAM} ${WRKBUILD}/botan-test ${PREFIX}/bin
+	${INSTALL_DATA_DIR} ${PREFIX}/share/botan-2
+	cd ${WRKSRC}/src/tests && find data \
+	    -type d -exec ${INSTALL_DATA_DIR} ${PREFIX}/share/botan-2/{} \; -o \
+	    -type f -exec ${INSTALL_DATA} {} ${PREFIX}/share/botan-2/{} \;
 
 .include <bsd.port.mk>
 # clang does not have ${LOCALBASE} in its path, but more importantly,

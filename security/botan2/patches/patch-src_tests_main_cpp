@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_tests_main_cpp,v 1.1 2017/08/13 14:40:18 bluhm Exp $
+
+Index: src/tests/main.cpp
+--- src/tests/main.cpp.orig
++++ src/tests/main.cpp
+@@ -84,7 +84,7 @@ class Test_Runner : public Botan_CLI::Command
+          const bool log_success = flag_set("log-success");
+          const bool run_online_tests = flag_set("run-online-tests");
+          const bool run_long_tests = flag_set("run-long-tests");
+-         const std::string data_dir = get_arg_or("data-dir", "src/tests/data");
++         const std::string data_dir = get_arg_or("data-dir", "${LOCALBASE}/share/botan-2/data");
+          const std::string pkcs11_lib = get_arg("pkcs11-lib");
+          const std::string provider = get_arg("provider");
+          const size_t runs = get_arg_sz("test-runs");
