@@ -1,31 +1,31 @@
-# $OpenBSD: Makefile,v 1.19 2017/07/26 22:45:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2017/08/13 13:23:03 rsadowski Exp $
 
-V =		5.4.63
+V =		5.4.65
 COMMENT =	desktop screenshot utility (make image)
 CATEGORIES =	graphics x11
 
 GH_ACCOUNT =	naelstrof
 GH_PROJECT =	maim
 GH_TAGNAME =	v${V}
-REVISION =	0
 
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += GL ICE SM X11 Xext Xfixes Xrandr c jpeg m png pthread
-WANTLIB += slopy z ${LIBCXX}
+WANTLIB += ${COMPILER_LIBCXX} GL ICE SM X11 Xcomposite Xext Xfixes
+WANTLIB += Xrandr Xrender c icuuc jpeg m png slop
 
-MODULES =	devel/cmake
+MODULES =		devel/cmake
 
-COMPILER =	gcc
+COMPILER =		gcc
 
 BUILD_DEPENDS =		graphics/glm
 
 LIB_DEPENDS +=		graphics/jpeg \
 			graphics/png \
-			graphics/slop
+			graphics/slop \
+			textproc/icu4c
 
 CONFIGURE_ARGS =	-DCMAKE_INSTALL_MANDIR="${LOCALBASE}/man" \
 			-DCMAKE_COMPRESS_MAN=False
