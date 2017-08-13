@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.146 2017/07/03 03:45:17 pd Exp $
+# $OpenBSD: OpenBSD,v 1.147 2017/08/13 21:57:58 akoshibe Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -27,6 +27,7 @@
 37.25230	-121.81576	"mlarkin"	# Mike Larkin
 37.40203	-122.06842	"pd"		# Pratik Vyas
 37.3706		-122.0138	"ckuethe"	# Chris Kuethe
+37.38		-122.08		"akoshibe"	# Ayaka Koshibe
 37.515049	-122.339528	"marc"		# Marco S. Hyman
 37.75		-122.41		"matthew"	# Matthew Dempsky
 37.9046		-104.9357	"abieber"	# Aaron Bieber
