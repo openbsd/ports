@@ -1,2 +1,2 @@
-Opusfile provides application developers with a high-level API for
-decoding and seeking in .opus files.
+The opusfile and opusurl libraries provide a high-level API for
+decoding and seeking within .opus files on disk or over http(s).
