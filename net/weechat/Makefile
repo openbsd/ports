@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2017/04/23 14:33:50 danj Exp $
+# $OpenBSD: Makefile,v 1.30 2017/08/14 19:34:29 danj Exp $
 
 COMMENT-main=	fast, light and extensible chat client
 COMMENT-lua=	Lua bindings for weechat
@@ -6,7 +6,7 @@ COMMENT-python=	Python bindings for weechat
 COMMENT-ruby=	Ruby bindings for weechat
 COMMENT-tcl=	Tcl bindings for weechat
 
-V=		1.7.1
+V=		1.9
 DISTNAME=	weechat-${V}
 
 PKGNAME-main=	weechat-${V}
@@ -70,8 +70,6 @@ CONFIGURE_ARGS+=-DENABLE_ASPELL=no \
 		-DENABLE_PYTHON=yes \
 		-DENABLE_JAVASCRIPT=no \
 		-DHAVE_BACKTRACE=no \
-		-DMANDIR=${PREFIX}/man \
-		-DENABLE_MAN=on \
 		-DCA_FILE=/etc/ssl/cert.pem \
 		-DTCL_TCLSH=${MODTCL_BIN} \
 		-DTCL_INCLUDE_PATH=${MODTCL_INCDIR} \
@@ -85,7 +83,7 @@ pre-configure:
 post-install:
 	$(INSTALL_DATA_DIR) ${PREFIX}/share/doc/weechat
 	$(INSTALL_DATA) $(WRKSRC)/doc/en/weechat_*.en.adoc \
-	    ${PREFIX}/share/doc/weechat/
+	${PREFIX}/share/doc/weechat/
 
 NO_TEST=	Yes
 

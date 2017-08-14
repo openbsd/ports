@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_plugins_plugin-api_c,v 1.1 2017/08/14 19:34:29 danj Exp $
+
+Our time_t is 64 bits
+part of
+https://github.com/weechat/weechat/commit/aeeec38d6f0f90243199f2dbd96cc5261f329f0d
+
+Index: src/plugins/plugin-api.c
+--- src/plugins/plugin-api.c.orig
++++ src/plugins/plugin-api.c
+@@ -880,7 +880,7 @@ plugin_api_info_uptime_cb (const void *pointer, void *
+     {
+         /* return the number of seconds */
+         util_get_uptime (&total_seconds, NULL, NULL, NULL, NULL);
+-        snprintf (value, sizeof (value), "%ld", total_seconds);
++        snprintf (value, sizeof (value), "%lld", (long long)total_seconds);
+         return value;
+     }
+ 
