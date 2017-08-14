@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1636 2017/08/08 22:11:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.1637 2017/08/14 17:10:59 jasper Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -465,7 +465,6 @@
      SUBDIR += mercurial
      SUBDIR += meson
      SUBDIR += metaauto
-     SUBDIR += mico
      SUBDIR += mingw
      SUBDIR += mk
      SUBDIR += mm
