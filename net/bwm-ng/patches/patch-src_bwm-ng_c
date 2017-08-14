@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_bwm-ng_c,v 1.1 2017/08/14 16:51:41 sthen Exp $
+
+unix:  performs ioctl on interfaces to check if they're up (press "a" three times)
+route: retrieves interface stats via sysctl
+
+Index: src/bwm-ng.c
+--- src/bwm-ng.c.orig
++++ src/bwm-ng.c
+@@ -211,6 +211,13 @@ int main (int argc, char *argv[]) {
+ 	/* end of init curses, now set a sigint handler to deinit the screen on ctrl-break */
+ 	signal(SIGINT,sigint);
+ 	signal(SIGTERM,sigint);
++	if (out_file_path) {
++		if (pledge("stdio unix cpath wpath route tty", NULL) == -1)
++			deinit(1, "pledge\n");
++	} else {
++		if (pledge("stdio unix route tty", NULL) == -1)
++			deinit(1, "pledge\n");
++	}
+ #ifdef CSV	
+     /* get stats without verbose if cvs */
+ 	if (output_method==CSV_OUT && output_count>-1) {
