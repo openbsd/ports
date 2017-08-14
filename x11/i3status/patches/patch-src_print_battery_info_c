@@ -1,7 +1,65 @@
-$OpenBSD: patch-src_print_battery_info_c,v 1.13 2017/02/02 08:00:43 tb Exp $
---- src/print_battery_info.c.orig	Thu Feb  2 05:15:15 2017
-+++ src/print_battery_info.c	Thu Feb  2 05:14:43 2017
-@@ -482,7 +482,7 @@ void print_battery_info(yajl_gen json_gen, char *buffe
+$OpenBSD: patch-src_print_battery_info_c,v 1.14 2017/08/14 22:32:17 jcs Exp $
+Index: src/print_battery_info.c
+--- src/print_battery_info.c.orig
++++ src/print_battery_info.c
+@@ -25,6 +25,8 @@
+ #include <sys/types.h>
+ #include <sys/ioctl.h>
+ #include <sys/fcntl.h>
++#include <sys/sysctl.h>
++#include <sys/sensors.h>
+ #include <machine/apmvar.h>
+ #endif
+ 
+@@ -209,11 +211,15 @@ static bool slurp_battery_info(struct battery_info *ba
+ #elif defined(__OpenBSD__)
+     /*
+ 	 * We're using apm(4) here, which is the interface to acpi(4) on amd64/i386 and
+-	 * the generic interface on macppc/sparc64/zaurus, instead of using sysctl(3) and
+-	 * probing acpi(4) devices.
++	 * the generic interface on macppc/sparc64/zaurus.  Machines that have ACPI
++	 * battery sensors gain some extra information.
+ 	 */
+     struct apm_power_info apm_info;
++    struct sensordev sensordev;
++    struct sensor sensor;
++    size_t sdlen, slen;
+     int apm_fd;
++    int dev, mib[5] = {CTL_HW, HW_SENSORS, 0, 0, 0};
+ 
+     apm_fd = open("/dev/apm", O_RDONLY);
+     if (apm_fd < 0) {
+@@ -251,6 +257,29 @@ static bool slurp_battery_info(struct battery_info *ba
+     if (batt_info->status != CS_CHARGING) {
+         batt_info->seconds_remaining = apm_info.minutes_left * 60;
+     }
++
++    /* If acpibat* are present, check sensors for data not present via APM. */
++    batt_info->present_rate = 0;
++    sdlen = sizeof(sensordev);
++    slen = sizeof(sensor);
++
++    for (dev = 0;; dev++) {
++        mib[2] = dev;
++        if (sysctl(mib, 3, &sensordev, &sdlen, NULL, 0) == -1) {
++            break;
++        }
++        /* 'path' is the node within the full path */
++        if (BEGINS_WITH(sensordev.xname, "acpibat")) {
++            /* power0 */
++            mib[3] = SENSOR_WATTS;
++            mib[4] = 0;
++            if (sysctl(mib, 5, &sensor, &slen, NULL, 0) == -1) {
++                batt_info->present_rate = 0;
++                break;
++            }
++            batt_info->present_rate += sensor.value;
++        }
++    }
+ #elif defined(__NetBSD__)
+     /*
+      * Using envsys(4) via sysmon(4).
+@@ -482,7 +511,7 @@ void print_battery_info(yajl_gen json_gen, char *buffe
      /* These OSes report battery stats in whole percent. */
      integer_battery_capacity = true;
  #endif
