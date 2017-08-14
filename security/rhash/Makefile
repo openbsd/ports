@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2017/08/12 18:05:35 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.3 2017/08/14 12:20:57 dcoppa Exp $
 
 COMMENT =	utility and library for computing hash sums
 
-DISTNAME =	rhash-1.3.4-src
+DISTNAME =	rhash-1.3.5-src
 
 PKGNAME =	${DISTNAME:S/-src$//}
 
@@ -30,7 +30,7 @@ FAKE_FLAGS =	PREFIX=${PREFIX} \
 		MANDIR=${PREFIX}/man \
 		SONAME="librhash.so.${LIBrhash_VERSION}"
 
-WRKDIST =	${WRKDIR}/${PKGNAME}
+WRKDIST =	${WRKDIR}/${PKGNAME:S/^rhash/RHash/}
 
 ALL_TARGET =	build-shared
 

@@ -1,4 +1,4 @@
-$OpenBSD: patch-librhash_Makefile,v 1.1.1.1 2017/08/08 22:04:57 dcoppa Exp $
+$OpenBSD: patch-librhash_Makefile,v 1.2 2017/08/14 12:20:57 dcoppa Exp $
 
 Index: librhash/Makefile
 --- librhash/Makefile.orig
@@ -17,15 +17,16 @@ Index: librhash/Makefile
  ADDCFLAGS  =
  LIBCFLAGS  =
  ADDLDFLAGS =
-@@ -187,9 +187,8 @@ test-dll: $(DLLNAME) test_hashes.o
+@@ -187,10 +187,9 @@ test-dll: $(DLLNAME) test_hashes.o
  
  # shared and static libraries
  $(SONAME): $(SOURCES)
 -	sed -n '1s/.*/{ global:/p; s/^RHASH_API.* \([a-z0-9_]\+\)(.*/  \1;/p; $$s/.*/local: *; };/p' $(SO_HEADERS) > exports.sym
 -	$(CC) -fpic $(ALLCFLAGS) -shared $(SOURCES) -Wl,--version-script,exports.sym,-soname,$(SONAME) $(LIBLDFLAGS) -o $@
--	ln -s $(SONAME) $(SOLINK)
 +	sed -n '1s/.*/{ global:/p; s/^RHASH_API.* \([a-z0-9_]*\)(.*/  \1;/p; $$s/.*/local: *; };/p' $(SO_HEADERS) > exports.sym
 +	$(CC) -fpic $(ALLCFLAGS) -shared $(SOURCES) -Wl,--version-script,exports.sym $(LIBLDFLAGS) -o $@
+ 	rm -f $(SOLINK)
+-	ln -s $(SONAME) $(SOLINK)
  # use 'nm -Cg --defined-only $@' to view exported symbols
  
- $(LIBRARY): $(OBJECTS)
+ $(DYNAME): $(SOURCES)
