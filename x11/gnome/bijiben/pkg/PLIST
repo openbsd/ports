@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2017/06/10 14:44:59 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.14 2017/08/14 20:22:23 jasper Exp $
 @bin bin/bijiben
 @bin libexec/bijiben-shell-search-provider
 share/appdata/org.gnome.bijiben.appdata.xml
@@ -202,6 +202,28 @@ share/help/ko/bijiben/notebooks.page
 share/help/ko/bijiben/rename.page
 share/help/ko/bijiben/search.page
 share/help/ko/bijiben/share.page
+share/help/pl/
+share/help/pl/bijiben/
+share/help/pl/bijiben/colors.page
+share/help/pl/bijiben/create.page
+share/help/pl/bijiben/cut-copy-paste.page
+share/help/pl/bijiben/delete-permanent.page
+share/help/pl/bijiben/delete-restore.page
+share/help/pl/bijiben/delete.page
+share/help/pl/bijiben/figures/
+share/help/pl/bijiben/figures/hicolor_apps_16x16_bijiben.png
+share/help/pl/bijiben/figures/hicolor_apps_48x48_bijiben.png
+share/help/pl/bijiben/figures/notes-3-12.png
+share/help/pl/bijiben/format-list.page
+share/help/pl/bijiben/format-text.page
+share/help/pl/bijiben/index.page
+share/help/pl/bijiben/introduction.page
+share/help/pl/bijiben/legal.xml
+share/help/pl/bijiben/new-window.page
+share/help/pl/bijiben/notebooks.page
+share/help/pl/bijiben/rename.page
+share/help/pl/bijiben/search.page
+share/help/pl/bijiben/share.page
 share/help/pt_BR/
 share/help/pt_BR/bijiben/
 share/help/pt_BR/bijiben/colors.page
