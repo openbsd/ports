@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.515 2017/08/08 07:30:47 bentley Exp $
+# $OpenBSD: Quirks.pm,v 1.516 2017/08/14 17:15:06 jasper Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1097,6 +1097,7 @@ my $obsolete_reason = {
 	'xulrunner' => 5,
 	'xulrunner-devel' => 5,
 	'libaccounts-glib' => 6,
+	'mico' => 0,
 };
 
 # reasons for obsolete packages
