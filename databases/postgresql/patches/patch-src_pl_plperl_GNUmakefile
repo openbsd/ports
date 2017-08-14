@@ -1,14 +1,14 @@
-$OpenBSD: patch-src_pl_plperl_GNUmakefile,v 1.1 2017/05/11 13:44:15 pea Exp $
+$OpenBSD: patch-src_pl_plperl_GNUmakefile,v 1.2 2017/08/14 11:56:54 pea Exp $
 
 Index: src/pl/plperl/GNUmakefile
 --- src/pl/plperl/GNUmakefile.orig
 +++ src/pl/plperl/GNUmakefile
-@@ -12,7 +12,7 @@ override CPPFLAGS += -DPLPERL_HAVE_UID_GID
- override CPPFLAGS += -Wno-comment
- endif
- 
--override CPPFLAGS := -I. -I$(srcdir) $(CPPFLAGS) -I$(perl_archlibexp)/CORE
-+override CPPFLAGS := -I. -I$(srcdir) $(CPPFLAGS) -I$(perl_archlibexp)/CORE -DNO_LOCALE_NUMERIC -DNO_LOCALE_COLLATE -DBIG_TIME
+@@ -16,7 +16,7 @@ endif
+ # probably because it sometimes contains some header files with names
+ # that clash with some of ours, or with some that we include, notably on
+ # Windows.
+-override CPPFLAGS := -I. -I$(srcdir) $(CPPFLAGS) $(perl_embed_ccflags) -I$(perl_archlibexp)/CORE
++override CPPFLAGS := -I. -I$(srcdir) $(CPPFLAGS) $(perl_embed_ccflags) -I$(perl_archlibexp)/CORE -DNO_LOCALE_NUMERIC -DNO_LOCALE_COLLATE -DBIG_TIME
  
  rpathdir = $(perl_archlibexp)/CORE
  
