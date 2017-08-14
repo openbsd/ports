@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1637 2017/08/14 17:10:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.1638 2017/08/14 17:50:40 bluhm Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1113,7 +1113,6 @@
      SUBDIR += p5-Test-SubCalls
      SUBDIR += p5-Test-Taint
      SUBDIR += p5-Test-TempDir
-     SUBDIR += p5-Test-Tester
      SUBDIR += p5-Test-Time
      SUBDIR += p5-Test-TrailingSpace
      SUBDIR += p5-Test-Trap
@@ -1128,7 +1127,6 @@
      SUBDIR += p5-Test-XML
      SUBDIR += p5-Test-YAML
      SUBDIR += p5-Test-YAML-Valid
-     SUBDIR += p5-Test-use-ok
      SUBDIR += p5-Text-FixEOL
      SUBDIR += p5-Text-vFile-asData
      SUBDIR += p5-Throwable

@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.516 2017/08/14 17:15:06 jasper Exp $
+# $OpenBSD: Quirks.pm,v 1.517 2017/08/14 17:50:40 bluhm Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -99,6 +99,9 @@ my $base_exceptions = {
 	'flex' => '/usr/bin/flex',
 # 6.0
 	'p5-Term-ReadKey' => "$p5a/Term/ReadKey.pm",
+# 6.2
+	'p5-Test-use-ok' => "$p5/Test/use/ok.pm",
+	'p5-Test-Tester' => "$p5/Test/Tester.pm",
 };
 
 my $stem_extensions = {
