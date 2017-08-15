@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2017/08/15 14:44:25 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.13 2017/08/15 15:35:14 afresh1 Exp $
 
 COMMENT=	converts simple text to web constructs
 
@@ -14,6 +14,6 @@ MODULES =		cpan
 PKG_ARCH =		*
 
 # Additional depends to avoid skipping tests
-TEST_DEPENDS +=	devel/p5-Test-Pod
+TEST_DEPENDS =	devel/p5-Test-Pod
 
 .include <bsd.port.mk>
