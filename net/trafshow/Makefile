@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2015/12/03 21:24:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2017/08/15 22:02:50 danj Exp $
 
 COMMENT=	full screen visualization of network traffic
 
 DISTNAME=	trafshow-3.1
-REVISION=	0
+REVISION=	1
 CATEGORIES=	net
 
 MASTER_SITES=	https://spacehopper.org/mirrors/ \
@@ -16,8 +16,6 @@ EXTRACT_SUFX=	.tgz
 #PATCH_DIST_STRIP= -p1
 
 HOMEPAGE=	http://soft.risp.ru/trafshow/index_en.shtml
-
-MAINTAINER=     Michael Shalayeff <mickey@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 

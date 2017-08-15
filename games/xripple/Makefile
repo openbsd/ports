@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.21 2015/12/03 21:24:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2017/08/15 22:02:50 danj Exp $
 
 COMMENT=	screen bottom ripples like a pool of water
 
 DISTNAME=	xripple
 PKGNAME=	xripple-1.0
-REVISION =	1
+REVISION =	2
 CATEGORIES=	games
 
 MASTER_SITES=	https://spacehopper.org/mirrors/
-
-MAINTAINER=	Michael Shalayeff <mickey@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	no license available
 PERMIT_PACKAGE_FTP=	no license available

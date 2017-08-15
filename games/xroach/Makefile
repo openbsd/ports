@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2015/05/18 11:29:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.29 2017/08/15 22:02:50 danj Exp $
 
 COMMENT=	cockroaches hide under your windows
 
@@ -7,11 +7,9 @@ COMMENT=	cockroaches hide under your windows
 
 DISTNAME=	xroach
 PKGNAME=	xroach-4.4
-REVISION =	1
+REVISION =	2
 CATEGORIES=	x11 games
 EXTRACT_SUFX=	.tar
-
-MAINTAINER=	Michael Shalayeff <mickey@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=		X11 c m pthread-stubs xcb
