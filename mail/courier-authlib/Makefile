@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2017/08/09 20:36:40 giovanni Exp $
+# $OpenBSD: Makefile,v 1.66 2017/08/15 11:11:40 sthen Exp $
 
 COMMENT-main=		authentication library for courier
 COMMENT-ldap=		ldap authentication module for courier-authLib
@@ -7,7 +7,7 @@ COMMENT-pgsql=		pgsql authentication module for courier-authLib
 COMMENT-userdb=		userdb authentication module for courier-authLib
 
 DISTNAME=		courier-authlib-0.68.0
-REVISION=		0
+REVISION=		1
 PKGNAME-main=		${DISTNAME}
 PKGNAME-ldap=		${DISTNAME:S/lib-/lib-ldap-/}
 PKGNAME-mysql=		${DISTNAME:S/lib-/lib-mysql-/}
@@ -79,11 +79,15 @@ MULTI_PACKAGES=		-main -ldap -mysql -pgsql -userdb
 PSEUDO_FLAVORS=		no_ldap no_mysql no_pgsql no_userdb
 FLAVOR?=
 
-WANTLIB-main=		c iconv intl ltdl m pthread sqlite3 ${COMPILER_LIBCXX}
+WANTLIB-main=		c ltdl m pthread sqlite3 ${COMPILER_LIBCXX}
 
 LIB_DEPENDS-main=	databases/sqlite3 \
-			devel/gettext \
 			devel/libtool,-ltdl
+
+# statically linked
+WANTLIB-main+=		iconv idn intl
+LIB_DEPENDS-main+=	devel/gettext \
+			devel/libidn
 
 WANTLIB-ldap=		crypto ssl courierauthcommon courierauth \
 			m ldap-2.4 lber-2.4 sasl2 ${COMPILER_LIBCXX}
