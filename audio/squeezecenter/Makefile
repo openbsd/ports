@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2016/04/05 12:21:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2017/08/15 15:53:57 afresh1 Exp $
 
 COMMENT =	streaming audio server for Squeezebox network music players
 
 V =		7.3.3
 PKGNAME =	squeezecenter-${V}
 DISTNAME =	squeezecenter-${V}-noCPAN
-REVISION =	7
+REVISION =	8
 CATEGORIES =	audio net
 
 HOMEPAGE =	http://wiki.slimdevices.com/index.php/SqueezeCenter
@@ -56,7 +56,6 @@ RUN_DEPENDS =	audio/flac \
 		sysutils/p5-File-Which>=0.05 \
 		graphics/p5-GD>=2.35 \
 		www/p5-HTML-Parser>=3.48 \
-		devel/p5-I18N-LangTags>=0.35 \
 		devel/p5-IO-String>=1.07 \
 		converters/p5-JSON-XS>=1.5 \
 		converters/p5-JSON-XS-VersionOneAndTwo>=0.31 \
