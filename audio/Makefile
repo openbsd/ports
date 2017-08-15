@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.388 2017/08/06 21:56:05 bentley Exp $
+# $OpenBSD: Makefile,v 1.389 2017/08/15 01:03:44 naddy Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -241,6 +241,7 @@
      SUBDIR += sox
      SUBDIR += speech-dispatcher
      SUBDIR += speex
+     SUBDIR += speexdsp
      SUBDIR += squeezecenter
      SUBDIR += squeezelite
      SUBDIR += streamripper
