@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2016/03/20 19:57:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2017/08/15 14:44:25 afresh1 Exp $
 
 COMMENT=	converts simple text to web constructs
 
@@ -13,6 +13,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 MODULES =		cpan
 PKG_ARCH =		*
 
-TEST_DEPENDS =		devel/p5-Test-Harness
+# Additional depends to avoid skipping tests
+TEST_DEPENDS +=	devel/p5-Test-Pod
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2017/05/09 08:16:32 benoit Exp $
+# $OpenBSD: Makefile,v 1.4 2017/08/15 14:44:25 afresh1 Exp $
 
 COMMENT=	change directory temporarily for a limited scope
 
@@ -9,7 +9,5 @@ CATEGORIES=	devel
 
 # Apache 2.0
 PERMIT_PACKAGE_CDROM=	Yes
-
-TEST_DEPENDS=	devel/p5-Test-Harness
 
 .include <bsd.port.mk>

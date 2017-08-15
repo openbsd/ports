@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2016/03/20 19:56:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2017/08/15 14:44:25 afresh1 Exp $
 
 COMMENT =	tiny replacement for Module::Build
 
@@ -21,8 +21,6 @@ RUN_DEPENDS =	devel/p5-ExtUtils-Config \
 
 # This module uses itself to install itself, so runs while it builds
 BUILD_DEPENDS =	${RUN_DEPENDS}
-
-TEST_DEPENDS =	devel/p5-Test-Harness
 
 do-install:
 	@cd ${WRKSRC} && perl \
