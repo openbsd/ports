@@ -1,30 +1,19 @@
-@comment $OpenBSD: PLIST,v 1.7 2015/03/16 18:07:37 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.8 2017/08/15 01:05:13 naddy Exp $
 @bin bin/speexdec
 @bin bin/speexenc
-include/speex/
 include/speex/speex.h
 include/speex/speex_bits.h
-include/speex/speex_buffer.h
 include/speex/speex_callbacks.h
 include/speex/speex_config_types.h
-include/speex/speex_echo.h
 include/speex/speex_header.h
-include/speex/speex_jitter.h
-include/speex/speex_preprocess.h
-include/speex/speex_resampler.h
 include/speex/speex_stereo.h
 include/speex/speex_types.h
 lib/libspeex.a
 lib/libspeex.la
 @lib lib/libspeex.so.${LIBspeex_VERSION}
-lib/libspeexdsp.a
-lib/libspeexdsp.la
-@lib lib/libspeexdsp.so.${LIBspeexdsp_VERSION}
 lib/pkgconfig/speex.pc
-lib/pkgconfig/speexdsp.pc
 @man man/man1/speexdec.1
 @man man/man1/speexenc.1
-share/aclocal/
 share/aclocal/speex.m4
 share/doc/speex/
 share/doc/speex/manual.pdf

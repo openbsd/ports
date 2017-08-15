@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.28 2016/03/11 20:28:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.29 2017/08/15 01:05:13 naddy Exp $
 
 COMMENT=	patent-free speech codec
 
-DISTNAME=	speex-1.2rc1
-REVISION=	1
+DISTNAME=	speex-1.2.0
 CATEGORIES=	audio
-HOMEPAGE=	http://www.speex.org/
-SHARED_LIBS +=	speex                8.0      # .6.0
-SHARED_LIBS +=	speexdsp             1.0      # .6.0
+HOMEPAGE=	https://speex.org/
+SHARED_LIBS=	speex	8.0	# 6.1
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
@@ -16,15 +14,15 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=	http://downloads.xiph.org/releases/speex/
 
-LIB_DEPENDS=	audio/libogg
-WANTLIB=	c m ogg>=5 sndio
+LIB_DEPENDS=	audio/libogg \
+		audio/speexdsp
+WANTLIB=	c m ogg sndio speexdsp
 
+SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	--with-ogg=${LOCALBASE}
+# binaries are intended to be enabled by default, but the configure
+# script is wrong
+CONFIGURE_ARGS=	--enable-binaries
 CONFIGURE_ENV=	CPPFLAGS="-DUSE_SNDIO"
-
-MAKE_FLAGS=	docdir=${TRUEPREFIX}/share/doc/speex \
-		mandir=${TRUEPREFIX}/man
-
 
 .include <bsd.port.mk>
