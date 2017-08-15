@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.35 2016/08/19 16:52:38 danj Exp $
+@comment $OpenBSD: PLIST-main,v 1.36 2017/08/15 15:44:44 danj Exp $
 @conflict claws-mail-attremover-*
 @conflict claws-mail-notification-*
 @conflict claws-mail-rssyl-*
@@ -195,7 +195,6 @@ include/claws-mail/plugins/claws-mail/gtkhotkey/gtk-hotkey-utils.h
 include/claws-mail/plugins/claws-mail/gtkhotkey/gtk-hotkey-x11-listener.h
 include/claws-mail/plugins/claws-mail/gtkhotkey/gtkhotkey.h
 include/claws-mail/plugins/claws-mail/gtkhotkey/tomboykeybinder.h
-include/claws-mail/plugins/claws-mail/ical.h
 include/claws-mail/plugins/pgpcore/
 include/claws-mail/plugins/pgpcore/autocompletion.h
 include/claws-mail/plugins/pgpcore/passphrase.h
@@ -314,8 +313,6 @@ lib/claws-mail/plugins/smime.la
 lib/claws-mail/plugins/smime.so
 lib/claws-mail/plugins/spamreport.la
 lib/claws-mail/plugins/spamreport.so
-lib/claws-mail/plugins/tnef_parse.la
-lib/claws-mail/plugins/tnef_parse.so
 lib/claws-mail/plugins/vcalendar.la
 lib/claws-mail/plugins/vcalendar.so
 lib/pkgconfig/claws-mail.pc

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.103 2017/07/26 22:45:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.104 2017/08/15 15:44:44 danj Exp $
 
 COMMENT-main=		mail and news client
 COMMENT-bogofilter=	bogofilter plugin
@@ -7,18 +7,13 @@ COMMENT-spamassassin=	spamassassin plugin
 COMMENT-pdfviewer=	pdfviewer plugin
 COMMENT-gdata=		gdata plugin
 
-V=			3.14.1
+V=			3.15.0
 DISTNAME=		claws-mail-${V}
 PKGNAME-main=		${DISTNAME}
 PKGNAME-bogofilter=	claws-mail-bogofilter-${V}
 PKGNAME-spamassassin=	claws-mail-spamassassin-${V}
 PKGNAME-pdfviewer=	claws-mail-pdfviewer-${V}
 PKGNAME-gdata=		claws-mail-gdata-${V}
-REVISION-main=		2
-REVISION-pdfviewer=	2
-REVISION-bogofilter=	1
-REVISION-gdata=		1
-REVISION-spamassassin=	1
 
 CATEGORIES=		mail news
 

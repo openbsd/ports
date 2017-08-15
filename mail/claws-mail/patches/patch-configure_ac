@@ -1,6 +1,7 @@
-$OpenBSD: patch-configure_ac,v 1.16 2017/02/02 12:04:43 danj Exp $
---- configure.ac.orig	Sun Nov  6 07:01:27 2016
-+++ configure.ac	Thu Feb  2 06:50:26 2017
+$OpenBSD: patch-configure_ac,v 1.17 2017/08/15 15:44:44 danj Exp $
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
 @@ -156,7 +156,7 @@ AM_CONDITIONAL(CYGWIN, test x"$env_cygwin" = x"yes")
  
  if test "$GCC" = "yes"
@@ -19,7 +20,7 @@ $OpenBSD: patch-configure_ac,v 1.16 2017/02/02 12:04:43 danj Exp $
  	*dragonfly*)
  		AC_SEARCH_LIBS(encrypt, cipher, [], AC_MSG_ERROR(['encrypt'-function not found.]))
  	;;
-@@ -781,6 +783,7 @@ if test x"$enable_alternate_addressbook" = xno; then
+@@ -784,6 +786,7 @@ if test x"$enable_alternate_addressbook" = xno; then
  		AC_CHECK_LIB(resolv, res_query, LDAP_LIBS="$LDAP_LIBS -lresolv")
  		AC_CHECK_LIB(socket, bind, LDAP_LIBS="$LDAP_LIBS -lsocket")
  		AC_CHECK_LIB(nsl, gethostbyaddr, LDAP_LIBS="$LDAP_LIBS -lnsl")
@@ -27,7 +28,7 @@ $OpenBSD: patch-configure_ac,v 1.16 2017/02/02 12:04:43 danj Exp $
  		AC_CHECK_LIB(lber, ber_get_tag, LDAP_LIBS="$LDAP_LIBS -llber",,
  				 $LDAP_LIBS)
  
-@@ -853,7 +856,7 @@ if test x"$enable_alternate_addressbook" = xno; then
+@@ -856,7 +859,7 @@ if test x"$enable_alternate_addressbook" = xno; then
  					   AC_DEFINE(USE_JPILOT, 1, Define if you want JPilot support in addressbook.) ])
  		fi
  
@@ -36,3 +37,12 @@ $OpenBSD: patch-configure_ac,v 1.16 2017/02/02 12:04:43 danj Exp $
  		if test x"$enable_jpilot" = xyes; then
  			AC_DEFINE(USE_JPILOT, 1, Define if you want JPilot support in addressbook.)
  		else
+@@ -1174,7 +1177,7 @@ AC_SUBST(ARCHIVE_CFLAGS)
+ AC_CHECK_LIB([archive], [archive_read_new],
+ 		       ARCHIVE_LIBS=-larchive
+ 		       HAVE_ARCHIVE=yes
+-		       AC_SUBST(ARCHIVE_LIBS,ARCHIVE_CFLAGS),
++		       AC_SUBST(ARCHIVE_LIBS),
+ 		       HAVE_ARCHIVE=no
+ 		       )
+ 
