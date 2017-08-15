@@ -67,12 +67,15 @@ SndioMixer::SndioMixer(const char *mixerDevice, baseMixer *next) : baseMixer(mix
 {
 	int i;
 
+	rt = 0;
+	memset(&s, 0, sizeof(s));
+
 	s.hdl = mio_open(mixerDevice, MIO_OUT | MIO_IN, 0);
 	if (!s.hdl) {
 		/* printf("could not open aucat volume socket\n"); */
 		return;
 	}
-	s.dev = strdup(mixerDevice);
+	strlcpy(s.dev, mixerDevice, sizeof(s.dev));
 
 	/* separate device for each channel */
 	for (i = 0; i < 16; i++) {
@@ -88,7 +91,8 @@ SndioMixer::SndioMixer(const char *mixerDevice, baseMixer *next) : baseMixer(mix
 SndioMixer::~SndioMixer()
 {
 	s.run_rt = 0;
-	pthread_join(rt, NULL);
+	if (rt != 0)
+		pthread_join(rt, NULL);
 
 	if (s.hdl)
 		mio_close(s.hdl);
@@ -142,9 +146,10 @@ const char *SndioMixer::Label(int device)
 {
 	char *dev;
 
-	dev = (char *)malloc(128);
-
-	snprintf(dev, 128, "%s.%d", s.dev, device);
+	if (strlen(s.dev) != 0 && asprintf(&dev, "%s.%d", s.dev, device) != -1)
+	    return dev;
+	else
+	    return strdup("<no device>");
 
 	return dev;
 }

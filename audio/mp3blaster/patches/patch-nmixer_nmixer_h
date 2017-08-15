@@ -1,6 +1,7 @@
-$OpenBSD: patch-nmixer_nmixer_h,v 1.1 2010/01/11 07:51:26 jakemsr Exp $
---- nmixer/nmixer.h.orig	Sat Jan 24 07:25:12 2009
-+++ nmixer/nmixer.h	Tue Dec 29 03:32:48 2009
+$OpenBSD: patch-nmixer_nmixer_h,v 1.2 2017/08/15 18:39:48 jca Exp $
+Index: nmixer/nmixer.h
+--- nmixer/nmixer.h.orig
++++ nmixer/nmixer.h
 @@ -24,7 +24,15 @@
  #include <audio/audiolib.h>
  #endif
@@ -27,7 +28,7 @@ $OpenBSD: patch-nmixer_nmixer_h,v 1.1 2010/01/11 07:51:26 jakemsr Exp $
 +
 +struct sdata {
 +	struct mio_hdl *hdl;
-+	char *dev;
++	char dev[128];
 +	int run_rt;
 +	int cvol[16];
 +};
