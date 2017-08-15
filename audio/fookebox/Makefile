@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.12 2016/09/02 10:24:29 landry Exp $
+# $OpenBSD: Makefile,v 1.13 2017/08/15 02:28:57 jasper Exp $
 
 COMMENT=		jukebox frontend to mpd
 
 MODPY_EGG_VERSION=	0.7.3
-DISTNAME=		fookebox-${MODPY_EGG_VERSION}
-GH_COMMIT=		2ddfe6780f04361d88fa51b0e7bac91dfb8d9018
+GH_TAGNAME=		fookebox-${MODPY_EGG_VERSION}
 GH_ACCOUNT=		cockroach
 GH_PROJECT=		fookebox
+PKGNAME=		fookebox-${MODPY_EGG_VERSION}
 CATEGORIES=		audio www
 
 # GPLv3
