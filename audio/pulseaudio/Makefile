@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.85 2017/07/26 22:45:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.86 2017/08/15 01:07:45 naddy Exp $
 
 # XXX
 # sndio: what to do with (channel) map
@@ -10,7 +10,7 @@ COMMENT=		cross-platform networked sound server
 VERSION=		10.0
 DISTNAME=		pulseaudio-${VERSION}
 EXTRACT_SUFX=		.tar.xz
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS +=  pulse                6.1      # .20.1
 SHARED_LIBS +=  pulse-simple         1.0      # .1.0
@@ -50,7 +50,7 @@ BUILD_DEPENDS +=	devel/check
 TEST_FLAGS=		HOME=${WRKDIST}
 
 LIB_DEPENDS=		audio/libsndfile \
-			audio/speex \
+			audio/speexdsp \
 			databases/gdbm \
 			devel/glib2 \
 			devel/libexecinfo \

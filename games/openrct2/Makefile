@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2017/07/27 09:55:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2017/08/15 01:07:45 naddy Exp $
 
 V =		0.1.0
 COMMENT =	open source re-implementation of RollerCoaster Tycoon 2
 DISTNAME =	openrct2-${V}
 CATEGORIES =	games x11
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=	openrct2                  1.0 # 1.0
 
@@ -28,7 +28,7 @@ COMPILER =	clang
 MODULES =	devel/cmake
 
 LIB_DEPENDS =	archivers/libzip \
-		audio/speex \
+		audio/speexdsp \
 		converters/libiconv \
 		devel/jansson \
 		devel/sdl2 \
