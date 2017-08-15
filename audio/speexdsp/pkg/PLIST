@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/08/15 01:02:40 naddy Exp $
+@conflict speex-<1.2rc2
+include/speex/
+include/speex/speex_echo.h
+include/speex/speex_jitter.h
+include/speex/speex_preprocess.h
+include/speex/speex_resampler.h
+include/speex/speexdsp_config_types.h
+include/speex/speexdsp_types.h
+lib/libspeexdsp.a
+lib/libspeexdsp.la
+@lib lib/libspeexdsp.so.${LIBspeexdsp_VERSION}
+lib/pkgconfig/speexdsp.pc
+share/doc/speexdsp/
+share/doc/speexdsp/manual.pdf

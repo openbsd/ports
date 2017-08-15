@@ -1,0 +1,2 @@
+SpeexDSP is a patent-free speech processing DSP library.  It includes
+a preprocessor, acoustic echo canceller, jitter buffer, and resampler.
