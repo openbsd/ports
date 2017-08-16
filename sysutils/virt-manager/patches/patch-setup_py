@@ -1,10 +1,11 @@
-$OpenBSD: patch-setup_py,v 1.5 2016/06/20 17:44:41 jasper Exp $
+$OpenBSD: patch-setup_py,v 1.6 2017/08/16 17:25:59 jasper Exp $
 
 - Adjust manpath
 
---- setup.py.orig	Sat Jun 18 00:12:27 2016
-+++ setup.py	Mon Jun 20 11:37:33 2016
-@@ -641,7 +641,7 @@ distutils.core.setup(
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -642,7 +642,7 @@ distutils.core.setup(
           ["data/org.virt-manager.virt-manager.convert"]),
          ("share/virt-manager/ui", glob.glob("ui/*.ui")),
  

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2017/04/28 21:26:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2017/08/16 17:25:59 jasper Exp $
 
 COMMENT=		GUI for managing virtual machines through libvirt
 
-DISTNAME=		virt-manager-1.4.1
+DISTNAME=		virt-manager-1.4.2
 CATEGORIES=		sysutils x11
 
 HOMEPAGE=		http://virt-manager.org/

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2017/04/28 21:26:13 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2017/08/16 17:25:59 jasper Exp $
 bin/virt-clone
 bin/virt-convert
 bin/virt-install
@@ -216,6 +216,7 @@ share/virt-manager/virtinst/devicehostdev.py
 share/virt-manager/virtinst/deviceinput.py
 share/virt-manager/virtinst/deviceinterface.py
 share/virt-manager/virtinst/devicememballoon.py
+share/virt-manager/virtinst/devicememory.py
 share/virt-manager/virtinst/devicepanic.py
 share/virt-manager/virtinst/deviceredirdev.py
 share/virt-manager/virtinst/devicerng.py
