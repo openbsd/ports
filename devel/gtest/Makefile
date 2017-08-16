@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2017/07/26 22:45:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2017/08/16 17:27:39 visa Exp $
 
 COMMENT =	C++ unit test framework
 
@@ -17,6 +17,10 @@ SHARED_LIBS +=	gtest_main	1.0   # .0.0
 CATEGORIES =	devel
 
 HOMEPAGE =	https://github.com/google/googletest
+
+.if ${MACHINE_ARCH} == "mips64" || ${MACHINE_ARCH} == "mips64el"
+CXXFLAGS +=	-mxgot
+.endif
 
 # New BSD
 PERMIT_PACKAGE_CDROM =	Yes
