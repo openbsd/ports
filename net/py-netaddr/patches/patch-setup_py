@@ -1,15 +1,16 @@
-$OpenBSD: patch-setup_py,v 1.1 2016/03/02 15:10:54 abieber Exp $
---- setup.py.orig	Tue Aug 25 15:54:04 2015
-+++ setup.py	Wed Mar  2 08:05:26 2016
-@@ -62,11 +62,6 @@ def main():
-         scripts          = release.scripts,
-         url              = release.url,
-         version          = release.version,
--        options = {
+$OpenBSD: patch-setup_py,v 1.2 2017/08/16 17:25:46 jasper Exp $
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -174,11 +174,6 @@ def main():
+         scripts=['netaddr/tools/netaddr'],
+         url='https://github.com/drkjam/netaddr/',
+         version=netaddr.__version__,
+-        options={
 -            'build_scripts': {
 -                'executable': '/usr/bin/env python',
 -            },
 -        },
      )
-
+ 
      setup(**setup_options)
