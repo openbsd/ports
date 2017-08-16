@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.33 2017/06/02 07:20:02 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.34 2017/08/16 17:25:20 jasper Exp $
 @bin bin/shotwell
 lib/libshotwell-authenticator.a
 lib/libshotwell-authenticator.la
@@ -17,8 +17,6 @@ libexec/shotwell/
 libexec/shotwell/shotwell-settings-migrator
 @bin libexec/shotwell/shotwell-video-thumbnailer
 @man man/man1/shotwell.1
-share/appdata/
-share/appdata/shotwell.appdata.xml
 share/applications/shotwell-viewer.desktop
 share/applications/shotwell.desktop
 share/glib-2.0/schemas/org.yorba.shotwell-extras.gschema.xml
@@ -480,8 +478,6 @@ share/locale/kk/LC_MESSAGES/shotwell.mo
 share/locale/km/LC_MESSAGES/shotwell.mo
 share/locale/kn/LC_MESSAGES/shotwell.mo
 share/locale/ko/LC_MESSAGES/shotwell.mo
-share/locale/ky/
-share/locale/ky/LC_MESSAGES/
 share/locale/ky/LC_MESSAGES/shotwell.mo
 share/locale/lt/LC_MESSAGES/shotwell.mo
 share/locale/lv/LC_MESSAGES/shotwell.mo
