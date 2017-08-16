@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.40 2017/04/21 13:27:46 kurt Exp $
+# $OpenBSD: Makefile,v 1.41 2017/08/16 17:24:15 jasper Exp $
 
 COMMENT=        build tool for java applications
 
-DISTNAME=	apache-ant-1.9.7
+DISTNAME=	apache-ant-1.10.1
 CATEGORIES=	devel
-REVISION=	0
 
 HOMEPAGE=	http://ant.apache.org/
 
@@ -18,7 +17,7 @@ MASTER_SITES=	${MASTER_SITE_APACHE:=ant/binaries/} \
 EXTRACT_SUFX=	-bin.tar.bz2
 
 MODULES=	java
-MODJAVA_VER=	1.6+
+MODJAVA_VER=	1.8+
 
 RUN_DEPENDS=	java/javaPathHelper
 
