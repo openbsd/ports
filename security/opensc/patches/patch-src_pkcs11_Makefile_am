@@ -1,31 +1,45 @@
-$OpenBSD: patch-src_pkcs11_Makefile_am,v 1.1 2016/06/07 14:08:44 dcoppa Exp $
---- src/pkcs11/Makefile.am.orig	Fri Jun  3 11:19:51 2016
-+++ src/pkcs11/Makefile.am	Tue Jun  7 14:53:12 2016
-@@ -1,5 +1,7 @@
+$OpenBSD: patch-src_pkcs11_Makefile_am,v 1.2 2017/08/16 14:39:07 dcoppa Exp $
+Index: src/pkcs11/Makefile.am
+--- src/pkcs11/Makefile.am.orig
++++ src/pkcs11/Makefile.am
+@@ -1,7 +1,9 @@
  include $(top_srcdir)/win32/ltrc.inc
  
 +override libdir = $(prefix)/lib/pkcs11
 +
  MAINTAINERCLEANFILES = $(srcdir)/Makefile.in $(srcdir)/versioninfo-pkcs11.rc $(srcdir)/versioninfo-pkcs11-spy.rc
- EXTRA_DIST = Makefile.mak versioninfo-pkcs11.rc.in versioninfo-pkcs11-spy.rc.in
+-EXTRA_DIST = Makefile.mak versioninfo-pkcs11.rc.in versioninfo-pkcs11-spy.rc.in opensc-pkcs11.pc.in
++EXTRA_DIST = Makefile.mak versioninfo-pkcs11.rc.in versioninfo-pkcs11-spy.rc.in
  
-@@ -24,6 +26,7 @@ opensc_pkcs11_la_LIBADD = $(OPENSC_PKCS11_LIBS)
+ lib_LTLIBRARIES = opensc-pkcs11.la pkcs11-spy.la onepin-opensc-pkcs11.la
+ 
+@@ -20,16 +22,13 @@ OPENSC_PKCS11_LIBS = \
+ 	$(top_builddir)/src/common/libcompat.la \
+ 	$(OPTIONAL_OPENSSL_LIBS) $(PTHREAD_LIBS)
+ 
+-pkgconfigdir = $(libdir)/pkgconfig
+-pkgconfig_DATA = opensc-pkcs11.pc
+-DISTCLEANFILES = $(pkgconfig_DATA)
+-
+ opensc_pkcs11_la_SOURCES = $(OPENSC_PKCS11_SRC) $(OPENSC_PKCS11_INC)
+ opensc_pkcs11_la_CFLAGS = $(OPENSC_PKCS11_CFLAGS)
+ opensc_pkcs11_la_LIBADD = $(OPENSC_PKCS11_LIBS)
  opensc_pkcs11_la_LDFLAGS = $(AM_LDFLAGS) \
  	-export-symbols "$(srcdir)/pkcs11.exports" \
  	-module -shared -avoid-version -no-undefined
 +opensc_pkcs11_la_LIBTOOLFLAGS = --tag=disable-static
  
  onepin_opensc_pkcs11_la_SOURCES = $(OPENSC_PKCS11_SRC) $(OPENSC_PKCS11_INC)
- onepin_opensc_pkcs11_la_CFLAGS = -DMODULE_APP_NAME=\"onepin-opensc-pkcs11\" $(AM_CFLAGS)
-@@ -31,6 +34,7 @@ onepin_opensc_pkcs11_la_LIBADD = $(OPENSC_PKCS11_LIBS)
+ onepin_opensc_pkcs11_la_CFLAGS = -DMODULE_APP_NAME=\"onepin-opensc-pkcs11\" $(OPENSC_PKCS11_CFLAGS)
+@@ -37,6 +36,7 @@ onepin_opensc_pkcs11_la_LIBADD = $(OPENSC_PKCS11_LIBS)
  onepin_opensc_pkcs11_la_LDFLAGS = $(AM_LDFLAGS) \
          -export-symbols "$(srcdir)/pkcs11.exports" \
          -module -shared -avoid-version -no-undefined
 +onepin_opensc_pkcs11_la_LIBTOOLFLAGS = --tag=disable-static
  
  pkcs11_spy_la_SOURCES = pkcs11-spy.c pkcs11-display.c pkcs11-display.h pkcs11.exports
- pkcs11_spy_la_LIBADD = \
-@@ -41,6 +45,7 @@ pkcs11_spy_la_LIBADD = \
+ pkcs11_spy_la_CFLAGS = $(OPTIONAL_OPENSSL_CFLAGS)
+@@ -48,6 +48,7 @@ pkcs11_spy_la_LIBADD = \
  pkcs11_spy_la_LDFLAGS = $(AM_LDFLAGS) \
  	-export-symbols "$(srcdir)/pkcs11.exports" \
  	-module -shared -avoid-version -no-undefined
@@ -33,7 +47,7 @@ $OpenBSD: patch-src_pkcs11_Makefile_am,v 1.1 2016/06/07 14:08:44 dcoppa Exp $
  
  if WIN32
  opensc_pkcs11_la_SOURCES += versioninfo-pkcs11.rc
-@@ -53,13 +58,4 @@ install-exec-hook:
+@@ -60,13 +61,4 @@ install-exec-hook:
  	for l in opensc-pkcs11.dll pkcs11-spy.dll; do \
  		mv "$(DESTDIR)$(libdir)/$$l" "$(DESTDIR)$(bindir)/$$l"; \
  	done

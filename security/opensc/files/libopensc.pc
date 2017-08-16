@@ -1,0 +1,10 @@
+prefix=/usr/local
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: libopensc
+Description: OpenSC smartcard framework
+Version: ${GH_TAGNAME}
+Libs: -L${libdir} -lopensc
+Cflags: -I${includedir}

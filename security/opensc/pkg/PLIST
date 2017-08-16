@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2016/06/07 14:08:44 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.11 2017/08/16 14:39:07 dcoppa Exp $
 @bin bin/cardos-tool
 @bin bin/cryptoflex-tool
 @bin bin/dnie-tool
@@ -6,6 +6,7 @@
 @bin bin/gids-tool
 @bin bin/iasecc-tool
 @bin bin/netkey-tool
+@bin bin/npa-tool
 @bin bin/openpgp-tool
 @bin bin/opensc-explorer
 @bin bin/opensc-tool
@@ -23,11 +24,8 @@ lib/libsmm-local.a
 lib/libsmm-local.la
 @lib lib/libsmm-local.so.${LIBsmm-local_VERSION}
 lib/pkcs11/
-lib/pkcs11/onepin-opensc-pkcs11.la
 lib/pkcs11/onepin-opensc-pkcs11.so
-lib/pkcs11/opensc-pkcs11.la
 lib/pkcs11/opensc-pkcs11.so
-lib/pkcs11/pkcs11-spy.la
 lib/pkcs11/pkcs11-spy.so
 lib/pkgconfig/libopensc.pc
 @man man/man1/cardos-tool.1
@@ -37,6 +35,7 @@ lib/pkgconfig/libopensc.pc
 @man man/man1/gids-tool.1
 @man man/man1/iasecc-tool.1
 @man man/man1/netkey-tool.1
+@man man/man1/npa-tool.1
 @man man/man1/openpgp-tool.1
 @man man/man1/opensc-explorer.1
 @man man/man1/opensc-tool.1

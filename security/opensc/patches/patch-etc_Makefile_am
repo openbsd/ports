@@ -1,0 +1,18 @@
+$OpenBSD: patch-etc_Makefile_am,v 1.1 2017/08/16 14:39:07 dcoppa Exp $
+
+Index: etc/Makefile.am
+--- etc/Makefile.am.orig
++++ etc/Makefile.am
+@@ -32,11 +32,7 @@ opensc.conf: opensc.conf.in force
+ 
+ install-exec-hook: opensc.conf
+ 	$(MKDIR_P) "$(DESTDIR)$(sysconfdir)"
+-	if [ -f "$(DESTDIR)$(sysconfdir)/opensc.conf" ]; then \
+-		$(INSTALL_DATA) opensc.conf "$(DESTDIR)$(sysconfdir)/opensc.conf.new"; \
+-	else \
+-		$(INSTALL_DATA) opensc.conf "$(DESTDIR)$(sysconfdir)/opensc.conf"; \
+-	fi
++	$(INSTALL_DATA) opensc.conf "$(DESTDIR)$(sysconfdir)/opensc.conf"
+ 
+ uninstall-hook: opensc.conf
+ 	rm -f "$(DESTDIR)$(sysconfdir)/opensc.conf.new" "$(DESTDIR)$(sysconfdir)/opensc.conf"

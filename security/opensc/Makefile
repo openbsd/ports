@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.41 2016/11/24 09:54:51 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.42 2017/08/16 14:39:07 dcoppa Exp $
 
 COMMENT=	set of libraries and utilities to access smart cards
 
-VERSION=	0.16.0
+VERSION=	0.17.0
 DISTNAME=	OpenSC-${VERSION}
 PKGNAME=	opensc-${VERSION}
-REVISION=	7
 GH_ACCOUNT=	OpenSC
 GH_PROJECT=	${GH_ACCOUNT}
 GH_TAGNAME=	${VERSION}
+SUBST_VARS +=	GH_TAGNAME
 
-SHARED_LIBS +=  opensc 5.0	# 4.0
-SHARED_LIBS +=	smm-local 1.0	# 4.0
+SHARED_LIBS +=  opensc 6.0	# 5.0
+SHARED_LIBS +=	smm-local 2.0	# 5.0
 
 CATEGORIES=	security
 
@@ -37,6 +37,7 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--enable-static \
 		--sysconfdir=${SYSCONFDIR} \
 		--enable-sm \
+		--disable-cryptotokenkit \
 		--with-xsl-stylesheetsdir=${LOCALBASE}/share/xsl/docbook
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/PCSC"
 
@@ -52,7 +53,10 @@ pre-configure:
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/pkgconfig
-	${INSTALL_DATA} ${WRKBUILD}/src/libopensc/libopensc.pc \
-		${PREFIX}/lib/pkgconfig/
+	${SUBST_CMD} -c -m 0644 -o ${BINOWN} -g ${BINGRP} \
+		${FILESDIR}/libopensc.pc \
+			${PREFIX}/lib/pkgconfig/libopensc.pc
+	@find ${PREFIX}/lib/pkcs11/ -name '*.la' -print0 | \
+		xargs -0r rm -f
 
 .include <bsd.port.mk>

@@ -1,7 +1,8 @@
-$OpenBSD: patch-src_tests_Makefile_am,v 1.1 2016/06/07 14:08:44 dcoppa Exp $
---- src/tests/Makefile.am.orig	Tue Jun  7 15:09:43 2016
-+++ src/tests/Makefile.am	Tue Jun  7 15:10:08 2016
-@@ -10,7 +10,8 @@ AM_CPPFLAGS = -I$(top_srcdir)/src
+$OpenBSD: patch-src_tests_Makefile_am,v 1.2 2017/08/16 14:39:07 dcoppa Exp $
+Index: src/tests/Makefile.am
+--- src/tests/Makefile.am.orig
++++ src/tests/Makefile.am
+@@ -11,7 +11,8 @@ AM_CFLAGS = $(OPTIONAL_OPENSSL_CFLAGS)
  LIBS = \
  	$(top_builddir)/src/libopensc/libopensc.la \
  	$(top_builddir)/src/common/libscdl.la \

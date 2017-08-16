@@ -1,12 +1,13 @@
-$OpenBSD: patch-configure_ac,v 1.6 2016/06/28 12:56:34 dcoppa Exp $
+$OpenBSD: patch-configure_ac,v 1.7 2017/08/16 14:39:07 dcoppa Exp $
 
 Fix version string
 
 libdl is not required on OpenBSD
 
---- configure.ac.orig	Fri Jun  3 11:19:51 2016
-+++ configure.ac	Tue Jun 28 14:02:05 2016
-@@ -306,30 +306,9 @@ elif test "${xslstylesheetsdir}" != "no"; then
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -327,30 +327,9 @@ elif test "${xslstylesheetsdir}" != "no"; then
  fi
  AC_MSG_RESULT([${xslstylesheetsdir}])
  
@@ -17,7 +18,7 @@ libdl is not required on OpenBSD
 -	GIT_CHECKOUT="yes"
 -fi
 -AC_MSG_RESULT([${GIT_CHECKOUT}])
-+OPENSC_SCM_REVISION="OpenSC-0.16.0, rev: 7eeba1f, commit-time: 2016-06-03 09:19:51 +0000"
++OPENSC_SCM_REVISION="OpenSC-0.17.0, rev: 43951252, commit-time: 2017-07-18 14:29:50 +0000"
 +OPENSC_VERSION_REVISION="0"
  
 -if test "${GIT_CHECKOUT}" = "yes"; then
@@ -39,7 +40,7 @@ libdl is not required on OpenBSD
  dnl C Compiler features
  AC_C_INLINE
  
-@@ -380,11 +359,6 @@ AC_CHECK_LIB(
+@@ -401,11 +380,6 @@ AC_CHECK_LIB(
  )
  
  if test "${WIN32}" = "no"; then
@@ -51,10 +52,10 @@ libdl is not required on OpenBSD
  	dnl Special check for pthread support.
  	AX_PTHREAD(
  		[AC_DEFINE(
-@@ -769,7 +743,6 @@ AM_CONDITIONAL([CYGWIN], [test "${CYGWIN}" = "yes"])
- AM_CONDITIONAL([ENABLE_MINIDRIVER], [test "${enable_minidriver}" = "yes"])
+@@ -931,7 +905,6 @@ AM_CONDITIONAL([ENABLE_MINIDRIVER_SETUP_CUSTOMACTION],
  AM_CONDITIONAL([ENABLE_SM], [test "${enable_sm}" = "yes"])
  AM_CONDITIONAL([ENABLE_DNIE_UI], [test "${enable_dnie_ui}" = "yes"])
+ AM_CONDITIONAL([ENABLE_NPATOOL], [test "${ENABLE_NPATOOL}" = "yes"])
 -AM_CONDITIONAL([GIT_CHECKOUT], [test "${GIT_CHECKOUT}" = "yes"])
  
  if test "${enable_pedantic}" = "yes"; then
