@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2017/05/28 09:39:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2017/08/16 17:24:42 jasper Exp $
 
 COMMENT=		transforming bitmaps into vector graphics
 
-DISTNAME=		potrace-1.14
+DISTNAME=		potrace-1.15
 SHARED_LIBS +=  potrace              0.1      # 0.3
 CATEGORIES=		graphics
 
