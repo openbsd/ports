@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2017/06/25 12:05:09 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2017/08/17 09:47:24 ajacoutot Exp $
 @bin bin/appstream-builder
 @bin bin/appstream-compose
 @bin bin/appstream-util
@@ -50,6 +50,7 @@ lib/pkgconfig/appstream-glib.pc
 @man man/man1/appstream-builder.1
 @man man/man1/appstream-compose.1
 @man man/man1/appstream-util.1
+share/aclocal/appdata-xml.m4
 share/aclocal/appstream-xml.m4
 share/bash-completion/completions/appstream-builder
 share/bash-completion/completions/appstream-util

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.28 2017/06/26 13:36:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2017/08/17 09:47:24 ajacoutot Exp $
 
 COMMENT=		library for AppStream metadata
 
-DISTNAME=		appstream-glib-0.7.0
+DISTNAME=		appstream-glib-0.7.1
 EXTRACT_SUFX=		.tar.xz
 
 SHARED_LIBS +=  appstream-glib       3.0
@@ -47,6 +47,9 @@ CONFIGURE_ARGS=		-Denable-rpm=false
 
 # requires libstemmer
 CONFIGURE_ARGS +=	-Denable-stemmer=false
+
+# needed for `make test'
+PORTHOME=		${WRKDIST}
 
 ### XXX the meson MODULE should handle these
 pre-configure:
