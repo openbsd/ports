@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.32 2017/02/26 11:15:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.33 2017/08/17 18:52:33 jasper Exp $
 
 COMMENT=	graphics viewer for KVM guest displays
 BROKEN-hppa=	build stuck on virt-viewer-window.c
 
-DISTNAME=	virt-viewer-5.0
+DISTNAME=	virt-viewer-6.0
 CATEGORIES=	x11
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
