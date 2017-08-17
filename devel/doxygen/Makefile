@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2017/07/26 22:45:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.44 2017/08/17 14:31:37 visa Exp $
 
 # Memory hog, stuck for days on the same file (configoptions.cpp) during build.
 # XXX check with different optimizer level? see doc/install.doc
@@ -35,8 +35,7 @@ MODULES=	devel/cmake \
 MODPY_RUNDEP=	No
 
 .if ${MACHINE_ARCH} == "mips64" || ${MACHINE_ARCH} == "mips64el"
-# ld(1) fails
-CONFIGURE_ARGS+=-Denglish_only:Bool=ON
+CXXFLAGS+=	-mxgot
 .endif
 
 BUILD_DEPENDS+=	devel/bison
