@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2017/04/13 07:38:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2017/08/17 06:14:17 ajacoutot Exp $
 
 COMMENT=		media art extraction and cache management library
 
 GNOME_PROJECT=		libmediaart
-GNOME_VERSION=		1.9.1
+GNOME_VERSION=		1.9.4
 
-SHARED_LIBS +=  mediaart-2.0         1.0      # 901.0
+SHARED_LIBS +=  mediaart-2.0         1.1      # 904.0
 
 CATEGORIES=		multimedia
 

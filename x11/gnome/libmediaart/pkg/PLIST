@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.5 2017/03/06 08:10:10 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2017/08/17 06:14:17 ajacoutot Exp $
 include/libmediaart-2.0/
 include/libmediaart-2.0/libmediaart/
 include/libmediaart-2.0/libmediaart/cache.h
 include/libmediaart-2.0/libmediaart/extract.h
 include/libmediaart-2.0/libmediaart/extractgeneric.h
+include/libmediaart-2.0/libmediaart/mediaart-macros.h
 include/libmediaart-2.0/libmediaart/mediaart.h
 lib/girepository-1.0/MediaArt-2.0.typelib
 lib/libmediaart-2.0.a
