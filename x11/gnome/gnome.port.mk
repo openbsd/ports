@@ -1,4 +1,4 @@
-# $OpenBSD: gnome.port.mk,v 1.106 2017/04/28 10:55:09 naddy Exp $
+# $OpenBSD: gnome.port.mk,v 1.107 2017/08/17 09:27:08 ajacoutot Exp $
 #
 # Module for GNOME related ports
 
@@ -29,6 +29,10 @@ MODULES+=		textproc/intltool
 USE_GMAKE?=		Yes
 .    endif
 .  endif
+.endif
+
+.if defined(BUILD_DEPENDS) && !${BUILD_DEPENDS:Mdevel/appstream-glib}
+MODGNOME_pre-configure += ln -sf /usr/bin/true ${WRKDIR}/bin/appstream-util;
 .endif
 
 .if ${CONFIGURE_STYLE:Mgnu} || ${CONFIGURE_STYLE:Msimple}
@@ -97,7 +101,6 @@ ERRORS += "Fatal: unknown MODGNOME_TOOLS option: ${_t}\n(not in ${_VALID_TOOLS})
 
 .   if ${MODGNOME_TOOLS:Mdesktop-file-utils}
 MODGNOME_RUN_DEPENDS +=	devel/desktop-file-utils
-MODGNOME_pre-configure += ln -sf /usr/bin/true ${WRKDIR}/bin/appstream-util;
 MODGNOME_pre-configure += ln -sf /usr/bin/true ${WRKDIR}/bin/desktop-file-validate;
 .   endif
 
