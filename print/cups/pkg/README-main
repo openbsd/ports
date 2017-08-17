@@ -1,8 +1,14 @@
-$OpenBSD: README-main,v 1.17 2017/08/01 12:18:35 ajacoutot Exp $
+$OpenBSD: README-main,v 1.18 2017/08/17 08:53:36 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
 +-----------------------------------------------------------------------
+
+WARNING: CUPS lp commands are not compatible with the base system ones. When
+using the CUPS command line, make sure to use the full path, e.g.
+    ${PREFIX}/bin/lpr
+The same is true for manual pages, e.g.
+    man -m ${PREFIX}/man lpr
 
 Adding and/or configuring CUPS printers can be done with lpadmin(8), but
 for a quick and easy (graphical) setup, after starting the CUPS daemon,
