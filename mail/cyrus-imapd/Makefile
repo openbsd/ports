@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.107 2017/07/26 22:45:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.108 2017/08/17 05:33:01 ajacoutot Exp $
+
+PORTROACH=		limitw:1,even
 
 COMMENT=		Cyrus IMAP server
 
