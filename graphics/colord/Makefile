@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.62 2016/10/05 08:10:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.63 2017/08/17 13:33:36 ajacoutot Exp $
 
-PORTROACH=	limitw:1,even
+# XXX newer versions hard depend on gusb and udev...
+PORTROACH=	skipv:1.4.0
 
 COMMENT=	device color profile management daemon
 
-V=		1.3.3
+V=		1.3.5
 DISTNAME=	colord-${V}
 EXTRACT_SUFX=	.tar.xz
 
 SHARED_LIBS +=  colordprivate        1.1      # 2.5
-SHARED_LIBS +=  colord               1.4      # 2.5
+SHARED_LIBS +=  colord               1.5      # 2.5
 
 CATEGORIES=	graphics print
 
