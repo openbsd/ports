@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.281 2017/07/18 07:59:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.282 2017/08/17 09:32:52 ajacoutot Exp $
 
 COMMENT=		integrated email and PIM software for GNOME
 
 GNOME_PROJECT=		evolution
-GNOME_VERSION=		3.24.4
+GNOME_VERSION=		3.24.5
 
 CATEGORIES=		mail
 
@@ -29,7 +29,7 @@ WANTLIB += edataserverui-1.2 enchant gailutil-3 gcr-base-3 gcr-ui-3
 WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gnome-autoar-0
 WANTLIB += gnome-autoar-gtk-0 gnome-desktop-3 gobject-2.0 gtk-3
 WANTLIB += gtkspell3-3 gweather-3 ical icalvcal intl ldap
-WANTLIB += m notify nspr4 nss3 pango-1.0 pangocairo-1.0 pst pthread
+WANTLIB += m notify nspr4 nss3 pango-1.0 pangocairo-1.0 pst
 WANTLIB += secret-1 smime3 soup-2.4 sqlite3 webkit2gtk-4.0 xml2
 
 MODULES=		devel/cmake \
