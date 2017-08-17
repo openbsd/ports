@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2017/06/22 08:54:16 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.23 2017/08/17 12:15:15 ajacoutot Exp $
 @pkgpath mail/cyrus-imapd,-main,kerberos
 @pkgpath mail/cyrus-imapd,-main
 @pkgpath mail/cyrus-imapd,-perl
@@ -417,6 +417,7 @@ share/doc/cyrus-imapd/html/imap/download/release-notes/3.0/x/3.0.0-rc4.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.0/x/3.0.0.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.0/x/3.0.1.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.0/x/3.0.2.html
+share/doc/cyrus-imapd/html/imap/download/release-notes/3.0/x/3.0.3.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/index.html
 share/doc/cyrus-imapd/html/imap/download/upgrade.html
 share/doc/cyrus-imapd/html/imap/installing.html
@@ -483,6 +484,7 @@ share/doc/cyrus-imapd/html/imap/reference/faqs/feature-duplicate-delivery.html
 share/doc/cyrus-imapd/html/imap/reference/faqs/install-compilationerrors.html
 share/doc/cyrus-imapd/html/imap/reference/faqs/install-detecting-berkeley.html
 share/doc/cyrus-imapd/html/imap/reference/faqs/install-install-help.html
+share/doc/cyrus-imapd/html/imap/reference/faqs/install-linkerwarnings.html
 share/doc/cyrus-imapd/html/imap/reference/faqs/interop-8bit.html
 share/doc/cyrus-imapd/html/imap/reference/faqs/interop-barenewlines.html
 share/doc/cyrus-imapd/html/imap/reference/faqs/interop-sieve-exim.html
@@ -621,6 +623,7 @@ share/doc/cyrus-imapd/html/search.html
 share/doc/cyrus-imapd/html/searchindex.js
 share/doc/cyrus-imapd/html/setup.html
 share/doc/cyrus-imapd/html/sitemap.html
+share/doc/cyrus-imapd/html/sitemap.xml
 share/doc/cyrus-imapd/html/styles.html
 share/doc/cyrus-imapd/html/support.html
 share/doc/cyrus-imapd/internal/
