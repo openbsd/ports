@@ -1,31 +1,26 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/06/15 08:30:24 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2017/08/17 18:52:18 jasper Exp $
 @bin bin/nitrogen
 @man man/man1/nitrogen.1
-share/icons/
-share/icons/hicolor/
-share/icons/hicolor/128x128/
-share/icons/hicolor/128x128/apps/
+share/appdata/
+share/appdata/nitrogen.appdata.xml
+share/applications/
+share/applications/nitrogen.desktop
 share/icons/hicolor/128x128/apps/nitrogen.png
-share/icons/hicolor/16x16/
-share/icons/hicolor/16x16/actions/
 share/icons/hicolor/16x16/actions/wallpaper-centered.png
 share/icons/hicolor/16x16/actions/wallpaper-scaled.png
 share/icons/hicolor/16x16/actions/wallpaper-tiled.png
 share/icons/hicolor/16x16/actions/wallpaper-zoomed.png
-share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/nitrogen.png
-share/icons/hicolor/16x16/devices/
 share/icons/hicolor/16x16/devices/video-display.png
-share/icons/hicolor/16x16/mimetypes/
 share/icons/hicolor/16x16/mimetypes/image-x-generic.png
-share/icons/hicolor/22x22/
-share/icons/hicolor/22x22/apps/
 share/icons/hicolor/22x22/apps/nitrogen.png
-share/icons/hicolor/32x32/
-share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/nitrogen.png
-share/icons/hicolor/48x48/
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/nitrogen.png
+share/locale/bs/LC_MESSAGES/nitrogen.mo
+share/locale/fi/LC_MESSAGES/nitrogen.mo
+share/locale/hr/LC_MESSAGES/nitrogen.mo
+share/locale/pl/LC_MESSAGES/nitrogen.mo
+share/locale/ru/LC_MESSAGES/nitrogen.mo
+share/locale/sr/LC_MESSAGES/nitrogen.mo
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_Thumbview_cc,v 1.3 2017/08/17 18:52:18 jasper Exp $
+
+Thumbview.cc:487:26: warning: format specifies type 'long' but the argument
+has type 'time_t' (aka 'long long') [-Wformat]
+
+Index: src/Thumbview.cc
+--- src/Thumbview.cc.orig
++++ src/Thumbview.cc
+@@ -484,7 +484,7 @@ void Thumbview::create_cache_images()
+ 		time_t mtime = get_file_mtime(file);
+ 
+ 		char *bufout = new char[20];
+-		sprintf(bufout, "%ld", mtime);
++		sprintf(bufout, "%lld", mtime);
+ 
+ 		opts.push_back(Glib::ustring("tEXt::Thumb::MTime"));
+ 		vals.push_back(Glib::ustring(bufout));
