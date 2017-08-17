@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2015/06/02 17:02:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2017/08/17 18:49:24 jasper Exp $
 
 COMMENT =		troff to DocBook converter
 
-DISTNAME =		doclifter-2.15
+DISTNAME =		doclifter-2.17
 
 CATEGORIES =		textproc
 
@@ -19,13 +19,13 @@ MODPY_ADJ_FILES =	doclifter manlifter
 
 NO_BUILD =		Yes
 
-do-test:
-	cd ${WRKSRC}/tests && ${MAKE}
-
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/doclifter ${WRKSRC}/manlifter \
 		${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/doclifter.1 ${WRKSRC}/manlifter.1 \
 		${PREFIX}/man/man1
+
+do-test:
+	cd ${WRKSRC}/tests && ${MAKE}
 
 .include <bsd.port.mk>
