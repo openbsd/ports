@@ -1,13 +1,14 @@
-$OpenBSD: patch-Makefile,v 1.5 2014/04/30 05:09:29 dcoppa Exp $
---- Makefile.orig	Mon Dec  9 21:52:28 2013
-+++ Makefile	Wed Apr 30 07:05:05 2014
+$OpenBSD: patch-Makefile,v 1.6 2017/08/17 11:28:00 dcoppa Exp $
+Index: Makefile
+--- Makefile.orig
++++ Makefile
 @@ -5,8 +5,8 @@
  # http://miniupnp.free.fr/libnatpmp.html
  
  OS = $(shell uname -s)
 -CC = gcc
 -INSTALL = install -p
-+CC ?= gcc
++CC ?= cc
 +INSTALL ?= install -p
  ARCH = $(shell uname -m | sed -e s/i.86/i686/)
  VERSION = $(shell cat VERSION)
@@ -24,20 +25,24 @@ $OpenBSD: patch-Makefile,v 1.5 2014/04/30 05:09:29 dcoppa Exp $
    SONAMEFLAGS=-Wl,-soname,$(JNISHAREDLIB)
  endif
  endif
-@@ -93,13 +93,12 @@ depend:
+@@ -92,14 +92,13 @@ depend:
+ 	makedepend -f$(MAKEFILE_LIST) -Y $(OBJS:.o=.c) 2>/dev/null
  
  install:	$(HEADERS) $(STATICLIB) $(SHAREDLIB) natpmpc-shared
- 	$(INSTALL) -d $(INSTALLDIRINC)
+-	$(INSTALL) -d $(INSTALLDIRINC)
 -	$(INSTALL) -m 644 $(HEADERS) $(INSTALLDIRINC)
-+	$(INSTALL_DATA) $(HEADERS) $(INSTALLDIRINC)
- 	$(INSTALL) -d $(INSTALLDIRLIB)
+-	$(INSTALL) -d $(INSTALLDIRLIB)
 -	$(INSTALL) -m 644 $(STATICLIB) $(INSTALLDIRLIB)
 -	$(INSTALL) -m 644 $(SHAREDLIB) $(INSTALLDIRLIB)/$(SONAME)
-+	$(INSTALL_DATA) $(STATICLIB) $(INSTALLDIRLIB)
-+	$(INSTALL_DATA) $(SHAREDLIB) $(INSTALLDIRLIB)/$(SONAME)
- 	$(INSTALL) -d $(INSTALLDIRBIN)
+-	$(INSTALL) -d $(INSTALLDIRBIN)
 -	$(INSTALL) -m 755 natpmpc-shared $(INSTALLDIRBIN)/natpmpc
 -	ln -s -f $(SONAME) $(INSTALLDIRLIB)/$(SHAREDLIB)
++	$(INSTALL_DATA_DIR) $(INSTALLDIRINC)
++	$(INSTALL_DATA) $(HEADERS) $(INSTALLDIRINC)
++	$(INSTALL_DATA_DIR) $(INSTALLDIRLIB)
++	$(INSTALL_DATA) $(STATICLIB) $(INSTALLDIRLIB)
++	$(INSTALL_DATA) $(SHAREDLIB) $(INSTALLDIRLIB)/$(SONAME)
++	$(INSTALL_PROGRAM_DIR) $(INSTALLDIRBIN)
 +	$(INSTALL_PROGRAM) natpmpc-shared $(INSTALLDIRBIN)/natpmpc
  
  $(JNIHEADERS): fr/free/miniupnp/libnatpmp/NatPmp.class
