@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.22 2017/07/26 22:45:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2017/08/17 10:06:12 dcoppa Exp $
 
 COMMENT =	e-donkey client
-DISTNAME =	mldonkey-3.1.5
-REVISION =	6
+
+VER =		3.1.6
+DISTNAME =	mldonkey-${VER}
+
 CATEGORIES =	net
 
 HOMEPAGE =	http://mldonkey.sourceforge.net/Main_Page
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=mldonkey/}
 
 MAINTAINER =	David Coppa <dcoppa@openbsd.org>
 
@@ -19,6 +20,8 @@ WANTLIB += freetype gd gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gobject-2.0 gtk-x11-2.0 jpeg m magic miniupnpc natpmp
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 png pthread rsvg-2
 WANTLIB += ${COMPILER_LIBCXX} tiff webp z
+
+MASTER_SITES =	https://github.com/ygrek/mldonkey/releases/download/release-${VER:S/./-/g}/
 
 EXTRACT_SUFX =		.tar.bz2
 
