@@ -1,4 +1,4 @@
-$OpenBSD: patch-makefile,v 1.3 2017/05/28 11:49:39 ajacoutot Exp $
+$OpenBSD: patch-makefile,v 1.4 2017/08/17 12:24:30 ajacoutot Exp $
 Index: makefile
 --- makefile.orig
 +++ makefile
@@ -12,10 +12,10 @@ Index: makefile
  coverage:: build-linux
  	$(BGO_SPACE)/Tools/src/coverage.sh github.com/aws/amazon-ssm-agent/agent/...
  
--build:: build-linux build-freebsd build-windows build-linux-386 build-windows-386
-+build:: build-linux build-freebsd build-openbsd build-windows build-linux-386 build-openbsd-386 build-windows-386
+-build:: build-linux build-freebsd build-windows build-linux-386 build-windows-386 build-arm
++build:: build-linux build-freebsd build-openbsd build-windows build-linux-386 build-windows-386 build-arm
  
- prepack:: cpy-plugins prepack-linux prepack-linux-386 prepack-windows prepack-windows-386
+ prepack:: cpy-plugins prepack-linux prepack-linux-386 prepack-windows prepack-windows-386 prepack-arm
  
 @@ -121,6 +121,14 @@ build-freebsd: checkstyle copy-src pre-build
  	GOOS=freebsd GOARCH=amd64 $(GO_BUILD) -ldflags "-s -w" -o $(BGO_SPACE)/bin/freebsd_amd64/ssm-cli -v \
