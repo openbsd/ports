@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2017/08/08 22:30:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2017/08/17 18:51:51 jasper Exp $
 
 COMMENT =		YAML 1.2 loader/dumper package for Python
 
-MODPY_EGG_VERSION =	0.15.23
+MODPY_EGG_VERSION =	0.15.28
 DISTNAME =		ruamel.yaml-${MODPY_EGG_VERSION}
-REVISION =		0
 PKGNAME =		py-${DISTNAME}
 
 CATEGORIES =		textproc
