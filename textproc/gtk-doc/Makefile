@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2017/08/17 08:32:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.51 2017/08/17 08:32:40 ajacoutot Exp $
 
 COMMENT=		GTK C code documentation system
 
@@ -16,7 +16,6 @@ MODULES=		lang/python \
 			x11/gnome
 
 MODGNOME_TOOLS=		docbook yelp
-MODPY_RUNDEP=		No
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-highlight=source-highlight
