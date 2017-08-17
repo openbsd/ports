@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2016/03/22 12:59:44 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.20 2017/08/17 08:32:07 ajacoutot Exp $
 bin/gtkdoc-check
 bin/gtkdoc-depscan
 bin/gtkdoc-fixxref
@@ -6,7 +6,6 @@ bin/gtkdoc-mkdb
 bin/gtkdoc-mkhtml
 bin/gtkdoc-mkman
 bin/gtkdoc-mkpdf
-bin/gtkdoc-mktmpl
 bin/gtkdoc-rebase
 bin/gtkdoc-scan
 bin/gtkdoc-scangobj
@@ -19,14 +18,9 @@ share/aclocal/gtk-doc.m4
 share/gtk-doc/data/
 share/gtk-doc/data/devhelp2.xsd
 share/gtk-doc/data/devhelp2.xsl
-share/gtk-doc/data/gtk-doc.dcl
-share/gtk-doc/data/gtk-doc.dsl
 share/gtk-doc/data/gtk-doc.flat.make
 share/gtk-doc/data/gtk-doc.make
-share/gtk-doc/data/gtk-doc.notmpl-flat.make
-share/gtk-doc/data/gtk-doc.notmpl.make
 share/gtk-doc/data/gtk-doc.xsl
-share/gtk-doc/data/gtkdoc-common.pl
 share/gtk-doc/data/home.png
 share/gtk-doc/data/left-insensitive.png
 share/gtk-doc/data/left.png
@@ -36,6 +30,21 @@ share/gtk-doc/data/style.css
 share/gtk-doc/data/up-insensitive.png
 share/gtk-doc/data/up.png
 share/gtk-doc/data/version-greater-or-equal.xsl
+share/gtk-doc/python/
+share/gtk-doc/python/gtkdoc/
+share/gtk-doc/python/gtkdoc/__init__.py
+share/gtk-doc/python/gtkdoc/check.py
+share/gtk-doc/python/gtkdoc/common.py
+share/gtk-doc/python/gtkdoc/config.py
+share/gtk-doc/python/gtkdoc/fixxref.py
+share/gtk-doc/python/gtkdoc/md_to_db.py
+share/gtk-doc/python/gtkdoc/mkdb.py
+share/gtk-doc/python/gtkdoc/mkhtml.py
+share/gtk-doc/python/gtkdoc/mkman.py
+share/gtk-doc/python/gtkdoc/mkpdf.py
+share/gtk-doc/python/gtkdoc/rebase.py
+share/gtk-doc/python/gtkdoc/scan.py
+share/gtk-doc/python/gtkdoc/scangobj.py
 share/help/
 share/help/C/
 share/help/C/gtk-doc-manual/
@@ -45,6 +54,10 @@ share/help/bn_IN/
 share/help/bn_IN/gtk-doc-manual/
 share/help/bn_IN/gtk-doc-manual/fdl-appendix.xml
 share/help/bn_IN/gtk-doc-manual/index.docbook
+share/help/cs/
+share/help/cs/gtk-doc-manual/
+share/help/cs/gtk-doc-manual/fdl-appendix.xml
+share/help/cs/gtk-doc-manual/index.docbook
 share/help/de/
 share/help/de/gtk-doc-manual/
 share/help/de/gtk-doc-manual/fdl-appendix.xml
@@ -98,5 +111,3 @@ share/help/zh_CN/gtk-doc-manual/
 share/help/zh_CN/gtk-doc-manual/fdl-appendix.xml
 share/help/zh_CN/gtk-doc-manual/index.docbook
 share/pkgconfig/gtk-doc.pc
-share/sgml/gtk-doc/
-share/sgml/gtk-doc/gtk-doc.cat

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.49 2016/03/22 12:59:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.50 2017/08/17 08:32:07 ajacoutot Exp $
 
 COMMENT=		GTK C code documentation system
 
-GNOME_VERSION=		1.25
+GNOME_VERSION=		1.26
 GNOME_PROJECT=		gtk-doc
 
 CATEGORIES= 	   	textproc devel
@@ -28,11 +28,9 @@ PKG_ARCH=		*
 
 # glib2 needed to build regression tests
 BUILD_DEPENDS=		devel/glib2 \
-			textproc/openjade \
 			textproc/source-highlight
 
 RUN_DEPENDS=		textproc/docbook-xsl \
-			textproc/openjade \
 			textproc/source-highlight
 
 .include <bsd.port.mk>
