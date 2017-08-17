@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.39 2017/02/28 08:53:07 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.40 2017/08/17 12:08:16 ajacoutot Exp $
 @bin bin/pango-view
 include/pango-1.0/
 include/pango-1.0/pango/
@@ -61,49 +61,3 @@ share/gir-1.0/Pango-1.0.gir
 share/gir-1.0/PangoCairo-1.0.gir
 share/gir-1.0/PangoFT2-1.0.gir
 share/gir-1.0/PangoXft-1.0.gir
-share/gtk-doc/html/pango/
-share/gtk-doc/html/pango/PangoEngineLang.html
-share/gtk-doc/html/pango/PangoEngineShape.html
-share/gtk-doc/html/pango/PangoFcDecoder.html
-share/gtk-doc/html/pango/PangoFcFont.html
-share/gtk-doc/html/pango/PangoFcFontMap.html
-share/gtk-doc/html/pango/PangoMarkupFormat.html
-share/gtk-doc/html/pango/PangoRenderer.html
-share/gtk-doc/html/pango/annotation-glossary.html
-share/gtk-doc/html/pango/api-index-full.html
-share/gtk-doc/html/pango/home.png
-share/gtk-doc/html/pango/index.html
-share/gtk-doc/html/pango/layout.gif
-share/gtk-doc/html/pango/left-insensitive.png
-share/gtk-doc/html/pango/left.png
-share/gtk-doc/html/pango/lowlevel.html
-share/gtk-doc/html/pango/pango-Bidirectional-Text.html
-share/gtk-doc/html/pango/pango-Cairo-Rendering.html
-share/gtk-doc/html/pango/pango-CoreText-Fonts.html
-share/gtk-doc/html/pango/pango-Coverage-Maps.html
-share/gtk-doc/html/pango/pango-Engines.html
-share/gtk-doc/html/pango/pango-Fonts.html
-share/gtk-doc/html/pango/pango-FreeType-Fonts-and-Rendering.html
-share/gtk-doc/html/pango/pango-Glyph-Storage.html
-share/gtk-doc/html/pango/pango-Layout-Objects.html
-share/gtk-doc/html/pango/pango-Miscellaneous-Utilities.html
-share/gtk-doc/html/pango/pango-Modules.html
-share/gtk-doc/html/pango/pango-OpenType-Font-Handling.html
-share/gtk-doc/html/pango/pango-Scripts-and-Languages.html
-share/gtk-doc/html/pango/pango-Tab-Stops.html
-share/gtk-doc/html/pango/pango-Text-Attributes.html
-share/gtk-doc/html/pango/pango-Text-Processing.html
-share/gtk-doc/html/pango/pango-Version-Checking.html
-share/gtk-doc/html/pango/pango-Vertical-Text.html
-share/gtk-doc/html/pango/pango-Win32-Fonts-and-Rendering.html
-share/gtk-doc/html/pango/pango-Xft-Fonts-and-Rendering.html
-share/gtk-doc/html/pango/pango-hierarchy.html
-share/gtk-doc/html/pango/pango.devhelp2
-share/gtk-doc/html/pango/pango.html
-share/gtk-doc/html/pango/rendering.html
-share/gtk-doc/html/pango/right-insensitive.png
-share/gtk-doc/html/pango/right.png
-share/gtk-doc/html/pango/rotated-text.png
-share/gtk-doc/html/pango/style.css
-share/gtk-doc/html/pango/up-insensitive.png
-share/gtk-doc/html/pango/up.png

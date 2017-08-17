@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.108 2017/07/18 08:04:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.109 2017/08/17 12:08:15 ajacoutot Exp $
 
 COMMENT=		library for layout and rendering of text
 
-GNOME_VERSION=		1.40.7
+GNOME_VERSION=		1.40.10
 GNOME_PROJECT=		pango
 
-SHARED_LIBS +=  pango-1.0            3800.0   # 4000.7
-SHARED_LIBS +=  pangoft2-1.0         3800.0   # 4000.7
-SHARED_LIBS +=  pangoxft-1.0         3800.0   # 4000.7
-SHARED_LIBS +=  pangocairo-1.0       3800.0   # 4000.7
+SHARED_LIBS +=  pango-1.0            3800.1   # 4000.10
+SHARED_LIBS +=  pangoft2-1.0         3800.1   # 4000.10
+SHARED_LIBS +=  pangoxft-1.0         3800.1   # 4000.10
+SHARED_LIBS +=  pangocairo-1.0       3800.1   # 4000.10
 
 CATEGORIES=		devel x11
 
@@ -32,5 +32,20 @@ LIB_DEPENDS=		devel/glib2 \
 			devel/harfbuzz
 
 CONFIGURE_STYLE=	gnu
+
+### XXX check if needed at next update
+AUTOCONF_VERSION=	2.69
+AUTOMAKE_VERSION=	1.15
+BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS} \
+			devel/libtool \
+			textproc/gtk-doc
+
+pre-configure:
+	cd ${WRKSRC} && \
+		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
+		NOCONFIGURE=1 ./autogen.sh
+###
 
 .include <bsd.port.mk>
