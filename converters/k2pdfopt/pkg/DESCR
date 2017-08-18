@@ -1,0 +1,5 @@
+K2pdfopt optimizes PDF/DJVU files for mobile e-readers (e.g. the Kindle)
+and smartphones. It works well on multi-column PDF/DJVU files and can
+re-flow text even on scanned PDF files. It can also be used as a general
+PDF copying/cropping/re-sizing/OCR-ing manipulation tool. It can generate
+native or bitmapped PDF output, with an optional OCR layer.

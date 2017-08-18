@@ -1,0 +1,78 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2017/08/18 12:07:51 pirofti Exp $
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -52,6 +52,8 @@ endif(JPEG_FOUND)
+ include(FindJasper)
+ if(JASPER_FOUND)
+   set(HAVE_JASPER_LIB 1)
++  include_directories(SYSTEM ${CMAKE_INSTALL_PREFIX}/include/jasper)
++  set(K2PDFOPT_LIB ${K2PDFOPT_LIB} ${JASPER_LIBRARY})
+ endif(JASPER_FOUND)
+ 
+ # paths from willuslib/wgs.c
+@@ -84,6 +86,22 @@ if(MUPDF_FOUND)
+   )
+ endif(MUPDF_FOUND)
+ 
++find_library(FREETYPE_LIB freetype PATHS /usr/X11R6/lib)
++if(FREETYPE_LIB)
++  include_directories(SYSTEM /usr/X11R6/include /usr/X11R6/include/freetype2)
++  message(STATUS "freetype libraries: ${FREETYPE_LIB}")
++  set(K2PDFOPT_LIB ${K2PDFOPT_LIB} ${FREETYPE_LIB})
++endif()
++
++find_library(MUPDF_LIB mupdf PATHS ${CMAKE_INSTALL_PREFIX}/lib)
++if(MUPDF_LIB)
++  set(HAVE_MUPDF_LIB 1) 
++  include_directories(SYSTEM ${CMAKE_INSTALL_PREFIX}/include)
++  message(STATUS "mupdf libraries: ${MUPDF_LIB}")
++  set(K2PDFOPT_LIB ${K2PDFOPT_LIB} ${MUPDF_LIB} 
++    -lopenjpeg -ljbig2dec -ljpeg)
++endif()
++
+ pkg_check_modules(DJVU ddjvuapi)
+ if(DJVU_FOUND)
+   set(HAVE_DJVU_LIB 1)
+@@ -92,14 +110,30 @@ if(DJVU_FOUND)
+ endif(DJVU_FOUND)
+ 
+ # HAVE_GOCR_LIB
+-# HAVE_LEPTONICA_LIB
++# LEPTONICA
++find_library(LEPT_LIB lept PATHS ${CMAKE_INSTALL_PREFIX}/lib)
++if(LEPT_LIB)
++  set(HAVE_LEPTONICA_LIB 1) 
++  include_directories(SYSTEM ${CMAKE_INSTALL_PREFIX}/include leptonica_mod)
++  message(STATUS "leptonica libraries: ${LEPT_LIB}")
++  set(K2PDFOPT_LIB ${K2PDFOPT_LIB} ${LEPT_LIB}) 
++endif()
++
+ # HAVE_TESSERACT_LIB
++find_library(TESSERACT_LIB tesseract PATHS ${CMAKE_INSTALL_PREFIX}/lib)
++if(TESSERACT_LIB)
++  set(HAVE_TESSERACT_LIB 1) 
++  include_directories(SYSTEM ${CMAKE_INSTALL_PREFIX}/include)
++  message(STATUS "tesseract libraries: ${TESSERACT_LIB}")
++  set(K2PDFOPT_LIB ${K2PDFOPT_LIB} ${TESSERACT_LIB}) 
++endif()
+ 
++
+ # ---- Describe project
+ 
+ SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -DUSE_CMAKE -Wall")
+ 
+-include_directories(. willuslib k2pdfoptlib)
++include_directories(. ${PROJECT_BINARY_DIR} include_mod willuslib k2pdfoptlib)
+ 
+ configure_file (
+   "${PROJECT_SOURCE_DIR}/config.h.in"
+@@ -113,6 +147,7 @@ add_subdirectory(k2pdfoptlib)
+ add_executable(k2pdfopt k2pdfopt.c)
+ target_link_libraries (k2pdfopt k2pdfoptlib willuslib ${K2PDFOPT_LIB})
+
++install (TARGETS k2pdfopt RUNTIME DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
+
+ message("")
+ message("-- Summary --")

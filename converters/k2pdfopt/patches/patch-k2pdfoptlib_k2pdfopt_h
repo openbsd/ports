@@ -1,0 +1,14 @@
+$OpenBSD: patch-k2pdfoptlib_k2pdfopt_h,v 1.1.1.1 2017/08/18 12:07:51 pirofti Exp $
+
+Index: k2pdfoptlib/k2pdfopt.h
+--- k2pdfoptlib/k2pdfopt.h.orig
++++ k2pdfoptlib/k2pdfopt.h
+@@ -95,7 +95,7 @@
+ #endif
+ */
+ 
+-#if (defined(HAVE_MUPDF) || defined(HAVE_GOCR_LIB) || defined(HAVE_TESSERACT_LIB))
++#if (defined(HAVE_MUPDF_LIB) || defined(HAVE_GOCR_LIB) || defined(HAVE_TESSERACT_LIB))
+ #if (!defined(HAVE_OCR_LIB))
+ #define HAVE_OCR_LIB
+ #endif
