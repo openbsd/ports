@@ -1,7 +1,8 @@
-$OpenBSD: patch-po_Makefile_in_in,v 1.4 2012/07/06 16:27:19 ajacoutot Exp $
---- po/Makefile.in.in.orig	Thu Jun  7 00:18:21 2012
-+++ po/Makefile.in.in	Fri Jul  6 17:57:29 2012
-@@ -213,9 +213,6 @@ Makefile POTFILES: stamp-it
+$OpenBSD: patch-po_Makefile_in_in,v 1.5 2017/08/18 11:42:04 ajacoutot Exp $
+Index: po/Makefile.in.in
+--- po/Makefile.in.in.orig
++++ po/Makefile.in.in
+@@ -212,9 +212,6 @@ Makefile POTFILES: stamp-it
  	fi
  
  stamp-it: Makefile.in.in $(top_builddir)/config.status POTFILES.in

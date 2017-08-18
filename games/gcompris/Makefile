@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.65 2016/09/23 09:16:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.66 2017/08/18 11:42:04 ajacoutot Exp $
 
 COMMENT=	educational game for children
 
-DISTNAME=	gcompris-15.10
+DISTNAME=	gcompris-17.05
 EXTRACT_SUFX=	.tar.bz2
-REVISION=	0
 
 CATEGORIES=	games education
 
@@ -20,15 +19,15 @@ WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 c cairo croco-0.6 expat ffi
 WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gstreamer-0.10
-WANTLIB += gthread-2.0 gtk-x11-2.0 harfbuzz m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
-WANTLIB += rsvg-2 sqlite3 util xcb xcb-render xcb-shm xml2 z lzma
+WANTLIB += gthread-2.0 gtk-x11-2.0 harfbuzz iconv intl lzma m
+WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
+WANTLIB += png pthread pthread-stubs rsvg-2 sqlite3 util xcb xcb-render
+WANTLIB += xcb-shm xml2 z
 WANTLIB += ${MODPY_WANTLIB}
 
-MASTER_SITES=	http://gcompris.net/download/
+MASTER_SITES=	http://gcompris.net/download/gtk/src/
 
-MODULES=	devel/gettext \
-		lang/python \
+MODULES=	lang/python \
 		textproc/intltool
 
 BUILD_DEPENDS=	textproc/texi2html \
