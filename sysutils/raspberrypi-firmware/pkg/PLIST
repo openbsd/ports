@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2017/08/13 04:16:12 jsg Exp $
+@comment $OpenBSD: PLIST,v 1.5 2017/08/18 02:58:53 jsg Exp $
 share/raspberrypi-firmware/
 share/raspberrypi-firmware/boot/
 @comment share/raspberrypi-firmware/boot/COPYING.linux
@@ -48,6 +48,7 @@ share/raspberrypi-firmware/boot/overlays/goodix.dtbo
 share/raspberrypi-firmware/boot/overlays/googlevoicehat-soundcard.dtbo
 share/raspberrypi-firmware/boot/overlays/gpio-ir.dtbo
 share/raspberrypi-firmware/boot/overlays/gpio-poweroff.dtbo
+share/raspberrypi-firmware/boot/overlays/gpio-shutdown.dtbo
 share/raspberrypi-firmware/boot/overlays/hifiberry-amp.dtbo
 share/raspberrypi-firmware/boot/overlays/hifiberry-dac.dtbo
 share/raspberrypi-firmware/boot/overlays/hifiberry-dacplus.dtbo
@@ -81,6 +82,7 @@ share/raspberrypi-firmware/boot/overlays/midi-uart1.dtbo
 share/raspberrypi-firmware/boot/overlays/mmc.dtbo
 share/raspberrypi-firmware/boot/overlays/mpu6050.dtbo
 share/raspberrypi-firmware/boot/overlays/mz61581.dtbo
+share/raspberrypi-firmware/boot/overlays/papirus.dtbo
 share/raspberrypi-firmware/boot/overlays/pi3-act-led.dtbo
 share/raspberrypi-firmware/boot/overlays/pi3-disable-bt.dtbo
 share/raspberrypi-firmware/boot/overlays/pi3-disable-wifi.dtbo
