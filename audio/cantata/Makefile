@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2017/07/27 09:34:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2017/08/18 18:11:52 espie Exp $
 
 COMMENT =	Qt-based MPD client
 
 DISTNAME =	cantata-2.0.1
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	audio
 
@@ -21,7 +21,7 @@ MODULES =	devel/gettext \
 RUN_DEPENDS +=	devel/desktop-file-utils
 RUN_DEPENDS +=	x11/gtk+3,-guic
 LIB_DEPENDS +=	audio/mpg123 \
-		audio/speex \
+		audio/speexdsp \
 		audio/libcddb \
 		audio/libmusicbrainz5 \
 		audio/taglib \
