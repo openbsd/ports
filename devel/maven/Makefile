@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.28 2017/04/21 13:27:46 kurt Exp $
+# $OpenBSD: Makefile,v 1.29 2017/08/18 18:38:21 ian Exp $
 
 COMMENT=	software project management and comprehension tool
 
-V=		3.3.1
+V=		3.5.0
 DISTNAME=	apache-maven-$V
 PKGNAME=	${DISTNAME:S/apache-//}
 CATEGORIES=	devel
-REVISION=	0
 
 HOMEPAGE=	http://maven.apache.org/
 
@@ -19,7 +18,7 @@ MASTER_SITES=	${MASTER_SITE_APACHE:=maven/maven-3/${V}/binaries/} \
 EXTRACT_SUFX=	-bin.tar.gz
 
 MODULES=	java
-MODJAVA_VER=	1.7+
+MODJAVA_VER=	1.8+
 RUN_DEPENDS=	java/javaPathHelper
 
 NO_BUILD=	Yes
