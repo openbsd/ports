@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2017/04/14 10:18:19 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.13 2017/08/19 13:36:38 ajacoutot Exp $
 include/gspell-1/
 include/gspell-1/gspell/
 include/gspell-1/gspell/gspell-checker-dialog.h
@@ -35,8 +35,6 @@ share/gtk-doc/html/gspell-1.0/GspellNavigatorTextView.html
 share/gtk-doc/html/gspell-1.0/GspellTextBuffer.html
 share/gtk-doc/html/gspell-1.0/GspellTextView.html
 share/gtk-doc/html/gspell-1.0/annotation-glossary.html
-share/gtk-doc/html/gspell-1.0/api-index-1-2.html
-share/gtk-doc/html/gspell-1.0/api-index-1-4.html
 share/gtk-doc/html/gspell-1.0/api-index-full.html
 share/gtk-doc/html/gspell-1.0/ch01.html
 share/gtk-doc/html/gspell-1.0/ch02.html
