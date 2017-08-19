@@ -1,9 +1,9 @@
-$OpenBSD: patch-Makefile,v 1.1 2017/07/30 05:53:03 jsg Exp $
+$OpenBSD: patch-Makefile,v 1.2 2017/08/19 04:40:40 jsg Exp $
 
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -1356,7 +1356,7 @@ $(timestamp_h): $(srctree)/Makefile FORCE
+@@ -1378,7 +1378,7 @@ $(timestamp_h): $(srctree)/Makefile FORCE
  	$(call filechk,timestamp.h)
  
  checkbinman: tools
