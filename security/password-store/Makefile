@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2017/03/07 08:53:17 bentley Exp $
+# $OpenBSD: Makefile,v 1.4 2017/08/19 13:52:07 ajacoutot Exp $
 
 COMMENT =	simple password store
 
 DISTNAME =	password-store-1.7
+REVISION =	0
+
 CATEGORIES =	security
 
 HOMEPAGE =	http://www.passwordstore.org/
@@ -19,7 +21,7 @@ RUN_DEPENDS =	converters/base64 \
 		devel/git \
 		graphics/libqrencode \
 		misc/gnugetopt \
-		security/gnupg \
+		security/gnupg2 \
 		shells/bash \
 		sysutils/colortree \
 		x11/xclip
