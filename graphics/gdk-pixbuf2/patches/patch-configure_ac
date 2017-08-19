@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure_ac,v 1.1 2017/08/17 11:40:09 ajacoutot Exp $
+$OpenBSD: patch-configure_ac,v 1.2 2017/08/19 18:40:03 ajacoutot Exp $
 
 REVERT:
 From 0927eb3e278e998248f3022c096b4f93685c6a9d Mon Sep 17 00:00:00 2001
@@ -10,7 +10,7 @@ Subject: build: Check for libtiff using pkg-config
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -450,14 +450,24 @@ AC_ARG_WITH(gdiplus,
+@@ -453,14 +453,24 @@ AC_ARG_WITH(gdiplus,
  AM_CONDITIONAL(BUILD_GDIPLUS_LOADERS, [ test x$os_win32 = xyes && test x$with_gdiplus != xno ])
  
  dnl Test for libtiff
