@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2015/04/04 09:21:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2017/08/19 09:56:21 ajacoutot Exp $
 
 PORTROACH +=	limit:^1
 
@@ -35,6 +35,9 @@ CONFIGURE_ARGS =	--with-x
 
 MODULES =	devel/gettext \
 		x11/gnome
+
+# gtkdoc-rebase in gtk-doc.make and doc/reference/Makefile
+BUILD_DEPENDS =	textproc/gtk-doc
 
 LIB_DEPENDS =	x11/gtk+2 \
 		x11/dbus-glib
