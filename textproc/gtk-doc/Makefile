@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.51 2017/08/17 08:32:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.52 2017/08/19 09:57:05 ajacoutot Exp $
 
 COMMENT=		GTK C code documentation system
 
 GNOME_VERSION=		1.26
 GNOME_PROJECT=		gtk-doc
+REVISION=		0
 
 CATEGORIES= 	   	textproc devel
 
@@ -29,7 +30,8 @@ PKG_ARCH=		*
 BUILD_DEPENDS=		devel/glib2 \
 			textproc/source-highlight
 
-RUN_DEPENDS=		textproc/docbook-xsl \
+RUN_DEPENDS=		devel/py-six \
+			textproc/docbook-xsl \
 			textproc/source-highlight
 
 .include <bsd.port.mk>
