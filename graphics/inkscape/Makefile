@@ -1,33 +1,32 @@
-# $OpenBSD: Makefile,v 1.63 2017/07/26 22:45:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.64 2017/08/19 08:44:39 rsadowski Exp $
 
 COMMENT =	SVG vector drawing application
 
-DISTNAME =	inkscape-0.92.1
+DISTNAME =	inkscape-0.92.2
 CATEGORIES =	graphics
-REVISION =	0
 
 MASTER_SITES =	https://media.inkscape.org/dl/resources/file/
 HOMEPAGE =	https://www.inkscape.org/
 EXTRACT_SUFX =	.tar.bz2
-DISTFILES =	${DISTNAME}${EXTRACT_SUFX}{${DISTNAME}.tar_XlpI7qT.bz2}
 
 MAINTAINER =	Rafael Sadowski <rafael@sizeofvoid.org>
 
 # GPLv2 and LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += ICE Magick++-6.Q16 MagickCore-6.Q16 MagickWand-6.Q16
-WANTLIB += SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
-WANTLIB += Xrandr Xrender Xt aspell atk-1.0 atkmm-1.6 bz2 c cairo
-WANTLIB += cairomm-1.0 djvulibre enchant exif expat ffi fftw3
-WANTLIB += fontconfig freetype gc gdk-x11-2.0 gdk_pixbuf-2.0 gdkmm-2.4
-WANTLIB += gio-2.0 giomm-2.4 glib-2.0 glibmm-2.4 gmodule-2.0 gobject-2.0
-WANTLIB += graphite2 gsl gslcblas gthread-2.0 gtk-x11-2.0 gtkmm-2.4
-WANTLIB += gtkspell harfbuzz iconv intl jbig jpeg lcms2 lzma m
-WANTLIB += openjp2 pango-1.0 pangocairo-1.0 pangoft2-1.0 pangomm-1.4
-WANTLIB += pcre pixman-1 png poppler poppler-glib popt potrace
-WANTLIB += pthread pthread-stubs sigc-2.0 ${LIBCXX} tiff webp xcb
-WANTLIB += xcb-render xcb-shm xml2 xslt ${COMPILER_LIBCXX}
+WANTLIB += ${COMPILER_LIBCXX} ICE Magick++-6.Q16 MagickCore-6.Q16
+WANTLIB += MagickWand-6.Q16 SM X11 Xcomposite Xcursor Xdamage
+WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xt aspell atk-1.0
+WANTLIB += atkmm-1.6 bz2 c cairo cairomm-1.0 djvulibre enchant
+WANTLIB += exif expat ffi fftw3 fontconfig freetype gc gdk-x11-2.0
+WANTLIB += gdk_pixbuf-2.0 gdkmm-2.4 gio-2.0 giomm-2.4 glib-2.0
+WANTLIB += glibmm-2.4 gmodule-2.0 gobject-2.0 graphite2 gsl gslcblas
+WANTLIB += gthread-2.0 gtk-x11-2.0 gtkmm-2.4 gtkspell harfbuzz
+WANTLIB += iconv intl jasper jbig jpeg lcms2 lzma m openjp2 pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pangomm-1.4 pcre pixman-1
+WANTLIB += png poppler poppler-glib popt potrace pthread-stubs
+WANTLIB += raw_r sigc-2.0 tiff webp xcb xcb-render xcb-shm xml2
+WANTLIB += xslt z
 
 MODULES=	textproc/intltool \
 		lang/python \
@@ -54,6 +53,7 @@ LIB_DEPENDS =	devel/boehm-gc \
 		devel/popt \
 		devel/pango \
 		graphics/ImageMagick \
+		graphics/libraw \
 		graphics/lcms2 \
 		graphics/libexif \
 		graphics/png \
@@ -65,6 +65,7 @@ LIB_DEPENDS =	devel/boehm-gc \
 		x11/gtk2mm>=2.24.4
 
 RUN_DEPENDS =	devel/desktop-file-utils \
+		devel/gettext \
 		textproc/py-lxml \
 		x11/gtk+3,-guic
 
@@ -101,5 +102,7 @@ post-install:
 .for i in ${RM_MANS}
 	rm -Rf ${PREFIX}/${i}
 .endfor
+	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
+		${PREFIX}/share/inkscape/extensions
 
 .include <bsd.port.mk>
