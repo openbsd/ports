@@ -1,7 +1,7 @@
-$OpenBSD: patch-setup_py,v 1.4 2016/12/09 18:57:40 jasper Exp $
---- setup.py.orig	Mon Feb 22 17:05:01 2016
-+++ setup.py	Fri Dec  9 19:55:41 2016
-@@ -71,8 +71,8 @@ setup(
+$OpenBSD: patch-setup_py,v 1.5 2017/08/20 14:25:32 jasper Exp $
+--- setup.py.orig	Fri Sep 23 17:43:57 2016
++++ setup.py	Fri Dec  9 19:57:45 2016
+@@ -69,8 +69,8 @@ setup(
      packages=['barman', ],
      scripts=['bin/barman', ],
      data_files=[

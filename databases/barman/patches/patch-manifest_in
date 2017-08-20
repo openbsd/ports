@@ -1,9 +1,12 @@
-$OpenBSD: patch-manifest_in,v 1.2 2016/12/09 18:57:40 jasper Exp $
---- MANIFEST.in.orig	Tue May 10 17:52:18 2016
-+++ MANIFEST.in	Tue May 10 17:52:28 2016
-@@ -2,4 +2,4 @@ recursive-include barman *.py
+$OpenBSD: patch-manifest_in,v 1.3 2017/08/20 14:25:32 jasper Exp $
+Index: MANIFEST.in
+--- MANIFEST.in.orig
++++ MANIFEST.in
+@@ -2,6 +2,6 @@ recursive-include barman *.py
  recursive-include rpm *
- include doc/barman.1 doc/barman.5 doc/barman.conf
- include scripts/barman-wal-restore scripts/barman.bash_completion
--include AUTHORS NEWS ChangeLog LICENSE PKG-INFO MANIFEST.in MANIFEST setup.py INSTALL README
+ recursive-include doc *.md
+ recursive-include doc/barman.d *
+-include doc/Makefile doc/barman.1 doc/barman.5 doc/barman.conf
 +include AUTHORS NEWS ChangeLog LICENSE PKG-INFO MANIFEST.in setup.py INSTALL README
+ include scripts/barman.bash_completion
+ include AUTHORS NEWS ChangeLog LICENSE MANIFEST.in setup.py INSTALL README.rst

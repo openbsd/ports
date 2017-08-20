@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2017/03/17 07:15:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2017/08/20 14:25:32 jasper Exp $
 
 COMMENT =	backup and restoration manager for PostgreSQL
 
-MODPY_EGG_VERSION =	1.6.0
+MODPY_EGG_VERSION =	2.2
 DISTNAME =	barman-${MODPY_EGG_VERSION}
 CATEGORIES =	databases
 HOMEPAGE =	http://www.pgbarman.org/
-REVISION =	0
 
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
@@ -30,8 +29,6 @@ NO_TEST =	Yes
 #		devel/py-setuptools_scm
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/barman
-	${INSTALL_DATA}	${WRKSRC}/README ${PREFIX}/share/doc/barman
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/barman
 	${INSTALL_DATA}	${WRKSRC}/doc/barman.conf ${PREFIX}/share/examples/barman
 

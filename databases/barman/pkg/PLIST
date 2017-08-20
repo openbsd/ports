@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.5 2016/05/13 18:05:01 landry Exp $
+@comment $OpenBSD: PLIST,v 1.6 2017/08/20 14:25:33 jasper Exp $
 @newgroup _barman:723
 @newuser _barman:723:723:daemon:Barman User:/nonexistent:/sbin/nologin
 @extraunexec rm -rf /var/db/barman/*
 @extraunexec rm -rf /var/log/barman/*
+@mode 0750
 @owner _barman
 @group _barman
-@mode 0750
 @sample /var/db/barman/
 @sample /var/log/barman/
 @sample /var/spool/barman/
@@ -34,8 +34,12 @@ lib/python${MODPY_VERSION}/site-packages/barman/compression.py
 lib/python${MODPY_VERSION}/site-packages/barman/compression.pyc
 lib/python${MODPY_VERSION}/site-packages/barman/config.py
 lib/python${MODPY_VERSION}/site-packages/barman/config.pyc
+lib/python${MODPY_VERSION}/site-packages/barman/copy_controller.py
+lib/python${MODPY_VERSION}/site-packages/barman/copy_controller.pyc
 lib/python${MODPY_VERSION}/site-packages/barman/diagnose.py
 lib/python${MODPY_VERSION}/site-packages/barman/diagnose.pyc
+lib/python${MODPY_VERSION}/site-packages/barman/exceptions.py
+lib/python${MODPY_VERSION}/site-packages/barman/exceptions.pyc
 lib/python${MODPY_VERSION}/site-packages/barman/fs.py
 lib/python${MODPY_VERSION}/site-packages/barman/fs.pyc
 lib/python${MODPY_VERSION}/site-packages/barman/hooks.py
@@ -68,15 +72,13 @@ lib/python${MODPY_VERSION}/site-packages/barman/xlog.py
 lib/python${MODPY_VERSION}/site-packages/barman/xlog.pyc
 @man man/man1/barman.1
 @man man/man5/barman.5
-share/doc/barman/
-share/doc/barman/README
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/barman/
 share/examples/barman/barman.conf
+@mode 0640
 @owner root
 @group _barman
-@mode 0640
 @sample ${SYSCONFDIR}/barman.conf
-@mode
-@owner
 @group
+@owner
+@mode
