@@ -1,7 +1,8 @@
-$OpenBSD: patch-src_current_makefile,v 1.2 2014/11/22 12:21:43 sthen Exp $
---- src/current/makefile.orig	Mon Aug 11 20:39:14 2014
-+++ src/current/makefile	Sat Nov 22 12:11:25 2014
-@@ -525,7 +525,7 @@ openbsd:	iozone_openbsd.o libbif.o fileop_openbsd.o pi
+$OpenBSD: patch-src_current_makefile,v 1.3 2017/08/20 10:26:27 jasper Exp $
+Index: src/current/makefile
+--- src/current/makefile.orig
++++ src/current/makefile
+@@ -533,7 +533,7 @@ openbsd:	iozone_openbsd.o libbif.o fileop_openbsd.o pi
  #
  
  openbsd-threads:	iozone_openbsd-threads.o libbif.o
@@ -10,7 +11,7 @@ $OpenBSD: patch-src_current_makefile,v 1.2 2014/11/22 12:21:43 sthen Exp $
  		libbif.o -o iozone
  
  #
-@@ -1382,10 +1382,10 @@ iozone_openbsd-threads.o:	iozone.c libbif.c
+@@ -1427,10 +1427,10 @@ iozone_openbsd-threads.o:	iozone.c libbif.c
  	@echo ""
  	@echo "Build iozone for OpenBSD with threads"
  	@echo ""
