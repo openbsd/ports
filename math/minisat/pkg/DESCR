@@ -1,6 +1,6 @@
 MiniSat is a minimalistic, open-source Boolean satisfiability problem
 (SAT) solver, developed to help researchers and developers alike to get
-started on SAT. 
+started on SAT.
 Some key features of MiniSat:
 
 * Easy to modify. MiniSat is small and well-documented, and possibly
@@ -15,5 +15,5 @@ Some key features of MiniSat:
   tool, such as a model checker or a more generic constraint solver.
 
 The OpenBSD package of MiniSAT installs two binaries:
-  minisat  = A core version of the solver.
-  minisats = An extended solver with simplification capabilities.
+  minisat_core  = A core version of the solver.
+  minisat       = An extended solver with simplification capabilities.

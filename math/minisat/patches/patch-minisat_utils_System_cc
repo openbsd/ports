@@ -1,0 +1,21 @@
+$OpenBSD: patch-minisat_utils_System_cc,v 1.1 2017/08/20 16:39:44 jca Exp $
+
+Index: minisat/utils/System.cc
+--- minisat/utils/System.cc.orig
++++ minisat/utils/System.cc
+@@ -71,13 +71,13 @@ double Minisat::memUsedPeak(bool strictlyPeak) { 
+     double peak = memReadPeak() / (double)1024;
+     return peak == 0 && !strictlyPeak ? memUsed() : peak; }
+ 
+-#elif defined(__FreeBSD__) || defined(__FreeBSD_kernel__) || defined(__gnu_hurd__)
++#elif defined(__FreeBSD__) || defined(__FreeBSD_kernel__) || defined(__OpenBSD__) || defined(__gnu_hurd__)
+ 
+ double Minisat::memUsed() {
+     struct rusage ru;
+     getrusage(RUSAGE_SELF, &ru);
+     return (double)ru.ru_maxrss / 1024; }
+-double Minisat::memUsedPeak() { return memUsed(); }
++double Minisat::memUsedPeak(bool strictlyPeak) { return memUsed(); }
+ 
+ 
+ #elif defined(__APPLE__)

@@ -1,9 +1,14 @@
-# $OpenBSD: Makefile,v 1.12 2017/07/26 22:45:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2017/08/20 16:39:44 jca Exp $
 
 COMMENT=		minimalistic Boolean satisfiability solver
 
-DISTNAME=		minisat-2.2.0
-REVISION =		2
+DISTNAME=		minisat-2.2.0.20170810
+GH_ACCOUNT=		niklasso
+GH_PROJECT=		minisat
+GH_COMMIT=		37dc6c67e2af26379d88ce349eb9c4c6160e8543
+
+SHARED_LIBS +=		minisat                   0.0 # 2.1
+
 CATEGORIES=		math
 
 HOMEPAGE=		http://minisat.se/
@@ -13,28 +18,10 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		${HOMEPAGE}downloads/
-DISTFILES=		${DISTNAME}${EXTRACT_SUFX} \
-			MiniSat.pdf
-EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
-
 WANTLIB +=		c m ${COMPILER_LIBCXX} z
 
-USE_GMAKE=		Yes
-ALL_TARGET=		minisat
+MODULES=		devel/cmake
+
 NO_TEST=		Yes
-MAKE_FLAGS=		CXX="${CXX}"
-MAKE_ENV+=		MROOT=${WRKBUILD}
-WRKDIST=		${WRKDIR}/minisat
-
-do-build:
-	cd ${WRKBUILD}/core && ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS}
-	cd ${WRKBUILD}/simp && ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS}
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/core/minisat ${PREFIX}/bin/minisat
-	${INSTALL_PROGRAM} ${WRKSRC}/simp/minisat ${PREFIX}/bin/minisats
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/minisat
-	${INSTALL_DATA} ${DISTDIR}/MiniSat.pdf ${PREFIX}/share/doc/minisat
 
 .include <bsd.port.mk>

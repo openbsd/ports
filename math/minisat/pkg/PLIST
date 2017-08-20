@@ -1,5 +1,28 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/11/02 19:18:35 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.4 2017/08/20 16:39:44 jca Exp $
 @bin bin/minisat
-@bin bin/minisats
-share/doc/minisat/
-share/doc/minisat/MiniSat.pdf
+@bin bin/minisat_core
+include/minisat/
+include/minisat/core/
+include/minisat/core/Dimacs.h
+include/minisat/core/Solver.h
+include/minisat/core/SolverTypes.h
+include/minisat/mtl/
+include/minisat/mtl/Alg.h
+include/minisat/mtl/Alloc.h
+include/minisat/mtl/Heap.h
+include/minisat/mtl/IntMap.h
+include/minisat/mtl/IntTypes.h
+include/minisat/mtl/Map.h
+include/minisat/mtl/Queue.h
+include/minisat/mtl/Rnd.h
+include/minisat/mtl/Sort.h
+include/minisat/mtl/Vec.h
+include/minisat/mtl/XAlloc.h
+include/minisat/simp/
+include/minisat/simp/SimpSolver.h
+include/minisat/utils/
+include/minisat/utils/Options.h
+include/minisat/utils/ParseUtils.h
+include/minisat/utils/System.h
+lib/libminisat.a
+@lib lib/libminisat.so.${LIBminisat_VERSION}
