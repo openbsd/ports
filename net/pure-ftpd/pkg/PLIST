@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2011/04/25 09:26:47 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.13 2017/08/20 07:54:01 ajacoutot Exp $
 @newgroup _pure-ftpd:642
 @newuser _pure-ftpd:642:_pure-ftpd:daemon:pure-ftpd user:/nonexistent:/sbin/nologin
 @bin bin/pure-pw
@@ -14,7 +14,6 @@
 @man man/man8/pure-statsdecode.8
 @man man/man8/pure-uploadscript.8
 @bin sbin/pure-authd
-sbin/pure-config.pl
 @bin sbin/pure-ftpd
 @bin sbin/pure-ftpwho
 @bin sbin/pure-mrtginfo
@@ -24,14 +23,11 @@ share/doc/pure-ftpd/
 share/doc/pure-ftpd/README
 share/doc/pure-ftpd/README.Authentication-Modules
 share/doc/pure-ftpd/README.Configuration-File
-share/doc/pure-ftpd/README.Contrib
 share/doc/pure-ftpd/README.TLS
 share/doc/pure-ftpd/README.Virtual-Users
 share/doc/pure-ftpd/pure-ftpd.png
 share/examples/pure-ftpd/
 share/examples/pure-ftpd/pure-ftpd.conf.sample
-share/examples/pure-ftpd/pure-vpopauth.pl
-share/examples/pure-ftpd/xml_python_processors.txt
 %%ldap%%
 %%mysql%%
 %%postgresql%%

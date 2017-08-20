@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.73 2016/10/26 07:43:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.74 2017/08/20 07:54:01 ajacoutot Exp $
 
 COMMENT=	small, easy to set up, fast and very secure FTP server
 
-DISTNAME=	pure-ftpd-1.0.43
+DISTNAME=	pure-ftpd-1.0.46
 CATEGORIES=	net
 MASTER_SITES=	http://download.pureftpd.org/pub/pure-ftpd/releases/ \
 		ftp://ftp.pureftpd.org/pub/pure-ftpd/releases/ \
@@ -44,7 +44,7 @@ CONF_FILE+= pureftpd-ldap.conf
 
 .if ${FLAVOR:Mmysql}
 LIB_DEPENDS+=	databases/mariadb
-WANTLIB +=	lib/mysql/mysqlclient m z pthread
+WANTLIB +=	lib/mysql/mysqlclient m z
 CONFIGURE_ARGS+= --with-mysql="${LOCALBASE}"
 DOCS+=	README.MySQL
 CONF_FILE+= pureftpd-mysql.conf
@@ -62,24 +62,18 @@ CONF_FILE+= pureftpd-pgsql.conf
 CONFIGURE_ARGS+= --with-virtualchroot
 .endif
 
-DOCS+=	README README.Configuration-File README.Contrib README.TLS \
-	README.Virtual-Users README.Authentication-Modules pure-ftpd.png
-
-CONTRIB= xml_python_processors.txt pure-vpopauth.pl
+DOCS+=	README README.Configuration-File README.TLS README.Virtual-Users \
+	README.Authentication-Modules pure-ftpd.png
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/pure-ftpd
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/pure-ftpd
-	${INSTALL_PROGRAM} ${WRKBUILD}/configuration-file/pure-config.pl \
-		${PREFIX}/sbin
-	${INSTALL_DATA} ${WRKBUILD}/configuration-file/pure-ftpd.conf \
+	${INSTALL_DATA} ${WRKBUILD}/pure-ftpd.conf \
 		${PREFIX}/share/examples/pure-ftpd/pure-ftpd.conf.sample
 	cd ${WRKSRC}; ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/pure-ftpd
 .if defined(CONF_FILE) && !empty(CONF_FILE)
 	cd ${WRKSRC}; ${INSTALL_DATA} ${CONF_FILE} \
 		${PREFIX}/share/examples/pure-ftpd
 .endif
-	cd ${WRKSRC}/contrib; ${INSTALL_DATA} ${CONTRIB} \
-		${PREFIX}/share/examples/pure-ftpd
 
 .include <bsd.port.mk>
