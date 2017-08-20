@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.448 2017/08/12 19:22:48 danj Exp $
+# $OpenBSD: Makefile,v 1.449 2017/08/20 21:33:32 kettenis Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -10,6 +10,7 @@
      SUBDIR += apachetop
      SUBDIR += apcd
      SUBDIR += apcupsd
+     SUBDIR += arm-trusted-firmware
      SUBDIR += augeas
      SUBDIR += autossh
      SUBDIR += awless
