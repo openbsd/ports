@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.90 2017/07/26 22:45:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.91 2017/08/20 23:57:19 kili Exp $
 
 COMMENT =		base binaries for TeXLive typesetting distribution
 
@@ -6,7 +6,7 @@ COMMENT =		base binaries for TeXLive typesetting distribution
 DISTNAME =		texlive-${DIST_V}b-source
 PKGNAME =		texlive_base-${V}
 WRKDIST =		${WRKDIR}/texlive-${DIST_V}-source
-REVISION =		0
+REVISION =		1
 
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
 			texlive-${DIST_V}-extra${EXTRACT_SUFX}
@@ -22,6 +22,7 @@ WANTLIB += harfbuzz harfbuzz-icu iconv icudata icui18n icuio icuuc intl
 WANTLIB += jpeg lcms2 m openjp2 paper pcre pixman-1 png poppler
 WANTLIB += potrace pthread pthread-stubs ${COMPILER_LIBCXX} tiff webp xcb
 WANTLIB += xcb-render xcb-shm z zzip
+WANTLIB += ${LIBCXX}
 
 RUN_DEPENDS =		print/ghostscript/gnu \
 			print/detex \
@@ -44,6 +45,9 @@ LIB_DEPENDS =		converters/libiconv \
 			graphics/potrace
 
 MODULES =		textproc/intltool perl
+
+# c++-11 required for poppler
+COMPILER =		gcc
 
 # Never set SEPARATE_BUILD
 CONFIGURE_STYLE =	gnu
