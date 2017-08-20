@@ -1,0 +1,14 @@
+$OpenBSD: patch-plat_rockchip_rk3399_include_shared_bl31_param_h,v 1.1.1.1 2017/08/20 21:32:07 kettenis Exp $
+
+Index: plat/rockchip/rk3399/include/shared/bl31_param.h
+--- plat/rockchip/rk3399/include/shared/bl31_param.h.orig
++++ plat/rockchip/rk3399/include/shared/bl31_param.h
+@@ -20,7 +20,7 @@
+ /*
+  * Put BL3-1 at the top of the Trusted RAM
+  */
+-#define BL31_BASE		(TZRAM_BASE + 0x1000)
++#define BL31_BASE		(TZRAM_BASE + 0x10000)
+ #define BL31_LIMIT		(TZRAM_BASE + TZRAM_SIZE)
+ 
+ #endif /*__PLAT_ROCKCHIP_RK3399_INCLUDE_SHARED_BL31_PARAM_H__*/
