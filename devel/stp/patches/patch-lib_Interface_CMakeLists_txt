@@ -1,0 +1,15 @@
+$OpenBSD: patch-lib_Interface_CMakeLists_txt,v 1.1 2017/08/21 07:03:10 jca Exp $
+
+  https://github.com/stp/stp/commit/b233823ee16e590811e14c92fe3e9d246e5e4d30
+
+Index: lib/Interface/CMakeLists.txt
+--- lib/Interface/CMakeLists.txt.orig
++++ lib/Interface/CMakeLists.txt
+@@ -29,6 +29,7 @@ add_library(cppinterface OBJECT
+ )
+ 
+ add_dependencies(cinterface ASTKind_header)
++add_dependencies(cppinterface ASTKind_header)
+ 
+ # FIXME: Remove this
+ # For legacy reasons make the interface header files available in include/stp/ in the build directory

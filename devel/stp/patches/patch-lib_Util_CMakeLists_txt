@@ -1,0 +1,14 @@
+$OpenBSD: patch-lib_Util_CMakeLists_txt,v 1.1 2017/08/21 07:03:10 jca Exp $
+
+  https://github.com/stp/stp/commit/b233823ee16e590811e14c92fe3e9d246e5e4d30
+
+Index: lib/Util/CMakeLists.txt
+--- lib/Util/CMakeLists.txt.orig
++++ lib/Util/CMakeLists.txt
+@@ -23,4 +23,6 @@ add_library(util OBJECT
+             RunTimes.cpp
+            )
+ 
++add_dependencies(util ASTKind_header)
++
+ configure_file("${CMAKE_CURRENT_SOURCE_DIR}/GitSHA1.cpp.in" "${CMAKE_CURRENT_BINARY_DIR}/GitSHA1.cpp" @ONLY)

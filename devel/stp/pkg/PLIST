@@ -1,9 +1,25 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/12/17 09:43:28 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/08/21 07:03:10 jca Exp $
 @bin bin/stp
+@bin bin/stp_simple
 include/stp/
 include/stp/c_interface.h
-include/stp/fdstream.h
-lib/libstp.a
+lib/cmake/
+lib/cmake/STP/
+lib/cmake/STP/STPConfig.cmake
+lib/cmake/STP/STPConfigVersion.cmake
+lib/cmake/STP/STPTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/STP/STPTargets.cmake
+@lib lib/libstp.so.${LIBstp_VERSION}
+lib/python${MODPY_VERSION}/
+lib/python${MODPY_VERSION}/site-packages/
+lib/python${MODPY_VERSION}/site-packages/stp/
+lib/python${MODPY_VERSION}/site-packages/stp/__init__.py
+lib/python${MODPY_VERSION}/site-packages/stp/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/stp/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/stp/${MODPY_PYCACHE}library_path.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/stp/${MODPY_PYCACHE}stp.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/stp/library_path.py
+lib/python${MODPY_VERSION}/site-packages/stp/stp.py
 share/doc/stp/
 share/doc/stp/EXE-STP-TISSEC-Journal-2007.pdf
 share/doc/stp/EXE-STP.pdf

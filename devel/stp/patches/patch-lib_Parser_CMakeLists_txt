@@ -1,0 +1,14 @@
+$OpenBSD: patch-lib_Parser_CMakeLists_txt,v 1.1 2017/08/21 07:03:10 jca Exp $
+
+Index: lib/Parser/CMakeLists.txt
+--- lib/Parser/CMakeLists.txt.orig
++++ lib/Parser/CMakeLists.txt
+@@ -59,6 +59,8 @@ add_library(parser OBJECT
+      ${SOURCES}
+ )
+ 
++add_dependencies(parser ASTKind_header)
++
+ foreach(_file ${TOLEX})
+     add_dependencies(parser parser_header${_file})
+ endforeach()
