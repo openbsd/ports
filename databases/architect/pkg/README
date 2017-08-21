@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.2 2011/06/02 13:41:36 ajacoutot Exp $
+$OpenBSD: README,v 1.3 2017/08/21 18:42:08 jasper Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -6,4 +6,4 @@ $OpenBSD: README,v 1.2 2011/06/02 13:41:36 ajacoutot Exp $
 
 To get started with SQL Power*Architect, please see the
 Getting Started wiki page at
-    http://code.google.com/p/power-architect/wiki/GettingStarted
+    http://software.sqlpower.ca/page/architect-demos

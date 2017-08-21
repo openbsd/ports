@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2017/05/11 20:50:55 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2017/08/21 18:42:08 jasper Exp $
 
 PKG_ARCH=		*
 
@@ -11,7 +11,7 @@ PKGNAME=		architect-${V}
 CATEGORIES=		databases
 WRKDIST=		${WRKDIR}/architect-${V}
 
-REVISION=		4
+REVISION=		5
 
 HOMEPAGE=		http://www.sqlpower.ca/page/architect
 
@@ -31,6 +31,6 @@ do-install:
 	${INSTALL_DATA} ${WRKDIST}/jdbc/* ${PREFIX}/architect/jdbc
 	${INSTALL_DATA} ${WRKDIST}/architect.jar ${WRKDIST}/lib/* ${PREFIX}/architect/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/architect
-	${INSTALL_PROGRAM} ${FILESDIR}/architect ${PREFIX}/bin 
+	${INSTALL_PROGRAM} ${FILESDIR}/architect ${PREFIX}/bin
 
 .include <bsd.port.mk>
