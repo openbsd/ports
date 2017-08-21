@@ -1,22 +1,23 @@
-#	$OpenBSD: Makefile,v 1.1.1.1 2017/08/20 21:32:07 kettenis Exp $
+#	$OpenBSD: Makefile,v 1.2 2017/08/21 05:56:13 jasper Exp $
+
+PKG_ARCH=		*
 
 COMMENT=	ARM Trusted Firmware
+
 GH_ACCOUNT=	ARM-software
 GH_PROJECT=	arm-trusted-firmware
 GH_TAGNAME=	v1.4
-VERSION=	1.4
+REVISION=	0
 
-PKGNAME=	arm-trusted-firmware-${VERSION}
 CATEGORIES=	sysutils
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-PKG_ARCH=		*
-
 BUILD_DEPENDS+= devel/arm-none-eabi/gcc-linaro,aarch64
+
 MAKE_ENV+= CROSS_COMPILE="aarch64-none-elf-"
-MAKE_ENV+= BUILD_STRING="${VERSION}"
+MAKE_ENV+= BUILD_STRING="${GH_TAGNAME:S/v//}"
 
 NO_TEST=	Yes
 USE_GMAKE=	Yes
