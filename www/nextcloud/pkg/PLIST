@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.3 2017/05/28 20:03:16 gonzalo Exp $
+@comment $OpenBSD: PLIST,v 1.4 2017/08/21 19:29:20 danj Exp $
 @unexec-delete rm -f /var/www/conf/modules/httpd-nextcloud.conf
 @unexec-delete rm -f /var/www/conf/modules/apache-nextcloud.conf
 conf/modules.sample/apache-nextcloud.conf.dist
 @sample /var/www/conf/modules.sample/
-@sample /var/www/conf/modules.sample/httpd-nextcloud.conf
 @sample /var/www/conf/modules.sample/apache-nextcloud.conf
 conf/modules.sample/httpd-nextcloud.conf.dist
+@sample /var/www/conf/modules.sample/httpd-nextcloud.conf
 nextcloud/
 nextcloud/.htaccess.dist
 @sample nextcloud/.htaccess
