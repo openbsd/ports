@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.13 2017/05/30 08:08:15 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.14 2017/08/21 13:49:41 visa Exp $
 
 COMMENT ?=	real-time, concurrent and distributed functional language
 
@@ -29,6 +29,8 @@ MODGNU_CONFIG_GUESS_DIRS ?=	${WRKSRC}/erts/autoconf \
 
 .if ${MACHINE_ARCH} == i386
 CONFIGURE_ARGS +=	--enable-ethread-pre-pentium4-compatibility
+.elif ${MACHINE_ARCH} == mips64 || ${MACHINE_ARCH} == mips64el
+CFLAGS +=		-mxgot
 .elif ${MACHINE_ARCH} == sparc64
 CFLAGS +=		-fno-pie
 LDFLAGS +=		-nopie
