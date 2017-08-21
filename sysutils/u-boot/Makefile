@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.23 2017/08/19 04:40:40 jsg Exp $
+#	$OpenBSD: Makefile,v 1.24 2017/08/21 02:32:58 jsg Exp $
 
 BROKEN-sparc64=	Error: the specified option is not accepted in ISB at operand 1 -- isb sy
 
@@ -7,6 +7,7 @@ FLAVOR?=	arm
 
 COMMENT=	U-Boot firmware
 VERSION=	2017.09-rc2
+REVISION=	0
 DISTNAME=	u-boot-${VERSION}
 PKGNAME=	u-boot-${FLAVOR}-${VERSION:S/-//}
 FULLPKGNAME=	${PKGNAME}
@@ -35,8 +36,10 @@ MAKE_ENV=	KBUILD_VERBOSE=1 \
 		PYTHON="${MODPY_BIN}"
 
 .if "${FLAVOR}" == "aarch64"
-BUILD_DEPENDS+=	devel/arm-none-eabi/gcc-linaro,aarch64
+BUILD_DEPENDS+=	devel/arm-none-eabi/gcc-linaro,aarch64 \
+		sysutils/atf-allwinner
 MAKE_ENV+=	CROSS_COMPILE="aarch64-none-elf-"
+SUNXI_BL31=	"${LOCALBASE}/share/atf-allwinner/bl31.bin"
 .elif "${FLAVOR}" == "arm"
 BUILD_DEPENDS+=	devel/arm-none-eabi/gcc-linaro
 MAKE_ENV+=	CROSS_COMPILE="arm-none-eabi-"
@@ -46,13 +49,15 @@ USE_GMAKE=	Yes
 NO_TEST=	Yes
 
 .if "${FLAVOR}" == "aarch64"
-BOARDS=\
+SUNXI64=\
 	bananapi_m64 \
 	nanopi_neo2 \
 	orangepi_pc2 \
 	orangepi_prime \
 	orangepi_win \
 	pine64_plus \
+	sopine_baseboard
+BOARDS=\
 	rpi_3
 .elif "${FLAVOR}" == "arm"
 OMAP=\
@@ -60,6 +65,7 @@ OMAP=\
 	omap4_panda \
 	am335x_boneblack \
 	am57xx_evm
+SUNXI64=
 SUNXI=\
 	A10-OLinuXino-Lime \
 	A10s-OLinuXino-M \
@@ -120,7 +126,9 @@ FILES=\
 	u-boot-sunxi-with-spl.bin \
 	u-boot.imx \
 	u-boot-spl.kwb \
-	u-boot-with-spl.bin
+	u-boot-with-spl.bin \
+	u-boot.itb \
+	spl/sunxi-spl.bin
 
 pre-build:
 	${SUBST_CMD} ${WRKBUILD}/tools/Makefile
@@ -145,10 +153,25 @@ do-build:
 	    cat u-boot-dtb.bin >> u-boot-with-spl.bin
 .endif
 .endfor
+.for BOARD in ${SUNXI64}
+	cd ${WRKSRC} && \
+	    mkdir -p build/${BOARD} && \
+	    ${SETENV} ${MAKE_ENV} BL31=${SUNXI_BL31} ${MAKE_PROGRAM} \
+	        ${MAKE_FLAGS} O="build/${BOARD}" \
+	        -f ${MAKE_FILE} "${BOARD}"_defconfig && \
+	    ${SETENV} ${MAKE_ENV} BL31=${SUNXI_BL31} ${MAKE_PROGRAM} \
+	        ${MAKE_FLAGS} O="build/${BOARD}" \
+	        -f ${MAKE_FILE} ${ALL_TARGET}
+	if [[ -f ${WRKSRC}/build/${BOARD}/spl/sunxi-spl.bin && \
+	      -f ${WRKSRC}/build/${BOARD}/u-boot.itb ]]; then \
+		cd ${WRKSRC}/build/${BOARD} && \
+		    cat spl/sunxi-spl.bin u-boot.itb > u-boot-sunxi-with-spl.bin ; \
+	fi
+.endfor
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/u-boot
-.for BOARD in ${BOARDS}
+.for BOARD in ${BOARDS} ${SUNXI64}
 	${INSTALL_DATA_DIR} ${PREFIX}/share/u-boot/${BOARD}
 	-cd ${WRKSRC}/build/${BOARD} && \
 	    cp ${FILES} ${PREFIX}/share/u-boot/${BOARD}/
