@@ -1,17 +1,14 @@
-$OpenBSD: patch-link-grammar_utilities_h,v 1.1 2017/05/27 16:54:57 espie Exp $
+$OpenBSD: patch-link-grammar_utilities_h,v 1.2 2017/08/21 16:46:29 jca Exp $
 
 Index: link-grammar/utilities.h
 --- link-grammar/utilities.h.orig
 +++ link-grammar/utilities.h
-@@ -189,20 +189,21 @@ int strncasecmp(const char *s1, const char *s2, size_t
-    (Or in linux when I compile with -ansi) */
- #endif
- 
--/* Cygwin < 2.6.0 doesn't have locale_t. */
--#ifdef HAVE_LOCALE_T
--locale_t newlocale_LC_CTYPE(const char *);
+@@ -192,17 +192,21 @@ int strncasecmp(const char *s1, const char *s2, size_t
+ /* Cygwin < 2.6.0 doesn't have locale_t. */
+ #ifdef HAVE_LOCALE_T
+ locale_t newlocale_LC_CTYPE(const char *);
 +// XXX horrible magic to get the stubs to shut things up
-+#if defined(__clang__) && __has_include(<support/xlocale/__nop_locale_mgmt.h>)
++#elif defined(__clang__) && __has_include(<support/xlocale/__nop_locale_mgmt.h>)
 +#include <cstddef>
 +#include <support/xlocale/__nop_locale_mgmt.h>
  #else
