@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2016/10/01 11:54:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2017/08/21 19:43:20 jasper Exp $
 
 DISTNAME =	ucpp-1.3.2
-REVISION =	0
+REVISION =	1
 COMMENT =	C preprocessor and lexer
 CATEGORIES =	devel
-HOMEPAGE =	https://code.google.com/p/ucpp
-MASTER_SITES =	${MASTER_SITE_GOOGLECODE:=ucpp/}
+HOMEPAGE =	https://github.com/lpsantil/ucpp
+MASTER_SITES =	https://distfiles.nl/
 
 PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB =		c

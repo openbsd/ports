@@ -1,20 +1,18 @@
-# $OpenBSD: Makefile,v 1.5 2015/10/03 11:55:39 robert Exp $
+# $OpenBSD: Makefile,v 1.6 2017/08/21 19:43:20 jasper Exp $
 
 COMMENT=	.NET library for the Google Data API
 
 V=		1.9.0.0
 DISTNAME=	libgoogle-data-mono-${V}
 PKGNAME=	mono-gdata-${V}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	devel
-
-HOMEPAGE=	https://google-gdata.googlecode.com/
 
 # Apache 2.0
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	${HOMEPAGE}files/
+MASTER_SITES=	https://distfiles.nl/
 
 MODULES=	lang/mono
 MODMONO_GMCS_COMPAT=	Yes

@@ -1,19 +1,20 @@
-# $OpenBSD: Makefile,v 1.2 2016/10/01 11:54:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2017/08/21 19:43:20 jasper Exp $
 
 COMMENT =		unit test framework for Bourne based shell scripts
 
 DISTNAME =		shunit2-2.1.6
+REVISION =		0
 
 CATEGORIES =		devel
 
-HOMEPAGE =		https://shunit2.googlecode.com
+HOMEPAGE =		https://github.com/kward/shunit2
 
 MAINTAINER =		Robert Peichaer <rpe@openbsd.org>
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		${MASTER_SITE_GOOGLECODE:=shunit2/}
+MASTER_SITES =		https://distfiles.nl/
 
 EXTRACT_SUFX =		.tgz
 
