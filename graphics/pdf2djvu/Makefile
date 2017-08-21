@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2017/07/26 22:45:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2017/08/21 19:57:27 jasper Exp $
 
 COMMENT =		creates DjVu files from PDF files
 
@@ -26,7 +26,6 @@ EXTRACT_SUFX =		.tar.xz
 
 COMPILER =		gcc
 
-# https://code.google.com/p/pdf2djvu/wiki/BuildDepends
 LIB_DEPENDS =		devel/gettext\
 			graphics/djvulibre \
 			graphics/exiv2 \
