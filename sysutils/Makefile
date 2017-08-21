@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.450 2017/08/21 02:22:01 jsg Exp $
+# $OpenBSD: Makefile,v 1.451 2017/08/21 14:47:21 jca Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -60,6 +60,7 @@
      SUBDIR += diskrescue
      SUBDIR += dmassage
      SUBDIR += dmidecode
+     SUBDIR += dosfstools
      SUBDIR += downtimed
      SUBDIR += dsh
      SUBDIR += dtb
