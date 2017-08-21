@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1363 2017/07/26 14:21:22 sthen Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1364 2017/08/21 09:10:52 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1707,7 +1707,7 @@ _PACKAGE_CHECKSUM_DIR = ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/cksums
 _do_checksum_package = \
 	install -d ${PACKAGE_REPOSITORY_MODE} ${_PACKAGE_CHECKSUM_DIR} && \
 	cd ${_TMP_REPO} && \
-	cksum -b -a sha256 $$pkgname \
+	cksum -b -a sha256 -- $$pkgname \
 		>${_PACKAGE_CHECKSUM_DIR}/$$(basename $$pkgname .tgz).sha256
 
 .if ${CHECKSUM_PACKAGES:L} == "yes"
@@ -2021,7 +2021,7 @@ makesum:
 	@mv -f ${CHECKSUM_FILE}{,.orig} 2>/dev/null || true
 	@${MAKE} fetch-all _MAKESUM=true
 .if !empty(MAKESUMFILES)
-	@cd ${DISTDIR} && cksum -b -a "${_CIPHER}" ${MAKESUMFILES} >> ${CHECKSUM_FILE}
+	@cd ${DISTDIR} && cksum -b -a "${_CIPHER}" -- ${MAKESUMFILES} >> ${CHECKSUM_FILE}
 	@cd ${DISTDIR} && \
 		for file in ${MAKESUMFILES}; do \
 			${_size_fragment} $$file $$file >> ${CHECKSUM_FILE}; \
