@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2016/09/23 09:16:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2017/08/21 18:49:30 jasper Exp $
 
 COMMENT-main=	database interface library for Lua (including SQLite3)
 COMMENT-mysql=	MySQL driver for luadbi
@@ -9,18 +9,16 @@ DISTNAME=	luadbi.$V
 PKGNAME-main=	luadbi-$V
 PKGNAME-mysql=	luadbi-mysql-$V
 PKGNAME-pgsql=	luadbi-pgsql-$V
-REVISION-main=	1
-REVISION-mysql=	3
-REVISION-pgsql=	0
+REVISION-main=	2
+REVISION-mysql=	4
+REVISION-pgsql=	1
 
 CATEGORIES=	databases
-
-HOMEPAGE=	https://luadbi.googlecode.com/
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		${HOMEPAGE}/files/
+MASTER_SITES=		https://distfiles.nl/
 
 MULTI_PACKAGES=		-main -mysql -pgsql
 
