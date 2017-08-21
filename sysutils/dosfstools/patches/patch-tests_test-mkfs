@@ -1,0 +1,26 @@
+$OpenBSD: patch-tests_test-mkfs,v 1.1.1.1 2017/08/21 14:43:23 jca Exp $
+
+Detect xxd(1) at test time, not at configure time.
+Base cmp(1) doesn't support --bytes.
+
+Index: tests/test-mkfs
+--- tests/test-mkfs.orig
++++ tests/test-mkfs
+@@ -39,7 +39,7 @@ fi
+ testname=$(basename "$1" .mkfs)
+ 
+ 
+-if [ "$XXD_FOUND" != "yes" ]; then
++if ! command -v xxd >/dev/null 2>&1; then
+ 	echo "xxd not available, required by test"
+ 	exit 77  # report test skipped
+ fi
+@@ -60,7 +60,7 @@ limitarg=
+ if [ -n "$CMP_LIMIT" ]; then
+ 	limitarg="--bytes=$CMP_LIMIT"
+ fi
+-cmp $limitarg "${testname}.out" "${testname}.refimg"
++gcmp $limitarg "${testname}.out" "${testname}.refimg"
+ success=$?
+ 
+ if [ $success -eq 0 ]; then

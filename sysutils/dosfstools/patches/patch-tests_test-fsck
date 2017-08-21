@@ -1,0 +1,16 @@
+$OpenBSD: patch-tests_test-fsck,v 1.1.1.1 2017/08/21 14:43:23 jca Exp $
+
+Detect xxd(1) at test time, not at configure time.
+
+Index: tests/test-fsck
+--- tests/test-fsck.orig
++++ tests/test-fsck
+@@ -35,7 +35,7 @@ fi
+ testname=$(basename "$1" .fsck)
+ 
+ 
+-if [ "$XXD_FOUND" != "yes" ]; then
++if ! command -v xxd >/dev/null 2>&1; then
+ 	echo "xxd not available, required by test"
+ 	exit 77  # report test skipped
+ fi

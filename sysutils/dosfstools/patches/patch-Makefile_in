@@ -1,0 +1,16 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2017/08/21 14:43:23 jca Exp $
+
+Not interested in the docs.
+
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -744,7 +744,7 @@ info: info-recursive
+ 
+ info-am:
+ 
+-install-data-am: install-dist_docDATA
++install-data-am:
+ 
+ install-dvi: install-dvi-recursive
+ 
