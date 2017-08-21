@@ -1,0 +1,14 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2017/08/21 02:19:59 jsg Exp $
+--- Makefile.orig	Fri Feb 10 15:41:21 2017
++++ Makefile	Fri Feb 10 15:41:53 2017
+@@ -107,8 +107,8 @@ BL_COMMON_SOURCES	:=	common/bl_common.c			\
+ BUILD_BASE		:=	./build
+ BUILD_PLAT		:=	${BUILD_BASE}/${PLAT}/${BUILD_TYPE}
+ 
+-PLATFORMS		:=	$(shell ls -I common plat/)
+-SPDS			:=	$(shell ls -I none services/spd)
++PLATFORMS		:=	$(shell ls plat/ | fgrep -v common)
++SPDS			:=	$(shell ls services/spd | fgrep -v none)
+ HELP_PLATFORMS		:=	$(shell echo ${PLATFORMS} | sed 's/ /|/g')
+ 
+ # Convenience function for adding build definitions

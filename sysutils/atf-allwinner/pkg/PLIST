@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/08/21 02:19:59 jsg Exp $
+share/atf-allwinner/
+share/atf-allwinner/bl31.bin
