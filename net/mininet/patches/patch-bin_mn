@@ -1,0 +1,67 @@
+$OpenBSD: patch-bin_mn,v 1.1.1.1 2017/08/21 18:47:12 akoshibe Exp $
+Choose node types that are applicable given an OS. 
+Index: bin/mn
+--- bin/mn.orig
++++ bin/mn
+@@ -26,10 +26,10 @@ from mininet.log import lg, LEVELS, info, debug, warn,
+ from mininet.net import Mininet, MininetWithControlNet, VERSION
+ from mininet.node import ( Host, CPULimitedHost, Controller, OVSController,
+                            Ryu, NOX, RemoteController, findController,
+-                           DefaultController, NullController,
++                           DefaultController, NullController, Switchd,
+                            UserSwitch, OVSSwitch, OVSBridge,
+-                           IVSSwitch )
+-from mininet.nodelib import LinuxBridge
++                           IVSSwitch, IfSwitch, DefaultSwitch )
++from mininet.nodelib import ClassicBridge
+ from mininet.link import Link, TCLink, TCULink, OVSLink
+ from mininet.topo import ( SingleSwitchTopo, LinearTopo,
+                            SingleSwitchReversedTopo, MinimalTopo )
+@@ -64,8 +64,9 @@ SWITCHES = { 'user': UserSwitch,
+              # Keep ovsk for compatibility with 2.0
+              'ovsk': OVSSwitch,
+              'ivs': IVSSwitch,
+-             'lxbr': LinuxBridge,
+-             'default': OVSSwitch }
++             'ifsw': IfSwitch,
++             'sysbr': ClassicBridge,
++             'default': DefaultSwitch }
+ 
+ HOSTDEF = 'proc'
+ HOSTS = { 'proc': Host,
+@@ -78,6 +79,7 @@ CONTROLLERS = { 'ref': Controller,
+                 'nox': NOX,
+                 'remote': RemoteController,
+                 'ryu': Ryu,
++                'swd': Switchd,
+                 'default': DefaultController,  # Note: overridden below
+                 'none': NullController }
+ 
+@@ -314,8 +316,6 @@ class MininetRunner( object ):
+     def begin( self ):
+         "Create and run mininet."
+ 
+-        global CLI
+-
+         opts = self.options
+ 
+         if opts.cluster:
+@@ -340,7 +340,7 @@ class MininetRunner( object ):
+                           'for default switch!\n' )
+                     info( '*** Falling back to OVS Bridge\n' )
+                     opts.switch = 'ovsbr'
+-                elif opts.switch not in ( 'ovsbr', 'lxbr' ):
++                elif opts.switch not in ( 'ovsbr', 'sysbr' ):
+                     raise Exception( "Could not find a default controller "
+                                      "for switch %s" %
+                                      opts.switch )
+@@ -387,8 +387,7 @@ class MininetRunner( object ):
+         if opts.ensure_value( 'nat', False ):
+             mn.addNAT( *opts.nat_args, **opts.nat_kwargs ).configDefault()
+ 
+-        # --custom files can set CLI or change mininet.cli.CLI
+-        globals().setdefault( 'CLI', mininet.cli.CLI )
++        CLI = mininet.cli.CLI
+ 
+         if opts.pre:
+             CLI( mn, script=opts.pre )

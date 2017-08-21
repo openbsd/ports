@@ -1,0 +1,43 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2017/08/21 18:47:12 akoshibe Exp $
+builds a config.mk (OS-dependent vars) used by Makefile
+Index: configure
+--- configure.orig
++++ configure
+@@ -0,0 +1,37 @@
++#!/bin/sh
++
++# everything should be in /usr/local, but to keep things unchanged for Linux...
++
++OS=`uname`
++case $OS in
++    *Linux*)
++        prefix='/usr'
++        mandir='/usr/share'
++        inst=$(pwd)/util/install-linux.sh
++        python=python
++        ;;
++    *FreeBSD*)
++        prefix='/usr/local'
++        mandir=$prefix
++        inst=$(pwd)/util/install-freebsd.sh
++        python=python
++        ;;
++    *OpenBSD*)
++        prefix='/usr/local'
++        mandir='/usr/share'
++        inst=$(pwd)/util/install-openbsd.sh
++        # could just link 'python2.7' to 'python'
++        python=python2.7
++        ;;
++    *)
++        echo "Unknown platform: $OS"
++        exit 1
++        ;;
++esac
++
++ln -s $inst $(pwd)/util/install.sh
++
++echo "BINDIR=$prefix/bin"                         > config.mk
++echo "MANDIR=$mandir/man/man1"                    >> config.mk
++echo "PKGDIR=$prefix/lib/python2.7/site-packages" >> config.mk
++echo "PYTHON=$python"                             >> config.mk

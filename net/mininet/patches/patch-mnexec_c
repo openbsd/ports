@@ -1,0 +1,126 @@
+$OpenBSD: patch-mnexec_c,v 1.1.1.1 2017/08/21 18:47:12 akoshibe Exp $
+
+Index: mnexec.c
+--- mnexec.c.orig
++++ mnexec.c
+@@ -13,18 +13,27 @@
+  * Partially based on public domain setsid(1)
+ */
+ 
++#ifdef __linux__
+ #define _GNU_SOURCE
+-#include <stdio.h>
++
+ #include <linux/sched.h>
+-#include <unistd.h>
+ #include <limits.h>
+ #include <syscall.h>
+ #include <fcntl.h>
+-#include <stdlib.h>
+ #include <sched.h>
+ #include <ctype.h>
+ #include <sys/mount.h>
+ 
++#else  /* the BSDs */
++
++#include <sys/types.h>
++
++#endif /* __linux__ */
++
++#include <stdio.h>
++#include <unistd.h>
++#include <stdlib.h>
++
+ #if !defined(VERSION)
+ #define VERSION "(devel)"
+ #endif
+@@ -36,16 +45,21 @@ void usage(char *name)
+            "Options:\n"
+            "  -c: close all file descriptors except stdin/out/error\n"
+            "  -d: detach from tty by calling setsid()\n"
+-           "  -n: run in new network and mount namespaces\n"
+            "  -p: print ^A + pid\n"
++           "  -v: print version\n"
++#ifdef __linux__
++           "  -n: run in new network and mount namespaces\n"
+            "  -a pid: attach to pid's network and mount namespaces\n"
+            "  -g group: add to cgroup\n"
+            "  -r rtprio: run with SCHED_RR (usually requires -g)\n"
+-           "  -v: print version\n",
++#endif
++           ,
+            name);
+ }
+ 
+ 
++#ifdef __linux__
++
+ int setns(int fd, int nstype)
+ {
+     return syscall(__NR_setns, fd, nstype);
+@@ -92,17 +106,24 @@ void cgroup(char *gname)
+     }
+ }
+ 
++#endif /* __linux__ */
++
+ int main(int argc, char *argv[])
+ {
+     int c;
+     int fd;
++#ifdef __linux__
+     char path[PATH_MAX];
+     int nsid;
+     int pid;
+     char *cwd = get_current_dir_name();
+-
+     static struct sched_param sp;
+-    while ((c = getopt(argc, argv, "+cdnpa:g:r:vh")) != -1)
++    char *opts = "+cdnpa:g:r:vh";
++#else
++    char *opts = "+cdpvh";
++#endif
++
++    while ((c = getopt(argc, argv, opts)) != -1)
+         switch(c) {
+         case 'c':
+             /* close file descriptors except stdin/out/error */
+@@ -124,6 +145,15 @@ int main(int argc, char *argv[])
+             }
+             setsid();
+             break;
++        case 'p':
++            /* print pid */
++            printf("\001%d\n", getpid());
++            fflush(stdout);
++            break;
++        case 'v':
++            printf("%s\n", VERSION);
++            exit(0);
++#ifdef __linux__
+         case 'n':
+             /* run in network and mount namespaces */
+             if (unshare(CLONE_NEWNET|CLONE_NEWNS) == -1) {
+@@ -146,11 +176,6 @@ int main(int argc, char *argv[])
+                 return 1;
+             }
+             break;
+-        case 'p':
+-            /* print pid */
+-            printf("\001%d\n", getpid());
+-            fflush(stdout);
+-            break;
+         case 'a':
+             /* Attach to pid's network namespace and mount namespace */
+             pid = atoi(optarg);
+@@ -193,9 +218,7 @@ int main(int argc, char *argv[])
+                 return 1;
+             }
+             break;
+-        case 'v':
+-            printf("%s\n", VERSION);
+-            exit(0);
++#endif /* __linux__ */
+         case 'h':
+             usage(argv[0]);
+             exit(0);

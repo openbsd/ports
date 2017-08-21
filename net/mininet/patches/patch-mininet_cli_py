@@ -1,0 +1,14 @@
+$OpenBSD: patch-mininet_cli_py,v 1.1.1.1 2017/08/21 18:47:12 akoshibe Exp $
+split() automatically splits on whitespace.
+Index: mininet/cli.py
+--- mininet/cli.py.orig
++++ mininet/cli.py
+@@ -411,7 +411,7 @@ class CLI( Cmd ):
+                        % first )
+                 return
+             node = self.mn[ first ]
+-            rest = args.split( ' ' )
++            rest = args.split()
+             # Substitute IP addresses for node names in command
+             # If updateIP() returns None, then use node name
+             rest = [ self.mn[ arg ].defaultIntf().updateIP() or arg

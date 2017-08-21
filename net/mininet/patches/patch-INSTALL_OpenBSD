@@ -1,0 +1,73 @@
+$OpenBSD: patch-INSTALL_OpenBSD,v 1.1.1.1 2017/08/21 18:47:12 akoshibe Exp $
+
+Index: INSTALL.OpenBSD
+--- INSTALL.OpenBSD.orig
++++ INSTALL.OpenBSD
+@@ -0,0 +1,67 @@
++Mininet installation (and general) notes for OpenBSD
++----------------------------------------------------
++
++Currently, the only option is native installation.
++
++
++### Prerequisites
++
++This Mininet port relies on the native OpenFlow switch and controller,
++`switch(4)` and `switchd(8)`, respecitvely - meaning that it assumes that you
++are using OpenBSD 6.1. It also makes use of `doas` instead of `sudo`.
++
++
++### Installation
++
++If it hasn't been already, install `git`:
++
++    doas pkg_add git
++
++Fetch the repo and checkout this branch:
++
++    git fetch https://github.com/akoshibe/mininet.git
++
++The install script, `install.sh`, can be used to install the Mininet core
++libraries along with its dependencies. It must be generated first:
++
++    cd mininet
++    ./configure
++    util/install.sh -a #or with flag -n
++
++`install.sh -h` will give you all available options.
++
++To test the installation:
++
++    doas mn --test=pingall
++
++This will create a two-host, one-switch network and ping across the hosts.
++Alternatively, a `pingall` can be run from the CLI for a similar sanity check:
++
++    doas mn
++    mininet> pingall
++
++
++### Removal
++
++The Mininet core files can be uninstalled with the same install script:
++
++    util/install.sh -u
++
++This essentially undoes `install.sh -n` minus the package dependencies,
++which is the same as `doas make uninstall`.
++
++
++### Limitations and Bugs
++
++* The `iperf` CLI command is pretty unstable, and can hang or kill X.
++
++* The number of hosts (or nodes within their own 'namespaces') is limited to 255,
++  the highest ID that can be given to an rdomain.
++
++* Only the basic network elements (Node, Switch, Link, Controller, Host) are
++  supported, i.e. there are no NAT or any resource/bandwidth-limited elements.
++  Additionally, no work has been done to try to support non-native components such
++  as Open vSwitch or the many controllers (NOX, POX, Ryu...)
++
++* The `dpctl` CLI command (mapped to `switchctl`) isn't constrained to one
++  switch, so it will print the same text per switch.

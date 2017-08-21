@@ -1,0 +1,29 @@
+$OpenBSD: patch-examples_linearbandwidth_py,v 1.1.1.1 2017/08/21 18:47:12 akoshibe Exp $
+KernelSwitch is either OVS or if_switch
+Index: examples/linearbandwidth.py
+--- examples/linearbandwidth.py.orig
++++ examples/linearbandwidth.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/python
++#!/usr/bin/env python
+ 
+ """
+ Test bandwidth (using iperf) on linear networks of varying size,
+@@ -25,7 +25,7 @@ of switches, this example demonstrates:
+ 
+ 
+ from mininet.net import Mininet
+-from mininet.node import UserSwitch, OVSKernelSwitch, Controller
++from mininet.node import UserSwitch, KernelSwitch, Controller
+ from mininet.topo import Topo
+ from mininet.log import lg, info
+ from mininet.util import irange, quietRun
+@@ -71,7 +71,7 @@ def linearBandwidthTest( lengths ):
+     hostCount = switchCount + 1
+ 
+     switches = { 'reference user': UserSwitch,
+-                 'Open vSwitch kernel': OVSKernelSwitch }
++                 'Open vSwitch kernel': KernelSwitch }
+ 
+     # UserSwitch is horribly slow with recent kernels.
+     # We can reinstate it once its performance is fixed

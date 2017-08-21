@@ -1,0 +1,999 @@
+$OpenBSD: patch-mininet_node_py,v 1.1.1.1 2017/08/21 18:47:12 akoshibe Exp $
+Original Node functions are now in BaseNode, subclassed by OS-
+specific Node objects.  
+Index: mininet/node.py
+--- mininet/node.py.orig
++++ mininet/node.py
+@@ -53,602 +53,45 @@ Future enhancements:
+ """
+ 
+ import os
+-import pty
+ import re
+-import signal
+-import select
+-from subprocess import Popen, PIPE
++from subprocess import Popen
+ from time import sleep
+ 
++plat = os.uname()[ 0 ]
++if plat == 'FreeBSD':
++    from mininet.freebsd.node import Node
++    from mininet.freebsd.intf import Intf
++    from mininet.freebsd.util import ( LO, DP_MODE, numCores, moveIntf )
++    OVS_RCSTR = ( 'service ovsdb-server (one)start\n'
++                  'service ovs-vswitchd (one)start\n' )
++elif plat == 'Linux':
++    from mininet.linux.node import Node
++    from mininet.linux.intf import Intf
++    from mininet.linux.util import ( LO, DP_MODE, numCores, moveIntf,
++                                     mountCgroups )
++    OVS_RCSTR = 'service openvswitch-switch start\n'
++else:
++    from mininet.openbsd.node import Node
++    from mininet.openbsd.intf import Intf
++    from mininet.openbsd.util import ( LO, DP_MODE, numCores, moveIntf )
++
++
+ from mininet.log import info, error, warn, debug
+-from mininet.util import ( quietRun, errRun, errFail, moveIntf, isShellBuiltin,
+-                           numCores, retry, mountCgroups )
++from mininet.util import ( quietRun, errRun, errFail, isShellBuiltin,
++                           retry )
+ from mininet.moduledeps import moduleDeps, pathCheck, TUN
+-from mininet.link import Link, Intf, TCIntf, OVSIntf
++from mininet.link import Link, TCIntf, OVSIntf
+ from re import findall
+ from distutils.version import StrictVersion
+ 
+-class Node( object ):
+-    """A virtual network node is simply a shell in a network namespace.
+-       We communicate with it using pipes."""
+ 
+-    portBase = 0  # Nodes always start with eth0/port0, even in OF 1.0
+-
+-    def __init__( self, name, inNamespace=True, **params ):
+-        """name: name of node
+-           inNamespace: in network namespace?
+-           privateDirs: list of private directory strings or tuples
+-           params: Node parameters (see config() for details)"""
+-
+-        # Make sure class actually works
+-        self.checkSetup()
+-
+-        self.name = params.get( 'name', name )
+-        self.privateDirs = params.get( 'privateDirs', [] )
+-        self.inNamespace = params.get( 'inNamespace', inNamespace )
+-
+-        # Stash configuration parameters for future reference
+-        self.params = params
+-
+-        self.intfs = {}  # dict of port numbers to interfaces
+-        self.ports = {}  # dict of interfaces to port numbers
+-                         # replace with Port objects, eventually ?
+-        self.nameToIntf = {}  # dict of interface names to Intfs
+-
+-        # Make pylint happy
+-        ( self.shell, self.execed, self.pid, self.stdin, self.stdout,
+-            self.lastPid, self.lastCmd, self.pollOut ) = (
+-                None, None, None, None, None, None, None, None )
+-        self.waiting = False
+-        self.readbuf = ''
+-
+-        # Start command interpreter shell
+-        self.startShell()
+-        self.mountPrivateDirs()
+-
+-    # File descriptor to node mapping support
+-    # Class variables and methods
+-
+-    inToNode = {}  # mapping of input fds to nodes
+-    outToNode = {}  # mapping of output fds to nodes
+-
+-    @classmethod
+-    def fdToNode( cls, fd ):
+-        """Return node corresponding to given file descriptor.
+-           fd: file descriptor
+-           returns: node"""
+-        node = cls.outToNode.get( fd )
+-        return node or cls.inToNode.get( fd )
+-
+-    # Command support via shell process in namespace
+-    def startShell( self, mnopts=None ):
+-        "Start a shell process for running commands"
+-        if self.shell:
+-            error( "%s: shell is already running\n" % self.name )
+-            return
+-        # mnexec: (c)lose descriptors, (d)etach from tty,
+-        # (p)rint pid, and run in (n)amespace
+-        opts = '-cd' if mnopts is None else mnopts
+-        if self.inNamespace:
+-            opts += 'n'
+-        # bash -i: force interactive
+-        # -s: pass $* to shell, and make process easy to find in ps
+-        # prompt is set to sentinel chr( 127 )
+-        cmd = [ 'mnexec', opts, 'env', 'PS1=' + chr( 127 ),
+-                'bash', '--norc', '-is', 'mininet:' + self.name ]
+-        # Spawn a shell subprocess in a pseudo-tty, to disable buffering
+-        # in the subprocess and insulate it from signals (e.g. SIGINT)
+-        # received by the parent
+-        master, slave = pty.openpty()
+-        self.shell = self._popen( cmd, stdin=slave, stdout=slave, stderr=slave,
+-                                  close_fds=False )
+-        self.stdin = os.fdopen( master, 'rw' )
+-        self.stdout = self.stdin
+-        self.pid = self.shell.pid
+-        self.pollOut = select.poll()
+-        self.pollOut.register( self.stdout )
+-        # Maintain mapping between file descriptors and nodes
+-        # This is useful for monitoring multiple nodes
+-        # using select.poll()
+-        self.outToNode[ self.stdout.fileno() ] = self
+-        self.inToNode[ self.stdin.fileno() ] = self
+-        self.execed = False
+-        self.lastCmd = None
+-        self.lastPid = None
+-        self.readbuf = ''
+-        # Wait for prompt
+-        while True:
+-            data = self.read( 1024 )
+-            if data[ -1 ] == chr( 127 ):
+-                break
+-            self.pollOut.poll()
+-        self.waiting = False
+-        # +m: disable job control notification
+-        self.cmd( 'unset HISTFILE; stty -echo; set +m' )
+-
+-    def mountPrivateDirs( self ):
+-        "mount private directories"
+-        # Avoid expanding a string into a list of chars
+-        assert not isinstance( self.privateDirs, basestring )
+-        for directory in self.privateDirs:
+-            if isinstance( directory, tuple ):
+-                # mount given private directory
+-                privateDir = directory[ 1 ] % self.__dict__
+-                mountPoint = directory[ 0 ]
+-                self.cmd( 'mkdir -p %s' % privateDir )
+-                self.cmd( 'mkdir -p %s' % mountPoint )
+-                self.cmd( 'mount --bind %s %s' %
+-                               ( privateDir, mountPoint ) )
+-            else:
+-                # mount temporary filesystem on directory
+-                self.cmd( 'mkdir -p %s' % directory )
+-                self.cmd( 'mount -n -t tmpfs tmpfs %s' % directory )
+-
+-    def unmountPrivateDirs( self ):
+-        "mount private directories"
+-        for directory in self.privateDirs:
+-            if isinstance( directory, tuple ):
+-                self.cmd( 'umount ', directory[ 0 ] )
+-            else:
+-                self.cmd( 'umount ', directory )
+-
+-    def _popen( self, cmd, **params ):
+-        """Internal method: spawn and return a process
+-            cmd: command to run (list)
+-            params: parameters to Popen()"""
+-        # Leave this is as an instance method for now
+-        assert self
+-        return Popen( cmd, **params )
+-
+-    def cleanup( self ):
+-        "Help python collect its garbage."
+-        # We used to do this, but it slows us down:
+-        # Intfs may end up in root NS
+-        # for intfName in self.intfNames():
+-        # if self.name in intfName:
+-        # quietRun( 'ip link del ' + intfName )
+-        self.shell = None
+-
+-    # Subshell I/O, commands and control
+-
+-    def read( self, maxbytes=1024 ):
+-        """Buffered read from node, potentially blocking.
+-           maxbytes: maximum number of bytes to return"""
+-        count = len( self.readbuf )
+-        if count < maxbytes:
+-            data = os.read( self.stdout.fileno(), maxbytes - count )
+-            self.readbuf += data
+-        if maxbytes >= len( self.readbuf ):
+-            result = self.readbuf
+-            self.readbuf = ''
+-        else:
+-            result = self.readbuf[ :maxbytes ]
+-            self.readbuf = self.readbuf[ maxbytes: ]
+-        return result
+-
+-    def readline( self ):
+-        """Buffered readline from node, potentially blocking.
+-           returns: line (minus newline) or None"""
+-        self.readbuf += self.read( 1024 )
+-        if '\n' not in self.readbuf:
+-            return None
+-        pos = self.readbuf.find( '\n' )
+-        line = self.readbuf[ 0: pos ]
+-        self.readbuf = self.readbuf[ pos + 1: ]
+-        return line
+-
+-    def write( self, data ):
+-        """Write data to node.
+-           data: string"""
+-        os.write( self.stdin.fileno(), data )
+-
+-    def terminate( self ):
+-        "Send kill signal to Node and clean up after it."
+-        self.unmountPrivateDirs()
+-        if self.shell:
+-            if self.shell.poll() is None:
+-                os.killpg( self.shell.pid, signal.SIGHUP )
+-        self.cleanup()
+-
+-    def stop( self, deleteIntfs=False ):
+-        """Stop node.
+-           deleteIntfs: delete interfaces? (False)"""
+-        if deleteIntfs:
+-            self.deleteIntfs()
+-        self.terminate()
+-
+-    def waitReadable( self, timeoutms=None ):
+-        """Wait until node's output is readable.
+-           timeoutms: timeout in ms or None to wait indefinitely.
+-           returns: result of poll()"""
+-        if len( self.readbuf ) == 0:
+-            return self.pollOut.poll( timeoutms )
+-
+-    def sendCmd( self, *args, **kwargs ):
+-        """Send a command, followed by a command to echo a sentinel,
+-           and return without waiting for the command to complete.
+-           args: command and arguments, or string
+-           printPid: print command's PID? (False)"""
+-        assert self.shell and not self.waiting
+-        printPid = kwargs.get( 'printPid', False )
+-        # Allow sendCmd( [ list ] )
+-        if len( args ) == 1 and isinstance( args[ 0 ], list ):
+-            cmd = args[ 0 ]
+-        # Allow sendCmd( cmd, arg1, arg2... )
+-        elif len( args ) > 0:
+-            cmd = args
+-        # Convert to string
+-        if not isinstance( cmd, str ):
+-            cmd = ' '.join( [ str( c ) for c in cmd ] )
+-        if not re.search( r'\w', cmd ):
+-            # Replace empty commands with something harmless
+-            cmd = 'echo -n'
+-        self.lastCmd = cmd
+-        # if a builtin command is backgrounded, it still yields a PID
+-        if len( cmd ) > 0 and cmd[ -1 ] == '&':
+-            # print ^A{pid}\n so monitor() can set lastPid
+-            cmd += ' printf "\\001%d\\012" $! '
+-        elif printPid and not isShellBuiltin( cmd ):
+-            cmd = 'mnexec -p ' + cmd
+-        self.write( cmd + '\n' )
+-        self.lastPid = None
+-        self.waiting = True
+-
+-    def sendInt( self, intr=chr( 3 ) ):
+-        "Interrupt running command."
+-        debug( 'sendInt: writing chr(%d)\n' % ord( intr ) )
+-        self.write( intr )
+-
+-    def monitor( self, timeoutms=None, findPid=True ):
+-        """Monitor and return the output of a command.
+-           Set self.waiting to False if command has completed.
+-           timeoutms: timeout in ms or None to wait indefinitely
+-           findPid: look for PID from mnexec -p"""
+-        ready = self.waitReadable( timeoutms )
+-        if not ready:
+-            return ''
+-        data = self.read( 1024 )
+-        pidre = r'\[\d+\] \d+\r\n'
+-        # Look for PID
+-        marker = chr( 1 ) + r'\d+\r\n'
+-        if findPid and chr( 1 ) in data:
+-            # suppress the job and PID of a backgrounded command
+-            if re.findall( pidre, data ):
+-                data = re.sub( pidre, '', data )
+-            # Marker can be read in chunks; continue until all of it is read
+-            while not re.findall( marker, data ):
+-                data += self.read( 1024 )
+-            markers = re.findall( marker, data )
+-            if markers:
+-                self.lastPid = int( markers[ 0 ][ 1: ] )
+-                data = re.sub( marker, '', data )
+-        # Look for sentinel/EOF
+-        if len( data ) > 0 and data[ -1 ] == chr( 127 ):
+-            self.waiting = False
+-            data = data[ :-1 ]
+-        elif chr( 127 ) in data:
+-            self.waiting = False
+-            data = data.replace( chr( 127 ), '' )
+-        return data
+-
+-    def waitOutput( self, verbose=False, findPid=True ):
+-        """Wait for a command to complete.
+-           Completion is signaled by a sentinel character, ASCII(127)
+-           appearing in the output stream.  Wait for the sentinel and return
+-           the output, including trailing newline.
+-           verbose: print output interactively"""
+-        log = info if verbose else debug
+-        output = ''
+-        while self.waiting:
+-            data = self.monitor( findPid=findPid )
+-            output += data
+-            log( data )
+-        return output
+-
+-    def cmd( self, *args, **kwargs ):
+-        """Send a command, wait for output, and return it.
+-           cmd: string"""
+-        verbose = kwargs.get( 'verbose', False )
+-        log = info if verbose else debug
+-        log( '*** %s : %s\n' % ( self.name, args ) )
+-        if self.shell:
+-            self.sendCmd( *args, **kwargs )
+-            return self.waitOutput( verbose )
+-        else:
+-            warn( '(%s exited - ignoring cmd%s)\n' % ( self, args ) )
+-
+-    def cmdPrint( self, *args):
+-        """Call cmd and printing its output
+-           cmd: string"""
+-        return self.cmd( *args, **{ 'verbose': True } )
+-
+-    def popen( self, *args, **kwargs ):
+-        """Return a Popen() object in our namespace
+-           args: Popen() args, single list, or string
+-           kwargs: Popen() keyword args"""
+-        defaults = { 'stdout': PIPE, 'stderr': PIPE,
+-                     'mncmd':
+-                     [ 'mnexec', '-da', str( self.pid ) ] }
+-        defaults.update( kwargs )
+-        if len( args ) == 1:
+-            if isinstance( args[ 0 ], list ):
+-                # popen([cmd, arg1, arg2...])
+-                cmd = args[ 0 ]
+-            elif isinstance( args[ 0 ], basestring ):
+-                # popen("cmd arg1 arg2...")
+-                cmd = args[ 0 ].split()
+-            else:
+-                raise Exception( 'popen() requires a string or list' )
+-        elif len( args ) > 0:
+-            # popen( cmd, arg1, arg2... )
+-            cmd = list( args )
+-        # Attach to our namespace  using mnexec -a
+-        cmd = defaults.pop( 'mncmd' ) + cmd
+-        # Shell requires a string, not a list!
+-        if defaults.get( 'shell', False ):
+-            cmd = ' '.join( cmd )
+-        popen = self._popen( cmd, **defaults )
+-        return popen
+-
+-    def pexec( self, *args, **kwargs ):
+-        """Execute a command using popen
+-           returns: out, err, exitcode"""
+-        popen = self.popen( *args, stdin=PIPE, stdout=PIPE, stderr=PIPE,
+-                            **kwargs )
+-        # Warning: this can fail with large numbers of fds!
+-        out, err = popen.communicate()
+-        exitcode = popen.wait()
+-        return out, err, exitcode
+-
+-    # Interface management, configuration, and routing
+-
+-    # BL notes: This might be a bit redundant or over-complicated.
+-    # However, it does allow a bit of specialization, including
+-    # changing the canonical interface names. It's also tricky since
+-    # the real interfaces are created as veth pairs, so we can't
+-    # make a single interface at a time.
+-
+-    def newPort( self ):
+-        "Return the next port number to allocate."
+-        if len( self.ports ) > 0:
+-            return max( self.ports.values() ) + 1
+-        return self.portBase
+-
+-    def addIntf( self, intf, port=None, moveIntfFn=moveIntf ):
+-        """Add an interface.
+-           intf: interface
+-           port: port number (optional, typically OpenFlow port number)
+-           moveIntfFn: function to move interface (optional)"""
+-        if port is None:
+-            port = self.newPort()
+-        self.intfs[ port ] = intf
+-        self.ports[ intf ] = port
+-        self.nameToIntf[ intf.name ] = intf
+-        debug( '\n' )
+-        debug( 'added intf %s (%d) to node %s\n' % (
+-                intf, port, self.name ) )
+-        if self.inNamespace:
+-            debug( 'moving', intf, 'into namespace for', self.name, '\n' )
+-            moveIntfFn( intf.name, self  )
+-
+-    def delIntf( self, intf ):
+-        """Remove interface from Node's known interfaces
+-           Note: to fully delete interface, call intf.delete() instead"""
+-        port = self.ports.get( intf )
+-        if port is not None:
+-            del self.intfs[ port ]
+-            del self.ports[ intf ]
+-            del self.nameToIntf[ intf.name ]
+-
+-    def defaultIntf( self ):
+-        "Return interface for lowest port"
+-        ports = self.intfs.keys()
+-        if ports:
+-            return self.intfs[ min( ports ) ]
+-        else:
+-            warn( '*** defaultIntf: warning:', self.name,
+-                  'has no interfaces\n' )
+-
+-    def intf( self, intf=None ):
+-        """Return our interface object with given string name,
+-           default intf if name is falsy (None, empty string, etc).
+-           or the input intf arg.
+-
+-        Having this fcn return its arg for Intf objects makes it
+-        easier to construct functions with flexible input args for
+-        interfaces (those that accept both string names and Intf objects).
+-        """
+-        if not intf:
+-            return self.defaultIntf()
+-        elif isinstance( intf, basestring):
+-            return self.nameToIntf[ intf ]
+-        else:
+-            return intf
+-
+-    def connectionsTo( self, node):
+-        "Return [ intf1, intf2... ] for all intfs that connect self to node."
+-        # We could optimize this if it is important
+-        connections = []
+-        for intf in self.intfList():
+-            link = intf.link
+-            if link:
+-                node1, node2 = link.intf1.node, link.intf2.node
+-                if node1 == self and node2 == node:
+-                    connections += [ ( intf, link.intf2 ) ]
+-                elif node1 == node and node2 == self:
+-                    connections += [ ( intf, link.intf1 ) ]
+-        return connections
+-
+-    def deleteIntfs( self, checkName=True ):
+-        """Delete all of our interfaces.
+-           checkName: only delete interfaces that contain our name"""
+-        # In theory the interfaces should go away after we shut down.
+-        # However, this takes time, so we're better off removing them
+-        # explicitly so that we won't get errors if we run before they
+-        # have been removed by the kernel. Unfortunately this is very slow,
+-        # at least with Linux kernels before 2.6.33
+-        for intf in self.intfs.values():
+-            # Protect against deleting hardware interfaces
+-            if ( self.name in intf.name ) or ( not checkName ):
+-                intf.delete()
+-                info( '.' )
+-
+-    # Routing support
+-
+-    def setARP( self, ip, mac ):
+-        """Add an ARP entry.
+-           ip: IP address as string
+-           mac: MAC address as string"""
+-        result = self.cmd( 'arp', '-s', ip, mac )
+-        return result
+-
+-    def setHostRoute( self, ip, intf ):
+-        """Add route to host.
+-           ip: IP address as dotted decimal
+-           intf: string, interface name"""
+-        return self.cmd( 'route add -host', ip, 'dev', intf )
+-
+-    def setDefaultRoute( self, intf=None ):
+-        """Set the default route to go through intf.
+-           intf: Intf or {dev <intfname> via <gw-ip> ...}"""
+-        # Note setParam won't call us if intf is none
+-        if isinstance( intf, basestring ) and ' ' in intf:
+-            params = intf
+-        else:
+-            params = 'dev %s' % intf
+-        # Do this in one line in case we're messing with the root namespace
+-        self.cmd( 'ip route del default; ip route add default', params )
+-
+-    # Convenience and configuration methods
+-
+-    def setMAC( self, mac, intf=None ):
+-        """Set the MAC address for an interface.
+-           intf: intf or intf name
+-           mac: MAC address as string"""
+-        return self.intf( intf ).setMAC( mac )
+-
+-    def setIP( self, ip, prefixLen=8, intf=None, **kwargs ):
+-        """Set the IP address for an interface.
+-           intf: intf or intf name
+-           ip: IP address as a string
+-           prefixLen: prefix length, e.g. 8 for /8 or 16M addrs
+-           kwargs: any additional arguments for intf.setIP"""
+-        return self.intf( intf ).setIP( ip, prefixLen, **kwargs )
+-
+-    def IP( self, intf=None ):
+-        "Return IP address of a node or specific interface."
+-        return self.intf( intf ).IP()
+-
+-    def MAC( self, intf=None ):
+-        "Return MAC address of a node or specific interface."
+-        return self.intf( intf ).MAC()
+-
+-    def intfIsUp( self, intf=None ):
+-        "Check if an interface is up."
+-        return self.intf( intf ).isUp()
+-
+-    # The reason why we configure things in this way is so
+-    # That the parameters can be listed and documented in
+-    # the config method.
+-    # Dealing with subclasses and superclasses is slightly
+-    # annoying, but at least the information is there!
+-
+-    def setParam( self, results, method, **param ):
+-        """Internal method: configure a *single* parameter
+-           results: dict of results to update
+-           method: config method name
+-           param: arg=value (ignore if value=None)
+-           value may also be list or dict"""
+-        name, value = param.items()[ 0 ]
+-        if value is None:
+-            return
+-        f = getattr( self, method, None )
+-        if not f:
+-            return
+-        if isinstance( value, list ):
+-            result = f( *value )
+-        elif isinstance( value, dict ):
+-            result = f( **value )
+-        else:
+-            result = f( value )
+-        results[ name ] = result
+-        return result
+-
+-    def config( self, mac=None, ip=None,
+-                defaultRoute=None, lo='up', **_params ):
+-        """Configure Node according to (optional) parameters:
+-           mac: MAC address for default interface
+-           ip: IP address for default interface
+-           ifconfig: arbitrary interface configuration
+-           Subclasses should override this method and call
+-           the parent class's config(**params)"""
+-        # If we were overriding this method, we would call
+-        # the superclass config method here as follows:
+-        # r = Parent.config( **_params )
+-        r = {}
+-        self.setParam( r, 'setMAC', mac=mac )
+-        self.setParam( r, 'setIP', ip=ip )
+-        self.setParam( r, 'setDefaultRoute', defaultRoute=defaultRoute )
+-        # This should be examined
+-        self.cmd( 'ifconfig lo ' + lo )
+-        return r
+-
+-    def configDefault( self, **moreParams ):
+-        "Configure with default parameters"
+-        self.params.update( moreParams )
+-        self.config( **self.params )
+-
+-    # This is here for backward compatibility
+-    def linkTo( self, node, link=Link ):
+-        """(Deprecated) Link to another node
+-           replace with Link( node1, node2)"""
+-        return link( self, node )
+-
+-    # Other methods
+-
+-    def intfList( self ):
+-        "List of our interfaces sorted by port number"
+-        return [ self.intfs[ p ] for p in sorted( self.intfs.iterkeys() ) ]
+-
+-    def intfNames( self ):
+-        "The names of our interfaces sorted by port number"
+-        return [ str( i ) for i in self.intfList() ]
+-
+-    def __repr__( self ):
+-        "More informative string representation"
+-        intfs = ( ','.join( [ '%s:%s' % ( i.name, i.IP() )
+-                              for i in self.intfList() ] ) )
+-        return '<%s %s: %s pid=%s> ' % (
+-            self.__class__.__name__, self.name, intfs, self.pid )
+-
+-    def __str__( self ):
+-        "Abbreviated string representation"
+-        return self.name
+-
+-    # Automatic class setup support
+-
+-    isSetup = False
+-
+-    @classmethod
+-    def checkSetup( cls ):
+-        "Make sure our class and superclasses are set up"
+-        while cls and not getattr( cls, 'isSetup', True ):
+-            cls.setup()
+-            cls.isSetup = True
+-            # Make pylint happy
+-            cls = getattr( type( cls ), '__base__', None )
+-
+-    @classmethod
+-    def setup( cls ):
+-        "Make sure our class dependencies are available"
+-        pathCheck( 'mnexec', 'ifconfig', moduleName='Mininet')
+-
+ class Host( Node ):
+     "A host is simply a Node"
+     pass
+ 
+-class CPULimitedHost( Host ):
+ 
++class CgroupHost( Host ):
++
+     "CPU limited host"
+ 
+     def __init__( self, name, sched='cfs', **kwargs ):
+@@ -702,8 +145,8 @@ class CPULimitedHost( Host ):
+            args: Popen() args, single list, or string
+            kwargs: Popen() keyword args"""
+         # Tell mnexec to execute command in our cgroup
+-        mncmd = kwargs.pop( 'mncmd', [ 'mnexec', '-g', self.name,
+-                                       '-da', str( self.pid ) ] )
++        mncmd = [ 'mnexec', '-g', self.name,
++                  '-da', str( self.pid ) ]
+         # if our cgroup is not given any cpu time,
+         # we cannot assign the RR Scheduler.
+         if self.sched == 'rt':
+@@ -739,7 +182,7 @@ class CPULimitedHost( Host ):
+         quietRun( 'chrt -p %s %s' % ( self.rtprio, self.pid ) )
+         result = quietRun( 'chrt -p %s' % self.pid )
+         firstline = result.split( '\n' )[ 0 ]
+-        lastword = firstline.split( ' ' )[ -1 ]
++        lastword = firstline.split()[ -1 ]
+         if lastword != 'SCHED_RR':
+             error( '*** error: could not assign SCHED_RR to %s\n' % self.name )
+         return lastword
+@@ -837,6 +280,105 @@ class CPULimitedHost( Host ):
+         cls.inited = True
+ 
+ 
++class RctlHost( Host ):
++    """
++    A CPU-limited host that uses a combination of `rctl(8)` and `cpuset(1)`
++    is used to constrain the host resources. Here, a host is considered to be
++    the jail.
++    """
++
++    def __init__( self, name, **kwargs ):
++        Host.__init__( self, name, **kwargs )
++        self.period_us = kwargs.get( 'period_us', 100000 )
++        self.pcpu = -1
++
++    def setCPUFrac( self, cpu, sched=None, numc=None ):
++        """Set overall CPU fraction for this host
++           cpu: CPU bandwidth limit (nonzero float)
++           sched: Scheduler (ignored but exists for compatibility)
++           numc: Number of cores"""
++        if cpu == -1:
++            return
++        if cpu < 0:
++            error( '*** error: fraction must be a positive value' )
++            return
++        self.pcpu = cpu
++        cct = numCores() if numc is None else numc
++        cmd = 'rctl -a jail:%s:pcpu:deny=%d' % ( self.jid, ( cpu * 100 * cct ) )
++        quietRun( cmd )
++
++    def setCPUs( self, cores, mems=0 ):
++        """Specify cores that host will run on."""
++        # do we want to scale back/up pcpu?
++        # extract valid cores to a list:  mask: 0, 1 -> [0,1]
++        avail = quietRun( 'cpuset -g' ).split()
++        if avail[2] == "mask:":
++            valid = map( ( lambda x : int( x.split( ',' )[0] ) ), avail[ 3: ] )
++
++        if isinstance( cores, list ):
++            for c in cores:
++                if c not in valid:
++                    error( '*** error: cannot assign target to core %d' % c )
++                    return
++            args = ','.join( [ str( c ) for c in cores ] )
++            cct = len( cores )
++        else:
++            if cores not in valid:
++                error( '*** error: cannot assign target to core %d' % c )
++                return
++            else:
++                args = str( cores )
++                cct = 1
++
++        cmd = 'cpuset -l %s -j %s' % ( args, self.jid )
++        quietRun( cmd )
++
++        #update the resourcelimit to scale
++        self.setCPUFrac( self.pcpu, numc=cct )
++
++    def rulesDel( self ):
++        """Remove `rctl` rules associated with this host"""
++        _out, _err, exitcode = errRun( 'rctl -r jail:%s' % self.jid )
++        return exitcode
++
++    def cleanup( self ):
++        "Clean up Node, then clean up our resource allocation rules"
++        super( ResourceLimitedHost, self ).cleanup()
++        # no need/means to remove cpuset rules - they die with host
++        retry( retries=3, delaySecs=.1, fn=self.rulesDel )
++
++    def config( self, cpu=-1, cores=None, **params ):
++        """cpu: desired overall system CPU fraction
++           cores: (real) core(s) this host can run on
++           params: parameters for Node.config()"""
++        r = Node.config( self, **params )
++        # Was considering cpu={'cpu': cpu , 'sched': sched}, but
++        # that seems redundant
++        self.setParam( r, 'setCPUFrac', cpu=cpu )
++        self.setParam( r, 'setCPUs', cores=cores )
++        return r
++
++    def getCPUTime( self, pid ):
++        """Get CPU time of a process identified by pid. We do this via
++           procstat(1). It is janky, but 10.x procstat doesn't do libxo
++           output."""
++        res = quietRun( 'procstat -rh %s' % pid ).split('\n')
++        c = 0;
++        time = 0.0
++        for line in res:
++            if 'time' in line:
++                # the microsecond portion of user/kernel time
++                time += float(line.split(':')[-1])
++                c+=1
++            # got the two lines we need.
++            if c == 2:
++                break
++        return time
++
++
++CPULimitedHost = RctlHost if os.uname()[ 0 ] == 'FreeBSD' else CgroupHost
++
++
+ # Some important things to note:
+ #
+ # The "IP" address which setIP() assigns to the switch is not
+@@ -873,7 +415,7 @@ class Switch( Node ):
+         self.opts = opts
+         self.listenPort = listenPort
+         if not self.inNamespace:
+-            self.controlIntf = Intf( 'lo', self, port=0 )
++            self.controlIntf = Intf( LO, self, port=0 )
+ 
+     def defaultDpid( self, dpid=None ):
+         "Return correctly formatted dpid from dpid or switch name (s1 -> 1)"
+@@ -1033,7 +575,7 @@ class UserSwitch( Switch ):
+ class OVSSwitch( Switch ):
+     "Open vSwitch switch. Depends on ovs-vsctl."
+ 
+-    def __init__( self, name, failMode='secure', datapath='kernel',
++    def __init__( self, name, failMode='secure', datapath=DP_MODE,
+                   inband=False, protocols=None,
+                   reconnectms=1000, stp=False, batch=False, **params ):
+         """name: name for switch
+@@ -1072,8 +614,8 @@ class OVSSwitch( Switch ):
+                    'Make sure that Open vSwitch is installed, '
+                    'that ovsdb-server is running, and that\n'
+                    '"ovs-vsctl show" works correctly.\n'
+-                   'You may wish to try '
+-                   '"service openvswitch-switch start".\n' )
++                   'You may wish to try the following:\n\n'
++                   + OVS_RCSTR + '\n' )
+             exit( 1 )
+         version = quietRun( 'ovs-vsctl --version' )
+         cls.OVSVersion = findall( r'\d+\.\d+', version )[ 0 ]
+@@ -1153,7 +695,7 @@ class OVSSwitch( Switch ):
+         opts = ( ' other_config:datapath-id=%s' % self.dpid +
+                  ' fail_mode=%s' % self.failMode )
+         if not self.inband:
+-            opts += ' other-config:disable-in-band=true'
++            opts += ' other_config:disable-in-band=true'
+         if self.datapath == 'user':
+             opts += ' datapath_type=netdev'
+         if self.protocols and not self.isOldOVS():
+@@ -1239,7 +781,7 @@ class OVSSwitch( Switch ):
+            deleteIntfs: delete interfaces? (True)"""
+         self.cmd( 'ovs-vsctl del-br', self )
+         if self.datapath == 'user':
+-            self.cmd( 'ip link del', self )
++            self.cmd( deleteCmd( self ) )
+         super( OVSSwitch, self ).stop( deleteIntfs )
+ 
+     @classmethod
+@@ -1259,9 +801,88 @@ class OVSSwitch( Switch ):
+         return switches
+ 
+ 
+-OVSKernelSwitch = OVSSwitch
++class IfSwitch( Switch ):
++    """
++    OpenBSD switch(4) device switch. Supported on OpenBSD 6.1+.
++    TODOs : addlocal, dpid, maxflow, maxgroups, portno
++    """
+ 
++    unitNo = 0      # number following device name, e.g. 0 in bridge0
++    local = None    # local switchd instance for remote connection
+ 
++    def __init__( self, name, **kwargs ):
++        self.bname = 'switch%d' % IfSwitch.unitNo
++        self.cdev = '/dev/' + self.bname    # character device name
++        self.newcdev = False                # created a new device?
++        IfSwitch.unitNo += 1
++        Switch.__init__( self, name, **kwargs )
++
++    def connected( self ):
++        "Are we forwarding yet?"
++        return self.bname in self.cmd( 'switchctl show switches' )
++
++    def start( self, controllers ):
++        "Start bridge. Retain the bridge's name to save on ifconfig calls"
++        rdarg = 'rdomain %d' % self.rdid if self.inNamespace else ''
++        quietRun( 'ifconfig %s create %s description "%s" up' %
++                  ( self.bname, rdarg, self.name ) )
++        addcmd, stpcmd = '', ''
++        for i in self.intfList():
++            if i.realname and 'pair' in i.realname:
++                name = i.realname
++                addcmd += ' add ' + name
++                quietRun( 'ifconfig %s %s up' % ( name, rdarg ) )
++        quietRun( 'ifconfig ' + self.bname + addcmd )
++
++        # Connect to controller using switchctl(8) using /dev/switch*
++        if os.path.exists( self.cdev ):
++            args = 'switchctl connect ' + self.cdev
++            ctl = controllers[ 0 ] if controllers else None
++            if not isinstance( ctl, Switchd ):
++                args += ' forward-to %s:%d' % ( ctl.IP(), ctl.port )
++                # start local Switchd instance and have it forward
++                if not IfSwitch.local:
++                    IfSwitch.local = Switchd( 'lc0', port=6633 )
++                    IfSwitch.local.start()
++            quietRun( args )
++        else:
++            # try to make character device, check and try to connect again
++            quietRun( '/dev/MAKEDEV ' + self.bname )
++            quietRun( 'mv %s /dev/' % self.bname )
++            self.newcdev = True
++            if os.path.exists( self.cdev ):
++                # TODO : need to forward-to for RemoteController
++                quietRun( 'switchctl connect %s' % self.cdev )
++            else:
++                error( "Can't connect to controller: %s doesn't exist" %
++                       self.cdev )
++                exit( 1 )
++
++    def stop( self, deleteIntfs=True ):
++        """Stop bridge
++           deleteIntfs: delete interfaces? (True)"""
++        quietRun( 'ifconfig %s destroy' % self.bname )
++        # hack: the last switch destroys the local controller
++        last = 'switch%d' % ( IfSwitch.unitNo - 1 )
++        if self.bname == last:
++            quietRun( 'pkill switchd' )
++        if self.newcdev:
++            quietRun( 'rm ' + self.cdev )
++        super( IfSwitch, self ).stop( deleteIntfs )
++
++    def dpctl( self, *args ):
++        "Run brctl command"
++        # actually switchctl
++        return self.cmd( 'switchctl', *args )
++
++
++# technically there are only userspace OF switches for FreeBSD.
++if plat == 'Linux' or plat == 'FreeBSD':
++    KernelSwitch = OVSSwitch
++else:
++    KernelSwitch = IfSwitch # OpenBSD
++
++
+ class OVSBridge( OVSSwitch ):
+     "OVSBridge is an OVSSwitch in standalone/bridge mode"
+ 
+@@ -1386,7 +1007,7 @@ class Controller( Node ):
+         listening = self.cmd( "echo A | telnet -e A %s %d" %
+                               ( self.ip, self.port ) )
+         if 'Connected' in listening:
+-            servers = self.cmd( 'netstat -natp' ).split( '\n' )
++            servers = self.cmd( 'netstat -nap tcp' ).split( '\n' )
+             pstr = ':%d ' % self.port
+             clist = servers[ 0:1 ] + [ s for s in servers if pstr in s ]
+             raise Exception( "Please shut down the controller which is"
+@@ -1405,9 +1026,15 @@ class Controller( Node ):
+         self.execed = False
+ 
+     def stop( self, *args, **kwargs ):
+-        "Stop controller."
+-        self.cmd( 'kill %' + self.command )
+-        self.cmd( 'wait %' + self.command )
++        """
++	Stop controller. Find processes associated with the command, and kill
++	them.
++	"""
++        pids = " ".join( self.cmd( 'pgrep -f ' + self.command )
++                             .split( '\n' )[ 1: ] )
++        debug( pids )
++        self.cmd( 'kill ' + pids + ' 2>/dev/null' )
++        self.cmd( 'wait ' + pids )
+         super( Controller, self ).stop( *args, **kwargs )
+ 
+     def IP( self, intf=None ):
+@@ -1470,12 +1097,19 @@ class NOX( Controller ):
+ 
+ class Ryu( Controller ):
+     "Controller to run Ryu application"
++
+     def __init__( self, name, *ryuArgs, **kwargs ):
+         """Init.
+         name: name to give controller.
+         ryuArgs: arguments and modules to pass to Ryu"""
+-        homeDir = quietRun( 'printenv HOME' ).strip( '\r\n' )
+-        ryuCoreDir = '%s/ryu/ryu/app/' % homeDir
++
++        if os.uname()[ 0 ] == 'FreeBSD':
++            import site
++            homeDir = site.getsitepackages()[ 0 ]
++        else:
++            homeDir = quietRun( 'printenv HOME' ).strip( '\r\n' ) + '/ryu'
++
++        ryuCoreDir = '%s/ryu/app/' % homeDir
+         if not ryuArgs:
+             warn( 'warning: no Ryu modules specified; '
+                   'running simple_switch only\n' )
+@@ -1538,7 +1172,50 @@ class RemoteController( Controller ):
+         else:
+             return True
+ 
+-DefaultControllers = ( Controller, OVSController )
++
++class Switchd( Controller ):
++    """
++    switchd(4): OpenBSD SDN sflow controller.
++    """
++    def __init__( self, name, ip='127.0.0.1', port=6653,
++                  conf='/etc/switchd.mininet.conf', **kwargs):
++        cmd = '-f ' + conf
++        cmd += ' -D ctl_ip=%s -D port=%s' % ( ip, port )
++
++        # optional parameters (defaults)
++        tout = kwargs.get('timeout')    # MAC address timeout, seconds (240)
++        vflgs = kwargs.get('vflags')    # verbosity, e.g. '-vv'
++        csize = kwargs.get('cache')     # MAC address cache size (4096)
++
++        cmd += ' -t %s' % tout if tout else ''
++        cmd += ' ' + vflgs if vflgs else ''
++        cmd += ' -t %s' % tout if tout else ''
++
++        Controller.__init__( self, name, ip=ip, port=port, command='switchd',
++                             cargs=cmd, **kwargs )
++
++    def start( self ):
++        """Start <controller> <args> on controller. Log to /tmp/cN.log"""
++        pathCheck( self.command )
++        cout = '/tmp/' + self.name + '.log'
++        if self.cdir is not None:
++            self.cmd( 'cd ' + self.cdir )
++        self.cmd( self.command + ' ' + self.cargs +
++                  ' 1>' + cout + ' 2>' + cout )
++        self.execed = False
++
++
++# TODO: push these uname-ey things elsewhere
++if plat == 'Linux':
++    DefaultControllers = ( Controller, OVSController )
++    DefaultSwitch = OVSSwitch
++elif plat == 'FreeBSD':
++    DefaultControllers = ( Ryu, )
++    DefaultSwitch = OVSSwitch
++else: # OpenBSD
++    DefaultControllers = ( Switchd, )
++    DefaultSwitch = IfSwitch
++
+ 
+ def findController( controllers=DefaultControllers ):
+     "Return first available controller from list, if any"

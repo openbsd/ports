@@ -1,0 +1,10 @@
+$OpenBSD: patch-util_switchd_conf,v 1.1.1.1 2017/08/21 18:47:12 akoshibe Exp $
+
+Index: util/switchd.conf
+--- util/switchd.conf.orig
++++ util/switchd.conf
+@@ -0,0 +1,4 @@
++# switchd.conf(5) formatted as used by Mininet
++# $ctl_ip and $port are set by the Switchd Controller object
++
++listen on $ctl_ip port $port

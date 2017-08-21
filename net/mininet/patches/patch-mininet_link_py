@@ -1,0 +1,257 @@
+$OpenBSD: patch-mininet_link_py,v 1.1.1.1 2017/08/21 18:47:12 akoshibe Exp $
+virtual ethernet and related things (Intf) moved to OS-specific dirs.
+Index: mininet/link.py
+--- mininet/link.py.orig
++++ mininet/link.py
+@@ -23,203 +23,21 @@ TCIntf: interface with bandwidth limiting and delay vi
+ 
+ Link: basic link class for creating veth pairs
+ """
++from os import uname
+ 
++plat = uname()[ 0 ]
++if plat == 'FreeBSD':
++    from mininet.freebsd.intf import Intf
++    from mininet.freebsd.util import makeIntfPair
++elif plat == 'Linux':
++    from mininet.linux.intf import Intf
++    from mininet.linux.util import makeIntfPair
++else:
++    from mininet.openbsd.intf import Intf
++    from mininet.openbsd.util import makeIntfPair
++
+ from mininet.log import info, error, debug
+-from mininet.util import makeIntfPair
+-import re
+ 
+-class Intf( object ):
+-
+-    "Basic interface object that can configure itself."
+-
+-    def __init__( self, name, node=None, port=None, link=None,
+-                  mac=None, **params ):
+-        """name: interface name (e.g. h1-eth0)
+-           node: owning node (where this intf most likely lives)
+-           link: parent link if we're part of a link
+-           other arguments are passed to config()"""
+-        self.node = node
+-        self.name = name
+-        self.link = link
+-        self.mac = mac
+-        self.ip, self.prefixLen = None, None
+-
+-        # if interface is lo, we know the ip is 127.0.0.1.
+-        # This saves an ifconfig command per node
+-        if self.name == 'lo':
+-            self.ip = '127.0.0.1'
+-            self.prefixLen = 8
+-        # Add to node (and move ourselves if necessary )
+-        if node:
+-            moveIntfFn = params.pop( 'moveIntfFn', None )
+-            if moveIntfFn:
+-                node.addIntf( self, port=port, moveIntfFn=moveIntfFn )
+-            else:
+-                node.addIntf( self, port=port )
+-        # Save params for future reference
+-        self.params = params
+-        self.config( **params )
+-
+-    def cmd( self, *args, **kwargs ):
+-        "Run a command in our owning node"
+-        return self.node.cmd( *args, **kwargs )
+-
+-    def ifconfig( self, *args ):
+-        "Configure ourselves using ifconfig"
+-        return self.cmd( 'ifconfig', self.name, *args )
+-
+-    def setIP( self, ipstr, prefixLen=None ):
+-        """Set our IP address"""
+-        # This is a sign that we should perhaps rethink our prefix
+-        # mechanism and/or the way we specify IP addresses
+-        if '/' in ipstr:
+-            self.ip, self.prefixLen = ipstr.split( '/' )
+-            return self.ifconfig( ipstr, 'up' )
+-        else:
+-            if prefixLen is None:
+-                raise Exception( 'No prefix length set for IP address %s'
+-                                 % ( ipstr, ) )
+-            self.ip, self.prefixLen = ipstr, prefixLen
+-            return self.ifconfig( '%s/%s' % ( ipstr, prefixLen ) )
+-
+-    def setMAC( self, macstr ):
+-        """Set the MAC address for an interface.
+-           macstr: MAC address as string"""
+-        self.mac = macstr
+-        return ( self.ifconfig( 'down' ) +
+-                 self.ifconfig( 'hw', 'ether', macstr ) +
+-                 self.ifconfig( 'up' ) )
+-
+-    _ipMatchRegex = re.compile( r'\d+\.\d+\.\d+\.\d+' )
+-    _macMatchRegex = re.compile( r'..:..:..:..:..:..' )
+-
+-    def updateIP( self ):
+-        "Return updated IP address based on ifconfig"
+-        # use pexec instead of node.cmd so that we dont read
+-        # backgrounded output from the cli.
+-        ifconfig, _err, _exitCode = self.node.pexec(
+-            'ifconfig %s' % self.name )
+-        ips = self._ipMatchRegex.findall( ifconfig )
+-        self.ip = ips[ 0 ] if ips else None
+-        return self.ip
+-
+-    def updateMAC( self ):
+-        "Return updated MAC address based on ifconfig"
+-        ifconfig = self.ifconfig()
+-        macs = self._macMatchRegex.findall( ifconfig )
+-        self.mac = macs[ 0 ] if macs else None
+-        return self.mac
+-
+-    # Instead of updating ip and mac separately,
+-    # use one ifconfig call to do it simultaneously.
+-    # This saves an ifconfig command, which improves performance.
+-
+-    def updateAddr( self ):
+-        "Return IP address and MAC address based on ifconfig."
+-        ifconfig = self.ifconfig()
+-        ips = self._ipMatchRegex.findall( ifconfig )
+-        macs = self._macMatchRegex.findall( ifconfig )
+-        self.ip = ips[ 0 ] if ips else None
+-        self.mac = macs[ 0 ] if macs else None
+-        return self.ip, self.mac
+-
+-    def IP( self ):
+-        "Return IP address"
+-        return self.ip
+-
+-    def MAC( self ):
+-        "Return MAC address"
+-        return self.mac
+-
+-    def isUp( self, setUp=False ):
+-        "Return whether interface is up"
+-        if setUp:
+-            cmdOutput = self.ifconfig( 'up' )
+-            # no output indicates success
+-            if cmdOutput:
+-                error( "Error setting %s up: %s " % ( self.name, cmdOutput ) )
+-                return False
+-            else:
+-                return True
+-        else:
+-            return "UP" in self.ifconfig()
+-
+-    def rename( self, newname ):
+-        "Rename interface"
+-        self.ifconfig( 'down' )
+-        result = self.cmd( 'ip link set', self.name, 'name', newname )
+-        self.name = newname
+-        self.ifconfig( 'up' )
+-        return result
+-
+-    # The reason why we configure things in this way is so
+-    # That the parameters can be listed and documented in
+-    # the config method.
+-    # Dealing with subclasses and superclasses is slightly
+-    # annoying, but at least the information is there!
+-
+-    def setParam( self, results, method, **param ):
+-        """Internal method: configure a *single* parameter
+-           results: dict of results to update
+-           method: config method name
+-           param: arg=value (ignore if value=None)
+-           value may also be list or dict"""
+-        name, value = param.items()[ 0 ]
+-        f = getattr( self, method, None )
+-        if not f or value is None:
+-            return
+-        if isinstance( value, list ):
+-            result = f( *value )
+-        elif isinstance( value, dict ):
+-            result = f( **value )
+-        else:
+-            result = f( value )
+-        results[ name ] = result
+-        return result
+-
+-    def config( self, mac=None, ip=None, ifconfig=None,
+-                up=True, **_params ):
+-        """Configure Node according to (optional) parameters:
+-           mac: MAC address
+-           ip: IP address
+-           ifconfig: arbitrary interface configuration
+-           Subclasses should override this method and call
+-           the parent class's config(**params)"""
+-        # If we were overriding this method, we would call
+-        # the superclass config method here as follows:
+-        # r = Parent.config( **params )
+-        r = {}
+-        self.setParam( r, 'setMAC', mac=mac )
+-        self.setParam( r, 'setIP', ip=ip )
+-        self.setParam( r, 'isUp', up=up )
+-        self.setParam( r, 'ifconfig', ifconfig=ifconfig )
+-        return r
+-
+-    def delete( self ):
+-        "Delete interface"
+-        self.cmd( 'ip link del ' + self.name )
+-        # We used to do this, but it slows us down:
+-        # if self.node.inNamespace:
+-        # Link may have been dumped into root NS
+-        # quietRun( 'ip link del ' + self.name )
+-        self.node.delIntf( self )
+-        self.link = None
+-
+-    def status( self ):
+-        "Return intf status as a string"
+-        links, _err, _result = self.node.pexec( 'ip link show' )
+-        if self.name in links:
+-            return "OK"
+-        else:
+-            return "MISSING"
+-
+-    def __repr__( self ):
+-        return '<%s %s>' % ( self.__class__.__name__, self.name )
+-
+-    def __str__( self ):
+-        return self.name
+-
+-
+ class TCIntf( Intf ):
+     """Interface customized by tc (traffic control) utility
+        Allows specification of bandwidth limits (various methods)
+@@ -253,7 +71,7 @@ class TCIntf( Intf ):
+                           + 'rate %fMbit ul rate %fMbit' % ( bw, bw ) ]
+             elif use_tbf:
+                 if latency_ms is None:
+-                    latency_ms = 15.0 * 8 / bw
++                    latency_ms = 15 * 8 / bw
+                 cmds += [ '%s qdisc add dev %s root handle 5: tbf ' +
+                           'rate %fMbit burst 15000 latency %fms' %
+                           ( bw, latency_ms ) ]
+@@ -401,7 +219,7 @@ class TCIntf( Intf ):
+ 
+ class Link( object ):
+ 
+-    """A basic link is just a veth pair.
++    """A basic link is just a virtual ethernet pair.
+        Other types of links could be tunnels, link emulators, etc.."""
+ 
+     # pylint: disable=too-many-branches
+@@ -447,10 +265,14 @@ class Link( object ):
+         if fast:
+             params1.setdefault( 'moveIntfFn', self._ignore )
+             params2.setdefault( 'moveIntfFn', self._ignore )
+-            self.makeIntfPair( intfName1, intfName2, addr1, addr2,
+-                               node1, node2, deleteIntfs=False )
++            p1, p2 = self.makeIntfPair( intfName1, intfName2, addr1,
++                                        addr2, node1, node2,
++                                        deleteIntfs=False )
+         else:
+-            self.makeIntfPair( intfName1, intfName2, addr1, addr2 )
++            p1, p2 = self.makeIntfPair( intfName1, intfName2, addr1, addr2 )
++        # Original names of interfaces, if any, and new name are different
++        # This is useful in cases where interface renaming isn't supported.
++        params1[ 'orgName' ], params2[ 'orgName' ] = p1, p2
+ 
+         if not cls1:
+             cls1 = intf

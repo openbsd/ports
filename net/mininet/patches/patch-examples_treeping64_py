@@ -1,0 +1,27 @@
+$OpenBSD: patch-examples_treeping64_py,v 1.1.1.1 2017/08/21 18:47:12 akoshibe Exp $
+
+Index: examples/treeping64.py
+--- examples/treeping64.py.orig
++++ examples/treeping64.py
+@@ -1,10 +1,10 @@
+-#!/usr/bin/python
++#!/usr/bin/env python
+ 
+ "Create a 64-node tree network, and test connectivity using ping."
+ 
+ 
+ from mininet.log import setLogLevel, info
+-from mininet.node import UserSwitch, OVSKernelSwitch  # , KernelSwitch
++from mininet.node import UserSwitch, KernelSwitch  # , KernelSwitch
+ from mininet.topolib import TreeNet
+ 
+ def treePing64():
+@@ -13,7 +13,7 @@ def treePing64():
+     results = {}
+     switches = {  # 'reference kernel': KernelSwitch,
+                   'reference user': UserSwitch,
+-                  'Open vSwitch kernel': OVSKernelSwitch }
++                  'kernel': KernelSwitch }
+ 
+     for name in switches:
+         info( "*** Testing", name, "datapath\n" )

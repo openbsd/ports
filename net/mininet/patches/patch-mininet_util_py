@@ -1,0 +1,231 @@
+$OpenBSD: patch-mininet_util_py,v 1.1.1.1 2017/08/21 18:47:12 akoshibe Exp $
+Remove methods that do OS-specific things to their own platform dirs.
+Index: mininet/util.py
+--- mininet/util.py.orig
++++ mininet/util.py
+@@ -1,10 +1,9 @@
+ "Utility functions for Mininet."
+ 
+ 
+-from mininet.log import output, info, error, warn, debug
++from mininet.log import output, info, error, debug
+ 
+ from time import sleep
+-from resource import getrlimit, setrlimit, RLIMIT_NPROC, RLIMIT_NOFILE
+ from select import poll, POLLIN, POLLHUP
+ from subprocess import call, check_call, Popen, PIPE, STDOUT
+ import re
+@@ -18,12 +17,12 @@ from functools import partial
+ def run( cmd ):
+     """Simple interface to subprocess.call()
+        cmd: list of command params"""
+-    return call( cmd.split( ' ' ) )
++    return call( cmd.split() )
+ 
+ def checkRun( cmd ):
+     """Simple interface to subprocess.check_call()
+        cmd: list of command params"""
+-    return check_call( cmd.split( ' ' ) )
++    return check_call( cmd.split() )
+ 
+ # pylint doesn't understand explicit type checking
+ # pylint: disable=maybe-no-member
+@@ -34,7 +33,7 @@ def oldQuietRun( *cmd ):
+     if len( cmd ) == 1:
+         cmd = cmd[ 0 ]
+         if isinstance( cmd, str ):
+-            cmd = cmd.split( ' ' )
++            cmd = cmd.split()
+     popen = Popen( cmd, stdout=PIPE, stderr=STDOUT )
+     # We can't use Popen.communicate() because it uses
+     # select(), which can't handle
+@@ -75,7 +74,7 @@ def errRun( *cmd, **kwargs ):
+         cmd = cmd[ 0 ]
+     # Allow passing in a list or a string
+     if isinstance( cmd, str ) and not shell:
+-        cmd = cmd.split( ' ' )
++        cmd = cmd.split()
+         cmd = [ str( arg ) for arg in cmd ]
+     elif isinstance( cmd, list ) and shell:
+         cmd = " ".join( arg for arg in cmd )
+@@ -145,55 +144,6 @@ def isShellBuiltin( cmd ):
+ 
+ isShellBuiltin.builtIns = None
+ 
+-# Interface management
+-#
+-# Interfaces are managed as strings which are simply the
+-# interface names, of the form 'nodeN-ethM'.
+-#
+-# To connect nodes, we create a pair of veth interfaces, and then place them
+-# in the pair of nodes that we want to communicate. We then update the node's
+-# list of interfaces and connectivity map.
+-#
+-# For the kernel datapath, switch interfaces
+-# live in the root namespace and thus do not have to be
+-# explicitly moved.
+-
+-def makeIntfPair( intf1, intf2, addr1=None, addr2=None, node1=None, node2=None,
+-                  deleteIntfs=True, runCmd=None ):
+-    """Make a veth pair connnecting new interfaces intf1 and intf2
+-       intf1: name for interface 1
+-       intf2: name for interface 2
+-       addr1: MAC address for interface 1 (optional)
+-       addr2: MAC address for interface 2 (optional)
+-       node1: home node for interface 1 (optional)
+-       node2: home node for interface 2 (optional)
+-       deleteIntfs: delete intfs before creating them
+-       runCmd: function to run shell commands (quietRun)
+-       raises Exception on failure"""
+-    if not runCmd:
+-        runCmd = quietRun if not node1 else node1.cmd
+-        runCmd2 = quietRun if not node2 else node2.cmd
+-    if deleteIntfs:
+-        # Delete any old interfaces with the same names
+-        runCmd( 'ip link del ' + intf1 )
+-        runCmd2( 'ip link del ' + intf2 )
+-    # Create new pair
+-    netns = 1 if not node2 else node2.pid
+-    if addr1 is None and addr2 is None:
+-        cmdOutput = runCmd( 'ip link add name %s '
+-                            'type veth peer name %s '
+-                            'netns %s' % ( intf1, intf2, netns ) )
+-    else:
+-        cmdOutput = runCmd( 'ip link add name %s '
+-                            'address %s '
+-                            'type veth peer name %s '
+-                            'address %s '
+-                            'netns %s' %
+-                            (  intf1, addr1, intf2, addr2, netns ) )
+-    if cmdOutput:
+-        raise Exception( "Error creating interface pair (%s,%s): %s " %
+-                         ( intf1, intf2, cmdOutput ) )
+-
+ def retry( retries, delaySecs, fn, *args, **keywords ):
+     """Try something several times before giving up.
+        n: number of times to retry
+@@ -208,33 +158,6 @@ def retry( retries, delaySecs, fn, *args, **keywords )
+         error( "*** gave up after %i retries\n" % tries )
+         exit( 1 )
+ 
+-def moveIntfNoRetry( intf, dstNode, printError=False ):
+-    """Move interface to node, without retrying.
+-       intf: string, interface
+-        dstNode: destination Node
+-        printError: if true, print error"""
+-    intf = str( intf )
+-    cmd = 'ip link set %s netns %s' % ( intf, dstNode.pid )
+-    cmdOutput = quietRun( cmd )
+-    # If ip link set does not produce any output, then we can assume
+-    # that the link has been moved successfully.
+-    if cmdOutput:
+-        if printError:
+-            error( '*** Error: moveIntf: ' + intf +
+-                   ' not successfully moved to ' + dstNode.name + ':\n',
+-                   cmdOutput )
+-        return False
+-    return True
+-
+-def moveIntf( intf, dstNode, printError=True,
+-              retries=3, delaySecs=0.001 ):
+-    """Move interface to node, retrying on failure.
+-       intf: string, interface
+-       dstNode: destination Node
+-       printError: if true, print error"""
+-    retry( retries, delaySecs, moveIntfNoRetry, intf, dstNode,
+-           printError=printError )
+-
+ # Support for dumping network
+ 
+ def dumpNodeConnections( nodes ):
+@@ -403,73 +326,6 @@ def pmonitor(popens, timeoutms=500, readline=True,
+         else:
+             yield None, ''
+ 
+-# Other stuff we use
+-def sysctlTestAndSet( name, limit ):
+-    "Helper function to set sysctl limits"
+-    #convert non-directory names into directory names
+-    if '/' not in name:
+-        name = '/proc/sys/' + name.replace( '.', '/' )
+-    #read limit
+-    with open( name, 'r' ) as readFile:
+-        oldLimit = readFile.readline()
+-        if isinstance( limit, int ):
+-            #compare integer limits before overriding
+-            if int( oldLimit ) < limit:
+-                with open( name, 'w' ) as writeFile:
+-                    writeFile.write( "%d" % limit )
+-        else:
+-            #overwrite non-integer limits
+-            with open( name, 'w' ) as writeFile:
+-                writeFile.write( limit )
+-
+-def rlimitTestAndSet( name, limit ):
+-    "Helper function to set rlimits"
+-    soft, hard = getrlimit( name )
+-    if soft < limit:
+-        hardLimit = hard if limit < hard else limit
+-        setrlimit( name, ( limit, hardLimit ) )
+-
+-def fixLimits():
+-    "Fix ridiculously small resource limits."
+-    debug( "*** Setting resource limits\n" )
+-    try:
+-        rlimitTestAndSet( RLIMIT_NPROC, 8192 )
+-        rlimitTestAndSet( RLIMIT_NOFILE, 16384 )
+-        #Increase open file limit
+-        sysctlTestAndSet( 'fs.file-max', 10000 )
+-        #Increase network buffer space
+-        sysctlTestAndSet( 'net.core.wmem_max', 16777216 )
+-        sysctlTestAndSet( 'net.core.rmem_max', 16777216 )
+-        sysctlTestAndSet( 'net.ipv4.tcp_rmem', '10240 87380 16777216' )
+-        sysctlTestAndSet( 'net.ipv4.tcp_wmem', '10240 87380 16777216' )
+-        sysctlTestAndSet( 'net.core.netdev_max_backlog', 5000 )
+-        #Increase arp cache size
+-        sysctlTestAndSet( 'net.ipv4.neigh.default.gc_thresh1', 4096 )
+-        sysctlTestAndSet( 'net.ipv4.neigh.default.gc_thresh2', 8192 )
+-        sysctlTestAndSet( 'net.ipv4.neigh.default.gc_thresh3', 16384 )
+-        #Increase routing table size
+-        sysctlTestAndSet( 'net.ipv4.route.max_size', 32768 )
+-        #Increase number of PTYs for nodes
+-        sysctlTestAndSet( 'kernel.pty.max', 20000 )
+-    # pylint: disable=broad-except
+-    except Exception:
+-        warn( "*** Error setting resource limits. "
+-              "Mininet's performance may be affected.\n" )
+-    # pylint: enable=broad-except
+-
+-
+-def mountCgroups():
+-    "Make sure cgroups file system is mounted"
+-    mounts = quietRun( 'cat /proc/mounts' )
+-    cgdir = '/sys/fs/cgroup'
+-    csdir = cgdir + '/cpuset'
+-    if ('cgroup %s' % cgdir not in mounts and
+-            'cgroups %s' % cgdir not in mounts):
+-        raise Exception( "cgroups not mounted on " + cgdir )
+-    if 'cpuset %s' % csdir not in mounts:
+-        errRun( 'mkdir -p ' + csdir )
+-        errRun( 'mount -t cgroup -ocpuset cpuset ' + csdir )
+-
+ def natural( text ):
+     "To sort sanely/alphabetically: sorted( l, key=natural )"
+     def num( s ):
+@@ -480,16 +336,6 @@ def natural( text ):
+ def naturalSeq( t ):
+     "Natural sort key function for sequences"
+     return [ natural( x ) for x in t ]
+-
+-def numCores():
+-    "Returns number of CPU cores based on /proc/cpuinfo"
+-    if hasattr( numCores, 'ncores' ):
+-        return numCores.ncores
+-    try:
+-        numCores.ncores = int( quietRun('grep -c processor /proc/cpuinfo') )
+-    except ValueError:
+-        return 0
+-    return numCores.ncores
+ 
+ def irange(start, end):
+     """Inclusive range from start to end (vs. Python insanity.)

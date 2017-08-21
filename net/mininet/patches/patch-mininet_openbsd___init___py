@@ -1,0 +1,7 @@
+$OpenBSD: patch-mininet_openbsd___init___py,v 1.1.1.1 2017/08/21 18:47:12 akoshibe Exp $
+
+Index: mininet/openbsd/__init__.py
+--- mininet/openbsd/__init__.py.orig
++++ mininet/openbsd/__init__.py
+@@ -0,0 +1 @@
++"Docstring to silence pylint; ignores --ignore option for __init__.py"
