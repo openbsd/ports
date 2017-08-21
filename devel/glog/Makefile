@@ -1,19 +1,17 @@
-# $OpenBSD: Makefile,v 1.12 2017/08/21 19:27:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2017/08/21 19:48:23 naddy Exp $
 
 COMMENT =		C++ application-level logging library
 
 GH_ACCOUNT =		google
 GH_PROJECT =		glog
 GH_TAGNAME =		v0.3.1
-REVISION =		2
+REVISION =		3
 
 SHARED_LIBS +=		glog 0.0 # 0.2.1
 
 CATEGORIES =		devel
 
 HOMEPAGE =		https://github.com/google/glog
-
-MAINTAINER =		Vincent Auclair <auclair.vincent@gmail.com>
 
 # New BSD
 PERMIT_PACKAGE_CDROM =	Yes

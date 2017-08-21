@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.11 2017/07/26 22:45:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2017/08/21 19:48:23 naddy Exp $
 
 COMMENT =		universal parsing tool & source code generator
 
 V =			4.5.4
 PKGNAME =		codeworker-${V}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		devel
 
 HOMEPAGE =		http://codeworker.free.fr/
-
-MAINTAINER =		Vincent Auclair <auclair.vincent@gmail.com>
 
 # LGPL
 PERMIT_PACKAGE_CDROM =	Yes
