@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2016/10/01 11:54:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.27 2017/08/21 19:55:07 jasper Exp $
 
 COMMENT=	offline maps viewer
 
@@ -6,15 +6,16 @@ MODPY_EGG_VERSION=	0.8.0.4
 DISTNAME=	mapcatcher_${MODPY_EGG_VERSION}
 WRKDIST=	${WRKDIR}/mapcatcher-${MODPY_EGG_VERSION}
 PKGNAME=	gmapcatcher-${MODPY_EGG_VERSION}
+REVISION=	0
 
 CATEGORIES=	geo x11
 
-HOMEPAGE=	https://code.google.com/p/gmapcatcher/
+HOMEPAGE=	https://github.com/heldersepu/GMapCatcher
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=   Yes
 
-MASTER_SITES=	${MASTER_SITE_GOOGLECODE:=gmapcatcher/}
+MASTER_SITES=	https://distfiles.nl/
 
 MODULES=	lang/python
 
