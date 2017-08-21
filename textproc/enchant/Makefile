@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2017/08/21 08:57:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2017/08/21 09:38:52 ajacoutot Exp $
 
 COMMENT=		generic spell checking library
 
@@ -7,7 +7,8 @@ GH_ACCOUNT=		AbiWord
 GH_PROJECT=		enchant
 GH_TAGNAME=		enchant-${V:S/./-/g}
 DISTNAME=		${GH_TAGNAME}
-REVISION=		0
+PKGNAME=		${GH_PROJECT}-${V}
+REVISION=		1
 
 SHARED_LIBS +=  enchant              6.1      # 7.1
 
