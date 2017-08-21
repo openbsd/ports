@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.49 2017/07/16 19:18:59 espie Exp $
+# $OpenBSD: Makefile,v 1.50 2017/08/21 09:12:47 espie Exp $
 
-ONLY_FOR_ARCHS = amd64 arm hppa i386 mips64 mips64el powerpc sparc64
+ONLY_FOR_ARCHS = ${GCC49_ARCHS}
 DPB_PROPERTIES = parallel
 
 V = 4.9.4

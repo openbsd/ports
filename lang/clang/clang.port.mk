@@ -1,8 +1,8 @@
-# $OpenBSD: clang.port.mk,v 1.24 2017/07/18 09:19:00 espie Exp $
+# $OpenBSD: clang.port.mk,v 1.25 2017/08/21 09:12:47 espie Exp $
 
 MODCLANG_VERSION=	4.0.1
 
-MODCLANG_ARCHS ?=
+MODCLANG_ARCHS ?= ${LLVM_ARCHS}
 MODCLANG_LANGS ?=
 
 .if !${MODCLANG_LANGS:L:Mc}
@@ -19,13 +19,11 @@ ERRORS += "Fatal: unknown language ${_l}"
 
 _MODCLANG_ARCH_USES = No
 
-.if ${MODCLANG_ARCHS:L} != ""
-.  for _i in ${MODCLANG_ARCHS}
-.    if !empty(MACHINE_ARCH:M${_i})
+.for _i in ${MODCLANG_ARCHS}
+.  if !empty(MACHINE_ARCH:M${_i})
 _MODCLANG_ARCH_USES = Yes
-.    endif
-.  endfor
-.endif
+.  endif
+.endfor
 
 .if ${_MODCLANG_ARCH_USES:L} == "yes"
 
