@@ -1,15 +1,17 @@
-# $OpenBSD: Makefile,v 1.11 2017/07/26 22:45:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2017/08/21 19:27:59 jasper Exp $
 
 COMMENT =		C++ application-level logging library
 
-DISTNAME =		glog-0.3.1
+GH_ACCOUNT =		google
+GH_PROJECT =		glog
+GH_TAGNAME =		v0.3.1
 REVISION =		2
 
 SHARED_LIBS +=		glog 0.0 # 0.2.1
 
 CATEGORIES =		devel
 
-HOMEPAGE =		https://google-glog.googlecode.com/
+HOMEPAGE =		https://github.com/google/glog
 
 MAINTAINER =		Vincent Auclair <auclair.vincent@gmail.com>
 
@@ -17,8 +19,6 @@ MAINTAINER =		Vincent Auclair <auclair.vincent@gmail.com>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += gflags m pthread ${COMPILER_LIBCXX}
-
-MASTER_SITES =		${HOMEPAGE}/files/
 
 LIB_DEPENDS =		devel/gflags
 TEST_DEPENDS =	devel/gtest
