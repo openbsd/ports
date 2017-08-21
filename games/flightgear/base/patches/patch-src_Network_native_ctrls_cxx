@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_Network_native_ctrls_cxx,v 1.1 2017/08/21 17:57:01 rsadowski Exp $
+
+fix clang error:
+ordered comparison between pointer and zero
+
+Index: src/Network/native_ctrls.cxx
+--- src/Network/native_ctrls.cxx.orig
++++ src/Network/native_ctrls.cxx
+@@ -428,8 +428,8 @@ void FGNetCtrls2Props( FGNetCtrls *net, bool honor_fre
+ //    node->setDoubleValue( net->brake_right );
+ 
+     node = fgGetNode( "/controls/switches", true );
+-    node->setBoolValue( "master-bat", net->master_bat > 0 );
+-    node->setBoolValue( "master-alt", net->master_alt > 0);
++    node->setBoolValue( "master-bat", net->master_bat != nullptr );
++    node->setBoolValue( "master-alt", net->master_alt != nullptr );
+     node->setBoolValue( "master-avionics", net->master_avionics > 0);
+     
+     node = fgGetNode( "/environment", true );

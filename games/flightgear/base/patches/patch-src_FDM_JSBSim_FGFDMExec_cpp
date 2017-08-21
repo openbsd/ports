@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_FDM_JSBSim_FGFDMExec_cpp,v 1.1 2017/08/21 17:57:01 rsadowski Exp $
+
+fix clang error:
+ordered comparison between pointer and zero
+
+Index: src/FDM/JSBSim/FGFDMExec.cpp
+--- src/FDM/JSBSim/FGFDMExec.cpp.orig
++++ src/FDM/JSBSim/FGFDMExec.cpp
+@@ -211,7 +211,7 @@ FGFDMExec::~FGFDMExec()
+   
+   SetGroundCallback(0);
+ 
+-  if (FDMctr > 0) (*FDMctr)--;
++  if (FDMctr) (*FDMctr)--;
+ 
+   Debug(1);
+ }

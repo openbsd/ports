@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_FDM_JSBSim_input_output_FGInputSocket_cpp,v 1.1 2017/08/21 17:57:01 rsadowski Exp $
+
+fix clang error:
+ordered comparison between pointer and zero
+
+Index: src/FDM/JSBSim/input_output/FGInputSocket.cpp
+--- src/FDM/JSBSim/input_output/FGInputSocket.cpp.orig
++++ src/FDM/JSBSim/input_output/FGInputSocket.cpp
+@@ -192,7 +192,7 @@ void FGInputSocket::Read(bool Holding)
+           } else {
+             socket->Reply("Must be in HOLD to search properties\n");
+           }
+-        } else if (node > 0) {
++        } else if (node) {
+           ostringstream buf;
+           buf << argument << " = " << setw(12) << setprecision(6) << node->getDoubleValue() << endl;
+           socket->Reply(buf.str());
