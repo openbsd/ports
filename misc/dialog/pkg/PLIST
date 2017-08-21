@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2014/12/11 23:54:51 rpe Exp $
+@comment $OpenBSD: PLIST,v 1.10 2017/08/21 12:23:04 fcambus Exp $
 @bin bin/dialog
 lib/libdialog.a
 @man man/man1/dialog.1
@@ -29,6 +29,9 @@ share/locale/fa/LC_MESSAGES/
 share/locale/fa/LC_MESSAGES/dialog.mo
 share/locale/fi/LC_MESSAGES/dialog.mo
 share/locale/fr/LC_MESSAGES/dialog.mo
+share/locale/fur/
+share/locale/fur/LC_MESSAGES/
+share/locale/fur/LC_MESSAGES/dialog.mo
 share/locale/ga/LC_MESSAGES/dialog.mo
 share/locale/gd/
 share/locale/gd/LC_MESSAGES/
