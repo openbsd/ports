@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2017/01/03 19:14:44 landry Exp $
+# $OpenBSD: Makefile,v 1.11 2017/08/21 18:34:04 jasper Exp $
 
 COMMENT =		Python last.fm library
 
@@ -6,9 +6,9 @@ MODPY_EGG_VERSION =	0.5.11
 DISTNAME =		pylast-${MODPY_EGG_VERSION}
 PKGNAME =		py-last-${MODPY_EGG_VERSION}
 CATEGORIES =		audio net
-REVISION =		1
+REVISION =		2
 
-HOMEPAGE =		https://code.google.com/p/pylast/
+HOMEPAGE =		https://github.com/pylast/pylast
 
 MAINTAINER = 		Edd Barrett <edd@openbsd.org>
 

@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.4 2017/04/24 10:38:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2017/08/21 18:34:04 jasper Exp $
 
 COMMENT=	lightweight headless squeezebox emulator
 
 V=		1.8
-REVISION=	2
+REVISION=	3
 DISTNAME=	squeezelite-v$V
 PKGNAME=	squeezelite-$V
 
 CATEGORIES=	audio
-
-HOMEPAGE=	https://code.google.com/archive/p/squeezelite
 
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
