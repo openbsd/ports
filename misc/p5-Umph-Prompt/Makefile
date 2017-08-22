@@ -1,18 +1,19 @@
-# $OpenBSD: Makefile,v 1.3 2016/10/01 11:54:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2017/08/22 19:25:52 jasper Exp $
 
 COMMENT =		interactive prompt module
 
 DISTNAME =		Umph-Prompt-0.1.0
 PKGNAME =		${DISTNAME:S//p5-/}
+REVISION =		0
 
 CATEGORIES =		misc
 
-HOMEPAGE =		https://code.google.com/p/umph/
+HOMEPAGE =		http://repo.or.cz/w/umph-prompt.git
 
 # LGPLv2.1+
 PERMIT_PACKAGE_CDROM =		Yes
 
-MASTER_SITES =		${MASTER_SITE_GOOGLECODE:=umph/}
+MASTER_SITES =		https://distfiles.nl/
 
 CONFIGURE_STYLE =	perl
 
