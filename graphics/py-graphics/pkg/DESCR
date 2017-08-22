@@ -1,3 +1,0 @@
-PyGraphics aims to translate the new features of Media Computation from
-its JPython version to CPython. Its aims to implement support for image,
-sound and video manipulation as well as adding simple 3D capabilities.

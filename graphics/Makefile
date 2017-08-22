@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.442 2017/08/09 14:43:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.443 2017/08/22 06:05:38 jasper Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -232,7 +232,6 @@
      SUBDIR += py-cycler,python3
      SUBDIR += py-dot
      SUBDIR += py-gd
-     SUBDIR += py-graphics
      SUBDIR += py-imagesize
      SUBDIR += py-imagesize,python3
      SUBDIR += py-matplotlib
