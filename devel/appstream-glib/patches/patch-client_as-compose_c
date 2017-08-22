@@ -1,0 +1,14 @@
+$OpenBSD: patch-client_as-compose_c,v 1.1 2017/08/22 08:14:55 ajacoutot Exp $
+
+Index: client/as-compose.c
+--- client/as-compose.c.orig
++++ client/as-compose.c
+@@ -373,7 +373,7 @@ main (int argc, char **argv)
+ 
+ 	/* set defaults */
+ 	if (prefix == NULL)
+-		prefix = g_strdup ("/usr");
++		prefix = g_strdup ("${LOCALBASE}");
+ 	if (output_dir == NULL)
+ 		output_dir = g_build_filename (prefix, "share/app-info/xmls", NULL);
+ 	if (icons_dir == NULL)
