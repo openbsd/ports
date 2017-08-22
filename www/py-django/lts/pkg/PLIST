@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2017/04/08 18:14:23 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.19 2017/08/22 21:06:58 rpointel Exp $
 @conflict py3-django->=1.9,<1.10
 @comment bin/django-admin
 bin/${LNAME}-admin.py
@@ -4213,6 +4213,10 @@ lib/python${MODPY_VERSION}/site-packages/django/contrib/postgres/forms/jsonb.py
 lib/python${MODPY_VERSION}/site-packages/django/contrib/postgres/forms/ranges.py
 lib/python${MODPY_VERSION}/site-packages/django/contrib/postgres/functions.py
 lib/python${MODPY_VERSION}/site-packages/django/contrib/postgres/indexes.py
+lib/python${MODPY_VERSION}/site-packages/django/contrib/postgres/jinja2/
+lib/python${MODPY_VERSION}/site-packages/django/contrib/postgres/jinja2/postgres/
+lib/python${MODPY_VERSION}/site-packages/django/contrib/postgres/jinja2/postgres/widgets/
+lib/python${MODPY_VERSION}/site-packages/django/contrib/postgres/jinja2/postgres/widgets/split_array.html
 lib/python${MODPY_VERSION}/site-packages/django/contrib/postgres/locale/
 lib/python${MODPY_VERSION}/site-packages/django/contrib/postgres/locale/ar/
 lib/python${MODPY_VERSION}/site-packages/django/contrib/postgres/locale/ar/LC_MESSAGES/
@@ -4430,6 +4434,10 @@ lib/python${MODPY_VERSION}/site-packages/django/contrib/postgres/lookups.py
 lib/python${MODPY_VERSION}/site-packages/django/contrib/postgres/operations.py
 lib/python${MODPY_VERSION}/site-packages/django/contrib/postgres/search.py
 lib/python${MODPY_VERSION}/site-packages/django/contrib/postgres/signals.py
+lib/python${MODPY_VERSION}/site-packages/django/contrib/postgres/templates/
+lib/python${MODPY_VERSION}/site-packages/django/contrib/postgres/templates/postgres/
+lib/python${MODPY_VERSION}/site-packages/django/contrib/postgres/templates/postgres/widgets/
+lib/python${MODPY_VERSION}/site-packages/django/contrib/postgres/templates/postgres/widgets/split_array.html
 lib/python${MODPY_VERSION}/site-packages/django/contrib/postgres/utils.py
 lib/python${MODPY_VERSION}/site-packages/django/contrib/postgres/validators.py
 lib/python${MODPY_VERSION}/site-packages/django/contrib/redirects/
@@ -6583,6 +6591,7 @@ share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/howto/jython.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/howto/legacy-databases.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/howto/outputting-csv.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/howto/outputting-pdf.txt
+share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/howto/overriding-templates.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/howto/static-files/
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/howto/static-files/deployment.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/howto/static-files/index.txt
@@ -6807,7 +6816,11 @@ share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.10.5.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.10.6.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.10.7.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.10.txt
+share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.11.1.txt
+share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.11.2.txt
+share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.11.3.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/${MODPY_EGG_VERSION}.txt
+share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.11.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.2.1.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.2.2.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.2.3.txt
