@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.211 2017/08/22 18:03:52 tj Exp $
+# $OpenBSD: network.conf.template,v 1.212 2017/08/22 19:40:59 sthen Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!!
@@ -199,7 +199,7 @@ MASTER_SITE_PACKETSTORM+=	\
 	http://packetstorm.wowhacker.com/
 
 MASTER_SITE_APACHE+= \
-	https://www.apache.org/dist/
+	https://www.apache.org/dist/ \
 	https://archive.apache.org/dist/ \
 	https://www.mirrorservice.org/sites/ftp.apache.org/ \
 	http://www.reverse.net/pub/apache/ \
@@ -207,7 +207,7 @@ MASTER_SITE_APACHE+= \
 	http://apache.belnet.be/ \
 	ftp://ftp.uni-erlangen.de/pub/mirrors/apache/ \
 	http://apache.mirror.aussiehq.net.au/ \
-	http://apache.sunsite.ualberta.ca/ \
+	http://apache.sunsite.ualberta.ca/
 
 MASTER_SITE_PYPI +=	\
 	https://pypi.io/packages/source/
