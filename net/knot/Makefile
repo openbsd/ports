@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2017/07/23 12:39:37 zhuk Exp $
+# $OpenBSD: Makefile,v 1.19 2017/08/22 10:14:10 espie Exp $
 
 COMMENT =		authoritative DNS server
 
@@ -27,7 +27,7 @@ MASTER_SITES =		https://secure.nic.cz/files/knot-dns/
 EXTRACT_SUFX =		.tar.xz
 
 # Needs TLS emulation, and atomic builtins on arm
-COMPILER =		base gcc
+COMPILER =		gcc
 COMPILER_LANGS =	c
 
 BUILD_DEPENDS =		devel/bison
