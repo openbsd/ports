@@ -1,0 +1,38 @@
+$OpenBSD: patch-internal_easylogging++_h,v 1.1 2017/08/22 01:32:34 jca Exp $
+
+Index: internal/easylogging++.h
+--- internal/easylogging++.h.orig
++++ internal/easylogging++.h
+@@ -98,13 +98,18 @@
+ #else
+ #  define ELPP_OS_FREEBSD 0
+ #endif
++#if (defined(__OpenBSD__))
++#  define ELPP_OS_OPENBSD 1
++#else
++#  define ELPP_OS_OPENBSD 0
++#endif
+ #if (defined(__sun))
+ #  define ELPP_OS_SOLARIS 1
+ #else
+ #  define ELPP_OS_SOLARIS 0
+ #endif
+ // Unix
+-#if ((ELPP_OS_LINUX || ELPP_OS_MAC || ELPP_OS_FREEBSD || ELPP_OS_SOLARIS) && (!ELPP_OS_WINDOWS))
++#if ((ELPP_OS_LINUX || ELPP_OS_MAC || ELPP_OS_FREEBSD || ELPP_OS_OPENBSD || ELPP_OS_SOLARIS) && (!ELPP_OS_WINDOWS))
+ #  define ELPP_OS_UNIX 1
+ #else
+ #  define ELPP_OS_UNIX 0
+@@ -283,7 +288,11 @@ ELPP_INTERNAL_DEBUGGING_OUT_INFO << ELPP_INTERNAL_DEBU
+ #define ELPP_VARIADIC_TEMPLATES_SUPPORTED \
+ (ELPP_COMPILER_GCC || ELPP_COMPILER_CLANG || ELPP_COMPILER_INTEL || (ELPP_COMPILER_MSVC && _MSC_VER >= 1800))
+ // Logging Enable/Disable macros
+-#define ELPP_LOGGING_ENABLED (!defined(ELPP_DISABLE_LOGS))
++#if defined(ELPP_DISABLE_LOGS)
++#  define ELPP_LOGGING_ENABLED 0
++#else
++#  define ELPP_LOGGING_ENABLED 1
++#endif
+ #if (!defined(ELPP_DISABLE_DEBUG_LOGS) && (ELPP_LOGGING_ENABLED) && ((defined(_DEBUG)) || (!defined(NDEBUG))))
+ #  define ELPP_DEBUG_LOG 1
+ #else

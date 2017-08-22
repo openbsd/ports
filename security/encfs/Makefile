@@ -1,40 +1,32 @@
-# $OpenBSD: Makefile,v 1.12 2017/08/09 17:57:27 jca Exp $
-
-BROKEN-hppa =	configure: error: Could not link against boost_serialization-boost_serialization
-BROKEN-sparc64 =	configure: error: Could not link against boost_serialization-boost_serialization
+# $OpenBSD: Makefile,v 1.13 2017/08/22 01:32:34 jca Exp $
 
 COMMENT =		fuse-based cryptographic filesystem
 
-DISTNAME =		encfs-1.7.4
-REVISION =		2
-
-SHARED_LIBS = 		encfs	0.0	# 6.1
+V =			1.9.2
+DISTNAME =		encfs-$V
 
 CATEGORIES =		security
 
 HOMEPAGE =		http://www.arg0.net/encfs
 
-# GPLv3
+# GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB = 		boost_filesystem boost_serialization boost_system c \
-			crypto fuse m pthread rlog ssl ${COMPILER_LIBCXX}
+WANTLIB += ${COMPILER_LIBCXX} c crypto fuse intl m ssl tinyxml2
 
-MASTER_SITES =		${MASTER_SITE_GOOGLECODE:=encfs/}
-EXTRACT_SUFX =		.tgz
+MASTER_SITES =		https://github.com/vgough/encfs/releases/download/v$V/
 
-MODULES =		devel/gettext
-LIB_DEPENDS =		devel/boost \
-			devel/rlog
+COMPILER =		clang gcc
 
-CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	--with-boost-serialization=boost_serialization \
-			--with-boost-filesystem=boost_filesystem \
-			--with-boost-system=boost_system
-# TODO convert code to use utimensat() instead of lutimes()
-CONFIGURE_ENV +=	CPPFLAGS="-Dlutimes=utimes -D_DIRENT_HAVE_D_TYPE"
+MODULES =		devel/cmake
+BUILD_DEPENDS =		devel/gettext-tools
+LIB_DEPENDS =		devel/gettext \
+			textproc/tinyxml2
+
+CONFIGURE_ARGS =	-DUSE_INTERNAL_TINYXML:Bool=Off
+CONFIGURE_ENV =		CXXFLAGS="-DHAVE_UTIMENSAT -D_DIRENT_HAVE_D_TYPE"
 
 do-test:
-	${WRKSRC}/encfs/test
+	${SETENV} ${MAKE_ENV} ${WRKBUILD}/checkops
 
 .include <bsd.port.mk>

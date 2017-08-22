@@ -1,0 +1,14 @@
+$OpenBSD: patch-encfs_SSL_Compat_h,v 1.1 2017/08/22 01:32:34 jca Exp $
+
+Index: encfs/SSL_Compat.h
+--- encfs/SSL_Compat.h.orig
++++ encfs/SSL_Compat.h
+@@ -22,7 +22,7 @@
+ #define _SSL_Compat_incl_
+ 
+ // OpenSSL < 1.1.0
+-#if OPENSSL_VERSION_NUMBER < 0x10100000L
++#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
+ 
+ // Equivalent methods
+ #define EVP_MD_CTX_new EVP_MD_CTX_create

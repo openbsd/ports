@@ -1,0 +1,14 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2017/08/22 01:32:34 jca Exp $
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -244,7 +244,7 @@ if (POD2MAN)
+             ${CMAKE_CURRENT_LIST_DIR}/encfs/encfsctl.pod encfsctl.1)
+ 
+   install (FILES ${CMAKE_BINARY_DIR}/encfs.1 ${CMAKE_BINARY_DIR}/encfsctl.1
+-    DESTINATION share/man/man1)
++    DESTINATION man/man1)
+ endif (POD2MAN)
+ 
+ # Tests
