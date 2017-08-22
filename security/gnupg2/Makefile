@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2017/08/10 14:55:48 pea Exp $
+# $OpenBSD: Makefile,v 1.53 2017/08/22 21:07:45 edd Exp $
 
 COMMENT =	GNU privacy guard - a free PGP replacement
 
@@ -26,7 +26,7 @@ LIB_DEPENDS =		archivers/bzip2 \
 			databases/sqlite3 \
 			devel/gettext \
 			devel/libusb1 \
-			devel/npth \
+			devel/npth>=1.5 \
 			security/gnutls \
 			security/libassuan>=2.4.3 \
 			security/libgcrypt \

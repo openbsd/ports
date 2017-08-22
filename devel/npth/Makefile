@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2016/10/01 13:56:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2017/08/22 21:07:45 edd Exp $
 
 COMMENT=	new GNU Portable Threads Library
 
-DISTNAME=	npth-1.2
+DISTNAME=	npth-1.5
 
-SHARED_LIBS=	npth 0.0	# 0.5
+SHARED_LIBS=	npth 1.0	# 1.1
 
 CATEGORIES=	devel
 
