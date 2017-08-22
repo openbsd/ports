@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2016/04/13 19:16:54 kili Exp $
+# $OpenBSD: Makefile,v 1.5 2017/08/22 05:19:17 kirby Exp $
 
 COMMENT =		simple RPC framework based on GObject system
 
 GH_PROJECT = 		libsearpc
-GH_TAGNAME = 		v3.0-latest
-REVISION =		0
+GH_TAGNAME = 		v3.1-latest
 
 SHARED_LIBS += 		searpc			0.0 # 1.2
 
@@ -23,7 +22,6 @@ LIB_DEPENDS =		devel/glib2 \
 			devel/jansson
 
 SEPARATE_BUILD =	Yes
-USE_GMAKE =		Yes
 CONFIGURE_STYLE =	gnu
 
 AUTOCONF_VERSION =	2.61

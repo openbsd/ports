@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2017/06/12 10:57:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2017/08/22 05:19:16 kirby Exp $
 
 COMMENT =		framework for writing networked applications in C
 
 GH_PROJECT = 		ccnet
-REVISION =		0
 
 SHARED_LIBS =		ccnet 2.0
 
@@ -25,7 +24,6 @@ LIB_DEPENDS =		databases/sqlite3 \
 			sysutils/e2fsprogs \
 			net/seafile/libsearpc
 
-USE_GMAKE =		Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV +=	CPPFLAGS=-I${LOCALBASE}/include \
 			LDFLAGS=-L${LOCALBASE}/lib
