@@ -1,15 +1,17 @@
-# $OpenBSD: Makefile,v 1.51 2017/04/22 13:43:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.52 2017/08/22 19:19:26 jasper Exp $
 
 COMMENT =	intelligent input bus framework
 
-DISTNAME =	ibus-1.5.5
-REVISION =	4
+GH_PROJECT =	ibus
+GH_ACCOUNT =	ibus
+GH_TAGNAME =	1.5.5
+REVISION =	5
 
 SHARED_LIBS =	ibus-1.0	4.0 # 5.504
 
 CATEGORIES =	inputmethods chinese japanese korean
 
-HOMEPAGE =	https://code.google.com/p/ibus/
+HOMEPAGE =	https://github.com/ibus/ibus/wiki
 
 MAINTAINER =	Federico G. Schwindt <fgsch@openbsd.org>
 
@@ -25,7 +27,8 @@ WANTLIB += gtk-x11-2.0 harfbuzz m notify pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs xcb
 WANTLIB += xcb-render xcb-shm z
 
-MASTER_SITES =	${MASTER_SITE_GOOGLECODE:=ibus/}
+# XXX: Remove when upgrading to newer tag
+MASTER_SITES =	https://distfiles.nl/
 
 MODULES =	devel/dconf \
 		devel/gconf2 \

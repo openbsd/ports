@@ -1,15 +1,17 @@
-# $OpenBSD: Makefile,v 1.18 2016/10/01 11:54:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2017/08/22 19:19:26 jasper Exp $
 
 COMMENT =	japanese input engine for ibus
 
-DISTNAME =	ibus-anthy-1.5.4
-REVISION =	0
+GH_ACCOUNT =	ibus
+GH_PROJECT =	ibus-anthy
+GH_TAGNAME =	1.5.4
+REVISION =	1
 
 SHARED_LIBS =	anthygobject-1.0	1.0 # 5.504
 
 CATEGORIES =	inputmethods japanese
 
-HOMEPAGE =	https://code.google.com/p/ibus/
+HOMEPAGE =	https://github.com/fujiwarat/ibus-anthy/wiki
 
 MAINTAINER =	Federico G. Schwindt <fgsch@openbsd.org>
 
@@ -18,7 +20,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =	anthy anthydic ffi glib-2.0 gobject-2.0 m pcre pthread
 
-MASTER_SITES =	${MASTER_SITE_GOOGLECODE:=ibus/}
+# XXX: Remove when upgrading to newer tag
+MASTER_SITES =	https://distfiles.nl/
 
 MODULES =	devel/gettext \
 		lang/python \
