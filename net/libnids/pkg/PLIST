@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/09/15 18:17:41 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2017/08/22 11:11:33 sthen Exp $
 include/nids.h
 lib/libnids.a
+@comment lib/libnids.so
+@lib lib/libnids.so.${LIBnids_VERSION}
 @man man/man3/libnids.3

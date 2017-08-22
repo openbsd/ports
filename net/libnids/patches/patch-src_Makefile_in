@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2017/08/22 11:11:33 sthen Exp $
+
+Index: src/Makefile.in
+--- src/Makefile.in.orig
++++ src/Makefile.in
+@@ -13,7 +13,7 @@ includedir	= @includedir@
+ libdir		= @libdir@
+ mandir		= @mandir@
+ LIBSTATIC      = libnids.a
+-LIBSHARED      = libnids.so.1.24
++LIBSHARED      = libnids.so.${LIBNIDS_SOVER}
+ 
+ CC		= @CC@
+ CFLAGS		= @CFLAGS@ -DLIBNET_VER=@LIBNET_VER@ -DHAVE_ICMPHDR=@ICMPHEADER@ -DHAVE_TCP_STATES=@TCPSTATES@ -DHAVE_BSD_UDPHDR=@HAVE_BSD_UDPHDR@
+@@ -65,7 +65,7 @@ $(LIBSTATIC): $(OBJS)
+ 	ar -cr $@ $(OBJS)
+ 	$(RANLIB) $@
+ $(LIBSHARED): $(OBJS_SHARED)
+-	$(CC) -shared -Wl,-soname,$(LIBSHARED) -o $(LIBSHARED) $(OBJS_SHARED) $(LIBS) $(LNETLIB) $(PCAPLIB)
++	$(CC) -shared -Wl,-soname,$(LIBSHARED) -L${LOCALBASE}/lib/libnet-1.0 -o $(LIBSHARED) $(OBJS_SHARED) $(LIBS) $(LNETLIB) $(PCAPLIB)
+ 
+ _install install: $(LIBSTATIC)
+ 	../mkinstalldirs $(install_prefix)$(libdir)
