@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.2 2017/08/21 05:56:13 jasper Exp $
+#	$OpenBSD: Makefile,v 1.3 2017/08/22 11:32:44 sthen Exp $
 
 PKG_ARCH=		*
 
@@ -15,9 +15,12 @@ CATEGORIES=	sysutils
 PERMIT_PACKAGE_CDROM=	Yes
 
 BUILD_DEPENDS+= devel/arm-none-eabi/gcc-linaro,aarch64
+BUILD_DEPENDS+= devel/arm-none-eabi/gcc-linaro,arm
 
 MAKE_ENV+= CROSS_COMPILE="aarch64-none-elf-"
 MAKE_ENV+= BUILD_STRING="${GH_TAGNAME:S/v//}"
+
+MAKE_FLAGS+= V=1
 
 NO_TEST=	Yes
 USE_GMAKE=	Yes
