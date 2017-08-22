@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.260 2017/08/22 10:27:33 espie Exp $
+# $OpenBSD: Makefile,v 1.261 2017/08/22 22:51:04 sthen Exp $
 
 BROKEN-aarch64=	linker problems with BlocksRuntime that only show up at runtime
 
@@ -43,6 +43,7 @@ WANTLIB-main += xml2 xslt z
 # Runtime fails on ld.lld arches: dlopen()ing the .so modules results in
 # undefined symbols from the BlocksRuntime lib.
 #
+# keep telephony/asterisk-g729 in sync with this
 COMPILER =		base-gcc ports-gcc
 
 SHARED_LIBS+=		asteriskssl 0.0		# 1
