@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.38 2017/07/10 16:52:03 dcoppa Exp $
+@comment $OpenBSD: PLIST-examples,v 1.39 2017/08/22 14:58:57 dcoppa Exp $
 @option is-branch
 @owner _tomcat
 @group _tomcat
@@ -738,6 +738,7 @@ webapps/docs/api/org/apache/catalina/users/package-tree.html
 webapps/docs/api/org/apache/catalina/util/
 webapps/docs/api/org/apache/catalina/util/Base64.html
 webapps/docs/api/org/apache/catalina/util/CharsetMapper.html
+webapps/docs/api/org/apache/catalina/util/ConcurrentDateFormat.html
 webapps/docs/api/org/apache/catalina/util/ContextName.html
 webapps/docs/api/org/apache/catalina/util/Conversions.html
 webapps/docs/api/org/apache/catalina/util/CustomObjectInputStream.html
@@ -1287,6 +1288,7 @@ webapps/docs/api/org/apache/naming/resources/
 webapps/docs/api/org/apache/naming/resources/BaseDirContext.html
 webapps/docs/api/org/apache/naming/resources/CacheEntry.html
 webapps/docs/api/org/apache/naming/resources/ClasspathURLStreamHandler.html
+webapps/docs/api/org/apache/naming/resources/ConcurrentDateFormat.html
 webapps/docs/api/org/apache/naming/resources/Constants.html
 webapps/docs/api/org/apache/naming/resources/DirContextURLConnection.html
 webapps/docs/api/org/apache/naming/resources/DirContextURLStreamHandler.html
@@ -1579,6 +1581,7 @@ webapps/docs/api/org/apache/tomcat/util/http/MimeHeaders.html
 webapps/docs/api/org/apache/tomcat/util/http/Parameters.FailReason.html
 webapps/docs/api/org/apache/tomcat/util/http/Parameters.html
 webapps/docs/api/org/apache/tomcat/util/http/RequestUtil.html
+webapps/docs/api/org/apache/tomcat/util/http/ResponseUtil.html
 webapps/docs/api/org/apache/tomcat/util/http/ServerCookie.html
 webapps/docs/api/org/apache/tomcat/util/http/fileupload/
 webapps/docs/api/org/apache/tomcat/util/http/fileupload/ByteArrayOutputStream.html
