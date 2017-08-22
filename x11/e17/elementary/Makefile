@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.26 2017/08/21 19:25:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.27 2017/08/22 11:57:18 sthen Exp $
+
+BROKEN-i386 =		segfault during build since switch to clang
 
 COMMENT =		basic widget set, based on EFL
 
