@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2017/07/31 13:19:13 danj Exp $
+# $OpenBSD: Makefile,v 1.49 2017/08/22 11:10:01 naddy Exp $
 
 # snapshots are only available for amd64 and i386, for now
 ONLY_FOR_ARCHS =	amd64 i386
@@ -20,6 +20,7 @@ BV =			${BV-${MACHINE_ARCH}}
 PKGNAME =		rust-${V}
 PKGNAME-main =		rust-${V}
 PKGNAME-doc =		rust-doc-${V}
+REVISION-main =		0
 
 MULTI_PACKAGES =	-main -doc
 
