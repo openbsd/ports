@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-en_GB,v 1.4 2016/01/20 16:19:25 sthen Exp $
+@comment $OpenBSD: PLIST-en_GB,v 1.5 2017/08/22 10:34:56 sthen Exp $
 @option no-default-conflict
 @conflict asterisk-extra-sounds-en_GB-${MODAS_CODEC}-*
 share/asterisk/
@@ -614,7 +614,6 @@ ${MODAS_INST}/milwaukee.${MODAS_CODEC}
 ${MODAS_INST}/minimum.${MODAS_CODEC}
 ${MODAS_INST}/minneapolis.${MODAS_CODEC}
 ${MODAS_INST}/minnesota.${MODAS_CODEC}
-${MODAS_INST}/minute.${MODAS_CODEC}
 ${MODAS_INST}/missed.${MODAS_CODEC}
 ${MODAS_INST}/mississippi.${MODAS_CODEC}
 ${MODAS_INST}/missouri.${MODAS_CODEC}
@@ -907,7 +906,6 @@ ${MODAS_INST}/scattered.${MODAS_CODEC}
 ${MODAS_INST}/sciences.${MODAS_CODEC}
 ${MODAS_INST}/seattle.${MODAS_CODEC}
 ${MODAS_INST}/second-floor.${MODAS_CODEC}
-${MODAS_INST}/second.${MODAS_CODEC}
 ${MODAS_INST}/secretary.${MODAS_CODEC}
 ${MODAS_INST}/secure.${MODAS_CODEC}
 ${MODAS_INST}/security-system.${MODAS_CODEC}
