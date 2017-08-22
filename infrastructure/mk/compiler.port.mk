@@ -1,4 +1,4 @@
-# $OpenBSD: compiler.port.mk,v 1.3 2017/07/13 11:43:55 espie Exp $
+# $OpenBSD: compiler.port.mk,v 1.4 2017/08/22 10:27:33 espie Exp $
 #
 #  Copyright (c) 2017 Marc Espie
 # 
@@ -24,53 +24,62 @@
 #  SUCH DAMAGE.
 # 
 
+COMPILER:= ${COMPILER:S/^gcc$/base-clang ports-gcc/}
+COMPILER:= ${COMPILER:S/^clang$/base-clang ports-clang/}
+
 .for c in ${COMPILER:L}
-.  if "$c" == "base"
-.  elif "$c" == "gcc" || "$c" == "gcc4" || "$c" == "gcc-only"
-.    if !defined(CHOSEN_COMPILER)
-MODGCC4_ARCHS ?=	*
+.  if "$c" == "base-gcc"
+_COMPILER_ARCHS += ${GCC4_ARCHS}
+.    if ${PROPERTIES:Mgcc4}
+CHOSEN_COMPILER ?= base-gcc
+.    endif
+.  elif "$c" == "gcc3"
+_COMPILER_ARCHS += ${GCC3_ARCHS}
+.    if ${PROPERTIES:Mgcc3}
+CHOSEN_COMPILER ?= gcc3
+.    endif
+.  elif "$c" == "base-clang"
+_COMPILER_ARCHS += ${CLANG_ARCHS}
+.    if ${PROPERTIES:Mclang}
+CHOSEN_COMPILER ?= base-clang
+.    endif
+.  elif "$c" == "ports-gcc"
+MODGCC4_ARCHS ?=	${GCC49_ARCHS}
 _MODGCC4_ARCH_USES = 	No
-.      if ${MODGCC4_ARCHS} != ""
-.        for _i in ${MODGCC4_ARCHS}
-.          if !empty(MACHINE_ARCH:M${_i})
+_COMPILER_ARCHS += ${MODGCC4_ARCHS}
+.    for _i in ${MODGCC4_ARCHS}
+.      if !empty(MACHINE_ARCH:M${_i})
 _MODGCC4_ARCH_USES = 	Yes
-.          endif
-.        endfor
 .      endif
-.      if ${_MODGCC4_ARCH_USES:L} == "yes"
+.    endfor
+.    if ${_MODGCC4_ARCH_USES:L} == "yes" && !defined(CHOSEN_COMPILER)
 MODULES +=		gcc4
 MODGCC4_LANGS +=	${COMPILER_LANGS}
-CHOSEN_COMPILER = 	gcc
-.      endif
+CHOSEN_COMPILER = 	ports-gcc
 .    endif
-.  elif "$c" == "clang"
-.    if !defined(CHOSEN_COMPILER)
-MODCLANG_ARCHS ?=	*
+.  elif "$c" == "ports-clang"
+MODCLANG_ARCHS ?=	${LLVM_ARCHS}
 _MODCLANG_ARCH_USES = 	No
-.      if ${MODCLANG_ARCHS} != ""
-.        for _i in ${MODCLANG_ARCHS}
-.          if !empty(MACHINE_ARCH:M${_i})
+_COMPILER_ARCHS += ${MODCLANG_ARCHS}
+.    for _i in ${MODCLANG_ARCHS}
+.      if !empty(MACHINE_ARCH:M${_i})
 _MODCLANG_ARCH_USES = 	Yes
-.          endif
-.        endfor
 .      endif
-.      if ${_MODCLANG_ARCH_USES:L} == "yes"
+.    endfor
+.    if ${_MODCLANG_ARCH_USES:L} == "yes" && !defined(CHOSEN_COMPILER)
 MODULES +=		lang/clang
 MODCLANG_LANGS +=	${COMPILER_LANGS}
-CHOSEN_COMPILER = 	clang
-.      endif
+CHOSEN_COMPILER = 	ports-clang
 .    endif
 .  else
 ERRORS += "Fatal: unknown keyword $c in COMPILER"
 CHOSEN_COMPILER = error
 .  endif
 .endfor
-# okay we went through, we didn't find anything
-CHOSEN_COMPILER ?= old
-.if $(CHOSEN_COMPILER) == "clang" || $(CHOSEN_COMPILER) == "gcc"
-.  if ${COMPILER_LANGS:Mc++}
+
+CHOSEN_COMPILER ?= none found
+ONLY_FOR_ARCHS ?= ${_COMPILER_ARCHS}
+
+.if ${CHOSEN_COMPILER:Mports-*} && ${COMPILER_LANGS:Mc++}
 COMPILER_LIBCXX = ${LIBECXX}
-.  endif
 .endif
-
-

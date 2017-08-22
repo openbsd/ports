@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1364 2017/08/21 09:10:52 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1365 2017/08/22 10:27:33 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -302,7 +302,19 @@ _MODULES_DONE =
 .  include "${PORTSDIR}/infrastructure/mk/modules.port.mk"
 .endif
 
+# this only happens if we exit modules without having ever gone
+# thru compiler.port.mk
+COMPILER ?= base-clang base-gcc gcc3
+COMPILER_LANGS ?= c c++
+.if ${PROPERTIES:Mclang}
+CHOSEN_COMPILER ?= base-clang
+.elif ${PROPERTIES:Mgcc4}
+CHOSEN_COMPILER ?= base-gcc
+.else
+CHOSEN_COMPILER ?= gcc3
+.endif
 COMPILER_LIBCXX ?= ${LIBCXX}
+
 ###
 ### Variable setup that can happen after modules
 ###
