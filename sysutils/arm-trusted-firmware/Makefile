@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.3 2017/08/22 11:32:44 sthen Exp $
+#	$OpenBSD: Makefile,v 1.4 2017/08/22 15:42:19 naddy Exp $
 
 PKG_ARCH=		*
 
@@ -21,14 +21,12 @@ MAKE_ENV+= CROSS_COMPILE="aarch64-none-elf-"
 MAKE_ENV+= BUILD_STRING="${GH_TAGNAME:S/v//}"
 
 MAKE_FLAGS+= V=1
+MAKE_FLAGS+= PLAT=rk3399 DEBUG=1
+
+ALL_TARGET=	bl31
 
 NO_TEST=	Yes
 USE_GMAKE=	Yes
-
-do-build:
-	cd ${WRKSRC} && \
-	    ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} \
-	        -f ${MAKE_FILE} PLAT=rk3399 DEBUG=1 bl31
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/arm-trusted-firmware/
