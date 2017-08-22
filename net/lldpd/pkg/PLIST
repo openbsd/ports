@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2016/10/11 13:52:38 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.7 2017/08/22 10:16:02 sthen Exp $
 @newgroup _lldpd:720
 @newuser _lldpd:720:_lldpd:daemon:lldpd user:/nonexistent:/sbin/nologin
 %%snmp%%
@@ -30,6 +30,6 @@ share/doc/lldpd/README.md
 @comment share/examples/lldpd/lldpd.d/
 @comment share/examples/lldpd/lldpd.d/README.conf
 share/zsh/
-share/zsh/vendor-completions/
-share/zsh/vendor-completions/_lldpcli
+share/zsh/site-functions/
+share/zsh/site-functions/_lldpcli
 @rcscript ${RCDIR}/lldpd
