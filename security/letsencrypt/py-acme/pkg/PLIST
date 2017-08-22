@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2017/02/07 14:48:02 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.7 2017/08/22 10:23:36 sthen Exp $
 @pkgpath security/py-acme${MODPY_FLAVOR}
 bin/jws${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/acme/
@@ -91,6 +91,7 @@ lib/python${MODPY_VERSION}/site-packages/acme/testdata/cert-idnsans.pem
 lib/python${MODPY_VERSION}/site-packages/acme/testdata/cert-san.pem
 lib/python${MODPY_VERSION}/site-packages/acme/testdata/cert.der
 lib/python${MODPY_VERSION}/site-packages/acme/testdata/cert.pem
+lib/python${MODPY_VERSION}/site-packages/acme/testdata/critical-san.pem
 lib/python${MODPY_VERSION}/site-packages/acme/testdata/csr-100sans.pem
 lib/python${MODPY_VERSION}/site-packages/acme/testdata/csr-6sans.pem
 lib/python${MODPY_VERSION}/site-packages/acme/testdata/csr-idnsans.pem
