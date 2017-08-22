@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2016/01/20 16:15:45 kili Exp $
+# $OpenBSD: Makefile,v 1.26 2017/08/22 12:41:58 dcoppa Exp $
 
 COMMENT =		sqlite3 driver for HDBC
 
 DISTNAME =		HDBC-sqlite3-2.3.3.1
-REVISION =		2
+REVISION =		3
 CATEGORIES =		databases
 
 MAINTAINER =		David Coppa <dcoppa@openbsd.org>
@@ -15,7 +15,7 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	EgigbD3yPOEFMohh3u55Sb
+MODGHC_PACKAGE_KEY =	KfXXdfWIL4WGBGwiUwTwPl
 
 RUN_DEPENDS +=		databases/hs-HDBC>=2.3.0.0 \
 			devel/hs-mtl
