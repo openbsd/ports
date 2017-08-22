@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2017/08/22 01:32:34 jca Exp $
+# $OpenBSD: Makefile,v 1.14 2017/08/22 01:39:02 jca Exp $
 
 COMMENT =		fuse-based cryptographic filesystem
 
@@ -25,6 +25,10 @@ LIB_DEPENDS =		devel/gettext \
 
 CONFIGURE_ARGS =	-DUSE_INTERNAL_TINYXML:Bool=Off
 CONFIGURE_ENV =		CXXFLAGS="-DHAVE_UTIMENSAT -D_DIRENT_HAVE_D_TYPE"
+
+# fixup, but those tests don't pass anyway
+post-extract:
+	sed -i 's,\./build/,${WRKBUILD}/,g' ${WRKSRC}/tests/*.pl
 
 do-test:
 	${SETENV} ${MAKE_ENV} ${WRKBUILD}/checkops
