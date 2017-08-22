@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2017/06/03 14:28:40 schwarze Exp $
+# $OpenBSD: Makefile,v 1.11 2017/08/22 18:03:52 tj Exp $
 
 COMMENT =		command line client application for Mega
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c crypto curl gio-2.0 glib-2.0 gobject-2.0 pthread ssl
 
-MASTER_SITES =		http://megatools.megous.com/builds/
+MASTER_SITES =		https://megatools.megous.com/builds/
 
 MODULES =		devel/gettext
 BUILD_DEPENDS =		devel/gobject-introspection \

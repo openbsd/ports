@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.96 2017/05/30 21:21:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.97 2017/08/22 18:03:52 tj Exp $
 
 COMMENT=	tty-based e-mail client
 
@@ -17,6 +17,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB+=	c crypto iconv idn intl qdbm ssl z
 
 MASTER_SITES=	http://ftp.mutt.org/pub/mutt/ \
+		https://ftp.osuosl.org/pub/mutt/ \
 		https://bitbucket.org/mutt/mutt/downloads/ \
 		ftp://ftp.mutt.org/pub/mutt/
 

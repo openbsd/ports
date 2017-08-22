@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.210 2017/02/02 11:30:10 juanfra Exp $
+# $OpenBSD: network.conf.template,v 1.211 2017/08/22 18:03:52 tj Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!!
@@ -11,7 +11,7 @@
 # List of OpenBSD sites
 MASTER_SITE_OPENBSD ?= \
 	https://ftp.openbsd.org/pub/OpenBSD/distfiles/ \
-	ftp://ftp.usa.openbsd.org/pub/OpenBSD/distfiles/ \
+	https://ftp.usa.openbsd.org/pub/OpenBSD/distfiles/ \
 	https://ftp.fr.openbsd.org/pub/OpenBSD/distfiles/
 
 # Default OpenBSD backup site
@@ -23,7 +23,7 @@ _MASTER_SITE_FREEBSD?=	\
 
 # Default NetBSD backup site
 _MASTER_SITE_NETBSD?=	\
-	http://ftp.netbsd.org/pub/pkgsrc/distfiles/${DIST_SUBDIR}/ \
+	https://ftp.netbsd.org/pub/pkgsrc/distfiles/${DIST_SUBDIR}/ \
 	ftp://ftp.netbsd.org/pub/pkgsrc/distfiles/${DIST_SUBDIR}/
 
 # Uncomment to retrieve from the OpenBSD sites only
@@ -54,17 +54,19 @@ MASTER_SITE_BACKUP?=	\
 
 # Popular master sites, most useful sites come first.
 MASTER_SITE_GNU+=	\
-	http://ftpmirror.gnu.org/ \
+	https://ftpmirror.gnu.org/ \
 	https://ftp.gnu.org/gnu/ \
-	http://ftp.funet.fi/pub/gnu/prep/ \
+	https://mirrors.dotsrc.org/gnu/ \
+	https://ftp.nluug.nl/pub/gnu/ \
 	ftp://ftp.gnu.org/gnu/ \
+	http://ftp.funet.fi/pub/gnu/prep/ \
 	ftp://ftp.cs.tu-berlin.de/pub/gnu/ \
-	http://mirrors.dotsrc.org/gnu/ \
-	http://ftp.kddilabs.jp/GNU/ \
-	http://ftp.nluug.nl/pub/gnu/
+	http://ftp.kddilabs.jp/GNU/
 
 MASTER_SITE_GCC+=	\
-	http://ftp.nluug.nl/languages/gcc/ \
+	https://gcc.gnu.org/pub/gcc/ \
+	https://ftp.nluug.nl/languages/gcc/ \
+	https://www.mirrorservice.org/sites/sourceware.org/pub/gcc/ \
 	ftp://gcc.gnu.org/pub/gcc/ \
 	http://gd.tuwien.ac.at/gnu/gcc/ \
 	http://gcc.igor.onlinedirect.bg/ \
@@ -78,16 +80,15 @@ MASTER_SITE_GCC+=	\
 	ftp://ftp.ntua.gr/pub/gnu/gcc/ \
 	http://robotlab.itk.ppke.hu/gcc/ \
 	http://gcc.fyxm.net/ \
-	http://www.mirrorservice.org/sites/sourceware.org/pub/gcc/ \
 	http://gcc-uk.internet.bs/
 
 MASTER_SITE_XORG+=	\
-	http://ftp.x.org/pub/individual/ \
-	http://ftp.gwdg.de/pub/x11/x.org/pub/individual/ \
-	http://ftp.mirrorservice.org/sites/ftp.x.org/pub/individual/
+	https://ftp.x.org/pub/individual/ \
+	https://ftp.gwdg.de/pub/x11/x.org/pub/individual/ \
+	https://ftp.mirrorservice.org/sites/ftp.x.org/pub/individual/
 
 MASTER_SITE_XCONTRIB+=	\
-	http://ftp.gwdg.de/pub/x11/x.org/contrib/ \
+	https://ftp.gwdg.de/pub/x11/x.org/contrib/ \
 	ftp://ftp.x.org/contrib/ \
 	http://ftp.kddilabs.jp/X11/ftp.x.org/contrib/ \
 	ftp://ftp.uvsq.fr/pub/X11/x.org/contrib/
@@ -96,7 +97,7 @@ MASTER_SITE_R5CONTRIB+=	\
 	${MASTER_SITE_XCONTRIB:=../R5contrib/}
 
 MASTER_SITE_SUNSITE+=	\
-	http://www.ibiblio.org/pub/Linux/ \
+	https://www.ibiblio.org/pub/Linux/ \
 	http://ftp.tuwien.ac.at/pub/linux/ibiblio/ \
 	http://ftp.uniovi.es/pub/linux/ \
 	http://ftp.lip6.fr/pub/linux/sunsite/ \
@@ -115,7 +116,7 @@ MASTER_SITE_SUNSITE+=	\
 # find them.  Many of these contain embedded spaces which don't work
 # with ${MASTER_SITE_xx:=foo/} so we need something new...
 MASTER_SITE_SOURCEFORGE+=	\
-	http://downloads.sourceforge.net/sourceforge/
+	https://downloads.sourceforge.net/sourceforge/
 
 MASTER_SITE_OSDN_JP+=	\
 	http://osdn.dl.osdn.jp/ \
@@ -125,19 +126,19 @@ MASTER_SITE_OSDN_JP+=	\
 	http://onet.dl.osdn.jp/
 
 MASTER_SITE_GNOME+=	\
-	http://ftp.acc.umu.se/pub/GNOME/ \
-	http://ftp1.nluug.nl/windowing/gnome/ \
+	https://ftp.acc.umu.se/pub/GNOME/ \
+	https://ftp.gnome.org/pub/GNOME/ \
+	https://ftp1.nluug.nl/windowing/gnome/ \
+	https://mirrors.ustc.edu.cn/gnome \
 	http://ftp.belnet.be/ftp.gnome.org/ \
 	http://ftp.df.lth.se/pub/gnome/ \
-	http://ftp.gnome.org/pub/GNOME/ \
 	ftp://ftp.cse.buffalo.edu/pub/Gnome/ \
 	ftp://ftp.nara.wide.ad.jp/pub/X11/GNOME/ \
-	http://mirrors.ustc.edu.cn/gnome \
 	http://mirror.nbtelecom.com.br/gnome/
 
 # mirmon: http://mirrors.cpan.org/
 MASTER_SITE_PERL_CPAN+=	\
-	http://www.cpan.org/CPAN/modules/by-module/ \
+	https://www.cpan.org/CPAN/modules/by-module/ \
 	http://mirror.sov.uk.goscomb.net/CPAN/modules/by-module/ \
 	http://ftp.cpan.org/pub/CPAN/modules/by-module/ \
 	http://backpan.perl.org/modules/by-module/ \
@@ -147,32 +148,32 @@ MASTER_SITE_PERL_CPAN+=	\
 
 MASTER_SITE_TEX_CTAN+=	\
 	http://mirror.ctan.org/ \
+	https://mirrors.dotsrc.org/ctan/ \
 	http://ftp.funet.fi/pub/TeX/CTAN/ \
 	ftp://ctan.unsw.edu.au/tex-archive/ \
 	ftp://ftp.cise.ufl.edu/pub/mirrors/tex-archive/ \
 	ftp://ftp.tex.ac.uk/tex-archive/ \
 	http://ftp.kddilabs.jp/CTAN/ \
-	http://mirrors.dotsrc.org/ctan/ \
 	http://ctan.tug.org/tex-archive/ \
 	http://ftp.dante.de/tex-archive/ \
 	ftp://ftp.uvsq.fr/pub/TeX/CTAN/ \
 	http://www.ctan.org/pub/tex-archive/
 
 MASTER_SITE_KDE+=	\
+	https://mirrors.dotsrc.org/kde/ \
+	https://download.kde.org/ \
 	http://kde.mirror.anlx.net/ \
-	http://mirrors.dotsrc.org/kde/ \
 	http://ftp.SURFnet.nl/windowing/kde/ \
 	http://ftp.tuniv.szczecin.pl/pub/kde/ \
 	http://ftp.kddilabs.jp/X11/kde/ \
 	ftp://ftp.uvsq.fr/pub/X11/kde/ \
 	http://ftp.funet.fi/pub/mirrors/ftp.kde.org/pub/kde/ \
-	ftp://ftp.kde.org/pub/kde/ \
 	ftp://ftp.fu-berlin.de/pub/unix/X11/gui/kde/
 
 MASTER_SITE_SAVANNAH+=	\
-	http://download.savannah.nongnu.org/releases/ \
-	http://download-mirror.savannah.nongnu.org/releases/ \
-	http://ftp.cc.uoc.gr/mirrors/nongnu.org/ \
+	https://download.savannah.nongnu.org/releases/ \
+	https://download-mirror.savannah.nongnu.org/releases/ \
+	https://ftp.cc.uoc.gr/mirrors/nongnu.org/ \
 	http://ftp.twaren.net/Unix/NonGNU/ \
 	http://mirror.csclub.uwaterloo.ca/nongnu/ \
 	http://mirrors.zerg.biz/nongnu/ \
@@ -198,15 +199,15 @@ MASTER_SITE_PACKETSTORM+=	\
 	http://packetstorm.wowhacker.com/
 
 MASTER_SITE_APACHE+= \
+	https://www.apache.org/dist/
+	https://archive.apache.org/dist/ \
+	https://www.mirrorservice.org/sites/ftp.apache.org/ \
 	http://www.reverse.net/pub/apache/ \
-	http://www.mirrorservice.org/sites/ftp.apache.org/ \
-	http://archive.apache.org/dist/ \
 	http://www.meisei-u.ac.jp/mirror/apache/dist/ \
 	http://apache.belnet.be/ \
 	ftp://ftp.uni-erlangen.de/pub/mirrors/apache/ \
 	http://apache.mirror.aussiehq.net.au/ \
 	http://apache.sunsite.ualberta.ca/ \
-	http://www.apache.org/dist/
 
 MASTER_SITE_PYPI +=	\
 	https://pypi.io/packages/source/
@@ -218,10 +219,9 @@ MASTER_SITE_NPM += \
 	https://registry.npmjs.org/
 
 MASTER_SITE_ISC +=	\
-	http://ftp.isc.org/isc/ \
-	http://www.mirrorservice.org/sites/ftp.isc.org/isc/ \
+	https://ftp.isc.org/isc/ \
+	https://www.mirrorservice.org/sites/ftp.isc.org/isc/ \
 	http://ftp.iij.ad.jp/pub/network/isc/ \
-	ftp://ftp.isc.org/isc/ \
 	ftp://ftp.arcane-networks.net/pub/mirrors/ftp.isc.org/isc/ \
 	ftp://ftp.nominum.com/pub/isc/
 
@@ -236,7 +236,7 @@ MASTER_SITE_DEBIAN += \
 
 MASTER_SITE_GNUPG += \
 	https://www.gnupg.org/ftp/gcrypt/ \
-	http://mirrors.dotsrc.org/gcrypt/ \
+	https://mirrors.dotsrc.org/gcrypt/ \
 	ftp://ftp.gnupg.org/gcrypt/
 
 MASTER_SITE_GOOGLECODE += \

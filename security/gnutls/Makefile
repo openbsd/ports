@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.141 2017/08/22 08:33:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.142 2017/08/22 18:03:52 tj Exp $
 
 COMMENT=		GNU Transport Layer Security library
 
@@ -21,8 +21,9 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += c ffi gmp hogweed iconv idn2 intl m nettle p11-kit pthread
 WANTLIB += tasn1 unistring z
 
-MASTER_SITES=		ftp://ftp.gnutls.org/gcrypt/gnutls/v${V:R}/ \
-			http://ftp.heanet.ie/mirrors/ftp.gnupg.org/gcrypt/gnutls/v${V:R}/
+MASTER_SITES=		https://gnupg.org/ftp/gcrypt/ \
+			https://ftp.heanet.ie/mirrors/ftp.gnupg.org/gcrypt/ \
+			ftp://ftp.gnutls.org/gcrypt/gnutls/v${V:R}/
 
 .include <bsd.port.arch.mk>
 .if ${PROPERTIES:Mclang} || ${MACHINE_ARCH} != amd64
