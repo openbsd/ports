@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.41 2017/05/26 12:10:31 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.42 2017/08/22 08:18:38 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
@@ -751,6 +751,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/confirm-product-ins
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/co${MODPY_PY_PREFIX}image.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/co${MODPY_PY_PREFIX}snapshot.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-customer-gateway.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-default-vpc.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-dhcp-options.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-egress-only-internet-gateway.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-flow-logs.rst
@@ -761,6 +762,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-key-pair.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-nat-gateway.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-network-acl-entry.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-network-acl.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-network-interface-permission.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-network-interface.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-placement-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-route-table.rst
@@ -786,6 +788,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/delete-key-pair.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/delete-nat-gateway.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/delete-network-acl-entry.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/delete-network-acl.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/delete-network-interface-permission.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/delete-network-interface.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/delete-placement-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/delete-route-table.rst
@@ -829,6 +832,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-moving-add
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-nat-gateways.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-network-acls.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-network-interface-attribute.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-network-interface-permissions.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-network-interfaces.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-placement-groups.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-prefix-lists.rst
@@ -1380,6 +1384,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/organizations/leave-org
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/organizations/list-accounts-for-parent.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/organizations/list-accounts.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/organizations/list-children.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/organizations/list-create-account-status.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/organizations/list-handshakes-for-account.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/organizations/list-handshakes-for-organization.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/organizations/list-organizational-units-for-parent.rst
