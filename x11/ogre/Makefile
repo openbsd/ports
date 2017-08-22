@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.27 2017/07/27 10:15:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2017/08/22 11:55:01 sthen Exp $
 
 BROKEN-hppa =		missing atomic ops
 BROKEN-alpha =		missing atomic ops
+BROKEN-i386 =		MMX-related problems with clang build
 
 COMMENT-main =		3D rendering engine
 COMMENT-samples =	3D rendering engine, demos
