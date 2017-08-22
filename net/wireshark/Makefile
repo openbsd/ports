@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2017/07/27 09:55:45 sthen Exp $
-
-# XXX should add pledge to dumpcap.
+# $OpenBSD: Makefile,v 1.55 2017/08/22 22:39:38 sthen Exp $
 
 BROKEN-alpha =	.got subsegment exceeds 64K (size 101480)
 BROKEN-sparc64 = cc: Internal error: Illegal instruction (program cc1)
@@ -15,9 +13,7 @@ DISTNAME =	wireshark-${WVER}
 PKGNAME-main =	wireshark-${WVER}
 PKGNAME-gtk =	wireshark-gtk-${WVER}
 PKGNAME-text =	tshark-${WVER}
-REVISION-gtk =	0
-REVISION-main =	0
-REVISION-text =	0
+REVISION =	1
 
 SHARED_LIBS +=	wscodecs             0.0      # 0.0
 SHARED_LIBS +=	wsutil               3.0      # 5.0
@@ -29,8 +25,6 @@ CATEGORIES =	net security x11
 HOMEPAGE =	http://www.wireshark.org/
 
 EXTRACT_SUFX =	.tar.bz2
-
-USE_GMAKE =	Yes
 
 # Mostly GPLv2 or later. Some files are less restrictive.
 # tools/pidl is GPLv3 or later. See COPYING.

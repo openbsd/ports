@@ -1,0 +1,26 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2017/08/22 22:39:38 sthen Exp $
+
+Avoid the broken libwsutil.so that gets generated with -pie -shared
+(probably following tools/clang/lib/Driver/Tools.cpp r1.13 "push back
+-pie to the linker if -pie is specified").
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -612,11 +612,11 @@ set(WIRESHARK_LD_FLAGS
+ # XXX - are there other compilers that don't support -pie?  It's
+ # not as if the only platforms we support are Windows and Linux....
+ #
+-if(NOT CMAKE_VERSION VERSION_LESS "2.8.9")
+-	set(WIRESHARK_LD_FLAGS ${WIRESHARK_LD_FLAGS}
+-		-pie
+-	)
+-endif()
++#if(NOT CMAKE_VERSION VERSION_LESS "2.8.9")
++#	set(WIRESHARK_LD_FLAGS ${WIRESHARK_LD_FLAGS}
++#		-pie
++#	)
++#endif()
+ 
+ include(CheckCLinkerFlag)
+ set(_C 0)
