@@ -1,21 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/03/16 18:07:40 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2017/08/23 14:40:45 rsadowski Exp $
 include/glog/
+include/glog/config.h
 include/glog/log_severity.h
 include/glog/logging.h
 include/glog/raw_logging.h
 include/glog/stl_logging.h
 include/glog/vlog_is_on.h
-lib/libglog.a
-lib/libglog.la
+lib/cmake/
+lib/cmake/glog/
+lib/cmake/glog/glog-config-version.cmake
+lib/cmake/glog/glog-config.cmake
+lib/cmake/glog/glog-targets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/glog/glog-targets.cmake
 @lib lib/libglog.so.${LIBglog_VERSION}
-lib/pkgconfig/libglog.pc
-share/doc/glog/
-share/doc/glog/AUTHORS
-share/doc/glog/COPYING
-share/doc/glog/ChangeLog
-share/doc/glog/INSTALL
-share/doc/glog/NEWS
-share/doc/glog/README
-share/doc/glog/README.windows
-share/doc/glog/designstyle.css
-share/doc/glog/glog.html
