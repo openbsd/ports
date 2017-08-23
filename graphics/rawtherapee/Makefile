@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2017/07/26 22:45:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2017/08/23 12:57:45 kirby Exp $
 
 # http://rawpedia.rawtherapee.com/The_Floating_Point_Engine
 ONLY_FOR_ARCHS = 	amd64
 
 COMMENT =		RAW image processing application
 
-DISTNAME =		rawtherapee-5.1
-REVISION =		0
+DISTNAME =		rawtherapee-5.2
 
 CATEGORIES =		graphics
 
@@ -17,7 +16,7 @@ MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += X11 atk-1.0 atkmm-1.6 bz2 c cairo cairo-gobject cairomm-1.0
+WANTLIB += X11 atk-1.0 atkmm-1.6 c cairo cairo-gobject cairomm-1.0
 WANTLIB += canberra canberra-gtk3 expat fftw3f gdk-3 gdk_pixbuf-2.0
 WANTLIB += gdkmm-3.0 gio-2.0 giomm-2.4 glib-2.0 glibmm-2.4 gobject-2.0
 WANTLIB += gthread-2.0 gtk-3 gtkmm-3.0 intl iptcdata jpeg lcms2

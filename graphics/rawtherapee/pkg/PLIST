@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2017/05/22 05:25:03 kirby Exp $
+@comment $OpenBSD: PLIST,v 1.7 2017/08/23 12:57:45 kirby Exp $
 @bin bin/rawtherapee
 @bin bin/rawtherapee-cli
 @man man/man1/rawtherapee.1
@@ -45,6 +45,7 @@ share/rawtherapee/dcpprofiles/Canon PowerShot G7 X.dcp
 share/rawtherapee/dcpprofiles/Canon PowerShot S110.dcp
 share/rawtherapee/dcpprofiles/FUJIFILM X-Pro2.dcp
 share/rawtherapee/dcpprofiles/FUJIFILM X-T1.dcp
+share/rawtherapee/dcpprofiles/FUJIFILM X-T20.dcp
 share/rawtherapee/dcpprofiles/FUJIFILM X100S.dcp
 share/rawtherapee/dcpprofiles/FUJIFILM X100T.dcp
 share/rawtherapee/dcpprofiles/Fujifilm FinePix S9500.dcp
