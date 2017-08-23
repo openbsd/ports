@@ -1,10 +1,13 @@
-# $OpenBSD: Makefile,v 1.29 2017/07/26 22:45:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2017/08/23 22:00:41 sthen Exp $
+
+# this version doesn't build with clang or newer gcc; needs an update.
+COMPILER=	base-gcc
 
 COMMENT=	general multi-lingual speech synthesis system
 V=		1.95
 DISTNAME=	festival-${V}-beta
 PKGNAME=	${DISTNAME:S/-beta/beta/}
-REVISION =	7
+REVISION=	7
 CATEGORIES=	audio
 MASTER_SITES=	http://www.cstr.ed.ac.uk/downloads/festival/${V}/ \
 		http://festvox.org/packed/festival/${V}/
