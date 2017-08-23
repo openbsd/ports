@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2013/07/09 21:06:37 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2017/08/23 07:07:04 ajacoutot Exp $
 bin/xdg-user-dir
 @bin bin/xdg-user-dirs-update
 @man man/man1/xdg-user-dir.1
@@ -11,8 +11,8 @@ share/examples/xdg-user-dirs/xdg/
 @sample ${SYSCONFDIR}/xdg/
 share/examples/xdg-user-dirs/xdg/autostart/
 @sample ${SYSCONFDIR}/xdg/autostart/
-share/examples/xdg-user-dirs/xdg/autostart/user-dirs-update.desktop
-@sample ${SYSCONFDIR}/xdg/autostart/user-dirs-update.desktop
+share/examples/xdg-user-dirs/xdg/autostart/xdg-user-dirs.desktop
+@sample ${SYSCONFDIR}/xdg/autostart/xdg-user-dirs.desktop
 share/examples/xdg-user-dirs/xdg/user-dirs.conf
 @sample ${SYSCONFDIR}/xdg/user-dirs.conf
 share/examples/xdg-user-dirs/xdg/user-dirs.defaults
@@ -61,6 +61,9 @@ share/locale/fa/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/fi/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/fr/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/ga/LC_MESSAGES/xdg-user-dirs.mo
+share/locale/gd/
+share/locale/gd/LC_MESSAGES/
+share/locale/gd/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/gl/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/gu/
 share/locale/gu/LC_MESSAGES/
