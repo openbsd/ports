@@ -1,6 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2014/01/31 09:34:22 jca Exp $
+# $OpenBSD: Makefile,v 1.20 2017/08/23 14:15:55 sthen Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 macppc
+
+BROKEN-i386 =		code/qcommon/vm_x86.c:(.text+0x18): undefined reference to `callMask'
 
 COMMENT-main =		OpenArena client
 COMMENT-server =	OpenArena server
