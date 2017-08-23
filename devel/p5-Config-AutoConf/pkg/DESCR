@@ -1,1 +1,5 @@
-A module to implement some of Autoconf macros in pure Perl.
+Config::AutoConf is intended to provide the same opportunities to
+Perl developers as GNU Autoconf does for Shell developers.  The API
+is leaned against GNU Autoconf, but we try to make the API (especially
+optional arguments) more Perl'ish than m4 abilities allow to the
+original.
