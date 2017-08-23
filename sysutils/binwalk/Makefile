@@ -1,35 +1,30 @@
-# $OpenBSD: Makefile,v 1.6 2017/07/05 10:22:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2017/08/23 11:29:37 jasper Exp $
 
-COMMENT=	tool for reverse-engineering and analysing firmware blobs
+COMMENT =	tool for reverse-engineering and analysing firmware blobs
 
-MODPY_EGG_VERSION = 1.2.2_1
-REVISION=	3
-DISTNAME=	binwalk-1.2.2-1
-PKGNAME=	binwalk-1.2.2.1
+MODPY_EGG_VERSION = 2.1.1
+GH_ACCOUNT =	devttys0
+GH_PROJECT =	binwalk
+GH_TAGNAME =	v${MODPY_EGG_VERSION}
 
-CATEGORIES=	sysutils
+CATEGORIES =	sysutils
 
-HOMEPAGE=	http://binwalk.org/
+HOMEPAGE =	https://github.com/devttys0/binwalk
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES=	http://binwalk.googlecode.com/files/
+MODULES =	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
-MODULES=	lang/python
-BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	devel/py-libmagic \
-		graphics/py-matplotlib
+BUILD_DEPENDS =	${RUN_DEPENDS}
+RUN_DEPENDS =	devel/py-libmagic${MODPY_FLAVOR}
 
-NO_TEST=	Yes
-
-WRKSRC=		${WRKDIST}/src
-
-pre-configure:
-	rm ${WRKSRC}/magic/*.orig # don't include pre-patched files in the generated amalgamation
+NO_TEST =	Yes
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/binwalk
-	${INSTALL_DATA} ${WRKDIST}/docs/* ${PREFIX}/share/doc/binwalk/
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/binwalk
+	${INSTALL_DATA} ${WRKDIST}/src/scripts/examples/* \
+		${PREFIX}/share/examples/binwalk/
 
 .include <bsd.port.mk>
