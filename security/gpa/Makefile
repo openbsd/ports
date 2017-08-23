@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.33 2016/10/01 13:56:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.34 2017/08/23 11:57:53 sthen Exp $
 
 COMMENT=	graphical interface for GnuPG
 
 DISTNAME=	gpa-0.9.9
-REVISION=	0
+REVISION=	1
 CATEGORIES=    	security x11
 
-HOMEPAGE=	${MASTER_SITE_GNUPG:=gpa/}
+HOMEPAGE=	https://www.gnupg.org/software/gpa/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
