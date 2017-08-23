@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2016/05/18 09:24:00 sebastia Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2017/08/23 14:28:31 kirby Exp $
 @extraunexec rm -rf /var/log/pnp4nagios
 @extraunexec rm -rf ${LOCALSTATEDIR}/stats/*
 @bin bin/npcd
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/pnp4nagios/
 @sample ${SYSCONFDIR}/
 share/examples/pnp4nagios/background.pdf
@@ -18,7 +19,7 @@ share/examples/pnp4nagios/config.d/
 @sample ${SYSCONFDIR}/config.d/
 share/examples/pnp4nagios/config.php
 @sample ${SYSCONFDIR}/config.php
-@comment share/examples/pnp4nagios/config.php.0.6.25
+@comment share/examples/pnp4nagios/config.php.0.6.26
 share/examples/pnp4nagios/config_local.php
 share/examples/pnp4nagios/misccommands.cfg-sample
 @sample ${SYSCONFDIR}/misccommands.cfg
@@ -322,7 +323,6 @@ libexec/nagios/rrd_convert.pl
 libexec/nagios/rrd_modify.pl
 libexec/nagios/verify_pnp_config.pl
 @man man/man8/npcd.8
-share/doc/pkg-readmes/${FULLPKGNAME}
 @owner _icinga
 @sample ${LOCALSTATEDIR}/
 @sample ${LOCALSTATEDIR}/stats/
