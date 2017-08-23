@@ -1,16 +1,17 @@
-$OpenBSD: patch-runtime_filetype_vim,v 1.13 2017/04/29 21:04:29 sthen Exp $
---- runtime/filetype.vim.orig	Fri Apr 28 14:45:46 2017
-+++ runtime/filetype.vim	Fri Apr 28 22:58:13 2017
-@@ -632,7 +632,7 @@ au BufNewFile,BufRead dict.conf,.dictrc		setf dictconf
+$OpenBSD: patch-runtime_filetype_vim,v 1.14 2017/08/23 19:10:56 sthen Exp $
+Index: runtime/filetype.vim
+--- runtime/filetype.vim.orig
++++ runtime/filetype.vim
+@@ -635,7 +635,7 @@ au BufNewFile,BufRead dict.conf,.dictrc		setf dictconf
  au BufNewFile,BufRead dictd.conf		setf dictdconf
  
  " Diff files
--au BufNewFile,BufRead *.diff,*.rej,*.patch	setf diff
-+au BufNewFile,BufRead *.diff,*.rej,*.patch,patch-*	setf diff
- 
- " Dircolors
- au BufNewFile,BufRead .dir_colors,.dircolors,*/etc/DIR_COLORS	setf dircolors
-@@ -1155,7 +1155,7 @@ au BufNewFile,BufRead */etc/mail/aliases,*/etc/aliases
+-au BufNewFile,BufRead *.diff,*.rej		setf diff
++au BufNewFile,BufRead *.diff,*.rej,patch-*	setf diff
+ au BufNewFile,BufRead *.patch
+ 	\ if getline(1) =~ '^From [0-9a-f]\{40\} Mon Sep 17 00:00:00 2001$' |
+ 	\   setf gitsendemail |
+@@ -1165,7 +1165,7 @@ au BufNewFile,BufRead */etc/mail/aliases,*/etc/aliases
  au BufNewFile,BufRead .mailcap,mailcap		setf mailcap
  
  " Makefile
