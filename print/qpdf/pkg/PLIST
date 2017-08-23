@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2015/05/22 11:31:18 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2017/08/23 07:40:49 ajacoutot Exp $
 bin/fix-qdf
 @bin bin/qpdf
 @bin bin/zlib-flate
@@ -13,8 +13,10 @@ include/qpdf/Pipeline.hh
 include/qpdf/Pl_Buffer.hh
 include/qpdf/Pl_Concatenate.hh
 include/qpdf/Pl_Count.hh
+include/qpdf/Pl_DCT.hh
 include/qpdf/Pl_Discard.hh
 include/qpdf/Pl_Flate.hh
+include/qpdf/Pl_RunLength.hh
 include/qpdf/Pl_StdioFile.hh
 include/qpdf/PointerHolder.hh
 include/qpdf/QPDF.hh
