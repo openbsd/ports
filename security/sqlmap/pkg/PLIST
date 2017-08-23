@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2017/07/03 01:28:53 gonzalo Exp $
+@comment $OpenBSD: PLIST,v 1.6 2017/08/23 14:29:13 gonzalo Exp $
 bin/sqlmap
 share/sqlmap/
 share/sqlmap/.travis.yml
@@ -261,6 +261,8 @@ share/sqlmap/lib/utils/deps.py
 share/sqlmap/lib/utils/deps.pyc
 share/sqlmap/lib/utils/getch.py
 share/sqlmap/lib/utils/getch.pyc
+share/sqlmap/lib/utils/har.py
+share/sqlmap/lib/utils/har.pyc
 share/sqlmap/lib/utils/hash.py
 share/sqlmap/lib/utils/hash.pyc
 share/sqlmap/lib/utils/hashdb.py
