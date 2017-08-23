@@ -1,0 +1,16 @@
+$OpenBSD: patch-baselib_src_Makefile_in,v 1.1 2017/08/23 15:20:14 dcoppa Exp $
+
+Index: baselib/src/Makefile.in
+--- baselib/src/Makefile.in.orig
++++ baselib/src/Makefile.in
+@@ -36,8 +36,8 @@ LIBTOOL_INSTALL = $(LIBTOOL) --mode=install $(INSTALL)
+ 
+ LIBNAME=libpobl
+ LIBNAME_DEB=libpobl_deb
+-MAJOR = 1
+-MINOR = 0
++MAJOR = ${LIBpobl_VERSION:R}
++MINOR = ${LIBpobl_VERSION:E}
+ 
+ SUBDIRS = config util io collection sys i18n
+ 

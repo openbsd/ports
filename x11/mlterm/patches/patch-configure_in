@@ -1,12 +1,13 @@
-$OpenBSD: patch-configure_in,v 1.16 2016/08/17 15:10:24 dcoppa Exp $
+$OpenBSD: patch-configure_in,v 1.17 2017/08/23 15:20:14 dcoppa Exp $
 
 setuid root/setgid utmp are handled by PLIST
 
 Do not enable VTE support if libvte is around
 
---- configure.in.orig	Sun Aug 14 10:21:06 2016
-+++ configure.in	Wed Aug 17 17:01:02 2016
-@@ -628,15 +628,6 @@ else
+Index: configure.in
+--- configure.in.orig
++++ configure.in
+@@ -652,15 +652,6 @@ else
  				OT_LAYOUT_OBJ=hb.o
  			fi
  		fi
@@ -22,7 +23,7 @@ Do not enable VTE support if libvte is around
  	fi
  
  	if test "$have_hb" = "yes" ; then
-@@ -773,44 +764,14 @@ AC_ARG_ENABLE(pty_helper,
+@@ -807,44 +798,14 @@ AC_ARG_ENABLE(pty_helper,
  	pty_helper=$enable_pty_helper)
  if test "$utmp" = "yes" -a "$pty_helper" != "yes" ; then
  	UTMP_CFLAGS="-DUSE_UTMP"

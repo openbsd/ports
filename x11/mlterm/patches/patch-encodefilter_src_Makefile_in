@@ -1,0 +1,16 @@
+$OpenBSD: patch-encodefilter_src_Makefile_in,v 1.1 2017/08/23 15:20:14 dcoppa Exp $
+
+Index: encodefilter/src/Makefile.in
+--- encodefilter/src/Makefile.in.orig
++++ encodefilter/src/Makefile.in
+@@ -49,8 +49,8 @@ INC = $(PARSER_OBJ:.o=.h) $(CONV_OBJ:.o=.h) $(MAP_OBJ:
+ 
+ LIBNAME = libmef
+ LIBNAME_DEB = libmef_deb
+-MAJOR = 1
+-MINOR = 0
++MAJOR = ${LIBmef_VERSION:R}
++MINOR = ${LIBmef_VERSION:E}
+ 
+ LIBTOOL_CC = $(LIBTOOL) --mode=compile $(CC) $(CFLAGS)
+ LIBTOOL_LINK = $(LIBTOOL) --mode=link $(CC) @LDFLAGS@
