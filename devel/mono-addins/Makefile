@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.19 2017/07/30 07:14:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2017/08/23 21:42:59 sthen Exp $
+
+BROKEN-i386=		Cannot transition thread 0x7acdb528 from RUNNING with FINISH_ASYNC_SUSPEND -> "Got a SIGABRT while executing native code"
 
 # need some kind of tls
 ONLY_FOR_ARCHS =	${CLANG_ARCHS}
