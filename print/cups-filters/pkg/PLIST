@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.30 2017/01/19 04:28:47 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.31 2017/08/23 07:41:02 ajacoutot Exp $
 @conflict cups-<1.6.0
 @conflict ghostscript-<9.06p3
 @conflict foomatic-filters-*
@@ -52,6 +52,7 @@ libexec/cups/filter/imagetops
 libexec/cups/filter/pstopxl
 libexec/cups/filter/pstoraster
 @bin libexec/cups/filter/rastertoescpx
+libexec/cups/filter/rastertopclm
 @bin libexec/cups/filter/rastertopclx
 @bin libexec/cups/filter/rastertopdf
 @bin libexec/cups/filter/rastertops

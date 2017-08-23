@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2017/08/19 11:48:51 ajacoutot Exp $
+$OpenBSD: patch-Makefile_in,v 1.2 2017/08/23 07:41:02 ajacoutot Exp $
 
 Revert http://bzr.linuxfoundation.org/loggerhead/openprinting/cups-filters/revision/7677
 Our ln(1) does not support the `-r' knob.
@@ -6,7 +6,7 @@ Our ln(1) does not support the `-r' knob.
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -5332,9 +5332,9 @@ install-exec-hook:
+@@ -5334,9 +5334,9 @@ install-exec-hook:
  	$(INSTALL) -d -m 755 $(DESTDIR)$(bindir)
  	$(INSTALL) -d -m 755 $(DESTDIR)$(pkgfilterdir)
  	$(INSTALL) -d -m 755 $(DESTDIR)$(pkgbackenddir)
