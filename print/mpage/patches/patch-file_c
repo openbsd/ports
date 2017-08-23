@@ -1,7 +1,8 @@
-$OpenBSD: patch-file_c,v 1.3 2010/05/26 13:53:16 jasper Exp $
---- file.c.orig	Sat Sep 17 20:38:53 2005
-+++ file.c	Wed Mar 24 12:18:35 2010
-@@ -18,6 +18,7 @@
+$OpenBSD: patch-file_c,v 1.4 2017/08/23 07:45:00 jca Exp $
+Index: file.c
+--- file.c.orig
++++ file.c
+@@ -26,6 +26,7 @@
   */
  
  
@@ -9,7 +10,7 @@ $OpenBSD: patch-file_c,v 1.3 2010/05/26 13:53:16 jasper Exp $
  #include "mpage.h"
  
  
-@@ -119,11 +120,11 @@ do_pr_file(fname, asheet, outfd)
+@@ -127,11 +128,11 @@ do_pr_file(fname, asheet, outfd)
       */
  #define DASHES "-- "
      if (opt_header != NULL)
@@ -23,7 +24,7 @@ $OpenBSD: patch-file_c,v 1.3 2010/05/26 13:53:16 jasper Exp $
                    asheet->sh_plength, asheet->sh_cwidth,
                    fname[0] == '-' ? DASHES : "", fname);
      /*
-@@ -168,7 +169,7 @@ do_stdin(asheet, outfd)
+@@ -176,7 +177,7 @@ do_stdin(asheet, outfd)
       * but the tmpfilename
       */
       
@@ -32,7 +33,7 @@ $OpenBSD: patch-file_c,v 1.3 2010/05/26 13:53:16 jasper Exp $
      if ( (tmpfd = mkstemp(tmpfile)) == -1) {
          fprintf(stderr, "%s: cannot create temporary file", MPAGE);
          perror(MPAGE);
-@@ -209,7 +210,7 @@ do_stdin(asheet, outfd)
+@@ -217,7 +218,7 @@ do_stdin(asheet, outfd)
           * a temporary file; this temporary file will then
           * be used as input to the do_doc routine
           */
@@ -41,7 +42,7 @@ $OpenBSD: patch-file_c,v 1.3 2010/05/26 13:53:16 jasper Exp $
          if ( (tmpfd = mkstemp(tmpfile)) == -1) {
              fprintf(stderr, "%s: cannot create temporary file", MPAGE);
              perror(MPAGE);
-@@ -217,11 +218,11 @@ do_stdin(asheet, outfd)
+@@ -225,11 +226,11 @@ do_stdin(asheet, outfd)
  	}
          close(tmpfd);
          if (opt_header != NULL)
@@ -55,7 +56,7 @@ $OpenBSD: patch-file_c,v 1.3 2010/05/26 13:53:16 jasper Exp $
                        asheet->sh_plength, asheet->sh_cwidth, tmpfile);
          /*
           * open a pipe to the pr(1) command which will create a
-@@ -281,7 +282,7 @@ do_stdin(asheet, outfd)
+@@ -289,7 +290,7 @@ do_stdin(asheet, outfd)
  	/*
  	 * store the input to the temporary file to guess encoding correctly
  	 */
