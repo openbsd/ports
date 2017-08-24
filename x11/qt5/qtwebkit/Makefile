@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.5 2017/07/29 00:07:15 zhuk Exp $
+# $OpenBSD: Makefile,v 1.6 2017/08/24 09:45:24 sthen Exp $
 
 QT5NAME =		QtWebkit
-REVISION =		1
+REVISION =		2
 COMMENT =		old Webkit integration framework for Qt
 USE_WXNEEDED =		Yes
 DPB_PROPERTIES =	parallel

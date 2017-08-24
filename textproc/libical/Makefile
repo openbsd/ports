@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.23 2017/07/26 22:45:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2017/08/24 09:45:23 sthen Exp $
 
 COMMENT=		implementation of the iCalendar protocols and data units
 
 GH_ACCOUNT=		libical
 GH_PROJECT=		libical
 GH_TAGNAME=		v2.0.0
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  ical                 3.0
 SHARED_LIBS +=  icalss               3.0

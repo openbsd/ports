@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.53 2017/07/26 22:45:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.54 2017/08/24 09:45:23 sthen Exp $
 
 COMMENT=	open source clone of the game Transport Tycoon Deluxe
 
 V =		1.7.0
 DISTNAME =	openttd-$V-source
 PKGNAME =	openttd-$V
-REVISION =	0
+REVISION =	1
 
 CATEGORIES=	games
 

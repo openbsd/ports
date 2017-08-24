@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2017/07/26 22:45:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2017/08/24 09:45:23 sthen Exp $
 
 COMMENT =	typesetting system and improved layout engine
 
 V =		0.9.4
 PKGNAME =	sile-$V
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=  texpdf                    0.0 # 0.0
 

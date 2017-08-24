@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.157 2017/08/04 16:36:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.158 2017/08/24 09:45:23 sthen Exp $
 
 DPB_PROPERTIES =	parallel
 
@@ -8,7 +8,7 @@ COMMENT-server =	open-source LDAP software (server)
 DISTNAME =		openldap-2.4.45
 PKGNAME-main =		${DISTNAME:S/-/-client-/}
 PKGNAME-server =	${DISTNAME:S/-/-server-/}
-REVISION =		2
+REVISION =		3
 
 # overwrite -main pkgname/path to strip FLAVOR, aci only affects the server
 FULLPKGNAME-main =	${DISTNAME:S/-/-client-/}${FLAVOR_EXT:S/-aci//}

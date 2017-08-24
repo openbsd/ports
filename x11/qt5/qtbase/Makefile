@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2017/07/29 00:07:13 zhuk Exp $
+# $OpenBSD: Makefile,v 1.14 2017/08/24 09:45:23 sthen Exp $
 
 DISTNAME =		qtbase-opensource-src-${DIST_VERSION}
 QT5NAME =		Qt5 core
@@ -17,6 +17,7 @@ PKGNAME-sqlite2 =	qt5-sqlite2-${VERSION}
 PKGNAME-tds =		qt5-tds-${VERSION}
 
 REVISION =		3
+REVISION-main =		4
 
 PKG_ARCH-global =	*
 PKG_ARCH-examples =	*

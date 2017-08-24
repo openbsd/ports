@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.16 2017/08/13 13:21:30 rsadowski Exp $
-
-V =		6.3.48
-COMMENT =	query for a selection and print to stdout (select operation)
-CATEGORIES =	graphics x11
+# $OpenBSD: Makefile,v 1.17 2017/08/24 09:45:23 sthen Exp $
 
 GH_ACCOUNT =	naelstrof
 GH_PROJECT =	slop
-GH_TAGNAME =	v${V}
+GH_TAGNAME =	v6.3.48
+REVISION =	0
+
+COMMENT =	query for a selection and print to stdout (select operation)
+CATEGORIES =	graphics x11
 
 SHARED_LIBS =   slopy   2.0     # 0.0
 

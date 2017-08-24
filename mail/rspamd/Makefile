@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.40 2017/08/20 10:11:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.41 2017/08/24 09:45:23 sthen Exp $
 
 COMMENT=	event-driven spam filtering system in C/Lua
 
 GH_ACCOUNT=	vstakhov
 GH_PROJECT=	rspamd
 GH_TAGNAME=	1.6.3
+REVISION=	0
 
 CATEGORIES=	mail
 
@@ -25,7 +26,7 @@ LIB_DEPENDS=	databases/sqlite3 \
 		lang/luajit \
 		math/fann \
 		textproc/icu4c
-BUILD_DEPENDS +=devel/ragel
+BUILD_DEPENDS+=	devel/ragel
 # /var/rspamd needs to exist for tests to run
 TEST_DEPENDS = ${FULLPKGNAME}:${FULLPKGPATH}
 TEST_DEPENDS +=	databases/redis \
