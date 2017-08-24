@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2017/05/06 19:08:52 jung Exp $
+# $OpenBSD: Makefile,v 1.8 2017/08/24 06:05:27 ajacoutot Exp $
 
 COMMENT =		a simple, safe, and minimal CalDAV server
 
 DISTNAME =		kcaldav-0.1.4
-REVISION =		4
+REVISION =		5
 CATEGORIES =		www
 
 HOMEPAGE =		https://kristaps.bsd.lv/kcaldav/
