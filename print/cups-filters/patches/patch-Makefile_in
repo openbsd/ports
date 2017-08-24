@@ -1,6 +1,5 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2017/08/23 07:41:02 ajacoutot Exp $
+$OpenBSD: patch-Makefile_in,v 1.3 2017/08/24 07:21:35 ajacoutot Exp $
 
-Revert http://bzr.linuxfoundation.org/loggerhead/openprinting/cups-filters/revision/7677
 Our ln(1) does not support the `-r' knob.
 
 Index: Makefile.in
@@ -13,9 +12,9 @@ Index: Makefile.in
 -@ENABLE_FOOMATIC_TRUE@	$(LN_S) -r -f $(DESTDIR)$(pkgfilterdir)/foomatic-rip $(DESTDIR)$(bindir)
 -@ENABLE_DRIVERLESS_TRUE@	$(LN_S) -r -f $(DESTDIR)$(pkgppdgendir)/driverless $(DESTDIR)$(bindir)
 -@ENABLE_DRIVERLESS_TRUE@	$(LN_S) -r -f $(DESTDIR)$(pkgppdgendir)/driverless $(DESTDIR)$(pkgbackenddir)
-+@ENABLE_FOOMATIC_TRUE@	$(LN_S) -f $(DESTDIR)$(pkgfilterdir)/foomatic-rip $(DESTDIR)$(bindir)
-+@ENABLE_DRIVERLESS_TRUE@	$(LN_S) -f $(DESTDIR)$(pkgppdgendir)/driverless $(DESTDIR)$(bindir)
-+@ENABLE_DRIVERLESS_TRUE@	$(LN_S) -f $(DESTDIR)$(pkgppdgendir)/driverless $(DESTDIR)$(pkgbackenddir)
++@ENABLE_FOOMATIC_TRUE@	$(LN_S) -f $(pkgfilterdir)/foomatic-rip $(DESTDIR)$(bindir)
++@ENABLE_DRIVERLESS_TRUE@	$(LN_S) -f $(pkgppdgendir)/driverless $(DESTDIR)$(bindir)
++@ENABLE_DRIVERLESS_TRUE@	$(LN_S) -f $(pkgppdgendir)/driverless $(DESTDIR)$(pkgbackenddir)
  @ENABLE_BRAILLE_TRUE@	$(LN_S) -f imagetobrf $(DESTDIR)$(pkgfilterdir)/imagetoubrl
  @ENABLE_BRAILLE_TRUE@	$(LN_S) -f textbrftoindexv3 $(DESTDIR)$(pkgfilterdir)/textbrftoindexv4
  
