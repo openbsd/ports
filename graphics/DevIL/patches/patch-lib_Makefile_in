@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_Makefile_in,v 1.1 2017/05/07 12:49:54 espie Exp $
+$OpenBSD: patch-lib_Makefile_in,v 1.2 2017/08/24 11:46:06 sthen Exp $
 C++ doesn't grok some C flags
 
 Index: lib/Makefile.in
@@ -20,8 +20,9 @@ Index: lib/Makefile.in
 +AM_CFLAGS = $(ONLY_CFLAGS) $(GENERAL_CFLAGS)
 +AM_CXXFLAGS = $(GENERAL_CFLAGS)
  libIL_la_CPPFLAGS = -I $(il_include) -I $(all_include)
- libIL_la_CFLAGS = $(AM_CFLAGS) @IL_CFLAGS@
+-libIL_la_CFLAGS = $(AM_CFLAGS) @IL_CFLAGS@
 -libIL_la_CXXFLAGS = $(AM_CFLAGS) @IL_CFLAGS@
++libIL_la_CFLAGS = $(AM_CFLAGS:S/-std=c99//) @IL_CFLAGS@
 +libIL_la_CXXFLAGS = $(AM_CXXFLAGS) @IL_CFLAGS@
  libIL_la_SOURCES = $(il_src)/il_alloc.c $(il_src)/il_doom.c \
  	$(il_src)/il_stack.c $(il_src)/il_pcx.c $(il_src)/il_rle.c \
