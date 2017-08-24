@@ -1,6 +1,8 @@
-# $OpenBSD: Makefile,v 1.111 2017/07/23 06:41:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.112 2017/08/24 20:12:26 ajacoutot Exp $
 
 USE_WXNEEDED=	Yes
+
+BROKEN=		unreliable build, frequently segfaults in dpb (TLS?)
 
 COMMENT=	cross platform, open source .NET developement framework
 

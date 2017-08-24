@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2015/10/09 05:46:04 ajacoutot Exp $
-
-BROKEN =	unreliable build, frequently hangs in dpb
+# $OpenBSD: Makefile,v 1.10 2017/08/24 20:12:25 ajacoutot Exp $
 
 V =		1.6
 COMMENT =	open source drawing/editing program modeled after Paint.NET
