@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.arm,v 1.8 2017/08/21 02:32:58 jsg Exp $
+@comment $OpenBSD: PFRAG.arm,v 1.9 2017/08/24 08:53:02 patrick Exp $
 @pkgpath sysutils/u-boot,
 share/u-boot/
 share/u-boot/A10-OLinuXino-Lime/
@@ -131,6 +131,11 @@ share/u-boot/am57xx_evm/MLO
 share/u-boot/am57xx_evm/u-boot
 share/u-boot/am57xx_evm/u-boot.bin
 share/u-boot/am57xx_evm/u-boot.img
+share/u-boot/clearfog/
+share/u-boot/clearfog/u-boot
+share/u-boot/clearfog/u-boot-spl.kwb
+share/u-boot/clearfog/u-boot.bin
+share/u-boot/clearfog/u-boot.img
 share/u-boot/cm_fx6/
 share/u-boot/cm_fx6/SPL
 share/u-boot/cm_fx6/u-boot
@@ -233,6 +238,11 @@ share/u-boot/tinker-rk3288/u-boot
 share/u-boot/tinker-rk3288/u-boot-with-spl.bin
 share/u-boot/tinker-rk3288/u-boot.bin
 share/u-boot/tinker-rk3288/u-boot.img
+share/u-boot/turris_omnia/
+share/u-boot/turris_omnia/u-boot
+share/u-boot/turris_omnia/u-boot-spl.kwb
+share/u-boot/turris_omnia/u-boot.bin
+share/u-boot/turris_omnia/u-boot.img
 share/u-boot/udoo/
 share/u-boot/udoo/SPL
 share/u-boot/udoo/u-boot

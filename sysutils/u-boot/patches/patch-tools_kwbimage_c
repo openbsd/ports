@@ -1,0 +1,16 @@
+$OpenBSD: patch-tools_kwbimage_c,v 1.1 2017/08/24 08:53:02 patrick Exp $
+
+Index: tools/kwbimage.c
+--- tools/kwbimage.c.orig
++++ tools/kwbimage.c
+@@ -17,6 +17,10 @@
+ #include <stdint.h>
+ #include "kwbimage.h"
+ 
++#ifndef EPROTO
++#define EPROTO EIO
++#endif
++
+ #ifdef CONFIG_KWB_SECURE
+ #include <openssl/bn.h>
+ #include <openssl/rsa.h>

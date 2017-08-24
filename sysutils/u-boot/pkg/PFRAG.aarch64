@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.aarch64,v 1.4 2017/08/21 02:32:58 jsg Exp $
+@comment $OpenBSD: PFRAG.aarch64,v 1.5 2017/08/24 08:53:02 patrick Exp $
 share/u-boot/
 share/u-boot/bananapi_m64/
 share/u-boot/bananapi_m64/sunxi-spl.bin
@@ -7,6 +7,12 @@ share/u-boot/bananapi_m64/u-boot-sunxi-with-spl.bin
 share/u-boot/bananapi_m64/u-boot.bin
 share/u-boot/bananapi_m64/u-boot.img
 share/u-boot/bananapi_m64/u-boot.itb
+share/u-boot/mvebu_espressobin-88f3720/
+share/u-boot/mvebu_espressobin-88f3720/u-boot
+share/u-boot/mvebu_espressobin-88f3720/u-boot.bin
+share/u-boot/mvebu_mcbin-88f8040/
+share/u-boot/mvebu_mcbin-88f8040/u-boot
+share/u-boot/mvebu_mcbin-88f8040/u-boot.bin
 share/u-boot/nanopi_neo2/
 share/u-boot/nanopi_neo2/sunxi-spl.bin
 share/u-boot/nanopi_neo2/u-boot
