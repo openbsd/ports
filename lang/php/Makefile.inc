@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.95 2017/07/16 19:18:59 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.96 2017/08/24 10:03:25 sthen Exp $
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
 
@@ -175,6 +175,7 @@ COMMENT-intl=		intl library support for php5
 CONFIGURE_ARGS+=	--enable-intl=shared \
 			--with-icu-dir=${LOCALBASE}
 LIB_DEPENDS-intl=	textproc/icu4c
+RUN_DEPENDS-intl=	textproc/icu4c,-wwwdata
 WANTLIB-intl=		${COMPILER_LIBCXX} icudata icui18n icuio icuuc m pthread
 
 # imap
