@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2017/07/27 10:05:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2017/08/24 09:31:35 dcoppa Exp $
 COMMENT =		accounting for KDE 4
 CATEGORIES =		productivity x11
 HOMEPAGE =		https://kmymoney.org/
@@ -65,9 +65,6 @@ CONFIGURE_ARGS =	-DENABLE_KBANKING:Bool=Yes \
 			-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen:Bool=Yes
 
 TEST_IS_INTERACTIVE =	X11
-
-# fails to pick up something MOC-generated in kmymoney/plugins/onlinetasks/sepa
-USE_NINJA =	No
 
 post-install:
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py ${PREFIX}/share/apps/kmm_weboob/weboob.py

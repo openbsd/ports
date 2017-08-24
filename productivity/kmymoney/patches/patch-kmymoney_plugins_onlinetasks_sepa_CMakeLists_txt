@@ -1,7 +1,28 @@
-$OpenBSD: patch-kmymoney_plugins_onlinetasks_sepa_CMakeLists_txt,v 1.1 2017/01/14 11:19:04 zhuk Exp $
---- kmymoney/plugins/onlinetasks/sepa/CMakeLists.txt.orig	Fri Jan 13 18:59:04 2017
-+++ kmymoney/plugins/onlinetasks/sepa/CMakeLists.txt	Fri Jan 13 19:00:13 2017
-@@ -27,21 +27,21 @@ configure_file(${CMAKE_CURRENT_SOURCE_DIR}/kmymoney-se
+$OpenBSD: patch-kmymoney_plugins_onlinetasks_sepa_CMakeLists_txt,v 1.2 2017/08/24 09:31:35 dcoppa Exp $
+
+commit 6d235f2cd835d5d3e00dee43ed29bdf2c5ca80d5
+Author: Ralf Habacker <ralf.habacker@freenet.de>
+Date:   Tue May 23 19:52:20 2017 +0200
+
+Fix 'duplicated symbol' compile error on Windows.
+
+Because the whole project uses cmake automoc support additional
+calls to automoc4 causes 'duplicated symbol' errors on Windows.
+
+* Unbreaks Ninja builds too
+
+Index: kmymoney/plugins/onlinetasks/sepa/CMakeLists.txt
+--- kmymoney/plugins/onlinetasks/sepa/CMakeLists.txt.orig
++++ kmymoney/plugins/onlinetasks/sepa/CMakeLists.txt
+@@ -12,7 +12,6 @@ kde4_add_ui_files( sepaOnlineTasks_SRCS
+   ui/sepacredittransferedit.ui
+ )
+ 
+-automoc4( konlinetasks_sepa_OBJECTS sepaOnlineTasks_SRCS)
+ add_library( konlinetasks_sepa_OBJECTS OBJECT ${sepaOnlineTasks_SRCS} )
+ 
+ # Add actual plugin here it is not part of the objects
+@@ -27,21 +26,21 @@ configure_file(${CMAKE_CURRENT_SOURCE_DIR}/kmymoney-se
  configure_file(${CMAKE_CURRENT_SOURCE_DIR}/kmymoney-sepastorageplugin.desktop.in ${CMAKE_CURRENT_BINARY_DIR}/kmymoney-sepastorageplugin.desktop)
  
  target_link_libraries( konlinetasks_sepa
