@@ -1,4 +1,4 @@
-$OpenBSD: README.internals,v 1.14 2016/04/26 17:35:35 naddy Exp $
+$OpenBSD: README.internals,v 1.15 2017/08/24 13:25:38 espie Exp $
 Copyright (C) 2011-2012 Marc Espie <espie@openbsd.org>
 
  Permission to use, copy, modify, and distribute this software for any
@@ -82,6 +82,9 @@ phony-target1: phony-target2
 	@do_some_shit
 as phony targets are always out-of-date, and thus you will always do_some_shit.
 
+Exceptions: generating readmes is a pure phony target, because we want
+to regenerate those every single time.
+
 - a lot of computations are very expensive, so there are shortcuts all over
 the place whenever a variable is empty, especially for dependency computation.
 
@@ -98,6 +101,12 @@ code now assumes you will define MULTI_PACKAGES *independently of the
 architecture*, annotate subpackage with ONLY_FOR_ARCHS-sub if appropriate,
 then .include <bsd.port.arch.mk> (which was split off the main file
 specifically for that purpose), and rely on BUILD_PACKAGES for building.
+
+There's also some extra introspection elsewhere, for instance,
+sqlports is actually built using
+make dump-vars 'LIBCXX=${LIBCXX}'...
+so that WANTLIBs get the variable name instead of its current values.
+This makes sqlports slightly more independent of clang/gcc.
 
 Shell tricks and constructs
 ---------------------------
@@ -261,7 +270,7 @@ _internal-configure _internal-deinstall _internal-extract _internal-fake
 _internal-patch _internal-plist _internal-test _internal-subpackage
 _internal-subupdate _internal-uninstall _internal-update
 _internal-update-or-install _internal-update-or-install-all
-_internal-update-plist _internal-distpatch
+_internal-update-plist _internal-distpatch _internal-generate-readmes
 (yeah, that's a lot).
 
 So, if you type "make", it will do
@@ -281,6 +290,12 @@ Misc
 - Modules inclusion is done through a separate modules.port.mk to handle
 recursion: modules may trigger the inclusion of other modules, thus
 modules.port.mk will re-include itself until the whole list is done.
+
+- COMPILER support is somewhat meshed with modules.port.mk, since it's
+a back&forth with arch-defines, the gcc4 module, and the clang module.
+It's got special treatment, because COMPILER must happen before gcc4
+and clang, while at the same time some modules (qt mostly) may want to
+set COMPILER.
 
 - MULTI_PACKAGES and SUBPACKAGE always get set to a non-empty value:
 if MULTI_PACKAGES is not set, it ends up as MULTI_PACKAGES=- and
