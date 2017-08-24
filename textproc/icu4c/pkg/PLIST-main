@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.21 2017/05/24 15:44:42 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2017/08/24 09:44:35 sthen Exp $
+@pkgpath textproc/icu4c
 @bin bin/derb
 @bin bin/genbrk
 @bin bin/gencfu
@@ -226,10 +227,9 @@ lib/pkgconfig/icu-uc.pc
 @bin sbin/icupkg
 share/icu/
 share/icu/${VERSION}/
+share/icu/${VERSION}/${ENDIAN_DATA}.dat
 share/icu/${VERSION}/LICENSE
 share/icu/${VERSION}/config/
 share/icu/${VERSION}/config/mh-bsd-gcc
 share/icu/${VERSION}/install-sh
 share/icu/${VERSION}/mkinstalldirs
-%%be%%
-%%le%%

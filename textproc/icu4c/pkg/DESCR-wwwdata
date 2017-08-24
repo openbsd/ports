@@ -1,0 +1,2 @@
+Separate copy of ICU's data file, for use with webserver processes running
+in a chroot jail in /var/www.

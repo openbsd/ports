@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST-wwwdata,v 1.1 2017/08/24 09:44:35 sthen Exp $
+share/
+share/icu/
+share/icu/${VERSION}/
+share/icu/${VERSION}/${ENDIAN_DATA}.dat

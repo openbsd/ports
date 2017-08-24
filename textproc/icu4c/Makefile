@@ -1,13 +1,15 @@
-# $OpenBSD: Makefile,v 1.64 2017/07/26 22:45:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.65 2017/08/24 09:44:34 sthen Exp $
 
 NOT_FOR_ARCHS=		${GCC3_ARCHS}
 
-COMMENT=		International Components for Unicode
+COMMENT-main=		International Components for Unicode
+COMMENT-wwwdata=	ICU data file for use with /var/www chroot jails
 
 VERSION=		58.2
 DISTNAME=		icu4c-${VERSION:S/./_/g}-src
-PKGNAME=		icu4c-${VERSION}
-REVISION=		4
+PKGNAME-main=		icu4c-${VERSION}
+PKGNAME-wwwdata=	icu4c-wwwdata-${VERSION}
+REVISION-main=		5
 
 MAJ_V=			${VERSION:R}
 SO_VERSION=		13.0
@@ -36,13 +38,16 @@ USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--enable-static \
 			--disable-renaming \
-			--disable-samples
+			--disable-samples \
+			--with-data-packaging=archive
 # needs icu-le-hb
 CONFIGURE_ARGS +=	--disable-layoutex
 
 SEPARATE_BUILD=		Yes
 WRKDIST=		${WRKDIR}/icu
 WRKSRC=			${WRKDIST}/source
+
+MULTI_PACKAGES=		-main -wwwdata
 
 # see readme.html
 CXXFLAGS +=		-DICU_NO_USER_DATA_OVERRIDE
@@ -59,34 +64,25 @@ CXXFLAGS +=		-O1 -fno-stack-protector
 .endif
 
 .include <bsd.port.arch.mk>
-PKG_ARGS +=		-Dbe=0 -Dle=0
-.if ${MACHINE_ARCH} == "arm" || ${MACHINE_ARCH} == "powerpc"
-# XXX breaks icu in chroot (e.g. php-intl) because the dat file won't be found
-CONFIGURE_ARGS +=	--with-data-packaging=archive
-.  if ${PROPERTIES:Mbe}
-PKG_ARGS +=		-Dbe=1
-TEST_ENV +=		ICU_DATA="${WRKBUILD}/data/out/build/icudt${MAJ_V}b"
-.  else
-PKG_ARGS +=		-Dle=1
-TEST_ENV +=		ICU_DATA="${WRKBUILD}/data/out/build/icudt${MAJ_V}l"
-.  endif
+
+.if ${PROPERTIES:Mbe}
+ENDIAN_DATA =		icudt${MAJ_V}b
+# https://bugzilla.redhat.com/show_bug.cgi?id=889781
+CONFIGURE_ENV +=	CPPFLAGS="-DU_IS_BIG_ENDIAN=1"
+.else
+ENDIAN_DATA =		icudt${MAJ_V}l
 .endif
 
-# https://bugzilla.redhat.com/show_bug.cgi?id=889781
-.if ${PROPERTIES:Mbe}
-CONFIGURE_ENV +=	CPPFLAGS="-DU_IS_BIG_ENDIAN=1"
-.endif
+PREFIX-wwwdata =	/var/www${TRUEPREFIX}
+SUBST_VARS +=		ENDIAN_DATA
+TEST_ENV +=		ICU_DATA="${WRKBUILD}/data/out/build/${ENDIAN_DATA}"
 
 TEST_DEPENDS=		${BASE_PKGPATH}=${VERSION}
 
-# XXX prevent "WARNING: symbol(icudt58_dat) size mismatch"
-.if ! ${PROPERTIES:Mclang} 
-post-extract:
-	sed -i 's/^DYNAMICCFLAGS = .*/& -finhibit-size-directive/' \
-		${WRKSRC}/stubdata/Makefile.in
-.endif
-
 post-install:
 	find ${PREFIX}/lib -type l -name 'libicu*.so*' -exec rm '{}' \;
+	${INSTALL_DATA_DIR} ${WRKINST}/var/www${TRUEPREFIX}/share/icu/${VERSION}
+	${INSTALL_DATA} ${PREFIX}/share/icu/${VERSION}/${ENDIAN_DATA}.dat \
+		${WRKINST}/var/www${TRUEPREFIX}/share/icu/${VERSION}/
 
 .include <bsd.port.mk>
