@@ -1,0 +1,11 @@
+$OpenBSD: patch-examples_frameCompress_c,v 1.1 2017/08/24 12:20:59 sthen Exp $
+
+Index: examples/frameCompress.c
+--- examples/frameCompress.c.orig
++++ examples/frameCompress.c
+@@ -309,4 +309,5 @@ int main(int argc, const char **argv) {
+         fclose(decFp);
+         fclose(inpFp);
+     }
++    return 0;
+ }
