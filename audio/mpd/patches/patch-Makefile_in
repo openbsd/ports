@@ -1,7 +1,8 @@
-$OpenBSD: patch-Makefile_in,v 1.22 2017/02/23 13:03:46 dcoppa Exp $
---- Makefile.in.orig	Thu Feb  9 13:08:33 2017
-+++ Makefile.in	Thu Feb 23 11:04:44 2017
-@@ -4645,7 +4645,7 @@ FILTER_LIBS = \
+$OpenBSD: patch-Makefile_in,v 1.23 2017/08/25 10:06:59 dcoppa Exp $
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -4652,7 +4652,7 @@ FILTER_LIBS = \
  # Documentation
  #
  man_MANS = doc/mpd.1 doc/mpd.conf.5
