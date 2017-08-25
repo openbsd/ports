@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2017/02/15 18:33:58 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.26 2017/08/25 18:37:47 jasper Exp $
 lib/grilo-${API}/libgrldleyna.so
 lib/grilo-${API}/libgrlfilesystem.so
 lib/grilo-${API}/libgrlflickr.so
@@ -9,8 +9,7 @@ lib/grilo-${API}/libgrllocalmetadata.so
 lib/grilo-${API}/libgrlmagnatune.so
 lib/grilo-${API}/libgrlmetadatastore.so
 lib/grilo-${API}/libgrlopensubtitles.so
-lib/grilo-${API}/libgrloptical-media.so
-lib/grilo-${API}/libgrlpodcasts.so
+lib/grilo-${API}/libgrlopticalmedia.so
 lib/grilo-${API}/libgrlraitv.so
 lib/grilo-${API}/libgrlshoutcast.so
 lib/grilo-${API}/libgrltmdb.so
@@ -50,6 +49,7 @@ share/locale/lt/LC_MESSAGES/grilo-plugins.mo
 share/locale/lv/LC_MESSAGES/grilo-plugins.mo
 share/locale/ml/LC_MESSAGES/grilo-plugins.mo
 share/locale/nb/LC_MESSAGES/grilo-plugins.mo
+share/locale/ne/LC_MESSAGES/grilo-plugins.mo
 share/locale/oc/LC_MESSAGES/grilo-plugins.mo
 share/locale/pl/LC_MESSAGES/grilo-plugins.mo
 share/locale/pt/LC_MESSAGES/grilo-plugins.mo
