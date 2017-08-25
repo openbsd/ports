@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2017/02/15 18:34:02 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.20 2017/08/25 18:37:36 jasper Exp $
 @bin bin/grilo-test-ui-${API}
 @bin bin/grl-inspect-${API}
 @bin bin/grl-launch-${API}
@@ -75,6 +75,7 @@ share/locale/lt/LC_MESSAGES/grilo.mo
 share/locale/lv/LC_MESSAGES/grilo.mo
 share/locale/ml/LC_MESSAGES/grilo.mo
 share/locale/nb/LC_MESSAGES/grilo.mo
+share/locale/ne/LC_MESSAGES/grilo.mo
 share/locale/nl/LC_MESSAGES/grilo.mo
 share/locale/oc/LC_MESSAGES/grilo.mo
 share/locale/pa/LC_MESSAGES/grilo.mo
