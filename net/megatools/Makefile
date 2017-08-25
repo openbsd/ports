@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.11 2017/08/22 18:03:52 tj Exp $
+# $OpenBSD: Makefile,v 1.12 2017/08/25 16:17:12 tj Exp $
 
 COMMENT =		command line client application for Mega
 
 DISTNAME =		megatools-1.9.98
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		net
 
-HOMEPAGE =		http://megatools.megous.com/
+HOMEPAGE =		https://megatools.megous.com/
 
 MAINTAINER =		Anthony J. Bentley <anthony@anjbe.name>
 
@@ -23,7 +23,6 @@ BUILD_DEPENDS =		devel/gobject-introspection \
 			textproc/asciidoc
 LIB_DEPENDS =		devel/glib2 \
 			net/curl
-RUN_DEPENDS =		net/glib2-networking
 
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	gnu
