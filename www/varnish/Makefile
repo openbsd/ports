@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2017/08/24 13:33:08 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.32 2017/08/25 12:37:14 naddy Exp $
 
 COMMENT =		high-performance HTTP accelerator
 
@@ -23,7 +23,9 @@ EXTRACT_SUFX =		.tgz
 
 WANTLIB += c execinfo m ncursesw pcre pthread readline termcap
 
-BUILD_DEPENDS =		devel/libtool \
+BUILD_DEPENDS =		${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS} \
+			devel/libtool \
 			textproc/py-docutils
 LIB_DEPENDS = 		devel/pcre
 # The internal backtrace implementation fails to build with -Werror on arm/hppa
@@ -31,7 +33,7 @@ LIB_DEPENDS +=		devel/libexecinfo
 
 WRKDIST =		${WRKDIR}/${DISTNAME}
 USE_GMAKE =		Yes
-CONFIGURE_STYLE =	autoconf
+CONFIGURE_STYLE =	gnu
 AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.15
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
