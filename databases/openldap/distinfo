@@ -1,2 +1,4 @@
+SHA256 (openldap-2.4.45-mdb-tests.diff) = gYPyXviotqchro0IYNf1VbKZjzad85RDWdHEa20k2M0=
 SHA256 (openldap-2.4.45.tgz) = zdbP/evNlRYaczBewT/Hp46XB7RsqfhPuJfNVibfOCQ=
+SIZE (openldap-2.4.45-mdb-tests.diff) = 32912
 SIZE (openldap-2.4.45.tgz) = 5672845

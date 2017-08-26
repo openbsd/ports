@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.158 2017/08/24 09:45:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.159 2017/08/26 12:10:55 sthen Exp $
 
 DPB_PROPERTIES =	parallel
 
@@ -8,7 +8,7 @@ COMMENT-server =	open-source LDAP software (server)
 DISTNAME =		openldap-2.4.45
 PKGNAME-main =		${DISTNAME:S/-/-client-/}
 PKGNAME-server =	${DISTNAME:S/-/-server-/}
-REVISION =		3
+REVISION =		4
 
 # overwrite -main pkgname/path to strip FLAVOR, aci only affects the server
 FULLPKGNAME-main =	${DISTNAME:S/-/-client-/}${FLAVOR_EXT:S/-aci//}
@@ -38,6 +38,10 @@ MASTER_SITES =	http://mirror.switch.ch/ftp/mirror/OpenLDAP/openldap-release/ \
 		http://mirror.aarnet.edu.au/pub/openldap/openldap-release/ \
 		ftp://ftp.OpenLDAP.org/pub/OpenLDAP/openldap-release/ \
 		http://ftp.ntua.gr/mirror/OpenLDAP/openldap-release/
+
+# patches to enable writemap for MDB tests; fairly intrusive so keeping them out of patches/
+MASTER_SITES0 =	https://spacehopper.org/mirrors/
+PATCHFILES =	openldap-2.4.45-mdb-tests.diff:0
 
 EXTRACT_SUFX =		.tgz
 
@@ -72,20 +76,20 @@ CONFIGURE_ARGS +=	--enable-bdb \
 			--enable-perl \
 			--enable-shell
 
-# MDB assumes UBC; see http://www.openldap.org/pub/hyc/mdm-paper.pdf
-# section 3.1, references 17, 18, and 19.
+# Enable MDB support, however note patch-servers_slapd_back-mdb_init_c.
 #
-# However, note (from Howard Chu): "This requirement can be relaxed in
-# the current version of the library. If you create the environment
-# with the MDB_WRITEMAP option then all reads and writes are performed
-# using mmap, so the file buffer cache is irrelevant. Of course then
-# you lose the protection that the read-only map offers."
+# MDB normally assumes that the filesystem and buffer cache are unified
+# (i.e. a file can be opened normally and mmap()'d, with changes to one
+# being reflected to the other). But as Howard Chu says, "This requirement
+# can be relaxed in the current version of the library. If you create
+# the environment with the MDB_WRITEMAP option then all reads and writes
+# are performed using mmap, so the file buffer cache is irrelevant. Of
+# course then you lose the protection that the read-only map offers."
 #
-# A patch has been added to this port to enforce that MDB_WRITEMAP is
-# used, however crashes have been seen with mdb in use, so this is
-# disabled at this time.
+# Therefore, the patch rejects an MDB configuration in which writemap
+# has not been set.
 #
-CONFIGURE_ARGS +=	--disable-mdb
+CONFIGURE_ARGS +=	--enable-mdb
 
 .if ${FLAVOR:Maci}
 CONFIGURE_ARGS +=	--enable-aci

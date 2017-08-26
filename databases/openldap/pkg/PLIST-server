@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST-server,v 1.21 2017/06/19 09:12:04 sthen Exp $
+@comment $OpenBSD: PLIST-server,v 1.22 2017/08/26 12:10:55 sthen Exp $
+@extraunexec rm -Rf %SYSCONFDIR%/openldap/slapd.d/*
+@extraunexec rm -Rf /var/openldap-data/*
 @option is-branch
 @conflict openldap-client-<=2.4.45p0
 @pkgpath databases/openldap,-server,bdb
@@ -81,6 +83,7 @@ share/examples/openldap/DB_CONFIG
 share/examples/openldap/schema/
 @sample ${SYSCONFDIR}/openldap/schema/
 share/examples/openldap/schema/collective.schema
+@sample ${SYSCONFDIR}/openldap/schema/collective.schema
 share/examples/openldap/schema/corba.schema
 @sample ${SYSCONFDIR}/openldap/schema/corba.schema
 share/examples/openldap/schema/core.schema
@@ -88,6 +91,7 @@ share/examples/openldap/schema/core.schema
 share/examples/openldap/schema/cosine.schema
 @sample ${SYSCONFDIR}/openldap/schema/cosine.schema
 share/examples/openldap/schema/duaconf.schema
+@sample ${SYSCONFDIR}/openldap/schema/duaconf.schema
 share/examples/openldap/schema/dyngroup.schema
 @sample ${SYSCONFDIR}/openldap/schema/dyngroup.schema
 share/examples/openldap/schema/inetorgperson.schema
@@ -101,12 +105,13 @@ share/examples/openldap/schema/nis.schema
 share/examples/openldap/schema/openldap.schema
 @sample ${SYSCONFDIR}/openldap/schema/openldap.schema
 share/examples/openldap/schema/pmi.schema
+@sample ${SYSCONFDIR}/openldap/schema/pmi.schema
 share/examples/openldap/schema/ppolicy.schema
 @sample ${SYSCONFDIR}/openldap/schema/ppolicy.schema
-@mode 0640
-@group _openldap
 share/examples/openldap/slapd.conf
-@sample ${SYSCONFDIR}/openldap/slapd.conf
+@mode 0750
+@group _openldap
+@sample ${SYSCONFDIR}/openldap/slapd.d/
 @mode
 @group
 @rcscript ${RCDIR}/slapd

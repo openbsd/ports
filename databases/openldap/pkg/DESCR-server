@@ -10,6 +10,10 @@ is distributed under a Perl-style "Artistic License".
 This is the server portion of OpenLDAP, it provides the server as well as
 various administrative binaries.
 
+Note: if using the MDB backend, you *must* configure the database
+environment with the "writemap" flag, e.g. "olcDbEnvFlags: writemap" in
+slapd-config(5).
+
 Flavors:
 	aci	enable the *experimental* ACI dynamic access control
 	gssapi	build with GSSAPI support
