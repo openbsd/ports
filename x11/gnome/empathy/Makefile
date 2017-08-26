@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.188 2017/08/26 12:06:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.189 2017/08/26 13:28:22 ajacoutot Exp $
 
 COMMENT= 		Telepathy based messenger for GNOME
 
@@ -82,10 +82,6 @@ CONFIGURE_ARGS=		--disable-gudev
 
 # needs signond, libsignon-glib -- Ubuntu/Meego
 CONFIGURE_ARGS +=	--disable-ubuntu-online-accounts
-
-# XXX
-pre-configure:
-	sed -i 's,clutter-gst-2.0,clutter-gst-3.0,g' ${WRKSRC}/configure
 
 post-install:
 	rm ${PREFIX}/lib/mission-control-plugins.0/*.{a,la}
