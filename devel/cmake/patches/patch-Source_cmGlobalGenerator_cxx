@@ -1,0 +1,15 @@
+$OpenBSD: patch-Source_cmGlobalGenerator_cxx,v 1.5 2017/08/26 17:53:35 dcoppa Exp $
+
+Index: Source/cmGlobalGenerator.cxx
+--- Source/cmGlobalGenerator.cxx.orig
++++ Source/cmGlobalGenerator.cxx
+@@ -2265,6 +2265,9 @@ void cmGlobalGenerator::AddGlobalTarget_Test(
+     cmCustomCommandLine singleLine;
+     singleLine.push_back(cmSystemTools::GetCTestCommand());
+     singleLine.push_back("--force-new-ctest-process");
++    // Skip tests requiring internet access
++    singleLine.push_back("--exclude-regex");
++    singleLine.push_back("\"CMake.FileDownload|CTestTestUpload\"");
+     if (cmakeCfgIntDir && *cmakeCfgIntDir && cmakeCfgIntDir[0] != '.') {
+       singleLine.push_back("-C");
+       singleLine.push_back(cmakeCfgIntDir);

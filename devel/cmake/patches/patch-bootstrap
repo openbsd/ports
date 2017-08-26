@@ -1,11 +1,21 @@
-$OpenBSD: patch-bootstrap,v 1.13 2016/11/28 09:15:13 dcoppa Exp $
+$OpenBSD: patch-bootstrap,v 1.14 2017/08/26 17:53:35 dcoppa Exp $
 
 Use Ninja to build CMake
 XXX: broken on m88k
 
---- bootstrap.orig	Fri Nov 11 15:37:14 2016
-+++ bootstrap	Sat Nov 26 00:19:00 2016
-@@ -154,7 +154,11 @@ if ${cmake_system_mingw}; then
+Index: bootstrap
+--- bootstrap.orig
++++ bootstrap
+@@ -10,7 +10,7 @@ die() {
+ cmake_extract_standard_flags()
+ {
+   cd "${cmake_source_dir}/Modules/Compiler/"
+-  for file in ${1:-*}-${2}.cmake; do
++  for file in {Clang,GNU}-${2}.cmake; do
+     cat "${file}" \
+       | sed -n "s/ *set *( *CMAKE_${2}${3}_EXTENSION_COMPILE_OPTION *\"\{0,1\}\([^\")]*\).*/\1/p" \
+       | tr ';' ' '
+@@ -165,7 +165,11 @@ if ${cmake_system_mingw}; then
    cmake_bootstrap_generator="MSYS Makefiles"
  else
    # Bootstrapping from a standard UNIX prompt.
@@ -18,27 +28,74 @@ XXX: broken on m88k
  fi
  
  # Choose tools and extensions for this platform.
-@@ -321,6 +325,14 @@ CMAKE_CXX_SOURCES="\
+@@ -224,9 +228,9 @@ cmake_doc_dir_default="`cmake_install_dest_default DOC
+ cmake_man_dir_default="`cmake_install_dest_default MAN ${cmake_man_dir_keyword}`"
+ cmake_xdgdata_dir_default="`cmake_install_dest_default XDGDATA ${cmake_xdgdata_dir_keyword}`"
+ 
+-CMAKE_KNOWN_C_COMPILERS="cc gcc xlc icc tcc"
+-CMAKE_KNOWN_CXX_COMPILERS="aCC xlC CC g++ c++ icc como "
+-CMAKE_KNOWN_MAKE_PROCESSORS="gmake make"
++CMAKE_KNOWN_C_COMPILERS="cc"
++CMAKE_KNOWN_CXX_COMPILERS="c++"
++CMAKE_KNOWN_MAKE_PROCESSORS="make"
+ 
+ CMAKE_PROBLEMATIC_FILES="\
+   CMakeCache.txt \
+@@ -310,6 +314,7 @@ CMAKE_CXX_SOURCES="\
+   cmFindPathCommand \
+   cmFindProgramCommand \
+   cmForEachCommand \
++  cmFortranParserImpl \
+   cmFunctionCommand \
+   cmGeneratedFileStream \
+   cmGeneratorExpression \
+@@ -330,6 +335,7 @@ CMAKE_CXX_SOURCES="\
+   cmGetTestPropertyCommand \
+   cmGlobalCommonGenerator \
+   cmGlobalGenerator \
++  cmGlobalNinjaGenerator \
+   cmGlobalUnixMakefileGenerator3 \
+   cmHexFileConverter \
+   cmIfCommand \
+@@ -349,10 +355,12 @@ CMAKE_CXX_SOURCES="\
+   cmInstalledFile \
+   cmLinkDirectoriesCommand \
+   cmLinkLineComputer \
++  cmLinkLineDeviceComputer \
+   cmListCommand \
+   cmListFileCache \
+   cmLocalCommonGenerator \
+   cmLocalGenerator \
++  cmLocalNinjaGenerator \
+   cmLocalUnixMakefileGenerator3 \
+   cmMSVC60LinkLineComputer \
+   cmMacroCommand \
+@@ -367,6 +375,10 @@ CMAKE_CXX_SOURCES="\
+   cmMessageCommand \
+   cmMessenger \
+   cmNewLineStyle \
++  cmNinjaLinkLineComputer \
++  cmNinjaNormalTargetGenerator \
++  cmNinjaTargetGenerator \
++  cmNinjaUtilityTargetGenerator \
+   cmOSXBundleGenerator \
+   cmOptionCommand \
+   cmOrderDirectories \
+@@ -429,6 +441,8 @@ LexerParser_CXX_SOURCES="\
+   cmCommandArgumentParser \
    cmExprLexer \
    cmExprParser \
-   cmExprParserHelper \
 +  cmFortranLexer \
 +  cmFortranParser \
-+  cmFortranParserImpl \
-+  cmGlobalNinjaGenerator \
-+  cmLocalNinjaGenerator \
-+  cmNinjaTargetGenerator \
-+  cmNinjaNormalTargetGenerator \
-+  cmNinjaUtilityTargetGenerator \
  "
  
- if ${cmake_system_mingw}; then
-@@ -1354,7 +1366,7 @@ cmake_c_flags="${cmake_c_flags}-I`cmake_escape \"${cma
- cmake_cxx_flags="${cmake_cxx_flags} -I`cmake_escape \"${cmake_bootstrap_dir}\"` -I`cmake_escape \"${cmake_source_dir}/Source\"` \
+ LexerParser_C_SOURCES="\
+@@ -1381,7 +1395,7 @@ cmake_cxx_flags="${cmake_cxx_flags} \
+   -I`cmake_escape \"${cmake_source_dir}/Source/LexerParser\"` \
    -I`cmake_escape \"${cmake_source_dir}/Utilities\"`"
  echo "cmake: ${objs}" > "${cmake_bootstrap_dir}/Makefile"
 -echo "	${cmake_cxx_compiler} ${cmake_ld_flags} ${cmake_cxx_flags} ${objs} -o cmake" >> "${cmake_bootstrap_dir}/Makefile"
 +echo "	${cmake_cxx_compiler} ${cmake_ld_flags} ${cmake_cxx_flags} ${objs} -o cmake -L${cmake_prefix_dir}/lib -ljsoncpp" >> "${cmake_bootstrap_dir}/Makefile"
  for a in ${CMAKE_CXX_SOURCES}; do
    src=`cmake_escape "${cmake_source_dir}/Source/${a}.cxx"`
-   echo "${a}.o : ${src} ${dep}" >> "${cmake_bootstrap_dir}/Makefile"
+   src_flags=`eval echo \\${cmake_cxx_flags_\${a}}`

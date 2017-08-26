@@ -1,7 +1,8 @@
-$OpenBSD: patch-Modules_FindMPEG_cmake,v 1.8 2016/11/28 09:15:13 dcoppa Exp $
---- Modules/FindMPEG.cmake.orig	Fri Nov 11 15:37:13 2016
-+++ Modules/FindMPEG.cmake	Fri Nov 25 22:31:44 2016
-@@ -22,25 +22,21 @@
+$OpenBSD: patch-Modules_FindMPEG_cmake,v 1.9 2017/08/26 17:53:35 dcoppa Exp $
+Index: Modules/FindMPEG.cmake
+--- Modules/FindMPEG.cmake.orig
++++ Modules/FindMPEG.cmake
+@@ -22,23 +22,19 @@
  #   MPEG_mpeg2_LIBRARY, where to find the MPEG library.
  #   MPEG_vo_LIBRARY, where to find the vo library.
  
@@ -20,8 +21,6 @@ $OpenBSD: patch-Modules_FindMPEG_cmake,v 1.8 2016/11/28 09:15:13 dcoppa Exp $
 -  /usr/local/livid/mpeg2dec/libvo/.libs
 -)
 -
- # handle the QUIETLY and REQUIRED arguments and set MPEG2_FOUND to TRUE if
- # all listed variables are TRUE
  include(${CMAKE_CURRENT_LIST_DIR}/FindPackageHandleStandardArgs.cmake)
 -FIND_PACKAGE_HANDLE_STANDARD_ARGS(MPEG DEFAULT_MSG MPEG_INCLUDE_DIR MPEG_mpeg2_LIBRARY MPEG_vo_LIBRARY)
 +FIND_PACKAGE_HANDLE_STANDARD_ARGS(MPEG DEFAULT_MSG MPEG_INCLUDE_DIR MPEG_mpeg2_LIBRARY)

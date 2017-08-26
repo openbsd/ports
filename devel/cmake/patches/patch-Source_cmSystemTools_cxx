@@ -1,0 +1,48 @@
+$OpenBSD: patch-Source_cmSystemTools_cxx,v 1.8 2017/08/26 17:53:35 dcoppa Exp $
+
+Get rid of suboptimal cmLocaleRAII.
+
+It is of dubious utility:
+
+it's trying to save the LC_CTYPE locale and set it from the environment
+variables before processing each single file name, and to restore
+the LC_CTYPE locale to the previous value after processing each
+file name. There is no way how the environment could possibly change
+between files, and setlocale(3) is a potentially expensive operation.
+
+The way how it tries to save the previous locale is broken:
+
+it calls setlocale(LC_CTYPE, NULL), which returns a pointer. CMake
+saves that pointer, without strdup(3)ing it, then calls setlocale(3)
+again as setlocale(LC_CTYPE, "") to actually set the desired locale,
+discarding the return value. It later uses the saved pointer to try
+and restore the original locale.
+In an implementation using a static buffer, the second call will
+overwrite the contents of the pointer returned by the first call,
+so the third call will not restore the previous locale, but instead
+set the one intended as temporary a second time.
+A stricter implementation (one that doesn't just overwrite the
+string, but actually frees the memory, so the string returned by
+the earlier setlocale() call becomes invalid) will crash, revealing
+the invalid use of the interface.
+
+Index: Source/cmSystemTools.cxx
+--- Source/cmSystemTools.cxx.orig
++++ Source/cmSystemTools.cxx
+@@ -8,7 +8,6 @@
+ 
+ #if defined(CMAKE_BUILD_WITH_CMAKE)
+ #include "cmArchiveWrite.h"
+-#include "cmLocale.h"
+ #include "cm_libarchive.h"
+ #ifndef __LA_INT64_T
+ #define __LA_INT64_T la_int64_t
+@@ -1625,8 +1624,6 @@ long copy_data(struct archive* ar, struct archive* aw)
+ 
+ bool extract_tar(const char* outFileName, bool verbose, bool extract)
+ {
+-  cmLocaleRAII localeRAII;
+-  static_cast<void>(localeRAII);
+   struct archive* a = archive_read_new();
+   struct archive* ext = archive_write_disk_new();
+   archive_read_support_filter_all(a);

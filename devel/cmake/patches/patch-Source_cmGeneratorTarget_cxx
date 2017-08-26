@@ -1,14 +1,15 @@
-$OpenBSD: patch-Source_cmGeneratorTarget_cxx,v 1.6 2016/11/28 09:15:13 dcoppa Exp $
---- Source/cmGeneratorTarget.cxx.orig	Fri Nov 11 15:37:14 2016
-+++ Source/cmGeneratorTarget.cxx	Fri Nov 25 22:31:45 2016
-@@ -1094,11 +1094,15 @@ std::string cmGeneratorTarget::GetCompilePDBPath(
+$OpenBSD: patch-Source_cmGeneratorTarget_cxx,v 1.7 2017/08/26 17:53:35 dcoppa Exp $
+Index: Source/cmGeneratorTarget.cxx
+--- Source/cmGeneratorTarget.cxx.orig
++++ Source/cmGeneratorTarget.cxx
+@@ -1222,11 +1222,15 @@ std::string cmGeneratorTarget::GetCompilePDBPath(
  
  bool cmGeneratorTarget::HasSOName(const std::string& config) const
  {
 +#if !defined(__OpenBSD__)
    // soname is supported only for shared libraries and modules,
    // and then only when the platform supports an soname flag.
-   return ((this->GetType() == cmState::SHARED_LIBRARY) &&
+   return ((this->GetType() == cmStateEnums::SHARED_LIBRARY) &&
            !this->GetPropertyAsBool("NO_SONAME") &&
            this->Makefile->GetSONameFlag(this->GetLinkerLanguage(config)));
 +#else
@@ -17,13 +18,13 @@ $OpenBSD: patch-Source_cmGeneratorTarget_cxx,v 1.6 2016/11/28 09:15:13 dcoppa Ex
  }
  
  bool cmGeneratorTarget::NeedRelinkBeforeInstall(
-@@ -2810,9 +2814,15 @@ void cmGeneratorTarget::GetLibraryNames(std::string& n
+@@ -3040,9 +3044,15 @@ void cmGeneratorTarget::GetLibraryNames(std::string& n
    // Check for library version properties.
    const char* version = this->GetProperty("VERSION");
    const char* soversion = this->GetProperty("SOVERSION");
 +#if defined(__OpenBSD__)
-+  if (this->GetType() != cmState::SHARED_LIBRARY &&
-+      this->GetType() != cmState::MODULE_LIBRARY)
++  if (this->GetType() != cmStateEnums::SHARED_LIBRARY &&
++      this->GetType() != cmStateEnums::MODULE_LIBRARY)
 +#else
    if (!this->HasSOName(config) ||
        this->Makefile->IsOn("CMAKE_PLATFORM_NO_VERSIONED_SONAME") ||
@@ -34,15 +35,15 @@ $OpenBSD: patch-Source_cmGeneratorTarget_cxx,v 1.6 2016/11/28 09:15:13 dcoppa Ex
      // Versioning is supported only for shared libraries and modules,
      // and then only when the platform supports an soname flag.
      version = CM_NULLPTR;
-@@ -2837,6 +2847,34 @@ void cmGeneratorTarget::GetLibraryNames(std::string& n
+@@ -3068,6 +3078,34 @@ void cmGeneratorTarget::GetLibraryNames(std::string& n
    // The library name.
    name = prefix + base + suffix;
  
 +#if defined(__OpenBSD__)
 +  // Override shared library version using LIBxxx_VERSION
 +  // environment variable. Needed for OpenBSD ports system.
-+  if (this->GetType() == cmState::SHARED_LIBRARY ||
-+      this->GetType() == cmState::MODULE_LIBRARY) {
++  if (this->GetType() == cmStateEnums::SHARED_LIBRARY ||
++      this->GetType() == cmStateEnums::MODULE_LIBRARY) {
 +    std::string env_name = "LIB" + base + "_VERSION";
 +    char *env_vers_cstr = getenv(env_name.c_str());
 +
@@ -69,7 +70,7 @@ $OpenBSD: patch-Source_cmGeneratorTarget_cxx,v 1.6 2016/11/28 09:15:13 dcoppa Ex
    if (this->IsFrameworkOnApple()) {
      realName = prefix;
      if (!this->Makefile->PlatformIsAppleIos()) {
-@@ -2848,7 +2886,11 @@ void cmGeneratorTarget::GetLibraryNames(std::string& n
+@@ -3079,7 +3117,11 @@ void cmGeneratorTarget::GetLibraryNames(std::string& n
      soName = realName;
    } else {
      // The library's soname.
@@ -81,7 +82,7 @@ $OpenBSD: patch-Source_cmGeneratorTarget_cxx,v 1.6 2016/11/28 09:15:13 dcoppa Ex
  
      // The library's real name on disk.
      this->ComputeVersionedName(realName, prefix, base, suffix, name, version);
-@@ -3943,7 +3985,21 @@ void cmGeneratorTarget::ComputeVersionedName(std::stri
+@@ -4223,7 +4265,21 @@ void cmGeneratorTarget::ComputeVersionedName(std::stri
    vName = this->Makefile->IsOn("APPLE") ? (prefix + base) : name;
    if (version) {
      vName += ".";

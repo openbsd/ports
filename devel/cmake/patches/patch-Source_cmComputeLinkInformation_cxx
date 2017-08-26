@@ -1,22 +1,34 @@
-$OpenBSD: patch-Source_cmComputeLinkInformation_cxx,v 1.18 2016/11/28 09:15:13 dcoppa Exp $
---- Source/cmComputeLinkInformation.cxx.orig	Fri Nov 11 15:37:14 2016
-+++ Source/cmComputeLinkInformation.cxx	Fri Nov 25 22:31:45 2016
-@@ -445,6 +445,8 @@ cmComputeLinkInformation::GetSharedLibrariesLinked()
+$OpenBSD: patch-Source_cmComputeLinkInformation_cxx,v 1.19 2017/08/26 17:53:35 dcoppa Exp $
+Index: Source/cmComputeLinkInformation.cxx
+--- Source/cmComputeLinkInformation.cxx.orig
++++ Source/cmComputeLinkInformation.cxx
+@@ -366,8 +366,9 @@ cmComputeLinkInformation::cmComputeLinkInformation(
+     this->Target->GetLinkDirectories());
+ 
+   // Set up the implicit link directories.
+-  this->LoadImplicitLinkInfo();
++  this->LoadImplicitLinkInfoOpenBSD();
+   this->OrderLinkerSearchPath->SetImplicitDirectories(this->ImplicitLinkDirs);
++  this->LoadImplicitLinkInfo();
+   this->OrderRuntimeSearchPath->SetImplicitDirectories(this->ImplicitLinkDirs);
+   if (this->OrderDependentRPath) {
+     this->OrderDependentRPath->SetImplicitDirectories(this->ImplicitLinkDirs);
+@@ -446,6 +447,8 @@ cmComputeLinkInformation::GetSharedLibrariesLinked()
  
  bool cmComputeLinkInformation::Compute()
  {
 +  bool use_wxneeded = false;
 +
    // Skip targets that do not link.
-   if (!(this->Target->GetType() == cmState::EXECUTABLE ||
-         this->Target->GetType() == cmState::SHARED_LIBRARY ||
-@@ -473,10 +475,17 @@ bool cmComputeLinkInformation::Compute()
+   if (!(this->Target->GetType() == cmStateEnums::EXECUTABLE ||
+         this->Target->GetType() == cmStateEnums::SHARED_LIBRARY ||
+@@ -474,10 +477,17 @@ bool cmComputeLinkInformation::Compute()
      if (lei->IsSharedDep) {
        this->AddSharedDepItem(lei->Item, lei->Target);
      } else {
 +      std::string litem_tolower = lei->Item;
 +      transform(litem_tolower.begin(), litem_tolower.end(), litem_tolower.begin(), ::tolower);
-+      if (litem_tolower.find("webkit") != std::string::npos)
++      if (litem_tolower.find("webkit") != std::string::npos || litem_tolower.find("webengine") != std::string::npos)
 +        use_wxneeded = true;
        this->AddItem(lei->Item, lei->Target);
      }
@@ -28,7 +40,7 @@ $OpenBSD: patch-Source_cmComputeLinkInformation_cxx,v 1.18 2016/11/28 09:15:13 d
    // Restore the target link type so the correct system runtime
    // libraries are found.
    const char* lss = this->Target->GetProperty("LINK_SEARCH_END_STATIC");
-@@ -627,10 +636,16 @@ void cmComputeLinkInformation::AddItem(std::string con
+@@ -644,10 +654,16 @@ void cmComputeLinkInformation::AddItem(std::string con
          // This is a directory.
          this->AddDirectoryItem(item);
        } else {
@@ -48,7 +60,7 @@ $OpenBSD: patch-Source_cmComputeLinkInformation_cxx,v 1.18 2016/11/28 09:15:13 d
        }
      } else {
        // This is a library or option specified by the user.
-@@ -973,11 +988,18 @@ void cmComputeLinkInformation::AddTargetItem(std::stri
+@@ -993,11 +1009,18 @@ void cmComputeLinkInformation::AddTargetItem(std::stri
      this->SharedLibrariesLinked.insert(target);
    }
  
@@ -58,7 +70,7 @@ $OpenBSD: patch-Source_cmComputeLinkInformation_cxx,v 1.18 2016/11/28 09:15:13 d
 -    this->AddSharedLibNoSOName(item);
 -    return;
 +  if (this->OpenBSD) {
-+    if (target->GetType() == cmState::SHARED_LIBRARY) {
++    if (target->GetType() == cmStateEnums::SHARED_LIBRARY) {
 +      this->AddSharedLibNoSOName(item);
 +      return;
 +    }
@@ -72,3 +84,61 @@ $OpenBSD: patch-Source_cmComputeLinkInformation_cxx,v 1.18 2016/11/28 09:15:13 d
    }
  
    // If this platform wants a flag before the full path, add it.
+@@ -1557,6 +1580,57 @@ void cmComputeLinkInformation::LoadImplicitLinkInfo()
+   if (const char* implicitDirs =
+         this->Makefile->GetDefinition(implicitDirVar)) {
+     cmSystemTools::ExpandListArgument(implicitDirs, implicitDirVec);
++  }
++
++  // Store implicit link directories.
++  this->ImplicitLinkDirs.insert(implicitDirVec.begin(), implicitDirVec.end());
++
++  // Get language-specific implicit libraries.
++  std::vector<std::string> implicitLibVec;
++  std::string implicitLibVar = "CMAKE_";
++  implicitLibVar += this->LinkLanguage;
++  implicitLibVar += "_IMPLICIT_LINK_LIBRARIES";
++  if (const char* implicitLibs =
++        this->Makefile->GetDefinition(implicitLibVar)) {
++    cmSystemTools::ExpandListArgument(implicitLibs, implicitLibVec);
++  }
++
++  // Store implicit link libraries.
++  for (std::vector<std::string>::const_iterator i = implicitLibVec.begin();
++       i != implicitLibVec.end(); ++i) {
++    // Items starting in '-' but not '-l' are flags, not libraries,
++    // and should not be filtered by this implicit list.
++    std::string const& item = *i;
++    if (item[0] != '-' || item[1] == 'l') {
++      this->ImplicitLinkLibs.insert(item);
++    }
++  }
++
++  // Get platform specific rpath link directories
++  if (const char* rpathDirs =
++        (this->Makefile->GetDefinition("CMAKE_PLATFORM_RUNTIME_PATH"))) {
++    cmSystemTools::ExpandListArgument(rpathDirs, this->RuntimeLinkDirs);
++  }
++}
++
++void cmComputeLinkInformation::LoadImplicitLinkInfoOpenBSD()
++{
++  std::vector<std::string> implicitDirVec;
++
++  // Get platform-wide implicit directories.
++  if (const char* implicitLinks = (this->Makefile->GetDefinition(
++        "CMAKE_PLATFORM_IMPLICIT_LINK_DIRECTORIES"))) {
++    cmSystemTools::ExpandListArgument(implicitLinks, implicitDirVec);
++  }
++
++  // Append library architecture to all implicit platform directories
++  // and add them to the set
++  if (const char* libraryArch =
++        this->Makefile->GetDefinition("CMAKE_LIBRARY_ARCHITECTURE")) {
++    for (std::vector<std::string>::const_iterator i = implicitDirVec.begin();
++         i != implicitDirVec.end(); ++i) {
++      this->ImplicitLinkDirs.insert(*i + "/" + libraryArch);
++    }
+   }
+ 
+   // Store implicit link directories.

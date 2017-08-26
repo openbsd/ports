@@ -1,12 +1,22 @@
-$OpenBSD: patch-Source_CMakeLists_txt,v 1.9 2016/11/28 09:15:13 dcoppa Exp $
---- Source/CMakeLists.txt.orig	Fri Nov 11 15:37:13 2016
-+++ Source/CMakeLists.txt	Sat Nov 26 12:24:01 2016
-@@ -80,6 +80,8 @@ include_directories(
-   "${CMake_SOURCE_DIR}/Source"
+$OpenBSD: patch-Source_CMakeLists_txt,v 1.10 2017/08/26 17:53:35 dcoppa Exp $
+Index: Source/CMakeLists.txt
+--- Source/CMakeLists.txt.orig
++++ Source/CMakeLists.txt
+@@ -81,6 +81,9 @@ include_directories(
+   "${CMake_SOURCE_DIR}/Source/LexerParser"
    ${CMAKE_ZLIB_INCLUDES}
    ${CMAKE_EXPAT_INCLUDES}
++  ${CMAKE_LIBRHASH_INCLUDES}
 +  ${CMAKE_JSONCPP_INCLUDES}
 +  ${CMAKE_LIBUV_INCLUDES}
    ${CMAKE_TAR_INCLUDES}
    ${CMAKE_COMPRESS_INCLUDES}
    ${CMake_HAIKU_INCLUDE_DIRS}
+@@ -273,7 +276,6 @@ set(SRCS
+   cmRulePlaceholderExpander.cxx
+   cmRulePlaceholderExpander.h
+   cmLocalUnixMakefileGenerator3.cxx
+-  cmLocale.h
+   ${MACH_SRCS}
+   cmMakefile.cxx
+   cmMakefile.h

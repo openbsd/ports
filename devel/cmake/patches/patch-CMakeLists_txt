@@ -1,7 +1,8 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.22 2016/11/28 09:15:13 dcoppa Exp $
---- CMakeLists.txt.orig	Fri Nov 11 15:37:13 2016
-+++ CMakeLists.txt	Sat Nov 26 15:18:08 2016
-@@ -274,6 +274,15 @@ macro (CMAKE_BUILD_UTILITIES)
+$OpenBSD: patch-CMakeLists_txt,v 1.23 2017/08/26 17:53:35 dcoppa Exp $
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -305,6 +305,15 @@ macro (CMAKE_BUILD_UTILITIES)
      CMAKE_SET_TARGET_FOLDER(${KWSYS_NAMESPACE}TestSharedForward "${kwsys_folder}")
    endif()
  
@@ -17,7 +18,17 @@ $OpenBSD: patch-CMakeLists_txt,v 1.22 2016/11/28 09:15:13 dcoppa Exp $
    #---------------------------------------------------------------------
    # Setup third-party libraries.
    # Everything in the tree should be able to include files from the
-@@ -453,7 +462,8 @@ macro (CMAKE_BUILD_UTILITIES)
+@@ -342,7 +351,8 @@ macro (CMAKE_BUILD_UTILITIES)
+       message(FATAL_ERROR
+         "CMAKE_USE_SYSTEM_LIBRHASH is ON but LibRHash is not found!")
+     endif()
+-    set(CMAKE_LIBRHASH_LIBRARIES LibRHash::LibRHash)
++    set(CMAKE_LIBRHASH_INCLUDES ${LibRHash_INCLUDE_DIRS})
++    set(CMAKE_LIBRHASH_LIBRARIES ${LibRHash_LIBRARIES})
+   else()
+     set(CMAKE_LIBRHASH_LIBRARIES cmlibrhash)
+     add_subdirectory(Utilities/cmlibrhash)
+@@ -512,7 +522,8 @@ macro (CMAKE_BUILD_UTILITIES)
        message(FATAL_ERROR
          "CMAKE_USE_SYSTEM_JSONCPP is ON but a JsonCpp is not found!")
      endif()
@@ -27,7 +38,7 @@ $OpenBSD: patch-CMakeLists_txt,v 1.22 2016/11/28 09:15:13 dcoppa Exp $
    else()
      set(CMAKE_JSONCPP_LIBRARIES cmjsoncpp)
      add_subdirectory(Utilities/cmjsoncpp)
-@@ -463,7 +473,7 @@ macro (CMAKE_BUILD_UTILITIES)
+@@ -522,7 +533,7 @@ macro (CMAKE_BUILD_UTILITIES)
    #---------------------------------------------------------------------
    # Build libuv library.
    if(NOT DEFINED CMAKE_USE_LIBUV)
@@ -36,7 +47,7 @@ $OpenBSD: patch-CMakeLists_txt,v 1.22 2016/11/28 09:15:13 dcoppa Exp $
      if(APPLE)
        include(CheckCSourceCompiles)
        check_c_source_compiles("
-@@ -499,7 +509,8 @@ int main(void) { return 0; }
+@@ -552,7 +563,8 @@ int main(void) { return 0; }
          message(FATAL_ERROR
            "CMAKE_USE_SYSTEM_LIBUV is ON but a libuv is not found!")
        endif()

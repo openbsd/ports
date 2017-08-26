@@ -1,6 +1,7 @@
-$OpenBSD: patch-Modules_FindPythonLibs_cmake,v 1.14 2016/11/28 09:15:13 dcoppa Exp $
---- Modules/FindPythonLibs.cmake.orig	Fri Nov 11 15:37:13 2016
-+++ Modules/FindPythonLibs.cmake	Fri Nov 25 22:31:44 2016
+$OpenBSD: patch-Modules_FindPythonLibs_cmake,v 1.15 2017/08/26 17:53:35 dcoppa Exp $
+Index: Modules/FindPythonLibs.cmake
+--- Modules/FindPythonLibs.cmake.orig
++++ Modules/FindPythonLibs.cmake
 @@ -72,6 +72,9 @@ endif()
  # To avoid picking up the system Python.h pre-maturely.
  set(CMAKE_FIND_FRAMEWORK LAST)
@@ -32,7 +33,7 @@ $OpenBSD: patch-Modules_FindPythonLibs_cmake,v 1.14 2016/11/28 09:15:13 dcoppa E
  
  unset(_PYTHON_FIND_OTHER_VERSIONS)
  unset(_PYTHON1_VERSIONS)
-@@ -184,20 +191,24 @@ foreach(_CURRENT_VERSION ${_Python_VERSIONS})
+@@ -191,20 +198,24 @@ foreach(_CURRENT_VERSION ${_Python_VERSIONS})
        endforeach()
      endif()
  

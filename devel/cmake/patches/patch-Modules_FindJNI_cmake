@@ -1,6 +1,7 @@
-$OpenBSD: patch-Modules_FindJNI_cmake,v 1.20 2017/04/21 18:37:43 kurt Exp $
---- Modules/FindJNI.cmake.orig	Fri Jan 13 09:05:41 2017
-+++ Modules/FindJNI.cmake	Fri Apr 21 09:54:40 2017
+$OpenBSD: patch-Modules_FindJNI_cmake,v 1.21 2017/08/26 17:53:35 dcoppa Exp $
+Index: Modules/FindJNI.cmake
+--- Modules/FindJNI.cmake.orig
++++ Modules/FindJNI.cmake
 @@ -25,6 +25,8 @@
  #   JAVA_INCLUDE_PATH2    = the include path to jni_md.h
  #   JAVA_AWT_INCLUDE_PATH = the include path to jawt.h
@@ -23,7 +24,7 @@ $OpenBSD: patch-Modules_FindJNI_cmake,v 1.20 2017/04/21 18:37:43 kurt Exp $
      endif()
  
      # Sometimes ${CMAKE_SYSTEM_PROCESSOR} is added to the list to prefer
-@@ -107,57 +111,63 @@ if(_JAVA_HOME_EXPLICIT)
+@@ -107,60 +111,66 @@ if(_JAVA_HOME_EXPLICIT)
    set(CMAKE_FIND_FRAMEWORK NEVER)
  endif()
  
@@ -82,6 +83,9 @@ $OpenBSD: patch-Modules_FindJNI_cmake,v 1.20 2017/04/21 18:37:43 kurt Exp $
 -  /usr/lib/jvm/default-java/jre/lib/{libarch}
 -  /usr/lib/jvm/default-java/jre/lib
 -  /usr/lib/jvm/default-java/lib
+-  # Arch Linux specific paths for default JVM
+-  /usr/lib/jvm/default/jre/lib/{libarch}
+-  /usr/lib/jvm/default/lib/{libarch}
 -  # Ubuntu specific paths for default JVM
 -  /usr/lib/jvm/java-8-openjdk-{libarch}/jre/lib/{libarch}     # Ubuntu 15.10
 -  /usr/lib/jvm/java-7-openjdk-{libarch}/jre/lib/{libarch}     # Ubuntu 15.10
@@ -120,6 +124,9 @@ $OpenBSD: patch-Modules_FindJNI_cmake,v 1.20 2017/04/21 18:37:43 kurt Exp $
 +    /usr/lib/jvm/default-java/jre/lib/{libarch}
 +    /usr/lib/jvm/default-java/jre/lib
 +    /usr/lib/jvm/default-java/lib
++    # Arch Linux specific paths for default JVM
++    /usr/lib/jvm/default/jre/lib/{libarch}
++    /usr/lib/jvm/default/lib/{libarch}
 +    # Ubuntu specific paths for default JVM
 +    /usr/lib/jvm/java-8-openjdk-{libarch}/jre/lib/{libarch}     # Ubuntu 15.10
 +    /usr/lib/jvm/java-7-openjdk-{libarch}/jre/lib/{libarch}     # Ubuntu 15.10
@@ -135,7 +142,7 @@ $OpenBSD: patch-Modules_FindJNI_cmake,v 1.20 2017/04/21 18:37:43 kurt Exp $
  
  set(JAVA_JVM_LIBRARY_DIRECTORIES)
  foreach(dir ${JAVA_AWT_LIBRARY_DIRECTORIES})
-@@ -171,41 +181,48 @@ foreach(dir ${JAVA_AWT_LIBRARY_DIRECTORIES})
+@@ -174,43 +184,50 @@ foreach(dir ${JAVA_AWT_LIBRARY_DIRECTORIES})
      )
  endforeach()
  
@@ -168,6 +175,8 @@ $OpenBSD: patch-Modules_FindJNI_cmake,v 1.20 2017/04/21 18:37:43 kurt Exp $
 -  /opt/sun-jdk-1.5.0.04/include
 -  # Debian specific path for default JVM
 -  /usr/lib/jvm/default-java/include
+-  # Arch specific path for default JVM
+-  /usr/lib/jvm/default/include
 -  # OpenBSD specific path for default JVM
 -  /usr/local/jdk-1.7.0/include
 -  /usr/local/jdk-1.6.0/include
@@ -209,6 +218,8 @@ $OpenBSD: patch-Modules_FindJNI_cmake,v 1.20 2017/04/21 18:37:43 kurt Exp $
 +    /opt/sun-jdk-1.5.0.04/include
 +    # Debian specific path for default JVM
 +    /usr/lib/jvm/default-java/include
++    # Arch specific path for default JVM
++    /usr/lib/jvm/default/include
 +    # OpenBSD specific path for default JVM
 +    ${LOCALBASE}/jdk-1.8.0/include
 +    # SuSE specific paths for default JVM

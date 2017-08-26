@@ -1,12 +1,13 @@
-$OpenBSD: patch-Source_cmTarget_cxx,v 1.30 2016/11/28 09:15:13 dcoppa Exp $
---- Source/cmTarget.cxx.orig	Fri Nov 11 15:37:14 2016
-+++ Source/cmTarget.cxx	Fri Nov 25 22:31:45 2016
-@@ -104,7 +104,7 @@ cmTarget::cmTarget(std::string const& name, cmState::T
-     this->SetPropertyDefault("ANDROID_ANT_ADDITIONAL_OPTIONS", CM_NULLPTR);
+$OpenBSD: patch-Source_cmTarget_cxx,v 1.31 2017/08/26 17:53:35 dcoppa Exp $
+Index: Source/cmTarget.cxx
+--- Source/cmTarget.cxx.orig
++++ Source/cmTarget.cxx
+@@ -230,7 +230,7 @@ cmTarget::cmTarget(std::string const& name, cmStateEnu
+     this->SetPropertyDefault("BUILD_RPATH", CM_NULLPTR);
      this->SetPropertyDefault("INSTALL_NAME_DIR", CM_NULLPTR);
      this->SetPropertyDefault("INSTALL_RPATH", "");
 -    this->SetPropertyDefault("INSTALL_RPATH_USE_LINK_PATH", "OFF");
 +    this->SetPropertyDefault("INSTALL_RPATH_USE_LINK_PATH", "ON");
+     this->SetPropertyDefault("INTERPROCEDURAL_OPTIMIZATION", CM_NULLPTR);
      this->SetPropertyDefault("SKIP_BUILD_RPATH", "OFF");
      this->SetPropertyDefault("BUILD_WITH_INSTALL_RPATH", "OFF");
-     this->SetPropertyDefault("ARCHIVE_OUTPUT_DIRECTORY", CM_NULLPTR);
