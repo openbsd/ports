@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.48 2017/03/19 15:26:11 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.49 2017/08/26 12:06:23 jasper Exp $
 @bin bin/empathy
 @bin bin/empathy-accounts
 @bin bin/empathy-debugger
@@ -110,6 +110,7 @@ share/empathy/icons/hicolor/16x16/apps/im-qq.png
 share/empathy/icons/hicolor/16x16/apps/im-sametime.png
 share/empathy/icons/hicolor/16x16/apps/im-silc.png
 share/empathy/icons/hicolor/16x16/apps/im-sip.png
+share/empathy/icons/hicolor/16x16/apps/im-skype.png
 share/empathy/icons/hicolor/16x16/apps/im-yahoo.png
 share/empathy/icons/hicolor/16x16/apps/im-zephyr.png
 share/empathy/icons/hicolor/16x16/status/
@@ -144,6 +145,7 @@ share/empathy/icons/hicolor/22x22/apps/im-qq.png
 share/empathy/icons/hicolor/22x22/apps/im-sametime.png
 share/empathy/icons/hicolor/22x22/apps/im-silc.png
 share/empathy/icons/hicolor/22x22/apps/im-sip.png
+share/empathy/icons/hicolor/22x22/apps/im-skype.png
 share/empathy/icons/hicolor/22x22/apps/im-yahoo.png
 share/empathy/icons/hicolor/22x22/apps/im-zephyr.png
 share/empathy/icons/hicolor/22x22/status/
@@ -235,6 +237,7 @@ share/empathy/icons/hicolor/48x48/apps/im-qq.png
 share/empathy/icons/hicolor/48x48/apps/im-sametime.png
 share/empathy/icons/hicolor/48x48/apps/im-silc.png
 share/empathy/icons/hicolor/48x48/apps/im-sip.png
+share/empathy/icons/hicolor/48x48/apps/im-skype.png
 share/empathy/icons/hicolor/48x48/apps/im-yahoo.png
 share/empathy/icons/hicolor/48x48/apps/im-zephyr.png
 share/empathy/icons/hicolor/48x48/status/
