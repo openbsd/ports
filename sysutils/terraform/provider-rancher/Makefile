@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2017/07/20 08:46:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2017/08/27 09:36:07 ajacoutot Exp $
 
 PROVIDER=		rancher
-GH_TAGNAME=		v0.1.1
+GH_TAGNAME=		v0.2.0
 
 .include <bsd.port.mk>
