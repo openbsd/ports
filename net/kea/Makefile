@@ -1,30 +1,31 @@
-# $OpenBSD: Makefile,v 1.9 2017/07/26 22:45:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2017/08/27 11:14:51 sthen Exp $
 
 COMMENT=	high-performance and extensible DHCP server engine from ISC
 
-VERSION=	1.1.0
+VERSION=	1.2.0
 
 DISTNAME=	kea-${VERSION}
 PKGNAME=	${DISTNAME:S/-P/pl/}
-REVISION=	0
 
 SHARED_LIBS +=  kea-asiodns               0.0 # 0.0
-SHARED_LIBS +=  kea-asiolink              1.0 # 3.0
-SHARED_LIBS +=  kea-cc                    0.0 # 1.0
-SHARED_LIBS +=  kea-cfgclient             0.1 # 2.1
-SHARED_LIBS +=  kea-cryptolink            0.0 # 1.0
-SHARED_LIBS +=  kea-dhcp++                1.0 # 4.1
-SHARED_LIBS +=  kea-dhcp_ddns             0.1 # 1.1
-SHARED_LIBS +=  kea-dhcpsrv               1.0 # 6.0
-SHARED_LIBS +=  kea-dns++                 0.0 # 2.0
-SHARED_LIBS +=  kea-eval                  1.0 # 4.0
+SHARED_LIBS +=  kea-asiolink              2.0 # 4.0
+SHARED_LIBS +=  kea-cc                    1.0 # 2.0
+SHARED_LIBS +=  kea-cfgclient             1.0 # 3.0
+SHARED_LIBS +=  kea-cryptolink            1.0 # 2.0
+SHARED_LIBS +=  kea-dhcp++                2.0 # 5.0
+SHARED_LIBS +=  kea-dhcp_ddns             0.2 # 1.2
+SHARED_LIBS +=  kea-dhcpsrv               2.0 # 7.0
+SHARED_LIBS +=  kea-dns++                 1.0 # 1.1
+SHARED_LIBS +=  kea-eval                  2.0 # 5.0
 SHARED_LIBS +=  kea-exceptions            0.0 # 0.0
-SHARED_LIBS +=  kea-hooks                 1.0 # 2.0
-SHARED_LIBS +=  kea-log                   1.0 # 2.0
+SHARED_LIBS +=  kea-hooks                 2.0 # 3.0
+SHARED_LIBS +=  kea-http                  0.0 # 0.0
+SHARED_LIBS +=  kea-log                   2.0 # 3.0
+SHARED_LIBS +=  kea-process               0.0 # 0.0
 SHARED_LIBS +=  kea-stats                 0.0 # 1.0
 SHARED_LIBS +=  kea-threads               1.0 # 1.0
 SHARED_LIBS +=  kea-util-io               0.0 # 0.0
-SHARED_LIBS +=  kea-util                  1.0 # 2.0
+SHARED_LIBS +=  kea-util                  1.1 # 2.1
 
 CATEGORIES=	net
 
@@ -50,6 +51,8 @@ CONFIGURE_ARGS+= --with-openssl=/usr \
                  --with-boost-lib-dir=${LOCALBASE}/lib
 
 LIBTOOL_FLAGS=	--tag=disable-static
+
+COMPILER=	base-clang ports-gcc
 
 FLAVORS=	mysql postgresql
 FLAVOR?=
