@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.521 2017/08/22 06:08:00 jasper Exp $
+# $OpenBSD: Quirks.pm,v 1.522 2017/08/27 16:34:25 rsadowski Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1106,6 +1106,7 @@ my $obsolete_reason = {
 	'mico' => 0,
 	'leveldb' => 5,
 	'py-graphics' => 3,
+	'akode' => 5,
 };
 
 # reasons for obsolete packages
