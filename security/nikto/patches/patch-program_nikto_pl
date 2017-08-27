@@ -1,0 +1,12 @@
+$OpenBSD: patch-program_nikto_pl,v 1.1 2017/08/27 21:47:43 nigel Exp $
+--- program/nikto.pl.orig	Thu Jul  9 15:06:04 2015
++++ program/nikto.pl	Mon Feb  1 19:37:41 2016
+@@ -358,7 +358,7 @@ sub setup_dirs {
+         $CONFIGFILE{'TEMPLATEDIR'} = "$CONFIGFILE{'EXECDIR'}/templates";
+     }
+     unless (defined $CONFIGFILE{'DOCDIR'}) {
+-        $CONFIGFILE{'DOCDIR'} = "$CONFIGFILE{'EXECDIR'}/docs";
++        $CONFIGFILE{'DOCDIR'} = "$CONFIGFILE{'DOCDIR'}/docs";
+     }
+     unless (defined $CONFIGFILE{'DBDIR'}) {
+         $CONFIGFILE{'DBDIR'} = "$CONFIGFILE{'EXECDIR'}/databases";
