@@ -1,18 +1,10 @@
-$OpenBSD: patch-random_jitterentropy-base_c,v 1.1 2017/07/20 06:16:00 ajacoutot Exp $
-
-WTF
+$OpenBSD: patch-random_jitterentropy-base_c,v 1.2 2017/08/27 17:10:25 ajacoutot Exp $
 
 Fix pointer type to prevent warnings.
 
 Index: random/jitterentropy-base.c
 --- random/jitterentropy-base.c.orig
 +++ random/jitterentropy-base.c
-@@ -1,4 +1,4 @@
--﻿/*
-+/*
-  * Non-physical true random number generator based on timing jitter.
-  *
-  * Copyright Stephan Mueller <smueller@chronox.de>, 2014 - 2017
 @@ -111,7 +111,7 @@ unsigned int jent_version(void)
  static uint64_t jent_loop_shuffle(struct rand_data *ec,
  				  unsigned int bits, unsigned int min)
