@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.389 2017/08/15 01:03:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.390 2017/08/27 16:09:21 rsadowski Exp $
 
      SUBDIR =
      SUBDIR += abcde
      SUBDIR += adplay
      SUBDIR += adplug
-     SUBDIR += akode
      SUBDIR += alac_decoder
      SUBDIR += aqualung
      SUBDIR += ardour
