@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2016/03/20 19:57:19 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2017/08/27 21:56:41 nigel Exp $
 
 COMMENT =	HTTP Cookie jars
 
-DISTNAME =	HTTP-Cookies-6.01
+DISTNAME =	HTTP-Cookies-6.04
 CATEGORIES =	www
-CPAN_AUTHOR =	GAAS
 
 MAINTAINER =	Nigel Taylor <nigel@openbsd.org>
 
@@ -16,6 +15,7 @@ PKG_ARCH =	*
 
 RUN_DEPENDS =	www/p5-HTTP-Date>=6.0 \
 		www/p5-HTTP-Message>=6.0
-BUILD_DEPENDS =	${RUN_DEPENDS}
+
+TEST_DEPENDS +=	www/p5-URI
 
 .include <bsd.port.mk>
