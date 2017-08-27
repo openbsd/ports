@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_modules_tl-util_jsm,v 1.1 2017/07/26 20:50:39 sthen Exp $
+$OpenBSD: patch-src_modules_tl-util_jsm,v 1.2 2017/08/27 08:54:08 sthen Exp $
 
 Force DataOutsideOfAppDir on OpenBSD since it will always be true
 (turned on in ../browser/patches/patch-patch-xpcom_io_TorFileUtils_cpp)

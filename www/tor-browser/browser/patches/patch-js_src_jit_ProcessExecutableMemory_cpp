@@ -1,4 +1,4 @@
-$OpenBSD: patch-js_src_jit_ProcessExecutableMemory_cpp,v 1.1 2017/07/26 20:50:39 sthen Exp $
+$OpenBSD: patch-js_src_jit_ProcessExecutableMemory_cpp,v 1.2 2017/08/27 08:54:08 sthen Exp $
 
 https://bugzilla.mozilla.org/show_bug.cgi?id=1347139
 

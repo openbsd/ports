@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2017/08/25 10:23:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2017/08/27 08:54:08 sthen Exp $
 # Some of this comes from www/firefox-esr as apropos, since Tor
 # browser is a fork of ESR.  It is a good idea to look at that
 # Makefile when editing this one (ESR versions not always the same).
@@ -6,23 +6,21 @@
 COMMENT =		modified version of Firefox ESR for browsing over Tor
 ONLY_FOR_ARCHS =	amd64 i386
 
+GH_PROJECT =		torb
+GH_TAGNAME =		v${TB_VERSION}-esr52.3.0
 MOZILLA_VERSION =	${TB_VERSION}
 MOZILLA_PROJECT =	${BROWSER_NAME}
 MOZILLA_CODENAME =	browser
 
-MASTER_SITES = 		https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/archive/
-EXTRACT_SUFX = 		.tar.gz
-DIST_SUBDIR = 		${BROWSER_NAME}
-WRKDIST = 		${WRKDIR}/${GH_PROJECT}-${GH_TAGNAME:C/^v//}
+MASTER_SITES =		https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/archive/
+EXTRACT_SUFX =		.tar.gz
+DIST_SUBDIR =		${BROWSER_NAME}
+WRKDIST =		${WRKDIR}/${GH_PROJECT}-${GH_TAGNAME:C/^v//}
 
 PATCHORIG =		.pat.orig
 
-GH_PROJECT =		torb
-GH_TAGNAME =		v${TB_VERSION}-esr52.2.0
-
 PKGNAME =		${TB_PREFIX}-browser-${TB_VERSION}
 DISTNAME =		${GH_TAGNAME}
-REVISION =		2
 
 SO_VERSION =		2.0
 MOZILLA_LIBS =		xul lgpllibs mozavcodec mozavutil
@@ -41,10 +39,10 @@ COMPILER =		clang
 MODCLANG_ARCHS =	amd64 i386
 
 MOZILLA_USE_BUNDLED_NSS =	Yes
-MOZILLA_USE_BUNDLED_LIBEVENT = 	Yes
+MOZILLA_USE_BUNDLED_LIBEVENT =	Yes
 MOZILLA_USE_BUNDLED_SQLITE =	Yes
 
-WANTLIB +=		X11-xcb xcb xcb-shm intl iconv ${LIBECXX}
+WANTLIB +=		X11-xcb xcb xcb-shm intl ${LIBECXX}
 
 LIB_DEPENDS +=		devel/gettext
 
@@ -61,19 +59,11 @@ MAKE_ENV +=		BUILD_OPT=1 \
 			XCFLAGS="-I${LOCALBASE}/include ${CFLAGS}"
 BUILD_DEPENDS +=	devel/py-virtualenv
 
-# to be able to link when building with clang on i386
-.if ${MACHINE_ARCH} == "i386"
-CONFIGURE_ARGS +=	--disable-debug-symbols
-.endif
-
-CONFIGURE_ARGS +=	--with-app-name=${BROWSER_NAME} 		\
+CONFIGURE_ARGS +=	--with-app-name=${BROWSER_NAME}			\
 			--with-tor-browser-version=${TB_VERSION}	\
 			--disable-tor-browser-update
 
-# relies on pulseaudio for sound and broken at runtime
-#CONFIGURE_ARGS +=	--disable-webrtc
-
-RUN_DEPENDS +=		net/tor>=0.3.0.9
+RUN_DEPENDS +=		net/tor>=0.3.0.10
 
 # bug 857628
 CONFIGURE_ARGS +=	--enable-pie
@@ -82,11 +72,9 @@ post-patch:
 	# hack config/baseconfig.mk to not use MOZ_APP_VERSION in a few places
 	sed -i.bak -e 's/-$$(MOZ_APP_VERSION)/-${TB_VERSION}/'	\
 		${WRKSRC}/config/baseconfig.mk
-	# drop in the sh front end to python Mozilla now uses
-	cp ${FILESDIR}/configure ${WRKSRC}
-	chmod +x ${WRKSRC}/configure
-	cp ${FILESDIR}/configure ${WRKSRC}/js/src
-	chmod +x ${WRKSRC}/js/src/configure
+	# drop in sh front end to configure.py so CONFIGURE_STYLE=simple works
+	${SUBST_PROGRAM} ${FILESDIR}/configure ${WRKSRC}/configure
+	${SUBST_PROGRAM} ${FILESDIR}/configure ${WRKSRC}/js/src/configure
 
 BROWSER_DIR = ${PREFIX}/lib/${BROWSER_NAME}-${TB_VERSION}
 BROWSER_CFG = ${BROWSER_DIR}/${BROWSER_NAME}.cfg
