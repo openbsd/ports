@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.111 2017/08/11 15:50:15 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.112 2017/08/27 21:45:03 nigel Exp $
 bin/youtube-dl
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/
 lib/python${MODPY_VERSION}/site-packages/youtube_dl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -231,6 +231,8 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/cjsw.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/cjsw.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/cliphunter.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/cliphunter.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/clippit.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/clippit.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/cliprs.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/cliprs.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/clipsyndicate.py
@@ -979,6 +981,8 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/rds.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/rds.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/redbulltv.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/redbulltv.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/reddit.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/reddit.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/redtube.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/redtube.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/regiotv.py
