@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2015/06/19 14:03:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2017/08/28 06:23:31 dcoppa Exp $
 
 COMMENT=		Redis-backed library to create jobs and place them on queues
 
 DISTNAME=		resque-1.23.1
+REVISION=		0
 CATEGORIES=		databases www
 
 HOMEPAGE=		https://github.com/resque/resque
@@ -13,6 +14,9 @@ PERMIT_PACKAGE_CDROM=   Yes
 MODULES=		lang/ruby
 
 CONFIGURE_STYLE=	ruby gem
+
+# XXX until redis-namespace's gemspec is fixed
+GEM_FLAGS=		--ignore-dependencies
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		converters/ruby-multi_json,${MODRUBY_FLAVOR} \
