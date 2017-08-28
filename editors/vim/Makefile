@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.161 2017/08/23 19:10:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.162 2017/08/28 14:01:34 jeremy Exp $
 
 COMMENT-main=	vi clone, many additional features
 COMMENT-lang=	vi clone, NLS subpackage
@@ -13,6 +13,8 @@ PKGNAME-main=	vim-$V
 PKGNAME-lang=	vim-lang-$V
 P=		vim${V:R:S/.//}
 CATEGORIES=	editors
+
+REVISION-main=	0
 
 HOMEPAGE=	http://www.vim.org/
 
@@ -91,7 +93,6 @@ ERRORS=		"Fatal: You only can select one python flavor"
 
 .if ${FLAVOR:Mruby}
 MODULES+=	lang/ruby
-MODRUBY_REV=	1.8
 CONFIGURE_ARGS+= --enable-rubyinterp --with-ruby-command=${RUBY}
 LIB_DEPENDS+=	${MODRUBY_LIB_DEPENDS}
 WANTLIB+=	m ${MODRUBY_WANTLIB}
