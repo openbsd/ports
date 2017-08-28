@@ -1,19 +1,16 @@
-# $OpenBSD: Makefile,v 1.71 2017/07/26 22:45:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.72 2017/08/28 08:31:29 ajacoutot Exp $
 
-BROKEN-hppa=	libpt.so.7.0: undefined reference to __sync_fetch_and_or_4
+BROKEN-hppa=		libpt.so.7.0: undefined reference to __sync_fetch_and_or_4
 
-COMMENT=	H.323 gatekeeper
+COMMENT=		H.323 gatekeeper
 
-DISTNAME=	gnugk-4.2-2
-PKGNAME=	gnugk-4.2.2
-REVISION=	4
-WRKDIST=	${WRKDIR}/gnugk-4.2
+DISTNAME=		gnugk-4.5
 
-CATEGORIES=	net telephony
+CATEGORIES=		net telephony
 
-HOMEPAGE=	http://www.gnugk.org/
+HOMEPAGE=		http://www.gnugk.org/
 
-MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
+MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -22,47 +19,46 @@ WANTLIB += GeoIP SDL c crypto expat h323 kvm lber ldap ldap_r
 WANTLIB += lua${MODLUA_VERSION} m netsnmp netsnmpagent netsnmpmibs pt pthread
 WANTLIB += sasl2 ssh ssl ${COMPILER_LIBCXX} z
 
-MODULES=	lang/lua
+MODULES=		lang/lua
 
 # uses luaL_newlib, lua_setglobal
-MODLUA_VERSION=	5.2
+MODLUA_VERSION=5.2
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=openh323gk/}
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=openh323gk/}
 
-BUILD_DEPENDS=	databases/mariadb \
-		databases/postgresql
+BUILD_DEPENDS=		databases/mariadb \
+			databases/postgresql
 
-LIB_DEPENDS=	net/GeoIP \
-		net/h323plus \
-		net/net-snmp \
-		security/libssh
+LIB_DEPENDS=		net/GeoIP \
+			net/h323plus>=1.26.8 \
+			net/net-snmp \
+			security/libssh
 
-ALL_TARGET=	optshared
-USE_GMAKE=	Yes
-NO_TEST=	Yes
+ALL_TARGET=		optshared
+USE_GMAKE=		Yes
+NO_TEST=		Yes
 
-CONFIGURE_STYLE=gnu
+CONFIGURE_STYLE=	gnu
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		OPENH323DIR=${LOCALBASE}/include/openh323 \
-		OPENH323MAKEDIR=${LOCALBASE}/share/openh323 \
-		PTLIBDIR=${LOCALBASE}/share/ptlib
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib" \
+			OPENH323DIR=${LOCALBASE}/include/openh323 \
+			OPENH323MAKEDIR=${LOCALBASE}/share/openh323 \
+			PTLIBDIR=${LOCALBASE}/share/ptlib
 
-CONFIGURE_ARGS=	--disable-sqlite \
-		--disable-unixodbc \
-		--with-pgsql-include-dir=${LOCALBASE}/include/postgresql \
-		--with-lua-include-dir=${MODLUA_INCL_DIR} \
-		--with-lua-lib-dir=${LOCALBASE}/lib
-
+CONFIGURE_ARGS=		--disable-sqlite \
+			--disable-unixodbc \
+			--with-pgsql-include-dir=${LOCALBASE}/include/postgresql \
+			--with-lua-include-dir=${MODLUA_INCL_DIR} \
+			--with-lua-lib-dir=${LOCALBASE}/lib
 # sync with net/h323plus
-CONFIGURE_ARGS +=--disable-h46018
-CONFIGURE_ARGS +=--disable-h46023
+CONFIGURE_ARGS +=	--disable-h46018
+CONFIGURE_ARGS +=	--disable-h46023
 
-MAKE_ENV=	VERBOSE=1
-MAKE_FLAGS=	PTLIB_LIBDIR=$$(pkg-config --variable libdir ptlib) \
-		OH323_LIBDIR=${LOCALBASE}/lib \
-		OBJDIR=.
+MAKE_ENV=		VERBOSE=1
+MAKE_FLAGS=		PTLIB_LIBDIR=$$(pkg-config --variable libdir ptlib) \
+			OH323_LIBDIR=${LOCALBASE}/lib \
+			OBJDIR=.
 
 pre-configure:
 	sed -i.beforesubst 's,-llua,-llua${MODLUA_VERSION} -lm,g' ${WRKSRC}/configure

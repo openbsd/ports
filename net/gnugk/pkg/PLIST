@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2011/10/26 17:00:06 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2017/08/28 08:31:29 ajacoutot Exp $
 @pkgpath net/gnugk,mysql
 @pkgpath net/gnugk,pgsq
 @newgroup _gnugk:586
@@ -11,7 +11,6 @@ share/doc/gnugk/
 share/doc/gnugk/identifiers.txt
 share/doc/gnugk/keepalive.txt
 share/doc/gnugk/known_bugs.txt
-share/doc/gnugk/performance.txt
 share/doc/gnugk/trace_levels.txt
 share/examples/gnugk/
 share/examples/gnugk/H46023.ini

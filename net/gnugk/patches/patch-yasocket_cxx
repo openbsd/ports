@@ -1,11 +1,9 @@
-$OpenBSD: patch-yasocket_cxx,v 1.2 2017/05/19 22:55:35 espie Exp $
-
-http://openh323gk.cvs.sourceforge.net/viewvc/openh323gk/openh323gk/yasocket.cxx?r1=1.100&r2=1.101
+$OpenBSD: patch-yasocket_cxx,v 1.3 2017/08/28 08:31:29 ajacoutot Exp $
 
 Index: yasocket.cxx
 --- yasocket.cxx.orig
 +++ yasocket.cxx
-@@ -20,6 +20,7 @@
+@@ -21,6 +21,7 @@
  #include "Toolkit.h"
  #include "snmp.h"
  #include "gk.h"
@@ -13,19 +11,3 @@ Index: yasocket.cxx
  
  #ifdef _WIN32
  #	ifndef SHUT_RDWR
-@@ -636,7 +637,14 @@ int YaUDPSocket::os_recv(void * buf, int sz)
- 
- int YaUDPSocket::os_send(const void * buf, int sz)
- {
--	return ::sendto(os_handle, buf, sz, 0, (struct sockaddr *)&sendaddr, sizeof(sendaddr));
-+	// must pass short len when sending to IPv4 address on Solaris 11, OpenBSD and NetBSD
-+	// sizeof(sockaddr) would OK on Linux and FreeBSD
-+	size_t addr_len = sizeof(sockaddr_in);
-+#ifdef hasIPV6
-+	if (((struct sockaddr*)&sendaddr)->sa_family == AF_INET6)
-+		addr_len = sizeof(sockaddr_in6);
-+#endif  // hasIPV6
-+	return ::sendto(os_handle, buf, sz, 0, (struct sockaddr *)&sendaddr, addr_len);
- }
- 
- #else // LARGE_FDSET
