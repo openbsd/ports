@@ -1,0 +1,16 @@
+$OpenBSD: patch-extconf_rb,v 1.1 2017/08/28 00:46:07 jeremy Exp $
+
+Support ruby 2.0+.
+
+Index: extconf.rb
+--- extconf.rb.orig
++++ extconf.rb
+@@ -23,7 +23,7 @@ makefile += "OBJS=       $(SRCS:.c=.o)\n\n"
+ 
+ makefile += ".c.o:\n"
+ 
+-if RUBY_VERSION =~ /1.9/ then
++if RUBY_VERSION !~ /1.8/ then
+     makefile += "	$(CC) $(CFLAGS) -c $< -I #{$topdir} -I #{$topdir}/#{RUBY_PLATFORM} -DRUBY_19\n\n"
+ else
+     makefile += "	$(CC) $(CFLAGS) -c $< -I #{$topdir} \n\n"
