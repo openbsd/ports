@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2016/04/19 07:39:16 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.13 2017/08/28 05:21:22 dcoppa Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.travis/
@@ -9,13 +9,13 @@ ${GEM_LIB}/gems/${DISTNAME}/CHANGELOG.md
 ${GEM_LIB}/gems/${DISTNAME}/Gemfile
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE
 ${GEM_LIB}/gems/${DISTNAME}/README.md
-${GEM_LIB}/gems/${DISTNAME}/Rakefile
 ${GEM_LIB}/gems/${DISTNAME}/benchmarking/
 ${GEM_LIB}/gems/${DISTNAME}/benchmarking/logging.rb
 ${GEM_LIB}/gems/${DISTNAME}/benchmarking/pipeline.rb
 ${GEM_LIB}/gems/${DISTNAME}/benchmarking/speed.rb
 ${GEM_LIB}/gems/${DISTNAME}/benchmarking/suite.rb
 ${GEM_LIB}/gems/${DISTNAME}/benchmarking/worker.rb
+${GEM_LIB}/gems/${DISTNAME}/bors.toml
 ${GEM_LIB}/gems/${DISTNAME}/examples/
 ${GEM_LIB}/gems/${DISTNAME}/examples/basic.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/consistency.rb
@@ -48,6 +48,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/redis/hash_ring.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/redis/pipeline.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/redis/subscribe.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/redis/version.rb
+${GEM_LIB}/gems/${DISTNAME}/makefile
 ${GEM_LIB}/gems/${DISTNAME}/redis.gemspec
 ${GEM_LIB}/gems/${DISTNAME}/test/
 ${GEM_LIB}/gems/${DISTNAME}/test/bitpos_test.rb
