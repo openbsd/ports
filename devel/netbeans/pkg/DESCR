@@ -1,6 +1,7 @@
-The NetBeans IDE is a multi-platform, integrated development
-environment consisting of an open-source IDE and an application
+NetBeans is a multi-platform, integrated development environment
+consisting of an open-source IDE and an application
 platform that enable developers to create web, enterprise, desktop,
-and mobile applications using the Java platform, as well as JavaFX,
+and mobile applications using the JavaSE platform and JavaFX,
+with optional support available within the IDE for Java EE,
 PHP, JavaScript and Ajax, Ruby and Ruby on Rails, Groovy and Grails,
-and C/C++.
+C/C++ and more.

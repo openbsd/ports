@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.30 2017/04/12 19:29:48 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.31 2017/08/28 20:57:06 ian Exp $
 
 COMMENT=		NetBeans Java IDE
 
 V=			8.2
 DISTNAME=		netbeans-${V}
 CATEGORIES=		devel
+REVISION=		0
 
 HOMEPAGE=		https://www.netbeans.org/
 
