@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.60 2017/07/11 23:04:43 sthen Exp $
+@comment $OpenBSD: PLIST-server,v 1.61 2017/08/28 21:39:14 sthen Exp $
 @conflict dovecot-sqlite-*
 @pkgpath mail/dovecot
 @pkgpath mail/dovecot,-server,bdb
@@ -67,6 +67,7 @@ include/dovecot/base64.h
 include/dovecot/bits.h
 include/dovecot/bsearch-insert-pos.h
 include/dovecot/buffer.h
+include/dovecot/byteorder.h
 include/dovecot/charset-utf8.h
 include/dovecot/child-wait.h
 include/dovecot/client-common.h
@@ -903,6 +904,7 @@ share/doc/dovecot/wiki/Pigeonhole.Sieve.Troubleshooting.txt
 share/doc/dovecot/wiki/Pigeonhole.Sieve.Usage.txt
 share/doc/dovecot/wiki/Pigeonhole.Sieve.txt
 share/doc/dovecot/wiki/Pigeonhole.txt
+share/doc/dovecot/wiki/Plugins.Apparmor.txt
 share/doc/dovecot/wiki/Plugins.Autocreate.txt
 share/doc/dovecot/wiki/Plugins.Compress.txt
 share/doc/dovecot/wiki/Plugins.Expire.txt
@@ -918,6 +920,7 @@ share/doc/dovecot/wiki/Plugins.MailFilter.txt
 share/doc/dovecot/wiki/Plugins.MailLog.txt
 share/doc/dovecot/wiki/Plugins.MailboxAlias.txt
 share/doc/dovecot/wiki/Plugins.Notify.txt
+share/doc/dovecot/wiki/Plugins.NotifyStatus.txt
 share/doc/dovecot/wiki/Plugins.PushNotification.txt
 share/doc/dovecot/wiki/Plugins.QuotaClone.txt
 share/doc/dovecot/wiki/Plugins.Snarf.txt
