@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.829 2017/08/10 20:37:45 feinerer Exp $
+# $OpenBSD: Makefile,v 1.830 2017/08/28 11:45:57 sthen Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -573,6 +573,5 @@
      SUBDIR += xapian-omega
      SUBDIR += xcache
      SUBDIR += youtube-dl
-     SUBDIR += zendframework
 
 .include <bsd.port.subdir.mk>

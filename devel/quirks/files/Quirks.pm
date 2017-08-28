@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.522 2017/08/27 16:34:25 rsadowski Exp $
+# $OpenBSD: Quirks.pm,v 1.523 2017/08/28 11:45:57 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1107,6 +1107,7 @@ my $obsolete_reason = {
 	'leveldb' => 5,
 	'py-graphics' => 3,
 	'akode' => 5,
+	'zendframework' => 5,
 };
 
 # reasons for obsolete packages
