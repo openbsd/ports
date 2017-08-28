@@ -1,9 +1,9 @@
-$OpenBSD: patch-daily_sh,v 1.17 2017/07/30 17:05:54 sthen Exp $
+$OpenBSD: patch-daily_sh,v 1.18 2017/08/28 11:47:03 sthen Exp $
 
 Index: daily.sh
 --- daily.sh.orig
 +++ daily.sh
-@@ -25,10 +25,10 @@ LIBRENMS_DIR=$(dirname "$DAILY_SCRIPT")
+@@ -26,10 +26,10 @@ COMPOSER="php ${LIBRENMS_DIR}/scripts/composer_wrapper
  
  # set log_file, using librenms $config['log_dir'], if set
  # otherwise we default to <LibreNMS Install Directory>/logs
@@ -16,7 +16,7 @@ Index: daily.sh
  LIBRENMS_USER_ID=$(id -u "$LIBRENMS_USER")
  
  
-@@ -70,7 +70,7 @@ status_run() {
+@@ -71,7 +71,7 @@ status_run() {
      else
          printf " \033[0;31mFAIL\033[0m\n";
          if [[ "${arg_option}" == "update" ]]; then
@@ -25,7 +25,7 @@ Index: daily.sh
          fi
      fi
      return ${exit_code}
-@@ -91,7 +91,7 @@ call_daily_php() {
+@@ -92,7 +92,7 @@ call_daily_php() {
      local args=( "$@" );
  
      for arg in "${args[@]}"; do
@@ -34,16 +34,16 @@ Index: daily.sh
      done
  }
  
-@@ -123,7 +123,7 @@ main () {
+@@ -148,7 +148,7 @@ main () {
      fi
  
      if [[ -z "$arg" ]]; then
 -        up=$(php daily.php -f update >&2; echo $?)
 +        up=$(%PHP% daily.php -f update >&2; echo $?)
          if [[ "$up" == "0" ]]; then
-             $DAILY_SCRIPT no-code-update
-             exit
-@@ -163,12 +163,12 @@ main () {
+             ${DAILY_SCRIPT} no-code-update
+             set_notification update 0  # make sure there are no update notifications if update is disabled
+@@ -206,12 +206,12 @@ main () {
              no-code-update)
                  # Updates of the code are disabled, just check for schema updates
                  # and clean up the db.

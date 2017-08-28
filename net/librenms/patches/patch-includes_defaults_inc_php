@@ -1,4 +1,4 @@
-$OpenBSD: patch-includes_defaults_inc_php,v 1.24 2017/06/25 22:34:36 sthen Exp $
+$OpenBSD: patch-includes_defaults_inc_php,v 1.25 2017/08/28 11:47:03 sthen Exp $
 
 Index: includes/defaults.inc.php
 --- includes/defaults.inc.php.orig
@@ -41,7 +41,7 @@ Index: includes/defaults.inc.php
  
  // Memcached - Keep immediate statistics
  $config['memcached']['enable'] = false;
-@@ -477,11 +477,11 @@ $config['billing']['bill_autoadd'] = 0;
+@@ -499,11 +499,11 @@ $config['billing']['bill_autoadd'] = 0;
  $config['billing']['base'] = 1000;
  // Set the base to divider bytes to kB, MB, GB ,... (1000|1024)
  // External Integration
@@ -56,7 +56,7 @@ Index: includes/defaults.inc.php
  $config['smokeping']['pings']             = 20;
  // $config['oxidized']['enabled']         = FALSE;//Set to TRUE
  // $config['oxidized']['url']             = 'http://127.0.0.1:8888';// Set the Oxidized rest URL
-@@ -489,7 +489,7 @@ $config['smokeping']['pings']             = 20;
+@@ -511,7 +511,7 @@ $config['smokeping']['pings']             = 20;
  // NFSen RRD dir.
  $config['nfsen_enable'] = 0;
  // $config['nfsen_split_char']   = "_";
@@ -65,7 +65,7 @@ Index: includes/defaults.inc.php
  // $config['nfsen_suffix']   = "_yourdomain_com";
  // Location Mapping
  // Use this feature to map ugly locations to pretty locations
-@@ -828,7 +828,7 @@ $config['api_demo'] = 0;
+@@ -850,7 +850,7 @@ $config['api_demo'] = 0;
  // Set this to 1 if you want to disable some untrusting features for the API
  // Distributed Poller-Settings
  $config['distributed_poller']                = false;

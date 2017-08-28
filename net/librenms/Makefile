@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.44 2017/08/22 10:16:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.45 2017/08/28 11:47:03 sthen Exp $
 
 COMMENT =	auto-discovering network management/monitoring system
 
 GH_ACCOUNT =	librenms
 GH_PROJECT =	librenms
-GH_TAGNAME =	1.30.01
+GH_TAGNAME =	1.31
 EPOCH =		0
 
 CATEGORIES =	net www
@@ -31,8 +31,6 @@ RUN_DEPENDS =	databases/py-mysql \
 		net/mtr \
 		net/net-snmp \
 		net/nmap \
-		net/pear-Net-IPv4 \
-		net/pear-Net-IPv6 \
 		net/rrdtool \
 		shells/bash \
 		sysutils/ipmitool
