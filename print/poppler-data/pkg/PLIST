@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2014/08/25 19:19:09 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2017/08/28 19:06:35 kili Exp $
 share/pkgconfig/poppler-data.pc
 share/poppler/
 share/poppler/cMap/
@@ -10,6 +10,7 @@ share/poppler/cMap/Adobe-CNS1/Adobe-CNS1-3
 share/poppler/cMap/Adobe-CNS1/Adobe-CNS1-4
 share/poppler/cMap/Adobe-CNS1/Adobe-CNS1-5
 share/poppler/cMap/Adobe-CNS1/Adobe-CNS1-6
+share/poppler/cMap/Adobe-CNS1/Adobe-CNS1-7
 share/poppler/cMap/Adobe-CNS1/Adobe-CNS1-B5pc
 share/poppler/cMap/Adobe-CNS1/Adobe-CNS1-ETen-B5
 share/poppler/cMap/Adobe-CNS1/Adobe-CNS1-H-CID
