@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2016/03/20 16:12:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2017/08/28 14:04:58 jeremy Exp $
 
 COMMENT =		fast, intuitive file opening in VIM
 
 V =			1.11.2
 DISTNAME =		vim-command-t-${V}
+REVISION =		0
 
 CATEGORIES =		devel editors
 
@@ -18,8 +19,6 @@ WANTLIB +=		c m ${MODRUBY_WANTLIB}
 
 MASTER_SITES =		https://spacehopper.org/mirrors/
 
-# Must stay in sync with the version vim is using!
-MODRUBY_REV =		1.8
 MODULES =		lang/ruby
 
 RUN_DEPENDS =		vim-*-ruby:editors/vim,no_x11,ruby
