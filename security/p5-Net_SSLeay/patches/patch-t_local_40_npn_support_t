@@ -1,0 +1,13 @@
+$OpenBSD: patch-t_local_40_npn_support_t,v 1.1 2017/08/28 20:55:01 bluhm Exp $
+
+Index: t/local/40_npn_support.t
+--- t/local/40_npn_support.t.orig
++++ t/local/40_npn_support.t
+@@ -11,6 +11,7 @@ use Config;
+ 
+ BEGIN {
+   plan skip_all => "openssl 1.0.1 required" unless Net::SSLeay::SSLeay >= 0x10001000;
++  plan skip_all => "libressl removed support for NPN" if Net::SSLeay::constant("LIBRESSL_VERSION_NUMBER");
+   plan skip_all => "fork() not supported on $^O" unless $Config{d_fork};
+ }
+ 

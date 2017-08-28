@@ -1,0 +1,28 @@
+$OpenBSD: patch-SSLeay_xs,v 1.12 2017/08/28 20:55:01 bluhm Exp $
+
+next_proto_helper_protodata2AV() and next_proto_helper_AV2protodata()
+are used by NEXTPROTONEG and TLSEXT.
+
+Index: SSLeay.xs
+--- SSLeay.xs.orig
++++ SSLeay.xs
+@@ -870,7 +870,7 @@ int ssleay_session_secret_cb_invoke(SSL* s, void* secr
+ 
+ #endif
+ 
+-#if OPENSSL_VERSION_NUMBER >= 0x10001000L && !defined(OPENSSL_NO_NEXTPROTONEG)
++#if (OPENSSL_VERSION_NUMBER >= 0x10001000L && !defined(OPENSSL_NO_NEXTPROTONEG)) || (OPENSSL_VERSION_NUMBER >= 0x10002000L && !defined(OPENSSL_NO_TLSEXT))
+ 
+ int next_proto_helper_AV2protodata(AV * list, unsigned char *out)
+ {
+@@ -904,6 +904,10 @@ int next_proto_helper_protodata2AV(AV * list, const un
+     }
+     return 1;
+ }
++
++#endif
++
++#if OPENSSL_VERSION_NUMBER >= 0x10001000L && !defined(OPENSSL_NO_NEXTPROTONEG)
+ 
+ int next_proto_select_cb_invoke(SSL *ssl, unsigned char **out, unsigned char *outlen,
+                                 const unsigned char *in, unsigned int inlen, void *arg)
