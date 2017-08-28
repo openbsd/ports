@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.157 2017/08/10 18:12:46 stsp Exp $
+# $OpenBSD: Makefile,v 1.158 2017/08/28 13:58:05 jeremy Exp $
 
 COMMENT-main=		subversion revision control system
 COMMENT-perl=		perl interface to subversion
@@ -20,6 +20,8 @@ FULLPKGNAME-ap2=	ap2-subversion-${VERSION}
 FULLPKGPATH-ap2=	devel/subversion,-ap2
 FULLPKGNAME-gnome-keyring= gnome-keyring-subversion-${VERSION}
 FULLPKGPATH-gnome-keyring= devel/subversion,-gnome-keyring
+
+REVISION-ruby=	0
 
 SO_VERSION=	2.0
 SVN_LIBS=	svn_client-1 svn_delta-1 svn_diff-1 svn_fs-1 \
@@ -109,7 +111,6 @@ LIB_DEPENDS-python=	${MODPY_LIB_DEPENDS} ${MODGETTEXT_LIB_DEPENDS} \
 WANTLIB-python +=	${_lib}>=${SO_VERSION}
 .endfor
 
-MODRUBY_REV=		1.8
 WANTLIB-ruby=		${WANTLIB} apr-1 aprutil-1 \
 			db m sasl2 serf-1>=1.0 sqlite3 \
 			${MODRUBY_WANTLIB}
@@ -177,7 +178,7 @@ CONFIGURE_ARGS+=--without-gnome-keyring
 
 TEST_DEPENDS=${MODPY_RUN_DEPENDS}
 TEST_DEPENDS+=	${FULLPKGNAME-gnome-keyring}:${BUILD_PKGPATH},-gnome-keyring
-SUBST_VARS+=	LOCALBASE SO_VERSION
+SUBST_VARS+=	LOCALBASE SO_VERSION MODRUBY_BINREV
 
 pre-patch:
 	@ln -s ${MODPY_BIN} ${WRKDIR}/bin/python
