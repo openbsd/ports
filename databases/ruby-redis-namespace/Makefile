@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2015/06/19 14:05:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2017/08/28 05:16:33 dcoppa Exp $
 
 COMMENT=		Redis::Namespace class for namespacing calls to Redis
 
-DISTNAME=		redis-namespace-1.5.2
+DISTNAME=		redis-namespace-1.5.3
 CATEGORIES=		databases
 
 HOMEPAGE=		https://github.com/resque/redis-namespace
@@ -13,6 +13,9 @@ PERMIT_PACKAGE_CDROM=   Yes
 MODULES=		lang/ruby
 
 CONFIGURE_STYLE=	ruby gem
+
+# XXX until gemspec is fixed
+GEM_FLAGS=		--ignore-dependencies
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		databases/ruby-redis,${MODRUBY_FLAVOR}
