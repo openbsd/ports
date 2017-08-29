@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Rebuild.pm,v 1.2 2013/10/06 13:33:38 espie Exp $
+# $OpenBSD: Rebuild.pm,v 1.3 2017/08/29 14:22:10 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -27,7 +27,7 @@ sub init
 
 	require OpenBSD::PackageRepository;
 	$self->{repository} = OpenBSD::PackageRepository->new(
-	    "file:/$self->{fullrepo}");
+	    "file:/$self->{fullrepo}", $self->{state});
 	# this is just a dummy core, for running quick pipes
 	$self->{core} = DPB::Core->new_noreg('localhost');
 }
