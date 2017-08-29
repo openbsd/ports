@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2017/08/22 11:10:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.50 2017/08/29 11:36:19 danj Exp $
 
 # snapshots are only available for amd64 and i386, for now
 ONLY_FOR_ARCHS =	amd64 i386
@@ -20,7 +20,7 @@ BV =			${BV-${MACHINE_ARCH}}
 PKGNAME =		rust-${V}
 PKGNAME-main =		rust-${V}
 PKGNAME-doc =		rust-doc-${V}
-REVISION-main =		0
+REVISION-main =		1
 
 MULTI_PACKAGES =	-main -doc
 
@@ -63,8 +63,13 @@ MODULES +=		gcc4 \
 			lang/python
 MODPY_RUNDEP =		No
 
-BUILD_DEPENDS +=	devel/llvm \
-			devel/cmake
+BUILD_DEPENDS +=	devel/cmake
+#BUILD_DEPENDS +=	devel/llvm
+
+.if ! ${BUILD_DEPENDS:Mdevel/llvm}
+# use ninja to compile embedded llvm
+BUILD_DEPENDS +=	devel/ninja
+.endif
 
 LIB_DEPENDS +=		net/curl \
 			devel/libgit2/libgit2 \
@@ -154,9 +159,15 @@ do-configure:
 	echo '[dist]' >>${WRKBUILD}/config.toml
 	echo 'src-tarball = false' >>${WRKBUILD}/config.toml
 
+	echo '[llvm]' >>${WRKBUILD}/config.toml
+	echo 'static-libstdcpp = false' >>${WRKBUILD}/config.toml
+	echo 'ninja = true' >>${WRKBUILD}/config.toml
+
 	echo '[target.${TRIPLE_ARCH}]' >>${WRKBUILD}/config.toml
+.if ${BUILD_DEPENDS:Mdevel/llvm}
 	echo 'llvm-config = "${LOCALBASE}/bin/llvm-config"' \
 		>>${WRKBUILD}/config.toml
+.endif
 
 	rm -rf ${WRKDIR}/modgcc-libs
 	mkdir -p ${WRKDIR}/modgcc-libs
