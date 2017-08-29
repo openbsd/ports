@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.25 2017/08/24 08:53:02 patrick Exp $
+#	$OpenBSD: Makefile,v 1.26 2017/08/29 07:14:50 jsg Exp $
 
 BROKEN-sparc64=	Error: the specified option is not accepted in ISB at operand 1 -- isb sy
 
@@ -6,8 +6,7 @@ FLAVORS=	aarch64 arm
 FLAVOR?=	arm
 
 COMMENT=	U-Boot firmware
-VERSION=	2017.09-rc2
-REVISION=	1
+VERSION=	2017.09-rc3
 DISTNAME=	u-boot-${VERSION}
 PKGNAME=	u-boot-${FLAVOR}-${VERSION:S/-//}
 FULLPKGNAME=	${PKGNAME}
@@ -50,7 +49,9 @@ NO_TEST=	Yes
 
 .if "${FLAVOR}" == "aarch64"
 SUNXI64=\
+	a64-olinuxino \
 	bananapi_m64 \
+	nanopi_a64 \
 	nanopi_neo2 \
 	orangepi_pc2 \
 	orangepi_prime \
@@ -73,6 +74,7 @@ SUNXI=\
 	A10s-OLinuXino-M \
 	A20-OLinuXino-Lime \
 	A20-OLinuXino-Lime2 \
+	A20-OLinuXino-Lime2-eMMC \
 	A20-OLinuXino_MICRO \
 	Bananapi \
 	Bananapro \
@@ -135,7 +137,6 @@ FILES=\
 	spl/sunxi-spl.bin
 
 pre-build:
-	${SUBST_CMD} ${WRKBUILD}/tools/Makefile
 .for f in ${MODPY_ADJ_FILES}
 	${MODPY_BIN_ADJ} ${WRKSRC}/${f}
 .endfor

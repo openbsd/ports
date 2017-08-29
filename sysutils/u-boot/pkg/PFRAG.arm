@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.arm,v 1.9 2017/08/24 08:53:02 patrick Exp $
+@comment $OpenBSD: PFRAG.arm,v 1.10 2017/08/29 07:14:50 jsg Exp $
 @pkgpath sysutils/u-boot,
 share/u-boot/
 share/u-boot/A10-OLinuXino-Lime/
@@ -19,6 +19,12 @@ share/u-boot/A20-OLinuXino-Lime/u-boot
 share/u-boot/A20-OLinuXino-Lime/u-boot-sunxi-with-spl.bin
 share/u-boot/A20-OLinuXino-Lime/u-boot.bin
 share/u-boot/A20-OLinuXino-Lime/u-boot.img
+share/u-boot/A20-OLinuXino-Lime2-eMMC/
+share/u-boot/A20-OLinuXino-Lime2-eMMC/sunxi-spl.bin
+share/u-boot/A20-OLinuXino-Lime2-eMMC/u-boot
+share/u-boot/A20-OLinuXino-Lime2-eMMC/u-boot-sunxi-with-spl.bin
+share/u-boot/A20-OLinuXino-Lime2-eMMC/u-boot.bin
+share/u-boot/A20-OLinuXino-Lime2-eMMC/u-boot.img
 share/u-boot/A20-OLinuXino-Lime2/
 share/u-boot/A20-OLinuXino-Lime2/sunxi-spl.bin
 share/u-boot/A20-OLinuXino-Lime2/u-boot
