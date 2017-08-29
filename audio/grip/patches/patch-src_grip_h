@@ -1,12 +1,13 @@
-$OpenBSD: patch-src_grip_h,v 1.3 2013/01/17 13:30:32 ajacoutot Exp $
---- src/grip.h.orig	Sat Jan 29 19:34:17 2005
-+++ src/grip.h	Thu Jan 17 13:44:53 2013
+$OpenBSD: patch-src_grip_h,v 1.4 2017/08/29 16:43:59 landry Exp $
+Index: src/grip.h
+--- src/grip.h.orig
++++ src/grip.h
 @@ -49,7 +49,7 @@
  
  #define RRand(range) (random()%(range))
  
--#if defined(__linux__) || defined(__FreeBSD__) || defined(__NetBSD__) || defined(__osf__)  /* __osf__ ?? */
-+#if defined(__linux__) || defined(__FreeBSD__) || defined(__NetBSD__) || defined(__osf__) || defined(__OpenBSD__)  /* __osf__ ?? */
+-#if defined(__linux__) || defined(__FreeBSD__) || defined(__GLIBC__) || defined(__NetBSD__) || defined(__osf__)  /* __osf__ ?? */
++#if defined(__linux__) || defined(__FreeBSD__) || defined(__GLIBC__) || defined(__NetBSD__) || defined(__OpenBSD__) || defined(__osf__)  /* __osf__ ?? */
  
  #define MAILER "/usr/sbin/sendmail -i -t"
  
