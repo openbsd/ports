@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2016/03/18 21:38:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2017/08/29 13:16:44 ajacoutot Exp $
 
 COMMENT =		AACS support library for Blu-ray playback
 
-V =			0.8.1
-REVISION =		0
+V =			0.9.0
 DISTNAME =		libaacs-${V}
 
 CATEGORIES =		multimedia
@@ -17,7 +16,7 @@ EXTRACT_SUFX =		.tar.bz2
 PERMIT_PACKAGE_CDROM =	Free speech issue
 PERMIT_PACKAGE_FTP =	Yes
 
-SHARED_LIBS +=		aacs	2.0	# 5.1
+SHARED_LIBS +=		aacs	3.0	# 5.1
 
 WANTLIB +=		c gcrypt gpg-error
 
