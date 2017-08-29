@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/08/29 16:59:02 landry Exp $
+go-pkg/
+go-pkg/pkg/
+${MODGO_PACKAGES}/
+${MODGO_PACKAGES}/github.com/
+${MODGO_PACKAGES}/github.com/dchest/
+${MODGO_PACKAGES}/github.com/dchest/siphash.a
+${MODGO_SOURCES}/
+${MODGO_SOURCES}/github.com/
+${MODGO_SOURCES}/github.com/dchest/
+${MODGO_SOURCES}/github.com/dchest/siphash/
+${MODGO_SOURCES}/github.com/dchest/siphash/README
+${MODGO_SOURCES}/github.com/dchest/siphash/hash.go
+${MODGO_SOURCES}/github.com/dchest/siphash/siphash.go
+${MODGO_SOURCES}/github.com/dchest/siphash/siphash_test.go
