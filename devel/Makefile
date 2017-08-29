@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1640 2017/08/15 15:56:29 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.1641 2017/08/29 17:03:59 landry Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -156,6 +156,7 @@
      SUBDIR += gmc4cc
      SUBDIR += gmp
      SUBDIR += go-check-v1
+     SUBDIR += go-goptlib
      SUBDIR += go-tools
      SUBDIR += gobject-introspection
      SUBDIR += goffice
@@ -1448,6 +1449,7 @@
      SUBDIR += py-pretend
      SUBDIR += py-pretend,python3
      SUBDIR += py-prioritized_methods
+     SUBDIR += py-progress
      SUBDIR += py-progressbar
      SUBDIR += py-prompt_toolkit
      SUBDIR += py-prompt_toolkit,python3

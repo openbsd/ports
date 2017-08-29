@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1020 2017/08/15 16:06:04 danj Exp $
+# $OpenBSD: Makefile,v 1.1021 2017/08/29 17:03:59 landry Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -293,6 +293,7 @@
      SUBDIR += ntopng
      SUBDIR += ntp
      SUBDIR += nylon
+     SUBDIR += obfs4proxy
      SUBDIR += ocserv
      SUBDIR += oggfwd
      SUBDIR += oidentd
