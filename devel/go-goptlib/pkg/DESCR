@@ -1,0 +1,17 @@
+goptlib is a library for writing Tor pluggable transports in Go.
+
+https://spec.torproject.org/pt-spec
+https://gitweb.torproject.org/torspec.git/tree/proposals/196-transport-control-ports.txt
+https://gitweb.torproject.org/torspec.git/tree/proposals/217-ext-orport-auth.txt
+https://gitweb.torproject.org/torspec.git/tree/proposals/232-pluggable-transports-through-proxy.txt
+
+There is browseable documentation here:
+https://godoc.org/git.torproject.org/pluggable-transports/goptlib.git
+
+Report bugs to the tor-dev@lists.torproject.org mailing list or to the
+bug tracker at https://trac.torproject.org/projects/tor.
+
+To the extent possible under law, the authors have dedicated all
+copyright and related and neighboring rights to this software to the
+public domain worldwide. This software is distributed without any
+warranty. See COPYING.

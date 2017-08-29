@@ -1,0 +1,26 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/08/29 16:58:06 landry Exp $
+go-pkg/
+go-pkg/pkg/
+${MODGO_PACKAGES}/
+${MODGO_PACKAGES}/git.torproject.org/
+${MODGO_PACKAGES}/git.torproject.org/pluggable-transports/
+${MODGO_PACKAGES}/git.torproject.org/pluggable-transports/goptlib.git.a
+${MODGO_SOURCES}/
+${MODGO_SOURCES}/git.torproject.org/
+${MODGO_SOURCES}/git.torproject.org/pluggable-transports/
+${MODGO_SOURCES}/git.torproject.org/pluggable-transports/goptlib.git/
+${MODGO_SOURCES}/git.torproject.org/pluggable-transports/goptlib.git/.gitignore
+${MODGO_SOURCES}/git.torproject.org/pluggable-transports/goptlib.git/COPYING
+${MODGO_SOURCES}/git.torproject.org/pluggable-transports/goptlib.git/README
+${MODGO_SOURCES}/git.torproject.org/pluggable-transports/goptlib.git/args.go
+${MODGO_SOURCES}/git.torproject.org/pluggable-transports/goptlib.git/args_test.go
+${MODGO_SOURCES}/git.torproject.org/pluggable-transports/goptlib.git/examples/
+${MODGO_SOURCES}/git.torproject.org/pluggable-transports/goptlib.git/examples/dummy-client/
+${MODGO_SOURCES}/git.torproject.org/pluggable-transports/goptlib.git/examples/dummy-client/dummy-client.go
+${MODGO_SOURCES}/git.torproject.org/pluggable-transports/goptlib.git/examples/dummy-server/
+${MODGO_SOURCES}/git.torproject.org/pluggable-transports/goptlib.git/examples/dummy-server/dummy-server.go
+${MODGO_SOURCES}/git.torproject.org/pluggable-transports/goptlib.git/proxy_test.go
+${MODGO_SOURCES}/git.torproject.org/pluggable-transports/goptlib.git/pt.go
+${MODGO_SOURCES}/git.torproject.org/pluggable-transports/goptlib.git/pt_test.go
+${MODGO_SOURCES}/git.torproject.org/pluggable-transports/goptlib.git/socks.go
+${MODGO_SOURCES}/git.torproject.org/pluggable-transports/goptlib.git/socks_test.go
