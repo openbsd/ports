@@ -1,0 +1,18 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/08/29 16:47:27 landry Exp $
+lib/python${MODPY_VERSION}/site-packages/progress/
+lib/python${MODPY_VERSION}/site-packages/progress-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/progress-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/progress-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/progress-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/progress-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/progress/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/progress/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/progress/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/progress/${MODPY_PYCACHE}bar.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/progress/${MODPY_PYCACHE}counter.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/progress/${MODPY_PYCACHE}helpers.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/progress/${MODPY_PYCACHE}spinner.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/progress/bar.py
+lib/python${MODPY_VERSION}/site-packages/progress/counter.py
+lib/python${MODPY_VERSION}/site-packages/progress/helpers.py
+lib/python${MODPY_VERSION}/site-packages/progress/spinner.py
