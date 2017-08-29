@@ -1,8 +1,21 @@
-@comment $OpenBSD: PLIST,v 1.3 2016/09/01 13:33:05 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.4 2017/08/29 23:19:11 sthen Exp $
 bin/yle-dl
-share/doc/yle-dl/
-share/doc/yle-dl/COPYING
-share/doc/yle-dl/README.fi
-share/doc/yle-dl/README.md
-share/yle-dl/
-share/yle-dl/AdobeHDS.php
+lib/python${MODPY_VERSION}/site-packages/yle_dl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/yle_dl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/yle_dl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/yle_dl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/yle_dl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/yle_dl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/yle_dl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/yledl/
+lib/python${MODPY_VERSION}/site-packages/yledl/AdobeHDS.php
+lib/python${MODPY_VERSION}/site-packages/yledl/__init__.py
+lib/python${MODPY_VERSION}/site-packages/yledl/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/yledl/downloaders.py
+lib/python${MODPY_VERSION}/site-packages/yledl/downloaders.pyc
+lib/python${MODPY_VERSION}/site-packages/yledl/utils.py
+lib/python${MODPY_VERSION}/site-packages/yledl/utils.pyc
+lib/python${MODPY_VERSION}/site-packages/yledl/version.py
+lib/python${MODPY_VERSION}/site-packages/yledl/version.pyc
+lib/python${MODPY_VERSION}/site-packages/yledl/yledl.py
+lib/python${MODPY_VERSION}/site-packages/yledl/yledl.pyc
