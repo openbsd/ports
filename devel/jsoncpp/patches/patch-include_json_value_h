@@ -1,0 +1,25 @@
+$OpenBSD: patch-include_json_value_h,v 1.1 2017/08/29 09:14:16 dcoppa Exp $
+
+XXX Revert commit 23c44d9f9eed8a7ff95daca9bd44526067c144c0 to avoid
+undefined references when linking cmake.
+
+commit 23c44d9f9eed8a7ff95daca9bd44526067c144c0
+Author: Dhruv Paranjape <lord.dhruv@gmail.com>
+Date:   Sat Jul 8 12:00:47 2017
+
+overload append function for R value references.
+
+Index: include/json/value.h
+--- include/json/value.h.orig
++++ include/json/value.h
+@@ -449,10 +449,6 @@ Json::Value obj_value(Json::objectValue); // {}
+   /// Equivalent to jsonvalue[jsonvalue.size()] = value;
+   Value& append(const Value& value);
+ 
+-#if JSON_HAS_RVALUE_REFERENCES
+-  Value& append(Value&& value);
+-#endif
+-
+   /// Access an object value by name, create a null member if it does not exist.
+   /// \note Because of our implementation, keys are limited to 2^30 -1 chars.
+   ///  Exceeding that will cause an exception.

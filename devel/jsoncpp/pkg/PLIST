@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/03/24 13:21:45 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.3 2017/08/29 09:14:16 dcoppa Exp $
 include/jsoncpp/
 include/jsoncpp/json/
 include/jsoncpp/json/allocator.h
@@ -17,5 +17,4 @@ lib/pkgconfig/jsoncpp.pc
 share/doc/jsoncpp/
 share/doc/jsoncpp/AUTHORS
 share/doc/jsoncpp/LICENSE
-share/doc/jsoncpp/NEWS.txt
 share/doc/jsoncpp/README.md

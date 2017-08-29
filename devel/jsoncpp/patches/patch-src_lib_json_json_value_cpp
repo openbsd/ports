@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_lib_json_json_value_cpp,v 1.1 2017/08/29 09:14:16 dcoppa Exp $
+
+XXX Revert commit 23c44d9f9eed8a7ff95daca9bd44526067c144c0 to avoid
+undefined references when linking cmake.
+
+commit 23c44d9f9eed8a7ff95daca9bd44526067c144c0
+Author: Dhruv Paranjape <lord.dhruv@gmail.com>
+Date:   Sat Jul 8 12:00:47 2017
+
+overload append function for R value references.
+
+Index: src/lib_json/json_value.cpp
+--- src/lib_json/json_value.cpp.orig
++++ src/lib_json/json_value.cpp
+@@ -1147,10 +1147,6 @@ Value const& Value::operator[](CppTL::ConstString cons
+ 
+ Value& Value::append(const Value& value) { return (*this)[size()] = value; }
+ 
+-#if JSON_HAS_RVALUE_REFERENCES
+-  Value& Value::append(Value&& value) { return (*this)[size()] = value; }
+-#endif
+-
+ Value Value::get(char const* key, char const* cend, Value const& defaultValue) const
+ {
+   Value const* found = find(key, cend);
