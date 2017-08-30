@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.8 2016/05/12 09:27:39 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.9 2017/08/30 05:37:36 dcoppa Exp $
 
 COMMENT =		kevent based inotify
 
-DISTNAME =		libinotify-20160503
+GH_ACCOUNT =		libinotify-kqueue
+GH_PROJECT =		libinotify-kqueue
+GH_TAGNAME =		20170711
+PKGNAME =		libinotify-${GH_TAGNAME}
 
-SHARED_LIBS =		inotify 2.0
+SHARED_LIBS =		inotify 2.1
 
 CATEGORIES =		devel
-
-HOMEPAGE =		https://github.com/wulf7/libinotify-kqueue
 
 MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 
@@ -16,10 +17,6 @@ MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =		pthread
-
-MASTER_SITES =		http://www.linklevel.net/distfiles/ \
-			http://ohvost.ru/dnl/
-WRKDIST =		${WRKDIR}/wulf7-libinotify-kqueue-c637d04
 
 BUILD_DEPENDS =		devel/libtool \
 			${MODGNU_AUTOCONF_DEPENDS} \
@@ -38,5 +35,8 @@ TEST_TARGET =		test
 pre-configure:
 	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autoreconf -f -i
+
+post-install:
+	@rm -rf ${WRKINST}${LOCALBASE}/lib/inotify/pkgconfig
 
 .include <bsd.port.mk>
