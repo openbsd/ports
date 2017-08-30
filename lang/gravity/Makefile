@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2017/07/09 18:33:22 bcallah Exp $
+# $OpenBSD: Makefile,v 1.3 2017/08/30 04:23:28 bcallah Exp $
 
-V =		0.2.8
+V =		0.3.0
 COMMENT =	small, high performance language with a modern syntax
 DISTNAME =	gravity-${V}
 CATEGORIES =	lang
@@ -17,7 +17,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c m
 
-COMPILER =		clang
+# Needs C11
+COMPILER =		base-clang ports-clang ports-gcc
 COMPILER_LANGS =	c
 
 USE_GMAKE =	Yes
