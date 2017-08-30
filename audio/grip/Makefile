@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.59 2017/08/29 16:43:59 landry Exp $
+# $OpenBSD: Makefile,v 1.60 2017/08/30 06:17:50 ajacoutot Exp $
 
-COMMENT=	front-end to external cd audio rippers and mp3 encoders
+COMMENT=		front-end to external cd audio rippers and mp3 encoders
 
-DISTNAME=	grip-3.5.2
-CATEGORIES=	audio
+DISTNAME=		grip-3.5.2
+CATEGORIES=		audio
+REVISION=		0
 
-HOMEPAGE=	http://sourceforge.net/projects/grip/
+HOMEPAGE=		http://sourceforge.net/projects/grip/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -24,20 +25,20 @@ WANTLIB += harfbuzz iconv ltdl lzma ncurses ogg pcre pixman-1
 WANTLIB += png pthread-stubs util vorbis vorbisfile xcb xcb-render
 WANTLIB += xcb-shm xml2
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=grip/}
-MODULES =	x11/gnome
-MODGNOME_TOOLS =	yelp desktop-file-utils
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=grip/}
+MODULES=		x11/gnome
+MODGNOME_TOOLS=		yelp desktop-file-utils
 
-LIB_DEPENDS=	audio/cdparanoia \
-		audio/id3lib \
-		devel/gettext \
-		devel/vte \
-		net/curl \
-		x11/gnome/libgnomeui
+LIB_DEPENDS=		audio/cdparanoia \
+			audio/id3lib \
+			devel/vte \
+			net/curl \
+			x11/gnome/libgnomeui
 
-RUN_DEPENDS=	audio/vorbis-tools \
+RUN_DEPENDS=		audio/vorbis-tools
 
-BUILD_DEPENDS =	devel/gettext-tools
+BUILD_DEPENDS=		devel/gettext-tools
+
 CONFIGURE_STYLE=	gnu
 
 .include <bsd.port.mk>
