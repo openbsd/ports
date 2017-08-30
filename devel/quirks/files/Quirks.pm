@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.523 2017/08/28 11:45:57 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.524 2017/08/30 15:25:58 rsadowski Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1108,6 +1108,9 @@ my $obsolete_reason = {
 	'py-graphics' => 3,
 	'akode' => 5,
 	'zendframework' => 5,
+	'kbilliards' => 5,
+	'knutclient' => 5,
+	'taxipilot' => 5,
 };
 
 # reasons for obsolete packages
