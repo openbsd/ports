@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2017/08/01 20:44:18 juanfra Exp $
+# $OpenBSD: Makefile,v 1.13 2017/08/30 22:43:54 juanfra Exp $
 
 COMMENT =		optimising static compiler for Python and Cython
 
-MODPY_EGG_VERSION =	0.26
+MODPY_EGG_VERSION =	0.26.1
 DISTNAME =		Cython-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:L}
 CATEGORIES =		lang
@@ -21,6 +21,9 @@ WANTLIB += pthread ${MODPY_WANTLIB}
 MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+
+FLAVORS =		python3
+FLAVOR ?=
 
 TEST_TARGET =		test
 
