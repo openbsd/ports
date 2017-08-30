@@ -1,0 +1,14 @@
+$OpenBSD: patch-es-core_src_components_ImageGridComponent_h,v 1.1 2017/08/30 15:09:12 rsadowski Exp $
+
+Index: es-core/src/components/ImageGridComponent.h
+--- es-core/src/components/ImageGridComponent.h.orig
++++ es-core/src/components/ImageGridComponent.h
+@@ -21,7 +21,7 @@ class ImageGridComponent : public IList<ImageGridData,
+ 	using IList<ImageGridData, T>::getTransform;
+ 	using IList<ImageGridData, T>::mSize;
+ 	using IList<ImageGridData, T>::mCursor;
+-	using IList<ImageGridData, T>::Entry;
++	using typename IList<ImageGridData, T>::Entry;
+ 	using IList<ImageGridData, T>::mWindow;
+ 
+ public:

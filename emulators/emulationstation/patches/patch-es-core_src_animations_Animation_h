@@ -1,0 +1,13 @@
+$OpenBSD: patch-es-core_src_animations_Animation_h,v 1.1 2017/08/30 15:09:12 rsadowski Exp $
+
+Index: es-core/src/animations/Animation.h
+--- es-core/src/animations/Animation.h.orig
++++ es-core/src/animations/Animation.h
+@@ -5,6 +5,7 @@
+ class Animation
+ {
+ public:
++	virtual ~Animation() = default;
+ 	virtual int getDuration() const = 0;
+ 	virtual void apply(float t) = 0;
+ };

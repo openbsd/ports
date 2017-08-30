@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2017/07/26 22:45:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2017/08/30 15:09:12 rsadowski Exp $
 
 COMMENT =		flexible keyboardless emulator frontend
 
@@ -23,6 +23,8 @@ REVISION =		0
 MODULES =		devel/cmake
 
 COMPILER =		gcc
+
+CXXFLAGS +=	-std=c++11 -Wno-inconsistent-missing-override
 
 BUILD_DEPENDS =		math/eigen3
 LIB_DEPENDS =		devel/boost \

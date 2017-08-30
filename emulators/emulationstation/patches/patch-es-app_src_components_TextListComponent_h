@@ -1,0 +1,14 @@
+$OpenBSD: patch-es-app_src_components_TextListComponent_h,v 1.1 2017/08/30 15:09:12 rsadowski Exp $
+
+Index: es-app/src/components/TextListComponent.h
+--- es-app/src/components/TextListComponent.h.orig
++++ es-app/src/components/TextListComponent.h
+@@ -31,7 +31,7 @@ class TextListComponent : public IList<TextListData, T
+ 	using IList<TextListData, T>::getTransform;
+ 	using IList<TextListData, T>::mSize;
+ 	using IList<TextListData, T>::mCursor;
+-	using IList<TextListData, T>::Entry;
++	using typename IList<TextListData, T>::Entry;
+ 
+ public:
+ 	using IList<TextListData, T>::size;
