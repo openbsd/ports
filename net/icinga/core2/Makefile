@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2017/07/26 22:45:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.66 2017/08/30 12:45:02 sthen Exp $
 
 BROKEN-arm =	needs atomic ops; __sync_add_and_fetch_4
 BROKEN-hppa =	needs atomic ops; __sync_add_and_fetch_4
@@ -8,7 +8,7 @@ COMMENT-main =	network monitoring system
 COMMENT-mysql =	MySQL support for icinga2
 COMMENT-pgsql =	PostgreSQL support for icinga2
 
-V =		2.6.3
+V =		2.7.0
 EPOCH =		0
 GH_ACCOUNT =	Icinga
 GH_PROJECT =	icinga2
@@ -16,9 +16,6 @@ GH_TAGNAME =	v$V
 PKGNAME-main =	icinga2-$V
 PKGNAME-mysql =	icinga2-ido-mysql-$V
 PKGNAME-pgsql =	icinga2-ido-pgsql-$V
-REVISION-main =	0
-REVISION-mysql =0
-REVISION-pgsql =0
 
 SHARED_LIBS +=	base                      0.0 # 2.6
 SHARED_LIBS +=	checker                   0.0 # 2.6
@@ -119,7 +116,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/tools/syntax/vim/$i/* ${PREFIX}/share/vim/vimfiles/$i
 .endfor
 	sed -i "s,/usr/share/icinga2,${PREFIX}/share/icinga2,g" \
-		${PREFIX}/share/doc/icinga2/markdown/*
+		${PREFIX}/share/doc/icinga2/markdown/*.md
 
 .if ${FLAVOR:Mtest}
 pre-test:
@@ -128,7 +125,7 @@ pre-test:
 	    exit 1; \
 	fi
 .else
-post-patch:
+pre-configure:
 	@printf "\n*** Disabling tests to avoid conflict if libconfig is present at build time.\n*** Use \"FLAVOR=test make\" to avoid this.\n\n"
 	sed -i 's,add_subdirectory(test),#add_subdirectory(test),' ${WRKSRC}/CMakeLists.txt
 

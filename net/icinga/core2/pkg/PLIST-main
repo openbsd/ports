@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.19 2017/02/02 21:36:18 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.20 2017/08/30 12:45:02 sthen Exp $
 @newgroup _icinga:667
 @newgroup _icingaweb2:762
 @newuser _icinga:667:_icinga:daemon:Icinga user:/var/icinga:/sbin/nologin
@@ -24,17 +24,26 @@ lib/icinga2/
 @lib lib/icinga2/libsocketpair.so.${LIBsocketpair_VERSION}
 lib/icinga2/sbin/
 @bin lib/icinga2/sbin/icinga2
+@bin libexec/nagios/check_nscp_api
 @man man/man8/icinga2.8
 sbin/icinga2
 share/doc/icinga2/
 share/doc/icinga2/AUTHORS
+share/doc/icinga2/CHANGELOG.md
 share/doc/icinga2/COPYING
 share/doc/icinga2/COPYING.Exceptions
-share/doc/icinga2/ChangeLog
 share/doc/icinga2/NEWS
 share/doc/icinga2/README.md
 share/doc/icinga2/markdown/
-share/doc/icinga2/markdown/1-about.md
+share/doc/icinga2/markdown/01-about.md
+share/doc/icinga2/markdown/02-getting-started.md
+share/doc/icinga2/markdown/03-monitoring-basics.md
+share/doc/icinga2/markdown/04-configuring-icinga-2.md
+share/doc/icinga2/markdown/05-service-monitoring.md
+share/doc/icinga2/markdown/06-distributed-monitoring.md
+share/doc/icinga2/markdown/07-agent-based-monitoring.md
+share/doc/icinga2/markdown/08-advanced-topics.md
+share/doc/icinga2/markdown/09-object-types.md
 share/doc/icinga2/markdown/10-icinga-template-library.md
 share/doc/icinga2/markdown/11-cli-commands.md
 share/doc/icinga2/markdown/12-icinga2-api.md
@@ -45,18 +54,53 @@ share/doc/icinga2/markdown/16-upgrading-icinga-2.md
 share/doc/icinga2/markdown/17-language-reference.md
 share/doc/icinga2/markdown/18-library-reference.md
 share/doc/icinga2/markdown/19-script-debugger.md
-share/doc/icinga2/markdown/2-getting-started.md
 share/doc/icinga2/markdown/20-development.md
 share/doc/icinga2/markdown/21-selinux.md
 share/doc/icinga2/markdown/22-migrating-from-icinga-1x.md
 share/doc/icinga2/markdown/23-appendix.md
-share/doc/icinga2/markdown/3-monitoring-basics.md
-share/doc/icinga2/markdown/4-configuring-icinga-2.md
-share/doc/icinga2/markdown/5-service-monitoring.md
-share/doc/icinga2/markdown/6-distributed-monitoring.md
-share/doc/icinga2/markdown/7-agent-based-monitoring.md
-share/doc/icinga2/markdown/8-advanced-topics.md
-share/doc/icinga2/markdown/9-object-types.md
+share/doc/icinga2/markdown/images/
+share/doc/icinga2/markdown/images/distributed-monitoring/
+share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_distributed_bottom_up.png
+share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_distributed_endpoints.png
+share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_distributed_roles.png
+share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_distributed_scenarios_ha_master_clients.png
+share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_distributed_scenarios_master_clients.png
+share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_distributed_scenarios_master_satellite_client.png
+share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_distributed_top_down_command_endpoint.png
+share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_distributed_top_down_config_sync.png
+share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_distributed_windows_client_disk_icingaweb2.png
+share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_distributed_windows_nscp.png
+share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_distributed_windows_nscp_api_drivesize_icingaweb2.png
+share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_distributed_windows_nscp_counter_icingaweb2.png
+share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_distributed_zones.png
+share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_windows_cmd_admin_net_start_stop.png
+share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_windows_running_service.png
+share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_windows_setup_installer_01.png
+share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_windows_setup_installer_02.png
+share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_windows_setup_installer_03.png
+share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_windows_setup_installer_04.png
+share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_windows_setup_installer_05.png
+share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_windows_setup_wizard_01.png
+share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_windows_setup_wizard_02.png
+share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_windows_setup_wizard_03.png
+share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_windows_setup_wizard_04.png
+share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_windows_setup_wizard_05_nsclient_01.png
+share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_windows_setup_wizard_05_nsclient_02.png
+share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_windows_setup_wizard_05_nsclient_03.png
+share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_windows_setup_wizard_05_nsclient_04.png
+share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_windows_setup_wizard_05_nsclient_05.png
+share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_windows_setup_wizard_05_nsclient_06.png
+share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_windows_setup_wizard_05_nsclient_07.png
+share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_windows_setup_wizard_06.png
+share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_windows_setup_wizard_examine_config.png
+share/doc/icinga2/markdown/images/getting-started/
+share/doc/icinga2/markdown/images/getting-started/mariadb-centos7.png
+share/doc/icinga2/markdown/images/getting-started/nano-syntax.png
+share/doc/icinga2/markdown/images/getting-started/postgr-import-ido.png
+share/doc/icinga2/markdown/images/getting-started/vim-syntax.png
+share/doc/icinga2/markdown/images/icinga2-api/
+share/doc/icinga2/markdown/images/icinga2-api/icinga2_api_icinga_studio_connect.png
+share/doc/icinga2/markdown/images/icinga2-api/icinga2_api_icinga_studio_overview.png
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/bash_completion.d/
 share/examples/bash_completion.d/icinga2
@@ -180,6 +224,8 @@ share/icinga2/include/plugins-contrib.d/metrics.conf
 share/icinga2/include/plugins-contrib.d/network-components.conf
 share/icinga2/include/plugins-contrib.d/network-services.conf
 share/icinga2/include/plugins-contrib.d/operating-system.conf
+share/icinga2/include/plugins-contrib.d/raid-controller.conf
+share/icinga2/include/plugins-contrib.d/smart-attributes.conf
 share/icinga2/include/plugins-contrib.d/storage.conf
 share/icinga2/include/plugins-contrib.d/virtualization.conf
 share/icinga2/include/plugins-contrib.d/vmware.conf

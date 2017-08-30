@@ -1,9 +1,10 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.10 2017/02/13 19:58:00 sthen Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.11 2017/08/30 12:45:02 sthen Exp $
 
 use FindBacktrace.cmake (added in cmake 3)
 
---- CMakeLists.txt.orig	Mon Feb 13 09:52:45 2017
-+++ CMakeLists.txt	Mon Feb 13 16:59:09 2017
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
 @@ -228,15 +228,14 @@ set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -DI2_D
  set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -DI2_DEBUG")
  
