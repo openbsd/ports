@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.56 2017/08/30 11:10:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.57 2017/08/30 12:42:34 sthen Exp $
 
 BROKEN-alpha =	.got subsegment exceeds 64K (size 101480)
 BROKEN-sparc64 = cc: Internal error: Illegal instruction (program cc1)
 
 COMMENT-main =	graphical network protocol analyzer, Qt user-interface
-COMMENT-gtk =	graphical network protocol analyzer, Gtk+3 user-interface
 COMMENT-text =	network protocol analyzer
 
-WVER =		2.2.9
+WVER =		2.4.1
 PORTROACH =	limitw:1,even
 DISTNAME =	wireshark-${WVER}
 PKGNAME-main =	wireshark-${WVER}
-PKGNAME-gtk =	wireshark-gtk-${WVER}
 PKGNAME-text =	tshark-${WVER}
 
 SHARED_LIBS +=	wscodecs             0.0      # 0.0
@@ -23,7 +21,7 @@ CATEGORIES =	net security x11
 
 HOMEPAGE =	http://www.wireshark.org/
 
-EXTRACT_SUFX =	.tar.bz2
+EXTRACT_SUFX =	.tar.xz
 
 # Mostly GPLv2 or later. Some files are less restrictive.
 # tools/pidl is GPLv3 or later. See COPYING.
@@ -33,7 +31,7 @@ cWANTLIB +=	c glib-2.0 m pcap z
 
 MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 
-MULTI_PACKAGES = -text -main -gtk
+MULTI_PACKAGES = -text -main
 
 MODLUA_VERSION = 5.2
 MODULES =	lang/lua \
@@ -44,15 +42,12 @@ MODLUA_RUNDEP =	No
 MODPY_RUNDEP =	No
 
 WANTLIB-text =	${cWANTLIB} ${MODLUA_WANTLIB}
-WANTLIB-text +=	GeoIP cares gcrypt gmodule-2.0 gnutls gpg-error smi ssh
+WANTLIB-text +=	GeoIP cares gcrypt gmodule-2.0 gnutls gpg-error lz4
+WANTLIB-text +=	nghttp2 smi spandsp ssh xml2
 
 WANTLIB-main =	${cWANTLIB} ${COMPILER_LIBCXX}
 WANTLIB-main +=	pthread wireshark wiretap wscodecs wsutil
 WANTLIB-main +=	Qt5Core Qt5Gui Qt5Multimedia Qt5PrintSupport Qt5Widgets
-
-WANTLIB-gtk =	${cWANTLIB} wireshark wiretap wscodecs wsutil
-WANTLIB-gtk +=	cairo gdk_pixbuf-2.0 gdk-3 gio-2.0 gobject-2.0 gtk-3
-WANTLIB-gtk +=	pango-1.0 pangocairo-1.0 portaudio 
 
 MASTER_SITES =		http://www.wireshark.org/download/src/all-versions/ \
 			http://www.wireshark.org/download/automated/src/
@@ -72,13 +67,17 @@ RUN_DEPENDS-main =	${RUN_DEPENDS} \
 			x11/gtk+3,-guic
 
 LIB_DEPENDS-text =	${MODLUA_LIB_DEPENDS} \
+			archivers/lz4 \
 			devel/glib2 \
 			net/libcares \
 			net/libsmi \
 			net/GeoIP  \
 			security/gnutls \
 			security/libgcrypt \
-			security/libssh
+			security/libssh \
+			telephony/spandsp \
+			textproc/libxml \
+			www/nghttp2
 
 LIB_DEPENDS-main +=	${LIB_DEPENDS} \
 			tshark-${WVER}:${BUILD_PKGPATH:S/,$//},-text \
@@ -89,10 +88,6 @@ LIB_DEPENDS-main +=	${LIB_DEPENDS} \
 # binary with -lQt5Svg if it was found during configure. I'd rather have
 # an "Extra" (that may later change to a real WANTLIB) than failing builds.
 WANTLIB-main +=		Qt5Svg
-
-LIB_DEPENDS-gtk +=	tshark-${WVER}:${BUILD_PKGPATH:S/,$//},-text \
-			x11/gtk+3 \
-			audio/portaudio-svn
 
 MODULES +=		devel/cmake
 CONFIGURE_STYLE =	cmake
