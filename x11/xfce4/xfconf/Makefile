@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.17 2016/11/03 16:20:41 landry Exp $
+# $OpenBSD: Makefile,v 1.18 2017/08/30 08:46:31 landry Exp $
 
 COMMENT=	Xfce4 settings daemon
 
 XFCE_VERSION =	4.12.1
 XFCE_PROJECT=	xfconf
 REVISION =	0
+
+PORTROACH=	limitw:1,even
 
 SHARED_LIBS =	xfconf-0 0.1 # 2.0
 
