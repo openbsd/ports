@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-seamonkey,v 1.5 2016/09/04 14:58:59 giovanni Exp $
+@comment $OpenBSD: PLIST-seamonkey,v 1.6 2017/08/30 20:42:13 giovanni Exp $
 @conflict enigmail-seamonkey-<=1.6v0p1
 @pkgpath www/seamonkey,-enigmail
 lib/mozilla/
@@ -35,6 +35,16 @@ lib/mozilla/extensions/{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}/{847b3a00-7ab1-11d
 lib/mozilla/extensions/{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}/{847b3a00-7ab1-11d4-8f02-006008948af5}/modules/decryption.jsm
 lib/mozilla/extensions/{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}/{847b3a00-7ab1-11d4-8f02-006008948af5}/modules/dialog.jsm
 lib/mozilla/extensions/{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}/{847b3a00-7ab1-11d4-8f02-006008948af5}/modules/encryption.jsm
+lib/mozilla/extensions/{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}/{847b3a00-7ab1-11d4-8f02-006008948af5}/modules/enigmailprocess_common.jsm
+lib/mozilla/extensions/{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}/{847b3a00-7ab1-11d4-8f02-006008948af5}/modules/enigmailprocess_main.jsm
+lib/mozilla/extensions/{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}/{847b3a00-7ab1-11d4-8f02-006008948af5}/modules/enigmailprocess_shared.js
+lib/mozilla/extensions/{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}/{847b3a00-7ab1-11d4-8f02-006008948af5}/modules/enigmailprocess_shared_unix.js
+lib/mozilla/extensions/{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}/{847b3a00-7ab1-11d4-8f02-006008948af5}/modules/enigmailprocess_shared_win.js
+lib/mozilla/extensions/{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}/{847b3a00-7ab1-11d4-8f02-006008948af5}/modules/enigmailprocess_unix.jsm
+lib/mozilla/extensions/{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}/{847b3a00-7ab1-11d4-8f02-006008948af5}/modules/enigmailprocess_win.jsm
+lib/mozilla/extensions/{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}/{847b3a00-7ab1-11d4-8f02-006008948af5}/modules/enigmailprocess_worker_common.js
+lib/mozilla/extensions/{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}/{847b3a00-7ab1-11d4-8f02-006008948af5}/modules/enigmailprocess_worker_unix.js
+lib/mozilla/extensions/{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}/{847b3a00-7ab1-11d4-8f02-006008948af5}/modules/enigmailprocess_worker_win.js
 lib/mozilla/extensions/{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}/{847b3a00-7ab1-11d4-8f02-006008948af5}/modules/errorHandling.jsm
 lib/mozilla/extensions/{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}/{847b3a00-7ab1-11d4-8f02-006008948af5}/modules/events.jsm
 lib/mozilla/extensions/{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}/{847b3a00-7ab1-11d4-8f02-006008948af5}/modules/execution.jsm
@@ -70,8 +80,6 @@ lib/mozilla/extensions/{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}/{847b3a00-7ab1-11d
 lib/mozilla/extensions/{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}/{847b3a00-7ab1-11d4-8f02-006008948af5}/modules/rules.jsm
 lib/mozilla/extensions/{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}/{847b3a00-7ab1-11d4-8f02-006008948af5}/modules/streams.jsm
 lib/mozilla/extensions/{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}/{847b3a00-7ab1-11d4-8f02-006008948af5}/modules/subprocess.jsm
-lib/mozilla/extensions/{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}/{847b3a00-7ab1-11d4-8f02-006008948af5}/modules/subprocess_worker_unix.js
-lib/mozilla/extensions/{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}/{847b3a00-7ab1-11d4-8f02-006008948af5}/modules/subprocess_worker_win.js
 lib/mozilla/extensions/{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}/{847b3a00-7ab1-11d4-8f02-006008948af5}/modules/system.jsm
 lib/mozilla/extensions/{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}/{847b3a00-7ab1-11d4-8f02-006008948af5}/modules/time.jsm
 lib/mozilla/extensions/{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}/{847b3a00-7ab1-11d4-8f02-006008948af5}/modules/timer.jsm
