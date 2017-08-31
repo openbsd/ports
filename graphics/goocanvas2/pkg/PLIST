@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/11/03 20:00:43 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2017/08/31 16:26:55 jasper Exp $
 include/goocanvas-2.0/
 include/goocanvas-2.0/goocanvas.h
 include/goocanvas-2.0/goocanvasellipse.h
@@ -77,7 +77,13 @@ share/gtk-doc/html/goocanvas2/right.png
 share/gtk-doc/html/goocanvas2/style.css
 share/gtk-doc/html/goocanvas2/up-insensitive.png
 share/gtk-doc/html/goocanvas2/up.png
+share/locale/cs/LC_MESSAGES/goocanvas2.mo
+share/locale/de/LC_MESSAGES/goocanvas2.mo
 share/locale/en_GB/LC_MESSAGES/goocanvas2.mo
 share/locale/es/LC_MESSAGES/goocanvas2.mo
+share/locale/id/LC_MESSAGES/goocanvas2.mo
 share/locale/ja/LC_MESSAGES/goocanvas2.mo
+share/locale/pl/LC_MESSAGES/goocanvas2.mo
+share/locale/pt_BR/LC_MESSAGES/goocanvas2.mo
+share/locale/sr/LC_MESSAGES/goocanvas2.mo
 share/locale/sv/LC_MESSAGES/goocanvas2.mo
