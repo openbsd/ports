@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_lib_json_json_reader_cpp,v 1.5 2017/08/31 06:30:18 dcoppa Exp $
+
+Index: src/lib_json/json_reader.cpp
+--- src/lib_json/json_reader.cpp.orig
++++ src/lib_json/json_reader.cpp
+@@ -1728,6 +1728,7 @@ bool OurReader::decodeUnicodeCodePoint(Token& token,
+                                     Location end,
+                                     unsigned int& unicode) {
+ 
++  unicode = 0;
+   if (!decodeUnicodeEscapeSequence(token, current, end, unicode))
+     return false;
+   if (unicode >= 0xD800 && unicode <= 0xDBFF) {

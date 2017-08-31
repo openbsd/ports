@@ -1,4 +1,4 @@
-$OpenBSD: patch-meson_build,v 1.1 2017/08/29 09:14:16 dcoppa Exp $
+$OpenBSD: patch-meson_build,v 1.2 2017/08/31 06:30:18 dcoppa Exp $
 
 Index: meson.build
 --- meson.build.orig
@@ -36,7 +36,7 @@ Index: meson.build
      'src/lib_json/json_reader.cpp',
      'src/lib_json/json_value.cpp',
      'src/lib_json/json_writer.cpp'],
--  soversion : 18,
+-  soversion : 19,
 +  soversion : '${LIBjsoncpp_VERSION}',
 +  dependencies : thread_dep,
 +  link_args : no_asneeded,
