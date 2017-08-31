@@ -1,4 +1,4 @@
-$OpenBSD: patch-daily_sh,v 1.18 2017/08/28 11:47:03 sthen Exp $
+$OpenBSD: patch-daily_sh,v 1.19 2017/08/31 12:16:31 sthen Exp $
 
 Index: daily.sh
 --- daily.sh.orig
@@ -42,7 +42,7 @@ Index: daily.sh
 +        up=$(%PHP% daily.php -f update >&2; echo $?)
          if [[ "$up" == "0" ]]; then
              ${DAILY_SCRIPT} no-code-update
-             set_notification update 0  # make sure there are no update notifications if update is disabled
+             set_notification update 1  # make sure there are no update notifications if update is disabled
 @@ -206,12 +206,12 @@ main () {
              no-code-update)
                  # Updates of the code are disabled, just check for schema updates
