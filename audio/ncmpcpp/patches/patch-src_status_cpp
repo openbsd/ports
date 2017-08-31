@@ -1,6 +1,12 @@
-$OpenBSD: patch-src_status_cpp,v 1.7 2017/06/09 15:09:51 dcoppa Exp $
+$OpenBSD: patch-src_status_cpp,v 1.8 2017/08/31 15:58:26 dcoppa Exp $
 
 missing header
+
+commit c340a6ba9a322985b8d50ab477631689b6b8f55a
+Author: Andrzej Rybczak <andrzej@rybczak.net>
+Date:   Thu Aug 31 08:19:13 2017
+
+Mark songs as added to playlist immediately
 
 Index: src/status.cpp
 --- src/status.cpp.orig
@@ -13,3 +19,17 @@ Index: src/status.cpp
  
  #include "curses/menu_impl.h"
  #include "screens/browser.h"
+@@ -439,6 +440,13 @@ void Status::Changes::playlist(unsigned previous_versi
+ 
+ 	myPlaylist->reloadTotalLength();
+ 	myPlaylist->reloadRemaining();
++
++	if (isVisible(myLibrary)
++	    && !myLibrary->isActiveWindow(myLibrary->Songs))
++		myLibrary->Songs.refresh();
++	if (isVisible(myPlaylistEditor)
++	    && !myPlaylistEditor->isActiveWindow(myPlaylistEditor->Content))
++		myPlaylistEditor->Content.refresh();
+ }
+ 
+ void Status::Changes::storedPlaylists()
