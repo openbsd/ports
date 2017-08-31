@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.69 2017/08/05 12:29:21 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.70 2017/08/31 21:34:05 sthen Exp $
 @conflict asterisk-sounds-<=1.2.1p2
 @conflict asterisk-curl-*
 @conflict asterisk-fax-*
@@ -616,6 +616,20 @@ share/examples/asterisk/
 @sample ${SYSCONFDIR}/asterisk/
 @mode
 @group
+share/examples/asterisk/basic-pbx/
+share/examples/asterisk/basic-pbx/README
+share/examples/asterisk/basic-pbx/asterisk.conf
+share/examples/asterisk/basic-pbx/cdr.conf
+share/examples/asterisk/basic-pbx/cdr_custom.conf
+share/examples/asterisk/basic-pbx/confbridge.conf
+share/examples/asterisk/basic-pbx/extensions.conf
+share/examples/asterisk/basic-pbx/indications.conf
+share/examples/asterisk/basic-pbx/logger.conf
+share/examples/asterisk/basic-pbx/modules.conf
+share/examples/asterisk/basic-pbx/musiconhold.conf
+share/examples/asterisk/basic-pbx/pjsip.conf
+share/examples/asterisk/basic-pbx/queues.conf
+share/examples/asterisk/basic-pbx/voicemail.conf
 share/examples/asterisk/default/
 share/examples/asterisk/default/acl.conf
 share/examples/asterisk/default/adsi.conf
