@@ -1,23 +1,22 @@
-$OpenBSD: patch-src_cmd_link_internal_ld_lib_go,v 1.4 2017/06/04 18:04:03 jsing Exp $
---- src/cmd/link/internal/ld/lib.go.orig	Thu May 25 04:15:12 2017
-+++ src/cmd/link/internal/ld/lib.go	Mon Jun  5 01:10:09 2017
-@@ -563,7 +563,14 @@ func (ctxt *Link) loadlib() {
+$OpenBSD: patch-src_cmd_link_internal_ld_lib_go,v 1.5 2017/08/31 17:05:19 jsing Exp $
+Index: src/cmd/link/internal/ld/lib.go
+--- src/cmd/link/internal/ld/lib.go.orig
++++ src/cmd/link/internal/ld/lib.go
+@@ -563,7 +563,13 @@ func (ctxt *Link) loadlib() {
  		}
  		if any {
  			if *flagLibGCC == "" {
--				*flagLibGCC = ctxt.findLibPathCmd("--print-libgcc-file-name", "libgcc")
 +				// TODO(jsing): OpenBSD clang currently fails to correctly report
 +				// the compiler runtime via --print-libgcc-file-name. Workaround
 +				// this issue by hardcoding it for the time being...
-+				if runtime.GOOS == "openbsd" && *flagExtld == "clang" {
+ 				*flagLibGCC = ctxt.findLibPathCmd("--print-libgcc-file-name", "libgcc")
++				if runtime.GOOS == "openbsd" && *flagLibGCC == "libgcc.a" {
 +					*flagLibGCC = "/usr/lib/libcompiler_rt.a"
-+				} else {
-+					*flagLibGCC = ctxt.findLibPathCmd("--print-libgcc-file-name", "libgcc")
 +				}
  			}
  			if *flagLibGCC != "none" {
  				hostArchive(ctxt, *flagLibGCC)
-@@ -1958,7 +1965,7 @@ func genasmsym(ctxt *Link, put func(*Link, *Symbol, st
+@@ -1958,7 +1964,7 @@ func genasmsym(ctxt *Link, put func(*Link, *Symbol, st
  			put(ctxt, s, s.Extname, UndefinedSym, 0, nil)
  
  		case obj.STLSBSS:

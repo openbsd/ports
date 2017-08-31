@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_cmd_go_build_go,v 1.1 2017/08/31 17:05:19 jsing Exp $
+
+Index: src/cmd/go/build.go
+--- src/cmd/go/build.go.orig
++++ src/cmd/go/build.go
+@@ -3158,10 +3158,12 @@ func (b *builder) ccompilerCmd(envvar, defcmd, objdir 
+ 		}
+ 	}
+ 
+-	if strings.Contains(a[0], "clang") {
+-		// disable ASCII art in clang errors, if possible
++	// disable ASCII art in clang errors, if possible
++	if b.gccSupportsFlag("-fno-caret-diagnostics") {
+ 		a = append(a, "-fno-caret-diagnostics")
+-		// clang is too smart about command-line arguments
++	}
++	// clang is too smart about command-line arguments
++	if b.gccSupportsFlag("-Qunused-arguments") {
+ 		a = append(a, "-Qunused-arguments")
+ 	}
+ 
