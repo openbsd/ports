@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1641 2017/08/29 17:03:59 landry Exp $
+# $OpenBSD: Makefile,v 1.1642 2017/08/31 06:19:57 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1371,6 +1371,7 @@
      SUBDIR += py-incremental
      SUBDIR += py-incremental,python3
      SUBDIR += py-ioflo
+     SUBDIR += py-ioflo,python3
      SUBDIR += py-ipykernel
      SUBDIR += py-ipykernel,python3
      SUBDIR += py-ipython_genutils
