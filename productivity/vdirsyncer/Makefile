@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2017/07/17 00:09:56 danj Exp $
+# $OpenBSD: Makefile,v 1.4 2017/08/31 16:30:23 danj Exp $
 
 COMMENT =		synchronize calendars and contacts
 
-MODPY_EGG_VERSION =	0.16.0
+MODPY_EGG_VERSION =	0.16.2
 DISTNAME =		vdirsyncer-${MODPY_EGG_VERSION}
 CATEGORIES =		productivity
 
@@ -24,7 +24,7 @@ BUILD_DEPENDS =		textproc/py-sphinx${MODPY_FLAVOR} \
 			${RUN_DEPENDS}
 
 RUN_DEPENDS =		devel/py-atomicwrites${MODPY_FLAVOR} \
-			devel/py-click-log${MODPY_FLAVOR} \
+			devel/py-click-log${MODPY_FLAVOR}>=0.2.0 \
 			devel/py-click-threading${MODPY_FLAVOR} \
 			www/py-requests-toolbelt${MODPY_FLAVOR}
 
@@ -40,5 +40,7 @@ post-install:
 	cd ${WRKSRC}/docs/_build/html && pax -rw * ${PREFIX}/share/doc/vdirsyncer
 	${INSTALL_DATA} ${WRKSRC}/config.example \
 		${PREFIX}/share/examples/vdirsyncer
+
+NO_TEST =		Yes
 
 .include <bsd.port.mk>
