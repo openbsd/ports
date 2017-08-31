@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.356 2017/06/08 12:53:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.357 2017/08/31 21:56:37 naddy Exp $
 
      SUBDIR =
      SUBDIR += abook
@@ -172,7 +172,6 @@
      SUBDIR += pecl-mailparse
      SUBDIR += perdition
      SUBDIR += pflogsumm
-     SUBDIR += pgpsendmail
      SUBDIR += pine-pgp-filters
      SUBDIR += pop3d
      SUBDIR += popa3d
