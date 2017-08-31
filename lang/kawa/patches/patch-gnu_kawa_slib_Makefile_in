@@ -1,10 +1,10 @@
-$OpenBSD: patch-gnu_kawa_slib_Makefile_in,v 1.4 2015/12/06 20:01:33 jasper Exp $
+$OpenBSD: patch-gnu_kawa_slib_Makefile_in,v 1.5 2017/08/31 06:33:05 jasper Exp $
 
 Fails to compile swing.scm with defaults on some arch.
 
---- gnu/kawa/slib/Makefile.in.orig	Sun Dec  6 20:50:27 2015
-+++ gnu/kawa/slib/Makefile.in	Sun Dec  6 20:50:28 2015
-@@ -138,7 +138,7 @@ INSTALL_DATA = @INSTALL_DATA@
+--- gnu/kawa/slib/Makefile.in.orig	Thu Feb  9 21:03:27 2017
++++ gnu/kawa/slib/Makefile.in	Thu Feb  9 21:03:41 2017
+@@ -140,7 +140,7 @@ INSTALL_DATA = @INSTALL_DATA@
  INSTALL_PROGRAM = @INSTALL_PROGRAM@
  INSTALL_SCRIPT = @INSTALL_SCRIPT@
  INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_PROGRAM@

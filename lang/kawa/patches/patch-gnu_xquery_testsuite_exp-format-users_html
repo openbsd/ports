@@ -1,0 +1,12 @@
+$OpenBSD: patch-gnu_xquery_testsuite_exp-format-users_html,v 1.1 2017/08/31 06:33:05 jasper Exp $
+
+Index: gnu/xquery/testsuite/exp-format-users.html
+--- gnu/xquery/testsuite/exp-format-users.html.orig
++++ gnu/xquery/testsuite/exp-format-users.html
+@@ -29,4 +29,4 @@
+ <td>Rip Van Winkle</td>
+ <td>B</td>
+ </tr>
+-</table>
++</table>
+\ No newline at end of file

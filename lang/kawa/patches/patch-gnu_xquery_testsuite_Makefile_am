@@ -1,0 +1,85 @@
+$OpenBSD: patch-gnu_xquery_testsuite_Makefile_am,v 1.1 2017/08/31 06:33:05 jasper Exp $
+
+Index: gnu/xquery/testsuite/Makefile.am
+--- gnu/xquery/testsuite/Makefile.am.orig
++++ gnu/xquery/testsuite/Makefile.am
+@@ -2,6 +2,7 @@ include $(top_srcdir)/Make-rules
+ 
+ KAWALIB = $(top_builddir)
+ KAWA = ../../../bin/kawa.sh
++DIFF = diff -b
+ EXTRA_CLEAN = tmp* *.log testing.zip */*.class
+ mostlyclean-am: mostlyclean-generic
+ 	rm -rf Mod1 Mod2
+@@ -34,7 +35,7 @@ XQTS_JAVA_FLAGS = -Xmx120m
+ check-XQTS: RunXQTS.class
+ 	CLASSPATH=$(KAWALIB) \
+ 	  $(JAVA) $(XQTS_JAVA_FLAGS) gnu.xquery.testsuite.RunXQTS $(XQTS_DIR)
+-	@if diff -b $(srcdir)/XQTS-trace.exp XQuery-trace.log; \
++	@if $(DIFF) $(srcdir)/XQTS-trace.exp XQuery-trace.log; \
+ 	  then echo '# XQTS trace output matches'; \
+ 	  else echo FAIL XQuery trace output mismatch; fi
+ 
+@@ -47,7 +48,7 @@ check-suite:  TestSuite.class
+ 
+ check-maketab1:  maketab1.xql
+ 	CLASSPATH=".$(CLASSPATH_SEPARATOR)$(KAWALIB)" $(KAWA) $< >tmp2
+-	@if diff -b $(srcdir)/tab.html tmp2; then echo '# maketab1 test passes'; else echo FAIL maketab1 test; fi
++	@if $(DIFF) $(srcdir)/tab.html tmp2; then echo '# maketab1 test passes'; else echo FAIL maketab1 test; fi
+ 
+ # FIXME - this does not do the correct thing
+ check-desc:
+@@ -59,29 +60,29 @@ multab.class:  multab.xql
+ check-multab:  multab.class
+ 	CLASSPATH=".$(CLASSPATH_SEPARATOR)$(KAWALIB)" $(JAVA) multab \
+ 	  max=10 caption="Multiplication table " out:xml-indent=pretty >tmpmul
+-	@if diff -b $(srcdir)/expectedmul.xml tmpmul; then echo '# multab test passes'; else echo FAIL multab test; fi
++	@if $(DIFF) $(srcdir)/expectedmul.xml tmpmul; then echo '# multab test passes'; else echo FAIL multab test; fi
+ 
+ descend.class:  descend.xql
+ 	$(KAWA) --main --xquery -C $<
+ 
+ check-descend:  descend.class
+ 	CLASSPATH=".$(CLASSPATH_SEPARATOR)$(KAWALIB)" $(JAVA) descend >tmpdesc
+-	@if diff -b $(srcdir)/expdescend.xml tmpdesc; then echo '# descend test passes'; else echo FAIL descend test; fi
++	@if $(DIFF) $(srcdir)/expdescend.xml tmpdesc; then echo '# descend test passes'; else echo FAIL descend test; fi
+ 
+ check-latin1a:
+ 	$(KAWA) --xquery $(srcdir)/latin1a.xql >tmplatin1a
+-	@if diff -b $(srcdir)/latin1a.expected tmplatin1a; then echo '# latin1a test passes'; else echo FAIL latin1a test; fi
++	@if $(DIFF) $(srcdir)/latin1a.expected tmplatin1a; then echo '# latin1a test passes'; else echo FAIL latin1a test; fi
+ 
+ check-xsltest1:
+ 	$(KAWA) --xslt -f $(srcdir)/xsltest1.xsl $(srcdir)/outline.xml >tmp-xsltest1.log
+-	@if diff -b $(srcdir)/xsltest1.expected tmp-xsltest1.log; \
++	@if $(DIFF) $(srcdir)/xsltest1.expected tmp-xsltest1.log; \
+ 	  then echo '# xsltest1 test passes'; \
+ 	  else echo FAIL xsltest1 test; fi
+ 
+ check-format-users:
+ 	$(KAWA) --xslt $(srcdir)/format-users.xsl $(srcdir)/users.xml \
+-	  |sed 's/^ *//'>tmp-format-users.html
+-	@if diff -b -B $(srcdir)/exp-format-users.html tmp-format-users.html; then echo '#  format-users test passes'; else echo FAIL format-users test; fi
++	  |sed 's/^ *//; /^\s*$$/d' >tmp-format-users.html
++	@if $(DIFF) $(srcdir)/exp-format-users.html tmp-format-users.html; then echo '#  format-users test passes'; else echo FAIL format-users test; fi
+ 
+ ./Mod1/mod1.class: mod1.xql
+ 	$(CLASSPATH_ENV) $(KAWA) --module-static -d ../../.. -C $<
+@@ -93,7 +94,7 @@ usemod.class: usemod.xql ./Mod1/mod1.class ./Mod2/mod2
+ 	$(CLASSPATH_ENV) $(KAWA) --main -C $<
+ check-mod: usemod.class
+ 	CLASSPATH=".$(CLASSPATH_SEPARATOR)$(KAWALIB)" $(JAVA) usemod >tmp-usemod
+-	@if diff -b $(srcdir)/usemod.exp tmp-usemod; \
++	@if $(DIFF) $(srcdir)/usemod.exp tmp-usemod; \
+ 	  then echo '# usemod test passes'; \
+ 	  else echo FAIL usemod test; fi
+ 
+@@ -101,7 +102,7 @@ bad-1.log: $(srcdir)/bad-1.xql
+ 	-CLASSPATH=$(KAWALIB) $(KAWA) -C $< 2>&1 \
+ 	| sed -e '1d' -e 's|^.*/bad-1.xql|bad-1.xql|' >bad-1.log
+ check-bad-1: bad-1.log
+-	@if diff -b $(srcdir)/expected-1.errs bad-1.log; \
++	@if $(DIFF) $(srcdir)/expected-1.errs bad-1.log; \
+ 	  then echo '# bad-1 test passes'; \
+ 	  else echo FAIL bad-1 test; fi
+ 

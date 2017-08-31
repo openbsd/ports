@@ -1,8 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/12/06 20:01:33 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2017/08/31 06:33:05 jasper Exp $
 @bin bin/kawa
 bin/qexo
+info/kawa.info
+info/kawa.info-1
+info/kawa.info-2
+info/kawa.info-3
+info/kawa.info-4
 @man man/man1/kawa.1
 @man man/man1/qexo.1
-share/java/
-share/java/kawa-2.1.jar
-share/java/kawa.jar
+share/kawa/
+share/kawa/bin/
+share/kawa/bin/kawa
+share/kawa/lib/
+share/kawa/lib/kawa.jar

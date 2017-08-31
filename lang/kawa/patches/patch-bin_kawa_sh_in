@@ -1,0 +1,10 @@
+$OpenBSD: patch-bin_kawa_sh_in,v 1.1 2017/08/31 06:33:05 jasper Exp $
+--- bin/kawa.sh.in.orig	Sun Apr  9 08:44:21 2017
++++ bin/kawa.sh.in	Sun Apr  9 08:44:30 2017
+@@ -1,5 +1,5 @@
+ #!@KAWA_SHELL@
+-thisfile=`type -p $0`
++thisfile=`command -v $0`
+ case "$thisfile" in
+   "") echo "installation error - can't find path to $0"; exit -1 ;;
+   /*) ;;

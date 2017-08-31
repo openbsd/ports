@@ -1,0 +1,9 @@
+$OpenBSD: patch-gnu_xquery_testsuite_latin1a_expected,v 1.1 2017/08/31 06:33:05 jasper Exp $
+
+Index: gnu/xquery/testsuite/latin1a.expected
+--- gnu/xquery/testsuite/latin1a.expected.orig
++++ gnu/xquery/testsuite/latin1a.expected
+@@ -1 +1 @@
+-<p>Norwegian letters: ae:&#xE6; oe:&#xF8; aa:&#xE5;</p>
++<p>Norwegian letters: ae:&#xE6; oe:&#xF8; aa:&#xE5;</p>
+\ No newline at end of file

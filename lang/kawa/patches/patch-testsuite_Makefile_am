@@ -1,0 +1,23 @@
+$OpenBSD: patch-testsuite_Makefile_am,v 1.1 2017/08/31 06:33:05 jasper Exp $
+
+Index: testsuite/Makefile.am
+--- testsuite/Makefile.am.orig
++++ testsuite/Makefile.am
+@@ -8,7 +8,7 @@ KAWA = ../bin/kawa.sh
+ CPJAVA = CLASSPATH="..$(CLASSPATH_SEPARATOR)@conf_classpath@.$(CLASSPATH_SEPARATOR)$$CLASSPATH" $(JAVA)
+ CPKAWA = CLASSPATH="@conf_classpath@.$(CLASSPATH_SEPARATOR)$$CLASSPATH" $(KAWA)
+ KAWATEST = CLASSPATH=".$(CLASSPATH_SEPARATOR)$$CLASSPATH" $(KAWA) $(OPTIONS) -e '(load "testing.zip")'
+-DIFF = diff --strip-trailing-cr
++DIFF = diff
+ 
+ if ENABLE_SERVLET
+ if ENABLE_XQUERY
+@@ -632,7 +632,7 @@ check-bridge:
+ 	$(KAWA) $(OPTIONS) "$(srcdir)/bridge.scm"
+ 
+ check-life-grid:
+-	$(KAWA) $(srcdir)/life-grid.scm >& life-grid.log
++	$(KAWA) $(srcdir)/life-grid.scm > life-grid.log 2>&1
+ 	@if $(DIFF) $(srcdir)/life-grid.expected life-grid.log; \
+ 	  then echo '# check-life-grid passes'; \
+ 	  else echo FAIL check-life-grid passes; fi
