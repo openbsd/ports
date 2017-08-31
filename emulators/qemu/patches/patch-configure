@@ -1,9 +1,9 @@
-$OpenBSD: patch-configure,v 1.53 2017/05/27 06:38:23 espie Exp $
+$OpenBSD: patch-configure,v 1.54 2017/08/31 08:32:36 ajacoutot Exp $
 
 Index: configure
 --- configure.orig
 +++ configure
-@@ -1593,7 +1593,7 @@ static __thread int tls_var;
+@@ -1686,7 +1686,7 @@ static __thread int tls_var;
  int main(void) { return tls_var; }
  EOF
  
@@ -12,7 +12,7 @@ Index: configure
      error_exit "Your compiler does not support the __thread specifier for " \
  	"Thread-Local Storage (TLS). Please upgrade to a version that does."
  fi
-@@ -2985,6 +2985,7 @@ if test "$curses" != "no" ; then
+@@ -3122,6 +3122,7 @@ if test "$curses" != "no" ; then
    fi
    curses_found=no
    cat > $TMPC << EOF
@@ -20,7 +20,7 @@ Index: configure
  #include <locale.h>
  #include <curses.h>
  #include <wchar.h>
-@@ -4787,10 +4788,6 @@ fi
+@@ -5002,10 +5003,6 @@ fi
  if test "$gcov" = "yes" ; then
    CFLAGS="-fprofile-arcs -ftest-coverage -g $CFLAGS"
    LDFLAGS="-fprofile-arcs -ftest-coverage $LDFLAGS"
@@ -31,7 +31,7 @@ Index: configure
  fi
  
  ##########################################
-@@ -4939,7 +4936,7 @@ if test \( "$cpu" = "i386" -o "$cpu" = "x86_64" \) -a 
+@@ -5161,7 +5158,7 @@ if test \( "$cpu" = "i386" -o "$cpu" = "x86_64" \) -a 
      # Different host OS linkers have different ideas about the name of the ELF
      # emulation. Linux and OpenBSD use 'elf_i386'; FreeBSD uses the _fbsd
      # variant; and Windows uses i386pe.

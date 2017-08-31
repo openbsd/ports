@@ -1,11 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.36 2017/04/23 13:24:17 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.37 2017/08/31 08:32:36 ajacoutot Exp $
 @conflict kqemu-*
 @conflict qemu-*
 @pkgpath emulators/kqemu
 @pkgpath emulators/qemu,kqemu
 @pkgpath emulators/qemu-old[,no_x11]
-@bin bin/ivshmem-client
-@bin bin/ivshmem-server
 @bin bin/qemu-ga
 @bin bin/qemu-img
 @bin bin/qemu-io
@@ -145,7 +143,9 @@ share/qemu/pxe-rtl8139.rom
 share/qemu/pxe-virtio.rom
 share/qemu/qemu-icon.bmp
 share/qemu/qemu_logo_no_text.svg
+share/qemu/qemu_vga.ndrv
 share/qemu/s390-ccw.img
+share/qemu/s390-netboot.img
 share/qemu/sgabios.bin
 share/qemu/skiboot.lid
 share/qemu/slof.bin

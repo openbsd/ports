@@ -1,0 +1,20 @@
+$OpenBSD: patch-util_cacheinfo_c,v 1.1 2017/08/31 08:32:36 ajacoutot Exp $
+
+Index: util/cacheinfo.c
+--- util/cacheinfo.c.orig
++++ util/cacheinfo.c
+@@ -89,6 +89,14 @@ static void sys_cache_info(int *isize, int *dsize)
+     }
+ }
+ 
++#elif defined (__OpenBSD__)
++
++static void sys_cache_info(int *isize, int *dsize)
++{
++    *isize = 32;
++    *dsize = 32;
++}
++
+ #else
+ /* POSIX */
+ 
