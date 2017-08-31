@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2016/11/01 10:25:53 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2017/08/31 06:32:13 jasper Exp $
 abcl/
 abcl/abcl-contrib.jar
 abcl/abcl.jar
@@ -298,6 +298,7 @@ abcl/src/org/armedbear/lisp/ftruncate.java
 abcl/src/org/armedbear/lisp/function_info.java
 abcl/src/org/armedbear/lisp/gc.java
 abcl/src/org/armedbear/lisp/gentemp.lisp
+abcl/src/org/armedbear/lisp/get-pid.lisp
 abcl/src/org/armedbear/lisp/get_properties.java
 abcl/src/org/armedbear/lisp/gray-streams.lisp
 abcl/src/org/armedbear/lisp/gui.lisp
