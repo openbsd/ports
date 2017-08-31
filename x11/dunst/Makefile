@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.2 2016/11/03 09:46:44 danj Exp $
+# $OpenBSD: Makefile,v 1.3 2017/08/31 20:57:00 sthen Exp $
 
 COMMENT=	customizable and lightweight notification-daemon
 
-DISTNAME =	dunst-1.1.0
-
-REVISION =	0
+GH_ACCOUNT =	dunst-project
+GH_PROJECT =	dunst
+GH_TAGNAME =	v1.2.0
 
 CATEGORIES =	x11
 
-HOMEPAGE=	http://www.knopwob.org/dunst/
+HOMEPAGE=	https://dunst-project.org/
 
 MAINTAINER =	Timo Myyra <timo.myyra@wickedbsd.net>
 
@@ -16,21 +16,22 @@ MAINTAINER =	Timo Myyra <timo.myyra@wickedbsd.net>
 PERMIT_PACKAGE_CDROM=	Yes
 
 # uses pledge()
-WANTLIB +=	X11 Xext Xft Xinerama Xss c freetype m pthread z \
-		cairo dbus-1 gio-2.0 glib-2.0 gobject-2.0 intl \
-		pango-1.0 pangocairo-1.0 xdg-basedir
-
-MASTER_SITES=	http://www.knopwob.org/public/dunst-release/
-EXTRACT_SUFX =	.tar.bz2
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
+WANTLIB += Xrandr Xrender Xss c cairo dbus-1 fontconfig freetype
+WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
+WANTLIB += intl m pango-1.0 pangocairo-1.0 pthread xdg-basedir
+WANTLIB += z
 
 USE_GMAKE =	Yes
 
-LIB_DEPENDS +=	x11/dbus \
-		x11/libxdg-basedir \
-		devel/pango \
+LIB_DEPENDS +=  devel/gettext \
 		devel/glib2 \
+		devel/pango \
 		graphics/cairo \
-		devel/gettext
+		graphics/gdk-pixbuf2 \
+		x11/gtk+2 \
+		x11/libxdg-basedir \
+		x11/dbus
 
 MAKE_FLAGS =	V=1 PREFIX="${PREFIX}" MANPREFIX="${PREFIX}/man"
 

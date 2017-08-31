@@ -1,5 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/05/03 18:42:51 jca Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/08/31 20:57:01 sthen Exp $
 @bin bin/dunst
+@comment lib/systemd/
+@comment lib/systemd/user/
+@comment lib/systemd/user/dunst.service
 @man man/man1/dunst.1
 share/dbus-1/services/org.knopwob.dunst.service
 share/examples/dunst/
