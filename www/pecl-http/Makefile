@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2016/11/08 14:38:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2017/08/31 19:34:56 naddy Exp $
 
 COMMENT=	extended HTTP support
 
@@ -6,14 +6,14 @@ _PECLMOD=	http
 V=		2.5.6
 PKGNAME=	pecl-${_PECLMOD}-${V}
 DISTNAME=	pecl_${_PECLMOD}-${V}
-REVISION=	1
+REVISION=	2
 
 HOMEPAGE=	http://pecl.php.net/package/pecl_http
 
 # PHP
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB+= c crypto curl event iconv intl idn nghttp2 ssl z
+WANTLIB+= c crypto curl event iconv intl idn nghttp2 pthread ssl z
 
 MODULES=	lang/php/pecl
 
