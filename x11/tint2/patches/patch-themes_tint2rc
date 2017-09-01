@@ -1,0 +1,20 @@
+$OpenBSD: patch-themes_tint2rc,v 1.1 2017/09/01 10:37:44 sthen Exp $
+
+Index: themes/tint2rc
+--- themes/tint2rc.orig
++++ themes/tint2rc
+@@ -136,12 +136,9 @@ launcher_icon_asb = 100 0 0
+ launcher_icon_theme_override = 0
+ startup_notifications = 1
+ launcher_tooltip = 1
+-launcher_item_app = /usr/share/applications/tint2conf.desktop
+ launcher_item_app = /usr/local/share/applications/tint2conf.desktop
+-launcher_item_app = /usr/share/applications/firefox.desktop
+-launcher_item_app = /usr/share/applications/iceweasel.desktop
+-launcher_item_app = /usr/share/applications/chromium-browser.desktop
+-launcher_item_app = /usr/share/applications/google-chrome.desktop
++launcher_item_app = /usr/local/share/applications/firefox.desktop
++launcher_item_app = /usr/local/share/applications/chromium-browser.desktop
+ 
+ #-------------------------------------
+ # Clock

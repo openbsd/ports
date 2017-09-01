@@ -1,21 +1,19 @@
-# $OpenBSD: Makefile,v 1.5 2016/11/26 02:06:16 jca Exp $
+# $OpenBSD: Makefile,v 1.6 2017/09/01 10:37:44 sthen Exp $
 
-COMMENT=        freedesktop-compliant panel
+COMMENT=	freedesktop-compliant panel
 
-V=		0.12.2
-REVISION=	2
+V=		0.14.6
 CATEGORIES=	x11
 DISTNAME=	tint2-$V
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}{archive${EXTRACT_SUFX}?ref=v$V}
-WRKDIST=	${WRKDIR}/tint2-v$V-dc300c021531f47cca336e15b50adf3b4a9bc9ae
-INSTDIR=	${PREFIX}/tint2
+WRKDIST=	${WRKDIR}/tint2-v$V-8046600a552774253939b8a83bdd3fc0e60dacec
 
 HOMEPAGE=	https://gitlab.com/o9000/tint2/
 
 # GPLv2 only
 PERMIT_PACKAGE_CDROM= YES
 
-MASTER_SITES=   https://gitlab.com/o9000/tint2/repository/
+MASTER_SITES=	https://gitlab.com/o9000/tint2/repository/
 
 WANTLIB += Imlib2 X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender atk-1.0 c cairo fontconfig
@@ -25,30 +23,24 @@ WANTLIB += pangocairo-1.0 pangoft2-1.0 pthread rsvg-2 startup-notification-1
 WANTLIB += z
 
 BUILD_DEPENDS=	devel/gettext-tools
-LIB_DEPENDS=	graphics/imlib2 \
-		devel/gettext \
-		devel/pango \
+
+LIB_DEPENDS=	devel/pango \
 		devel/startup-notification \
 		x11/gnome/librsvg \
+		graphics/imlib2 \
 		x11/gtk+2
-RUN_DEPENDS=	x11/py-gtk2 \
-		devel/desktop-file-utils
 
 MODULES=	devel/cmake \
-		lang/python \
 		x11/gnome
 
-MODGNOME_TOOLS+= gtk-update-icon-cache
+MODGNOME_TOOLS+= desktop-file-utils \
+		gtk-update-icon-cache \
+		shared-mime-info
 
 NO_TEST=	Yes
 
-CONFIGURE_ARGS= -DMANDIR="${PREFIX}/man"
-
 post-install:
-	cp -R ${WRKSRC}/sample/ ${PREFIX}/share/examples/tint2/
-	sed -i -e '/\/usr\/local\/share\/applications/d' -e \
-	    's,/usr/share/applications,${LOCALBASE}/share/applications,g' \
+	sed -i 's,/usr/share,${LOCALBASE}/share,g' \
 	    ${PREFIX}/share/examples/tint2/*tint2rc
-	rm ${PREFIX}/share/tint2/*.tint2rc
 
 .include <bsd.port.mk>

@@ -1,12 +1,14 @@
-$OpenBSD: patch-src_tint2conf_main_c,v 1.1 2016/11/26 02:06:16 jca Exp $
---- src/tint2conf/main.c.orig	Tue Nov 22 21:42:54 2016
-+++ src/tint2conf/main.c	Tue Nov 22 21:43:58 2016
-@@ -503,7 +503,7 @@ static void set_current_theme()
+$OpenBSD: patch-src_tint2conf_main_c,v 1.2 2017/09/01 10:37:44 sthen Exp $
+
+Index: src/tint2conf/main.c
+--- src/tint2conf/main.c.orig
++++ src/tint2conf/main.c
+@@ -100,7 +100,7 @@ char *file_name_from_path(const char *filepath)
  
- 		gchar *main_file = g_build_filename(g_get_user_config_dir(), "tint2", "tint2rc", NULL);
- 		{
--			gchar *backup_path = g_strdup_printf("%s.backup.%ld", main_file, time(NULL));
-+			gchar *backup_path = g_strdup_printf("%s.backup.%lld", main_file, (long long)time(NULL));
- 			copy_file(main_file, backup_path);
- 			g_free(backup_path);
- 		}
+ void make_backup(const char *filepath)
+ {
+-    gchar *backup_path = g_strdup_printf("%s.backup.%ld", filepath, time(NULL));
++    gchar *backup_path = g_strdup_printf("%s.backup.%lld", filepath, (long long)time(NULL));
+     copy_file(filepath, backup_path);
+     g_free(backup_path);
+ }

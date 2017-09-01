@@ -1,0 +1,10 @@
+$OpenBSD: patch-themes_CMakeLists_txt,v 1.1 2017/09/01 10:37:44 sthen Exp $
+
+Index: themes/CMakeLists.txt
+--- themes/CMakeLists.txt.orig
++++ themes/CMakeLists.txt
+@@ -1,2 +1,2 @@
+-file( GLOB EXTRATHEMEFILES *.tint2rc )
+-install( FILES ${EXTRATHEMEFILES} DESTINATION ${CMAKE_INSTALL_DATADIR}/tint2 )
++file( GLOB EXTRATHEMEFILES tint2rc *.tint2rc )
++install( FILES ${EXTRATHEMEFILES} DESTINATION ${CMAKE_INSTALL_DATADIR}/examples/tint2 )

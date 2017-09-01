@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/09/11 14:14:07 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/09/01 10:37:44 sthen Exp $
 @pkgpath x11/tint
 @bin bin/tint2
 @bin bin/tint2conf
@@ -9,8 +9,18 @@ share/doc/tint2/
 share/doc/tint2/AUTHORS
 share/doc/tint2/ChangeLog
 share/doc/tint2/README.md
+share/doc/tint2/html/
+share/doc/tint2/html/images/
+share/doc/tint2/html/images/panel_padding.jpg
+share/doc/tint2/html/images/panel_size_margin.jpg
+share/doc/tint2/html/images/task_padding.jpg
+share/doc/tint2/html/images/taskbar_padding.jpg
+share/doc/tint2/html/manual.html
+share/doc/tint2/html/readme.html
+share/doc/tint2/tint2.md
 share/examples/tint2/
-@sample ${SYSCONFDIR}/xdg/
+@sample ${SYSCONFDIR}/xdg
+@sample ${SYSCONFDIR}/xdg/tint2/
 share/examples/tint2/horizontal-dark-opaque.tint2rc
 share/examples/tint2/horizontal-dark-transparent.tint2rc
 share/examples/tint2/horizontal-light-opaque.tint2rc
@@ -32,22 +42,26 @@ share/examples/tint2/text_only_4.tint2rc
 share/examples/tint2/text_only_5.tint2rc
 share/examples/tint2/text_only_6.tint2rc
 share/examples/tint2/tint2rc
-@sample ${SYSCONFDIR}/xdg/tint2/
 @sample ${SYSCONFDIR}/xdg/tint2/tint2rc
 share/examples/tint2/vertical-dark-opaque.tint2rc
 share/examples/tint2/vertical-dark-transparent.tint2rc
 share/examples/tint2/vertical-light-opaque.tint2rc
 share/examples/tint2/vertical-light-transparent.tint2rc
+share/examples/tint2/vertical-neutral-icons.tint2rc
 share/icons/hicolor/scalable/apps/tint2.svg
 share/icons/hicolor/scalable/apps/tint2conf.svg
 share/locale/bs/LC_MESSAGES/tint2conf.mo
 share/locale/fr/LC_MESSAGES/tint2conf.mo
 share/locale/hr/LC_MESSAGES/tint2conf.mo
 share/locale/pl/LC_MESSAGES/tint2conf.mo
+share/locale/ru/LC_MESSAGES/tint2conf.mo
 share/locale/sr/LC_MESSAGES/tint2conf.mo
+share/mime/packages/tint2conf.xml
 share/tint2/
 share/tint2/default_icon.png
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@exec %D/bin/update-mime-database %D/share/mime
+@unexec-delete %D/bin/update-mime-database %D/share/mime
