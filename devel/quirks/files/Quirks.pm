@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.525 2017/08/31 12:22:46 fcambus Exp $
+# $OpenBSD: Quirks.pm,v 1.526 2017/09/01 18:08:07 juanfra Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -484,6 +484,7 @@ my $stem_extensions = {
 	'cargo' => 'rust',
 	'apertium-fr-ca' => 'apertium-fra-cat',
 	'py-doit' => 'doit',
+	'cython' => 'py-cython',
 };
 
 my $obsolete_reason = {
