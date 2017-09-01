@@ -1,11 +1,11 @@
-$OpenBSD: patch-tools_clang_include_clang_Sema_Sema_h,v 1.1 2017/08/03 15:54:36 sthen Exp $
+$OpenBSD: patch-tools_clang_include_clang_Sema_Sema_h,v 1.2 2017/09/01 06:40:28 ajacoutot Exp $
 
 Teach Clang about syslog format attribute
 
 Index: tools/clang/include/clang/Sema/Sema.h
 --- tools/clang/include/clang/Sema/Sema.h.orig
 +++ tools/clang/include/clang/Sema/Sema.h
-@@ -9971,6 +9971,7 @@ class Sema { (public)
+@@ -10255,6 +10255,7 @@ class Sema { (public)
      FST_FreeBSDKPrintf,
      FST_OSTrace,
      FST_OSLog,

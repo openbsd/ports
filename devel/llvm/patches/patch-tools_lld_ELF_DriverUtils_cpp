@@ -1,4 +1,4 @@
-$OpenBSD: patch-tools_lld_ELF_DriverUtils_cpp,v 1.5 2017/07/14 17:14:03 sthen Exp $
+$OpenBSD: patch-tools_lld_ELF_DriverUtils_cpp,v 1.6 2017/09/01 06:40:28 ajacoutot Exp $
 
 - Disable colored diagnostics.
 - Handle the OpenBSD-style major/minor shared library version scheme.
@@ -6,16 +6,25 @@ $OpenBSD: patch-tools_lld_ELF_DriverUtils_cpp,v 1.5 2017/07/14 17:14:03 sthen Ex
 Index: tools/lld/ELF/DriverUtils.cpp
 --- tools/lld/ELF/DriverUtils.cpp.orig
 +++ tools/lld/ELF/DriverUtils.cpp
-@@ -59,7 +59,7 @@ static bool getColorDiagnostics(opt::InputArgList &Arg
+@@ -56,7 +56,7 @@ static bool getColorDiagnostics(opt::InputArgList &Arg
    auto *Arg = Args.getLastArg(OPT_color_diagnostics, OPT_color_diagnostics_eq,
                                OPT_no_color_diagnostics);
    if (!Arg)
--    return Default;
+-    return ErrorOS->has_colors();
 +    return false;
    if (Arg->getOption().getID() == OPT_color_diagnostics)
      return true;
    if (Arg->getOption().getID() == OPT_no_color_diagnostics)
-@@ -194,9 +194,35 @@ Optional<std::string> elf::searchLibrary(StringRef Nam
+@@ -64,7 +64,7 @@ static bool getColorDiagnostics(opt::InputArgList &Arg
+ 
+   StringRef S = Arg->getValue();
+   if (S == "auto")
+-    return ErrorOS->has_colors();
++    return false;
+   if (S == "always")
+     return true;
+   if (S != "never")
+@@ -198,9 +198,35 @@ Optional<std::string> elf::searchLibrary(StringRef Nam
      return findFromSearchPaths(Name.substr(1));
  
    for (StringRef Dir : Config->SearchPaths) {

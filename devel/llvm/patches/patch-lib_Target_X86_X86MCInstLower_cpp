@@ -1,11 +1,11 @@
-$OpenBSD: patch-lib_Target_X86_X86MCInstLower_cpp,v 1.1 2017/08/10 10:29:01 sthen Exp $
+$OpenBSD: patch-lib_Target_X86_X86MCInstLower_cpp,v 1.2 2017/09/01 06:40:28 ajacoutot Exp $
 
 Use int3 trap padding between functions instead of trapsleds with a leading jump.
 
 Index: lib/Target/X86/X86MCInstLower.cpp
 --- lib/Target/X86/X86MCInstLower.cpp.orig
 +++ lib/Target/X86/X86MCInstLower.cpp
-@@ -1736,3 +1736,9 @@ void X86AsmPrinter::EmitInstruction(const MachineInstr
+@@ -1967,3 +1967,9 @@ void X86AsmPrinter::EmitInstruction(const MachineInstr
  
    EmitAndCountInstruction(TmpInst);
  }

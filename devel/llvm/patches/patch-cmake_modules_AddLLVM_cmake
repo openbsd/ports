@@ -1,7 +1,8 @@
-$OpenBSD: patch-cmake_modules_AddLLVM_cmake,v 1.3 2017/02/10 09:37:43 ajacoutot Exp $
---- cmake/modules/AddLLVM.cmake.orig	Mon Oct 10 19:43:29 2016
-+++ cmake/modules/AddLLVM.cmake	Mon Oct 10 20:18:00 2016
-@@ -185,7 +185,7 @@ function(add_link_opts target_name)
+$OpenBSD: patch-cmake_modules_AddLLVM_cmake,v 1.4 2017/09/01 06:40:28 ajacoutot Exp $
+Index: cmake/modules/AddLLVM.cmake
+--- cmake/modules/AddLLVM.cmake.orig
++++ cmake/modules/AddLLVM.cmake
+@@ -201,7 +201,7 @@ function(add_link_opts target_name)
        elseif(${CMAKE_SYSTEM_NAME} MATCHES "SunOS")
          set_property(TARGET ${target_name} APPEND_STRING PROPERTY
                       LINK_FLAGS " -Wl,-z -Wl,discard-unused=sections")

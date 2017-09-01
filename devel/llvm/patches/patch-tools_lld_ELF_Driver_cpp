@@ -1,4 +1,4 @@
-$OpenBSD: patch-tools_lld_ELF_Driver_cpp,v 1.4 2017/07/14 17:14:03 sthen Exp $
+$OpenBSD: patch-tools_lld_ELF_Driver_cpp,v 1.5 2017/09/01 06:40:28 ajacoutot Exp $
 
 - ELF: Add /usr/lib as default search path.
 
@@ -9,23 +9,35 @@ $OpenBSD: patch-tools_lld_ELF_Driver_cpp,v 1.4 2017/07/14 17:14:03 sthen Exp $
 Index: tools/lld/ELF/Driver.cpp
 --- tools/lld/ELF/Driver.cpp.orig
 +++ tools/lld/ELF/Driver.cpp
-@@ -475,6 +475,9 @@ static std::vector<StringRef> getLines(MemoryBufferRef
+@@ -410,6 +410,15 @@ static std::vector<StringRef> getArgs(opt::InputArgLis
+   return V;
+ }
  
- // Initializes Config members by the command line options.
- void LinkerDriver::readConfigs(opt::InputArgList &Args) {
++static std::vector<StringRef> getSearchPaths(opt::InputArgList &Args) {
++  std::vector<StringRef> V;
 +  if (!Args.hasArg(OPT_nostdlib))
-+    Config->SearchPaths.push_back("=/usr/lib");
++    V.push_back("=/usr/lib");
++  for (auto *Arg : Args.filtered(OPT_L))
++    V.push_back(Arg->getValue());
++  return V;
++}
 +
-   for (auto *Arg : Args.filtered(OPT_L))
-     Config->SearchPaths.push_back(Arg->getValue());
- 
-@@ -509,7 +512,8 @@ void LinkerDriver::readConfigs(opt::InputArgList &Args
-   Config->NoUndefinedVersion = Args.hasArg(OPT_no_undefined_version);
-   Config->Nostdlib = Args.hasArg(OPT_nostdlib);
-   Config->OMagic = Args.hasArg(OPT_omagic);
+ static std::string getRpath(opt::InputArgList &Args) {
+   std::vector<StringRef> V = getArgs(Args, OPT_rpath);
+   return llvm::join(V.begin(), V.end(), ":");
+@@ -654,12 +663,13 @@ void LinkerDriver::readConfigs(opt::InputArgList &Args
+   Config->OptRemarksWithHotness = Args.hasArg(OPT_opt_remarks_with_hotness);
+   Config->Optimize = getInteger(Args, OPT_O, 1);
+   Config->OutputFile = Args.getLastArgValue(OPT_o);
 -  Config->Pie = getArg(Args, OPT_pie, OPT_nopie, false);
 +  Config->Pie = getArg(Args, OPT_pie, OPT_nopie,
 +      !Args.hasArg(OPT_shared) && !Args.hasArg(OPT_relocatable));
    Config->PrintGcSections = Args.hasArg(OPT_print_gc_sections);
+   Config->Rpath = getRpath(Args);
    Config->Relocatable = Args.hasArg(OPT_relocatable);
-   Config->DefineCommon = getArg(Args, OPT_define_common, OPT_no_define_common,
+   Config->SaveTemps = Args.hasArg(OPT_save_temps);
+-  Config->SearchPaths = getArgs(Args, OPT_L);
++  Config->SearchPaths = getSearchPaths(Args);
+   Config->SectionStartMap = getSectionStartMap(Args);
+   Config->Shared = Args.hasArg(OPT_shared);
+   Config->SingleRoRx = Args.hasArg(OPT_no_rosegment);

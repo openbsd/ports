@@ -1,4 +1,4 @@
-$OpenBSD: patch-tools_lld_ELF_SymbolTable_cpp,v 1.1 2017/03/23 08:26:07 ajacoutot Exp $
+$OpenBSD: patch-tools_lld_ELF_SymbolTable_cpp,v 1.2 2017/09/01 06:40:28 ajacoutot Exp $
 
 Work around a problem where linker-generated symbols are not properly
 versioned and end up as local symbols despite being explicitly listed as
@@ -7,9 +7,10 @@ global in the version script.  This breaks our brk()/sbrk() implementation.
 The diff is only a partial solution and unlikely to be accepted as-is
 upstream.  We'll keep it as a local diff until a better solution is found.
 
---- tools/lld/ELF/SymbolTable.cpp.orig	Sun Mar 19 21:23:17 2017
-+++ tools/lld/ELF/SymbolTable.cpp	Sun Mar 19 21:24:00 2017
-@@ -142,6 +142,12 @@ DefinedRegular<ELFT> *SymbolTable<ELFT>::addIgnored(St
+Index: tools/lld/ELF/SymbolTable.cpp
+--- tools/lld/ELF/SymbolTable.cpp.orig
++++ tools/lld/ELF/SymbolTable.cpp
+@@ -145,6 +145,12 @@ DefinedRegular *SymbolTable<ELFT>::addIgnored(StringRe
    SymbolBody *S = find(Name);
    if (!S || S->isInCurrentDSO())
      return nullptr;

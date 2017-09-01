@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.153 2017/08/10 10:29:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.154 2017/09/01 06:40:28 ajacoutot Exp $
 
 # XXX: Remember to bump MODCLANG_VERSION in lang/clang/clang.port.mk when
 # updating this port.
@@ -12,8 +12,7 @@ MULTI_PACKAGES =	-main -python
 COMMENT-main =	modular, fast C/C++/ObjC compiler, static analyzer and tools
 COMMENT-python =	Python bindings for Clang
 
-LLVM_V =	4.0.1
-REVISION-main =	3
+LLVM_V =	5.0.0rc4
 DISTNAME =	llvm-${LLVM_V}.src
 PKGNAME =	llvm-${LLVM_V}
 PKGNAME-main =	llvm-${LLVM_V}
@@ -22,11 +21,12 @@ CATEGORIES =	devel
 DISTFILES =	llvm-${LLVM_V}.src${EXTRACT_SUFX} \
 		cfe-${LLVM_V}.src${EXTRACT_SUFX} \
 		lld-${LLVM_V}.src${EXTRACT_SUFX}
-MASTER_SITES =	http://www.llvm.org/releases/${LLVM_V}/
+#MASTER_SITES =	http://www.llvm.org/releases/${LLVM_V}/
+MASTER_SITES =	http://prereleases.llvm.org/5.0.0/rc4/
 EXTRACT_SUFX =	.tar.xz
 
-SHARED_LIBS =	clang		5.0 \
-		LTO		2.0
+SHARED_LIBS =	clang		6.0 \
+		LTO		3.0
 
 # packager notes in http://llvm.org/docs/Packaging.html
 HOMEPAGE =	http://www.llvm.org/
@@ -36,22 +36,17 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =	${MODGCC4_CPPWANTLIB} c m pthread z
+WANTLIB =	${COMPILER_LIBCXX} c m pthread z
 
 MODULES =	devel/cmake \
-		lang/python \
-		gcc4
+		lang/python
 
-MODGCC4_LANGS = c c++
-MODGCC4_ARCHS =	*
+COMPILER =	base-clang ports-gcc
 
 TEST_DEPENDS =		devel/dejagnu \
 			shells/bash
 BUILD_DEPENDS +=	textproc/py-sphinx
 RUN_DEPENDS +=		devel/gtest
-
-TEST_DEPENDS +=		lang/gcc/${MODGCC4_VERSION},-c++
-RUN_DEPENDS +=		lang/gcc/${MODGCC4_VERSION},-c++
 
 # clang python module loads libclang.so dynamically with cdll.LoadLibrary()
 WANTLIB-python =	clang
@@ -63,7 +58,8 @@ CONFIGURE_ARGS =	-DLLVM_ENABLE_FFI:Bool=False \
 			-DLLVM_ENABLE_TERMINFO:Bool=False \
 			-DLLVM_REQUIRES_RTTI:Bool=True \
 			-DCMAKE_DISABLE_FIND_PACKAGE_LibXml2:Bool=True \
-			-DGO_EXECUTABLE=GO_EXECUTABLE-NOTFOUND
+			-DGO_EXECUTABLE=GO_EXECUTABLE-NOTFOUND \
+			-DBacktrace_LIBRARY=''
 
 # Workaround relocation overflow
 #
@@ -88,7 +84,7 @@ GCC_CONFIG =		x86_64-unknown-openbsd${OSREV}
 .else
 GCC_CONFIG =		${MACHINE_ARCH}-unknown-openbsd${OSREV}
 .endif
-CLANG_INCLUDE_PATH =	lib/clang/${LLVM_V}/include
+CLANG_INCLUDE_PATH =	lib/clang/${LLVM_V:S/rc4//}/include
 SUBST_VARS +=		CLANG_INCLUDE_PATH LLVM_V GCC_VER GCC_CONFIG
 
 post-extract:
@@ -96,8 +92,7 @@ post-extract:
 	mv ${WRKDIR}/lld-${LLVM_V}.src ${WRKSRC}/tools/lld
 
 pre-configure:
-	@${SUBST_CMD} ${WRKSRC}/tools/clang/lib/Driver/ToolChains.cpp \
-	    ${WRKSRC}/tools/clang/lib/Driver/Tools.cpp
+	@${SUBST_CMD} ${WRKSRC}/tools/clang/lib/Driver/ToolChains/OpenBSD.cpp
 	-@ln -s ${MODPY_BIN} ${WRKDIR}/bin/python
 
 post-build:
@@ -120,3 +115,8 @@ post-install:
 	@rm ${PREFIX}/man/man1/FileCheck.1
 
 .include <bsd.port.mk>
+
+.if ${CHOSEN_COMPILER} == "ports-gcc"
+TEST_DEPENDS +=		lang/gcc/${MODGCC4_VERSION},-c++
+RUN_DEPENDS +=		lang/gcc/${MODGCC4_VERSION},-c++
+.endif

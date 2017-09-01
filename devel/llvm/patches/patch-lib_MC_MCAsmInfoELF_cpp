@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_MC_MCAsmInfoELF_cpp,v 1.1 2017/07/14 17:14:03 sthen Exp $
+$OpenBSD: patch-lib_MC_MCAsmInfoELF_cpp,v 1.2 2017/09/01 06:40:28 ajacoutot Exp $
 
 - Do not use nonexec stack segment header hints.
 - Do not use ident.
@@ -6,7 +6,7 @@ $OpenBSD: patch-lib_MC_MCAsmInfoELF_cpp,v 1.1 2017/07/14 17:14:03 sthen Exp $
 Index: lib/MC/MCAsmInfoELF.cpp
 --- lib/MC/MCAsmInfoELF.cpp.orig
 +++ lib/MC/MCAsmInfoELF.cpp
-@@ -27,9 +27,9 @@ MCSection *MCAsmInfoELF::getNonexecutableStackSection(
+@@ -28,7 +28,7 @@ MCSection *MCAsmInfoELF::getNonexecutableStackSection(
  }
  
  MCAsmInfoELF::MCAsmInfoELF() {
@@ -15,6 +15,3 @@ Index: lib/MC/MCAsmInfoELF.cpp
    WeakRefDirective = "\t.weak\t";
    PrivateGlobalPrefix = ".L";
    PrivateLabelPrefix = ".L";
--  UsesNonexecutableStackSection = true;
-+  UsesNonexecutableStackSection = false;
- }
