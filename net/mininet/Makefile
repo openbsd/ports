@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/08/21 18:47:12 akoshibe Exp $
+# $OpenBSD: Makefile,v 1.2 2017/09/01 17:08:48 jasper Exp $
 
 COMMENT =	emulator for rapid prototyping of software defined networks
 
@@ -33,14 +33,16 @@ MAKE_ENV =	BINDIR=${LOCALBASE}/bin \
 do-build:
 	$(CC) ${WRKSRC}/mnexec.c -o ${WRKBUILD}/mnexec
 	help2man -N -n "create a Mininet network."  --no-discard-stderr \
-	"${MODPY_BIN} -B ${WRKBUILD}/bin/mn" -o ${WRKBUILD}/mn.1
+		"${MODPY_BIN} -B ${WRKBUILD}/bin/mn" -o ${WRKBUILD}/mn.1
 	help2man -N -n "execution utility for Mininet."  -h "-h" -v "-v" \
-	--no-discard-stderr ${WRKBUILD}/mnexec -o ${WRKBUILD}/mnexec.1
+		--no-discard-stderr ${WRKBUILD}/mnexec -o ${WRKBUILD}/mnexec.1
 
 pre-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/mnexec ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKBUILD}/mnexec.1 ${PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKBUILD}/mn.1 ${PREFIX}/man/man1
+.for m in mnexec mn
+	${INSTALL_MAN} ${WRKBUILD}/$m.1 ${PREFIX}/man/man1
+.endfor
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/mininet
 	${INSTALL_DATA} ${WRKBUILD}/README.md ${PREFIX}/share/doc/mininet
+
 .include <bsd.port.mk>
