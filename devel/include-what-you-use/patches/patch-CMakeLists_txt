@@ -1,0 +1,18 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.3 2017/09/01 06:41:56 ajacoutot Exp $
+
+LLVM r304864 extracted new library libLLVMBinaryFormat out of
+libLLVMSupport and libLLVMCore depends on it.
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -160,7 +160,8 @@ target_link_libraries(include-what-you-use
+   LLVMProfileData # Core, Support, Object
+   LLVMObject # BitReader, Core, Support
+   LLVMBitReader # Core, Support
+-  LLVMCore # Support
++  LLVMCore # BinaryFormat, Support
++  LLVMBinaryFormat # Support
+   LLVMSupport # Demangle
+   LLVMDemangle
+ )
