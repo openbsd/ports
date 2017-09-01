@@ -1,0 +1,26 @@
+$OpenBSD: patch-Source_cmakemain_cxx,v 1.1 2017/09/01 08:45:13 dcoppa Exp $
+
+commit 18454ea44d6a1fd2dbc613ad9c3fe941639563aa
+Author: Brad King <brad.king@kitware.com>
+Date:   Tue Aug 29 19:21:58 2017
+
+cmake: Fix --find-package mode with imported targets
+
+The change in commit v3.9.0-rc1~116^2~6 (cmakemain: use script role for
+-P, 2017-05-11) accidentally left project commands out of find-package
+mode, causing packages that provide imported targets to break.
+
+Fixes: #17124
+
+Index: Source/cmakemain.cxx
+--- Source/cmakemain.cxx.orig
++++ Source/cmakemain.cxx
+@@ -306,7 +306,7 @@ int do_cmake(int ac, char const* const* av)
+     return ret;
+   }
+   cmake::Role const role =
+-    workingMode == cmake::NORMAL_MODE ? cmake::RoleProject : cmake::RoleScript;
++    workingMode == cmake::SCRIPT_MODE ? cmake::RoleScript : cmake::RoleProject;
+   cmake cm(role);
+   cm.SetHomeDirectory("");
+   cm.SetHomeOutputDirectory("");
