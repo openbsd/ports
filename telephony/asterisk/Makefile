@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.262 2017/08/31 21:34:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.263 2017/09/01 09:55:28 sthen Exp $
 
 BROKEN-aarch64=	linker problems with BlocksRuntime that only show up at runtime
 
@@ -6,6 +6,7 @@ COMMENT-main=	open source multi-protocol PBX and telephony toolkit
 
 VER=		13.17.1
 PJ_V=		2.6
+REVISION-main=	0
 PORTROACH=	limitw:0,odd
 DISTNAME=	asterisk-${VER:S/beta/-beta/:S/rc/-rc/}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} pjproject-${PJ_V}.tar.bz2:0
@@ -73,8 +74,8 @@ RUN_DEPENDS-main=	telephony/asterisk-sounds/core-sounds/en,gsm>=1.4.25 \
 			telephony/asterisk-sounds/moh-opsound,wav
 BUILD_DEPENDS=		security/libsrtp>=1.4.4 # statically linked
 
-MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/releases/ \
-		http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
+MASTER_SITES=	https://downloads.asterisk.org/pub/telephony/asterisk/releases/ \
+		https://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
 MASTER_SITES0=	http://www.pjsip.org/release/${PJ_V}/
 
 USE_GMAKE=		Yes
@@ -93,6 +94,7 @@ CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS}" \
 			CFLAGS="${CFLAGS}" \
 			LDFLAGS="${LDFLAGS}" \
 			LIBS="-lpthread" \
+			NOISY_BUILD="Yes" \
 			ac_cv_path_LDCONFIG=:
 MAKE_FLAGS+=		ASTCFLAGS="${CFLAGS}" \
 			ASTLDFLAGS="${LDFLAGS}" \

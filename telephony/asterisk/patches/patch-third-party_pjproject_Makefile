@@ -1,0 +1,14 @@
+$OpenBSD: patch-third-party_pjproject_Makefile,v 1.1 2017/09/01 09:55:28 sthen Exp $
+
+Index: third-party/pjproject/Makefile
+--- third-party/pjproject/Makefile.orig
++++ third-party/pjproject/Makefile
+@@ -110,7 +110,7 @@ TARBALL = $(DOWNLOAD_DIR)/$(TARBALL_FILE)
+ TARBALL_URL = $(PJPROJECT_URL)/$(TARBALL_FILE)
+ PJMD5SUM = $(patsubst %.tar.bz2,%.md5,$(TARBALL))
+ 
+-$(TARBALL): ../versions.mak
++$(TARBALL):
+ 	$(CMD_PREFIX) $(download_from_pjproject) || (rm -rf $@ ;\
+ 	$(SHELL_ECHO_PREFIX) Retrying download ; $(download_from_pjproject))
+ 

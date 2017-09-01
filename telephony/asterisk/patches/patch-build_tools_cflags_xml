@@ -1,8 +1,16 @@
-$OpenBSD: patch-build_tools_cflags_xml,v 1.9 2017/07/12 19:55:29 sthen Exp $
+$OpenBSD: patch-build_tools_cflags_xml,v 1.10 2017/09/01 09:55:28 sthen Exp $
 Index: build_tools/cflags.xml
 --- build_tools/cflags.xml.orig
 +++ build_tools/cflags.xml
-@@ -130,7 +130,7 @@
+@@ -2,6 +2,7 @@
+ 		<member name="DONT_OPTIMIZE" displayname="Disable Optimizations by the Compiler">
+ 			<use autoselect="yes">COMPILE_DOUBLE</use>
+ 			<support_level>core</support_level>
++			<defaultenabled>yes</defaultenabled>
+ 		</member>
+ 		<member name="COMPILE_DOUBLE" displayname="Pre-compile with optimizations to detect errors, then discard and recompile with DONT_OPTIMIZE.  Creates intermediate .i files">
+ 			<depend>DONT_OPTIMIZE</depend>
+@@ -130,7 +131,7 @@
  		</member>
  		<member name="BUILD_NATIVE" displayname="Allow compiler to generate code optimized for the CPU on which the build is performed.">
  			<support_level>core</support_level>
