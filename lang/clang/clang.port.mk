@@ -1,6 +1,6 @@
-# $OpenBSD: clang.port.mk,v 1.25 2017/08/21 09:12:47 espie Exp $
+# $OpenBSD: clang.port.mk,v 1.26 2017/09/01 06:41:00 ajacoutot Exp $
 
-MODCLANG_VERSION=	4.0.1
+MODCLANG_VERSION=	5.0.0rc4
 
 MODCLANG_ARCHS ?= ${LLVM_ARCHS}
 MODCLANG_LANGS ?=
@@ -25,6 +25,14 @@ _MODCLANG_ARCH_USES = Yes
 .  endif
 .endfor
 
+_MODCLANG_ARCH_CLANG = No
+
+.for _i in ${CLANG_ARCHS}
+.  if !empty(MACHINE_ARCH:M${_i})
+_MODCLANG_ARCH_CLANG = Yes
+.  endif
+.endfor
+
 .if ${_MODCLANG_ARCH_USES:L} == "yes"
 
 BUILD_DEPENDS += devel/llvm>=${MODCLANG_VERSION}
@@ -35,12 +43,19 @@ COMPILER_LINKS = gcc ${LOCALBASE}/bin/clang cc ${LOCALBASE}/bin/clang \
 COMPILER_LINKS += g++ ${LOCALBASE}/bin/clang++ c++ ${LOCALBASE}/bin/clang++ \
 	clang++ ${LOCALBASE}/bin/clang++
 
+.    if ${_MODCLANG_ARCH_CLANG:L} == "no"
 # uses libestdc++
 MODULES += gcc4
 MODCLANG_CPPLIBDEP = ${MODGCC4_CPPLIBDEP}
 LIB_DEPENDS += ${MODCLANG_CPPLIBDEP}
 MODCLANG_CPPWANTLIB = ${MODGCC4_CPPWANTLIB}
 WANTLIB += ${MODCLANG_CPPWANTLIB}
+.    else
+# uses libc++
+MODCLANG_CPPLIBDEP =
+MODCLANG_CPPWANTLIB = c++ c++abi pthread
+WANTLIB += ${MODCLANG_CPPWANTLIB}
+.    endif
 .  endif
 .endif
 
