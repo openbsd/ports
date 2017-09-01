@@ -1,7 +1,8 @@
-$OpenBSD: patch-ext_spl_php_spl_c,v 1.4 2017/02/24 09:13:12 robert Exp $
---- ext/spl/php_spl.c.orig.port	Tue Feb 14 14:51:32 2017
-+++ ext/spl/php_spl.c	Thu Feb 23 18:50:47 2017
-@@ -768,19 +768,19 @@ PHP_FUNCTION(spl_object_hash)
+$OpenBSD: patch-ext_spl_php_spl_c,v 1.5 2017/09/01 08:25:02 sthen Exp $
+Index: ext/spl/php_spl.c
+--- ext/spl/php_spl.c.orig
++++ ext/spl/php_spl.c
+@@ -780,19 +780,19 @@ PHP_FUNCTION(spl_object_hash)
  
  PHPAPI zend_string *php_spl_object_hash(zval *obj) /* {{{*/
  {
