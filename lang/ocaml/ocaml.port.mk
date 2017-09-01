@@ -1,4 +1,4 @@
-# $OpenBSD: ocaml.port.mk,v 1.30 2014/10/25 11:55:54 chrisz Exp $
+# $OpenBSD: ocaml.port.mk,v 1.31 2017/09/01 17:04:22 jasper Exp $
 
 # regular file usage for bytecode:
 # PLIST               -- bytecode base files
@@ -39,7 +39,7 @@ MAKE_ENV +=		OCAMLFIND_DESTDIR=${DESTDIR}${TRUEPREFIX}/lib/ocaml \
 			OCAMLFIND_COMMANDS="ocamldoc=${MODOCAML_OCAMLDOC}"
 
 MODOCAML_pre-fake = \
-  	${_FAKESUDO} ${INSTALL_DATA_DIR} ${WRKINST}${LOCALBASE}/lib/ocaml/stublibs
+	${_FAKESUDO} ${INSTALL_DATA_DIR} ${WRKINST}${LOCALBASE}/lib/ocaml/stublibs
 
 
 ######################################################################
@@ -90,7 +90,7 @@ MODOASIS_BUILD_TARGET += \
 	&& ${SETENV} ${MAKE_ENV} ${_MODOASIS_SETUP} ${TARGET}
 . endfor
 . if !target(do-build)
-do-build: 
+do-build:
 	${MODOASIS_BUILD_TARGET}
 . endif
 
@@ -102,7 +102,7 @@ MODOASIS_INSTALL_TARGET += \
 	&& ${SETENV} ${MAKE_ENV} ${_MODOASIS_SETUP} ${TARGET}
 . endfor
 . if !target(do-install)
-do-install: 
+do-install:
 	${MODOASIS_INSTALL_TARGET}
 . endif
 
@@ -114,7 +114,7 @@ MODOASIS_TEST_TARGET += \
 	&& ${SETENV} ${MAKE_ENV} ${_MODOASIS_SETUP} ${TARGET}
 . endfor
 . if !target(do-test)
-do-test: 
+do-test:
 	${MODOASIS_TEST_TARGET}
 . endif
 

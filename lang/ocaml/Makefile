@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2017/05/25 22:57:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.77 2017/09/01 17:04:22 jasper Exp $
 
 MULTI_PACKAGES = -graphics -main
 
@@ -6,7 +6,7 @@ COMMENT-main =	   ML language with complete class-based objective system
 COMMENT-graphics = OCaml Graphics library providing basic drawing primitives
 
 # XXX Don't even think of updating ocaml alone.
-# Do check that the ports that depend on it still work, or repair them. 
+# Do check that the ports that depend on it still work, or repair them.
 # Don't forget to bump version in ocaml.port.mk, too!
 VERSION=4.03.0
 REVISION=		0
