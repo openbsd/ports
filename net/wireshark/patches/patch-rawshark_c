@@ -1,0 +1,17 @@
+$OpenBSD: patch-rawshark_c,v 1.1 2017/09/01 09:39:29 sthen Exp $
+
+Index: rawshark.c
+--- rawshark.c.orig
++++ rawshark.c
+@@ -602,7 +602,11 @@ main(int argc, char *argv[])
+                 limit.rlim_cur = get_positive_int(optarg, "memory limit");
+                 limit.rlim_max = get_positive_int(optarg, "memory limit");
+ 
++#ifdef RLIMIT_AS
+                 if(setrlimit(RLIMIT_AS, &limit) != 0) {
++#else
++                if(setrlimit(RLIMIT_DATA, &limit) != 0) {
++#endif
+                     cmdarg_err("setrlimit() returned error");
+                     ret = INVALID_OPTION;
+                     goto clean_exit;
