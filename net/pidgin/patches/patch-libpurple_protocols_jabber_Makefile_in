@@ -1,7 +1,8 @@
-$OpenBSD: patch-libpurple_protocols_jabber_Makefile_in,v 1.5 2014/10/28 01:14:23 brad Exp $
---- libpurple/protocols/jabber/Makefile.in.orig	Thu Oct 16 20:20:19 2014
-+++ libpurple/protocols/jabber/Makefile.in	Sun Oct 26 16:45:40 2014
-@@ -191,7 +191,7 @@ libxmpp_la_OBJECTS = $(am_libxmpp_la_OBJECTS)
+$OpenBSD: patch-libpurple_protocols_jabber_Makefile_in,v 1.6 2017/09/01 09:53:09 ajacoutot Exp $
+Index: libpurple/protocols/jabber/Makefile.in
+--- libpurple/protocols/jabber/Makefile.in.orig
++++ libpurple/protocols/jabber/Makefile.in
+@@ -189,7 +189,7 @@ libxmpp_la_OBJECTS = $(am_libxmpp_la_OBJECTS)
  libxmpp_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
  	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
  	$(libxmpp_la_LDFLAGS) $(LDFLAGS) -o $@
