@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.15 2016/09/23 09:16:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2017/09/01 16:18:27 sthen Exp $
+
+BROKEN-i386=	runs tests during build; these segfault
 
 # Some assembly required
 ONLY_FOR_ARCHS =i386 amd64
