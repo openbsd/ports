@@ -1,4 +1,6 @@
-$OpenBSD: patch-include_llvm_MC_MCAsmInfoELF_h,v 1.1 2017/09/01 06:40:28 ajacoutot Exp $
+$OpenBSD: patch-include_llvm_MC_MCAsmInfoELF_h,v 1.2 2017/09/02 09:36:13 ajacoutot Exp $
+
+Do not use nonexec stack segment header hints.
 
 Index: include/llvm/MC/MCAsmInfoELF.h
 --- include/llvm/MC/MCAsmInfoELF.h.orig
