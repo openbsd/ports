@@ -1,0 +1,26 @@
+$OpenBSD: patch-lib_ruby_stdlib_rubygems_installer_rb,v 1.1 2017/09/02 21:36:55 jeremy Exp $
+
+Index: lib/ruby/stdlib/rubygems/installer.rb
+--- lib/ruby/stdlib/rubygems/installer.rb.orig
++++ lib/ruby/stdlib/rubygems/installer.rb
+@@ -700,6 +700,11 @@ class Gem::Installer
+       unpack or File.writable?(gem_home)
+   end
+ 
++  def verify_spec_name
++    return if spec.name =~ Gem::Specification::VALID_NAME_PATTERN
++    raise Gem::InstallError, "#{spec} has an invalid name"
++  end
++
+   ##
+   # Return the text for an application file.
+ 
+@@ -823,6 +828,8 @@ TEXT
+     verify_gem_home options[:unpack]
+ 
+     ensure_loadable_spec
++
++    verify_spec_name
+ 
+     if options[:install_as_default]
+       Gem.ensure_default_gem_subdirectories gem_home

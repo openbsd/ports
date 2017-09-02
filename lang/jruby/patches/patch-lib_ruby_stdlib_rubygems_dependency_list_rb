@@ -1,0 +1,14 @@
+$OpenBSD: patch-lib_ruby_stdlib_rubygems_dependency_list_rb,v 1.1 2017/09/02 21:36:55 jeremy Exp $
+
+Index: lib/ruby/stdlib/rubygems/dependency_list.rb
+--- lib/ruby/stdlib/rubygems/dependency_list.rb.orig
++++ lib/ruby/stdlib/rubygems/dependency_list.rb
+@@ -104,7 +104,7 @@ class Gem::DependencyList
+   end
+ 
+   def inspect # :nodoc:
+-    "#<%s:0x%x %p>" % [self.class, object_id, map { |s| s.full_name }]
++    "%s %p>" % [super[0..-2], map { |s| s.full_name }]
+   end
+ 
+   ##

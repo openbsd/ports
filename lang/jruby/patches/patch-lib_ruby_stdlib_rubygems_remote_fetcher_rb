@@ -1,0 +1,14 @@
+$OpenBSD: patch-lib_ruby_stdlib_rubygems_remote_fetcher_rb,v 1.1 2017/09/02 21:36:55 jeremy Exp $
+
+Index: lib/ruby/stdlib/rubygems/remote_fetcher.rb
+--- lib/ruby/stdlib/rubygems/remote_fetcher.rb.orig
++++ lib/ruby/stdlib/rubygems/remote_fetcher.rb
+@@ -110,7 +110,7 @@ class Gem::RemoteFetcher
+     else
+       target = res.target.to_s.strip
+ 
+-      if /\.#{Regexp.quote(host)}\z/ =~ target
++      if URI("http://" + target).host.end_with?(".#{host}")
+         return URI.parse "#{uri.scheme}://#{target}#{uri.path}"
+       end
+ 

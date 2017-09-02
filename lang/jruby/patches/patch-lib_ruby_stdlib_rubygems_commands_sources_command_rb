@@ -1,0 +1,14 @@
+$OpenBSD: patch-lib_ruby_stdlib_rubygems_commands_sources_command_rb,v 1.1 2017/09/02 21:36:55 jeremy Exp $
+
+Index: lib/ruby/stdlib/rubygems/commands/sources_command.rb
+--- lib/ruby/stdlib/rubygems/commands/sources_command.rb.orig
++++ lib/ruby/stdlib/rubygems/commands/sources_command.rb
+@@ -44,7 +44,7 @@ class Gem::Commands::SourcesCommand < Gem::Command
+     source = Gem::Source.new source_uri
+ 
+     begin
+-      if Gem.sources.include? source_uri then
++      if Gem.sources.include? source then
+         say "source #{source_uri} already present in the cache"
+       else
+         source.load_specs :released

@@ -1,0 +1,14 @@
+$OpenBSD: patch-lib_ruby_stdlib_rubygems_commands_open_command_rb,v 1.1 2017/09/02 21:36:55 jeremy Exp $
+
+Index: lib/ruby/stdlib/rubygems/commands/open_command.rb
+--- lib/ruby/stdlib/rubygems/commands/open_command.rb.orig
++++ lib/ruby/stdlib/rubygems/commands/open_command.rb
+@@ -72,7 +72,7 @@ class Gem::Commands::OpenCommand < Gem::Command
+   end
+ 
+   def spec_for name
+-    spec = Gem::Specification.find_all_by_name(name, @version).last
++    spec = Gem::Specification.find_all_by_name(name, @version).first
+ 
+     return spec if spec
+ 
