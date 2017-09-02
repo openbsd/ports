@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_mem_align_h,v 1.1 2017/05/13 08:53:52 espie Exp $
+$OpenBSD: patch-src_mem_align_h,v 1.2 2017/09/02 21:43:45 jeremy Exp $
 
 Index: src/mem/align.h
 --- src/mem/align.h.orig
 +++ src/mem/align.h
-@@ -15,22 +15,13 @@
+@@ -15,22 +15,10 @@
  #ifndef _LIBP_ALIGN_H_
  #define _LIBP_ALIGN_H_
  
@@ -22,14 +22,12 @@ Index: src/mem/align.h
 -	void (*q)(void);
 -};
 -
--typedef union max_align max_align_t;
-+#ifndef __CLANG_MAX_ALIGN_T_DEFINED
-+#define __CLANG_MAX_ALIGN_T_DEFINED
+-typedef union max_align h_max_align_t;
+-
 +typedef struct {
 +	long long __max_align_ll __aligned(__alignof__(long long));
 +	long double __max_align_ld __aligned(__alignof__(long double));
-+} max_align_t;
-+#endif
- 
++} h_max_align_t;
++ 
  #endif
  

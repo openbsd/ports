@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2017/09/01 16:18:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2017/09/02 21:43:45 jeremy Exp $
 
 BROKEN-i386=	runs tests during build; these segfault
 
@@ -7,10 +7,9 @@ ONLY_FOR_ARCHS =i386 amd64
 
 COMMENT =	language agnostic asynchronous web server
 
-V =		1.9.1
+V =		1.11.0
 DISTNAME =	mongrel2-v${V}
 PKGNAME =	mongrel2-${V}
-REVISION =	2
 CATEGORIES =	www
 
 HOMEPAGE =	http://mongrel2.org/
@@ -18,7 +17,8 @@ HOMEPAGE =	http://mongrel2.org/
 # BSD, 3 clause
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		https://github.com/zedshaw/mongrel2/releases/download/v${V}/
+MASTER_SITES =		https://github.com/mongrel2/mongrel2/releases/download/v${V}/
+EXTRACT_SUFX =		.tar.bz2
 # strange charset in filenames; does not use extended headers
 TAR =			${LOCALBASE}/bin/gtar
 
