@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.39 2016/08/26 09:13:59 edd Exp $
+@comment $OpenBSD: PLIST,v 1.40 2017/09/02 21:59:05 rpointel Exp $
 @pkgpath mail/sylpheed,compface
 @pkgpath mail/sylpheed,compface,gpgme
 @pkgpath mail/sylpheed,gpgme
@@ -162,6 +162,7 @@ share/sylpheed/manual/ja/sylpheed-23.html
 share/sylpheed/manual/ja/sylpheed-24.html
 share/sylpheed/manual/ja/sylpheed-25.html
 share/sylpheed/manual/ja/sylpheed-26.html
+share/sylpheed/manual/ja/sylpheed-27.html
 share/sylpheed/manual/ja/sylpheed-3.html
 share/sylpheed/manual/ja/sylpheed-4.html
 share/sylpheed/manual/ja/sylpheed-5.html
