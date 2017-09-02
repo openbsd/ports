@@ -1,0 +1,16 @@
+$OpenBSD: patch-lib_rubygems_installer_rb,v 1.11 2017/09/02 21:34:12 jeremy Exp $
+
+Index: lib/rubygems/installer.rb
+--- lib/rubygems/installer.rb.orig
++++ lib/rubygems/installer.rb
+@@ -152,6 +152,10 @@ class Gem::Installer
+     @security_policy = nil if @force and @security_policy and
+                               not @security_policy.only_signed
+ 
++    unless spec.name =~ /\A[a-zA-Z0-9\.\-\_]+\z/
++      raise Gem::InstallError, "#{spec} has an invalid name"
++    end
++
+     unless @force
+       ensure_required_ruby_version_met
+       ensure_required_rubygems_version_met

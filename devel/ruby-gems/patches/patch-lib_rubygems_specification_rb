@@ -1,10 +1,11 @@
-$OpenBSD: patch-lib_rubygems_specification_rb,v 1.1 2014/06/25 15:38:18 jeremy Exp $
+$OpenBSD: patch-lib_rubygems_specification_rb,v 1.2 2017/09/02 21:34:12 jeremy Exp $
 
 Backport fix for Gem.refresh from upstream commit
 b61c621fb2e00e215bcc8ad7d9fe45433881da14.
 
---- lib/rubygems/specification.rb.orig	Tue Jun 24 14:21:46 2014
-+++ lib/rubygems/specification.rb	Tue Jun 24 14:21:52 2014
+Index: lib/rubygems/specification.rb
+--- lib/rubygems/specification.rb.orig
++++ lib/rubygems/specification.rb
 @@ -275,6 +275,12 @@ class Gem::Specification
  
        @@all = specs.values
@@ -18,3 +19,20 @@ b61c621fb2e00e215bcc8ad7d9fe45433881da14.
        _resort!
      end
      @@all
+@@ -2007,9 +2013,15 @@ class Gem::Specification
+       end
+     end
+ 
+-    unless String === name then
++    if !name.is_a?(String) then
+       raise Gem::InvalidSpecificationException,
+             "invalid value for attribute name: \"#{name.inspect}\""
++    elsif name !~ /[a-zA-Z]/ then
++      raise Gem::InvalidSpecificationException,
++            "invalid value for attribute name: #{name.dump} must include at least one letter"
++    elsif name !~ /\A[a-zA-Z0-9\.\-\_]+\z/ then
++      raise Gem::InvalidSpecificationException,
++            "invalid value for attribute name: #{name.dump} can only include letters, numbers, dashes, and underscores"
+     end
+ 
+     if require_paths.empty? then

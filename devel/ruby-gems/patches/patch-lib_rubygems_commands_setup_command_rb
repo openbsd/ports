@@ -1,7 +1,8 @@
-$OpenBSD: patch-lib_rubygems_commands_setup_command_rb,v 1.4 2012/04/27 18:41:07 jeremy Exp $
---- lib/rubygems/commands/setup_command.rb.orig	Thu Apr 19 21:29:58 2012
-+++ lib/rubygems/commands/setup_command.rb	Mon Apr 23 12:49:58 2012
-@@ -283,7 +283,7 @@ TEXT
+$OpenBSD: patch-lib_rubygems_commands_setup_command_rb,v 1.5 2017/09/02 21:34:12 jeremy Exp $
+Index: lib/rubygems/commands/setup_command.rb
+--- lib/rubygems/commands/setup_command.rb.orig
++++ lib/rubygems/commands/setup_command.rb
+@@ -286,7 +286,7 @@ TEXT
           lib_dir = Gem::ConfigMap[site_or_vendor]
           bin_dir = Gem::ConfigMap[:bindir]
        else

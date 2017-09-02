@@ -1,0 +1,18 @@
+$OpenBSD: patch-lib_rubygems_commands_query_command_rb,v 1.1 2017/09/02 21:34:12 jeremy Exp $
+
+Index: lib/rubygems/commands/query_command.rb
+--- lib/rubygems/commands/query_command.rb.orig
++++ lib/rubygems/commands/query_command.rb
+@@ -251,9 +251,10 @@ class Gem::Commands::QueryCommand < Gem::Command
+           end
+         end
+ 
+-        entry << "\n\n" << format_text(spec.summary, 68, 4)
++        summary = truncate_text(spec.summary, "the summary for #{spec.full_name}")
++        entry << "\n\n" << format_text(summary, 68, 4)
+       end
+-      output << entry
++      output << clean_text(entry)
+     end
+ 
+     say output.join(options[:details] ? "\n\n" : "\n")
