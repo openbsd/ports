@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/08/21 18:47:12 akoshibe Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/09/02 23:10:52 akoshibe Exp $
 bin/mn
 @bin bin/mnexec
 lib/python${MODPY_VERSION}/site-packages/mininet/
@@ -93,26 +93,8 @@ lib/python${MODPY_VERSION}/site-packages/mininet/examples/treeping64.py
 lib/python${MODPY_VERSION}/site-packages/mininet/examples/treeping64.pyc
 lib/python${MODPY_VERSION}/site-packages/mininet/examples/vlanhost.py
 lib/python${MODPY_VERSION}/site-packages/mininet/examples/vlanhost.pyc
-lib/python${MODPY_VERSION}/site-packages/mininet/freebsd/
-lib/python${MODPY_VERSION}/site-packages/mininet/freebsd/__init__.py
-lib/python${MODPY_VERSION}/site-packages/mininet/freebsd/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/mininet/freebsd/intf.py
-lib/python${MODPY_VERSION}/site-packages/mininet/freebsd/intf.pyc
-lib/python${MODPY_VERSION}/site-packages/mininet/freebsd/node.py
-lib/python${MODPY_VERSION}/site-packages/mininet/freebsd/node.pyc
-lib/python${MODPY_VERSION}/site-packages/mininet/freebsd/util.py
-lib/python${MODPY_VERSION}/site-packages/mininet/freebsd/util.pyc
 lib/python${MODPY_VERSION}/site-packages/mininet/link.py
 lib/python${MODPY_VERSION}/site-packages/mininet/link.pyc
-lib/python${MODPY_VERSION}/site-packages/mininet/linux/
-lib/python${MODPY_VERSION}/site-packages/mininet/linux/__init__.py
-lib/python${MODPY_VERSION}/site-packages/mininet/linux/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/mininet/linux/intf.py
-lib/python${MODPY_VERSION}/site-packages/mininet/linux/intf.pyc
-lib/python${MODPY_VERSION}/site-packages/mininet/linux/node.py
-lib/python${MODPY_VERSION}/site-packages/mininet/linux/node.pyc
-lib/python${MODPY_VERSION}/site-packages/mininet/linux/util.py
-lib/python${MODPY_VERSION}/site-packages/mininet/linux/util.pyc
 lib/python${MODPY_VERSION}/site-packages/mininet/log.py
 lib/python${MODPY_VERSION}/site-packages/mininet/log.pyc
 lib/python${MODPY_VERSION}/site-packages/mininet/moduledeps.py

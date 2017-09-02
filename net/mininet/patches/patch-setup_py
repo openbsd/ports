@@ -1,9 +1,9 @@
-$OpenBSD: patch-setup_py,v 1.1.1.1 2017/08/21 18:47:12 akoshibe Exp $
+$OpenBSD: patch-setup_py,v 1.2 2017/09/02 23:10:52 akoshibe Exp $
 
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -20,7 +20,13 @@ setup(
+@@ -20,7 +20,11 @@ setup(
      description='Process-based OpenFlow emulator',
      author='Bob Lantz',
      author_email='rlantz@cs.stanford.edu',
@@ -11,8 +11,6 @@ Index: setup.py
 +    packages=[
 +        'mininet',
 +        'mininet.examples',
-+        'mininet.linux',
-+        'mininet.freebsd',
 +        'mininet.openbsd'
 +    ],
      long_description="""

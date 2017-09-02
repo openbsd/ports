@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2017/09/01 17:08:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2017/09/02 23:10:52 akoshibe Exp $
 
 COMMENT =	emulator for rapid prototyping of software defined networks
 
 DISTNAME =	mininet-0.0.20170813
+REVISION =	0
 GH_ACCOUNT =	mininet
 GH_PROJECT =	mininet
 GH_COMMIT =	87e26ef931ee6063332ceba77db472140f832d3a
@@ -19,15 +20,12 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB =		c
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
-BUILD_DEPENDS =		devel/help2man \
-			devel/pep8
+BUILD_DEPENDS =		devel/help2man
 RUN_DEPENDS =		net/socat \
-			net/iperf \
-			devel/py-pexpect \
-			devel/pyflakes
+			net/iperf
 
-MAKE_ENV =	BINDIR=${LOCALBASE}/bin \
-		MANDIR=${LOCALBASE}/man/man1 \
+MAKE_ENV =	BINDIR=${PREFIX}/bin \
+		MANDIR=${PREFIX}/man/man1 \
 		PKGDIR=${MODPY_SITEPKG} \
 		PYTHON=${MODPY_BIN}
 do-build:
