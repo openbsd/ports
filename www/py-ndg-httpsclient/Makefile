@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2017/01/03 19:28:49 landry Exp $
+# $OpenBSD: Makefile,v 1.6 2017/09/02 13:34:16 sthen Exp $
 
 COMMENT=	enhanced HTTPS support for httplib and urllib2
 
-MODPY_EGG_VERSION=	0.4.2
+MODPY_EGG_VERSION=	0.4.3
 MODPY_PI_DIR=	n/ndg-httpsclient
 DISTNAME=	ndg_httpsclient-${MODPY_EGG_VERSION}
 PKGNAME=	${MODPY_PY_PREFIX}ndg-httpsclient-${MODPY_EGG_VERSION}
-REVISION=	0
 
 CATEGORIES=	www
 

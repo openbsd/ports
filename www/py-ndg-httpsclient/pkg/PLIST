@@ -1,6 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/10/11 10:35:08 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2017/09/02 13:34:16 sthen Exp $
 bin/ndg_httpclient${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/ndg/
+lib/python${MODPY_VERSION}/site-packages/ndg/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ndg/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/ndg/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ndg/httpsclient/
 lib/python${MODPY_VERSION}/site-packages/ndg/httpsclient/LICENSE
 lib/python${MODPY_VERSION}/site-packages/ndg/httpsclient/__init__.py
@@ -39,13 +42,11 @@ lib/python${MODPY_VERSION}/site-packages/ndg/httpsclient/test/test_urllib2.py
 lib/python${MODPY_VERSION}/site-packages/ndg/httpsclient/test/test_utils.py
 lib/python${MODPY_VERSION}/site-packages/ndg/httpsclient/urllib2_build_opener.py
 lib/python${MODPY_VERSION}/site-packages/ndg/httpsclient/utils.py
-lib/python${MODPY_VERSION}/site-packages/ndg_httpsclient-${MODPY_EGG_VERSION}-py${MODPY_VERSION}-nspkg.pth
 lib/python${MODPY_VERSION}/site-packages/ndg_httpsclient-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/ndg_httpsclient-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/ndg_httpsclient-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/ndg_httpsclient-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
 lib/python${MODPY_VERSION}/site-packages/ndg_httpsclient-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
-lib/python${MODPY_VERSION}/site-packages/ndg_httpsclient-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/namespace_packages.txt
 lib/python${MODPY_VERSION}/site-packages/ndg_httpsclient-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
 lib/python${MODPY_VERSION}/site-packages/ndg_httpsclient-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/ndg_httpsclient-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
