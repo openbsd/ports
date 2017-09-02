@@ -1,2 +1,6 @@
+SHA256 (6692/rubygems-2612-ruby24.patch) = JRJCDsaq1YbG++gN/DLn7FcaAWjJDkUa0CK0QyAqtKk=
+SHA256 (6693/rubygems-2613-ruby24.patch) = ZndonZkeB63yY1XkBFo72ersoHaUkoZEwoK9BewTBg0=
 SHA256 (ruby-2.4.1.tar.gz) = ozDhDVy15Ts6AHgybFcxiIu1XjLEq/6yfZ5/jl0AAlA=
+SIZE (6692/rubygems-2612-ruby24.patch) = 13536
+SIZE (6693/rubygems-2613-ruby24.patch) = 11119
 SIZE (ruby-2.4.1.tar.gz) = 14174752
