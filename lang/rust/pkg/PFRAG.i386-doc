@@ -1,4 +1,0 @@
-@comment $OpenBSD: PFRAG.i386-doc,v 1.1 2017/03/27 12:35:31 danj Exp $
-share/doc/rust/html/implementors/compiler_builtins/
-share/doc/rust/html/implementors/compiler_builtins/reimpls/
-share/doc/rust/html/implementors/compiler_builtins/reimpls/trait.LargeInt.js

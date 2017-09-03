@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2017/08/29 11:36:19 danj Exp $
+# $OpenBSD: Makefile,v 1.51 2017/09/03 14:08:36 danj Exp $
 
 # snapshots are only available for amd64 and i386, for now
 ONLY_FOR_ARCHS =	amd64 i386
@@ -8,19 +8,18 @@ DPB_PROPERTIES =	parallel
 COMMENT-main =		compiler for Rust Language
 COMMENT-doc =		html documentation for rustc
 
-V =			1.19.0
-CARGO_V =		0.20.0
+V =			1.20.0
+CARGO_V =		0.21.0
 DISTNAME =		rustc-${V}-src
 
 # rustc bootstrap version
-BV-amd64 =		1.19.0-20170721
-BV-i386 =		1.19.0-20170721
+BV-amd64 =		1.20.0-20170829
+BV-i386 =		1.20.0-20170901
 BV =			${BV-${MACHINE_ARCH}}
 
 PKGNAME =		rust-${V}
 PKGNAME-main =		rust-${V}
 PKGNAME-doc =		rust-doc-${V}
-REVISION-main =		1
 
 MULTI_PACKAGES =	-main -doc
 
@@ -60,7 +59,8 @@ PKG_ARGS +=		-Damd64=0 -Di386=1
 .endif
 
 MODULES +=		gcc4 \
-			lang/python
+			lang/python \
+			gnu
 MODPY_RUNDEP =		No
 
 BUILD_DEPENDS +=	devel/cmake
@@ -71,8 +71,8 @@ BUILD_DEPENDS +=	devel/cmake
 BUILD_DEPENDS +=	devel/ninja
 .endif
 
-LIB_DEPENDS +=		net/curl \
-			devel/libgit2/libgit2 \
+LIB_DEPENDS +=		devel/libgit2/libgit2 \
+			net/curl \
 			security/libssh2
 
 # libgcc.a path
@@ -93,6 +93,7 @@ MAKE_ENV =		RUSTFLAGS="-L ${WRKDIR}/modgcc-libs" \
 			LIBGIT2_SYS_USE_PKG_CONFIG=1
 
 # build/configuration variables
+PATCHORIG =		.openbsd.orig
 SEPARATE_BUILD =	Yes
 USE_GMAKE =		Yes
 
@@ -117,12 +118,12 @@ TEST_TARGET ?=	src/test/run-pass \
 		src/test/run-fail/pretty \
 		path/to/nowhere
 
-# - disable vendor checksum check on openssl-sys (as we patched it)
+# - disable vendor checksum checks
 # - SUBSTR cargo testsuite
 SUBST_VARS +=	WRKBUILD
 post-patch:
 	sed -ie 's/"files":{[^}]*}/"files":{}/' \
-		"${WRKSRC}/src/vendor/openssl-sys/.cargo-checksum.json"
+		${WRKSRC}/src/vendor/*/.cargo-checksum.json
 	${SUBST_CMD} ${WRKSRC}/src/tools/cargo/tests/cargotest/support/paths.rs
 
 # - check datasize limit before configuring (and building)

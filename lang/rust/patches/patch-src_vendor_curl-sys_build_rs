@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_vendor_curl-sys_build_rs,v 1.1 2017/09/03 14:08:36 danj Exp $
+please use curl from ports
+Index: src/vendor/curl-sys/build.rs
+--- src/vendor/curl-sys/build.rs.orig
++++ src/vendor/curl-sys/build.rs
+@@ -26,7 +26,7 @@ fn main() {
+ 
+     // OSX ships libcurl by default, so we just use that version
+     // unconditionally.
+-    if target.contains("apple") {
++    if target.contains("apple") || target.contains("openbsd") {
+         return println!("cargo:rustc-flags=-l curl");
+     }
+ 
