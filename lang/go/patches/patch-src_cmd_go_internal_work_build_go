@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_cmd_go_build_go,v 1.1 2017/08/31 17:05:19 jsing Exp $
+$OpenBSD: patch-src_cmd_go_internal_work_build_go,v 1.1 2017/09/03 15:42:25 jsing Exp $
 
-Index: src/cmd/go/build.go
---- src/cmd/go/build.go.orig
-+++ src/cmd/go/build.go
-@@ -3158,10 +3158,12 @@ func (b *builder) ccompilerCmd(envvar, defcmd, objdir 
+Index: src/cmd/go/internal/work/build.go
+--- src/cmd/go/internal/work/build.go.orig
++++ src/cmd/go/internal/work/build.go
+@@ -3165,10 +3165,12 @@ func (b *Builder) ccompilerCmd(envvar, defcmd, objdir 
  		}
  	}
  

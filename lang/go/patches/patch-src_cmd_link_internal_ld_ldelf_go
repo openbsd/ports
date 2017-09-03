@@ -1,6 +1,7 @@
-$OpenBSD: patch-src_cmd_link_internal_ld_ldelf_go,v 1.1 2017/06/04 18:04:03 jsing Exp $
---- src/cmd/link/internal/ld/ldelf.go.orig	Thu May 25 04:15:12 2017
-+++ src/cmd/link/internal/ld/ldelf.go	Mon Jun  5 01:58:33 2017
+$OpenBSD: patch-src_cmd_link_internal_ld_ldelf_go,v 1.2 2017/09/03 15:42:25 jsing Exp $
+Index: src/cmd/link/internal/ld/ldelf.go
+--- src/cmd/link/internal/ld/ldelf.go.orig
++++ src/cmd/link/internal/ld/ldelf.go
 @@ -9,6 +9,7 @@ import (
  	"fmt"
  	"io"
@@ -9,9 +10,9 @@ $OpenBSD: patch-src_cmd_link_internal_ld_ldelf_go,v 1.1 2017/06/04 18:04:03 jsin
  	"sort"
  	"strings"
  )
-@@ -1053,6 +1054,13 @@ func readelfsym(ctxt *Link, elfobj *ElfObj, i int, sym
+@@ -1062,6 +1063,13 @@ func readelfsym(ctxt *Link, elfobj *ElfObj, i int, sym
  				if s != nil && sym.other == 2 {
- 					s.Type |= obj.SHIDDEN
+ 					s.Type |= SHIDDEN
  					s.Attr |= AttrDuplicateOK
 +				}
 +
@@ -19,7 +20,7 @@ $OpenBSD: patch-src_cmd_link_internal_ld_ldelf_go,v 1.1 2017/06/04 18:04:03 jsin
 +				// __guard_local symbols, which is tripping up the Go linker.
 +				// As a workaround, mark the symbol as visible for the time being.
 +				if s != nil && runtime.GOOS == "openbsd" && sym.name == "__guard_local" {
-+					s.Type &^= obj.SHIDDEN
++					s.Type &^= SHIDDEN
  				}
  			}
  

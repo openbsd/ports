@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_cmd_link_internal_ld_lib_go,v 1.5 2017/08/31 17:05:19 jsing Exp $
+$OpenBSD: patch-src_cmd_link_internal_ld_lib_go,v 1.6 2017/09/03 15:42:25 jsing Exp $
 Index: src/cmd/link/internal/ld/lib.go
 --- src/cmd/link/internal/ld/lib.go.orig
 +++ src/cmd/link/internal/ld/lib.go
-@@ -563,7 +563,13 @@ func (ctxt *Link) loadlib() {
+@@ -580,7 +580,13 @@ func (ctxt *Link) loadlib() {
  		}
  		if any {
  			if *flagLibGCC == "" {
@@ -16,12 +16,3 @@ Index: src/cmd/link/internal/ld/lib.go
  			}
  			if *flagLibGCC != "none" {
  				hostArchive(ctxt, *flagLibGCC)
-@@ -1958,7 +1964,7 @@ func genasmsym(ctxt *Link, put func(*Link, *Symbol, st
- 			put(ctxt, s, s.Extname, UndefinedSym, 0, nil)
- 
- 		case obj.STLSBSS:
--			if Linkmode == LinkExternal && Headtype != obj.Hopenbsd {
-+			if Linkmode == LinkExternal {
- 				put(ctxt, s, s.Name, TLSSym, Symaddr(s), s.Gotype)
- 			}
- 		}

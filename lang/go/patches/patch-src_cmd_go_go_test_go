@@ -1,7 +1,8 @@
-$OpenBSD: patch-src_cmd_go_go_test_go,v 1.1 2017/06/04 18:04:03 jsing Exp $
---- src/cmd/go/go_test.go.orig	Mon Jun  5 03:15:23 2017
-+++ src/cmd/go/go_test.go	Mon Jun  5 03:29:43 2017
-@@ -3358,6 +3358,9 @@ func TestCgoConsistentResults(t *testing.T) {
+$OpenBSD: patch-src_cmd_go_go_test_go,v 1.2 2017/09/03 15:42:25 jsing Exp $
+Index: src/cmd/go/go_test.go
+--- src/cmd/go/go_test.go.orig
++++ src/cmd/go/go_test.go
+@@ -3475,6 +3475,9 @@ func TestCgoConsistentResults(t *testing.T) {
  	switch runtime.GOOS {
  	case "freebsd":
  		testenv.SkipFlaky(t, 15405)
