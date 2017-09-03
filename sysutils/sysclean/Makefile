@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2017/08/20 08:18:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2017/09/03 14:12:25 danj Exp $
 
 COMMENT =	list obsolete files between OpenBSD upgrades
 
 GH_ACCOUNT =	semarie
 GH_PROJECT =	sysclean
-GH_TAGNAME =	2.4
+GH_TAGNAME =	2.5
 
 CATEGORIES =	sysutils
 HOMEPAGE =	https://github.com/semarie/sysclean/
