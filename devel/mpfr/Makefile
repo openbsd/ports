@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2017/02/09 21:13:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2017/09/04 21:00:57 naddy Exp $
 
 COMMENT=	library for multiple-precision floating-point computations
 
@@ -27,6 +27,9 @@ WANTLIB=	gmp
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--with-gmp=${LOCALBASE}
+# Enabling TLS by way of libcompiler_rt's emutls requires a major version
+# bump and lang/gcc will need a new bootstrap.
+CONFIGURE_ARGS+=--disable-thread-safe
 
 # Do not install useless docs and misplaced examples.
 FAKE_FLAGS=	docdir=""
