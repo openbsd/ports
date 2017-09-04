@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2017/08/31 21:19:19 kurt Exp $
+# $OpenBSD: Makefile,v 1.28 2017/09/04 20:55:05 naddy Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_WXNEEDED=	Yes
@@ -99,7 +99,8 @@ CONFIGURE_ARGS=	--disable-option-checking \
 		--with-milestone=fcs \
 		--with-update-version=${U} \
 		--with-build-number=${B}
-CONFIGURE_ENV=	ac_cv_path_NAWK=awk
+CONFIGURE_ENV=	ac_cv_path_NAWK=awk \
+		LD_LIBRARY_PATH=${WRKDIR}/bootjdk-libs
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/common/autoconf/build-aux
 
 # MAKE_FLAGS=	LOG=debug
