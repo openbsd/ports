@@ -1,0 +1,21 @@
+$OpenBSD: patch-storage_innobase_include_srv0mon_h,v 1.1 2017/09/04 17:54:04 sthen Exp $
+
+MDEV-13705 10.0.32 does not compile on architectures without 64-bit atomics
+
+This is a backport of the following:
+
+MDEV-13009 10.1.24 does not compile on architectures without 64-bit atomics
+
+Add a missing #include "sync0types.h" that was removed in MDEV-12674.
+
+Index: storage/innobase/include/srv0mon.h
+--- storage/innobase/include/srv0mon.h.orig
++++ storage/innobase/include/srv0mon.h
+@@ -616,6 +616,7 @@ Use MONITOR_DEC if appropriate mutex protection exists
+ # define srv_mon_create() ((void) 0)
+ # define srv_mon_free() ((void) 0)
+ #else /* HAVE_ATOMIC_BUILTINS_64 */
++# include "sync0types.h"
+ /** Mutex protecting atomic operations on platforms that lack
+ built-in operations for atomic memory access */
+ extern ib_mutex_t	monitor_mutex;
