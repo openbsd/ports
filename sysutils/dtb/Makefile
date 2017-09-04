@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.8 2017/07/08 03:25:40 jsg Exp $
+# $OpenBSD: Makefile,v 1.9 2017/09/04 02:40:05 jsg Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS} ${CLANG_ARCHS}
 
 COMMENT=	Device Tree Blobs
-DISTNAME=	linux-4.12
-PKGNAME=	${DISTNAME:S/linux/dtb/}
+VERSION=	4.13
+DISTNAME=	linux-${VERSION}
+PKGNAME=	dtb-${VERSION:S/-//}
 CATEGORIES=	sysutils
-HOMEPAGE=	http://www.devicetree.org
+HOMEPAGE=	https://www.devicetree.org
 MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 
 # dual GPL/BSD
