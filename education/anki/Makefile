@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2016/07/08 10:32:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2017/09/04 17:28:36 jasper Exp $
 
 COMMENT	=	spaced learning system
 
-DISTNAME =	anki-2.0.36
+DISTNAME =	anki-2.0.48-source
+PKGNAME =	${DISTNAME:S/-source//}
 
 CATEGORIES =	education
 
@@ -13,7 +14,8 @@ MAINTAINER =	Federico G. Schwindt <fgsch@openbsd.org>
 # AGPL3
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =	http://ankisrs.net/download/mirror/
+MASTER_SITES =	http://ankisrs.net/download/mirror/ \
+		https://apps.ankiweb.net/downloads/beta/
 
 EXTRACT_SUFX =	.tgz
 
@@ -32,6 +34,8 @@ RUN_DEPENDS =	audio/py-audio \
 CONFIGURE_STYLE	= none
 
 NO_TEST =	Yes
+
+WRKDIST =	${WRKDIR}/${DISTNAME:S/-source//}
 
 do-build:
 	${MODPY_BIN} -mcompileall -q ${WRKSRC}
