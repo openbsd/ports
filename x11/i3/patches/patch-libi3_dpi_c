@@ -1,0 +1,24 @@
+$OpenBSD: patch-libi3_dpi_c,v 1.1 2017/09/04 14:33:07 dcoppa Exp $
+
+Silence a clang -Wsometimes-uninitialized warning
+https://github.com/i3/i3/pull/2875
+
+Index: libi3/dpi.c
+--- libi3/dpi.c.orig
++++ libi3/dpi.c
+@@ -24,6 +24,7 @@ static long init_dpi_fallback(void) {
+  */
+ void init_dpi(void) {
+     xcb_xrm_database_t *database = NULL;
++    char *resource = NULL;
+ 
+     if (conn == NULL) {
+         goto init_dpi_end;
+@@ -35,7 +36,6 @@ void init_dpi(void) {
+         goto init_dpi_end;
+     }
+ 
+-    char *resource;
+     xcb_xrm_resource_get_string(database, "Xft.dpi", NULL, &resource);
+     if (resource == NULL) {
+         DLOG("Resource Xft.dpi not specified, skipping.\n");

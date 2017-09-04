@@ -1,7 +1,8 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2016/11/13 20:46:23 dcoppa Exp $
---- Makefile.in.orig	Tue Nov  8 19:54:08 2016
-+++ Makefile.in	Thu Nov 10 19:44:19 2016
-@@ -744,10 +744,7 @@ i3include_HEADERS = \
+$OpenBSD: patch-Makefile_in,v 1.2 2017/09/04 14:33:07 dcoppa Exp $
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -752,10 +752,7 @@ i3include_HEADERS = \
  dist_bin_SCRIPTS = \
  	i3-dmenu-desktop \
  	i3-migrate-config-to-v4 \
@@ -13,7 +14,7 @@ $OpenBSD: patch-Makefile_in,v 1.1 2016/11/13 20:46:23 dcoppa Exp $
  
  i3confdir = $(sysconfdir)/i3
  dist_i3conf_DATA = \
-@@ -882,9 +879,6 @@ docs_poddir = ${docdir}
+@@ -893,9 +890,6 @@ docs_poddir = ${docdir}
  @BUILD_MANS_TRUE@	man/i3-nagbar.1 \
  @BUILD_MANS_TRUE@	man/i3-config-wizard.1 \
  @BUILD_MANS_TRUE@	man/i3-migrate-config-to-v4.1 \
@@ -23,7 +24,7 @@ $OpenBSD: patch-Makefile_in,v 1.1 2016/11/13 20:46:23 dcoppa Exp $
  @BUILD_MANS_TRUE@	man/i3-dump-log.1
  
  @BUILD_MANS_TRUE@pod_MANS = \
-@@ -3121,7 +3115,7 @@ distclean-tags:
+@@ -3156,7 +3150,7 @@ distclean-tags:
  
  # Leading 'am--fnord' is there to ensure the list of targets does not
  # expand to empty, as could happen e.g. with make check TESTS=''.

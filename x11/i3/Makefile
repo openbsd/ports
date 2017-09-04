@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.106 2016/11/13 20:46:23 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.107 2017/09/04 14:33:07 dcoppa Exp $
 
 COMMENT =	improved dynamic tiling window manager
 
-DISTNAME =	i3-4.13
+DISTNAME =	i3-4.14
 CATEGORIES =	x11
 
 EXTRACT_SUFX =	.tar.bz2
@@ -43,7 +43,8 @@ USE_GMAKE =	Yes
 
 CONFIGURE_STYLE = gnu
 
-CONFIGURE_ARGS = --enable-builddir=${WRKBUILD}
+CONFIGURE_ARGS = --enable-builddir=${WRKBUILD} \
+		--enable-debug=no
 
 CONFIGURE_ENV =	CPPFLAGS="-I${X11BASE}/include \
 			  -I${LOCALBASE}/include" \

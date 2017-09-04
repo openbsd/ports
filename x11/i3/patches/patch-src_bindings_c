@@ -1,7 +1,8 @@
-$OpenBSD: patch-src_bindings_c,v 1.6 2016/11/13 20:46:23 dcoppa Exp $
---- src/bindings.c.orig	Tue Nov  8 19:54:01 2016
-+++ src/bindings.c	Thu Nov 10 18:04:35 2016
-@@ -797,7 +797,7 @@ CommandResult *run_binding(Binding *bind, Con *con) {
+$OpenBSD: patch-src_bindings_c,v 1.7 2017/09/04 14:33:07 dcoppa Exp $
+Index: src/bindings.c
+--- src/bindings.c.orig
++++ src/bindings.c
+@@ -843,7 +843,7 @@ CommandResult *run_binding(Binding *bind, Con *con) {
  
      if (result->parse_error) {
          char *pageraction;

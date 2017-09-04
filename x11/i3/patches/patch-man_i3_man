@@ -1,15 +1,15 @@
-$OpenBSD: patch-man_i3_man,v 1.1 2016/11/13 20:46:23 dcoppa Exp $
---- man/i3.man.orig	Fri Nov 11 11:07:56 2016
-+++ man/i3.man	Fri Nov 11 11:10:25 2016
-@@ -171,9 +171,9 @@ Exits i3.
- When starting, i3 looks for configuration files in the following order:
+$OpenBSD: patch-man_i3_man,v 1.2 2017/09/04 14:33:07 dcoppa Exp $
+Index: man/i3.man
+--- man/i3.man.orig
++++ man/i3.man
+@@ -172,8 +172,8 @@ When starting, i3 looks for configuration files in the
  
- 1. ~/.config/i3/config (or $XDG_CONFIG_HOME/i3/config if set)
--2. /etc/xdg/i3/config (or $XDG_CONFIG_DIRS/i3/config if set)
-+2. ${SYSCONFDIR}/xdg/i3/config (or $XDG_CONFIG_DIRS/i3/config if set)
- 3. ~/.i3/config
--4. /etc/i3/config
-+4. ${SYSCONFDIR}/i3/config
+ 1. ~/.i3/config
+ 2. ~/.config/i3/config (or $XDG_CONFIG_HOME/i3/config if set)
+-3. /etc/i3/config
+-4. /etc/xdg/i3/config (or $XDG_CONFIG_DIRS/i3/config if set)
++3. ${SYSCONFDIR}/i3/config
++4. ${SYSCONFDIR}/xdg/i3/config (or $XDG_CONFIG_DIRS/i3/config if set)
  
  You can specify a custom path using the -c option.
  

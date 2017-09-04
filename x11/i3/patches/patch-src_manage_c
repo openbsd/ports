@@ -1,4 +1,7 @@
-$OpenBSD: patch-src_manage_c,v 1.19 2016/11/13 20:46:23 dcoppa Exp $
+$OpenBSD: patch-src_manage_c,v 1.20 2017/09/04 14:33:07 dcoppa Exp $
+
+Fix size hints for ssh-askpass
+
 --- src/manage.c.orig	Tue Nov  8 19:54:01 2016
 +++ src/manage.c	Thu Nov 10 18:04:35 2016
 @@ -480,10 +480,16 @@ void manage_window(xcb_window_t window, xcb_get_window

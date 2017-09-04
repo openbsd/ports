@@ -1,12 +1,13 @@
-$OpenBSD: patch-configure,v 1.1 2016/11/13 20:46:23 dcoppa Exp $
---- configure.orig	Thu Nov 10 21:43:14 2016
-+++ configure	Thu Nov 10 21:43:53 2016
-@@ -3351,7 +3351,7 @@ if test "x$_cv_gnu_make_command" = x""; then :
- fi
- 
- case $srcdir in #(
--  .|.*) :
-+  /*|.|.*) :
- 
-     # pwd -P is specified in IEEE 1003.1 from 2004
-     as_dir=`cd "$srcdir" && pwd -P`
+$OpenBSD: patch-configure,v 1.2 2017/09/04 14:33:07 dcoppa Exp $
+Index: configure
+--- configure.orig
++++ configure
+@@ -6388,7 +6388,7 @@ char iconv_open ();
+ int
+ main ()
+ {
+-return iconv_open ();
++return libiconv_open ();
+   ;
+   return 0;
+ }

@@ -1,0 +1,15 @@
+$OpenBSD: patch-testcases_inject_randr1_5_c,v 1.1 2017/09/04 14:33:07 dcoppa Exp $
+
+missing include
+
+Index: testcases/inject_randr1.5.c
+--- testcases/inject_randr1.5.c.orig
++++ testcases/inject_randr1.5.c
+@@ -23,6 +23,7 @@
+ #include <sys/resource.h>
+ #include <sys/mman.h>
+ #include <sys/stat.h>
++#include <sys/wait.h>
+ #include <libgen.h>
+ 
+ static void uds_connection_cb(EV_P_ ev_io *w, int revents);

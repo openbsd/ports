@@ -1,6 +1,7 @@
-$OpenBSD: patch-i3-dmenu-desktop,v 1.6 2016/11/13 20:46:23 dcoppa Exp $
---- i3-dmenu-desktop.orig	Tue Nov  8 19:54:01 2016
-+++ i3-dmenu-desktop	Thu Nov 10 18:04:35 2016
+$OpenBSD: patch-i3-dmenu-desktop,v 1.7 2017/09/04 14:33:07 dcoppa Exp $
+Index: i3-dmenu-desktop
+--- i3-dmenu-desktop.orig
++++ i3-dmenu-desktop
 @@ -111,7 +111,7 @@ $xdg_data_home = $ENV{HOME} . '/.local/share' if
      ! -d $xdg_data_home;
  
@@ -25,7 +26,7 @@ $OpenBSD: patch-i3-dmenu-desktop,v 1.6 2016/11/13 20:46:23 dcoppa Exp $
  #       }
  #   };
  
-@@ -424,7 +424,7 @@ if (exists($app->{Terminal}) && $app->{Terminal}) {
+@@ -450,7 +450,7 @@ if (exists($app->{Terminal}) && $app->{Terminal}) {
      # we need to create a temporary script that contains the full command line
      # as the syntax for starting commands with arguments varies from terminal
      # emulator to terminal emulator.
@@ -34,7 +35,7 @@ $OpenBSD: patch-i3-dmenu-desktop,v 1.6 2016/11/13 20:46:23 dcoppa Exp $
      my ($fh, $filename) = tempfile();
      binmode($fh, ':utf8');
      say $fh <<EOT;
-@@ -435,7 +435,7 @@ EOT
+@@ -461,7 +461,7 @@ EOT
      close($fh);
      chmod 0755, $filename;
  
@@ -43,7 +44,7 @@ $OpenBSD: patch-i3-dmenu-desktop,v 1.6 2016/11/13 20:46:23 dcoppa Exp $
  } else {
      # i3 executes applications by passing the argument to i3’s “exec” command
      # as-is to $SHELL -c. The i3 parser supports quoted strings: When a string
-@@ -476,7 +476,7 @@ notifications.
+@@ -502,7 +502,7 @@ notifications.
  
  The .desktop files are searched in $XDG_DATA_HOME/applications (by default
  $HOME/.local/share/applications) and in the "applications" subdirectory of each
@@ -52,7 +53,7 @@ $OpenBSD: patch-i3-dmenu-desktop,v 1.6 2016/11/13 20:46:23 dcoppa Exp $
  
  Files with the same name in $XDG_DATA_HOME/applications take precedence over
  files in $XDG_DATA_DIRS, so that you can overwrite parts of the system-wide
-@@ -490,7 +490,7 @@ file respectively) by appending it to the name of the 
+@@ -516,7 +516,7 @@ file respectively) by appending it to the name of the 
  want to launch "GNU Emacs 24" with the patch /tmp/foobar.txt, you would type
  "emacs", press TAB, type " /tmp/foobar.txt" and press ENTER.
  
