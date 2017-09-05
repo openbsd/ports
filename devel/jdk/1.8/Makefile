@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2017/09/04 20:55:05 naddy Exp $
+# $OpenBSD: Makefile,v 1.29 2017/09/05 23:49:07 kurt Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_WXNEEDED=	Yes
@@ -63,6 +63,7 @@ DISTFILES+=	${BOOT_JDK_DIST}:1
 DISTFILES+=	${APACHE_ANT}:2
 MAKE_ENV+=	ANT_HOME=${WRKDIR}/apache-ant-1.9.3 \
 		LD_LIBRARY_PATH=${WRKDIR}/bootjdk-libs
+CONFIGURE_ENV+=	LD_LIBRARY_PATH=${WRKDIR}/bootjdk-libs
 BOOT_JDK=	${WRKDIR}/bootjdk
 .endif
 
@@ -99,8 +100,7 @@ CONFIGURE_ARGS=	--disable-option-checking \
 		--with-milestone=fcs \
 		--with-update-version=${U} \
 		--with-build-number=${B}
-CONFIGURE_ENV=	ac_cv_path_NAWK=awk \
-		LD_LIBRARY_PATH=${WRKDIR}/bootjdk-libs
+CONFIGURE_ENV+=	ac_cv_path_NAWK=awk
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/common/autoconf/build-aux
 
 # MAKE_FLAGS=	LOG=debug
