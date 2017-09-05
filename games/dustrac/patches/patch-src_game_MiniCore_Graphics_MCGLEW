@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_game_MiniCore_Graphics_MCGLEW,v 1.1 2017/09/05 11:00:02 bentley Exp $
+
+Fix undefined references to glBindVertexArray, etc.
+
+Index: src/game/MiniCore/Graphics/MCGLEW
+--- src/game/MiniCore/Graphics/MCGLEW.orig
++++ src/game/MiniCore/Graphics/MCGLEW
+@@ -7,7 +7,9 @@
+       #include <windows.h>
+       #include <wingdi.h>
+     #endif
++    #define GL_GLEXT_PROTOTYPES
+     #include <GL/gl.h>
++    #include <GL/glext.h>
+   #else
+     #include <GLES/gl.h>
+   #endif

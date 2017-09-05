@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.10 2017/07/27 09:55:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2017/09/05 11:00:02 bentley Exp $
 
 COMMENT =		traditional top-down car racing game
 
-V =			1.12.0
-DISTNAME =		dustrac-$V
-REVISION =		1
+PKGNAME =		dustrac-${GH_TAGNAME}
+
+GH_ACCOUNT =		juzzlin
+GH_PROJECT =		DustRacing2D
+GH_TAGNAME =		1.13.0
 
 CATEGORIES =		games
 
@@ -13,11 +15,9 @@ HOMEPAGE =		https://juzzlin.github.io/DustRacing2D/
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += GL GLU X11 c m openal pthread vorbisfile
+WANTLIB += GL GLU c m openal pthread vorbisfile
 WANTLIB += Qt5Core Qt5Gui Qt5OpenGL Qt5Widgets Qt5Xml
 WANTLIB += ${COMPILER_LIBCXX}
-
-MASTER_SITES =		https://github.com/juzzlin/DustRacing2D/releases/download/$V/
 
 MODULES =		devel/cmake \
 			x11/qt5
@@ -30,7 +30,6 @@ LIB_DEPENDS =		audio/libvorbis \
 CONFIGURE_ARGS +=	-DReleaseBuild=ON \
 			-DDATA_PATH=${PREFIX}/share/dustrac \
 			-DDOC_PATH=${PREFIX}/share/dustrac \
-			-DQOpenGLFunctions=OFF \
-			-DNO_GLEW=OFF
+			-DQOpenGLFunctions=OFF
 
 .include <bsd.port.mk>
