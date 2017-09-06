@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.527 2017/09/06 07:10:23 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.528 2017/09/06 07:22:46 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1115,6 +1115,7 @@ my $obsolete_reason = {
 	'pgpsendmail' => 3,
 	'banshee' => 3,
 	'mono-zeroconf' => 5,
+	'mono-avahi' => 5,
 };
 
 # reasons for obsolete packages
