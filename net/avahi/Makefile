@@ -1,12 +1,9 @@
-# $OpenBSD: Makefile,v 1.125 2017/07/16 09:27:58 ajacoutot Exp $
-
-ONLY_FOR_ARCHS-mono=	${MONO_ARCHS}
+# $OpenBSD: Makefile,v 1.126 2017/09/06 07:21:05 ajacoutot Exp $
 
 COMMENT-main=		framework for Multicast DNS Service Discovery
 COMMENT-gtk=		gtk+2 avahi-ui libraries
 COMMENT-gtk3=		gtk+3 avahi-ui libraries
 COMMENT-gui=		GUI client utilities for avahi
-COMMENT-mono=		mono (.NET) bindings for avahi
 COMMENT-python=		python bindings for avahi
 COMMENT-ui=		common avahi-ui header for gtk+2 and gtk+3
 
@@ -19,9 +16,15 @@ PKGNAME-main=		avahi-${V}
 PKGNAME-gtk=		avahi-gtk-${V}
 PKGNAME-gtk3=		avahi-gtk3-${V}
 PKGNAME-gui=		avahi-gui-${V}
-PKGNAME-mono=		mono-avahi-${V}
 PKGNAME-python=		py-avahi-${V}
 PKGNAME-ui=		avahi-ui-${V}
+
+REVISION-main=		0
+REVISION-gtk=		0
+REVISION-gtk3=		0
+REVISION-gui=		0
+REVISION-python=	0
+REVISION-ui=		0
 
 CATEGORIES=		net devel
 
@@ -42,10 +45,10 @@ HOMEPAGE=		http://www.avahi.org/
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 
-PSEUDO_FLAVORS=		no_gui no_mono bootstrap
-FLAVOR?=		no_gui no_mono bootstrap
+PSEUDO_FLAVORS=		no_gui bootstrap
+FLAVOR?=		no_gui bootstrap
 
-MULTI_PACKAGES= 	-main -mono -gui -gtk -gtk3 -python -ui
+MULTI_PACKAGES= 	-main -gui -gtk -gtk3 -python -ui
 
 MODULES=		textproc/intltool
 
@@ -65,25 +68,14 @@ LIB_DEPENDS-main=	devel/glib2 \
 			devel/libdaemon \
 			x11/dbus
 
+CONFIGURE_ARGS=		--disable-mono \
+			--disable-monodoc
+
 .include <bsd.port.arch.mk>
 
 .if !${BUILD_PACKAGES:M-gui}
 # all these vanish together
-BUILD_PACKAGES :=	${BUILD_PACKAGES:N-mono:N-gtk:N-gtk3:N-python:N-ui}
-.endif
-
-.if ${BUILD_PACKAGES:M-mono}
-MODULES+=		lang/mono
-BUILD_DEPENDS+= 	${MODMONO_BUILD_DEPENDS} \
-			x11/mono-gtk2
-RUN_DEPENDS-mono=	${MODMONO_RUN_DEPENDS} \
-			${BUILD_PKGPATH},-gtk \
-			x11/mono-gtk2
-LIB_DEPENDS-mono=	#empty
-WANTLIB-mono +=		#empty
-.else
-CONFIGURE_ARGS+=	--disable-mono \
-			--disable-monodoc
+BUILD_PACKAGES :=	${BUILD_PACKAGES:N-gtk:N-gtk3:N-python:N-ui}
 .endif
 
 .if ${BUILD_PACKAGES:M-gui}
@@ -165,7 +157,6 @@ CONFIGURE_ARGS+=	--disable-gtk \
 USE_GMAKE=		Yes
 
 MODPY_RUNDEP=		No
-MODMONO_DEPS=		No
 
 CFLAGS+=		-D_BSD_SOURCE
 
@@ -236,8 +227,5 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/dbus-1/system-services
 	${INSTALL_DATA} ${WRKBUILD}/avahi-daemon/org.freedesktop.Avahi.service \
 		${PREFIX}/share/dbus-1/system-services
-	# XXX DLLMAP_FILES won't work here since the files are generated during the build process
-	find ${PREFIX} -name avahi-sharp.dll.config -or -name avahi-ui-sharp.dll.config | \
-		xargs -r sed -i 's,\.so(\.[0-9])+,\.so,g'
 
 .include <bsd.port.mk>
