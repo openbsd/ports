@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2017/09/05 14:25:47 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.65 2017/09/06 16:42:57 dcoppa Exp $
 
 BROKEN-alpha =		error: looser throw specifier for 'virtual OutOfBounds::~OutOfBounds()'
 BROKEN-hppa =		bindings.h:85:4: error: type 'Binding' is not a direct base of 'Binding'
@@ -6,7 +6,7 @@ BROKEN-hppa =		bindings.h:85:4: error: type 'Binding' is not a direct base of 'B
 COMMENT =		ncurses mpd client inspired by ncmpc
 
 DISTNAME =		ncmpcpp-0.8
-REVISION =		3
+REVISION =		4
 
 EXTRACT_SUFX =		.tar.bz2
 
@@ -49,7 +49,6 @@ CONFIGURE_ARGS =	--enable-clock \
 CONFIGURE_ENV =		BOOST_LIB_SUFFIX="-mt" \
 			CPPFLAGS="-DBOOST_RESULT_OF_USE_DECLTYPE \
 				  -DBOOST_THREAD_USES_MOVE \
-				  -D_XOPEN_SOURCE_EXTENDED \
 				  -isystem ${LOCALBASE}/include \
 				  -isystem ${LOCALBASE}/include/ereadline \
 				  -pthread" \
@@ -59,9 +58,6 @@ CONFIGURE_ENV =		BOOST_LIB_SUFFIX="-mt" \
 			ncursesw_CFLAGS="-D_GNU_SOURCE -D_DEFAULT_SOURCE" \
 			ncursesw_LIBS="-lncursesw" \
 			ax_cv_lib_readline="-L${LOCALBASE}/lib -lereadline -ltermcap"
-
-# filthy workaround for a mysterious "Abort trap" error :(
-CXXFLAGS +=		-O1
 
 NO_TEST =		Yes
 
