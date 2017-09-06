@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.104 2017/05/22 22:20:01 espie Exp $
+# $OpenBSD: Makefile,v 1.105 2017/09/06 07:21:37 ajacoutot Exp $
 
 COMMENT=		remote desktop viewer for GNOME
 
 GNOME_PROJECT=		vinagre
 GNOME_VERSION=		3.22.0
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		net
 
@@ -23,7 +23,7 @@ MODULES=		devel/dconf \
 			x11/gnome
 
 LIB_DEPENDS=		devel/vte3 \
-			net/avahi,-gtk3,no_mono \
+			net/avahi,-gtk3 \
 			net/telepathy/telepathy-glib \
 			x11/freerdp \
 			x11/gnome/libsecret \
