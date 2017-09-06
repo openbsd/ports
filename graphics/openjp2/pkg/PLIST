@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2014/11/29 13:25:05 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2017/09/06 14:20:43 sthen Exp $
 @bin bin/opj_compress
 @bin bin/opj_decompress
 @bin bin/opj_dump
@@ -6,6 +6,7 @@ include/openjp2/
 include/openjp2/openjpeg.h
 include/openjp2/opj_config.h
 include/openjp2/opj_stdint.h
+lib/libopenjp2.a
 @lib lib/libopenjp2.so.${LIBopenjp2_VERSION}
 lib/openjp2/
 lib/openjp2/OpenJPEGConfig.cmake

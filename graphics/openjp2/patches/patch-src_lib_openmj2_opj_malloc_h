@@ -1,12 +1,13 @@
-$OpenBSD: patch-src_lib_openmj2_opj_malloc_h,v 1.2 2016/10/18 09:23:34 sthen Exp $
---- src/lib/openmj2/opj_malloc.h.orig	Tue Oct 18 09:42:21 2016
-+++ src/lib/openmj2/opj_malloc.h	Tue Oct 18 09:42:21 2016
+$OpenBSD: patch-src_lib_openmj2_opj_malloc_h,v 1.3 2017/09/06 14:20:43 sthen Exp $
+Index: src/lib/openmj2/opj_malloc.h
+--- src/lib/openmj2/opj_malloc.h.orig
++++ src/lib/openmj2/opj_malloc.h
 @@ -86,7 +86,7 @@ Allocate memory aligned to a 16 byte boundary
-   #elif defined(__FreeBSD__)
-     #define HAVE_POSIX_MEMALIGN
- 	/* Linux x86_64 and OSX always align allocations to 16 bytes */
--	#elif !defined(__amd64__) && !defined(__APPLE__) && !defined(_AIX)
-+	#elif !defined(__amd64__) && !defined(__APPLE__) && !defined(_AIX) && !defined(__OpenBSD__)
- 		#define HAVE_MEMALIGN
- 		#include <malloc.h>
- 	#endif
+ #elif defined(__FreeBSD__)
+ #define HAVE_POSIX_MEMALIGN
+ /* Linux x86_64 and OSX always align allocations to 16 bytes */
+-#elif !defined(__amd64__) && !defined(__APPLE__) && !defined(_AIX)
++#elif !defined(__amd64__) && !defined(__APPLE__) && !defined(_AIX) && !defined(__OpenBSD__)
+ #define HAVE_MEMALIGN
+ #include <malloc.h>
+ #endif
