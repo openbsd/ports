@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.262 2017/04/17 17:57:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.263 2017/09/06 07:08:21 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += adwaita-icon-theme
@@ -7,7 +7,6 @@
      SUBDIR += at-spi2-core
      SUBDIR += autoar
      SUBDIR += backgrounds
-     SUBDIR += banshee
      SUBDIR += baobab
      SUBDIR += bijiben
      SUBDIR += builder
