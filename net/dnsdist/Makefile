@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.7 2017/07/26 22:45:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2017/09/06 08:59:44 sthen Exp $
 
 COMMENT=		highly DNS-, DoS- and abuse-aware loadbalancer
 
-DISTNAME=		dnsdist-1.1.0
+DISTNAME=		dnsdist-1.2.0
 EXTRACT_SUFX=		.tar.bz2
-
-REVISION=		1
 
 CATEGORIES=		net
 
-HOMEPAGE=		http://dnsdist.org/
+HOMEPAGE=		https://dnsdist.org/
 
 MAINTAINER=		Peter van Dijk <peter.van.dijk@powerdns.com>
 
@@ -25,7 +23,8 @@ AUTOCONF_VERSION=	2.69
 USE_GMAKE=		Yes
 
 CONFIGURE_ARGS+=	--disable-hardening \
-			--with-lua
+			--with-lua \
+			--without-net-snmp
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			LIBEDIT_LIBS='-ledit -lcurses' \

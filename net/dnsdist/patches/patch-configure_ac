@@ -1,7 +1,8 @@
-$OpenBSD: patch-configure_ac,v 1.1.1.1 2017/01/15 17:13:33 sthen Exp $
---- configure.ac.orig	Thu Jan 12 21:38:07 2017
-+++ configure.ac	Thu Jan 12 21:38:11 2017
-@@ -81,7 +81,7 @@ PROGRAM_LDFLAGS="$PIE_LDFLAGS $PROGRAM_LDFLAGS"
+$OpenBSD: patch-configure_ac,v 1.2 2017/09/06 08:59:44 sthen Exp $
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -82,7 +82,7 @@ PROGRAM_LDFLAGS="$PIE_LDFLAGS $PROGRAM_LDFLAGS"
  AC_SUBST([PROGRAM_LDFLAGS])
  
  AC_SUBST([AM_CPPFLAGS],
