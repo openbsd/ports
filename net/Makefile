@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1021 2017/08/29 17:03:59 landry Exp $
+# $OpenBSD: Makefile,v 1.1022 2017/09/06 07:09:21 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -245,7 +245,6 @@
      SUBDIR += mlvpn
      SUBDIR += mon
      SUBDIR += monitoring-plugins
-     SUBDIR += mono-zeroconf
      SUBDIR += mosh
      SUBDIR += mosquitto
      SUBDIR += mrtg
