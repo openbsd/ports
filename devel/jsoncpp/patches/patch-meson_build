@@ -1,4 +1,10 @@
-$OpenBSD: patch-meson_build,v 1.2 2017/08/31 06:30:18 dcoppa Exp $
+$OpenBSD: patch-meson_build,v 1.3 2017/09/06 08:04:05 dcoppa Exp $
+
+commit 49da91c786855228158cb8937c972cd741bd4c79
+Author: Martin Dagarin <SloCompTech@users.noreply.github.com>
+Date:   Mon Sep 4 19:10:15 2017
+
+Fixed compile bug
 
 Index: meson.build
 --- meson.build.orig
@@ -7,7 +13,7 @@ Index: meson.build
  jsoncpp_cdata.set('JSONCPP_VERSION_MAJOR', jsoncpp_major_version)
  jsoncpp_cdata.set('JSONCPP_VERSION_MINOR', jsoncpp_minor_version)
  jsoncpp_cdata.set('JSONCPP_VERSION_PATCH', jsoncpp_patch_version)
-+jsoncpp_cdata.set('JSONCPP_USE_SECURE_MEMORY', '0')
++jsoncpp_cdata.set('JSONCPP_USE_SECURE_MEMORY',0)
  
  jsoncpp_gen_sources = configure_file(
    input : 'src/lib_json/version.h.in',
