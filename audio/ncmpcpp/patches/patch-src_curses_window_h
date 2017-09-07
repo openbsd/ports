@@ -1,4 +1,17 @@
-$OpenBSD: patch-src_curses_window_h,v 1.1 2017/09/06 16:42:57 dcoppa Exp $
+$OpenBSD: patch-src_curses_window_h,v 1.2 2017/09/07 15:11:44 dcoppa Exp $
+
+Backout commit
+
+---8<---
+commit 6b73f0ebe1c05cb2b3b6973662e7b6c95eba4530
+Author: Andrzej Rybczak <electricityispower@gmail.com>
+Date:   Mon Nov 14 01:18:06 2016
+
+    window: prevent ncurses from defining macros
+---8<---
+
+to fix a problem with text being "invisible" when typing in any
+prompt
 
 Index: src/curses/window.h
 --- src/curses/window.h.orig
