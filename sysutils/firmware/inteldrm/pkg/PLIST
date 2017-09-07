@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/09/07 15:21:27 robert Exp $
+firmware/i915/
+firmware/i915-license
+firmware/i915/bxt_dmc_ver1.bin
+firmware/i915/kbl_dmc_ver1.bin
+firmware/i915/skl_dmc_ver1.bin
+firmware/i915/skl_guc_ver6.bin
