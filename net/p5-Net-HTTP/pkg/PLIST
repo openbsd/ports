@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/10/23 19:21:09 nigel Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/09/07 19:07:38 nigel Exp $
 @conflict p5-libwww-<6.0
 ${P5SITE}/Net/
 ${P5SITE}/Net/HTTP/
@@ -7,5 +7,6 @@ ${P5SITE}/Net/HTTP/Methods.pm
 ${P5SITE}/Net/HTTP/NB.pm
 ${P5SITE}/Net/HTTPS.pm
 @man man/man3p/Net::HTTP.3p
+@man man/man3p/Net::HTTP::Methods.3p
 @man man/man3p/Net::HTTP::NB.3p
 @man man/man3p/Net::HTTPS.3p
