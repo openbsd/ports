@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.76 2017/09/06 07:21:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.77 2017/09/07 12:29:31 ajacoutot Exp $
 
 COMMENT=	jabber client written in pygtk
 DISTNAME=	gajim-0.16.8
-REVISION=	0
+REVISION=	1
 CATEGORIES=	net x11
 
 HOMEPAGE=	https://www.gajim.org/
@@ -28,7 +28,7 @@ PATCHORIG=	.orig.port
 
 COMMON_DEPENDS=	databases/py-sqlite2 \
 		devel/py-notify \
-		net/avahi,-python \
+		net/avahi,,-python \
 		net/py-dns \
 		net/py-nbxmpp \
 		security/py-crypto \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2017/09/06 07:21:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2017/09/07 12:29:31 ajacoutot Exp $
 
 COMMENT=		Easy Publish and Consume library
 
@@ -31,7 +31,7 @@ WANTLIB += xcb-shm xml2 z
 MODULES=		x11/gnome
 
 # Only needed for examples.
-BUILD_DEPENDS=		net/avahi,-gtk3
+BUILD_DEPENDS=		net/avahi,,-gtk3
 
 LIB_DEPENDS=		devel/libsoup \
 			net/avahi \
