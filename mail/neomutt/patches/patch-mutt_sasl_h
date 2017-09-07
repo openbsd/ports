@@ -1,11 +1,11 @@
-$OpenBSD: patch-mutt_sasl_h,v 1.5 2017/07/10 10:17:27 sthen Exp $
+$OpenBSD: patch-mutt_sasl_h,v 1.6 2017/09/07 16:19:08 sthen Exp $
 
 Pledge
 
 Index: mutt_sasl.h
 --- mutt_sasl.h.orig
 +++ mutt_sasl.h
-@@ -27,6 +27,7 @@ struct Connection;
+@@ -33,6 +33,7 @@ struct Connection;
  
  int mutt_sasl_client_new(struct Connection *conn, sasl_conn_t **saslconn);
  int mutt_sasl_interact(sasl_interact_t *interaction);
