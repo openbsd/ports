@@ -1,0 +1,103 @@
+$OpenBSD: patch-doc_cntlm_1,v 1.1 2017/09/07 09:44:22 dcoppa Exp $
+
+Index: doc/cntlm.1
+--- doc/cntlm.1.orig
++++ doc/cntlm.1
+@@ -1,4 +1,4 @@
+-.TH CNTLM 1 "Nov 2010" "cntlm 0.90" "Accelerating NTLM/NTLMv2 Authentication Proxy"
++.TH CNTLM 1 "2012-04-23" "cntlm 0.90" "Accelerating NTLM/NTLMv2 Authentication Proxy"
+ .SH NAME
+ \fBcntlm\fP - authenticating HTTP(S) proxy with TCP/IP tunneling and acceleration
+ 
+@@ -47,7 +47,7 @@ until the client <-> server connection is fully negoti
+ An example of \fBcntlm\fP compared to NTLMAPS: \fBcntlm\fP gave avg 76 kB/s with peak CPU usage of 0.3%
+ whereas with NTLMAPS it was avg 48 kB/s with peak CPU at 98% (Pentium M 1.8 GHz). The extreme difference in
+ resource usage is one of many important benefits for laptop use. Peak memory consumption (several complex
+-sites, 50 paralell connections/threads; values are in KiB):
++sites, 50 parallel connections/threads; values are in KiB):
+ .nf
+ .ft C
+ 
+@@ -66,14 +66,14 @@ Valgrind's virtual CPU during a typical production lif
+ 
+ .SH OPTIONS
+ Most options can be pre-set in a configuration file. Specifying an option more than once is not an error, but
+-\fBcntlm\fP ignores all occurences except the last one. This does not apply to options like\ \fB-L\fP, each of
++\fBcntlm\fP ignores all occurrences except the last one. This does not apply to options like\ \fB-L\fP, each of
+ which creates a new instance of some feature. \fBCntlm\fP can be built with a hardcoded configuration file
+ (e.g. /etc/cntlm.conf), which is always loaded, if possible. See\ \fB-c\fP option on how to override some or
+ all of its settings.
+ 
+ Use \fB-h\fP to see available options with short description.
+ 
+-.TP 
++.TP
+ .B -A IP/mask\ \ \ \ (Allow)
+ Allow ACL rule. Together with \fB-D\fP (Deny) they are the two rules allowed in ACL policy. It is more usual
+ to have this in a configuration file, but \fBCntlm\fP follows the premise that you can do the same on the
+@@ -86,7 +86,7 @@ take precedence over those in the config file. In such
+ the list of unused options). There you can also see warnings about possibly incorrect subnet spec, that's when
+ the \fIIP\fP part has more bits than you declare by \fImask\fP (e.g. 10.20.30.40/24 should be 10.20.30.0/24).
+ 
+-.TP 
++.TP
+ .B -a NTLMv2 | NTLM2SR | NT | NTLM | LM\ \ \ \ (Auth)
+ Authentication type. NTLM(v2) comprises of one or two hashed responses, NT and LM or NTLM2SR or NTv2 and LMv2,
+ which are computed from the password hash. Each response uses a different hashing algorithm; as new response
+@@ -120,11 +120,11 @@ the \fBDomain\fP config/cmd-line parameter, which will
+ domain as a part of the username. To do that and override the global domain setting, use this instead of plain
+ username in the password dialog: "domain\\username".
+ 
+-.TP 
++.TP
+ .B -c <filename>
+ Configuration file. Command-line options, if used, override its single options or are added at the top of the
+ list for multi options (tunnels, parent proxies, etc) with the exception of ACLs, which are completely
+-overriden. Use \fI/dev/null\fP to disable any config file.
++overridden. Use \fI/dev/null\fP to disable any config file.
+ 
+ .TP
+ .B -D IP/mask\ \ \ \ (Deny)
+@@ -191,7 +191,7 @@ password prompt is issued. Use this option only from s
+ .TP
+ .B -L [<saddr>:]<lport>:<rhost>:<rport>\ \ \ \ (Tunnel)
+ Tunnel definition. The syntax is the same as in OpenSSH's local forwarding (\fB-L\fP), with a new optional
+-prefix, \fIsaddr\fP - the source IP address to bind the \fIlport\fP to. \fBCntlm\fP will listen for incomming
++prefix, \fIsaddr\fP - the source IP address to bind the \fIlport\fP to. \fBCntlm\fP will listen for incoming
+ connections on the local port \fIlport\fP, forwarding every new connection through the parent proxy to the
+ \fIrhost\fP:\fIrport\fP (authenticating on the go). This option can be used multiple times for unlimited
+ number of tunnels, with or without the \fIsaddr\fP option. See \fB-g\fP for the details concerning local port
+@@ -250,7 +250,7 @@ with all options). By default, there will be no restri
+ don't even support SOCKS5 authentication (e.g. almost all browsers). If you wish to enforce authentication,
+ use \fB-R\fP or its equivalent option, \fBSOCKS5User\fP. As with port tunneling, it is up to the parent proxy
+ whether it will allow connection to any requested host:port. This feature can be used with \fBtsocks(1)\fP to
+-make most TCP/IP applications go thru the proxy rather than directly (only outgoing connections will work,
++make most TCP/IP applications go through the proxy rather than directly (only outgoing connections will work,
+ obviously). To make apps work without DNS server, it is important that they don't resolve themselves, but
+ using SOCKS. E.g. Firefox has this option available through URI "about:config", key name
+ \fBnetwork.proxy.socks_remote_dns\fP, which must be set to \fBtrue\fP. Proxy-unaware \fBtsocks\fPified apps,
+@@ -356,7 +356,7 @@ Print debugging information. Automatically enables (\f
+ 
+ .TP
+ .B -w <workstation>\ \ \ \ (Workstation)
+-Workstation NetBIOS name. Do not use full qualified domain name (FQDN) here. Just the first part. 
++Workstation NetBIOS name. Do not use full qualified domain name (FQDN) here. Just the first part.
+ If not specified, \fBcntlm\fP tries to get the system hostname and if that fails, uses "cntlm" - it's because
+ some proxies require this field non-empty.
+ 
+@@ -475,13 +475,13 @@ Enable/disable NTLM-to-basic authenticatoin. See \fB-B
+ Tunnel definition. See \fB-L\fP for more.
+ 
+ .TP
+-.B Username 
++.B Username
+ Proxy account name, without the possibility to include domain name ('at' sign
+ is interpreted literally).
+ 
+ .TP
+ .B Workstation <hostname>
+-The hostname of your workstation. 
++The hostname of your workstation.
+ 
+ .ne 7
+ .SH FILES
