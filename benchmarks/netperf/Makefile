@@ -1,22 +1,24 @@
-# $OpenBSD: Makefile,v 1.36 2017/04/19 23:44:13 jca Exp $
+# $OpenBSD: Makefile,v 1.37 2017/09/07 20:33:09 sthen Exp $
 
 COMMENT=	network performance benchmark
 
-DISTNAME=	netperf-2.7.0
-REVISION=	1
+GH_ACCOUNT=	HewlettPackard
+GH_PROJECT=	netperf
+GH_TAGNAME=	netperf-2.7.0
+DISTNAME=	netperf-2.7.0-gh
+WRKDIST=	${WRKDIR}/${GH_TAGNAME}
+PKGNAME=	${GH_TAGNAME}
+REVISION=	2
 
 CATEGORIES=	benchmarks net
 
-HOMEPAGE=	http://www.netperf.org/netperf/
+HOMEPAGE=	https://hewlettpackard.github.io/netperf/
 
 # "for non-commercial purposes only"; see COPYING
 PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	Yes
 
 WANTLIB += c m
-
-MASTER_SITES=	ftp://ftp.netperf.org/netperf/ \
-		ftp://ftp.netperf.org/netperf/archive/
 
 AUTOCONF_VERSION= 2.68
 CONFIGURE_STYLE=  autoconf
