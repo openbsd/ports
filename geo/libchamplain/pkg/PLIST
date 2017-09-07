@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2015/12/03 11:29:23 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.9 2017/09/07 19:24:28 jasper Exp $
 @pkgpath geo/libchamplain/libchamplain-gtk
 @pkgpath geo/libchamplain/core
 include/libchamplain-${API_VERSION}/
@@ -100,7 +100,6 @@ share/gtk-doc/html/libchamplain-${API_VERSION}/ch05.html
 share/gtk-doc/html/libchamplain-${API_VERSION}/ch06.html
 share/gtk-doc/html/libchamplain-${API_VERSION}/home.png
 share/gtk-doc/html/libchamplain-${API_VERSION}/index.html
-share/gtk-doc/html/libchamplain-${API_VERSION}/index.sgml
 share/gtk-doc/html/libchamplain-${API_VERSION}/ix01.html
 share/gtk-doc/html/libchamplain-${API_VERSION}/ix02.html
 share/gtk-doc/html/libchamplain-${API_VERSION}/ix03.html
@@ -131,7 +130,6 @@ share/gtk-doc/html/libchamplain-gtk-${API_VERSION}/GtkChamplainEmbed.html
 share/gtk-doc/html/libchamplain-gtk-${API_VERSION}/annotation-glossary.html
 share/gtk-doc/html/libchamplain-gtk-${API_VERSION}/home.png
 share/gtk-doc/html/libchamplain-gtk-${API_VERSION}/index.html
-share/gtk-doc/html/libchamplain-gtk-${API_VERSION}/index.sgml
 share/gtk-doc/html/libchamplain-gtk-${API_VERSION}/left-insensitive.png
 share/gtk-doc/html/libchamplain-gtk-${API_VERSION}/left.png
 share/gtk-doc/html/libchamplain-gtk-${API_VERSION}/libchamplain-gtk-${API_VERSION}.devhelp2
