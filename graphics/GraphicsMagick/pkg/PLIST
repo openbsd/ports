@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2016/09/17 09:52:37 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.18 2017/09/07 16:57:51 sthen Exp $
 @pkgpath graphics/GraphicsMagick,no_x11
 bin/GraphicsMagick++-config
 bin/GraphicsMagick-config
@@ -359,6 +359,7 @@ share/doc/GraphicsMagick/www/ChangeLog-2012.html
 share/doc/GraphicsMagick/www/ChangeLog-2013.html
 share/doc/GraphicsMagick/www/ChangeLog-2014.html
 share/doc/GraphicsMagick/www/ChangeLog-2015.html
+share/doc/GraphicsMagick/www/ChangeLog-2016.html
 share/doc/GraphicsMagick/www/Changelog.html
 share/doc/GraphicsMagick/www/Changes.html
 share/doc/GraphicsMagick/www/Copyright.html
@@ -497,6 +498,7 @@ share/doc/GraphicsMagick/www/quantize.html
 share/doc/GraphicsMagick/www/reference.html
 share/doc/GraphicsMagick/www/security.html
 share/doc/GraphicsMagick/www/smile.c
+share/doc/GraphicsMagick/www/thanks.html
 share/doc/GraphicsMagick/www/time.html
 share/doc/GraphicsMagick/www/tools.html
 share/doc/GraphicsMagick/www/utilities.html
