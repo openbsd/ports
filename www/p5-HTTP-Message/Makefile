@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2016/03/20 19:57:20 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2017/09/07 19:11:35 nigel Exp $
 
 COMMENT =	HTTP Style Messages
 
-DISTNAME =	HTTP-Message-6.11
+DISTNAME =	HTTP-Message-6.13
 CATEGORIES =	www
 
 MAINTAINER =	Nigel Taylor <nigel@openbsd.org>
@@ -19,7 +19,7 @@ RUN_DEPENDS =	textproc/p5-Encode-Locale>=1.00 \
 		www/p5-LWP-MediaTypes>=6.00 \
 		www/p5-URI>=1.10
 
-BUILD_DEPENDS =	${RUN_DEPENDS}
+TEST_DEPENDS =	devel/p5-Try-Tiny
 
 post-build:
 		@find ${WRKSRC}/blib \( -name "*.orig" -or -name "*.rej" \) -exec rm -f {} \;

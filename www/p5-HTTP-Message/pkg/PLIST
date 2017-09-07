@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/07/28 10:03:06 nigel Exp $
+@comment $OpenBSD: PLIST,v 1.3 2017/09/07 19:11:36 nigel Exp $
 @conflict p5-libwww-<6.0
 ${P5SITE}/HTTP/Config.pm
 ${P5SITE}/HTTP/Headers/
@@ -14,6 +14,8 @@ ${P5SITE}/HTTP/Response.pm
 ${P5SITE}/HTTP/Status.pm
 @man man/man3p/HTTP::Config.3p
 @man man/man3p/HTTP::Headers.3p
+@man man/man3p/HTTP::Headers::Auth.3p
+@man man/man3p/HTTP::Headers::ETag.3p
 @man man/man3p/HTTP::Headers::Util.3p
 @man man/man3p/HTTP::Message.3p
 @man man/man3p/HTTP::Request.3p
