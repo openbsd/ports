@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2017/02/11 16:43:46 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2017/09/07 09:21:04 rpointel Exp $
 bin/rip.pl
 ${P5SITE}/regripper/
 ${P5SITE}/regripper/shellitems.pl
@@ -11,6 +11,8 @@ share/regripper/plugins/aim.pl
 share/regripper/plugins/all
 share/regripper/plugins/amcache
 share/regripper/plugins/amcache.pl
+share/regripper/plugins/amcache_tln.pl
+share/regripper/plugins/angelfire.pl
 share/regripper/plugins/aports.pl
 share/regripper/plugins/appcertdlls.pl
 share/regripper/plugins/appcompatcache.pl
@@ -97,6 +99,7 @@ share/regripper/plugins/fileexts.pl
 share/regripper/plugins/filehistory.pl
 share/regripper/plugins/fileless.pl
 share/regripper/plugins/findexes.pl
+share/regripper/plugins/foxitrdr.pl
 share/regripper/plugins/fw_config.pl
 share/regripper/plugins/gauss.pl
 share/regripper/plugins/gpohist.pl
@@ -212,6 +215,7 @@ share/regripper/plugins/proxysettings.pl
 share/regripper/plugins/psscript.pl
 share/regripper/plugins/publishingwizard.pl
 share/regripper/plugins/putty.pl
+share/regripper/plugins/putty_sessions.pl
 share/regripper/plugins/rdphint.pl
 share/regripper/plugins/rdpnla.pl
 share/regripper/plugins/rdpport.pl
@@ -308,6 +312,7 @@ share/regripper/plugins/uac.pl
 share/regripper/plugins/uninstall.pl
 share/regripper/plugins/uninstall_tln.pl
 share/regripper/plugins/unreadmail.pl
+share/regripper/plugins/updates.pl
 share/regripper/plugins/urlzone.pl
 share/regripper/plugins/urun_tln.pl
 share/regripper/plugins/usb.pl
