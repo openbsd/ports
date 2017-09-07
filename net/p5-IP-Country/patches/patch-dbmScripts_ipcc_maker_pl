@@ -1,0 +1,23 @@
+$OpenBSD: patch-dbmScripts_ipcc_maker_pl,v 1.1 2017/09/07 16:52:55 giovanni Exp $
+
+Index: dbmScripts/ipcc_maker.pl
+--- dbmScripts/ipcc_maker.pl.orig
++++ dbmScripts/ipcc_maker.pl
+@@ -31,7 +31,7 @@ close REG || warn("can't close $reg_file, but continui
+ 
+ 
+ print "Saving ultralite IP registry to disk\n";
+-my $ip = new IO::File "> ../lib/IP/Country/Fast/ip.gif";
++my $ip = new IO::File "> ${WRKDIR}/data/ip.gif";
+ if (defined $ip) {
+     binmode $ip;
+     print $ip pack("N",time()); # returned by $obj->db_time()
+@@ -44,7 +44,7 @@ if (defined $ip) {
+ 
+ print "Saving ultralite country database to disk\n";
+ 
+-open (CC, "> ../lib/IP/Country/Fast/cc.gif")
++open (CC, "> ${WRKDIR}/data/cc.gif")
+     or die ("couldn't create country database: $!");
+ binmode CC;
+ foreach my $country (sort $tree->get_countries()){

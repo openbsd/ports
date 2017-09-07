@@ -1,0 +1,12 @@
+$OpenBSD: patch-dbmScripts_whois_filenames,v 1.1 2017/09/07 16:52:55 giovanni Exp $
+
+Index: dbmScripts/whois_filenames
+--- dbmScripts/whois_filenames.orig
++++ dbmScripts/whois_filenames
+@@ -2,5 +2,5 @@
+ ftp ftp://ftp.ripe.net/ripe/dbase/split/ripe.db.inetnum.gz && gunzip ripe.db.inetnum.gz
+ ftp ftp://ftp.ripe.net/pub/stats/afrinic/delegated-afrinic-latest
+ ftp ftp://ftp.ripe.net/pub/stats/apnic/delegated-apnic-latest
+-ftp ftp://ftp.ripe.net/pub/stats/arin/delegated-arin-latest
++ftp ftp://ftp.ripe.net/pub/stats/arin/delegated-arin-extended-latest
+ ftp ftp://ftp.ripe.net/pub/stats/lacnic/delegated-lacnic-latest

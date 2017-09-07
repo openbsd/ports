@@ -1,0 +1,14 @@
+$OpenBSD: patch-dbmScripts_ipcc_loader_pl,v 1.1 2017/09/07 16:52:55 giovanni Exp $
+
+Index: dbmScripts/ipcc_loader.pl
+--- dbmScripts/ipcc_loader.pl.orig
++++ dbmScripts/ipcc_loader.pl
+@@ -70,7 +70,7 @@ read_reg('delegated-afrinic-latest');
+ read_reg('delegated-lacnic-latest');
+ read_reg('delegated-apnic-latest');
+ read_ripe();
+-read_reg('delegated-arin-latest');
++read_reg('delegated-arin-extended-latest');
+ 
+ join_neighbours();
+ punch_holes();
