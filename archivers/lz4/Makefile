@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2017/08/24 12:28:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2017/09/07 13:41:11 sthen Exp $
 
 SHARED_LIBS +=	lz4                       2.0
 
@@ -22,6 +22,7 @@ WANTLIB += c
 
 USE_GMAKE=	Yes
 MAKE_FLAGS=	CC="${CC}" \
+		CXX="${CXX}" \
 		CFLAGS="${CFLAGS}" \
 		MANDIR="${PREFIX}/man/man1" \
 		SONAME_FLAGS= \
