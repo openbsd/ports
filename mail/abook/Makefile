@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2017/04/19 15:04:55 jca Exp $
+# $OpenBSD: Makefile,v 1.35 2017/09/07 16:03:34 sthen Exp $
 
 COMMENT=		addressbook program with mutt support
 
@@ -18,7 +18,7 @@ MASTER_SITES=		http://abook.sourceforge.net/devel/
 LIB_DEPENDS=		converters/libiconv \
 			devel/gettext
 
-CONFIGURE_STYLE=	automake
+CONFIGURE_STYLE=	gnu
 
 BUILD_DEPENDS=		${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS} \
