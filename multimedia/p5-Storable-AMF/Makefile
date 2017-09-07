@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2016/03/20 19:56:50 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2017/09/07 18:54:07 nigel Exp $
 
 COMMENT =	deserializer for Adobe Action Message Format
 
-DISTNAME =	Storable-AMF-1.08
+DISTNAME =	Storable-AMF-1.23
 CATEGORIES =	multimedia
 CPAN_AUTHOR =	GRIAN
 
@@ -11,7 +11,7 @@ MAINTAINER =	Nigel Taylor <nigel@openbsd.org>
 # Perl
 PERMIT_PACKAGE_CDROM =	 Yes
 
-WANTLIB=	perl
+WANTLIB +=	c perl
 
 MODULES =	cpan
 
