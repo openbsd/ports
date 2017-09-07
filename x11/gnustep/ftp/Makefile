@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2017/07/27 11:01:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2017/09/07 21:13:15 sebastia Exp $
 
 COMMENT=	GNUstep file transfer protcol tool
 
-REVISION =	3
-DISTNAME=	FTP-0.5
+DISTNAME=	FTP-0.6
 CATEGORIES=	net
 
 HOMEPAGE=	http://gap.nongnu.org/ftp/
