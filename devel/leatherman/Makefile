@@ -1,22 +1,21 @@
-# $OpenBSD: Makefile,v 1.14 2017/07/26 22:45:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2017/09/08 09:53:49 sebastia Exp $
 
 COMMENT =		collection of C++ and CMake utility libraries
 
 GH_ACCOUNT =		puppetlabs
 GH_PROJECT =		leatherman
-GH_TAGNAME =		1.0.0
-REVISION =		1
+GH_TAGNAME =		1.2.1
 
 # N.B.: Upstream doesn't care about ABI, better just bump major on update
-SHARED_LIBS =	leatherman_curl           1.0 # 0.12                                  
+SHARED_LIBS =	leatherman_curl           1.1 # 0.12
 SHARED_LIBS +=	leatherman_dynamic_library 1.0 # 0.12                                 
-SHARED_LIBS +=	leatherman_execution      1.0 # 0.12                                  
-SHARED_LIBS +=	leatherman_file_util      1.0 # 0.12                                  
+SHARED_LIBS +=	leatherman_execution      1.1 # 0.12                                  
+SHARED_LIBS +=	leatherman_file_util      1.1 # 0.12                                  
 SHARED_LIBS +=	leatherman_json_container 1.0 # 0.12                                  
 SHARED_LIBS +=	leatherman_locale         1.0 # 0.12                                  
 SHARED_LIBS +=	leatherman_logging        1.0 # 0.12                                  
 SHARED_LIBS +=	leatherman_ruby           1.0 # 0.12                                  
-SHARED_LIBS +=	leatherman_util           1.0 # 0.12                                  
+SHARED_LIBS +=	leatherman_util           1.1 # 0.12                                  
 
 CATEGORIES =		devel
 
@@ -28,7 +27,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 COMPILER =		gcc
 MODULES =		devel/cmake lang/python
 MODPY_BUILDDEP =	No
-MODPY_ADJ_FILES =	${WRKSRC}/scripts/cpplint.py
+MODPY_ADJ_FILES =	scripts/cpplint.py
 
 WANTLIB =  ${COMPILER_LIBCXX} m
 WANTLIB += boost_atomic-mt boost_chrono-mt boost_date_time-mt

@@ -1,14 +1,14 @@
-$OpenBSD: patch-cmake_cflags_cmake,v 1.1 2017/05/23 20:18:45 espie Exp $
+$OpenBSD: patch-cmake_cflags_cmake,v 1.2 2017/09/08 09:53:49 sebastia Exp $
 
 Index: cmake/cflags.cmake
 --- cmake/cflags.cmake.orig
 +++ cmake/cflags.cmake
 @@ -26,9 +26,7 @@ if ("${CMAKE_CXX_COMPILER_ID}" MATCHES "\\w*Clang")
-         set(LEATHERMAN_CXX_FLAGS "${LEATHERMAN_CXX_FLAGS} -Wno-deprecated")
+         set(LEATHERMAN_CXX_FLAGS "-Wno-deprecated ${LEATHERMAN_CXX_FLAGS}")
      endif()
  
 -    if ("${CLANG_VERSION_STRING}" VERSION_GREATER "6.9")
--        set(LEATHERMAN_CXX_FLAGS "${LEATHERMAN_CXX_FLAGS} -Wno-unused-local-typedef")
+-        set(LEATHERMAN_CXX_FLAGS "-Wno-unused-local-typedef ${LEATHERMAN_CXX_FLAGS}")
 -    endif()
 +    set(LEATHERMAN_CXX_FLAGS "${LEATHERMAN_CXX_FLAGS} -Wno-unused-local-typedef -Wno-expansion-to-defined -Wno-varargs")
  

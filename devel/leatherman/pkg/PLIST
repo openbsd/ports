@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2017/06/30 08:05:08 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.6 2017/09/08 09:53:49 sebastia Exp $
 include/boost/nowide/
 include/boost/nowide/args.hpp
 include/boost/nowide/cenv.hpp
@@ -48,6 +48,7 @@ include/leatherman/util/scoped_resource.hpp
 include/leatherman/util/strings.hpp
 include/leatherman/util/time.hpp
 include/leatherman/util/timer.hpp
+include/leatherman/util/uri.hpp
 include/leatherman/util/windows/
 include/leatherman/util/windows/scoped_handle.hpp
 include/leatherman/vendor/
