@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.164 2017/09/04 19:27:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.165 2017/09/08 19:54:17 sthen Exp $
 
 COMMENT=	audio/video converter and streamer
 
 V=		20170825
 DISTNAME=	ffmpeg-git-${V}
 PKGNAME=	ffmpeg-${V}
-REVISION=	0
+REVISION=	1
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	http://comstyle.com/source/
 EXTRACT_SUFX=	.tar.xz
@@ -33,9 +33,10 @@ WANTLIB=	SDL X11 Xext Xv ass bz2 c crypto fontconfig freetype fribidi \
 		vorbisenc vpx>=5 x264 x265>=2 xcb xcb-shape xcb-shm xcb-xfixes \
 		xvidcore z
 
-# AAC encoder hangs on amd64 when built with clang 4.0.0 or 4.0.1 but
-# succeeds with ports clang 5.0.0rc4.
-# XXX h264 decoder segfaults in ff_deblock_v_luma_8_sse2 on i386
+# AAC encoder hangs on at least amd64/i386 when built with base
+# clang and at least in some cases ports clang 4.0.0 or 4.0.1.
+# It succeeds with ports clang 5.0.0rc4 on amd64, though not i386.
+# e.g. "ffmpeg -i somefile.mkv -acodec aac out.mkv"
 COMPILER=	base-gcc ports-clang base-clang
 COMPILER_LANGS=	c
 MODCLANG_ARCHS=	amd64

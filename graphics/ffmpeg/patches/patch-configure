@@ -1,9 +1,11 @@
-$OpenBSD: patch-configure,v 1.55 2016/12/11 09:27:53 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.56 2017/09/08 19:54:17 sthen Exp $
 
-lavu/random_seed: use arc4random() when available
+- lavu/random_seed: use arc4random() when available
+- configure: Also try -mstack-alignment for clang
 
---- configure.orig	Sat Dec 10 20:37:25 2016
-+++ configure	Sat Dec 10 20:43:59 2016
+Index: configure
+--- configure.orig
++++ configure
 @@ -1755,6 +1755,7 @@ MATH_FUNCS="
  SYSTEM_FUNCS="
      access
@@ -38,7 +40,15 @@ lavu/random_seed: use arc4random() when available
  check_func_headers time.h clock_gettime || { check_func_headers time.h clock_gettime -lrt && add_extralibs -lrt && LIBRT="-lrt"; }
  check_func  fcntl
  check_func  fork
-@@ -5788,6 +5790,11 @@ if test $target_os = "haiku"; then
+@@ -5685,6 +5687,7 @@ elif enabled llvm_gcc; then
+     check_cflags -mllvm -stack-alignment=16
+ elif enabled clang; then
+     check_cflags -mllvm -stack-alignment=16
++    check_cflags -mstack-alignment=16
+     check_cflags -Qunused-arguments
+     check_cflags -Werror=implicit-function-declaration
+     check_cflags -Werror=missing-prototypes
+@@ -5788,6 +5791,11 @@ if test $target_os = "haiku"; then
      disable posix_memalign
  fi
  
@@ -50,7 +60,7 @@ lavu/random_seed: use arc4random() when available
  enabled_all dxva2 dxva2api_cobj CoTaskMemFree &&
      prepend ffmpeg_libs $($ldflags_filter "-lole32" "-luser32") &&
      enable dxva2_lib
-@@ -6220,8 +6227,8 @@ pkgconfig_generate(){
+@@ -6220,8 +6228,8 @@ pkgconfig_generate(){
      comment=$2
      version=$3
      libs=$4
@@ -61,7 +71,7 @@ lavu/random_seed: use arc4random() when available
      enabled ${name#lib} || return 0
      mkdir -p $name
      cat <<EOF > $name/$name${build_suffix}.pc
-@@ -6236,7 +6243,7 @@ Version: $version
+@@ -6236,7 +6244,7 @@ Version: $version
  Requires: $(enabled shared || echo $requires)
  Requires.private: $(enabled shared && echo $requires)
  Conflicts:
@@ -70,7 +80,7 @@ lavu/random_seed: use arc4random() when available
  Libs.private: $(enabled shared && echo $libs)
  Cflags: -I\${includedir}
  EOF
-@@ -6260,12 +6267,12 @@ Cflags: -I\${includedir}
+@@ -6260,12 +6268,12 @@ Cflags: -I\${includedir}
  EOF
  }
  
