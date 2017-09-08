@@ -1,6 +1,14 @@
-$OpenBSD: patch-junklib_c,v 1.4 2016/09/13 08:48:11 dcoppa Exp $
---- junklib.c.orig	Sun Sep  4 08:55:24 2016
-+++ junklib.c	Sun Sep  4 08:56:11 2016
+$OpenBSD: patch-junklib_c,v 1.5 2017/09/08 10:44:20 dcoppa Exp $
+
+commit d97d5490e45462b8b4135a3745e56b003ef494cf
+Author: Alexey Yakovenko <wakeroid@gmail.com>
+Date:   Mon Jul 17 19:24:31 2017
+
+junklib: fix pointer going out of scope bug
+
+Index: junklib.c
+--- junklib.c.orig
++++ junklib.c
 @@ -33,7 +33,6 @@
  #include <string.h>
  #undef HAVE_ICI
@@ -18,3 +26,17 @@ $OpenBSD: patch-junklib_c,v 1.4 2016/09/13 08:48:11 dcoppa Exp $
      char *pin = (char*)in;
  #else
      const char *pin = in;
+@@ -1025,11 +1024,12 @@ junk_id3v1_read_int (playItem_t *it, char *buffer, con
+         return -1;
+     }
+ 
++    const char *cs = NULL;
++
+     if (it) {
+         if (memcmp (buffer, "TAG", 3)) {
+             return -1; // no tag
+         }
+-        const char *cs = NULL;
+         charset = &cs;
+         int res = junk_id3v1_read_int (NULL, buffer, charset);
+         if (res) {

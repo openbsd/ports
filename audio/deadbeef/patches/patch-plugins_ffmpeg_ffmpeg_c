@@ -1,0 +1,32 @@
+$OpenBSD: patch-plugins_ffmpeg_ffmpeg_c,v 1.5 2017/09/08 10:44:20 dcoppa Exp $
+
+commit 67f6568151248965dd89ef3304464a50e9982a20
+Author: Alexey Yakovenko <wakeroid@gmail.com>
+Date:   Sun Apr 30 17:08:03 2017
+
+ffmpeg: increase the supported file extension limit to 1024
+
+commit f6646210f643e4fb75f352cfb021dcfc0ed0b628
+Author: Alexey Yakovenko <wakeroid@gmail.com>
+Date:   Sun Apr 30 08:37:07 2017
+
+ffmpeg: buffer overflow fix when there are >= 256 extensions supported
+by ffmpeg
+
+Index: plugins/ffmpeg/ffmpeg.c
+--- plugins/ffmpeg/ffmpeg.c.orig
++++ plugins/ffmpeg/ffmpeg.c
+@@ -76,11 +76,11 @@ static DB_functions_t *deadbeef;
+     "m2ts,mts,mxf,rm,ra,roq,sox," \
+     "spdif,swf,rcv,voc,w64,wav,wv"
+ 
+-#define EXT_MAX 256
++#define EXT_MAX 1024
+ 
+ #define FFMPEG_MAX_ANALYZE_DURATION 500000
+ 
+-static char * exts[EXT_MAX] = {NULL};
++static char * exts[EXT_MAX+1] = {NULL};
+ 
+ enum {
+     FT_ALAC = 0,
