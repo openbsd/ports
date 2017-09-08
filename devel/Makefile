@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1643 2017/09/05 14:34:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.1644 2017/09/08 16:44:05 jsing Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -158,6 +158,7 @@
      SUBDIR += go-check-v1
      SUBDIR += go-goptlib
      SUBDIR += go-tools
+     SUBDIR += go-sys
      SUBDIR += gobject-introspection
      SUBDIR += goffice
      SUBDIR += goffice08
