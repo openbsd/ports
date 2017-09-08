@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.154 2017/09/01 06:40:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.155 2017/09/08 05:58:19 ajacoutot Exp $
 
 # XXX: Remember to bump MODCLANG_VERSION in lang/clang/clang.port.mk when
 # updating this port.
@@ -12,7 +12,7 @@ MULTI_PACKAGES =	-main -python
 COMMENT-main =	modular, fast C/C++/ObjC compiler, static analyzer and tools
 COMMENT-python =	Python bindings for Clang
 
-LLVM_V =	5.0.0rc4
+LLVM_V =	5.0.0
 DISTNAME =	llvm-${LLVM_V}.src
 PKGNAME =	llvm-${LLVM_V}
 PKGNAME-main =	llvm-${LLVM_V}
@@ -21,8 +21,7 @@ CATEGORIES =	devel
 DISTFILES =	llvm-${LLVM_V}.src${EXTRACT_SUFX} \
 		cfe-${LLVM_V}.src${EXTRACT_SUFX} \
 		lld-${LLVM_V}.src${EXTRACT_SUFX}
-#MASTER_SITES =	http://www.llvm.org/releases/${LLVM_V}/
-MASTER_SITES =	http://prereleases.llvm.org/5.0.0/rc4/
+MASTER_SITES =	https://www.llvm.org/releases/${LLVM_V}/
 EXTRACT_SUFX =	.tar.xz
 
 SHARED_LIBS =	clang		6.0 \
@@ -84,7 +83,7 @@ GCC_CONFIG =		x86_64-unknown-openbsd${OSREV}
 .else
 GCC_CONFIG =		${MACHINE_ARCH}-unknown-openbsd${OSREV}
 .endif
-CLANG_INCLUDE_PATH =	lib/clang/${LLVM_V:S/rc4//}/include
+CLANG_INCLUDE_PATH =	lib/clang/${LLVM_V}/include
 SUBST_VARS +=		CLANG_INCLUDE_PATH LLVM_V GCC_VER GCC_CONFIG
 
 post-extract:
