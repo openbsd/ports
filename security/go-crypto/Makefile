@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2017/02/23 16:01:09 jsing Exp $
+# $OpenBSD: Makefile,v 1.5 2017/09/08 17:06:22 jsing Exp $
 
 COMMENT =	Go supplementary cryptography libraries
-DISTNAME =	go-crypto-20170201
+DISTNAME =	go-crypto-20170824
 GH_ACCOUNT =	golang
 GH_PROJECT =	crypto
-GH_COMMIT =	dc137beb6cce2043eb6b5f223ab8bf51c32459f4
+GH_COMMIT =	eb71ad9bd329b5ac0fd0148dd99bd62e8be8e035
 CATEGORIES =	security devel
 
 HOMEPAGE =	https://godoc.org/golang.org/x/crypto
@@ -20,10 +20,12 @@ MODULES =	lang/go
 
 MODGO_TYPE =	lib
 
-# The acme and acme\autocert packages are not currently enabled, since
-# there is now a lovely circular dependency with the go-net package...
+BUILD_DEPENDS = devel/go-sys
+
 _MAIN =		golang.org/x/crypto
-_SUBPKGS =	bcrypt \
+_SUBPKGS =	acme \
+		acme/autocert \
+		bcrypt \
 		blake2b \
 		blake2s \
 		blowfish \
@@ -31,11 +33,13 @@ _SUBPKGS =	bcrypt \
 		cast5 \
 		chacha20poly1305 \
 		chacha20poly1305/internal/chacha20 \
+		cryptobyte \
 		curve25519 \
 		ed25519 \
 		ed25519/internal/edwards25519 \
 		hkdf \
 		md4 \
+		nacl/auth \
 		nacl/box \
 		nacl/secretbox \
 		ocsp \
@@ -58,12 +62,14 @@ _SUBPKGS =	bcrypt \
 		sha3 \
 		ssh \
 		ssh/agent \
+		ssh/knownhosts \
 		ssh/terminal \
 		ssh/test \
 		tea \
 		twofish \
 		xtea \
 		xts
+
 ALL_TARGET =	${_SUBPKGS:%=${_MAIN}/%}
 WRKSRC =	${MODGO_WORKSPACE}/src/${_MAIN}
 

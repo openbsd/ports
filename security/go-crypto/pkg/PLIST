@@ -1,10 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.3 2017/02/23 16:01:09 jsing Exp $
+@comment $OpenBSD: PLIST,v 1.4 2017/09/08 17:06:22 jsing Exp $
 go-pkg/
 go-pkg/pkg/
 ${MODGO_PACKAGES}/
 ${MODGO_PACKAGES}/golang.org/
 ${MODGO_PACKAGES}/golang.org/x/
 ${MODGO_PACKAGES}/golang.org/x/crypto/
+${MODGO_PACKAGES}/golang.org/x/crypto/acme/
+${MODGO_PACKAGES}/golang.org/x/crypto/acme.a
+${MODGO_PACKAGES}/golang.org/x/crypto/acme/autocert.a
 ${MODGO_PACKAGES}/golang.org/x/crypto/bcrypt.a
 ${MODGO_PACKAGES}/golang.org/x/crypto/blake2b.a
 ${MODGO_PACKAGES}/golang.org/x/crypto/blake2s.a
@@ -15,6 +18,7 @@ ${MODGO_PACKAGES}/golang.org/x/crypto/chacha20poly1305/
 ${MODGO_PACKAGES}/golang.org/x/crypto/chacha20poly1305.a
 ${MODGO_PACKAGES}/golang.org/x/crypto/chacha20poly1305/internal/
 ${MODGO_PACKAGES}/golang.org/x/crypto/chacha20poly1305/internal/chacha20.a
+${MODGO_PACKAGES}/golang.org/x/crypto/cryptobyte.a
 ${MODGO_PACKAGES}/golang.org/x/crypto/curve25519.a
 ${MODGO_PACKAGES}/golang.org/x/crypto/ed25519/
 ${MODGO_PACKAGES}/golang.org/x/crypto/ed25519.a
@@ -23,6 +27,7 @@ ${MODGO_PACKAGES}/golang.org/x/crypto/ed25519/internal/edwards25519.a
 ${MODGO_PACKAGES}/golang.org/x/crypto/hkdf.a
 ${MODGO_PACKAGES}/golang.org/x/crypto/md4.a
 ${MODGO_PACKAGES}/golang.org/x/crypto/nacl/
+${MODGO_PACKAGES}/golang.org/x/crypto/nacl/auth.a
 ${MODGO_PACKAGES}/golang.org/x/crypto/nacl/box.a
 ${MODGO_PACKAGES}/golang.org/x/crypto/nacl/secretbox.a
 ${MODGO_PACKAGES}/golang.org/x/crypto/ocsp.a
@@ -50,6 +55,7 @@ ${MODGO_PACKAGES}/golang.org/x/crypto/sha3.a
 ${MODGO_PACKAGES}/golang.org/x/crypto/ssh/
 ${MODGO_PACKAGES}/golang.org/x/crypto/ssh.a
 ${MODGO_PACKAGES}/golang.org/x/crypto/ssh/agent.a
+${MODGO_PACKAGES}/golang.org/x/crypto/ssh/knownhosts.a
 ${MODGO_PACKAGES}/golang.org/x/crypto/ssh/terminal.a
 ${MODGO_PACKAGES}/golang.org/x/crypto/ssh/test.a
 ${MODGO_PACKAGES}/golang.org/x/crypto/tea.a
@@ -67,7 +73,7 @@ ${MODGO_SOURCES}/golang.org/x/crypto/CONTRIBUTING.md
 ${MODGO_SOURCES}/golang.org/x/crypto/CONTRIBUTORS
 ${MODGO_SOURCES}/golang.org/x/crypto/LICENSE
 ${MODGO_SOURCES}/golang.org/x/crypto/PATENTS
-${MODGO_SOURCES}/golang.org/x/crypto/README
+${MODGO_SOURCES}/golang.org/x/crypto/README.md
 ${MODGO_SOURCES}/golang.org/x/crypto/acme/
 ${MODGO_SOURCES}/golang.org/x/crypto/acme/acme.go
 ${MODGO_SOURCES}/golang.org/x/crypto/acme/acme_test.go
@@ -76,11 +82,14 @@ ${MODGO_SOURCES}/golang.org/x/crypto/acme/autocert/autocert.go
 ${MODGO_SOURCES}/golang.org/x/crypto/acme/autocert/autocert_test.go
 ${MODGO_SOURCES}/golang.org/x/crypto/acme/autocert/cache.go
 ${MODGO_SOURCES}/golang.org/x/crypto/acme/autocert/cache_test.go
+${MODGO_SOURCES}/golang.org/x/crypto/acme/autocert/example_test.go
+${MODGO_SOURCES}/golang.org/x/crypto/acme/autocert/listener.go
 ${MODGO_SOURCES}/golang.org/x/crypto/acme/autocert/renewal.go
 ${MODGO_SOURCES}/golang.org/x/crypto/acme/autocert/renewal_test.go
 ${MODGO_SOURCES}/golang.org/x/crypto/acme/jws.go
 ${MODGO_SOURCES}/golang.org/x/crypto/acme/jws_test.go
 ${MODGO_SOURCES}/golang.org/x/crypto/acme/types.go
+${MODGO_SOURCES}/golang.org/x/crypto/acme/types_test.go
 ${MODGO_SOURCES}/golang.org/x/crypto/bcrypt/
 ${MODGO_SOURCES}/golang.org/x/crypto/bcrypt/base64.go
 ${MODGO_SOURCES}/golang.org/x/crypto/bcrypt/bcrypt.go
@@ -94,6 +103,8 @@ ${MODGO_SOURCES}/golang.org/x/crypto/blake2b/blake2b_amd64.s
 ${MODGO_SOURCES}/golang.org/x/crypto/blake2b/blake2b_generic.go
 ${MODGO_SOURCES}/golang.org/x/crypto/blake2b/blake2b_ref.go
 ${MODGO_SOURCES}/golang.org/x/crypto/blake2b/blake2b_test.go
+${MODGO_SOURCES}/golang.org/x/crypto/blake2b/blake2x.go
+${MODGO_SOURCES}/golang.org/x/crypto/blake2b/register.go
 ${MODGO_SOURCES}/golang.org/x/crypto/blake2s/
 ${MODGO_SOURCES}/golang.org/x/crypto/blake2s/blake2s.go
 ${MODGO_SOURCES}/golang.org/x/crypto/blake2s/blake2s_386.go
@@ -103,6 +114,8 @@ ${MODGO_SOURCES}/golang.org/x/crypto/blake2s/blake2s_amd64.s
 ${MODGO_SOURCES}/golang.org/x/crypto/blake2s/blake2s_generic.go
 ${MODGO_SOURCES}/golang.org/x/crypto/blake2s/blake2s_ref.go
 ${MODGO_SOURCES}/golang.org/x/crypto/blake2s/blake2s_test.go
+${MODGO_SOURCES}/golang.org/x/crypto/blake2s/blake2x.go
+${MODGO_SOURCES}/golang.org/x/crypto/blake2s/register.go
 ${MODGO_SOURCES}/golang.org/x/crypto/blowfish/
 ${MODGO_SOURCES}/golang.org/x/crypto/blowfish/block.go
 ${MODGO_SOURCES}/golang.org/x/crypto/blowfish/blowfish_test.go
@@ -135,7 +148,15 @@ ${MODGO_SOURCES}/golang.org/x/crypto/chacha20poly1305/internal/chacha20/
 ${MODGO_SOURCES}/golang.org/x/crypto/chacha20poly1305/internal/chacha20/chacha_generic.go
 ${MODGO_SOURCES}/golang.org/x/crypto/chacha20poly1305/internal/chacha20/chacha_test.go
 ${MODGO_SOURCES}/golang.org/x/crypto/codereview.cfg
+${MODGO_SOURCES}/golang.org/x/crypto/cryptobyte/
+${MODGO_SOURCES}/golang.org/x/crypto/cryptobyte/asn1.go
+${MODGO_SOURCES}/golang.org/x/crypto/cryptobyte/asn1_test.go
+${MODGO_SOURCES}/golang.org/x/crypto/cryptobyte/builder.go
+${MODGO_SOURCES}/golang.org/x/crypto/cryptobyte/cryptobyte_test.go
+${MODGO_SOURCES}/golang.org/x/crypto/cryptobyte/example_test.go
+${MODGO_SOURCES}/golang.org/x/crypto/cryptobyte/string.go
 ${MODGO_SOURCES}/golang.org/x/crypto/curve25519/
+${MODGO_SOURCES}/golang.org/x/crypto/curve25519/const_amd64.h
 ${MODGO_SOURCES}/golang.org/x/crypto/curve25519/const_amd64.s
 ${MODGO_SOURCES}/golang.org/x/crypto/curve25519/cswap_amd64.s
 ${MODGO_SOURCES}/golang.org/x/crypto/curve25519/curve25519.go
@@ -160,13 +181,19 @@ ${MODGO_SOURCES}/golang.org/x/crypto/hkdf/example_test.go
 ${MODGO_SOURCES}/golang.org/x/crypto/hkdf/hkdf.go
 ${MODGO_SOURCES}/golang.org/x/crypto/hkdf/hkdf_test.go
 ${MODGO_SOURCES}/golang.org/x/crypto/md4/
+${MODGO_SOURCES}/golang.org/x/crypto/md4/example_test.go
 ${MODGO_SOURCES}/golang.org/x/crypto/md4/md4.go
 ${MODGO_SOURCES}/golang.org/x/crypto/md4/md4_test.go
 ${MODGO_SOURCES}/golang.org/x/crypto/md4/md4block.go
 ${MODGO_SOURCES}/golang.org/x/crypto/nacl/
+${MODGO_SOURCES}/golang.org/x/crypto/nacl/auth/
+${MODGO_SOURCES}/golang.org/x/crypto/nacl/auth/auth.go
+${MODGO_SOURCES}/golang.org/x/crypto/nacl/auth/auth_test.go
+${MODGO_SOURCES}/golang.org/x/crypto/nacl/auth/example_test.go
 ${MODGO_SOURCES}/golang.org/x/crypto/nacl/box/
 ${MODGO_SOURCES}/golang.org/x/crypto/nacl/box/box.go
 ${MODGO_SOURCES}/golang.org/x/crypto/nacl/box/box_test.go
+${MODGO_SOURCES}/golang.org/x/crypto/nacl/box/example_test.go
 ${MODGO_SOURCES}/golang.org/x/crypto/nacl/secretbox/
 ${MODGO_SOURCES}/golang.org/x/crypto/nacl/secretbox/example_test.go
 ${MODGO_SOURCES}/golang.org/x/crypto/nacl/secretbox/secretbox.go
@@ -330,6 +357,9 @@ ${MODGO_SOURCES}/golang.org/x/crypto/ssh/kex.go
 ${MODGO_SOURCES}/golang.org/x/crypto/ssh/kex_test.go
 ${MODGO_SOURCES}/golang.org/x/crypto/ssh/keys.go
 ${MODGO_SOURCES}/golang.org/x/crypto/ssh/keys_test.go
+${MODGO_SOURCES}/golang.org/x/crypto/ssh/knownhosts/
+${MODGO_SOURCES}/golang.org/x/crypto/ssh/knownhosts/knownhosts.go
+${MODGO_SOURCES}/golang.org/x/crypto/ssh/knownhosts/knownhosts_test.go
 ${MODGO_SOURCES}/golang.org/x/crypto/ssh/mac.go
 ${MODGO_SOURCES}/golang.org/x/crypto/ssh/mempipe_test.go
 ${MODGO_SOURCES}/golang.org/x/crypto/ssh/messages.go
@@ -339,6 +369,7 @@ ${MODGO_SOURCES}/golang.org/x/crypto/ssh/mux_test.go
 ${MODGO_SOURCES}/golang.org/x/crypto/ssh/server.go
 ${MODGO_SOURCES}/golang.org/x/crypto/ssh/session.go
 ${MODGO_SOURCES}/golang.org/x/crypto/ssh/session_test.go
+${MODGO_SOURCES}/golang.org/x/crypto/ssh/streamlocal.go
 ${MODGO_SOURCES}/golang.org/x/crypto/ssh/tcpip.go
 ${MODGO_SOURCES}/golang.org/x/crypto/ssh/tcpip_test.go
 ${MODGO_SOURCES}/golang.org/x/crypto/ssh/terminal/
@@ -353,10 +384,10 @@ ${MODGO_SOURCES}/golang.org/x/crypto/ssh/terminal/util_windows.go
 ${MODGO_SOURCES}/golang.org/x/crypto/ssh/test/
 ${MODGO_SOURCES}/golang.org/x/crypto/ssh/test/agent_unix_test.go
 ${MODGO_SOURCES}/golang.org/x/crypto/ssh/test/cert_test.go
+${MODGO_SOURCES}/golang.org/x/crypto/ssh/test/dial_unix_test.go
 ${MODGO_SOURCES}/golang.org/x/crypto/ssh/test/doc.go
 ${MODGO_SOURCES}/golang.org/x/crypto/ssh/test/forward_unix_test.go
 ${MODGO_SOURCES}/golang.org/x/crypto/ssh/test/session_test.go
-${MODGO_SOURCES}/golang.org/x/crypto/ssh/test/tcpip_test.go
 ${MODGO_SOURCES}/golang.org/x/crypto/ssh/test/test_unix_test.go
 ${MODGO_SOURCES}/golang.org/x/crypto/ssh/test/testdata_test.go
 ${MODGO_SOURCES}/golang.org/x/crypto/ssh/testdata/
