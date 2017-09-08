@@ -1,15 +1,15 @@
-$OpenBSD: patch-lib_CMakeLists_txt,v 1.18 2017/05/14 20:36:21 sebastia Exp $
+$OpenBSD: patch-lib_CMakeLists_txt,v 1.19 2017/09/08 09:56:59 sebastia Exp $
 
 - Override library version
 
---- lib/CMakeLists.txt.orig	Wed Apr  5 22:38:38 2017
-+++ lib/CMakeLists.txt	Fri May 12 08:22:41 2017
-@@ -301,7 +301,7 @@ link_directories(
- add_library(libfactersrc OBJECT ${LIBFACTER_COMMON_SOURCES} ${LIBFACTER_STANDARD_SOURCES} ${LIBFACTER_PLATFORM_SOURCES})
- set_target_properties(libfactersrc PROPERTIES POSITION_INDEPENDENT_CODE true)
- add_library(libfacter SHARED $<TARGET_OBJECTS:libfactersrc>)
--set_target_properties(libfacter PROPERTIES PREFIX "" SUFFIX ".so" IMPORT_PREFIX "" IMPORT_SUFFIX ".so.a" VERSION ${PROJECT_VERSION})
-+set_target_properties(libfacter PROPERTIES PREFIX "" SUFFIX ".so" IMPORT_PREFIX "" IMPORT_SUFFIX ".so.a" VERSION ${LIBfacter_VERSION})
+Index: lib/CMakeLists.txt
+--- lib/CMakeLists.txt.orig
++++ lib/CMakeLists.txt
+@@ -309,6 +309,7 @@ set_target_properties(libfactersrc PROPERTIES POSITION
+ add_library(libfacter $<TARGET_OBJECTS:libfactersrc>)
+ if (BUILD_SHARED_LIBS)
+     set_target_properties(libfacter PROPERTIES PREFIX "" SUFFIX ".so" IMPORT_PREFIX "" IMPORT_SUFFIX ".so.a" VERSION ${PROJECT_VERSION})
++    set_target_properties(libfacter PROPERTIES PREFIX "" SUFFIX ".so" IMPORT_PREFIX "" IMPORT_SUFFIX ".so.a" VERSION ${LIBfacter_VERSION})
+ endif()
  
  if(AIX)
-     # On AIX we need to be built such that we are "dynamically

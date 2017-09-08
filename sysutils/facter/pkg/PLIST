@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.6 2016/08/30 11:03:33 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2017/09/08 09:56:59 sebastia Exp $
 @option is-branch
 @conflict facter-<3.0.1
 @bin bin/facter
 include/facter/
+include/facter/cwrapper.hpp
 include/facter/export.h
 include/facter/facts/
 include/facter/facts/array_value.hpp
