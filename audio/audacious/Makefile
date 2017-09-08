@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2017/09/08 13:33:07 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.57 2017/09/08 15:44:15 dcoppa Exp $
 
 BROKEN-hppa =	no atomic ops / __sync_fetch_and_add_4
 BROKEN-alpha =	tinylock.c:58: internal compiler error: in extract_insn, at recog.c:2077
@@ -28,9 +28,9 @@ MASTER_SITES =		http://distfiles.audacious-media-player.org/
 
 EXTRACT_SUFX =		.tar.bz2
 
-MODULES =		devel/gettext gcc4
-# for atomic builtins
-MODGCC4_ARCHS =		arm
+MODULES =		devel/gettext
+
+COMPILER =		base-clang ports-gcc
 
 RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+3,-guic

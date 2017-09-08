@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2017/09/08 13:33:07 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.73 2017/09/08 15:44:15 dcoppa Exp $
 
 COMMENT =		input and output plugins for Audacious
 
@@ -27,6 +27,8 @@ MASTER_SITES =		http://distfiles.audacious-media-player.org/
 EXTRACT_SUFX =		.tar.bz2
 
 MODULES =		devel/gettext
+
+COMPILER =		base-clang ports-gcc
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
 
