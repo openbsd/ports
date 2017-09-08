@@ -1,11 +1,4 @@
-$OpenBSD: patch-src_keyevents_c,v 1.14 2017/09/04 11:18:17 dcoppa Exp $
-
-commit 8ad7d16318975a46aaada5c2b4ecf22c089b88f5
-Author: Daniel Friesel <derf@finalrewind.org>
-Date:   Sat Sep 2 07:23:55 2017
-
-Respect -N / --no-menus option (broken in 2.17)
-
+$OpenBSD: patch-src_keyevents_c,v 1.15 2017/09/08 08:19:20 dcoppa Exp $
 Index: src/keyevents.c
 --- src/keyevents.c.orig
 +++ src/keyevents.c
@@ -18,12 +11,3 @@ Index: src/keyevents.c
  		return;
  
  	while (fgets(line, sizeof(line), conf)) {
-@@ -743,7 +743,7 @@ void feh_event_handle_generic(winwidget winwid, unsign
- 	else if (feh_is_kp(&keys.size_to_image, state, keysym, button)) {
- 		winwidget_size_to_image(winwid);
- 	}
--	else if (feh_is_kp(&keys.toggle_menu, state, keysym, button)) {
-+	else if (!opt.no_menus && feh_is_kp(&keys.toggle_menu, state, keysym, button)) {
- 		winwidget_show_menu(winwid);
- 	}
- 	else if (feh_is_kp(&keys.close, state, keysym, button)) {

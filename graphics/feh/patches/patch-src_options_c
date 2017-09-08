@@ -1,11 +1,4 @@
-$OpenBSD: patch-src_options_c,v 1.12 2017/09/04 11:18:17 dcoppa Exp $
-
-commit a0e2ed52478480513dc1f6963f3114c7841a0d87
-Author: orbea <ovariegata@yahoo.com>
-Date:   Fri Aug 25 21:03:39 2017
-
-Silence -Wimplicit-fallthrough= warning
-
+$OpenBSD: patch-src_options_c,v 1.13 2017/09/08 08:19:20 dcoppa Exp $
 Index: src/options.c
 --- src/options.c.orig
 +++ src/options.c
@@ -18,11 +11,3 @@ Index: src/options.c
  		return;
  
  	/* Oooh. We have an options file :) */
-@@ -768,6 +768,7 @@ static void feh_parse_option_array(int argc, char **ar
- 			break;
- 		case 240:
- 			opt.insecure_ssl = 1;
-+			break;
- 		case 241:
- 			opt.recursive = 0;
- 		default:

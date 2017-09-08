@@ -1,8 +1,8 @@
-$OpenBSD: patch-man_feh_pre,v 1.39 2017/08/06 08:46:47 dcoppa Exp $
+$OpenBSD: patch-man_feh_pre,v 1.40 2017/09/08 08:19:20 dcoppa Exp $
 Index: man/feh.pre
 --- man/feh.pre.orig
 +++ man/feh.pre
-@@ -1072,7 +1072,7 @@ which
+@@ -1073,7 +1073,7 @@ which
  defaults to
  .Pa ~/.config/feh/ .
  If the files are not found in that directory, it will also try
@@ -11,7 +11,7 @@ Index: man/feh.pre
  .Pp
  All config files treat lines starting with a
  .Qq #
-@@ -1642,56 +1642,56 @@ Here are some examples of useful option combinations. 
+@@ -1651,56 +1651,56 @@ Here are some examples of useful option combinations. 
  .
  .Bl -tag -width indent
  .
@@ -85,7 +85,7 @@ Index: man/feh.pre
  ~/image/image_name when enter is pressed
  .
  .It feh --start-at ./foo.jpg \&.
-@@ -1736,8 +1736,6 @@ section.
+@@ -1745,8 +1745,6 @@ section.
  .
  .
  .Sh BUGS
