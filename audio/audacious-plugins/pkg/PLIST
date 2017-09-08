@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2014/11/03 04:29:05 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.13 2017/09/08 13:33:07 dcoppa Exp $
 @pkgpath audio/audacious-plugins,-main
 lib/audacious/
 lib/audacious/Container/
@@ -17,6 +17,7 @@ lib/audacious/Effect/echo.so
 lib/audacious/Effect/ladspa.so
 lib/audacious/Effect/mixer.so
 lib/audacious/Effect/resample.so
+lib/audacious/Effect/silence-removal.so
 lib/audacious/Effect/sox-resampler.so
 lib/audacious/Effect/speed-pitch.so
 lib/audacious/Effect/stereo.so
@@ -33,6 +34,7 @@ lib/audacious/General/hotkey.so
 lib/audacious/General/lyricwiki.so
 lib/audacious/General/mpris2.so
 lib/audacious/General/notify.so
+lib/audacious/General/playlist-manager.so
 lib/audacious/General/scrobbler.so
 lib/audacious/General/search-tool.so
 lib/audacious/General/skins.so
@@ -40,7 +42,7 @@ lib/audacious/General/song_change.so
 lib/audacious/General/statusicon.so
 lib/audacious/Input/
 lib/audacious/Input/aac-raw.so
-lib/audacious/Input/aac.so
+lib/audacious/Input/adplug.so
 lib/audacious/Input/cdaudio-ng.so
 lib/audacious/Input/console.so
 lib/audacious/Input/ffaudio.so
@@ -57,7 +59,7 @@ lib/audacious/Input/wavpack.so
 lib/audacious/Input/xsf.so
 lib/audacious/Output/
 lib/audacious/Output/filewriter.so
-lib/audacious/Output/sndio.so
+lib/audacious/Output/sndio-ng.so
 lib/audacious/Transport/
 lib/audacious/Transport/gio.so
 lib/audacious/Transport/mms.so
@@ -193,6 +195,7 @@ share/audacious/Skins/TinyPlayer/text.png
 share/audacious/Skins/TinyPlayer/titlebar.png
 share/audacious/Skins/TinyPlayer/viscolor.txt
 share/audacious/Skins/TinyPlayer/volume.png
+share/locale/ar/LC_MESSAGES/audacious-plugins.mo
 share/locale/be/LC_MESSAGES/audacious-plugins.mo
 share/locale/bg/LC_MESSAGES/audacious-plugins.mo
 share/locale/ca/LC_MESSAGES/audacious-plugins.mo

@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.55 2016/12/31 04:12:09 jsg Exp $
+# $OpenBSD: Makefile,v 1.56 2017/09/08 13:33:07 dcoppa Exp $
 
 BROKEN-hppa =	no atomic ops / __sync_fetch_and_add_4
 BROKEN-alpha =	tinylock.c:58: internal compiler error: in extract_insn, at recog.c:2077
 
-COMMENT =		Gtk+3 media player
+COMMENT =		graphical audio player which supports lots of formats
 
-DISTNAME =		audacious-3.5.2
-REVISION =		0
+DISTNAME =		audacious-3.9
 
-SHARED_LIBS +=		audcore		3.0 	# 1.0
-SHARED_LIBS +=		audgui		3.0	# 1.0
-SHARED_LIBS +=		audtag		2.1	# 1.0
+SHARED_LIBS +=		audcore		4.0 	# 5.0
+SHARED_LIBS +=		audgui		4.0	# 5.0
+SHARED_LIBS +=		audtag		3.0	# 3.0
 
 CATEGORIES =		audio multimedia
 
@@ -19,10 +18,11 @@ HOMEPAGE =		http://audacious-media-player.org/
 # BSD
 PERMIT_PACKAGE_CDROM =Yes
 
-WANTLIB += atk-1.0 c cairo cairo-gobject fontconfig freetype gdk-3
-WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += gtk-3 guess m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pthread z
+WANTLIB += ${COMPILER_LIBCXX} X11 Xcomposite Xcursor Xdamage Xext
+WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo fontconfig
+WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB += gmodule-2.0 gobject-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 z
 
 MASTER_SITES =		http://distfiles.audacious-media-player.org/
 
@@ -34,8 +34,7 @@ MODGCC4_ARCHS =		arm
 
 RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+3,-guic
-LIB_DEPENDS =		devel/libguess>=1.2 \
-			x11/gtk+3
+LIB_DEPENDS =		x11/gtk+2
 
 MAKE_ENV =		LIBaudcore_VERSION=${LIBaudcore_VERSION} \
 			LIBaudgui_VERSION=${LIBaudgui_VERSION} \
