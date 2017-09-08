@@ -1,12 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.7 2017/02/23 16:04:16 jsing Exp $
+@comment $OpenBSD: PLIST,v 1.8 2017/09/08 17:25:18 jsing Exp $
 @conflict stress-*
 @pkgpath textproc/godoc
 @bin bin/benchcmp
 @bin bin/bundle
 @bin bin/callgraph
+@bin bin/compilebench
 @bin bin/digraph
 @bin bin/eg
 @bin bin/fiximports
+@bin bin/go-contrib-init
 @bin bin/godex
 @bin bin/godoc
 @bin bin/goimports
@@ -17,8 +19,10 @@
 @bin bin/guru
 @bin bin/heapview
 @bin bin/html2article
+@bin bin/present
 @bin bin/ssadump
 @bin bin/stress
 @bin bin/stringer
+@bin bin/toolstash
 share/doc/pkg-readmes/${FULLPKGNAME}
 @rcscript ${RCDIR}/godoc
