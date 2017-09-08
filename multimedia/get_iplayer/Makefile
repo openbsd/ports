@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.107 2017/08/22 10:13:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.108 2017/09/08 15:41:01 sthen Exp $
 
 COMMENT=		download/stream programmes from BBC iPlayer
 
@@ -15,15 +15,15 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
 
-RUN_DEPENDS=		graphics/ffmpeg \
-			multimedia/atomicparsley \
-			textproc/p5-XML-LibXML \
+COMMON_DEPENDS=		textproc/p5-XML-LibXML \
 			www/p5-HTML-Parser>=3.71 \
 			www/p5-LWP-Protocol-https \
 			www/p5-Mojo \
 			www/p5-libwww>=6.0
-
-BUILD_DEPENDS=		${RUN_DEPENDS}
+BUILD_DEPENDS=		${COMMON_DEPENDS}
+RUN_DEPENDS=		graphics/ffmpeg \
+			multimedia/atomicparsley \
+			${COMMON_DEPENDS}
 
 NO_TEST=		Yes
 PKG_ARCH=		*
@@ -32,7 +32,7 @@ pre-configure:
 	${SUBST_CMD} ${WRKSRC}/get_iplayer
 
 do-build:
-	-cd ${WRKSRC}; env -i HOME=${WRKSRC} ./get_iplayer --manpage get_iplayer.1
+	@cd ${WRKSRC}; env -i HOME=${WRKSRC} ./get_iplayer --manpage get_iplayer.1
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/get_iplayer/plugins
@@ -40,7 +40,5 @@ do-install:
 	   ${FILESDIR}/options.sample ${PREFIX}/share/get_iplayer/options.sample
 	${INSTALL_SCRIPT} ${WRKSRC}/get_iplayer ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/get_iplayer.1 ${PREFIX}/man/man1
-
-#sed -i 's,2.95-dev,2.95-dev-${GH_COMMIT:C/(.{9}).*/\1/},' ${PREFIX}/bin/get_iplayer
 
 .include <bsd.port.mk>
