@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2017/02/23 16:02:24 jsing Exp $
+# $OpenBSD: Makefile,v 1.5 2017/09/08 17:17:18 jsing Exp $
 
 COMMENT =	Go supplementary network libraries
-DISTNAME =	go-net-20170201
+DISTNAME =	go-net-20170824
 GH_ACCOUNT =	golang
 GH_PROJECT =	net
-GH_COMMIT =	f2499483f923065a842d38eb4c7f1927e6fc6e6d
+GH_COMMIT =	57efc9c3d9f91fb3277f8da1cff370539c4d3dc5
 CATEGORIES =	net www devel
 
 HOMEPAGE =	https://godoc.org/golang.org/x/net/
@@ -27,6 +27,7 @@ _SUBPKGS =	bpf \
 		context \
 		context/ctxhttp \
 		dict \
+		dns/dnsmessage \
 		html \
 		html/atom \
 		html/charset \
@@ -37,10 +38,12 @@ _SUBPKGS =	bpf \
 		idna \
 		internal/iana \
 		internal/nettest \
+		internal/socket \
 		internal/timeseries \
 		ipv4 \
 		ipv6 \
 		lex/httplex \
+		nettest \
 		netutil \
 		proxy \
 		publicsuffix \
