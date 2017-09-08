@@ -1,7 +1,8 @@
-$OpenBSD: patch-ui-gtk_UgtkSetting_c,v 1.1 2016/05/30 18:31:39 juanfra Exp $
---- ui-gtk/UgtkSetting.c.orig	Sun May 29 23:19:14 2016
-+++ ui-gtk/UgtkSetting.c	Sun May 29 23:20:20 2016
-@@ -49,9 +49,7 @@
+$OpenBSD: patch-ui-gtk_UgtkSetting_c,v 1.2 2017/09/08 14:19:05 bcallah Exp $
+Index: ui-gtk/UgtkSetting.c
+--- ui-gtk/UgtkSetting.c.orig
++++ ui-gtk/UgtkSetting.c
+@@ -48,9 +48,7 @@
  
  #define UGTK_ARIA2_PATH    "aria2c"
  
