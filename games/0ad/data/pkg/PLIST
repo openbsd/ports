@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/10/19 07:46:45 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.3 2017/09/08 22:03:55 bentley Exp $
 share/0ad/
 share/0ad/config/
 share/0ad/config/default.cfg
@@ -33,6 +33,7 @@ share/0ad/tools/atlas/toolbar/map.png
 share/0ad/tools/atlas/toolbar/mapsettings.png
 share/0ad/tools/atlas/toolbar/moveobject.png
 share/0ad/tools/atlas/toolbar/moveobject_s.png
+share/0ad/tools/atlas/toolbar/movepath.png
 share/0ad/tools/atlas/toolbar/object.png
 share/0ad/tools/atlas/toolbar/objects.png
 share/0ad/tools/atlas/toolbar/paintterrain.png

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2016/11/17 11:16:43 pascal Exp $
+@comment $OpenBSD: PLIST,v 1.7 2017/09/08 22:03:55 bentley Exp $
 bin/0ad
 @bin bin/pyrogenesis
 lib/libCollada.so
@@ -24,9 +24,11 @@ share/0ad/l10n/bg.engine.po
 share/0ad/l10n/ca.engine.po
 share/0ad/l10n/cs.engine.po
 share/0ad/l10n/de.engine.po
+share/0ad/l10n/el.engine.po
 share/0ad/l10n/en_GB.engine.po
 share/0ad/l10n/engine.pot
 share/0ad/l10n/es.engine.po
+share/0ad/l10n/eu.engine.po
 share/0ad/l10n/fr.engine.po
 share/0ad/l10n/gd.engine.po
 share/0ad/l10n/gl.engine.po
@@ -43,6 +45,7 @@ share/0ad/l10n/ru.engine.po
 share/0ad/l10n/sk.engine.po
 share/0ad/l10n/sv.engine.po
 share/0ad/l10n/tr.engine.po
+share/0ad/l10n/uk.engine.po
 share/0ad/mods/_test.dae/
 share/0ad/mods/_test.dae/art/
 share/0ad/mods/_test.dae/art/actors/
@@ -141,9 +144,15 @@ share/0ad/mods/_test.sim/simulation/templates/inherit-loop.xml
 share/0ad/mods/_test.sim/simulation/templates/inherit-special.xml
 share/0ad/mods/_test.sim/simulation/templates/inherit1.xml
 share/0ad/mods/_test.sim/simulation/templates/inherit2.xml
+share/0ad/mods/_test.sim/simulation/templates/inherit_a.xml
+share/0ad/mods/_test.sim/simulation/templates/inherit_b.xml
+share/0ad/mods/_test.sim/simulation/templates/inherit_c.xml
+share/0ad/mods/_test.sim/simulation/templates/inherit_d.xml
 share/0ad/mods/_test.sim/simulation/templates/invalid.xml
 share/0ad/mods/_test.sim/simulation/templates/special/
 share/0ad/mods/_test.sim/simulation/templates/special/actor.xml
+share/0ad/mods/_test.sim/simulation/templates/special_filter/
+share/0ad/mods/_test.sim/simulation/templates/special_filter/foundation.xml
 share/0ad/mods/_test.sim/simulation/templates/template-serialize.xml
 share/0ad/mods/_test.sim/simulation/templates/test1-inherit.xml
 share/0ad/mods/_test.sim/simulation/templates/test1.xml

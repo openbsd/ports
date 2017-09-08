@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2017/08/24 09:45:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2017/09/08 22:03:55 bentley Exp $
 
 COMMENT =		historical real-time strategy game
 
 DISTNAME =		0ad-${V}-alpha-unix-build
 PKGNAME =		0ad-${V}
-REVISION =		1
 
 USE_WXNEEDED =		Yes
 
@@ -28,12 +27,12 @@ LIB_DEPENDS =		audio/libvorbis \
 			graphics/png \
 			net/curl \
 			net/enet \
-			net/gloox \
+			net/gloox>=1.0.20 \
 			net/miniupnp/miniupnpc \
 			textproc/icu4c \
 			textproc/libxml
 RUN_DEPENDS =		devel/desktop-file-utils \
-			games/0ad/data
+			games/0ad/data=${V}
 MODULES =		lang/python
 
 # sync with devel/spidermonkey
