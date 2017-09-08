@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2017/02/23 16:03:13 jsing Exp $
+# $OpenBSD: Makefile,v 1.5 2017/09/08 17:10:43 jsing Exp $
 
 COMMENT =	Go text processing support
-DISTNAME =	go-text-20170201
+DISTNAME =	go-text-20170824
 GH_ACCOUNT =	golang
 GH_PROJECT =	text
-GH_COMMIT =	ece019dcfd29abcf65d0d1dfe145e8faad097640
+GH_COMMIT =	e56139fd9c5bc7244c76116c68e500765bb6db6b
 CATEGORIES =	textproc devel
 
 HOMEPAGE =	https://godoc.org/golang.org/x/text
@@ -31,6 +31,7 @@ _SUBPKGS =	cases \
 		encoding/htmlindex \
 		encoding/ianaindex \
 		encoding/internal \
+		encoding/internal/enctest \
 		encoding/internal/identifier \
 		encoding/japanese \
 		encoding/korean \
@@ -38,11 +39,12 @@ _SUBPKGS =	cases \
 		encoding/traditionalchinese \
 		encoding/unicode \
 		encoding/unicode/utf32 \
+		feature/plural \
 		internal \
+		internal/catmsg \
 		internal/colltab \
 		internal/export/idna \
 		internal/format \
-		internal/format/plural \
 		internal/gen \
 		internal/number \
 		internal/stringset \
@@ -54,6 +56,7 @@ _SUBPKGS =	cases \
 		language \
 		language/display \
 		message \
+		message/catalog \
 		runes \
 		search \
 		secure \
@@ -65,7 +68,9 @@ _SUBPKGS =	cases \
 		unicode/cldr \
 		unicode/norm \
 		unicode/rangetable \
+		unicode/runenames \
 		width
+
 ALL_TARGET =	${_MAIN} ${_SUBPKGS:%=${_MAIN}/%}
 WRKSRC =	${MODGO_WORKSPACE}/src/${_MAIN}
 
