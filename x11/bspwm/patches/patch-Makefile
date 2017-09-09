@@ -1,4 +1,6 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2017/08/10 13:30:26 jasper Exp $
+$OpenBSD: patch-Makefile,v 1.2 2017/09/09 11:30:48 jasper Exp $
+
+https://github.com/baskerville/bspwm/commit/e4fa0f24ff2824f8647f295c21694f17c7625ca4
 
 Index: Makefile
 --- Makefile.orig
@@ -9,7 +11,7 @@ Index: Makefile
  CFLAGS   += -std=c99 -pedantic -Wall -Wextra
 -LDLIBS    = -lm -lxcb -lxcb-util -lxcb-keysyms -lxcb-icccm -lxcb-ewmh -lxcb-randr -lxcb-xinerama
 +LDFLAGS  ?=
-+LDLIBS   += $(LDFLAGS) -lm -lxcb -lxcb-util -lxcb-keysyms -lxcb-icccm -lxcb-ewmh -lxcb-randr -lxcb-xinerama
++LDLIBS    = $(LDFLAGS) -lm -lxcb -lxcb-util -lxcb-keysyms -lxcb-icccm -lxcb-ewmh -lxcb-randr -lxcb-xinerama
  
  PREFIX    ?= /usr/local
  BINPREFIX ?= $(PREFIX)/bin
