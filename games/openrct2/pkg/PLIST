@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/06/28 16:43:46 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/09/09 20:03:15 bcallah Exp $
 @bin bin/openrct2
-@lib lib/libopenrct2.so.${LIBopenrct2_VERSION}
+lib/libopenrct2.a
 @man man/man6/openrct2.6
 share/applications/openrct2.desktop
 share/doc/openrct2/

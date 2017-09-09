@@ -1,12 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2017/08/15 01:07:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2017/09/09 20:03:15 bcallah Exp $
 
-V =		0.1.0
+V =		0.1.1
 COMMENT =	open source re-implementation of RollerCoaster Tycoon 2
 DISTNAME =	openrct2-${V}
 CATEGORIES =	games x11
-REVISION =	1
-
-SHARED_LIBS +=	openrct2                  1.0 # 1.0
 
 HOMEPAGE =	https://openrct2.org/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -23,7 +20,7 @@ WANTLIB += ${COMPILER_LIBCXX}
 MASTER_SITES =	https://devio.us/~bcallah/source/
 
 # Doesn't build with gcc-4.9.4
-COMPILER =	clang
+COMPILER =	base-clang ports-clang
 
 MODULES =	devel/cmake
 
@@ -39,8 +36,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+3,-guic
 
 # -DOPENRCT2_COMMIT_SHA1_SHORT is a lie but still useful.
-CONFIGURE_ARGS =	-DCMAKE_SHARED_LINKER_FLAGS="-L${X11BASE}/lib" \
-			-DDOWNLOAD_TITLE_SEQUENCES=OFF \
+CONFIGURE_ARGS =	-DDOWNLOAD_TITLE_SEQUENCES=OFF \
 			-DOPENRCT2_BRANCH=master \
 			-DOPENRCT2_COMMIT_SHA1_SHORT=`date +%Y%m%d`
 
@@ -48,9 +44,7 @@ CONFIGURE_ARGS =	-DCMAKE_SHARED_LINKER_FLAGS="-L${X11BASE}/lib" \
 NO_TEST =	Yes
 
 pre-configure:
-	sed -i -e 's,$${LIBopenrct2_VERSION},${LIBopenrct2_VERSION},g' \
-		-e 's,-Werror,,g' \
-		${WRKSRC}/src/openrct2/CMakeLists.txt
+	sed -i 's,-Werror,,g' ${WRKSRC}/src/openrct2/CMakeLists.txt
 	sed -i 's,/usr/local,${TRUEPREFIX},g' \
 		${WRKSRC}/src/openrct2/platform/linux.c
 
