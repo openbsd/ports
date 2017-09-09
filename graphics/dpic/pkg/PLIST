@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/05/15 18:49:41 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/09/09 22:56:49 nigel Exp $
 @bin bin/dpic
 @man man/man1/dpic.1
 share/examples/dpic/
@@ -6,6 +6,10 @@ share/examples/dpic/Examples.txt
 share/examples/dpic/Makefile
 share/examples/dpic/README
 share/examples/dpic/sources/
+share/examples/dpic/sources/arcs.pic
+share/examples/dpic/sources/arrowheads.pic
+share/examples/dpic/sources/arrows.pic
+share/examples/dpic/sources/basictests.pic
 share/examples/dpic/sources/diag1.pic
 share/examples/dpic/sources/diag2.pic
 share/examples/dpic/sources/diag3.pic
@@ -15,6 +19,46 @@ share/examples/dpic/sources/diag8.pic
 share/examples/dpic/sources/diag9.pic
 share/examples/dpic/sources/diagA.pic
 share/examples/dpic/sources/diagB.pic
+share/examples/dpic/sources/diagC.pic
+share/examples/dpic/sources/man.tex
+share/examples/dpic/sources/man01.pic
+share/examples/dpic/sources/man02.pic
+share/examples/dpic/sources/man03.pic
+share/examples/dpic/sources/man04.pic
+share/examples/dpic/sources/man05.pic
+share/examples/dpic/sources/man06.pic
+share/examples/dpic/sources/man07.pic
+share/examples/dpic/sources/man08.pic
+share/examples/dpic/sources/man09.pic
+share/examples/dpic/sources/man10.pic
+share/examples/dpic/sources/man11.pic
+share/examples/dpic/sources/man12.pic
+share/examples/dpic/sources/man13.pic
+share/examples/dpic/sources/man14.pic
+share/examples/dpic/sources/man15.pic
+share/examples/dpic/sources/man16.pic
+share/examples/dpic/sources/man17.pic
+share/examples/dpic/sources/man18.pic
+share/examples/dpic/sources/man19.pic
+share/examples/dpic/sources/man20.pic
+share/examples/dpic/sources/man21.pic
+share/examples/dpic/sources/man22.pic
+share/examples/dpic/sources/man24.pic
+share/examples/dpic/sources/man25.pic
+share/examples/dpic/sources/man26.pic
+share/examples/dpic/sources/man28.pic
+share/examples/dpic/sources/man29.pic
+share/examples/dpic/sources/man30.pic
+share/examples/dpic/sources/man31.pic
+share/examples/dpic/sources/man32.pic
+share/examples/dpic/sources/man33.pic
+share/examples/dpic/sources/man34.pic
+share/examples/dpic/sources/man35.pic
+share/examples/dpic/sources/man36.pic
+share/examples/dpic/sources/man45.pic
+share/examples/dpic/sources/man46.pic
+share/examples/dpic/sources/man47.pic
+share/examples/dpic/sources/mode.tex
 share/examples/dpic/sources/test1.tex
 share/examples/dpic/sources/test2.tex
 share/examples/dpic/sources/test3.tex
