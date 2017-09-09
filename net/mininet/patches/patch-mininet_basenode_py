@@ -1,5 +1,7 @@
-$OpenBSD: patch-mininet_basenode_py,v 1.1.1.1 2017/08/21 18:47:12 akoshibe Exp $
+$OpenBSD: patch-mininet_basenode_py,v 1.2 2017/09/09 21:18:30 akoshibe Exp $
 OS-agnostic parts of node.py.
+Turn on PID tracking by default since it's used to reliably stop
+processes.
 Index: mininet/basenode.py
 --- mininet/basenode.py.orig
 +++ mininet/basenode.py
@@ -199,7 +201,7 @@ Index: mininet/basenode.py
 +           args: command and arguments, or string
 +           printPid: print command's PID? (False)"""
 +        assert self.shell and not self.waiting
-+        printPid = kwargs.get( 'printPid', False )
++        printPid = kwargs.get( 'printPid', True )
 +        # Allow sendCmd( [ list ] )
 +        if len( args ) == 1 and isinstance( args[ 0 ], list ):
 +            cmd = args[ 0 ]

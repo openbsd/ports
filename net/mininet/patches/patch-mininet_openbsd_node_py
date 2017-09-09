@@ -1,9 +1,9 @@
-$OpenBSD: patch-mininet_openbsd_node_py,v 1.1.1.1 2017/08/21 18:47:12 akoshibe Exp $
+$OpenBSD: patch-mininet_openbsd_node_py,v 1.2 2017/09/09 21:18:30 akoshibe Exp $
 
 Index: mininet/openbsd/node.py
 --- mininet/openbsd/node.py.orig
 +++ mininet/openbsd/node.py
-@@ -0,0 +1,151 @@
+@@ -0,0 +1,150 @@
 +"""
 +Node: rdomain(4) based node. This is somewhat more similar to Linux's network
 +namespace moreso than a jail since it creates a separate network address space
@@ -124,8 +124,7 @@ Index: mininet/openbsd/node.py
 +
 +    def sendInt( self, intr=chr( 3 ) ):
 +        "Interrupt running command."
-+        debug( 'sendInt: writing chr(%d)\n' % ord( intr ) )
-+        quietRun( "pkill -2 -f -- '%s'" % self.lastCmd )
++        quietRun( 'kill -2 %s' % self.lastPid )
 +
 +    def setHostRoute( self, ip, intf ):
 +        """Add route to host.

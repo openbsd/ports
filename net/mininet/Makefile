@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2017/09/02 23:10:52 akoshibe Exp $
+# $OpenBSD: Makefile,v 1.4 2017/09/09 21:18:30 akoshibe Exp $
 
 COMMENT =	emulator for rapid prototyping of software defined networks
 
 DISTNAME =	mininet-0.0.20170813
-REVISION =	0
+REVISION =	1
 GH_ACCOUNT =	mininet
 GH_PROJECT =	mininet
 GH_COMMIT =	87e26ef931ee6063332ceba77db472140f832d3a

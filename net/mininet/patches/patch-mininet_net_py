@@ -1,4 +1,4 @@
-$OpenBSD: patch-mininet_net_py,v 1.1.1.1 2017/08/21 18:47:12 akoshibe Exp $
+$OpenBSD: patch-mininet_net_py,v 1.2 2017/09/09 21:18:30 akoshibe Exp $
 
 Index: mininet/net.py
 --- mininet/net.py.orig
@@ -53,25 +53,17 @@ Index: mininet/net.py
          iperfArgs = 'iperf -p %d ' % port
          bwArgs = ''
          if l4Type == 'UDP':
-@@ -817,17 +831,23 @@ class Mininet( object ):
+@@ -817,7 +831,7 @@ class Mininet( object ):
              raise Exception( 'Unexpected l4 type: %s' % l4Type )
          if fmt:
              iperfArgs += '-f %s ' % fmt
 -        server.sendCmd( iperfArgs + '-s' )
-+	print('******')
-+        server.cmd( iperfArgs + '-s -D' )
-+	print('******')
++        server.cmd( iperfArgs + '-s &' )
          if l4Type == 'TCP':
              if not waitListening( client, server.IP(), port ):
                  raise Exception( 'Could not connect to iperf on port %d'
-                                  % port )
-         cliout = client.cmd( iperfArgs + '-t %d -c ' % seconds +
-                              server.IP() + ' ' + bwArgs )
-+        #cliout = client.cmd( iperfArgs + '-t 30 -c ' + 
-+        #                     server.IP() + ' ' + bwArgs )
-+	reval = client.cmd( 'echo $?' )
+@@ -827,7 +841,7 @@ class Mininet( object ):
          debug( 'Client output: %s\n' % cliout )
-+	debug( '*****retval: %s' % reval )
          servout = ''
          # We want the last *b/sec from the iperf server output
 -        # for TCP, there are two of them because of waitListening
@@ -79,7 +71,7 @@ Index: mininet/net.py
          count = 2 if l4Type == 'TCP' else 1
          while len( re.findall( '/sec', servout ) ) < count:
              servout += server.monitor( timeoutms=5000 )
-@@ -849,7 +869,7 @@ class Mininet( object ):
+@@ -849,7 +863,7 @@ class Mininet( object ):
          pct = cpu * 100
          info( '*** Testing CPU %.0f%% bandwidth limit\n' % pct )
          hosts = self.hosts
@@ -88,7 +80,7 @@ Index: mininet/net.py
          # number of processes to run a while loop on per host
          num_procs = int( ceil( cores * cpu ) )
          pids = {}
-@@ -863,17 +883,26 @@ class Mininet( object ):
+@@ -863,17 +877,26 @@ class Mininet( object ):
          # get the initial cpu time for each host
          for host in hosts:
              outputs[ host ] = []
@@ -123,7 +115,7 @@ Index: mininet/net.py
                  time[ host ] = readTime
          for h, pids in pids.items():
              for pid in pids:
-@@ -893,9 +922,9 @@ class Mininet( object ):
+@@ -893,9 +916,9 @@ class Mininet( object ):
             dst: node name
             status: string {up, down}"""
          if src not in self.nameToNode:
