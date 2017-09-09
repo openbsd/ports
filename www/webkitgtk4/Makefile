@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2017/07/27 10:05:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.64 2017/09/09 19:25:29 phessler Exp $
 
 # patches/patch-Source_JavaScriptCore_javascriptcoregtk_pc_in
 # patches/patch-Source_WebKit2_webkit2gtk-web-extension_pc_in
@@ -95,15 +95,20 @@ CONFIGURE_ARGS +=	-DUSE_GSTREAMER_MPEGTS=OFF
 CONFIGURE_ARGS +=	-DENABLE_PLUGIN_PROCESS_GTK2=OFF
 
 # sync with Source/JavaScriptCore/assembler/MacroAssembler.h
-.if ${MACHINE_ARCH} != "amd64" && ${MACHINE_ARCH} != "arm" && \
-    ${MACHINE_ARCH} != "i386" && ${MACHINE_ARCH} != "mips64" && \
-    ${MACHINE_ARCH} != "mips64el" && ${MACHINE_ARCH} != "sh"
+.if ${MACHINE_ARCH} != "aarch64" && ${MACHINE_ARCH} != "amd64" && \
+    ${MACHINE_ARCH} != "arm" && ${MACHINE_ARCH} != "i386" && \
+    ${MACHINE_ARCH} != "mips64" && ${MACHINE_ARCH} != "mips64el" && \
+    ${MACHINE_ARCH} != "sh"
 # #error "The MacroAssembler is not supported on this platform."
 CONFIGURE_ARGS +=	-DENABLE_JIT=OFF
 CONFIGURE_ARGS +=	-DENABLE_LLINT_C_LOOP=ON
 .endif
 
-.if ${MACHINE_ARCH} != "amd64"
+.include <bsd.port.arch.mk>
+
+# ld.lld does not have this option
+# save memory on 32bit arches
+.if !${PROPERTIES:Mlld} && ${MACHINE_ARCH} != "amd64"
 LDFLAGS +=		-Wl,--no-keep-memory
 .endif
 
