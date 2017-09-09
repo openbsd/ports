@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.353 2017/08/31 19:59:14 espie Exp $
+# $OpenBSD: Makefile,v 1.354 2017/09/09 19:56:30 jeremy Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -141,6 +141,7 @@
      SUBDIR += lbreakout2
      SUBDIR += lgeneral
      SUBDIR += liberalcrimesquad
+     SUBDIR += liblcf 
      SUBDIR += life
      SUBDIR += lincity
      SUBDIR += lincity-ng
