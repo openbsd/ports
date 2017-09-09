@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.338 2017/09/09 19:16:43 robert Exp $
+# $OpenBSD: Makefile,v 1.339 2017/09/09 22:07:11 sthen Exp $
 
 .include <bsd.port.arch.mk>
 
@@ -128,8 +128,13 @@ GN_ARGS=	enable_nacl=false \
 		use_allocator=\"none\" \
 		is_official_build=true \
 		fieldtrial_testing_like_official_build=true \
-		extra_cppflags=\"-idirafter ${LOCALBASE}/include -idirafter ${X11BASE}/include\" \
-		extra_ldflags=\"-L${LOCALBASE}/lib -L${X11BASE}/lib\"
+		extra_cppflags=\"-idirafter ${LOCALBASE}/include -idirafter ${X11BASE}/include\"
+
+.if ${MACHINE_ARCH} == i386
+GN_ARGS+=	extra_ldflags=\"-L${LOCALBASE}/lib -L${X11BASE}/lib -Wl,--no-keep-memory\"
+.else
+GN_ARGS+=	extra_ldflags=\"-L${LOCALBASE}/lib -L${X11BASE}/lib\"
+.endif
 
 # Note: these keys are for OpenBSD use ONLY. For your own distribution,
 # please get your own set of keys. It's free!
