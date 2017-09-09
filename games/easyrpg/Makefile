@@ -1,50 +1,44 @@
-# $OpenBSD: Makefile,v 1.16 2017/07/26 22:45:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2017/09/09 19:55:11 jeremy Exp $
 
-V =		0.1.2
+V =		0.5.2
 COMMENT =	free interpreter for RPG Maker 2000/2003 and EasyRPG games
-DISTFILES =	easyrpg-player-{}${V}.tar.gz:0 \
-		easyrpg-readers-${V}.tar.gz:1
+DISTNAME =	${PKGNAME}{${V}}
 PKGNAME =	easyrpg-${V}
 CATEGORIES =	games x11
-REVISION =	1
 
-HOMEPAGE =	https://easy-rpg.org/
+HOMEPAGE =	https://easyrpg.org/
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM =		Yes
 
-WANTLIB += FLAC SDL SDL_mixer c expat freetype iconv jpeg m ogg openal
-WANTLIB += pixman-1 png pthread sndfile ${COMPILER_LIBCXX} vorbis vorbisenc z
+WANTLIB += ${COMPILER_LIBCXX} SDL2 SDL2_mixer c freetype harfbuzz
+WANTLIB += lcf m mpg123 opusfile pixman-1 png sndfile speexdsp
+WANTLIB += vorbisfile xmp z
 
-MASTER_SITES0 =	https://github.com/EasyRPG/Player/archive/
-MASTER_SITES1 =	http://mirrors.nycbug.org/pub/distfiles/
+COMPILER =	base-clang ports-clang ports-gcc
 
-MODULES +=	devel/cmake \
-		lang/python \
-		lang/ruby
+MASTER_SITES =	https://github.com/EasyRPG/Player/archive/
 
-# iconv is deprecated with ruby>1.8
-MODRUBY_REV =	1.8
-
-BUILD_DEPENDS =	devel/boost \
-		lang/ruby/1.8,-iconv
+MODULES +=	devel/cmake
 
 LIB_DEPENDS =	audio/libsndfile \
-		audio/openal \
-		converters/libiconv \
-		devel/sdl-mixer \
-		graphics/jpeg \
+		audio/libxmp \
+		audio/mpg123 \
+		audio/opusfile \
+		audio/speexdsp \
+		devel/harfbuzz \
+		devel/sdl2 \
+		devel/sdl2-mixer \
+		games/liblcf \
 		graphics/png
 
-# Sadly, this is needed for midi playback.
-RUN_DEPENDS =	audio/timidity
+CONFIGURE_ENV =	CXXFLAGS="${CXXFLAGS} -I ${X11BASE}/include" \
+		LDFLAGS="-L ${X11BASE}/lib"
+MAKE_ENV =	${CONFIGURE_ENV}
 
 # make test seems bogus, disabling it.
 NO_TEST =	Yes
 
 WRKDIST =	${WRKDIR}/Player-${V}
-
-post-extract:
-	mv ${WRKDIR}/Readers-${V} ${WRKDIST}/lib/readers
 
 .include <bsd.port.mk>
