@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.55 2016/12/18 09:56:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.56 2017/09/09 21:05:16 ajacoutot Exp $
 
 COMMENT=		graphical diff and merge tool
 
-GNOME_VERSION=		3.16.4
+GNOME_VERSION=		3.18.0
 GNOME_PROJECT=		meld
 MODPY_EGG_VERSION=	${GNOME_VERSION}
 
@@ -17,12 +17,14 @@ MODULES=		devel/dconf \
 			lang/python \
 			x11/gnome
 
+MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
+
 MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache \
 			shared-mime-info yelp
 
 MODPY_ADJ_FILES=	bin/meld
 
-RUN_DEPENDS=		devel/py-gobject3 \
+RUN_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR} \
 			x11/gtksourceview3
 
 # org.gnome.desktop.interface
