@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2016/11/22 17:00:20 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.10 2017/09/09 11:28:58 jasper Exp $
 @bin bin/gssdp-discover
 @bin bin/gupnp-av-cp
 @bin bin/gupnp-network-light
@@ -8,7 +8,6 @@ share/applications/gupnp-av-cp.desktop
 share/applications/gupnp-network-light.desktop
 share/applications/gupnp-universal-cp.desktop
 share/gupnp-tools/
-share/gupnp-tools/gupnp-av-cp.ui
 share/gupnp-tools/gupnp-network-light.ui
 share/gupnp-tools/gupnp-universal-cp.ui
 share/gupnp-tools/pixmaps/
@@ -33,7 +32,9 @@ share/locale/cs/LC_MESSAGES/gupnp-tools.mo
 share/locale/de/LC_MESSAGES/gupnp-tools.mo
 share/locale/el/LC_MESSAGES/gupnp-tools.mo
 share/locale/es/LC_MESSAGES/gupnp-tools.mo
+share/locale/fur/LC_MESSAGES/gupnp-tools.mo
 share/locale/hu/LC_MESSAGES/gupnp-tools.mo
+share/locale/id/LC_MESSAGES/gupnp-tools.mo
 share/locale/ja/LC_MESSAGES/gupnp-tools.mo
 share/locale/pl/LC_MESSAGES/gupnp-tools.mo
 share/locale/pt/LC_MESSAGES/gupnp-tools.mo

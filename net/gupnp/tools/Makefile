@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2016/11/22 17:00:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2017/09/09 11:28:58 jasper Exp $
 
 COMMENT=		free replacements of Intel UPnP tools
 
 GNOME_PROJECT=		gupnp-tools
-GNOME_VERSION=		0.8.13
+GNOME_VERSION=		0.8.14
 
 MODULES=		x11/gnome
 
