@@ -1,4 +1,5 @@
-$OpenBSD: patch-chrome_browser_browser_process_impl_cc,v 1.19 2017/07/27 14:23:46 robert Exp $
+$OpenBSD: patch-chrome_browser_browser_process_impl_cc,v 1.20 2017/09/09 19:16:43 robert Exp $
+
 Index: chrome/browser/browser_process_impl.cc
 --- chrome/browser/browser_process_impl.cc.orig
 +++ chrome/browser/browser_process_impl.cc
@@ -8,15 +9,15 @@ Index: chrome/browser/browser_process_impl.cc
  
 -#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
 +#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
- #include "chrome/browser/memory/tab_manager.h"
+ #include "chrome/browser/resource_coordinator/tab_manager.h"
  #endif
  
-@@ -809,7 +809,7 @@ gcm::GCMDriver* BrowserProcessImpl::gcm_driver() {
+@@ -796,7 +796,7 @@ gcm::GCMDriver* BrowserProcessImpl::gcm_driver() {
  
- memory::TabManager* BrowserProcessImpl::GetTabManager() {
-   DCHECK(CalledOnValidThread());
+ resource_coordinator::TabManager* BrowserProcessImpl::GetTabManager() {
+   DCHECK_CALLED_ON_VALID_SEQUENCE(sequence_checker_);
 -#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
 +#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
    if (!tab_manager_.get())
-     tab_manager_.reset(new memory::TabManager());
+     tab_manager_.reset(new resource_coordinator::TabManager());
    return tab_manager_.get();

@@ -1,7 +1,8 @@
-$OpenBSD: patch-media_capture_video_fake_video_capture_device_factory_cc,v 1.7 2017/04/28 14:21:00 robert Exp $
---- media/capture/video/fake_video_capture_device_factory.cc.orig.port	Thu Apr 27 21:30:51 2017
-+++ media/capture/video/fake_video_capture_device_factory.cc	Thu Apr 27 21:31:03 2017
-@@ -192,7 +192,7 @@ void FakeVideoCaptureDeviceFactory::GetDeviceDescripto
+$OpenBSD: patch-media_capture_video_fake_video_capture_device_factory_cc,v 1.8 2017/09/09 19:16:43 robert Exp $
+Index: media/capture/video/fake_video_capture_device_factory.cc
+--- media/capture/video/fake_video_capture_device_factory.cc.orig
++++ media/capture/video/fake_video_capture_device_factory.cc
+@@ -199,7 +199,7 @@ void FakeVideoCaptureDeviceFactory::GetDeviceDescripto
    for (const auto& entry : devices_config_) {
      device_descriptors->emplace_back(
          base::StringPrintf("fake_device_%d", entry_index), entry.device_id,

@@ -1,8 +1,8 @@
-$OpenBSD: patch-build_config_BUILD_gn,v 1.9 2017/07/27 14:23:46 robert Exp $
+$OpenBSD: patch-build_config_BUILD_gn,v 1.10 2017/09/09 19:16:43 robert Exp $
 Index: build/config/BUILD.gn
 --- build/config/BUILD.gn.orig
 +++ build/config/BUILD.gn
-@@ -255,7 +255,7 @@ config("default_libs") {
+@@ -263,7 +263,7 @@ config("default_libs") {
        "CoreText.framework",
        "Foundation.framework",
      ]
@@ -10,4 +10,4 @@ Index: build/config/BUILD.gn
 +  } else if (is_linux && !is_openbsd) {
      libs = [
        "dl",
-       "rt",
+       "pthread",

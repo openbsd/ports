@@ -1,8 +1,8 @@
-$OpenBSD: patch-chrome_common_url_constants_h,v 1.22 2017/07/27 14:23:46 robert Exp $
+$OpenBSD: patch-chrome_common_url_constants_h,v 1.23 2017/09/09 19:16:43 robert Exp $
 Index: chrome/common/url_constants.h
 --- chrome/common/url_constants.h.orig
 +++ chrome/common/url_constants.h
-@@ -131,7 +131,7 @@ extern const char kChromeUICleanupToolURL[];
+@@ -133,7 +133,7 @@ extern const char kCupsPrintLearnMoreURL[];
  extern const char kChromeUIMetroFlowURL[];
  #endif
  
@@ -11,16 +11,25 @@ Index: chrome/common/url_constants.h
  extern const char kChromeUITabModalConfirmDialogURL[];
  #endif
  
-@@ -144,7 +144,7 @@ extern const char kChromeUIMediaRouterURL[];
+@@ -150,7 +150,7 @@ extern const char kChromeUIMediaRouterURL[];
  extern const char kChromeUICastURL[];
  #endif
  
 -#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
 +#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
- extern const char kChromeUIDiscardsHost[];
  extern const char kChromeUIDiscardsURL[];
  #endif
-@@ -260,7 +260,7 @@ extern const char kChromeUIPrintHost[];
+ 
+@@ -265,7 +265,7 @@ extern const char kChromeUIPrintHost[];
+ extern const char kChromeUISigninDiceInternalsHost[];
+ #endif
+ 
+-#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
+ extern const char kChromeUIDiscardsHost[];
+ #endif
+ 
+@@ -273,7 +273,7 @@ extern const char kChromeUIDiscardsHost[];
  extern const char kChromeUILinuxProxyConfigHost[];
  #endif
  
@@ -29,7 +38,7 @@ Index: chrome/common/url_constants.h
  extern const char kChromeUISandboxHost[];
  #endif
  
-@@ -315,7 +315,7 @@ extern const char kChromeUICleanupToolHost[];
+@@ -326,7 +326,7 @@ extern const char kChromeOSAssetPath[];
  extern const char kChromeUIMetroFlowHost[];
  #endif
  

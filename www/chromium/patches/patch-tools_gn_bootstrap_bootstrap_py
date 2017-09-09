@@ -1,4 +1,4 @@
-$OpenBSD: patch-tools_gn_bootstrap_bootstrap_py,v 1.9 2017/07/27 14:23:46 robert Exp $
+$OpenBSD: patch-tools_gn_bootstrap_bootstrap_py,v 1.10 2017/09/09 19:16:43 robert Exp $
 
 Index: tools/gn/bootstrap/bootstrap.py
 --- tools/gn/bootstrap/bootstrap.py.orig
@@ -13,7 +13,16 @@ Index: tools/gn/bootstrap/bootstrap.py
  
  def check_call(cmd, **kwargs):
    logging.debug('Running: %s', ' '.join(cmd))
-@@ -652,6 +653,39 @@ def write_gn_ninja(path, root_gen_dir, options):
+@@ -534,7 +535,7 @@ def write_gn_ninja(path, root_gen_dir, options):
+       'base/trace_event/heap_profiler_allocation_context_tracker.cc',
+       'base/trace_event/heap_profiler_allocation_register.cc',
+       'base/trace_event/heap_profiler_event_filter.cc',
+-      'base/trace_event/heap_profiler_event_writer.cc',
++      'base/trace_event/heap_profiler_heap_dump_writer.cc',
+       'base/trace_event/heap_profiler_serialization_state.cc',
+       'base/trace_event/heap_profiler_stack_frame_deduplicator.cc',
+       'base/trace_event/heap_profiler_type_name_deduplicator.cc',
+@@ -652,6 +653,38 @@ def write_gn_ninja(path, root_gen_dir, options):
          'base/sys_info_linux.cc',
          'base/threading/platform_thread_linux.cc',
      ])
@@ -29,7 +38,6 @@ Index: tools/gn/bootstrap/bootstrap.py
 +        'tool': 'cxx',
 +    }
 +    static_libraries['base']['sources'].extend([
-+	'base/task_scheduler/environment_config.cc',
 +        'base/memory/shared_memory_handle_posix.cc',
 +        'base/memory/shared_memory_posix.cc',
 +        'base/memory/shared_memory_tracker.cc',
@@ -53,7 +61,7 @@ Index: tools/gn/bootstrap/bootstrap.py
      if is_linux:
        static_libraries['base']['sources'].extend([
          'base/allocator/allocator_shim.cc',
-@@ -663,17 +697,6 @@ def write_gn_ninja(path, root_gen_dir, options):
+@@ -663,17 +696,6 @@ def write_gn_ninja(path, root_gen_dir, options):
        ])
        static_libraries['libevent']['sources'].extend([
           'base/third_party/libevent/epoll.c',

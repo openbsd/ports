@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_ui_startup_startup_browser_creator_cc,v 1.24 2017/06/25 21:53:56 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_startup_startup_browser_creator_cc,v 1.25 2017/09/09 19:16:43 robert Exp $
 Index: chrome/browser/ui/startup/startup_browser_creator.cc
 --- chrome/browser/ui/startup/startup_browser_creator.cc.orig
 +++ chrome/browser/ui/startup/startup_browser_creator.cc
@@ -11,7 +11,7 @@ Index: chrome/browser/ui/startup/startup_browser_creator.cc
  #include "ui/events/devices/x11/touch_factory_x11.h"  // nogncheck
  #endif
  
-@@ -666,8 +666,10 @@ bool StartupBrowserCreator::ProcessCmdLineImpl(
+@@ -665,8 +665,10 @@ bool StartupBrowserCreator::ProcessCmdLineImpl(
    }
  #endif  // OS_CHROMEOS
  

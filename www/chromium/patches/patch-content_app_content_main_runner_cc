@@ -1,8 +1,8 @@
-$OpenBSD: patch-content_app_content_main_runner_cc,v 1.40 2017/07/27 14:23:46 robert Exp $
+$OpenBSD: patch-content_app_content_main_runner_cc,v 1.41 2017/09/09 19:16:43 robert Exp $
 Index: content/app/content_main_runner.cc
 --- content/app/content_main_runner.cc.orig
 +++ content/app/content_main_runner.cc
-@@ -87,10 +87,10 @@
+@@ -86,10 +86,10 @@
  #include "base/posix/global_descriptors.h"
  #include "content/public/common/content_descriptors.h"
  
@@ -15,7 +15,7 @@ Index: content/app/content_main_runner.cc
  #include "content/zygote/zygote_main.h"
  #endif
  
-@@ -286,7 +286,7 @@ struct MainFunction {
+@@ -281,7 +281,7 @@ struct MainFunction {
    int (*function)(const MainFunctionParams&);
  };
  
@@ -24,7 +24,7 @@ Index: content/app/content_main_runner.cc
  // On platforms that use the zygote, we have a special subset of
  // subprocesses that are launched via the zygote.  This function
  // fills in some process-launching bits around ZygoteMain().
-@@ -413,7 +413,7 @@ int RunNamedProcessTypeMain(
+@@ -408,7 +408,7 @@ int RunNamedProcessTypeMain(
      }
    }
  
@@ -33,7 +33,7 @@ Index: content/app/content_main_runner.cc
    // Zygote startup is special -- see RunZygote comments above
    // for why we don't use ZygoteMain directly.
    if (process_type == switches::kZygoteProcess)
-@@ -481,10 +481,10 @@ class ContentMainRunnerImpl : public ContentMainRunner
+@@ -476,10 +476,10 @@ class ContentMainRunnerImpl : public ContentMainRunner
          kFieldTrialDescriptor + base::GlobalDescriptors::kBaseDescriptor);
  #endif  // !OS_ANDROID
  

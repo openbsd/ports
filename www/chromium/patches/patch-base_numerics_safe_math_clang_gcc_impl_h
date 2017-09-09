@@ -1,0 +1,14 @@
+$OpenBSD: patch-base_numerics_safe_math_clang_gcc_impl_h,v 1.1 2017/09/09 19:16:43 robert Exp $
+
+Index: base/numerics/safe_math_clang_gcc_impl.h
+--- base/numerics/safe_math_clang_gcc_impl.h.orig
++++ base/numerics/safe_math_clang_gcc_impl.h
+@@ -155,7 +155,7 @@ __attribute__((always_inline)) inline int32_t ClampedN
+ }
+ 
+ // These are the LP64 platforms minus Mac (because Xcode blows up otherwise).
+-#if !defined(__APPLE__) && defined(__LP64__) && __LP64__
++#if !defined(__OpenBSD__) && !defined(__APPLE__) && defined(__LP64__) && __LP64__
+ __attribute__((always_inline)) inline int64_t ClampedNegate(uint64_t value) {
+   uint64_t carry;
+   return __builtin_subcl(0, value, 0, &carry) + carry;

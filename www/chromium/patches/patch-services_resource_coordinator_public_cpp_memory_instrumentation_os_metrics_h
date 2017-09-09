@@ -1,0 +1,14 @@
+$OpenBSD: patch-services_resource_coordinator_public_cpp_memory_instrumentation_os_metrics_h,v 1.1 2017/09/09 19:16:43 robert Exp $
+
+Index: services/resource_coordinator/public/cpp/memory_instrumentation/os_metrics.h
+--- services/resource_coordinator/public/cpp/memory_instrumentation/os_metrics.h.orig
++++ services/resource_coordinator/public/cpp/memory_instrumentation/os_metrics.h
+@@ -21,7 +21,7 @@ class SERVICES_RESOURCE_COORDINATOR_PUBLIC_CPP_EXPORT 
+  private:
+   FRIEND_TEST_ALL_PREFIXES(OSMetricsTest, ParseProcSmaps);
+ 
+-#if defined(OS_LINUX) || defined(OS_ANDROID)
++#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
+   static void SetProcSmapsForTesting(FILE*);
+ #endif  // defined(OS_LINUX)
+ };

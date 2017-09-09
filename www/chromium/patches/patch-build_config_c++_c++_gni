@@ -1,0 +1,14 @@
+$OpenBSD: patch-build_config_c++_c++_gni,v 1.1 2017/09/09 19:16:43 robert Exp $
+
+Index: build/config/c++/c++.gni
+--- build/config/c++/c++.gni.orig
++++ build/config/c++/c++.gni
+@@ -8,7 +8,7 @@ declare_args() {
+   # Use libc++ (buildtools/third_party/libc++ and
+   # buildtools/third_party/libc++abi) instead of stdlibc++ as standard
+   # library.
+-  use_custom_libcxx = (is_linux && !is_chromeos &&
++  use_custom_libcxx = (is_linux && !is_chromeos && !is_openbsd &&
+                        (!is_chromecast || is_cast_desktop_build)) || is_msan
+ 
+   # ASan, MSan and TSan builds need to override operator new, operator delete,

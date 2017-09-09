@@ -1,8 +1,8 @@
-$OpenBSD: patch-services_ui_gpu_gpu_main_cc,v 1.5 2017/07/27 14:23:46 robert Exp $
+$OpenBSD: patch-services_ui_gpu_gpu_main_cc,v 1.6 2017/09/09 19:16:43 robert Exp $
 Index: services/ui/gpu/gpu_main.cc
 --- services/ui/gpu/gpu_main.cc.orig
 +++ services/ui/gpu/gpu_main.cc
-@@ -65,7 +65,7 @@ GpuMain::GpuMain(mojom::GpuMainRequest request)
+@@ -71,7 +71,7 @@ GpuMain::GpuMain(mojom::GpuMainRequest request)
    // runtime.
    thread_options.message_loop_type =
        ui::OzonePlatform::EnsureInstance()->GetMessageLoopTypeForGpu();

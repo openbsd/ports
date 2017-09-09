@@ -1,8 +1,8 @@
-$OpenBSD: patch-third_party_ffmpeg_BUILD_gn,v 1.6 2017/07/27 14:23:46 robert Exp $
+$OpenBSD: patch-third_party_ffmpeg_BUILD_gn,v 1.7 2017/09/09 19:16:43 robert Exp $
 Index: third_party/ffmpeg/BUILD.gn
 --- third_party/ffmpeg/BUILD.gn.orig
 +++ third_party/ffmpeg/BUILD.gn
-@@ -329,7 +329,6 @@ target(link_target_type, "ffmpeg_internal") {
+@@ -327,7 +327,6 @@ target(link_target_type, "ffmpeg_internal") {
        libs += [
          "m",
          "z",

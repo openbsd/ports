@@ -1,4 +1,4 @@
-$OpenBSD: patch-build_config_BUILDCONFIG_gn,v 1.5 2017/07/27 14:23:46 robert Exp $
+$OpenBSD: patch-build_config_BUILDCONFIG_gn,v 1.6 2017/09/09 19:16:43 robert Exp $
 
 Index: build/config/BUILDCONFIG.gn
 --- build/config/BUILDCONFIG.gn.orig
@@ -14,97 +14,98 @@ Index: build/config/BUILDCONFIG.gn
    # to configure warnings.
    is_clang =
        current_os == "mac" || current_os == "ios" || current_os == "chromeos" ||
--      current_os == "fuchsia" ||
-+      current_os == "fuchsia" || current_os == "openbsd" ||
+-      current_os == "fuchsia" || current_os == "android" ||
++      current_os == "fuchsia" || current_os == "android" || current_os == "openbsd" ||
        (current_os == "linux" && current_cpu != "s390x" &&
-        current_cpu != "s390" && current_cpu != "ppc64" && current_cpu != "ppc")
- 
-@@ -201,6 +201,8 @@ if (host_toolchain == "") {
-     } else {
-       host_toolchain = "//build/toolchain/linux:$host_cpu"
+        current_cpu != "s390" && current_cpu != "ppc64" &&
+        current_cpu != "ppc" && current_cpu != "mips" && current_cpu != "mips64")
+@@ -214,6 +214,8 @@ if (host_toolchain == "") {
      }
+   } else if (host_os == "aix") {
+     host_toolchain = "//build/toolchain/aix:$host_cpu"
 +  } else if (host_os == "openbsd") {
 +    host_toolchain = "//build/toolchain/openbsd:clang_$host_cpu"
-   } else if (host_os == "mac") {
-     host_toolchain = "//build/toolchain/mac:clang_$host_cpu"
-   } else if (host_os == "win") {
-@@ -239,6 +241,8 @@ if (target_os == "android") {
-   _default_toolchain = "//build/toolchain/fuchsia:$target_cpu"
- } else if (target_os == "ios") {
-   _default_toolchain = "//build/toolchain/mac:ios_clang_$target_cpu"
+   } else {
+     assert(false, "Unsupported host_os: $host_os")
+   }
+@@ -256,6 +258,8 @@ if (target_os == "android") {
+ } else if (target_os == "winrt_81" || target_os == "winrt_81_phone" ||
+            target_os == "winrt_10") {
+   _default_toolchain = "//build/toolchain/win:winrt_$target_cpu"
 +} else if (target_os == "openbsd") {
 +  _default_toolchain = host_toolchain
- } else if (target_os == "mac") {
-   assert(host_os == "mac", "Mac cross-compiles are unsupported.")
-   _default_toolchain = host_toolchain
-@@ -295,6 +299,7 @@ if (current_os == "win" || current_os == "winrt_81" ||
-   is_mac = false
+ } else {
+   assert(false, "Unsupported target_os: $target_os")
+ }
+@@ -297,6 +301,7 @@ if (current_os == "win" || current_os == "winrt_81" ||
    is_nacl = false
    is_posix = false
-+  is_openbsd = false
    is_win = true
++  is_openbsd = false
  } else if (current_os == "mac") {
    is_android = false
-@@ -305,6 +310,7 @@ if (current_os == "win" || current_os == "winrt_81" ||
-   is_mac = true
+   is_chromeos = false
+@@ -307,6 +312,7 @@ if (current_os == "win" || current_os == "winrt_81" ||
    is_nacl = false
    is_posix = true
-+  is_openbsd = false
    is_win = false
++  is_openbsd = false
  } else if (current_os == "android") {
    is_android = true
-@@ -315,6 +321,7 @@ if (current_os == "win" || current_os == "winrt_81" ||
-   is_mac = false
+   is_chromeos = false
+@@ -317,6 +323,7 @@ if (current_os == "win" || current_os == "winrt_81" ||
    is_nacl = false
    is_posix = true
-+  is_openbsd = false
    is_win = false
++  is_openbsd = false
  } else if (current_os == "chromeos") {
    is_android = false
-@@ -325,6 +332,7 @@ if (current_os == "win" || current_os == "winrt_81" ||
-   is_mac = false
+   is_chromeos = true
+@@ -327,6 +334,7 @@ if (current_os == "win" || current_os == "winrt_81" ||
    is_nacl = false
    is_posix = true
-+  is_openbsd = false
    is_win = false
++  is_openbsd = false
  } else if (current_os == "nacl") {
    # current_os == "nacl" will be passed by the nacl toolchain definition.
-@@ -338,6 +346,7 @@ if (current_os == "win" || current_os == "winrt_81" ||
-   is_mac = false
+   # It is not set by default or on the command line. We treat is as a
+@@ -340,6 +348,7 @@ if (current_os == "win" || current_os == "winrt_81" ||
    is_nacl = true
    is_posix = true
-+  is_openbsd = false
    is_win = false
++  is_openbsd = false
  } else if (current_os == "fuchsia") {
    is_android = false
-@@ -348,6 +357,7 @@ if (current_os == "win" || current_os == "winrt_81" ||
-   is_mac = false
+   is_chromeos = false
+@@ -350,6 +359,7 @@ if (current_os == "win" || current_os == "winrt_81" ||
    is_nacl = false
    is_posix = true
-+  is_openbsd = false
    is_win = false
++  is_openbsd = false
  } else if (current_os == "ios") {
    is_android = false
-@@ -358,6 +368,7 @@ if (current_os == "win" || current_os == "winrt_81" ||
-   is_mac = false
+   is_chromeos = false
+@@ -360,6 +370,7 @@ if (current_os == "win" || current_os == "winrt_81" ||
    is_nacl = false
    is_posix = true
-+  is_openbsd = false
    is_win = false
++  is_openbsd = false
  } else if (current_os == "linux") {
    is_android = false
-@@ -368,6 +379,7 @@ if (current_os == "win" || current_os == "winrt_81" ||
-   is_mac = false
+   is_chromeos = false
+@@ -370,6 +381,7 @@ if (current_os == "win" || current_os == "winrt_81" ||
    is_nacl = false
    is_posix = true
-+  is_openbsd = false
    is_win = false
++  is_openbsd = false
  } else if (current_os == "aix") {
    is_android = false
-@@ -378,6 +390,17 @@ if (current_os == "win" || current_os == "winrt_81" ||
+   is_chromeos = false
+@@ -379,6 +391,18 @@ if (current_os == "win" || current_os == "winrt_81" ||
    is_nacl = false
    is_posix = true
    is_win = false
++  is_openbsd = false
 +} else if (current_os == "openbsd") {
 +  is_fuchsia = false
 +  is_android = false

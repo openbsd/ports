@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_ui_views_chrome_browser_main_extra_parts_views_cc,v 1.4 2017/07/27 14:23:46 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_views_chrome_browser_main_extra_parts_views_cc,v 1.5 2017/09/09 19:16:43 robert Exp $
 
 Index: chrome/browser/ui/views/chrome_browser_main_extra_parts_views.cc
 --- chrome/browser/ui/views/chrome_browser_main_extra_parts_views.cc.orig
 +++ chrome/browser/ui/views/chrome_browser_main_extra_parts_views.cc
-@@ -29,7 +29,7 @@
+@@ -32,7 +32,7 @@
  #include "ui/wm/core/wm_state.h"
  #endif  // defined(USE_AURA)
  
@@ -12,8 +12,8 @@ Index: chrome/browser/ui/views/chrome_browser_main_extra_parts_views.cc
  #include <sys/stat.h>
  #include <sys/types.h>
  #include <unistd.h>
-@@ -104,7 +104,7 @@ void ChromeBrowserMainExtraPartsViews::PreProfileInit(
-     IMEDriver::Register();
+@@ -120,7 +120,7 @@ void ChromeBrowserMainExtraPartsViews::PreProfileInit(
+   }
  #endif
  
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)

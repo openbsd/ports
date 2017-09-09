@@ -1,9 +1,10 @@
-$OpenBSD: patch-extensions_browser_api_serial_serial_api_cc,v 1.6 2017/03/14 12:18:54 robert Exp $
---- extensions/browser/api/serial/serial_api.cc.orig.port	Fri Mar 10 10:04:21 2017
-+++ extensions/browser/api/serial/serial_api.cc	Fri Mar 10 10:04:32 2017
-@@ -86,11 +86,13 @@ bool SerialGetDevicesFunction::Prepare() {
+$OpenBSD: patch-extensions_browser_api_serial_serial_api_cc,v 1.7 2017/09/09 19:16:43 robert Exp $
+Index: extensions/browser/api/serial/serial_api.cc
+--- extensions/browser/api/serial/serial_api.cc.orig
++++ extensions/browser/api/serial/serial_api.cc
+@@ -85,11 +85,13 @@ bool SerialGetDevicesFunction::Prepare() {
  void SerialGetDevicesFunction::Work() {
-   DCHECK_CURRENTLY_ON(BrowserThread::FILE);
+   DCHECK(work_task_runner()->RunsTasksInCurrentSequence());
  
 +#if !defined(OS_BSD)
    std::unique_ptr<device::SerialDeviceEnumerator> enumerator =
@@ -14,4 +15,4 @@ $OpenBSD: patch-extensions_browser_api_serial_serial_api_cc,v 1.6 2017/03/14 12:
 +#endif
  }
  
- SerialConnectFunction::SerialConnectFunction() {
+ SerialConnectFunction::SerialConnectFunction() {}

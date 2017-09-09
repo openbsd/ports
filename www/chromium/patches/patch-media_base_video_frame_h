@@ -1,9 +1,9 @@
-$OpenBSD: patch-media_base_video_frame_h,v 1.9 2017/06/25 21:53:56 robert Exp $
+$OpenBSD: patch-media_base_video_frame_h,v 1.10 2017/09/09 19:16:43 robert Exp $
 
 Index: media/base/video_frame.h
 --- media/base/video_frame.h.orig
 +++ media/base/video_frame.h
-@@ -62,7 +62,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
+@@ -63,7 +63,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
      STORAGE_UNOWNED_MEMORY = 2,  // External, non owned data pointers.
      STORAGE_OWNED_MEMORY = 3,  // VideoFrame has allocated its own data buffer.
      STORAGE_SHMEM = 4,         // Pixels are backed by Shared Memory.
@@ -12,7 +12,7 @@ Index: media/base/video_frame.h
      // TODO(mcasas): Consider turning this type into STORAGE_NATIVE
      // based on the idea of using this same enum value for both DMA
      // buffers on Linux and CVPixelBuffers on Mac (which currently use
-@@ -188,7 +188,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
+@@ -189,7 +189,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
        uint8_t* a_data,
        base::TimeDelta timestamp);
  
@@ -21,7 +21,7 @@ Index: media/base/video_frame.h
    // Wraps provided dmabufs
    // (https://www.kernel.org/doc/Documentation/dma-buf-sharing.txt) with a
    // VideoFrame. The dmabuf fds are dup()ed on creation, so that the VideoFrame
-@@ -338,7 +338,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
+@@ -339,7 +339,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
    // Returns the offset into the shared memory where the frame data begins.
    size_t shared_memory_offset() const;
  
@@ -30,7 +30,7 @@ Index: media/base/video_frame.h
    // Returns backing DmaBuf file descriptor for given |plane|, if present, or
    // -1 if not.
    int DmabufFd(size_t plane) const;
-@@ -531,7 +531,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
+@@ -532,7 +532,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
    base::SharedMemoryHandle shared_memory_handle_;
    size_t shared_memory_offset_;
  

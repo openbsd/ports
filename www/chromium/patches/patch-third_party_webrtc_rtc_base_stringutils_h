@@ -1,0 +1,14 @@
+$OpenBSD: patch-third_party_webrtc_rtc_base_stringutils_h,v 1.1 2017/09/09 19:16:43 robert Exp $
+
+Index: third_party/webrtc/rtc_base/stringutils.h
+--- third_party/webrtc/rtc_base/stringutils.h.orig
++++ third_party/webrtc/rtc_base/stringutils.h
+@@ -23,7 +23,7 @@
+ #endif  // WEBRTC_WIN
+ 
+ #if defined(WEBRTC_POSIX)
+-#ifdef BSD
++#if defined(WEBRTC_BSD) || defined(BSD)
+ #include <stdlib.h>
+ #else  // BSD
+ #include <alloca.h>

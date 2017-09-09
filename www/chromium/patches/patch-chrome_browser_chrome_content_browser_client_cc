@@ -1,17 +1,18 @@
-$OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.37 2017/07/27 14:23:46 robert Exp $
+$OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.38 2017/09/09 19:16:43 robert Exp $
+
 Index: chrome/browser/chrome_content_browser_client.cc
 --- chrome/browser/chrome_content_browser_client.cc.orig
 +++ chrome/browser/chrome_content_browser_client.cc
-@@ -252,7 +252,7 @@
+@@ -258,7 +258,7 @@
+ #include "chromeos/chromeos_switches.h"
  #include "components/user_manager/user_manager.h"
- #include "mash/public/interfaces/launchable.mojom.h"
  #include "services/service_manager/public/interfaces/interface_provider_spec.mojom.h"
 -#elif defined(OS_LINUX)
 +#elif defined(OS_LINUX) || defined(OS_BSD)
  #include "chrome/browser/chrome_browser_main_linux.h"
  #elif defined(OS_ANDROID)
  #include "chrome/browser/android/app_hooks.h"
-@@ -269,7 +269,7 @@
+@@ -286,7 +286,7 @@
  #include "chrome/browser/payments/payment_request_factory.h"
  #endif
  
@@ -20,7 +21,7 @@ Index: chrome/browser/chrome_content_browser_client.cc
  #include "chrome/browser/webshare/share_service_impl.h"
  #endif
  
-@@ -297,7 +297,7 @@
+@@ -300,7 +300,7 @@
  #include "chrome/browser/ui/views/chrome_browser_main_extra_parts_views.h"
  #endif
  
@@ -29,7 +30,7 @@ Index: chrome/browser/chrome_content_browser_client.cc
  #include "chrome/browser/ui/views/chrome_browser_main_extra_parts_views_linux.h"
  #endif
  
-@@ -1060,7 +1060,7 @@ content::BrowserMainParts* ChromeContentBrowserClient:
+@@ -876,7 +876,7 @@ content::BrowserMainParts* ChromeContentBrowserClient:
    main_parts = new ChromeBrowserMainPartsMac(parameters);
  #elif defined(OS_CHROMEOS)
    main_parts = new chromeos::ChromeBrowserMainPartsChromeos(parameters);
@@ -38,7 +39,7 @@ Index: chrome/browser/chrome_content_browser_client.cc
    main_parts = new ChromeBrowserMainPartsLinux(parameters);
  #elif defined(OS_ANDROID)
    main_parts = new ChromeBrowserMainPartsAndroid(parameters);
-@@ -1076,7 +1076,7 @@ content::BrowserMainParts* ChromeContentBrowserClient:
+@@ -892,7 +892,7 @@ content::BrowserMainParts* ChromeContentBrowserClient:
    // Construct additional browser parts. Stages are called in the order in
    // which they are added.
  #if defined(TOOLKIT_VIEWS)
@@ -47,7 +48,7 @@ Index: chrome/browser/chrome_content_browser_client.cc
    main_parts->AddParts(new ChromeBrowserMainExtraPartsViewsLinux());
  #else
    main_parts->AddParts(new ChromeBrowserMainExtraPartsViews());
-@@ -1726,7 +1726,7 @@ void ChromeContentBrowserClient::AppendExtraCommandLin
+@@ -1540,7 +1540,7 @@ void ChromeContentBrowserClient::AppendExtraCommandLin
      command_line->AppendSwitchASCII(switches::kMetricsClientID,
                                      client_info->client_id);
    }
@@ -56,7 +57,7 @@ Index: chrome/browser/chrome_content_browser_client.cc
    if (breakpad::IsCrashReporterEnabled()) {
      std::string switch_value;
      std::unique_ptr<metrics::ClientInfo> client_info =
-@@ -2958,7 +2958,7 @@ void ChromeContentBrowserClient::GetAdditionalFileSyst
+@@ -2710,7 +2710,7 @@ void ChromeContentBrowserClient::GetAdditionalFileSyst
    }
  }
  
@@ -65,12 +66,12 @@ Index: chrome/browser/chrome_content_browser_client.cc
  void ChromeContentBrowserClient::GetAdditionalMappedFilesForChildProcess(
      const base::CommandLine& command_line,
      int child_process_id,
-@@ -3199,7 +3199,7 @@ void ChromeContentBrowserClient::ExposeInterfacesToFra
-   }
+@@ -3316,7 +3316,7 @@ void ChromeContentBrowserClient::InitFrameInterfaces()
+ #if defined(OS_ANDROID)
+   frame_interfaces_parameterized_->AddInterface(base::Bind(
+       &ForwardToJavaWebContentsRegistry<blink::mojom::ShareService>));
+-#elif defined(OS_LINUX) || defined(OS_WIN)
++#elif defined(OS_LINUX) || defined(OS_WIN) || defined(OS_BSD) 
+   frame_interfaces_->AddInterface(base::Bind(&ShareServiceImpl::Create));
  #endif
  
--#if defined(OS_LINUX) || defined(OS_WIN)
-+#if defined(OS_LINUX) || defined(OS_WIN) || defined(OS_BSD)
-   if (!ChromeOriginTrialPolicy().IsFeatureDisabled("WebShare")) {
-     registry->AddInterface(base::Bind(&ShareServiceImpl::Create));
-   }

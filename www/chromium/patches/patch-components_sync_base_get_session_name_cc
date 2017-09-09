@@ -1,7 +1,8 @@
-$OpenBSD: patch-components_sync_base_get_session_name_cc,v 1.1 2016/10/26 06:22:08 robert Exp $
---- components/sync/base/get_session_name.cc.orig.port	Wed Oct 19 13:51:04 2016
-+++ components/sync/base/get_session_name.cc	Wed Oct 19 13:51:18 2016
-@@ -15,7 +15,7 @@
+$OpenBSD: patch-components_sync_base_get_session_name_cc,v 1.2 2017/09/09 19:16:43 robert Exp $
+Index: components/sync/base/get_session_name.cc
+--- components/sync/base/get_session_name.cc.orig
++++ components/sync/base/get_session_name.cc
+@@ -17,7 +17,7 @@
  
  #if defined(OS_CHROMEOS)
  #include "chromeos/system/devicetype.h"
@@ -10,7 +11,7 @@ $OpenBSD: patch-components_sync_base_get_session_name_cc,v 1.1 2016/10/26 06:22:
  #include "components/sync/base/get_session_name_linux.h"
  #elif defined(OS_IOS)
  #include "components/sync/base/get_session_name_ios.h"
-@@ -51,7 +51,7 @@ std::string GetSessionNameSynchronously() {
+@@ -54,7 +54,7 @@ std::string GetSessionNameSynchronously() {
        session_name = "Chromebook";
        break;
    }

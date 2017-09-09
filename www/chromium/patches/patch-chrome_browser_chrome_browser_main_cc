@@ -1,17 +1,17 @@
-$OpenBSD: patch-chrome_browser_chrome_browser_main_cc,v 1.17 2017/07/27 14:23:46 robert Exp $
+$OpenBSD: patch-chrome_browser_chrome_browser_main_cc,v 1.18 2017/09/09 19:16:43 robert Exp $
 Index: chrome/browser/chrome_browser_main.cc
 --- chrome/browser/chrome_browser_main.cc.orig
 +++ chrome/browser/chrome_browser_main.cc
-@@ -185,7 +185,7 @@
- #include "chrome/browser/feedback/feedback_profile_observer.h"
- #endif  // defined(OS_ANDROID)
+@@ -191,7 +191,7 @@
+ #include "chrome/browser/offline_pages/offline_page_info_handler.h"
+ #endif
  
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
 +#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
  #include "chrome/browser/first_run/upgrade_util_linux.h"
  #endif  // defined(OS_LINUX) && !defined(OS_CHROMEOS)
  
-@@ -275,7 +275,7 @@
+@@ -281,7 +281,7 @@
  #endif
  
  #if defined(OS_WIN) || defined(OS_MACOSX) || \
@@ -20,7 +20,7 @@ Index: chrome/browser/chrome_browser_main.cc
  #include "chrome/browser/metrics/desktop_session_duration/desktop_session_duration_tracker.h"
  #endif
  
-@@ -762,7 +762,7 @@ void ChromeBrowserMainParts::SetupFieldTrials() {
+@@ -766,7 +766,7 @@ void ChromeBrowserMainParts::SetupFieldTrials() {
    field_trial_synchronizer_ = new FieldTrialSynchronizer();
  
  #if defined(OS_WIN) || defined(OS_MACOSX) || \
@@ -29,7 +29,7 @@ Index: chrome/browser/chrome_browser_main.cc
    metrics::DesktopSessionDurationTracker::Initialize();
  #endif
    metrics::RendererUptimeTracker::Initialize();
-@@ -1182,7 +1182,7 @@ int ChromeBrowserMainParts::PreCreateThreadsImpl() {
+@@ -1191,7 +1191,7 @@ int ChromeBrowserMainParts::PreCreateThreadsImpl() {
    }
  #endif  // !defined(OS_ANDROID) && !defined(OS_CHROMEOS)
  
@@ -38,7 +38,7 @@ Index: chrome/browser/chrome_browser_main.cc
    // Set the product channel for crash reports.
    base::debug::SetCrashKeyValue(crash_keys::kChannel,
                                  chrome::GetChannelString());
-@@ -1365,7 +1365,7 @@ void ChromeBrowserMainParts::PreBrowserStart() {
+@@ -1374,7 +1374,7 @@ void ChromeBrowserMainParts::PreBrowserStart() {
  
  // Start the tab manager here so that we give the most amount of time for the
  // other services to start up before we start adjusting the oom priority.

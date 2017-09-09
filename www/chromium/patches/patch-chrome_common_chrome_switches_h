@@ -1,8 +1,8 @@
-$OpenBSD: patch-chrome_common_chrome_switches_h,v 1.36 2017/07/27 14:23:46 robert Exp $
+$OpenBSD: patch-chrome_common_chrome_switches_h,v 1.37 2017/09/09 19:16:43 robert Exp $
 Index: chrome/common/chrome_switches.h
 --- chrome/common/chrome_switches.h.orig
 +++ chrome/common/chrome_switches.h
-@@ -349,13 +349,13 @@ extern const char kAllowNaClSocketAPI[];
+@@ -331,13 +331,13 @@ extern const char kAllowNaClSocketAPI[];
  extern const char kEnableWaylandServer[];
  #endif
  

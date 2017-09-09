@@ -1,0 +1,23 @@
+$OpenBSD: patch-components_feature_engagement_tracker_public_event_constants_h,v 1.1 2017/09/09 19:16:43 robert Exp $
+
+Index: components/feature_engagement_tracker/public/event_constants.h
+--- components/feature_engagement_tracker/public/event_constants.h.orig
++++ components/feature_engagement_tracker/public/event_constants.h
+@@ -11,7 +11,7 @@ namespace feature_engagement_tracker {
+ 
+ namespace events {
+ 
+-#if defined(OS_WIN) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_BSD)
+ // All the events declared below are the string names
+ // of deferred onboarding events for the New Tab.
+ 
+@@ -34,7 +34,7 @@ extern const char kSessionTime[];
+ 
+ #endif  // defined(OS_WIN) || defined(OS_LINUX)
+ 
+-#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_IOS)
++#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_IOS) || defined(OS_BSD)
+ // This event is included in the deferred onboarding events for the New Tab
+ // described above, but it is also used on iOS, so it must be compiled
+ // separately.

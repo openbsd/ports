@@ -1,7 +1,8 @@
-$OpenBSD: patch-chrome_browser_speech_tts_controller_impl_cc,v 1.7 2016/12/10 15:35:25 robert Exp $
---- chrome/browser/speech/tts_controller_impl.cc.orig.port	Fri Dec  2 00:02:08 2016
-+++ chrome/browser/speech/tts_controller_impl.cc	Fri Dec  2 17:44:52 2016
-@@ -347,9 +347,13 @@ int TtsControllerImpl::QueueSize() {
+$OpenBSD: patch-chrome_browser_speech_tts_controller_impl_cc,v 1.8 2017/09/09 19:16:43 robert Exp $
+Index: chrome/browser/speech/tts_controller_impl.cc
+--- chrome/browser/speech/tts_controller_impl.cc.orig
++++ chrome/browser/speech/tts_controller_impl.cc
+@@ -434,9 +434,13 @@ int TtsControllerImpl::QueueSize() {
  }
  
  TtsPlatformImpl* TtsControllerImpl::GetPlatformImpl() {

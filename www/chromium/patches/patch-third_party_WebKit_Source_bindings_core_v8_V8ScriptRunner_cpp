@@ -1,12 +1,13 @@
-$OpenBSD: patch-third_party_WebKit_Source_bindings_core_v8_V8ScriptRunner_cpp,v 1.9 2017/04/28 14:21:00 robert Exp $
---- third_party/WebKit/Source/bindings/core/v8/V8ScriptRunner.cpp.orig.port	Wed Apr 19 21:06:49 2017
-+++ third_party/WebKit/Source/bindings/core/v8/V8ScriptRunner.cpp	Thu Apr 27 19:56:03 2017
-@@ -48,7 +48,7 @@
+$OpenBSD: patch-third_party_WebKit_Source_bindings_core_v8_V8ScriptRunner_cpp,v 1.10 2017/09/09 19:16:43 robert Exp $
+Index: third_party/WebKit/Source/bindings/core/v8/V8ScriptRunner.cpp
+--- third_party/WebKit/Source/bindings/core/v8/V8ScriptRunner.cpp.orig
++++ third_party/WebKit/Source/bindings/core/v8/V8ScriptRunner.cpp
+@@ -49,7 +49,7 @@
  
- #if OS(WIN)
+ #if defined(OS_WIN)
  #include <malloc.h>
 -#else
-+#elif !OS(OPENBSD)
++#elif !defined(OS_OPENBSD)
  #include <alloca.h>
  #endif
  

@@ -1,20 +1,22 @@
-$OpenBSD: patch-services_catalog_public_cpp_manifest_parsing_util_cc,v 1.1 2017/04/28 14:21:00 robert Exp $
---- services/catalog/public/cpp/manifest_parsing_util.cc.orig.port	Thu Apr 27 21:22:30 2017
-+++ services/catalog/public/cpp/manifest_parsing_util.cc	Thu Apr 27 21:23:27 2017
-@@ -15,7 +15,8 @@ bool IsValidPlatformName(const std::string& name) {
-   return name == Store::kRequiredFilesKey_PlatformValue_Windows ||
+$OpenBSD: patch-services_catalog_public_cpp_manifest_parsing_util_cc,v 1.2 2017/09/09 19:16:43 robert Exp $
+
+Index: services/catalog/public/cpp/manifest_parsing_util.cc
+--- services/catalog/public/cpp/manifest_parsing_util.cc.orig
++++ services/catalog/public/cpp/manifest_parsing_util.cc
+@@ -17,7 +17,8 @@ bool IsValidPlatformName(const std::string& name) {
           name == Store::kRequiredFilesKey_PlatformValue_Linux ||
           name == Store::kRequiredFilesKey_PlatformValue_MacOSX ||
--         name == Store::kRequiredFilesKey_PlatformValue_Android;
-+         name == Store::kRequiredFilesKey_PlatformValue_Android ||
+          name == Store::kRequiredFilesKey_PlatformValue_Android ||
+-         name == Store::kRequiredFilesKey_PlatformValue_Fuchsia;
++         name == Store::kRequiredFilesKey_PlatformValue_Fuchsia ||
 +         name == Store::kRequiredFilesKey_PlatformValue_OpenBSD;
  }
  
  bool IsCurrentPlatform(const std::string& name) {
-@@ -27,6 +28,8 @@ bool IsCurrentPlatform(const std::string& name) {
-   return name == Store::kRequiredFilesKey_PlatformValue_MacOSX;
- #elif defined(OS_ANDROID)
+@@ -31,6 +32,8 @@ bool IsCurrentPlatform(const std::string& name) {
    return name == Store::kRequiredFilesKey_PlatformValue_Android;
+ #elif defined(OS_FUCHSIA)
+   return name == Store::kRequiredFilesKey_PlatformValue_Fuchsia;
 +#elif defined(OS_OPENBSD)
 +  return name == Store::kRequiredFilesKey_PlatformValue_OpenBSD;
  #else

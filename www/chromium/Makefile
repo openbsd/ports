@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.337 2017/09/05 14:14:52 robert Exp $
+# $OpenBSD: Makefile,v 1.338 2017/09/09 19:16:43 robert Exp $
 
 .include <bsd.port.arch.mk>
 
@@ -9,7 +9,7 @@ DPB_PROPERTIES=		parallel
 
 COMMENT=		Chromium browser
 
-V=			60.0.3112.113
+V=			61.0.3163.79
 
 DISTNAME=		chromium-${V}
 
@@ -48,7 +48,7 @@ WANTLIB += X11 Xext Xfixes Xrender Xss c cups dbus-1 event
 WANTLIB += execinfo fontconfig gconf-2
 WANTLIB += gdk_pixbuf-2.0 glib-2.0 gobject-2.0
 WANTLIB += m
-WANTLIB += pthread
+WANTLIB += pthread pthread-stubs
 WANTLIB += xslt
 WANTLIB += sndio
 WANTLIB += Xcomposite

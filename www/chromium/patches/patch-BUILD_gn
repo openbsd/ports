@@ -1,9 +1,9 @@
-$OpenBSD: patch-BUILD_gn,v 1.10 2017/07/27 14:23:46 robert Exp $
+$OpenBSD: patch-BUILD_gn,v 1.11 2017/09/09 19:16:43 robert Exp $
 
 Index: BUILD.gn
 --- BUILD.gn.orig
 +++ BUILD.gn
-@@ -334,7 +334,7 @@ group("gn_all") {
+@@ -356,7 +356,7 @@ group("gn_all") {
      }
    }
  
@@ -12,7 +12,7 @@ Index: BUILD.gn
      deps += [
        "//breakpad:breakpad_unittests",
        "//breakpad:core-2-minidump",
-@@ -371,8 +371,6 @@ group("gn_all") {
+@@ -393,8 +393,6 @@ group("gn_all") {
        "//net:disk_cache_memory_test",
        "//net:quic_client",
        "//net:quic_server",
@@ -21,7 +21,7 @@ Index: BUILD.gn
      ]
  
      if (use_dbus) {
-@@ -430,10 +428,6 @@ group("gn_all") {
+@@ -451,10 +449,6 @@ group("gn_all") {
          "//chrome/test:sync_performance_tests",
          "//chrome/test/chromedriver:chromedriver",
          "//chrome/test/chromedriver:chromedriver_tests",
@@ -32,7 +32,7 @@ Index: BUILD.gn
          "//media/cast:generate_barcode_video",
          "//media/cast:generate_timecode_audio",
          "//net:crash_cache",
-@@ -479,10 +473,6 @@ group("gn_all") {
+@@ -503,10 +497,6 @@ group("gn_all") {
  
    if (is_android || (is_linux && !is_chromeos)) {
      deps += [
@@ -43,7 +43,7 @@ Index: BUILD.gn
        "//components/network_hints/browser",
        "//content/public/app:browser",
        "//content/public/app:child",
-@@ -557,7 +547,7 @@ group("gn_all") {
+@@ -580,7 +570,7 @@ group("gn_all") {
        deps +=
            [ "//chrome/installer/mini_installer:next_version_mini_installer" ]
      }
@@ -52,7 +52,7 @@ Index: BUILD.gn
      deps += [ "//breakpad:symupload($host_toolchain)" ]
    }
  
-@@ -879,7 +869,7 @@ if (!is_ios && !is_fuchsia) {
+@@ -903,7 +893,7 @@ if (!is_ios && !is_fuchsia) {
        data_deps += [ "//content/shell:content_shell_crash_service" ]
      }
  
@@ -61,7 +61,7 @@ Index: BUILD.gn
        data_deps += [ "//breakpad:minidump_stackwalk($host_toolchain)" ]
      }
  
-@@ -887,7 +877,7 @@ if (!is_ios && !is_fuchsia) {
+@@ -911,7 +901,7 @@ if (!is_ios && !is_fuchsia) {
        data_deps += [ "//breakpad:dump_syms($host_toolchain)" ]
      }
  
@@ -70,7 +70,7 @@ Index: BUILD.gn
        data_deps += [ "//breakpad:dump_syms($host_toolchain)" ]
      }
  
-@@ -975,8 +965,6 @@ group("chromium_builder_perf") {
+@@ -999,8 +989,6 @@ group("chromium_builder_perf") {
          "//chrome/installer/mini_installer:mini_installer",
          "//chrome/test:angle_perftests",
        ]

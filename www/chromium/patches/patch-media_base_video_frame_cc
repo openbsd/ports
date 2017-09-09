@@ -1,9 +1,9 @@
-$OpenBSD: patch-media_base_video_frame_cc,v 1.9 2017/06/25 21:53:56 robert Exp $
+$OpenBSD: patch-media_base_video_frame_cc,v 1.10 2017/09/09 19:16:43 robert Exp $
 
 Index: media/base/video_frame.cc
 --- media/base/video_frame.cc.orig
 +++ media/base/video_frame.cc
-@@ -53,7 +53,7 @@ static std::string StorageTypeToString(
+@@ -63,7 +63,7 @@ static std::string StorageTypeToString(
        return "OWNED_MEMORY";
      case VideoFrame::STORAGE_SHMEM:
        return "SHMEM";
@@ -12,7 +12,7 @@ Index: media/base/video_frame.cc
      case VideoFrame::STORAGE_DMABUFS:
        return "DMABUFS";
  #endif
-@@ -69,7 +69,7 @@ static std::string StorageTypeToString(
+@@ -79,7 +79,7 @@ static std::string StorageTypeToString(
  // static
  static bool IsStorageTypeMappable(VideoFrame::StorageType storage_type) {
    return
@@ -21,7 +21,7 @@ Index: media/base/video_frame.cc
        // This is not strictly needed but makes explicit that, at VideoFrame
        // level, DmaBufs are not mappable from userspace.
        storage_type != VideoFrame::STORAGE_DMABUFS &&
-@@ -324,7 +324,7 @@ scoped_refptr<VideoFrame> VideoFrame::WrapExternalYuva
+@@ -334,7 +334,7 @@ scoped_refptr<VideoFrame> VideoFrame::WrapExternalYuva
    return frame;
  }
  
@@ -30,7 +30,7 @@ Index: media/base/video_frame.cc
  // static
  scoped_refptr<VideoFrame> VideoFrame::WrapExternalDmabufs(
      VideoPixelFormat format,
-@@ -436,7 +436,7 @@ scoped_refptr<VideoFrame> VideoFrame::WrapVideoFrame(
+@@ -446,7 +446,7 @@ scoped_refptr<VideoFrame> VideoFrame::WrapVideoFrame(
      wrapping_frame->data_[i] = frame->data(i);
    }
  
@@ -39,7 +39,7 @@ Index: media/base/video_frame.cc
    // If there are any |dmabuf_fds_| plugged in, we should duplicate them.
    if (frame->storage_type() == STORAGE_DMABUFS) {
      std::vector<int> original_fds;
-@@ -722,7 +722,7 @@ size_t VideoFrame::shared_memory_offset() const {
+@@ -732,7 +732,7 @@ size_t VideoFrame::shared_memory_offset() const {
    return shared_memory_offset_;
  }
  

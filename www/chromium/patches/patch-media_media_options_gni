@@ -1,4 +1,5 @@
-$OpenBSD: patch-media_media_options_gni,v 1.8 2017/07/27 14:23:46 robert Exp $
+$OpenBSD: patch-media_media_options_gni,v 1.9 2017/09/09 19:16:43 robert Exp $
+
 Index: media/media_options.gni
 --- media/media_options.gni.orig
 +++ media/media_options.gni
@@ -11,8 +12,8 @@ Index: media/media_options.gni
 +
    # Alsa should be used on non-Android, non-Mac POSIX systems.
    # Alsa should be used on desktop Chromecast and audio-only Chromecast builds.
--  if (is_posix && !is_android && !is_mac &&
-+  if (is_posix && !is_android && !is_mac && !is_openbsd &&
+-  if (is_posix && !is_android && !is_mac && !is_fuchsia &&
++  if (is_posix && !is_android && !is_mac && !is_fuchsia && !is_openbsd &&
        (!is_chromecast || is_cast_desktop_build || is_cast_audio_only)) {
      use_alsa = true
  

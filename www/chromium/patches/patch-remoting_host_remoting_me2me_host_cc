@@ -1,9 +1,9 @@
-$OpenBSD: patch-remoting_host_remoting_me2me_host_cc,v 1.1 2017/08/03 21:01:27 robert Exp $
+$OpenBSD: patch-remoting_host_remoting_me2me_host_cc,v 1.2 2017/09/09 19:16:43 robert Exp $
 
 Index: remoting/host/remoting_me2me_host.cc
 --- remoting/host/remoting_me2me_host.cc.orig
 +++ remoting/host/remoting_me2me_host.cc
-@@ -115,7 +115,7 @@
+@@ -116,7 +116,7 @@
  #include "base/mac/scoped_cftyperef.h"
  #endif  // defined(OS_MACOSX)
  
@@ -12,7 +12,7 @@ Index: remoting/host/remoting_me2me_host.cc
  #include <gtk/gtk.h>
  #include <X11/Xlib.h>
  #undef Status  // Xlib.h #defines this, which breaks protobuf headers.
-@@ -157,7 +157,7 @@ const char kApplicationName[] = "chromoting";
+@@ -158,7 +158,7 @@ const char kApplicationName[] = "chromoting";
  const char kStdinConfigPath[] = "-";
  #endif  // !defined(REMOTING_MULTI_PROCESS)
  
@@ -21,7 +21,7 @@ Index: remoting/host/remoting_me2me_host.cc
  // The command line switch used to pass name of the pipe to capture audio on
  // linux.
  const char kAudioPipeSwitchName[] = "audio-pipe-name";
-@@ -346,7 +346,7 @@ class HostProcess : public ConfigWatcher::Delegate,
+@@ -347,7 +347,7 @@ class HostProcess : public ConfigWatcher::Delegate,
  
    std::unique_ptr<ChromotingHostContext> context_;
  
@@ -30,7 +30,7 @@ Index: remoting/host/remoting_me2me_host.cc
    // Watch for certificate changes and kill the host when changes occur
    std::unique_ptr<CertificateWatcher> cert_watcher_;
  #endif
-@@ -540,7 +540,7 @@ bool HostProcess::InitWithCommandLine(const base::Comm
+@@ -541,7 +541,7 @@ bool HostProcess::InitWithCommandLine(const base::Comm
    enable_window_capture_ = cmd_line->HasSwitch(kWindowIdSwitchName);
    if (enable_window_capture_) {
  
@@ -39,7 +39,7 @@ Index: remoting/host/remoting_me2me_host.cc
      LOG(WARNING) << "Window capturing is not fully supported on Linux or "
                      "Windows.";
  #endif  // defined(OS_LINUX) || defined(OS_WIN)
-@@ -736,7 +736,7 @@ void HostProcess::CreateAuthenticatorFactory() {
+@@ -737,7 +737,7 @@ void HostProcess::CreateAuthenticatorFactory() {
      DCHECK(third_party_auth_config_.token_url.is_valid());
      DCHECK(third_party_auth_config_.token_validation_url.is_valid());
  
@@ -48,7 +48,7 @@ Index: remoting/host/remoting_me2me_host.cc
      if (!cert_watcher_) {
        cert_watcher_.reset(new CertificateWatcher(
            base::Bind(&HostProcess::ShutdownHost, this, kSuccessExitCode),
-@@ -815,7 +815,7 @@ void HostProcess::StartOnUiThread() {
+@@ -816,7 +816,7 @@ void HostProcess::StartOnUiThread() {
        base::Bind(&HostProcess::OnPolicyUpdate, base::Unretained(this)),
        base::Bind(&HostProcess::OnPolicyError, base::Unretained(this)));
  
@@ -57,7 +57,7 @@ Index: remoting/host/remoting_me2me_host.cc
    // If an audio pipe is specific on the command-line then initialize
    // AudioCapturerLinux to capture from it.
    base::FilePath audio_pipe_name = base::CommandLine::ForCurrentProcess()->
-@@ -880,7 +880,7 @@ void HostProcess::ShutdownOnUiThread() {
+@@ -881,7 +881,7 @@ void HostProcess::ShutdownOnUiThread() {
    // It is now safe for the HostProcess to be deleted.
    self_ = nullptr;
  
@@ -66,8 +66,8 @@ Index: remoting/host/remoting_me2me_host.cc
    // Cause the global AudioPipeReader to be freed, otherwise the audio
    // thread will remain in-use and prevent the process from exiting.
    // TODO(wez): DesktopEnvironmentFactory should own the pipe reader.
-@@ -1494,7 +1494,7 @@ void HostProcess::StartHost() {
-   }
+@@ -1496,7 +1496,7 @@ void HostProcess::StartHost() {
+   host_->AddExtension(base::MakeUnique<TestEchoExtension>());
  
    // TODO(simonmorris): Get the maximum session duration from a policy.
 -#if defined(OS_LINUX)
@@ -75,7 +75,7 @@ Index: remoting/host/remoting_me2me_host.cc
    host_->SetMaximumSessionDuration(base::TimeDelta::FromHours(20));
  #endif
  
-@@ -1654,7 +1654,7 @@ void HostProcess::OnCrash(const std::string& function_
+@@ -1655,7 +1655,7 @@ void HostProcess::OnCrash(const std::string& function_
  int HostProcessMain() {
    HOST_LOG << "Starting host process: version " << STRINGIZE(VERSION);
  

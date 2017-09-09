@@ -1,8 +1,8 @@
-$OpenBSD: patch-content_gpu_gpu_main_cc,v 1.21 2017/06/25 21:53:56 robert Exp $
+$OpenBSD: patch-content_gpu_gpu_main_cc,v 1.22 2017/09/09 19:16:43 robert Exp $
 Index: content/gpu/gpu_main.cc
 --- content/gpu/gpu_main.cc.orig
 +++ content/gpu/gpu_main.cc
-@@ -83,6 +83,10 @@
+@@ -84,6 +84,10 @@
  #include "ui/ozone/public/ozone_platform.h"
  #endif
  
@@ -13,7 +13,7 @@ Index: content/gpu/gpu_main.cc
  #if defined(OS_CHROMEOS) && defined(ARCH_CPU_X86_FAMILY)
  #include "media/gpu/vaapi_wrapper.h"
  #endif
-@@ -96,7 +100,7 @@ namespace content {
+@@ -92,7 +96,7 @@ namespace content {
  
  namespace {
  
@@ -22,7 +22,7 @@ Index: content/gpu/gpu_main.cc
  bool StartSandboxLinux(gpu::GpuWatchdogThread*);
  #elif defined(OS_WIN)
  bool StartSandboxWindows(const sandbox::SandboxInterfaceInfo*);
-@@ -150,7 +154,7 @@ class ContentSandboxHelper : public gpu::GpuSandboxHel
+@@ -146,7 +150,7 @@ class ContentSandboxHelper : public gpu::GpuSandboxHel
  
    bool EnsureSandboxInitialized(
        gpu::GpuWatchdogThread* watchdog_thread) override {
@@ -31,7 +31,7 @@ Index: content/gpu/gpu_main.cc
      return StartSandboxLinux(watchdog_thread);
  #elif defined(OS_WIN)
      return StartSandboxWindows(sandbox_info_);
-@@ -301,12 +305,13 @@ int GpuMain(const MainFunctionParams& parameters) {
+@@ -305,12 +309,13 @@ int GpuMain(const MainFunctionParams& parameters) {
  
  namespace {
  
@@ -46,7 +46,7 @@ Index: content/gpu/gpu_main.cc
    if (watchdog_thread) {
      // LinuxSandbox needs to be able to ensure that the thread
      // has really been stopped.
-@@ -331,6 +336,9 @@ bool StartSandboxLinux(gpu::GpuWatchdogThread* watchdo
+@@ -325,6 +330,9 @@ bool StartSandboxLinux(gpu::GpuWatchdogThread* watchdo
      options.timer_slack = base::TIMER_SLACK_MAXIMUM;
      watchdog_thread->StartWithOptions(options);
    }

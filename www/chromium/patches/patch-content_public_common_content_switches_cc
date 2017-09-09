@@ -1,8 +1,8 @@
-$OpenBSD: patch-content_public_common_content_switches_cc,v 1.22 2017/07/27 14:23:46 robert Exp $
+$OpenBSD: patch-content_public_common_content_switches_cc,v 1.23 2017/09/09 19:16:43 robert Exp $
 Index: content/public/common/content_switches.cc
 --- content/public/common/content_switches.cc.orig
 +++ content/public/common/content_switches.cc
-@@ -999,7 +999,7 @@ const char kDisableVaapiAcceleratedVideoEncode[] =
+@@ -1003,7 +1003,7 @@ const char kDisableVaapiAcceleratedVideoEncode[] =
      "disable-vaapi-accelerated-video-encode";
  #endif
  

@@ -1,4 +1,5 @@
-$OpenBSD: patch-chrome_browser_ui_views_apps_chrome_native_app_window_views_aura_cc,v 1.8 2017/06/25 21:53:56 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_views_apps_chrome_native_app_window_views_aura_cc,v 1.9 2017/09/09 19:16:43 robert Exp $
+
 Index: chrome/browser/ui/views/apps/chrome_native_app_window_views_aura.cc
 --- chrome/browser/ui/views/apps/chrome_native_app_window_views_aura.cc.orig
 +++ chrome/browser/ui/views/apps/chrome_native_app_window_views_aura.cc
@@ -11,12 +12,3 @@ Index: chrome/browser/ui/views/apps/chrome_native_app_window_views_aura.cc
  #include "chrome/browser/shell_integration_linux.h"
  #endif
  
-@@ -56,7 +56,7 @@ void ChromeNativeAppWindowViewsAura::OnBeforeWidgetIni
-     const AppWindow::CreateParams& create_params,
-     views::Widget::InitParams* init_params,
-     views::Widget* widget) {
--#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
-   std::string app_name = web_app::GenerateApplicationNameFromExtensionId(
-       app_window()->extension_id());
-   // Set up a custom WM_CLASS for app windows. This allows task switchers in

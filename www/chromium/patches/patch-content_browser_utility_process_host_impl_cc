@@ -1,9 +1,9 @@
-$OpenBSD: patch-content_browser_utility_process_host_impl_cc,v 1.10 2017/07/27 14:23:46 robert Exp $
+$OpenBSD: patch-content_browser_utility_process_host_impl_cc,v 1.11 2017/09/09 19:16:43 robert Exp $
 
 Index: content/browser/utility_process_host_impl.cc
 --- content/browser/utility_process_host_impl.cc.orig
 +++ content/browser/utility_process_host_impl.cc
-@@ -44,7 +44,7 @@
+@@ -34,7 +34,7 @@
  #include "services/service_manager/public/cpp/interface_provider.h"
  #include "ui/base/ui_base_switches.h"
  
@@ -12,7 +12,7 @@ Index: content/browser/utility_process_host_impl.cc
  #include "content/public/browser/zygote_handle_linux.h"
  #endif  // defined(OS_POSIX) && !defined(OS_ANDROID) && !defined(OS_MACOSX)
  
-@@ -68,7 +68,7 @@ class UtilitySandboxedProcessLauncherDelegate
+@@ -58,7 +58,7 @@ class UtilitySandboxedProcessLauncherDelegate
          launch_elevated_(launch_elevated)
  #elif defined(OS_POSIX)
          env_(env)
@@ -21,7 +21,7 @@ Index: content/browser/utility_process_host_impl.cc
          ,
          no_sandbox_(no_sandbox)
  #endif  // !defined(OS_MACOSX)  && !defined(OS_ANDROID)
-@@ -100,7 +100,7 @@ class UtilitySandboxedProcessLauncherDelegate
+@@ -90,7 +90,7 @@ class UtilitySandboxedProcessLauncherDelegate
  
  #elif defined(OS_POSIX)
  
@@ -30,7 +30,7 @@ Index: content/browser/utility_process_host_impl.cc
    ZygoteHandle GetZygote() override {
      if (no_sandbox_ || !exposed_dir_.empty())
        return nullptr;
-@@ -121,7 +121,7 @@ class UtilitySandboxedProcessLauncherDelegate
+@@ -111,7 +111,7 @@ class UtilitySandboxedProcessLauncherDelegate
    bool launch_elevated_;
  #elif defined(OS_POSIX)
    base::EnvironmentMap env_;

@@ -1,9 +1,10 @@
-$OpenBSD: patch-net_base_network_interfaces_posix_h,v 1.1 2017/03/14 12:18:54 robert Exp $
---- net/base/network_interfaces_posix.h.orig.port	Sun Mar 12 10:47:11 2017
-+++ net/base/network_interfaces_posix.h	Sun Mar 12 10:47:19 2017
+$OpenBSD: patch-net_base_network_interfaces_posix_h,v 1.2 2017/09/09 19:16:43 robert Exp $
+Index: net/base/network_interfaces_posix.h
+--- net/base/network_interfaces_posix.h.orig
++++ net/base/network_interfaces_posix.h
 @@ -8,6 +8,8 @@
- // This file is only used to expose some of the internals of
- // network_interfaces_posix.cc to network_interfaces_linux.cc and network_interfaces_mac.cc.
+ // This file provides some basic functionality shared between
+ // network_interfaces_linux.cc and network_interfaces_getifaddrs.cc.
  
 +#include <sys/socket.h>
 +

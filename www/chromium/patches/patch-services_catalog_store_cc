@@ -1,10 +1,13 @@
-$OpenBSD: patch-services_catalog_store_cc,v 1.1 2017/04/28 14:21:00 robert Exp $
---- services/catalog/store.cc.orig.port	Thu Apr 27 21:30:01 2017
-+++ services/catalog/store.cc	Thu Apr 27 21:30:25 2017
-@@ -32,4 +32,6 @@ const char Store::kRequiredFilesKey_PlatformValue_Linu
- const char Store::kRequiredFilesKey_PlatformValue_MacOSX[] = "macosx";
+$OpenBSD: patch-services_catalog_store_cc,v 1.2 2017/09/09 19:16:43 robert Exp $
+Index: services/catalog/store.cc
+--- services/catalog/store.cc.orig
++++ services/catalog/store.cc
+@@ -33,6 +33,8 @@ const char Store::kRequiredFilesKey_PlatformValue_MacO
  // static
  const char Store::kRequiredFilesKey_PlatformValue_Android[] = "android";
-+// static
+ // static
 +const char Store::kRequiredFilesKey_PlatformValue_OpenBSD[] = "openbsd";
++// static
+ const char Store::kRequiredFilesKey_PlatformValue_Fuchsia[] = "fuchsia";
+ 
  }  // namespace catalog

@@ -1,8 +1,8 @@
-$OpenBSD: patch-ui_gl_generate_bindings_py,v 1.19 2017/07/27 14:23:46 robert Exp $
+$OpenBSD: patch-ui_gl_generate_bindings_py,v 1.20 2017/09/09 19:16:43 robert Exp $
 Index: ui/gl/generate_bindings.py
 --- ui/gl/generate_bindings.py.orig
 +++ ui/gl/generate_bindings.py
-@@ -2239,6 +2239,9 @@ GLX_FUNCTIONS = [
+@@ -2257,6 +2257,9 @@ GLX_FUNCTIONS = [
    'arguments':
        'Display* dpy, GLXDrawable drawable, int32_t* numerator, '
        'int32_t* denominator' },

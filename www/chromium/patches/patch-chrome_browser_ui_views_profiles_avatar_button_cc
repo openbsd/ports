@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_ui_views_profiles_avatar_button_cc,v 1.1 2017/07/27 14:23:46 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_views_profiles_avatar_button_cc,v 1.2 2017/09/09 19:16:43 robert Exp $
 
 Index: chrome/browser/ui/views/profiles/avatar_button.cc
 --- chrome/browser/ui/views/profiles/avatar_button.cc.orig
 +++ chrome/browser/ui/views/profiles/avatar_button.cc
-@@ -171,7 +171,7 @@ AvatarButton::AvatarButton(views::ButtonListener* list
+@@ -194,7 +194,7 @@ AvatarButton::AvatarButton(views::ButtonListener* list
        label()->font_list().DeriveWithHeightUpperBound(kDisplayFontHeight));
  
    bool apply_ink_drop = IsCondensible();
@@ -12,12 +12,12 @@ Index: chrome/browser/ui/views/profiles/avatar_button.cc
    DCHECK_EQ(AvatarButtonStyle::THEMED, button_style);
    apply_ink_drop = true;
  #endif
-@@ -180,7 +180,7 @@ AvatarButton::AvatarButton(views::ButtonListener* list
+@@ -202,7 +202,7 @@ AvatarButton::AvatarButton(views::ButtonListener* list
+   if (apply_ink_drop) {
      SetInkDropMode(InkDropMode::ON);
      SetFocusPainter(nullptr);
-     constexpr int kIconSize = 16;
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
+     constexpr int kIconSize = 16;
      set_ink_drop_base_color(SK_ColorWHITE);
      SetBorder(base::MakeUnique<AvatarButtonThemedBorder>());
-     generic_avatar_ = gfx::CreateVectorIcon(kProfileSwitcherOutlineIcon,

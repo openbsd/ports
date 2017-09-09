@@ -1,8 +1,8 @@
-$OpenBSD: patch-ui_message_center_views_message_center_button_bar_cc,v 1.8 2017/07/27 14:23:46 robert Exp $
+$OpenBSD: patch-ui_message_center_views_message_center_button_bar_cc,v 1.9 2017/09/09 19:16:43 robert Exp $
 Index: ui/message_center/views/message_center_button_bar.cc
 --- ui/message_center/views/message_center_button_bar.cc.orig
 +++ ui/message_center/views/message_center_button_bar.cc
-@@ -73,7 +73,7 @@ MessageCenterButtonBar::MessageCenterButtonBar(
+@@ -74,7 +74,7 @@ MessageCenterButtonBar::MessageCenterButtonBar(
      const base::string16& title)
      : message_center_view_(message_center_view),
        message_center_(message_center),

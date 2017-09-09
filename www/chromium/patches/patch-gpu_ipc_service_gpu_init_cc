@@ -1,9 +1,9 @@
-$OpenBSD: patch-gpu_ipc_service_gpu_init_cc,v 1.4 2017/07/27 14:23:46 robert Exp $
+$OpenBSD: patch-gpu_ipc_service_gpu_init_cc,v 1.5 2017/09/09 19:16:43 robert Exp $
 
 Index: gpu/ipc/service/gpu_init.cc
 --- gpu/ipc/service/gpu_init.cc.orig
 +++ gpu/ipc/service/gpu_init.cc
-@@ -113,7 +113,7 @@ void CollectGraphicsInfo(gpu::GPUInfo& gpu_info) {
+@@ -118,7 +118,7 @@ void CollectGraphicsInfo(gpu::GPUInfo& gpu_info) {
  }
  #endif  // defined(OS_MACOSX)
  
@@ -12,7 +12,7 @@ Index: gpu/ipc/service/gpu_init.cc
  bool CanAccessNvidiaDeviceFile() {
    bool res = true;
    base::ThreadRestrictions::AssertIOAllowed();
-@@ -183,7 +183,7 @@ bool GpuInit::InitializeAndStartSandbox(const base::Co
+@@ -188,7 +188,7 @@ bool GpuInit::InitializeAndStartSandbox(const base::Co
    // Get vendor_id, device_id, driver_version from browser process through
    // commandline switches.
    GetGpuInfoFromCommandLine(gpu_info_, command_line);
@@ -21,7 +21,7 @@ Index: gpu/ipc/service/gpu_init.cc
    if (gpu_info_.gpu.vendor_id == 0x10de &&  // NVIDIA
        gpu_info_.driver_vendor == "NVIDIA" && !CanAccessNvidiaDeviceFile())
      return false;
-@@ -196,7 +196,7 @@ bool GpuInit::InitializeAndStartSandbox(const base::Co
+@@ -201,7 +201,7 @@ bool GpuInit::InitializeAndStartSandbox(const base::Co
    sandbox_helper_->PreSandboxStartup();
  
    bool attempted_startsandbox = false;

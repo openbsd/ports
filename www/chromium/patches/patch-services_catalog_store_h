@@ -1,10 +1,12 @@
-$OpenBSD: patch-services_catalog_store_h,v 1.1 2017/04/28 14:21:00 robert Exp $
---- services/catalog/store.h.orig.port	Thu Apr 27 21:30:30 2017
-+++ services/catalog/store.h	Thu Apr 27 21:30:36 2017
-@@ -33,6 +33,7 @@ class Store {
-   static const char kRequiredFilesKey_PlatformValue_Linux[];
+$OpenBSD: patch-services_catalog_store_h,v 1.2 2017/09/09 19:16:43 robert Exp $
+
+Index: services/catalog/store.h
+--- services/catalog/store.h.orig
++++ services/catalog/store.h
+@@ -34,6 +34,7 @@ class Store {
    static const char kRequiredFilesKey_PlatformValue_MacOSX[];
    static const char kRequiredFilesKey_PlatformValue_Android[];
+   static const char kRequiredFilesKey_PlatformValue_Fuchsia[];
 +  static const char kRequiredFilesKey_PlatformValue_OpenBSD[];
  };
  

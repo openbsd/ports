@@ -1,23 +1,23 @@
-$OpenBSD: patch-third_party_WebKit_Source_platform_fonts_FontCache_h,v 1.8 2017/06/25 21:53:56 robert Exp $
+$OpenBSD: patch-third_party_WebKit_Source_platform_fonts_FontCache_h,v 1.9 2017/09/09 19:16:43 robert Exp $
 
 Index: third_party/WebKit/Source/platform/fonts/FontCache.h
 --- third_party/WebKit/Source/platform/fonts/FontCache.h.orig
 +++ third_party/WebKit/Source/platform/fonts/FontCache.h
-@@ -144,7 +144,7 @@ class PLATFORM_EXPORT FontCache {
+@@ -165,7 +165,7 @@ class PLATFORM_EXPORT FontCache {
  #else
    static const AtomicString& LegacySystemFontFamily();
  #endif
--#if OS(LINUX) || OS(ANDROID)
-+#if OS(LINUX) || OS(ANDROID) || OS(OPENBSD)
+-#if defined(OS_LINUX) || defined(OS_ANDROID)
++#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
    static void SetSystemFontFamily(const AtomicString&);
  #endif
  
-@@ -259,7 +259,7 @@ class PLATFORM_EXPORT FontCache {
+@@ -282,7 +282,7 @@ class PLATFORM_EXPORT FontCache {
                                     const FontFaceCreationParams&,
                                     CString& name);
  
--#if OS(ANDROID) || OS(LINUX)
-+#if OS(ANDROID) || OS(LINUX) || OS(OPENBSD)
+-#if defined(OS_ANDROID) || defined(OS_LINUX)
++#if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_BSD)
    static AtomicString GetFamilyNameForCharacter(SkFontMgr*,
                                                  UChar32,
                                                  const FontDescription&,

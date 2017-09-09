@@ -1,0 +1,14 @@
+$OpenBSD: patch-third_party_WebKit_Source_core_html_forms_InternalPopupMenu_cpp,v 1.1 2017/09/09 19:16:43 robert Exp $
+
+Index: third_party/WebKit/Source/core/html/forms/InternalPopupMenu.cpp
+--- third_party/WebKit/Source/core/html/forms/InternalPopupMenu.cpp.orig
++++ third_party/WebKit/Source/core/html/forms/InternalPopupMenu.cpp
+@@ -157,7 +157,7 @@ class InternalPopupMenu::ItemIterationContext {
+         is_in_group_(false),
+         buffer_(buffer) {
+     DCHECK(buffer_);
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+     // On other platforms, the <option> background color is the same as the
+     // <select> background color. On Linux, that makes the <option>
+     // background color very dark, so by default, try to use a lighter

@@ -1,8 +1,8 @@
-$OpenBSD: patch-storage_browser_quota_quota_settings_cc,v 1.2 2017/06/25 21:53:56 robert Exp $
+$OpenBSD: patch-storage_browser_quota_quota_settings_cc,v 1.3 2017/09/09 19:16:43 robert Exp $
 Index: storage/browser/quota/quota_settings.cc
 --- storage/browser/quota/quota_settings.cc.orig
 +++ storage/browser/quota/quota_settings.cc
-@@ -78,7 +78,7 @@ base::Optional<storage::QuotaSettings> CalculateNomina
+@@ -79,7 +79,7 @@ base::Optional<storage::QuotaSettings> CalculateNomina
        1000 * kMBytes;
  #elif defined(OS_CHROMEOS)
        1000 * kMBytes;

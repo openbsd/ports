@@ -1,8 +1,8 @@
-$OpenBSD: patch-ui_views_controls_label_cc,v 1.5 2017/07/27 14:23:46 robert Exp $
+$OpenBSD: patch-ui_views_controls_label_cc,v 1.6 2017/09/09 19:16:43 robert Exp $
 Index: ui/views/controls/label.cc
 --- ui/views/controls/label.cc.orig
 +++ ui/views/controls/label.cc
-@@ -568,7 +568,7 @@ bool Label::OnMousePressed(const ui::MouseEvent& event
+@@ -560,7 +560,7 @@ bool Label::OnMousePressed(const ui::MouseEvent& event
      GetFocusManager()->SetFocusedView(this);
    }
  
@@ -11,7 +11,7 @@ Index: ui/views/controls/label.cc
    if (event.IsOnlyMiddleMouseButton() && GetFocusManager() && !had_focus)
      GetFocusManager()->SetFocusedView(this);
  #endif
-@@ -743,7 +743,7 @@ bool Label::PasteSelectionClipboard() {
+@@ -735,7 +735,7 @@ bool Label::PasteSelectionClipboard() {
  }
  
  void Label::UpdateSelectionClipboard() {

@@ -1,4 +1,4 @@
-$OpenBSD: patch-pdf_pdfium_pdfium_engine_cc,v 1.19 2017/07/27 14:23:46 robert Exp $
+$OpenBSD: patch-pdf_pdfium_pdfium_engine_cc,v 1.20 2017/09/09 19:16:43 robert Exp $
 
 Index: pdf/pdfium/pdfium_engine.cc
 --- pdf/pdfium/pdfium_engine.cc.orig
@@ -30,7 +30,7 @@ Index: pdf/pdfium/pdfium_engine.cc
    delete g_font_info;
  #endif
    TearDownV8();
-@@ -766,7 +766,7 @@ PDFiumEngine::PDFiumEngine(PDFEngine::Client* client)
+@@ -768,7 +768,7 @@ PDFiumEngine::PDFiumEngine(PDFEngine::Client* client)
    IFSDK_PAUSE::user = nullptr;
    IFSDK_PAUSE::NeedToPauseNow = Pause_NeedToPauseNow;
  
@@ -39,7 +39,7 @@ Index: pdf/pdfium/pdfium_engine.cc
    // PreviewModeClient does not know its pp::Instance.
    pp::Instance* instance = client_->GetPluginInstance();
    if (instance)
-@@ -1496,7 +1496,7 @@ pp::Buffer_Dev PDFiumEngine::PrintPagesAsRasterPDF(
+@@ -1494,7 +1494,7 @@ pp::Buffer_Dev PDFiumEngine::PrintPagesAsRasterPDF(
      FPDF_ClosePage(pdf_page);
    }
  
@@ -48,7 +48,7 @@ Index: pdf/pdfium/pdfium_engine.cc
    g_last_instance_id = client_->GetPluginInstance()->pp_instance();
  #endif
  
-@@ -2918,7 +2918,7 @@ bool PDFiumEngine::ContinuePaint(int progressive_index
+@@ -2977,7 +2977,7 @@ bool PDFiumEngine::ContinuePaint(int progressive_index
    DCHECK_LT(static_cast<size_t>(progressive_index), progressive_paints_.size());
    DCHECK(image_data);
  
@@ -57,7 +57,7 @@ Index: pdf/pdfium/pdfium_engine.cc
    g_last_instance_id = client_->GetPluginInstance()->pp_instance();
  #endif
  
-@@ -3368,7 +3368,7 @@ void PDFiumEngine::SetCurrentPage(int index) {
+@@ -3439,7 +3439,7 @@ void PDFiumEngine::SetCurrentPage(int index) {
      FORM_DoPageAAction(old_page, form_, FPDFPAGE_AACTION_CLOSE);
    }
    most_visible_page_ = index;

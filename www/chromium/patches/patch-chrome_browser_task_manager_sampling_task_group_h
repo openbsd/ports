@@ -1,7 +1,8 @@
-$OpenBSD: patch-chrome_browser_task_manager_sampling_task_group_h,v 1.3 2017/04/28 14:21:00 robert Exp $
---- chrome/browser/task_manager/sampling/task_group.h.orig.port	Wed Apr 19 21:06:30 2017
-+++ chrome/browser/task_manager/sampling/task_group.h	Thu Apr 27 19:56:00 2017
-@@ -96,7 +96,7 @@ class TaskGroup {
+$OpenBSD: patch-chrome_browser_task_manager_sampling_task_group_h,v 1.4 2017/09/09 19:16:43 robert Exp $
+Index: chrome/browser/task_manager/sampling/task_group.h
+--- chrome/browser/task_manager/sampling/task_group.h.orig
++++ chrome/browser/task_manager/sampling/task_group.h
+@@ -99,7 +99,7 @@ class TaskGroup {
    int nacl_debug_stub_port() const { return nacl_debug_stub_port_; }
  #endif  // !defined(DISABLE_NACL)
  
@@ -10,7 +11,7 @@ $OpenBSD: patch-chrome_browser_task_manager_sampling_task_group_h,v 1.3 2017/04/
    int open_fd_count() const { return open_fd_count_; }
  #endif  // defined(OS_LINUX)
  
-@@ -124,7 +124,7 @@ class TaskGroup {
+@@ -127,7 +127,7 @@ class TaskGroup {
  
    void OnIdleWakeupsRefreshDone(int idle_wakeups_per_second);
  
@@ -19,7 +20,7 @@ $OpenBSD: patch-chrome_browser_task_manager_sampling_task_group_h,v 1.3 2017/04/
    void OnOpenFdCountRefreshDone(int open_fd_count);
  #endif  // defined(OS_LINUX)
  
-@@ -174,7 +174,7 @@ class TaskGroup {
+@@ -182,7 +182,7 @@ class TaskGroup {
    int nacl_debug_stub_port_;
  #endif  // !defined(DISABLE_NACL)
    int idle_wakeups_per_second_;

@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_process_process_metrics_h,v 1.8 2017/07/27 14:23:46 robert Exp $
+$OpenBSD: patch-base_process_process_metrics_h,v 1.9 2017/09/09 19:16:43 robert Exp $
 
 Index: base/process/process_metrics.h
 --- base/process/process_metrics.h.orig
@@ -21,7 +21,7 @@ Index: base/process/process_metrics.h
    // Bytes of swap as reported by /proc/[pid]/status.
    uint64_t GetVmSwapBytes() const;
  #endif  // defined(OS_LINUX) || defined(OS_ANDROID)
-@@ -304,7 +304,7 @@ BASE_EXPORT void SetFdLimit(unsigned int max_descripto
+@@ -307,7 +307,7 @@ BASE_EXPORT void SetFdLimit(unsigned int max_descripto
  #endif  // defined(OS_POSIX)
  
  #if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || \
@@ -30,7 +30,7 @@ Index: base/process/process_metrics.h
  // Data about system-wide memory consumption. Values are in KB. Available on
  // Windows, Mac, Linux, Android and Chrome OS.
  //
-@@ -352,7 +352,7 @@ struct BASE_EXPORT SystemMemoryInfoKB {
+@@ -355,7 +355,7 @@ struct BASE_EXPORT SystemMemoryInfoKB {
  #endif
  
  #if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_AIX) || \

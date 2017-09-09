@@ -1,12 +1,12 @@
-$OpenBSD: patch-chrome_app_chrome_main_cc,v 1.2 2017/07/27 14:23:46 robert Exp $
+$OpenBSD: patch-chrome_app_chrome_main_cc,v 1.3 2017/09/09 19:16:43 robert Exp $
 
 Index: chrome/app/chrome_main.cc
 --- chrome/app/chrome_main.cc.orig
 +++ chrome/app/chrome_main.cc
-@@ -92,7 +92,7 @@ int ChromeMain(int argc, const char** argv) {
-   const base::CommandLine* command_line(base::CommandLine::ForCurrentProcess());
+@@ -99,7 +99,7 @@ int ChromeMain(int argc, const char** argv) {
    ALLOW_UNUSED_LOCAL(command_line);
  
+   // Chrome-specific process modes.
 -#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN)
 +#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN) || defined(OS_BSD)
    if (command_line->HasSwitch(switches::kHeadless)) {

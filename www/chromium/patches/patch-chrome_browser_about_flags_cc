@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_about_flags_cc,v 1.36 2017/07/27 14:23:46 robert Exp $
+$OpenBSD: patch-chrome_browser_about_flags_cc,v 1.37 2017/09/09 19:16:43 robert Exp $
 
 Index: chrome/browser/about_flags.cc
 --- chrome/browser/about_flags.cc.orig
 +++ chrome/browser/about_flags.cc
-@@ -799,7 +799,7 @@ const FeatureEntry::FeatureVariation
+@@ -873,7 +873,7 @@ const FeatureEntry::FeatureVariation
           arraysize(kSpeculativeResourcePrefetchingLearning), nullptr}};
  
  #if defined(OS_CHROMEOS) || defined(OS_LINUX) || defined(OS_MACOSX) || \
@@ -12,7 +12,7 @@ Index: chrome/browser/about_flags.cc
  const FeatureEntry::FeatureParam kPauseBackgroundTabsMinimalEngagment[] = {
      {pausetabs::kFeatureName, pausetabs::kModeParamMinimal}};
  
-@@ -1730,7 +1730,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -1796,7 +1796,7 @@ const FeatureEntry kFeatureEntries[] = {
       ENABLE_DISABLE_VALUE_TYPE(switches::kEnableTranslateNewUX,
                                 switches::kDisableTranslateNewUX)},
  #endif  // OS_MACOSX
@@ -21,7 +21,7 @@ Index: chrome/browser/about_flags.cc
      {"translate-2016q2-ui", flag_descriptions::kTranslate2016q2UiName,
       flag_descriptions::kTranslate2016q2UiDescription,
       kOsCrOS | kOsWin | kOsLinux,
-@@ -2238,7 +2238,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -2305,7 +2305,7 @@ const FeatureEntry kFeatureEntries[] = {
       flag_descriptions::kEnableMaterialDesignExtensionsDescription, kOsDesktop,
       FEATURE_VALUE_TYPE(features::kMaterialDesignExtensions)},
  #endif  // ENABLE_EXTENSIONS
@@ -30,7 +30,7 @@ Index: chrome/browser/about_flags.cc
      {"enable-input-ime-api", flag_descriptions::kEnableInputImeApiName,
       flag_descriptions::kEnableInputImeApiDescription, kOsWin | kOsLinux,
       ENABLE_DISABLE_VALUE_TYPE(switches::kEnableInputImeAPI,
-@@ -2806,7 +2806,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -2881,7 +2881,7 @@ const FeatureEntry kFeatureEntries[] = {
       FEATURE_VALUE_TYPE(omnibox::kNewOmniboxAnswerTypes)},
  
  #if defined(OS_CHROMEOS) || defined(OS_LINUX) || defined(OS_MACOSX) || \
@@ -39,7 +39,7 @@ Index: chrome/browser/about_flags.cc
      {"omnibox-entity-suggestions",
       flag_descriptions::kOmniboxEntitySuggestionsName,
       flag_descriptions::kOmniboxEntitySuggestionsDescription, kOsDesktop,
-@@ -2885,7 +2885,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -2961,7 +2961,7 @@ const FeatureEntry kFeatureEntries[] = {
  #endif  // OS_ANDROID
  
  #if defined(OS_CHROMEOS) || defined(OS_LINUX) || defined(OS_MACOSX) || \

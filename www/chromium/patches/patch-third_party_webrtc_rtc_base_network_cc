@@ -1,6 +1,8 @@
-$OpenBSD: patch-third_party_webrtc_base_network_cc,v 1.15 2017/04/28 14:21:00 robert Exp $
---- third_party/webrtc/base/network.cc.orig.port	Wed Apr 19 21:07:52 2017
-+++ third_party/webrtc/base/network.cc	Thu Apr 27 19:56:04 2017
+$OpenBSD: patch-third_party_webrtc_rtc_base_network_cc,v 1.1 2017/09/09 19:16:43 robert Exp $
+
+Index: third_party/webrtc/rtc_base/network.cc
+--- third_party/webrtc/rtc_base/network.cc.orig
++++ third_party/webrtc/rtc_base/network.cc
 @@ -14,7 +14,7 @@
  // linux/if.h can't be included at the same time as the posix sys/if.h, and
  // it's transitively required by linux/route.h, so include that version on

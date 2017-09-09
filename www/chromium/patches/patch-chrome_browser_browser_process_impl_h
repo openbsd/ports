@@ -1,13 +1,13 @@
-$OpenBSD: patch-chrome_browser_browser_process_impl_h,v 1.10 2017/06/25 21:53:56 robert Exp $
+$OpenBSD: patch-chrome_browser_browser_process_impl_h,v 1.11 2017/09/09 19:16:43 robert Exp $
 Index: chrome/browser/browser_process_impl.h
 --- chrome/browser/browser_process_impl.h.orig
 +++ chrome/browser/browser_process_impl.h
-@@ -343,7 +343,7 @@ class BrowserProcessImpl : public BrowserProcess,
+@@ -345,7 +345,7 @@ class BrowserProcessImpl : public BrowserProcess,
  
    std::unique_ptr<ChromeDeviceClient> device_client_;
  
 -#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
 +#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
    // Any change to this #ifdef must be reflected as well in
-   // chrome/browser/memory/tab_manager_browsertest.cc
-   std::unique_ptr<memory::TabManager> tab_manager_;
+   // chrome/browser/resource_coordinator/tab_manager_browsertest.cc
+   std::unique_ptr<resource_coordinator::TabManager> tab_manager_;

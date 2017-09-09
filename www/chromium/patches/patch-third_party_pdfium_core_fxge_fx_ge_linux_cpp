@@ -1,7 +1,8 @@
-$OpenBSD: patch-third_party_pdfium_core_fxge_ge_fx_ge_linux_cpp,v 1.5 2017/07/27 14:23:46 robert Exp $
-Index: third_party/pdfium/core/fxge/ge/fx_ge_linux.cpp
---- third_party/pdfium/core/fxge/ge/fx_ge_linux.cpp.orig
-+++ third_party/pdfium/core/fxge/ge/fx_ge_linux.cpp
+$OpenBSD: patch-third_party_pdfium_core_fxge_fx_ge_linux_cpp,v 1.1 2017/09/09 19:16:43 robert Exp $
+
+Index: third_party/pdfium/core/fxge/fx_ge_linux.cpp
+--- third_party/pdfium/core/fxge/fx_ge_linux.cpp.orig
++++ third_party/pdfium/core/fxge/fx_ge_linux.cpp
 @@ -149,9 +149,8 @@ std::unique_ptr<IFX_SystemFontInfo> IFX_SystemFontInfo
      const char** pUserPaths) {
    auto pInfo = pdfium::MakeUnique<CFX_LinuxFontInfo>();

@@ -1,9 +1,9 @@
-$OpenBSD: patch-build_config_compiler_BUILD_gn,v 1.9 2017/07/27 14:23:46 robert Exp $
+$OpenBSD: patch-build_config_compiler_BUILD_gn,v 1.10 2017/09/09 19:16:43 robert Exp $
 
 Index: build/config/compiler/BUILD.gn
 --- build/config/compiler/BUILD.gn.orig
 +++ build/config/compiler/BUILD.gn
-@@ -45,7 +45,7 @@ declare_args() {
+@@ -46,7 +46,7 @@ declare_args() {
    # only two architectures that are currently checked in). Turn this off when
    # you are using a custom toolchain and need to control -B in cflags.
    linux_use_bundled_binutils =
@@ -12,7 +12,7 @@ Index: build/config/compiler/BUILD.gn
        (current_cpu == "x64" || current_cpu == "x86")
    binutils_path = rebase_path("//third_party/binutils/Linux_x64/Release/bin",
                                root_build_dir)
-@@ -219,7 +219,7 @@ config("compiler") {
+@@ -222,7 +222,7 @@ config("compiler") {
      # Linker warnings.
      if (fatal_linker_warnings && !(is_chromeos && current_cpu == "arm") &&
          !(is_android && use_order_profiling) && !is_mac && !is_ios &&
@@ -21,7 +21,7 @@ Index: build/config/compiler/BUILD.gn
        # TODO(jochen): Enable this on chromeos on arm. http://crbug.com/356580
        # TODO(lizeb,pasko): Fix link errors when linking with order_profiling=1
        # crbug.com/485542
-@@ -282,7 +282,7 @@ config("compiler") {
+@@ -285,7 +285,7 @@ config("compiler") {
        }
      }
  
@@ -30,16 +30,16 @@ Index: build/config/compiler/BUILD.gn
        # Explicitly pass --build-id to ld. Compilers used to always pass this
        # implicitly but don't any more (in particular clang when built without
        # ENABLE_LINKER_BUILD_ID=ON). The crash infrastructure does need a build
-@@ -331,7 +331,7 @@ config("compiler") {
+@@ -334,8 +334,6 @@ config("compiler") {
        "-Wl,-z,relro",
      ]
      if (!using_sanitizer) {
--      if (!use_cfi_diag) {
-+      if (!use_cfi_diag && !is_openbsd) {
-         ldflags += [ "-Wl,-z,defs" ]
-       }
- 
-@@ -1111,7 +1111,7 @@ config("default_warnings") {
+-      ldflags += [ "-Wl,-z,defs" ]
+-
+       # Functions interposed by the sanitizers can make ld think
+       # that some libraries aren't needed when they actually are,
+       # http://crbug.com/234010. As workaround, disable --as-needed.
+@@ -1164,7 +1162,7 @@ config("default_warnings") {
          "-Wno-address-of-packed-member",
  
          # TODO(hans): https://crbug.com/681136
@@ -48,12 +48,12 @@ Index: build/config/compiler/BUILD.gn
  
          # TODO(thakis ): https://crbug.com/683349
          "-Wno-user-defined-warnings",
-@@ -1669,7 +1669,7 @@ config("symbols") {
-         "-g2",
-       ]
-     } else {
--      cflags = [ "-g2" ]
-+      cflags = [ "-g0" ]
+@@ -1734,7 +1732,7 @@ config("symbols") {
+         # "-gdwarf-3" doesn't work with dump_syms in Chrome OS.
+         cflags += [ "-gdwarf-3" ]
+       }
+-      cflags += [ "-g2" ]
++      cflags += [ "-g0" ]
      }
      if (use_debug_fission) {
        cflags += [ "-gsplit-dwarf" ]

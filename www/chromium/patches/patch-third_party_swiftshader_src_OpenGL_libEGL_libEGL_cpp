@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_swiftshader_src_OpenGL_libEGL_libEGL_cpp,v 1.2 2017/07/27 14:23:46 robert Exp $
+$OpenBSD: patch-third_party_swiftshader_src_OpenGL_libEGL_libEGL_cpp,v 1.3 2017/09/09 19:16:43 robert Exp $
 
 Index: third_party/swiftshader/src/OpenGL/libEGL/libEGL.cpp
 --- third_party/swiftshader/src/OpenGL/libEGL/libEGL.cpp.orig
@@ -17,25 +17,25 @@ Index: third_party/swiftshader/src/OpenGL/libEGL/libEGL.cpp
  	}
  
 -	#if defined(__linux__) && !defined(__ANDROID__)
-+	#if (defined(__linux__) || defined(__OpenBSD__)) && !defined(__ANDROID__)
++	#if (defined(__linux__) && !defined(__ANDROID__)) || defined(__OpenBSD__)
  		if(!libX11)
  		{
  			return success(HEADLESS_DISPLAY);
-@@ -171,7 +171,7 @@ const char *QueryString(EGLDisplay dpy, EGLint name)
- {
- 	TRACE("(EGLDisplay dpy = %p, EGLint name = %d)", dpy, name);
- 
--	#if defined(__linux__) && !defined(__ANDROID__)
-+	#if (defined(__linux__) || defined(__OpenBSD__)) && !defined(__ANDROID__)
- 		if(dpy == EGL_NO_DISPLAY && name == EGL_EXTENSIONS)
- 		{
- 			return success("EGL_KHR_platform_gbm "
-@@ -1059,7 +1059,7 @@ EGLDisplay GetPlatformDisplayEXT(EGLenum platform, voi
+@@ -174,7 +174,7 @@ const char *QueryString(EGLDisplay dpy, EGLint name)
+ 	if(dpy == EGL_NO_DISPLAY && name == EGL_EXTENSIONS)
+ 	{
+ 		return success(
+-#if defined(__linux__) && !defined(__ANDROID__)
++#if (defined(__linux__) && !defined(__ANDROID__)) || defined(__OpenBSD__)
+ 			"EGL_KHR_platform_gbm "
+ 			"EGL_KHR_platform_x11 "
+ #endif
+@@ -1073,7 +1073,7 @@ EGLDisplay GetPlatformDisplayEXT(EGLenum platform, voi
  {
  	TRACE("(EGLenum platform = 0x%X, void *native_display = %p, const EGLint *attrib_list = %p)", platform, native_display, attrib_list);
  
 -	#if defined(__linux__) && !defined(__ANDROID__)
-+	#if (defined(__linux__) || defined(__OpenBSD__)) && !defined(__ANDROID__)
++	#if (defined(__linux__) && !defined(__ANDROID__)) || defined(__OpenBSD__)
  		switch(platform)
  		{
  		case EGL_PLATFORM_X11_EXT: break;

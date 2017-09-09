@@ -1,9 +1,9 @@
-$OpenBSD: patch-base_files_memory_mapped_file_posix_cc,v 1.1 2017/07/27 14:23:46 robert Exp $
+$OpenBSD: patch-base_files_memory_mapped_file_posix_cc,v 1.2 2017/09/09 19:16:43 robert Exp $
 
 Index: base/files/memory_mapped_file_posix.cc
 --- base/files/memory_mapped_file_posix.cc.orig
 +++ base/files/memory_mapped_file_posix.cc
-@@ -114,7 +114,7 @@ bool MemoryMappedFile::MapFileRegionToMemory(
+@@ -116,7 +116,7 @@ bool MemoryMappedFile::MapFileRegionToMemory(
  
  #if defined(OS_ANDROID) && __ANDROID_API__ < 21
        do_manual_extension = true;

@@ -1,7 +1,8 @@
-$OpenBSD: patch-third_party_pdfium_fpdfsdk_javascript_JS_Value_cpp,v 1.4 2017/03/14 12:18:54 robert Exp $
---- third_party/pdfium/fpdfsdk/javascript/JS_Value.cpp.orig.port	Thu Mar  9 21:05:26 2017
-+++ third_party/pdfium/fpdfsdk/javascript/JS_Value.cpp	Fri Mar 10 07:46:25 2017
-@@ -469,7 +469,12 @@ double _getLocalTZA() {
+$OpenBSD: patch-third_party_pdfium_fpdfsdk_javascript_JS_Value_cpp,v 1.5 2017/09/09 19:16:43 robert Exp $
+Index: third_party/pdfium/fpdfsdk/javascript/JS_Value.cpp
+--- third_party/pdfium/fpdfsdk/javascript/JS_Value.cpp.orig
++++ third_party/pdfium/fpdfsdk/javascript/JS_Value.cpp
+@@ -44,7 +44,12 @@ double GetLocalTZA() {
    long timezone = 0;
    _get_timezone(&timezone);
  #endif
@@ -13,4 +14,4 @@ $OpenBSD: patch-third_party_pdfium_fpdfsdk_javascript_JS_Value_cpp,v 1.4 2017/03
 +#endif
  }
  
- int _getDaylightSavingTA(double d) {
+ int GetDaylightSavingTA(double d) {

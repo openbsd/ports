@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_process_singleton_posix_cc,v 1.11 2017/07/27 14:23:46 robert Exp $
+$OpenBSD: patch-chrome_browser_process_singleton_posix_cc,v 1.12 2017/09/09 19:16:43 robert Exp $
 Index: chrome/browser/process_singleton_posix.cc
 --- chrome/browser/process_singleton_posix.cc.orig
 +++ chrome/browser/process_singleton_posix.cc
@@ -16,16 +16,16 @@ Index: chrome/browser/process_singleton_posix.cc
  #include "ui/views/linux_ui/linux_ui.h"
  #endif
  
-@@ -324,7 +324,7 @@ bool DisplayProfileInUseError(const base::FilePath& lo
+@@ -325,7 +325,7 @@ bool DisplayProfileInUseError(const base::FilePath& lo
    if (g_disable_prompt)
-     return false;
+     return g_user_opted_unlock_in_use_profile;
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
    base::string16 relaunch_button_text = l10n_util::GetStringUTF16(
        IDS_PROFILE_IN_USE_LINUX_RELAUNCH);
    return ShowProcessSingletonDialog(error, relaunch_button_text);
-@@ -889,7 +889,7 @@ ProcessSingleton::NotifyResult ProcessSingleton::Notif
+@@ -893,7 +893,7 @@ ProcessSingleton::NotifyResult ProcessSingleton::Notif
      SendRemoteProcessInteractionResultHistogram(REMOTE_PROCESS_SHUTTING_DOWN);
      return PROCESS_NONE;
    } else if (strncmp(buf, kACKToken, arraysize(kACKToken) - 1) == 0) {

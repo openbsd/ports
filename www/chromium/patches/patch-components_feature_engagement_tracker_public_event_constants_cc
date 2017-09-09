@@ -1,0 +1,23 @@
+$OpenBSD: patch-components_feature_engagement_tracker_public_event_constants_cc,v 1.1 2017/09/09 19:16:43 robert Exp $
+
+Index: components/feature_engagement_tracker/public/event_constants.cc
+--- components/feature_engagement_tracker/public/event_constants.cc.orig
++++ components/feature_engagement_tracker/public/event_constants.cc
+@@ -8,7 +8,7 @@ namespace feature_engagement_tracker {
+ 
+ namespace events {
+ 
+-#if defined(OS_WIN) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_BSD)
+ const char kOmniboxInteraction[] = "omnibox_used";
+ 
+ const char kHistoryDeleted[] = "history_deleted";
+@@ -17,7 +17,7 @@ const char kIncognitoWindowOpened[] = "incognito_windo
+ const char kSessionTime[] = "session_time";
+ #endif  // defined(OS_WIN) || defined(OS_LINUX)
+ 
+-#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_IOS)
++#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_IOS) || defined(OS_BSD)
+ const char kNewTabOpened[] = "new_tab_opened";
+ #endif  // defined(OS_WIN) || defined(OS_LINUX) || defined(OS_IOS)
+ 

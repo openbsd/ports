@@ -1,0 +1,14 @@
+$OpenBSD: patch-components_feature_engagement_tracker_public_feature_constants_h,v 1.1 2017/09/09 19:16:43 robert Exp $
+
+Index: components/feature_engagement_tracker/public/feature_constants.h
+--- components/feature_engagement_tracker/public/feature_constants.h.orig
++++ components/feature_engagement_tracker/public/feature_constants.h
+@@ -27,7 +27,7 @@ extern const base::Feature kIPHDownloadPageFeature;
+ extern const base::Feature kIPHDownloadPageScreenshotFeature;
+ #endif  // defined(OS_ANDROID)
+ 
+-#if defined(OS_WIN) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_BSD)
+ extern const base::Feature kIPHIncognitoWindowFeature;
+ extern const base::Feature kIPHNewTabFeature;
+ #endif  // defined(OS_WIN) || defined(OS_LINUX)

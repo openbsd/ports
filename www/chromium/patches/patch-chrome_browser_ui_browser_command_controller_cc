@@ -1,8 +1,8 @@
-$OpenBSD: patch-chrome_browser_ui_browser_command_controller_cc,v 1.23 2017/07/27 14:23:46 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_browser_command_controller_cc,v 1.24 2017/09/09 19:16:43 robert Exp $
 Index: chrome/browser/ui/browser_command_controller.cc
 --- chrome/browser/ui/browser_command_controller.cc.orig
 +++ chrome/browser/ui/browser_command_controller.cc
-@@ -80,7 +80,7 @@
+@@ -78,7 +78,7 @@
  #include "chrome/browser/ui/browser_commands_chromeos.h"
  #endif
  
@@ -11,7 +11,7 @@ Index: chrome/browser/ui/browser_command_controller.cc
  #include "ui/base/ime/linux/text_edit_key_bindings_delegate_auralinux.h"
  #endif
  
-@@ -209,7 +209,7 @@ bool BrowserCommandController::IsReservedCommandOrKey(
+@@ -207,7 +207,7 @@ bool BrowserCommandController::IsReservedCommandOrKey(
  #endif
    }
  
@@ -20,7 +20,7 @@ Index: chrome/browser/ui/browser_command_controller.cc
    // If this key was registered by the user as a content editing hotkey, then
    // it is not reserved.
    ui::TextEditKeyBindingsDelegateAuraLinux* delegate =
-@@ -413,7 +413,7 @@ void BrowserCommandController::ExecuteCommandWithDispo
+@@ -405,7 +405,7 @@ void BrowserCommandController::ExecuteCommandWithDispo
        break;
  #endif
  
@@ -29,7 +29,7 @@ Index: chrome/browser/ui/browser_command_controller.cc
      case IDC_USE_SYSTEM_TITLE_BAR: {
        PrefService* prefs = profile()->GetPrefs();
        prefs->SetBoolean(prefs::kUseCustomChromeFrame,
-@@ -775,7 +775,7 @@ void BrowserCommandController::InitCommandState() {
+@@ -767,7 +767,7 @@ void BrowserCommandController::InitCommandState() {
    command_updater_.UpdateCommandEnabled(IDC_VISIT_DESKTOP_OF_LRU_USER_2, true);
    command_updater_.UpdateCommandEnabled(IDC_VISIT_DESKTOP_OF_LRU_USER_3, true);
  #endif

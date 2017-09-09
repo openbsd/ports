@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_ui_webui_chrome_web_ui_controller_factory_cc,v 1.20 2017/07/27 14:23:46 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_webui_chrome_web_ui_controller_factory_cc,v 1.21 2017/09/09 19:16:43 robert Exp $
 Index: chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc
 --- chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc.orig
 +++ chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc
@@ -11,7 +11,7 @@ Index: chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc
  #include "chrome/browser/ui/webui/sandbox_internals_ui.h"
  #endif
  
-@@ -296,7 +296,7 @@ bool IsAboutUI(const GURL& url) {
+@@ -304,7 +304,7 @@ bool IsAboutUI(const GURL& url) {
  #if defined(OS_CHROMEOS)
            || url.host_piece() == chrome::kChromeUIOSCreditsHost
  #endif
@@ -20,7 +20,7 @@ Index: chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc
            || url.host_piece() == chrome::kChromeUIDiscardsHost
  #endif
            );  // NOLINT
-@@ -561,7 +561,7 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
+@@ -544,7 +544,7 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
    if (url.host_piece() == chrome::kChromeUINaClHost)
      return &NewWebUI<NaClUI>;
  #endif
@@ -29,7 +29,7 @@ Index: chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc
    if (url.host_piece() == chrome::kChromeUITabModalConfirmDialogHost) {
      return &NewWebUI<ConstrainedWebDialogUI>;
    }
-@@ -621,7 +621,7 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
+@@ -615,7 +615,7 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
      return &NewWebUI<CastUI>;
    }
  #endif
