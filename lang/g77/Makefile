@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.39 2017/08/21 19:25:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.40 2017/09/09 21:10:08 phessler Exp $
+
+NOT_FOR_ARCHS =		aarch64
 
 V =			3.3.6
 PKGNAME =		g77-$V
