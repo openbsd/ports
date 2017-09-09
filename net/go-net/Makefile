@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2017/09/08 17:17:18 jsing Exp $
+# $OpenBSD: Makefile,v 1.6 2017/09/09 07:02:38 ajacoutot Exp $
 
 COMMENT =	Go supplementary network libraries
 DISTNAME =	go-net-20170824
@@ -18,7 +18,8 @@ WANTLIB =	c pthread
 
 MODULES =	lang/go
 
-BUILD_DEPENDS =	security/go-crypto \
+BUILD_DEPENDS =	devel/go-sys \
+		security/go-crypto \
 		textproc/go-text
 
 MODGO_TYPE =	lib
