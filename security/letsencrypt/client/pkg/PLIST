@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2017/06/09 14:28:17 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.18 2017/09/09 14:17:10 sthen Exp $
 @extraunexec rm -rf /var/log/certbot/*
 bin/certbot
 bin/letsencrypt
@@ -116,6 +116,7 @@ lib/python${MODPY_VERSION}/site-packages/certbot/reporter.py
 lib/python${MODPY_VERSION}/site-packages/certbot/reporter.pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/reverter.py
 lib/python${MODPY_VERSION}/site-packages/certbot/reverter.pyc
+lib/python${MODPY_VERSION}/site-packages/certbot/ssl-dhparams.pem
 lib/python${MODPY_VERSION}/site-packages/certbot/storage.py
 lib/python${MODPY_VERSION}/site-packages/certbot/storage.pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/
@@ -175,26 +176,26 @@ lib/python${MODPY_VERSION}/site-packages/certbot/tests/reverter_test.pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/storage_test.py
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/storage_test.pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/
-lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/cert-5sans.pem
-lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/cert-san.pem
-lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/cert.b64jose
-lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/cert.der
-lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/cert.pem
+lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/README
+lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/cert-5sans_512.pem
+lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/cert-san_512.pem
+lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/cert_2048.pem
+lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/cert_512.pem
+lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/cert_512_bad.pem
+lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/cert_fullchain_2048.pem
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/cli.ini
-lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/csr-6sans.pem
-lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/csr-nonames.pem
-lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/csr-nosans.pem
-lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/csr-san.pem
-lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/csr.der
-lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/csr.pem
-lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/dsa512_key.pem
-lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/dsa_cert.pem
-lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/matching_cert.pem
+lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/csr-6sans_512.conf
+lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/csr-6sans_512.pem
+lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/csr-nonames_512.pem
+lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/csr-nosans_512.conf
+lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/csr-nosans_512.pem
+lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/csr-san_512.pem
+lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/csr_512.der
+lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/csr_512.pem
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/os-release
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/rsa2048_key.pem
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/rsa256_key.pem
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/rsa512_key.pem
-lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/rsa512_key_2.pem
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/sample-archive/
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/sample-archive/cert1.pem
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/sample-archive/chain1.pem
@@ -202,9 +203,6 @@ lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/sample-archive/f
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/sample-archive/privkey1.pem
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/sample-renewal-ancient.conf
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/sample-renewal.conf
-lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/self_signed_cert.pem
-lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/self_signed_cert_bad.pem
-lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/self_signed_fullchain.pem
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/webrootconftest.ini
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/util.py
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/util.pyc
