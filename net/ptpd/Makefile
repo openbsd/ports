@@ -1,12 +1,15 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 11:35:55 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2017/09/09 21:22:49 naddy Exp $
 
-COMMENT=	Precision Time Protocol daemon
+# ptpd-1.x implements PTPv1 (IEEE 1588-2002)
+# ptpd-2.x implements PTPv2 (IEEE 1588-2008)
+# PTPv2 is not backward compatible with PTPv1.
+PORTROACH=	limit:^1\.
 
-DISTNAME=	ptpd-1.0.0
+COMMENT=	Precision Time Protocol daemon (IEEE 1588-2002)
+
+DISTNAME=	ptpd-1.1.0
 CATEGORIES=	net
 HOMEPAGE=	http://ptpd.sourceforge.net/
-
-MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
 # ISC
 PERMIT_PACKAGE_CDROM=	Yes
