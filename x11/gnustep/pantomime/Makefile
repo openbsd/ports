@@ -1,19 +1,18 @@
-# $OpenBSD: Makefile,v 1.22 2017/07/27 11:01:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2017/09/10 20:27:12 sebastia Exp $
 
 COMMENT=	framework to major mail protocols
 
-REVISION =	5
-DISTNAME=	Pantomime-1.2.2
+DISTNAME=	Pantomime-1.2.3
 
 SHLIB_VERSION = 1.3
 SHARED_LIBS=	Pantomime ${SHLIB_VERSION}
 CATEGORIES=	mail
 
-HOMEPAGE=	http://www.collaboration-world.com/pantomime/
+HOMEPAGE=	https://savannah.nongnu.org/projects/gnustep-nonfsf/
 
 WANTLIB=	ssl
 
-MASTER_SITES=	http://download.gna.org/gnustep-nonfsf/
+MASTER_SITES=	https://download.savannah.nongnu.org/releases/gnustep-nonfsf/
 
 MODULES=	x11/gnustep
 MODGNUSTEP_IS_FRAMEWORK = Yes
