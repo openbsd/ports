@@ -1,4 +1,4 @@
-$OpenBSD: patch-Source_JavaScriptCore_heap_MachineStackMarker_cpp,v 1.4 2017/05/10 10:57:54 ajacoutot Exp $
+$OpenBSD: patch-Source_JavaScriptCore_heap_MachineStackMarker_cpp,v 1.5 2017/09/10 06:38:17 phessler Exp $
 
 XXX no mcontext_t on OpenBSD
 
@@ -29,7 +29,7 @@ Index: Source/JavaScriptCore/heap/MachineStackMarker.cpp
 +#elif CPU(ARM)
 +    return reinterpret_cast<void*>((uintptr_t) regs.machineContext.__gregs[_REG_SP]);
 +#elif CPU(ARM64)
-+    return reinterpret_cast<void*>((uintptr_t) regs.machineContext.mc_gpregs.gp_sp);
++    return reinterpret_cast<void*>((uintptr_t) regs.machineContext.sc_sp);
 +#elif CPU(MIPS)
 +    return reinterpret_cast<void*>((uintptr_t) regs.machineContext.mc_regs[29]);
 +#elif CPU(SPARC64)
@@ -54,7 +54,7 @@ Index: Source/JavaScriptCore/heap/MachineStackMarker.cpp
 +#elif CPU(ARM)
 +    return reinterpret_cast<void*>((uintptr_t) regs.machineContext.__gregs[_REG_FP]);
 +#elif CPU(ARM64)
-+    return reinterpret_cast<void*>((uintptr_t) regs.machineContext.mc_gpregs.gp_x[29]);
++    return reinterpret_cast<void*>((uintptr_t) regs.machineContext.sc_x[29]);
 +#elif CPU(MIPS)
 +    return reinterpret_cast<void*>((uintptr_t) regs.machineContext.mc_regs[30]);
 +#elif CPU(SPARC64)
@@ -79,7 +79,7 @@ Index: Source/JavaScriptCore/heap/MachineStackMarker.cpp
 +#elif CPU(ARM)
 +    return reinterpret_cast<void*>((uintptr_t) regs.machineContext.__gregs[_REG_PC]);
 +#elif CPU(ARM64)
-+    return reinterpret_cast<void*>((uintptr_t) regs.machineContext.mc_gpregs.gp_elr);
++    return reinterpret_cast<void*>((uintptr_t) regs.machineContext.sc_elr);
 +#elif CPU(MIPS)
 +    return reinterpret_cast<void*>((uintptr_t) regs.machineContext.mc_pc);
 +#elif CPU(SPARC64)
@@ -108,7 +108,7 @@ Index: Source/JavaScriptCore/heap/MachineStackMarker.cpp
 +#elif CPU(ARM)
 +    return reinterpret_cast<void*>((uintptr_t) regs.machineContext.__gregs[_REG_R8]);
 +#elif CPU(ARM64)
-+    return reinterpret_cast<void*>((uintptr_t) regs.machineContext.mc_gpregs.gp_x[4]);
++    return reinterpret_cast<void*>((uintptr_t) regs.machineContext.sc_x[4]);
 +#elif CPU(MIPS)
 +    return reinterpret_cast<void*>((uintptr_t) regs.machineContext.mc_regs[12]);
 +#elif CPU(SPARC64)
