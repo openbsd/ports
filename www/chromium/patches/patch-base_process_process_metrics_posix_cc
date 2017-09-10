@@ -1,0 +1,14 @@
+$OpenBSD: patch-base_process_process_metrics_posix_cc,v 1.1 2017/09/10 18:53:12 robert Exp $
+
+Index: base/process/process_metrics_posix.cc
+--- base/process/process_metrics_posix.cc.orig
++++ base/process/process_metrics_posix.cc
+@@ -16,6 +16,8 @@
+ 
+ #if defined(OS_MACOSX)
+ #include <malloc/malloc.h>
++#elif defined(OS_OPENBSD)
++#include <stdlib.h>
+ #else
+ #include <malloc.h>
+ #endif
