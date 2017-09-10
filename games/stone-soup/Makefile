@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2017/07/26 22:45:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2017/09/10 11:13:53 kirby Exp $
 
 BROKEN-hppa =	ICE on dgn-shoals.cc:638
 BROKEN-arm=	tilegen.elf loops burning cpu
@@ -7,7 +7,7 @@ COMMENT = 	dungeon crawl stone soup
 CATEGORIES = 	games
 
 HOMEPAGE = 	http://crawl.develz.org/
-MASTER_SITES = 	https://crawl.develz.org/release/
+MASTER_SITES = 	https://crawl.develz.org/release/${VERSION:R}/
 VERSION = 	0.18.1
 DISTNAME=	stone_soup-${VERSION}-nodeps
 EXTRACT_SUFX=	.tar.xz
