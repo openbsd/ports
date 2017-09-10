@@ -1,19 +1,18 @@
-# $OpenBSD: Makefile,v 1.26 2017/07/27 11:01:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2017/09/10 20:27:45 sebastia Exp $
 
 COMMENT=	GNUstep mail application
 
-DISTNAME =	GNUMail-1.2.2
-REVISION =	5
+DISTNAME =	GNUMail-1.2.3
 SHLIB_VERSION =	2.1
 SHARED_LIBS =	GNUMail ${SHLIB_VERSION}
 CATEGORIES=	mail
 
-HOMEPAGE=	http://www.collaboration-world.com/gnumail
+HOMEPAGE=	https://savannah.nongnu.org/projects/gnustep-nonfsf/
 
 WANTLIB +=	crypto ssl AddressView Addresses Pantomime
 WANTLIB += ${COMPILER_LIBCXX}
 
-MASTER_SITES=	http://download.gna.org/gnustep-nonfsf/
+MASTER_SITES=	https://download.savannah.nongnu.org/releases/gnustep-nonfsf/
 
 MODULES=	x11/gnustep
 LIB_DEPENDS=	x11/gnustep/addresses \

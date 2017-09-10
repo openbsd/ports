@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2014/11/04 14:25:29 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.8 2017/09/10 20:27:45 sebastia Exp $
 bin/GNUMail
 include/GNUMail
 lib/GNUstep/ApplicationSupport/
@@ -46,12 +46,6 @@ lib/GNUstep/ApplicationSupport/GNUMail/Emoticon.bundle/Resources/emoticon-face6.
 lib/GNUstep/ApplicationSupport/GNUMail/Emoticon.bundle/Resources/emoticon-face8.tiff
 lib/GNUstep/ApplicationSupport/GNUMail/Emoticon.bundle/Resources/emoticon-face9.tiff
 lib/GNUstep/ApplicationSupport/GNUMail/Emoticon.bundle/stamp.make
-lib/GNUstep/ApplicationSupport/GNUMail/Face.bundle/
-@bin lib/GNUstep/ApplicationSupport/GNUMail/Face.bundle/Face
-lib/GNUstep/ApplicationSupport/GNUMail/Face.bundle/Resources/
-lib/GNUstep/ApplicationSupport/GNUMail/Face.bundle/Resources/Info-gnustep.plist
-lib/GNUstep/ApplicationSupport/GNUMail/Face.bundle/Resources/stamp.tiff
-lib/GNUstep/ApplicationSupport/GNUMail/Face.bundle/stamp.make
 lib/GNUstep/ApplicationSupport/GNUMail/Filtering.prefs/
 @bin lib/GNUstep/ApplicationSupport/GNUMail/Filtering.prefs/Filtering
 lib/GNUstep/ApplicationSupport/GNUMail/Filtering.prefs/Resources/
@@ -138,8 +132,10 @@ libexec/GNUstep/GNUMail.app/Resources/Address_cc.tiff
 libexec/GNUstep/GNUMail.app/Resources/Address_to.tiff
 libexec/GNUstep/GNUMail.app/Resources/Arabic.lproj/
 libexec/GNUstep/GNUMail.app/Resources/Arabic.lproj/Localizable.strings
+libexec/GNUstep/GNUMail.app/Resources/Arabic.lproj/README
 libexec/GNUstep/GNUMail.app/Resources/Czech.lproj/
 libexec/GNUstep/GNUMail.app/Resources/Czech.lproj/Localizable.strings
+libexec/GNUstep/GNUMail.app/Resources/Czech.lproj/README
 libexec/GNUstep/GNUMail.app/Resources/English.lproj/
 libexec/GNUstep/GNUMail.app/Resources/English.lproj/AboutPanel.nib/
 libexec/GNUstep/GNUMail.app/Resources/English.lproj/AboutPanel.nib/classes.nib
@@ -150,11 +146,19 @@ libexec/GNUstep/GNUMail.app/Resources/English.lproj/AddressBookPanel.nib/
 libexec/GNUstep/GNUMail.app/Resources/English.lproj/AddressBookPanel.nib/classes.nib
 libexec/GNUstep/GNUMail.app/Resources/English.lproj/AddressBookPanel.nib/info.nib
 libexec/GNUstep/GNUMail.app/Resources/English.lproj/AddressBookPanel.nib/keyedobjects.nib
+libexec/GNUstep/GNUMail.app/Resources/English.lproj/ConsoleWindow.gorm/
+libexec/GNUstep/GNUMail.app/Resources/English.lproj/ConsoleWindow.gorm/data.classes
+libexec/GNUstep/GNUMail.app/Resources/English.lproj/ConsoleWindow.gorm/data.info
+libexec/GNUstep/GNUMail.app/Resources/English.lproj/ConsoleWindow.gorm/objects.gorm
 libexec/GNUstep/GNUMail.app/Resources/English.lproj/ConsoleWindow.nib/
 libexec/GNUstep/GNUMail.app/Resources/English.lproj/ConsoleWindow.nib/classes.nib
 libexec/GNUstep/GNUMail.app/Resources/English.lproj/ConsoleWindow.nib/info.nib
 libexec/GNUstep/GNUMail.app/Resources/English.lproj/ConsoleWindow.nib/keyedobjects.nib
 libexec/GNUstep/GNUMail.app/Resources/English.lproj/ConsoleWindow.nib/objects.nib
+libexec/GNUstep/GNUMail.app/Resources/English.lproj/EditWindow.gorm/
+libexec/GNUstep/GNUMail.app/Resources/English.lproj/EditWindow.gorm/data.classes
+libexec/GNUstep/GNUMail.app/Resources/English.lproj/EditWindow.gorm/data.info
+libexec/GNUstep/GNUMail.app/Resources/English.lproj/EditWindow.gorm/objects.gorm
 libexec/GNUstep/GNUMail.app/Resources/English.lproj/EditWindow.nib/
 libexec/GNUstep/GNUMail.app/Resources/English.lproj/EditWindow.nib/classes.nib
 libexec/GNUstep/GNUMail.app/Resources/English.lproj/EditWindow.nib/info.nib
@@ -191,16 +195,22 @@ libexec/GNUstep/GNUMail.app/Resources/English.lproj/NewMailboxPanel.nib/classes.
 libexec/GNUstep/GNUMail.app/Resources/English.lproj/NewMailboxPanel.nib/info.nib
 libexec/GNUstep/GNUMail.app/Resources/English.lproj/NewMailboxPanel.nib/keyedobjects.nib
 libexec/GNUstep/GNUMail.app/Resources/English.lproj/NewMailboxPanel.nib/objects.nib
+libexec/GNUstep/GNUMail.app/Resources/English.lproj/PasswordPanel.gorm/
+libexec/GNUstep/GNUMail.app/Resources/English.lproj/PasswordPanel.gorm/data.classes
+libexec/GNUstep/GNUMail.app/Resources/English.lproj/PasswordPanel.gorm/data.info
+libexec/GNUstep/GNUMail.app/Resources/English.lproj/PasswordPanel.gorm/objects.gorm
 libexec/GNUstep/GNUMail.app/Resources/English.lproj/PasswordPanel.nib/
 libexec/GNUstep/GNUMail.app/Resources/English.lproj/PasswordPanel.nib/classes.nib
 libexec/GNUstep/GNUMail.app/Resources/English.lproj/PasswordPanel.nib/info.nib
-libexec/GNUstep/GNUMail.app/Resources/English.lproj/PasswordPanel.nib/objects.nib
+libexec/GNUstep/GNUMail.app/Resources/English.lproj/PasswordPanel.nib/keyedobjects.nib
 libexec/GNUstep/GNUMail.app/Resources/English.lproj/PreferencesWindow.nib/
 libexec/GNUstep/GNUMail.app/Resources/English.lproj/PreferencesWindow.nib/classes.nib
 libexec/GNUstep/GNUMail.app/Resources/English.lproj/PreferencesWindow.nib/info.nib
 libexec/GNUstep/GNUMail.app/Resources/English.lproj/PreferencesWindow.nib/keyedobjects.nib
+libexec/GNUstep/GNUMail.app/Resources/English.lproj/README
 libexec/GNUstep/GNUMail.app/Resources/French.lproj/
 libexec/GNUstep/GNUMail.app/Resources/French.lproj/Localizable.strings
+libexec/GNUstep/GNUMail.app/Resources/French.lproj/README
 libexec/GNUstep/GNUMail.app/Resources/GNUMail.desktop
 libexec/GNUstep/GNUMail.app/Resources/GNUMail.tiff
 libexec/GNUstep/GNUMail.app/Resources/GNUMail_128.tiff
@@ -208,6 +218,7 @@ libexec/GNUstep/GNUMail.app/Resources/GNUMail_Full.tiff
 libexec/GNUstep/GNUMail.app/Resources/GNUMail_big.tiff
 libexec/GNUstep/GNUMail.app/Resources/German.lproj/
 libexec/GNUstep/GNUMail.app/Resources/German.lproj/Localizable.strings
+libexec/GNUstep/GNUMail.app/Resources/German.lproj/README
 libexec/GNUstep/GNUMail.app/Resources/Info-gnustep.plist
 libexec/GNUstep/GNUMail.app/Resources/Resources/
 libexec/GNUstep/GNUMail.app/Resources/Resources/Arabic.lproj/
@@ -230,13 +241,17 @@ libexec/GNUstep/GNUMail.app/Resources/Resources/Turkish.lproj/
 libexec/GNUstep/GNUMail.app/Resources/Resources/Turkish.lproj/Localizable.strings
 libexec/GNUstep/GNUMail.app/Resources/Russian.lproj/
 libexec/GNUstep/GNUMail.app/Resources/Russian.lproj/Localizable.strings
+libexec/GNUstep/GNUMail.app/Resources/Russian.lproj/README
 libexec/GNUstep/GNUMail.app/Resources/ScriptingInfo.plist
 libexec/GNUstep/GNUMail.app/Resources/Spanish.lproj/
 libexec/GNUstep/GNUMail.app/Resources/Spanish.lproj/Localizable.strings
+libexec/GNUstep/GNUMail.app/Resources/Spanish.lproj/README
 libexec/GNUstep/GNUMail.app/Resources/Swedish.lproj/
 libexec/GNUstep/GNUMail.app/Resources/Swedish.lproj/Localizable.strings
+libexec/GNUstep/GNUMail.app/Resources/Swedish.lproj/README
 libexec/GNUstep/GNUMail.app/Resources/Turkish.lproj/
 libexec/GNUstep/GNUMail.app/Resources/Turkish.lproj/Localizable.strings
+libexec/GNUstep/GNUMail.app/Resources/Turkish.lproj/README
 libexec/GNUstep/GNUMail.app/Resources/Welcome
 libexec/GNUstep/GNUMail.app/Resources/add.tiff
 libexec/GNUstep/GNUMail.app/Resources/add_bcc_32.tiff
