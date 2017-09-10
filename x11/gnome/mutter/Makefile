@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2017/07/24 18:39:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.74 2017/09/10 10:51:04 ajacoutot Exp $
 
 COMMENT=		window and compositing manager
 
@@ -45,7 +45,7 @@ RUN_DEPENDS=		devel/gsettings-desktop-schemas>=3.16.0 \
 CONFIGURE_STYLE=	gnu
 
 # Required by embedded cogl/clutter forks.
-CONFIGURE_ARGS +=	--with-x \
+CONFIGURE_ARGS +=	--with-x
 # cogl
 CONFIGURE_ARGS +=       --with-gl-libname=libGL.so \
                         --with-gles1-libname=libGLESv1_CM \
