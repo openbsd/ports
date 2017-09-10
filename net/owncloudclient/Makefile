@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2017/07/30 14:54:28 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2017/09/10 06:52:10 kirby Exp $
 
 COMMENT =		owncloud sync client
 
-DISTNAME =		owncloudclient-2.3.2
-REVISION =		1
+DISTNAME =		owncloudclient-2.3.3
 
-SHARED_LIBS =		owncloudsync	2.0
-SHARED_LIBS +=		ocsync		2.0
+SHARED_LIBS =		owncloudsync	3.0
+SHARED_LIBS +=		ocsync		3.0
 
 CATEGORIES =		net
 
@@ -24,7 +23,6 @@ MASTER_SITES =		https://download.owncloud.com/desktop/stable/
 EXTRACT_SUFX =		.tar.xz
 
 MODULES =		devel/cmake
-COMPILER =		gcc
 
 RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+3,-guic
@@ -36,9 +34,11 @@ CONFIGURE_ARGS +=	-Wno-dev \
 			-DSYSCONF_INSTALL_DIR=${SYSCONFDIR} \
 			-DCMAKE_C_FLAGS="${CFLAGS} \
 				-I${LOCALBASE}/include/inotify \
+				-I${LOCALBASE}/include/qtkeychain \
 				-I${LOCALBASE}/include" \
 			-DCMAKE_CXX_FLAGS="${CXXFLAGS} \
 				-I${LOCALBASE}/include/inotify \
+				-I${LOCALBASE}/include/qtkeychain \
 				-I${LOCALBASE}/include" \
 			-DCMAKE_EXE_LINKER_FLAGS="${LDFLAGS} \
 				-L${LOCALBASE}/lib/inotify \
@@ -61,7 +61,12 @@ CONFIGURE_ARGS += 	-DBUILD_WITH_QT4=OFF
 MODULES += 		x11/qt4
 WANTLIB += QtDBus QtGui QtNetwork QtSql QtWebKit QtXml qtkeychain
 LIB_DEPENDS += 		security/qtkeychain
-CONFIGURE_ARGS += 	-DBUILD_WITH_QT4=ON
+CONFIGURE_ARGS += 	-DBUILD_WITH_QT4=ON \
+			-DCMAKE_EXE_LINKER_FLAGS="${LDFLAGS} \
+				-L${LOCALBASE}/lib/inotify \
+				-L${LOCALBASE}/lib \
+				-linotify -liconv -lqtkeychain \
+				-Wl,-rpath=${LOCALBASE}/lib/inotify"
 .endif
 
 # see post-extract
