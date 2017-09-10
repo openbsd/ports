@@ -1,9 +1,10 @@
-$OpenBSD: patch-src_cxx_supportlib_vendor-modified_libev_configure,v 1.1 2017/03/27 18:10:55 jeremy Exp $
+$OpenBSD: patch-src_cxx_supportlib_vendor-modified_libev_configure,v 1.2 2017/09/10 19:33:19 jeremy Exp $
 
-Don't pickup gmkdir.
+Force use of mkdir and awk.
 
---- src/cxx_supportlib/vendor-modified/libev/configure.orig	Fri Mar 24 07:51:58 2017
-+++ src/cxx_supportlib/vendor-modified/libev/configure	Fri Mar 24 07:52:17 2017
+Index: src/cxx_supportlib/vendor-modified/libev/configure
+--- src/cxx_supportlib/vendor-modified/libev/configure.orig
++++ src/cxx_supportlib/vendor-modified/libev/configure
 @@ -2521,7 +2521,7 @@ for as_dir in $PATH$PATH_SEPARATOR/opt/sfw/bin
  do
    IFS=$as_save_IFS
@@ -13,3 +14,12 @@ Don't pickup gmkdir.
  	 for ac_exec_ext in '' $ac_executable_extensions; do
  	   as_fn_executable_p "$as_dir/$ac_prog$ac_exec_ext" || continue
  	   case `"$as_dir/$ac_prog$ac_exec_ext" --version 2>&1` in #(
+@@ -2558,7 +2558,7 @@ case $mkdir_p in
+   */*) mkdir_p="\$(top_builddir)/$mkdir_p" ;;
+ esac
+ 
+-for ac_prog in gawk mawk nawk awk
++for ac_prog in awk
+ do
+   # Extract the first word of "$ac_prog", so it can be a program name with args.
+ set dummy $ac_prog; ac_word=$2

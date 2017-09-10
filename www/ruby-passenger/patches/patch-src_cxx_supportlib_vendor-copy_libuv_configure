@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_cxx_supportlib_vendor-copy_libuv_configure,v 1.1 2017/09/10 19:33:19 jeremy Exp $
+
+For use of awk.
+
+Index: src/cxx_supportlib/vendor-copy/libuv/configure
+--- src/cxx_supportlib/vendor-copy/libuv/configure.orig
++++ src/cxx_supportlib/vendor-copy/libuv/configure
+@@ -2667,7 +2667,7 @@ fi
+ { $as_echo "$as_me:${as_lineno-$LINENO}: result: $MKDIR_P" >&5
+ $as_echo "$MKDIR_P" >&6; }
+ 
+-for ac_prog in gawk mawk nawk awk
++for ac_prog in awk
+ do
+   # Extract the first word of "$ac_prog", so it can be a program name with args.
+ set dummy $ac_prog; ac_word=$2
