@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/04/12 20:00:30 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2017/09/11 06:31:44 jca Exp $
 
 COMMENT =	multilanguage reimplementation of the Unix ctags utility
 
@@ -50,6 +50,13 @@ CONFIGURE_ARGS+=	--enable-iconv
 LIB_DEPENDS+=		converters/libiconv
 WANTLIB+=		iconv
 .endif
+
+# Application software must not redefine macros in the
+# implementation namespace.  For example, redefining __unused__
+# blows up in our <ctype.h>.
+post-extract:
+	find ${WRKSRC} -type f -name '*.[ch]' -exec sed -i \
+	's/__unused__/uct_unused/g; s/__printf__/uct_printf/g' {} +
 
 pre-configure:
 	cd ${WRKSRC} && ${SETENV} AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
