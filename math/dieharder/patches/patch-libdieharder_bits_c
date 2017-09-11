@@ -1,0 +1,16 @@
+$OpenBSD: patch-libdieharder_bits_c,v 1.1.1.1 2017/09/11 18:29:52 jasper Exp $
+
+Fix format strings.
+
+Index: libdieharder/bits.c
+--- libdieharder/bits.c.orig
++++ libdieharder/bits.c
+@@ -1176,7 +1176,7 @@ void get_rand_bits(void *result,unsigned int rsize,uns
+  output = (char *)&bits_output[BRBUF]-rsize;
+  resultp = (char *)result;
+  MYDEBUG(D_BITS) {
+-   printf("rsize = %d  output address = %p result address = %p\n",rsize,output,resultp);
++   printf("rsize = %d  output address = %s result address = %s\n",rsize,output,resultp);
+  }
+ 
+  /* copy them over characterwise */

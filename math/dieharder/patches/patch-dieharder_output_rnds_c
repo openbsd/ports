@@ -1,0 +1,34 @@
+$OpenBSD: patch-dieharder_output_rnds_c,v 1.1.1.1 2017/09/11 18:29:52 jasper Exp $
+
+Fix format strings.
+
+Index: dieharder/output_rnds.c
+--- dieharder/output_rnds.c.orig
++++ dieharder/output_rnds.c
+@@ -23,7 +23,7 @@ void output_rnds()
+  FILE *fp;
+ 
+  if(verbose) {
+-   fprintf(stderr,"# output_rnds: Dumping %lu rands\n",tsamples);
++   fprintf(stderr,"# output_rnds: Dumping %lld rands\n",tsamples);
+  }
+ 
+  /*
+@@ -118,7 +118,7 @@ void output_rnds()
+      fprintf(fp,"#==================================================================\n");
+      fprintf(fp,"# generator %s  seed = %lu\n",gsl_rng_name(rng),seed);
+      fprintf(fp,"#==================================================================\n");
+-     fprintf(fp,"type: d\ncount: %lu\nnumbit: 32\n",tsamples);
++     fprintf(fp,"type: d\ncount: %lld\nnumbit: 32\n",tsamples);
+      for(i=0;i<tsamples;i++){
+        j = gsl_rng_get(rng);
+        fprintf(fp,"%10u\n",j);
+@@ -128,7 +128,7 @@ void output_rnds()
+      fprintf(fp,"#==================================================================\n");
+      fprintf(fp,"# generator %s  seed = %lu\n",gsl_rng_name(rng),seed);
+      fprintf(fp,"#==================================================================\n");
+-     fprintf(fp,"type: f\ncount: %lu\nnumbit: 32\n",tsamples);
++     fprintf(fp,"type: f\ncount: %lld\nnumbit: 32\n",tsamples);
+      for(i=0;i<tsamples;i++){
+        d = gsl_rng_uniform(rng);
+        fprintf(fp,"%0.10f\n",d);

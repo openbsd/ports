@@ -1,0 +1,8 @@
+Dieharder is a random number generator (rng) testing suite. It is
+intended to test generators, not files of possibly random numbers.
+
+dieharder is a tool designed to permit one to push a weak generator to
+unambiguous failure (at the e.g. 0.0001% level), not leave one in the
+"limbo" of 1% or 5% maybe-failure. It also contains many tests and is
+extensible so that eventually it will contain many more tests than it
+already does.
