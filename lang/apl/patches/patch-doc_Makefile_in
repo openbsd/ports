@@ -1,0 +1,15 @@
+$OpenBSD: patch-doc_Makefile_in,v 1.1.1.1 2017/09/11 23:44:11 bcallah Exp $
+--- doc/Makefile.in.orig	Fri Jul 21 10:19:37 2017
++++ doc/Makefile.in	Fri Jul 21 10:19:58 2017
+@@ -342,11 +342,9 @@ man1_MANS = apl.1
+ dist_doc_DATA = \
+ 	apl.1			\
+ 	apl.texi		\
+-	apl.info		\
+ 	apl.html		\
+ 	APL-on-Macintosh.pdf	\
+ 	libapl.texi		\
+-	libapl.info		\
+ 	libapl.html
+ 
+ all: all-am

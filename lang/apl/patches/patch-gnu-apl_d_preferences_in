@@ -1,0 +1,35 @@
+$OpenBSD: patch-gnu-apl_d_preferences_in,v 1.1.1.1 2017/09/11 23:44:11 bcallah Exp $
+--- gnu-apl.d/preferences.in.orig	Fri Mar 17 15:46:54 2017
++++ gnu-apl.d/preferences.in	Fri Jul 21 12:27:36 2017
+@@ -61,9 +61,9 @@
+ # requires that certain environment variables (e.g. TERM) are set properly
+ # and that your terminfo database contains the terminal you use.
+ #
+-  Color         ANSI (default)
++# Color         ANSI (default)
+ # Color 	CURSES
+-# Color 	No
++  Color 	No
+ #
+ # If you want to disable coloring initially, but switch to curses if the
+ # command ]COLOR (or the equivalent but now obsolete command ]XTERM)
+@@ -236,8 +236,8 @@
+ #
+ # The corresponding command line options are --SV and --noSV
+ #
+-  SharedVars    Enabled	    (default)
+-# SharedVars    Disabled
++# SharedVars    Enabled	    (default)
++  SharedVars    Disabled
+ 
+ 
+ ###############################################################################
+@@ -350,7 +350,7 @@ BACKUP_BEFORE_SAVE  yes
+ # a (small) positive number below. Note thsat the interpreter will always
+ # exit if a large number of ^Ds (or EOFs) are read within a short while.
+ #
+-CONTROL-Ds-TO-EXIT 0
++CONTROL-Ds-TO-EXIT 1
+ 
+ 
+ ###############################################################################

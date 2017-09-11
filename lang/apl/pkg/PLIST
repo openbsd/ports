@@ -1,0 +1,86 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/09/11 23:44:11 bcallah Exp $
+@bin bin/AP100
+@bin bin/AP210
+@bin bin/APserver
+@bin bin/apl
+@info info/apl.info
+@info info/libapl.info
+lib/apl/
+lib/apl/lib_file_io.a
+lib/apl/lib_file_io.la
+lib/apl/lib_file_io.so
+lib/apl/lib_sql.a
+lib/apl/lib_sql.la
+@lib lib/apl/lib_sql.so.${LIB_sql_VERSION}
+lib/apl/lib_template_F0.a
+lib/apl/lib_template_F0.la
+@lib lib/apl/lib_template_F0.so.${LIB_template_F0_VERSION}
+lib/apl/lib_template_F12.a
+lib/apl/lib_template_F12.la
+@lib lib/apl/lib_template_F12.so.${LIB_template_F12_VERSION}
+lib/apl/lib_template_OP1.a
+lib/apl/lib_template_OP1.la
+@lib lib/apl/lib_template_OP1.so.${LIB_template_OP1_VERSION}
+lib/apl/lib_template_OP2.a
+lib/apl/lib_template_OP2.la
+@lib lib/apl/lib_template_OP2.so.${LIB_template_OP2_VERSION}
+lib/apl/libemacs.a
+lib/apl/libemacs.la
+@lib lib/apl/libemacs.so.${LIBemacs_VERSION}
+lib/apl/workspaces/
+lib/apl/workspaces/APL_CGI.apl
+lib/apl/workspaces/SCRIPT.apl
+lib/apl/workspaces/ScalarBenchmark.apl
+lib/apl/wslib3/
+lib/apl/wslib3/meta.apl
+lib/apl/wslib4/
+lib/apl/wslib4/dummy.apl
+lib/apl/wslib5/
+lib/apl/wslib5/APLComponentFiles/
+lib/apl/wslib5/APLComponentFiles/AUTHORS
+lib/apl/wslib5/APLComponentFiles/CF_README.txt
+lib/apl/wslib5/APLComponentFiles/ComponentFiles.apl
+lib/apl/wslib5/APLComponentFiles/LAST_GIT_PULL
+lib/apl/wslib5/APLComponentFiles/LICENSE
+lib/apl/wslib5/APLComponentFiles/README.md
+lib/apl/wslib5/APLComponentFiles/README_FIRST.txt
+lib/apl/wslib5/APLComponentFiles/SQL_README.txt
+lib/apl/wslib5/FILE_IO.apl
+lib/apl/wslib5/HTML.apl
+lib/apl/wslib5/SQL.apl
+lib/apl/wslib5/iso-apl-cf/
+lib/apl/wslib5/iso-apl-cf/AUTHORS
+lib/apl/wslib5/iso-apl-cf/LAST_GIT_PULL
+lib/apl/wslib5/iso-apl-cf/README.md
+lib/apl/wslib5/iso-apl-cf/_control_.apl
+lib/apl/wslib5/iso-apl-cf/_metadata_
+lib/apl/wslib5/iso-apl-cf/iso_cf.apl
+lib/apl/wslib5/iso-apl-cf/perf.apl
+lib/apl/wslib5/iso-apl-cf/test.apl
+@man man/man1/apl.1
+share/doc/apl/
+share/doc/apl/APL-on-Macintosh.pdf
+share/doc/apl/README
+share/doc/apl/README-1-prerequisites
+share/doc/apl/README-2-configure
+share/doc/apl/README-3-keyboard
+share/doc/apl/README-4-compliance
+share/doc/apl/README-5-WINDOWS
+share/doc/apl/README-6-porting
+share/doc/apl/README-7-more-info
+share/doc/apl/README-8-parallel
+share/doc/apl/SQL.apl
+share/doc/apl/apl.1
+share/doc/apl/apl.html
+share/doc/apl/apl.texi
+share/doc/apl/libapl.html
+share/doc/apl/libapl.texi
+share/examples/apl/
+share/examples/apl/gnu-apl.d/
+@sample ${SYSCONFDIR}/gnu-apl.d/
+share/examples/apl/gnu-apl.d/keyboard1.txt
+@sample ${SYSCONFDIR}/gnu-apl.d/keyboard1.txt
+share/examples/apl/gnu-apl.d/parallel_thresholds
+@sample ${SYSCONFDIR}/gnu-apl.d/parallel_thresholds
+share/examples/apl/gnu-apl.d/preferences
+@sample ${SYSCONFDIR}/gnu-apl.d/preferences

@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_Common_cc,v 1.1.1.1 2017/09/11 23:44:11 bcallah Exp $
+--- src/Common.cc.orig	Fri Mar 17 15:46:53 2017
++++ src/Common.cc	Mon Jul 17 16:37:56 2017
+@@ -81,6 +81,11 @@ void
+ init_1(const char * argv0, bool log_startup)
+ {
+ rlimit rl;
++
++#ifndef RLIMIT_AS
++# define RLIMIT_AS RLIMIT_DATA
++#endif
++
+    getrlimit(RLIMIT_AS, &rl);
+    total_memory = rl.rlim_cur;
+ 

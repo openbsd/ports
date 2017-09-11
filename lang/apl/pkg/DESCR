@@ -1,0 +1,7 @@
+GNU APL is a free interpreter for the programming language APL.
+
+The APL interpreter is an (almost) complete implementation of ISO standard
+13751, i.e. Programming Language APL, Extended.
+
+The APL interpreter can be scripted and it implements: nested arrays and
+related functions, complex numbers, and a shared variable interface.

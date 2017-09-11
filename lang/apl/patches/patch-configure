@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2017/09/11 23:44:11 bcallah Exp $
+--- configure.orig	Fri Mar 17 16:03:06 2017
++++ configure	Mon Jul 17 17:11:15 2017
+@@ -21413,7 +21413,7 @@ echo
+ #
+ echo "configure: creating $srcdir/src//buildtag.hh"
+ rm -f $srcdir/src/buildtag.hh
+-cd $srcdir/src ; source ./buildtag ; cd ..
++cd $srcdir/src ; . ./buildtag ; cd ..
+ 
+ # create src/makefile.h
+ #

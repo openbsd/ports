@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_buildtag,v 1.1.1.1 2017/09/11 23:44:11 bcallah Exp $
+--- src/buildtag.orig	Fri Mar 17 15:46:53 2017
++++ src/buildtag	Mon Jul 17 16:37:56 2017
+@@ -5,10 +5,9 @@
+ PACKAGE_NAME=$1
+ PACKAGE_VERSION=$2
+ 
+-SVNINFO=`svnversion`
++SVNINFO=""
+ 
+-ARCHIVE_SVNINFO=`svn info Archive.cc | grep "Last Changed Rev" \
+-                                     | awk -F : '{print $2;}'`
++ARCHIVE_SVNINFO=""
+ 
+ CONFIGURE_OPTS="unknown configure options"
+ if [ -x ./config.status ]
