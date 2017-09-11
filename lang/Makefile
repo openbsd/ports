@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.204 2017/09/01 18:08:07 juanfra Exp $
+# $OpenBSD: Makefile,v 1.205 2017/09/11 23:48:41 bcallah Exp $
 
      SUBDIR =
      SUBDIR += STk
      SUBDIR += abcl
      SUBDIR += algol68g
      SUBDIR += antlr3
+     SUBDIR += apl
      SUBDIR += arena
      SUBDIR += bacon
      SUBDIR += brandy
@@ -47,6 +48,7 @@
      SUBDIR += jimtcl
      SUBDIR += jruby
      SUBDIR += kawa
+     SUBDIR += kona
      SUBDIR += librep
      SUBDIR += libv8
      SUBDIR += lua
