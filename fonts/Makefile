@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2017/08/10 06:36:58 bentley Exp $
+# $OpenBSD: Makefile,v 1.40 2017/09/11 23:41:53 bcallah Exp $
 
      SUBDIR =
      SUBDIR += abyssinica
@@ -6,6 +6,7 @@
      SUBDIR += amigafonts
      SUBDIR += andika
      SUBDIR += anonymous-pro
+     SUBDIR += apl-fonts
      SUBDIR += arabeyes-ttf
      SUBDIR += artwiz-aleczapka
      SUBDIR += blockzone
