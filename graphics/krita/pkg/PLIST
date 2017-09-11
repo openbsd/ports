@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/06/01 16:36:52 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/09/11 05:25:34 rsadowski Exp $
 @conflict calligra-<=2.9.11
-@bin bin/gmicparser
 @bin bin/krita
 lib/kritaplugins/
 lib/kritaplugins/krita_colorspaces_extensions.so
@@ -22,6 +21,7 @@ lib/kritaplugins/kritabmpexport.so
 lib/kritaplugins/kritabmpimport.so
 lib/kritaplugins/kritabrushexport.so
 lib/kritaplugins/kritabrushimport.so
+lib/kritaplugins/kritabuginfo.so
 lib/kritaplugins/kritachalkpaintop.so
 lib/kritaplugins/kritachanneldocker.so
 lib/kritaplugins/kritaclonesarray.so
@@ -52,7 +52,6 @@ lib/kritaplugins/kritaexrimport.so
 lib/kritaplugins/kritaextensioncolorsfilters.so
 lib/kritaplugins/kritafastcolortransferfilter.so
 lib/kritaplugins/kritafilterop.so
-lib/kritaplugins/kritagmic.so
 lib/kritaplugins/kritagradientmap.so
 lib/kritaplugins/kritagriddocker.so
 lib/kritaplugins/kritagridpaintop.so
@@ -102,6 +101,7 @@ lib/kritaplugins/kritapresetdocker.so
 lib/kritaplugins/kritapresethistory.so
 lib/kritaplugins/kritapsdexport.so
 lib/kritaplugins/kritapsdimport.so
+lib/kritaplugins/kritaqmic.so
 lib/kritaplugins/kritaqmlexport.so
 lib/kritaplugins/kritaraindropsfilter.so
 lib/kritaplugins/kritarandompickfilter.so
@@ -127,6 +127,7 @@ lib/kritaplugins/kritatgaimport.so
 lib/kritaplugins/kritathreshold.so
 lib/kritaplugins/kritatiffexport.so
 lib/kritaplugins/kritatiffimport.so
+lib/kritaplugins/kritatoolSmartPatch.so
 lib/kritaplugins/kritatoolcrop.so
 lib/kritaplugins/kritatooldyna.so
 lib/kritaplugins/kritatoollazybrush.so
@@ -330,6 +331,8 @@ share/krita/brushes/D_Dust_1.gbr
 share/krita/brushes/D_Dust_Particles.gih
 share/krita/brushes/D_Normal_dust.gbr
 share/krita/brushes/F_Furr_fast.gbr
+share/krita/brushes/Flat_textured1.gih
+share/krita/brushes/Flat_textured2.gih
 share/krita/brushes/G_Sparks.gih
 share/krita/brushes/LJF_Foliage_Brush_01.gbr
 share/krita/brushes/LJF_Foliage_Brush_02.gbr
@@ -379,6 +382,9 @@ share/krita/brushes/R_Rake4.gbr
 share/krita/brushes/R_Rake_small.gbr
 share/krita/brushes/Real_Oil_2.gbr
 share/krita/brushes/Real_oil_1.gbr
+share/krita/brushes/Rect_textured1.gih
+share/krita/brushes/Rect_textured2.gih
+share/krita/brushes/Rect_textured3.gih
 share/krita/brushes/S_Smudge_Cheese.gbr
 share/krita/brushes/S_splats_02.gih
 share/krita/brushes/Sc_Scratch.gih
@@ -413,6 +419,8 @@ share/krita/brushes/Z_Pixel__4_pix__45a.gbr
 share/krita/brushes/Z_Test-pressure.gih
 share/krita/brushes/Z_Triangle_shape_1.gbr
 share/krita/brushes/Z_Triangle_shape_2.gbr
+share/krita/brushes/oil_bristle.gbr
+share/krita/brushes/oil_knife.gbr
 share/krita/brushes/rake_textured_01.gbr
 share/krita/brushes/rake_textured_02.gbr
 share/krita/brushes/texture-a.png
@@ -446,9 +454,6 @@ share/krita/defaultpresets/spraybrush.kpp
 share/krita/defaultpresets/tangentnormal.kpp
 share/krita/dtd/
 share/krita/dtd/krita.dtd
-share/krita/gmic/
-share/krita/gmic/gimp_update169.gmic
-share/krita/gmic/gmic_def.gmic.blacklist
 share/krita/gradients/
 share/krita/gradients/BG-Krita2.ggr
 share/krita/gradients/GPS-FG-Glare.ggr
@@ -515,10 +520,13 @@ share/krita/paintoppresets/Basic_tip_gaussian.kpp
 share/krita/paintoppresets/Basic_tip_soft.kpp
 share/krita/paintoppresets/Basic_wet.kpp
 share/krita/paintoppresets/Basic_wet_soft.kpp
+share/krita/paintoppresets/Blender_Blur.kpp
 share/krita/paintoppresets/Block_basic.kpp
 share/krita/paintoppresets/Block_bristles.kpp
 share/krita/paintoppresets/Block_fuzzy.kpp
 share/krita/paintoppresets/Block_mix_tilt.kpp
+share/krita/paintoppresets/Block_textured_1.kpp
+share/krita/paintoppresets/Block_textured_2.kpp
 share/krita/paintoppresets/Block_tilt.kpp
 share/krita/paintoppresets/Block_wet_tilt.kpp
 share/krita/paintoppresets/Bristle_Details.kpp
@@ -532,6 +540,8 @@ share/krita/paintoppresets/Bristles_hairy.kpp
 share/krita/paintoppresets/Bristles_mix.kpp
 share/krita/paintoppresets/Bristles_textured.kpp
 share/krita/paintoppresets/Bristles_wet.kpp
+share/krita/paintoppresets/Brush_dotted.kpp
+share/krita/paintoppresets/Brush_textured.kpp
 share/krita/paintoppresets/Chalk_brush.kpp
 share/krita/paintoppresets/Clone_tool.kpp
 share/krita/paintoppresets/Curve_curvy.kpp
@@ -570,6 +580,8 @@ share/krita/paintoppresets/Layout_circle_soft.kpp
 share/krita/paintoppresets/Layout_oval.kpp
 share/krita/paintoppresets/Layout_pen.kpp
 share/krita/paintoppresets/Move_tool.kpp
+share/krita/paintoppresets/Oils_bristle.kpp
+share/krita/paintoppresets/Oils_knife.kpp
 share/krita/paintoppresets/Pastel_texture_large.kpp
 share/krita/paintoppresets/Pastel_texture_thin.kpp
 share/krita/paintoppresets/Pencil_2B.kpp
@@ -625,6 +637,7 @@ share/krita/paintoppresets/Tangent_normal_y_inverted.kpp
 share/krita/paintoppresets/Texture_fuzzy.kpp
 share/krita/paintoppresets/Texture_hair.kpp
 share/krita/paintoppresets/Texture_leaves_fuzzy.kpp
+share/krita/paintoppresets/Textured_tilt.kpp
 share/krita/paintoppresets/ink_precision_03.kpp
 share/krita/paintoppresets/pixel1.kpp
 share/krita/palettes/
@@ -669,6 +682,7 @@ share/krita/patterns/22_texture-reptile.png
 share/krita/patterns/23-dynamic-screentone-A.png
 share/krita/patterns/24-dynamic-screentone-B.png
 share/krita/patterns/25-dynamic-screentone-C.png
+share/krita/patterns/26_brush-marks.png
 share/krita/patterns/Canvas_Hard.pat
 share/krita/patterns/Canvas_covered.pat
 share/krita/patterns/Canvas_small_01.pat
@@ -865,10 +879,10 @@ share/krita/workspaces/Default.kws
 share/krita/workspaces/Small_Vector.kws
 share/krita/workspaces/VFX_Paint.kws
 share/kritaplugins/
+share/kritaplugins/buginfo.xmlgui
 share/kritaplugins/clonesarray.xmlgui
 share/kritaplugins/colorrange.xmlgui
 share/kritaplugins/colorspaceconversion.xmlgui
-share/kritaplugins/gmic.xmlgui
 share/kritaplugins/histogram.xmlgui
 share/kritaplugins/imageseparate.xmlgui
 share/kritaplugins/imagesize.xmlgui
