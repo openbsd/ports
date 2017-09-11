@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.529 2017/09/08 10:07:47 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.530 2017/09/11 20:57:57 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1111,7 +1111,6 @@ my $obsolete_reason = {
 	'zendframework' => 5,
 	'kbilliards' => 5,
 	'knutclient' => 5,
-	'taxipilot' => 5,
 	'pgpsendmail' => 3,
 	'banshee' => 3,
 	'mono-zeroconf' => 5,
