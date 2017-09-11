@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_common_libpkcs11_c,v 1.3 2017/09/11 09:27:38 dcoppa Exp $
+
+memory leak if C_UnloadModule() fails
+(upstream git commit e2fe24d56ac4a90bf140c670ebea02dee6a599d6)
+
+Index: src/common/libpkcs11.c
+--- src/common/libpkcs11.c.orig
++++ src/common/libpkcs11.c
+@@ -75,8 +75,9 @@ C_LoadModule(const char *mspec, CK_FUNCTION_LIST_PTR_P
+ 		return (void *) mod;
+ 	else {
+ 		fprintf(stderr, "C_GetFunctionList failed %lx", rv);
+-		C_UnloadModule((void *) mod);
+-		return NULL;
++		rv = C_UnloadModule((void *) mod);
++		if (rv == CKR_OK)
++			mod = NULL; /* already freed */
+ 	}
+ failed:
+ 	free(mod);

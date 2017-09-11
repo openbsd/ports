@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_pkcs11_mechanism_c,v 1.1 2017/09/11 09:27:38 dcoppa Exp $
+
+Plug a memory leak
+(upstream git commit e2fe24d56ac4a90bf140c670ebea02dee6a599d6)
+
+Index: src/pkcs11/mechanism.c
+--- src/pkcs11/mechanism.c.orig
++++ src/pkcs11/mechanism.c
+@@ -1060,7 +1060,10 @@ sc_pkcs11_register_sign_and_hash_mechanism(struct sc_p
+ 
+ 	new_type = sc_pkcs11_new_fw_mechanism(mech, &mech_info, sign_type->key_type, info, free_info);
+ 
+-	if (!new_type)
++	if (!new_type) {
++		free(info);
+ 		return CKR_HOST_MEMORY;
++	}
++
+ 	return sc_pkcs11_register_mechanism(p11card, new_type);
+ }

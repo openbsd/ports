@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_libopensc_card-jpki_c,v 1.1 2017/09/11 09:27:38 dcoppa Exp $
+
+commit da9484bd6b4052ea6fb022d27bd7e75350d6cf76
+Author: HAMANO Tsukasa <hamano@osstech.co.jp>
+Date:   Mon Apr 10 07:39:44 2017
+
+fix trivial leak
+
+Index: src/libopensc/card-jpki.c
+--- src/libopensc/card-jpki.c.orig
++++ src/libopensc/card-jpki.c
+@@ -82,7 +82,10 @@ jpki_finish(sc_card_t * card)
+ 	struct jpki_private_data *drvdata = JPKI_DRVDATA(card);
+ 
+ 	LOG_FUNC_CALLED(card->ctx);
+-
++	if (drvdata->mf) {
++		free(drvdata->mf);
++		drvdata->mf = NULL;
++	}
+ 	if (drvdata) {
+ 		free(drvdata);
+ 		card->drv_data = NULL;
