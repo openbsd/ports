@@ -1,0 +1,28 @@
+$OpenBSD: patch-lisp_gnus_mm-view_el,v 1.1 2017/09/11 13:58:17 jca Exp $
+
+commit 9ad0fcc54442a9a01d41be19880250783426db70
+Author: Lars Ingebrigtsen <larsi@gnus.org>
+Date:   Fri Sep 8 20:23:31 2017 -0700
+
+    Remove unsafe enriched mode translations
+    
+    * lisp/gnus/mm-view.el (mm-inline-text):
+    Do not worry about enriched or richtext type.
+    * lisp/textmodes/enriched.el (enriched-translations):
+    Remove translations for FUNCTION, display (Bug#28350).
+    (enriched-handle-display-prop, enriched-decode-display-prop): Remove.
+
+Index: lisp/gnus/mm-view.el
+--- lisp/gnus/mm-view.el.orig
++++ lisp/gnus/mm-view.el
+@@ -383,10 +383,6 @@
+ 	(goto-char (point-max))))
+     (save-restriction
+       (narrow-to-region b (point))
+-      (when (member type '("enriched" "richtext"))
+-        (set-text-properties (point-min) (point-max) nil)
+-	(ignore-errors
+-	  (enriched-decode (point-min) (point-max))))
+       (mm-handle-set-undisplayer
+        handle
+        `(lambda ()
