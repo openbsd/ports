@@ -1,38 +1,67 @@
-# $OpenBSD: Makefile,v 1.8 2017/07/27 09:55:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2017/09/11 05:44:27 rsadowski Exp $
+
+COMMENT =	IRC client for KDE
+
+V =		1.7.2
+DISTNAME =	konversation-$V
+
+MAINTAINER =	KDE porting team <openbsd-kde@googlegroups.com>
 
 CATEGORIES =	net
-COMMENT =	IRC client for KDE 4
-V =		1.5
-DISTNAME =	konversation-$V
-MAINTAINER =	KDE porting team <openbsd-kde@googlegroups.com>
-HOMEPAGE =	http://konversation.kde.org/
-REVISION =	4
 
-WANTLIB =  c m pthread
-WANTLIB += lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtGui
-WANTLIB += lib/qt4/QtNetwork lib/qt4/QtSql lib/qt4/QtSvg lib/qt4/QtXml
-WANTLIB += ${KDE4LIB}/kabc ${KDE4LIB}/kde3support ${KDE4LIB}/kdeui
-WANTLIB += ${KDE4LIB}/kemoticons ${KDE4LIB}/kidletime
-WANTLIB += ${KDE4LIB}/kio ${KDE4LIB}/knotifyconfig ${KDE4LIB}/kparts
-WANTLIB += ${KDE4LIB}/kresources ${KDE4LIB}/nepomuk
-WANTLIB += ${KDE4LIB}/nepomukutils ${KDE4LIB}/solid
-WANTLIB += qca soprano ${COMPILER_LIBCXX}
+HOMEPAGE =	https://konversation.kde.org/
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/konversation/$V/src/}
 
+WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Auth KF5Bookmarks
+WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
+WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5Crash KF5DBusAddons
+WANTLIB += KF5Emoticons KF5GlobalAccel KF5I18n KF5IconThemes KF5IdleTime
+WANTLIB += KF5ItemViews KF5JobWidgets KF5KIOCore KF5KIOFileWidgets
+WANTLIB += KF5KIOWidgets KF5Notifications KF5NotifyConfig KF5Parts
+WANTLIB += KF5Service KF5Solid KF5SonnetUi KF5TextWidgets KF5Wallet
+WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Core
+WANTLIB += Qt5DBus Qt5Gui Qt5Network Qt5Widgets Qt5Xml c m qca-qt5
+
 # GPLv2+
-PERMIT_PACKAGE_CDROM =          Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
-MODULES =	x11/kde4 multimedia/phonon devel/gettext lang/python
-MODKDE4_USE =	pim
+MODULES =		devel/kf5 \
+			multimedia/phonon \
+			lang/python
 
-RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/gtk+3,-guic
+BUILD_DEPENDS +=	devel/kf5/kdoctools \
+			devel/kf5/kitemmodels \
+			devel/gettext-tools
 
-LIB_DEPENDS =	security/qca
+RUN_DEPENDS +=		devel/desktop-file-utils \
+			devel/gettext \
+			x11/gtk+3,-guic
+
+LIB_DEPENDS +=		security/qca-qt5 \
+			devel/kf5/karchive  \
+			devel/kf5/kbookmarks \
+			devel/kf5/kconfigwidgets \
+			devel/kf5/kcoreaddons \
+			devel/kf5/kcrash \
+			devel/kf5/kemoticons \
+			devel/kf5/ki18n  \
+			devel/kf5/kidletime \
+			devel/kf5/knotifyconfig \
+			devel/kf5/kio \
+			devel/kf5/kparts \
+			devel/kf5/solid \
+			devel/kf5/kwallet \
+			devel/kf5/kwidgetsaddons \
+			devel/kf5/kglobalaccel \
+			devel/kf5/kdbusaddons \
+			devel/kf5/knotifications  \
+			devel/kf5/kwindowsystem \
+			devel/kf5/kiconthemes \
+			devel/kf5/kitemviews
 
 post-install:
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
-		${PREFIX}/share/apps/konversation/scripting_support/python/konversation/
+		${PREFIX}/share/konversation/scripting_support/python/konversation
 
 .include <bsd.port.mk>
