@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.464 2017/08/29 17:03:59 landry Exp $
+# $OpenBSD: Makefile,v 1.465 2017/09/11 15:52:58 feinerer Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -51,6 +51,7 @@
      SUBDIR += fragroute
      SUBDIR += fragrouter
      SUBDIR += fwbuilder
+     SUBDIR += fwknop
      SUBDIR += glib-openssl
      SUBDIR += gnupg
      SUBDIR += gnupg,card,ldap
