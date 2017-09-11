@@ -1,0 +1,4 @@
+Kona is the open-source implementation of the K programming language.
+K is a synthesis of APL and LISP. Kona is a reimplementation that
+targets K3.2 but includes features inferred from K4 or implemented
+elsewhere.
