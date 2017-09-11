@@ -1,0 +1,21 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/09/11 15:50:33 feinerer Exp $
+@bin bin/fwknop
+include/fko.h
+@info info/libfko.info
+@lib lib/libfko.so.${LIBfko_VERSION}
+@man man/man8/fwknop.8
+@man man/man8/fwknopd.8
+@bin sbin/fwknopd
+share/examples/fwknop/
+@mode 0700
+@sample ${SYSCONFDIR}/fwknop/
+@mode
+share/examples/fwknop/access.conf
+@mode 600
+@sample ${SYSCONFDIR}/fwknop/access.conf
+@mode
+share/examples/fwknop/fwknopd.conf
+@mode 600
+@sample ${SYSCONFDIR}/fwknop/fwknopd.conf
+@mode
+@rcscript ${RCDIR}/fwknopd
