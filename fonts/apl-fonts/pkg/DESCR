@@ -1,0 +1,5 @@
+Adrian Smith's standard fonts for the APL language.
+
+The package includes APL385, a monospaced font developed with all APL software
+vendors in the late 1980s, and APL333, a non-monospaced version of the same
+font.
