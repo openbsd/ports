@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2017/07/26 22:45:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.43 2017/09/12 14:15:03 naddy Exp $
 
 COMMENT-main=		ugly elements for GStreamer
 COMMENT-sidplay=	sidplay element for GStreamer (plugins-ugly)
@@ -12,9 +12,9 @@ PKGNAME-main=		gstreamer-plugins-ugly-${V}
 PKGNAME-sidplay=	gstreamer-sidplay-${V}
 PKGNAME-lame=		gstreamer-lame-${V}
 
-REVISION-main=		8
-REVISION-sidplay=	5
-REVISION-lame=		5
+REVISION-main=		9
+REVISION-sidplay=	6
+REVISION-lame=		6
 
 PERMIT_PACKAGE_CDROM=	Patent issues
 
@@ -22,7 +22,7 @@ MULTI_PACKAGES=		-main -sidplay -lame
 
 MASTER_SITES=		${MASTER_SITE_GST:=gst-plugins-ugly/}
 
-WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
+WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 iconv intl
 WANTLIB += lzma xml2 m z pcre gstreamer-0.10 ffi pthread
 
 WANTLIB-main += ${WANTLIB}
@@ -47,7 +47,7 @@ LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			audio/twolame \
 			devel/libdvdread \
 			multimedia/x264
-RUN_DEPENDS-main=	${MODGETTEXT_RUN_DEPENDS}
+RUN_DEPENDS-main=
 
 LIB_DEPENDS-sidplay=	${LIB_DEPENDS} \
 			audio/libsidplay

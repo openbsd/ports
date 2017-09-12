@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.97 2017/07/26 22:45:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.98 2017/09/12 14:15:03 naddy Exp $
 
 COMMENT-main=		bad elements for GStreamer
 COMMENT-neon=		neon element for GStreamer (plugins-bad)
@@ -12,9 +12,9 @@ PKGNAME-main=		gstreamer-plugins-bad-${V}
 PKGNAME-neon=		gstreamer-neon-${V}
 PKGNAME-mjpeg=		gstreamer-mjpeg-${V}
 
-REVISION-main=		26
-REVISION-mjpeg=		11
-REVISION-neon=		12
+REVISION-main=		27
+REVISION-mjpeg=		12
+REVISION-neon=		13
 
 SHARED_LIBS +=  gstphotography-0.10       1.0 # 23.0
 SHARED_LIBS +=  gstsignalprocessor-0.10   1.0 # 23.0
@@ -28,7 +28,7 @@ MASTER_SITES =		${MASTER_SITE_GST:=gst-plugins-bad/}
 
 MODULES =		devel/dconf
 
-WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 xml2
+WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 iconv intl xml2
 WANTLIB += lzma pthread z m pcre gstreamer-0.10 ffi
 
 WANTLIB-main += ${WANTLIB}
@@ -73,8 +73,7 @@ LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			telephony/spandsp \
 			textproc/liblrdf \
 			x11/gnome/librsvg
-RUN_DEPENDS-main=	${MODGETTEXT_RUN_DEPENDS} \
-			${MODDCONF_RUN_DEPENDS}
+RUN_DEPENDS-main=	${MODDCONF_RUN_DEPENDS}
 
 LIB_DEPENDS-neon=	${LIB_DEPENDS} \
 			net/neon

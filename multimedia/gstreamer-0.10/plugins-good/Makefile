@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.106 2017/07/28 10:32:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.107 2017/09/12 14:15:03 naddy Exp $
 
 # XXX ossaudio(3) is only enabled to be used as a mixing device by
 # audio/pulseaudio and x11/xfce4/xfce4-mixer
@@ -18,10 +18,10 @@ PKGNAME-dv=		gstreamer-dv-${V}
 PKGNAME-caca=		gstreamer-libcaca-${V}
 EPOCH-main=		0
 
-REVISION-main=		20
-REVISION-aalib=		9
-REVISION-dv=		9
-REVISION-caca=		9
+REVISION-main=		21
+REVISION-aalib=		10
+REVISION-dv=		10
+REVISION-caca=		10
 
 MULTI_PACKAGES=		-main -aalib -dv -caca
 
@@ -31,13 +31,13 @@ MODULES=		devel/gconf2
 MODGCONF2_LIBDEP=	No
 MODGCONF2_SCHEMAS_DIR=	gst-plugins
 
-WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 lzma pthread
+WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 iconv intl lzma pthread
 WANTLIB += pcre xml2 m z gstreamer-0.10 gstbase-0.10 ffi
 
 WANTLIB-main += ${WANTLIB} ${MODGCONF2_WANTLIB}
 WANTLIB-main += FLAC ICE SM X11 Xdamage Xext Xfixes Xrender
 WANTLIB-main += Xv bz2 cairo cairo-gobject dbus-1 dbus-glib-1
-WANTLIB-main += expat fontconfig freetype gdk_pixbuf-2.0
+WANTLIB-main += expat execinfo fontconfig freetype gdk_pixbuf-2.0
 WANTLIB-main += gio-2.0 gstaudio-0.10 gstcontroller-0.10 xcb-shm
 WANTLIB-main += gstfft-0.10 gstinterfaces-0.10 gstnetbuffer-0.10 gstpbutils-0.10
 WANTLIB-main += gstriff-0.10 gstrtp-0.10 gstrtsp-0.10 gstsdp-0.10 gsttag-0.10
@@ -75,8 +75,7 @@ LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			graphics/jpeg \
 			multimedia/libv4l \
 			net/libshout
-RUN_DEPENDS-main=	${MODGCONF2_RUN_DEPENDS} \
-			${MODGETTEXT_RUN_DEPENDS}
+RUN_DEPENDS-main=	${MODGCONF2_RUN_DEPENDS}
 
 LIB_DEPENDS-aalib=	${LIB_DEPENDS} \
 			graphics/aalib
@@ -103,7 +102,8 @@ CONFIGURE_STYLE +=	gnu
 AUTOMAKE_VERSION=	1.10
 BUILD_DEPENDS +=	${MODGNU_AUTOMAKE_DEPENDS} \
 			${MODGNU_AUTOCONF_DEPENDS}
-BUILD_DEPENDS +=	devel/libtool # needs needs libtoolize
+BUILD_DEPENDS +=	devel/libtool		# needs libtoolize
+BUILD_DEPENDS +=	devel/gettext-tools	# autopoint
 
 post-extract:
 	cp -R ${FILESDIR} ${WRKSRC}/ext/sndio
