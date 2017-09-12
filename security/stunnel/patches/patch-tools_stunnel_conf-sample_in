@@ -1,6 +1,7 @@
-$OpenBSD: patch-tools_stunnel_conf-sample_in,v 1.15 2016/11/09 23:14:31 gsoares Exp $
---- tools/stunnel.conf-sample.in.orig	Tue Jul  5 18:27:57 2016
-+++ tools/stunnel.conf-sample.in	Thu Nov  3 23:16:09 2016
+$OpenBSD: patch-tools_stunnel_conf-sample_in,v 1.16 2017/09/12 16:15:24 gsoares Exp $
+Index: tools/stunnel.conf-sample.in
+--- tools/stunnel.conf-sample.in.orig
++++ tools/stunnel.conf-sample.in
 @@ -7,17 +7,18 @@
  ; * Global options                                                         *
  ; **************************************************************************
@@ -24,7 +25,7 @@ $OpenBSD: patch-tools_stunnel_conf-sample_in,v 1.15 2016/11/09 23:14:31 gsoares 
  
  ; Enable FIPS 140-2 mode if needed for compliance
  ;fips = yes
-@@ -37,7 +38,7 @@
+@@ -46,7 +47,7 @@
  ; * Include all configuration file fragments from the specified folder     *
  ; **************************************************************************
  
@@ -33,7 +34,7 @@ $OpenBSD: patch-tools_stunnel_conf-sample_in,v 1.15 2016/11/09 23:14:31 gsoares 
  
  ; **************************************************************************
  ; * Service definitions (remove all services for inetd mode)               *
-@@ -50,72 +51,72 @@
+@@ -59,32 +60,32 @@
  ; a hardcoded path of the stunnel package, as it is not related to the
  ; stunnel configuration in @sysconfdir@/stunnel/.
  
@@ -87,6 +88,10 @@ $OpenBSD: patch-tools_stunnel_conf-sample_in,v 1.15 2016/11/09 23:14:31 gsoares 
 +;CApath = ${SYSCONFDIR}/ssl/certs
 +;checkHost = smtp.gmail.com
 +;OCSPaia = yes
+ 
+ ; Encrypted HTTP proxy authenticated with a client certificate
+ ; located in a cryptographic token
+@@ -98,43 +99,43 @@ OCSPaia = yes
  
  ; ***************************************** Example TLS server mode services
  

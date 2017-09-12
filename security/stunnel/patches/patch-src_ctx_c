@@ -1,7 +1,17 @@
-$OpenBSD: patch-src_ctx_c,v 1.4 2016/11/09 23:14:31 gsoares Exp $
---- src/ctx.c.orig	Tue Jun 21 12:06:14 2016
-+++ src/ctx.c	Thu Nov  3 23:13:15 2016
-@@ -366,7 +366,7 @@ NOEXPORT int ecdh_init(SERVICE_OPTIONS *section) {
+$OpenBSD: patch-src_ctx_c,v 1.5 2017/09/12 16:15:24 gsoares Exp $
+Index: src/ctx.c
+--- src/ctx.c.orig
++++ src/ctx.c
+@@ -295,7 +295,7 @@ NOEXPORT int matches_wildcard(char *servername, char *
+ 
+ #ifndef OPENSSL_NO_DH
+ 
+-#if OPENSSL_VERSION_NUMBER<0x10100000L
++#if OPENSSL_VERSION_NUMBER<0x10100000L || defined(LIBRESSL_VERSION_NUMBER) 
+ NOEXPORT STACK_OF(SSL_CIPHER) *SSL_CTX_get_ciphers(const SSL_CTX *ctx) {
+     return ctx->cipher_list;
+ }
+@@ -398,7 +398,7 @@ NOEXPORT int ecdh_init(SERVICE_OPTIONS *section) {
  /**************************************** initialize OpenSSL CONF */
  
  NOEXPORT int conf_init(SERVICE_OPTIONS *section) {
