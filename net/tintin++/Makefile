@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.20 2017/03/13 08:47:27 benoit Exp $ 
+# $OpenBSD: Makefile,v 1.21 2017/09/12 02:59:45 bcallah Exp $ 
 
 COMMENT=	client program for playing muds with advanced features
-DISTNAME =	tintin-2.01.2
+DISTNAME =	tintin-2.01.3
 CATEGORIES=     net games
 
 HOMEPAGE=       http://tintin.sourceforge.net/
@@ -10,11 +10,12 @@ MAINTAINER=	Ted Roby <troby@freeshell.org>
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c pcre pthread util z
+WANTLIB += c gnutls m pcre pthread util z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tintin/}
 
-LIB_DEPENDS=    devel/pcre
+LIB_DEPENDS=    devel/pcre \
+		security/gnutls
 
 CONFIGURE_STYLE=        gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
