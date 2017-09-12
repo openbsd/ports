@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.530 2017/09/11 20:57:57 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.531 2017/09/12 07:22:19 fcambus Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1116,6 +1116,7 @@ my $obsolete_reason = {
 	'mono-zeroconf' => 5,
 	'mono-avahi' => 5,
 	'toad' => 3,
+	'pgp' => 3,
 };
 
 # reasons for obsolete packages
