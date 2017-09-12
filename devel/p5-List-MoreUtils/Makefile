@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.24 2017/08/23 15:02:51 bluhm Exp $
+# $OpenBSD: Makefile,v 1.25 2017/09/12 13:46:36 bluhm Exp $
 
 COMMENT =	provide the stuff missing in List::Util
 
-DISTNAME =	List-MoreUtils-0.423
+DISTNAME =	List-MoreUtils-0.425
 
 CATEGORIES =	devel
 
