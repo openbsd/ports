@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2016/10/12 06:09:34 danj Exp $
+@comment $OpenBSD: PLIST,v 1.10 2017/09/12 17:43:10 feinerer Exp $
 include/ares.h
 include/ares_build.h
 include/ares_dns.h
@@ -32,6 +32,7 @@ lib/pkgconfig/libcares.pc
 @man man/man3/ares_init_options.3
 @man man/man3/ares_library_cleanup.3
 @man man/man3/ares_library_init.3
+@man man/man3/ares_library_initialized.3
 @man man/man3/ares_mkquery.3
 @man man/man3/ares_parse_a_reply.3
 @man man/man3/ares_parse_aaaa_reply.3
