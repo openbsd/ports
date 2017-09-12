@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2017/09/01 17:04:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.78 2017/09/12 17:36:19 jasper Exp $
 
 MULTI_PACKAGES = -graphics -main
 
@@ -8,8 +8,8 @@ COMMENT-graphics = OCaml Graphics library providing basic drawing primitives
 # XXX Don't even think of updating ocaml alone.
 # Do check that the ports that depend on it still work, or repair them.
 # Don't forget to bump version in ocaml.port.mk, too!
-VERSION=4.03.0
-REVISION=		0
+VERSION=		4.03.0
+REVISION=		1
 
 PKGNAME-main =		ocaml-${VERSION}
 PKGNAME-graphics =	ocaml-graphics-${VERSION}
@@ -32,11 +32,12 @@ MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 CONFIGURE_STYLE=	simple dest
-CONFIGURE_ARGS+=-prefix ${PREFIX}
-CONFIGURE_ARGS+=-aspp '${CC} ${CFLAGS} -c'
-CONFIGURE_ARGS+=-cc '${CC} ${CFLAGS}'
-CONFIGURE_ARGS+=-x11include ${X11BASE}/include -x11lib ${X11BASE}/lib
-CONFIGURE_ENV+=OPENBSD_LOCALBASE="${LOCALBASE}"
+CONFIGURE_ARGS+=	-prefix ${PREFIX} \
+			-aspp '${CC} ${CFLAGS} -c' \
+			-cc '${CC} ${CFLAGS}' \
+			-x11include ${X11BASE}/include \
+			-x11lib ${X11BASE}/lib
+CONFIGURE_ENV+=		OPENBSD_LOCALBASE="${LOCALBASE}"
 
 USE_GMAKE=	Yes
 
@@ -83,8 +84,10 @@ post-install:
 # PFRAG.native was generated from PLIST with:
 # egrep '(ocamlopt|\.cmx|\.cmxa|\.cmxs|\.opt|opt\.1|opt.cmi|\.native|\.o)$'
 
-# XXX one test in the suite (testsocket.ml) requires an active
+# One test in the suite (testsocket.ml) requires an active
 # connection to internet
+TEST_IS_INTERACTIVE =		Yes
+
 do-test:
 	@cd ${WRKSRC}/testsuite && ulimit -Sn 256 && ${MAKE_PROGRAM} all
 
