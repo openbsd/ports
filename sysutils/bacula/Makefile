@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.114 2017/08/08 09:28:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.115 2017/09/12 13:05:13 sthen Exp $
 
 # XXX building this port while a version is already installed on the
 # system will lead to unexpected hidden dependencies!!!
@@ -10,7 +10,7 @@ COMMENT-mysql=		Bacula libbaccats support for MySQL
 COMMENT-pgsql=		Bacula libbaccats support for PostgreSQL
 COMMENT-sqlite3=	Bacula libbaccats support for SQLite3
 
-V=			9.0.3
+V=			9.0.4
 DISTNAME=		bacula-$V
 PKGNAME-main=		bacula-client-$V
 PKGNAME-server=		bacula-server-$V
@@ -21,7 +21,7 @@ PKGNAME-sqlite3=	bacula-sqlite3-$V
 
 CATEGORIES=		sysutils
 
-SHARED_LIBS +=  bac                  7.0
+SHARED_LIBS +=  bac                  8.0
 SHARED_LIBS +=  baccfg               7.0
 SHARED_LIBS +=  bacfind              6.0
 SHARED_LIBS +=  bacsd                1.0
