@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.531 2017/09/12 07:22:19 fcambus Exp $
+# $OpenBSD: Quirks.pm,v 1.532 2017/09/13 10:41:10 robert Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -485,6 +485,10 @@ my $stem_extensions = {
 	'apertium-fr-ca' => 'apertium-fra-cat',
 	'py-doit' => 'doit',
 	'cython' => 'py-cython',
+
+	'zarafa' => 'kopano-core',
+	'zarafa-mapi' => 'kopano-mapi',
+	'zarafa-webapp' => 'kopano-webapp',
 };
 
 my $obsolete_reason = {
