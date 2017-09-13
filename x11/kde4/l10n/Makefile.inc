@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile.inc,v 1.11 2015/09/13 10:09:01 zhuk Exp $
+# $OpenBSD: Makefile.inc,v 1.12 2017/09/13 19:18:43 naddy Exp $
 
 COMMENT =		K Desktop Environment, language localization pack
 DISTNAME =		kde-l10n-${KDE_L10N_LANG}-${MODKDE4_VERSION}
-REVISION =		1
+REVISION =		2
 
 MODKDE4_RESOURCES =	Yes
 MODKDE4_USE =		libs
@@ -13,6 +13,7 @@ MODKDE4_USE =		libs
 SUPDISTFILES +=	kde-l10n-${L}-${MODKDE4_VERSION}${EXTRACT_SUFX}
 .endfor
 
+BUILD_DEPENDS +=	devel/gettext-tools
 RUN_DEPENDS +=	x11/gtk+3,-guic
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/${MODKDE4_VERSION}/src/kde-l10n/}
@@ -26,8 +27,6 @@ DESCR =		${PKGDIR}/DESCR
 PLIST =		${PKGDIR}/PLIST-${KDE_L10N_LANG}
 CHECKSUM_FILE =	${.CURDIR}/../distinfo
 PKG_ARGS =	-f ${PKGDIR}/PFRAG.conflict
-
-MODULES +=		devel/gettext
 
 NO_TEST =	Yes
 CONFIGURE_ENV =	CFLAGS=-I${PREFIX}/include \
