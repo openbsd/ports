@@ -1,4 +1,4 @@
-$OpenBSD: README-server,v 1.22 2017/05/23 14:17:00 sthen Exp $
+$OpenBSD: README-server,v 1.23 2017/09/13 14:24:08 pea Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -127,7 +127,7 @@ to the current version.
 4) Backup your old data directory:
 # mv /var/postgresql/data /var/postgresql/data-${PREV_MAJOR}
 
-5) Create a new data directory (using -E UTF8 if appropriate):
+5) Create a new data directory (adding -E UTF8 to the initdb line if needed):
 # su _postgresql -c "mkdir /var/postgresql/data"
 # su _postgresql -c "initdb -D /var/postgresql/data -U postgres -A md5 -W"
 
@@ -162,7 +162,7 @@ faster than a dump and reload, especially for large databases.
 3) Backup your old data directory:
 # mv /var/postgresql/data /var/postgresql/data-${PREV_MAJOR}
 
-4) Create a new data directory (using -E UTF8 if appropriate):
+4) Create a new data directory (adding -E UTF8 to the initdb line if needed):
 # su _postgresql -c "mkdir /var/postgresql/data"
 # su _postgresql -c "initdb -D /var/postgresql/data -U postgres -A md5 -W"
 
@@ -178,6 +178,7 @@ Examine your old file for local changes and apply them to the new version.
 6) Temporarily support connecting without a password for local users by
    editing pg_hba.conf to include "local all postgres trust"
 # su _postgresql -c "vi /var/postgresql/data/pg_hba.conf"
+# su _postgresql -c "vi /var/postgresql/data-${PREV_MAJOR}/pg_hba.conf"
 
 7) Run pg_upgrade:
 # su _postgresql -c "cd /var/postgresql && \
