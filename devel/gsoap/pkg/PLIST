@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/05/01 06:52:58 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2017/09/13 10:30:22 robert Exp $
 @bin bin/soapcpp2
 @bin bin/wsdl2h
 include/stdsoap2.h
@@ -49,7 +49,9 @@ share/gsoap/WS/WS-typemap.dat
 share/gsoap/WS/discovery.xsd
 share/gsoap/WS/ds.xsd
 share/gsoap/WS/enumeration.xsd
+share/gsoap/WS/oasis-sstc-saml-schema-assertion-1.1.xsd
 share/gsoap/WS/reference-1.1.xsd
+share/gsoap/WS/saml-schema-assertion-2.0.xsd
 share/gsoap/WS/typemap.dat
 share/gsoap/WS/ws-bpel_abstract_common_base.xsd
 share/gsoap/WS/ws-bpel_executable.xsd
@@ -62,14 +64,38 @@ share/gsoap/WS/wsu.xsd
 share/gsoap/WS/xenc.xsd
 share/gsoap/custom/
 share/gsoap/custom/README.txt
+share/gsoap/custom/chrono_duration.cpp
+share/gsoap/custom/chrono_duration.h
+share/gsoap/custom/chrono_time_point.cpp
+share/gsoap/custom/chrono_time_point.h
 share/gsoap/custom/duration.c
 share/gsoap/custom/duration.h
+share/gsoap/custom/float128.c
+share/gsoap/custom/float128.h
+share/gsoap/custom/int128.c
+share/gsoap/custom/int128.h
 share/gsoap/custom/long_double.c
 share/gsoap/custom/long_double.h
+share/gsoap/custom/long_time.c
+share/gsoap/custom/long_time.h
+share/gsoap/custom/qbytearray_base64.cpp
+share/gsoap/custom/qbytearray_base64.h
+share/gsoap/custom/qbytearray_hex.cpp
+share/gsoap/custom/qbytearray_hex.h
+share/gsoap/custom/qdate.cpp
+share/gsoap/custom/qdate.h
+share/gsoap/custom/qdatetime.cpp
+share/gsoap/custom/qdatetime.h
+share/gsoap/custom/qstring.cpp
+share/gsoap/custom/qstring.h
+share/gsoap/custom/qtime.cpp
+share/gsoap/custom/qtime.h
 share/gsoap/custom/struct_timeval.c
 share/gsoap/custom/struct_timeval.h
 share/gsoap/custom/struct_tm.c
 share/gsoap/custom/struct_tm.h
+share/gsoap/custom/struct_tm_date.c
+share/gsoap/custom/struct_tm_date.h
 share/gsoap/extras/
 share/gsoap/extras/README.txt
 share/gsoap/extras/ckdb.c
@@ -90,6 +116,8 @@ share/gsoap/import/ds.h
 share/gsoap/import/ds2.h
 share/gsoap/import/plnk.h
 share/gsoap/import/ref.h
+share/gsoap/import/saml1.h
+share/gsoap/import/saml2.h
 share/gsoap/import/ser.h
 share/gsoap/import/soap12.h
 share/gsoap/import/stdstring.h
@@ -110,6 +138,7 @@ share/gsoap/import/wsdd10.h
 share/gsoap/import/wsdd5.h
 share/gsoap/import/wsdx.h
 share/gsoap/import/wsp.h
+share/gsoap/import/wsp_appliesto.h
 share/gsoap/import/wsrm.h
 share/gsoap/import/wsrm4.h
 share/gsoap/import/wsrm5.h
@@ -123,6 +152,7 @@ share/gsoap/import/wst.h
 share/gsoap/import/wstx.h
 share/gsoap/import/wsu.h
 share/gsoap/import/xenc.h
+share/gsoap/import/xenc2.h
 share/gsoap/import/xlink.h
 share/gsoap/import/xmime.h
 share/gsoap/import/xmime4.h
@@ -137,6 +167,8 @@ share/gsoap/plugin/README.txt
 share/gsoap/plugin/cacerts.c
 share/gsoap/plugin/cacerts.h
 share/gsoap/plugin/calcrest.h
+share/gsoap/plugin/curlapi.c
+share/gsoap/plugin/curlapi.h
 share/gsoap/plugin/httpda.c
 share/gsoap/plugin/httpda.h
 share/gsoap/plugin/httpdatest.c
@@ -165,7 +197,10 @@ share/gsoap/plugin/mq.c
 share/gsoap/plugin/mq.h
 share/gsoap/plugin/plugin.c
 share/gsoap/plugin/plugin.h
+share/gsoap/plugin/sessions.c
+share/gsoap/plugin/sessions.h
 share/gsoap/plugin/smdevp.c
+@comment share/gsoap/plugin/smdevp.c.orig
 share/gsoap/plugin/smdevp.h
 share/gsoap/plugin/threads.c
 share/gsoap/plugin/threads.h
@@ -182,3 +217,5 @@ share/gsoap/plugin/wsseapi-lite.h
 share/gsoap/plugin/wsseapi.c
 share/gsoap/plugin/wsseapi.cpp
 share/gsoap/plugin/wsseapi.h
+share/gsoap/plugin/wstapi.c
+share/gsoap/plugin/wstapi.h

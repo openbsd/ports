@@ -1,9 +1,10 @@
-$OpenBSD: patch-configure_ac,v 1.2 2015/05/01 06:52:58 ajacoutot Exp $
+$OpenBSD: patch-configure_ac,v 1.3 2017/09/13 10:30:22 robert Exp $
 
 from Fedora: gsoap-libtool.patch (creates shared libraries)
 
---- configure.ac.orig	Sun Dec  7 00:30:38 2014
-+++ configure.ac	Sun Apr  5 17:06:18 2015
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
 @@ -16,8 +16,7 @@ AM_PROG_CC_C_O
  AM_PROG_LEX
  AC_PROG_YACC
@@ -14,7 +15,7 @@ from Fedora: gsoap-libtool.patch (creates shared libraries)
  AC_PROG_LN_S
  AC_PROG_AWK
  AC_PROG_INSTALL
-@@ -236,16 +235,16 @@ if test "x$with_openssl" = "xyes"; then
+@@ -259,7 +258,7 @@ if test "x$with_openssl" = "xyes"; then
      WSDL2H_EXTRA_LIBS="${WSDL2H_EXTRA_LIBS} -lgnutls -lgcrypt -lgpg-error -lz"
      SAMPLE_INCLUDES=
      SAMPLE_SSL_LIBS="-lgnutls -lgcrypt -lgpg-error -lz"
@@ -23,23 +24,21 @@ from Fedora: gsoap-libtool.patch (creates shared libraries)
    else
      AC_MSG_RESULT(no)
      WSDL2H_EXTRA_FLAGS="-DWITH_OPENSSL -DWITH_GZIP"
-     # an ugly hack to get httpda and md5evp plugins to conditionally
-     # compile with wsdl2h when OPENSSL is available
--    WSDL2H_EXTRA_LIBS="${WSDL2H_EXTRA_LIBS} ../plugin/httpda.c ../plugin/md5evp.c ../plugin/threads.c -lssl -lcrypto -lz"
-+    WSDL2H_EXTRA_LIBS="${WSDL2H_EXTRA_LIBS} ../plugin/httpda.c ../plugin/md5evp.c ../plugin/threads.c -lcrypto"
+@@ -267,7 +266,7 @@ if test "x$with_openssl" = "xyes"; then
+     WSDL2H_EXTRA_LIBS="${WSDL2H_EXTRA_LIBS} -lssl -lcrypto -lz"
      SAMPLE_INCLUDES=
      SAMPLE_SSL_LIBS="-lssl -lcrypto -lz"
 -    WSDL2H_SOAP_CPP_LIB="libgsoapssl++.a"
 +    WSDL2H_SOAP_CPP_LIB="libgsoapssl++.la"
    fi
-   if test -n "$OPENSSL"; then
-     WSDL2H_EXTRA_FLAGS="-I${OPENSSL}/include ${WSDL2H_EXTRA_FLAGS}"
-@@ -258,7 +257,7 @@ else
+   if test -n "$ZLIB"; then
+     WSDL2H_EXTRA_FLAGS="-I${ZLIB}/include ${WSDL2H_EXTRA_FLAGS}"
+@@ -286,7 +285,7 @@ else
    WSDL2H_EXTRA_FLAGS=
    SAMPLE_SSL_LIBS=
    SAMPLE_INCLUDES=
 -  WSDL2H_SOAP_CPP_LIB="libgsoap++.a"
 +  WSDL2H_SOAP_CPP_LIB="libgsoap++.la"
  fi
- AC_SUBST(WSDL2H_EXTRA_FLAGS)
- AC_SUBST(WSDL2H_EXTRA_LIBS)
+ AM_CONDITIONAL(WITH_OPENSSL, test "x$with_openssl" = "xyes" -a "x$with_gnutls" != "xyes")
+ AC_SUBST(WITH_OPENSSL)

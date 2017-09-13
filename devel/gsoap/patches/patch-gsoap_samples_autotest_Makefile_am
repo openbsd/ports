@@ -1,12 +1,13 @@
-$OpenBSD: patch-gsoap_samples_autotest_Makefile_am,v 1.2 2015/05/01 06:52:58 ajacoutot Exp $
+$OpenBSD: patch-gsoap_samples_autotest_Makefile_am,v 1.3 2017/09/13 10:30:22 robert Exp $
 
 from Fedora: gsoap-libtool.patch (creates shared libraries)
 
---- gsoap/samples/autotest/Makefile.am.orig	Sun Dec  7 00:30:43 2014
-+++ gsoap/samples/autotest/Makefile.am	Sun Apr  5 17:06:18 2015
-@@ -14,7 +14,7 @@ SOAP_FLAGS=-SL -T -I$(top_srcdir)/gsoap/import
- WSDLINPUT=$(srcdir)/examples.wsdl
- SOAPHEADER=$(srcdir)/examples.h
+Index: gsoap/samples/autotest/Makefile.am
+--- gsoap/samples/autotest/Makefile.am.orig
++++ gsoap/samples/autotest/Makefile.am
+@@ -14,7 +14,7 @@ SOAP_FLAGS=-SL -T -I$(top_srcdir)/gsoap/import -I$(top
+ WSDLINPUT=$(top_srcdir)/gsoap/samples/autotest/examples.wsdl
+ SOAPHEADER=$(top_srcdir)/gsoap/samples/autotest/examples.h
  SOAP_CPP_SRC=soapC.cpp soapServer.cpp
 -SOAP_CPP_LIB=$(top_builddir)/gsoap/libgsoap++.a
 +SOAP_CPP_LIB=$(top_builddir)/gsoap/libgsoap++.la
