@@ -1,0 +1,5 @@
+Kopano Core provides the foundation for groupware messaging enabling clients
+such as Kopano WebApp, Kopano DeskApp, mobile and sync clients. With its
+modular architecture, Kopano Core enables the possibility for a variety of
+setup scenarios, scalable from a very low-powered system to a multi-datacenter
+setup providing messaging capabilities to tens of thousands of users.

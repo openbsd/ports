@@ -1,0 +1,14 @@
+$OpenBSD: patch-common_libkcmapi_sym_in,v 1.1.1.1 2017/09/13 10:38:42 robert Exp $
+
+Index: common/libkcmapi.sym.in
+--- common/libkcmapi.sym.in.orig
++++ common/libkcmapi.sym.in
+@@ -17,6 +17,8 @@ global:
+ 		VTT*;
+ 		std::*::_S_*;
+ 	};
++	_ZN2KC10ECKeyTable*;
++	_ZN2KC10ECTableRow*;
+ local:
+ 	*;
+ };

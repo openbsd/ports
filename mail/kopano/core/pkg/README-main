@@ -1,0 +1,86 @@
+$OpenBSD: README-main,v 1.1.1.1 2017/09/13 10:38:42 robert Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+*** Upgrading users: refer to kopano documentation on the web to check
+*** if any particular step is required after upgrading to a new version.
+
+Zarafa -> Kopano migration upgrade
+==================================
+
+See https://documentation.kopano.io/kopano_migration_manual/zcp_migration.html
+    https://kb.kopano.io/display/WIKI/Migration+Quick+Start-Guide+-+ZCP+to+Kopano+Core
+
+With the installation of Kopano Core, the Kopano default configuration
+directory /etc/kopano is created.
+
+There are now 2 approaches in adapting configuration to Kopano:
+
+a) making a diff of the configuration files from /etc/zarafa to /etc/kopano,
+   effectively migrating only the wanted configuration directives to Kopano
+b) removing the per-default installed configuration files from Kopano,
+   copying the existing Zarafa configuration files and making smaller changes
+   to it
+
+The database and attachments are drop-in-replacement safe,
+meaning that the database can be used in its existing format. 
+
+Post-install/update instructions for Kopano
+===========================================
+
+By default the server is configured to accept SOAP connections on port
+236. If you wish to connect Outlook clients on port 80, please setup
+your web server to proxy HTTP requests with URI=/kopano to
+http://localhost:236.
+
+It is advised to tune the MySQL installation according to:
+    https://documentation.kopano.io/kopanocore_administrator_manual/performance_tuning.html
+    https://kb.kopano.io/display/WIKI/Basic+MySQL+tuning
+(especially for max_allowed_packet)
+
+Before Starting kopano-server for the first time
+------------------------------------------------
+A MySQL datatabase access needs to be configured in
+    ${SYSCONFDIR}/kopano/server.cfg
+
+After kopano-server was started for the first time
+--------------------------------------------------
+Creating the public store.
+    # ${TRUEPREFIX}/sbin/kopano-admin -s
+
+Adding an admin user -- see kopano-admin(1).
+    # ${TRUEPREFIX}/sbin/kopano-admin -c zadmin -p secret \
+        -e kopano.admin@domain.tld -f "John Doe" -a 2
+
+Mail delivery agent configuration
+=================================
+
+See the following URL for other MTA integration:
+    https://documentation.kopano.io/kopanocore_administrator_manual/configure_kc_components.html
+
+Alternatively add the following .forward file under the user(s) home
+directory that will use Kopano:
+"|${TRUEPREFIX}/sbin/kopano-dagent <username>"
+
+You can automate this step by copying
+    ${TRUEPREFIX}/share/examples/kopano/createuser.dotforward
+to
+    ${SYSCONFDIR}/kopano/userscripts/createuser.d/
+The .forward will be automatically generated when a new user is added to
+Kopano.
+
+Kopano webaccess
+================
+
+Kopano Webaccess is obsolete and has been removed. Please
+use kopano-webapp.
+
+Documentation and help
+======================
+
+Each kopano-* command has its corresponding manpage.
+
+Some documentation is also available at:
+    https://documentation.kopano.io/kopanocore_administrator_manual/

@@ -1,0 +1,53 @@
+$OpenBSD: patch-spooler_DAgent_cpp,v 1.1.1.1 2017/09/13 10:38:42 robert Exp $
+
+Index: spooler/DAgent.cpp
+--- spooler/DAgent.cpp.orig
++++ spooler/DAgent.cpp
+@@ -71,6 +71,11 @@
+ #include "spmain.h"
+ #include "TmpPath.h"
+ 
++#ifdef __OpenBSD__
++#include <sys/resource.h>
++extern char **environ;
++#endif
++
+ /*
+   This is actually from sysexits.h
+   but since those windows lamers don't have it ..
+@@ -3577,7 +3582,7 @@ int main(int argc, char *argv[]) {
+ 
+ 	DeliveryArgs sDeliveryArgs;
+ 	sDeliveryArgs.strPath = "";
+-	sDeliveryArgs.strAutorespond = "/usr/sbin/kopano-autorespond";
++	sDeliveryArgs.strAutorespond = "/usr/local/sbin/kopano-autorespond";
+ 	sDeliveryArgs.bCreateFolder = false;
+ 	sDeliveryArgs.strDeliveryFolder.clear();
+ 	sDeliveryArgs.szPathSeperator = '\\';
+@@ -3623,8 +3628,8 @@ int main(int argc, char *argv[]) {
+ 	static const configsetting_t lpDefaults[] = {
+ 		{ "server_bind", "" },
+ 		{ "server_bind_intf", "" },
+-		{ "run_as_user", "kopano" },
+-		{ "run_as_group", "kopano" },
++		{ "run_as_user", "_kopano" },
++		{ "run_as_group", "_kopano" },
+ 		{ "pid_file", "/var/run/kopano/dagent.pid" },
+ 		{"coredump_enabled", "systemdefault"},
+ 		{"lmtp_port", "2003", CONFIGSETTING_NONEMPTY},
+@@ -3643,11 +3648,11 @@ int main(int argc, char *argv[]) {
+ 		{ "log_raw_message", "no", CONFIGSETTING_RELOADABLE },
+ 		{ "log_raw_message_path", "/tmp", CONFIGSETTING_RELOADABLE },
+ 		{ "archive_on_delivery", "no", CONFIGSETTING_RELOADABLE },
+-		{ "mr_autoaccepter", "/usr/sbin/kopano-mr-accept", CONFIGSETTING_RELOADABLE },
+-		{ "mr_autoprocessor", "/usr/sbin/kopano-mr-process", CONFIGSETTING_RELOADABLE },
++		{ "mr_autoaccepter", "/usr/local/sbin/kopano-mr-accept", CONFIGSETTING_RELOADABLE },
++		{ "mr_autoprocessor", "/usr/local/sbin/kopano-mr-process", CONFIGSETTING_RELOADABLE },
+ 		{ "plugin_enabled", "yes" },
+-		{ "plugin_path", "/var/lib/kopano/dagent/plugins" },
+-		{ "plugin_manager_path", "/usr/share/kopano-dagent/python" },
++		{ "plugin_path", "/var/db/kopano/dagent/plugins" },
++		{ "plugin_manager_path", "/usr/local/share/kopano-dagent/python" },
+ 		{ "default_charset", "us-ascii"},
+ 		{ "set_rule_headers", "yes", CONFIGSETTING_RELOADABLE },
+ 		{ "no_double_forward", "no", CONFIGSETTING_RELOADABLE },

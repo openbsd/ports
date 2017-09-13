@@ -1,0 +1,3 @@
+To completely deinstall kopano-webapp you need to perform the
+following step as root:
+    # rm -f /var/www/conf/modules/kopano-webapp.conf

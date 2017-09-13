@@ -1,0 +1,14 @@
+$OpenBSD: patch-installer_linux_ldap_m4,v 1.1.1.1 2017/09/13 10:38:42 robert Exp $
+
+Index: installer/linux/ldap.m4
+--- installer/linux/ldap.m4.orig
++++ installer/linux/ldap.m4
+@@ -154,7 +154,7 @@ ldap_sendas_relation_attribute = ifelse(TYPE,`OPENLDAP
+ ldap_user_certificate_attribute = userCertificate`'ifelse(TYPE,`OPENLDAP',`;binary',`')
+ 
+ # Load extra user properties from the propmap file
+-!propmap /usr/share/kopano/ldap.propmap.cfg
++!propmap /etc/kopano/ldap.propmap.cfg
+ 
+ ##########
+ # Group settings

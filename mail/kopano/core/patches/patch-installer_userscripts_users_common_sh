@@ -1,0 +1,21 @@
+$OpenBSD: patch-installer_userscripts_users_common_sh,v 1.1.1.1 2017/09/13 10:38:42 robert Exp $
+
+Index: installer/userscripts/users_common.sh
+--- installer/userscripts/users_common.sh.orig
++++ installer/userscripts/users_common.sh
+@@ -1,7 +1,7 @@
+ # shell include script
+ 
+-KOPANO_LANG="${KOPANO_USERSCRIPT_LOCALE:-${LC_MESSAGES:-en_US}}"
+-PATH=/bin:/usr/local/bin:/usr/bin
++KOPANO_LANG="${KOPANO_USERSCRIPT_LOCALE:-${LC_MESSAGES:-C}}"
++PATH=$PATH:/usr/local/bin
+ export KOPANO_LANG PATH
+ 
+ if [ -z "${KOPANO_USER_SCRIPTS}" ] ; then
+@@ -24,4 +24,4 @@ fi
+ 
+ # Find cannot cope with unreadable cwd
+ cd "$KOPANO_USER_SCRIPTS"
+-find "${KOPANO_USER_SCRIPTS}" -maxdepth 1 -type f -perm -u=x ! -name \*~ ! -name \#\* ! -name \*.rpm\* ! -name \*.bak ! -name \*.old -exec {} \;
++find "${KOPANO_USER_SCRIPTS}" -maxdepth 1 -type f -perm -u=x -and ! -name \*~ -and ! -name \#\* -and ! -name \*.rpm\* -and ! -name \*.bak -and ! -name \*.old -exec {} \;

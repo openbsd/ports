@@ -1,0 +1,46 @@
+$OpenBSD: patch-configure_ac,v 1.1.1.1 2017/09/13 10:38:42 robert Exp $
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -53,11 +53,13 @@ case "$host_os" in
+ 	openbsd*)
+ 		BUILDOS="openbsd"
+ 		ZCPPFLAGS="$ZCPPFLAGS -DOPENBSD"
++		TINFO_LIB=""
+ 		LN_TFSV="ln -fs"
+ 		;;
+ 	linux*)
+ 		BUILDOS="linux"
+ 		ZCPPFLAGS="$ZCPPFLAGS -DLINUX"
++		TINFO_LIB="-ltinfo"
+ 		LN_TFSV="ln -Tfsv"
+ 		;;
+ esac
+@@ -259,7 +261,7 @@ AC_DEFUN([LIBNCURSES_WITH_CONFIG],[
+ 		[
+ 			dnl just pick the lowest common denominator
+ 			NCURSES_FLAGS=""
+-			NCURSES_LIBS="-lncurses -ltinfo"
++			NCURSES_LIBS="-lncurses ${TINFO_LIB}"
+ 		]
+ 	)
+ 	dnl We should be using ncurses.h - or is portability to non-ncurses
+@@ -515,7 +517,7 @@ AC_SUBST(ICONV_LIBS)
+ LIBS=$LIBS_system
+ 
+ AC_SEARCH_LIBS([crypt_r], [crypt], [CRYPT_LIBS="-lcrypt"; LIBS="$LIBS_system"])
+-AC_SEARCH_LIBS([clock_gettime], [rt], [clock_LIBS="-lrt"; LIBS="$LIBS_system"])
++AC_SEARCH_LIBS([clock_gettime], [rt], [clock_LIBS=""; LIBS="$LIBS_system"])
+ AC_SUBST([CRYPT_LIBS])
+ AC_SUBST([clock_LIBS])
+ PKG_CHECK_EXISTS([libssl],
+@@ -690,6 +692,8 @@ ZCPPFLAGS="$ZCPPFLAGS $icu_uc_CFLAGS $icu_i18n_CFLAGS"
+ # all libs for programs, because functions are in static common stuff
+ PROG_LIBS="$UUID_LIBS $INTL_LIBS $ICONV_LIBS $GZ_LIBS"
+ AC_SUBST(PROG_LIBS)
++
++AC_CHECK_FUNCS([arc4random_buf])
+ 
+ # done testing C++ requirements
+ AC_LANG_POP

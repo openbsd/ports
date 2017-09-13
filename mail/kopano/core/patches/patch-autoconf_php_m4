@@ -1,0 +1,16 @@
+$OpenBSD: patch-autoconf_php_m4,v 1.1.1.1 2017/09/13 10:38:42 robert Exp $
+
+Index: autoconf/php.m4
+--- autoconf/php.m4.orig
++++ autoconf/php.m4
+@@ -18,8 +18,9 @@ AC_DEFUN([PHP_WITH_PHP_CONFIG],[
+   PHP_LDFLAGS=`$PHP_CONFIG --ldflags`
+   PHP_EXTENSION_DIR=`$PHP_CONFIG --extension-dir`
+   PHP_VERSION=`$PHP_CONFIG --version`
++  PHP_BINARY=`$PHP_CONFIG --php-binary`
+   # watch escaping for brackets, only take the first word (2nd sed). will contain "Usage:" when php doesn't understand the --configure-options parameter.
+-  PHP_SYSCONF_DIR=`$PHP_CONFIG --configure-options | sed -e 's_.*with-config-file-scan-dir=\([[^ ]]\+\).*_\1_' | sed -e 's/\([[^ ]]\+\).*/\1/'`
++  PHP_SYSCONF_DIR=`$PHP_BINARY --ini | grep "Scan for additional" | cut -d ':' -f2 | tr -d ' '`
+   phpdn=`dirname $PHP_SYSCONF_DIR`
+   if test -z "${PHP_SYSCONF_DIR}" -o "${phpdn}" = "."; then
+ 	# find path in existing paths

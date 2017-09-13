@@ -1,0 +1,68 @@
+$OpenBSD: patch-common_platform_linux_cpp,v 1.1.1.1 2017/09/13 10:38:41 robert Exp $
+
+Index: common/platform.linux.cpp
+--- common/platform.linux.cpp.orig
++++ common/platform.linux.cpp
+@@ -45,7 +45,7 @@
+ #else
+ #	include <uuid.h>
+ #endif
+-#if defined(__linux__) && defined(__GLIBC__)
++#if (defined(__linux__) && defined(__GLIBC__)) || defined(__OpenBSD__)
+ #	include <cxxabi.h>
+ #	include <execinfo.h>
+ #endif
+@@ -54,9 +54,6 @@
+ #ifdef __APPLE__
+ // bsd
+ #define ICONV_CONST const
+-#elif OPENBSD
+-// bsd
+-#define ICONV_CONST const
+ #else
+ // linux
+ #define ICONV_CONST
+@@ -79,22 +76,10 @@ HRESULT CoCreateGuid(LPGUID pNewGUID) {
+ 		return MAPI_E_INVALID_PARAMETER;
+ 
+ #if HAVE_UUID_CREATE
+-#ifdef OPENBSD
+-	uuid_t *g = NULL;
+-	void *vp = NULL;
+-	size_t n = 0;
+-	// error codes are not checked!
+-	uuid_create(&g);
+-	uuid_make(g, UUID_MAKE_V1);
+-	uuid_export(g, UUID_FMT_BIN, &vp, &n);
+-	memcpy(pNewGUID, &vp, UUID_LEN_BIN);
+-	uuid_destroy(g);
+-#else
+ 	uuid_t g;
+ 	uint32_t uid_ret;
+ 	uuid_create(&g, &uid_ret);
+ 	memcpy(pNewGUID, &g, sizeof(g));
+-#endif // OPENBSD
+ #else
+ 	uuid_t g;
+ 	uuid_generate(g);
+@@ -142,6 +127,12 @@ void Sleep(unsigned int msec) {
+ 
+ namespace KC {
+ 
++#ifdef HAVE_ARC4RANDOM_BUF
++void rand_get(char *p, int n)
++{
++	arc4random_buf(p, n);
++}
++#else
+ static void rand_fail(void)
+ {
+ 	fprintf(stderr, "Cannot access/use /dev/urandom, this is fatal (%s)\n", strerror(errno));
+@@ -178,6 +169,7 @@ void rand_get(char *p, int n)
+ 
+ 		close(fd);
+ 	}
++#endif
+ 	
+ void rand_init() {
+ 	unsigned int seed = 0;

@@ -1,0 +1,14 @@
+$OpenBSD: patch-spooler_python_Makefile_in,v 1.1.1.1 2017/09/13 10:38:42 robert Exp $
+
+Index: spooler/python/Makefile.in
+--- spooler/python/Makefile.in.orig
++++ spooler/python/Makefile.in
+@@ -772,8 +772,6 @@ uninstall-am: uninstall-kopano_dagentDATA uninstall-ko
+ 
+ 
+ install-data-hook:
+-	mkdir -p ${DESTDIR}/${localstatedir}/lib/kopano/dagent/plugins/
+-	mkdir -p ${DESTDIR}/${localstatedir}/lib/kopano/spooler/plugins/
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

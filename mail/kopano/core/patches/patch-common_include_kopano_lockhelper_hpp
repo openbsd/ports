@@ -1,0 +1,13 @@
+$OpenBSD: patch-common_include_kopano_lockhelper_hpp,v 1.1.1.1 2017/09/13 10:38:41 robert Exp $
+
+Index: common/include/kopano/lockhelper.hpp
+--- common/include/kopano/lockhelper.hpp.orig
++++ common/include/kopano/lockhelper.hpp
+@@ -21,7 +21,6 @@ class shared_mutex {
+ 
+ 	private:
+ 	pthread_rwlock_t mtx = PTHREAD_RWLOCK_INITIALIZER;
+-	bool locked = false;
+ };
+ 
+ template<class _Mutex> class shared_lock {

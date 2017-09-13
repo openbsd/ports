@@ -1,0 +1,26 @@
+@comment $OpenBSD: PLIST-mapi,v 1.1.1.1 2017/09/13 10:38:42 robert Exp $
+@conflict zarafa-mapi-*
+@pkgpath mail/zarafa/zarafa,-mapi
+lib/php-${MODPHP_VERSION}/
+lib/php-${MODPHP_VERSION}/modules/
+lib/php-${MODPHP_VERSION}/modules/${MODULE_NAME}.a
+lib/php-${MODPHP_VERSION}/modules/${MODULE_NAME}.so
+share/examples/php-${MODPHP_VERSION}/
+share/examples/php-${MODPHP_VERSION}/${MODULE_NAME}.ini
+@sample ${SYSCONFDIR}/php-${MODPHP_VERSION}.sample/${MODULE_NAME}.ini
+share/kopano/php/
+share/kopano/php/${MODULE_NAME}/
+share/kopano/php/${MODULE_NAME}/class.baseexception.php
+share/kopano/php/${MODULE_NAME}/class.baserecurrence.php
+share/kopano/php/${MODULE_NAME}/class.freebusypublish.php
+share/kopano/php/${MODULE_NAME}/class.${MODULE_NAME}exception.php
+share/kopano/php/${MODULE_NAME}/class.meetingrequest.php
+share/kopano/php/${MODULE_NAME}/class.recurrence.php
+share/kopano/php/${MODULE_NAME}/class.taskrecurrence.php
+share/kopano/php/${MODULE_NAME}/class.taskrequest.php
+share/kopano/php/${MODULE_NAME}/${MODULE_NAME}.util.php
+share/kopano/php/${MODULE_NAME}/${MODULE_NAME}code.php
+share/kopano/php/${MODULE_NAME}/${MODULE_NAME}defs.php
+share/kopano/php/${MODULE_NAME}/${MODULE_NAME}guid.php
+share/kopano/php/${MODULE_NAME}/${MODULE_NAME}tags.php
+@extra ${SYSCONFDIR}/php-${MODPHP_VERSION}/mapi.ini

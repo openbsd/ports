@@ -1,0 +1,35 @@
+$OpenBSD: patch-provider_libserver_ECSession_cpp,v 1.1.1.1 2017/09/13 10:38:42 robert Exp $
+
+Index: provider/libserver/ECSession.cpp
+--- provider/libserver/ECSession.cpp.orig
++++ provider/libserver/ECSession.cpp
+@@ -46,7 +46,7 @@
+ #include "ECICS.h"
+ #include <kopano/ECIConv.h>
+ #include "versions.h"
+-#if defined LINUX || !defined UNICODE
++#if defined LINUX || !defined UNICODE || defined OPENBSD
+ #define WHITESPACE " \t\n\r"
+ #else
+ #define WHITESPACE L" \t\n\r"
+@@ -760,11 +760,20 @@ ECRESULT ECAuthSession::ValidateUserSocket(int socket,
+ 	uid_t uid;
+ 	char strbuf[1024];
+ #ifdef SO_PEERCRED
++#if defined(__OpenBSD__)
++	struct sockpeercred cr;
++#else
+ 	struct ucred cr;
++#endif
+ 	unsigned int cr_len;
+ 
++#if defined(__OpenBSD__)
++	cr_len = sizeof(struct sockpeercred);
++	if (getsockopt(socket, SOL_SOCKET, SO_PEERCRED, &cr, &cr_len) != 0 || cr_len != sizeof(struct sockpeercred))
++#else
+ 	cr_len = sizeof(struct ucred);
+ 	if (getsockopt(socket, SOL_SOCKET, SO_PEERCRED, &cr, &cr_len) != 0 || cr_len != sizeof(struct ucred))
++#endif
+ 		return KCERR_LOGON_FAILED;
+ 
+ 	uid = cr.uid; // uid is the uid of the user that is connecting

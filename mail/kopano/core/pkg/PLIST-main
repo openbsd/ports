@@ -1,0 +1,678 @@
+@comment $OpenBSD: PLIST-main,v 1.1.1.1 2017/09/13 10:38:42 robert Exp $
+@conflict zarafa-*
+@pkgpath mail/zarafa/zarafa,-main
+@newgroup _kopano:793
+@newuser _kopano:793:_kopano:daemon:Kopano Account:/var/empty:/sbin/nologin
+@extraunexec rm -rf /var/db/kopano/{0,1,2,3,4,5,6,7,8,9}
+@extraunexec rm -rf /var/db/kopano/attachments
+@extraunexec rm -rf /var/db/kopano/dagent/plugins/*
+@extraunexec rm -rf /var/db/kopano/spooler/plugins/*
+@extraunexec rm -rf /var/db/kopano/client/*
+@extraunexec rm -rf /var/db/kopano/index/*
+@extraunexec rm -rf /var/log/kopano/*.log
+@bin bin/kopano-fsck
+@bin bin/kopano-migration-imap
+@bin bin/kopano-passwd
+@bin bin/kopano-set-oof
+@bin bin/kopano-stats
+include/icalmapi/
+include/icalmapi/ICalToMAPI.h
+include/icalmapi/MAPIToICal.h
+include/icalmapi/icalitem.h
+include/icalmapi/icalmem.hpp
+include/icalmapi/icalrecurrence.h
+include/icalmapi/icaluid.h
+include/icalmapi/mapitovcf.hpp
+include/icalmapi/nameids.h
+include/icalmapi/valarm.h
+include/icalmapi/vcftomapi.hpp
+include/icalmapi/vconverter.h
+include/icalmapi/vevent.h
+include/icalmapi/vfreebusy.h
+include/icalmapi/vtimezone.h
+include/icalmapi/vtodo.h
+include/inetmapi/
+include/inetmapi/inetmapi.h
+include/inetmapi/options.h
+include/kopano/
+include/kopano/ArchiveControl.h
+include/kopano/CommonUtil.h
+include/kopano/ECABEntryID.h
+include/kopano/ECChannel.h
+include/kopano/ECConfig.h
+include/kopano/ECDebug.h
+include/kopano/ECDefs.h
+include/kopano/ECFeatures.hpp
+include/kopano/ECGetText.h
+include/kopano/ECGuid.h
+include/kopano/ECIConv.h
+include/kopano/ECInterfaceDefs.h
+include/kopano/ECKeyTable.h
+include/kopano/ECLogger.h
+include/kopano/ECMemTable.h
+include/kopano/ECPluginSharedData.h
+include/kopano/ECRestriction.h
+include/kopano/ECScheduler.h
+include/kopano/ECTags.h
+include/kopano/ECThreadPool.h
+include/kopano/ECUnknown.h
+include/kopano/EMSAbTag.h
+include/kopano/IECInterfaces.hpp
+include/kopano/MAPIErrors.h
+include/kopano/RecurrenceState.h
+include/kopano/UnixUtil.h
+include/kopano/Util.h
+include/kopano/archiver-common.h
+include/kopano/automapi.hpp
+include/kopano/charset/
+include/kopano/charset/convert.h
+include/kopano/charset/convstring.h
+include/kopano/charset/traits.h
+include/kopano/charset/utf8string.h
+include/kopano/codepage.h
+include/kopano/conversion.h
+include/kopano/director_util.h
+include/kopano/ecversion.h
+include/kopano/hl.hpp
+include/kopano/kcodes.h
+include/kopano/lockhelper.hpp
+include/kopano/mapi_ptr.h
+include/kopano/mapiext.h
+include/kopano/mapiguidext.h
+include/kopano/memory.hpp
+include/kopano/my_getopt.h
+include/kopano/namedprops.h
+include/kopano/pcuser.hpp
+include/kopano/platform.h
+include/kopano/platform.linux.h
+include/kopano/stringutil.h
+include/kopano/swig_iunknown.h
+include/kopano/tie.hpp
+include/kopano/typemap.i
+include/kopano/typemap_python.i
+include/kopano/userutil.h
+include/kopano/ustringutil.h
+include/kopano/zcdefs.h
+include/libfreebusy/
+include/libfreebusy/ECEnumFBBlock.h
+include/libfreebusy/ECFBBlockList.h
+include/libfreebusy/ECFreeBusyData.h
+include/libfreebusy/ECFreeBusySupport.h
+include/libfreebusy/ECFreeBusyUpdate.h
+include/libfreebusy/PublishFreeBusy.h
+include/libfreebusy/freebusy.h
+include/libfreebusy/freebusyguid.h
+include/libfreebusy/freebusytags.h
+include/libfreebusy/freebusyutil.h
+include/libfreebusy/recurrence.h
+include/libkcsync/
+include/libkcsync/ECResyncSet.h
+include/libkcsync/ECSyncContext.h
+include/libkcsync/ECSyncLog.h
+include/libkcsync/ECSyncSettings.h
+include/libkcsync/ECSyncUtil.h
+include/librosie.h
+include/mapi4linux/
+include/mapi4linux/edkguid.h
+include/mapi4linux/edkmdb.h
+include/mapi4linux/initguid.h
+include/mapi4linux/mapi.h
+include/mapi4linux/mapicode.h
+include/mapi4linux/mapidefs.h
+include/mapi4linux/mapiguid.h
+include/mapi4linux/mapispi.h
+include/mapi4linux/mapitags.h
+include/mapi4linux/mapiutil.h
+include/mapi4linux/mapix.h
+lib/kopano/
+lib/kopano/libkcclient.a
+lib/kopano/libkcclient.so
+lib/kopano/libkccontacts.a
+lib/kopano/libkccontacts.so
+lib/libkcarchiver.a
+@lib lib/libkcarchiver.so.${LIBkcarchiver_VERSION}
+lib/libkcarchivercore.a
+@lib lib/libkcarchivercore.so.${LIBkcarchivercore_VERSION}
+lib/libkcfreebusy.a
+@lib lib/libkcfreebusy.so.${LIBkcfreebusy_VERSION}
+lib/libkchl.a
+@lib lib/libkchl.so.${LIBkchl_VERSION}
+lib/libkcicalmapi.a
+@lib lib/libkcicalmapi.so.${LIBkcicalmapi_VERSION}
+lib/libkcinetmapi.a
+@lib lib/libkcinetmapi.so.${LIBkcinetmapi_VERSION}
+lib/libkcmapi.a
+@lib lib/libkcmapi.so.${LIBkcmapi_VERSION}
+lib/libkcpyconv-${MODPY_VERSION}.so
+lib/libkcpyconv.a
+lib/libkcpyconv.so
+lib/libkcpydirector-${MODPY_VERSION}.so
+lib/libkcpydirector.a
+lib/libkcpydirector.so
+lib/libkcserver-db.a
+lib/libkcserver-db.so
+lib/libkcserver-ldap.a
+lib/libkcserver-ldap.so
+lib/libkcserver-ldapms.so
+lib/libkcserver.a
+@lib lib/libkcserver.so.${LIBkcserver_VERSION}
+lib/libkcsoap.a
+@lib lib/libkcsoap.so.${LIBkcsoap_VERSION}
+lib/libkcssl.a
+@lib lib/libkcssl.so.${LIBkcssl_VERSION}
+lib/libkcsync.a
+@lib lib/libkcsync.so.${LIBkcsync_VERSION}
+lib/libkcutil.a
+@lib lib/libkcutil.so.${LIBkcutil_VERSION}
+lib/libmapi.a
+@lib lib/libmapi.so.${LIBmapi_VERSION}
+lib/pkgconfig/kopano.pc
+lib/python${MODPY_VERSION}/site-packages/MAPI/
+lib/python${MODPY_VERSION}/site-packages/MAPI-1.0-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/MAPI/Defs.py
+lib/python${MODPY_VERSION}/site-packages/MAPI/Defs.pyc
+lib/python${MODPY_VERSION}/site-packages/MAPI/Struct.py
+lib/python${MODPY_VERSION}/site-packages/MAPI/Struct.pyc
+lib/python${MODPY_VERSION}/site-packages/MAPI/Tags.py
+lib/python${MODPY_VERSION}/site-packages/MAPI/Tags.pyc
+lib/python${MODPY_VERSION}/site-packages/MAPI/Time.py
+lib/python${MODPY_VERSION}/site-packages/MAPI/Time.pyc
+lib/python${MODPY_VERSION}/site-packages/MAPI/Util/
+lib/python${MODPY_VERSION}/site-packages/MAPI/Util/AddressBook.py
+lib/python${MODPY_VERSION}/site-packages/MAPI/Util/AddressBook.pyc
+lib/python${MODPY_VERSION}/site-packages/MAPI/Util/Generators.py
+lib/python${MODPY_VERSION}/site-packages/MAPI/Util/Generators.pyc
+lib/python${MODPY_VERSION}/site-packages/MAPI/Util/Iterators.py
+lib/python${MODPY_VERSION}/site-packages/MAPI/Util/Iterators.pyc
+lib/python${MODPY_VERSION}/site-packages/MAPI/Util/__init__.py
+lib/python${MODPY_VERSION}/site-packages/MAPI/Util/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/MAPI/Util/codepage.py
+lib/python${MODPY_VERSION}/site-packages/MAPI/Util/codepage.pyc
+lib/python${MODPY_VERSION}/site-packages/MAPI/__init__.py
+lib/python${MODPY_VERSION}/site-packages/MAPI/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/MAPICore.py
+lib/python${MODPY_VERSION}/site-packages/MAPICore.pyc
+lib/python${MODPY_VERSION}/site-packages/_MAPICore.a
+lib/python${MODPY_VERSION}/site-packages/_MAPICore.so
+lib/python${MODPY_VERSION}/site-packages/_icalmapi.a
+lib/python${MODPY_VERSION}/site-packages/_icalmapi.so
+lib/python${MODPY_VERSION}/site-packages/_inetmapi.a
+lib/python${MODPY_VERSION}/site-packages/_inetmapi.so
+lib/python${MODPY_VERSION}/site-packages/_libfreebusy.a
+lib/python${MODPY_VERSION}/site-packages/_libfreebusy.so
+lib/python${MODPY_VERSION}/site-packages/icalmapi.py
+lib/python${MODPY_VERSION}/site-packages/icalmapi.pyc
+lib/python${MODPY_VERSION}/site-packages/inetmapi.py
+lib/python${MODPY_VERSION}/site-packages/inetmapi.pyc
+lib/python${MODPY_VERSION}/site-packages/kopano/
+lib/python${MODPY_VERSION}/site-packages/kopano-0.1-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/kopano/__init__.py
+lib/python${MODPY_VERSION}/site-packages/kopano/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/kopano/address.py
+lib/python${MODPY_VERSION}/site-packages/kopano/address.pyc
+lib/python${MODPY_VERSION}/site-packages/kopano/attachment.py
+lib/python${MODPY_VERSION}/site-packages/kopano/attachment.pyc
+lib/python${MODPY_VERSION}/site-packages/kopano/autoaccept.py
+lib/python${MODPY_VERSION}/site-packages/kopano/autoaccept.pyc
+lib/python${MODPY_VERSION}/site-packages/kopano/base.py
+lib/python${MODPY_VERSION}/site-packages/kopano/base.pyc
+lib/python${MODPY_VERSION}/site-packages/kopano/body.py
+lib/python${MODPY_VERSION}/site-packages/kopano/body.pyc
+lib/python${MODPY_VERSION}/site-packages/kopano/company.py
+lib/python${MODPY_VERSION}/site-packages/kopano/company.pyc
+lib/python${MODPY_VERSION}/site-packages/kopano/compat.py
+lib/python${MODPY_VERSION}/site-packages/kopano/compat.pyc
+lib/python${MODPY_VERSION}/site-packages/kopano/config.py
+lib/python${MODPY_VERSION}/site-packages/kopano/config.pyc
+lib/python${MODPY_VERSION}/site-packages/kopano/daemon/
+lib/python${MODPY_VERSION}/site-packages/kopano/daemon/__init__.py
+lib/python${MODPY_VERSION}/site-packages/kopano/daemon/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/kopano/daemon/daemon.py
+lib/python${MODPY_VERSION}/site-packages/kopano/daemon/daemon.pyc
+lib/python${MODPY_VERSION}/site-packages/kopano/daemon/pidlockfile.py
+lib/python${MODPY_VERSION}/site-packages/kopano/daemon/pidlockfile.pyc
+lib/python${MODPY_VERSION}/site-packages/kopano/daemon/runner.py
+lib/python${MODPY_VERSION}/site-packages/kopano/daemon/runner.pyc
+lib/python${MODPY_VERSION}/site-packages/kopano/daemon/version/
+lib/python${MODPY_VERSION}/site-packages/kopano/daemon/version/__init__.py
+lib/python${MODPY_VERSION}/site-packages/kopano/daemon/version/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/kopano/daemon/version/version_info.py
+lib/python${MODPY_VERSION}/site-packages/kopano/daemon/version/version_info.pyc
+lib/python${MODPY_VERSION}/site-packages/kopano/defs.py
+lib/python${MODPY_VERSION}/site-packages/kopano/defs.pyc
+lib/python${MODPY_VERSION}/site-packages/kopano/delegation.py
+lib/python${MODPY_VERSION}/site-packages/kopano/delegation.pyc
+lib/python${MODPY_VERSION}/site-packages/kopano/errors.py
+lib/python${MODPY_VERSION}/site-packages/kopano/errors.pyc
+lib/python${MODPY_VERSION}/site-packages/kopano/folder.py
+lib/python${MODPY_VERSION}/site-packages/kopano/folder.pyc
+lib/python${MODPY_VERSION}/site-packages/kopano/freebusy.py
+lib/python${MODPY_VERSION}/site-packages/kopano/freebusy.pyc
+lib/python${MODPY_VERSION}/site-packages/kopano/group.py
+lib/python${MODPY_VERSION}/site-packages/kopano/group.pyc
+lib/python${MODPY_VERSION}/site-packages/kopano/ics.py
+lib/python${MODPY_VERSION}/site-packages/kopano/ics.pyc
+lib/python${MODPY_VERSION}/site-packages/kopano/item.py
+lib/python${MODPY_VERSION}/site-packages/kopano/item.pyc
+lib/python${MODPY_VERSION}/site-packages/kopano/lockfile.py
+lib/python${MODPY_VERSION}/site-packages/kopano/lockfile.pyc
+lib/python${MODPY_VERSION}/site-packages/kopano/log.py
+lib/python${MODPY_VERSION}/site-packages/kopano/log.pyc
+lib/python${MODPY_VERSION}/site-packages/kopano/lru_cache.py
+lib/python${MODPY_VERSION}/site-packages/kopano/lru_cache.pyc
+lib/python${MODPY_VERSION}/site-packages/kopano/meetingrequest.py
+lib/python${MODPY_VERSION}/site-packages/kopano/meetingrequest.pyc
+lib/python${MODPY_VERSION}/site-packages/kopano/outofoffice.py
+lib/python${MODPY_VERSION}/site-packages/kopano/outofoffice.pyc
+lib/python${MODPY_VERSION}/site-packages/kopano/parser.py
+lib/python${MODPY_VERSION}/site-packages/kopano/parser.pyc
+lib/python${MODPY_VERSION}/site-packages/kopano/permission.py
+lib/python${MODPY_VERSION}/site-packages/kopano/permission.pyc
+lib/python${MODPY_VERSION}/site-packages/kopano/prop.py
+lib/python${MODPY_VERSION}/site-packages/kopano/prop.pyc
+lib/python${MODPY_VERSION}/site-packages/kopano/quota.py
+lib/python${MODPY_VERSION}/site-packages/kopano/quota.pyc
+lib/python${MODPY_VERSION}/site-packages/kopano/recurrence.py
+lib/python${MODPY_VERSION}/site-packages/kopano/recurrence.pyc
+lib/python${MODPY_VERSION}/site-packages/kopano/restriction.py
+lib/python${MODPY_VERSION}/site-packages/kopano/restriction.pyc
+lib/python${MODPY_VERSION}/site-packages/kopano/rule.py
+lib/python${MODPY_VERSION}/site-packages/kopano/rule.pyc
+lib/python${MODPY_VERSION}/site-packages/kopano/server.py
+lib/python${MODPY_VERSION}/site-packages/kopano/server.pyc
+lib/python${MODPY_VERSION}/site-packages/kopano/service.py
+lib/python${MODPY_VERSION}/site-packages/kopano/service.pyc
+lib/python${MODPY_VERSION}/site-packages/kopano/store.py
+lib/python${MODPY_VERSION}/site-packages/kopano/store.pyc
+lib/python${MODPY_VERSION}/site-packages/kopano/table.py
+lib/python${MODPY_VERSION}/site-packages/kopano/table.pyc
+lib/python${MODPY_VERSION}/site-packages/kopano/user.py
+lib/python${MODPY_VERSION}/site-packages/kopano/user.pyc
+lib/python${MODPY_VERSION}/site-packages/kopano/utils.py
+lib/python${MODPY_VERSION}/site-packages/kopano/utils.pyc
+lib/python${MODPY_VERSION}/site-packages/kopano_backup/
+lib/python${MODPY_VERSION}/site-packages/kopano_backup-0.1-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/kopano_backup/__init__.py
+lib/python${MODPY_VERSION}/site-packages/kopano_backup/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/kopano_cli/
+lib/python${MODPY_VERSION}/site-packages/kopano_cli-0.1-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/kopano_cli/__init__.py
+lib/python${MODPY_VERSION}/site-packages/kopano_cli/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/kopano_migration_pst/
+lib/python${MODPY_VERSION}/site-packages/kopano_migration_pst-0.1-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/kopano_migration_pst/__init__.py
+lib/python${MODPY_VERSION}/site-packages/kopano_migration_pst/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/kopano_migration_pst/pst.py
+lib/python${MODPY_VERSION}/site-packages/kopano_migration_pst/pst.pyc
+lib/python${MODPY_VERSION}/site-packages/kopano_presence/
+lib/python${MODPY_VERSION}/site-packages/kopano_presence-0.1-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/kopano_presence/__init__.py
+lib/python${MODPY_VERSION}/site-packages/kopano_presence/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/kopano_presence/plugin_spreed.py
+lib/python${MODPY_VERSION}/site-packages/kopano_presence/plugin_spreed.pyc
+lib/python${MODPY_VERSION}/site-packages/kopano_presence/plugin_xmpp.py
+lib/python${MODPY_VERSION}/site-packages/kopano_presence/plugin_xmpp.pyc
+lib/python${MODPY_VERSION}/site-packages/kopano_search/
+lib/python${MODPY_VERSION}/site-packages/kopano_search-0.1-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/kopano_search/__init__.py
+lib/python${MODPY_VERSION}/site-packages/kopano_search/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/kopano_search/magic.py
+lib/python${MODPY_VERSION}/site-packages/kopano_search/magic.pyc
+lib/python${MODPY_VERSION}/site-packages/kopano_search/plaintext.py
+lib/python${MODPY_VERSION}/site-packages/kopano_search/plaintext.pyc
+lib/python${MODPY_VERSION}/site-packages/kopano_search/plugin_solr.py
+lib/python${MODPY_VERSION}/site-packages/kopano_search/plugin_solr.pyc
+lib/python${MODPY_VERSION}/site-packages/kopano_search/plugin_xapian.py
+lib/python${MODPY_VERSION}/site-packages/kopano_search/plugin_xapian.pyc
+lib/python${MODPY_VERSION}/site-packages/kopano_search/xmltotext.xslt
+lib/python${MODPY_VERSION}/site-packages/libfreebusy.py
+lib/python${MODPY_VERSION}/site-packages/libfreebusy.pyc
+lib/python${MODPY_VERSION}/site-packages/zarafa/
+lib/python${MODPY_VERSION}/site-packages/zarafa-0.1-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/zarafa/__init__.py
+lib/python${MODPY_VERSION}/site-packages/zarafa/__init__.pyc
+lib/systemd/
+lib/systemd/system/
+lib/systemd/system/kopano-dagent.service
+lib/systemd/system/kopano-gateway.service
+lib/systemd/system/kopano-ical.service
+lib/systemd/system/kopano-monitor.service
+lib/systemd/system/kopano-presence.service
+lib/systemd/system/kopano-search.service
+lib/systemd/system/kopano-server.service
+lib/systemd/system/kopano-spooler.service
+lib/sysusers.d/
+lib/sysusers.d/kopano-sysusers.conf
+lib/tmpfiles.d/
+lib/tmpfiles.d/kopano-tmpfiles.conf
+libexec/kopano/
+@bin libexec/kopano/mapitime
+@man man/man1/kopano-fsck.1
+@man man/man1/kopano-passwd.1
+@man man/man1/kopano-set-oof.1
+@man man/man1/kopano-stats.1
+@man man/man5/kopano-archiver.cfg.5
+@man man/man5/kopano-backup.cfg.5
+@man man/man5/kopano-dagent.cfg.5
+@man man/man5/kopano-gateway.cfg.5
+@man man/man5/kopano-ical.cfg.5
+@man man/man5/kopano-ldap.cfg.5
+@man man/man5/kopano-migration-pst.cfg.5
+@man man/man5/kopano-monitor.cfg.5
+@man man/man5/kopano-search.cfg.5
+@man man/man5/kopano-server.cfg.5
+@man man/man5/kopano-spooler.cfg.5
+@man man/man5/kopano-unix.cfg.5
+@man man/man7/kopano.7
+@man man/man8/kopano-admin.8
+@man man/man8/kopano-archiver-aclset.8
+@man man/man8/kopano-archiver-aclsync.8
+@man man/man8/kopano-archiver-restore.8
+@man man/man8/kopano-archiver.8
+@man man/man8/kopano-autorespond.8
+@man man/man8/kopano-backup.8
+@man man/man8/kopano-cfgchecker.8
+@man man/man8/kopano-cli.8
+@man man/man8/kopano-dagent.8
+@man man/man8/kopano-gateway.8
+@man man/man8/kopano-ical.8
+@man man/man8/kopano-mailbox-permissions.8
+@man man/man8/kopano-migration-pst.8
+@man man/man8/kopano-monitor.8
+@man man/man8/kopano-mr-accept.8
+@man man/man8/kopano-mr-process.8
+@man man/man8/kopano-search.8
+@man man/man8/kopano-server.8
+@man man/man8/kopano-spooler.8
+@bin sbin/kopano-admin
+@bin sbin/kopano-archiver
+sbin/kopano-archiver-aclset
+sbin/kopano-archiver-aclsync
+sbin/kopano-archiver-restore
+sbin/kopano-autorespond
+sbin/kopano-backup
+sbin/kopano-cachestat
+sbin/kopano-cli
+@bin sbin/kopano-dagent
+@bin sbin/kopano-gateway
+@bin sbin/kopano-ical
+sbin/kopano-mailbox-permissions
+sbin/kopano-migration-pst
+@bin sbin/kopano-monitor
+sbin/kopano-mr-accept
+sbin/kopano-mr-accept.py
+sbin/kopano-mr-process
+sbin/kopano-mr-process.py
+sbin/kopano-presence
+sbin/kopano-search
+sbin/kopano-search-upgrade-findroots.py
+sbin/kopano-search-xapian-compact.py
+@bin sbin/kopano-server
+@bin sbin/kopano-spooler
+share/doc/kopano/
+share/doc/kopano-gateway/
+@mode 0555
+share/doc/kopano/audit-parse.pl
+share/doc/kopano/createuser.dotforward
+share/doc/kopano/db-calc-storesize
+share/doc/kopano/db-convert-attachments-to-files
+share/doc/kopano/db-remove-orphaned-attachments
+@mode
+share/doc/kopano/example-config/
+share/doc/kopano/kopano-fix-ipm-subtree
+share/doc/kopano/kopano-localize-folders
+share/doc/kopano/kopano-recreate-systemfolders
+share/doc/kopano/kopano-rules
+share/doc/kopano/kopano.ldif
+@mode 0555
+share/doc/kopano/ldap-switch-sendas.pl
+share/doc/kopano/optimize-imap.py
+@mode
+share/doc/kopano/ssl-certificates.sh
+@mode 0555
+share/doc/kopano/update-resource-recipients
+@mode
+share/doc/pkg-readmes/${FULLPKGNAME}
+share/examples/bash_completion.d/
+share/examples/bash_completion.d/kopano-bash-completion.sh
+share/examples/cron.daily/
+share/examples/cron.daily/kopano-client-update
+share/examples/kopano/
+@sample ${SYSCONFDIR}/kopano/
+@mode 750
+@group _kopano
+@sample ${SYSCONFDIR}/kopano/ssl/
+@mode
+@group
+@sample ${SYSCONFDIR}/kopano/sslkeys/
+share/examples/kopano/archiver.cfg
+@sample ${SYSCONFDIR}/kopano/archiver.cfg
+share/examples/kopano/autorespond
+@sample ${SYSCONFDIR}/kopano/autorespond
+share/examples/kopano/backup.cfg
+share/examples/kopano/dagent.cfg
+@sample ${SYSCONFDIR}/kopano/dagent.cfg
+share/examples/kopano/gateway.cfg
+@sample ${SYSCONFDIR}/kopano/gateway.cfg
+share/examples/kopano/ical.cfg
+@sample ${SYSCONFDIR}/kopano/ical.cfg
+share/examples/kopano/kopano.inf
+@sample ${SYSCONFDIR}/kopano/kopano.inf
+share/examples/kopano/kopano.m4
+@sample ${SYSCONFDIR}/kopano/kopano.m4
+share/examples/kopano/kopano.schema
+@sample ${SYSCONFDIR}/kopano/kopano.schema
+share/examples/kopano/ldap.cfg
+@sample ${SYSCONFDIR}/kopano/ldap.cfg
+share/examples/kopano/license/
+@sample ${SYSCONFDIR}/kopano/license/
+share/examples/kopano/local_kopano.m4
+@sample ${SYSCONFDIR}/kopano/local_kopano.m4
+share/examples/kopano/mapi/
+@sample ${SYSCONFDIR}/mapi/
+share/examples/kopano/mapi/kopano.inf
+@sample ${SYSCONFDIR}/mapi/kopano.inf
+share/examples/kopano/mapi/zcontacts.inf
+@sample ${SYSCONFDIR}/mapi/zcontacts.inf
+share/examples/kopano/migration-pst.cfg
+@sample ${SYSCONFDIR}/kopano/migration-pst.cfg
+share/examples/kopano/monitor.cfg
+@sample ${SYSCONFDIR}/kopano/monitor.cfg
+share/examples/kopano/presence.cfg
+@sample ${SYSCONFDIR}/kopano/presence.cfg
+share/examples/kopano/quotamail/
+@sample ${SYSCONFDIR}/kopano/quotamail/
+share/examples/kopano/quotamail/companywarning.mail
+@sample ${SYSCONFDIR}/kopano/quotamail/companywarning.mail
+share/examples/kopano/quotamail/userhard.mail
+@sample ${SYSCONFDIR}/kopano/quotamail/userhard.mail
+share/examples/kopano/quotamail/usersoft.mail
+@sample ${SYSCONFDIR}/kopano/quotamail/usersoft.mail
+share/examples/kopano/quotamail/userwarning.mail
+@sample ${SYSCONFDIR}/kopano/quotamail/userwarning.mail
+share/examples/kopano/search.cfg
+@sample ${SYSCONFDIR}/kopano/search.cfg
+share/examples/kopano/searchscripts/
+@sample ${SYSCONFDIR}/kopano/searchscripts/
+share/examples/kopano/searchscripts/attachments_parser
+@mode 555
+@sample ${SYSCONFDIR}/kopano/searchscripts/attachments_parser
+@mode
+share/examples/kopano/searchscripts/attachments_parser.db
+@sample ${SYSCONFDIR}/kopano/searchscripts/attachments_parser.db
+share/examples/kopano/searchscripts/xmltotext.xslt
+@sample ${SYSCONFDIR}/kopano/searchscripts/xmltotext.xslt
+share/examples/kopano/searchscripts/zmktemp
+@mode 555
+@sample ${SYSCONFDIR}/kopano/searchscripts/zmktemp
+@mode
+share/examples/kopano/server.cfg
+@mode 640
+@group _kopano
+@sample ${SYSCONFDIR}/kopano/server.cfg
+@mode
+@group
+share/examples/kopano/spooler.cfg
+@sample ${SYSCONFDIR}/kopano/spooler.cfg
+share/examples/kopano/unix.cfg
+share/examples/kopano/userscripts/
+@sample ${SYSCONFDIR}/kopano/userscripts/
+@mode 755
+share/examples/kopano/userscripts/companies_common.sh
+@sample ${SYSCONFDIR}/kopano/userscripts/companies_common.sh
+share/examples/kopano/userscripts/createcompany
+@sample ${SYSCONFDIR}/kopano/userscripts/createcompany
+share/examples/kopano/userscripts/createcompany.d/
+@sample ${SYSCONFDIR}/kopano/userscripts/createcompany.d/
+share/examples/kopano/userscripts/createcompany.d/00createpublic
+@sample ${SYSCONFDIR}/kopano/userscripts/createcompany.d/00createpublic
+share/examples/kopano/userscripts/creategroup
+@sample ${SYSCONFDIR}/kopano/userscripts/creategroup
+@mode
+share/examples/kopano/userscripts/creategroup.d/
+@mode 755
+share/examples/kopano/userscripts/createuser
+@sample ${SYSCONFDIR}/kopano/userscripts/createuser
+share/examples/kopano/userscripts/createuser.d/
+@sample ${SYSCONFDIR}/kopano/userscripts/createuser.d/
+share/examples/kopano/userscripts/createuser.d/00createstore
+@sample ${SYSCONFDIR}/kopano/userscripts/createuser.d/00createstore
+share/examples/kopano/userscripts/deletecompany
+@sample ${SYSCONFDIR}/kopano/userscripts/deletecompany
+@mode
+share/examples/kopano/userscripts/deletecompany.d/
+@mode 755
+share/examples/kopano/userscripts/deletegroup
+@sample ${SYSCONFDIR}/kopano/userscripts/deletegroup
+@mode
+share/examples/kopano/userscripts/deletegroup.d/
+@mode 755
+share/examples/kopano/userscripts/deleteuser
+@sample ${SYSCONFDIR}/kopano/userscripts/deleteuser
+share/examples/kopano/userscripts/deleteuser.d/
+@sample ${SYSCONFDIR}/kopano/userscripts/deleteuser.d/
+share/examples/kopano/userscripts/groups_common.sh
+@sample ${SYSCONFDIR}/kopano/userscripts/groups_common.sh
+share/examples/kopano/userscripts/users_common.sh
+@sample ${SYSCONFDIR}/kopano/userscripts/users_common.sh
+@mode
+share/examples/kopano/zcontacts.inf
+@sample ${SYSCONFDIR}/kopano/zcontacts.inf
+share/examples/logrotate.d/
+share/examples/logrotate.d/kopano
+share/gdb/
+share/gdb/auto-load/
+share/gdb/auto-load/usr/
+share/gdb/auto-load/usr/local/
+share/gdb/auto-load/usr/local/lib/
+share/gdb/auto-load/usr/local/lib/libmapi.so.1.0.0-gdb.py
+share/kopano/
+share/kopano-dagent/
+share/kopano-dagent/python/
+share/kopano-dagent/python/mapiplugin.py
+share/kopano-dagent/python/mapiplugin.pyc
+share/kopano-dagent/python/pluginmanager.py
+share/kopano-dagent/python/pluginmanager.pyc
+share/kopano-dagent/python/plugins/
+share/kopano-dagent/python/plugins/BMP2PNG.py
+share/kopano-dagent/python/plugins/BMP2PNG.pyc
+share/kopano-dagent/python/plugins/examplerules.py
+share/kopano-dagent/python/plugins/examplerules.pyc
+share/kopano-dagent/python/plugins/movetopublic.cfg
+@sample ${SYSCONFDIR}/kopano/movetopublic.cfg
+share/kopano-dagent/python/plugins/movetopublic.py
+share/kopano-dagent/python/plugins/movetopublic.pyc
+share/kopano-dagent/python/plugintemplates.py
+share/kopano-dagent/python/plugintemplates.pyc
+share/kopano-dagent/python/wraplogger.py
+share/kopano-dagent/python/wraplogger.pyc
+share/kopano-dagent/python/zconfig.py
+share/kopano-dagent/python/zconfig.pyc
+share/kopano-dagent/python/zinterval.py
+share/kopano-dagent/python/zinterval.pyc
+share/kopano-dagent/python/zunit.py
+share/kopano-dagent/python/zunit.pyc
+share/kopano-spooler/
+share/kopano-spooler/python/
+share/kopano-spooler/python/mapiplugin.py
+share/kopano-spooler/python/mapiplugin.pyc
+share/kopano-spooler/python/pluginmanager.py
+share/kopano-spooler/python/pluginmanager.pyc
+share/kopano-spooler/python/plugins/
+share/kopano-spooler/python/plugins/disclaimer.py
+share/kopano-spooler/python/plugins/disclaimer.pyc
+share/kopano-spooler/python/plugintemplates.py
+share/kopano-spooler/python/plugintemplates.pyc
+share/kopano-spooler/python/wraplogger.py
+share/kopano-spooler/python/wraplogger.pyc
+share/kopano-spooler/python/zconfig.py
+share/kopano-spooler/python/zconfig.pyc
+share/kopano-spooler/python/zinterval.py
+share/kopano-spooler/python/zinterval.pyc
+share/kopano-spooler/python/zunit.py
+share/kopano-spooler/python/zunit.pyc
+@sample /var/db/kopano/dagent/
+@sample /var/db/kopano/dagent/plugins/
+@sample /var/db/kopano/spooler/
+@sample /var/db/kopano/spooler/plugins/
+@mode 0750
+@owner _kopano
+@group _kopano
+@sample /var/db/kopano/
+@sample /var/db/kopano/client/
+@sample /var/db/kopano/index/
+@sample /var/log/kopano/
+@mode
+@owner
+@group
+share/kopano/ldap.active-directory.cfg
+share/kopano/ldap.openldap.cfg
+share/kopano/ldap.propmap.cfg
+share/locale/bg/LC_MESSAGES/kopano.mo
+share/locale/ca/LC_MESSAGES/kopano.mo
+share/locale/cs/LC_MESSAGES/kopano.mo
+share/locale/da/LC_MESSAGES/kopano.mo
+share/locale/de/LC_MESSAGES/kopano.mo
+share/locale/el/LC_MESSAGES/kopano.mo
+share/locale/es/LC_MESSAGES/kopano.mo
+share/locale/et/LC_MESSAGES/kopano.mo
+share/locale/fa/
+share/locale/fa/LC_MESSAGES/
+share/locale/fa/LC_MESSAGES/kopano.mo
+share/locale/fi/LC_MESSAGES/kopano.mo
+share/locale/fr/LC_MESSAGES/kopano.mo
+share/locale/fr_BE/
+share/locale/fr_BE/LC_MESSAGES/
+share/locale/fr_BE/LC_MESSAGES/kopano.mo
+share/locale/gl/LC_MESSAGES/kopano.mo
+share/locale/he/LC_MESSAGES/kopano.mo
+share/locale/hr/LC_MESSAGES/kopano.mo
+share/locale/hu/LC_MESSAGES/kopano.mo
+share/locale/it/LC_MESSAGES/kopano.mo
+share/locale/ja/LC_MESSAGES/kopano.mo
+share/locale/ko/LC_MESSAGES/kopano.mo
+share/locale/lt/
+share/locale/lt/LC_MESSAGES/
+share/locale/lt/LC_MESSAGES/kopano.mo
+share/locale/nb/LC_MESSAGES/kopano.mo
+share/locale/nl/LC_MESSAGES/kopano.mo
+share/locale/nl_BE/
+share/locale/nl_BE/LC_MESSAGES/
+share/locale/nl_BE/LC_MESSAGES/kopano.mo
+share/locale/pl/LC_MESSAGES/kopano.mo
+share/locale/pt/LC_MESSAGES/kopano.mo
+share/locale/pt_BR/LC_MESSAGES/kopano.mo
+share/locale/ru/LC_MESSAGES/kopano.mo
+share/locale/sl/LC_MESSAGES/kopano.mo
+share/locale/sv/LC_MESSAGES/kopano.mo
+share/locale/tr/LC_MESSAGES/kopano.mo
+share/locale/uk/LC_MESSAGES/kopano.mo
+share/locale/zh_CN/LC_MESSAGES/kopano.mo
+share/locale/zh_TW/LC_MESSAGES/kopano.mo
+@rcscript ${RCDIR}/kopano
+@rcscript ${RCDIR}/kopano_gateway
+@rcscript ${RCDIR}/kopano_ical
+@rcscript ${RCDIR}/kopano_monitor
+@rcscript ${RCDIR}/kopano_search
+@rcscript ${RCDIR}/kopano_server
+@rcscript ${RCDIR}/kopano_spooler

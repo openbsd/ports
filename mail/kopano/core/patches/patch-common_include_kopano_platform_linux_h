@@ -1,0 +1,28 @@
+$OpenBSD: patch-common_include_kopano_platform_linux_h,v 1.1.1.1 2017/09/13 10:38:41 robert Exp $
+
+Index: common/include/kopano/platform.linux.h
+--- common/include/kopano/platform.linux.h.orig
++++ common/include/kopano/platform.linux.h
+@@ -33,7 +33,11 @@
+ #include <dlfcn.h>
+ #include <cstddef>
+ #include <libgen.h>
++#ifndef __OpenBSD__
+ #include <byteswap.h>
++#else
++#include <stdarg.h>
++#endif
+ #include <cerrno>
+ #include <clocale>
+ 
+@@ -51,6 +55,10 @@
+ 
+ #ifndef UNUSED_VAR
+ #define UNUSED_VAR __attribute__((unused))
++#endif
++
++#ifdef __OpenBSD__
++#define POLLRDHUP 0
+ #endif
+ 
+ #include <cassert>

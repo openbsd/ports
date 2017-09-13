@@ -1,0 +1,19 @@
+$OpenBSD: patch-ECtools_monitor_monitor_cpp,v 1.1.1.1 2017/09/13 10:38:41 robert Exp $
+
+Index: ECtools/monitor/monitor.cpp
+--- ECtools/monitor/monitor.cpp.orig
++++ ECtools/monitor/monitor.cpp
+@@ -169,10 +169,10 @@ int main(int argc, char *argv[]) {
+ 	static const configsetting_t lpDefaults[] = {
+ 		{ "smtp_server","localhost" },
+ 		{ "server_socket", "default:" },
+-		{ "run_as_user", "kopano" },
+-		{ "run_as_group", "kopano" },
++		{ "run_as_user", "_kopano" },
++		{ "run_as_group", "_kopano" },
+ 		{ "pid_file", "/var/run/kopano/monitor.pid" },
+-		{ "running_path", "/var/lib/kopano" },
++		{ "running_path", "/var/empty" },
+ 		{"log_method", "file", CONFIGSETTING_NONEMPTY},
+ 		{"log_file", "/var/log/kopano/monitor.log", CONFIGSETTING_NONEMPTY},
+ 		{"log_level", "3", CONFIGSETTING_NONEMPTY | CONFIGSETTING_RELOADABLE},

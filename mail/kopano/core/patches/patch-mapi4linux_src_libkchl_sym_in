@@ -1,0 +1,16 @@
+$OpenBSD: patch-mapi4linux_src_libkchl_sym_in,v 1.1.1.1 2017/09/13 10:38:41 robert Exp $
+
+Index: mapi4linux/src/libkchl.sym.in
+--- mapi4linux/src/libkchl.sym.in.orig
++++ mapi4linux/src/libkchl.sym.in
+@@ -7,6 +7,10 @@ global:
+ 		VTT*;
+ 		std::*::_S_*;
+ 	};
++	_ZN4KCHL8KMessage*;
++	_ZN4KCHL6KTable*;
++	_ZN4KCHL5KProp*;
++	_ZN4KCHL7KFolder*;
+ local:
+ 	*;
+ };

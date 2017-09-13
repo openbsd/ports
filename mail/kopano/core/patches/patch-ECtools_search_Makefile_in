@@ -1,0 +1,13 @@
+$OpenBSD: patch-ECtools_search_Makefile_in,v 1.1.1.1 2017/09/13 10:38:41 robert Exp $
+
+Index: ECtools/search/Makefile.in
+--- ECtools/search/Makefile.in.orig
++++ ECtools/search/Makefile.in
+@@ -594,7 +594,6 @@ install-exec-local:
+ 	rm -Rf build
+ 
+ install-data-local:
+-	mkdir -p "${DESTDIR}${localstatedir}/lib/kopano/search"
+ 
+ uninstall-local:
+ 	rm -Rf ${DESTDIR}${pythondir}/kopano_search \

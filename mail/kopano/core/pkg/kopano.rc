@@ -1,0 +1,24 @@
+#!/bin/sh
+#
+# $OpenBSD: kopano.rc,v 1.1.1.1 2017/09/13 10:38:42 robert Exp $
+
+# "meta" script running the following rc.d(8) scripts with the given argument;
+# note that daemon_flags, daemon_user, daemon_timeout and daemon_class are not
+# passed to the child scripts.
+_pkg_scripts="kopano_server kopano_spooler kopano_monitor kopano_gateway kopano_ical kopano_search"
+
+if [ "$1" = restart ]; then
+	$0 stop && $0 start
+	exit
+fi
+
+if [ "$1" = stop ]; then
+	for _i in ${_pkg_scripts}; do _l="${_i} ${_l}"; done
+	_pkg_scripts=${_l% }
+fi
+
+for _i in ${_pkg_scripts}; do
+	if [[ -x ${RCDIR}/${_i} ]]; then
+		${RCDIR}/${_i} $@ || exit $?
+	fi
+done

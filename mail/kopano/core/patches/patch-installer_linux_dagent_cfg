@@ -1,0 +1,33 @@
+$OpenBSD: patch-installer_linux_dagent_cfg,v 1.1.1.1 2017/09/13 10:38:42 robert Exp $
+
+Index: installer/linux/dagent.cfg
+--- installer/linux/dagent.cfg.orig
++++ installer/linux/dagent.cfg
+@@ -114,16 +114,16 @@ archive_on_delivery = no
+ plugin_enabled = yes
+ 
+ # Path to the dagent plugin manager
+-plugin_manager_path = /usr/share/kopano-dagent/python
++plugin_manager_path = /usr/local/share/kopano-dagent/python
+ 
+ # Path to the activated dagent plugins.
+ #   This folder contains symlinks to the kopano plugins and custom scripts. The plugins are
+-#   installed in '/usr/share/kopano-dagent/python/plugins/'. To activate a plugin create a symbolic
++#   installed in '/usr/local/kopano-dagent/python/plugins/'. To activate a plugin create a symbolic
+ #   link in the 'plugin_path' directory.
+ #
+ # Example:
+-#  $ ln -s /usr/share/kopano-dagent/python/plugins/BMP2PNG.py /var/lib/kopano/dagent/plugins/BMP2PNG.py
+-plugin_path = /var/lib/kopano/dagent/plugins
++#  $ ln -s /usr/local/kopano-dagent/python/plugins/BMP2PNG.py /var/db/kopano/dagent/plugins/BMP2PNG.py
++plugin_path = /var/db/kopano/dagent/plugins
+ 
+ ##############################################################
+ # DAGENT RULE SETTINGS
+@@ -160,4 +160,4 @@ no_double_forward = no
+ 
+ # A custom-defined reply message to the user with a rule forwarding to a
+ # domain not in forward_whitelist_domains.
+-#forward_whitelist_domain_message = The Kopano mail system has rejected your request to forward your e-mail with subject %subject (via mail filters) to %sender: the operation is not permitted.\n\nRemove the rule or contact your administrator about the forward_whitelist_domains setting.
+\ No newline at end of file
++#forward_whitelist_domain_message = The Kopano mail system has rejected your request to forward your e-mail with subject %subject (via mail filters) to %sender: the operation is not permitted.\n\nRemove the rule or contact your administrator about the forward_whitelist_domains setting.

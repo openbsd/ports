@@ -1,0 +1,13 @@
+$OpenBSD: patch-mapi4linux_src_libmapi_sym_in,v 1.1.1.1 2017/09/13 10:38:41 robert Exp $
+
+Index: mapi4linux/src/libmapi.sym.in
+--- mapi4linux/src/libmapi.sym.in.orig
++++ mapi4linux/src/libmapi.sym.in
+@@ -46,6 +46,7 @@ global:
+ 	PCpropFindProp;
+ 	/* workaround RHBZ issue 1403609 */
+ 	_ZNKR2KC*;
++	_ZN2KC16ECAndRestriction*;
+ local:
+ 	*;
+ };

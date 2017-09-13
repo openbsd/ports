@@ -1,0 +1,11 @@
+$OpenBSD: patch-installer_linux_kopano-autorespond,v 1.1.1.1 2017/09/13 10:38:42 robert Exp $
+
+Index: installer/linux/kopano-autorespond
+--- installer/linux/kopano-autorespond.orig
++++ installer/linux/kopano-autorespond
+@@ -1,4 +1,4 @@
+-#! /usr/bin/env bash
++#!/bin/sh
+ 
+ FROM=$1
+ TO=$2

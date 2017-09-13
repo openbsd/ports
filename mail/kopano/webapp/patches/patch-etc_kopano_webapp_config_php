@@ -1,0 +1,14 @@
+$OpenBSD: patch-etc_kopano_webapp_config_php,v 1.1.1.1 2017/09/13 10:38:42 robert Exp $
+
+Index: etc/kopano/webapp/config.php
+--- etc/kopano/webapp/config.php.orig
++++ etc/kopano/webapp/config.php
+@@ -61,7 +61,7 @@
+ 
+ 	// Defines the temp path (absolute). Here uploaded attachments will be saved.
+ 	// The web client doesn't work without this directory.
+-	define("TMP_PATH", "/var/lib/kopano-webapp/tmp");
++	define("TMP_PATH", "/tmp");
+ 
+ 	// Define the path to the plugin directory (No slash at the end)
+ 	define("PATH_PLUGIN_DIR", "plugins");
