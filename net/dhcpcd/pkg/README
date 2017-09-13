@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.2 2017/07/14 09:43:37 sthen Exp $
+$OpenBSD: README,v 1.3 2017/09/13 11:03:51 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -35,3 +35,6 @@ interface pppoe0
 	# request prefix delegation for downstream interfaces.
 	ia_pd 2 em0/1 vlan3/2 vlan5/3
 -- -- -- -- -- --
+
+In normal cases, you would use rtadvd(8) to advertise these prefixes to
+clients (e.g. "rcctl enable rtadvd; rcctl set rtadvd_flags em0 vlan3 vlan5").
