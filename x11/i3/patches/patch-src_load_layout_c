@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_load_layout_c,v 1.4 2017/09/13 12:50:33 dcoppa Exp $
+
+commit b48cbe42af94cf69700843922e57c68b81f3fddd
+Author: Orestis Floros <orestisf1993@gmail.com>
+Date:   Thu Sep 7 00:53:28 2017
+
+Set marks to NULL after freeing
+
+realloc() was being called on an already freed pointer.
+
+Index: src/load_layout.c
+--- src/load_layout.c.orig
++++ src/load_layout.c
+@@ -157,6 +157,7 @@ static int json_end_map(void *ctx) {
+             }
+ 
+             free(marks);
++            marks = NULL;
+             num_marks = 0;
+         }
+ 

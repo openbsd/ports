@@ -1,0 +1,25 @@
+$OpenBSD: patch-include_con_h,v 1.6 2017/09/13 12:50:33 dcoppa Exp $
+
+commit 369c9ed50f2b9fc2dc904db07907cd5f95f0a5ad
+Author: Orestis <orestisf1993@gmail.com>
+Date:   Wed Sep 6 05:34:14 2017
+
+Check if con_id exists in cmd_swap
+
+Index: include/con.h
+--- include/con.h.orig
++++ include/con.h
+@@ -153,6 +153,13 @@ bool con_has_parent(Con *con, Con *parent);
+ Con *con_by_window_id(xcb_window_t window);
+ 
+ /**
++ * Returns the container with the given container ID or NULL if no such
++ * container exists.
++ *
++ */
++Con *con_by_con_id(long target);
++
++/**
+  * Returns the container with the given frame ID or NULL if no such container
+  * exists.
+  *

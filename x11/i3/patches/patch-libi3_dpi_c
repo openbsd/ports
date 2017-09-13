@@ -1,7 +1,15 @@
-$OpenBSD: patch-libi3_dpi_c,v 1.1 2017/09/04 14:33:07 dcoppa Exp $
+$OpenBSD: patch-libi3_dpi_c,v 1.2 2017/09/13 12:50:33 dcoppa Exp $
 
-Silence a clang -Wsometimes-uninitialized warning
-https://github.com/i3/i3/pull/2875
+commit e8dbf0171de8c7399dcdfc3c42610e5f3bf418d1
+Author: Theo Buehler <tb@openbsd.org>
+Date:   Wed Aug 23 13:48:58 2017
+
+Avoid use of uninitialized in init_dpi_end
+
+If conn == NULL or display == NULL, init_dpi() jumps to init_dpi_end
+before (declaring and) initializing resource. In init_dpi_end, there
+is a free(resource) call conditionally on resource != NULL, so this
+may lead to a bogus free. Found by clang -Wsometimes-uninitialized.
 
 Index: libi3/dpi.c
 --- libi3/dpi.c.orig
