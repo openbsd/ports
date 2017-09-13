@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.6 2017/07/27 09:34:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2017/09/13 11:04:24 ajacoutot Exp $
+
+# XXX: see patches/patch-configure
+USE_WXNEEDED =		Yes
 
 # jsapi-tests crashes in js::MarkRangeConservatively() on hppa (SIGSEGV in js/src/jsgc.cpp:1142)
 # jsapi-tests crashes in js::Bindings::switchToScriptStorage() on alpha (SIGBUS in jsutil.h:235)
@@ -9,7 +12,7 @@ ONLY_FOR_ARCHS =	alpha amd64 i386 hppa mips64el mips64 powerpc sparc64
 COMMENT =		Mozilla C implementation of JavaScript
 
 MOZILLA_VERSION =	38
-REVISION =		0
+REVISION =		1
 V =			${MOZILLA_VERSION}.8.0
 SUBST_VARS +=		MOZILLA_VERSION
 
@@ -35,24 +38,27 @@ MODULES =		lang/python
 # sync with games/0ad/base x11/gnome/builder x11/gnome/shell x11/gnome/gjs
 COMPILER =		gcc
 
-WANTLIB += c m pthread readline nspr4 ncurses plc4 plds4 z
-WANTLIB += ${COMPILER_LIBCXX}
+WANTLIB += c ffi icudata icui18n icuuc m ncurses nspr4 plc4 plds4
+WANTLIB += readline z ${COMPILER_LIBCXX}
 
 MODPY_RUNDEP =		No
 TEST_DEPENDS =		${MODPY_RUN_DEPENDS}
-LIB_DEPENDS =		devel/nspr
-
-# XXX: see patches/patch-configure
-USE_WXNEEDED =		Yes
+LIB_DEPENDS =		devel/libffi \
+			devel/nspr \
+			textproc/icu4c
 
 WRKDIST =		${WRKDIR}/mozilla-esr${MOZILLA_VERSION}/js/src
 USE_GMAKE =		yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--with-pthread \
+			--with-intl-api \
+			--with-system-icu \
+			--with-system-zlib \
 			--with-system-nspr \
 			--enable-readline \
 			--enable-ctypes \
-			--disable-intl-api \
+			--enable-system-ffi \
+			--disable-optimize \
 			--enable-threadsafe
 
 CONFIGURE_ENV +=	SO_VERSION="${SO_VERSION}" \
