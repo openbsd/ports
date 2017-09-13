@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.4 2015/08/30 15:58:32 avsm Exp $
+# $OpenBSD: Makefile,v 1.5 2017/09/13 07:36:31 jasper Exp $
 
 COMMENT =	OCaml graph library
 CATEGORIES =	devel
 
 V =		1.8.5
-REVISION =	2
+REVISION =	3
 DISTNAME =	ocamlgraph-${V}
 PKGNAME =	ocaml-graph-${V}
 MASTER_SITES =	http://ocamlgraph.lri.fr/download/
 
-HOMEPAGE =	http://ocamlgraph.lri.fr/
+HOMEPAGE =	http://ocamlgraph.lri.fr/index.en.html
 MAINTAINER =	Christopher Zimmermann <chrisz@openbsd.org>
 
 # LGPL 2.1
