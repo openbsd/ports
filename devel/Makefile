@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1644 2017/09/08 16:44:05 jsing Exp $
+# $OpenBSD: Makefile,v 1.1645 2017/09/13 09:52:02 phessler Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1347,6 +1347,7 @@
      SUBDIR += py-futures
      SUBDIR += py-gdata
      SUBDIR += py-gevent
+     SUBDIR += py-gevent,python3
      SUBDIR += py-gitdb
      SUBDIR += py-gitpython
      SUBDIR += py-gobject

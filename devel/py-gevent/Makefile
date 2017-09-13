@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2017/06/13 07:46:44 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.13 2017/09/13 09:52:02 phessler Exp $
 
 COMMENT =		network library for easy and scalable concurrency
 
@@ -9,6 +9,9 @@ MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
 
 CATEGORIES =		devel
 HOMEPAGE =		http://www.gevent.org/
+
+FLAVORS =		python3
+FLAVOR ?=
 
 # MPL
 PERMIT_PACKAGE_CDROM =	Yes
