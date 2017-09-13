@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.294 2017/07/31 08:03:40 ajacoutot Exp $
+$OpenBSD: user.list,v 1.295 2017/09/13 10:17:45 robert Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -301,3 +301,4 @@ id  user		group		port options
 790 _mtr		_mtr		net/mtr
 791 _orthanc		_orthanc	graphics/orthanc/server
 792 _mcastproxy		_mcastproxy	net/mcast-proxy
+793 _kopano		_kopano		mail/kopano/core
