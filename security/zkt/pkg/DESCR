@@ -1,2 +1,11 @@
-The dnssec-zkt command is a wrapper around dnssec-keygen(8) to assist in
-DNSSEC zone key management.
+ZKT (Zone Key Tool) manages keys and signatures for DNSSEC-zones.
+It consists of four commands:
+
+zkt-conf, to manage the config file
+zkt-ls, to list dnssec zone keys
+zkt-keyman, to manage dnssec zone keys manually (seldom used)
+zkt-signer, to sign a zone and manage the lifetime and rollover of the
+zone signing keys
+
+Most of the commands are simple wrapper commands around BIND's
+dnssec-keygen(8) and dnssec-signzone(8) commands.
