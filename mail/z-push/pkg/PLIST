@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2016/11/24 18:27:14 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.21 2017/09/13 10:43:00 robert Exp $
 @extraunexec rm -rf /var/www/var/db/z-push/*
 @extraunexec rm -rf /var/www/var/log/z-push/*
 @unexec-delete rm -f /var/www/conf/modules/z-push.conf
@@ -6,6 +6,7 @@ z-push/
 z-push/DEVELOPMENT
 z-push/INSTALL
 z-push/LICENSE
+z-push/TRADEMARKS
 z-push/autodiscover/
 z-push/autodiscover/INSTALL
 z-push/autodiscover/autodiscover.php
@@ -128,6 +129,7 @@ z-push/lib/core/contentparameters.php
 z-push/lib/core/devicemanager.php
 z-push/lib/core/hierarchycache.php
 z-push/lib/core/interprocessdata.php
+z-push/lib/core/koesignatures.php
 z-push/lib/core/loopdetection.php
 z-push/lib/core/pingtracking.php
 z-push/lib/core/statemanager.php
@@ -160,6 +162,7 @@ z-push/lib/exceptions/nohierarchycacheavailableexception.php
 z-push/lib/exceptions/nopostrequestexception.php
 z-push/lib/exceptions/notimplementedexception.php
 z-push/lib/exceptions/provisioningrequiredexception.php
+z-push/lib/exceptions/serviceunavailableexception.php
 z-push/lib/exceptions/stateinvalidexception.php
 z-push/lib/exceptions/statenotfoundexception.php
 z-push/lib/exceptions/statenotyetavailableexception.php
@@ -258,12 +261,22 @@ z-push/tools/dev/printwbxml.php
 z-push/tools/fix-meetings-2.0.8+2.1.0-ios7.py
 z-push/tools/gab-sync/
 z-push/tools/gab-sync/LICENSE
+z-push/tools/gab-sync/TRADEMARKS
 z-push/tools/gab-sync/config.php
 z-push/tools/gab-sync/gab-sync.php
 z-push/tools/gab-sync/lib/
 z-push/tools/gab-sync/lib/gabentry.php
 z-push/tools/gab-sync/lib/kopano.php
 z-push/tools/gab-sync/lib/syncworker.php
+z-push/tools/gab2contacts/
+z-push/tools/gab2contacts/LICENSE
+z-push/tools/gab2contacts/TRADEMARKS
+z-push/tools/gab2contacts/config.php
+z-push/tools/gab2contacts/gab2contacts.php
+z-push/tools/gab2contacts/lib/
+z-push/tools/gab2contacts/lib/contactworker.php
+z-push/tools/gab2contacts/lib/kopano.php
+z-push/tools/gab2contacts/lib/synccontact.php
 z-push/tools/list-shared-folders.php
 z-push/tools/migrate-2.0.x-2.1.0.php
 z-push/tools/migrate-filestates-to-db.php
