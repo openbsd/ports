@@ -1,9 +1,0 @@
-$OpenBSD: patch-installer_linux_zarafa-autorespond,v 1.4 2015/11/03 06:48:48 robert Exp $
---- installer/linux/zarafa-autorespond.orig	Tue Nov  3 07:47:57 2015
-+++ installer/linux/zarafa-autorespond	Tue Nov  3 07:48:10 2015
-@@ -1,4 +1,4 @@
--#! /usr/bin/env bash
-+#!/bin/sh
- 
- FROM=$1
- TO=$2

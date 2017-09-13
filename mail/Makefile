@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.358 2017/09/13 10:39:44 robert Exp $
+# $OpenBSD: Makefile,v 1.359 2017/09/13 10:43:57 robert Exp $
 
      SUBDIR =
      SUBDIR += abook
@@ -237,6 +237,5 @@
      SUBDIR += wmpop3
      SUBDIR += xlbiff
      SUBDIR += z-push
-     SUBDIR += zarafa
 
 .include <bsd.port.subdir.mk>

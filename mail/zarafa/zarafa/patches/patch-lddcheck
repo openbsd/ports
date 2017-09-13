@@ -1,9 +1,0 @@
-$OpenBSD: patch-lddcheck,v 1.1 2015/11/02 11:06:34 robert Exp $
---- lddcheck.orig	Thu Aug 20 13:25:14 2015
-+++ lddcheck	Thu Aug 20 13:25:20 2015
-@@ -1,4 +1,4 @@
--#!/bin/bash
-+#!/usr/bin/env bash
- 
- if [ -z "$1" ]; then
- 	exit 0
