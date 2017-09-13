@@ -1,6 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/11/12 12:25:51 jca Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/09/13 09:04:43 awolk Exp $
 include/libwebsockets.h
 include/lws_config.h
+lib/cmake/
+lib/cmake/libwebsockets/
+lib/cmake/libwebsockets/LibwebsocketsConfig.cmake
+lib/cmake/libwebsockets/LibwebsocketsConfigVersion.cmake
+lib/cmake/libwebsockets/LibwebsocketsTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/libwebsockets/LibwebsocketsTargets.cmake
 lib/libwebsockets.a
 @lib lib/libwebsockets.so.${LIBwebsockets_VERSION}
 lib/pkgconfig/libwebsockets.pc
+lib/pkgconfig/libwebsockets_static.pc
