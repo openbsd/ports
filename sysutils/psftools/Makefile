@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2017/07/10 10:34:50 fcambus Exp $
+# $OpenBSD: Makefile,v 1.3 2017/09/13 08:23:53 fcambus Exp $
+
+PORTROACH =	ignore:1
 
 COMMENT =	conversion tools for .PSF fonts
 
