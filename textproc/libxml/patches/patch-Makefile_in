@@ -1,7 +1,8 @@
-$OpenBSD: patch-Makefile_in,v 1.7 2016/09/01 21:56:59 jasper Exp $
---- Makefile.in.orig	Mon May 23 10:00:36 2016
-+++ Makefile.in	Tue Aug 30 14:16:12 2016
-@@ -846,7 +846,7 @@ cmake_DATA = libxml2-config.cmake
+$OpenBSD: patch-Makefile_in,v 1.8 2017/09/14 14:56:41 jasper Exp $
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -847,7 +847,7 @@ cmake_DATA = libxml2-config.cmake
  # Install the tests program sources as examples 
  #
  BASE_DIR = $(datadir)/doc
@@ -10,16 +11,16 @@ $OpenBSD: patch-Makefile_in,v 1.7 2016/09/01 21:56:59 jasper Exp $
  EXAMPLES_DIR = $(BASE_DIR)/$(DOC_MODULE)/examples
  
  #
-@@ -1907,7 +1907,7 @@ testapi.c: $(srcdir)/gentest.py
- runtests:
+@@ -1910,7 +1910,7 @@ runtests: runtest$(EXEEXT) testrecurse$(EXEEXT) testap
+           testchar$(EXEEXT) testdict$(EXEEXT) runxmlconf$(EXEEXT)
  	[ -d test   ] || $(LN_S) $(srcdir)/test   .
  	[ -d result ] || $(LN_S) $(srcdir)/result .
--	$(CHECKER) ./runtest$(EXEEXT) && $(CHECKER) ./testrecurse$(EXEEXT) &&$(CHECKER) ./testapi$(EXEEXT) && $(CHECKER) ./testchar$(EXEEXT)&& $(CHECKER) ./testdict$(EXEEXT) && $(CHECKER) ./runxmlconf$(EXEEXT)
-+	$(CHECKER) ./runtest$(EXEEXT) ; $(CHECKER) ./testrecurse$(EXEEXT) &&$(CHECKER) ./testapi$(EXEEXT) && $(CHECKER) ./testchar$(EXEEXT)&& $(CHECKER) ./testdict$(EXEEXT) && $(CHECKER) ./runxmlconf$(EXEEXT)
- 	@(if [ "$(PYTHON_SUBDIR)" != "" ] ; then cd python ; \
- 	    $(MAKE) tests ; fi)
- 
-@@ -2411,6 +2411,7 @@ SVGtests : xmllint$(EXEEXT)
+-	$(CHECKER) ./runtest$(EXEEXT) && \
++	$(CHECKER) ./runtest$(EXEEXT) ; \
+ 	    $(CHECKER) ./testrecurse$(EXEEXT) && \
+ 	    ASAN_OPTIONS="$$ASAN_OPTIONS:detect_leaks=0" $(CHECKER) ./testapi$(EXEEXT) && \
+ 	    $(CHECKER) ./testchar$(EXEEXT) && \
+@@ -2437,6 +2437,7 @@ SVGtests : xmllint$(EXEEXT)
  	      grep "MORY ALLO" .memdump  | grep -v "MEMORY ALLOCATED : 0";\
  	  else \
  	      echo Testing $$name ; \
