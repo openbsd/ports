@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.87 2016/09/01 21:56:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.88 2017/09/14 14:57:13 jasper Exp $
 
 COMMENT-main=		XSLT C Library for GNOME
 COMMENT-python= 	Python bindings for libxslt
 
-VERSION=		1.1.29
+VERSION=		1.1.30
 DISTNAME=		libxslt-${VERSION}
 PKGNAME-main=		libxslt-${VERSION}
 PKGNAME-python= 	py-libxslt-${VERSION}
+REVISION=0
 
-SHARED_LIBS +=  xslt                 3.8      # 2.28
+SHARED_LIBS +=  xslt                 4.0      # 2.28
 SHARED_LIBS +=  exslt                9.8      # 8.17
 
 CATEGORIES=		textproc
@@ -34,8 +35,10 @@ LIB_DEPENDS-main=	textproc/libxml \
 
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	--with-libxml-include-prefix="${LOCALBASE}/include/" \
+CONFIGURE_ARGS+=	--with-libxml-include-prefix="${LOCALBASE}/include/libxml2" \
 			--with-html-subdir=libxslt/html
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
+			XML_CONFIG="${LOCALBASE}/bin/xml2-config"
 
 .include <bsd.port.arch.mk>
 
