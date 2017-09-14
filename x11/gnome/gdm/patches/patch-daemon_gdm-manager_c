@@ -1,4 +1,4 @@
-$OpenBSD: patch-daemon_gdm-manager_c,v 1.14 2017/05/10 10:18:15 ajacoutot Exp $
+$OpenBSD: patch-daemon_gdm-manager_c,v 1.15 2017/09/14 13:45:22 ajacoutot Exp $
 
 REVERT - OpenBSD does not have a systemd implementation (we need ConsoleKit)
 From 21905303afbd508f3bf599ad219c9209413c53a2 Mon Sep 17 00:00:00 2001
@@ -814,7 +814,7 @@ Index: daemon/gdm-manager.c
  static const char *
  get_username_for_greeter_display (GdmManager *manager,
                                    GdmDisplay *display)
-@@ -1684,7 +1970,6 @@ on_display_status_changed (GdmDisplay *display,
+@@ -1687,7 +1973,6 @@ on_display_status_changed (GdmDisplay *display,
                                  manager->priv->ran_once = TRUE;
                          }
                          maybe_start_pending_initial_login (manager, display);
@@ -822,7 +822,7 @@ Index: daemon/gdm-manager.c
                          break;
                  default:
                          break;
-@@ -2014,11 +2299,57 @@ on_user_session_died (GdmSession *session,
+@@ -2017,11 +2302,57 @@ on_user_session_died (GdmSession *session,
  }
  
  static char *
@@ -882,7 +882,7 @@ Index: daemon/gdm-manager.c
  }
  
  static void
-@@ -2027,26 +2358,6 @@ on_session_reauthenticated (GdmSession *session,
+@@ -2030,26 +2361,6 @@ on_session_reauthenticated (GdmSession *session,
                              GdmManager *manager)
  {
          gboolean fail_if_already_switched = FALSE;
