@@ -1,21 +1,29 @@
-$OpenBSD: patch-source_g3d_viewer_CMakeLists_txt,v 1.2 2015/04/06 12:49:52 stsp Exp $
+$OpenBSD: patch-source_g3d_viewer_CMakeLists_txt,v 1.3 2017/09/14 04:43:57 kirby Exp $
 Program fails to start ("unable to init GTK") when help2man runs it.
---- source/g3d_viewer/CMakeLists.txt.orig	Mon Mar  9 00:09:09 2015
-+++ source/g3d_viewer/CMakeLists.txt	Mon Apr  6 10:26:10 2015
-@@ -166,7 +166,7 @@ IF(BUILD_MEGAGLEST_MODEL_VIEWER)
- 	ENDIF()
+Index: source/g3d_viewer/CMakeLists.txt
+--- source/g3d_viewer/CMakeLists.txt.orig
++++ source/g3d_viewer/CMakeLists.txt
+@@ -197,13 +197,13 @@ IF(BUILD_MEGAGLEST_MODEL_VIEWER)
+ 	TARGET_LINK_LIBRARIES(${TARGET_NAME} libmegaglest)
  	TARGET_LINK_LIBRARIES(${TARGET_NAME} ${EXTERNAL_LIBS})
  
--	IF(EXISTS ${HELP2MAN})
+-	IF(EXISTS ${HELP2MAN} AND NOT APPLE)
 +	IF(FALSE)
- 		MESSAGE("***-- Found help2man: ${HELP2MAN} about to build manpage in [${HELP2MAN_OUT_PATH}${TARGET_NAME_MANPAGE}]")
+ 		# on mac <> --help sometimes hangs, so we need "NOT APPLE" ^ or some timeout here for now
+ 		MESSAGE(STATUS "***-- Found help2man: ${HELP2MAN} about to build manpage in [${HELP2MAN_OUT_PATH}${TARGET_NAME_MANPAGE}]")
  
                  SET(MG_MANPAGE_DESCRIPTION "G3D Model editor for the popular 3D realtime strategy game")
-@@ -191,7 +191,7 @@ IF(BUILD_MEGAGLEST_MODEL_VIEWER)
+ 
+-		IF(EXISTS ${XVFB_EXEC})
++		IF(FALSE)
+ 			MESSAGE(STATUS "***-- Found xvfb-run: ${XVFB_EXEC} about to build manpage with it.")
+ 
+ 		  	add_custom_target(${TARGET_NAME_MANPAGE} ALL
+@@ -223,7 +223,7 @@ IF(BUILD_MEGAGLEST_MODEL_VIEWER)
  		        ${TARGET_NAME} 
  		        DESTINATION ${MEGAGLEST_BIN_INSTALL_PATH})
  
--	        IF(EXISTS ${HELP2MAN})
+-	        IF(EXISTS ${HELP2MAN} AND NOT "${MEGAGLEST_MANPAGE_INSTALL_PATH}" STREQUAL "" AND NOT APPLE)
 +	        IF(FALSE)
           		MESSAGE(STATUS "**NOTE: Will Install manpage [${TARGET_NAME_MANPAGE}] to [${MEGAGLEST_MANPAGE_INSTALL_PATH}]")	
  

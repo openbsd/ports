@@ -1,8 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2014/07/13 20:18:45 kirby Exp $ 
+# $OpenBSD: Makefile,v 1.3 2017/09/14 04:43:57 kirby Exp $
 
 COMMENT =		megaglest game data files
-DISTNAME =		megaglest-data-${V}
-WRKDIST =		${WRKDIR}/megaglest-${V}
+GH_PROJECT =		megaglest-data
+
+RUN_DEPENDS = 		devel/desktop-file-utils
+CONFIGURE_ARGS += 	-DMEGAGLEST_MENU_INSTALL_PATH=""
+
 NO_BUILD = 		Yes
 PKG_ARCH = 		*
 

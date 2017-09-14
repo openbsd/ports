@@ -1,17 +1,18 @@
-# $OpenBSD: Makefile.inc,v 1.4 2015/04/06 12:49:52 stsp Exp $ 
+# $OpenBSD: Makefile.inc,v 1.5 2017/09/14 04:43:57 kirby Exp $
 
 # Requires drm(4). Big-endian (powerpc) isn't supported according to upstream.
 ONLY_FOR_ARCHS =	amd64 i386
-V = 			3.11.1
+
+GH_ACCOUNT = 		MegaGlest
+GH_TAGNAME = 		3.13.0
+
 CATEGORIES =		games
+
 HOMEPAGE =		http://megaglest.org/
 
 # GPLv3 + Creative Commons CC-BY-SA
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		https://github.com/MegaGlest/megaglest-source/releases/download/${V}/
-EXTRACT_SUFX =		.tar.xz
-
 MODULES +=		devel/cmake
 
-NO_TEST = 		yes
+NO_TEST = 		Yes
