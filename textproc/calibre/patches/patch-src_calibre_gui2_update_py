@@ -1,0 +1,44 @@
+$OpenBSD: patch-src_calibre_gui2_update_py,v 1.1 2017/09/14 09:30:50 sthen Exp $
+
+upstream's repo is not a useful source of updates for OpenBSD.
+
+Index: src/calibre/gui2/update.py
+--- src/calibre/gui2/update.py.orig
++++ src/calibre/gui2/update.py
+@@ -30,35 +30,7 @@ def get_download_url():
+ 
+ 
+ def get_newest_version():
+-    try:
+-        icon_theme_name = json.loads(I('icon-theme.json', data=True))['name']
+-    except Exception:
+-        icon_theme_name = ''
+-    headers={
+-        'CALIBRE-VERSION':__version__,
+-        'CALIBRE-OS': ('win' if iswindows else 'osx' if isosx else 'oth'),
+-        'CALIBRE-INSTALL-UUID': prefs['installation_uuid'],
+-        'CALIBRE-ICON-THEME': icon_theme_name,
+-    }
+-    try:
+-        version = get_https_resource_securely(URL, headers=headers)
+-    except ssl.SSLError as err:
+-        if getattr(err, 'reason', None) != 'CERTIFICATE_VERIFY_FAILED':
+-            raise
+-        # certificate verification failed, since the version check contains no
+-        # critical information, ignore and proceed
+-        # We have to do this as if the calibre CA certificate ever
+-        # needs to be revoked, then we wont be able to do version checks
+-        version = get_https_resource_securely(URL, headers=headers, cacerts=None)
+-    try:
+-        version = version.decode('utf-8').strip()
+-    except UnicodeDecodeError:
+-        version = u''
+-    ans = NO_CALIBRE_UPDATE
+-    m = re.match(ur'(\d+)\.(\d+).(\d+)$', version)
+-    if m is not None:
+-        ans = tuple(map(int, (m.group(1), m.group(2), m.group(3))))
+-    return ans
++    return NO_CALIBRE_UPDATE
+ 
+ 
+ class Signal(QObject):
