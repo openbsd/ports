@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.539 2017/08/17 18:51:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.540 2017/09/14 19:14:30 jasper Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -48,7 +48,6 @@
      SUBDIR += gnuvd
      SUBDIR += go-text
      SUBDIR += go-xlsx
-     SUBDIR += gonzui
      SUBDIR += gpresent
      SUBDIR += grepcidr
      SUBDIR += groff
