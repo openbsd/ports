@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2017/09/06 16:42:57 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.66 2017/09/14 16:21:15 dcoppa Exp $
 
 BROKEN-alpha =		error: looser throw specifier for 'virtual OutOfBounds::~OutOfBounds()'
 BROKEN-hppa =		bindings.h:85:4: error: type 'Binding' is not a direct base of 'Binding'
@@ -6,7 +6,7 @@ BROKEN-hppa =		bindings.h:85:4: error: type 'Binding' is not a direct base of 'B
 COMMENT =		ncurses mpd client inspired by ncmpc
 
 DISTNAME =		ncmpcpp-0.8
-REVISION =		4
+REVISION =		5
 
 EXTRACT_SUFX =		.tar.bz2
 
@@ -21,7 +21,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += boost_date_time-mt boost_filesystem-mt boost_locale-mt
 WANTLIB += boost_program_options-mt boost_regex-mt boost_system-mt
-WANTLIB += boost_thread-mt c crypto curl ereadline m mpdclient
+WANTLIB += boost_thread-mt c crypto curl ereadline iconv m mpdclient
 WANTLIB += ncursesw nghttp2 pthread ssl ${LIBCXX} tag termcap z
 WANTLIB += ${COMPILER_LIBCXX}
 
@@ -29,11 +29,10 @@ MASTER_SITES =		${HOMEPAGE}stable/
 
 LIB_DEPENDS =		audio/libmpdclient>=2.4 \
 			audio/taglib \
+			converters/libiconv \
 			devel/boost \
 			devel/readline \
 			net/curl
-
-MODULES =		devel/gettext 
 
 COMPILER =		gcc
 

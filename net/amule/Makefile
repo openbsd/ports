@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2017/08/11 11:23:57 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.64 2017/09/14 16:21:15 dcoppa Exp $
 
 COMMENT-main =	another eDonkey P2P file sharing client
 COMMENT-web =	webserver interface to amuled
@@ -6,7 +6,7 @@ COMMENT-daemon =stand-alone daemon/cmdline for amule
 
 V =		2.3.2
 DISTNAME =	aMule-$V
-REVISION =	5
+REVISION =	6
 CATEGORIES =	net
 
 HOMEPAGE =	http://www.amule.org/
@@ -24,19 +24,19 @@ MAINTAINER =	David Coppa <dcoppa@openbsd.org>
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=amule/}
 EXTRACT_SUFX =	.tar.xz
 
-MODULES =	devel/gettext
-
 LIB_DEPENDS =
 WANTLIB =
 RUN_DEPENDS =
 
 # bison needed if .y files are patched
-BUILD_DEPENDS =		devel/bison
+BUILD_DEPENDS =		devel/bison \
+			devel/gettext-tools
 
 commonLIB_DEPENDS =	x11/wxWidgets>=2.8.12 \
 			net/libupnp>=1.6.6
 
 LIB_DEPENDS-main =	${LIB_DEPENDS} ${commonLIB_DEPENDS} \
+			converters/libiconv \
 			devel/cryptopp>=5.6.0 \
 			graphics/gd \
 			net/GeoIP
@@ -44,7 +44,8 @@ LIB_DEPENDS-main =	${LIB_DEPENDS} ${commonLIB_DEPENDS} \
 LIB_DEPENDS-daemon =	${LIB_DEPENDS} ${commonLIB_DEPENDS} \
 			devel/cryptopp>=5.6.0
 
-LIB_DEPENDS-web =	${LIB_DEPENDS} ${commonLIB_DEPENDS}
+LIB_DEPENDS-web =	${LIB_DEPENDS} ${commonLIB_DEPENDS} \
+			devel/gettext
 
 RUN_DEPENDS-main =	${RUN_DEPENDS} \
 			devel/desktop-file-utils
@@ -53,11 +54,11 @@ commonWANTLIB =		c ixml m pthread ${COMPILER_LIBCXX} threadutil upnp \
 			wx_base wx_base_net z
 WANTLIB-main =		${WANTLIB} ${commonWANTLIB} \
 			GeoIP X11 cryptopp fontconfig tiff webp \
-			freetype gd jpeg png wx_gtk2_adv wx_gtk2_core
+			freetype gd iconv jpeg png wx_gtk2_adv wx_gtk2_core
 WANTLIB-daemon =	${WANTLIB} ${commonWANTLIB} \
 			cryptopp readline termcap
 WANTLIB-web =		${WANTLIB} ${commonWANTLIB} \
-			png readline termcap
+			iconv intl png readline termcap
 
 USE_GMAKE =		Yes
 

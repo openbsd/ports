@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.107 2017/08/05 20:18:11 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.108 2017/09/14 16:21:15 dcoppa Exp $
 
 COMMENT=		highly configurable framework window manager
 
 VER=			4.2
 DISTNAME=		awesome-${VER}
+REVISION=		0
 EXTRACT_SUFX=		.tar.xz
 CATEGORIES=		x11
 
@@ -16,7 +17,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=		X11 c cairo dbus-1 execinfo \
 			gdk_pixbuf-2.0 glib-2.0 gobject-2.0 \
-			${MODLUA_WANTLIB} m \
+			intl ${MODLUA_WANTLIB} m \
 			startup-notification-1 xcb xcb-cursor \
 			xcb-icccm xcb-keysyms xcb-randr \
 			xcb-render xcb-shape xcb-util \
@@ -26,7 +27,6 @@ WANTLIB=		X11 c cairo dbus-1 execinfo \
 MASTER_SITES=		https://github.com/awesomeWM/awesome/releases/download/v${VER}/
 
 MODULES=		devel/cmake \
-			devel/gettext \
 			lang/lua
 
 MODLUA_VERSION=		5.2
