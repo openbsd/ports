@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2017/09/03 08:38:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2017/09/15 11:14:45 ajacoutot Exp $
 
 PROVIDER=		azurerm
-GH_TAGNAME=		v0.1.6
+GH_TAGNAME=		v0.1.7
 
 .include <bsd.port.mk>
