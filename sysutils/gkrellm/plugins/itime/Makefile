@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2015/06/26 18:08:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2017/09/15 15:37:17 naddy Exp $
 
 COMMENT=	GkrellM2 plugin that shows Internet time
 
 V=		1.0.1
 DISTNAME=	gkrellmitime-${V}
-REVISION=	17
+REVISION=	18
 CATEGORIES=	net
 
 EXTRA_WANTLIB=	gthread-2.0

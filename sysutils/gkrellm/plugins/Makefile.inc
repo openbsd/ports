@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.33 2016/03/16 16:53:50 naddy Exp $
+# $OpenBSD: Makefile.inc,v 1.34 2017/09/15 15:37:17 naddy Exp $
 
 CATEGORIES +=		sysutils
 
@@ -6,14 +6,12 @@ CATEGORIES +=		sysutils
 PERMIT_PACKAGE_CDROM?=	Yes
 
 .if ! defined(WANTLIB)
-MODULES +=		devel/gettext
-
 LIB_DEPENDS +=		x11/gtk+2
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 cairo fontconfig freetype gdk-x11-2.0
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 gtk-x11-2.0
-WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pthread z
+WANTLIB += intl pango-1.0 pangocairo-1.0 pangoft2-1.0 pthread z
 .endif
 
 .if defined(EXTRA_WANTLIB)

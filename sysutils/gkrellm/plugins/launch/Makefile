@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2015/06/26 18:08:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2017/09/15 15:37:17 naddy Exp $
 
 COMMENT=	launch commonly used apps from GkrellM2
 
 DISTNAME=	gkrellmlaunch-0.5
-REVISION=	17
+REVISION=	18
 CATEGORIES=	x11
 
 HOMEPAGE=	http://gkrellmlaunch.sourceforge.net/
