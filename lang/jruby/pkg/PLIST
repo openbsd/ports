@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.38 2017/06/21 15:38:00 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.39 2017/09/15 03:06:14 jeremy Exp $
 bin/jruby
 jruby/
 jruby/bin/
@@ -38,7 +38,7 @@ jruby/lib/ruby/gems/1.8/specifications/
 jruby/lib/ruby/gems/1.8/specifications/default/
 jruby/lib/ruby/gems/1.8/specifications/default/did_you_mean-1.0.1.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/jar-dependencies-0.3.10.gemspec
-jruby/lib/ruby/gems/1.8/specifications/default/jruby-openssl-0.9.20-java.gemspec
+jruby/lib/ruby/gems/1.8/specifications/default/jruby-openssl-0.9.21-java.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/jruby-readline-1.1.1-java.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/json-1.8.3-java.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/minitest-5.4.1.gemspec
@@ -924,6 +924,7 @@ jruby/lib/ruby/stdlib/rubygems/
 jruby/lib/ruby/stdlib/rubygems.rb
 jruby/lib/ruby/stdlib/rubygems/available_set.rb
 jruby/lib/ruby/stdlib/rubygems/basic_specification.rb
+jruby/lib/ruby/stdlib/rubygems/bundler_version_finder.rb
 jruby/lib/ruby/stdlib/rubygems/command.rb
 jruby/lib/ruby/stdlib/rubygems/command_manager.rb
 jruby/lib/ruby/stdlib/rubygems/commands/
@@ -951,6 +952,8 @@ jruby/lib/ruby/stdlib/rubygems/commands/rdoc_command.rb
 jruby/lib/ruby/stdlib/rubygems/commands/search_command.rb
 jruby/lib/ruby/stdlib/rubygems/commands/server_command.rb
 jruby/lib/ruby/stdlib/rubygems/commands/setup_command.rb
+jruby/lib/ruby/stdlib/rubygems/commands/signin_command.rb
+jruby/lib/ruby/stdlib/rubygems/commands/signout_command.rb
 jruby/lib/ruby/stdlib/rubygems/commands/sources_command.rb
 jruby/lib/ruby/stdlib/rubygems/commands/specification_command.rb
 jruby/lib/ruby/stdlib/rubygems/commands/stale_command.rb
@@ -1102,19 +1105,11 @@ jruby/lib/ruby/stdlib/rubygems/source_specific_file.rb
 jruby/lib/ruby/stdlib/rubygems/spec_fetcher.rb
 jruby/lib/ruby/stdlib/rubygems/specification.rb
 jruby/lib/ruby/stdlib/rubygems/ssl_certs/
-jruby/lib/ruby/stdlib/rubygems/ssl_certs/AddTrustExternalCARoot-2048.pem
-jruby/lib/ruby/stdlib/rubygems/ssl_certs/AddTrustExternalCARoot.pem
-jruby/lib/ruby/stdlib/rubygems/ssl_certs/Class3PublicPrimaryCertificationAuthority.pem
-jruby/lib/ruby/stdlib/rubygems/ssl_certs/DigiCertHighAssuranceEVRootCA.pem
-jruby/lib/ruby/stdlib/rubygems/ssl_certs/EntrustnetSecureServerCertificationAuthority.pem
-jruby/lib/ruby/stdlib/rubygems/ssl_certs/GeoTrustGlobalCA.pem
 jruby/lib/ruby/stdlib/rubygems/ssl_certs/index.rubygems.org/
-jruby/lib/ruby/stdlib/rubygems/ssl_certs/index.rubygems.org/GlobalSignRoot.pem
 jruby/lib/ruby/stdlib/rubygems/ssl_certs/index.rubygems.org/GlobalSignRootCA.pem
 jruby/lib/ruby/stdlib/rubygems/ssl_certs/rubygems.global.ssl.fastly.net/
 jruby/lib/ruby/stdlib/rubygems/ssl_certs/rubygems.global.ssl.fastly.net/DigiCertHighAssuranceEVRootCA.pem
 jruby/lib/ruby/stdlib/rubygems/ssl_certs/rubygems.org/
-jruby/lib/ruby/stdlib/rubygems/ssl_certs/rubygems.org/AddTrustExternalCARoot-2048.pem
 jruby/lib/ruby/stdlib/rubygems/ssl_certs/rubygems.org/AddTrustExternalCARoot.pem
 jruby/lib/ruby/stdlib/rubygems/stub_specification.rb
 jruby/lib/ruby/stdlib/rubygems/syck_hack.rb
@@ -1147,7 +1142,9 @@ jruby/lib/ruby/stdlib/shellwords.rb
 jruby/lib/ruby/stdlib/singleton.rb
 jruby/lib/ruby/stdlib/socket.rb
 jruby/lib/ruby/stdlib/sync.rb
+jruby/lib/ruby/stdlib/syslog/
 jruby/lib/ruby/stdlib/syslog.rb
+jruby/lib/ruby/stdlib/syslog/logger.rb
 jruby/lib/ruby/stdlib/tempfile.rb
 jruby/lib/ruby/stdlib/test/
 jruby/lib/ruby/stdlib/test-unit.rb
