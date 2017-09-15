@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile.inc,v 1.1.1.1 2017/09/13 10:38:41 robert Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2017/09/15 13:19:57 robert Exp $
 
 V?=		8.3.5
-BUILD?=		1335
+BUILD?=		1379
 DISTNAME?=	kopanocore-${V}~${BUILD}
 EXTRACT_SUFX?=	.tar.xz
 
 CATEGORIES+=	mail
 
-HOMEPAGE?=	http://community.zarafa.com/
+HOMEPAGE?=	https://kopano.io/
 
 MAINTAINER?=	Robert Nagy <robert@openbsd.org>
 
