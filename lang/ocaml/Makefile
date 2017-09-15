@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.78 2017/09/12 17:36:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.79 2017/09/15 09:23:12 ajacoutot Exp $
 
 MULTI_PACKAGES = -graphics -main
 
@@ -9,7 +9,7 @@ COMMENT-graphics = OCaml Graphics library providing basic drawing primitives
 # Do check that the ports that depend on it still work, or repair them.
 # Don't forget to bump version in ocaml.port.mk, too!
 VERSION=		4.03.0
-REVISION=		1
+REVISION=		2
 
 PKGNAME-main =		ocaml-${VERSION}
 PKGNAME-graphics =	ocaml-graphics-${VERSION}
