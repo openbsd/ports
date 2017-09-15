@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.113 2017/06/22 19:34:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.114 2017/09/15 16:25:46 jasper Exp $
 
 COMMENT=		Unicode character map for the GNOME project
 
 GNOME_PROJECT=		gucharmap
-GNOME_VERSION=		10.0.0
+GNOME_VERSION=		10.0.1
 
 SHARED_LIBS +=  gucharmap_2_90            7.0 # 7.0
 

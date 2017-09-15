@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.31 2017/03/21 18:15:32 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.32 2017/09/15 16:25:46 jasper Exp $
 @pkgpath x11/gnome/gucharmap,gtk2
 bin/charmap
 bin/gnome-character-map
@@ -83,6 +83,10 @@ share/help/oc/
 share/help/oc/gucharmap/
 share/help/oc/gucharmap/index.docbook
 share/help/oc/gucharmap/legal.xml
+share/help/pl/
+share/help/pl/gucharmap/
+share/help/pl/gucharmap/index.docbook
+share/help/pl/gucharmap/legal.xml
 share/help/pt_BR/
 share/help/pt_BR/gucharmap/
 share/help/pt_BR/gucharmap/index.docbook
