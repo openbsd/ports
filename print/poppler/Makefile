@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.125 2017/08/28 19:08:30 kili Exp $
+# $OpenBSD: Makefile,v 1.126 2017/09/15 19:52:26 kili Exp $
 
 COMMENT-main=	PDF rendering library
 COMMENT-qt4=	qt4 interface to PDF rendering library
@@ -64,6 +64,7 @@ RUN_DEPENDS-main= \
 		print/poppler-data>=0.4.7
 
 LIB_DEPENDS-main= \
+		${LIB_DEPENDS} \
 		converters/libiconv \
 		devel/gettext \
 		devel/glib2 \
