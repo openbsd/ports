@@ -1,7 +1,8 @@
-$OpenBSD: patch-Source_JavaScriptCore_CMakeLists_txt,v 1.7 2017/03/29 13:25:52 ajacoutot Exp $
---- Source/JavaScriptCore/CMakeLists.txt.orig	Tue Feb 28 09:34:11 2017
-+++ Source/JavaScriptCore/CMakeLists.txt	Sun Mar 26 13:55:13 2017
-@@ -1481,6 +1481,7 @@ elseif (WTF_CPU_PPC64)
+$OpenBSD: patch-Source_JavaScriptCore_CMakeLists_txt,v 1.8 2017/09/15 07:43:42 ajacoutot Exp $
+Index: Source/JavaScriptCore/CMakeLists.txt
+--- Source/JavaScriptCore/CMakeLists.txt.orig
++++ Source/JavaScriptCore/CMakeLists.txt
+@@ -1531,6 +1531,7 @@ elseif (WTF_CPU_PPC64)
  elseif (WTF_CPU_PPC64LE)
  elseif (WTF_CPU_S390)
  elseif (WTF_CPU_S390X)

@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.9 2017/03/29 13:25:53 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2017/09/15 07:43:42 ajacoutot Exp $
+@bin bin/WebKitWebDriver
 include/webkitgtk-${API}/
 include/webkitgtk-${API}/JavaScriptCore/
 include/webkitgtk-${API}/JavaScriptCore/JSBase.h
@@ -10,8 +11,10 @@ include/webkitgtk-${API}/JavaScriptCore/JSValueRef.h
 include/webkitgtk-${API}/JavaScriptCore/JavaScript.h
 include/webkitgtk-${API}/JavaScriptCore/WebKitAvailability.h
 include/webkitgtk-${API}/webkit2/
+include/webkitgtk-${API}/webkit2/WebKitApplicationInfo.h
 include/webkitgtk-${API}/webkit2/WebKitAuthenticationRequest.h
 include/webkitgtk-${API}/webkit2/WebKitAutocleanups.h
+include/webkitgtk-${API}/webkit2/WebKitAutomationSession.h
 include/webkitgtk-${API}/webkit2/WebKitBackForwardList.h
 include/webkitgtk-${API}/webkit2/WebKitBackForwardListItem.h
 include/webkitgtk-${API}/webkit2/WebKitColorChooserRequest.h
@@ -43,6 +46,8 @@ include/webkitgtk-${API}/webkit2/WebKitNavigationPolicyDecision.h
 include/webkitgtk-${API}/webkit2/WebKitNetworkProxySettings.h
 include/webkitgtk-${API}/webkit2/WebKitNotification.h
 include/webkitgtk-${API}/webkit2/WebKitNotificationPermissionRequest.h
+include/webkitgtk-${API}/webkit2/WebKitOptionMenu.h
+include/webkitgtk-${API}/webkit2/WebKitOptionMenuItem.h
 include/webkitgtk-${API}/webkit2/WebKitPermissionRequest.h
 include/webkitgtk-${API}/webkit2/WebKitPlugin.h
 include/webkitgtk-${API}/webkit2/WebKitPolicyDecision.h
@@ -87,6 +92,8 @@ include/webkitgtk-${API}/webkitdom/WebKitDOMCSSStyleDeclaration.h
 include/webkitgtk-${API}/webkitdom/WebKitDOMCSSStyleSheet.h
 include/webkitgtk-${API}/webkitdom/WebKitDOMCSSValue.h
 include/webkitgtk-${API}/webkitdom/WebKitDOMCharacterData.h
+include/webkitgtk-${API}/webkitdom/WebKitDOMClientRect.h
+include/webkitgtk-${API}/webkitdom/WebKitDOMClientRectList.h
 include/webkitgtk-${API}/webkitdom/WebKitDOMComment.h
 include/webkitgtk-${API}/webkitdom/WebKitDOMCustom.h
 include/webkitgtk-${API}/webkitdom/WebKitDOMCustomUnstable.h
@@ -201,9 +208,9 @@ lib/webkit2gtk-${API}/
 lib/webkit2gtk-${API}/injected-bundle/
 lib/webkit2gtk-${API}/injected-bundle/libwebkit2gtkinjectedbundle.so
 libexec/webkit2gtk-${API}/
-@bin libexec/webkit2gtk-${API}/WebKitDatabaseProcess
 @bin libexec/webkit2gtk-${API}/WebKitNetworkProcess
 @bin libexec/webkit2gtk-${API}/WebKitPluginProcess
+@bin libexec/webkit2gtk-${API}/WebKitStorageProcess
 @bin libexec/webkit2gtk-${API}/WebKitWebProcess
 @bin libexec/webkit2gtk-${API}/jsc
 share/gir-1.0/JavaScriptCore-${API}.gir

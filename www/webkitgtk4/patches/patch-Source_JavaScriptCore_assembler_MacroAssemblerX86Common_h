@@ -1,10 +1,11 @@
-$OpenBSD: patch-Source_JavaScriptCore_assembler_MacroAssemblerX86Common_h,v 1.2 2017/03/29 13:25:52 ajacoutot Exp $
+$OpenBSD: patch-Source_JavaScriptCore_assembler_MacroAssemblerX86Common_h,v 1.3 2017/09/15 07:43:42 ajacoutot Exp $
 
 XXX error: macro "swap32" passed 2 arguments, but takes just 1
 XXX error: macro "swap64" passed 2 arguments, but takes just 1
 
---- Source/JavaScriptCore/assembler/MacroAssemblerX86Common.h.orig	Mon Feb 20 17:20:09 2017
-+++ Source/JavaScriptCore/assembler/MacroAssemblerX86Common.h	Sun Mar 26 13:55:13 2017
+Index: Source/JavaScriptCore/assembler/MacroAssemblerX86Common.h
+--- Source/JavaScriptCore/assembler/MacroAssemblerX86Common.h.orig
++++ Source/JavaScriptCore/assembler/MacroAssemblerX86Common.h
 @@ -35,6 +35,12 @@
  #include <intrin.h>
  #endif
@@ -17,4 +18,4 @@ XXX error: macro "swap64" passed 2 arguments, but takes just 1
 +
  namespace JSC {
  
- class MacroAssemblerX86Common : public AbstractMacroAssembler<X86Assembler, MacroAssemblerX86Common> {
+ class MacroAssemblerX86Common : public AbstractMacroAssembler<X86Assembler> {

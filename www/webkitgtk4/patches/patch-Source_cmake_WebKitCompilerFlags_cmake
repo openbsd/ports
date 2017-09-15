@@ -1,0 +1,18 @@
+$OpenBSD: patch-Source_cmake_WebKitCompilerFlags_cmake,v 1.1 2017/09/15 07:43:42 ajacoutot Exp $
+
+Index: Source/cmake/WebKitCompilerFlags.cmake
+--- Source/cmake/WebKitCompilerFlags.cmake.orig
++++ Source/cmake/WebKitCompilerFlags.cmake
+@@ -151,9 +151,9 @@ if (NOT MSVC)
+     string(REGEX MATCHALL "-fsanitize=[^ ]*" ENABLED_COMPILER_SANITIZERS ${CMAKE_CXX_FLAGS})
+ endif ()
+ 
+-if (UNIX AND NOT APPLE AND NOT ENABLED_COMPILER_SANITIZERS)
+-    set(CMAKE_SHARED_LINKER_FLAGS "-Wl,--no-undefined ${CMAKE_SHARED_LINKER_FLAGS}")
+-endif ()
++#if (UNIX AND NOT APPLE AND NOT ENABLED_COMPILER_SANITIZERS)
++#    set(CMAKE_SHARED_LINKER_FLAGS "-Wl,--no-undefined ${CMAKE_SHARED_LINKER_FLAGS}")
++#endif ()
+ 
+ 
+ # CODE_GENERATOR_PREPROCESSOR_WITH_LINEMARKERS only matters with GCC >= 4.7.0.  Since this

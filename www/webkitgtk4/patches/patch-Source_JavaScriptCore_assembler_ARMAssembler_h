@@ -1,9 +1,9 @@
-$OpenBSD: patch-Source_JavaScriptCore_assembler_ARMAssembler_h,v 1.1 2017/09/09 19:25:29 phessler Exp $
+$OpenBSD: patch-Source_JavaScriptCore_assembler_ARMAssembler_h,v 1.2 2017/09/15 07:43:42 ajacoutot Exp $
 
 Index: Source/JavaScriptCore/assembler/ARMAssembler.h
 --- Source/JavaScriptCore/assembler/ARMAssembler.h.orig
 +++ Source/JavaScriptCore/assembler/ARMAssembler.h
-@@ -1155,6 +1155,8 @@ namespace JSC {
+@@ -1194,6 +1194,8 @@ namespace JSC {
                  linuxPageFlush(current, current + page);
  
              linuxPageFlush(current, end);

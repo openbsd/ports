@@ -1,0 +1,130 @@
+$OpenBSD: patch-Source_JavaScriptCore_runtime_MachineContext_h,v 1.1 2017/09/15 07:43:42 ajacoutot Exp $
+
+Index: Source/JavaScriptCore/runtime/MachineContext.h
+--- Source/JavaScriptCore/runtime/MachineContext.h.orig
++++ Source/JavaScriptCore/runtime/MachineContext.h
+@@ -146,6 +146,24 @@ inline void*& stackPointer(mcontext_t& machineContext)
+ #error Unknown Architecture
+ #endif
+ 
++#elif OS(OPENBSD)
++
++#if CPU(X86)
++    return reinterpret_cast<void*&>((uintptr_t&) machineContext.sc_esp);
++#elif CPU(X86_64)
++    return reinterpret_cast<void*&>((uintptr_t&) machineContext.sc_rsp);
++#elif CPU(ARM) 
++    return reinterpret_cast<void*&>((uintptr_t&) machineContext.__gregs[_REG_SP]);
++#elif CPU(ARM64)
++    return reinterpret_cast<void*&>((uintptr_t&) machineContext.mc_gpregs.gp_sp);
++#elif CPU(MIPS)
++    return reinterpret_cast<void*&>((uintptr_t&) machineContext.mc_regs[29]);
++#elif CPU(SPARC64)
++    return reinterpret_cast<void*&>((uintptr_t&) machineContext.mc_rsp);
++#else
++#error Unknown Architecture
++#endif
++
+ #elif defined(__GLIBC__)
+ 
+ #if CPU(X86)
+@@ -251,6 +269,24 @@ inline void*& framePointer(mcontext_t& machineContext)
+ #error Unknown Architecture
+ #endif
+ 
++#elif OS(OPENBSD)
++
++#if CPU(X86)
++    return reinterpret_cast<void*&>((uintptr_t&) machineContext.sc_ebp);
++#elif CPU(X86_64)
++    return reinterpret_cast<void*&>((uintptr_t&) machineContext.sc_rbp);
++#elif CPU(ARM) 
++    return reinterpret_cast<void*&>((uintptr_t&) machineContext.__gregs[_REG_FP]);
++#elif CPU(ARM64)
++    return reinterpret_cast<void*&>((uintptr_t&) machineContext.mc_gpregs.gp_x[29]);
++#elif CPU(MIPS)
++    return reinterpret_cast<void*&>((uintptr_t&) machineContext.mc_regs[30]);
++#elif CPU(SPARC64)
++    return reinterpret_cast<void*&>((uintptr_t&) machineContext.mc_rbp);
++#else
++#error Unknown Architecture
++#endif
++
+ #elif defined(__GLIBC__)
+ 
+ // The following sequence depends on glibc's sys/ucontext.h.
+@@ -354,6 +390,24 @@ inline void*& instructionPointer(mcontext_t& machineCo
+ #error Unknown Architecture
+ #endif
+ 
++#elif OS(OPENBSD)
++
++#if CPU(X86)
++    return reinterpret_cast<void*&>((uintptr_t&) machineContext.sc_eip);
++#elif CPU(X86_64)
++    return reinterpret_cast<void*&>((uintptr_t&) machineContext.sc_rip);
++#elif CPU(ARM) 
++    return reinterpret_cast<void*&>((uintptr_t&) machineContext.__gregs[_REG_PC]);
++#elif CPU(ARM64)
++    return reinterpret_cast<void*&>((uintptr_t&) machineContext.mc_gpregs.gp_elr);
++#elif CPU(MIPS)
++    return reinterpret_cast<void*&>((uintptr_t&) machineContext.mc_pc);
++#elif CPU(SPARC64)
++    return reinterpret_cast<void*&>((uintptr_t&) machineContext.mc_rip);
++#else
++#error Unknown Architecture
++#endif
++
+ #elif defined(__GLIBC__)
+ 
+ // The following sequence depends on glibc's sys/ucontext.h.
+@@ -466,6 +520,24 @@ inline void*& argumentPointer<1>(mcontext_t& machineCo
+ #error Unknown Architecture
+ #endif
+ 
++#elif OS(OPENBSD)
++
++#if CPU(X86)
++    return reinterpret_cast<void*&>((uintptr_t&) machineContext.sc_edx);
++#elif CPU(X86_64)
++    return reinterpret_cast<void*&>((uintptr_t&) machineContext.sc_rsi);
++#elif CPU(ARM) 
++    return reinterpret_cast<void*&>((uintptr_t&) machineContext.__gregs[_REG_R1]);
++#elif CPU(ARM64)
++    return reinterpret_cast<void*&>((uintptr_t&) machineContext.mc_gpregs.gp_x[1]);
++#elif CPU(MIPS)
++    return reinterpret_cast<void*&>((uintptr_t&) machineContext.mc_regs[5]);
++#elif CPU(SPARC64)
++    return reinterpret_cast<void*&>((uintptr_t&) machineContext.mc_rsi);
++#else
++#error Unknown Architecture
++#endif
++
+ #elif defined(__GLIBC__)
+ 
+ // The following sequence depends on glibc's sys/ucontext.h.
+@@ -579,6 +651,24 @@ inline void*& llintInstructionPointer(mcontext_t& mach
+     return reinterpret_cast<void*&>((uintptr_t&) machineContext.mc_gpregs.gp_x[4]);
+ #elif CPU(MIPS)
+     return reinterpret_cast<void*&>((uintptr_t&) machineContext.mc_regs[12]);
++#else
++#error Unknown Architecture
++#endif
++
++#elif OS(OPENBSD)
++
++#if CPU(X86)
++    return reinterpret_cast<void*&>((uintptr_t&) machineContext.sc_esi);
++#elif CPU(X86_64)
++    return reinterpret_cast<void*&>((uintptr_t&) machineContext.sc_r8);
++#elif CPU(ARM) 
++    return reinterpret_cast<void*&>((uintptr_t&) machineContext.__gregs[_REG_R8]);
++#elif CPU(ARM64)
++    return reinterpret_cast<void*&>((uintptr_t&) machineContext.mc_gpregs.gp_x[4]);
++#elif CPU(MIPS)
++    return reinterpret_cast<void*&>((uintptr_t&) machineContext.mc_regs[12]);
++#elif CPU(SPARC64)
++    return reinterpret_cast<void*&>((uintptr_t&) machineContext.mc_r8);
+ #else
+ #error Unknown Architecture
+ #endif
