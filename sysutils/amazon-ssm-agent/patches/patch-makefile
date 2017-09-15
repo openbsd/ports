@@ -1,4 +1,4 @@
-$OpenBSD: patch-makefile,v 1.4 2017/08/17 12:24:30 ajacoutot Exp $
+$OpenBSD: patch-makefile,v 1.5 2017/09/15 07:20:56 ajacoutot Exp $
 Index: makefile
 --- makefile.orig
 +++ makefile
@@ -17,10 +17,11 @@ Index: makefile
  
  prepack:: cpy-plugins prepack-linux prepack-linux-386 prepack-windows prepack-windows-386 prepack-arm
  
-@@ -121,6 +121,14 @@ build-freebsd: checkstyle copy-src pre-build
- 	GOOS=freebsd GOARCH=amd64 $(GO_BUILD) -ldflags "-s -w" -o $(BGO_SPACE)/bin/freebsd_amd64/ssm-cli -v \
-             $(BGO_SPACE)/agent/cli-main/cli-main.go
- 
+@@ -126,6 +126,22 @@ build-freebsd: checkstyle copy-src pre-build
+ 			$(BGO_SPACE)/agent/cli-main/cli-main.go
+ 	GOOS=freebsd GOARCH=amd64 $(GO_BUILD) -ldflags "-s -w" -o $(BGO_SPACE)/bin/freebsd_amd64/ssm-document-worker -v \
+ 								$(BGO_SPACE)/agent/framework/processor/executer/outofproc/worker/main.go
++
 +.PHONY: build-openbsd
 +build-openbsd: checkstyle copy-src pre-build
 +	@echo "Build for openbsd agent"
@@ -29,21 +30,13 @@ Index: makefile
 +	GOOS=openbsd GOARCH=amd64 $(GO_BUILD) -ldflags "-s -w" -o $(BGO_SPACE)/bin/openbsd_amd64/ssm-cli -v \
 +            $(BGO_SPACE)/agent/cli-main/cli-main.go
 +
- .PHONY: build-darwin
- build-darwin: checkstyle copy-src pre-build
- 	@echo "Rebuild for darwin agent"
-@@ -150,6 +158,14 @@ build-linux-386: checkstyle copy-src pre-build
- 	$(BGO_SPACE)/agent/update/updater/updater.go $(BGO_SPACE)/agent/update/updater/updater_unix.go
- 	GOOS=linux GOARCH=386 $(GO_BUILD) -ldflags "-s -w" -o $(BGO_SPACE)/bin/linux_386/ssm-cli -v \
-         $(BGO_SPACE)/agent/cli-main/cli-main.go
-+
 +.PHONY: build-openbsd-386
 +build-openbsd-386: checkstyle copy-src pre-build
 +	@echo "Build for openbsd agent"
 +	GOOS=openbsd GOARCH=386 go build -ldflags "-s -w" -o $(BGO_SPACE)/bin/openbsd_386/amazon-ssm-agent -v \
 +	$(BGO_SPACE)/agent/agent.go $(BGO_SPACE)/agent/agent_unix.go $(BGO_SPACE)/agent/agent_parser.go
 +	GOOS=openbsd GOARCH=386 $(GO_BUILD) -ldflags "-s -w" -o $(BGO_SPACE)/bin/openbsd_386/ssm-cli -v \
-+            $(BGO_SPACE)/agent/cli-main/cli-main.go
++	$(BGO_SPACE)/agent/cli-main/cli-main.go
  
- .PHONY: build-darwin-386
- build-darwin-386: checkstyle copy-src pre-build
+ .PHONY: build-darwin
+ build-darwin: checkstyle copy-src pre-build
