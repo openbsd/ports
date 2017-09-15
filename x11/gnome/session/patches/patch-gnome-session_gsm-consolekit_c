@@ -1,9 +1,4 @@
-$OpenBSD: patch-gnome-session_gsm-consolekit_c,v 1.17 2017/07/21 09:38:41 ajacoutot Exp $
-
-From f708bbbf2df41ea9683f7667c745d0297e584968 Mon Sep 17 00:00:00 2001
-From: Ray Strode <rstrode@redhat.com>
-Date: Tue, 20 Jun 2017 16:51:00 -0400
-Subject: system: add api for detecting if this is the last session for a user
+$OpenBSD: patch-gnome-session_gsm-consolekit_c,v 1.18 2017/09/15 13:09:02 ajacoutot Exp $
 
 From 445aa5e10e0d3e5a20800bfcb2ac4b267977bcdf Mon Sep 17 00:00:00 2001
 From: Eric Koegel <eric.koegel@gmail.com>
@@ -1495,7 +1490,7 @@ Index: gnome-session/gsm-consolekit.c
  }
  
  static void
-@@ -1033,12 +931,16 @@ gsm_consolekit_complete_shutdown (GsmSystem *system)
+@@ -1033,10 +931,8 @@ gsm_consolekit_complete_shutdown (GsmSystem *system)
  {
          GsmConsolekit *consolekit = GSM_CONSOLEKIT (system);
  
@@ -1507,24 +1502,8 @@ Index: gnome-session/gsm-consolekit.c
 +        drop_delay_inhibitor (consolekit);
  }
  
-+static gboolean
-+gsm_consolekit_is_last_session_for_user (GsmSystem *system)
-+{
-+        return FALSE;
-+}
-+
- static void
- gsm_consolekit_system_init (GsmSystemInterface *iface)
- {
-@@ -1057,6 +959,7 @@ gsm_consolekit_system_init (GsmSystemInterface *iface)
-         iface->remove_inhibitor = gsm_consolekit_remove_inhibitor;
-         iface->prepare_shutdown = gsm_consolekit_prepare_shutdown;
-         iface->complete_shutdown = gsm_consolekit_complete_shutdown;
-+        iface->is_last_session_for_user = gsm_consolekit_is_last_session_for_user;
- }
- 
- GsmConsolekit *
-@@ -1067,4 +970,59 @@ gsm_consolekit_new (void)
+ static gboolean
+@@ -1074,4 +970,59 @@ gsm_consolekit_new (void)
          manager = g_object_new (GSM_TYPE_CONSOLEKIT, NULL);
  
          return manager;

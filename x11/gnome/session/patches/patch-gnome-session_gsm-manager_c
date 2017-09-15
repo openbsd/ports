@@ -1,4 +1,4 @@
-$OpenBSD: patch-gnome-session_gsm-manager_c,v 1.15 2017/06/24 07:36:39 ajacoutot Exp $
+$OpenBSD: patch-gnome-session_gsm-manager_c,v 1.16 2017/09/15 13:09:02 ajacoutot Exp $
 
 From e7a650b88b92c3381eccef7bf4765fa814389aaa Mon Sep 17 00:00:00 2001
 From: Ray Strode <rstrode@redhat.com>
@@ -24,9 +24,9 @@ Index: gnome-session/gsm-manager.c
          GsmExportedManager     *skeleton;
          gboolean                dbus_disconnected : 1;
  
-@@ -935,7 +937,93 @@ _client_stop (const char *id,
-         return FALSE;
+@@ -969,7 +971,93 @@ maybe_restart_user_bus (GsmManager *manager)
  }
+ #endif
  
 +static GPid *
 +get_pids_for_bus_clients (GsmManager         *manager,
@@ -118,16 +118,16 @@ Index: gnome-session/gsm-manager.c
  do_phase_exit (GsmManager *manager)
  {
          if (gsm_store_size (manager->priv->clients) > 0) {
-@@ -944,6 +1032,8 @@ do_phase_exit (GsmManager *manager)
-                                    NULL);
-         }
+@@ -982,6 +1070,8 @@ do_phase_exit (GsmManager *manager)
+         maybe_restart_user_bus (manager);
+ #endif
  
 +        maybe_kill_bus_clients (manager);
 +
          end_phase (manager);
  }
  
-@@ -3069,6 +3159,20 @@ register_manager (GsmManager *manager)
+@@ -3107,6 +3197,20 @@ register_manager (GsmManager *manager)
  
          if (error != NULL) {
                  g_critical ("error getting session bus: %s", error->message);
