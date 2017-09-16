@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.42 2017/08/22 08:18:38 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.43 2017/09/16 06:47:36 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
@@ -660,6 +660,12 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/deploy/stop-deployment.
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/deploy/uninstall.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/deploy/update-application.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/deploy/update-deployment-group.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/devicefarm/
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/devicefarm/create-device-pool.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/devicefarm/create-project.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/devicefarm/create-upload.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/devicefarm/get-upload.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/devicefarm/list-projects.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/allocate-connection-on-interconnect.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/allocate-hosted-connection.rst
@@ -934,6 +940,8 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/terminate-instances
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/unassign-ipv6-addresses.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/unassign-private-ip-addresses.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/unmonitor-instances.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/update-security-group-rule-descriptions-egress.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/update-security-group-rule-descriptions-ingress.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecr/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecr/batch-delete-image.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecr/batch-get-image.rst
