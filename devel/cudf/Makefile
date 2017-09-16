@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2016/08/19 12:51:19 krw Exp $
+# $OpenBSD: Makefile,v 1.8 2017/09/16 09:03:15 jasper Exp $
 
 MULTI_PACKAGES =	-ocaml -main
 
@@ -7,13 +7,12 @@ COMMENT-main =		CUDF library (C bindings)
 
 CATEGORIES =		devel sysutils
 
-VERSION =		0.8
+VERSION =		0.9
 DISTNAME =		cudf-${VERSION}
 PKGNAME-ocaml =		ocaml-cudf-${VERSION}
 PKGNAME-main =		libcudf-${VERSION}
-REVISION=		0
 
-MASTER_SITES =		https://gforge.inria.fr/frs/download.php/latestfile/4606/
+MASTER_SITES =		https://gforge.inria.fr/frs/download.php/file/36602/
 
 HOMEPAGE =		http://www.mancoosi.org/cudf/
 
@@ -49,12 +48,10 @@ TEST_TARGET +=		c-lib-test
 
 docdir =		${PREFIX}/share/doc/cudf/
 
-
 post-install:
-	-rm -f ${PREFIX}/lib/ocaml/cudf/*.o
+	-rm ${PREFIX}/lib/ocaml/cudf/*.o
 	${INSTALL_DATA_DIR} ${docdir}/api/
 	${INSTALL_DATA} ${WRKSRC}/{ChangeLog,COPYING,README} ${docdir}
 	${INSTALL_DATA} ${WRKSRC}/cudf.docdir/* ${docdir}/api/
-
 
 .include <bsd.port.mk>
