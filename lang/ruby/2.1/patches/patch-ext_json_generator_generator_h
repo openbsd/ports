@@ -1,0 +1,13 @@
+$OpenBSD: patch-ext_json_generator_generator_h,v 1.1 2017/09/16 22:52:40 jeremy Exp $
+
+Index: ext/json/generator/generator.h
+--- ext/json/generator/generator.h.orig
++++ ext/json/generator/generator.h
+@@ -1,7 +1,6 @@
+ #ifndef _GENERATOR_H_
+ #define _GENERATOR_H_
+ 
+-#include <string.h>
+ #include <math.h>
+ #include <ctype.h>
+ 

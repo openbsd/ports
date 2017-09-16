@@ -1,0 +1,61 @@
+$OpenBSD: patch-ext_psych_yaml_parser_c,v 1.1 2017/09/16 22:52:40 jeremy Exp $
+
+Index: ext/psych/yaml/parser.c
+--- ext/psych/yaml/parser.c.orig
++++ ext/psych/yaml/parser.c
+@@ -759,8 +759,9 @@ yaml_parser_parse_block_sequence_entry(yaml_parser_t *
+ 
+     else if (token->type == YAML_BLOCK_END_TOKEN)
+     {
++        yaml_mark_t dummy_mark;     /* Used to eliminate a compiler warning. */
+         parser->state = POP(parser, parser->states);
+-        (void)POP(parser, parser->marks);
++        dummy_mark = POP(parser, parser->marks);
+         SEQUENCE_END_EVENT_INIT(*event, token->start_mark, token->end_mark);
+         SKIP_TOKEN(parser);
+         return 1;
+@@ -868,8 +869,9 @@ yaml_parser_parse_block_mapping_key(yaml_parser_t *par
+ 
+     else if (token->type == YAML_BLOCK_END_TOKEN)
+     {
++        yaml_mark_t dummy_mark;     /* Used to eliminate a compiler warning. */
+         parser->state = POP(parser, parser->states);
+-        (void)POP(parser, parser->marks);
++        dummy_mark = POP(parser, parser->marks);
+         MAPPING_END_EVENT_INIT(*event, token->start_mark, token->end_mark);
+         SKIP_TOKEN(parser);
+         return 1;
+@@ -950,6 +952,7 @@ yaml_parser_parse_flow_sequence_entry(yaml_parser_t *p
+         yaml_event_t *event, int first)
+ {
+     yaml_token_t *token;
++    yaml_mark_t dummy_mark;     /* Used to eliminate a compiler warning. */
+ 
+     if (first) {
+         token = PEEK_TOKEN(parser);
+@@ -994,7 +997,7 @@ yaml_parser_parse_flow_sequence_entry(yaml_parser_t *p
+     }
+ 
+     parser->state = POP(parser, parser->states);
+-    (void)POP(parser, parser->marks);
++    dummy_mark = POP(parser, parser->marks);
+     SEQUENCE_END_EVENT_INIT(*event, token->start_mark, token->end_mark);
+     SKIP_TOKEN(parser);
+     return 1;
+@@ -1101,6 +1104,7 @@ yaml_parser_parse_flow_mapping_key(yaml_parser_t *pars
+         yaml_event_t *event, int first)
+ {
+     yaml_token_t *token;
++    yaml_mark_t dummy_mark;     /* Used to eliminate a compiler warning. */
+ 
+     if (first) {
+         token = PEEK_TOKEN(parser);
+@@ -1154,7 +1158,7 @@ yaml_parser_parse_flow_mapping_key(yaml_parser_t *pars
+     }
+ 
+     parser->state = POP(parser, parser->states);
+-    (void)POP(parser, parser->marks);
++    dummy_mark = POP(parser, parser->marks);
+     MAPPING_END_EVENT_INIT(*event, token->start_mark, token->end_mark);
+     SKIP_TOKEN(parser);
+     return 1;

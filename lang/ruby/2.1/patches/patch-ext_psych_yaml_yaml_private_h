@@ -1,0 +1,20 @@
+$OpenBSD: patch-ext_psych_yaml_yaml_private_h,v 1.1 2017/09/16 22:52:40 jeremy Exp $
+
+Index: ext/psych/yaml/yaml_private.h
+--- ext/psych/yaml/yaml_private.h.orig
++++ ext/psych/yaml/yaml_private.h
+@@ -436,8 +436,7 @@ yaml_queue_extend(void **start, void **head, void **ta
+      (stack).start = (stack).top = (stack).end = 0)
+ 
+ #define STACK_EMPTY(context,stack)                                              \
+-    ((void)(context),                                                           \
+-     ((stack).start == (stack).top))
++    ((stack).start == (stack).top)
+ 
+ #define STACK_LIMIT(context,stack,size)                                         \
+     ((stack).top - (stack).start < (size) ?                                     \
+@@ -661,4 +660,3 @@ yaml_queue_extend(void **start, void **head, void **ta
+      (node).data.mapping.pairs.end = (node_pairs_end),                          \
+      (node).data.mapping.pairs.top = (node_pairs_start),                        \
+      (node).data.mapping.style = (node_style))
+-
