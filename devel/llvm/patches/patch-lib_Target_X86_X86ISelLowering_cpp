@@ -1,0 +1,41 @@
+$OpenBSD: patch-lib_Target_X86_X86ISelLowering_cpp,v 1.4 2017/09/16 07:01:33 ajacoutot Exp $
+
+[X86] Don't create i64 constants on 32-bit targets when lowering v64i1 constant build
+vectors
+
+When handling a v64i1 build vector of constants on 32-bit targets we were creating an
+illegal i64 constant that we then bitcasted back to v64i1. We need to instead create
+two 32-bit constants, bitcast them to v32i1 and concat the result. We should also
+take care to handle the halves being all zeros/ones after the split.
+
+This patch splits the build vector and then recursively lowers the two pieces. This
+allows us to handle the all ones and all zeros cases with minimal effort. Ideally
+we'd just do the split and concat, and let lowering get called again on the new
+nodes, but getNode has special handling for CONCAT_VECTORS that reassembles the
+pieces back into a single BUILD_VECTOR. Hopefully the two temporary BUILD_VECTORS we
+had to create to do this that don't get returned don't cause any issues.
+
+Fixes PR34605.
+
+Index: lib/Target/X86/X86ISelLowering.cpp
+--- lib/Target/X86/X86ISelLowering.cpp.orig
++++ lib/Target/X86/X86ISelLowering.cpp
+@@ -7026,6 +7026,18 @@ X86TargetLowering::LowerBUILD_VECTORvXi1(SDValue Op, S
+     return DAG.getTargetConstant(1, dl, VT);
+ 
+   if (ISD::isBuildVectorOfConstantSDNodes(Op.getNode())) {
++    if (VT == MVT::v64i1 && !Subtarget.is64Bit()) {
++      // Split the pieces.
++      SDValue Lower =
++          DAG.getBuildVector(MVT::v32i1, dl, Op.getNode()->ops().slice(0, 32));
++      SDValue Upper =
++          DAG.getBuildVector(MVT::v32i1, dl, Op.getNode()->ops().slice(32, 32));
++      // We have to manually lower both halves so getNode doesn't try to
++      // reassemble the build_vector.
++      Lower = LowerBUILD_VECTORvXi1(Lower, DAG);
++      Upper = LowerBUILD_VECTORvXi1(Upper, DAG);
++      return DAG.getNode(ISD::CONCAT_VECTORS, dl, MVT::v64i1, Lower, Upper);
++    }
+     SDValue Imm = ConvertI1VectorToInteger(Op, DAG);
+     if (Imm.getValueSizeInBits() == VT.getSizeInBits())
+       return DAG.getBitcast(VT, Imm);
