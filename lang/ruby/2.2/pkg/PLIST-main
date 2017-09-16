@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2016/11/19 04:55:26 jeremy Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2017/09/16 22:45:26 jeremy Exp $
 @option no-default-conflict
 @option is-branch
 @conflict ruby->=2.2,<2.3
@@ -1215,8 +1215,8 @@ lib/ruby/gems/${RUBYLIBREV}/specifications/
 lib/ruby/gems/${RUBYLIBREV}/specifications/default/
 lib/ruby/gems/${RUBYLIBREV}/specifications/default/bigdecimal-1.2.6.gemspec
 lib/ruby/gems/${RUBYLIBREV}/specifications/default/io-console-0.4.3.gemspec
-lib/ruby/gems/${RUBYLIBREV}/specifications/default/json-1.8.1.gemspec
-lib/ruby/gems/${RUBYLIBREV}/specifications/default/psych-2.0.8.gemspec
+lib/ruby/gems/${RUBYLIBREV}/specifications/default/json-1.8.1.1.gemspec
+lib/ruby/gems/${RUBYLIBREV}/specifications/default/psych-2.0.8.1.gemspec
 lib/ruby/gems/${RUBYLIBREV}/specifications/default/rake-10.4.2.gemspec
 lib/ruby/gems/${RUBYLIBREV}/specifications/default/rdoc-4.2.0.gemspec
 lib/ruby/gems/${RUBYLIBREV}/specifications/minitest-5.4.3.gemspec
