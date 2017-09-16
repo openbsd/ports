@@ -1,4 +1,4 @@
-$OpenBSD: patch-mininet_node_py,v 1.2 2017/09/09 21:18:30 akoshibe Exp $
+$OpenBSD: patch-mininet_node_py,v 1.3 2017/09/16 06:03:05 akoshibe Exp $
 Original Node functions are now in BaseNode, subclassed by OS-
 specific Node objects.  
 Index: mininet/node.py
@@ -904,7 +904,7 @@ Index: mininet/node.py
              pstr = ':%d ' % self.port
              clist = servers[ 0:1 ] + [ s for s in servers if pstr in s ]
              raise Exception( "Please shut down the controller which is"
-@@ -1405,9 +1026,12 @@ class Controller( Node ):
+@@ -1405,9 +1026,13 @@ class Controller( Node ):
          self.execed = False
  
      def stop( self, *args, **kwargs ):
@@ -915,12 +915,13 @@ Index: mininet/node.py
 +	Stop controller. Find processes associated with the command, and kill
 +	them.
 +	"""
-+        self.cmd( 'kill ' + pids + ' 2>/dev/null' )
++        pids = " ".join( self.cmd( 'pgrep ' + self.command ).split( '\n' ) )
++        self.cmd( 'pkill ' + pids + ' 2>/dev/null' )
 +        self.cmd( 'wait ' + pids )
          super( Controller, self ).stop( *args, **kwargs )
  
      def IP( self, intf=None ):
-@@ -1470,12 +1094,19 @@ class NOX( Controller ):
+@@ -1470,12 +1095,19 @@ class NOX( Controller ):
  
  class Ryu( Controller ):
      "Controller to run Ryu application"
@@ -942,7 +943,7 @@ Index: mininet/node.py
          if not ryuArgs:
              warn( 'warning: no Ryu modules specified; '
                    'running simple_switch only\n' )
-@@ -1538,7 +1169,50 @@ class RemoteController( Controller ):
+@@ -1538,7 +1170,50 @@ class RemoteController( Controller ):
          else:
              return True
  

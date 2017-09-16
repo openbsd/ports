@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2017/09/09 21:18:30 akoshibe Exp $
+# $OpenBSD: Makefile,v 1.5 2017/09/16 06:03:05 akoshibe Exp $
 
 COMMENT =	emulator for rapid prototyping of software defined networks
 
 DISTNAME =	mininet-0.0.20170813
-REVISION =	1
+REVISION =	2
 GH_ACCOUNT =	mininet
 GH_PROJECT =	mininet
 GH_COMMIT =	87e26ef931ee6063332ceba77db472140f832d3a
@@ -42,5 +42,11 @@ pre-install:
 .endfor
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/mininet
 	${INSTALL_DATA} ${WRKBUILD}/README.md ${PREFIX}/share/doc/mininet
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mininet
+.for f in examples/README.md examples/*.py
+	${INSTALL_DATA} ${WRKSRC}/$f ${PREFIX}/share/examples/mininet
+.endfor
 
 .include <bsd.port.mk>

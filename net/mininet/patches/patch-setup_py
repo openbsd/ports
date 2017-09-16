@@ -1,17 +1,21 @@
-$OpenBSD: patch-setup_py,v 1.2 2017/09/02 23:10:52 akoshibe Exp $
-
+$OpenBSD: patch-setup_py,v 1.3 2017/09/16 06:03:05 akoshibe Exp $
+examples/ is apparently used for beta feature modules, so pull in just
+the absolutely needed ones.
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -20,7 +20,11 @@ setup(
+@@ -20,7 +20,14 @@ setup(
      description='Process-based OpenFlow emulator',
      author='Bob Lantz',
      author_email='rlantz@cs.stanford.edu',
 -    packages=[ 'mininet', 'mininet.examples' ],
 +    packages=[
 +        'mininet',
-+        'mininet.examples',
 +        'mininet.openbsd'
++    ],
++    py_modules=[
++        'mininet.examples.cluster',
++        'mininet.examples.clustercli'
 +    ],
      long_description="""
          Mininet is a network emulator which uses lightweight
