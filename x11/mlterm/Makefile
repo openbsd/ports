@@ -1,13 +1,17 @@
-# $OpenBSD: Makefile,v 1.55 2017/08/23 16:10:37 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.56 2017/09/16 14:26:26 dcoppa Exp $
 
 COMMENT=	color terminal emulator with unicode support
 DISTNAME=	mlterm-3.8.2
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS+=	mef	0.0 # 1.0
 SHARED_LIBS+=	pobl	0.0 # 1.0
 
 CATEGORIES=	x11
+
+HOMEPAGE=	http://mlterm.sourceforge.net/
+
+MAINTAINER=	David Coppa <dcoppa@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
@@ -20,7 +24,6 @@ WANTLIB += gthread-2.0 gtk-x11-2.0 harfbuzz m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += util xcb xcb-render xcb-shm z
 
-HOMEPAGE=	http://mlterm.sourceforge.net/
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mlterm/}
 
 LIB_DEPENDS=	devel/fribidi \

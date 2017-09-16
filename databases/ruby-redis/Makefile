@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.27 2017/08/28 07:28:23 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.28 2017/09/16 14:26:26 dcoppa Exp $
 
 COMMENT =	client library for the Redis key-value store
 
 VERSION =	3.3.3
+REVISION =	0
 EPOCH =		1
 DISTNAME =	redis-${VERSION}
 CATEGORIES =	databases
 
 HOMEPAGE =	http://redis-rb.keyvalue.org/
-
-MAINTAINER =	David Coppa <dcoppa@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
