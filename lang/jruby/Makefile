@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2017/09/15 03:06:13 jeremy Exp $
+# $OpenBSD: Makefile,v 1.69 2017/09/16 22:56:41 jeremy Exp $
 
 # Runtime failures on i386 in IO#pos and IO#rewind
 ONLY_FOR_ARCHS = amd64
@@ -13,6 +13,8 @@ DISTFILES =	${DISTNAME}.tar.gz \
 		jnr-jffi-1.2.2-0-g4c196bb.tar.gz:0 \
 		${JRUBY_LAUNCHER_GEM}:1
 
+REVISION =	0
+
 HOMEPAGE =	http://www.jruby.org/
 
 MAINTAINER =	Jeremy Evans <jeremy@openbsd.org>
@@ -20,7 +22,7 @@ MAINTAINER =	Jeremy Evans <jeremy@openbsd.org>
 # EPLv1/GPLv2/LGPLv2.1/Ruby/MIT/BSD/Apache/CPL
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =	http://jruby.org.s3.amazonaws.com/downloads/${V}/
+MASTER_SITES =	https://s3.amazonaws.com/jruby.org/downloads/${V}/
 MASTER_SITES0 =	http://www.distfiles.nl/
 MASTER_SITES1 =	${MASTER_SITE_RUBYGEMS}
 

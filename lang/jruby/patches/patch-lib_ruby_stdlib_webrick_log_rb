@@ -1,0 +1,20 @@
+$OpenBSD: patch-lib_ruby_stdlib_webrick_log_rb,v 1.1 2017/09/16 22:56:41 jeremy Exp $
+
+Fix CVE-2017-10784.
+
+Index: lib/ruby/stdlib/webrick/log.rb
+--- lib/ruby/stdlib/webrick/log.rb.orig
++++ lib/ruby/stdlib/webrick/log.rb
+@@ -118,10 +118,10 @@ module WEBrick
+     # * Otherwise it will return +arg+.inspect.
+     def format(arg)
+       if arg.is_a?(Exception)
+-        "#{arg.class}: #{arg.message}\n\t" <<
++        "#{arg.class}: #{AccessLog.escape(arg.message)}\n\t" <<
+         arg.backtrace.join("\n\t") << "\n"
+       elsif arg.respond_to?(:to_str)
+-        arg.to_str
++        AccessLog.escape(arg.to_str)
+       else
+         arg.inspect
+       end

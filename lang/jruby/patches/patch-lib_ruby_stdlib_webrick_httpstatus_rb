@@ -1,0 +1,18 @@
+$OpenBSD: patch-lib_ruby_stdlib_webrick_httpstatus_rb,v 1.1 2017/09/16 22:56:41 jeremy Exp $
+
+Fix CVE-2017-10784.
+
+Index: lib/ruby/stdlib/webrick/httpstatus.rb
+--- lib/ruby/stdlib/webrick/httpstatus.rb.orig
++++ lib/ruby/stdlib/webrick/httpstatus.rb
+@@ -23,10 +23,6 @@ module WEBrick
+     ##
+     # Root of the HTTP status class hierarchy
+     class Status < StandardError
+-      def initialize(*args) # :nodoc:
+-        args[0] = AccessLog.escape(args[0]) unless args.empty?
+-        super(*args)
+-      end
+       class << self
+         attr_reader :code, :reason_phrase # :nodoc:
+       end
