@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2016/06/04 20:08:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2017/09/16 23:32:03 jca Exp $
 
 COMMENT=		wifi automagic connector
 
 GH_ACCOUNT=		raylai
 GH_PROJECT=		wifind
-GH_TAGNAME=		0.5
+GH_TAGNAME=		0.7
 
 CATEGORIES=		net
 
