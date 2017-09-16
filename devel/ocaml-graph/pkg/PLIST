@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/08/30 15:58:32 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.3 2017/09/16 09:02:21 jasper Exp $
 %%native%%
 @bin bin/graph-editor
 bin/graph-editor.byte
@@ -8,6 +8,7 @@ lib/ocaml/ocamlgraph/
 lib/ocaml/ocamlgraph/META
 lib/ocaml/ocamlgraph/builder.mli
 lib/ocaml/ocamlgraph/classic.mli
+lib/ocaml/ocamlgraph/clique.mli
 lib/ocaml/ocamlgraph/cliquetree.mli
 lib/ocaml/ocamlgraph/coloring.mli
 lib/ocaml/ocamlgraph/components.mli
@@ -42,6 +43,7 @@ lib/ocaml/ocamlgraph/leaderlist.mli
 lib/ocaml/ocamlgraph/mcs_m.mli
 lib/ocaml/ocamlgraph/md.mli
 lib/ocaml/ocamlgraph/merge.mli
+lib/ocaml/ocamlgraph/mincut.mli
 lib/ocaml/ocamlgraph/minsep.mli
 lib/ocaml/ocamlgraph/nonnegative.mli
 lib/ocaml/ocamlgraph/oper.mli
