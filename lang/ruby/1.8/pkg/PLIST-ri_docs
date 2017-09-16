@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ri_docs,v 1.2 2014/11/14 17:51:42 jeremy Exp $
+@comment $OpenBSD: PLIST-ri_docs,v 1.3 2017/09/16 22:54:58 jeremy Exp $
 @option no-default-conflict
 @conflict ruby-ri_docs->=1.8,<1.9
 share/ri/${REV}/system/ACL/
@@ -9955,7 +9955,6 @@ share/ri/${REV}/system/WEBrick/HTTPStatus/ServerError/cdesc-ServerError.yaml
 share/ri/${REV}/system/WEBrick/HTTPStatus/Status/
 share/ri/${REV}/system/WEBrick/HTTPStatus/Status/cdesc-Status.yaml
 share/ri/${REV}/system/WEBrick/HTTPStatus/Status/code-i.yaml
-share/ri/${REV}/system/WEBrick/HTTPStatus/Status/new-c.yaml
 share/ri/${REV}/system/WEBrick/HTTPStatus/Status/reason_phrase-i.yaml
 share/ri/${REV}/system/WEBrick/HTTPStatus/Status/to_i-i.yaml
 share/ri/${REV}/system/WEBrick/HTTPStatus/Success/
