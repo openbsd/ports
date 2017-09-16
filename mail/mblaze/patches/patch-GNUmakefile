@@ -1,0 +1,20 @@
+$OpenBSD: patch-GNUmakefile,v 1.1.1.1 2017/09/16 03:43:32 sunil Exp $
+
+Index: GNUmakefile
+--- GNUmakefile.orig
++++ GNUmakefile
+@@ -1,11 +1,11 @@
+-CFLAGS+=-g -O2 -Wall -Wno-switch -Wextra -fstack-protector-strong -D_FORTIFY_SOURCE=2
++CFLAGS= -Wall -Wno-switch -Wextra -fstack-protector-strong -D_FORTIFY_SOURCE=2 ${PORTS_CFLAGS}
+ LDLIBS=-lrt
+ 
+ OS := $(shell uname)
+ 
+ ifeq ($(OS),OpenBSD)
+-CFLAGS+=-I/usr/local/include -pthread
+-LDLIBS=-L/usr/local/lib -liconv -pthread
++CFLAGS+=-I${LOCALBASE}/include -pthread
++LDLIBS=-L${LOCALBASE}/lib -liconv -pthread
+ endif
+ 
+ ifeq ($(OS),Darwin)

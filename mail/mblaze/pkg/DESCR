@@ -1,0 +1,5 @@
+The mblaze message system is a set of Unix utilities to deal with
+mail kept in Maildir folders.
+
+Its design is roughly inspired by MH, the RAND Message Handling
+System, but it is a complete implementation from scratch.
