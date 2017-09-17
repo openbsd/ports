@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.390 2017/08/27 16:09:21 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.391 2017/09/17 16:45:29 sthen Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -116,7 +116,6 @@
      SUBDIR += mp3blaster
      SUBDIR += mp3cddb
      SUBDIR += mp3cut
-     SUBDIR += mp3gain
      SUBDIR += mp3info
      SUBDIR += mp3info,no_x11
      SUBDIR += mp3splt
@@ -212,6 +211,7 @@
      SUBDIR += pympd
      SUBDIR += quodlibet
      SUBDIR += radiotray
+     SUBDIR += rgain
      SUBDIR += rhythmbox
      SUBDIR += rsynth
      SUBDIR += rtunes
