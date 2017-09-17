@@ -1,0 +1,24 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/09/17 16:43:24 sthen Exp $
+bin/collectiongain
+bin/replaygain
+lib/python${MODPY_VERSION}/site-packages/rgain/
+lib/python${MODPY_VERSION}/site-packages/rgain-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/rgain/__init__.py
+lib/python${MODPY_VERSION}/site-packages/rgain/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/rgain/albumid.py
+lib/python${MODPY_VERSION}/site-packages/rgain/albumid.pyc
+lib/python${MODPY_VERSION}/site-packages/rgain/rgcalc.py
+lib/python${MODPY_VERSION}/site-packages/rgain/rgcalc.pyc
+lib/python${MODPY_VERSION}/site-packages/rgain/rgio.py
+lib/python${MODPY_VERSION}/site-packages/rgain/rgio.pyc
+lib/python${MODPY_VERSION}/site-packages/rgain/script/
+lib/python${MODPY_VERSION}/site-packages/rgain/script/__init__.py
+lib/python${MODPY_VERSION}/site-packages/rgain/script/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/rgain/script/collectiongain.py
+lib/python${MODPY_VERSION}/site-packages/rgain/script/collectiongain.pyc
+lib/python${MODPY_VERSION}/site-packages/rgain/script/replaygain.py
+lib/python${MODPY_VERSION}/site-packages/rgain/script/replaygain.pyc
+lib/python${MODPY_VERSION}/site-packages/rgain/util.py
+lib/python${MODPY_VERSION}/site-packages/rgain/util.pyc
+lib/python${MODPY_VERSION}/site-packages/rgain/version.py
+lib/python${MODPY_VERSION}/site-packages/rgain/version.pyc

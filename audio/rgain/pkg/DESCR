@@ -1,0 +1,4 @@
+ReplayGain is designed to solve the problem of varying volumes between
+different audio files. This package provides Python modules and scripts
+to read, write and calculate Replay Gain on various file formats (Ogg
+Vorbis, flac, WavPack, MP4, MP3).
