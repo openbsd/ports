@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1022 2017/09/06 07:09:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.1023 2017/09/18 22:23:29 akoshibe Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -237,6 +237,7 @@
      SUBDIR += mfi
      SUBDIR += microblog-purple
      SUBDIR += minbif
+     SUBDIR += mininet
      SUBDIR += miniupnp
      SUBDIR += mirmon
      SUBDIR += mirror
