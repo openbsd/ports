@@ -1,14 +1,17 @@
-# $OpenBSD: Makefile,v 1.42 2017/09/18 09:31:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.43 2017/09/18 10:23:07 sthen Exp $
 
 COMMENT=	event-driven spam filtering system in C/Lua
 
 GH_ACCOUNT=	vstakhov
 GH_PROJECT=	rspamd
 GH_TAGNAME=	1.6.4
+REVISION=	0
 
 CATEGORIES=	mail
 
 HOMEPAGE=	https://rspamd.com/
+
+MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # Apache License 2.0
 PERMIT_PACKAGE_CDROM=	Yes
