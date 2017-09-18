@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2017/09/18 11:48:57 jasper Exp $
-
-BROKEN-i386= java
+# $OpenBSD: Makefile,v 1.14 2017/09/18 20:12:19 sthen Exp $
 
 COMMENT=		Scheme and language framework for the Java platform
 
