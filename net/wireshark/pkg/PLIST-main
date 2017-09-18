@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST-main,v 1.8 2017/08/30 12:42:34 sthen Exp $
-@pkgpath net/wireshark,-gtk
+@comment $OpenBSD: PLIST-main,v 1.9 2017/09/18 13:41:32 sthen Exp $
 @bin bin/wireshark
 @man man/man1/wireshark.1
+share/appdata/
+share/appdata/wireshark.appdata.xml
 share/applications/wireshark.desktop
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/icons/hicolor/128x128/apps/wireshark.png
@@ -19,7 +20,10 @@ share/icons/hicolor/48x48/mimetypes/application-wireshark-doc.png
 share/icons/hicolor/64x64/apps/wireshark.png
 share/icons/hicolor/64x64/mimetypes/application-wireshark-doc.png
 share/icons/hicolor/scalable/apps/wireshark.svg
+share/mime/packages/wireshark.xml
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@exec /usr/local/bin/update-mime-database /usr/local/share/mime
+@unexec-delete /usr/local/bin/update-mime-database /usr/local/share/mime

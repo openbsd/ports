@@ -1,16 +1,20 @@
-# $OpenBSD: Makefile,v 1.57 2017/08/30 12:42:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.58 2017/09/18 13:41:32 sthen Exp $
 
 BROKEN-alpha =	.got subsegment exceeds 64K (size 101480)
 BROKEN-sparc64 = cc: Internal error: Illegal instruction (program cc1)
 
 COMMENT-main =	graphical network protocol analyzer, Qt user-interface
 COMMENT-text =	network protocol analyzer
+COMMENT-gtk =	graphical network protocol analyzer, Gtk+3 user-interface
 
 WVER =		2.4.1
 PORTROACH =	limitw:1,even
 DISTNAME =	wireshark-${WVER}
 PKGNAME-main =	wireshark-${WVER}
 PKGNAME-text =	tshark-${WVER}
+PKGNAME-gtk =	wireshark-gtk-${WVER}
+REVISION-main =	0
+REVISION-text =	0
 
 SHARED_LIBS +=	wscodecs             0.0      # 0.0
 SHARED_LIBS +=	wsutil               3.0      # 5.0
@@ -31,7 +35,7 @@ cWANTLIB +=	c glib-2.0 m pcap z
 
 MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 
-MULTI_PACKAGES = -text -main
+MULTI_PACKAGES = -text -main -gtk
 
 MODLUA_VERSION = 5.2
 MODULES =	lang/lua \
@@ -42,12 +46,17 @@ MODLUA_RUNDEP =	No
 MODPY_RUNDEP =	No
 
 WANTLIB-text =	${cWANTLIB} ${MODLUA_WANTLIB}
-WANTLIB-text +=	GeoIP cares gcrypt gmodule-2.0 gnutls gpg-error lz4
-WANTLIB-text +=	nghttp2 smi spandsp ssh xml2
+WANTLIB-text += GeoIP cares gcrypt gmodule-2.0 gnutls gpg-error lz4
+WANTLIB-text += nghttp2 smi spandsp snappy ssh xml2
 
 WANTLIB-main =	${cWANTLIB} ${COMPILER_LIBCXX}
-WANTLIB-main +=	pthread wireshark wiretap wscodecs wsutil
-WANTLIB-main +=	Qt5Core Qt5Gui Qt5Multimedia Qt5PrintSupport Qt5Widgets
+WANTLIB-main += pthread wireshark wiretap wscodecs wsutil
+WANTLIB-main += Qt5Core Qt5Gui Qt5Multimedia Qt5PrintSupport Qt5Widgets
+
+WANTLIB-gtk =	${cWANTLIB}
+WANTLIB-gtk += cairo gdk-3 gdk_pixbuf-2.0 gio-2.0 gobject-2.0 gtk-3
+WANTLIB-gtk += pango-1.0 pangocairo-1.0 portaudio wireshark wiretap
+WANTLIB-gtk += wscodecs wsutil
 
 MASTER_SITES =		http://www.wireshark.org/download/src/all-versions/ \
 			http://www.wireshark.org/download/automated/src/
@@ -60,14 +69,15 @@ BUILD_DEPENDS +=	devel/bison \
 			textproc/libxslt \
 			devel/xdg-utils \
 			textproc/asciidoc
-RUN_DEPENDS-main =	${RUN_DEPENDS} \
-			devel/desktop-file-utils \
+RUN_DEPENDS =		devel/desktop-file-utils \
 			devel/xdg-utils \
 			misc/shared-mime-info \
 			x11/gtk+3,-guic
+RUN_DEPENDS-text =	# empty
 
 LIB_DEPENDS-text =	${MODLUA_LIB_DEPENDS} \
 			archivers/lz4 \
+			archivers/snappy \
 			devel/glib2 \
 			net/libcares \
 			net/libsmi \
@@ -89,9 +99,14 @@ LIB_DEPENDS-main +=	${LIB_DEPENDS} \
 # an "Extra" (that may later change to a real WANTLIB) than failing builds.
 WANTLIB-main +=		Qt5Svg
 
+LIB_DEPENDS-gtk +=	tshark-${WVER}:${BUILD_PKGPATH:S/,$//},-text \
+			x11/gtk+3 \
+			audio/portaudio-svn
+
 MODULES +=		devel/cmake
 CONFIGURE_STYLE =	cmake
-CONFIGURE_ARGS =	-DDUMPCAP_INST_VALS=suid \
+CONFIGURE_ARGS =	-DBUILD_wireshark_gtk=true \
+			-DDUMPCAP_INST_VALS=suid \
 			-DCMAKE_INSTALL_MANDIR=${TRUEPREFIX}/man \
 			-DCOMPILER_CAN_HANDLE_SSE4_2=false \
 			-DSH_EXECUTABLE=/bin/ksh

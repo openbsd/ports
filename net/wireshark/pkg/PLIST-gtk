@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST-gtk,v 1.3 2017/09/18 13:41:32 sthen Exp $
+@bin bin/wireshark-gtk
+share/applications/wireshark-gtk.desktop
+@exec /usr/local/bin/update-desktop-database
+@unexec-delete /usr/local/bin/update-desktop-database
