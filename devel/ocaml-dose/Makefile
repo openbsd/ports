@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2016/11/01 22:11:23 krw Exp $
+# $OpenBSD: Makefile,v 1.7 2017/09/18 06:06:22 jasper Exp $
 
 COMMENT =		software repository analysis in OCaml
 CATEGORIES =		devel
@@ -6,7 +6,7 @@ CATEGORIES =		devel
 VERSION =		3.3
 DISTNAME =		dose3-${VERSION}
 PKGNAME =		ocaml-dose-${VERSION}
-REVISION =		3
+REVISION =		4
 
 HOMEPAGE =		http://dose.gforge.inria.fr/public_html/
 
@@ -25,7 +25,7 @@ BUILD_DEPENDS =		sysutils/findlib \
 			devel/ounit \
 			devel/cudf,-ocaml \
 			devel/ocaml-extlib \
-			devel/ocaml-graph \
+			devel/ocaml-graph>=1.8.7 \
 			devel/ocaml-pcre \
 			devel/cudf,-main \
 			devel/ocaml-re \
