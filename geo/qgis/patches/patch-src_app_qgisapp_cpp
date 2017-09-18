@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_app_qgisapp_cpp,v 1.19 2017/05/31 11:49:28 landry Exp $
 Fix paths to docs
 
 Index: src/app/qgisapp.cpp
@@ -13,7 +12,7 @@ Index: src/app/qgisapp.cpp
  
    connect( mActionHelpContents, SIGNAL( triggered() ), this, SLOT( helpContents() ) );
    connect( mActionHelpAPI, SIGNAL( triggered() ), this, SLOT( apiDocumentation() ) );
-@@ -9160,7 +9160,7 @@ void QgisApp::helpContents()
+@@ -9161,7 +9161,7 @@ void QgisApp::helpContents()
  
  void QgisApp::apiDocumentation()
  {
@@ -22,7 +21,7 @@ Index: src/app/qgisapp.cpp
    {
      openURL( "api/index.html" );
    }
-@@ -9189,7 +9189,7 @@ void QgisApp::openURL( QString url, bool useQgisDocDir
+@@ -9190,7 +9190,7 @@ void QgisApp::openURL( QString url, bool useQgisDocDir
    // open help in user browser
    if ( useQgisDocDirectory )
    {

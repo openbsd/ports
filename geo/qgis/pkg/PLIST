@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.32 2017/08/28 12:25:16 landry Exp $
+@comment $OpenBSD: PLIST,v 1.33 2017/09/18 12:12:46 landry Exp $
 @bin bin/qbrowser
 @bin bin/qgis
 @bin bin/qgis_bench
@@ -3581,6 +3581,7 @@ share/qgis/python/plugins/processing/algs/qgis/Explode.py
 share/qgis/python/plugins/processing/algs/qgis/ExportGeometryInfo.py
 share/qgis/python/plugins/processing/algs/qgis/ExtentFromLayer.py
 share/qgis/python/plugins/processing/algs/qgis/ExtractByAttribute.py
+share/qgis/python/plugins/processing/algs/qgis/ExtractByExpression.py
 share/qgis/python/plugins/processing/algs/qgis/ExtractByLocation.py
 share/qgis/python/plugins/processing/algs/qgis/ExtractNodes.py
 share/qgis/python/plugins/processing/algs/qgis/FieldPyculator.py
