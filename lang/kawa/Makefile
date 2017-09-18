@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2017/08/31 06:33:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2017/09/18 11:48:57 jasper Exp $
 
 BROKEN-i386= java
 
@@ -28,13 +28,13 @@ BUILD_DEPENDS=		print/texinfo \
 			
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--enable-kawa-frontend
-CONFIGURE_ENV+=		AUTOMAKE=/usr/local/bin/automake-1.15 \
-			AUTOCONF=/usr/local/bin/autoconf-2.69
+CONFIGURE_ENV+=		AUTOMAKE=${LOCALBASE}/bin/automake-1.15 \
+			AUTOCONF=${LOCALBASE}/bin/autoconf-2.69
 
 
 MAKE_FLAGS=		JAVAC=${JAVA_HOME}/bin/javac \
 			JAVA=${JAVA_HOME}/bin/java \
-			MAKEINFO=/usr/local/bin/gmakeinfo \
+			MAKEINFO=${LOCALBASE}/bin/gmakeinfo \
 			AUTOCONF_VERSION=2.69
 			
 .include <bsd.port.arch.mk>
