@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2016/04/09 23:38:55 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2017/09/18 13:41:01 landry Exp $
 
 COMMENT=	extract valid data from within an Excel spreadsheet
 PROJECT =	freexl
-DISTNAME=	${PROJECT}-1.0.2
+DISTNAME=	${PROJECT}-1.0.4
 CATEGORIES=	converters geo
 SHARED_LIBS=	freexl 0.1 #2.0
 
