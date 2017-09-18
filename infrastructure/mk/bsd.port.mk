@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1367 2017/09/18 15:20:54 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1368 2017/09/18 16:32:06 tb Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -2636,6 +2636,12 @@ ${_PATCH_COOKIE}: ${_EXTRACT_COOKIE}
 # End of PATCH.
 .endif
 .if ${USE_WXNEEDED:L} == "yes"
+	@wrktmp=`df -P ${WRKOBJDIR} | awk 'END { print $$6 }'`; \
+	if ! mount | grep -q " $${wrktmp} .*wxallowed"; then \
+		echo "Fatal: ${WRKOBJDIR} must be on a wxallowed filesystem" \
+			"(in ${PKGPATH})" >&2; \
+		false; \
+	fi
 	@printf '#!/bin/sh\nexec /usr/bin/ld -z wxneeded "$$@"\n' > ${WRKDIR}/bin/ld
 	@chmod 555 ${WRKDIR}/bin/ld
 .endif
