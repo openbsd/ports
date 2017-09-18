@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1366 2017/09/05 14:50:28 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1367 2017/09/18 15:20:54 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1063,6 +1063,11 @@ _substvars${_S} += -D${_v}=${${_v:S/^^//}:Q}
 _tmpvars += ${_v}=${${_v:S/^^//}:Q}
 .    endif
 .  endfor
+
+# maybe this will want some more fine-grained variable
+.  if "${PKG_ARCH${_S}}" != "*"
+PKG_ARGS${_S} += ${_PKG_ARGS_VERSION}
+.  endif
 
 PKG_ARGS${_S} += ${_substvars${_S}}
 PKG_ARGS${_S} += -DFULLPKGPATH=${FULLPKGPATH${_S}}
