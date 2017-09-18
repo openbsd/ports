@@ -1,0 +1,30 @@
+$OpenBSD: patch-server_core_c,v 1.1 2017/09/18 19:25:38 sthen Exp $
+
+Revision 1807754
+Fri Sep 8 13:13:11 2017 UTC by ylavic
+Merge r1807655 from trunk:
+
+core: Disallow Methods' registration at run time (.htaccess), they may be
+used only if registered at init time (httpd.conf).
+
+Calling ap_method_register() in children processes is not the right scope
+since it won't be shared for all requests.
+
+Reviewed by: ylavic, covener, icing
+
+Index: server/core.c
+--- server/core.c.orig
++++ server/core.c
+@@ -2262,6 +2262,12 @@ AP_CORE_DECLARE_NONSTD(const char *) ap_limit_section(
+             /* method has not been registered yet, but resource restriction
+              * is always checked before method handling, so register it.
+              */
++            if (cmd->pool == cmd->temp_pool) {
++                /* In .htaccess, we can't globally register new methods. */
++                return apr_psprintf(cmd->pool, "Could not register method '%s' "
++                                   "for %s from .htaccess configuration",
++                                    method, cmd->cmd->name);
++            }
+             methnum = ap_method_register(cmd->pool,
+                                          apr_pstrdup(cmd->pool, method));
+         }
