@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.830 2017/08/28 11:45:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.831 2017/09/19 07:49:33 phessler Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -549,6 +549,7 @@
      SUBDIR += trac
      SUBDIR += trac-ldapplugin
      SUBDIR += tracnav
+     SUBDIR += ttyd
      SUBDIR += twill
      SUBDIR += uget
      SUBDIR += uriparser
