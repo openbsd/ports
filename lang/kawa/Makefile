@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2017/09/18 20:12:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2017/09/19 19:23:04 jasper Exp $
 
 COMMENT=		Scheme and language framework for the Java platform
 
@@ -19,22 +19,25 @@ TEST_DEPENDS=		${RUN_DEPENDS}
 
 USE_GMAKE=		Yes
 
+AUTOCONF_VERSION=	2.69
+AUTOMAKE_VERSION=	1.15
+
 WANTLIB+=		c ncurses readline
 BUILD_DEPENDS=		print/texinfo \
-			devel/autoconf/2.69 \
-			devel/automake/1.15
-			
+			${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS}
+
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--enable-kawa-frontend
 CONFIGURE_ENV+=		AUTOMAKE=${LOCALBASE}/bin/automake-1.15 \
 			AUTOCONF=${LOCALBASE}/bin/autoconf-2.69
 
-
 MAKE_FLAGS=		JAVAC=${JAVA_HOME}/bin/javac \
 			JAVA=${JAVA_HOME}/bin/java \
 			MAKEINFO=${LOCALBASE}/bin/gmakeinfo \
-			AUTOCONF_VERSION=2.69
-			
+			AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+			AUTOMAKE_VERSION=${AUTOMAKE_VERSION}
+
 .include <bsd.port.arch.mk>
 # fails with this on i386, fails without this on amd64, unsure about
 # other arch but lp64 is probably not a bad indicator.
