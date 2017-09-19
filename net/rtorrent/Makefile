@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.58 2017/07/26 22:45:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.59 2017/09/19 18:28:27 dcoppa Exp $
 
 COMMENT=		ncurses BitTorrent client based on libTorrent
 
 DISTNAME=		rtorrent-0.9.6
-REVISION=		2
+REVISION=		3
 EPOCH=			0
 CATEGORIES=		net
 
@@ -19,7 +19,7 @@ WANTLIB=		c crypto curl>=14 m ncursesw nghttp2 \
 
 MASTER_SITES=		http://rtorrent.net/downloads/
 
-MODULES=		gcc4 devel/gettext
+MODULES=		gcc4
 
 # SIGBUS during startup on sparc64 when built using gcc 4.2.1
 # https://github.com/rakshasa/rtorrent/issues/28
