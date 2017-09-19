@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/09/19 05:33:26 landry Exp $
+${P5SITE}/Geo/Parse/
+${P5SITE}/Geo/Parse/OSM/
+${P5SITE}/Geo/Parse/OSM.pm
+${P5SITE}/Geo/Parse/OSM/Multipass.pm
+${P5SITE}/Geo/Parse/OSM/Singlepass.pm
+@man man/man3p/Geo::Parse::OSM.3p
+@man man/man3p/Geo::Parse::OSM::Multipass.3p
+@man man/man3p/Geo::Parse::OSM::Singlepass.3p
