@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.86 2017/08/15 01:07:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.87 2017/09/19 11:50:43 ajacoutot Exp $
 
 # XXX
 # sndio: what to do with (channel) map
@@ -7,13 +7,12 @@
 
 COMMENT=		cross-platform networked sound server
 
-VERSION=		10.0
+VERSION=		11.1
 DISTNAME=		pulseaudio-${VERSION}
 EXTRACT_SUFX=		.tar.xz
-REVISION=		2
 
-SHARED_LIBS +=  pulse                6.1      # .20.1
-SHARED_LIBS +=  pulse-simple         1.0      # .1.0
+SHARED_LIBS +=  pulse                6.2      # .20.2
+SHARED_LIBS +=  pulse-simple         1.0      # .1.1
 SHARED_LIBS +=  pulse-mainloop-glib  1.0      # .0.5
 
 CATEGORIES=		audio
@@ -27,15 +26,15 @@ HOMEPAGE=		http://www.pulseaudio.org/
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += FLAC ICE SM X11 X11-xcb Xext Xi Xtst c crypto dbus-1
-WANTLIB += execinfo gdbm glib-2.0 iconv intl ltdl m ogg pcre pthread
-WANTLIB += sndfile sndio speexdsp ssl vorbis vorbisenc xcb $(COMPILER_LIBCXX)
+WANTLIB += execinfo glib-2.0 iconv intl ltdl m ogg pcre pthread
+WANTLIB += sndfile sndio speexdsp ssl tdb vorbis vorbisenc xcb
 
 MASTER_SITES=		http://freedesktop.org/software/pulseaudio/releases/
 
 MODULES=		textproc/intltool
 
-# C++11
-COMPILER =		gcc
+# C++11; no associated WANTLIB: only checked by configure but never used
+COMPILER=		gcc
 
 USE_GMAKE=		Yes
 
@@ -51,7 +50,7 @@ TEST_FLAGS=		HOME=${WRKDIST}
 
 LIB_DEPENDS=		audio/libsndfile \
 			audio/speexdsp \
-			databases/gdbm \
+			databases/tdb \
 			devel/glib2 \
 			devel/libexecinfo \
 			devel/libtool,-ltdl \
@@ -70,7 +69,6 @@ CONFIGURE_ARGS=		--disable-atomic-arm-linux-helpers \
 			--with-system-user=_pulse \
 			--with-system-group=_pulse \
 			--with-access-group=_pulse-access \
-			--with-database=gdbm \
 			--with-bash-completion-dir=${PREFIX}/share/bash-completion/completions \
 			--without-soxr \
 			--without-fftw \

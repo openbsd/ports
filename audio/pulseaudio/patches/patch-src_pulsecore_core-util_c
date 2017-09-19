@@ -1,11 +1,12 @@
-$OpenBSD: patch-src_pulsecore_core-util_c,v 1.1 2017/01/19 19:32:06 ajacoutot Exp $
+$OpenBSD: patch-src_pulsecore_core-util_c,v 1.2 2017/09/19 11:50:43 ajacoutot Exp $
 
 On mips64, macro PAGE_SIZE is not really usable in userspace because
 page size varies between systems.
 
---- src/pulsecore/core-util.c.orig	Thu Jan 19 09:53:22 2017
-+++ src/pulsecore/core-util.c	Thu Jan 19 09:54:21 2017
-@@ -3692,6 +3692,10 @@ bool pa_running_in_vm(void) {
+Index: src/pulsecore/core-util.c
+--- src/pulsecore/core-util.c.orig
++++ src/pulsecore/core-util.c
+@@ -3728,6 +3728,10 @@ bool pa_running_in_vm(void) {
      return false;
  }
  
