@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.36 2017/07/26 22:45:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2017/09/19 18:01:21 dcoppa Exp $
 
 COMMENT =	beautiful glass-like GTK+ 2.x engine and themes
 
 GNOME_VERSION =	0.98.2
 GNOME_PROJECT =	murrine
 PKGNAME =	gtk2-murrine-engine-${GNOME_VERSION}
-REVISION =	4
+REVISION =	5
 CATEGORIES =	x11
 
 HOMEPAGE =	http://cimitan.com/murrine/
@@ -15,13 +15,13 @@ MAINTAINER =	David Coppa <dcoppa@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi
-WANTLIB += Xinerama Xrandr Xrender Xxf86vm atk-1.0 cairo drm expat ffi
-WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
-WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
-WANTLIB += gtk-x11-2.0 harfbuzz m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png pthread-stubs pthread ${COMPILER_LIBCXX} xcb
-WANTLIB += xcb-render xcb-shm z
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
+WANTLIB += Xrandr Xrender atk-1.0 cairo expat ffi fontconfig freetype
+WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
+WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-x11-2.0 harfbuzz
+WANTLIB += iconv intl m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
+WANTLIB += pixman-1 png pthread pthread-stubs xcb xcb-render xcb-shm
+WANTLIB += z
 
 MASTER_SITES0 =	${HOMEPAGE}files/
 DIST_SUBDIR =	murrine
@@ -42,10 +42,11 @@ DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
 		MurrinaGilouche.tar.bz2:0 \
 		MurrinaLoveGray.tar.bz2:0
 
-MODULES =	devel/gettext \
-		x11/gnome
+MODULES =	x11/gnome
 
-LIB_DEPENDS =	x11/gtk+2
+BUILD_DEPENDS =	devel/gettext-tools
+LIB_DEPENDS =	devel/gettext \
+		x11/gtk+2
 
 CONFIGURE_STYLE =gnu
 CONFIGURE_ARGS = --enable-animation \
