@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.148 2017/07/26 22:45:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.149 2017/09/19 11:51:50 ajacoutot Exp $
 
 USE_WXNEEDED=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		next generation GNOME shell
 
 GNOME_PROJECT=		gnome-shell
 GNOME_VERSION=		3.24.3
-REVISION=		0
+REVISION=		1
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -16,7 +16,7 @@ WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xtst Xxf86vm
 WANTLIB += atk-1.0 atk-bridge-2.0 atspi c cairo cairo-gobject
 WANTLIB += camel-1.2 canberra canberra-gtk3 croco-0.6 dbus-1 drm
 WANTLIB += ecal-1.2 edataserver-1.2 epoxy execinfo expat ffi fontconfig
-WANTLIB += freetype gbm gck-1 gcr-base-3 gcrypt gdbm gdk-3 gdk_pixbuf-2.0
+WANTLIB += freetype gbm gck-1 gcr-base-3 gcrypt gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 girepository-1.0 gjs glapi glib-2.0 gmodule-2.0
 WANTLIB += gnome-desktop-3 gobject-2.0 gpg-error graphite2 gstaudio-1.0
 WANTLIB += gstbase-1.0 gstreamer-1.0 gsttag-1.0 gstvideo-1.0 gthread-2.0
@@ -33,7 +33,8 @@ WANTLIB += xcb-randr xcb-render xcb-res xcb-shm xcb-util xcb-xfixes
 WANTLIB += xcb-xkb xkbcommon xkbcommon-x11 xkbfile xml2 z
 WANTLIB += GL Xt enchant gstapp-1.0 gstfft-1.0 gstpbutils-1.0
 WANTLIB += hyphen jpeg notify nssutil3 ${COMPILER_LIBCXX} webp xslt
-
+WANTLIB += GLESv2 gstallocators-1.0 gstbadallocators-1.0 gstgl-1.0
+WANTLIB += harfbuzz-icu tasn1
 
 MODULES=		devel/dconf \
 			lang/python \

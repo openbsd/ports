@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.32 2017/01/20 13:43:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2017/09/19 11:51:50 ajacoutot Exp $
 
 COMMENT=	GTK client and libraries for SPICE remote desktop servers
 
 DISTNAME=	spice-gtk-0.33
-REVISION=	2
+REVISION=	3
 CATEGORIES=	x11 net
 
 SHARED_LIBS +=  spice-client-glib-2.0     3.3 # 13.0
@@ -24,7 +24,7 @@ WANTLIB += gstreamer-1.0 gsttag-1.0 gthread-2.0 gtk-3 harfbuzz jpeg m
 WANTLIB += opus orc-0.4 pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
 WANTLIB += pixman-1 png pthread pthread-stubs sasl2 ssl xcb xcb-render
 WANTLIB += xcb-shm z gstvideo-1.0
-WANTLIB += FLAC X11-xcb Xtst execinfo gdbm ogg pulse pulse-mainloop-glib
+WANTLIB += FLAC X11-xcb Xtst execinfo ogg pulse pulse-mainloop-glib
 WANTLIB += sndfile vorbis vorbisenc lz4
 
 MASTER_SITES=	${HOMEPAGE}/../../download/gtk/

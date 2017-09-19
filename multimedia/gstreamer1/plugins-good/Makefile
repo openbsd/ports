@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2017/09/19 07:26:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.53 2017/09/19 11:51:50 ajacoutot Exp $
 
 # XXX ossaudio(3) is only enabled to be used as a mixing device by
 # x11/xfce4/xfce4-mixer
@@ -11,6 +11,8 @@ PKGNAME=		${GST_PKGNAME_PREFIX}-plugins-good-${V}
 
 PKGNAME-main=		${PKGNAME}
 PKGNAME-pulse=		${GST_PKGNAME_PREFIX}-plugins-pulse-${V}
+
+REVISION-pulse=		0
 
 MASTER_SITES=		${MASTER_SITE_GST:=gst-plugins-good/}
 
@@ -34,7 +36,7 @@ WANTLIB-main += $(LIBECXX)
 .endif
 
 WANTLIB-pulse += ${WANTLIB}
-WANTLIB-pulse += gdbm pulse sndfile X11-xcb Xi Xtst ICE FLAC ogg
+WANTLIB-pulse += pulse sndfile X11-xcb Xi Xtst ICE FLAC ogg
 WANTLIB-pulse += vorbis vorbisenc dbus-1 SM
 
 MULTI_PACKAGES=		-main -pulse

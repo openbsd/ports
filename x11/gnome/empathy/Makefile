@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.189 2017/08/26 13:28:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.190 2017/09/19 11:51:50 ajacoutot Exp $
 
 COMMENT= 		Telepathy based messenger for GNOME
 
 GNOME_PROJECT=		empathy
 GNOME_VERSION=		3.12.14
+REVISION=		0
 
 SUBST_VARS=		GNOME_VERSION
 
@@ -19,7 +20,7 @@ WANTLIB += canberra canberra-gtk3 champlain-0.12 champlain-gtk-0.12
 WANTLIB += clutter-1.0 clutter-gst-3.0 clutter-gtk-1.0 cogl cogl-pango
 WANTLIB += cogl-path dbus-1 dbus-glib-1 drm enchant epoxy execinfo
 WANTLIB += expat farstream-0.2 ffi folks folks-telepathy fontconfig
-WANTLIB += freetype gbm gck-1 gcr-base-3 gcr-ui-3 gcrypt gdbm
+WANTLIB += freetype gbm gck-1 gcr-base-3 gcr-ui-3 gcrypt
 WANTLIB += gdk-3 gdk_pixbuf-2.0 gee-0.8 geocode-glib gio-2.0 glapi
 WANTLIB += glib-2.0 gmodule-2.0 goa-1.0 gobject-2.0 gpg-error
 WANTLIB += graphite2 gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstfft-1.0
@@ -32,7 +33,8 @@ WANTLIB += pcre pixman-1 png pthread-stubs pulse pulse-mainloop-glib
 WANTLIB += secret-1 sndfile soup-2.4 sqlite3 telepathy-farstream
 WANTLIB += telepathy-glib telepathy-logger vorbis vorbisenc vorbisfile
 WANTLIB += webkit2gtk-4.0 webp xcb xcb-dri2 xcb-glx xcb-render
-WANTLIB += xcb-shm xcb-xfixes xml2 xslt z
+WANTLIB += xcb-shm xcb-xfixes xml2 xslt z tasn1
+WANTLIB += GLESv2 gstallocators-1.0 gstbadallocators-1.0 gstgl-1.0
 WANTLIB += ${COMPILER_LIBCXX}
 
 
