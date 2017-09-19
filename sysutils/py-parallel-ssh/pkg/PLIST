@@ -1,0 +1,27 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/09/19 07:46:21 phessler Exp $
+lib/python${MODPY_VERSION}/site-packages/parallel_ssh-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/parallel_ssh-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/parallel_ssh-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/parallel_ssh-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/parallel_ssh-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/parallel_ssh-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/pssh/
+lib/python${MODPY_VERSION}/site-packages/pssh/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pssh/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pssh/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pssh/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pssh/${MODPY_PYCACHE}agent.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pssh/${MODPY_PYCACHE}constants.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pssh/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pssh/${MODPY_PYCACHE}output.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pssh/${MODPY_PYCACHE}pssh_client.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pssh/${MODPY_PYCACHE}ssh_client.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pssh/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pssh/_version.py
+lib/python${MODPY_VERSION}/site-packages/pssh/agent.py
+lib/python${MODPY_VERSION}/site-packages/pssh/constants.py
+lib/python${MODPY_VERSION}/site-packages/pssh/exceptions.py
+lib/python${MODPY_VERSION}/site-packages/pssh/output.py
+lib/python${MODPY_VERSION}/site-packages/pssh/pssh_client.py
+lib/python${MODPY_VERSION}/site-packages/pssh/ssh_client.py
+lib/python${MODPY_VERSION}/site-packages/pssh/utils.py

@@ -1,0 +1,4 @@
+Asynchronous parallel SSH client library.
+
+Run SSH commands over many - hundreds/hundreds of thousands - number of
+servers asynchronously and with minimal system load on the client host.
