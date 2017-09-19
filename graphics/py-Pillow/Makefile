@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2017/01/03 19:21:18 landry Exp $
+# $OpenBSD: Makefile,v 1.23 2017/09/19 10:22:46 ajacoutot Exp $
 
 COMMENT=		Python Imaging Library (maintained fork of PIL)
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION=	3.4.2
 DISTNAME=		Pillow-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		graphics
-REVISION=		0
+REVISION=		1
 
 HOMEPAGE=		http://python-pillow.org/
 
@@ -32,7 +32,6 @@ TEST_DEPENDS=		${FULLPKGNAME}:${BUILD_PKGPATH} \
 			devel/py-nose${MODPY_FLAVOR}
 RUN_DEPENDS=		${MODPY_RUN_DEPENDS}
 
-# Enable JPEG2000 support via openjpeg?
 # Is Tk image support actually useful?
 LIB_DEPENDS=		graphics/lcms2 \
 			graphics/libwebp \
@@ -46,6 +45,8 @@ MODPY_ADJ_FILES=	Scripts/*.py
 
 SUBST_VARS+=		INCL_DIR MODPY_FLAVOR
 INCL_DIR=		${MODPY_INCDIR:S/${LOCALBASE}\///}
+
+MODPY_DISTUTILS_BUILD=	build_ext --disable-jpeg2000
 
 post-install:
 	${INSTALL_DATA_DIR} ${WRKINST}${MODPY_INCDIR}
