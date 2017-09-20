@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2017/07/26 22:45:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2017/09/20 07:30:19 giovanni Exp $
 
 # as error: ``operation combines symbols in different segments''
 # (known toolchain problem) - if fixing, re-enable in devel/cmake/Makefile
@@ -9,8 +9,7 @@ COMMENT =		small build system with a focus on speed
 
 GH_ACCOUNT =		ninja-build
 GH_PROJECT =		ninja
-GH_TAGNAME =		v1.7.2
-REVISION =		1
+GH_TAGNAME =		v1.8.2
 
 CATEGORIES =		devel
 HOMEPAGE =		https://ninja-build.org/
@@ -50,6 +49,12 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/misc/ninja-mode.el ${PREFIX}/share/ninja
 	${INSTALL_DATA} ${WRKSRC}/misc/ninja.vim ${PREFIX}/share/ninja
 	${INSTALL_DATA} ${WRKSRC}/misc/ninja_syntax.py ${PREFIX}/share/ninja
+	${INSTALL_DATA} ${WRKSRC}/misc/write_fake_manifests.py ${PREFIX}/share/ninja
+	${INSTALL_DATA} ${WRKSRC}/misc/measure.py ${PREFIX}/share/ninja
 	${INSTALL_DATA} ${WRKSRC}/misc/zsh-completion ${PREFIX}/share/ninja
+
+do-test:
+	@cd ${WRKSRC} && ./ninja ninja_test \
+	&& ./ninja_test --gtest_filter=MyTest.Name
 
 .include <bsd.port.mk>
