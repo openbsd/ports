@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tools,v 1.9 2016/12/19 20:47:26 rpointel Exp $
+@comment $OpenBSD: PLIST-tools,v 1.10 2017/09/20 18:44:48 rpointel Exp $
 @option no-default-conflict
 @option is-branch
 @conflict python-tools->=2.7,<2.8
@@ -104,6 +104,7 @@ lib/python2.7/Tools/msi/uisample.py
 lib/python2.7/Tools/msi/uuids.py
 lib/python2.7/Tools/nuget/
 lib/python2.7/Tools/nuget/build.bat
+lib/python2.7/Tools/nuget/distutils.command.bdist_wininst.py
 lib/python2.7/Tools/nuget/make_pkg.proj
 lib/python2.7/Tools/nuget/make_zip.py
 lib/python2.7/Tools/nuget/python2.nuspec
