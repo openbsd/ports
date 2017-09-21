@@ -1,9 +1,9 @@
-$OpenBSD: patch-ConfigureChecks_cmake,v 1.1 2017/05/11 00:21:50 espie Exp $
+$OpenBSD: patch-ConfigureChecks_cmake,v 1.2 2017/09/21 17:07:52 rsadowski Exp $
 
 Index: ConfigureChecks.cmake
 --- ConfigureChecks.cmake.orig
 +++ ConfigureChecks.cmake
-@@ -200,7 +200,7 @@ check_c_source_compiles("
+@@ -205,7 +205,7 @@ check_c_source_compiles("
  __thread int tls;
  
  int main(void) {
