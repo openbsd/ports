@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_main_c,v 1.1 2017/07/03 22:14:20 sthen Exp $
+$OpenBSD: patch-src_main_c,v 1.2 2017/09/21 09:34:32 sthen Exp $
 Index: src/main.c
 --- src/main.c.orig
 +++ src/main.c
-@@ -1845,8 +1845,10 @@ int main(int argc, char** argv)
+@@ -1842,8 +1842,10 @@ int main(int argc, char** argv)
  	int proto;
  	char *options;
  	int ret;
@@ -13,7 +13,7 @@ Index: src/main.c
  	int debug_save, debug_flag;
  	int dont_fork_cnt;
  	struct name_lst* n_lst;
-@@ -2112,6 +2114,7 @@ int main(int argc, char** argv)
+@@ -2109,6 +2111,7 @@ int main(int argc, char** argv)
  		goto error;
  	}
  
@@ -21,7 +21,7 @@ Index: src/main.c
  	/* seed the prng */
  	/* try to use /dev/urandom if possible */
  	seed=0;
-@@ -2132,6 +2135,7 @@ try_again:
+@@ -2129,6 +2132,7 @@ try_again:
  	fastrand_seed(kam_rand());
  	srandom(kam_rand()+time(0));
  	LM_DBG("test random numbers %u %lu %u\n", kam_rand(), random(), fastrand());

@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.41 2017/07/04 08:29:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.42 2017/09/21 09:34:32 sthen Exp $
 
 COMMENT-main =		mature and flexible open source SIP server
 
-VERSION =		5.0.2
-REVISION-main =		0
+VERSION =		5.0.3
 
 DISTNAME =		kamailio-${VERSION}_src
 
@@ -49,7 +48,7 @@ LIB_DEPENDS-main =	converters/libiconv \
 			net/curl \
 			textproc/libxml,-main,no_python
 
-KAMAILIO_GROUPS = kstandard kcpl khttp_async koutbound ktls kutils kwebsocket kxmpp
+KAMAILIO_GROUPS =	kstandard kcpl khttp_async koutbound ktls kutils kwebsocket kxmpp
 
 FLAVOR ?=
 MULTI_PACKAGES =	-main

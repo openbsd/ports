@@ -1,9 +1,18 @@
-$OpenBSD: patch-src_modules_tls_tls_init_c,v 1.1 2017/07/03 22:14:20 sthen Exp $
+$OpenBSD: patch-src_modules_tls_tls_init_c,v 1.2 2017/09/21 09:34:32 sthen Exp $
 
 Index: src/modules/tls/tls_init.c
 --- src/modules/tls/tls_init.c.orig
 +++ src/modules/tls/tls_init.c
-@@ -139,7 +139,7 @@ const SSL_METHOD* ssl_methods[TLS_METHOD_MAX];
+@@ -119,7 +119,7 @@ to compile on the  _target_ system)"
+ int openssl_kssl_malloc_bug=0; /* is openssl bug #1467 present ? */
+ #endif
+ 
+-#if OPENSSL_VERSION_NUMBER < 0x10100000L
++#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
+ const SSL_METHOD* ssl_methods[TLS_METHOD_MAX];
+ #else
+ sr_tls_methods_t sr_tls_methods[TLS_METHOD_MAX];
+@@ -143,7 +143,7 @@ sr_tls_methods_t sr_tls_methods[TLS_METHOD_MAX];
  */
  
  
@@ -12,7 +21,7 @@ Index: src/modules/tls/tls_init.c
  inline static char* buf_append(char* buf, char* end, char* str, int str_len)
  {
  	if ( (buf+str_len)<end){
-@@ -317,6 +317,7 @@ static void ser_free(void *ptr, const char *fname, int
+@@ -321,6 +321,7 @@ static void ser_free(void *ptr, const char *fname, int
  }
  #endif
  
@@ -20,7 +29,16 @@ Index: src/modules/tls/tls_init.c
  
  /*
   * Initialize TLS socket
-@@ -360,7 +361,7 @@ static void init_ssl_methods(void)
+@@ -356,7 +357,7 @@ error:
+  */
+ static void init_ssl_methods(void)
+ {
+-#if OPENSSL_VERSION_NUMBER < 0x10100000L
++#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
+ 	/* libssl < 1.1.0 */
+ 	memset(ssl_methods, 0, sizeof(ssl_methods));
+ 
+@@ -366,7 +367,7 @@ static void init_ssl_methods(void)
  	ssl_methods[TLS_USE_SSLv23 - 1] = SSLv23_method();
  
  	/* only specific SSL or TLS version */
@@ -29,7 +47,7 @@ Index: src/modules/tls/tls_init.c
  #ifndef OPENSSL_NO_SSL2
  	ssl_methods[TLS_USE_SSLv2_cli - 1] = SSLv2_client_method();
  	ssl_methods[TLS_USE_SSLv2_srv - 1] = SSLv2_server_method();
-@@ -378,13 +379,13 @@ static void init_ssl_methods(void)
+@@ -384,13 +385,13 @@ static void init_ssl_methods(void)
  	ssl_methods[TLS_USE_TLSv1_srv - 1] = TLSv1_server_method();
  	ssl_methods[TLS_USE_TLSv1 - 1] = TLSv1_method();
  
@@ -45,7 +63,7 @@ Index: src/modules/tls/tls_init.c
  	ssl_methods[TLS_USE_TLSv1_2_cli - 1] = TLSv1_2_client_method();
  	ssl_methods[TLS_USE_TLSv1_2_srv - 1] = TLSv1_2_server_method();
  	ssl_methods[TLS_USE_TLSv1_2 - 1] = TLSv1_2_method();
-@@ -393,11 +394,11 @@ static void init_ssl_methods(void)
+@@ -399,11 +400,11 @@ static void init_ssl_methods(void)
  	/* ranges of TLS versions (require a minimum TLS version) */
  	ssl_methods[TLS_USE_TLSv1_PLUS - 1] = (void*)TLS_OP_TLSv1_PLUS;
  
@@ -58,8 +76,8 @@ Index: src/modules/tls/tls_init.c
 +#if OPENSSL_VERSION_NUMBER >= 0x1000105fL && !defined(LIBRESSL_VERSION_NUMBER)
  	ssl_methods[TLS_USE_TLSv1_2_PLUS - 1] = (void*)TLS_OP_TLSv1_2_PLUS;
  #endif
- }
-@@ -408,6 +409,7 @@ static void init_ssl_methods(void)
+ 
+@@ -477,6 +478,7 @@ static void init_ssl_methods(void)
   */
  static int init_tls_compression(void)
  {
@@ -67,7 +85,7 @@ Index: src/modules/tls/tls_init.c
  #if OPENSSL_VERSION_NUMBER < 0x010100000L
  #if OPENSSL_VERSION_NUMBER >= 0x00908000L
  	int n, r;
-@@ -494,6 +496,7 @@ static int init_tls_compression(void)
+@@ -563,6 +565,7 @@ static int init_tls_compression(void)
  end:
  #endif /* OPENSSL_VERSION_NUMBER >= 0.9.8 */
  #endif /* OPENSSL_VERSION_NUMBER < 1.1.0 */
@@ -75,7 +93,7 @@ Index: src/modules/tls/tls_init.c
  	return 0;
  }
  
-@@ -504,6 +507,7 @@ end:
+@@ -573,6 +576,7 @@ end:
   */
  int tls_pre_init(void)
  {
@@ -83,7 +101,7 @@ Index: src/modules/tls/tls_init.c
  #if OPENSSL_VERSION_NUMBER < 0x010100000L
  	void *(*mf)(size_t) = NULL;
  	void *(*rf)(void *, size_t) = NULL;
-@@ -530,6 +534,7 @@ int tls_pre_init(void)
+@@ -599,6 +603,7 @@ int tls_pre_init(void)
  				" (can be loaded first to be safe)\n");
  		return -1;
  	}
@@ -91,7 +109,7 @@ Index: src/modules/tls/tls_init.c
  
  	if (tls_init_locks()<0)
  		return -1;
-@@ -563,7 +568,7 @@ int init_tls_h(void)
+@@ -632,7 +637,7 @@ int init_tls_h(void)
  {
  	/*struct socket_info* si;*/
  	long ssl_version;
@@ -100,7 +118,7 @@ Index: src/modules/tls/tls_init.c
  	int lib_kerberos;
  	int lib_zlib;
  	int kerberos_support;
-@@ -607,7 +612,7 @@ int init_tls_h(void)
+@@ -676,7 +681,7 @@ int init_tls_h(void)
  	}
  
  /* check kerberos support using compile flags only for version < 1.1.0 */
@@ -109,3 +127,12 @@ Index: src/modules/tls/tls_init.c
  
  #ifdef TLS_KERBEROS_SUPPORT
  	kerberos_support=1;
+@@ -847,7 +852,7 @@ void destroy_tls_h(void)
+ 	tls_destroy_cfg();
+ 	tls_destroy_locks();
+ 	tls_ct_wq_destroy();
+-#if OPENSSL_VERSION_NUMBER >= 0x010100000L
++#if OPENSSL_VERSION_NUMBER >= 0x010100000L && !defined(LIBRESSL_VERSION_NUMBER)
+ 	/* explicit execution of libssl cleanup to avoid being executed again
+ 	 * by atexit(), when shm is gone */
+ 	DBG("executing openssl v1.1+ cleanup\n");

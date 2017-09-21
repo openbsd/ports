@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_modules_rls_utils_c,v 1.1 2017/07/03 22:14:20 sthen Exp $
+$OpenBSD: patch-src_modules_rls_utils_c,v 1.2 2017/09/21 09:34:32 sthen Exp $
 
 Index: src/modules/rls/utils.c
 --- src/modules/rls/utils.c.orig
@@ -10,13 +10,13 @@ Index: src/modules/rls/utils.c
 -str* normalize_sip_uri(const str *uri)
 +str* normalize_sip_uri(str *uri)
  {
-         static str normalized_uri;
-         static str null_str = {NULL, 0};
-         static char buf[MAX_URI_SIZE];
+ 	static str normalized_uri;
+ 	static str null_str = {NULL, 0};
+ 	static char buf[MAX_URI_SIZE];
  
-         normalized_uri.s = buf;
--        if (un_escape((str *)uri, &normalized_uri) < 0)
-+        if (un_escape(uri, &normalized_uri) < 0)
-         {
-                 LM_ERR("un-escaping URI\n");
-                 return &null_str;
+ 	normalized_uri.s = buf;
+-	if (un_escape((str *)uri, &normalized_uri) < 0)
++	if (un_escape(uri, &normalized_uri) < 0)
+ 	{
+ 		LM_ERR("un-escaping URI\n");
+ 		return &null_str;

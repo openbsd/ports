@@ -1,7 +1,8 @@
-$OpenBSD: patch-src_core_pt_c,v 1.1 2017/07/03 22:14:20 sthen Exp $
---- src/core/pt.c.orig	Mon May 15 22:43:07 2017
-+++ src/core/pt.c	Mon May 15 22:48:08 2017
-@@ -245,8 +245,10 @@ int fork_process(int child_id, char *desc, int make_so
+$OpenBSD: patch-src_core_pt_c,v 1.2 2017/09/21 09:34:32 sthen Exp $
+Index: src/core/pt.c
+--- src/core/pt.c.orig
++++ src/core/pt.c
+@@ -249,8 +249,10 @@ int fork_process(int child_id, char *desc, int make_so
  {
  	int pid, child_process_no;
  	int ret;
@@ -12,9 +13,9 @@ $OpenBSD: patch-src_core_pt_c,v 1.1 2017/07/03 22:14:20 sthen Exp $
  #ifdef USE_TCP
  	int sockfd[2];
  #endif
-@@ -285,8 +287,10 @@ int fork_process(int child_id, char *desc, int make_so
- 	
- 	
+@@ -289,8 +291,10 @@ int fork_process(int child_id, char *desc, int make_so
+ 	}
+ 
  	child_process_no = *process_count;
 +#ifndef HAVE_ARC4RANDOM
  	new_seed1=kam_rand();
@@ -23,7 +24,7 @@ $OpenBSD: patch-src_core_pt_c,v 1.1 2017/07/03 22:14:20 sthen Exp $
  	pid = fork();
  	if (pid<0) {
  		lock_release(process_lock);
-@@ -301,9 +305,11 @@ int fork_process(int child_id, char *desc, int make_so
+@@ -305,9 +309,11 @@ int fork_process(int child_id, char *desc, int make_so
  #ifdef USE_TCP
  		close_extra_socks(child_id, process_no);
  #endif /* USE_TCP */
@@ -35,7 +36,7 @@ $OpenBSD: patch-src_core_pt_c,v 1.1 2017/07/03 22:14:20 sthen Exp $
  		shm_malloc_on_fork();
  #ifdef PROFILING
  		monstartup((u_long) &_start, (u_long) &etext);
-@@ -380,8 +386,10 @@ int fork_tcp_process(int child_id, char *desc, int r, 
+@@ -384,8 +390,10 @@ int fork_tcp_process(int child_id, char *desc, int r, 
  	int reader_fd[2]; /* for comm. with the tcp children read  */
  	int ret;
  	int i;
@@ -43,12 +44,12 @@ $OpenBSD: patch-src_core_pt_c,v 1.1 2017/07/03 22:14:20 sthen Exp $
  	unsigned int new_seed1;
  	unsigned int new_seed2;
 +#endif
- 	
+ 
  	/* init */
  	sockfd[0]=sockfd[1]=-1;
-@@ -420,8 +428,10 @@ int fork_tcp_process(int child_id, char *desc, int r, 
- 	
- 	
+@@ -423,8 +431,10 @@ int fork_tcp_process(int child_id, char *desc, int r, 
+ 	}
+ 
  	child_process_no = *process_count;
 +#ifndef HAVE_ARC4RANDOM
  	new_seed1=kam_rand();
@@ -57,7 +58,7 @@ $OpenBSD: patch-src_core_pt_c,v 1.1 2017/07/03 22:14:20 sthen Exp $
  	pid = fork();
  	if (pid<0) {
  		lock_release(process_lock);
-@@ -443,9 +453,11 @@ int fork_tcp_process(int child_id, char *desc, int r, 
+@@ -446,9 +456,11 @@ int fork_tcp_process(int child_id, char *desc, int r, 
  			}
  		}
  		daemon_status_on_fork_cleanup();

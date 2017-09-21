@@ -1,0 +1,32 @@
+$OpenBSD: patch-src_modules_tls_tls_domain_c,v 1.1 2017/09/21 09:34:32 sthen Exp $
+
+Index: src/modules/tls/tls_domain.c
+--- src/modules/tls/tls_domain.c.orig
++++ src/modules/tls/tls_domain.c
+@@ -734,7 +734,7 @@ static void sr_ssl_ctx_info_callback(const SSL *ssl, i
+ 		if(data==0)
+ 			data = (struct tls_extra_data*)SSL_get_app_data(ssl);
+ 		LOG(tls_dbg, "SSL handshake done\n");
+-#if OPENSSL_VERSION_NUMBER < 0x010100000L
++#if OPENSSL_VERSION_NUMBER < 0x010100000L || defined(LIBRESSL_VERSION_NUMBER)
+ 		/* CVE-2009-3555 - disable renegotiation */
+ 		if (ssl->s3) {
+ 			LOG(tls_dbg, "SSL disable renegotiation\n");
+@@ -858,7 +858,7 @@ static int tls_ssl_ctx_mode(SSL_CTX* ctx, long mode, v
+  */
+ static int tls_ssl_ctx_set_freelist(SSL_CTX* ctx, long val, void* unused)
+ {
+-#if OPENSSL_VERSION_NUMBER < 0x010100000L
++#if OPENSSL_VERSION_NUMBER < 0x010100000L || defined(LIBRESSL_VERSION_NUMBER)
+ 	if (val >= 0)
+ #if OPENSSL_VERSION_NUMBER >= 0x01000000L
+ #ifndef OPENSSL_NO_BUF_FREELISTS
+@@ -997,7 +997,7 @@ static int fix_domain(tls_domain_t* d, tls_domain_t* d
+ 	memset(d->ctx, 0, sizeof(SSL_CTX*) * procs_no);
+ 	for(i = 0; i < procs_no; i++) {
+ 
+-#if OPENSSL_VERSION_NUMBER < 0x10100000L
++#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
+ 		/* libssl < 1.1.0 */
+ 		if(d->method>TLS_USE_TLSvRANGE) {
+ 			d->ctx[i] = SSL_CTX_new(SSLv23_method());

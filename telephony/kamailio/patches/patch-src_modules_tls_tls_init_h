@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_modules_tls_tls_init_h,v 1.1 2017/09/21 09:34:32 sthen Exp $
+
+Index: src/modules/tls/tls_init.h
+--- src/modules/tls/tls_init.h.orig
++++ src/modules/tls/tls_init.h
+@@ -45,7 +45,7 @@ extern int openssl_kssl_malloc_bug; /* is openssl bug 
+ #endif
+ 
+ 
+-#if OPENSSL_VERSION_NUMBER < 0x10100000L
++#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
+ extern const SSL_METHOD* ssl_methods[];
+ #else
+ typedef struct sr_tls_methods_s {

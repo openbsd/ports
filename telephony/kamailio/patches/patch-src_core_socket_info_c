@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_core_socket_info_c,v 1.1 2017/09/21 09:34:32 sthen Exp $
+
+Index: src/core/socket_info.c
+--- src/core/socket_info.c.orig
++++ src/core/socket_info.c
+@@ -1912,7 +1912,7 @@ void print_all_socket_lists()
+ 				printf("             %s: %s",
+ 						get_valid_proto_name(proto),
+ 						si->name.s);
+-				if (!si->flags & SI_IS_IP)
++				if (!(si->flags & SI_IS_IP))
+ 					printf(" [%s]", si->address_str.s);
+ 				printf( ":%s%s%s",
+ 						si->port_no_str.s, 
