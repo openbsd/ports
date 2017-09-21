@@ -1,12 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2017/06/14 17:11:20 rsadowski Exp $
-@bin bin/qbs
-@bin bin/qbs-config
-@bin bin/qbs-config-ui
-@bin bin/qbs-create-project
-@bin bin/qbs-qmltypes
-@bin bin/qbs-setup-android
-@bin bin/qbs-setup-qt
-@bin bin/qbs-setup-toolchains
+@comment $OpenBSD: PLIST,v 1.6 2017/09/21 19:10:37 rsadowski Exp $
 @bin bin/qtcreator
 bin/qtcreator.sh
 @lib lib/libAggregation.so.${LIBAggregation_VERSION}
@@ -24,8 +16,6 @@ bin/qtcreator.sh
 @lib lib/libSqlite.so.${LIBSqlite_VERSION}
 @lib lib/libTimeline.so.${LIBTimeline_VERSION}
 @lib lib/libUtils.so.${LIBUtils_VERSION}
-@lib lib/libqbscore.so.${LIBqbscore_VERSION}
-@lib lib/libqbsqtprofilesetup.so.${LIBqbsqtprofilesetup_VERSION}
 lib/qtcreator/
 @lib lib/qtcreator/libAggregation.so.${LIBAggregation_VERSION}
 @lib lib/qtcreator/libCPlusPlus.so.${LIBCPlusPlus_VERSION}
@@ -42,10 +32,6 @@ lib/qtcreator/
 @lib lib/qtcreator/libSqlite.so.${LIBSqlite_VERSION}
 @lib lib/qtcreator/libTimeline.so.${LIBTimeline_VERSION}
 @lib lib/qtcreator/libUtils.so.${LIBUtils_VERSION}
-lib/qtcreator/libqbscore.prl
-@lib lib/qtcreator/libqbscore.so.${LIBqbscore_VERSION}
-lib/qtcreator/libqbsqtprofilesetup.prl
-@lib lib/qtcreator/libqbsqtprofilesetup.so.${LIBqbsqtprofilesetup_VERSION}
 lib/qtcreator/plugins/
 lib/qtcreator/plugins/libAndroid.so
 lib/qtcreator/plugins/libAutoTest.so
@@ -106,17 +92,12 @@ lib/qtcreator/plugins/libValgrind.so
 lib/qtcreator/plugins/libVcsBase.so
 lib/qtcreator/plugins/libWelcome.so
 lib/qtcreator/plugins/libWinRt.so
-lib/qtcreator/plugins/qbs/
-lib/qtcreator/plugins/qbs/plugins/
-lib/qtcreator/plugins/qbs/plugins/libqbs_cpp_scanner.so
-lib/qtcreator/plugins/qbs/plugins/libqbs_qt_scanner.so
 lib/qtcreator/plugins/qmldesigner/
 lib/qtcreator/plugins/qmldesigner/libcomponentsplugin.so
 lib/qtcreator/plugins/qmldesigner/libqtquickplugin.so
 libexec/qtcreator/
 @bin libexec/qtcreator/buildoutputparser
 @bin libexec/qtcreator/cpaster
-@bin libexec/qtcreator/qbs_processlauncher
 @bin libexec/qtcreator/qml2puppet
 @bin libexec/qtcreator/qtcreator_process_stub
 @bin libexec/qtcreator/qtpromaker
@@ -189,241 +170,6 @@ share/qtcreator/glsl/glsl_es_100.vert
 share/qtcreator/glsl/glsl_es_100_common.glsl
 share/qtcreator/modeleditor/
 share/qtcreator/modeleditor/standard.def
-share/qtcreator/qbs/
-share/qtcreator/qbs/share/
-share/qtcreator/qbs/share/qbs/
-share/qtcreator/qbs/share/qbs/examples/
-share/qtcreator/qbs/share/qbs/examples/app-and-lib/
-share/qtcreator/qbs/share/qbs/examples/app-and-lib/app/
-share/qtcreator/qbs/share/qbs/examples/app-and-lib/app/app.qbs
-share/qtcreator/qbs/share/qbs/examples/app-and-lib/app/main.cpp
-share/qtcreator/qbs/share/qbs/examples/app-and-lib/app_and_lib.qbs
-share/qtcreator/qbs/share/qbs/examples/app-and-lib/lib/
-share/qtcreator/qbs/share/qbs/examples/app-and-lib/lib/lib.cpp
-share/qtcreator/qbs/share/qbs/examples/app-and-lib/lib/lib.h
-share/qtcreator/qbs/share/qbs/examples/app-and-lib/lib/lib.qbs
-share/qtcreator/qbs/share/qbs/examples/cocoa-application/
-share/qtcreator/qbs/share/qbs/examples/cocoa-application/CocoaApplication/
-share/qtcreator/qbs/share/qbs/examples/cocoa-application/CocoaApplication.qbs
-share/qtcreator/qbs/share/qbs/examples/cocoa-application/CocoaApplication.xcodeproj/
-share/qtcreator/qbs/share/qbs/examples/cocoa-application/CocoaApplication.xcodeproj/project.pbxproj
-share/qtcreator/qbs/share/qbs/examples/cocoa-application/CocoaApplication/AppDelegate.h
-share/qtcreator/qbs/share/qbs/examples/cocoa-application/CocoaApplication/AppDelegate.m
-share/qtcreator/qbs/share/qbs/examples/cocoa-application/CocoaApplication/CocoaApplication-Info.plist
-share/qtcreator/qbs/share/qbs/examples/cocoa-application/CocoaApplication/CocoaApplication-Prefix.pch
-share/qtcreator/qbs/share/qbs/examples/cocoa-application/CocoaApplication/en.lproj/
-share/qtcreator/qbs/share/qbs/examples/cocoa-application/CocoaApplication/en.lproj/Credits.rtf
-share/qtcreator/qbs/share/qbs/examples/cocoa-application/CocoaApplication/en.lproj/InfoPlist.strings
-share/qtcreator/qbs/share/qbs/examples/cocoa-application/CocoaApplication/en.lproj/MainMenu.xib
-share/qtcreator/qbs/share/qbs/examples/cocoa-application/CocoaApplication/main.m
-share/qtcreator/qbs/share/qbs/examples/cocoa-touch-application/
-share/qtcreator/qbs/share/qbs/examples/cocoa-touch-application/CocoaTouchApplication/
-share/qtcreator/qbs/share/qbs/examples/cocoa-touch-application/CocoaTouchApplication.qbs
-share/qtcreator/qbs/share/qbs/examples/cocoa-touch-application/CocoaTouchApplication.xcodeproj/
-share/qtcreator/qbs/share/qbs/examples/cocoa-touch-application/CocoaTouchApplication.xcodeproj/project.pbxproj
-share/qtcreator/qbs/share/qbs/examples/cocoa-touch-application/CocoaTouchApplication/AppDelegate.h
-share/qtcreator/qbs/share/qbs/examples/cocoa-touch-application/CocoaTouchApplication/AppDelegate.m
-share/qtcreator/qbs/share/qbs/examples/cocoa-touch-application/CocoaTouchApplication/CocoaTouchApplication-Info.plist
-share/qtcreator/qbs/share/qbs/examples/cocoa-touch-application/CocoaTouchApplication/CocoaTouchApplication-Prefix.pch
-share/qtcreator/qbs/share/qbs/examples/cocoa-touch-application/CocoaTouchApplication/Default-568h@2x.png
-share/qtcreator/qbs/share/qbs/examples/cocoa-touch-application/CocoaTouchApplication/Default.png
-share/qtcreator/qbs/share/qbs/examples/cocoa-touch-application/CocoaTouchApplication/Default@2x.png
-share/qtcreator/qbs/share/qbs/examples/cocoa-touch-application/CocoaTouchApplication/DetailViewController.h
-share/qtcreator/qbs/share/qbs/examples/cocoa-touch-application/CocoaTouchApplication/DetailViewController.m
-share/qtcreator/qbs/share/qbs/examples/cocoa-touch-application/CocoaTouchApplication/MasterViewController.h
-share/qtcreator/qbs/share/qbs/examples/cocoa-touch-application/CocoaTouchApplication/MasterViewController.m
-share/qtcreator/qbs/share/qbs/examples/cocoa-touch-application/CocoaTouchApplication/en.lproj/
-share/qtcreator/qbs/share/qbs/examples/cocoa-touch-application/CocoaTouchApplication/en.lproj/DetailViewController_iPad.xib
-share/qtcreator/qbs/share/qbs/examples/cocoa-touch-application/CocoaTouchApplication/en.lproj/DetailViewController_iPhone.xib
-share/qtcreator/qbs/share/qbs/examples/cocoa-touch-application/CocoaTouchApplication/en.lproj/InfoPlist.strings
-share/qtcreator/qbs/share/qbs/examples/cocoa-touch-application/CocoaTouchApplication/en.lproj/MasterViewController_iPad.xib
-share/qtcreator/qbs/share/qbs/examples/cocoa-touch-application/CocoaTouchApplication/en.lproj/MasterViewController_iPhone.xib
-share/qtcreator/qbs/share/qbs/examples/cocoa-touch-application/CocoaTouchApplication/main.m
-share/qtcreator/qbs/share/qbs/examples/code-generator/
-share/qtcreator/qbs/share/qbs/examples/code-generator/code-generator.qbs
-share/qtcreator/qbs/share/qbs/examples/code-generator/hwgen.cpp
-share/qtcreator/qbs/share/qbs/examples/collidingmice/
-share/qtcreator/qbs/share/qbs/examples/collidingmice/collidingmice.qbs
-share/qtcreator/qbs/share/qbs/examples/collidingmice/images/
-share/qtcreator/qbs/share/qbs/examples/collidingmice/images/cheese.jpg
-share/qtcreator/qbs/share/qbs/examples/collidingmice/main.cpp
-share/qtcreator/qbs/share/qbs/examples/collidingmice/mice.qrc
-share/qtcreator/qbs/share/qbs/examples/collidingmice/mouse.cpp
-share/qtcreator/qbs/share/qbs/examples/collidingmice/mouse.h
-share/qtcreator/qbs/share/qbs/examples/examples.qbs
-share/qtcreator/qbs/share/qbs/examples/helloworld-complex/
-share/qtcreator/qbs/share/qbs/examples/helloworld-complex/hello.qbs
-share/qtcreator/qbs/share/qbs/examples/helloworld-complex/src/
-share/qtcreator/qbs/share/qbs/examples/helloworld-complex/src/foo.cpp
-share/qtcreator/qbs/share/qbs/examples/helloworld-complex/src/foo.h
-share/qtcreator/qbs/share/qbs/examples/helloworld-complex/src/main.cpp
-share/qtcreator/qbs/share/qbs/examples/helloworld-complex/src/specialfeature.cpp
-share/qtcreator/qbs/share/qbs/examples/helloworld-complex/src/specialfeature.h
-share/qtcreator/qbs/share/qbs/examples/helloworld-minimal/
-share/qtcreator/qbs/share/qbs/examples/helloworld-minimal/hello.qbs
-share/qtcreator/qbs/share/qbs/examples/helloworld-minimal/main.cpp
-share/qtcreator/qbs/share/qbs/examples/helloworld-qt/
-share/qtcreator/qbs/share/qbs/examples/helloworld-qt/hello.qbs
-share/qtcreator/qbs/share/qbs/examples/helloworld-qt/main.cpp
-share/qtcreator/qbs/share/qbs/examples/install-bundle/
-share/qtcreator/qbs/share/qbs/examples/install-bundle/MainMenu.xib
-share/qtcreator/qbs/share/qbs/examples/install-bundle/Storyboard.storyboard
-share/qtcreator/qbs/share/qbs/examples/install-bundle/assetcatalog1.xcassets/
-share/qtcreator/qbs/share/qbs/examples/install-bundle/assetcatalog1.xcassets/other.imageset/
-share/qtcreator/qbs/share/qbs/examples/install-bundle/assetcatalog1.xcassets/other.imageset/Contents.json
-share/qtcreator/qbs/share/qbs/examples/install-bundle/assetcatalog1.xcassets/other.imageset/icon_16x16.png
-share/qtcreator/qbs/share/qbs/examples/install-bundle/assetcatalog1.xcassets/other.imageset/icon_16x16@2x.png
-share/qtcreator/qbs/share/qbs/examples/install-bundle/assetcatalog2.xcassets/
-share/qtcreator/qbs/share/qbs/examples/install-bundle/assetcatalog2.xcassets/other.imageset/
-share/qtcreator/qbs/share/qbs/examples/install-bundle/assetcatalog2.xcassets/other.imageset/Contents.json
-share/qtcreator/qbs/share/qbs/examples/install-bundle/assetcatalog2.xcassets/other.imageset/icon_16x16.png
-share/qtcreator/qbs/share/qbs/examples/install-bundle/assetcatalog2.xcassets/other.imageset/icon_16x16@2x.png
-share/qtcreator/qbs/share/qbs/examples/install-bundle/coreutils.cpp
-share/qtcreator/qbs/share/qbs/examples/install-bundle/coreutils.h
-share/qtcreator/qbs/share/qbs/examples/install-bundle/install-bundle.qbs
-share/qtcreator/qbs/share/qbs/examples/install-bundle/main.cpp
-share/qtcreator/qbs/share/qbs/examples/install-bundle/white.iconset/
-share/qtcreator/qbs/share/qbs/examples/install-bundle/white.iconset/icon_16x16.png
-share/qtcreator/qbs/share/qbs/examples/install-bundle/white.iconset/icon_16x16@2x.png
-share/qtcreator/qbs/share/qbs/imports/
-share/qtcreator/qbs/share/qbs/imports/qbs/
-share/qtcreator/qbs/share/qbs/imports/qbs/BundleTools/
-share/qtcreator/qbs/share/qbs/imports/qbs/BundleTools/bundle-tools.js
-share/qtcreator/qbs/share/qbs/imports/qbs/DarwinTools/
-share/qtcreator/qbs/share/qbs/imports/qbs/DarwinTools/darwin-tools.js
-share/qtcreator/qbs/share/qbs/imports/qbs/ModUtils/
-share/qtcreator/qbs/share/qbs/imports/qbs/ModUtils/utils.js
-share/qtcreator/qbs/share/qbs/imports/qbs/PathTools/
-share/qtcreator/qbs/share/qbs/imports/qbs/PathTools/path-tools.js
-share/qtcreator/qbs/share/qbs/imports/qbs/Probes/
-share/qtcreator/qbs/share/qbs/imports/qbs/Probes/AndroidNdkProbe.qbs
-share/qtcreator/qbs/share/qbs/imports/qbs/Probes/AndroidSdkProbe.qbs
-share/qtcreator/qbs/share/qbs/imports/qbs/Probes/BinaryProbe.qbs
-share/qtcreator/qbs/share/qbs/imports/qbs/Probes/FrameworkProbe.qbs
-share/qtcreator/qbs/share/qbs/imports/qbs/Probes/GccProbe.qbs
-share/qtcreator/qbs/share/qbs/imports/qbs/Probes/IncludeProbe.qbs
-share/qtcreator/qbs/share/qbs/imports/qbs/Probes/InnoSetupProbe.qbs
-share/qtcreator/qbs/share/qbs/imports/qbs/Probes/JdkProbe.qbs
-share/qtcreator/qbs/share/qbs/imports/qbs/Probes/MsvcProbe.qbs
-share/qtcreator/qbs/share/qbs/imports/qbs/Probes/NodeJsProbe.qbs
-share/qtcreator/qbs/share/qbs/imports/qbs/Probes/NpmProbe.qbs
-share/qtcreator/qbs/share/qbs/imports/qbs/Probes/PathProbe.qbs
-share/qtcreator/qbs/share/qbs/imports/qbs/Probes/PkgConfigProbe.qbs
-share/qtcreator/qbs/share/qbs/imports/qbs/Probes/TypeScriptProbe.qbs
-share/qtcreator/qbs/share/qbs/imports/qbs/Probes/WiXProbe.qbs
-share/qtcreator/qbs/share/qbs/imports/qbs/Probes/path-probe.js
-share/qtcreator/qbs/share/qbs/imports/qbs/UnixUtils/
-share/qtcreator/qbs/share/qbs/imports/qbs/UnixUtils/unix-utils.js
-share/qtcreator/qbs/share/qbs/imports/qbs/WindowsUtils/
-share/qtcreator/qbs/share/qbs/imports/qbs/WindowsUtils/windows-utils.js
-share/qtcreator/qbs/share/qbs/imports/qbs/base/
-share/qtcreator/qbs/share/qbs/imports/qbs/base/AndroidApk.qbs
-share/qtcreator/qbs/share/qbs/imports/qbs/base/Application.qbs
-share/qtcreator/qbs/share/qbs/imports/qbs/base/ApplicationExtension.qbs
-share/qtcreator/qbs/share/qbs/imports/qbs/base/AutotestRunner.qbs
-share/qtcreator/qbs/share/qbs/imports/qbs/base/CppApplication.qbs
-share/qtcreator/qbs/share/qbs/imports/qbs/base/DynamicLibrary.qbs
-share/qtcreator/qbs/share/qbs/imports/qbs/base/InnoSetup.qbs
-share/qtcreator/qbs/share/qbs/imports/qbs/base/InstallPackage.qbs
-share/qtcreator/qbs/share/qbs/imports/qbs/base/JavaClassCollection.qbs
-share/qtcreator/qbs/share/qbs/imports/qbs/base/JavaJarFile.qbs
-share/qtcreator/qbs/share/qbs/imports/qbs/base/Library.qbs
-share/qtcreator/qbs/share/qbs/imports/qbs/base/LoadableModule.qbs
-share/qtcreator/qbs/share/qbs/imports/qbs/base/NSISSetup.qbs
-share/qtcreator/qbs/share/qbs/imports/qbs/base/NetModule.qbs
-share/qtcreator/qbs/share/qbs/imports/qbs/base/NodeJSApplication.qbs
-share/qtcreator/qbs/share/qbs/imports/qbs/base/QtApplication.qbs
-share/qtcreator/qbs/share/qbs/imports/qbs/base/QtGuiApplication.qbs
-share/qtcreator/qbs/share/qbs/imports/qbs/base/StaticLibrary.qbs
-share/qtcreator/qbs/share/qbs/imports/qbs/base/WindowsInstallerPackage.qbs
-share/qtcreator/qbs/share/qbs/imports/qbs/base/WindowsSetupPackage.qbs
-share/qtcreator/qbs/share/qbs/imports/qbs/base/XPCService.qbs
-share/qtcreator/qbs/share/qbs/modules/
-share/qtcreator/qbs/share/qbs/modules/Android/
-share/qtcreator/qbs/share/qbs/modules/Android/ndk/
-share/qtcreator/qbs/share/qbs/modules/Android/ndk/ndk.qbs
-share/qtcreator/qbs/share/qbs/modules/Android/ndk/utils.js
-share/qtcreator/qbs/share/qbs/modules/Android/sdk/
-share/qtcreator/qbs/share/qbs/modules/Android/sdk/sdk.qbs
-share/qtcreator/qbs/share/qbs/modules/Android/sdk/utils.js
-share/qtcreator/qbs/share/qbs/modules/archiver/
-share/qtcreator/qbs/share/qbs/modules/archiver/archiver.qbs
-share/qtcreator/qbs/share/qbs/modules/bundle/
-share/qtcreator/qbs/share/qbs/modules/bundle/BundleModule.qbs
-share/qtcreator/qbs/share/qbs/modules/bundle/MacOSX-Package-Types.xcspec
-share/qtcreator/qbs/share/qbs/modules/bundle/MacOSX-Product-Types.xcspec
-share/qtcreator/qbs/share/qbs/modules/bundle/bundle.js
-share/qtcreator/qbs/share/qbs/modules/bundle/update-specs.sh
-share/qtcreator/qbs/share/qbs/modules/cli/
-share/qtcreator/qbs/share/qbs/modules/cli/CLIModule.qbs
-share/qtcreator/qbs/share/qbs/modules/cli/cli.js
-share/qtcreator/qbs/share/qbs/modules/cli/mono.qbs
-share/qtcreator/qbs/share/qbs/modules/cli/windows-dotnet.qbs
-share/qtcreator/qbs/share/qbs/modules/cpp/
-share/qtcreator/qbs/share/qbs/modules/cpp/CppModule.qbs
-share/qtcreator/qbs/share/qbs/modules/cpp/DarwinGCC.qbs
-share/qtcreator/qbs/share/qbs/modules/cpp/GenericGCC.qbs
-share/qtcreator/qbs/share/qbs/modules/cpp/LinuxGCC.qbs
-share/qtcreator/qbs/share/qbs/modules/cpp/UnixGCC.qbs
-share/qtcreator/qbs/share/qbs/modules/cpp/android-gcc.qbs
-share/qtcreator/qbs/share/qbs/modules/cpp/freebsd-gcc.qbs
-share/qtcreator/qbs/share/qbs/modules/cpp/freebsd.js
-share/qtcreator/qbs/share/qbs/modules/cpp/gcc.js
-share/qtcreator/qbs/share/qbs/modules/cpp/genericunix-gcc.qbs
-share/qtcreator/qbs/share/qbs/modules/cpp/ios-gcc.qbs
-share/qtcreator/qbs/share/qbs/modules/cpp/macos-gcc.qbs
-share/qtcreator/qbs/share/qbs/modules/cpp/msvc.js
-share/qtcreator/qbs/share/qbs/modules/cpp/qnx-qcc.qbs
-share/qtcreator/qbs/share/qbs/modules/cpp/tvos-gcc.qbs
-share/qtcreator/qbs/share/qbs/modules/cpp/watchos-gcc.qbs
-share/qtcreator/qbs/share/qbs/modules/cpp/windows-mingw.qbs
-share/qtcreator/qbs/share/qbs/modules/cpp/windows-msvc.qbs
-share/qtcreator/qbs/share/qbs/modules/ib/
-share/qtcreator/qbs/share/qbs/modules/ib/IBModule.qbs
-share/qtcreator/qbs/share/qbs/modules/ib/ib.js
-share/qtcreator/qbs/share/qbs/modules/innosetup/
-share/qtcreator/qbs/share/qbs/modules/innosetup/InnoSetupModule.qbs
-share/qtcreator/qbs/share/qbs/modules/java/
-share/qtcreator/qbs/share/qbs/modules/java/JavaModule.qbs
-share/qtcreator/qbs/share/qbs/modules/java/io/
-share/qtcreator/qbs/share/qbs/modules/java/io/qt/
-share/qtcreator/qbs/share/qbs/modules/java/io/qt/qbs/
-share/qtcreator/qbs/share/qbs/modules/java/io/qt/qbs/Artifact.java
-share/qtcreator/qbs/share/qbs/modules/java/io/qt/qbs/ArtifactListJsonWriter.java
-share/qtcreator/qbs/share/qbs/modules/java/io/qt/qbs/ArtifactListTextWriter.java
-share/qtcreator/qbs/share/qbs/modules/java/io/qt/qbs/ArtifactListWriter.java
-share/qtcreator/qbs/share/qbs/modules/java/io/qt/qbs/ArtifactListXmlWriter.java
-share/qtcreator/qbs/share/qbs/modules/java/io/qt/qbs/tools/
-share/qtcreator/qbs/share/qbs/modules/java/io/qt/qbs/tools/JavaCompilerScannerTool.java
-share/qtcreator/qbs/share/qbs/modules/java/io/qt/qbs/tools/utils/
-share/qtcreator/qbs/share/qbs/modules/java/io/qt/qbs/tools/utils/ArtifactProcessor.java
-share/qtcreator/qbs/share/qbs/modules/java/io/qt/qbs/tools/utils/ArtifactScanner.java
-share/qtcreator/qbs/share/qbs/modules/java/io/qt/qbs/tools/utils/JavaCompilerOptions.java
-share/qtcreator/qbs/share/qbs/modules/java/io/qt/qbs/tools/utils/JavaCompilerScanner.java
-share/qtcreator/qbs/share/qbs/modules/java/io/qt/qbs/tools/utils/NullFileObject.java
-share/qtcreator/qbs/share/qbs/modules/java/utils.js
-share/qtcreator/qbs/share/qbs/modules/lex_yacc/
-share/qtcreator/qbs/share/qbs/modules/lex_yacc/lexyacc.js
-share/qtcreator/qbs/share/qbs/modules/lex_yacc/lexyacc.qbs
-share/qtcreator/qbs/share/qbs/modules/nodejs/
-share/qtcreator/qbs/share/qbs/modules/nodejs/NodeJS.qbs
-share/qtcreator/qbs/share/qbs/modules/nodejs/nodejs.js
-share/qtcreator/qbs/share/qbs/modules/nsis/
-share/qtcreator/qbs/share/qbs/modules/nsis/NSISModule.qbs
-share/qtcreator/qbs/share/qbs/modules/qbs/
-share/qtcreator/qbs/share/qbs/modules/qbs/common.qbs
-share/qtcreator/qbs/share/qbs/modules/qnx/
-share/qtcreator/qbs/share/qbs/modules/qnx/qnx.qbs
-share/qtcreator/qbs/share/qbs/modules/typescript/
-share/qtcreator/qbs/share/qbs/modules/typescript/TypeScriptModule.qbs
-share/qtcreator/qbs/share/qbs/modules/typescript/qbs-tsc-scan/
-share/qtcreator/qbs/share/qbs/modules/typescript/qbs-tsc-scan/qbs-tsc-scan.ts
-share/qtcreator/qbs/share/qbs/modules/typescript/typescript.js
-share/qtcreator/qbs/share/qbs/modules/wix/
-share/qtcreator/qbs/share/qbs/modules/wix/WiXModule.qbs
-share/qtcreator/qbs/share/qbs/modules/xcode/
-share/qtcreator/qbs/share/qbs/modules/xcode/xcode.js
-share/qtcreator/qbs/share/qbs/modules/xcode/xcode.qbs
 share/qtcreator/qml/
 share/qtcreator/qml-type-descriptions/
 share/qtcreator/qml-type-descriptions/builtins.qmltypes
@@ -550,6 +296,7 @@ share/qtcreator/qml/qmlpuppet/interfaces/nodeinstanceserverinterface.cpp
 share/qtcreator/qml/qmlpuppet/interfaces/nodeinstanceserverinterface.h
 share/qtcreator/qml/qmlpuppet/mockfiles/
 share/qtcreator/qml/qmlpuppet/mockfiles/GenericBackend.qml
+share/qtcreator/qml/qmlpuppet/mockfiles/SwipeView.qml
 share/qtcreator/qml/qmlpuppet/mockfiles/Window.qml
 share/qtcreator/qml/qmlpuppet/qml2puppet/
 share/qtcreator/qml/qmlpuppet/qml2puppet/Info.plist
@@ -806,6 +553,7 @@ share/qtcreator/styles/
 share/qtcreator/styles/creator-dark.xml
 share/qtcreator/styles/dark.xml
 share/qtcreator/styles/default.xml
+share/qtcreator/styles/default_classic.xml
 share/qtcreator/styles/grayscale.xml
 share/qtcreator/styles/inkpot.xml
 share/qtcreator/styles/intellij.xml
@@ -834,7 +582,8 @@ share/qtcreator/templates/qt4project/widget.ui
 share/qtcreator/templates/wizards/
 share/qtcreator/templates/wizards/README.txt
 share/qtcreator/templates/wizards/autotest/
-share/qtcreator/templates/wizards/autotest/autotest_24.png
+share/qtcreator/templates/wizards/autotest/autotest.png
+share/qtcreator/templates/wizards/autotest/autotest@2x.png
 share/qtcreator/templates/wizards/autotest/files/
 share/qtcreator/templates/wizards/autotest/files/googlecommon.js
 share/qtcreator/templates/wizards/autotest/files/gtest_dependency.pri
@@ -905,11 +654,9 @@ share/qtcreator/templates/wizards/files/modeling/file.qmodel
 share/qtcreator/templates/wizards/files/modeling/wizard.json
 share/qtcreator/templates/wizards/files/nim/
 share/qtcreator/templates/wizards/files/nim/file.nim
-share/qtcreator/templates/wizards/files/nim/icon.png
 share/qtcreator/templates/wizards/files/nim/wizard.json
 share/qtcreator/templates/wizards/files/nimscript/
 share/qtcreator/templates/wizards/files/nimscript/file.nims
-share/qtcreator/templates/wizards/files/nimscript/icon.png
 share/qtcreator/templates/wizards/files/nimscript/wizard.json
 share/qtcreator/templates/wizards/files/python/
 share/qtcreator/templates/wizards/files/python/file.py
@@ -931,8 +678,9 @@ share/qtcreator/templates/wizards/files/text/file.txt
 share/qtcreator/templates/wizards/files/text/wizard.json
 share/qtcreator/templates/wizards/global/
 share/qtcreator/templates/wizards/global/consoleapplication.png
-share/qtcreator/templates/wizards/global/genericfilewizard.png
+share/qtcreator/templates/wizards/global/consoleapplication@2x.png
 share/qtcreator/templates/wizards/global/guiapplication.png
+share/qtcreator/templates/wizards/global/guiapplication@2x.png
 share/qtcreator/templates/wizards/projects/
 share/qtcreator/templates/wizards/projects/consoleapp/
 share/qtcreator/templates/wizards/projects/consoleapp/CMakeLists.txt
@@ -944,6 +692,7 @@ share/qtcreator/templates/wizards/projects/git.ignore
 share/qtcreator/templates/wizards/projects/nim/
 share/qtcreator/templates/wizards/projects/nim/file.nimproject
 share/qtcreator/templates/wizards/projects/nim/icon.png
+share/qtcreator/templates/wizards/projects/nim/icon@2x.png
 share/qtcreator/templates/wizards/projects/nim/main.nim
 share/qtcreator/templates/wizards/projects/nim/wizard.json
 share/qtcreator/templates/wizards/projects/plainc/
@@ -964,6 +713,7 @@ share/qtcreator/templates/wizards/projects/qmake/empty/file.pro
 share/qtcreator/templates/wizards/projects/qmake/empty/wizard.json
 share/qtcreator/templates/wizards/projects/qtcanvas3dapplication/
 share/qtcreator/templates/wizards/projects/qtcanvas3dapplication/3dapplication.png
+share/qtcreator/templates/wizards/projects/qtcanvas3dapplication/3dapplication@2x.png
 share/qtcreator/templates/wizards/projects/qtcanvas3dapplication/CMakeLists.txt
 share/qtcreator/templates/wizards/projects/qtcanvas3dapplication/app.pro
 share/qtcreator/templates/wizards/projects/qtcanvas3dapplication/file.qbs
@@ -982,10 +732,17 @@ share/qtcreator/templates/wizards/projects/qtquickapplication/CMakeLists.txt
 share/qtcreator/templates/wizards/projects/qtquickapplication/MainForm.ui.qml.tpl
 share/qtcreator/templates/wizards/projects/qtquickapplication/app.pro
 share/qtcreator/templates/wizards/projects/qtquickapplication/file.qbs
+share/qtcreator/templates/wizards/projects/qtquickapplication/icon-empty.png
+share/qtcreator/templates/wizards/projects/qtquickapplication/icon-empty@2x.png
+share/qtcreator/templates/wizards/projects/qtquickapplication/icon-scroll.png
+share/qtcreator/templates/wizards/projects/qtquickapplication/icon-scroll@2x.png
+share/qtcreator/templates/wizards/projects/qtquickapplication/icon-stack.png
+share/qtcreator/templates/wizards/projects/qtquickapplication/icon-stack@2x.png
+share/qtcreator/templates/wizards/projects/qtquickapplication/icon-swipe.png
+share/qtcreator/templates/wizards/projects/qtquickapplication/icon-swipe@2x.png
 share/qtcreator/templates/wizards/projects/qtquickapplication/main.cpp
 share/qtcreator/templates/wizards/projects/qtquickapplication/main.qml.tpl
 share/qtcreator/templates/wizards/projects/qtquickapplication/qml.qrc
-share/qtcreator/templates/wizards/projects/qtquickapplication/qml_wizard.png
 share/qtcreator/templates/wizards/projects/qtquickapplication/wizard.json
 share/qtcreator/templates/wizards/projects/qtquickcontrols2application/
 share/qtcreator/templates/wizards/projects/qtquickcontrols2application/CMakeLists.txt
@@ -1000,22 +757,29 @@ share/qtcreator/templates/wizards/projects/qtquickcontrols2application/qtquickco
 share/qtcreator/templates/wizards/projects/qtquickcontrols2application/wizard.json
 share/qtcreator/templates/wizards/projects/qtquickuiprototype/
 share/qtcreator/templates/wizards/projects/qtquickuiprototype/app.qmlproject
+share/qtcreator/templates/wizards/projects/qtquickuiprototype/qtquickuiprototype.png
+share/qtcreator/templates/wizards/projects/qtquickuiprototype/qtquickuiprototype@2x.png
 share/qtcreator/templates/wizards/projects/qtquickuiprototype/wizard.json
 share/qtcreator/templates/wizards/projects/vcs/
 share/qtcreator/templates/wizards/projects/vcs/bazaar/
 share/qtcreator/templates/wizards/projects/vcs/bazaar/icon.png
+share/qtcreator/templates/wizards/projects/vcs/bazaar/icon@2x.png
 share/qtcreator/templates/wizards/projects/vcs/bazaar/wizard.json
 share/qtcreator/templates/wizards/projects/vcs/cvs/
 share/qtcreator/templates/wizards/projects/vcs/cvs/icon.png
+share/qtcreator/templates/wizards/projects/vcs/cvs/icon@2x.png
 share/qtcreator/templates/wizards/projects/vcs/cvs/wizard.json
 share/qtcreator/templates/wizards/projects/vcs/git/
 share/qtcreator/templates/wizards/projects/vcs/git/icon.png
+share/qtcreator/templates/wizards/projects/vcs/git/icon@2x.png
 share/qtcreator/templates/wizards/projects/vcs/git/wizard.json
 share/qtcreator/templates/wizards/projects/vcs/mercurial/
 share/qtcreator/templates/wizards/projects/vcs/mercurial/icon.png
+share/qtcreator/templates/wizards/projects/vcs/mercurial/icon@2x.png
 share/qtcreator/templates/wizards/projects/vcs/mercurial/wizard.json
 share/qtcreator/templates/wizards/projects/vcs/subversion/
 share/qtcreator/templates/wizards/projects/vcs/subversion/icon.png
+share/qtcreator/templates/wizards/projects/vcs/subversion/icon@2x.png
 share/qtcreator/templates/wizards/projects/vcs/subversion/wizard.json
 share/qtcreator/templates/wizards/qtcreatorplugin/
 share/qtcreator/templates/wizards/qtcreatorplugin/MyPlugin.json.in
@@ -1024,10 +788,12 @@ share/qtcreator/templates/wizards/qtcreatorplugin/myplugin.h
 share/qtcreator/templates/wizards/qtcreatorplugin/myplugin.pro
 share/qtcreator/templates/wizards/qtcreatorplugin/myplugin_global.h
 share/qtcreator/templates/wizards/qtcreatorplugin/mypluginconstants.h
-share/qtcreator/templates/wizards/qtcreatorplugin/qtcreator_logo_24.png
+share/qtcreator/templates/wizards/qtcreatorplugin/qtcreatorplugin.png
+share/qtcreator/templates/wizards/qtcreatorplugin/qtcreatorplugin@2x.png
 share/qtcreator/templates/wizards/qtcreatorplugin/wizard.xml
 share/qtcreator/templates/wizards/qtquick2-extension/
 share/qtcreator/templates/wizards/qtquick2-extension/lib.png
+share/qtcreator/templates/wizards/qtquick2-extension/lib@2x.png
 share/qtcreator/templates/wizards/qtquick2-extension/object.cpp
 share/qtcreator/templates/wizards/qtquick2-extension/object.h
 share/qtcreator/templates/wizards/qtquick2-extension/plugin.cpp
@@ -1035,6 +801,17 @@ share/qtcreator/templates/wizards/qtquick2-extension/plugin.h
 share/qtcreator/templates/wizards/qtquick2-extension/project.pro
 share/qtcreator/templates/wizards/qtquick2-extension/qmldir
 share/qtcreator/templates/wizards/qtquick2-extension/wizard.xml
+share/qtcreator/templates/wizards/qtquickstyleicons/
+share/qtcreator/templates/wizards/qtquickstyleicons/default.png
+share/qtcreator/templates/wizards/qtquickstyleicons/default@2x.png
+share/qtcreator/templates/wizards/qtquickstyleicons/material-dark.png
+share/qtcreator/templates/wizards/qtquickstyleicons/material-dark@2x.png
+share/qtcreator/templates/wizards/qtquickstyleicons/material-light.png
+share/qtcreator/templates/wizards/qtquickstyleicons/material-light@2x.png
+share/qtcreator/templates/wizards/qtquickstyleicons/universal-dark.png
+share/qtcreator/templates/wizards/qtquickstyleicons/universal-dark@2x.png
+share/qtcreator/templates/wizards/qtquickstyleicons/universal-light.png
+share/qtcreator/templates/wizards/qtquickstyleicons/universal-light@2x.png
 share/qtcreator/themes/
 share/qtcreator/themes/dark.creatortheme
 share/qtcreator/themes/default.creatortheme
