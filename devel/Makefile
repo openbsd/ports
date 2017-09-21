@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1645 2017/09/13 09:52:02 phessler Exp $
+# $OpenBSD: Makefile,v 1.1646 2017/09/21 19:07:04 rsadowski Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1584,6 +1584,7 @@
      SUBDIR += pyrex
      SUBDIR += pysvn
      SUBDIR += pyusb
+     SUBDIR += qbs
      SUBDIR += qgit
      SUBDIR += qjson
      SUBDIR += qt-creator
