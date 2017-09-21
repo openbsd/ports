@@ -1,0 +1,7 @@
+QBS is a tool that helps simplify the build process for developing projects
+across multiple platforms. QBS can be used for any software project, regardless
+of programming language, toolkit, or libraries used.
+
+QBS is an all-in-one tool that generates a build graph from a high-level project
+description (like qmake or CMake) and additionally undertakes the task
+of executing the commands in the low-level build graph (like make).
