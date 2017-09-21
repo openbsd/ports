@@ -1,3 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/04/02 16:50:47 merdely Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/09/21 20:28:08 sthen Exp $
 libexec/nagios/
 libexec/nagios/check_esxi_hardware
+libexec/nagios/check_esxi_hardware.py
