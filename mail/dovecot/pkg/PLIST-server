@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.61 2017/08/28 21:39:14 sthen Exp $
+@comment $OpenBSD: PLIST-server,v 1.62 2017/09/22 22:53:08 sthen Exp $
 @conflict dovecot-sqlite-*
 @pkgpath mail/dovecot
 @pkgpath mail/dovecot,-server,bdb
@@ -608,6 +608,7 @@ lib/dovecot/lib20_replication_plugin.so
 lib/dovecot/lib20_var_expand_crypt.so
 lib/dovecot/lib20_virtual_plugin.so
 lib/dovecot/lib20_zlib_plugin.so
+lib/dovecot/lib21_fts_solr_plugin.so
 lib/dovecot/lib21_fts_squat_plugin.so
 lib/dovecot/lib30_imap_zlib_plugin.so
 lib/dovecot/lib90_stats_plugin.so
