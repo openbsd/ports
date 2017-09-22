@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2017/07/26 22:45:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2017/09/22 20:17:53 sthen Exp $
 
 COMMENT=	read and set MPEG-4/3GPP metadata tags
 
 V=		0.9.6
 DISTNAME=	atomicparsley-$V
-REVISION =	1
+REVISION=	2
 DISTFILES=	${DISTNAME}{$V}.tar.bz2
 WRKDIST=	${WRKDIR}/wez-atomicparsley-da2f6e4fc120
 
@@ -22,7 +22,8 @@ WANTLIB=	c m ${COMPILER_LIBCXX} z
 MASTER_SITES=	https://bitbucket.org/wez/atomicparsley/get/
 
 CONFIGURE_STYLE=  gnu
-CONFIGURE_ENV=    ac_cv_func_lroundf=yes
+CONFIGURE_ENV=    ac_cv_func_lroundf=yes \
+		  OBJCXX="${CXX}"
 AUTOCONF_VERSION= 2.69
 AUTOMAKE_VERSION= 1.15
 BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
