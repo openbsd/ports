@@ -1,10 +1,10 @@
-$OpenBSD: patch-Makefile,v 1.6 2017/06/28 10:20:08 czarkoff Exp $
+$OpenBSD: patch-Makefile,v 1.7 2017/09/22 07:25:26 feinerer Exp $
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -12,10 +12,6 @@ VER_PATCH := 4
+@@ -12,10 +12,6 @@ VER_PATCH := 5
  PROJECT   := re
- VERSION   := 0.5.4
+ VERSION   := 0.5.5
  
 -MK	:= mk/re.mk
 -
