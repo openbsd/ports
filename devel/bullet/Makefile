@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.12 2017/07/27 17:29:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2017/09/22 20:59:02 sthen Exp $
 
-COMMENT =		physics library
+COMMENT =	physics library
 
-V =			2.86.1
-DISTNAME =		bullet-${V}
-REVISION =		0
+GH_ACCOUNT =	bulletphysics
+GH_PROJECT =	bullet3
+GH_TAGNAME =	2.86.1
+DISTNAME =	bullet-${GH_TAGNAME}
+REVISION =	1
 
 SHARED_LIBS +=  BulletCollision           3.0 # 2.79
 SHARED_LIBS +=  BulletDynamics            3.0 # 2.79
@@ -27,16 +29,11 @@ MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 # zlib
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		${MASTER_SITES_GITHUB}
-GH_ACCOUNT =		bulletphysics
-GH_PROJECT =		bullet3
-GH_TAGNAME =		$V
-
-WANTLIB += m
+WANTLIB += ${COMPILER_LIBCXX} m
 
 MODULES =		devel/cmake
 
-COMPILER =		gcc
+COMPILER =		base-clang ports-gcc
 BUILD_DEPENDS =		graphics/freeglut
 
 CONFIGURE_ARGS +=	-DBUILD_SHARED_LIBS=ON \
