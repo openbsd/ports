@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2017/08/22 05:19:16 kirby Exp $
+# $OpenBSD: Makefile,v 1.14 2017/09/22 21:37:18 sthen Exp $
 
 COMMENT =		framework for writing networked applications in C
 
 GH_PROJECT = 		ccnet
+REVISION =		0
 
 SHARED_LIBS =		ccnet 2.0
 
@@ -10,7 +11,7 @@ SHARED_LIBS =		ccnet 2.0
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c crypto event_core event_extra ffi gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 iconv intl jansson pcre pthread
+WANTLIB += gmodule-2.0 gobject-2.0 iconv intl jansson m pcre pthread
 WANTLIB += searpc sqlite3 ssl uuid z
 
 MODULES =		lang/python
