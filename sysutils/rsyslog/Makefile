@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2017/07/26 22:45:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2017/09/22 20:52:58 sthen Exp $
 
 BROKEN-powerpc =	64-bit atomics (__sync_bool_compare_and_swap_8)
 
@@ -14,7 +14,7 @@ PKGNAME-main =		rsyslog-$V
 PKGNAME-mysql =		rsyslog-mysql-$V
 PKGNAME-pgsql =		rsyslog-pgsql-$V
 CATEGORIES =		sysutils
-REVISION-main =		1
+REVISION-main =		2
 REVISION-mysql =	1
 REVISION-pgsql =	1
 
@@ -25,7 +25,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB-main +=		${MODGETTEXT_WANTLIB}
 WANTLIB-main +=		c estr ffi gcrypt gmp gnutls gpg-error hogweed idn2
-WANTLIB-main +=		json-c nettle p11-kit pthread relp tasn1 uuid z
+WANTLIB-main +=		json-c nettle p11-kit pthread relp tasn1 unistring
+WANTLIB-main +=		uuid z
 
 WANTLIB-mysql +=	crypto m mysqlclient pthread ssl ${COMPILER_LIBCXX} z
 

@@ -1,16 +1,17 @@
-# $OpenBSD: Makefile,v 1.49 2017/02/18 17:33:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.50 2017/09/22 20:52:58 sthen Exp $
 
 COMMENT=		flexible communications framework, local-link component
 
 DISTNAME=		telepathy-salut-0.8.1
-REVISION=		7
+REVISION=		8
 
 MASTER_SITES=		${MASTER_SITES_TP:=telepathy-salut/}
 
 WANTLIB += avahi-client avahi-common avahi-glib avahi-gobject c dbus-1
 WANTLIB += dbus-glib-1 ffi gio-2.0 glib-2.0 gmodule-2.0 gmp gnutls
 WANTLIB += gobject-2.0 gthread-2.0 hogweed lzma m nettle p11-kit pcre
-WANTLIB += pthread soup-2.4 sqlite3 tasn1 telepathy-glib uuid xml2 z idn2
+WANTLIB += pthread soup-2.4 sqlite3 tasn1 telepathy-glib unistring
+WANTLIB += uuid xml2 z idn2
 
 MODULES=		devel/gettext \
 			lang/python

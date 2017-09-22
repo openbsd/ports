@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2017/02/18 17:33:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2017/09/22 20:52:58 sthen Exp $
 
 COMMENT=		library for easy implementation of a VNC server
 
 DISTNAME=		LibVNCServer-0.9.10
-REVISION=		2
+REVISION=		3
 PKGNAME=		${DISTNAME:L}
 
 SHARED_LIBS +=  vncclient                 0.0 # 0.0
@@ -16,8 +16,8 @@ HOMEPAGE=		https://libvnc.github.io/
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += crypto ffi gcrypt gmp gnutls gpg-error hogweed jpeg
-WANTLIB += m nettle p11-kit png pthread ssl tasn1 z idn2
+WANTLIB += crypto ffi gcrypt gmp gnutls gpg-error hogweed idn2 jpeg m
+WANTLIB += nettle p11-kit png pthread ssl tasn1 unistring z
 
 MASTER_SITES=		https://github.com/LibVNC/libvncserver/archive/
 

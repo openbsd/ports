@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2017/07/26 22:45:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2017/09/22 20:52:58 sthen Exp $
 
 COMMENT-main=	monitoring plugins (for Nagios, Icinga, etc)
 COMMENT-dbi=	dbi monitoring plugin
@@ -31,7 +31,7 @@ REVISION-game=	1
 REVISION-ldap=	1
 REVISION-mysql=	1
 REVISION-pgsql=	1
-REVISION-radius=1
+REVISION-radius=2
 REVISION-samba=	1
 REVISION-snmp=	1
 
@@ -102,7 +102,7 @@ RUN_DEPENDS-snmp=	${RUN_DEPENDS} \
 
 LIB_DEPENDS-radius=	net/radcli
 WANTLIB-radius+=	${WANTLIB} ffi gmp gnutls hogweed idn2 nettle
-WANTLIB-radius+=	p11-kit radcli tasn1 z
+WANTLIB-radius+=	p11-kit radcli tasn1 unistring z
 
 # MYSQL
 .if !${BUILD_PACKAGES:M-mysql}

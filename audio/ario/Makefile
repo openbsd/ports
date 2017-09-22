@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2017/02/18 17:33:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2017/09/22 20:52:58 sthen Exp $
 
 COMMENT =	GTK2-based MPD client inspired by Rhythmbox
 DISTNAME =	ario-1.5.1
 CATEGORIES =	audio x11
-REVISION =	12
+REVISION =	13
 
 SHARED_LIBS +=	audioscrobbler		0.0 # 0.0
 SHARED_LIBS +=	filesystem		0.0 # 0.0
@@ -23,11 +23,11 @@ WANTLIB += Xrender atk-1.0 avahi-client avahi-common avahi-glib c cairo
 WANTLIB += crypto curl dbus-1 dbus-glib-1 expat ffi fontconfig freetype
 WANTLIB += gcrypt gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gmp gnutls gobject-2.0 gpg-error graphite2
-WANTLIB += gthread-2.0 gtk-x11-2.0 harfbuzz hogweed idn2 lzma m mpdclient
-WANTLIB += nettle nghttp2 notify p11-kit pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs soup-2.4
-WANTLIB += sqlite3 ssl tag tag_c tasn1 unique-1.0 xcb xcb-render xcb-shm
-WANTLIB += xml2 z
+WANTLIB += gthread-2.0 gtk-x11-2.0 harfbuzz hogweed idn2 lzma m
+WANTLIB += mpdclient nettle nghttp2 notify p11-kit pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
+WANTLIB += pthread-stubs soup-2.4 sqlite3 ssl tag tag_c tasn1 unique-1.0
+WANTLIB += unistring xcb xcb-render xcb-shm xml2 z
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=ario-player/}
 
