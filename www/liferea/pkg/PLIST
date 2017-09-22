@@ -1,10 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.25 2016/12/30 14:51:27 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.26 2017/09/22 19:56:39 sthen Exp $
 @bin bin/liferea
 bin/liferea-add-feed
 lib/liferea/
 lib/liferea/girepository-1.0/
 lib/liferea/girepository-1.0/Liferea-3.0.typelib
 lib/liferea/plugins/
+lib/liferea/plugins/${MODPY_PYCACHE}/
+lib/liferea/plugins/${MODPY_PYCACHE}gnome-keyring.${MODPY_PYC_MAGIC_TAG}pyc
+lib/liferea/plugins/${MODPY_PYCACHE}libnotify.${MODPY_PYC_MAGIC_TAG}pyc
+lib/liferea/plugins/${MODPY_PYCACHE}media-player.${MODPY_PYC_MAGIC_TAG}pyc
+lib/liferea/plugins/${MODPY_PYCACHE}trayicon.${MODPY_PYC_MAGIC_TAG}pyc
 lib/liferea/plugins/gnome-keyring.plugin
 lib/liferea/plugins/gnome-keyring.py
 lib/liferea/plugins/libnotify.plugin
@@ -99,6 +104,7 @@ share/liferea/gir-1.0/
 share/liferea/gir-1.0/Liferea-3.0.gir
 share/liferea/google_source.ui
 share/liferea/inoreader_source.ui
+share/liferea/liferea.css
 share/liferea/mainwindow.ui
 share/liferea/new_folder.ui
 share/liferea/new_newsbin.ui
@@ -124,18 +130,18 @@ share/liferea/opml/feedlist_sk.opml
 share/liferea/opml/feedlist_sv.opml
 share/liferea/opml_source.ui
 share/liferea/pixmaps/
-share/liferea/pixmaps/attachment.png
 share/liferea/pixmaps/available.png
 share/liferea/pixmaps/available_offline.png
 share/liferea/pixmaps/default.png
-share/liferea/pixmaps/directory.png
+share/liferea/pixmaps/emblem-important.png
 share/liferea/pixmaps/empty.png
 share/liferea/pixmaps/empty_offline.png
 share/liferea/pixmaps/fl_opml.png
-share/liferea/pixmaps/flag.png
+share/liferea/pixmaps/folder-saved-search.png
+share/liferea/pixmaps/folder.png
+share/liferea/pixmaps/mail-attachment.png
 share/liferea/pixmaps/newsbin.png
 share/liferea/pixmaps/unread.png
-share/liferea/pixmaps/vfolder.png
 share/liferea/prefs.ui
 share/liferea/properties.ui
 share/liferea/reedah_source.ui
