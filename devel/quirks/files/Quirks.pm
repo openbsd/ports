@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.534 2017/09/15 13:45:22 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.535 2017/09/22 06:39:40 tb Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -489,6 +489,7 @@ my $stem_extensions = {
 	'zarafa' => 'kopano-core',
 	'zarafa-mapi' => 'kopano-mapi',
 	'zarafa-webapp' => 'kopano-webapp',
+	'extract_url' => 'extracturl',
 };
 
 my $obsolete_reason = {
