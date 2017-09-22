@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.16 2017/02/06 09:40:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2017/09/22 15:42:13 naddy Exp $
 
+BROKEN-amd64 =		perl -e 'use SDL' segfaults
 BROKEN-i386 =		dependent ports (frozen-bubble, vacuum) fail: loadable library and perl binaries are mismatched (got handshake key 0x2b, needed 0xXXXXXX)
 
 COMMENT =		Simple DirectMedia Layer for Perl
