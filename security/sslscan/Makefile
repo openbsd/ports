@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2017/01/27 11:01:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2017/09/22 21:30:32 sthen Exp $
 
 COMMENT=	SSL port scanner
 
 V=		1.11.8
+REVISION=	0
 GH_ACCOUNT=	rbsec
 GH_PROJECT=	sslscan
 GH_TAGNAME=	$V-rbsec
@@ -40,6 +41,7 @@ STATIC_BUILD=	TRUE
 ALL_TARGET=	openssl/libcrypto.a sslscan
 MAKE_FLAGS+=	STATIC_BUILD=TRUE
 CFLAGS+=	-nostdinc -I${WRKSRC}/openssl/include -I/usr/include
+WANTLIB +=	z
 
 post-extract:
 	ln -s ${WRKDIR}/security/openssl/openssl-* ${WRKSRC}/openssl

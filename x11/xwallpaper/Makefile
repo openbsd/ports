@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/04/23 21:22:25 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2017/09/22 21:30:32 sthen Exp $
 
 COMMENT =	wallpaper setting utility for X
 
 GH_ACCOUNT =	stoeckmann
 GH_PROJECT =	xwallpaper
 GH_TAGNAME =	v0.2.1
+REVISION =	0
 
 CATEGORIES =	x11 graphics
 
@@ -15,7 +16,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 # uses pledge()
 WANTLIB += X11 Xpm c jpeg pixman-1 png pthread-stubs xcb xcb-image
-WANTLIB += xcb-randr xcb-shm xcb-util
+WANTLIB += xcb-randr xcb-shm xcb-util z
 
 LIB_DEPENDS +=	graphics/jpeg \
 		graphics/png

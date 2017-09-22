@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.132 2017/07/23 09:52:14 zhuk Exp $
+# $OpenBSD: Makefile,v 1.133 2017/09/22 21:30:32 sthen Exp $
 
 COMMENT=	multimedia decoding library
 
 DISTNAME=	xine-lib-1.2.8
-REVISION=	1
+REVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	https://xine-lib.alioth.debian.org/releases/
 EXTRACT_SUFX=	.tar.xz
@@ -18,13 +18,16 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 PERMIT_PACKAGE_CDROM=	patents
 PERMIT_PACKAGE_FTP=	Yes
 
-WANTLIB += FLAC GL GLU ICE SDL SM X11 X11-xcb Xdamage Xext Xfixes
-WANTLIB += Xinerama Xv XvMCW Xxf86vm avcodec avformat avutil
-WANTLIB += bluray c cdio drm dvdnav dvdread execinfo expat fontconfig
-WANTLIB += freetype glapi iconv intl iso9660 jpeg lzma m mng modplug
-WANTLIB += mpcdec ogg postproc pthread pthread-stubs sndio speex theora
-WANTLIB += usbhid v4l2 v4lconvert vcdinfo vorbis xcb xcb-dri2
-WANTLIB += xcb-glx xcb-shape xcb-shm xcb-xv xdg-basedir xml2 z
+WANTLIB += ${COMPILER_LIBCXX} FLAC GL GLU ICE SDL SM X11 X11-xcb
+WANTLIB += Xau Xdamage Xdmcp Xext Xfixes Xinerama Xv XvMCW Xxf86vm
+WANTLIB += avcodec avformat avutil bluray bz2 c cdio crypto drm
+WANTLIB += dvdnav dvdread execinfo expat fontconfig freetype glapi
+WANTLIB += gsm iconv intl iso9660 jpeg lcms lzma m mng modplug
+WANTLIB += mp3lame mpcdec ogg opus postproc pthread-stubs sndio
+WANTLIB += speex ssl swresample theora usbhid v4l2 v4lconvert
+WANTLIB += vcdinfo vorbis vorbisenc vpx x264 x265 xcb xcb-dri2
+WANTLIB += xcb-glx xcb-shape xcb-shm xcb-xv xdg-basedir xml2 xvidcore
+WANTLIB += z
 
 XINEAPI_REV=	2.6
 SUBST_VARS+=	XINEAPI_REV

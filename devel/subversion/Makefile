@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.159 2017/08/31 08:31:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.160 2017/09/22 21:30:32 sthen Exp $
 
 COMMENT-main=		subversion revision control system
 COMMENT-perl=		perl interface to subversion
@@ -21,8 +21,11 @@ FULLPKGPATH-ap2=	devel/subversion,-ap2
 FULLPKGNAME-gnome-keyring= gnome-keyring-subversion-${VERSION}
 FULLPKGPATH-gnome-keyring= devel/subversion,-gnome-keyring
 
-REVISION-main=	0
+REVISION-main=	1
 REVISION-ruby=	0
+REVISION-perl=	0
+REVISION-gnome-keyring=	0
+REVISION-ap2=	0
 
 SO_VERSION=	2.0
 SVN_LIBS=	svn_client-1 svn_delta-1 svn_diff-1 svn_fs-1 \
@@ -56,7 +59,7 @@ FLAVOR += no_perl no_python no_ruby
 
 MODULES=	devel/gettext lang/python
 
-WANTLIB=	expat pthread z
+WANTLIB=	expat m pthread z
 
 # autogen.sh checks for libtoolize
 BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
@@ -94,7 +97,7 @@ WANTLIB-ap2 +=	${_lib}>=${SO_VERSION}
 .endfor
 RUN_DEPENDS-ap2=	www/apache-httpd
 
-WANTLIB-perl=		${WANTLIB} apr-1 aprutil-1 sqlite3 
+WANTLIB-perl=		${WANTLIB} apr-1 aprutil-1 c perl sqlite3 
 RUN_DEPENDS-perl=	${MODGETTEXT_RUN_DEPENDS}
 LIB_DEPENDS-perl=	${MODGETTEXT_LIB_DEPENDS} ${MAINSPEC}
 .for _lib in svn_diff-1 svn_ra-1 svn_delta-1 svn_subr-1 svn_fs-1 \

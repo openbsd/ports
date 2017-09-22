@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.44 2017/08/23 09:06:18 benoit Exp $
+# $OpenBSD: Makefile,v 1.45 2017/09/22 21:30:32 sthen Exp $
 
 COMMENT =	creating & editing GIF images and animations
 
 DISTNAME =	gifsicle-1.90
+REVISION =	0
+
 CATEGORIES =	graphics
 
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
@@ -10,7 +12,7 @@ MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		c ICE SM X11 m
+WANTLIB =		c ICE SM X11 m pthread
 
 HOMEPAGE =		http://www.lcdf.org/gifsicle/
 
