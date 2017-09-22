@@ -1,4 +1,4 @@
-$OpenBSD: patch-bootstrap,v 1.14 2017/08/26 17:53:35 dcoppa Exp $
+$OpenBSD: patch-bootstrap,v 1.15 2017/09/22 13:42:54 dcoppa Exp $
 
 Use Ninja to build CMake
 XXX: broken on m88k
@@ -90,7 +90,7 @@ Index: bootstrap
  "
  
  LexerParser_C_SOURCES="\
-@@ -1381,7 +1395,7 @@ cmake_cxx_flags="${cmake_cxx_flags} \
+@@ -1387,7 +1401,7 @@ cmake_cxx_flags="${cmake_cxx_flags} \
    -I`cmake_escape \"${cmake_source_dir}/Source/LexerParser\"` \
    -I`cmake_escape \"${cmake_source_dir}/Utilities\"`"
  echo "cmake: ${objs}" > "${cmake_bootstrap_dir}/Makefile"
