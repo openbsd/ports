@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2017/03/06 14:12:20 jturner Exp $
+# $OpenBSD: Makefile,v 1.5 2017/09/22 15:09:29 jturner Exp $
 
 ONLY_FOR_ARCHS =	amd64
 
 COMMENT =		systems language that is both powerful and fun to use
 
-DISTNAME =		myrddin-0.1.1
+DISTNAME =		myrddin-0.2.0
 CATEGORIES =		lang
 
 MAINTAINER =		James Turner <james@calminferno.net>
