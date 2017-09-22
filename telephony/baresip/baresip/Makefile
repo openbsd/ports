@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2017/06/28 10:20:25 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.18 2017/09/22 07:26:48 feinerer Exp $
 
 COMMENT-main =		modular SIP User-Agent with audio and video support
 COMMENT-gtk2 =		GTK+2-based modules for baresip
 
-V =			0.5.4
+V =			0.5.5
 DISTNAME =		baresip-$V
 PKGNAME-main =		baresip-$V
 PKGNAME-gtk2 =		baresip-gtk2-$V
