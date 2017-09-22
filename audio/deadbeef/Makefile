@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.31 2017/09/08 10:44:20 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.32 2017/09/22 21:40:37 sthen Exp $
 
 COMMENT =		DeaDBeeF is an audio player
 DISTNAME =		deadbeef-0.7.2
-REVISION =		3
+REVISION =		4
 CATEGORIES =		audio
 
 HOMEPAGE =		http://deadbeef.sourceforge.net/
@@ -10,16 +10,18 @@ HOMEPAGE =		http://deadbeef.sourceforge.net/
 # GPLv2 & LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += FLAC ICE Imlib2 SM X11 Xcomposite Xcursor Xdamage Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
-WANTLIB += avcodec avformat avutil c cairo cairo-gobject cddb cdio
-WANTLIB += crypto curl dbus-1 epoxy expat faad ffi fontconfig freetype
-WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += graphite2 gthread-2.0 gtk-3 harfbuzz iconv intl jansson m mad
-WANTLIB += mms mp4ff mpcdec nghttp2 ogg pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs sndfile
-WANTLIB += sndio ssl vorbis vorbisenc vorbisfile wavpack xcb xcb-render
-WANTLIB += xcb-shm z zip
+WANTLIB += ${COMPILER_LIBCXX} FLAC ICE Imlib2 SM X11 Xcomposite
+WANTLIB += Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender
+WANTLIB += atk-1.0 atk-bridge-2.0 atspi avcodec avformat avutil
+WANTLIB += bz2 c cairo cairo-gobject cddb cdio crypto curl dbus-1
+WANTLIB += epoxy expat faad ffi fontconfig freetype gdk-3 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
+WANTLIB += gsm gthread-2.0 gtk-3 harfbuzz iconv intl jansson m
+WANTLIB += mad mms mp3lame mp4ff mpcdec nghttp2 ogg opus pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread-stubs
+WANTLIB += sndfile sndio speex ssl swresample vorbis vorbisenc
+WANTLIB += vorbisfile vpx wavpack x264 x265 xcb xcb-render xcb-shm
+WANTLIB += xvidcore z zip
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=deadbeef/}
 EXTRACT_SUFX =		.tar.bz2
