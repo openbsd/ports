@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.62 2017/05/29 12:11:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.63 2017/09/23 10:19:18 sthen Exp $
 
 COMMENT=		IRC proxy to connect to AIM, ICQ, Jabber and Yahoo
 
 V=			3.5.1
 DISTNAME=		bitlbee-$V
 PKGSPEC=		bitlbee-=$V
-REVISION=		1
+REVISION=		2
 CATEGORIES=		net
 
 HOMEPAGE=		http://bitlbee.org/
@@ -15,7 +15,7 @@ MAINTAINER=		Tom Doherty <tom@singlesecond.com>
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB +=		c m pthread glib-2.0 gmodule-2.0 ssl crypto intl
+WANTLIB += c m pthread glib-2.0 gmodule-2.0 gpg-error ssl crypto intl
 
 MASTER_SITES=		http://get.bitlbee.org/src/
 
