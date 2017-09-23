@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2016/03/18 21:38:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.25 2017/09/23 11:33:48 sthen Exp $
 
 COMMENT=		audio/video communications framework
 
 DISTNAME=		farstream-0.2.8
+REVISION=		0
 
 CATEGORIES=		net devel
 
@@ -19,10 +20,11 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gssdp-1.0
-WANTLIB += gstbase-1.0 gstnet-1.0 gstreamer-1.0 gstrtp-1.0 gthread-2.0
-WANTLIB += gupnp-1.0 gupnp-igd-1.0 lzma m nice pcre pthread soup-2.4
-WANTLIB += sqlite3 xml2 z
+WANTLIB += ffi gio-2.0 glib-2.0 gmodule-2.0 gmp gnutls gobject-2.0
+WANTLIB += gssdp-1.0 gstbase-1.0 gstnet-1.0 gstreamer-1.0 gstrtp-1.0
+WANTLIB += gthread-2.0 gupnp-1.0 gupnp-igd-1.0 hogweed idn2 lzma
+WANTLIB += m nettle nice p11-kit pcre pthread soup-2.4 sqlite3
+WANTLIB += tasn1 unistring xml2 z
 
 MASTER_SITES=		http://www.freedesktop.org/software/farstream/releases/farstream/
 
