@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2017/06/03 12:46:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.66 2017/09/23 10:31:45 sthen Exp $
 
 COMMENT-main=		interactive spelling checker
 COMMENT-dutch=		ispell dictionary for Dutch
@@ -13,6 +13,7 @@ COMMENT-swedish=	ispell dictionary for Swedish
 VERSION=	3.4.00
 DISTNAME=	ispell-${VERSION}
 PKGNAME-main=	${DISTNAME}
+REVISION-main=	0
 
 CATEGORIES=	textproc
 
@@ -65,7 +66,7 @@ MULTI_PACKAGES=	-main -dutch -french -german -swedish -russian -portuguese \
 # dictionaries: GPL or BSD-like
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB-main=		c termcap
+WANTLIB-main=		c ncursesw
 
 PERMIT_PACKAGE_CDROM-german=	no license
 PERMIT_PACKAGE_FTP-german=	no license
@@ -143,24 +144,24 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKDIST}/ispell-config ${PREFIX}/bin/ispell-config
 
 	${INSTALL_MAN} ${WRKDIST}/ispell.1 ${PREFIX}/man/man1/
-	ln -s ispell.1 ${PREFIX}/man/man1/buildhash.1
-	ln -s ispell.1 ${PREFIX}/man/man1/munchlist.1
-	ln -s ispell.1 ${PREFIX}/man/man1/findaffix.1
-	ln -s ispell.1 ${PREFIX}/man/man1/tryaffix.1
+	ln -fs ispell.1 ${PREFIX}/man/man1/buildhash.1
+	ln -fs ispell.1 ${PREFIX}/man/man1/munchlist.1
+	ln -fs ispell.1 ${PREFIX}/man/man1/findaffix.1
+	ln -fs ispell.1 ${PREFIX}/man/man1/tryaffix.1
 	${INSTALL_MAN} ${WRKDIST}/ispell.5 ${PREFIX}/man/man5/
-	ln -s ispell.5 ${PREFIX}/man/man5/english.5
+	ln -fs ispell.5 ${PREFIX}/man/man5/english.5
 
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/ispell
 
 	${INSTALL_DATA} ${WRKDIST}/languages/english/english.aff \
 		${PREFIX}/lib/ispell/american.aff
-	ln -s american.aff ${PREFIX}/lib/ispell/british.aff
+	ln -fs american.aff ${PREFIX}/lib/ispell/british.aff
 	${INSTALL_DATA} ${WRKDIST}/languages/american/americanmed+.hash \
 		${PREFIX}/lib/ispell/americanmed+.hash
-	ln -s americanmed+.hash ${PREFIX}/lib/ispell/american.hash
+	ln -fs americanmed+.hash ${PREFIX}/lib/ispell/american.hash
 	${INSTALL_DATA} ${WRKDIST}/languages/british/britishxlg.hash \
 		${PREFIX}/lib/ispell/britishxlg.hash
-	ln -s britishxlg.hash ${PREFIX}/lib/ispell/british.hash
+	ln -fs britishxlg.hash ${PREFIX}/lib/ispell/british.hash
 
 	${INSTALL_DATA} ${WRKDIR}/${DUTCH_DICT}/nederlands.{aff,hash} \
 		${PREFIX}/lib/ispell
