@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.219 2017/05/27 12:37:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.220 2017/09/23 10:28:52 sthen Exp $
 
 # Everything is a Freaking GLib/GTK+ problem
 CFLAGS +=		-g
@@ -12,7 +12,7 @@ GNOME_PROJECT=		gtk+
 
 PKGNAME-main=		gtk+2-${GNOME_VERSION}
 PKGNAME-cups=		gtk+2-cups-${GNOME_VERSION}
-REVISION-cups=		1
+REVISION-cups=		2
 REVISION-main=		1
 
 CATEGORIES=		x11 devel
@@ -39,7 +39,7 @@ WANTLIB-main += ${WANTLIB} c
 
 WANTLIB-cups += ${WANTLIB}
 WANTLIB-cups += avahi-client avahi-common cups dbus-1 gdk-x11-2.0 gmp
-WANTLIB-cups += gnutls gtk-x11-2.0 hogweed idn2 nettle p11-kit tasn1
+WANTLIB-cups += gnutls gtk-x11-2.0 hogweed idn2 nettle p11-kit tasn1 unistring
 
 MULTI_PACKAGES=		-main -cups
 
