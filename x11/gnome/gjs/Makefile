@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2017/09/08 18:47:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.58 2017/09/23 11:41:31 sthen Exp $
 
 USE_WXNEEDED=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		Javascript bindings for GNOME
 
 GNOME_PROJECT=		gjs
 GNOME_VERSION=		1.48.7
+REVISION=		0
 
 SHARED_LIBS +=  gjs                  5.0      # 0.0
 
@@ -25,7 +26,7 @@ WANTLIB += readline xcb xcb-render xcb-shm z Xrandr epoxy
 WANTLIB += ICE SM Xcomposite Xcursor Xdamage Xfixes Xi Xinerama
 WANTLIB += atk-1.0 atk-bridge-2.0 atspi dbus-1 gdk-3 gdk_pixbuf-2.0
 WANTLIB += graphite2 gtk-3 harfbuzz pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += iconv intl
+WANTLIB += iconv intl icudata icui18n icuuc
 
 MODULES=		x11/gnome
 

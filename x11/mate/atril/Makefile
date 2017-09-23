@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2017/08/24 09:45:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2017/09/23 11:41:31 sthen Exp $
 
 USE_WXNEEDED=		Yes
 
@@ -10,7 +10,7 @@ SHARED_LIBS +=  atrildocument             3.0 # 3.0
 SHARED_LIBS +=  atrilview                 3.0 # 3.0
 
 MATE_PROJECT=		atril
-REVISION=		5
+REVISION=		6
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -32,6 +32,7 @@ WANTLIB += lz4 lzma nettle notify openjp2 orc-0.4 p11-kit pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 png poppler-glib poppler secret-1
 WANTLIB += soup-2.4 spectre tasn1 tiff unistring webkit2gtk-4.0 webp xml2
 WANTLIB += z xslt
+WANTLIB += GLESv2 gstallocators-1.0 gstbadallocators-1.0 gstgl-1.0
 
 MODULES=		devel/dconf \
 			x11/gnome

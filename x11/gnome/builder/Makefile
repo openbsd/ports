@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.53 2017/07/26 22:45:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.54 2017/09/23 11:41:31 sthen Exp $
 
 COMMENT=		IDE for GNOME
 
 GNOME_PROJECT=		gnome-builder
 GNOME_VERSION=		3.24.2
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS +=	egg-private               0.0 # 0.0
 SHARED_LIBS +=  panel-gtk                 0.0 # 0.0
@@ -39,6 +39,7 @@ WANTLIB += secret-1 soup-2.4 sqlite3 ssh2 ssl ${LIBCXX} tasn1
 WANTLIB += unistring vala-0.36 vte-2.91 webkit2gtk-4.0 webp xcb
 WANTLIB += xcb-dri2 xcb-glx xcb-render xcb-shm xcb-xfixes xml2
 WANTLIB += xslt z
+WANTLIB += GLESv2 gstallocators-1.0 gstbadallocators-1.0 gstgl-1.0
 
 MODULES=		devel/dconf \
 			lang/python \

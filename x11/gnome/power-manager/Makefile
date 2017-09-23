@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.52 2017/04/17 10:58:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.53 2017/09/23 11:41:31 sthen Exp $
 
 COMMENT=		GNOME power manager
 
 GNOME_PROJECT=		gnome-power-manager
 GNOME_VERSION=		3.24.0
+REVISION=		0
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -15,7 +16,7 @@ WANTLIB += freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-3 harfbuzz iconv
 WANTLIB += intl m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png pthread pthread-stubs upower-glib xcb xcb-render
-WANTLIB += xcb-shm z
+WANTLIB += xcb-shm z ${COMPILER_LIBCXX}
 
 MODULES=		devel/dconf \
 			x11/gnome

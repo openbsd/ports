@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.39 2017/07/26 22:45:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.40 2017/09/23 11:41:31 sthen Exp $
 
 COMMENT=		initial-setup firstboot-like tool
 
 GNOME_PROJECT=		gnome-initial-setup
 GNOME_VERSION=		3.24.2
-REVISION=		0
+REVISION=		1
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -26,6 +26,8 @@ WANTLIB += pcre pixman-1 png polkit-gobject-1 pthread-stubs pwquality
 WANTLIB += rest-0.7 secret-1 soup-2.4 soup-gnome-2.4 sqlite3 telepathy-glib
 WANTLIB += webkit2gtk-4.0 webp xcb xcb-dri2 xcb-glx xcb-render
 WANTLIB += xcb-shm xcb-xfixes xml2 xslt z
+WANTLIB += GLESv2 gstallocators-1.0 gstbadallocators-1.0 gstgl-1.0
+WANTLIB += tasn1
 WANTLIB += heimdal/lib/heimsqlite
 
 MODULES=		devel/dconf \
