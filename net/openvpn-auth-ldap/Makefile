@@ -1,8 +1,6 @@
-# $OpenBSD: Makefile,v 1.15 2017/08/09 21:42:43 jca Exp $
+# $OpenBSD: Makefile,v 1.16 2017/09/23 10:41:27 sthen Exp $
 
 COMMENT =		LDAP authentication plugin for OpenVPN 2.x
-
-# XXX probably broken with clang, please check WANTLIB when fixing
 
 VERSION =		2.0.3
 REVISION =		7
@@ -15,9 +13,10 @@ HOMEPAGE =		https://github.com/threerings/openvpn-auth-ldap
 # BSD
 PERMIT_PACKAGE_CDROM =	 Yes
 
+WANTLIB =		${COMPILER_LIBCXX} lber ldap 
+
 MODULES =		x11/gnustep
 MODGNUSTEP_NEEDS_GUI =	No
-WANTLIB =		lber ldap 
 
 MASTER_SITES =		${MASTER_SITE_GOOGLECODE:=openvpn-auth-ldap/}
 
@@ -36,6 +35,7 @@ MAKE_FILE =		Makefile
 CONFIGURE_ARGS =  --with-check=${LOCALBASE} \
 		  --with-openldap=${LOCALBASE} \
 		  --with-openvpn=${LOCALBASE}/include/openvpn
+
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib ${LDFLAGS}"
 
