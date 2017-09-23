@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2017/04/23 21:05:47 stu Exp $
+# $OpenBSD: Makefile,v 1.17 2017/09/23 10:11:41 sthen Exp $
 
 COMMENT =		small footprint implementation of Tcl
 
@@ -11,7 +11,7 @@ MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		c crypto m sqlite3 ssl z
+WANTLIB =		c crypto execinfo m sqlite3 ssl z
 
 GH_ACCOUNT =		msteveb
 GH_PROJECT =		jimtcl
@@ -22,7 +22,8 @@ MODULES =		lang/tcl
 BUILD_DEPENDS =		${MODTCL_BUILD_DEPENDS} \
 			textproc/asciidoc
 
-LIB_DEPENDS =		databases/sqlite3
+LIB_DEPENDS =		databases/sqlite3 \
+			devel/libexecinfo
 
 MAKE_FLAGS =		LIBJIM=libjim.so.${LIBjim_VERSION} \
 			SH_CFLAGS=${PICFLAG} \
