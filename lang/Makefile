@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.205 2017/09/11 23:48:41 bcallah Exp $
+# $OpenBSD: Makefile,v 1.206 2017/09/23 13:31:43 sthen Exp $
 
      SUBDIR =
      SUBDIR += STk
@@ -68,7 +68,6 @@
      SUBDIR += obc
      SUBDIR += ocaml
      SUBDIR += ocaml-camlp4
-     SUBDIR += oo2c
      SUBDIR += open-cobol
      SUBDIR += otcl
      SUBDIR += p5-Language-Ook
@@ -92,7 +91,6 @@
      SUBDIR += scm
      SUBDIR += scm,no_x11
      SUBDIR += seed7
-     SUBDIR += smlnj
      SUBDIR += spidermonkey
      SUBDIR += squeak
      SUBDIR += swi-prolog
