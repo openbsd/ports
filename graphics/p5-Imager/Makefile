@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.39 2016/04/17 19:01:22 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.40 2017/09/23 10:51:07 sthen Exp $
 
 COMMENT=	generate and manipulate images
 
 DISTNAME =	Imager-1.005
 CATEGORIES=	graphics
 MODULES=	cpan
+REVISION =	0
 
 HOMEPAGE=	http://imager.perl.org/
 
@@ -13,7 +14,7 @@ MAINTAINER=	Peter Valchev <pvalchev@sightly.net>
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += freetype gif jpeg m perl png t1 tiff z
+WANTLIB += c freetype gif jpeg m perl png t1 tiff z
 
 LIB_DEPENDS=	devel/t1lib \
 		graphics/png \

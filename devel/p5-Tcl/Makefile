@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.2 2016/03/20 19:56:35 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2017/09/23 10:51:07 sthen Exp $
 
 COMMENT =		Tcl extension module for Perl
 
 DISTNAME =		Tcl-1.02
 CATEGORIES =		devel lang
 MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
+REVISION =		0
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		perl
+WANTLIB += c perl
 
 MODULES =		cpan lang/tcl
 

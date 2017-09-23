@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2017/02/06 20:28:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2017/09/23 10:51:07 sthen Exp $
 
 COMMENT-main=		Redland librdf Perl Bindings
 #COMMENT-lua=		Redland librdf Lua Bindings
@@ -14,7 +14,7 @@ PKGNAME-main=		p5-librdf-$V
 PKGNAME-php=		php-librdf-$V
 PKGNAME-python=		py-librdf-$V
 PKGNAME-ruby=		ruby-librdf-$V
-REVISION-main=		2
+REVISION-main=		3
 REVISION-php=		2
 REVISION-ruby=		2
 
@@ -26,7 +26,7 @@ MASTER_SITES=		http://download.librdf.org/source/
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += rdf
-WANTLIB-main = ${WANTLIB} perl # uses perl ABI
+WANTLIB-main = ${WANTLIB} c perl # uses perl ABI
 
 # -main is the Perl binding, XXX needs pthreads.
 # -lua doesn't work yet.

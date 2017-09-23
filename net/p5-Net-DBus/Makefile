@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.18 2016/03/20 19:56:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2017/09/23 10:51:07 sthen Exp $
 
 COMMENT=	Perl API to the dbus inter-application messaging system
 
 MODULES=	cpan
 DISTNAME=	Net-DBus-1.1.0
 CATEGORIES=	net x11
-REVISION=	0
+REVISION=	1
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # GPL/Artistic
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += dbus-1 perl
+WANTLIB += c dbus-1 perl
 
 MODCPAN_EXAMPLES=	Yes
 MODCPAN_EG_DIR=		examples

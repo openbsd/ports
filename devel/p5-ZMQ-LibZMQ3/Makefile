@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2016/03/20 19:56:42 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2017/09/23 10:51:07 sthen Exp $
 
 COMMENT =	libzmq 3.x wrapper for Perl
 
@@ -6,14 +6,15 @@ MODULES =	cpan
 DISTNAME =	ZMQ-LibZMQ3-1.19
 CATEGORIES =	devel
 
-REVISION =	0
+REVISION =	1
 
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes
 
+WANTLIB += c perl zmq
+
 CPAN_AUTHOR = 	DMAKI
 
-WANTLIB =	perl zmq
 LIB_DEPENDS =	net/zeromq
 RUN_DEPENDS =	devel/p5-ZMQ-Constants
 

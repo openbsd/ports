@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.31 2016/03/20 19:56:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.32 2017/09/23 10:51:07 sthen Exp $
 
 COMMENT=		Berkeley DB module
 
 DISTNAME=		BerkeleyDB-0.55
 CATEGORIES=		databases
 MODULES=		cpan
+REVISION=		0
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += lib/db4/db>=4 perl
+WANTLIB += c lib/db4/db>=4 perl
 
 CONFIGURE_ENV+=		BERKELEYDB_INCLUDE=${LOCALBASE}/include/db4 \
 			BERKELEYDB_LIB=${LOCALBASE}/lib/db4
