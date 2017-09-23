@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2017/07/26 22:45:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.71 2017/09/23 10:27:35 sthen Exp $
 
 COMMENT-main=		Skyrix Object Publishing Environment
 COMMENT-mysql=		SOPE MySQL adaptor
@@ -9,9 +9,9 @@ DISTNAME =		SOPE-${VERSION}
 PKGNAME-main =		sope-${VERSION}
 PKGNAME-mysql =		sope-mysql-${VERSION}
 PKGNAME-postgres =	sope-postgres-${VERSION}
-REVISION-main =		0
-REVISION-mysql =	0
-REVISION-postgres =	0
+REVISION-main =		1
+REVISION-mysql =	1
+REVISION-postgres =	1
 
 SO_MAJOR=	4
 SO_MINOR=	0
@@ -37,10 +37,11 @@ MODGNUSTEP_NEEDS_GUI=	No
 BUILD_DEPENDS =		shells/bash
 
 WANTLIB-main = 		c crypto ssl iconv lber ldap lzma xml2 z \
-			${MODGNUSTEP_WANTLIB} ${LIBCXX}
+			${COMPILER_LIBCXX} ${MODGNUSTEP_WANTLIB}
 WANTLIB-mysql = 	GDLAccess mysqlclient crypto ssl z \
+			${COMPILER_LIBCXX} ${MODGNUSTEP_WANTLIB}
+WANTLIB-postgres = 	GDLAccess EOControl pq ${COMPILER_LIBCXX} \
 			${MODGNUSTEP_WANTLIB}
-WANTLIB-postgres = 	GDLAccess EOControl pq ${MODGNUSTEP_WANTLIB}
 
 LIB_DEPENDS-main=	x11/gnustep/base \
 			databases/openldap \
