@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2017/09/23 10:11:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2017/09/24 10:44:24 sthen Exp $
 
 COMMENT =		small footprint implementation of Tcl
 
 DISTNAME =		jimtcl-0.77pl0
+REVISION =		0
 SHARED_LIBS =		jim 2.3
 CATEGORIES =		lang devel
 HOMEPAGE =		http://jim.tcl.tk/
