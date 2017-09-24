@@ -1,26 +1,22 @@
-# $OpenBSD: Makefile,v 1.32 2017/07/24 21:20:20 nigel Exp $
+# $OpenBSD: Makefile,v 1.33 2017/09/24 14:54:17 nigel Exp $
 
 COMMENT=	download flash video files from various sites
 
-V=		1.25.93
-DISTNAME=	get_flash_videos-$V
-PKGNAME=	${DISTNAME}
-CATEGORIES=	multimedia
+GH_ACCOUNT=	monsieurvideo
+GH_PROJECT=	get-flash-videos
+GH_TAGNAME=	1.25.94
+DISTNAME=	get_flash_videos-${GH_TAGNAME}
 
-HOMEPAGE=	https://get-flash-videos.googlecode.com/
+CATEGORIES=	multimedia perl5
 
 MAINTAINER=	Nigel Taylor <nigel@openbsd.org>
 
 # Apache 2.0
 PERMIT_PACKAGE_CDROM=	Yes
 
-MODULES=	cpan
+MODULES=	perl
+CONFIGURE_STYLE=perl
 PKG_ARCH=	*
-
-GH_ACCOUNT=	monsieurvideo
-GH_PROJECT=	get-flash-videos
-GH_TAGNAME=	$V
-MASTER_SITES=	${MASTER_SITES_GITHUB}
 
 BUILD_DEPENDS=	devel/p5-Tie-IxHash
 # main program, and listed in MYMETA.json
