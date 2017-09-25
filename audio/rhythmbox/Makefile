@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.158 2017/01/03 18:54:48 shadchin Exp $
+# $OpenBSD: Makefile,v 1.159 2017/09/25 21:33:08 sthen Exp $
 
 COMMENT=		integrated music management application for GNOME
 
 GNOME_PROJECT=		rhythmbox
 GNOME_VERSION=		3.4.1
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  rhythmbox-core       0.0      # 7.0
 
@@ -24,11 +24,11 @@ WANTLIB += gio-2.0 girepository-1.0 glib-2.0 gmime-2.6 gmodule-2.0
 WANTLIB += gobject-2.0 gpg-error gpod graphite2 grilo-0.3 gstaudio-1.0
 WANTLIB += gstbase-1.0 gstcontroller-1.0 gstpbutils-1.0 gstreamer-1.0
 WANTLIB += gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3 harfbuzz
-WANTLIB += iconv intl json-glib-1.0 lz4 lzma lzo2 m notify orc-0.4
+WANTLIB += iconv intl json-glib-1.0 lz4 lzma m notify orc-0.4
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre peas-1.0
 WANTLIB += peas-gtk-1.0 pixman-1 plist png pthread pthread-stubs
 WANTLIB += soup-2.4 sqlite3 tdb totem-plparser xcb xcb-render
-WANTLIB += xcb-shm xml2 z
+WANTLIB += xcb-shm xml2 z assuan gpgme-pthread
 
 MODULES=		devel/dconf \
 			lang/python \

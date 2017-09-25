@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.67 2017/07/26 22:45:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.68 2017/09/25 21:33:08 sthen Exp $
 
 COMMENT=	personal search and metasearch
 
 DISTNAME=	pinot-1.06
-REVISION=	11
+REVISION=	12
 
 SHARED_LIBS +=  xapianbackend             0.0 # 1.0
 
@@ -24,7 +24,7 @@ WANTLIB += gthread-2.0 gtk-3 gtkmm-3.0 harfbuzz iconv intl lzma m
 WANTLIB += nghttp2 pango-1.0 pangocairo-1.0 pangoft2-1.0 pangomm-1.4
 WANTLIB += pcre pixman-1 png pthread pthread-stubs sigc-2.0 sqlite3 ssl
 WANTLIB += ${LIBCXX} tag textcat uuid xapian xcb xcb-render xcb-shm
-WANTLIB += xml++-2.6 xml2 z
+WANTLIB += xml++-2.6 xml2 z assuan gpg-error gpgme-pthread
 
 MASTER_SITES=	${MASTER_SITE_GOOGLECODE:=pinot-search/}
 
