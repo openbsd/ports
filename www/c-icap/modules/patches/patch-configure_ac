@@ -1,0 +1,20 @@
+$OpenBSD: patch-configure_ac,v 1.1 2017/09/25 20:05:49 sthen Exp $
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -392,14 +392,12 @@ AC_TRY_COMPILE(
+       #include <sys/un.h>
+        ],
+       [
+-      int main(int argc, char **argv) {
+              struct msghdr mh;
+              struct cmsghdr cmh;
+              mh.msg_control = NULL;
+              mh.msg_controllen = 0;
+              cmh.cmsg_level = SOL_SOCKET;
+              cmh.cmsg_type = SCM_RIGHTS;
+-      }
+       ],
+ AC_DEFINE(HAVE_FD_PASSING,1,[Define HAVE_FD_PASSING if sending fd through unix socket supported])
+ AC_MSG_RESULT(yes), 
