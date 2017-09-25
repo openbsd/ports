@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2017/08/25 18:37:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.49 2017/09/25 21:17:29 sthen Exp $
 
 # XXX: PORTROACH overriden at end of this file.
 
@@ -7,6 +7,7 @@ COMMENT=	framework for making media discovery and browsing easy
 GNOME_PROJECT=	grilo
 GNOME_VERSION=	0.3.4
 API=		0.3
+REVISION=	0
 
 SUBST_VARS=	API
 
@@ -24,11 +25,12 @@ WANTLIB += Xrandr Xrender archive atk-1.0 atk-bridge-2.0 atspi bz2 c
 WANTLIB += cairo cairo-gobject crypto curl dbus-1 epoxy expat ffi
 WANTLIB += fontconfig freetype gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmime-2.6 gmodule-2.0 gobject-2.0 gpg-error
-WANTLIB += graphite2 gthread-2.0 gtk-3 harfbuzz iconv intl lz4 lzma lzo2
+WANTLIB += graphite2 gthread-2.0 gtk-3 harfbuzz iconv intl lz4 lzma
 WANTLIB += m nghttp2 nspr4 nss3 oauth pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 plc4 plds4 png pthread
 WANTLIB += pthread-stubs smime3 softokn3 soup-2.4 sqlite3 ssl ssl3
 WANTLIB += totem-plparser xcb xcb-render xcb-shm xml2 z
+WANTLIB += assuan gpgme-pthread
 
 MODULES=	x11/gnome
 
