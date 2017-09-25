@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2017/07/27 09:34:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2017/09/25 21:25:18 sthen Exp $
 
 COMMENT-main =	KDE 5 library for extracting text and metadata
 COMMENT-locale =localization files of kfilemetadata
@@ -6,7 +6,7 @@ DISTNAME =	kfilemetadata-${VERSION}
 PKGNAME-main =	kf5-kfilemetadata-${VERSION}
 PKGNAME-locale =kf5-kfilemetadata-l10n-${VERSION}
 REVISION-locale =	0
-REVISION-main =	0
+REVISION-main =	1
 
 SHARED_LIBS =	KF5FileMetaData		2.0 # 5.20
 
@@ -17,7 +17,7 @@ MULTI_PACKAGES =	-main -locale
 WANTLIB-locale =
 WANTLIB-main =	${WANTLIB} KF5Archive KF5I18n ${COMPILER_LIBCXX} Qt5Core Qt5Xml
 WANTLIB-main +=	avcodec avformat avutil epub exiv2 poppler-qt5 tag
-WANTLIB-main +=	m
+WANTLIB-main +=	m poppler
 
 BUILD_DEPENDS =		devel/gettext-tools
 

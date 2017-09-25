@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/07/08 20:17:29 juanfra Exp $
+# $OpenBSD: Makefile,v 1.2 2017/09/25 21:25:18 sthen Exp $
 
 COMMENT =		games cataloging tool and emulator launcher
 
-V =			0.11.0
-DISTNAME =		gr-lida-$V
+GH_ACCOUNT =		Monthy
+GH_PROJECT =		gr-lida
+GH_TAGNAME =		v0.11.0
+REVISION =		0
 
 CATEGORIES =		emulators
 
@@ -14,13 +16,9 @@ MAINTAINER =		Juan Francisco Cantero Hurtado <juanfra@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += ICE QtDBus QtGui QtNetwork QtScript QtSql QtXml SM
-WANTLIB += X11 Xext Xi Xinerama Xrender c fontconfig freetype
-WANTLIB += m phonon poppler-qt4 pthread stdc++ z
-
-GH_ACCOUNT =		Monthy
-GH_PROJECT =		gr-lida
-GH_TAGNAME =		v$V
+WANTLIB += ${COMPILER_LIBCXX} ICE QtDBus QtGui QtNetwork QtScript
+WANTLIB += QtSql QtXml SM X11 Xext Xi Xinerama Xrender c fontconfig
+WANTLIB += freetype m phonon poppler-qt4 z
 
 MODULES =		x11/qt4
 LIB_DEPENDS =		print/poppler,,-qt4

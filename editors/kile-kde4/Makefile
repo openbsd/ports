@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2017/07/27 09:55:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2017/09/25 21:25:18 sthen Exp $
 
 CATEGORIES =	editors
 COMMENT =	user-friendly TeX/LaTex editor for KDE
 HOMEPAGE =	http://kile.sourceforge.net/
 DISTNAME =	kile-2.1.3
-REVISION =	4
+REVISION =	5
 
 EXTRACT_SUFX =	.tar.bz2
 MASTER_SITES =  ${MASTER_SITE_SOURCEFORGE:=kile/}
@@ -12,8 +12,7 @@ MASTER_SITES =  ${MASTER_SITE_SOURCEFORGE:=kile/}
 # GPLv2+
 PERMIT_PACKAGE_CDROM =          Yes
 
-WANTLIB += ${COMPILER_LIBCXX}
-WANTLIB =  c m pthread
+WANTLIB += ${COMPILER_LIBCXX} c m pthread
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
 WANTLIB += lib/qt4/QtScript lib/qt4/QtSvg lib/qt4/QtXml
 WANTLIB += ${KDE4LIB}/kdeui ${KDE4LIB}/kfile ${KDE4LIB}/khtml
