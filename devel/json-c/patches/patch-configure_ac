@@ -1,6 +1,7 @@
-$OpenBSD: patch-configure_ac,v 1.2 2016/05/17 16:59:23 jca Exp $
---- configure.ac.orig	Fri Apr 11 03:47:07 2014
-+++ configure.ac	Mon May  9 21:06:15 2016
+$OpenBSD: patch-configure_ac,v 1.3 2017/09/25 10:09:40 sthen Exp $
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
 @@ -43,6 +43,7 @@ AC_FUNC_MEMCMP
  AC_FUNC_MALLOC
  AC_FUNC_REALLOC
@@ -9,15 +10,10 @@ $OpenBSD: patch-configure_ac,v 1.2 2016/05/17 16:59:23 jca Exp $
  AC_CHECK_DECLS([INFINITY], [], [], [[#include <math.h>]])
  AC_CHECK_DECLS([nan], [], [], [[#include <math.h>]])
  AC_CHECK_DECLS([isnan], [], [], [[#include <math.h>]])
-@@ -61,6 +62,21 @@ __asm__(".section .gnu.json_object_get,\n\t.ascii \"Pl
- int main(int c,char* v) {return 0;}
- ]])], [
-     AC_DEFINE(HAS_GNU_WARNING_LONG, 1, [Define if .gnu.warning accepts long strings.])
-+    AC_MSG_RESULT(yes)
-+], [
-+   AC_MSG_RESULT(no)
-+])
-+
+@@ -66,6 +67,21 @@ int main(int c,char* v) {return 0;}
+    AC_MSG_RESULT(no)
+ ])
+ 
 +AC_MSG_CHECKING([if compiler supports __sync_val_compare_and_swap with int objects])
 +AC_LINK_IFELSE([AC_LANG_SOURCE([[
 +int
@@ -28,6 +24,20 @@ $OpenBSD: patch-configure_ac,v 1.2 2016/05/17 16:59:23 jca Exp $
 +}
 +]])], [
 +    AC_DEFINE(HAS___SYNC_VAL_COMPARE_AND_SWAP_INT, 1, [Define if compiler supports __sync_val_compare_and_swap.])
-     AC_MSG_RESULT(yes)
- ], [
-    AC_MSG_RESULT(no)
++    AC_MSG_RESULT(yes)
++], [
++   AC_MSG_RESULT(no)
++])
++
+ AC_LANG_POP([C])
+ 
+ AM_PROG_LIBTOOL
+@@ -81,7 +97,7 @@ AS_IF([test "x$enable_Bsymbolic" = "xcheck"],
+         saved_LDFLAGS="${LDFLAGS}"
+         AC_MSG_CHECKING([for -Bsymbolic-functions linker flag])
+         LDFLAGS=-Wl,-Bsymbolic-functions
+-        AC_TRY_LINK([], [int main (void) { return 0; }],
++        AC_TRY_LINK([], [],
+                     [
+                       AC_MSG_RESULT([yes])
+                       enable_Bsymbolic=yes
