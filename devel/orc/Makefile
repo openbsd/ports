@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2015/10/25 08:45:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2017/09/25 09:16:12 robert Exp $
 
 COMMENT=	library and toolset to operate arrays of data
 
@@ -6,6 +6,8 @@ DISTNAME=	orc-0.4.24
 CATEGORIES=	devel
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/orc/
 EXTRACT_SUFX=	.tar.xz
+
+REVISION=	0
 
 SHARED_LIBS=	orc-0.4		6.0 \
 		orc-test-0.4	5.0

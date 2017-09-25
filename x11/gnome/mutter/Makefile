@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.74 2017/09/10 10:51:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.75 2017/09/25 09:16:13 robert Exp $
 
 COMMENT=		window and compositing manager
 
 GNOME_PROJECT=		mutter
 GNOME_VERSION=		3.24.4
+
+REVISION=		0
 
 API_SUFFIX =	-0
 SHARED_LIBS +=  mutter-0                    0.0 # 0.0
@@ -42,7 +44,8 @@ BUILD_DEPENDS=		devel/gsettings-desktop-schemas>=3.16.0 \
 RUN_DEPENDS=		devel/gsettings-desktop-schemas>=3.16.0 \
 			x11/gnome/zenity
 
-CONFIGURE_STYLE=	gnu
+AUTOCONF_VERSION=	2.69
+CONFIGURE_STYLE=	autoconf
 
 # Required by embedded cogl/clutter forks.
 CONFIGURE_ARGS +=	--with-x
@@ -70,7 +73,7 @@ pre-configure:
 		-e 's,-Werror=redundant-decls,,' \
 		-e 's,-Werror=format-nonliteral,,' \
 		-e 's,-Wvla,,' \
-		${WRKSRC}/{,cogl,clutter}/configure \
+		${WRKSRC}/{,cogl,clutter}/configure{,.ac} \
 		${WRKSRC}/cogl/tests/conform/Makefile.in \
 		${WRKSRC}/cogl/test-fixtures/Makefile.in
 

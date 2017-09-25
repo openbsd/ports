@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2016/08/28 17:44:09 jca Exp $
+# $OpenBSD: Makefile,v 1.11 2017/09/25 09:16:13 robert Exp $
 
 COMMENT-main =		library for registering keyboard shortcuts
 COMMENT-python =	python bindings for keybinder
@@ -8,8 +8,7 @@ DISTNAME =		keybinder-0.3.0
 PKGNAME-main =		${DISTNAME}
 PKGNAME-python =	py-${DISTNAME}
 
-REVISION-main = 	5
-REVISION-python =	5
+REVISION =		6
 
 CATEGORIES =		x11 devel
 

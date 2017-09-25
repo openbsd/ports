@@ -1,0 +1,14 @@
+$OpenBSD: patch-configure_ac,v 1.6 2017/09/25 09:16:13 robert Exp $
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -554,7 +554,7 @@ fi
+ AC_LANG_PUSH(C)
+ AC_CACHE_CHECK([whether va_lists can be copied by value],
+ 	dbus_cv_va_val_copy,
+-	[AC_RUN_IFELSE([AC_LANG_PROGRAM(
++	[AC_RUN_IFELSE([AC_LANG_SOURCE(
+ [[
+ 	#include <stdarg.h>
+ 	#include <stdlib.h>

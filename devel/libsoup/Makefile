@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.107 2017/08/17 09:40:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.108 2017/09/25 09:16:12 robert Exp $
 
 COMMENT =		HTTP client/server library for GNOME
 
 GNOME_PROJECT =		libsoup
 GNOME_VERSION =		2.58.2
+
+REVISION =		0
 
 SHARED_LIBS +=  soup-2.4             9.2      # 9.0
 SHARED_LIBS +=  soup-gnome-2.4       8.0      # 9.0
@@ -36,7 +38,8 @@ LIB_DEPENDS =		databases/sqlite3 \
 			devel/glib2 \
 			textproc/libxml
 
-CONFIGURE_STYLE =	gnu
+AUTOCONF_VERSION =	2.69
+CONFIGURE_STYLE =	autoconf
 CONFIGURE_ARGS =	--with-ntlm-auth=${LOCALBASE}/bin/ntlm_auth
 
 PSEUDO_FLAVORS =	tests

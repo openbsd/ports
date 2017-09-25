@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.36 2017/03/19 15:10:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.37 2017/09/25 09:16:12 robert Exp $
 
 COMMENT=		JSON parser for GLib-based libraries and applications
 
 GNOME_PROJECT=		json-glib
 GNOME_VERSION=		1.2.8
+
+REVISION=		0
 
 SHARED_LIBS +=  json-glib-1.0        5.4      # 200.8
 
@@ -24,6 +26,7 @@ LIB_DEPENDS=		devel/glib2
 
 MODGNOME_TOOLS += docbook gobject-introspection
 
-CONFIGURE_STYLE=	gnu
+AUTOCONF_VERSION=	2.69
+CONFIGURE_STYLE=	autoconf
 
 .include <bsd.port.mk>

@@ -1,0 +1,14 @@
+$OpenBSD: patch-configure_ac,v 1.1 2017/09/25 09:16:12 robert Exp $
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -534,7 +534,7 @@ AC_ARG_ENABLE(Bsymbolic,
+               [SAVED_LDFLAGS="${LDFLAGS}"
+                AC_MSG_CHECKING([for -Bsymbolic-functions linker flag])
+                LDFLAGS=-Wl,-Bsymbolic-functions
+-               AC_TRY_LINK([], [int main (void) { return 0; }],
++               AC_TRY_LINK([], [],
+                            AC_MSG_RESULT(yes)
+                            enable_Bsymbolic=yes,
+                            AC_MSG_RESULT(no)

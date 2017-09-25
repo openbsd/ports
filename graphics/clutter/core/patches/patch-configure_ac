@@ -1,0 +1,31 @@
+$OpenBSD: patch-configure_ac,v 1.1 2017/09/25 09:16:13 robert Exp $
+
+- Don't do bash pattern substitutions.
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -189,7 +189,7 @@ case "$host" in
+     SAVED_CFLAGS="${CFLAGS}"
+     CFLAGS="-fvisibility=hidden"
+     AC_MSG_CHECKING([for -fvisibility=hidden compiler flag])
+-    AC_TRY_COMPILE([], [int main (void) { return 0; }],
++    AC_TRY_COMPILE([], [],
+                    AC_MSG_RESULT(yes)
+                    enable_fvisibility_hidden=yes,
+                    AC_MSG_RESULT(no)
+@@ -984,12 +984,12 @@ AS_CASE([$enable_maintainer_flags],
+ )
+ 
+ # strip leading spaces
+-MAINTAINER_CFLAGS=${MAINTAINER_CFLAGS#*  }
++MAINTAINER_CFLAGS=`echo ${MAINTAINER_CFLAGS} | sed 's,^[ \t]*,,g'`
+ AC_SUBST(MAINTAINER_CFLAGS)
+ 
+ dnl === Dependencies, compiler flags and linker libraries =====================
+ # strip leading space
+-BACKEND_PC_FILES=${BACKEND_PC_FILES#* }
++BACKEND_PC_FILES=`echo ${BACKEND_PC_FILES} | sed 's,^[ \t]*,,g'`
+ 
+ # public dependencies, will fill the Requires: field of clutter.pc
+ CLUTTER_REQUIRES="$CLUTTER_BASE_PC_FILES $BACKEND_PC_FILES"

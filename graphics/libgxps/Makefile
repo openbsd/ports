@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2017/05/31 08:08:16 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2017/09/25 09:16:13 robert Exp $
 
 COMMENT=		GObject library for handling and rendering XPS documents
 
 GNOME_PROJECT=		libgxps
 GNOME_VERSION=		0.2.5
+
+REVISION=		0
 
 SHARED_LIBS +=  gxps                 0.1      # 4.1
 

@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.46 2017/05/21 17:47:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.47 2017/09/25 09:16:13 robert Exp $
 
 COMMENT=		OpenGL-based interactive canvas library
 
 GNOME_PROJECT=		clutter
 GNOME_VERSION=		1.26.2
+
+REVISION=		0
 
 SHARED_LIBS +=  clutter-1.0          6.1   # 2600.0
 
@@ -25,6 +27,8 @@ LIB_DEPENDS=		devel/json-glib \
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 
+AUTOCONF_VERSION=	2.69
+CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS=		--enable-x11-backend \
 			--enable-egl-backend
 

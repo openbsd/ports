@@ -1,0 +1,21 @@
+$OpenBSD: patch-CCache_configure,v 1.1 2017/09/25 09:16:13 robert Exp $
+
+Index: CCache/configure
+--- CCache/configure.orig
++++ CCache/configure
+@@ -3709,15 +3709,7 @@ else
+     cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ #include <stdlib.h>
+-int
+-main ()
+-{
+-
+ void test_fn(void) { qsort(NULL, 0, 0, (__compar_fn_t)NULL); }
+-
+-  ;
+-  return 0;
+-}
+ _ACEOF
+ if ac_fn_c_try_compile "$LINENO"; then :
+   ccache_cv_COMPAR_FN_T=yes

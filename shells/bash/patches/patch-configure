@@ -1,0 +1,15 @@
+$OpenBSD: patch-configure,v 1.5 2017/09/25 09:16:13 robert Exp $
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -10265,8 +10265,7 @@ else
+ int
+ main ()
+ {
+-int main() { long double r; char *foo, bar; r = strtold(foo, &bar);}
+-  ;
++  long double r; char *foo, bar; r = strtold(foo, &bar);
+   return 0;
+ }
+ _ACEOF

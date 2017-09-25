@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.179 2017/09/12 10:18:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.180 2017/09/25 09:16:13 robert Exp $
 
 # XXX add support for libcloudproviders (subpackage?)
 
@@ -15,6 +15,8 @@ COMMENT-guic=		gtk+ icon theme caching utility
 
 GNOME_PROJECT=		gtk+
 GNOME_VERSION=		3.22.21
+
+REVISION=		0
 
 PKGNAME-main=		gtk+3-${GNOME_VERSION}
 PKGNAME-cups=		gtk+3-cups-${GNOME_VERSION}

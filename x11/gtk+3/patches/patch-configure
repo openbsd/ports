@@ -1,0 +1,23 @@
+$OpenBSD: patch-configure,v 1.15 2017/09/25 09:16:13 robert Exp $
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -29142,8 +29142,6 @@ $as_echo_n "checking for -fvisibility=hidden compiler 
+ int
+ main ()
+ {
+-int main (void) { return 0; }
+-  ;
+   return 0;
+ }
+ _ACEOF
+@@ -29246,8 +29244,6 @@ $as_echo_n "checking for -Bsymbolic-functions linker f
+ int
+ main ()
+ {
+-int main (void) { return 0; }
+-  ;
+   return 0;
+ }
+ _ACEOF

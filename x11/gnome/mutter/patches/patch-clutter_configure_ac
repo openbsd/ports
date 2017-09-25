@@ -1,0 +1,14 @@
+$OpenBSD: patch-clutter_configure_ac,v 1.1 2017/09/25 09:16:13 robert Exp $
+
+Index: clutter/configure.ac
+--- clutter/configure.ac.orig
++++ clutter/configure.ac
+@@ -149,7 +149,7 @@ AC_ARG_ENABLE([Bsymbolic],
+                 saved_LDFLAGS="${LDFLAGS}"
+                 AC_MSG_CHECKING([for -Bsymbolic-functions linker flag])
+                 LDFLAGS=-Wl,-Bsymbolic-functions
+-                AC_TRY_LINK([], [int main (void) { return 0; }],
++                AC_TRY_LINK([], [],
+                             [
+                               AC_MSG_RESULT([yes])
+                               enable_Bsymbolic=yes

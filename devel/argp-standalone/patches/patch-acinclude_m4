@@ -1,0 +1,29 @@
+$OpenBSD: patch-acinclude_m4,v 1.1 2017/09/25 09:16:12 robert Exp $
+
+Index: acinclude.m4
+--- acinclude.m4.orig
++++ acinclude.m4
+@@ -282,10 +282,8 @@ dnl Check for gcc's __attribute__ construction
+ AC_DEFUN([LSH_GCC_ATTRIBUTES],
+ [AC_CACHE_CHECK(for __attribute__,
+ 	       lsh_cv_c_attribute,
+-[ AC_TRY_COMPILE([
++[ AC_LANG_SOURCE([[
+ #include <stdlib.h>
+-],
+-[
+ static void foo(void) __attribute__ ((noreturn));
+ 
+ static void __attribute__ ((noreturn))
+@@ -293,9 +291,9 @@ foo(void)
+ {
+   exit(1);
+ }
+-],
++]]),
+ lsh_cv_c_attribute=yes,
+-lsh_cv_c_attribute=no)])
++lsh_cv_c_attribute=no])
+ 
+ AH_TEMPLATE([HAVE_GCC_ATTRIBUTE], [Define if the compiler understands __attribute__])
+ if test "x$lsh_cv_c_attribute" = "xyes"; then

@@ -1,0 +1,14 @@
+$OpenBSD: patch-configure_ac,v 1.1 2017/09/25 09:16:13 robert Exp $
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -134,7 +134,7 @@ case "$host" in
+         SAVED_CFLAGS="${CFLAGS}"
+         CFLAGS="-fvisibility=hidden"
+         AC_MSG_CHECKING([for -fvisibility=hidden compiler flag])
+-        AC_TRY_COMPILE([], [int main (void) { return 0; }],
++        AC_TRY_COMPILE([], [],
+                        AC_MSG_RESULT(yes)
+                        enable_fvisibility_hidden=yes,
+                        AC_MSG_RESULT(no)

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.104 2017/01/28 20:25:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.105 2017/09/25 09:16:13 robert Exp $
 
 COMMENT=	GNU Bourne Again Shell
 
@@ -6,6 +6,8 @@ DISTNAME=	bash-4.4
 PKGNAME=	${DISTNAME}.12
 CATEGORIES=	shells
 HOMEPAGE=	https://www.gnu.org/software/bash/
+
+REVISION=	0
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 

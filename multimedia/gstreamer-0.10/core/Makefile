@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.43 2017/09/12 14:15:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.44 2017/09/25 09:16:13 robert Exp $
 
 COMMENT=		framework for streaming media
 
 V=			0.10.36
 DISTNAME=		gstreamer-${V}
-REVISION=		11
+REVISION=		12
 
 SHARED_LIBS +=  gstreamer-0.10       3.0      # 30.0
 SHARED_LIBS +=  gstbase-0.10         3.0      # 30.0

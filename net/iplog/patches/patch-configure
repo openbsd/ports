@@ -1,0 +1,19 @@
+$OpenBSD: patch-configure,v 1.1 2017/09/25 09:16:13 robert Exp $
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -1189,13 +1189,11 @@ cat > conftest.$ac_ext <<EOF
+ #include "confdefs.h"
+ 
+ #include <stdlib.h>
+-int main() {
+ static void foo(void) __attribute__ ((noreturn));
+ static void
+ foo(void) {
+ 	exit(1);
+ }
+-; return 0; }
+ EOF
+ if { (eval echo configure:1201: \"$ac_compile\") 1>&5; (eval $ac_compile) 2>&5; }; then
+   rm -rf conftest*

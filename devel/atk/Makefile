@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.66 2017/04/11 07:26:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.67 2017/09/25 09:16:12 robert Exp $
 
 COMMENT=		accessibility toolkit used by gtk+
 
 GNOME_PROJECT=		atk
 GNOME_VERSION=		2.24.0
+
+REVISION=		0
 
 SHARED_LIBS +=  atk-1.0              21809.1  # 22409.1
 
@@ -23,6 +25,7 @@ MODGNOME_TOOLS=		gobject-introspection
 
 LIB_DEPENDS=		devel/glib2
 
-CONFIGURE_STYLE=	gnu
+AUTOCONF_VERSION=	2.69
+CONFIGURE_STYLE=	autoconf
 
 .include <bsd.port.mk>
