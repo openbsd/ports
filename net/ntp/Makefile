@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2017/03/27 11:33:40 bluhm Exp $
+# $OpenBSD: Makefile,v 1.73 2017/09/25 12:41:07 sthen Exp $
 
 COMMENT=	Network Time Protocol reference implementation
 
@@ -7,6 +7,7 @@ COMMENT=	Network Time Protocol reference implementation
 # 'pl' for local use.
 
 VERSION=	4.2.8p10
+REVISION=	0
 DISTNAME=	ntp-${VERSION}
 PKGNAME=	ntp-${VERSION:S/p/pl/}
 CATEGORIES=	net
@@ -25,7 +26,8 @@ WANTLIB += m pthread ssl termcap
 # enabling SEPARATE_BUILD causes the parser to be rebuilt .y -> .c,
 # which requires bison
 
-CONFIGURE_STYLE=  gnu
+CONFIGURE_STYLE=  autoconf
+AUTOCONF_VERSION= 2.69
 
 CONFIGURE_ARGS=	--docdir=${TRUEPREFIX}/share/doc/ntp \
 		--enable-parse-clocks \
