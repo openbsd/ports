@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.38 2017/06/12 23:17:17 schwarze Exp $
+# $OpenBSD: Makefile,v 1.39 2017/09/25 19:55:19 sthen Exp $
 
 COMMENT =	compiler cache
 
 DISTNAME =	ccache-3.3.4
+REVISION =	0
 CATEGORIES =	devel
 
 HOMEPAGE =	http://ccache.samba.org/
@@ -16,7 +17,8 @@ WANTLIB += c m z
 
 MASTER_SITES =	http://samba.org/ftp/ccache/
 
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE =	autoconf
+AUTOCONF_VERSION =	2.69
 
 NO_CCACHE =		Yes
 

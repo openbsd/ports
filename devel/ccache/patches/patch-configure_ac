@@ -1,0 +1,17 @@
+$OpenBSD: patch-configure_ac,v 1.1 2017/09/25 19:55:19 sthen Exp $
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -65,8 +65,9 @@ AC_CHECK_FUNCS(utimes)
+ 
+ AC_CACHE_CHECK([for compar_fn_t in stdlib.h],ccache_cv_COMPAR_FN_T, [
+     AC_TRY_COMPILE(
+-        [#include <stdlib.h>],
+-        [void test_fn(void) { qsort(NULL, 0, 0, (__compar_fn_t)NULL); }],
++        [#include <stdlib.h>
++        void test_fn(void) { qsort(NULL, 0, 0, (__compar_fn_t)NULL); }],
++	[],
+         ccache_cv_COMPAR_FN_T=yes,
+         ccache_cv_COMPAR_FN_T=no)])
+ if test x"$ccache_cv_COMPAR_FN_T" = x"yes"; then
