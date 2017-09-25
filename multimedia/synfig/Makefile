@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.16 2017/07/26 22:45:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2017/09/25 21:33:39 sthen Exp $
 
 COMMENT =		2D animation software
-REVISION =		6
+REVISION =		7
 
 V=			1.0.1
 DISTNAME =		synfig-$V
@@ -25,7 +25,7 @@ WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 harfbuzz
 WANTLIB += jbig jpeg lcms2 ltdl lzma m mlt mlt++ mng openjp2 pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB += pthread-stubs sigc-2.0 tiff webp xcb xcb-render xcb-shm
-WANTLIB += xml++-2.6 xml2 z ${COMPILER_LIBCXX}
+WANTLIB += xml++-2.6 xml2 z boost_system-mt lcms ${COMPILER_LIBCXX}
 
 MASTER_SITES=		http://download.tuxfamily.org/synfig/releases/${V}/
 
