@@ -1,0 +1,24 @@
+$OpenBSD: patch-config_ac_lsh_gcc_attributes_m4,v 1.1 2017/09/25 10:37:09 sthen Exp $
+
+Index: config/ac_lsh_gcc_attributes.m4
+--- config/ac_lsh_gcc_attributes.m4.orig
++++ config/ac_lsh_gcc_attributes.m4
+@@ -14,16 +14,14 @@ AC_DEFUN([LSH_GCC_ATTRIBUTES],
+                lsh_cv_c_attribute,
+ [ AC_TRY_COMPILE([
+ #include <stdlib.h>
+-],
+-[
+ static void foo(void) __attribute__ ((noreturn));
+ 
+ static void __attribute__ ((noreturn))
+ foo(void)
+ {
+   exit(1);
+-}
+-],
++}],
++[],
+ lsh_cv_c_attribute=yes,
+ lsh_cv_c_attribute=no)])
+ 

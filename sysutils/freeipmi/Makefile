@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.33 2017/08/22 10:22:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2017/09/25 10:37:09 sthen Exp $
 
 COMMENT=	IPMI library and tools (in- and out-of-band)
 
-V=		1.5.7
-DISTNAME=	freeipmi-${V}
+DISTNAME=	freeipmi-1.5.7
+REVISION=	0
 
 SHARED_LIBS +=	freeipmi             6.3      # 18.3
 SHARED_LIBS +=	ipmiconsole          3.0      # 5.4
@@ -30,7 +30,8 @@ LIB_DEPENDS=	security/libgcrypt \
 SEPARATE_BUILD=	Yes
 USE_GMAKE=	Yes
 
-CONFIGURE_STYLE= gnu
+CONFIGURE_STYLE= autoconf
+AUTOCONF_VERSION= 2.69
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 FAKE_FLAGS=	localstatedir=${PREFIX}/share/examples/freeipmi \
