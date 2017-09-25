@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2017/03/24 15:26:11 fcambus Exp $
+# $OpenBSD: Makefile,v 1.3 2017/09/25 21:15:15 sthen Exp $
 
 COMMENT =	bitmap paint program inspired by Deluxe Paint and Brilliance
 
 V =		2.4
 DISTNAME =	grafx2-${V}.2035-src
 PKGNAME =	grafx2-${V}
+REVISION =	0
 EXTRACT_SUFX =	.tgz
 
 CATEGORIES =	graphics
@@ -16,7 +17,7 @@ MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB +=	SDL SDL_image c m png pthread
+WANTLIB +=	SDL SDL_image c m png pthread z
 
 MASTER_SITES =	http://pulkomandy.tk/projects/GrafX2/downloads/
 
