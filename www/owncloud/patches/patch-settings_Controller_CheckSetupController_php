@@ -1,11 +1,12 @@
-$OpenBSD: patch-settings_Controller_CheckSetupController_php,v 1.1 2017/04/28 10:20:37 ajacoutot Exp $
+$OpenBSD: patch-settings_Controller_CheckSetupController_php,v 1.2 2017/09/25 17:26:18 ajacoutot Exp $
 
 Prevents code integrity check warnings.
 https://doc.owncloud.org/server/10.0/admin_manual/issues/code_signing.html
 
---- settings/Controller/CheckSetupController.php.orig	Fri Apr 28 12:01:41 2017
-+++ settings/Controller/CheckSetupController.php	Fri Apr 28 12:02:14 2017
-@@ -338,7 +338,7 @@ Raw output
+Index: settings/Controller/CheckSetupController.php
+--- settings/Controller/CheckSetupController.php.orig
++++ settings/Controller/CheckSetupController.php
+@@ -326,7 +326,7 @@ Raw output
  				'forwardedForHeadersWorking' => $this->forwardedForHeadersWorking(),
  				'reverseProxyDocs' => $this->urlGenerator->linkToDocs('admin-reverse-proxy'),
  				'isCorrectMemcachedPHPModuleInstalled' => $this->isCorrectMemcachedPHPModuleInstalled(),
