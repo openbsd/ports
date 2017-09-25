@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.108 2017/09/13 12:50:33 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.109 2017/09/25 06:30:43 dcoppa Exp $
 
 COMMENT =	improved dynamic tiling window manager
 
-DISTNAME =	i3-4.14
-REVISION =	0
+DISTNAME =	i3-4.14.1
 CATEGORIES =	x11
 
 EXTRACT_SUFX =	.tar.bz2
@@ -35,6 +34,8 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/dmenu \
 		x11/i3status \
 		x11/p5-AnyEvent-I3
+
+TEST_DEPENDS =	x11/p5-AnyEvent-I3
 
 FAKE_FLAGS =	i3confdir="${PREFIX}/share/examples/i3/"
 
