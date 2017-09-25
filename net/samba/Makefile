@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.240 2017/09/23 22:59:18 jca Exp $
+# $OpenBSD: Makefile,v 1.241 2017/09/25 13:26:52 jca Exp $
 
 VERSION =		4.5.14
 DISTNAME =		samba-${VERSION}
@@ -15,6 +15,7 @@ PKGNAME-tevent =	tevent-${TEVENT_V}
 PKGNAME-util =		samba-util-${VERSION}
 PKGNAME-docs =		samba-docs-${VERSION}
 
+REVISION-main =		0
 REVISION-tevent =	1
 REVISION-ldb =		0
 
