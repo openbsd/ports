@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2017/06/22 08:49:30 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.26 2017/09/25 18:00:28 ajacoutot Exp $
 @bin bin/stellarium
 @man man/man1/stellarium.1
 share/appdata/
@@ -537,6 +537,7 @@ share/stellarium/nebulae/default/n7635-vasey.png
 share/stellarium/nebulae/default/n869-884spano.png
 share/stellarium/nebulae/default/n891oleg.png
 share/stellarium/nebulae/default/names.dat
+share/stellarium/nebulae/default/outlines.dat
 share/stellarium/nebulae/default/pleiades.png
 share/stellarium/nebulae/default/rcw158-trev.png
 share/stellarium/nebulae/default/rho-a00.png
@@ -1332,8 +1333,8 @@ share/stellarium/skycultures/western/aquila.png
 share/stellarium/skycultures/western/ara.png
 share/stellarium/skycultures/western/argonavis.png
 share/stellarium/skycultures/western/aries.png
+share/stellarium/skycultures/western/asterism_lines.fab
 share/stellarium/skycultures/western/asterism_names.eng.fab
-share/stellarium/skycultures/western/asterismship.fab
 share/stellarium/skycultures/western/auriga.png
 share/stellarium/skycultures/western/bootes.png
 share/stellarium/skycultures/western/caelum.png
@@ -1473,6 +1474,7 @@ share/stellarium/textures/cross.png
 share/stellarium/textures/deimos.png
 share/stellarium/textures/dione.png
 share/stellarium/textures/earth-clouds.png
+share/stellarium/textures/earth-shadow-new.png
 share/stellarium/textures/earth-shadow.png
 share/stellarium/textures/earth_cmap.png
 share/stellarium/textures/earthmap.png
@@ -1577,6 +1579,7 @@ share/stellarium/translations/stellarium-remotecontrol/sk.qm
 share/stellarium/translations/stellarium-remotecontrol/sl.qm
 share/stellarium/translations/stellarium-remotecontrol/sr.qm
 share/stellarium/translations/stellarium-remotecontrol/sv.qm
+share/stellarium/translations/stellarium-remotecontrol/sw.qm
 share/stellarium/translations/stellarium-remotecontrol/th.qm
 share/stellarium/translations/stellarium-remotecontrol/tr.qm
 share/stellarium/translations/stellarium-remotecontrol/tt.qm
