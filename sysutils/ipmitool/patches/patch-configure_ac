@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure_ac,v 1.4 2016/10/12 11:56:53 sthen Exp $
+$OpenBSD: patch-configure_ac,v 1.5 2017/09/25 10:06:12 sthen Exp $
 
 Disable the noisy warnings, it makes it hard to see the more important basic
 problems (missing prototypes for internal functions, etc - lots of sloppiness)
@@ -6,8 +6,11 @@ in amongst the chaff.
 
 Prefer libedit over libreadline.
 
---- configure.ac.orig	Sat Oct  8 09:08:59 2016
-+++ configure.ac	Wed Oct 12 12:46:02 2016
+Fix bad AC_TRY_COMPILE check.
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
 @@ -32,7 +32,7 @@ AC_CHECK_FUNCS([alarm gethostbyname getaddrinfo getifa
  AC_CHECK_FUNCS([memmove memset strchr strdup strerror])
  AC_CHECK_FUNCS([getpassphrase])
@@ -26,3 +29,29 @@ Prefer libedit over libreadline.
  	if test "x$have_curses" != "xyes" || test "x$have_readline" != "xyes"; then
  		xenable_ipmishell=no
  	fi
+@@ -617,9 +617,7 @@ if test "x$xenable_file_security" != "xno"; then
+ fi
+ 
+ 
+-AC_TRY_COMPILE([],[
+-	#include <stdio.h>
+-	
++AC_TRY_COMPILE([#include <stdio.h>],[
+ 	struct packstruct {
+ 		unsigned char t0       :5;
+ 		unsigned char t1       :5;
+@@ -628,14 +626,10 @@ AC_TRY_COMPILE([],[
+ 		unsigned char t4       :4;
+ 	} __attribute__ ((packed));
+ 	
+-	int
+-	main(int argc, char ** argv)
+-	{
+ 	if(sizeof(struct packstruct) != 3)
+ 	return(1);
+ 	else
+ 	return(0);
+-	}
+ 	],
+ 	[],
+ 	[AC_DEFINE(HAVE_PRAGMA_PACK,[1],
