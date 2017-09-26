@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.208 2017/08/24 09:45:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.209 2017/09/26 12:21:54 landry Exp $
 
 COMMENT-main =		Mozilla application suite
 COMMENT-lightning =	Mozilla Seamonkey calendar extension
 ONLY_FOR_ARCHS =	amd64 i386
 
 MOZILLA_VERSION =	2.48
-REVISION-main =		0
+REVISION-main =		1
 MOZILLA_PROJECT =	seamonkey
 MOZILLA_CODENAME =	suite
 
@@ -47,6 +47,8 @@ CONFIGURE_ARGS +=	--prefix=${PREFIX}
 LIB_DEPENDS-lightning = STEM->=${MOZILLA_VERSION:S/b/beta/}:${BUILD_PKGPATH},-main
 WANTLIB-lightning =	lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/xul \
 			c m ${COMPILER_LIBCXX} nspr4 plc4 plds4 pthread
+
+WANTLIB += X11-xcb xcb xcb-shm
 
 # build lightning xpi
 CONFIGURE_ARGS +=	--enable-calendar
