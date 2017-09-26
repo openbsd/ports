@@ -1,0 +1,38 @@
+$OpenBSD: patch-configure_ac,v 1.1 2017/09/26 15:58:21 dcoppa Exp $
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -68,11 +68,9 @@ AC_MSG_CHECKING([if $CC allows signed enums])
+ ac_save_CFLAGS="$CFLAGS"
+ CFLAGS="$CFLAGS -Wall -Wextra -Werror"
+ AC_TRY_COMPILE([], [
+-               void t (void)
+-               {
+-                 enum {A, B} a=A;
+-                 if (a < 0) {}
+-               } ],
++               enum {A, B} a=A;
++               if (a < 0) {}
++               ],
+                [ AC_DEFINE([ALLOW_SIGNED_ENUMS], [],
+                            [Define if the compiler implements enums as signed values.])
+                  AC_MSG_RESULT(yes) ],
+@@ -238,7 +236,7 @@ if test "x$HAVE_OGG" = "xyes" ; then
+     LIBS="$LIBS $OGG_LIBS"
+ 
+     AC_TRY_COMPILE([#include <ogg/ogg.h>],
+-                   [int f(const ogg_page * cog){return ogg_page_bos(cog);}],
++                   [const ogg_page *cog; return ogg_page_bos(cog);],
+                    [ AC_DEFINE([OGG_H_CONST_CORRECT], [], [Define if <ogg/ogg.h> is const-correct])
+                      AC_MSG_RESULT(yes) ],
+                    [ AC_MSG_RESULT(no) ])
+@@ -380,7 +378,7 @@ AC_COMPILE_IFELSE(
+ dnl Add some useful warnings if we have gcc.
+ dnl changequote(,)dnl
+ if test "x$ac_cv_prog_gcc" = xyes ; then
+-  CFLAGS="$CFLAGS -Wall -Wextra -g -std=gnu99 -Wdeclaration-after-statement -Wno-unused"
++  CFLAGS="$CFLAGS -Wall -Wextra -g -std=gnu99 -Wno-unused"
+ fi
+ dnl changequote([,])dnl
+ 
