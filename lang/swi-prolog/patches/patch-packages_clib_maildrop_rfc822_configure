@@ -1,0 +1,48 @@
+$OpenBSD: patch-packages_clib_maildrop_rfc822_configure,v 1.1 2017/09/26 17:06:05 naddy Exp $
+
+Index: packages/clib/maildrop/rfc822/configure
+--- packages/clib/maildrop/rfc822/configure.orig
++++ packages/clib/maildrop/rfc822/configure
+@@ -3975,14 +3975,9 @@ int
+ main ()
+ {
+ 
+-int main()
+-{
+ time_t	t=altzone;
+ int	offset = -timezone;
+ 
+-	return (0);
+-}
+-
+   ;
+   return 0;
+ }
+@@ -3999,14 +3994,9 @@ int
+ main ()
+ {
+ 
+-int main()
+-{
+ int	n=daylight;
+ int	offset = -timezone;
+ 
+-	return (0);
+-}
+-
+   ;
+   return 0;
+ }
+@@ -4025,12 +4015,7 @@ int
+ main ()
+ {
+ 
+-int main()
+-{
+ long	n=dummy.tm_gmtoff;
+-
+-	return (0);
+-}
+ 
+   ;
+   return 0;
