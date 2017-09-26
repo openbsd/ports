@@ -1,6 +1,7 @@
-$OpenBSD: patch-configure_ac,v 1.9 2017/04/16 20:36:58 sthen Exp $
---- configure.ac.orig	Tue May  6 06:28:33 2014
-+++ configure.ac	Sun Apr 16 13:40:03 2017
+$OpenBSD: patch-configure_ac,v 1.10 2017/09/26 14:25:57 dcoppa Exp $
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
 @@ -100,9 +100,6 @@ AM_CONDITIONAL(SILC_X86_64, test x$cpu_x86_64 = xtrue)
  AM_CONDITIONAL(SILC_POWERPC, test x$cpu_ppc = xtrue)
  AM_CONDITIONAL(SILC_IA64, test x$cpu_ia64 = xtrue)
@@ -29,7 +30,59 @@ $OpenBSD: patch-configure_ac,v 1.9 2017/04/16 20:36:58 sthen Exp $
    unset tmp_CFLAGS
  ])
  
-@@ -485,59 +483,9 @@ fi
+@@ -387,8 +385,7 @@ AC_TRY_COMPILE(
+   [
+     #include <stdarg.h>
+     #include <stdlib.h>
+-  ],
+-  [
++
+     int t(int x, ...)
+     {
+       va_list va, cp;
+@@ -400,12 +397,11 @@ AC_TRY_COMPILE(
+       va_end(cp);
+       return 0;
+     }
+-    int main()
+-    {
+-      return t(0, 0xff11);
+-    }
+   ],
+   [
++    return t(0, 0xff11);
++  ],
++  [
+     AC_DEFINE([HAVE_VA_COPY], [], [HAVE_VA_COPY])
+     AC_MSG_RESULT(yes)
+     va_copy=true
+@@ -422,8 +418,7 @@ if test x$va_copy = xfalse; then
+   [
+     #include <stdarg.h>
+     #include <stdlib.h>
+-  ],
+-  [
++
+     int t(int x, ...)
+     {
+       va_list va, cp;
+@@ -435,12 +430,11 @@ if test x$va_copy = xfalse; then
+       va_end(cp);
+       return 0;
+     }
+-    int main()
+-    {
+-      return t(0, 0xff11);
+-    }
+   ],
+   [
++    return t(0, 0xff11);
++  ],
++  [
+     AC_DEFINE([HAVE___VA_COPY], [], [HAVE___VA_COPY])
+     AC_MSG_RESULT(yes)
+     va_copy=true
+@@ -485,59 +479,9 @@ fi
  ## Compiler and compiler flag checks
  ##
  
@@ -91,7 +144,7 @@ $OpenBSD: patch-configure_ac,v 1.9 2017/04/16 20:36:58 sthen Exp $
  #
  # Workaround a bug in GCC 2.x which causes memory exhaustion
  # when compiling sha1 with optimizations on UltraSPARC.
-@@ -593,55 +541,6 @@ AC_DEFINE_UNQUOTED([SILC_DOCDIR], "$DOCDIR", [SILC_DOC
+@@ -593,55 +537,6 @@ AC_DEFINE_UNQUOTED([SILC_DOCDIR], "$DOCDIR", [SILC_DOC
  compile_libs=true
  LIBSUBDIR=lib
  
@@ -147,7 +200,7 @@ $OpenBSD: patch-configure_ac,v 1.9 2017/04/16 20:36:58 sthen Exp $
  # SOCKS4 support checking
  #
  SAVE_LIBS="$LIBS"
-@@ -1311,7 +1210,7 @@ fi
+@@ -1311,7 +1206,7 @@ fi
  
  SILC_ADD_CC_FLAGS(SILC_CRYPTO, -fno-regmove)
  if test x$summary_debug = xno -a x$want_cc_optimizations = xtrue; then
@@ -156,7 +209,7 @@ $OpenBSD: patch-configure_ac,v 1.9 2017/04/16 20:36:58 sthen Exp $
  fi
  
  AC_SUBST(SILC_CRYPTO_CFLAGS)
-@@ -1347,7 +1246,6 @@ if test x$compile_libs = xtrue; then
+@@ -1347,7 +1242,6 @@ if test x$compile_libs = xtrue; then
  AC_MSG_NOTICE([configuring math library])
  
  if test x$want_cc_optimizations = xtrue; then
