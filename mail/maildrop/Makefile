@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.62 2017/08/04 23:17:27 giovanni Exp $
+# $OpenBSD: Makefile,v 1.63 2017/09/26 17:37:51 giovanni Exp $
 
 COMMENT-main=		mail delivery agent with filtering abilities
 COMMENT-utils=		quota tools for the Courier mail suite
 
 V=			2.9.0
+REVISION=		0
 DISTNAME=		maildrop-$V
 PKGNAME-main=		maildrop-$V
 FULLPKGNAME-utils=	courier-utils-$V
@@ -26,7 +27,11 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 COMPILER =		gcc
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	autoconf
+AUTOCONF_VERSION=	2.69
+# only libs/rfc822/configure.ac is patched
+AUTOCONF_DIR=           ${WRKSRC}/libs/rfc822
+
 CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib" \
 			CPPFLAGS="${CFLAGS:C/ *$//} -I${LOCALBASE}/include" \
 			ac_cv_header_fam_h=no \
