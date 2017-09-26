@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2017/09/26 09:55:07 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.35 2017/09/26 10:18:41 dcoppa Exp $
 
 COMMENT=		curses based frontend for mpd
 
@@ -28,9 +28,11 @@ LIB_DEPENDS=		devel/gettext \
 			devel/glib2 \
 			audio/libmpdclient>=2.4
 
-CONFIGURE_ARGS=		-Dcurses='ncursesw' \
+CONFIGURE_ARGS=		-Dcolors=ncursesw \
+			-Dcurses=ncursesw \
 			-Dlirc=false \
-			-Dlocale=true
+			-Dlocale=true \
+			-Dmouse=true
 CONFIGURE_ENV=		CPP=${CPP} \
 			CPPFLAGS="-D_GNU_SOURCE \
 				  -D_DEFAULT_SOURCE \
