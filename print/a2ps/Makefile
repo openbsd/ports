@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.61 2016/03/11 19:59:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.62 2017/09/26 08:57:19 ajacoutot Exp $
 
 COMMENT=	format files for printing on PostScript printers
 
 DISTNAME=	a2ps-4.14
-REVISION=	11
+REVISION=	12
 
 SHARED_LIBS +=  a2ps                 2.0      # 2.0
 
@@ -46,7 +46,8 @@ CONFIGURE_ENV+= ac_cv_prog_COM_$p=no
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/configure \
-		${WRKSRC}/etc/a2ps_cfg.in
+		${WRKSRC}/etc/a2ps_cfg.in \
+		${WRKSRC}/etc/a2ps-site.cfg.in
 
 pre-build:
 	/usr/bin/touch $(WRKSRC)/doc/*.info

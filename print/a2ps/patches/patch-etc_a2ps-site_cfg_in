@@ -1,0 +1,15 @@
+$OpenBSD: patch-etc_a2ps-site_cfg_in,v 1.1 2017/09/26 08:57:19 ajacoutot Exp $
+
+Index: etc/a2ps-site.cfg.in
+--- etc/a2ps-site.cfg.in.orig
++++ etc/a2ps-site.cfg.in
+@@ -36,6 +36,9 @@ DefaultPPD: level1
+ #   #{lp} there should be the name of the printer.
+ #
+ 
++# When using cups(1), use its lpr(1) instead of the base one.
++#Variable: lp.default #{lp.hook} ${LOCALBASE}/bin/lpr #{lp.options}
++
+ ### DefaultPrinter
+ # DefaultPrinter is the printer which is called upon `a2ps -d'.
+ DefaultPrinter: | #{lp.default}

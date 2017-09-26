@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1 2012/11/11 09:12:55 ajacoutot Exp $
+$OpenBSD: README,v 1.2 2017/09/26 08:57:19 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -15,3 +15,6 @@ They can be configured under ${SYSCONFDIR}/a2ps{,-site}.cfg.
 
 By default, images are converted using the convert(1) utility from the
 ImageMagick package.
+
+When using cups(1), lp.default should be set to ${LOCALBASE}/bin/lpr in
+${SYSCONFDIR}/a2ps-site.cfg.
