@@ -1,0 +1,14 @@
+$OpenBSD: patch-configure_in,v 1.1 2017/09/26 16:21:10 dcoppa Exp $
+
+Index: configure.in
+--- configure.in.orig
++++ configure.in
+@@ -78,7 +78,7 @@ dnl At least under OSX static linking cannot be used d
+ AC_MSG_CHECKING([whether static linking is possible])
+ LDFLAGS_ORIG="$LDFLAGS"
+ LDFLAGS="$LDFLAGS $STATIC"
+-AC_TRY_LINK(, [int main() { return 0; }], AC_MSG_RESULT(yes),
++AC_TRY_LINK(, [], AC_MSG_RESULT(yes),
+ [
+    AC_MSG_RESULT(no)
+    AC_MSG_WARN(integrit will be built without static linking)
