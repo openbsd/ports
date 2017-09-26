@@ -1,0 +1,13 @@
+$OpenBSD: patch-test_meson_build,v 1.1 2017/09/26 09:55:07 dcoppa Exp $
+
+Index: test/meson.build
+--- test/meson.build.orig
++++ test/meson.build
+@@ -7,7 +7,6 @@ executable(
+   ),
+   include_directories: inc,
+   dependencies: [
+-    curses_dep,
+     glib_dep,
+   ],
+ )

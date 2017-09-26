@@ -1,0 +1,100 @@
+$OpenBSD: patch-meson_build,v 1.1 2017/09/26 09:55:07 dcoppa Exp $
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -55,73 +55,11 @@ conf.set('ENABLE_ASYNC_CONNECT', async_connect)
+ 
+ conf.set('ENABLE_MULTIBYTE', get_option('multibyte'))
+ 
+-curses = get_option('curses')
+-if curses == 'ncursesw'
+-  curses_dep = dependency('ncursesw')
+-elif curses == 'ncurses'
+-  curses_dep = dependency('ncurses')
+-else
+-  curses_dep = dependency('ncursesw', required: false)
+-  if curses_dep.found()
+-    curses = 'ncursesw'
+-  else
+-    curses_dep = dependency('ncurses', required: false)
++conf.set('HAVE_NCURSESW', true)
++conf.set('HAVE_NCURSES_H', true)
++conf.set('HAVE_CURSES_ENHANCED', true)
++conf.set('HAVE_GETMOUSE', true)
+ 
+-    if curses_dep.found()
+-      curses = 'ncurses'
+-    else
+-      # TODO: find other curses implementation (pdcurses?)
+-    endif
+-  endif
+-endif
+-
+-if curses == 'ncursesw'
+-  conf.set('HAVE_NCURSESW', true)
+-  curses_enhanced = true
+-  curses_color = true
+-  if cc.has_header('ncursesw/curses.h', dependencies: curses_dep)
+-    conf.set('HAVE_NCURSESW_CURSES_H', true)
+-  elif cc.has_header('ncursesw.h', dependencies: curses_dep)
+-    conf.set('HAVE_NCURSESW_H', true)
+-  else
+-    error('No ncursesw header found')
+-  endif
+-elif curses == 'ncurses'
+-  conf.set('HAVE_NCURSES', true)
+-  curses_enhanced = true
+-  curses_color = true
+-  if cc.has_header('ncurses/curses.h', dependencies: curses_dep)
+-    conf.set('HAVE_NCURSES_CURSES_H', true)
+-  elif cc.has_header('ncurses.h', dependencies: curses_dep)
+-    conf.set('HAVE_NCURSES_H', true)
+-  else
+-    error('No ncurses header found')
+-  endif
+-else
+-  if cc.has_header('curses.h', dependencies: curses_dep)
+-    conf.set('HAVE_CURSES_H', true)
+-
+-    # TODO: test this with pdcurses
+-    curses_enhanced = cc.has_header_symbol('curses.h', '_XOPEN_CURSES', dependencies: curses_dep)
+-    curses_color = curses_enhanced or cc.has_header_symbol('curses.h', 'COLOR_PAIR', dependencies: curses_dep)
+-  else
+-    error('No curses header found')
+-  endif
+-endif
+-conf.set('HAVE_CURSES_ENHANCED', curses_enhanced)
+-
+-enable_mouse = get_option('mouse')
+-if enable_mouse == 'false'
+-  enable_mouse = false
+-elif cc.has_function('getmouse', dependencies: curses_dep)
+-  enable_mouse = true
+-elif enable_mouse == 'auto'
+-  enable_mouse = false
+-else
+-  error('getmouse() not available')
+-endif
+-conf.set('HAVE_GETMOUSE', enable_mouse)
+-
+ enable_lirc = get_option('lirc')
+ if enable_lirc == 'false'
+   enable_lirc = false
+@@ -142,7 +80,7 @@ else
+ endif
+ conf.set('ENABLE_LIRC', enable_lirc)
+ 
+-conf.set('ENABLE_COLORS', curses_color)
++conf.set('ENABLE_COLORS', true)
+ 
+ common_cflags = [
+   # for getaddrinfo() and sigaction() with glibc
+@@ -350,7 +288,6 @@ ncmpc = executable('ncmpc',
+   include_directories: inc,
+   dependencies: [
+     glib_dep,
+-    curses_dep,
+     lirc_dep,
+     libmpdclient_dep,
+   ],

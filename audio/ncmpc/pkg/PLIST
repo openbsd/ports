@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.6 2011/09/17 13:30:15 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2017/09/26 09:55:07 dcoppa Exp $
 @bin bin/ncmpc
 @man man/man1/ncmpc.1
 share/doc/ncmpc/
 share/doc/ncmpc/AUTHORS
+share/doc/ncmpc/COPYING
 share/doc/ncmpc/NEWS
-share/doc/ncmpc/README
+share/doc/ncmpc/README.rst
 share/examples/ncmpc/
 share/examples/ncmpc/config.sample
 share/examples/ncmpc/keys.sample
