@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2017/09/25 09:16:13 robert Exp $
+# $OpenBSD: Makefile,v 1.76 2017/09/26 14:28:58 robert Exp $
 
 COMMENT=		window and compositing manager
 
@@ -44,8 +44,9 @@ BUILD_DEPENDS=		devel/gsettings-desktop-schemas>=3.16.0 \
 RUN_DEPENDS=		devel/gsettings-desktop-schemas>=3.16.0 \
 			x11/gnome/zenity
 
+AUTOMAKE_VERSION=	1.15
 AUTOCONF_VERSION=	2.69
-CONFIGURE_STYLE=	autoconf
+CONFIGURE_STYLE=	autoconf automake
 
 # Required by embedded cogl/clutter forks.
 CONFIGURE_ARGS +=	--with-x
