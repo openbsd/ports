@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/09/21 19:03:55 rsadowski Exp $
-@conflict qt-creator-<4.3.1p1
+@comment $OpenBSD: PLIST,v 1.2 2017/09/27 10:06:22 espie Exp $
+@conflict qt-creator-<=4.3.1p1
 @bin bin/qbs
 @bin bin/qbs-config
 @bin bin/qbs-config-ui
