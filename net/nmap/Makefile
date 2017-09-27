@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.129 2017/08/09 20:43:53 giovanni Exp $
+# $OpenBSD: Makefile,v 1.130 2017/09/27 09:50:00 dcoppa Exp $
 
 COMMENT-main=	scan ports and fingerprint stack of network hosts
 COMMENT-zenmap=	graphical frontend for nmap
@@ -7,6 +7,7 @@ MODPY_EGG_VERSION=	7.60
 DISTNAME=		nmap-${MODPY_EGG_VERSION}
 PKGNAME-main=		${DISTNAME}
 PKGNAME-zenmap=		nmap-zenmap-${MODPY_EGG_VERSION}
+REVISION-main=		0
 
 CATEGORIES=	net security
 MASTER_SITES=	http://nmap.org/dist/
@@ -27,7 +28,9 @@ MODLUA_VERSION=	5.3
 MODULES=	lang/python \
 		lang/lua
 
-CONFIGURE_STYLE=gnu
+CONFIGURE_STYLE=autoconf
+AUTOCONF_VERSION=2.69
+
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -I${MODLUA_INCL_DIR}" \
 		CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
@@ -62,5 +65,7 @@ pre-configure:
 	${SUBST_CMD} ${WRKSRC}/zenmap/install_scripts/unix/su-to-zenmap.sh \
 		${WRKSRC}/zenmap/install_scripts/unix/zenmap.desktop \
 		${WRKSRC}/zenmap/install_scripts/unix/zenmap-root.desktop
+	@cd ${WRKSRC}/nping ; env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		autoconf
 
 .include <bsd.port.mk>
