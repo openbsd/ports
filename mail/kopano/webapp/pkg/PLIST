@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2017/09/15 13:20:35 robert Exp $
+@comment $OpenBSD: PLIST,v 1.3 2017/09/27 08:37:20 robert Exp $
 @conflict zarafa-webapp-*
 @pkgpath mail/zarafa/webapp
 kopano-webapp/
@@ -378,7 +378,7 @@ kopano-webapp/client/resources/images/buttons/triangle_right_stop_outline.png
 kopano-webapp/client/resources/images/default_contact_profile.png
 kopano-webapp/client/resources/images/favicon.ico
 kopano-webapp/client/resources/images/icons/
-kopano-webapp/client/resources/images/icons-sa58055939d.png
+kopano-webapp/client/resources/images/icons-s2479700b37.png
 kopano-webapp/client/resources/images/icons/arrow_down_l.png
 kopano-webapp/client/resources/images/icons/arrow_down_l_white.png
 kopano-webapp/client/resources/images/icons/arrow_down_s.png
@@ -436,11 +436,10 @@ kopano-webapp/client/resources/images/icons/icon_download_zip.png
 kopano-webapp/client/resources/images/icons/icon_edit_recipient.png
 kopano-webapp/client/resources/images/icons/icon_favorites.png
 kopano-webapp/client/resources/images/icons/icon_flag.png
-kopano-webapp/client/resources/images/icons/icon_flag_blue.png
+kopano-webapp/client/resources/images/icons/icon_flag_Reminder.png
 kopano-webapp/client/resources/images/icons/icon_flag_complete.png
-kopano-webapp/client/resources/images/icons/icon_flag_green.png
 kopano-webapp/client/resources/images/icons/icon_flag_orange.png
-kopano-webapp/client/resources/images/icons/icon_flag_purple.png
+kopano-webapp/client/resources/images/icons/icon_flag_orange_dark.png
 kopano-webapp/client/resources/images/icons/icon_flag_red.png
 kopano-webapp/client/resources/images/icons/icon_flag_yellow.png
 kopano-webapp/client/resources/images/icons/icon_folder_calendar.png
@@ -1848,6 +1847,7 @@ kopano-webapp/server/includes/core/class.response.php
 kopano-webapp/server/includes/core/class.settings.php
 kopano-webapp/server/includes/core/class.state.php
 kopano-webapp/server/includes/core/class.theming.php
+kopano-webapp/server/includes/core/class.todolist.php
 kopano-webapp/server/includes/core/class.webappauthentication.php
 kopano-webapp/server/includes/core/class.webappsession.php
 kopano-webapp/server/includes/core/constants.php
@@ -1915,6 +1915,7 @@ kopano-webapp/server/includes/notifiers/class.hierarchynotifier.php
 kopano-webapp/server/includes/notifiers/class.listnotifier.php
 kopano-webapp/server/includes/notifiers/class.maillistnotifier.php
 kopano-webapp/server/includes/notifiers/class.newmailnotifier.php
+kopano-webapp/server/includes/notifiers/class.newtodotasknotifier.php
 kopano-webapp/server/includes/notifiers/class.notifier.php
 kopano-webapp/server/includes/notifiers/class.stickynotelistnotifier.php
 kopano-webapp/server/includes/notifiers/class.tasklistnotifier.php
