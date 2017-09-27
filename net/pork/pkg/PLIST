@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.9 2006/07/21 01:55:24 jolan Exp $
-bin/pork
+@comment $OpenBSD: PLIST,v 1.10 2017/09/27 06:25:58 dcoppa Exp $
+@bin bin/pork
 share/doc/pork/
 share/doc/pork/QUICK_START
 share/doc/pork/README

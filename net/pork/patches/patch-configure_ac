@@ -1,0 +1,15 @@
+$OpenBSD: patch-configure_ac,v 1.1 2017/09/27 06:25:58 dcoppa Exp $
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -179,8 +179,7 @@ AC_DEFINE_UNQUOTED(SIZEOF_VOID_P, $ac_cv_sizeof_void_p
+ 
+ AC_MSG_CHECKING(for __attribute__)
+ AC_TRY_COMPILE([#include <stdlib.h>],
+-			[static void foo(void) __attribute__ ((unused));
+-			static void foo(void) { exit(1); }],
++			[static void foo(void) __attribute__ ((unused));],
+ 			[AC_MSG_RESULT(yes)],
+ 			[AC_DEFINE(HAVE___ATTRIBUTE__, 1, [Define if your compiler has __attribute__])
+ 			AC_MSG_RESULT(no)])
