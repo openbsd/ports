@@ -1,0 +1,18 @@
+$OpenBSD: patch-configure_ac,v 1.1 2017/09/27 16:33:21 dcoppa Exp $
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -167,9 +167,10 @@ fi
+ 
+ # when possible hide stuff we don't want to export
+ AC_MSG_CHECKING(for visibility __attribute__)
+-AC_TRY_COMPILE([], [
++AC_TRY_COMPILE([
+    void __attribute__ ((visibility ("hidden"))) doit (void) {}
+-   void main () { doit (); }
++], [
++   doit ();
+ ], [
+    have_visibility_hidden=yes
+    AC_MSG_RESULT(yes)

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2016/08/28 16:05:24 jca Exp $
+# $OpenBSD: Makefile,v 1.24 2017/09/27 16:33:21 dcoppa Exp $
 
 COMMENT=	GDI+ comptible API
 
 DISTNAME=	libgdiplus-4.2
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	x11 devel
 
@@ -30,7 +30,9 @@ LIB_DEPENDS=	devel/gettext \
 		graphics/libexif \
 		graphics/giflib
 
-CONFIGURE_STYLE=gnu
+CONFIGURE_STYLE=autoconf
+AUTOCONF_VERSION=2.69
+
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
 		CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include"
 CONFIGURE_ARGS=	--with-pango
