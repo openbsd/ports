@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/09/13 10:38:41 robert Exp $
+# $OpenBSD: Makefile,v 1.2 2017/09/27 08:36:53 robert Exp $
 
 COMMENT-main=	MS Exchange groupware suite replacement
 COMMENT-mapi=	kopano MAPI extensions for PHP
@@ -39,18 +39,16 @@ BUILD_DEPENDS=\
 		textproc/xmlto \
 		sysutils/coreutils
 
-# libcurl is searched by configure but unused
-BUILD_DEPENDS += net/curl
-
 WANTLIB += ${MODGETTEXT_WANTLIB}
-WANTLIB += m pthread z vmime execinfo icudata icui18n icuuc
-WANTLIB += boost_filesystem-mt boost_system-mt lzma crypto
+WANTLIB += c m pthread z vmime execinfo icudata icui18n icuuc
+WANTLIB += lzma crypto
 
 WANTLIB-main += ${WANTLIB} ${MODPY_WANTLIB}
-WANTLIB-main += c ical icalss lber-2.4
-WANTLIB-main += mysqlclient ncurses sasl2 ssl util xml2
-WANTLIB-main += ldap_r-2.4 gsoapssl++
-WANTLIB-main += ffi ${LIBCXX}
+WANTLIB-main += curl nghttp2 ical icalss
+WANTLIB-main += mysqlclient ncurses sasl2 ssl xml2
+WANTLIB-main += gsoapssl++
+WANTLIB-main += ${LIBCXX}
+WANTLIB-main += icalvcal lber ldap_r
 
 RUN_DEPENDS-main=${MODGETTEXT_RUN_DEPENDS} \
 		${MODPY_RUN_DEPENDS} \
@@ -62,10 +60,10 @@ RUN_DEPENDS-main=${MODGETTEXT_RUN_DEPENDS} \
 LIB_DEPENDS-main= ${MODGETTEXT_LIB_DEPENDS} \
 		databases/mariadb \
 		databases/openldap \
-		devel/boost \
 		devel/gsoap>=2.8.50 \
 		devel/libexecinfo \
 		devel/libvmime>=0.9.4 \
+		net/curl \
 		textproc/icu4c \
 		textproc/libical \
 		textproc/libxml
@@ -73,7 +71,10 @@ LIB_DEPENDS-main= ${MODGETTEXT_LIB_DEPENDS} \
 WANTLIB-mapi += ${WANTLIB}
 WANTLIB-mapi += ical icalss mapi
 WANTLIB-mapi += xml2
-WANTLIB-mapi += ffi ${LIBCXX}
+WANTLIB-mapi += ${LIBCXX}
+WANTLIB-mapi += icalvcal kcfreebusy kcicalmapi kcinetmapi kcmapi
+WANTLIB-mapi += kcutil
+
 
 LIB_DEPENDS-mapi= ${BASE_PKGPATH}>=${V}
 RUN_DEPENDS-mapi= ${MODPHP_RUN_DEPENDS} \
@@ -100,23 +101,15 @@ CONFIGURE_ENV=	CPPFLAGS="-fpermissive -I${LOCALBASE}/include \
 		PHP_SYSCONF_DIR="${SYSCONFDIR}/php-${MODPHP_VERSION}" \
 		ac_cv_lib_pam_pam_start=no
 CONFIGURE_ARGS=	--disable-static \
-		--with-gsoap-prefix=${LOCALBASE} \
 		--with-mapi-configdir=${SYSCONFDIR}/mapi \
 		--with-userscript-prefix=${SYSCONFDIR}/kopano/userscripts \
 		--with-quotatemplate-prefix=${SYSCONFDIR}/kopano/quotamail \
 		--with-searchscripts-prefix=${SYSCONFDIR}/kopano/searchscripts \
-		--with-mapi-timezonedir=${LOCALBASE}/share/kopano/timezones \
 		--enable-release \
-		--enable-oss \
 		--enable-unicode \
 		--enable-python \
-		--enable-icu \
 		--with-distro=openbsd \
-		--with-vmime-prefix=${LOCALBASE}/include \
 		--with-ical-prefix=${LOCALBASE}/include \
-		--with-clucene-lib-prefix=${LOCALBASE}/lib \
-		--with-clucene-include-prefix=${LOCALBASE}/include \
-		--with-python=${MODPY_BIN} \
 		--with-php-config=${MODPHP_PHP_CONFIG}
 
 # force build with clucene >= 2.x

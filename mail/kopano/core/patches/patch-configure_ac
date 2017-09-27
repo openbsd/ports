@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure_ac,v 1.1.1.1 2017/09/13 10:38:42 robert Exp $
+$OpenBSD: patch-configure_ac,v 1.2 2017/09/27 08:36:53 robert Exp $
 
 Index: configure.ac
 --- configure.ac.orig
@@ -26,16 +26,21 @@ Index: configure.ac
  		]
  	)
  	dnl We should be using ncurses.h - or is portability to non-ncurses
-@@ -515,7 +517,7 @@ AC_SUBST(ICONV_LIBS)
- LIBS=$LIBS_system
- 
- AC_SEARCH_LIBS([crypt_r], [crypt], [CRYPT_LIBS="-lcrypt"; LIBS="$LIBS_system"])
--AC_SEARCH_LIBS([clock_gettime], [rt], [clock_LIBS="-lrt"; LIBS="$LIBS_system"])
-+AC_SEARCH_LIBS([clock_gettime], [rt], [clock_LIBS=""; LIBS="$LIBS_system"])
- AC_SUBST([CRYPT_LIBS])
- AC_SUBST([clock_LIBS])
- PKG_CHECK_EXISTS([libssl],
-@@ -690,6 +692,8 @@ ZCPPFLAGS="$ZCPPFLAGS $icu_uc_CFLAGS $icu_i18n_CFLAGS"
+@@ -520,11 +522,11 @@ AC_SEARCH_LIBS([crypt_r], [crypt], [
+ ])
+ LIBS="$LIBS_system"
+ AC_SEARCH_LIBS([clock_gettime], [rt], [
+-	AS_IF([test "$LIBS" = "$LIBS_system"], [clock_LIBS=""], [clock_LIBS="-lrt"])
++	AS_IF([test "$LIBS" = "$LIBS_system"], [clock_LIBS=""], [clock_LIBS=""])
+ ])
+ LIBS="$LIBS_system"
+ AC_SEARCH_LIBS([timer_create], [rt], [
+-	AS_IF([test "$LIBS" = "$LIBS_system"], [timer_LIBS=""], [timer_LIBS="-lrt"])
++	AS_IF([test "$LIBS" = "$LIBS_system"], [timer_LIBS=""], [timer_LIBS=""])
+ ])
+ dnl AC_SEARCH_LIBS does not set any define in config.h, so check again
+ AC_CHECK_FUNCS([timer_create])
+@@ -704,6 +706,8 @@ ZCPPFLAGS="$ZCPPFLAGS $icu_uc_CFLAGS $icu_i18n_CFLAGS"
  # all libs for programs, because functions are in static common stuff
  PROG_LIBS="$UUID_LIBS $INTL_LIBS $ICONV_LIBS $GZ_LIBS"
  AC_SUBST(PROG_LIBS)

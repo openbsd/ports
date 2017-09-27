@@ -1,4 +1,4 @@
-$OpenBSD: patch-installer_linux_dagent_cfg,v 1.1.1.1 2017/09/13 10:38:42 robert Exp $
+$OpenBSD: patch-installer_linux_dagent_cfg,v 1.2 2017/09/27 08:36:53 robert Exp $
 
 Index: installer/linux/dagent.cfg
 --- installer/linux/dagent.cfg.orig
@@ -24,10 +24,3 @@ Index: installer/linux/dagent.cfg
  
  ##############################################################
  # DAGENT RULE SETTINGS
-@@ -160,4 +160,4 @@ no_double_forward = no
- 
- # A custom-defined reply message to the user with a rule forwarding to a
- # domain not in forward_whitelist_domains.
--#forward_whitelist_domain_message = The Kopano mail system has rejected your request to forward your e-mail with subject %subject (via mail filters) to %sender: the operation is not permitted.\n\nRemove the rule or contact your administrator about the forward_whitelist_domains setting.
-\ No newline at end of file
-+#forward_whitelist_domain_message = The Kopano mail system has rejected your request to forward your e-mail with subject %subject (via mail filters) to %sender: the operation is not permitted.\n\nRemove the rule or contact your administrator about the forward_whitelist_domains setting.

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2017/09/13 10:38:42 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2017/09/27 08:36:53 robert Exp $
 @conflict zarafa-*
 @pkgpath mail/zarafa/zarafa,-main
 @newgroup _kopano:793
@@ -98,7 +98,6 @@ include/libfreebusy/ECEnumFBBlock.h
 include/libfreebusy/ECFBBlockList.h
 include/libfreebusy/ECFreeBusyData.h
 include/libfreebusy/ECFreeBusySupport.h
-include/libfreebusy/ECFreeBusyUpdate.h
 include/libfreebusy/PublishFreeBusy.h
 include/libfreebusy/freebusy.h
 include/libfreebusy/freebusyguid.h

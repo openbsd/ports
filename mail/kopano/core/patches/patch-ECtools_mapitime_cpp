@@ -1,9 +1,9 @@
-$OpenBSD: patch-ECtools_mapitime_cpp,v 1.1.1.1 2017/09/13 10:38:41 robert Exp $
+$OpenBSD: patch-ECtools_mapitime_cpp,v 1.2 2017/09/27 08:36:53 robert Exp $
 
 Index: ECtools/mapitime.cpp
 --- ECtools/mapitime.cpp.orig
 +++ ECtools/mapitime.cpp
-@@ -19,6 +19,17 @@
+@@ -20,6 +20,17 @@
  #	include <curl/curl.h>
  #endif
  
