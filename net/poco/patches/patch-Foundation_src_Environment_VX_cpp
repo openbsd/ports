@@ -1,0 +1,14 @@
+$OpenBSD: patch-Foundation_src_Environment_VX_cpp,v 1.1 2017/09/27 08:13:00 phessler Exp $
+
+Index: Foundation/src/Environment_VX.cpp
+--- Foundation/src/Environment_VX.cpp.orig
++++ Foundation/src/Environment_VX.cpp
+@@ -130,6 +130,8 @@ std::string EnvironmentImpl::osArchitectureImpl()
+ 	return "ppc";
+ #elif POCO_ARCH == POCO_ARCH_ARM
+ 	return "arm";
++#elif POCO_ARCH == POCO_ARCH_AARCH64
++	return "aarch64";
+ #elif POCO_ARCH == POCO_ARCH_SH
+ 	return "sh";
+ #else
