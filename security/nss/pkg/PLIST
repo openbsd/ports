@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2017/06/19 04:48:49 landry Exp $
+@comment $OpenBSD: PLIST,v 1.12 2017/09/27 06:45:19 landry Exp $
 @bin bin/certutil
 @bin bin/cmsutil
 @bin bin/crlutil
@@ -102,6 +102,7 @@ include/nss/shsign.h
 include/nss/smime.h
 include/nss/ssl.h
 include/nss/sslerr.h
+include/nss/sslexp.h
 include/nss/sslproto.h
 include/nss/sslt.h
 include/nss/utilmodt.h
