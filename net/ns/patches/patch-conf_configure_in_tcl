@@ -1,0 +1,13 @@
+$OpenBSD: patch-conf_configure_in_tcl,v 1.1 2017/09/27 10:35:22 dcoppa Exp $
+
+Index: conf/configure.in.tcl
+--- conf/configure.in.tcl.orig
++++ conf/configure.in.tcl
+@@ -19,6 +19,7 @@ TCL_OLD_ALT_VERS=`echo $TCL_OLD_VERS | sed 's/\.//'`
+ dnl These paths are pretty hellish and should probably be pruned.
+ dnl Also, 64-bit support is just hacked on for the common cases.
+ TCL_TCL_PLACES_D="$d \
++		$d/lib/tcl/tcl$TCL_VERS \
+ 		$d/lib64/tcl$TCL_HI_VERS \
+ 		$d/lib64/tcl$TCL_VERS \
+ 		$d/lib64/tcl$TCL_ALT_VERS \

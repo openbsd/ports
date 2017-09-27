@@ -1,0 +1,13 @@
+$OpenBSD: patch-conf_configure_in_tk,v 1.1 2017/09/27 10:35:22 dcoppa Exp $
+
+Index: conf/configure.in.tk
+--- conf/configure.in.tk.orig
++++ conf/configure.in.tk
+@@ -19,6 +19,7 @@ TK_OLD_ALT_VERS=`echo $TK_OLD_VERS | sed 's/\.//'`
+ 
+ dnl Also, 64-bit support is just hacked on for the common cases.
+ TK_TCL_PLACES_D="$d \
++                $d/lib/tcl/tk$TK_VERS \
+                 $d/lib64/tk$TK_VERS \
+                 $d/lib64/tk$TK_ALT_VERS \
+                 $d/lib64/tk$TK_VERS \

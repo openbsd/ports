@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.47 2017/07/26 22:45:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.48 2017/09/27 10:35:22 dcoppa Exp $
 
 COMMENT=	UCB/LBNL Network Simulator Version 2
 
 V=		2.35
 DISTNAME=	ns-src-$V
 PKGNAME=	ns-$V
-REVISION =	2
+REVISION =	3
 CATEGORIES=	net
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
 
@@ -25,7 +25,9 @@ BUILD_DEPENDS=	devel/tclcl
 LIB_DEPENDS=	lang/otcl \
 		${MODTK_LIB_DEPENDS}
 
-CONFIGURE_STYLE=gnu
+CONFIGURE_STYLE=autoconf no-autoheader
+AUTOCONF_VERSION=2.68
+
 CONFIGURE_ARGS=	--with-tcl-ver=${MODTCL_VERSION} \
 		--with-tk-ver=${MODTK_VERSION} \
 		--with-tcl=${LOCALBASE} \
