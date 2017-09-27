@@ -1,0 +1,41 @@
+$OpenBSD: patch-configure_in,v 1.1 2017/09/27 14:03:26 dcoppa Exp $
+
+Index: configure.in
+--- configure.in.orig
++++ configure.in
+@@ -136,16 +136,16 @@ AC_MSG_RESULT($enableval);
+ 
+ dnl Checks predeclared identifers of function names
+ AC_MSG_CHECKING(ANSI predeclared __func__)
+-AC_TRY_COMPILE([],
+-[void func(void) {printf("%s\n", __func__);}],
++AC_TRY_COMPILE([#include <stdio.h>],
++[printf("%s\n", __func__);],
+ 	[AC_MSG_RESULT(yes)
+ 	 pred_func_id=ansi],
+ 	[AC_MSG_RESULT(no)
+ 	 pred_func_id=no])
+ if test $pred_func_id = no; then
+ AC_MSG_CHECKING(gcc predelcared __FUNCTION__)
+-	AC_TRY_COMPILE([],
+-	[void func(void) {printf("%s\n", __FUNCTION__);}],
++	AC_TRY_COMPILE([#include <stdio.h>],
++	[printf("%s\n", __FUNCTION__);],
+ 		[AC_MSG_RESULT(yes)
+ 		 pred_func_id=gcc],
+ 		[AC_MSG_RESULT(no)
+@@ -181,11 +181,11 @@ esac
+ dnl Checks the argument order of TAILQ_FOREACH_REVERSE if it exists
+ if test $tailq_foreach = yes ; then
+ 	AC_MSG_CHECKING(argument order of TAILQ_FOREACH_REVERSE)
+-	AC_TRY_COMPILE([],
+-	[
++	AC_TRY_COMPILE([
+ 	#include <stdio.h>
+ 	#include <sys/queue.h>
+-
++	],
++	[
+ 	TAILQ_HEAD(tailhead, entry) head = TAILQ_HEAD_INITIALIZER(head);
+ 	struct entry {
+ 		TAILQ_ENTRY(entry) entries;

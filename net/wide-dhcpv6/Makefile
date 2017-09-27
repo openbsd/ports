@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2016/12/25 17:02:25 jca Exp $
+# $OpenBSD: Makefile,v 1.15 2017/09/27 14:03:26 dcoppa Exp $
 
 COMMENT=	client and servers for the WIDE DHCPv6 protocol
 
 DISTNAME=	wide-dhcpv6-20080615
-REVISION=	7
+REVISION=	8
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=wide-dhcpv6/}
 
@@ -12,7 +12,8 @@ HOMEPAGE=	http://wide-dhcpv6.sourceforge.net/
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	autoconf no-autoheader
+AUTOCONF_VERSION=	2.59
 
 WANTLIB=		c
 NO_TEST=		Yes
