@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile.inc,v 1.2 2017/09/15 13:19:57 robert Exp $
+# $OpenBSD: Makefile.inc,v 1.3 2017/09/27 14:09:37 robert Exp $
 
-V?=		8.3.5
-BUILD?=		1379
-DISTNAME?=	kopanocore-${V}~${BUILD}
+V?=		8.4.90
+BUILD?=		394
+DISTNAME?=	kopanocore-${V}.${BUILD}
 EXTRACT_SUFX?=	.tar.xz
 
 CATEGORIES+=	mail
