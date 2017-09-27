@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2014/03/24 16:42:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.27 2017/09/27 11:22:43 dcoppa Exp $
 
 COMMENT=	FTP proxy
 
 DISTNAME=	jftpgw-0.13.5
-REVISION=	0
+REVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.mcknight.de/jftpgw/
 
@@ -14,7 +14,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=		c
 
 SEPARATE_BUILD=	Yes
-CONFIGURE_STYLE= gnu
+CONFIGURE_STYLE= autoconf
+AUTOCONF_VERSION=2.59
 CONFIGURE_ARGS+= --enable-crypt \
 		 --with-confpath="${SYSCONFDIR}" \
 		 --with-logpath="/var/log"
