@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.130 2017/09/27 09:50:00 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.131 2017/09/27 11:03:27 dcoppa Exp $
 
 COMMENT-main=	scan ports and fingerprint stack of network hosts
 COMMENT-zenmap=	graphical frontend for nmap
@@ -65,7 +65,7 @@ pre-configure:
 	${SUBST_CMD} ${WRKSRC}/zenmap/install_scripts/unix/su-to-zenmap.sh \
 		${WRKSRC}/zenmap/install_scripts/unix/zenmap.desktop \
 		${WRKSRC}/zenmap/install_scripts/unix/zenmap-root.desktop
-	@cd ${WRKSRC}/nping ; env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		autoconf
+	@cd ${WRKSRC}/nping ; env PATH=${PORTPATH} \
+		AUTOCONF_VERSION=${AUTOCONF_VERSION} autoconf
 
 .include <bsd.port.mk>
