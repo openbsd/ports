@@ -1,0 +1,16 @@
+$OpenBSD: patch-configure_ac,v 1.1 2017/09/27 07:20:12 dcoppa Exp $
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -61,9 +61,7 @@ _ldflags=${LDFLAGS}
+ AC_MSG_CHECKING([compiler flag -Wno-pointer-sign])
+ _cflags="${CFLAGS}"
+ CFLAGS="$CFLAGS -Wno-pointer-sign"
+-AC_TRY_COMPILE( , [
+-    int main(void) { return 0; }
+-  ],[
++AC_TRY_COMPILE( , [],[
+     AC_MSG_RESULT([yes])
+   ],[
+     AC_MSG_RESULT([no])

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2016/01/11 11:04:21 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.5 2017/09/27 07:20:12 dcoppa Exp $
 
 COMMENT =		graphical disk map
 DISTNAME =		gdmap-0.8.1
 CATEGORIES =		sysutils x11
-REVISION =		1
+REVISION =		2
 
 HOMEPAGE =		http://gdmap.sourceforge.net/
 
@@ -29,7 +29,9 @@ RUN_DEPENDS =		devel/desktop-file-utils
 
 USE_GMAKE =		Yes
 
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE =	autoconf
+AUTOCONF_VERSION =	2.61
+
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
