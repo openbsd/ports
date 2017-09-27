@@ -1,10 +1,11 @@
-$OpenBSD: patch-gitweb_gitweb_perl,v 1.28 2016/12/04 15:29:46 dcoppa Exp $
+$OpenBSD: patch-gitweb_gitweb_perl,v 1.29 2017/09/27 15:06:08 danj Exp $
 
 This prevents the following error: '-T and -B not implemented on filehandles'
 
---- gitweb/gitweb.perl.orig	Tue Nov 29 22:06:51 2016
-+++ gitweb/gitweb.perl	Fri Dec  2 16:09:37 2016
-@@ -7003,7 +7003,7 @@ sub git_blob_plain {
+Index: gitweb/gitweb.perl
+--- gitweb/gitweb.perl.orig
++++ gitweb/gitweb.perl
+@@ -7005,7 +7005,7 @@ sub git_blob_plain {
  		$expires = "+1d";
  	}
  
@@ -13,7 +14,7 @@ This prevents the following error: '-T and -B not implemented on filehandles'
  		or die_error(500, "Open git-cat-file blob '$hash' failed");
  
  	# content-type (can include charset)
-@@ -7065,7 +7065,7 @@ sub git_blob {
+@@ -7067,7 +7067,7 @@ sub git_blob {
  	}
  
  	my $have_blame = gitweb_check_feature('blame');
