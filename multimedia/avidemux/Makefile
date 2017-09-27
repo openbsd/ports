@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.52 2017/07/26 22:45:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.53 2017/09/27 20:11:21 naddy Exp $
+
+BROKEN-amd64=	inline assembly and C++ syntax errors with clang
 
 COMMENT=	free video editor
 
