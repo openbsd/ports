@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.6 2017/07/26 22:45:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2017/09/27 20:36:17 jca Exp $
+
+# XXX lots of undefined references to Qt functions
+NOT_FOR_ARCHS =		${CLANG_ARCHS}
 
 COMMENT=	wysiwyw (what you see is what you want) editing platform
 

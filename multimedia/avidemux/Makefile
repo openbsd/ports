@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.53 2017/09/27 20:11:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.54 2017/09/27 20:36:17 jca Exp $
 
-BROKEN-amd64=	inline assembly and C++ syntax errors with clang
+# XXX i386/fft_sse.c:172:43: error: unknown token in expression
+NOT_FOR_ARCHS =		${CLANG_ARCHS}
 
 COMMENT=	free video editor
 
