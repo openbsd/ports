@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2017/02/21 09:19:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2017/09/27 16:01:06 dcoppa Exp $
 
 # libgs from ghostscript is only provided on shared libs archs
 
@@ -6,7 +6,7 @@ COMMENT=	library for rendering Postscript documents
 
 DISTNAME=	libspectre-0.2.8
 CATEGORIES=	print
-REVISION=	1
+REVISION=	2
 
 SHARED_LIBS +=  spectre              0.1      # 2.8
 
@@ -30,7 +30,8 @@ LIB_DEPENDS=	devel/gettext \
 		ghostscript-*-!no_x11:print/ghostscript/gnu
 
 
-CONFIGURE_STYLE=gnu
+CONFIGURE_STYLE=autoconf
+AUTOCONF_VERSION=2.69
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
