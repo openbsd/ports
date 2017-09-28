@@ -1,0 +1,60 @@
+$OpenBSD: patch-configure_in,v 1.1 2017/09/28 19:16:36 dcoppa Exp $
+
+Index: configure.in
+--- configure.in.orig
++++ configure.in
+@@ -138,7 +138,7 @@ if test $DO_FILEUTILS_CHECK = yes; then
+ fi
+ 
+ dnl Check for pOS or -target=p.os
+-if [[ $target = "p.os" ]]; then
++if [[ "$target" = "p.os" ]]; then
+     HAVE_POS=yes
+ else
+   AC_MSG_CHECKING(for pOS)
+@@ -617,9 +617,8 @@ fi
+ 
+ if test $ac_cv_c_compiler_gnu = yes; then
+   WARNING_CFLAGS="-Wall -Wno-unused -Wno-format -W -Wmissing-prototypes -Wstrict-prototypes"
+-  OPTIMIZE_CFLAGS="-O2 -fomit-frame-pointer"
+-  dnl Not nice, but needed to turn off -g
+-  CFLAGS=
++  OPTIMIZE_CFLAGS="-fomit-frame-pointer"
++  
+ fi
+ 
+ if [[ "x$DO_PROFILING" = "xyes" ]]; then
+@@ -710,21 +709,21 @@ dnl See if we have something better than GCC 2.7.
+ if [[ "x$HAVEGCC27" = "xyes" -a "x$HAVEI386" = "xyes" ]]; then
+   SAVECFLAGS=$CFLAGS
+   CFLAGS="$CFLAGS -mno-schedule-prologue"
+-  AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[]], [[int main(){return 0;}]])],[NO_SCHED_CFLAGS="-mno-schedule-prologue"],[])
++  AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[]], [[]])],[NO_SCHED_CFLAGS="-mno-schedule-prologue"],[])
+   CFLAGS=$SAVECFLAGS
+ fi
+ 
+ if [[ "x$HAVEGCC27" = "xyes" -a "x$HAVEI386" = "xyes" ]]; then
+   SAVECFLAGS=$CFLAGS
+   CFLAGS="$CFLAGS -mpreferred-stack-boundary=2"
+-  AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[]], [[int main(){return 0;}]])],[SAVECFLAGS=$CFLAGS],[])
++  AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[]], [[]])],[SAVECFLAGS=$CFLAGS],[])
+   CFLAGS=$SAVECFLAGS
+ fi
+ 
+ if [[ "x$HAVEGCC27" = "xyes" -a "x$HAVEI386" = "xyes" ]]; then
+   SAVECFLAGS=$CFLAGS
+   CFLAGS="$CFLAGS -fno-reorder-blocks"
+-  AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[]], [[int main(){return 0;}]])],[NO_REORDER_CFLAGS="-fno-reorder-blocks"],[])
++  AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[]], [[]])],[NO_REORDER_CFLAGS="-fno-reorder-blocks"],[])
+   CFLAGS=$SAVECFLAGS
+ fi
+ 
+@@ -734,7 +733,7 @@ if [[ "x$HAVEGCC27" = "xyes" -a "x$HAVEI386" = "xyes" 
+   SAVECFLAGS=$CFLAGS
+   CFLAGS="$CFLAGS -fno-exceptions"
+   NOEXCEPTIONS=no
+-  AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[]], [[int main(){return 0;}]])],[NOEXCEPTIONS=yes],[])
++  AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[]], [[]])],[NOEXCEPTIONS=yes],[])
+   if [[ "x$NOEXCEPTIONS" = "xno" ]]; then
+     CFLAGS=$SAVECFLAGS
+   fi

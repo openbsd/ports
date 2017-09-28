@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.24 2013/03/11 11:06:04 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2017/09/28 19:16:36 dcoppa Exp $
 
 COMMENT=	UAE amiga emulator
 DISTNAME=	uae-0.8.25
-REVISION=	8
+REVISION=	9
 CATEGORIES=	emulators x11
 
 HOMEPAGE=	http://uae.coresystems.de/
@@ -23,7 +23,8 @@ MODULES=	devel/gettext
 LIB_DEPENDS+=	x11/gtk+2 \
 		devel/sdl
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	autoconf
+AUTOCONF_VERSION=	2.59
 CONFIGURE_ARGS+=	--enable-dga --enable-vidmode \
 			--with-sdl-sound
 CONFIGURE_ENV=		ac_cv_header_sys_audioio_h=no
