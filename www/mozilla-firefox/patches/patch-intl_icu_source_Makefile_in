@@ -1,4 +1,4 @@
-$OpenBSD: patch-intl_icu_source_Makefile_in,v 1.4 2017/03/07 15:31:38 landry Exp $
+$OpenBSD: patch-intl_icu_source_Makefile_in,v 1.5 2017/09/28 16:39:11 landry Exp $
 
 https://bugzilla.mozilla.org/show_bug.cgi?id=990196
 
@@ -9,14 +9,15 @@ gmake[6]: *** [config/icu-config] Error 71
 gmake[6]: Leaving directory '/usr/obj/ports/firefox-29.0beta3/build-amd64/js/src/intl/icu/target'
 Makefile:77: recipe for target 'buildicu' failed
 
---- intl/icu/source/Makefile.in.orig	Mon Jan 23 17:13:47 2017
-+++ intl/icu/source/Makefile.in	Sat Feb 18 15:15:27 2017
-@@ -325,7 +325,7 @@ $(top_builddir)/config/pkgdataMakefile:
+Index: intl/icu/source/Makefile.in
+--- intl/icu/source/Makefile.in.orig
++++ intl/icu/source/Makefile.in
+@@ -329,7 +329,7 @@ $(top_builddir)/config/pkgdataMakefile:
  
  $(top_builddir)/config/icu-config: $(top_builddir)/Makefile $(top_srcdir)/config/icu-config-top $(top_srcdir)/config/icu-config-bottom $(top_builddir)/config/Makefile.inc @platform_make_fragment@ $(top_srcdir)/config/make2sh.sed
  	-$(RMV) $@
 -	$(INSTALL_SCRIPT) $(top_srcdir)/config/icu-config-top $@
 +	install -m 555 $(top_srcdir)/config/icu-config-top $@
  	chmod u+w $@
- 	@echo "# Following from @platform_make_fragment@" >> $@
- 	LC_ALL=C sed -f $(top_srcdir)/config/make2sh.sed < $(top_builddir)/config/Makefile.inc | grep -v '#M#' | uniq >> $@
+ 	@echo "# Following from icu/icu4c/source/config/Makefile.inc" >> $@
+ 	LC_ALL=C $(SED) -f $(top_srcdir)/config/make2sh.sed < $(top_builddir)/config/Makefile.inc | grep -v '#M#' | uniq >> $@

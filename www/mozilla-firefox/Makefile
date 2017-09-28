@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.328 2017/08/28 09:00:19 landry Exp $
+# $OpenBSD: Makefile,v 1.329 2017/09/28 16:39:11 landry Exp $
 
 COMMENT =	Mozilla web browser
 ONLY_FOR_ARCHS =	amd64 i386
 
 # Don't forget to bump www/firefox-i18n after updates.
 
-MOZILLA_VERSION =	55.0.3
+MOZILLA_VERSION =	56.0
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
 
-SO_VERSION =	73.0
+SO_VERSION =	74.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 MOZILLA_LIBS =	mozavcodec mozavutil mozgtk xul clearkey lgpllibs
@@ -31,6 +31,9 @@ MODCLANG_ARCHS =	amd64 i386
 MOZILLA_USE_BUNDLED_LIBEVENT =	Yes
 # firefox >= 46 defaults to gtk+3
 MOZILLA_USE_GTK3 = Yes
+# 56 requires 59.1
+MOZILLA_USE_BUNDLED_ICU =	Yes
+
 # firefox >= 53 needs rust
 BUILD_DEPENDS +=	lang/rust
 
@@ -42,8 +45,15 @@ NO_TEST =	Yes
 CONFIGURE_STYLE =	simple
 CONFIGURE_ARGS +=	--prefix=${PREFIX}
 
+# needed to find sqlite header
+CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include"
+
 # bug 857628
 CONFIGURE_ARGS +=	--enable-pie
+CONFIGURE_ARGS +=	--enable-release #1386371
+CONFIGURE_ARGS +=	--enable-rust-simd #1261841
+# bug 1341234
+CONFIGURE_ARGS +=	--disable-stylo
 
 post-install:
 	${SUBST_MAN} ${FILESDIR}/mozilla-firefox.1 \
