@@ -1,0 +1,14 @@
+$OpenBSD: patch-common_m4_gst-dowhile_m4,v 1.1 2017/09/28 21:14:37 naddy Exp $
+
+Index: common/m4/gst-dowhile.m4
+--- common/m4/gst-dowhile.m4.orig
++++ common/m4/gst-dowhile.m4
+@@ -13,7 +13,7 @@ AC_CACHE_CHECK([for working do while(0) macros], _cv_g
+ 	#define STMT_START do
+ 	#define STMT_END while(0)
+ 	#define STMT_TEST STMT_START { i = 0; } STMT_END
+-	int main(void) { int i = 1; STMT_TEST; return i; }],
++	int i = 1; STMT_TEST; return i;],
+ 	[_cv_g_support_dowhile_macros=yes],
+ 	[_cv_g_support_dowhile_macros=no],
+ 	[_cv_g_support_dowhile_macros=yes])
