@@ -1,0 +1,17 @@
+$OpenBSD: patch-m4_ac_attribute_m4,v 1.1 2017/09/28 15:08:54 dcoppa Exp $
+
+Index: m4/ac_attribute.m4
+--- m4/ac_attribute.m4.orig
++++ m4/ac_attribute.m4
+@@ -16,8 +16,9 @@ AC_DEFUN([AC_C___ATTRIBUTE__],
+ [
+   AC_MSG_CHECKING(for __attribute__)
+   AC_CACHE_VAL(ac_cv___attribute__, [
+-  AC_TRY_COMPILE([#include <stdlib.h>],
+-  [int func(int x); int foo(int x __attribute__ ((unused))) { exit(1); }],
++  AC_TRY_COMPILE([#include <stdlib.h>
++  int func(int x); int foo(int x __attribute__ ((unused))) { exit(1); }],
++  [],
+   ac_cv___attribute__=yes, ac_cv___attribute__=no)])
+   if test "$ac_cv___attribute__" = "yes"; then
+     AC_DEFINE(HAVE___ATTRIBUTE__, 1, [Define to 1 if your compiler has __attribute__])
