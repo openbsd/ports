@@ -1,0 +1,48 @@
+$OpenBSD: patch-configure_ac,v 1.7 2017/09/28 23:39:53 naddy Exp $
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -173,8 +173,9 @@ if test "x$have_statvfs" = "xyes" ; then
+ fi
+ 
+ # Check for defines we expect
+-AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[]], [[
++AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[
+ #include "stdio.h"
++]], [[
+ printf ("%s", __FUNCTION__);
+    ]])],
+    [have_function=yes],
+@@ -2104,7 +2105,6 @@ OLD_CFLAGS="$CFLAGS"
+ OLD_LDFLAGS="$LDFLAGS"
+ OLD_LIBS="$LIBS"
+ CFLAGS=""
+-LDFLAGS=""
+ LIBS=""
+ 
+ AC_ARG_ENABLE(libgif,
+@@ -2155,7 +2155,6 @@ OLD_CFLAGS="$CFLAGS"
+ OLD_LDFLAGS="$LDFLAGS"
+ OLD_LIBS="$LIBS"
+ CFLAGS=""
+-LDFLAGS=""
+ LIBS=""
+ 
+ AC_ARG_ENABLE(libjpeg,
+@@ -2206,7 +2205,6 @@ OLD_CFLAGS="$CFLAGS"
+ OLD_LDFLAGS="$LDFLAGS"
+ OLD_LIBS="$LIBS"
+ CFLAGS=""
+-LDFLAGS=""
+ LIBS=""
+ 
+ AC_ARG_ENABLE(libtiff,
+@@ -2257,7 +2255,6 @@ OLD_CFLAGS="$CFLAGS"
+ OLD_LDFLAGS="$LDFLAGS"
+ OLD_LIBS="$LIBS"
+ CFLAGS=""
+-LDFLAGS=""
+ LIBS=""
+ 
+ AC_ARG_ENABLE(libpng,

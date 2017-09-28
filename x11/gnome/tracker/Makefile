@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.221 2017/08/24 09:45:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.222 2017/09/28 23:39:53 naddy Exp $
 
 COMMENT=		powerful desktop search tool and indexer
 
 GNOME_PROJECT=		tracker
 GNOME_VERSION=		1.12.3
-REVISION=		0
+REVISION=		1
 
 # there is already audio/tracker, so this port has to live
 # as meta-tracker
@@ -79,7 +79,8 @@ MODPY_RUNDEP=		No
 MODPY_ADJ_FILES=	tests/tracker-writeback/01-writeback.py \
 			utils/data-generators/cc/generate
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	autoconf
+AUTOCONF_VERSION=	2.69
 
 CONFIGURE_ARGS=		--disable-miner-thunderbird \
 			--disable-miner-firefox \
@@ -102,9 +103,6 @@ FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/meta-tracker/
 pre-configure:
 	sed -i 's,/usr/bin,${LOCALBASE}/bin,' \
 		${WRKSRC}/src/tracker-needle/tracker-utils.vala
-# XXX LDFLAGS are reset in the configure script when checking for:
-# png, gif, jpeg and tiff
-	${SUBST_CMD} ${WRKSRC}/configure
 
 post-install:
 	rm ${PREFIX}/lib/tracker-${TRACKER_API}/extract-modules/*.{a,la}
