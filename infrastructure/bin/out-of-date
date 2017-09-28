@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: out-of-date,v 1.6 2013/09/15 09:17:25 rpe Exp $
+# $OpenBSD: out-of-date,v 1.7 2017/09/28 10:30:35 espie Exp $
 #
 # Copyright (c) 2005 Bernd Ahlers <bernd@openbsd.org>
 #
@@ -55,6 +55,9 @@ sub collect_installed
 		$pkg->{$subdir}->{version}   = $version;
 		my $sig = $plist->signature;
 		if (ref($sig)) { $sig = $sig->string; }
+		# XXX zap version marker for now, more complicated to grab
+		# from the ports tree.
+		$sig =~ s/\,\d+\,/,/;
 		$pkg->{$subdir}->{signature} = $sig;
 		if (defined $plist->{'always-update'}) {
 			$pkg->{$subdir}->{signature} = 'always-update';
