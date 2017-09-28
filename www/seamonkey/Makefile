@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.209 2017/09/26 12:21:54 landry Exp $
+# $OpenBSD: Makefile,v 1.210 2017/09/28 16:33:24 landry Exp $
 
+ONLY_FOR_ARCHS =	amd64 i386
 COMMENT-main =		Mozilla application suite
 COMMENT-lightning =	Mozilla Seamonkey calendar extension
 ONLY_FOR_ARCHS =	amd64 i386
 
 MOZILLA_VERSION =	2.48
-REVISION-main =		1
+REVISION-main =		2
 MOZILLA_PROJECT =	seamonkey
 MOZILLA_CODENAME =	suite
 
