@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.51 2017/06/06 08:45:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.52 2017/09/28 05:57:21 dcoppa Exp $
 
 COMMENT=		digital camera library
 
 VERSION=		2.5.14
 DISTNAME=		libgphoto2-${VERSION}
 PKGNAME=		libgphoto-${VERSION}
+REVISION=		0
 
 GPHOTO2_PORT_API=	0.12.0
 SUBST_VARS=		GPHOTO2_PORT_API VERSION
@@ -33,7 +34,8 @@ LIB_DEPENDS=		graphics/gd \
 			devel/libtool,-ltdl \
 			textproc/libxml
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	autoconf
+AUTOCONF_VERSION=	2.69
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 			ac_cv_path_DOXYGEN=false
@@ -48,6 +50,10 @@ CONFIGURE_ARGS +=	--with-libusb-1.0=no
 # /usr/local/lib/libiconv.a(localcharset.o)(.text+0x0): In function `locale_charset':
 # multiple definition of `locale_charset'
 MAKE_FLAGS=		INTLLIBS='$$(LTLIBINTL)'
+
+pre-configure:
+	@cd ${WRKSRC}/libgphoto2_port ; env PATH=${PORTPATH} \
+		AUTOCONF_VERSION=${AUTOCONF_VERSION} autoconf
 
 post-install:
 	rm ${PREFIX}/lib/libgphoto2/${VERSION}/*.{a,la}

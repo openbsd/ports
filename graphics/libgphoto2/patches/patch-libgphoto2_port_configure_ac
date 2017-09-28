@@ -1,0 +1,20 @@
+$OpenBSD: patch-libgphoto2_port_configure_ac,v 1.1 2017/09/28 05:57:21 dcoppa Exp $
+
+Index: libgphoto2_port/configure.ac
+--- libgphoto2_port/configure.ac.orig
++++ libgphoto2_port/configure.ac
+@@ -165,12 +165,12 @@ AC_CHECK_LIB([regex],[regexec])
+ 
+ AC_MSG_CHECKING([for asm .symver support])
+ AC_COMPILE_IFELSE([dnl
+-	AC_LANG_PROGRAM([[]],[[
++	AC_LANG_PROGRAM([[
+ 		int f1() { }
+ 		int f2() { }
++		]],[[
+ 		asm(".symver f1, f@VER1");
+ 		asm(".symver f2, f@@VER2");
+-		int main(int argc, char **argv) { }
+ 	]])dnl
+ ],[
+ 	AC_DEFINE([HAVE_ASM_SYMVERS],1,[Define if there is asm .symver support.])

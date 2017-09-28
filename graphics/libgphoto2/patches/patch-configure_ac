@@ -1,0 +1,20 @@
+$OpenBSD: patch-configure_ac,v 1.1 2017/09/28 05:57:21 dcoppa Exp $
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -230,12 +230,12 @@ AC_SYS_LARGEFILE
+ 
+ AC_MSG_CHECKING([for asm .symver support])
+ AC_COMPILE_IFELSE([dnl
+-	AC_LANG_PROGRAM([[]],[[
++	AC_LANG_PROGRAM([[
+ 		int f1() { }
+ 		int f2() { }
++		]],[[
+ 		asm(".symver f1, f@VER1");
+ 		asm(".symver f2, f@@VER2");
+-		int main(int argc, char **argv) { }
+ 	]])dnl
+ ],[
+ 	AC_DEFINE([HAVE_ASM_SYMVERS],1,[Define if there is asm .symver support.])
