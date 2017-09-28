@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure_in,v 1.1 2017/09/28 19:16:36 dcoppa Exp $
+$OpenBSD: patch-configure_in,v 1.2 2017/09/28 19:23:02 dcoppa Exp $
 
 Index: configure.in
 --- configure.in.orig
@@ -12,7 +12,7 @@ Index: configure.in
      HAVE_POS=yes
  else
    AC_MSG_CHECKING(for pOS)
-@@ -617,9 +617,8 @@ fi
+@@ -617,9 +617,7 @@ fi
  
  if test $ac_cv_c_compiler_gnu = yes; then
    WARNING_CFLAGS="-Wall -Wno-unused -Wno-format -W -Wmissing-prototypes -Wstrict-prototypes"
@@ -20,11 +20,10 @@ Index: configure.in
 -  dnl Not nice, but needed to turn off -g
 -  CFLAGS=
 +  OPTIMIZE_CFLAGS="-fomit-frame-pointer"
-+  
  fi
  
  if [[ "x$DO_PROFILING" = "xyes" ]]; then
-@@ -710,21 +709,21 @@ dnl See if we have something better than GCC 2.7.
+@@ -710,21 +708,21 @@ dnl See if we have something better than GCC 2.7.
  if [[ "x$HAVEGCC27" = "xyes" -a "x$HAVEI386" = "xyes" ]]; then
    SAVECFLAGS=$CFLAGS
    CFLAGS="$CFLAGS -mno-schedule-prologue"
@@ -49,7 +48,7 @@ Index: configure.in
    CFLAGS=$SAVECFLAGS
  fi
  
-@@ -734,7 +733,7 @@ if [[ "x$HAVEGCC27" = "xyes" -a "x$HAVEI386" = "xyes" 
+@@ -734,7 +732,7 @@ if [[ "x$HAVEGCC27" = "xyes" -a "x$HAVEI386" = "xyes" 
    SAVECFLAGS=$CFLAGS
    CFLAGS="$CFLAGS -fno-exceptions"
    NOEXCEPTIONS=no
