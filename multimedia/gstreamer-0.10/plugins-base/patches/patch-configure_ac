@@ -1,9 +1,19 @@
-$OpenBSD: patch-configure_ac,v 1.8 2012/02/21 08:45:43 ajacoutot Exp $
+$OpenBSD: patch-configure_ac,v 1.9 2017/09/28 20:23:35 naddy Exp $
 
 Our cdparanoia version does not have cache control.
 
---- configure.ac.orig	Tue Feb 21 00:32:56 2012
-+++ configure.ac	Tue Feb 21 08:54:49 2012
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -337,7 +337,7 @@ AC_ARG_ENABLE(Bsymbolic,
+               [SAVED_LDFLAGS="${LDFLAGS}"
+                AC_MSG_CHECKING([for -Bsymbolic-functions linker flag])
+                LDFLAGS=-Wl,-Bsymbolic-functions
+-               AC_TRY_LINK([], [int main (void) { return 0; }],
++               AC_TRY_LINK([], [],
+                            AC_MSG_RESULT(yes)
+                            enable_Bsymbolic=yes,
+                            AC_MSG_RESULT(no)
 @@ -675,10 +675,10 @@ AG_GST_CHECK_FEATURE(CDPARANOIA, [CDParanoia], cdparan
      if test "x$FOUND_CDPARANOIA" = "xyes";
      then

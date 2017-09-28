@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.98 2017/09/12 14:15:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.99 2017/09/28 20:23:35 naddy Exp $
 
 COMMENT-main=		bad elements for GStreamer
 COMMENT-neon=		neon element for GStreamer (plugins-bad)
@@ -12,9 +12,9 @@ PKGNAME-main=		gstreamer-plugins-bad-${V}
 PKGNAME-neon=		gstreamer-neon-${V}
 PKGNAME-mjpeg=		gstreamer-mjpeg-${V}
 
-REVISION-main=		27
-REVISION-mjpeg=		12
-REVISION-neon=		13
+REVISION-main=		28
+REVISION-mjpeg=		13
+REVISION-neon=		14
 
 SHARED_LIBS +=  gstphotography-0.10       1.0 # 23.0
 SHARED_LIBS +=  gstsignalprocessor-0.10   1.0 # 23.0
