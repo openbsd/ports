@@ -1,11 +1,14 @@
-$OpenBSD: patch-data_Makefile_am,v 1.1.1.1 2013/04/01 22:02:15 rfreeman Exp $
---- data/Makefile.am.orig	Tue Nov  8 17:52:52 2011
-+++ data/Makefile.am	Tue Nov  8 17:53:07 2011
-@@ -8,5 +8,5 @@ EXTRA_DIST=prboom-plus.wad prboom.txt
+$OpenBSD: patch-data_Makefile_am,v 1.2 2017/09/28 22:40:01 naddy Exp $
+Index: data/Makefile.am
+--- data/Makefile.am.orig
++++ data/Makefile.am
+@@ -7,6 +7,6 @@ wad_DATA=prboom-plus.wad
+ EXTRA_DIST=prboom-plus.wad prboom.txt
  MAINTAINERCLEANFILES=prboom-plus.wad
  
- prboom-plus.wad: prboom.txt $(wildcard graphics/*.ppm sprites/*.ppm lumps/*.lmp sounds/*.wav)
+-prboom-plus.wad: prboom.txt $(wildcard graphics/*.ppm sprites/*.ppm lumps/*.lmp sounds/*.wav)
 -	-rm -f $@
 -	deutex -make prboom.txt $@
-+	#-rm -f $@
-+	#deutex -make prboom.txt $@
++prboom-plus.wad: prboom.txt
++#	-rm -f $@
++#	deutex -make prboom.txt $@

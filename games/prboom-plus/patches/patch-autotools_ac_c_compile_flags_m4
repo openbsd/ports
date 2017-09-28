@@ -1,0 +1,13 @@
+$OpenBSD: patch-autotools_ac_c_compile_flags_m4,v 1.1 2017/09/28 22:40:01 naddy Exp $
+
+Index: autotools/ac_c_compile_flags.m4
+--- autotools/ac_c_compile_flags.m4.orig
++++ autotools/ac_c_compile_flags.m4
+@@ -5,7 +5,6 @@ do
+  AC_MSG_CHECKING(whether compiler supports $ac_flag)
+  CFLAGS="$NEW_CFLAGS $ac_flag"
+  AC_TRY_COMPILE(,[
+-  void f() {};
+  ],[
+   NEW_CFLAGS="$CFLAGS"
+   AC_MSG_RESULT(yes)
