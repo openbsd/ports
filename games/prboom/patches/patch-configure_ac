@@ -1,0 +1,17 @@
+$OpenBSD: patch-configure_ac,v 1.1 2017/09/28 23:12:48 naddy Exp $
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -26,9 +26,9 @@ fi
+ AC_ARG_WITH(waddir,AC_HELP_STRING([--with-waddir],[Path to install prboom.wad and look for other WAD files]),
+ DOOMWADDIR="$withval",
+ if test "x$prefix" != xNONE; then
+-  DOOMWADDIR="$prefix/share/games/doom"
++  DOOMWADDIR="$prefix/share/prboom"
+ else
+-  DOOMWADDIR="$ac_default_prefix/share/games/doom"
++  DOOMWADDIR="$ac_default_prefix/share/prboom"
+ fi
+ )
+ AC_DEFINE_UNQUOTED(DOOMWADDIR,"$DOOMWADDIR",[Define to be the path where Doom WADs are stored])
