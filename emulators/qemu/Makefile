@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.168 2017/08/31 08:32:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.169 2017/09/29 14:44:50 naddy Exp $
 
 USE_WXNEEDED=	Yes
 
@@ -80,6 +80,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--enable-curses \
 		--disable-gcrypt \
 		--disable-smartcard \
+		--disable-snappy \
 		--disable-spice \
 		--disable-usb-redir \
 		--disable-vnc-sasl
