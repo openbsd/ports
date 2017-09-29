@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2017/07/06 11:09:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2017/09/29 15:56:40 sthen Exp $
 
 COMMENT =	LastPass command line interface tool
 
 GH_ACCOUNT =	lastpass
 GH_PROJECT =	lastpass-cli
 GH_TAGNAME =	v1.2.1
+REVISION =	0
 CATEGORIES =	security
 
 MAINTAINER =	Bjorn Ketelaars <bjorn.ketelaars@hydroxide.nl>

@@ -1,0 +1,19 @@
+$OpenBSD: patch-http_c,v 1.1 2017/09/29 15:56:40 sthen Exp $
+
+From 68cfae08b22954fe952cfe590daa4b81a7f7124b Mon Sep 17 00:00:00 2001
+Date: Fri, 29 Sep 2017 14:06:25 +0200
+Subject: [PATCH] use-after-free bug in http.c
+
+Index: http.c
+--- http.c.orig
++++ http.c
+@@ -310,8 +310,8 @@ char *http_post_lastpass_v_noexit(const char *server, 
+ 	ret = curl_easy_perform(curl);
+ 	unset_interrupt_detect();
+ 
+-	curl_easy_cleanup(curl);
+ 	curl_easy_getinfo(curl, CURLINFO_RESPONSE_CODE, http_code);
++	curl_easy_cleanup(curl);
+ 	*curl_ret = ret;
+ 
+ 	if (ret != CURLE_OK) {
