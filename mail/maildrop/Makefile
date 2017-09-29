@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2017/09/29 16:54:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.66 2017/09/29 19:32:18 naddy Exp $
 
 COMMENT-main=		mail delivery agent with filtering abilities
 COMMENT-utils=		quota tools for the Courier mail suite
@@ -27,13 +27,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 COMPILER =		gcc
 
-AUTOCONF_VERSION=	2.69
-AUTOMAKE_VERSION=	1.15
-# only libs/rfc822/configure.ac is patched
-AUTOCONF_DIR=           ${WRKSRC}/libs/rfc822
-CONFIGURE_STYLE=	autoconf automake
-# AC_PROG_LIBTOOL
-BUILD_DEPENDS +=	devel/libtool
+CONFIGURE_STYLE=	gnu
 
 CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib" \
 			CPPFLAGS="${CFLAGS:C/ *$//} -I${LOCALBASE}/include" \
@@ -90,6 +84,12 @@ CONFIGURE_ARGS+=	--with-trashquota
 
 MODULES=		devel/gettext
 
+AUTOCONF_VERSION=	2.69
+AUTOMAKE_VERSION=	1.15
+BUILD_DEPENDS=		devel/libtool \
+			${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS}
+
 LIB_DEPENDS=		devel/libidn \
 			mail/courier-unicode>=2.0
 
@@ -109,6 +109,12 @@ DOCFILES=		README \
 			libs/maildir/README.sharedfolders.txt \
 			libs/maildir/README.maildirquota.txt \
 			libs/maildir/quotawarnmsg
+
+# only libs/rfc822/configure.ac is patched
+pre-configure:
+	cd ${WRKSRC}/libs/rfc822 && \
+	    AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+	    AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autoreconf
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/maildrop
