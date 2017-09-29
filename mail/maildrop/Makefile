@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2017/09/27 13:20:02 giovanni Exp $
+# $OpenBSD: Makefile,v 1.65 2017/09/29 16:54:24 ajacoutot Exp $
 
 COMMENT-main=		mail delivery agent with filtering abilities
 COMMENT-utils=		quota tools for the Courier mail suite
@@ -32,6 +32,8 @@ AUTOMAKE_VERSION=	1.15
 # only libs/rfc822/configure.ac is patched
 AUTOCONF_DIR=           ${WRKSRC}/libs/rfc822
 CONFIGURE_STYLE=	autoconf automake
+# AC_PROG_LIBTOOL
+BUILD_DEPENDS +=	devel/libtool
 
 CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib" \
 			CPPFLAGS="${CFLAGS:C/ *$//} -I${LOCALBASE}/include" \
