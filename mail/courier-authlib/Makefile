@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2017/09/29 19:32:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.71 2017/09/29 22:05:30 naddy Exp $
 
 COMMENT-main=		authentication library for courier
 COMMENT-ldap=		ldap authentication module for courier-authLib
@@ -38,7 +38,10 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=courier/}
 EXTRACT_SUFX=		.tar.bz2
 
 USE_GMAKE=		Yes
-CONFIGURE_STYLE=	gnu
+AUTOCONF_VERSION=	2.69
+# only libs/rfc822/configure.ac is patched
+AUTOCONF_DIR=		${WRKSRC}/libs/rfc822
+CONFIGURE_STYLE=	autoconf
 
 CONFIGURE_ENV=		LIBS="-L${LOCALBASE}/lib" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
@@ -68,13 +71,7 @@ CONFIGURE_ARGS+=	--enable-static \
 			--cache-file=${WRKDIR}/courier-authlib.cache
 
 RUN_DEPENDS-main=	lang/expect
-
-AUTOCONF_VERSION=	2.69
-AUTOMAKE_VERSION=	1.15
-BUILD_DEPENDS=		devel/libtool \
-			${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS} \
-			lang/expect \
+BUILD_DEPENDS=		lang/expect \
 			mail/courier-unicode>=2.0
 
 DOCS=			COPYING COPYING.GPL INSTALL NEWS README
@@ -154,11 +151,11 @@ CONFIGURE_ARGS+=	--without-authuserdb \
 			--without-makedatprog
 .endif
 
-# only libs/rfc822/configure.ac is patched
+# avoid triggering autotools cascade after patching configure.ac
 pre-configure:
-	cd ${WRKSRC}/libs/rfc822 && \
-	    AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-	    AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autoreconf
+	@for d in ${AUTOCONF_DIR}; do \
+	    touch -r $$d/aclocal.m4 $$d/configure.ac; \
+	done
 
 post-install:
 	mv ${PREFIX}/lib/courier-authlib/lib* ${PREFIX}/lib
