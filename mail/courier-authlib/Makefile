@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2017/09/27 13:20:02 giovanni Exp $
+# $OpenBSD: Makefile,v 1.69 2017/09/29 09:04:04 sthen Exp $
 
 COMMENT-main=		authentication library for courier
 COMMENT-ldap=		ldap authentication module for courier-authLib
@@ -72,7 +72,8 @@ CONFIGURE_ARGS+=	--enable-static \
 			--cache-file=${WRKDIR}/courier-authlib.cache
 
 RUN_DEPENDS-main=	lang/expect
-BUILD_DEPENDS=		lang/expect \
+BUILD_DEPENDS=		devel/libtool \
+			lang/expect \
 			mail/courier-unicode>=2.0
 
 DOCS=			COPYING COPYING.GPL INSTALL NEWS README
