@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.21 2016/09/01 10:53:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2017/09/29 21:17:22 sthen Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386 sparc64
+BROKEN-i386=	ICE building src/interp/engine/interp.c
 
 COMMENT=	free, standards-compliant jvm with a small footprint
 
