@@ -1,0 +1,44 @@
+$OpenBSD: patch-packages_clib_maildrop_rfc822_configure_in,v 1.1 2017/09/29 19:46:53 naddy Exp $
+
+Index: packages/clib/maildrop/rfc822/configure.in
+--- packages/clib/maildrop/rfc822/configure.in.orig
++++ packages/clib/maildrop/rfc822/configure.in
+@@ -42,25 +42,15 @@ AC_CACHE_CHECK([how to calculate alternate timezone],l
+ AC_TRY_COMPILE([
+ #include	<time.h>
+ ],[
+-int main()
+-{
+ time_t	t=altzone;
+ int	offset = -timezone;
+-
+-	return (0);
+-}
+ ], librfc822_cv_SYS_TIMEZONE=altzone,
+ 
+ 	AC_TRY_COMPILE([
+ #include	<time.h>
+ ],[
+-int main()
+-{
+ int	n=daylight;
+ int	offset = -timezone;
+-
+-	return (0);
+-}
+ 	], librfc822_cv_SYS_TIMEZONE=daylight,
+ 
+ 	AC_TRY_COMPILE([
+@@ -68,12 +58,7 @@ int	offset = -timezone;
+ 
+ extern struct tm dummy;
+ ],[
+-int main()
+-{
+ long	n=dummy.tm_gmtoff;
+-
+-	return (0);
+-}
+ 	] ,librfc822_cv_SYS_TIMEZONE=tm_gmtoff,
+ 		librfc822_cv_SYS_TIMEZONE=unknown
+ 			)
