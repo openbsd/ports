@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.7 2017/09/27 20:36:17 jca Exp $
+# $OpenBSD: Makefile,v 1.8 2017/09/29 16:48:50 jca Exp $
 
-# XXX lots of undefined references to Qt functions
-NOT_FOR_ARCHS =		${CLANG_ARCHS}
+# XXX base clang: lots of undefined references to Qt functions
+COMPILER=	base-gcc
 
 COMMENT=	wysiwyw (what you see is what you want) editing platform
 

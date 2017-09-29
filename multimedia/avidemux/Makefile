@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.54 2017/09/27 20:36:17 jca Exp $
+# $OpenBSD: Makefile,v 1.55 2017/09/29 16:48:50 jca Exp $
 
-# XXX i386/fft_sse.c:172:43: error: unknown token in expression
-NOT_FOR_ARCHS =		${CLANG_ARCHS}
+# XXX base clang says: i386/fft_sse.c:172:43: error: unknown token in expression
+COMPILER=	base-gcc
 
 COMMENT=	free video editor
 
