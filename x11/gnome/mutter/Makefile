@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.76 2017/09/26 14:28:58 robert Exp $
+# $OpenBSD: Makefile,v 1.77 2017/09/29 23:32:16 sthen Exp $
 
 COMMENT=		window and compositing manager
 
 GNOME_PROJECT=		mutter
 GNOME_VERSION=		3.24.4
 
-REVISION=		0
+REVISION=		1
 
 API_SUFFIX =	-0
 SHARED_LIBS +=  mutter-0                    0.0 # 0.0
@@ -46,6 +46,7 @@ RUN_DEPENDS=		devel/gsettings-desktop-schemas>=3.16.0 \
 
 AUTOMAKE_VERSION=	1.15
 AUTOCONF_VERSION=	2.69
+AUTOCONF_DIR=		${WRKSRC} ${WRKSRC}/clutter
 CONFIGURE_STYLE=	autoconf automake
 
 # Required by embedded cogl/clutter forks.
