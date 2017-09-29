@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2017/09/28 05:57:21 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.53 2017/09/29 09:07:29 sthen Exp $
 
 COMMENT=		digital camera library
 
@@ -34,8 +34,10 @@ LIB_DEPENDS=		graphics/gd \
 			devel/libtool,-ltdl \
 			textproc/libxml
 
-CONFIGURE_STYLE=	autoconf
+CONFIGURE_STYLE=	autoconf automake
 AUTOCONF_VERSION=	2.69
+AUTOMAKE_VERSION=	1.15
+BUILD_DEPENDS=		devel/libtool
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 			ac_cv_path_DOXYGEN=false
