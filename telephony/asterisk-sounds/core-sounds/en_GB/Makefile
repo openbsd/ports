@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.1 2014/03/09 20:51:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2017/10/01 18:54:27 naddy Exp $
 
 MODAS_LANG = en_GB
+REVISION =   0
 
 .include <bsd.port.mk>

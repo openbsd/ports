@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST-en,v 1.8 2017/07/19 15:07:38 sthen Exp $
+@comment $OpenBSD: PLIST-en,v 1.9 2017/10/01 18:54:27 naddy Exp $
 @option no-default-conflict
 @conflict asterisk-core-sounds-en-${MODAS_CODEC}-*
-@conflict asterisk-extra-sounds-en-${MODAS_CODEC}-<1.5
+@conflict asterisk-extra-sounds-en-${MODAS_CODEC}-<=1.5
 @conflict asterisk-native-sounds-*
 @conflict asterisk-<1.8.16.0p0
 @pkgpath telephony/asterisk-native-sounds
