@@ -1,4 +1,4 @@
-$OpenBSD: patch-validate_php,v 1.12 2017/08/28 11:47:03 sthen Exp $
+$OpenBSD: patch-validate_php,v 1.13 2017/10/04 20:47:14 sthen Exp $
 
 - files installed from packages should only be updated via packages so
 it's safer if they are owned by root; adjust the ownership check so that
@@ -40,7 +40,7 @@ Index: validate.php
                  "chown -R $tmp_user:$tmp_user {$config['install_dir']}"
              );
              print_list($files, "\t %s\n");
-@@ -376,11 +372,7 @@ foreach ($bins as $bin) {
+@@ -378,11 +374,7 @@ foreach ($bins as $bin) {
      if (!$cmd) {
          print_fail("$bin location is incorrect or bin not installed. \n\tYou can also manually set the path to $bin by placing the following in config.php: \n\t\$config['$bin'] = \"/path/to/$bin\";");
      } elseif (in_array($bin, array('fping', 'fping6'))) {
