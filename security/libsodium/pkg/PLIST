@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2017/07/15 12:09:17 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.10 2017/10/04 20:50:41 sthen Exp $
 include/sodium/
 include/sodium.h
 include/sodium/core.h
@@ -36,13 +36,13 @@ include/sodium/crypto_scalarmult_curve25519.h
 include/sodium/crypto_secretbox.h
 include/sodium/crypto_secretbox_xchacha20poly1305.h
 include/sodium/crypto_secretbox_xsalsa20poly1305.h
+include/sodium/crypto_secretstream_xchacha20poly1305.h
 include/sodium/crypto_shorthash.h
 include/sodium/crypto_shorthash_siphash24.h
 include/sodium/crypto_sign.h
 include/sodium/crypto_sign_ed25519.h
 include/sodium/crypto_sign_edwards25519sha512batch.h
 include/sodium/crypto_stream.h
-include/sodium/crypto_stream_aes128ctr.h
 include/sodium/crypto_stream_chacha20.h
 include/sodium/crypto_stream_salsa20.h
 include/sodium/crypto_stream_salsa2012.h
