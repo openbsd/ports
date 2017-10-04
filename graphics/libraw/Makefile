@@ -1,18 +1,19 @@
-# $OpenBSD: Makefile,v 1.27 2017/07/26 22:45:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2017/10/04 20:47:23 rsadowski Exp $
 
 BROKEN-hppa =		undefined reference to __sync_fetch_and_add_4
 
 COMMENT =		library for reading RAW files
 
-DISTNAME =		LibRaw-0.18.2
+DISTNAME =		LibRaw-0.18.5
 PKGNAME =		${DISTNAME:L}
 CATEGORIES =		graphics
-REVISION =		0
 
 SHARED_LIBS +=  raw                  2.0      # 15.0
 SHARED_LIBS +=  raw_r                2.0      # 15.0
 
 HOMEPAGE =		https://www.libraw.org/
+
+MAINTAINER =		Rafael Sadowski <rsadowski@openbsd.org>
 
 # LGPL v2.1 OR CDDL v1.0 OR their own
 PERMIT_PACKAGE_CDROM =	Yes
