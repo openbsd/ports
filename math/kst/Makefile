@@ -1,51 +1,51 @@
-# $OpenBSD: Makefile,v 1.33 2017/07/26 22:45:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2017/10/04 21:04:33 rsadowski Exp $
 
-CATEGORIES=	math x11/kde
 COMMENT=	data viewing/plotting tool
 
-DISTNAME=	kst-1.2.1
-REVISION=	14
-SHARED_LIBS=	kst		4.0 \
-		kstapp		4.0 \
-		kstmath		4.0 \
-		kstwidgets	3.0 \
-		kstextdate	3.0
+GH_ACCOUNT =	Kst-plot
+GH_PROJECT =	kst
+GH_TAGNAME =	v2.0.8
 
-MASTER_SITES=	${MASTER_SITE_KDE:=Attic/apps/KDE3.x/scientific/}
-HOMEPAGE=	http://kst-plot.kde.org/kst1/
+SHARED_LIBS +=  kst2core                  0.0 # 2.0
+SHARED_LIBS +=  kst2math                  0.0 # 2.0
+SHARED_LIBS +=  kst2widgets               0.0 # 2.0
 
-# GPLv2+, LGPLv2+
+CATEGORIES=	math
+
+HOMEPAGE=	https://kst-plot.kde.org/
+
+MAINTAINER=	KDE porting team <openbsd-kde@googlegroups.com>
+
+# GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ${KDE}/DCOP ${KDE}/kdecore>=6 ${KDE}/kdefx ${KDE}/kdeprint
-WANTLIB += ${KDE}/kdesu ${KDE}/kdeui ${KDE}/khtml ${KDE}/kio ${KDE}/kjs
-WANTLIB += ${KDE}/kmdi ${KDE}/kparts ${KDE}/kutils ${KDE}/kwalletclient
-WANTLIB += GL ICE SM X11 Xcursor Xdamage Xext Xfixes Xft Xi Xinerama Xmu
-WANTLIB += Xrandr Xrender Xt Xxf86vm art_lgpl_2 c cfitsio drm expat
-WANTLIB += fontconfig freetype gsl>=7 gslcblas idn jpeg lcms lib/qt3/qui
-WANTLIB += m mng ncurses netcdf netcdf_c++ pcre pcreposix png pthread
-WANTLIB += readline ${COMPILER_LIBCXX} util xcb xcb-glx z
-WANTLIB += X11-xcb Xau Xdmcp fam glapi pthread-stubs xcb-dri2
+WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Network Qt5PrintSupport
+WANTLIB += Qt5Widgets Qt5Xml c m
 
-MODULES=		x11/kde devel/gettext
-MODKDE_VERSION=		3.5.3
-CONFIGURE_STYLE=	autoconf
-AUTOCONF_VERSION=	2.59
-CONFIGURE_ARGS=		${MODKDE_CONFIGURE_ARGS} \
-			--disable-libsuffix \
-			--disable-final
-CONFIGURE_ENV=		${MODKDE_CONFIGURE_ENV}
-CONFIG_GUESS_DIRS=	${MODKDE_CONFIG_GUESS_DIR}
-MAKE_FLAGS=		${MODKDE_MAKE_FLAGS}
-LIBTOOL_FLAGS =		--tag=disable-static
-PORTHOME =		${WRKDIR}
-SEPARATE_BUILD =	Yes
+MODULES=	devel/cmake \
+		x11/qt5
 
-RUN_DEPENDS =	x11/gtk+3,-guic
+RUN_DEPENDS +=	devel/desktop-file-utils \
+		x11/gtk+3,-guic
 
-LIB_DEPENDS =	x11/kde/libs3 \
-		devel/gsl>=1.6 \
-		math/netcdf \
-		math/cfitsio
+CONFIGURE_ARGS =	-Dkst_release=ON \
+			-Dkst_release=2 \
+			-Dkst_version_string=${GH_TAGNAME:S/^v//} \
+			-Dkst_pch=OFF \
+			-Dkst_qt5base_only=ON \
+			-Dkst_3rdparty=OFF \
+			-Dkst_dataobjects=OFF \
+			-Dkst_test=OFF \
+			-Dkst_qt5=ON \
+			-Dkst_qt4=OFF \
+			-Dkst_install_prefix=${LOCALBASE}
+
+# Mix between Qt4 and qt5 depends
+NO_TEST =	Yes
 
 .include <bsd.port.mk>
+
+.if ${PROPERTIES:Mclang}
+CONFIGURE_ARGS +=	-Dkst_clang=ON
+.endif
+

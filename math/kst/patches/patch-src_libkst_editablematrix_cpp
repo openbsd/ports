@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_libkst_editablematrix_cpp,v 1.1 2017/10/04 21:04:33 rsadowski Exp $
+
+Index: src/libkst/editablematrix.cpp
+--- src/libkst/editablematrix.cpp.orig
++++ src/libkst/editablematrix.cpp
+@@ -19,6 +19,7 @@
+ #include "debug.h"
+ #include <qbytearray.h>
+ #include <QXmlStreamWriter>
++#include <QDataStream>
+ 
+ namespace Kst {
+ 
