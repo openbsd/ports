@@ -1,7 +1,8 @@
-$OpenBSD: patch-rarcrack_c,v 1.1 2017/04/20 09:25:06 benoit Exp $
---- rarcrack.c.orig	Thu Apr 20 10:44:03 2017
-+++ rarcrack.c	Thu Apr 20 10:44:52 2017
-@@ -42,7 +42,7 @@
+$OpenBSD: patch-rarcrack_c,v 1.2 2017/10/05 23:18:02 espie Exp $
+Index: rarcrack.c
+--- rarcrack.c.orig
++++ rarcrack.c
+@@ -42,7 +42,7 @@ char * getfirstpassword() {
  	return (char*) &ret;
  }
  
@@ -10,3 +11,12 @@ $OpenBSD: patch-rarcrack_c,v 1.1 2017/04/20 09:25:06 benoit Exp $
  	xmlNodePtr root = NULL;
  	xmlNodePtr node = NULL;
  	xmlChar* tmp = NULL;
+@@ -165,7 +165,7 @@ void nextpass2(char* p, unsigned int n) {
+    return;
+ }
+ 
+-inline char* nextpass() {	//IMPORTANT: the returned string must be freed
++char* nextpass() {	//IMPORTANT: the returned string must be freed
+    char *ok = malloc(sizeof(char)*(PWD_LEN+1));
+    xmlMutexLock(pwdMutex);
+    strcpy(ok, password);
