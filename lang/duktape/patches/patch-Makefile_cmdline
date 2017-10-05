@@ -1,12 +1,13 @@
-$OpenBSD: patch-Makefile_cmdline,v 1.1.1.1 2017/03/27 15:39:00 fcambus Exp $
---- Makefile.cmdline.orig	Sun Mar 19 23:56:24 2017
-+++ Makefile.cmdline	Sun Mar 26 13:01:27 2017
+$OpenBSD: patch-Makefile_cmdline,v 1.2 2017/10/05 19:52:04 fcambus Exp $
+Index: Makefile.cmdline
+--- Makefile.cmdline.orig
++++ Makefile.cmdline
 @@ -9,7 +9,7 @@ CMDLINE_SOURCES = \
  	examples/cmdline/duk_cmdline.c
  
  CC	= gcc
 -CCOPTS	= -Os -pedantic -std=c99 -Wall -fstrict-aliasing -fomit-frame-pointer
 +CCOPTS	= ${CFLAGS} -pedantic -std=c99 -Wall -fstrict-aliasing -fomit-frame-pointer
- CCOPTS += -I./src   # duktape.h and duk_config.h must be in include path
+ CCOPTS += -I./examples/cmdline -I./src   # duktape.h and duk_config.h must be in include path
  CCLIBS	= -lm
  
