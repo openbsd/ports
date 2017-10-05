@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2017/06/02 10:13:25 feinerer Exp $
+@comment $OpenBSD: PLIST,v 1.17 2017/10/05 14:01:33 feinerer Exp $
 bin/maxima
 bin/rmaxima
 bin/xmaxima
@@ -381,18 +381,6 @@ share/maxima/${VERSION}/doc/implementation/maximatoplevelflow.dot
 share/maxima/${VERSION}/doc/implementation/maximatoplevelflow.png
 share/maxima/${VERSION}/doc/implementation/maximatoplevelflow.ps
 share/maxima/${VERSION}/doc/implementation/sloop-loop-changes.txt
-share/maxima/${VERSION}/doc/misc/
-share/maxima/${VERSION}/doc/misc/completescanoffunctionssortedbybytecodelength.txt
-share/maxima/${VERSION}/doc/misc/grepforvariables.sh
-share/maxima/${VERSION}/doc/misc/maximafunctions.txt
-share/maxima/${VERSION}/doc/misc/maximafunctionsundocumented.txt
-share/maxima/${VERSION}/doc/misc/maximaitemspresentinbothfunctionandvariablescans.txt
-share/maxima/${VERSION}/doc/misc/maximavariables.txt
-share/maxima/${VERSION}/doc/misc/maximavariablesundocumented.txt
-share/maxima/${VERSION}/doc/misc/processlisfiles.sh
-share/maxima/${VERSION}/doc/misc/weirdvariables.txt
-share/maxima/${VERSION}/doc/misc/workingvariables.txt
-share/maxima/${VERSION}/doc/misc/x.awk
 share/maxima/${VERSION}/doc/share/
 share/maxima/${VERSION}/doc/share/brchre.txt
 share/maxima/${VERSION}/doc/share/romberg.usg
@@ -413,7 +401,6 @@ share/maxima/${VERSION}/emacs/setup-imaxima-imath.el
 share/maxima/${VERSION}/emacs/smart-complete.el
 share/maxima/${VERSION}/emacs/sshell.el
 share/maxima/${VERSION}/share/
-share/maxima/${VERSION}/share/.gitattributes
 share/maxima/${VERSION}/share/MYTOPIC-index.lisp
 share/maxima/${VERSION}/share/affine/
 share/maxima/${VERSION}/share/affine/README
@@ -2251,6 +2238,7 @@ share/maxima/${VERSION}/src/xmaxima_def.lisp
 share/maxima/${VERSION}/src/zero.lisp
 share/maxima/${VERSION}/tests/
 share/maxima/${VERSION}/tests/README.how-to
+share/maxima/${VERSION}/tests/docdraw.mac
 share/maxima/${VERSION}/tests/mcond_display_elseif.mac
 share/maxima/${VERSION}/tests/mcond_display_elseif.out
 share/maxima/${VERSION}/tests/rexamples.mac
@@ -2337,6 +2325,9 @@ share/maxima/${VERSION}/tests/test_readbase_lisp.lisp
 share/maxima/${VERSION}/tests/test_readbase_lisp_autoload.lisp
 share/maxima/${VERSION}/tests/test_readbase_maxima.mac
 share/maxima/${VERSION}/tests/test_readbase_maxima_autoload.mac
+share/maxima/${VERSION}/tests/testbench_draw_manual.wxm
+share/maxima/${VERSION}/tests/testbench_drawdf_manual.wxm
+share/maxima/${VERSION}/tests/testbench_plotdf_manual.wxm
 share/maxima/${VERSION}/tests/testsuite.lisp
 share/maxima/${VERSION}/tests/wester_problems/
 share/maxima/${VERSION}/tests/wester_problems/test_algebra.mac
