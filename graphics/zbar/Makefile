@@ -1,8 +1,8 @@
-#	$OpenBSD: Makefile,v 1.24 2017/06/17 11:36:16 schwarze Exp $
+#	$OpenBSD: Makefile,v 1.25 2017/10/05 14:51:45 jsg Exp $
 
 COMMENT=	ZBar barcode reader
 DISTNAME=	zbar-0.10
-REVISION=	16
+REVISION=	17
 
 SHARED_LIBS=	zbar	0.0 \
 		zbargtk	0.0
