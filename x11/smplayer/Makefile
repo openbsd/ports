@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.40 2017/09/11 15:07:20 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.41 2017/10/05 13:59:53 gonzalo Exp $
 
 COMMENT =		complete front-end for MPlayer
 
-DISTNAME =		smplayer-17.9.0
+DISTNAME =		smplayer-17.10.0
 
 CATEGORIES =		multimedia x11
 
