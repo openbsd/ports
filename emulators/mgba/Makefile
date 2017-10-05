@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2017/08/03 08:49:44 bentley Exp $
+# $OpenBSD: Makefile,v 1.20 2017/10/05 08:32:12 bentley Exp $
 
 COMMENT-main =		Game Boy Color/Advance emulator
 COMMENT-qt =		Game Boy Color/Advance emulator with GUI
 COMMENT-libretro =	Game Boy Color/Advance core for retroarch
 
-V =			0.6.0
+V =			0.6.1
 DISTNAME =		mgba-$V
 PKGNAME-main =		mgba-$V
 PKGNAME-qt =		mgba-qt-$V
