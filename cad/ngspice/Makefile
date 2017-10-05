@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2016/01/11 09:35:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2017/10/05 08:13:58 bentley Exp $
 
 COMMENT =		circuit simulator, based on Berkeley SPICE
 
-DISTNAME =		ngspice-26
-REVISION =		0
+DISTNAME =		ngspice-27
 
 CATEGORIES =		cad
 
