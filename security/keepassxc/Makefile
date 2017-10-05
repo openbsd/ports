@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2017/08/09 19:25:27 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.7 2017/10/05 19:55:07 rsadowski Exp $
 
 COMMENT =	management tool for sensitive data
 
@@ -6,8 +6,7 @@ CATEGORIES =	security
 
 GH_ACCOUNT =	keepassxreboot
 GH_PROJECT =	keepassxc
-GH_TAGNAME =	2.2.0
-REVISION =	1
+GH_TAGNAME =	2.2.1
 
 HOMEPAGE =	https://keepassxc.org
 
@@ -16,9 +15,9 @@ MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 # GPLv2 or GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets
-WANTLIB += Qt5X11Extras X11 Xi Xtst c gcrypt gpg-error m z
-WANTLIB += ${COMPILER_LIBCXX}
+WANTLIB += ${COMPILER_LIBCXX} Qt5Concurrent Qt5Core Qt5DBus Qt5Gui
+WANTLIB += Qt5Network Qt5Widgets Qt5X11Extras X11 Xi Xtst c gcrypt
+WANTLIB += gpg-error m z
 
 MODULES =	x11/qt5 \
 		devel/cmake
