@@ -1,9 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.7 2017/08/23 12:57:45 kirby Exp $
+@comment $OpenBSD: PLIST,v 1.8 2017/10/05 12:12:06 kirby Exp $
 @bin bin/rawtherapee
 @bin bin/rawtherapee-cli
 @man man/man1/rawtherapee.1
-share/appdata/
-share/appdata/rawtherapee.appdata.xml
 share/applications/rawtherapee.desktop
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/doc/rawtherapee/
@@ -17,10 +15,13 @@ share/icons/hicolor/24x24/apps/rawtherapee.png
 share/icons/hicolor/256x256/apps/rawtherapee.png
 share/icons/hicolor/32x32/apps/rawtherapee.png
 share/icons/hicolor/48x48/apps/rawtherapee.png
+share/metainfo/
+share/metainfo/rawtherapee.appdata.xml
 share/rawtherapee/
 share/rawtherapee/camconst.json
 share/rawtherapee/dcpprofiles/
 share/rawtherapee/dcpprofiles/Canon EOS 100D.dcp
+share/rawtherapee/dcpprofiles/Canon EOS 1300D.dcp
 share/rawtherapee/dcpprofiles/Canon EOS 20D.dcp
 share/rawtherapee/dcpprofiles/Canon EOS 400D.dcp
 share/rawtherapee/dcpprofiles/Canon EOS 40D.dcp
@@ -29,6 +30,8 @@ share/rawtherapee/dcpprofiles/Canon EOS 50D.dcp
 share/rawtherapee/dcpprofiles/Canon EOS 550D.dcp
 share/rawtherapee/dcpprofiles/Canon EOS 5D Mark III.dcp
 share/rawtherapee/dcpprofiles/Canon EOS 5D.dcp
+share/rawtherapee/dcpprofiles/Canon EOS 60D.dcp
+share/rawtherapee/dcpprofiles/Canon EOS 6D Mark II.dcp
 share/rawtherapee/dcpprofiles/Canon EOS 6D.dcp
 share/rawtherapee/dcpprofiles/Canon EOS 7D Mark II.dcp
 share/rawtherapee/dcpprofiles/Canon EOS 7D.dcp
@@ -81,6 +84,10 @@ share/rawtherapee/dcpprofiles/Olympus XZ-1.dcp
 share/rawtherapee/dcpprofiles/PENTAX K-5 II.dcp
 share/rawtherapee/dcpprofiles/PENTAX K-5.dcp
 share/rawtherapee/dcpprofiles/PENTAX K10D.dcp
+share/rawtherapee/dcpprofiles/Panasonic DC-TZ90.dcp
+share/rawtherapee/dcpprofiles/Panasonic DC-TZ91.dcp
+share/rawtherapee/dcpprofiles/Panasonic DC-TZ92.dcp
+share/rawtherapee/dcpprofiles/Panasonic DC-TZ93.dcp
 share/rawtherapee/dcpprofiles/Panasonic DMC-FZ150.dcp
 share/rawtherapee/dcpprofiles/Panasonic DMC-FZ35.dcp
 share/rawtherapee/dcpprofiles/Panasonic DMC-FZ38.dcp
@@ -142,6 +149,9 @@ share/rawtherapee/iccprofiles/input/sd1_merrill_sunny8161-crop-wp11.icm
 share/rawtherapee/iccprofiles/input/sd1_merrill_tungsten8130-CROP-WP10.icm
 share/rawtherapee/iccprofiles/input/sd1_merrill_tungsten8130-CROP-WP11.icm
 share/rawtherapee/iccprofiles/output/
+share/rawtherapee/iccprofiles/output/ACES.icc
+share/rawtherapee/iccprofiles/output/DCI-P3 D65.icc
+share/rawtherapee/iccprofiles/output/DCI-P3 Theater.icc
 share/rawtherapee/iccprofiles/output/RT_Large_g10.icc
 share/rawtherapee/iccprofiles/output/RT_Large_gBT709.icc
 share/rawtherapee/iccprofiles/output/RT_Large_gsRGB.icc
@@ -335,6 +345,10 @@ share/rawtherapee/images/Dark/actions/previewmodeBC1-off.png
 share/rawtherapee/images/Dark/actions/previewmodeBC1-on.png
 share/rawtherapee/images/Dark/actions/previewmodeBC2-off.png
 share/rawtherapee/images/Dark/actions/previewmodeBC2-on.png
+share/rawtherapee/images/Dark/actions/previewmodeBC3-off.png
+share/rawtherapee/images/Dark/actions/previewmodeBC3-on.png
+share/rawtherapee/images/Dark/actions/previewmodeF-focusScreen-off.png
+share/rawtherapee/images/Dark/actions/previewmodeF-focusScreen-on.png
 share/rawtherapee/images/Dark/actions/previewmodeF-off.png
 share/rawtherapee/images/Dark/actions/previewmodeF-on.png
 share/rawtherapee/images/Dark/actions/previewmodeG-off.png
@@ -586,6 +600,10 @@ share/rawtherapee/images/Light/actions/previewmodeBC1-off.png
 share/rawtherapee/images/Light/actions/previewmodeBC1-on.png
 share/rawtherapee/images/Light/actions/previewmodeBC2-off.png
 share/rawtherapee/images/Light/actions/previewmodeBC2-on.png
+share/rawtherapee/images/Light/actions/previewmodeBC3-off.png
+share/rawtherapee/images/Light/actions/previewmodeBC3-on.png
+share/rawtherapee/images/Light/actions/previewmodeF-focusScreen-off.png
+share/rawtherapee/images/Light/actions/previewmodeF-focusScreen-on.png
 share/rawtherapee/images/Light/actions/previewmodeF-off.png
 share/rawtherapee/images/Light/actions/previewmodeF-on.png
 share/rawtherapee/images/Light/actions/previewmodeG-off.png
@@ -916,10 +934,11 @@ share/rawtherapee/sounds/ProcessComplete.wav
 share/rawtherapee/themes/
 share/rawtherapee/themes/RawTherapee-GTK3-20_.css
 share/rawtherapee/themes/RawTherapee-GTK3-_19.css
-share/rawtherapee/themes/TooWaBlue-Bright-GTK3-20_.css
-share/rawtherapee/themes/TooWaBlue-Dark-GTK3-20_.css
+share/rawtherapee/themes/TooWaBlue - Bright-GTK3-20_.css
+share/rawtherapee/themes/TooWaBlue - Dark-GTK3-20_.css
 share/rawtherapee/themes/TooWaBlue-GTK3-20_.css
 share/rawtherapee/themes/TooWaBlue-GTK3-_19.css
+share/rawtherapee/themes/TooWaGrey - Average Surround-GTK3-20_.css
 share/rawtherapee/themes/images/
 share/rawtherapee/themes/images/svg/
 share/rawtherapee/themes/images/svg/twb/
