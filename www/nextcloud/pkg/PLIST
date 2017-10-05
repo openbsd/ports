@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2017/09/13 13:20:30 gonzalo Exp $
+@comment $OpenBSD: PLIST,v 1.6 2017/10/05 14:01:51 gonzalo Exp $
 @unexec-delete rm -f /var/www/conf/modules/httpd-nextcloud.conf
 @unexec-delete rm -f /var/www/conf/modules/apache-nextcloud.conf
 conf/modules.sample/apache-nextcloud.conf.dist
@@ -3943,6 +3943,8 @@ nextcloud/apps/activity/l10n/ja.js
 nextcloud/apps/activity/l10n/ja.json
 nextcloud/apps/activity/l10n/ka_GE.js
 nextcloud/apps/activity/l10n/ka_GE.json
+nextcloud/apps/activity/l10n/kab.js
+nextcloud/apps/activity/l10n/kab.json
 nextcloud/apps/activity/l10n/km.js
 nextcloud/apps/activity/l10n/km.json
 nextcloud/apps/activity/l10n/ko.js
@@ -3959,6 +3961,8 @@ nextcloud/apps/activity/l10n/mn.js
 nextcloud/apps/activity/l10n/mn.json
 nextcloud/apps/activity/l10n/nb.js
 nextcloud/apps/activity/l10n/nb.json
+nextcloud/apps/activity/l10n/ne.js
+nextcloud/apps/activity/l10n/ne.json
 nextcloud/apps/activity/l10n/nl.js
 nextcloud/apps/activity/l10n/nl.json
 nextcloud/apps/activity/l10n/nn_NO.js
@@ -6346,10 +6350,12 @@ nextcloud/apps/files_external/3rdparty/icewind/smb/src/IFileInfo.php
 nextcloud/apps/files_external/3rdparty/icewind/smb/src/INotifyHandler.php
 nextcloud/apps/files_external/3rdparty/icewind/smb/src/IShare.php
 nextcloud/apps/files_external/3rdparty/icewind/smb/src/NativeFileInfo.php
+nextcloud/apps/files_external/3rdparty/icewind/smb/src/NativeReadStream.php
 nextcloud/apps/files_external/3rdparty/icewind/smb/src/NativeServer.php
 nextcloud/apps/files_external/3rdparty/icewind/smb/src/NativeShare.php
 nextcloud/apps/files_external/3rdparty/icewind/smb/src/NativeState.php
 nextcloud/apps/files_external/3rdparty/icewind/smb/src/NativeStream.php
+nextcloud/apps/files_external/3rdparty/icewind/smb/src/NativeWriteStream.php
 nextcloud/apps/files_external/3rdparty/icewind/smb/src/NotifyHandler.php
 nextcloud/apps/files_external/3rdparty/icewind/smb/src/Parser.php
 nextcloud/apps/files_external/3rdparty/icewind/smb/src/RawConnection.php
@@ -7372,6 +7378,8 @@ nextcloud/apps/files_sharing/l10n/ru.js
 nextcloud/apps/files_sharing/l10n/ru.json
 nextcloud/apps/files_sharing/l10n/si_LK.js
 nextcloud/apps/files_sharing/l10n/si_LK.json
+nextcloud/apps/files_sharing/l10n/sk.js
+nextcloud/apps/files_sharing/l10n/sk.json
 nextcloud/apps/files_sharing/l10n/sk_SK.js
 nextcloud/apps/files_sharing/l10n/sk_SK.json
 nextcloud/apps/files_sharing/l10n/sl.js
@@ -8985,8 +8993,12 @@ nextcloud/apps/logreader/js/unserialize.js
 nextcloud/apps/logreader/l10n/
 nextcloud/apps/logreader/l10n/.tx/
 nextcloud/apps/logreader/l10n/.tx/config
+nextcloud/apps/logreader/l10n/ast.js
+nextcloud/apps/logreader/l10n/ast.json
 nextcloud/apps/logreader/l10n/cs.js
 nextcloud/apps/logreader/l10n/cs.json
+nextcloud/apps/logreader/l10n/da.js
+nextcloud/apps/logreader/l10n/da.json
 nextcloud/apps/logreader/l10n/de.js
 nextcloud/apps/logreader/l10n/de.json
 nextcloud/apps/logreader/l10n/de_DE.js
@@ -8999,16 +9011,22 @@ nextcloud/apps/logreader/l10n/es.js
 nextcloud/apps/logreader/l10n/es.json
 nextcloud/apps/logreader/l10n/es_MX.js
 nextcloud/apps/logreader/l10n/es_MX.json
+nextcloud/apps/logreader/l10n/et_EE.js
+nextcloud/apps/logreader/l10n/et_EE.json
 nextcloud/apps/logreader/l10n/fi.js
 nextcloud/apps/logreader/l10n/fi.json
 nextcloud/apps/logreader/l10n/fr.js
 nextcloud/apps/logreader/l10n/fr.json
 nextcloud/apps/logreader/l10n/he.js
 nextcloud/apps/logreader/l10n/he.json
+nextcloud/apps/logreader/l10n/hu.js
+nextcloud/apps/logreader/l10n/hu.json
 nextcloud/apps/logreader/l10n/is.js
 nextcloud/apps/logreader/l10n/is.json
 nextcloud/apps/logreader/l10n/it.js
 nextcloud/apps/logreader/l10n/it.json
+nextcloud/apps/logreader/l10n/ja.js
+nextcloud/apps/logreader/l10n/ja.json
 nextcloud/apps/logreader/l10n/lt_LT.js
 nextcloud/apps/logreader/l10n/lt_LT.json
 nextcloud/apps/logreader/l10n/lv.js
@@ -9025,6 +9043,8 @@ nextcloud/apps/logreader/l10n/ru.js
 nextcloud/apps/logreader/l10n/ru.json
 nextcloud/apps/logreader/l10n/sq.js
 nextcloud/apps/logreader/l10n/sq.json
+nextcloud/apps/logreader/l10n/sv.js
+nextcloud/apps/logreader/l10n/sv.json
 nextcloud/apps/logreader/l10n/tr.js
 nextcloud/apps/logreader/l10n/tr.json
 nextcloud/apps/logreader/l10n/zh_CN.js
@@ -9109,6 +9129,8 @@ nextcloud/apps/nextcloud_announcements/l10n/es_AR.js
 nextcloud/apps/nextcloud_announcements/l10n/es_AR.json
 nextcloud/apps/nextcloud_announcements/l10n/es_MX.js
 nextcloud/apps/nextcloud_announcements/l10n/es_MX.json
+nextcloud/apps/nextcloud_announcements/l10n/et_EE.js
+nextcloud/apps/nextcloud_announcements/l10n/et_EE.json
 nextcloud/apps/nextcloud_announcements/l10n/fi.js
 nextcloud/apps/nextcloud_announcements/l10n/fi.json
 nextcloud/apps/nextcloud_announcements/l10n/fr.js
@@ -9151,6 +9173,8 @@ nextcloud/apps/nextcloud_announcements/l10n/sl.js
 nextcloud/apps/nextcloud_announcements/l10n/sl.json
 nextcloud/apps/nextcloud_announcements/l10n/sq.js
 nextcloud/apps/nextcloud_announcements/l10n/sq.json
+nextcloud/apps/nextcloud_announcements/l10n/sr.js
+nextcloud/apps/nextcloud_announcements/l10n/sr.json
 nextcloud/apps/nextcloud_announcements/l10n/sv.js
 nextcloud/apps/nextcloud_announcements/l10n/sv.json
 nextcloud/apps/nextcloud_announcements/l10n/tr.js
@@ -9228,6 +9252,8 @@ nextcloud/apps/notifications/l10n/es_AR.js
 nextcloud/apps/notifications/l10n/es_AR.json
 nextcloud/apps/notifications/l10n/es_MX.js
 nextcloud/apps/notifications/l10n/es_MX.json
+nextcloud/apps/notifications/l10n/et_EE.js
+nextcloud/apps/notifications/l10n/et_EE.json
 nextcloud/apps/notifications/l10n/eu.js
 nextcloud/apps/notifications/l10n/eu.json
 nextcloud/apps/notifications/l10n/fi.js
@@ -9312,10 +9338,14 @@ nextcloud/apps/oauth2/l10n/
 nextcloud/apps/oauth2/l10n/.gitkeep
 nextcloud/apps/oauth2/l10n/af.js
 nextcloud/apps/oauth2/l10n/af.json
+nextcloud/apps/oauth2/l10n/ast.js
+nextcloud/apps/oauth2/l10n/ast.json
 nextcloud/apps/oauth2/l10n/ca.js
 nextcloud/apps/oauth2/l10n/ca.json
 nextcloud/apps/oauth2/l10n/cs.js
 nextcloud/apps/oauth2/l10n/cs.json
+nextcloud/apps/oauth2/l10n/da.js
+nextcloud/apps/oauth2/l10n/da.json
 nextcloud/apps/oauth2/l10n/de.js
 nextcloud/apps/oauth2/l10n/de.json
 nextcloud/apps/oauth2/l10n/de_DE.js
@@ -9334,6 +9364,8 @@ nextcloud/apps/oauth2/l10n/fi.js
 nextcloud/apps/oauth2/l10n/fi.json
 nextcloud/apps/oauth2/l10n/fr.js
 nextcloud/apps/oauth2/l10n/fr.json
+nextcloud/apps/oauth2/l10n/id.js
+nextcloud/apps/oauth2/l10n/id.json
 nextcloud/apps/oauth2/l10n/is.js
 nextcloud/apps/oauth2/l10n/is.json
 nextcloud/apps/oauth2/l10n/it.js
@@ -9354,8 +9386,12 @@ nextcloud/apps/oauth2/l10n/pt_BR.js
 nextcloud/apps/oauth2/l10n/pt_BR.json
 nextcloud/apps/oauth2/l10n/ru.js
 nextcloud/apps/oauth2/l10n/ru.json
+nextcloud/apps/oauth2/l10n/sk.js
+nextcloud/apps/oauth2/l10n/sk.json
 nextcloud/apps/oauth2/l10n/sq.js
 nextcloud/apps/oauth2/l10n/sq.json
+nextcloud/apps/oauth2/l10n/sv.js
+nextcloud/apps/oauth2/l10n/sv.json
 nextcloud/apps/oauth2/l10n/tr.js
 nextcloud/apps/oauth2/l10n/tr.json
 nextcloud/apps/oauth2/l10n/vi.js
@@ -9714,6 +9750,8 @@ nextcloud/apps/sharebymail/l10n/ja.js
 nextcloud/apps/sharebymail/l10n/ja.json
 nextcloud/apps/sharebymail/l10n/ko.js
 nextcloud/apps/sharebymail/l10n/ko.json
+nextcloud/apps/sharebymail/l10n/lt_LT.js
+nextcloud/apps/sharebymail/l10n/lt_LT.json
 nextcloud/apps/sharebymail/l10n/nb.js
 nextcloud/apps/sharebymail/l10n/nb.json
 nextcloud/apps/sharebymail/l10n/nb_NO.js
@@ -9770,6 +9808,10 @@ nextcloud/apps/survey_client/js/admin.js
 nextcloud/apps/survey_client/l10n/
 nextcloud/apps/survey_client/l10n/.tx/
 nextcloud/apps/survey_client/l10n/.tx/config
+nextcloud/apps/survey_client/l10n/ast.js
+nextcloud/apps/survey_client/l10n/ast.json
+nextcloud/apps/survey_client/l10n/da.js
+nextcloud/apps/survey_client/l10n/da.json
 nextcloud/apps/survey_client/l10n/de.js
 nextcloud/apps/survey_client/l10n/de.json
 nextcloud/apps/survey_client/l10n/de_DE.js
@@ -9792,6 +9834,8 @@ nextcloud/apps/survey_client/l10n/is.js
 nextcloud/apps/survey_client/l10n/is.json
 nextcloud/apps/survey_client/l10n/it.js
 nextcloud/apps/survey_client/l10n/it.json
+nextcloud/apps/survey_client/l10n/ja.js
+nextcloud/apps/survey_client/l10n/ja.json
 nextcloud/apps/survey_client/l10n/lv.js
 nextcloud/apps/survey_client/l10n/lv.json
 nextcloud/apps/survey_client/l10n/mn.js
@@ -9808,6 +9852,8 @@ nextcloud/apps/survey_client/l10n/ru.js
 nextcloud/apps/survey_client/l10n/ru.json
 nextcloud/apps/survey_client/l10n/sq.js
 nextcloud/apps/survey_client/l10n/sq.json
+nextcloud/apps/survey_client/l10n/sv.js
+nextcloud/apps/survey_client/l10n/sv.json
 nextcloud/apps/survey_client/l10n/th.js
 nextcloud/apps/survey_client/l10n/th.json
 nextcloud/apps/survey_client/l10n/tr.js
@@ -10113,6 +10159,8 @@ nextcloud/apps/theming/l10n/ru.js
 nextcloud/apps/theming/l10n/ru.json
 nextcloud/apps/theming/l10n/sk.js
 nextcloud/apps/theming/l10n/sk.json
+nextcloud/apps/theming/l10n/sl.js
+nextcloud/apps/theming/l10n/sl.json
 nextcloud/apps/theming/l10n/sq.js
 nextcloud/apps/theming/l10n/sq.json
 nextcloud/apps/theming/l10n/sv.js
@@ -10161,6 +10209,8 @@ nextcloud/apps/twofactor_backupcodes/l10n/cs.js
 nextcloud/apps/twofactor_backupcodes/l10n/cs.json
 nextcloud/apps/twofactor_backupcodes/l10n/cs_CZ.js
 nextcloud/apps/twofactor_backupcodes/l10n/cs_CZ.json
+nextcloud/apps/twofactor_backupcodes/l10n/da.js
+nextcloud/apps/twofactor_backupcodes/l10n/da.json
 nextcloud/apps/twofactor_backupcodes/l10n/de.js
 nextcloud/apps/twofactor_backupcodes/l10n/de.json
 nextcloud/apps/twofactor_backupcodes/l10n/de_DE.js
@@ -10786,6 +10836,8 @@ nextcloud/apps/workflowengine/js/requestuseragentplugin.js
 nextcloud/apps/workflowengine/js/usergroupmembershipplugin.js
 nextcloud/apps/workflowengine/l10n/
 nextcloud/apps/workflowengine/l10n/.gitkeep
+nextcloud/apps/workflowengine/l10n/ast.js
+nextcloud/apps/workflowengine/l10n/ast.json
 nextcloud/apps/workflowengine/l10n/bg.js
 nextcloud/apps/workflowengine/l10n/bg.json
 nextcloud/apps/workflowengine/l10n/bg_BG.js
@@ -10796,6 +10848,8 @@ nextcloud/apps/workflowengine/l10n/cs.js
 nextcloud/apps/workflowengine/l10n/cs.json
 nextcloud/apps/workflowengine/l10n/cs_CZ.js
 nextcloud/apps/workflowengine/l10n/cs_CZ.json
+nextcloud/apps/workflowengine/l10n/da.js
+nextcloud/apps/workflowengine/l10n/da.json
 nextcloud/apps/workflowengine/l10n/de.js
 nextcloud/apps/workflowengine/l10n/de.json
 nextcloud/apps/workflowengine/l10n/de_DE.js
@@ -11275,6 +11329,7 @@ nextcloud/core/doc/admin/_sources/maintenance/backup.txt
 nextcloud/core/doc/admin/_sources/maintenance/index.txt
 nextcloud/core/doc/admin/_sources/maintenance/manual_upgrade.txt
 nextcloud/core/doc/admin/_sources/maintenance/migrating.txt
+nextcloud/core/doc/admin/_sources/maintenance/migrating_owncloud.txt
 nextcloud/core/doc/admin/_sources/maintenance/package_upgrade.txt
 nextcloud/core/doc/admin/_sources/maintenance/restore.txt
 nextcloud/core/doc/admin/_sources/maintenance/update.txt
@@ -11477,6 +11532,7 @@ nextcloud/core/doc/admin/maintenance/backup.html
 nextcloud/core/doc/admin/maintenance/index.html
 nextcloud/core/doc/admin/maintenance/manual_upgrade.html
 nextcloud/core/doc/admin/maintenance/migrating.html
+nextcloud/core/doc/admin/maintenance/migrating_owncloud.html
 nextcloud/core/doc/admin/maintenance/package_upgrade.html
 nextcloud/core/doc/admin/maintenance/restore.html
 nextcloud/core/doc/admin/maintenance/update.html
@@ -11976,6 +12032,8 @@ nextcloud/core/js/tests/specs/systemtags/systemtagsinputfieldSpec.js
 nextcloud/core/js/update.js
 nextcloud/core/js/visitortimezone.js
 nextcloud/core/l10n/
+nextcloud/core/l10n/ast.js
+nextcloud/core/l10n/ast.json
 nextcloud/core/l10n/bg.js
 nextcloud/core/l10n/bg.json
 nextcloud/core/l10n/ca.js
@@ -11998,8 +12056,12 @@ nextcloud/core/l10n/es_AR.js
 nextcloud/core/l10n/es_AR.json
 nextcloud/core/l10n/es_MX.js
 nextcloud/core/l10n/es_MX.json
+nextcloud/core/l10n/et_EE.js
+nextcloud/core/l10n/et_EE.json
 nextcloud/core/l10n/eu.js
 nextcloud/core/l10n/eu.json
+nextcloud/core/l10n/fa.js
+nextcloud/core/l10n/fa.json
 nextcloud/core/l10n/fi.js
 nextcloud/core/l10n/fi.json
 nextcloud/core/l10n/fr.js
@@ -12036,8 +12098,12 @@ nextcloud/core/l10n/ru.js
 nextcloud/core/l10n/ru.json
 nextcloud/core/l10n/sk.js
 nextcloud/core/l10n/sk.json
+nextcloud/core/l10n/sl.js
+nextcloud/core/l10n/sl.json
 nextcloud/core/l10n/sq.js
 nextcloud/core/l10n/sq.json
+nextcloud/core/l10n/sr.js
+nextcloud/core/l10n/sr.json
 nextcloud/core/l10n/sv.js
 nextcloud/core/l10n/sv.json
 nextcloud/core/l10n/tr.js
@@ -12278,6 +12344,8 @@ nextcloud/lib/l10n/ja.js
 nextcloud/lib/l10n/ja.json
 nextcloud/lib/l10n/ko.js
 nextcloud/lib/l10n/ko.json
+nextcloud/lib/l10n/lt_LT.js
+nextcloud/lib/l10n/lt_LT.json
 nextcloud/lib/l10n/nb.js
 nextcloud/lib/l10n/nb.json
 nextcloud/lib/l10n/nl.js
@@ -12292,6 +12360,8 @@ nextcloud/lib/l10n/sk.js
 nextcloud/lib/l10n/sk.json
 nextcloud/lib/l10n/sq.js
 nextcloud/lib/l10n/sq.json
+nextcloud/lib/l10n/sr.js
+nextcloud/lib/l10n/sr.json
 nextcloud/lib/l10n/sv.js
 nextcloud/lib/l10n/sv.json
 nextcloud/lib/l10n/tr.js
@@ -12759,6 +12829,7 @@ nextcloud/lib/private/Repair/NC11/MoveAvatars.php
 nextcloud/lib/private/Repair/NC11/MoveAvatarsBackgroundJob.php
 nextcloud/lib/private/Repair/NC${MAJOR}/
 nextcloud/lib/private/Repair/NC${MAJOR}/InstallCoreBundle.php
+nextcloud/lib/private/Repair/NC${MAJOR}/RepairIdentityProofKeyFolders.php
 nextcloud/lib/private/Repair/NC${MAJOR}/UpdateLanguageCodes.php
 nextcloud/lib/private/Repair/NC13/
 nextcloud/lib/private/Repair/NC13/RepairInvalidPaths.php
