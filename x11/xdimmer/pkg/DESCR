@@ -1,3 +1,4 @@
-xdimmer is a small utility to automatically dim the screen when
-no keyboard or mouse input has been detected in the configured
-number of seconds, and brighten it once input is detected.
+xdimmer is a small utility to automatically dim the screen and/or
+keyboard backlight when no keyboard or mouse input has been
+detected in the configured number of seconds, and brighten them
+once input is detected.

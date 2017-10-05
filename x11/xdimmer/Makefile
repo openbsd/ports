@@ -1,23 +1,20 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/10/29 00:36:12 jcs Exp $
+# $OpenBSD: Makefile,v 1.2 2017/10/05 21:40:10 jcs Exp $
 
-COMMENT=	utility to dim the screen backlight when idle
+COMMENT=	utility to dim the screen and keyboard backlight when idle
 
-V=		1.1
-DISTNAME=	v${V}
-DIST_SUBDIR=	xdimmer
-PKGNAME=	${DIST_SUBDIR}-${V}
+VERSION =	1.4
+GH_ACCOUNT =	jcs
+GH_PROJECT =	xdimmer
+GH_TAGNAME =	v${VERSION}
 
 CATEGORIES=	x11
-HOMEPAGE=	https://github.com/jcs/xdimmer
 
 MAINTAINER=	joshua stein <jcs@openbsd.org>
-
-MASTER_SITES=	${HOMEPAGE}/archive/
 
 # BSD
 PERMIT_PACKAGE_CDROM= Yes
 
-WANTLIB+=	X11 Xext Xrandr c
+WANTLIB+=	X11 Xext Xrandr c m
 
 FAKE_FLAGS=	DESTDIR=
 
