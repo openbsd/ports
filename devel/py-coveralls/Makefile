@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2017/10/06 13:45:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2017/10/06 21:57:18 sthen Exp $
 
 COMMENT =	display coverage stats online via coveralls.io
 
@@ -18,6 +18,7 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
+BUILD_DEPENDS =		devel/py-test-runner
 RUN_DEPENDS =		devel/py-docopt \
 			devel/py-coverage \
 			www/py-requests
