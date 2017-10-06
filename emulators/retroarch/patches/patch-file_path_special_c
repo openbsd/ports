@@ -1,0 +1,14 @@
+$OpenBSD: patch-file_path_special_c,v 1.1 2017/10/06 23:07:02 bentley Exp $
+
+Index: file_path_special.c
+--- file_path_special.c.orig
++++ file_path_special.c
+@@ -205,6 +205,8 @@ bool fill_pathname_application_data(char *s, size_t le
+ #if !defined(RARCH_CONSOLE)
+ void fill_pathname_application_path(char *s, size_t len)
+ {
++   strlcpy(s, "retroarch", len);
++   return;
+    size_t i;
+ #ifdef __APPLE__
+   CFBundleRef bundle = CFBundleGetMainBundle();

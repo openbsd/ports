@@ -1,9 +1,10 @@
-$OpenBSD: patch-audio_audio_driver_c,v 1.1.1.1 2016/08/05 05:27:52 bentley Exp $
---- audio/audio_driver.c.orig	Fri Jul 15 02:56:47 2016
-+++ audio/audio_driver.c	Fri Jul 15 02:56:50 2016
-@@ -97,7 +97,7 @@ static const audio_driver_t *audio_drivers[] = {
-    &audio_alsathread,
- #endif
+$OpenBSD: patch-audio_audio_driver_c,v 1.2 2017/10/06 23:07:02 bentley Exp $
+Index: audio/audio_driver.c
+--- audio/audio_driver.c.orig
++++ audio/audio_driver.c
+@@ -58,7 +58,7 @@ static const audio_driver_t *audio_drivers[] = {
+ #ifdef HAVE_TINYALSA
+ 	&audio_tinyalsa,
  #endif
 -#if defined(HAVE_OSS) || defined(HAVE_OSS_BSD)
 +#if 0

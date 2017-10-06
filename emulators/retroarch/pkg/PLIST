@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/08/05 05:27:52 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/10/06 23:07:02 bentley Exp $
 @bin bin/retroarch
-@man man/man1/retroarch.1
+bin/retroarch-cg2glsl
+@man man/man6/retroarch-cg2glsl.6
+@man man/man6/retroarch.6
 share/applications/retroarch.desktop
 share/examples/retroarch.cfg
 @sample ${SYSCONFDIR}/retroarch.cfg
