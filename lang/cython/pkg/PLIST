@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2017/09/01 18:08:07 juanfra Exp $
+@comment $OpenBSD: PLIST,v 1.10 2017/10/06 20:46:15 juanfra Exp $
 bin/cygdb${MODPY_BIN_SUFFIX}
 bin/cython${MODPY_BIN_SUFFIX}
 bin/cythonize${MODPY_BIN_SUFFIX}
@@ -75,6 +75,7 @@ lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Parsing.so
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Pipeline.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/PyrexTypes.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Pythran.py
+lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Pythran.so
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Scanning.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Scanning.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Scanning.so
@@ -396,6 +397,7 @@ lib/python${MODPY_VERSION}/site-packages/Cython/Tests/${MODPY_PYCACHE}__init__.$
 lib/python${MODPY_VERSION}/site-packages/Cython/Tests/${MODPY_PYCACHE}xmlrunner.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Cython/Tests/xmlrunner.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Utility/
+lib/python${MODPY_VERSION}/site-packages/Cython/Utility/AsyncGen.c
 lib/python${MODPY_VERSION}/site-packages/Cython/Utility/Buffer.c
 lib/python${MODPY_VERSION}/site-packages/Cython/Utility/Builtins.c
 lib/python${MODPY_VERSION}/site-packages/Cython/Utility/CConvert.pyx
