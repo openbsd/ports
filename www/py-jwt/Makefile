@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2017/07/04 13:59:57 jca Exp $
+# $OpenBSD: Makefile,v 1.10 2017/10/06 13:46:17 sthen Exp $
 
 COMMENT =	JSON Web Token implementation in Python
 
-MODPY_EGG_VERSION = 1.5.2
+MODPY_EGG_VERSION = 1.5.3
 DISTNAME =	PyJWT-${MODPY_EGG_VERSION}
 PKGNAME =	py-jwt-${MODPY_EGG_VERSION}
 CATEGORIES =	www
@@ -21,7 +21,7 @@ FLAVOR ?=
 MODPY_PI =	Yes
 MODPY_SETUPTOOLS = Yes
 
-RUN_DEPENDS =   security/py-cryptography${MODPY_FLAVOR}
+RUN_DEPENDS =   security/py-cryptography${MODPY_FLAVOR}>=1.4.0
 
 TEST_DEPENDS =	devel/py-test \
 		devel/py-test-cov \
