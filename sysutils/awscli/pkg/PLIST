@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.43 2017/09/16 06:47:36 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.44 2017/10/06 15:17:57 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
@@ -58,8 +58,6 @@ lib/python${MODPY_VERSION}/site-packages/awscli/customizations/cloudformation/ex
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/cloudformation/exceptions.pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/cloudformation/package.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/cloudformation/package.pyc
-lib/python${MODPY_VERSION}/site-packages/awscli/customizations/cloudformation/s3uploader.py
-lib/python${MODPY_VERSION}/site-packages/awscli/customizations/cloudformation/s3uploader.pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/cloudformation/yamlhelper.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/cloudformation/yamlhelper.pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/cloudfront.py
@@ -300,8 +298,27 @@ lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3endpoint.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3endpoint.pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3errormsg.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3errormsg.pyc
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3uploader.py
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3uploader.pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/scalarparse.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/scalarparse.pyc
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/servicecatalog/
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/servicecatalog/__init__.py
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/servicecatalog/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/servicecatalog/exceptions.py
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/servicecatalog/exceptions.pyc
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/servicecatalog/generate.py
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/servicecatalog/generate.pyc
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/servicecatalog/generatebase.py
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/servicecatalog/generatebase.pyc
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/servicecatalog/generateproduct.py
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/servicecatalog/generateproduct.pyc
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/servicecatalog/generateprovisioningartifact.py
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/servicecatalog/generateprovisioningartifact.pyc
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/servicecatalog/helptext.py
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/servicecatalog/helptext.pyc
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/servicecatalog/utils.py
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/servicecatalog/utils.pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/sessendemail.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/sessendemail.pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/streamingoutputarg.py
