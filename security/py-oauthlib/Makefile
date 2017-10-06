@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2017/04/24 09:32:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2017/10/06 13:51:25 sthen Exp $
 
 COMMENT =	Python library for OAuth
 
-MODPY_EGG_VERSION = 2.0.2
+MODPY_EGG_VERSION = 2.0.3
 
 GH_ACCOUNT =	idan
 GH_PROJECT =	oauthlib
@@ -38,6 +38,6 @@ post-extract:
 # will throw a warning when make test is run under
 # the python3 flavor, fixing this breaks python2 though.
 do-test:
-	cd ${WRKSRC} && ${MODPY_BIN} -m unittest discover
+	cd ${WRKSRC} && ${MODPY_BIN} -m unittest discover -v
 
 .include <bsd.port.mk>
