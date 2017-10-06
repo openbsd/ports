@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.2 2017/09/27 05:46:42 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2017/10/06 14:47:33 ajacoutot Exp $
 include/httpseverywhere-0.6/
 include/httpseverywhere-0.6/httpseverywhere.h
 lib/girepository-1.0/HTTPSEverywhere-0.6.typelib
-@bin lib/libhttpseverywhere-0.6.so.${LIBhttpseverywhere-0.6_VERSION}
+@lib lib/libhttpseverywhere-0.6.so.${LIBhttpseverywhere-0.6_VERSION}
 lib/pkgconfig/httpseverywhere-0.6.pc
 share/libhttpseverywhere/
 share/libhttpseverywhere/default.rulesets
