@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2016/04/25 10:14:40 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2017/10/06 15:09:36 ajacoutot Exp $
 @conflict vala-<0.10
 @pkgpath devel/dconf,-main
 @extraunexec rm -rf ${SYSCONFDIR}/dconf/db/*
@@ -20,14 +20,12 @@ lib/pkgconfig/dconf.pc
 @man man/man1/dconf.1
 @man man/man7/dconf.7
 share/bash-completion/completions/dconf
+share/dbus-1/
+share/dbus-1/services/
 share/dbus-1/services/ca.desrt.dconf.service
 share/gtk-doc/html/dconf/
 share/gtk-doc/html/dconf/DConfClient.html
 share/gtk-doc/html/dconf/annotation-glossary.html
-share/gtk-doc/html/dconf/api-index-0.16.html
-share/gtk-doc/html/dconf/api-index-0.18.html
-share/gtk-doc/html/dconf/api-index-0.20.html
-share/gtk-doc/html/dconf/api-index-0.26.html
 share/gtk-doc/html/dconf/api-index-full.html
 share/gtk-doc/html/dconf/ch01.html
 share/gtk-doc/html/dconf/dconf-DConfChangeset.html
@@ -39,7 +37,6 @@ share/gtk-doc/html/dconf/dconf-tool.html
 share/gtk-doc/html/dconf/dconf.devhelp2
 share/gtk-doc/html/dconf/home.png
 share/gtk-doc/html/dconf/index.html
-share/gtk-doc/html/dconf/index.sgml
 share/gtk-doc/html/dconf/left-insensitive.png
 share/gtk-doc/html/dconf/left.png
 share/gtk-doc/html/dconf/object-tree.html
