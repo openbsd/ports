@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2017/09/25 09:16:13 robert Exp $
+# $OpenBSD: Makefile,v 1.12 2017/10/06 15:23:23 naddy Exp $
 
 COMMENT=		GObject library for handling and rendering XPS documents
 
 GNOME_PROJECT=		libgxps
 GNOME_VERSION=		0.2.5
 
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  gxps                 0.1      # 4.1
 
@@ -36,7 +36,8 @@ LIB_DEPENDS=		archivers/libarchive \
 			graphics/cairo \
 			graphics/lcms2
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	autoconf
+AUTOCONF_VERSION=	2.69
 
 # requires gtk+3
 CONFIGURE_ARGS +=	--disable-test
