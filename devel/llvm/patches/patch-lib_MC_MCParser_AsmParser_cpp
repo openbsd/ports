@@ -1,0 +1,35 @@
+$OpenBSD: patch-lib_MC_MCParser_AsmParser_cpp,v 1.3 2017/10/07 12:35:31 ajacoutot Exp $
+
+make clang include a FILE symbol for .(s|S) files
+
+This is mostly needed by syspatch at the moment to be
+to be able to re-link in the same order as the original
+libraries were linked with by relying on the readelf(1)
+and without this .(s|S) assembly files were not getting
+a file directive.
+
+Index: lib/MC/MCParser/AsmParser.cpp
+--- lib/MC/MCParser/AsmParser.cpp.orig
++++ lib/MC/MCParser/AsmParser.cpp
+@@ -742,6 +742,8 @@ bool AsmParser::Run(bool NoInitialTextSection, bool No
+   AsmCond StartingCondState = TheCondState;
+   SmallVector<AsmRewrite, 4> AsmStrRewrites;
+ 
++  StringRef Filename = getContext().getMainFileName();
++
+   // If we are generating dwarf for assembly source files save the initial text
+   // section and generate a .file directive.
+   if (getContext().getGenDwarfForAssembly()) {
+@@ -755,8 +757,11 @@ bool AsmParser::Run(bool NoInitialTextSection, bool No
+     assert(InsertResult && ".text section should not have debug info yet");
+     (void)InsertResult;
+     getContext().setGenDwarfFileNumber(getStreamer().EmitDwarfFileDirective(
+-        0, StringRef(), getContext().getMainFileName()));
++        0, StringRef(), Filename));
+   }
++
++  if (!Filename.empty() && (Filename.compare(StringRef("-")) != 0))
++    Out.EmitFileDirective(Filename);
+ 
+   // While we have input, parse each statement.
+   while (Lexer.isNot(AsmToken::Eof)) {
