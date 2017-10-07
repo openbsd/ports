@@ -1,7 +1,8 @@
-$OpenBSD: patch-gphoto2_actions_c,v 1.4 2014/03/24 11:07:47 ajacoutot Exp $
---- gphoto2/actions.c.orig	Sun Feb 23 13:53:52 2014
-+++ gphoto2/actions.c	Mon Mar 24 12:03:26 2014
-@@ -18,7 +18,8 @@
+$OpenBSD: patch-gphoto2_actions_c,v 1.5 2017/10/07 14:52:47 ajacoutot Exp $
+Index: gphoto2/actions.c
+--- gphoto2/actions.c.orig
++++ gphoto2/actions.c
+@@ -19,7 +19,8 @@
   * Boston, MA  02110-1301  USA
   */
  
@@ -11,7 +12,7 @@ $OpenBSD: patch-gphoto2_actions_c,v 1.4 2014/03/24 11:07:47 ajacoutot Exp $
  #define _GNU_SOURCE	/* get all the other prototypes */
  #define __EXTENSIONS__	/* for solaris to get back strdup and strcasecmp */
  
-@@ -35,6 +36,9 @@
+@@ -36,6 +37,9 @@
  #ifdef HAVE_SYS_TIME_H
  # include <sys/time.h>
  #endif
