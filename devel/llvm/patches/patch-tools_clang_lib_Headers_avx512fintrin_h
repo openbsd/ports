@@ -1,0 +1,37 @@
+$OpenBSD: patch-tools_clang_lib_Headers_avx512fintrin_h,v 1.1 2017/10/07 12:08:33 ajacoutot Exp $
+
+[X86] Disable _mm512_maskz_set1_epi64 intrinsic on 32-bit targets to prevent a
+backend isel failure.
+
+The __builtin_ia32_pbroadcastq512_mem_mask we were previously trying to use in
+32-bit mode is not implemented in the x86 backend and causes isel to fail in
+release builds. In debug builds it fails even earlier during legalization with
+an llvm_unreachable.
+
+Index: tools/clang/lib/Headers/avx512fintrin.h
+--- tools/clang/lib/Headers/avx512fintrin.h.orig
++++ tools/clang/lib/Headers/avx512fintrin.h
+@@ -267,21 +267,16 @@ _mm512_maskz_set1_epi32(__mmask16 __M, int __A)
+                  __M);
+ }
+ 
++#ifdef __x86_64__
+ static __inline __m512i __DEFAULT_FN_ATTRS
+ _mm512_maskz_set1_epi64(__mmask8 __M, long long __A)
+ {
+-#ifdef __x86_64__
+   return (__m512i) __builtin_ia32_pbroadcastq512_gpr_mask (__A,
+                  (__v8di)
+                  _mm512_setzero_si512 (),
+                  __M);
+-#else
+-  return (__m512i) __builtin_ia32_pbroadcastq512_mem_mask (__A,
+-                 (__v8di)
+-                 _mm512_setzero_si512 (),
+-                 __M);
+-#endif
+ }
++#endif
+ 
+ static __inline __m512 __DEFAULT_FN_ATTRS
+ _mm512_setzero_ps(void)
