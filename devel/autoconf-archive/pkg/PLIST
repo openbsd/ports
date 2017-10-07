@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2017/03/26 12:29:47 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2017/10/07 09:44:06 jasper Exp $
 @info info/autoconf-archive.info
 share/aclocal/
 share/aclocal/ax_absolute_header.m4
@@ -303,6 +303,7 @@ share/aclocal/ax_dirname.m4
 share/aclocal/ax_dist_msi.m4
 share/aclocal/ax_dist_rpm.m4
 share/aclocal/ax_dll_string.m4
+share/aclocal/ax_elisp.m4
 share/aclocal/ax_enable_builddir.m4
 share/aclocal/ax_execinfo.m4
 share/aclocal/ax_expand_prefix.m4
@@ -439,6 +440,7 @@ share/aclocal/ax_prog_cxx_for_build.m4
 share/aclocal/ax_prog_cxx_mpi.m4
 share/aclocal/ax_prog_dotnetcore_version.m4
 share/aclocal/ax_prog_doxygen.m4
+share/aclocal/ax_prog_emacs.m4
 share/aclocal/ax_prog_f77_mpi.m4
 share/aclocal/ax_prog_fasm.m4
 share/aclocal/ax_prog_fasm_opt.m4
@@ -449,6 +451,7 @@ share/aclocal/ax_prog_flex_version.m4
 share/aclocal/ax_prog_gjs.m4
 share/aclocal/ax_prog_guile_version.m4
 share/aclocal/ax_prog_haxe_version.m4
+share/aclocal/ax_prog_help2man.m4
 share/aclocal/ax_prog_hla.m4
 share/aclocal/ax_prog_hla_opt.m4
 share/aclocal/ax_prog_httpd.m4
@@ -498,6 +501,7 @@ share/aclocal/ax_python_devel.m4
 share/aclocal/ax_python_embed.m4
 share/aclocal/ax_python_module.m4
 share/aclocal/ax_python_module_version.m4
+share/aclocal/ax_recursive_eval.m4
 share/aclocal/ax_require_defined.m4
 share/aclocal/ax_require_one_func.m4
 share/aclocal/ax_restore_flags.m4
@@ -518,6 +522,7 @@ share/aclocal/ax_string_strcasecmp.m4
 share/aclocal/ax_strings_strcasecmp.m4
 share/aclocal/ax_struct_semun.m4
 share/aclocal/ax_subdir_files.m4
+share/aclocal/ax_subdirs_configure.m4
 share/aclocal/ax_subst_with.m4
 share/aclocal/ax_swig_enable_cxx.m4
 share/aclocal/ax_swig_multi_module_support.m4
