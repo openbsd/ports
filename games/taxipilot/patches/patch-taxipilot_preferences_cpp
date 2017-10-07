@@ -1,0 +1,14 @@
+$OpenBSD: patch-taxipilot_preferences_cpp,v 1.1 2017/10/07 10:24:46 espie Exp $
+
+Index: taxipilot/preferences.cpp
+--- taxipilot/preferences.cpp.orig
++++ taxipilot/preferences.cpp
+@@ -105,7 +105,7 @@ void Preferences::select_mission_path(){
+ 
+ /** Select the default mission */
+ void Preferences::select_default_mission(){
+-	QString dummy = (KFileDialog::getOpenFileName (QFileInfo::QFileInfo (def_m->text ()).dirPath (true), "*.mission", this, i18n ( "Select default mission-path" )));
++	QString dummy = (KFileDialog::getOpenFileName (QFileInfo (def_m->text ()).dirPath (true), "*.mission", this, i18n ( "Select default mission-path" )));
+ 	if (!dummy.isEmpty ()) {
+ 		def_m->setText (dummy);
+ 	}

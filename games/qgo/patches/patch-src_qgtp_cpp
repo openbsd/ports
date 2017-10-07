@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_qgtp_cpp,v 1.1 2017/10/07 10:24:46 espie Exp $
+
+Index: src/qgtp.cpp
+--- src/qgtp.cpp.orig
++++ src/qgtp.cpp
+@@ -277,7 +277,7 @@ int msglen = strlen(s);
+ 	_cpt++;
+ 
+ 	qDebug(QString("flush -> %1").arg(s));
+-    programProcess->writeToStdin(QString::QString(s));
++    programProcess->writeToStdin(QString(s));
+ 	
+ 	
+ }

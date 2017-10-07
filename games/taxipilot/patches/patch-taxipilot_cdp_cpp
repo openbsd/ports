@@ -1,0 +1,30 @@
+$OpenBSD: patch-taxipilot_cdp_cpp,v 1.1 2017/10/07 10:24:46 espie Exp $
+
+Index: taxipilot/cdp.cpp
+--- taxipilot/cdp.cpp.orig
++++ taxipilot/cdp.cpp
+@@ -97,7 +97,7 @@ QString Cdp::prefix_check(QString filename, bool image
+ 	}
+ 
+ 	if (QFileInfo (filename).isRelative()) {
+-		if (QFile::QFile(alt_pref + filename).exists()) {
++		if (QFile(alt_pref + filename).exists()) {
+ 			pref = alt_pref;
+ 		}
+ 		debug_msg(i18n("Adding prefix '") + pref + i18n("' to filename: '") + filename + "'", 3);
+@@ -121,7 +121,7 @@ QString Cdp::prefix_check_animation(QString filename_p
+ 	if (QFileInfo (filename_pattern).isRelative ()) {
+ 		dummy1 = filename_pattern;
+ 		dummy1.replace(QRegExp("%1"), "0000");
+-		if (QFile::QFile(alt_image_prefix + dummy1).exists()) {
++		if (QFile(alt_image_prefix + dummy1).exists()) {
+ 			pref = alt_image_prefix;
+ 		}
+ 		debug_msg(i18n("Adding prefix '") + pref + i18n("' to filename-pattern: '") + filename_pattern + "'", 3);
+@@ -583,4 +583,4 @@ bool Cdp::verify_tag (QString const &name, QDomElement
+ 	}
+ 	debug_msg (i18n ("Tag of type '") + name + i18n ("' found, but '") + element.tagName () + i18n ("' expected."), level, &element);
+ 	return false;
+-}
+\ No newline at end of file
++}

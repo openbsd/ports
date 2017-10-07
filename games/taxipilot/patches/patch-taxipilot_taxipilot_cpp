@@ -1,0 +1,14 @@
+$OpenBSD: patch-taxipilot_taxipilot_cpp,v 1.1 2017/10/07 10:24:46 espie Exp $
+
+Index: taxipilot/taxipilot.cpp
+--- taxipilot/taxipilot.cpp.orig
++++ taxipilot/taxipilot.cpp
+@@ -76,7 +76,7 @@ Taxipilot::Taxipilot(TaxipilotApp * parent, const char
+ 
+ 	fader = new QCanvasRectangle(canvas);
+ 	fader->setPen(NoPen);
+-	fader->setBrush(QBrush::QBrush(Dense4Pattern));
++	fader->setBrush(QBrush(Dense4Pattern));
+ 	fader->setZ(FADER_Z);		// second topmost
+ 
+ //      centralhbox->addWidget ( view );

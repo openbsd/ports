@@ -1,0 +1,23 @@
+$OpenBSD: patch-lib_procframe_Variable_cpp,v 1.1 2017/10/07 10:24:46 espie Exp $
+
+Index: lib/procframe/Variable.cpp
+--- lib/procframe/Variable.cpp.orig
++++ lib/procframe/Variable.cpp
+@@ -154,7 +154,7 @@ namespace gpstk
+                        const SourceID& source )
+    {
+          // Call general constructor setting a generic satellite
+-      Variable::Variable( type,
++      Variable( type,
+                           pModel,
+                           source,
+                           allSats );
+@@ -175,7 +175,7 @@ namespace gpstk
+                        const SatID& satellite )
+    {
+          // Call general constructor setting a generic source
+-      Variable::Variable( type,
++      Variable( type,
+                           pModel,
+                           allSources,
+                           satellite );

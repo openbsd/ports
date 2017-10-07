@@ -1,0 +1,76 @@
+$OpenBSD: patch-src_gamedialog_cpp,v 1.1 2017/10/07 10:24:46 espie Exp $
+
+Index: src/gamedialog.cpp
+--- src/gamedialog.cpp.orig
++++ src/gamedialog.cpp
+@@ -512,7 +512,7 @@ void GameDialog::slot_dispute(const QString &opponent,
+ 		if (handicapSpin->value() != val.toInt())
+ 		{
+ 			handicapSpin->setValue(val.toInt());
+-			handicapSpin->setPaletteBackgroundColor(QColor::QColor("cyan"));
++			handicapSpin->setPaletteBackgroundColor(QColor("cyan"));
+ 		}
+ 		else
+ 			handicapSpin->unsetPalette();
+@@ -521,7 +521,7 @@ void GameDialog::slot_dispute(const QString &opponent,
+ 		if (boardSizeSpin->value() != val.toInt())
+ 		{
+ 			boardSizeSpin->setValue(val.toInt());
+-			boardSizeSpin->setPaletteBackgroundColor(QColor::QColor("cyan"));
++			boardSizeSpin->setPaletteBackgroundColor(QColor("cyan"));
+ 		}
+ 		else
+ 			boardSizeSpin->unsetPalette();
+@@ -530,7 +530,7 @@ void GameDialog::slot_dispute(const QString &opponent,
+ 		if (timeSpin->value() != val.toInt()/60)
+ 		{
+ 			timeSpin->setValue(val.toInt()/60);
+-			timeSpin->setPaletteBackgroundColor(QColor::QColor("cyan"));
++			timeSpin->setPaletteBackgroundColor(QColor("cyan"));
+ 		}
+ 		else
+ 			timeSpin->unsetPalette();
+@@ -539,7 +539,7 @@ void GameDialog::slot_dispute(const QString &opponent,
+ 		if (byoTimeSpin->value() != val.toInt()/60)
+ 		{
+ 			byoTimeSpin->setValue(val.toInt()/60);
+-			byoTimeSpin->setPaletteBackgroundColor(QColor::QColor("cyan"));
++			byoTimeSpin->setPaletteBackgroundColor(QColor("cyan"));
+ 		}
+ 		else
+ 			byoTimeSpin->unsetPalette();	
+@@ -550,25 +550,25 @@ void GameDialog::slot_dispute(const QString &opponent,
+ 		val = element(line,0," ");
+ 		if ( !(play_nigiri_button->isChecked()) && (val == "N"))
+ 		{
+-			play_nigiri_button->setPaletteBackgroundColor(QColor::QColor("cyan"));
+-			play_white_button->setPaletteBackgroundColor(QColor::QColor("cyan"));
+-			play_black_button->setPaletteBackgroundColor(QColor::QColor("cyan"));
++			play_nigiri_button->setPaletteBackgroundColor(QColor("cyan"));
++			play_white_button->setPaletteBackgroundColor(QColor("cyan"));
++			play_black_button->setPaletteBackgroundColor(QColor("cyan"));
+ 			play_nigiri_button->setChecked(true);
+ 
+ 		}
+ 		else if ( (play_black_button->isChecked()) && (val == "B"))
+ 		{
+-			play_nigiri_button->setPaletteBackgroundColor(QColor::QColor("cyan"));
+-			play_white_button->setPaletteBackgroundColor(QColor::QColor("cyan"));
+-			play_black_button->setPaletteBackgroundColor(QColor::QColor("cyan"));
++			play_nigiri_button->setPaletteBackgroundColor(QColor("cyan"));
++			play_white_button->setPaletteBackgroundColor(QColor("cyan"));
++			play_black_button->setPaletteBackgroundColor(QColor("cyan"));
+ 			play_white_button->setChecked(true);
+ 
+ 		}
+ 		else if ( (play_white_button->isChecked()) && (val == "W"))
+ 		{
+-			play_nigiri_button->setPaletteBackgroundColor(QColor::QColor("cyan"));
+-			play_white_button->setPaletteBackgroundColor(QColor::QColor("cyan"));
+-			play_black_button->setPaletteBackgroundColor(QColor::QColor("cyan"));
++			play_nigiri_button->setPaletteBackgroundColor(QColor("cyan"));
++			play_white_button->setPaletteBackgroundColor(QColor("cyan"));
++			play_black_button->setPaletteBackgroundColor(QColor("cyan"));
+ 			play_black_button->setChecked(true);
+ 
+ 		}

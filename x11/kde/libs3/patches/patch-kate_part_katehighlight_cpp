@@ -1,0 +1,26 @@
+$OpenBSD: patch-kate_part_katehighlight_cpp,v 1.1 2017/10/07 10:24:46 espie Exp $
+
+Index: kate/part/katehighlight.cpp
+--- kate/part/katehighlight.cpp.orig
++++ kate/part/katehighlight.cpp
+@@ -3225,7 +3225,7 @@ void KateHlManager::getDefaults(uint schema, KateAttri
+   list.append(charAttribute);
+ 
+   KateAttribute* string = new KateAttribute();
+-  string->setTextColor(QColor::QColor("#D00"));
++  string->setTextColor(QColor("#D00"));
+   string->setSelectedTextColor(Qt::red);
+   list.append(string);
+ 
+@@ -3242,9 +3242,9 @@ void KateHlManager::getDefaults(uint schema, KateAttri
+ 
+   KateAttribute* alert = new KateAttribute();
+   alert->setTextColor(Qt::black);
+-  alert->setSelectedTextColor( QColor::QColor("#FCC") );
++  alert->setSelectedTextColor( QColor("#FCC") );
+   alert->setBold(true);
+-  alert->setBGColor( QColor::QColor("#FCC") );
++  alert->setBGColor( QColor("#FCC") );
+   list.append(alert);
+ 
+   KateAttribute* functionAttribute = new KateAttribute();
