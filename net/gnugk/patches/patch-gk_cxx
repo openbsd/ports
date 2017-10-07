@@ -1,9 +1,9 @@
-$OpenBSD: patch-gk_cxx,v 1.6 2017/08/28 08:31:29 ajacoutot Exp $
+$OpenBSD: patch-gk_cxx,v 1.7 2017/10/07 15:04:36 ajacoutot Exp $
 
 Index: gk.cxx
 --- gk.cxx.orig
 +++ gk.cxx
-@@ -23,6 +23,7 @@
+@@ -25,6 +25,7 @@
  #include <sys/resource.h>
  #include <sys/mman.h>
  #endif

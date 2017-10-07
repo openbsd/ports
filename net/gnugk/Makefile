@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.72 2017/08/28 08:31:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.73 2017/10/07 15:04:36 ajacoutot Exp $
 
 BROKEN-hppa=		libpt.so.7.0: undefined reference to __sync_fetch_and_or_4
 
 COMMENT=		H.323 gatekeeper
 
-DISTNAME=		gnugk-4.5
+# CVS checkout
+DISTNAME=		gnugk-4.7.20171007
 
 CATEGORIES=		net telephony
 
@@ -24,7 +25,8 @@ MODULES=		lang/lua
 # uses luaL_newlib, lua_setglobal
 MODLUA_VERSION=5.2
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=openh323gk/}
+#MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=openh323gk/}
+MASTER_SITES=		https://distfiles.bsdfrog.org/
 
 BUILD_DEPENDS=		databases/mariadb \
 			databases/postgresql
