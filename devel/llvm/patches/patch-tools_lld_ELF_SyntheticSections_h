@@ -1,0 +1,23 @@
+$OpenBSD: patch-tools_lld_ELF_SyntheticSections_h,v 1.1 2017/10/08 07:40:18 ajacoutot Exp $
+
+[ELF] - Fix segfault when processing .eh_frame.
+
+Its a PR34648 which was a segfault that happened because
+we stored pointers to elements in DenseMap. 
+When DenseMap grows such pointers are invalidated.
+Solution implemented is to keep elements by pointer
+and not by value.
+
+Index: tools/lld/ELF/SyntheticSections.h
+--- tools/lld/ELF/SyntheticSections.h.orig
++++ tools/lld/ELF/SyntheticSections.h
+@@ -103,7 +103,8 @@ template <class ELFT> class EhFrameSection final : pub
+   std::vector<CieRecord *> Cies;
+ 
+   // CIE records are uniquified by their contents and personality functions.
+-  llvm::DenseMap<std::pair<ArrayRef<uint8_t>, SymbolBody *>, CieRecord> CieMap;
++  llvm::DenseMap<std::pair<ArrayRef<uint8_t>, SymbolBody *>, CieRecord *>
++      CieMap;
+ };
+ 
+ class GotSection : public SyntheticSection {

@@ -1,0 +1,56 @@
+$OpenBSD: patch-tools_lld_ELF_SyntheticSections_cpp,v 1.4 2017/10/08 07:40:18 ajacoutot Exp $
+
+- [ELF] - Fix segfault when processing .eh_frame.
+
+  Its a PR34648 which was a segfault that happened because
+  we stored pointers to elements in DenseMap. 
+  When DenseMap grows such pointers are invalidated.
+  Solution implemented is to keep elements by pointer
+  and not by value.
+
+- [LLD] Fix padding of .eh_frame when in executable segment
+
+  The default padding for an executable segment is the target trap
+  instruction which for x86_64 is 0xCC. However, the .eh_frame section
+  requires the padding to be zero. The code that writes the .eh_frame
+  section assumes that its segment is zero initialized and does not
+  explicitly write the zero padding. This does not work when the .eh_frame
+  section is in the executable segment (for example when using
+  -no-rosegment).
+
+  This patch changes the .eh_frame writing code to explicitly write the
+  zero padding.
+
+Index: tools/lld/ELF/SyntheticSections.cpp
+--- tools/lld/ELF/SyntheticSections.cpp.orig
++++ tools/lld/ELF/SyntheticSections.cpp
+@@ -427,10 +427,11 @@ CieRecord *EhFrameSection<ELFT>::addCie(EhSectionPiece
+         &Sec->template getFile<ELFT>()->getRelocTargetSym(Rels[FirstRelI]);
+ 
+   // Search for an existing CIE by CIE contents/relocation target pair.
+-  CieRecord *Cie = &CieMap[{Piece.data(), Personality}];
++  CieRecord *&Cie = CieMap[{Piece.data(), Personality}];
+ 
+   // If not found, create a new one.
+-  if (Cie->Piece == nullptr) {
++  if (!Cie) {
++    Cie = make<CieRecord>();
+     Cie->Piece = &Piece;
+     Cies.push_back(Cie);
+   }
+@@ -522,9 +523,14 @@ template <class ELFT>
+ static void writeCieFde(uint8_t *Buf, ArrayRef<uint8_t> D) {
+   memcpy(Buf, D.data(), D.size());
+ 
++  size_t Aligned = alignTo(D.size(), sizeof(typename ELFT::uint));
++
++  // Zero-clear trailing padding if it exists.
++  memset(Buf + D.size(), 0, Aligned - D.size());
++
+   // Fix the size field. -4 since size does not include the size field itself.
+   const endianness E = ELFT::TargetEndianness;
+-  write32<E>(Buf, alignTo(D.size(), sizeof(typename ELFT::uint)) - 4);
++  write32<E>(Buf, Aligned - 4);
+ }
+ 
+ template <class ELFT> void EhFrameSection<ELFT>::finalizeContents() {
