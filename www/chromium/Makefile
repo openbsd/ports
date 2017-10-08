@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.341 2017/09/22 12:31:03 robert Exp $
+# $OpenBSD: Makefile,v 1.342 2017/10/08 16:02:46 robert Exp $
 
 .include <bsd.port.arch.mk>
 
@@ -10,6 +10,8 @@ DPB_PROPERTIES=		parallel
 COMMENT=		Chromium browser
 
 V=			61.0.3163.100
+
+REVISION=		0
 
 DISTNAME=		chromium-${V}
 
@@ -172,8 +174,8 @@ do-configure:
 		--system-libraries ${GN_SYSTEM_LIBS}
 	@cd ${WRKSRC}/tools/gn && env -i ${MAKE_ENV} LDFLAGS=-L${LOCALBASE}/lib ${MODPY_BIN} bootstrap/bootstrap.py \
 		--no-clean -s --gn-gen-args "${GN_ARGS}"
-	@cd ${WRKSRC} && env -i ${CONFIGURE_ENV} ${WRKSRC}/out/${BUILDTYPE}/gn \
-		gen --args="${GN_ARGS}" out/Release
+	@cd ${WRKSRC} && env -i ${CONFIGURE_ENV} ${WRKSRC}/out/Release/gn \
+		gen --args="${GN_ARGS}" out/${BUILDTYPE}
 
 do-build:
 	@cd ${WRKSRC} && env -i ${MAKE_ENV} ninja \
