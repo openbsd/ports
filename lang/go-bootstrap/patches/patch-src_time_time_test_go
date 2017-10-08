@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_time_time_test_go,v 1.1 2017/10/08 15:40:56 jsing Exp $
+
+Index: src/time/time_test.go
+--- src/time/time_test.go.orig
++++ src/time/time_test.go
+@@ -915,6 +915,8 @@ func TestCountMallocs(t *testing.T) {
+ }
+ 
+ func TestLoadFixed(t *testing.T) {
++	t.Skip("skipping test for Go 1.4; Issue 17545")
++
+ 	// Issue 4064: handle locations without any zone transitions.
+ 	loc, err := LoadLocation("Etc/GMT+1")
+ 	if err != nil {

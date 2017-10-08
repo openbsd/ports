@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2017/06/04 17:50:16 jsing Exp $
+# $OpenBSD: Makefile,v 1.6 2017/10/08 15:40:56 jsing Exp $
 
 ONLY_FOR_ARCHS =	${GO_ARCHS}
 
@@ -8,7 +8,7 @@ VERSION =		1.4.3
 EXTRACT_SUFX =		.src.tar.gz
 DISTNAME = 		go${VERSION}
 PKGNAME = 		go-bootstrap-${VERSION}
-REVISION =		3
+REVISION =		4
 CATEGORIES =		lang
 
 HOMEPAGE =		https://golang.org/
@@ -67,7 +67,6 @@ do-build:
 	@cd ${WRKSRC} && \
 		CC="${CC}" \
 		CXX="${CXX}" \
-		CGO_ENABLED=0 \
 		GOROOT=${WRKDIST} \
 		GOBIN=${WRKDIST}/bin \
 		GOROOT_FINAL=${GOROOT} \

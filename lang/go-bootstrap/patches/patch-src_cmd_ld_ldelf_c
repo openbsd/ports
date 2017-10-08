@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_cmd_ld_ldelf_c,v 1.1 2017/10/08 15:40:56 jsing Exp $
+
+Index: src/cmd/ld/ldelf.c
+--- src/cmd/ld/ldelf.c.orig
++++ src/cmd/ld/ldelf.c
+@@ -819,6 +819,12 @@ readsym(ElfObj *obj, int i, ElfSym *sym, int needSym)
+ 					s->type |= SHIDDEN;
+ 					s->dupok = 1;
+ 				}
++				// TODO(jsing): Currently, clang on OpenBSD is generating hidden
++				// __guard_local symbols, which is tripping up the Go linker.
++				// As a workaround, mark the symbol as visible for the time being.
++				if(s && strncmp(sym->name, "__guard_local", 13) == 0) {
++					s->type &= ~SHIDDEN;
++				}
+ 			}
+ 			break;
+ 		case ElfSymBindLocal:
