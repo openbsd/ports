@@ -1,30 +1,41 @@
-@comment $OpenBSD: PLIST,v 1.5 2017/04/15 14:23:45 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2017/10/08 07:16:24 jasper Exp $
 @bin bin/rofi
 bin/rofi-sensible-terminal
 bin/rofi-theme-selector
+include/rofi/
+include/rofi/helper.h
+include/rofi/mode-private.h
+include/rofi/mode.h
+lib/pkgconfig/rofi.pc
 @man man/man1/rofi-sensible-terminal.1
 @man man/man1/rofi.1
+@man man/man5/rofi-theme.5
 share/examples/rofi/
 share/examples/rofi/i3_switch_workspaces.sh
 share/rofi/
 share/rofi/themes/
-share/rofi/themes/Adapta-Nokto.theme
-share/rofi/themes/Arc.theme
-share/rofi/themes/DarkBlue.theme
-share/rofi/themes/Indego.theme
-share/rofi/themes/Monokai.theme
-share/rofi/themes/Paper.theme
-share/rofi/themes/android_notification.theme
-share/rofi/themes/blue.theme
-share/rofi/themes/c64.theme
-share/rofi/themes/glue_pro_blue.theme
-share/rofi/themes/gruvbox-dark-hard.theme
-share/rofi/themes/gruvbox-dark-soft.theme
-share/rofi/themes/gruvbox-dark.theme
-share/rofi/themes/gruvbox-light-hard.theme
-share/rofi/themes/gruvbox-light-soft.theme
-share/rofi/themes/gruvbox-light.theme
-share/rofi/themes/lb.theme
-share/rofi/themes/purple.theme
-share/rofi/themes/solarized.theme
-share/rofi/themes/solarized_alternate.theme
+share/rofi/themes/Adapta-Nokto.rasi
+share/rofi/themes/Arc.rasi
+share/rofi/themes/DarkBlue.rasi
+share/rofi/themes/Indego.rasi
+share/rofi/themes/Monokai.rasi
+share/rofi/themes/Paper.rasi
+share/rofi/themes/Pop-Dark.rasi
+share/rofi/themes/android_notification.rasi
+share/rofi/themes/arthur.rasi
+share/rofi/themes/blue.rasi
+share/rofi/themes/c64.rasi
+share/rofi/themes/dmenu.rasi
+share/rofi/themes/glue_pro_blue.rasi
+share/rofi/themes/gruvbox-dark-hard.rasi
+share/rofi/themes/gruvbox-dark-soft.rasi
+share/rofi/themes/gruvbox-dark.rasi
+share/rofi/themes/gruvbox-light-hard.rasi
+share/rofi/themes/gruvbox-light-soft.rasi
+share/rofi/themes/gruvbox-light.rasi
+share/rofi/themes/lb.rasi
+share/rofi/themes/paper-float.rasi
+share/rofi/themes/purple.rasi
+share/rofi/themes/sidebar.rasi
+share/rofi/themes/solarized.rasi
+share/rofi/themes/solarized_alternate.rasi
