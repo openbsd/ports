@@ -1,10 +1,11 @@
-$OpenBSD: patch-lenses_shellvars_aug,v 1.12 2016/08/15 10:32:33 jasper Exp $
+$OpenBSD: patch-lenses_shellvars_aug,v 1.13 2017/10/08 08:19:25 jasper Exp $
 
 - adduser.conf is not a shell script, so don't try to parse it as such.
 - rc.conf* are not shell scripts anymore.
 
---- lenses/shellvars.aug.orig	Sat Aug  6 00:08:48 2016
-+++ lenses/shellvars.aug	Fri Aug 12 21:05:49 2016
+Index: lenses/shellvars.aug
+--- lenses/shellvars.aug.orig
++++ lenses/shellvars.aug
 @@ -298,7 +298,6 @@ module Shellvars =
                       . incl "/etc/environment"
                       . incl "/etc/firewalld/firewalld.conf"
@@ -13,11 +14,12 @@ $OpenBSD: patch-lenses_shellvars_aug,v 1.12 2016/08/15 10:32:33 jasper Exp $
                       . incl "/etc/cowpoke.conf"
                       . incl "/etc/cvs-cron.conf"
                       . incl "/etc/cvs-pserver.conf"
-@@ -310,8 +309,6 @@ module Shellvars =
+@@ -310,9 +309,7 @@ module Shellvars =
                       . incl "/etc/os-release"
                       . incl "/etc/periodic.conf"
                       . incl "/etc/popularity-contest.conf"
 -                     . incl "/etc/rc.conf"
+                      . incl "/etc/rc.conf.d/*"
 -                     . incl "/etc/rc.conf.local"
                       . incl "/etc/selinux/config"
                       . incl "/etc/ucf.conf"
