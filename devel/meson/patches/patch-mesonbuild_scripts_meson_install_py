@@ -1,4 +1,4 @@
-$OpenBSD: patch-mesonbuild_scripts_meson_install_py,v 1.1 2017/09/26 09:07:14 dcoppa Exp $
+$OpenBSD: patch-mesonbuild_scripts_meson_install_py,v 1.2 2017/10/09 07:40:25 ajacoutot Exp $
 
 Do not install compressed manpages
 
@@ -11,17 +11,19 @@ Index: mesonbuild/scripts/meson_install.py
  
 -import sys, pickle, os, shutil, subprocess, gzip, platform, errno
 +import sys, pickle, os, shutil, subprocess, platform, errno
+ import shlex
  from glob import glob
  from . import depfixer
- from . import destdir_join
-@@ -223,14 +223,7 @@ def install_man(d):
+@@ -224,16 +224,7 @@ def install_man(d):
          outdir = os.path.split(outfilename)[0]
          d.dirmaker.makedirs(outdir, exist_ok=True)
          print('Installing %s to %s' % (full_source_filename, outdir))
 -        if outfilename.endswith('.gz') and not full_source_filename.endswith('.gz'):
 -            with open(outfilename, 'wb') as of:
 -                with open(full_source_filename, 'rb') as sf:
--                    of.write(gzip.compress(sf.read()))
+-                    # Set mtime and filename for reproducibility.
+-                    with gzip.GzipFile(fileobj=of, mode='wb', filename='', mtime=0) as gz:
+-                        gz.write(sf.read())
 -            shutil.copystat(full_source_filename, outfilename)
 -            append_to_log(outfilename)
 -        else:
