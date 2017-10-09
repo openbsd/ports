@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2016/10/13 15:52:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2017/10/09 17:45:27 ajacoutot Exp $
 
 COMMENT=		service for interacting with DMSes
 
-DISTNAME=		dleyna-server-0.5.0
-REVISION=		1
+GH_PROJECT=		dleyna-server
 
 SHARED_LIBS +=	dleyna-server-1.0         0.0 # 1.3
 

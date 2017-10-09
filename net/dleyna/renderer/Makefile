@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2016/10/13 15:51:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2017/10/09 17:45:27 ajacoutot Exp $
 
 COMMENT=		service for interacting with DMRs
 
-DISTNAME=		dleyna-renderer-0.5.0
-REVISION=		1
+GH_PROJECT=		dleyna-renderer
 
 SHARED_LIBS +=	dleyna-renderer-1.0       0.0 # 1.3
 

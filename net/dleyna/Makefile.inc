@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile.inc,v 1.4 2016/10/13 15:51:38 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.5 2017/10/09 17:45:27 ajacoutot Exp $
 
 CATEGORIES ?=		net multimedia
 HOMEPAGE ?=		https://01.org/dleyna/
-MASTER_SITES ?=		https://01.org/sites/default/files/downloads/dleyna/
+
+GH_ACCOUNT ?=		01org
+GH_TAGNAME ?=		0.6.0
 
 MAINTAINER ?=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
@@ -17,7 +19,18 @@ CONFIGURE_STYLE ?=	gnu
 CONFIGURE_SCRIPT=	${LOCALBASE}/bin/bash configure
 BUILD_DEPENDS +=	shells/bash
 
-# triggers on base system libs functions
+AUTOCONF_VERSION=	2.69
+AUTOMAKE_VERSION=	1.15
+BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS} \
+			devel/libtool
+
 pre-configure:
-	perl -pi -e 's|CFLAGS\+=" -Wl,--no-undefined"||' \
-		${WRKSRC}/configure
+# triggers on base system libs functions
+	sed -i 's|AS_VAR_APPEND.*" -Wl,--no-undefined"||' \
+		${WRKSRC}/m4/compiler-flags.m4
+
+	cd ${WRKSRC} && env -i \
+		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
+		autoreconf -fi

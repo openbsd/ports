@@ -1,7 +1,8 @@
-$OpenBSD: patch-libdleyna_server_device_c,v 1.1.1.1 2015/04/17 18:39:00 ajacoutot Exp $
---- libdleyna/server/device.c.orig	Fri Apr 17 14:51:35 2015
-+++ libdleyna/server/device.c	Fri Apr 17 14:48:42 2015
-@@ -6054,8 +6054,8 @@ static gchar *prv_get_broadcast_ip_address(gchar *ip_a
+$OpenBSD: patch-libdleyna_server_device_c,v 1.2 2017/10/09 17:45:27 ajacoutot Exp $
+Index: libdleyna/server/device.c
+--- libdleyna/server/device.c.orig
++++ libdleyna/server/device.c
+@@ -6063,8 +6063,8 @@ static gchar *prv_get_broadcast_ip_address(gchar *ip_a
  			continue;
  
  		if ((ifa->ifa_flags & IFF_BROADCAST) &&

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2016/10/13 15:51:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2017/10/09 17:45:27 ajacoutot Exp $
 
 COMMENT=		dLeyna dbus connector
 
-DISTNAME=		dleyna-connector-dbus-0.2.0
-REVISION=		1
+GH_PROJECT=		dleyna-connector-dbus
+GH_TAGNAME=		v0.3.0
 
 BUILD_DEPENDS=		x11/dbus
 RUN_DEPENDS=		x11/dbus

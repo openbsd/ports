@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/04/17 18:39:00 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/10/09 17:45:27 ajacoutot Exp $
 include/dleyna-1.0/
 include/dleyna-1.0/libdleyna/
 include/dleyna-1.0/libdleyna/core/
 include/dleyna-1.0/libdleyna/core/connector-mgr.h
 include/dleyna-1.0/libdleyna/core/connector.h
 include/dleyna-1.0/libdleyna/core/control-point.h
+include/dleyna-1.0/libdleyna/core/core.h
 include/dleyna-1.0/libdleyna/core/error.h
 include/dleyna-1.0/libdleyna/core/log.h
 include/dleyna-1.0/libdleyna/core/main-loop.h
