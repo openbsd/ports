@@ -1,0 +1,16 @@
+$OpenBSD: patch-SWIG__lib11_compat_i,v 1.1 2017/10/09 05:57:38 ajacoutot Exp $
+
+Fix build with LibreSSL
+
+Index: SWIG/_lib11_compat.i
+--- SWIG/_lib11_compat.i.orig
++++ SWIG/_lib11_compat.i
+@@ -8,7 +8,7 @@
+  */
+ 
+ %{
+-#if OPENSSL_VERSION_NUMBER < 0x10100000L
++#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
+ 
+ #include <string.h>
+ #include <openssl/engine.h>

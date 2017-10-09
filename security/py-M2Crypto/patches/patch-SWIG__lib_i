@@ -1,0 +1,25 @@
+$OpenBSD: patch-SWIG__lib_i,v 1.1 2017/10/09 05:57:38 ajacoutot Exp $
+
+Fix build with LibreSSL
+
+Index: SWIG/_lib.i
+--- SWIG/_lib.i.orig
++++ SWIG/_lib.i
+@@ -18,7 +18,7 @@
+ 
+ %{
+ /* OpenSSL 1.0.2 copmatbility shim */
+-#if OPENSSL_VERSION_NUMBER < 0x10002000L
++#if OPENSSL_VERSION_NUMBER < 0x10002000L || defined(LIBRESSL_VERSION_NUMBER)
+ typedef void (*OPENSSL_sk_freefunc)(void *);
+ typedef void *(*OPENSSL_sk_copyfunc)(const void *);
+ typedef struct stack_st OPENSSL_STACK;
+@@ -501,7 +501,7 @@ int passphrase_callback(char *buf, int num, int v, voi
+ %inline %{
+ 
+ void lib_init() {
+-#if OPENSSL_VERSION_NUMBER < 0x10100000L
++#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
+     SSLeay_add_all_algorithms();
+     ERR_load_ERR_strings();
+ #endif

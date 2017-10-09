@@ -1,0 +1,33 @@
+$OpenBSD: patch-SWIG__bio_i,v 1.1 2017/10/09 05:57:38 ajacoutot Exp $
+
+Fix build with LibreSSL
+
+Index: SWIG/_bio.i
+--- SWIG/_bio.i.orig
++++ SWIG/_bio.i
+@@ -63,14 +63,14 @@ extern BIO *BIO_pop(BIO *);
+ static PyObject *_bio_err;
+ 
+ 
+-#if OPENSSL_VERSION_NUMBER >= 0x10100000L
++#if OPENSSL_VERSION_NUMBER >= 0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)
+ void pyfd_init(void);
+ #endif
+ 
+ void bio_init(PyObject *bio_err) {
+     Py_INCREF(bio_err);
+     _bio_err = bio_err;
+-#if OPENSSL_VERSION_NUMBER >= 0x10100000L
++#if OPENSSL_VERSION_NUMBER >= 0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)
+     pyfd_init();
+ #endif
+ }
+@@ -299,7 +299,7 @@ int bio_should_write(BIO* a) {
+     return BIO_should_write(a);
+ }
+ 
+-#if OPENSSL_VERSION_NUMBER >= 0x10100000L
++#if OPENSSL_VERSION_NUMBER >= 0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)
+ /* implment custom BIO_s_pyfd */
+ 
+ #ifdef WIN32

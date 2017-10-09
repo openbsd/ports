@@ -1,0 +1,52 @@
+$OpenBSD: patch-SWIG__threads_i,v 1.1 2017/10/09 05:57:38 ajacoutot Exp $
+
+Fix build with LibreSSL
+
+Index: SWIG/_threads.i
+--- SWIG/_threads.i.orig
++++ SWIG/_threads.i
+@@ -5,7 +5,7 @@
+ #include <pythread.h>
+ #include <openssl/crypto.h>
+ 
+-#if defined(THREADING) && OPENSSL_VERSION_NUMBER < 0x10100000L
++#if defined(THREADING) && OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
+ #define CRYPTO_num_locks()      (CRYPTO_NUM_LOCKS)
+ static PyThread_type_lock lock_cs[CRYPTO_num_locks()];
+ static long lock_count[CRYPTO_num_locks()];
+@@ -13,7 +13,7 @@ static int thread_mode = 0;
+ #endif
+ 
+ void threading_locking_callback(int mode, int type, const char *file, int line) {
+-#if defined(THREADING) && OPENSSL_VERSION_NUMBER < 0x10100000L
++#if defined(THREADING) && OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
+         if (mode & CRYPTO_LOCK) {
+                 PyThread_acquire_lock(lock_cs[type], WAIT_LOCK);
+                 lock_count[type]++;
+@@ -25,7 +25,7 @@ void threading_locking_callback(int mode, int type, co
+ }
+ 
+ unsigned long threading_id_callback(void) {
+-#if defined(THREADING) && OPENSSL_VERSION_NUMBER < 0x10100000L
++#if defined(THREADING) && OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
+     return (unsigned long)PyThread_get_thread_ident();
+ #else
+     return (unsigned long)0;
+@@ -35,7 +35,7 @@ unsigned long threading_id_callback(void) {
+ 
+ %inline %{
+ void threading_init(void) {
+-#if defined(THREADING) && OPENSSL_VERSION_NUMBER < 0x10100000L
++#if defined(THREADING) && OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
+     int i;
+     if (!thread_mode) {
+         for (i=0; i<CRYPTO_num_locks(); i++) {
+@@ -50,7 +50,7 @@ void threading_init(void) {
+ }
+ 
+ void threading_cleanup(void) {
+-#if defined(THREADING) && OPENSSL_VERSION_NUMBER < 0x10100000L
++#if defined(THREADING) && OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
+     int i;
+     if (thread_mode) {
+         CRYPTO_set_locking_callback(NULL);
