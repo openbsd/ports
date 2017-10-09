@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.831 2017/09/19 07:49:33 phessler Exp $
+# $OpenBSD: Makefile,v 1.832 2017/10/09 15:29:01 jeremy Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -367,7 +367,6 @@
      SUBDIR += polipo
      SUBDIR += pound
      SUBDIR += privoxy
-     SUBDIR += puppet-dashboard
      SUBDIR += puppetboard
      SUBDIR += py-CherryPy
      SUBDIR += py-aiohttp
