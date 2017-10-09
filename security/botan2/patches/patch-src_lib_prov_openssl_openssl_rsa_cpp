@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_lib_prov_openssl_openssl_rsa_cpp,v 1.1 2017/10/09 20:05:07 bluhm Exp $
+
+https://github.com/randombit/botan/commit/f492fbcca162209d2d87dff1dacdb66b566e10c1
+
+Index: src/lib/prov/openssl/openssl_rsa.cpp
+--- src/lib/prov/openssl/openssl_rsa.cpp.orig
++++ src/lib/prov/openssl/openssl_rsa.cpp
+@@ -15,6 +15,7 @@
+ #include <botan/internal/pk_ops_impl.h>
+ #include <botan/internal/ct_utils.h>
+ 
++#include <cstdlib>
+ #include <functional>
+ #include <memory>
+ 

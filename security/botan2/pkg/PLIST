@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2017/08/13 14:40:18 bluhm Exp $
+@comment $OpenBSD: PLIST,v 1.6 2017/10/09 20:05:07 bluhm Exp $
 @bin bin/botan
 @bin bin/botan-test
 include/botan-2/
@@ -7,6 +7,7 @@ include/botan-2/botan/adler32.h
 include/botan-2/botan/aead.h
 include/botan-2/botan/aes.h
 include/botan-2/botan/alg_id.h
+include/botan-2/botan/aria.h
 include/botan-2/botan/asn1_alt_name.h
 include/botan-2/botan/asn1_attribute.h
 include/botan-2/botan/asn1_obj.h
@@ -218,6 +219,7 @@ include/botan-2/botan/sha160.h
 include/botan-2/botan/sha2_32.h
 include/botan-2/botan/sha2_64.h
 include/botan-2/botan/sha3.h
+include/botan-2/botan/shacal2.h
 include/botan-2/botan/shake.h
 include/botan-2/botan/shake_cipher.h
 include/botan-2/botan/siphash.h
@@ -310,9 +312,9 @@ share/botan-2/data/aead/gcm.vec
 share/botan-2/data/aead/ocb.vec
 share/botan-2/data/aead/siv.vec
 share/botan-2/data/base64.vec
-share/botan-2/data/bcrypt.vec
 share/botan-2/data/block/
 share/botan-2/data/block/aes.vec
+share/botan-2/data/block/aria.vec
 share/botan-2/data/block/blowfish.vec
 share/botan-2/data/block/camellia.vec
 share/botan-2/data/block/cascade.vec
@@ -327,6 +329,7 @@ share/botan-2/data/block/misty.vec
 share/botan-2/data/block/noekeon.vec
 share/botan-2/data/block/seed.vec
 share/botan-2/data/block/serpent.vec
+share/botan-2/data/block/shacal2.vec
 share/botan-2/data/block/sm4.vec
 share/botan-2/data/block/threefish.vec
 share/botan-2/data/block/twofish.vec
@@ -335,6 +338,7 @@ share/botan-2/data/bn/
 share/botan-2/data/bn/add.vec
 share/botan-2/data/bn/divide.vec
 share/botan-2/data/bn/dsa_gen.vec
+share/botan-2/data/bn/gcd.vec
 share/botan-2/data/bn/invmod.vec
 share/botan-2/data/bn/isprime.vec
 share/botan-2/data/bn/lshift.vec
@@ -362,6 +366,7 @@ share/botan-2/data/dates.vec
 share/botan-2/data/ecc/
 share/botan-2/data/ecc/CSCA.CSCA.csca-germany.1.crt
 share/botan-2/data/ecc/ecc_private_with_rfc5915_ext.pem
+share/botan-2/data/ecc/ecc_private_with_rfc5915_parameters.pem
 share/botan-2/data/ecc/link_SHA1.166.crt
 share/botan-2/data/ecc/link_SHA256.cer
 share/botan-2/data/ecc/nodompar_private.pkcs8.pem
@@ -384,64 +389,6 @@ share/botan-2/data/extended_x509/03/int1.crt
 share/botan-2/data/extended_x509/03/root.crt
 share/botan-2/data/extended_x509/expected.txt
 share/botan-2/data/fpe_fe1.vec
-share/botan-2/data/fuzz/
-share/botan-2/data/fuzz/pkcs8/
-share/botan-2/data/fuzz/pkcs8/ecc_overflow.pem
-share/botan-2/data/fuzz/x509/
-share/botan-2/data/fuzz/x509/afl_000.pem
-share/botan-2/data/fuzz/x509/afl_001.pem
-share/botan-2/data/fuzz/x509/afl_002.pem
-share/botan-2/data/fuzz/x509/afl_003.pem
-share/botan-2/data/fuzz/x509/afl_004.pem
-share/botan-2/data/fuzz/x509/afl_005.pem
-share/botan-2/data/fuzz/x509/afl_006.pem
-share/botan-2/data/fuzz/x509/afl_007.pem
-share/botan-2/data/fuzz/x509/afl_008.pem
-share/botan-2/data/fuzz/x509/afl_009.pem
-share/botan-2/data/fuzz/x509/afl_010.pem
-share/botan-2/data/fuzz/x509/afl_011.pem
-share/botan-2/data/fuzz/x509/afl_012.pem
-share/botan-2/data/fuzz/x509/afl_013.pem
-share/botan-2/data/fuzz/x509/afl_014.pem
-share/botan-2/data/fuzz/x509/afl_015.pem
-share/botan-2/data/fuzz/x509/afl_016.pem
-share/botan-2/data/fuzz/x509/afl_017.pem
-share/botan-2/data/fuzz/x509/afl_018.pem
-share/botan-2/data/fuzz/x509/afl_019.pem
-share/botan-2/data/fuzz/x509/afl_020.pem
-share/botan-2/data/fuzz/x509/afl_021.pem
-share/botan-2/data/fuzz/x509/afl_022.pem
-share/botan-2/data/fuzz/x509/afl_023.pem
-share/botan-2/data/fuzz/x509/afl_024.pem
-share/botan-2/data/fuzz/x509/afl_025.pem
-share/botan-2/data/fuzz/x509/afl_026.pem
-share/botan-2/data/fuzz/x509/afl_027.pem
-share/botan-2/data/fuzz/x509/afl_028.pem
-share/botan-2/data/fuzz/x509/afl_029.pem
-share/botan-2/data/fuzz/x509/afl_030.pem
-share/botan-2/data/fuzz/x509/afl_031.pem
-share/botan-2/data/fuzz/x509/afl_032.pem
-share/botan-2/data/fuzz/x509/afl_033.pem
-share/botan-2/data/fuzz/x509/afl_034.pem
-share/botan-2/data/fuzz/x509/afl_035.pem
-share/botan-2/data/fuzz/x509/afl_036.pem
-share/botan-2/data/fuzz/x509/afl_037.pem
-share/botan-2/data/fuzz/x509/afl_038.pem
-share/botan-2/data/fuzz/x509/afl_039.pem
-share/botan-2/data/fuzz/x509/afl_040.pem
-share/botan-2/data/fuzz/x509/afl_041.pem
-share/botan-2/data/fuzz/x509/afl_042.pem
-share/botan-2/data/fuzz/x509/afl_043.pem
-share/botan-2/data/fuzz/x509/afl_044.pem
-share/botan-2/data/fuzz/x509/afl_045.pem
-share/botan-2/data/fuzz/x509/afl_046.pem
-share/botan-2/data/fuzz/x509/afl_047.pem
-share/botan-2/data/fuzz/x509/afl_048.pem
-share/botan-2/data/fuzz/x509/afl_049.pem
-share/botan-2/data/fuzz/x509/afl_050.pem
-share/botan-2/data/fuzz/x509/afl_051.pem
-share/botan-2/data/fuzz/x509/afl_052.pem
-share/botan-2/data/fuzz/x509/cve_2017_2801.der
 share/botan-2/data/hash/
 share/botan-2/data/hash/adler32.vec
 share/botan-2/data/hash/blake2b.vec
@@ -464,6 +411,7 @@ share/botan-2/data/hash/sm3.vec
 share/botan-2/data/hash/streebog.vec
 share/botan-2/data/hash/tiger.vec
 share/botan-2/data/hash/whirlpool.vec
+share/botan-2/data/hkdf_label.vec
 share/botan-2/data/hostnames.vec
 share/botan-2/data/kdf/
 share/botan-2/data/kdf/hkdf.vec
@@ -904,7 +852,10 @@ share/botan-2/data/nist_x509/test76/
 share/botan-2/data/nist_x509/test76/end.crt
 share/botan-2/data/nist_x509/test76/int.crl
 share/botan-2/data/nist_x509/test76/int.crt
-share/botan-2/data/ocb_long.vec
+share/botan-2/data/ocb/
+share/botan-2/data/ocb/ocb_long.vec
+share/botan-2/data/ocb/ocb_wide.vec
+share/botan-2/data/ocb/ocb_wide_long.vec
 share/botan-2/data/ocsp/
 share/botan-2/data/ocsp/geotrust.pem
 share/botan-2/data/ocsp/gmail.pem
@@ -920,13 +871,16 @@ share/botan-2/data/otp/
 share/botan-2/data/otp/hotp.vec
 share/botan-2/data/otp/totp.vec
 share/botan-2/data/pad.vec
-share/botan-2/data/passhash9.vec
+share/botan-2/data/passhash/
+share/botan-2/data/passhash/bcrypt.vec
+share/botan-2/data/passhash/passhash9.vec
 share/botan-2/data/pbkdf/
 share/botan-2/data/pbkdf/pbkdf1.vec
 share/botan-2/data/pbkdf/pbkdf2.vec
 share/botan-2/data/pbkdf/pgp_s2k.vec
 share/botan-2/data/pk_pad_eme/
 share/botan-2/data/pk_pad_eme/pkcs1.vec
+share/botan-2/data/poly_dbl.vec
 share/botan-2/data/pubkey/
 share/botan-2/data/pubkey/c25519_scalar.vec
 share/botan-2/data/pubkey/dh.vec
@@ -952,6 +906,8 @@ share/botan-2/data/pubkey/mce.vec
 share/botan-2/data/pubkey/newhope.vec
 share/botan-2/data/pubkey/rsa_invalid.vec
 share/botan-2/data/pubkey/rsa_kem.vec
+share/botan-2/data/pubkey/rsa_pss.vec
+share/botan-2/data/pubkey/rsa_pss_raw.vec
 share/botan-2/data/pubkey/rsa_sig.vec
 share/botan-2/data/pubkey/rsa_verify.vec
 share/botan-2/data/pubkey/rsaes.vec
@@ -965,6 +921,7 @@ share/botan-2/data/rfc6979.vec
 share/botan-2/data/rng/
 share/botan-2/data/rng/chacha_rng.vec
 share/botan-2/data/rng/hmac_drbg.vec
+share/botan-2/data/siv_ad.vec
 share/botan-2/data/stream/
 share/botan-2/data/stream/chacha.vec
 share/botan-2/data/stream/ctr.vec
@@ -983,6 +940,7 @@ share/botan-2/data/timing/manger.vec
 share/botan-2/data/tls/
 share/botan-2/data/tls-policy/
 share/botan-2/data/tls-policy/bsi.txt
+share/botan-2/data/tls-policy/compat.txt
 share/botan-2/data/tls-policy/datagram.txt
 share/botan-2/data/tls-policy/default.txt
 share/botan-2/data/tls-policy/strict.txt
@@ -995,6 +953,7 @@ share/botan-2/data/tls/hello_request.vec
 share/botan-2/data/tls/hello_verify.vec
 share/botan-2/data/tls/new_session_ticket.vec
 share/botan-2/data/tls/server_hello.vec
+share/botan-2/data/tls_cbc.vec
 share/botan-2/data/util.vec
 share/botan-2/data/x509_dn.vec
 share/botan-2/data/x509test/
@@ -1040,6 +999,7 @@ share/botan-2/data/x509test/ValidWildcard.pem
 share/botan-2/data/x509test/expected.txt
 share/botan-2/data/x509test/root.pem
 share/doc/botan-2/
+share/doc/botan-2/authors.txt
 share/doc/botan-2/deprecated.txt
 share/doc/botan-2/license.txt
 share/doc/botan-2/manual/
@@ -1053,6 +1013,7 @@ share/doc/botan-2/manual/cryptobox.rst
 share/doc/botan-2/manual/ffi.rst
 share/doc/botan-2/manual/filters.rst
 share/doc/botan-2/manual/fpe.rst
+share/doc/botan-2/manual/fuzzing.rst
 share/doc/botan-2/manual/goals.rst
 share/doc/botan-2/manual/hash.rst
 share/doc/botan-2/manual/index.rst

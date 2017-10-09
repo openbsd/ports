@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_tests_main_cpp,v 1.1 2017/08/13 14:40:18 bluhm Exp $
+$OpenBSD: patch-src_tests_main_cpp,v 1.2 2017/10/09 20:05:07 bluhm Exp $
 
 Index: src/tests/main.cpp
 --- src/tests/main.cpp.orig
 +++ src/tests/main.cpp
-@@ -84,7 +84,7 @@ class Test_Runner : public Botan_CLI::Command
+@@ -178,7 +178,7 @@ class Test_Runner final : public Botan_CLI::Command
           const bool log_success = flag_set("log-success");
           const bool run_online_tests = flag_set("run-online-tests");
           const bool run_long_tests = flag_set("run-long-tests");

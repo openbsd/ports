@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_lib_utils_os_utils_cpp,v 1.1 2017/10/09 20:05:07 bluhm Exp $
+
+Index: src/lib/utils/os_utils.cpp
+--- src/lib/utils/os_utils.cpp.orig
++++ src/lib/utils/os_utils.cpp
+@@ -10,7 +10,9 @@
+ #include <botan/cpuid.h>
+ #include <botan/exceptn.h>
+ #include <botan/mem_ops.h>
++
+ #include <chrono>
++#include <cstdlib>
+ 
+ #if defined(BOTAN_HAS_BOOST_ASIO)
+   /*
