@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.7 2017/04/26 17:29:58 feinerer Exp $
+$OpenBSD: README,v 1.8 2017/10/09 12:55:30 feinerer Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -16,16 +16,3 @@ Running:
 
 as root, will update both ${TRUEPREFIX}/lib/R/etc/Makeconf and
 ${TRUEPREFIX}/lib/R/etc/ldpaths with the right settings.
-
-Customizing package compilation
-===============================
-Make variables to be used by R packages compiling code at installation time
-can be customized via ~/.R/Makevars
-(https://cran.r-project.org/doc/manuals/r-release/R-admin.html#Customizing-package-compilation).
-E.g., for using recent compilers (packages g++ and gcc) add
-
-CC=egcc -std=gnu99
-CXX=eg++
-CXX11=eg++
-CXX11STD=-std=c++11
-CXX11PICFLAGS=-fpic
