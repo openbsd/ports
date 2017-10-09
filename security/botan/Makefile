@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.26 2017/07/26 22:45:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2017/10/09 20:06:26 bluhm Exp $
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS} ${CLANG_ARCHS}
 
 COMMENT =	portable, easy to use, and efficient C++ crypto library
 
 PORTROACH =	limit:^1\.10\.
-VERSION =	1.10.16
+VERSION =	1.10.17
 DISTNAME =	Botan-${VERSION}
 PKGNAME =	botan-${VERSION}
-REVISION =	1
 
-SHARED_LIBS =	botan-1.10	1.0
+SHARED_LIBS =	botan-1.10	1.1
 
 CATEGORIES =	security
 
