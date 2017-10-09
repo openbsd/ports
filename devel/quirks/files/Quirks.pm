@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.535 2017/09/22 06:39:40 tb Exp $
+# $OpenBSD: Quirks.pm,v 1.536 2017/10/09 15:34:24 jeremy Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1122,6 +1122,7 @@ my $obsolete_reason = {
 	'toad' => 3,
 	'pgp' => 3,
 	'gonzui' => 3,
+	'puppet-dashboard' => 5,
 };
 
 # reasons for obsolete packages
