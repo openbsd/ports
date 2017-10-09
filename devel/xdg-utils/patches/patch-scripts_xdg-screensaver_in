@@ -1,7 +1,8 @@
-$OpenBSD: patch-scripts_xdg-screensaver_in,v 1.2 2017/05/09 07:11:55 ajacoutot Exp $
+$OpenBSD: patch-scripts_xdg-screensaver_in,v 1.3 2017/10/09 04:37:42 bentley Exp $
 
---- scripts/xdg-screensaver.in.orig	Thu Aug 28 12:00:25 2014
-+++ scripts/xdg-screensaver.in	Thu Aug 28 12:00:25 2014
+Index: scripts/xdg-screensaver.in
+--- scripts/xdg-screensaver.in.orig
++++ scripts/xdg-screensaver.in
 @@ -27,7 +27,7 @@ _USAGE
  #@xdg-utils-common@
  
@@ -11,3 +12,14 @@ $OpenBSD: patch-scripts_xdg-screensaver_in,v 1.2 2017/05/09 07:11:55 ajacoutot E
     # We can securely move files in /tmp with mv -T
     DEBUG 1 "mv -T available"
     MV="mv -T"
+@@ -378,7 +378,9 @@ screensaver_kde3()
+ 
+ xset_screensaver_timeout()
+ {
+-  xset q | sed '/^Screen Saver:/,/^[^ ]/ { s/.*timeout: *\([0-9]*\).*/\1/; t }; d'
++  xset q | sed '/^Screen Saver:/,/^[^ ]/ { s/.*timeout: *\([0-9]*\).*/\1/
++  t
++  }; d'
+ }
+ 
+ screensaver_xserver()
