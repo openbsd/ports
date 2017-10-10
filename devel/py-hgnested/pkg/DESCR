@@ -1,0 +1,7 @@
+Mercurial extension to work with nested repositories.
+
+It was inspired by the forest extension.
+
+The extension allow to apply common Mercurial commands to all the nested
+repositories at once like pull, push etc. It allow also to fetch a complete
+tree of repositories through ssh or http.
