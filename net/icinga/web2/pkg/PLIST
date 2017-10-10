@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2017/02/02 21:36:33 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.9 2017/10/10 12:03:39 sthen Exp $
 @newgroup _icingaweb2:762
 @newuser _icingaweb2:762:_icingaweb2:daemon:Icinga-web2 user:/var/www/icinga-web2:/sbin/nologin
 @extraunexec rm -rf %D/etc/icingaweb2/*
@@ -220,7 +220,6 @@ icinga-web2/application/views/scripts/user/list.phtml
 icinga-web2/application/views/scripts/user/show.phtml
 icinga-web2/bin/
 icinga-web2/bin/icingacli
-icinga-web2/changelog.py
 icinga-web2/doc/
 icinga-web2/doc/01-About.md
 icinga-web2/doc/02-Installation.md
@@ -261,7 +260,6 @@ icinga-web2/etc/schema/mysql.schema.sql
 icinga-web2/etc/schema/pgsql-upgrades/
 icinga-web2/etc/schema/pgsql-upgrades/2.0.0beta3-2.0.0rc1.sql
 icinga-web2/etc/schema/pgsql.schema.sql
-icinga-web2/icingaweb2.spec
 icinga-web2/library/
 icinga-web2/library/Icinga/
 icinga-web2/library/Icinga/Application/
@@ -429,6 +427,10 @@ icinga-web2/library/Icinga/Exception/Http/HttpMethodNotAllowedException.php
 icinga-web2/library/Icinga/Exception/Http/HttpNotFoundException.php
 icinga-web2/library/Icinga/Exception/IcingaException.php
 icinga-web2/library/Icinga/Exception/InvalidPropertyException.php
+icinga-web2/library/Icinga/Exception/Json/
+icinga-web2/library/Icinga/Exception/Json/JsonDecodeException.php
+icinga-web2/library/Icinga/Exception/Json/JsonEncodeException.php
+icinga-web2/library/Icinga/Exception/Json/JsonException.php
 icinga-web2/library/Icinga/Exception/MissingParameterException.php
 icinga-web2/library/Icinga/Exception/NotFoundError.php
 icinga-web2/library/Icinga/Exception/NotImplementedError.php
@@ -505,6 +507,7 @@ icinga-web2/library/Icinga/Util/EnumeratingFilterIterator.php
 icinga-web2/library/Icinga/Util/File.php
 icinga-web2/library/Icinga/Util/Format.php
 icinga-web2/library/Icinga/Util/GlobFilter.php
+icinga-web2/library/Icinga/Util/Json.php
 icinga-web2/library/Icinga/Util/String.php
 icinga-web2/library/Icinga/Util/StringHelper.php
 icinga-web2/library/Icinga/Util/TimezoneDetect.php
@@ -2849,6 +2852,7 @@ icinga-web2/test/php/library/Icinga/Util/DimensionTest.php
 icinga-web2/test/php/library/Icinga/Util/FileTest.php
 icinga-web2/test/php/library/Icinga/Util/GlobFilterTest.php
 icinga-web2/test/php/library/Icinga/Util/StringHelperTest.php
+icinga-web2/test/php/library/Icinga/Util/TimezoneDetectTest.php
 icinga-web2/test/php/library/Icinga/Util/TranslatorTest.php
 icinga-web2/test/php/library/Icinga/Web/
 icinga-web2/test/php/library/Icinga/Web/Form/
