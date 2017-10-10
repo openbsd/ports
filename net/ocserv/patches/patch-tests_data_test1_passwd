@@ -1,7 +1,8 @@
-$OpenBSD: patch-tests_data_test1_passwd,v 1.1 2016/08/13 21:08:07 sthen Exp $
---- tests/data/test1.passwd.orig	Mon Jul 11 09:17:13 2016
-+++ tests/data/test1.passwd	Fri Aug 12 14:30:00 2016
-@@ -1,7 +1,7 @@
+$OpenBSD: patch-tests_data_test1_passwd,v 1.2 2017/10/10 09:20:48 sthen Exp $
+Index: tests/data/test1.passwd
+--- tests/data/test1.passwd.orig
++++ tests/data/test1.passwd
+@@ -1,8 +1,8 @@
 -test:tost,group1, group2 , group3:$5$i6SNmLDCgBNjyJ7q$SZ4bVJb7I/DLgXo3txHBVohRFBjOtdbxGQZp.DOnrA.
 -sp@c/al:*:$5$kDNrlGibUoktiQ0n$mE/ys1XehvvoWQiSqAfB.Aw1WbAYayMV/ZYTX/6IlkC
 -test2:*:$5$QB3iB31ID49rW6kr$wSvbsDTzUPw51hqWTgvac9LyJ6HLv2HYyxh2Ud4v.x1
@@ -16,3 +17,4 @@ $OpenBSD: patch-tests_data_test1_passwd,v 1.1 2016/08/13 21:08:07 sthen Exp $
 +test4:*:$2b$08$ke7XBTm5uSybWnDAfanujee2uiNQqE2sAahftS21r15jr7S45vHF.
 +test5:*:$2b$08$XBZ6EzdfZeDKwCAKEhW1gOuk8KCHTP8H1DGV9jAbs5puoa1IwC8tS
 +empty:*:$2b$08$zEZ353QW.QSDhZ28DCLzM.Wqg6QKEfODnvWIfOluoijAn8vI/37qK
+ locked:tost,group1, group2 , group3:!$5$i6SNmLDCgBNjyJ7q$SZ4bVJb7I/DLgXo3txHBVohRFBjOtdbxGQZp.DOnrA.
