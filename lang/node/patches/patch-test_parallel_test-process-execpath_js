@@ -1,0 +1,17 @@
+$OpenBSD: patch-test_parallel_test-process-execpath_js,v 1.1 2017/10/10 13:32:07 abieber Exp $
+
+Index: test/parallel/test-process-execpath.js
+--- test/parallel/test-process-execpath.js.orig
++++ test/parallel/test-process-execpath.js
+@@ -5,6 +5,11 @@ const child_process = require('child_process');
+ const path = require('path');
+ const fs = require('fs');
+ 
++if (common.isOpenBSD) {
++  common.skip('OpenBSD does not keep a full path for processes');
++  return;
++}
++
+ assert.strictEqual(process.execPath, fs.realpathSync(process.execPath));
+ 
+ if (common.isWindows) {

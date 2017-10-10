@@ -1,0 +1,40 @@
+$OpenBSD: patch-test_sequential_test-child-process-execsync_js,v 1.1 2017/10/10 13:32:07 abieber Exp $
+
+Index: test/sequential/test-child-process-execsync.js
+--- test/sequential/test-child-process-execsync.js.orig
++++ test/sequential/test-child-process-execsync.js
+@@ -25,19 +25,21 @@ assert.throws(
+ );
+ 
+ let cmd, ret;
+-try {
+-  cmd = `"${process.execPath}" -e "setTimeout(function(){}, ${SLEEP});"`;
+-  ret = execSync(cmd, {timeout: TIMER});
+-} catch (e) {
+-  caught = true;
+-  assert.strictEqual(e.errno, 'ETIMEDOUT');
+-  err = e;
+-} finally {
+-  assert.strictEqual(ret, undefined, 'we should not have a return value');
+-  assert.strictEqual(caught, true, 'execSync should throw');
+-  const end = Date.now() - start;
+-  assert(end < SLEEP);
+-  assert(err.status > 128 || err.signal);
++if (!common.isOpenBSD) {
++  try {
++    cmd = `"${process.execPath}" -e "setTimeout(function(){}, ${SLEEP});"`;
++    ret = execSync(cmd, {timeout: TIMER});
++  } catch (e) {
++    caught = true;
++    assert.strictEqual(e.errno, 'ETIMEDOUT');
++    err = e;
++  } finally {
++    assert.strictEqual(ret, undefined, 'we should not have a return value');
++    assert.strictEqual(caught, true, 'execSync should throw');
++    const end = Date.now() - start;
++    assert(end < SLEEP);
++    assert(err.status > 128 || err.signal);
++  }
+ }
+ 
+ assert.throws(function() {

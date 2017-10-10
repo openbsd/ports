@@ -1,0 +1,27 @@
+$OpenBSD: patch-test_parallel_test-net-dns-error_js,v 1.1 2017/10/10 13:32:07 abieber Exp $
+
+Index: test/parallel/test-net-dns-error.js
+--- test/parallel/test-net-dns-error.js.orig
++++ test/parallel/test-net-dns-error.js
+@@ -12,11 +12,19 @@ function do_not_call() {
+ 
+ const socket = net.connect(42, host, do_not_call);
+ socket.on('error', common.mustCall(function(err) {
+-  assert.strictEqual(err.code, 'ENOTFOUND');
++  if (common.isOpenBSD) {
++    assert.strictEqual(err.code, 'EAI_FAIL');
++  } else {
++    assert.strictEqual(err.code, 'ENOTFOUND');
++  }
+ }));
+ socket.on('lookup', function(err, ip, type) {
+   assert(err instanceof Error);
+-  assert.strictEqual(err.code, 'ENOTFOUND');
++  if (common.isOpenBSD) {
++    assert.strictEqual(err.code, 'EAI_FAIL');
++  } else {
++    assert.strictEqual(err.code, 'ENOTFOUND');
++  }
+   assert.strictEqual(ip, undefined);
+   assert.strictEqual(type, undefined);
+ });

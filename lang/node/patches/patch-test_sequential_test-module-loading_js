@@ -1,0 +1,34 @@
+$OpenBSD: patch-test_sequential_test-module-loading_js,v 1.1 2017/10/10 13:32:07 abieber Exp $
+
+Index: test/sequential/test-module-loading.js
+--- test/sequential/test-module-loading.js.orig
++++ test/sequential/test-module-loading.js
+@@ -1,5 +1,5 @@
+ 'use strict';
+-require('../common');
++const common = require('../common');
+ const assert = require('assert');
+ const path = require('path');
+ const fs = require('fs');
+@@ -160,7 +160,9 @@ try {
+   require(`${loadOrder}file3`);
+ } catch (e) {
+   // Not a real .node module, but we know we require'd the right thing.
+-  assert.ok(/file3\.node/.test(e.message.replace(backslash, '/')));
++  if (!common.isOpenBSD) {
++    assert.ok(/file3\.node/.test(e.message.replace(backslash, '/')));
++  }
+ }
+ assert.strictEqual(require(`${loadOrder}file4`).file4, 'file4.reg', msg);
+ assert.strictEqual(require(`${loadOrder}file5`).file5, 'file5.reg2', msg);
+@@ -168,7 +170,9 @@ assert.strictEqual(require(`${loadOrder}file6`).file6,
+ try {
+   require(`${loadOrder}file7`);
+ } catch (e) {
+-  assert.ok(/file7\/index\.node/.test(e.message.replace(backslash, '/')));
++  if (!common.isOpenBSD) {
++    assert.ok(/file7\/index\.node/.test(e.message.replace(backslash, '/')));
++  }
+ }
+ assert.strictEqual(require(`${loadOrder}file8`).file8, 'file8/index.reg', msg);
+ assert.strictEqual(require(`${loadOrder}file9`).file9, 'file9/index.reg2', msg);

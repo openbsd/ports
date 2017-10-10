@@ -1,0 +1,17 @@
+$OpenBSD: patch-test_parallel_test-child-process-exec-timeout_js,v 1.1 2017/10/10 13:32:07 abieber Exp $
+
+Index: test/parallel/test-child-process-exec-timeout.js
+--- test/parallel/test-child-process-exec-timeout.js.orig
++++ test/parallel/test-child-process-exec-timeout.js
+@@ -3,6 +3,11 @@ const common = require('../common');
+ const assert = require('assert');
+ const cp = require('child_process');
+ 
++if (common.isOpenBSD) {
++  common.skip('OpenBSD does not keep a full path for processes');
++  return;
++}
++
+ if (process.argv[2] === 'child') {
+   setTimeout(() => {
+     // The following console statements are part of the test.
