@@ -1,4 +1,4 @@
-$OpenBSD: patch-source_fitz_load-jpx_c,v 1.4 2017/05/05 14:02:51 sthen Exp $
+$OpenBSD: patch-source_fitz_load-jpx_c,v 1.5 2017/10/10 12:33:49 sthen Exp $
 
 If OPJ_STATIC is defined, load-jpx.c linkage with libopenjp2.so is broken
 ("relocation R_X86_64_PC32 against symbol ... can not be used when making a
@@ -15,3 +15,36 @@ Index: source/fitz/load-jpx.c
  #define OPJ_HAVE_INTTYPES_H
  #if !defined(_WIN32) && !defined(_WIN64)
  #define OPJ_HAVE_STDINT_H
+@@ -554,6 +553,9 @@ void opj_free(void *ptr)
+ 
+ void * opj_aligned_malloc(size_t size)
+ {
++#ifdef __OpenBSD__
++	return opj_malloc(size);
++#else
+ 	uint8_t *ptr;
+ 	int off;
+ 
+@@ -567,10 +569,14 @@ void * opj_aligned_malloc(size_t size)
+ 	off = 16-(((int)(intptr_t)ptr) & 15);
+ 	ptr[off-1] = off;
+ 	return ptr + off;
++#endif
+ }
+ 
+ void opj_aligned_free(void* ptr_)
+ {
++#ifdef __OpenBSD__
++	opj_free(ptr_);
++#else
+ 	uint8_t *ptr = (uint8_t *)ptr_;
+ 	uint8_t off;
+ 	if (ptr == NULL)
+@@ -578,6 +584,7 @@ void opj_aligned_free(void* ptr_)
+ 
+ 	off = ptr[-1];
+ 	opj_free((void *)(((unsigned char *)ptr) - off));
++#endif
+ }
+ 
+ #if 0
