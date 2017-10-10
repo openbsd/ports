@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2017/08/31 16:26:55 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2017/10/10 08:50:11 ajacoutot Exp $
 include/goocanvas-2.0/
 include/goocanvas-2.0/goocanvas.h
 include/goocanvas-2.0/goocanvasellipse.h
@@ -25,7 +25,7 @@ lib/libgoocanvas-2.0.la
 lib/pkgconfig/goocanvas-2.0.pc
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/GooCanvas.py
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/GooCanvas.pyc
-lib/python${MODPY_VERSION}/site-packages/gi/overrides/GooCanvas.pyo
+lib/python${MODPY_VERSION}/site-packages/gi/overrides/GooCanvas.${MODPY_PYOEXTENSION}
 share/gir-1.0/GooCanvas-2.0.gir
 share/gtk-doc/html/goocanvas2/
 share/gtk-doc/html/goocanvas2/GooCanvas.html
@@ -53,11 +53,15 @@ share/gtk-doc/html/goocanvas2/GooCanvasTableModel.html
 share/gtk-doc/html/goocanvas2/GooCanvasText.html
 share/gtk-doc/html/goocanvas2/GooCanvasTextModel.html
 share/gtk-doc/html/goocanvas2/GooCanvasWidget.html
+share/gtk-doc/html/goocanvas2/api-index-2.0.1.html
+share/gtk-doc/html/goocanvas2/api-index-2.0.2.html
+share/gtk-doc/html/goocanvas2/api-index-full.html
 share/gtk-doc/html/goocanvas2/ch01.html
 share/gtk-doc/html/goocanvas2/ch02.html
 share/gtk-doc/html/goocanvas2/ch03.html
 share/gtk-doc/html/goocanvas2/ch04.html
 share/gtk-doc/html/goocanvas2/ch05.html
+share/gtk-doc/html/goocanvas2/deprecated-api-index.html
 share/gtk-doc/html/goocanvas2/goocanvas-architecture.html
 share/gtk-doc/html/goocanvas2/goocanvas-coordinates.html
 share/gtk-doc/html/goocanvas2/goocanvas-creating-items.html
@@ -69,7 +73,6 @@ share/gtk-doc/html/goocanvas2/goocanvas2-GooCanvas-Types.html
 share/gtk-doc/html/goocanvas2/goocanvas2.devhelp2
 share/gtk-doc/html/goocanvas2/home.png
 share/gtk-doc/html/goocanvas2/index.html
-share/gtk-doc/html/goocanvas2/index.sgml
 share/gtk-doc/html/goocanvas2/left-insensitive.png
 share/gtk-doc/html/goocanvas2/left.png
 share/gtk-doc/html/goocanvas2/right-insensitive.png
