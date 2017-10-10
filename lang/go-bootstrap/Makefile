@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.6 2017/10/08 15:40:56 jsing Exp $
+# $OpenBSD: Makefile,v 1.7 2017/10/10 14:57:06 jsing Exp $
 
 ONLY_FOR_ARCHS =	${GO_ARCHS}
 
 COMMENT =		Go programming language
 
-VERSION =		1.4.3
-EXTRACT_SUFX =		.src.tar.gz
-DISTNAME = 		go${VERSION}
-PKGNAME = 		go-bootstrap-${VERSION}
-REVISION =		4
+VERSION =		1.4
+RELEASE =		20170531
+DISTNAME = 		go${VERSION}-bootstrap-${RELEASE}
+PKGNAME = 		go-bootstrap-${VERSION}.${RELEASE}
 CATEGORIES =		lang
 
 HOMEPAGE =		https://golang.org/
@@ -22,7 +21,7 @@ PERMIT_DISTFILES_FTP =  bootstrap only
 
 WANTLIB =		c m pthread
 
-MASTER_SITES =		https://golang.org/dl/
+MASTER_SITES =		https://storage.googleapis.com/golang/
 
 BUILD_DEPENDS =		shells/bash
 
@@ -84,7 +83,7 @@ do-install:
 	${INSTALL_PROGRAM} -p ${WRKDIST}/bin/go{,fmt} ${GOROOT}/bin
 
 	@cd ${WRKDIST} && \
-		find . ! -name .hg\* -type f -maxdepth 1 \
+		find . ! -name .git\* ! -name .hg\* -type f -maxdepth 1 \
 			-exec ${INSTALL_DATA} -p {} \
 			${GOROOT} \;
 
