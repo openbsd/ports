@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.39 2017/09/13 22:25:27 juanfra Exp $
+# $OpenBSD: Makefile,v 1.40 2017/10/10 21:58:26 juanfra Exp $
 
 USE_WXNEEDED =		Yes
 
 PORTROACH_COMMENT =	hide pre-release versions (e.g. 6.1.90.900)
 PORTROACH =		limit:!.*\.[0-9][0-9][0-9]-src-builtpkgs$$
 
-ONLY_FOR_ARCHS =	arm amd64 i386 powerpc sparc64
+ONLY_FOR_ARCHS =	arm amd64 i386 mips64el powerpc sparc64
 
 COMMENT =		multi-paradigm programming language
 
