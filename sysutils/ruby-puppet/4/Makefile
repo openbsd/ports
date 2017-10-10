@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.23 2017/09/08 09:58:13 sebastia Exp $
+# $OpenBSD: Makefile,v 1.24 2017/10/10 20:56:53 sebastia Exp $
 
 PORTROACH=		limit:^4
 
+REVISION =		0
 VERSION=		4.10.7
 
 RUN_DEPENDS+=		databases/ruby-hiera3,${MODRUBY_FLAVOR} \
@@ -21,7 +22,8 @@ pre-install:
 do-install:
 	@cd ${WRKSRC} && ${ALL_FAKE_FLAGS} ${RUBY} install.rb \
 		--vardir=${LOCALSTATEDIR}/db/puppet/cache/ \
-		--rundir=${LOCALSTATEDIR}/run/puppetlabs/
+		--rundir=${LOCALSTATEDIR}/run/puppetlabs/ \
+		--localedir=${TRUEPREFIX}/${MODRUBY_SITEDIR}/puppet/locales
 	mv ${WRKINST}${SYSCONFDIR}/puppetlabs ${PREFIX}/${MODRUBY_RELEXAMPLEDIR}-puppet
 	${INSTALL_DATA} ${WRKSRC}/conf/*.conf ${PREFIX}/${MODRUBY_RELEXAMPLEDIR}-puppet/puppet/
 	${INSTALL_DATA} ${WRKSRC}/ext/rack/config.ru ${PREFIX}/${MODRUBY_RELEXAMPLEDIR}-puppet/puppet/

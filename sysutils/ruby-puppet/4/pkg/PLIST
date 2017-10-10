@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2017/05/22 13:07:44 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.14 2017/10/10 20:56:53 sebastia Exp $
 @option is-branch
 @conflict puppet->=3,<4
 @newgroup _puppet:580
@@ -400,6 +400,9 @@ ${MODRUBY_SITEDIR}/puppet/interface/option.rb
 ${MODRUBY_SITEDIR}/puppet/interface/option_builder.rb
 ${MODRUBY_SITEDIR}/puppet/interface/option_manager.rb
 ${MODRUBY_SITEDIR}/puppet/loaders.rb
+${MODRUBY_SITEDIR}/puppet/locales/
+${MODRUBY_SITEDIR}/puppet/locales/config.yaml
+${MODRUBY_SITEDIR}/puppet/locales/puppet.pot
 ${MODRUBY_SITEDIR}/puppet/metatype/
 ${MODRUBY_SITEDIR}/puppet/metatype/manager.rb
 ${MODRUBY_SITEDIR}/puppet/module.rb
