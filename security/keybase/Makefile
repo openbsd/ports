@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2017/05/29 22:41:32 abieber Exp $
+# $OpenBSD: Makefile,v 1.6 2017/10/11 14:00:05 abieber Exp $
 
 # go-ps only supports amd64 on OpenBSD
 # ../vendor/github.com/keybase/go-ps/process.go:39: undefined: processes
@@ -7,7 +7,7 @@ ONLY_FOR_ARCHS = amd64
 
 COMMENT =	client for keybase.io
 
-V =		1.0.21
+V =		1.0.33
 GH_ACCOUNT =	keybase
 GH_PROJECT =	client
 GH_TAGNAME =	v${V}
@@ -31,6 +31,8 @@ WRKSRC =		${WRKDIR}/go/src/github.com/keybase/client
 MODULES =		lang/go
 MODGO_TYPE =		bin
 MODGO_ENV =		PATH="${PORTPATH}" HOME="${PORTHOME}"
+
+NO_TEST =		Yes
 
 do-build:
 	cd ${WRKSRC}/go/keybase && ${MODGO_CMD} build -tags \
