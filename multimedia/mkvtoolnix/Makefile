@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2017/07/26 22:45:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.71 2017/10/11 15:53:48 jeremy Exp $
 
 COMMENT=	create, alter and inspect Matroska files
 
@@ -25,7 +25,6 @@ MODRUBY_RUNDEP=	No
 
 COMPILER =	gcc
 
-BUILD_DEPENDS=	devel/ruby-rake
 LIB_DEPENDS=	audio/flac \
 		audio/libogg \
 		audio/libvorbis \
