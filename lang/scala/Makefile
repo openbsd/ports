@@ -1,21 +1,21 @@
-# $OpenBSD: Makefile,v 1.9 2017/04/21 13:27:46 kurt Exp $
+# $OpenBSD: Makefile,v 1.10 2017/10/11 05:21:29 rpointel Exp $
 
 COMMENT=	general purpose multi-paradigm programming language
 
-DISTNAME=	scala-2.10.1
+VERSION =	2.12.3
+DISTNAME=	scala-${VERSION}
 CATEGORIES=	lang
-REVISION=	1
 
 HOMEPAGE=	http://www.scala-lang.org/
 
 # BSD
 PERMIT_PACKAGE_CDROM=   Yes
 
-MASTER_SITES=	${HOMEPAGE}/downloads/distrib/files/
+MASTER_SITES=	https://downloads.lightbend.com/scala/${VERSION}/
 EXTRACT_SUFX=	.tgz
 
 MODULES=	java
-MODJAVA_VER=	1.6+
+MODJAVA_VER=	1.8+
 
 RUN_DEPENDS=	java/javaPathHelper \
 		shells/bash
