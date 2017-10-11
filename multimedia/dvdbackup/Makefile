@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 11:35:43 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2017/10/11 15:21:44 espie Exp $
 
 COMMENT=		DVD ripper
 
@@ -25,7 +25,7 @@ WRKDIST=		${WRKDIR}/dvdbackup
 do-build:
 	cd ${WRKSRC}/src && ${CC} ${CFLAGS} -c dvdbackup.c
 	cd ${WRKSRC}/src && ${CC} ${LDFLAGS} -o dvdbackup \
-		dvdbackup.o -ldvdnav -pthread
+		dvdbackup.o -ldvdnav -ldvdread -pthread
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/dvdbackup
