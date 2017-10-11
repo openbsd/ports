@@ -1,14 +1,20 @@
-$OpenBSD: patch-storage_oqgraph_CMakeLists_txt,v 1.6 2015/10/31 19:40:43 sthen Exp $
---- storage/oqgraph/CMakeLists.txt.orig	Sun Jan 25 10:21:37 2015
-+++ storage/oqgraph/CMakeLists.txt	Tue Jan 27 17:48:04 2015
-@@ -2,8 +2,8 @@ set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cma
+$OpenBSD: patch-storage_oqgraph_CMakeLists_txt,v 1.7 2017/10/11 17:30:01 espie Exp $
+Index: storage/oqgraph/CMakeLists.txt
+--- storage/oqgraph/CMakeLists.txt.orig
++++ storage/oqgraph/CMakeLists.txt
+@@ -1,11 +1,11 @@
+ set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
++# Disable oqgraph storage engine
++IF(TRUE)
++  RETURN()
++ENDIF()
  
  MESSAGE(STATUS "Configuring OQGraph")
  FIND_PACKAGE(Boost 1.40.0)
 -IF(NOT Boost_FOUND)
 -   MESSAGE(STATUS "Boost not found. OQGraph will not be compiled")
-+# Disable oqgraph storage engine
-+IF(TRUE)
-   RETURN()
- ENDIF()
+-  RETURN()
+-ENDIF()
  INCLUDE_DIRECTORIES(BEFORE ${Boost_INCLUDE_DIRS})
+ 
+ FIND_PACKAGE(Judy)
