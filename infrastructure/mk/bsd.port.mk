@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1368 2017/09/18 16:32:06 tb Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1369 2017/10/11 14:27:20 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -3135,18 +3135,12 @@ ${_i:L}-depends-list:
 # recursive depend targets
 
 print-package-signature print-update-signature:
-	@echo -n ${FULLPKGNAME${SUBPACKAGE}}
-.if !empty(_DEPRUNLIBS)
-	@${_cache_fragment}; cd ${.CURDIR} && ${MAKE} _print-package-signature-lib _print-package-signature-run| \
-		sort -u| \
-		while read i; do echo -n ",$$i"; done
-.else
-	@cd ${.CURDIR} && PKGPATH=${PKGPATH} ${MAKE} _print-package-signature-run | \
-		sort -u| \
-		while read i; do echo -n ",$$i"; done
-.endif
-	@echo
-
+	@if a=`SUBPACKAGE=${SUBPACKAGE} PKGPATH=${PKGPATH} ${MAKE} print-package-args`; \
+	then \
+		${_PKG_CREATE} -n -S $$a ${PKG_ARGS${SUBPACKAGE}} ${_PACKAGE_COOKIE${SUBPACKAGE}}; \
+	else \
+		exit 1; \
+	fi
 
 print-package-args: run-depends-args
 
