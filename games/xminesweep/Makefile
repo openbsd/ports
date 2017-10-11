@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.28 2014/06/08 12:00:54 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2017/10/11 07:13:40 pascal Exp $
 
 COMMENT=	Windows minesweeper
 
 DISTNAME=	xminesweep3.0
 PKGNAME=	xminesweep-3.0
-REVISION =	4
+REVISION =	5
 CATEGORIES=	games
 
 MASTER_SITES=	ftp://ftp.warwick.ac.uk/pub/x11/
