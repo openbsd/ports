@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.92 2017/07/26 22:45:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.93 2017/10/11 08:21:16 ajacoutot Exp $
 
 COMMENT =		personal and small-business financial-accounting software
 
 GNOME_PROJECT =		gnucash
-GNOME_VERSION =		2.6.17
+GNOME_VERSION =		2.6.18
 EXTRACT_SUFX =		.tar.bz2
-REVISION =		0
+
+DISTFILES =		${DISTNAME}-1${EXTRACT_SUFX} \
+			gnucash-docs-${GNOME_VERSION}.tar.gz
 
 SHARED_LIBS +=  gnc-qof              2.0      # 1.4
 SHARED_LIBS +=  gnc-core-utils       0.0      # unknown
@@ -43,9 +45,6 @@ WANTLIB += xml2 xslt z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=gnucash/}
 
-DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
-			gnucash-docs-${GNOME_VERSION}.tar.gz
-
 MODULES =		devel/dconf \
 			x11/gnome
 
@@ -81,12 +80,12 @@ DOC_DIR =		${WRKDIR}/gnucash-docs-${GNOME_VERSION}
 # XXX prefer guile1: guile2 segfaults during build when using dpb(1)
 # XXX make sure guile2 headers are picked up first (over guile1);
 # cannot use CPPFLAGS/CFLAGS since they get appended last
-#MAKE_FLAGS +=		CC="${CC} -I${LOCALBASE}/include/guile/2.0"
+#MAKE_FLAGS +=		CC="${CC} -I${LOCALBASE}/include/guile/2.2"
 pre-configure:
 	sed -i 's,guile-2.0,guile-99.99,g' ${WRKSRC}/configure
 
 # XXX hack: check if still needed at next release (autohell)
-DOCS_ENV=		ACLOCAL=true AUTOCONF=true AUTOMAKE=true AUTOHEADER=true
+DOCS_ENV =		ACLOCAL=true AUTOCONF=true AUTOMAKE=true AUTOHEADER=true
 
 post-configure:
 	cd ${DOC_DIR} && ${SETENV} ${CONFIGURE_ENV} /bin/sh ./configure
