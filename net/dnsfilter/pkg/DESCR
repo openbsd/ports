@@ -1,3 +1,0 @@
-dnsfilter is a filter and rate limiter for the Domain Name System.  DNS
-queries should be redirected into the filter using the pf(4)
-divert-packet command.
