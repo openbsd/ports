@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2016/04/26 21:21:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.41 2017/10/11 15:38:41 espie Exp $
 
 COMMENT=	SDL image library
 
@@ -29,6 +29,7 @@ CONFIGURE_ARGS+=--disable-jpg-shared \
 		--disable-tif-shared \
 		--disable-webp-shared
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		OBJC="${CC}"
 
 .include <bsd.port.mk>
