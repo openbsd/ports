@@ -1,13 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.2 2017/04/18 16:37:46 pascal Exp $
-@conflict bro-*
-@bin bin/bro
+@comment $OpenBSD: PLIST,v 1.3 2017/10/12 17:53:31 ajacoutot Exp $
+@bin bin/brotli
 include/brotli/
 include/brotli/decode.h
 include/brotli/encode.h
 include/brotli/port.h
 include/brotli/types.h
+lib/libbrotlicommon-static.a
 @lib lib/libbrotlicommon.so.${LIBbrotlicommon_VERSION}
+lib/libbrotlidec-static.a
 @lib lib/libbrotlidec.so.${LIBbrotlidec_VERSION}
+lib/libbrotlienc-static.a
 @lib lib/libbrotlienc.so.${LIBbrotlienc_VERSION}
 lib/pkgconfig/libbrotlicommon.pc
 lib/pkgconfig/libbrotlidec.pc
