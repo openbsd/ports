@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2017/07/12 09:02:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2017/10/12 09:53:06 patrick Exp $
 
 # XXX
 #
@@ -16,6 +16,7 @@
      SUBDIR =
      SUBDIR += acx
      SUBDIR += athn
+     SUBDIR += bwfm
      SUBDIR += bwi
      SUBDIR += ipw
      SUBDIR += iwi
