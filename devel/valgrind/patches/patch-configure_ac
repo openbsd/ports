@@ -1,0 +1,14 @@
+$OpenBSD: patch-configure_ac,v 1.1 2017/10/12 08:07:11 phessler Exp $
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -145,7 +145,7 @@ case "${is_clang}-${gcc_version}" in
+      notclang-5.*)
+ 	AC_MSG_RESULT([ok (${gcc_version})])
+ 	;;
+-     clang-2.9|clang-3.*|clang-4.*)
++     clang-*)
+ 	AC_MSG_RESULT([ok (clang-${gcc_version})])
+ 	;;
+      *)
