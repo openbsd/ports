@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2015/06/05 12:20:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.59 2017/10/12 15:27:02 jca Exp $
 
 COMMENT=		front-end to various audio players
 
@@ -29,6 +29,7 @@ LIB_DEPENDS=		x11/gtk+2
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
+			LIBS="-lm" \
 			ac_cv_path_GNOME_CONFIG=no
 
 DOCS=			FAQ README SKIN-SPECS-V1 \
