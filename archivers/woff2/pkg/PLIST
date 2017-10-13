@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/10/13 12:03:43 ajacoutot Exp $
+include/woff2/
+include/woff2/decode.h
+include/woff2/encode.h
+include/woff2/output.h
+@lib lib/libwoff2common.so.${LIBwoff2common_VERSION}
+@lib lib/libwoff2dec.so.${LIBwoff2dec_VERSION}
+@lib lib/libwoff2enc.so.${LIBwoff2enc_VERSION}
+lib/pkgconfig/libwoff2common.pc
+lib/pkgconfig/libwoff2dec.pc
+lib/pkgconfig/libwoff2enc.pc

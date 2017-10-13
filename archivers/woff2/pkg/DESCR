@@ -1,0 +1,5 @@
+Web Open Font Format (WOFF) 2.0 is an update to the existing WOFF
+1.0 with improved compression that is achieved by using the Brotli
+algorithm. The primary purpose of the WOFF2 format is to efficiently
+package fonts linked to Web documents by means of CSS @font-face
+rules.
