@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2017/10/12 17:53:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2017/10/13 06:54:31 ajacoutot Exp $
 
 COMMENT =		generic lossless compressor
 
@@ -11,8 +11,6 @@ SHARED_LIBS +=  brotlidec                 1.0 # 0.6
 SHARED_LIBS +=  brotlienc                 1.0 # 0.6
 
 CATEGORIES =		archivers
-
-HOMEPAGE =		https://github.com/google/brotli
 
 MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
