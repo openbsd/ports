@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2017/09/12 16:24:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2017/10/13 16:27:13 sthen Exp $
 
 COMMENT=	tty-based e-mail client, Mutt with patches
 
 GH_ACCOUNT=	neomutt
 GH_PROJECT=	neomutt
-GH_TAGNAME=	neomutt-20170912
+GH_TAGNAME=	neomutt-20171013
 DISTNAME=	${GH_TAGNAME}
 
 CATEGORIES=	mail
@@ -75,7 +75,7 @@ CONFIGURE_ARGS+= --without-kyotocabinet \
 		--with-qdbm
 .else
 LIB_DEPENDS+=	databases/kyotocabinet
-WANTLIB+=	kyotocabinet pthread
+WANTLIB+=	kyotocabinet
 CONFIGURE_ARGS+= --with-kyotocabinet \
 		--without-qdbm
 .endif

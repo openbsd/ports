@@ -1,16 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.7 2017/09/07 16:19:08 sthen Exp $
-@conflict mutt-*
-@bin bin/mutt
-@bin bin/pgpewrap
-@bin bin/pgpring
-bin/smime_keys
-@man man/man1/mutt.1
-@man man/man1/pgpewrap.1
-@man man/man1/pgpring.1
-@man man/man1/smime_keys.1
-@man man/man5/mbox.5
-@man man/man5/mmdf.5
-@man man/man5/muttrc.5
+@comment $OpenBSD: PLIST,v 1.8 2017/10/13 16:27:13 sthen Exp $
+@bin bin/neomutt
+lib/neomutt/
+@bin lib/neomutt/pgpewrap
+@bin lib/neomutt/pgpring
+lib/neomutt/smime_keys
+@man man/man1/neomutt.1
+@man man/man1/pgpewrap_neomutt.1
+@man man/man1/pgpring_neomutt.1
+@man man/man1/smime_keys_neomutt.1
+@man man/man5/mbox_neomutt.5
+@man man/man5/mmdf_neomutt.5
+@man man/man5/neomuttrc.5
 share/doc/neomutt/
 share/doc/neomutt/CODE_OF_CONDUCT.md
 share/doc/neomutt/COPYRIGHT
@@ -22,16 +22,16 @@ share/doc/neomutt/README.SSL
 share/doc/neomutt/README.md
 share/doc/neomutt/advancedusage.html
 share/doc/neomutt/colorschemes/
-share/doc/neomutt/colorschemes/neonwolf-256.muttrc
-share/doc/neomutt/colorschemes/solarized-dark-256.muttrc
-share/doc/neomutt/colorschemes/vombatidae.mutt
-share/doc/neomutt/colorschemes/zenburn.muttrc
+share/doc/neomutt/colorschemes/neonwolf-256.neomuttrc
+share/doc/neomutt/colorschemes/solarized-dark-256.neomuttrc
+share/doc/neomutt/colorschemes/vombatidae.neomuttrc
+share/doc/neomutt/colorschemes/zenburn.neomuttrc
 share/doc/neomutt/configuration.html
 share/doc/neomutt/gettingstarted.html
 share/doc/neomutt/hcache-bench/
 share/doc/neomutt/hcache-bench/README.md
-share/doc/neomutt/hcache-bench/muttrc
 share/doc/neomutt/hcache-bench/neomutt-hcache-bench.sh
+share/doc/neomutt/hcache-bench/neomuttrc
 share/doc/neomutt/index.html
 share/doc/neomutt/intro.html
 share/doc/neomutt/keybase/
@@ -41,22 +41,25 @@ share/doc/neomutt/keybase/attachmentView.png
 share/doc/neomutt/keybase/decrypt.sh
 share/doc/neomutt/keybase/install.sh
 share/doc/neomutt/keybase/keybase.py
-share/doc/neomutt/keybase/muttrc
+share/doc/neomutt/keybase/neomuttrc
 share/doc/neomutt/keybase/pagerMode.png
 share/doc/neomutt/keybase/pgpdecrypt.sh
 share/doc/neomutt/keybase/pgpverify.sh
 share/doc/neomutt/keybase/verify.sh
 share/doc/neomutt/logo/
-share/doc/neomutt/logo/mutt-128.png
-share/doc/neomutt/logo/mutt-256.png
-share/doc/neomutt/logo/mutt-32.png
-share/doc/neomutt/logo/mutt-64.png
-share/doc/neomutt/logo/mutt.svg
+share/doc/neomutt/logo/neomutt-128.png
+share/doc/neomutt/logo/neomutt-256.png
+share/doc/neomutt/logo/neomutt-32.png
+share/doc/neomutt/logo/neomutt-64.png
+share/doc/neomutt/logo/neomutt.svg
 share/doc/neomutt/lua/
-share/doc/neomutt/lua/test_lua-api_runner.muttrc
+share/doc/neomutt/lua/test_lua-api_runner.neomuttrc
 share/doc/neomutt/lua/test_lua-api_spec.lua
 share/doc/neomutt/manual.html
 share/doc/neomutt/manual.txt
+share/doc/neomutt/mime.types
+@sample ${SYSCONFDIR}/
+@sample ${SYSCONFDIR}/mime.types
 share/doc/neomutt/mimesupport.html
 share/doc/neomutt/miscellany.html
 share/doc/neomutt/neomutt-syntax.vim
@@ -70,58 +73,53 @@ share/doc/neomutt/vim-keys/
 share/doc/neomutt/vim-keys/README.md
 share/doc/neomutt/vim-keys/vim-keys.rc
 share/examples/neomutt/
-@sample ${SYSCONFDIR}/
 share/examples/neomutt/Mush.rc
-@comment share/examples/neomutt/Muttrc
-share/examples/neomutt/Muttrc.dist
-@sample ${SYSCONFDIR}/Muttrc
 share/examples/neomutt/Pine.rc
 share/examples/neomutt/Tin.rc
 share/examples/neomutt/colors.default
 share/examples/neomutt/colors.linux
 share/examples/neomutt/gpg.rc
-@comment share/examples/neomutt/mime.types
-share/examples/neomutt/mime.types.dist
-@sample ${SYSCONFDIR}/mime.types
+share/examples/neomutt/neomuttrc
+@sample ${SYSCONFDIR}/neomuttrc
 share/examples/neomutt/pgp2.rc
 share/examples/neomutt/pgp5.rc
 share/examples/neomutt/pgp6.rc
 share/examples/neomutt/sample.mailcap
-share/examples/neomutt/sample.muttrc
-share/examples/neomutt/sample.muttrc-tlr
+share/examples/neomutt/sample.neomuttrc
+share/examples/neomutt/sample.neomuttrc-tlr
 share/examples/neomutt/smime.rc
 share/examples/neomutt/smime_keys_test.pl
-share/locale/bg/LC_MESSAGES/mutt.mo
-share/locale/ca/LC_MESSAGES/mutt.mo
-share/locale/cs/LC_MESSAGES/mutt.mo
-share/locale/da/LC_MESSAGES/mutt.mo
-share/locale/de/LC_MESSAGES/mutt.mo
-share/locale/el/LC_MESSAGES/mutt.mo
+share/locale/bg/LC_MESSAGES/neomutt.mo
+share/locale/ca/LC_MESSAGES/neomutt.mo
+share/locale/cs/LC_MESSAGES/neomutt.mo
+share/locale/da/LC_MESSAGES/neomutt.mo
+share/locale/de/LC_MESSAGES/neomutt.mo
+share/locale/el/LC_MESSAGES/neomutt.mo
 share/locale/en_GB/
 share/locale/en_GB/LC_MESSAGES/
-share/locale/en_GB/LC_MESSAGES/mutt.mo
-share/locale/eo/LC_MESSAGES/mutt.mo
-share/locale/es/LC_MESSAGES/mutt.mo
-share/locale/et/LC_MESSAGES/mutt.mo
-share/locale/eu/LC_MESSAGES/mutt.mo
-share/locale/fr/LC_MESSAGES/mutt.mo
-share/locale/ga/LC_MESSAGES/mutt.mo
-share/locale/gl/LC_MESSAGES/mutt.mo
-share/locale/hu/LC_MESSAGES/mutt.mo
-share/locale/id/LC_MESSAGES/mutt.mo
-share/locale/it/LC_MESSAGES/mutt.mo
-share/locale/ja/LC_MESSAGES/mutt.mo
-share/locale/ko/LC_MESSAGES/mutt.mo
+share/locale/en_GB/LC_MESSAGES/neomutt.mo
+share/locale/eo/LC_MESSAGES/neomutt.mo
+share/locale/es/LC_MESSAGES/neomutt.mo
+share/locale/et/LC_MESSAGES/neomutt.mo
+share/locale/eu/LC_MESSAGES/neomutt.mo
+share/locale/fr/LC_MESSAGES/neomutt.mo
+share/locale/ga/LC_MESSAGES/neomutt.mo
+share/locale/gl/LC_MESSAGES/neomutt.mo
+share/locale/hu/LC_MESSAGES/neomutt.mo
+share/locale/id/LC_MESSAGES/neomutt.mo
+share/locale/it/LC_MESSAGES/neomutt.mo
+share/locale/ja/LC_MESSAGES/neomutt.mo
+share/locale/ko/LC_MESSAGES/neomutt.mo
 share/locale/lt/
 share/locale/lt/LC_MESSAGES/
-share/locale/lt/LC_MESSAGES/mutt.mo
-share/locale/nl/LC_MESSAGES/mutt.mo
-share/locale/pl/LC_MESSAGES/mutt.mo
-share/locale/pt_BR/LC_MESSAGES/mutt.mo
-share/locale/ru/LC_MESSAGES/mutt.mo
-share/locale/sk/LC_MESSAGES/mutt.mo
-share/locale/sv/LC_MESSAGES/mutt.mo
-share/locale/tr/LC_MESSAGES/mutt.mo
-share/locale/uk/LC_MESSAGES/mutt.mo
-share/locale/zh_CN/LC_MESSAGES/mutt.mo
-share/locale/zh_TW/LC_MESSAGES/mutt.mo
+share/locale/lt/LC_MESSAGES/neomutt.mo
+share/locale/nl/LC_MESSAGES/neomutt.mo
+share/locale/pl/LC_MESSAGES/neomutt.mo
+share/locale/pt_BR/LC_MESSAGES/neomutt.mo
+share/locale/ru/LC_MESSAGES/neomutt.mo
+share/locale/sk/LC_MESSAGES/neomutt.mo
+share/locale/sv/LC_MESSAGES/neomutt.mo
+share/locale/tr/LC_MESSAGES/neomutt.mo
+share/locale/uk/LC_MESSAGES/neomutt.mo
+share/locale/zh_CN/LC_MESSAGES/neomutt.mo
+share/locale/zh_TW/LC_MESSAGES/neomutt.mo
