@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.169 2017/09/29 14:44:50 naddy Exp $
+# $OpenBSD: Makefile,v 1.170 2017/10/13 04:48:34 ajacoutot Exp $
 
 USE_WXNEEDED=	Yes
 
@@ -6,7 +6,7 @@ ONLY_FOR_ARCHS=	aarch64 amd64 arm i386 powerpc sparc64
 
 COMMENT=	multi system emulator
 
-DISTNAME=	qemu-2.10.0
+DISTNAME=	qemu-2.10.1
 CATEGORIES=	emulators
 MASTER_SITES=	http://wiki.qemu.org/download/
 EXTRACT_SUFX=	.tar.xz
