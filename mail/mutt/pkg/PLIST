@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2017/02/25 10:53:14 sthen Exp $
-@conflict neomutt-*
+@comment $OpenBSD: PLIST,v 1.28 2017/10/13 16:27:20 sthen Exp $
 @pkgpath mail/mutt/stable${FLAVOR_COMMA}
 @pkgpath mail/mutt/snapshot[,compressed][,hcache][,idn][,sidebar]${FLAVOR_COMMA}
 @pkgpath mail/mutt/[,compressed][,idn][,sidebar]${FLAVOR_COMMA}
