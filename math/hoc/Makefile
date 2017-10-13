@@ -1,31 +1,25 @@
-# Ports collection makefile for	"hoc", the High Order Calculator
-# $OpenBSD: Makefile,v 1.28 2015/01/22 18:41:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.29 2017/10/13 18:10:46 ian Exp $
 
 COMMENT=	from Kernighan & Pike: High Order Calculator
 
-DISTNAME=	hoc
-PKGNAME=	hoc-1.1
-REVISION=	0
-CATEGORIES=	math
+GH_ACCOUNT =	IanDarwin
+GH_PROJECT =	hoc
+GH_TAGNAME =	v1.1
+REVISION=	1
 
-MASTER_SITES=	http://cm.bell-labs.com/cm/cs/who/bwk/
-EXTRACT_SUFX=	.sh
-EXTRACT_CASES=	*.sh) /bin/sh ${FULLDISTDIR}/$$archive;;
+CATEGORIES=	math
 
 MAINTAINER=	Ian Darwin <ian@openbsd.org>
 
-HOMEPAGE=	http://cm.bell-labs.com/cm/cs/who/bwk/
+HOMEPAGE=	https://www.cs.princeton.edu/~bwk/btl.mirror/new/
 
-# License is included in the distfile: "Permission to use, copy, 
+# BSD-like License from original distfile: "Permission to use, copy,
 # modify, and distribute this software... for any purpose and without
 # fee.. provided that the copyright notice appear in all copies..."
 PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=		c m
 
 ALL_TARGET=	hoc
-MAKE_FILE=	makefile
-
-WRKDIST=	${WRKDIR}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/hoc ${PREFIX}/bin
