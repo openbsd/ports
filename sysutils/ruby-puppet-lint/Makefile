@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2017/07/13 18:29:02 sebastia Exp $
+# $OpenBSD: Makefile,v 1.21 2017/10/13 14:16:20 sebastia Exp $
 
 COMMENT=	ensure your Puppet manifests conform with the style guide
 
-DISTNAME=	puppet-lint-2.3.0
+DISTNAME=	puppet-lint-2.3.3
 
 CATEGORIES=	sysutils
 

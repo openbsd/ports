@@ -1,9 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.10 2017/07/13 18:29:02 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.11 2017/10/13 14:16:20 sebastia Exp $
 ${GEM_BIN}/puppet-lint${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
 ${GEM_LIB}/gems/${DISTNAME}/.rspec
+${GEM_LIB}/gems/${DISTNAME}/.rubocop.yml
+${GEM_LIB}/gems/${DISTNAME}/.rubocop_todo.yml
 ${GEM_LIB}/gems/${DISTNAME}/.travis.yml
 ${GEM_LIB}/gems/${DISTNAME}/CHANGELOG.md
 ${GEM_LIB}/gems/${DISTNAME}/Gemfile
@@ -24,10 +26,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/data.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/lexer/
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/lexer.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/lexer/token.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/monkeypatches/
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/monkeypatches.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/monkeypatches/string_percent.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/monkeypatches/string_prepend.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/optparser.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/plugins/
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/plugins.rb
@@ -79,6 +78,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/plugins/check_whitespace/hard_tabs.r
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/plugins/check_whitespace/trailing_whitespace.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/tasks/
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/tasks/puppet-lint.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/tasks/release_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/version.rb
 ${GEM_LIB}/gems/${DISTNAME}/puppet-lint.gemspec
 ${GEM_LIB}/gems/${DISTNAME}/spec/
@@ -98,7 +98,9 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test/manifests/url_interpolation.pp
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test/manifests/warning.pp
 ${GEM_LIB}/gems/${DISTNAME}/spec/puppet-lint/
 ${GEM_LIB}/gems/${DISTNAME}/spec/puppet-lint/bin_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/puppet-lint/checks_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/puppet-lint/configuration_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/puppet-lint/data_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/puppet-lint/ignore_overrides_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/puppet-lint/lexer/
 ${GEM_LIB}/gems/${DISTNAME}/spec/puppet-lint/lexer/token_spec.rb
