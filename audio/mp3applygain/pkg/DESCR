@@ -1,0 +1,4 @@
+mp3applygain applies gain information directly to mp3 files, by
+modifying the frames of the file.  It is designed to normalize
+audio volume for playback by mp3 players which do not support
+replygain natively (common in hardware mp3 players).

@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/10/14 15:11:52 jeremy Exp $
+@bin bin/mp3applygain
