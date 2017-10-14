@@ -1,9 +1,22 @@
-$OpenBSD: patch-tools_krb5-config_in,v 1.4 2017/04/12 09:50:01 ajacoutot Exp $
+$OpenBSD: patch-tools_krb5-config_in,v 1.5 2017/10/14 08:02:20 ajacoutot Exp $
 
 Search /usr/local/{include,lib} for libcom_err.
 
---- tools/krb5-config.in.orig	Fri Mar 17 19:18:19 2017
-+++ tools/krb5-config.in	Wed Apr 12 11:33:41 2017
+Index: tools/krb5-config.in
+--- tools/krb5-config.in.orig
++++ tools/krb5-config.in
+@@ -193,9 +193,9 @@ alpha*-dec-osf*)
+   rpath_flag='-Wl,+b,';;
+ *-*-irix* | mips-*-netbsd*)
+   rpath_flag='-Wl,-rpath -Wl,';;
+-*-*-netbsd* | *-*-openbsd* | *-*-solaris*)
++*-*-netbsd* | *-*-solaris*)
+   rpath_flag='-R';;
+-*-*-linux* | *-*-gnu* | *-*-k*bsd*-gnu | *-*-freebsd*)
++*-*-linux* | *-*-gnu* | *-*-k*bsd*-gnu | *-*-freebsd* | *-*-openbsd*)
+   rpath_flag='-Wl,--enable-new-dtags -Wl,-rpath -Wl,';;
+ *-*-aix*)
+   rpath_flag='-Wl,-blibpath:';;
 @@ -238,7 +238,7 @@ if test "$do_libs" = "yes"; then
      if test "$lib_krb5" = yes; then
  	lib_flags="$lib_flags -lkrb5"
