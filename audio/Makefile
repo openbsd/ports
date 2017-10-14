@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.392 2017/10/14 15:13:25 jeremy Exp $
+# $OpenBSD: Makefile,v 1.393 2017/10/14 16:23:46 jeremy Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -216,14 +216,11 @@
      SUBDIR += rhythmbox
      SUBDIR += rsynth
      SUBDIR += rtunes
-     SUBDIR += ruby-id3lib,ruby22
      SUBDIR += ruby-id3lib,ruby23
      SUBDIR += ruby-id3lib,ruby24
      SUBDIR += ruby-sonos
-     SUBDIR += ruby-taglib,ruby22
      SUBDIR += ruby-taglib,ruby23
      SUBDIR += ruby-taglib,ruby24
-     SUBDIR += ruby-vorbis_comment,ruby22
      SUBDIR += ruby-vorbis_comment,ruby23
      SUBDIR += ruby-vorbis_comment,ruby24
      SUBDIR += schismtracker
