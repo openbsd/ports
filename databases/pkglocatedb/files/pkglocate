@@ -4,5 +4,14 @@ if [ $# -eq 0 ]; then
 	echo "usage: ${0##*/} [-bciS] [-l limit] pattern ..."
 	exit 1
 fi
+src=/usr/lib/locate/src.db
+xorg=${X11BASE}/lib/locate/xorg.db
+pkg=${TRUEPREFIX}/share/pkglocatedb
+dbs="-d $src"
+if test -e $xorg
+then
+	dbs="$dbs -d $xorg"
+fi
+dbs="$dbs -d $pkg"
 
-exec /usr/bin/locate -d ${TRUEPREFIX}/share/pkglocatedb "$@"
+exec /usr/bin/locate $dbs "$@"

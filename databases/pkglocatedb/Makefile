@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.31 2017/05/04 15:08:21 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2017/10/15 16:06:42 espie Exp $
 
 COMMENT =		database of packages for use with locate(1)
 
 # locate data is NOT MI, unfortunately
 # PKG_ARCH = ${ARCH}....
-DISTNAME =		pkglocatedb-1.3
+DISTNAME =		pkglocatedb-1.4
 DISTFILES =
 
 CATEGORIES =		databases
@@ -23,7 +23,7 @@ do-build:
 
 do-install:
 	${INSTALL_DATA} ${WRKBUILD}/pkglocatedb ${PREFIX}/share
-	${INSTALL_MAN} ${FILESDIR}/pkg_locate.1 ${PREFIX}/man/man1
+	${SUBST_MAN} ${FILESDIR}/pkg_locate.1 ${PREFIX}/man/man1/pkg_locate.1
 	${SUBST_PROGRAM} ${FILESDIR}/pkglocate ${PREFIX}/bin/pkg_locate
 	ln -s ${TRUEPREFIX}/bin/pkg_locate ${PREFIX}/bin/pkglocate
 

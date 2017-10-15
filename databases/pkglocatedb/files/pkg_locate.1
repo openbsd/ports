@@ -1,6 +1,7 @@
-.\"	$OpenBSD: pkg_locate.1,v 1.4 2017/05/04 15:08:21 espie Exp $
+.\"	$OpenBSD: pkg_locate.1,v 1.5 2017/10/15 16:06:42 espie Exp $
 .\"
 .\" Copyright (c) 2013 Robert Peichaer <rpe@openbsd.org>
+.\" Copyright (c) 2017 Marc Espie <espie@openbsd.org>
 .\"
 .\" Permission to use, copy, modify, and distribute this software for any
 .\" purpose with or without fee is hereby granted, provided that the above
@@ -14,37 +15,27 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: May 4 2017 $
+.Dd $Mdocdate: October 15 2017 $
 .Dt PKG_LOCATE 1
 .Os
 .Sh NAME
-.Nm pkg_locate
+.Nm pkg_locate ,
+.Nm pkglocate
 .Nd find files in OpenBSD packages quickly
 .Sh SYNOPSIS
-.Nm pkg_locate
-.Bk -words
-.Op Fl bciS
-.Op Fl l Ar limit
+.Nm
+.Op Cm locate-flags
 .Ar pattern ...
-.Ek
 .Sh DESCRIPTION
 .Nm
-searches a database of files for all pathnames which match the
-specified pattern.
-The options for
-.Nm
-are the same as for
-.Xr locate 1 ,
-which is used internally.
-.Pp
-There are two flavors of the pkglocatedb package:
-installed as
-.Pa pkglocatedb ,
-providing a database with all files in
+is a front-end to
+.Xr locate 1
+using databases covering all base, X11, and package files known in
 .Ox
-packages; and
-.Pa pkglocatedb-src ,
-providing the same database including all installation set files.
+.Pp
+Any parameters and options are passed to
+.Xr locate 1
+as-is.
 .Pp
 The search result for
 .Ox
@@ -54,62 +45,59 @@ package files has the following format:
 .Pp
 where
 .Ar fullpkgname
-is the name of the package (see
-.Xr bsd.port.mk 5 )
-without the trailing .tgz,
+is the name of the package
 .Ar pkgpath
-is the location within the ports tree (see
+its location within the ports tree (see
 .Xr pkgpath 7 )
 and
 .Ar pathname
-is the absolute pathname of the installed file.
+the absolute pathname of the installed file.
 .Pp
 The search result for base system and X Window System files has the
 following format:
 .Pp
-.Dl srcdir/setname:setfilename:pathname
+.Dl setname:pathname
 .Pp
 where
-.Ar srcdir
-is
-.Qq src
-for base system or
-.Qq xenocara
-for X Window System,
 .Ar setname
-is the name of the install set,
-.Ar setfilename
-is the name of the install set file including the release version
-without the .tgz suffix, and
+is the name of the install set, and
 .Ar pathname
-is the absoute pathname of the installed file.
+the absolute pathname of the installed file.
 .Pp
-The options are as follows:
-.Bl -tag -width Ds
-.It Fl b
-For each entry in the database, perform the search on the last
-component of path.
-.It Fl c
-Suppress normal output; instead print a count of matching file names.
-.It Fl i
-Ignore case distinctions in both the pattern and the database.
-.It Fl l Ar limit
-Limit output to a specific number of files and exit.
-.It Fl S
-Print some statistics about the database and exit.
-.El
+For instance, at the time of this writing:
+.Bd -literal -offset indent
+.Ns $ Nm Ar bin/urxvt
+rxvt-unicode-9.22p5:x11/rxvt-unicode:/usr/local/bin/urxvt
+rxvt-unicode-9.22p5:x11/rxvt-unicode:/usr/local/bin/urxvtc
+rxvt-unicode-9.22p5:x11/rxvt-unicode:/usr/local/bin/urxvtd
+
+.Ns $ Nm Fl i Ar libx11.
+xbase62:/usr/X11R6/lib/libX11.a
+xbase62:/usr/X11R6/lib/libX11.la
+xbase62:/usr/X11R6/lib/libX11.so.16.1
+
+.Ns $ Nm Ar clang.1
+comp62:/usr/share/man/man1/clang.1
+llvm-5.0.0p1:devel/llvm,-main:/usr/local/man/man1/clang.1
+.Ed
 .Sh FILES
-.Bl -tag -compact -width /usr/local/share/pkglocatedb
-.It /usr/local/share/pkglocatedb
+.Bl -tag -compact -width /usr/X11R6/lib/locate/xorg.db
+.It ${LOCALBASE}/share/pkglocatedb
 locate database containing information about files in
 .Ox
-packages and optionally in the
+packages.
+.It /usr/lib/locate/src.db
+locate database containing information about files in
 .Ox
-installation sets.
+base installation.
+.It ${X11BASE}/lib/locate/xorg.db
+locate database containing information about files in
+.Xr X 7 ,
+if installed.
 .El
 .Sh SEE ALSO
 .Xr locate 1 ,
-.Xr bsd.port.mk 5 ,
+.Xr pkg_mklocatedb 1 ,
 .Xr pkgpath 7
 .Sh AUTHORS
 .An Marc Espie Aq Mt espie@openbsd.org
