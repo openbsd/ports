@@ -1,3 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/04/23 21:22:25 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/10/15 10:18:57 rsadowski Exp $
 @bin bin/xwallpaper
 @man man/man1/xwallpaper.1
+share/zsh/
+share/zsh/vendor-completions/
+share/zsh/vendor-completions/_xwallpaper
