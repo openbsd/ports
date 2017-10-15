@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2015/12/21 18:34:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2017/10/15 20:53:18 jeremy Exp $
 
 COMMENT=		extending Rake with remote task goodness
 
-DISTNAME=		rake-remote_task-2.3.0
+DISTNAME=		rake-remote_task-2.4.2
 CATEGORIES=		devel
 
 # MIT
@@ -14,6 +14,7 @@ CONFIGURE_STYLE=	ruby gem
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		devel/ruby-open4,${MODRUBY_FLAVOR}
+TEST_DEPENDS=		devel/ruby-hoe,${MODRUBY_FLAVOR}
 
 MODRUBY_TEST=		rake
 
