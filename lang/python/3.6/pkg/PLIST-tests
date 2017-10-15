@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tests,v 1.3 2017/08/10 06:25:18 rpointel Exp $
+@comment $OpenBSD: PLIST-tests,v 1.4 2017/10/15 16:31:45 rpointel Exp $
 @option no-default-conflict
 @option is-branch
 @conflict python-tests->=3.6,<3.7
@@ -32,6 +32,9 @@ lib/python3.6/test/__pycache__/audiotests.cpython-36.pyc
 lib/python3.6/test/__pycache__/autotest.cpython-36.opt-1.pyc
 lib/python3.6/test/__pycache__/autotest.cpython-36.opt-2.pyc
 lib/python3.6/test/__pycache__/autotest.cpython-36.pyc
+lib/python3.6/test/__pycache__/bisect.cpython-36.opt-1.pyc
+lib/python3.6/test/__pycache__/bisect.cpython-36.opt-2.pyc
+lib/python3.6/test/__pycache__/bisect.cpython-36.pyc
 lib/python3.6/test/__pycache__/bytecode_helper.cpython-36.opt-1.pyc
 lib/python3.6/test/__pycache__/bytecode_helper.cpython-36.opt-2.pyc
 lib/python3.6/test/__pycache__/bytecode_helper.cpython-36.pyc
@@ -131,6 +134,9 @@ lib/python3.6/test/__pycache__/pydocfodder.cpython-36.pyc
 lib/python3.6/test/__pycache__/pystone.cpython-36.opt-1.pyc
 lib/python3.6/test/__pycache__/pystone.cpython-36.opt-2.pyc
 lib/python3.6/test/__pycache__/pystone.cpython-36.pyc
+lib/python3.6/test/__pycache__/pythoninfo.cpython-36.opt-1.pyc
+lib/python3.6/test/__pycache__/pythoninfo.cpython-36.opt-2.pyc
+lib/python3.6/test/__pycache__/pythoninfo.cpython-36.pyc
 lib/python3.6/test/__pycache__/re_tests.cpython-36.opt-1.pyc
 lib/python3.6/test/__pycache__/re_tests.cpython-36.opt-2.pyc
 lib/python3.6/test/__pycache__/re_tests.cpython-36.pyc
@@ -1420,6 +1426,7 @@ lib/python3.6/test/badsyntax_future7.py
 lib/python3.6/test/badsyntax_future8.py
 lib/python3.6/test/badsyntax_future9.py
 lib/python3.6/test/badsyntax_pep3120.py
+lib/python3.6/test/bisect.py
 lib/python3.6/test/bytecode_helper.py
 lib/python3.6/test/capath/
 lib/python3.6/test/capath/4e1295a3.0
@@ -1466,7 +1473,31 @@ lib/python3.6/test/cmath_testcases.txt
 lib/python3.6/test/coding20731.py
 lib/python3.6/test/curses_tests.py
 lib/python3.6/test/data/
+lib/python3.6/test/data/BIG5.TXT
+lib/python3.6/test/data/BIG5HKSCS-2004.TXT
+lib/python3.6/test/data/CP932.TXT
+lib/python3.6/test/data/CP936.TXT
+lib/python3.6/test/data/CP949.TXT
+lib/python3.6/test/data/CP950.TXT
+lib/python3.6/test/data/EUC-CN.TXT
+lib/python3.6/test/data/EUC-JISX0213.TXT
+lib/python3.6/test/data/EUC-JP.TXT
+lib/python3.6/test/data/EUC-KR.TXT
+lib/python3.6/test/data/JOHAB.TXT
+lib/python3.6/test/data/NamedSequences.txt
+lib/python3.6/test/data/NormalizationTest.txt
 lib/python3.6/test/data/README
+lib/python3.6/test/data/SHIFTJIS.TXT
+lib/python3.6/test/data/SHIFT_JISX0213.TXT
+lib/python3.6/test/data/blake2b.txt
+lib/python3.6/test/data/blake2s.txt
+lib/python3.6/test/data/gb-18030-2000.xml
+lib/python3.6/test/data/sha3_224.txt
+lib/python3.6/test/data/sha3_256.txt
+lib/python3.6/test/data/sha3_384.txt
+lib/python3.6/test/data/sha3_512.txt
+lib/python3.6/test/data/shake_128.txt
+lib/python3.6/test/data/shake_256.txt
 lib/python3.6/test/datetimetester.py
 lib/python3.6/test/decimaltestdata/
 lib/python3.6/test/decimaltestdata/abs.decTest
@@ -1759,6 +1790,7 @@ lib/python3.6/test/pyclbr_input.py
 lib/python3.6/test/pydoc_mod.py
 lib/python3.6/test/pydocfodder.py
 lib/python3.6/test/pystone.py
+lib/python3.6/test/pythoninfo.py
 lib/python3.6/test/randv2_32.pck
 lib/python3.6/test/randv2_64.pck
 lib/python3.6/test/randv3.pck
@@ -1773,7 +1805,6 @@ lib/python3.6/test/sample_doctest_no_doctests.py
 lib/python3.6/test/selfsigned_pythontestdotnet.pem
 lib/python3.6/test/seq_tests.py
 lib/python3.6/test/sgml_input.html
-lib/python3.6/test/sha256.pem
 lib/python3.6/test/signalinterproctester.py
 lib/python3.6/test/sndhdrdata/
 lib/python3.6/test/sndhdrdata/README
@@ -2258,6 +2289,26 @@ lib/python3.6/test/test_import/data/circular_imports/subpkg/__pycache__/util.cpy
 lib/python3.6/test/test_import/data/circular_imports/subpkg/subpackage2.py
 lib/python3.6/test/test_import/data/circular_imports/subpkg/util.py
 lib/python3.6/test/test_import/data/circular_imports/util.py
+lib/python3.6/test/test_import/data/package/
+lib/python3.6/test/test_import/data/package/__init__.py
+lib/python3.6/test/test_import/data/package/__pycache__/
+lib/python3.6/test/test_import/data/package/__pycache__/__init__.cpython-36.opt-1.pyc
+lib/python3.6/test/test_import/data/package/__pycache__/__init__.cpython-36.opt-2.pyc
+lib/python3.6/test/test_import/data/package/__pycache__/__init__.cpython-36.pyc
+lib/python3.6/test/test_import/data/package/__pycache__/submodule.cpython-36.opt-1.pyc
+lib/python3.6/test/test_import/data/package/__pycache__/submodule.cpython-36.opt-2.pyc
+lib/python3.6/test/test_import/data/package/__pycache__/submodule.cpython-36.pyc
+lib/python3.6/test/test_import/data/package/submodule.py
+lib/python3.6/test/test_import/data/package2/
+lib/python3.6/test/test_import/data/package2/__pycache__/
+lib/python3.6/test/test_import/data/package2/__pycache__/submodule1.cpython-36.opt-1.pyc
+lib/python3.6/test/test_import/data/package2/__pycache__/submodule1.cpython-36.opt-2.pyc
+lib/python3.6/test/test_import/data/package2/__pycache__/submodule1.cpython-36.pyc
+lib/python3.6/test/test_import/data/package2/__pycache__/submodule2.cpython-36.opt-1.pyc
+lib/python3.6/test/test_import/data/package2/__pycache__/submodule2.cpython-36.opt-2.pyc
+lib/python3.6/test/test_import/data/package2/__pycache__/submodule2.cpython-36.pyc
+lib/python3.6/test/test_import/data/package2/submodule1.py
+lib/python3.6/test/test_import/data/package2/submodule2.py
 lib/python3.6/test/test_importlib/
 lib/python3.6/test/test_importlib/__init__.py
 lib/python3.6/test/test_importlib/__main__.py

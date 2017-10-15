@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-idle,v 1.1 2016/12/26 19:40:12 rpointel Exp $
+@comment $OpenBSD: PLIST-idle,v 1.2 2017/10/15 16:31:45 rpointel Exp $
 @option no-default-conflict
 @option is-branch
 @conflict python-idle->=3.6,<3.7
@@ -205,6 +205,9 @@ lib/python3.6/idlelib/__pycache__/windows.cpython-36.pyc
 lib/python3.6/idlelib/__pycache__/zoomheight.cpython-36.opt-1.pyc
 lib/python3.6/idlelib/__pycache__/zoomheight.cpython-36.opt-2.pyc
 lib/python3.6/idlelib/__pycache__/zoomheight.cpython-36.pyc
+lib/python3.6/idlelib/__pycache__/zzdummy.cpython-36.opt-1.pyc
+lib/python3.6/idlelib/__pycache__/zzdummy.cpython-36.opt-2.pyc
+lib/python3.6/idlelib/__pycache__/zzdummy.cpython-36.pyc
 lib/python3.6/idlelib/autocomplete.py
 lib/python3.6/idlelib/autocomplete_w.py
 lib/python3.6/idlelib/autoexpand.py
@@ -308,6 +311,9 @@ lib/python3.6/idlelib/idle_test/__pycache__/test_iomenu.cpython-36.pyc
 lib/python3.6/idlelib/idle_test/__pycache__/test_macosx.cpython-36.opt-1.pyc
 lib/python3.6/idlelib/idle_test/__pycache__/test_macosx.cpython-36.opt-2.pyc
 lib/python3.6/idlelib/idle_test/__pycache__/test_macosx.cpython-36.pyc
+lib/python3.6/idlelib/idle_test/__pycache__/test_outwin.cpython-36.opt-1.pyc
+lib/python3.6/idlelib/idle_test/__pycache__/test_outwin.cpython-36.opt-2.pyc
+lib/python3.6/idlelib/idle_test/__pycache__/test_outwin.cpython-36.pyc
 lib/python3.6/idlelib/idle_test/__pycache__/test_paragraph.cpython-36.opt-1.pyc
 lib/python3.6/idlelib/idle_test/__pycache__/test_paragraph.cpython-36.opt-2.pyc
 lib/python3.6/idlelib/idle_test/__pycache__/test_paragraph.cpython-36.pyc
@@ -380,6 +386,7 @@ lib/python3.6/idlelib/idle_test/test_history.py
 lib/python3.6/idlelib/idle_test/test_hyperparser.py
 lib/python3.6/idlelib/idle_test/test_iomenu.py
 lib/python3.6/idlelib/idle_test/test_macosx.py
+lib/python3.6/idlelib/idle_test/test_outwin.py
 lib/python3.6/idlelib/idle_test/test_paragraph.py
 lib/python3.6/idlelib/idle_test/test_parenmatch.py
 lib/python3.6/idlelib/idle_test/test_pathbrowser.py
@@ -428,3 +435,4 @@ lib/python3.6/idlelib/tree.py
 lib/python3.6/idlelib/undo.py
 lib/python3.6/idlelib/windows.py
 lib/python3.6/idlelib/zoomheight.py
+lib/python3.6/idlelib/zzdummy.py
