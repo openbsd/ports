@@ -1,0 +1,12 @@
+$OpenBSD: patch-meson_options_txt,v 1.1.1.1 2017/10/15 11:32:43 bcallah Exp $
+
+Fix a typo.
+
+Index: meson_options.txt
+--- meson_options.txt.orig
++++ meson_options.txt
+@@ -1,3 +1,3 @@
+ option('build-executable', type : 'boolean', value : true, description : 'Build the main executable')
+ option('build-player-backends', type : 'string', description : 'Comma separated list of player backends to build. Possible values are gstreamer-cairo, gstreamer-opengl, gstreamer-clutter and mpv-opengl')
+-option('use-deprecated-webkit', type : 'boolean', value : false, descritpion : 'Use deprecated WebKit1 API')
++option('use-deprecated-webkit', type : 'boolean', value : false, description : 'Use deprecated WebKit1 API')
