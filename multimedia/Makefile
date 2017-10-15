@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.98 2017/07/23 00:47:09 bcallah Exp $
+# $OpenBSD: Makefile,v 1.99 2017/10/15 11:33:25 bcallah Exp $
 
      SUBDIR =
      SUBDIR += atomicparsley
@@ -13,6 +13,7 @@
      SUBDIR += ffmpeg2theora
      SUBDIR += get_flash_videos
      SUBDIR += get_iplayer
+     SUBDIR += gnome-twitch
      SUBDIR += gstreamer-0.10
      SUBDIR += gstreamer1
      SUBDIR += hdhomerun
