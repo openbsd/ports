@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2017/08/08 21:38:25 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2017/10/15 08:33:25 jasper Exp $
 bin/qutebrowser
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/
 lib/python${MODPY_VERSION}/site-packages/qutebrowser-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -214,10 +214,11 @@ lib/python${MODPY_VERSION}/site-packages/qutebrowser/html/base.html
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/html/bookmarks.html
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/html/dirbrowser.html
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/html/doc/
-lib/python${MODPY_VERSION}/site-packages/qutebrowser/html/doc/CHANGELOG.html
-lib/python${MODPY_VERSION}/site-packages/qutebrowser/html/doc/CONTRIBUTING.html
-lib/python${MODPY_VERSION}/site-packages/qutebrowser/html/doc/FAQ.html
+lib/python${MODPY_VERSION}/site-packages/qutebrowser/html/doc/changelog.html
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/html/doc/commands.html
+lib/python${MODPY_VERSION}/site-packages/qutebrowser/html/doc/configuring.html
+lib/python${MODPY_VERSION}/site-packages/qutebrowser/html/doc/contributing.html
+lib/python${MODPY_VERSION}/site-packages/qutebrowser/html/doc/faq.html
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/html/doc/img/
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/html/doc/img/cheatsheet-big.png
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/html/doc/img/cheatsheet-small.png
