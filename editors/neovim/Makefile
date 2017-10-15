@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2017/05/12 09:56:33 edd Exp $
+# $OpenBSD: Makefile,v 1.3 2017/10/15 10:53:55 jasper Exp $
 
-COMMENT =	a continuation and extension of Vim
+COMMENT =	continuation and extension of Vim
 
 GH_ACCOUNT =	neovim
 GH_PROJECT =	neovim
 GH_TAGNAME =	v0.2.0
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	editors devel
 HOMEPAGE =	http://neovim.org
@@ -41,6 +41,7 @@ USE_GMAKE = Yes
 
 NVIM_PRG =	${WRKBUILD}/bin/nvim
 SUBST_VARS +=	VIMPROG
+
 pre-test:
 	${SUBST_CMD} ${WRKSRC}/src/nvim/testdir/test49.vim
 
