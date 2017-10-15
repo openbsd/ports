@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.40 2017/09/09 21:10:08 phessler Exp $
+# $OpenBSD: Makefile,v 1.41 2017/10/15 16:43:23 espie Exp $
 
 NOT_FOR_ARCHS =		aarch64
 
 V =			3.3.6
 PKGNAME =		g77-$V
-REVISION =		13
+REVISION =		14
 EPOCH =			1
 DISTFILES =		g77-openbsd-3.3.6.tgz
 
