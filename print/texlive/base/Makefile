@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.92 2017/08/24 09:45:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.93 2017/10/15 19:07:33 kili Exp $
 
 COMMENT =		base binaries for TeXLive typesetting distribution
 
@@ -6,7 +6,7 @@ COMMENT =		base binaries for TeXLive typesetting distribution
 DISTNAME =		texlive-${DIST_V}b-source
 PKGNAME =		texlive_base-${V}
 WRKDIST =		${WRKDIR}/texlive-${DIST_V}-source
-REVISION =		2
+REVISION =		3
 
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
 			texlive-${DIST_V}-extra${EXTRACT_SUFX}
@@ -47,7 +47,7 @@ LIB_DEPENDS =		converters/libiconv \
 MODULES =		textproc/intltool perl
 
 # c++-11 required for poppler
-COMPILER =		gcc
+COMPILER =		base-clang ports-gcc
 
 # Never set SEPARATE_BUILD
 CONFIGURE_STYLE =	gnu
@@ -55,6 +55,8 @@ CONFIGURE_STYLE =	gnu
 CPPFLAGS =	-I${X11BASE}/include \
 		-I${LOCALBASE}/include \
 		-I${LOCALBASE}/include/poppler
+
+CXXFLAGS +=	-std=c++11
 
 LDFLAGS =	-L${LOCALBASE}/lib \
 		-L${X11BASE}/lib

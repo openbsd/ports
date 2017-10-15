@@ -1,0 +1,25 @@
+$OpenBSD: patch-texk_web2c_luatexdir_image_pdftoepdf_w,v 1.1 2017/10/15 19:07:33 kili Exp $
+
+Let it build with -std=c++11.
+
+found by sthen@ at
+https://github.com/termux/termux-packages/blob/master/packages/texlive-bin/c%2B%2B11.patch
+
+
+Index: texk/web2c/luatexdir/image/pdftoepdf.w
+--- texk/web2c/luatexdir/image/pdftoepdf.w.orig
++++ texk/web2c/luatexdir/image/pdftoepdf.w
+@@ -71,7 +71,12 @@ static char *get_file_checksum(const char *a, file_err
+         ck = (char *) malloc(PDF_CHECKSUM_SIZE);
+         if (ck == NULL)
+             formatted_error("pdf inclusion","out of memory while processing '%s'", a);
+-        snprintf(ck, PDF_CHECKSUM_SIZE, "%" PRIu64 "_%" PRIu64, (uint64_t) size,(uint64_t) mtime);
++        snprintf(ck, PDF_CHECKSUM_SIZE, "%"
++		PRIu64
++		"_%"
++		PRIu64,
++		(uint64_t) size,
++		(uint64_t) mtime);
+    } else {
+         switch (fe) {
+             case FE_FAIL:
