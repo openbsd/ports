@@ -1,6 +1,10 @@
-$OpenBSD: patch-gst-libs_ext_libav_configure,v 1.2 2015/05/22 06:40:19 ajacoutot Exp $
---- gst-libs/ext/libav/configure.orig	Mon Feb  4 08:39:50 2013
-+++ gst-libs/ext/libav/configure	Mon Feb  4 08:40:36 2013
+$OpenBSD: patch-gst-libs_ext_libav_configure,v 1.3 2017/10/16 08:15:59 ajacoutot Exp $
+
+configure: Also try -mstack-alignment for clang
+
+Index: gst-libs/ext/libav/configure
+--- gst-libs/ext/libav/configure.orig
++++ gst-libs/ext/libav/configure
 @@ -2562,7 +2562,7 @@ die_license_disabled version3 libvo_amrwbenc
  
  enabled version3 && { enabled gpl && enable gplv3 || enable lgplv3; }
@@ -10,3 +14,11 @@ $OpenBSD: patch-gst-libs_ext_libav_configure,v 1.2 2015/05/22 06:40:19 ajacoutot
  
  enable_pic() {
      enable pic
+@@ -3056,6 +3056,7 @@ elif enabled llvm_gcc; then
+     check_cflags -mllvm -stack-alignment=16
+ elif enabled clang; then
+     check_cflags -mllvm -stack-alignment=16
++    check_cflags -mstack-alignment=16
+     check_cflags -Qunused-arguments
+ elif enabled armcc; then
+     # 2523: use of inline assembler is deprecated
