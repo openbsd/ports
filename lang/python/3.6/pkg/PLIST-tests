@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tests,v 1.4 2017/10/15 16:31:45 rpointel Exp $
+@comment $OpenBSD: PLIST-tests,v 1.5 2017/10/16 05:16:24 rpointel Exp $
 @option no-default-conflict
 @option is-branch
 @conflict python-tests->=3.6,<3.7
@@ -1473,31 +1473,7 @@ lib/python3.6/test/cmath_testcases.txt
 lib/python3.6/test/coding20731.py
 lib/python3.6/test/curses_tests.py
 lib/python3.6/test/data/
-lib/python3.6/test/data/BIG5.TXT
-lib/python3.6/test/data/BIG5HKSCS-2004.TXT
-lib/python3.6/test/data/CP932.TXT
-lib/python3.6/test/data/CP936.TXT
-lib/python3.6/test/data/CP949.TXT
-lib/python3.6/test/data/CP950.TXT
-lib/python3.6/test/data/EUC-CN.TXT
-lib/python3.6/test/data/EUC-JISX0213.TXT
-lib/python3.6/test/data/EUC-JP.TXT
-lib/python3.6/test/data/EUC-KR.TXT
-lib/python3.6/test/data/JOHAB.TXT
-lib/python3.6/test/data/NamedSequences.txt
-lib/python3.6/test/data/NormalizationTest.txt
 lib/python3.6/test/data/README
-lib/python3.6/test/data/SHIFTJIS.TXT
-lib/python3.6/test/data/SHIFT_JISX0213.TXT
-lib/python3.6/test/data/blake2b.txt
-lib/python3.6/test/data/blake2s.txt
-lib/python3.6/test/data/gb-18030-2000.xml
-lib/python3.6/test/data/sha3_224.txt
-lib/python3.6/test/data/sha3_256.txt
-lib/python3.6/test/data/sha3_384.txt
-lib/python3.6/test/data/sha3_512.txt
-lib/python3.6/test/data/shake_128.txt
-lib/python3.6/test/data/shake_256.txt
 lib/python3.6/test/datetimetester.py
 lib/python3.6/test/decimaltestdata/
 lib/python3.6/test/decimaltestdata/abs.decTest
