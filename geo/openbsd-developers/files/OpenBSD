@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.147 2017/08/13 21:57:58 akoshibe Exp $
+# $OpenBSD: OpenBSD,v 1.148 2017/10/16 20:51:20 remi Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -80,6 +80,7 @@
 47.29		19.3		"robert"	# Robert Nagy
 47.3154		7.3526		"mglocker"	# Marcus Glocker
 47.369024	8.538033	"stephan"	# Stephan A. Rickauer
+47.402103	8.502002	"remi"		# Remi Locherer
 47.404841	8.562961	"tb"		# Theo Buehler
 47.50		7.60		"dhartmei"	# Daniel Hartmeier
 47.532		7.648		"winiger"	# Marc Winiger
