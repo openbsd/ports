@@ -1,0 +1,47 @@
+$OpenBSD: patch-src_rsn_supp_wpa_ft_c,v 1.1 2017/10/16 21:27:36 dcoppa Exp $
+
+From b372ab0b7daea719749194dc554b26e6367603f2 Mon Sep 17 00:00:00 2001
+From: Jouni Malinen <j@w1.fi>
+Date: Fri, 22 Sep 2017 12:06:37 +0300
+Subject: [PATCH 8/8] FT: Do not allow multiple Reassociation Response frames
+
+The driver is expected to not report a second association event without
+the station having explicitly request a new association. As such, this
+case should not be reachable. However, since reconfiguring the same
+pairwise or group keys to the driver could result in nonce reuse issues,
+be extra careful here and do an additional state check to avoid this
+even if the local driver ends up somehow accepting an unexpected
+Reassociation Response frame.
+
+Index: src/rsn_supp/wpa_ft.c
+--- src/rsn_supp/wpa_ft.c.orig
++++ src/rsn_supp/wpa_ft.c
+@@ -153,6 +153,7 @@ static u8 * wpa_ft_gen_req_ies(struct wpa_sm *sm, size
+ 	u16 capab;
+ 
+ 	sm->ft_completed = 0;
++	sm->ft_reassoc_completed = 0;
+ 
+ 	buf_len = 2 + sizeof(struct rsn_mdie) + 2 + sizeof(struct rsn_ftie) +
+ 		2 + sm->r0kh_id_len + ric_ies_len + 100;
+@@ -681,6 +682,11 @@ int wpa_ft_validate_reassoc_resp(struct wpa_sm *sm, co
+ 		return -1;
+ 	}
+ 
++	if (sm->ft_reassoc_completed) {
++		wpa_printf(MSG_DEBUG, "FT: Reassociation has already been completed for this FT protocol instance - ignore unexpected retransmission");
++		return 0;
++	}
++
+ 	if (wpa_ft_parse_ies(ies, ies_len, &parse) < 0) {
+ 		wpa_printf(MSG_DEBUG, "FT: Failed to parse IEs");
+ 		return -1;
+@@ -780,6 +786,8 @@ int wpa_ft_validate_reassoc_resp(struct wpa_sm *sm, co
+ 		wpa_hexdump(MSG_MSGDUMP, "FT: Calculated MIC", mic, 16);
+ 		return -1;
+ 	}
++
++	sm->ft_reassoc_completed = 1;
+ 
+ 	if (wpa_ft_process_gtk_subelem(sm, parse.gtk, parse.gtk_len) < 0)
+ 		return -1;

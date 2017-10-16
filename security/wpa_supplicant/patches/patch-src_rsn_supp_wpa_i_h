@@ -1,0 +1,78 @@
+$OpenBSD: patch-src_rsn_supp_wpa_i_h,v 1.1 2017/10/16 21:27:36 dcoppa Exp $
+
+From 927f891007c402fefd1ff384645b3f07597c3ede Mon Sep 17 00:00:00 2001
+From: Mathy Vanhoef <Mathy.Vanhoef@cs.kuleuven.be>
+Date: Wed, 12 Jul 2017 16:03:24 +0200
+Subject: [PATCH 2/8] Prevent reinstallation of an already in-use group key
+
+Track the current GTK and IGTK that is in use and when receiving a
+(possibly retransmitted) Group Message 1 or WNM-Sleep Mode Response, do
+not install the given key if it is already in use. This prevents an
+attacker from trying to trick the client into resetting or lowering the
+sequence counter associated to the group key.
+
+From 8280294e74846ea342389a0cd17215050fa5afe8 Mon Sep 17 00:00:00 2001
+From: Jouni Malinen <j@w1.fi>
+Date: Sun, 1 Oct 2017 12:12:24 +0300
+Subject: [PATCH 3/8] Extend protection of GTK/IGTK reinstallation of WNM-Sleep
+ Mode cases
+
+This extends the protection to track last configured GTK/IGTK value
+separately from EAPOL-Key frames and WNM-Sleep Mode frames to cover a
+corner case where these two different mechanisms may get used when the
+GTK/IGTK has changed and tracking a single value is not sufficient to
+detect a possible key reconfiguration.
+
+From 8f82bc94e8697a9d47fa8774dfdaaede1084912c Mon Sep 17 00:00:00 2001
+From: Mathy Vanhoef <Mathy.Vanhoef@cs.kuleuven.be>
+Date: Fri, 29 Sep 2017 04:22:51 +0200
+Subject: [PATCH 4/8] Prevent installation of an all-zero TK
+
+Properly track whether a PTK has already been installed to the driver
+and the TK part cleared from memory. This prevents an attacker from
+trying to trick the client into installing an all-zero TK.
+
+From b372ab0b7daea719749194dc554b26e6367603f2 Mon Sep 17 00:00:00 2001
+From: Jouni Malinen <j@w1.fi>
+Date: Fri, 22 Sep 2017 12:06:37 +0300
+Subject: [PATCH 8/8] FT: Do not allow multiple Reassociation Response frames
+
+The driver is expected to not report a second association event without
+the station having explicitly request a new association. As such, this
+case should not be reachable. However, since reconfiguring the same
+pairwise or group keys to the driver could result in nonce reuse issues,
+be extra careful here and do an additional state check to avoid this
+even if the local driver ends up somehow accepting an unexpected
+Reassociation Response frame.
+
+Index: src/rsn_supp/wpa_i.h
+--- src/rsn_supp/wpa_i.h.orig
++++ src/rsn_supp/wpa_i.h
+@@ -24,13 +24,18 @@ struct wpa_sm {
+ 	struct wpa_ptk ptk, tptk;
+ 	int ptk_set, tptk_set;
+ 	unsigned int msg_3_of_4_ok:1;
+-	unsigned int tk_to_set:1;
+ 	u8 snonce[WPA_NONCE_LEN];
+ 	u8 anonce[WPA_NONCE_LEN]; /* ANonce from the last 1/4 msg */
+ 	int renew_snonce;
+ 	u8 rx_replay_counter[WPA_REPLAY_COUNTER_LEN];
+ 	int rx_replay_counter_set;
+ 	u8 request_counter[WPA_REPLAY_COUNTER_LEN];
++	struct wpa_gtk gtk;
++	struct wpa_gtk gtk_wnm_sleep;
++#ifdef CONFIG_IEEE80211W
++	struct wpa_igtk igtk;
++	struct wpa_igtk igtk_wnm_sleep;
++#endif /* CONFIG_IEEE80211W */
+ 
+ 	struct eapol_sm *eapol; /* EAPOL state machine from upper level code */
+ 
+@@ -123,6 +128,7 @@ struct wpa_sm {
+ 	size_t r0kh_id_len;
+ 	u8 r1kh_id[FT_R1KH_ID_LEN];
+ 	int ft_completed;
++	int ft_reassoc_completed;
+ 	int over_the_ds_in_progress;
+ 	u8 target_ap[ETH_ALEN]; /* over-the-DS target AP */
+ 	int set_ptk_after_assoc;

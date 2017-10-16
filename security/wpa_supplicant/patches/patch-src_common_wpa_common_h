@@ -1,0 +1,46 @@
+$OpenBSD: patch-src_common_wpa_common_h,v 1.1 2017/10/16 21:27:36 dcoppa Exp $
+
+From 927f891007c402fefd1ff384645b3f07597c3ede Mon Sep 17 00:00:00 2001
+From: Mathy Vanhoef <Mathy.Vanhoef@cs.kuleuven.be>
+Date: Wed, 12 Jul 2017 16:03:24 +0200
+Subject: [PATCH 2/8] Prevent reinstallation of an already in-use group key
+
+Track the current GTK and IGTK that is in use and when receiving a
+(possibly retransmitted) Group Message 1 or WNM-Sleep Mode Response, do
+not install the given key if it is already in use. This prevents an
+attacker from trying to trick the client into resetting or lowering the
+sequence counter associated to the group key.
+
+From 8f82bc94e8697a9d47fa8774dfdaaede1084912c Mon Sep 17 00:00:00 2001
+From: Mathy Vanhoef <Mathy.Vanhoef@cs.kuleuven.be>
+Date: Fri, 29 Sep 2017 04:22:51 +0200
+Subject: [PATCH 4/8] Prevent installation of an all-zero TK
+
+Properly track whether a PTK has already been installed to the driver
+and the TK part cleared from memory. This prevents an attacker from
+trying to trick the client into installing an all-zero TK.
+
+Index: src/common/wpa_common.h
+--- src/common/wpa_common.h.orig
++++ src/common/wpa_common.h
+@@ -215,8 +215,20 @@ struct wpa_ptk {
+ 	size_t kck_len;
+ 	size_t kek_len;
+ 	size_t tk_len;
++	int installed; /* 1 if key has already been installed to driver */
+ };
+ 
++struct wpa_gtk {
++	u8 gtk[WPA_GTK_MAX_LEN];
++	size_t gtk_len;
++};
++
++#ifdef CONFIG_IEEE80211W
++struct wpa_igtk {
++	u8 igtk[WPA_IGTK_MAX_LEN];
++	size_t igtk_len;
++};
++#endif /* CONFIG_IEEE80211W */
+ 
+ /* WPA IE version 1
+  * 00-50-f2:1 (OUI:OUI type)
