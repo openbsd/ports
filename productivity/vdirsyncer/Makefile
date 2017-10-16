@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2017/08/31 16:30:23 danj Exp $
+# $OpenBSD: Makefile,v 1.5 2017/10/16 21:41:24 remi Exp $
 
 COMMENT =		synchronize calendars and contacts
 
-MODPY_EGG_VERSION =	0.16.2
+MODPY_EGG_VERSION =	0.16.3
 DISTNAME =		vdirsyncer-${MODPY_EGG_VERSION}
 CATEGORIES =		productivity
 
@@ -28,19 +28,30 @@ RUN_DEPENDS =		devel/py-atomicwrites${MODPY_FLAVOR} \
 			devel/py-click-threading${MODPY_FLAVOR} \
 			www/py-requests-toolbelt${MODPY_FLAVOR}
 
+TEST_DEPENDS =		devel/py-hypothesis${MODPY_FLAVOR} \
+			devel/py-test-localserver${MODPY_FLAVOR} \
+			devel/py-test-subtesthack${MODPY_FLAVOR} \
+			www/py-urllib3${MODPY_FLAVOR} \
+			${RUN_DEPENDS}
+
 post-build:
 	cd ${WRKSRC}/docs; ${MAKE_ENV} PYTHONPATH=${WRKSRC} \
-		sphinx-build${MODPY_BIN_SUFFIX} -b html -d _build/doctrees . _build/html
+		sphinx-build${MODPY_BIN_SUFFIX} \
+		-b html -d _build/doctrees . _build/html
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/vdirsyncer
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/vdirsyncer
-	cd ${WRKSRC}; ${INSTALL_DATA} AUTHORS.rst CHANGELOG.rst CONTRIBUTING.rst \
-		ISSUE_TEMPLATE.md LICENSE README.rst ${PREFIX}/share/doc/vdirsyncer
-	cd ${WRKSRC}/docs/_build/html && pax -rw * ${PREFIX}/share/doc/vdirsyncer
+	cd ${WRKSRC}; ${INSTALL_DATA} AUTHORS.rst CHANGELOG.rst \
+		CONTRIBUTING.rst ISSUE_TEMPLATE.md LICENSE README.rst \
+		${PREFIX}/share/doc/vdirsyncer
+	cd ${WRKSRC}/docs/_build/html && \
+		pax -rw * ${PREFIX}/share/doc/vdirsyncer
 	${INSTALL_DATA} ${WRKSRC}/config.example \
 		${PREFIX}/share/examples/vdirsyncer
 
-NO_TEST =		Yes
+do-test:
+	cd ${WRKSRC}; DAV_SERVER=skip DETERMINISTIC_TESTS=true \
+		${MODPY_BIN} -m pytest tests/
 
 .include <bsd.port.mk>
