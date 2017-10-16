@@ -1,0 +1,4 @@
+This terrible plugin allows you to set up and tear down fixtures within
+the test function itself. This is useful (necessary!) for using Hypothesis
+inside py.test, as hypothesis will call the test function multiple times,
+without setting up or tearing down fixture state as is normally the case.
