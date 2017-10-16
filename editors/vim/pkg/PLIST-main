@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.21 2017/08/23 19:10:56 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.22 2017/10/16 17:30:43 jasper Exp $
 @pkgpath ${BASE_PKGPATH}
 %%gtk2%%
 bin/ex
@@ -774,6 +774,9 @@ share/vim/${P}/pack/dist/opt/shellmenu/plugin/shellmenu.vim
 share/vim/${P}/pack/dist/opt/swapmouse/
 share/vim/${P}/pack/dist/opt/swapmouse/plugin/
 share/vim/${P}/pack/dist/opt/swapmouse/plugin/swapmouse.vim
+share/vim/${P}/pack/dist/opt/termdebug/
+share/vim/${P}/pack/dist/opt/termdebug/plugin/
+share/vim/${P}/pack/dist/opt/termdebug/plugin/termdebug.vim
 share/vim/${P}/plugin/
 share/vim/${P}/plugin/README.txt
 share/vim/${P}/plugin/getscriptPlugin.vim
@@ -1165,6 +1168,7 @@ share/vim/${P}/syntax/murphi.vim
 share/vim/${P}/syntax/mush.vim
 share/vim/${P}/syntax/muttrc.vim
 share/vim/${P}/syntax/mysql.vim
+share/vim/${P}/syntax/n1ql.vim
 share/vim/${P}/syntax/named.vim
 share/vim/${P}/syntax/nanorc.vim
 share/vim/${P}/syntax/nasm.vim
@@ -1345,6 +1349,7 @@ share/vim/${P}/syntax/tags.vim
 share/vim/${P}/syntax/tak.vim
 share/vim/${P}/syntax/takcmp.vim
 share/vim/${P}/syntax/takout.vim
+share/vim/${P}/syntax/tap.vim
 share/vim/${P}/syntax/tar.vim
 share/vim/${P}/syntax/taskdata.vim
 share/vim/${P}/syntax/taskedit.vim
