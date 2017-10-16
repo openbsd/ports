@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.9 2016/06/09 12:16:14 kirby Exp $
+@comment $OpenBSD: PLIST-main,v 1.10 2017/10/16 04:38:38 kirby Exp $
 @conflict freeciv-client-<2.4.4
 @pkgpath games/freeciv
 @bin bin/freeciv-manual
@@ -43,6 +43,7 @@ share/doc/freeciv/README.ruleset_multiplayer
 share/doc/freeciv/README.rulesets
 share/doc/freeciv/README.scorelog
 share/doc/freeciv/README.sound
+share/doc/freeciv/README.tilesets
 share/doc/freeciv/TODO
 share/examples/freeciv/
 @sample ${SYSCONFDIR}/freeciv/
