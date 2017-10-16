@@ -1,9 +1,9 @@
-$OpenBSD: patch-doc_lftp_1,v 1.1 2017/06/29 08:49:33 sthen Exp $
+$OpenBSD: patch-doc_lftp_1,v 1.2 2017/10/16 22:01:13 rsadowski Exp $
 
 Index: doc/lftp.1
 --- doc/lftp.1.orig
 +++ doc/lftp.1
-@@ -767,7 +767,8 @@ FXP is automatically used for transfers between FTP se
+@@ -783,7 +783,8 @@ FXP is automatically used for transfers between FTP se
  Some FTP servers hide dot-files by default (e.g. \fI.htaccess\fP), and show
  them only when LIST command is used with \-a option. In such case try to use
  `set ftp:list-options \-a'.
