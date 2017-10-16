@@ -1,0 +1,2 @@
+pytest-localserver is a plugin for the pytest testing framework which
+enables you to test server connections locally.

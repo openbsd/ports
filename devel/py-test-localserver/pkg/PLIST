@@ -1,0 +1,23 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/10/16 21:05:44 remi Exp $
+lib/python${MODPY_VERSION}/site-packages/pytest_localserver/
+lib/python${MODPY_VERSION}/site-packages/pytest_localserver-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/pytest_localserver-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/pytest_localserver-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/pytest_localserver-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/pytest_localserver-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/pytest_localserver-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
+lib/python${MODPY_VERSION}/site-packages/pytest_localserver-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/pytest_localserver-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/pytest_localserver/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pytest_localserver/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pytest_localserver/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pytest_localserver/${MODPY_PYCACHE}http.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pytest_localserver/${MODPY_PYCACHE}https.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pytest_localserver/${MODPY_PYCACHE}plugin.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pytest_localserver/${MODPY_PYCACHE}smtp.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pytest_localserver/ca.crt
+lib/python${MODPY_VERSION}/site-packages/pytest_localserver/http.py
+lib/python${MODPY_VERSION}/site-packages/pytest_localserver/https.py
+lib/python${MODPY_VERSION}/site-packages/pytest_localserver/plugin.py
+lib/python${MODPY_VERSION}/site-packages/pytest_localserver/server.pem
+lib/python${MODPY_VERSION}/site-packages/pytest_localserver/smtp.py
