@@ -1,7 +1,8 @@
-$OpenBSD: patch-src_DummyInterface_cpp,v 1.1.1.1 2016/04/26 20:56:01 sthen Exp $
---- src/DummyInterface.cpp.orig	Tue Apr 26 17:57:19 2016
-+++ src/DummyInterface.cpp	Tue Apr 26 17:57:48 2016
-@@ -44,11 +44,11 @@ void DummyInterface::forgeFlow(u_int iteration) {
+$OpenBSD: patch-src_DummyInterface_cpp,v 1.2 2017/10/17 10:39:12 sthen Exp $
+Index: src/DummyInterface.cpp
+--- src/DummyInterface.cpp.orig
++++ src/DummyInterface.cpp
+@@ -61,11 +61,11 @@ void DummyInterface::forgeFlow(u_int iteration) {
      u_int16_t sport = 1234+i, dport = 80;
  
      snprintf(payload, sizeof(payload), 
@@ -10,8 +11,8 @@ $OpenBSD: patch-src_DummyInterface_cpp,v 1.1.1.1 2016/04/26 20:56:01 sthen Exp $
  	     Utils::intoaV4(srcIp, a, sizeof(a)),
  	     Utils::intoaV4(dstIp, b, sizeof(b)),
  	     iteration, iteration*1500,
--	     now-60, now, sport, dport);
-+	     (long long)now-60, (long long)now, sport, dport);
+-	     now-120, now-60, sport, dport);
++	     (long long)now-120, (long long)now-60, sport, dport);
  
      parseFlow(payload, sizeof(payload), 1 /* source_id */, this /* iface */);
    }

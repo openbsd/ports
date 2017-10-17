@@ -1,7 +1,8 @@
-$OpenBSD: patch-configure_seed,v 1.1.1.1 2016/04/26 20:56:01 sthen Exp $
---- configure.seed.orig	Mon Apr 25 09:27:48 2016
-+++ configure.seed	Mon Apr 25 19:49:20 2016
-@@ -142,10 +142,10 @@ fi
+$OpenBSD: patch-configure_seed,v 1.2 2017/10/17 10:39:12 sthen Exp $
+Index: configure.seed
+--- configure.seed.orig
++++ configure.seed
+@@ -167,10 +167,10 @@ fi
  
  DATE=`date +"%Y-%m-%d"`
  
@@ -15,30 +16,3 @@ $OpenBSD: patch-configure_seed,v 1.1.1.1 2016/04/26 20:56:01 sthen Exp $
  else
   HIREDIS_INC="-I ${PWD}/third-party/hiredis"
  fi
-@@ -354,25 +354,7 @@ then
- 	GMAKE="make"
- fi
- 
--GPP=`which clang++`
--if test x$GPP = x
--then
--	GPP="g++"
--else
--	GPP="$GPP -O0"
--fi
--
--GIT=`which git`
--if test x$GIT = x
--then
--	AC_MSG_RESULT(FATAL ERROR: git is not installed on your host)
--fi
--
--WGET=`which wget`
--if test x$WGET = x
--then
--	AC_MSG_RESULT(ERROR. wget is not installed on your host: you cannot download GeoIP data)
--fi
-+GPP=$CXX
- 
- umask 002
- 

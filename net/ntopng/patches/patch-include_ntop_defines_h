@@ -1,23 +1,26 @@
-$OpenBSD: patch-include_ntop_defines_h,v 1.2 2016/07/09 12:14:28 sthen Exp $
---- include/ntop_defines.h.orig	Mon Jun 27 20:31:18 2016
-+++ include/ntop_defines.h	Sat Jul  9 12:56:10 2016
-@@ -123,7 +123,7 @@
+$OpenBSD: patch-include_ntop_defines_h,v 1.3 2017/10/17 10:39:12 sthen Exp $
+Index: include/ntop_defines.h
+--- include/ntop_defines.h.orig
++++ include/ntop_defines.h
+@@ -138,7 +138,7 @@
  #define MAX_NUM_QUEUED_ADDRS    500 /* Maximum number of queued address for resolution */
  #define MAX_NUM_QUEUED_CONTACTS 25000
- #define NTOP_COPYRIGHT          "(C) 1998-2016 ntop.org"
+ #define NTOP_COPYRIGHT          "(C) 1998-17 ntop.org"
 -#define DEFAULT_PID_PATH        "/var/run/ntopng.pid"
 +#define DEFAULT_PID_PATH        "/var/run/ntopng/ntopng.pid"
  #define DOMAIN_CATEGORY         "ntopng.domain.category"
  #define DOMAIN_TO_CATEGORIZE    "ntopng.domain.tocategorize"
  #define DOMAIN_WHITELIST_CAT    "ntopng.domain.whitelist"
-@@ -265,18 +265,18 @@
+@@ -307,7 +307,7 @@
  
  #define NTOPNG_NDPI_OS_PROTO_ID      (NDPI_LAST_IMPLEMENTED_PROTOCOL+NDPI_MAX_NUM_CUSTOM_PROTOCOLS-2)
  #define CONST_DEFAULT_HOME_NET       "192.168.1.0/24"
 -#define CONST_DEFAULT_DATA_DIR       "/var/tmp/ntopng"
 +#define CONST_DEFAULT_DATA_DIR       "/var/db/ntopng"
- #define CONST_DEFAULT_IS_AUTOLOGOUT_ENABLED 1
- #define CONST_DEFAULT_DOCS_DIR       "httpdocs"
+ #define CONST_DEFAULT_IS_AUTOLOGOUT_ENABLED               1
+ #define CONST_DEFAULT_IS_IDLE_LOCAL_HOSTS_CACHE_ENABLED   1
+ #define CONST_DEFAULT_ALERT_PROBING_ENABLED               0
+@@ -319,13 +319,13 @@
  #define CONST_DEFAULT_SCRIPTS_DIR    "scripts"
  #define CONST_DEFAULT_CALLBACKS_DIR  "scripts/callbacks"
  #define CONST_DEFAULT_USERS_FILE     "ntopng-users.conf"
@@ -27,6 +30,7 @@ $OpenBSD: patch-include_ntop_defines_h,v 1.2 2016/07/09 12:14:28 sthen Exp $
  #define CONST_ALT_INSTALL_DIR        "/usr/share/ntopng"
  #define CONST_ALT2_INSTALL_DIR       "/usr/local/share/ntopng"
  #define CONST_HTTP_PREFIX_STRING     "@HTTP_PREFIX@"
+ #define CONST_NTOP_STARTUP_EPOCH     "@NTOP_STARTUP_EPOCH@"
 -#define CONST_DEFAULT_NTOP_USER      "nobody"
 +#define CONST_DEFAULT_NTOP_USER      "_ntopng"
  #define CONST_TOO_EARLY              "(Too Early)"

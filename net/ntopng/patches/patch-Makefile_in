@@ -1,7 +1,8 @@
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2016/04/26 20:56:01 sthen Exp $
---- Makefile.in.orig	Fri Feb 12 22:19:14 2016
-+++ Makefile.in	Fri Feb 12 22:22:10 2016
-@@ -64,12 +64,7 @@ endif
+$OpenBSD: patch-Makefile_in,v 1.2 2017/10/17 10:39:12 sthen Exp $
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -79,12 +79,7 @@ endif
  HAS_ZEROMQ=$(shell pkg-config --exists libzmq; echo $$?)
  ifeq ($(HAS_ZEROMQ), 0)
  	ZEROMQ_INC = $(shell pkg-config --cflags libzmq)
@@ -15,3 +16,12 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2016/04/26 20:56:01 sthen Exp $
  else
  	ZEROMQ_HOME=${PWD}/third-party/zeromq-4.1.3
  	ZEROMQ_INC=-I$(ZEROMQ_HOME)/include
+@@ -230,7 +225,7 @@ install: ntopng
+ 	cp ntopng $(INSTALL_DIR)/bin
+ 	cp ./ntopng.8 $(MAN_DIR)/man8
+ 	cp -r ./httpdocs $(INSTALL_DIR)/share/ntopng
+-	cp -Lr ./scripts $(INSTALL_DIR)/share/ntopng # L dereference symlinks
++	cp -LR ./scripts $(INSTALL_DIR)/share/ntopng # L dereference symlinks
+ 	find $(INSTALL_DIR)/share/ntopng -name "*~"   | xargs /bin/rm -f
+ 	find $(INSTALL_DIR)/share/ntopng -name ".git" | xargs /bin/rm -rf
+ 

@@ -1,26 +1,27 @@
-$OpenBSD: patch-nDPI_example_ndpiReader_c,v 1.2 2016/07/09 12:14:28 sthen Exp $
---- nDPI/example/ndpiReader.c.orig	Mon Jun 27 20:31:24 2016
-+++ nDPI/example/ndpiReader.c	Sat Jul  9 12:55:43 2016
-@@ -56,7 +56,7 @@ static char *_pcap_file[MAX_NUM_READER_THREADS]; /**< 
+$OpenBSD: patch-nDPI_example_ndpiReader_c,v 1.3 2017/10/17 10:39:12 sthen Exp $
+Index: nDPI/example/ndpiReader.c
+--- nDPI/example/ndpiReader.c.orig
++++ nDPI/example/ndpiReader.c
+@@ -57,7 +57,7 @@ static char *_pcap_file[MAX_NUM_READER_THREADS]; /**< 
  static FILE *playlist_fp[MAX_NUM_READER_THREADS] = { NULL }; /**< Ingress playlist */
  static FILE *results_file = NULL;
  static char *results_path = NULL;
 -static char *_bpf_filter      = NULL; /**< bpf filter  */
 +static char *__bpf_filter      = NULL; /**< bpf filter  */
  static char *_protoFilePath   = NULL; /**< Protocol file path  */
+ static char *_statsFilePath   = NULL; /**< Top stats file path */
  #ifdef HAVE_JSON_C
- static char *_jsonFilePath    = NULL; /**< JSON file path  */
-@@ -174,7 +174,7 @@ static void parseOptions(int argc, char **argv) {
-       break;
+@@ -409,7 +409,7 @@ static void parseOptions(int argc, char **argv) {
  
      case 'f':
+     case '6':
 -      _bpf_filter = optarg;
 +      __bpf_filter = optarg;
        break;
  
      case 'g':
-@@ -1054,16 +1054,16 @@ static int getNextPcapFileFromPlaylist(u_int16_t threa
-  */ 
+@@ -1717,16 +1717,16 @@ static int getNextPcapFileFromPlaylist(u_int16_t threa
+  */
  static void configurePcapHandle(pcap_t * pcap_handle) {
  
 -  if(_bpf_filter != NULL) {

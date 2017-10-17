@@ -1,6 +1,4 @@
-$OpenBSD: patch-src_Flow_cpp,v 1.3 2017/10/13 14:51:18 sthen Exp $
-
-bpf_timeval changes, plus:
+$OpenBSD: patch-src_Flow_cpp,v 1.4 2017/10/17 10:39:12 sthen Exp $
 
 From d7921296810e5a1997bf5b0c69693e28b9ca6491 Mon Sep 17 00:00:00 2001
 From: Simone Mainardi <mainardi@ntop.org>
@@ -10,39 +8,7 @@ Subject: [PATCH] Fix possible dissectHTTP reads beyond end of payload
 Index: src/Flow.cpp
 --- src/Flow.cpp.orig
 +++ src/Flow.cpp
-@@ -1795,9 +1795,9 @@ bool Flow::isIdleFlow() {
- 
- /* *************************************** */
- 
--void Flow::updatePacketStats(InterarrivalStats *stats, const struct timeval *when) {
-+void Flow::updatePacketStats(InterarrivalStats *stats, const struct bpf_timeval *when) {
-   if(stats->lastTime.tv_sec != 0) {
--    float deltaMS = (float)(Utils::timeval2usec((struct timeval*)when) - Utils::timeval2usec(&stats->lastTime))/(float)1000;
-+    float deltaMS = (float)(Utils::timeval2usec(when) - Utils::timeval2usec(&stats->lastTime))/(float)1000;
- 
-     if(deltaMS > 0) {
-       if(stats->max_ms == 0)
-@@ -1811,7 +1811,7 @@ void Flow::updatePacketStats(InterarrivalStats *stats,
-     }
-   }
- 
--  memcpy(&stats->lastTime, when, sizeof(struct timeval));
-+  memcpy(&stats->lastTime, when, sizeof(struct bpf_timeval));
- }
- 
- /* *************************************** */
-@@ -1830,8 +1830,8 @@ void Flow::dumpPacketStats(lua_State* vm, bool cli2srv
- 
- /* *************************************** */
- 
--void Flow::incStats(bool cli2srv_direction, u_int pkt_len,
--		    u_int payload_len, const struct timeval *when) {
-+void Flow::incStats(bool cli2srv_direction, u_int32_t pkt_len,
-+		    u_int16_t payload_len, const struct bpf_timeval *when) {
-   updateSeen();
-   updatePacketStats(cli2srv_direction ? &cli2srvStats.pktTime : &srv2cliStats.pktTime, when);
- 
-@@ -2166,8 +2166,9 @@ void Flow::dissectHTTP(bool src2dst_direction, char *p
+@@ -2451,8 +2451,9 @@ void Flow::dissectHTTP(bool src2dst_direction, char *p
      h = srv_host->getHTTPstats(); if(h) h->incRequestAsReceiver(payload); /* Rcvd */
      dissect_next_http_packet = true;
  
@@ -54,13 +20,7 @@ Index: src/Flow.cpp
  
        if((!strncmp(payload, "GET", 3))
  	 || (!strncmp(payload, "POST", 4))
-@@ -2177,17 +2178,18 @@ void Flow::dissectHTTP(bool src2dst_direction, char *p
- 	diff_num_http_requests++; /* One new request found */
- 
- 	if(protos.http.last_method) free(protos.http.last_method);
--	if((protos.http.last_method = (char*)malloc(l+1)) != NULL) {
-+	if((protos.http.last_method = (char*)malloc(l + 1)) != NULL) {
- 	  strncpy(protos.http.last_method, payload, l);
+@@ -2467,9 +2468,10 @@ void Flow::dissectHTTP(bool src2dst_direction, char *p
  	  protos.http.last_method[l] = '\0';
  	}
  
@@ -72,21 +32,8 @@ Index: src/Flow.cpp
 +	  l = min_val(space - payload, 512); /* Avoid jumbo URLs */
  
  	  /* Stop at the first non-printable char of the HTTP URL */
--	  for(u_int i=0; i<l; i++) {
-+	  for(u_int i = 0; i < l; i++) {
- 	    if(!isprint(payload[i])) {
- 	      l = i;
- 	      break;
-@@ -2195,7 +2197,7 @@ void Flow::dissectHTTP(bool src2dst_direction, char *p
- 	  }
- 
- 	  if(protos.http.last_url) free(protos.http.last_url);
--	  if((protos.http.last_url = (char*)malloc(l+1)) != NULL) {
-+	  if((protos.http.last_url = (char*)malloc(l + 1)) != NULL) {
- 	    strncpy(protos.http.last_url, payload, l);
- 	    protos.http.last_url[l] = '\0';
- 	  }
-@@ -2211,11 +2213,14 @@ void Flow::dissectHTTP(bool src2dst_direction, char *p
+ 	  for(u_int i=0; i<l; i++) {
+@@ -2496,11 +2498,14 @@ void Flow::dissectHTTP(bool src2dst_direction, char *p
        h = srv_host->getHTTPstats(); if(h) h->incResponseAsSender(payload); /* Sent */
        dissect_next_http_packet = false;
  
