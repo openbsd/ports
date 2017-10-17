@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2015/08/15 08:03:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2017/10/17 09:36:18 mpi Exp $
 
 PORTROACH=	skipv:0.8.14
 PORTROACH_COMMENT=0.8.14 is actually 0.8.4, upstream mirror messed up
@@ -6,7 +6,7 @@ PORTROACH_COMMENT=0.8.14 is actually 0.8.4, upstream mirror messed up
 COMMENT=	read, modify, create ELF files on any arch
 
 DISTNAME=	libelf-0.8.13
-REVISION=	3
+REVISION=	4
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 SHARED_LIBS=	elf 1.1
