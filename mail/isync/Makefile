@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.31 2017/08/10 15:08:54 danj Exp $
+# $OpenBSD: Makefile,v 1.32 2017/10/17 17:24:14 danj Exp $
 
 COMMENT=	synchronize IMAP4 and maildir mailboxes
 
-DISTNAME=	isync-1.2.2
+DISTNAME=	isync-1.3.0
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=isync/}
 

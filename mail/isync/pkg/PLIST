@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.7 2015/04/03 18:51:46 czarkoff Exp $
-bin/get-cert
+@comment $OpenBSD: PLIST,v 1.8 2017/10/17 17:24:14 danj Exp $
 @bin bin/isync
 @bin bin/mbsync
+bin/mbsync-get-cert
 @bin bin/mdconvert
 @man man/man1/isync.1
 @man man/man1/mbsync.1
