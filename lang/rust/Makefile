@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2017/09/03 14:08:36 danj Exp $
+# $OpenBSD: Makefile,v 1.52 2017/10/17 17:19:24 danj Exp $
 
 # snapshots are only available for amd64 and i386, for now
 ONLY_FOR_ARCHS =	amd64 i386
@@ -8,13 +8,13 @@ DPB_PROPERTIES =	parallel
 COMMENT-main =		compiler for Rust Language
 COMMENT-doc =		html documentation for rustc
 
-V =			1.20.0
-CARGO_V =		0.21.0
+V =			1.21.0
+CARGO_V =		0.22.0
 DISTNAME =		rustc-${V}-src
 
 # rustc bootstrap version
-BV-amd64 =		1.20.0-20170829
-BV-i386 =		1.20.0-20170901
+BV-amd64 =		1.21.0-20171011
+BV-i386 =		1.21.0-20171011
 BV =			${BV-${MACHINE_ARCH}}
 
 PKGNAME =		rust-${V}
@@ -32,7 +32,7 @@ MAINTAINER =		Sebastien Marie <semarie@online.fr>
 # with portions covered by various BSD-like licenses
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB-main =		${MODGCC4_CPPWANTLIB} c crypto curl git2 m pthread ssh2 ssl z
+WANTLIB-main =		${MODGCC4_CPPWANTLIB} c crypto curl git2 m pthread ssh2 ssl
 WANTLIB-doc =
 
 MASTER_SITES =		https://static.rust-lang.org/dist/ \
