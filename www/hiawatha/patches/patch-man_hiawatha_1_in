@@ -1,7 +1,8 @@
-$OpenBSD: patch-man_hiawatha_1_in,v 1.9 2017/04/17 09:25:50 juanfra Exp $
---- man/hiawatha.1.in.orig	Sat Mar  4 09:36:56 2017
-+++ man/hiawatha.1.in	Mon Apr 17 11:15:45 2017
-@@ -160,12 +160,12 @@ Example: CGIextension = cgi
+$OpenBSD: patch-man_hiawatha_1_in,v 1.10 2017/10/17 16:09:43 juanfra Exp $
+Index: man/hiawatha.1.in
+--- man/hiawatha.1.in.orig
++++ man/hiawatha.1.in
+@@ -165,12 +165,12 @@ Example: CGIextension = cgi
  .B CGIhandler = <CGI handler>:<extension>[, <extension>, ...]
  Specify the handler for a CGI extension. A handler is an executable which will run the CGI script.
  .br
@@ -16,7 +17,7 @@ $OpenBSD: patch-man_hiawatha_1_in,v 1.9 2017/04/17 09:25:50 juanfra Exp $
  .TP
  .B ChallengeClient = <threshold>, (httpheader|javascript), <ban-time>[, <secret>]
  Challenge the client to verify that it's a real web browser and not an HTTP bot. When the total amount of connections reaches <threshold>, Hiawatha sends a response to the first request in a connection which will make the client resend the request, but now with a cookie. The cookie can be set via an HTTP Set-Cookie header or a Javascript. Further requests are only accepted when the client sends this cookie. Otherwise, the client is banned for <ban-time> seconds. This feature can be used to reduce the effects of a DDoS attack. The <secret> can be a random string of up to 20 characters (the rest is ignored) and is used to generate the cookie. When not set, Hiawatha will generate a random secret.
-@@ -205,7 +205,7 @@ Example: HideProxy = 192.168.10.20
+@@ -210,7 +210,7 @@ Example: HideProxy = 192.168.10.20
  .B Include <filename>|<directory>
  Include another configuration file or configuration files in a directory.
  .br
@@ -25,7 +26,7 @@ $OpenBSD: patch-man_hiawatha_1_in,v 1.9 2017/04/17 09:25:50 juanfra Exp $
  .TP
  .B KickOnBan = yes|no
  Close all other connections that originate from the same IP in case of a ban.
-@@ -298,7 +298,7 @@ Example: RequestLimitMask = deny 192.168.0.1
+@@ -303,7 +303,7 @@ Example: RequestLimitMask = deny 192.168.0.1
  .B ServerId = <userid>|<userid>:<groupid>[, <groupid>, ...]
  The userid and groupid(s) the server will change to. If only a userid is specified, the groupid(s) will be looked up in /etc/passwd and /etc/group. The userid en groupid of user root are not allowed here. The userid or groupid can also be a name.
  .br
@@ -34,7 +35,7 @@ $OpenBSD: patch-man_hiawatha_1_in,v 1.9 2017/04/17 09:25:50 juanfra Exp $
  .TP
  .B ServerString = <text>
  The text behind 'Server:' in the HTTP header of a response. Use 'none' to completely remove the Server string from the HTTP header.
-@@ -654,7 +654,7 @@ Example: ScriptAlias = /script.cgi:/usr/lib/script.cgi
+@@ -665,7 +665,7 @@ Example: ScriptAlias = /script.cgi:/usr/lib/script.cgi
  .B ShowIndex = yes|no|<XSLT file with full path>|xml
  Return a directory listing in HTML format for a directory request when the startfile does not exist. If you want to change the index layout completely, specify the path of a XSLT file. If the XSLT file is not found or 'xml' is used, Hiawatha will output the XML of the directory index. An example of the XML output can be found in extra/index.xml inside the source package.
  .br
@@ -43,7 +44,7 @@ $OpenBSD: patch-man_hiawatha_1_in,v 1.9 2017/04/17 09:25:50 juanfra Exp $
  .br
  
  (requires that Hiawatha was not compiled with -DENABLE_XSLT=off)
-@@ -1045,7 +1045,7 @@ and
+@@ -1056,7 +1056,7 @@ and
  (only valid in the root directory of a website)
  
  .SH MIMETYPES
@@ -52,7 +53,7 @@ $OpenBSD: patch-man_hiawatha_1_in,v 1.9 2017/04/17 09:25:50 juanfra Exp $
  .TP
  .B <mimetype> <extension> [<extension> ...]
  Example: image/jpeg jpg jpeg jpe
-@@ -1065,13 +1065,13 @@ Unban all IP addresses.
+@@ -1076,13 +1076,13 @@ Unban all IP addresses.
  Clear the internal cache (requires that Hiawatha was not compiled with -DENABLE_CACHE=off).
  
  .SH FILES
