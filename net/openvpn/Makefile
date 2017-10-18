@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.83 2017/10/18 19:24:44 jca Exp $
+# $OpenBSD: Makefile,v 1.84 2017/10/18 19:26:22 jca Exp $
 
 COMMENT=	easy-to-use, robust, and highly configurable VPN
 
@@ -23,7 +23,6 @@ LIB_DEPENDS=	archivers/lzo2 \
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu
 
-CONFIGURE_ARGS+=	--enable-password-save
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib ${LDFLAGS}"
 
