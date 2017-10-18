@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.27 2016/04/25 08:16:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.28 2017/10/18 19:17:08 jasper Exp $
 
 COMMENT =	access web services that claim to be RESTful
 
-GNOME_VERSION =	0.8.0
+GNOME_VERSION =	0.8.1
 GNOME_PROJECT =	rest
 PKGNAME =	lib${DISTNAME}
 

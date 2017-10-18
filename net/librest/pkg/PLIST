@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2016/04/25 08:16:36 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.8 2017/10/18 19:17:09 jasper Exp $
 include/rest-0.7/
 include/rest-0.7/rest/
 include/rest-0.7/rest-extras/
@@ -50,9 +50,7 @@ share/gtk-doc/html/rest-0.7/ch04.html
 share/gtk-doc/html/rest-0.7/ch05.html
 share/gtk-doc/html/rest-0.7/home.png
 share/gtk-doc/html/rest-0.7/index.html
-share/gtk-doc/html/rest-0.7/index.sgml
 share/gtk-doc/html/rest-0.7/ix01.html
-share/gtk-doc/html/rest-0.7/ix02.html
 share/gtk-doc/html/rest-0.7/left-insensitive.png
 share/gtk-doc/html/rest-0.7/left.png
 share/gtk-doc/html/rest-0.7/rest-0.7.devhelp2
