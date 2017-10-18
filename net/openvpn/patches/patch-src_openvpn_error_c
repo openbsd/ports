@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_openvpn_error_c,v 1.2 2017/10/18 18:41:45 jca Exp $
+
+Correctly print time_t.
+
+Index: src/openvpn/error.c
+--- src/openvpn/error.c.orig
++++ src/openvpn/error.c
+@@ -342,8 +342,8 @@ x_msg_va(const unsigned int flags, const char *format,
+                 struct timeval tv;
+                 gettimeofday(&tv, NULL);
+ 
+-                fprintf(fp, "%lu.%06lu %x %s%s%s%s",
+-                        tv.tv_sec,
++                fprintf(fp, "%lld.%06lu %x %s%s%s%s",
++                        (long long)tv.tv_sec,
+                         (unsigned long)tv.tv_usec,
+                         flags,
+                         prefix,
