@@ -1,0 +1,47 @@
+$OpenBSD: patch-Makefile_PL,v 1.1 2017/10/18 15:18:36 bluhm Exp $
+
+Index: Makefile.PL
+--- Makefile.PL.orig
++++ Makefile.PL
+@@ -16,23 +16,8 @@ BEGIN
+     }
+ }
+ 
+-use inc::latest 'Capture::Tiny';
+-use inc::latest 'Config::AutoConf';
++my $loadable_xs = 1;
+ 
+-if (inc::latest->can("write"))
+-{
+-    inc::latest->write("inc");
+-    for my $mod (inc::latest->loaded_modules)
+-    {
+-        inc::latest->bundle_module($mod, "inc");
+-    }
+-}
+-
+-use inc::Config::AutoConf::LMU ();
+-
+-inc::Config::AutoConf::LMU->_set_argv(@ARGV);    # XXX hack because we cannot construct for global use
+-my $loadable_xs = inc::Config::AutoConf::LMU->check_produce_loadable_xs_build();
+-
+ if (-d "Sandbox")
+ {
+     unless (grep { $_ eq "." } @INC)
+@@ -76,8 +61,6 @@ my %RUN_DEPS = (
+     ($loadable_xs ? ('List::MoreUtils::XS' => '0.426') : ())
+ );
+ my %BUNDLE_CONFIGURE_DEPS = (
+-    'inc::latest'      => '0.500',
+-    'Config::AutoConf' => '0.315',
+ );
+ my %CONFIGURE_DEPS = (
+     'ExtUtils::MakeMaker' => 0,
+@@ -125,7 +108,6 @@ WriteMakefile1(
+             },
+             configure => {
+                 requires   => {%CONFIGURE_DEPS},
+-                recommends => {'Config::AutoConf' => '0.315'}
+             },
+             test => {
+                 requires => {%TEST_DEPS},
