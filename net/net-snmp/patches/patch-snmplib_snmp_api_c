@@ -1,4 +1,4 @@
-$OpenBSD: patch-snmplib_snmp_api_c,v 1.5 2017/09/29 22:49:41 sthen Exp $
+$OpenBSD: patch-snmplib_snmp_api_c,v 1.6 2017/10/18 13:13:43 sthen Exp $
 
 https://support.zabbix.com/browse/ZBX-12726
 https://sourceforge.net/p/net-snmp/bugs/2803/
@@ -6,18 +6,17 @@ https://sourceforge.net/p/net-snmp/bugs/2803/
 Index: snmplib/snmp_api.c
 --- snmplib/snmp_api.c.orig
 +++ snmplib/snmp_api.c
-@@ -1546,8 +1546,8 @@ _sess_open(netsnmp_session * in_session)
- 
-         if (NULL != in_session->localname) {
+@@ -1548,6 +1548,9 @@ _sess_open(netsnmp_session * in_session)
              clientaddr_save =
--                netsnmp_ds_get_string(NETSNMP_DS_LIBRARY_ID,
--                                      NETSNMP_DS_LIB_CLIENT_ADDR);
-+                strdup(netsnmp_ds_get_string(NETSNMP_DS_LIBRARY_ID,
-+                                             NETSNMP_DS_LIB_CLIENT_ADDR));
+                 netsnmp_ds_get_string(NETSNMP_DS_LIBRARY_ID,
+                                       NETSNMP_DS_LIB_CLIENT_ADDR);
++            if (NULL != clientaddr_save)
++                clientaddr_save = strdup(clientaddr_save);
++
              netsnmp_ds_set_string(NETSNMP_DS_LIBRARY_ID,
                                    NETSNMP_DS_LIB_CLIENT_ADDR,
                                    in_session->localname);
-@@ -1565,9 +1565,11 @@ _sess_open(netsnmp_session * in_session)
+@@ -1565,9 +1568,11 @@ _sess_open(netsnmp_session * in_session)
                                                 NULL);
          }
  
