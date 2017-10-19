@@ -1,12 +1,13 @@
-$OpenBSD: patch-cipher_Makefile_in,v 1.11 2015/03/01 12:12:54 jca Exp $
---- cipher/Makefile.in.orig	Fri Feb 27 09:37:51 2015
-+++ cipher/Makefile.in	Fri Feb 27 22:39:17 2015
+$OpenBSD: patch-cipher_Makefile_in,v 1.12 2017/10/19 16:36:04 jca Exp $
+Index: cipher/Makefile.in
+--- cipher/Makefile.in.orig
++++ cipher/Makefile.in
 @@ -401,7 +401,7 @@ target_alias = @target_alias@
  top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
 -AM_CPPFLAGS = -I.. -I$(top_srcdir)/include -I$(top_srcdir)/intl \
 +AM_CPPFLAGS = -I.. -I$(top_srcdir)/include \
- 	$(am__append_1)
+ 	-I$(top_srcdir)/mpi -I../mpi $(am__append_1)
  noinst_LIBRARIES = libcipher.a
  libcipher_a_SOURCES = cipher.c pubkey.c md.c dynload.c bithelp.h des.c \
