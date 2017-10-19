@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2017/04/13 00:40:06 jca Exp $
+# $OpenBSD: Makefile,v 1.10 2017/10/19 17:39:18 jca Exp $
 
 BROKEN-hppa =		undefined reference to __sync atomic ops
 
@@ -7,7 +7,7 @@ COMMENT =		user-level RCU implementation
 GH_ACCOUNT =		urcu
 GH_PROJECT =		userspace-rcu
 GH_TAGNAME =		v0.8.6
-REVISION =		0
+REVISION =		1
 DISTNAME =		liburcu-${GH_TAGNAME:S/^v//}
 
 SHARED_LIBS +=  urcu-bp                   0.0 # 2.0
@@ -35,10 +35,9 @@ MODGCC4_ARCHS=		alpha arm
 .if ${MACHINE_ARCH} == "alpha"
 MODGCC4_VERSION=	4.6
 .endif
-# Thread-local storage emulation from lang/gcc doesn't work in regress tests.
-.if ${MACHINE_ARCH:Malpha} || ${MACHINE_ARCH:Marm}
+# Thread-local storage emulation from clang or lang/gcc doesn't work in
+# regress tests.
 CONFIGURE_ENV =		ac_cv_tls=none
-.endif
 
 BUILD_DEPENDS =		${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS} \
