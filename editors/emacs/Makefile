@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.70 2017/09/16 16:42:27 jca Exp $
+# $OpenBSD: Makefile,v 1.71 2017/10/19 16:28:48 jca Exp $
 
 COMMENT=		GNU editor: extensible, customizable, self-documenting
 
 VERSION=		25.3
+REVISION=		0
 DISTNAME=		emacs-${VERSION}
 
 CATEGORIES=		editors
@@ -46,7 +47,6 @@ LIB_DEPENDS=		security/gnutls \
 .if ${FLAVOR} == "no_x11"
 CONFIGURE_ARGS+=	--without-x \
 			--without-dbus \
-			--without-file-notification \
 			--without-gconf \
 			--without-gsettings \
 			--without-jpeg
