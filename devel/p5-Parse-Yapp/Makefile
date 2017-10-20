@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2016/03/20 19:56:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2017/10/20 13:35:41 jca Exp $
 
 COMMENT =		compiles yacc-like LALR grammars to Perl OO parser modules
 
-DISTNAME =		Parse-Yapp-1.05
+DISTNAME =		Parse-Yapp-1.21
 
 CATEGORIES =		devel
 
