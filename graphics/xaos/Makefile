@@ -4,7 +4,7 @@ COMMENT =		interactive fractal zoomer and morpher
 
 VERSION =		3.6
 DISTNAME =		xaos-${VERSION}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		graphics
 
