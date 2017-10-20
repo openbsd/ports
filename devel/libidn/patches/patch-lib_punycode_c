@@ -1,0 +1,34 @@
+$OpenBSD: patch-lib_punycode_c,v 1.1 2017/10/20 11:37:32 jca Exp $
+
+Fix for CVE-2017-14062.
+
+commit 6c8a9375641ca283b50f9680c90dcd57f9c44798
+Author: Tim Rühsen <tim.ruehsen@gmx.de>
+Date:   Wed Oct 4 15:22:43 2017 +0200
+
+    lib/punycode.c (decode_digit): Really fix integer overflow
+
+    The fix in commit e9e81b8063b095b02cf104bb992fa9bf9515b9d8
+    was incomplete.
+
+    Reported-by: Christian Weisgerber
+
+Index: lib/punycode.c
+--- lib/punycode.c.orig
++++ lib/punycode.c
+@@ -88,11 +88,11 @@ enum
+ /* point (for use in representing integers) in the range 0 to */
+ /* base-1, or base if cp does not represent a value.          */
+ 
+-static punycode_uint
+-decode_digit (punycode_uint cp)
++static unsigned
++decode_digit (int cp)
+ {
+-  return cp - 48 < 10 ? cp - 22 : cp - 65 < 26 ? cp - 65 :
+-    cp - 97 < 26 ? cp - 97 : base;
++  return (unsigned) (cp - 48 < 10 ? cp - 22 : cp - 65 < 26 ? cp - 65 :
++    cp - 97 < 26 ? cp - 97 : base);
+ }
+ 
+ /* encode_digit(d,flag) returns the basic code point whose value      */

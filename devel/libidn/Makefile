@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.31 2016/07/30 14:22:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2017/10/20 11:37:32 jca Exp $
 
 COMMENT=		internationalized string handling
 
 DISTNAME=		libidn-1.33
+REVISION=		0
 
 SHARED_LIBS +=  idn                  17.2     # 17.16
 
@@ -29,5 +30,9 @@ CONFIGURE_ARGS=		--disable-csharp \
 
 post-extract:
 	rm ${WRKSRC}/contrib/doxygen/*.orig
+
+# hack to avoid regenerating docs
+post-patch:
+	touch -r ${WRKSRC}/lib/punycode.c${PATCHORIG} ${WRKSRC}/lib/punycode.c
 
 .include <bsd.port.mk>
