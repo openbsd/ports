@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2017/06/12 23:48:04 schwarze Exp $
+# $OpenBSD: Makefile,v 1.13 2017/10/20 19:00:04 jca Exp $
 
 COMMENT=	curses development kit
 
@@ -21,7 +21,7 @@ MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=	http://invisible-mirror.net/archives/cdk/ \
-		ftp://invisible-island.net/cdk/
+		ftp://ftp.invisible-island.net/cdk/
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--with-ncurses \
