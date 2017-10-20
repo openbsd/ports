@@ -1,8 +1,8 @@
-$OpenBSD: patch-agent_ssm_service_go,v 1.3 2017/08/17 12:24:30 ajacoutot Exp $
+$OpenBSD: patch-agent_ssm_service_go,v 1.4 2017/10/20 07:10:19 ajacoutot Exp $
 Index: agent/ssm/service.go
 --- agent/ssm/service.go.orig
 +++ agent/ssm/service.go
-@@ -249,7 +249,7 @@ func (svc *sdkService) UpdateInstanceInformation(
+@@ -256,7 +256,7 @@ func (svc *sdkService) UpdateInstanceInformation(
  	switch goOS {
  	case "windows":
  		params.PlatformType = aws.String(ssm.PlatformTypeWindows)
