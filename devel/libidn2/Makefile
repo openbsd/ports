@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2017/04/18 21:22:57 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2017/10/20 20:26:53 jca Exp $
 
 COMMENT=	implementation of IDNA2008 internationalized domain names
 
 DISTNAME=	libidn2-2.0.0
+REVISION=	0
 CATEGORIES=	devel
 HOMEPAGE=	https://www.gnu.org/software/libidn/\#libidn2
 
