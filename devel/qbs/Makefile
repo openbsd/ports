@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2017/09/27 10:06:22 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2017/10/21 19:58:27 rsadowski Exp $
 
 COMMENT =	declarative cross-platform build tool
-V =		1.9.0
+V =		1.9.1
 DISTNAME =	qbs-src-${V}
 PKGNAME =	qbs-${V}
-REVISION =	0
 
 SHARED_LIBS =	qbscore			2.0
 SHARED_LIBS +=	qbsqtprofilesetup	1.4
@@ -34,8 +33,6 @@ LIB_DEPENDS =		x11/qt5/qtbase \
 TEST_DEPENDS =		${BUILD_PKGPATH}
 
 TEST_ENV =		LD_LIBRARY_PATH=${WRKBUILD}/lib
-
-WRKSRC =		${WRKDIR}/dist/${DISTNAME}
 
 do-test:
 	cd ${WRKBUILD}/bin/; \
