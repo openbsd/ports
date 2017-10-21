@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.15 2017/07/26 22:45:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2017/10/21 14:42:16 ajacoutot Exp $
 
 COMMENT=		C++ bindings for GStreamer
 
-V=			1.8.0
+V=			1.10.0
 DISTNAME=		gstreamermm-${V}
 PKGNAME=		gstreamer1mm-${V}
-REVISION=		3
 
-SHARED_LIBS +=  gstreamermm-1.0      1.0      # 1.0
+SHARED_LIBS +=  gstreamermm-1.0      1.1      # 1.0
 
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gstreamermm/${V:R}/}
 
@@ -34,4 +33,5 @@ post-install:
 # c++11
 # note that Makefile.inc has "c" as default
 COMPILER_LANGS = c c++
+
 .include <bsd.port.mk>
