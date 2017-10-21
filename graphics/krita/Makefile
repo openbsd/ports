@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2017/09/11 05:25:34 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.5 2017/10/21 15:59:50 rsadowski Exp $
 
 COMMENT =	advanced drawing and image manipulation
 
-VERSION =	3.2.1
+VERSION =	3.3.0
 DISTNAME =	krita-${VERSION}
 
 SHARED_LIBS +=  kritabasicflakes          0.0 # 16.0
@@ -22,11 +22,11 @@ SHARED_LIBS +=  kritawidgetutils          1.0 # 16.0
 # XXX Version numbers from editors/calligra 2.x port
 SHARED_LIBS +=  kritapsd                  1.0 # 14.0
 SHARED_LIBS +=  kritacolor                1.0 # 14.0
-SHARED_LIBS +=  kritaglobal               1.0 # 14.0
+SHARED_LIBS +=  kritaglobal               2.0 # 14.0
 SHARED_LIBS +=  kritaimage                51.0 # 0.0
 SHARED_LIBS +=  kritalibbrush             51.0 # 0.0
 SHARED_LIBS +=  kritalibpaintop           51.0 # 0.0
-SHARED_LIBS +=  kritaui                   52.0 # 0.0
+SHARED_LIBS +=  kritaui                   53.0 # 0.0
 
 CATEGORIES =	graphics
 DPB_PROPERTIES =	parallel
