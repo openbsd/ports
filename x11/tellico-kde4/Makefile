@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.11 2017/07/27 10:15:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2017/10/21 20:06:51 rsadowski Exp $
 
 COMMENT =	organizer for book/music/video collections for KDE4
-DISTNAME =	tellico-2.3.11
-REVISION =	0
+DISTNAME =	tellico-2.3.12
 
 CATEGORIES =	productivity x11
 HOMEPAGE =	http://tellico-project.org/
@@ -11,29 +10,31 @@ MAINTAINER =	KDE porting team <openbsd-kde@googlegroups.com>
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =  c m pthread z
-WANTLIB += ${COMPILER_LIBCXX}
-WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg
-WANTLIB += lib/qt4/QtXml
-WANTLIB += ${KDE4LIB}/kabc ${KDE4LIB}/kcal ${KDE4LIB}/kcddb
-WANTLIB += ${KDE4LIB}/kdeui ${KDE4LIB}/khtml ${KDE4LIB}/kio ${KDE4LIB}/kjs
+WANTLIB += ${COMPILER_LIBCXX} QtDBus QtGui QtNetwork QtSvg QtXml
+WANTLIB += c exempi exslt gcrypt gpg-error ${KDE4LIB}/kabc
+WANTLIB += ${KDE4LIB}/kcal ${KDE4LIB}/kcddb ${KDE4LIB}/kdeui
+WANTLIB += ${KDE4LIB}/khtml ${KDE4LIB}/kio ${KDE4LIB}/kjs
 WANTLIB += ${KDE4LIB}/knewstuff3 ${KDE4LIB}/kparts ${KDE4LIB}/kresources
-WANTLIB += ${KDE4LIB}/ksane ${KDE4LIB}/nepomuk
-WANTLIB += ${KDE4LIB}/nepomukutils ${KDE4LIB}/solid
-WANTLIB += exempi exslt gcrypt gpg-error poppler-qt4 qimageblitz qjson
-WANTLIB += soprano tag lzma xml2 xslt yaz
+WANTLIB += ${KDE4LIB}/ksane m ${KDE4LIB}/nepomuk ${KDE4LIB}/nepomukutils
+WANTLIB += poppler-qt4 qimageblitz qjson ${KDE4LIB}/solid soprano tag
+WANTLIB += xml2 xslt yaz
 
 MASTER_SITES =	http://tellico-project.org/files/
 EXTRACT_SUFX =	.tar.bz2
 
-MODULES =	devel/gettext x11/kde4 multimedia/phonon lang/python
+MODULES =	x11/kde4 \
+		multimedia/phonon \
+		lang/python
+
 MODKDE4_USE =	pim
 
-BUILD_DEPENDS =	${MODKDE4_DEP_DIR}/libkcompactdisc
+BUILD_DEPENDS =	${MODKDE4_DEP_DIR}/libkcompactdisc \
+		devel/gettext-tools
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		misc/shared-mime-info \
-		x11/gtk+3,-guic
+		x11/gtk+3,-guic \
+		devel/gettext
 
 LIB_DEPENDS =	audio/taglib \
 		devel/qjson \
