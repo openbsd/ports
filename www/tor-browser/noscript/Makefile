@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.10 2017/09/26 19:55:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2017/10/21 20:18:45 sthen Exp $
 
 ADDON_NAME =		noscript
-V =			5.0.9
+V =			5.0.10
 COMMENT =		Tor Browser add-on: flexible JS blocker
 HOMEPAGE =		http://noscript.net
 MASTER_SITES =		https://secure.informaction.com/download/releases/
