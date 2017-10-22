@@ -1,7 +1,7 @@
-#  $OpenBSD: Makefile,v 1.9 2017/05/28 08:04:06 jasper Exp $
+#  $OpenBSD: Makefile,v 1.10 2017/10/22 12:34:00 jasper Exp $
 
 COMMENT =		ruby framework for Behaviour Driven Development
-V =			3.6.0
+V =			3.7.0
 DISTNAME =		rspec-$V
 
 BUILD_DEPENDS = 	${RUN_DEPENDS}
