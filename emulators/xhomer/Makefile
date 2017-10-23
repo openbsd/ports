@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 11:06:04 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2017/10/23 17:10:38 sthen Exp $
 # $RuOBSD: Makefile,v 1.4 2009/02/05 06:38:32 form Exp $
 
 COMMENT=		DEC Professional 350 emulator based on SIMH
@@ -6,7 +6,7 @@ COMMENT=		DEC Professional 350 emulator based on SIMH
 VERSION=		9-16-06
 DISTNAME=		xhomer-${VERSION}
 PKGNAME=		xhomer-${VERSION:S/-/./g}
-REVISION=		1
+REVISION=		2
 EXTRACT_SUFX=		.tgz
 CATEGORIES=		emulators
 
@@ -16,7 +16,7 @@ HOMEPAGE=		http://xhomer.isani.org/xhomer/
 PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	Yes
 
-WANTLIB=		X11 Xext Xxf86dga c m pthread-stubs xcb
+WANTLIB=		X11 Xext Xxf86dga c m xcb
 
 MASTER_SITES=		${HOMEPAGE}
 

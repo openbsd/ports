@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.115 2017/07/26 22:45:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.116 2017/10/23 17:10:38 sthen Exp $
 
 # XXX error: 'nullptr' was not declared in this scope
 CXXFLAGS +=	-std=c++11
@@ -11,7 +11,7 @@ COMMENT=	free cross-platform WYSIWYG word processor
 
 VERSION=	3.0.2
 DISTNAME=	abiword-${VERSION}
-REVISION=	1
+REVISION=	2
 
 MAJORVER=	${VERSION:C/..$//}
 SUBST_VARS=	MAJORVER
@@ -34,7 +34,7 @@ WANTLIB += gmodule-2.0 gmp gobject-2.0 goffice-0.10 gpg-error
 WANTLIB += graphite2 gs gsf-1 gthread-2.0 gtk-3 harfbuzz hogweed
 WANTLIB += iconv idn2 intl jpeg ltdl lzma m mpfr nettle nghttp2
 WANTLIB += p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
-WANTLIB += pixman-1 png pthread pthread-stubs raptor2 rasqal rdf
+WANTLIB += pixman-1 png pthread raptor2 rasqal rdf
 WANTLIB += rsvg-2 spectre ssl ${LIBCXX} tasn1 unistring uuid wmf-0.2
 WANTLIB += wmflite-0.2 wv-1.2 xcb xcb-render xcb-shm xml2 xslt
 WANTLIB += yajl z

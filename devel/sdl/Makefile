@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.99 2016/04/26 21:21:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.100 2017/10/23 17:10:38 sthen Exp $
 
 COMMENT=	cross-platform multimedia library
 
 VERSION=	1.2.15
 DISTNAME=	SDL-${VERSION}
 PKGNAME=	${DISTNAME:L}
-REVISION=	7
+REVISION=	8
 CATEGORIES=	devel
 MASTER_SITES=	${HOMEPAGE}release/
 
@@ -59,7 +59,7 @@ CONFIGURE_ARGS+= --without-x \
 #
 # X11/Xext/Xrender/Xrandr are dlopen'd by SDL
 #
-WANTLIB+=	X11 Xau Xdmcp Xext Xrandr Xrender pthread-stubs xcb
+WANTLIB+=	X11 Xau Xdmcp Xext Xrandr Xrender xcb
 .endif
 
 NO_TEST=	Yes

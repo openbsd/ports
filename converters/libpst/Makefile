@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2017/07/26 22:45:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.53 2017/10/23 17:10:38 sthen Exp $
 
 BROKEN-hppa=		linking .libs/python-libpst.o fails
 
@@ -11,7 +11,7 @@ SHARED_LIBS +=  pst                  3.0      # 5.14
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-python=		py-${DISTNAME}
-REVISION-main=		0
+REVISION-main=		1
 REVISION-python=	0
 
 CATEGORIES=		converters mail
@@ -28,7 +28,7 @@ cWANTLIB += m pthread ${COMPILER_LIBCXX}
 WANTLIB-main += ${cWANTLIB} iconv intl 
 WANTLIB-main += bz2 c expat ffi fontconfig freetype gd gio-2.0
 WANTLIB-main += glib-2.0 gmodule-2.0 gobject-2.0 gsf-1 jpeg pcre png
-WANTLIB-main += pthread-stubs tiff webp xml2 z m pthread ${COMPILER_LIBCXX} lzma
+WANTLIB-main += tiff webp xml2 z m pthread ${COMPILER_LIBCXX} lzma
 
 WANTLIB-python += ${cWANTLIB} iconv
 WANTLIB-python += pst util boost_python

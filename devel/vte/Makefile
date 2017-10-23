@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.120 2017/03/12 03:25:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.121 2017/10/23 17:10:38 sthen Exp $
 
 PORTROACH +=		limit:^0\.2
 
@@ -13,7 +13,7 @@ SHARED_LIBS+=	vte	14.1    # 2609.0
 FULLPKGNAME-main=	vte-${GNOME_VERSION}
 FULLPKGNAME-python= 	py-${DISTNAME}
 
-REVISION-main =		17
+REVISION-main =		18
 REVISION-python = 	12
 
 CATEGORIES=		devel
@@ -29,8 +29,7 @@ WANTLIB += Xrandr Xrender atk-1.0 cairo expat ffi fontconfig freetype
 WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-x11-2.0 harfbuzz
 WANTLIB += m ncurses pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
-WANTLIB += pixman-1 png pthread pthread-stubs xcb xcb-render xcb-shm
-WANTLIB += z
+WANTLIB += pixman-1 png pthread xcb xcb-render xcb-shm z
 
 MODULES=		devel/gettext \
 			lang/python \

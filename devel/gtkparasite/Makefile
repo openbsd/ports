@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2016/03/20 16:12:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2017/10/23 17:10:38 sthen Exp $
 
 COMMENT =	Gtk debugging tool
 
@@ -7,7 +7,7 @@ GH_PROJECT =	gtkparasite
 GH_COMMIT =	58e57ddaf6666753bd403c40da14bc919bec9589
 DISTNAME =	${GH_PROJECT}-0.2.0
 CATEGORIES =	devel
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	http://chipx86.github.com/gtkparasite/
 
@@ -33,7 +33,7 @@ WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo expat ffi fontconfig
 WANTLIB += freetype gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 xcb-shm
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 gthread-2.0
-WANTLIB += pcre pixman-1 png pthread-stubs util xcb z gdk_pixbuf-2.0
+WANTLIB += pcre pixman-1 png util xcb z gdk_pixbuf-2.0
 WANTLIB += ${MODPY_WANTLIB} gtk-x11-2.0 gdk-x11-2.0 xcb-render
 WANTLIB += graphite2 harfbuzz pthread
 

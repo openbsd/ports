@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2015/05/05 17:00:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2017/10/23 17:10:38 sthen Exp $
 
 COMMENT=		python bindings for libnotify
 
 V=			0.1.1
 DISTNAME=		notify-python-${V}
 PKGNAME=		py-notify-${V}
-REVISION =		12
+REVISION =		13
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.galago-project.org/
@@ -18,7 +18,7 @@ WANTLIB += Xinerama Xrandr Xrender Xxf86vm atk-1.0 cairo drm expat ffi
 WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
 WANTLIB += gtk-x11-2.0 harfbuzz m notify pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread-stubs pthread xcb
+WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread xcb
 WANTLIB += xcb-render xcb-shm z
 
 MASTER_SITES=		${HOMEPAGE}/files/releases/source/notify-python/

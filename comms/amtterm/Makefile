@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2017/07/04 11:09:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2017/10/23 17:10:37 sthen Exp $
 
 COMMENT-term=	cli client for Intel AMT serial-over-lan
 COMMENT-main=	client and tools for Intel AMT serial-over-lan
 
 V=		1.4
 DISTNAME=	amtterm-$V
-REVISION=	0
+REVISION=	1
 PKGNAME-main=	amtterm-$V
 PKGNAME-term=	amtterm-cli-$V
 MULTI_PACKAGES=	-main -term
@@ -23,7 +23,7 @@ WANTLIB-main += atk-1.0 cairo gdk-x11-2.0 gdk_pixbuf-2.0 gtk-x11-2.0
 WANTLIB-main += pango-1.0 pangocairo-1.0 pangoft2-1.0 png vte
 WANTLIB-main += GL X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB-main += Xrandr Xrender expat fontconfig freetype m pixman-1
-WANTLIB-main += pthread pthread-stubs xcb xcb-render xcb-shm z
+WANTLIB-main += pthread xcb xcb-render xcb-shm z
 
 MASTER_SITES=	https://www.kraxel.org/releases/amtterm/
 

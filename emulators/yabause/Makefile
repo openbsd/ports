@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2017/07/05 19:43:17 jeremy Exp $
+# $OpenBSD: Makefile,v 1.9 2017/10/23 17:10:38 sthen Exp $
 
 COMMENT =	Sega Saturn emulator
 
 DISTNAME =	yabause-0.9.10
-REVISION =	3
+REVISION =	4
 
 CATEGORIES =	emulators games
 HOMEPAGE =	http://yabause.org/
@@ -23,7 +23,7 @@ WANTLIB += Xxf86vm atk-1.0 c cairo drm expat fontconfig freetype
 WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gdkglext-x11-1.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0
 WANTLIB += gtkglext-x11-1.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pangox-1.0 pixman-1 png pthread pthread-stubs xcb xcb-render
+WANTLIB += pangox-1.0 pixman-1 png pthread xcb xcb-render
 WANTLIB += xcb-shm z
 
 CONFIGURE_STYLE =	gnu

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2017/07/06 05:32:32 landry Exp $
+# $OpenBSD: Makefile,v 1.18 2017/10/23 17:10:38 sthen Exp $
 
 COMMENT=	cross-platform multimedia library
 BROKEN-hppa=	src/atomic/SDL_spinlock.c:101:2: error: \#error Please implement for your platform.
 
 V=		2.0.5
-REVISION=	1
+REVISION=	2
 DISTNAME=	SDL2-${V}
 PKGNAME=	sdl2-${V}
 CATEGORIES=	devel
@@ -39,7 +39,7 @@ CONFIGURE_ENV+= ac_cv_lib_usb_hid_init=no \
 
 WANTLIB=	m pthread sndio usbhid
 # GL/X11/Xext/Xrender/Xrandr are dlopen'd by SDL
-WANTLIB+=       GL X11 Xau Xdmcp Xext Xrandr Xrender pthread-stubs xcb
+WANTLIB+=       GL X11 Xau Xdmcp Xext Xrandr Xrender xcb
 
 NO_TEST=	Yes
 

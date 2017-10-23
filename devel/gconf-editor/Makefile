@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.77 2015/08/17 19:52:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.78 2017/10/23 17:10:38 sthen Exp $
 
 COMMENT=	editor for the GConf configuration system
 
 GNOME_PROJECT=	gconf-editor
 GNOME_VERSION=	3.0.1
-REVISION=	8
+REVISION=	9
 
 CATEGORIES=	devel x11
 
@@ -20,7 +20,7 @@ WANTLIB += c cairo cairo-gobject dbus-1 dbus-glib-1 epoxy expat
 WANTLIB += ffi fontconfig freetype gdk-3 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
 WANTLIB += gtk-3 harfbuzz m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png pthread pthread-stubs xcb xcb-render
+WANTLIB += pcre pixman-1 png pthread xcb xcb-render
 WANTLIB += xcb-shm z
 
 MODULES=	devel/gettext \

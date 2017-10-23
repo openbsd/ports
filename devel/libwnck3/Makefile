@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.35 2017/07/27 12:18:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2017/10/23 17:10:38 sthen Exp $
 
 COMMENT=		window navigator construction kit
 
 GNOME_PROJECT=		libwnck
 GNOME_VERSION=		3.24.1
 PKGNAME=		${GNOME_PROJECT}3-${GNOME_VERSION}
+REVISION=		0
 
 SHARED_LIBS +=  wnck-3               4.0      # 3.0
 
@@ -22,7 +23,7 @@ WANTLIB += atspi c cairo cairo-gobject dbus-1 epoxy expat ffi
 WANTLIB += fontconfig freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-3
 WANTLIB += harfbuzz iconv intl m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png pthread pthread-stubs startup-notification-1
+WANTLIB += pcre pixman-1 png pthread startup-notification-1
 WANTLIB += xcb xcb-render xcb-shm xcb-util z
 
 MODULES=		x11/gnome

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2017/10/05 08:13:58 bentley Exp $
+# $OpenBSD: Makefile,v 1.9 2017/10/23 17:10:37 sthen Exp $
 
 COMMENT =		circuit simulator, based on Berkeley SPICE
 
 DISTNAME =		ngspice-27
+REVISION =		0
 
 CATEGORIES =		cad
 
@@ -16,7 +17,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 USE_GMAKE =		yes
 CONFIGURE_STYLE =	gnu
 WANTLIB +=		c m ICE SM X11 Xau Xaw Xdmcp Xext Xmu Xt
-WANTLIB +=		Xpm pthread-stubs xcb
+WANTLIB +=		Xpm xcb
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=ngspice/}
 

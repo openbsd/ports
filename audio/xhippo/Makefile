@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.41 2015/01/24 11:07:57 schwarze Exp $
+# $OpenBSD: Makefile,v 1.42 2017/10/23 17:10:37 sthen Exp $
 
 COMMENT=	generic playlist manager for UNIX
 
 DISTNAME=	xhippo-3.5
 CATEGORIES=	audio
-REVISION =	3
+REVISION =	4
 
 HOMEPAGE=	https://www.gnu.org/software/xhippo/
 
@@ -15,7 +15,7 @@ WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig
 WANTLIB += freetype gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
-WANTLIB += pthread-stubs xcb z gthread-2.0 pthread xcb-render
+WANTLIB += xcb z gthread-2.0 pthread xcb-render
 WANTLIB += id3tag>=2 gdk_pixbuf-2.0 gdk-x11-2.0 gtk-x11-2.0
 WANTLIB += GL xcb-shm
 

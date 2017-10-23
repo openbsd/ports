@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.55 2017/01/03 18:54:48 shadchin Exp $
+# $OpenBSD: Makefile,v 1.56 2017/10/23 17:10:38 sthen Exp $
 
 COMMENT=	gobject-based plugins engine
 
 GNOME_PROJECT=	libpeas
 GNOME_VERSION=	1.20.0
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	devel
 
@@ -26,7 +26,7 @@ WANTLIB += c cairo cairo-gobject dbus-1 epoxy expat ffi fontconfig
 WANTLIB += freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 girepository-1.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
 WANTLIB += gtk-3 harfbuzz iconv intl m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
+WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB += util xcb xcb-render xcb-shm z
 WANTLIB += ${MODPY_WANTLIB}
 

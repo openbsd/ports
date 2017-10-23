@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.59 2017/10/12 15:27:02 jca Exp $
+# $OpenBSD: Makefile,v 1.60 2017/10/23 17:10:37 sthen Exp $
 
 COMMENT=		front-end to various audio players
 
 DISTNAME=		gqmpeg-0.91.1
-REVISION=		10
+REVISION=		11
 CATEGORIES=		audio
 
 HOMEPAGE=		http://gqmpeg.sourceforge.net/
@@ -15,7 +15,7 @@ WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig
 WANTLIB += freetype gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
-WANTLIB += pthread-stubs xcb z gdk_pixbuf-2.0 gdk-x11-2.0 gtk-x11-2.0
+WANTLIB += xcb z gdk_pixbuf-2.0 gdk-x11-2.0 gtk-x11-2.0
 WANTLIB += gthread-2.0 pthread xcb-render GL xcb-shm
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gqmpeg/}

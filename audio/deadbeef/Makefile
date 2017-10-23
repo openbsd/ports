@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.32 2017/09/22 21:40:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2017/10/23 17:10:37 sthen Exp $
 
 COMMENT =		DeaDBeeF is an audio player
 DISTNAME =		deadbeef-0.7.2
-REVISION =		4
+REVISION =		5
 CATEGORIES =		audio
 
 HOMEPAGE =		http://deadbeef.sourceforge.net/
@@ -18,7 +18,7 @@ WANTLIB += epoxy expat faad ffi fontconfig freetype gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
 WANTLIB += gsm gthread-2.0 gtk-3 harfbuzz iconv intl jansson m
 WANTLIB += mad mms mp3lame mp4ff mpcdec nghttp2 ogg opus pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread-stubs
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png
 WANTLIB += sndfile sndio speex ssl swresample vorbis vorbisenc
 WANTLIB += vorbisfile vpx wavpack x264 x265 xcb xcb-render xcb-shm
 WANTLIB += xvidcore z zip

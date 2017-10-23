@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.22 2017/05/15 18:41:30 schwarze Exp $
+# $OpenBSD: Makefile,v 1.23 2017/10/23 17:10:38 sthen Exp $
 
 COMMENT=	emulator for US Robotics Pilot PDA
 
 DISTNAME=	xcopilot-0.6.6
-REVISION=	2
+REVISION=	3
 CATEGORIES=	emulators
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		ICE SM X11 Xext Xpm Xt c pthread-stubs xcb
+WANTLIB=		ICE SM X11 Xext Xpm Xt c xcb
 
 MASTER_SITES=	http://xcopilot.cuspy.com/build/
 

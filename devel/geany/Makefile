@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.52 2017/07/26 22:45:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.53 2017/10/23 17:10:38 sthen Exp $
 
 COMMENT=	small and lightweight IDE
 
 DISTNAME =	geany-1.29
 SHARED_LIBS +=  geany                     0.0 # 0.0
-REVISION =	0
+REVISION =	1
 
 CATEGORIES=	devel
 
@@ -29,7 +29,7 @@ WANTLIB += c cairo cairo-gobject dbus-1 epoxy expat ffi fontconfig
 WANTLIB += freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-3 harfbuzz m
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png pthread pthread-stubs ${COMPILER_LIBCXX} xcb xcb-render xcb-shm
+WANTLIB += png pthread ${COMPILER_LIBCXX} xcb xcb-render xcb-shm
 WANTLIB += z
 
 LIB_DEPENDS=	x11/gtk+3

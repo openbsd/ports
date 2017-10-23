@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2017/10/23 15:04:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.74 2017/10/23 17:10:38 sthen Exp $
 
 BROKEN-hppa=		no atomic primitives
 
@@ -10,6 +10,7 @@ DISTNAME=		harfbuzz-${V}
 EXTRACT_SUFX=		.tar.bz2
 
 PKGNAME-main=		harfbuzz-${V}
+REVISION-main=		0
 PKGNAME-icu=		harfbuzz-icu-${V}
 
 SHARED_LIBS +=  harfbuzz             9.2      # 10600.1
@@ -36,8 +37,7 @@ USE_GMAKE=		Yes
 
 WANTLIB-main += ${WANTLIB}
 WANTLIB-main += X11 Xext Xrender c cairo expat fontconfig pixman-1
-WANTLIB-main += png pthread-stubs xcb xcb-render xcb-shm ffi
-WANTLIB-main += gobject-2.0
+WANTLIB-main += png xcb xcb-render xcb-shm ffi gobject-2.0
 
 WANTLIB-icu += ${WANTLIB}
 WANTLIB-icu += harfbuzz icudata icuuc

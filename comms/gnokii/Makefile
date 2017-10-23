@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.44 2017/09/25 09:16:12 robert Exp $
+# $OpenBSD: Makefile,v 1.45 2017/10/23 17:10:37 sthen Exp $
 
 COMMENT=	tools to talk to GSM cellular phones
 
 DISTNAME=	gnokii-0.6.14
-REVISION=	20
+REVISION=	21
 CATEGORIES=	comms x11
 SHARED_LIBS +=	gnokii               2.7      # .3.0
 
@@ -49,7 +49,7 @@ WANTLIB += Xpm Xrandr Xrender atk-1.0 cairo expat ffi fontconfig
 WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-x11-2.0
 WANTLIB += harfbuzz ical m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png pthread pthread-stubs xcb xcb-render
+WANTLIB += pcre pixman-1 png pthread xcb xcb-render
 WANTLIB += xcb-shm z
 .endif
 

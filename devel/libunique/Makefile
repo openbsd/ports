@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2017/08/19 09:56:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2017/10/23 17:10:38 sthen Exp $
 
 PORTROACH +=	limit:^1
 
@@ -9,7 +9,7 @@ COMMENT =	library for writing single instance GTK+2 applications
 
 GNOME_PROJECT =	libunique
 GNOME_VERSION =	1.1.6
-REVISION=	9
+REVISION=	10
 
 SHARED_LIBS +=  unique-1.0           2.0      # .100.6
 CATEGORIES =	devel
@@ -25,7 +25,7 @@ WANTLIB += dbus-glib-1 expat fontconfig freetype gdk-x11-2.0
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += graphite2 gthread-2.0 gtk-x11-2.0 harfbuzz
 WANTLIB += m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
+WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB += xcb xcb-render xcb-shm z ffi
 
 MODGNOME_TOOLS +=	gobject-introspection
