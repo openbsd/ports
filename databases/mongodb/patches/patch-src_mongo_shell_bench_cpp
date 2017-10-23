@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_mongo_shell_bench_cpp,v 1.1 2017/10/23 07:44:22 kili Exp $
+
+pcrecpp.h used to expose std::string, which is no longer the case
+starting with pcre-8.41.
+
+Index: src/mongo/shell/bench.cpp
+--- src/mongo/shell/bench.cpp.orig
++++ src/mongo/shell/bench.cpp
+@@ -79,6 +79,7 @@ using std::unique_ptr;
+ using std::cout;
+ using std::endl;
+ using std::map;
++using std::string;
+ 
+ const std::map<OpType, std::string> opTypeName{{OpType::NONE, "none"},
+                                                {OpType::NOP, "nop"},

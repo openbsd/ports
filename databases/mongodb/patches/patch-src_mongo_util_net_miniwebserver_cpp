@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_mongo_util_net_miniwebserver_cpp,v 1.1 2017/10/23 07:44:22 kili Exp $
+
+pcrecpp.h used to expose std::string, which is no longer the case
+starting with pcre-8.41.
+
+Index: src/mongo/util/net/miniwebserver.cpp
+--- src/mongo/util/net/miniwebserver.cpp.orig
++++ src/mongo/util/net/miniwebserver.cpp
+@@ -43,6 +43,7 @@ namespace mongo {
+ 
+ using std::shared_ptr;
+ using std::endl;
++using std::string;
+ using std::stringstream;
+ using std::vector;
+ 
