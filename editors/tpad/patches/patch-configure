@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.2 2014/10/20 03:14:12 bcallah Exp $
+$OpenBSD: patch-configure,v 1.3 2017/10/23 17:25:40 sthen Exp $
 
 unity is hardcoded to pkgconfig... even if --disable-libunity is defined
 
@@ -10,13 +10,13 @@ unity is hardcoded to pkgconfig... even if --disable-libunity is defined
      if test -n "$PKG_CONFIG" && \
 -    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \" gucharmap-2.90  pixman-1 gtk+-x11-3.0 unity gdk-pixbuf-2.0 gtksourceview-3.0 gtkspell3-3.0 pango gdk-3.0 pangocairo cairo-gobject glib-2.0 cairo freetype2 atk pthread-stubs gdk-x11-3.0 gtk+-3.0 gio-2.0 \""; } >&5
 -  ($PKG_CONFIG --exists --print-errors " gucharmap-2.90  pixman-1 gtk+-x11-3.0 unity gdk-pixbuf-2.0 gtksourceview-3.0 gtkspell3-3.0 pango gdk-3.0 pangocairo cairo-gobject glib-2.0 cairo freetype2 atk pthread-stubs gdk-x11-3.0 gtk+-3.0 gio-2.0 ") 2>&5
-+    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \" gucharmap-2.90  pixman-1 gtk+-x11-3.0 gdk-pixbuf-2.0 gtksourceview-3.0 gtkspell3-3.0 pango gdk-3.0 pangocairo cairo-gobject glib-2.0 cairo freetype2 atk pthread-stubs gdk-x11-3.0 gtk+-3.0 gio-2.0 \""; } >&5
-+  ($PKG_CONFIG --exists --print-errors " gucharmap-2.90  pixman-1 gtk+-x11-3.0 gdk-pixbuf-2.0 gtksourceview-3.0 gtkspell3-3.0 pango gdk-3.0 pangocairo cairo-gobject glib-2.0 cairo freetype2 atk pthread-stubs gdk-x11-3.0 gtk+-3.0 gio-2.0 ") 2>&5
++    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \" gucharmap-2.90  pixman-1 gtk+-x11-3.0 gdk-pixbuf-2.0 gtksourceview-3.0 gtkspell3-3.0 pango gdk-3.0 pangocairo cairo-gobject glib-2.0 cairo freetype2 atk gdk-x11-3.0 gtk+-3.0 gio-2.0 \""; } >&5
++  ($PKG_CONFIG --exists --print-errors " gucharmap-2.90  pixman-1 gtk+-x11-3.0 gdk-pixbuf-2.0 gtksourceview-3.0 gtkspell3-3.0 pango gdk-3.0 pangocairo cairo-gobject glib-2.0 cairo freetype2 atk gdk-x11-3.0 gtk+-3.0 gio-2.0 ") 2>&5
    ac_status=$?
    $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
    test $ac_status = 0; }; then
 -  pkg_cv_TPAD_CFLAGS=`$PKG_CONFIG --cflags " gucharmap-2.90  pixman-1 gtk+-x11-3.0 unity gdk-pixbuf-2.0 gtksourceview-3.0 gtkspell3-3.0 pango gdk-3.0 pangocairo cairo-gobject glib-2.0 cairo freetype2 atk pthread-stubs gdk-x11-3.0 gtk+-3.0 gio-2.0 " 2>/dev/null`
-+  pkg_cv_TPAD_CFLAGS=`$PKG_CONFIG --cflags " gucharmap-2.90  pixman-1 gtk+-x11-3.0 gdk-pixbuf-2.0 gtksourceview-3.0 gtkspell3-3.0 pango gdk-3.0 pangocairo cairo-gobject glib-2.0 cairo freetype2 atk pthread-stubs gdk-x11-3.0 gtk+-3.0 gio-2.0 " 2>/dev/null`
++  pkg_cv_TPAD_CFLAGS=`$PKG_CONFIG --cflags " gucharmap-2.90  pixman-1 gtk+-x11-3.0 gdk-pixbuf-2.0 gtksourceview-3.0 gtkspell3-3.0 pango gdk-3.0 pangocairo cairo-gobject glib-2.0 cairo freetype2 atk gdk-x11-3.0 gtk+-3.0 gio-2.0 " 2>/dev/null`
  		      test "x$?" != "x0" && pkg_failed=yes
  else
    pkg_failed=yes
@@ -26,13 +26,13 @@ unity is hardcoded to pkgconfig... even if --disable-libunity is defined
      if test -n "$PKG_CONFIG" && \
 -    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \" gucharmap-2.90  pixman-1 gtk+-x11-3.0 unity gdk-pixbuf-2.0 gtksourceview-3.0 gtkspell3-3.0 pango gdk-3.0 pangocairo cairo-gobject glib-2.0 cairo freetype2 atk pthread-stubs gdk-x11-3.0 gtk+-3.0 gio-2.0 \""; } >&5
 -  ($PKG_CONFIG --exists --print-errors " gucharmap-2.90  pixman-1 gtk+-x11-3.0 unity gdk-pixbuf-2.0 gtksourceview-3.0 gtkspell3-3.0 pango gdk-3.0 pangocairo cairo-gobject glib-2.0 cairo freetype2 atk pthread-stubs gdk-x11-3.0 gtk+-3.0 gio-2.0 ") 2>&5
-+    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \" gucharmap-2.90  pixman-1 gtk+-x11-3.0 gdk-pixbuf-2.0 gtksourceview-3.0 gtkspell3-3.0 pango gdk-3.0 pangocairo cairo-gobject glib-2.0 cairo freetype2 atk pthread-stubs gdk-x11-3.0 gtk+-3.0 gio-2.0 \""; } >&5
-+  ($PKG_CONFIG --exists --print-errors " gucharmap-2.90  pixman-1 gtk+-x11-3.0 gdk-pixbuf-2.0 gtksourceview-3.0 gtkspell3-3.0 pango gdk-3.0 pangocairo cairo-gobject glib-2.0 cairo freetype2 atk pthread-stubs gdk-x11-3.0 gtk+-3.0 gio-2.0 ") 2>&5
++    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \" gucharmap-2.90  pixman-1 gtk+-x11-3.0 gdk-pixbuf-2.0 gtksourceview-3.0 gtkspell3-3.0 pango gdk-3.0 pangocairo cairo-gobject glib-2.0 cairo freetype2 atk gdk-x11-3.0 gtk+-3.0 gio-2.0 \""; } >&5
++  ($PKG_CONFIG --exists --print-errors " gucharmap-2.90  pixman-1 gtk+-x11-3.0 gdk-pixbuf-2.0 gtksourceview-3.0 gtkspell3-3.0 pango gdk-3.0 pangocairo cairo-gobject glib-2.0 cairo freetype2 atk gdk-x11-3.0 gtk+-3.0 gio-2.0 ") 2>&5
    ac_status=$?
    $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
    test $ac_status = 0; }; then
 -  pkg_cv_TPAD_LIBS=`$PKG_CONFIG --libs " gucharmap-2.90  pixman-1 gtk+-x11-3.0 unity gdk-pixbuf-2.0 gtksourceview-3.0 gtkspell3-3.0 pango gdk-3.0 pangocairo cairo-gobject glib-2.0 cairo freetype2 atk pthread-stubs gdk-x11-3.0 gtk+-3.0 gio-2.0 " 2>/dev/null`
-+  pkg_cv_TPAD_LIBS=`$PKG_CONFIG --libs " gucharmap-2.90  pixman-1 gtk+-x11-3.0 gdk-pixbuf-2.0 gtksourceview-3.0 gtkspell3-3.0 pango gdk-3.0 pangocairo cairo-gobject glib-2.0 cairo freetype2 atk pthread-stubs gdk-x11-3.0 gtk+-3.0 gio-2.0 " 2>/dev/null`
++  pkg_cv_TPAD_LIBS=`$PKG_CONFIG --libs " gucharmap-2.90  pixman-1 gtk+-x11-3.0 gdk-pixbuf-2.0 gtksourceview-3.0 gtkspell3-3.0 pango gdk-3.0 pangocairo cairo-gobject glib-2.0 cairo freetype2 atk gdk-x11-3.0 gtk+-3.0 gio-2.0 " 2>/dev/null`
  		      test "x$?" != "x0" && pkg_failed=yes
  else
    pkg_failed=yes
@@ -41,16 +41,16 @@ unity is hardcoded to pkgconfig... even if --disable-libunity is defined
  fi
          if test $_pkg_short_errors_supported = yes; then
 -	        TPAD_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors --cflags --libs " gucharmap-2.90  pixman-1 gtk+-x11-3.0 unity gdk-pixbuf-2.0 gtksourceview-3.0 gtkspell3-3.0 pango gdk-3.0 pangocairo cairo-gobject glib-2.0 cairo freetype2 atk pthread-stubs gdk-x11-3.0 gtk+-3.0 gio-2.0 " 2>&1`
-+	        TPAD_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors --cflags --libs " gucharmap-2.90  pixman-1 gtk+-x11-3.0 gdk-pixbuf-2.0 gtksourceview-3.0 gtkspell3-3.0 pango gdk-3.0 pangocairo cairo-gobject glib-2.0 cairo freetype2 atk pthread-stubs gdk-x11-3.0 gtk+-3.0 gio-2.0 " 2>&1`
++	        TPAD_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors --cflags --libs " gucharmap-2.90  pixman-1 gtk+-x11-3.0 gdk-pixbuf-2.0 gtksourceview-3.0 gtkspell3-3.0 pango gdk-3.0 pangocairo cairo-gobject glib-2.0 cairo freetype2 atk gdk-x11-3.0 gtk+-3.0 gio-2.0 " 2>&1`
          else
 -	        TPAD_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs " gucharmap-2.90  pixman-1 gtk+-x11-3.0 unity gdk-pixbuf-2.0 gtksourceview-3.0 gtkspell3-3.0 pango gdk-3.0 pangocairo cairo-gobject glib-2.0 cairo freetype2 atk pthread-stubs gdk-x11-3.0 gtk+-3.0 gio-2.0 " 2>&1`
-+	        TPAD_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs " gucharmap-2.90  pixman-1 gtk+-x11-3.0 gdk-pixbuf-2.0 gtksourceview-3.0 gtkspell3-3.0 pango gdk-3.0 pangocairo cairo-gobject glib-2.0 cairo freetype2 atk pthread-stubs gdk-x11-3.0 gtk+-3.0 gio-2.0 " 2>&1`
++	        TPAD_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs " gucharmap-2.90  pixman-1 gtk+-x11-3.0 gdk-pixbuf-2.0 gtksourceview-3.0 gtkspell3-3.0 pango gdk-3.0 pangocairo cairo-gobject glib-2.0 cairo freetype2 atk gdk-x11-3.0 gtk+-3.0 gio-2.0 " 2>&1`
          fi
  	# Put the nasty error message in config.log where it belongs
  	echo "$TPAD_PKG_ERRORS" >&5
  
 -	as_fn_error $? "Package requirements ( gucharmap-2.90  pixman-1 gtk+-x11-3.0 unity gdk-pixbuf-2.0 gtksourceview-3.0 gtkspell3-3.0 pango gdk-3.0 pangocairo cairo-gobject glib-2.0 cairo freetype2 atk pthread-stubs gdk-x11-3.0 gtk+-3.0 gio-2.0 ) were not met:
-+	as_fn_error $? "Package requirements ( gucharmap-2.90  pixman-1 gtk+-x11-3.0 gdk-pixbuf-2.0 gtksourceview-3.0 gtkspell3-3.0 pango gdk-3.0 pangocairo cairo-gobject glib-2.0 cairo freetype2 atk pthread-stubs gdk-x11-3.0 gtk+-3.0 gio-2.0 ) were not met:
++	as_fn_error $? "Package requirements ( gucharmap-2.90  pixman-1 gtk+-x11-3.0 gdk-pixbuf-2.0 gtksourceview-3.0 gtkspell3-3.0 pango gdk-3.0 pangocairo cairo-gobject glib-2.0 cairo freetype2 atk gdk-x11-3.0 gtk+-3.0 gio-2.0 ) were not met:
  
  $TPAD_PKG_ERRORS
  
