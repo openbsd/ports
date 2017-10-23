@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2016/03/20 19:57:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2017/10/23 19:00:55 naddy Exp $
 
 COMMENT=	cryptographically secure random number generator
 
 MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	Crypt-Random-1.25
-REVISION=	2
+REVISION=	3
 CATEGORIES=	security
 
 # perl
