@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.339 2017/10/14 16:23:46 jeremy Exp $
+# $OpenBSD: Makefile,v 1.340 2017/10/23 03:54:50 jeremy Exp $
 
      SUBDIR =
      SUBDIR += apache-couchdb
@@ -205,7 +205,6 @@
      SUBDIR += riak
      SUBDIR += ruby-amalgalite,ruby23
      SUBDIR += ruby-amalgalite,ruby24
-     SUBDIR += ruby-bdb,ruby18
      SUBDIR += ruby-data_objects
      SUBDIR += ruby-do_mysql,ruby23
      SUBDIR += ruby-do_mysql,ruby24
