@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.206 2017/09/23 13:31:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.207 2017/10/23 21:47:24 bcallah Exp $
 
      SUBDIR =
      SUBDIR += STk
@@ -25,6 +25,7 @@
      SUBDIR += erlang
      SUBDIR += expect
      SUBDIR += fpc
+     SUBDIR += freebasic
      SUBDIR += freehdl
      SUBDIR += fsharp
      SUBDIR += g77
