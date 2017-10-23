@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.62 2017/09/28 21:14:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.63 2017/10/23 17:10:52 sthen Exp $
 
 COMMENT=		bad elements for GStreamer
 
 DISTNAME=		gst-plugins-bad-${V}
 PKGNAME=		${GST_PKGNAME_PREFIX}-plugins-bad-${V}
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  gstphotography-1.0   3.3      # 1203.0
 SHARED_LIBS +=  gstbasecamerabinsrc-1.0 3.3   # 1203.0
@@ -30,7 +30,7 @@ WANTLIB += gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstfft-1.0 gstnet-1.0
 WANTLIB += gstpbutils-1.0 gstreamer-1.0 gstrtp-1.0 gstsdp-1.0
 WANTLIB += gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3 harfbuzz crypto
 WANTLIB += jpeg lzma m mms opus orc-0.4 pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs ssl
+WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread ssl
 WANTLIB += rsvg-2 ${COMPILER_LIBCXX} xcb xcb-dri2 xcb-glx xcb-render
 WANTLIB += xcb-shm xcb-xfixes xml2 z gstallocators-1.0 iconv intl
 WANTLIB += Xau Xdmcp gstcontroller-1.0

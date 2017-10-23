@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.64 2017/08/19 08:44:39 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.65 2017/10/23 17:10:51 sthen Exp $
 
 COMMENT =	SVG vector drawing application
 
 DISTNAME =	inkscape-0.92.2
 CATEGORIES =	graphics
+REVISION =	0
 
 MASTER_SITES =	https://media.inkscape.org/dl/resources/file/
 HOMEPAGE =	https://www.inkscape.org/
@@ -24,7 +25,7 @@ WANTLIB += glibmm-2.4 gmodule-2.0 gobject-2.0 graphite2 gsl gslcblas
 WANTLIB += gthread-2.0 gtk-x11-2.0 gtkmm-2.4 gtkspell harfbuzz
 WANTLIB += iconv intl jasper jbig jpeg lcms2 lzma m openjp2 pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pangomm-1.4 pcre pixman-1
-WANTLIB += png poppler poppler-glib popt potrace pthread-stubs
+WANTLIB += png poppler poppler-glib popt potrace
 WANTLIB += raw_r sigc-2.0 tiff webp xcb xcb-render xcb-shm xml2
 WANTLIB += xslt z
 

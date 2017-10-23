@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.55 2017/07/26 22:45:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.56 2017/10/23 17:10:52 sthen Exp $
 
 COMMENT=	library for reading and writing QuickTime files
 
 DISTNAME=	libquicktime-1.2.4
-REVISION=	9
+REVISION=	10
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=libquicktime/}
 
@@ -21,7 +21,7 @@ WANTLIB += ffi fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glapi glib-2.0 gmodule-2.0 gobject-2.0 graphite2
 WANTLIB += gsm gthread-2.0 gtk-x11-2.0 harfbuzz jpeg m mp3lame
 WANTLIB += ogg opus pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
-WANTLIB += pixman-1 png pthread pthread-stubs sndio speex ${COMPILER_LIBCXX}
+WANTLIB += pixman-1 png pthread sndio speex ${COMPILER_LIBCXX}
 WANTLIB += swresample swscale vorbisenc vorbisfile vpx x264 x265
 WANTLIB += xcb xcb-dri2 xcb-glx xcb-render xcb-shm xvidcore z
 WANTLIB += atk-1.0 vorbis

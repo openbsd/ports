@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2017/09/28 21:14:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.55 2017/10/23 17:10:52 sthen Exp $
 
 # XXX ossaudio(3) is only enabled to be used as a mixing device by
 # x11/xfce4/xfce4-mixer
@@ -12,7 +12,7 @@ PKGNAME=		${GST_PKGNAME_PREFIX}-plugins-good-${V}
 PKGNAME-main=		${PKGNAME}
 PKGNAME-pulse=		${GST_PKGNAME_PREFIX}-plugins-pulse-${V}
 
-REVISION-main=		0
+REVISION-main=		1
 REVISION-pulse=		1
 
 MASTER_SITES=		${MASTER_SITE_GST:=gst-plugins-good/}
@@ -22,7 +22,7 @@ WANTLIB += gstpbutils-1.0 gstreamer-1.0 gsttag-1.0 gstvideo-1.0
 WANTLIB += m orc-0.4 pcre pthread z X11 Xext xcb iconv intl execinfo
 
 WANTLIB-main +=	${WANTLIB}
-WANTLIB-main += FLAC Xdamage Xfixes bz2 xml2 pthread-stubs
+WANTLIB-main += FLAC Xdamage Xfixes bz2 xml2
 WANTLIB-main += gdk_pixbuf-2.0 gio-2.0 gstcontroller-1.0 lzma
 WANTLIB-main += gstfft-1.0 gstnet-1.0 gstriff-1.0 gstrtp-1.0 gstrtsp-1.0 xcb-render
 WANTLIB-main += gstallocators-1.0 gstsdp-1.0 jpeg ogg ossaudio png shout soup-2.4

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2017/07/26 22:45:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2017/10/23 17:10:50 sthen Exp $
 #
 
 PORTROACH_COMMENT =	2.02r2 is newer than 2.02
@@ -9,7 +9,7 @@ COMMENT=	side-view, fast-action, kill everything type of game
 V=		2.02r2
 DISTNAME=	xevilsrc${V}
 PKGNAME=	xevil-${V}
-REVISION =	4
+REVISION =	5
 
 CATEGORIES=	games
 
@@ -20,7 +20,7 @@ EXTRACT_SUFX=	.zip
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	X11 Xpm c m pthread-stubs ${COMPILER_LIBCXX} xcb
+WANTLIB=	X11 Xpm c m ${COMPILER_LIBCXX} xcb
 
 USE_GMAKE=	Yes
 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.28 2017/05/08 12:53:28 schwarze Exp $
+# $OpenBSD: Makefile,v 1.29 2017/10/23 17:10:49 sthen Exp $
 
 COMMENT =	dungeon explorin', hackin', game.  Hard
 DISTNAME =	se007e7f1
 PKGNAME =	slash-em-3.4.3.7e7f1
-REVISION =	6
+REVISION =	7
 V =		3.4.3.7e7f1
 CATEGORIES =	games
 
@@ -40,7 +40,7 @@ LIB_DEPENDS =		x11/qt2
 WANTLIB +=		qt.=2
 .else
 NETHACKCONFIG =		${FILESDIR}/x-config
-WANTLIB +=		X11 Xaw Xext Xmu Xpm Xt pthread-stubs xcb
+WANTLIB +=		X11 Xaw Xext Xmu Xpm Xt xcb
 .endif
 
 RUN_DEPENDS =		games/hackdata

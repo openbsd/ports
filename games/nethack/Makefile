@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.64 2017/07/26 22:45:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.65 2017/10/23 17:10:49 sthen Exp $
 
 COMMENT =	dungeon explorin', hackin', game.  Piece of cake
 V =		3.4.3
 DISTNAME =	nethack-$V
 PKGNAME =	${DISTNAME}
-REVISION =	10
+REVISION =	11
 CATEGORIES =	games
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=nethack/}
@@ -35,7 +35,7 @@ MODULES =	x11/qt3
 WANTLIB +=	SM m pthread ${COMPILER_LIBCXX}
 .else
 NETHACKCONFIG =	${FILESDIR}/x-config
-WANTLIB +=	X11 Xaw Xext Xmu Xpm Xt pthread-stubs xcb
+WANTLIB +=	X11 Xaw Xext Xmu Xpm Xt xcb
 .endif
 
 RUN_DEPENDS =	games/hackdata

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2017/07/27 09:55:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2017/10/23 17:10:50 sthen Exp $
 
 PORTROACH=		limitw:1,even
 
@@ -8,7 +8,7 @@ NOT_FOR_ARCHS=		m88k
 COMMENT=		C++ interface for cairo
 
 DISTNAME=		cairomm-1.12.2
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  cairomm-1.0          5.1      # 5.0
 
@@ -22,7 +22,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += X11 Xext Xrender cairo expat fontconfig freetype m
-WANTLIB += pixman-1 png pthread pthread-stubs sigc-2.0 xcb xcb-render
+WANTLIB += pixman-1 png pthread sigc-2.0 xcb xcb-render
 WANTLIB += xcb-shm z
 WANTLIB += ${COMPILER_LIBCXX}
 

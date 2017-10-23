@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.35 2015/08/17 19:10:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.36 2017/10/23 17:10:50 sthen Exp $
 
 COMMENT =	map viewer using Openstreetmap data
 
 GNOME_VERSION =	0.1.90
 GNOME_PROJECT =	emerillon
-REVISION =	8
+REVISION =	9
 
 CATEGORIES =	geo x11
 
@@ -23,7 +23,7 @@ WANTLIB += geoclue gio-2.0 girepository-1.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-3 harfbuzz
 WANTLIB += json-glib-1.0 m pango-1.0 pangocairo-1.0 cogl-path
 WANTLIB += pangoft2-1.0 pcre peas-1.0 peas-gtk-1.0 pixman-1 png
-WANTLIB += pthread pthread-stubs rest-0.7 soup-2.4 soup-gnome-2.4
+WANTLIB += pthread rest-0.7 soup-2.4 soup-gnome-2.4
 WANTLIB += sqlite3 xcb xcb-render xcb-shm xml2 z
 WANTLIB += EGL X11-xcb Xau Xdmcp drm epoxy gbm glapi lzma xcb-dri2
 WANTLIB += xcb-shape xcb-xfixes

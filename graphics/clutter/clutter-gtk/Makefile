@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.37 2017/08/10 13:50:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.38 2017/10/23 17:10:50 sthen Exp $
 
 COMMENT=		GTK+ widget for clutter
 
 GNOME_PROJECT=		clutter-gtk
 GNOME_VERSION=		1.8.4
+REVISION=		0
 
 SHARED_LIBS +=  clutter-gtk-1.0      0.1      # 800.4
 
@@ -14,7 +15,7 @@ WANTLIB += cogl-path dbus-1 drm epoxy expat ffi fontconfig freetype
 WANTLIB += gbm gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-3 harfbuzz iconv
 WANTLIB += intl json-glib-1.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png pthread pthread-stubs xcb xcb-dri2
+WANTLIB += pcre pixman-1 png pthread xcb xcb-dri2
 WANTLIB += xcb-render xcb-shm xcb-xfixes z
 
 MODGNOME_TOOLS +=	gobject-introspection

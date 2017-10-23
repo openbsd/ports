@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2017/07/26 22:45:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2017/10/23 17:10:52 sthen Exp $
 
 COMMENT =		guitar tab editor
 
 DISTNAME =		kguitar-0.5.1
-REVISION=		11
+REVISION=		12
 
 CATEGORIES =		multimedia kde
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =  ICE SM X11 Xext Xfixes Xrender Xt art_lgpl_2 c expat
 WANTLIB += fontconfig freetype idn m png pthread ${COMPILER_LIBCXX} util
-WANTLIB += xcb z fam pthread-stubs
+WANTLIB += xcb z fam
 WANTLIB += X11-xcb Xdamage Xxf86vm drm glapi xcb-dri2 xcb-glx  
 WANTLIB += ${KDE}/DCOP ${KDE}/kdecore ${KDE}/kdefx ${KDE}/kdeprint
 WANTLIB += ${KDE}/kdesu ${KDE}/kdeui ${KDE}/kio ${KDE}/kparts

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2017/10/17 17:19:24 danj Exp $
+# $OpenBSD: Makefile,v 1.53 2017/10/23 17:10:51 sthen Exp $
 
 # snapshots are only available for amd64 and i386, for now
 ONLY_FOR_ARCHS =	amd64 i386
@@ -89,8 +89,9 @@ LIBESTDC_VERSION =	17.1
 
 # note: RUSTFLAGS extra flags passed to rust
 # 		-L modgcc-libs : disambiguate libestdc++.so
-MAKE_ENV =		RUSTFLAGS="-L ${WRKDIR}/modgcc-libs" \
-			LIBGIT2_SYS_USE_PKG_CONFIG=1
+MAKE_ENV =	RUST_BACKTRACE=1 \
+	RUSTFLAGS="-L ${WRKDIR}/modgcc-libs -C link-arg=-Wl,--no-keep-memory" \
+	LIBGIT2_SYS_USE_PKG_CONFIG=1
 
 # build/configuration variables
 PATCHORIG =		.openbsd.orig

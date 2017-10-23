@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.32 2017/05/03 18:36:05 fcambus Exp $
+# $OpenBSD: Makefile,v 1.33 2017/10/23 17:10:50 sthen Exp $
 
 COMMENT=	John Horton Conway's Game of Life
 
 DISTNAME=	xlife-5.3
-REVISION =	5
+REVISION =	6
 CATEGORIES=	games
 
 HOMEPAGE=	http://www.catb.org/~esr/software.html
@@ -12,7 +12,7 @@ MASTER_SITES=	https://www.distfiles.pl/
 
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	X11 Xau Xdmcp Xext c curses pthread-stubs termcap xcb
+WANTLIB=	X11 Xau Xdmcp Xext c curses termcap xcb
 
 CONFIGURE_STYLE=	imake
 WRKSRC=	${WRKDIST}/xlife

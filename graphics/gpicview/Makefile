@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2016/05/27 10:08:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2017/10/23 17:10:51 sthen Exp $
 
 COMMENT =	simple and fast image viewer for X11
 
 DISTNAME =	gpicview-0.2.5
+REVISION =	0
 
 CATEGORIES =	graphics x11
 
@@ -13,7 +14,7 @@ WANTLIB =	X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama \
 		gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 \
 		gobject-2.0 graphite2 gthread-2.0 gtk-x11-2.0 harfbuzz \
 		iconv intl jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-		pcre pixman-1 png pthread pthread-stubs xcb xcb-render \
+		pcre pixman-1 png pthread xcb xcb-render \
 		xcb-shm z
 
 # GPLv2+

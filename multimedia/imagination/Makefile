@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2016/09/22 21:30:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2017/10/23 17:10:52 sthen Exp $
 
 COMMENT =		lightweight and simple DVD slide show maker
 DISTNAME =		imagination-3.0
-REVISION =		5
+REVISION =		6
 
 CATEGORIES =		multimedia
 
@@ -19,7 +19,7 @@ WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gsm gthread-2.0 gtk-x11-2.0
 WANTLIB += harfbuzz iconv id3tag intl m mad mp3lame ogg opencore-amrnb
 WANTLIB += opencore-amrwb opus opusfile pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
+WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB += sndfile sndio sox twolame vorbis vorbisenc vorbisfile
 WANTLIB += wavpack xcb xcb-render xcb-shm z
 

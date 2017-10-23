@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2017/03/04 11:04:25 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2017/10/23 17:10:50 sthen Exp $
 
 COMMENT =		editor war arcade game
 
 DISTNAME =		wordwarvi-1.00
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		games
 
@@ -19,7 +19,7 @@ WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 c cairo
 WANTLIB += drm expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += gtk-x11-2.0 m ogg pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pixman-1 png portaudio pthread pthread-stubs
+WANTLIB += pangoft2-1.0 pixman-1 png portaudio pthread
 WANTLIB += sndio vorbis vorbisfile xcb xcb-render xcb-shm z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=wordwarvi/}

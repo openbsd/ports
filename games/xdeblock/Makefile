@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.33 2017/04/27 20:04:31 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2017/10/23 17:10:50 sthen Exp $
 
 COMMENT=	block action game
 
 DISTNAME=	xdeblock
 PKGNAME=	xdeblock-1.0
-REVISION =	2
+REVISION =	3
 CATEGORIES=	games
 
 MASTER_SITES=	http://distcache.freebsd.org/ports-distfiles/ \
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_CDROM=	no license
 PERMIT_PACKAGE_FTP=	no license
 PERMIT_DISTFILES_FTP=	no license
 
-WANTLIB=	X11 Xau Xdmcp Xext Xpm c pthread-stubs xcb
+WANTLIB=	X11 Xau Xdmcp Xext Xpm c xcb
 
 CONFIGURE_STYLE=	imake noman
 WRKDIST=		${WRKDIR}/xdeblo_v1.0

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.113 2017/10/16 04:38:38 kirby Exp $
+# $OpenBSD: Makefile,v 1.114 2017/10/23 17:10:49 sthen Exp $
 
 COMMENT-main=	Civilization clone for X11; multiplayer; game server
 COMMENT-client=	Freeciv client
@@ -9,6 +9,7 @@ DISTNAME=	freeciv-${VERSION}
 PKGNAME-main=	freeciv-server-${VERSION}
 PKGNAME-client=	freeciv-client-${VERSION}
 PKGNAME-share=	freeciv-share-${VERSION}
+REVISION-client= 0
 
 CATEGORIES=	games
 
@@ -31,8 +32,7 @@ WANTLIB-client += cairo cairo-gobject dbus-1 epoxy expat ffi fontconfig
 WANTLIB-client += freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB-client += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-3
 WANTLIB-client += harfbuzz pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
-WANTLIB-client += pixman-1 png pthread-stubs xcb xcb-render xcb-shm
-WANTLIB-client += ${cWANTLIB}
+WANTLIB-client += pixman-1 png xcb xcb-render xcb-shm ${cWANTLIB}
 
 WANTLIB-share=
 

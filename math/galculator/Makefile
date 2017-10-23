@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.55 2016/04/26 17:42:20 naddy Exp $
+# $OpenBSD: Makefile,v 1.56 2017/10/23 17:10:51 sthen Exp $
 
 COMMENT=	GTK-based scientific calculator
 
 GH_ACCOUNT=	galculator
 GH_PROJECT=	galculator
 GH_TAGNAME=	v2.1.4
+REVISION=	0
+
 CATEGORIES=	math
 HOMEPAGE=	http://galculator.mnim.org/
 
@@ -19,7 +21,7 @@ WANTLIB+= cairo-gobject dbus-1 epoxy expat ffi fontconfig freetype gdk-3
 WANTLIB+= gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB+= graphite2 gthread-2.0 gtk-3 harfbuzz iconv intl m pango-1.0
 WANTLIB+= pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
-WANTLIB+= pthread-stubs xcb xcb-render xcb-shm z
+WANTLIB+= xcb xcb-render xcb-shm z
 
 MODULES=	textproc/intltool
 

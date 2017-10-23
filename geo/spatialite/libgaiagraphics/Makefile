@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2016/04/09 23:38:55 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2017/10/23 17:10:50 sthen Exp $
 
 COMMENT =	common-utility raster handling methods
 PROJECT =	libgaiagraphics
 DISTNAME =	${PROJECT}-0.5
 SHARED_LIBS =	gaiagraphics 0.0 #2.0
 CATEGORIES =	graphics geo
-REVISION =	1
+REVISION =	2
 
 LIB_DEPENDS +=	converters/libiconv \
 		graphics/cairo \
@@ -13,7 +13,7 @@ LIB_DEPENDS +=	converters/libiconv \
 		devel/geotiff
 
 WANTLIB += X11 Xext Xrender cairo expat fontconfig freetype geotiff iconv jpeg
-WANTLIB += lzma m pixman-1 png proj pthread pthread-stubs tiff xcb
+WANTLIB += lzma m pixman-1 png proj pthread tiff xcb
 WANTLIB += xcb-render xcb-shm xml2 z
 
 .include <bsd.port.mk>

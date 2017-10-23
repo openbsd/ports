@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.70 2017/09/23 11:41:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.71 2017/10/23 17:10:51 sthen Exp $
 
 COMMENT=		RSS reader plugin for evolution
 
 GNOME_PROJECT=		evolution-rss
 GNOME_VERSION=		0.3.95
-REVISION=		12
+REVISION=		13
 
 CATEGORIES=		mail
 
@@ -33,7 +33,7 @@ WANTLIB += harfbuzz harfbuzz-icu hyphen ical icalss icalvcal iconv
 WANTLIB += icudata icui18n icuuc intl javascriptcoregtk-4.0 jpeg
 WANTLIB += json-glib-1.0 ltdl lz4 lzma m notify nspr4 nss3 nssutil3
 WANTLIB += ogg orc-0.4 p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 plc4 plds4 png pthread pthread-stubs
+WANTLIB += pcre pixman-1 plc4 plds4 png pthread
 WANTLIB += secret-1 smime3 softokn3 soup-2.4 soup-gnome-2.4 sqlite3
 WANTLIB += ssl3 ${COMPILER_LIBCXX} vorbis vorbisfile webkit2gtk-4.0 webp xcb
 WANTLIB += xcb-dri2 xcb-glx xcb-render xcb-shm xcb-xfixes xml2

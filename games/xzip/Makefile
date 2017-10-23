@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2014/01/01 20:46:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2017/10/23 17:10:50 sthen Exp $
 
 COMMENT=	z-code interpreter for X11 (Infocom game format)
 
 DISTNAME=	xzip182
 PKGNAME=	xzip-1.8.2
-REVISION =	0
+REVISION =	1
 CATEGORIES=     games x11
 
 HOMEPAGE=	http://www.eblong.com/zarf/xzip.html
@@ -16,7 +16,7 @@ MAINTAINER=	Carsten Ilchmann <ci2@gmx.net>
 PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	No
 PERMIT_DISTFILES_FTP=	No
-WANTLIB=		X11 c pthread-stubs xcb
+WANTLIB=		X11 c xcb
 
 MASTER_SITES=	http://www.eblong.com/zarf/ftp/
 EXTRACT_SUFX=	.tar.Z

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.29 2016/04/04 16:09:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.30 2017/10/23 17:10:51 sthen Exp $
 
 COMMENT =	Libedit interface to Tcl/Tk interpreters
 
 DISTNAME =	eltclsh-1.12
 CATEGORIES =	lang x11
-REVISION =	1
+REVISION =	2
 
 MASTER_SITES =	http://www.openrobots.org/distfiles/eltclsh/
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_CDROM =	 Yes
 
 WANTLIB += ${MODTK_WANTLIB}
 WANTLIB += X11 Xext Xft Xrender Xss c edit expat fontconfig freetype m
-WANTLIB += pthread-stubs termcap xcb z
+WANTLIB += termcap xcb z
 
 MODULES +=	x11/tk
 

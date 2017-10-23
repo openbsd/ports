@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.67 2017/09/23 10:27:35 nigel Exp $
+# $OpenBSD: Makefile,v 1.68 2017/10/23 17:10:51 sthen Exp $
 
 COMMENT=	Python charting and plotting API
 
 MODPY_EGG_VERSION =	1.5.3
 DISTNAME =		matplotlib-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		6
+REVISION =		7
 CATEGORIES =		graphics devel math
 
 HOMEPAGE=	http://matplotlib.sourceforge.net/
@@ -50,7 +50,7 @@ WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo expat ffi
 WANTLIB += fontconfig gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gtk-x11-2.0
 WANTLIB += harfbuzz intl pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 pthread-stubs xcb xcb-render xcb-shm
+WANTLIB += pcre pixman-1 xcb xcb-render xcb-shm
 COMMON_DEPENDS +=	x11/py-gtk2
 LIB_DEPENDS +=	x11/gtk+2
 .endif

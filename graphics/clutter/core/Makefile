@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.48 2017/10/06 15:38:35 naddy Exp $
+# $OpenBSD: Makefile,v 1.49 2017/10/23 17:10:50 sthen Exp $
 
 COMMENT=		OpenGL-based interactive canvas library
 
 GNOME_PROJECT=		clutter
 GNOME_VERSION=		1.26.2
 
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS +=  clutter-1.0          6.1   # 2600.0
 
@@ -15,7 +15,7 @@ WANTLIB += cogl cogl-pango cogl-path drm epoxy expat ffi fontconfig
 WANTLIB += freetype gbm gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 harfbuzz
 WANTLIB += iconv intl json-glib-1.0 m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
+WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB += xcb xcb-dri2 xcb-render xcb-shm xcb-xfixes z
 
 MODGNOME_TOOLS +=	gobject-introspection

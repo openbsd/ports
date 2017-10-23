@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.48 2017/07/26 22:45:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.49 2017/10/23 17:10:50 sthen Exp $
 
 COMMENT =	Amide a Medical Imaging Data Examiner
 
 DISTNAME =	amide-1.0.5
 CATEGORIES =	graphics
-REVISION =	5
+REVISION =	6
 
 HOMEPAGE =	http://amide.sourceforge.net/
 
@@ -18,7 +18,7 @@ WANTLIB += freetype gailutil gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gnomecanvas-2 gobject-2.0
 WANTLIB += gsl gslcblas gsm gthread-2.0 gtk-x11-2.0 m mdc mp3lame
 WANTLIB += ogg pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
-WANTLIB += pixman-1 png pthread pthread-stubs speex ${COMPILER_LIBCXX} vorbis
+WANTLIB += pixman-1 png pthread speex ${COMPILER_LIBCXX} vorbis
 WANTLIB += vorbisenc vpx x264 xcb xcb-render xcb-shm xml2 z
 WANTLIB += dbus-1 dbus-glib-1 ffi graphite2 opus
 WANTLIB += harfbuzz xvidcore lzma swresample x265

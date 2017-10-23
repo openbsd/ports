@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.101 2017/07/26 22:45:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.102 2017/10/23 17:10:51 sthen Exp $
 
 COMMENT=	image viewer and browser for GNOME
 
 GNOME_PROJECT=	gthumb
 GNOME_VERSION=	3.4.5
-REVISION=	0
+REVISION=	1
 
 API_V=		${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 SUBST_VARS=	API_V
@@ -24,7 +24,7 @@ WANTLIB += dbus-1 epoxy exiv2 expat ffi fontconfig freetype gdk-3
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += graphite2 gstreamer-1.0 gstvideo-1.0 gthread-2.0 gtk-3
 WANTLIB += harfbuzz jpeg json-glib-1.0 m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
+WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB += rsvg-2 secret-1 soup-2.4 ${COMPILER_LIBCXX} tiff lcms2 raw
 WANTLIB += webkit2gtk-4.0 webp xcb xcb-render xcb-shm z iconv intl
 

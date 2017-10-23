@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2017/07/26 22:45:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.60 2017/10/23 17:10:50 sthen Exp $
 
 PORTROACH=		limit:^0\.2
 
@@ -17,7 +17,7 @@ CATEGORIES=		graphics devel
 PKGNAME-main=		gegl-${V}
 PKGNAME-plugins=	gegl-plugins-${V}
 
-REVISION-main=		4
+REVISION-main=		5
 REVISION-plugins=	8
 
 SHARED_LIBS +=  gegl-${API_VERSION}		0.0 # 199.1
@@ -44,7 +44,7 @@ WANTLIB-main +=	${WANTLIB}
 WANTLIB-main += X11 Xrender c cairo croco-0.6 expat fontconfig
 WANTLIB-main += freetype gdk_pixbuf-2.0 jpeg pango-1.0 lzma
 WANTLIB-main += pangocairo-1.0 pangoft2-1.0 pixman-1 png pthread
-WANTLIB-main += pthread-stubs xcb xml2 xcb-render rsvg-2 babl-0.1
+WANTLIB-main += xcb xml2 xcb-render rsvg-2 babl-0.1
 WANTLIB-main += Xext jasper xcb-shm graphite2 harfbuzz
 
 BUILD_DEPENDS=		graphics/exiv2

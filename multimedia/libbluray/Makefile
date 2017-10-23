@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2017/08/29 13:16:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2017/10/23 17:10:52 sthen Exp $
 
 COMMENT =		library supporting Blu-ray playback
 
 V =			1.0.0
 DISTNAME =		libbluray-${V}
 CATEGORIES =		multimedia
+REVISION =		0
 
 HOMEPAGE =		http://www.videolan.org/developers/libbluray.html
 
@@ -16,7 +17,7 @@ EXTRACT_SUFX =		.tar.bz2
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB +=		c expat fontconfig freetype iconv lzma m pthread
-WANTLIB +=		pthread-stubs xml2 z
+WANTLIB +=		xml2 z
 
 SHARED_LIBS +=		bluray		3.0	# 11.0
 

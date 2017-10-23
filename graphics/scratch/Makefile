@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2015/11/02 11:56:55 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2017/10/23 17:10:51 sthen Exp $
 
 COMMENT =	visual programming environment and toolkit
 
 DISTNAME =	${PKGNAME}.src
 PKGNAME =	scratch-1.4.0.7
-REVISION =	2
+REVISION =	3
 CATEGORIES =	graphics
 HOMEPAGE =	http://scratch.mit.edu/
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB =	X11 Xau Xdmcp Xext Xrender cairo expat fontconfig freetype \
 		glib-2.0 gmodule-2.0 gobject-2.0 graphite2 harfbuzz \
 		m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 \
-		png pthread pthread-stubs xcb xcb-render xcb-shm z
+		png pthread xcb xcb-render xcb-shm z
 
 MASTER_SITES =	http://download.scratch.mit.edu/
 MODULES =	devel/gettext

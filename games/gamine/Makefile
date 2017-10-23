@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2015/03/27 08:41:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2017/10/23 17:10:49 sthen Exp $
 
 COMMENT=	interactive game for young children
 
 DISTNAME=	gamine-1.1
-REVISION=	9
+REVISION=	10
 
 CATEGORIES=	games
 
@@ -18,7 +18,7 @@ WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0
 WANTLIB += c cairo drm expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gstreamer-0.10
 WANTLIB += gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pixman-1 png pthread pthread-stubs xcb
+WANTLIB += pangoft2-1.0 pixman-1 png pthread xcb
 WANTLIB += xcb-render xcb-shm xml2 z
 
 MASTER_SITES=	${HOMEPAGE}

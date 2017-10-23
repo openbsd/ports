@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.68 2017/07/26 22:45:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.69 2017/10/23 17:10:52 sthen Exp $
 
 COMMENT=	video stream processing tools
 
 DISTNAME=	transcode-1.1.7
-REVISION=	10
+REVISION=	11
 CATEGORIES=	multimedia
 
 HOMEPAGE=	https://bitbucket.org/achurch_/transcode/
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += ICE SDL SM X11 Xau Xaw Xdmcp Xext Xmu Xpm Xt Xv a52 avcodec
 WANTLIB += avformat avutil bz2 c crypto dv dvdread freetype gsm jpeg
 WANTLIB += m mp3lame mpeg2 mpeg2convert ogg opus postproc pthread
-WANTLIB += pthread-stubs quicktime sndio speex ssl theora
+WANTLIB += quicktime sndio speex ssl theora
 WANTLIB += usbhid vorbis vorbisenc vorbisfile vpx x264 xcb xml2 z
 WANTLIB += lzma ${COMPILER_LIBCXX} swresample x265
 

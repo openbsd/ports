@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.56 2017/09/19 07:26:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.57 2017/10/23 17:10:52 sthen Exp $
 
 COMMENT=		base elements for GStreamer
 
 DISTNAME=		gst-plugins-base-${V}
 PKGNAME=		${GST_PKGNAME_PREFIX}-plugins-base-${V}
+REVISION=		0
 
 SHARED_LIBS +=  gsttag-1.0           3.3      # 1203.0
 SHARED_LIBS +=  gstaudio-1.0         3.3      # 1203.0
@@ -24,7 +25,7 @@ WANTLIB += expat ffi fontconfig freetype gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 graphite2 gstbase-1.0 gstnet-1.0 gstreamer-1.0
 WANTLIB += gthread-2.0 harfbuzz iconv intl m ogg opus orc-0.4
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png pthread pthread-stubs sndio theoradec theoraenc
+WANTLIB += png pthread sndio theoradec theoraenc
 WANTLIB += vorbis vorbisenc vorbisidec xcb xcb-render xcb-shm
 WANTLIB += z
 

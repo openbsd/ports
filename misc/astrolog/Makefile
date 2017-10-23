@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.29 2014/11/30 05:41:34 brad Exp $
+# $OpenBSD: Makefile,v 1.30 2017/10/23 17:10:51 sthen Exp $
 
 COMMENT=	astrology program for X11 and alpha-numeric terminals
 
 V=		5.40
 DISTNAME=	ast54unx
 PKGNAME=	astrolog-${V}
-REVISION=	1
+REVISION=	2
 CATEGORIES=	misc
 
 HOMEPAGE=	http://www.astrolog.org/astrolog.htm
@@ -21,7 +21,7 @@ DISTFILES=	${EXTRACT_ONLY} ${EPHEM}
 PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	Yes
 
-WANTLIB=		X11 c m pthread-stubs xcb
+WANTLIB=		X11 c m xcb
 
 EXTRACT_CASES=	*.shr) ${_PERL_FIX_SHAR} ${FULLDISTDIR}/$$archive | /bin/sh;;
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2017/07/26 22:45:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.58 2017/10/23 17:10:51 sthen Exp $
 
 DPB_PROPERTIES=		tag:kde3
 
@@ -19,12 +19,7 @@ PKGNAME-gtk3=		uim-gtk3-$V
 PKGNAME-kde=		uim-kde-$V
 PKGNAME-qt=		uim-qt-$V
 PKGNAME-qt4=		uim-qt4-$V
-REVISION-gtk=		2
-REVISION-gtk3=		3
-REVISION-kde=		2
-REVISION-main=		3
-REVISION-qt=		2
-REVISION-qt4=		2
+REVISION=		4
 
 MASTER_SITES=		https://github.com/uim/uim/releases/download/uim-$V/
 HOMEPAGE=		https://github.com/uim/uim
@@ -53,7 +48,7 @@ RUN_DEPENDS-main=	${MODGETTEXT_RUN_DEPENDS} \
 			devel/desktop-file-utils
 
 WANTLIB-main += ${cWANTLIB}
-WANTLIB-main += Xft anthy anthydic c curses expat pthread-stubs ${COMPILER_LIBCXX}
+WANTLIB-main += Xft anthy anthydic c curses expat ${COMPILER_LIBCXX}
 WANTLIB-main += util xcb z
 
 LIB_DEPENDS-main=	${MODGETTEXT_LIB_DEPENDS} \
@@ -65,7 +60,7 @@ WANTLIB-gtk += Xcomposite Xcursor Xdamage Xfixes Xi Xinerama Xrandr
 WANTLIB-gtk += atk-1.0 c cairo expat ffi gcroots gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB-gtk += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
 WANTLIB-gtk += gthread-2.0 gtk-x11-2.0 harfbuzz pango-1.0 pangocairo-1.0
-WANTLIB-gtk += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
+WANTLIB-gtk += pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB-gtk += uim uim-custom uim-scm xcb xcb-render xcb-shm z
 
 LIB_DEPENDS-gtk=	inputmethods/uim \
@@ -77,7 +72,7 @@ WANTLIB-gtk3 += Xrandr atk-1.0 atk-bridge-2.0 atspi c cairo cairo-gobject
 WANTLIB-gtk3 += dbus-1 expat ffi gcroots gdk-3 gdk_pixbuf-2.0 gio-2.0
 WANTLIB-gtk3 += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
 WANTLIB-gtk3 += gtk-3 harfbuzz pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB-gtk3 += pcre pixman-1 png pthread pthread-stubs uim uim-custom
+WANTLIB-gtk3 += pcre pixman-1 png pthread uim uim-custom
 WANTLIB-gtk3 += uim-scm xcb xcb-render xcb-shm z epoxy
 
 LIB_DEPENDS-gtk3=	inputmethods/uim \
@@ -87,7 +82,7 @@ WANTLIB-kde += ${cWANTLIB} ${KDE}/kdecore ${KDE}/kdeui
 WANTLIB-kde += DCOP GL ICE SM X11-xcb Xau Xcursor Xdamage Xdmcp Xfixes
 WANTLIB-kde += Xft Xi Xinerama Xmu Xrandr Xt Xxf86vm art_lgpl_2 drm
 WANTLIB-kde += expat gcroots glapi idn jpeg kdefx lcms mng png pthread
-WANTLIB-kde += pthread-stubs qt-mt ${COMPILER_LIBCXX} uim uim-scm util xcb xcb-dri2
+WANTLIB-kde += qt-mt ${COMPILER_LIBCXX} uim uim-scm util xcb xcb-dri2
 WANTLIB-kde += xcb-glx z
 
 LIB_DEPENDS-kde=	inputmethods/uim \
@@ -96,7 +91,7 @@ LIB_DEPENDS-kde=	inputmethods/uim \
 WANTLIB-qt += ${cWANTLIB} ${MODQT3_WANTLIB}
 WANTLIB-qt += GL ICE SM X11-xcb Xau Xcursor Xdamage Xdmcp Xfixes
 WANTLIB-qt += Xft Xi Xinerama Xmu Xrandr Xt Xxf86vm c drm expat gcroots
-WANTLIB-qt += glapi jpeg lcms mng png pthread pthread-stubs ${COMPILER_LIBCXX}
+WANTLIB-qt += glapi jpeg lcms mng png pthread ${COMPILER_LIBCXX}
 WANTLIB-qt += uim uim-custom uim-scm xcb xcb-dri2 xcb-glx z
 
 LIB_DEPENDS-qt=		${MODQT3_LIB_DEPENDS} \

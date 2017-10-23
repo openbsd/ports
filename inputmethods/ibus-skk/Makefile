@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2015/05/05 17:00:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2017/10/23 17:10:51 sthen Exp $
 
 COMMENT =	japanese skk input engine for ibus
 
 V =		1.4.2
 DISTNAME =	ibus-skk-${V}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	inputmethods japanese
 
@@ -21,7 +21,7 @@ WANTLIB += cairo-gobject dbus-1 epoxy expat ffi fontconfig freetype
 WANTLIB += gdk-3 gdk_pixbuf-2.0 gee-0.8 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-3 harfbuzz ibus-1.0
 WANTLIB += json-glib-1.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
-WANTLIB += pixman-1 png pthread pthread-stubs skk xcb xcb-render xcb-shm
+WANTLIB += pixman-1 png pthread skk xcb xcb-render xcb-shm
 WANTLIB += z
 
 MASTER_SITES =	https://github.com/ueno/ibus-skk/releases/download/ibus-skk-${V}/

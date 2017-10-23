@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.52 2017/04/09 12:16:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.53 2017/10/23 17:10:50 sthen Exp $
 
 COMMENT=		clutter GStreamer integration library
 
 GNOME_PROJECT=		clutter-gst
 GNOME_VERSION=		3.0.24
 API_VERSION=		3.0
+REVISION=		0
 
 SHARED_LIBS +=  clutter-gst-3.0      0.0      # 18.0
 
@@ -16,7 +17,7 @@ WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gstaudio-1.0
 WANTLIB += gstbase-1.0 gstpbutils-1.0 gstreamer-1.0 gsttag-1.0
 WANTLIB += gstvideo-1.0 gthread-2.0 harfbuzz iconv intl json-glib-1.0
 WANTLIB += m orc-0.4 pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
-WANTLIB += pixman-1 png pthread pthread-stubs xcb xcb-dri2 xcb-render
+WANTLIB += pixman-1 png pthread xcb xcb-dri2 xcb-render
 WANTLIB += xcb-shm xcb-xfixes z
 
 MODGNOME_TOOLS +=	gobject-introspection

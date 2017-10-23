@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2017/10/06 15:23:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2017/10/23 17:10:51 sthen Exp $
 
 COMMENT=		GObject library for handling and rendering XPS documents
 
 GNOME_PROJECT=		libgxps
 GNOME_VERSION=		0.2.5
 
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS +=  gxps                 0.1      # 4.1
 
@@ -20,7 +20,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += X11 Xext Xrender archive bz2 c cairo crypto expat ffi
 WANTLIB += fontconfig freetype gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += iconv intl jpeg lcms2 lz4 lzma lzo2 m pcre pixman-1
-WANTLIB += png pthread pthread-stubs tiff xcb xcb-render xcb-shm
+WANTLIB += png pthread tiff xcb xcb-render xcb-shm
 WANTLIB += z
 
 MODULES=		x11/gnome

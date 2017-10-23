@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.24 2013/10/11 23:49:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.25 2017/10/23 17:10:49 sthen Exp $
 
 COMMENT=	X11 Go Toolset
 
 DISTNAME=	cgoban-1.9.12
-REVISION =	1
+REVISION =	2
 CATEGORIES=	games x11
 
 HOMEPAGE=	http://www.igoweb.org/~wms/comp/cgoban/
 
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	X11 c m pthread-stubs xcb
+WANTLIB=	X11 c m xcb
 
 MASTER_SITES=	${HOMEPAGE}
 

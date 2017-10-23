@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2014/01/24 09:56:05 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2017/10/23 17:10:49 sthen Exp $
 
 COMMENT=	game like Deflektor (C64) / Mindbender (Amiga)
 DISTNAME=	mirrormagic-2.0.2
-REVISION =	2
+REVISION =	3
 CATEGORIES=	games x11
 MASTER_SITES=	http://www.artsoft.org/RELEASES/unix/mirrormagic/
 
@@ -10,7 +10,7 @@ HOMEPAGE=	http://www.artsoft.org/mirrormagic/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-WANTLIB=		SDL X11 Xext c m pthread pthread-stubs usbhid xcb \
+WANTLIB=		SDL X11 Xext c m pthread usbhid xcb \
 			SDL_mixer SDL_image
 
 LIB_DEPENDS=	devel/sdl-mixer \

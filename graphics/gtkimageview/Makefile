@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2017/07/26 22:45:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2017/10/23 17:10:51 sthen Exp $
 
 COMMENT=	image viewer widget for gtk
 
 DISTNAME=	gtkimageview-1.6.4
-REVISION=	8
+REVISION=	9
 
 SHARED_LIBS=	gtkimageview	0.0
 
@@ -19,7 +19,7 @@ WANTLIB += Xinerama Xrandr Xrender Xxf86vm atk-1.0 cairo drm expat ffi
 WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
 WANTLIB += gtk-x11-2.0 harfbuzz m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png pthread-stubs pthread ${COMPILER_LIBCXX} xcb
+WANTLIB += pcre pixman-1 png pthread ${COMPILER_LIBCXX} xcb
 WANTLIB += xcb-render xcb-shm z
 
 MASTER_SITES=	${HOMEPAGE}chrome/common/releases/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2017/08/10 10:25:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2017/10/23 17:10:52 sthen Exp $
 
 # archs with atomic ops
 ONLY_FOR_ARCHS =	aarch64 alpha amd64 i386 mips64 mips64el powerpc sparc64
@@ -9,7 +9,7 @@ COMMENT =		movie player based on MPlayer/mplayer2
 GH_ACCOUNT =		mpv-player
 GH_PROJECT =		mpv
 GH_TAGNAME =		v0.22.0
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		multimedia x11
 
@@ -31,7 +31,7 @@ WANTLIB += Xinerama Xrandr Xrender Xss Xv Xxf86vm ass avcodec
 WANTLIB += avdevice avfilter avformat avresample avutil bluray
 WANTLIB += c cdio cdio_cdda cdio_paranoia drm dvdnav dvdread expat
 WANTLIB += fontconfig freetype fribidi gbm iconv jpeg lcms2 m
-WANTLIB += opus postproc pthread pthread-stubs sndio speex swresample
+WANTLIB += opus postproc pthread sndio speex swresample
 WANTLIB += swscale v4l2 v4lconvert vpx x264 x265 xcb xcb-dri2
 WANTLIB += xcb-glx z ${MODLUA_WANTLIB}
 

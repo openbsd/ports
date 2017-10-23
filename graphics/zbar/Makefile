@@ -1,8 +1,8 @@
-#	$OpenBSD: Makefile,v 1.25 2017/10/05 14:51:45 jsg Exp $
+#	$OpenBSD: Makefile,v 1.26 2017/10/23 17:10:51 sthen Exp $
 
 COMMENT=	ZBar barcode reader
 DISTNAME=	zbar-0.10
-REVISION=	17
+REVISION=	18
 
 SHARED_LIBS=	zbar	0.0 \
 		zbargtk	0.0
@@ -25,7 +25,7 @@ WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
 WANTLIB += gtk-x11-2.0 harfbuzz jbig jpeg lcms2 lzma m openjp2
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png pthread pthread-stubs tiff webp xcb xcb-render
+WANTLIB += png pthread tiff webp xcb xcb-render
 WANTLIB += xcb-shm xml2 z
 
 MODULES=	devel/gettext \

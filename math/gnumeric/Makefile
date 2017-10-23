@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.125 2017/07/07 12:51:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.126 2017/10/23 17:10:51 sthen Exp $
 
 BROKEN-i386=	fails when merging translations with itstool
 
@@ -9,6 +9,7 @@ COMMENT=		spreadsheet application for GNOME
 
 GNOME_PROJECT=		gnumeric
 GNOME_VERSION=		1.12.35
+REVISION=		0
 
 GNUMERIC_API_VERSION=	${GNOME_VERSION:R}
 SUBST_VARS=		GNOME_VERSION GOFFICE_GNOME_VERSION GOFFICE_API_VERSION GNUMERIC_API_VERSION
@@ -28,7 +29,7 @@ WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gmp gobject-2.0 goffice-0.10
 WANTLIB += graphite2 gs gsf-1 gthread-2.0 gtk-3 harfbuzz hogweed
 WANTLIB += iconv idn2 intl jpeg lzma m nettle p11-kit pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre perl pixman-1 png
-WANTLIB += pthread pthread-stubs rsvg-2 spectre tasn1 unistring xcb
+WANTLIB += pthread rsvg-2 spectre tasn1 unistring xcb
 WANTLIB += xcb-render xcb-shm xml2 xslt z
 
 MODULES=		devel/dconf \

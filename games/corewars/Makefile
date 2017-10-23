@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2016/04/04 10:20:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2017/10/23 17:10:49 sthen Exp $
 
 COMMENT=	computer simulation game
 
 DISTNAME=	corewars-0.9.13
-REVISION=	7
+REVISION=	8
 
 CATEGORIES=	games x11
 
@@ -16,7 +16,7 @@ WANTLIB += GL X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 c cairo expat fontconfig freetype
 WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
 WANTLIB += gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1
-WANTLIB += png pthread pthread-stubs xcb xcb-render xcb-shm z
+WANTLIB += png pthread xcb xcb-render xcb-shm z
 
 MODULES=	devel/gettext
 

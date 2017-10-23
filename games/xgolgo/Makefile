@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.27 2014/08/30 21:54:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.28 2017/10/23 17:10:50 sthen Exp $
 #
 
 COMMENT=	watch what you are doing -- are you hostile
 
 DISTNAME=	xeyes-g
 PKGNAME=	xgolgo-1.0
-REVISION =	1
+REVISION =	2
 CATEGORIES=	games
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xmu Xt c m pthread-stubs xcb
+WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xmu Xt c m xcb
 
 CONFIGURE_STYLE=imake noman
 

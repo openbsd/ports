@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2015/06/16 07:20:20 bentley Exp $
+# $OpenBSD: Makefile,v 1.10 2017/10/23 17:10:50 sthen Exp $
 
 COMMENT=		colorful game where you blow other people/robots up
 
 VERSION=		0.8
 DISTNAME=		xbomber.${VERSION}
 PKGNAME=		xbomber-${VERSION}
-REVISION=		1
+REVISION=		2
 CATEGORIES=		games x11
 
 HOMEPAGE=		http://www.newbreedsoftware.com/xbomber/
@@ -13,7 +13,7 @@ HOMEPAGE=		http://www.newbreedsoftware.com/xbomber/
 PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	No
 PERMIT_DISTFILES_FTP=	No
-WANTLIB=		X11 c m pthread-stubs xcb
+WANTLIB=		X11 c m xcb
 
 MASTER_SITES=		ftp://ftp.tuxpaint.org/unix/x/xbomber/
 

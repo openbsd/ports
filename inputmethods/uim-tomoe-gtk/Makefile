@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2016/05/29 21:41:46 bentley Exp $
+# $OpenBSD: Makefile,v 1.22 2017/10/23 17:10:51 sthen Exp $
 
 COMMENT=	japanese handwriting
 
 DISTNAME=	uim-tomoe-gtk-0.6.0
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE= 	https://osdn.jp/projects/tomoe/
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tomoe/uim-tomoe-gtk/}
@@ -18,7 +18,7 @@ WANTLIB += Xrandr Xrender atk-1.0 c cairo expat ffi fontconfig
 WANTLIB += freetype gcroots gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
 WANTLIB += gtk-x11-2.0 harfbuzz m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png pthread pthread-stubs tomoe tomoe-gtk
+WANTLIB += pcre pixman-1 png pthread tomoe tomoe-gtk
 WANTLIB += uim uim-scm xcb xcb-render xcb-shm z
 
 MODULES=	devel/gettext textproc/intltool

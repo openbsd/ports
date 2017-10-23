@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2017/08/10 09:34:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2017/10/23 17:10:51 sthen Exp $
 
 COMMENT=		browser for a large lexical database of English
 
 DISTNAME=		WordNet-3.0
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX} wn3.1.dict.tar.gz:0
 PKGNAME=		wordnet-3.1
+REVISION=		0
 
 CATEGORIES=		misc
 
@@ -16,7 +17,7 @@ MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += X11 Xau Xdmcp Xext Xft Xrender Xss c expat fontconfig
-WANTLIB += freetype m pthread-stubs xcb z ${MODTK_WANTLIB}
+WANTLIB += freetype m xcb z ${MODTK_WANTLIB}
 
 MASTER_SITES=		http://wordnetcode.princeton.edu/3.0/
 MASTER_SITES0=		http://wordnetcode.princeton.edu/

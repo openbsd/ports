@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2017/05/27 10:36:42 zhuk Exp $
+# $OpenBSD: Makefile,v 1.16 2017/10/23 17:10:52 sthen Exp $
 
 COMMENT =		video editor and a VJ tool
 
 V =			1.0.10
 DISTNAME =		LiVES-${V}
 PKGNAME =		${DISTNAME:L}
-REVISION =		6
+REVISION =		7
 
 SHARED_LIBS +=		weed		0.0 # 0.2
 SHARED_LIBS +=		weed_slice	0.0 # 0.2
@@ -24,7 +24,7 @@ WANTLIB += expat ffi fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
 WANTLIB += gthread-2.0 gtk-x11-2.0 harfbuzz m mjpegutils ogg oil-0.3
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png
-WANTLIB += pthread pthread-stubs sndio theora usbhid xcb
+WANTLIB += pthread sndio theora usbhid xcb
 WANTLIB += xcb-render xcb-shm z
 
 MODULES =		devel/gettext

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2017/07/26 22:45:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2017/10/23 17:10:50 sthen Exp $
 
 COMMENT =	GUI for spatialite
 DISTNAME =	spatialite_gui-1.7.1
-REVISION =	2
+REVISION =	3
 
 LIB_DEPENDS +=	x11/wxWidgets \
 		databases/sqlite3 \
@@ -17,7 +17,7 @@ WANTLIB += fontconfig freetype freexl gaiagraphics gdk-x11-2.0
 WANTLIB += gdk_pixbuf-2.0 geos geos_c geotiff gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-x11-2.0
 WANTLIB += harfbuzz iodbc jpeg lzma m mspack pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png proj pthread pthread-stubs
+WANTLIB += pangoft2-1.0 pcre pixman-1 png proj pthread
 WANTLIB += sndio spatialite sqlite3 ${COMPILER_LIBCXX} tiff usbhid wx_base
 WANTLIB += wx_base_net wx_base_odbc wx_base_xml wx_gtk2_adv wx_gtk2_aui
 WANTLIB += wx_gtk2_core wx_gtk2_dbgrid wx_gtk2_html wx_gtk2_qa

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.255 2017/09/28 16:33:24 landry Exp $
+# $OpenBSD: Makefile,v 1.256 2017/10/23 17:10:51 sthen Exp $
 
 COMMENT-main =		Mozilla e-mail, rss and usenet client
 COMMENT-lightning =	Mozilla Thunderbird calendar extension
@@ -16,7 +16,7 @@ PKGNAME-main =		${PKGNAME}
 PKGNAME-lightning =	lightning-5.4.2.1
 EPOCH-lightning =	0
 REVISION-lightning =	1
-REVISION-main =		3
+REVISION-main =		4
 
 HOMEPAGE =	http://www.mozilla.org/thunderbird/
 
@@ -56,7 +56,7 @@ CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include"
 RUN_DEPENDS-lightning = STEM->=${MOZILLA_VERSION:S/b/beta/}:${BUILD_PKGPATH},-main
 WANTLIB-lightning =
 
-WANTLIB += X11-xcb pixman-1 pthread-stubs xcb xcb-shm
+WANTLIB += X11-xcb pixman-1 xcb xcb-shm
 
 # build lightning xpi
 CONFIGURE_ARGS +=	--enable-calendar

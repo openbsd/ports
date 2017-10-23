@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.133 2017/09/22 21:30:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.134 2017/10/23 17:10:52 sthen Exp $
 
 COMMENT=	multimedia decoding library
 
 DISTNAME=	xine-lib-1.2.8
-REVISION=	2
+REVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	https://xine-lib.alioth.debian.org/releases/
 EXTRACT_SUFX=	.tar.xz
@@ -23,7 +23,7 @@ WANTLIB += Xau Xdamage Xdmcp Xext Xfixes Xinerama Xv XvMCW Xxf86vm
 WANTLIB += avcodec avformat avutil bluray bz2 c cdio crypto drm
 WANTLIB += dvdnav dvdread execinfo expat fontconfig freetype glapi
 WANTLIB += gsm iconv intl iso9660 jpeg lcms lzma m mng modplug
-WANTLIB += mp3lame mpcdec ogg opus postproc pthread-stubs sndio
+WANTLIB += mp3lame mpcdec ogg opus postproc sndio
 WANTLIB += speex ssl swresample theora usbhid v4l2 v4lconvert
 WANTLIB += vcdinfo vorbis vorbisenc vpx x264 x265 xcb xcb-dri2
 WANTLIB += xcb-glx xcb-shape xcb-shm xcb-xv xdg-basedir xml2 xvidcore

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2015/12/08 00:26:28 bentley Exp $
+# $OpenBSD: Makefile,v 1.19 2017/10/23 17:10:49 sthen Exp $
 
 COMMENT=	build molecules out of single atoms
 
 DISTNAME=	atomix-2.14.0
-REVISION=	10
+REVISION=	11
 CATEGORIES=	games
 EXTRACT_SUFX=	.tar.bz2
 
@@ -21,7 +21,7 @@ WANTLIB += fontconfig freetype gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gnome-2 gnomecanvas-2
 WANTLIB += gnomeui-2 gnomevfs-2 gobject-2.0 gthread-2.0 gtk-x11-2.0
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
-WANTLIB += popt pthread pthread-stubs xcb xcb-render xcb-shm xml2
+WANTLIB += popt pthread xcb xcb-render xcb-shm xml2
 WANTLIB += z
 
 MODULES=	textproc/intltool \

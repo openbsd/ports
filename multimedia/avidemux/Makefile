@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2017/09/29 16:48:50 jca Exp $
+# $OpenBSD: Makefile,v 1.56 2017/10/23 17:10:51 sthen Exp $
 
 # XXX base clang says: i386/fft_sse.c:172:43: error: unknown token in expression
 COMPILER=	base-gcc
@@ -9,7 +9,7 @@ V=		2.4.4
 DISTNAME=	avidemux_${V}
 PKGNAME=	avidemux-${V}
 
-REVISION=	19
+REVISION=	20
 
 CATEGORIES=	multimedia
 
@@ -24,7 +24,7 @@ WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xv atk-1.0 c cairo
 WANTLIB += expat fontconfig freetype gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 gthread-2.0 m ogg pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs sndio
+WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread sndio
 WANTLIB += ${COMPILER_LIBCXX} xcb xcb-render xcb-shm z gdk_pixbuf-2.0 gdk-x11-2.0
 WANTLIB += gtk-x11-2.0 faad mp3lame vorbis vorbisenc xml2 xvidcore
 WANTLIB += ffi harfbuzz graphite2 lzma

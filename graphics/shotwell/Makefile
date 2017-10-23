@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.84 2017/09/23 11:41:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.85 2017/10/23 17:10:51 sthen Exp $
 
 COMMENT =		digital photo organizer
 
 GNOME_VERSION =		0.26.3
 GNOME_PROJECT =		shotwell
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		graphics
 
@@ -30,7 +30,7 @@ WANTLIB += harfbuzz-icu hyphen iconv icudata icui18n icuuc intl
 WANTLIB += jasper javascriptcoregtk-4.0 jpeg json-glib-1.0 lcms2
 WANTLIB += ltdl lzma m nghttp2 notify nspr4 nss3 oauth orc-0.4
 WANTLIB += p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
-WANTLIB += pixman-1 plc4 plds4 png pthread pthread-stubs raw secret-1
+WANTLIB += pixman-1 plc4 plds4 png pthread raw secret-1
 WANTLIB += smime3 softokn3 soup-2.4 sqlite3 ssl ssl3 ${LIBECXX} webkit2gtk-4.0
 WANTLIB += webp xcb xcb-dri2 xcb-glx xcb-render xcb-shm xcb-xfixes
 WANTLIB += xml2 xslt z

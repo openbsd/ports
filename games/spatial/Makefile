@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2015/01/22 18:41:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2017/10/23 17:10:49 sthen Exp $
 
 COMMENT=	3d tetris
 
 DISTNAME=	threedee
 PKGNAME=	spatial-1.0.1
-REVISION =	1
+REVISION =	2
 CATEGORIES=	games
 
 EXTRACT_SUFX=	.tar.Z
@@ -24,6 +24,6 @@ do-install:
 	${INSTALL_DATA} ${WRKBUILD}/spatial.shp ${PREFIX}/share/spatial/spatial.shp
 
 NO_TEST=	Yes
-WANTLIB=	X11 c m pthread-stubs xcb
+WANTLIB=	X11 c m xcb
 
 .include <bsd.port.mk>

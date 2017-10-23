@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2017/07/26 22:45:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2017/10/23 17:10:51 sthen Exp $
 
 COMMENT=	scim input method module for chewing
 
 DISTNAME=	scim-chewing-0.3.4
-REVISION=	5
+REVISION=	6
 
 CATEGORIES=	inputmethods chinese
 
@@ -17,7 +17,7 @@ WANTLIB+= Xinerama Xrandr Xrender Xxf86vm atk-1.0 cairo chewing drm
 WANTLIB+= expat ffi fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB+= gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
 WANTLIB+= gtk-x11-2.0 harfbuzz m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB+= pcre pixman-1 png pthread-stubs pthread scim-1.0
+WANTLIB+= pcre pixman-1 png pthread scim-1.0
 WANTLIB+= scim-gtkutils-1.0 scim-x11utils-1.0 ${COMPILER_LIBCXX} xcb xcb-render
 WANTLIB+= xcb-shm z
 

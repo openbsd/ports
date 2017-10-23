@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2015/03/27 08:11:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2017/10/23 17:10:50 sthen Exp $
 
 COMMENT =	Openstreetmap editor for handheld devices
 
 VERSION =	0.8.3
 DISTNAME =	osm2go_${VERSION}-maemo1
 PKGNAME =	osm2go-${VERSION}
-REVISION =	2
+REVISION =	3
 
 WRKDIST =	${WRKDIR}/osm2go-${VERSION}
 CATEGORIES =	geo x11
@@ -38,7 +38,7 @@ WANTLIB += c cairo curl expat fontconfig freetype gdk-x11-2.0
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gnome-2
 WANTLIB += gnomevfs-2 gobject-2.0 goocanvas gthread-2.0 gtk-x11-2.0
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
-WANTLIB += popt pthread pthread-stubs soup-2.4 xcb xcb-render
+WANTLIB += popt pthread soup-2.4 xcb xcb-render
 WANTLIB += xcb-shm xml2 z
 
 pre-configure:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2014/12/12 19:50:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.29 2017/10/23 17:10:51 sthen Exp $
 
 # crashes & hangs on anything but i386
 ONLY_FOR_ARCHS=	i386
@@ -7,7 +7,7 @@ COMMENT=	programming language with generators, X11 graphics and more
 
 CATEGORIES=	lang
 DISTNAME=	unicon-10.0beta
-REVISION=	1
+REVISION=	2
 DISTFILES=	uni.zip
 
 HOMEPAGE=	http://unicon.sourceforge.net/
@@ -18,7 +18,7 @@ MAINTAINER=	Marc Espie <espie@openbsd.org>
 # GPL
 PERMIT_PACKAGE_CDROM= Yes
 
-WANTLIB=	X11 Xpm c gdbm m pthread-stubs xcb
+WANTLIB=	X11 Xpm c gdbm m xcb
 
 WRKDIST=	${WRKDIR}
 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2017/07/26 22:45:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2017/10/23 17:10:51 sthen Exp $
 
 COMMENT =	tool for working with RAW images
 
 DISTNAME =	rawstudio-1.2
-REVISION =	13
+REVISION =	14
 
 CATEGORIES =	graphics
 
@@ -24,7 +24,7 @@ WANTLIB += Xrandr Xrender atk-1.0 c cairo dbus-1 exiv2 expat fontconfig
 WANTLIB += freetype gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0
 WANTLIB += jpeg lcms m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1
-WANTLIB += png pthread pthread-stubs ${COMPILER_LIBCXX} tiff xcb xcb-render
+WANTLIB += png pthread ${COMPILER_LIBCXX} tiff xcb xcb-render
 WANTLIB += xcb-shm xml2 z
 
 MODULES =	devel/gettext

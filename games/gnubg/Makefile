@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/11/04 11:35:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2017/10/23 17:10:49 sthen Exp $
 
 COMMENT =		GNU Backgammon
 V =			1.05.002
@@ -6,7 +6,7 @@ DISTNAME =		gnubg-release-$V-sources
 PKGNAME =		gnubg-$V
 CATEGORIES =		games x11
 HOMEPAGE =		http://gnubg.org/
-REVISION =		0
+REVISION =		1
 
 MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
 
@@ -22,7 +22,7 @@ WANTLIB += gdkglext-x11-1.0 gio-2.0 glapi glib-2.0 gmodule-2.0 gmp
 WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-x11-2.0
 WANTLIB += gtkglext-x11-1.0 harfbuzz iconv intl ltdl m ncurses nghttp2
 WANTLIB += ogg pango-1.0 pangocairo-1.0 pangoft2-1.0 pangox-1.0 pcre
-WANTLIB += pixman-1 png pthread pthread-stubs readline sqlite3 ssl util
+WANTLIB += pixman-1 png pthread readline sqlite3 ssl util
 WANTLIB += vorbis vorbisfile xcb xcb-dri2 xcb-glx xcb-render xcb-shm z
 
 MASTER_SITES =		http://gnubg.org/media/sources/

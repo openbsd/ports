@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.18 2013/10/11 21:20:56 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2017/10/23 17:10:50 sthen Exp $
 
 DISTNAME=	xscavenger-1.4.4
-REVISION =	2
+REVISION =	3
 EXTRACT_SUFX=	.tgz
 CATEGORIES=	games
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	X11 Xau Xdmcp Xext c pthread-stubs sndio xcb
+WANTLIB=	X11 Xau Xdmcp Xext c sndio xcb
 
 COMMENT=	Lode Runner clone
 HOMEPAGE=	http://www.xdr.com/dash/scavenger.html

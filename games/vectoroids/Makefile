@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2015/06/16 07:20:20 bentley Exp $
+# $OpenBSD: Makefile,v 1.15 2017/10/23 17:10:50 sthen Exp $
 
 COMMENT=	vector-based, pretty, Asteroids clone
 
 VERSION=	1.1.0
 DISTNAME=	vectoroids-${VERSION}
-REVISION =	0
+REVISION =	1
 CATEGORIES=	games x11
 
 HOMEPAGE=	http://www.newbreedsoftware.com/vectoroids/
@@ -12,7 +12,7 @@ HOMEPAGE=	http://www.newbreedsoftware.com/vectoroids/
 # GPL
 PERMIT_PACKAGE_CDROM=   Yes
 
-WANTLIB=	X11 Xext c m pthread pthread-stubs usbhid xcb \
+WANTLIB=	X11 Xext c m pthread usbhid xcb \
 		SDL SDL_mixer SDL_image
 
 MASTER_SITES=	ftp://ftp.tuxpaint.org/unix/x/vectoroids/src/

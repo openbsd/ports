@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.28 2013/10/11 23:49:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.29 2017/10/23 17:10:50 sthen Exp $
 
 COMMENT=	save your computers from the evil clutches of Bill
 
 DISTNAME=	xbill-2.1
-REVISION =	1
+REVISION =	2
 CATEGORIES=	games x11
 
 HOMEPAGE=	http://www.xbill.org/
@@ -13,7 +13,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=	${HOMEPAGE}/download/
 
-WANTLIB=	ICE SM X11 Xaw Xmu Xpm Xt c pthread-stubs xcb
+WANTLIB=	ICE SM X11 Xaw Xmu Xpm Xt c xcb
 
 CONFIGURE_STYLE=simple
 CONFIGURE_ARGS=	--with-x \
