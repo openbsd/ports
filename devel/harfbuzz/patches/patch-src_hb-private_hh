@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_hb-private_hh,v 1.1 2017/10/23 15:04:35 ajacoutot Exp $
+
+From 2ee710e02fad1a8a4b94589bb6f0b90e2aeb7121 Mon Sep 17 00:00:00 2001
+From: Behdad Esfahbod <behdad@behdad.org>
+Date: Mon, 23 Oct 2017 08:37:48 -0400
+Subject: Minor
+
+Index: src/hb-private.hh
+--- src/hb-private.hh.orig
++++ src/hb-private.hh
+@@ -340,7 +340,7 @@ _hb_popcount64 (uint64_t mask)
+   if (sizeof (long) >= sizeof (mask))
+     return __builtin_popcountl (mask);
+ #endif
+-  return _hb_popcount32 (mask) + _hb_popcount32 (mask >> 32);
++  return _hb_popcount32 (mask & 0xFFFFFFFF) + _hb_popcount32 (mask >> 32);
+ }
+ template <typename T> static inline unsigned int _hb_popcount (T mask);
+ template <> inline unsigned int _hb_popcount<uint32_t> (uint32_t mask) { return _hb_popcount32 (mask); }

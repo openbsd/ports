@@ -1,0 +1,125 @@
+$OpenBSD: patch-src_hb-set-private_hh,v 1.1 2017/10/23 15:04:35 ajacoutot Exp $
+
+From 8b9d9b71b04c9d5698ec146658b31381060c700d Mon Sep 17 00:00:00 2001
+From: Behdad Esfahbod <behdad@behdad.org>
+Date: Sun, 22 Oct 2017 17:48:06 -0400
+Subject: Fix set initialization issues
+
+From d0f0ff85b9fe959ef4b90f8daf58be73fca49dd0 Mon Sep 17 00:00:00 2001
+From: Behdad Esfahbod <behdad@behdad.org>
+Date: Mon, 23 Oct 2017 08:34:30 -0400
+Subject: [set] Don't use PAGE_SIZE
+
+From dd33e4e96b9345a6b1a9051a6aa4b7d114c74f1e Mon Sep 17 00:00:00 2001
+From: Behdad Esfahbod <behdad@behdad.org>
+Date: Mon, 23 Oct 2017 08:36:40 -0400
+Subject: [set] Don't use major()
+
+Index: src/hb-set-private.hh
+--- src/hb-set-private.hh.orig
++++ src/hb-set-private.hh
+@@ -156,6 +156,7 @@ struct hb_set_t
+     elt_t const &elt (hb_codepoint_t g) const { return v[(g & MASK) / ELT_BITS]; }
+     elt_t mask (hb_codepoint_t g) const { return elt_t (1) << (g & ELT_MASK); }
+   };
++  static_assert (page_t::PAGE_BITS == sizeof (page_t) * 8, "");
+ 
+   hb_object_header_t header;
+   ASSERT_POD ();
+@@ -175,15 +176,6 @@ struct hb_set_t
+     return true;
+   }
+ 
+-  inline void init (void) {
+-    hb_object_init (this);
+-    page_map.init ();
+-    pages.init ();
+-  }
+-  inline void fini (void) {
+-    page_map.finish ();
+-    pages.finish ();
+-  }
+   inline void clear (void) {
+     if (unlikely (hb_object_is_inert (this)))
+       return;
+@@ -369,14 +361,14 @@ struct hb_set_t
+       return *codepoint != INVALID;
+     }
+ 
+-    page_map_t map = {major (*codepoint), 0};
++    page_map_t map = {get_major (*codepoint), 0};
+     unsigned int i;
+     page_map.bfind (&map, &i);
+     if (i < page_map.len)
+     {
+       if (pages[page_map[i].index].next (codepoint))
+       {
+-	*codepoint += page_map[i].major * PAGE_SIZE;
++	*codepoint += page_map[i].major * page_t::PAGE_BITS;
+         return true;
+       }
+       i++;
+@@ -386,7 +378,7 @@ struct hb_set_t
+       hb_codepoint_t m = pages[page_map[i].index].get_min ();
+       if (m != INVALID)
+       {
+-	*codepoint = page_map[i].major * PAGE_SIZE + m;
++	*codepoint = page_map[i].major * page_t::PAGE_BITS + m;
+ 	return true;
+       }
+     }
+@@ -424,7 +416,7 @@ struct hb_set_t
+     unsigned int count = pages.len;
+     for (unsigned int i = 0; i < count; i++)
+       if (!page_at (i).is_empty ())
+-        return page_map[i].major * PAGE_SIZE + page_at (i).get_min ();
++        return page_map[i].major * page_t::PAGE_BITS + page_at (i).get_min ();
+     return INVALID;
+   }
+   inline hb_codepoint_t get_max (void) const
+@@ -432,16 +424,15 @@ struct hb_set_t
+     unsigned int count = pages.len;
+     for (int i = count - 1; i >= 0; i++)
+       if (!page_at (i).is_empty ())
+-        return page_map[i].major * PAGE_SIZE + page_at (i).get_max ();
++        return page_map[i].major * page_t::PAGE_BITS + page_at (i).get_max ();
+     return INVALID;
+   }
+ 
+-  static const unsigned int PAGE_SIZE = sizeof (page_t) * 8;
+   static  const hb_codepoint_t INVALID = HB_SET_VALUE_INVALID;
+ 
+   page_t *page_for_insert (hb_codepoint_t g)
+   {
+-    page_map_t map = {major (g), pages.len};
++    page_map_t map = {get_major (g), pages.len};
+     unsigned int i;
+     if (!page_map.bfind (&map, &i))
+     {
+@@ -456,7 +447,7 @@ struct hb_set_t
+   }
+   page_t *page_for (hb_codepoint_t g)
+   {
+-    page_map_t key = {major (g)};
++    page_map_t key = {get_major (g)};
+     const page_map_t *found = page_map.bsearch (&key);
+     if (found)
+       return &pages[found->index];
+@@ -464,7 +455,7 @@ struct hb_set_t
+   }
+   const page_t *page_for (hb_codepoint_t g) const
+   {
+-    page_map_t key = {major (g)};
++    page_map_t key = {get_major (g)};
+     const page_map_t *found = page_map.bsearch (&key);
+     if (found)
+       return &pages[found->index];
+@@ -472,7 +463,7 @@ struct hb_set_t
+   }
+   page_t &page_at (unsigned int i) { return pages[page_map[i].index]; }
+   const page_t &page_at (unsigned int i) const { return pages[page_map[i].index]; }
+-  unsigned int major (hb_codepoint_t g) const { return g / PAGE_SIZE; }
++  unsigned int get_major (hb_codepoint_t g) const { return g / page_t::PAGE_BITS; }
+ };
+ 
+ 

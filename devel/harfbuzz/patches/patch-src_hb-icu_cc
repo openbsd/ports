@@ -1,0 +1,26 @@
+$OpenBSD: patch-src_hb-icu_cc,v 1.1 2017/10/23 15:04:35 ajacoutot Exp $
+
+From ce979454400c3870717ba40b1065a2f3727cfb93 Mon Sep 17 00:00:00 2001
+From: Behdad Esfahbod <behdad@behdad.org>
+Date: Sun, 22 Oct 2017 18:23:38 -0400
+Subject: [icu] Fix error check
+
+Index: src/hb-icu.cc
+--- src/hb-icu.cc.orig
++++ src/hb-icu.cc
+@@ -332,13 +332,13 @@ hb_icu_unicode_decompose_compatibility (hb_unicode_fun
+   /* Normalise the codepoint using NFKD mode. */
+   icu_err = U_ZERO_ERROR;
+   len = unorm2_normalize (unorm2_getNFKDInstance (&icu_err), utf16, len, normalized, ARRAY_LENGTH (normalized), &icu_err);
+-  if (icu_err)
++  if (U_FAILURE (icu_err))
+     return 0;
+ 
+   /* Convert the decomposed form from UTF-16 to UTF-32. */
+   icu_err = U_ZERO_ERROR;
+   u_strToUTF32 ((UChar32*) decomposed, HB_UNICODE_MAX_DECOMPOSITION_LEN, &utf32_len, normalized, len, &icu_err);
+-  if (icu_err)
++  if (U_FAILURE (icu_err))
+     return 0;
+ 
+   return utf32_len;
