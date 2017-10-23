@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.6 2015/04/05 13:31:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2017/10/23 17:59:18 jturner Exp $
 
 COMMENT =		POP3 daemon with POP3S and STARTTLS extensions
 
-VERSION =		1.0.1
+VERSION =		1.0.2
 GH_ACCOUNT =		snimmagadda
 GH_PROJECT =		pop3d
 GH_TAGNAME =		v${VERSION}
 DISTNAME =		${GH_PROJECT}-${VERSION}
-REVISION =		0
 CATEGORIES =		mail
 
 MAINTAINER =		James Turner <james@calminferno.net>
