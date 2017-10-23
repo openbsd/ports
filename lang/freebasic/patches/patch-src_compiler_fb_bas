@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_compiler_fb_bas,v 1.1.1.1 2017/10/23 21:46:58 bcallah Exp $
+
+Keep bootstrap tendrils: default to AT&T asm syntax.
+
+Index: src/compiler/fb.bas
+--- src/compiler/fb.bas.orig
++++ src/compiler/fb.bas
+@@ -430,7 +430,7 @@ sub fbGlobalInit()
+ 	env.clopt.fpmode        = FB_DEFAULT_FPMODE
+ 	env.clopt.vectorize     = FB_DEFAULT_VECTORIZELEVEL
+ 	env.clopt.optlevel      = 0
+-	env.clopt.asmsyntax     = FB_ASMSYNTAX_INTEL
++	env.clopt.asmsyntax     = FB_ASMSYNTAX_ATT
+ 
+ 	env.clopt.lang          = FB_DEFAULT_LANG
+ 	env.clopt.forcelang     = FALSE

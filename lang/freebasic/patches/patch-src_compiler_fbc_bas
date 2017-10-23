@@ -1,0 +1,63 @@
+$OpenBSD: patch-src_compiler_fbc_bas,v 1.1.1.1 2017/10/23 21:46:58 bcallah Exp $
+
+Keep bootstrap tendrils: set egcc as the compiler, set default backend
+to gcc, set default assembly to AT&T (gas).
+
+Index: src/compiler/fbc.bas
+--- src/compiler/fbc.bas.orig
++++ src/compiler/fbc.bas
+@@ -125,7 +125,7 @@ end enum
+ 
+ static shared as zstring * 8 toolnames(0 to FBCTOOL__COUNT-1) = _
+ { _
+-	"as", "ar", "ld", "gcc", "llc", "dlltool", "GoRC", "windres", "cxbe" _
++	"as", "ar", "ld", "egcc", "llc", "dlltool", "GoRC", "windres", "cxbe" _
+ }
+ 
+ declare sub fbcFindBin _
+@@ -149,6 +149,10 @@ declare function fbcRunBin _
+ 
+ dim shared as FBCCTX fbc
+ 
++'' Just set this now.
++fbc.prefix = pathStripDiv("${TRUEPREFIX}")
++hReplaceSlash( fbc.prefix, asc( FB_HOST_PATHDIV ) )
++
+ private sub fbcInit( )
+ 	const FBC_INITFILES = 64
+ 
+@@ -2189,11 +2193,7 @@ private sub hParseArgs( byval argc as integer, byval a
+ 	'' or cross-compiling. Even on a 64bit x86_64 host where
+ 	'' FB_DEFAULT_BACKEND is -gen gcc, we still prefer using -gen gas when
+ 	'' cross-compiling to 32bit x86.
+-	if( fbGetCpuFamily( ) = FB_CPUFAMILY_X86 ) then
+-		fbSetOption( FB_COMPOPT_BACKEND, FB_BACKEND_GAS )
+-	else
+-		fbSetOption( FB_COMPOPT_BACKEND, FB_BACKEND_GCC )
+-	end if
++	fbSetOption( FB_COMPOPT_BACKEND, FB_BACKEND_GCC )
+ 
+ 	'' 6. -gen overrides any other backend setting.
+ 	if( fbc.backend >= 0 ) then
+@@ -2803,8 +2803,8 @@ private function hCompileStage2Module( byval module as
+ 
+ 		select case( fbGetCpuFamily( ) )
+ 		case FB_CPUFAMILY_X86, FB_CPUFAMILY_X86_64
+-			if( fbGetOption( FB_COMPOPT_ASMSYNTAX ) = FB_ASMSYNTAX_INTEL ) then
+-				ln += "-masm=intel "
++			if( fbGetOption( FB_COMPOPT_ASMSYNTAX ) = FB_ASMSYNTAX_ATT ) then
++				ln += "-masm=att "
+ 			end if
+ 		end select
+ 
+@@ -2828,8 +2828,8 @@ private function hCompileStage2Module( byval module as
+ 
+ 		select case( fbGetCpuFamily( ) )
+ 		case FB_CPUFAMILY_X86, FB_CPUFAMILY_X86_64
+-			if( fbGetOption( FB_COMPOPT_ASMSYNTAX ) = FB_ASMSYNTAX_INTEL ) then
+-				ln += "--x86-asm-syntax=intel "
++			if( fbGetOption( FB_COMPOPT_ASMSYNTAX ) = FB_ASMSYNTAX_ATT ) then
++				ln += "--x86-asm-syntax=att "
+ 			end if
+ 		end select
+ 

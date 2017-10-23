@@ -1,0 +1,16 @@
+$OpenBSD: patch-bootstrap_openbsd-x86_fbc_c,v 1.1.1.1 2017/10/23 21:46:58 bcallah Exp $
+
+This goes away next update.
+
+Index: bootstrap/openbsd-x86/fbc.c
+--- bootstrap/openbsd-x86/fbc.c.orig
++++ bootstrap/openbsd-x86/fbc.c
+@@ -282,7 +282,7 @@ static void HPRINTOPTIONS( void );
+ static void HPRINTVERSION( void );
+ static void _GLOBAL__I( void ) __attribute__(( constructor ));
+ static void _GLOBAL__D( void ) __attribute__(( destructor ));
+-static uint8 TOOLNAMES$[9][8] = { "as", "ar", "ld", "cc", "llc", "dlltool", "GoRC", "windres", "cxbe" };
++static uint8 TOOLNAMES$[9][8] = { "as", "ar", "ld", "egcc", "llc", "dlltool", "GoRC", "windres", "cxbe" };
+ static struct $6FBCCTX FBC$;
+ struct $11FBGNUOSINFO {
+ 	uint8* GNUID;
