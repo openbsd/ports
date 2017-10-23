@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.150 2017/05/26 18:58:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.151 2017/10/23 17:11:04 sthen Exp $
 
 COMMENT=		official media player for GNOME
 
 GNOME_PROJECT=		totem
 GNOME_VERSION=		3.24.0
+REVISION=		0
 
 SHARED_LIBS +=  totem                0.0      # unknown
 
@@ -24,7 +25,7 @@ WANTLIB += gstaudio-1.0 gstbase-1.0 gstpbutils-1.0 gstreamer-1.0
 WANTLIB += gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3 harfbuzz
 WANTLIB += iconv intl json-glib-1.0 lz4 lzma m nautilus-extension
 WANTLIB += orc-0.4 pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
-WANTLIB += peas-1.0 peas-gtk-1.0 pixman-1 png pthread pthread-stubs
+WANTLIB += peas-1.0 peas-gtk-1.0 pixman-1 png pthread
 WANTLIB += soup-2.4 sqlite3 totem-plparser xcb xcb-dri2 xcb-render
 WANTLIB += xcb-shm xcb-xfixes xml2 z assuan gpgme-pthread
 

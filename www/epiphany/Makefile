@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.160 2017/09/23 11:41:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.161 2017/10/23 17:11:03 sthen Exp $
 
 COMMENT=	GNOME web browser based on webkit
 
@@ -6,7 +6,7 @@ GNOME_PROJECT=	epiphany
 GNOME_VERSION=	3.24.4
 MAJOR_V=	${GNOME_VERSION:R}
 SUBST_VARS=	MAJOR_V
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	www
 
@@ -28,7 +28,7 @@ WANTLIB += gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3 harfbuzz
 WANTLIB += harfbuzz-icu hyphen iconv icudata icui18n icuuc intl
 WANTLIB += javascriptcoregtk-4.0 jpeg lzma m notify orc-0.4 p11-kit
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png pthread pthread-stubs secret-1 soup-2.4 sqlite3
+WANTLIB += png pthread secret-1 soup-2.4 sqlite3
 WANTLIB += webkit2gtk-4.0 webp xcb xcb-dri2 xcb-glx xcb-render
 WANTLIB += xcb-shm xcb-xfixes xml2 xslt z json-glib-1.0
 WANTLIB += GLESv2 gstallocators-1.0 gstbadallocators-1.0 gstgl-1.0

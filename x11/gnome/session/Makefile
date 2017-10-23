@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.265 2017/09/15 13:09:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.266 2017/10/23 17:11:04 sthen Exp $
 
 COMMENT=		GNOME session
 
 GNOME_PROJECT=		gnome-session
 GNOME_VERSION=		3.24.2
+REVISION=		0
 
 CATEGORIES=		x11
 
@@ -18,7 +19,7 @@ WANTLIB += freetype gbm gconf-2 gdk-3 gdk_pixbuf-2.0 gio-2.0 glapi
 WANTLIB += glib-2.0 gmodule-2.0 gnome-desktop-3 gobject-2.0 graphite2
 WANTLIB += gthread-2.0 gtk-3 harfbuzz iconv intl json-glib-1.0
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png pthread pthread-stubs xcb xcb-dri2 xcb-glx xcb-render
+WANTLIB += png pthread xcb xcb-dri2 xcb-glx xcb-render
 WANTLIB += xcb-shm xcb-xfixes z
 
 MODULES=		devel/dconf \

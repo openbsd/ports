@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.126 2017/09/15 19:52:26 kili Exp $
+# $OpenBSD: Makefile,v 1.127 2017/10/23 17:11:02 sthen Exp $
 
 COMMENT-main=	PDF rendering library
 COMMENT-qt4=	qt4 interface to PDF rendering library
@@ -12,6 +12,10 @@ PKGNAME-main=	poppler-$V
 PKGNAME-utils=	poppler-utils-$V
 PKGNAME-qt4=	poppler-qt4-$V
 PKGNAME-qt5=	poppler-qt5-$V
+REVISION-main=	1
+REVISION-qt4=	1
+REVISION-qt5=	1
+REVISION-utils=	1
 
 EXTRACT_SUFX=	.tar.xz
 
@@ -84,23 +88,23 @@ LIB_DEPENDS-utils= print/poppler
 
 WANTLIB-main=	${cWANTLIB} Xext ffi gio-2.0 glib-2.0 gmodule-2.0 \
 		gobject-2.0 pixman-1 openjp2 X11 Xrender cairo pcre \
-		png pthread-stubs xcb xcb-render lcms2 xcb-shm \
+		png xcb xcb-render lcms2 xcb-shm \
 		iconv intl ${COMPILER_LIBCXX}
 
 WANTLIB-qt4=    ${cWANTLIB} ${MODQT4_WANTLIB} ICE QtCore QtGui QtXml \
 		SM X11 Xext Xi Xinerama Xrender ffi glib-2.0 \
 		gobject-2.0 gthread-2.0 iconv intl lcms2 openjp2 \
-		png poppler pcre pthread-stubs ${COMPILER_LIBCXX} xcb
+		png poppler pcre ${COMPILER_LIBCXX} xcb
 
 WANTLIB-qt5=	${cWANTLIB} $(COMPILER_LIBCXX) \
 		GL Qt5Core Qt5Gui Qt5Widgets Qt5Xml X11 X11-xcb \
 		Xdamage Xext Xfixes Xxf86vm drm execinfo glapi \
 		glib-2.0 graphite2 gthread-2.0 harfbuzz \
 		iconv icudata icui18n icuuc intl lcms2 openjp2 pcre \
-		pcre2-16 png poppler pthread-stubs xcb xcb-dri2 xcb-glx
+		pcre2-16 png poppler xcb xcb-dri2 xcb-glx
 
 WANTLIB-utils=	X11 Xext Xrender c cairo fontconfig lcms2 m pixman-1 \
-		png pthread-stubs ${COMPILER_LIBCXX} xcb xcb-render xcb-shm openjp2 \
+		png ${COMPILER_LIBCXX} xcb xcb-render xcb-shm openjp2 \
 		poppler z ${cWANTLIB}
 
 CONFIGURE_STYLE=autoconf

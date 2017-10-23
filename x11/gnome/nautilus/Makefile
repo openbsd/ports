@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.174 2017/07/18 07:27:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.175 2017/10/23 17:11:04 sthen Exp $
 
 TRACKER_API=		1.0
 
@@ -6,6 +6,7 @@ COMMENT=		GNOME file manager
 
 GNOME_PROJECT=		nautilus
 GNOME_VERSION=		3.24.2.1
+REVISION=		0
 
 SHARED_LIBS +=  nautilus-extension   3.0      # 5.0
 
@@ -22,7 +23,7 @@ WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gnome-autoar-0
 WANTLIB += gnome-desktop-3 gobject-2.0 graphite2 gthread-2.0 gtk-3
 WANTLIB += harfbuzz iconv icudata icui18n icuuc intl json-glib-1.0
 WANTLIB += kvm lz4 lzma m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png pthread pthread-stubs soup-2.4 sqlite3
+WANTLIB += pcre pixman-1 png pthread soup-2.4 sqlite3
 WANTLIB += uuid xcb xcb-render xcb-shm xml2 z
 WANTLIB += tracker-sparql-${TRACKER_API}
 WANTLIB += lib/tracker-${TRACKER_API}/tracker-data

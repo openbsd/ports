@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2017/05/17 23:21:55 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2017/10/23 17:11:02 sthen Exp $
 
 COMMENT-main =	graphical tools for the MetaGeek Wi-spy spectrum analyser
 COMMENT-utils =	tools for the MetaGeek Wi-spy spectrum analyser
@@ -10,7 +10,7 @@ PKGNAME =	spectrum-tools-$V
 FULLPKGNAME-main =  spectrum-tools-${V:S/-//g}
 FULLPKGNAME-utils = spectrum-tools-utils-${V:S/-//g}
 
-REVISION-main=	1
+REVISION-main=	2
 REVISION-utils= 0
 
 CATEGORIES =	net
@@ -32,7 +32,7 @@ WANTLIB-main =	${cWANTLIB} ${MODGETTEXT_WANTLIB} \
 		Xi Xinerama Xrandr Xrender atk-1.0 cairo expat \
 		fontconfig freetype gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 \
 		pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 \
-		png pthread-stubs xcb z gdk_pixbuf-2.0 gdk-x11-2.0 \
+		png xcb z gdk_pixbuf-2.0 gdk-x11-2.0 \
 		gtk-x11-2.0 gthread-2.0 xcb-render xcb-shm
 
 WANTLIB-utils =	${cWANTLIB} ncurses

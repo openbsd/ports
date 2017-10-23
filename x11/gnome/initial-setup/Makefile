@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.40 2017/09/23 11:41:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.41 2017/10/23 17:11:04 sthen Exp $
 
 COMMENT=		initial-setup firstboot-like tool
 
 GNOME_PROJECT=		gnome-initial-setup
 GNOME_VERSION=		3.24.2
-REVISION=		1
+REVISION=		2
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -22,7 +22,7 @@ WANTLIB += gstvideo-1.0 gthread-2.0 gtk-3 gweather-3 harfbuzz
 WANTLIB += harfbuzz-icu hyphen ibus-1.0 iconv icudata icui18n
 WANTLIB += icuuc intl javascriptcoregtk-4.0 jpeg json-glib-1.0
 WANTLIB += lzma m notify orc-0.4 pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png polkit-gobject-1 pthread-stubs pwquality
+WANTLIB += pcre pixman-1 png polkit-gobject-1 pwquality
 WANTLIB += rest-0.7 secret-1 soup-2.4 soup-gnome-2.4 sqlite3 telepathy-glib
 WANTLIB += webkit2gtk-4.0 webp xcb xcb-dri2 xcb-glx xcb-render
 WANTLIB += xcb-shm xcb-xfixes xml2 xslt z

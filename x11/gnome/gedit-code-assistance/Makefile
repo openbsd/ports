@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.33 2017/04/13 07:38:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2017/10/23 17:11:04 sthen Exp $
 
 COMMENT=	code assistance for Gedit
 
 GNOME_PROJECT=	gedit-code-assistance
 GNOME_VERSION=	3.16.0
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	editors devel
 
@@ -18,7 +18,7 @@ WANTLIB += freetype gdk-3 gdk_pixbuf-2.0 gee-0.8 gio-2.0 girepository-1.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
 WANTLIB += gtk-3 gtksourceview-3.0 harfbuzz epoxy
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre peas-1.0
-WANTLIB += peas-gtk-1.0 pixman-1 png pthread pthread-stubs
+WANTLIB += peas-gtk-1.0 pixman-1 png pthread
 WANTLIB += xcb xcb-render xcb-shm xml2 z lzma iconv intl
 
 MODULES=	x11/gnome

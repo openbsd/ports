@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2015/06/23 07:48:11 bentley Exp $
+# $OpenBSD: Makefile,v 1.32 2017/10/23 17:11:02 sthen Exp $
 
 COMMENT=	clone of the Plan9 editor 'acme'
 
@@ -10,12 +10,13 @@ CATEGORIES=	plan9 editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=wily/} \
 		ftp://ftp.cs.yorku.ca/pub/wily/src/old/ \
 		ftp://ftp.cs.yorku.ca/pub/wily/src/
+REVISION=	0
 
 HOMEPAGE=	http://www.cs.yorku.ca/~oz/wily/
 
 # BSD licence
 PERMIT_PACKAGE_CDROM=	Yes
-WANTLIB=		ICE SM X11 Xg Xt c frame m plan9c pthread-stubs xcb
+WANTLIB=		ICE SM X11 Xg Xt c frame m plan9c xcb
 
 LIB_DEPENDS=		plan9/9libs
 

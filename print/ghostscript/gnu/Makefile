@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.110 2017/10/17 13:00:57 stsp Exp $
+# $OpenBSD: Makefile,v 1.111 2017/10/23 17:11:02 sthen Exp $
 
 COMMENT=	GNU PostScript interpreter
 
@@ -6,7 +6,7 @@ VERSION=	9.07
 DISTNAME=	ghostscript-${VERSION}
 CATEGORIES=	print lang
 SHARED_LIBS=	gs	15.0
-REVISION=	5
+REVISION=	6
 
 MASTER_SITES=	http://downloads.ghostscript.com/public/
 
@@ -108,7 +108,7 @@ WANTLIB+=	GL Xcomposite Xcursor Xdamage Xfixes Xi Xinerama
 WANTLIB+=	Xrandr Xrender atk-1.0 cairo expat fontconfig freetype
 WANTLIB+=	gdk-x11-2.0>=1000 gdk_pixbuf-2.0>=1000 gio-2.0 glib-2.0
 WANTLIB+=	gobject-2.0 gtk-x11-2.0>=1000
-WANTLIB+=	pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 pthread-stubs
+WANTLIB+=	pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1
 WANTLIB+=	xcb xcb-render xcb-shm
 WANTLIB+=	${MODGETTEXT_WANTLIB}
 SOC_CFLAGS=	$$(pkg-config gtk+-2.0 --cflags)

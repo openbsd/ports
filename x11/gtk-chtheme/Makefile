@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2015/04/21 18:13:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2017/10/23 17:11:05 sthen Exp $
 
 COMMENT=		gtk+-2 theme switcher
 
 DISTNAME=		gtk-chtheme-0.3.1
-REVISION=		9
+REVISION=		10
 CATEGORIES=		x11 graphics
 
 HOMEPAGE=		http://plasmasturm.org/programs/gtk-chtheme/
@@ -22,7 +22,7 @@ WANTLIB += Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig
 WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 gtk-x11-2.0 m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pixman-1 png pthread
-WANTLIB += pthread-stubs xcb z
+WANTLIB += xcb z
 
 LIB_DEPENDS=		devel/glib2 \
 			devel/pango \

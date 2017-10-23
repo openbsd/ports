@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2017/07/26 22:45:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2017/10/23 17:11:04 sthen Exp $
 
 COMMENT=		GTK+ Text Editor Framework
 
 GNOME_PROJECT=		gtef
 GNOME_VERSION=		2.0.1
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		devel editors
 
@@ -19,7 +19,7 @@ WANTLIB += cairo cairo-gobject dbus-1 epoxy expat ffi fontconfig
 WANTLIB += freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-3 gtksourceview-3.0
 WANTLIB += harfbuzz iconv intl lzma m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
+WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB += ${COMPILER_LIBCXX} uchardet xcb xcb-render xcb-shm xml2 z
 
 MODULES=		x11/gnome

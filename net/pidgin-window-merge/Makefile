@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2017/06/16 07:23:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2017/10/23 17:11:02 sthen Exp $
 
 COMMENT =		merge Buddy List with a conversation window in Pidgin
 DISTNAME =		pidgin-window-merge-0.0.20130511
@@ -6,6 +6,7 @@ GH_ACCOUNT =		dm0-
 GH_PROJECT =		window_merge
 GH_COMMIT =		b4811ae1807a6c124fb06a717951bb2541be19f7
 CATEGORIES =		net
+REVISION =		0
 
 MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
 
@@ -18,7 +19,7 @@ WANTLIB += ffi fontconfig freetype gadu gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
 WANTLIB += gthread-2.0 gtk-x11-2.0 harfbuzz iconv idn intl lzma
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png pthread pthread-stubs purple xcb xcb-render xcb-shm
+WANTLIB += png pthread purple xcb xcb-render xcb-shm
 WANTLIB += xml2 z
 
 BUILD_DEPENDS =		${MODGNU_AUTOCONF_DEPENDS} \

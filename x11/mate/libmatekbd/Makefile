@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2017/05/30 21:59:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2017/10/23 17:11:05 sthen Exp $
 
 COMMENT=		MATE keyboard configuration library
 
 MATE_PROJECT=		libmatekbd
 MATE_VERSION=		1.18.2
+REVISION=		0
 
 SHARED_LIBS +=  matekbd                   6.0 # 6.0
 SHARED_LIBS +=  matekbdui                 6.0 # 6.0
@@ -16,7 +17,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender epoxy expat ffi fontconfig freetype
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 iconv intl
-WANTLIB += m pcre pixman-1 pthread pthread-stubs xcb xcb-render xcb-shm
+WANTLIB += m pcre pixman-1 pthread xcb xcb-render xcb-shm
 WANTLIB += xkbfile z harfbuzz gtk-3 atk-1.0 atk-bridge-2.0 atspi cairo
 WANTLIB += cairo-gobject dbus-1 gdk-3 gdk_pixbuf-2.0 graphite2 lzma
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 png xml2 xkbfile xklavier

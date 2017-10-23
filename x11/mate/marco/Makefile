@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2017/06/01 06:08:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2017/10/23 17:11:05 sthen Exp $
 
 COMMENT=		the MATE window manager
 
@@ -6,7 +6,7 @@ SHARED_LIBS +=  marco-private             1.0 # 1.0
 
 MATE_PROJECT=		marco
 MATE_VERSION=		1.18.1
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		x11
 
@@ -19,7 +19,7 @@ WANTLIB += atspi c cairo cairo-gobject dbus-1 epoxy expat ffi
 WANTLIB += fontconfig freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-3
 WANTLIB += harfbuzz iconv intl m ogg pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
+WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB += vorbis vorbisfile xcb xcb-render xcb-shm xcb-util z
 WANTLIB += canberra canberra-gtk3 ltdl startup-notification-1
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.117 2017/07/26 22:45:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.118 2017/10/23 17:11:04 sthen Exp $
 
 COMMENT-main=		GNOME Data Access library
 COMMENT-ldap=		LDAP backend for libgda
@@ -22,7 +22,7 @@ REVISION-main=		8
 REVISION-ldap=		2
 REVISION-mysql=		2
 REVISION-pgsql=		2
-REVISION-ui=		4
+REVISION-ui=		5
 
 EPOCH-main=		2
 EPOCH-ldap=		0
@@ -110,7 +110,7 @@ WANTLIB-ui += Xi Xinerama Xrandr Xrender atk-1.0 c cairo
 WANTLIB-ui += cairo-gobject expat fontconfig freetype gda-${GDA_MAJOR}
 WANTLIB-ui += gdk-3 gdk_pixbuf-2.0 goocanvas-2.0 gtk-3 gtksourceview-3.0
 WANTLIB-ui += pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
-WANTLIB-ui += pthread-stubs xcb xcb-render xcb-shm epoxy
+WANTLIB-ui += xcb xcb-render xcb-shm epoxy
 WANTLIB-ui += ICE SM atk-bridge-2.0 atspi harfbuzz dbus-1
 
 LIB_DEPENDS-ui=		graphics/goocanvas2 \

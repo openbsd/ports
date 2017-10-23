@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.35 2017/05/23 09:02:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2017/10/23 17:11:04 sthen Exp $
 
 COMMENT=		map application for GNOME
 
 GNOME_PROJECT=		gnome-maps
 GNOME_VERSION=		3.24.3
+REVISION=		0
 
 SHARED_LIBS +=  gnome-maps                0.0 # 0.0
 
@@ -17,7 +18,7 @@ WANTLIB += drm epoxy expat ffi folks fontconfig freetype gbm gdk-3
 WANTLIB += gdk_pixbuf-2.0 gee-0.8 geocode-glib gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 harfbuzz
 WANTLIB += iconv intl json-glib-1.0 lzma m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
+WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB += rest-0.7 soup-2.4 soup-gnome-2.4 sqlite3 xcb xcb-dri2
 WANTLIB += xcb-render xcb-shm xcb-xfixes xml2 z
 

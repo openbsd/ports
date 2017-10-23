@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.63 2017/09/23 11:41:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.64 2017/10/23 17:11:03 sthen Exp $
 
 COMMENT=		contacts manager for GNOME
 
 GNOME_PROJECT=		gnome-contacts
 GNOME_VERSION=		3.22.1
-REVISION=		3
+REVISION=		4
 
 CATEGORIES=		productivity
 
@@ -26,7 +26,7 @@ WANTLIB += gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3 harfbuzz
 WANTLIB += iconv icudata icui18n icuuc intl javascriptcoregtk-4.0
 WANTLIB += json-glib-1.0 lzma m nspr4 nss3 orc-0.4 p11-kit
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += plc4 plds4 png pthread pthread-stubs secret-1 smime3
+WANTLIB += plc4 plds4 png pthread secret-1 smime3
 WANTLIB += softokn3 soup-2.4 sqlite3 ssl3 ${COMPILER_LIBCXX} tasn1 telepathy-glib
 WANTLIB += webkit2gtk-4.0 xcb xcb-dri2 xcb-glx xcb-render xcb-shm
 WANTLIB += xcb-xfixes xml2 z

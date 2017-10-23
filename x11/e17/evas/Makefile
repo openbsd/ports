@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.52 2017/08/21 19:25:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.53 2017/10/23 17:11:03 sthen Exp $
 
 COMMENT =		canvas API for X
 
 VERSION =		1.7.10
 DISTNAME =		evas-${VERSION}
 EPOCH =			2
-REVISION =		5
+REVISION =		6
 
 SHARED_LIBS +=	evas                 4.0      # 8.10
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB += GL X11 X11-xcb Xau Xdamage Xdmcp Xext Xfixes Xrender
 WANTLIB += Xxf86vm c crypto drm eet eina expat fontconfig freetype
 WANTLIB += fribidi gif glapi glib-2.0 graphite2 harfbuzz jpeg
-WANTLIB += m pcre png pthread pthread-stubs ssl ${COMPILER_LIBCXX} tiff xcb
+WANTLIB += m pcre png pthread ssl ${COMPILER_LIBCXX} tiff xcb
 WANTLIB += xcb-dri2 xcb-glx z
 
 MODULES=		devel/gettext \

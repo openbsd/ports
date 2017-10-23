@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.214 2017/08/22 10:27:33 espie Exp $
+# $OpenBSD: Makefile,v 1.215 2017/10/23 17:11:06 sthen Exp $
 
 COMMENT-main=	VideoLAN client; multimedia player
 COMMENT-jack=	JACK audio output module for VLC
@@ -11,7 +11,7 @@ CATEGORIES=	x11
 MASTER_SITES=	https://download.videolan.org/pub/videolan/vlc/${V}/
 EXTRACT_SUFX=	.tar.xz
 REVISION-jack=	0
-REVISION-main=	0
+REVISION-main=	1
 
 SHARED_LIBS=	vlc	3.0 \
 		vlccore	3.0
@@ -34,7 +34,7 @@ WANTLIB-main=	EGL GL ICE lib/qt4/QtGui QtCore SM SDL SDL_image X11 \
 		gobject-2.0 gpg-error graphite2 gthread-2.0 gtk-x11-2.0 \
 		harfbuzz hogweed idn2 jpeg lzma matroska nettle notify opus \
 		ogg p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre \
-		pixman-1 png postproc pthread-stubs rsvg-2 samplerate sndio \
+		pixman-1 png postproc rsvg-2 samplerate sndio \
 		speex speexdsp swscale tag tar tasn1 tiff unistring usbhid \
 		vorbis vorbisenc webp x264 x265 xcb-composite xcb-keysyms \
 		xcb-randr xcb-render xcb-shm xcb-xfixes xcb-xv xcb xml2 z \

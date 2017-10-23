@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.59 2017/07/26 22:45:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.60 2017/10/23 17:11:03 sthen Exp $
 
 COMMENT=	small & pretty window manager for 8 and more bits displays
 
 DISTNAME=		blackbox-0.70.1
-REVISION =		8
+REVISION =		9
 CATEGORIES=		x11
 
 HOMEPAGE=		http://blackboxwm.sourceforge.net/
@@ -14,7 +14,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=blackboxwm/}
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += X11 Xext Xft Xrender c expat fontconfig freetype iconv m
-WANTLIB += pthread-stubs ${COMPILER_LIBCXX} xcb z
+WANTLIB += ${COMPILER_LIBCXX} xcb z
 
 LIB_DEPENDS=		converters/libiconv
 

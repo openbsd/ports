@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.329 2017/09/28 16:39:11 landry Exp $
+# $OpenBSD: Makefile,v 1.330 2017/10/23 17:11:03 sthen Exp $
 
 COMMENT =	Mozilla web browser
 ONLY_FOR_ARCHS =	amd64 i386
@@ -8,6 +8,7 @@ ONLY_FOR_ARCHS =	amd64 i386
 MOZILLA_VERSION =	56.0
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
+REVISION =		0
 
 SO_VERSION =	74.0
 # NOTE: Must bump minor version if any shlib's are removed from the
@@ -37,7 +38,7 @@ MOZILLA_USE_BUNDLED_ICU =	Yes
 # firefox >= 53 needs rust
 BUILD_DEPENDS +=	lang/rust
 
-WANTLIB += X11-xcb pixman-1 pthread-stubs xcb xcb-shm ${COMPILER_LIBCXX}
+WANTLIB += X11-xcb pixman-1 xcb xcb-shm ${COMPILER_LIBCXX}
 
 # Regression tests are too hard to adapt to run here
 NO_TEST =	Yes

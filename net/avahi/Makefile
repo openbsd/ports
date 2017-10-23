@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.126 2017/09/06 07:21:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.127 2017/10/23 17:11:02 sthen Exp $
 
 COMMENT-main=		framework for Multicast DNS Service Discovery
 COMMENT-gtk=		gtk+2 avahi-ui libraries
@@ -20,9 +20,9 @@ PKGNAME-python=		py-avahi-${V}
 PKGNAME-ui=		avahi-ui-${V}
 
 REVISION-main=		0
-REVISION-gtk=		0
-REVISION-gtk3=		0
-REVISION-gui=		0
+REVISION-gtk=		1
+REVISION-gtk3=		1
+REVISION-gui=		1
 REVISION-python=	0
 REVISION-ui=		0
 
@@ -94,7 +94,7 @@ WANTLIB-gtk += Xi Xinerama Xrandr Xrender atk-1.0 cairo dbus-1
 WANTLIB-gtk += expat fontconfig freetype gdbm gdk-x11-2.0 gthread-2.0
 WANTLIB-gtk += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB-gtk += gobject-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
-WANTLIB-gtk += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs xcb z
+WANTLIB-gtk += pangoft2-1.0 pcre pixman-1 png pthread xcb z
 WANTLIB-gtk += xcb-render avahi-client avahi-common xcb-shm
 WANTLIB-gtk += avahi-glib ffi harfbuzz graphite2 iconv intl
 
@@ -108,7 +108,7 @@ WANTLIB-gtk3 += avahi-common avahi-glib cairo cairo-gobject
 WANTLIB-gtk3 += dbus-1 expat fontconfig freetype gdbm gdk-3 gdk_pixbuf-2.0
 WANTLIB-gtk3 += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB-gtk3 += gtk-3 m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB-gtk3 += pcre pixman-1 png pthread pthread-stubs xcb xcb-render
+WANTLIB-gtk3 += pcre pixman-1 png pthread xcb xcb-render
 WANTLIB-gtk3 += xcb-shm z ffi iconv intl
 WANTLIB-gtk3 += ICE SM atk-bridge-2.0 atspi harfbuzz
 WANTLIB-gtk3 += graphite2 epoxy
@@ -131,7 +131,7 @@ WANTLIB-gui += cairo cairo-gobject dbus-1 expat fontconfig freetype
 WANTLIB-gui += gdbm gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB-gui += gobject-2.0 gthread-2.0 gtk-3 m pango-1.0
 WANTLIB-gui += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
-WANTLIB-gui += pthread-stubs xcb xcb-render xcb-shm z ffi
+WANTLIB-gui += xcb xcb-render xcb-shm z ffi
 WANTLIB-gui += ICE SM atk-bridge-2.0 atspi harfbuzz
 WANTLIB-gui += graphite2 epoxy iconv intl
 

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.32 2017/07/26 22:45:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2017/10/23 17:11:03 sthen Exp $
 
 COMMENT =	OpenGL window and compositing manager
 
 V =		0.8.8
 DISTNAME =	compiz-${V}
-REVISION =	3
+REVISION =	4
 
 SHARED_LIBS =	decoration	1.0
 
@@ -17,7 +17,7 @@ WANTLIB += c cairo croco-0.6 dbus-1 dbus-glib-1 drm expat ffi fontconfig
 WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glapi glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-x11-2.0
 WANTLIB += harfbuzz lzma m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
-WANTLIB += pixman-1 png pthread pthread-stubs rsvg-2
+WANTLIB += pixman-1 png pthread rsvg-2
 WANTLIB += startup-notification-1 ${COMPILER_LIBCXX} wnck-1 xcb xcb-dri2 xcb-glx
 WANTLIB += xcb-render xcb-shm xcb-util xml2 xslt z
 

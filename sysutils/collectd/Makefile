@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2017/07/08 17:37:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.51 2017/10/23 17:11:02 sthen Exp $
 
 COMMENT-main =		system metrics collection engine
 COMMENT-mysql =		collectd mysql plugin
@@ -25,8 +25,7 @@ PKGNAME-nut =		collectd-nut-$V
 PKGNAME-riemann =	collectd-riemann-$V
 CATEGORIES =		sysutils
 
-REVISION-main =		1
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE =		http://www.collectd.org/
 SHARED_LIBS +=		collectdclient 1.0
@@ -54,7 +53,7 @@ WANTLIB-rrdtool =	X11 Xext Xrender c cairo expat ffi fontconfig \
 			freetype glib-2.0 gobject-2.0 \
 			graphite2 gthread-2.0 harfbuzz iconv intl lzma m \
 			pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre \
-			pixman-1 png pthread pthread-stubs rrd xcb \
+			pixman-1 png pthread rrd xcb \
 			xcb-render xcb-shm xml2 z
 LIB_DEPENDS-rrdtool =	net/rrdtool
 RUN_DEPENDS-rrdtool =	collectd-$V:${BASE_PKGPATH},-main

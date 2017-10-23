@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.42 2017/02/28 18:12:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.43 2017/10/23 17:11:06 sthen Exp $
 
 COMMENT=		terminal emulator for X
 
 DISTNAME=		roxterm-2.9.7
-REVISION=		0
+REVISION=		1
 CATEGORIES=		x11
 
 HOMEPAGE=		http://roxterm.sourceforge.net/
@@ -19,7 +19,7 @@ WANTLIB += expat ffi fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
 WANTLIB += gthread-2.0 gtk-x11-2.0 harfbuzz iconv intl m ncurses
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png pthread pthread-stubs vte xcb xcb-render xcb-shm
+WANTLIB += png pthread vte xcb xcb-render xcb-shm
 WANTLIB += z
 
 MODULES=		lang/python

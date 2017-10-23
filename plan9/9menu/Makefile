@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.29 2017/07/27 01:03:33 gsoares Exp $
+# $OpenBSD: Makefile,v 1.30 2017/10/23 17:11:02 sthen Exp $
 
 COMMENT=	simple menu patterned after plan9
 
 DISTNAME=	9menu-1.9
 CATEGORIES=	plan9
+REVISION=	0
 
 MAINTAINER=	Kaashif Hymabaccus <kaashif@kaashif.co.uk>
 
@@ -15,7 +16,7 @@ EXTRACT_SUFX=	.shar.gz
 PERMIT_PACKAGE_CDROM =	No
 PERMIT_PACKAGE_FTP =	No
 PERMIT_DISTFILES_FTP =	No
-WANTLIB=		X11 c pthread-stubs xcb
+WANTLIB=		X11 c xcb
 
 MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS} -I${X11BASE}/include" \
 		LIBS="-L${X11BASE}/lib -lX11"

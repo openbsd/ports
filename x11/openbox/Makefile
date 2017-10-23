@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.78 2017/09/25 21:34:28 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.79 2017/10/23 17:11:05 sthen Exp $
 
 COMMENT =	small, fast & usable window manager
 
 V =		3.6.1
-REVISION =	2
+REVISION =	3
 DISTNAME =	openbox-${V}
 SHARED_LIBS +=	obrender	12.0	# 32.0
 SHARED_LIBS +=	obt		1.1	# 2.2
@@ -22,7 +22,7 @@ WANTLIB += Xinerama Xrandr Xrender c cairo croco-0.6 expat ffi
 WANTLIB += fontconfig freetype gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 harfbuzz
 WANTLIB += iconv intl lzma m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pangoxft-1.0 pcre pixman-1 png pthread pthread-stubs
+WANTLIB += pangoxft-1.0 pcre pixman-1 png pthread
 WANTLIB += rsvg-2 startup-notification-1 xcb xcb-render xcb-shm
 WANTLIB += xcb-util xml2 z
 

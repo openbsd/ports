@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2017/07/26 22:45:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.51 2017/10/23 17:11:03 sthen Exp $
 
 PORTROACH+=	limit:^2
 
@@ -7,7 +7,7 @@ DISTNAME=	gtkspell-2.0.16
 
 SHARED_LIBS=	gtkspell 1.0 # .0.0
 
-REVISION=	9
+REVISION=	10
 
 CATEGORIES=	textproc x11
 
@@ -23,7 +23,7 @@ WANTLIB += Xinerama Xrandr Xrender Xxf86vm atk-1.0 cairo drm enchant
 WANTLIB += expat ffi fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
 WANTLIB += gthread-2.0 gtk-x11-2.0 harfbuzz m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread-stubs pthread ${COMPILER_LIBCXX}
+WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread ${COMPILER_LIBCXX}
 WANTLIB += xcb xcb-render xcb-shm z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gtkspell/}

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2016/03/18 21:38:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2017/10/23 17:11:05 sthen Exp $
 
 COMMENT=		Clearlooks based GTK+ 2.x engine
 
 V=			0.6
 DISTNAME=		39179-rezlooks-$V
 PKGNAME=		gtk2-rezlooks-engine-$V
-REVISION=		3
+REVISION=		4
 CATEGORIES=		x11
 
 # GPLv2
@@ -23,7 +23,7 @@ MODULES=	devel/gettext
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender expat fontconfig freetype
-WANTLIB += m pixman-1 pthread-stubs xcb xcb-render
+WANTLIB += m pixman-1 xcb xcb-render
 WANTLIB += z gtk-x11-2.0 gdk-x11-2.0
 WANTLIB += atk-1.0 cairo gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 pango-1.0 pangocairo-1.0

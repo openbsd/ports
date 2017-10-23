@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2017/08/13 09:55:13 robert Exp $
+# $OpenBSD: Makefile,v 1.7 2017/10/23 17:11:05 sthen Exp $
 
 COMMENT=		panel component for MATE
 
@@ -6,6 +6,7 @@ SHARED_LIBS +=  mate-panel-applet-4       1.1 # 1.1
 
 MATE_PROJECT=		mate-panel
 MATE_VERSION=		1.18.4
+REVISION=		0
 
 CATEGORIES=		x11
 
@@ -16,7 +17,7 @@ WANTLIB += ICE SM X11 X11-xcb XRes Xau Xcomposite Xcursor Xdamage
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender c dconf epoxy
 WANTLIB += expat ffi fontconfig freetype gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 gthread-2.0 iconv intl m pcre pixman-1
-WANTLIB += pthread pthread-stubs sqlite3 xcb xcb-render xcb-shm
+WANTLIB += pthread sqlite3 xcb xcb-render xcb-shm
 WANTLIB += xcb-util z
 WANTLIB += atk-1.0 atk-bridge-2.0 atspi cairo-gobject
 WANTLIB += cairo croco-0.6 dbus-1 dbus-glib-1 gdk-3

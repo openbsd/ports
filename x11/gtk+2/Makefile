@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.220 2017/09/23 10:28:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.221 2017/10/23 17:11:04 sthen Exp $
 
 # Everything is a Freaking GLib/GTK+ problem
 CFLAGS +=		-g
@@ -12,8 +12,8 @@ GNOME_PROJECT=		gtk+
 
 PKGNAME-main=		gtk+2-${GNOME_VERSION}
 PKGNAME-cups=		gtk+2-cups-${GNOME_VERSION}
-REVISION-cups=		2
-REVISION-main=		1
+REVISION-cups=		3
+REVISION-main=		2
 
 CATEGORIES=		x11 devel
 
@@ -33,7 +33,7 @@ WANTLIB += Xrandr Xrender atk-1.0 cairo expat ffi fontconfig
 WANTLIB += freetype gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 graphite2 gthread-2.0 harfbuzz m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
-WANTLIB += pthread-stubs xcb xcb-render xcb-shm z iconv intl
+WANTLIB += xcb xcb-render xcb-shm z iconv intl
 
 WANTLIB-main += ${WANTLIB} c
 

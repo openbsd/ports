@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.35 2015/08/19 20:34:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.36 2017/10/23 17:11:05 sthen Exp $
 
 CATEGORIES=	x11
 
 COMMENT=	GUI for ogle
 DISTNAME=	ogle_gui-0.9.2
-REVISION=	11
+REVISION=	12
 
 HOMEPAGE=	http://www.dtek.chalmers.se/groups/dvd/
 # Authors can be reached at dvd@dtek.chalmers.se
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_CDROM=Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr c expat gio-2.0 pcre pixman-1 pthread
-WANTLIB += z pthread-stubs xcb dvdcontrol xml2 msgevents
+WANTLIB += z xcb dvdcontrol xml2 msgevents
 WANTLIB += gthread-2.0 xcb-render xcb-shm
 WANTLIB += Xrender atk-1.0 fontconfig freetype glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 m pango-1.0 glade-2.0

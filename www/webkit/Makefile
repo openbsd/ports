@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.154 2017/07/26 22:45:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.155 2017/10/23 17:11:03 sthen Exp $
 
 USE_WXNEEDED =	Yes
 
@@ -15,7 +15,7 @@ EPOCH =		1
 CATEGORIES =	www
 DPB_PROPERTIES =parallel
 EXTRACT_SUFX =	.tar.xz
-REVISION =	2
+REVISION =	3
 
 HOMEPAGE =	http://webkitgtk.org/
 MASTER_SITES =	${HOMEPAGE}/releases/
@@ -81,7 +81,7 @@ WANTLIB += gstbase-1.0 gstfft-1.0 gstpbutils-1.0 gstreamer-1.0
 WANTLIB += gsttag-1.0 gstvideo-1.0 gthread-2.0 harfbuzz harfbuzz-icu
 WANTLIB += iconv icudata icui18n icuuc intl jpeg lzma m orc-0.4
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png pthread pthread-stubs secret-1 soup-2.4 sqlite3
+WANTLIB += png pthread secret-1 soup-2.4 sqlite3
 WANTLIB += ${LIBCXX} webp xcb xcb-dri2 xcb-glx xcb-render xcb-shape
 WANTLIB += xcb-shm xcb-xfixes xml2 xslt z
 

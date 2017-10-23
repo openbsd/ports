@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.67 2017/04/13 07:38:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.68 2017/10/23 17:11:04 sthen Exp $
 
 COMMENT=		standard GNOME themes
 
 GNOME_PROJECT=		gnome-themes-standard
 GNOME_VERSION=		3.22.3
+REVISION=		0
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
@@ -13,7 +14,7 @@ WANTLIB += Xrandr Xrender atk-1.0 cairo expat ffi fontconfig freetype
 WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-x11-2.0 harfbuzz
 WANTLIB += iconv intl m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png pthread pthread-stubs xcb xcb-render
+WANTLIB += pcre pixman-1 png pthread xcb xcb-render
 WANTLIB += xcb-shm z
 
 MODULES=		x11/gnome

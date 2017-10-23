@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.30 2017/05/15 19:56:03 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.31 2017/10/23 17:11:03 sthen Exp $
 
 COMMENT=	modular log analyzer
 
 DISTNAME=	modlogan-0.8.13
-REVISION=	8
+REVISION=	9
 CATEGORIES=	sysutils www
 
 HOMEPAGE=	http://jan.kneschke.de/projects/modlogan/
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 MODULES=	devel/gettext
 
 WANTLIB += adns bz2 c expat fontconfig freetype gd jpeg m pcre
-WANTLIB += png pthread pthread-stubs tiff webp z
+WANTLIB += png pthread tiff webp z
 
 LIB_DEPENDS=	archivers/bzip2 \
 		devel/pcre \

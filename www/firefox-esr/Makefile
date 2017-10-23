@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2017/09/28 16:41:13 landry Exp $
+# $OpenBSD: Makefile,v 1.65 2017/10/23 17:11:03 sthen Exp $
 
 COMMENT =	Firefox web browser, Extended Support Release
 ONLY_FOR_ARCHS =	amd64 i386
@@ -10,6 +10,7 @@ MOZILLA_CODENAME =	browser
 PKGNAME =	${MOZILLA_PROJECT}-esr-${MOZILLA_VERSION:S/esr//}
 SO_VERSION =	4.0
 MOZILLA_LIBS =	xul clearkey lgpllibs mozavcodec mozavutil mozgtk
+REVISION =	0
 
 CATEGORIES =	www
 
@@ -29,7 +30,7 @@ MOZILLA_USE_BUNDLED_LIBEVENT =	Yes
 # firefox >= 46 defaults to gtk+3
 MOZILLA_USE_GTK3 = Yes
 
-WANTLIB += X11-xcb pixman-1 pthread-stubs xcb xcb-shm ${COMPILER_LIBCXX}
+WANTLIB += X11-xcb pixman-1 xcb xcb-shm ${COMPILER_LIBCXX}
 
 # Regression tests are too hard to adapt to run here
 NO_TEST =	Yes

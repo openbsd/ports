@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2017/08/24 09:45:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2017/10/23 17:11:03 sthen Exp $
 
 USE_WXNEEDED =		Yes
 
@@ -10,7 +10,7 @@ COMMENT =		headless WebKit scriptable with a JavaScript API
 
 MASTER_SITES=		${_MASTER_SITE_FREEBSD}
 DISTNAME =		phantomjs-2.1.1
-REVISION =		2
+REVISION =		3
 DISTFILES =		ariya-${DISTNAME}_GH0.tar.gz \
 			Vitallium-phantomjs-3rdparty-win-19051aa_GH0.tar.gz \
 			Vitallium-qtbase-b5cc008_GH0.tar.gz \
@@ -29,7 +29,7 @@ MODULES =		devel/gettext lang/python lang/ruby
 WANTLIB +=		${COMPILER_LIBCXX} X11 Xau Xdmcp c crypto \
 			execinfo expat fontconfig glib-2.0 freetype \
 			graphite2 harfbuzz iconv icudata icui18n icuuc \
-			intl lzma m pcre proxy pthread pthread-stubs \
+			intl lzma m pcre proxy pthread \
 			sqlite3 ssl webp xml2 xcb xslt z
 
 MODPY_RUNDEP =		No

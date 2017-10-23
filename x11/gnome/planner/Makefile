@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.73 2017/04/13 07:38:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.74 2017/10/23 17:11:04 sthen Exp $
 
 COMMENT=		project management application
 
 GNOME_PROJECT=		planner
 GNOME_VERSION=		0.14.6
 EPOCH=			0
-REVISION=		7
+REVISION=		8
 
 # Fedora patches as of 2013-08-04 04:26:11 (GMT)
 MASTER_SITES0=		http://pkgs.fedoraproject.org/cgit/planner.git/plain/
@@ -43,7 +43,7 @@ WANTLIB += glade-2.0 glib-2.0 gmodule-2.0 gnome-2 gnome-keyring
 WANTLIB += gnomecanvas-2 gnomeui-2 gnomevfs-2 gobject-2.0 gpg-error
 WANTLIB += graphite2 gthread-2.0 gtk-x11-2.0 harfbuzz ltdl lzma m ogg
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png popt
-WANTLIB += pthread pthread-stubs ssl util vorbis vorbisfile xcb
+WANTLIB += pthread ssl util vorbis vorbisfile xcb
 WANTLIB += xcb-render xcb-shm xml2 xslt z iconv intl
 
 MODULES=		x11/gnome \

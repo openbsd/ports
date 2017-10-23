@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.10 2017/05/11 20:50:55 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2017/10/23 17:11:03 sthen Exp $
 
 COMMENT=		dockapp; gives access to X11's cut buffers
 
 DISTNAME=		wmcb-0.2
 PKGNAME=		${DISTNAME}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES=		sysutils x11 x11/windowmaker
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=   Yes
-WANTLIB=		X11 Xext Xpm c pthread-stubs xcb
+WANTLIB=		X11 Xext Xpm c xcb
 
 MASTER_SITES=		https://distfiles.nl/
 EXTRACT_SUFX=		.tgz

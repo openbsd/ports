@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.154 2017/09/23 10:57:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.155 2017/10/23 17:11:05 sthen Exp $
 
 COMMENT-main =		K Desktop Environment, basic applications
 COMMENT-samba =		K Desktop Environment, samba support
@@ -13,8 +13,8 @@ PKGNAME-en_US =		kde3-locale-en_US-${VERSION}
 PKGNAME-locale =	kde3-locale-${VERSION}
 PKG_ARCH-en_US =	*
 PKG_ARCH-locale =	*
-REVISION-main =		49
-REVISION-samba =	26
+REVISION-main =		50
+REVISION-samba =	27
 REVISION-en_US =	6
 REVISION-locale =	5
 
@@ -65,7 +65,7 @@ LIB_DEPENDS-samba =	${LIB_DEPENDS} \
 			x11/kde/libs3 \
 			net/samba,-main
 
-WANTLIB =  crypto expat m pthread pthread-stubs ssl ${COMPILER_LIBCXX} util z
+WANTLIB =  crypto expat m pthread ssl ${COMPILER_LIBCXX} util z
 WANTLIB += ICE SM X11 Xext Xfixes Xrender Xt freetype fontconfig xcb
 WANTLIB += ${KDE}/DCOP ${KDE}/kdecore>=6 ${KDE}/kdefx ${KDE}/kdesu
 WANTLIB += ${KDE}/kdeui ${KDE}/kio ${KDE}/kwalletclient

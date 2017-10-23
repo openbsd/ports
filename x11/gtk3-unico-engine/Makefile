@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2016/03/18 21:38:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2017/10/23 17:11:05 sthen Exp $
 
 COMMENT=	Unico GTK+3 engine
 
 V=		1.0.2.1
 DISTNAME=	unico-${V}
 PKGNAME=	gtk3-unico-engine-${V}
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=	x11
 
@@ -20,7 +20,7 @@ WANTLIB += atk-bridge-2.0 atspi cairo cairo-gobject dbus-1
 WANTLIB += expat ffi fontconfig freetype gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += gtk-3 harfbuzz m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
+WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB += xcb xcb-render xcb-shm z epoxy graphite2
 
 MASTER_SITES=	https://distfiles.nl/

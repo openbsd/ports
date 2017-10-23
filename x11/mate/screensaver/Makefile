@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2017/05/30 21:46:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2017/10/23 17:11:05 sthen Exp $
 
 COMMENT=		MATE screensaver
 
 MATE_PROJECT=		mate-screensaver
 MATE_VERSION=		1.18.1
-REVISION=		2
+REVISION=		3
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -13,7 +13,7 @@ WANTLIB += GL ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender Xss Xxf86misc Xxf86vm
 WANTLIB += c dconf drm epoxy expat ffi fontconfig freetype gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glapi glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
-WANTLIB += iconv intl lzma m pcre pixman-1 png pthread pthread-stubs
+WANTLIB += iconv intl lzma m pcre pixman-1 png pthread
 WANTLIB += xcb xcb-dri2 xcb-glx xcb-render xcb-shm xkbfile xml2
 WANTLIB += z
 WANTLIB += atk-1.0 atk-bridge-2.0 atspi cairo-gobject cairo dbus-1

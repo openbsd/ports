@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2017/07/26 22:45:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2017/10/23 17:11:03 sthen Exp $
 
 COMMENT-main=	IAX client library
 COMMENT-tcl=	IAX client library, tcl bindings
@@ -6,11 +6,9 @@ COMMENT-iaxcomm=IAX softphone
 
 DISTNAME=	iaxclient-2.1beta3
 PKGNAME-main=	${DISTNAME}
-REVISION-main=	17
 PKGNAME-tcl=	${DISTNAME:S/iaxclient/iaxclient-tcl/}
-REVISION-tcl=	18
 PKGNAME-iaxcomm= iaxcomm-1.1.0
-REVISION-iaxcomm= 19
+REVISION=	20
 
 CATEGORIES=	telephony
 SHARED_LIBS=	tcliaxclient02 0.0 \
@@ -37,7 +35,7 @@ WANTLIB-tcl	+= Xi Xinerama Xrandr Xrender atk-1.0 c cairo
 WANTLIB-tcl	+= expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB-tcl	+= gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB-tcl	+= gtk-x11-2.0 iaxclient pango-1.0 pangocairo-1.0
-WANTLIB-tcl	+= pangoft2-1.0 pcre pixman-1 png pthread-stubs xcb xcb-render
+WANTLIB-tcl	+= pangoft2-1.0 pcre pixman-1 png xcb xcb-render
 WANTLIB-tcl	+= graphite2 harfbuzz vorbis
 WANTLIB-tcl	+= xcb-shm ffi ${cWANTLIB} ${MODGETTEXT_WANTLIB}
 
@@ -47,7 +45,7 @@ WANTLIB-iaxcomm	+= c cairo expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB-iaxcomm	+= gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB-iaxcomm	+= gtk-x11-2.0 iaxclient iodbc jpeg mspack ${MODGETTEXT_WANTLIB}
 WANTLIB-iaxcomm	+= pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB-iaxcomm	+= png pthread-stubs ${COMPILER_LIBCXX} tiff usbhid wx_base wx_base_net
+WANTLIB-iaxcomm	+= png ${COMPILER_LIBCXX} tiff usbhid wx_base wx_base_net
 WANTLIB-iaxcomm	+= wx_base_odbc wx_base_xml wx_gtk2_adv wx_gtk2_aui wx_gtk2_core
 WANTLIB-iaxcomm	+= wx_gtk2_dbgrid wx_gtk2_html wx_gtk2_qa wx_gtk2_richtext
 WANTLIB-iaxcomm	+= graphite2 harfbuzz vorbis

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2017/05/30 21:59:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2017/10/23 17:11:05 sthen Exp $
 
 COMMENT=		MATE settings daemon
 
 MATE_PROJECT=		mate-settings-daemon
 MATE_VERSION=		1.18.1
-REVISION=		1
+REVISION=		2
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -13,7 +13,7 @@ WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender Xxf86misc c dconf epoxy expat
 WANTLIB += ffi fontconfig freetype gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 iconv intl lzma
-WANTLIB += m pcre pixman-1 png pthread pthread-stubs xcb
+WANTLIB += m pcre pixman-1 png pthread xcb
 WANTLIB += xcb-render xcb-shm xkbfile xml2 z
 WANTLIB += smime3 softokn3 sqlite3 ssl3
 WANTLIB += nspr4 nss3 nssutil3 plc4 plds4

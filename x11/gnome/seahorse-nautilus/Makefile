@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.27 2017/09/23 11:41:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2017/10/23 17:11:04 sthen Exp $
 
 COMMENT=		GnuPG extension for nautilus(1)
 
 GNOME_PROJECT=		seahorse-nautilus
 GNOME_VERSION=		3.10.1
-REVISION=		7
+REVISION=		8
 
 CATEGORIES=		security
 
@@ -19,7 +19,7 @@ WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gnome-keyring
 WANTLIB += gobject-2.0 gpg-error gpgme graphite2 gthread-2.0 gtk-3
 WANTLIB += harfbuzz m nautilus-extension notify p11-kit pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
-WANTLIB += pthread-stubs xcb xcb-render xcb-shm z iconv intl
+WANTLIB += xcb xcb-render xcb-shm z iconv intl
 WANTLIB += archive bz2 crypto gnome-autoar-0 lz4 lzma
 
 MODULES=		x11/gnome \

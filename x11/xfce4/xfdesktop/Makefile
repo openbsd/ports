@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.61 2017/08/30 08:46:31 landry Exp $
+# $OpenBSD: Makefile,v 1.62 2017/10/23 17:11:06 sthen Exp $
 
 COMMENT=	Xfce4 desktop manager
 
 XFCE_PROJECT=	xfdesktop
 XFCE_VERSION =	4.12.3
-REVISION =	0
+REVISION =	1
 
 PORTROACH=	limitw:1,even
 
@@ -32,7 +32,7 @@ WANTLIB += atk-1.0 c cairo dbus-1 dbus-glib-1 exo-1 expat
 WANTLIB += ffi fontconfig freetype garcon-1 gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += gtk-x11-2.0 m notify pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png pthread pthread-stubs startup-notification-1
+WANTLIB += pcre pixman-1 png pthread startup-notification-1
 WANTLIB += thunarx-2 wnck-1 xcb xcb-util xcb-render xcb-shm xfce4ui-1
 WANTLIB += xfce4util xfconf-0 z
 WANTLIB += harfbuzz graphite2 iconv intl

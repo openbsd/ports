@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.30 2015/12/03 21:24:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2017/10/23 17:11:02 sthen Exp $
 
 COMMENT=	9wm with automatic window tiling and virtual desktops
 
 DISTNAME=	larswm-7.5.3
-REVISION =	4
+REVISION =	5
 CATEGORIES=	plan9
 
 HOMEPAGE =	http://larswm.sourceforge.net/
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_CDROM =	No
 PERMIT_PACKAGE_FTP =	No
 PERMIT_DISTFILES_FTP =	No
 
-WANTLIB =	ICE SM X11 Xau Xdmcp Xext Xmu Xt c pthread-stubs xcb
+WANTLIB =	ICE SM X11 Xau Xdmcp Xext Xmu Xt c xcb
 
 CONFIGURE_STYLE=imake
 NO_TEST=	Yes

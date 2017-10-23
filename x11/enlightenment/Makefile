@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2017/09/28 15:08:54 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.70 2017/10/23 17:11:03 sthen Exp $
 
 COMMENT=	themed window manager
 
@@ -7,7 +7,7 @@ DISTNAME=	e16-$V
 PKGNAME=	enlightenment-$V
 DOCS=		e16-docs-0.16.8.0.2
 THEMES=		e16-themes-1.0.1
-REVISION=	7
+REVISION=	8
 
 CATEGORIES=	x11
 
@@ -20,7 +20,7 @@ WANTLIB += FLAC ICE Imlib2 SM X11 Xcomposite Xdamage Xext Xfixes
 WANTLIB += Xft Xinerama Xrandr Xrender audiofile c expat ffi fontconfig
 WANTLIB += freetype glib-2.0 gmodule-2.0 gobject-2.0 graphite2
 WANTLIB += gthread-2.0 harfbuzz m ogg pango-1.0 pangoft2-1.0 pangoxft-1.0
-WANTLIB += pcre pthread pthread-stubs sndio xcb z
+WANTLIB += pcre pthread sndio xcb z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=enlightenment/}
 

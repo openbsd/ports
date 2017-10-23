@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.58 2017/07/26 22:45:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.59 2017/10/23 17:11:03 sthen Exp $
 
 COMMENT=		color profile manager for GNOME
 
 GNOME_PROJECT=		gnome-color-manager
 GNOME_VERSION=		3.24.0
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		graphics
 
@@ -19,7 +19,7 @@ WANTLIB += ffi fontconfig freetype gdk-3 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gmp gnutls gobject-2.0 graphite2
 WANTLIB += gthread-2.0 gtk-3 harfbuzz hogweed iconv idn2 intl jpeg
 WANTLIB += lcms2 ltdl m nettle ogg p11-kit pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pcre2-8 pixman-1 png pthread pthread-stubs
+WANTLIB += pangoft2-1.0 pcre pcre2-8 pixman-1 png pthread
 WANTLIB += ${COMPILER_LIBCXX} tasn1 tiff vorbis vorbisfile vte-2.91 xcb xcb-render
 WANTLIB += xcb-shm z unistring
 

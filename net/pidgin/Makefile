@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.137 2017/09/01 09:53:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.138 2017/10/23 17:11:02 sthen Exp $
 
 COMMENT-main=	multi-protocol instant messaging client
 COMMENT-finch=	multi-protocol instant messaging client, console client
@@ -7,6 +7,7 @@ COMMENT-libpurple= multi-protocol instant messaging library
 VERSION=	2.12.0
 DISTNAME=	pidgin-${VERSION}
 PKGNAME-main=	pidgin-${VERSION}
+REVISION-main=	0
 PKGNAME-finch=	finch-${VERSION}
 PKGNAME-libpurple= libpurple-${VERSION}
 .for i in -finch -libpurple
@@ -37,7 +38,7 @@ WANTLIB-main=	X11 ICE SM Xcomposite Xcursor Xdamage Xext Xfixes Xi \
 		Xinerama Xrandr Xrender Xss atk-1.0 cairo expat fontconfig \
 		freetype gdk-x11-2.0 gdk_pixbuf-2.0 graphite2 gtk-x11-2.0 \
 		harfbuzz pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 \
-		png pthread-stubs purple ${COMPILER_LIBCXX} xcb-render xcb-shm xcb \
+		png purple ${COMPILER_LIBCXX} xcb-render xcb-shm xcb \
 		${WANTLIB}
 WANTLIB-libpurple= crypto meanwhile ssl silc silcclient ${WANTLIB}
 WANTLIB-finch=	X11 ncursesw panelw purple util xcb ${WANTLIB} \

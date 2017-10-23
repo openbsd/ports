@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2017/09/23 11:41:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2017/10/23 17:11:04 sthen Exp $
 
 # Required at build time for a temporary program created and run by
 # g-ir-scanner; programs linked against libgepub need wxneeded, too
@@ -9,7 +9,7 @@ COMMENT=		GObject based library for rendering epub docs
 
 GNOME_PROJECT=		libgepub
 GNOME_VERSION=		0.4
-REVISION=		4
+REVISION=		5
 
 CATEGORIES=		graphics
 
@@ -29,7 +29,7 @@ WANTLIB += gstreamer-1.0 gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3
 WANTLIB += harfbuzz harfbuzz-icu hyphen iconv icudata icui18n
 WANTLIB += icuuc intl javascriptcoregtk-4.0 jpeg lz4 lzma m notify
 WANTLIB += orc-0.4 pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
-WANTLIB += pixman-1 png pthread pthread-stubs secret-1 soup-2.4
+WANTLIB += pixman-1 png pthread secret-1 soup-2.4
 WANTLIB += sqlite3 webkit2gtk-4.0 webp xcb xcb-dri2 xcb-glx xcb-render
 WANTLIB += xcb-shm xcb-xfixes xml2 xslt z
 WANTLIB += GLESv2 gstallocators-1.0 gstbadallocators-1.0 gstgl-1.0

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.34 2017/09/22 21:30:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2017/10/23 17:11:06 sthen Exp $
 
 COMMENT=	Xfce4 mailboxes monitor panel plugin
 
 XFCE_VERSION=	1.2.0
 XFCE_PLUGIN=	mailwatch
-REVISION=	5
+REVISION=	6
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -15,7 +15,7 @@ WANTLIB += fontconfig freetype gcrypt gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gmp gnutls gobject-2.0 gpg-error
 WANTLIB += graphite2 gthread-2.0 gtk-x11-2.0 harfbuzz hogweed iconv idn2
 WANTLIB += intl m nettle p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png pthread pthread-stubs
+WANTLIB += pcre pixman-1 png pthread
 WANTLIB += startup-notification-1 tasn1 unistring xcb xcb-render xcb-shm
 WANTLIB += xcb-util xfce4ui-1 xfce4util z
 

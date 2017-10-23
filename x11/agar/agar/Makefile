@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2017/01/25 03:51:29 bentley Exp $
+# $OpenBSD: Makefile,v 1.5 2017/10/23 17:11:03 sthen Exp $
 
 COMMENT =		cross-platform widget toolkit
 
 PKGNAME =		agar-$V
-REVISION =		1
+REVISION =		2
 
 SHARED_LIBS +=  ag_au                     0.0 # 5.0
 SHARED_LIBS +=  ag_core                   0.0 # 5.0
@@ -14,7 +14,7 @@ SHARED_LIBS +=  ag_vg                     0.0 # 5.0
 
 WANTLIB += GL SDL X11 X11-xcb Xdamage Xext Xfixes Xinerama Xxf86vm
 WANTLIB += db drm expat fontconfig freetype glapi iconv jpeg m
-WANTLIB += png pthread pthread-stubs sndio usbhid xcb xcb-dri2
+WANTLIB += png pthread sndio usbhid xcb xcb-dri2
 WANTLIB += xcb-glx z
 
 LIB_DEPENDS =		audio/libsndfile \

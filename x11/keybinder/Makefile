@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2017/09/25 09:16:13 robert Exp $
+# $OpenBSD: Makefile,v 1.12 2017/10/23 17:11:05 sthen Exp $
 
 COMMENT-main =		library for registering keyboard shortcuts
 COMMENT-python =	python bindings for keybinder
@@ -8,7 +8,7 @@ DISTNAME =		keybinder-0.3.0
 PKGNAME-main =		${DISTNAME}
 PKGNAME-python =	py-${DISTNAME}
 
-REVISION =		6
+REVISION =		7
 
 CATEGORIES =		x11 devel
 
@@ -28,7 +28,7 @@ WANTLIB += Xrandr Xrender atk-1.0 cairo expat ffi fontconfig freetype
 WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-x11-2.0 harfbuzz
 WANTLIB += iconv intl m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png pthread pthread-stubs xcb xcb-render
+WANTLIB += pcre pixman-1 png pthread xcb xcb-render
 WANTLIB += xcb-shm z
 
 WANTLIB-python =	${WANTLIB} keybinder

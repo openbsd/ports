@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.54 2017/09/23 11:41:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.55 2017/10/23 17:11:03 sthen Exp $
 
 COMMENT=		IDE for GNOME
 
 GNOME_PROJECT=		gnome-builder
 GNOME_VERSION=		3.24.2
-REVISION=		2
+REVISION=		3
 
 SHARED_LIBS +=	egg-private               0.0 # 0.0
 SHARED_LIBS +=  panel-gtk                 0.0 # 0.0
@@ -34,7 +34,7 @@ WANTLIB += gtksourceview-3.0 harfbuzz harfbuzz-icu hogweed hyphen
 WANTLIB += iconv icudata icui18n icuuc idn2 intl javascriptcoregtk-4.0
 WANTLIB += jpeg json-glib-1.0 lzma m nettle nghttp2 notify orc-0.4
 WANTLIB += p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
-WANTLIB += pcre2-8 peas-1.0 pixman-1 png pthread pthread-stubs
+WANTLIB += pcre2-8 peas-1.0 pixman-1 png pthread
 WANTLIB += secret-1 soup-2.4 sqlite3 ssh2 ssl ${LIBCXX} tasn1
 WANTLIB += unistring vala-0.36 vte-2.91 webkit2gtk-4.0 webp xcb
 WANTLIB += xcb-dri2 xcb-glx xcb-render xcb-shm xcb-xfixes xml2

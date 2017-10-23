@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2017/09/23 11:41:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.42 2017/10/23 17:11:03 sthen Exp $
 
 TRACKER_API=		1.0
 
@@ -6,7 +6,7 @@ COMMENT=		simple note editor
 
 GNOME_PROJECT=		bijiben
 GNOME_VERSION=		3.24.2
-REVISION=		0
+REVISION=		1
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
@@ -25,7 +25,7 @@ WANTLIB += hyphen ical icalss icalvcal iconv icudata icui18n icuuc
 WANTLIB += intl javascriptcoregtk-4.0 jpeg
 WANTLIB += json-glib-1.0 kvm lzma m notify nspr4 nss3 nssutil3
 WANTLIB += orc-0.4 p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 plc4 plds4 png pthread pthread-stubs
+WANTLIB += pcre pixman-1 plc4 plds4 png pthread
 WANTLIB += secret-1 smime3 softokn3 soup-2.4 sqlite3 ssl3 ${COMPILER_LIBCXX}
 WANTLIB += uuid webkit2gtk-4.0 webp xcb xcb-dri2
 WANTLIB += xcb-glx xcb-render xcb-shm xcb-xfixes xml2 xslt z

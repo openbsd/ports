@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2016/11/04 11:35:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2017/10/23 17:11:03 sthen Exp $
 
 COMMENT =		EFL thumbnail generation library
 
 DISTNAME =		ethumb-1.7.10
-REVISION =		2
+REVISION =		3
 
 SHARED_LIBS +=	ethumb                    1.0 # 8.10
 SHARED_LIBS +=	ethumb_client             1.0 # 8.10
@@ -18,7 +18,7 @@ WANTLIB += ecore_evas ecore_file ecore_imf ecore_imf_evas ecore_input
 WANTLIB += ecore_input_evas ecore_ipc ecore_x edbus edje eet eina eio
 WANTLIB += embryo emotion evas exif expat fontconfig freetype fribidi
 WANTLIB += glib-2.0 graphite2 harfbuzz jpeg m nghttp2 pcre pthread
-WANTLIB += pthread-stubs ssl xcb z
+WANTLIB += ssl xcb z
 
 MODULES =		devel/gettext \
 			lang/lua

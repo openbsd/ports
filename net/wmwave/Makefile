@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2016/12/25 16:49:12 jca Exp $
+# $OpenBSD: Makefile,v 1.19 2017/10/23 17:11:02 sthen Exp $
 
 COMMENT=	Window Maker dockapp to display wavelan statistics
 
 DISTNAME=	wmwave-0-4
 PKGNAME=	wmwave-0.4
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=	net x11 x11/windowmaker
 
@@ -12,7 +12,7 @@ HOMEPAGE=	http://wmwave.sourceforge.net/
 
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	X11 Xext Xpm c m pthread-stubs xcb
+WANTLIB=	X11 Xext Xpm c m xcb
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=wmwave/}
 EXTRACT_SUFX=	.tgz

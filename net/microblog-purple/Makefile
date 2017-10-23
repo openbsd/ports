@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2016/03/18 23:12:19 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2017/10/23 17:11:02 sthen Exp $
 
 COMMENT=	Twitter, Identica, and Status.net plugin for libpurple
 
 VERSION=	0.3.0
 DISTNAME=	mbpurple-${VERSION}
 PKGNAME=	microblog-purple-${VERSION}
-REVISION=	5
+REVISION=	6
 CATEGORIES=	net
 
 HOMEPAGE=	https://microblog-purple.googlecode.com/
@@ -19,7 +19,7 @@ WANTLIB += Xinerama Xrandr Xrender Xxf86vm atk-1.0 cairo drm expat
 WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0 m
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png pthread
-WANTLIB += pthread-stubs purple xcb xcb-render xcb-shm z
+WANTLIB += purple xcb xcb-render xcb-shm z
 
 MASTER_SITES=	${HOMEPAGE}/files/
 

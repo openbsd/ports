@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.37 2017/03/10 18:49:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2017/10/23 17:11:02 sthen Exp $
 
 COMMENT=		GTK+ frontend to CUPS
 
 DISTNAME=		gtklp-1.3.3
 EXTRACT_SUFX=		.src.tar.gz
+REVISION=		0
 
 CATEGORIES=		print sysutils x11
 
@@ -21,7 +22,7 @@ WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gmp gnutls
 WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-x11-2.0 harfbuzz
 WANTLIB += hogweed iconv idn2 intl m nettle p11-kit pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
-WANTLIB += pthread-stubs tasn1 unistring xcb xcb-render xcb-shm
+WANTLIB += tasn1 unistring xcb xcb-render xcb-shm
 WANTLIB += z
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gtklp/}

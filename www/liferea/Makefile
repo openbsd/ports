@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.95 2017/09/22 19:56:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.96 2017/10/23 17:11:03 sthen Exp $
 
 BROKEN-i386=		hangs during build while running g-ir-scanner
 
@@ -8,6 +8,7 @@ GH_ACCOUNT=		lwindolf
 GH_PROJECT=		liferea
 GH_TAGNAME=		v1.12-rc3
 PKGNAME=		liferea-1.12rc3
+REVISION=		0
 
 CATEGORIES=		www news x11
 
@@ -29,7 +30,7 @@ WANTLIB += gthread-2.0 gtk-3 harfbuzz harfbuzz-icu hyphen iconv
 WANTLIB += icudata icui18n icuuc intl javascriptcoregtk-4.0 jpeg
 WANTLIB += json-glib-1.0 lzma m notify orc-0.4 pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre peas-1.0 peas-gtk-1.0 pixman-1 png
-WANTLIB += pthread-stubs secret-1 soup-2.4 sqlite3 tasn1 webkit2gtk-4.0
+WANTLIB += secret-1 soup-2.4 sqlite3 tasn1 webkit2gtk-4.0
 WANTLIB += webp xcb xcb-dri2 xcb-glx xcb-render xcb-shm xcb-xfixes
 WANTLIB += xml2 xslt z
 

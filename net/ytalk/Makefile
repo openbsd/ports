@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.33 2015/11/24 09:11:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.34 2017/10/23 17:11:02 sthen Exp $
 COMMENT=	enhanced talk that allows for multiple parties
 
 DISTNAME=	ytalk-3.1.1
-REVISION=	2
+REVISION=	3
 CATEGORIES=	net
 
 MASTER_SITES=	https://distfiles.nl/
@@ -21,7 +21,7 @@ FLAVOR?=
 .if ${FLAVOR:Mno_x11}
 CONFIGURE_ARGS+= --without-x
 .else
-WANTLIB+=	ICE SM X11 pthread-stubs xcb
+WANTLIB+=	ICE SM X11 xcb
 .endif
 
 NO_TEST=	Yes

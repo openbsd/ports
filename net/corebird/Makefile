@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2017/07/26 22:45:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2017/10/23 17:11:02 sthen Exp $
 
 COMMENT =		native Gtk+ Twitter client
 
 V =			1.5.1
 DISTNAME =		corebird-${V}
 MASTER_SITES =		https://github.com/baedert/corebird/releases/download/${V}/
-REVISION =		0
+REVISION =		1
 
 EXTRACT_SUFX =		.tar.xz
 CATEGORIES =		net
@@ -24,7 +24,7 @@ WANTLIB += fontconfig freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gspell-1 gstbase-1.0
 WANTLIB += gstreamer-1.0 gstvideo-1.0 gthread-2.0 gtk-3 harfbuzz
 WANTLIB += json-glib-1.0 lzma m orc-0.4 pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
+WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB += rest-0.7 soup-2.4 soup-gnome-2.4 sqlite3 ${COMPILER_LIBCXX} xcb
 WANTLIB += xcb-render xcb-shm xml2 z
 

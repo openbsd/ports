@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.151 2017/05/08 17:17:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.152 2017/10/23 17:11:04 sthen Exp $
 
 COMMENT=		components for the GNOME desktop
 
 GNOME_PROJECT=		gnome-desktop
 # sync with meta/gnome "V" variable
 GNOME_VERSION=		3.24.2
+REVISION=		0
 
 SHARED_LIBS +=  gnome-desktop-3      2.1      # 14.0
 
@@ -19,7 +20,7 @@ WANTLIB += c cairo cairo-gobject dbus-1 epoxy expat ffi fontconfig
 WANTLIB += freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-3 harfbuzz iconv
 WANTLIB += intl m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png pthread pthread-stubs xcb xcb-render xcb-shm z
+WANTLIB += png pthread xcb xcb-render xcb-shm z
 
 MODULES=		x11/gnome
 

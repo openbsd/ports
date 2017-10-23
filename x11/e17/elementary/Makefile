@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2017/08/22 11:57:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2017/10/23 17:11:03 sthen Exp $
 
 BROKEN-i386 =		segfault during build since switch to clang
 
@@ -6,7 +6,7 @@ COMMENT =		basic widget set, based on EFL
 
 VERSION =		1.7.10
 DISTNAME =		elementary-${VERSION}
-REVISION =		7
+REVISION =		8
 
 SHARED_LIBS +=	elementary                1.0 # 8.10
 
@@ -21,7 +21,7 @@ WANTLIB += ecore_input_evas ecore_ipc ecore_x edbus edje eet efreet
 WANTLIB += efreet_mime efreet_trash eina eio embryo emotion ethumb
 WANTLIB += ethumb_client evas exif expat fontconfig freetype fribidi
 WANTLIB += glib-2.0 graphite2 harfbuzz jpeg m nghttp2 pcre pthread
-WANTLIB += pthread-stubs ssl xcb z
+WANTLIB += ssl xcb z
 
 MODULES =		devel/gettext \
 			lang/lua \

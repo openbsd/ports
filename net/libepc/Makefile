@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2017/09/07 12:29:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2017/10/23 17:11:02 sthen Exp $
 
 COMMENT=		Easy Publish and Consume library
 
 GNOME_PROJECT=		libepc
 GNOME_VERSION=		0.4.6
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		net
 
@@ -24,7 +24,7 @@ WANTLIB += dbus-1 epoxy expat ffi fontconfig freetype gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gmp gnutls gobject-2.0
 WANTLIB += graphite2 gthread-2.0 gtk-3 harfbuzz hogweed iconv
 WANTLIB += idn2 intl lzma m nettle p11-kit pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
+WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB += soup-2.4 sqlite3 tasn1 unistring uuid xcb xcb-render
 WANTLIB += xcb-shm xml2 z
 

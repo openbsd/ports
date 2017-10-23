@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2017/07/27 10:15:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.68 2017/10/23 17:11:05 sthen Exp $
 
 PORTROACH=		limit:^2
 
@@ -7,7 +7,7 @@ COMMENT=		C++ interface for gtk2+
 GNOME_PROJECT=		gtkmm
 GNOME_VERSION=		2.24.5
 PKGNAME=		gtk2mm-${GNOME_VERSION}
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		x11 devel
 
@@ -28,7 +28,7 @@ WANTLIB += expat ffi fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 giomm-2.4 glib-2.0 glibmm-2.4 gmodule-2.0 gobject-2.0
 WANTLIB += graphite2 gthread-2.0 gtk-x11-2.0 harfbuzz iconv intl
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pangomm-1.4
-WANTLIB += pcre pixman-1 png pthread pthread-stubs sigc-2.0 xcb
+WANTLIB += pcre pixman-1 png pthread sigc-2.0 xcb
 WANTLIB += xcb-render xcb-shm z
 
 MODULES=		x11/gnome

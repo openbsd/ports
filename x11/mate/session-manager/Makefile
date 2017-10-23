@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2017/08/13 09:57:06 robert Exp $
+# $OpenBSD: Makefile,v 1.6 2017/10/23 17:11:05 sthen Exp $
 
 COMMENT=		MATE session manager
 
 MATE_PROJECT=		mate-session-manager
 MATE_VERSION=		1.18.1
+REVISION=		0
 
 CATEGORIES=		x11
 
@@ -16,7 +17,7 @@ WANTLIB += atspi c cairo cairo-gobject dbus-1 dbus-glib-1 epoxy
 WANTLIB += execinfo expat ffi fontconfig freetype gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
 WANTLIB += gthread-2.0 gtk-3 harfbuzz iconv intl m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
+WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB += xcb xcb-render xcb-shm z
 
 MODULES=		devel/dconf \

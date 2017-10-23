@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.29 2017/09/23 11:41:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2017/10/23 17:11:03 sthen Exp $
 
 COMMENT =		GNOME calendar
 
 GNOME_PROJECT =		gnome-calendar
 GNOME_VERSION =		3.24.3
-REVISION =		1
+REVISION =		2
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
@@ -23,7 +23,7 @@ WANTLIB += hyphen ical icalss icalvcal iconv icudata icui18n icuuc
 WANTLIB += intl javascriptcoregtk-4.0 jpeg json-glib-1.0 lzma
 WANTLIB += m notify nspr4 nss3 nssutil3 orc-0.4 p11-kit pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 plc4 plds4
-WANTLIB += png pthread pthread-stubs secret-1 smime3 softokn3
+WANTLIB += png pthread secret-1 smime3 softokn3
 WANTLIB += soup-2.4 sqlite3 ssl3 ${COMPILER_LIBCXX} webkit2gtk-4.0 webp
 WANTLIB += xcb xcb-dri2 xcb-glx xcb-render xcb-shm xcb-xfixes
 WANTLIB += xml2 xslt z

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.93 2017/10/15 19:07:33 kili Exp $
+# $OpenBSD: Makefile,v 1.94 2017/10/23 17:11:02 sthen Exp $
 
 COMMENT =		base binaries for TeXLive typesetting distribution
 
@@ -6,7 +6,7 @@ COMMENT =		base binaries for TeXLive typesetting distribution
 DISTNAME =		texlive-${DIST_V}b-source
 PKGNAME =		texlive_base-${V}
 WRKDIST =		${WRKDIR}/texlive-${DIST_V}-source
-REVISION =		3
+REVISION =		4
 
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
 			texlive-${DIST_V}-extra${EXTRACT_SUFX}
@@ -20,7 +20,7 @@ WANTLIB += ICE SM X11 Xau Xaw Xdmcp Xext Xi Xmu Xpm Xrender Xt
 WANTLIB += c cairo expat fontconfig freetype gd glib-2.0 graphite2
 WANTLIB += harfbuzz harfbuzz-icu iconv icudata icui18n icuio icuuc intl
 WANTLIB += jpeg lcms2 m openjp2 paper pcre pixman-1 png poppler
-WANTLIB += potrace pthread pthread-stubs ${COMPILER_LIBCXX} tiff webp xcb
+WANTLIB += potrace pthread ${COMPILER_LIBCXX} tiff webp xcb
 WANTLIB += xcb-render xcb-shm z zzip
 WANTLIB += ${LIBCXX}
 

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.66 2017/04/13 07:38:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.67 2017/10/23 17:11:04 sthen Exp $
 
 COMMENT=		user interface components for GNOME
 
 GNOME_PROJECT=		libgnomeui
 GNOME_VERSION=		2.24.5
-REVISION=		10
+REVISION=		11
 
 SHARED_LIBS +=	gnomeui-2      2400.0         # .2400.2
 
@@ -20,7 +20,7 @@ WANTLIB += gio-2.0 glade-2.0 glib-2.0 gmodule-2.0 gnome-2 gnome-keyring
 WANTLIB += gnomecanvas-2 gnomevfs-2 gobject-2.0 gpg-error graphite2
 WANTLIB += gthread-2.0 gtk-x11-2.0 harfbuzz ltdl lzma m ogg pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png popt
-WANTLIB += pthread pthread-stubs ssl util vorbis vorbisfile xcb
+WANTLIB += pthread ssl util vorbis vorbisfile xcb
 WANTLIB += xcb-render xcb-shm xml2 z iconv intl
 
 EXTRACT_SUFX=	.tar.bz2

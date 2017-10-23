@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.29 2016/03/17 21:07:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.30 2017/10/23 17:11:02 sthen Exp $
 
 COMMENT=	X11 version of Rob Pike's editor, sam
 
 DISTNAME=	sam
 PKGNAME=	sam-4.3.19980506
-REVISION=	2
+REVISION=	3
 CATEGORIES=	plan9
 
 MASTER_SITES=	ftp://netlib.bell-labs.com/netlib/research/ \
@@ -15,7 +15,7 @@ EXTRACT_CASES=	*.shar.gz) ${GZIP_CMD} -dc ${FULLDISTDIR}/$$archive | /bin/sh;;
 MAINTAINER=	Markus Friedl <markus@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
-WANTLIB=		X11 Xt c pthread-stubs xcb
+WANTLIB=		X11 Xt c xcb
 
 WRKDIST=	${WRKDIR}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2017/07/26 22:45:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.48 2017/10/23 17:11:03 sthen Exp $
 
 PORTROACH+=		limit:^4
 
@@ -11,7 +11,7 @@ API_VERSION=		4.0
 SUBST_VARS=		API_VERSION
 
 PKGNAME=		gtkhtml4-${VERSION}
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  gtkhtml-4.0               0.0 # 0.0
 SHARED_LIBS +=  gtkhtml-editor-4.0        0.0 # 0.0
@@ -30,7 +30,7 @@ WANTLIB += cairo-gobject dbus-1 enchant epoxy expat ffi fontconfig
 WANTLIB += freetype gailutil-3 gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-3 harfbuzz
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png
-WANTLIB += pthread pthread-stubs ${COMPILER_LIBCXX} xcb xcb-render xcb-shm z
+WANTLIB += pthread ${COMPILER_LIBCXX} xcb xcb-render xcb-shm z
 
 MODULES=		devel/gettext \
 			x11/gnome

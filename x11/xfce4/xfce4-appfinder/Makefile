@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.47 2017/08/30 08:46:31 landry Exp $
+# $OpenBSD: Makefile,v 1.48 2017/10/23 17:11:06 sthen Exp $
 
 COMMENT=	Xfce4 application finder
 
 XFCE_PROJECT=	xfce4-appfinder
 XFCE_VERSION=	4.12.0
-REVISION=	1
+REVISION=	2
 
 PORTROACH=	limitw:1,even
 
@@ -26,7 +26,7 @@ WANTLIB=	X11 Xcomposite Xcursor Xdamage Xext Xfixes \
 		pangocairo-1.0 pangoft2-1.0 pixman-1 png xfce4util z \
 		ICE SM dbus-1 dbus-glib-1 gio-2.0 gthread-2.0 \
 		pcre pthread startup-notification-1 xfce4ui-1 \
-		pthread-stubs xcb X11-xcb ffi \
+		xcb X11-xcb ffi \
 		xcb-util gthread-2.0 xcb-render xcb-shm \
 		xfconf-0 gdk-x11-2.0 garcon-1 \
 		gdk_pixbuf-2.0 gtk-x11-2.0 harfbuzz graphite2 iconv intl

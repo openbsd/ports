@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2017/04/13 07:38:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2017/10/23 17:11:04 sthen Exp $
 
 COMMENT=		PGP public keys sharing via DNS-SD and HKP
 
 GNOME_PROJECT=		seahorse-sharing
 GNOME_VERSION=		3.8.0
-REVISION=		7
+REVISION=		8
 
 CATEGORIES=		net security
 
@@ -18,7 +18,7 @@ WANTLIB += dbus-1 epoxy expat ffi fontconfig freetype gdk-3
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gpg-error gpgme graphite2 gthread-2.0 gtk-3 harfbuzz lzma m
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png
-WANTLIB += pthread pthread-stubs soup-2.4 sqlite3 xcb xcb-render xcb-shm
+WANTLIB += pthread soup-2.4 sqlite3 xcb xcb-render xcb-shm
 WANTLIB += xml2 z iconv intl
 
 MODULES=		x11/gnome

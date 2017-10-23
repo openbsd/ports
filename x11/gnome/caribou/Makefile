@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.43 2017/04/13 07:38:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.44 2017/10/23 17:11:03 sthen Exp $
 
 COMMENT=		input assistive technology
 
 GNOME_PROJECT=		caribou
 GNOME_VERSION=		0.4.21
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  caribou              0.0      # 0.0
 
@@ -19,7 +19,7 @@ WANTLIB += gbm gdk-3 gdk-x11-2.0 gdk_pixbuf-2.0 gee-0.8 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
 WANTLIB += gtk-3 gtk-x11-2.0 harfbuzz iconv intl json-glib-1.0
 WANTLIB += lzma m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png pthread pthread-stubs xcb xcb-dri2 xcb-render xcb-shape
+WANTLIB += png pthread xcb xcb-dri2 xcb-render xcb-shape
 WANTLIB += xcb-shm xcb-xfixes xkbfile xklavier xml2 z
 
 MODULES=		devel/dconf \

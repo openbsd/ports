@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2017/09/23 11:41:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2017/10/23 17:11:05 sthen Exp $
 
 USE_WXNEEDED=		Yes
 
@@ -10,7 +10,7 @@ SHARED_LIBS +=  atrildocument             3.0 # 3.0
 SHARED_LIBS +=  atrilview                 3.0 # 3.0
 
 MATE_PROJECT=		atril
-REVISION=		6
+REVISION=		7
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -19,7 +19,7 @@ WANTLIB += EGL GL ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xt Xxf86vm bz2
 WANTLIB += c crypto drm epoxy expat ffi fontconfig freetype gbm
 WANTLIB += gio-2.0 glapi glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
-WANTLIB += iconv intl m pcre pixman-1 pthread pthread-stubs sqlite3
+WANTLIB += iconv intl m pcre pixman-1 pthread sqlite3
 WANTLIB += ${COMPILER_LIBCXX} xcb xcb-dri2 xcb-glx xcb-render xcb-shm xcb-xfixes
 WANTLIB += archive atk-1.0 atk-bridge-2.0 atspi avahi-common
 WANTLIB += cairo-gobject cairo caja-extension dbus-1 djvulibre

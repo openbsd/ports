@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2015/02/16 22:57:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2017/10/23 17:11:02 sthen Exp $
 
 COMMENT=		suite of clustering tools based on IBM's PSSP
 
 DISTNAME=		clusterit-2.5
 PKGNAME=		${DISTNAME}
-REVISION =		2
+REVISION =		3
 CATEGORIES=		sysutils
 
 HOMEPAGE=		http://www.garbled.net/clusterit.html
@@ -28,7 +28,7 @@ X11_SUBDIRS=		dvt rvt
 .if ${FLAVOR:Mno_x11}
 CONFIGURE_ARGS=		--without-x11
 .else
-WANTLIB+=		X11 pthread-stubs util xcb
+WANTLIB+=		X11 util xcb
 MAKE_FLAGS=		EXTRA_SUBDIRS="${X11_SUBDIRS}"
 .endif
 

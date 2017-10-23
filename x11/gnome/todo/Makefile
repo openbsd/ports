@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2017/09/23 11:41:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2017/10/23 17:11:04 sthen Exp $
 
 COMMENT=		simple task management application
 
 GNOME_PROJECT=		gnome-todo
 GNOME_VERSION=		3.24.2
-REVISION=		1
+REVISION=		2
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -23,7 +23,7 @@ WANTLIB += harfbuzz hyphen ical icalss icalvcal iconv icudata
 WANTLIB += icui18n icuuc intl javascriptcoregtk-4.0 jpeg json-glib-1.0
 WANTLIB += lzma m notify nspr4 nss3 nssutil3 orc-0.4 p11-kit pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre peas-1.0 pixman-1
-WANTLIB += plc4 plds4 png pthread pthread-stubs secret-1 smime3
+WANTLIB += plc4 plds4 png pthread secret-1 smime3
 WANTLIB += softokn3 soup-2.4 sqlite3 ssl3 ${COMPILER_LIBCXX} webkit2gtk-4.0
 WANTLIB += webp xcb xcb-dri2 xcb-glx xcb-render xcb-shm xcb-xfixes
 WANTLIB += xml2 xslt z

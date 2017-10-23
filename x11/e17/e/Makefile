@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.68 2017/08/21 19:25:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.69 2017/10/23 17:11:03 sthen Exp $
 
 COMMENT =		the enlightened window manager
 
 VERSION =		0.17.6
 DISTNAME =		enlightenment-${VERSION}
 EPOCH =			1
-REVISION =		9
+REVISION =		10
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
@@ -18,7 +18,7 @@ WANTLIB += ecore_imf_evas ecore_input ecore_input_evas ecore_ipc ecore_x
 WANTLIB += edbus edje eet efreet efreet_mime efreet_trash ehal eina eio
 WANTLIB += elementary embryo emotion enotify ethumb ethumb_client eukit
 WANTLIB += evas execinfo exif expat fontconfig freetype fribidi glib-2.0
-WANTLIB += graphite2 harfbuzz jpeg m nghttp2 pcre pthread pthread-stubs
+WANTLIB += graphite2 harfbuzz jpeg m nghttp2 pcre pthread
 WANTLIB += ssl xcb xcb-keysyms xcb-shape z
 
 MODULES +=		devel/gettext \

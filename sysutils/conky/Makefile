@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2016/11/04 11:35:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.52 2017/10/23 17:11:02 sthen Exp $
 
 ONLY_FOR_ARCHS= ${APM_ARCHS}
 
@@ -7,7 +7,7 @@ COMMENT=	light-weight system monitor
 DISTNAME=	conky-1.9.0
 CATEGORIES=	sysutils
 HOMEPAGE=	http://conky.sourceforge.net/
-REVISION=	11
+REVISION=	13
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=conky/}
 
@@ -44,7 +44,7 @@ CONFIGURE_ARGS+=--disable-double-buffer \
 CONFIGURE_ARGS+=--enable-imlib2
 LIB_DEPENDS+=	graphics/imlib2
 WANTLIB += Imlib2 X11 Xdamage Xext Xfixes Xft
-WANTLIB += Xrender expat fontconfig freetype xcb pthread-stubs
+WANTLIB += Xrender expat fontconfig freetype xcb
 .endif
 
 .if ${FLAVOR:Mxmms2}

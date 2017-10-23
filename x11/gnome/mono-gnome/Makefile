@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.37 2017/04/13 07:38:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2017/10/23 17:11:04 sthen Exp $
 
 COMMENT=		.NET language bindings for assorted GNOME libraries
 
 GNOME_PROJECT=		gnome-sharp
 GNOME_VERSION=		2.24.2
 PKGNAME=		mono-gnome-${VERSION}
-REVISION=		8
+REVISION=		9
 
 CATEGORIES=		x11
 
@@ -23,7 +23,7 @@ WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gnome-2 gnome-keyring
 WANTLIB += gnomecanvas-2 gnomeui-2 gnomevfs-2 gobject-2.0 gpg-error
 WANTLIB += graphite2 gthread-2.0 gtk-x11-2.0 harfbuzz iconv intl
 WANTLIB += ltdl lzma m ogg pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png popt pthread pthread-stubs ssl util
+WANTLIB += pcre pixman-1 png popt pthread ssl util
 WANTLIB += vorbis vorbisfile xcb xcb-render xcb-shm xml2 z
 
 EXTRACT_SUFX=		.tar.bz2

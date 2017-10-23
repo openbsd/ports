@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.168 2017/09/19 11:51:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.169 2017/10/23 17:11:04 sthen Exp $
 
 # XXX gcm-dmi.c:141:2: warning: #warning Please add dmi support for your OS
 
@@ -6,7 +6,7 @@ COMMENT=		GNOME settings daemon
 
 GNOME_PROJECT=		gnome-settings-daemon
 GNOME_VERSION=		3.24.3
-REVISION=		0
+REVISION=		1
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
@@ -22,7 +22,7 @@ WANTLIB += graphite2 gthread-2.0 gtk-3 gweather-3 harfbuzz hogweed
 WANTLIB += iconv idn2 intl json-glib-1.0 lcms2 ltdl lzma unistring
 WANTLIB += m nettle notify nspr4 nss3 nssutil3 ogg p11-kit pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 plc4 plds4
-WANTLIB += png polkit-gobject-1 pthread pthread-stubs pulse pulse-mainloop-glib
+WANTLIB += png polkit-gobject-1 pthread pulse pulse-mainloop-glib
 WANTLIB += smime3 sndfile softokn3 soup-2.4 sqlite3 ssl3 tasn1
 WANTLIB += upower-glib vorbis vorbisenc vorbisfile xcb xcb-render
 WANTLIB += xcb-shm xml2 z

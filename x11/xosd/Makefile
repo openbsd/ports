@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2015/03/16 18:08:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2017/10/23 17:11:07 sthen Exp $
 
 COMMENT=	displays text on your screen
 
@@ -6,12 +6,12 @@ DISTNAME=	xosd-2.2.14
 SHARED_LIBS+=	xosd		4.12	# 4.14
 CATEGORIES=	x11 graphics
 HOMEPAGE=	http://libxosd.sourceforge.net/
-REVISION=	0
+REVISION=	1
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += X11 Xau Xdmcp Xext Xinerama c pthread pthread-stubs
+WANTLIB += X11 Xau Xdmcp Xext Xinerama c pthread
 WANTLIB += xcb
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=libxosd/}
