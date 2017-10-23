@@ -1,6 +1,10 @@
-$OpenBSD: patch-rubynative_src_estraier_c,v 1.1 2011/07/12 18:06:23 jeremy Exp $
---- rubynative/src/estraier.c.orig	Fri Jul  8 09:05:46 2011
-+++ rubynative/src/estraier.c	Fri Jul  8 09:08:29 2011
+$OpenBSD: patch-ext_estraier_c,v 1.1 2017/10/23 21:46:43 jeremy Exp $
+
+Use modern ruby macros for accessing ptr/len for strings and arrays.
+
+Index: ext/estraier.c
+--- ext/estraier.c.orig
++++ ext/estraier.c
 @@ -351,7 +351,7 @@ static VALUE doc_make_snippet(VALUE vself, VALUE vword
    vdoc = rb_iv_get(vself, VNDATA);
    Data_Get_Struct(vdoc, ESTDOC, doc);

@@ -1,7 +1,21 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/07/19 18:00:16 jeremy Exp $
-bin/estcmd${BIN_SUFFIX}.rb
-${MODRUBY_SITEARCHDIR}/estraier.so
-${MODRUBY_RELEXAMPLEDIR}/
-${MODRUBY_RELEXAMPLEDIR}/hyperestraier/
-${MODRUBY_RELEXAMPLEDIR}/hyperestraier/example001.rb
-${MODRUBY_RELEXAMPLEDIR}/hyperestraier/example002.rb
+@comment $OpenBSD: PLIST,v 1.6 2017/10/23 21:46:43 jeremy Exp $
+${GEM_BIN}/estcmd${GEM_BIN_SUFFIX}
+${GEM_LIB}/cache/${DISTNAME}.gem
+${GEM_LIB}/gems/${DISTNAME}/
+${GEM_LIB}/gems/${DISTNAME}/CHANGELOG.txt
+${GEM_LIB}/gems/${DISTNAME}/History.txt
+${GEM_LIB}/gems/${DISTNAME}/README.txt
+${GEM_LIB}/gems/${DISTNAME}/Rakefile
+${GEM_LIB}/gems/${DISTNAME}/bin/
+${GEM_LIB}/gems/${DISTNAME}/bin/estcmd
+${GEM_LIB}/gems/${DISTNAME}/examples/
+${GEM_LIB}/gems/${DISTNAME}/examples/Makefile
+${GEM_LIB}/gems/${DISTNAME}/examples/example001.rb
+${GEM_LIB}/gems/${DISTNAME}/examples/example002.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/
+${GEM_LIB}/gems/${DISTNAME}/lib/estraier.so
+${GEM_LIB}/gems/${DISTNAME}/setup.rb
+${GEM_LIB}/gems/${DISTNAME}/test/
+${GEM_LIB}/gems/${DISTNAME}/test/test_estraier.rb
+${GEM_LIB}/gems/${DISTNAME}/test/test_helper.rb
+${GEM_LIB}/specifications/${DISTNAME}.gemspec
