@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/10/23 21:39:20 bcallah Exp $
+bin/2ff
+@bin bin/ff2jpg
+@bin bin/ff2pam
+@bin bin/ff2png
+@bin bin/ff2ppm
+@bin bin/jpg2ff
+@bin bin/png2ff
+@man man/man1/2ff.1
+@man man/man1/ff2jpg.1
+@man man/man1/ff2pam.1
+@man man/man1/ff2png.1
+@man man/man1/ff2ppm.1
+@man man/man1/jpg2ff.1
+@man man/man1/png2ff.1
+@man man/man5/farbfeld.5
