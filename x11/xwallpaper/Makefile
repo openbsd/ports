@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2017/10/15 10:18:57 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.4 2017/10/23 06:30:14 rsadowski Exp $
 
 COMMENT =	wallpaper setting utility for X
 
 GH_ACCOUNT =	stoeckmann
 GH_PROJECT =	xwallpaper
-GH_TAGNAME =	v0.2.2
+GH_TAGNAME =	v0.3.0
 
 CATEGORIES =	x11 graphics
 
