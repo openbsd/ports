@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.50 2017/06/24 12:32:20 stsp Exp $
+# $OpenBSD: Makefile,v 1.51 2017/10/23 21:25:13 stsp Exp $
 
 COMMENT=	companion library to APR
 
-V=		1.6.0
+V=		1.6.1
 DISTNAME=	apr-util-$V
-SHARED_LIBS +=	aprutil-1          6.0     # .6.0
+SHARED_LIBS +=	aprutil-1          6.1     # .6.0
 
 CATEGORIES=	devel
 
