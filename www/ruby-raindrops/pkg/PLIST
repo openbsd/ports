@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2016/11/04 21:46:42 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2017/10/23 21:39:02 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.document
@@ -54,12 +54,12 @@ ${GEM_LIB}/gems/${DISTNAME}/test/test_linux_all_tcp_listen_stats.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_linux_all_tcp_listen_stats_leak.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_linux_ipv6.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_linux_middleware.rb
-${GEM_LIB}/gems/${DISTNAME}/test/test_linux_tcp_info.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_middleware.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_middleware_unicorn.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_middleware_unicorn_ipv6.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_raindrops.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_raindrops_gc.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_struct.rb
+${GEM_LIB}/gems/${DISTNAME}/test/test_tcp_info.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_watcher.rb
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
