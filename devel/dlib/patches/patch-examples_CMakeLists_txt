@@ -1,0 +1,14 @@
+$OpenBSD: patch-examples_CMakeLists_txt,v 1.1.1.1 2017/10/23 14:43:38 rsadowski Exp $
+thread-local storage is not supported
+Index: examples/CMakeLists.txt
+--- examples/CMakeLists.txt.orig
++++ examples/CMakeLists.txt
+@@ -112,7 +112,7 @@ endmacro()
+ # to compile the rest of dlib.  
+ if (NOT USING_OLD_VISUAL_STUDIO_COMPILER)
+    add_example(dnn_metric_learning_ex)
+-   add_gui_example(dnn_face_recognition_ex)
++   #add_gui_example(dnn_face_recognition_ex)
+    add_example(dnn_introduction_ex)
+    add_example(dnn_introduction2_ex)
+    add_example(dnn_inception_ex)
