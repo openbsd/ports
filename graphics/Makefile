@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.444 2017/10/14 16:23:46 jeremy Exp $
+# $OpenBSD: Makefile,v 1.445 2017/10/23 21:39:49 bcallah Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -51,6 +51,7 @@
      SUBDIR += evince,light
      SUBDIR += exiftran
      SUBDIR += exiv2
+     SUBDIR += farbfeld
      SUBDIR += feh
      SUBDIR += ffmpeg
      SUBDIR += ffmpegthumbnailer
