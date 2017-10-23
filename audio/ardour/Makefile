@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2017/07/27 09:34:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2017/10/23 17:02:39 sthen Exp $
 
 # XXX check if still needed at next update
 CXXFLAGS +=		-std=c++11
@@ -8,7 +8,7 @@ ONLY_FOR_ARCHS =	amd64 i386 powerpc
 COMMENT =		digital audio workstation
 
 DISTNAME =		ardour-2.8.16
-REVISION =		6
+REVISION =		7
 
 CATEGORIES =		audio
 HOMEPAGE =		http://ardour.org
@@ -24,7 +24,7 @@ WANTLIB += gdk_pixbuf-2.0 gdkmm-2.4 gio-2.0 giomm-2.4 glib-2.0
 WANTLIB += glibmm-2.4 gmodule-2.0 gnomecanvas-2 gnomecanvasmm-2.6
 WANTLIB += gobject-2.0 gthread-2.0 gtk-x11-2.0 gtkmm-2.4 harfbuzz
 WANTLIB += jack lo lrdf m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pangomm-1.4 pcre pixman-1 png pthread pthread-stubs
+WANTLIB += pangomm-1.4 pcre pixman-1 png pthread
 WANTLIB += samplerate sigc-2.0 sndfile sndio xcb xcb-render
 WANTLIB += xcb-shm xml2 xslt z expat graphite2 usb lzma
 WANTLIB += ${COMPILER_LIBCXX}

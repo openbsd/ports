@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.41 2017/07/26 22:45:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.42 2017/10/23 17:02:36 sthen Exp $
 
 COMMENT=	free space simulator and planetarium
 
 DISTNAME=	celestia-1.6.1
-REVISION=	11
+REVISION=	12
 
 CATEGORIES=	astro x11
 
@@ -23,7 +23,7 @@ WANTLIB += gdk_pixbuf-2.0 gdkglext-x11-1.0 gio-2.0 glapi glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-x11-2.0
 WANTLIB += gtkglext-x11-1.0 harfbuzz iconv intl jpeg m ogg pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pangox-1.0 pcre pixman-1
-WANTLIB += png pthread pthread-stubs ${COMPILER_LIBCXX} theora xcb xcb-dri2
+WANTLIB += png pthread ${COMPILER_LIBCXX} theora xcb xcb-dri2
 WANTLIB += xcb-glx xcb-render xcb-shm z
 WANTLIB += ${MODLUA_WANTLIB}
 
