@@ -1,4 +1,4 @@
-# $OpenBSD: qt5.port.mk,v 1.16 2017/07/17 08:34:37 zhuk Exp $
+# $OpenBSD: qt5.port.mk,v 1.17 2017/10/24 10:12:19 rsadowski Exp $
 
 # This fragment defines MODQT_* variables to make it easier to substitute
 # qt3/qt4/qt5 in a port.
@@ -106,7 +106,7 @@ MODQT5_USE_GCC4_MODULE ?=	Yes
 .if ${MODQT5_USE_GCC4_MODULE:L} == "yes"
 # not really
 
-COMPILER ?= gcc
+COMPILER ?= base-clang ports-clang ports-gcc
 ONLY_FOR_ARCHS ?= ${CXX11_ARCHS}
 # force using compilers/wrappers from ${WRKDIR}/bin
 # XXX LINK_C is actually unused by qmake

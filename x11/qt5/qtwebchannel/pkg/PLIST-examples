@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.2 2017/07/17 08:34:39 zhuk Exp $
+@comment $OpenBSD: PLIST-examples,v 1.3 2017/10/24 10:12:20 rsadowski Exp $
 lib/qt5/examples/webchannel/
 lib/qt5/examples/webchannel/chatclient-html/
 lib/qt5/examples/webchannel/chatclient-html/chatclient-html.pro
@@ -9,6 +9,8 @@ lib/qt5/examples/webchannel/chatclient-html/doc/images/chatclient-html.png
 lib/qt5/examples/webchannel/chatclient-html/doc/src/
 lib/qt5/examples/webchannel/chatclient-html/doc/src/chatclient-html.qdoc
 lib/qt5/examples/webchannel/chatclient-qml/
+lib/qt5/examples/webchannel/chatclient-qml/LoginForm.ui.qml
+lib/qt5/examples/webchannel/chatclient-qml/MainForm.ui.qml
 lib/qt5/examples/webchannel/chatclient-qml/chatclient-qml.pro
 lib/qt5/examples/webchannel/chatclient-qml/doc/
 lib/qt5/examples/webchannel/chatclient-qml/doc/images/
@@ -38,11 +40,15 @@ lib/qt5/examples/webchannel/qwclient/package.json
 lib/qt5/examples/webchannel/qwclient/qwclient.js
 lib/qt5/examples/webchannel/qwclient/qwclient.pro
 lib/qt5/examples/webchannel/shared/
+lib/qt5/examples/webchannel/shared/qwebchannel.js
 lib/qt5/examples/webchannel/shared/websocketclientwrapper.cpp
 lib/qt5/examples/webchannel/shared/websocketclientwrapper.h
 lib/qt5/examples/webchannel/shared/websockettransport.cpp
 lib/qt5/examples/webchannel/shared/websockettransport.h
 lib/qt5/examples/webchannel/standalone/
+lib/qt5/examples/webchannel/standalone/core.h
+lib/qt5/examples/webchannel/standalone/dialog.cpp
+lib/qt5/examples/webchannel/standalone/dialog.h
 lib/qt5/examples/webchannel/standalone/dialog.ui
 lib/qt5/examples/webchannel/standalone/doc/
 lib/qt5/examples/webchannel/standalone/doc/images/

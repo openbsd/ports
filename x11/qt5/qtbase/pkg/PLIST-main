@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2017/07/17 08:34:37 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2017/10/24 10:12:19 rsadowski Exp $
 @conflict qt5-<5.6
 bin/moc-qt5
 bin/qmake-qt5
@@ -2979,6 +2979,7 @@ lib/qt5/mkspecs/features/uikit/xcodebuild.mk
 lib/qt5/mkspecs/features/uikit/xcodebuild.prf
 lib/qt5/mkspecs/features/unix/
 lib/qt5/mkspecs/features/unix/bsymbolic_functions.prf
+lib/qt5/mkspecs/features/unix/ccache.prf
 lib/qt5/mkspecs/features/unix/hide_symbols.prf
 lib/qt5/mkspecs/features/unix/largefile.prf
 lib/qt5/mkspecs/features/unix/opengl.prf

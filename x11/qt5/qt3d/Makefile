@@ -1,30 +1,28 @@
-# $OpenBSD: Makefile,v 1.5 2017/07/29 00:07:13 zhuk Exp $
+# $OpenBSD: Makefile,v 1.6 2017/10/24 10:12:19 rsadowski Exp $
 
 # TODO: port Assimp and switch qt3d to it after Assimp >3.3.1 gets
 # released.
 
 QT5NAME =		Qt3D
-REVISION =		0
 COMMENT-main =		Qt5 components for 3D graphics
 
 MULTI_PACKAGES =	-main -examples
 
-SHARED_LIBS +=  Qt53DCore               1.1
-SHARED_LIBS +=  Qt53DInput              1.1
-SHARED_LIBS +=  Qt53DLogic              1.1
-SHARED_LIBS +=  Qt53DQuick              1.1
-SHARED_LIBS +=  Qt53DQuickInput		1.1
-SHARED_LIBS +=  Qt53DQuickRender	1.1
-SHARED_LIBS +=  Qt53DRender		1.1
-SHARED_LIBS +=  Qt53DAnimation		0.0
-SHARED_LIBS +=  Qt53DExtras		0.0
-SHARED_LIBS +=  Qt53DQuickAnimation	0.0
-SHARED_LIBS +=  Qt53DQuickExtras	0.0
-SHARED_LIBS +=  Qt53DQuickScene2D	0.0
+SHARED_LIBS +=  Qt53DCore		1.2
+SHARED_LIBS +=  Qt53DInput		1.2
+SHARED_LIBS +=  Qt53DLogic		1.2
+SHARED_LIBS +=  Qt53DQuick		1.2
+SHARED_LIBS +=  Qt53DQuickInput		1.2
+SHARED_LIBS +=  Qt53DQuickRender	1.2
+SHARED_LIBS +=  Qt53DRender		1.2
+SHARED_LIBS +=  Qt53DAnimation		0.1
+SHARED_LIBS +=  Qt53DExtras		0.1
+SHARED_LIBS +=  Qt53DQuickAnimation	0.1
+SHARED_LIBS +=  Qt53DQuickExtras	0.1
+SHARED_LIBS +=  Qt53DQuickScene2D	0.1
 
-WANTLIB =  ${COMPILER_LIBCXX}
-WANTLIB += GL Qt5Concurrent Qt5Core Qt5Gamepad Qt5Gui Qt5Network Qt5Qml
-WANTLIB += Qt5Quick c m pthread z
+WANTLIB += ${COMPILER_LIBCXX} GL Qt5Concurrent Qt5Core Qt5Gamepad
+WANTLIB += Qt5Gui Qt5Network Qt5Qml Qt5Quick c m z
 
 BUILD_DEPENDS =		x11/qt5/qtmultimedia>=${QT5_VERSION:R},<${QT5_NEXT_VERSION}
 RUN_DEPENDS-examples =	x11/qt5/qtmultimedia>=${QT5_VERSION:R},<${QT5_NEXT_VERSION}

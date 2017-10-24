@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1 2017/07/29 00:07:14 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/10/24 10:12:19 rsadowski Exp $
 @conflict qt5-<5.6
 @pkgpath x11/qt5/qtgraphicaleffects,-main
 lib/qt5/qml/QtGraphicalEffects/
@@ -53,6 +53,7 @@ lib/qt5/qml/QtGraphicalEffects/ThresholdMask.qmlc
 lib/qt5/qml/QtGraphicalEffects/ZoomBlur.qml
 lib/qt5/qml/QtGraphicalEffects/ZoomBlur.qmlc
 lib/qt5/qml/QtGraphicalEffects/libqtgraphicaleffectsplugin.so
+lib/qt5/qml/QtGraphicalEffects/plugins.qmltypes
 lib/qt5/qml/QtGraphicalEffects/private/
 lib/qt5/qml/QtGraphicalEffects/private/DropShadowBase.qml
 lib/qt5/qml/QtGraphicalEffects/private/DropShadowBase.qmlc

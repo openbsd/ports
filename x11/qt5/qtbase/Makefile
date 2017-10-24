@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2017/08/24 09:45:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2017/10/24 10:12:19 rsadowski Exp $
 
 DISTNAME =		qtbase-opensource-src-${DIST_VERSION}
 QT5NAME =		Qt5 core
@@ -16,29 +16,26 @@ PKGNAME-psql =		qt5-postgresql-${VERSION}
 PKGNAME-sqlite2 =	qt5-sqlite2-${VERSION}
 PKGNAME-tds =		qt5-tds-${VERSION}
 
-REVISION =		3
-REVISION-main =		4
-
 PKG_ARCH-global =	*
 PKG_ARCH-examples =	*
 
 DPB_PROPERTIES =	parallel
 
-SHARED_LIBS +=	Qt5Concurrent		2.1
-SHARED_LIBS +=	Qt5Core			2.1
-SHARED_LIBS +=	Qt5DBus			2.1
-SHARED_LIBS +=	Qt5Gui			2.1
-SHARED_LIBS +=	Qt5Network		2.1
-SHARED_LIBS +=	Qt5OpenGL		2.1
-SHARED_LIBS +=	Qt5PrintSupport		2.1
-SHARED_LIBS +=	Qt5Sql			2.1
-SHARED_LIBS +=	Qt5Test			2.1
-SHARED_LIBS +=	Qt5Widgets		2.1
-SHARED_LIBS +=	Qt5Xml			2.1
-SHARED_LIBS +=	Qt5EglDeviceIntegration	1.1
-SHARED_LIBS +=	Qt5XcbQpa		1.1
-SHARED_LIBS +=	Qt5EglFSDeviceIntegration	0.0
-SHARED_LIBS +=	Qt5EglFsKmsSupport	0.0
+SHARED_LIBS +=	Qt5Concurrent			2.2
+SHARED_LIBS +=	Qt5Core				2.2
+SHARED_LIBS +=	Qt5DBus				2.2
+SHARED_LIBS +=	Qt5Gui				2.2
+SHARED_LIBS +=	Qt5Network			2.2
+SHARED_LIBS +=	Qt5OpenGL			2.2
+SHARED_LIBS +=	Qt5PrintSupport			2.2
+SHARED_LIBS +=	Qt5Sql				2.2
+SHARED_LIBS +=	Qt5Test				2.2
+SHARED_LIBS +=	Qt5Widgets			2.2
+SHARED_LIBS +=	Qt5Xml				2.2
+SHARED_LIBS +=	Qt5EglDeviceIntegration		1.2
+SHARED_LIBS +=	Qt5EglFSDeviceIntegration	0.1
+SHARED_LIBS +=	Qt5XcbQpa			1.2
+SHARED_LIBS +=	Qt5EglFsKmsSupport		0.1
 
 WANTLIB-main =  ${WANTLIB} ${COMPILER_LIBCXX}
 WANTLIB-main += EGL GL ICE SM X11 X11-xcb
@@ -88,9 +85,10 @@ LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			graphics/gdk-pixbuf2 \
 			print/cups,-libs \
 			textproc/icu4c \
-			x11/gnome/at-spi2-core \
 			x11/gtk+3 \
 			x11/xkbcommon
+
+#x11/gnome/at-spi2-core
 
 # those come from gthread-2.0, not used by Qt itself
 WANTLIB-main +=		intl

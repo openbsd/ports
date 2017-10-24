@@ -1,20 +1,17 @@
-# $OpenBSD: Makefile,v 1.4 2017/07/30 18:23:27 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2017/10/24 10:12:20 rsadowski Exp $
 
 QT5NAME =		QtTools
-REVISION =		0
 COMMENT-main =		Qt development tools
 COMMENT-webview =	Webkit-based Qt Designer plugin
 PKGNAME-webview =	qwebview-${VERSION}
-REVISION-webview =	1
 
 DPB_PROPERTIES =	parallel
 
 MULTI_PACKAGES =	-main -examples -webview
 
-#SHARED_LIBS =	Qt5CLucene		2.0
-SHARED_LIBS +=	Qt5Designer		2.1
-SHARED_LIBS +=	Qt5DesignerComponents	2.1
-SHARED_LIBS +=	Qt5Help			2.1
+SHARED_LIBS +=	Qt5Designer		2.2
+SHARED_LIBS +=	Qt5DesignerComponents	2.2
+SHARED_LIBS +=	Qt5Help			2.2
 
 WANTLIB-main =	${WANTLIB} ${COMPILER_LIBCXX}
 WANTLIB-main += GL c m pthread

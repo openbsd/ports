@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.5 2017/07/29 00:07:14 zhuk Exp $
+# $OpenBSD: Makefile,v 1.6 2017/10/24 10:12:19 rsadowski Exp $
 
 QT5NAME =		QtMultimedia
-REVISION =		0
 COMMENT-main =		Qt5 multimedia components
 
 MULTI_PACKAGES =	-main -examples
 
-SHARED_LIBS =	Qt5Multimedia		2.1
-SHARED_LIBS +=	Qt5MultimediaQuick_p	2.1
-SHARED_LIBS +=  Qt5MultimediaWidgets	2.1
-#SHARED_LIBS +=  fftreal		2.0
-SHARED_LIBS +=  qgsttools_p		2.1
+SHARED_LIBS =	Qt5Multimedia		2.2
+SHARED_LIBS +=	Qt5MultimediaQuick_p	2.2
+SHARED_LIBS +=	Qt5MultimediaWidgets	2.2
+SHARED_LIBS +=	qgsttools_p		2.2
 
 WANTLIB =  ${COMPILER_LIBCXX}
 WANTLIB += GL Qt5Core Qt5Gui Qt5Network Qt5OpenGL Qt5Qml Qt5Quick

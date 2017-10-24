@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.2 2017/07/17 08:34:38 zhuk Exp $
+@comment $OpenBSD: PLIST-examples,v 1.3 2017/10/24 10:12:19 rsadowski Exp $
 lib/qt5/examples/quickcontrols2/
 lib/qt5/examples/quickcontrols2/chattutorial/
 lib/qt5/examples/quickcontrols2/chattutorial/chapter1-settingup/
@@ -69,18 +69,18 @@ lib/qt5/examples/quickcontrols2/chattutorial/doc/images/qtquickcontrols2-chattut
 lib/qt5/examples/quickcontrols2/chattutorial/doc/src/
 lib/qt5/examples/quickcontrols2/chattutorial/doc/src/qtquickcontrols2-chattutorial.qdoc
 lib/qt5/examples/quickcontrols2/chattutorial/shared/
-lib/qt5/examples/quickcontrols2/chattutorial/shared/Albert Einstein.png
-lib/qt5/examples/quickcontrols2/chattutorial/shared/Albert Einstein@2x.png
-lib/qt5/examples/quickcontrols2/chattutorial/shared/Albert Einstein@3x.png
-lib/qt5/examples/quickcontrols2/chattutorial/shared/Albert Einstein@4x.png
-lib/qt5/examples/quickcontrols2/chattutorial/shared/Ernest Hemingway.png
-lib/qt5/examples/quickcontrols2/chattutorial/shared/Ernest Hemingway@2x.png
-lib/qt5/examples/quickcontrols2/chattutorial/shared/Ernest Hemingway@3x.png
-lib/qt5/examples/quickcontrols2/chattutorial/shared/Ernest Hemingway@4x.png
-lib/qt5/examples/quickcontrols2/chattutorial/shared/Hans Gude.png
-lib/qt5/examples/quickcontrols2/chattutorial/shared/Hans Gude@2x.png
-lib/qt5/examples/quickcontrols2/chattutorial/shared/Hans Gude@3x.png
-lib/qt5/examples/quickcontrols2/chattutorial/shared/Hans Gude@4x.png
+lib/qt5/examples/quickcontrols2/chattutorial/shared/Albert_Einstein.png
+lib/qt5/examples/quickcontrols2/chattutorial/shared/Albert_Einstein@2x.png
+lib/qt5/examples/quickcontrols2/chattutorial/shared/Albert_Einstein@3x.png
+lib/qt5/examples/quickcontrols2/chattutorial/shared/Albert_Einstein@4x.png
+lib/qt5/examples/quickcontrols2/chattutorial/shared/Ernest_Hemingway.png
+lib/qt5/examples/quickcontrols2/chattutorial/shared/Ernest_Hemingway@2x.png
+lib/qt5/examples/quickcontrols2/chattutorial/shared/Ernest_Hemingway@3x.png
+lib/qt5/examples/quickcontrols2/chattutorial/shared/Ernest_Hemingway@4x.png
+lib/qt5/examples/quickcontrols2/chattutorial/shared/Hans_Gude.png
+lib/qt5/examples/quickcontrols2/chattutorial/shared/Hans_Gude@2x.png
+lib/qt5/examples/quickcontrols2/chattutorial/shared/Hans_Gude@3x.png
+lib/qt5/examples/quickcontrols2/chattutorial/shared/Hans_Gude@4x.png
 lib/qt5/examples/quickcontrols2/chattutorial/shared/shared.qrc
 lib/qt5/examples/quickcontrols2/contactlist/
 lib/qt5/examples/quickcontrols2/contactlist/ContactDelegate.ui.qml

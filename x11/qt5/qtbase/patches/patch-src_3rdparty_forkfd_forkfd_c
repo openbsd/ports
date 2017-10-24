@@ -1,8 +1,9 @@
-$OpenBSD: patch-src_3rdparty_forkfd_forkfd_c,v 1.1.1.1 2016/12/25 14:13:12 zhuk Exp $
+$OpenBSD: patch-src_3rdparty_forkfd_forkfd_c,v 1.2 2017/10/24 10:12:19 rsadowski Exp $
 Unbreak build.
---- src/3rdparty/forkfd/forkfd.c.orig	Fri Sep 16 08:49:42 2016
-+++ src/3rdparty/forkfd/forkfd.c	Wed Nov 23 00:37:09 2016
-@@ -61,7 +61,7 @@
+Index: src/3rdparty/forkfd/forkfd.c
+--- src/3rdparty/forkfd/forkfd.c.orig
++++ src/3rdparty/forkfd/forkfd.c
+@@ -63,7 +63,7 @@
  #  include <sys/procdesc.h>
  #endif
  

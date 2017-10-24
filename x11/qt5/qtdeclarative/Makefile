@@ -1,21 +1,18 @@
-# $OpenBSD: Makefile,v 1.6 2017/07/30 12:16:02 zhuk Exp $
+# $OpenBSD: Makefile,v 1.7 2017/10/24 10:12:19 rsadowski Exp $
 
 QT5NAME =		QtDeclarative
 COMMENT-main =		Qt5 Quick and QML components
 COMMENT-xmllistmodel =	plugin for creating QML models from XML
 PKGNAME-xmllistmodel =	qt5-declarative-xmllistmodel-${VERSION}
-REVISION-main =		1
-REVISION-examples =	0
-REVISION-xmllistmodel =	0
 
 MULTI_PACKAGES =	-main -examples -xmllistmodel
 DPB_PROPERTIES =	parallel
 
-SHARED_LIBS =		Qt5Qml			2.1
-SHARED_LIBS +=		Qt5Quick		2.1
-SHARED_LIBS +=		Qt5QuickParticles	2.1
-SHARED_LIBS +=		Qt5QuickTest		2.1
-SHARED_LIBS +=		Qt5QuickWidgets		2.1
+SHARED_LIBS =		Qt5Qml			2.2
+SHARED_LIBS +=		Qt5Quick		2.2
+SHARED_LIBS +=		Qt5QuickParticles	2.2
+SHARED_LIBS +=		Qt5QuickTest		2.2
+SHARED_LIBS +=		Qt5QuickWidgets		2.2
 
 WANTLIB-main =  	${WANTLIB} ${COMPILER_LIBCXX}
 WANTLIB-main +=		GL Qt5Core Qt5Gui Qt5Network Qt5Sql Qt5Test Qt5Widgets

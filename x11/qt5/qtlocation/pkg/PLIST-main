@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2017/07/17 08:34:38 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2017/10/24 10:12:19 rsadowski Exp $
 @conflict qt5-<5.6
 include/X11/qt5/QtLocation/
 include/X11/qt5/QtLocation/${VERSION}/
@@ -108,6 +108,7 @@ include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qplacesearchresult_p.h
 include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qplacesupplier_p.h
 include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qplaceuser_p.h
 include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qquickgeomapgesturearea_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qtlocation-config_p.h
 include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/unsupportedreplies_p.h
 include/X11/qt5/QtLocation/QGeoCodeReply
 include/X11/qt5/QtLocation/QGeoCodingManager
@@ -194,6 +195,7 @@ include/X11/qt5/QtLocation/qplacesearchresult.h
 include/X11/qt5/QtLocation/qplacesearchsuggestionreply.h
 include/X11/qt5/QtLocation/qplacesupplier.h
 include/X11/qt5/QtLocation/qplaceuser.h
+include/X11/qt5/QtLocation/qtlocation-config.h
 include/X11/qt5/QtLocation/qtlocationversion.h
 include/X11/qt5/QtPositioning/
 include/X11/qt5/QtPositioning/${VERSION}/
