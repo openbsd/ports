@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2015/09/29 06:17:04 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.10 2017/10/24 05:53:09 benoit Exp $
 lib/python${MODPY_VERSION}/site-packages/pyasn1/
 lib/python${MODPY_VERSION}/site-packages/pyasn1-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/pyasn1-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -41,14 +41,30 @@ lib/python${MODPY_VERSION}/site-packages/pyasn1/codec/der/${MODPY_PYCACHE}decode
 lib/python${MODPY_VERSION}/site-packages/pyasn1/codec/der/${MODPY_PYCACHE}encoder.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyasn1/codec/der/decoder.py
 lib/python${MODPY_VERSION}/site-packages/pyasn1/codec/der/encoder.py
+lib/python${MODPY_VERSION}/site-packages/pyasn1/codec/native/
+lib/python${MODPY_VERSION}/site-packages/pyasn1/codec/native/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pyasn1/codec/native/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pyasn1/codec/native/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyasn1/codec/native/${MODPY_PYCACHE}decoder.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyasn1/codec/native/${MODPY_PYCACHE}encoder.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyasn1/codec/native/decoder.py
+lib/python${MODPY_VERSION}/site-packages/pyasn1/codec/native/encoder.py
 lib/python${MODPY_VERSION}/site-packages/pyasn1/compat/
 lib/python${MODPY_VERSION}/site-packages/pyasn1/compat/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pyasn1/compat/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pyasn1/compat/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pyasn1/compat/${MODPY_PYCACHE}octets.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyasn1/compat/${MODPY_PYCACHE}binary.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyasn1/compat/${MODPY_PYCACHE}calling.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyasn1/compat/${MODPY_PYCACHE}dateandtime.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyasn1/compat/${MODPY_PYCACHE}integer.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyasn1/compat/${MODPY_PYCACHE}octets.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyasn1/compat/${MODPY_PYCACHE}string.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyasn1/compat/binary.py
+lib/python${MODPY_VERSION}/site-packages/pyasn1/compat/calling.py
+lib/python${MODPY_VERSION}/site-packages/pyasn1/compat/dateandtime.py
+lib/python${MODPY_VERSION}/site-packages/pyasn1/compat/integer.py
 lib/python${MODPY_VERSION}/site-packages/pyasn1/compat/octets.py
+lib/python${MODPY_VERSION}/site-packages/pyasn1/compat/string.py
 lib/python${MODPY_VERSION}/site-packages/pyasn1/debug.py
 lib/python${MODPY_VERSION}/site-packages/pyasn1/error.py
 lib/python${MODPY_VERSION}/site-packages/pyasn1/type/
@@ -75,11 +91,3 @@ lib/python${MODPY_VERSION}/site-packages/pyasn1/type/tag.py
 lib/python${MODPY_VERSION}/site-packages/pyasn1/type/tagmap.py
 lib/python${MODPY_VERSION}/site-packages/pyasn1/type/univ.py
 lib/python${MODPY_VERSION}/site-packages/pyasn1/type/useful.py
-share/doc/${MODPY_PY_PREFIX}asn1/
-share/doc/${MODPY_PY_PREFIX}asn1/codecs.html
-share/doc/${MODPY_PY_PREFIX}asn1/constraints.html
-share/doc/${MODPY_PY_PREFIX}asn1/constructed.html
-share/doc/${MODPY_PY_PREFIX}asn1/intro.html
-share/doc/${MODPY_PY_PREFIX}asn1/pyasn1-tutorial.html
-share/doc/${MODPY_PY_PREFIX}asn1/scalar.html
-share/doc/${MODPY_PY_PREFIX}asn1/tagging.html

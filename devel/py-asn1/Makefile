@@ -1,38 +1,32 @@
-# $OpenBSD: Makefile,v 1.27 2017/01/03 19:19:48 landry Exp $
+# $OpenBSD: Makefile,v 1.28 2017/10/24 05:53:09 benoit Exp $
 
 COMMENT =	ASN.1 library for Python
 
-MODPY_EGG_VERSION =	0.1.9
+MODPY_EGG_VERSION =	0.3.7
 DISTNAME =		pyasn1-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/py/py-/}
 CATEGORIES =		devel
 PKG_ARCH =		*
 EPOCH =			0
-REVISION =		1
 
-HOMEPAGE =		http://pyasn1.sourceforge.net/
+HOMEPAGE =		https://github.com/etingof/pyasn1
 
 MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 
 # BSD 2-Clause
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=pyasn1/}
+MODPY_PI =		Yes
+MODPY_SETUPTOOLS =	Yes
 
 MODULES =		lang/python
 FLAVORS =		python3
 FLAVOR ?=
 
-MODPY_SETUPTOOLS =	Yes
-
-DOCSDIR =	${PREFIX}/share/doc/${MODPY_PY_PREFIX}asn1
-
-post-install:
-	${INSTALL_DATA_DIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${DOCSDIR}
+TEST_DEPENDS =		devel/py-test${MODPY_FLAVOR}
 
 do-test: fake
-	@cd ${WRKSRC} && ${MAKE_ENV} \
-		PYTHONPATH=${WRKSRC} ${MODPY_BIN} ./test/suite.py
+	@cd ${WRKSRC} && env PYTHONPATH=${WRKINST}/${MODPY_SITEPKG} \
+		${MODPY_BIN} -m pytest
 
 .include <bsd.port.mk>
