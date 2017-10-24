@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_cdintf_cpp,v 1.1 2017/10/24 16:48:26 fcambus Exp $
+
+Index: src/cdintf.cpp
+--- src/cdintf.cpp.orig
++++ src/cdintf.cpp
+@@ -36,7 +36,7 @@
+ 
+ 
+ #ifdef HAVE_LIB_CDIO
+-static CdIo_t * cdHandle = NULL;
++static CdIo_t * cdHandle = (CdIo_t *)NULL;
+ #endif
+ 
+ // Exported vars
+@@ -54,7 +54,7 @@ bool CDIntfInit(void)
+ 	// fails, the emulated CD-ROM will not use any of the other CDIntf*
+ 	// functions. Those functions all operate under the assumption that the open
+ 	// call was successful.
+-	cdHandle = cdio_open(NULL, DRIVER_DEVICE);
++	cdHandle = cdio_open((const char *)NULL, DRIVER_DEVICE);
+ 
+ 	if (cdHandle == NULL)
+ 	{

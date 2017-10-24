@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2017/07/26 22:45:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2017/10/24 16:48:26 fcambus Exp $
 
 COMMENT =	Atari Jaguar emulator
 
-DISTNAME =	virtualjaguar-2.1.2
-REVISION =	1
+V =		2.1.3
+DISTNAME =	virtualjaguar-${V}
 EXTRACT_SUFX =	.tar.bz2
 
 CATEGORIES =	emulators games
@@ -15,16 +15,17 @@ MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB +=	GL ICE QtGui QtOpenGL SDL SM X11 Xext Xi Xinerama Xrender
-WANTLIB +=	c fontconfig freetype m pthread ${COMPILER_LIBCXX} z
+WANTLIB +=	${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5OpenGL Qt5Widgets
+WANTLIB +=	SDL c cdio iconv m z
 
 MASTER_SITES=	https://icculus.org/virtualjaguar/tarballs/
 
-MODULES =	x11/qt4
+MODULES =	x11/qt5
 
-LIB_DEPENDS =	devel/sdl
+LIB_DEPENDS =	audio/libcdio \
+		devel/sdl
 
-WRKDIST =	${WRKDIR}/virtualjaguar
+WRKDIST =	${WRKDIR}/linux-${V}
 
 USE_GMAKE =	Yes
 MAKE_FLAGS =	CC="${CC}" \
@@ -37,9 +38,6 @@ MAKE_FLAGS =	CC="${CC}" \
 MAKE_ENV =	CXXFLAGS="${CXXFLAGS}"
 
 NO_TEST =	Yes
-
-pre-configure:
-	@ln -s ${LOCALBASE}/bin/qmake4 ${WRKDIR}/bin/qmake
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/virtualjaguar ${PREFIX}/bin
