@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2017/09/10 06:52:10 kirby Exp $
+# $OpenBSD: Makefile,v 1.26 2017/10/24 09:38:04 kirby Exp $
 
 COMMENT =		owncloud sync client
 
@@ -23,6 +23,8 @@ MASTER_SITES =		https://download.owncloud.com/desktop/stable/
 EXTRACT_SUFX =		.tar.xz
 
 MODULES =		devel/cmake
+
+COMPILER = 		gcc
 
 RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+3,-guic
