@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.3 2016/01/05 10:17:06 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.4 2017/10/24 05:56:44 benoit Exp $
+bin/cmcdump.py${MODPY_BIN_SUFFIX}
 bin/cmpdump.py${MODPY_BIN_SUFFIX}
 bin/crldump.py${MODPY_BIN_SUFFIX}
 bin/crmfdump.py${MODPY_BIN_SUFFIX}
@@ -10,6 +11,7 @@ bin/pkcs1dump.py${MODPY_BIN_SUFFIX}
 bin/pkcs7dump.py${MODPY_BIN_SUFFIX}
 bin/pkcs8dump.py${MODPY_BIN_SUFFIX}
 bin/snmpget.py${MODPY_BIN_SUFFIX}
+bin/x509dump-rfc5280.py${MODPY_BIN_SUFFIX}
 bin/x509dump.py${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/pyasn1_modules/
 lib/python${MODPY_VERSION}/site-packages/pyasn1_modules-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -35,11 +37,19 @@ lib/python${MODPY_VERSION}/site-packages/pyasn1_modules/${MODPY_PYCACHE}rfc2437.
 lib/python${MODPY_VERSION}/site-packages/pyasn1_modules/${MODPY_PYCACHE}rfc2459.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyasn1_modules/${MODPY_PYCACHE}rfc2511.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyasn1_modules/${MODPY_PYCACHE}rfc2560.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyasn1_modules/${MODPY_PYCACHE}rfc3279.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyasn1_modules/${MODPY_PYCACHE}rfc3280.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyasn1_modules/${MODPY_PYCACHE}rfc3281.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyasn1_modules/${MODPY_PYCACHE}rfc3412.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyasn1_modules/${MODPY_PYCACHE}rfc3414.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyasn1_modules/${MODPY_PYCACHE}rfc3447.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyasn1_modules/${MODPY_PYCACHE}rfc3852.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyasn1_modules/${MODPY_PYCACHE}rfc4210.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyasn1_modules/${MODPY_PYCACHE}rfc4211.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyasn1_modules/${MODPY_PYCACHE}rfc5208.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyasn1_modules/${MODPY_PYCACHE}rfc5280.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyasn1_modules/${MODPY_PYCACHE}rfc5652.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyasn1_modules/${MODPY_PYCACHE}rfc6402.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyasn1_modules/pem.py
 lib/python${MODPY_VERSION}/site-packages/pyasn1_modules/rfc1155.py
 lib/python${MODPY_VERSION}/site-packages/pyasn1_modules/rfc1157.py
@@ -53,8 +63,16 @@ lib/python${MODPY_VERSION}/site-packages/pyasn1_modules/rfc2437.py
 lib/python${MODPY_VERSION}/site-packages/pyasn1_modules/rfc2459.py
 lib/python${MODPY_VERSION}/site-packages/pyasn1_modules/rfc2511.py
 lib/python${MODPY_VERSION}/site-packages/pyasn1_modules/rfc2560.py
+lib/python${MODPY_VERSION}/site-packages/pyasn1_modules/rfc3279.py
+lib/python${MODPY_VERSION}/site-packages/pyasn1_modules/rfc3280.py
+lib/python${MODPY_VERSION}/site-packages/pyasn1_modules/rfc3281.py
 lib/python${MODPY_VERSION}/site-packages/pyasn1_modules/rfc3412.py
 lib/python${MODPY_VERSION}/site-packages/pyasn1_modules/rfc3414.py
 lib/python${MODPY_VERSION}/site-packages/pyasn1_modules/rfc3447.py
+lib/python${MODPY_VERSION}/site-packages/pyasn1_modules/rfc3852.py
 lib/python${MODPY_VERSION}/site-packages/pyasn1_modules/rfc4210.py
+lib/python${MODPY_VERSION}/site-packages/pyasn1_modules/rfc4211.py
 lib/python${MODPY_VERSION}/site-packages/pyasn1_modules/rfc5208.py
+lib/python${MODPY_VERSION}/site-packages/pyasn1_modules/rfc5280.py
+lib/python${MODPY_VERSION}/site-packages/pyasn1_modules/rfc5652.py
+lib/python${MODPY_VERSION}/site-packages/pyasn1_modules/rfc6402.py
