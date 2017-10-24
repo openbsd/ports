@@ -1,11 +1,11 @@
-$OpenBSD: patch-t_t1450-fsck_sh,v 1.4 2017/08/02 04:40:27 benoit Exp $
+$OpenBSD: patch-t_t1450-fsck_sh,v 1.5 2017/10/24 05:26:43 benoit Exp $
 
 Avoid GNU grep syntax
 
 Index: t/t1450-fsck.sh
 --- t/t1450-fsck.sh.orig
 +++ t/t1450-fsck.sh
-@@ -573,7 +573,7 @@ test_expect_success 'fsck --name-objects' '
+@@ -595,7 +595,7 @@ test_expect_success 'fsck --name-objects' '
  		remove_object $(git rev-parse julius:caesar.t) &&
  		test_must_fail git fsck --name-objects >out &&
  		tree=$(git rev-parse --verify julius:) &&
