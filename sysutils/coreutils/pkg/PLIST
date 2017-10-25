@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2016/03/27 20:53:15 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.8 2017/10/25 15:36:23 bcallah Exp $
 @conflict fileutils-*
 @conflict sh-utils-*
 @conflict textutils-*
@@ -8,6 +8,7 @@
 @pkgpath misc/sh-utils
 @pkgpath textproc/textutils
 @bin bin/g[
+@bin bin/gb2sum
 @bin bin/gbase32
 @bin bin/gbase64
 @bin bin/gbasename
@@ -115,6 +116,7 @@
 @comment lib/charset.alias
 libexec/coreutils/
 libexec/coreutils/libstdbuf.so
+@man man/man1/gb2sum.1
 @man man/man1/gbase32.1
 @man man/man1/gbase64.1
 @man man/man1/gbasename.1
