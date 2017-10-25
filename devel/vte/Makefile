@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.121 2017/10/23 17:10:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.122 2017/10/25 11:12:31 sthen Exp $
 
 PORTROACH +=		limit:^0\.2
 
@@ -14,7 +14,7 @@ FULLPKGNAME-main=	vte-${GNOME_VERSION}
 FULLPKGNAME-python= 	py-${DISTNAME}
 
 REVISION-main =		18
-REVISION-python = 	12
+REVISION-python = 	13
 
 CATEGORIES=		devel
 
