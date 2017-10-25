@@ -1,26 +1,27 @@
-# $OpenBSD: Makefile,v 1.22 2017/07/26 22:45:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2017/10/25 09:51:11 rsadowski Exp $
 
 COMMENT=	graphical interface to sqlite databases
-V = 3.7.0
+
 GH_ACCOUNT =	sqlitebrowser
 GH_PROJECT =	sqlitebrowser
-GH_TAGNAME =	v${V}
-DISTNAME =	${GH_PROJECT}-${V}
-PKGNAME =	${DISTNAME}
-REVISION =	1
+GH_TAGNAME =	v3.10.1
 
 CATEGORIES=	databases x11
-HOMEPAGE=	http://sqlitebrowser.org/
 
-MODULES=	x11/qt4 devel/cmake
+HOMEPAGE=	http://sqlitebrowser.org/
 
 # MPLv2/GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB +=	QtGui QtNetwork c m pthread sqlite3 ${COMPILER_LIBCXX}
-LIB_DEPENDS =	databases/sqlite3
-RUN_DEPENDS =	x11/gtk+3,-guic devel/desktop-file-utils
+WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Network Qt5PrintSupport
+WANTLIB += Qt5Test Qt5Widgets c m sqlite3
 
-CONFIGURE_ARGS =	-DUSE_QT5=False
+MODULES=	x11/qt5 \
+		devel/cmake
+
+LIB_DEPENDS =	databases/sqlite3
+
+RUN_DEPENDS =	x11/gtk+3,-guic \
+		devel/desktop-file-utils
 
 .include <bsd.port.mk>
