@@ -1,8 +1,8 @@
-$OpenBSD: patch-chrome_browser_ui_tab_helpers_cc,v 1.8 2017/09/09 19:16:43 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_tab_helpers_cc,v 1.9 2017/10/25 13:47:07 robert Exp $
 Index: chrome/browser/ui/tab_helpers.cc
 --- chrome/browser/ui/tab_helpers.cc.orig
 +++ chrome/browser/ui/tab_helpers.cc
-@@ -267,7 +267,7 @@ void TabHelpers::AttachTabHelpers(WebContents* web_con
+@@ -282,7 +282,7 @@ void TabHelpers::AttachTabHelpers(WebContents* web_con
  #endif
  
  #if defined(OS_WIN) || defined(OS_MACOSX) || \

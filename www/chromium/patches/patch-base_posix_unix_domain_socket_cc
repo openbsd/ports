@@ -1,39 +1,40 @@
-$OpenBSD: patch-base_posix_unix_domain_socket_linux_cc,v 1.6 2017/06/25 21:53:56 robert Exp $
-Index: base/posix/unix_domain_socket_linux.cc
---- base/posix/unix_domain_socket_linux.cc.orig
-+++ base/posix/unix_domain_socket_linux.cc
+$OpenBSD: patch-base_posix_unix_domain_socket_cc,v 1.1 2017/10/25 13:47:07 robert Exp $
+
+Index: base/posix/unix_domain_socket.cc
+--- base/posix/unix_domain_socket.cc.orig
++++ base/posix/unix_domain_socket.cc
 @@ -5,7 +5,10 @@
- #include "base/posix/unix_domain_socket_linux.h"
+ #include "base/posix/unix_domain_socket.h"
  
  #include <errno.h>
 +#include <sys/types.h>
 +#include <sys/param.h>
  #include <sys/socket.h>
 +#include <sys/ucred.h>
- #include <unistd.h>
- 
- #include <vector>
-@@ -25,6 +28,14 @@ namespace base {
+ #if !defined(OS_NACL_NONSFI)
+ #include <sys/un.h>
+ #endif
+@@ -28,6 +31,14 @@ namespace base {
  
  const size_t UnixDomainSocket::kMaxFileDescriptors = 16;
  
 +#ifndef SCM_CREDENTIALS
-+#  define SCM_CREDENTIALS      0x9001
++#  define SCM_CREDENTIALS	0x9001
 +#endif
 +
 +#ifndef SO_PASSCRED
-+#  define SO_PASSCRED  0x9002
++#  define SO_PASSCRED		0x9002
 +#endif
 +
  #if !defined(OS_NACL_NONSFI)
  bool CreateSocketPair(ScopedFD* one, ScopedFD* two) {
    int raw_socks[2];
-@@ -147,7 +158,7 @@ ssize_t UnixDomainSocket::RecvMsgWithFlags(int fd,
+@@ -182,7 +193,7 @@ ssize_t UnixDomainSocket::RecvMsgWithFlags(int fd,
            cmsg->cmsg_type == SCM_CREDENTIALS) {
          DCHECK_EQ(payload_len, sizeof(struct ucred));
          DCHECK_EQ(pid, -1);
 -        pid = reinterpret_cast<struct ucred*>(CMSG_DATA(cmsg))->pid;
 +        pid = getpid();
        }
- #endif
+ #endif  // !defined(OS_NACL_NONSFI) && !defined(OS_MACOSX)
      }

@@ -1,9 +1,9 @@
-$OpenBSD: patch-tools_gn_bootstrap_bootstrap_py,v 1.10 2017/09/09 19:16:43 robert Exp $
+$OpenBSD: patch-tools_gn_bootstrap_bootstrap_py,v 1.11 2017/10/25 13:47:07 robert Exp $
 
 Index: tools/gn/bootstrap/bootstrap.py
 --- tools/gn/bootstrap/bootstrap.py.orig
 +++ tools/gn/bootstrap/bootstrap.py
-@@ -33,7 +33,8 @@ is_win = sys.platform.startswith('win')
+@@ -34,7 +34,8 @@ is_win = sys.platform.startswith('win')
  is_linux = sys.platform.startswith('linux')
  is_mac = sys.platform.startswith('darwin')
  is_aix = sys.platform.startswith('aix')
@@ -13,34 +13,32 @@ Index: tools/gn/bootstrap/bootstrap.py
  
  def check_call(cmd, **kwargs):
    logging.debug('Running: %s', ' '.join(cmd))
-@@ -534,7 +535,7 @@ def write_gn_ninja(path, root_gen_dir, options):
-       'base/trace_event/heap_profiler_allocation_context_tracker.cc',
-       'base/trace_event/heap_profiler_allocation_register.cc',
-       'base/trace_event/heap_profiler_event_filter.cc',
--      'base/trace_event/heap_profiler_event_writer.cc',
-+      'base/trace_event/heap_profiler_heap_dump_writer.cc',
-       'base/trace_event/heap_profiler_serialization_state.cc',
-       'base/trace_event/heap_profiler_stack_frame_deduplicator.cc',
-       'base/trace_event/heap_profiler_type_name_deduplicator.cc',
-@@ -652,6 +653,38 @@ def write_gn_ninja(path, root_gen_dir, options):
-         'base/sys_info_linux.cc',
-         'base/threading/platform_thread_linux.cc',
-     ])
-+
+@@ -577,7 +578,6 @@ def write_gn_ninja(path, root_gen_dir, options):
+       'base/tracked_objects.cc',
+       'base/tracking_info.cc',
+       'base/unguessable_token.cc',
+-      'base/value_iterators.cc',
+       'base/values.cc',
+       'base/value_iterators.cc',
+       'base/vlog.cc',
+@@ -640,6 +640,39 @@ def write_gn_ninja(path, root_gen_dir, options):
+         'cflags': cflags + ['-DHAVE_CONFIG_H'],
+     }
+ 
 +  if is_openbsd:
 +    ldflags.extend(['-lpthread', '-lexecinfo'])
 +    include_dirs += ["/usr/local/include"]
 +
 +    static_libraries['xdg_user_dirs'] = {
-+        'sources': [
++        'sources': [   
 +            'base/third_party/xdg_user_dirs/xdg_user_dir_lookup.cc',
 +        ],
 +        'tool': 'cxx',
 +    }
 +    static_libraries['base']['sources'].extend([
++        'base/metrics/field_trial_params.cc',
 +        'base/memory/shared_memory_handle_posix.cc',
 +        'base/memory/shared_memory_posix.cc',
-+        'base/memory/shared_memory_tracker.cc',
 +        'base/process/memory_stubs.cc',
 +        'base/process/process_info_linux.cc',
 +        'base/nix/xdg_util.cc',
@@ -49,6 +47,8 @@ Index: tools/gn/bootstrap/bootstrap.py
 +        'base/process/process_metrics_openbsd.cc',
 +        'base/strings/sys_string_conversions_posix.cc',
 +        'base/sys_info_openbsd.cc',
++        'base/task_scheduler/scheduler_worker_pool.cc',
++        'base/threading/scoped_blocking_call.cc',
 +        'base/threading/platform_thread_linux.cc',
 +    ])
 +    static_libraries['libevent']['include_dirs'].extend([
@@ -58,10 +58,10 @@ Index: tools/gn/bootstrap/bootstrap.py
 +        'base/third_party/libevent/kqueue.c',
 +    ])
 +
-     if is_linux:
-       static_libraries['base']['sources'].extend([
-         'base/allocator/allocator_shim.cc',
-@@ -663,17 +696,6 @@ def write_gn_ninja(path, root_gen_dir, options):
+   if is_linux or is_aix:
+     ldflags.extend(['-pthread'])
+ 
+@@ -676,17 +709,6 @@ def write_gn_ninja(path, root_gen_dir, options):
        ])
        static_libraries['libevent']['sources'].extend([
           'base/third_party/libevent/epoll.c',

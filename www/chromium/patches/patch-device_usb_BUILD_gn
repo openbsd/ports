@@ -1,8 +1,8 @@
-$OpenBSD: patch-device_usb_BUILD_gn,v 1.6 2017/09/09 19:16:43 robert Exp $
+$OpenBSD: patch-device_usb_BUILD_gn,v 1.7 2017/10/25 13:47:07 robert Exp $
 Index: device/usb/BUILD.gn
 --- device/usb/BUILD.gn.orig
 +++ device/usb/BUILD.gn
-@@ -100,7 +100,7 @@ static_library("usb") {
+@@ -98,7 +98,7 @@ static_library("usb") {
      libs = [ "setupapi.lib" ]
    }
  

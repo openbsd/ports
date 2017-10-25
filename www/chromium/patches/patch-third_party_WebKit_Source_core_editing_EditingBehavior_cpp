@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_WebKit_Source_core_editing_EditingBehavior_cpp,v 1.1 2017/09/09 19:16:43 robert Exp $
+$OpenBSD: patch-third_party_WebKit_Source_core_editing_EditingBehavior_cpp,v 1.2 2017/10/25 13:47:07 robert Exp $
 
 Index: third_party/WebKit/Source/core/editing/EditingBehavior.cpp
 --- third_party/WebKit/Source/core/editing/EditingBehavior.cpp.orig
 +++ third_party/WebKit/Source/core/editing/EditingBehavior.cpp
-@@ -268,7 +268,7 @@ bool EditingBehavior::ShouldInsertCharacter(const Keyb
+@@ -270,7 +270,7 @@ bool EditingBehavior::ShouldInsertCharacter(const Keyb
    // unexpected behaviour
    if (ch < ' ')
      return false;

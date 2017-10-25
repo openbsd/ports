@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_views_controls_textfield_textfield_cc,v 1.25 2017/09/09 19:16:43 robert Exp $
+$OpenBSD: patch-ui_views_controls_textfield_textfield_cc,v 1.26 2017/10/25 13:47:07 robert Exp $
 
 Index: ui/views/controls/textfield/textfield.cc
 --- ui/views/controls/textfield/textfield.cc.orig
@@ -65,7 +65,7 @@ Index: ui/views/controls/textfield/textfield.cc
    // Skip any accelerator handling that conflicts with custom keybindings.
    ui::TextEditKeyBindingsDelegateAuraLinux* delegate =
        ui::GetTextEditKeyBindingsDelegate();
-@@ -1912,7 +1912,7 @@ bool Textfield::PasteSelectionClipboard() {
+@@ -1920,7 +1920,7 @@ bool Textfield::PasteSelectionClipboard() {
  }
  
  void Textfield::UpdateSelectionClipboard() {

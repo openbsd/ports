@@ -1,0 +1,31 @@
+$OpenBSD: patch-chrome_browser_extensions_api_desktop_capture_desktop_capture_base_cc,v 1.1 2017/10/25 13:47:07 robert Exp $
+
+Index: chrome/browser/extensions/api/desktop_capture/desktop_capture_base.cc
+--- chrome/browser/extensions/api/desktop_capture/desktop_capture_base.cc.orig
++++ chrome/browser/extensions/api/desktop_capture/desktop_capture_base.cc
+@@ -120,10 +120,12 @@ bool DesktopCaptureChooseDesktopMediaFunctionBase::Exe
+           screen_list = base::MakeUnique<DesktopMediaListAsh>(
+               DesktopMediaID::TYPE_SCREEN);
+ #else   // !defined(USE_ASH)
++#if 0 //XXX
+           screen_list = base::MakeUnique<NativeDesktopMediaList>(
+               content::DesktopMediaID::TYPE_SCREEN,
+               webrtc::DesktopCapturer::CreateScreenCapturer(
+                   content::CreateDesktopCaptureOptions()));
++#endif
+ #endif  // !defined(USE_ASH)
+         }
+         have_screen_list = true;
+@@ -148,10 +150,12 @@ bool DesktopCaptureChooseDesktopMediaFunctionBase::Exe
+           // windows) created here cannot share the same DesktopCaptureOptions
+           // instance. DesktopCaptureOptions owns X connection, which cannot be
+           // used on multiple threads concurrently.
++#if 0 //XXX
+           window_list = base::MakeUnique<NativeDesktopMediaList>(
+               content::DesktopMediaID::TYPE_WINDOW,
+               webrtc::DesktopCapturer::CreateWindowCapturer(
+                   content::CreateDesktopCaptureOptions()));
++#endif
+ #endif  // !defined(USE_ASH)
+         }
+         have_window_list = true;

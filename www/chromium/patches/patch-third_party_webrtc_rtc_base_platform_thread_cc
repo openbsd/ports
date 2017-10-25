@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_webrtc_rtc_base_platform_thread_cc,v 1.1 2017/09/09 19:16:43 robert Exp $
+$OpenBSD: patch-third_party_webrtc_rtc_base_platform_thread_cc,v 1.2 2017/10/25 13:47:07 robert Exp $
 
 Index: third_party/webrtc/rtc_base/platform_thread.cc
 --- third_party/webrtc/rtc_base/platform_thread.cc.orig
@@ -13,15 +13,13 @@ Index: third_party/webrtc/rtc_base/platform_thread.cc
  #include <sys/syscall.h>
  #endif
  
-@@ -29,10 +31,12 @@ PlatformThreadId CurrentThreadId() {
- #elif defined(WEBRTC_POSIX)
- #if defined(WEBRTC_MAC) || defined(WEBRTC_IOS)
+@@ -31,8 +33,10 @@ PlatformThreadId CurrentThreadId() {
    ret = pthread_mach_thread_np(pthread_self());
+ #elif defined(WEBRTC_ANDROID)
+   ret = gettid();
 -#elif defined(WEBRTC_LINUX)
 +#elif defined(WEBRTC_LINUX) && !defined(__OpenBSD__)
    ret =  syscall(__NR_gettid);
- #elif defined(WEBRTC_ANDROID)
-   ret = gettid();
 +#elif defined(__OpenBSD__)
 +  ret = reinterpret_cast<uint64_t>(pthread_self());
  #else

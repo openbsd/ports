@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_app_generated_resources_grd,v 1.21 2017/09/09 19:16:43 robert Exp $
+$OpenBSD: patch-chrome_app_generated_resources_grd,v 1.22 2017/10/25 13:47:07 robert Exp $
 
 Index: chrome/app/generated_resources.grd
 --- chrome/app/generated_resources.grd.orig
@@ -12,7 +12,7 @@ Index: chrome/app/generated_resources.grd
  for making strings OS specific.  Other platform defines such as use_titlecase
  are declared in build/common.gypi.
  -->
-@@ -7906,7 +7906,7 @@ I don't think this site should be blocked!
+@@ -7520,7 +7520,7 @@ I don't think this site should be blocked!
        <message name="IDS_APPEARANCE_GROUP_NAME" desc="The title of the appearance group">
          Appearance
        </message>
@@ -21,7 +21,7 @@ Index: chrome/app/generated_resources.grd
          <message name="IDS_THEMES_GROUP_NAME" desc="The title of the themes group">
            Themes
          </message>
-@@ -7914,7 +7914,7 @@ I don't think this site should be blocked!
+@@ -7528,7 +7528,7 @@ I don't think this site should be blocked!
        <message name="IDS_THEMES_RESET_BUTTON" desc="The button to reset your theme">
          Reset to default theme
        </message>
@@ -30,7 +30,7 @@ Index: chrome/app/generated_resources.grd
          <message name="IDS_THEMES_GTK_BUTTON" desc="The button to choose GTK colors and icons as the current theme.">
            Use GTK+ theme
          </message>
-@@ -9183,7 +9183,7 @@ Please help our engineers fix this problem. Tell us wh
+@@ -8708,7 +8708,7 @@ Please help our engineers fix this problem. Tell us wh
          Set as default
        </message>
  

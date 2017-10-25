@@ -1,8 +1,8 @@
-$OpenBSD: patch-chrome_common_url_constants_cc,v 1.23 2017/09/09 19:16:43 robert Exp $
+$OpenBSD: patch-chrome_common_url_constants_cc,v 1.24 2017/10/25 13:47:07 robert Exp $
 Index: chrome/common/url_constants.cc
 --- chrome/common/url_constants.cc.orig
 +++ chrome/common/url_constants.cc
-@@ -146,7 +146,7 @@ const char kCupsPrintLearnMoreURL[] =
+@@ -143,7 +143,7 @@ const char kCupsPrintLearnMoreURL[] =
  const char kChromeUIMetroFlowURL[] = "chrome://make-metro/";
  #endif
  
@@ -11,7 +11,7 @@ Index: chrome/common/url_constants.cc
  const char kChromeUITabModalConfirmDialogURL[] =
      "chrome://tab-modal-confirm-dialog/";
  #endif
-@@ -164,7 +164,7 @@ const char kChromeUIMediaRouterURL[] = "chrome://media
+@@ -157,7 +157,7 @@ const char kChromeUIMediaRouterURL[] = "chrome://media
  const char kChromeUICastURL[] = "chrome://cast/";
  #endif
  
@@ -20,7 +20,7 @@ Index: chrome/common/url_constants.cc
  const char kChromeUIDiscardsURL[] = "chrome://discards/";
  #endif
  
-@@ -283,7 +283,7 @@ const char kChromeUIPrintHost[] = "print";
+@@ -275,7 +275,7 @@ const char kChromeUIPrintHost[] = "print";
  const char kChromeUISigninDiceInternalsHost[] = "signin-dice-internals";
  #endif
  
@@ -29,7 +29,7 @@ Index: chrome/common/url_constants.cc
  const char kChromeUIDiscardsHost[] = "discards";
  #endif
  
-@@ -291,7 +291,7 @@ const char kChromeUIDiscardsHost[] = "discards";
+@@ -283,7 +283,7 @@ const char kChromeUIDiscardsHost[] = "discards";
  const char kChromeUILinuxProxyConfigHost[] = "linux-proxy-config";
  #endif
  
@@ -38,7 +38,7 @@ Index: chrome/common/url_constants.cc
  const char kChromeUISandboxHost[] = "sandbox";
  #endif
  
-@@ -346,7 +346,7 @@ const char kChromeOSAssetPath[] = "/usr/share/chromeos
+@@ -338,7 +338,7 @@ const char kChromeOSAssetPath[] = "/usr/share/chromeos
  const char kChromeUIMetroFlowHost[] = "make-metro";
  #endif
  
@@ -47,7 +47,7 @@ Index: chrome/common/url_constants.cc
  const char kChromeUITabModalConfirmDialogHost[] = "tab-modal-confirm-dialog";
  #endif
  
-@@ -749,7 +749,7 @@ const char* const kChromeHostURLs[] = {
+@@ -736,7 +736,7 @@ const char* const kChromeHostURLs[] = {
  #if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID)
      kChromeUILinuxProxyConfigHost,
  #endif

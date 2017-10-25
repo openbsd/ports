@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_webrtc_rtc_base_BUILD_gn,v 1.1 2017/09/09 19:16:43 robert Exp $
+$OpenBSD: patch-third_party_webrtc_rtc_base_BUILD_gn,v 1.2 2017/10/25 13:47:07 robert Exp $
 
 Index: third_party/webrtc/rtc_base/BUILD.gn
 --- third_party/webrtc/rtc_base/BUILD.gn.orig
 +++ third_party/webrtc/rtc_base/BUILD.gn
-@@ -575,8 +575,6 @@ rtc_static_library("rtc_base") {
+@@ -605,8 +605,6 @@ rtc_static_library("rtc_base") {
  
    if (use_x11) {
      libs += [
@@ -12,7 +12,7 @@ Index: third_party/webrtc/rtc_base/BUILD.gn
        "Xext",
        "X11",
        "Xcomposite",
-@@ -584,7 +582,7 @@ rtc_static_library("rtc_base") {
+@@ -614,7 +612,7 @@ rtc_static_library("rtc_base") {
      ]
    }
  

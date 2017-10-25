@@ -1,8 +1,9 @@
-$OpenBSD: patch-content_browser_browser_main_loop_cc,v 1.47 2017/09/09 19:16:43 robert Exp $
+$OpenBSD: patch-content_browser_browser_main_loop_cc,v 1.48 2017/10/25 13:47:07 robert Exp $
+
 Index: content/browser/browser_main_loop.cc
 --- content/browser/browser_main_loop.cc.orig
 +++ content/browser/browser_main_loop.cc
-@@ -220,6 +220,11 @@
+@@ -229,6 +229,11 @@
  #include "gpu/vulkan/vulkan_implementation.h"
  #endif
  
@@ -14,21 +15,21 @@ Index: content/browser/browser_main_loop.cc
  // One of the linux specific headers defines this as a macro.
  #ifdef DestroyAll
  #undef DestroyAll
-@@ -228,7 +233,7 @@
- namespace content {
- namespace {
+@@ -246,7 +251,7 @@ bool IsUsingMus() {
+ }
  
--#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID)
-+#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID) && !defined(OS_BSD)
+ #if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID) && \
+-    !defined(OS_FUCHSIA)
++    !defined(OS_FUCHSIA) && !defined(OS_BSD)
  void SetupSandbox(const base::CommandLine& parsed_command_line) {
    TRACE_EVENT0("startup", "SetupSandbox");
    // RenderSandboxHostLinux needs to be initialized even if the sandbox and
-@@ -543,10 +548,15 @@ void BrowserMainLoop::Init() {
- void BrowserMainLoop::EarlyInitialization() {
+@@ -571,10 +576,15 @@ void BrowserMainLoop::EarlyInitialization() {
    TRACE_EVENT0("startup", "BrowserMainLoop::EarlyInitialization");
  
--#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID)
-+#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID) && !defined(OS_BSD)
+ #if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID) && \
+-    !defined(OS_FUCHSIA)
++    !defined(OS_FUCHSIA) && !defined(OS_BSD)
    // No thread should be created before this call, as SetupSandbox()
    // will end-up using fork().
    SetupSandbox(parsed_command_line_);

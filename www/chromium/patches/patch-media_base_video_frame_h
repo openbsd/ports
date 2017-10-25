@@ -1,4 +1,4 @@
-$OpenBSD: patch-media_base_video_frame_h,v 1.10 2017/09/09 19:16:43 robert Exp $
+$OpenBSD: patch-media_base_video_frame_h,v 1.11 2017/10/25 13:47:07 robert Exp $
 
 Index: media/base/video_frame.h
 --- media/base/video_frame.h.orig
@@ -21,7 +21,7 @@ Index: media/base/video_frame.h
    // Wraps provided dmabufs
    // (https://www.kernel.org/doc/Documentation/dma-buf-sharing.txt) with a
    // VideoFrame. The dmabuf fds are dup()ed on creation, so that the VideoFrame
-@@ -339,7 +339,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
+@@ -342,7 +342,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
    // Returns the offset into the shared memory where the frame data begins.
    size_t shared_memory_offset() const;
  
@@ -30,7 +30,7 @@ Index: media/base/video_frame.h
    // Returns backing DmaBuf file descriptor for given |plane|, if present, or
    // -1 if not.
    int DmabufFd(size_t plane) const;
-@@ -532,7 +532,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
+@@ -535,7 +535,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
    base::SharedMemoryHandle shared_memory_handle_;
    size_t shared_memory_offset_;
  

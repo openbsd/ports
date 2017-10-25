@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_swiftshader_src_OpenGL_libEGL_Display_cpp,v 1.2 2017/09/09 19:16:43 robert Exp $
+$OpenBSD: patch-third_party_swiftshader_src_OpenGL_libEGL_Display_cpp,v 1.3 2017/10/25 13:47:07 robert Exp $
 
 Index: third_party/swiftshader/src/OpenGL/libEGL/Display.cpp
 --- third_party/swiftshader/src/OpenGL/libEGL/Display.cpp.orig
@@ -39,7 +39,7 @@ Index: third_party/swiftshader/src/OpenGL/libEGL/Display.cpp
  		if(nativeDisplay)
  		{
  			XWindowAttributes windowAttributes;
-@@ -723,7 +723,7 @@ sw::Format Display::getDisplayFormat() const
+@@ -724,7 +724,7 @@ sw::Format Display::getDisplayFormat() const
  
  		// No framebuffer device found, or we're in user space
  		return sw::FORMAT_X8B8G8R8;

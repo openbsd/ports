@@ -1,9 +1,9 @@
-$OpenBSD: patch-base_BUILD_gn,v 1.12 2017/10/08 16:02:46 robert Exp $
+$OpenBSD: patch-base_BUILD_gn,v 1.13 2017/10/25 13:47:07 robert Exp $
 
 Index: base/BUILD.gn
 --- base/BUILD.gn.orig
 +++ base/BUILD.gn
-@@ -1137,7 +1137,7 @@ component("base") {
+@@ -1131,7 +1131,7 @@ component("base") {
    # Needed for <atomic> if using newer C++ library than sysroot, except if
    # building inside the cros_sdk environment - use host_toolchain as a
    # more robust check for this.
@@ -12,7 +12,7 @@ Index: base/BUILD.gn
        host_toolchain != "//build/toolchain/cros:host") {
      libs = [ "atomic" ]
    }
-@@ -1163,7 +1163,7 @@ component("base") {
+@@ -1157,7 +1157,7 @@ component("base") {
          "allocator/allocator_shim_override_glibc_weak_symbols.h",
        ]
        deps += [ "//base/allocator:tcmalloc" ]
@@ -21,7 +21,7 @@ Index: base/BUILD.gn
        sources += [ "allocator/allocator_shim_default_dispatch_to_glibc.cc" ]
      } else if (is_android && use_allocator == "none") {
        sources += [
-@@ -1568,6 +1568,29 @@ component("base") {
+@@ -1563,6 +1563,29 @@ component("base") {
      }
    }
  
@@ -51,9 +51,9 @@ Index: base/BUILD.gn
    # iOS
    if (is_ios) {
      set_sources_assignment_filter([])
-@@ -2433,6 +2456,8 @@ test("base_unittests") {
-     # TODO(krasin): remove CFI_CAST_CHECK, see https://crbug.com/626794.
-     defines += [ "CFI_CAST_CHECK" ]
+@@ -2426,6 +2449,8 @@ test("base_unittests") {
+   if (use_cfi_diag && !use_cfi_recover) {
+     defines += [ "CFI_ENFORCEMENT_DIAGNOSTIC" ]
    }
 +
 +  libs = [ "execinfo" ]

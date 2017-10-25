@@ -1,6 +1,8 @@
-$OpenBSD: patch-ui_gl_gl_bindings_autogen_glx_cc,v 1.7 2017/04/28 14:21:00 robert Exp $
---- ui/gl/gl_bindings_autogen_glx.cc.orig.port	Fri Apr 28 12:16:19 2017
-+++ ui/gl/gl_bindings_autogen_glx.cc	Fri Apr 28 12:16:22 2017
+$OpenBSD: patch-ui_gl_gl_bindings_autogen_glx_cc,v 1.8 2017/10/25 13:47:07 robert Exp $
+
+Index: ui/gl/gl_bindings_autogen_glx.cc
+--- ui/gl/gl_bindings_autogen_glx.cc.orig
++++ ui/gl/gl_bindings_autogen_glx.cc
 @@ -73,6 +73,7 @@ void DriverGLX::InitializeStaticBindings() {
    fn.glXGetFBConfigsFn = reinterpret_cast<glXGetFBConfigsProc>(
        GetGLProcAddress("glXGetFBConfigs"));
@@ -12,13 +14,13 @@ $OpenBSD: patch-ui_gl_gl_bindings_autogen_glx_cc,v 1.7 2017/04/28 14:21:00 rober
 @@ -120,6 +121,8 @@ void DriverGLX::InitializeExtensionBindings() {
  
    ext.b_GLX_ARB_create_context =
-       extensions.find("GLX_ARB_create_context ") != std::string::npos;
+       HasExtension(extensions, "GLX_ARB_create_context");
 +  ext.b_GLX_ARB_get_proc_address =
-+      extensions.find("GLX_ARB_get_proc_address ") != std::string::npos;
-   ext.b_GLX_EXT_swap_control =
-       extensions.find("GLX_EXT_swap_control ") != std::string::npos;
++      HasExtension(extensions, "GLX_ARB_get_proc_address");
+   ext.b_GLX_EXT_swap_control = HasExtension(extensions, "GLX_EXT_swap_control");
    ext.b_GLX_EXT_texture_from_pixmap =
-@@ -162,6 +165,11 @@ void DriverGLX::InitializeExtensionBindings() {
+       HasExtension(extensions, "GLX_EXT_texture_from_pixmap");
+@@ -158,6 +161,11 @@ void DriverGLX::InitializeExtensionBindings() {
          GetGLProcAddress("glXGetMscRateOML"));
    }
  
@@ -30,7 +32,7 @@ $OpenBSD: patch-ui_gl_gl_bindings_autogen_glx_cc,v 1.7 2017/04/28 14:21:00 rober
    if (ext.b_GLX_OML_sync_control) {
      fn.glXGetSyncValuesOMLFn = reinterpret_cast<glXGetSyncValuesOMLProc>(
          GetGLProcAddress("glXGetSyncValuesOML"));
-@@ -352,6 +360,10 @@ bool GLXApiBase::glXGetMscRateOMLFn(Display* dpy,
+@@ -348,6 +356,10 @@ bool GLXApiBase::glXGetMscRateOMLFn(Display* dpy,
    return driver_->fn.glXGetMscRateOMLFn(dpy, drawable, numerator, denominator);
  }
  
@@ -41,7 +43,7 @@ $OpenBSD: patch-ui_gl_gl_bindings_autogen_glx_cc,v 1.7 2017/04/28 14:21:00 rober
  void GLXApiBase::glXGetSelectedEventFn(Display* dpy,
                                         GLXDrawable drawable,
                                         unsigned long* mask) {
-@@ -652,6 +664,11 @@ bool TraceGLXApi::glXGetMscRateOMLFn(Display* dpy,
+@@ -648,6 +660,11 @@ bool TraceGLXApi::glXGetMscRateOMLFn(Display* dpy,
    return glx_api_->glXGetMscRateOMLFn(dpy, drawable, numerator, denominator);
  }
  
@@ -53,7 +55,7 @@ $OpenBSD: patch-ui_gl_gl_bindings_autogen_glx_cc,v 1.7 2017/04/28 14:21:00 rober
  void TraceGLXApi::glXGetSelectedEventFn(Display* dpy,
                                          GLXDrawable drawable,
                                          unsigned long* mask) {
-@@ -1074,6 +1091,14 @@ bool DebugGLXApi::glXGetMscRateOMLFn(Display* dpy,
+@@ -1070,6 +1087,14 @@ bool DebugGLXApi::glXGetMscRateOMLFn(Display* dpy,
                   << static_cast<const void*>(denominator) << ")");
    bool result =
        glx_api_->glXGetMscRateOMLFn(dpy, drawable, numerator, denominator);

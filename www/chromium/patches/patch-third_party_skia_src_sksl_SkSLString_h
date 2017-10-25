@@ -1,0 +1,14 @@
+$OpenBSD: patch-third_party_skia_src_sksl_SkSLString_h,v 1.1 2017/10/25 13:47:07 robert Exp $
+
+Index: third_party/skia/src/sksl/SkSLString.h
+--- third_party/skia/src/sksl/SkSLString.h.orig
++++ third_party/skia/src/sksl/SkSLString.h
+@@ -18,6 +18,8 @@
+     #include "SkString.h"
+ #endif
+ 
++#include <stdarg.h>
++
+ namespace SkSL {
+ 
+ class String : public SKSL_STRING_BASE {

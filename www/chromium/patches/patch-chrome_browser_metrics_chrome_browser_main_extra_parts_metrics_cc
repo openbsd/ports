@@ -1,8 +1,8 @@
-$OpenBSD: patch-chrome_browser_metrics_chrome_browser_main_extra_parts_metrics_cc,v 1.7 2017/09/09 19:16:43 robert Exp $
+$OpenBSD: patch-chrome_browser_metrics_chrome_browser_main_extra_parts_metrics_cc,v 1.8 2017/10/25 13:47:07 robert Exp $
 Index: chrome/browser/metrics/chrome_browser_main_extra_parts_metrics.cc
 --- chrome/browser/metrics/chrome_browser_main_extra_parts_metrics.cc.orig
 +++ chrome/browser/metrics/chrome_browser_main_extra_parts_metrics.cc
-@@ -38,8 +38,10 @@
+@@ -39,8 +39,10 @@
  #include <cpu-features.h>
  #endif  // defined(OS_ANDROID) && defined(__arm__)
  

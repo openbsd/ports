@@ -1,8 +1,8 @@
-$OpenBSD: patch-chrome_browser_chrome_browser_main_cc,v 1.18 2017/09/09 19:16:43 robert Exp $
+$OpenBSD: patch-chrome_browser_chrome_browser_main_cc,v 1.19 2017/10/25 13:47:07 robert Exp $
 Index: chrome/browser/chrome_browser_main.cc
 --- chrome/browser/chrome_browser_main.cc.orig
 +++ chrome/browser/chrome_browser_main.cc
-@@ -191,7 +191,7 @@
+@@ -190,7 +190,7 @@
  #include "chrome/browser/offline_pages/offline_page_info_handler.h"
  #endif
  
@@ -11,7 +11,7 @@ Index: chrome/browser/chrome_browser_main.cc
  #include "chrome/browser/first_run/upgrade_util_linux.h"
  #endif  // defined(OS_LINUX) && !defined(OS_CHROMEOS)
  
-@@ -281,7 +281,7 @@
+@@ -283,7 +283,7 @@
  #endif
  
  #if defined(OS_WIN) || defined(OS_MACOSX) || \
@@ -20,7 +20,7 @@ Index: chrome/browser/chrome_browser_main.cc
  #include "chrome/browser/metrics/desktop_session_duration/desktop_session_duration_tracker.h"
  #endif
  
-@@ -766,7 +766,7 @@ void ChromeBrowserMainParts::SetupFieldTrials() {
+@@ -709,7 +709,7 @@ void ChromeBrowserMainParts::SetupFieldTrials() {
    field_trial_synchronizer_ = new FieldTrialSynchronizer();
  
  #if defined(OS_WIN) || defined(OS_MACOSX) || \
@@ -29,7 +29,7 @@ Index: chrome/browser/chrome_browser_main.cc
    metrics::DesktopSessionDurationTracker::Initialize();
  #endif
    metrics::RendererUptimeTracker::Initialize();
-@@ -1191,7 +1191,7 @@ int ChromeBrowserMainParts::PreCreateThreadsImpl() {
+@@ -1142,7 +1142,7 @@ int ChromeBrowserMainParts::PreCreateThreadsImpl() {
    }
  #endif  // !defined(OS_ANDROID) && !defined(OS_CHROMEOS)
  
@@ -38,7 +38,7 @@ Index: chrome/browser/chrome_browser_main.cc
    // Set the product channel for crash reports.
    base::debug::SetCrashKeyValue(crash_keys::kChannel,
                                  chrome::GetChannelString());
-@@ -1374,7 +1374,7 @@ void ChromeBrowserMainParts::PreBrowserStart() {
+@@ -1329,7 +1329,7 @@ void ChromeBrowserMainParts::PreBrowserStart() {
  
  // Start the tab manager here so that we give the most amount of time for the
  // other services to start up before we start adjusting the oom priority.

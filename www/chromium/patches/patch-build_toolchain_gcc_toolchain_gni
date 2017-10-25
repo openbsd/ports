@@ -1,4 +1,4 @@
-$OpenBSD: patch-build_toolchain_gcc_toolchain_gni,v 1.9 2017/09/09 19:16:43 robert Exp $
+$OpenBSD: patch-build_toolchain_gcc_toolchain_gni,v 1.10 2017/10/25 13:47:07 robert Exp $
 Index: build/toolchain/gcc_toolchain.gni
 --- build/toolchain/gcc_toolchain.gni.orig
 +++ build/toolchain/gcc_toolchain.gni
@@ -14,7 +14,7 @@ Index: build/toolchain/gcc_toolchain.gni
  # This template defines a toolchain for something that works like gcc
  # (including clang).
  #
-@@ -569,12 +574,12 @@ template("clang_toolchain") {
+@@ -584,12 +589,12 @@ template("clang_toolchain") {
    }
  
    gcc_toolchain(target_name) {

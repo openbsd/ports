@@ -1,8 +1,8 @@
-$OpenBSD: patch-chromecast_browser_cast_content_browser_client_cc,v 1.13 2017/09/09 19:16:43 robert Exp $
+$OpenBSD: patch-chromecast_browser_cast_content_browser_client_cc,v 1.14 2017/10/25 13:47:07 robert Exp $
 Index: chromecast/browser/cast_content_browser_client.cc
 --- chromecast/browser/cast_content_browser_client.cc.orig
 +++ chromecast/browser/cast_content_browser_client.cc
-@@ -349,7 +349,7 @@ void CastContentBrowserClient::AppendExtraCommandLineS
+@@ -344,7 +344,7 @@ void CastContentBrowserClient::AppendExtraCommandLineS
      }
    }
  
