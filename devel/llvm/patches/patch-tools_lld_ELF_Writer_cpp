@@ -1,0 +1,19 @@
+$OpenBSD: patch-tools_lld_ELF_Writer_cpp,v 1.3 2017/10/25 06:50:59 ajacoutot Exp $
+
+Put .got.plt in RELRO.
+
+Index: tools/lld/ELF/Writer.cpp
+--- tools/lld/ELF/Writer.cpp.orig
++++ tools/lld/ELF/Writer.cpp
+@@ -567,7 +567,11 @@ bool elf::isRelroSection(const OutputSection *Sec) {
+   // However, if "-z now" is given, the lazy symbol resolution is
+   // disabled, which enables us to put it into RELRO.
+   if (Sec == InX::GotPlt->getParent())
++#ifndef __OpenBSD__
+     return Config->ZNow;
++#else
++    return true;	/* kbind(2) means we can always put these in RELRO */
++#endif
+ 
+   // .dynamic section contains data for the dynamic linker, and
+   // there's no need to write to it at runtime, so it's better to put
