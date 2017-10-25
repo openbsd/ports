@@ -1,0 +1,13 @@
+$OpenBSD: patch-build_apr_hints_m4,v 1.1 2017/10/25 19:36:46 naddy Exp $
+
+Index: build/apr_hints.m4
+--- build/apr_hints.m4.orig
++++ build/apr_hints.m4
+@@ -135,6 +135,7 @@ dnl	       # Not a problem in 10.20.  Otherwise, who k
+         esac
+         ;;
+     *-openbsd*)
++        APR_SETIFNULL(apr_lock_method, [USE_FLOCK_SERIALIZE])
+ 	APR_ADDTO(CPPFLAGS, [-D_POSIX_THREADS])
+         # binding to an ephemeral port fails on OpenBSD so override
+         # the test for O_NONBLOCK inheritance across accept().

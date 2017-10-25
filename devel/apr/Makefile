@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.41 2017/10/23 21:24:37 stsp Exp $
+# $OpenBSD: Makefile,v 1.42 2017/10/25 19:36:46 naddy Exp $
 
 COMMENT=	Apache Portable Runtime
 
 V=		1.6.3
 DISTNAME=	apr-$V
+REVISION=	0
 SHARED_LIBS +=	apr-1             6.0     # .6.2
 
 CATEGORIES=	devel
@@ -19,13 +20,18 @@ WANTLIB += pthread
 
 MASTER_SITES=	${MASTER_SITE_APACHE:=apr/}
 
-CONFIGURE_STYLE=gnu
+AUTOCONF_VERSION=2.69
+CONFIGURE_STYLE=autoconf autoheader
 CONFIGURE_ARGS=	--includedir=${LOCALBASE}/include/apr-1/ \
 		--with-installbuilddir=${LOCALBASE}/lib/apr-1/ \
 		--enable-other-child \
 		--enable-threads \
 		--enable-pool-debug=yes \
 		ac_cv_prog_AWK=awk
+MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/build
+
+post-configure:
+	sed -i 's@$${LIBTOOL}@${LIBTOOL}@' ${WRKBUILD}/apr-1-config
 
 pre-install:
 	rm -f ${WRKSRC}/libtool

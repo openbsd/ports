@@ -1,0 +1,37 @@
+$OpenBSD: patch-configure_in,v 1.1 2017/10/25 19:36:46 naddy Exp $
+
+Index: configure.in
+--- configure.in.orig
++++ configure.in
+@@ -2281,7 +2281,7 @@ fi
+ APR_IFALLYES(header:semaphore.h func:sem_open func:sem_close dnl
+              func:sem_unlink func:sem_post func:sem_wait,
+              hasposixser="1", hasposixser="0")
+-APR_IFALLYES(func:semget func:semctl define:SEM_UNDO, hassysvser="1", 
++APR_IFALLYES(func:semget func:semctl define:SEM_UNDO, hassysvser="0", 
+              hassysvser="0")
+ APR_IFALLYES(func:flock define:LOCK_EX, hasflockser="1", hasflockser="0")
+ APR_IFALLYES(header:fcntl.h define:F_SETLK, hasfcntlser="1", hasfcntlser="0")
+@@ -2470,6 +2470,8 @@ else
+ fi
+ 
+ dnl ----------------------------- Checking for /dev/random 
++AC_CHECK_FUNCS(arc4random_buf)
++
+ AC_MSG_CHECKING(for entropy source)
+ 
+ why_no_rand=""
+@@ -2486,6 +2488,13 @@ AC_ARG_WITH(egd, 
+     AC_MSG_RESULT(EGD-compatible daemon)
+     rand="1"
+   ])
++
++if test "$rand" != "1"; then
++  if test "$ac_cv_func_arc4random_buf" = yes; then
++    AC_MSG_RESULT(arc4random)
++    rand="1"
++  fi
++fi
+ 
+ if test "$rand" != "1"; then
+   AC_ARG_WITH(devrandom,
