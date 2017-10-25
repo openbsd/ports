@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.18 2017/07/26 22:45:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2017/10/25 12:22:00 sthen Exp $
+
+BROKEN-i386 =	asm problems with clang integrated as
 
 COMMENT = 	C++ library of cryptographic algorithms
 CATEGORIES = 	devel security
