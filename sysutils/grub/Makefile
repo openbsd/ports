@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2014/01/13 22:12:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2017/10/25 12:11:45 sthen Exp $
+
+BROKEN=		fails with clang, fails with ports-gcc
 
 ONLY_FOR_ARCHS=	i386
 
