@@ -1,3 +1,6 @@
-Yelp is the default help browser for the GNOME desktop.  Yelp provides
-a simple graphical interface for viewing DocBook, HTML, man, and info
-formatted documentation.
+Yelp is the default help browser for the GNOME desktop.  Yelp provides a simple
+graphical interface for viewing DocBook, HTML, man, and info formatted
+documentation.
+
+Displaying manual pages requires GNU groff(1) from the textproc/groff port which
+dependency is not enforced. It can be installed using `doas pkg_add groff'.
