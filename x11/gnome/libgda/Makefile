@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.118 2017/10/23 17:11:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.119 2017/10/26 08:54:27 ajacoutot Exp $
+
+BROKEN=			does not build with newer GLib
 
 COMMENT-main=		GNOME Data Access library
 COMMENT-ldap=		LDAP backend for libgda
