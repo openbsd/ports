@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.54 2017/06/23 07:29:17 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.55 2017/10/26 08:48:59 ajacoutot Exp $
 @conflict glib2-docs-*
 @conflict glib2-fam-*
 @pkgpath devel/glib2,-docs
@@ -13,7 +13,7 @@ bin/gdbus-codegen
 @bin bin/gio-querymodules
 @bin bin/glib-compile-resources
 @bin bin/glib-compile-schemas
-@bin bin/glib-genmarshal
+bin/glib-genmarshal
 bin/glib-gettextize
 bin/glib-mkenums
 @bin bin/gobject-query
@@ -350,8 +350,8 @@ share/gdb/auto-load/
 share/gdb/auto-load/usr/
 share/gdb/auto-load/usr/local/
 share/gdb/auto-load/usr/local/lib/
-share/gdb/auto-load/usr/local/lib/libglib-2.0.so.0.5200.3-gdb.py
-share/gdb/auto-load/usr/local/lib/libgobject-2.0.so.0.5200.3-gdb.py
+share/gdb/auto-load/usr/local/lib/libglib-2.0.so.0.5400.1-gdb.py
+share/gdb/auto-load/usr/local/lib/libgobject-2.0.so.0.5400.1-gdb.py
 share/gettext/its/
 share/gettext/its/gschema.its
 share/gettext/its/gschema.loc
@@ -359,28 +359,28 @@ share/glib-2.0/
 share/glib-2.0/codegen/
 share/glib-2.0/codegen/__init__.py
 share/glib-2.0/codegen/__init__.pyc
-share/glib-2.0/codegen/__init__.pyo
+share/glib-2.0/codegen/__init__.${MODPY_PYOEXTENSION}
 share/glib-2.0/codegen/codegen.py
 share/glib-2.0/codegen/codegen.pyc
-share/glib-2.0/codegen/codegen.pyo
+share/glib-2.0/codegen/codegen.${MODPY_PYOEXTENSION}
 share/glib-2.0/codegen/codegen_docbook.py
 share/glib-2.0/codegen/codegen_docbook.pyc
-share/glib-2.0/codegen/codegen_docbook.pyo
+share/glib-2.0/codegen/codegen_docbook.${MODPY_PYOEXTENSION}
 share/glib-2.0/codegen/codegen_main.py
 share/glib-2.0/codegen/codegen_main.pyc
-share/glib-2.0/codegen/codegen_main.pyo
+share/glib-2.0/codegen/codegen_main.${MODPY_PYOEXTENSION}
 share/glib-2.0/codegen/config.py
 share/glib-2.0/codegen/config.pyc
-share/glib-2.0/codegen/config.pyo
+share/glib-2.0/codegen/config.${MODPY_PYOEXTENSION}
 share/glib-2.0/codegen/dbustypes.py
 share/glib-2.0/codegen/dbustypes.pyc
-share/glib-2.0/codegen/dbustypes.pyo
+share/glib-2.0/codegen/dbustypes.${MODPY_PYOEXTENSION}
 share/glib-2.0/codegen/parser.py
 share/glib-2.0/codegen/parser.pyc
-share/glib-2.0/codegen/parser.pyo
+share/glib-2.0/codegen/parser.${MODPY_PYOEXTENSION}
 share/glib-2.0/codegen/utils.py
 share/glib-2.0/codegen/utils.pyc
-share/glib-2.0/codegen/utils.pyo
+share/glib-2.0/codegen/utils.${MODPY_PYOEXTENSION}
 share/glib-2.0/gdb/
 share/glib-2.0/gdb/glib_gdb.py
 share/glib-2.0/gdb/gobject_gdb.py
