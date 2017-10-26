@@ -1,6 +1,6 @@
-$OpenBSD: patch-libgda_data_Makefile_in,v 1.1 2017/10/26 11:50:50 ajacoutot Exp $
+$OpenBSD: patch-libgda_data_Makefile_in,v 1.2 2017/10/26 11:54:28 ajacoutot Exp $
 
-Traditional sed(1).
+XXX push upstream: traditional sed(1).
 
 Index: libgda/data/Makefile.in
 --- libgda/data/Makefile.in.orig
