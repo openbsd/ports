@@ -1,0 +1,16 @@
+$OpenBSD: patch-libgda_data_Makefile_in,v 1.1 2017/10/26 11:50:50 ajacoutot Exp $
+
+Traditional sed(1).
+
+Index: libgda/data/Makefile.in
+--- libgda/data/Makefile.in.orig
++++ libgda/data/Makefile.in
+@@ -604,7 +604,7 @@ INTROSPECTION_GIRS = GdaData-5.0.gir
+ # Extract dlname from libfolks.la; see bug #658002.
+ # This is what g-ir-scanner does.
+ libgdadata_dlname = \
+-	`$(SED) -n "s/^dlname='\([A-Za-z0-9.+-]\+\)'/\1/p" libgdadata-5.0.la`
++	`$(SED) -En "s/^dlname='([A-Za-z0-9.+-]+)'/\1/p" libgdadata-5.0.la`
+ 
+ INTROSPECTION_COMPILER_ARGS = \
+     --includedir=. \

@@ -1,0 +1,24 @@
+$OpenBSD: patch-libgda-ui_data-entries_plugins_libmain_c,v 1.1 2017/10/26 11:50:50 ajacoutot Exp $
+
+Fix includes for newer gtksourceview.
+
+Index: libgda-ui/data-entries/plugins/libmain.c
+--- libgda-ui/data-entries/plugins/libmain.c.orig
++++ libgda-ui/data-entries/plugins/libmain.c
+@@ -39,15 +39,7 @@
+ #endif
+ 
+ #ifdef HAVE_GTKSOURCEVIEW
+-  #ifdef GTK_DISABLE_SINGLE_INCLUDES
+-    #undef GTK_DISABLE_SINGLE_INCLUDES
+-  #endif
+-
+-  #include <gtksourceview/gtksourceview.h>
+-  #include <gtksourceview/gtksourcelanguagemanager.h>
+-  #include <gtksourceview/gtksourcebuffer.h>
+-  #include <gtksourceview/gtksourcestyleschememanager.h>
+-  #include <gtksourceview/gtksourcestylescheme.h>
++#include <gtksourceview/gtksource.h>
+ #endif
+ 
+ static GdauiDataEntry *plugin_entry_filesel_create_func (GdaDataHandler *handler, GType type, const gchar *options);

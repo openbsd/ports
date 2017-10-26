@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.119 2017/10/26 08:54:27 ajacoutot Exp $
-
-BROKEN=			does not build with newer GLib
+# $OpenBSD: Makefile,v 1.120 2017/10/26 11:50:50 ajacoutot Exp $
 
 COMMENT-main=		GNOME Data Access library
 COMMENT-ldap=		LDAP backend for libgda
@@ -20,11 +18,11 @@ PKGNAME-mysql=		libgda-mysql-${GNOME_VERSION}
 PKGNAME-pgsql=		libgda-pgsql-${GNOME_VERSION}
 PKGNAME-ui=		libgda-ui-${GNOME_VERSION}
 
-REVISION-main=		8
-REVISION-ldap=		2
-REVISION-mysql=		2
-REVISION-pgsql=		2
-REVISION-ui=		5
+REVISION-main=		9
+REVISION-ldap=		3
+REVISION-mysql=		3
+REVISION-pgsql=		3
+REVISION-ui=		6
 
 EPOCH-main=		2
 EPOCH-ldap=		0
@@ -113,7 +111,8 @@ WANTLIB-ui += cairo-gobject expat fontconfig freetype gda-${GDA_MAJOR}
 WANTLIB-ui += gdk-3 gdk_pixbuf-2.0 goocanvas-2.0 gtk-3 gtksourceview-3.0
 WANTLIB-ui += pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
 WANTLIB-ui += xcb xcb-render xcb-shm epoxy
-WANTLIB-ui += ICE SM atk-bridge-2.0 atspi harfbuzz dbus-1
+WANTLIB-ui += atk-bridge-2.0 atspi harfbuzz dbus-1
+WANTLIB-ui += Xtst xcb-xkb xkbcommon xkbcommon-x11
 
 LIB_DEPENDS-ui=		graphics/goocanvas2 \
 			x11/dbus \
@@ -146,12 +145,75 @@ RUN_DEPENDS-ldap=	# empty
 LIB_DEPENDS-ldap=	x11/gnome/libgda \
 			databases/openldap
 
+### needed with newer glib-mkenums(1) ##########################################
+BUILD_DEPENDS +=	converters/recode
+
+# From b611c805b3a2248e2f4f85f993f96c13a05b4730 Mon Sep 17 00:00:00 2001
+# From: Emmanuele Bassi <ebassi@gnome.org>
+# Date: Mon, 17 Jul 2017 22:37:50 +0100
+# Subject: Convert files to Unicode
+RECODE +=		libgda/gda-connection.h \
+			libgda/sql-parser/gda-sql-statement.h \
+			libgda/sql-parser/gda-statement-struct-delete.h \
+			libgda/sql-parser/gda-statement-struct-unknown.h \
+			libgda/sql-parser/gda-statement-struct-util.h
+
+# From 12429af2c0a40bb199ced605b7f7fab5ecc77e86 Mon Sep 17 00:00:00 2001
+# From: Murray Cumming <murrayc@murrayc.com>
+# Date: Wed, 25 Oct 2017 22:20:49 +0200
+# Subject: Convert several headers from ISO-8559 to UTF-8.
+RECODE +=		libgda-report/engine/rt-parser.h \
+			libgda-report/gda-report-document-private.h \
+			libgda-report/gda-report-document.h \
+			libgda-report/libgda-report.h \
+			libgda-ui/gdaui-easy.h \
+			libgda-ui/libgda-ui.h \
+			libgda-xslt/libgda-xslt.h \
+			libgda/binreloc/gda-binreloc.h \
+			libgda/gda-column.h \
+			libgda/gda-connection-internal.h \
+			libgda/gda-connection-sqlite.h \
+			libgda/gda-data-model-extra.h \
+			libgda/gda-data-model-iter-extra.h \
+			libgda/gda-data-model.h \
+			libgda/gda-meta-store-extra.h \
+			libgda/gda-meta-struct-private.h \
+			libgda/gda-row.h \
+			libgda/gda-server-operation-private.h \
+			libgda/gda-server-provider-private.h \
+			libgda/gda-statement-extra.h \
+			libgda/gda-util.h \
+			libgda/libgda-global-variables.h \
+			libgda/providers-support/gda-data-select-priv.h \
+			libgda/sqlite/gda-sqlite-provider.h \
+			libgda/sqlite/gda-sqlite-recordset.h \
+			libgda/sqlite/gda-sqlite.h \
+			libgda/sqlite/virtual/gda-vconnection-data-model-private.h \
+			providers/firebird/gda-firebird.h \
+			providers/jdbc/gda-jdbc.h \
+			providers/ldap/gdaprov-data-model-ldap.h \
+			providers/mdb/gda-mdb-provider.h \
+			providers/mdb/gda-mdb.h \
+			providers/mysql/gda-mysql-provider.h \
+			providers/mysql/gda-mysql-recordset.h \
+			providers/mysql/gda-mysql.h \
+			providers/postgres/gda-postgres-recordset.h
+
+# Some more...
+RECODE +=		libgda/gda-batch.h \
+			libgda/gda-config.h \
+			libgda/gda-data-model-extra.h \
+			libgda/gda-mutex.h \
+			libgda/libgda-global-variables.h
+################################################################################
+
 # XXX sync with LIBdb_VERSION in databases/db/v4
 # (find a proper way to push upstream)
 AUTOCONF_VERSION=	2.69
 CONFIGURE_STYLE=	autoconf no-autoheader
 post-patch:
 	sed -i 's,bdb_libext="\$$linklibext",bdb_libext=".so.5.0",' ${WRKSRC}/m4/bdb.m4
+	cd ${WRKSRC} && ${LOCALBASE}/bin/recode ISO-8859-1..utf8 ${RECODE}
 
 post-install:
 	rm ${PREFIX}/lib/libgda-${GDA_MAJOR}/{plugins,providers}/*.la
