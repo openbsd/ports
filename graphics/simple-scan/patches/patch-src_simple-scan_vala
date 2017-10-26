@@ -1,18 +1,19 @@
-$OpenBSD: patch-src_simple-scan_vala,v 1.4 2017/04/13 07:31:18 ajacoutot Exp $
+$OpenBSD: patch-src_simple-scan_vala,v 1.5 2017/10/26 12:32:43 ajacoutot Exp $
 
 No gusb on OpenBSD.
 
---- src/simple-scan.vala.orig	Sun Sep 13 23:35:03 2015
-+++ src/simple-scan.vala	Sat Oct 24 11:40:31 2015
+Index: src/simple-scan.vala
+--- src/simple-scan.vala.orig
++++ src/simple-scan.vala
 @@ -31,7 +31,6 @@ public class SimpleScan : Gtk.Application
  
      private ScanDevice? default_device = null;
      private bool have_devices = false;
 -    private GUsb.Context usb_context;
-     private UserInterface ui;
+     private AppWindow app;
      private Scanner scanner;
      private Book book;
-@@ -62,17 +61,6 @@ public class SimpleScan : Gtk.Application
+@@ -65,17 +64,6 @@ public class SimpleScan : Gtk.Application
          scanner.scan_failed.connect (scanner_failed_cb);
          scanner.scanning_changed.connect (scanner_scanning_changed_cb);
  
@@ -30,15 +31,15 @@ No gusb on OpenBSD.
          if (default_device != null)
          {
              List<ScanDevice> device_list = null;
-@@ -95,7 +83,6 @@ public class SimpleScan : Gtk.Application
+@@ -98,7 +86,6 @@ public class SimpleScan : Gtk.Application
          base.shutdown ();
          book = null;
-         ui = null;
+         app = null;
 -        usb_context = null;
          scanner.free ();
      }
  
-@@ -180,36 +167,8 @@ public class SimpleScan : Gtk.Application
+@@ -183,34 +170,8 @@ public class SimpleScan : Gtk.Application
  
      public string? suggest_driver ()
      {
@@ -53,9 +54,7 @@ No gusb on OpenBSD.
 -        add_devices (driver_map, samsung_devices, "samsung");
 -        add_devices (driver_map, hpaio_devices, "hpaio");
 -        add_devices (driver_map, epkowa_devices, "epkowa");        
--        var devices = GUsb.context_get_devices (usb_context);
--        /* Fixed in GUsb 0.2.7: https://github.com/hughsie/libgusb/commit/83a6b1a20653c1a17f0a909f08652b5e1df44075 */
--        /*var devices = GUSB.context_get_devices (context);*/
+-        var devices = usb_context.get_devices ();
 -        for (var i = 0; i < devices.length; i++)
 -        {
 -            var device = devices.data[i];

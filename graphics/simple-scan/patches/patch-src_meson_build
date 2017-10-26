@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_meson_build,v 1.1 2017/10/26 12:32:43 ajacoutot Exp $
+
+No gusb on OpenBSD.
+
+Index: src/meson.build
+--- src/meson.build.orig
++++ src/meson.build
+@@ -3,7 +3,7 @@ resources = gnome.compile_resources ('resources', 'sim
+                                      c_name: 'resources')
+ 
+ vala_args = [ '--pkg=posix', '--vapidir=' + meson.current_source_dir () ]
+-dependencies = [ glib_dep, gtk_dep, zlib_dep, cairo_dep, gdk_pixbuf_dep, gusb_dep, sane_dep ]
++dependencies = [ glib_dep, gtk_dep, zlib_dep, cairo_dep, gdk_pixbuf_dep, sane_dep ]
+ if colord_dep.found ()
+     vala_args += [ '-D', 'HAVE_COLORD' ]
+     dependencies += colord_dep

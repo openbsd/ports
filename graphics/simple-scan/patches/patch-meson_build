@@ -1,0 +1,15 @@
+$OpenBSD: patch-meson_build,v 1.1 2017/10/26 12:32:43 ajacoutot Exp $
+
+No gusb on OpenBSD.
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -24,7 +24,6 @@ gthread_dep = dependency ('gthread-2.0')
+ zlib_dep = dependency ('zlib')
+ cairo_dep = dependency ('cairo')
+ gdk_pixbuf_dep = dependency ('gdk-pixbuf-2.0')
+-gusb_dep = dependency ('gusb', version: '>= 0.2.7')
+ colord_dep = dependency ('colord', required: false)
+ packagekit_dep = dependency ('packagekit-glib2', version: '>= 1.1.5', required: false)
+ webp_dep = dependency ('libwebp', required: false)
