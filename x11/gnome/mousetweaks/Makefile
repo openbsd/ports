@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.58 2017/04/13 07:38:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.59 2017/10/26 08:52:32 ajacoutot Exp $
 
-COMMENT=	mouse accessibility enhancements for GNOME
+COMMENT=		mouse accessibility enhancements for GNOME
 
-GNOME_PROJECT=	mousetweaks
-GNOME_VERSION=	3.12.0
-REVISION=	1
+GNOME_PROJECT=		mousetweaks
+GNOME_VERSION=		3.12.0
+REVISION=		2
 
 # GPLv3 - GFDLv1.3
 PERMIT_PACKAGE_CDROM=	Yes
@@ -14,15 +14,19 @@ WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gobject-2.0 gtk-3 pango-1.0 pangocairo-1.0
 WANTLIB += pthread intl
 
-MODULES=	devel/dconf \
-		x11/gnome
+MODULES=		devel/dconf \
+			x11/gnome
 
-BUILD_DEPENDS=	devel/gsettings-desktop-schemas
-RUN_DEPENDS=	devel/gsettings-desktop-schemas
-LIB_DEPENDS=	x11/gtk+3
+BUILD_DEPENDS=		devel/gsettings-desktop-schemas
+RUN_DEPENDS=		devel/gsettings-desktop-schemas
+LIB_DEPENDS=		x11/gtk+3
 
-MODGNOME_TOOLS +=	yelp
+MODGNOME_TOOLS=		yelp
 
 CONFIGURE_STYLE=	gnu
+
+# glib-mkenums(1), UnicodeEncodeError:
+# 'ascii' codec can't encode character u'\xa9' in position 16: ordinal not in range(128)
+MAKE_ENV=		PYTHONIOENCODING=utf8
 
 .include <bsd.port.mk>
