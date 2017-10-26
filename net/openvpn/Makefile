@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.85 2017/10/19 00:55:02 jca Exp $
+# $OpenBSD: Makefile,v 1.86 2017/10/26 08:22:36 jca Exp $
 
 COMMENT=	easy-to-use, robust, and highly configurable VPN
 
@@ -25,8 +25,8 @@ CONFIGURE_STYLE= gnu
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib ${LDFLAGS}"
-# XXX enable when mbedtls gets a proper update
-FLAVORS=	#mbedtls
+
+FLAVORS=	mbedtls
 FLAVOR?=
 
 .if ${FLAVOR:Mmbedtls}

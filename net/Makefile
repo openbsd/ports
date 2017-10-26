@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1026 2017/10/23 21:43:09 bcallah Exp $
+# $OpenBSD: Makefile,v 1.1027 2017/10/26 08:22:36 jca Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -306,6 +306,7 @@
      SUBDIR += openmdns
      SUBDIR += openvmps
      SUBDIR += openvpn
+     SUBDIR += openvpn,mbedtls
      SUBDIR += openvpn-auth-ldap
      SUBDIR += openvpn_bsdauth
      SUBDIR += ortp
