@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_Exception_cpp,v 1.1.1.1 2017/10/26 12:54:07 rsadowski Exp $
+
+fix errno(2) include
+
+Index: src/Exception.cpp
+--- src/Exception.cpp.orig
++++ src/Exception.cpp
+@@ -7,7 +7,7 @@
+  */
+ 
+ 
+-#include <sys/errno.h>
++#include <errno.h>
+ 
+ #include "Exception.h"
+ 

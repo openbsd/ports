@@ -1,0 +1,34 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/10/26 12:54:07 rsadowski Exp $
+@pkgpath x11/kdirstat
+@conflict kdirstat-*
+@bin bin/qdirstat
+bin/qdirstat-cache-writer
+share/applications/qdirstat.desktop
+share/doc/qdirstat/
+share/doc/qdirstat/Building.md
+share/doc/qdirstat/Contributing.md
+share/doc/qdirstat/Debugging-Tips.md
+share/doc/qdirstat/DevHistory.md
+share/doc/qdirstat/GitHub-Workflow.md
+share/doc/qdirstat/Installing.md
+share/doc/qdirstat/LICENSE
+share/doc/qdirstat/QDirStat-for-Servers.md
+share/doc/qdirstat/README.md
+share/doc/qdirstat/TODO.md
+share/doc/qdirstat/Troubleshooting.md
+share/doc/qdirstat/cache-file-format.txt
+share/doc/qdirstat/stats/
+share/doc/qdirstat/stats/Buckets-Table.md
+share/doc/qdirstat/stats/File-Size-Histogram.md
+share/doc/qdirstat/stats/Histogram-Options.md
+share/doc/qdirstat/stats/Histograms-in-General.md
+share/doc/qdirstat/stats/Median-Percentiles.md
+share/doc/qdirstat/stats/Overflow-Area.md
+share/doc/qdirstat/stats/Percentiles-Table.md
+share/doc/qdirstat/stats/README.md
+share/doc/qdirstat/stats/Statistics.md
+share/icons/hicolor/32x32/apps/qdirstat.png
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

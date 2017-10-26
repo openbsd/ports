@@ -1,0 +1,14 @@
+$OpenBSD: patch-doc_doc_pro,v 1.1.1.1 2017/10/26 12:54:07 rsadowski Exp $
+
+Index: doc/doc.pro
+--- doc/doc.pro.orig
++++ doc/doc.pro
+@@ -5,7 +5,7 @@ TARGET     = $(nothing)
+ doc.files  = *.txt *.md ../*.md ../LICENSE
+ 
+ # Ubuntu / Debian pkg doc path
+-doc.path = /usr/share/doc/qdirstat
++doc.path = $$PREFIX/share/doc/qdirstat
+ 
+ exists( /usr/share/doc/packages ) {
+     # SUSE pkg doc path

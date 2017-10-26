@@ -1,0 +1,4 @@
+QDirStat is a graphical application to show where your disk space has gone and
+to help you to clean it up.
+
+This is a Qt-only port of the old Qt3/KDE3-based KDirStat.
