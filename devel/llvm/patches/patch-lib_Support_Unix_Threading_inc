@@ -1,0 +1,34 @@
+$OpenBSD: patch-lib_Support_Unix_Threading_inc,v 1.1 2017/10/26 10:05:55 ajacoutot Exp $
+
+Index: lib/Support/Unix/Threading.inc
+--- lib/Support/Unix/Threading.inc.orig
++++ lib/Support/Unix/Threading.inc
+@@ -21,8 +21,8 @@
+ 
+ #include <pthread.h>
+ 
+-#if defined(__FreeBSD__)
+-#include <pthread_np.h> // For pthread_getthreadid_np()
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
++#include <pthread_np.h> // For pthread_set_name_np() / pthread_getthreadid_np()
+ #endif
+ 
+ #if defined(__FreeBSD__) || defined(__FreeBSD_kernel__)
+@@ -119,6 +119,8 @@ static constexpr uint32_t get_max_thread_name_length_i
+ #endif
+ #elif defined(__FreeBSD__) || defined(__FreeBSD_kernel__)
+   return 16;
++#elif defined(__OpenBSD__)
++  return 32;
+ #else
+   return 0;
+ #endif
+@@ -147,7 +149,7 @@ void llvm::set_thread_name(const Twine &Name) {
+   ::pthread_setname_np(::pthread_self(), NameStr.data());
+ #endif
+ #endif
+-#elif defined(__FreeBSD__)
++#elif defined(__FreeBSD__) || defined(__OpenBSD__)
+   ::pthread_set_name_np(::pthread_self(), NameStr.data());
+ #elif defined(__NetBSD__)
+   ::pthread_setname_np(::pthread_self(), "%s",

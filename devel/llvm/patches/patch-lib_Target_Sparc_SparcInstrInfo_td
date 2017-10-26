@@ -1,0 +1,16 @@
+$OpenBSD: patch-lib_Target_Sparc_SparcInstrInfo_td,v 1.4 2017/10/26 10:05:55 ajacoutot Exp $
+
+[Sparc] allow tls_add/tls_call syntax in assembler parser
+
+Index: lib/Target/Sparc/SparcInstrInfo.td
+--- lib/Target/Sparc/SparcInstrInfo.td.orig
++++ lib/Target/Sparc/SparcInstrInfo.td
+@@ -1315,7 +1315,7 @@ let Defs = [FCC0], rd = 0, isCodeGenOnly = 1 in {
+ //===----------------------------------------------------------------------===//
+ // Instructions for Thread Local Storage(TLS).
+ //===----------------------------------------------------------------------===//
+-let isCodeGenOnly = 1, isAsmParserOnly = 1 in {
++let isAsmParserOnly = 1 in {
+ def TLS_ADDrr : F3_1<2, 0b000000,
+                     (outs IntRegs:$rd),
+                     (ins IntRegs:$rs1, IntRegs:$rs2, TLSSym:$sym),
