@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2017/10/24 02:57:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.76 2017/10/26 09:46:34 ajacoutot Exp $
 
 BROKEN-hppa=		no atomic primitives
 
@@ -11,6 +11,9 @@ EXTRACT_SUFX=		.tar.bz2
 
 PKGNAME-main=		harfbuzz-${V}
 PKGNAME-icu=		harfbuzz-icu-${V}
+
+REVISION-main=		0
+REVISION-icu=		0
 
 SHARED_LIBS +=  harfbuzz             9.2      # 10600.2
 SHARED_LIBS +=  harfbuzz-icu         0.6      # 10600.2
@@ -33,6 +36,9 @@ MASTER_SITES=		http://www.freedesktop.org/software/harfbuzz/release/
 MULTI_PACKAGES=		-main -icu
 
 USE_GMAKE=		Yes
+
+# C++11
+COMPILER=		base-clang ports-clang ports-gcc
 
 WANTLIB-main += ${WANTLIB}
 WANTLIB-main += X11 Xext Xrender c cairo expat fontconfig pixman-1
