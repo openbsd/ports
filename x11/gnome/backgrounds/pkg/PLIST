@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2016/10/29 18:05:55 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.19 2017/10/26 13:23:32 ajacoutot Exp $
 share/backgrounds/
 share/backgrounds/gnome/
 share/backgrounds/gnome/Bokeh_Tails.jpg
@@ -11,6 +11,7 @@ share/backgrounds/gnome/Icescape.jpg
 share/backgrounds/gnome/Mirror.jpg
 share/backgrounds/gnome/Road.jpg
 share/backgrounds/gnome/Sandstone.jpg
+share/backgrounds/gnome/Signpost_of_the_Shadows.jpg
 share/backgrounds/gnome/Stones.jpg
 share/backgrounds/gnome/Terraform-green.jpg
 share/backgrounds/gnome/Waterfalls.jpg
@@ -135,6 +136,9 @@ share/locale/he/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/hi/
 share/locale/hi/LC_MESSAGES/
 share/locale/hi/LC_MESSAGES/gnome-backgrounds.mo
+share/locale/hr/
+share/locale/hr/LC_MESSAGES/
+share/locale/hr/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/hu/
 share/locale/hu/LC_MESSAGES/
 share/locale/hu/LC_MESSAGES/gnome-backgrounds.mo
