@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.6 2017/07/27 09:34:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2017/10/26 07:53:23 rsadowski Exp $
 
 COMMENT =		KDE framework for Plasma runners
 DISTNAME =		krunner-${VERSION}
-REVISION =		1
 
-SHARED_LIBS =		KF5Runner		2.0
+SHARED_LIBS =		KF5Runner		3.0
 
-WANTLIB =  KF5ConfigCore KF5CoreAddons KF5I18n KF5KIOCore KF5Package
-WANTLIB += KF5Plasma KF5Service KF5Solid KF5ThreadWeaver ${COMPILER_LIBCXX} Qt5Core
-WANTLIB += Qt5Gui Qt5Network Qt5Qml Qt5Quick Qt5Widgets m
+WANTLIB += ${COMPILER_LIBCXX} KF5ConfigCore KF5CoreAddons KF5I18n
+WANTLIB += KF5KIOCore KF5Package KF5Plasma KF5Service KF5Solid
+WANTLIB += KF5ThreadWeaver Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Qml
+WANTLIB += Qt5Quick Qt5Widgets m
 
 BUILD_DEPENDS =		devel/gettext-tools
 LIB_DEPENDS =		devel/kf5/kconfig \

@@ -1,18 +1,17 @@
-# $OpenBSD: Makefile,v 1.5 2017/07/27 09:34:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2017/10/26 07:53:23 rsadowski Exp $
 
 COMMENT =		KDE safe desktop-wide storage for passwords
 DISTNAME =		kwallet-${VERSION}
 PKGNAME =		kf5-kwallet-${VERSION}
-REVISION =		0
 
-SHARED_LIBS =		KF5Wallet		2.0
-SHARED_LIBS +=		kwalletbackend5		2.0
+SHARED_LIBS =		KF5Wallet		3.0
+SHARED_LIBS +=		kwalletbackend5		3.0
 
-WANTLIB += KF5Auth KF5Codecs KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
-WANTLIB += KF5CoreAddons KF5DBusAddons KF5I18n KF5IconThemes KF5Notifications
-WANTLIB += KF5Service KF5WidgetsAddons KF5WindowSystem ${COMPILER_LIBCXX} Qt5Core
-WANTLIB += Qt5DBus Qt5Gui Qt5Widgets Qt5Xml X11 c gcrypt m pthread
-
+WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5Codecs KF5ConfigCore
+WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5DBusAddons
+WANTLIB += KF5I18n KF5IconThemes KF5Notifications KF5Service KF5WidgetsAddons
+WANTLIB += KF5WindowSystem Qt5Core Qt5DBus Qt5Gui Qt5Widgets Qt5Xml
+WANTLIB += c gcrypt m
 
 # N.B.: Tell upstream to add explicit dependency on Boost
 BUILD_DEPENDS =		devel/boost \

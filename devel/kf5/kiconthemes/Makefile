@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.4 2017/07/27 09:34:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2017/10/26 07:53:23 rsadowski Exp $
 
 COMMENT =		KDE icon GUI utility library
 DISTNAME =		kiconthemes-${VERSION}
-REVISION =		0
 
-SHARED_LIBS =		KF5IconThemes		1.0
+SHARED_LIBS =		KF5IconThemes		2.0
 
-WANTLIB += KF5Archive KF5Auth KF5Codecs KF5ConfigCore KF5ConfigGui
-WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5I18n KF5ItemViews
-WANTLIB += KF5WidgetsAddons ${COMPILER_LIBCXX} Qt5Core Qt5DBus Qt5Gui Qt5Svg Qt5Widgets
-WANTLIB += Qt5Xml c m
+WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Auth KF5Codecs KF5ConfigCore
+WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5I18n
+WANTLIB += KF5ItemViews KF5WidgetsAddons Qt5Core Qt5DBus Qt5Gui
+WANTLIB += Qt5Svg Qt5Widgets Qt5Xml c m
 
 MODULES =		lang/python
 

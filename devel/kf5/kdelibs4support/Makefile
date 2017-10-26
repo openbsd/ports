@@ -1,26 +1,26 @@
-# $OpenBSD: Makefile,v 1.6 2017/07/30 16:12:30 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2017/10/26 07:53:23 rsadowski Exp $
 
 COMMENT =		legacy support for kdelibs-4.x compatibility
 DISTNAME =		kdelibs4support-${VERSION}
-REVISION =		1
 
-SHARED_LIBS =		KF5KDELibs4Support	2.0
+SHARED_LIBS =		KF5KDELibs4Support	3.0
 
-WANTLIB =  ICE KF5Auth KF5Bookmarks KF5Codecs KF5Completion KF5ConfigCore
-WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5Crash
-WANTLIB += KF5DBusAddons KF5GlobalAccel KF5GuiAddons KF5I18n KF5IconThemes
-WANTLIB += KF5ItemViews KF5JobWidgets KF5KIOCore KF5KIOFileWidgets
-WANTLIB += KF5KIOWidgets KF5Notifications KF5Parts KF5Service
-WANTLIB += KF5Solid KF5SonnetUi KF5TextWidgets KF5UnitConversion
-WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui ${COMPILER_LIBCXX} Qt5Core
-WANTLIB += Qt5DBus Qt5Designer Qt5Gui Qt5Network Qt5PrintSupport
-WANTLIB += Qt5Svg Qt5Test Qt5Widgets Qt5X11Extras Qt5Xml SM X11
-WANTLIB += Xext c m
+WANTLIB += ${COMPILER_LIBCXX} ICE KF5Auth KF5Bookmarks KF5Codecs
+WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
+WANTLIB += KF5CoreAddons KF5Crash KF5DBusAddons KF5GlobalAccel
+WANTLIB += KF5GuiAddons KF5I18n KF5IconThemes KF5ItemViews KF5JobWidgets
+WANTLIB += KF5KIOCore KF5KIOFileWidgets KF5KIOWidgets KF5Notifications
+WANTLIB += KF5Parts KF5Service KF5Solid KF5SonnetUi KF5TextWidgets
+WANTLIB += KF5UnitConversion KF5WidgetsAddons KF5WindowSystem
+WANTLIB += KF5XmlGui Qt5Core Qt5DBus Qt5Designer Qt5Gui Qt5Network
+WANTLIB += Qt5PrintSupport Qt5Svg Qt5Test Qt5Widgets Qt5X11Extras
+WANTLIB += Qt5Xml SM X11 Xext c m
 
 BUILD_DEPENDS =		devel/gettext-tools \
 			devel/kf5/kded \
 			devel/kf5/kdesignerplugin \
 			devel/kf5/kdoctools \
+			devel/kf5/kemoticons \
 			www/p5-URI
 
 RUN_DEPENDS =		devel/kf5/kded \

@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.4 2017/07/27 09:34:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2017/10/26 07:53:23 rsadowski Exp $
 
 COMMENT =	KDE wrapper over su/sudo/doas commands
 DISTNAME =	kdesu-${VERSION}
-REVISION =	0
 
-SHARED_LIBS =	KF5Su		2.0
+SHARED_LIBS =	KF5Su		3.0
 
-WANTLIB =  ICE KF5ConfigCore KF5CoreAddons KF5I18n KF5Pty KF5Service
-WANTLIB += ${COMPILER_LIBCXX} Qt5Core SM X11 Xext c m
+WANTLIB += ${COMPILER_LIBCXX} ICE KF5ConfigCore KF5CoreAddons
+WANTLIB += KF5I18n KF5Pty KF5Service Qt5Core SM X11 Xext c m
+
+MODULES +=	lang/python
 
 BUILD_DEPENDS =	devel/gettext-tools
 
@@ -18,7 +19,5 @@ LIB_DEPENDS =	devel/kf5/kcoreaddons \
 
 CONFIGURE_ARGS=	-DKDESU_USE_SUDO_DEFAULT=Yes
 CONFIGURE_ENV =	'CXXFLAGS=${CXXFLAGS} -D__PATH_SUDO=\"/usr/bin/doas\"'
-
-NO_TEST = 	Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2017/06/07 17:03:39 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.3 2017/10/26 07:53:23 rsadowski Exp $
 include/KF5/
 include/KF5/KWidgetsAddons/
 include/KF5/KWidgetsAddons/KAcceleratorManager
@@ -45,6 +45,7 @@ include/KF5/KWidgetsAddons/KPageWidget
 include/KF5/KWidgetsAddons/KPageWidgetItem
 include/KF5/KWidgetsAddons/KPageWidgetModel
 include/KF5/KWidgetsAddons/KPasswordDialog
+include/KF5/KWidgetsAddons/KPasswordLineEdit
 include/KF5/KWidgetsAddons/KPixmapRegionSelectorDialog
 include/KF5/KWidgetsAddons/KPixmapRegionSelectorWidget
 include/KF5/KWidgetsAddons/KPixmapSequence
@@ -113,6 +114,7 @@ include/KF5/KWidgetsAddons/kpageview.h
 include/KF5/KWidgetsAddons/kpagewidget.h
 include/KF5/KWidgetsAddons/kpagewidgetmodel.h
 include/KF5/KWidgetsAddons/kpassworddialog.h
+include/KF5/KWidgetsAddons/kpasswordlineedit.h
 include/KF5/KWidgetsAddons/kpixmapregionselectordialog.h
 include/KF5/KWidgetsAddons/kpixmapregionselectorwidget.h
 include/KF5/KWidgetsAddons/kpixmapsequence.h

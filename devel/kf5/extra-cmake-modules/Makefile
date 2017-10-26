@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/12/25 14:54:48 zhuk Exp $
+# $OpenBSD: Makefile,v 1.3 2017/10/26 07:53:22 rsadowski Exp $
 
 COMMENT =		CMake modules required by KDE5
 DISTNAME =		extra-cmake-modules-${VERSION}
@@ -14,7 +14,7 @@ CONFIGURE_ARGS =	-DBUILD_QTHELP_DOCS=True \
 PKG_ARCH =		*
 
 # use depleted
-CONFIGURE_ARGS += -DMAN_INSTALL_DIR=${PREFIX}/man
+CONFIGURE_ARGS +=	-DMAN_INSTALL_DIR=${PREFIX}/man
 
 # XXX Don't run compileall.py because it needs land/python
 post-install:

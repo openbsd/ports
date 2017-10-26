@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2017/07/12 00:05:04 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.5 2017/10/26 07:53:23 rsadowski Exp $
 @bin bin/plasmapkg2
 include/KF5/Plasma/
 include/KF5/Plasma/Applet
@@ -68,6 +68,24 @@ lib/cmake/KF5PlasmaQuick/KF5PlasmaQuickTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5PlasmaQuick/KF5PlasmaQuickTargets.cmake
 @lib lib/libKF5Plasma.so.${LIBKF5Plasma_VERSION}
 @lib lib/libKF5PlasmaQuick.so.${LIBKF5PlasmaQuick_VERSION}
+lib/qt5/plugins/kpackage/
+lib/qt5/plugins/kpackage/packagestructure/
+lib/qt5/plugins/kpackage/packagestructure/containmentactions_packagestructure.so
+lib/qt5/plugins/kpackage/packagestructure/dataengine_packagestructure.so
+lib/qt5/plugins/kpackage/packagestructure/plasmageneric_packagestructure.so
+lib/qt5/plugins/kpackage/packagestructure/plasmatheme_packagestructure.so
+lib/qt5/plugins/kpackage/packagestructure/plasmoid_packagestructure.so
+lib/qt5/plugins/plasma/
+lib/qt5/plugins/plasma/dataengine/
+lib/qt5/plugins/plasma/dataengine/plasma_dataengine_example_customDataContainers.so
+lib/qt5/plugins/plasma/dataengine/plasma_dataengine_example_simpleEngine.so
+lib/qt5/plugins/plasma/dataengine/plasma_dataengine_example_sourcesOnRequest.so
+lib/qt5/plugins/plasma/scriptengines/
+lib/qt5/plugins/plasma/scriptengines/plasma_appletscript_declarative.so
+lib/qt5/plugins/plasma_containmentactions_test.so
+lib/qt5/plugins/plasma_engine_testengine.so
+lib/qt5/qml/QtQuick/Controls/
+lib/qt5/qml/QtQuick/Controls.2/
 lib/qt5/qml/QtQuick/Controls.2/Plasma/
 lib/qt5/qml/QtQuick/Controls.2/Plasma/BusyIndicator.qml
 lib/qt5/qml/QtQuick/Controls.2/Plasma/Button.qml
@@ -111,6 +129,7 @@ lib/qt5/qml/QtQuick/Controls.2/Plasma/private/ButtonShadow.qml
 lib/qt5/qml/QtQuick/Controls.2/Plasma/private/DefaultListItemBackground.qml
 lib/qt5/qml/QtQuick/Controls.2/Plasma/private/RoundShadow.qml
 lib/qt5/qml/QtQuick/Controls.2/Plasma/private/TextFieldFocus.qml
+lib/qt5/qml/QtQuick/Controls/Styles/
 lib/qt5/qml/QtQuick/Controls/Styles/Plasma/
 lib/qt5/qml/QtQuick/Controls/Styles/Plasma/ApplicationWindowStyle.qml
 lib/qt5/qml/QtQuick/Controls/Styles/Plasma/BusyIndicatorStyle.qml
@@ -143,6 +162,7 @@ lib/qt5/qml/QtQuick/Controls/Styles/Plasma/private/
 lib/qt5/qml/QtQuick/Controls/Styles/Plasma/private/ButtonShadow.qml
 lib/qt5/qml/QtQuick/Controls/Styles/Plasma/private/RoundShadow.qml
 lib/qt5/qml/QtQuick/Controls/Styles/Plasma/private/TextFieldFocus.qml
+lib/qt5/qml/QtQuick/Controls/Styles/Plasma/private/Util.js
 lib/qt5/qml/QtQuick/Controls/Styles/Plasma/qmldir
 lib/qt5/qml/org/kde/plasma/
 lib/qt5/qml/org/kde/plasma/accessdenied/
@@ -185,6 +205,11 @@ lib/qt5/qml/org/kde/plasma/components.3/TextArea.qml
 lib/qt5/qml/org/kde/plasma/components.3/TextField.qml
 lib/qt5/qml/org/kde/plasma/components.3/ToolBar.qml
 lib/qt5/qml/org/kde/plasma/components.3/ToolButton.qml
+lib/qt5/qml/org/kde/plasma/components.3/private/
+lib/qt5/qml/org/kde/plasma/components.3/private/ButtonShadow.qml
+lib/qt5/qml/org/kde/plasma/components.3/private/DefaultListItemBackground.qml
+lib/qt5/qml/org/kde/plasma/components.3/private/RoundShadow.qml
+lib/qt5/qml/org/kde/plasma/components.3/private/TextFieldFocus.qml
 lib/qt5/qml/org/kde/plasma/components.3/qmldir
 lib/qt5/qml/org/kde/plasma/components/BusyIndicator.qml
 lib/qt5/qml/org/kde/plasma/components/Button.qml
@@ -223,7 +248,6 @@ lib/qt5/qml/org/kde/plasma/components/libplasmacomponentsplugin.so
 lib/qt5/qml/org/kde/plasma/components/plugins.qmltypes
 lib/qt5/qml/org/kde/plasma/components/private/
 lib/qt5/qml/org/kde/plasma/components/private/AppManager.js
-lib/qt5/qml/org/kde/plasma/components/private/Config.js
 lib/qt5/qml/org/kde/plasma/components/private/DualStateButton.qml
 lib/qt5/qml/org/kde/plasma/components/private/InlineDialog.qml
 lib/qt5/qml/org/kde/plasma/components/private/PageStack.js
@@ -260,27 +284,12 @@ lib/qt5/qml/org/kde/plasma/platformcomponents/
 lib/qt5/qml/org/kde/plasma/platformcomponents/libplatformcomponentsplugin.so
 lib/qt5/qml/org/kde/plasma/platformcomponents/plugins.qmltypes
 lib/qt5/qml/org/kde/plasma/platformcomponents/qmldir
-lib/qt5/plugins/kpackage/
-lib/qt5/plugins/kpackage/packagestructure/
-lib/qt5/plugins/kpackage/packagestructure/containmentactions_packagestructure.so
-lib/qt5/plugins/kpackage/packagestructure/dataengine_packagestructure.so
-lib/qt5/plugins/kpackage/packagestructure/plasmageneric_packagestructure.so
-lib/qt5/plugins/kpackage/packagestructure/plasmatheme_packagestructure.so
-lib/qt5/plugins/kpackage/packagestructure/plasmoid_packagestructure.so
-lib/qt5/plugins/plasma/
-lib/qt5/plugins/plasma/dataengine/
-lib/qt5/plugins/plasma/dataengine/plasma_dataengine_example_customDataContainers.so
-lib/qt5/plugins/plasma/dataengine/plasma_dataengine_example_simpleEngine.so
-lib/qt5/plugins/plasma/dataengine/plasma_dataengine_example_sourcesOnRequest.so
-lib/qt5/plugins/plasma/scriptengines/
-lib/qt5/plugins/plasma/scriptengines/plasma_appletscript_declarative.so
-lib/qt5/plugins/plasma_containmentactions_test.so
-lib/qt5/plugins/plasma_engine_testengine.so
 @man man/man1/plasmapkg2.1
 share/kdevappwizard/
 share/kdevappwizard/templates/
 share/kdevappwizard/templates/cpp-plasmoid.tar.bz2
 share/kdevappwizard/templates/plasma-wallpaper.tar.bz2
+share/kdevappwizard/templates/qml-plasmoid-with-qml-extension.tar.bz2
 share/kdevappwizard/templates/qml-plasmoid.tar.bz2
 share/kservices5/plasma-applet-org.kde.example.bugreport.desktop
 share/kservices5/plasma-applet-org.kde.example.compactrepresentation.desktop
@@ -326,6 +335,7 @@ share/locale/el/LC_MESSAGES/libplasma5.mo
 share/locale/en_GB/LC_MESSAGES/libplasma5.mo
 share/locale/es/LC_MESSAGES/libplasma5.mo
 share/locale/et/LC_MESSAGES/libplasma5.mo
+share/locale/eu/LC_MESSAGES/libplasma5.mo
 share/locale/fi/LC_MESSAGES/libplasma5.mo
 share/locale/fr/LC_MESSAGES/libplasma5.mo
 share/locale/gd/LC_MESSAGES/libplasma5.mo
@@ -546,6 +556,7 @@ share/plasma/desktoptheme/default/icons/touchpad.svgz
 share/plasma/desktoptheme/default/icons/user.svgz
 share/plasma/desktoptheme/default/icons/video.svgz
 share/plasma/desktoptheme/default/icons/view.svgz
+share/plasma/desktoptheme/default/icons/vlc.svgz
 share/plasma/desktoptheme/default/icons/wallet.svgz
 share/plasma/desktoptheme/default/icons/window.svgz
 share/plasma/desktoptheme/default/icons/zoom.svgz

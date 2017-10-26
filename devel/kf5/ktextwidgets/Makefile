@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.4 2017/07/27 09:34:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2017/10/26 07:53:23 rsadowski Exp $
 
 COMMENT =		text editing widgets for KDE
 DISTNAME =		ktextwidgets-${VERSION}
-REVISION =		0
 
-SHARED_LIBS =		KF5TextWidgets		2.0
+SHARED_LIBS =		KF5TextWidgets		3.0
 
-WANTLIB =  KF5Auth KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
-WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5I18n KF5IconThemes
-WANTLIB += KF5Service KF5SonnetCore KF5SonnetUi KF5WidgetsAddons
-WANTLIB += KF5WindowSystem ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Widgets Qt5Xml m
+WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5Codecs KF5Completion
+WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
+WANTLIB += KF5I18n KF5IconThemes KF5Service KF5SonnetCore KF5SonnetUi
+WANTLIB += KF5WidgetsAddons KF5WindowSystem Qt5Core Qt5Gui Qt5Widgets
+WANTLIB += Qt5Xml m
 
 MODULES =		lang/python
 

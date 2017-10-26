@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2017/07/27 09:34:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2017/10/26 07:53:23 rsadowski Exp $
 
 COMMENT =		JavaScript/ECMAScript engine for KDE
 DISTNAME =		kjs-${VERSION}
-REVISION =		0
 
-SHARED_LIBS =		KF5JS		2.0
-SHARED_LIBS +=		KF5JSApi	2.0
+SHARED_LIBS =		KF5JS		3.0
+SHARED_LIBS +=		KF5JSApi	3.0
 
-WANTLIB =		${COMPILER_LIBCXX} Qt5Core c m pcre pcreposix pthread
+WANTLIB += ${COMPILER_LIBCXX} Qt5Core c m pcre pcreposix
 
 BUILD_DEPENDS =		devel/gettext-tools \
 			devel/kf5/kdoctools

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2017/07/12 00:05:04 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.5 2017/10/26 07:53:23 rsadowski Exp $
 include/KF5/KNewStuff3/
 include/KF5/KNewStuff3/KNS3/
 include/KF5/KNewStuff3/KNS3/Button
@@ -77,6 +77,7 @@ lib/qt5/qml/org/kde/newstuff/qml/
 lib/qt5/qml/org/kde/newstuff/qml/NewStuffItem.qml
 lib/qt5/qml/org/kde/newstuff/qml/NewStuffList.qml
 lib/qt5/qml/org/kde/newstuff/qmldir
+share/examples/xdg/knewstuff.categories
 share/kf5/kmoretools/
 share/kf5/kmoretools/presets-kmoretools/
 share/kf5/kmoretools/presets-kmoretools/_INFO
@@ -115,17 +116,6 @@ share/kf5/kmoretools/presets-kmoretools/shutter.desktop
 share/kf5/kmoretools/presets-kmoretools/shutter.desktop.TODO
 share/kf5/kmoretools/presets-kmoretools/shutter.svg
 share/kf5/kmoretools/presets-kmoretools/xfce4-taskmanager.desktop
-share/kf5/kmoretools/unittest-kmoretools/
-share/kf5/kmoretools/unittest-kmoretools/1/
-share/kf5/kmoretools/unittest-kmoretools/1/a.desktop
-share/kf5/kmoretools/unittest-kmoretools/1/b.desktop
-share/kf5/kmoretools/unittest-kmoretools/1/c.desktop
-share/kf5/kmoretools/unittest-kmoretools/2/
-share/kf5/kmoretools/unittest-kmoretools/2/mynotinstalledapp.desktop
-share/kf5/kmoretools/unittest-kmoretools/2/mynotinstalledapp.png
-share/kf5/kmoretools/unittest-kmoretools/2/mynotinstapp2.desktop
-share/kf5/kmoretools/unittest-kmoretools/2/org.kde.kate.desktop
-share/kf5/kmoretools/unittest-kmoretools/2/org.kde.kate.png
 share/kf5/knewstuff/
 share/kf5/knewstuff/pics/
 share/kf5/knewstuff/pics/thumb_frame.png

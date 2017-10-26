@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2017/07/27 09:34:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2017/10/26 07:53:22 rsadowski Exp $
 
 COMMENT =	core KDE extensions to Qt classes
 DISTNAME =	kcoreaddons-${VERSION}
-REVISION =	0
 
-SHARED_LIBS =	KF5CoreAddons		2.0
+SHARED_LIBS =	KF5CoreAddons		3.0
 
 WANTLIB =	${COMPILER_LIBCXX} Qt5Core c fam m pthread
 

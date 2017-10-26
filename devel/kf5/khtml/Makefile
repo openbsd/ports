@@ -1,20 +1,19 @@
-# $OpenBSD: Makefile,v 1.6 2017/07/30 15:53:58 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2017/10/26 07:53:23 rsadowski Exp $
 
 COMMENT =		original KDE HTML rendering engine
 DISTNAME =		khtml-${VERSION}
-REVISION =		2
 
-SHARED_LIBS =		KF5KHtml	2.0
+SHARED_LIBS =		KF5KHtml	3.0
 
-WANTLIB =  ICE KF5Archive KF5Auth KF5Bookmarks KF5Codecs KF5Completion
-WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
-WANTLIB += KF5GlobalAccel KF5I18n KF5IconThemes KF5JS KF5JobWidgets
-WANTLIB += KF5KIOCore KF5KIOWidgets KF5Notifications KF5Parts
-WANTLIB += KF5Service KF5SonnetCore KF5SonnetUi KF5TextWidgets
-WANTLIB += KF5Wallet KF5WidgetsAddons KF5WindowSystem KF5XmlGui
-WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport Qt5Widgets
-WANTLIB += Qt5X11Extras Qt5Xml SM X11 Xext gif jpeg m png z
-WANTLIB += phonon4qt5experimental
+WANTLIB += ${COMPILER_LIBCXX} ICE KF5Archive KF5Auth KF5Bookmarks
+WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
+WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5GlobalAccel KF5I18n
+WANTLIB += KF5IconThemes KF5JS KF5JobWidgets KF5KIOCore KF5KIOWidgets
+WANTLIB += KF5Notifications KF5Parts KF5Service KF5SonnetCore
+WANTLIB += KF5SonnetUi KF5TextWidgets KF5Wallet KF5WidgetsAddons
+WANTLIB += KF5WindowSystem KF5XmlGui Qt5Core Qt5DBus Qt5Gui Qt5Network
+WANTLIB += Qt5PrintSupport Qt5Widgets Qt5X11Extras Qt5Xml SM X11
+WANTLIB += Xext gif jpeg m phonon4qt5experimental png z
 
 MODULES =		multimedia/phonon
 
