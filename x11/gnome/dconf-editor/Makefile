@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2017/04/13 07:38:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2017/10/26 12:32:59 ajacoutot Exp $
 
 COMMENT=		graphical dconf(1) editor
 
 GNOME_PROJECT=		dconf-editor
-GNOME_VERSION=		3.22.3
+GNOME_VERSION=		3.26.1
 
 CATEGORIES=		sysutils editors
 
