@@ -1,9 +1,9 @@
-$OpenBSD: patch-configure_ac,v 1.1 2017/10/26 18:32:54 natano Exp $
+$OpenBSD: patch-configure,v 1.9 2017/10/26 20:36:47 natano Exp $
 
-Index: configure.ac
---- configure.ac.orig
-+++ configure.ac
-@@ -319,11 +319,6 @@ esac
+Index: configure
+--- configure.orig
++++ configure
+@@ -13083,11 +13083,6 @@ esac
  # Figure out the name of the random device
  #
  case "${host}" in
