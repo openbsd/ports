@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2017/04/11 07:26:24 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.19 2017/10/26 08:49:43 ajacoutot Exp $
 include/at-spi-2.0/
 include/at-spi-2.0/atspi/
 include/at-spi-2.0/atspi/atspi-accessible.h
@@ -14,7 +14,6 @@ include/at-spi-2.0/atspi/atspi-editabletext.h
 include/at-spi-2.0/atspi/atspi-enum-types.h
 include/at-spi-2.0/atspi/atspi-event-listener-private.h
 include/at-spi-2.0/atspi/atspi-event-listener.h
-include/at-spi-2.0/atspi/atspi-gmain.c
 include/at-spi-2.0/atspi/atspi-gmain.h
 include/at-spi-2.0/atspi/atspi-hyperlink.h
 include/at-spi-2.0/atspi/atspi-hypertext.h
@@ -148,6 +147,7 @@ share/locale/ml/LC_MESSAGES/at-spi2-core.mo
 share/locale/mr/LC_MESSAGES/at-spi2-core.mo
 share/locale/ms/LC_MESSAGES/at-spi2-core.mo
 share/locale/nb/LC_MESSAGES/at-spi2-core.mo
+share/locale/ne/LC_MESSAGES/at-spi2-core.mo
 share/locale/nl/LC_MESSAGES/at-spi2-core.mo
 share/locale/oc/LC_MESSAGES/at-spi2-core.mo
 share/locale/or/LC_MESSAGES/at-spi2-core.mo
