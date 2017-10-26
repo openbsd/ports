@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.59 2017/10/23 17:10:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.60 2017/10/26 08:50:47 ajacoutot Exp $
 
 COMMENT-main=		Python bindings for GLib and GObject
 COMMENT-common=		common files for py-gobject3
 
 GNOME_PROJECT=		pygobject
-GNOME_VERSION=		3.24.1
+GNOME_VERSION=		3.26.0
 MODPY_EGG_VERSION=	${GNOME_VERSION}
 
 PKGNAME-main=		py-gobject3-${GNOME_VERSION}
 FULLPKGNAME-common=	py-gobject3-common-${GNOME_VERSION}
 FULLPKGPATH-common=	devel/py-gobject3,-common
-
-REVISION-main=		2
 
 SUBST_VARS=		OSREV
 
