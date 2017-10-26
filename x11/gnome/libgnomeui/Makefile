@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.67 2017/10/23 17:11:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.68 2017/10/26 08:53:28 ajacoutot Exp $
 
 COMMENT=		user interface components for GNOME
 
 GNOME_PROJECT=		libgnomeui
 GNOME_VERSION=		2.24.5
-REVISION=		11
+EXTRACT_SUFX=		.tar.bz2
+REVISION=		12
 
 SHARED_LIBS +=	gnomeui-2      2400.0         # .2400.2
 
@@ -23,14 +24,12 @@ WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png popt
 WANTLIB += pthread ssl util vorbis vorbisfile xcb
 WANTLIB += xcb-render xcb-shm xml2 z iconv intl
 
-EXTRACT_SUFX=	.tar.bz2
+MODULES=		x11/gnome
 
-MODULES=	x11/gnome
-
-LIB_DEPENDS=	x11/gnome/libgnome-keyring \
-		x11/gnome/libgnome \
-		x11/gnome/libgnomecanvas \
-		x11/gnome/libbonoboui
+LIB_DEPENDS=		x11/gnome/libgnome-keyring \
+			x11/gnome/libgnome \
+			x11/gnome/libgnomecanvas \
+			x11/gnome/libbonoboui
 
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 

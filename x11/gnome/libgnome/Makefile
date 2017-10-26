@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.64 2017/04/13 07:38:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.65 2017/10/26 08:53:28 ajacoutot Exp $
 
-COMMENT=	libraries for the GNOME project
+COMMENT=		libraries for the GNOME project
 
-GNOME_PROJECT=	libgnome
-GNOME_VERSION=	2.32.1
-EXTRACT_SUFX=	.tar.bz2
-REVISION=	12
+GNOME_PROJECT=		libgnome
+GNOME_VERSION=		2.32.1
+EXTRACT_SUFX=		.tar.bz2
+REVISION=		13
 
 SHARED_LIBS +=	gnome-2		2402.0   # .3000.0
 
@@ -18,20 +18,20 @@ WANTLIB += gmodule-2.0 gnomevfs-2 gobject-2.0 gthread-2.0 ltdl lzma m
 WANTLIB += ogg pcre popt pthread ssl util vorbis vorbisfile xml2 z
 WANTLIB += iconv intl
 
-MODULES=	devel/gconf2 \
-		x11/gnome
+MODULES=		devel/gconf2 \
+			x11/gnome
 
-LIB_DEPENDS=	audio/libcanberra \
-		devel/popt \
-		x11/gnome/libbonobo \
-		x11/gnome/vfs2
+LIB_DEPENDS=		audio/libcanberra \
+			devel/popt \
+			x11/gnome/libbonobo \
+			x11/gnome/vfs2
 
 MODGCONF2_SCHEMAS_DIR= libgnome
 
-CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS+= --disable-esd
+CONFIGURE_STYLE=	gnu
+CONFIGURE_ARGS=		--disable-esd
 
-FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/libgnome/
+FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/libgnome/
 
 post-install:
 	rm ${PREFIX}/lib/bonobo/monikers/*.{a,la}
