@@ -1,9 +1,9 @@
-$OpenBSD: patch-configure_ac,v 1.1 2017/09/25 09:16:12 robert Exp $
+$OpenBSD: patch-configure_ac,v 1.2 2017/10/26 08:49:20 ajacoutot Exp $
 
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -233,7 +233,7 @@ case "$host" in
+@@ -220,7 +220,7 @@ case "$host" in
      SAVED_CFLAGS="${CFLAGS}"
      CFLAGS="-fvisibility=hidden"
      AC_MSG_CHECKING([for -fvisibility=hidden compiler flag])
