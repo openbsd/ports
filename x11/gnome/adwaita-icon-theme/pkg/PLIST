@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2017/04/11 09:49:45 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2017/10/26 13:24:20 ajacoutot Exp $
 @conflict gnome-themes-standard-<3.14.0
 @unexec-delete rm -f %D/share/icons/Adwaita/icon-theme.cache
 share/icons/Adwaita/
@@ -2125,6 +2125,7 @@ share/icons/Adwaita/512x512/emblems/emblem-package.png
 share/icons/Adwaita/512x512/emblems/emblem-readonly.png
 share/icons/Adwaita/512x512/emblems/emblem-shared.png
 share/icons/Adwaita/512x512/emblems/emblem-symbolic-link.png
+share/icons/Adwaita/512x512/emblems/emblem-synchronizing.png
 share/icons/Adwaita/512x512/emblems/emblem-unreadable.png
 share/icons/Adwaita/512x512/mimetypes/
 share/icons/Adwaita/512x512/mimetypes/application-x-executable.png
@@ -2341,6 +2342,7 @@ share/icons/Adwaita/scalable/actions/edit-select-all-symbolic.svg
 share/icons/Adwaita/scalable/actions/edit-select-symbolic.svg
 share/icons/Adwaita/scalable/actions/edit-undo-symbolic-rtl.svg
 share/icons/Adwaita/scalable/actions/edit-undo-symbolic.svg
+share/icons/Adwaita/scalable/actions/error-correct-symbolic.svg
 share/icons/Adwaita/scalable/actions/find-location-symbolic.svg
 share/icons/Adwaita/scalable/actions/focus-legacy-systray-symbolic.svg
 share/icons/Adwaita/scalable/actions/focus-top-bar-symbolic.svg
@@ -2424,6 +2426,7 @@ share/icons/Adwaita/scalable/actions/star-new-symbolic.svg
 share/icons/Adwaita/scalable/actions/system-run-symbolic.svg
 share/icons/Adwaita/scalable/actions/system-search-symbolic.svg
 share/icons/Adwaita/scalable/actions/system-shutdown-symbolic.svg
+share/icons/Adwaita/scalable/actions/system-switch-user-symbolic.svg
 share/icons/Adwaita/scalable/actions/tab-new-symbolic.svg
 share/icons/Adwaita/scalable/actions/tools-check-spelling-symbolic.svg
 share/icons/Adwaita/scalable/actions/view-app-grid-symbolic.svg
@@ -2432,9 +2435,11 @@ share/icons/Adwaita/scalable/actions/view-dual-symbolic.svg
 share/icons/Adwaita/scalable/actions/view-fullscreen-symbolic.svg
 share/icons/Adwaita/scalable/actions/view-grid-symbolic.svg
 share/icons/Adwaita/scalable/actions/view-list-symbolic.svg
+share/icons/Adwaita/scalable/actions/view-mirror-symbolic.svg
 share/icons/Adwaita/scalable/actions/view-more-horizontal-symbolic.svg
 share/icons/Adwaita/scalable/actions/view-more-symbolic.svg
 share/icons/Adwaita/scalable/actions/view-paged-symbolic.svg
+share/icons/Adwaita/scalable/actions/view-pin-symbolic.svg
 share/icons/Adwaita/scalable/actions/view-refresh-symbolic.svg
 share/icons/Adwaita/scalable/actions/view-restore-symbolic.svg
 share/icons/Adwaita/scalable/actions/view-sort-ascending-symbolic.svg
@@ -2470,6 +2475,8 @@ share/icons/Adwaita/scalable/apps/preferences-desktop-locale-symbolic.svg
 share/icons/Adwaita/scalable/apps/preferences-desktop-remote-desktop-symbolic.svg
 share/icons/Adwaita/scalable/apps/preferences-desktop-screensaver-symbolic.svg
 share/icons/Adwaita/scalable/apps/preferences-desktop-wallpaper-symbolic.svg
+share/icons/Adwaita/scalable/apps/preferences-system-details-symbolic.svg
+share/icons/Adwaita/scalable/apps/preferences-system-devices-symbolic.svg
 share/icons/Adwaita/scalable/apps/preferences-system-network-proxy-symbolic.svg
 share/icons/Adwaita/scalable/apps/preferences-system-network-symbolic.svg
 share/icons/Adwaita/scalable/apps/preferences-system-notifications-symbolic.svg
@@ -2545,9 +2552,12 @@ share/icons/Adwaita/scalable/devices/phone-symbolic.svg
 share/icons/Adwaita/scalable/devices/printer-network-symbolic.svg
 share/icons/Adwaita/scalable/devices/printer-symbolic.svg
 share/icons/Adwaita/scalable/devices/scanner-symbolic.svg
+share/icons/Adwaita/scalable/devices/thunderbolt-symbolic.svg
 share/icons/Adwaita/scalable/devices/tv-symbolic.svg
 share/icons/Adwaita/scalable/devices/uninterruptible-power-supply-symbolic.svg
 share/icons/Adwaita/scalable/devices/video-display-symbolic.svg
+share/icons/Adwaita/scalable/devices/video-joined-displays-symbolic.svg
+share/icons/Adwaita/scalable/devices/video-single-display-symbolic.svg
 share/icons/Adwaita/scalable/emblems/
 share/icons/Adwaita/scalable/emblems/emblem-default-symbolic.svg
 share/icons/Adwaita/scalable/emblems/emblem-documents-symbolic.svg
@@ -2593,6 +2603,7 @@ share/icons/Adwaita/scalable/mimetypes/application-rss+xml-symbolic.svg
 share/icons/Adwaita/scalable/mimetypes/application-x-addon-symbolic.svg
 share/icons/Adwaita/scalable/mimetypes/application-x-appliance-symbolic.svg
 share/icons/Adwaita/scalable/mimetypes/application-x-executable-symbolic.svg
+share/icons/Adwaita/scalable/mimetypes/application-x-firmware-symbolic.svg
 share/icons/Adwaita/scalable/mimetypes/audio-x-generic-symbolic.svg
 share/icons/Adwaita/scalable/mimetypes/font-x-generic-symbolic.svg
 share/icons/Adwaita/scalable/mimetypes/image-x-generic-symbolic.svg
@@ -2727,6 +2738,10 @@ share/icons/Adwaita/scalable/status/network-wireless-signal-ok-symbolic.svg
 share/icons/Adwaita/scalable/status/network-wireless-signal-weak-symbolic.svg
 share/icons/Adwaita/scalable/status/night-light-symbolic.svg
 share/icons/Adwaita/scalable/status/non-starred-symbolic.svg
+share/icons/Adwaita/scalable/status/orientation-landscape-inverse-symbolic.svg
+share/icons/Adwaita/scalable/status/orientation-landscape-symbolic.svg
+share/icons/Adwaita/scalable/status/orientation-portrait-inverse-symbolic.svg
+share/icons/Adwaita/scalable/status/orientation-portrait-symbolic.svg
 share/icons/Adwaita/scalable/status/printer-error-symbolic.svg
 share/icons/Adwaita/scalable/status/printer-printing-symbolic.svg
 share/icons/Adwaita/scalable/status/printer-warning-symbolic.svg
@@ -2746,6 +2761,7 @@ share/icons/Adwaita/scalable/status/starred-symbolic.svg
 share/icons/Adwaita/scalable/status/system-lock-screen-symbolic.svg
 share/icons/Adwaita/scalable/status/task-due-symbolic.svg
 share/icons/Adwaita/scalable/status/task-past-due-symbolic.svg
+share/icons/Adwaita/scalable/status/thunderbolt-acquiring-symbolic.svg
 share/icons/Adwaita/scalable/status/touchpad-disabled-symbolic.svg
 share/icons/Adwaita/scalable/status/user-available-symbolic.svg
 share/icons/Adwaita/scalable/status/user-away-symbolic.svg
@@ -2769,5 +2785,6 @@ share/icons/Adwaita/scalable/status/weather-showers-scattered-symbolic.svg
 share/icons/Adwaita/scalable/status/weather-showers-symbolic.svg
 share/icons/Adwaita/scalable/status/weather-snow-symbolic.svg
 share/icons/Adwaita/scalable/status/weather-storm-symbolic.svg
+share/icons/Adwaita/scalable/status/weather-windy-symbolic.svg
 share/pkgconfig/adwaita-icon-theme.pc
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/Adwaita
