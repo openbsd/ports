@@ -1,11 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/10/27 09:58:36 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/10/27 16:46:55 ajacoutot Exp $
 @option no-default-conflict
 @conflict spidermonkey->=52.0,<53.0
 @bin bin/js${MOZILLA_VERSION}
 bin/js${MOZILLA_VERSION}-config
 include/mozjs-${MOZILLA_VERSION}/
 include/mozjs-${MOZILLA_VERSION}/fdlibm.h
-include/mozjs-${MOZILLA_VERSION}/jemalloc_types.h
 include/mozjs-${MOZILLA_VERSION}/js/
 include/mozjs-${MOZILLA_VERSION}/js-config.h
 include/mozjs-${MOZILLA_VERSION}/js.msg
@@ -159,7 +158,5 @@ include/mozjs-${MOZILLA_VERSION}/mozilla/mozalloc.h
 include/mozjs-${MOZILLA_VERSION}/mozilla/mozalloc_abort.h
 include/mozjs-${MOZILLA_VERSION}/mozilla/mozalloc_oom.h
 include/mozjs-${MOZILLA_VERSION}/mozilla/utils.h
-include/mozjs-${MOZILLA_VERSION}/mozmemory.h
-include/mozjs-${MOZILLA_VERSION}/mozmemory_wrap.h
 @lib lib/libmozjs-${MOZILLA_VERSION}.so.${LIBmozjs-52_VERSION}
 lib/pkgconfig/mozjs-${MOZILLA_VERSION}.pc

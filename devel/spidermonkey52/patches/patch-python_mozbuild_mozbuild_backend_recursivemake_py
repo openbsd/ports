@@ -1,4 +1,4 @@
-$OpenBSD: patch-python_mozbuild_mozbuild_backend_recursivemake_py,v 1.1.1.1 2017/10/27 09:58:36 ajacoutot Exp $
+$OpenBSD: patch-python_mozbuild_mozbuild_backend_recursivemake_py,v 1.2 2017/10/27 16:46:55 ajacoutot Exp $
 
 From 8b2d7a77bfb4dbd513763501ed7e9722058ee9af Mon Sep 17 00:00:00 2001
 From: Rico Tzschichholz <ricotz@ubuntu.com>

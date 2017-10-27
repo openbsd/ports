@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/10/27 09:58:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2017/10/27 16:46:55 ajacoutot Exp $
 
 # see patch-js_src_old-configure_in
 USE_WXNEEDED =		Yes
@@ -66,7 +66,8 @@ CONFIGURE_ARGS = 	--with-intl-api \
 			--enable-readline \
 			--enable-ctypes \
 			--enable-system-ffi \
-			--disable-optimize
+			--disable-optimize \
+			--disable-jemalloc
 
 CONFIGURE_ENV =		LIBS=-lncurses \
 			SHELL=/bin/sh \

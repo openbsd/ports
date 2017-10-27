@@ -1,4 +1,4 @@
-$OpenBSD: patch-build_moz_configure_memory_configure,v 1.1.1.1 2017/10/27 09:58:36 ajacoutot Exp $
+$OpenBSD: patch-build_moz_configure_memory_configure,v 1.2 2017/10/27 16:46:55 ajacoutot Exp $
 
 Index: build/moz.configure/memory.configure
 --- build/moz.configure/memory.configure.orig

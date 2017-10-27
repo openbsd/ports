@@ -1,4 +1,4 @@
-$OpenBSD: patch-js_src_jit_ExecutableAllocator_h,v 1.1.1.1 2017/10/27 09:58:36 ajacoutot Exp $
+$OpenBSD: patch-js_src_jit_ExecutableAllocator_h,v 1.2 2017/10/27 16:46:55 ajacoutot Exp $
 
 Index: js/src/jit/ExecutableAllocator.h
 --- js/src/jit/ExecutableAllocator.h.orig

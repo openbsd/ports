@@ -1,4 +1,4 @@
-$OpenBSD: patch-js_src_old-configure_in,v 1.1.1.1 2017/10/27 09:58:36 ajacoutot Exp $
+$OpenBSD: patch-js_src_old-configure_in,v 1.2 2017/10/27 16:46:55 ajacoutot Exp $
 
 Index: js/src/old-configure.in
 --- js/src/old-configure.in.orig
