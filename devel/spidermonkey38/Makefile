@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2017/09/13 11:04:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2017/10/27 17:13:17 ajacoutot Exp $
 
-# XXX: see patches/patch-configure
+# see patches/patch-configure
 USE_WXNEEDED =		Yes
 
 # jsapi-tests crashes in js::MarkRangeConservatively() on hppa (SIGSEGV in js/src/jsgc.cpp:1142)
@@ -12,7 +12,7 @@ ONLY_FOR_ARCHS =	alpha amd64 i386 hppa mips64el mips64 powerpc sparc64
 COMMENT =		Mozilla C implementation of JavaScript
 
 MOZILLA_VERSION =	38
-REVISION =		1
+REVISION =		2
 V =			${MOZILLA_VERSION}.8.0
 SUBST_VARS +=		MOZILLA_VERSION
 
@@ -73,10 +73,11 @@ post-extract:
 		${WRKSRC}/../../python/mozbuild/mozbuild/backend/recursivemake.py
 
 post-install:
+# 196M!
+	rm ${PREFIX}/lib/libjs_static.ajs
 # Fixup some missing MOZILLA_VERSION annotations
 	mv ${PREFIX}/bin/js{,${MOZILLA_VERSION}}
 	mv ${PREFIX}/bin/js-config{,${MOZILLA_VERSION}}
-	mv ${PREFIX}/lib/libjs_static.ajs ${PREFIX}/lib/libjs${MOZILLA_VERSION}_static.ajs
 	mv ${PREFIX}/lib/pkgconfig/js.pc ${PREFIX}/lib/pkgconfig/mozjs-${MOZILLA_VERSION}.pc
 .ifndef DEBUG
 	${STRIP} ${PREFIX}/bin/js${MOZILLA_VERSION}

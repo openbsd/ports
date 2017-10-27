@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/04/16 19:10:38 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/10/27 17:13:17 ajacoutot Exp $
 @option no-default-conflict
 @conflict spidermonkey->=38.0,<39.0
 bin/js-config${MOZILLA_VERSION}
@@ -122,6 +122,5 @@ include/mozjs-${MOZILLA_VERSION}/mozilla/WeakPtr.h
 include/mozjs-${MOZILLA_VERSION}/mozilla/double-conversion.h
 include/mozjs-${MOZILLA_VERSION}/mozilla/unused.h
 include/mozjs-${MOZILLA_VERSION}/mozilla/utils.h
-lib/libjs${MOZILLA_VERSION}_static.ajs
 @lib lib/libmozjs-${MOZILLA_VERSION}.so.${LIBmozjs-38_VERSION}
 lib/pkgconfig/mozjs-${MOZILLA_VERSION}.pc
