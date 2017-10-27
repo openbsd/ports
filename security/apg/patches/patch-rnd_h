@@ -1,0 +1,17 @@
+$OpenBSD: patch-rnd_h,v 1.3 2017/10/27 19:59:07 naddy Exp $
+
+Index: rnd.h
+--- rnd.h.orig
++++ rnd.h
+@@ -37,11 +37,7 @@
+ extern UINT32 __rnd_seed[2];
+ 
+ #define RND_MX 0x7FFFFFFF
+-#ifdef __OpenBSD__
+-#define APG_DEVRANDOM "/dev/arandom"
+-#else
+ #define APG_DEVRANDOM "/dev/random"
+-#endif /* __OpenBSD__ */
+ #define APG_DEVURANDOM "/dev/urandom"
+ 
+ extern void x917_setseed (UINT32 seed, int quiet);
