@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/10/23 21:46:58 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2017/10/27 20:41:47 bcallah Exp $
+
+BROKEN-i386 =	bad bootstrap
 
 # All they seem to support.
 ONLY_FOR_ARCHS =	amd64 i386
