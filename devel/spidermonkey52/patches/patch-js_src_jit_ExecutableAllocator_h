@@ -1,0 +1,18 @@
+$OpenBSD: patch-js_src_jit_ExecutableAllocator_h,v 1.1.1.1 2017/10/27 09:58:36 ajacoutot Exp $
+
+Index: js/src/jit/ExecutableAllocator.h
+--- js/src/jit/ExecutableAllocator.h.orig
++++ js/src/jit/ExecutableAllocator.h
+@@ -47,6 +47,12 @@
+ #include "js/HashTable.h"
+ #include "js/Vector.h"
+ 
++#if defined(__mips64__)
++#if defined(__OpenBSD__)
++#include <mips64/sysarch.h>
++#endif
++#endif
++
+ #ifdef JS_CPU_SPARC
+ #ifdef __linux__  // bugzilla 502369
+ static void sync_instruction_memory(caddr_t v, u_int len)

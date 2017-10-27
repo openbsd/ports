@@ -1,0 +1,25 @@
+$OpenBSD: patch-js_src_old-configure_in,v 1.1.1.1 2017/10/27 09:58:36 ajacoutot Exp $
+
+Index: js/src/old-configure.in
+--- js/src/old-configure.in.orig
++++ js/src/old-configure.in
+@@ -922,13 +922,18 @@ case "$target" in
+     ;;
+ 
+ *-openbsd*)
+-    DLL_SUFFIX=".so.1.0"
++    if test "$SO_VERSION"; then                                                 
++        DLL_SUFFIX=".so.$SO_VERSION"                                            
++    else                                                                        
++        DLL_SUFFIX=".so.1.0"                                                    
++    fi
+     DSO_CFLAGS=''
+     DSO_PIC_CFLAGS='-fPIC'
+     DSO_LDOPTS='-shared -fPIC'
+     if test "$LIBRUNPATH"; then
+ 	DSO_LDOPTS="-R$LIBRUNPATH $DSO_LDOPTS"
+     fi
++    LDFLAGS="$LDFLAGS -Wl,-z,wxneeded"
+     ;;
+ 
+ esac
