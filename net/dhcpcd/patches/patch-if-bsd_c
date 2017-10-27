@@ -1,9 +1,13 @@
-$OpenBSD: patch-if-bsd_c,v 1.2 2017/08/10 06:58:39 florian Exp $
+$OpenBSD: patch-if-bsd_c,v 1.3 2017/10/27 09:44:46 mpi Exp $
 
 Workaround for our old broken behaviour no longer needed.
 Fixed with netinet6/in6.c r1.202.
 
 netinet6/nd6.h r1.72 removed ND6_IFF_PERFORMNUD
+
+Also conditionnaly flush prefix and router lists, OpenBSD no longer
+keep track of them in kernel.  So there's no risk for dhcpcd(8) to
+have its advertised routers and prefixes expired.
 
 Index: if-bsd.c
 --- if-bsd.c.orig
@@ -33,3 +37,20 @@ Index: if-bsd.c
  
  static int
  if_raflush(int s)
+@@ -1720,9 +1722,14 @@ if_raflush(int s)
+ 	char dummy[IFNAMSIZ + 8];
+ 
+ 	strlcpy(dummy, "lo0", sizeof(dummy));
+-	if (ioctl(s, SIOCSRTRFLUSH_IN6, (void *)&dummy) == -1 ||
+-	    ioctl(s, SIOCSPFXFLUSH_IN6, (void *)&dummy) == -1)
++#ifdef SIOCSRTRFLUSH_IN6
++	if (ioctl(s, SIOCSRTRFLUSH_IN6, (void *)&dummy) == -1)
+ 		return -1;
++#endif
++#ifdef SIOCSPFXFLUSH_IN6
++	if (ioctl(s, SIOCSPFXFLUSH_IN6, (void *)&dummy) == -1)
++		return -1;
++#endif
+ 	return 0;
+ }
+ 
