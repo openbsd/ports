@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.56 2017/09/08 19:54:17 sthen Exp $
+$OpenBSD: patch-configure,v 1.57 2017/10/27 03:16:30 sthen Exp $
 
 - lavu/random_seed: use arc4random() when available
 - configure: Also try -mstack-alignment for clang
@@ -48,19 +48,7 @@ Index: configure
      check_cflags -Qunused-arguments
      check_cflags -Werror=implicit-function-declaration
      check_cflags -Werror=missing-prototypes
-@@ -5788,6 +5791,11 @@ if test $target_os = "haiku"; then
-     disable posix_memalign
- fi
- 
-+
-+if test $target_os = "openbsd"; then
-+    enabled x86_32 && disable ebx_available
-+fi
-+
- enabled_all dxva2 dxva2api_cobj CoTaskMemFree &&
-     prepend ffmpeg_libs $($ldflags_filter "-lole32" "-luser32") &&
-     enable dxva2_lib
-@@ -6220,8 +6228,8 @@ pkgconfig_generate(){
+@@ -6220,8 +6223,8 @@ pkgconfig_generate(){
      comment=$2
      version=$3
      libs=$4
@@ -71,7 +59,7 @@ Index: configure
      enabled ${name#lib} || return 0
      mkdir -p $name
      cat <<EOF > $name/$name${build_suffix}.pc
-@@ -6236,7 +6244,7 @@ Version: $version
+@@ -6236,7 +6239,7 @@ Version: $version
  Requires: $(enabled shared || echo $requires)
  Requires.private: $(enabled shared && echo $requires)
  Conflicts:
@@ -80,7 +68,7 @@ Index: configure
  Libs.private: $(enabled shared && echo $libs)
  Cflags: -I\${includedir}
  EOF
-@@ -6260,12 +6268,12 @@ Cflags: -I\${includedir}
+@@ -6260,12 +6263,12 @@ Cflags: -I\${includedir}
  EOF
  }
  
