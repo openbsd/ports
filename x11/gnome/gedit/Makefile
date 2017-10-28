@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.150 2017/10/23 17:11:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.151 2017/10/28 18:31:41 ajacoutot Exp $
 
 COMMENT=		lightweight GNOME text editor
 
 GNOME_PROJECT=		gedit
 GNOME_VERSION=		3.22.1
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		editors
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
 WANTLIB += c cairo cairo-gobject dbus-1 enchant expat ffi fontconfig
 WANTLIB += freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 girepository-1.0
@@ -20,6 +20,7 @@ WANTLIB += gtk-3 gtksourceview-3.0 harfbuzz m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre peas-1.0 peas-gtk-1.0 pixman-1 png
 WANTLIB += pthread ${COMPILER_LIBCXX} xcb xcb-render
 WANTLIB += xcb-shm xml2 z lzma epoxy iconv intl gspell-1
+WANTLIB += Xtst xcb-xkb xkbcommon xkbcommon-x11
 
 MODULES=		devel/dconf \
 			lang/python \
