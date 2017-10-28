@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.2 2017/07/27 09:55:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2017/10/28 18:36:19 landry Exp $
 
 COMMENT =	translator library for point cloud formats
 
-GH_TAGNAME =	1.5.0
+GH_TAGNAME =	1.6
 GH_ACCOUNT =	PDAL
 GH_PROJECT =	PDAL
 DISTNAME =	${GH_PROJECT:L}-${GH_TAGNAME}
-REVISION =	0
 
-SHARED_LIBS =	pdal_base 0.0 # 5.1
-SHARED_LIBS +=  pdal_plang 0.0 # 5.1
-SHARED_LIBS +=  pdal_util 0.0 # 5.1
+SHARED_LIBS =	pdal_base 1.0 # 6.1
+SHARED_LIBS +=  pdal_util 0.1 # 6.1
 
 CATEGORIES =	geo devel textproc
 
@@ -40,6 +38,7 @@ WANTLIB += ${COMPILER_LIBCXX}
 
 CONFIGURE_ARGS =	\
 	-DJSONCPP_INCLUDE_DIR=${LOCALBASE}/include/jsoncpp/ \
+	-DPDAL_PLUGIN_INSTALL_PATH=${LOCALBASE}/share/pdal/plugins \
 	-DNUMPY_INCLUDE_DIR=${MODPY_SITEPKG}/numpy/core/include/ \
 	-DNUMPY_VERSION=1.9 \
 	-DBUILD_PLUGIN_PYTHON=ON

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/06/20 17:12:15 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/10/28 18:36:19 landry Exp $
 @bin bin/pdal
 bin/pdal-config
 include/pdal/
@@ -17,8 +17,8 @@ include/pdal/GEOSUtils.hpp
 include/pdal/Geometry.hpp
 include/pdal/KDIndex.hpp
 include/pdal/Kernel.hpp
-include/pdal/KernelFactory.hpp
 include/pdal/Log.hpp
+include/pdal/Mesh.hpp
 include/pdal/Metadata.hpp
 include/pdal/Options.hpp
 include/pdal/PDALUtils.hpp
@@ -34,6 +34,7 @@ include/pdal/PointTable.hpp
 include/pdal/PointView.hpp
 include/pdal/PointViewIter.hpp
 include/pdal/Polygon.hpp
+include/pdal/PyArray.hpp
 include/pdal/QuadIndex.hpp
 include/pdal/QuickInfo.hpp
 include/pdal/Reader.hpp
@@ -61,8 +62,10 @@ include/pdal/filters/ELMFilter.hpp
 include/pdal/filters/EigenvaluesFilter.hpp
 include/pdal/filters/EstimateRankFilter.hpp
 include/pdal/filters/FerryFilter.hpp
+include/pdal/filters/GreedyProjection.hpp
 include/pdal/filters/GroupByFilter.hpp
 include/pdal/filters/HAGFilter.hpp
+include/pdal/filters/HeadFilter.hpp
 include/pdal/filters/IQRFilter.hpp
 include/pdal/filters/KDistanceFilter.hpp
 include/pdal/filters/LOFFilter.hpp
@@ -75,6 +78,7 @@ include/pdal/filters/NormalFilter.hpp
 include/pdal/filters/OutlierFilter.hpp
 include/pdal/filters/OverlayFilter.hpp
 include/pdal/filters/PMFFilter.hpp
+include/pdal/filters/PoissonFilter.hpp
 include/pdal/filters/RadialDensityFilter.hpp
 include/pdal/filters/RandomizeFilter.hpp
 include/pdal/filters/RangeFilter.hpp
@@ -85,7 +89,10 @@ include/pdal/filters/SortFilter.hpp
 include/pdal/filters/SplitterFilter.hpp
 include/pdal/filters/StatsFilter.hpp
 include/pdal/filters/StreamCallbackFilter.hpp
+include/pdal/filters/TailFilter.hpp
 include/pdal/filters/TransformationFilter.hpp
+include/pdal/filters/VoxelCenterNearestNeighborFilter.hpp
+include/pdal/filters/VoxelCentroidNearestNeighborFilter.hpp
 include/pdal/gitsha.h
 include/pdal/io/
 include/pdal/io/BpfCompressor.hpp
@@ -108,8 +115,8 @@ include/pdal/io/LasSummaryData.hpp
 include/pdal/io/LasUtils.hpp
 include/pdal/io/LasVLR.hpp
 include/pdal/io/LasWriter.hpp
-include/pdal/io/LasZipPoint.hpp
 include/pdal/io/NullWriter.hpp
+include/pdal/io/OGRWriter.hpp
 include/pdal/io/OptechCommon.hpp
 include/pdal/io/OptechReader.hpp
 include/pdal/io/OptechRotationMatrix.hpp
@@ -145,12 +152,6 @@ include/pdal/pdal_internal.hpp
 include/pdal/pdal_macros.hpp
 include/pdal/pdal_test_main.hpp
 include/pdal/pdal_types.hpp
-include/pdal/plang/
-include/pdal/plang/Array.hpp
-include/pdal/plang/Environment.hpp
-include/pdal/plang/Invocation.hpp
-include/pdal/plang/Redirector.hpp
-include/pdal/plang/Script.hpp
 include/pdal/plugin.hpp
 include/pdal/util/
 include/pdal/util/Algorithm.hpp
@@ -171,7 +172,7 @@ include/pdal/util/portable_endian.hpp
 lib/libpdal_arbiter.a
 @lib lib/libpdal_base.so.${LIBpdal_base_VERSION}
 lib/libpdal_boost.a
-@lib lib/libpdal_plang.so.${LIBpdal_plang_VERSION}
+lib/libpdal_kazhdan.a
 @lib lib/libpdal_util.so.${LIBpdal_util_VERSION}
 lib/libpdalcpp.so
 lib/pdal/
@@ -183,7 +184,6 @@ lib/pdal/cmake/PDALTargets.cmake
 lib/pkgconfig/pdal.pc
 share/pdal/
 share/pdal/plugins/
-share/pdal/plugins/libpdal_plugin_filter_predicate.so
-share/pdal/plugins/libpdal_plugin_filter_programmable.so
+share/pdal/plugins/libpdal_plugin_filter_python.so
 share/pdal/plugins/libpdal_plugin_reader_pgpointcloud.so
 share/pdal/plugins/libpdal_plugin_writer_pgpointcloud.so
