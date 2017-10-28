@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2016/11/07 16:16:50 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.20 2017/10/28 09:45:08 ajacoutot Exp $
 @conflict gnome-utils-*
 @bin bin/baobab
 @man man/man1/baobab.1
@@ -232,6 +232,38 @@ share/help/ko/baobab/scan-file-system.page
 share/help/ko/baobab/scan-folder.page
 share/help/ko/baobab/scan-home.page
 share/help/ko/baobab/scan-remote.page
+share/help/pl/
+share/help/pl/baobab/
+share/help/pl/baobab/index.page
+share/help/pl/baobab/introduction.page
+share/help/pl/baobab/legal.xml
+share/help/pl/baobab/media/
+share/help/pl/baobab/media/hicolor_apps_48x48_baobab.png
+share/help/pl/baobab/pref-view-chart.page
+share/help/pl/baobab/problem-permissions.page
+share/help/pl/baobab/problem-slow-scan.page
+share/help/pl/baobab/question-open-folder.page
+share/help/pl/baobab/question-trash.page
+share/help/pl/baobab/scan-file-system.page
+share/help/pl/baobab/scan-folder.page
+share/help/pl/baobab/scan-home.page
+share/help/pl/baobab/scan-remote.page
+share/help/pt/
+share/help/pt/baobab/
+share/help/pt/baobab/index.page
+share/help/pt/baobab/introduction.page
+share/help/pt/baobab/legal.xml
+share/help/pt/baobab/media/
+share/help/pt/baobab/media/hicolor_apps_48x48_baobab.png
+share/help/pt/baobab/pref-view-chart.page
+share/help/pt/baobab/problem-permissions.page
+share/help/pt/baobab/problem-slow-scan.page
+share/help/pt/baobab/question-open-folder.page
+share/help/pt/baobab/question-trash.page
+share/help/pt/baobab/scan-file-system.page
+share/help/pt/baobab/scan-folder.page
+share/help/pt/baobab/scan-home.page
+share/help/pt/baobab/scan-remote.page
 share/help/pt_BR/
 share/help/pt_BR/baobab/
 share/help/pt_BR/baobab/index.page
