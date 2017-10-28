@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.37 2017/10/23 17:10:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2017/10/28 17:23:50 ajacoutot Exp $
 
 COMMENT =	gpx file viewer
 
 VERSION =	0.4.0
 DISTNAME =	gpx-viewer-${VERSION}
-REVISION =	5
+REVISION =	6
 
 CATEGORIES =	geo x11
 
@@ -33,16 +33,16 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 
 FAKE_FLAGS=	desktopdir=${PREFIX}/share/applications
 
-WANTLIB += EGL ICE SM X11 X11-xcb Xau Xcomposite Xcursor Xdamage
-WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0
-WANTLIB += atk-bridge-2.0 atspi c cairo cairo-gobject champlain-0.12
-WANTLIB += champlain-gtk-0.12 clutter-1.0 clutter-gtk-1.0 cogl
-WANTLIB += cogl-pango cogl-path dbus-1 drm epoxy expat ffi fontconfig
-WANTLIB += freetype gbm gdk-3 gdk_pixbuf-2.0 gdl-3 gio-2.0 glapi
-WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
-WANTLIB += gtk-3 harfbuzz json-glib-1.0 lzma m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread
-WANTLIB += soup-2.4 sqlite3 xcb xcb-dri2 xcb-render xcb-shape
-WANTLIB += xcb-shm xcb-xfixes xml2 z
+WANTLIB += EGL X11 X11-xcb Xcomposite Xcursor Xdamage Xext Xfixes
+WANTLIB += Xi Xinerama Xrandr Xrender Xtst atk-1.0 atk-bridge-2.0
+WANTLIB += atspi c cairo cairo-gobject champlain-0.12 champlain-gtk-0.12
+WANTLIB += clutter-1.0 clutter-gtk-1.0 cogl cogl-pango cogl-path
+WANTLIB += dbus-1 drm epoxy expat ffi fontconfig freetype gbm
+WANTLIB += gdk-3 gdk_pixbuf-2.0 gdl-3 gio-2.0 glib-2.0 gmodule-2.0
+WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-3 harfbuzz json-glib-1.0
+WANTLIB += lzma m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
+WANTLIB += png pthread soup-2.4 sqlite3 xcb xcb-dri2 xcb-render
+WANTLIB += xcb-shm xcb-xfixes xcb-xkb xkbcommon xkbcommon-x11
+WANTLIB += xml2 z
 
 .include <bsd.port.mk>
