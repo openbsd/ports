@@ -1,0 +1,16 @@
+$OpenBSD: patch-base_test_test_file_util_linux_cc,v 1.1 2017/10/28 07:36:00 robert Exp $
+
+Index: base/test/test_file_util_linux.cc
+--- base/test/test_file_util_linux.cc.orig
++++ base/test/test_file_util_linux.cc
+@@ -51,8 +51,10 @@ bool EvictFileFromSystemCache(const FilePath& file) {
+     return false;
+   if (fdatasync(fd.get()) != 0)
+     return false;
++#if !defined(OS_BSD)
+   if (posix_fadvise(fd.get(), 0, 0, POSIX_FADV_DONTNEED) != 0)
+     return false;
++#endif
+   return true;
+ }
+ 

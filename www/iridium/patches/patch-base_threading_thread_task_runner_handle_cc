@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_threading_thread_task_runner_handle_cc,v 1.1 2017/04/28 22:22:36 robert Exp $
+$OpenBSD: patch-base_threading_thread_task_runner_handle_cc,v 1.2 2017/10/28 07:36:00 robert Exp $
 --- base/threading/thread_task_runner_handle.cc.orig.port	Thu Apr 27 20:01:49 2017
 +++ base/threading/thread_task_runner_handle.cc	Thu Apr 27 22:28:06 2017
 @@ -7,6 +7,7 @@

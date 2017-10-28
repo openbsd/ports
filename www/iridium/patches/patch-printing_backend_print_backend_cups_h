@@ -1,4 +1,4 @@
-$OpenBSD: patch-printing_backend_print_backend_cups_h,v 1.2 2017/04/19 05:16:47 robert Exp $
+$OpenBSD: patch-printing_backend_print_backend_cups_h,v 1.3 2017/10/28 07:36:01 robert Exp $
 
 Fix build with cups>=2.2.0
 

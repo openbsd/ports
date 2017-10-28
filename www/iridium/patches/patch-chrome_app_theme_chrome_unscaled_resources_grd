@@ -1,0 +1,14 @@
+$OpenBSD: patch-chrome_app_theme_chrome_unscaled_resources_grd,v 1.1 2017/10/28 07:36:00 robert Exp $
+
+Index: chrome/app/theme/chrome_unscaled_resources.grd
+--- chrome/app/theme/chrome_unscaled_resources.grd.orig
++++ chrome/app/theme/chrome_unscaled_resources.grd
+@@ -80,7 +80,7 @@
+         <include name="IDR_PROFILE_AVATAR_2X_25" file="default_200_percent/common/profile_avatar_sun_cloud.png" type="BINDATA" />
+         <include name="IDR_PROFILE_AVATAR_2X_26" file="default_200_percent/common/profile_avatar_placeholder.png" type="BINDATA" />
+       </if>
+-      <if expr="is_linux and enable_app_list">
++      <if expr="is_posix and enable_app_list">
+         <!-- App Launcher icons for desktop icon. -->
+         <if expr="_google_chrome">
+           <then>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2017/07/26 22:45:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.66 2017/10/28 07:36:00 robert Exp $
 
 .include <bsd.port.arch.mk>
 
@@ -9,12 +9,10 @@ DPB_PROPERTIES=		parallel
 
 COMMENT=		Iridium browser
 
-V=			58.0
+V=			2017.10
 DISTNAME=		iridium-browser-${V}
 PKGNAME=		iridium-${V}
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX}
-
-REVISION=		1
 
 CATEGORIES=		www
 
@@ -22,7 +20,7 @@ HOMEPAGE=		https://iridiumbrowser.de/
 
 MAINTAINER=		Robert Nagy <robert@openbsd.org>
 
-EXTRACT_SUFX=		.tar.xz
+EXTRACT_SUFX=		.tar.gz
 
 FLAVORS=		debug
 FLAVOR?=
@@ -40,28 +38,29 @@ COMPILER =	clang gcc
 
 MODPY_RUNDEP=	No
 
-.if ${PROPERTIES:Mclang}
-PATCH_LIST=	patch-* clang-*
+.if ${PROPERTIES:Mclang}    
+PATCH_LIST=	patch-* clang-*                            
 .endif
 
 PATCHORIG=	.orig.port
 
 # uses pledge()
-WANTLIB += X11 Xext Xfixes Xrender Xss c cairo cups dbus-1 event
-WANTLIB += execinfo expat fontconfig freetype gconf-2 gdk-x11-2.0
-WANTLIB += gdk_pixbuf-2.0 glib-2.0 gobject-2.0 gtk-x11-2.0
-WANTLIB += m pango-1.0 pangocairo-1.0
-WANTLIB += png pthread
-WANTLIB += xml2 xslt
+WANTLIB += X11 Xext Xfixes Xrender Xss c cups dbus-1 event
+WANTLIB += execinfo fontconfig gconf-2
+WANTLIB += gdk_pixbuf-2.0 glib-2.0 gobject-2.0
+WANTLIB += m
+WANTLIB += pthread
+WANTLIB += xslt
 WANTLIB += sndio
-WANTLIB += Xcomposite
 WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += Xi Xtst
-WANTLIB += Xdamage
 WANTLIB += Xcursor Xrandr gio-2.0
 WANTLIB += nspr4 nss3 nssutil3 smime3
-WANTLIB += atk-1.0 gmodule-2.0
+WANTLIB += gmodule-2.0
 WANTLIB += X11-xcb xcb
+WANTLIB += GL expat
+WANTLIB += atk-1.0 cairo gdk-3 gtk-3 pango-1.0
+WANTLIB += pangocairo-1.0
 
 RUN_DEPENDS=	devel/xdg-utils \
 		devel/desktop-file-utils \
@@ -85,7 +84,7 @@ LIB_DEPENDS=	devel/libexecinfo \
 		security/nss \
 		devel/gconf2 \
 		textproc/libxslt \
-		x11/gtk+2 \
+		x11/gtk+3 \
 		print/cups,-libs \
 		${MODGCC4_CPPLIBDEP}
 
@@ -109,7 +108,6 @@ BUILDDIR=	${WRKSRC}/out/${BUILDTYPE}
 # removes them from the bundled third_party directory and replaces them
 # with hooks to use them from the system.
 GN_SYSTEM_LIBS=	libevent \
-		libxml \
 		libxslt \
 		yasm
 
@@ -117,10 +115,11 @@ GN_ARGS=	enable_nacl=false \
 		is_debug=false \
 		enable_webrtc=false \
 		enable_one_click_signin=true \
+		enable_remoting=false \
 		use_kerberos=false \
 		use_sndio=true \
 		use_cups=true \
-		use_experimental_allocator_shim=false \
+		use_gtk3=true \
 		is_clang=true \
 		use_sysroot=false \
 		treat_warnings_as_errors=false \
@@ -128,8 +127,13 @@ GN_ARGS=	enable_nacl=false \
 		use_allocator=\"none\" \
 		is_official_build=true \
 		fieldtrial_testing_like_official_build=true \
-		extra_cppflags=\"-idirafter ${LOCALBASE}/include -idirafter ${X11BASE}/include\" \
-		extra_ldflags=\"-L${LOCALBASE}/lib -L${X11BASE}/lib\"
+		extra_cppflags=\"-idirafter ${LOCALBASE}/include -idirafter ${X11BASE}/include\"
+
+.if ${MACHINE_ARCH} == i386
+GN_ARGS+=	extra_ldflags=\"-L${LOCALBASE}/lib -L${X11BASE}/lib -Wl,--no-keep-memory\"
+.else
+GN_ARGS+=	extra_ldflags=\"-L${LOCALBASE}/lib -L${X11BASE}/lib\"
+.endif
 
 # Note: these keys are for OpenBSD use ONLY. For your own distribution,
 # please get your own set of keys. It's free!
@@ -165,10 +169,10 @@ pre-configure:
 do-configure:
 	@cd ${WRKSRC} && env -i ${MAKE_ENV} build/linux/unbundle/replace_gn_files.py \
 		--system-libraries ${GN_SYSTEM_LIBS}
-	@cd ${WRKSRC}/tools/gn && env -i ${MAKE_ENV} ${MODPY_BIN} bootstrap/bootstrap.py \
+	@cd ${WRKSRC}/tools/gn && env -i ${MAKE_ENV} LDFLAGS=-L${LOCALBASE}/lib ${MODPY_BIN} bootstrap/bootstrap.py \
 		--no-clean -s --gn-gen-args "${GN_ARGS}"
-	@cd ${WRKSRC} && env -i ${CONFIGURE_ENV} ${WRKSRC}/out/${BUILDTYPE}/gn \
-		gen --args="${GN_ARGS}" out/Release
+	@cd ${WRKSRC} && env -i ${CONFIGURE_ENV} ${WRKSRC}/out/Release/gn \
+		gen --args="${GN_ARGS}" out/${BUILDTYPE}
 
 do-build:
 	@cd ${WRKSRC} && env -i ${MAKE_ENV} ninja \

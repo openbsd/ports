@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_common_content_switches_internal_cc,v 1.1 2017/04/19 05:16:47 robert Exp $
+$OpenBSD: patch-content_common_content_switches_internal_cc,v 1.2 2017/10/28 07:36:00 robert Exp $
 --- content/common/content_switches_internal.cc.orig.port	Sat Feb  4 11:46:23 2017
 +++ content/common/content_switches_internal.cc	Sat Feb  4 12:18:59 2017
 @@ -27,7 +27,7 @@ const base::Feature kUseZoomForDsfEnabledByDefault {

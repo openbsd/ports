@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_pdfium_core_fxcrt_fx_system_h,v 1.1 2017/04/19 05:16:47 robert Exp $
+$OpenBSD: patch-third_party_pdfium_core_fxcrt_fx_system_h,v 1.2 2017/10/28 07:36:01 robert Exp $
 --- third_party/pdfium/core/fxcrt/fx_system.h.orig.port	Sat Dec  3 14:17:34 2016
 +++ third_party/pdfium/core/fxcrt/fx_system.h	Sat Dec  3 14:17:44 2016
 @@ -40,7 +40,7 @@

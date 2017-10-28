@@ -1,7 +1,8 @@
-$OpenBSD: patch-chrome_common_chrome_switches_h,v 1.14 2017/04/28 22:22:36 robert Exp $
---- chrome/common/chrome_switches.h.orig.port	Wed Apr 19 21:06:30 2017
-+++ chrome/common/chrome_switches.h	Thu Apr 27 19:56:00 2017
-@@ -351,7 +351,7 @@ extern const char kAllowNaClSocketAPI[];
+$OpenBSD: patch-chrome_common_chrome_switches_h,v 1.15 2017/10/28 07:36:00 robert Exp $
+Index: chrome/common/chrome_switches.h
+--- chrome/common/chrome_switches.h.orig
++++ chrome/common/chrome_switches.h
+@@ -331,13 +331,13 @@ extern const char kAllowNaClSocketAPI[];
  extern const char kEnableWaylandServer[];
  #endif
  
@@ -10,3 +11,10 @@ $OpenBSD: patch-chrome_common_chrome_switches_h,v 1.14 2017/04/28 22:22:36 rober
  extern const char kDisableInputImeAPI[];
  extern const char kEnableInputImeAPI[];
  #endif
+ 
+ #if defined(OS_CHROMEOS) || defined(OS_LINUX) || defined(OS_MACOSX) || \
+-    defined(OS_WIN)
++    defined(OS_WIN) || defined(OS_BSD)
+ extern const char kEnableNewAppMenuIcon[];
+ #endif
+ 

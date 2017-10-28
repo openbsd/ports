@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_utility_utility_main_cc,v 1.5 2017/04/28 22:22:36 robert Exp $
+$OpenBSD: patch-content_utility_utility_main_cc,v 1.6 2017/10/28 07:36:00 robert Exp $
 --- content/utility/utility_main.cc.orig.port	Fri Apr 28 07:34:50 2017
 +++ content/utility/utility_main.cc	Fri Apr 28 07:40:18 2017
 @@ -19,6 +19,8 @@

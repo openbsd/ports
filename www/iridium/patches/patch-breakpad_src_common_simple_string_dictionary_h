@@ -1,4 +1,4 @@
-$OpenBSD: patch-breakpad_src_common_simple_string_dictionary_h,v 1.1 2017/04/28 22:22:36 robert Exp $
+$OpenBSD: patch-breakpad_src_common_simple_string_dictionary_h,v 1.2 2017/10/28 07:36:00 robert Exp $
 --- breakpad/src/common/simple_string_dictionary.h.orig.port	Fri Apr 28 07:16:49 2017
 +++ breakpad/src/common/simple_string_dictionary.h	Fri Apr 28 07:17:02 2017
 @@ -33,7 +33,7 @@

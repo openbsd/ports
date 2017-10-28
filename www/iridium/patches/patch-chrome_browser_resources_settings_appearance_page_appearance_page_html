@@ -1,0 +1,32 @@
+$OpenBSD: patch-chrome_browser_resources_settings_appearance_page_appearance_page_html,v 1.1 2017/10/28 07:36:00 robert Exp $
+
+Index: chrome/browser/resources/settings/appearance_page/appearance_page.html
+--- chrome/browser/resources/settings/appearance_page/appearance_page.html.orig
++++ chrome/browser/resources/settings/appearance_page/appearance_page.html
+@@ -73,7 +73,7 @@
+                 actionable aria-label="$i18n{themes}"
+                 aria-describedby="themesSecondary"></button>
+           </a>
+-<if expr="not is_linux or chromeos">
++<if expr="not is_posix or chromeos">
+           <template is="dom-if" if="[[prefs.extensions.theme.id.value]]">
+             <div class="separator"></div>
+             <paper-button id="useDefault" on-tap="onUseDefaultTap_"
+@@ -82,7 +82,7 @@
+             </paper-button>
+           </template>
+ </if>
+-<if expr="is_linux and not chromeos">
++<if expr="is_posix and not chromeos">
+           <div class="settings-row" hidden="[[!showThemesSecondary_(
+               prefs.extensions.theme.id.value, useSystemTheme_)]]"
+               id="themesSecondaryActions">
+@@ -152,7 +152,7 @@
+           </settings-toggle-button>
+         </div>
+         <div class$="settings-box [[getFirst_(pageVisibility.bookmarksBar)]]">
+-<if expr="is_linux and not chromeos">
++<if expr="is_posix and not chromeos">
+           <settings-toggle-button class="start"
+               pref="{{prefs.browser.custom_chrome_frame}}"
+               label="$i18n{showWindowDecorations}"

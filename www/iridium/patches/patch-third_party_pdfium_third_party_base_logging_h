@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_pdfium_third_party_base_logging_h,v 1.1 2017/07/23 19:03:33 robert Exp $
+$OpenBSD: patch-third_party_pdfium_third_party_base_logging_h,v 1.2 2017/10/28 07:36:01 robert Exp $
 
 Index: third_party/pdfium/third_party/base/logging.h
 --- third_party/pdfium/third_party/base/logging.h.orig

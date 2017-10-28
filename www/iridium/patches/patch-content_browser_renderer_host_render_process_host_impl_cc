@@ -1,30 +1,14 @@
-$OpenBSD: patch-content_browser_renderer_host_render_process_host_impl_cc,v 1.5 2017/04/28 22:22:36 robert Exp $
---- content/browser/renderer_host/render_process_host_impl.cc.orig.port	Wed Apr 19 21:06:33 2017
-+++ content/browser/renderer_host/render_process_host_impl.cc	Thu Apr 27 19:56:01 2017
-@@ -378,7 +378,7 @@ SiteProcessMap* GetSiteProcessMapForBrowserContext(Bro
-   return map;
- }
- 
--#if defined(OS_POSIX) && !defined(OS_ANDROID) && !defined(OS_MACOSX)
-+#if defined(OS_POSIX) && !defined(OS_ANDROID) && !defined(OS_MACOSX) && !defined(OS_BSD)
- // This static member variable holds the zygote communication information for
- // the renderer.
- ZygoteHandle g_render_zygote;
-@@ -405,7 +405,7 @@ class RendererSandboxedProcessLauncherDelegate
+$OpenBSD: patch-content_browser_renderer_host_render_process_host_impl_cc,v 1.6 2017/10/28 07:36:00 robert Exp $
+
+Index: content/browser/renderer_host/render_process_host_impl.cc
+--- content/browser/renderer_host/render_process_host_impl.cc.orig
++++ content/browser/renderer_host/render_process_host_impl.cc
+@@ -418,7 +418,7 @@ class RendererSandboxedProcessLauncherDelegate
      return GetContentClient()->browser()->PreSpawnRenderer(policy);
    }
  
 -#elif defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID)
 +#elif defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID) && !defined(OS_BSD)
-   ZygoteHandle* GetZygote() override {
+   ZygoteHandle GetZygote() override {
      const base::CommandLine& browser_command_line =
          *base::CommandLine::ForCurrentProcess();
-@@ -655,7 +655,7 @@ void RenderProcessHost::SetMaxRendererProcessCount(siz
-   g_max_renderer_count_override = count;
- }
- 
--#if defined(OS_POSIX) && !defined(OS_ANDROID) && !defined(OS_MACOSX)
-+#if defined(OS_POSIX) && !defined(OS_ANDROID) && !defined(OS_MACOSX) && !defined(OS_BSD)
- // static
- void RenderProcessHostImpl::EarlyZygoteLaunch() {
-   DCHECK(!g_render_zygote);

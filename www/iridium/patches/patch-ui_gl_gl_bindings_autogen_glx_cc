@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_gl_gl_bindings_autogen_glx_cc,v 1.8 2017/04/28 22:22:36 robert Exp $
+$OpenBSD: patch-ui_gl_gl_bindings_autogen_glx_cc,v 1.9 2017/10/28 07:36:01 robert Exp $
 --- ui/gl/gl_bindings_autogen_glx.cc.orig.port	Fri Apr 28 12:16:19 2017
 +++ ui/gl/gl_bindings_autogen_glx.cc	Fri Apr 28 12:16:22 2017
 @@ -73,6 +73,7 @@ void DriverGLX::InitializeStaticBindings() {

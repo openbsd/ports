@@ -1,17 +1,27 @@
-$OpenBSD: patch-base_BUILD_gn,v 1.4 2017/07/23 19:03:33 robert Exp $
+$OpenBSD: patch-base_BUILD_gn,v 1.5 2017/10/28 07:36:00 robert Exp $
+
 Index: base/BUILD.gn
 --- base/BUILD.gn.orig
 +++ base/BUILD.gn
-@@ -1127,7 +1127,7 @@ component("base") {
-   ]
- 
-   # Needed for <atomic> if using newer C++ library than sysroot
--  if (!use_sysroot && (is_android || (is_linux && !is_chromecast))) {
-+  if (!use_sysroot && (is_android || (is_linux && !is_chromecast)) && !is_clang) {
+@@ -1137,7 +1137,7 @@ component("base") {
+   # Needed for <atomic> if using newer C++ library than sysroot, except if
+   # building inside the cros_sdk environment - use host_toolchain as a
+   # more robust check for this.
+-  if (!use_sysroot && (is_android || (is_linux && !is_chromecast)) &&
++  if (!use_sysroot && (is_android || (is_linux && !is_chromecast) && !is_clang) &&
+       host_toolchain != "//build/toolchain/cros:host") {
      libs = [ "atomic" ]
    }
- 
-@@ -1508,6 +1508,27 @@ component("base") {
+@@ -1163,7 +1163,7 @@ component("base") {
+         "allocator/allocator_shim_override_glibc_weak_symbols.h",
+       ]
+       deps += [ "//base/allocator:tcmalloc" ]
+-    } else if (is_linux && use_allocator == "none") {
++    } else if ((is_linux && !is_openbsd) && use_allocator == "none") {
+       sources += [ "allocator/allocator_shim_default_dispatch_to_glibc.cc" ]
+     } else if (is_android && use_allocator == "none") {
+       sources += [
+@@ -1568,6 +1568,29 @@ component("base") {
      }
    }
  
@@ -32,6 +42,8 @@ Index: base/BUILD.gn
 +      "process/process_iterator_openbsd.cc",
 +      "process/process_metrics_openbsd.cc",
 +      "sys_info_openbsd.cc",
++      "files/file_path_watcher_kqueue.cc",
++      "files/file_path_watcher_kqueue.h",
 +      "files/file_path_watcher_stub.cc",
 +    ]
 +  }
@@ -39,7 +51,7 @@ Index: base/BUILD.gn
    # iOS
    if (is_ios) {
      set_sources_assignment_filter([])
-@@ -2338,6 +2359,8 @@ test("base_unittests") {
+@@ -2433,6 +2456,8 @@ test("base_unittests") {
      # TODO(krasin): remove CFI_CAST_CHECK, see https://crbug.com/626794.
      defines += [ "CFI_CAST_CHECK" ]
    }

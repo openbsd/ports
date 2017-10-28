@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_base_ime_input_method_factory_cc,v 1.7 2017/04/19 05:16:47 robert Exp $
+$OpenBSD: patch-ui_base_ime_input_method_factory_cc,v 1.8 2017/10/28 07:36:01 robert Exp $
 --- ui/base/ime/input_method_factory.cc.orig.port	Thu Mar  9 21:04:49 2017
 +++ ui/base/ime/input_method_factory.cc	Fri Mar 10 07:46:26 2017
 @@ -16,7 +16,7 @@

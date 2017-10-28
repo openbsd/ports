@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_download_download_status_updater_cc,v 1.5 2017/04/19 05:16:46 robert Exp $
+$OpenBSD: patch-chrome_browser_download_download_status_updater_cc,v 1.6 2017/10/28 07:36:00 robert Exp $
 --- chrome/browser/download/download_status_updater.cc.orig.port	Thu Dec 15 00:02:04 2016
 +++ chrome/browser/download/download_status_updater.cc	Tue Jan  3 20:29:55 2017
 @@ -13,7 +13,7 @@

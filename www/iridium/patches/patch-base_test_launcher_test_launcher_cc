@@ -1,0 +1,13 @@
+$OpenBSD: patch-base_test_launcher_test_launcher_cc,v 1.4 2017/10/28 07:36:00 robert Exp $
+
+Index: base/test/launcher/test_launcher.cc
+--- base/test/launcher/test_launcher.cc.orig
++++ base/test/launcher/test_launcher.cc
+@@ -50,6 +50,7 @@
+ #include "testing/gtest/include/gtest/gtest.h"
+ 
+ #if defined(OS_POSIX)
++#include <signal.h>
+ #include <fcntl.h>
+ 
+ #include "base/files/file_descriptor_watcher_posix.h"

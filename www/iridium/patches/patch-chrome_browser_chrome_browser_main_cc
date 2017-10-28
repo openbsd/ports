@@ -1,16 +1,17 @@
-$OpenBSD: patch-chrome_browser_chrome_browser_main_cc,v 1.9 2017/04/28 22:22:36 robert Exp $
---- chrome/browser/chrome_browser_main.cc.orig.port	Wed Apr 19 21:06:29 2017
-+++ chrome/browser/chrome_browser_main.cc	Thu Apr 27 19:55:59 2017
-@@ -181,7 +181,7 @@
- #include "chrome/browser/lifetime/application_lifetime.h"
- #endif  // defined(OS_ANDROID)
+$OpenBSD: patch-chrome_browser_chrome_browser_main_cc,v 1.10 2017/10/28 07:36:00 robert Exp $
+Index: chrome/browser/chrome_browser_main.cc
+--- chrome/browser/chrome_browser_main.cc.orig
++++ chrome/browser/chrome_browser_main.cc
+@@ -191,7 +191,7 @@
+ #include "chrome/browser/offline_pages/offline_page_info_handler.h"
+ #endif
  
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
 +#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
  #include "chrome/browser/first_run/upgrade_util_linux.h"
  #endif  // defined(OS_LINUX) && !defined(OS_CHROMEOS)
  
-@@ -276,7 +276,7 @@
+@@ -281,7 +281,7 @@
  #endif
  
  #if defined(OS_WIN) || defined(OS_MACOSX) || \
@@ -19,7 +20,7 @@ $OpenBSD: patch-chrome_browser_chrome_browser_main_cc,v 1.9 2017/04/28 22:22:36 
  #include "chrome/browser/metrics/desktop_session_duration/desktop_session_duration_tracker.h"
  #endif
  
-@@ -764,7 +764,7 @@ void ChromeBrowserMainParts::SetupFieldTrials() {
+@@ -766,7 +766,7 @@ void ChromeBrowserMainParts::SetupFieldTrials() {
    field_trial_synchronizer_ = new FieldTrialSynchronizer();
  
  #if defined(OS_WIN) || defined(OS_MACOSX) || \
@@ -27,8 +28,8 @@ $OpenBSD: patch-chrome_browser_chrome_browser_main_cc,v 1.9 2017/04/28 22:22:36 
 +    (defined(OS_LINUX) && !defined(OS_CHROMEOS) || defined(OS_BSD))
    metrics::DesktopSessionDurationTracker::Initialize();
  #endif
- 
-@@ -1194,7 +1194,7 @@ int ChromeBrowserMainParts::PreCreateThreadsImpl() {
+   metrics::RendererUptimeTracker::Initialize();
+@@ -1191,7 +1191,7 @@ int ChromeBrowserMainParts::PreCreateThreadsImpl() {
    }
  #endif  // !defined(OS_ANDROID) && !defined(OS_CHROMEOS)
  
@@ -37,7 +38,7 @@ $OpenBSD: patch-chrome_browser_chrome_browser_main_cc,v 1.9 2017/04/28 22:22:36 
    // Set the product channel for crash reports.
    base::debug::SetCrashKeyValue(crash_keys::kChannel,
                                  chrome::GetChannelString());
-@@ -1387,7 +1387,7 @@ void ChromeBrowserMainParts::PreBrowserStart() {
+@@ -1374,7 +1374,7 @@ void ChromeBrowserMainParts::PreBrowserStart() {
  
  // Start the tab manager here so that we give the most amount of time for the
  // other services to start up before we start adjusting the oom priority.

@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_extensions_api_image_writer_private_image_writer_private_api_cc,v 1.6 2017/04/28 22:22:36 robert Exp $
+$OpenBSD: patch-chrome_browser_extensions_api_image_writer_private_image_writer_private_api_cc,v 1.7 2017/10/28 07:36:00 robert Exp $
 --- chrome/browser/extensions/api/image_writer_private/image_writer_private_api.cc.orig.port	Wed Apr 19 21:06:29 2017
 +++ chrome/browser/extensions/api/image_writer_private/image_writer_private_api.cc	Thu Apr 27 19:55:59 2017
 @@ -167,10 +167,12 @@ ImageWriterPrivateListRemovableStorageDevicesFunction:

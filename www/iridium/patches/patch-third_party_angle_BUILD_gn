@@ -1,7 +1,16 @@
-$OpenBSD: patch-third_party_angle_BUILD_gn,v 1.3 2017/04/28 22:22:36 robert Exp $
---- third_party/angle/BUILD.gn.orig.port	Wed Apr 19 21:07:43 2017
-+++ third_party/angle/BUILD.gn	Thu Apr 27 19:56:03 2017
-@@ -656,10 +656,6 @@ foreach(is_shared_library,
+$OpenBSD: patch-third_party_angle_BUILD_gn,v 1.4 2017/10/28 07:36:01 robert Exp $
+Index: third_party/angle/BUILD.gn
+--- third_party/angle/BUILD.gn.orig
++++ third_party/angle/BUILD.gn
+@@ -239,6 +239,7 @@ static_library("angle_gpu_info_util") {
+         "X11",
+         "Xi",
+         "Xext",
++        "GL",
+       ]
+     }
+   }
+@@ -679,10 +680,6 @@ foreach(is_shared_library,
  
      if (is_linux) {
        sources += rebase_path(util_gypi.util_linux_sources, ".", "util")

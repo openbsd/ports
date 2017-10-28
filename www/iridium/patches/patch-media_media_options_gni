@@ -1,7 +1,9 @@
-$OpenBSD: patch-media_media_options_gni,v 1.3 2017/04/28 22:22:36 robert Exp $
---- media/media_options.gni.orig.port	Wed Apr 19 21:06:35 2017
-+++ media/media_options.gni	Thu Apr 27 19:56:02 2017
-@@ -73,9 +73,12 @@ declare_args() {
+$OpenBSD: patch-media_media_options_gni,v 1.4 2017/10/28 07:36:01 robert Exp $
+
+Index: media/media_options.gni
+--- media/media_options.gni.orig
++++ media/media_options.gni
+@@ -77,9 +77,12 @@ declare_args() {
    # Enables runtime selection of ALSA library for audio.
    use_alsa = false
  
@@ -10,12 +12,12 @@ $OpenBSD: patch-media_media_options_gni,v 1.3 2017/04/28 22:22:36 robert Exp $
 +
    # Alsa should be used on non-Android, non-Mac POSIX systems.
    # Alsa should be used on desktop Chromecast and audio-only Chromecast builds.
--  if (is_posix && !is_android && !is_mac &&
-+  if (is_posix && !is_android && !is_mac && !is_openbsd &&
+-  if (is_posix && !is_android && !is_mac && !is_fuchsia &&
++  if (is_posix && !is_android && !is_mac && !is_fuchsia && !is_openbsd &&
        (!is_chromecast || is_cast_desktop_build || is_cast_audio_only)) {
      use_alsa = true
  
-@@ -83,6 +86,10 @@ declare_args() {
+@@ -87,6 +90,10 @@ declare_args() {
      if (!use_cras && !is_chromecast) {
        use_pulseaudio = true
      }

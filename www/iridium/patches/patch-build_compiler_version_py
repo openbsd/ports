@@ -1,4 +1,4 @@
-$OpenBSD: patch-build_compiler_version_py,v 1.1 2017/04/19 05:16:46 robert Exp $
+$OpenBSD: patch-build_compiler_version_py,v 1.2 2017/10/28 07:36:00 robert Exp $
 --- build/compiler_version.py.orig.port	Tue Jan  3 20:48:31 2017
 +++ build/compiler_version.py	Tue Jan  3 20:48:44 2017
 @@ -58,7 +58,7 @@ def GetVersion(compiler, tool):

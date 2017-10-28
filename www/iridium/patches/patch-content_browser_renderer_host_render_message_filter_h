@@ -1,8 +1,9 @@
-$OpenBSD: patch-content_browser_renderer_host_render_message_filter_h,v 1.1 2017/04/19 05:16:47 robert Exp $
---- content/browser/renderer_host/render_message_filter.h.orig.port	Thu Mar  9 21:04:32 2017
-+++ content/browser/renderer_host/render_message_filter.h	Fri Mar 10 07:46:23 2017
-@@ -132,7 +132,7 @@ class CONTENT_EXPORT RenderMessageFilter
-       const std::list<base::ProcessHandle>& handles);
+$OpenBSD: patch-content_browser_renderer_host_render_message_filter_h,v 1.2 2017/10/28 07:36:00 robert Exp $
+Index: content/browser/renderer_host/render_message_filter.h
+--- content/browser/renderer_host/render_message_filter.h.orig
++++ content/browser/renderer_host/render_message_filter.h
+@@ -121,7 +121,7 @@ class CONTENT_EXPORT RenderMessageFilter
+                                 bool has_gpu);
    void OnResolveProxy(const GURL& url, IPC::Message* reply_msg);
  
 -#if defined(OS_LINUX)

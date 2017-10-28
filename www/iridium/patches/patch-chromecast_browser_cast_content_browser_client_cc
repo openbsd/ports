@@ -1,8 +1,9 @@
-$OpenBSD: patch-chromecast_browser_cast_content_browser_client_cc,v 1.6 2017/04/28 22:22:36 robert Exp $
---- chromecast/browser/cast_content_browser_client.cc.orig.port	Wed Apr 19 21:06:32 2017
-+++ chromecast/browser/cast_content_browser_client.cc	Thu Apr 27 19:56:00 2017
-@@ -298,7 +298,7 @@ void CastContentBrowserClient::AppendExtraCommandLineS
-       command_line->AppendSwitch(switches::kAllowHiddenMediaPlayback);
+$OpenBSD: patch-chromecast_browser_cast_content_browser_client_cc,v 1.7 2017/10/28 07:36:00 robert Exp $
+Index: chromecast/browser/cast_content_browser_client.cc
+--- chromecast/browser/cast_content_browser_client.cc.orig
++++ chromecast/browser/cast_content_browser_client.cc
+@@ -349,7 +349,7 @@ void CastContentBrowserClient::AppendExtraCommandLineS
+     }
    }
  
 -#if defined(OS_LINUX)

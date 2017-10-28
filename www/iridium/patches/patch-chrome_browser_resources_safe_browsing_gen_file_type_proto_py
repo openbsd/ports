@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_resources_safe_browsing_gen_file_type_proto_py,v 1.2 2017/04/19 05:16:47 robert Exp $
+$OpenBSD: patch-chrome_browser_resources_safe_browsing_gen_file_type_proto_py,v 1.3 2017/10/28 07:36:00 robert Exp $
 --- chrome/browser/resources/safe_browsing/gen_file_type_proto.py.orig.port	Fri Mar 10 08:44:31 2017
 +++ chrome/browser/resources/safe_browsing/gen_file_type_proto.py	Fri Mar 10 08:45:03 2017
 @@ -31,6 +31,7 @@ def PlatformTypes():

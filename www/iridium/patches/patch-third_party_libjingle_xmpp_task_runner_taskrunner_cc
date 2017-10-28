@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_libjingle_xmpp_task_runner_taskrunner_cc,v 1.1 2017/07/23 19:03:33 robert Exp $
+$OpenBSD: patch-third_party_libjingle_xmpp_task_runner_taskrunner_cc,v 1.2 2017/10/28 07:36:01 robert Exp $
 
 Index: third_party/libjingle_xmpp/task_runner/taskrunner.cc
 --- third_party/libjingle_xmpp/task_runner/taskrunner.cc.orig

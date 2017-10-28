@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_task_manager_sampling_task_group_sampler_cc,v 1.1 2017/04/19 05:16:47 robert Exp $
+$OpenBSD: patch-chrome_browser_task_manager_sampling_task_group_sampler_cc,v 1.2 2017/10/28 07:36:00 robert Exp $
 --- chrome/browser/task_manager/sampling/task_group_sampler.cc.orig.port	Sat Feb  4 11:46:22 2017
 +++ chrome/browser/task_manager/sampling/task_group_sampler.cc	Sat Feb  4 12:35:13 2017
 @@ -36,7 +36,7 @@ TaskGroupSampler::TaskGroupSampler(

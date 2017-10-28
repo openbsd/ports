@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_task_manager_task_manager_observer_h,v 1.2 2017/04/28 22:22:36 robert Exp $
+$OpenBSD: patch-chrome_browser_task_manager_task_manager_observer_h,v 1.3 2017/10/28 07:36:00 robert Exp $
 --- chrome/browser/task_manager/task_manager_observer.h.orig.port	Wed Apr 19 21:06:30 2017
 +++ chrome/browser/task_manager/task_manager_observer.h	Thu Apr 27 19:56:00 2017
 @@ -42,7 +42,7 @@ enum RefreshType {

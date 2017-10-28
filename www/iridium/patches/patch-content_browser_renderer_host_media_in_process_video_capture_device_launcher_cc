@@ -1,0 +1,23 @@
+$OpenBSD: patch-content_browser_renderer_host_media_in_process_video_capture_device_launcher_cc,v 1.1 2017/10/28 07:36:00 robert Exp $
+
+Index: content/browser/renderer_host/media/in_process_video_capture_device_launcher.cc
+--- content/browser/renderer_host/media/in_process_video_capture_device_launcher.cc.orig
++++ content/browser/renderer_host/media/in_process_video_capture_device_launcher.cc
+@@ -234,7 +234,7 @@ void InProcessVideoCaptureDeviceLauncher::DoStartTabCa
+   DCHECK(device_task_runner_->BelongsToCurrentThread());
+ 
+   std::unique_ptr<media::VideoCaptureDevice> video_capture_device;
+-#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN)
++#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN) || defined(OS_BSD)
+   video_capture_device = WebContentsVideoCaptureDevice::Create(id);
+ #endif
+ 
+@@ -265,7 +265,7 @@ void InProcessVideoCaptureDeviceLauncher::DoStartDeskt
+   }
+ 
+   if (desktop_id.type == DesktopMediaID::TYPE_WEB_CONTENTS) {
+-#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN)
++#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN) || defined(OS_BSD)
+     video_capture_device = WebContentsVideoCaptureDevice::Create(id);
+     IncrementDesktopCaptureCounter(TAB_VIDEO_CAPTURER_CREATED);
+     if (desktop_id.audio_share) {

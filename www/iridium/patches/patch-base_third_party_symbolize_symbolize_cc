@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_third_party_symbolize_symbolize_cc,v 1.2 2017/04/19 05:16:46 robert Exp $
+$OpenBSD: patch-base_third_party_symbolize_symbolize_cc,v 1.3 2017/10/28 07:36:00 robert Exp $
 --- base/third_party/symbolize/symbolize.cc.orig.port	Thu Mar  9 21:04:26 2017
 +++ base/third_party/symbolize/symbolize.cc	Fri Mar 10 07:46:16 2017
 @@ -109,7 +109,7 @@ _END_GOOGLE_NAMESPACE_

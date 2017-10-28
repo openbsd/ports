@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_browser_memory_memory_monitor_cc,v 1.1 2017/04/19 05:16:47 robert Exp $
+$OpenBSD: patch-content_browser_memory_memory_monitor_cc,v 1.2 2017/10/28 07:36:00 robert Exp $
 --- content/browser/memory/memory_monitor.cc.orig.port	Fri Jan 13 15:52:44 2017
 +++ content/browser/memory/memory_monitor.cc	Fri Jan 13 15:52:49 2017
 @@ -22,7 +22,7 @@ void MemoryMonitorDelegate::GetSystemMemoryInfo(

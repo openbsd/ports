@@ -1,16 +1,18 @@
-$OpenBSD: patch-media_base_video_frame_h,v 1.5 2017/04/28 22:22:36 robert Exp $
---- media/base/video_frame.h.orig.port	Wed Apr 19 21:06:35 2017
-+++ media/base/video_frame.h	Thu Apr 27 19:56:02 2017
-@@ -62,7 +62,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
+$OpenBSD: patch-media_base_video_frame_h,v 1.6 2017/10/28 07:36:01 robert Exp $
+
+Index: media/base/video_frame.h
+--- media/base/video_frame.h.orig
++++ media/base/video_frame.h
+@@ -63,7 +63,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
      STORAGE_UNOWNED_MEMORY = 2,  // External, non owned data pointers.
      STORAGE_OWNED_MEMORY = 3,  // VideoFrame has allocated its own data buffer.
      STORAGE_SHMEM = 4,         // Pixels are backed by Shared Memory.
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
-     // TODO(mcasas): Consider turning this type into STORAGE_NATIVE or another
-     // meaningful name and handle it appropriately in all cases.
-     STORAGE_DMABUFS = 5,  // Each plane is stored into a DmaBuf.
-@@ -186,7 +186,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
+     // TODO(mcasas): Consider turning this type into STORAGE_NATIVE
+     // based on the idea of using this same enum value for both DMA
+     // buffers on Linux and CVPixelBuffers on Mac (which currently use
+@@ -189,7 +189,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
        uint8_t* a_data,
        base::TimeDelta timestamp);
  
@@ -19,7 +21,7 @@ $OpenBSD: patch-media_base_video_frame_h,v 1.5 2017/04/28 22:22:36 robert Exp $
    // Wraps provided dmabufs
    // (https://www.kernel.org/doc/Documentation/dma-buf-sharing.txt) with a
    // VideoFrame. The dmabuf fds are dup()ed on creation, so that the VideoFrame
-@@ -336,7 +336,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
+@@ -339,7 +339,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
    // Returns the offset into the shared memory where the frame data begins.
    size_t shared_memory_offset() const;
  
@@ -27,8 +29,8 @@ $OpenBSD: patch-media_base_video_frame_h,v 1.5 2017/04/28 22:22:36 robert Exp $
 +#if defined(OS_LINUX) || defined(OS_BSD)
    // Returns backing DmaBuf file descriptor for given |plane|, if present, or
    // -1 if not.
-   // TODO(mcasas): Rename to DmabufFd() to comply with Style Guide.
-@@ -528,7 +528,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
+   int DmabufFd(size_t plane) const;
+@@ -532,7 +532,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
    base::SharedMemoryHandle shared_memory_handle_;
    size_t shared_memory_offset_;
  

@@ -1,9 +1,10 @@
-$OpenBSD: patch-net_dns_dns_util_cc,v 1.4 2017/04/19 05:16:47 robert Exp $
---- net/dns/dns_util.cc.orig.port	Wed Jul 20 21:03:27 2016
-+++ net/dns/dns_util.cc	Thu Jul 21 10:25:30 2016
-@@ -15,6 +15,8 @@
- #include "build/build_config.h"
- #include "net/base/address_list.h"
+$OpenBSD: patch-net_dns_dns_util_cc,v 1.5 2017/10/28 07:36:01 robert Exp $
+Index: net/dns/dns_util.cc
+--- net/dns/dns_util.cc.orig
++++ net/dns/dns_util.cc
+@@ -28,6 +28,8 @@ const int kMaxLabelLength = 63;
+ 
+ }  // namespace
  
 +#include <sys/socket.h>
 +

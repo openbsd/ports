@@ -1,8 +1,10 @@
-$OpenBSD: patch-base_base_paths_posix_cc,v 1.5 2017/04/19 05:16:46 robert Exp $
---- base/base_paths_posix.cc.orig.port	Sat Apr  8 19:38:10 2017
-+++ base/base_paths_posix.cc	Sat Apr  8 19:42:40 2017
-@@ -70,10 +70,10 @@ bool PathProviderPosix(int key, FilePath* result) {
- #elif defined(OS_OPENBSD)
+$OpenBSD: patch-base_base_paths_posix_cc,v 1.6 2017/10/28 07:36:00 robert Exp $
+
+Index: base/base_paths_posix.cc
+--- base/base_paths_posix.cc.orig
++++ base/base_paths_posix.cc
+@@ -69,10 +69,10 @@ bool PathProviderPosix(int key, FilePath* result) {
+ #elif defined(OS_OPENBSD) || defined(OS_AIX)
        // There is currently no way to get the executable path on OpenBSD
        char* cpath;
 -      if ((cpath = getenv("CHROME_EXE_PATH")) != NULL)

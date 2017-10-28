@@ -1,12 +1,23 @@
-$OpenBSD: patch-third_party_WebKit_Source_platform_fonts_FontCache_cpp,v 1.4 2017/04/28 22:22:36 robert Exp $
---- third_party/WebKit/Source/platform/fonts/FontCache.cpp.orig.port	Wed Apr 19 21:06:50 2017
-+++ third_party/WebKit/Source/platform/fonts/FontCache.cpp	Thu Apr 27 19:56:03 2017
-@@ -63,7 +63,7 @@ using namespace WTF;
+$OpenBSD: patch-third_party_WebKit_Source_platform_fonts_FontCache_cpp,v 1.5 2017/10/28 07:36:01 robert Exp $
+
+Index: third_party/WebKit/Source/platform/fonts/FontCache.cpp
+--- third_party/WebKit/Source/platform/fonts/FontCache.cpp.orig
++++ third_party/WebKit/Source/platform/fonts/FontCache.cpp
+@@ -64,7 +64,7 @@
  
  namespace blink {
  
--#if !OS(WIN) && !OS(LINUX)
-+#if !OS(WIN) && !OS(LINUX) && !OS(OPENBSD)
- FontCache::FontCache() : m_purgePreventCount(0), m_fontManager(nullptr) {}
- #endif  // !OS(WIN) && !OS(LINUX)
+-#if !defined(OS_WIN) && !defined(OS_LINUX)
++#if !defined(OS_WIN) && !defined(OS_LINUX) && !defined(OS_BSD)
+ FontCache::FontCache() : purge_prevent_count_(0), font_manager_(nullptr) {}
+ #endif  // !defined(OS_WIN) && !defined(OS_LINUX)
  
+@@ -85,7 +85,7 @@ FontCache* FontCache::GetFontCache() {
+ FontPlatformData* FontCache::SystemFontPlatformData(
+     const FontDescription& font_description) {
+   const AtomicString& family = FontCache::SystemFontFamily();
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   if (family.IsEmpty() || family == FontFamilyNames::system_ui)
+     return nullptr;
+ #else

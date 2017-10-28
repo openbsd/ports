@@ -1,7 +1,8 @@
-$OpenBSD: patch-sandbox_BUILD_gn,v 1.2 2017/04/19 05:16:47 robert Exp $
---- sandbox/BUILD.gn.orig.port	Thu Mar  9 21:04:36 2017
-+++ sandbox/BUILD.gn	Fri Mar 10 07:46:24 2017
-@@ -16,7 +16,7 @@ group("sandbox") {
+$OpenBSD: patch-sandbox_BUILD_gn,v 1.3 2017/10/28 07:36:01 robert Exp $
+Index: sandbox/BUILD.gn
+--- sandbox/BUILD.gn.orig
++++ sandbox/BUILD.gn
+@@ -24,7 +24,7 @@ group("sandbox") {
        "//sandbox/mac:sandbox",
        "//sandbox/mac:seatbelt",
      ]

@@ -1,16 +1,17 @@
-$OpenBSD: patch-cc_BUILD_gn,v 1.3 2017/04/28 22:22:36 robert Exp $
---- cc/BUILD.gn.orig.port	Wed Apr 19 21:06:28 2017
-+++ cc/BUILD.gn	Thu Apr 27 19:55:58 2017
-@@ -732,7 +732,7 @@ cc_static_library("test_support") {
-     "//ui/gl",
+$OpenBSD: patch-cc_BUILD_gn,v 1.4 2017/10/28 07:36:00 robert Exp $
+Index: cc/BUILD.gn
+--- cc/BUILD.gn.orig
++++ cc/BUILD.gn
+@@ -676,7 +676,7 @@ cc_static_library("test_support") {
      "//ui/gl:test_support",
+     "//ui/latency",
    ]
 -  if (!is_android) {
 +  if (!is_android && !is_openbsd) {
      data_deps = [
        "//third_party/mesa:osmesa",
      ]
-@@ -941,10 +941,6 @@ cc_test("cc_unittests") {
+@@ -874,10 +874,6 @@ cc_test("cc_unittests") {
      "//ui/gfx/geometry",
      "//ui/gl",
      "//ui/gl:test_support",

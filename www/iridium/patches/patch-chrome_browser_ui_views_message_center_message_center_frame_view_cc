@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_ui_views_message_center_message_center_frame_view_cc,v 1.6 2017/04/19 05:16:47 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_views_message_center_message_center_frame_view_cc,v 1.7 2017/10/28 07:36:00 robert Exp $
 --- chrome/browser/ui/views/message_center/message_center_frame_view.cc.orig.port	Thu Dec 15 00:02:05 2016
 +++ chrome/browser/ui/views/message_center/message_center_frame_view.cc	Tue Jan  3 20:29:57 2017
 @@ -15,7 +15,7 @@

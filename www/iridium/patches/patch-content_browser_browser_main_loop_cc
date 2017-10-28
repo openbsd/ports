@@ -1,7 +1,8 @@
-$OpenBSD: patch-content_browser_browser_main_loop_cc,v 1.14 2017/04/28 22:22:36 robert Exp $
---- content/browser/browser_main_loop.cc.orig.port	Wed Apr 19 21:06:33 2017
-+++ content/browser/browser_main_loop.cc	Fri Apr 28 07:20:56 2017
-@@ -210,6 +210,11 @@
+$OpenBSD: patch-content_browser_browser_main_loop_cc,v 1.15 2017/10/28 07:36:00 robert Exp $
+Index: content/browser/browser_main_loop.cc
+--- content/browser/browser_main_loop.cc.orig
++++ content/browser/browser_main_loop.cc
+@@ -220,6 +220,11 @@
  #include "gpu/vulkan/vulkan_implementation.h"
  #endif
  
@@ -13,7 +14,7 @@ $OpenBSD: patch-content_browser_browser_main_loop_cc,v 1.14 2017/04/28 22:22:36 
  // One of the linux specific headers defines this as a macro.
  #ifdef DestroyAll
  #undef DestroyAll
-@@ -218,7 +223,7 @@
+@@ -228,7 +233,7 @@
  namespace content {
  namespace {
  
@@ -21,8 +22,8 @@ $OpenBSD: patch-content_browser_browser_main_loop_cc,v 1.14 2017/04/28 22:22:36 
 +#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID) && !defined(OS_BSD)
  void SetupSandbox(const base::CommandLine& parsed_command_line) {
    TRACE_EVENT0("startup", "SetupSandbox");
-   if (parsed_command_line.HasSwitch(switches::kNoZygote)) {
-@@ -584,10 +589,15 @@ void BrowserMainLoop::Init() {
+   // RenderSandboxHostLinux needs to be initialized even if the sandbox and
+@@ -543,10 +548,15 @@ void BrowserMainLoop::Init() {
  void BrowserMainLoop::EarlyInitialization() {
    TRACE_EVENT0("startup", "BrowserMainLoop::EarlyInitialization");
  

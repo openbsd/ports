@@ -1,6 +1,7 @@
-$OpenBSD: patch-chrome_browser_ui_views_frame_opaque_browser_frame_view_cc,v 1.12 2017/04/19 05:16:47 robert Exp $
---- chrome/browser/ui/views/frame/opaque_browser_frame_view.cc.orig.port	Thu Dec 15 00:02:05 2016
-+++ chrome/browser/ui/views/frame/opaque_browser_frame_view.cc	Tue Jan  3 20:29:57 2017
+$OpenBSD: patch-chrome_browser_ui_views_frame_opaque_browser_frame_view_cc,v 1.13 2017/10/28 07:36:00 robert Exp $
+Index: chrome/browser/ui/views/frame/opaque_browser_frame_view.cc
+--- chrome/browser/ui/views/frame/opaque_browser_frame_view.cc.orig
++++ chrome/browser/ui/views/frame/opaque_browser_frame_view.cc
 @@ -38,7 +38,7 @@
  #include "ui/views/window/frame_background.h"
  #include "ui/views/window/window_shape.h"
@@ -18,4 +19,4 @@ $OpenBSD: patch-chrome_browser_ui_views_frame_opaque_browser_frame_view_cc,v 1.1
 +#if defined(OS_LINUX) || defined(OS_BSD)
    views::MenuRunner menu_runner(frame()->GetSystemMenuModel(),
                                  views::MenuRunner::HAS_MNEMONICS);
-   ignore_result(menu_runner.RunMenuAt(browser_view()->GetWidget(),
+   menu_runner.RunMenuAt(browser_view()->GetWidget(), window_icon_,

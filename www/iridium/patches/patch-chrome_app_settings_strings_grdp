@@ -1,7 +1,8 @@
-$OpenBSD: patch-chrome_app_settings_strings_grdp,v 1.2 2017/04/28 22:22:36 robert Exp $
---- chrome/app/settings_strings.grdp.orig.port	Wed Apr 19 21:06:29 2017
-+++ chrome/app/settings_strings.grdp	Thu Apr 27 19:55:59 2017
-@@ -240,7 +240,7 @@
+$OpenBSD: patch-chrome_app_settings_strings_grdp,v 1.3 2017/10/28 07:36:00 robert Exp $
+Index: chrome/app/settings_strings.grdp
+--- chrome/app/settings_strings.grdp.orig
++++ chrome/app/settings_strings.grdp
+@@ -281,7 +281,7 @@
    <message name="IDS_SETTINGS_THEMES" desc="Name of the control which allows the user to get a theme for the browser.">
      Themes
    </message>
@@ -10,7 +11,7 @@ $OpenBSD: patch-chrome_app_settings_strings_grdp,v 1.2 2017/04/28 22:22:36 rober
      <message name="IDS_SETTINGS_SYSTEM_THEME" desc="Text of the label describing the system (GTK+) browser theme on Linux">
        GTK+
      </message>
-@@ -254,7 +254,7 @@
+@@ -295,7 +295,7 @@
        Use Classic
      </message>
    </if>

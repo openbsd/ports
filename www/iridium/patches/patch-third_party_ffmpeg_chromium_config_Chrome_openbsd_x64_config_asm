@@ -1,7 +1,8 @@
-$OpenBSD: patch-third_party_ffmpeg_chromium_config_Chrome_openbsd_x64_config_asm,v 1.11 2017/04/28 22:22:36 robert Exp $
---- third_party/ffmpeg/chromium/config/Chrome/openbsd/x64/config.asm.orig.port	Thu Apr 27 19:56:03 2017
-+++ third_party/ffmpeg/chromium/config/Chrome/openbsd/x64/config.asm	Thu Apr 27 20:08:07 2017
-@@ -0,0 +1,2228 @@
+$OpenBSD: patch-third_party_ffmpeg_chromium_config_Chrome_openbsd_x64_config_asm,v 1.12 2017/10/28 07:36:01 robert Exp $
+Index: third_party/ffmpeg/chromium/config/Chrome/openbsd/x64/config.asm
+--- third_party/ffmpeg/chromium/config/Chrome/openbsd/x64/config.asm.orig
++++ third_party/ffmpeg/chromium/config/Chrome/openbsd/x64/config.asm
+@@ -0,0 +1,2265 @@
 +%define ARCH_AARCH64 0
 +%define ARCH_ALPHA 0
 +%define ARCH_ARM 0
@@ -166,11 +167,11 @@ $OpenBSD: patch-third_party_ffmpeg_chromium_config_Chrome_openbsd_x64_config_asm
 +%define HAVE_LOCAL_ALIGNED_16 1
 +%define HAVE_LOCAL_ALIGNED_32 1
 +%define HAVE_SIMD_ALIGN_16 1
++%define HAVE_SIMD_ALIGN_32 1
 +%define HAVE_ATOMICS_GCC 1
 +%define HAVE_ATOMICS_SUNCC 0
 +%define HAVE_ATOMICS_WIN32 0
 +%define HAVE_ATOMIC_CAS_PTR 0
-+%define HAVE_ATOMIC_COMPARE_EXCHANGE 1
 +%define HAVE_MACHINE_RW_BARRIER 0
 +%define HAVE_MEMORYBARRIER 0
 +%define HAVE_MM_EMPTY 1
@@ -192,6 +193,7 @@ $OpenBSD: patch-third_party_ffmpeg_chromium_config_Chrome_openbsd_x64_config_asm
 +%define HAVE_CDIO_PARANOIA_H 0
 +%define HAVE_CDIO_PARANOIA_PARANOIA_H 0
 +%define HAVE_CUDA_H 0
++%define HAVE_D3D11_H 0
 +%define HAVE_DISPATCH_DISPATCH_H 0
 +%define HAVE_DEV_BKTR_IOCTL_BT848_H 0
 +%define HAVE_DEV_BKTR_IOCTL_METEOR_H 0
@@ -201,7 +203,6 @@ $OpenBSD: patch-third_party_ffmpeg_chromium_config_Chrome_openbsd_x64_config_asm
 +%define HAVE_DIRECT_H 0
 +%define HAVE_DIRENT_H 1
 +%define HAVE_DLFCN_H 1
-+%define HAVE_D3D11_H 0
 +%define HAVE_DXVA_H 0
 +%define HAVE_ES2_GL_H 0
 +%define HAVE_GSM_H 0
@@ -209,14 +210,14 @@ $OpenBSD: patch-third_party_ffmpeg_chromium_config_Chrome_openbsd_x64_config_asm
 +%define HAVE_MACH_MACH_TIME_H 0
 +%define HAVE_MACHINE_IOCTL_BT848_H 0
 +%define HAVE_MACHINE_IOCTL_METEOR_H 0
-+%define HAVE_MALLOC_H 0
++%define HAVE_MALLOC_H 1
 +%define HAVE_OPENCV2_CORE_CORE_C_H 0
 +%define HAVE_OPENJPEG_2_1_OPENJPEG_H 0
 +%define HAVE_OPENJPEG_2_0_OPENJPEG_H 0
 +%define HAVE_OPENJPEG_1_5_OPENJPEG_H 0
 +%define HAVE_OPENGL_GL3_H 0
 +%define HAVE_POLL_H 1
-+%define HAVE_SNDIO_H 1
++%define HAVE_SNDIO_H 0
 +%define HAVE_SOUNDCARD_H 1
 +%define HAVE_STDATOMIC_H 0
 +%define HAVE_SYS_MMAN_H 1
@@ -322,6 +323,7 @@ $OpenBSD: patch-third_party_ffmpeg_chromium_config_Chrome_openbsd_x64_config_asm
 +%define HAVE_OS2THREADS 0
 +%define HAVE_W32THREADS 0
 +%define HAVE_AS_DN_DIRECTIVE 0
++%define HAVE_AS_FPU_DIRECTIVE 0
 +%define HAVE_AS_FUNC 0
 +%define HAVE_AS_OBJECT_ARCH 0
 +%define HAVE_ASM_MOD_Q 0
@@ -357,13 +359,13 @@ $OpenBSD: patch-third_party_ffmpeg_chromium_config_Chrome_openbsd_x64_config_asm
 +%define HAVE_STRUCT_SOCKADDR_STORAGE 0
 +%define HAVE_STRUCT_STAT_ST_MTIM_TV_NSEC 1
 +%define HAVE_STRUCT_V4L2_FRMIVALENUM_DISCRETE 1
++%define HAVE_ALSA 0
 +%define HAVE_ATOMICS_NATIVE 1
 +%define HAVE_DOS_PATHS 0
 +%define HAVE_DXVA2_LIB 0
 +%define HAVE_DXVA2API_COBJ 0
++%define HAVE_JACK 0
 +%define HAVE_LIBC_MSVCRT 0
-+%define HAVE_LIBDC1394_1 0
-+%define HAVE_LIBDC1394_2 0
 +%define HAVE_MAKEINFO 1
 +%define HAVE_MAKEINFO_HTML 0
 +%define HAVE_MMAL_PARAMETER_VIDEO_MAX_NUM_CALLBACKS 0
@@ -371,24 +373,13 @@ $OpenBSD: patch-third_party_ffmpeg_chromium_config_Chrome_openbsd_x64_config_asm
 +%define HAVE_POD2MAN 1
 +%define HAVE_SDL2 0
 +%define HAVE_SECTION_DATA_REL_RO 0
-+%define HAVE_TEXI2HTML 0
++%define HAVE_SNDIO 0
++%define HAVE_TEXI2HTML 1
 +%define HAVE_THREADS 1
 +%define HAVE_VAAPI_DRM 0
 +%define HAVE_VAAPI_X11 0
 +%define HAVE_VDPAU_X11 0
 +%define HAVE_WINRT 0
-+%define HAVE_XLIB 0
-+%define CONFIG_BSFS 0
-+%define CONFIG_DECODERS 1
-+%define CONFIG_ENCODERS 0
-+%define CONFIG_HWACCELS 0
-+%define CONFIG_PARSERS 1
-+%define CONFIG_INDEVS 0
-+%define CONFIG_OUTDEVS 0
-+%define CONFIG_FILTERS 0
-+%define CONFIG_DEMUXERS 1
-+%define CONFIG_MUXERS 0
-+%define CONFIG_PROTOCOLS 0
 +%define CONFIG_DOC 0
 +%define CONFIG_HTMLPAGES 0
 +%define CONFIG_MANPAGES 0
@@ -396,8 +387,11 @@ $OpenBSD: patch-third_party_ffmpeg_chromium_config_Chrome_openbsd_x64_config_asm
 +%define CONFIG_TXTPAGES 0
 +%define CONFIG_AVIO_DIR_CMD_EXAMPLE 1
 +%define CONFIG_AVIO_READING_EXAMPLE 1
-+%define CONFIG_DECODING_ENCODING_EXAMPLE 1
++%define CONFIG_DECODE_AUDIO_EXAMPLE 1
++%define CONFIG_DECODE_VIDEO_EXAMPLE 1
 +%define CONFIG_DEMUXING_DECODING_EXAMPLE 1
++%define CONFIG_ENCODE_AUDIO_EXAMPLE 1
++%define CONFIG_ENCODE_VIDEO_EXAMPLE 1
 +%define CONFIG_EXTRACT_MVS_EXAMPLE 1
 +%define CONFIG_FILTER_AUDIO_EXAMPLE 0
 +%define CONFIG_FILTERING_AUDIO_EXAMPLE 0
@@ -425,12 +419,25 @@ $OpenBSD: patch-third_party_ffmpeg_chromium_config_Chrome_openbsd_x64_config_asm
 +%define CONFIG_XLIB 0
 +%define CONFIG_ZLIB 0
 +%define CONFIG_AVISYNTH 0
++%define CONFIG_FREI0R 0
++%define CONFIG_LIBCDIO 0
++%define CONFIG_LIBRUBBERBAND 0
++%define CONFIG_LIBVIDSTAB 0
++%define CONFIG_LIBX264 0
++%define CONFIG_LIBX265 0
++%define CONFIG_LIBXAVS 0
++%define CONFIG_LIBXVID 0
++%define CONFIG_DECKLINK 0
++%define CONFIG_LIBFDK_AAC 0
++%define CONFIG_OPENSSL 0
++%define CONFIG_GMP 0
++%define CONFIG_LIBOPENCORE_AMRNB 0
++%define CONFIG_LIBOPENCORE_AMRWB 0
++%define CONFIG_LIBVO_AMRWBENC 0
++%define CONFIG_LIBSMBCLIENT 0
 +%define CONFIG_CHROMAPRINT 0
 +%define CONFIG_CRYSTALHD 0
-+%define CONFIG_DECKLINK 0
-+%define CONFIG_FREI0R 0
 +%define CONFIG_GCRYPT 0
-+%define CONFIG_GMP 0
 +%define CONFIG_GNUTLS 0
 +%define CONFIG_JNI 0
 +%define CONFIG_LADSPA 0
@@ -438,10 +445,8 @@ $OpenBSD: patch-third_party_ffmpeg_chromium_config_Chrome_openbsd_x64_config_asm
 +%define CONFIG_LIBBLURAY 0
 +%define CONFIG_LIBBS2B 0
 +%define CONFIG_LIBCACA 0
-+%define CONFIG_LIBCDIO 0
 +%define CONFIG_LIBCELT 0
 +%define CONFIG_LIBDC1394 0
-+%define CONFIG_LIBFDK_AAC 0
 +%define CONFIG_LIBFLITE 0
 +%define CONFIG_LIBFONTCONFIG 0
 +%define CONFIG_LIBFREETYPE 0
@@ -454,8 +459,6 @@ $OpenBSD: patch-third_party_ffmpeg_chromium_config_Chrome_openbsd_x64_config_asm
 +%define CONFIG_LIBMODPLUG 0
 +%define CONFIG_LIBMP3LAME 0
 +%define CONFIG_LIBNUT 0
-+%define CONFIG_LIBOPENCORE_AMRNB 0
-+%define CONFIG_LIBOPENCORE_AMRWB 0
 +%define CONFIG_LIBOPENCV 0
 +%define CONFIG_LIBOPENH264 0
 +%define CONFIG_LIBOPENJPEG 0
@@ -463,7 +466,6 @@ $OpenBSD: patch-third_party_ffmpeg_chromium_config_Chrome_openbsd_x64_config_asm
 +%define CONFIG_LIBOPUS 1
 +%define CONFIG_LIBPULSE 0
 +%define CONFIG_LIBRTMP 0
-+%define CONFIG_LIBRUBBERBAND 0
 +%define CONFIG_LIBSCHROEDINGER 0
 +%define CONFIG_LIBSHINE 0
 +%define CONFIG_LIBSMBCLIENT 0
@@ -475,16 +477,10 @@ $OpenBSD: patch-third_party_ffmpeg_chromium_config_Chrome_openbsd_x64_config_asm
 +%define CONFIG_LIBTHEORA 0
 +%define CONFIG_LIBTWOLAME 0
 +%define CONFIG_LIBV4L2 0
-+%define CONFIG_LIBVIDSTAB 0
-+%define CONFIG_LIBVO_AMRWBENC 0
 +%define CONFIG_LIBVORBIS 0
 +%define CONFIG_LIBVPX 0
 +%define CONFIG_LIBWAVPACK 0
 +%define CONFIG_LIBWEBP 0
-+%define CONFIG_LIBX264 0
-+%define CONFIG_LIBX265 0
-+%define CONFIG_LIBXAVS 0
-+%define CONFIG_LIBXVID 0
 +%define CONFIG_LIBZIMG 0
 +%define CONFIG_LIBZMQ 0
 +%define CONFIG_LIBZVBI 0
@@ -493,9 +489,7 @@ $OpenBSD: patch-third_party_ffmpeg_chromium_config_Chrome_openbsd_x64_config_asm
 +%define CONFIG_OPENAL 0
 +%define CONFIG_OPENCL 0
 +%define CONFIG_OPENGL 0
-+%define CONFIG_OPENSSL 0
 +%define CONFIG_VIDEOTOOLBOX 0
-+%define CONFIG_X11GRAB 0
 +%define CONFIG_AUDIOTOOLBOX 0
 +%define CONFIG_CUDA 0
 +%define CONFIG_CUVID 0
@@ -507,8 +501,8 @@ $OpenBSD: patch-third_party_ffmpeg_chromium_config_Chrome_openbsd_x64_config_asm
 +%define CONFIG_VDPAU 0
 +%define CONFIG_VIDEOTOOLBOX_HWACCEL 0
 +%define CONFIG_XVMC 0
-+%define CONFIG_LIBMFX 0
 +%define CONFIG_LIBNPP 0
++%define CONFIG_LIBMFX 0
 +%define CONFIG_MMAL 0
 +%define CONFIG_OMX 0
 +%define CONFIG_FTRAPV 0
@@ -550,15 +544,25 @@ $OpenBSD: patch-third_party_ffmpeg_chromium_config_Chrome_openbsd_x64_config_asm
 +%define CONFIG_NETWORK 0
 +%define CONFIG_RDFT 1
 +%define CONFIG_FONTCONFIG 0
-+%define CONFIG_MEMALIGN_HACK 0
 +%define CONFIG_MEMORY_POISONING 0
 +%define CONFIG_NEON_CLOBBER_TEST 0
++%define CONFIG_OSSFUZZ 0
 +%define CONFIG_PIC 1
-+%define CONFIG_POD2MAN 1
 +%define CONFIG_RAISE_MAJOR 0
 +%define CONFIG_THUMB 0
 +%define CONFIG_VALGRIND_BACKTRACE 0
 +%define CONFIG_XMM_CLOBBER_TEST 0
++%define CONFIG_BSFS 1
++%define CONFIG_DECODERS 1
++%define CONFIG_ENCODERS 0
++%define CONFIG_HWACCELS 0
++%define CONFIG_PARSERS 1
++%define CONFIG_INDEVS 0
++%define CONFIG_OUTDEVS 0
++%define CONFIG_FILTERS 0
++%define CONFIG_DEMUXERS 1
++%define CONFIG_MUXERS 0
++%define CONFIG_PROTOCOLS 0
 +%define CONFIG_AANDCTTABLES 0
 +%define CONFIG_AC3DSP 0
 +%define CONFIG_AUDIO_FRAME_QUEUE 0
@@ -584,13 +588,14 @@ $OpenBSD: patch-third_party_ffmpeg_chromium_config_Chrome_openbsd_x64_config_asm
 +%define CONFIG_H264PARSE 1
 +%define CONFIG_H264PRED 1
 +%define CONFIG_H264QPEL 1
++%define CONFIG_HEVCPARSE 0
 +%define CONFIG_HPELDSP 1
 +%define CONFIG_HUFFMAN 0
 +%define CONFIG_HUFFYUVDSP 0
 +%define CONFIG_HUFFYUVENCDSP 0
 +%define CONFIG_IDCTDSP 0
 +%define CONFIG_IIRFILTER 0
-+%define CONFIG_IMDCT15 1
++%define CONFIG_MDCT15 1
 +%define CONFIG_INTRAX8 0
 +%define CONFIG_ISO_MEDIA 1
 +%define CONFIG_IVIDSP 0
@@ -606,6 +611,7 @@ $OpenBSD: patch-third_party_ffmpeg_chromium_config_Chrome_openbsd_x64_config_asm
 +%define CONFIG_MPEG_ER 0
 +%define CONFIG_MPEGAUDIO 1
 +%define CONFIG_MPEGAUDIODSP 1
++%define CONFIG_MPEGAUDIOHEADER 1
 +%define CONFIG_MPEGVIDEO 0
 +%define CONFIG_MPEGVIDEOENC 0
 +%define CONFIG_MSS34DSP 0
@@ -640,6 +646,7 @@ $OpenBSD: patch-third_party_ffmpeg_chromium_config_Chrome_openbsd_x64_config_asm
 +%define CONFIG_CHOMP_BSF 0
 +%define CONFIG_DUMP_EXTRADATA_BSF 0
 +%define CONFIG_DCA_CORE_BSF 0
++%define CONFIG_EXTRACT_EXTRADATA_BSF 0
 +%define CONFIG_H264_MP4TOANNEXB_BSF 0
 +%define CONFIG_HEVC_MP4TOANNEXB_BSF 0
 +%define CONFIG_IMX_DUMP_HEADER_BSF 0
@@ -649,9 +656,11 @@ $OpenBSD: patch-third_party_ffmpeg_chromium_config_Chrome_openbsd_x64_config_asm
 +%define CONFIG_MPEG4_UNPACK_BFRAMES_BSF 0
 +%define CONFIG_MOV2TEXTSUB_BSF 0
 +%define CONFIG_NOISE_BSF 0
++%define CONFIG_NULL_BSF 1
 +%define CONFIG_REMOVE_EXTRADATA_BSF 0
 +%define CONFIG_TEXT2MOVSUB_BSF 0
 +%define CONFIG_VP9_SUPERFRAME_BSF 0
++%define CONFIG_VP9_SUPERFRAME_SPLIT_BSF 0
 +%define CONFIG_AASC_DECODER 0
 +%define CONFIG_AIC_DECODER 0
 +%define CONFIG_ALIAS_PIX_DECODER 0
@@ -680,6 +689,7 @@ $OpenBSD: patch-third_party_ffmpeg_chromium_config_Chrome_openbsd_x64_config_asm
 +%define CONFIG_CDXL_DECODER 0
 +%define CONFIG_CFHD_DECODER 0
 +%define CONFIG_CINEPAK_DECODER 0
++%define CONFIG_CLEARVIDEO_DECODER 0
 +%define CONFIG_CLJR_DECODER 0
 +%define CONFIG_CLLC_DECODER 0
 +%define CONFIG_COMFORTNOISE_DECODER 0
@@ -715,6 +725,7 @@ $OpenBSD: patch-third_party_ffmpeg_chromium_config_Chrome_openbsd_x64_config_asm
 +%define CONFIG_FLASHSV2_DECODER 0
 +%define CONFIG_FLIC_DECODER 0
 +%define CONFIG_FLV_DECODER 0
++%define CONFIG_FMVC_DECODER 0
 +%define CONFIG_FOURXM_DECODER 0
 +%define CONFIG_FRAPS_DECODER 0
 +%define CONFIG_FRWU_DECODER 0
@@ -774,6 +785,7 @@ $OpenBSD: patch-third_party_ffmpeg_chromium_config_Chrome_openbsd_x64_config_asm
 +%define CONFIG_MPEG2_CRYSTALHD_DECODER 0
 +%define CONFIG_MPEG2_QSV_DECODER 0
 +%define CONFIG_MSA1_DECODER 0
++%define CONFIG_MSCC_DECODER 0
 +%define CONFIG_MSMPEG4V1_DECODER 0
 +%define CONFIG_MSMPEG4V2_DECODER 0
 +%define CONFIG_MSMPEG4V3_DECODER 0
@@ -818,6 +830,7 @@ $OpenBSD: patch-third_party_ffmpeg_chromium_config_Chrome_openbsd_x64_config_asm
 +%define CONFIG_RV40_DECODER 0
 +%define CONFIG_S302M_DECODER 0
 +%define CONFIG_SANM_DECODER 0
++%define CONFIG_SCPR_DECODER 0
 +%define CONFIG_SCREENPRESSO_DECODER 0
 +%define CONFIG_SDX2_DPCM_DECODER 0
 +%define CONFIG_SGI_DECODER 0
@@ -829,6 +842,7 @@ $OpenBSD: patch-third_party_ffmpeg_chromium_config_Chrome_openbsd_x64_config_asm
 +%define CONFIG_SNOW_DECODER 0
 +%define CONFIG_SP5X_DECODER 0
 +%define CONFIG_SPEEDHQ_DECODER 0
++%define CONFIG_SRGC_DECODER 0
 +%define CONFIG_SUNRAST_DECODER 0
 +%define CONFIG_SVQ1_DECODER 0
 +%define CONFIG_SVQ3_DECODER 0
@@ -873,6 +887,7 @@ $OpenBSD: patch-third_party_ffmpeg_chromium_config_Chrome_openbsd_x64_config_asm
 +%define CONFIG_VP8_DECODER 1
 +%define CONFIG_VP9_DECODER 0
 +%define CONFIG_VQA_DECODER 0
++%define CONFIG_BITPACKED_DECODER 0
 +%define CONFIG_WEBP_DECODER 0
 +%define CONFIG_WMV1_DECODER 0
 +%define CONFIG_WMV2_DECODER 0
@@ -886,6 +901,7 @@ $OpenBSD: patch-third_party_ffmpeg_chromium_config_Chrome_openbsd_x64_config_asm
 +%define CONFIG_XBM_DECODER 0
 +%define CONFIG_XFACE_DECODER 0
 +%define CONFIG_XL_DECODER 0
++%define CONFIG_XPM_DECODER 0
 +%define CONFIG_XWD_DECODER 0
 +%define CONFIG_Y41P_DECODER 0
 +%define CONFIG_YLC_DECODER 0
@@ -907,7 +923,9 @@ $OpenBSD: patch-third_party_ffmpeg_chromium_config_Chrome_openbsd_x64_config_asm
 +%define CONFIG_APE_DECODER 0
 +%define CONFIG_ATRAC1_DECODER 0
 +%define CONFIG_ATRAC3_DECODER 0
++%define CONFIG_ATRAC3AL_DECODER 0
 +%define CONFIG_ATRAC3P_DECODER 0
++%define CONFIG_ATRAC3PAL_DECODER 0
 +%define CONFIG_BINKAUDIO_DCT_DECODER 0
 +%define CONFIG_BINKAUDIO_RDFT_DECODER 0
 +%define CONFIG_BMV_AUDIO_DECODER 0
@@ -1123,6 +1141,7 @@ $OpenBSD: patch-third_party_ffmpeg_chromium_config_Chrome_openbsd_x64_config_asm
 +%define CONFIG_VC1_CUVID_DECODER 0
 +%define CONFIG_VP8_CUVID_DECODER 0
 +%define CONFIG_VP8_MEDIACODEC_DECODER 0
++%define CONFIG_VP8_QSV_DECODER 0
 +%define CONFIG_VP9_CUVID_DECODER 0
 +%define CONFIG_VP9_MEDIACODEC_DECODER 0
 +%define CONFIG_AA_DEMUXER 0
@@ -1312,9 +1331,11 @@ $OpenBSD: patch-third_party_ffmpeg_chromium_config_Chrome_openbsd_x64_config_asm
 +%define CONFIG_SAMI_DEMUXER 0
 +%define CONFIG_SAP_DEMUXER 0
 +%define CONFIG_SBG_DEMUXER 0
++%define CONFIG_SCC_DEMUXER 0
 +%define CONFIG_SDP_DEMUXER 0
 +%define CONFIG_SDR2_DEMUXER 0
 +%define CONFIG_SDS_DEMUXER 0
++%define CONFIG_SDX_DEMUXER 0
 +%define CONFIG_SEGAFILM_DEMUXER 0
 +%define CONFIG_SHORTEN_DEMUXER 0
 +%define CONFIG_SIFF_DEMUXER 0
@@ -1394,6 +1415,7 @@ $OpenBSD: patch-third_party_ffmpeg_chromium_config_Chrome_openbsd_x64_config_asm
 +%define CONFIG_IMAGE_SUNRAST_PIPE_DEMUXER 0
 +%define CONFIG_IMAGE_TIFF_PIPE_DEMUXER 0
 +%define CONFIG_IMAGE_WEBP_PIPE_DEMUXER 0
++%define CONFIG_IMAGE_XPM_PIPE_DEMUXER 0
 +%define CONFIG_LIBGME_DEMUXER 0
 +%define CONFIG_LIBMODPLUG_DEMUXER 0
 +%define CONFIG_LIBNUT_DEMUXER 0
@@ -1488,6 +1510,7 @@ $OpenBSD: patch-third_party_ffmpeg_chromium_config_Chrome_openbsd_x64_config_asm
 +%define CONFIG_MP2_ENCODER 0
 +%define CONFIG_MP2FIXED_ENCODER 0
 +%define CONFIG_NELLYMOSER_ENCODER 0
++%define CONFIG_OPUS_ENCODER 0
 +%define CONFIG_RA_144_ENCODER 0
 +%define CONFIG_SONIC_ENCODER 0
 +%define CONFIG_SONIC_LS_ENCODER 0
@@ -1590,6 +1613,8 @@ $OpenBSD: patch-third_party_ffmpeg_chromium_config_Chrome_openbsd_x64_config_asm
 +%define CONFIG_LIBKVAZAAR_ENCODER 0
 +%define CONFIG_MJPEG_VAAPI_ENCODER 0
 +%define CONFIG_MPEG2_QSV_ENCODER 0
++%define CONFIG_MPEG2_VAAPI_ENCODER 0
++%define CONFIG_VP8_VAAPI_ENCODER 0
 +%define CONFIG_ABENCH_FILTER 0
 +%define CONFIG_ACOMPRESSOR_FILTER 0
 +%define CONFIG_ACROSSFADE_FILTER 0
@@ -1629,7 +1654,6 @@ $OpenBSD: patch-third_party_ffmpeg_chromium_config_Chrome_openbsd_x64_config_asm
 +%define CONFIG_ASPLIT_FILTER 0
 +%define CONFIG_ASTATS_FILTER 0
 +%define CONFIG_ASTREAMSELECT_FILTER 0
-+%define CONFIG_ASYNCTS_FILTER 0
 +%define CONFIG_ATEMPO_FILTER 0
 +%define CONFIG_ATRIM_FILTER 0
 +%define CONFIG_AZMQ_FILTER 0
@@ -1714,12 +1738,16 @@ $OpenBSD: patch-third_party_ffmpeg_chromium_config_Chrome_openbsd_x64_config_asm
 +%define CONFIG_DEBAND_FILTER 0
 +%define CONFIG_DECIMATE_FILTER 0
 +%define CONFIG_DEFLATE_FILTER 0
++%define CONFIG_DEFLICKER_FILTER 0
++%define CONFIG_DEINTERLACE_QSV_FILTER 0
++%define CONFIG_DEINTERLACE_VAAPI_FILTER 0
 +%define CONFIG_DEJUDDER_FILTER 0
 +%define CONFIG_DELOGO_FILTER 0
 +%define CONFIG_DESHAKE_FILTER 0
 +%define CONFIG_DETELECINE_FILTER 0
 +%define CONFIG_DILATION_FILTER 0
 +%define CONFIG_DISPLACE_FILTER 0
++%define CONFIG_DOUBLEWEAVE_FILTER 0
 +%define CONFIG_DRAWBOX_FILTER 0
 +%define CONFIG_DRAWGRAPH_FILTER 0
 +%define CONFIG_DRAWGRID_FILTER 0
@@ -1755,6 +1783,7 @@ $OpenBSD: patch-third_party_ffmpeg_chromium_config_Chrome_openbsd_x64_config_asm
 +%define CONFIG_HSTACK_FILTER 0
 +%define CONFIG_HUE_FILTER 0
 +%define CONFIG_HWDOWNLOAD_FILTER 0
++%define CONFIG_HWMAP_FILTER 0
 +%define CONFIG_HWUPLOAD_FILTER 0
 +%define CONFIG_HWUPLOAD_CUDA_FILTER 0
 +%define CONFIG_HYSTERESIS_FILTER 0
@@ -1766,6 +1795,7 @@ $OpenBSD: patch-third_party_ffmpeg_chromium_config_Chrome_openbsd_x64_config_asm
 +%define CONFIG_KERNDEINT_FILTER 0
 +%define CONFIG_LENSCORRECTION_FILTER 0
 +%define CONFIG_LOOP_FILTER 0
++%define CONFIG_LUMAKEY_FILTER 0
 +%define CONFIG_LUT_FILTER 0
 +%define CONFIG_LUT2_FILTER 0
 +%define CONFIG_LUT3D_FILTER 0
@@ -1777,6 +1807,7 @@ $OpenBSD: patch-third_party_ffmpeg_chromium_config_Chrome_openbsd_x64_config_asm
 +%define CONFIG_MERGEPLANES_FILTER 0
 +%define CONFIG_MESTIMATE_FILTER 0
 +%define CONFIG_METADATA_FILTER 0
++%define CONFIG_MIDEQUALIZER_FILTER 0
 +%define CONFIG_MINTERPOLATE_FILTER 0
 +%define CONFIG_MPDECIMATE_FILTER 0
 +%define CONFIG_NEGATE_FILTER 0
@@ -1787,6 +1818,7 @@ $OpenBSD: patch-third_party_ffmpeg_chromium_config_Chrome_openbsd_x64_config_asm
 +%define CONFIG_NULL_FILTER 0
 +%define CONFIG_OCR_FILTER 0
 +%define CONFIG_OCV_FILTER 0
++%define CONFIG_OSCILLOSCOPE_FILTER 0
 +%define CONFIG_OVERLAY_FILTER 0
 +%define CONFIG_OWDENOISE_FILTER 0
 +%define CONFIG_PAD_FILTER 0
@@ -1796,6 +1828,7 @@ $OpenBSD: patch-third_party_ffmpeg_chromium_config_Chrome_openbsd_x64_config_asm
 +%define CONFIG_PERSPECTIVE_FILTER 0
 +%define CONFIG_PHASE_FILTER 0
 +%define CONFIG_PIXDESCTEST_FILTER 0
++%define CONFIG_PIXSCOPE_FILTER 0
 +%define CONFIG_PP_FILTER 0
 +%define CONFIG_PP7_FILTER 0
 +%define CONFIG_PREMULTIPLY_FILTER 0
@@ -1816,6 +1849,7 @@ $OpenBSD: patch-third_party_ffmpeg_chromium_config_Chrome_openbsd_x64_config_asm
 +%define CONFIG_SAB_FILTER 0
 +%define CONFIG_SCALE_FILTER 0
 +%define CONFIG_SCALE_NPP_FILTER 0
++%define CONFIG_SCALE_QSV_FILTER 0
 +%define CONFIG_SCALE_VAAPI_FILTER 0
 +%define CONFIG_SCALE2REF_FILTER 0
 +%define CONFIG_SELECT_FILTER 0
@@ -1833,6 +1867,7 @@ $OpenBSD: patch-third_party_ffmpeg_chromium_config_Chrome_openbsd_x64_config_asm
 +%define CONFIG_SHUFFLEPLANES_FILTER 0
 +%define CONFIG_SIDEDATA_FILTER 0
 +%define CONFIG_SIGNALSTATS_FILTER 0
++%define CONFIG_SIGNATURE_FILTER 0
 +%define CONFIG_SMARTBLUR_FILTER 0
 +%define CONFIG_SOBEL_FILTER 0
 +%define CONFIG_SPLIT_FILTER 0
@@ -1846,6 +1881,7 @@ $OpenBSD: patch-third_party_ffmpeg_chromium_config_Chrome_openbsd_x64_config_asm
 +%define CONFIG_SWAPUV_FILTER 0
 +%define CONFIG_TBLEND_FILTER 0
 +%define CONFIG_TELECINE_FILTER 0
++%define CONFIG_THRESHOLD_FILTER 0
 +%define CONFIG_THUMBNAIL_FILTER 0
 +%define CONFIG_TILE_FILTER 0
 +%define CONFIG_TINTERLACE_FILTER 0
@@ -1886,6 +1922,7 @@ $OpenBSD: patch-third_party_ffmpeg_chromium_config_Chrome_openbsd_x64_config_asm
 +%define CONFIG_TESTSRC2_FILTER 0
 +%define CONFIG_YUVTESTSRC_FILTER 0
 +%define CONFIG_NULLSINK_FILTER 0
++%define CONFIG_ABITSCOPE_FILTER 0
 +%define CONFIG_ADRAWGRAPH_FILTER 0
 +%define CONFIG_AHISTOGRAM_FILTER 0
 +%define CONFIG_APHASEMETER_FILTER 0
@@ -1950,6 +1987,7 @@ $OpenBSD: patch-third_party_ffmpeg_chromium_config_Chrome_openbsd_x64_config_asm
 +%define CONFIG_VC1_QSV_HWACCEL 0
 +%define CONFIG_VP8_CUVID_HWACCEL 0
 +%define CONFIG_VP8_MEDIACODEC_HWACCEL 0
++%define CONFIG_VP8_QSV_HWACCEL 0
 +%define CONFIG_VP9_CUVID_HWACCEL 0
 +%define CONFIG_VP9_D3D11VA_HWACCEL 0
 +%define CONFIG_VP9_DXVA2_HWACCEL 0
@@ -1977,8 +2015,7 @@ $OpenBSD: patch-third_party_ffmpeg_chromium_config_Chrome_openbsd_x64_config_asm
 +%define CONFIG_SNDIO_INDEV 0
 +%define CONFIG_V4L2_INDEV 0
 +%define CONFIG_VFWCAP_INDEV 0
-+%define CONFIG_X11GRAB_INDEV 0
-+%define CONFIG_X11GRAB_XCB_INDEV 0
++%define CONFIG_XCBGRAB_INDEV 0
 +%define CONFIG_LIBCDIO_INDEV 0
 +%define CONFIG_LIBDC1394_INDEV 0
 +%define CONFIG_A64_MUXER 0
@@ -2100,6 +2137,7 @@ $OpenBSD: patch-third_party_ffmpeg_chromium_config_Chrome_openbsd_x64_config_asm
 +%define CONFIG_RTP_MPEGTS_MUXER 0
 +%define CONFIG_RTSP_MUXER 0
 +%define CONFIG_SAP_MUXER 0
++%define CONFIG_SCC_MUXER 0
 +%define CONFIG_SEGMENT_MUXER 0
 +%define CONFIG_STREAM_SEGMENT_MUXER 0
 +%define CONFIG_SINGLEJPEG_MUXER 0

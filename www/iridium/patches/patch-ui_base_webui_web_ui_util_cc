@@ -1,7 +1,8 @@
-$OpenBSD: patch-ui_base_webui_web_ui_util_cc,v 1.8 2017/04/19 05:16:47 robert Exp $
---- ui/base/webui/web_ui_util.cc.orig.port	Fri Dec  2 00:02:37 2016
-+++ ui/base/webui/web_ui_util.cc	Fri Dec  2 17:44:57 2016
-@@ -161,7 +161,7 @@ std::string GetFontFamily() {
+$OpenBSD: patch-ui_base_webui_web_ui_util_cc,v 1.9 2017/10/28 07:36:01 robert Exp $
+Index: ui/base/webui/web_ui_util.cc
+--- ui/base/webui/web_ui_util.cc.orig
++++ ui/base/webui/web_ui_util.cc
+@@ -217,7 +217,7 @@ std::string GetFontFamily() {
  
  // TODO(dnicoara) Remove Ozone check when PlatformFont support is introduced
  // into Ozone: crbug.com/320050

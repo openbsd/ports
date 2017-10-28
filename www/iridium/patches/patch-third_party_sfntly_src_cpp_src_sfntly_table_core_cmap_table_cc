@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_sfntly_src_cpp_src_sfntly_table_core_cmap_table_cc,v 1.1 2017/07/23 19:03:33 robert Exp $
+$OpenBSD: patch-third_party_sfntly_src_cpp_src_sfntly_table_core_cmap_table_cc,v 1.2 2017/10/28 07:36:01 robert Exp $
 
 Index: third_party/sfntly/src/cpp/src/sfntly/table/core/cmap_table.cc
 --- third_party/sfntly/src/cpp/src/sfntly/table/core/cmap_table.cc.orig
@@ -32,7 +32,7 @@ Index: third_party/sfntly/src/cpp/src/sfntly/table/core/cmap_table.cc
  }
 @@ -958,7 +958,7 @@ CMapTable::CMapFormat4::Builder::Builder(WritableFontD
  CMapTable::CMapFormat4::Builder::Builder(SegmentList* segments,
-                                          IntegerList* glyph_id_array,
+                                          std::vector<int32_t>* glyph_id_array,
                                           const CMapId& cmap_id)
 -    : CMap::Builder(reinterpret_cast<ReadableFontData*>(NULL),
 +    : CMap::Builder(static_cast<ReadableFontData*>(nullptr),

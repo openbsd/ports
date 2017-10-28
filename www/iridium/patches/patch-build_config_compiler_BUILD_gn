@@ -1,7 +1,9 @@
-$OpenBSD: patch-build_config_compiler_BUILD_gn,v 1.3 2017/04/28 22:22:36 robert Exp $
---- build/config/compiler/BUILD.gn.orig.port	Thu Apr 27 19:58:01 2017
-+++ build/config/compiler/BUILD.gn	Thu Apr 27 22:56:36 2017
-@@ -36,7 +36,7 @@ declare_args() {
+$OpenBSD: patch-build_config_compiler_BUILD_gn,v 1.4 2017/10/28 07:36:00 robert Exp $
+
+Index: build/config/compiler/BUILD.gn
+--- build/config/compiler/BUILD.gn.orig
++++ build/config/compiler/BUILD.gn
+@@ -46,7 +46,7 @@ declare_args() {
    # only two architectures that are currently checked in). Turn this off when
    # you are using a custom toolchain and need to control -B in cflags.
    linux_use_bundled_binutils =
@@ -10,26 +12,43 @@ $OpenBSD: patch-build_config_compiler_BUILD_gn,v 1.3 2017/04/28 22:22:36 robert 
        (current_cpu == "x64" || current_cpu == "x86")
    binutils_path = rebase_path("//third_party/binutils/Linux_x64/Release/bin",
                                root_build_dir)
-@@ -214,7 +214,7 @@ config("compiler") {
- 
+@@ -222,7 +222,7 @@ config("compiler") {
      # Linker warnings.
      if (fatal_linker_warnings && !(is_chromeos && current_cpu == "arm") &&
--        !(is_android && use_order_profiling) && !is_mac && !is_ios) {
-+        !(is_android && use_order_profiling) && !is_mac && !is_ios && !is_openbsd) {
+         !(is_android && use_order_profiling) && !is_mac && !is_ios &&
+-        current_os != "aix") {
++        current_os != "aix" && !is_openbsd) {
        # TODO(jochen): Enable this on chromeos on arm. http://crbug.com/356580
        # TODO(lizeb,pasko): Fix link errors when linking with order_profiling=1
        # crbug.com/485542
-@@ -314,7 +314,7 @@ config("compiler") {
+@@ -285,7 +285,7 @@ config("compiler") {
+       }
+     }
+ 
+-    if (is_official_build) {
++    if (is_official_build && !is_openbsd) {
+       # Explicitly pass --build-id to ld. Compilers used to always pass this
+       # implicitly but don't any more (in particular clang when built without
+       # ENABLE_LINKER_BUILD_ID=ON). The crash infrastructure does need a build
+@@ -334,8 +334,6 @@ config("compiler") {
        "-Wl,-z,relro",
      ]
      if (!using_sanitizer) {
--      if (!use_cfi_diag) {
-+      if (!use_cfi_diag && !is_openbsd) {
-         ldflags += [ "-Wl,-z,defs" ]
-       }
- 
-@@ -1104,7 +1104,7 @@ config("default_warnings") {
-         "-Wno-block-capture-autoreleasing",
+-      ldflags += [ "-Wl,-z,defs" ]
+-
+       # Functions interposed by the sanitizers can make ld think
+       # that some libraries aren't needed when they actually are,
+       # http://crbug.com/234010. As workaround, disable --as-needed.
+@@ -453,7 +451,6 @@ config("compiler") {
+     # TODO(thakis): Eventually switch this to c++11 instead,
+     # http://crbug.com/427584
+     cflags_cc += [ "-std=gnu++11" ]
+-    cflags_cc += [ "-fno-delete-null-pointer-checks" ]
+   } else if (!is_win && !is_nacl) {
+     # TODO(mcgrathr) - the NaCl GCC toolchain doesn't support either gnu++11
+     # or c++11; we technically don't need this toolchain any more, but there
+@@ -1165,7 +1162,7 @@ config("default_warnings") {
+         "-Wno-address-of-packed-member",
  
          # TODO(hans): https://crbug.com/681136
 -        "-Wno-unused-lambda-capture",
@@ -37,12 +56,12 @@ $OpenBSD: patch-build_config_compiler_BUILD_gn,v 1.3 2017/04/28 22:22:36 robert 
  
          # TODO(thakis ): https://crbug.com/683349
          "-Wno-user-defined-warnings",
-@@ -1647,7 +1647,7 @@ config("symbols") {
-         "-g2",
-       ]
-     } else {
--      cflags = [ "-g2" ]
-+      cflags = [ "-g0" ]
+@@ -1735,7 +1732,7 @@ config("symbols") {
+         # "-gdwarf-3" doesn't work with dump_syms in Chrome OS.
+         cflags += [ "-gdwarf-3" ]
+       }
+-      cflags += [ "-g2" ]
++      cflags += [ "-g0" ]
      }
      if (use_debug_fission) {
        cflags += [ "-gsplit-dwarf" ]

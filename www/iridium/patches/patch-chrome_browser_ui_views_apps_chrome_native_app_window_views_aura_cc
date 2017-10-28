@@ -1,6 +1,8 @@
-$OpenBSD: patch-chrome_browser_ui_views_apps_chrome_native_app_window_views_aura_cc,v 1.8 2017/04/19 05:16:47 robert Exp $
---- chrome/browser/ui/views/apps/chrome_native_app_window_views_aura.cc.orig.port	Thu Mar  9 21:04:29 2017
-+++ chrome/browser/ui/views/apps/chrome_native_app_window_views_aura.cc	Fri Mar 10 07:46:20 2017
+$OpenBSD: patch-chrome_browser_ui_views_apps_chrome_native_app_window_views_aura_cc,v 1.9 2017/10/28 07:36:00 robert Exp $
+
+Index: chrome/browser/ui/views/apps/chrome_native_app_window_views_aura.cc
+--- chrome/browser/ui/views/apps/chrome_native_app_window_views_aura.cc.orig
++++ chrome/browser/ui/views/apps/chrome_native_app_window_views_aura.cc
 @@ -19,7 +19,7 @@
  #include "ui/gfx/image/image_skia.h"
  #include "ui/views/widget/widget.h"
@@ -10,12 +12,3 @@ $OpenBSD: patch-chrome_browser_ui_views_apps_chrome_native_app_window_views_aura
  #include "chrome/browser/shell_integration_linux.h"
  #endif
  
-@@ -58,7 +58,7 @@ void ChromeNativeAppWindowViewsAura::OnBeforeWidgetIni
-     const AppWindow::CreateParams& create_params,
-     views::Widget::InitParams* init_params,
-     views::Widget* widget) {
--#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
-   std::string app_name = web_app::GenerateApplicationNameFromExtensionId(
-       app_window()->extension_id());
-   // Set up a custom WM_CLASS for app windows. This allows task switchers in

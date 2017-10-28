@@ -1,30 +1,32 @@
-$OpenBSD: patch-third_party_WebKit_Source_platform_fonts_FontPlatformData_h,v 1.2 2017/04/19 05:16:47 robert Exp $
---- third_party/WebKit/Source/platform/fonts/FontPlatformData.h.orig.port	Thu Mar  9 21:04:45 2017
-+++ third_party/WebKit/Source/platform/fonts/FontPlatformData.h	Fri Mar 10 07:46:25 2017
-@@ -47,7 +47,7 @@
- #include "wtf/text/CString.h"
- #include "wtf/text/StringImpl.h"
+$OpenBSD: patch-third_party_WebKit_Source_platform_fonts_FontPlatformData_h,v 1.3 2017/10/28 07:36:01 robert Exp $
+
+Index: third_party/WebKit/Source/platform/fonts/FontPlatformData.h
+--- third_party/WebKit/Source/platform/fonts/FontPlatformData.h.orig
++++ third_party/WebKit/Source/platform/fonts/FontPlatformData.h
+@@ -48,7 +48,7 @@
+ #include "platform/wtf/text/StringImpl.h"
+ #include "third_party/skia/include/core/SkRefCnt.h"
  
--#if OS(LINUX) || OS(ANDROID)
-+#if OS(LINUX) || OS(ANDROID) || OS(OPENBSD)
+-#if defined(OS_LINUX) || defined(OS_ANDROID)
++#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
  #include "platform/fonts/linux/FontRenderStyle.h"
- #endif  // OS(LINUX) || OS(ANDROID)
+ #endif  // defined(OS_LINUX) || defined(OS_ANDROID)
  
-@@ -151,7 +151,7 @@ class PLATFORM_EXPORT FontPlatformData {
-   PassRefPtr<OpenTypeVerticalData> verticalData() const;
-   PassRefPtr<SharedBuffer> openTypeTable(SkFontTableTag) const;
+@@ -152,7 +152,7 @@ class PLATFORM_EXPORT FontPlatformData {
+   PassRefPtr<OpenTypeVerticalData> VerticalData() const;
+   Vector<char> OpenTypeTable(SkFontTableTag) const;
  
--#if OS(LINUX) || OS(ANDROID)
-+#if OS(LINUX) || OS(ANDROID) || OS(OPENBSD)
+-#if defined(OS_LINUX) || defined(OS_ANDROID)
++#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
    // The returned styles are all actual styles without
    // FontRenderStyle::NoPreference.
-   const FontRenderStyle& getFontRenderStyle() const { return m_style; }
-@@ -179,7 +179,7 @@ class PLATFORM_EXPORT FontPlatformData {
-   FontOrientation m_orientation;
+   const FontRenderStyle& GetFontRenderStyle() const { return style_; }
+@@ -182,7 +182,7 @@ class PLATFORM_EXPORT FontPlatformData {
+   FontOrientation orientation_;
  
   private:
--#if OS(LINUX) || OS(ANDROID)
-+#if OS(LINUX) || OS(ANDROID) || OS(OPENBSD)
-   FontRenderStyle m_style;
+-#if defined(OS_LINUX) || defined(OS_ANDROID)
++#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
+   FontRenderStyle style_;
  #endif
  

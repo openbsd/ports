@@ -1,4 +1,4 @@
-$OpenBSD: patch-net_base_network_interfaces_openbsd_cc,v 1.1 2017/04/19 05:16:47 robert Exp $
+$OpenBSD: patch-net_base_network_interfaces_openbsd_cc,v 1.2 2017/10/28 07:36:01 robert Exp $
 --- net/base/network_interfaces_openbsd.cc.orig.port	Sun Mar 12 11:09:55 2017
 +++ net/base/network_interfaces_openbsd.cc	Sun Mar 12 18:33:23 2017
 @@ -0,0 +1,239 @@

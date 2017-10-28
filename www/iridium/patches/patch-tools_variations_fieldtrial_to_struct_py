@@ -1,4 +1,4 @@
-$OpenBSD: patch-tools_variations_fieldtrial_to_struct_py,v 1.1 2017/04/19 05:16:47 robert Exp $
+$OpenBSD: patch-tools_variations_fieldtrial_to_struct_py,v 1.2 2017/10/28 07:36:01 robert Exp $
 --- tools/variations/fieldtrial_to_struct.py.orig.port	Thu Dec 15 00:02:29 2016
 +++ tools/variations/fieldtrial_to_struct.py	Tue Jan  3 20:30:02 2017
 @@ -116,7 +116,7 @@ def main(arguments):

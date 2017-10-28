@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_debug_thread_heap_usage_tracker_cc,v 1.2 2017/04/28 22:22:36 robert Exp $
+$OpenBSD: patch-base_debug_thread_heap_usage_tracker_cc,v 1.3 2017/10/28 07:36:00 robert Exp $
 --- base/debug/thread_heap_usage_tracker.cc.orig.port	Wed Apr 19 21:06:28 2017
 +++ base/debug/thread_heap_usage_tracker.cc	Thu Apr 27 19:55:58 2017
 @@ -16,10 +16,12 @@

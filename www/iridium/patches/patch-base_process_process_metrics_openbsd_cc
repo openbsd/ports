@@ -1,6 +1,7 @@
-$OpenBSD: patch-base_process_process_metrics_openbsd_cc,v 1.5 2017/04/19 05:16:46 robert Exp $
---- base/process/process_metrics_openbsd.cc.orig.port	Wed Oct 12 21:02:53 2016
-+++ base/process/process_metrics_openbsd.cc	Wed Oct 19 12:55:56 2016
+$OpenBSD: patch-base_process_process_metrics_openbsd_cc,v 1.6 2017/10/28 07:36:00 robert Exp $
+Index: base/process/process_metrics_openbsd.cc
+--- base/process/process_metrics_openbsd.cc.orig
++++ base/process/process_metrics_openbsd.cc
 @@ -4,10 +4,21 @@
  
  #include "base/process/process_metrics.h"
@@ -130,3 +131,71 @@ $OpenBSD: patch-base_process_process_metrics_openbsd_cc,v 1.5 2017/04/19 05:16:4
  
    if (time_delta == 0)
      return 0;
+@@ -163,4 +195,67 @@ size_t GetSystemCommitCharge() {
+   return mem_total - (mem_free*pagesize) - (mem_inactive*pagesize);
+ }
+ 
++int ProcessMetrics::GetOpenFdCount() const {        
++  struct kinfo_proc *info;
++  size_t length;
++  int total_count = 0;
++
++  int mib[] = { CTL_KERN, KERN_PROC, KERN_PROC_PID, process_,                                            
++                sizeof(struct kinfo_proc), 0 };
++
++  if (sysctl(mib, arraysize(mib), NULL, &length, NULL, 0) < 0)                                           
++    return -1;
++
++  info = (struct kinfo_proc *)malloc(length);
++
++  mib[5] = (length / sizeof(struct kinfo_proc));    
++
++  if (sysctl(mib, arraysize(mib), info, &length, NULL, 0) < 0) {                                         
++    total_count = -1;
++    goto out;
++  }                                                 
++  //total_count = info->p_fd->fd_openfd;
++  total_count = info->p_fd;
++
++out:
++  free(info);
++  return total_count;
++}                                                   
++
++int ProcessMetrics::GetOpenFdSoftLimit() const {    
++  struct kinfo_proc *info;                          
++  size_t length;                                    
++  int total_count = 0;                              
++
++  int mib[] = { CTL_KERN, KERN_PROC, KERN_PROC_PID, process_,                                            
++                sizeof(struct kinfo_proc), 0 };     
++
++  if (sysctl(mib, arraysize(mib), NULL, &length, NULL, 0) < 0)                                           
++    return -1;                                      
++
++  info = (struct kinfo_proc *)malloc(length);       
++
++  mib[5] = (length / sizeof(struct kinfo_proc));    
++
++  if (sysctl(mib, arraysize(mib), info, &length, NULL, 0) < 0) {                                         
++    total_count = -1;                               
++    goto out;                                       
++  }                                                 
++  //total_count = info->p_fd->fd_openfd;            
++  total_count = info->p_limit;
++
++out:                                                
++  free(info);                                       
++  return total_count;                               
++}
++
++uint64_t ProcessMetrics::GetVmSwapBytes() const {
++  NOTIMPLEMENTED();
++  return 0;
++}
++
++bool GetSystemMemoryInfo(SystemMemoryInfoKB* meminfo) {
++  NOTIMPLEMENTED();
++  return false;
++}
+ }  // namespace base

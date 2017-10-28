@@ -1,7 +1,8 @@
-$OpenBSD: patch-ui_message_center_views_message_center_button_bar_cc,v 1.7 2017/04/28 22:22:36 robert Exp $
---- ui/message_center/views/message_center_button_bar.cc.orig.port	Wed Apr 19 21:06:54 2017
-+++ ui/message_center/views/message_center_button_bar.cc	Thu Apr 27 19:56:06 2017
-@@ -95,7 +95,7 @@ MessageCenterButtonBar::MessageCenterButtonBar(
+$OpenBSD: patch-ui_message_center_views_message_center_button_bar_cc,v 1.8 2017/10/28 07:36:01 robert Exp $
+Index: ui/message_center/views/message_center_button_bar.cc
+--- ui/message_center/views/message_center_button_bar.cc.orig
++++ ui/message_center/views/message_center_button_bar.cc
+@@ -74,7 +74,7 @@ MessageCenterButtonBar::MessageCenterButtonBar(
      const base::string16& title)
      : message_center_view_(message_center_view),
        message_center_(message_center),
@@ -10,8 +11,8 @@ $OpenBSD: patch-ui_message_center_views_message_center_button_bar_cc,v 1.7 2017/
        close_bubble_button_(NULL),
  #endif
        title_arrow_(NULL),
-@@ -170,7 +170,7 @@ MessageCenterButtonBar::MessageCenterButtonBar(
-                                    IDS_MESSAGE_CENTER_SETTINGS_BUTTON_LABEL);
+@@ -139,7 +139,7 @@ MessageCenterButtonBar::MessageCenterButtonBar(
+       IDS_MESSAGE_CENTER_SETTINGS_BUTTON_LABEL);
    button_container_->AddChildView(settings_button_);
  
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
@@ -19,7 +20,7 @@ $OpenBSD: patch-ui_message_center_views_message_center_button_bar_cc,v 1.7 2017/
    close_bubble_button_ = new views::ImageButton(this);
    close_bubble_button_->SetImage(
        views::Button::STATE_NORMAL,
-@@ -232,7 +232,7 @@ void MessageCenterButtonBar::ViewVisibilityChanged() {
+@@ -201,7 +201,7 @@ void MessageCenterButtonBar::ViewVisibilityChanged() {
                      0,
                      0);
  
@@ -28,7 +29,7 @@ $OpenBSD: patch-ui_message_center_views_message_center_button_bar_cc,v 1.7 2017/
    // The close-bubble button.
    column->AddColumn(views::GridLayout::LEADING,
                      views::GridLayout::LEADING,
-@@ -247,7 +247,7 @@ void MessageCenterButtonBar::ViewVisibilityChanged() {
+@@ -221,7 +221,7 @@ void MessageCenterButtonBar::ViewVisibilityChanged() {
      layout->AddView(title_arrow_);
    layout->AddView(notification_label_);
    layout->AddView(button_container_);
@@ -36,8 +37,8 @@ $OpenBSD: patch-ui_message_center_views_message_center_button_bar_cc,v 1.7 2017/
 +#if (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS)
    layout->AddView(close_bubble_button_);
  #endif
- }
-@@ -316,7 +316,7 @@ void MessageCenterButtonBar::ButtonPressed(views::Butt
+   constexpr int kFooterBottomMargin = 3;
+@@ -292,7 +292,7 @@ void MessageCenterButtonBar::ButtonPressed(views::Butt
      else
        message_center()->EnterQuietModeWithExpire(base::TimeDelta::FromDays(1));
      quiet_mode_button_->SetToggled(message_center()->IsQuietMode());
