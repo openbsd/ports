@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2017/08/07 19:35:20 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.3 2017/10/28 15:44:40 landry Exp $
 
 COMMENT=		free unicode symbol font
 
-V=			9.17
-DISTNAME=		Symbola
-PKGNAME=		symbola-ttf-${V}
+DISTNAME=		symbola-ttf-10.03
 CATEGORIES=		fonts x11
 
 HOMEPAGE=		http://users.teilar.gr/~g1951d/
@@ -12,9 +10,7 @@ HOMEPAGE=		http://users.teilar.gr/~g1951d/
 # "free for any use"
 PERMIT_PACKAGE_CDROM =		Yes
 
-DISTFILES=		${V}-{}Symbola${EXTRACT_SUFX}
-
-MASTER_SITES=		${HOMEPAGE}
+MASTER_SITES=		https://distfiles.bsdfrog.org/
 
 EXTRACT_SUFX=		.zip
 PKG_ARCH=		*
