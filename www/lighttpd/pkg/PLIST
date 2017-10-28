@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2016/11/11 10:23:34 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.24 2017/10/28 17:04:37 ajacoutot Exp $
 @newgroup _lighttpd:585
 @newuser _lighttpd:585:_lighttpd:daemon:lighttpd Account:/nonexistent:/sbin/nologin
 lib/lighttpd/
@@ -20,6 +20,7 @@ lib/lighttpd/mod_fastcgi.so
 lib/lighttpd/mod_flv_streaming.so
 lib/lighttpd/mod_indexfile.so
 lib/lighttpd/mod_magnet.so
+lib/lighttpd/mod_openssl.so
 lib/lighttpd/mod_proxy.so
 lib/lighttpd/mod_redirect.so
 lib/lighttpd/mod_rewrite.so
@@ -34,7 +35,9 @@ lib/lighttpd/mod_status.so
 lib/lighttpd/mod_uploadprogress.so
 lib/lighttpd/mod_userdir.so
 lib/lighttpd/mod_usertrack.so
+lib/lighttpd/mod_vhostdb.so
 lib/lighttpd/mod_webdav.so
+lib/lighttpd/mod_wstunnel.so
 %%ldap%%
 %%mysql%%
 @man man/man8/lighttpd-angel.8
