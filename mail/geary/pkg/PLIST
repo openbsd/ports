@@ -1,12 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.16 2016/12/26 10:33:15 landry Exp $
+@comment $OpenBSD: PLIST,v 1.17 2017/10/28 21:27:02 landry Exp $
 @conflict postler-*
 @pkgpath mail/postler
 @bin bin/geary
 bin/geary-attach
+lib/geary/
+lib/geary/web-extensions/
+lib/geary/web-extensions/libgeary-web-process.so
 share/appdata/
-share/appdata/geary.appdata.xml
+share/appdata/org.gnome.Geary.appdata.xml
 share/applications/geary-autostart.desktop
-share/applications/geary.desktop
+share/applications/org.gnome.Geary.desktop
 share/contractor/
 share/contractor/geary-attach.contract
 share/geary/
@@ -36,10 +39,7 @@ share/geary/sql/version-022.sql
 share/geary/sql/version-023.sql
 share/geary/sql/version-024.sql
 share/geary/sql/version-025.sql
-share/geary/theming/
-share/geary/theming/message-viewer.css
-share/geary/theming/message-viewer.html
-share/glib-2.0/schemas/org.yorba.geary.gschema.xml
+share/glib-2.0/schemas/org.gnome.Geary.gschema.xml
 share/gnome/
 share/gnome/help/
 share/gnome/help/geary/
@@ -162,6 +162,19 @@ share/gnome/help/geary/pt_BR/search.page
 share/gnome/help/geary/pt_BR/shortcuts.page
 share/gnome/help/geary/pt_BR/star.page
 share/gnome/help/geary/pt_BR/write.page
+share/gnome/help/geary/sv/
+share/gnome/help/geary/sv/accounts.page
+share/gnome/help/geary/sv/archive.page
+share/gnome/help/geary/sv/bugs.page
+share/gnome/help/geary/sv/index.page
+share/gnome/help/geary/sv/label.page
+share/gnome/help/geary/sv/limits.page
+share/gnome/help/geary/sv/overview.page
+share/gnome/help/geary/sv/preferences.page
+share/gnome/help/geary/sv/search.page
+share/gnome/help/geary/sv/shortcuts.page
+share/gnome/help/geary/sv/star.page
+share/gnome/help/geary/sv/write.page
 share/icons/hicolor/16x16/apps/geary.png
 share/icons/hicolor/24x24/apps/geary.png
 share/icons/hicolor/256x256/apps/geary.png
@@ -173,22 +186,20 @@ share/icons/hicolor/scalable/actions/detach-symbolic.svg
 share/icons/hicolor/scalable/actions/edit-symbolic.svg
 share/icons/hicolor/scalable/actions/format-text-remove-symbolic.svg
 share/icons/hicolor/scalable/actions/mail-archive-symbolic.svg
-share/icons/hicolor/scalable/actions/mail-drafts-rtl-symbolic.svg
+share/icons/hicolor/scalable/actions/mail-drafts-symbolic-rtl.svg
 share/icons/hicolor/scalable/actions/mail-drafts-symbolic.svg
-share/icons/hicolor/scalable/actions/mail-forward-rtl-symbolic.svg
+share/icons/hicolor/scalable/actions/mail-forward-symbolic-rtl.svg
 share/icons/hicolor/scalable/actions/mail-forward-symbolic.svg
 share/icons/hicolor/scalable/actions/mail-inbox-symbolic.svg
 share/icons/hicolor/scalable/actions/mail-outbox-symbolic.svg
-share/icons/hicolor/scalable/actions/mail-reply-all-rtl-symbolic.svg
+share/icons/hicolor/scalable/actions/mail-reply-all-symbolic-rtl.svg
 share/icons/hicolor/scalable/actions/mail-reply-all-symbolic.svg
-share/icons/hicolor/scalable/actions/mail-reply-sender-rtl-symbolic.svg
+share/icons/hicolor/scalable/actions/mail-reply-sender-symbolic-rtl.svg
 share/icons/hicolor/scalable/actions/mail-reply-sender-symbolic.svg
-share/icons/hicolor/scalable/actions/mail-sent-rtl-symbolic.svg
+share/icons/hicolor/scalable/actions/mail-sent-symbolic-rtl.svg
 share/icons/hicolor/scalable/actions/mail-sent-symbolic.svg
-share/icons/hicolor/scalable/actions/mail-spam-rtl-symbolic.svg
-share/icons/hicolor/scalable/actions/mail-spam-symbolic.svg
 share/icons/hicolor/scalable/actions/marker-symbolic.svg
-share/icons/hicolor/scalable/actions/tag-rtl-symbolic.svg
+share/icons/hicolor/scalable/actions/tag-symbolic-rtl.svg
 share/icons/hicolor/scalable/actions/tag-symbolic.svg
 share/icons/hicolor/scalable/actions/text-x-generic-symbolic.svg
 share/icons/hicolor/symbolic/apps/geary-symbolic.svg
