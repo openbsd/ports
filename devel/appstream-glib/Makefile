@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.31 2017/10/24 03:03:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2017/10/28 13:28:06 ajacoutot Exp $
 
 COMMENT=		library for AppStream metadata
 
 DISTNAME=		appstream-glib-0.7.3
 EXTRACT_SUFX=		.tar.xz
+REVISION=		0
 
 SHARED_LIBS +=  appstream-glib       3.1
 SHARED_LIBS +=  appstream-builder    3.1
@@ -51,10 +52,7 @@ CONFIGURE_ARGS +=	-Denable-stemmer=false
 # needed for `make test'
 PORTHOME=		${WRKDIST}
 
-### XXX the meson MODULE should handle these
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/libappstream-{builder,glib}/meson.build
-
 	${SUBST_CMD} ${WRKSRC}/client/as-compose.c
 	cd ${WRKSRC} && sed -i "s,/usr/share,${LOCALBASE}/share,g" \
 		client/as-util.c \
@@ -68,9 +66,6 @@ pre-configure:
 		libappstream-builder/plugins/asb-plugin-gettext.c \
 		libappstream-builder/asb-utils.c \
 		libappstream-builder/asb-self-test.c
-
-post-install:
-	rm ${PREFIX}/lib/libappstream-{builder,glib}.so
 ###
 
 .include <bsd.port.mk>

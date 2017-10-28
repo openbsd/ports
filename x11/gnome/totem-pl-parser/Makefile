@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2017/10/28 08:39:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.77 2017/10/28 13:28:06 ajacoutot Exp $
 
 COMMENT=		GObject-based parsing library
 
@@ -27,12 +27,5 @@ LIB_DEPENDS=		archivers/libarchive \
 MODGNOME_TOOLS=		gobject-introspection
 
 TEST_DEPENDS=		${BASE_PKGPATH}=${GNOME_VERSION}
-
-### XXX the meson MODULE should handle these
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/{,plparse}/meson.build
-post-install:
-	rm ${PREFIX}/lib/libtotem-plparser{,-mini}.so
-###
 
 .include <bsd.port.mk>

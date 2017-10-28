@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2017/09/26 10:18:41 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.36 2017/10/28 13:28:06 ajacoutot Exp $
 
 COMMENT=		curses based frontend for mpd
 
@@ -6,6 +6,7 @@ VER=			0.28
 DISTNAME=		ncmpc-${VER}
 EPOCH=			0
 CATEGORIES=		audio
+REVISION=		0
 
 HOMEPAGE=		http://www.musicpd.org/clients/ncmpc/
 
