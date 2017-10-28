@@ -1,0 +1,14 @@
+OpenBSD$
+
+Index: egg/egg-secure-memory.c
+--- egg/egg-secure-memory.c.orig
++++ egg/egg-secure-memory.c
+@@ -874,7 +874,7 @@ sec_acquire_pages (size_t *sz,
+ 	}
+ 
+ 	if (mlock (pages, *sz) < 0) {
+-		if (show_warning && egg_secure_warnings && errno != EPERM) {
++		if (show_warning && egg_secure_warnings && errno != EPERM && errno != EAGAIN) {
+ 			fprintf (stderr, "couldn't lock %lu bytes of memory (%s): %s\n",
+ 			         (unsigned long)*sz, during_tag, strerror (errno));
+ 			show_warning = 0;
