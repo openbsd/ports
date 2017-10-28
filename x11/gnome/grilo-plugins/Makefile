@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2017/08/25 18:37:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.68 2017/10/28 08:39:42 ajacoutot Exp $
 
 # XXX: PORTROACH overriden at end of this file.
 
@@ -8,6 +8,7 @@ COMMENT=	plugins for Grilo
 
 GNOME_PROJECT=	grilo-plugins
 GNOME_VERSION=	0.3.5
+REVISION=	0
 
 API=		0.3
 SUBST_VARS=	API
@@ -17,15 +18,16 @@ CATEGORIES+=	multimedia
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += archive avahi-client avahi-common avahi-glib avahi-gobject
-WANTLIB += bz2 crypto curl dbus-1 expat ffi gck-1 gcr-base-3 gcrypt
-WANTLIB += gdata gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmime-2.6 gmodule-2.0
-WANTLIB += goa-1.0 gobject-2.0 gpg-error grilo-0.3 grlnet-0.3
-WANTLIB += grlpls-0.3 gthread-2.0 iconv icudata icui18n icuuc
-WANTLIB += intl json-glib-1.0 kvm lz4 lzma m mediaart-2.0
-WANTLIB += nghttp2 nspr4 nss3 oauth p11-kit pcre plc4 plds4 png
-WANTLIB += pthread smime3 softokn3 soup-2.4 sqlite3 ssl ssl3 totem-plparser
-WANTLIB += uuid xml2 z assuan gpgme-pthread
+WANTLIB += archive assuan avahi-client avahi-common avahi-glib
+WANTLIB += avahi-gobject bz2 crypto curl dbus-1 expat ffi gck-1
+WANTLIB += gcr-base-3 gcrypt gdata gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB += gmime-3.0 gmodule-2.0 goa-1.0 gobject-2.0 gpg-error
+WANTLIB += gpgme-pthread grilo-0.3 grlnet-0.3 grlpls-0.3 gthread-2.0
+WANTLIB += iconv icudata icui18n icuuc idn intl json-glib-1.0
+WANTLIB += kvm lz4 lzma m mediaart-2.0 nghttp2 nspr4 nss3 oauth
+WANTLIB += p11-kit pcre plc4 plds4 png pthread smime3 softokn3
+WANTLIB += soup-2.4 sqlite3 ssl ssl3 totem-plparser uuid xml2
+WANTLIB += z
 WANTLIB += tracker-sparql-${TRACKER_API}
 WANTLIB += lib/tracker-${TRACKER_API}/tracker-common
 WANTLIB += lib/tracker-${TRACKER_API}/tracker-data
@@ -33,7 +35,6 @@ WANTLIB += lib/tracker-${TRACKER_API}/tracker-data
 MODULES=	x11/gnome
 
 LIB_DEPENDS=	devel/libgdata \
-		mail/gmime \
 		security/nss \
 		x11/gnome/grilo>=0.3.0 \
 		x11/gnome/libmediaart \

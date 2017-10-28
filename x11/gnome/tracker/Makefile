@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.223 2017/10/23 17:11:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.224 2017/10/28 08:39:42 ajacoutot Exp $
 
 COMMENT=		powerful desktop search tool and indexer
 
 GNOME_PROJECT=		tracker
 GNOME_VERSION=		1.12.3
-REVISION=		2
+REVISION=		3
 
 # there is already audio/tracker, so this port has to live
 # as meta-tracker
@@ -29,20 +29,21 @@ SHARED_LIBS +=  tracker-control-1.0  1.1      # 1201.0
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
-WANTLIB += Xinerama Xrandr Xrender archive assuan atk-1.0 atk-bridge-2.0
-WANTLIB += atspi bz2 c cairo cairo-gobject crypto cue dbus-1 enca
-WANTLIB += epoxy exempi exif expat ffi fontconfig freetype gcrypt
-WANTLIB += gdk-3 gdk_pixbuf-2.0 gif gio-2.0 glib-2.0 gmime-2.6
-WANTLIB += gmodule-2.0 gobject-2.0 gpg-error gpgme-pthread graphite2
-WANTLIB += gsf-1 gstaudio-1.0 gstbase-1.0 gstpbutils-1.0 gstreamer-1.0
-WANTLIB += gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3 gxps harfbuzz
-WANTLIB += iconv icudata icui18n icuuc intl iptcdata jpeg json-glib-1.0
-WANTLIB += kvm lcms2 lz4 lzma m mediaart-2.0 openjp2 orc-0.4 osinfo-1.0
+WANTLIB += ${COMPILER_LIBCXX} X11 Xcomposite Xcursor Xdamage Xext
+WANTLIB += Xfixes Xi Xinerama Xrandr Xrender Xtst archive assuan
+WANTLIB += atk-1.0 atk-bridge-2.0 atspi bz2 c cairo cairo-gobject
+WANTLIB += crypto cue dbus-1 enca epoxy exempi exif expat ffi
+WANTLIB += fontconfig freetype gdk-3 gdk_pixbuf-2.0 gif gio-2.0
+WANTLIB += glib-2.0 gmime-3.0 gmodule-2.0 gobject-2.0 gpg-error
+WANTLIB += gpgme-pthread graphite2 gsf-1 gstaudio-1.0 gstbase-1.0
+WANTLIB += gstpbutils-1.0 gstreamer-1.0 gsttag-1.0 gstvideo-1.0
+WANTLIB += gthread-2.0 gtk-3 gxps harfbuzz iconv icudata icui18n
+WANTLIB += icuuc idn intl iptcdata jpeg json-glib-1.0 kvm lcms2
+WANTLIB += lz4 lzma m mediaart-2.0 openjp2 orc-0.4 osinfo-1.0
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png poppler poppler-glib pthread soup-2.4
-WANTLIB += sqlite3>=37.1 ${COMPILER_LIBCXX} tag tag_c tiff totem-plparser upower-glib
-WANTLIB += util uuid xcb xcb-render xcb-shm xml2 xslt z
+WANTLIB += png poppler poppler-glib soup-2.4 sqlite3 tag tag_c
+WANTLIB += tiff totem-plparser upower-glib util uuid xcb xcb-render
+WANTLIB += xcb-shm xcb-xkb xkbcommon xkbcommon-x11 xml2 xslt z
 
 MODULES=		devel/dconf \
 			lang/python \
