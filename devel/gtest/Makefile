@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2017/08/16 17:27:39 visa Exp $
+# $OpenBSD: Makefile,v 1.19 2017/10/28 14:43:18 jca Exp $
 
 COMMENT =	C++ unit test framework
 
@@ -18,8 +18,11 @@ CATEGORIES =	devel
 
 HOMEPAGE =	https://github.com/google/googletest
 
+.include <bsd.port.arch.mk>
 .if ${MACHINE_ARCH} == "mips64" || ${MACHINE_ARCH} == "mips64el"
 CXXFLAGS +=	-mxgot
+.elif ${MACHINE_ARCH} == "arm" && ${PROPERTIES:Mgcc4}
+CXXFLAGS +=	-O0
 .endif
 
 # New BSD
