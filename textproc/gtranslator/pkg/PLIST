@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2015/03/15 14:44:59 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.17 2017/10/28 10:10:27 ajacoutot Exp $
 @bin bin/gtranslator
 include/gtranslator-3.0/
 include/gtranslator-3.0/gtranslator/
@@ -26,20 +26,18 @@ lib/gtranslator/plugins/
 lib/gtranslator/plugins/charmap/
 lib/gtranslator/plugins/charmap/__init__.py
 lib/gtranslator/plugins/charmap/__init__.pyc
-lib/gtranslator/plugins/charmap/__init__.pyo
+lib/gtranslator/plugins/charmap/__init__.${MODPY_PYOEXTENSION}
 lib/gtranslator/plugins/charmap/panel.py
 lib/gtranslator/plugins/charmap/panel.pyc
-lib/gtranslator/plugins/charmap/panel.pyo
+lib/gtranslator/plugins/charmap/panel.${MODPY_PYOEXTENSION}
 lib/gtranslator/plugins/gtr-alternate-language.plugin
 lib/gtranslator/plugins/gtr-charmap.plugin
 lib/gtranslator/plugins/gtr-codeview.plugin
-lib/gtranslator/plugins/gtr-dict.plugin
 lib/gtranslator/plugins/gtr-fullscreen.plugin
 lib/gtranslator/plugins/gtr-insert-params.plugin
 lib/gtranslator/plugins/gtr-open-tran.plugin
 lib/gtranslator/plugins/gtr-translation-memory.plugin
 lib/gtranslator/plugins/libalternatelang.so
-lib/gtranslator/plugins/libdict.so
 lib/gtranslator/plugins/libfullscreen.so
 lib/gtranslator/plugins/libinsertparams.so
 lib/gtranslator/plugins/libopentran.so
@@ -47,11 +45,11 @@ lib/gtranslator/plugins/libsourcecodeview.so
 lib/gtranslator/plugins/libtranslation-memory.so
 lib/pkgconfig/gtranslator.pc
 @man man/man1/gtranslator.1
+share/appdata/
 share/appdata/gtranslator.appdata.xml
 share/applications/gtranslator.desktop
 share/glib-2.0/schemas/org.gnome.gtranslator.gschema.xml
 share/glib-2.0/schemas/org.gnome.gtranslator.plugins.codeview.gschema.xml
-share/glib-2.0/schemas/org.gnome.gtranslator.plugins.dictionary.gschema.xml
 share/glib-2.0/schemas/org.gnome.gtranslator.plugins.open-tran.gschema.xml
 share/glib-2.0/schemas/org.gnome.gtranslator.plugins.translation-memory.gschema.xml
 share/gtk-doc/html/gtranslator/
@@ -95,7 +93,6 @@ share/gtranslator/gir-1.0/Gtranslator-3.0.gir
 share/gtranslator/pixmaps/
 share/gtranslator/pixmaps/debian.png
 share/gtranslator/pixmaps/fedora.png
-share/gtranslator/pixmaps/gnome-dictionary.png
 share/gtranslator/pixmaps/gnome.png
 share/gtranslator/pixmaps/gtranslator-fuzzy-next.png
 share/gtranslator/pixmaps/gtranslator-fuzzy-prev.png
@@ -118,6 +115,8 @@ share/gtranslator/ui/gtr-plural-forms.ini
 share/gtranslator/ui/gtr-toolbar.xml
 share/gtranslator/ui/layout.xml
 share/gtranslator/ui/po.lang
+share/help/
+share/help/C/
 share/help/C/gtranslator/
 share/help/C/gtranslator/figures/
 share/help/C/gtranslator/figures/Gtranslator_022.png
@@ -171,6 +170,7 @@ share/help/C/gtranslator/gtr-use-delete-entry.page
 share/help/C/gtranslator/gtr-wizzard.page
 share/help/C/gtranslator/index.page
 share/help/C/gtranslator/license.page
+share/help/cs/
 share/help/cs/gtranslator/
 share/help/cs/gtranslator/figures/
 share/help/cs/gtranslator/figures/Gtranslator_022.png
@@ -224,6 +224,7 @@ share/help/cs/gtranslator/gtr-use-delete-entry.page
 share/help/cs/gtranslator/gtr-wizzard.page
 share/help/cs/gtranslator/index.page
 share/help/cs/gtranslator/license.page
+share/help/de/
 share/help/de/gtranslator/
 share/help/de/gtranslator/figures/
 share/help/de/gtranslator/figures/Gtranslator_022.png
@@ -277,6 +278,7 @@ share/help/de/gtranslator/gtr-use-delete-entry.page
 share/help/de/gtranslator/gtr-wizzard.page
 share/help/de/gtranslator/index.page
 share/help/de/gtranslator/license.page
+share/help/el/
 share/help/el/gtranslator/
 share/help/el/gtranslator/figures/
 share/help/el/gtranslator/figures/Gtranslator_022.png
@@ -330,6 +332,7 @@ share/help/el/gtranslator/gtr-use-delete-entry.page
 share/help/el/gtranslator/gtr-wizzard.page
 share/help/el/gtranslator/index.page
 share/help/el/gtranslator/license.page
+share/help/es/
 share/help/es/gtranslator/
 share/help/es/gtranslator/figures/
 share/help/es/gtranslator/figures/Gtranslator_022.png
@@ -383,6 +386,7 @@ share/help/es/gtranslator/gtr-use-delete-entry.page
 share/help/es/gtranslator/gtr-wizzard.page
 share/help/es/gtranslator/index.page
 share/help/es/gtranslator/license.page
+share/help/eu/
 share/help/eu/gtranslator/
 share/help/eu/gtranslator/figures/
 share/help/eu/gtranslator/figures/Gtranslator_022.png
@@ -436,6 +440,7 @@ share/help/eu/gtranslator/gtr-use-delete-entry.page
 share/help/eu/gtranslator/gtr-wizzard.page
 share/help/eu/gtranslator/index.page
 share/help/eu/gtranslator/license.page
+share/help/fr/
 share/help/fr/gtranslator/
 share/help/fr/gtranslator/figures/
 share/help/fr/gtranslator/figures/Gtranslator_022.png
@@ -489,6 +494,7 @@ share/help/fr/gtranslator/gtr-use-delete-entry.page
 share/help/fr/gtranslator/gtr-wizzard.page
 share/help/fr/gtranslator/index.page
 share/help/fr/gtranslator/license.page
+share/help/gl/
 share/help/gl/gtranslator/
 share/help/gl/gtranslator/figures/
 share/help/gl/gtranslator/figures/Gtranslator_022.png
@@ -596,6 +602,7 @@ share/help/ja/gtranslator/gtr-use-delete-entry.page
 share/help/ja/gtranslator/gtr-wizzard.page
 share/help/ja/gtranslator/index.page
 share/help/ja/gtranslator/license.page
+share/help/pt_BR/
 share/help/pt_BR/gtranslator/
 share/help/pt_BR/gtranslator/figures/
 share/help/pt_BR/gtranslator/figures/Gtranslator_022.png
@@ -649,6 +656,7 @@ share/help/pt_BR/gtranslator/gtr-use-delete-entry.page
 share/help/pt_BR/gtranslator/gtr-wizzard.page
 share/help/pt_BR/gtranslator/index.page
 share/help/pt_BR/gtranslator/license.page
+share/help/ru/
 share/help/ru/gtranslator/
 share/help/ru/gtranslator/figures/
 share/help/ru/gtranslator/figures/Gtranslator_022.png
@@ -702,6 +710,7 @@ share/help/ru/gtranslator/gtr-use-delete-entry.page
 share/help/ru/gtranslator/gtr-wizzard.page
 share/help/ru/gtranslator/index.page
 share/help/ru/gtranslator/license.page
+share/help/sl/
 share/help/sl/gtranslator/
 share/help/sl/gtranslator/figures/
 share/help/sl/gtranslator/figures/Gtranslator_022.png
@@ -809,6 +818,7 @@ share/help/th/gtranslator/gtr-use-delete-entry.page
 share/help/th/gtranslator/gtr-wizzard.page
 share/help/th/gtranslator/index.page
 share/help/th/gtranslator/license.page
+share/help/uk/
 share/help/uk/gtranslator/
 share/help/uk/gtranslator/figures/
 share/help/uk/gtranslator/figures/Gtranslator_022.png
@@ -862,6 +872,7 @@ share/help/uk/gtranslator/gtr-use-delete-entry.page
 share/help/uk/gtranslator/gtr-wizzard.page
 share/help/uk/gtranslator/index.page
 share/help/uk/gtranslator/license.page
+share/help/zh_CN/
 share/help/zh_CN/gtranslator/
 share/help/zh_CN/gtranslator/figures/
 share/help/zh_CN/gtranslator/figures/Gtranslator_022.png
