@@ -1,0 +1,35 @@
+$OpenBSD: patch-mesonbuild_build_py,v 1.1 2017/10/28 13:27:05 ajacoutot Exp $
+
+Index: mesonbuild/build.py
+--- mesonbuild/build.py.orig
++++ mesonbuild/build.py
+@@ -19,7 +19,7 @@ import itertools
+ from . import environment
+ from . import dependencies
+ from . import mlog
+-from .mesonlib import File, MesonException, listify, extract_as_list
++from .mesonlib import File, MesonException, listify, extract_as_list, is_openbsd
+ from .mesonlib import typeslistify, stringlistify, classify_unity_sources
+ from .mesonlib import get_filenames_templates_dict, substitute_values
+ from .environment import for_windows, for_darwin, for_cygwin
+@@ -1360,7 +1360,10 @@ class SharedLibrary(BuildTarget):
+         else:
+             prefix = 'lib'
+             suffix = 'so'
+-            if self.ltversion:
++            if is_openbsd() and (self.ltversion or self.soversion):
++                self.filename_tpl = '{0.prefix}{0.name}.{0.suffix}.' + \
++                                    os.getenv('LIB{0.name}_VERSION'.format(self), '0.0')
++            elif self.ltversion:
+                 # libfoo.so.X[.Y[.Z]] (.Y and .Z are optional)
+                 self.filename_tpl = '{0.prefix}{0.name}.{0.suffix}.{0.ltversion}'
+             elif self.soversion:
+@@ -1458,6 +1461,8 @@ class SharedLibrary(BuildTarget):
+         aliases = {}
+         # Aliases are only useful with .so and .dylib libraries. Also if
+         # there's no self.soversion (no versioning), we don't need aliases.
++        if is_openbsd():
++            return {}
+         if self.suffix not in ('so', 'dylib') or not self.soversion:
+             return {}
+         # With .so libraries, the minor and micro versions are also in the

@@ -1,12 +1,16 @@
-# $OpenBSD: meson.port.mk,v 1.8 2017/10/09 07:40:25 ajacoutot Exp $
+# $OpenBSD: meson.port.mk,v 1.9 2017/10/28 13:27:05 ajacoutot Exp $
 
-BUILD_DEPENDS +=	devel/meson>=0.43.0
+BUILD_DEPENDS +=	devel/meson>=0.43.0p0
 SEPARATE_BUILD ?=	Yes
 
 MODMESON_WANTCOLOR ?=	No
 .if ${MODMESON_WANTCOLOR:L} == "no"
 CONFIGURE_ENV += TERM="dumb"
 .endif
+
+.for solib sover in ${SHARED_LIBS}
+CONFIGURE_ENV += LIB${solib}_VERSION=${sover}
+.endfor
 
 .if empty(CONFIGURE_STYLE)
 CONFIGURE_STYLE=	meson
