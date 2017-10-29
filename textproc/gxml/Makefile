@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2017/04/09 11:52:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2017/10/29 10:02:22 ajacoutot Exp $
 
 COMMENT=		GObject API that wraps around libxml2
 
@@ -26,5 +26,6 @@ LIB_DEPENDS=		devel/libgee \
 			textproc/libxml
 
 CONFIGURE_STYLE=	gnu
+CONFIGURE_ARGS=		--disable-docs # valadoc(1)
 
 .include <bsd.port.mk>
