@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2017/10/23 17:11:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2017/10/29 16:30:22 landry Exp $
 
 COMMENT=	Xfce4 pulseaudio control line panel plugin
 
-XFCE_VERSION=	0.3.0
+XFCE_VERSION=	0.3.2
 XFCE_PLUGIN=	pulseaudio
-REVISION=	1
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
