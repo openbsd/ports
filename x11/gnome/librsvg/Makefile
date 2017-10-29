@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.122 2017/10/23 17:11:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.123 2017/10/29 08:28:44 ajacoutot Exp $
 
 COMMENT=		SAX-based render library for SVG files
 
 GNOME_PROJECT=		librsvg
 GNOME_VERSION=		2.40.19
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  rsvg-2               38.2     # 42.19
 
@@ -21,7 +21,10 @@ WANTLIB += xcb xcb-render xcb-shm xml2 z iconv intl
 
 MODULES=		x11/gnome
 
-MODGNOME_TOOLS=		gobject-introspection vala
+MODGNOME_TOOLS=		gobject-introspection
+
+# XXX cyclic: lang/vala -> math/graphviz -> x11/gnome/librsvg -> lang/vala
+#MODGNOME_TOOLS +=	vala
 
 LIB_DEPENDS=		devel/pango \
 			graphics/gdk-pixbuf2 \
