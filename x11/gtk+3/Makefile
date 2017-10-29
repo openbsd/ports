@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.183 2017/10/23 17:11:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.184 2017/10/29 15:58:52 ajacoutot Exp $
 
 # XXX add support for libcloudproviders (subpackage?)
 
@@ -14,16 +14,12 @@ COMMENT-cloudprint=	gtk+3 Google Cloud Print backend
 COMMENT-guic=		gtk+ icon theme caching utility
 
 GNOME_PROJECT=		gtk+
-GNOME_VERSION=		3.22.24
+GNOME_VERSION=		3.22.25
 
 PKGNAME-main=		gtk+3-${GNOME_VERSION}
 PKGNAME-cups=		gtk+3-cups-${GNOME_VERSION}
 PKGNAME-cloudprint=	gtk+3-cloudprint-${GNOME_VERSION}
 PKGNAME-guic=		gtk-update-icon-cache-${GNOME_VERSION}
-
-REVISION-main=		0
-REVISION-cups=		0
-REVISION-cloudprint=	0
 
 CATEGORIES=		x11 devel
 
@@ -58,8 +54,8 @@ RUN_DEPENDS-main=	${RUN_DEPENDS} \
 # some apps needs the svg version of the icon (librsvg pulled in)
 RUN_DEPENDS-main +=	x11/gnome/adwaita-icon-theme
 
-WANTLIB-main += ${WANTLIB} c epoxy
-WANTLIB-main += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
+WANTLIB-main += ${WANTLIB} c epoxy Xtst xcb-xkb xkbcommon xkbcommon-x11
+WANTLIB-main += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB-main += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
 WANTLIB-main += cairo cairo-gobject dbus-1 expat fontconfig freetype
 WANTLIB-main += graphite2 gthread-2.0 harfbuzz pango-1.0 pangocairo-1.0
@@ -70,8 +66,8 @@ LIB_DEPENDS-cups=	${LIB_DEPENDS} \
 			${BASE_PKGPATH},-main=${GNOME_VERSION}
 RUN_DEPENDS-cups=	${MODGETTEXT_RUN_DEPENDS}
 
-WANTLIB-cups += ${WANTLIB} epoxy idn2
-WANTLIB-cups += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
+WANTLIB-cups += ${WANTLIB} epoxy idn2 Xtst xcb-xkb xkbcommon xkbcommon-x11
+WANTLIB-cups += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB-cups += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
 WANTLIB-cups += cairo cairo-gobject dbus-1 expat fontconfig freetype
 WANTLIB-cups += graphite2 gthread-2.0 harfbuzz pango-1.0 pangocairo-1.0
@@ -85,8 +81,8 @@ LIB_DEPENDS-cloudprint=	${LIB_DEPENDS} \
 			${BASE_PKGPATH},-main=${GNOME_VERSION}
 RUN_DEPENDS-cloudprint=	${MODGETTEXT_RUN_DEPENDS}
 
-WANTLIB-cloudprint += ${WANTLIB} epoxy
-WANTLIB-cloudprint += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
+WANTLIB-cloudprint += ${WANTLIB} epoxy Xtst xcb-xkb xkbcommon xkbcommon-x11
+WANTLIB-cloudprint += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB-cloudprint += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
 WANTLIB-cloudprint += cairo cairo-gobject dbus-1 expat fontconfig freetype
 WANTLIB-cloudprint += graphite2 gthread-2.0 harfbuzz pango-1.0 pangocairo-1.0
