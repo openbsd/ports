@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2017/10/29 08:57:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.59 2017/10/29 10:12:48 ajacoutot Exp $
 
 # XXX: re-add vala to MODGNOME_TOOLS (+vala-0.38 to WANTLIB)
 # when updating
@@ -48,7 +48,7 @@ MODULES=		devel/dconf \
 			lang/python \
 			x11/gnome
 
-# sync with devel/spidermonkey
+# sync with devel/spidermonkey38
 COMPILER =		gcc
 
 MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
