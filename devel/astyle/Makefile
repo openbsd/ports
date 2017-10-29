@@ -1,24 +1,33 @@
-# $OpenBSD: Makefile,v 1.17 2017/07/26 22:45:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2017/10/29 17:31:40 bcallah Exp $
 
+V=			3.0.1
 COMMENT=		indenter and formatter of C/C++/Java source files
-
-DISTNAME=		astyle_1.15.3
-REVISION =		1
-PKGNAME=		${DISTNAME:S/_/-/}
+DISTNAME=		astyle_${V}_linux
+PKGNAME=		astyle-${V}
 CATEGORIES=		devel
 
 HOMEPAGE=		http://astyle.sourceforge.net/
+MAINTAINER=		Brian Callahan <bcallah@openbsd.org>
 
-# GPL
+# MIT
 PERMIT_PACKAGE_CDROM=	Yes
-WANTLIB=		c m ${COMPILER_LIBCXX}
+
+WANTLIB += ${COMPILER_LIBCXX} c m
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=astyle/}
-EXTRACT_SUFX=		.zip
 
-MAKE_ENV=		CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
+# C++11
+COMPILER=		base-clang ports-clang ports-gcc
 
-WRKDIST=		${WRKDIR}
+USE_GMAKE=		Yes
+ALL_TARGET=		release
+MAKE_FLAGS=		CXX="${CXX}"
+
+FAKE_FLAGS=		ipath="${DESTDIR}${PREFIX}/bin" \
+			SYSCONF_PATH="${DESTDIR}${PREFIX}/share/doc/astyle"
+
+WRKDIST=		${WRKDIR}/astyle
+WRKSRC=			${WRKDIST}/build/clang
 
 NO_TEST=		Yes
 
