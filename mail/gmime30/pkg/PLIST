@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/04/25 13:17:34 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/10/29 15:27:02 ajacoutot Exp $
 include/gmime-3.0/
 include/gmime-3.0/gmime/
 include/gmime-3.0/gmime/gmime-application-pkcs7-mime.h
+include/gmime-3.0/gmime/gmime-autocrypt.h
 include/gmime-3.0/gmime/gmime-certificate.h
 include/gmime-3.0/gmime/gmime-charset.h
 include/gmime-3.0/gmime/gmime-content-type.h
