@@ -1,0 +1,144 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2017/10/29 17:27:18 bcallah Exp $
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -80,7 +80,6 @@
+ # RELEASE is flags for release builds, this disables some debugging flags and
+ # enforces build failure when warnings are encountered.
+ # We want to error on everything to make sure we don't check in code with new warnings.
+-RELEASE_FLAGS = -Werror
+ WARNINGS = -Wall -Wextra
+ # Uncomment below to disable warnings
+ #WARNINGS = -w
+@@ -232,7 +231,6 @@ ifdef RELEASE
+       OPTLEVEL = -O3
+     endif
+   endif
+-  CXXFLAGS += $(OPTLEVEL)
+ 
+   ifdef LTO
+     LDFLAGS += -fuse-ld=gold
+@@ -253,7 +251,7 @@ ifdef RELEASE
+   endif
+   DEFINES += -DRELEASE
+   # Check for astyle or JSON regressions on release builds.
+-  CHECKS = astyle-check style-json
++  CHECKS = style-json
+ endif
+ 
+ ifndef RELEASE
+@@ -268,7 +266,7 @@ endif
+ ifeq ($(shell sh -c 'uname -o 2>/dev/null || echo not'),Cygwin)
+     OTHERS += -std=gnu++11
+   else
+-    OTHERS += -std=c++11
++    OTHERS += -std=c++11 -I${LOCALBASE}/include
+ endif
+ 
+ CXXFLAGS += $(WARNINGS) $(DEBUG) $(DEBUGSYMS) $(PROFILE) $(OTHERS) -MMD -MP
+@@ -407,11 +405,6 @@ ifdef MAPSIZE
+     CXXFLAGS += -DMAPSIZE=$(MAPSIZE)
+ endif
+ 
+-ifeq ($(shell git rev-parse --is-inside-work-tree),true)
+-  # We have a git repository, use git version
+-  DEFINES += -DGIT_VERSION
+-endif
+-
+ PKG_CONFIG = $(CROSS)pkg-config
+ SDL2_CONFIG = $(CROSS)sdl2-config
+ 
+@@ -464,7 +457,7 @@ ifdef LUA
+   else
+     ifdef LUA_USE_PKGCONFIG
+       # On unix-like systems, use pkg-config to find lua
+-      LUA_CANDIDATES = lua5.3 lua5.2 lua-5.3 lua-5.2 lua5.1 lua-5.1 lua $(LUA_BINARY)
++      LUA_CANDIDATES = lua5.3 lua5.2 lua-5.3 lua-5.2 lua53 lua52 lua5.1 lua-5.1 lua51 lua $(LUA_BINARY)
+       LUA_FOUND = $(firstword $(foreach lua,$(LUA_CANDIDATES),\
+           $(shell if $(PKG_CONFIG) --silence-errors --exists $(lua); then echo $(lua);fi)))
+       LUA_PKG = $(if $(LUA_FOUND),$(LUA_FOUND),$(error "Lua not found by $(PKG_CONFIG), install it or make without 'LUA=1'"))
+@@ -696,7 +689,6 @@ $(BUILD_PREFIX)$(TARGET_NAME).a: $(ODIR) $(OBJS)
+ .PHONY: version json-verify
+ version:
+ 	@( VERSION_STRING=$(VERSION) ; \
+-            [ -e ".git" ] && GITVERSION=$$( git describe --tags --always --dirty --match "[0-9A-Z]*.[0-9A-Z]*" ) && VERSION_STRING=$$GITVERSION ; \
+             [ -e "$(SRC_DIR)/version.h" ] && OLDVERSION=$$(grep VERSION $(SRC_DIR)/version.h|cut -d '"' -f2) ; \
+             if [ "x$$VERSION_STRING" != "x$$OLDVERSION" ]; then echo "#define VERSION \"$$VERSION_STRING\"" | tee $(SRC_DIR)/version.h ; fi \
+          )
+@@ -750,35 +742,35 @@ distclean:
+ bindist: $(BINDIST)
+ 
+ ifeq ($(TARGETSYSTEM), LINUX)
+-DATA_PREFIX=$(DESTDIR)$(PREFIX)/share/cataclysm-dda/
+-BIN_PREFIX=$(DESTDIR)$(PREFIX)/bin
+-LOCALE_DIR=$(DESTDIR)$(PREFIX)/share/locale
++DATA_PREFIX=$(PREFIX)/share/cataclysm-dda/
++BIN_PREFIX=$(PREFIX)/bin
++LOCALE_DIR=$(PREFIX)/share/locale
+ install: version $(TARGET)
+ 	mkdir -p $(DATA_PREFIX)
+ 	mkdir -p $(BIN_PREFIX)
+-	install --mode=755 $(TARGET) $(BIN_PREFIX)
+-	cp -R --no-preserve=ownership data/core $(DATA_PREFIX)
+-	cp -R --no-preserve=ownership data/font $(DATA_PREFIX)
+-	cp -R --no-preserve=ownership data/json $(DATA_PREFIX)
+-	cp -R --no-preserve=ownership data/mods $(DATA_PREFIX)
+-	cp -R --no-preserve=ownership data/names $(DATA_PREFIX)
+-	cp -R --no-preserve=ownership data/raw $(DATA_PREFIX)
+-	cp -R --no-preserve=ownership data/motd $(DATA_PREFIX)
+-	cp -R --no-preserve=ownership data/credits $(DATA_PREFIX)
+-	cp -R --no-preserve=ownership data/title $(DATA_PREFIX)
++	install -m 755 $(TARGET) $(BIN_PREFIX)
++	cp -R data/core $(DATA_PREFIX)
++	cp -R data/font $(DATA_PREFIX)
++	cp -R data/json $(DATA_PREFIX)
++	cp -R data/mods $(DATA_PREFIX)
++	cp -R data/names $(DATA_PREFIX)
++	cp -R data/raw $(DATA_PREFIX)
++	cp -R data/motd $(DATA_PREFIX)
++	cp -R data/credits $(DATA_PREFIX)
++	cp -R data/title $(DATA_PREFIX)
+ ifdef TILES
+-	cp -R --no-preserve=ownership gfx $(DATA_PREFIX)
++	cp -R gfx $(DATA_PREFIX)
+ endif
+ ifdef SOUND
+-	cp -R --no-preserve=ownership data/sound $(DATA_PREFIX)
++	cp -R data/sound $(DATA_PREFIX)
+ endif
+ ifdef LUA
+ 	mkdir -p $(DATA_PREFIX)/lua
+-	install --mode=644 lua/autoexec.lua $(DATA_PREFIX)/lua
+-	install --mode=644 lua/class_definitions.lua $(DATA_PREFIX)/lua
++	install -m 644 lua/autoexec.lua $(DATA_PREFIX)/lua
++	install -m 644 lua/class_definitions.lua $(DATA_PREFIX)/lua
+ endif
+-	install --mode=644 data/changelog.txt data/cataicon.ico data/fontdata.json \
+-                   LICENSE.txt -t $(DATA_PREFIX)
++	install -m 644 data/changelog.txt data/cataicon.ico data/fontdata.json \
++                   LICENSE.txt $(DATA_PREFIX)
+ 	mkdir -p $(LOCALE_DIR)
+ ifdef LANGUAGES
+ 	LOCALE_DIR=$(LOCALE_DIR) lang/compile_mo.sh $(LANGUAGES)
+@@ -947,11 +939,6 @@ astyle-all: $(SOURCES) $(HEADERS) $(TESTSRC) $(TESTHDR
+ 	$(ASTYLE_BINARY) --options=.astylerc -n $(SOURCES) $(HEADERS)
+ 	$(ASTYLE_BINARY) --options=.astylerc -n $(TESTSRC) $(TESTHDR)
+ 
+-# Test whether the system has a version of astyle that supports --dry-run
+-ifeq ($(shell if $(ASTYLE_BINARY) -Q -X --dry-run src/game.h > /dev/null; then echo foo; fi),foo)
+-ASTYLE_CHECK=$(shell LC_ALL=C $(ASTYLE_BINARY) --options=.astylerc --dry-run -X -Q $(ASTYLED_WHITELIST))
+-endif
+-
+ astyle-check:
+ ifdef ASTYLE_CHECK
+ 	@if [ "$(findstring Formatted,$(ASTYLE_CHECK))" = "" ]; then echo "no astyle regressions";\
+@@ -961,7 +948,7 @@ else
+ endif
+ 
+ style-json: json_whitelist json_formatter
+-	xargs -a json_whitelist -L 1 tools/format/json_formatter.cgi
++	cat json_whitelist | xargs -L 1 tools/format/json_formatter.cgi
+ 
+ style-all-json: json_formatter
+ 	find data -name "*.json" -print0 | xargs -0 -L 1 tools/format/json_formatter.cgi
