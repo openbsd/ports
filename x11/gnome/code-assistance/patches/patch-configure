@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.5 2017/04/13 07:07:16 jasper Exp $
+$OpenBSD: patch-configure,v 1.6 2017/10/29 08:58:12 jasper Exp $
 
-Recognize vala 0.36
+Recognize vala 0.38
 
 --- configure.orig	Tue Apr 11 21:12:50 2017
 +++ configure	Tue Apr 11 21:13:00 2017
@@ -9,7 +9,7 @@ Recognize vala 0.36
  
  
 -BACKEND_VALA_LIBVALA_VERSIONS="libvala-0.34 libvala-0.32 libvala-0.30 libvala-0.28 libvala-0.26 libvala-0.24 libvala-0.22 libvala-0.20"
-+BACKEND_VALA_LIBVALA_VERSIONS="libvala-0.36 libvala-0.34 libvala-0.32 libvala-0.30 libvala-0.28 libvala-0.26 libvala-0.24 libvala-0.22 libvala-0.20"
++BACKEND_VALA_LIBVALA_VERSIONS="libvala-0.38 libvala-0.34 libvala-0.32 libvala-0.30 libvala-0.28 libvala-0.26 libvala-0.24 libvala-0.22 libvala-0.20"
  BACKEND_VALA_MODULES="gobject-2.0 >= 2.36 glib-2.0 >= 2.36 gio-2.0 >= 2.36 gee-0.8 gio-unix-2.0 >= 2.36"
  
  BACKEND_VALA_LIBVALA=
