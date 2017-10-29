@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2017/05/09 08:35:56 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.19 2017/10/29 08:56:43 jasper Exp $
 @bin bin/gnome-builder
 @bin bin/gnome-builder-cli
 include/gnome-builder-3.24.2/
@@ -422,7 +422,6 @@ lib/gnome-builder/plugins/libsupport-plugin.so
 lib/gnome-builder/plugins/libsymbol-tree.so
 lib/gnome-builder/plugins/libsysmon.so
 lib/gnome-builder/plugins/libterminal.so
-lib/gnome-builder/plugins/libvala-pack-plugin.so
 lib/gnome-builder/plugins/libxml-pack-plugin.so
 lib/gnome-builder/plugins/make.plugin
 lib/gnome-builder/plugins/make_plugin/
@@ -452,7 +451,6 @@ lib/gnome-builder/plugins/terminal.plugin
 lib/gnome-builder/plugins/todo.plugin
 lib/gnome-builder/plugins/todo_plugin/
 lib/gnome-builder/plugins/todo_plugin/__init__.py
-lib/gnome-builder/plugins/vala-pack.plugin
 lib/gnome-builder/plugins/valgrind.plugin
 lib/gnome-builder/plugins/valgrind_plugin/
 lib/gnome-builder/plugins/valgrind_plugin/__init__.py
@@ -568,7 +566,7 @@ share/doc/gnome-builder/html/_static/fonts/fontawesome-webfont.ttf
 share/doc/gnome-builder/html/_static/fonts/fontawesome-webfont.woff
 share/doc/gnome-builder/html/_static/img/
 share/doc/gnome-builder/html/_static/img/org.gnome.Builder.png
-share/doc/gnome-builder/html/_static/jquery${MODPY_BIN_SUFFIX}.1.0.js
+share/doc/gnome-builder/html/_static/jquery3.1.0.js
 share/doc/gnome-builder/html/_static/jquery.js
 share/doc/gnome-builder/html/_static/js/
 share/doc/gnome-builder/html/_static/js/modernizr.min.js
@@ -776,8 +774,8 @@ share/gnome-builder/vapi/panel-gtk.deps
 share/gnome-builder/vapi/panel-gtk.vapi
 share/gnome-builder/vapi/template-glib-1.0.deps
 share/gnome-builder/vapi/template-glib-1.0.vapi
-share/gtksourceview${MODPY_BIN_SUFFIX}.0/styles/builder-dark.xml
-share/gtksourceview${MODPY_BIN_SUFFIX}.0/styles/builder.xml
+share/gtksourceview3.0/styles/builder-dark.xml
+share/gtksourceview3.0/styles/builder.xml
 share/icons/hicolor/16x16/apps/org.gnome.Builder.png
 share/icons/hicolor/24x24/apps/org.gnome.Builder.png
 share/icons/hicolor/256x256/apps/org.gnome.Builder.png

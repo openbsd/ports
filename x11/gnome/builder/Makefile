@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.56 2017/10/28 18:31:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.57 2017/10/29 08:56:43 jasper Exp $
+
+# XXX: re-add vala to MODGNOME_TOOLS (+vala-0.38 to WANTLIB)
+# when updating
 
 COMMENT=		IDE for GNOME
 
@@ -36,7 +39,7 @@ WANTLIB += jpeg json-glib-1.0 lzma m nettle nghttp2 notify orc-0.4
 WANTLIB += p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
 WANTLIB += pcre2-8 peas-1.0 pixman-1 png pthread
 WANTLIB += secret-1 soup-2.4 sqlite3 ssh2 ssl ${LIBCXX} tasn1
-WANTLIB += unistring vala-0.36 vte-2.91 webkit2gtk-4.0 webp xcb
+WANTLIB += unistring vte-2.91 webkit2gtk-4.0 webp xcb
 WANTLIB += xcb-dri2 xcb-glx xcb-render xcb-shm xcb-xfixes xml2
 WANTLIB += xslt z Xtst xcb-xkb xkbcommon xkbcommon-x11
 WANTLIB += GLESv2 gstallocators-1.0 gstbadallocators-1.0 gstgl-1.0
@@ -51,7 +54,7 @@ COMPILER =		gcc
 MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 MODGNOME_TOOLS=		desktop-file-utils gobject-introspection \
-			gtk-update-icon-cache vala yelp
+			gtk-update-icon-cache yelp
 
 BUILD_DEPENDS=		devel/ectags \
 			devel/mm-common
