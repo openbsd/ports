@@ -1,12 +1,21 @@
-@comment $OpenBSD: PLIST,v 1.9 2016/11/11 09:40:30 landry Exp $
+@comment $OpenBSD: PLIST,v 1.10 2017/10/29 12:05:06 landry Exp $
 @bin bin/xfce4-notifyd-config
 lib/systemd/user/xfce4-notifyd.service
 lib/xfce4/notifyd/
 @bin lib/xfce4/notifyd/xfce4-notifyd
+lib/xfce4/panel/plugins/libnotification-plugin.so
 @man man/man1/xfce4-notifyd-config.1
 share/applications/xfce4-notifyd-config.desktop
 share/dbus-1/services/org.xfce.xfce4-notifyd.Notifications.service
+share/icons/hicolor/16x16/apps/xfce4-notifyd.png
+share/icons/hicolor/24x24/apps/xfce4-notifyd.png
+share/icons/hicolor/32x32/apps/xfce4-notifyd.png
 share/icons/hicolor/48x48/apps/xfce4-notifyd.png
+share/icons/hicolor/scalable/apps/xfce4-notifyd.svg
+share/icons/hicolor/scalable/status/notification-disabled-new-symbolic.svg
+share/icons/hicolor/scalable/status/notification-disabled-symbolic.svg
+share/icons/hicolor/scalable/status/notification-new-symbolic.svg
+share/icons/hicolor/scalable/status/notification-symbolic.svg
 share/locale/ar/LC_MESSAGES/xfce4-notifyd.mo
 share/locale/ast/LC_MESSAGES/xfce4-notifyd.mo
 share/locale/bg/LC_MESSAGES/xfce4-notifyd.mo
@@ -70,6 +79,7 @@ share/themes/Smoke/xfce-notify-4.0/gtk.css
 share/themes/ZOMG-PONIES!/
 share/themes/ZOMG-PONIES!/xfce-notify-4.0/
 share/themes/ZOMG-PONIES!/xfce-notify-4.0/gtk.css
+share/xfce4/panel/plugins/notification-plugin.desktop
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

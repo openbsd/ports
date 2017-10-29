@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.30 2017/10/23 17:11:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2017/10/29 12:05:06 landry Exp $
 
 COMMENT=	Xfce4 alternative notification daemon
 
-XFCE_VERSION=	0.3.6
+XFCE_VERSION=	0.4.0
 XFCE_GOODIE=	xfce4-notifyd
-REVISION=	0
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -12,10 +11,11 @@ PERMIT_PACKAGE_CDROM=	Yes
 MODULES=	x11/xfce4
 MODXFCE_DESKTOP_FILE=	Yes
 MODXFCE_ICON_CACHE=	Yes
+MODXFCE_PURGE_LA =	lib/xfce4/panel/plugins
+MODXFCE_WANTLIB =	xfce4panel-2.0
 
-LIB_DEPENDS=	x11/xfce4/libxfce4ui \
-		devel/libnotify \
-		x11/xfce4/xfconf
+LIB_DEPENDS=	x11/xfce4/xfce4-panel \
+		devel/libnotify
 
 WANTLIB += ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender
@@ -27,5 +27,6 @@ WANTLIB += startup-notification-1 xcb xcb-util xcb-render
 WANTLIB += xcb-shm xfce4ui-2 xfce4util xfconf-0 z
 WANTLIB += harfbuzz graphite2 notify iconv intl
 WANTLIB += atk-bridge-2.0 atspi cairo-gobject epoxy gdk-3 gtk-3
+WANTLIB += Xtst xcb-xkb xkbcommon xkbcommon-x11
 
 .include <bsd.port.mk>
