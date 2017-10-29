@@ -1,9 +1,9 @@
-$OpenBSD: patch-configure_ac,v 1.1 2017/09/25 09:16:12 robert Exp $
+$OpenBSD: patch-configure_ac,v 1.2 2017/10/29 08:59:24 jasper Exp $
 
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -321,7 +321,7 @@ case "$host" in
+@@ -322,7 +322,7 @@ case "$host" in
      SAVED_CFLAGS="${CFLAGS}"
      CFLAGS="-fvisibility=hidden"
      AC_MSG_CHECKING([for -fvisibility=hidden compiler flag])
@@ -12,7 +12,7 @@ Index: configure.ac
                     AC_MSG_RESULT(yes)
                     enable_fvisibility_hidden=yes,
                     AC_MSG_RESULT(no)
-@@ -347,7 +347,7 @@ AC_ARG_ENABLE(Bsymbolic,
+@@ -348,7 +348,7 @@ AC_ARG_ENABLE(Bsymbolic,
                [SAVED_LDFLAGS="${LDFLAGS}"
                 AC_MSG_CHECKING([for -Bsymbolic-functions linker flag])
                 LDFLAGS=-Wl,-Bsymbolic-functions
