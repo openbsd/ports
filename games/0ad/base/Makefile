@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2017/09/08 22:03:55 bentley Exp $
+# $OpenBSD: Makefile,v 1.22 2017/10/29 10:10:23 ajacoutot Exp $
 
 COMMENT =		historical real-time strategy game
 
@@ -35,7 +35,6 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 			games/0ad/data=${V}
 MODULES =		lang/python
 
-# sync with devel/spidermonkey
 COMPILER =		gcc
 
 MODPY_RUNDEP =		No
