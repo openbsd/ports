@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2017/10/29 08:56:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.58 2017/10/29 08:57:25 jasper Exp $
 
 # XXX: re-add vala to MODGNOME_TOOLS (+vala-0.38 to WANTLIB)
 # when updating
@@ -7,7 +7,7 @@ COMMENT=		IDE for GNOME
 
 GNOME_PROJECT=		gnome-builder
 GNOME_VERSION=		3.24.2
-REVISION=		4
+REVISION=		5
 
 SHARED_LIBS +=	egg-private               0.0 # 0.0
 SHARED_LIBS +=  panel-gtk                 0.0 # 0.0
