@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2017/10/27 16:46:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2017/10/29 10:11:08 ajacoutot Exp $
 
 # see patch-js_src_old-configure_in
 USE_WXNEEDED =		Yes
@@ -43,7 +43,7 @@ MODPY_RUNDEP =		No
 
 # C++11
 # XXX GNOME 3.26:
-# sync with games/0ad/base x11/gnome/builder x11/gnome/shell x11/gnome/gjs
+# sync with x11/gnome/builder x11/gnome/shell x11/gnome/gjs
 COMPILER =		base-clang ports-clang ports-gcc
 
 USE_GMAKE =		yes

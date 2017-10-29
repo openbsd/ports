@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2017/10/27 17:13:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2017/10/29 10:11:08 ajacoutot Exp $
 
 # see patches/patch-configure
 USE_WXNEEDED =		Yes
@@ -35,7 +35,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES =		lang/python
 
-# sync with games/0ad/base x11/gnome/builder x11/gnome/shell x11/gnome/gjs
+# sync with x11/gnome/builder x11/gnome/shell x11/gnome/gjs
 COMPILER =		gcc
 
 WANTLIB += c ffi icudata icui18n icuuc m ncurses nspr4 plc4 plds4
