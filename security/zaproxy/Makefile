@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2017/04/21 13:27:47 kurt Exp $
+# $OpenBSD: Makefile,v 1.4 2017/10/29 06:03:08 rpointel Exp $
 
 COMMENT =		web application security tool
 
-VERSION =		2.5.0
+VERSION =		2.6.0
 DISTNAME =		ZAP_${VERSION}_Linux
 PKGNAME =		zaproxy-${VERSION}
-REVISION =		0
 
 CATEGORIES =		security
 
