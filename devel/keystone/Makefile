@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2017/07/27 09:34:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2017/10/29 17:56:04 jca Exp $
 
 COMMENT =	multi-platform, multi-architecture assembler framework
 
@@ -21,7 +21,9 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB +=	c m
 WANTLIB += ${COMPILER_LIBCXX}
 
-MODULES =	devel/cmake
+MODULES =	devel/cmake \
+		lang/python
+MODPY_RUNDEP =	No
 
 # atomics
 COMPILER =	clang
