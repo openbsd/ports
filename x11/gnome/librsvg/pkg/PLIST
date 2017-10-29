@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.35 2017/10/29 08:28:44 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.36 2017/10/29 15:23:12 ajacoutot Exp $
 @bin bin/rsvg-convert
 include/librsvg-2.0/
 include/librsvg-2.0/librsvg/
@@ -44,5 +44,8 @@ share/gtk-doc/html/rsvg-2.0/style.css
 share/gtk-doc/html/rsvg-2.0/up-insensitive.png
 share/gtk-doc/html/rsvg-2.0/up.png
 share/thumbnailers/librsvg.thumbnailer
+share/vala/
+share/vala/vapi/
+share/vala/vapi/librsvg-2.0.vapi
 @exec %D/bin/gdk-pixbuf-query-loaders --update-cache
 @unexec-delete %D/bin/gdk-pixbuf-query-loaders --update-cache
