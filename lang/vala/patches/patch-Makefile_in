@@ -1,0 +1,16 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2017/10/29 15:17:36 ajacoutot Exp $
+
+XXX cyclic: lang/vala -> math/graphviz -> x11/gnome/librsvg -> lang/vala
+
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -396,8 +396,6 @@ SUBDIRS = \
+ 	doc \
+ 	gobject-introspection \
+ 	vapigen \
+-	libvaladoc \
+-	valadoc \
+ 	$(NULL)
+ 
+ @ENABLE_UNVERSIONED_TRUE@aclocaldir = $(datadir)/aclocal
