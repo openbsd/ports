@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.72 2017/07/28 23:38:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.73 2017/10/30 22:19:38 sthen Exp $
 
 COMMENT=	Berkeley Internet Name Daemon: DNS server and tools
 
 V=		9.10.6
+REVISION=	0
 
 DISTNAME=	bind-$V
 PKGNAME=	isc-bind-${V:S/-P/pl/}
@@ -45,6 +46,7 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--enable-filter-aaaa \
 		--enable-threads \
 		--with-libtool \
+		--with-randomdev=/dev/random \
 		--without-readline \
 		--with-python=${MODPY_BIN}
 
