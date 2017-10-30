@@ -1,0 +1,18 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2017/10/30 13:55:11 landry Exp $
+
+detect qscintilla 2.10.1
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -12,7 +12,9 @@ include(MacroOptionalFindPackage)
+ include(MacroOptionalAddBindings)
+ include(MacroLogFeature)
+ 
+-macro_optional_find_package(QScintilla)
++FIND_PATH(QSCINTILLA_INCLUDE_DIR qsciglobal.h "${QT_INCLUDE_DIR}/Qsci")
++FIND_LIBRARY(QSCINTILLA_LIBRARY NAMES qscintilla2_qt4 PATHS ${QT_LIBRARY_DIR})
++set(QSCINTILLA_FOUND TRUE)
+ macro_log_feature(QSCINTILLA_FOUND "QScintilla2" "QScintilla2 libraries" "http://www.riverbankcomputing.co.uk/software/qscintilla/intro" FALSE "" "Needed to compile QScintilla2 bindings")
+ 
+ macro_optional_find_package(Qwt5)

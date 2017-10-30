@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2017/07/27 11:57:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2017/10/30 13:55:11 landry Exp $
 
 CATEGORIES =	devel
 COMMENT =	Qt4 bindings for .NET/Mono
 DISTNAME =	qyoto-${MODKDE4_VERSION}
-REVISION =	3
+REVISION =	4
 
 SHARED_LIBS =	qyoto			50.1 # 2.0
 SHARED_LIBS +=	phonon-sharp		50.1
@@ -25,7 +25,7 @@ WANTLIB += ${KDE4LIB}/smokeqtopengl ${KDE4LIB}/smokeqtsql
 WANTLIB += ${KDE4LIB}/smokeqtsvg ${KDE4LIB}/smokeqtxml
 WANTLIB += ${KDE4LIB}/smokeqtscript ${KDE4LIB}/smokeqttest
 WANTLIB += ${KDE4LIB}/smokeqtuitools ${KDE4LIB}/smokeqtwebkit
-WANTLIB += qscintilla2
+WANTLIB += qscintilla2_qt4
 
 MODULES =	multimedia/phonon lang/mono
 MODMONO_GMCS_COMPAT = Yes

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2017/07/27 11:57:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2017/10/30 13:55:11 landry Exp $
 
 CATEGORIES =	devel
 COMMENT =	introspective wrappers around Qt
 DISTNAME =	smokeqt-${MODKDE4_VERSION}
-REVISION =	2
+REVISION =	3
 
 WANTLIB = m
 WANTLIB += ${COMPILER_LIBCXX}
@@ -13,7 +13,7 @@ WANTLIB += lib/qt4/QtNetwork lib/qt4/QtOpenGL lib/qt4/QtScript
 WANTLIB += lib/qt4/QtSql lib/qt4/QtSvg lib/qt4/QtTest lib/qt4/QtWebKit
 WANTLIB += lib/qt4/QtXml lib/qt4/QtXmlPatterns
 WANTLIB += ${KDE4LIB}/smokebase
-WANTLIB += qimageblitz qscintilla2 qwt
+WANTLIB += qimageblitz qscintilla2_qt4 qwt
 
 SHARED_LIBS =	smokephonon		50.1 # 3.0
 SHARED_LIBS +=	smokeqimageblitz	50.1 # 3.0

@@ -1,9 +1,21 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1 2013/07/04 00:46:45 zhuk Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2017/10/30 13:55:11 landry Exp $
 Revert partially upstream commit 66c339d4216cc834014c38617c664647cf34d4b8.
 KDE BUG 321877: https://bugs.kde.org/show_bug.cgi?id=321877
---- CMakeLists.txt.orig	Fri Jun 28 21:16:25 2013
-+++ CMakeLists.txt	Wed Jul  3 03:11:49 2013
-@@ -36,11 +36,7 @@ macro_log_feature(Qwt5_Qt4_FOUND "Qwt5 for Qt4" "Qwt5 
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -21,7 +21,9 @@ include(MacroOptionalAddBindings)
+ include(MacroLogFeature)
+ include(MacroProve)
+ 
+-macro_optional_find_package(QScintilla)
++FIND_PATH(QSCINTILLA_INCLUDE_DIR qsciglobal.h "${QT_INCLUDE_DIR}/Qsci")
++FIND_LIBRARY(QSCINTILLA_LIBRARY NAMES qscintilla2_qt4 PATHS ${QT_LIBRARY_DIR})
++set(QSCINTILLA_FOUND TRUE)
+ macro_log_feature(QSCINTILLA_FOUND "QScintilla2" "QScintilla2 libraries" "http://www.riverbankcomputing.co.uk/software/qscintilla/intro" FALSE "" "Needed to compile QScintilla2 bindings")
+ 
+ macro_optional_find_package(QImageBlitz)
+@@ -36,11 +38,7 @@ macro_log_feature(Qwt5_Qt4_FOUND "Qwt5 for Qt4" "Qwt5 
  add_definitions(-DDEBUG)
  
  include (FindPerlMore)
