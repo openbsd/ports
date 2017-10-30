@@ -1,10 +1,10 @@
-# $OpenBSD: gnome.port.mk,v 1.107 2017/08/17 09:27:08 ajacoutot Exp $
+# $OpenBSD: gnome.port.mk,v 1.108 2017/10/30 10:15:10 ajacoutot Exp $
 #
 # Module for GNOME related ports
 
 # XXX TODO devel/meson
 # -Ddisable_introspection=true|false
-# -Denable-gtk-doc=true|false
+# -Denable-gtk-doc=true|false + valadoc?
 
 .if (defined(GNOME_PROJECT) && defined(GNOME_VERSION)) || \
     (defined(MATE_PROJECT) && defined(MATE_VERSION))
@@ -87,8 +87,13 @@ MODGNOME_pre-configure += ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python;
 #         access to the gnome-doc-* tools (legacy);
 #         same goes with yelp-tools which gives us itstool.
 
+.if ${CONFIGURE_STYLE:Mgnu} || ${CONFIGURE_STYLE:Msimple}
 MODGNOME_CONFIGURE_ARGS_gi=	--disable-introspection
 MODGNOME_CONFIGURE_ARGS_vala=	--disable-vala --disable-vala-bindings
+.elif ${CONFIGURE_STYLE:Mcmake}
+MODGNOME_CONFIGURE_ARGS_gi=	-DENABLE_INTROSPECTION=OFF
+MODGNOME_CONFIGURE_ARGS_vala=	-DENABLE_VALA_BINDINGS=OFF
+.endif
 
 .if defined(MODGNOME_TOOLS)
 _VALID_TOOLS=desktop-file-utils docbook gobject-introspection \
@@ -151,7 +156,7 @@ _MODGNOME_cppflags ?= CPPFLAGS="${MODGNOME_CPPFLAGS} -I${LOCALBASE}/include"
 _MODGNOME_ldflags ?= LDFLAGS="${MODGNOME_LDFLAGS} -L${LOCALBASE}/lib"
 
 .if ${CONFIGURE_STYLE:Mgnu} || ${CONFIGURE_STYLE:Msimple} || \
-    ${CONFIGURE_STYLE:Mcmake}
+    ${CONFIGURE_STYLE:Mcmake} || ${CONFIGURE_STYLE:Mmeson}
 CONFIGURE_ARGS +=	${MODGNOME_CONFIGURE_ARGS_gi} \
 			${MODGNOME_CONFIGURE_ARGS_vala}
 CONFIGURE_ENV +=	${_MODGNOME_cppflags} ${_MODGNOME_ldflags}
