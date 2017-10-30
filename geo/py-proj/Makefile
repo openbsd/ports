@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2017/10/30 12:56:23 landry Exp $
+# $OpenBSD: Makefile,v 1.20 2017/10/30 14:14:38 ajacoutot Exp $
 
 COMMENT =		Pyrex generated python interface to PROJ.4 library
 
 MODPY_EGG_VERSION =	1.9.5.1
 DISTNAME =		pyproj-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/py/py-/}
-REVISION =	0
+REVISION =		1
 
 CATEGORIES =		geo
 
@@ -19,15 +19,17 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB += ${MODPY_WANTLIB} pthread
 
 MODULES =		lang/python
+
 MODPY_PI =		Yes
-FLAVORS =	python3
+
+FLAVORS =		python3
 FLAVOR ?=
 
 MODPY_SETUPTOOLS =	Yes
 
 BUILD_DEPENDS +=	${RUN_DEPENDS}
 RUN_DEPENDS +=		devel/proj \
-			math/py-numpy,${FLAVOR}
+			math/py-numpy${MODPY_FLAVOR}
 
 do-test: fake
 .for t in test test2
