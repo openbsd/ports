@@ -1,27 +1,43 @@
-# $OpenBSD: Makefile,v 1.18 2017/07/26 22:45:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2017/10/30 13:49:31 landry Exp $
 
-COMMENT =	Qt4 port of the Scintilla source code editor
+COMMENT =	Qt port of the Scintilla source code editor
 
 # XXX update py-qscintilla alongside this port (same distfile).
-VERSION =	2.9.3
+VERSION =	2.10.1
 DISTNAME =	QScintilla_gpl-${VERSION}
 PKGNAME =	qscintilla-${VERSION}
 CATEGORIES =	editors x11
-REVISION =	0
 
-SHARED_LIBS =	qscintilla2 5.0
 
 HOMEPAGE =	http://www.riverbankcomputing.com/software/qscintilla/
 
 # GPLv2/GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += ICE QtGui SM X11 Xext Xi Xinerama Xrender fontconfig
-WANTLIB += freetype m pthread ${COMPILER_LIBCXX}
-
 MASTER_SITES =  ${MASTER_SITE_SOURCEFORGE:=pyqt/}
 
-MODULES =	devel/gettext devel/qmake x11/qt4
+WANTLIB =	${COMPILER_LIBCXX} m
+MODULES =	devel/gettext devel/qmake
+FLAVORS = qt5
+FLAVOR?=
+
+.if ${FLAVOR} == "qt5"
+FULLPKGNAME =	qscintilla-qt5-${VERSION}
+QTVER =	qt5
+MODULES +=	x11/qt5
+SHARED_LIBS =	qscintilla2_qt5 0.0 #13.0
+
+WANTLIB += GL Qt5Core Qt5Gui Qt5PrintSupport Qt5Widgets
+.else
+QTVER =	qt4
+MODULES +=	x11/qt4
+SHARED_LIBS =	qscintilla2_qt4 0.0 #13.0
+
+WANTLIB += ICE QtGui SM X11 Xext Xi Xinerama Xrender fontconfig
+WANTLIB += freetype pthread
+.endif
+
+SUBST_VARS +=	QTVER
 
 SEPARATE_BUILD =	No
 
