@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2017/10/30 13:51:17 landry Exp $
+# $OpenBSD: Makefile,v 1.14 2017/10/30 14:23:48 ajacoutot Exp $
 
 COMMENT =	Python binding for the Scintilla source code editor
 
@@ -6,6 +6,7 @@ VERSION =	2.10.1
 DISTNAME =	QScintilla_gpl-${VERSION}
 PKGNAME =	py-qscintilla-${VERSION}
 CATEGORIES =	editors x11 devel
+REVISION =	0
 
 HOMEPAGE =	http://www.riverbankcomputing.com/software/qscintilla/
 
@@ -18,8 +19,8 @@ MODULES = lang/python
 FLAVORS = qt5
 FLAVOR?=
 
-RUN_DEPENDS = devel/py-sip \
-		x11/dbus-python
+RUN_DEPENDS = devel/py-sip${MODPY_FLAVOR} \
+		x11/dbus-python${MODPY_FLAVOR}
 
 
 WANTLIB =	${COMPILER_LIBCXX} m
@@ -36,8 +37,8 @@ FULLPKGNAME =	py3-qscintilla-qt5-${VERSION}
 QTVER =	qt5
 PYQTVER =	PyQt5
 SIPDIR=	share/sip/PyQt5-3
-MODPY_VERSION =	3.6
-RUN_DEPENDS +=	x11/py-qt5,python3
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
+RUN_DEPENDS +=	x11/py-qt5${MODPY_FLAVOR}
 MODULES +=	x11/qt5
 LIB_DEPENDS = editors/qscintilla,qt5
 CONFIGURE_ARGS = --qmake=${LOCALBASE}/bin/qmake-qt5
