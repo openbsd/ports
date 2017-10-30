@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.33 2017/09/18 12:12:46 landry Exp $
+@comment $OpenBSD: PLIST,v 1.34 2017/10/30 13:56:46 landry Exp $
 @bin bin/qbrowser
 @bin bin/qgis
 @bin bin/qgis_bench
@@ -1894,7 +1894,6 @@ share/qgis/python/plugins/processing/algs/grass7/description/i.topo.corr.txt
 share/qgis/python/plugins/processing/algs/grass7/description/i.vi.txt
 share/qgis/python/plugins/processing/algs/grass7/description/i.zc.txt
 share/qgis/python/plugins/processing/algs/grass7/description/m.cogo.txt
-share/qgis/python/plugins/processing/algs/grass7/description/nviz.txt
 share/qgis/python/plugins/processing/algs/grass7/description/r.aspect.txt
 share/qgis/python/plugins/processing/algs/grass7/description/r.basins.fill.txt
 share/qgis/python/plugins/processing/algs/grass7/description/r.blend.combine.txt
@@ -2282,7 +2281,6 @@ share/qgis/python/plugins/processing/algs/grass7/ext/v_what_rast_centroids.py
 share/qgis/python/plugins/processing/algs/grass7/ext/v_what_rast_points.py
 share/qgis/python/plugins/processing/algs/grass7/ext/v_what_vect.py
 share/qgis/python/plugins/processing/algs/grass7/grass7.txt
-share/qgis/python/plugins/processing/algs/grass7/nviz7.py
 share/qgis/python/plugins/processing/algs/help/
 share/qgis/python/plugins/processing/algs/help/__init__.py
 share/qgis/python/plugins/processing/algs/help/qgis.yaml
@@ -3781,14 +3779,12 @@ share/qgis/python/plugins/processing/algs/saga/description/DiffusiveHillslopeEvo
 share/qgis/python/plugins/processing/algs/saga/description/DiffusiveHillslopeEvolution(FTCS).txt
 share/qgis/python/plugins/processing/algs/saga/description/DirectionalAverage.txt
 share/qgis/python/plugins/processing/algs/saga/description/DirectionalStatisticsforSingleGrid.txt
-share/qgis/python/plugins/processing/algs/saga/description/Distance(ViGrA).txt
 share/qgis/python/plugins/processing/algs/saga/description/DistanceMatrix.txt
 share/qgis/python/plugins/processing/algs/saga/description/DiurnalAnisotropicHeating.txt
 share/qgis/python/plugins/processing/algs/saga/description/DiversityOfCategories.txt
 share/qgis/python/plugins/processing/algs/saga/description/DownslopeDistanceGradient.txt
 share/qgis/python/plugins/processing/algs/saga/description/EarthsOrbitalParameters.txt
 share/qgis/python/plugins/processing/algs/saga/description/EdgeContamination.txt
-share/qgis/python/plugins/processing/algs/saga/description/EdgeDetection(ViGrA).txt
 share/qgis/python/plugins/processing/algs/saga/description/EffectiveAirFlowHeights.txt
 share/qgis/python/plugins/processing/algs/saga/description/EnhancedVegetationIndex.txt
 share/qgis/python/plugins/processing/algs/saga/description/EnumerateTableField.txt
@@ -3812,10 +3808,6 @@ share/qgis/python/plugins/processing/algs/saga/description/FlowAccumulation(Recu
 share/qgis/python/plugins/processing/algs/saga/description/FlowAccumulation(Top-Down).txt
 share/qgis/python/plugins/processing/algs/saga/description/FlowPathLength.txt
 share/qgis/python/plugins/processing/algs/saga/description/FlowWidthandSpecificCatchmentArea.txt
-share/qgis/python/plugins/processing/algs/saga/description/FourierFilter(ViGrA).txt
-share/qgis/python/plugins/processing/algs/saga/description/FourierTransform(RealViGrA).txt
-share/qgis/python/plugins/processing/algs/saga/description/FourierTransform(ViGrA).txt
-share/qgis/python/plugins/processing/algs/saga/description/FourierTransformInverse(ViGrA).txt
 share/qgis/python/plugins/processing/algs/saga/description/FourierTransformation(OpenCV).txt
 share/qgis/python/plugins/processing/algs/saga/description/Fragmentation(Alternative).txt
 share/qgis/python/plugins/processing/algs/saga/description/Fragmentation(Standard).txt
@@ -3905,7 +3897,6 @@ share/qgis/python/plugins/processing/algs/saga/description/ModifedQuadraticShepa
 share/qgis/python/plugins/processing/algs/saga/description/ModifiedQuadraticShepard.txt
 share/qgis/python/plugins/processing/algs/saga/description/MonthlyGlobalbyLatitude.txt
 share/qgis/python/plugins/processing/algs/saga/description/MorphologicalFilter(OpenCV).txt
-share/qgis/python/plugins/processing/algs/saga/description/MorphologicalFilter(ViGrA).txt
 share/qgis/python/plugins/processing/algs/saga/description/MorphologicalFilter.txt
 share/qgis/python/plugins/processing/algs/saga/description/MorphometricFeatures.txt
 share/qgis/python/plugins/processing/algs/saga/description/MorphometricProtectionIndex.txt
@@ -3966,7 +3957,6 @@ share/qgis/python/plugins/processing/algs/saga/description/RGBComposite.txt
 share/qgis/python/plugins/processing/algs/saga/description/RadiusofVariance(Grid).txt
 share/qgis/python/plugins/processing/algs/saga/description/RandomField.txt
 share/qgis/python/plugins/processing/algs/saga/description/RandomForestClassification(OpenCV).txt
-share/qgis/python/plugins/processing/algs/saga/description/RandomForestPresencePrediction(ViGrA).txt
 share/qgis/python/plugins/processing/algs/saga/description/RandomTerrain.txt
 share/qgis/python/plugins/processing/algs/saga/description/RandomTerrainGeneration.txt
 share/qgis/python/plugins/processing/algs/saga/description/RankFilter.txt
@@ -4007,7 +3997,6 @@ share/qgis/python/plugins/processing/algs/saga/description/SkyViewFactor.txt
 share/qgis/python/plugins/processing/algs/saga/description/Slope,Aspect,Curvature.txt
 share/qgis/python/plugins/processing/algs/saga/description/SlopeLength.txt
 share/qgis/python/plugins/processing/algs/saga/description/SlopeLimitedFlowAccumulation.txt
-share/qgis/python/plugins/processing/algs/saga/description/Smoothing(ViGrA).txt
 share/qgis/python/plugins/processing/algs/saga/description/SnapPointstoGrid.txt
 share/qgis/python/plugins/processing/algs/saga/description/SnapPointstoLines.txt
 share/qgis/python/plugins/processing/algs/saga/description/SnapPointstoPoints.txt
@@ -4068,7 +4057,6 @@ share/qgis/python/plugins/processing/algs/saga/description/VerticalDistancetoCha
 share/qgis/python/plugins/processing/algs/saga/description/WarpingShapes.txt
 share/qgis/python/plugins/processing/algs/saga/description/WaterRetentionCapacity.txt
 share/qgis/python/plugins/processing/algs/saga/description/WatershedBasins.txt
-share/qgis/python/plugins/processing/algs/saga/description/WatershedSegmentation(ViGrA).txt
 share/qgis/python/plugins/processing/algs/saga/description/WatershedSegmentation.txt
 share/qgis/python/plugins/processing/algs/saga/description/WindEffect(WindwardLeewardIndex).txt
 share/qgis/python/plugins/processing/algs/saga/description/WindExpositionIndex.txt

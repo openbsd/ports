@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.75 2017/09/18 12:12:46 landry Exp $
+# $OpenBSD: Makefile,v 1.76 2017/10/30 13:56:46 landry Exp $
 
 COMMENT =	desktop geographical information system
 
-DISTNAME =	qgis-2.18.13
+DISTNAME =	qgis-2.18.14
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	geo x11
 
-SHARED_LIBS =	qgis_core	18.0 \
-		qgis_app	5.0 \
-		qgis_gui	16.4 \
+SHARED_LIBS =	qgis_core	19.0 \
+		qgis_app	5.1 \
+		qgis_gui	17.0 \
 		qgis_analysis	8.0 \
 		qgis_server	5.2 \
 		qgispython	5.0 \
@@ -66,7 +66,7 @@ WANTLIB += 	ICE SM X11 Xext Xi Xinerama Xrender c expat \
 		mng png pthread util z proj \
 		QtGui QtNetwork QtXml QtSql QtCore QtScript QtSvg \
 		QtWebKit gdal geos_c gsl gslcblas pq qwt fcgi qca \
-		QtTest spatialindex spatialite sqlite3 qscintilla2 qjson
+		QtTest spatialindex spatialite sqlite3 qscintilla2_qt4 qjson
 WANTLIB += ${MODPY_WANTLIB} jpeg tiff
 WANTLIB += ${COMPILER_LIBCXX}
 
