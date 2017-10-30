@@ -1,16 +1,17 @@
-# $OpenBSD: Makefile,v 1.18 2017/09/22 07:26:48 feinerer Exp $
+# $OpenBSD: Makefile,v 1.19 2017/10/30 17:24:36 feinerer Exp $
 
 COMMENT-main =		modular SIP User-Agent with audio and video support
 COMMENT-gtk2 =		GTK+2-based modules for baresip
 
-V =			0.5.5
+V =			0.5.6
 DISTNAME =		baresip-$V
 PKGNAME-main =		baresip-$V
 PKGNAME-gtk2 =		baresip-gtk2-$V
 
-WANTLIB-main += SDL2 X11 Xext avcodec avdevice avformat avutil c gsm
-WANTLIB-main += m mpg123 opus png pthread re rem sndfile sndio spandsp
-WANTLIB-main += speex speexdsp swscale twolame v4l2 vpx x264 x265
+WANTLIB-main += SDL2 X11 Xext avahi-client avahi-common avcodec avdevice
+WANTLIB-main += avformat avutil c gsm m mpg123 opus png pthread re
+WANTLIB-main += rem sndfile sndio spandsp speex speexdsp swscale twolame
+WANTLIB-main += v4l2 vpx x264 x265
 
 WANTLIB-gtk2 += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB-gtk2 += Xrandr Xrender atk-1.0 cairo fontconfig freetype gdk-x11-2.0
@@ -31,6 +32,7 @@ LIB_DEPENDS-main =	audio/gsm \
 			graphics/png \
 			multimedia/libv4l \
 			multimedia/libvpx>=1.3.0 \
+			net/avahi \
 			telephony/baresip/re>=0.5.4 \
 			telephony/baresip/rem>=0.5.0 \
 			telephony/spandsp
@@ -47,6 +49,7 @@ MAKE_FLAGS +=		MOD_AUTODETECT= \
 			HAVE_LIBV4L2=yes \
 			HAVE_SPEEXDSP=yes \
 			USE_AMR=yes \
+			USE_AVAHI=yes \
 			USE_AVCODEC=yes \
 			USE_AVFORMAT=yes \
 			USE_CONS=yes \

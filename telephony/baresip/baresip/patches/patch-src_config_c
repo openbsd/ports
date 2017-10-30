@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_config_c,v 1.11 2017/09/22 07:26:48 feinerer Exp $
+$OpenBSD: patch-src_config_c,v 1.12 2017/10/30 17:24:36 feinerer Exp $
 Index: src/config.c
 --- src/config.c.orig
 +++ src/config.c
-@@ -385,7 +385,7 @@ static const char *default_video_device(void)
+@@ -390,7 +390,7 @@ static const char *default_video_device(void)
  #endif
  
  #else
@@ -11,7 +11,7 @@ Index: src/config.c
  #endif
  }
  
-@@ -612,31 +612,31 @@ int config_write_template(const char *file, const stru
+@@ -617,31 +617,31 @@ int config_write_template(const char *file, const stru
  	(void)re_fprintf(f, "module\t\t\t" MOD_PRE "stdio" MOD_EXT "\n");
  #endif
  	(void)re_fprintf(f, "#module\t\t\t" MOD_PRE "cons" MOD_EXT "\n");
@@ -60,7 +60,7 @@ Index: src/config.c
  	(void)re_fprintf(f, "#module\t\t\t" MOD_PRE "plc" MOD_EXT "\n");
  
  	(void)re_fprintf(f, "\n# Audio driver Modules\n");
-@@ -655,8 +655,8 @@ int config_write_template(const char *file, const stru
+@@ -660,8 +660,8 @@ int config_write_template(const char *file, const stru
  	(void)re_fprintf(f, "module\t\t\t" MOD_PRE "alsa" MOD_EXT "\n");
  	(void)re_fprintf(f, "#module\t\t\t" MOD_PRE "pulse" MOD_EXT "\n");
  #endif
@@ -71,7 +71,7 @@ Index: src/config.c
  	(void)re_fprintf(f, "#module\t\t\t" MOD_PRE "aubridge" MOD_EXT "\n");
  	(void)re_fprintf(f, "#module\t\t\t" MOD_PRE "aufile" MOD_EXT "\n");
  
-@@ -668,9 +668,9 @@ int config_write_template(const char *file, const stru
+@@ -673,9 +673,9 @@ int config_write_template(const char *file, const stru
  #else
  	(void)re_fprintf(f, "#module\t\t\t" MOD_PRE "avcodec" MOD_EXT "\n");
  #endif
@@ -84,7 +84,7 @@ Index: src/config.c
  
  	(void)re_fprintf(f, "\n# Video filter Modules (in encoding order)\n");
  	(void)re_fprintf(f, "#module\t\t\t" MOD_PRE "selfview" MOD_EXT "\n");
-@@ -691,14 +691,14 @@ int config_write_template(const char *file, const stru
+@@ -696,14 +696,14 @@ int config_write_template(const char *file, const stru
  	(void)re_fprintf(f, "module\t\t\t" MOD_PRE "dshow" MOD_EXT "\n");
  
  #else
@@ -104,7 +104,7 @@ Index: src/config.c
  	(void)re_fprintf(f, "#module\t\t\t" MOD_PRE "cairo" MOD_EXT "\n");
  	(void)re_fprintf(f, "#module\t\t\t" MOD_PRE "vidbridge" MOD_EXT "\n");
  
-@@ -709,16 +709,16 @@ int config_write_template(const char *file, const stru
+@@ -714,16 +714,16 @@ int config_write_template(const char *file, const stru
  #ifdef LINUX
  	(void)re_fprintf(f, "#module\t\t\t" MOD_PRE "directfb" MOD_EXT "\n");
  #endif
@@ -125,7 +125,7 @@ Index: src/config.c
  
  	(void)re_fprintf(f, "\n# Media NAT modules\n");
  	(void)re_fprintf(f, "module\t\t\t" MOD_PRE "stun" MOD_EXT "\n");
-@@ -727,8 +727,8 @@ int config_write_template(const char *file, const stru
+@@ -732,8 +732,8 @@ int config_write_template(const char *file, const stru
  	(void)re_fprintf(f, "#module\t\t\t" MOD_PRE "natpmp" MOD_EXT "\n");
  
  	(void)re_fprintf(f, "\n# Media encryption modules\n");
@@ -136,7 +136,15 @@ Index: src/config.c
  	(void)re_fprintf(f, "#module\t\t\t" MOD_PRE "zrtp" MOD_EXT "\n");
  	(void)re_fprintf(f, "\n");
  
-@@ -773,8 +773,8 @@ int config_write_template(const char *file, const stru
+@@ -750,6 +750,7 @@ int config_write_template(const char *file, const stru
+ 	(void)re_fprintf(f, "# Application Modules\n");
+ 	(void)re_fprintf(f, "\n");
+ 	(void)re_fprintf(f, "module_app\t\t" MOD_PRE "auloop"MOD_EXT"\n");
++	(void)re_fprintf(f, "#module_app\t\t" MOD_PRE "avahi"MOD_EXT"\n");
+ 	(void)re_fprintf(f, "module_app\t\t"  MOD_PRE "contact"MOD_EXT"\n");
+ 	(void)re_fprintf(f, "module_app\t\t"  MOD_PRE "debug_cmd"MOD_EXT"\n");
+ #ifdef LINUX
+@@ -778,8 +779,8 @@ int config_write_template(const char *file, const stru
  	(void)re_fprintf(f, "\n");
  	(void)re_fprintf(f, "http_listen\t\t0.0.0.0:8000\n");
  

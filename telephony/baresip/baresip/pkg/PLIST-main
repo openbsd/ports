@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2017/06/08 14:29:37 czarkoff Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2017/10/30 17:24:36 feinerer Exp $
 @pkgpath telephony/baresip/baresip
 @bin bin/baresip
 lib/baresip/
@@ -8,6 +8,7 @@ lib/baresip/modules/amr.so
 lib/baresip/modules/aubridge.so
 lib/baresip/modules/aufile.so
 lib/baresip/modules/auloop.so
+lib/baresip/modules/avahi.so
 lib/baresip/modules/avcodec.so
 lib/baresip/modules/avformat.so
 lib/baresip/modules/cons.so
@@ -61,6 +62,7 @@ share/baresip/
 share/baresip/busy.wav
 share/baresip/callwaiting.wav
 share/baresip/error.wav
+share/baresip/logo.png
 share/baresip/message.wav
 share/baresip/notfound.wav
 share/baresip/ring.wav
