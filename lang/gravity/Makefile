@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2017/10/11 20:42:36 bcallah Exp $
+# $OpenBSD: Makefile,v 1.5 2017/10/30 15:54:15 bcallah Exp $
 
-V =		0.3.6
+V =		0.3.7
 COMMENT =	small, high performance language with a modern syntax
 DISTNAME =	gravity-${V}
 CATEGORIES =	lang
