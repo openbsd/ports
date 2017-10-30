@@ -1,12 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.19 2016/10/31 10:34:16 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.20 2017/10/30 10:27:42 ajacoutot Exp $
 @bin bin/gcm-calibrate
 @bin bin/gcm-import
 @bin bin/gcm-inspect
 @bin bin/gcm-picker
 @bin bin/gcm-viewer
 @bin libexec/gcm-helper-exiv
-share/appdata/
-share/appdata/org.gnome.ColorProfileViewer.appdata.xml
 share/applications/gcm-calibrate.desktop
 share/applications/gcm-import.desktop
 share/applications/gcm-picker.desktop
@@ -22,9 +20,10 @@ share/gnome-color-manager/icons/calibration-long.svg
 share/gnome-color-manager/icons/calibration-normal.svg
 share/gnome-color-manager/icons/calibration-short.svg
 share/gnome-color-manager/icons/clock.svg
-share/gnome-color-manager/icons/crt.svg
-share/gnome-color-manager/icons/lcd.svg
-share/gnome-color-manager/icons/projector.svg
+share/gnome-color-manager/icons/icons/
+share/gnome-color-manager/icons/icons/crt.svg
+share/gnome-color-manager/icons/icons/lcd.svg
+share/gnome-color-manager/icons/icons/projector.svg
 share/gnome-color-manager/icons/scan-target-bad.svg
 share/gnome-color-manager/icons/scan-target-good.svg
 share/gnome-color-manager/icons/scan-target.svg
@@ -126,6 +125,12 @@ share/help/ml/gnome-color-manager/color-import-linux.page
 share/help/ml/gnome-color-manager/color-import-osx.page
 share/help/ml/gnome-color-manager/color-import-windows.page
 share/help/ml/gnome-color-manager/legal.xml
+share/help/pl/
+share/help/pl/gnome-color-manager/
+share/help/pl/gnome-color-manager/color-import-linux.page
+share/help/pl/gnome-color-manager/color-import-osx.page
+share/help/pl/gnome-color-manager/color-import-windows.page
+share/help/pl/gnome-color-manager/legal.xml
 share/help/pt_BR/
 share/help/pt_BR/gnome-color-manager/
 share/help/pt_BR/gnome-color-manager/color-import-linux.page
@@ -157,21 +162,13 @@ share/help/zh_TW/gnome-color-manager/color-import-osx.page
 share/help/zh_TW/gnome-color-manager/color-import-windows.page
 share/help/zh_TW/gnome-color-manager/legal.xml
 share/icons/hicolor/16x16/apps/gnome-color-manager.png
-share/icons/hicolor/16x16/mimetypes/application-vnd.iccprofile.png
 share/icons/hicolor/22x22/apps/gnome-color-manager.png
-share/icons/hicolor/22x22/mimetypes/application-vnd.iccprofile.png
 share/icons/hicolor/24x24/apps/gnome-color-manager.png
-share/icons/hicolor/24x24/mimetypes/application-vnd.iccprofile.png
 share/icons/hicolor/256x256/apps/gnome-color-manager.png
-share/icons/hicolor/256x256/mimetypes/application-vnd.iccprofile.png
 share/icons/hicolor/32x32/apps/gnome-color-manager.png
-share/icons/hicolor/32x32/mimetypes/application-vnd.iccprofile.png
 share/icons/hicolor/48x48/apps/gnome-color-manager.png
-share/icons/hicolor/48x48/mimetypes/application-vnd.iccprofile.png
 share/icons/hicolor/64x64/apps/gnome-color-manager.png
-share/icons/hicolor/64x64/mimetypes/application-vnd.iccprofile.png
 share/icons/hicolor/scalable/apps/gnome-color-manager.svg
-share/icons/hicolor/scalable/mimetypes/application-vnd.iccprofile.svg
 share/locale/ar/LC_MESSAGES/gnome-color-manager.mo
 share/locale/as/LC_MESSAGES/gnome-color-manager.mo
 share/locale/bg/LC_MESSAGES/gnome-color-manager.mo
@@ -236,6 +233,8 @@ share/locale/vi/LC_MESSAGES/gnome-color-manager.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-color-manager.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-color-manager.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-color-manager.mo
+share/metainfo/
+share/metainfo/org.gnome.ColorProfileViewer.appdata.xml
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/update-desktop-database
