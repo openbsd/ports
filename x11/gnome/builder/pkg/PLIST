@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2017/10/29 08:56:43 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.20 2017/10/30 07:57:11 ajacoutot Exp $
 @bin bin/gnome-builder
 @bin bin/gnome-builder-cli
 include/gnome-builder-3.24.2/
@@ -566,7 +566,7 @@ share/doc/gnome-builder/html/_static/fonts/fontawesome-webfont.ttf
 share/doc/gnome-builder/html/_static/fonts/fontawesome-webfont.woff
 share/doc/gnome-builder/html/_static/img/
 share/doc/gnome-builder/html/_static/img/org.gnome.Builder.png
-share/doc/gnome-builder/html/_static/jquery3.1.0.js
+share/doc/gnome-builder/html/_static/jquery-3.1.0.js
 share/doc/gnome-builder/html/_static/jquery.js
 share/doc/gnome-builder/html/_static/js/
 share/doc/gnome-builder/html/_static/js/modernizr.min.js
@@ -761,21 +761,8 @@ share/gnome-builder/plugins/html_preview_plugin/marked.js
 share/gnome-builder/plugins/rustup_plugin/
 share/gnome-builder/plugins/rustup_plugin/resources/
 share/gnome-builder/plugins/rustup_plugin/resources/rustup.sh
-share/gnome-builder/vapi/
-share/gnome-builder/vapi/egg-private.deps
-share/gnome-builder/vapi/egg-private.vapi
-share/gnome-builder/vapi/gstyle-private.deps
-share/gnome-builder/vapi/gstyle-private.vapi
-share/gnome-builder/vapi/jsonrpc-glib.deps
-share/gnome-builder/vapi/jsonrpc-glib.vapi
-share/gnome-builder/vapi/libide-1.0.deps
-share/gnome-builder/vapi/libide-1.0.vapi
-share/gnome-builder/vapi/panel-gtk.deps
-share/gnome-builder/vapi/panel-gtk.vapi
-share/gnome-builder/vapi/template-glib-1.0.deps
-share/gnome-builder/vapi/template-glib-1.0.vapi
-share/gtksourceview3.0/styles/builder-dark.xml
-share/gtksourceview3.0/styles/builder.xml
+share/gtksourceview-3.0/styles/builder-dark.xml
+share/gtksourceview-3.0/styles/builder.xml
 share/icons/hicolor/16x16/apps/org.gnome.Builder.png
 share/icons/hicolor/24x24/apps/org.gnome.Builder.png
 share/icons/hicolor/256x256/apps/org.gnome.Builder.png

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2017/10/29 10:12:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.60 2017/10/30 07:57:11 ajacoutot Exp $
 
 # XXX: re-add vala to MODGNOME_TOOLS (+vala-0.38 to WANTLIB)
 # when updating
@@ -7,7 +7,7 @@ COMMENT=		IDE for GNOME
 
 GNOME_PROJECT=		gnome-builder
 GNOME_VERSION=		3.24.2
-REVISION=		5
+REVISION=		6
 
 SHARED_LIBS +=	egg-private               0.0 # 0.0
 SHARED_LIBS +=  panel-gtk                 0.0 # 0.0
@@ -74,7 +74,6 @@ LIB_DEPENDS=		devel/libgit2/libgit2-glib \
 			devel/libpeas \
 			devel/llvm \
 			devel/vte3 \
-			lang/vala \
 			textproc/gspell \
 			x11/gnome/devhelp \
 			x11/gtksourceview3
