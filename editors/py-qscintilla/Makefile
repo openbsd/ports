@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2017/07/26 22:45:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2017/10/30 13:51:17 landry Exp $
 
 COMMENT =	Python binding for the Scintilla source code editor
 
-VERSION =	2.9.3
+VERSION =	2.10.1
 DISTNAME =	QScintilla_gpl-${VERSION}
 PKGNAME =	py-qscintilla-${VERSION}
 CATEGORIES =	editors x11 devel
-REVISION =	0
 
 HOMEPAGE =	http://www.riverbankcomputing.com/software/qscintilla/
 
@@ -15,16 +14,15 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =  ${MASTER_SITE_SOURCEFORGE:=pyqt/}
 
-MODULES = lang/python x11/qt4
+MODULES = lang/python
+FLAVORS = qt5
+FLAVOR?=
 
-BUILD_DEPENDS =	${RUN_DEPENDS}
 RUN_DEPENDS = devel/py-sip \
-		x11/py-qt4 \
 		x11/dbus-python
-LIB_DEPENDS = editors/qscintilla
 
-WANTLIB += ICE QtGui SM X11 Xext Xi Xinerama Xrender fontconfig
-WANTLIB += freetype m qscintilla2 ${COMPILER_LIBCXX} pthread
+
+WANTLIB =	${COMPILER_LIBCXX} m
 
 WRKSRC =	${WRKDIST}/Python
 
@@ -32,10 +30,35 @@ NO_TEST =	Yes
 
 CONFIGURE_STYLE = simple
 CONFIGURE_SCRIPT =	${MODPY_BIN} ${WRKSRC}/configure.py
-CONFIGURE_ARGS = --qmake=${LOCALBASE}/bin/qmake4 \
-		--qsci-libdir=${LOCALBASE}/lib \
-		--pyqt-sipdir=${LOCALBASE}/share/sip
 
+.if ${FLAVOR} == "qt5"
+FULLPKGNAME =	py3-qscintilla-qt5-${VERSION}
+QTVER =	qt5
+PYQTVER =	PyQt5
+SIPDIR=	share/sip/PyQt5-3
+MODPY_VERSION =	3.6
+RUN_DEPENDS +=	x11/py-qt5,python3
+MODULES +=	x11/qt5
+LIB_DEPENDS = editors/qscintilla,qt5
+CONFIGURE_ARGS = --qmake=${LOCALBASE}/bin/qmake-qt5
+WANTLIB += GL Qt5Core Qt5Gui Qt5PrintSupport Qt5Widgets qscintilla2_qt5
+.else
+QTVER =	qt4
+SIPDIR=	share/sip
+PYQTVER =	PyQt4
+RUN_DEPENDS +=	x11/py-qt4
+MODULES +=	x11/qt4
+LIB_DEPENDS = editors/qscintilla
+CONFIGURE_ARGS = --qmake=${LOCALBASE}/bin/qmake4
+WANTLIB += ICE QtGui SM X11 Xext Xi Xinerama Xrender fontconfig
+WANTLIB += freetype qscintilla2_qt4
+.endif
+
+CONFIGURE_ARGS +=--pyqt=${PYQTVER} -w \
+		--qsci-libdir=${LOCALBASE}/lib \
+		--pyqt-sipdir=${LOCALBASE}/${SIPDIR}
+BUILD_DEPENDS =	${RUN_DEPENDS}
 MAKE_ENV =	INSTALL_ROOT="${WRKINST}"
+SUBST_VARS +=	QTVER PYQTVER SIPDIR
 
 .include <bsd.port.mk>
