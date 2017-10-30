@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2017/10/30 12:57:38 landry Exp $
+# $OpenBSD: Makefile,v 1.55 2017/10/30 14:31:44 landry Exp $
 
      SUBDIR =
      SUBDIR += emerillon
@@ -50,6 +50,8 @@
      SUBDIR += postgis
      SUBDIR += py-laspy
      SUBDIR += py-laspy,python3
+     SUBDIR += py-owslib
+     SUBDIR += py-owslib,python3
      SUBDIR += py-planet
      SUBDIR += py-planet,python3
      SUBDIR += py-proj
