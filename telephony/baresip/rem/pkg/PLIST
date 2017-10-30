@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/01/12 09:22:08 czarkoff Exp $
+@comment $OpenBSD: PLIST,v 1.3 2017/10/30 17:22:21 feinerer Exp $
 include/rem/
 include/rem/rem.h
 include/rem/rem_au.h
@@ -10,8 +10,10 @@ include/rem/rem_aumix.h
 include/rem/rem_auresamp.h
 include/rem/rem_autone.h
 include/rem/rem_dsp.h
+include/rem/rem_dtmf.h
 include/rem/rem_fir.h
 include/rem/rem_g711.h
+include/rem/rem_goertzel.h
 include/rem/rem_vid.h
 include/rem/rem_vidconv.h
 include/rem/rem_video.h
