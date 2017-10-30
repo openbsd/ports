@@ -1,0 +1,17 @@
+$OpenBSD: patch-adplugdb_adplugdb_cpp,v 1.1 2017/10/30 13:48:39 jca Exp $
+
+getopt(3) returns an int; avoid infinite loop on platforms where char is
+unsigned.
+
+Index: adplugdb/adplugdb.cpp
+--- adplugdb/adplugdb.cpp.orig
++++ adplugdb/adplugdb.cpp
+@@ -304,7 +304,7 @@ static void shutdown(void)
+ 
+ int main(int argc, char *argv[])
+ {
+-  char		opt;
++  int		opt;
+   bool		dbokay;
+   unsigned int	i;
+ 
