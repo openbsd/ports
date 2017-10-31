@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.70 2017/10/28 10:10:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.71 2017/10/31 17:29:40 ajacoutot Exp $
 
 COMMENT=		gettext(1) files editor for GNOME
 
 GNOME_PROJECT=		gtranslator
 GNOME_VERSION=		2.91.7
-REVISION=		7
+REVISION=		8
 
 CATEGORIES=		textproc devel
 
@@ -17,10 +17,9 @@ WANTLIB += atspi c cairo cairo-gobject dbus-1 enchant epoxy expat
 WANTLIB += ffi fontconfig freetype gcrypt gda-5.0 gdk-3 gdk_pixbuf-2.0
 WANTLIB += gdl-3 gettextpo gio-2.0 girepository-1.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 gpg-error graphite2 gthread-2.0 gtk-3 gtksourceview-3.0
-WANTLIB += gtkspell3-3 harfbuzz iconv intl json-glib-1.0 lzma
-WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre peas-1.0
+WANTLIB += gtkspell3-3 harfbuzz iconv intl json-glib-1.0 lzma xml2
+WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre peas-1.0 z
 WANTLIB += peas-gtk-1.0 pixman-1 png secret-1 xcb xcb-render xcb-shm
-WANTLIB += xcb-xkb xkbcommon xkbcommon-x11 xml2 z
 
 MODULES=		devel/dconf \
 			lang/python \
