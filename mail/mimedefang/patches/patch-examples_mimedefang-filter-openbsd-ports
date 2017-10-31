@@ -1,6 +1,7 @@
-$OpenBSD: patch-examples_mimedefang-filter-openbsd-ports,v 1.6 2016/04/12 15:20:17 ajacoutot Exp $
---- examples/mimedefang-filter-openbsd-ports.orig	Tue Apr 12 17:19:16 2016
-+++ examples/mimedefang-filter-openbsd-ports	Tue Apr 12 17:19:25 2016
+$OpenBSD: patch-examples_mimedefang-filter-openbsd-ports,v 1.7 2017/10/31 07:34:01 ajacoutot Exp $
+Index: examples/mimedefang-filter-openbsd-ports
+--- examples/mimedefang-filter-openbsd-ports.orig
++++ examples/mimedefang-filter-openbsd-ports
 @@ -3,9 +3,6 @@
  #
  # mimedefang-filter
@@ -51,8 +52,8 @@ $OpenBSD: patch-examples_mimedefang-filter-openbsd-ports,v 1.6 2016/04/12 15:20:
  	return action_discard();
      }
  
-@@ -181,10 +186,11 @@ sub filter {
- 	return action_discard();
+@@ -180,10 +185,11 @@ sub filter {
+ 	return action_bounce("MIME type message/partial not accepted here");
      }
  
 -    if (filter_bad_filename($entity)) {
@@ -67,7 +68,7 @@ $OpenBSD: patch-examples_mimedefang-filter-openbsd-ports,v 1.6 2016/04/12 15:20:
  
      return action_accept();
  }
-@@ -210,11 +216,12 @@ sub filter_multipart {
+@@ -209,11 +215,12 @@ sub filter_multipart {
  
      return if message_rejected(); # Avoid unnecessary work
  
@@ -85,7 +86,7 @@ $OpenBSD: patch-examples_mimedefang-filter-openbsd-ports,v 1.6 2016/04/12 15:20:
  
      # Block message/partial parts
      if (lc($type) eq "message/partial") {
-@@ -262,6 +269,9 @@ sub filter_end {
+@@ -260,6 +267,9 @@ sub filter_end {
      # No sense doing any extra work
      return if message_rejected();
  
@@ -95,7 +96,7 @@ $OpenBSD: patch-examples_mimedefang-filter-openbsd-ports,v 1.6 2016/04/12 15:20:
      # Spam checks if SpamAssassin is installed
      if ($Features{"SpamAssassin"}) {
  	if (-s "./INPUTMSG" < 100*1024) {
-@@ -316,7 +326,40 @@ sub filter_end {
+@@ -314,7 +324,40 @@ sub filter_end {
      # by marginal software.  Your call.
  
      # action_rebuild();
