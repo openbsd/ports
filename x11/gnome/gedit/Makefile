@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.151 2017/10/28 18:31:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.152 2017/10/31 18:09:12 ajacoutot Exp $
 
 COMMENT=		lightweight GNOME text editor
 
 GNOME_PROJECT=		gedit
 GNOME_VERSION=		3.22.1
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		editors
 
@@ -20,7 +20,7 @@ WANTLIB += gtk-3 gtksourceview-3.0 harfbuzz m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre peas-1.0 peas-gtk-1.0 pixman-1 png
 WANTLIB += pthread ${COMPILER_LIBCXX} xcb xcb-render
 WANTLIB += xcb-shm xml2 z lzma epoxy iconv intl gspell-1
-WANTLIB += Xtst xcb-xkb xkbcommon xkbcommon-x11
+WANTLIB += Xtst
 
 MODULES=		devel/dconf \
 			lang/python \
