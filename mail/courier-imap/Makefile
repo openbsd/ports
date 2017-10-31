@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.113 2017/09/26 17:30:37 giovanni Exp $
+# $OpenBSD: Makefile,v 1.114 2017/10/31 07:45:04 giovanni Exp $
 
 COMMENT-main=		imap server for maildir format mailboxes
 COMMENT-pop3=		pop3 server for maildir format mailboxes
 
-V=			4.18.0
+V=			4.18.2
 DISTNAME=		courier-imap-${V}
-REVISION=		1
 PKGNAME-main=		${DISTNAME}
 FULLPKGNAME-pop3=	courier-pop3-${V}
 FULLPKGPATH-pop3=	mail/courier-imap,-pop3
@@ -32,8 +31,6 @@ USE_GMAKE=		Yes
 CONFIGURE_STYLE=	autoconf automake
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.15
-# only libs/rfc822/configure.ac is patched
-AUTOCONF_DIR=		${WRKSRC} ${WRKSRC}/libs/rfc822
 
 # AM_PROG_LIBTOOL, aclocal is run during build
 BUILD_DEPENDS +=	devel/libtool
