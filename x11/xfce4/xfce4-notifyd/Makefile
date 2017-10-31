@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.31 2017/10/29 12:05:06 landry Exp $
+# $OpenBSD: Makefile,v 1.32 2017/10/31 15:11:40 ajacoutot Exp $
 
 COMMENT=	Xfce4 alternative notification daemon
 
 XFCE_VERSION=	0.4.0
 XFCE_GOODIE=	xfce4-notifyd
+REVISION=	0
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -27,6 +28,6 @@ WANTLIB += startup-notification-1 xcb xcb-util xcb-render
 WANTLIB += xcb-shm xfce4ui-2 xfce4util xfconf-0 z
 WANTLIB += harfbuzz graphite2 notify iconv intl
 WANTLIB += atk-bridge-2.0 atspi cairo-gobject epoxy gdk-3 gtk-3
-WANTLIB += Xtst xcb-xkb xkbcommon xkbcommon-x11
+WANTLIB += Xtst
 
 .include <bsd.port.mk>
