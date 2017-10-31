@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2017/10/10 04:52:20 bentley Exp $
+# $OpenBSD: Makefile,v 1.5 2017/10/31 09:51:28 bentley Exp $
 
 L =	cat
 LANG =	Catalan
-V =	2.3.0
+V =	2.3.1
 
 USE_GMAKE =	Yes
 

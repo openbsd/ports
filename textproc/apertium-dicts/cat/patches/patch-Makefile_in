@@ -1,9 +1,9 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2017/08/07 11:02:50 bentley Exp $
+$OpenBSD: patch-Makefile_in,v 1.2 2017/10/31 09:51:28 bentley Exp $
 
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -688,15 +688,15 @@ $(LANG1)$(VAR1).automorf.bin: $(BASENAME).$(LANG1).dix
+@@ -689,15 +689,15 @@ $(LANG1)$(VAR1).automorf.bin: $(BASENAME).$(LANG1).dix
  
  .deps/$(BASENAME).$(LANG1).cat.dix: $(BASENAME).$(LANG1).dix .deps/.d
  	apertium-validate-dictionary $<
