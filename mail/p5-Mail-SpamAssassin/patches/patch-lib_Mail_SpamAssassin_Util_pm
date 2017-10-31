@@ -1,6 +1,7 @@
-$OpenBSD: patch-lib_Mail_SpamAssassin_Util_pm,v 1.1 2015/08/26 13:28:54 sthen Exp $
---- lib/Mail/SpamAssassin/Util.pm.orig	Wed Aug 26 14:14:36 2015
-+++ lib/Mail/SpamAssassin/Util.pm	Wed Aug 26 14:21:17 2015
+$OpenBSD: patch-lib_Mail_SpamAssassin_Util_pm,v 1.2 2017/10/31 07:41:51 giovanni Exp $
+Index: lib/Mail/SpamAssassin/Util.pm
+--- lib/Mail/SpamAssassin/Util.pm.orig
++++ lib/Mail/SpamAssassin/Util.pm
 @@ -108,7 +108,7 @@ BEGIN {
      if ( !$displayed_path++ ) {
        dbg("util: current PATH is: ".join($Config{'path_sep'},File::Spec->path()));
@@ -10,3 +11,22 @@ $OpenBSD: patch-lib_Mail_SpamAssassin_Util_pm,v 1.1 2015/08/26 13:28:54 sthen Ex
        my $fname = File::Spec->catfile ($path, $filename);
        if ( -f $fname ) {
          if (-x $fname) {
+@@ -987,6 +987,18 @@ sub parse_content_type {
+   #
+   my($charset) = $ct =~ /\bcharset\s*=\s*["']?(.*?)["']?(?:;|$)/i;
+   my($name) = $ct =~ /\b(?:file)?name\s*=\s*["']?(.*?)["']?(?:;|$)/i;
++
++  # RFC 2231 section 3: Parameter Value Continuations
++  # support continuations for name values
++  #
++  if (!$name && $ct =~ /\b(?:file)?name\*0\s*=/i) {
++
++    my @name;
++    $name[$1] = $2
++      while ($ct =~ /\b(?:file)?name\*(\d+)\s*=\s*["']?(.*?)["']?(?:;|$)/ig);
++
++    $name = join "", grep defined, @name;
++  }
+ 
+   # Get the actual MIME type out ...
+   # Note: the header content may not be whitespace unfolded, so make sure the
