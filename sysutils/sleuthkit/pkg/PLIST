@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2016/10/10 18:58:38 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.9 2017/10/31 21:38:28 rpointel Exp $
 @conflict ja-jvim-*
 @conflict freeze-*
 @bin bin/blkcalc
@@ -33,10 +33,11 @@ bin/sorter
 @bin bin/tsk_gettimes
 @bin bin/tsk_loaddb
 @bin bin/tsk_recover
+@bin bin/usnjls
 include/tsk/
 include/tsk/auto/
-include/tsk/auto/sqlite3.h
 include/tsk/auto/tsk_auto.h
+include/tsk/auto/tsk_is_image_supported.h
 include/tsk/base/
 include/tsk/base/tsk_base.h
 include/tsk/base/tsk_os.h
@@ -94,6 +95,7 @@ lib/libtsk.la
 @man man/man1/tsk_gettimes.1
 @man man/man1/tsk_loaddb.1
 @man man/man1/tsk_recover.1
+@man man/man1/usnjls.1
 share/tsk/
 share/tsk/sorter/
 share/tsk/sorter/default.sort
