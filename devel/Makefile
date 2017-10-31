@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1653 2017/10/30 22:26:30 bluhm Exp $
+# $OpenBSD: Makefile,v 1.1654 2017/10/31 22:14:17 bluhm Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1024,6 +1024,7 @@
      SUBDIR += p5-Sub-Exporter
      SUBDIR += p5-Sub-Exporter-Progressive
      SUBDIR += p5-Sub-Identify
+     SUBDIR += p5-Sub-Info
      SUBDIR += p5-Sub-Install
      SUBDIR += p5-Sub-Lambda
      SUBDIR += p5-Sub-Name
