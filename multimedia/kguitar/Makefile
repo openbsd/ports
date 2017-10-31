@@ -1,47 +1,57 @@
-# $OpenBSD: Makefile,v 1.20 2017/10/23 17:10:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2017/10/31 21:23:00 rsadowski Exp $
 
-COMMENT =		guitar tab editor
+COMMENT =	guitar tab editor
 
-DISTNAME =		kguitar-0.5.1
-REVISION=		12
+GH_ACCOUNT =	pavelliavonau
+GH_PROJECT =	kguitar
+GH_COMMIT =	a7c73491ef236134de55cbdcfc9f8cafa2a76ae1
 
-CATEGORIES =		multimedia kde
+# commit date YYYYMMDD
+DISTNAME =	${GH_PROJECT}-20170809
 
-HOMEPAGE =		http://kguitar.sourceforge.net/
+# override kf5
+EXTRACT_SUFX =	.tar.gz
 
-MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
+CATEGORIES =	multimedia
+
+HOMEPAGE =	http://kguitar.sourceforge.net/
+
+MAINTAINER =	Pascal Stumpf <pascal@stumpf.co>
 
 # GPLv2+; for MusicXML copyright see licenseMusicXML.html
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =  ICE SM X11 Xext Xfixes Xrender Xt art_lgpl_2 c expat
-WANTLIB += fontconfig freetype idn m png pthread ${COMPILER_LIBCXX} util
-WANTLIB += xcb z fam
-WANTLIB += X11-xcb Xdamage Xxf86vm drm glapi xcb-dri2 xcb-glx  
-WANTLIB += ${KDE}/DCOP ${KDE}/kdecore ${KDE}/kdefx ${KDE}/kdeprint
-WANTLIB += ${KDE}/kdesu ${KDE}/kdeui ${KDE}/kio ${KDE}/kparts
-WANTLIB += ${KDE}/kwalletclient
+WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5Codecs KF5Completion
+WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
+WANTLIB += KF5I18n KF5JobWidgets KF5KIOCore KF5KIOWidgets KF5Parts
+WANTLIB += KF5Service KF5SonnetUi KF5TextWidgets KF5WidgetsAddons
+WANTLIB += KF5XmlGui Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport
+WANTLIB += Qt5Widgets Qt5Xml c m
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=kguitar/}
-EXTRACT_SUFX =		.tar.bz2
+MODULES =	devel/cmake \
+		devel/kf5
 
-MODULES =		devel/gettext \
-			x11/kde
-LIB_DEPENDS =		x11/kde/libs3
-RUN_DEPENDS =		x11/gtk+3,-guic
+RUN_DEPENDS +=	devel/desktop-file-utils \
+		devel/gettext \
+		x11/gtk+3,-guic
 
-CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	--disable-midisupport \
-			--with-qt-dir="${LOCALBASE}" \
-			--with-qt-libraries="${LOCALBASE}/lib/qt3" \
-			--with-qt-includes="${LOCALBASE}/include/X11/qt3" \
-			--with-extra-libs="${LOCALBASE}/lib" \
-			--with-extra-includes="${LOCALBASE}/include"
+# kdelibs4support includes kdex.dtd which is necessary to generate docs
+BUILD_DEPENDS +=	devel/kf5/kdoctools \
+			devel/kf5/kdelibs4support \
+			devel/gettext-tools
 
-CONFIGURE_ENV =		${MODKDE_CONFIGURE_ENV}
-
-PORTHOME=		${WRKDIR}
-
-NO_TEST =		Yes
+LIB_DEPENDS =		devel/kf5/kauth \
+			devel/kf5/kcodecs \
+			devel/kf5/kcompletion \
+			devel/kf5/kconfig \
+			devel/kf5/kcoreaddons \
+			devel/kf5/kconfigwidgets \
+			devel/kf5/ki18n \
+			devel/kf5/kio \
+			devel/kf5/ki18n \
+			devel/kf5/kparts \
+			devel/kf5/kservice \
+			devel/kf5/kxmlgui \
+			devel/kf5/sonnet
 
 .include <bsd.port.mk>

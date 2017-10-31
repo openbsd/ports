@@ -1,0 +1,14 @@
+$OpenBSD: patch-kguitar_global_h,v 1.1 2017/10/31 21:23:01 rsadowski Exp $
+
+Index: kguitar/global.h
+--- kguitar/global.h.orig
++++ kguitar/global.h
+@@ -16,7 +16,7 @@ QString midi_patch_name(int);
+ 
+ extern QString drum_abbr[128];
+ 
+-#ifndef _MSC_VER
++#if !defined(__clang__) && !defined(_MSC_VER)
+ 
+ #pragma GCC diagnostic ignored "-Wsign-compare"
+ #pragma GCC diagnostic ignored "-Wunused-but-set-variable"
