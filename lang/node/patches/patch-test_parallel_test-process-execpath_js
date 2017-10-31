@@ -1,9 +1,9 @@
-$OpenBSD: patch-test_parallel_test-process-execpath_js,v 1.1 2017/10/10 13:32:07 abieber Exp $
+$OpenBSD: patch-test_parallel_test-process-execpath_js,v 1.2 2017/10/31 01:31:45 abieber Exp $
 
 Index: test/parallel/test-process-execpath.js
 --- test/parallel/test-process-execpath.js.orig
 +++ test/parallel/test-process-execpath.js
-@@ -5,6 +5,11 @@ const child_process = require('child_process');
+@@ -8,6 +8,11 @@ const child_process = require('child_process');
  const path = require('path');
  const fs = require('fs');
  
@@ -14,4 +14,4 @@ Index: test/parallel/test-process-execpath.js
 +
  assert.strictEqual(process.execPath, fs.realpathSync(process.execPath));
  
- if (common.isWindows) {
+ if (process.argv[2] === 'child') {
