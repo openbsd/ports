@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.224 2017/10/28 08:39:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.225 2017/10/31 12:32:30 ajacoutot Exp $
 
 COMMENT=		powerful desktop search tool and indexer
 
 GNOME_PROJECT=		tracker
 GNOME_VERSION=		1.12.3
-REVISION=		3
+REVISION=		4
 
 # there is already audio/tracker, so this port has to live
 # as meta-tracker
@@ -43,7 +43,7 @@ WANTLIB += lz4 lzma m mediaart-2.0 openjp2 orc-0.4 osinfo-1.0
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png poppler poppler-glib soup-2.4 sqlite3 tag tag_c
 WANTLIB += tiff totem-plparser upower-glib util uuid xcb xcb-render
-WANTLIB += xcb-shm xcb-xkb xkbcommon xkbcommon-x11 xml2 xslt z
+WANTLIB += xcb-shm xml2 xslt z gcrypt
 
 MODULES=		devel/dconf \
 			lang/python \
