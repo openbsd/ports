@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2017/10/26 13:25:09 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.13 2017/10/31 18:38:53 ajacoutot Exp $
 share/help/C/gnome-help/figures/gnome-change-wallpaper.webm
 share/help/C/gnome-help/figures/gnome-launching-applications.webm
 share/help/C/gnome-help/figures/gnome-responding-to-messages.webm
@@ -1030,9 +1030,6 @@ share/help/pa/gnome-help/gs-web-browser1-firefox.svg
 share/help/pa/gnome-help/gs-web-browser1.svg
 share/help/pa/gnome-help/gs-web-browser2-firefox.svg
 share/help/pa/gnome-help/gs-web-browser2.svg
-share/help/pl/
-share/help/pl/gnome-help/
-share/help/pl/gnome-help/figures/
 share/help/pl/gnome-help/figures/gnome-change-wallpaper.webm
 share/help/pl/gnome-help/figures/gnome-launching-applications.webm
 share/help/pl/gnome-help/figures/gnome-responding-to-messages.webm
@@ -1074,9 +1071,6 @@ share/help/pl/gnome-help/gs-web-browser1-firefox.svg
 share/help/pl/gnome-help/gs-web-browser1.svg
 share/help/pl/gnome-help/gs-web-browser2-firefox.svg
 share/help/pl/gnome-help/gs-web-browser2.svg
-share/help/pt/
-share/help/pt/gnome-help/
-share/help/pt/gnome-help/figures/
 share/help/pt/gnome-help/figures/gnome-change-wallpaper.webm
 share/help/pt/gnome-help/figures/gnome-launching-applications.webm
 share/help/pt/gnome-help/figures/gnome-responding-to-messages.webm
