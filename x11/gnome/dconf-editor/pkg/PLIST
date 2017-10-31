@@ -1,10 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.5 2017/10/26 12:32:59 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2017/10/31 13:29:21 ajacoutot Exp $
 @conflict dconf-<0.22.0
 @pkgpath devel/dconf,-editor
 @bin bin/dconf-editor
 @man man/man1/dconf-editor.1
-share/appdata/
-share/appdata/ca.desrt.dconf-editor.appdata.xml
 share/applications/ca.desrt.dconf-editor.desktop
 share/dbus-1/services/ca.desrt.dconf-editor.service
 share/glib-2.0/schemas/ca.desrt.dconf-editor.gschema.xml
@@ -78,6 +76,8 @@ share/locale/vi/LC_MESSAGES/dconf.mo
 share/locale/zh_CN/LC_MESSAGES/dconf.mo
 share/locale/zh_HK/LC_MESSAGES/dconf.mo
 share/locale/zh_TW/LC_MESSAGES/dconf.mo
+share/metainfo/
+share/metainfo/ca.desrt.dconf-editor.appdata.xml
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
