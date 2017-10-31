@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.72 2017/02/22 02:49:25 danj Exp $
+# $OpenBSD: Makefile,v 1.73 2017/10/31 18:00:32 rsadowski Exp $
 
 COMMENT =	retrieve files from the web via HTTP, HTTPS and FTP
 
-DISTNAME =	wget-1.19.1
+DISTNAME =	wget-1.19.2
 CATEGORIES =	net
 
 HOMEPAGE =	https://www.gnu.org/software/wget/
@@ -10,16 +10,17 @@ HOMEPAGE =	https://www.gnu.org/software/wget/
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		c crypto idn2 pcre psl ssl unistring z
+WANTLIB += c crypto iconv idn2 intl pcre psl ssl unistring z
+
+BUILD_DEPENDS =		devel/gettext-tools
+
 LIB_DEPENDS =		converters/libunistring \
+			devel/gettext \
 			devel/libidn2 \
 			devel/pcre \
 			net/libpsl
 
 MASTER_SITES =		${MASTER_SITE_GNU:=wget/}
-EXTRACT_SUFX =		.tar.xz
-
-MODULES =		devel/gettext
 
 # some regression tests require python3
 MODULES +=		lang/python
