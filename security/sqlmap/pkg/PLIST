@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2017/08/23 14:29:13 gonzalo Exp $
+@comment $OpenBSD: PLIST,v 1.7 2017/10/31 19:50:00 rpointel Exp $
 bin/sqlmap
 share/sqlmap/
 share/sqlmap/.travis.yml
@@ -574,6 +574,8 @@ share/sqlmap/tamper/ifnull2ifisnull.py
 share/sqlmap/tamper/ifnull2ifisnull.pyc
 share/sqlmap/tamper/informationschemacomment.py
 share/sqlmap/tamper/informationschemacomment.pyc
+share/sqlmap/tamper/least.py
+share/sqlmap/tamper/least.pyc
 share/sqlmap/tamper/lowercase.py
 share/sqlmap/tamper/lowercase.pyc
 share/sqlmap/tamper/modsecurityversioned.py
@@ -947,6 +949,8 @@ share/sqlmap/waf/kona.py
 share/sqlmap/waf/kona.pyc
 share/sqlmap/waf/modsecurity.py
 share/sqlmap/waf/modsecurity.pyc
+share/sqlmap/waf/naxsi.py
+share/sqlmap/waf/naxsi.pyc
 share/sqlmap/waf/netcontinuum.py
 share/sqlmap/waf/netcontinuum.pyc
 share/sqlmap/waf/netscaler.py
@@ -1007,14 +1011,14 @@ share/sqlmap/waf/yunsuo.py
 share/sqlmap/waf/yunsuo.pyc
 share/sqlmap/xml/
 share/sqlmap/xml/banner/
-share/sqlmap/xml/banner/cookie.xml
 share/sqlmap/xml/banner/generic.xml
 share/sqlmap/xml/banner/mssql.xml
 share/sqlmap/xml/banner/mysql.xml
 share/sqlmap/xml/banner/oracle.xml
 share/sqlmap/xml/banner/postgresql.xml
 share/sqlmap/xml/banner/server.xml
-share/sqlmap/xml/banner/servlet.xml
+share/sqlmap/xml/banner/servlet-engine.xml
+share/sqlmap/xml/banner/set-cookie.xml
 share/sqlmap/xml/banner/sharepoint.xml
 share/sqlmap/xml/banner/x-aspnet-version.xml
 share/sqlmap/xml/banner/x-powered-by.xml
