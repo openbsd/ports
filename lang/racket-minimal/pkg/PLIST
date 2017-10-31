@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2017/07/31 23:13:12 juanfra Exp $
+@comment $OpenBSD: PLIST,v 1.11 2017/10/31 15:53:28 juanfra Exp $
 @conflict racket-<6.2
 @pkgpath lang/racket
 @bin bin/racket
@@ -1733,11 +1733,6 @@ share/racket/collects/syntax/parse/experimental/compiled/template_rkt.zo
 share/racket/collects/syntax/parse/experimental/contract.rkt
 share/racket/collects/syntax/parse/experimental/dset.rkt
 share/racket/collects/syntax/parse/experimental/eh.rkt
-share/racket/collects/syntax/parse/experimental/private/
-share/racket/collects/syntax/parse/experimental/private/compiled/
-share/racket/collects/syntax/parse/experimental/private/compiled/substitute_rkt.dep
-share/racket/collects/syntax/parse/experimental/private/compiled/substitute_rkt.zo
-share/racket/collects/syntax/parse/experimental/private/substitute.rkt
 share/racket/collects/syntax/parse/experimental/provide.rkt
 share/racket/collects/syntax/parse/experimental/reflect.rkt
 share/racket/collects/syntax/parse/experimental/specialize.rkt
