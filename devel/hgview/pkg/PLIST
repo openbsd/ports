@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/09/16 13:15:53 edd Exp $
+@comment $OpenBSD: PLIST,v 1.3 2017/10/31 14:20:53 juanfra Exp $
 bin/hgview
 lib/python${MODPY_VERSION}/site-packages/hgext/hgview.py
 lib/python${MODPY_VERSION}/site-packages/hgext/hgview.pyc
@@ -61,6 +61,8 @@ lib/python${MODPY_VERSION}/site-packages/hgviewlib/qt4/application.py
 lib/python${MODPY_VERSION}/site-packages/hgviewlib/qt4/application.pyc
 lib/python${MODPY_VERSION}/site-packages/hgviewlib/qt4/blockmatcher.py
 lib/python${MODPY_VERSION}/site-packages/hgviewlib/qt4/blockmatcher.pyc
+lib/python${MODPY_VERSION}/site-packages/hgviewlib/qt4/config.py
+lib/python${MODPY_VERSION}/site-packages/hgviewlib/qt4/config.pyc
 lib/python${MODPY_VERSION}/site-packages/hgviewlib/qt4/filediffviewer_ui.py
 lib/python${MODPY_VERSION}/site-packages/hgviewlib/qt4/filediffviewer_ui.pyc
 lib/python${MODPY_VERSION}/site-packages/hgviewlib/qt4/fileviewer_ui.py
@@ -69,8 +71,6 @@ lib/python${MODPY_VERSION}/site-packages/hgviewlib/qt4/helpviewer.py
 lib/python${MODPY_VERSION}/site-packages/hgviewlib/qt4/helpviewer.pyc
 lib/python${MODPY_VERSION}/site-packages/hgviewlib/qt4/helpviewer_ui.py
 lib/python${MODPY_VERSION}/site-packages/hgviewlib/qt4/helpviewer_ui.pyc
-lib/python${MODPY_VERSION}/site-packages/hgviewlib/qt4/hgdialogmixin.py
-lib/python${MODPY_VERSION}/site-packages/hgviewlib/qt4/hgdialogmixin.pyc
 lib/python${MODPY_VERSION}/site-packages/hgviewlib/qt4/hgfiledialog.py
 lib/python${MODPY_VERSION}/site-packages/hgviewlib/qt4/hgfiledialog.pyc
 lib/python${MODPY_VERSION}/site-packages/hgviewlib/qt4/hgfileview.py
@@ -83,18 +83,24 @@ lib/python${MODPY_VERSION}/site-packages/hgviewlib/qt4/hgqv_ui.py
 lib/python${MODPY_VERSION}/site-packages/hgviewlib/qt4/hgqv_ui.pyc
 lib/python${MODPY_VERSION}/site-packages/hgviewlib/qt4/hgrepomodel.py
 lib/python${MODPY_VERSION}/site-packages/hgviewlib/qt4/hgrepomodel.pyc
-lib/python${MODPY_VERSION}/site-packages/hgviewlib/qt4/hgrepoview.py
-lib/python${MODPY_VERSION}/site-packages/hgviewlib/qt4/hgrepoview.pyc
 lib/python${MODPY_VERSION}/site-packages/hgviewlib/qt4/hgrepoviewer.py
 lib/python${MODPY_VERSION}/site-packages/hgviewlib/qt4/hgrepoviewer.pyc
 lib/python${MODPY_VERSION}/site-packages/hgviewlib/qt4/lexers.py
 lib/python${MODPY_VERSION}/site-packages/hgviewlib/qt4/lexers.pyc
 lib/python${MODPY_VERSION}/site-packages/hgviewlib/qt4/manifestviewer_ui.py
 lib/python${MODPY_VERSION}/site-packages/hgviewlib/qt4/manifestviewer_ui.pyc
+lib/python${MODPY_VERSION}/site-packages/hgviewlib/qt4/mixins.py
+lib/python${MODPY_VERSION}/site-packages/hgviewlib/qt4/mixins.pyc
 lib/python${MODPY_VERSION}/site-packages/hgviewlib/qt4/quickbar.py
 lib/python${MODPY_VERSION}/site-packages/hgviewlib/qt4/quickbar.pyc
+lib/python${MODPY_VERSION}/site-packages/hgviewlib/qt4/revision_description.py
+lib/python${MODPY_VERSION}/site-packages/hgviewlib/qt4/revision_description.pyc
+lib/python${MODPY_VERSION}/site-packages/hgviewlib/qt4/revisions_table.py
+lib/python${MODPY_VERSION}/site-packages/hgviewlib/qt4/revisions_table.pyc
 lib/python${MODPY_VERSION}/site-packages/hgviewlib/qt4/styleditemdelegate.py
 lib/python${MODPY_VERSION}/site-packages/hgviewlib/qt4/styleditemdelegate.pyc
+lib/python${MODPY_VERSION}/site-packages/hgviewlib/qt4/widgets.py
+lib/python${MODPY_VERSION}/site-packages/hgviewlib/qt4/widgets.pyc
 lib/python${MODPY_VERSION}/site-packages/hgviewlib/util.py
 lib/python${MODPY_VERSION}/site-packages/hgviewlib/util.pyc
 @man man/man1/hgview.1

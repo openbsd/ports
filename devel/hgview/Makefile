@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2015/04/02 14:21:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2017/10/31 14:20:53 juanfra Exp $
 
 COMMENT =		fast Mercurial log navigator
 
-MODPY_EGG_VERSION =	1.8.2
+MODPY_EGG_VERSION =	1.9.0
 DISTNAME =		hgview-${MODPY_EGG_VERSION}
 
 CATEGORIES =		devel
 HOMEPAGE =		http://www.hgview.org/
-MAINTAINER =		Edd Barrett <edd@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes

@@ -1,10 +1,11 @@
-$OpenBSD: patch-setup_py,v 1.2 2014/09/16 13:15:52 edd Exp $
+$OpenBSD: patch-setup_py,v 1.3 2017/10/31 14:20:53 juanfra Exp $
 
 Fix calls to gmake.
 
---- setup.py.orig	Fri Jan 31 19:40:05 2014
-+++ setup.py	Wed Apr 30 14:10:28 2014
-@@ -41,6 +41,13 @@ try:
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -56,6 +56,13 @@ try:
  except ImportError:
      pass
  
@@ -18,7 +19,7 @@ Fix calls to gmake.
  # import required features
  from hgviewlib.__pkginfo__ import modname, version, license, description, \
       web, author, author_email
-@@ -163,13 +170,9 @@ class build_doc(_build):
+@@ -178,13 +185,9 @@ class build_doc(_build):
      def run(self):
          # be sure to compile man page
          self.mkpath(self.build_dir)
@@ -34,7 +35,7 @@ Fix calls to gmake.
          except:
              if not py2exe:
                  # does not make sense (either because of windows vs toolchain
-@@ -275,12 +278,8 @@ class install_doc(_install_data):
+@@ -290,12 +293,8 @@ class install_doc(_install_data):
          self.set_undefined_options('install', ('install_base', 'install_dir'))
  
      def run(self):
