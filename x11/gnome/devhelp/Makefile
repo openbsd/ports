@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.105 2017/10/26 13:25:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.106 2017/10/31 16:31:53 ajacoutot Exp $
 
 COMMENT=		API documentation browser for GNOME
 
 GNOME_PROJECT=		devhelp
 GNOME_VERSION=		3.26.0
+REVISION=		0
 
 SHARED_LIBS +=  devhelp-3            1.0      # 4.0
 
@@ -26,7 +27,7 @@ WANTLIB += icudata icui18n icuuc intl javascriptcoregtk-4.0 jpeg
 WANTLIB += lzma m notify orc-0.4 pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png secret-1 soup-2.4 sqlite3 tasn1 webkit2gtk-4.0
 WANTLIB += webp xcb xcb-dri2 xcb-glx xcb-render xcb-shm xcb-xfixes
-WANTLIB += xcb-xkb xkbcommon xkbcommon-x11 xml2 xslt z
+WANTLIB += xml2 xslt z
 
 MODULES=		devel/dconf \
 			lang/python \
