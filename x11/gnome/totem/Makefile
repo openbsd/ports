@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.152 2017/10/28 08:39:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.153 2017/10/31 18:31:35 ajacoutot Exp $
 
 COMMENT=		official media player for GNOME
 
 GNOME_PROJECT=		totem
 GNOME_VERSION=		3.24.0
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS +=  totem                0.0      # unknown
 
@@ -26,8 +26,7 @@ WANTLIB += gstreamer-1.0 gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3
 WANTLIB += harfbuzz iconv idn intl json-glib-1.0 lz4 lzma m nautilus-extension
 WANTLIB += orc-0.4 pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
 WANTLIB += peas-1.0 peas-gtk-1.0 pixman-1 png pthread totem-plparser
-WANTLIB += xcb xcb-dri2 xcb-render xcb-shm xcb-xfixes xcb-xkb
-WANTLIB += xkbcommon xkbcommon-x11 xml2 z
+WANTLIB += xcb xcb-dri2 xcb-render xcb-shm xcb-xfixes xcb-xkb xml2 z
 
 MODULES=		devel/dconf \
 			lang/python \
