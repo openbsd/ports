@@ -1,12 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.8 2016/06/18 12:39:03 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.9 2017/11/01 19:09:57 jasper Exp $
 @conflict gnome-utils-*
 @bin bin/gnome-screenshot
 @man man/man1/gnome-screenshot.1
 share/GConf/
 share/GConf/gsettings/
 share/GConf/gsettings/gnome-screenshot.convert
-share/appdata/
-share/appdata/org.gnome.Screenshot.appdata.xml
 share/applications/org.gnome.Screenshot.desktop
 share/dbus-1/services/org.gnome.Screenshot.service
 share/glib-2.0/schemas/org.gnome.gnome-screenshot.gschema.xml
@@ -106,6 +104,8 @@ share/locale/xh/LC_MESSAGES/gnome-screenshot.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-screenshot.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-screenshot.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-screenshot.mo
+share/metainfo/
+share/metainfo/org.gnome.Screenshot.metainfo.xml
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @exec %D/bin/update-desktop-database
