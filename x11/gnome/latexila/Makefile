@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.58 2017/10/31 15:15:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.59 2017/11/01 22:04:53 ajacoutot Exp $
 
 COMMENT=		integrated LaTeX environment for GNOME
 
 GNOME_PROJECT=		latexila
-GNOME_VERSION=		3.24.3
-REVISION=		2
+GNOME_VERSION=		3.26.1
 
 CATEGORIES=		editors print
 
@@ -12,14 +11,14 @@ CATEGORIES=		editors print
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} X11 Xcomposite Xcursor Xdamage Xext
-WANTLIB += Xfixes Xi Xinerama Xrandr Xrender Xtst atk-1.0 atk-bridge-2.0
-WANTLIB += atspi c cairo cairo-gobject dbus-1 enchant epoxy expat
-WANTLIB += ffi fontconfig freetype gdk-3 gdk_pixbuf-2.0 gee-0.8
-WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
-WANTLIB += gspell-1 gtef-2 gthread-2.0 gtk-3 gtksourceview-3.0
-WANTLIB += harfbuzz iconv intl lzma m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png uchardet xcb xcb-render
-WANTLIB += xcb-shm xml2 z
+WANTLIB += Xfixes Xi Xinerama Xrandr Xrender Xtst amtk-3 atk-1.0
+WANTLIB += atk-bridge-2.0 atspi c cairo cairo-gobject dbus-1 enchant
+WANTLIB += epoxy expat ffi fontconfig freetype gdk-3 gdk_pixbuf-2.0
+WANTLIB += gee-0.8 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
+WANTLIB += gspell-1 gthread-2.0 gtk-3 gtksourceview-3.0 harfbuzz
+WANTLIB += iconv intl lzma m pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pcre pixman-1 png tepl-3 uchardet xcb xcb-render xcb-shm
+WANTLIB += xml2 z
 
 MODULES=		devel/dconf \
 			x11/gnome
@@ -32,7 +31,7 @@ RUN_DEPENDS=		devel/gsettings-desktop-schemas \
 
 LIB_DEPENDS=		devel/libgee \
 			textproc/gspell \
-			x11/gnome/gtef
+			x11/gnome/tepl
 
 MODGNOME_TOOLS=		desktop-file-utils gobject-introspection \
 			gtk-update-icon-cache vala yelp
