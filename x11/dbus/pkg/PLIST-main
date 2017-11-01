@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2017/04/22 13:43:21 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2017/11/01 06:27:31 ajacoutot Exp $
 @pkgpath x11/dbus
 @newgroup _dbus:572
 @newuser _dbus:572:_dbus:daemon:dbus user:/nonexistent:/sbin/nologin
@@ -31,6 +31,10 @@ include/dbus-1.0/dbus/dbus-syntax.h
 include/dbus-1.0/dbus/dbus-threads.h
 include/dbus-1.0/dbus/dbus-types.h
 include/dbus-1.0/dbus/dbus.h
+lib/cmake/
+lib/cmake/DBus1/
+lib/cmake/DBus1/DBus1Config.cmake
+lib/cmake/DBus1/DBus1ConfigVersion.cmake
 lib/dbus-1.0/
 lib/dbus-1.0/include/
 lib/dbus-1.0/include/dbus/
@@ -84,5 +88,9 @@ share/examples/dbus/dbus-1/session.conf
 @sample ${SYSCONFDIR}/dbus-1/session.conf
 share/examples/dbus/dbus-1/system.conf
 @sample ${SYSCONFDIR}/dbus-1/system.conf
+share/xml/
+share/xml/dbus-1/
+share/xml/dbus-1/busconfig.dtd
+share/xml/dbus-1/introspect.dtd
 @exec ${PREFIX}/bin/dbus-uuidgen --ensure=${SYSCONFDIR}/machine-id
 @rcscript ${RCDIR}/messagebus
