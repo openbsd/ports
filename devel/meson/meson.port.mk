@@ -1,6 +1,6 @@
-# $OpenBSD: meson.port.mk,v 1.9 2017/10/28 13:27:05 ajacoutot Exp $
+# $OpenBSD: meson.port.mk,v 1.10 2017/11/01 19:08:00 ajacoutot Exp $
 
-BUILD_DEPENDS +=	devel/meson>=0.43.0p0
+BUILD_DEPENDS +=	devel/meson>=0.43.0p1
 SEPARATE_BUILD ?=	Yes
 
 MODMESON_WANTCOLOR ?=	No
@@ -56,3 +56,7 @@ do-test:
 	exec ${SETENV} ${ALL_TEST_ENV} \
 		${LOCALBASE}/bin/ninja -C ${WRKBUILD} ${TEST_TARGET}
 .endif
+
+# XXX hardcoded
+# make our life easier
+MODMESON_pre-configure += ln -sf ${LOCALBASE}/bin/python3.6 ${WRKDIR}/bin/python3

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2017/10/28 13:27:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2017/11/01 19:08:00 ajacoutot Exp $
 
 COMMENT=		next-generation build system
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION=	${GH_TAGNAME}
 GH_ACCOUNT=		mesonbuild
 GH_PROJECT=		meson
 GH_TAGNAME=		0.43.0
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		devel
 
