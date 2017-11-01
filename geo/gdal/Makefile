@@ -1,22 +1,22 @@
-# $OpenBSD: Makefile,v 1.60 2017/07/26 22:45:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.61 2017/11/01 16:47:17 landry Exp $
 
 COMMENT-main =	translator library for geospatial data formats
 COMMENT-python =python bindings and utilities for GDAL
 COMMENT-perl =	perl bindings for GDAL
 
-V =		2.2.1
+V =		2.2.2
 DISTNAME =	gdal-${V}
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
 		gdalautotest-${V}${EXTRACT_SUFX}
 
-PKGNAME-main =	${DISTNAME}
-PKGNAME-python =py-${DISTNAME}
-PKGNAME-perl =	p5-Geo-GDAL-${V}
-REVISION-main =	0
-REVISION-perl =	0
-REVISION-python =	0
+FULLPKGNAME-main =	${DISTNAME}
+FULLPKGPATH-main =	geo/gdal,-main
+FULLPKGNAME-python =	py-${DISTNAME}
+FULLPKGPATH-python =	geo/gdal,-python${FLAVOR_EXT:S/-/,/g}
+FULLPKGNAME-perl =	p5-Geo-GDAL-${V}
+FULLPKGPATH-perl =	geo/gdal,-perl
 
-SHARED_LIBS =	gdal 29.0 #22.0
+SHARED_LIBS =	gdal 30.0 #22.0
 CATEGORIES =	geo devel
 
 HOMEPAGE =	http://www.gdal.org/
@@ -29,6 +29,12 @@ PERMIT_PACKAGE_CDROM=	Yes
 MASTER_SITES =	http://download.osgeo.org/gdal/${V}/
 
 MODULES =	perl lang/python devel/gettext
+FLAVORS =	python3
+FLAVOR ?=
+
+.if ${FLAVOR:Mpython3}
+FULLPKGNAME-python =	py3-${DISTNAME}
+.endif
 
 MULTI_PACKAGES =	-main -python -perl
 
@@ -56,20 +62,22 @@ WANTLIB-main =		${WANTLIB} c expat m ${COMPILER_LIBCXX} z tiff openjp2 ssl crypt
 			proj pthread freexl pcre spatialite sqlite3 xml2 lzma nghttp2 webp
 
 
-LIB_DEPENDS-python =	${PKGNAME}:${BASE_PKGPATH},-main
+LIB_DEPENDS-python =	${MODPY_LIB_DEPENDS} \
+			${FULLPKGNAME-main}:${FULLPKGPATH-main}
 WANTLIB-python =	${MODPY_WANTLIB} gdal m pthread ${COMPILER_LIBCXX}
 
-LIB_DEPENDS-perl =	${PKGNAME}:${BASE_PKGPATH},-main
+RUN_DEPENDS-perl =
+LIB_DEPENDS-perl =	${FULLPKGNAME-main}:${FULLPKGPATH-main}
 WANTLIB-perl =		perl gdal # uses perl ABI
 WANTLIB-perl += c crypto curl expat freexl geos_c geotiff gif iconv
 WANTLIB-perl += jasper jpeg json-c lzma m nghttp2 openjp2 pcre png
 WANTLIB-perl += pq pthread qhull spatialite sqlite3 ssl tiff xml2 webp z
 
 
-RUN_DEPENDS +=		math/py-numpy
+RUN_DEPENDS +=		math/py-numpy${MODPY_FLAVOR}
 BUILD_DEPENDS +=	${RUN_DEPENDS} devel/swig
 
-TEST_DEPENDS +=		${PKGNAME-python}:${BASE_PKGPATH},-python
+TEST_DEPENDS +=		${FULLPKGNAME-python}:${FULLPKGPATH-python}
 TEST_ENV =		GDAL_DOWNLOAD_TEST_DATA=1 GDAL_RUN_SLOW_TESTS=yes
 
 MODPY_SETUPTOOLS =	Yes
@@ -98,7 +106,7 @@ CONFIGURE_ARGS =--without-hdf5 \
 		--without-php \
 		--without-ruby \
 		--with-pg=${LOCALBASE}/bin/pg_config \
-		--with-python \
+		--with-python=${MODPY_BIN} \
 		--with-perl \
 		--with-geos \
 		--with-gnm \
@@ -115,6 +123,21 @@ CONFIGURE_ARGS =--without-hdf5 \
 
 post-extract:
 	ln -sf ${WRKDIR}/gdalautotest-${V} ${WRKSRC}/autotest
+
+PYBINS = epsg_tr esri2wkt gcps2vec gcps2wld gdal2xyz gdal_auth gdal_merge \
+	gdalchksum gdalident gdalimport mkgraticule
+PYBINSWITHMAN = gdal2tiles gdal_calc gdal_edit gdal_fillnodata gdal_pansharpen \
+	gdal_polygonize gdal_proximity gdal_retile gdal_sieve gdalcompare \
+	gdalmove ogrmerge pct2rgb rgb2pct
+
+post-install:
+.for b in ${PYBINSWITHMAN}
+	mv -f ${PREFIX}/bin/$b.py ${PREFIX}/bin/$b${MODPY_BIN_SUFFIX}.py
+	mv -f ${PREFIX}/man/man1/$b.1 ${PREFIX}/man/man1/$b${MODPY_BIN_SUFFIX}.1
+.endfor
+.for b in ${PYBINS}
+	mv -f ${PREFIX}/bin/$b.py ${PREFIX}/bin/$b${MODPY_BIN_SUFFIX}.py
+.endfor
 
 do-test:
 	cd ${WRKSRC}/autotest && env ${TEST_ENV} ${MODPY_BIN} run_all.py

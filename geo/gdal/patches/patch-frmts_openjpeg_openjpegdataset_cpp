@@ -1,13 +1,13 @@
-$OpenBSD: patch-frmts_openjpeg_openjpegdataset_cpp,v 1.6 2017/05/19 09:19:48 landry Exp $
+$OpenBSD: patch-frmts_openjpeg_openjpegdataset_cpp,v 1.7 2017/11/01 16:47:17 landry Exp $
 Index: frmts/openjpeg/openjpegdataset.cpp
 --- frmts/openjpeg/openjpegdataset.cpp.orig
 +++ frmts/openjpeg/openjpegdataset.cpp
 @@ -35,7 +35,7 @@
  #endif
  
- #if defined(OPENJPEG_VERSION) && OPENJPEG_VERSION >= 20100
--#include <openjpeg-2.1/openjpeg.h>
+ #if defined(OPENJPEG_VERSION) && OPENJPEG_VERSION >= 20200
+-#include <openjpeg-2.2/openjpeg.h>
 +#include <openjp2/openjpeg.h>
+ #elif defined(OPENJPEG_VERSION) && OPENJPEG_VERSION >= 20100
+ #include <openjpeg-2.1/openjpeg.h>
  #else
- #include <stdio.h> /* openjpeg.h needs FILE* */
- #include <openjpeg-2.0/openjpeg.h>
