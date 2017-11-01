@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.55 2017/10/30 14:31:44 landry Exp $
+# $OpenBSD: Makefile,v 1.56 2017/11/01 16:48:28 landry Exp $
 
      SUBDIR =
      SUBDIR += emerillon
      SUBDIR += foxtrotgps
      SUBDIR += garmindev
      SUBDIR += gdal
+     SUBDIR += gdal,python3
      SUBDIR += geoclue
      SUBDIR += geoclue2
      SUBDIR += geocode-glib
