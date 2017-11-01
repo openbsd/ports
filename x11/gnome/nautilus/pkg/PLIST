@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.55 2017/04/17 10:35:15 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.56 2017/11/01 19:09:16 ajacoutot Exp $
 @bin bin/nautilus
 @bin bin/nautilus-autorun-software
 @bin bin/nautilus-desktop
@@ -16,14 +16,12 @@ include/nautilus/libnautilus-extension/nautilus-menu.h
 include/nautilus/libnautilus-extension/nautilus-property-page-provider.h
 include/nautilus/libnautilus-extension/nautilus-property-page.h
 lib/girepository-1.0/Nautilus-3.0.typelib
-lib/libnautilus-extension.a
-lib/libnautilus-extension.la
 @lib lib/libnautilus-extension.so.${LIBnautilus-extension_VERSION}
 lib/nautilus/
 lib/nautilus/extensions-3.0/
 lib/nautilus/extensions-3.0/libnautilus-sendto.so
 lib/pkgconfig/libnautilus-extension.pc
-@man man/man1/nautilus.1
+share/appdata/
 share/appdata/org.gnome.Nautilus.appdata.xml
 share/applications/nautilus-autorun-software.desktop
 share/applications/nautilus-classic.desktop
@@ -42,31 +40,6 @@ share/glib-2.0/schemas/org.gnome.nautilus.gschema.xml
 share/gnome-shell/
 share/gnome-shell/search-providers/
 share/gnome-shell/search-providers/nautilus-search-provider.ini
-share/gtk-doc/html/libnautilus-extension/
-share/gtk-doc/html/libnautilus-extension/NautilusColumn.html
-share/gtk-doc/html/libnautilus-extension/NautilusColumnProvider.html
-share/gtk-doc/html/libnautilus-extension/NautilusFileInfo.html
-share/gtk-doc/html/libnautilus-extension/NautilusInfoProvider.html
-share/gtk-doc/html/libnautilus-extension/NautilusLocationWidgetProvider.html
-share/gtk-doc/html/libnautilus-extension/NautilusMenu.html
-share/gtk-doc/html/libnautilus-extension/NautilusMenuItem.html
-share/gtk-doc/html/libnautilus-extension/NautilusMenuProvider.html
-share/gtk-doc/html/libnautilus-extension/NautilusPropertyPage.html
-share/gtk-doc/html/libnautilus-extension/NautilusPropertyPageProvider.html
-share/gtk-doc/html/libnautilus-extension/ch01.html
-share/gtk-doc/html/libnautilus-extension/home.png
-share/gtk-doc/html/libnautilus-extension/index.html
-share/gtk-doc/html/libnautilus-extension/ix01.html
-share/gtk-doc/html/libnautilus-extension/left-insensitive.png
-share/gtk-doc/html/libnautilus-extension/left.png
-share/gtk-doc/html/libnautilus-extension/libnautilus-extension-NautilusModule.html
-share/gtk-doc/html/libnautilus-extension/libnautilus-extension.devhelp2
-share/gtk-doc/html/libnautilus-extension/pt01.html
-share/gtk-doc/html/libnautilus-extension/right-insensitive.png
-share/gtk-doc/html/libnautilus-extension/right.png
-share/gtk-doc/html/libnautilus-extension/style.css
-share/gtk-doc/html/libnautilus-extension/up-insensitive.png
-share/gtk-doc/html/libnautilus-extension/up.png
 share/icons/hicolor/16x16/apps/org.gnome.Nautilus.png
 share/icons/hicolor/22x22/apps/org.gnome.Nautilus.png
 share/icons/hicolor/24x24/apps/org.gnome.Nautilus.png
@@ -86,6 +59,8 @@ share/locale/be@latin/LC_MESSAGES/nautilus.mo
 share/locale/bg/LC_MESSAGES/nautilus.mo
 share/locale/bn/LC_MESSAGES/nautilus.mo
 share/locale/bn_IN/LC_MESSAGES/nautilus.mo
+share/locale/bo/
+share/locale/bo/LC_MESSAGES/
 share/locale/bo/LC_MESSAGES/nautilus.mo
 share/locale/br/LC_MESSAGES/nautilus.mo
 share/locale/bs/LC_MESSAGES/nautilus.mo
