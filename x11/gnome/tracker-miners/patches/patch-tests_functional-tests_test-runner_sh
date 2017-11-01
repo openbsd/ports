@@ -1,0 +1,16 @@
+$OpenBSD: patch-tests_functional-tests_test-runner_sh,v 1.1.1.1 2017/11/01 15:19:20 ajacoutot Exp $
+
+We don't use GNU mktemp(1).
+
+Index: tests/functional-tests/test-runner.sh
+--- tests/functional-tests/test-runner.sh.orig
++++ tests/functional-tests/test-runner.sh
+@@ -8,7 +8,7 @@ SCRIPT=$1
+ 
+ DBUS_SESSION_BUS_PID=
+ 
+-export TEMP_DIR=`mktemp --tmpdir -d tracker-test-XXXX`
++export TEMP_DIR=`mktemp -p /tmp -d tracker-test-XXXXXX`
+ 
+ # We need to use the actual home directory for some tests because
+ # Tracker will explicitly ignore files in /tmp ...

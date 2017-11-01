@@ -1,0 +1,4 @@
+Tracker (named meta-tracker on OpenBSD to prevent conflict with the
+audio/tracker port) is a search engine, search tool and metadata storage system.
+
+This package contains various miners and metadata extractors for tracker.

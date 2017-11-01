@@ -1,0 +1,113 @@
+$OpenBSD: patch-configure_ac,v 1.1.1.1 2017/11/01 15:19:20 ajacoutot Exp $
+
+2nd chunck:
+https://bugzilla.gnome.org/show_bug.cgi?id=789768
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -173,8 +173,9 @@ if test "x$have_statvfs" = "xyes" ; then
+ fi
+ 
+ # Check for defines we expect
+-AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[]], [[
++AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[
+ #include "stdio.h"
++]], [[
+ printf ("%s", __FUNCTION__);
+    ]])],
+    [have_function=yes],
+@@ -238,7 +239,7 @@ AC_SUBST(GLIB_PREFIX)
+ GVDB_REQUIRED="glib-2.0 >= $GLIB_REQUIRED"
+ 
+ # Check requirements for libtracker-common
+-LIBTRACKER_COMMON_REQUIRED="tracker-sparql-2.0 >= TRACKER_CORE_REQUIRED
++LIBTRACKER_COMMON_REQUIRED="tracker-sparql-2.0 >= $TRACKER_CORE_REQUIRED
+                             glib-2.0        >= $GLIB_REQUIRED
+                             gio-unix-2.0    >= $GLIB_REQUIRED"
+ 
+@@ -251,7 +252,7 @@ case $host in
+ esac
+ 
+ # Check requirements for libtracker-extract
+-LIBTRACKER_EXTRACT_REQUIRED="tracker-sparql-2.0 >= TRACKER_CORE_REQUIRED
++LIBTRACKER_EXTRACT_REQUIRED="tracker-sparql-2.0 >= $TRACKER_CORE_REQUIRED
+                              glib-2.0     >= $GLIB_REQUIRED
+                              gio-unix-2.0 >= $GLIB_REQUIRED
+ 			     gmodule-2.0  >= $GLIB_REQUIRED"
+@@ -266,7 +267,7 @@ PKG_CHECK_MODULES(TRACKER_RESDUMP, [$TRACKER_RESDUMP_R
+                   [have_tracker_resdump=no])
+ 
+ # Check requirements for tracker-extract
+-TRACKER_EXTRACT_REQUIRED="tracker-miner-2.0 >= TRACKER_CORE_REQUIRED
++TRACKER_EXTRACT_REQUIRED="tracker-miner-2.0 >= $TRACKER_CORE_REQUIRED
+                           glib-2.0        >= $GLIB_REQUIRED
+                           gio-unix-2.0    >= $GLIB_REQUIRED
+                           gmodule-2.0     >= $GLIB_REQUIRED"
+@@ -287,7 +288,7 @@ TRACKER_EXTRACT_MODULES_REQUIRED="glib-2.0     >= $GLI
+ PKG_CHECK_MODULES(TRACKER_EXTRACT_MODULES, [$TRACKER_EXTRACT_MODULES_REQUIRED])
+ 
+ # Check requirements for tracker-writeback
+-TRACKER_WRITEBACK_REQUIRED="tracker-sparql-2.0 >= TRACKER_CORE_REQUIRED
++TRACKER_WRITEBACK_REQUIRED="tracker-sparql-2.0 >= $TRACKER_CORE_REQUIRED
+                             glib-2.0     >= $GLIB_REQUIRED
+                             gio-unix-2.0 >= $GLIB_REQUIRED
+                             gmodule-2.0  >= $GLIB_REQUIRED"
+@@ -295,7 +296,7 @@ TRACKER_WRITEBACK_REQUIRED="tracker-sparql-2.0 >= TRAC
+ PKG_CHECK_MODULES(TRACKER_WRITEBACK, [$TRACKER_WRITEBACK_REQUIRED])
+ 
+ # Check requirements for tracker-miner-fs
+-TRACKER_MINER_FS_REQUIRED="tracker-miner-2.0 >= TRACKER_CORE_REQUIRED
++TRACKER_MINER_FS_REQUIRED="tracker-miner-2.0 >= $TRACKER_CORE_REQUIRED
+                            glib-2.0     >= $GLIB_REQUIRED
+                            gio-unix-2.0 >= $GLIB_REQUIRED
+                            gmodule-2.0  >= $GLIB_REQUIRED"
+@@ -305,14 +306,14 @@ PKG_CHECK_MODULES(TRACKER_MINER_FS, [$TRACKER_MINER_FS
+ TRACKER_MINER_FS_LIBS="$TRACKER_MINER_FS_LIBS -lz -lm"
+ 
+ # Check requirements for tracker-miner-apps
+-TRACKER_MINER_APPS_REQUIRED="tracker-miner-2.0 >= TRACKER_CORE_REQUIRED
++TRACKER_MINER_APPS_REQUIRED="tracker-miner-2.0 >= $TRACKER_CORE_REQUIRED
+                              glib-2.0     >= $GLIB_REQUIRED
+                              gio-unix-2.0 >= $GLIB_REQUIRED"
+ 
+ PKG_CHECK_MODULES(TRACKER_MINER_APPS, [$TRACKER_MINER_APPS_REQUIRED])
+ 
+ # Check requirements for tracker-miner-rss
+-TRACKER_MINER_RSS_REQUIRED="tracker-miner-2.0 >= TRACKER_CORE_REQUIRED
++TRACKER_MINER_RSS_REQUIRED="tracker-miner-2.0 >= $TRACKER_CORE_REQUIRED
+                             glib-2.0 >= $GLIB_REQUIRED
+                             libgrss  >= $LIBGRSS_REQUIRED"
+ 
+@@ -1266,7 +1267,6 @@ OLD_CFLAGS="$CFLAGS"
+ OLD_LDFLAGS="$LDFLAGS"
+ OLD_LIBS="$LIBS"
+ CFLAGS=""
+-LDFLAGS=""
+ LIBS=""
+ 
+ AC_ARG_ENABLE(libgif,
+@@ -1317,7 +1317,6 @@ OLD_CFLAGS="$CFLAGS"
+ OLD_LDFLAGS="$LDFLAGS"
+ OLD_LIBS="$LIBS"
+ CFLAGS=""
+-LDFLAGS=""
+ LIBS=""
+ 
+ AC_ARG_ENABLE(libjpeg,
+@@ -1368,7 +1367,6 @@ OLD_CFLAGS="$CFLAGS"
+ OLD_LDFLAGS="$LDFLAGS"
+ OLD_LIBS="$LIBS"
+ CFLAGS=""
+-LDFLAGS=""
+ LIBS=""
+ 
+ AC_ARG_ENABLE(libtiff,
+@@ -1419,7 +1417,6 @@ OLD_CFLAGS="$CFLAGS"
+ OLD_LDFLAGS="$LDFLAGS"
+ OLD_LIBS="$LIBS"
+ CFLAGS=""
+-LDFLAGS=""
+ LIBS=""
+ 
+ AC_ARG_ENABLE(libpng,
