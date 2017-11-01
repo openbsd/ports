@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.41 2017/10/23 17:11:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.42 2017/11/01 16:22:34 jasper Exp $
 
 COMMENT=		initial-setup firstboot-like tool
 
 GNOME_PROJECT=		gnome-initial-setup
 GNOME_VERSION=		3.24.2
-REVISION=		2
+REVISION=		3
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -12,7 +12,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += EGL GL ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xt Xxf86vm accountsservice
 WANTLIB += atk-1.0 atk-bridge-2.0 atspi c cairo cairo-gobject
-WANTLIB += crack crypto dbus-1 dbus-glib-1 drm enchant epoxy ${LIBECXX}
+WANTLIB += crack crypto dbus-1 drm enchant epoxy ${LIBECXX}
 WANTLIB += expat ffi fontconfig freetype gbm gcrypt gdk-3 gdk_pixbuf-2.0
 WANTLIB += gdm geoclue-2 geocode-glib gio-2.0 glapi glib-2.0 gmodule-2.0
 WANTLIB += gnome-desktop-3 goa-1.0 goa-backend-1.0 gobject-2.0
@@ -23,7 +23,7 @@ WANTLIB += harfbuzz-icu hyphen ibus-1.0 iconv icudata icui18n
 WANTLIB += icuuc intl javascriptcoregtk-4.0 jpeg json-glib-1.0
 WANTLIB += lzma m notify orc-0.4 pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png polkit-gobject-1 pwquality
-WANTLIB += rest-0.7 secret-1 soup-2.4 soup-gnome-2.4 sqlite3 telepathy-glib
+WANTLIB += rest-0.7 secret-1 soup-2.4 soup-gnome-2.4 sqlite3
 WANTLIB += webkit2gtk-4.0 webp xcb xcb-dri2 xcb-glx xcb-render
 WANTLIB += xcb-shm xcb-xfixes xml2 xslt z
 WANTLIB += GLESv2 gstallocators-1.0 gstbadallocators-1.0 gstgl-1.0
