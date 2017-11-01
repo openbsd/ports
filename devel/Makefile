@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1654 2017/10/31 22:14:17 bluhm Exp $
+# $OpenBSD: Makefile,v 1.1655 2017/11/01 09:59:33 jeremy Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1635,7 +1635,6 @@
      SUBDIR += ruby-ffi-inliner
      SUBDIR += ruby-flexmock
      SUBDIR += ruby-gem_plugin
-     SUBDIR += ruby-gems
      SUBDIR += ruby-gettext
      SUBDIR += ruby-gettext-setup
      SUBDIR += ruby-gir_ffi
@@ -1669,7 +1668,6 @@
      SUBDIR += ruby-puppet_forge,ruby24
      SUBDIR += ruby-racc,ruby23
      SUBDIR += ruby-racc,ruby24
-     SUBDIR += ruby-rake
      SUBDIR += ruby-rake-compiler
      SUBDIR += ruby-rake-remote_task
      SUBDIR += ruby-rb-gsl,ruby23
