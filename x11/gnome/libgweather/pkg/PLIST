@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2017/06/10 13:49:19 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.27 2017/11/01 14:06:21 jasper Exp $
 @conflict gnome-applets2-<=2.22.0
 include/libgweather-3.0/
 include/libgweather-3.0/libgweather/
@@ -24,6 +24,7 @@ share/gtk-doc/html/libgweather-3.0/GWeatherInfo.html
 share/gtk-doc/html/libgweather-3.0/GWeatherLocation.html
 share/gtk-doc/html/libgweather-3.0/GWeatherLocationEntry.html
 share/gtk-doc/html/libgweather-3.0/GWeatherTimezoneMenu.html
+share/gtk-doc/html/libgweather-3.0/annotation-glossary.html
 share/gtk-doc/html/libgweather-3.0/api-index-full.html
 share/gtk-doc/html/libgweather-3.0/ch01.html
 share/gtk-doc/html/libgweather-3.0/home.png

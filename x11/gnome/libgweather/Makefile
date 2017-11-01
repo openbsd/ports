@@ -1,19 +1,18 @@
-# $OpenBSD: Makefile,v 1.84 2017/10/23 17:11:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.85 2017/11/01 14:06:21 jasper Exp $
 
 COMMENT=		weather information access library
 
 GNOME_PROJECT=		libgweather
-GNOME_VERSION=		3.24.1
-REVISION=		0
+GNOME_VERSION=		3.26.0
 
-SHARED_LIBS +=		gweather-3             3.1      # 12.0
+SHARED_LIBS +=		gweather-3             3.2      # 12.0
 
 CATEGORIES=		net
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
+WANTLIB += X11 Xtst Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
 WANTLIB += cairo cairo-gobject dbus-1 expat ffi fontconfig freetype
 WANTLIB += gdk-3 gdk_pixbuf-2.0 geocode-glib gio-2.0 glib-2.0
