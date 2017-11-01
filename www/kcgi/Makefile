@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.32 2017/10/19 14:00:29 jturner Exp $
+# $OpenBSD: Makefile,v 1.33 2017/11/01 19:13:44 jturner Exp $
 
 COMMENT =		minimal CGI library for web applications
 
-DISTNAME =		kcgi-0.9.8
+DISTNAME =		kcgi-0.9.9
 CATEGORIES =		www
 
 MAINTAINER =		James Turner <james@calminferno.net>
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c
 
-NO_CONFIGURE =		Yes
+CONFIGURE_STYLE =	simple
 USE_GMAKE =		Yes
 MAKE_FILE =		GNUmakefile
 MAKE_FLAGS =		PREFIX="${PREFIX}"
