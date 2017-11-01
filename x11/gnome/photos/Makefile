@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2017/11/01 15:16:36 ajacoutot Exp $
-
-BROKEN=			needs an update to work with tracker >=2.0
+# $OpenBSD: Makefile,v 1.60 2017/11/01 22:18:37 ajacoutot Exp $
 
 BROKEN-powerpc=		undefined reference to __sync_add_and_fetch_8
 
@@ -9,27 +7,25 @@ TRACKER_API=		2.0
 COMMENT=		access, organize and share your photos on GNOME
 
 GNOME_PROJECT=		gnome-photos
-GNOME_VERSION=		3.24.3
-REVISION=		0
+GNOME_VERSION=		3.26.1
 
 CATEGORIES=		graphics
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
-WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
-WANTLIB += babl-0.1 c cairo cairo-gobject crypto curl dbus-1 epoxy
-WANTLIB += exiv2 expat ffi fontconfig freetype gck-1 gcr-base-3
-WANTLIB += gcrypt gdata gdk-3 gdk_pixbuf-2.0 gegl-0.3 geocode-glib
-WANTLIB += gexiv2 gfbgraph-0.2 gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += goa-1.0 gobject-2.0 gpg-error graphite2 grilo-0.3 gthread-2.0
-WANTLIB += gtk-3 harfbuzz iconv icudata icui18n icuuc intl jpeg
-WANTLIB += json-glib-1.0 kvm lzma m mediaart-2.0 nghttp2 nspr4
-WANTLIB += nss3 oauth p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 plc4 plds4 png pthread
-WANTLIB += rest-0.7 smime3 softokn3 soup-2.4 soup-gnome-2.4 sqlite3
-WANTLIB += ssl ssl3 uuid xcb xcb-render xcb-shm xml2 z
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
+WANTLIB += Xrandr Xrender Xtst atk-1.0 atk-bridge-2.0 atspi babl-0.1
+WANTLIB += c cairo cairo-gobject crypto curl dbus-1 epoxy exiv2
+WANTLIB += expat ffi fontconfig freetype gck-1 gcr-base-3 gcrypt
+WANTLIB += gdata gdk-3 gdk_pixbuf-2.0 gegl-0.3 geocode-glib gexiv2
+WANTLIB += gfbgraph-0.2 gio-2.0 glib-2.0 gmodule-2.0 goa-1.0 gobject-2.0
+WANTLIB += gpg-error graphite2 grilo-0.3 gthread-2.0 gtk-3 harfbuzz
+WANTLIB += iconv icudata icui18n icuuc intl jpeg json-glib-1.0
+WANTLIB += kvm lzma m nghttp2 nspr4 nss3 oauth p11-kit pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 plc4 plds4
+WANTLIB += png pthread rest-0.7 smime3 softokn3 soup-2.4 soup-gnome-2.4
+WANTLIB += sqlite3 ssl ssl3 uuid xcb xcb-render xcb-shm xml2 z
 WANTLIB += tracker-control-${TRACKER_API}
 WANTLIB += tracker-sparql-${TRACKER_API}
 WANTLIB += lib/tracker-${TRACKER_API}/tracker-data

@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.16 2017/08/26 19:08:28 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.17 2017/11/01 22:18:37 ajacoutot Exp $
 @bin bin/gnome-photos
 @bin libexec/gnome-photos-thumbnailer
+share/appdata/
 share/appdata/org.gnome.Photos.appdata.xml
 share/applications/org.gnome.Photos.desktop
 share/dbus-1/services/org.gnome.Photos.service
@@ -110,6 +111,18 @@ share/help/fr/gnome-photos/view-album.page
 share/help/fr/gnome-photos/view-favorites.page
 share/help/fr/gnome-photos/view-photos.page
 share/help/fr/gnome-photos/view.page
+share/help/fur/
+share/help/fur/gnome-photos/
+share/help/fur/gnome-photos/favorites-set.page
+share/help/fur/gnome-photos/favorites.page
+share/help/fur/gnome-photos/index.page
+share/help/fur/gnome-photos/legal.xml
+share/help/fur/gnome-photos/media/
+share/help/fur/gnome-photos/media/logo1.png
+share/help/fur/gnome-photos/view-album.page
+share/help/fur/gnome-photos/view-favorites.page
+share/help/fur/gnome-photos/view-photos.page
+share/help/fur/gnome-photos/view.page
 share/help/gl/
 share/help/gl/gnome-photos/
 share/help/gl/gnome-photos/favorites-set.page
@@ -146,6 +159,18 @@ share/help/ko/gnome-photos/view-album.page
 share/help/ko/gnome-photos/view-favorites.page
 share/help/ko/gnome-photos/view-photos.page
 share/help/ko/gnome-photos/view.page
+share/help/pl/
+share/help/pl/gnome-photos/
+share/help/pl/gnome-photos/favorites-set.page
+share/help/pl/gnome-photos/favorites.page
+share/help/pl/gnome-photos/index.page
+share/help/pl/gnome-photos/legal.xml
+share/help/pl/gnome-photos/media/
+share/help/pl/gnome-photos/media/logo1.png
+share/help/pl/gnome-photos/view-album.page
+share/help/pl/gnome-photos/view-favorites.page
+share/help/pl/gnome-photos/view-photos.page
+share/help/pl/gnome-photos/view.page
 share/help/pt_BR/
 share/help/pt_BR/gnome-photos/
 share/help/pt_BR/gnome-photos/favorites-set.page
