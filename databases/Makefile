@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.340 2017/10/23 03:54:50 jeremy Exp $
+# $OpenBSD: Makefile,v 1.341 2017/11/01 09:35:46 jeremy Exp $
 
      SUBDIR =
      SUBDIR += apache-couchdb
@@ -205,13 +205,6 @@
      SUBDIR += riak
      SUBDIR += ruby-amalgalite,ruby23
      SUBDIR += ruby-amalgalite,ruby24
-     SUBDIR += ruby-data_objects
-     SUBDIR += ruby-do_mysql,ruby23
-     SUBDIR += ruby-do_mysql,ruby24
-     SUBDIR += ruby-do_postgres,ruby23
-     SUBDIR += ruby-do_postgres,ruby24
-     SUBDIR += ruby-do_sqlite3,ruby23
-     SUBDIR += ruby-do_sqlite3,ruby24
      SUBDIR += ruby-hiera3
      SUBDIR += ruby-hiera-eyaml
      SUBDIR += ruby-hiera-file
@@ -232,12 +225,6 @@
      SUBDIR += ruby-sequel_pg,ruby24
      SUBDIR += ruby-sqlite3,ruby23
      SUBDIR += ruby-sqlite3,ruby24
-     SUBDIR += ruby-swift-db-mysql,ruby23
-     SUBDIR += ruby-swift-db-mysql,ruby24
-     SUBDIR += ruby-swift-db-postgres,ruby23
-     SUBDIR += ruby-swift-db-postgres,ruby24
-     SUBDIR += ruby-swift-db-sqlite3,ruby23
-     SUBDIR += ruby-swift-db-sqlite3,ruby24
      SUBDIR += ruby-tiny_tds,ruby23
      SUBDIR += ruby-tiny_tds,ruby24
      SUBDIR += ruby-validatable
