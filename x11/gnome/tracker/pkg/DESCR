@@ -1,4 +1,6 @@
 Tracker (named meta-tracker on OpenBSD to prevent conflict with the
-audio/tracker port) is a search engine and that allows the user to find
-their data as fast as possible. Users can search for their files and
-search for content in their files too.
+audio/tracker port) is a search engine, search tool and metadata storage system.
+
+It allows you to find the proverbial needle in your computer's haystack as well
+as providing a one stop solution to the organisation, storage and categorisation
+of your data.
