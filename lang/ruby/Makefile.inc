@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile.inc,v 1.16 2016/08/19 19:09:34 jeremy Exp $
+# $OpenBSD: Makefile.inc,v 1.17 2017/11/01 10:52:06 jeremy Exp $
 
-DISTNAME ?=	ruby-${VERSION}-p${PATCHLEVEL}
+DISTNAME ?=	ruby-${VERSION}
 
 CATEGORIES ?=	lang
 
