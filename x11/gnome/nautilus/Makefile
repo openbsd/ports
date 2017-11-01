@@ -1,6 +1,8 @@
-# $OpenBSD: Makefile,v 1.175 2017/10/23 17:11:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.176 2017/11/01 15:16:36 ajacoutot Exp $
 
-TRACKER_API=		1.0
+BROKEN=			needs an update to work with tracker >=2.0
+
+TRACKER_API=		2.0
 
 COMMENT=		GNOME file manager
 

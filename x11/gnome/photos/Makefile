@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.58 2017/10/23 17:11:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.59 2017/11/01 15:16:36 ajacoutot Exp $
+
+BROKEN=			needs an update to work with tracker >=2.0
 
 BROKEN-powerpc=		undefined reference to __sync_add_and_fetch_8
 
-TRACKER_API=		1.0
+TRACKER_API=		2.0
 
 COMMENT=		access, organize and share your photos on GNOME
 
