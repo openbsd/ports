@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.25 2017/07/26 22:45:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2017/11/01 17:01:23 jeremy Exp $
 
 COMMENT=	source code editing component for GTK+
 
-VERSION=	3.5.2
+VERSION=	4.0.2
 DISTNAME=	scintilla${VERSION:S/.//g}
 PKGNAME=	scintilla-${VERSION}
 CATEGORIES=	editors x11
-REVISION=	3
 
-SHARED_LIBS=	scintilla		9.0 \
-		scintilla_lexers	9.0
+SHARED_LIBS=	scintilla		10.0 \
+		scintilla_lexers	10.0
 
 HOMEPAGE=	http://www.scintilla.org/
 
@@ -17,7 +16,7 @@ HOMEPAGE=	http://www.scintilla.org/
 PERMIT_PACKAGE_CDROM=	may not sell
 PERMIT_PACKAGE_FTP=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=scintilla/}
+MASTER_SITES=	${HOMEPAGE}
 EXTRACT_SUFX=	.tgz
 
 PATCHORIG=	.orig.port

@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.27 2017/07/26 22:45:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2017/11/01 17:01:23 jeremy Exp $
 
 COMMENT=		flexible and small GTK+ editor
 
-VERSION=		3.5.2
+VERSION=		4.0.2
 DISTNAME=		scite${VERSION:S/.//g}
 PKGNAME=		scite-${VERSION}
 CATEGORIES=		editors x11
-REVISION=		0
 
 HOMEPAGE=		http://www.scintilla.org/SciTE.html
 
@@ -17,7 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 WANTLIB += c cairo gdk-3 gdk_pixbuf-2.0 glib-2.0 gobject-2.0 gtk-3
 WANTLIB += pango-1.0 pangocairo-1.0 pthread scintilla scintilla_lexers ${COMPILER_LIBCXX}
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=scintilla/}
+MASTER_SITES=		http://www.scintilla.org/
 EXTRACT_SUFX=		.tgz
 
 LIB_DEPENDS=		x11/gtk+3 \

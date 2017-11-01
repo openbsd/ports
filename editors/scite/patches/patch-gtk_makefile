@@ -3,10 +3,11 @@ $OpenBSD
 Drop `-pedantic'
 /usr/local/include/gtk-3.0/gdk/gdktypes.h:318: error: comma at end of enumerator list
 
---- gtk/makefile.orig	Sun Aug 10 01:52:11 2014
-+++ gtk/makefile	Fri Sep 25 07:19:41 2015
-@@ -5,14 +5,6 @@
- # GNU make does not like \r\n line endings so should be saved to CVS in binary form.
+Index: gtk/makefile
+--- gtk/makefile.orig
++++ gtk/makefile
+@@ -7,16 +7,6 @@
+ srcdir ?= .
  
  .SUFFIXES: .cxx .o .h .a .c
 -ifdef CLANG
@@ -14,13 +15,15 @@ Drop `-pedantic'
 -# thread also need to create Position Independent Executable -> search online documentation
 -SANITIZE = address
 -#SANITIZE = undefined
--CXX = clang++ -fsanitize=$(SANITIZE) --std=c++0x -Wno-deprecated-register
+-CXX = clang++ -fsanitize=$(SANITIZE) -Wno-deprecated-register
 -CC = clang -fsanitize=$(SANITIZE) -Wno-empty-body
+-else
+-MISLEADING=-Wno-misleading-indentation
 -endif
  
  ifdef GTK3
  GTKVERSION=gtk+-3.0
-@@ -24,20 +16,21 @@ endif
+@@ -28,20 +18,21 @@ endif
  CONFIGFLAGS:=$(shell pkg-config --cflags $(GTKVERSION))
  CONFIGLIB:=$(shell pkg-config --libs $(GTKVERSION) gthread-2.0 gmodule-no-export-2.0)
  CONFIGTHREADS:=
@@ -43,14 +46,14 @@ Drop `-pedantic'
 -INSTALL=install
 +INSTALL=install -o root -g bin
  
- PROG	= ../bin/SciTE
+ PROG	= $(srcdir)/../bin/SciTE
  
-@@ -46,19 +39,21 @@ all: $(PROG)
- vpath %.h ../src ../../scintilla/include
- vpath %.cxx ../src
+@@ -50,19 +41,21 @@ all: $(PROG)
+ vpath %.h $(srcdir) $(srcdir)/../src $(srcdir)/../../scintilla/include
+ vpath %.cxx $(srcdir) $(srcdir)/../src
  
--INCLUDEDIRS=-I ../../scintilla/include -I ../src
-+INCLUDEDIRS=-I ${prefix}/include/scintilla -I ../src -I ${prefix}/include
+-INCLUDEDIRS=-I $(srcdir)/../../scintilla/include -I $(srcdir)/../src
++INCLUDEDIRS=-I ${prefix}/include/scintilla  -I $(srcdir)/../../scintilla/include -I $(srcdir)/../src -I ${prefix}/include
  ifdef CHECK_DEPRECATED
  DEPRECATED=-DGDK_PIXBUF_DISABLE_DEPRECATED -DGDK_DISABLE_DEPRECATED -DGTK_DISABLE_DEPRECATED
  endif
@@ -69,39 +72,44 @@ Drop `-pedantic'
 +LIBS= -L $(prefix)/lib -lscintilla -lscintilla_lexers
 +
 +ifdef LUA
- LUA_CORE_OBJS = lapi.o lcode.o ldebug.o ldo.o ldump.o lfunc.o lgc.o llex.o \
+ LUA_CORE_OBJS = lapi.o lcode.o lctype.o ldebug.o ldo.o ldump.o lfunc.o lgc.o llex.o \
  		lmem.o lobject.o lopcodes.o lparser.o lstate.o lstring.o \
  		ltable.o ltm.o lundump.o lvm.o lzio.o
-@@ -70,7 +65,7 @@ LUA_OBJS = LuaExtension.o $(LUA_CORE_OBJS) $(LUA_LIB_O
+@@ -74,7 +67,7 @@ LUA_OBJS = LuaExtension.o $(LUA_CORE_OBJS) $(LUA_LIB_O
  
- vpath %.c ../lua/src ../lua/src/lib
+ vpath %.c $(srcdir)/../lua/src
  
--INCLUDEDIRS=-I ../../scintilla/include -I ../src -I../lua/include
-+INCLUDEDIRS+=-I../lua/include
+-INCLUDEDIRS=-I $(srcdir)/../../scintilla/include -I $(srcdir)/../src -I$(srcdir)/../lua/src
++INCLUDEDIRS+=-I$(srcdir)/../lua/src
  
  .c.o:
- 	$(CC) $(CFLAGS) $(INCLUDEDIRS) -DLUA_USE_POSIX $(CXXTFLAGS) -c $< -o $@
-@@ -106,15 +101,12 @@ analyze:
- deps:
- 	$(CXX) -MM $(CONFIGFLAGS) $(CXXTFLAGS) *.cxx ../src/*.cxx | sed -e 's/\/usr.* //' | grep [a-zA-Z] >deps.mak
+ 	$(CC) $(INCLUDEDIRS) $(MISLEADING) -DLUA_USE_POSIX $(CXXTFLAGS) $(CFLAGS) -c $< -o $@
+@@ -111,19 +104,16 @@ deps: deps.mak
+ deps.mak:
+ 	$(CXX) -MM $(CONFIGFLAGS) $(CXXTFLAGS) $(CXXFLAGS) $(srcdir)/*.cxx $(srcdir)/../src/*.cxx | sed -e 's/\/usr.* //' | grep [a-zA-Z] >$@
  
 -# make should be run in ../../scintilla/gtk to compile all the lexers.
--COMPLIB=../../scintilla/bin/scintilla.a
+-COMPLIB=$(srcdir)/../../scintilla/bin/scintilla.a
 -
+ # To almost make lua.vers (needs header and footer added) which is only needed after updating Lua:
+ # nm -g ../bin/SciTE | grep lua | awk '{print "\t\t" $3 ";"}' >lua2.vers
+ 
  $(PROG): SciTEGTK.o GUIGTK.o Widget.o \
 -FilePath.o SciTEBase.o FileWorker.o Cookie.o Credits.o SciTEBuffers.o SciTEIO.o StringList.o \
--Exporters.o  MatchMarker.o StringHelpers.o \
+-ExportHTML.o ExportPDF.o ExportRTF.o ExportTEX.o ExportXML.o \
+-MatchMarker.o StringHelpers.o \
 -PropSetFile.o MultiplexExtension.o DirectorExtension.o SciTEProps.o StyleDefinition.o StyleWriter.o Utf8_16.o \
-+	FilePath.o SciTEBase.o FileWorker.o Cookie.o Credits.o SciTEBuffers.o SciTEIO.o StringList.o \
-+	Exporters.o  MatchMarker.o StringHelpers.o \
-+	PropSetFile.o MultiplexExtension.o DirectorExtension.o SciTEProps.o StyleDefinition.o StyleWriter.o Utf8_16.o \
++ FilePath.o SciTEBase.o FileWorker.o Cookie.o Credits.o SciTEBuffers.o SciTEIO.o StringList.o \
++ ExportHTML.o ExportPDF.o ExportRTF.o ExportTEX.o ExportXML.o \
++ MatchMarker.o StringHelpers.o \
++ PropSetFile.o MultiplexExtension.o DirectorExtension.o SciTEProps.o StyleDefinition.o StyleWriter.o Utf8_16.o \
  	JobQueue.o GTKMutex.o IFaceTable.o $(COMPLIB) $(LUA_OBJS)
--	$(CXX) `$(CONFIGTHREADS)` -rdynamic -Wl,--as-needed -Wl,--version-script lua.vers -DGTK $^ -o $@ $(CONFIGLIB) $(LIBDL) -lm -lstdc++
-+	$(CXX) `$(CONFIGTHREADS)` $(LIBS) -rdynamic -Wl,--as-needed -Wl,--version-script lua.vers -DGTK $^ -o $@ $(CONFIGLIB) $(LIBDL) -lm -lstdc++
+-	$(CXX) `$(CONFIGTHREADS)` -rdynamic -Wl,--as-needed -Wl,--version-script $(srcdir)/lua.vers -DGTK $^ -o $@ $(CONFIGLIB) $(LIBDL) -lm -lstdc++
++	$(CXX) `$(CONFIGTHREADS)` $(LIBS) -rdynamic -Wl,--as-needed -Wl,--version-script $(srcdir)/lua.vers -DGTK $^ -o $@ $(CONFIGLIB) $(LIBDL) -lm -lstdc++
  
  # Automatically generate header dependencies with "make deps"
  include deps.mak
-@@ -123,19 +115,18 @@ include deps.mak
+@@ -132,19 +122,17 @@ include deps.mak
  # This is OK - just means no SciTE in the Gnome Applications menu
  # Dead:	install -D SciTEGTK.properties $(SYSCONF_PATH)/SciTEGlobal.properties
  install:
@@ -114,16 +122,16 @@ Drop `-pedantic'
 +	$(INSTALL) -m 444 ../src/*.properties $(SYSCONF_PATH)
 +	$(INSTALL) -m 444 ../doc/*.html ../doc/SciTEIco.png ../doc/PrintHi.png $(DOC_PATH)
  
--	for files in ../src/*.properties ../doc/*.html ../doc/SciTEIco.png ../doc/PrintHi.png; \
+-	for files in $(srcdir)/../src/*.properties $(srcdir)/../doc/*.html $(srcdir)/../doc/SciTEIco.png $(srcdir)/../doc/PrintHi.png; \
 -	do \
 -		$(INSTALL) -m 644 $$files $(DESTDIR)$(SYSCONF_PATH); \
 -	done
- 
+-
  ifdef gnomeprefix
  	$(INSTALL) -m 755 -d $(DESTDIR)$(datadir)/applications $(DESTDIR)$(pixmapdir)
- 	$(INSTALL) -m 755 SciTE.desktop $(DESTDIR)$(datadir)/applications/SciTE.desktop
--	$(INSTALL) -m 644 Sci48M.png $(DESTDIR)$(pixmapdir)/Sci48M.png
-+	$(INSTALL) -m 444 Sci48M.png $(DESTDIR)$(pixmapdir)/Sci48M.png
+ 	$(INSTALL) -m 755 $(srcdir)/SciTE.desktop $(DESTDIR)$(datadir)/applications/SciTE.desktop
+-	$(INSTALL) -m 644 $(srcdir)/Sci48M.png $(DESTDIR)$(pixmapdir)/Sci48M.png
++	$(INSTALL) -m 444 $(srcdir)/Sci48M.png $(DESTDIR)$(pixmapdir)/Sci48M.png
  endif
  
  uninstall:

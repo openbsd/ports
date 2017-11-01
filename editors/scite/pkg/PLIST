@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2015/01/17 05:06:12 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.9 2017/11/01 17:01:23 jeremy Exp $
 @bin bin/SciTE
 share/doc/scite/
 share/doc/scite/CommandValues.html
@@ -37,6 +37,7 @@ share/scite/bullant.properties
 share/scite/caml.properties
 share/scite/cmake.properties
 share/scite/cobol.properties
+share/scite/coffeescript.properties
 share/scite/conf.properties
 share/scite/cpp.properties
 share/scite/csound.properties
@@ -52,8 +53,10 @@ share/scite/fortran.properties
 share/scite/freebasic.properties
 share/scite/gap.properties
 share/scite/haskell.properties
+share/scite/hex.properties
 share/scite/html.properties
 share/scite/inno.properties
+share/scite/json.properties
 share/scite/kix.properties
 share/scite/latex.properties
 share/scite/lisp.properties
@@ -97,4 +100,5 @@ share/scite/txt2tags.properties
 share/scite/vb.properties
 share/scite/verilog.properties
 share/scite/vhdl.properties
+share/scite/visualprolog.properties
 share/scite/yaml.properties

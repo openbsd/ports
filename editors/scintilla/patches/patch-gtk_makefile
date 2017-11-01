@@ -1,53 +1,56 @@
-$OpenBSD: patch-gtk_makefile,v 1.12 2016/03/11 18:13:19 naddy Exp $
+$OpenBSD: patch-gtk_makefile,v 1.13 2017/11/01 17:01:23 jeremy Exp $
 
-Drop `-pedantic'
-/usr/local/include/gtk-3.0/gdk/gdktypes.h:318: error: comma at end of enumerator list
-
---- gtk/makefile.orig	Thu Nov 27 21:47:24 2014
-+++ gtk/makefile	Fri Mar 11 18:05:48 2016
-@@ -6,15 +6,8 @@
- # Builds for GTK+ 2 and no longer supports GTK+ 1.
- # Also works with ming32-make on Windows.
+Index: gtk/makefile
+--- gtk/makefile.orig
++++ gtk/makefile
+@@ -8,19 +8,9 @@
  
--.SUFFIXES: .cxx .c .o .h .a
+ srcdir ?= .
+ 
+-.SUFFIXES: .cxx .c .o .h .a .list
 -ifdef CLANG
--CXX = clang++ -Wno-deprecated-register
+-CXX = clang++
+-CXXWARNFLAGS = -Wall -pedantic -Wno-deprecated-register -Wno-missing-braces
 -CC = clang
 -# Can choose aspect to sanitize: address and undefined can simply change SANITIZE but for
 -# thread also need to create Position Independent Executable -> search online documentation
 -SANITIZE = address
 -#SANITIZE = undefined
+-else
+-CXXWARNFLAGS = -Wall -pedantic
 -endif
-+.SUFFIXES: .cxx .c .o .h .a .so
++.SUFFIXES: .cxx .c .o .h .a .list .so
+ ARFLAGS = rc
 +AR = ar
  RANLIB = touch
  
  ifdef GTK3
-@@ -36,17 +29,20 @@ DEL = del /q
- COMPLIB=..\bin\scintilla.a
+@@ -48,18 +38,21 @@ DEL = del /q
+ COMPLIB=$(srcdir)\..\bin\scintilla.a
  else
  DEL = rm -f
--COMPLIB=../bin/scintilla.a
-+COMPLIB=../bin/libscintilla.a
-+LEXERLIB=../bin/libscintilla_lexers.a
-+SHAREDLIB=../bin/libscintilla.so.${LIBscintilla_VERSION}
-+SHAREDLEXER=../bin/libscintilla_lexers.so.${LIBscintilla_lexers_VERSION}
+-COMPLIB=$(srcdir)/../bin/scintilla.a
++COMPLIB=$(srcdir)/../bin/libscintilla.a
++LEXERLIB=$(srcdir)/../bin/libscintilla_lexers.a
++SHAREDLIB=$(srcdir)/../bin/libscintilla.so.${LIBscintilla_VERSION}
++SHAREDLEXER=$(srcdir)/../bin/libscintilla_lexers.so.${LIBscintilla_lexers_VERSION}
  endif
  
- vpath %.h ../src ../include ../lexlib
- vpath %.cxx ../src ../lexlib ../lexers
+ vpath %.h $(srcdir) $(srcdir)/../src $(srcdir)/../include $(srcdir)/../lexlib
+ vpath %.c $(srcdir)
+ vpath %.cxx $(srcdir) $(srcdir)/../src $(srcdir)/../lexlib $(srcdir)/../lexers
  
--INCLUDEDIRS=-I ../include -I ../src -I ../lexlib
-+INCLUDEDIRS=-I ../include -I ../src -I ../lexlib  -I${LOCALBASE}/include
+-INCLUDEDIRS=-I $(srcdir)/../include -I $(srcdir)/../src -I $(srcdir)/../lexlib
++INCLUDEDIRS=-I $(srcdir)/../include -I $(srcdir)/../src -I $(srcdir)/../lexlib -I${LOCALBASE}/include
  ifdef CHECK_DEPRECATED
  DEPRECATED=-DGDK_PIXBUF_DISABLE_DEPRECATED -DGDK_DISABLE_DEPRECATED -DGTK_DISABLE_DEPRECATED -DDISABLE_GDK_FONT
  endif
--CXXBASEFLAGS=-Wall -pedantic -DGTK -DSCI_LEXER $(INCLUDEDIRS) $(DEPRECATED)
-+CXXBASEFLAGS=-Wall -DGTK -DSCI_LEXER -Dunix $(INCLUDEDIRS) $(DEPRECATED)
+-CXXBASEFLAGS=$(CXXWARNFLAGS) $(PICFLAGS) -DGTK -DSCI_LEXER $(INCLUDEDIRS) $(DEPRECATED)
++CXXBASEFLAGS=$(CXXWARNFLAGS) $(PICFLAGS) -DGTK -DSCI_LEXER -Dunix $(INCLUDEDIRS) $(DEPRECATED)
  
  ifdef NOTHREADS
  THREADFLAGS=-DG_THREADS_IMPL_NONE
-@@ -65,24 +61,35 @@ else
+@@ -78,7 +71,7 @@ else
  CTFLAGS=-DDEBUG -g $(CXXBASEFLAGS) $(THREADFLAGS)
  endif
  else
@@ -55,24 +58,23 @@ Drop `-pedantic'
 +CTFLAGS+=-DNDEBUG $(CXXBASEFLAGS) $(THREADFLAGS)
  endif
  
- CFLAGS:=$(CTFLAGS)
--CXXTFLAGS:=--std=c++0x $(CTFLAGS) $(REFLAGS)
-+CXXTFLAGS:=$(CTFLAGS) $(REFLAGS)
- 
- CONFIGFLAGS:=$(shell pkg-config --cflags $(GTKVERSION))
- MARSHALLER=scintilla-marshal.o
+ CXXTFLAGS:=--std=gnu++14 $(CTFLAGS) $(REFLAGS)
+@@ -88,8 +81,12 @@ MARSHALLER=scintilla-marshal.o
  
  .cxx.o:
  	$(CXX) $(CONFIGFLAGS) $(CXXTFLAGS) $(CXXFLAGS) -c $<
 +.cxx.so:
 +	$(CXX) -fPIC $(CONFIGFLAGS) $(CXXTFLAGS) $(CXXFLAGS) -o $@ -c $<
  .c.o:
- 	$(CC) $(CONFIGFLAGS) $(CFLAGS) -w -c $<
+ 	$(CC) $(CONFIGFLAGS) $(CTFLAGS) $(CFLAGS) -w -c $<
 +.c.so:
 +	$(CC) -fPIC $(CONFIGFLAGS) $(CFLAGS) -w -o $@ -c $<
-+ 
  
- LEXOBJS:=$(addsuffix .o,$(basename $(notdir $(wildcard ../lexers/Lex*.cxx))))
+ GLIB_GENMARSHAL = glib-genmarshal
+ GLIB_GENMARSHAL_FLAGS = --prefix=scintilla_marshal
+@@ -101,8 +98,14 @@ GLIB_GENMARSHAL_FLAGS = --prefix=scintilla_marshal
+ 
+ LEXOBJS:=$(addsuffix .o,$(basename $(sort $(notdir $(wildcard $(srcdir)/../lexers/Lex*.cxx)))))
  
 -all: $(COMPLIB)
 +all: $(COMPLIB) $(SHAREDLIB) $(LEXERLIB) $(SHAREDLEXER)
@@ -86,21 +88,22 @@ Drop `-pedantic'
  clean:
  	$(DEL) *.o $(COMPLIB) *.plist
  
-@@ -92,15 +99,26 @@ analyze:
- deps:
- 	$(CXX) -MM $(CONFIGFLAGS) $(CXXTFLAGS) *.cxx ../src/*.cxx ../lexlib/*.cxx ../lexers/*.cxx | sed -e 's/\/usr.* //' | grep [a-zA-Z] >deps.mak
+@@ -116,15 +119,26 @@ deps: deps.mak
+ deps.mak:
+ 	$(CXX) -MM $(CONFIGFLAGS) $(CXXTFLAGS) $(DEPSRCS) | sed -e 's/\/usr.* //' | grep [a-zA-Z] > $@
  
--$(COMPLIB): Accessor.o CharacterSet.o LexerBase.o LexerModule.o LexerSimple.o StyleContext.o WordList.o \
-+LIBOBJS = Accessor.o CharacterSet.o LexerBase.o LexerModule.o LexerSimple.o StyleContext.o WordList.o \
+-$(COMPLIB): Accessor.o CharacterSet.o DefaultLexer.o LexerBase.o LexerModule.o LexerSimple.o StyleContext.o WordList.o \
++LIBOBJS= Accessor.o CharacterSet.o DefaultLexer.o LexerBase.o LexerModule.o LexerSimple.o StyleContext.o WordList.o \
  	CharClassify.o Decoration.o Document.o PerLine.o Catalogue.o CallTip.o CaseConvert.o CaseFolder.o \
  	ScintillaBase.o ContractionState.o EditModel.o Editor.o EditView.o ExternalLexer.o MarginView.o \
  	PropSetSimple.o PlatGTK.o \
- 	KeyMap.o LineMarker.o PositionCache.o ScintillaGTK.o CellBuffer.o CharacterCategory.o ViewStyle.o \
+ 	KeyMap.o LineMarker.o PositionCache.o ScintillaGTK.o ScintillaGTKAccessible.o CellBuffer.o CharacterCategory.o ViewStyle.o \
  	RESearch.o RunStyles.o Selection.o Style.o Indicator.o AutoComplete.o UniConversion.o XPM.o \
- 	$(MARSHALLER) $(LEXOBJS)
+-	$(MARSHALLER) $(LEXOBJS)
++	$(MARSHALLER)
 +
 +$(COMPLIB): $(LIBOBJS)
- 	$(AR) rc $@ $^
+ 	$(AR) $(ARFLAGS) $@ $^
  	$(RANLIB) $@
 +
 +$(LEXERLIB): $(LEXOBJS)

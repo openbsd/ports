@@ -1,10 +1,11 @@
-$OpenBSD: patch-src_Embedded_properties,v 1.6 2015/09/24 04:47:08 ajacoutot Exp $
---- src/Embedded.properties.orig	Thu Nov 27 21:47:34 2014
-+++ src/Embedded.properties	Thu Sep 24 06:38:51 2015
-@@ -98,7 +98,7 @@ if PLAT_WIN
+$OpenBSD: patch-src_Embedded_properties,v 1.7 2017/11/01 17:01:23 jeremy Exp $
+Index: src/Embedded.properties
+--- src/Embedded.properties.orig
++++ src/Embedded.properties
+@@ -99,7 +99,7 @@ if PLAT_WIN
+ 	command.scite.help="file://$(SciteDefaultHome)\SciTEDoc.html"
  	command.scite.help.subsystem=2
  if PLAT_GTK
- 	command.print.*=a2ps "$(FileNameExt)"
 -	command.scite.help=xdg-open "file://$(SciteDefaultHome)/SciTEDoc.html"
 +	command.scite.help=xdg-open "file://__DOCDIR__/SciTEDoc.html"
  
