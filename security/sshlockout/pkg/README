@@ -1,0 +1,11 @@
+$OpenBSD: README,v 1.1 2017/11/01 13:23:46 jca Exp $
+
++-------------------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-------------------------------------------------------------------------------
+
+syslogd(8) children run under the _syslogd user, but sshlockout(8)
+should be run as root in order to modify its pf(4) table.  doas(1) can
+be used to gain back root privileges:
+
+  permit nopass _syslogd as root cmd ${TRUEPREFIX}/sbin/sshlockout

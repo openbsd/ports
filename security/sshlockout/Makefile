@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/07/27 00:08:17 jca Exp $
+# $OpenBSD: Makefile,v 1.2 2017/11/01 13:23:46 jca Exp $
 
 COMMENT =	protect against brute force attacks on sshd(8)
 
 DISTNAME =	sshlockout-0.20170726
+REVISION =	0
 
 CATEGORIES =	security
 
