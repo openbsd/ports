@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1027 2017/10/26 08:22:36 jca Exp $
+# $OpenBSD: Makefile,v 1.1028 2017/11/01 16:07:18 jasper Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -86,7 +86,6 @@
      SUBDIR += ettercap,no_x11
      SUBDIR += exabgp
      SUBDIR += ezstream
-     SUBDIR += farstream
      SUBDIR += filezilla
      SUBDIR += firewalk
      SUBDIR += flickcurl
