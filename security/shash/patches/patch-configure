@@ -1,0 +1,16 @@
+$OpenBSD: patch-configure,v 1.1 2017/11/01 17:47:22 naddy Exp $
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -3123,10 +3123,6 @@ echo "$as_me:$LINENO: result: $opt_static_link" >&5
+ echo "${ECHO_T}$opt_static_link" >&6
+ 
+ case "${target}" in
+-    *-openbsd*)
+-        NAME_OF_DEV_RANDOM="/dev/srandom"
+-        NAME_OF_DEV_URANDOM="/dev/urandom"
+-        ;;
+     *)
+         NAME_OF_DEV_RANDOM="/dev/random"
+         NAME_OF_DEV_URANDOM="/dev/urandom"
