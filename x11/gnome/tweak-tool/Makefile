@@ -1,21 +1,25 @@
-# $OpenBSD: Makefile,v 1.56 2017/06/13 07:45:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.57 2017/11/01 16:08:30 ajacoutot Exp $
 
 PKG_ARCH=		*
 
 COMMENT=		tweak hidden GTK/GNOME settings
 
 GNOME_PROJECT=		gnome-tweak-tool
-GNOME_VERSION=		3.24.1
+GNOME_VERSION=		3.26.3
 
 CATEGORIES=		sysutils
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 
-MODULES=		x11/gnome \
-			lang/python
+MODULES=		devel/meson \
+			lang/python \
+			x11/gnome
 
-MODPY_ADJ_FILES=	gnome-tweak-tool
+MODPY_ADJ_FILES=	gnome-tweak-tool \
+			meson-postinstall.py
+MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
+
 MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache
 
 BUILD_DEPENDS=		devel/gsettings-desktop-schemas \
@@ -23,16 +27,13 @@ BUILD_DEPENDS=		devel/gsettings-desktop-schemas \
 			x11/gtk+3
 
 RUN_DEPENDS=		devel/gsettings-desktop-schemas \
-			devel/py-gobject3
+			devel/py-gobject3 \
+			x11/gnome/shell
 
 # pygobject GTK3 introspection (not provided by indirect dependencies)
 RUN_DEPENDS +=		x11/gtk+3
 
-RUN_DEPENDS +=		x11/gnome/shell
-
 # Notify introspection libs: site-packages/gtweak/utils.py
 RUN_DEPENDS +=		devel/libnotify
-
-CONFIGURE_STYLE=	gnu
 
 .include <bsd.port.mk>
