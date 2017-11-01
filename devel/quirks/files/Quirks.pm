@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.540 2017/11/01 16:07:30 jasper Exp $
+# $OpenBSD: Quirks.pm,v 1.541 2017/11/01 16:19:45 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1134,6 +1134,7 @@ my $obsolete_reason = {
 	'telepathy-qt' => 3,
 	'telepathy-farstream' => 3,
 	'farstream' => 3,
+	'libnice' => 6,
 };
 
 # reasons for obsolete packages
