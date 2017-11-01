@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.265 2017/11/01 15:20:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.266 2017/11/01 21:54:46 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += adwaita-icon-theme
@@ -43,7 +43,6 @@
      SUBDIR += gjs
      SUBDIR += grilo
      SUBDIR += grilo-plugins
-     SUBDIR += gtef
      SUBDIR += gucharmap
      SUBDIR += gvfs,
      SUBDIR += icon-theme
@@ -97,6 +96,7 @@
      SUBDIR += shell-extensions
      SUBDIR += sushi
      SUBDIR += system-monitor
+     SUBDIR += tepl
      SUBDIR += terminal
      SUBDIR += themes-standard
      SUBDIR += todo
