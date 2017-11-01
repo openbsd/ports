@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.84 2017/10/23 17:10:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.85 2017/11/01 13:51:55 jasper Exp $
 
 COMMENT=		terminal emulation library
 
 GNOME_PROJECT=		vte
-GNOME_VERSION=		0.48.3
+GNOME_VERSION=		0.50.1
 API_V=			2.91
-REVISION=		1
 
 PKGNAME=		vte3-${GNOME_VERSION}
 
@@ -19,7 +18,7 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
+WANTLIB += Xtst X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
 WANTLIB += c cairo cairo-gobject dbus-1 epoxy expat ffi fontconfig
 WANTLIB += freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
@@ -27,7 +26,7 @@ WANTLIB += gmp gnutls gobject-2.0 graphite2 gthread-2.0 gtk-3
 WANTLIB += harfbuzz hogweed m nettle p11-kit pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB += tasn1 xcb xcb-render xcb-shm z iconv intl idn2 pcre2-8
-WANTLIB += unistring
+WANTLIB += unistring xcb-xkb
 WANTLIB += ${COMPILER_LIBCXX}
 
 MODULES=		x11/gnome
