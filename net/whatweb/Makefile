@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2016/09/06 15:37:53 jeremy Exp $
+# $OpenBSD: Makefile,v 1.7 2017/11/01 10:12:25 jeremy Exp $
 
 COMMENT=		web scanner
 
 DISTNAME=		whatweb-0.4.8
-REVISION =		0
+REVISION =		1
 
 GH_PROJECT=		WhatWeb
 GH_ACCOUNT=		urbanadventurer
