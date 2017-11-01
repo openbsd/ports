@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2017/04/17 11:29:23 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.18 2017/11/01 22:19:47 ajacoutot Exp $
 bin/gnome-music
 lib/gnome-music/
 lib/gnome-music/girepository-1.0/
@@ -101,8 +101,9 @@ lib/python${MODPY_VERSION}/site-packages/gnomemusic/widgets/playlistdialog.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/widgets/starhandlerwidget.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/window.py
 @man man/man1/gnome-music.1
-share/appdata/gnome-music.appdata.xml
-share/applications/gnome-music.desktop
+share/appdata/
+share/appdata/org.gnome.Music.appdata.xml
+share/applications/org.gnome.Music.desktop
 share/glib-2.0/schemas/org.gnome.Music.gschema.xml
 share/gnome-music/
 share/gnome-music/gir-1.0/
@@ -269,6 +270,22 @@ share/help/ko/gnome-music/playlist-remove-songs.page
 share/help/ko/gnome-music/playlist-repeat.page
 share/help/ko/gnome-music/playlist-shuffle.page
 share/help/ko/gnome-music/search.page
+share/help/pl/
+share/help/pl/gnome-music/
+share/help/pl/gnome-music/figures/
+share/help/pl/gnome-music/figures/gnome-music-3.12.png
+share/help/pl/gnome-music/index.page
+share/help/pl/gnome-music/introduction.page
+share/help/pl/gnome-music/legal.xml
+share/help/pl/gnome-music/play-music.page
+share/help/pl/gnome-music/playlist-create-albums.page
+share/help/pl/gnome-music/playlist-create-artists.page
+share/help/pl/gnome-music/playlist-create-songs.page
+share/help/pl/gnome-music/playlist-delete.page
+share/help/pl/gnome-music/playlist-remove-songs.page
+share/help/pl/gnome-music/playlist-repeat.page
+share/help/pl/gnome-music/playlist-shuffle.page
+share/help/pl/gnome-music/search.page
 share/help/pt_BR/
 share/help/pt_BR/gnome-music/
 share/help/pt_BR/gnome-music/figures/
