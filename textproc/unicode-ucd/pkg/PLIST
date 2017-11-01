@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/06/27 10:59:00 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2017/11/01 15:03:58 jasper Exp $
 share/unicode/
 share/unicode/ucd/
 share/unicode/ucd/ArabicShaping.txt
@@ -28,6 +28,7 @@ share/unicode/ucd/NamesList.html
 share/unicode/ucd/NamesList.txt
 share/unicode/ucd/NormalizationCorrections.txt
 share/unicode/ucd/NormalizationTest.txt
+share/unicode/ucd/NushuSources.txt
 share/unicode/ucd/PropList.txt
 share/unicode/ucd/PropertyAliases.txt
 share/unicode/ucd/PropertyValueAliases.txt
@@ -35,7 +36,6 @@ share/unicode/ucd/ReadMe.txt
 share/unicode/ucd/ScriptExtensions.txt
 share/unicode/ucd/Scripts.txt
 share/unicode/ucd/SpecialCasing.txt
-share/unicode/ucd/StandardizedVariants.html
 share/unicode/ucd/StandardizedVariants.txt
 share/unicode/ucd/TangutSources.txt
 share/unicode/ucd/USourceData.txt
@@ -50,6 +50,7 @@ share/unicode/ucd/Unihan_OtherMappings.txt
 share/unicode/ucd/Unihan_RadicalStrokeCounts.txt
 share/unicode/ucd/Unihan_Readings.txt
 share/unicode/ucd/Unihan_Variants.txt
+share/unicode/ucd/VerticalOrientation.txt
 share/unicode/ucd/auxiliary/
 share/unicode/ucd/auxiliary/GraphemeBreakProperty.txt
 share/unicode/ucd/auxiliary/GraphemeBreakTest.html
@@ -72,5 +73,6 @@ share/unicode/ucd/extracted/DerivedGeneralCategory.txt
 share/unicode/ucd/extracted/DerivedJoiningGroup.txt
 share/unicode/ucd/extracted/DerivedJoiningType.txt
 share/unicode/ucd/extracted/DerivedLineBreak.txt
+share/unicode/ucd/extracted/DerivedName.txt
 share/unicode/ucd/extracted/DerivedNumericType.txt
 share/unicode/ucd/extracted/DerivedNumericValues.txt
