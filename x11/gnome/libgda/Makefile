@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.121 2017/10/29 08:58:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.122 2017/11/01 13:41:00 ajacoutot Exp $
 
 COMMENT-main=		GNOME Data Access library
 COMMENT-ldap=		LDAP backend for libgda
@@ -22,7 +22,7 @@ REVISION-main=		10
 REVISION-ldap=		3
 REVISION-mysql=		3
 REVISION-pgsql=		3
-REVISION-ui=		7
+REVISION-ui=		8
 
 EPOCH-main=		2
 EPOCH-ldap=		0
@@ -106,13 +106,11 @@ LIB_DEPENDS-main=	devel/libgee \
 ### -ui
 WANTLIB-ui += ${WANTLIB}
 WANTLIB-ui += X11 Xcomposite Xcursor Xdamage Xext Xfixes graphite2
-WANTLIB-ui += Xi Xinerama Xrandr Xrender atk-1.0 c cairo
+WANTLIB-ui += Xi Xinerama Xrandr Xrender atk-1.0 c cairo atk-bridge-2.0
 WANTLIB-ui += cairo-gobject expat fontconfig freetype gda-${GDA_MAJOR}
 WANTLIB-ui += gdk-3 gdk_pixbuf-2.0 goocanvas-2.0 gtk-3 gtksourceview-3.0
 WANTLIB-ui += pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
-WANTLIB-ui += xcb xcb-render xcb-shm epoxy
-WANTLIB-ui += atk-bridge-2.0 atspi harfbuzz dbus-1
-WANTLIB-ui += Xtst xcb-xkb xkbcommon xkbcommon-x11
+WANTLIB-ui += xcb xcb-render xcb-shm epoxy Xtst atspi harfbuzz dbus-1
 
 LIB_DEPENDS-ui=		graphics/goocanvas2 \
 			x11/dbus \
