@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2017/08/17 09:29:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.69 2017/11/01 18:41:34 ajacoutot Exp $
 
 COMMENT=		applications integration into Nautilus
 
@@ -19,8 +19,6 @@ MODGNOME_TOOLS=		gobject-introspection
 
 BUILD_DEPENDS=		devel/appstream-glib # XXX check if needed next release
 LIB_DEPENDS=		devel/glib2
-
-FAKE_FLAGS=		schemadir=${PREFIX}/share/schemas/nautilus-sendto
 
 # fix build with clang (see patch-src_nautilus-sendto_c)
 CFLAGS +=		-Wno-error=format-nonliteral
