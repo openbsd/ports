@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/11/01 16:59:47 bluhm Exp $
+${P5SITE}/Term/
+${P5SITE}/Term/Table/
+${P5SITE}/Term/Table.pm
+${P5SITE}/Term/Table/Cell.pm
+${P5SITE}/Term/Table/CellStack.pm
+${P5SITE}/Term/Table/HashBase.pm
+${P5SITE}/Term/Table/LineBreak.pm
+${P5SITE}/Term/Table/Spacer.pm
+${P5SITE}/Term/Table/Util.pm
+@man man/man3p/Term::Table.3p
+@man man/man3p/Term::Table::Cell.3p
+@man man/man3p/Term::Table::CellStack.3p
+@man man/man3p/Term::Table::HashBase.3p
+@man man/man3p/Term::Table::LineBreak.3p
+@man man/man3p/Term::Table::Util.3p
