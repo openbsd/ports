@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.31 2016/03/11 19:59:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.32 2017/11/01 17:07:25 naddy Exp $
 
 COMMENT =	extendable encryption program that supports many ciphers
 
 DISTNAME =		mcrypt-2.6.8
-REVISION =		4
+REVISION =		5
 CATEGORIES =		security
 
 HOMEPAGE =		http://mcrypt.sf.net/
@@ -13,14 +13,14 @@ MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		c ltdl mcrypt mhash z
+WANTLIB =		c iconv intl ltdl mcrypt mhash z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=mcrypt/}
 
 USE_GMAKE =		Yes
-MODULES =		devel/gettext
 LIB_DEPENDS =		security/libmcrypt \
 			security/mhash \
+			devel/gettext \
 			devel/libtool,-ltdl
 
 CONFIGURE_STYLE =	gnu
