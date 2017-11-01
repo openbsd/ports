@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1028 2017/11/01 16:07:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.1029 2017/11/01 16:18:48 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -199,7 +199,6 @@
      SUBDIR += libmaxminddb
      SUBDIR += libmygpo-qt
      SUBDIR += libnet
-     SUBDIR += libnice
      SUBDIR += libnids
      SUBDIR += liboauth
      SUBDIR += liboping
