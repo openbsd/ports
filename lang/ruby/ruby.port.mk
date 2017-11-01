@@ -1,19 +1,19 @@
-# $OpenBSD: ruby.port.mk,v 1.90 2017/01/06 16:03:54 jeremy Exp $
+# $OpenBSD: ruby.port.mk,v 1.91 2017/11/01 10:09:23 jeremy Exp $
 
 # ruby module
 
 CATEGORIES+=		lang/ruby
 
 # Whether the ruby module should automatically add FLAVORs.
-# If left blank, does so only for gem and extconf ports.
-.if ${CONFIGURE_STYLE:L:Mgem} || ${CONFIGURE_STYLE:L:Mextconf}
+# If left blank, does so only for gem ports.
+.if ${CONFIGURE_STYLE:L:Mgem}
 MODRUBY_HANDLE_FLAVORS ?= Yes
 .else
 MODRUBY_HANDLE_FLAVORS ?= No
 .endif
 
 # This allows you to build packages for multiple ruby versions and
-# implementations using the same port directory for gem and extconf based
+# implementations using the same port directory for gem
 # ports.  It does this by adding FLAVORS automatically, unless FLAVORS are
 # already defined or the port defines MODRUBY_REV to tie the port to a specific
 # ruby version.  For example, JDBC gem ports want to set FLAVOR=jruby, since
@@ -24,16 +24,15 @@ MODRUBY_HANDLE_FLAVORS ?= No
 # If ruby.pork.mk should handle FLAVORs, define a separate FLAVOR
 # for each ruby interpreter
 .    if !defined(FLAVORS)
-FLAVORS=		ruby18 ruby21 ruby22 ruby23 ruby24
-.      if !${CONFIGURE_STYLE:L:Mext} && !${CONFIGURE_STYLE:L:Mextconf}
-FLAVORS+=		jruby
+FLAVORS=	ruby23 ruby24
+.      if !${CONFIGURE_STYLE:L:Mext}
+FLAVORS+=	jruby
 .      endif
 .    endif
 
 # Instead of adding flavors to the end of the package name, we use
 # different package stems for different ruby versions and implementations.
-# ruby 1.8 uses the historical ruby-* package stem, newer ruby versions
-# use rubyXY-* and jruby uses jruby-*.  In most cases,
+# Most ruby versions use rubyXY-* and jruby uses jruby-*.  In most cases,
 # PKGNAME in the port should be set to the same as DISTNAME, and this
 # will insert the correct package prefix.
 FULLPKGNAME?=		${MODRUBY_PKG_PREFIX}-${PKGNAME}
@@ -46,39 +45,29 @@ FULLPKGNAME?=		${MODRUBY_PKG_PREFIX}-${PKGNAME}
 SUBST_VARS+=		GEM_BIN_SUFFIX GEM_MAN_SUFFIX
 
 FLAVOR?=
-# Without a FLAVOR, assume the use of ruby 2.3.
+# Without a FLAVOR, assume the use of ruby 2.4.
 .    if empty(FLAVOR)
-FLAVOR =		ruby23
+FLAVOR =		ruby24
 .    endif
 
 # Check for conflicting FLAVORs and set MODRUBY_REV appropriately based
 # on the FLAVOR.
-.    for i in ruby18 ruby21 ruby22 ruby23 ruby24 jruby
+.    for i in ruby23 ruby24 jruby
 .      if ${FLAVOR:M$i}
 MODRUBY_REV = ${i:C/ruby([0-9])/\1./}
-.        if ${FLAVOR:N$i:Mruby18} || \
-            ${FLAVOR:N$i:Mruby21} || \
-            ${FLAVOR:N$i:Mruby22} || \
-            ${FLAVOR:N$i:Mruby23} || \ 
+.        if ${FLAVOR:N$i:Mruby23} || \
             ${FLAVOR:N$i:Mruby24} || \ 
 	    ${FLAVOR:N$i:Mjruby}
 ERRORS += "Fatal: Conflicting flavors used: ${FLAVOR}"
 .        endif
 .      endif
 .    endfor
-
-.    if ${FLAVOR:Mruby18}
-# Handle updates from older ruby 1.8 ports that didn't use the ruby18
-# FLAVOR by adding a @pkgpath entry to the PLIST.
-SUBST_VARS+=	PKGPATH
-PKG_ARGS+=	-f ${PORTSDIR}/lang/ruby/ruby18.PLIST
-.    endif
 .  endif
 .endif
 
-# The default ruby version to use for non-gem/extconf ports.  Defaults to ruby
-# 2.3 for consistency with the default ruby23 FLAVOR for gem/extconf ports.
-MODRUBY_REV?=		2.3
+# The default ruby version to use for non-gem ports.  Defaults to ruby
+# 2.4 for consistency with the default ruby24 FLAVOR for gem ports.
+MODRUBY_REV?=		2.4
 
 # Because the jruby FLAVORs use same binary names but in
 # different directories, GEM_MAN_SUFFIX is used for the man pages to avoid
@@ -103,18 +92,13 @@ MODRUBY_SITEDIR =	jruby/lib/ruby/site_ruby/${MODRUBY_LIBREV}
 RAKE=			${RUBY} -S rake
 RSPEC=			${RUBY} -S spec
 RUBY=			${LOCALBASE}/jruby/bin/jruby
-
-.  if ${CONFIGURE_STYLE:L:Mext} || ${CONFIGURE_STYLE:L:Mextconf}
-ERRORS += "Fatal: Ruby C extensions are unsupported on JRuby"
-.  else
 MODRUBY_RUN_DEPENDS=	lang/jruby
+
+.  if ${CONFIGURE_STYLE:L:Mext}
+ERRORS += "Fatal: Ruby C extensions are unsupported on JRuby"
 .  endif
 
 .else # not jruby
-
-.  if ${MODRUBY_REV} == 1.8
-MODRUBY_PKG_PREFIX =	ruby
-.  endif
 
 GEM_BIN_SUFFIX =	${MODRUBY_BINREV}
 MODRUBY_ARCH=		${MACHINE_ARCH:S/amd64/x86_64/}-openbsd
@@ -144,11 +128,9 @@ MODRUBY_RSPEC3_DEPENDS = devel/ruby-rspec/3/rspec,${MODRUBY_FLAVOR}>=3.0
 ERRORS += "Fatal: Unsupported MODRUBY_TEST value: ${MODRUBY_TEST}"
 .  endif
 .else
-.  if ${CONFIGURE_STYLE:L:Mextconf} || ${CONFIGURE_STYLE:L:Mgem} || \
-	${CONFIGURE_STYLE:L:Msetup}
+.  if ${CONFIGURE_STYLE:L:Mgem}
 .    if !target(do-test)
-# Disable regress for extconf, gem, and setup based ports, since they
-# won't use make check for test.
+# Disable regress for gem ports, since they won't use make check for test.
 NO_TEST =	Yes
 .    endif
 .  endif
@@ -177,9 +159,6 @@ BUILD_DEPENDS+=		${MODRUBY_BUILD_DEPENDS}
 RUN_DEPENDS+=		${MODRUBY_RUN_DEPENDS}
 .endif
 
-.if ${MODRUBY_TEST:L:Mrake} && ${MODRUBY_REV} == 1.8
-TEST_DEPENDS+=	devel/ruby-rake
-.endif
 .if ${MODRUBY_TEST:L:Mrspec}
 TEST_DEPENDS+=	${MODRUBY_RSPEC_DEPENDS}
 .endif
@@ -200,12 +179,9 @@ MODRUBY_ADJ_REPLACE=	for pat in ${MODRUBY_ADJ_FILES:QL}; do \
 MODRUBY_pre-configure += ${MODRUBY_ADJ_REPLACE}
 .endif
 
-MODRUBY_WANTLIB+=	c m
-.if ${MODRUBY_REV} != 1.8
-MODRUBY_WANTLIB+=	gmp pthread
-.endif
+MODRUBY_WANTLIB+=	c gmp m pthread
 
-.if ${CONFIGURE_STYLE:L:Mext} || ${CONFIGURE_STYLE:L:Mextconf}
+.if ${CONFIGURE_STYLE:L:Mext}
 # Ruby C exensions are specific to an arch and are loaded as
 # shared libraries (not compiled into ruby), so make sure PKG_ARCH=*
 # is not set.
@@ -219,35 +195,21 @@ WANTLIB+=	${MODRUBY_WANTLIB}
 LIB_DEPENDS+=	${MODRUBY_LIB_DEPENDS}
 .endif
 
-.if ${CONFIGURE_STYLE:L:Mextconf}
-CONFIGURE_STYLE=	simple
-CONFIGURE_SCRIPT=	${SETENV} ${MAKE_ENV} ${RUBY} extconf.rb
-.elif ${CONFIGURE_STYLE:L:Mgem}
+.if ${CONFIGURE_STYLE:L:Mgem}
 # All gems should be in the same directory on rubygems.org.
 MASTER_SITES?=	${MASTER_SITE_RUBYGEMS}
 EXTRACT_SUFX=	.gem
 
-# Require versions that no longer create the .require_paths files.
-.  if ${MODRUBY_REV} == 1.8
-BUILD_DEPENDS+=	devel/ruby-gems>=1.8.23p3
-RUN_DEPENDS+=	devel/ruby-gems>=1.3.7p0
-.  elif ${MODRUBY_REV} == jruby
-BUILD_DEPENDS+=	lang/jruby>=1.6.5
-.  elif ${MODRUBY_REV} == 2.1
-# Require version that fixes extensions directory path
-BUILD_DEPENDS+=	lang/ruby/2.1>=2.1.0p0
-.  endif
-
 # Pure ruby gem ports without C extensions are arch-independent.
-.  if !${CONFIGURE_STYLE:L:Mext}
-PKG_ARCH=	*
-.  elif ${MODRUBY_REV} != 1.8
+.  if ${CONFIGURE_STYLE:L:Mext}
 # Add build complete file to package so rubygems doesn't complain
 # or build extensions at runtime
 GEM_EXTENSIONS_DIR ?= ${GEM_LIB}/extensions/${MODRUBY_ARCH:S/i386/x86/}/${MODRUBY_REV}/${DISTNAME}
 GEM_EXTENSIONS_FILE ?= ${GEM_EXTENSIONS_DIR}/gem.build_complete
 SUBST_VARS+=	GEM_EXTENSIONS_DIR
 PKG_ARGS+=	-f ${PORTSDIR}/lang/ruby/rubygems-ext.PLIST
+.  else
+PKG_ARCH=	*
 .  endif
 
 # PLIST magic.  Set variables so that the same PLIST will work for
@@ -272,8 +234,7 @@ GEM_BASE_BIN=	${GEM_BASE_LIB}/bin
 # We purposely do not install documentation for ruby gems, because
 # the filenames are generated differently on different ruby versions,
 # and most use 1 file per method, which is insane.
-GEM_FLAGS+=	--local --no-rdoc --no-ri --no-force --verbose --backtrace \
-		--user-install
+GEM_FLAGS+=	--local -N --no-force --verbose --backtrace --user-install
 _GEM_CONTENT=	${WRKDIR}/gem-content
 _GEM_DATAFILE=	${_GEM_CONTENT}/data.tar.gz
 _GEM_PATCHED=	${DISTNAME}${EXTRACT_SUFX}
@@ -334,32 +295,11 @@ do-build:
 do-install: 
 	${MODRUBY_INSTALL_TARGET}
 .  endif
-
-.elif ${CONFIGURE_STYLE:L:Msetup}
-MODRUBY_configure= \
-	cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${RUBY} setup.rb config \
-		--prefix=${PREFIX} ${CONFIGURE_ARGS};
-
-MODRUBY_BUILD_TARGET = \
-    cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${RUBY} setup.rb setup
-
-MODRUBY_INSTALL_TARGET = \
-    cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${RUBY} setup.rb install \
-		--prefix=${DESTDIR}
-
-.  if !target(do-build)
-do-build: 
-	${MODRUBY_BUILD_TARGET}
-.  endif
-.  if !target(do-install)
-do-install: 
-	${MODRUBY_INSTALL_TARGET}
-.  endif
 .endif
 
 # These are mostly used by the non-gem ports.
-SUBST_VARS+=		^MODRUBY_SITEARCHDIR ^MODRUBY_SITEDIR MODRUBY_LIBREV \
-			MODRUBY_ARCH
+SUBST_VARS+=	^MODRUBY_SITEARCHDIR ^MODRUBY_SITEDIR MODRUBY_LIBREV \
+		MODRUBY_ARCH
 
 # test stuff
 
@@ -373,11 +313,7 @@ MODRUBY_TEST_BIN ?=	${RSPEC}
 .    elif ${MODRUBY_TEST:L:Mrspec3}
 MODRUBY_TEST_BIN ?=	${MODRUBY_BIN_RSPEC}
 .    elif ${MODRUBY_TEST:L:Mtestrb}
-.        if ${MODRUBY_REV} == "1.8" || ${MODRUBY_REV} == "2.1"
-MODRUBY_TEST_BIN ?=	${MODRUBY_BIN_TESTRB}
-.        else
 MODRUBY_TEST_BIN ?=	${RUBY} ${PORTSDIR}/lang/ruby/files/testrb.rb
-.        endif
 .    elif ${MODRUBY_TEST:L:Mruby}
 MODRUBY_TEST_BIN ?=	${RUBY}
 .    endif
