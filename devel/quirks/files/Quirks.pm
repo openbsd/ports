@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.539 2017/11/01 15:27:23 jasper Exp $
+# $OpenBSD: Quirks.pm,v 1.540 2017/11/01 16:07:30 jasper Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1128,9 +1128,12 @@ my $obsolete_reason = {
 	'dnsfilter' => 3,
 	'empathy' => 6,
 	'telepathy-salut' => 3,
-	'telapthy-haze' => 3,
-	'telapathy-idle' => 3,
-	'telapathy-gabble' => 3,
+	'telepthy-haze' => 3,
+	'telepathy-idle' => 3,
+	'telepathy-gabble' => 3,
+	'telepathy-qt' => 3,
+	'telepathy-farstream' => 3,
+	'farstream' => 3,
 };
 
 # reasons for obsolete packages
