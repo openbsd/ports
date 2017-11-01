@@ -1,7 +1,21 @@
-$OpenBSD: patch-Src_config_h,v 1.2 2003/11/23 18:52:40 sturm Exp $
---- Src/config.h.orig	2003-11-09 12:09:25.000000000 +0100
-+++ Src/config.h	2003-11-23 19:31:19.000000000 +0100
-@@ -142,7 +142,7 @@
+$OpenBSD: patch-Src_config_h,v 1.3 2017/11/01 17:24:54 naddy Exp $
+Index: Src/config.h
+--- Src/config.h.orig
++++ Src/config.h
+@@ -94,12 +94,8 @@
+ #define HAVE_UNAME
+ #define HAVE_GECOS
+ #define DEV_URANDOM "/dev/urandom"
+-#ifdef __OpenBSD__
+-#define DEV_RANDOM "/dev/srandom"
+-#else
+ #define DEV_RANDOM "/dev/random"
+ #endif
+-#endif
+ 
+ #if defined(POSIX) || defined(USE_SOCK)
+ #define HAVE_GETHOSTNAME
+@@ -142,7 +138,7 @@
  /* Give up if a file is larger than BUFFER_MAX bytes: */
  /* #define BUFFER_MAX 64*1024*1024 */
  
