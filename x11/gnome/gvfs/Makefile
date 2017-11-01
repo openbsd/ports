@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.174 2017/10/23 17:11:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.175 2017/11/01 16:58:59 ajacoutot Exp $
 
 COMMENT-main=		GNOME Virtual File System
 COMMENT-smb=		GVFS mount module for samba
@@ -7,8 +7,7 @@ COMMENT-nfs=		GVFS mount module for NFS
 COMMENT-google=		GVFS mount module for Google Drive
 
 GNOME_PROJECT=		gvfs
-GNOME_VERSION=		1.32.1
-REVISION-main=		0
+GNOME_VERSION=		1.34.1
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-smb=		${GNOME_PROJECT}-smb-${GNOME_VERSION}
@@ -26,15 +25,9 @@ WANTLIB += c ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 pcre
 WANTLIB += pthread util z iconv intl
 
 WANTLIB-main +=	${WANTLIB}
-WANTLIB-main += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
-WANTLIB-main += Xinerama Xrandr Xrender archive atk-1.0 atk-bridge-2.0
-WANTLIB-main += atspi avahi-client avahi-common avahi-glib bz2 cairo
-WANTLIB-main += cairo-gobject dbus-1 epoxy expat fontconfig freetype
-WANTLIB-main += gck-1 gcr-base-3 gcrypt gdk-3 gdk_pixbuf-2.0 gpg-error
-WANTLIB-main += graphite2 gthread-2.0 gtk-3 harfbuzz lzma m p11-kit
-WANTLIB-main += pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
-WANTLIB-main += secret-1 soup-2.4 sqlite3 xcb xcb-render
-WANTLIB-main += xcb-shm xml2 crypto lz4
+WANTLIB-main += archive avahi-client avahi-common avahi-glib bz2 crypto
+WANTLIB-main += dbus-1 expat gck-1 gcr-base-3 gcrypt gpg-error gthread-2.0
+WANTLIB-main += lz4 lzma m p11-kit secret-1 soup-2.4 sqlite3 xml2
 
 WANTLIB-smb += ${WANTLIB}
 WANTLIB-smb += crypto dcerpc-binding execinfo gcrypt samba-errors
@@ -73,8 +66,7 @@ LIB_DEPENDS-main=	archivers/libarchive \
 			devel/libsoup \
 			net/avahi \
 			x11/gnome/gcr \
-			x11/gnome/libsecret \
-			x11/gtk+3
+			x11/gnome/libsecret
 
 RUN_DEPENDS-smb=	${MODDCONF_RUN_DEPENDS} \
 			${BASE_PKGPATH},-main=${GNOME_VERSION}
