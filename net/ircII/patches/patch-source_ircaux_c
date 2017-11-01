@@ -1,0 +1,16 @@
+$OpenBSD: patch-source_ircaux_c,v 1.1 2017/11/01 15:44:28 tb Exp $
+
+fix off-by-one responsible for failing to null terminate dst
+
+Index: source/ircaux.c
+--- source/ircaux.c.orig
++++ source/ircaux.c
+@@ -965,7 +965,7 @@ double_quote(u_char *str, u_char *stuff)
+ 		return empty_string();
+ 
+ 	dst = new_malloc(len + 1);
+-	len2 = double_quote_work(str, stuff, dst, len);
++	len2 = double_quote_work(str, stuff, dst, len + 1);
+ 	if (len != len2)
+ 		yell("--- double_quote() error: len %zu len2 %zu", len, len2);
+ 
