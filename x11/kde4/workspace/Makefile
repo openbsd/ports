@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.59 2017/07/27 11:57:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.60 2017/11/01 06:27:53 ajacoutot Exp $
 
 COMMENT =	KDE workspace
 DISTNAME =	kde-workspace-4.11.21
-REVISION =	17
+REVISION =	18
 
 MASTER_SITES =	${MASTER_SITE_KDE:=Attic/applications/15.04.3/src/}
 
@@ -139,6 +139,11 @@ post-extract:
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/kdm/config.def
+
+pre-build:
+# static inline void: error: unknown type name 'inline';
+# can't use CFLAGS because FindKDE4.cmake _appends_ -std=iso9899:1990 to it
+	sed -i 's,-std=iso9899:1990,-std=c99,g' ${WRKBUILD}/build.ninja
 
 post-install:
 	ln -sf ${SYSCONFDIR}/kdm/faces ${PREFIX}/share/apps/kdm/faces
