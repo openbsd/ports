@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2017/07/04 19:09:16 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2017/11/01 16:33:20 jasper Exp $
 bin/gnome-characters
 lib/org.gnome.Characters/
 lib/org.gnome.Characters/girepository-1.0/
@@ -20,17 +20,11 @@ share/icons/hicolor/22x22/apps/gnome-characters.png
 share/icons/hicolor/256x256/apps/gnome-characters.png
 share/icons/hicolor/32x32/apps/gnome-characters.png
 share/icons/hicolor/48x48/apps/gnome-characters.png
-share/icons/hicolor/scalable/categories/characters-arrow-symbolic.svg
-share/icons/hicolor/scalable/categories/characters-bullet-symbolic.svg
-share/icons/hicolor/scalable/categories/characters-currency-symbolic.svg
-share/icons/hicolor/scalable/categories/characters-latin-symbolic.svg
-share/icons/hicolor/scalable/categories/characters-math-symbolic.svg
-share/icons/hicolor/scalable/categories/characters-picture-symbolic.svg
-share/icons/hicolor/scalable/categories/characters-punctuation-symbolic.svg
 share/icons/hicolor/symbolic/apps/gnome-characters-symbolic.svg
 share/locale/ar/LC_MESSAGES/org.gnome.Characters.mo
 share/locale/be/LC_MESSAGES/org.gnome.Characters.mo
 share/locale/ca/LC_MESSAGES/org.gnome.Characters.mo
+share/locale/ca@valencia/LC_MESSAGES/org.gnome.Characters.mo
 share/locale/cs/LC_MESSAGES/org.gnome.Characters.mo
 share/locale/da/LC_MESSAGES/org.gnome.Characters.mo
 share/locale/de/LC_MESSAGES/org.gnome.Characters.mo
@@ -60,7 +54,9 @@ share/locale/ln/LC_MESSAGES/
 share/locale/ln/LC_MESSAGES/org.gnome.Characters.mo
 share/locale/lt/LC_MESSAGES/org.gnome.Characters.mo
 share/locale/lv/LC_MESSAGES/org.gnome.Characters.mo
+share/locale/ml/LC_MESSAGES/org.gnome.Characters.mo
 share/locale/nb/LC_MESSAGES/org.gnome.Characters.mo
+share/locale/ne/LC_MESSAGES/org.gnome.Characters.mo
 share/locale/nl/LC_MESSAGES/org.gnome.Characters.mo
 share/locale/oc/LC_MESSAGES/org.gnome.Characters.mo
 share/locale/pa/LC_MESSAGES/org.gnome.Characters.mo
