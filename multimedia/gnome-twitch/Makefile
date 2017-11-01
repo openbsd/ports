@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/10/15 11:32:43 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2017/11/01 19:08:30 ajacoutot Exp $
 
 V =		0.4.1
 COMMENT =	desktop Twitch.tv client
@@ -8,6 +8,7 @@ CATEGORIES =	multimedia games x11
 GH_ACCOUNT =	vinszent
 GH_PROJECT =	gnome-twitch
 GH_TAGNAME =	v${V}
+REVISION =	0
 
 HOMEPAGE =	http://gnome-twitch.vinszent.com/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -22,12 +23,8 @@ WANTLIB += soup-2.4 webkit2gtk-4.0
 # C11
 COMPILER =	base-clang ports-clang ports-gcc
 
-# Need lang/python to get MODPY_ADJ_FILES.
 MODULES =	devel/dconf \
-		devel/meson \
-		lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
-MODPY_ADJ_FILES =	meson_post_install.py print_git_version.py
+		devel/meson
 
 BUILD_DEPENDS =	devel/gettext-tools \
 		devel/gsettings-desktop-schemas

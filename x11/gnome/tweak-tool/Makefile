@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2017/11/01 16:08:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.58 2017/11/01 19:08:30 ajacoutot Exp $
 
 PKG_ARCH=		*
 
@@ -6,6 +6,7 @@ COMMENT=		tweak hidden GTK/GNOME settings
 
 GNOME_PROJECT=		gnome-tweak-tool
 GNOME_VERSION=		3.26.3
+REVISION=		0
 
 CATEGORIES=		sysutils
 
@@ -16,8 +17,7 @@ MODULES=		devel/meson \
 			lang/python \
 			x11/gnome
 
-MODPY_ADJ_FILES=	gnome-tweak-tool \
-			meson-postinstall.py
+MODPY_ADJ_FILES=	gnome-tweak-tool
 MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache

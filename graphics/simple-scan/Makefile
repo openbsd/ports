@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.46 2017/10/31 07:09:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.47 2017/11/01 19:08:30 ajacoutot Exp $
 
 COMMENT=		simple scanning utility
 
 GNOME_PROJECT=		simple-scan
 GNOME_VERSION=		3.26.2
+REVISION=		0
 
 CATEGORIES=		graphics
 
@@ -20,12 +21,6 @@ WANTLIB += gobject-2.0 gtk-3 intl m sane webp webpmux z
 MODULES=		devel/dconf \
 			devel/meson \
 			x11/gnome
-
-# meson_compile_gschema.py
-MODULES +=		lang/python
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
-MODPY_RDEP=		No
-MODPY_ADJ_FILES=	data/meson_compile_gschema.py
 
 LIB_DEPENDS=		graphics/libwebp \
 			graphics/sane-backends \
