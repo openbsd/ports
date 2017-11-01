@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/12/08 18:11:23 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/11/01 16:03:41 jasper Exp $
 @conflict kdenetwork-<4.11
 @bin bin/krfb
 lib/kde4/krfb_framebuffer_qt.so
@@ -8,7 +8,6 @@ lib/kde4/krfb_framebuffer_x11.so
 share/applications/kde4/krfb.desktop
 share/apps/krfb/
 share/apps/krfb/krfb.notifyrc
-share/dbus-1/services/org.freedesktop.Telepathy.Client.krfb_rfb_handler.service
 share/doc/HTML/en/krfb/
 share/doc/HTML/en/krfb/common
 share/doc/HTML/en/krfb/configuration_network.png
@@ -22,8 +21,5 @@ share/doc/HTML/en/krfb/screenshot.png
 share/kde4/services/krfb_framebuffer_qt.desktop
 share/kde4/services/krfb_framebuffer_x11.desktop
 share/kde4/servicetypes/krfb-framebuffer.desktop
-share/telepathy/
-share/telepathy/clients/
-share/telepathy/clients/krfb_rfb_handler.client
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database

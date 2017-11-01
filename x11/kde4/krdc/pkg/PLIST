@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/12/08 18:10:01 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/11/01 16:03:41 jasper Exp $
 @conflict kdenetwork-<4.11
 @bin bin/krdc
-@bin bin/krdc_rfb_approver
 include/kde4/krdc/
 include/kde4/krdc/hostpreferences.h
 include/kde4/krdc/remoteview.h
@@ -17,11 +16,7 @@ share/apps/krdc/krdcui.rc
 share/apps/krdc/pics/
 share/apps/krdc/pics/pointcursor.png
 share/apps/krdc/pics/pointcursormask.png
-share/apps/krdc_rfb_approver/
-share/apps/krdc_rfb_approver/krdc_rfb_approver.notifyrc
 share/config.kcfg/krdc.kcfg
-share/dbus-1/services/org.freedesktop.Telepathy.Client.krdc_rfb_approver.service
-share/dbus-1/services/org.freedesktop.Telepathy.Client.krdc_rfb_handler.service
 share/doc/HTML/en/krdc/
 share/doc/HTML/en/krdc/address_input.png
 share/doc/HTML/en/krdc/bookmarks_menu.png
@@ -43,9 +38,5 @@ share/kde4/services/krdc_rdp_config.desktop
 share/kde4/services/krdc_test.desktop
 share/kde4/services/rdp.protocol
 share/kde4/servicetypes/krdc_plugin.desktop
-share/telepathy/
-share/telepathy/clients/
-share/telepathy/clients/krdc_rfb_approver.client
-share/telepathy/clients/krdc_rfb_handler.client
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
