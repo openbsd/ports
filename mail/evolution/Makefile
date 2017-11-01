@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.283 2017/10/07 08:45:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.284 2017/11/01 21:29:47 ajacoutot Exp $
 
 COMMENT=		integrated email and PIM software for GNOME
 
 GNOME_PROJECT=		evolution
-GNOME_VERSION=		3.24.6
+GNOME_VERSION=		3.26.2
 
 CATEGORIES=		mail
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 			Antoine Jacoutot <ajacoutot@openbsd.org>
 
-SO_VERSION=		13.0 # 0.0
+SO_VERSION=		14.0 # 0.0
 .for _lib in \
 eabutil econtacteditor econtactlisteditor email-engine essmime \
 evolution-addressbook-importers evolution-calendar-importers \
