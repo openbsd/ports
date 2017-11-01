@@ -1,0 +1,14 @@
+$OpenBSD: patch-configure,v 1.1 2017/11/01 16:31:24 naddy Exp $
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -23904,7 +23904,7 @@ _ACEOF
+ 
+ 
+   case "$host_os" in
+-    *openbsd* | *mirbsd*)
++    *mirbsd*)
+       NAME_OF_RANDOM_DEVICE="/dev/srandom"
+       NAME_OF_PSEUDO_RANDOM_DEVICE="/dev/prandom"
+       NAME_OF_NONCE_DEVICE="/dev/urandom"
