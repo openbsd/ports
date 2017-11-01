@@ -1,9 +1,9 @@
-$OpenBSD: patch-CCache_configure,v 1.1 2017/09/25 09:16:13 robert Exp $
+$OpenBSD: patch-CCache_configure,v 1.2 2017/11/01 16:41:21 rsadowski Exp $
 
 Index: CCache/configure
 --- CCache/configure.orig
 +++ CCache/configure
-@@ -3709,15 +3709,7 @@ else
+@@ -3738,15 +3738,7 @@ else
      cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  #include <stdlib.h>
