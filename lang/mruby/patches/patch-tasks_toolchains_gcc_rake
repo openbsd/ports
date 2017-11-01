@@ -1,8 +1,9 @@
-$OpenBSD: patch-tasks_toolchains_gcc_rake,v 1.1 2017/02/27 21:33:43 jca Exp $
---- tasks/toolchains/gcc.rake.orig	Mon Feb 27 22:08:50 2017
-+++ tasks/toolchains/gcc.rake	Mon Feb 27 22:14:00 2017
+$OpenBSD: patch-tasks_toolchains_gcc_rake,v 1.2 2017/11/01 21:44:44 jeremy Exp $
+Index: tasks/toolchains/gcc.rake
+--- tasks/toolchains/gcc.rake.orig
++++ tasks/toolchains/gcc.rake
 @@ -1,7 +1,7 @@
- MRuby::Toolchain.new(:gcc) do |conf|
+ MRuby::Toolchain.new(:gcc) do |conf, _params|
    [conf.cc, conf.objc, conf.asm].each do |cc|
      cc.command = ENV['CC'] || 'gcc'
 -    cc.flags = [ENV['CFLAGS'] || %w(-g -std=gnu99 -O3 -Wall -Werror-implicit-function-declaration -Wdeclaration-after-statement -Wwrite-strings)]

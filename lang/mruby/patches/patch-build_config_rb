@@ -1,11 +1,12 @@
-$OpenBSD: patch-build_config_rb,v 1.1 2017/03/04 05:09:15 jeremy Exp $
+$OpenBSD: patch-build_config_rb,v 1.2 2017/11/01 21:44:44 jeremy Exp $
 
 Don't build in debug mode by default.
 
 Only build binaries we plan to use.
 
---- build_config.rb.orig	Tue Nov 17 01:02:30 2015
-+++ build_config.rb	Thu Mar  2 21:29:29 2017
+Index: build_config.rb
+--- build_config.rb.orig
++++ build_config.rb
 @@ -8,7 +8,7 @@ MRuby::Build.new do |conf|
      toolchain :gcc
    end
@@ -15,7 +16,7 @@ Only build binaries we plan to use.
  
    # Use mrbgems
    # conf.gem 'examples/mrbgems/ruby_extension_example'
-@@ -105,7 +105,7 @@ MRuby::Build.new('host-debug') do |conf|
+@@ -107,7 +107,7 @@ MRuby::Build.new('host-debug') do |conf|
  
    # bintest
    # conf.enable_bintest
@@ -24,8 +25,8 @@ Only build binaries we plan to use.
  
  MRuby::Build.new('test') do |conf|
    # Gets set by the VS command prompts.
-@@ -120,7 +120,7 @@ MRuby::Build.new('test') do |conf|
-   conf.enable_test
+@@ -134,7 +134,7 @@ MRuby::Build.new('bench') do |conf|
+   end
  
    conf.gembox 'default'
 -end

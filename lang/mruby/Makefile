@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2017/09/23 10:15:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2017/11/01 21:44:44 jeremy Exp $
 
 BROKEN-sparc64 =	Bus error (core dumped)
 
 COMMENT =		lightweight, embeddable implementation of ruby
 
-VERSION =		1.2.0
+VERSION =		1.3.0
 DISTNAME =		mruby-${VERSION}
-REVISION =		1
 CATEGORIES =		lang
 HOMEPAGE =		https://github.com/mruby/mruby
 
