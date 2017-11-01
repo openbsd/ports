@@ -1,0 +1,3 @@
+PL/R is a loadable procedural language that enables you to write PostgreSQL
+functions and triggers in the R programming language. PL/R offers most (if not
+all) of the capabilities a function writer has in the R language.

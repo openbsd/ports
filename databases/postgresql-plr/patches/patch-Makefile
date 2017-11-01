@@ -1,0 +1,17 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2017/11/01 21:51:22 jeremy Exp $
+
+Add RPATH to the ELF header for libR, since it is installed in a location
+outside the default ld.so search path.
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -21,7 +21,7 @@ MODULE_big	= plr
+ PG_CPPFLAGS	+= $(r_includespec)
+ SRCS		+= plr.c pg_conversion.c pg_backend_support.c pg_userfuncs.c pg_rsupport.c
+ OBJS		:= $(SRCS:.c=.o)
+-SHLIB_LINK	+= -L$(r_libdir1x) -L$(r_libdir2x) -lR
++SHLIB_LINK	+= -L$(r_libdir1x) -L$(r_libdir2x) -Wl,-R$(r_libdir1x) -lR
+ DATA_built	= plr.sql
+ DATA		= plr--8.3.0.17.sql plr--unpackaged--8.3.0.17.sql
+ DOCS		= README.plr

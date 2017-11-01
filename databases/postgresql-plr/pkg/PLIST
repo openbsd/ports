@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/11/01 21:51:22 jeremy Exp $
+lib/postgresql/plr.so
+share/doc/postgresql/
+share/doc/postgresql/extension/
+share/doc/postgresql/extension/README.plr
+share/postgresql/extension/plr--8.3.0.17.sql
+share/postgresql/extension/plr--unpackaged--8.3.0.17.sql
+share/postgresql/extension/plr.control
+share/postgresql/extension/plr.sql
