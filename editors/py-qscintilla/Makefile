@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2017/10/30 14:23:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2017/11/01 15:01:08 landry Exp $
 
 COMMENT =	Python binding for the Scintilla source code editor
 
@@ -41,7 +41,8 @@ MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 RUN_DEPENDS +=	x11/py-qt5${MODPY_FLAVOR}
 MODULES +=	x11/qt5
 LIB_DEPENDS = editors/qscintilla,qt5
-CONFIGURE_ARGS = --qmake=${LOCALBASE}/bin/qmake-qt5
+CONFIGURE_ARGS = --qmake=${LOCALBASE}/bin/qmake-qt5 \
+		--sip=${LOCALBASE}/bin/sip-3
 WANTLIB += GL Qt5Core Qt5Gui Qt5PrintSupport Qt5Widgets qscintilla2_qt5
 .else
 QTVER =	qt4
@@ -50,7 +51,8 @@ PYQTVER =	PyQt4
 RUN_DEPENDS +=	x11/py-qt4
 MODULES +=	x11/qt4
 LIB_DEPENDS = editors/qscintilla
-CONFIGURE_ARGS = --qmake=${LOCALBASE}/bin/qmake4
+CONFIGURE_ARGS = --qmake=${LOCALBASE}/bin/qmake4 \
+		--sip=${LOCALBASE}/bin/sip
 WANTLIB += ICE QtGui SM X11 Xext Xi Xinerama Xrender fontconfig
 WANTLIB += freetype qscintilla2_qt4
 .endif
