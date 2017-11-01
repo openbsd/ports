@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.341 2017/11/01 09:35:46 jeremy Exp $
+# $OpenBSD: Makefile,v 1.342 2017/11/01 21:53:32 jeremy Exp $
 
      SUBDIR =
      SUBDIR += apache-couchdb
@@ -154,6 +154,7 @@
      SUBDIR += postgresql-odbc
      SUBDIR += postgresql-previous
      SUBDIR += postgresql-pllua
+     SUBDIR += postgresql-plr
      SUBDIR += postgresql-plv8
      SUBDIR += postgresql_autodoc
      SUBDIR += puppetdb4
