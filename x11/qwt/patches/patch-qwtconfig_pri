@@ -1,21 +1,41 @@
-$OpenBSD: patch-qwtconfig_pri,v 1.2 2010/11/07 00:26:14 merdely Exp $
---- qwtconfig.pri.orig	Sun Apr 11 05:55:06 2010
-+++ qwtconfig.pri	Tue Oct 26 04:57:31 2010
-@@ -8,7 +8,7 @@ VER_PAT      = 1
- VERSION      = $${VER_MAJ}.$${VER_MIN}.$${VER_PAT}
+$OpenBSD: patch-qwtconfig_pri,v 1.3 2017/11/01 14:13:45 landry Exp $
+
+Index: qwtconfig.pri
+--- qwtconfig.pri.orig
++++ qwtconfig.pri
+@@ -19,7 +19,7 @@ QWT_VERSION      = $${QWT_VER_MAJ}.$${QWT_VER_MIN}.$${
+ QWT_INSTALL_PREFIX = $$[QT_INSTALL_PREFIX]
  
  unix {
--    INSTALLBASE    = /usr/local/qwt-5.2.1
-+    INSTALLBASE    = ${WRKINST}${PREFIX}
+-    QWT_INSTALL_PREFIX    = /usr/local/qwt-$$QWT_VERSION
++    QWT_INSTALL_PREFIX    = ${WRKINST}/${PREFIX}
+     # QWT_INSTALL_PREFIX = /usr/local/qwt-$$QWT_VERSION-qt-$$QT_VERSION
  }
  
- win32 {
-@@ -17,7 +17,7 @@ win32 {
+@@ -28,7 +28,7 @@ win32 {
+     # QWT_INSTALL_PREFIX = C:/Qwt-$$QWT_VERSION-qt-$$QT_VERSION
+ }
  
- target.path    = $$INSTALLBASE/lib
- headers.path   = $$INSTALLBASE/include
--doc.path       = $$INSTALLBASE/doc
-+doc.path       = $$INSTALLBASE/share/doc/qwt
+-QWT_INSTALL_DOCS      = $${QWT_INSTALL_PREFIX}/doc
++QWT_INSTALL_DOCS      = $${QWT_INSTALL_PREFIX}/share/doc/qwt
+ QWT_INSTALL_HEADERS   = $${QWT_INSTALL_PREFIX}/include
+ QWT_INSTALL_LIBS      = $${QWT_INSTALL_PREFIX}/lib
+ 
+@@ -42,7 +42,7 @@ QWT_INSTALL_LIBS      = $${QWT_INSTALL_PREFIX}/lib
+ # runtime environment of designer/creator.
+ ######################################################################
+ 
+-QWT_INSTALL_PLUGINS   = $${QWT_INSTALL_PREFIX}/plugins/designer
++QWT_INSTALL_PLUGINS   = $${QWT_INSTALL_PREFIX}/lib/${QTVER}/plugins/designer
+ 
+ # linux distributors often organize the Qt installation
+ # their way and QT_INSTALL_PREFIX doesn't offer a good
+@@ -63,7 +63,7 @@ QWT_INSTALL_PLUGINS   = $${QWT_INSTALL_PREFIX}/plugins
+ # with every Qt upgrade. 
+ ######################################################################
+ 
+-QWT_INSTALL_FEATURES  = $${QWT_INSTALL_PREFIX}/features
++QWT_INSTALL_FEATURES  = $${QWT_INSTALL_PREFIX}/lib/${QTVER}/mkspecs/features
+ # QWT_INSTALL_FEATURES  = $$[QT_INSTALL_PREFIX]/features
  
  ######################################################################
- # qmake internal options
