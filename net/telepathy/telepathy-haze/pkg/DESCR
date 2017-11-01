@@ -1,3 +1,0 @@
-Haze implements the Telepathy D-Bus specification using libpurple,
-allowing Telepathy clients like empathy to connect to any protocol
-supported by pidgin.
