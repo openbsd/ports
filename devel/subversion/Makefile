@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.161 2017/09/23 15:59:03 jeremy Exp $
+# $OpenBSD: Makefile,v 1.162 2017/11/01 10:16:53 jeremy Exp $
 
 COMMENT-main=		subversion revision control system
 COMMENT-perl=		perl interface to subversion
@@ -14,29 +14,36 @@ FULLPKGNAME-perl=	p5-SVN-${VERSION}
 FULLPKGPATH-perl=	devel/subversion,-perl
 FULLPKGNAME-python=	py-subversion-${VERSION}
 FULLPKGPATH-python=	devel/subversion,-python
-FULLPKGNAME-ruby=	ruby-subversion-${VERSION}
+FULLPKGNAME-ruby=	ruby${MODRUBY_BINREV}-subversion-${VERSION}
 FULLPKGPATH-ruby=	devel/subversion,-ruby
 FULLPKGNAME-ap2=	ap2-subversion-${VERSION}
 FULLPKGPATH-ap2=	devel/subversion,-ap2
 FULLPKGNAME-gnome-keyring= gnome-keyring-subversion-${VERSION}
 FULLPKGPATH-gnome-keyring= devel/subversion,-gnome-keyring
 
-REVISION-main=	1
-REVISION-ruby=	1
+REVISION-main=	2
 REVISION-perl=	0
 REVISION-gnome-keyring=	0
 REVISION-ap2=	0
+
+MODRUBY_REV ?=	2.4
+# Work around for SHARED_LIBS not picking up MODRUBY_BINREV from ruby module
+MODRUBY_BINREV=	${MODRUBY_REV:S/.//}
 
 SO_VERSION=	2.0
 SVN_LIBS=	svn_client-1 svn_delta-1 svn_diff-1 svn_fs-1 \
 		svn_fs_base-1 svn_fs_fs-1 svn_fs_util-1 svn_fs_x-1 \
 		svn_ra-1 svn_ra_serf-1 svn_ra_local-1 \
 		svn_ra_svn-1 svn_repos-1 svn_subr-1 svn_wc-1
-SVN_EXT_LIBS=	svn_swig_perl-1 svn_swig_py-1 svn_swig_ruby-1 \
+SVN_EXT_LIBS=	svn_swig_perl-1 svn_swig_py-1 svn_swig_ruby${MODRUBY_BINREV}-1 \
 		svn_auth_gnome_keyring-1
 .for _lib in ${SVN_LIBS} ${SVN_EXT_LIBS}
 SHARED_LIBS+=	${_lib} ${SO_VERSION}
 .endfor
+
+# Work around for PLIST not being to handle dynamic variable names in
+# substitutions
+LIBsvn_swig_ruby-1_VERSION =	${LIBsvn_swig_ruby${MODRUBY_BINREV}-1_VERSION}
 
 CATEGORIES=	devel
 
@@ -182,7 +189,7 @@ CONFIGURE_ARGS+=--without-gnome-keyring
 
 TEST_DEPENDS=${MODPY_RUN_DEPENDS}
 TEST_DEPENDS+=	${FULLPKGNAME-gnome-keyring}:${BUILD_PKGPATH},-gnome-keyring
-SUBST_VARS+=	LOCALBASE SO_VERSION MODRUBY_BINREV
+SUBST_VARS+=	LOCALBASE SO_VERSION MODRUBY_BINREV LIBsvn_swig_ruby-1_VERSION
 
 pre-patch:
 	@ln -s ${MODPY_BIN} ${WRKDIR}/bin/python
@@ -192,6 +199,9 @@ pre-configure:
 		${WRKSRC}/subversion/libsvn_subr/auth.c
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
 		AUTOCONF_VERSION=${AUTOCONF_VERSION} ./autogen.sh
+	mv ${WRKSRC}/subversion/bindings/swig/ruby/libsvn_swig_ruby{,${MODRUBY_BINREV}}
+	sed -i 's/libsvn_swig_ruby/libsvn_swig_ruby${MODRUBY_BINREV}/g' \
+		`fgrep -lr libsvn_swig_ruby ${WRKSRC}`
 
 .if ${BUILD_PACKAGES:M-python}
 TEST_DEPENDS+=	${FULLPKGNAME-python}:${BUILD_PKGPATH},-python

@@ -1,8 +1,12 @@
-@comment $OpenBSD: PLIST-ruby,v 1.9 2011/07/19 18:00:16 jeremy Exp $
+@comment $OpenBSD: PLIST-ruby,v 1.10 2017/11/01 10:16:53 jeremy Exp $
 @pkgpath devel/subversion,-ruby,gnome_keyring
-lib/libsvn_swig_ruby-1.a
-lib/libsvn_swig_ruby-1.la
-@lib lib/libsvn_swig_ruby-1.so.${LIBsvn_swig_ruby-1_VERSION}
+@comment lib/ruby/
+@comment lib/ruby/site_ruby/
+@comment lib/ruby/site_ruby/${MODRUBY_LIBREV}/
+@comment lib/ruby/site_ruby/${MODRUBY_LIBREV}/${MODRUBY_ARCH}/
+lib/libsvn_swig_ruby${MODRUBY_BINREV}-1.a
+lib/libsvn_swig_ruby${MODRUBY_BINREV}-1.la
+@lib lib/libsvn_swig_ruby${MODRUBY_BINREV}-1.so.${LIBsvn_swig_ruby-1_VERSION}
 ${MODRUBY_SITEDIR}/svn/
 ${MODRUBY_SITEDIR}/svn/client.rb
 ${MODRUBY_SITEDIR}/svn/commit-mailer.rb

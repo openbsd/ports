@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.17 2016/06/21 21:55:08 jung Exp $
+@comment $OpenBSD: PLIST-main,v 1.18 2017/11/01 10:16:53 jeremy Exp $
 @newgroup _svnserve:777
 @newuser _svnserve:777:_svnserve:daemon:SVN Daemon:/nonexistent:/sbin/nologin
 @pkgpath devel/subversion,no_bindings
@@ -117,10 +117,6 @@ lib/libsvn_wc-1.la
 @lib lib/libsvn_wc-1.so.${LIBsvn_wc-1_VERSION}
 @comment lib/python${MODPY_VERSION}/
 @comment lib/python${MODPY_VERSION}/site-packages/
-@comment lib/ruby/
-@comment lib/ruby/site_ruby/
-@comment lib/ruby/site_ruby/${MODRUBY_LIBREV}/
-@comment lib/ruby/site_ruby/${MODRUBY_LIBREV}/${MODRUBY_ARCH}/
 @man man/man1/svn.1
 @man man/man1/svnadmin.1
 @man man/man1/svndumpfilter.1
