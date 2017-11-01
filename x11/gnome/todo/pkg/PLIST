@@ -1,23 +1,20 @@
-@comment $OpenBSD: PLIST,v 1.5 2017/06/09 07:10:50 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2017/11/01 21:19:21 ajacoutot Exp $
 @bin bin/gnome-todo
 include/gnome-todo/
-include/gnome-todo/engine/
-include/gnome-todo/engine/gtd-manager.h
 include/gnome-todo/gnome-todo.h
+include/gnome-todo/gtd-activatable.h
 include/gnome-todo/gtd-enums.h
+include/gnome-todo/gtd-manager.h
+include/gnome-todo/gtd-notification.h
 include/gnome-todo/gtd-object.h
+include/gnome-todo/gtd-panel.h
+include/gnome-todo/gtd-provider.h
 include/gnome-todo/gtd-task-list-view.h
 include/gnome-todo/gtd-task-list.h
 include/gnome-todo/gtd-task.h
 include/gnome-todo/gtd-timer.h
 include/gnome-todo/gtd-types.h
 include/gnome-todo/gtd-window.h
-include/gnome-todo/interfaces/
-include/gnome-todo/interfaces/gtd-activatable.h
-include/gnome-todo/interfaces/gtd-panel.h
-include/gnome-todo/interfaces/gtd-provider.h
-include/gnome-todo/notification/
-include/gnome-todo/notification/gtd-notification.h
 lib/girepository-1.0/Gtd-1.0.typelib
 lib/gnome-todo/
 lib/gnome-todo/plugins/
@@ -30,8 +27,6 @@ lib/gnome-todo/plugins/unscheduled-panel/unscheduled-panel/
 lib/gnome-todo/plugins/unscheduled-panel/unscheduled-panel.plugin
 lib/gnome-todo/plugins/unscheduled-panel/unscheduled-panel/__init__.py
 lib/pkgconfig/gnome-todo.pc
-share/appdata/
-share/appdata/org.gnome.Todo.appdata.xml
 share/applications/org.gnome.Todo.desktop
 share/dbus-1/services/org.gnome.Todo.service
 share/gir-1.0/Gtd-1.0.gir
@@ -41,34 +36,6 @@ share/glib-2.0/schemas/org.gnome.todo.gschema.xml
 share/glib-2.0/schemas/org.gnome.todo.txt.gschema.xml
 share/gnome-todo/
 share/gnome-todo/org.gnome.Todo.Autostart.desktop
-share/gtk-doc/html/gnome-todo/
-share/gtk-doc/html/gnome-todo/GtdActivatable.html
-share/gtk-doc/html/gnome-todo/GtdManager.html
-share/gtk-doc/html/gnome-todo/GtdNotification.html
-share/gtk-doc/html/gnome-todo/GtdObject.html
-share/gtk-doc/html/gnome-todo/GtdPanel.html
-share/gtk-doc/html/gnome-todo/GtdProvider.html
-share/gtk-doc/html/gnome-todo/GtdTask.html
-share/gtk-doc/html/gnome-todo/GtdTaskList.html
-share/gtk-doc/html/gnome-todo/GtdTaskListView.html
-share/gtk-doc/html/gnome-todo/GtdWindow.html
-share/gtk-doc/html/gnome-todo/annotation-glossary.html
-share/gtk-doc/html/gnome-todo/api-index-full.html
-share/gtk-doc/html/gnome-todo/ch01.html
-share/gtk-doc/html/gnome-todo/deprecated-api-index.html
-share/gtk-doc/html/gnome-todo/gnome-todo-Enums.html
-share/gtk-doc/html/gnome-todo/gnome-todo.devhelp2
-share/gtk-doc/html/gnome-todo/home.png
-share/gtk-doc/html/gnome-todo/index.html
-share/gtk-doc/html/gnome-todo/left-insensitive.png
-share/gtk-doc/html/gnome-todo/left.png
-share/gtk-doc/html/gnome-todo/notification.png
-share/gtk-doc/html/gnome-todo/object-tree.html
-share/gtk-doc/html/gnome-todo/right-insensitive.png
-share/gtk-doc/html/gnome-todo/right.png
-share/gtk-doc/html/gnome-todo/style.css
-share/gtk-doc/html/gnome-todo/up-insensitive.png
-share/gtk-doc/html/gnome-todo/up.png
 share/icons/hicolor/16x16/apps/org.gnome.Todo.png
 share/icons/hicolor/22x22/apps/org.gnome.Todo.png
 share/icons/hicolor/256x256/apps/org.gnome.Todo.png
@@ -79,6 +46,7 @@ share/icons/hicolor/symbolic/apps/org.gnome.Todo-symbolic.svg
 share/locale/ar/LC_MESSAGES/gnome-todo.mo
 share/locale/be/LC_MESSAGES/gnome-todo.mo
 share/locale/ca/LC_MESSAGES/gnome-todo.mo
+share/locale/ca@valencia/LC_MESSAGES/gnome-todo.mo
 share/locale/cs/LC_MESSAGES/gnome-todo.mo
 share/locale/da/LC_MESSAGES/gnome-todo.mo
 share/locale/de/LC_MESSAGES/gnome-todo.mo
@@ -103,6 +71,7 @@ share/locale/ko/LC_MESSAGES/gnome-todo.mo
 share/locale/lt/LC_MESSAGES/gnome-todo.mo
 share/locale/lv/LC_MESSAGES/gnome-todo.mo
 share/locale/nb/LC_MESSAGES/gnome-todo.mo
+share/locale/ne/LC_MESSAGES/gnome-todo.mo
 share/locale/nl/LC_MESSAGES/gnome-todo.mo
 share/locale/oc/LC_MESSAGES/gnome-todo.mo
 share/locale/pa/LC_MESSAGES/gnome-todo.mo
@@ -121,6 +90,8 @@ share/locale/uk/LC_MESSAGES/gnome-todo.mo
 share/locale/vi/LC_MESSAGES/gnome-todo.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-todo.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-todo.mo
+share/metainfo/
+share/metainfo/org.gnome.Todo.appdata.xml
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
