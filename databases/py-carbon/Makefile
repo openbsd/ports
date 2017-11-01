@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2017/07/08 16:09:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2017/11/01 10:44:39 landry Exp $
 
 COMMENT=		backend data caching and persistence daemon for Graphite
 
@@ -7,6 +7,7 @@ MODPY_EGG_VERSION=	1.0.1
 DISTNAME=		carbon-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		databases
+REVISION=		0
 
 # Apache
 PERMIT_PACKAGE_CDROM=	Yes
@@ -34,5 +35,6 @@ NO_TEST=		Yes
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/setup.{cfg,py} ${WRKSRC}/lib/carbon/conf.py \
 		${WRKSRC}/bin/validate-storage-schemas.py
+	rm ${WRKSRC}/{bin/validate-storage-schemas,lib/carbon/conf}.py.{orig,beforesubst}
 
 .include <bsd.port.mk>
