@@ -1,0 +1,17 @@
+$OpenBSD: patch-osrng_cpp,v 1.1 2017/11/01 14:31:47 naddy Exp $
+
+Index: osrng.cpp
+--- osrng.cpp.orig
++++ osrng.cpp
+@@ -189,11 +189,7 @@ void NonblockingRng::GenerateBlock(byte *output, size_
+ #ifdef BLOCKING_RNG_AVAILABLE
+ 
+ #ifndef CRYPTOPP_BLOCKING_RNG_FILENAME
+-#ifdef __OpenBSD__
+-#define CRYPTOPP_BLOCKING_RNG_FILENAME "/dev/srandom"
+-#else
+ #define CRYPTOPP_BLOCKING_RNG_FILENAME "/dev/random"
+-#endif
+ #endif
+ 
+ BlockingRng::BlockingRng()

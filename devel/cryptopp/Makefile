@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2017/10/25 12:22:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2017/11/01 14:31:47 naddy Exp $
 
 BROKEN-i386 =	asm problems with clang integrated as
 
@@ -9,7 +9,7 @@ HOMEPAGE = 	http://www.cryptopp.com/
 MASTER_SITES = 	${HOMEPAGE}
 DISTNAME = 	cryptopp565
 PKGNAME = 	cryptopp-5.6.5
-REVISION =      0
+REVISION =      1
 
 EXTRACT_SUFX = 	.zip
 WRKDIST = 	${WRKDIR}
