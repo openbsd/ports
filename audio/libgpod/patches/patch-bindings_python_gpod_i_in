@@ -1,0 +1,22 @@
+$OpenBSD: patch-bindings_python_gpod_i_in,v 1.1 2017/11/01 16:41:44 rsadowski Exp $
+
+Use SWIG C++-style comments instead of Python comments which
+SWIG interprets as preprocessor directives.
+
+
+Index: bindings/python/gpod.i.in
+--- bindings/python/gpod.i.in.orig
++++ bindings/python/gpod.i.in
+@@ -296,9 +296,9 @@ PyObject* sw_get_photo(GList *list, gint index) {
+ %include "gpod_doc.i"
+ %include "@top_builddir@/config.h"
+ 
+-# be nicer to decode these utf8 strings into Unicode objects in the C
+-# layer. Here we are leaving it to the Python side, and just giving
+-# them utf8 encoded Strings.
++// be nicer to decode these utf8 strings into Unicode objects in the C
++// layer. Here we are leaving it to the Python side, and just giving
++// them utf8 encoded Strings.
+ typedef char gchar;
+ 
+ %typemap(in) time_t {
