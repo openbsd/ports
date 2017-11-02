@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/11/01 16:51:30 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/11/02 17:43:04 jasper Exp $
 @newgroup _consul-template:781
 @newuser _consul-template:781:_consul-template:daemon:Consul Template user:/nonexistent:/sbin/nologin
 @bin bin/consul-template
@@ -17,4 +17,6 @@ share/examples/consul-template/join.md
 share/examples/consul-template/nginx.md
 share/examples/consul-template/services.md
 share/examples/consul-template/varnish.md
+share/examples/consul-template/vault-pki.md
+share/examples/consul-template/vault-transit.md
 @rcscript ${RCDIR}/consul_template
