@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2017/07/26 22:45:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2017/11/02 12:09:42 jca Exp $
 
 BROKEN-powerpc =	SIGILL when building
 COMMENT =	program for extreme audio stretching
 DISTNAME =	paulstretch-2.2-2
-REVISION =	2
+REVISION =	3
 PKGNAME =	paulstretch-2.2.2
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	audio x11
@@ -21,6 +21,7 @@ MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=hypermammut/}
 
 LIB_DEPENDS =	audio/libmad \
 		audio/libvorbis \
+		audio/libogg \
 		audio/portaudio-svn \
 		devel/libaudiofile \
 		textproc/mxml \
@@ -28,12 +29,9 @@ LIB_DEPENDS =	audio/libmad \
 
 NO_TEST =	Yes
 
-post-patch:
-	sed -i "s,g\+\+,${CXX} ${CXXFLAGS},g" \
-		${WRKSRC}/compile_linux_kissfft.sh
-
 do-build:
-	cd ${WRKSRC} && sh compile_linux_kissfft.sh
+	cd ${WRKSRC}; \
+	env CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" sh compile_linux_kissfft.sh
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/paulstretch ${PREFIX}/bin
