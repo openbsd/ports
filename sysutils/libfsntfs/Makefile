@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/02/12 10:57:34 rpointel Exp $
+# $OpenBSD: Makefile,v 1.2 2017/11/02 14:06:46 rpointel Exp $
 
 COMMENT =	library and tools to access NTFS
 
-VERSION = 	20160418
+VERSION = 	20170315
 DISTNAME =	libfsntfs-experimental-${VERSION}
 PKGNAME =	${DISTNAME:S/-experimental//}
 
-SHARED_LIBS +=  fsntfs                       0.0 # 1.0
+SHARED_LIBS +=  fsntfs                       0.1 # 1.0
 
 CATEGORIES =	sysutils security
 
