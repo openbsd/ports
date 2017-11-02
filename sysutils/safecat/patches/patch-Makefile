@@ -1,0 +1,25 @@
+$OpenBSD: patch-Makefile,v 1.1 2017/11/02 13:02:09 espie Exp $
+lld doesn't like linking with the same objects twice
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -219,14 +219,14 @@ compile open_trunc.c open.h
+ 
+ safecat: \
+ load safecat.o getln.a str.a stralloc.a strerr.a substdio.a alloc.o \
+-alloc_re.o byte_copy.o byte_cr.o envread.o error.o error_str.o fmt_uint64.o \
+-hostname.o sig.o stat_dir.o str_diffn.o str_len.o substdio_copy.o \
++alloc_re.o byte_cr.o envread.o error.o error_str.o fmt_uint64.o \
++hostname.o sig.o stat_dir.o str_diffn.o substdio_copy.o \
+ substdi.o substdio.o taia_fmtfrac.o taia_now.o taia_tai.o tempfile.o \
+ writefile.o
+ 	./load safecat getln.a str.a stralloc.a strerr.a substdio.a \
+-	alloc.o alloc_re.o byte_copy.o byte_cr.o envread.o error.o \
++	alloc.o alloc_re.o byte_cr.o envread.o error.o \
+ 	error_str.o fmt_uint64.o hostname.o sig.o stat_dir.o str_diffn.o \
+-	str_len.o substdi.o substdio.o substdio_copy.o taia_fmtfrac.o \
++	substdi.o substdio.o substdio_copy.o taia_fmtfrac.o \
+ 	taia_now.o taia_tai.o tempfile.o writefile.o
+ 
+ safecat.0: \
