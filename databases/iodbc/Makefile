@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2017/10/23 17:10:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.41 2017/11/02 21:51:59 naddy Exp $
 
 COMMENT-main=		ODBC 3.x driver manager
 COMMENT-admin=		ODBC 3.x driver manager admin application
@@ -9,7 +9,8 @@ DISTNAME=		libiodbc-$V
 PKGNAME=		iodbc-$V
 PKGNAME-main=		iodbc-$V
 PKGNAME-admin=		iodbc-admin-$V
-REVISION-admin=		0
+REVISION-main=		0
+REVISION-admin=		1
 
 CATEGORIES=		databases
 
@@ -27,8 +28,6 @@ PERMIT_PACKAGE_CDROM=	yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=iodbc/}
 
-MODULES=		devel/gettext
-
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-iodbc-inidir="${SYSCONFDIR}/iodbc" \
 			--disable-libodbc
@@ -37,18 +36,16 @@ MULTI_PACKAGES=		-main -admin
 
 WANTLIB-main=		c pthread
 
-LIB_DEPENDS-admin=	${MODGETTEXT_LIB_DEPENDS} \
-			databases/iodbc,-main \
+LIB_DEPENDS-admin=	databases/iodbc,-main \
 			x11/gtk+2
 
 LIB_DEPENDS-main=	# empty
 
-WANTLIB-admin= ${MODGETTEXT_WANTLIB}
 WANTLIB-admin += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB-admin += Xrandr Xrender atk-1.0 c cairo expat ffi fontconfig
 WANTLIB-admin += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB-admin += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-x11-2.0
-WANTLIB-admin += harfbuzz iodbc iodbcinst m pango-1.0 pangocairo-1.0
+WANTLIB-admin += harfbuzz iconv intl iodbc iodbcinst m pango-1.0 pangocairo-1.0
 WANTLIB-admin += pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB-admin += xcb xcb-render xcb-shm z
 

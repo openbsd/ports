@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.105 2017/11/01 10:18:18 jeremy Exp $
+# $OpenBSD: Makefile,v 1.106 2017/11/02 21:51:59 naddy Exp $
 
 COMMENT-main=	system to store and display time-series data
 COMMENT-update=	lightweight update-only tool for rrdtool
@@ -13,6 +13,7 @@ PKGNAME-update=	rrdupdate-${VERSION}
 PKGNAME-python= py-rrd-${VERSION}
 PKGNAME-ruby=	ruby${MODRUBY_BINREV}-rrd-${VERSION}
 REVISION-main=	1
+REVISION-update= 0
 
 SHARED_LIBS +=	rrd                  5.2      # 9.0
 
@@ -32,7 +33,7 @@ USE_GMAKE=	Yes
 PSEUDO_FLAVORS=	no_ruby no_python
 MULTI_PACKAGES= -main -python -ruby -update
 
-MODULES=	devel/gettext lang/python lang/ruby
+MODULES=	lang/python lang/ruby
 MODPY_SETUPTOOLS= Yes
 
 CONFIGURE_STYLE= gnu
@@ -75,14 +76,14 @@ CONFIGURE_ENV+=	NROFF="/usr/bin/true" \
 		TROFF="/usr/bin/true"
 
 cWANTLIB=	pthread
-WANTLIB-update=	${cWANTLIB} ${MODGETTEXT_WANTLIB} c glib-2.0 m pcre
+WANTLIB-update=	${cWANTLIB} c glib-2.0 iconv intl m pcre
 WANTLIB-python=	${cWANTLIB} ${MODPY_WANTLIB} rrd
 WANTLIB-ruby=	${cWANTLIB} ${MODRUBY_WANTLIB} c gmp m rrd
 # depends on Perl ABI
-WANTLIB-main=	${cWANTLIB} ${MODGETTEXT_WANTLIB} perl
+WANTLIB-main=	${cWANTLIB} perl
 WANTLIB-main += X11 Xext Xrender c cairo expat ffi fontconfig freetype
 WANTLIB-main += glib-2.0 gobject-2.0 graphite2 gthread-2.0
-WANTLIB-main += harfbuzz lzma m pango-1.0 pangocairo-1.0
+WANTLIB-main += harfbuzz iconv intl lzma m pango-1.0 pangocairo-1.0
 WANTLIB-main += pangoft2-1.0 pcre pixman-1 png xcb
 WANTLIB-main += xcb-render xcb-shm xml2 z
 
@@ -92,8 +93,7 @@ LIB_DEPENDS-main=	devel/glib2 \
 			textproc/libxml
 RUN_DEPENDS-main=	rrdupdate-${VERSION}:net/rrdtool,-update
 
-LIB_DEPENDS-update=	${MODGETTEXT_LIB_DEPENDS} \
-			devel/glib2 \
+LIB_DEPENDS-update=	devel/glib2 \
 			devel/pcre
 RUN_DEPENDS-update=
 

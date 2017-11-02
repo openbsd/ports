@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.95 2017/07/26 22:45:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.96 2017/11/02 21:51:59 naddy Exp $
 
 COMMENT-main=		UPS monitoring program supporting many brands
 COMMENT-cgi=		CGIs for monitoring Nut-based UPSs
@@ -14,8 +14,8 @@ PKGNAME-xml=		${DISTNAME:S/-/-xml-/}
 
 REVISION-main=		2
 REVISION-snmp=		1
-REVISION-xml=		1
-REVISION-cgi=		0
+REVISION-xml=		2
+REVISION-cgi=		1
 
 SHARED_LIBS +=	upsclient            4.0      # .4.0
 SHARED_LIBS +=	nutclient            0.0      # .0.0
@@ -31,15 +31,14 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 COMMON +=	c crypto pthread
 WANTLIB-main +=	${COMMON} ltdl m ssl ${COMPILER_LIBCXX} usb usb-1.0
-WANTLIB-xml +=	${COMMON} ${MODGETTEXT_WANTLIB} expat neon proxy ssl z
-WANTLIB-cgi +=	${COMMON} ${MODGETTEXT_WANTLIB} X11 expat fontconfig
+WANTLIB-xml +=	${COMMON} expat iconv intl neon proxy ssl z
+WANTLIB-cgi +=	${COMMON} X11 expat fontconfig iconv intl
 WANTLIB-cgi +=	freetype gd jpeg m png ssl upsclient xcb z
 WANTLIB-snmp +=	${COMMON} m netsnmp
 
 MASTER_SITES=		${HOMEPAGE}source/2.7/
 
-MODULES=		devel/gettext \
-			lang/python
+MODULES=		lang/python
 MODPY_RUNDEP=		No
 # if avahi is present at build time, avahi support is built in nut-scanner,
 # but it's dlopen()'d at runtime, so support is optional, so we don't list a
@@ -97,7 +96,7 @@ RUN_DEPENDS-xml=	${RUN_DEPENDS} \
 LIB_DEPENDS-snmp=	net/net-snmp
 RUN_DEPENDS-snmp=	sysutils/nut
 
-LIB_DEPENDS-cgi=	${LIB_DEPENDS} \
+LIB_DEPENDS-cgi=	devel/gettext \
 			graphics/jpeg \
 			graphics/gd \
 			sysutils/nut
