@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.5 2017/08/08 15:15:52 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.6 2017/11/02 12:22:12 ajacoutot Exp $
 @bin bin/tetzle
+@man man/man6/tetzle.6
 share/applications/tetzle.desktop
 share/icons/hicolor/1024x1024/
 share/icons/hicolor/1024x1024/apps/
@@ -14,9 +15,6 @@ share/icons/hicolor/48x48/apps/tetzle.png
 share/icons/hicolor/512x512/apps/tetzle.png
 share/icons/hicolor/64x64/apps/tetzle.png
 share/icons/hicolor/scalable/apps/tetzle.svg
-share/man/
-share/man/man6/
-@man share/man/man6/tetzle.6
 share/metainfo/
 share/metainfo/tetzle.appdata.xml
 share/pixmaps/

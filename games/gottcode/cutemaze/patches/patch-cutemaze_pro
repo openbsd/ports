@@ -1,0 +1,14 @@
+$OpenBSD: patch-cutemaze_pro,v 1.1 2017/11/02 12:22:12 ajacoutot Exp $
+
+Index: cutemaze.pro
+--- cutemaze.pro.orig
++++ cutemaze.pro
+@@ -98,7 +98,7 @@ macx {
+ 	qm.CONFIG += no_check_exist
+ 
+ 	man.files = doc/cutemaze.6
+-	man.path = $$PREFIX/share/man/man6
++	man.path = $$PREFIX/man/man6
+ 
+ 	INSTALLS += target pixmap icon desktop appdata qm man
+ }

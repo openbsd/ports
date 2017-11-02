@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.5 2017/08/08 15:15:52 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.6 2017/11/02 12:22:12 ajacoutot Exp $
 @bin bin/hexalate
+@man man/man6/hexalate.6
 share/applications/hexalate.desktop
 share/hexalate/
 share/hexalate/translations/
@@ -33,9 +34,6 @@ share/icons/hicolor/32x32/apps/hexalate.png
 share/icons/hicolor/48x48/apps/hexalate.png
 share/icons/hicolor/512x512/apps/hexalate.png
 share/icons/hicolor/64x64/apps/hexalate.png
-share/man/
-share/man/man6/
-@man share/man/man6/hexalate.6
 share/metainfo/
 share/metainfo/hexalate.appdata.xml
 share/pixmaps/

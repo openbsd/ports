@@ -1,0 +1,14 @@
+$OpenBSD: patch-hexalate_pro,v 1.1 2017/11/02 12:22:12 ajacoutot Exp $
+
+Index: hexalate.pro
+--- hexalate.pro.orig
++++ hexalate.pro
+@@ -85,7 +85,7 @@ macx {
+ 	qm.CONFIG += no_check_exist
+ 
+ 	man.files = doc/hexalate.6
+-	man.path = $$PREFIX/share/man/man6
++	man.path = $$PREFIX/man/man6
+ 
+ 	INSTALLS += target icon pixmap desktop appdata qm man
+ }
