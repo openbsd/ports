@@ -1,4 +1,4 @@
-# $OpenBSD: meson.port.mk,v 1.11 2017/11/02 15:13:37 ajacoutot Exp $
+# $OpenBSD: meson.port.mk,v 1.12 2017/11/02 15:46:39 ajacoutot Exp $
 
 BUILD_DEPENDS +=	devel/meson>=0.43.0p1
 SEPARATE_BUILD ?=	Yes
@@ -38,6 +38,7 @@ MODMESON_configure=	${SETENV} CC="${CC}" CFLAGS="${CFLAGS}" CXX="${CXX}" \
 				${LOCALBASE}/bin/meson --buildtype=plain \
 				--prefix "${PREFIX}" --mandir="${PREFIX}/man" \
 				--sysconfdir="${SYSCONFDIR}" \
+				--localstatedir="${LOCALSTATEDIR}" \
 				${CONFIGURE_ARGS} ${WRKSRC} ${WRKBUILD}
 
 .if !target(do-build)
