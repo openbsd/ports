@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2017/07/26 22:45:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2017/11/02 22:46:27 bentley Exp $
 
 # Block.s: Assembler messages:
 # Block.s:73: Error: junk `(%rip)' after expression
@@ -8,18 +8,16 @@ ONLY_FOR_ARCHS = ${LLVM_ARCHS}
 BROKEN-sparc64 = undefined reference to pthread_mutex_lock
 
 COMMENT =	bastard tetris
-DISTNAME =	bastet-0.43.1.2015083000
-REVISION =	2
 
 GH_ACCOUNT =	fph
 GH_PROJECT =	bastet
-GH_COMMIT =	5037e410fde6fafe8e6bc4cf17a12ad98e01c17e
+GH_TAGNAME =	0.43.2
 
 CATEGORIES =	games
 
 HOMEPAGE =	http://fph.altervista.org/prog/bastet.html
 
-# GPLv3
+# GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =	boost_program_options c ncurses m ${COMPILER_LIBCXX}
