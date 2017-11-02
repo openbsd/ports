@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2017/10/23 17:10:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2017/11/02 22:24:14 sthen Exp $
 
 COMMENT-term=	cli client for Intel AMT serial-over-lan
 COMMENT-main=	client and tools for Intel AMT serial-over-lan
 
 V=		1.4
 DISTNAME=	amtterm-$V
-REVISION=	1
+REVISION=	2
 PKGNAME-main=	amtterm-$V
 PKGNAME-term=	amtterm-cli-$V
 MULTI_PACKAGES=	-main -term
@@ -17,19 +17,17 @@ HOMEPAGE=	https://www.kraxel.org/blog/linux/amtterm/
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB-term=	c
-WANTLIB-main=	${MODGETTEXT_WANTLIB} c gio-2.0 glib-2.0 gobject-2.0
-WANTLIB-main += atk-1.0 cairo gdk-x11-2.0 gdk_pixbuf-2.0 gtk-x11-2.0
-WANTLIB-main += pango-1.0 pangocairo-1.0 pangoft2-1.0 png vte
-WANTLIB-main += GL X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
-WANTLIB-main += Xrandr Xrender expat fontconfig freetype m pixman-1
-WANTLIB-main += pthread xcb xcb-render xcb-shm z
+WANTLIB-term += c
+WANTLIB-main += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
+WANTLIB-main += Xrandr Xrender atk-1.0 c cairo fontconfig freetype
+WANTLIB-main += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
+WANTLIB-main += gtk-x11-2.0 intl pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB-main += vte z
 
 MASTER_SITES=	https://www.kraxel.org/releases/amtterm/
 
-MODULES=	devel/gettext
 LIB_DEPENDS-term=
-LIB_DEPENDS-main= ${MODGETTEXT_LIB_DEPENDS} \
+LIB_DEPENDS-main= devel/gettext \
 		devel/vte
 RUN_DEPENDS-main= comms/amtterm,-term \
 		devel/desktop-file-utils \
