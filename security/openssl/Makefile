@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.27 2017/10/27 23:46:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.28 2017/11/02 22:52:29 sthen Exp $
 
 COMMENT=	TLS/SSL library and tools
 
 PORTROACH=	limit:^1\.0\.
-V=		1.0.2l
+V=		1.0.2m
 DISTNAME=	openssl-$V
 PKGNAME=	openssl-$V
-REVISION=	0
 
-SHLIBVER=	5.1
+SHLIBVER=	5.2
 SHARED_LIBS=	crypto ${SHLIBVER} \
 		ssl ${SHLIBVER}
 
