@@ -1,4 +1,6 @@
-$OpenBSD: patch-src_meson_build,v 1.1 2017/11/01 19:09:57 jasper Exp $
+$OpenBSD: patch-src_meson_build,v 1.2 2017/11/02 11:40:25 jasper Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=789814
 
 Index: src/meson.build
 --- src/meson.build.orig
