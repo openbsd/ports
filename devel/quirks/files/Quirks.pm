@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.542 2017/11/01 21:42:54 jeremy Exp $
+# $OpenBSD: Quirks.pm,v 1.543 2017/11/02 22:24:09 bentley Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -492,6 +492,7 @@ my $stem_extensions = {
 	'extract_url' => 'extracturl',
 # 6.3
 	'ruby-arirang' => 'arirang',
+	'ja-mplus-ttf' => 'mixfont-mplus-ipa',
 };
 
 my $obsolete_reason = {
