@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.40 2017/04/28 16:52:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2017/11/02 17:51:10 ajacoutot Exp $
 
 COMMENT=	perl interface to the Glib libraries
 
-V =		1.325
+V =		1.326
 DISTNAME=	Glib-${V}
 PKGNAME=	p5-Glib2-${V}
 CATEGORIES=	x11 devel
