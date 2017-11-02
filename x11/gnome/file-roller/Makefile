@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.129 2017/10/23 17:11:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.130 2017/11/02 10:56:26 jasper Exp $
 
 COMMENT=	archive manager utility for GNOME
 
 GNOME_PROJECT=	file-roller
-GNOME_VERSION=	3.24.1
-REVISION=	0
+GNOME_VERSION=	3.26.2
 
 CATEGORIES=	archivers
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
+WANTLIB += Xtst X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender archive atk-1.0 atk-bridge-2.0
 WANTLIB += atspi bz2 c cairo cairo-gobject crypto dbus-1 epoxy
 WANTLIB += expat ffi fontconfig freetype gdk-3 gdk_pixbuf-2.0
