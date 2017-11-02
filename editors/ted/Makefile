@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2017/10/23 17:10:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2017/11/02 13:34:08 espie Exp $
 
 
 COMMENT =	X11 based RTF editor
@@ -23,7 +23,7 @@ LIB_DEPENDS =	graphics/png \
 		graphics/jpeg \
 		graphics/tiff \
 		x11/motif
-MAKE_ENV+=MOTIFLIB='-L${LOCALBASE}/lib -lXm'
+MAKE_ENV+=MOTIFLIB='-L${LOCALBASE}/lib -lXm'  CC='${CC}'
 
 ALL_TARGET =	compile.shared
 NO_TEST =	Yes
