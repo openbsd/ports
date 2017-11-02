@@ -1,11 +1,43 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/01/30 01:12:30 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/11/02 20:23:19 bentley Exp $
 share/fonts/
 @fontdir share/fonts/overpass/
-share/fonts/overpass/Overpass-Bold-Italic.ttf
-share/fonts/overpass/Overpass-Bold.ttf
-share/fonts/overpass/Overpass-ExtraLight Italic.ttf
-share/fonts/overpass/Overpass-ExtraLight.ttf
-share/fonts/overpass/Overpass-Light-Italic.ttf
-share/fonts/overpass/Overpass-Light.ttf
-share/fonts/overpass/Overpass-Regular-Italic.ttf
-share/fonts/overpass/Overpass-Regular.ttf
+share/fonts/overpass/overpass-bold-italic.otf
+share/fonts/overpass/overpass-bold-italic.ttf
+share/fonts/overpass/overpass-bold.otf
+share/fonts/overpass/overpass-bold.ttf
+share/fonts/overpass/overpass-extrabold-italic.otf
+share/fonts/overpass/overpass-extrabold-italic.ttf
+share/fonts/overpass/overpass-extrabold.otf
+share/fonts/overpass/overpass-extrabold.ttf
+share/fonts/overpass/overpass-extralight-italic.otf
+share/fonts/overpass/overpass-extralight-italic.ttf
+share/fonts/overpass/overpass-extralight.otf
+share/fonts/overpass/overpass-extralight.ttf
+share/fonts/overpass/overpass-heavy-italic.otf
+share/fonts/overpass/overpass-heavy-italic.ttf
+share/fonts/overpass/overpass-heavy.otf
+share/fonts/overpass/overpass-heavy.ttf
+share/fonts/overpass/overpass-italic.otf
+share/fonts/overpass/overpass-italic.ttf
+share/fonts/overpass/overpass-light-italic.otf
+share/fonts/overpass/overpass-light-italic.ttf
+share/fonts/overpass/overpass-light.otf
+share/fonts/overpass/overpass-light.ttf
+share/fonts/overpass/overpass-mono-bold.otf
+share/fonts/overpass/overpass-mono-bold.ttf
+share/fonts/overpass/overpass-mono-light.otf
+share/fonts/overpass/overpass-mono-light.ttf
+share/fonts/overpass/overpass-mono-regular.otf
+share/fonts/overpass/overpass-mono-regular.ttf
+share/fonts/overpass/overpass-mono-semibold.otf
+share/fonts/overpass/overpass-mono-semibold.ttf
+share/fonts/overpass/overpass-regular.otf
+share/fonts/overpass/overpass-regular.ttf
+share/fonts/overpass/overpass-semibold-italic.otf
+share/fonts/overpass/overpass-semibold-italic.ttf
+share/fonts/overpass/overpass-semibold.otf
+share/fonts/overpass/overpass-semibold.ttf
+share/fonts/overpass/overpass-thin-italic.otf
+share/fonts/overpass/overpass-thin-italic.ttf
+share/fonts/overpass/overpass-thin.otf
+share/fonts/overpass/overpass-thin.ttf
