@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.111 2017/10/23 17:11:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.112 2017/11/02 17:52:26 naddy Exp $
 
 COMMENT=	GNU PostScript interpreter
 
@@ -6,7 +6,7 @@ VERSION=	9.07
 DISTNAME=	ghostscript-${VERSION}
 CATEGORIES=	print lang
 SHARED_LIBS=	gs	15.0
-REVISION=	6
+REVISION=	7
 
 MASTER_SITES=	http://downloads.ghostscript.com/public/
 
@@ -103,14 +103,11 @@ CFLAGS+=	-DA4
 ERRORS+= "Fatal: Conflicting flavors: ${FLAVOR}"
 .elif ${FLAVOR:Mgtk}
 LIB_DEPENDS+=	x11/gtk+2
-MODULES+=	devel/gettext
-WANTLIB+=	GL Xcomposite Xcursor Xdamage Xfixes Xi Xinerama
-WANTLIB+=	Xrandr Xrender atk-1.0 cairo expat fontconfig freetype
+WANTLIB+=	Xcomposite Xcursor Xdamage Xfixes Xi Xinerama
+WANTLIB+=	Xrandr Xrender atk-1.0 cairo fontconfig freetype
 WANTLIB+=	gdk-x11-2.0>=1000 gdk_pixbuf-2.0>=1000 gio-2.0 glib-2.0
-WANTLIB+=	gobject-2.0 gtk-x11-2.0>=1000
-WANTLIB+=	pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1
-WANTLIB+=	xcb xcb-render xcb-shm
-WANTLIB+=	${MODGETTEXT_WANTLIB}
+WANTLIB+=	gobject-2.0 gtk-x11-2.0>=1000 iconv intl
+WANTLIB+=	pango-1.0 pangocairo-1.0 pangoft2-1.0
 SOC_CFLAGS=	$$(pkg-config gtk+-2.0 --cflags)
 SOC_LIBS+=	$$(pkg-config gtk+-2.0 --libs)
 USE_GTK=	Yes
