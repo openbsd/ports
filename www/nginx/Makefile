@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.113 2017/07/27 22:01:58 robert Exp $
+# $OpenBSD: Makefile,v 1.114 2017/11/02 14:08:18 jeremy Exp $
 
 BROKEN-arm=	src/core/ngx_rwlock.c:116:2: error: \#error ngx_atomic_cmp_set() is not defined!
 BROKEN-hppa=	src/core/ngx_rwlock.c:116:2: error: \#error ngx_atomic_cmp_set() is not defined!
@@ -28,6 +28,8 @@ PKGNAME-naxsi=		nginx-naxsi-${VERSION}
 PKGNAME-lua=		nginx-lua-${VERSION}
 PKGNAME-perl=		nginx-perl-${VERSION}
 PKGNAME-passenger=	nginx-passenger-${VERSION}
+
+REVISION-passenger=	0
 
 MASTER_SITES=	https://nginx.org/download/
 MASTER_SITES0=	https://github.com/simpl/ngx_devel_kit/archive/
@@ -86,7 +88,7 @@ RUN_DEPENDS-naxsi=	www/nginx,-main=${VERSION}
 RUN_DEPENDS-lua=	www/nginx,-main=${VERSION}
 RUN_DEPENDS-perl=	www/nginx,-main=${VERSION}
 RUN_DEPENDS-passenger=	www/nginx,-main=${VERSION} \
-			ruby-passenger-*|ruby21-passenger-*|ruby22-passenger-*|ruby23-passenger-*:www/ruby-passenger
+			ruby23-passenger-*|ruby24-passenger-*:www/ruby-passenger
 
 NGINX_DIR=	/var/www
 SUBST_VARS=	NGINX_DIR
