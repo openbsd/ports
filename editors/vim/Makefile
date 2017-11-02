@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.164 2017/11/01 10:12:25 jeremy Exp $
+# $OpenBSD: Makefile,v 1.165 2017/11/02 22:07:13 sthen Exp $
 
 COMMENT-main=	vi clone, many additional features
 COMMENT-lang=	vi clone, NLS subpackage
 
 # if updating major version, sync editors/vim-spell
-V=		8.0.1203
+V=		8.0.1255
 GH_ACCOUNT=	vim
 GH_PROJECT=	vim
 GH_TAGNAME=	v$V
@@ -14,14 +14,14 @@ PKGNAME-lang=	vim-lang-$V
 P=		vim${V:R:S/.//}
 CATEGORIES=	editors
 
-REVISION-main=	0
-
 HOMEPAGE=	http://www.vim.org/
 
 # donation-ware
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB +=	c curses
+WANTLIB +=	c curses iconv intl
+
+LIB_DEPENDS-main= ${LIB_DEPENDS} devel/gettext
 
 MULTI_PACKAGES=	-main -lang
 
@@ -44,7 +44,8 @@ CONFIGURE_ARGS+= --with-tlib="curses" \
 		--enable-cscope
 
 AUTOCONF_VERSION= 2.69
-BUILD_DEPENDS= ${MODGNU_AUTOCONF_DEPENDS}
+BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
+	       	devel/gettext-tools
 
 .if ${FLAVOR:Mhuge}
 CONFIGURE_ARGS+= --with-features=huge
@@ -132,7 +133,7 @@ CONFIGURE_ARGS+= --enable-gui="gtk2" \
 		--enable-xim \
 		--with-x
 WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
-WANTLIB += Xi Xinerama Xpm Xrandr Xrender Xt atk-1.0 cairo
+WANTLIB += Xi Xinerama Xpm Xrandr Xrender Xt atk-1.0 cairo elf
 WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gobject-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pthread z
@@ -144,7 +145,6 @@ RUN_DEPENDS-lang=	editors/vim,-main
 PKG_ARCH-lang=		*
 LIB_DEPENDS-lang=
 WANTLIB-lang=
-MODULES+=		devel/gettext
 
 WRKSRC=		${WRKDIST}/src
 SUBST_VARS=	P
