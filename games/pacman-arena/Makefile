@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:07:40 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2017/11/02 15:10:07 espie Exp $
 
 COMMENT=	pacman clone gone mad
 
@@ -31,6 +31,7 @@ LIB_DEPENDS=	devel/sdl-mixer \
 NO_TEST=	Yes
 
 CONFIGURE_STYLE=gnu
+CONFIGURE_ENV=LDFLAGS='${LDFLAGS} -lm'
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/pacman
