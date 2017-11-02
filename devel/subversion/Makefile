@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.162 2017/11/01 10:16:53 jeremy Exp $
+# $OpenBSD: Makefile,v 1.163 2017/11/02 17:50:55 naddy Exp $
 
 COMMENT-main=		subversion revision control system
 COMMENT-perl=		perl interface to subversion
@@ -21,10 +21,12 @@ FULLPKGPATH-ap2=	devel/subversion,-ap2
 FULLPKGNAME-gnome-keyring= gnome-keyring-subversion-${VERSION}
 FULLPKGPATH-gnome-keyring= devel/subversion,-gnome-keyring
 
-REVISION-main=	2
-REVISION-perl=	0
-REVISION-gnome-keyring=	0
-REVISION-ap2=	0
+REVISION-main=	3
+REVISION-perl=	1
+REVISION-python=0
+REVISION-ruby=	0
+REVISION-ap2=	1
+REVISION-gnome-keyring=	1
 
 MODRUBY_REV ?=	2.4
 # Work around for SHARED_LIBS not picking up MODRUBY_BINREV from ruby module
@@ -64,12 +66,13 @@ FLAVOR?=
 FLAVOR += no_perl no_python no_ruby
 .endif
 
-MODULES=	devel/gettext lang/python
+MODULES=	lang/python
 
-WANTLIB=	expat m pthread z
+WANTLIB=	expat iconv intl m pthread z
 
 # autogen.sh checks for libtoolize
 BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
+		devel/gettext-tools \
 		devel/libtool
 
 MULTI_PACKAGES = -main -ap2 -perl -python -ruby -gnome-keyring
@@ -80,11 +83,12 @@ LIB_DEPENDS-main = ${LIB_DEPENDS} \
 		databases/sqlite3 \
 		devel/apr \
 		devel/apr-util \
+		devel/gettext \
 		security/cyrus-sasl2
 
 WANTLIB-main=	${WANTLIB} apr-1 aprutil-1 db sasl2>=2 serf-1>=1.0 ssl sqlite3 \
 		c crypto
-RUN_DEPENDS-main= ${MODGETTEXT_RUN_DEPENDS}
+RUN_DEPENDS-main=
 
 TOOLS_HOOK_SCRIPTS=	commit-access-control.cfg.example \
 	commit-access-control.pl commit-email.rb \
@@ -97,7 +101,7 @@ TOOLS_CLIENT_SIDE_SCRIPTS=	bash_completion change-svn-wc-format.py \
 	svn-ssl-fingerprints.sh svn-vendor.py svn-viewspec.py wcfind
 
 WANTLIB-ap2=		${WANTLIB} apr-1 aprutil-1 db sqlite3 svn_fs_x-1
-LIB_DEPENDS-ap2=	${MODGETTEXT_LIB_DEPENDS} ${MAINSPEC}
+LIB_DEPENDS-ap2=	${MAINSPEC}
 .for _lib in svn_delta-1 svn_fs-1 svn_fs_base-1 svn_fs_fs-1 \
 	svn_fs_util-1 svn_repos-1 svn_subr-1
 WANTLIB-ap2 +=	${_lib}>=${SO_VERSION}
@@ -105,8 +109,8 @@ WANTLIB-ap2 +=	${_lib}>=${SO_VERSION}
 RUN_DEPENDS-ap2=	www/apache-httpd
 
 WANTLIB-perl=		${WANTLIB} apr-1 aprutil-1 c perl sqlite3 
-RUN_DEPENDS-perl=	${MODGETTEXT_RUN_DEPENDS}
-LIB_DEPENDS-perl=	${MODGETTEXT_LIB_DEPENDS} ${MAINSPEC}
+RUN_DEPENDS-perl=
+LIB_DEPENDS-perl=	${MAINSPEC}
 .for _lib in svn_diff-1 svn_ra-1 svn_delta-1 svn_subr-1 svn_fs-1 \
 	svn_repos-1 svn_wc-1 svn_client-1
 WANTLIB-perl +=	${_lib}>=${SO_VERSION}
@@ -116,7 +120,7 @@ WANTLIB-python=		${WANTLIB} apr-1 aprutil-1 \
 			db m sasl2 serf-1>=1.0 \
 			sqlite3 util ${MODPY_WANTLIB}
 RUN_DEPENDS-python=	${MODPY_RUN_DEPENDS}
-LIB_DEPENDS-python=	${MODPY_LIB_DEPENDS} ${MODGETTEXT_LIB_DEPENDS} \
+LIB_DEPENDS-python=	${MODPY_LIB_DEPENDS} \
 			${MAINSPEC}
 .for _lib in ${SVN_LIBS}
 WANTLIB-python +=	${_lib}>=${SO_VERSION}
@@ -127,7 +131,7 @@ WANTLIB-ruby=		${WANTLIB} apr-1 aprutil-1 \
 			${MODRUBY_WANTLIB}
 RUN_DEPENDS-ruby=	${MODRUBY_RUN_DEPENDS}
 LIB_DEPENDS-ruby=	${MODRUBY_LIB_DEPENDS} \
-			${MODGETTEXT_LIB_DEPENDS} ${MAINSPEC}
+			${MAINSPEC}
 .for _lib in ${SVN_LIBS}
 WANTLIB-ruby +=	${_lib}>=${SO_VERSION}
 .endfor
@@ -136,10 +140,9 @@ WANTLIB-gnome-keyring=	${WANTLIB} apr-1 aprutil-1 gcrypt gpg-error \
 		dbus-1>=7 glib-2.0 gnome-keyring>=6 pcre>=2 sqlite3 \
 		svn_subr-1>=${SO_VERSION} ffi gmodule-2.0 gobject-2.0
 LIB_DEPENDS-gnome-keyring= ${MAINSPEC} \
-		${MODGETTEXT_LIB_DEPENDS} \
 		x11/gnome/libgnome-keyring
 
-RUN_DEPENDS-gnome-keyring=	${MODGETTEXT_RUN_DEPENDS}
+RUN_DEPENDS-gnome-keyring=
 
 MAKE_FLAGS=	MAKE=${MAKE_PROGRAM}
 AUTOCONF_VERSION=2.64
