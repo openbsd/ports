@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.33 2017/11/02 12:49:42 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.34 2017/11/02 13:13:54 sthen Exp $
 @newgroup _librenms:755
 @newuser _librenms:755:_librenms:daemon:librenms user:/var/www/librenms:/sbin/nologin
 librenms/
@@ -8272,6 +8272,7 @@ librenms/sql-schema/210.sql
 librenms/sql-schema/211.sql
 librenms/sql-schema/212.sql
 librenms/sql-schema/213.sql
+librenms/sql-schema/214.sql
 librenms/syslog.php
 librenms/validate.php
 librenms/vendor/
