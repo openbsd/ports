@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/11/02 18:19:52 bentley Exp $
+share/doc/vlgothic/
+share/doc/vlgothic/Changelog
+share/doc/vlgothic/LICENSE
+share/doc/vlgothic/LICENSE.en
+share/doc/vlgothic/LICENSE_E.mplus
+share/doc/vlgothic/LICENSE_J.mplus
+share/doc/vlgothic/README
+share/doc/vlgothic/README.sazanami
+share/doc/vlgothic/README_E.mplus
+share/doc/vlgothic/README_J.mplus
+@fontdir share/fonts/vlgothic/
+share/fonts/vlgothic/VL-Gothic-Regular.ttf
+share/fonts/vlgothic/VL-PGothic-Regular.ttf
