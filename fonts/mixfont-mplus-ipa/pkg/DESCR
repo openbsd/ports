@@ -1,0 +1,21 @@
+This port provides several high quality japanese TrueType fonts. 
+
+The IPA fonts:
+ - IPAGothic
+ - IPAMincho
+ - IPAPGothic
+ - IPAPMincho
+ - IPAUIGothic
+
+Combined M+ and IPA fonts:
+ - M+1P+IPAG
+ - M+2P+IPAG
+
+Combined M+ and IPA fonts, with enlarged handakuten:
+ - M+1P+IPAG circle
+ - M+2P+IPAG circle
+
+Combined M+ and IPA fonts, with enlarged handakuten,
+monospaced and combined with Bitstream Vera Sans Mono:
+ - M+1VM+IPAG circle
+ - M+2VM+IPAG circle
