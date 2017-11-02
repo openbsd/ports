@@ -1,4 +1,4 @@
-$OpenBSD: patch-includes_defaults_inc_php,v 1.26 2017/10/04 20:47:14 sthen Exp $
+$OpenBSD: patch-includes_defaults_inc_php,v 1.27 2017/11/02 12:49:42 sthen Exp $
 
 Index: includes/defaults.inc.php
 --- includes/defaults.inc.php.orig
@@ -7,7 +7,7 @@ Index: includes/defaults.inc.php
  $config['own_hostname'] = 'localhost';
  
  // Location of executables
--$config['fping']                    = '/usr/bin/fping';
+-$config['fping']                    = 'fping';
 -$config['fping6']                   = 'fping6';
 +$config['fping']                    = '/usr/local/sbin/fping';
 +$config['fping6']                   = '/usr/local/sbin/fping6';
@@ -43,7 +43,7 @@ Index: includes/defaults.inc.php
  
  // Memcached - Keep immediate statistics
  $config['memcached']['enable'] = false;
-@@ -500,11 +500,11 @@ $config['billing']['bill_autoadd'] = 0;
+@@ -501,11 +501,11 @@ $config['billing']['bill_autoadd'] = 0;
  $config['billing']['base'] = 1000;
  // Set the base to divider bytes to kB, MB, GB ,... (1000|1024)
  // External Integration
@@ -58,7 +58,7 @@ Index: includes/defaults.inc.php
  $config['smokeping']['pings']             = 20;
  // $config['oxidized']['enabled']         = FALSE;//Set to TRUE
  // $config['oxidized']['url']             = 'http://127.0.0.1:8888';// Set the Oxidized rest URL
-@@ -512,7 +512,7 @@ $config['smokeping']['pings']             = 20;
+@@ -513,7 +513,7 @@ $config['smokeping']['pings']             = 20;
  // NFSen RRD dir.
  $config['nfsen_enable'] = 0;
  // $config['nfsen_split_char']   = "_";
@@ -71,8 +71,8 @@ Index: includes/defaults.inc.php
  // Set this to 1 if you want to disable some untrusting features for the API
  // Distributed Poller-Settings
  $config['distributed_poller']                = false;
--$config['distributed_poller_name']           = file_get_contents('/proc/sys/kernel/hostname');
-+$config['distributed_poller_name']           = file_get_contents('/etc/myname');
+-$config['distributed_poller_name']           = trim(file_get_contents('/proc/sys/kernel/hostname'));
++$config['distributed_poller_name']           = trim(file_get_contents('/etc/myname'));
  $config['distributed_poller_group']          = 0;
  $config['distributed_poller_memcached_host'] = 'example.net';
  $config['distributed_poller_memcached_port'] = '11211';

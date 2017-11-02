@@ -1,4 +1,4 @@
-$OpenBSD: patch-validate_php,v 1.13 2017/10/04 20:47:14 sthen Exp $
+$OpenBSD: patch-validate_php,v 1.14 2017/11/02 12:49:42 sthen Exp $
 
 - files installed from packages should only be updated via packages so
 it's safer if they are owned by root; adjust the ownership check so that
@@ -9,7 +9,7 @@ it's safer if they are owned by root; adjust the ownership check so that
 Index: validate.php
 --- validate.php.orig
 +++ validate.php
-@@ -74,7 +74,7 @@ if (!file_exists('config.php')) {
+@@ -72,7 +72,7 @@ if (!file_exists('config.php')) {
  }
  
  $pre_checks_failed = false;
@@ -18,38 +18,3 @@ Index: validate.php
  if (!str_contains($syntax_check, 'No syntax errors detected')) {
      print_fail('Syntax error in config.php');
      echo $syntax_check;
-@@ -139,18 +139,14 @@ if (!($username === 'root' || (isset($config['user']) 
- // Let's test the user configured if we have it
- if (isset($config['user'])) {
-     $tmp_user = $config['user'];
--    $tmp_dir = $config['install_dir'];
-+    $tmp_dir = $config['rrd_dir'];
-     $find_result = rtrim(`find $tmp_dir \! -user $tmp_user`);
-     if (!empty($find_result)) {
--        // This isn't just the log directory, let's print the list to the user
--        $files = array_diff(explode(PHP_EOL, $find_result), array(
--            "$tmp_dir/logs/error_log",
--            "$tmp_dir/logs/access_log",
--        ));
-+        $files = explode(PHP_EOL, $find_result);
-         if (!empty($files)) {
-             print_fail(
-                 "We have found some files that are owned by a different user than $tmp_user, " .
--                'this will stop you updating automatically and / or rrd files being updated causing graphs to fail.',
-+                'this will stop rrd files being updated causing graphs to fail.',
-                 "chown -R $tmp_user:$tmp_user {$config['install_dir']}"
-             );
-             print_list($files, "\t %s\n");
-@@ -378,11 +374,7 @@ foreach ($bins as $bin) {
-     if (!$cmd) {
-         print_fail("$bin location is incorrect or bin not installed. \n\tYou can also manually set the path to $bin by placing the following in config.php: \n\t\$config['$bin'] = \"/path/to/$bin\";");
-     } elseif (in_array($bin, array('fping', 'fping6'))) {
--        if (trim(shell_exec("which getcap 2>/dev/null"))) {
--            if (!str_contains(shell_exec("getcap $cmd"), "$cmd = cap_net_raw+ep")) {
--                print_fail("$bin should have CAP_NET_RAW!", "setcap cap_net_raw+ep $cmd");
--            }
--        } elseif (!(fileperms($cmd) & 2048)) {
-+        if (!(fileperms($cmd) & 2048)) {
-             print_fail("$bin should be suid!", "chmod u+s $cmd");
-         }
-     }

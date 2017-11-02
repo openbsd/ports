@@ -1,4 +1,4 @@
-$OpenBSD: patch-daily_sh,v 1.19 2017/08/31 12:16:31 sthen Exp $
+$OpenBSD: patch-daily_sh,v 1.20 2017/11/02 12:49:42 sthen Exp $
 
 Index: daily.sh
 --- daily.sh.orig
@@ -23,9 +23,9 @@ Index: daily.sh
 -            php "${LIBRENMS_DIR}/daily.php" -f notify -o "${tmp}"
 +            %PHP% "${LIBRENMS_DIR}/daily.php" -f notify -o "${tmp}"
          fi
-     fi
-     return ${exit_code}
-@@ -92,7 +92,7 @@ call_daily_php() {
+         if [[ ! -z "${tmp}" ]]; then
+             # print output in case of failure
+@@ -96,7 +96,7 @@ call_daily_php() {
      local args=( "$@" );
  
      for arg in "${args[@]}"; do
@@ -34,16 +34,16 @@ Index: daily.sh
      done
  }
  
-@@ -148,7 +148,7 @@ main () {
-     fi
- 
+@@ -154,7 +154,7 @@ main () {
      if [[ -z "$arg" ]]; then
+         status_run 'Checking PHP version' "php ${LIBRENMS_DIR}/daily.php -f check_php_ver" 'check_php_ver'
+ 
 -        up=$(php daily.php -f update >&2; echo $?)
 +        up=$(%PHP% daily.php -f update >&2; echo $?)
          if [[ "$up" == "0" ]]; then
              ${DAILY_SCRIPT} no-code-update
-             set_notification update 1  # make sure there are no update notifications if update is disabled
-@@ -206,12 +206,12 @@ main () {
+             set_notifiable_result update 1  # make sure there are no update notifications if update is disabled
+@@ -212,12 +212,12 @@ main () {
              no-code-update)
                  # Updates of the code are disabled, just check for schema updates
                  # and clean up the db.

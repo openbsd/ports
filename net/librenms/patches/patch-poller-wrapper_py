@@ -1,4 +1,4 @@
-$OpenBSD: patch-poller-wrapper_py,v 1.10 2017/05/30 21:05:44 sthen Exp $
+$OpenBSD: patch-poller-wrapper_py,v 1.11 2017/11/02 12:49:42 sthen Exp $
 
 Index: poller-wrapper.py
 --- poller-wrapper.py.orig
@@ -21,7 +21,7 @@ Index: poller-wrapper.py
  db_username = config['db_user']
  db_password = config['db_pass']
  db_port = int(config['db_port'])
-@@ -296,7 +296,7 @@ def poll_worker():
+@@ -294,7 +294,7 @@ def poll_worker():
  # EOC5
              try:
                  start_time = time.time()
