@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2017/07/26 22:45:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2017/11/02 11:55:10 espie Exp $
 
 COMMENT =	music collection manager and player
 DISTNAME =	gogglesmm-0.12.7
@@ -27,7 +27,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 
 CONFIGURE_ARGS =	--prefix=${PREFIX} \
 			--with-md5=internal
-CONFIGURE_ENV =		LINK="${CXX}"
+CONFIGURE_ENV =		LINK="${CXX}" LIBS=-lintl
 CONFIGURE_STYLE =	simple
 USE_GMAKE =		Yes
 
