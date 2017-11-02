@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.242 2017/11/02 17:40:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.243 2017/11/02 19:56:29 jca Exp $
 
 VERSION =		4.5.14
 DISTNAME =		samba-${VERSION}
@@ -18,6 +18,7 @@ PKGNAME-docs =		samba-docs-${VERSION}
 REVISION-main =		1
 REVISION-tevent =	2
 REVISION-ldb =		1
+REVISION-util =		0
 
 PKG_ARCH-docs =		*
 
@@ -186,12 +187,12 @@ SAMBA_LOGDIR =		${VARBASE}/log/samba
 SUBST_VARS =		SAMBA_LOGDIR
 
 .include <bsd.port.arch.mk>
-.if ${PROPERTIES:Mclang}
-CONFIGURE_ENV +=	EXTRA_LDFLAGS="-fuse-ld=lld"
-.endif
 
 post-patch:
 	find ${WRKSRC} -type f | xargs ${MODPY_BIN_ADJ}
+.if ${PROPERTIES:Mclang}
+	ln -sf /usr/bin/ld.lld ${WRKDIR}/bin/ld
+.endif
 
 # Avoid bogus -L/usr/local/lib at the start of linker options
 post-configure:
