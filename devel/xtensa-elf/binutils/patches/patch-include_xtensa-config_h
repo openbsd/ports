@@ -1,0 +1,95 @@
+$OpenBSD: patch-include_xtensa-config_h,v 1.1.1.1 2017/11/02 18:30:58 bentley Exp $
+https://github.com/qca/open-ath9k-htc-firmware/tree/master/local/patches/
+
+Index: include/xtensa-config.h
+--- include/xtensa-config.h.orig
++++ include/xtensa-config.h
+@@ -43,11 +43,8 @@
+ #define XCHAL_HAVE_L32R			1
+ 
+ #undef XSHAL_USE_ABSOLUTE_LITERALS
+-#define XSHAL_USE_ABSOLUTE_LITERALS	0
++#define XSHAL_USE_ABSOLUTE_LITERALS	1
+ 
+-#undef XSHAL_HAVE_TEXT_SECTION_LITERALS
+-#define XSHAL_HAVE_TEXT_SECTION_LITERALS 1 /* Set if there is some memory that allows both code and literals.  */
+-
+ #undef XCHAL_HAVE_MAC16
+ #define XCHAL_HAVE_MAC16		0
+ 
+@@ -58,10 +55,10 @@
+ #define XCHAL_HAVE_MUL32		1
+ 
+ #undef XCHAL_HAVE_MUL32_HIGH
+-#define XCHAL_HAVE_MUL32_HIGH		0
++#define XCHAL_HAVE_MUL32_HIGH		1
+ 
+ #undef XCHAL_HAVE_DIV32
+-#define XCHAL_HAVE_DIV32		1
++#define XCHAL_HAVE_DIV32		0
+ 
+ #undef XCHAL_HAVE_NSA
+ #define XCHAL_HAVE_NSA			1
+@@ -102,8 +99,6 @@
+ #undef XCHAL_HAVE_FP_RSQRT
+ #define XCHAL_HAVE_FP_RSQRT		0
+ 
+-#undef XCHAL_HAVE_DFP_accel
+-#define XCHAL_HAVE_DFP_accel			0
+ #undef XCHAL_HAVE_WINDOWED
+ #define XCHAL_HAVE_WINDOWED		1
+ 
+@@ -118,32 +113,32 @@
+ 
+ 
+ #undef XCHAL_ICACHE_SIZE
+-#define XCHAL_ICACHE_SIZE		16384
++#define XCHAL_ICACHE_SIZE		0
+ 
+ #undef XCHAL_DCACHE_SIZE
+-#define XCHAL_DCACHE_SIZE		16384
++#define XCHAL_DCACHE_SIZE		0
+ 
+ #undef XCHAL_ICACHE_LINESIZE
+-#define XCHAL_ICACHE_LINESIZE		32
++#define XCHAL_ICACHE_LINESIZE		16
+ 
+ #undef XCHAL_DCACHE_LINESIZE
+-#define XCHAL_DCACHE_LINESIZE		32
++#define XCHAL_DCACHE_LINESIZE		16
+ 
+ #undef XCHAL_ICACHE_LINEWIDTH
+-#define XCHAL_ICACHE_LINEWIDTH		5
++#define XCHAL_ICACHE_LINEWIDTH		4
+ 
+ #undef XCHAL_DCACHE_LINEWIDTH
+-#define XCHAL_DCACHE_LINEWIDTH		5
++#define XCHAL_DCACHE_LINEWIDTH		4
+ 
+ #undef XCHAL_DCACHE_IS_WRITEBACK
+-#define XCHAL_DCACHE_IS_WRITEBACK	1
++#define XCHAL_DCACHE_IS_WRITEBACK	0
+ 
+ 
+ #undef XCHAL_HAVE_MMU
+ #define XCHAL_HAVE_MMU			1
+ 
+ #undef XCHAL_MMU_MIN_PTE_PAGE_SIZE
+-#define XCHAL_MMU_MIN_PTE_PAGE_SIZE	12
++#define XCHAL_MMU_MIN_PTE_PAGE_SIZE	29
+ 
+ 
+ #undef XCHAL_HAVE_DEBUG
+@@ -156,8 +151,11 @@
+ #define XCHAL_NUM_DBREAK		2
+ 
+ #undef XCHAL_DEBUGLEVEL
+-#define XCHAL_DEBUGLEVEL		6
++#define XCHAL_DEBUGLEVEL		4
+ 
++
++#undef XCHAL_EXCM_LEVEL
++#define XCHAL_EXCM_LEVEL                3
+ 
+ #undef XCHAL_MAX_INSTRUCTION_SIZE
+ #define XCHAL_MAX_INSTRUCTION_SIZE	3

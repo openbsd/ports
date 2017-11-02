@@ -1,0 +1,68 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/11/02 18:30:57 bentley Exp $
+@bin bin/xtensa-elf-addr2line
+@bin bin/xtensa-elf-ar
+@bin bin/xtensa-elf-as
+@bin bin/xtensa-elf-c++filt
+@bin bin/xtensa-elf-elfedit
+@bin bin/xtensa-elf-gprof
+@bin bin/xtensa-elf-ld
+@bin bin/xtensa-elf-ld.bfd
+@bin bin/xtensa-elf-nm
+@bin bin/xtensa-elf-objcopy
+@bin bin/xtensa-elf-objdump
+@bin bin/xtensa-elf-ranlib
+@bin bin/xtensa-elf-readelf
+@bin bin/xtensa-elf-size
+@bin bin/xtensa-elf-strings
+@bin bin/xtensa-elf-strip
+@info info/as.info
+@comment @info info/bfd.info
+@comment @info info/binutils.info
+@comment @info info/gprof.info
+@comment @info info/ld.info
+@man man/man1/xtensa-elf-addr2line.1
+@man man/man1/xtensa-elf-ar.1
+@man man/man1/xtensa-elf-as.1
+@man man/man1/xtensa-elf-c++filt.1
+@man man/man1/xtensa-elf-dlltool.1
+@man man/man1/xtensa-elf-elfedit.1
+@man man/man1/xtensa-elf-gprof.1
+@man man/man1/xtensa-elf-ld.1
+@man man/man1/xtensa-elf-nlmconv.1
+@man man/man1/xtensa-elf-nm.1
+@man man/man1/xtensa-elf-objcopy.1
+@man man/man1/xtensa-elf-objdump.1
+@man man/man1/xtensa-elf-ranlib.1
+@man man/man1/xtensa-elf-readelf.1
+@man man/man1/xtensa-elf-size.1
+@man man/man1/xtensa-elf-strings.1
+@man man/man1/xtensa-elf-strip.1
+@man man/man1/xtensa-elf-windmc.1
+@man man/man1/xtensa-elf-windres.1
+xtensa-elf/
+xtensa-elf/bin/
+@bin xtensa-elf/bin/ar
+@bin xtensa-elf/bin/as
+@bin xtensa-elf/bin/ld
+@bin xtensa-elf/bin/ld.bfd
+@bin xtensa-elf/bin/nm
+@bin xtensa-elf/bin/objcopy
+@bin xtensa-elf/bin/objdump
+@bin xtensa-elf/bin/ranlib
+@bin xtensa-elf/bin/readelf
+@bin xtensa-elf/bin/strip
+xtensa-elf/lib/
+xtensa-elf/lib/ldscripts/
+xtensa-elf/lib/ldscripts/elf32xtensa.x
+xtensa-elf/lib/ldscripts/elf32xtensa.xbn
+xtensa-elf/lib/ldscripts/elf32xtensa.xc
+xtensa-elf/lib/ldscripts/elf32xtensa.xd
+xtensa-elf/lib/ldscripts/elf32xtensa.xdc
+xtensa-elf/lib/ldscripts/elf32xtensa.xdw
+xtensa-elf/lib/ldscripts/elf32xtensa.xn
+xtensa-elf/lib/ldscripts/elf32xtensa.xr
+xtensa-elf/lib/ldscripts/elf32xtensa.xs
+xtensa-elf/lib/ldscripts/elf32xtensa.xsc
+xtensa-elf/lib/ldscripts/elf32xtensa.xsw
+xtensa-elf/lib/ldscripts/elf32xtensa.xu
+xtensa-elf/lib/ldscripts/elf32xtensa.xw
