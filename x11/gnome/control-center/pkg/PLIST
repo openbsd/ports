@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2017/06/29 13:54:13 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2017/11/02 13:06:22 ajacoutot Exp $
 @conflict control-center-1*
 @conflict control-center2-*
 @conflict gnome-media-<2.91.2p3
@@ -13,7 +13,9 @@ share/applications/gnome-background-panel.desktop
 share/applications/gnome-color-panel.desktop
 share/applications/gnome-control-center.desktop
 share/applications/gnome-datetime-panel.desktop
+share/applications/gnome-default-apps-panel.desktop
 share/applications/gnome-display-panel.desktop
+share/applications/gnome-info-overview-panel.desktop
 share/applications/gnome-info-panel.desktop
 share/applications/gnome-keyboard-panel.desktop
 share/applications/gnome-mouse-panel.desktop
@@ -23,6 +25,7 @@ share/applications/gnome-power-panel.desktop
 share/applications/gnome-printers-panel.desktop
 share/applications/gnome-privacy-panel.desktop
 share/applications/gnome-region-panel.desktop
+share/applications/gnome-removable-media-panel.desktop
 share/applications/gnome-search-panel.desktop
 share/applications/gnome-sound-panel.desktop
 share/applications/gnome-universal-access-panel.desktop
@@ -218,6 +221,8 @@ share/locale/hu/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/hy/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/id/LC_MESSAGES/gnome-control-center-2.0-timezones.mo
 share/locale/id/LC_MESSAGES/gnome-control-center-2.0.mo
+share/locale/ilo/
+share/locale/ilo/LC_MESSAGES/
 share/locale/ilo/LC_MESSAGES/gnome-control-center-2.0-timezones.mo
 share/locale/is/LC_MESSAGES/gnome-control-center-2.0-timezones.mo
 share/locale/is/LC_MESSAGES/gnome-control-center-2.0.mo
