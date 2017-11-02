@@ -1,0 +1,16 @@
+$OpenBSD: patch-runtests_sh,v 1.1 2017/11/02 12:57:13 sthen Exp $
+use the right version of coverage
+Index: runtests.sh
+--- runtests.sh.orig
++++ runtests.sh
+@@ -1,7 +1,7 @@
+ #!/bin/sh
+-if which coverage > /dev/null; then
+-    coverage run tests/tests.py
+-    coverage report
++if which coverage${MODPY_MAJOR_VERSION} > /dev/null; then
++    coverage${MODPY_MAJOR_VERSION} run tests/tests.py
++    coverage${MODPY_MAJOR_VERSION} report
+ else
+     /usr/bin/env python tests/tests.py
+ fi

@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/06/11 11:44:01 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2017/11/02 12:57:13 sthen Exp $
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}polib.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/polib-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/polib-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/polib-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/polib-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
 lib/python${MODPY_VERSION}/site-packages/polib-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/polib.py
-lib/python${MODPY_VERSION}/site-packages/polib.pyc
