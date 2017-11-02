@@ -1,0 +1,25 @@
+$OpenBSD: patch-CommonMark_tests_run_spec_tests_py,v 1.1.1.1 2017/11/02 09:32:36 sebastia Exp $
+
+The UTF chars break the test
+
+Index: CommonMark/tests/run_spec_tests.py
+--- CommonMark/tests/run_spec_tests.py.orig
++++ CommonMark/tests/run_spec_tests.py
+@@ -185,7 +185,7 @@ def main():
+             passed += 1
+             catStats[current_section][0] += 1
+             if not args.f:
+-                print(colors.OKGREEN + '✓' + colors.ENDC, end='')
++                print(colors.OKGREEN + 'O' + colors.ENDC, end='')
+             if args.d:
+                 dumpAST(ast)
+             if args.p or args.d and not args.np:
+@@ -206,7 +206,7 @@ def main():
+                 print("Test #" + str(args.t.split(",")[i]), end='')
+             else:
+                 print("Test #" + str(i+1), end='')
+-            print(' ' + colors.FAIL + "✗" + colors.ENDC)
++            print(' ' + colors.FAIL + "F" + colors.ENDC)
+             if args.d:
+                 dumpAST(ast)
+             if not args.np or args.f:
