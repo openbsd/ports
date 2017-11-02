@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1657 2017/11/02 16:04:14 rpe Exp $
+# $OpenBSD: Makefile,v 1.1658 2017/11/02 18:31:59 bentley Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1771,6 +1771,7 @@
      SUBDIR += vte3
      SUBDIR += xdg-user-dirs
      SUBDIR += xdg-utils
+     SUBDIR += xtensa-elf
      SUBDIR += xmake
      SUBDIR += yaml-cpp
      SUBDIR += yasm
