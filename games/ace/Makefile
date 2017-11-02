@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2017/05/01 20:48:55 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2017/11/02 14:11:08 espie Exp $
 
 COMMENT =		solitaire games
 
@@ -23,6 +23,7 @@ LIB_DEPENDS =		graphics/png
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+			LDFLAGS="-L${LOCALBASE}/lib" \
+			BUILD_CC="${CC}"
 
 .include <bsd.port.mk>
