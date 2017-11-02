@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2016/12/25 15:47:12 zhuk Exp $
+# $OpenBSD: Makefile,v 1.12 2017/11/02 21:42:11 kili Exp $
 
      SUBDIR =
      SUBDIR += avr
      SUBDIR += geda
      SUBDIR += gnome
      SUBDIR += gnustep
-     SUBDIR += haskell-platform
      SUBDIR += kde4
      SUBDIR += msp430
      SUBDIR += mupen64plus
