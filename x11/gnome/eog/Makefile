@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.135 2017/10/23 17:11:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.136 2017/11/02 11:33:37 jasper Exp $
 
 COMMENT=		Eye of GNOME, image viewing and cataloging program
 
 GNOME_PROJECT=		eog
-GNOME_VERSION=		3.24.1
-REVISION=		0
+GNOME_VERSION=		3.26.0
 
 CATEGORIES=		graphics
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
+WANTLIB += Xtst X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
 WANTLIB += c cairo cairo-gobject croco-0.6 dbus-1 exempi exif
 WANTLIB += expat ffi fontconfig freetype gdk-3 gdk_pixbuf-2.0

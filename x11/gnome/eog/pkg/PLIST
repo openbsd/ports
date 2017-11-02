@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.48 2016/06/27 11:20:01 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.49 2017/11/02 11:33:37 jasper Exp $
 @bin bin/eog
 include/eog-3.0/
 include/eog-3.0/eog/
@@ -132,7 +132,6 @@ share/help/C/eog/documentation.page
 share/help/C/eog/edit.page
 share/help/C/eog/figures/
 share/help/C/eog/figures/eog-logo.png
-share/help/C/eog/figures/eog-toolbar-editor.png
 share/help/C/eog/figures/eog-trail.png
 share/help/C/eog/figures/image-view-prefs.png
 share/help/C/eog/figures/multiple-convert.png
@@ -166,7 +165,6 @@ share/help/C/eog/print.page
 share/help/C/eog/rename-multiple.page
 share/help/C/eog/shortcuts.page
 share/help/C/eog/slideshow.page
-share/help/C/eog/toolbar.page
 share/help/C/eog/translate.page
 share/help/C/eog/view.page
 share/help/C/eog/zoom.page
@@ -181,7 +179,6 @@ share/help/ar/eog/documentation.page
 share/help/ar/eog/edit.page
 share/help/ar/eog/figures/
 share/help/ar/eog/figures/eog-logo.png
-share/help/ar/eog/figures/eog-toolbar-editor.png
 share/help/ar/eog/figures/eog-trail.png
 share/help/ar/eog/figures/image-view-prefs.png
 share/help/ar/eog/figures/multiple-convert.png
@@ -215,7 +212,6 @@ share/help/ar/eog/print.page
 share/help/ar/eog/rename-multiple.page
 share/help/ar/eog/shortcuts.page
 share/help/ar/eog/slideshow.page
-share/help/ar/eog/toolbar.page
 share/help/ar/eog/translate.page
 share/help/ar/eog/view.page
 share/help/ar/eog/zoom.page
@@ -230,7 +226,6 @@ share/help/ca/eog/documentation.page
 share/help/ca/eog/edit.page
 share/help/ca/eog/figures/
 share/help/ca/eog/figures/eog-logo.png
-share/help/ca/eog/figures/eog-toolbar-editor.png
 share/help/ca/eog/figures/eog-trail.png
 share/help/ca/eog/figures/image-view-prefs.png
 share/help/ca/eog/figures/multiple-convert.png
@@ -264,7 +259,6 @@ share/help/ca/eog/print.page
 share/help/ca/eog/rename-multiple.page
 share/help/ca/eog/shortcuts.page
 share/help/ca/eog/slideshow.page
-share/help/ca/eog/toolbar.page
 share/help/ca/eog/translate.page
 share/help/ca/eog/view.page
 share/help/ca/eog/zoom.page
@@ -279,7 +273,6 @@ share/help/cs/eog/documentation.page
 share/help/cs/eog/edit.page
 share/help/cs/eog/figures/
 share/help/cs/eog/figures/eog-logo.png
-share/help/cs/eog/figures/eog-toolbar-editor.png
 share/help/cs/eog/figures/eog-trail.png
 share/help/cs/eog/figures/image-view-prefs.png
 share/help/cs/eog/figures/multiple-convert.png
@@ -313,7 +306,6 @@ share/help/cs/eog/print.page
 share/help/cs/eog/rename-multiple.page
 share/help/cs/eog/shortcuts.page
 share/help/cs/eog/slideshow.page
-share/help/cs/eog/toolbar.page
 share/help/cs/eog/translate.page
 share/help/cs/eog/view.page
 share/help/cs/eog/zoom.page
@@ -329,7 +321,6 @@ share/help/da/eog/documentation.page
 share/help/da/eog/edit.page
 share/help/da/eog/figures/
 share/help/da/eog/figures/eog-logo.png
-share/help/da/eog/figures/eog-toolbar-editor.png
 share/help/da/eog/figures/eog-trail.png
 share/help/da/eog/figures/image-view-prefs.png
 share/help/da/eog/figures/multiple-convert.png
@@ -363,7 +354,6 @@ share/help/da/eog/print.page
 share/help/da/eog/rename-multiple.page
 share/help/da/eog/shortcuts.page
 share/help/da/eog/slideshow.page
-share/help/da/eog/toolbar.page
 share/help/da/eog/translate.page
 share/help/da/eog/view.page
 share/help/da/eog/zoom.page
@@ -378,7 +368,6 @@ share/help/de/eog/documentation.page
 share/help/de/eog/edit.page
 share/help/de/eog/figures/
 share/help/de/eog/figures/eog-logo.png
-share/help/de/eog/figures/eog-toolbar-editor.png
 share/help/de/eog/figures/eog-trail.png
 share/help/de/eog/figures/image-view-prefs.png
 share/help/de/eog/figures/multiple-convert.png
@@ -412,7 +401,6 @@ share/help/de/eog/print.page
 share/help/de/eog/rename-multiple.page
 share/help/de/eog/shortcuts.page
 share/help/de/eog/slideshow.page
-share/help/de/eog/toolbar.page
 share/help/de/eog/translate.page
 share/help/de/eog/view.page
 share/help/de/eog/zoom.page
@@ -427,7 +415,6 @@ share/help/el/eog/documentation.page
 share/help/el/eog/edit.page
 share/help/el/eog/figures/
 share/help/el/eog/figures/eog-logo.png
-share/help/el/eog/figures/eog-toolbar-editor.png
 share/help/el/eog/figures/eog-trail.png
 share/help/el/eog/figures/image-view-prefs.png
 share/help/el/eog/figures/multiple-convert.png
@@ -461,7 +448,6 @@ share/help/el/eog/print.page
 share/help/el/eog/rename-multiple.page
 share/help/el/eog/shortcuts.page
 share/help/el/eog/slideshow.page
-share/help/el/eog/toolbar.page
 share/help/el/eog/translate.page
 share/help/el/eog/view.page
 share/help/el/eog/zoom.page
@@ -477,7 +463,6 @@ share/help/en_GB/eog/documentation.page
 share/help/en_GB/eog/edit.page
 share/help/en_GB/eog/figures/
 share/help/en_GB/eog/figures/eog-logo.png
-share/help/en_GB/eog/figures/eog-toolbar-editor.png
 share/help/en_GB/eog/figures/eog-trail.png
 share/help/en_GB/eog/figures/image-view-prefs.png
 share/help/en_GB/eog/figures/multiple-convert.png
@@ -511,7 +496,6 @@ share/help/en_GB/eog/print.page
 share/help/en_GB/eog/rename-multiple.page
 share/help/en_GB/eog/shortcuts.page
 share/help/en_GB/eog/slideshow.page
-share/help/en_GB/eog/toolbar.page
 share/help/en_GB/eog/translate.page
 share/help/en_GB/eog/view.page
 share/help/en_GB/eog/zoom.page
@@ -526,7 +510,6 @@ share/help/es/eog/documentation.page
 share/help/es/eog/edit.page
 share/help/es/eog/figures/
 share/help/es/eog/figures/eog-logo.png
-share/help/es/eog/figures/eog-toolbar-editor.png
 share/help/es/eog/figures/eog-trail.png
 share/help/es/eog/figures/image-view-prefs.png
 share/help/es/eog/figures/multiple-convert.png
@@ -560,7 +543,6 @@ share/help/es/eog/print.page
 share/help/es/eog/rename-multiple.page
 share/help/es/eog/shortcuts.page
 share/help/es/eog/slideshow.page
-share/help/es/eog/toolbar.page
 share/help/es/eog/translate.page
 share/help/es/eog/view.page
 share/help/es/eog/zoom.page
@@ -575,7 +557,6 @@ share/help/eu/eog/documentation.page
 share/help/eu/eog/edit.page
 share/help/eu/eog/figures/
 share/help/eu/eog/figures/eog-logo.png
-share/help/eu/eog/figures/eog-toolbar-editor.png
 share/help/eu/eog/figures/eog-trail.png
 share/help/eu/eog/figures/image-view-prefs.png
 share/help/eu/eog/figures/multiple-convert.png
@@ -609,7 +590,6 @@ share/help/eu/eog/print.page
 share/help/eu/eog/rename-multiple.page
 share/help/eu/eog/shortcuts.page
 share/help/eu/eog/slideshow.page
-share/help/eu/eog/toolbar.page
 share/help/eu/eog/translate.page
 share/help/eu/eog/view.page
 share/help/eu/eog/zoom.page
@@ -624,7 +604,6 @@ share/help/fi/eog/documentation.page
 share/help/fi/eog/edit.page
 share/help/fi/eog/figures/
 share/help/fi/eog/figures/eog-logo.png
-share/help/fi/eog/figures/eog-toolbar-editor.png
 share/help/fi/eog/figures/eog-trail.png
 share/help/fi/eog/figures/image-view-prefs.png
 share/help/fi/eog/figures/multiple-convert.png
@@ -658,7 +637,6 @@ share/help/fi/eog/print.page
 share/help/fi/eog/rename-multiple.page
 share/help/fi/eog/shortcuts.page
 share/help/fi/eog/slideshow.page
-share/help/fi/eog/toolbar.page
 share/help/fi/eog/translate.page
 share/help/fi/eog/view.page
 share/help/fi/eog/zoom.page
@@ -673,7 +651,6 @@ share/help/fr/eog/documentation.page
 share/help/fr/eog/edit.page
 share/help/fr/eog/figures/
 share/help/fr/eog/figures/eog-logo.png
-share/help/fr/eog/figures/eog-toolbar-editor.png
 share/help/fr/eog/figures/eog-trail.png
 share/help/fr/eog/figures/image-view-prefs.png
 share/help/fr/eog/figures/multiple-convert.png
@@ -707,7 +684,6 @@ share/help/fr/eog/print.page
 share/help/fr/eog/rename-multiple.page
 share/help/fr/eog/shortcuts.page
 share/help/fr/eog/slideshow.page
-share/help/fr/eog/toolbar.page
 share/help/fr/eog/translate.page
 share/help/fr/eog/view.page
 share/help/fr/eog/zoom.page
@@ -722,7 +698,6 @@ share/help/gl/eog/documentation.page
 share/help/gl/eog/edit.page
 share/help/gl/eog/figures/
 share/help/gl/eog/figures/eog-logo.png
-share/help/gl/eog/figures/eog-toolbar-editor.png
 share/help/gl/eog/figures/eog-trail.png
 share/help/gl/eog/figures/image-view-prefs.png
 share/help/gl/eog/figures/multiple-convert.png
@@ -756,7 +731,6 @@ share/help/gl/eog/print.page
 share/help/gl/eog/rename-multiple.page
 share/help/gl/eog/shortcuts.page
 share/help/gl/eog/slideshow.page
-share/help/gl/eog/toolbar.page
 share/help/gl/eog/translate.page
 share/help/gl/eog/view.page
 share/help/gl/eog/zoom.page
@@ -771,7 +745,6 @@ share/help/hu/eog/documentation.page
 share/help/hu/eog/edit.page
 share/help/hu/eog/figures/
 share/help/hu/eog/figures/eog-logo.png
-share/help/hu/eog/figures/eog-toolbar-editor.png
 share/help/hu/eog/figures/eog-trail.png
 share/help/hu/eog/figures/image-view-prefs.png
 share/help/hu/eog/figures/multiple-convert.png
@@ -805,7 +778,6 @@ share/help/hu/eog/print.page
 share/help/hu/eog/rename-multiple.page
 share/help/hu/eog/shortcuts.page
 share/help/hu/eog/slideshow.page
-share/help/hu/eog/toolbar.page
 share/help/hu/eog/translate.page
 share/help/hu/eog/view.page
 share/help/hu/eog/zoom.page
@@ -821,7 +793,6 @@ share/help/it/eog/documentation.page
 share/help/it/eog/edit.page
 share/help/it/eog/figures/
 share/help/it/eog/figures/eog-logo.png
-share/help/it/eog/figures/eog-toolbar-editor.png
 share/help/it/eog/figures/eog-trail.png
 share/help/it/eog/figures/image-view-prefs.png
 share/help/it/eog/figures/multiple-convert.png
@@ -855,7 +826,6 @@ share/help/it/eog/print.page
 share/help/it/eog/rename-multiple.page
 share/help/it/eog/shortcuts.page
 share/help/it/eog/slideshow.page
-share/help/it/eog/toolbar.page
 share/help/it/eog/translate.page
 share/help/it/eog/view.page
 share/help/it/eog/zoom.page
@@ -871,7 +841,6 @@ share/help/ja/eog/documentation.page
 share/help/ja/eog/edit.page
 share/help/ja/eog/figures/
 share/help/ja/eog/figures/eog-logo.png
-share/help/ja/eog/figures/eog-toolbar-editor.png
 share/help/ja/eog/figures/eog-trail.png
 share/help/ja/eog/figures/image-view-prefs.png
 share/help/ja/eog/figures/multiple-convert.png
@@ -905,7 +874,6 @@ share/help/ja/eog/print.page
 share/help/ja/eog/rename-multiple.page
 share/help/ja/eog/shortcuts.page
 share/help/ja/eog/slideshow.page
-share/help/ja/eog/toolbar.page
 share/help/ja/eog/translate.page
 share/help/ja/eog/view.page
 share/help/ja/eog/zoom.page
@@ -920,7 +888,6 @@ share/help/ko/eog/documentation.page
 share/help/ko/eog/edit.page
 share/help/ko/eog/figures/
 share/help/ko/eog/figures/eog-logo.png
-share/help/ko/eog/figures/eog-toolbar-editor.png
 share/help/ko/eog/figures/eog-trail.png
 share/help/ko/eog/figures/image-view-prefs.png
 share/help/ko/eog/figures/multiple-convert.png
@@ -954,7 +921,6 @@ share/help/ko/eog/print.page
 share/help/ko/eog/rename-multiple.page
 share/help/ko/eog/shortcuts.page
 share/help/ko/eog/slideshow.page
-share/help/ko/eog/toolbar.page
 share/help/ko/eog/translate.page
 share/help/ko/eog/view.page
 share/help/ko/eog/zoom.page
@@ -970,7 +936,6 @@ share/help/lv/eog/documentation.page
 share/help/lv/eog/edit.page
 share/help/lv/eog/figures/
 share/help/lv/eog/figures/eog-logo.png
-share/help/lv/eog/figures/eog-toolbar-editor.png
 share/help/lv/eog/figures/eog-trail.png
 share/help/lv/eog/figures/image-view-prefs.png
 share/help/lv/eog/figures/multiple-convert.png
@@ -1004,7 +969,6 @@ share/help/lv/eog/print.page
 share/help/lv/eog/rename-multiple.page
 share/help/lv/eog/shortcuts.page
 share/help/lv/eog/slideshow.page
-share/help/lv/eog/toolbar.page
 share/help/lv/eog/translate.page
 share/help/lv/eog/view.page
 share/help/lv/eog/zoom.page
@@ -1019,7 +983,6 @@ share/help/oc/eog/documentation.page
 share/help/oc/eog/edit.page
 share/help/oc/eog/figures/
 share/help/oc/eog/figures/eog-logo.png
-share/help/oc/eog/figures/eog-toolbar-editor.png
 share/help/oc/eog/figures/eog-trail.png
 share/help/oc/eog/figures/image-view-prefs.png
 share/help/oc/eog/figures/multiple-convert.png
@@ -1053,7 +1016,6 @@ share/help/oc/eog/print.page
 share/help/oc/eog/rename-multiple.page
 share/help/oc/eog/shortcuts.page
 share/help/oc/eog/slideshow.page
-share/help/oc/eog/toolbar.page
 share/help/oc/eog/translate.page
 share/help/oc/eog/view.page
 share/help/oc/eog/zoom.page
@@ -1068,7 +1030,6 @@ share/help/pa/eog/documentation.page
 share/help/pa/eog/edit.page
 share/help/pa/eog/figures/
 share/help/pa/eog/figures/eog-logo.png
-share/help/pa/eog/figures/eog-toolbar-editor.png
 share/help/pa/eog/figures/eog-trail.png
 share/help/pa/eog/figures/image-view-prefs.png
 share/help/pa/eog/figures/multiple-convert.png
@@ -1102,7 +1063,6 @@ share/help/pa/eog/print.page
 share/help/pa/eog/rename-multiple.page
 share/help/pa/eog/shortcuts.page
 share/help/pa/eog/slideshow.page
-share/help/pa/eog/toolbar.page
 share/help/pa/eog/translate.page
 share/help/pa/eog/view.page
 share/help/pa/eog/zoom.page
@@ -1117,7 +1077,6 @@ share/help/pt_BR/eog/documentation.page
 share/help/pt_BR/eog/edit.page
 share/help/pt_BR/eog/figures/
 share/help/pt_BR/eog/figures/eog-logo.png
-share/help/pt_BR/eog/figures/eog-toolbar-editor.png
 share/help/pt_BR/eog/figures/eog-trail.png
 share/help/pt_BR/eog/figures/image-view-prefs.png
 share/help/pt_BR/eog/figures/multiple-convert.png
@@ -1151,7 +1110,6 @@ share/help/pt_BR/eog/print.page
 share/help/pt_BR/eog/rename-multiple.page
 share/help/pt_BR/eog/shortcuts.page
 share/help/pt_BR/eog/slideshow.page
-share/help/pt_BR/eog/toolbar.page
 share/help/pt_BR/eog/translate.page
 share/help/pt_BR/eog/view.page
 share/help/pt_BR/eog/zoom.page
@@ -1167,7 +1125,6 @@ share/help/ro/eog/documentation.page
 share/help/ro/eog/edit.page
 share/help/ro/eog/figures/
 share/help/ro/eog/figures/eog-logo.png
-share/help/ro/eog/figures/eog-toolbar-editor.png
 share/help/ro/eog/figures/eog-trail.png
 share/help/ro/eog/figures/image-view-prefs.png
 share/help/ro/eog/figures/multiple-convert.png
@@ -1201,7 +1158,6 @@ share/help/ro/eog/print.page
 share/help/ro/eog/rename-multiple.page
 share/help/ro/eog/shortcuts.page
 share/help/ro/eog/slideshow.page
-share/help/ro/eog/toolbar.page
 share/help/ro/eog/translate.page
 share/help/ro/eog/view.page
 share/help/ro/eog/zoom.page
@@ -1217,7 +1173,6 @@ share/help/ru/eog/documentation.page
 share/help/ru/eog/edit.page
 share/help/ru/eog/figures/
 share/help/ru/eog/figures/eog-logo.png
-share/help/ru/eog/figures/eog-toolbar-editor.png
 share/help/ru/eog/figures/eog-trail.png
 share/help/ru/eog/figures/image-view-prefs.png
 share/help/ru/eog/figures/multiple-convert.png
@@ -1251,7 +1206,6 @@ share/help/ru/eog/print.page
 share/help/ru/eog/rename-multiple.page
 share/help/ru/eog/shortcuts.page
 share/help/ru/eog/slideshow.page
-share/help/ru/eog/toolbar.page
 share/help/ru/eog/translate.page
 share/help/ru/eog/view.page
 share/help/ru/eog/zoom.page
@@ -1266,7 +1220,6 @@ share/help/sl/eog/documentation.page
 share/help/sl/eog/edit.page
 share/help/sl/eog/figures/
 share/help/sl/eog/figures/eog-logo.png
-share/help/sl/eog/figures/eog-toolbar-editor.png
 share/help/sl/eog/figures/eog-trail.png
 share/help/sl/eog/figures/image-view-prefs.png
 share/help/sl/eog/figures/multiple-convert.png
@@ -1300,7 +1253,6 @@ share/help/sl/eog/print.page
 share/help/sl/eog/rename-multiple.page
 share/help/sl/eog/shortcuts.page
 share/help/sl/eog/slideshow.page
-share/help/sl/eog/toolbar.page
 share/help/sl/eog/translate.page
 share/help/sl/eog/view.page
 share/help/sl/eog/zoom.page
@@ -1315,7 +1267,6 @@ share/help/sv/eog/documentation.page
 share/help/sv/eog/edit.page
 share/help/sv/eog/figures/
 share/help/sv/eog/figures/eog-logo.png
-share/help/sv/eog/figures/eog-toolbar-editor.png
 share/help/sv/eog/figures/eog-trail.png
 share/help/sv/eog/figures/image-view-prefs.png
 share/help/sv/eog/figures/multiple-convert.png
@@ -1349,7 +1300,6 @@ share/help/sv/eog/print.page
 share/help/sv/eog/rename-multiple.page
 share/help/sv/eog/shortcuts.page
 share/help/sv/eog/slideshow.page
-share/help/sv/eog/toolbar.page
 share/help/sv/eog/translate.page
 share/help/sv/eog/view.page
 share/help/sv/eog/zoom.page
@@ -1365,7 +1315,6 @@ share/help/te/eog/documentation.page
 share/help/te/eog/edit.page
 share/help/te/eog/figures/
 share/help/te/eog/figures/eog-logo.png
-share/help/te/eog/figures/eog-toolbar-editor.png
 share/help/te/eog/figures/eog-trail.png
 share/help/te/eog/figures/image-view-prefs.png
 share/help/te/eog/figures/multiple-convert.png
@@ -1399,7 +1348,6 @@ share/help/te/eog/print.page
 share/help/te/eog/rename-multiple.page
 share/help/te/eog/shortcuts.page
 share/help/te/eog/slideshow.page
-share/help/te/eog/toolbar.page
 share/help/te/eog/translate.page
 share/help/te/eog/view.page
 share/help/te/eog/zoom.page
@@ -1415,7 +1363,6 @@ share/help/th/eog/documentation.page
 share/help/th/eog/edit.page
 share/help/th/eog/figures/
 share/help/th/eog/figures/eog-logo.png
-share/help/th/eog/figures/eog-toolbar-editor.png
 share/help/th/eog/figures/eog-trail.png
 share/help/th/eog/figures/image-view-prefs.png
 share/help/th/eog/figures/multiple-convert.png
@@ -1449,7 +1396,6 @@ share/help/th/eog/print.page
 share/help/th/eog/rename-multiple.page
 share/help/th/eog/shortcuts.page
 share/help/th/eog/slideshow.page
-share/help/th/eog/toolbar.page
 share/help/th/eog/translate.page
 share/help/th/eog/view.page
 share/help/th/eog/zoom.page
@@ -1464,7 +1410,6 @@ share/help/uk/eog/documentation.page
 share/help/uk/eog/edit.page
 share/help/uk/eog/figures/
 share/help/uk/eog/figures/eog-logo.png
-share/help/uk/eog/figures/eog-toolbar-editor.png
 share/help/uk/eog/figures/eog-trail.png
 share/help/uk/eog/figures/image-view-prefs.png
 share/help/uk/eog/figures/multiple-convert.png
@@ -1498,7 +1443,6 @@ share/help/uk/eog/print.page
 share/help/uk/eog/rename-multiple.page
 share/help/uk/eog/shortcuts.page
 share/help/uk/eog/slideshow.page
-share/help/uk/eog/toolbar.page
 share/help/uk/eog/translate.page
 share/help/uk/eog/view.page
 share/help/uk/eog/zoom.page
@@ -1513,7 +1457,6 @@ share/help/zh_CN/eog/documentation.page
 share/help/zh_CN/eog/edit.page
 share/help/zh_CN/eog/figures/
 share/help/zh_CN/eog/figures/eog-logo.png
-share/help/zh_CN/eog/figures/eog-toolbar-editor.png
 share/help/zh_CN/eog/figures/eog-trail.png
 share/help/zh_CN/eog/figures/image-view-prefs.png
 share/help/zh_CN/eog/figures/multiple-convert.png
@@ -1547,7 +1490,6 @@ share/help/zh_CN/eog/print.page
 share/help/zh_CN/eog/rename-multiple.page
 share/help/zh_CN/eog/shortcuts.page
 share/help/zh_CN/eog/slideshow.page
-share/help/zh_CN/eog/toolbar.page
 share/help/zh_CN/eog/translate.page
 share/help/zh_CN/eog/view.page
 share/help/zh_CN/eog/zoom.page
@@ -1563,7 +1505,6 @@ share/help/zh_TW/eog/documentation.page
 share/help/zh_TW/eog/edit.page
 share/help/zh_TW/eog/figures/
 share/help/zh_TW/eog/figures/eog-logo.png
-share/help/zh_TW/eog/figures/eog-toolbar-editor.png
 share/help/zh_TW/eog/figures/eog-trail.png
 share/help/zh_TW/eog/figures/image-view-prefs.png
 share/help/zh_TW/eog/figures/multiple-convert.png
@@ -1597,7 +1538,6 @@ share/help/zh_TW/eog/print.page
 share/help/zh_TW/eog/rename-multiple.page
 share/help/zh_TW/eog/shortcuts.page
 share/help/zh_TW/eog/slideshow.page
-share/help/zh_TW/eog/toolbar.page
 share/help/zh_TW/eog/translate.page
 share/help/zh_TW/eog/view.page
 share/help/zh_TW/eog/zoom.page
