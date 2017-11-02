@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2017/07/26 22:45:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2017/11/02 15:04:18 espie Exp $
 
 COMMENT=	remake of Konami's F1-Spirit
 
@@ -21,6 +21,8 @@ WANTLIB+= pthread ssl ${COMPILER_LIBCXX} z
 
 NO_TEST=	Yes
 USE_GMAKE=	Yes
+
+MAKE_ENV =	CC='${CXX}'
 
 RUN_DEPENDS=	devel/desktop-file-utils
 LIB_DEPENDS=	devel/sdl-image \
