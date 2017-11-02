@@ -1,4 +1,4 @@
-$OpenBSD: patch-gnome-initial-setup_Makefile_in,v 1.11 2017/05/11 08:13:44 ajacoutot Exp $
+$OpenBSD: patch-gnome-initial-setup_Makefile_in,v 1.12 2017/11/02 15:27:16 ajacoutot Exp $
 
 Disable NetworkManager.
 
@@ -16,8 +16,8 @@ Index: gnome-initial-setup/Makefile.in
  	pages/timezone/libgistimezone.la \
  	pages/privacy/libgisprivacy.la pages/goa/libgisgoa.la \
  	pages/account/libgisaccount.la \
-@@ -414,7 +414,7 @@ AM_CPPFLAGS = \
- 	-DGCR_API_SUBJECT_TO_CHANGE \
+@@ -416,7 +416,7 @@ AM_CPPFLAGS = \
+ 	-DVENDOR_CONF_FILE="\"$(VENDOR_CONF_FILE)\"" \
  	-DUIDIR="\"$(uidir)\"" \
  	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" \
 -	-DLIBLOCALEDIR=\""$(prefix)/lib/locale"\" \
@@ -25,7 +25,7 @@ Index: gnome-initial-setup/Makefile.in
  	-DDATADIR=\""$(datadir)"\"
  
  resource_files = $(shell glib-compile-resources --sourcedir=$(srcdir) --generate-dependencies $(srcdir)/gis-assistant.gresource.xml)
-@@ -431,7 +431,6 @@ gnome_initial_setup_LDADD = \
+@@ -433,7 +433,6 @@ gnome_initial_setup_LDADD = \
  	pages/region/libgisregion.la \
  	pages/keyboard/libgiskeyboard.la \
  	pages/eulas/libgiseulas.la \

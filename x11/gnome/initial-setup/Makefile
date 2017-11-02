@@ -1,33 +1,31 @@
-# $OpenBSD: Makefile,v 1.42 2017/11/01 16:22:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.43 2017/11/02 15:27:16 ajacoutot Exp $
 
 COMMENT=		initial-setup firstboot-like tool
 
 GNOME_PROJECT=		gnome-initial-setup
-GNOME_VERSION=		3.24.2
-REVISION=		3
+GNOME_VERSION=		3.26.0
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += EGL GL ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage
-WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xt Xxf86vm accountsservice
-WANTLIB += atk-1.0 atk-bridge-2.0 atspi c cairo cairo-gobject
-WANTLIB += crack crypto dbus-1 drm enchant epoxy ${LIBECXX}
-WANTLIB += expat ffi fontconfig freetype gbm gcrypt gdk-3 gdk_pixbuf-2.0
-WANTLIB += gdm geoclue-2 geocode-glib gio-2.0 glapi glib-2.0 gmodule-2.0
-WANTLIB += gnome-desktop-3 goa-1.0 goa-backend-1.0 gobject-2.0
-WANTLIB += gpg-error graphite2 gstapp-1.0 gstaudio-1.0 gstbase-1.0
-WANTLIB += gstfft-1.0 gstpbutils-1.0 gstreamer-1.0 gsttag-1.0
-WANTLIB += gstvideo-1.0 gthread-2.0 gtk-3 gweather-3 harfbuzz
-WANTLIB += harfbuzz-icu hyphen ibus-1.0 iconv icudata icui18n
-WANTLIB += icuuc intl javascriptcoregtk-4.0 jpeg json-glib-1.0
+WANTLIB += ${COMPILER_LIBCXX} EGL GL GLESv2 ICE SM X11 X11-xcb
+WANTLIB += Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
+WANTLIB += Xrandr Xrender Xt Xtst Xxf86vm accountsservice atk-1.0
+WANTLIB += atk-bridge-2.0 atspi c cairo cairo-gobject crack crypto
+WANTLIB += dbus-1 drm enchant epoxy expat ffi fontconfig freetype
+WANTLIB += gbm gcrypt gdk-3 gdk_pixbuf-2.0 gdm geoclue-2 geocode-glib
+WANTLIB += gio-2.0 glapi glib-2.0 gmodule-2.0 gnome-desktop-3
+WANTLIB += goa-1.0 goa-backend-1.0 gobject-2.0 gpg-error graphite2
+WANTLIB += gstallocators-1.0 gstapp-1.0 gstaudio-1.0 gstbadallocators-1.0
+WANTLIB += gstbase-1.0 gstfft-1.0 gstgl-1.0 gstpbutils-1.0 gstreamer-1.0
+WANTLIB += gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3 gweather-3
+WANTLIB += harfbuzz harfbuzz-icu hyphen ibus-1.0 iconv icudata
+WANTLIB += icui18n icuuc intl javascriptcoregtk-4.0 jpeg json-glib-1.0
 WANTLIB += lzma m notify orc-0.4 pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png polkit-gobject-1 pwquality
-WANTLIB += rest-0.7 secret-1 soup-2.4 soup-gnome-2.4 sqlite3
-WANTLIB += webkit2gtk-4.0 webp xcb xcb-dri2 xcb-glx xcb-render
-WANTLIB += xcb-shm xcb-xfixes xml2 xslt z
-WANTLIB += GLESv2 gstallocators-1.0 gstbadallocators-1.0 gstgl-1.0
-WANTLIB += tasn1
+WANTLIB += pcre pixman-1 png polkit-gobject-1 pwquality rest-0.7
+WANTLIB += secret-1 soup-2.4 soup-gnome-2.4 sqlite3 tasn1 webkit2gtk-4.0
+WANTLIB += webp xcb xcb-dri2 xcb-glx xcb-render xcb-shm xcb-xfixes
+WANTLIB += xml2 xslt z
 WANTLIB += heimdal/lib/heimsqlite
 
 MODULES=		devel/dconf \
