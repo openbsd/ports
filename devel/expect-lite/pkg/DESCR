@@ -1,0 +1,9 @@
+Written in expect, it is designed to directly map an interactive
+terminal session into an automation script.
+
+expect-lite scripts use special character(s) at the beginning of
+each line to indicate the action. Basic expect-lite scripts can be
+created by simply cutting and pasting text from a terminal window
+into a script, and adding '>' '<' characters.
+
+No knowledge of expect is required!
