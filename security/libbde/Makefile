@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2017/06/26 13:59:54 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2017/11/02 12:09:48 rpointel Exp $
 
 COMMENT =		access the BitLocker Drive Encryption encrypted volumes
 
-VERSION =		20170204
+VERSION =		20170902
 DISTNAME =		libbde-alpha-${VERSION}
 PKGNAME =		libbde-${VERSION}
 
-SHARED_LIBS +=  bde                       0.0 # 1.0
+SHARED_LIBS +=  bde                       0.1 # 1.0
 
 CATEGORIES =		security
 
