@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.185 2017/10/31 09:15:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.186 2017/11/02 21:41:57 naddy Exp $
 
 # XXX add support for libcloudproviders (subpackage?)
 
@@ -68,7 +68,7 @@ WANTLIB-main += pangoft2-1.0 pixman-1 xcb xcb-render xcb-shm
 LIB_DEPENDS-cups=	${LIB_DEPENDS} \
 			print/cups,-libs \
 			${BASE_PKGPATH},-main=${GNOME_VERSION}
-RUN_DEPENDS-cups=	${MODGETTEXT_RUN_DEPENDS}
+RUN_DEPENDS-cups=
 
 WANTLIB-cups += ${WANTLIB} epoxy idn2 Xtst
 WANTLIB-cups += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
@@ -83,7 +83,7 @@ LIB_DEPENDS-cloudprint=	${LIB_DEPENDS} \
 			devel/json-glib \
 			net/librest \
 			${BASE_PKGPATH},-main=${GNOME_VERSION}
-RUN_DEPENDS-cloudprint=	${MODGETTEXT_RUN_DEPENDS}
+RUN_DEPENDS-cloudprint=
 
 WANTLIB-cloudprint += ${WANTLIB} epoxy Xtst
 WANTLIB-cloudprint += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
@@ -95,8 +95,7 @@ WANTLIB-cloudprint += gdk-3 gtk-3 json-glib-1.0 rest-0.7 soup-2.4 soup-gnome-2.4
 WANTLIB-cloudprint += sqlite3 xml2 lzma xcb-shm
 
 LIB_DEPENDS-guic=	graphics/gdk-pixbuf2
-RUN_DEPENDS-guic=	${MODGETTEXT_RUN_DEPENDS} \
-			x11/hicolor-icon-theme
+RUN_DEPENDS-guic=	x11/hicolor-icon-theme
 WANTLIB-guic += ${WANTLIB} c
 
 MODGNOME_TOOLS=		docbook gobject-introspection gtk-update-icon-cache \
