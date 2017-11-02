@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.241 2017/09/25 13:26:52 jca Exp $
+# $OpenBSD: Makefile,v 1.242 2017/11/02 17:40:54 sthen Exp $
 
 VERSION =		4.5.14
 DISTNAME =		samba-${VERSION}
@@ -15,9 +15,9 @@ PKGNAME-tevent =	tevent-${TEVENT_V}
 PKGNAME-util =		samba-util-${VERSION}
 PKGNAME-docs =		samba-docs-${VERSION}
 
-REVISION-main =		0
-REVISION-tevent =	1
-REVISION-ldb =		0
+REVISION-main =		1
+REVISION-tevent =	2
+REVISION-ldb =		1
 
 PKG_ARCH-docs =		*
 
@@ -184,6 +184,11 @@ SAMBA_CONFIG =		${PREFIX}/share/examples/samba/smb.conf.default
 SAMBA_LOGDIR =		${VARBASE}/log/samba
 
 SUBST_VARS =		SAMBA_LOGDIR
+
+.include <bsd.port.arch.mk>
+.if ${PROPERTIES:Mclang}
+CONFIGURE_ENV +=	EXTRA_LDFLAGS="-fuse-ld=lld"
+.endif
 
 post-patch:
 	find ${WRKSRC} -type f | xargs ${MODPY_BIN_ADJ}
