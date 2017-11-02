@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.544 2017/11/02 09:34:58 sebastia Exp $
+# $OpenBSD: Makefile,v 1.545 2017/11/02 12:59:25 sthen Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -393,6 +393,7 @@
      SUBDIR += py-pdfminer
      SUBDIR += py-podcastparser
      SUBDIR += py-polib
+     SUBDIR += py-polib,python3
      SUBDIR += py-prettytable
      SUBDIR += py-pyRFC3339
      SUBDIR += py-pyRFC3339,python3
