@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2017/08/09 12:33:51 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2017/11/02 17:46:00 jasper Exp $
 bin/borgmatic
 bin/generate-borgmatic-config
 bin/upgrade-borgmatic-config
@@ -33,9 +33,11 @@ lib/python${MODPY_VERSION}/site-packages/borgmatic/commands/${MODPY_PYCACHE}__in
 lib/python${MODPY_VERSION}/site-packages/borgmatic/commands/${MODPY_PYCACHE}borgmatic.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgmatic/commands/${MODPY_PYCACHE}convert_config.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgmatic/commands/${MODPY_PYCACHE}generate_config.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/borgmatic/commands/${MODPY_PYCACHE}hook.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgmatic/commands/borgmatic.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/commands/convert_config.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/commands/generate_config.py
+lib/python${MODPY_VERSION}/site-packages/borgmatic/commands/hook.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/config/
 lib/python${MODPY_VERSION}/site-packages/borgmatic/config/__init__.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/config/${MODPY_PYCACHE}/
@@ -85,6 +87,7 @@ lib/python${MODPY_VERSION}/site-packages/borgmatic/tests/unit/
 lib/python${MODPY_VERSION}/site-packages/borgmatic/tests/unit/__init__.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/tests/unit/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/borgmatic/tests/unit/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/borgmatic/tests/unit/${MODPY_PYCACHE}test_verbosity.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgmatic/tests/unit/borg/
 lib/python${MODPY_VERSION}/site-packages/borgmatic/tests/unit/borg/__init__.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/tests/unit/borg/${MODPY_PYCACHE}/
@@ -92,10 +95,12 @@ lib/python${MODPY_VERSION}/site-packages/borgmatic/tests/unit/borg/${MODPY_PYCAC
 lib/python${MODPY_VERSION}/site-packages/borgmatic/tests/unit/borg/${MODPY_PYCACHE}test_check.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgmatic/tests/unit/borg/${MODPY_PYCACHE}test_create.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgmatic/tests/unit/borg/${MODPY_PYCACHE}test_extract.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/borgmatic/tests/unit/borg/${MODPY_PYCACHE}test_hook.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgmatic/tests/unit/borg/${MODPY_PYCACHE}test_prune.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgmatic/tests/unit/borg/test_check.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/tests/unit/borg/test_create.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/tests/unit/borg/test_extract.py
+lib/python${MODPY_VERSION}/site-packages/borgmatic/tests/unit/borg/test_hook.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/tests/unit/borg/test_prune.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/tests/unit/config/
 lib/python${MODPY_VERSION}/site-packages/borgmatic/tests/unit/config/__init__.py
@@ -105,10 +110,13 @@ lib/python${MODPY_VERSION}/site-packages/borgmatic/tests/unit/config/${MODPY_PYC
 lib/python${MODPY_VERSION}/site-packages/borgmatic/tests/unit/config/${MODPY_PYCACHE}test_convert.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgmatic/tests/unit/config/${MODPY_PYCACHE}test_generate.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgmatic/tests/unit/config/${MODPY_PYCACHE}test_legacy.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/borgmatic/tests/unit/config/${MODPY_PYCACHE}test_validate.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgmatic/tests/unit/config/test_collect.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/tests/unit/config/test_convert.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/tests/unit/config/test_generate.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/tests/unit/config/test_legacy.py
+lib/python${MODPY_VERSION}/site-packages/borgmatic/tests/unit/config/test_validate.py
+lib/python${MODPY_VERSION}/site-packages/borgmatic/tests/unit/test_verbosity.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/verbosity.py
 share/examples/borgmatic/
 @sample ${SYSCONFDIR}/borgmatic/
