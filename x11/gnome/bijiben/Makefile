@@ -1,14 +1,11 @@
-# $OpenBSD: Makefile,v 1.43 2017/11/01 15:16:36 ajacoutot Exp $
-
-BROKEN=			needs an update to work with tracker >=2.0
+# $OpenBSD: Makefile,v 1.44 2017/11/02 15:29:37 jasper Exp $
 
 TRACKER_API=		2.0
 
 COMMENT=		simple note editor
 
 GNOME_PROJECT=		bijiben
-GNOME_VERSION=		3.24.2
-REVISION=		1
+GNOME_VERSION=		3.26.2
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
@@ -32,7 +29,7 @@ WANTLIB += secret-1 smime3 softokn3 soup-2.4 sqlite3 ssl3 ${COMPILER_LIBCXX}
 WANTLIB += uuid webkit2gtk-4.0 webp xcb xcb-dri2
 WANTLIB += xcb-glx xcb-render xcb-shm xcb-xfixes xml2 xslt z
 WANTLIB += GLESv2 gstallocators-1.0 gstbadallocators-1.0 gstgl-1.0
-WANTLIB += harfbuzz-icu tasn1
+WANTLIB += harfbuzz-icu tasn1 Xtst
 WANTLIB += tracker-sparql-${TRACKER_API}
 WANTLIB += lib/tracker-${TRACKER_API}/tracker-common
 WANTLIB += lib/tracker-${TRACKER_API}/tracker-data
@@ -52,10 +49,5 @@ MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache \
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS +=	--disable-Werror
-
-# XXX
-# cc1: error: unrecognized command line option "-Wno-suggest-attribute=format"
-pre-configure:
-	sed -i -e 's,-Wno-suggest-attribute=format,,g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
