@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2017/10/23 17:10:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2017/11/02 11:43:59 espie Exp $
 
 COMMENT=	save your computers from the evil clutches of Bill
 
@@ -15,7 +15,11 @@ MASTER_SITES=	${HOMEPAGE}/download/
 
 WANTLIB=	ICE SM X11 Xaw Xmu Xpm Xt c xcb
 
-CONFIGURE_STYLE=simple
+# bundled configure is out-of-date
+# so regen the correct version which explicitly links with Xpm
+CONFIGURE_STYLE=autoconf
+AUTOCONF_VERSION = 2.13
+
 CONFIGURE_ARGS=	--with-x \
 		--disable-motif \
 		--disable-gtk
