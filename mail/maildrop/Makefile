@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2017/10/31 07:46:37 giovanni Exp $
+# $OpenBSD: Makefile,v 1.69 2017/11/02 08:49:41 giovanni Exp $
 
 COMMENT-main=		mail delivery agent with filtering abilities
 COMMENT-utils=		quota tools for the Courier mail suite
@@ -26,7 +26,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 COMPILER =		gcc
 
-CONFIGURE_STYLE=	autoconf
+CONFIGURE_STYLE=	autoconf no-autoheader
 AUTOCONF_VERSION=	2.69
 
 CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib" \
