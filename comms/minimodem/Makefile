@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2017/09/20 08:20:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2017/11/02 15:22:00 espie Exp $
 
 BROKEN-hppa =	no atomic ops in pulse-simple dependency
 COMMENT =	general-purpose software audio FSK modem
@@ -28,6 +28,6 @@ CONFIGURE_ARGS =	--without-alsa \
 			--with-pulseaudio \
 			--with-sndfile
 
-MAKE_FLAGS =	LIBS="-lfftw3f_threads -lpulse-simple -lsndfile -lintl"
+MAKE_FLAGS =	LIBS="-lfftw3f_threads -lfftw3f -lpulse-simple -lpulse -lsndfile -lintl -lm"
 
 .include <bsd.port.mk>
