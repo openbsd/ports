@@ -1,4 +1,4 @@
-# $OpenBSD: cmake.port.mk,v 1.58 2016/04/29 10:34:33 dcoppa Exp $
+# $OpenBSD: cmake.port.mk,v 1.59 2017/11/02 11:04:37 sthen Exp $
 
 BUILD_DEPENDS+=	devel/cmake
 
@@ -75,12 +75,14 @@ MODCMAKE_configure=	cd ${WRKBUILD} && ${SETENV} \
 		-DCMAKE_SKIP_INSTALL_ALL_DEPENDENCY:Bool=True \
 		-G ${_MODCMAKE_GEN} ${CONFIGURE_ARGS} ${WRKSRC}
 
-.if defined(DEBUG)
+.if ! ${CONFIGURE_ARGS:M*CMAKE_BUILD_TYPE*}
+.  if defined(DEBUG)
 CONFIGURE_ARGS += -DCMAKE_BUILD_TYPE:String=Debug
 MODCMAKE_BUILD_SUFFIX =	-debug.cmake
-.else
+.  else
 CONFIGURE_ARGS += -DCMAKE_BUILD_TYPE:String=Release
 MODCMAKE_BUILD_SUFFIX =	-release.cmake
+.  endif
 .endif
 SUBST_VARS +=	MODCMAKE_BUILD_SUFFIX
 
