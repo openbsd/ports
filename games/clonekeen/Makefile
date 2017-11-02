@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2017/07/26 22:45:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2017/11/02 14:36:24 espie Exp $
 
 COMMENT =		commander keen clone
 DISTNAME =		clonekeen-src-84
@@ -26,7 +26,7 @@ NO_TEST =		Yes
 
 # LDFLAGS only used at link time
 CPPFLAGS = 	-I${LOCALBASE}/include
-LDFLAGS =	-L${LOCALBASE}/lib -pthread
+LDFLAGS =	-L${LOCALBASE}/lib -pthread -lm
 MAKE_ENV =	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" CFLAGS="${CFLAGS}"
 
 do-install:
