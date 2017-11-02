@@ -1,6 +1,7 @@
-$OpenBSD: patch-game_Makefile_unix,v 1.1.1.1 2009/10/11 14:01:39 phessler Exp $
---- game/Makefile.unix.orig	Fri Jul  3 11:36:02 2009
-+++ game/Makefile.unix	Sun Oct 11 15:44:34 2009
+$OpenBSD: patch-game_Makefile_unix,v 1.2 2017/11/02 14:47:06 espie Exp $
+Index: game/Makefile.unix
+--- game/Makefile.unix.orig
++++ game/Makefile.unix
 @@ -20,11 +20,11 @@ SDL_CONF  := sdl-config
  SDLCONF_I := $(shell ${SDL_CONF} --cflags)
  SDLCONF_L := $(shell ${SDL_CONF} --libs)
@@ -12,7 +13,7 @@ $OpenBSD: patch-game_Makefile_unix,v 1.1.1.1 2009/10/11 14:01:39 phessler Exp $
 -CFLAGS  := ${OPT} ${INC}
 -LDFLAGS := ${SDLCONF_L} -lSDL_ttf -lSDL_mixer -lGL -lGLU -lSDL_image
 +CFLAGS  := ${OPT} ${INC} ${CFLAGS}
-+LDFLAGS := ${SDLCONF_L} -lSDL_ttf -lSDL_mixer -lGL -lGLU -lSDL_image ${LDFLAGS}
++LDFLAGS := ${SDLCONF_L} -lSDL_ttf -lSDL_mixer -lGL -lGLU -lSDL_image -lm ${LDFLAGS}
  
  EGO_BIN := egoboo
  
