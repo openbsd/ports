@@ -1,0 +1,14 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2017/11/02 15:54:25 espie Exp $
+
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -402,7 +402,7 @@ xdgdir = $(sysconfdir)/xdg
+ xdg_DATA = user-dirs.conf user-dirs.defaults
+ xdgautostartdir = $(xdgdir)/autostart
+ xdgautostart_DATA = xdg-user-dirs.desktop
+-libraries = $(LIBINTL)
++libraries = $(LIBINTL) $(LIBICONV)
+ bin_SCRIPTS = \
+ 	xdg-user-dir				\
+ 	$(NULL)
