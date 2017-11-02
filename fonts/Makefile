@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2017/11/02 18:33:52 bentley Exp $
+# $OpenBSD: Makefile,v 1.42 2017/11/02 22:23:35 bentley Exp $
 
      SUBDIR =
      SUBDIR += abyssinica
@@ -34,7 +34,6 @@
      SUBDIR += intlfonts
      SUBDIR += ja-funetfonts
      SUBDIR += ja-kanjistrokeorders-ttf
-     SUBDIR += ja-mplus-ttf
      SUBDIR += ja-sazanami-ttf
      SUBDIR += jmk-fonts
      SUBDIR += junicode
@@ -49,6 +48,7 @@
      SUBDIR += mftrace
      SUBDIR += migmix
      SUBDIR += migu
+     SUBDIR += mixfont-mplus-ipa
      SUBDIR += mplus-fonts
      SUBDIR += msctfonts
      SUBDIR += msttcorefonts
