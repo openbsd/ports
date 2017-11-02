@@ -1,6 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2017/09/12 12:29:48 bluhm Exp $
+# $OpenBSD: Makefile,v 1.5 2017/11/02 15:00:21 bluhm Exp $
 
 COMMENT =	object oriented File::Find replacement
+
+# Most versions start with v, some do not and confuse portroach, skip those.
+PORTROACH =	skipv:0.0.1,0.0.2,0.3.0
 
 VERSION =	0.3.2
 DISTNAME =	File-Find-Object-v${VERSION}
