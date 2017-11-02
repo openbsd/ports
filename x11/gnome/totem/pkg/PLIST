@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.27 2017/03/03 15:53:40 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.28 2017/11/02 14:19:25 ajacoutot Exp $
 @conflict nautilus-totem-*
 @pkgpath x11/gnome/totem,nautilus
 @pkgpath x11/gnome/totem,xine
 @bin bin/totem
-@bin bin/totem-audio-preview
 @bin bin/totem-video-thumbnailer
 include/totem/
 include/totem/1.0/
@@ -12,8 +11,6 @@ include/totem/1.0/totem-interface.h
 include/totem/1.0/totem-plugin.h
 include/totem/1.0/totem.h
 lib/girepository-1.0/Totem-1.0.typelib
-lib/libtotem.a
-lib/libtotem.la
 @lib lib/libtotem.so.${LIBtotem_VERSION}
 lib/nautilus/extensions-3.0/libtotem-properties-page.so
 lib/pkgconfig/totem.pc
@@ -29,10 +26,10 @@ lib/totem/plugins/brasero-disc-recorder/
 lib/totem/plugins/brasero-disc-recorder/brasero-disc-recorder.plugin
 lib/totem/plugins/brasero-disc-recorder/libbrasero-disc-recorder.so
 lib/totem/plugins/dbus/
+lib/totem/plugins/dbus/${MODPY_PYCACHE}/
+lib/totem/plugins/dbus/${MODPY_PYCACHE}dbusservice.${MODPY_PYC_MAGIC_TAG}pyc
 lib/totem/plugins/dbus/dbusservice.plugin
 lib/totem/plugins/dbus/dbusservice.py
-lib/totem/plugins/dbus/dbusservice.pyc
-lib/totem/plugins/dbus/dbusservice.pyo
 lib/totem/plugins/gromit/
 lib/totem/plugins/gromit/gromit.plugin
 lib/totem/plugins/gromit/libgromit.so
@@ -46,31 +43,26 @@ lib/totem/plugins/ontop/
 lib/totem/plugins/ontop/libontop.so
 lib/totem/plugins/ontop/ontop.plugin
 lib/totem/plugins/opensubtitles/
+lib/totem/plugins/opensubtitles/${MODPY_PYCACHE}/
+lib/totem/plugins/opensubtitles/${MODPY_PYCACHE}hash.${MODPY_PYC_MAGIC_TAG}pyc
+lib/totem/plugins/opensubtitles/${MODPY_PYCACHE}opensubtitles.${MODPY_PYC_MAGIC_TAG}pyc
 lib/totem/plugins/opensubtitles/hash.py
-lib/totem/plugins/opensubtitles/hash.pyc
-lib/totem/plugins/opensubtitles/hash.pyo
 lib/totem/plugins/opensubtitles/opensubtitles.plugin
 lib/totem/plugins/opensubtitles/opensubtitles.py
-lib/totem/plugins/opensubtitles/opensubtitles.pyc
-lib/totem/plugins/opensubtitles/opensubtitles.pyo
 lib/totem/plugins/opensubtitles/opensubtitles.ui
 lib/totem/plugins/properties/
 lib/totem/plugins/properties/libmovie-properties.so
 lib/totem/plugins/properties/movie-properties.plugin
 lib/totem/plugins/pythonconsole/
+lib/totem/plugins/pythonconsole/${MODPY_PYCACHE}/
+lib/totem/plugins/pythonconsole/${MODPY_PYCACHE}console.${MODPY_PYC_MAGIC_TAG}pyc
+lib/totem/plugins/pythonconsole/${MODPY_PYCACHE}pythonconsole.${MODPY_PYC_MAGIC_TAG}pyc
 lib/totem/plugins/pythonconsole/console.py
-lib/totem/plugins/pythonconsole/console.pyc
-lib/totem/plugins/pythonconsole/console.pyo
 lib/totem/plugins/pythonconsole/pythonconsole.plugin
 lib/totem/plugins/pythonconsole/pythonconsole.py
-lib/totem/plugins/pythonconsole/pythonconsole.pyc
-lib/totem/plugins/pythonconsole/pythonconsole.pyo
 lib/totem/plugins/recent/
 lib/totem/plugins/recent/librecent.so
 lib/totem/plugins/recent/recent.plugin
-lib/totem/plugins/rotation/
-lib/totem/plugins/rotation/librotation.so
-lib/totem/plugins/rotation/rotation.plugin
 lib/totem/plugins/save-file/
 lib/totem/plugins/save-file/libsave-file.so
 lib/totem/plugins/save-file/save-file.plugin
@@ -91,13 +83,12 @@ lib/totem/plugins/variable-rate/variable-rate.plugin
 lib/totem/plugins/vimeo/
 lib/totem/plugins/vimeo/libvimeo.so
 lib/totem/plugins/vimeo/vimeo.plugin
-@man man/man1/totem-audio-preview.1
+@bin libexec/totem-gallery-thumbnailer
 @man man/man1/totem-video-thumbnailer.1
 @man man/man1/totem.1
 share/GConf/gsettings/opensubtitles.convert
 share/GConf/gsettings/pythonconsole.convert
 share/GConf/gsettings/totem.convert
-share/appdata/org.gnome.Totem.appdata.xml
 share/applications/org.gnome.Totem.desktop
 share/dbus-1/services/org.gnome.Totem.service
 share/gir-1.0/Totem-1.0.gir
@@ -105,26 +96,6 @@ share/glib-2.0/schemas/org.gnome.totem.enums.xml
 share/glib-2.0/schemas/org.gnome.totem.gschema.xml
 share/glib-2.0/schemas/org.gnome.totem.plugins.opensubtitles.gschema.xml
 share/glib-2.0/schemas/org.gnome.totem.plugins.pythonconsole.gschema.xml
-share/gtk-doc/html/totem/
-share/gtk-doc/html/totem/BaconVideoWidget.html
-share/gtk-doc/html/totem/TotemObject.html
-share/gtk-doc/html/totem/annotation-glossary.html
-share/gtk-doc/html/totem/api-index-full.html
-share/gtk-doc/html/totem/core-api.html
-share/gtk-doc/html/totem/home.png
-share/gtk-doc/html/totem/index.html
-share/gtk-doc/html/totem/left-insensitive.png
-share/gtk-doc/html/totem/left.png
-share/gtk-doc/html/totem/right-insensitive.png
-share/gtk-doc/html/totem/right.png
-share/gtk-doc/html/totem/style.css
-share/gtk-doc/html/totem/totem-Interface.html
-share/gtk-doc/html/totem/totem-TotemPlugin.html
-share/gtk-doc/html/totem/totem-plugins.html
-share/gtk-doc/html/totem/totem.devhelp2
-share/gtk-doc/html/totem/tutorials.html
-share/gtk-doc/html/totem/up-insensitive.png
-share/gtk-doc/html/totem/up.png
 share/help/C/totem/
 share/help/C/totem/figures/
 share/help/C/totem/figures/totem_next_button.png
@@ -347,6 +318,7 @@ share/help/pa/totem/figures/totem_volume_maximum_button.png
 share/help/pa/totem/figures/totem_volume_mute_button.png
 share/help/pa/totem/index.docbook
 share/help/pa/totem/legal.xml
+share/help/pl/
 share/help/pl/totem/
 share/help/pl/totem/figures/
 share/help/pl/totem/figures/totem_next_button.png
@@ -587,6 +559,8 @@ share/locale/zh_CN/LC_MESSAGES/totem.mo
 share/locale/zh_HK/LC_MESSAGES/totem.mo
 share/locale/zh_TW/LC_MESSAGES/totem.mo
 share/locale/zu/LC_MESSAGES/totem.mo
+share/metainfo/
+share/metainfo/org.gnome.Totem.appdata.xml
 share/thumbnailers/totem.thumbnailer
 share/totem/
 share/totem/controls.ui
