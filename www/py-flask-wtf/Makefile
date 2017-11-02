@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2017/01/03 19:28:48 landry Exp $
+# $OpenBSD: Makefile,v 1.11 2017/11/02 09:28:26 sebastia Exp $
 
 COMMENT=	simple integration of Flask and WTForms
 
-MODPY_EGG_VERSION=0.9.4
+MODPY_EGG_VERSION=0.14.2
 DISTNAME=	Flask-WTF-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME:L}
-REVISION=	5
 CATEGORIES=	www
 
 # BSD
@@ -27,6 +26,11 @@ RUN_DEPENDS=		www/py-flask${MODPY_FLAVOR} \
 TEST_DEPENDS=		devel/py-nose
 
 USE_GMAKE=		Yes
+
+MAIN_VERSION =		${MODPY_EGG_VERSION:C/.[0-9]$//}
+SUBST_VARS +=		MAIN_VERSION
+pre-build:
+	${SUBST_CMD} ${WRKSRC}/docs/conf.py
 
 post-build:
 	@cd ${WRKSRC}/docs && \

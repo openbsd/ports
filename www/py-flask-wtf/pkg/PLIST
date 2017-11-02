@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2016/05/31 13:43:15 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2017/11/02 09:28:26 sebastia Exp $
 lib/python${MODPY_VERSION}/site-packages/Flask_WTF-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/Flask_WTF-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/Flask_WTF-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
@@ -72,12 +72,10 @@ share/doc/${MODPY_PY_PREFIX}flask-wtf/changelog.html
 share/doc/${MODPY_PY_PREFIX}flask-wtf/config.html
 share/doc/${MODPY_PY_PREFIX}flask-wtf/csrf.html
 share/doc/${MODPY_PY_PREFIX}flask-wtf/form.html
-share/doc/${MODPY_PY_PREFIX}flask-wtf/genindex.html
 share/doc/${MODPY_PY_PREFIX}flask-wtf/index.html
 share/doc/${MODPY_PY_PREFIX}flask-wtf/install.html
 share/doc/${MODPY_PY_PREFIX}flask-wtf/license.html
 share/doc/${MODPY_PY_PREFIX}flask-wtf/objects.inv
-share/doc/${MODPY_PY_PREFIX}flask-wtf/py-modindex.html
 share/doc/${MODPY_PY_PREFIX}flask-wtf/quickstart.html
 share/doc/${MODPY_PY_PREFIX}flask-wtf/search.html
 share/doc/${MODPY_PY_PREFIX}flask-wtf/searchindex.js
