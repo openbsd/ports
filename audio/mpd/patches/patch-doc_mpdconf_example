@@ -1,6 +1,7 @@
-$OpenBSD: patch-doc_mpdconf_example,v 1.17 2017/02/23 13:03:46 dcoppa Exp $
---- doc/mpdconf.example.orig	Wed Feb  1 21:58:30 2017
-+++ doc/mpdconf.example	Thu Feb 23 11:18:10 2017
+$OpenBSD: patch-doc_mpdconf_example,v 1.18 2017/11/02 19:22:40 jca Exp $
+Index: doc/mpdconf.example
+--- doc/mpdconf.example.orig
++++ doc/mpdconf.example
 @@ -10,14 +10,14 @@
  # be disabled and audio files will only be accepted over ipc socket (using
  # file:// protocol) or streaming files over an accepted protocol.
@@ -66,16 +67,18 @@ $OpenBSD: patch-doc_mpdconf_example,v 1.17 2017/02/23 13:03:46 dcoppa Exp $
  #
  # This setting specifies the group that MPD will run as. If not specified
  # primary group of user specified with "user" setting will be used (if set).
-@@ -84,6 +84,8 @@
+@@ -83,7 +83,10 @@
+ #
  # And for Unix Socket
  #bind_to_address		"~/.mpd/socket"
++#bind_to_address		"/var/run/mpd/socket"
  #
-+bind_to_address                 "127.0.0.1"
++bind_to_address			"localhost"
 +#
  # This setting is the TCP port that is desired for the daemon to get assigned
  # to.
  #
-@@ -307,11 +309,11 @@ input {
+@@ -307,11 +310,11 @@ input {
  #
  # An example of an sndio output.
  #
