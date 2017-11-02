@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2017/10/19 17:39:18 jca Exp $
+# $OpenBSD: Makefile,v 1.11 2017/11/02 12:46:44 jca Exp $
 
 BROKEN-hppa =		undefined reference to __sync atomic ops
 
@@ -6,8 +6,7 @@ COMMENT =		user-level RCU implementation
 
 GH_ACCOUNT =		urcu
 GH_PROJECT =		userspace-rcu
-GH_TAGNAME =		v0.8.6
-REVISION =		1
+GH_TAGNAME =		v0.8.9
 DISTNAME =		liburcu-${GH_TAGNAME:S/^v//}
 
 SHARED_LIBS +=  urcu-bp                   0.0 # 2.0
