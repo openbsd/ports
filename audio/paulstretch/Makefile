@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2017/11/02 12:09:42 jca Exp $
+# $OpenBSD: Makefile,v 1.10 2017/11/02 13:09:26 jca Exp $
 
 BROKEN-powerpc =	SIGILL when building
 COMMENT =	program for extreme audio stretching
 DISTNAME =	paulstretch-2.2-2
-REVISION =	3
+REVISION =	4
 PKGNAME =	paulstretch-2.2.2
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	audio x11

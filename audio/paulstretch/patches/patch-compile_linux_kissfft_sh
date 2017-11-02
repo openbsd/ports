@@ -1,0 +1,18 @@
+$OpenBSD: patch-compile_linux_kissfft_sh,v 1.1 2017/11/02 13:09:26 jca Exp $
+
+- respect CXX/CXXFLAGS
+- don't rely on inter-libraries deps
+
+Index: compile_linux_kissfft.sh
+--- compile_linux_kissfft.sh.orig
++++ compile_linux_kissfft.sh
+@@ -5,7 +5,7 @@ fluid -c GUI.fl 
+ fluid -c FreeEditUI.fl
+ 
+ 
+-g++ -ggdb -DKISSFFT -I./contrib GUI.cxx FreeEditUI.cxx *.cpp Input/*.cpp Output/*.cpp contrib/*.c `fltk-config --cflags` \
+- `fltk-config --ldflags`  -laudiofile  -lvorbisenc -lvorbisfile -lportaudio -lpthread -lmad -lmxml -o $outfile
++${CXX} ${CXXFLAGS} -DKISSFFT -I./contrib GUI.cxx FreeEditUI.cxx *.cpp Input/*.cpp Output/*.cpp contrib/*.c `fltk-config --cflags` \
++ `fltk-config --ldflags`  -laudiofile  -lvorbisenc -lvorbisfile -lvorbis -logg -lportaudio -lpthread -lmad -lmxml -lz -o $outfile
+ 
+ rm -f GUI.h GUI.cxx FreeEditUI.h FreeEditUI.cxx
