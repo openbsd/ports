@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1656 2017/11/01 17:17:57 bluhm Exp $
+# $OpenBSD: Makefile,v 1.1657 2017/11/02 16:04:14 rpe Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -119,6 +119,7 @@
      SUBDIR += ectags
      SUBDIR += elftoolchain
      SUBDIR += etl
+     SUBDIR += expect-lite
      SUBDIR += fasm
      SUBDIR += ffcall
      SUBDIR += flake8
