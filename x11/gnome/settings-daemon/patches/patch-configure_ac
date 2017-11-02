@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure_ac,v 1.7 2017/05/09 17:25:50 ajacoutot Exp $
+$OpenBSD: patch-configure_ac,v 1.8 2017/11/02 13:05:52 ajacoutot Exp $
 
 http://permalink.gmane.org/gmane.comp.gnome.desktop/51950
 https://bugzilla.gnome.org/show_bug.cgi?id=770758#c3
@@ -8,7 +8,7 @@ https://bugzilla.gnome.org/show_bug.cgi?id=772736 (systemd --user)
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -427,6 +427,8 @@ PKG_CHECK_MODULES(SHARING,
+@@ -421,6 +421,8 @@ PKG_CHECK_MODULES(SHARING,
  		  gio-unix-2.0
  		  $NM_MODULE)
  
