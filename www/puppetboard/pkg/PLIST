@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2017/04/19 14:26:24 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.11 2017/11/02 09:39:20 sebastia Exp $
 @newuser _puppetboard:739:www:daemon:Puppetboard user:/nonexistent:/sbin/nologin
 puppetboard/
 puppetboard/CHANGELOG.rst
@@ -16,10 +16,12 @@ puppetboard/puppetboard.egg-info/requires.txt
 puppetboard/puppetboard.egg-info/top_level.txt
 puppetboard/puppetboard/__init__.py
 puppetboard/puppetboard/app.py
+puppetboard/puppetboard/core.py
 puppetboard/puppetboard/dailychart.py
 puppetboard/puppetboard/default_settings.py.dist
 @sample puppetboard/puppetboard/default_settings.py
 puppetboard/puppetboard/docker_settings.py
+puppetboard/puppetboard/errors.py
 puppetboard/puppetboard/forms.py
 puppetboard/puppetboard/public/
 puppetboard/puppetboard/static/
@@ -71,10 +73,12 @@ puppetboard/puppetboard/templates/_macros.html
 puppetboard/puppetboard/templates/catalog.html
 puppetboard/puppetboard/templates/catalog_compare.html
 puppetboard/puppetboard/templates/catalogs.html
+puppetboard/puppetboard/templates/catalogs.json.tpl
 puppetboard/puppetboard/templates/fact.html
 puppetboard/puppetboard/templates/facts.html
 puppetboard/puppetboard/templates/index.html
 puppetboard/puppetboard/templates/inventory.html
+puppetboard/puppetboard/templates/inventory.json.tpl
 puppetboard/puppetboard/templates/layout.html
 puppetboard/puppetboard/templates/metric.html
 puppetboard/puppetboard/templates/metrics.html
@@ -87,6 +91,7 @@ puppetboard/puppetboard/templates/reports.html
 puppetboard/puppetboard/templates/reports.json.tpl
 puppetboard/puppetboard/tmp/
 puppetboard/puppetboard/utils.py
+puppetboard/puppetboard/version.py
 puppetboard/puppetboard_wsgi.py
 puppetboard/setup.cfg
 puppetboard/setup.py
@@ -95,6 +100,7 @@ puppetboard/test/__init__.py
 puppetboard/test/test_app.py
 puppetboard/test/test_app_error.py
 puppetboard/test/test_docker_settings.py
+puppetboard/test/test_form.py
 puppetboard/test/test_utils.py
 @rcscript ${RCDIR}/puppetboard
 @cwd ${LOCALBASE}/share/doc/pkg-readmes
