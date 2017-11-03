@@ -1,19 +1,19 @@
-# $OpenBSD: Makefile,v 1.18 2016/04/12 15:19:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2017/11/03 15:30:30 bentley Exp $
 
 COMMENT=		Rich city simulation game for X
 
-DISTNAME=		lincity-1.12.1
+DISTNAME=		lincity-1.13.1
 CATEGORIES=		games
 HOMEPAGE=		http://lincity.sourceforge.net/
-REVISION=		0
 
 # GPLv2 only
 PERMIT_PACKAGE_CDROM=	Yes
-WANTLIB=		ICE SM X11 Xext c intl m
+WANTLIB += ICE SM X11 Xext c iconv intl m png xcb z
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=lincity/}
 
-LIB_DEPENDS=		devel/gettext
+LIB_DEPENDS=		devel/gettext \
+			graphics/png
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \

@@ -1,0 +1,13 @@
+$OpenBSD: patch-readpng_c,v 1.1 2017/11/03 15:30:30 bentley Exp $
+
+Index: readpng.c
+--- readpng.c.orig
++++ readpng.c
+@@ -4,7 +4,6 @@
+  * ---------------------------------------------------------------------- */
+ #include <stdlib.h>
+ #include "png.h"
+-#include "malloc.h"
+ #include "lin-city.h"
+ #include "lctypes.h"
+ #include "lintypes.h"
