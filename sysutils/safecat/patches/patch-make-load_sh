@@ -1,0 +1,9 @@
+$OpenBSD: patch-make-load_sh,v 1.1 2017/11/03 13:15:02 espie Exp $
+
+Index: make-load.sh
+--- make-load.sh.orig
++++ make-load.sh
+@@ -1,2 +1,2 @@
+ echo 'main="$1"; shift'
+-echo exec "$LD" '-o "$main" "$main".o ${1+"$@"}'
++echo exec "$LD" '-o "$main" "$main".o -L. ${1+"$@"}'
