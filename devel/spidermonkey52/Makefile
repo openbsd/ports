@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2017/11/03 10:57:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2017/11/03 12:19:56 ajacoutot Exp $
 
 # see patch-js_src_old-configure_in
 USE_WXNEEDED =		Yes
@@ -20,7 +20,7 @@ DISTNAME =		firefox-${V}esr.source
 EXTRACT_SUFX =		.tar.bz2
 PKGNAME =		spidermonkey-${MOZILLA_VERSION}.4.0
 PKGSPEC =		spidermonkey->=52.0,<53.0
-REVISION =		1
+REVISION =		2
 
 SHARED_LIBS =		mozjs-52 0.0
 

@@ -1,0 +1,19 @@
+$OpenBSD: patch-mozglue_build_moz_build,v 1.1 2017/11/03 12:19:56 ajacoutot Exp $
+
+From 7e6d628456af3e99ebcb9a01a27e1461585082a4 Mon Sep 17 00:00:00 2001
+From: Till Schneidereit <till@tillschneidereit.net>
+Date: Thu, 1 Oct 2015 12:59:09 +0200
+Subject: [PATCH] Disable MOZ_GLUE_IN_PROGRAM in stand-alone builds on all platforms
+
+Index: mozglue/build/moz.build
+--- mozglue/build/moz.build.orig
++++ mozglue/build/moz.build
+@@ -6,7 +6,7 @@
+ 
+ # Build mozglue as a shared lib on Windows, OSX and Android.
+ # If this is ever changed, update MOZ_SHARED_MOZGLUE in browser/installer/Makefile.in
+-if CONFIG['OS_TARGET'] in ('WINNT', 'Darwin', 'Android'):
++if CONFIG['OS_TARGET'] in ('WINNT', 'Darwin', 'Android') and not CONFIG['JS_STANDALONE']:
+     SharedLibrary('mozglue')
+ else:
+     Library('mozglue')
