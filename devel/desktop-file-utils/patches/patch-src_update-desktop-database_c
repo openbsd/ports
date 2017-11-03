@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_update-desktop-database_c,v 1.12 2017/11/03 10:32:53 jasper Exp $
+
+Index: src/update-desktop-database.c
+--- src/update-desktop-database.c.orig
++++ src/update-desktop-database.c
+@@ -450,6 +450,11 @@ main (int    argc,
+      { NULL }
+    };
+ 
++  if (pledge("stdio rpath wpath cpath fattr", NULL) == -1) {
++    g_printerr ("pledge\n");
++    return 1;
++  }
++
+   context = g_option_context_new ("");
+   g_option_context_set_summary (context, _("Build cache database of MIME types handled by desktop files."));
+   g_option_context_add_main_entries (context, options, NULL);

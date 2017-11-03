@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.186 2017/11/02 21:41:57 naddy Exp $
+# $OpenBSD: Makefile,v 1.187 2017/11/03 10:32:53 jasper Exp $
 
 # XXX add support for libcloudproviders (subpackage?)
 
@@ -24,6 +24,7 @@ PKGNAME-guic=		gtk-update-icon-cache-${GNOME_VERSION}
 REVISION-main=		0
 REVISION-cups=		0
 REVISION-cloudprint=	0
+REVISION-guic=		0
 
 CATEGORIES=		x11 devel
 
@@ -96,6 +97,8 @@ WANTLIB-cloudprint += sqlite3 xml2 lzma xcb-shm
 
 LIB_DEPENDS-guic=	graphics/gdk-pixbuf2
 RUN_DEPENDS-guic=	x11/hicolor-icon-theme
+
+# uses pledge()
 WANTLIB-guic += ${WANTLIB} c
 
 MODGNOME_TOOLS=		docbook gobject-introspection gtk-update-icon-cache \

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.56 2017/09/19 05:58:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.57 2017/11/03 10:32:53 jasper Exp $
 
 COMMENT=		shared mime database for desktops
 
 DISTNAME=		shared-mime-info-1.9
+REVISION=		0
 CATEGORIES=		misc
 
 HOMEPAGE=		http://www.freedesktop.org/wiki/Software/shared-mime-info
@@ -12,6 +13,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
+# uses pledge()
 WANTLIB += c glib-2.0 intl xml2
 
 MASTER_SITES=		http://people.freedesktop.org/~hadess/
