@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2017/05/10 11:31:28 benoit Exp $
+# $OpenBSD: Makefile,v 1.8 2017/11/03 11:45:17 espie Exp $
 
 COMMENT =	perl implementation of an Rsync client
 
@@ -8,6 +8,8 @@ CATEGORIES =	devel
 
 # perl
 PERMIT_PACKAGE_CDROM =	Yes
+
+MAKE_ENV +=	CC='${CC}'
 
 WANTLIB += c m perl
 
