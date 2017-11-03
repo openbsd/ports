@@ -1,15 +1,14 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2017/10/15 16:31:45 rpointel Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2017/11/03 13:13:06 ajacoutot Exp $
 @option no-default-conflict
 @option is-branch
 @conflict python->=3.6,<3.7
 @pkgpath lang/python3/3.6,-main
-@comment bin/pip3
 @comment bin/2to3
 bin/2to3-3.6
-@comment bin/pydoc3
+bin/pydoc3
 bin/pydoc3.6
-@comment @bin bin/python3
-@comment bin/python3-config
+bin/python3
+bin/python3-config
 @bin bin/python3.6
 bin/python3.6-config
 @bin bin/python3.6m
@@ -122,7 +121,7 @@ include/python3.6m/weakrefobject.h
 @comment lib/libpython3.so
 lib/pkgconfig/python-3.6.pc
 lib/pkgconfig/python-3.6m.pc
-@comment lib/pkgconfig/python3.pc
+lib/pkgconfig/python3.pc
 lib/python3.6/
 lib/python3.6/LICENSE.txt
 lib/python3.6/__future__.py
@@ -3398,7 +3397,7 @@ lib/python3.6/xmlrpc/client.py
 lib/python3.6/xmlrpc/server.py
 lib/python3.6/zipapp.py
 lib/python3.6/zipfile.py
-@comment @man man/man1/python3.1
+@man man/man1/python3.1
 @man man/man1/python3.6.1
 share/doc/python3.6/
 share/doc/python3.6/CHANGES.OpenBSD

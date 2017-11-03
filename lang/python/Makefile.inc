@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.123 2017/07/16 19:18:59 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.124 2017/11/03 13:13:05 ajacoutot Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -158,6 +158,8 @@ post-install:
 	@sed -e "s,@VERSION@,${VERSION},g" -e "s,@LOCALBASE@,${LOCALBASE},g" \
 		${FILESDIR}/idle > ${WRKSRC}/idle
 	${INSTALL_SCRIPT} ${WRKSRC}/idle ${PREFIX}/bin/idle${VERSION}
+	cd ${PREFIX}/bin && ln -sf idle${VERSION} idle${VERSION:R}
+	mv ${PREFIX}/bin/pydoc ${PREFIX}/bin/pydoc2
 	@cd ${WRKSRC}; tar -cf - Tools | (cd ${PREFIX}/lib/python${VERSION}; \
 		tar -xf -)
 	${INSTALL_SCRIPT} ${WRKSRC}/Tools/scripts/2to3 \
