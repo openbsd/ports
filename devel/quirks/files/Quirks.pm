@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.543 2017/11/02 22:24:09 bentley Exp $
+# $OpenBSD: Quirks.pm,v 1.544 2017/11/03 13:45:32 stsp Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1136,6 +1136,10 @@ my $obsolete_reason = {
 	'telepathy-farstream' => 3,
 	'farstream' => 3,
 	'libnice' => 6,
+	'ardour' => 5,
+	'aubio' => 5,
+	'liblo' => 5,
+	'libgnomecanvasmm' => 5,
 };
 
 # reasons for obsolete packages
