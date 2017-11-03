@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.267 2017/11/03 11:31:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.268 2017/11/03 13:26:25 stsp Exp $
 
      SUBDIR =
      SUBDIR += adwaita-icon-theme
@@ -59,7 +59,6 @@
      SUBDIR += libgnome
      SUBDIR += libgnome-keyring
      SUBDIR += libgnomecanvas
-     SUBDIR += libgnomecanvasmm
      SUBDIR += libgnomekbd
      SUBDIR += libgnomeui
      SUBDIR += libgweather
