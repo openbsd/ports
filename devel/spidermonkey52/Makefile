@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2017/11/03 10:48:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2017/11/03 10:57:50 ajacoutot Exp $
 
 # see patch-js_src_old-configure_in
 USE_WXNEEDED =		Yes
@@ -43,7 +43,7 @@ MODULES =		lang/python
 MODPY_RUNDEP =		No
 
 # C++11
-# sync with x11/gnome/gjs
+# sync with SHARED_LIBS consumers: x11/gnome/gjs
 COMPILER =		base-clang ports-clang ports-gcc
 
 USE_GMAKE =		yes
