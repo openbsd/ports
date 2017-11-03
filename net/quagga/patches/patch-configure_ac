@@ -1,11 +1,12 @@
-$OpenBSD: patch-configure_ac,v 1.5 2016/03/31 22:42:00 jca Exp $
+$OpenBSD: patch-configure_ac,v 1.6 2017/11/03 14:28:43 sthen Exp $
 
 We have never supported passing an ifindex in struct
 ip_mreq.imr_interface.
 
---- configure.ac.orig	Thu Mar 31 23:33:14 2016
-+++ configure.ac	Thu Mar 31 23:33:45 2016
-@@ -951,7 +951,7 @@ AC_CHECK_HEADERS([linux/mroute.h], [], [],
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -1053,7 +1053,7 @@ AC_CHECK_HEADERS([linux/mroute.h], [], [],
  AC_MSG_CHECKING([for BSD struct ip_mreq hack])
  AC_TRY_COMPILE([#ifdef HAVE_SYS_PARAM_H
  #include <sys/param.h>

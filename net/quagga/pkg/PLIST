@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2016/03/22 12:57:54 jca Exp $
+@comment $OpenBSD: PLIST,v 1.21 2017/11/03 14:28:43 sthen Exp $
 @conflict zebra-*
 @newgroup _quagga:525
 @newuser _quagga:525:_quagga:daemon:Quagga Account:/nonexistent:/sbin/nologin
@@ -13,6 +13,7 @@ include/quagga/quagga/buffer.h
 include/quagga/quagga/checksum.h
 include/quagga/quagga/command.h
 include/quagga/quagga/distribute.h
+include/quagga/quagga/event_counter.h
 include/quagga/quagga/fifo.h
 include/quagga/quagga/filter.h
 include/quagga/quagga/getopt.h
@@ -28,6 +29,7 @@ include/quagga/quagga/md5.h
 include/quagga/quagga/memory.h
 include/quagga/quagga/memtypes.h
 include/quagga/quagga/network.h
+include/quagga/quagga/nexthop.h
 include/quagga/quagga/ospfapi/
 include/quagga/quagga/ospfapi/ospf_apiclient.h
 include/quagga/quagga/ospfd/
@@ -63,13 +65,14 @@ include/quagga/quagga/zassert.h
 include/quagga/quagga/zclient.h
 include/quagga/quagga/zebra.h
 @info info/quagga.info
-lib/libospf.a
+lib/libfpm_pb.la
+@lib lib/libfpm_pb.so.${LIBfpm_pb_VERSION}
 lib/libospf.la
 @lib lib/libospf.so.${LIBospf_VERSION}
-lib/libospfapiclient.a
 lib/libospfapiclient.la
 @lib lib/libospfapiclient.so.${LIBospfapiclient_VERSION}
-lib/libzebra.a
+lib/libquagga_pb.la
+@lib lib/libquagga_pb.so.${LIBquagga_pb_VERSION}
 lib/libzebra.la
 @lib lib/libzebra.so.${LIBzebra_VERSION}
 @man man/man1/vtysh.1

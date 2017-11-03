@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.53 2017/10/31 09:37:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.54 2017/11/03 14:28:43 sthen Exp $
 
 COMMENT=	multi-threaded routing daemon
 
-DISTNAME=	quagga-1.0.20161017
+DISTNAME=	quagga-1.2.2
 CATEGORIES=	net
 MASTER_SITES=	http://download.savannah.gnu.org/releases/quagga/
 
-SHARED_LIBS=	ospf		0.1 \
-		ospfapiclient	0.0 \
-		zebra		1.0
+.for i in ospf ospfapiclient zebra fpm_pb quagga_pb
+SHARED_LIBS+=	$i 1.0
+.endfor
 
 HOMEPAGE=	http://www.quagga.net/
 
@@ -37,10 +37,10 @@ CONFIGURE_ARGS+= --disable-pie
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		LIBS=-lcurses
-
 MAKE_FLAGS=	MAKEINFO="makeinfo --no-split"
 FAKE_FLAGS=	exampledir='${PREFIX}/share/examples/quagga' \
 		${MAKE_FLAGS}
+LIBTOOL_FLAGS=	--tag=disable-static
 
 FLAVORS=	snmp
 FLAVOR?=
