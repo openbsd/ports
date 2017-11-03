@@ -1,4 +1,4 @@
-# $OpenBSD: meson.port.mk,v 1.13 2017/11/02 15:48:44 ajacoutot Exp $
+# $OpenBSD: meson.port.mk,v 1.14 2017/11/03 13:15:58 ajacoutot Exp $
 
 BUILD_DEPENDS +=	devel/meson>=0.43.0p1
 SEPARATE_BUILD ?=	Yes
@@ -59,7 +59,3 @@ do-test:
 	exec ${SETENV} ${ALL_TEST_ENV} \
 		${LOCALBASE}/bin/ninja -C ${WRKBUILD} ${TEST_TARGET}
 .endif
-
-# XXX hardcoded
-# make our life easier
-MODMESON_pre-configure += ln -sf ${LOCALBASE}/bin/python3.6 ${WRKDIR}/bin/python3
