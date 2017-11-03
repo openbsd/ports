@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2017/05/01 21:13:36 rpe Exp $
+# $OpenBSD: Makefile,v 1.14 2017/11/03 14:21:04 rpe Exp $
 
 COMMENT=		script generating a self-extractible .tgz from a directory
 
-V=			2.3.0
+V=			2.3.1
 DISTNAME=		makeself-${V}
 
 GH_PROJECT=		makeself
