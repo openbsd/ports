@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.394 2017/11/03 12:58:33 stsp Exp $
+# $OpenBSD: Makefile,v 1.395 2017/11/03 13:22:19 stsp Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -8,7 +8,6 @@
      SUBDIR += aqualung
      SUBDIR += ario
      SUBDIR += ascd
-     SUBDIR += aubio
      SUBDIR += aucatctl
      SUBDIR += audacious
      SUBDIR += audacious-plugins
@@ -81,7 +80,6 @@
      SUBDIR += libgpod
      SUBDIR += libid3tag
      SUBDIR += liblastfm
-     SUBDIR += liblo
      SUBDIR += libmad
      SUBDIR += libmikmod
      SUBDIR += libmodplug
