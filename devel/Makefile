@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1659 2017/11/03 11:33:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.1660 2017/11/03 15:32:04 rpe Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -33,6 +33,7 @@
      SUBDIR += avr
      SUBDIR += avr32
      SUBDIR += avrdude
+     SUBDIR += bashunit
      SUBDIR += beediff
      SUBDIR += bison
      SUBDIR += blame
