@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2017/05/11 13:56:55 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.18 2017/11/03 13:51:53 ajacoutot Exp $
 bin/gnome-books
 bin/gnome-documents
 lib/gnome-documents/
@@ -408,6 +408,24 @@ share/help/pa/gnome-documents/search.page
 share/help/pa/gnome-documents/view-add.page
 share/help/pa/gnome-documents/view.page
 share/help/pa/gnome-documents/viewgrid.page
+share/help/pl/
+share/help/pl/gnome-documents/
+share/help/pl/gnome-documents/collections.page
+share/help/pl/gnome-documents/filter.page
+share/help/pl/gnome-documents/formats.page
+share/help/pl/gnome-documents/index.page
+share/help/pl/gnome-documents/info.page
+share/help/pl/gnome-documents/legal.xml
+share/help/pl/gnome-documents/media/
+share/help/pl/gnome-documents/media/go-down.png
+share/help/pl/gnome-documents/media/icon_gnome-documents.png
+share/help/pl/gnome-documents/print.page
+share/help/pl/gnome-documents/prob-no-show.page
+share/help/pl/gnome-documents/prob-previews.page
+share/help/pl/gnome-documents/search.page
+share/help/pl/gnome-documents/view-add.page
+share/help/pl/gnome-documents/view.page
+share/help/pl/gnome-documents/viewgrid.page
 share/help/pt_BR/gnome-documents/
 share/help/pt_BR/gnome-documents/collections.page
 share/help/pt_BR/gnome-documents/filter.page
