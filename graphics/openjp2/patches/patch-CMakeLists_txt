@@ -1,8 +1,8 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.5 2017/09/06 14:20:43 sthen Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.6 2017/11/03 10:31:24 sthen Exp $
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -105,7 +105,10 @@ endif()
+@@ -106,7 +106,10 @@ endif()
  option(BUILD_DOC "Build the HTML documentation (with doxygen if available)." OFF)
  
  string(TOLOWER ${PROJECT_NAME} projectname)
