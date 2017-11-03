@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.177 2017/11/01 19:09:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.178 2017/11/03 13:41:40 ajacoutot Exp $
 
 TRACKER_API=		2.0
 
@@ -36,9 +36,6 @@ MODGNOME_CPPFLAGS=	-I${X11BASE}/include
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 
 CONFIGURE_ARGS=		-Denable-selinux=false
-
-# XXX needed for g-ir-scanner(1)
-MAKE_ENV +=		${_MODGNOME_ldflags}
 
 # needs 'org.gnome.nautilus.preferences'
 TEST_DEPENDS=		${BASE_PKGPATH}

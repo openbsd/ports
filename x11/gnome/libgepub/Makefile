@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2017/11/03 13:08:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2017/11/03 13:41:40 ajacoutot Exp $
 
 # Required at build time for a temporary program created and run by
 # g-ir-scanner; programs linked against libgepub need wxneeded, too
@@ -27,8 +27,6 @@ MODGNOME_TOOLS=		gobject-introspection
 
 LIB_DEPENDS=		www/webkitgtk4
 
-# XXX needed for g-ir-scanner(1)
 MODGNOME_LDFLAGS +=	-L${X11BASE}/lib
-MAKE_ENV +=		${_MODGNOME_ldflags}
 
 .include <bsd.port.mk>

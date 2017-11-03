@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2017/11/03 12:39:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.63 2017/11/03 13:41:40 ajacoutot Exp $
 
 COMMENT=		IDE for GNOME
 
@@ -62,8 +62,6 @@ CONFIGURE_ARGS=		-Dwith_valgrind=false \
 # XXX C library 'libclang' not found
 CONFIGURE_ARGS +=	-Dwith_clang=false
 
-# XXX needed for g-ir-scanner(1)
 MODGNOME_LDFLAGS +=	-L${X11BASE}/lib
-MAKE_ENV +=		${_MODGNOME_ldflags}
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/11/03 11:30:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2017/11/03 13:41:40 ajacoutot Exp $
 
 COMMENT=		companion library to GObject and Gtk+
 
@@ -20,9 +20,7 @@ MODULES=		devel/meson \
 
 MODGNOME_TOOLS=		gobject-introspection vala
 
-# XXX needed for g-ir-scanner(1)
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib
-MAKE_ENV +=		${_MODGNOME_ldflags}
 
 LIB_DEPENDS=		x11/gtk+3
 
