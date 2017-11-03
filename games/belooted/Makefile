@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2016/01/23 13:49:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2017/11/03 13:35:18 espie Exp $
 
 COMMENT=	32-card trick-taking game
 
@@ -27,6 +27,9 @@ MODULES=	devel/gettext \
 
 LIB_DEPENDS=	x11/gtk+2
 RUN_DEPENDS=	devel/desktop-file-utils
+
+# make sure to get -lm for lld
+MAKE_FLAGS +=	belooted_LDADD=-lm
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
