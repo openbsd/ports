@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2017/08/29 11:41:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.41 2017/11/03 10:38:18 sthen Exp $
 
 COMMENT-main =	ARP scanning and fingerprinting tool
 COMMENT-mac =	MAC address vendor list
@@ -8,7 +8,7 @@ DISTNAME =	arp-scan-$V
 PKGNAME-main =	${DISTNAME}
 REVISION-main =	12
 
-M =		20170829
+M =		20171103
 PKGNAME-mac =	mac-vendor-$M
 
 CATEGORIES =	net
@@ -21,7 +21,7 @@ MASTER_SITES =	https://github.com/royhills/arp-scan/releases/download/$V/
 MASTER_SITES0 =	https://spacehopper.org/mirrors/
 
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
-		oui-iab-$M.tar.bz2:0
+		oui-iab-$M.tar.xz:0
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
@@ -56,7 +56,7 @@ post-install:
 # https://regauth.standards.ieee.org/standards-ra-web/pub/view.html#registries
 listing:
 	base='http://standards-oui.ieee.org'; \
-	f=oui-iab-`date +%Y%m%d`; \
+	f=oui-iab-`date +%Y%m%d`.tar.xz; \
 	t=`mktemp -d /tmp/oui-iab.XXXXXXXXXX`; \
 	cd $$t; \
 	mkdir oui-iab; \
@@ -65,7 +65,7 @@ listing:
 	[ -r ma-l.csv ] || ftp -o ma-l.csv $$base/oui/oui.csv; \
 	[ -r ma-m.csv ] || ftp -o ma-m.csv $$base/oui28/mam.csv; \
 	[ -r ma-s.csv ] || ftp -o ma-s.csv $$base/oui36/oui36.csv; \
-	cd ..; tar cjf $$f.tar.bz2 oui-iab; scp $$f.tar.bz2 naiad:mirrors/; \
+	cd ..; tar cf - oui-iab | xz -T 0 > $$f; scp $$f naiad:mirrors/; \
 	rm -r $$t
 
 .include <bsd.port.mk>
