@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.546 2017/11/03 13:36:57 bluhm Exp $
+# $OpenBSD: Makefile,v 1.547 2017/11/03 23:51:50 bentley Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -61,6 +61,7 @@
      SUBDIR += halibut
      SUBDIR += heirloom-doctools
      SUBDIR += hevea
+     SUBDIR += hfst
      SUBDIR += hgrep
      SUBDIR += highlight
      SUBDIR += hs-HaXml
