@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2008/04/19 09:24:50 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2017/11/03 14:18:41 bentley Exp $
 bin/xmlproc_parse
 bin/xmlproc_val
 lib/python${MODPY_VERSION}/site-packages/PyXML-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
@@ -277,10 +277,11 @@ lib/python${MODPY_VERSION}/site-packages/_xmlplus/parsers/xmlproc/xmlutils.pyc
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/parsers/xmlproc/xmlval.py
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/parsers/xmlproc/xmlval.pyc
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/sax/
-lib/python${MODPY_VERSION}/site-packages/_xmlplus/sax/__init__.py
-lib/python${MODPY_VERSION}/site-packages/_xmlplus/sax/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/_xmlplus/sax/_exceptions.py
-lib/python${MODPY_VERSION}/site-packages/_xmlplus/sax/_exceptions.pyc
+@comment sax module has been integrated into the main python distribution
+@comment lib/python${MODPY_VERSION}/site-packages/_xmlplus/sax/__init__.py
+@comment lib/python${MODPY_VERSION}/site-packages/_xmlplus/sax/__init__.pyc
+@comment lib/python${MODPY_VERSION}/site-packages/_xmlplus/sax/_exceptions.py
+@comment lib/python${MODPY_VERSION}/site-packages/_xmlplus/sax/_exceptions.pyc
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/sax/drivers/
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/sax/drivers/__init__.py
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/sax/drivers/__init__.pyc
@@ -325,22 +326,22 @@ lib/python${MODPY_VERSION}/site-packages/_xmlplus/sax/drivers2/drv_sgmlop_html.p
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/sax/drivers2/drv_sgmlop_html.pyc
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/sax/drivers2/drv_xmlproc.py
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/sax/drivers2/drv_xmlproc.pyc
-lib/python${MODPY_VERSION}/site-packages/_xmlplus/sax/expatreader.py
-lib/python${MODPY_VERSION}/site-packages/_xmlplus/sax/expatreader.pyc
-lib/python${MODPY_VERSION}/site-packages/_xmlplus/sax/handler.py
-lib/python${MODPY_VERSION}/site-packages/_xmlplus/sax/handler.pyc
-lib/python${MODPY_VERSION}/site-packages/_xmlplus/sax/sax2exts.py
-lib/python${MODPY_VERSION}/site-packages/_xmlplus/sax/sax2exts.pyc
-lib/python${MODPY_VERSION}/site-packages/_xmlplus/sax/saxexts.py
-lib/python${MODPY_VERSION}/site-packages/_xmlplus/sax/saxexts.pyc
-lib/python${MODPY_VERSION}/site-packages/_xmlplus/sax/saxlib.py
-lib/python${MODPY_VERSION}/site-packages/_xmlplus/sax/saxlib.pyc
-lib/python${MODPY_VERSION}/site-packages/_xmlplus/sax/saxutils.py
-lib/python${MODPY_VERSION}/site-packages/_xmlplus/sax/saxutils.pyc
-lib/python${MODPY_VERSION}/site-packages/_xmlplus/sax/writer.py
-lib/python${MODPY_VERSION}/site-packages/_xmlplus/sax/writer.pyc
-lib/python${MODPY_VERSION}/site-packages/_xmlplus/sax/xmlreader.py
-lib/python${MODPY_VERSION}/site-packages/_xmlplus/sax/xmlreader.pyc
+@comment lib/python${MODPY_VERSION}/site-packages/_xmlplus/sax/expatreader.py
+@comment lib/python${MODPY_VERSION}/site-packages/_xmlplus/sax/expatreader.pyc
+@comment lib/python${MODPY_VERSION}/site-packages/_xmlplus/sax/handler.py
+@comment lib/python${MODPY_VERSION}/site-packages/_xmlplus/sax/handler.pyc
+@comment lib/python${MODPY_VERSION}/site-packages/_xmlplus/sax/sax2exts.py
+@comment lib/python${MODPY_VERSION}/site-packages/_xmlplus/sax/sax2exts.pyc
+@comment lib/python${MODPY_VERSION}/site-packages/_xmlplus/sax/saxexts.py
+@comment lib/python${MODPY_VERSION}/site-packages/_xmlplus/sax/saxexts.pyc
+@comment lib/python${MODPY_VERSION}/site-packages/_xmlplus/sax/saxlib.py
+@comment lib/python${MODPY_VERSION}/site-packages/_xmlplus/sax/saxlib.pyc
+@comment lib/python${MODPY_VERSION}/site-packages/_xmlplus/sax/saxutils.py
+@comment lib/python${MODPY_VERSION}/site-packages/_xmlplus/sax/saxutils.pyc
+@comment lib/python${MODPY_VERSION}/site-packages/_xmlplus/sax/writer.py
+@comment lib/python${MODPY_VERSION}/site-packages/_xmlplus/sax/writer.pyc
+@comment lib/python${MODPY_VERSION}/site-packages/_xmlplus/sax/xmlreader.py
+@comment lib/python${MODPY_VERSION}/site-packages/_xmlplus/sax/xmlreader.pyc
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/schema/
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/schema/__init__.py
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/schema/__init__.pyc
