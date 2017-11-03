@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/02/21 12:24:36 rpointel Exp $
+# $OpenBSD: Makefile,v 1.2 2017/11/03 13:58:45 rpointel Exp $
 
 COMMENT =	library and tools to access the VSSformat
 
-VERSION = 	20161111
+VERSION = 	20170902
 DISTNAME =	libvshadow-alpha-${VERSION}
 PKGNAME =	${DISTNAME:S/-alpha//}
 
-SHARED_LIBS +=  vshadow                       0.0 # 1.0
+SHARED_LIBS +=  vshadow                       0.1 # 1.0
 
 CATEGORIES =	sysutils security
 
