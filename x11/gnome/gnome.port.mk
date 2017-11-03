@@ -1,4 +1,4 @@
-# $OpenBSD: gnome.port.mk,v 1.108 2017/10/30 10:15:10 ajacoutot Exp $
+# $OpenBSD: gnome.port.mk,v 1.109 2017/11/03 13:35:14 ajacoutot Exp $
 #
 # Module for GNOME related ports
 
@@ -160,6 +160,11 @@ _MODGNOME_ldflags ?= LDFLAGS="${MODGNOME_LDFLAGS} -L${LOCALBASE}/lib"
 CONFIGURE_ARGS +=	${MODGNOME_CONFIGURE_ARGS_gi} \
 			${MODGNOME_CONFIGURE_ARGS_vala}
 CONFIGURE_ENV +=	${_MODGNOME_cppflags} ${_MODGNOME_ldflags}
+.   if defined(MODGNOME_TOOLS) && ${MODGNOME_TOOLS:Mgobject-introspection} && \
+       ${CONFIGURE_STYLE:Mmeson}
+# pass LDFLAGS to to g-ir-scanner(1)
+MAKE_ENV +=		${_MODGNOME_ldflags}
+.   endif
 .endif
 
 .if defined(MODGNOME_BUILD_DEPENDS)
