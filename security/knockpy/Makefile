@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2017/04/22 07:36:27 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.3 2017/11/03 21:22:02 rsadowski Exp $
 
 COMMENT =	subdomain scanner
 
-VERSION = 	4.0.0
+MODPY_EGG_VERSION =	4.1
+VERSION = 	4.1.0
 
 DISTNAME =	knockpy-${VERSION}
 
@@ -22,5 +23,10 @@ MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
 
 RUN_DEPENDS =		net/py-dnspython
+
+fix-plist: plist
+	sed -i \
+	's,site-packages/knock$${MODPY_PY_PREFIX},site-packages/knockpy-,' \
+	${PKGDIR}/PLIST
 
 .include <bsd.port.mk>
