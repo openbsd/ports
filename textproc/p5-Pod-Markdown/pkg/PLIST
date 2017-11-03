@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/11/03 13:34:32 bluhm Exp $
+bin/pod2markdown
+${P5SITE}/Pod/
+${P5SITE}/Pod/Markdown.pm
+${P5SITE}/Pod/Perldoc/
+${P5SITE}/Pod/Perldoc/ToMarkdown.pm
+@man man/man1/pod2markdown.1
+@man man/man3p/Pod::Markdown.3p
+@man man/man3p/Pod::Perldoc::ToMarkdown.3p
