@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2016/08/27 19:49:48 jca Exp $
+# $OpenBSD: Makefile,v 1.19 2017/11/03 14:06:57 espie Exp $
 
 COMMENT=		display control panel for X.org SiS driver
 
@@ -26,5 +26,8 @@ NO_TEST=		Yes
 
 CONFIGURE_STYLE=	simple
 CONFIGURE_ENV=		CPPFLAGS="-I${X11BASE}/include"
+
+# make sure to link sisctrl with -lm
+MAKE_FLAGS +=	LIBS=-lm
 
 .include <bsd.port.mk>
