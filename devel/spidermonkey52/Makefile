@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2017/11/02 22:45:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2017/11/03 10:48:42 ajacoutot Exp $
 
 # see patch-js_src_old-configure_in
 USE_WXNEEDED =		Yes
@@ -43,8 +43,7 @@ MODULES =		lang/python
 MODPY_RUNDEP =		No
 
 # C++11
-# XXX GNOME 3.26:
-# sync with x11/gnome/builder x11/gnome/shell x11/gnome/gjs
+# sync with x11/gnome/gjs
 COMPILER =		base-clang ports-clang ports-gcc
 
 USE_GMAKE =		yes
