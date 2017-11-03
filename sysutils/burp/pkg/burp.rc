@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: burp.rc,v 1.1.1.1 2017/11/03 11:31:01 landry Exp $
+# $OpenBSD: burp.rc,v 1.2 2017/11/03 12:18:07 landry Exp $
 
 daemon="${TRUEPREFIX}/sbin/burp"
 daemon_flags="-c ${SYSCONFDIR}/burp/burp-server.conf"
@@ -8,6 +8,7 @@ daemon_flags="-c ${SYSCONFDIR}/burp/burp-server.conf"
 . /etc/rc.d/rc.subr
 
 rc_pre() {
+	chown _burp ${SYSCONFDIR}/burp/ssl_cert_ca.pem
 	install -d -o _burp -g _burp /var/run/burp
 }
 
