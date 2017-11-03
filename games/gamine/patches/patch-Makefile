@@ -1,6 +1,9 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2011/03/07 19:51:50 ajacoutot Exp $
---- Makefile.orig	Wed Jan 26 06:56:49 2011
-+++ Makefile	Wed Jan 26 06:56:56 2011
+$OpenBSD: patch-Makefile,v 1.2 2017/11/03 12:49:10 espie Exp $
+
+- add an explicit -lm for lld
+Index: Makefile
+--- Makefile.orig
++++ Makefile
 @@ -14,8 +14,8 @@ GCONF_SCHEMA_FILE_DIR = $(sysconfdir)/gconf/schemas
  GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL = 0
  CFLAGS = -Wall
@@ -8,7 +11,7 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2011/03/07 19:51:50 ajacoutot Exp $
 -CPPFLAGS = $(shell pkg-config --cflags gtk+-2.0 cairo glib-2.0 gstreamer-0.10 gconf-2.0)  -DDATADIR=\""$(pkgdatadir)"\"  -DLOCALDIR=\""$(localedir)"\"
 -LDLIBS = $(shell pkg-config --libs gtk+-2.0 cairo glib-2.0 gstreamer-0.10 gconf-2.0)  -DDATADIR=\""$(pkgdatadir)"\"  -DLOCALDIR=\""$(localedir)"\"
 +CPPFLAGS = `pkg-config --cflags gtk+-2.0 cairo glib-2.0 gstreamer-0.10 gconf-2.0`  -DDATADIR=\""$(pkgdatadir)"\"  -DLOCALDIR=\""$(localedir)"\"
-+LDLIBS = `pkg-config --libs gtk+-2.0 cairo glib-2.0 gstreamer-0.10 gconf-2.0`  -DDATADIR=\""$(pkgdatadir)"\"  -DLOCALDIR=\""$(localedir)"\"
++LDLIBS = `pkg-config --libs gtk+-2.0 cairo glib-2.0 gstreamer-0.10 gconf-2.0`  -DDATADIR=\""$(pkgdatadir)"\"  -DLOCALDIR=\""$(localedir)"\" -lm
  LDFLAGS = -g 
  CC = gcc
  target = gamine
