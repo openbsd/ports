@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2016/09/01 10:53:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2017/11/03 11:25:44 espie Exp $
 
 COMMENT=	talk to modem devices connected via serial port
 
@@ -12,6 +12,7 @@ MAINTAINER=	Todd T. Fries <todd@openbsd.org>
 
 # Artistic
 PERMIT_PACKAGE_CDROM=	Yes
+CONFIGURE_ENV +=	CC='${CC}'
 
 WANTLIB += c perl
 
