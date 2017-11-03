@@ -1,15 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/10/31 14:57:48 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/11/03 13:08:50 ajacoutot Exp $
 include/libgepub/
 include/libgepub/gepub-archive.h
 include/libgepub/gepub-doc.h
 include/libgepub/gepub-text-chunk.h
 include/libgepub/gepub-widget.h
 include/libgepub/gepub.h
-lib/girepository-1.0/
-lib/girepository-1.0/Gepub-0.4.typelib
-lib/libgepub.a
-lib/libgepub.la
+lib/girepository-1.0/Gepub-0.5.typelib
 @lib lib/libgepub.so.${LIBgepub_VERSION}
 lib/pkgconfig/libgepub.pc
-share/gir-1.0/
-share/gir-1.0/Gepub-0.4.gir
+share/gir-1.0/Gepub-0.5.gir
