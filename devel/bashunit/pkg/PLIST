@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/11/03 15:25:24 rpe Exp $
+bin/bashunit.bash
+share/doc/bashunit/
+share/doc/bashunit/LICENSE
+share/doc/bashunit/README.md
+share/examples/bashunit/
+share/examples/bashunit/test_example

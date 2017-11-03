@@ -1,0 +1,4 @@
+bashunit is a unit testing framework for Bash scripts based on xUnit
+principles.
+
+This is similar to the ShUnit and its successor shUnit2.
