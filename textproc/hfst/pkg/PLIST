@@ -1,0 +1,248 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/11/03 23:51:01 bentley Exp $
+@bin bin/hfst-affix-guessify
+@bin bin/hfst-calculate
+@bin bin/hfst-compare
+@bin bin/hfst-compose
+@bin bin/hfst-compose-intersect
+@bin bin/hfst-concatenate
+@bin bin/hfst-conjunct
+bin/hfst-determinise
+@bin bin/hfst-determinize
+@bin bin/hfst-disjunct
+@bin bin/hfst-edit-metadata
+bin/hfst-expand
+@bin bin/hfst-flookup
+@bin bin/hfst-format
+@bin bin/hfst-fst2fst
+@bin bin/hfst-fst2strings
+@bin bin/hfst-fst2txt
+@bin bin/hfst-grep
+@bin bin/hfst-guess
+@bin bin/hfst-guessify
+@bin bin/hfst-head
+@bin bin/hfst-info
+bin/hfst-intersect
+@bin bin/hfst-invert
+@bin bin/hfst-lexc
+@bin bin/hfst-lookup
+bin/hfst-minimise
+@bin bin/hfst-minimize
+bin/hfst-minus
+@bin bin/hfst-multiply
+@bin bin/hfst-name
+bin/hfst-optimised-lookup
+@bin bin/hfst-optimized-lookup
+@bin bin/hfst-pair-test
+@bin bin/hfst-pmatch
+@bin bin/hfst-pmatch2fst
+bin/hfst-proc
+bin/hfst-proc2
+@bin bin/hfst-project
+@bin bin/hfst-prune-alphabet
+@bin bin/hfst-push-weights
+@bin bin/hfst-regexp2fst
+@bin bin/hfst-remove-epsilons
+@bin bin/hfst-repeat
+@bin bin/hfst-reverse
+@bin bin/hfst-reweight
+bin/hfst-sfstpl2fst
+@bin bin/hfst-split
+@bin bin/hfst-strings2fst
+@bin bin/hfst-substitute
+@bin bin/hfst-subtract
+bin/hfst-summarise
+@bin bin/hfst-summarize
+@bin bin/hfst-tail
+bin/hfst-tokenise
+@bin bin/hfst-tokenize
+@bin bin/hfst-traverse
+@bin bin/hfst-twolc
+@bin bin/hfst-txt2fst
+bin/hfst-union
+@bin bin/hfst-xfst
+include/hfst/
+include/hfst/ComposeIntersectFst.h
+include/hfst/ComposeIntersectLexicon.h
+include/hfst/ComposeIntersectRule.h
+include/hfst/ComposeIntersectRulePair.h
+include/hfst/ConvertTransducerFormat.h
+include/hfst/FomaTransducer.h
+include/hfst/FormatSpecifiers.h
+include/hfst/HarmonizeUnknownAndIdentitySymbols.h
+include/hfst/HfstBasicTransducer.h
+include/hfst/HfstBasicTransition.h
+include/hfst/HfstDataTypes.h
+include/hfst/HfstEpsilonHandler.h
+include/hfst/HfstExceptionDefs.h
+include/hfst/HfstExtractStrings.h
+include/hfst/HfstFlagDiacritics.h
+include/hfst/HfstInputStream.h
+include/hfst/HfstLookupFlagDiacritics.h
+include/hfst/HfstOlTransducer.h
+include/hfst/HfstOutputStream.h
+include/hfst/HfstPrintDot.h
+include/hfst/HfstPrintPCKimmo.h
+include/hfst/HfstStrings2FstTokenizer.h
+include/hfst/HfstSymbolDefs.h
+include/hfst/HfstTokenizer.h
+include/hfst/HfstTransducer.h
+include/hfst/HfstTransition.h
+include/hfst/HfstTransitionGraph.h
+include/hfst/HfstTropicalTransducerTransitionData.h
+include/hfst/HfstXeroxRules.h
+include/hfst/LexcCompiler.h
+include/hfst/LogWeightTransducer.h
+include/hfst/PmatchCompiler.h
+include/hfst/SfstTransducer.h
+include/hfst/TropicalWeightTransducer.h
+include/hfst/XreCompiler.h
+include/hfst/hfst-string-conversions.h
+include/hfst/hfst.h
+include/hfst/hfst_apply_schemas.h
+include/hfst/hfstdll.h
+include/hfst/implementations/
+include/hfst/implementations/ComposeIntersectFst.h
+include/hfst/implementations/ComposeIntersectLexicon.h
+include/hfst/implementations/ComposeIntersectRule.h
+include/hfst/implementations/ComposeIntersectRulePair.h
+include/hfst/implementations/ComposeIntersectUtilities.h
+include/hfst/implementations/ConvertTransducerFormat.h
+include/hfst/implementations/FomaTransducer.h
+include/hfst/implementations/HfstBasicTransducer.h
+include/hfst/implementations/HfstBasicTransition.h
+include/hfst/implementations/HfstOlTransducer.h
+include/hfst/implementations/HfstTransition.h
+include/hfst/implementations/HfstTransitionGraph.h
+include/hfst/implementations/HfstTropicalTransducerTransitionData.h
+include/hfst/implementations/LogWeightTransducer.h
+include/hfst/implementations/SfstTransducer.h
+include/hfst/implementations/TropicalWeightTransducer.h
+include/hfst/implementations/XfsmTransducer.h
+include/hfst/implementations/compose_intersect/
+include/hfst/implementations/compose_intersect/ComposeIntersectFst.h
+include/hfst/implementations/compose_intersect/ComposeIntersectLexicon.h
+include/hfst/implementations/compose_intersect/ComposeIntersectRule.h
+include/hfst/implementations/compose_intersect/ComposeIntersectRulePair.h
+include/hfst/implementations/compose_intersect/ComposeIntersectUtilities.h
+include/hfst/implementations/optimized-lookup/
+include/hfst/implementations/optimized-lookup/convert.h
+include/hfst/implementations/optimized-lookup/pmatch.h
+include/hfst/implementations/optimized-lookup/pmatch_tokenize.h
+include/hfst/implementations/optimized-lookup/transducer.h
+include/hfst/parsers/
+include/hfst/parsers/Alphabet.h
+include/hfst/parsers/CommandLine.h
+include/hfst/parsers/ConflictResolvingLeftArrowRule.h
+include/hfst/parsers/ConflictResolvingRightArrowRule.h
+include/hfst/parsers/ConstContainerIterator.h
+include/hfst/parsers/HfstTwolcDefs.h
+include/hfst/parsers/InputReader.h
+include/hfst/parsers/LeftArrowRule.h
+include/hfst/parsers/LeftArrowRuleContainer.h
+include/hfst/parsers/LeftRestrictionArrowRule.h
+include/hfst/parsers/LexcCompiler.h
+include/hfst/parsers/MatchedConstContainerIterator.h
+include/hfst/parsers/MixedConstContainerIterator.h
+include/hfst/parsers/OtherSymbolTransducer.h
+include/hfst/parsers/PmatchCompiler.h
+include/hfst/parsers/RightArrowRule.h
+include/hfst/parsers/RightArrowRuleContainer.h
+include/hfst/parsers/Rule.h
+include/hfst/parsers/RuleContainer.h
+include/hfst/parsers/RuleSymbolVector.h
+include/hfst/parsers/RuleVariables.h
+include/hfst/parsers/RuleVariablesConstIterator.h
+include/hfst/parsers/SfstAlphabet.h
+include/hfst/parsers/SfstBasic.h
+include/hfst/parsers/SfstCompiler.h
+include/hfst/parsers/SfstUtf8.h
+include/hfst/parsers/TwolCGrammar.h
+include/hfst/parsers/TwolcCompiler.h
+include/hfst/parsers/VariableBlock.h
+include/hfst/parsers/VariableBlockContainer.h
+include/hfst/parsers/VariableContainer.h
+include/hfst/parsers/VariableContainerBase.h
+include/hfst/parsers/VariableDefs.h
+include/hfst/parsers/VariableValueIterator.h
+include/hfst/parsers/VariableValues.h
+include/hfst/parsers/XfstCompiler.h
+include/hfst/parsers/XreCompiler.h
+include/hfst/parsers/grammar_defs.h
+include/hfst/parsers/lexc-utils.h
+include/hfst/parsers/pmatch_utils.h
+include/hfst/parsers/string_manipulation.h
+include/hfst/parsers/xfst-utils.h
+include/hfst/parsers/xfst_help_message.h
+include/hfst/parsers/xre_utils.h
+include/hfst/string-utils.h
+lib/libhfst.a
+lib/libhfst.la
+@lib lib/libhfst.so.${LIBhfst_VERSION}
+lib/pkgconfig/hfst.pc
+@man man/man1/hfst-affix-guessify.1
+@man man/man1/hfst-apertium-proc.1
+@man man/man1/hfst-calculate.1
+@man man/man1/hfst-compare.1
+@man man/man1/hfst-compose-intersect.1
+@man man/man1/hfst-compose.1
+@man man/man1/hfst-concatenate.1
+@man man/man1/hfst-conjunct.1
+@man man/man1/hfst-determinise.1
+@man man/man1/hfst-determinize.1
+@man man/man1/hfst-disjunct.1
+@man man/man1/hfst-edit-metadata.1
+@man man/man1/hfst-expand-equivalences.1
+@man man/man1/hfst-expand.1
+@man man/man1/hfst-format.1
+@man man/man1/hfst-fst2fst.1
+@man man/man1/hfst-fst2strings.1
+@man man/man1/hfst-fst2txt.1
+@man man/man1/hfst-grep.1
+@man man/man1/hfst-guess.1
+@man man/man1/hfst-guessify.1
+@man man/man1/hfst-head.1
+@man man/man1/hfst-info.1
+@man man/man1/hfst-intersect.1
+@man man/man1/hfst-invert.1
+@man man/man1/hfst-lexc.1
+@man man/man1/hfst-lookup.1
+@man man/man1/hfst-minimise.1
+@man man/man1/hfst-minimize.1
+@man man/man1/hfst-minus.1
+@man man/man1/hfst-multiply.1
+@man man/man1/hfst-name.1
+@man man/man1/hfst-optimised-lookup.1
+@man man/man1/hfst-optimized-lookup.1
+@man man/man1/hfst-pair-test.1
+@man man/man1/hfst-pmatch.1
+@man man/man1/hfst-pmatch2fst.1
+@man man/man1/hfst-proc.1
+@man man/man1/hfst-proc2.1
+@man man/man1/hfst-project.1
+@man man/man1/hfst-prune-alphabet.1
+@man man/man1/hfst-push-weights.1
+@man man/man1/hfst-regexp2fst.1
+@man man/man1/hfst-remove-epsilons.1
+@man man/man1/hfst-repeat.1
+@man man/man1/hfst-reverse.1
+@man man/man1/hfst-reweight-tagger.1
+@man man/man1/hfst-reweight.1
+@man man/man1/hfst-sfstpl2fst.1
+@man man/man1/hfst-shuffle.1
+@man man/man1/hfst-split.1
+@man man/man1/hfst-strings2fst.1
+@man man/man1/hfst-substitute.1
+@man man/man1/hfst-subtract.1
+@man man/man1/hfst-summarise.1
+@man man/man1/hfst-summarize.1
+@man man/man1/hfst-tag.1
+@man man/man1/hfst-tail.1
+@man man/man1/hfst-tokenise.1
+@man man/man1/hfst-tokenize.1
+@man man/man1/hfst-traverse.1
+@man man/man1/hfst-twolc.1
+@man man/man1/hfst-txt2fst.1
+@man man/man1/hfst-union.1
+@man man/man1/hfst-xfst.1
+share/aclocal/
+share/aclocal/hfst.m4

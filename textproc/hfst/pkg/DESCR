@@ -1,0 +1,3 @@
+HFST, the Helsinki Finite State Transducer, is a bridging library for multiple
+FST libraries and toolkits and set of tools for processing of finite-state
+automata especially for linguistic systems.
