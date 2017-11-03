@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/02/13 19:38:21 rpointel Exp $
+# $OpenBSD: Makefile,v 1.2 2017/11/03 13:08:03 rpointel Exp $
 
 COMMENT =	library and tools to access the Windows Shortcut File
 
-VERSION = 	20170111
+VERSION = 	20171101
 DISTNAME =	liblnk-alpha-${VERSION}
 PKGNAME =	${DISTNAME:S/-alpha//}
 
-SHARED_LIBS +=  lnk                       0.0 # 1.0
+SHARED_LIBS +=  lnk                       0.1 # 1.0
 
 CATEGORIES =	sysutils security
 
