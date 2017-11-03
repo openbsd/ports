@@ -1,4 +1,4 @@
-$OpenBSD: patch-makefile,v 1.1.1.1 2017/10/23 21:46:58 bcallah Exp $
+$OpenBSD: patch-makefile,v 1.2 2017/11/03 15:33:04 bcallah Exp $
 
 Remove -Werror* and add these -fno-* CFLAGS here.
 Keep tendrils here to make generating future bootstraps easier.
@@ -6,7 +6,17 @@ Keep tendrils here to make generating future bootstraps easier.
 Index: makefile
 --- makefile.orig
 +++ makefile
-@@ -393,7 +393,8 @@ endif
+@@ -295,9 +295,7 @@ endif
+ # ENABLE_PIC for non-x86 Linux etc. (for every system where we need separate
+ # -fPIC versions of FB libs besides the normal ones)
+ ifneq ($(filter freebsd linux netbsd openbsd solaris,$(TARGET_OS)),)
+-  ifneq ($(TARGET_ARCH),x86)
+     ENABLE_PIC := YesPlease
+-  endif
+ endif
+ 
+ ifneq ($(filter cygwin dos win32,$(TARGET_OS)),)
+@@ -393,7 +391,8 @@ endif
  
  ALLFBCFLAGS += -e -m fbc -w pedantic
  ALLFBLFLAGS += -e -m fbc -w pedantic
@@ -16,7 +26,7 @@ Index: makefile
  
  ifeq ($(TARGET_OS),xbox)
    ifeq ($(OPENXDK),)
-@@ -1050,32 +1051,16 @@ FBBOOTSTRAPTITLE := $(FBSOURCETITLE)-bootstrap
+@@ -1050,32 +1049,16 @@ FBBOOTSTRAPTITLE := $(FBSOURCETITLE)-bootstrap
  bootstrap-dist:
  	# Precompile fbc sources for various targets
  	rm -rf bootstrap
@@ -55,7 +65,19 @@ Index: makefile
  #
  # Build the fbc[.exe] binary from the precompiled sources in the bootstrap/
  # directory.
-@@ -1098,6 +1083,7 @@ else
+@@ -1086,22 +1069,16 @@ bootstrap: rtlib gfxlib2 $(BOOTSTRAP_FBC)
+ 	mkdir -p bin
+ 	cp $(BOOTSTRAP_FBC) $(FBC_EXE)
+ 
+-ifeq ($(TARGET_ARCH),x86)
+-  # x86: .asm => .o (using the same assembler options as fbc)
+-  BOOTSTRAP_OBJ = $(patsubst %.asm,%.o,$(sort $(wildcard bootstrap/$(FBTARGET)/*.asm)))
+-  $(BOOTSTRAP_OBJ): %.o: %.asm
+-	$(QUIET_AS)$(AS) --strip-local-absolute $< -o $@
+-else
+   # x86_64 etc.: .c => .o (using the same gcc options as fbc -gen gcc)
+   BOOTSTRAP_CFLAGS := -nostdinc
+   BOOTSTRAP_CFLAGS += -Wall -Wno-unused-label -Wno-unused-function -Wno-unused-variable
    BOOTSTRAP_CFLAGS += -Wno-unused-but-set-variable -Wno-main
    BOOTSTRAP_CFLAGS += -fno-strict-aliasing -frounding-math
    BOOTSTRAP_CFLAGS += -Wfatal-errors
@@ -63,3 +85,7 @@ Index: makefile
    BOOTSTRAP_OBJ := $(patsubst %.c,%.o,$(sort $(wildcard bootstrap/$(FBTARGET)/*.c)))
    $(BOOTSTRAP_OBJ): %.o: %.c
  	$(QUIET_CC)$(CC) -c $(BOOTSTRAP_CFLAGS) $< -o $@
+-endif
+ 
+ # Use gcc to link fbc from the bootstrap .o's
+ # (assuming the rtlib was built already)
