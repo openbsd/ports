@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.457 2017/11/02 10:07:13 rpointel Exp $
+# $OpenBSD: Makefile,v 1.458 2017/11/03 11:31:44 landry Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -27,6 +27,7 @@
      SUBDIR += borgbackup
      SUBDIR += borgmatic
      SUBDIR += bubblemon-dockapp
+     SUBDIR += burp
      SUBDIR += cdrtools
      SUBDIR += cfengine
      SUBDIR += checkbashisms
