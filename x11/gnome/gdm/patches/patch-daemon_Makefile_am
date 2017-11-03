@@ -1,4 +1,4 @@
-$OpenBSD: patch-daemon_Makefile_am,v 1.1 2015/10/18 13:25:54 ajacoutot Exp $
+$OpenBSD: patch-daemon_Makefile_am,v 1.2 2017/11/03 15:20:52 ajacoutot Exp $
 
 REVERT - OpenBSD does not have a systemd implementation (we need ConsoleKit)
 From 1ac67f522f5690c27023d98096ca817f12f7eb88 Mon Sep 17 00:00:00 2001
@@ -6,9 +6,10 @@ From: Ray Strode <rstrode@redhat.com>
 Date: Fri, 12 Jun 2015 13:28:01 -0400
 Subject: drop consolekit support
 
---- daemon/Makefile.am.orig	Sun Oct 18 14:19:26 2015
-+++ daemon/Makefile.am	Sun Oct 18 14:24:34 2015
-@@ -20,6 +20,7 @@ AM_CPPFLAGS = \
+Index: daemon/Makefile.am
+--- daemon/Makefile.am.orig
++++ daemon/Makefile.am
+@@ -21,6 +21,7 @@ AM_CPPFLAGS = \
  	-DGDM_SCREENSHOT_DIR=\"$(GDM_SCREENSHOT_DIR)\"		\
  	-DGDM_CACHE_DIR=\""$(localstatedir)/cache/gdm"\"	\
  	-DGDM_SESSION_DEFAULT_PATH=\"$(GDM_SESSION_DEFAULT_PATH)\" \
@@ -16,7 +17,7 @@ Subject: drop consolekit support
  	$(DISABLE_DEPRECATED_CFLAGS)			\
  	$(DAEMON_CFLAGS)				\
  	$(XLIB_CFLAGS)					\
-@@ -264,6 +265,11 @@ EXTRA_gdm_SOURCES = 	\
+@@ -267,6 +268,11 @@ EXTRA_gdm_SOURCES = 	\
  	$(XDMCP_SOURCES)	\
  	$(NULL)
  
@@ -28,7 +29,7 @@ Subject: drop consolekit support
  gdm_LDADD = \
  	$(top_builddir)/common/libgdmcommon.la	\
  	$(XLIB_LIBS)				\
-@@ -274,6 +280,10 @@ gdm_LDADD = \
+@@ -277,6 +283,10 @@ gdm_LDADD = \
  	$(JOURNALD_LIBS)				\
  	$(EXTRA_DAEMON_LIBS)			\
  	$(NULL)

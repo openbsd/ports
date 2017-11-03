@@ -1,4 +1,4 @@
-$OpenBSD: patch-daemon_gdm-manager_c,v 1.15 2017/09/14 13:45:22 ajacoutot Exp $
+$OpenBSD: patch-daemon_gdm-manager_c,v 1.16 2017/11/03 15:20:52 ajacoutot Exp $
 
 REVERT - OpenBSD does not have a systemd implementation (we need ConsoleKit)
 From 21905303afbd508f3bf599ad219c9209413c53a2 Mon Sep 17 00:00:00 2001
@@ -643,7 +643,7 @@ Index: daemon/gdm-manager.c
  
                  if (error != NULL) {
                          g_debug ("GdmManager: Error while retrieving remoteness for session: %s",
-@@ -956,7 +1364,8 @@ on_reauthentication_client_rejected (GdmSession       
+@@ -961,7 +1369,8 @@ on_reauthentication_client_rejected (GdmSession       
                   * same audit session, ignore it since it doesn't "own" the
                   * reauthentication session
                   */
@@ -653,7 +653,7 @@ Index: daemon/gdm-manager.c
                                                              NULL);
                  session_id = g_object_get_data (G_OBJECT (session), "caller-session-id");
  
-@@ -1168,16 +1577,20 @@ static gboolean
+@@ -1173,16 +1582,20 @@ static gboolean
  display_is_on_seat0 (GdmDisplay *display)
  {
          gboolean is_on_seat0 = TRUE;
@@ -680,7 +680,7 @@ Index: daemon/gdm-manager.c
          return is_on_seat0;
  }
  
-@@ -1315,133 +1728,6 @@ maybe_start_pending_initial_login (GdmManager *manager
+@@ -1320,133 +1733,6 @@ maybe_start_pending_initial_login (GdmManager *manager
          g_free (user_session_seat_id);
  }
  
@@ -814,7 +814,7 @@ Index: daemon/gdm-manager.c
  static const char *
  get_username_for_greeter_display (GdmManager *manager,
                                    GdmDisplay *display)
-@@ -1687,7 +1973,6 @@ on_display_status_changed (GdmDisplay *display,
+@@ -1692,7 +1978,6 @@ on_display_status_changed (GdmDisplay *display,
                                  manager->priv->ran_once = TRUE;
                          }
                          maybe_start_pending_initial_login (manager, display);
@@ -822,7 +822,7 @@ Index: daemon/gdm-manager.c
                          break;
                  default:
                          break;
-@@ -2017,11 +2302,57 @@ on_user_session_died (GdmSession *session,
+@@ -2027,11 +2312,57 @@ on_user_session_died (GdmSession *session,
  }
  
  static char *
@@ -882,7 +882,7 @@ Index: daemon/gdm-manager.c
  }
  
  static void
-@@ -2030,26 +2361,6 @@ on_session_reauthenticated (GdmSession *session,
+@@ -2040,25 +2371,6 @@ on_session_reauthenticated (GdmSession *session,
                              GdmManager *manager)
  {
          gboolean fail_if_already_switched = FALSE;
@@ -902,10 +902,9 @@ Index: daemon/gdm-manager.c
 -                                gdm_display_unmanage (display);
 -                                gdm_display_finish (display);
 -                        }
+-                        g_free (session_id);
 -                }
--                g_free (session_id);
 -        }
--
+ 
          /* There should already be a session running, so jump to its
           * VT. In the event we're already on the right VT, (i.e. user
-          * used an unlock screen instead of a user switched login screen),

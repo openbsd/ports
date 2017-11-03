@@ -1,12 +1,13 @@
-$OpenBSD: patch-daemon_gdm-display_c,v 1.2 2017/03/03 13:01:26 ajacoutot Exp $
+$OpenBSD: patch-daemon_gdm-display_c,v 1.3 2017/11/03 15:20:52 ajacoutot Exp $
 
 XXX fix+push upstream
 
---- daemon/gdm-display.c.orig	Wed Mar  1 21:58:01 2017
-+++ daemon/gdm-display.c	Fri Mar  3 11:52:19 2017
+Index: daemon/gdm-display.c
+--- daemon/gdm-display.c.orig
++++ daemon/gdm-display.c
 @@ -49,7 +49,7 @@
+ #include "gdm-launch-environment.h"
  #include "gdm-dbus-util.h"
- #include "gdm-xerrors.h"
  
 -#define INITIAL_SETUP_USERNAME "gnome-initial-setup"
 +#define INITIAL_SETUP_USERNAME "_gnome-initial-setup"
@@ -24,3 +25,12 @@ XXX fix+push upstream
  }
  
  gboolean
+@@ -1460,8 +1460,6 @@ can_create_environment (const char *session_id)
+ static gboolean
+ already_done_initial_setup_on_this_boot (void)
+ {
+-        GError *error = NULL;
+-
+         if (g_file_test (ALREADY_RAN_INITIAL_SETUP_ON_THIS_BOOT, G_FILE_TEST_EXISTS))
+                 return TRUE;
+ 

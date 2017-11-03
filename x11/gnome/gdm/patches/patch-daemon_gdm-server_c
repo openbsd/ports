@@ -1,4 +1,4 @@
-$OpenBSD: patch-daemon_gdm-server_c,v 1.8 2016/04/15 14:11:09 ajacoutot Exp $
+$OpenBSD: patch-daemon_gdm-server_c,v 1.9 2017/11/03 15:20:52 ajacoutot Exp $
 
 REVERT - OpenBSD lacks sigwaitinfo(2)
 From 956d7d1c7a0cfbf2beacdb9e88e645e15ad32047 Mon Sep 17 00:00:00 2001
@@ -18,8 +18,9 @@ From: Ray Strode <rstrode@redhat.com>
 Date: Fri, 12 Jun 2015 13:48:52 -0400
 Subject: require logind support
 
---- daemon/gdm-server.c.orig	Thu Apr 14 07:29:22 2016
-+++ daemon/gdm-server.c	Fri Apr 15 15:05:26 2016
+Index: daemon/gdm-server.c
+--- daemon/gdm-server.c.orig
++++ daemon/gdm-server.c
 @@ -43,7 +43,9 @@
  #include <linux/vt.h>
  #endif
@@ -30,7 +31,7 @@ Subject: require logind support
  
  #ifdef ENABLE_SYSTEMD_JOURNAL
  #include <systemd/sd-journal.h>
-@@ -92,6 +94,7 @@ struct GdmServerPrivate
+@@ -84,6 +86,7 @@ struct GdmServerPrivate
          char    *auth_file;
  
          guint    child_watch_id;
@@ -38,7 +39,7 @@ Subject: require logind support
  
          gboolean is_initial;
  };
-@@ -122,90 +125,76 @@ static void     gdm_server_finalize     (GObject      
+@@ -114,90 +117,76 @@ static void     gdm_server_finalize     (GObject      
  
  G_DEFINE_TYPE (GdmServer, gdm_server, G_TYPE_OBJECT)
  
@@ -181,7 +182,7 @@ Subject: require logind support
  }
  
  static void
-@@ -226,8 +215,10 @@ gdm_server_init_command (GdmServer *server)
+@@ -218,8 +207,10 @@ gdm_server_init_command (GdmServer *server)
                  debug_options = "";
          }
  
@@ -193,7 +194,7 @@ Subject: require logind support
          /* This is a temporary hack to work around the fact that XOrg
           * currently lacks support for multi-seat hotplugging for
           * display devices. This bit should be removed as soon as XOrg
-@@ -242,6 +233,10 @@ gdm_server_init_command (GdmServer *server)
+@@ -234,6 +225,10 @@ gdm_server_init_command (GdmServer *server)
           * wasn't booted using systemd, or b) the wrapper tool is
           * missing, or c) we are running for the main seat 'seat0'. */
  
@@ -204,7 +205,7 @@ Subject: require logind support
  #ifdef ENABLE_SYSTEMD_JOURNAL
          /* For systemd, we don't have a log file but instead log to stdout,
             so set it to the xserver's built-in default verbosity */
-@@ -264,8 +259,9 @@ gdm_server_init_command (GdmServer *server)
+@@ -256,8 +251,9 @@ gdm_server_init_command (GdmServer *server)
          return;
  
  fallback:
@@ -215,7 +216,7 @@ Subject: require logind support
  }
  
  static gboolean
-@@ -315,10 +311,12 @@ gdm_server_resolve_command_line (GdmServer  *server,
+@@ -307,10 +303,12 @@ gdm_server_resolve_command_line (GdmServer  *server,
                  argv[len++] = g_strdup (server->priv->auth_file);
          }
  
@@ -229,7 +230,7 @@ Subject: require logind support
  
          /* If we were compiled with Xserver >= 1.17 we need to specify
           * '-listen tcp' as the X server dosen't listen on tcp sockets
-@@ -663,12 +661,6 @@ server_child_watch (GPid       pid,
+@@ -655,12 +653,6 @@ server_child_watch (GPid       pid,
          g_object_unref (server);
  }
  
@@ -242,7 +243,7 @@ Subject: require logind support
  static gboolean
  gdm_server_spawn (GdmServer    *server,
                    const char   *vtarg,
-@@ -706,15 +698,6 @@ gdm_server_spawn (GdmServer    *server,
+@@ -698,15 +690,6 @@ gdm_server_spawn (GdmServer    *server,
          g_debug ("GdmServer: Starting X server process: %s", freeme);
          g_free (freeme);
  
@@ -258,7 +259,7 @@ Subject: require logind support
          if (!g_spawn_async_with_pipes (NULL,
                                         argv,
                                         (char **)env->pdata,
-@@ -1050,11 +1033,16 @@ gdm_server_class_init (GdmServerClass *klass)
+@@ -1042,11 +1025,16 @@ gdm_server_class_init (GdmServerClass *klass)
  static void
  gdm_server_init (GdmServer *server)
  {
@@ -275,7 +276,7 @@ Subject: require logind support
  }
  
  static void
-@@ -1068,6 +1056,9 @@ gdm_server_finalize (GObject *object)
+@@ -1060,6 +1048,9 @@ gdm_server_finalize (GObject *object)
          server = GDM_SERVER (object);
  
          g_return_if_fail (server->priv != NULL);

@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.262 2017/10/23 17:11:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.263 2017/11/03 15:20:52 ajacoutot Exp $
 
 COMMENT=		GNOME display manager
 
 GNOME_PROJECT=		gdm
-GNOME_VERSION=		3.24.3
-REVISION=		0
+GNOME_VERSION=		3.26.2.1
 
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX} puflogh1000X248.gif:0
 EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
@@ -15,15 +14,15 @@ SHARED_LIBS +=  gdm                  0.0      # 1.0
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
-WANTLIB += Xfixes Xi Xinerama Xrandr Xrender accountsservice atk-1.0
+WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
+WANTLIB += Xi Xinerama Xrandr Xrender Xtst accountsservice atk-1.0
 WANTLIB += atk-bridge-2.0 atspi c cairo cairo-gobject canberra
 WANTLIB += canberra-gtk3 dbus-1 epoxy expat ffi fontconfig freetype
 WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += graphite2 gthread-2.0 gtk-3 harfbuzz iconv intl ltdl
 WANTLIB += m ogg pam pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
-WANTLIB += pixman-1 png pthread util vorbis vorbisfile
-WANTLIB += xcb xcb-render xcb-shm z
+WANTLIB += pixman-1 png pthread util vorbis vorbisfile xcb xcb-render
+WANTLIB += xcb-shm z
 
 MODULES=		x11/gnome \
 			devel/dconf
@@ -93,10 +92,10 @@ pre-configure:
 	sed -i -e 's,/usr/local,${LOCALBASE},g' \
 		-e 's,/bin/bash,/bin/ksh,g' \
 		${WRKSRC}/daemon/gdm-session-worker.c
-	cd ${WRKSRC} && \
+	cd ${WRKSRC} && env -i \
 		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-		autoreconf -i
+		autoreconf -fi
 
 post-install:
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/puflogh1000X248.gif \
