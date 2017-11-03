@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.170 2017/11/03 10:35:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.171 2017/11/03 10:53:39 sthen Exp $
 
 COMMENT=		image processing tools
 
 VER=			6.9.9
 DASHVER=		21
+REVISION=		0
 DISTNAME=		ImageMagick-${VER}-${DASHVER}
 PKGNAME=		ImageMagick-${VER}.${DASHVER}
 PORTROACH=		site:https://www.imagemagick.org/download/ limit:6.*
@@ -25,6 +26,9 @@ MASTER_SITES=		https://www.imagemagick.org/download/releases/ \
 # http://www.imagemagick.org/script/license.php
 PERMIT_PACKAGE_CDROM=	Yes
 
+WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 Xau Xdmcp Xext Xt bz2
+WANTLIB += c djvulibre expat fftw3 fontconfig freetype iconv jbig
+WANTLIB += jpeg lcms2 lzma m openjp2 perl png tiff xcb xml2 z
 
 LIB_DEPENDS =		archivers/bzip2 \
 			archivers/xz \
