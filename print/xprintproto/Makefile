@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2016/05/07 12:40:58 pascal Exp $
+# $OpenBSD: Makefile,v 1.5 2017/11/03 23:00:37 bentley Exp $
 
 COMMENT =		X11 printing headers
 
@@ -14,7 +14,7 @@ MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		ftp://ftp.cs.cuhk.edu.hk/pub/X11/individual/proto/
+MASTER_SITES =		https://www.x.org/releases/individual/proto/
 EXTRACT_SUFX =		.tar.bz2
 
 CONFIGURE_STYLE =	gnu
