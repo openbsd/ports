@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2017/11/03 13:47:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.61 2017/11/03 14:12:03 ajacoutot Exp $
 
 USE_WXNEEDED=		Yes
 
@@ -29,8 +29,9 @@ WANTLIB += iconv intl icudata icui18n icuuc Xtst mozjs-52
 
 MODULES=		x11/gnome
 
-# sync with devel/spidermonkey52
-COMPILER =		base-clang ports-clang ports-gcc
+# sync with devel/spidermonkey52 and SHARED_LIBS consumers:
+# x11/gnome/documents x11/gnome/shell x11/gnome/sushi
+COMPILER=		base-clang ports-clang ports-gcc
 
 MODPY_RUNDEP=		No
 MODPY_BUILDDEP= 	No
