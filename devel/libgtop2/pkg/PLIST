@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.31 2017/04/17 09:23:55 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.32 2017/11/03 11:22:11 jasper Exp $
 @bin bin/libgtop_daemon2
 @mode 2555
 @group kmem
@@ -25,6 +25,7 @@ include/libgtop-2.0/glibtop/parameter.h
 include/libgtop-2.0/glibtop/ppp.h
 include/libgtop-2.0/glibtop/procaffinity.h
 include/libgtop-2.0/glibtop/procargs.h
+include/libgtop-2.0/glibtop/procio.h
 include/libgtop-2.0/glibtop/prockernel.h
 include/libgtop-2.0/glibtop/proclist.h
 include/libgtop-2.0/glibtop/procmap.h

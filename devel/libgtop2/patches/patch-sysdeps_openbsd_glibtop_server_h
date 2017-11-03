@@ -1,0 +1,13 @@
+$OpenBSD: patch-sysdeps_openbsd_glibtop_server_h,v 1.4 2017/11/03 11:22:11 jasper Exp $
+
+Index: sysdeps/openbsd/glibtop_server.h
+--- sysdeps/openbsd/glibtop_server.h.orig
++++ sysdeps/openbsd/glibtop_server.h
+@@ -47,6 +47,7 @@ G_BEGIN_DECLS
+ #define GLIBTOP_SUID_NETLIST		0
+ #define GLIBTOP_SUID_PROC_WD		0
+ #define GLIBTOP_SUID_PROC_AFFINITY	0
++#define	GLIBTOP_SUID_PROC_IO		(1 << GLIBTOP_SYSDEPS_PROC_IO)	
+ 
+ G_END_DECLS
+ 

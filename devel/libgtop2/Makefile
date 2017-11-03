@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.137 2017/04/17 09:23:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.138 2017/11/03 11:22:11 jasper Exp $
 
 COMMENT=		portable library for obtaining system information
 
-GNOME_VERSION=		2.36.0
+GNOME_VERSION=		2.38.0
 GNOME_PROJECT=		libgtop
 PKGNAME=		libgtop2-${VERSION}
 
@@ -34,5 +34,8 @@ CPPFLAGS+=		-DDEBUG \
 			-DLIBGTOP_ENABLE_DEBUG \
 			-DLIBGTOP_FATAL_WARNINGS
 .endif
+
+post-extract:
+	cp ${FILESDIR}/procio.c ${WRKSRC}/sysdeps/openbsd/
 
 .include <bsd.port.mk>
