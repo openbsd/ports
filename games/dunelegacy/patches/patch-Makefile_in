@@ -1,0 +1,22 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2017/11/03 17:24:49 kirby Exp $
+
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -869,12 +869,12 @@ uninstall-am: uninstall-datafilesDATA uninstall-local
+ install-data-local:
+ 	@$(NORMAL_INSTALL)
+ 	$(MKDIR_P) $(DESTDIR)$(dunelegacydatadir)/locale
+-	$(INSTALL_DATA) data/locale/*.pot $(DESTDIR)$(dunelegacydatadir)/locale/
+-	$(INSTALL_DATA) data/locale/*.po $(DESTDIR)$(dunelegacydatadir)/locale/
++	$(INSTALL_DATA) $(srcdir)/data/locale/*.pot $(DESTDIR)$(dunelegacydatadir)/locale/
++	$(INSTALL_DATA) $(srcdir)/data/locale/*.po $(DESTDIR)$(dunelegacydatadir)/locale/
+ 	$(MKDIR_P) $(DESTDIR)$(dunelegacydatadir)/maps/singleplayer
+-	$(INSTALL_DATA) data/maps/singleplayer/*.ini $(DESTDIR)$(dunelegacydatadir)/maps/singleplayer/
++	$(INSTALL_DATA) $(srcdir)/data/maps/singleplayer/*.ini $(DESTDIR)$(dunelegacydatadir)/maps/singleplayer/
+ 	$(MKDIR_P) $(DESTDIR)$(dunelegacydatadir)/maps/multiplayer
+-	$(INSTALL_DATA) data/maps/multiplayer/*.ini $(DESTDIR)$(dunelegacydatadir)/maps/multiplayer/
++	$(INSTALL_DATA) $(srcdir)/data/maps/multiplayer/*.ini $(DESTDIR)$(dunelegacydatadir)/maps/multiplayer/
+ 
+ uninstall-local:
+ 	@$(NORMAL_UNINSTALL)

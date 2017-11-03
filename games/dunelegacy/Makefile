@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2017/10/30 20:45:45 kirby Exp $
+# $OpenBSD: Makefile,v 1.8 2017/11/03 17:24:49 kirby Exp $
 
 COMMENT =		improved opensource version of Dune 2
 
@@ -36,6 +36,8 @@ CXXFLAGS += -std=c++11
 .endif
 
 MAKE_FLAGS +=		CXXFLAGS="${CXXFLAGS} -DXTHREADS"
+
+SEPARATE_BUILD = 	Yes
 
 CONFIGURE_STYLE =	gnu
 
