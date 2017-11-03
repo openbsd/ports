@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_perl-mmagic-xs_c,v 1.1 2017/11/03 18:38:55 bluhm Exp $
+
+https://rt.cpan.org/Public/Bug/Display.html?id=123503
+https://github.com/lestrrat/File-MMagic-XS/pull/6
+
+Index: src/perl-mmagic-xs.c
+--- src/perl-mmagic-xs.c.orig
++++ src/perl-mmagic-xs.c
+@@ -1616,10 +1616,10 @@ PerlFMM_bufmagic(PerlFMM *self, SV *buf)
+ 
+     /* rt #28040, allow RV to SVs to be passed here */
+     if (SvROK(buf) && SvTYPE(SvRV(buf)) == SVt_PV) {
+-        buffer = (unsigned char *) SvPV_nolen( SvRV( buf ) );
+-    } else {
+-        buffer = (unsigned char *) SvPV_nolen(buf);
++        buf = SvRV(buf);
+     }
++    SvGROW(buf, HOWMANY + 1);
++    buffer = (unsigned char *) SvPV_nolen(buf);
+ 
+     FMM_SET_ERROR(self, NULL);
+ 
