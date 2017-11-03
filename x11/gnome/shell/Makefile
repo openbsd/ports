@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.150 2017/10/23 17:11:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.151 2017/11/03 10:47:58 ajacoutot Exp $
 
 USE_WXNEEDED=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		next generation GNOME shell
 
 GNOME_PROJECT=		gnome-shell
 GNOME_VERSION=		3.24.3
-REVISION=		2
+REVISION=		3
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -40,11 +40,10 @@ MODULES=		devel/dconf \
 			lang/python \
 			x11/gnome
 
-# sync with devel/spidermonkey38
-COMPILER =		gcc
-COMPILER_LANGS =	c
+# sync with x11/gnome/gjs
+COMPILER=		base-clang ports-clang ports-gcc
 
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
+MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 MODGNOME_TOOLS +=	desktop-file-utils docbook gobject-introspection
 

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.46 2017/10/23 17:11:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.47 2017/11/03 10:47:58 ajacoutot Exp $
 
 COMMENT=	quick previewer for Nautilus
 
 GNOME_PROJECT=	sushi
 GNOME_VERSION=	3.24.0
-REVISION=	2
+REVISION=	3
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -31,6 +31,9 @@ WANTLIB += GLESv2 gstallocators-1.0 gstbadallocators-1.0 gstgl-1.0
 WANTLIB += tasn1
 
 MODULES=	x11/gnome
+
+# sync with x11/gnome/gjs
+COMPILER=	base-clang ports-clang ports-gcc
 
 LIB_DEPENDS=	audio/libmusicbrainz5 \
 		graphics/clutter/clutter-gst \

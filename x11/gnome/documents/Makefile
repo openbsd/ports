@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.85 2017/11/01 15:16:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.86 2017/11/03 10:47:58 ajacoutot Exp $
 
 BROKEN=			needs an update to work with tracker >=2.0
 
@@ -41,6 +41,9 @@ MODULES=		devel/dconf \
 
 MODGNOME_TOOLS +=	desktop-file-utils gobject-introspection docbook
 MODGNOME_TOOLS += 	gtk-update-icon-cache yelp
+
+# sync with x11/gnome/gjs
+COMPILER=		base-clang ports-clang ports-gcc
 
 # GData-0.0.gir, Gepub-0.4.gir Zpj-0.0.gir
 BUILD_DEPENDS +=	devel/libgdata \
