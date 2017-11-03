@@ -1,0 +1,42 @@
+$OpenBSD: patch-configs_server_timer_script,v 1.1.1.1 2017/11/03 11:31:01 landry Exp $
+
+https://github.com/grke/burp/issues/627
+
+Index: configs/server/timer_script
+--- configs/server/timer_script.orig
++++ configs/server/timer_script
+@@ -77,29 +77,12 @@ get_intervals()
+ 
+ 	read junk ts < "$timestamp"
+ 
+-	if   ! secs=$(LANG=C LC_TIME=C date +%s -d "$ts") \
+-	  || ! now=$(LANG=C LC_TIME=C date +"%Y-%m-%d %H:%M:%S") \
+-	  || ! nowsecs=$(LANG=C LC_TIME=C date +%s -d "$now")
+-	then
+-		echo "$0: Date command returned error for $client."
+-		return 0
+-	fi
+-
++	mts=$(echo $ts | sed -e 's/-//g; s/ //; s/://; s/:/./')
++	secs=$(LANG=C LC_TIME=C date -j "$mts" +%s)
++	now=$(LANG=C LC_TIME=C date +"%Y-%m-%d %H:%M:%S")
++	nowsecs=$(LANG=C LC_TIME=C date +%s)
+ 	min_timesecs=$((secs+intervalsecs))
+-
+-	# GNU coreutils 'date' command should accept the following (even
+-	# slightly old versions).
+-	if ! min_time=$(LANG=C LC_TIME=C date -d "Jan 1, 1970 00:00:00 +0000 + $min_timesecs seconds" +"%Y-%m-%d %H:%M:%S")
+-	then
+-		# FreeBSD 'date' will return an error with the above, so try
+-		# a version that FreeBSD 'date' should be happy with.
+-		if ! min_time=$(LANG=C LC_TIME=C date -r $min_timesecs +"%Y-%m-%d %H:%M:%S")
+-		then
+-			echo "$0: Date command returned error for $client."
+-			return 0
+-		fi
+-	fi
+-
++	min_time=$(LANG=C LC_TIME=C date -r $min_timesecs +"%Y-%m-%d %H:%M:%S")
+ 	echo "Last backup: $ts"
+ 	echo "Next after : $min_time (interval $interval)"
+ 

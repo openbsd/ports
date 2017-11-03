@@ -1,0 +1,26 @@
+$OpenBSD: patch-configs_server_burp_conf_in,v 1.1.1.1 2017/11/03 11:31:01 landry Exp $
+
+Index: configs/server/burp.conf.in
+--- configs/server/burp.conf.in.orig
++++ configs/server/burp.conf.in
+@@ -22,7 +22,7 @@ clientconfdir = @sysconfdir@/clientconfdir
+ # Like many other settings, this can be set per client in the clientconfdir
+ # files.
+ # protocol = 0
+-pidfile = @runstatedir@/burp.server.pid
++pidfile = @runstatedir@/burp/server.pid
+ hardlinked_archive = 0
+ working_dir_recovery_method = delete
+ max_children = 5
+@@ -68,8 +68,9 @@ keep = 7
+ # keep = 6
+ 
+ # Run as different user/group.
+-# user=graham
+-# group=nogroup
++user=_burp
++group=_burp
++dedup_group=_burp
+ 
+ # CA options.
+ # If you want your server to be a certificate authority and generate its own

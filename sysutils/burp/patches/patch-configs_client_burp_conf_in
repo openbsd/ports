@@ -1,0 +1,14 @@
+$OpenBSD: patch-configs_client_burp_conf_in,v 1.1.1.1 2017/11/03 11:31:01 landry Exp $
+
+Index: configs/client/burp.conf.in
+--- configs/client/burp.conf.in.orig
++++ configs/client/burp.conf.in
+@@ -11,7 +11,7 @@ cname = testclient
+ # with a pseudo mirrored storage on the server and optional rsync). 2 forces
+ # protocol2 mode (inline deduplication with variable length blocks).
+ # protocol = 0
+-pidfile = @runstatedir@/burp.client.pid
++pidfile = @runstatedir@/burp/client.pid
+ syslog = 0
+ stdout = 1
+ progress_counter = 1

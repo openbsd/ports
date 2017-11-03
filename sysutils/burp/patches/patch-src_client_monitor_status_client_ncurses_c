@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_client_monitor_status_client_ncurses_c,v 1.1.1.1 2017/11/03 11:31:01 landry Exp $
+
+https://github.com/grke/burp/issues/626
+
+Index: src/client/monitor/status_client_ncurses.c
+--- src/client/monitor/status_client_ncurses.c.orig
++++ src/client/monitor/status_client_ncurses.c
+@@ -1453,14 +1453,7 @@ static pid_t fork_monitor(int *csin, int *csout, struc
+ 	char procpath[32];
+ 	char buf[PATH_MAX];
+ 
+-	snprintf(procpath, sizeof(procpath), "/proc/%d/exe", getpid());
+-	if(!readlink_w(procpath, buf, sizeof(buf)))
+-		args[a++]=(char *)buf;
+-	else if(is_reg_lstat(prog_long)>0)
+-		args[a++]=(char *)prog_long;
+-	else
+-		args[a++]=(char *)"/usr/sbin/burp";
+-
++	args[a++]=(char *)"${TRUEPREFIX}/sbin/burp";
+ 	args[a++]=(char *)"-c";
+ 	args[a++]=get_string(confs[OPT_CONFFILE]);
+ 	args[a++]=(char *)"-a";
