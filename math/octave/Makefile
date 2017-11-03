@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.97 2017/10/30 13:55:10 landry Exp $
+# $OpenBSD: Makefile,v 1.98 2017/11/03 12:28:53 steven Exp $
 
 COMMENT =	high-level language for numerical computations
 
-VERSION =	4.0.2
+VERSION =	4.2.1
 DISTNAME =	octave-${VERSION}
-REVISION =	6
 CATEGORIES =	math
 
-SHARED_LIBS +=	octave		7.0 # 3.0
-SHARED_LIBS +=	octgui		1.0 # 1.0
-SHARED_LIBS +=	octinterp	6.0 # 3.0
+SHARED_LIBS +=	octave		8.0
+SHARED_LIBS +=	octgui		2.0
+SHARED_LIBS +=	octinterp	7.0
 
 HOMEPAGE =	https://www.gnu.org/software/octave/
 
@@ -19,22 +18,26 @@ MAINTAINER =	Steven Mestdagh <steven@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += ${MODFORTRAN_WANTLIB}
-WANTLIB += FLAC GL GLU GraphicsMagick GraphicsMagick++ ICE OSMesa QtGui
-WANTLIB += QtNetwork QtOpenGL SM X11 X11-xcb Xau Xcursor Xdamage Xdmcp
+WANTLIB += FLAC GL GLU GraphicsMagick GraphicsMagick++ ICE OSMesa
+WANTLIB += Qt5Gui Qt5Network Qt5OpenGL Qt5PrintSupport Qt5Widgets Qt5Core
+WANTLIB += qscintilla2_qt5
+WANTLIB += SM X11 X11-xcb Xau Xcursor Xdamage Xdmcp
 WANTLIB += Xext Xfixes Xft Xi Xinerama Xmu Xrandr Xrender Xt Xxf86vm amd
 WANTLIB += arpack blas bz2 c camd ccolamd cholmod colamd crypto curl
 WANTLIB += cxsparse drm ereadline expat fftw3 fftw3_threads fftw3f
 WANTLIB += fftw3f_threads fltk fltk_gl fontconfig freetype gl2ps glapi
 WANTLIB += glpk glut gmp hdf5 lapack lcms2 ltdl lzma m ncurses nghttp2
 WANTLIB += ogg pcre png portaudio pthread qhull qrupdate
-WANTLIB += qscintilla2_qt4 sndfile sndio ssl ${COMPILER_LIBCXX} suitesparseconfig
-WANTLIB += umfpack usbhid util vorbis vorbisenc xcb xcb-dri2 xcb-glx z
+WANTLIB += sndfile sndio ssl ${COMPILER_LIBCXX} suitesparseconfig
+WANTLIB += umfpack util vorbis vorbisenc xcb xcb-dri2 xcb-glx z
+WANTLIB += execinfo glib-2.0 graphite2 gthread-2.0 harfbuzz icudata
+WANTLIB += icui18n icuuc pcre2-16
 
 MASTER_SITES =	${MASTER_SITE_GNU:=octave/}
 
 MODULES =	devel/gettext \
 		fortran \
-		x11/qt4
+		x11/qt5
 
 BUILD_DEPENDS =	${MODFORTRAN_BUILD_DEPENDS} \
 		print/texinfo \
@@ -52,7 +55,7 @@ LIB_DEPENDS =	${MODFORTRAN_LIB_DEPENDS} \
 		devel/glpk \
 		devel/pcre \
 		devel/readline \
-		editors/qscintilla \
+		editors/qscintilla,qt5 \
 		graphics/GraphicsMagick \
 		math/arpack \
 		math/fftw3 \
@@ -69,12 +72,14 @@ SEPARATE_BUILD =	Yes
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	gnu
 # --disable-readline: needs GNU readline
-CONFIGURE_ARGS	=	--disable-java
+CONFIGURE_ARGS	=	--disable-java \
+			octave_cv_version_2_6_0=yes
 CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include \
 		-I${LOCALBASE}/include/ereadline" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 		LRELEASE="${MODQT_LRELEASE}" \
-		F77=${FC}
+		F77=${FC} CXXFLAGS="${CXXFLAGS} -std=gnu++11"
+
 
 # needed to build on amd64
 GCC_ARCH =	${MACHINE_ARCH}-unknown-openbsd${OSREV}

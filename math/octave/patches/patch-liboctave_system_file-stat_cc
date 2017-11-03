@@ -1,0 +1,14 @@
+$OpenBSD: patch-liboctave_system_file-stat_cc,v 1.1 2017/11/03 12:28:53 steven Exp $
+
+Index: liboctave/system/file-stat.cc
+--- liboctave/system/file-stat.cc.orig
++++ liboctave/system/file-stat.cc
+@@ -174,7 +174,7 @@ namespace octave
+           update_internal ();
+       }
+ 
+-    inline file_stat::~file_stat () { }
++    file_stat::~file_stat () { }
+ 
+     void
+     file_stat::update_internal (bool force)

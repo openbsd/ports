@@ -1,10 +1,20 @@
-$OpenBSD: patch-configure,v 1.9 2016/04/23 12:44:14 steven Exp $
+$OpenBSD: patch-configure,v 1.10 2017/11/03 12:28:53 steven Exp $
 
 Use GNU readline as our base readline lacks rl_prefer_env_winsize.
 
---- configure.orig	Wed Apr 20 21:02:19 2016
-+++ configure	Fri Apr 22 23:52:05 2016
-@@ -39759,13 +39759,13 @@ fi
+Index: configure
+--- configure.orig
++++ configure
+@@ -34701,7 +34701,7 @@ $as_echo_n "checking Qt version $ver... " >&6; }
+     ;;
+     5)
+       QT_MODULES="Qt5Core Qt5Gui Qt5Network Qt5OpenGL Qt5PrintSupport"
+-      octave_qscintilla_libnames="qscintilla2-qt5 qt5scintilla2"
++      octave_qscintilla_libnames="qscintilla2_qt5 qt5scintilla2"
+     ;;
+     *)
+       as_fn_error $? "Unrecognized Qt version $qt_version" "$LINENO" 5
+@@ -44617,13 +44617,13 @@ fi
  
      ac_octave_save_LIBS="$LIBS"
      LIBS="$TERM_LIBS"
@@ -21,7 +31,7 @@ Use GNU readline as our base readline lacks rl_prefer_env_winsize.
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -39804,7 +39804,7 @@ fi
+@@ -44662,7 +44662,7 @@ fi
  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_readline_rl_set_keyboard_input_timeout" >&5
  $as_echo "$ac_cv_lib_readline_rl_set_keyboard_input_timeout" >&6; }
  if test "x$ac_cv_lib_readline_rl_set_keyboard_input_timeout" = xyes; then :

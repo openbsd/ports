@@ -1,7 +1,8 @@
-$OpenBSD: patch-scripts_pkg_private_configure_make_m,v 1.1 2015/07/24 14:54:01 feinerer Exp $
---- scripts/pkg/private/configure_make.m.orig	Thu Jul 23 12:27:30 2015
-+++ scripts/pkg/private/configure_make.m	Thu Jul 23 12:27:15 2015
-@@ -88,7 +88,7 @@ function configure_make (desc, packdir, verbose)
+$OpenBSD: patch-scripts_pkg_private_configure_make_m,v 1.2 2017/11/03 12:28:53 steven Exp $
+Index: scripts/pkg/private/configure_make.m
+--- scripts/pkg/private/configure_make.m.orig
++++ scripts/pkg/private/configure_make.m
+@@ -87,7 +87,7 @@ function configure_make (desc, packdir, verbose)
      endif
  
      if (exist (fullfile (src, "Makefile"), "file"))
