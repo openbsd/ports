@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.266 2017/10/28 06:19:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.267 2017/11/03 13:16:05 bentley Exp $
 
 # Everything is a Freaking GLib/GTK+ problem
 CFLAGS +=		-g
@@ -9,6 +9,7 @@ COMMENT=		general-purpose utility library
 GNOME_PROJECT=		glib
 GNOME_VERSION=		2.54.2
 PKGNAME=		${DISTNAME:S/glib/glib2/}
+REVISION=		0
 
 CATEGORIES=		devel
 
@@ -29,6 +30,7 @@ SHARED_LIBS +=  gio-2.0              4200.6   # 5400.2
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
+# uses pledge()
 WANTLIB += c elf ffi iconv intl pcre pthread z
 
 MODULES=		lang/python \

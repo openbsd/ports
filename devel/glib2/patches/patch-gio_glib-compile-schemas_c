@@ -1,4 +1,4 @@
-$OpenBSD: patch-gio_glib-compile-schemas_c,v 1.9 2017/10/26 08:48:59 ajacoutot Exp $
+$OpenBSD: patch-gio_glib-compile-schemas_c,v 1.10 2017/11/03 13:16:06 bentley Exp $
 
 XXX do not warn about bad dconf paths
 
@@ -21,3 +21,15 @@ Index: gio/glib-compile-schemas.c
  
    state->schema_state = schema_state_new (path, gettext_domain,
                                            extends, extends_name, list_of);
+@@ -2092,6 +2094,11 @@ main (int argc, char **argv)
+ #ifdef HAVE_BIND_TEXTDOMAIN_CODESET
+   bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
+ #endif
++
++  if (pledge("stdio rpath wpath cpath fattr", NULL) == -1) {
++    g_printerr ("pledge\n");
++    return 1;
++  }
+ 
+   context = g_option_context_new (N_("DIRECTORY"));
+   g_option_context_set_translation_domain (context, GETTEXT_PACKAGE);
