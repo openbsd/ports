@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2017/05/05 04:23:38 stu Exp $
+# $OpenBSD: Makefile,v 1.3 2017/11/03 15:55:06 stu Exp $
 
 COMMENT=	Tcl bindings for sqlite3 (embedded SQL implementation)
 
-DISTNAME=	sqlite-autoconf-3170000
-PKGNAME=	sqlite3-tcl-3.17.0
+DISTNAME=	sqlite-autoconf-3200100
+PKGNAME=	sqlite3-tcl-3.20.1
 
 WRKSRC=		${WRKDIST}/tea
 

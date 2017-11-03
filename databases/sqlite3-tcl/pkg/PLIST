@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.2 2017/05/05 04:23:38 stu Exp $
+@comment $OpenBSD: PLIST,v 1.3 2017/11/03 15:55:06 stu Exp $
 @pkgpath databases/sqlite3,-tcl
 lib/tcl/sqlite3/
-lib/tcl/sqlite3/libsqlite3170.so
+lib/tcl/sqlite3/libsqlite3.so
 lib/tcl/sqlite3/pkgIndex.tcl
 @man man/mann/sqlite3.n
