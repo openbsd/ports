@@ -1,4 +1,4 @@
-$OpenBSD: patch-js_src_old-configure_in,v 1.4 2017/11/03 12:19:56 ajacoutot Exp $
+$OpenBSD: patch-js_src_old-configure_in,v 1.5 2017/11/03 12:42:29 ajacoutot Exp $
 
 2nd chunk:
 From 7e6d628456af3e99ebcb9a01a27e1461585082a4 Mon Sep 17 00:00:00 2001
@@ -14,10 +14,10 @@ Index: js/src/old-configure.in
  
  *-openbsd*)
 -    DLL_SUFFIX=".so.1.0"
-+    if test "$SO_VERSION"; then                                                 
-+        DLL_SUFFIX=".so.$SO_VERSION"                                            
-+    else                                                                        
-+        DLL_SUFFIX=".so.1.0"                                                    
++    if test "$SO_VERSION"; then
++        DLL_SUFFIX=".so.$SO_VERSION"
++    else
++        DLL_SUFFIX=".so.1.0"
 +    fi
      DSO_CFLAGS=''
      DSO_PIC_CFLAGS='-fPIC'
