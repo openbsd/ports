@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.226 2017/11/01 15:17:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.227 2017/11/03 14:24:23 ajacoutot Exp $
 
 COMMENT=		metadata database and search tool
 
 GNOME_PROJECT=		tracker
 GNOME_VERSION=		2.0.1
+REVISION=		0
 
 # there is already audio/tracker, so this port has to live
 # as meta-tracker
@@ -44,10 +45,7 @@ LIB_DEPENDS=		devel/json-glib \
 MODGNOME_TOOLS=		gobject-introspection vala
 
 MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
-MODPY_BUILDDEP=		Yes
 MODPY_RUNDEP=		No
-
-MODPY_ADJ_FILES=	utils/g-ir-merge/g-ir-merge
 
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.69

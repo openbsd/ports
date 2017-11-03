@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.31 2017/11/02 10:52:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.32 2017/11/03 14:24:23 ajacoutot Exp $
 
 COMMENT =		GNOME calendar
 
 GNOME_PROJECT =		gnome-calendar
 GNOME_VERSION =		3.26.2
+REVISION =		0
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
@@ -15,12 +16,7 @@ WANTLIB += ${COMPILER_LIBCXX}
 
 MODULES =		devel/dconf \
 			devel/meson \
-			lang/python \
 			x11/gnome
-
-MODPY_RUNDEP =		No
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
-MODPY_ADJ_FILES =	meson_post_install.py
 
 LIB_DEPENDS =		databases/evolution-data-server
 

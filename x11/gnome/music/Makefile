@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.47 2017/11/01 22:19:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.48 2017/11/03 14:24:23 ajacoutot Exp $
 
 COMMENT=		GNOME music playing application
 
 GNOME_PROJECT=		gnome-music
 GNOME_VERSION=		3.26.1
+REVISION=		0
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -22,8 +23,8 @@ MODULES=		devel/dconf \
 
 MODGNOME_TOOLS +=	desktop-file-utils gobject-introspection yelp
 MODGNOME_TOOLS +=	gtk-update-icon-cache
+
 MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
-MODPY_ADJ_FILES=	gnome-music.in
 
 LIB_DEPENDS=		x11/gtk+3
 
