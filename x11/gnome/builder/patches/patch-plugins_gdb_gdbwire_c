@@ -1,0 +1,26 @@
+$OpenBSD: patch-plugins_gdb_gdbwire_c,v 1.1 2017/11/03 12:39:51 ajacoutot Exp $
+
+error: format string is not a string literal [-Werror,-Wformat-nonliteral]
+
+Index: plugins/gdb/gdbwire.c
+--- plugins/gdb/gdbwire.c.orig
++++ plugins/gdb/gdbwire.c
+@@ -608,11 +608,18 @@ gdbwire_logger_log(const char *file, int line, enum gd
+     va_list ap;
+     va_start(ap, fmt);
+ 
++#pragma clang diagnostic push
++#pragma clang diagnostic ignored "-Wformat-nonliteral"
++   vsnprintf(buf, sizeof(buf), fmt, line);
+     size = vsnprintf(0, 0, fmt, ap);
++#pragma clang diagnostic pop
+     buf = malloc(sizeof(char)*size + 1);
+ 
+     va_start(ap, fmt);
++#pragma clang diagnostic push
++#pragma clang diagnostic ignored "-Wformat-nonliteral"
+     size = vsnprintf(buf, size + 1, fmt, ap);
++#pragma clang diagnostic pop
+     va_end(ap);
+ 
+     if (checked_env == 0) {
