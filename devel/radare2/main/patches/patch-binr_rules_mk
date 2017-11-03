@@ -1,0 +1,16 @@
+$OpenBSD: patch-binr_rules_mk,v 1.1 2017/11/03 12:39:42 espie Exp $
+don't add -pie, that's automatic on OpenBSD when needed,
+and this interferes badly with lld
+
+Index: binr/rules.mk
+--- binr/rules.mk.orig
++++ binr/rules.mk
+@@ -5,7 +5,7 @@ include ../../shlr/zip/deps.mk
+ ifneq ($(OSTYPE),windows)
+ # tcc doesn't recognize the -pie option
+ ifeq (,$(findstring tcc,${CC}))
+-CFLAGS+=-pie
++#CFLAGS+=-pie
+ endif
+ endif
+ CFLAGS+=-I$(LTOP)/include
