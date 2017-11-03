@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2017/07/26 22:45:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.36 2017/11/03 14:25:40 jca Exp $
 
 COMMENT=	library for arbitrary precision arithmetic
 
@@ -21,7 +21,8 @@ WANTLIB=	m ${COMPILER_LIBCXX}
 MASTER_SITES=	https://gmplib.org/download/gmp/ \
 		${MASTER_SITE_GNU:=gmp/}
 
-CONFIGURE_STYLE=gnu
+CONFIGURE_STYLE=autoconf
+AUTOCONF_VERSION=2.69
 CONFIGURE_ARGS=	--enable-cxx
 # Don't try to optimize for the local CPU submodel
 CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-unknown-openbsd${OSrev}

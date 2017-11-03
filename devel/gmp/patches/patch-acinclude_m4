@@ -1,0 +1,16 @@
+$OpenBSD: patch-acinclude_m4,v 1.1 2017/11/03 14:25:40 jca Exp $
+
+Zero out the memory before testing for overwrite bug.
+
+Index: acinclude.m4
+--- acinclude.m4.orig
++++ acinclude.m4
+@@ -741,7 +741,7 @@ main ()
+   long i;
+   for (i = 0; i < 88 + 1; i++)
+     a[i] = ~0L;
+-  r = malloc (10000 * sizeof (unsigned long));
++  r = calloc (10000, sizeof (unsigned long));
+   r2 = r;
+   for (i = 0; i < 528; i += 23)
+     {
