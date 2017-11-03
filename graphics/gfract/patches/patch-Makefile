@@ -1,8 +1,8 @@
-$OpenBSD: patch-Makefile,v 1.6 2017/05/24 19:33:53 espie Exp $
+$OpenBSD: patch-Makefile,v 1.7 2017/11/03 13:32:11 espie Exp $
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -10,7 +10,7 @@ ICON_FILES := mandel_icon.pix
+@@ -10,13 +10,13 @@ ICON_FILES := mandel_icon.pix
  
  CXX := g++
  
@@ -11,6 +11,13 @@ Index: Makefile
  DEFS := $(shell pkg-config --cflags gtk+-2.0 libpng) $(DEFS)
  
  CXXFLAGS := $(DEFS) -O2 -fomit-frame-pointer -ffast-math
+ #CXXFLAGS := $(DEFS) -g
+ 
+-LDFLAGS := -lz -lpthread -lboost_regex -lboost_filesystem
++LDFLAGS := -lz -lpthread -lboost_regex -lboost_filesystem -lboost_system
+ LDFLAGS := $(shell pkg-config --libs gtk+-2.0 libpng) $(LDFLAGS)
+ 
+ HEADERS := $(wildcard *.h)
 @@ -24,11 +24,11 @@ PALETTES := $(wildcard palettes/*.map)
  
  $(GTK_FRONTEND): $(GTK_FRONTEND_OBJS)
