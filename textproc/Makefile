@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.545 2017/11/02 12:59:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.546 2017/11/03 13:36:57 bluhm Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -211,6 +211,7 @@
      SUBDIR += p5-PatchReader
      SUBDIR += p5-Pod-Cpandoc
      SUBDIR += p5-Pod-LaTeX
+     SUBDIR += p5-Pod-Markdown
      SUBDIR += p5-Pod-POM
      SUBDIR += p5-Pod-Spell
      SUBDIR += p5-Pod-Tests
