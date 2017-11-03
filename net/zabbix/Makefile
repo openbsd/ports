@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.129 2017/11/03 11:14:52 jca Exp $
+# $OpenBSD: Makefile,v 1.130 2017/11/03 11:15:15 jca Exp $
 
 COMMENT-main =		network and application monitoring - agent
 COMMENT-server =	network and application monitoring - server
@@ -133,7 +133,7 @@ post-install:
 	# Database schemas
 	cd ${WRKSRC}/database/ && tar -cf - mysql postgresql sqlite3 | \
 		tar -C ${PREFIX}/share/zabbix/schema -xf -
-	# Script to easy upgrading from previous major version
+	# Script to ease upgrading from previous major version
 	cd ${WRKSRC}/upgrades/ && tar -cf - dbpatches | \
 		tar -C ${PREFIX}/share/zabbix -xf -
 
