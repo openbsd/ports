@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.74 2017/10/23 17:11:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.75 2017/11/03 11:22:37 jasper Exp $
 
 COMMENT=		sytem monitor for GNOME
 
 GNOME_PROJECT=		gnome-system-monitor
-GNOME_VERSION=		3.24.0
-REVISION=		1
+GNOME_VERSION=		3.26.0
 
 CATEGORIES=		sysutils
 
@@ -12,7 +11,7 @@ CATEGORIES=		sysutils
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX}
-WANTLIB += ICE SM X11 Xau Xcomposite Xcursor Xdamage Xext Xfixes
+WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atkmm-1.6
 WANTLIB += atspi c cairo cairo-gobject cairomm-1.0 croco-0.6 dbus-1
 WANTLIB += expat ffi fontconfig freetype gdk-3 gdk_pixbuf-2.0
@@ -21,7 +20,7 @@ WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-3 gtkmm-3.0 gtop-2.0
 WANTLIB += harfbuzz kvm m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pangomm-1.4 pcre pixman-1 png pthread
 WANTLIB += rsvg-2 sigc-2.0 xcb xcb-render xcb-shm xml2
-WANTLIB += z epoxy lzma intl iconv
+WANTLIB += z epoxy lzma intl iconv Xtst
 
 MODULES=		devel/dconf \
 			x11/gnome
@@ -29,7 +28,7 @@ MODULES=		devel/dconf \
 # c++11
 COMPILER =		gcc
 
-LIB_DEPENDS=		devel/libgtop2>=2.30.0 \
+LIB_DEPENDS=		devel/libgtop2>=2.38.0 \
 			x11/gnome/librsvg \
 			x11/gtk3mm
 
