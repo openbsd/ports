@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.42 2017/07/26 22:45:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.43 2017/11/03 00:43:49 jca Exp $
 
 COMMENT=	chess program
 
-DISTNAME=	gnuchess-6.2.4
+DISTNAME=	gnuchess-6.2.5
 DISTFILES=	${DISTNAME}.tar.gz book_1.02.pgn.gz
-REVISION=	0
 
 CATEGORIES=	games
 HOMEPAGE=	http://www.gnu.org/software/chess/
@@ -20,7 +19,6 @@ LIB_DEPENDS=	devel/gettext
 BUILD_DEPENDS=	devel/help2man
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV= 		PTHREAD_LIBS=-lpthread
 
 README=			${WRKSRC}/README
 BOOK_FILE=		${WRKSRC}/src/book.bin
