@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2017/10/23 17:11:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2017/11/04 14:50:02 naddy Exp $
 
 COMMENT-main =	graphical tools for the MetaGeek Wi-spy spectrum analyser
 COMMENT-utils =	tools for the MetaGeek Wi-spy spectrum analyser
@@ -10,7 +10,7 @@ PKGNAME =	spectrum-tools-$V
 FULLPKGNAME-main =  spectrum-tools-${V:S/-//g}
 FULLPKGNAME-utils = spectrum-tools-utils-${V:S/-//g}
 
-REVISION-main=	2
+REVISION-main=	3
 REVISION-utils= 0
 
 CATEGORIES =	net
@@ -25,22 +25,18 @@ PERMIT_PACKAGE_CDROM =	Yes
 MULTI_PACKAGES =	-main -utils
 
 cWANTLIB =	c m pthread usb
-MODULES =	devel/gettext
 
-WANTLIB-main =	${cWANTLIB} ${MODGETTEXT_WANTLIB} \
-		GL X11 Xcomposite Xcursor Xdamage Xext Xfixes \
-		Xi Xinerama Xrandr Xrender atk-1.0 cairo expat \
-		fontconfig freetype gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 \
-		pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 \
-		png xcb z gdk_pixbuf-2.0 gdk-x11-2.0 \
-		gtk-x11-2.0 gthread-2.0 xcb-render xcb-shm
+WANTLIB-main =	${cWANTLIB} \
+		X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama \
+		Xrandr Xrender atk-1.0 cairo fontconfig freetype gdk-x11-2.0 \
+		gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 gtk-x11-2.0 \
+		intl pango-1.0 pangocairo-1.0 pangoft2-1.0 z
 
 WANTLIB-utils =	${cWANTLIB} ncurses
 
 LIB_DEPENDS-utils =	devel/libusb-compat
 
-LIB_DEPENDS-main +=	${LIB_DEPENDS} \
-			devel/libusb-compat \
+LIB_DEPENDS-main =	devel/libusb-compat \
 			x11/gtk+2
 
 RUN_DEPENDS-main =	net/spectrum-tools,-utils

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2017/09/22 20:52:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2017/11/04 14:50:02 naddy Exp $
 
 BROKEN-powerpc =	64-bit atomics (__sync_bool_compare_and_swap_8)
 
@@ -14,7 +14,7 @@ PKGNAME-main =		rsyslog-$V
 PKGNAME-mysql =		rsyslog-mysql-$V
 PKGNAME-pgsql =		rsyslog-pgsql-$V
 CATEGORIES =		sysutils
-REVISION-main =		2
+REVISION-main =		3
 REVISION-mysql =	1
 REVISION-pgsql =	1
 
@@ -23,16 +23,13 @@ HOMEPAGE =		http://www.rsyslog.com/
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB-main +=		${MODGETTEXT_WANTLIB}
-WANTLIB-main +=		c estr ffi gcrypt gmp gnutls gpg-error hogweed idn2
-WANTLIB-main +=		json-c nettle p11-kit pthread relp tasn1 unistring
-WANTLIB-main +=		uuid z
+WANTLIB-main +=		c estr ffi gcrypt gmp gnutls gpg-error hogweed iconv
+WANTLIB-main +=		idn2 intl json-c nettle p11-kit pthread relp tasn1
+WANTLIB-main +=		unistring uuid z
 
 WANTLIB-mysql +=	crypto m mysqlclient pthread ssl ${COMPILER_LIBCXX} z
 
 WANTLIB-pgsql +=	crypto pq ssl
-
-MODULES =		devel/gettext
 
 LIB_DEPENDS-main =	devel/json-c \
 			devel/libestr>=0.1.2 \
