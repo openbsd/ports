@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2017/09/27 08:36:53 robert Exp $
+# $OpenBSD: Makefile,v 1.3 2017/11/04 16:54:24 naddy Exp $
 
 COMMENT-main=	MS Exchange groupware suite replacement
 COMMENT-mapi=	kopano MAPI extensions for PHP
 
 PKGNAME-main=	kopano-core-${V}.${BUILD}
 PKGNAME-mapi=	kopano-mapi-${V}.${BUILD}
+REVISION=	0
 
 CATEGORIES=	mail www productivity
 
@@ -26,21 +27,19 @@ SHARED_LIBS +=  kcutil                    0.0 # 0.0
 
 MULTI_PACKAGES=	-main -mapi
 
-MODULES=	devel/gettext \
-		lang/python \
+MODULES=	lang/python \
 		lang/php
 
 MODPHP_DO_SAMPLE=mapi
 MESSAGE-main=	# empty
 UNMESSAGE-main=	# empty
 
-BUILD_DEPENDS=\
+BUILD_DEPENDS=	devel/gettext-tools \
 		devel/swig \
 		textproc/xmlto \
 		sysutils/coreutils
 
-WANTLIB += ${MODGETTEXT_WANTLIB}
-WANTLIB += c m pthread z vmime execinfo icudata icui18n icuuc
+WANTLIB += c m pthread z vmime execinfo iconv icudata icui18n icuuc intl
 WANTLIB += lzma crypto
 
 WANTLIB-main += ${WANTLIB} ${MODPY_WANTLIB}
@@ -50,16 +49,15 @@ WANTLIB-main += gsoapssl++
 WANTLIB-main += ${LIBCXX}
 WANTLIB-main += icalvcal lber ldap_r
 
-RUN_DEPENDS-main=${MODGETTEXT_RUN_DEPENDS} \
-		${MODPY_RUN_DEPENDS} \
+RUN_DEPENDS-main= ${MODPY_RUN_DEPENDS} \
 		databases/xapian-bindings,-python \
 		devel/libmagic \
 		devel/py-dateutil \
 		lang/python/2.7,-bsddb \
 		textproc/catdoc
-LIB_DEPENDS-main= ${MODGETTEXT_LIB_DEPENDS} \
-		databases/mariadb \
+LIB_DEPENDS-main= databases/mariadb \
 		databases/openldap \
+		devel/gettext \
 		devel/gsoap>=2.8.50 \
 		devel/libexecinfo \
 		devel/libvmime>=0.9.4 \
@@ -77,8 +75,7 @@ WANTLIB-mapi += kcutil
 
 
 LIB_DEPENDS-mapi= ${BASE_PKGPATH}>=${V}
-RUN_DEPENDS-mapi= ${MODPHP_RUN_DEPENDS} \
-		 ${MODGETTEXT_RUN_DEPENDS}
+RUN_DEPENDS-mapi= ${MODPHP_RUN_DEPENDS}
 
 USE_GMAKE=	Yes
 
