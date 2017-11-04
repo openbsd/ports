@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2017/08/14 16:51:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2017/11/04 12:29:38 jasper Exp $
 
 COMMENT =		deduplicating backup program
 
-MODPY_EGG_VERSION =	1.0.11
+MODPY_EGG_VERSION =	1.1.1
 DISTNAME =		borgbackup-${MODPY_EGG_VERSION}
 
 MODPY_PI =		Yes
@@ -24,7 +24,7 @@ LIB_DEPENDS +=		${MODPY_LIB_DEPENDS} archivers/lz4
 
 BUILD_DEPENDS +=	${RUN_DEPENDS} \
 			devel/py-setuptools_scm${MODPY_FLAVOR} \
-			textproc/py-sphinx${MODPY_FLAVOR}
+			textproc/py-sphinx_guzzle_theme${MODPY_FLAVOR}
 
 RUN_DEPENDS +=		net/py-msgpack${MODPY_FLAVOR}
 
@@ -35,6 +35,9 @@ TEST_DEPENDS +=		${RUN_DEPENDS} \
 
 MODPY_SETUPTOOLS =	Yes
 
+post-patch:
+	${SUBST_CMD} ${WRKSRC}/src/borg/testsuite/archiver.py
+
 post-build:
 	${MODPY_CMD} build_ext --inplace
 	cd ${WRKSRC}/docs; env PYTHONPATH=${WRKSRC} \
@@ -42,12 +45,12 @@ post-build:
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/docs/_build/man/borg.1 ${PREFIX}/man/man1/borg.1
+	rm ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/borg/testsuite/archiver.py.beforesubst
 
 do-test: fake
-	@printf "\n*** NOTE: borgbackup fails all tests when it is already installed ***\n\n"
 	cd ${WRKSRC}; \
 		PATH=${WRKINST}/usr/local/bin:${PATH} \
-		PYTHONPATH=${WRKSRC} \
+		PYTHONPATH=${WRKSRC}/src \
 		${MODPY_BIN} -m pytest --ignore lib*
 
 .include <bsd.port.mk>

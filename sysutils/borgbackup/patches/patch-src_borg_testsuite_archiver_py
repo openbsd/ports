@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_borg_testsuite_archiver_py,v 1.1 2017/11/04 12:29:38 jasper Exp $
+
+Index: src/borg/testsuite/archiver.py
+--- src/borg/testsuite/archiver.py.orig
++++ src/borg/testsuite/archiver.py
+@@ -2452,7 +2452,7 @@ class ArchiverTestCase(ArchiverTestCaseBase):
+     def test_with_lock(self):
+         self.cmd('init', '--encryption=repokey', self.repository_location)
+         lock_path = os.path.join(self.repository_path, 'lock.exclusive')
+-        cmd = 'python3', '-c', 'import os, sys; sys.exit(42 if os.path.exists("%s") else 23)' % lock_path
++        cmd = 'python${MODPY_VERSION}', '-c', 'import os, sys; sys.exit(42 if os.path.exists("%s") else 23)' % lock_path
+         self.cmd('with-lock', self.repository_location, *cmd, fork=True, exit_code=42)
+ 
+     def test_recreate_list_output(self):
