@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.16 2017/06/11 15:38:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2017/11/04 22:04:26 jasper Exp $
 
 COMMENT=		configuration file parser library
-V=			3.2
+V=			3.2.1
 DISTNAME=		confuse-${V}
 PKGNAME=		lib${DISTNAME}
 SHARED_LIBS +=  confuse              2.1      # 2.0
