@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.546 2017/11/04 18:46:07 bentley Exp $
+# $OpenBSD: Quirks.pm,v 1.547 2017/11/04 21:21:09 jasper Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1142,6 +1142,7 @@ my $obsolete_reason = {
 	'libgnomecanvasmm' => 5,
 	'mixmaster' => 2,
 	'xscorch' => 0,
+	'libwbxml' => 5,
 };
 
 # reasons for obsolete packages
