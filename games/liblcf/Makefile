@@ -1,20 +1,19 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/09/09 19:52:02 jeremy Exp $
+# $OpenBSD: Makefile,v 1.2 2017/11/04 01:05:55 bcallah Exp $
 
 # Keep in sync with games/easyrpg
-V =		0.5.2
 COMMENT =	library for handling RPG Maker 2000/2003 data
-DISTNAME =	${PKGNAME}{${V}}
-PKGNAME =	liblcf-${V}
 CATEGORIES =	games x11
 
-SHARED_LIBS +=  lcf                       0.0 # 0.0
+SHARED_LIBS +=  lcf                       1.0 # 1.0
 
 HOMEPAGE =	https://easyrpg.org/
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM =		Yes
 
-MASTER_SITES =	https://github.com/EasyRPG/liblcf/archive/
+GH_ACCOUNT =	EasyRPG
+GH_PROJECT =	liblcf
+GH_TAGNAME =	0.5.3
 
 WANTLIB += ${COMPILER_LIBCXX} expat icudata icui18n icuuc m
 
@@ -31,7 +30,5 @@ AUTOCONF =	AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
 		AUTOMAKE="automake --add-missing" \
 		LIBTOOLIZE="${LOCALBASE}/bin/libtoolize" \
 		autoreconf -i
-
-WRKDIST =	${WRKDIR}/liblcf-${V}
 
 .include <bsd.port.mk>
