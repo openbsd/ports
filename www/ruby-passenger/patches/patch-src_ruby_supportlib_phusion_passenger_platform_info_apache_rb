@@ -1,22 +1,23 @@
-$OpenBSD: patch-src_ruby_supportlib_phusion_passenger_platform_info_apache_rb,v 1.1 2016/11/04 22:08:19 jeremy Exp $
+$OpenBSD: patch-src_ruby_supportlib_phusion_passenger_platform_info_apache_rb,v 1.2 2017/11/04 15:56:29 jeremy Exp $
 
 Don't attempt to build apache support.
 
---- src/ruby_supportlib/phusion_passenger/platform_info/apache.rb.orig	Mon Jul 25 19:56:07 2016
-+++ src/ruby_supportlib/phusion_passenger/platform_info/apache.rb	Tue Nov  1 13:18:15 2016
+Index: src/ruby_supportlib/phusion_passenger/platform_info/apache.rb
+--- src/ruby_supportlib/phusion_passenger/platform_info/apache.rb.orig
++++ src/ruby_supportlib/phusion_passenger/platform_info/apache.rb
 @@ -47,6 +47,7 @@ module PhusionPassenger
  
      # The absolute path to the 'apxs' or 'apxs2' executable, or nil if not found.
      def self.apxs2
 +      return nil
        if env_defined?("APXS2")
-         return ENV["APXS2"]
-       end
-@@ -70,6 +71,7 @@ module PhusionPassenger
+         if ENV['APXS2'] == 'none'
+           # This is a special value indicating that we should pretend as if
+@@ -80,6 +81,7 @@ module PhusionPassenger
      # The absolute path to the Apache binary (that is, 'httpd', 'httpd2', 'apache'
      # or 'apache2'), or nil if not found.
      def self.httpd(options = {})
 +      return nil
-       apxs2 = options[:apxs2] || self.apxs2
+       apxs2 = options.fetch(:apxs2, self.apxs2)
        if env_defined?('HTTPD')
          return ENV['HTTPD']

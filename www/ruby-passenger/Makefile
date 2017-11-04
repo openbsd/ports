@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.53 2017/07/26 22:45:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.54 2017/11/04 15:56:29 jeremy Exp $
 
 COMMENT =		ruby web application server/nginx module
 BROKEN-alpha =		.got subsegment exceeds 64K (size 83312)
 BROKEN-arm =		.../libuv/src/unix/atomic-ops.h:46: undefined reference to __sync_val_compare_and_swap_4
-BROKEN-hppa =	rake fails when linking PassengerHelperAgent
+BROKEN-hppa =		rake fails when linking PassengerHelperAgent
 BROKEN-sparc64 =	rake fails when linking PassengerHelperAgent
 
-PASS_VERSION =		5.0.30
-NGINX_VERSION =		1.10.2
+PASS_VERSION =		5.1.11
+NGINX_VERSION =		1.12.1
 DISTNAME =		passenger-${PASS_VERSION}
-REVISION =		0
 
 CATEGORIES =	www
 DISTFILES =	${DISTNAME}.gem \
@@ -50,7 +49,9 @@ pre-configure:
 		-DPASSENGER_ROOT='${PREFIX}/lib/phusion-passenger${GEM_MAN_SUFFIX}' \
 		${WRKSRC}/src/nginx_module/config \
 		${WRKSRC}/src/ruby_supportlib/phusion_passenger.rb \
-		${WRKSRC}/src/ruby_supportlib/phusion_passenger/platform_info/compiler.rb
+		${WRKSRC}/src/ruby_supportlib/phusion_passenger/constants.rb \
+		${WRKSRC}/src/ruby_supportlib/phusion_passenger/platform_info/compiler.rb \
+		${WRKSRC}/src/cxx_supportlib/Constants.h
 	${MODRUBY_RUBY_ADJ} ${WRKSRC}/bin/passenger* \
 		${WRKSRC}/dev/*.rb \
 		${WRKSRC}/src/helper-scripts/p* \

@@ -1,12 +1,13 @@
-$OpenBSD: patch-src_ruby_supportlib_phusion_passenger_config_install_standalone_runtime_command_rb,v 1.1 2016/11/04 22:08:19 jeremy Exp $
+$OpenBSD: patch-src_ruby_supportlib_phusion_passenger_config_install_standalone_runtime_command_rb,v 1.2 2017/11/04 15:56:29 jeremy Exp $
 
 Don't try to download an nginx binary when building the port.
 
 Fix the passing of --nginx-tarball to the compiling command.
 
---- src/ruby_supportlib/phusion_passenger/config/install_standalone_runtime_command.rb.orig	Mon Jul 25 19:56:07 2016
-+++ src/ruby_supportlib/phusion_passenger/config/install_standalone_runtime_command.rb	Tue Nov  1 13:18:15 2016
-@@ -57,9 +57,7 @@ module PhusionPassenger
+Index: src/ruby_supportlib/phusion_passenger/config/install_standalone_runtime_command.rb
+--- src/ruby_supportlib/phusion_passenger/config/install_standalone_runtime_command.rb.orig
++++ src/ruby_supportlib/phusion_passenger/config/install_standalone_runtime_command.rb
+@@ -58,9 +58,7 @@ module PhusionPassenger
          sanity_check
          PhusionPassenger::Utils.mktmpdir("passenger-install.", PlatformInfo.tmpexedir) do |tmpdir|
            install_agent(tmpdir)
@@ -16,12 +17,12 @@ Fix the passing of --nginx-tarball to the compiling command.
          end
        end
  
-@@ -99,6 +97,8 @@ module PhusionPassenger
+@@ -100,6 +98,8 @@ module PhusionPassenger
              "downloading it. You MUST also specify the#{nl}" +
              "Nginx version with --nginx-version") do |val|
              options[:nginx_tarball] = val
 +            options[:compile_args] << "--nginx-tarball"
 +            options[:compile_args] << val
            end
-           opts.on("--brief", "Report progress in a brief style") do
-             options[:brief] = true
+           opts.on("--engine ENGINE", String, "Engine to use. " +
+             "Default: Nginx") do |val|

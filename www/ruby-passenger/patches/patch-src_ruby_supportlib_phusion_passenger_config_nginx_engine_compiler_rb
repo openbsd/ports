@@ -1,10 +1,11 @@
-$OpenBSD: patch-src_ruby_supportlib_phusion_passenger_config_nginx_engine_compiler_rb,v 1.1 2016/11/04 22:08:19 jeremy Exp $
+$OpenBSD: patch-src_ruby_supportlib_phusion_passenger_config_nginx_engine_compiler_rb,v 1.2 2017/11/04 15:56:29 jeremy Exp $
 
 Remove hiding of build steps.
 
---- src/ruby_supportlib/phusion_passenger/config/nginx_engine_compiler.rb.orig	Mon Jul 25 19:56:07 2016
-+++ src/ruby_supportlib/phusion_passenger/config/nginx_engine_compiler.rb	Tue Nov  1 16:37:48 2016
-@@ -271,37 +271,17 @@ module PhusionPassenger
+Index: src/ruby_supportlib/phusion_passenger/config/nginx_engine_compiler.rb
+--- src/ruby_supportlib/phusion_passenger/config/nginx_engine_compiler.rb.orig
++++ src/ruby_supportlib/phusion_passenger/config/nginx_engine_compiler.rb
+@@ -286,37 +286,17 @@ module PhusionPassenger
  
        def compile_support_libraries
          puts "Compiling support libraries (step 1 of 2)..."
@@ -45,7 +46,7 @@ Remove hiding of build steps.
  
          FileUtils.cp("#{@working_dir}/nginx-#{@nginx_version}/objs/nginx",
            "#{@destdir}/nginx-#{@nginx_version}")
-@@ -326,60 +306,12 @@ module PhusionPassenger
+@@ -341,60 +321,12 @@ module PhusionPassenger
          command << "#{shell} ./configure --prefix=/tmp " +
            "#{self.class.configure_script_options} " +
            "--add-module=#{Shellwords.escape PhusionPassenger.nginx_module_source_dir}"

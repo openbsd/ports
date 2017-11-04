@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_cxx_supportlib_Constants_h,v 1.1 2017/11/04 15:56:29 jeremy Exp $
+
+Index: src/cxx_supportlib/Constants.h
+--- src/cxx_supportlib/Constants.h.orig
++++ src/cxx_supportlib/Constants.h
+@@ -63,7 +63,7 @@
+ #define DEFAULT_POOL_IDLE_TIME 300
+ #define DEFAULT_PYTHON "python"
+ #define DEFAULT_RESPONSE_BUFFER_HIGH_WATERMARK 134217728
+-#define DEFAULT_RUBY "ruby"
++#define DEFAULT_RUBY "${RUBY}"
+ #define DEFAULT_SOCKET_BACKLOG 2048
+ #define DEFAULT_SPAWN_METHOD "smart"
+ #define DEFAULT_START_TIMEOUT 90000

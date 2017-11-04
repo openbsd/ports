@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_ruby_supportlib_phusion_passenger_constants_rb,v 1.1 2017/11/04 15:56:29 jeremy Exp $
+
+Index: src/ruby_supportlib/phusion_passenger/constants.rb
+--- src/ruby_supportlib/phusion_passenger/constants.rb.orig
++++ src/ruby_supportlib/phusion_passenger/constants.rb
+@@ -48,7 +48,7 @@ module PhusionPassenger
+     DEFAULT_APP_OUTPUT_LOG_LEVEL_NAME = "notice"
+     DEFAULT_INTEGRATION_MODE = "standalone"
+     DEFAULT_SOCKET_BACKLOG = 2048
+-    DEFAULT_RUBY = "ruby"
++    DEFAULT_RUBY = "${RUBY}"
+     DEFAULT_PYTHON = "python"
+     DEFAULT_NODEJS = "node"
+     DEFAULT_MAX_POOL_SIZE = 6

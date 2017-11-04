@@ -1,21 +1,22 @@
-$OpenBSD: patch-src_ruby_supportlib_phusion_passenger_rb,v 1.1 2016/11/04 22:08:19 jeremy Exp $
+$OpenBSD: patch-src_ruby_supportlib_phusion_passenger_rb,v 1.2 2017/11/04 15:56:29 jeremy Exp $
 
 Use the specified version of nginx.
 
 Don't store or look for stuff in $HOME, use the passenger directory.
 
---- src/ruby_supportlib/phusion_passenger.rb.orig	Mon Jul 25 19:56:07 2016
-+++ src/ruby_supportlib/phusion_passenger.rb	Tue Nov  1 13:25:08 2016
+Index: src/ruby_supportlib/phusion_passenger.rb
+--- src/ruby_supportlib/phusion_passenger.rb.orig
++++ src/ruby_supportlib/phusion_passenger.rb
 @@ -33,7 +33,7 @@ module PhusionPassenger
    # Run 'rake src/cxx_supportlib/Constants.h' after changing this number.
-   VERSION_STRING = '5.0.30'
+   VERSION_STRING = '5.1.11'
  
--  PREFERRED_NGINX_VERSION = '1.10.1'
+-  PREFERRED_NGINX_VERSION = '1.12.1'
 +  PREFERRED_NGINX_VERSION = '${NGINX_VERSION}'
-   NGINX_SHA256_CHECKSUM = '1fd35846566485e03c0e318989561c135c598323ff349c503a6c14826487a801'
+   NGINX_SHA256_CHECKSUM = '8793bf426485a30f91021b6b945a9fd8a84d87d17b566562c3797aba8fac76fb'
  
-   PREFERRED_PCRE_VERSION  = '8.39'
-@@ -315,13 +315,6 @@ private
+   # Packaging may be locked to an older version due to the specific module configuration being
+@@ -320,18 +320,6 @@ private
    # example `sudo` preserves it. That's why we don't respect it by
    # default.
    def self.home_dir(respect_home_env = false)
@@ -24,7 +25,12 @@ Don't store or look for stuff in $HOME, use the passenger directory.
 -    end
 -    if home.nil? || home.empty?
 -      require 'etc' if !defined?(Etc)
--      home = Etc.getpwuid(Process.uid).dir
+-      begin
+-        home = Etc.getpwuid(Process.uid).dir
+-      rescue ArgumentError
+-        # Unknown user.
+-        home = ENV['HOME']
+-      end
 -    end
 -    return home
 +    File.dirname(File.dirname(File.expand_path(__FILE__)))

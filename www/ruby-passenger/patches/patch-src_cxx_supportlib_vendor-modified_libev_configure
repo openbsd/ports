@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_cxx_supportlib_vendor-modified_libev_configure,v 1.2 2017/09/10 19:33:19 jeremy Exp $
+$OpenBSD: patch-src_cxx_supportlib_vendor-modified_libev_configure,v 1.3 2017/11/04 15:56:29 jeremy Exp $
 
 Force use of mkdir and awk.
 
 Index: src/cxx_supportlib/vendor-modified/libev/configure
 --- src/cxx_supportlib/vendor-modified/libev/configure.orig
 +++ src/cxx_supportlib/vendor-modified/libev/configure
-@@ -2521,7 +2521,7 @@ for as_dir in $PATH$PATH_SEPARATOR/opt/sfw/bin
+@@ -2558,7 +2558,7 @@ for as_dir in $PATH$PATH_SEPARATOR/opt/sfw/bin
  do
    IFS=$as_save_IFS
    test -z "$as_dir" && as_dir=.
@@ -14,9 +14,9 @@ Index: src/cxx_supportlib/vendor-modified/libev/configure
  	 for ac_exec_ext in '' $ac_executable_extensions; do
  	   as_fn_executable_p "$as_dir/$ac_prog$ac_exec_ext" || continue
  	   case `"$as_dir/$ac_prog$ac_exec_ext" --version 2>&1` in #(
-@@ -2558,7 +2558,7 @@ case $mkdir_p in
-   */*) mkdir_p="\$(top_builddir)/$mkdir_p" ;;
- esac
+@@ -2589,7 +2589,7 @@ fi
+ { $as_echo "$as_me:${as_lineno-$LINENO}: result: $MKDIR_P" >&5
+ $as_echo "$MKDIR_P" >&6; }
  
 -for ac_prog in gawk mawk nawk awk
 +for ac_prog in awk
