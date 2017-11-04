@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2016/11/04 21:37:14 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.7 2017/11/04 15:47:52 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
@@ -398,6 +398,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/gsl/
 ${GEM_LIB}/gems/${DISTNAME}/lib/gsl.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/gsl/gnuplot.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/gsl/interp2d_fix.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/gsl/oper.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/gsl/version.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/gsl_native.so
@@ -428,6 +429,7 @@ ${GEM_LIB}/gems/${DISTNAME}/rdoc/hist2d.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/rdoc/hist3d.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/rdoc/integration.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/rdoc/interp.rdoc
+${GEM_LIB}/gems/${DISTNAME}/rdoc/interp2d.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/rdoc/intro.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/rdoc/linalg.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/rdoc/linalg_complex.rdoc
@@ -481,6 +483,7 @@ ${GEM_LIB}/gems/${DISTNAME}/test/gsl/fit_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/gsl/histo_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/gsl/index_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/gsl/integration_test.rb
+${GEM_LIB}/gems/${DISTNAME}/test/gsl/interp2d_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/gsl/interp_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/gsl/linalg_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/gsl/matrix_nmf_test.rb
@@ -508,6 +511,7 @@ ${GEM_LIB}/gems/${DISTNAME}/test/gsl/randist_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/gsl/rng_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/gsl/roots_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/gsl/sf_test.rb
+${GEM_LIB}/gems/${DISTNAME}/test/gsl/spline2d_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/gsl/stats_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/gsl/sum_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/gsl/tensor_test.rb
