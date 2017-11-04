@@ -1,12 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.18 2015/06/03 07:28:28 pirofti Exp $
+@comment $OpenBSD: PLIST,v 1.19 2017/11/04 17:21:41 pirofti Exp $
 @bin bin/gnuplot
-bin/lasergnu
+@man man/man1/gnuplot-ja.1
 @man man/man1/gnuplot.1
-@man man/man1/lasergnu.1
-share/emacs/site-lisp/gnuplot-gui.el
-share/emacs/site-lisp/gnuplot-gui.elc
-share/emacs/site-lisp/gnuplot.el
-share/emacs/site-lisp/gnuplot.elc
 share/gnuplot/
 !%%no_x11%%
 share/gnuplot/${V}/
@@ -18,6 +13,7 @@ share/gnuplot/${V}/PostScript/8859-9.ps
 share/gnuplot/${V}/PostScript/aglfn.txt
 share/gnuplot/${V}/PostScript/cp1250.ps
 share/gnuplot/${V}/PostScript/cp1251.ps
+share/gnuplot/${V}/PostScript/cp1252.ps
 share/gnuplot/${V}/PostScript/cp437.ps
 share/gnuplot/${V}/PostScript/cp850.ps
 share/gnuplot/${V}/PostScript/cp852.ps
@@ -29,7 +25,6 @@ share/gnuplot/${V}/colors_default.gp
 share/gnuplot/${V}/colors_mono.gp
 share/gnuplot/${V}/colors_podo.gp
 share/gnuplot/${V}/gnuplot.gih
-share/gnuplot/${V}/gnuplot.pdf
 share/gnuplot/${V}/gnuplotrc
 share/gnuplot/${V}/js/
 share/gnuplot/${V}/js/README
@@ -44,6 +39,7 @@ share/gnuplot/${V}/js/grid.png
 share/gnuplot/${V}/js/help.png
 share/gnuplot/${V}/js/nextzoom.png
 share/gnuplot/${V}/js/previouszoom.png
+share/gnuplot/${V}/js/return.png
 share/gnuplot/${V}/js/textzoom.png
 share/gnuplot/${V}/lua/
 share/gnuplot/${V}/lua/gnuplot-tikz.lua

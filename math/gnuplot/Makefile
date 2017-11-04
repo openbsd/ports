@@ -1,23 +1,25 @@
-# $OpenBSD: Makefile,v 1.66 2017/07/26 22:45:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.67 2017/11/04 17:21:41 pirofti Exp $
 
 COMMENT =	command-driven interactive function plotting program
 
-V =		4.6
-PATCHLEVEL =	6
-REVISION =	3
+V =		5.2
+PATCHLEVEL =	1
 DISTNAME =	gnuplot-${V}.${PATCHLEVEL}
 CATEGORIES =	math graphics
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=gnuplot/}
 
 HOMEPAGE =	http://www.gnuplot.info/
 
+MAINTAINER =	Paul Irofti <pirofti@openbsd.org>
+
 # see Copyright in source
 # http://gnuplot.cvs.sourceforge.net/gnuplot/gnuplot/Copyright
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c m ncurses readline ${COMPILER_LIBCXX} z
+WANTLIB += c cerf m ncurses ereadline ${COMPILER_LIBCXX} z
 
-BUILD_DEPENDS =	emacs->=24:editors/emacs
+LIB_DEPENDS +=	devel/readline \
+		math/libcerf
 
 FLAVORS =	no_cairo no_x11
 FLAVOR ?=
@@ -26,14 +28,15 @@ CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--without-linux-vga \
 			--without-latex \
 			--without-tutorial \
-			--with-readline \
-			--with-lasergnu \
+			--with-readline=${LOCALBASE} \
 			--disable-wxwidgets \
-			--disable-qt \
+			--with-qt=no \
 			--without-lua \
 			--without-pdf
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+
+USE_GMAKE =		Yes
 
 FAKE_FLAGS =		appdefaultdir="${PREFIX}/lib/X11/app-defaults/"
 
@@ -54,12 +57,9 @@ CONFIGURE_ARGS += --with-x
 CONFIGURE_ARGS += --without-cairo
 .else
 LIB_DEPENDS +=	devel/gettext \
-		devel/pango	\
+		devel/pango \
 		graphics/cairo
 WANTLIB +=	cairo gobject-2.0 glib-2.0 intl pango-1.0 pangocairo-1.0
 .endif
-
-post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/src/lasergnu ${PREFIX}/bin/lasergnu
 
 .include <bsd.port.mk>
