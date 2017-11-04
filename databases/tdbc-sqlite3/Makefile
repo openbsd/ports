@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2017/06/02 19:54:15 schwarze Exp $
+# $OpenBSD: Makefile,v 1.9 2017/11/04 18:57:36 stu Exp $
 
-COMMENT =		sqlite3 module for TDBC
+COMMENT =		SQLite3 module for TDBC
 
-V =			1.0.4
+V =			1.0.5
 
 DISTNAME =		tdbcsqlite3-${V}
 PKGNAME =		tdbc-sqlite3-${V}
-REVISION =		0
 CATEGORIES =		databases
 HOMEPAGE =		http://tdbc.tcl.tk/
 MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
