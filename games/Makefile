@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.356 2017/11/04 18:37:30 bentley Exp $
+# $OpenBSD: Makefile,v 1.357 2017/11/04 22:06:01 bentley Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -84,6 +84,8 @@
      SUBDIR += extremetuxracer
      SUBDIR += f1spirit
      SUBDIR += falconseye
+     SUBDIR += fifechan
+     SUBDIR += fifengine
      SUBDIR += fillets-ng
      SUBDIR += fire
      SUBDIR += flare
@@ -258,6 +260,7 @@
      SUBDIR += typespeed
      SUBDIR += ufoai
      SUBDIR += uhexen2
+     SUBDIR += unknown-horizons
      SUBDIR += uqm
      SUBDIR += urbanterror
      SUBDIR += urbanterror-data
