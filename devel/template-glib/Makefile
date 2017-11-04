@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/11/03 11:32:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2017/11/04 11:57:54 ajacoutot Exp $
 
 COMMENT=		templating library for GLib
 
@@ -21,6 +21,8 @@ MODULES=		devel/meson \
 			x11/gnome
 
 MODGNOME_TOOLS=		gobject-introspection vala
+
+BUILD_DEPENDS=		devel/bison
 
 LIB_DEPENDS=		devel/gobject-introspection
 
