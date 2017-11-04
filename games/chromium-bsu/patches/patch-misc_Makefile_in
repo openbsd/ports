@@ -1,0 +1,14 @@
+$OpenBSD: patch-misc_Makefile_in,v 1.1 2017/11/04 16:20:15 bentley Exp $
+
+Index: misc/Makefile.in
+--- misc/Makefile.in.orig
++++ misc/Makefile.in
+@@ -609,7 +609,7 @@ uninstall-man: uninstall-man6
+ 	msgfmt --desktop -d $(top_srcdir)/po --template $< -o $@
+ 
+ chromium-bsu.png: $(top_srcdir)/data/png/hero.png
+-	cp -a $< $@
++	cp $< $@
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

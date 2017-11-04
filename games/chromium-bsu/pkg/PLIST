@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/06/04 22:07:33 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.4 2017/11/04 16:20:15 bentley Exp $
 @bin bin/chromium-bsu
 @man man/man6/chromium-bsu.6
 share/applications/chromium-bsu.desktop
@@ -81,7 +81,7 @@ share/chromium-bsu/wav/music_game.wav
 share/chromium-bsu/wav/music_menu.wav
 share/chromium-bsu/wav/power.wav
 share/doc/chromium-bsu/
-share/doc/chromium-bsu/faq.htm
+share/doc/chromium-bsu/faq.html
 share/doc/chromium-bsu/images/
 share/doc/chromium-bsu/images/heroAmmo00.jpg
 share/doc/chromium-bsu/images/heroAmmo01.jpg
@@ -90,17 +90,14 @@ share/doc/chromium-bsu/images/powerUp00.jpg
 share/doc/chromium-bsu/images/powerUp01.jpg
 share/doc/chromium-bsu/images/powerUp02.jpg
 share/doc/chromium-bsu/images/useItem00.jpg
-share/doc/chromium-bsu/info.htm
-share/icons/
-share/icons/hicolor/
-share/icons/hicolor/64x64/
-share/icons/hicolor/64x64/apps/
+share/doc/chromium-bsu/info.html
 share/icons/hicolor/64x64/apps/chromium-bsu.png
 share/locale/bg/LC_MESSAGES/chromium-bsu.mo
 share/locale/de/LC_MESSAGES/chromium-bsu.mo
 share/locale/es/LC_MESSAGES/chromium-bsu.mo
 share/locale/fr/LC_MESSAGES/chromium-bsu.mo
 share/locale/it/LC_MESSAGES/chromium-bsu.mo
+share/locale/ro/LC_MESSAGES/chromium-bsu.mo
 share/locale/ru/LC_MESSAGES/chromium-bsu.mo
 share/locale/sv/LC_MESSAGES/chromium-bsu.mo
 share/locale/tr/LC_MESSAGES/chromium-bsu.mo
