@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2015/01/08 19:00:19 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.14 2017/11/04 15:45:35 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gemtest
@@ -22,31 +22,13 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/pg/basic_type_mapping.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/pg/coder.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/pg/connection.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/pg/constants.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/pg/deprecated_constants.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/pg/exceptions.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/pg/result.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/pg/text_decoder.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/pg/text_encoder.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/pg/type_map_by_column.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/pg_ext.so
-${GEM_LIB}/gems/${DISTNAME}/sample/
-${GEM_LIB}/gems/${DISTNAME}/sample/array_insert.rb
-${GEM_LIB}/gems/${DISTNAME}/sample/async_api.rb
-${GEM_LIB}/gems/${DISTNAME}/sample/async_copyto.rb
-${GEM_LIB}/gems/${DISTNAME}/sample/async_mixed.rb
-${GEM_LIB}/gems/${DISTNAME}/sample/check_conn.rb
-${GEM_LIB}/gems/${DISTNAME}/sample/copyfrom.rb
-${GEM_LIB}/gems/${DISTNAME}/sample/copyto.rb
-${GEM_LIB}/gems/${DISTNAME}/sample/cursor.rb
-${GEM_LIB}/gems/${DISTNAME}/sample/disk_usage_report.rb
-${GEM_LIB}/gems/${DISTNAME}/sample/issue-119.rb
-${GEM_LIB}/gems/${DISTNAME}/sample/losample.rb
-${GEM_LIB}/gems/${DISTNAME}/sample/minimal-testcase.rb
-${GEM_LIB}/gems/${DISTNAME}/sample/notify_wait.rb
-${GEM_LIB}/gems/${DISTNAME}/sample/pg_statistics.rb
-${GEM_LIB}/gems/${DISTNAME}/sample/replication_monitor.rb
-${GEM_LIB}/gems/${DISTNAME}/sample/test_binary_values.rb
-${GEM_LIB}/gems/${DISTNAME}/sample/wal_shipper.rb
-${GEM_LIB}/gems/${DISTNAME}/sample/warehouse_partitions.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/
 ${GEM_LIB}/gems/${DISTNAME}/spec/data/
 ${GEM_LIB}/gems/${DISTNAME}/spec/data/expected_trace.out
