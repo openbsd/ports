@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2016/03/20 19:56:05 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2017/11/04 11:35:38 benoit Exp $
 
 COMMENT= 	PerlIO layer to gzip/gunzip
 
 MODULES=	cpan
 
-DISTNAME =	PerlIO-gzip-0.19
+DISTNAME =	PerlIO-gzip-0.20
 CATEGORIES=	archivers
 
 # perl
