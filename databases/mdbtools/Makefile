@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2017/11/04 21:48:06 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2017/11/04 23:07:14 naddy Exp $
 
 COMMENT-main =		read microsoft Access MDB
 COMMENT-gmdb =		graphical interface to MDB tools
@@ -35,10 +35,6 @@ WANTLIB-main += c glib-2.0 iconv iodbcinst pthread readline
 WANTLIB-gmdb += c gdk-x11-2.0 gdk_pixbuf-2.0 glade-2.0 glib-2.0 gnome-2
 WANTLIB-gmdb += gnomeui-2 gobject-2.0 gtk-x11-2.0 intl mdb mdbsql pango-1.0
 WANTLIB-gmdb += pthread
-
-MODULES =		gcc4
-
-MODGCC4_ARCHS =		"*"
 
 BUILD_DEPENDS =		devel/bison \
 			devel/libtool \
