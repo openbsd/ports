@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2016/09/12 11:45:57 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2017/11/04 21:48:06 naddy Exp $
 
 COMMENT-main =		read microsoft Access MDB
 COMMENT-gmdb =		graphical interface to MDB tools
@@ -10,7 +10,7 @@ GH_TAGNAME =		0.7.1
 PKGNAME-main =		${GH_PROJECT}-${GH_TAGNAME}
 PKGNAME-gmdb =		gmdb-${GH_TAGNAME}
 REVISION-main =		2
-REVISION-gmdb =		2
+REVISION-gmdb =		3
 EPOCH =			0
 
 CATEGORIES =		databases converters
@@ -32,9 +32,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB-main += c glib-2.0 iconv iodbcinst pthread readline
 
-WANTLIB-gmdb += ${MODGETTEXT_WANTLIB}
 WANTLIB-gmdb += c gdk-x11-2.0 gdk_pixbuf-2.0 glade-2.0 glib-2.0 gnome-2
-WANTLIB-gmdb += gnomeui-2 gobject-2.0 gtk-x11-2.0 mdb mdbsql pango-1.0
+WANTLIB-gmdb += gnomeui-2 gobject-2.0 gtk-x11-2.0 intl mdb mdbsql pango-1.0
 WANTLIB-gmdb += pthread
 
 MODULES =		gcc4
@@ -50,12 +49,11 @@ BUILD_DEPENDS =		devel/bison \
 LIB_DEPENDS-main =	converters/libiconv \
 			databases/iodbc,-main \
 			devel/glib2
-LIB_DEPENDS-gmdb =	${MODGETTEXT_LIB_DEPENDS} \
-			databases/mdbtools,-main>=0.7.1v0 \
+LIB_DEPENDS-gmdb =	databases/mdbtools,-main>=0.7.1v0 \
 			x11/gnome/libgnomeui
 
 RUN_DEPENDS-main =
-RUN_DEPENDS-gmdb =	${MODGETTEXT_RUN_DEPENDS}
+RUN_DEPENDS-gmdb =
 
 YACC=			bison -y
 CONFIGURE_STYLE =	gnu
@@ -71,7 +69,7 @@ BUILD_PACKAGES :=	${BUILD_PACKAGES:N-gmdb}
 .endif
 
 .if ${BUILD_PACKAGES:M-gmdb}
-MODULES +=		devel/gettext x11/gnome
+MODULES +=		x11/gnome
 MODGNOME_TOOLS +=	yelp desktop-file-utils
 .else
 CONFIGURE_ARGS +=	--disable-gmdb2

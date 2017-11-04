@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2017/10/23 17:11:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2017/11/04 21:48:06 naddy Exp $
 
 COMMENT-main=	IAX client library
 COMMENT-tcl=	IAX client library, tcl bindings
@@ -8,7 +8,7 @@ DISTNAME=	iaxclient-2.1beta3
 PKGNAME-main=	${DISTNAME}
 PKGNAME-tcl=	${DISTNAME:S/iaxclient/iaxclient-tcl/}
 PKGNAME-iaxcomm= iaxcomm-1.1.0
-REVISION=	20
+REVISION=	21
 
 CATEGORIES=	telephony
 SHARED_LIBS=	tcliaxclient02 0.0 \
@@ -22,7 +22,7 @@ MAINTAINER=	Sebastian Reitenbach <sebastia@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 MULTI_PACKAGES=	-main -tcl -iaxcomm
-MODULES=	devel/gettext x11/tk
+MODULES=	x11/tk
 
 cWANTLIB	+= avcodec gsm m ogg ossaudio portaudio pthread speex
 cWANTLIB	+= speexdsp sndio theora vidcap z
@@ -34,16 +34,16 @@ WANTLIB-tcl	+= X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB-tcl	+= Xi Xinerama Xrandr Xrender atk-1.0 c cairo
 WANTLIB-tcl	+= expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB-tcl	+= gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
-WANTLIB-tcl	+= gtk-x11-2.0 iaxclient pango-1.0 pangocairo-1.0
+WANTLIB-tcl	+= gtk-x11-2.0 iaxclient iconv intl pango-1.0 pangocairo-1.0
 WANTLIB-tcl	+= pangoft2-1.0 pcre pixman-1 png xcb xcb-render
 WANTLIB-tcl	+= graphite2 harfbuzz vorbis
-WANTLIB-tcl	+= xcb-shm ffi ${cWANTLIB} ${MODGETTEXT_WANTLIB}
+WANTLIB-tcl	+= xcb-shm ffi ${cWANTLIB}
 
 WANTLIB-iaxcomm	+= ICE SDL SM X11 Xcomposite Xcursor Xdamage
 WANTLIB-iaxcomm	+= Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0
 WANTLIB-iaxcomm	+= c cairo expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB-iaxcomm	+= gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
-WANTLIB-iaxcomm	+= gtk-x11-2.0 iaxclient iodbc jpeg mspack ${MODGETTEXT_WANTLIB}
+WANTLIB-iaxcomm	+= gtk-x11-2.0 iaxclient iconv intl iodbc jpeg mspack
 WANTLIB-iaxcomm	+= pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB-iaxcomm	+= png ${COMPILER_LIBCXX} tiff usbhid wx_base wx_base_net
 WANTLIB-iaxcomm	+= wx_base_odbc wx_base_xml wx_gtk2_adv wx_gtk2_aui wx_gtk2_core
@@ -66,9 +66,8 @@ LIB_DEPENDS-tcl=${LIB_DEPENDS} \
 
 RUN_DEPENDS-tcl=${MODTCL_RUN_DEPENDS}
 
-RUN_DEPENDS-iaxcomm=${MODGETTEXT_RUN_DEPENDS}
-LIB_DEPENDS-iaxcomm=${MODGETTEXT_LIB_DEPENDS} \
-	${BASE_PKGPATH} \
+RUN_DEPENDS-iaxcomm=
+LIB_DEPENDS-iaxcomm=${BASE_PKGPATH} \
 	x11/wxWidgets
 
 CONFIGURE_STYLE=gnu

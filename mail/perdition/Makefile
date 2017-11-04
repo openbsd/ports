@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2017/07/26 22:45:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2017/11/04 21:48:06 naddy Exp $
 
 COMMENT-main=	fully featured POP3 and IMAP4 proxy server
 COMMENT-ldap=	LDAP backend for perdition mail proxy
@@ -11,10 +11,10 @@ PKGNAME-main=	perdition-${DISTVER:S/-//}
 PKGNAME-ldap=	perdition-ldap-${DISTVER:S/-//}
 PKGNAME-mysql=	perdition-mysql-${DISTVER:S/-//}
 PKGNAME-pgsql=	perdition-pgsql-${DISTVER:S/-//}
-REVISION-ldap=	0
-REVISION-main=	0
-REVISION-mysql=	0
-REVISION-pgsql=	0
+REVISION-ldap=	1
+REVISION-main=	1
+REVISION-mysql=	1
+REVISION-pgsql=	1
 
 CATEGORIES=	mail
 
@@ -35,8 +35,6 @@ SHARED_LIBS +=  perditiondb_postgresql       0.0  # .0.0
 PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=	${HOMEPAGE}download/${DISTVER}/
-
-MODULES=	devel/gettext
 
 USE_GMAKE=	Yes
 
@@ -65,11 +63,10 @@ cWANTLIB=		lib/db4/db>=4 vanessa_logger>=1.0
 cLIB_DEPENDS+=		databases/db/v4 \
 			vanessa_logger->=0.0.10:devel/vanessa/logger
 
-WANTLIB-main=		${cWANTLIB} ${MODGETTEXT_WANTLIB} \
-			c crypto ssl util popt idn \
+WANTLIB-main=		${cWANTLIB} \
+			c crypto iconv idn intl popt ssl util \
 			vanessa_adt>=1.0 vanessa_socket>=1.0
-LIB_DEPENDS-main=	${cLIB_DEPENDS} ${LIB_DEPENDS} \
-			${MODGETTEXT_LIB_DEPENDS} \
+LIB_DEPENDS-main=	${cLIB_DEPENDS} \
 			devel/popt devel/libidn \
 			vanessa_adt->=0.0.9:devel/vanessa/adt \
 			vanessa_socket->=0.0.12:devel/vanessa/socket
