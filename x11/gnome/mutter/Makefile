@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.78 2017/10/23 17:11:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.79 2017/11/04 16:44:45 jasper Exp $
 
 COMMENT=		window and compositing manager
 
 GNOME_PROJECT=		mutter
-GNOME_VERSION=		3.24.4
+GNOME_VERSION=		3.26.2
 
-REVISION=		2
-
-API_SUFFIX =	-0
-SHARED_LIBS +=  mutter-0                    0.0 # 0.0
+API_SUFFIX =	-1
+SHARED_LIBS +=  mutter-1                    0.0 # 0.0
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

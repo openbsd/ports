@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2017/04/17 12:52:33 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.15 2017/11/04 16:44:45 jasper Exp $
 @conflict metacity-*
 @pkgpath x11/gnome/metacity
 @bin bin/mutter
@@ -253,12 +253,15 @@ include/mutter/meta/meta-background-actor.h
 include/mutter/meta/meta-background-group.h
 include/mutter/meta/meta-background-image.h
 include/mutter/meta/meta-background.h
+include/mutter/meta/meta-close-dialog.h
 include/mutter/meta/meta-cursor-tracker.h
 include/mutter/meta/meta-dnd.h
 include/mutter/meta/meta-enum-types.h
 include/mutter/meta/meta-idle-monitor.h
+include/mutter/meta/meta-inhibit-shortcuts-dialog.h
 include/mutter/meta/meta-monitor-manager.h
 include/mutter/meta/meta-plugin.h
+include/mutter/meta/meta-settings.h
 include/mutter/meta/meta-shadow-factory.h
 include/mutter/meta/meta-shaped-texture.h
 include/mutter/meta/meta-version.h
@@ -273,7 +276,7 @@ include/mutter/meta/window.h
 include/mutter/meta/workspace.h
 lib/libmutter${API_SUFFIX}.a
 lib/libmutter${API_SUFFIX}.la
-@lib lib/libmutter${API_SUFFIX}.so.${LIBmutter-0_VERSION}
+@lib lib/libmutter${API_SUFFIX}.so.${LIBmutter-1_VERSION}
 lib/mutter/
 lib/mutter/Cally${API_SUFFIX}.gir
 lib/mutter/Cally${API_SUFFIX}.typelib
