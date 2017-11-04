@@ -1,0 +1,21 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/11/04 21:46:21 bcallah Exp $
+@bin bin/a60
+@bin bin/xa60
+@info info/a60.info
+@man man/man1/a60.1
+@man man/man1/xa60.1
+share/a60/
+share/a60/a60-mkc.inc
+share/doc/a60/
+share/doc/a60/RRA60.ps
+share/examples/a60/
+share/examples/a60/321.a60
+share/examples/a60/demo3.a60
+share/examples/a60/inout.a60
+share/examples/a60/nqueen.a60
+share/examples/a60/prim.a60
+share/examples/a60/rand.a60
+share/examples/a60/serp.a60
+share/examples/a60/teul1.a60
+share/examples/a60/teul2.a60
+share/examples/a60/whetstone.a60

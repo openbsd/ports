@@ -1,0 +1,6 @@
+a60 is the Algol 60 interpreter NASE A60. Made for fun and call-by-name.
+
+NASE A60 is based on the Revised Report on the Algorithmic Language
+Algol 60.
+
+Additionally there is the xa60 frontend: a simple edit-and-go X11 IDE.
