@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile.inc,v 1.15 2017/08/08 15:15:52 bcallah Exp $
+# $OpenBSD: Makefile.inc,v 1.16 2017/11/04 22:44:49 bentley Exp $
 
 CATEGORIES =	games
 PKGNAME ?=	${DISTNAME:S/-src//}
 EXTRACT_SUFX ?=	.tar.bz2
 
-HOMEPAGE ?=	http://gottcode.org/${GAME}/
+HOMEPAGE ?=	https://gottcode.org/${GAME}/
 MASTER_SITES ?=	${HOMEPAGE}
 
 MAINTAINER ?=	Brian Callahan <bcallah@openbsd.org>
