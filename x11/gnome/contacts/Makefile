@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.64 2017/10/23 17:11:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.65 2017/11/04 18:19:48 jasper Exp $
 
 COMMENT=		contacts manager for GNOME
 
 GNOME_PROJECT=		gnome-contacts
-GNOME_VERSION=		3.22.1
-REVISION=		4
+GNOME_VERSION=		3.26
 
 CATEGORIES=		productivity
 
@@ -34,7 +33,8 @@ WANTLIB += GL GLESv2 Xt enchant gstallocators-1.0 gstapp-1.0 gstbadallocators-1.
 WANTLIB += gstfft-1.0 gstgl-1.0 gstpbutils-1.0 harfbuzz-icu hyphen
 WANTLIB += jpeg notify nssutil3 webp xslt
 
-MODULES=		x11/gnome \
+MODULES=		devel/meson \
+			x11/gnome \
 			devel/dconf
 
 LIB_DEPENDS=		geo/libchamplain \
@@ -44,6 +44,6 @@ LIB_DEPENDS=		geo/libchamplain \
 MODGNOME_TOOLS=		desktop-file-utils docbook \
 			gobject-introspection vala
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_ARGS +=	-Dwith-cheese=false
 
 .include <bsd.port.mk>
