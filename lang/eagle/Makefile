@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.20 2017/04/23 20:52:33 stu Exp $
+# $OpenBSD: Makefile,v 1.21 2017/11/04 17:17:40 naddy Exp $
 
 COMMENT =	Tcl implementation for the CLR
 
 V =		1.0
 P =		6234.51946
 DISTNAME =	eagle-${V}
-PKGNAME =	${DISTNAME}-beta39
+PKGNAME =	${DISTNAME}beta39
+EPOCH =		0
 CATEGORIES =	lang lang/tcl
 HOMEPAGE =	http://eagle.to/
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
