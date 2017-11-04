@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2017/11/04 19:05:53 espie Exp $
+
+Index: src/Makefile.in
+--- src/Makefile.in.orig
++++ src/Makefile.in
+@@ -225,7 +225,7 @@ mp3splt_gtk_SOURCES = \
+ 
+ INCLUDES = @GTK_CFLAGS@ -Wall $(am__append_1) $(am__append_3) \
+ 	$(am__append_5)
+-mp3splt_gtk_LDADD = @GTK_LIBS@ -lgthread-2.0 -lmp3splt $(am__append_2) \
++mp3splt_gtk_LDADD = @GTK_LIBS@ -lgthread-2.0 -lmp3splt -lm $(am__append_2) \
+ 	$(am__append_4)
+ all: all-am
+ 
