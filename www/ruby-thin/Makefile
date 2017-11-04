@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.24 2016/11/04 21:47:24 jeremy Exp $
+# $OpenBSD: Makefile,v 1.25 2017/11/04 15:53:00 jeremy Exp $
 
 COMMENT =	fast and very simple Ruby web server
 
-DISTNAME =	thin-1.7.0
+DISTNAME =	thin-1.7.2
 CATEGORIES =	www
 
 HOMEPAGE =	http://code.macournoyer.com/thin/
