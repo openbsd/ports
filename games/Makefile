@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.355 2017/10/29 17:27:49 bcallah Exp $
+# $OpenBSD: Makefile,v 1.356 2017/11/04 18:37:30 bentley Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -319,7 +319,6 @@
      SUBDIR += xripple
      SUBDIR += xroach
      SUBDIR += xscavenger
-     SUBDIR += xscorch
      SUBDIR += xscrabble
      SUBDIR += xskat
      SUBDIR += xsoldier
