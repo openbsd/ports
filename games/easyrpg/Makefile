@@ -1,9 +1,7 @@
-# $OpenBSD: Makefile,v 1.17 2017/09/09 19:55:11 jeremy Exp $
+# $OpenBSD: Makefile,v 1.18 2017/11/04 01:06:42 bcallah Exp $
 
-V =		0.5.2
 COMMENT =	free interpreter for RPG Maker 2000/2003 and EasyRPG games
-DISTNAME =	${PKGNAME}{${V}}
-PKGNAME =	easyrpg-${V}
+PKGNAME =	easyrpg-${GH_TAGNAME}
 CATEGORIES =	games x11
 
 HOMEPAGE =	https://easyrpg.org/
@@ -17,7 +15,9 @@ WANTLIB += vorbisfile xmp z
 
 COMPILER =	base-clang ports-clang ports-gcc
 
-MASTER_SITES =	https://github.com/EasyRPG/Player/archive/
+GH_ACCOUNT =	EasyRPG
+GH_PROJECT =	Player
+GH_TAGNAME =	0.5.3
 
 MODULES +=	devel/cmake
 
@@ -39,6 +39,6 @@ MAKE_ENV =	${CONFIGURE_ENV}
 # make test seems bogus, disabling it.
 NO_TEST =	Yes
 
-WRKDIST =	${WRKDIR}/Player-${V}
+WRKDIST =	${WRKDIR}/Player-${GH_TAGNAME}
 
 .include <bsd.port.mk>
