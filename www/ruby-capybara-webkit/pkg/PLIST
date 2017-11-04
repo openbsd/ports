@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.5 2016/09/23 15:25:23 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2017/11/04 15:51:12 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
+${GEM_LIB}/gems/${DISTNAME}/.qmake.stash
 ${GEM_LIB}/gems/${DISTNAME}/.rspec
 ${GEM_LIB}/gems/${DISTNAME}/.travis.yml
 ${GEM_LIB}/gems/${DISTNAME}/Appraisals
@@ -20,7 +21,7 @@ ${GEM_LIB}/gems/${DISTNAME}/bin/Info.plist
 ${GEM_LIB}/gems/${DISTNAME}/capybara-webkit.gemspec
 ${GEM_LIB}/gems/${DISTNAME}/extconf.rb
 ${GEM_LIB}/gems/${DISTNAME}/gemfiles/
-${GEM_LIB}/gems/${DISTNAME}/gemfiles/2.6.gemfile
+${GEM_LIB}/gems/${DISTNAME}/gemfiles/2.13.gemfile
 ${GEM_LIB}/gems/${DISTNAME}/gemfiles/2.7.gemfile
 ${GEM_LIB}/gems/${DISTNAME}/gemfiles/master.gemfile
 ${GEM_LIB}/gems/${DISTNAME}/lib/
@@ -49,6 +50,8 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/driver_rendering_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/driver_resize_window_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/driver_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/errors_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/fake_server.sh
 ${GEM_LIB}/gems/${DISTNAME}/spec/integration/
 ${GEM_LIB}/gems/${DISTNAME}/spec/integration/session_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/selenium_compatibility_spec.rb
