@@ -1,0 +1,25 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/11/04 00:02:14 bentley Exp $
+share/apertium/apertium-crh/
+share/apertium/apertium-crh/apertium-crh.crh.lexc
+share/apertium/apertium-crh/apertium-crh.crh.rlx
+share/apertium/apertium-crh/apertium-crh.crh.twol
+share/apertium/apertium-crh/apertium-crh.post-crh.dix
+share/apertium/apertium-crh/crh.autogen.att.gz
+share/apertium/apertium-crh/crh.autogen.bin
+share/apertium/apertium-crh/crh.autogen.hfst
+share/apertium/apertium-crh/crh.automorf.att.gz
+share/apertium/apertium-crh/crh.automorf.bin
+share/apertium/apertium-crh/crh.automorf.hfst
+share/apertium/apertium-crh/crh.autopgen.bin
+share/apertium/apertium-crh/crh.prob
+share/apertium/apertium-crh/crh.rlx.bin
+share/apertium/modes/crh-disam.mode
+share/apertium/modes/crh-gener.mode
+share/apertium/modes/crh-lexc.mode
+share/apertium/modes/crh-morph.mode
+share/apertium/modes/crh-spell.mode
+share/apertium/modes/crh-tagger.mode
+share/apertium/modes/crh-tokenise.mode
+share/apertium/modes/crh-twol.mode
+share/apertium/modes/kir-disam.mode
+share/pkgconfig/apertium-crh.pc
