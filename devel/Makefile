@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1660 2017/11/03 15:32:04 rpe Exp $
+# $OpenBSD: Makefile,v 1.1661 2017/11/04 17:26:19 jeremy Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1652,6 +1652,8 @@
      SUBDIR += ruby-json_pure
      SUBDIR += ruby-kgio,ruby23
      SUBDIR += ruby-kgio,ruby24
+     SUBDIR += ruby-libv8,ruby23
+     SUBDIR += ruby-libv8,ruby24
      SUBDIR += ruby-locale
      SUBDIR += ruby-log4r
      SUBDIR += ruby-metaclass
