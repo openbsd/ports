@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2017/04/08 00:31:36 juanfra Exp $
+# $OpenBSD: Makefile,v 1.19 2017/11/04 19:37:45 juanfra Exp $
 
 COMMENT =		FTP server library for Python
 
-MODPY_EGG_VERSION =	1.5.2
+MODPY_EGG_VERSION =	1.5.3
 DISTNAME =		pyftpdlib-${MODPY_EGG_VERSION}
 PKGNAME =		py-ftpdlib-${MODPY_EGG_VERSION}
 
