@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2017/05/21 17:48:41 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.20 2017/11/04 16:45:01 jasper Exp $
 share/glib-2.0/schemas/org.gnome.shell.extensions.auto-move-windows.gschema.xml
 share/glib-2.0/schemas/org.gnome.shell.extensions.classic-overrides.gschema.xml
 share/glib-2.0/schemas/org.gnome.shell.extensions.example.gschema.xml
@@ -6,8 +6,6 @@ share/glib-2.0/schemas/org.gnome.shell.extensions.native-window-placement.gschem
 share/glib-2.0/schemas/org.gnome.shell.extensions.screenshot-window-sizer.gschema.xml
 share/glib-2.0/schemas/org.gnome.shell.extensions.user-theme.gschema.xml
 share/glib-2.0/schemas/org.gnome.shell.extensions.window-list.gschema.xml
-share/gnome-session/
-share/gnome-session/sessions/
 share/gnome-session/sessions/gnome-classic.session
 share/gnome-shell/extensions/
 share/gnome-shell/extensions/alternate-tab@gnome-shell-extensions.gcampax.github.com/
