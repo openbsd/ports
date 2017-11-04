@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2016/01/17 17:29:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2017/11/04 14:16:04 naddy Exp $
 
 COMMENT-main =	tilt the floor to roll a ball through an obstacle course
 COMMENT-data =	data for Neverball/Neverputt
 BROKEN-hppa =	SIGILL on data/ball/snowglobe/snowglobe-inner.so
 
 V =		1.6.0
-REVISION-main =	0
+REVISION-main =	1
 DISTNAME =	neverball-$V
 PKGNAME-main =	neverball-$V
 PKGNAME-data =	neverball-data-$V
@@ -22,25 +22,25 @@ MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB-main =	${WANTLIB} GL SDL2 X11 c m pthread z ogg vorbis vorbisfile \
-		jpeg png SDL2_ttf physfs
+WANTLIB-main =	GL SDL2 c m pthread ogg vorbis vorbisfile \
+		jpeg png SDL2_ttf physfs iconv intl
 
 MASTER_SITES =	${HOMEPAGE}
 
-LIB_DEPENDS-main =	${MODGETTEXT_LIB_DEPENDS} \
-			audio/libogg \
+BUILD_DEPENDS=		devel/gettext-tools
+
+LIB_DEPENDS-main =	audio/libogg \
 			audio/libvorbis \
 			graphics/jpeg \
 			graphics/png \
 			devel/sdl2-ttf \
-			devel/physfs
+			devel/physfs \
+			devel/gettext
 RUN_DEPENDS-data =
 LIB_DEPENDS-data =
 WANTLIB-data =
 
 RUN_DEPENDS-main =	${FULLPKGNAME-data}:${BUILD_PKGPATH},-data
-
-MODULES =	devel/gettext
 
 USE_GMAKE =	Yes
 NO_TEST =	Yes

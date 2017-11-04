@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2016/02/28 00:33:45 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2017/11/04 14:16:04 naddy Exp $
 
 V = 0.9.4
 COMMENT-client = race for the galaxy card game
@@ -13,7 +13,7 @@ MASTER_SITES = ${HOMEPAGE}
 MULTI_PACKAGES = -client #-server
 SUBPACKAGE ?= -client
 
-REVISION-client = 0
+REVISION-client = 1
 #REVISION-server =
 
 # Licence: GPL
@@ -36,16 +36,14 @@ post-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/server ${PREFIX}/bin/rftg-server
 .endif
 
-MODULES =	devel/gettext
-
 cWANTLIB = c m pthread
 
 WANTLIB-client = ${cWANTLIB} X11 Xcomposite Xcursor Xdamage Xext \
 	Xfixes Xi Xinerama Xrandr Xrender atk-1.0 cairo fontconfig \
 	freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 \
-	gobject-2.0 gtk-x11-2.0 pango-1.0 \
+	gobject-2.0 gtk-x11-2.0 intl pango-1.0 \
 	pangocairo-1.0 pangoft2-1.0 \
-	z ${MODGETTEXT_WANTLIB}
+	z
 
 WANTLIB-server = ${cWANTLIB} c m pthread mysqlclient
 
