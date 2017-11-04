@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2017/03/07 10:10:43 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.3 2017/11/04 14:33:38 rpointel Exp $
 lib/python${MODPY_VERSION}/site-packages/dfvfs/
 lib/python${MODPY_VERSION}/site-packages/dfvfs-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/dfvfs-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -76,8 +76,6 @@ lib/python${MODPY_VERSION}/site-packages/dfvfs/credentials/keychain.py
 lib/python${MODPY_VERSION}/site-packages/dfvfs/credentials/keychain.pyc
 lib/python${MODPY_VERSION}/site-packages/dfvfs/credentials/manager.py
 lib/python${MODPY_VERSION}/site-packages/dfvfs/credentials/manager.pyc
-lib/python${MODPY_VERSION}/site-packages/dfvfs/dependencies.py
-lib/python${MODPY_VERSION}/site-packages/dfvfs/dependencies.pyc
 lib/python${MODPY_VERSION}/site-packages/dfvfs/encoding/
 lib/python${MODPY_VERSION}/site-packages/dfvfs/encoding/__init__.py
 lib/python${MODPY_VERSION}/site-packages/dfvfs/encoding/__init__.pyc
@@ -189,6 +187,8 @@ lib/python${MODPY_VERSION}/site-packages/dfvfs/lib/ewf.py
 lib/python${MODPY_VERSION}/site-packages/dfvfs/lib/ewf.pyc
 lib/python${MODPY_VERSION}/site-packages/dfvfs/lib/fvde.py
 lib/python${MODPY_VERSION}/site-packages/dfvfs/lib/fvde.pyc
+lib/python${MODPY_VERSION}/site-packages/dfvfs/lib/glob2regex.py
+lib/python${MODPY_VERSION}/site-packages/dfvfs/lib/glob2regex.pyc
 lib/python${MODPY_VERSION}/site-packages/dfvfs/lib/lvm.py
 lib/python${MODPY_VERSION}/site-packages/dfvfs/lib/lvm.pyc
 lib/python${MODPY_VERSION}/site-packages/dfvfs/lib/py2to3.py
