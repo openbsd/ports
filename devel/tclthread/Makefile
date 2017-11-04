@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2017/06/02 19:54:15 schwarze Exp $
+# $OpenBSD: Makefile,v 1.8 2017/11/04 18:56:31 stu Exp $
 
 COMMENT =		thread extension for Tcl
 
-V =			2.8.0
+V =			2.8.1
 
 DISTNAME =		thread${V}
 PKGNAME =		tclthread-${V}
-REVISION =		0
 SHARED_LIBS =		tclthread${V:S/.//g} 0.0
 CATEGORIES =		devel
 HOMEPAGE =		http://tcl.sourceforge.net/
