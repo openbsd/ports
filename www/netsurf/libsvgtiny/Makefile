@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.4 2017/04/21 20:34:19 bentley Exp $
+# $OpenBSD: Makefile,v 1.5 2017/11/04 22:28:01 bentley Exp $
 
 COMMENT =		SVG Tiny implementation
 
 NETSURF_PROJECT =	libsvgtiny
-NETSURF_VERSION =	0.1.5
-REVISION =		0
+NETSURF_VERSION =	0.1.6
 
 CATEGORIES =		graphics
 SHARED_LIBS =		svgtiny 0.0 #0.1.4
 
 BUILD_DEPENDS +=	devel/gperf
-LIB_DEPENDS =		www/netsurf/libdom>=0.3.1
+LIB_DEPENDS =		www/netsurf/libdom>=0.3.2
 
 WANTLIB += dom expat hubbub iconv m parserutils wapcaplet
 

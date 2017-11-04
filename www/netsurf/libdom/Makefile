@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.10 2016/11/30 07:35:00 bentley Exp $
+# $OpenBSD: Makefile,v 1.11 2017/11/04 22:28:01 bentley Exp $
 
 COMMENT =		W3C DOM implementation
 
 NETSURF_PROJECT =	libdom
-NETSURF_VERSION =	0.3.1
+NETSURF_VERSION =	0.3.2
 
-SHARED_LIBS =		dom 0.2 #0.1.2
+SHARED_LIBS =		dom 1.0 #0.3.2
 
 LIB_DEPENDS =		converters/libiconv \
-			www/netsurf/hubbub>=0.3.3 \
+			www/netsurf/hubbub>=0.3.4 \
 			www/netsurf/libwapcaplet>=0.4.0
 WANTLIB += expat hubbub iconv parserutils wapcaplet
 

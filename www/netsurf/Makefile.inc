@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.17 2017/04/20 04:27:58 bentley Exp $
+# $OpenBSD: Makefile.inc,v 1.18 2017/11/04 22:28:01 bentley Exp $
 
 CATEGORIES +=	www
 
@@ -28,7 +28,7 @@ MAKE_FLAGS +=	COMPONENT_TYPE=lib-shared \
 .endfor
 
 .if ${NETSURF_PROJECT} != "buildsystem"
-BUILD_DEPENDS +=	www/netsurf/buildsystem>=1.5
+BUILD_DEPENDS +=	www/netsurf/buildsystem>=1.6
 MAKE_FLAGS +=		Q= \
 			VQ= \
 			CC="${CC}" \

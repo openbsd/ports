@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2016/11/30 07:35:00 bentley Exp $
+# $OpenBSD: Makefile,v 1.3 2017/11/04 22:28:01 bentley Exp $
 
 COMMENT =		JavaScript bindings generator
 
 NETSURF_PROJECT =	nsgenbind
-NETSURF_VERSION =	0.4
+NETSURF_VERSION =	0.5
 
 BUILD_DEPENDS +=	devel/bison
 
