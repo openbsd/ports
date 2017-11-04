@@ -1,6 +1,7 @@
-$OpenBSD: patch-unix_Makefile_in,v 1.6 2017/05/10 01:20:34 stu Exp $
---- unix/Makefile.in.orig	Tue Jul 26 10:07:18 2016
-+++ unix/Makefile.in	Mon Apr 10 02:13:20 2017
+$OpenBSD: patch-unix_Makefile_in,v 1.7 2017/11/04 18:55:26 stu Exp $
+Index: unix/Makefile.in
+--- unix/Makefile.in.orig
++++ unix/Makefile.in
 @@ -633,6 +633,10 @@ ${STUB_LIB_FILE}: ${STUB_LIB_OBJS}
  	rm -f $@
  	@MAKE_STUB_LIB@
@@ -41,20 +42,20 @@ $OpenBSD: patch-unix_Makefile_in,v 1.6 2017/05/10 01:20:34 stu Exp $
 @@ -841,21 +844,21 @@ install-libraries: libraries
  	    $(INSTALL_DATA) $$i "$(SCRIPT_INSTALL_DIR)"/http1.0; \
  	    done;
- 	@echo "Installing package http 2.8.9 as a Tcl Module";
--	@$(INSTALL_DATA) $(TOP_DIR)/library/http/http.tcl "$(SCRIPT_INSTALL_DIR)"/../tcl8/8.6/http-2.8.9.tm;
-+	@$(INSTALL_DATA) $(TOP_DIR)/library/http/http.tcl "$(SCRIPT_INSTALL_DIR)"/modules/http-2.8.9.tm;
+ 	@echo "Installing package http 2.8.11 as a Tcl Module";
+-	@$(INSTALL_DATA) $(TOP_DIR)/library/http/http.tcl "$(SCRIPT_INSTALL_DIR)"/../tcl8/8.6/http-2.8.11.tm;
++	@$(INSTALL_DATA) $(TOP_DIR)/library/http/http.tcl "$(SCRIPT_INSTALL_DIR)"/modules/http-2.8.11.tm;
  	@echo "Installing package opt0.4 files to $(SCRIPT_INSTALL_DIR)/opt0.4/";
  	@for i in $(TOP_DIR)/library/opt/*.tcl ; \
  	    do \
  	    $(INSTALL_DATA) $$i "$(SCRIPT_INSTALL_DIR)"/opt0.4; \
  	    done;
- 	@echo "Installing package msgcat 1.6.0 as a Tcl Module";
--	@$(INSTALL_DATA) $(TOP_DIR)/library/msgcat/msgcat.tcl "$(SCRIPT_INSTALL_DIR)"/../tcl8/8.5/msgcat-1.6.0.tm;
-+	@$(INSTALL_DATA) $(TOP_DIR)/library/msgcat/msgcat.tcl "$(SCRIPT_INSTALL_DIR)"/modules/msgcat-1.6.0.tm;
- 	@echo "Installing package tcltest 2.4.0 as a Tcl Module";
--	@$(INSTALL_DATA) $(TOP_DIR)/library/tcltest/tcltest.tcl "$(SCRIPT_INSTALL_DIR)"/../tcl8/8.5/tcltest-2.4.0.tm;
-+	@$(INSTALL_DATA) $(TOP_DIR)/library/tcltest/tcltest.tcl "$(SCRIPT_INSTALL_DIR)"/modules/tcltest-2.4.0.tm;
+ 	@echo "Installing package msgcat 1.6.1 as a Tcl Module";
+-	@$(INSTALL_DATA) $(TOP_DIR)/library/msgcat/msgcat.tcl "$(SCRIPT_INSTALL_DIR)"/../tcl8/8.5/msgcat-1.6.1.tm;
++	@$(INSTALL_DATA) $(TOP_DIR)/library/msgcat/msgcat.tcl "$(SCRIPT_INSTALL_DIR)"/modules/msgcat-1.6.1.tm;
+ 	@echo "Installing package tcltest 2.4.1 as a Tcl Module";
+-	@$(INSTALL_DATA) $(TOP_DIR)/library/tcltest/tcltest.tcl "$(SCRIPT_INSTALL_DIR)"/../tcl8/8.5/tcltest-2.4.1.tm;
++	@$(INSTALL_DATA) $(TOP_DIR)/library/tcltest/tcltest.tcl "$(SCRIPT_INSTALL_DIR)"/modules/tcltest-2.4.1.tm;
  
  	@echo "Installing package platform 1.0.14 as a Tcl Module";
 -	@$(INSTALL_DATA) $(TOP_DIR)/library/platform/platform.tcl "$(SCRIPT_INSTALL_DIR)"/../tcl8/8.4/platform-1.0.14.tm;

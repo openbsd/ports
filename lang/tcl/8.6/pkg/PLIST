@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2017/05/10 01:20:34 stu Exp $
+@comment $OpenBSD: PLIST,v 1.11 2017/11/04 18:55:26 stu Exp $
 @option no-default-conflict
 @option is-branch
 @conflict tcl->=8.6,<8.7
@@ -924,12 +924,12 @@ lib/tcl/tcl8.6/man/mann/
 @man lib/tcl/tcl8.6/man/mann/yieldto.n
 @man lib/tcl/tcl8.6/man/mann/zlib.n
 lib/tcl/tcl8.6/modules/
-lib/tcl/tcl8.6/modules/http-2.8.9.tm
-lib/tcl/tcl8.6/modules/msgcat-1.6.0.tm
+lib/tcl/tcl8.6/modules/http-2.8.11.tm
+lib/tcl/tcl8.6/modules/msgcat-1.6.1.tm
 lib/tcl/tcl8.6/modules/platform/
 lib/tcl/tcl8.6/modules/platform-1.0.14.tm
 lib/tcl/tcl8.6/modules/platform/shell-1.1.4.tm
-lib/tcl/tcl8.6/modules/tcltest-2.4.0.tm
+lib/tcl/tcl8.6/modules/tcltest-2.4.1.tm
 lib/tcl/tcl8.6/msgs/
 lib/tcl/tcl8.6/msgs/af.msg
 lib/tcl/tcl8.6/msgs/af_za.msg

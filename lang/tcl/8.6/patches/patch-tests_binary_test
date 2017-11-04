@@ -1,7 +1,8 @@
-$OpenBSD: patch-tests_binary_test,v 1.2 2013/09/22 10:33:13 stu Exp $
---- tests/binary.test.orig	Tue Sep 17 08:14:17 2013
-+++ tests/binary.test	Tue Sep 17 20:54:45 2013
-@@ -2822,7 +2822,7 @@ test binary-75.26 {binary decode uuencode} -body {
+$OpenBSD: patch-tests_binary_test,v 1.3 2017/11/04 18:55:26 stu Exp $
+Index: tests/binary.test
+--- tests/binary.test.orig
++++ tests/binary.test
+@@ -2834,7 +2834,7 @@ test binary-75.26 {binary decode uuencode} -body {
  test binary-76.1 {binary string appending growth algorithm} unix {
      # Create zero-length byte array first
      set f [open /dev/null rb]

@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2017/06/04 23:21:02 schwarze Exp $
+# $OpenBSD: Makefile,v 1.19 2017/11/04 18:55:26 stu Exp $
 
 COMMENT =		Tool Command Language
 
-P =			6
+P =			7
 DISTNAME =		tcl8.6.${P}
 PKGNAME =		tcl-8.6.${P}
-REVISION =		0
 SHARED_LIBS =		tcl86 1.${P}
 CATEGORIES =		lang lang/tcl
 HOMEPAGE =		http://www.tcl.tk/
@@ -54,9 +53,9 @@ TESTFLAGS =
 # These tests will always fail due to assumptions that don't hold on OpenBSD.
 # Skip them until they're improved.
 # fCmd-9.4.b expects to be able to overwrite a read-only directory.
-# http-4.14 and many socket-14.* expect certain socket errors to occur
+# Many socket-14.* expect certain socket errors to occur
 #   later rather than sooner. Bug 2911139.
-TESTFLAGS += -skip 'fCmd-9.4.b http-4.14 socket-14.*'
+TESTFLAGS += -skip 'fCmd-9.4.b socket-14.*'
 
 pre-configure:
 	@${SUBST_CMD} ${WRKDIST}/library/init.tcl
