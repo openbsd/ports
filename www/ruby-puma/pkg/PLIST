@@ -1,21 +1,19 @@
-@comment $OpenBSD: PLIST,v 1.3 2016/11/04 21:46:12 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2017/11/04 15:52:05 jeremy Exp $
 ${GEM_BIN}/puma${GEM_BIN_SUFFIX}
 ${GEM_BIN}/pumactl${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
-${GEM_LIB}/gems/${DISTNAME}/DEPLOYMENT.md
-${GEM_LIB}/gems/${DISTNAME}/Gemfile
-${GEM_LIB}/gems/${DISTNAME}/History.txt
+${GEM_LIB}/gems/${DISTNAME}/History.md
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE
-${GEM_LIB}/gems/${DISTNAME}/Manifest.txt
 ${GEM_LIB}/gems/${DISTNAME}/README.md
-${GEM_LIB}/gems/${DISTNAME}/Rakefile
 ${GEM_LIB}/gems/${DISTNAME}/bin/
 ${GEM_LIB}/gems/${DISTNAME}/bin/puma
 ${GEM_LIB}/gems/${DISTNAME}/bin/puma-wild
 ${GEM_LIB}/gems/${DISTNAME}/bin/pumactl
 ${GEM_LIB}/gems/${DISTNAME}/docs/
 ${GEM_LIB}/gems/${DISTNAME}/docs/nginx.md
+${GEM_LIB}/gems/${DISTNAME}/docs/plugins.md
+${GEM_LIB}/gems/${DISTNAME}/docs/restart.md
 ${GEM_LIB}/gems/${DISTNAME}/docs/signals.md
 ${GEM_LIB}/gems/${DISTNAME}/docs/systemd.md
 ${GEM_LIB}/gems/${DISTNAME}/lib/
@@ -52,8 +50,6 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/puma/puma_http11.so
 ${GEM_LIB}/gems/${DISTNAME}/lib/puma/rack/
 ${GEM_LIB}/gems/${DISTNAME}/lib/puma/rack/backports/
 ${GEM_LIB}/gems/${DISTNAME}/lib/puma/rack/backports/uri/
-${GEM_LIB}/gems/${DISTNAME}/lib/puma/rack/backports/uri/common_18.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/puma/rack/backports/uri/common_192.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puma/rack/backports/uri/common_193.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puma/rack/builder.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puma/rack/urlmap.rb
@@ -69,7 +65,6 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/puma/util.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rack/
 ${GEM_LIB}/gems/${DISTNAME}/lib/rack/handler/
 ${GEM_LIB}/gems/${DISTNAME}/lib/rack/handler/puma.rb
-${GEM_LIB}/gems/${DISTNAME}/puma.gemspec
 ${GEM_LIB}/gems/${DISTNAME}/tools/
 ${GEM_LIB}/gems/${DISTNAME}/tools/jungle/
 ${GEM_LIB}/gems/${DISTNAME}/tools/jungle/README.md
