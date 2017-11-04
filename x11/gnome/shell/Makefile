@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.151 2017/11/03 10:47:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.152 2017/11/04 16:44:50 jasper Exp $
 
 USE_WXNEEDED=		Yes
 
 COMMENT=		next generation GNOME shell
 
 GNOME_PROJECT=		gnome-shell
-GNOME_VERSION=		3.24.3
-REVISION=		3
+GNOME_VERSION=		3.26.2
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -22,7 +21,7 @@ WANTLIB += gnome-desktop-3 gobject-2.0 gpg-error graphite2 gstaudio-1.0
 WANTLIB += gstbase-1.0 gstreamer-1.0 gsttag-1.0 gstvideo-1.0 gthread-2.0
 WANTLIB += gtk-3 harfbuzz ical icalss icalvcal iconv icudata icui18n
 WANTLIB += icuuc intl javascriptcoregtk-4.0 json-glib-1.0 ltdl
-WANTLIB += lzma m mozjs-38 mutter-0 ncursesw nspr4 nss3 ogg orc-0.4
+WANTLIB += lzma m mozjs-52 ncursesw nspr4 nss3 ogg orc-0.4
 WANTLIB += p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
 WANTLIB += pixman-1 plc4 plds4 png polkit-agent-1 polkit-gobject-1
 WANTLIB += pthread pulse pulse-mainloop-glib readline
@@ -34,9 +33,10 @@ WANTLIB += xcb-xkb xkbcommon xkbcommon-x11 xkbfile xml2 z
 WANTLIB += GL Xt enchant gstapp-1.0 gstfft-1.0 gstpbutils-1.0
 WANTLIB += hyphen jpeg notify nssutil3 ${COMPILER_LIBCXX} webp xslt
 WANTLIB += GLESv2 gstallocators-1.0 gstbadallocators-1.0 gstgl-1.0
-WANTLIB += harfbuzz-icu tasn1
+WANTLIB += harfbuzz-icu tasn1 mutter-1
 
 MODULES=		devel/dconf \
+			devel/meson \
 			lang/python \
 			x11/gnome
 
@@ -57,7 +57,7 @@ LIB_DEPENDS=		audio/pulseaudio \
 			www/libcroco \
 			x11/gnome/gcr \
 			x11/gnome/gjs \
-			x11/gnome/mutter>=3.24.0
+			x11/gnome/mutter
 
 # configure looks for gnome-keybindings.pc;
 # system.js, backgroundMenu.js, network.js, remoteSearch.js
@@ -100,20 +100,21 @@ RUN_DEPENDS +=		x11/gnome/libgnomekbd
 RUN_DEPENDS +=		inputmethods/ibus \
 			x11/gnome/gdm
 
-CONFIGURE_STYLE=	gnu
+MODGNOME_LDFLAGS +=	-L${X11BASE}/lib
 
-CONFIGURE_ARGS=		--disable-systemd
-
-# disable -Werror:
-#     shell-glsl-quad.c:86:35: error: implicit conversion from enumeration type 'ShellSnippetHook'
-#     to different enumeration type 'CoglSnippetHook' [-Werror,-Wenum-conversion]
-CONFIGURE_ARGS +=	--enable-compile-warnings
+# XXX: needed for g-ir-scanner(1)
+MAKE_ENV +=		${_MODGNOME_ldflags}
 
 # /gnome-shell-3.18.4_writes_to_HOME
 PORTHOME=		${WRKDIR}
 
-post-install:
-	rm ${PREFIX}/lib/gnome-shell/*.{a,la}
-	rm ${PREFIX}/lib/mozilla/plugins/*.{a,la}
+.include <bsd.port.arch.mk>
+
+post-patch:
+# XXX: Generate this file ahead of time as it may not be created in time
+# due to ninja's randomization.
+	cd ${WRKSRC}/src/st/ && \
+		perl ../data-to-c.pl st-scroll-view-fade.glsl \
+			st_scroll_view_fade_glsl > st-scroll-view-fade-generated.c
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2017/04/17 12:52:56 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.26 2017/11/04 16:44:50 jasper Exp $
 @conflict gnome-panel-*
 @conflict gnome-screensaver-*
 @conflict notification-daemon-*
@@ -16,6 +16,8 @@ lib/gnome-shell/ShellMenu-0.1.typelib
 lib/gnome-shell/St-1.0.typelib
 lib/gnome-shell/libgnome-shell-menu.so
 lib/gnome-shell/libgnome-shell.so
+lib/gnome-shell/libgvc.so
+lib/gnome-shell/libst-1.0.so
 lib/mozilla/
 lib/mozilla/plugins/
 lib/mozilla/plugins/libgnome-shell-browser-plugin.so
@@ -36,82 +38,12 @@ share/dbus-1/services/org.gnome.Shell.CalendarServer.service
 share/dbus-1/services/org.gnome.Shell.HotplugSniffer.service
 share/glib-2.0/schemas/org.gnome.shell.gschema.xml
 share/gnome-control-center/keybindings/50-gnome-shell-system.xml
+share/gnome-shell/Gvc-1.0.gir
+share/gnome-shell/Shell-0.1.gir
+share/gnome-shell/ShellMenu-0.1.gir
+share/gnome-shell/St-1.0.gir
 share/gnome-shell/gnome-shell-theme.gresource
 share/gnome-shell/perf-background.xml
-share/gtk-doc/html/shell/
-share/gtk-doc/html/shell/ShellEmbeddedWindow.html
-share/gtk-doc/html/shell/ShellGtkEmbed.html
-share/gtk-doc/html/shell/annotation-glossary.html
-share/gtk-doc/html/shell/api-index-full.html
-share/gtk-doc/html/shell/ch01.html
-share/gtk-doc/html/shell/ch02.html
-share/gtk-doc/html/shell/ch03.html
-share/gtk-doc/html/shell/ch04.html
-share/gtk-doc/html/shell/ch05.html
-share/gtk-doc/html/shell/ch06.html
-share/gtk-doc/html/shell/gdbus-org.gnome.Shell.SearchProvider.html
-share/gtk-doc/html/shell/gdbus-org.gnome.Shell.SearchProvider2.html
-share/gtk-doc/html/shell/home.png
-share/gtk-doc/html/shell/index.html
-share/gtk-doc/html/shell/left-insensitive.png
-share/gtk-doc/html/shell/left.png
-share/gtk-doc/html/shell/object-tree.html
-share/gtk-doc/html/shell/right-insensitive.png
-share/gtk-doc/html/shell/right.png
-share/gtk-doc/html/shell/shell-shell-action-modes.html
-share/gtk-doc/html/shell/shell-shell-app-system.html
-share/gtk-doc/html/shell/shell-shell-app-usage.html
-share/gtk-doc/html/shell/shell-shell-app.html
-share/gtk-doc/html/shell/shell-shell-generic-container.html
-share/gtk-doc/html/shell/shell-shell-global.html
-share/gtk-doc/html/shell/shell-shell-mount-operation.html
-share/gtk-doc/html/shell/shell-shell-polkit-authentication-agent.html
-share/gtk-doc/html/shell/shell-shell-recorder.html
-share/gtk-doc/html/shell/shell-shell-stack.html
-share/gtk-doc/html/shell/shell-shell-tray-icon.html
-share/gtk-doc/html/shell/shell-shell-tray-manager.html
-share/gtk-doc/html/shell/shell-shell-util.html
-share/gtk-doc/html/shell/shell-shell-window-tracker.html
-share/gtk-doc/html/shell/shell-shell-wm.html
-share/gtk-doc/html/shell/shell.devhelp2
-share/gtk-doc/html/shell/style.css
-share/gtk-doc/html/shell/up-insensitive.png
-share/gtk-doc/html/shell/up.png
-share/gtk-doc/html/st/
-share/gtk-doc/html/st/StBin.html
-share/gtk-doc/html/st/StButton.html
-share/gtk-doc/html/st/StDrawingArea.html
-share/gtk-doc/html/st/StEntry.html
-share/gtk-doc/html/st/StScrollable.html
-share/gtk-doc/html/st/StWidget.html
-share/gtk-doc/html/st/StWidgetAccessible.html
-share/gtk-doc/html/st/annotation-glossary.html
-share/gtk-doc/html/st/api-index-full.html
-share/gtk-doc/html/st/base.html
-share/gtk-doc/html/st/containers.html
-share/gtk-doc/html/st/home.png
-share/gtk-doc/html/st/index.html
-share/gtk-doc/html/st/left-insensitive.png
-share/gtk-doc/html/st/left.png
-share/gtk-doc/html/st/object-tree.html
-share/gtk-doc/html/st/pt01.html
-share/gtk-doc/html/st/right-insensitive.png
-share/gtk-doc/html/st/right.png
-share/gtk-doc/html/st/st-st-box-layout.html
-share/gtk-doc/html/st/st-st-icon.html
-share/gtk-doc/html/st/st-st-label.html
-share/gtk-doc/html/st/st-st-scroll-view.html
-share/gtk-doc/html/st/st-st-texture-cache.html
-share/gtk-doc/html/st/st-st-theme-context.html
-share/gtk-doc/html/st/st-st-theme-node-transition.html
-share/gtk-doc/html/st/st-st-theme-node.html
-share/gtk-doc/html/st/st-st-theme.html
-share/gtk-doc/html/st/st.devhelp2
-share/gtk-doc/html/st/style.css
-share/gtk-doc/html/st/styling.html
-share/gtk-doc/html/st/up-insensitive.png
-share/gtk-doc/html/st/up.png
-share/gtk-doc/html/st/widgets.html
 share/locale/af/LC_MESSAGES/gnome-shell.mo
 share/locale/an/LC_MESSAGES/gnome-shell.mo
 share/locale/ar/LC_MESSAGES/gnome-shell.mo
@@ -192,6 +124,9 @@ share/locale/vi/LC_MESSAGES/gnome-shell.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-shell.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-shell.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-shell.mo
+share/xdg-desktop-portal/
+share/xdg-desktop-portal/portals/
+share/xdg-desktop-portal/portals/gnome-shell.portal
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @exec %D/bin/update-desktop-database
