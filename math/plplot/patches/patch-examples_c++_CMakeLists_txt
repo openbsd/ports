@@ -1,21 +1,28 @@
-$OpenBSD: patch-examples_c++_CMakeLists_txt,v 1.1 2009/04/05 16:21:55 steven Exp $
---- examples/c++/CMakeLists.txt.orig	Sun Nov 18 21:04:09 2007
-+++ examples/c++/CMakeLists.txt	Sat Jun  7 09:41:03 2008
-@@ -78,7 +78,7 @@ set(wxPLplotDemo_SRCS
- wxPLplotDemo.cpp
- )
+$OpenBSD: patch-examples_c++_CMakeLists_txt,v 1.2 2017/11/04 10:28:21 steven Exp $
+Index: examples/c++/CMakeLists.txt
+--- examples/c++/CMakeLists.txt.orig
++++ examples/c++/CMakeLists.txt
+@@ -76,12 +76,12 @@ if(CORE_BUILD)
+     set(qt_INSTALLED_FILES qt_PlotWindow.cpp qt_PlotWindow.h qt_example.cpp README.qt_example)
+   endif(PLD_extqt)
  
--install(FILES ${cxx_SRCS} ${wxPLplotDemo_SRCS} DESTINATION ${DATA_DIR}/examples/c++)
-+install(FILES ${cxx_SRCS} ${wxPLplotDemo_SRCS} DESTINATION ${EXAMPLE_DIR}/c++)
+-  install(FILES ${cxx_SRCS} ${wxPLplotDemo_SRCS} ${qt_INSTALLED_FILES} DESTINATION ${DATA_DIR}/examples/c++)
++  install(FILES ${cxx_SRCS} ${wxPLplotDemo_SRCS} ${qt_INSTALLED_FILES} DESTINATION ${EXAMPLE_DIR}/c++)
  
- set(CXX ${CMAKE_CXX_COMPILER})
- configure_file(
-@@ -87,7 +87,7 @@ ${CMAKE_CURRENT_BINARY_DIR}/Makefile.examples
- )
+   set(CXX "${CMAKE_CXX_COMPILER} ${CMAKE_CXX_COMPILER_ARG1} ${CMAKE_CXX_FLAGS}")
  
- install(FILES ${CMAKE_CURRENT_BINARY_DIR}/Makefile.examples 
--DESTINATION ${DATA_DIR}/examples/c++
-+DESTINATION ${EXAMPLE_DIR}/c++
- RENAME Makefile
- )
+   install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/CMakeLists.txt
+-    DESTINATION ${DATA_DIR}/examples/c++
++    DESTINATION ${EXAMPLE_DIR}/c++
+     )
+ endif(CORE_BUILD)
+ 
+@@ -271,7 +271,7 @@ if(CORE_BUILD)
+     )
+ 
+   install(FILES ${CMAKE_CURRENT_BINARY_DIR}/Makefile.examples
+-    DESTINATION ${DATA_DIR}/examples/c++
++    DESTINATION ${EXAMPLE_DIR}/c++
+     RENAME Makefile
+     )
  

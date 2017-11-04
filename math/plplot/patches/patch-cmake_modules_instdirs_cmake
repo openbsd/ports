@@ -1,31 +1,45 @@
-$OpenBSD: patch-cmake_modules_instdirs_cmake,v 1.1 2009/04/05 16:21:55 steven Exp $
---- cmake/modules/instdirs.cmake.orig	Sun Nov 18 21:03:55 2007
-+++ cmake/modules/instdirs.cmake	Sat Jun  7 09:42:14 2008
-@@ -61,13 +61,13 @@ CACHE PATH "install location for C header files"
+$OpenBSD: patch-cmake_modules_instdirs_cmake,v 1.2 2017/11/04 10:28:21 steven Exp $
+Index: cmake/modules/instdirs.cmake
+--- cmake/modules/instdirs.cmake.orig
++++ cmake/modules/instdirs.cmake
+@@ -72,14 +72,14 @@ list(APPEND INSTALL_LOCATION_VARIABLES_LIST CMAKE_INST
  
  set(
- CMAKE_INSTALL_INFODIR
--${CMAKE_INSTALL_DATADIR}/info
-+${CMAKE_INSTALL_PREFIX}/info
- CACHE PATH "install location for info documentation"
- )
+   CMAKE_INSTALL_INFODIR
+-  ${CMAKE_INSTALL_DATADIR}/info
++  ${CMAKE_INSTALL_PREFIX}/info
+   CACHE PATH "General install location for info documentation"
+   )
+ list(APPEND INSTALL_LOCATION_VARIABLES_LIST CMAKE_INSTALL_INFODIR)
  
  set(
- CMAKE_INSTALL_MANDIR
--${CMAKE_INSTALL_DATADIR}/man
-+${CMAKE_INSTALL_PREFIX}/man
- CACHE PATH "install location for man documentation"
- )
+   CMAKE_INSTALL_MANDIR
+-  ${CMAKE_INSTALL_DATADIR}/man
++  ${CMAKE_INSTALL_PREFIX}/man
+   CACHE PATH "General install location for man documentation"
+   )
+ list(APPEND INSTALL_LOCATION_VARIABLES_LIST CMAKE_INSTALL_MANDIR)
+@@ -99,11 +99,13 @@ list(APPEND INSTALL_LOCATION_VARIABLES_LIST CMAKE_INST
  
-@@ -75,7 +75,10 @@ CACHE PATH "install location for man documentation"
- # cached values above.
+ set(
+   DATA_DIR
+-  ${CMAKE_INSTALL_DATADIR}/${PACKAGE}${PLPLOT_VERSION}
++  ${CMAKE_INSTALL_DATADIR}/${PACKAGE}
+   CACHE PATH "PLplot install location for architecture-independent data"
+   )
+ list(APPEND INSTALL_LOCATION_VARIABLES_LIST DATA_DIR)
  
- # Data.
--set(DATA_DIR ${CMAKE_INSTALL_DATADIR}/${PACKAGE}${VERSION})
-+set(DATA_DIR ${CMAKE_INSTALL_DATADIR}/${PACKAGE})
-+
-+# Examples.
 +set(EXAMPLE_DIR ${CMAKE_INSTALL_DATADIR}/examples/${PACKAGE})
++
+ set(
+   LIB_DIR
+   ${CMAKE_INSTALL_LIBDIR}
+@@ -127,7 +129,7 @@ list(APPEND INSTALL_LOCATION_VARIABLES_LIST BIN_DIR)
  
- # Libraries.
- set(LIB_DIR ${CMAKE_INSTALL_LIBDIR})
+ set(
+   DRV_DIR
+-  ${CMAKE_INSTALL_LIBDIR}/${PACKAGE}${PLPLOT_VERSION}/drivers
++  ${CMAKE_INSTALL_LIBDIR}/${PACKAGE}/drivers
+   CACHE PATH "PLplot install location for dynamically loaded devices"
+   )
+ list(APPEND INSTALL_LOCATION_VARIABLES_LIST DRV_DIR)

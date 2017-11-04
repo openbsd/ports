@@ -1,25 +1,26 @@
-$OpenBSD: patch-drivers_pstex_c,v 1.2 2009/04/05 16:21:55 steven Exp $
---- drivers/pstex.c.orig	Sun Nov 18 21:04:10 2007
-+++ drivers/pstex.c	Fri May 23 21:10:35 2008
-@@ -231,7 +231,8 @@ proc_str (PLStream *pls, EscText *args)
-     fprintf(fp,"\\special{ps: 0 0 0 setrgbcolor}{");
+$OpenBSD: patch-drivers_pstex_c,v 1.3 2017/11/04 10:28:21 steven Exp $
+Index: drivers/pstex.c
+--- drivers/pstex.c.orig
++++ drivers/pstex.c
+@@ -243,7 +243,8 @@ proc_str( PLStream *pls, EscText *args )
+         fprintf( fp, "\\special{ps: 0 0 0 setrgbcolor}{" );
  
-   fprintf(fp,"%% Your text follows:\n");
--  fprintf(fp,"%s\n", cptr);
-+  if (strlen(cptr) > 0)
-+    fprintf(fp,"%s\n", cptr);
-   fprintf(fp,"}}}}");
-   
-   /*
-@@ -262,6 +263,11 @@ parse_str(const char *str, char *dest)
- 		       "psi", "Psi", "omega", "Omega"};
+     fprintf( fp, "%% Your text follows:\n" );
+-    fprintf( fp, "%s\n", cptr );
++    if (strlen(cptr) > 0)
++      fprintf( fp, "%s\n", cptr );
+     fprintf( fp, "}}}}" );
  
-   plgesc(&esc);
+     //
+@@ -274,6 +275,11 @@ parse_str( const char *str, char *dest )
+                           "psi",     "Psi",     "omega",  "Omega" };
+ 
+     plgesc( &esc );
 +
-+  if (str == NULL) {
-+    *tp = '\0';
-+    return;
-+  }
++    if (str == NULL) {
++      *tp = '\0';
++      return;
++    }
  
-   while (*str) {
- 
+     while ( *str )
+     {

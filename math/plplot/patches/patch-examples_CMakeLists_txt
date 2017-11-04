@@ -1,11 +1,79 @@
-$OpenBSD: patch-examples_CMakeLists_txt,v 1.1 2009/04/05 16:21:55 steven Exp $
---- examples/CMakeLists.txt.orig	Sat Jun  7 09:29:42 2008
-+++ examples/CMakeLists.txt	Sat Jun  7 09:29:52 2008
-@@ -55,6 +55,6 @@ if(ENABLE_ada)
- endif(ENABLE_ada)
+$OpenBSD: patch-examples_CMakeLists_txt,v 1.2 2017/11/04 10:28:21 steven Exp $
+Index: examples/CMakeLists.txt
+--- examples/CMakeLists.txt.orig
++++ examples/CMakeLists.txt
+@@ -213,7 +213,7 @@ if(CORE_BUILD)
+     )
  
- install(FILES Makefile.examples 
--DESTINATION ${DATA_DIR}/examples
-+DESTINATION ${EXAMPLE_DIR}
- RENAME Makefile
- )
+   install(FILES ${CMAKE_CURRENT_BINARY_DIR}/Makefile.examples
+-    DESTINATION ${DATA_DIR}/examples
++    DESTINATION ${EXAMPLE_DIR}
+     RENAME Makefile
+     )
+ 
+@@ -291,7 +291,7 @@ if(CORE_BUILD)
+     FILES
+     ${CMAKE_CURRENT_SOURCE_DIR}/Chloe.pgm
+     ${CMAKE_CURRENT_SOURCE_DIR}/README.Chloe
+-    DESTINATION ${DATA_DIR}/examples
++    DESTINATION ${EXAMPLE_DIR}
+     )
+ 
+ endif(CORE_BUILD)
+@@ -314,7 +314,7 @@ if(CORE_BUILD)
+   # Start configuration/installation of CMake-based build system for
+   # installed examples.
+   install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/CMakeLists.txt
+-    DESTINATION ${DATA_DIR}/examples
++    DESTINATION ${EXAMPLE_DIR}
+     )
+ 
+   # language_info_LIST contains information about the languages used in
+@@ -351,33 +351,33 @@ if(CORE_BUILD)
+ 
+   install(FILES
+     ${CMAKE_CURRENT_BINARY_DIR}/plplot_configure.cmake_installed_examples
+-    DESTINATION ${DATA_DIR}/examples/cmake/modules
++    DESTINATION ${EXAMPLE_DIR}/cmake/modules
+     RENAME plplot_configure.cmake
+     )
+ 
+   # function support for CMake-based build system for installed examples.
+   install(FILES
+     ${CMAKE_SOURCE_DIR}/cmake/modules/plplot_functions.cmake
+-    DESTINATION ${DATA_DIR}/examples/cmake/modules
++    DESTINATION ${EXAMPLE_DIR}/cmake/modules
+     )
+ 
+   # pkg-config support for CMake-based build system for installed examples.
+   install(FILES
+     ${CMAKE_SOURCE_DIR}/cmake/modules/pkg-config.cmake
+-    DESTINATION ${DATA_DIR}/examples/cmake/modules
++    DESTINATION ${EXAMPLE_DIR}/cmake/modules
+     )
+ 
+   # Install soft-landing support for compiler detection/testing.
+   install(FILES
+     ${CMAKE_SOURCE_DIR}/cmake/modules/language_support.cmake
+-    DESTINATION ${DATA_DIR}/examples/cmake/modules
++    DESTINATION ${EXAMPLE_DIR}/cmake/modules
+     )
+ 
+   # Install qt support file.
+   if(ANY_QT_DEVICE)
+     install(FILES
+       ${CMAKE_SOURCE_DIR}/cmake/modules/ndp_UseQt4.cmake
+-      DESTINATION ${DATA_DIR}/examples/cmake/modules
++      DESTINATION ${EXAMPLE_DIR}/cmake/modules
+       )
+   endif(ANY_QT_DEVICE)
+ 
+@@ -424,7 +424,7 @@ if(CORE_BUILD)
+       string(REGEX REPLACE "^.*:(.*)$" "\\1" LANG_SUPPORT_FILE ${LANG_SUPPORT_info})
+       install(FILES
+ 	${CMAKE_SOURCE_DIR}/cmake/modules/${LANG_SUPPORT_DIR}/${LANG_SUPPORT_FILE}
+-	DESTINATION ${DATA_DIR}/examples/cmake/modules/${LANG_SUPPORT_DIR}
++	DESTINATION ${EXAMPLE_DIR}/cmake/modules/${LANG_SUPPORT_DIR}
+ 	)
+     endforeach(LANG_SUPPORT_info ${LANG_SUPPORT_FILES})
+   endif(LANG_SUPPORT_FILES)

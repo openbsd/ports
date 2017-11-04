@@ -1,12 +1,9 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2010/04/15 20:41:42 dcoppa Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2017/11/04 10:28:21 steven Exp $
 @pkgpath math/plplot
-bin/plm2gif
-bin/plpr
 @bin bin/pltek
 include/plplot/
 include/plplot/disptab.h
 include/plplot/drivers.h
-include/plplot/gcw.h
 include/plplot/pdf.h
 include/plplot/plConfig.h
 include/plplot/plDevs.h
@@ -15,30 +12,58 @@ include/plplot/pldll.h
 include/plplot/plevent.h
 include/plplot/plplot.h
 include/plplot/plplotP.h
-include/plplot/plplotcanvas.h
 include/plplot/plstream.h
 include/plplot/plstrm.h
 include/plplot/plxwd.h
+include/plplot/qsastime.h
+include/plplot/qsastimedll.h
+lib/cmake/
+lib/cmake/plplot/
+lib/cmake/plplot/export_plplot${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/plplot/export_plplot.cmake
+lib/cmake/plplot/plplotConfig.cmake
 @lib lib/libcsirocsa.so.${LIBcsirocsa_VERSION}
-@lib lib/libplplotd.so.${LIBplplotd_VERSION}
-lib/pkgconfig/plplotd.pc
-@man man/man1/plm2gif.1
-@man man/man1/plpr.1
+@lib lib/libcsironn.so.${LIBcsironn_VERSION}
+@lib lib/libplplot.so.${LIBplplot_VERSION}
+@lib lib/libqsastime.so.${LIBqsastime_VERSION}
+lib/pkgconfig/plplot.pc
+lib/plplot/
+lib/plplot/drivers/
+lib/plplot/drivers/cairo.driver_info
+lib/plplot/drivers/cairo.so
+lib/plplot/drivers/mem.driver_info
+lib/plplot/drivers/mem.so
+lib/plplot/drivers/null.driver_info
+lib/plplot/drivers/null.so
+lib/plplot/drivers/ps.driver_info
+lib/plplot/drivers/ps.so
+lib/plplot/drivers/svg.driver_info
+lib/plplot/drivers/svg.so
+lib/plplot/drivers/xfig.driver_info
+lib/plplot/drivers/xfig.so
+lib/plplot/drivers/xwin.driver_info
+lib/plplot/drivers/xwin.so
 @man man/man1/pltek.1
+@man man/man3/plGetCursor.3
 @man man/man3/pl_setcontlabelformat.3
 @man man/man3/pl_setcontlabelparam.3
 @man man/man3/pladv.3
+@man man/man3/plarc.3
 @man man/man3/plaxes.3
 @man man/man3/plbin.3
 @man man/man3/plbop.3
 @man man/man3/plbox.3
 @man man/man3/plbox3.3
+@man man/man3/plbtime.3
 @man man/man3/plcalc_world.3
 @man man/man3/plclear.3
 @man man/man3/plcol0.3
 @man man/man3/plcol1.3
+@man man/man3/plcolorbar.3
+@man man/man3/plconfigtime.3
 @man man/man3/plcont.3
 @man man/man3/plcpstrm.3
+@man man/man3/plctime.3
 @man man/man3/plend.3
 @man man/man3/plend1.3
 @man man/man3/plenv.3
@@ -53,19 +78,25 @@ lib/pkgconfig/plplotd.pc
 @man man/man3/plfont.3
 @man man/man3/plfontld.3
 @man man/man3/plgchr.3
+@man man/man3/plgcmap1_range.3
 @man man/man3/plgcol0.3
+@man man/man3/plgcol0a.3
 @man man/man3/plgcolbg.3
+@man man/man3/plgcolbga.3
 @man man/man3/plgcompression.3
 @man man/man3/plgdev.3
 @man man/man3/plgdidev.3
 @man man/man3/plgdiori.3
 @man man/man3/plgdiplt.3
+@man man/man3/plgdrawmode.3
 @man man/man3/plgfam.3
 @man man/man3/plgfci.3
 @man man/man3/plgfnam.3
+@man man/man3/plgfont.3
 @man man/man3/plglevel.3
 @man man/man3/plgpage.3
 @man man/man3/plgra.3
+@man man/man3/plgradient.3
 @man man/man3/plgriddata.3
 @man man/man3/plgspa.3
 @man man/man3/plgstrm.3
@@ -77,14 +108,21 @@ lib/pkgconfig/plplotd.pc
 @man man/man3/plgzax.3
 @man man/man3/plhist.3
 @man man/man3/plhlsrgb.3
+@man man/man3/plimage.3
+@man man/man3/plimagefr.3
 @man man/man3/plinit.3
 @man man/man3/pljoin.3
 @man man/man3/pllab.3
+@man man/man3/pllegend.3
 @man man/man3/pllightsource.3
 @man man/man3/plline.3
 @man man/man3/plline3.3
 @man man/man3/pllsty.3
 @man man/man3/plmap.3
+@man man/man3/plmapfill.3
+@man man/man3/plmapline.3
+@man man/man3/plmapstring.3
+@man man/man3/plmaptex.3
 @man man/man3/plmeridians.3
 @man man/man3/plmesh.3
 @man man/man3/plmeshc.3
@@ -93,8 +131,10 @@ lib/pkgconfig/plplotd.pc
 @man man/man3/plmtex3.3
 @man man/man3/plot3d.3
 @man man/man3/plot3dc.3
+@man man/man3/plot3dcl.3
 @man man/man3/plparseopts.3
 @man man/man3/plpat.3
+@man man/man3/plpath.3
 @man man/man3/plplot.3
 @man man/man3/plpoin.3
 @man man/man3/plpoin3.3
@@ -103,16 +143,23 @@ lib/pkgconfig/plplotd.pc
 @man man/man3/plpsty.3
 @man man/man3/plptex.3
 @man man/man3/plptex3.3
+@man man/man3/plrandd.3
 @man man/man3/plreplot.3
 @man man/man3/plrgbhls.3
 @man man/man3/plschr.3
 @man man/man3/plscmap0.3
+@man man/man3/plscmap0a.3
 @man man/man3/plscmap0n.3
 @man man/man3/plscmap1.3
+@man man/man3/plscmap1_range.3
+@man man/man3/plscmap1a.3
 @man man/man3/plscmap1l.3
+@man man/man3/plscmap1la.3
 @man man/man3/plscmap1n.3
 @man man/man3/plscol0.3
+@man man/man3/plscol0a.3
 @man man/man3/plscolbg.3
+@man man/man3/plscolbga.3
 @man man/man3/plscolor.3
 @man man/man3/plscompression.3
 @man man/man3/plsdev.3
@@ -121,30 +168,40 @@ lib/pkgconfig/plplotd.pc
 @man man/man3/plsdiori.3
 @man man/man3/plsdiplt.3
 @man man/man3/plsdiplz.3
+@man man/man3/plsdrawmode.3
+@man man/man3/plseed.3
 @man man/man3/plsesc.3
 @man man/man3/plsetopt.3
 @man man/man3/plsfam.3
 @man man/man3/plsfci.3
 @man man/man3/plsfnam.3
+@man man/man3/plsfont.3
 @man man/man3/plshade.3
-@man man/man3/plshade1.3
 @man man/man3/plshades.3
+@man man/man3/plslabelfunc.3
 @man man/man3/plsmaj.3
 @man man/man3/plsmem.3
+@man man/man3/plsmema.3
 @man man/man3/plsmin.3
 @man man/man3/plsori.3
 @man man/man3/plspage.3
+@man man/man3/plspal0.3
+@man man/man3/plspal1.3
 @man man/man3/plspause.3
 @man man/man3/plsstrm.3
 @man man/man3/plssub.3
 @man man/man3/plssym.3
 @man man/man3/plstar.3
 @man man/man3/plstart.3
+@man man/man3/plstransform.3
+@man man/man3/plstring.3
+@man man/man3/plstring3.3
 @man man/man3/plstripa.3
 @man man/man3/plstripc.3
 @man man/man3/plstripd.3
 @man man/man3/plstyl.3
 @man man/man3/plsurf3d.3
+@man man/man3/plsurf3dl.3
 @man man/man3/plsvect.3
 @man man/man3/plsvpa.3
 @man man/man3/plsxax.3
@@ -152,102 +209,154 @@ lib/pkgconfig/plplotd.pc
 @man man/man3/plsym.3
 @man man/man3/plszax.3
 @man man/man3/pltext.3
+@man man/man3/pltimefmt.3
 @man man/man3/plvasp.3
 @man man/man3/plvect.3
 @man man/man3/plvpas.3
 @man man/man3/plvpor.3
 @man man/man3/plvsta.3
 @man man/man3/plw3d.3
-@man man/man3/plwid.3
+@man man/man3/plwidth.3
 @man man/man3/plwind.3
 @man man/man3/plxormod.3
 share/doc/plplot/
+share/doc/plplot/ABOUT
 share/doc/plplot/AUTHORS
 share/doc/plplot/COPYING.LIB
-share/doc/plplot/ChangeLog
+share/doc/plplot/ChangeLog.release
 share/doc/plplot/Copyright
 share/doc/plplot/FAQ
 share/doc/plplot/NEWS
 share/doc/plplot/PROBLEMS
 share/doc/plplot/README
-share/doc/plplot/README.1st.csa
 share/doc/plplot/README.csa
+share/doc/plplot/README.cumulated_release
 share/doc/plplot/README.drivers
+share/doc/plplot/README.nn
 share/doc/plplot/README.pkg-config
 share/doc/plplot/README.release
+share/doc/plplot/README.testing
 share/doc/plplot/README.wxwidgets
 share/doc/plplot/html/
+share/doc/plplot/html/API-C.html
+share/doc/plplot/html/API-FORTRAN.html
+share/doc/plplot/html/API-Internal.html
+share/doc/plplot/html/API-OBSOLETE.html
+share/doc/plplot/html/API.html
+share/doc/plplot/html/BIBLIOGRAPHY.html
+share/doc/plplot/html/FreeType-notes.html
+share/doc/plplot/html/OCaml.html
+share/doc/plplot/html/PLGraphicsIn.html
+share/doc/plplot/html/PLOptionTable.html
 share/doc/plplot/html/acquiring-plplot.html
+share/doc/plplot/html/ada.html
+share/doc/plplot/html/ada_apple_notes.html
+share/doc/plplot/html/ada_bindings.html
+share/doc/plplot/html/ada_c_flavor.html
+share/doc/plplot/html/ada_compilation_notes.html
+share/doc/plplot/html/ada_examples.html
+share/doc/plplot/html/ada_howto.html
+share/doc/plplot/html/ada_known_variances.html
+share/doc/plplot/html/ada_obtaining.html
+share/doc/plplot/html/ada_overview.html
+share/doc/plplot/html/ada_unique.html
 share/doc/plplot/html/advanced.html
-share/doc/plplot/html/api-c.html
 share/doc/plplot/html/api-compat.html
-share/doc/plplot/html/api-fortran-77.html
-share/doc/plplot/html/api-fortran-95.html
-share/doc/plplot/html/api-obsolete.html
-share/doc/plplot/html/api.html
+share/doc/plplot/html/api_definition.html
+share/doc/plplot/html/api_regression_tests.html
 share/doc/plplot/html/aqt-driver.html
-share/doc/plplot/html/bibliography.html
+share/doc/plplot/html/arguments.html
+share/doc/plplot/html/bindings-libraries.html
 share/doc/plplot/html/c.html
+share/doc/plplot/html/cairo-driver.html
 share/doc/plplot/html/characters.html
 share/doc/plplot/html/color.html
-share/doc/plplot/html/contour-plots.html
 share/doc/plplot/html/copyrights.html
+share/doc/plplot/html/core-library.html
 share/doc/plplot/html/cpluscplus-design.html
 share/doc/plplot/html/cpluscplus-specializing.html
 share/doc/plplot/html/cpluscplus-status.html
+share/doc/plplot/html/cplusplus-motivation.html
 share/doc/plplot/html/cplusplus.html
 share/doc/plplot/html/credits.html
 share/doc/plplot/html/custom-extensions-tcl.html
 share/doc/plplot/html/deploying.html
-share/doc/plplot/html/djgpp-notes.html
+share/doc/plplot/html/device-driver-libraries.html
+share/doc/plplot/html/devices.html
 share/doc/plplot/html/drawing.html
+share/doc/plplot/html/enhancement-libraries.html
 share/doc/plplot/html/error.html
 share/doc/plplot/html/extended-wish.html
 share/doc/plplot/html/extensions-tcl.html
+share/doc/plplot/html/features.html
+share/doc/plplot/html/file-drivers.html
 share/doc/plplot/html/fill-pattern.html
 share/doc/plplot/html/finishing.html
-share/doc/plplot/html/fortran77.html
-share/doc/plplot/html/fortran95.html
-share/doc/plplot/html/freetype-notes.html
-share/doc/plplot/html/gcw-driver.html
+share/doc/plplot/html/fortran.html
+share/doc/plplot/html/gd-driver.html
 share/doc/plplot/html/gui.html
 share/doc/plplot/html/index.html
 share/doc/plplot/html/initializing.html
-share/doc/plplot/html/installing.html
+share/doc/plplot/html/interactive-cairo-driver.html
+share/doc/plplot/html/interactive-drivers.html
+share/doc/plplot/html/interactive-qt-driver.html
+share/doc/plplot/html/intro-tcl.html
 share/doc/plplot/html/intro.html
 share/doc/plplot/html/introduction-itcl.html
 share/doc/plplot/html/introduction-tk.html
 share/doc/plplot/html/labelling.html
 share/doc/plplot/html/latex-postscript-driver.html
+share/doc/plplot/html/legends.html
+share/doc/plplot/html/libraries.html
 share/doc/plplot/html/line-attributes.html
-share/doc/plplot/html/organization.html
-share/doc/plplot/html/os-notes.html
-share/doc/plplot/html/output-devices.html
-share/doc/plplot/html/output-drivers.html
-share/doc/plplot/html/p162.html
-share/doc/plplot/html/p2493.html
-share/doc/plplot/html/p3385.html
-share/doc/plplot/html/p62.html
+share/doc/plplot/html/ocaml_bindings.html
+share/doc/plplot/html/ocaml_examples.html
+share/doc/plplot/html/ocaml_howto.html
+share/doc/plplot/html/ocaml_known_issues.html
+share/doc/plplot/html/ocaml_obtaining.html
+share/doc/plplot/html/ocaml_overview.html
+share/doc/plplot/html/part_bindings.html
+share/doc/plplot/html/part_introduction.html
+share/doc/plplot/html/part_programming.html
+share/doc/plplot/html/part_reference.html
 share/doc/plplot/html/pdf-driver.html
 share/doc/plplot/html/perl.html
+share/doc/plplot/html/plAlloc2dGrid.html
+share/doc/plplot/html/plClearOpts.html
+share/doc/plplot/html/plFree2dGrid.html
+share/doc/plplot/html/plGetCursor.html
+share/doc/plplot/html/plHLS_RGB.html
+share/doc/plplot/html/plMergeOpts.html
+share/doc/plplot/html/plMinMax2dGrid.html
+share/doc/plplot/html/plOptUsage.html
+share/doc/plplot/html/plP_checkdriverinit.html
+share/doc/plplot/html/plP_getinitdriverlist.html
+share/doc/plplot/html/plResetOpts.html
+share/doc/plplot/html/plSetUsage.html
+share/doc/plplot/html/plTranslateCursor.html
+share/doc/plplot/html/pl_setcontlabelformat.html
 share/doc/plplot/html/pl_setcontlabelparam.html
 share/doc/plplot/html/plabort.html
 share/doc/plplot/html/pladv.html
+share/doc/plplot/html/plarc.html
 share/doc/plplot/html/plaxes.html
 share/doc/plplot/html/plbin.html
 share/doc/plplot/html/plbop.html
 share/doc/plplot/html/plbox.html
 share/doc/plplot/html/plbox3.html
+share/doc/plplot/html/plbtime.html
 share/doc/plplot/html/plcalc_world.html
 share/doc/plplot/html/plclear.html
+share/doc/plplot/html/plclr.html
 share/doc/plplot/html/plcol.html
 share/doc/plplot/html/plcol0.html
 share/doc/plplot/html/plcol1.html
-share/doc/plplot/html/plcon1.html
-share/doc/plplot/html/plcon2.html
+share/doc/plplot/html/plcolorbar.html
+share/doc/plplot/html/plconfigtime.html
 share/doc/plplot/html/plcont.html
-share/doc/plplot/html/plcontfortran77.html
+share/doc/plplot/html/plcontfortran.html
 share/doc/plplot/html/plcpstrm.html
+share/doc/plplot/html/plctime.html
 share/doc/plplot/html/plend.html
 share/doc/plplot/html/plend1.html
 share/doc/plplot/html/plenv.html
@@ -262,21 +371,28 @@ share/doc/plplot/html/plfill3.html
 share/doc/plplot/html/plflush.html
 share/doc/plplot/html/plfont.html
 share/doc/plplot/html/plfontld.html
+share/doc/plplot/html/plfsurf3d.html
 share/doc/plplot/html/plgchr.html
+share/doc/plplot/html/plgcmap1_range.html
 share/doc/plplot/html/plgcol0.html
+share/doc/plplot/html/plgcol0a.html
 share/doc/plplot/html/plgcolbg.html
+share/doc/plplot/html/plgcolbga.html
 share/doc/plplot/html/plgcompression.html
 share/doc/plplot/html/plgdev.html
 share/doc/plplot/html/plgdidev.html
 share/doc/plplot/html/plgdiori.html
 share/doc/plplot/html/plgdiplt.html
+share/doc/plplot/html/plgdrawmode.html
 share/doc/plplot/html/plgfam.html
 share/doc/plplot/html/plgfci.html
 share/doc/plplot/html/plgfile.html
 share/doc/plplot/html/plgfnam.html
+share/doc/plplot/html/plgfont.html
 share/doc/plplot/html/plglevel.html
 share/doc/plplot/html/plgpage.html
 share/doc/plplot/html/plgra.html
+share/doc/plplot/html/plgradient.html
 share/doc/plplot/html/plgriddata.html
 share/doc/plplot/html/plgspa.html
 share/doc/plplot/html/plgstrm.html
@@ -288,34 +404,40 @@ share/doc/plplot/html/plgyax.html
 share/doc/plplot/html/plgzax.html
 share/doc/plplot/html/plhist.html
 share/doc/plplot/html/plhls.html
-share/doc/plplot/html/plhls_rgb.html
 share/doc/plplot/html/plhlsrgb.html
+share/doc/plplot/html/plimage.html
+share/doc/plplot/html/plimagefr.html
 share/doc/plplot/html/plinit.html
 share/doc/plplot/html/pljoin.html
 share/doc/plplot/html/pllab.html
+share/doc/plplot/html/pllegend.html
 share/doc/plplot/html/pllightsource.html
 share/doc/plplot/html/plline.html
 share/doc/plplot/html/plline3.html
 share/doc/plplot/html/pllsty.html
 share/doc/plplot/html/plmap.html
+share/doc/plplot/html/plmapfill.html
+share/doc/plplot/html/plmapline.html
+share/doc/plplot/html/plmapstring.html
+share/doc/plplot/html/plmaptex.html
 share/doc/plplot/html/plmeridians.html
 share/doc/plplot/html/plmesh.html
 share/doc/plplot/html/plmeshc.html
-share/doc/plplot/html/plmeshfortran77.html
-share/doc/plplot/html/plmeshfortran95.html
+share/doc/plplot/html/plmeshfortran.html
 share/doc/plplot/html/plmkstrm.html
 share/doc/plplot/html/plmtex.html
 share/doc/plplot/html/plmtex3.html
 share/doc/plplot/html/plot3d.html
 share/doc/plplot/html/plot3dc.html
-share/doc/plplot/html/plot3dfortran77.html
-share/doc/plplot/html/plot3dfortran95.html
-share/doc/plplot/html/plp_getinitdriverlist.html
+share/doc/plplot/html/plot3dcl.html
+share/doc/plplot/html/plot3dfortran.html
 share/doc/plplot/html/plpage.html
 share/doc/plplot/html/plparseopts.html
-share/doc/plplot/html/plparseoptsfortran77.html
-share/doc/plplot/html/plparseoptsfortran95.html
+share/doc/plplot/html/plparseoptsfortran.html
 share/doc/plplot/html/plpat.html
+share/doc/plplot/html/plpath.html
+share/doc/plplot/html/plplot-plotting-library.html
+share/doc/plplot/html/plplot_configure_build_install.html
 share/doc/plplot/html/plpoin.html
 share/doc/plplot/html/plpoin3.html
 share/doc/plplot/html/plpoly3.html
@@ -323,6 +445,7 @@ share/doc/plplot/html/plprec.html
 share/doc/plplot/html/plpsty.html
 share/doc/plplot/html/plptex.html
 share/doc/plplot/html/plptex3.html
+share/doc/plplot/html/plrandd.html
 share/doc/plplot/html/plreplot.html
 share/doc/plplot/html/plrgb.html
 share/doc/plplot/html/plrgb1.html
@@ -330,12 +453,18 @@ share/doc/plplot/html/plrgbhls.html
 share/doc/plplot/html/plsabort.html
 share/doc/plplot/html/plschr.html
 share/doc/plplot/html/plscmap0.html
+share/doc/plplot/html/plscmap0a.html
 share/doc/plplot/html/plscmap0n.html
 share/doc/plplot/html/plscmap1.html
+share/doc/plplot/html/plscmap1_range.html
+share/doc/plplot/html/plscmap1a.html
 share/doc/plplot/html/plscmap1l.html
+share/doc/plplot/html/plscmap1la.html
 share/doc/plplot/html/plscmap1n.html
 share/doc/plplot/html/plscol0.html
+share/doc/plplot/html/plscol0a.html
 share/doc/plplot/html/plscolbg.html
+share/doc/plplot/html/plscolbga.html
 share/doc/plplot/html/plscolor.html
 share/doc/plplot/html/plscompression.html
 share/doc/plplot/html/plsdev.html
@@ -344,36 +473,46 @@ share/doc/plplot/html/plsdimap.html
 share/doc/plplot/html/plsdiori.html
 share/doc/plplot/html/plsdiplt.html
 share/doc/plplot/html/plsdiplz.html
+share/doc/plplot/html/plsdrawmode.html
+share/doc/plplot/html/plseed.html
 share/doc/plplot/html/plsesc.html
-share/doc/plplot/html/plsescfortran77.html
-share/doc/plplot/html/plsescfortran95.html
+share/doc/plplot/html/plsescfortran.html
 share/doc/plplot/html/plsetopt.html
 share/doc/plplot/html/plsexit.html
 share/doc/plplot/html/plsfam.html
 share/doc/plplot/html/plsfci.html
 share/doc/plplot/html/plsfile.html
 share/doc/plplot/html/plsfnam.html
+share/doc/plplot/html/plsfont.html
 share/doc/plplot/html/plshade.html
 share/doc/plplot/html/plshade1.html
-share/doc/plplot/html/plshadefortran95.html
+share/doc/plplot/html/plshadefortran.html
 share/doc/plplot/html/plshades.html
-share/doc/plplot/html/plshadesfortran95.html
+share/doc/plplot/html/plshadesfortran.html
+share/doc/plplot/html/plslabelfunc.html
 share/doc/plplot/html/plsmaj.html
 share/doc/plplot/html/plsmem.html
+share/doc/plplot/html/plsmema.html
 share/doc/plplot/html/plsmin.html
 share/doc/plplot/html/plsori.html
 share/doc/plplot/html/plspage.html
+share/doc/plplot/html/plspal0.html
+share/doc/plplot/html/plspal1.html
 share/doc/plplot/html/plspause.html
 share/doc/plplot/html/plsstrm.html
 share/doc/plplot/html/plssub.html
 share/doc/plplot/html/plssym.html
 share/doc/plplot/html/plstar.html
 share/doc/plplot/html/plstart.html
+share/doc/plplot/html/plstransform.html
+share/doc/plplot/html/plstring.html
+share/doc/plplot/html/plstring3.html
 share/doc/plplot/html/plstripa.html
 share/doc/plplot/html/plstripc.html
 share/doc/plplot/html/plstripd.html
 share/doc/plplot/html/plstyl.html
 share/doc/plplot/html/plsurf3d.html
+share/doc/plplot/html/plsurf3dl.html
 share/doc/plplot/html/plsvect.html
 share/doc/plplot/html/plsvpa.html
 share/doc/plplot/html/plsxax.html
@@ -381,30 +520,31 @@ share/doc/plplot/html/plsyax.html
 share/doc/plplot/html/plsym.html
 share/doc/plplot/html/plszax.html
 share/doc/plplot/html/pltext.html
+share/doc/plplot/html/pltimefmt.html
 share/doc/plplot/html/pltr0.html
 share/doc/plplot/html/pltr1.html
 share/doc/plplot/html/pltr2.html
 share/doc/plplot/html/plvasp.html
-share/doc/plplot/html/plvec0.html
-share/doc/plplot/html/plvec1.html
-share/doc/plplot/html/plvec2.html
 share/doc/plplot/html/plvect.html
-share/doc/plplot/html/plvectfortran77.html
-share/doc/plplot/html/plvectfortran95.html
+share/doc/plplot/html/plvectfortran.html
 share/doc/plplot/html/plvpas.html
 share/doc/plplot/html/plvpor.html
 share/doc/plplot/html/plvsta.html
 share/doc/plplot/html/plw3d.html
 share/doc/plplot/html/plwid.html
+share/doc/plplot/html/plwidth.html
 share/doc/plplot/html/plwind.html
 share/doc/plplot/html/plxormod.html
 share/doc/plplot/html/postscript-driver.html
 share/doc/plplot/html/python.html
+share/doc/plplot/html/qt-driver.html
 share/doc/plplot/html/scales.html
+share/doc/plplot/html/simple-graph.html
 share/doc/plplot/html/simple.html
 share/doc/plplot/html/svg-driver.html
 share/doc/plplot/html/tcl-contouring.html
 share/doc/plplot/html/tcl-extension.html
+share/doc/plplot/html/tcl-motivation.html
 share/doc/plplot/html/tcl-overview.html
 share/doc/plplot/html/tcl-understanding.html
 share/doc/plplot/html/tcl.html
@@ -412,19 +552,24 @@ share/doc/plplot/html/tk-driver.html
 share/doc/plplot/html/tri-d-plots.html
 share/doc/plplot/html/truetype-postscript-driver.html
 share/doc/plplot/html/viewport_window.html
-share/doc/plplot/html/windows-notes.html
-share/doc/plplot/html/wxwidgets-driver.html
-share/doc/plplot/html/x-drivers.html
-share/doc/plplot/html/x12680.html
+share/doc/plplot/html/wxWidgets-driver.html
+share/doc/plplot/html/xwin-driver.html
 share/examples/plplot/
+share/examples/plplot/CMakeLists.txt
+share/examples/plplot/Chloe.pgm
 share/examples/plplot/Makefile
+share/examples/plplot/README.Chloe
 share/examples/plplot/c/
+share/examples/plplot/c/CMakeLists.txt
 share/examples/plplot/c/Makefile
-share/examples/plplot/c/README.plplotcanvas
+share/examples/plplot/c/README.cairo
+share/examples/plplot/c/ext-cairo-test.c
+share/examples/plplot/c/extXdrawable_demo.c
 share/examples/plplot/c/plcdemos.h
-share/examples/plplot/c/plplotcanvas_animation.c
-share/examples/plplot/c/plplotcanvas_demo.c
+share/examples/plplot/c/test_plbuf.c
+share/examples/plplot/c/test_plend.c
 share/examples/plplot/c/tutor.c
+share/examples/plplot/c/x00c.c
 share/examples/plplot/c/x01c.c
 share/examples/plplot/c/x02c.c
 share/examples/plplot/c/x03c.c
@@ -453,11 +598,38 @@ share/examples/plplot/c/x25c.c
 share/examples/plplot/c/x26c.c
 share/examples/plplot/c/x27c.c
 share/examples/plplot/c/x28c.c
-share/examples/plplot/lena.pgm
+share/examples/plplot/c/x29c.c
+share/examples/plplot/c/x30c.c
+share/examples/plplot/c/x31c.c
+share/examples/plplot/c/x32c.c
+share/examples/plplot/c/x33c.c
+share/examples/plplot/c/x34c.c
+share/examples/plplot/cmake/
+share/examples/plplot/cmake/modules/
+share/examples/plplot/cmake/modules/language_support.cmake
+share/examples/plplot/cmake/modules/pkg-config.cmake
+share/examples/plplot/cmake/modules/plplot_configure.cmake
+share/examples/plplot/cmake/modules/plplot_functions.cmake
+share/examples/plplot/plplot-test-interactive.sh
 share/examples/plplot/plplot-test.sh
 share/examples/plplot/test_c.sh
+share/examples/plplot/test_c_interactive.sh
+share/examples/plplot/test_cxx.sh
+share/examples/plplot/test_diff.sh
+share/examples/plplot/test_fortran.sh
 share/plplot/
 share/plplot/cglobe.map
+share/plplot/cmap0_alternate.pal
+share/plplot/cmap0_black_on_white.pal
+share/plplot/cmap0_default.pal
+share/plplot/cmap0_white_bg.pal
+share/plplot/cmap1_blue_red.pal
+share/plplot/cmap1_blue_yellow.pal
+share/plplot/cmap1_default.pal
+share/plplot/cmap1_gray.pal
+share/plplot/cmap1_highfreq.pal
+share/plplot/cmap1_lowfreq.pal
+share/plplot/cmap1_radar.pal
 share/plplot/globe.map
 share/plplot/plstnd5.fnt
 share/plplot/plxtnd5.fnt

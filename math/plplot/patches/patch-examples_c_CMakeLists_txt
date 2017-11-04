@@ -1,30 +1,27 @@
-$OpenBSD: patch-examples_c_CMakeLists_txt,v 1.1 2009/04/05 16:21:55 steven Exp $
---- examples/c/CMakeLists.txt.orig	Sat Jun  7 09:30:57 2008
-+++ examples/c/CMakeLists.txt	Sat Jun  7 09:31:34 2008
-@@ -80,7 +80,7 @@ README.plplotcanvas
- )
+$OpenBSD: patch-examples_c_CMakeLists_txt,v 1.2 2017/11/04 10:28:21 steven Exp $
+Index: examples/c/CMakeLists.txt
+--- examples/c/CMakeLists.txt.orig
++++ examples/c/CMakeLists.txt
+@@ -86,11 +86,11 @@ if(CORE_BUILD)
+   endif(PLD_xcairo OR PLD_extcairo)
  
- install(FILES ${c_SRCS} ${plplotcanvas_SRCS} ${plplotcanvas_DOCS}
--DESTINATION ${DATA_DIR}/examples/c
-+DESTINATION ${EXAMPLE_DIR}/c
- )
+   install(FILES ${c_SRCS} ${extXdrawable_SRC} ${extcairo_SRC} ${cairo_DOCS}
+-    DESTINATION ${DATA_DIR}/examples/c
++    DESTINATION ${EXAMPLE_DIR}/c
+     )
  
- set(CC ${CMAKE_C_COMPILER})
-@@ -90,7 +90,7 @@ ${CMAKE_CURRENT_BINARY_DIR}/Makefile.examples
- )
+   install(FILES CMakeLists.txt
+-    DESTINATION ${DATA_DIR}/examples/c
++    DESTINATION ${EXAMPLE_DIR}/c
+     )
  
- install(FILES ${CMAKE_CURRENT_BINARY_DIR}/Makefile.examples
--DESTINATION ${DATA_DIR}/examples/c
-+DESTINATION ${EXAMPLE_DIR}/c
- RENAME Makefile
- )
+   set(CC "${CMAKE_C_COMPILER} ${CMAKE_C_COMPILER_ARG1} ${CMAKE_C_FLAGS}")
+@@ -210,7 +210,7 @@ if(CORE_BUILD)
+     )
  
-@@ -98,7 +98,7 @@ RENAME Makefile
- # of example 20 in the various examples subdirectories can conveniently
- # access this file.
- install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/lena.pgm
--DESTINATION ${DATA_DIR}/examples
-+DESTINATION ${EXAMPLE_DIR}
- )
- 
- # Do the same as above for the build tree for those who want to individually
+   install(FILES ${CMAKE_CURRENT_BINARY_DIR}/Makefile.examples
+-    DESTINATION ${DATA_DIR}/examples/c
++    DESTINATION ${EXAMPLE_DIR}/c
+     RENAME Makefile
+     )
+ endif(CORE_BUILD)
