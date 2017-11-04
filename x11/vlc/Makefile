@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.215 2017/10/23 17:11:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.216 2017/11/04 22:55:39 naddy Exp $
 
 COMMENT-main=	VideoLAN client; multimedia player
 COMMENT-jack=	JACK audio output module for VLC
@@ -10,8 +10,8 @@ PKGNAME-jack=	vlc-jack-${V}
 CATEGORIES=	x11
 MASTER_SITES=	https://download.videolan.org/pub/videolan/vlc/${V}/
 EXTRACT_SUFX=	.tar.xz
-REVISION-jack=	0
-REVISION-main=	1
+REVISION-jack=	1
+REVISION-main=	2
 
 SHARED_LIBS=	vlc	3.0 \
 		vlccore	3.0
@@ -24,7 +24,7 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 PERMIT_PACKAGE_CDROM=	patents
 PERMIT_PACKAGE_FTP=	Yes
 
-WANTLIB-common=	c dbus-1 idn m pthread ${MODGETTEXT_WANTLIB}
+WANTLIB-common=	c dbus-1 iconv idn intl m pthread
 WANTLIB-main=	EGL GL ICE lib/qt4/QtGui QtCore SM SDL SDL_image X11 \
 		Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xpm \
 		Xrender Xrandr ass atk-1.0 avcodec avformat avutil bluray \
@@ -48,15 +48,13 @@ WANTLIB-jack=	db jack vlccore ${WANTLIB-common}
 AUTOCONF_VERSION= 2.69
 AUTOMAKE_VERSION= 1.15
 
-MODULES=	devel/gettext \
-		x11/qt4
+MODULES=	x11/qt4
 
 COMPILER =	base-clang base-gcc
 
 WANTLIB-main += ${COMPILER_LIBCXX}
 
 LIB_DEPENDS-main= ${MODQT4_LIB_DEPENDS} \
-		${MODGETTEXT_LIB_DEPENDS} \
 		archivers/libtar \
 		audio/libcddb \
 		audio/libsamplerate \
@@ -65,6 +63,7 @@ LIB_DEPENDS-main= ${MODQT4_LIB_DEPENDS} \
 		audio/speex \
 		audio/taglib \
 		devel/fribidi \
+		devel/gettext \
 		devel/libdvdread \
 		devel/libidn \
 		devel/libnotify \
@@ -86,8 +85,7 @@ LIB_DEPENDS-main= ${MODQT4_LIB_DEPENDS} \
 		textproc/libxml \
 		x11/dbus \
 		x11/gtk+2
-LIB_DEPENDS-jack= ${MODGETTEXT_LIB_DEPENDS} \
-		${BUILD_PKGPATH} \
+LIB_DEPENDS-jack= ${BUILD_PKGPATH} \
 		audio/jack
 BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS} \

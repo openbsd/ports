@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2017/10/23 17:10:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.59 2017/11/04 22:55:39 naddy Exp $
 
 DPB_PROPERTIES=		tag:kde3
 
@@ -19,7 +19,7 @@ PKGNAME-gtk3=		uim-gtk3-$V
 PKGNAME-kde=		uim-kde-$V
 PKGNAME-qt=		uim-qt-$V
 PKGNAME-qt4=		uim-qt4-$V
-REVISION=		4
+REVISION=		5
 
 MASTER_SITES=		https://github.com/uim/uim/releases/download/uim-$V/
 HOMEPAGE=		https://github.com/uim/uim
@@ -32,27 +32,23 @@ SHARED_LIBS +=	uim-custom           0.0      # .2.0
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-cWANTLIB += X11 Xext Xrender fontconfig freetype m
-cWANTLIB += ${MODGETTEXT_WANTLIB}
+cWANTLIB += X11 Xext Xrender fontconfig freetype iconv intl m
 
 MULTI_PACKAGES=		-main -gtk -gtk3 -kde -qt -qt4
 
-MODULES=		devel/gettext \
-			textproc/intltool \
+MODULES=		textproc/intltool \
 			x11/qt4 \
 			x11/kde # last on purpose
 
 USE_GMAKE=		Yes
 
-RUN_DEPENDS-main=	${MODGETTEXT_RUN_DEPENDS} \
-			devel/desktop-file-utils
+RUN_DEPENDS-main=	devel/desktop-file-utils
 
 WANTLIB-main += ${cWANTLIB}
 WANTLIB-main += Xft anthy anthydic c curses expat ${COMPILER_LIBCXX}
 WANTLIB-main += util xcb z
 
-LIB_DEPENDS-main=	${MODGETTEXT_LIB_DEPENDS} \
-			inputmethods/anthy
+LIB_DEPENDS-main=	inputmethods/anthy
 
 
 WANTLIB-gtk += ${cWANTLIB}
@@ -67,8 +63,8 @@ LIB_DEPENDS-gtk=	inputmethods/uim \
 			x11/gtk+2
 
 WANTLIB-gtk3 += ${cWANTLIB}
-WANTLIB-gtk3 += ICE SM Xcomposite Xcursor Xdamage Xfixes Xi Xinerama
-WANTLIB-gtk3 += Xrandr atk-1.0 atk-bridge-2.0 atspi c cairo cairo-gobject
+WANTLIB-gtk3 += Xcomposite Xcursor Xdamage Xfixes Xi Xinerama
+WANTLIB-gtk3 += Xrandr Xtst atk-1.0 atk-bridge-2.0 atspi c cairo cairo-gobject
 WANTLIB-gtk3 += dbus-1 expat ffi gcroots gdk-3 gdk_pixbuf-2.0 gio-2.0
 WANTLIB-gtk3 += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
 WANTLIB-gtk3 += gtk-3 harfbuzz pango-1.0 pangocairo-1.0 pangoft2-1.0
@@ -79,7 +75,7 @@ LIB_DEPENDS-gtk3=	inputmethods/uim \
 			x11/gtk+3
 
 WANTLIB-kde += ${cWANTLIB} ${KDE}/kdecore ${KDE}/kdeui
-WANTLIB-kde += DCOP GL ICE SM X11-xcb Xau Xcursor Xdamage Xdmcp Xfixes
+WANTLIB-kde += DCOP GL ICE SM X11-xcb Xcursor Xdamage Xfixes
 WANTLIB-kde += Xft Xi Xinerama Xmu Xrandr Xt Xxf86vm art_lgpl_2 drm
 WANTLIB-kde += expat gcroots glapi idn jpeg kdefx lcms mng png pthread
 WANTLIB-kde += qt-mt ${COMPILER_LIBCXX} uim uim-scm util xcb xcb-dri2
@@ -89,13 +85,12 @@ LIB_DEPENDS-kde=	inputmethods/uim \
 			x11/kde/libs3
 
 WANTLIB-qt += ${cWANTLIB} ${MODQT3_WANTLIB}
-WANTLIB-qt += GL ICE SM X11-xcb Xau Xcursor Xdamage Xdmcp Xfixes
+WANTLIB-qt += GL ICE SM X11-xcb Xcursor Xdamage Xfixes
 WANTLIB-qt += Xft Xi Xinerama Xmu Xrandr Xt Xxf86vm c drm expat gcroots
 WANTLIB-qt += glapi jpeg lcms mng png pthread ${COMPILER_LIBCXX}
 WANTLIB-qt += uim uim-custom uim-scm xcb xcb-dri2 xcb-glx z
 
 LIB_DEPENDS-qt=		${MODQT3_LIB_DEPENDS} \
-			${MODGETTEXT_LIB_DEPENDS} \
 			inputmethods/uim
 
 WANTLIB-qt4 += ${cWANTLIB} ${MODQT4_WANTLIB}
@@ -103,7 +98,6 @@ WANTLIB-qt4 += ICE QtGui SM Xi Xinerama c pthread ${COMPILER_LIBCXX} uim
 WANTLIB-qt4 += uim-custom uim-scm
 
 LIB_DEPENDS-qt4=	${MODQT4_LIB_DEPENDS} \
-			${MODGETTEXT_LIB_DEPENDS} \
 			inputmethods/uim
 
 AUTOCONF_VERSION=	2.68
