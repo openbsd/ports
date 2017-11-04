@@ -1,0 +1,20 @@
+$OpenBSD: patch-tests_test_exc_rb,v 1.1 2017/11/04 15:54:10 jeremy Exp $
+
+Skip test that crashes with SIGILL.  This same code also crashes
+previous versions, so it is not a regression, just a newly added
+test.  Details at:
+
+https://github.com/eventmachine/eventmachine/issues/777
+
+Index: tests/test_exc.rb
+--- tests/test_exc.rb.orig
++++ tests/test_exc.rb
+@@ -32,7 +32,7 @@ class TestSomeExceptions < Test::Unit::TestCase
+     }
+   end
+ 
+-  def test_exception_on_unbind
++  def skip_test_exception_on_unbind
+     assert_raises(DoomedConnectionError) {
+       EM.run {
+       EM.connect("localhost", 8888, DoomedConnection)

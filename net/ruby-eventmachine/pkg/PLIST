@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2016/11/04 21:39:12 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.11 2017/11/04 15:54:10 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/CHANGELOG.md
@@ -88,6 +88,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rubyeventmachine.so
 ${GEM_LIB}/gems/${DISTNAME}/rakelib/
 ${GEM_LIB}/gems/${DISTNAME}/rakelib/package.rake
 ${GEM_LIB}/gems/${DISTNAME}/rakelib/test.rake
+${GEM_LIB}/gems/${DISTNAME}/rakelib/test_pure.rake
 ${GEM_LIB}/gems/${DISTNAME}/tests/
 ${GEM_LIB}/gems/${DISTNAME}/tests/client.crt
 ${GEM_LIB}/gems/${DISTNAME}/tests/client.key
@@ -107,7 +108,6 @@ ${GEM_LIB}/gems/${DISTNAME}/tests/test_exc.rb
 ${GEM_LIB}/gems/${DISTNAME}/tests/test_file_watch.rb
 ${GEM_LIB}/gems/${DISTNAME}/tests/test_fork.rb
 ${GEM_LIB}/gems/${DISTNAME}/tests/test_futures.rb
-${GEM_LIB}/gems/${DISTNAME}/tests/test_get_sock_opt.rb
 ${GEM_LIB}/gems/${DISTNAME}/tests/test_handler_check.rb
 ${GEM_LIB}/gems/${DISTNAME}/tests/test_hc.rb
 ${GEM_LIB}/gems/${DISTNAME}/tests/test_httpclient.rb
@@ -137,10 +137,10 @@ ${GEM_LIB}/gems/${DISTNAME}/tests/test_running.rb
 ${GEM_LIB}/gems/${DISTNAME}/tests/test_sasl.rb
 ${GEM_LIB}/gems/${DISTNAME}/tests/test_send_file.rb
 ${GEM_LIB}/gems/${DISTNAME}/tests/test_servers.rb
-${GEM_LIB}/gems/${DISTNAME}/tests/test_set_sock_opt.rb
 ${GEM_LIB}/gems/${DISTNAME}/tests/test_shutdown_hooks.rb
 ${GEM_LIB}/gems/${DISTNAME}/tests/test_smtpclient.rb
 ${GEM_LIB}/gems/${DISTNAME}/tests/test_smtpserver.rb
+${GEM_LIB}/gems/${DISTNAME}/tests/test_sock_opt.rb
 ${GEM_LIB}/gems/${DISTNAME}/tests/test_spawn.rb
 ${GEM_LIB}/gems/${DISTNAME}/tests/test_ssl_args.rb
 ${GEM_LIB}/gems/${DISTNAME}/tests/test_ssl_dhparam.rb
