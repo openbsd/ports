@@ -1,25 +1,23 @@
-# $OpenBSD: Makefile,v 1.156 2017/10/23 17:11:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.157 2017/11/04 16:45:12 jasper Exp $
 
 COMMENT=	GNOME terminal
 
 GNOME_PROJECT=	gnome-terminal
-GNOME_VERSION=	3.24.2
-REVISION=	0
+GNOME_VERSION=	3.26.2
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
-WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
-WANTLIB += c cairo cairo-gobject dbus-1 dbus-glib-1 dconf uuid
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
+WANTLIB += Xrandr Xrender Xtst atk-1.0 atk-bridge-2.0 atspi c
+WANTLIB += cairo cairo-gobject dbus-1 dbus-glib-1 dconf epoxy
 WANTLIB += expat ffi fontconfig freetype gconf-2 gdk-3 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
-WANTLIB += gthread-2.0 gtk-3 harfbuzz m unistring
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png pthread vte-2.91 xcb xcb-render
-WANTLIB += xcb-shm z nautilus-extension iconv intl idn2
-WANTLIB += epoxy gmp gnutls hogweed nettle p11-kit tasn1
-WANTLIB += archive bz2 crypto gnome-autoar-0 lz4 lzma pcre2-8
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gmp gnutls gobject-2.0
+WANTLIB += graphite2 gthread-2.0 gtk-3 harfbuzz hogweed iconv
+WANTLIB += idn2 intl m nautilus-extension nettle p11-kit pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pcre2-8 pixman-1 png
+WANTLIB += pthread tasn1 unistring uuid vte-2.91 xcb xcb-render
+WANTLIB += xcb-shm z
 
 MODULES=	devel/dconf \
 		x11/gnome
