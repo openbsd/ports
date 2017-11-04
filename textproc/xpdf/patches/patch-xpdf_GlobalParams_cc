@@ -1,7 +1,8 @@
-$OpenBSD: patch-xpdf_GlobalParams_cc,v 1.4 2015/04/06 21:05:07 ajacoutot Exp $
---- xpdf/GlobalParams.cc.orig	Wed May 28 20:50:50 2014
-+++ xpdf/GlobalParams.cc	Fri May 30 14:27:13 2014
-@@ -120,14 +120,7 @@ static const char *displayFontDirs[] = {
+$OpenBSD: patch-xpdf_GlobalParams_cc,v 1.5 2017/11/04 16:05:23 kili Exp $
+Index: xpdf/GlobalParams.cc
+--- xpdf/GlobalParams.cc.orig
++++ xpdf/GlobalParams.cc
+@@ -103,14 +103,7 @@ static const char *displayFontDirs[] = {
  };
  #else
  static const char *displayFontDirs[] = {
