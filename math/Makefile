@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.142 2017/09/11 18:38:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.143 2017/11/04 11:54:11 pirofti Exp $
 
      SUBDIR =
      SUBDIR += R
@@ -41,6 +41,7 @@
      SUBDIR += jacal
      SUBDIR += kst
      SUBDIR += lapack
+     SUBDIR += libcerf
      SUBDIR += libqalculate
      SUBDIR += libtommath
      SUBDIR += lpsolve
