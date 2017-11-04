@@ -1,7 +1,8 @@
-$OpenBSD: patch-src_heap_cc,v 1.1.1.1 2012/10/13 15:09:58 abieber Exp $
---- src/heap.cc.orig	Tue Oct  9 08:34:36 2012
-+++ src/heap.cc	Tue Oct  9 08:34:45 2012
-@@ -5873,6 +5873,29 @@ bool Heap::ConfigureHeap(int max_semispace_size,
+$OpenBSD: patch-src_heap_cc,v 1.2 2017/11/04 17:17:35 jeremy Exp $
+Index: src/heap.cc
+--- src/heap.cc.orig
++++ src/heap.cc
+@@ -6124,6 +6124,29 @@ bool Heap::ConfigureHeap(int max_semispace_size,
    initial_semispace_size_ = Min(initial_semispace_size_, max_semispace_size_);
    external_allocation_limit_ = 16 * max_semispace_size_;
  

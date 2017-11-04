@@ -1,17 +1,18 @@
-# $OpenBSD: Makefile,v 1.15 2017/07/26 22:45:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2017/11/04 17:17:35 jeremy Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386
 
 COMMENT=	V8 JavaScript for clients and servers
 
-V8_VERSION=	3.12.19
-REVISION=	6
+V8_VERSION=	3.16.14.11
 EPOCH=		0
 V8_ARCH=	${MACHINE_ARCH:S/amd64/x64/:S/i386/ia32/}
 V8_RELEASE=	release
 
 DISTNAME=	v8-${V8_VERSION}
 PKGNAME=	lib${DISTNAME}
+
+DISTFILES=	v8-${V8_VERSION}.tar.gz{${V8_VERSION}.tar.gz}
 
 CATEGORIES=	lang
 
@@ -24,7 +25,7 @@ MAINTAINER=	David Carlier <devnexen@gmail.com>
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	http://deftly.net/
+MASTER_SITES=	https://github.com/v8/v8/archive/
 
 BUILD_DEPENDS=	devel/gyp
 
