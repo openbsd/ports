@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2017/01/11 20:11:29 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.13 2017/11/04 15:49:24 jeremy Exp $
 ${GEM_BIN}/nokogiri${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -11,7 +11,9 @@ ${GEM_LIB}/gems/${DISTNAME}/CHANGELOG.md
 ${GEM_LIB}/gems/${DISTNAME}/CONTRIBUTING.md
 ${GEM_LIB}/gems/${DISTNAME}/C_CODING_STYLE.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/Gemfile
-${GEM_LIB}/gems/${DISTNAME}/LICENSE.txt
+${GEM_LIB}/gems/${DISTNAME}/Gemfile-libxml-ruby
+${GEM_LIB}/gems/${DISTNAME}/LICENSE-DEPENDENCIES.md
+${GEM_LIB}/gems/${DISTNAME}/LICENSE.md
 ${GEM_LIB}/gems/${DISTNAME}/Manifest.txt
 ${GEM_LIB}/gems/${DISTNAME}/README.md
 ${GEM_LIB}/gems/${DISTNAME}/ROADMAP.md
@@ -105,10 +107,7 @@ ${GEM_LIB}/gems/${DISTNAME}/patches/sort-patches-by-date
 ${GEM_LIB}/gems/${DISTNAME}/ports/
 ${GEM_LIB}/gems/${DISTNAME}/suppressions/
 ${GEM_LIB}/gems/${DISTNAME}/suppressions/README.txt
-${GEM_LIB}/gems/${DISTNAME}/suppressions/nokogiri_ree-1.8.7.358.supp
-${GEM_LIB}/gems/${DISTNAME}/suppressions/nokogiri_ruby-1.8.7.370.supp
-${GEM_LIB}/gems/${DISTNAME}/suppressions/nokogiri_ruby-1.9.2.320.supp
-${GEM_LIB}/gems/${DISTNAME}/suppressions/nokogiri_ruby-1.9.3.327.supp
+${GEM_LIB}/gems/${DISTNAME}/suppressions/nokogiri_ruby-2.supp
 ${GEM_LIB}/gems/${DISTNAME}/tasks/
 ${GEM_LIB}/gems/${DISTNAME}/tasks/test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/
@@ -234,5 +233,4 @@ ${GEM_LIB}/gems/${DISTNAME}/test/xml/test_xpath.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/xslt/
 ${GEM_LIB}/gems/${DISTNAME}/test/xslt/test_custom_functions.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/xslt/test_exception_handling.rb
-${GEM_LIB}/gems/${DISTNAME}/test_all
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
