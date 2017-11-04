@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.128 2017/10/29 08:24:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.129 2017/11/04 21:28:36 landry Exp $
 
 COMMENT-main=	PDF rendering library
 COMMENT-qt4=	qt4 interface to PDF rendering library
@@ -67,7 +67,7 @@ BUILD_DEPENDS+= devel/gobject-introspection
 RUN_DEPENDS-main= \
 		print/poppler-data>=0.4.7
 
-LIB_DEPENDS-main= \
+LIB_DEPENDS-main=${MODGCC4_CPPLIBDEP} \
 		converters/libiconv \
 		devel/gettext \
 		devel/glib2 \
@@ -78,12 +78,15 @@ LIB_DEPENDS-main= \
 		graphics/tiff
 
 LIB_DEPENDS-qt4=${MODQT4_LIB_DEPENDS} \
+		${MODGCC4_CPPLIBDEP} \
 		print/poppler
 
 LIB_DEPENDS-qt5=${MODQT5_LIB_DEPENDS} \
+		${MODGCC4_CPPLIBDEP} \
 		print/poppler
 
-LIB_DEPENDS-utils= print/poppler
+LIB_DEPENDS-utils=${MODGCC4_CPPLIBDEP} \
+		print/poppler
 
 WANTLIB-main=	${cWANTLIB} Xext ffi gio-2.0 glib-2.0 gmodule-2.0 \
 		gobject-2.0 pixman-1 openjp2 X11 Xrender cairo pcre \
