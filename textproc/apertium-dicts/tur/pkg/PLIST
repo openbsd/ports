@@ -1,0 +1,21 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/11/04 00:03:07 bentley Exp $
+share/apertium/apertium-tur/
+share/apertium/apertium-tur/apertium-tur.tur.lexc
+share/apertium/apertium-tur/apertium-tur.tur.rlx
+share/apertium/apertium-tur/apertium-tur.tur.twol
+share/apertium/apertium-tur/tur.autogen.att.gz
+share/apertium/apertium-tur/tur.autogen.bin
+share/apertium/apertium-tur/tur.autogen.hfst
+share/apertium/apertium-tur/tur.automorf.att.gz
+share/apertium/apertium-tur/tur.automorf.bin
+share/apertium/apertium-tur/tur.automorf.hfst
+share/apertium/apertium-tur/tur.autopgen.bin
+share/apertium/apertium-tur/tur.prob
+share/apertium/apertium-tur/tur.rlx.bin
+share/apertium/modes/tur-disam.mode
+share/apertium/modes/tur-gener.mode
+share/apertium/modes/tur-lexc.mode
+share/apertium/modes/tur-morph.mode
+share/apertium/modes/tur-tagger.mode
+share/apertium/modes/tur-twol.mode
+share/pkgconfig/apertium-tur.pc
