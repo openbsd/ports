@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.360 2017/09/16 13:13:42 sunil Exp $
+# $OpenBSD: Makefile,v 1.361 2017/11/04 16:45:32 naddy Exp $
 
      SUBDIR =
      SUBDIR += abook
@@ -92,7 +92,6 @@
      SUBDIR += mimedefang
      SUBDIR += mimetic
      SUBDIR += mini_sendmail
-     SUBDIR += mixmaster
      SUBDIR += mlmmj
      SUBDIR += movemail
      SUBDIR += mozilla-thunderbird
