@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2016/10/01 11:54:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2017/11/04 14:32:48 rpointel Exp $
 
 COMMENT =		Python module to read and work with PE files
 
-MODPY_EGG_VERSION =	1.2.10.post139
-REVISION =		2
-DISTNAME =		pefile-1.2.10-139
-PKGNAME =		py-pefile-1.2.10.139
+MODPY_EGG_VERSION =	2017.9.3
+DISTNAME =		pefile-${MODPY_EGG_VERSION}
+PKGNAME =		py-${DISTNAME}
 
 CATEGORIES =		security
 
@@ -18,10 +17,11 @@ PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-MASTER_SITES =		${MASTER_SITE_GOOGLECODE:=pefile/}
-
 MODULES =		lang/python
 MODPY_SETUPTOOLS = 	Yes
+MODPY_PI =		Yes
+
+RUN_DEPENDS =		devel/py-future
 
 NO_TEST =		Yes
 
