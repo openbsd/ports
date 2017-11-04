@@ -1,0 +1,7 @@
+FIFE is a free, open-source cross-platform game engine. It features
+hardware-accelerated 2D graphics, integrated GUI, audio support, lighting,
+map editor supporting top-down and isometric maps, pathfinding, virtual
+filesystem and more!
+
+Games utilizing FIFE are programmed through Python scripting layer on top of
+the base C++ API. Games can be also programmed using the C++ layer directly.
