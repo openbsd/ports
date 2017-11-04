@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2017/10/28 18:36:19 landry Exp $
+# $OpenBSD: Makefile,v 1.4 2017/11/04 21:26:00 landry Exp $
 
 COMMENT =	translator library for point cloud formats
 
@@ -22,7 +22,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 MODULES =	devel/cmake lang/python
 
 # uses std=c++0x
-COMPILER =	clang
+COMPILER =	base-clang ports-gcc
 
 MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 BUILD_DEPENDS =	math/py-numpy,${MODPY_FLAVOR}

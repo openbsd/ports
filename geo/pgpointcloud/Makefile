@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2017/07/27 09:55:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2017/11/04 21:26:00 landry Exp $
 
 COMMENT =	point cloud storage extension for PostgreSQL
 
@@ -14,7 +14,7 @@ CATEGORIES =	geo databases
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES =	devel/cmake
-COMPILER =	clang
+COMPILER =	base-clang ports-gcc
 
 LIB_DEPENDS =	textproc/libxml
 BUILD_DEPENDS =	databases/postgresql,-server \
