@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2017/07/26 22:45:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.43 2017/11/04 12:39:29 rsadowski Exp $
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS} ${CLANG_ARCHS}
 
@@ -7,7 +7,7 @@ COMMENT-docs =		OpenCV documentation and examples
 COMMENT-main =		library of programming functions for real time cv
 COMMENT-java =		Java bindings for OpenCV
 
-V =			2.4.13
+V =			2.4.13.4
 GH_ACCOUNT =		Itseez
 GH_PROJECT =		opencv
 GH_TAGNAME = 		${V}
@@ -15,19 +15,16 @@ GH_TAGNAME = 		${V}
 PKGNAME-main =		${PKGNAME}
 PKGNAME-docs =		opencv-docs-$V
 PKGNAME-java =		opencv-java-$V
-REVISION-docs =		0
-REVISION-java =		0
-REVISION-main =		0
 
 .for i in opencv_calib3d opencv_contrib opencv_core opencv_features2d \
   opencv_flann opencv_gpu opencv_highgui opencv_imgproc opencv_legacy \
   opencv_ml opencv_nonfree opencv_objdetect opencv_photo opencv_stitching \
   opencv_superres opencv_ts opencv_video opencv_videostab opencv_ocl
-SHARED_LIBS += $i 2.0
+SHARED_LIBS += $i 3.0
 .endfor
 
-HOMEPAGE =		http://www.opencv.org/
-MAINTAINER =		Rafael Sadowski <rafael@sizeofvoid.org>
+HOMEPAGE =		https://www.opencv.org/
+MAINTAINER =		Rafael Sadowski <rsadowski@openbsd.org>
 
 # "patents" means containing some patented algorithms, see
 # http://docs.opencv.org/modules/nonfree/doc/nonfree.html
@@ -39,14 +36,15 @@ PERMIT_PACKAGE_CDROM =		patents
 PERMIT_PACKAGE_CDROM-docs =	Yes
 
 WANTLIB-main += ${MODPY_WANTLIB}
-WANTLIB-main += Half Iex IlmImf IlmThread Imath X11 Xcomposite Xcursor
-WANTLIB-main += Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0
-WANTLIB-main += avcodec avformat avresample avutil bz2 c cairo fontconfig
+WANTLIB-main += ${COMPILER_LIBCXX} Half Iex IlmImf IlmThread Imath
+WANTLIB-main += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
+WANTLIB-main += Xrandr Xrender atk-1.0 avresample c cairo fontconfig
 WANTLIB-main += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB-main += gobject-2.0 gstapp-1.0 gstbase-1.0 gstpbutils-1.0 gstreamer-1.0
 WANTLIB-main += gstriff-1.0 gstvideo-1.0 gthread-2.0 gtk-x11-2.0 intl
 WANTLIB-main += jasper jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB-main += png pthread ${COMPILER_LIBCXX} swscale tiff z
+WANTLIB-main += png tiff z
+
 
 WANTLIB-docs =
 

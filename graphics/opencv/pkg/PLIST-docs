@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-docs,v 1.9 2016/11/29 00:27:23 sthen Exp $
+@comment $OpenBSD: PLIST-docs,v 1.10 2017/11/04 12:39:30 rsadowski Exp $
 share/OpenCV/samples/
 share/OpenCV/samples/CMakeLists.txt
 share/OpenCV/samples/c/
@@ -849,16 +849,20 @@ share/doc/OpenCV/html/_images/Moments_Tutorial_Cover.jpg
 share/doc/OpenCV/html/_images/Morphology_1_Tutorial_Cover.jpg
 share/doc/OpenCV/html/_images/Morphology_1_Tutorial_Cover1.jpg
 share/doc/OpenCV/html/_images/Morphology_1_Tutorial_Original_Image.jpg
+share/doc/OpenCV/html/_images/Morphology_1_Tutorial_Theory_Dilatation_2.png
 share/doc/OpenCV/html/_images/Morphology_1_Tutorial_Theory_Dilation.png
 share/doc/OpenCV/html/_images/Morphology_1_Tutorial_Theory_Erosion.png
+share/doc/OpenCV/html/_images/Morphology_1_Tutorial_Theory_Erosion_2.png
 share/doc/OpenCV/html/_images/Morphology_1_Tutorial_Theory_Original_Image.png
 share/doc/OpenCV/html/_images/Morphology_2_Tutorial_Cover.jpg
 share/doc/OpenCV/html/_images/Morphology_2_Tutorial_Cover1.jpg
 share/doc/OpenCV/html/_images/Morphology_2_Tutorial_Original_Image.jpg
 share/doc/OpenCV/html/_images/Morphology_2_Tutorial_Theory_BlackHat.png
 share/doc/OpenCV/html/_images/Morphology_2_Tutorial_Theory_Closing.png
+share/doc/OpenCV/html/_images/Morphology_2_Tutorial_Theory_Closing_2.png
 share/doc/OpenCV/html/_images/Morphology_2_Tutorial_Theory_Gradient.png
 share/doc/OpenCV/html/_images/Morphology_2_Tutorial_Theory_Opening.png
+share/doc/OpenCV/html/_images/Morphology_2_Tutorial_Theory_Opening_2.png
 share/doc/OpenCV/html/_images/Morphology_2_Tutorial_Theory_TopHat.png
 share/doc/OpenCV/html/_images/My_Harris_corner_detector_Result.jpg
 share/doc/OpenCV/html/_images/My_Shi_Tomasi_corner_detector_Result.jpg
@@ -1002,6 +1006,7 @@ share/doc/OpenCV/html/_images/defects.png
 share/doc/OpenCV/html/_images/detection_of_planar_objects.png
 share/doc/OpenCV/html/_images/dev_OCV_reference.png
 share/doc/OpenCV/html/_images/discrete_fourier_transform.png
+share/doc/OpenCV/html/_images/distortion_examples.png
 share/doc/OpenCV/html/_images/eclipse-logo.png
 share/doc/OpenCV/html/_images/eclipse_10_crystal_clean.png
 share/doc/OpenCV/html/_images/eclipse_11_run_as.png
@@ -1086,6 +1091,7 @@ share/doc/OpenCV/html/_images/output.png
 share/doc/OpenCV/html/_images/outputInteropOpenCV1.jpg
 share/doc/OpenCV/html/_images/outputVideoInput.png
 share/doc/OpenCV/html/_images/patterns.png
+share/doc/OpenCV/html/_images/pinhole_camera_model.png
 share/doc/OpenCV/html/_images/pointpolygon.png
 share/doc/OpenCV/html/_images/qtDownloadThisPackage.png
 share/doc/OpenCV/html/_images/qtgui.png
