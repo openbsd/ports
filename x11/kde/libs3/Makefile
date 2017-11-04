@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.156 2017/10/23 17:11:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.157 2017/11/04 15:48:01 naddy Exp $
 
 BROKEN-alpha =		.got subsegment exceeds 64K
 BROKEN-mips64 =		.got subsegment exceeds 64K
@@ -12,7 +12,7 @@ PKGNAME-main =		${DISTNAME}
 PKGSPEC-main =		kdelibs->=3,<4
 PKGNAME-langlist =	kde3-langlist-${VERSION}
 PKG_ARCH-langlist =	*
-REVISION-main =		44
+REVISION-main =		45
 REVISION-langlist =	2
 
 MODKDE_VERSION =	3.5.8
@@ -57,14 +57,13 @@ SHARED_LIBS +=	kmediaplayer         1.0      # .0.0
 SHARED_LIBS +=	kimproxy             1.0      # .0.0
 SHARED_LIBS +=	katepartinterfaces   1.0      # .0.0
 
-WANTLIB-main += ${MODGETTEXT_WANTLIB}
 WANTLIB-main += FLAC GL ICE SM X11
-WANTLIB-main += X11-xcb Xau Xcursor Xdamage Xdmcp Xext Xfixes Xft Xi
+WANTLIB-main += X11-xcb Xcursor Xdamage Xext Xfixes Xft Xi
 WANTLIB-main += Xinerama Xmu Xrandr Xrender Xt Xxf86vm art_lgpl_2 artsflow
 WANTLIB-main += artsflow_idl aspell audiofile avahi-client avahi-common
 WANTLIB-main += bz2 c dbus-1 dns_sd drm expat fam fontconfig
 WANTLIB-main += freetype glapi glib-2.0 gmodule-2.0 gthread-2.0
-WANTLIB-main += idn jasper jpeg kmedia2_idl lcms lzma m mad
+WANTLIB-main += iconv idn intl jasper jpeg kmedia2_idl lcms lzma m mad
 WANTLIB-main += mcop mng ogg pcre pcreposix png pthread
 WANTLIB-main += qt-mt qtmcop sndio soundserver_idl ${COMPILER_LIBCXX} tiff
 WANTLIB-main += util vorbis vorbisenc vorbisfile xcb xcb-dri2
@@ -73,7 +72,7 @@ WANTLIB-langlist =
 
 MULTI_PACKAGES =	-main -langlist
 
-MODULES =		x11/kde devel/gettext
+MODULES =		x11/kde
 
 RUN_DEPENDS-langlist =
 RUN_DEPENDS-main =	${RUN_DEPENDS} \

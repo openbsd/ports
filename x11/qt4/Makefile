@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.148 2017/08/25 12:30:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.149 2017/11/04 15:48:01 naddy Exp $
 
 USE_WXNEEDED =		Yes # QtWebKit
 
@@ -25,13 +25,13 @@ PKGNAME-main =		qt4-${PKGVERSION}
 PKGNAME-debug =		qt4-debug-${PKGVERSION}
 FULLPKGNAME-html =	qt4-html-${PKGVERSION}
 FULLPKGPATH-html =	${BASE_PKGPATH},-html
-REVISION-main =		13
-REVISION-mysql =	1
-REVISION-postgresql =	1
-REVISION-sqlite2 =	1
-REVISION-tds =		1
-REVISION-debug =	0
-REVISION-examples =	2
+REVISION-main =		14
+REVISION-mysql =	2
+REVISION-postgresql =	2
+REVISION-sqlite2 =	2
+REVISION-tds =		2
+REVISION-debug =	1
+REVISION-examples =	3
 REVISION-html =		0
 
 # XXX qmake include parser is bogus
@@ -150,7 +150,7 @@ CONFIGURE_ARGS +=-release
 
 .include <bsd.port.arch.mk>
 
-MODULES =		devel/gettext gcc4
+MODULES =		gcc4
 
 # for __sync_add_and_fetch_4, __sync_sub_and_fetch_4
 MODGCC4_ARCHS =		arm
@@ -160,12 +160,10 @@ LIB_DEPENDS =
 WANTLIB =
 RUN_DEPENDS =
 
-commonWANTLIB =		c pthread GL m ${COMPILER_LIBCXX}
-commonWANTLIB+=		${WANTLIB}
+commonWANTLIB =		c pthread GL iconv intl m ${COMPILER_LIBCXX}
 
 sqlWANTLIB =		m lib/qt4/QtCore>=4 QtSql ${COMPILER_LIBCXX} pthread
 
-RUN_DEPENDS-main=	${MODGETTEXT_RUN_DEPENDS}
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			databases/sqlite3 \
 			devel/glib2 \
@@ -177,7 +175,7 @@ WANTLIB-main =		${commonWANTLIB} jpeg mng \
 			lcms tiff gobject-2.0 gstvideo-0.10 \
 			gstbase-0.10 gstreamer-0.10 xml2 \
 			gobject-2.0 gmodule-2.0 gstinterfaces-0.10 \
-			${MODGETTEXT_WANTLIB} glib-2.0 gthread-2.0 \
+			glib-2.0 gthread-2.0 \
 			gstaudio-0.10 ICE SM X11>=10 Xext Xi Xinerama \
 			Xrender fontconfig freetype png>=2 z \
 			sqlite3
