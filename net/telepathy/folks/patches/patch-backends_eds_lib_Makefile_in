@@ -1,0 +1,17 @@
+$OpenBSD: patch-backends_eds_lib_Makefile_in,v 1.1 2017/11/04 17:54:41 ajacoutot Exp $
+
+XXX workaround for private e-d-s library
+dlopen: failed to open libedbus-private.so
+https://bugzilla.gnome.org/show_bug.cgi?id=781485
+
+Index: backends/eds/lib/Makefile.in
+--- backends/eds/lib/Makefile.in.orig
++++ backends/eds/lib/Makefile.in
+@@ -682,6 +682,7 @@ libfolks_eds_la_LIBADD = \
+ 	$(EBOOK_LIBS) \
+ 	$(EDATASERVER_LIBS) \
+ 	$(LIBXML_LIBS) \
++	-Wl,-rpath,${LOCALBASE}/lib/evolution-data-server \
+ 	$(NULL)
+ 
+ libfolks_eds_la_LDFLAGS = \
