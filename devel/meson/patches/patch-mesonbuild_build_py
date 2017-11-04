@@ -1,4 +1,4 @@
-$OpenBSD: patch-mesonbuild_build_py,v 1.1 2017/10/28 13:27:05 ajacoutot Exp $
+$OpenBSD: patch-mesonbuild_build_py,v 1.2 2017/11/04 14:27:40 ajacoutot Exp $
 
 Index: mesonbuild/build.py
 --- mesonbuild/build.py.orig
@@ -12,19 +12,19 @@ Index: mesonbuild/build.py
  from .mesonlib import typeslistify, stringlistify, classify_unity_sources
  from .mesonlib import get_filenames_templates_dict, substitute_values
  from .environment import for_windows, for_darwin, for_cygwin
-@@ -1360,7 +1360,10 @@ class SharedLibrary(BuildTarget):
-         else:
-             prefix = 'lib'
-             suffix = 'so'
--            if self.ltversion:
-+            if is_openbsd() and (self.ltversion or self.soversion):
-+                self.filename_tpl = '{0.prefix}{0.name}.{0.suffix}.' + \
-+                                    os.getenv('LIB{0.name}_VERSION'.format(self), '0.0')
-+            elif self.ltversion:
-                 # libfoo.so.X[.Y[.Z]] (.Y and .Z are optional)
-                 self.filename_tpl = '{0.prefix}{0.name}.{0.suffix}.{0.ltversion}'
-             elif self.soversion:
-@@ -1458,6 +1461,8 @@ class SharedLibrary(BuildTarget):
+@@ -1397,6 +1397,11 @@ class SharedLibrary(BuildTarget):
+             # We replicate what Autotools does here and take the first
+             # number of the version by default.
+             self.soversion = self.ltversion.split('.')[0]
++        if is_openbsd():
++            libversion = os.getenv('LIB' + self.name + '_VERSION')
++            if libversion is not None:
++                self.ltversion = libversion.format(self)
++                self.soversion = self.ltversion
+         # Visual Studio module-definitions file
+         if 'vs_module_defs' in kwargs:
+             path = kwargs['vs_module_defs']
+@@ -1458,6 +1463,8 @@ class SharedLibrary(BuildTarget):
          aliases = {}
          # Aliases are only useful with .so and .dylib libraries. Also if
          # there's no self.soversion (no versioning), we don't need aliases.
