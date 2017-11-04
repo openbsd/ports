@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2016/11/01 21:07:25 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.19 2017/11/04 21:59:37 fcambus Exp $
 bin/jmacs
 @bin bin/joe
 bin/jpico
@@ -40,6 +40,16 @@ share/examples/joe/shell.sh
 share/joe/
 share/joe/charmaps/
 share/joe/charmaps/klingon
+share/joe/colors/
+share/joe/colors/default.jcf
+share/joe/colors/gruvbox.jcf
+share/joe/colors/ir_black.jcf
+share/joe/colors/molokai.jcf
+share/joe/colors/solarized.jcf
+share/joe/colors/wombat.jcf
+share/joe/colors/xoria.jcf
+share/joe/colors/zenburn-hc.jcf
+share/joe/colors/zenburn.jcf
 share/joe/lang/
 @sample ${SYSCONFDIR}/joe/lang/
 share/joe/lang/de.po
@@ -121,6 +131,8 @@ share/joe/syntax/iptables.jsf
 @sample ${SYSCONFDIR}/joe/syntax/iptables.jsf
 share/joe/syntax/java.jsf
 @sample ${SYSCONFDIR}/joe/syntax/java.jsf
+share/joe/syntax/jcf.jsf
+@sample ${SYSCONFDIR}/joe/syntax/jcf.jsf
 share/joe/syntax/joerc.jsf
 @sample ${SYSCONFDIR}/joe/syntax/joerc.jsf
 share/joe/syntax/js.jsf
