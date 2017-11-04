@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2017/10/20 06:46:02 kirby Exp $
+# $OpenBSD: Makefile,v 1.8 2017/11/04 21:45:38 kirby Exp $
 
 COMMENT =		Gnu All Mobile Management Utilities
 
@@ -21,6 +21,8 @@ WANTLIB += c curl dbi glib-2.0 gobject-2.0 iconv intl m pthread usb-1.0
 MASTER_SITES =		http://dl.cihar.com/gammu/releases/
 
 MODULES =		devel/cmake
+
+COMPILER = 		base-clang ports-gcc
 
 BUILD_DEPENDS = 	devel/gettext-tools
 RUN_DEPENDS =		misc/dialog
