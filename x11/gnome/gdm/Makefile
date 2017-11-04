@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.263 2017/11/03 15:20:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.264 2017/11/04 20:30:10 ajacoutot Exp $
 
 COMMENT=		GNOME display manager
 
 GNOME_PROJECT=		gdm
 GNOME_VERSION=		3.26.2.1
+REVISION=		0
 
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX} puflogh1000X248.gif:0
 EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
@@ -61,6 +62,7 @@ CONFIGURE_STYLE=	gnu
 
 CONFIGURE_ARGS=		--mandir=${PREFIX}/man \
 			--disable-systemd-journal \
+			--disable-user-display-server \
 			--without-systemd \
 			--without-plymouth \
 			--with-lang-file=${SYSCONFDIR}/gdm/locale.conf \
