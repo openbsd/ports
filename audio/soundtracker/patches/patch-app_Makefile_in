@@ -1,6 +1,16 @@
-$OpenBSD: patch-app_Makefile_in,v 1.5 2010/04/08 08:47:09 jasper Exp $
---- app/Makefile.in.orig	Wed Sep 13 16:37:27 2006
-+++ app/Makefile.in	Thu Mar 25 10:50:29 2010
+$OpenBSD: patch-app_Makefile_in,v 1.6 2017/11/04 19:12:25 espie Exp $
+Index: app/Makefile.in
+--- app/Makefile.in.orig
++++ app/Makefile.in
+@@ -108,7 +108,7 @@ LDFLAGS = @LDFLAGS@
+ LIBICONV = @LIBICONV@
+ LIBINTL = @LIBINTL@
+ LIBOBJS = @LIBOBJS@
+-LIBS = @LIBS@
++LIBS = @LIBS@ -lm
+ LTLIBICONV = @LTLIBICONV@
+ LTLIBINTL = @LTLIBINTL@
+ LTLIBOBJS = @LTLIBOBJS@
 @@ -661,7 +661,7 @@ info-am:
  
  install-data-am:
