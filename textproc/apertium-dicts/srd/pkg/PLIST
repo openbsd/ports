@@ -1,0 +1,18 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/11/04 00:01:02 bentley Exp $
+share/apertium/apertium-srd/
+share/apertium/apertium-srd/apertium-srd.post-srd.dix
+share/apertium/apertium-srd/apertium-srd.srd.dix
+share/apertium/apertium-srd/apertium-srd.srd.rlx
+share/apertium/apertium-srd/srd.autogen.att.gz
+share/apertium/apertium-srd/srd.autogen.bin
+share/apertium/apertium-srd/srd.automorf.att.gz
+share/apertium/apertium-srd/srd.automorf.bin
+share/apertium/apertium-srd/srd.autopgen.bin
+share/apertium/apertium-srd/srd.prob
+share/apertium/apertium-srd/srd.rlx.bin
+share/apertium/apertium-srd/srd_meridional.autogen.bin
+share/apertium/modes/srd-disam.mode
+share/apertium/modes/srd-gener.mode
+share/apertium/modes/srd-morph.mode
+share/apertium/modes/srd-tagger.mode
+share/pkgconfig/apertium-srd.pc
