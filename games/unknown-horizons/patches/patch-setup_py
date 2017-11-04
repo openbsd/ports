@@ -1,0 +1,12 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2017/11/04 22:04:24 bentley Exp $
+--- setup.py.orig	Wed Jan 18 01:11:17 2017
++++ setup.py	Wed Jan 18 01:11:21 2017
+@@ -51,7 +51,7 @@ data = [
+   (executable_path, ('unknown-horizons', )),
+   ('share/pixmaps', ('content/packages/unknown-horizons.xpm', )),
+   ('share/unknown-horizons', ('content/settings-template.xml', )),
+-  ('share/man/man6', ('content/packages/unknown-horizons.6', )),
++  ('man/man6', ('content/packages/unknown-horizons.6', )),
+ ]
+ 
+ for root, dirs, files in filter(lambda x: len(x[2]), os.walk('content')):
