@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2017/09/25 19:55:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.40 2017/11/04 19:54:07 sthen Exp $
 
 COMMENT =	compiler cache
 
@@ -17,9 +17,9 @@ WANTLIB += c m z
 
 MASTER_SITES =	http://samba.org/ftp/ccache/
 
-CONFIGURE_STYLE =	autoconf
-AUTOCONF_VERSION =	2.69
+CONFIGURE_STYLE =	gnu
 
+# This port should not have dependencies.
 NO_CCACHE =		Yes
 
 .include <bsd.port.mk>

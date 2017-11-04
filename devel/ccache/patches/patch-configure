@@ -1,0 +1,18 @@
+$OpenBSD: patch-configure,v 1.1 2017/11/04 19:54:07 sthen Exp $
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -4544,10 +4544,11 @@ else
+     cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ #include <stdlib.h>
++        void test_fn(void) { qsort(NULL, 0, 0, (__compar_fn_t)NULL); }
+ int
+ main ()
+ {
+-void test_fn(void) { qsort(NULL, 0, 0, (__compar_fn_t)NULL); }
++
+   ;
+   return 0;
+ }
