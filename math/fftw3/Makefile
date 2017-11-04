@@ -1,20 +1,19 @@
-# $OpenBSD: Makefile,v 1.32 2016/03/23 21:14:58 naddy Exp $
+# $OpenBSD: Makefile,v 1.33 2017/11/04 10:29:35 steven Exp $
 
 COMMENT-main=	C routines for computing the Discrete Fourier Transform
 COMMENT-common=	common files for the fftw3 packages
 
-V=		3.3.4
+V=		3.3.7
 DISTNAME=	fftw-${V}
 PKGNAME=	fftw3-${V}
-REVISION=	0
 FULLPKGNAME-main=	fftw3-${V}
 # XXX set it to its default value so that bsd.port.mk won't whine
 FULLPKGPATH-main=	math/fftw3,-main${FLAVOR_EXT:S/-/,/g}
 FULLPKGNAME-common=	fftw3-common-${V}
-SHARED_LIBS=	fftw3	7.0 \
-		fftw3f	7.0 \
-		fftw3_threads	1.0 \
-		fftw3f_threads	1.0
+SHARED_LIBS=	fftw3	7.1 \
+		fftw3f	7.1 \
+		fftw3_threads	1.1 \
+		fftw3f_threads	1.1
 CATEGORIES=	math
 
 HOMEPAGE=	http://www.fftw.org/
@@ -35,8 +34,7 @@ FLAVOR?=	double
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	--enable-portable-binary \
-		--enable-threads
+CONFIGURE_ARGS=	--enable-threads
 
 .if ${FLAVOR} == "float"
 CONFIGURE_ARGS+=--enable-float
