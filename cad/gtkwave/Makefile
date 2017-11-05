@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.31 2017/08/15 02:30:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.32 2017/11/05 17:10:37 jasper Exp $
 
 COMMENT=		GTK+-based electronic waveform viewer
 
-DISTNAME=		gtkwave-3.3.83
+DISTNAME=		gtkwave-3.3.86
 CATEGORIES=		cad
 
 HOMEPAGE=		http://gtkwave.sourceforge.net/
