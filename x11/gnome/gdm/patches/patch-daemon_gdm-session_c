@@ -1,4 +1,4 @@
-$OpenBSD: patch-daemon_gdm-session_c,v 1.14 2017/11/03 15:20:52 ajacoutot Exp $
+$OpenBSD: patch-daemon_gdm-session_c,v 1.15 2017/11/05 02:17:07 ajacoutot Exp $
 
 REVERT - OpenBSD does not have a systemd implementation (we need ConsoleKit)
 From 9be58c9ec9a3a411492a5182ac4b0d51fdc3a323 Mon Sep 17 00:00:00 2001

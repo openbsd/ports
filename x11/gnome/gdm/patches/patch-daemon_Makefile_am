@@ -1,4 +1,4 @@
-$OpenBSD: patch-daemon_Makefile_am,v 1.2 2017/11/03 15:20:52 ajacoutot Exp $
+$OpenBSD: patch-daemon_Makefile_am,v 1.3 2017/11/05 02:17:07 ajacoutot Exp $
 
 REVERT - OpenBSD does not have a systemd implementation (we need ConsoleKit)
 From 1ac67f522f5690c27023d98096ca817f12f7eb88 Mon Sep 17 00:00:00 2001

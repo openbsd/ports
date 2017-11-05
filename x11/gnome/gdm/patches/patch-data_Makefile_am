@@ -1,4 +1,4 @@
-$OpenBSD: patch-data_Makefile_am,v 1.3 2017/11/03 15:20:52 ajacoutot Exp $
+$OpenBSD: patch-data_Makefile_am,v 1.4 2017/11/05 02:17:07 ajacoutot Exp $
 Index: data/Makefile.am
 --- data/Makefile.am.orig
 +++ data/Makefile.am
