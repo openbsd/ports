@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2017/01/04 21:58:42 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.8 2017/11/05 17:53:50 sthen Exp $
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -53,6 +53,21 @@ lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/DH/KASV
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/DH/KASValidityTest_FFCStatic_NOKC_ZZOnly_resp.fax
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/DH/RFC5114.txt
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/DH/bad_exchange.txt
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/DH/dhkey.der
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/DH/dhkey.pem
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/DH/dhkey.txt
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/DH/dhkey_rfc5114_2.der
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/DH/dhkey_rfc5114_2.pem
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/DH/dhkey_rfc5114_2.txt
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/DH/dhp.der
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/DH/dhp.pem
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/DH/dhp_rfc5114_2.der
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/DH/dhp_rfc5114_2.pem
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/DH/dhpub.der
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/DH/dhpub.pem
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/DH/dhpub_rfc5114_2.der
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/DH/dhpub_rfc5114_2.pem
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/DH/rfc3526.txt
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/DH/vec.txt
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/DSA/
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/DSA/FIPS_186-2/
@@ -175,6 +190,7 @@ lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/RSA/oae
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/RSA/oaep-custom/oaep-sha512-sha256.txt
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/RSA/oaep-custom/oaep-sha512-sha384.txt
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/RSA/oaep-custom/oaep-sha512-sha512.txt
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/RSA/oaep-label.txt
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/RSA/pkcs-1v2-1d2-vec/
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/RSA/pkcs-1v2-1d2-vec/oaep-int.txt
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/RSA/pkcs-1v2-1d2-vec/oaep-vect.txt
@@ -191,6 +207,8 @@ lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/Traditi
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/Traditional_OpenSSL_Serialization/key2.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/Traditional_OpenSSL_Serialization/testrsa-encrypted.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/Traditional_OpenSSL_Serialization/testrsa.pem
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/X25519/
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/X25519/rfc7748.txt
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/public/
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/public/PKCS1/
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/public/PKCS1/dsa.pub.pem
@@ -307,6 +325,26 @@ lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/ciphers/AES/CBC/CB
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/ciphers/AES/CBC/CBCVarTxt128.rsp
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/ciphers/AES/CBC/CBCVarTxt192.rsp
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/ciphers/AES/CBC/CBCVarTxt256.rsp
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/ciphers/AES/CCM/
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/ciphers/AES/CCM/DVPT128.rsp
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/ciphers/AES/CCM/DVPT128.txt
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/ciphers/AES/CCM/DVPT192.rsp
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/ciphers/AES/CCM/DVPT192.txt
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/ciphers/AES/CCM/DVPT256.rsp
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/ciphers/AES/CCM/DVPT256.txt
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/ciphers/AES/CCM/Readme.txt
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/ciphers/AES/CCM/VADT128.rsp
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/ciphers/AES/CCM/VADT192.rsp
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/ciphers/AES/CCM/VADT256.rsp
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/ciphers/AES/CCM/VNT128.rsp
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/ciphers/AES/CCM/VNT192.rsp
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/ciphers/AES/CCM/VNT256.rsp
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/ciphers/AES/CCM/VPT128.rsp
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/ciphers/AES/CCM/VPT192.rsp
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/ciphers/AES/CCM/VPT256.rsp
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/ciphers/AES/CCM/VTT128.rsp
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/ciphers/AES/CCM/VTT192.rsp
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/ciphers/AES/CCM/VTT256.rsp
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/ciphers/AES/CFB/
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/ciphers/AES/CFB/CFB128GFSbox128.rsp
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/ciphers/AES/CFB/CFB128GFSbox192.rsp
@@ -430,6 +468,11 @@ lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/ciphers/Camellia/c
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/ciphers/Camellia/camellia-cbc.txt
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/ciphers/Camellia/camellia-cfb.txt
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/ciphers/Camellia/camellia-ofb.txt
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/ciphers/ChaCha20/
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/ciphers/ChaCha20/rfc7539.txt
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/ciphers/ChaCha20Poly1305/
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/ciphers/ChaCha20Poly1305/boringssl.txt
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/ciphers/ChaCha20Poly1305/openssl.txt
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/ciphers/IDEA/
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/ciphers/IDEA/idea-cbc.txt
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/ciphers/IDEA/idea-cfb.txt
@@ -2078,6 +2121,8 @@ lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/PKITS_data/sm
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/PKITS_data/smime/SignedValidpre2000UTCnotBeforeDateTest3.eml
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/PKITS_data/smime/SignedinhibitAnyPolicyTest3.eml
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/alternate-rsa-sha1-oid.pem
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/badssl-sct.pem
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/bigoid.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/cryptography.io.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/aia_ca_issuers.pem
@@ -2100,6 +2145,7 @@ lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/cp_use
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/cp_user_notice_with_explicit_text.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/cp_user_notice_with_notice_reference.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/crl_all_reasons.pem
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/crl_delta_crl_indicator.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/crl_dup_entry_ext.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/crl_empty.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/crl_ian_aia_aki.pem
@@ -2109,9 +2155,11 @@ lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/crl_un
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/dsa_selfsigned_ca.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/ec_no_named_curve.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/extended_key_usage.pem
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/freshestcrl.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/ian_uri.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/inhibit_any_policy_5.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/inhibit_any_policy_negative.pem
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/invalid_signature.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/invalid_version.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/nc_excluded.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/nc_invalid_ip_netmask.pem
@@ -2145,9 +2193,12 @@ lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/unsupp
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/unsupported_subject_name.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/unsupported_subject_public_key_info.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/utf8_common_name.pem
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/valid_signature.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/department-of-state-root.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/e-trust.ru.der
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/ecdsa_root.pem
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/ocsp/
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/ocsp/req-sha1.der
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/rapidssl_sha256_ca_g3.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/requests/
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/requests/basic_constraints.pem
@@ -2169,6 +2220,10 @@ lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/requests/unsu
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/requests/unsupported_extension_critical.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/san_edipartyname.der
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/san_x400address.der
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/tls-feature-ocsp-staple.pem
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/unique_identifier.pem
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/utf8-dnsname.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/v1_cert.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/verisign_md2_root.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/wildcard_san.pem
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/wosign-bc-invalid.pem

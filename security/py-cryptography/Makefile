@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2017/01/04 21:58:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2017/11/05 17:53:50 sthen Exp $
 
 COMMENT=	cryptographic recipes and primitives for Python
 
-MODPY_EGG_VERSION=	1.7.1
+MODPY_EGG_VERSION=	2.1.3
 DISTNAME=	cryptography-${MODPY_EGG_VERSION}
 PKGNAME=	${MODPY_PY_PREFIX}${DISTNAME}
 CATEGORIES=	security devel
@@ -23,10 +23,10 @@ MODPY_PI=	Yes
 FLAVORS=	python3
 FLAVOR?=
 
-RUN_DEPENDS=	devel/py-asn1${MODPY_FLAVOR} \
-		devel/py-cffi${MODPY_FLAVOR}>=1.4.2 \
+RUN_DEPENDS=	devel/py-cffi${MODPY_FLAVOR}>=1.4.2 \
 		devel/py-six${MODPY_FLAVOR} \
-		net/py-idna${MODPY_FLAVOR}
+		net/py-idna${MODPY_FLAVOR} \
+		security/py-asn1crypto${MODPY_FLAVOR}
 
 .if ! ${FLAVOR:Mpython3}
 RUN_DEPENDS+=	devel/py-enum34 \
@@ -35,11 +35,12 @@ RUN_DEPENDS+=	devel/py-enum34 \
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-# XXX fetches hypothesis (not ported) at test time
 # XXX needs *loads* of RAM
-TEST_DEPENDS=	devel/py-asn1-modules${MODPY_FLAVOR} \
+TEST_DEPENDS=	devel/py-coverage${MODPY_FLAVOR} \
+		devel/py-hypothesis${MODPY_FLAVOR} \
 		devel/py-pretend${MODPY_FLAVOR} \
 		devel/py-test${MODPY_FLAVOR} \
+		devel/py-tz${MODPY_FLAVOR} \
 		security/py-cryptography_vectors${MODPY_FLAVOR}=${MODPY_EGG_VERSION} \
 		textproc/py-iso8601${MODPY_FLAVOR}
 
