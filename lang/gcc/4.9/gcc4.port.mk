@@ -1,4 +1,4 @@
-# $OpenBSD: gcc4.port.mk,v 1.9 2017/08/21 09:12:47 espie Exp $
+# $OpenBSD: gcc4.port.mk,v 1.10 2017/11/05 09:11:32 espie Exp $
 
 MODGCC4_ARCHS ?= ${GCC49_ARCHS}
 MODGCC4_LANGS ?=
@@ -38,14 +38,20 @@ MODGCC4_ATOMICWANTLIB = atomic
 
 .  if ${MODGCC4_LANGS:L:Mc}
 BUILD_DEPENDS += lang/gcc/4.9>=4.9,<4.10
+# XXX ports-clang already defines this
+.    if !${COMPILER_LINKS:Mgcc}
 COMPILER_LINKS += gcc ${LOCALBASE}/bin/egcc cc ${LOCALBASE}/bin/egcc
+.    endif
 .  endif
 
 .  if ${MODGCC4_LANGS:L:Mc++}
 BUILD_DEPENDS += ${MODGCC4_CPPDEP}
 LIB_DEPENDS += ${MODGCC4_CPPLIBDEP}
 WANTLIB += ${MODGCC4_CPPWANTLIB}
+# XXX ports-clang already defines this
+.    if !${COMPILER_LINKS:Mg++}
 COMPILER_LINKS += c++ ${LOCALBASE}/bin/eg++ g++ ${LOCALBASE}/bin/eg++
+.    endif
 .  endif
 
 .  if ${MODGCC4_LANGS:L:Mfortran}
