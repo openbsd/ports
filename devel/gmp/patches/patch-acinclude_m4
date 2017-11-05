@@ -1,6 +1,10 @@
-$OpenBSD: patch-acinclude_m4,v 1.1 2017/11/03 14:25:40 jca Exp $
+$OpenBSD: patch-acinclude_m4,v 1.2 2017/11/05 15:12:56 jca Exp $
 
 Zero out the memory before testing for overwrite bug.
+
+Fixed in unstable, not in the gmp-6.1 branch:
+
+  https://gmplib.org/repo/gmp/rev/2ce5c60f5372
 
 Index: acinclude.m4
 --- acinclude.m4.orig
