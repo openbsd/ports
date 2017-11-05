@@ -1,0 +1,14 @@
+$OpenBSD: patch-dieharder_help_c,v 1.1 2017/11/05 11:30:43 tb Exp $
+
+Index: dieharder/help.c
+--- dieharder/help.c.orig
++++ dieharder/help.c
+@@ -32,7 +32,7 @@ void help()
+ 
+  /* printf("OK, what is dtest_num = %u\n",dtest_num);*/
+ 
+- if(dh_test_types[dtest_num]){
++ if(dtest_num >= 0 && dh_test_types[dtest_num]){
+    fprintf(stdout,"%s",dh_test_types[dtest_num]->description);
+    Exit(0);
+  } else {

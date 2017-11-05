@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/09/11 18:29:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2017/11/05 11:30:43 tb Exp $
 
 COMMENT =		random number generator (rng) testing suite
 
 DISTNAME =		dieharder-3.31.1
+REVISION =		0
 SHARED_LIBS +=  dieharder                 0.0 # 0.0
 CATEGORIES =		math
 
