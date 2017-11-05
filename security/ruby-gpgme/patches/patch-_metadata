@@ -1,0 +1,17 @@
+$OpenBSD: patch-_metadata,v 1.1.1.1 2017/11/05 21:49:09 sebastia Exp $
+
+Switch mini-portile2 to a development depedency, it is only needed for
+building, and not even needed there when using --use-system-libraries.
+
+Index: .metadata
+--- .metadata.orig
++++ .metadata
+@@ -18,7 +18,7 @@ dependencies:
+     - - "~>"
+       - !ruby/object:Gem::Version
+         version: '2.1'
+-  type: :runtime
++  type: :development
+   prerelease: false
+   version_requirements: !ruby/object:Gem::Requirement
+     requirements:
