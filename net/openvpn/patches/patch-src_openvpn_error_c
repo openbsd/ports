@@ -1,6 +1,8 @@
-$OpenBSD: patch-src_openvpn_error_c,v 1.2 2017/10/18 18:41:45 jca Exp $
+$OpenBSD: patch-src_openvpn_error_c,v 1.3 2017/11/05 01:09:28 jca Exp $
 
 Correctly print time_t.
+
+  https://github.com/OpenVPN/openvpn/commit/4ac769fb848619dcb39589af29302d8c2d698258
 
 Index: src/openvpn/error.c
 --- src/openvpn/error.c.orig
