@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.7 2015/06/04 06:31:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2017/11/05 17:16:56 ajacoutot Exp $
 
 COMMENT=		utilities for PostScript Type 1 fonts
-DISTNAME=		t1utils-1.39
+DISTNAME=		t1utils-1.41
 CATEGORIES=		print fonts
 
 HOMEPAGE=		http://www.lcdf.org/~eddietwo/type/
