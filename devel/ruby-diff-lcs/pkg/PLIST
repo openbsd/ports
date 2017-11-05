@@ -1,17 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/04/23 07:17:08 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2017/11/05 17:24:48 jasper Exp $
 ${GEM_BIN}/htmldiff${GEM_BIN_SUFFIX}
 ${GEM_BIN}/ldiff${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
-${GEM_LIB}/gems/${DISTNAME}/.autotest
-${GEM_LIB}/gems/${DISTNAME}/.gemtest
-${GEM_LIB}/gems/${DISTNAME}/.hoerc
 ${GEM_LIB}/gems/${DISTNAME}/.rspec
-${GEM_LIB}/gems/${DISTNAME}/.travis.yml
-${GEM_LIB}/gems/${DISTNAME}/Contributing.rdoc
-${GEM_LIB}/gems/${DISTNAME}/Gemfile
-${GEM_LIB}/gems/${DISTNAME}/History.rdoc
-${GEM_LIB}/gems/${DISTNAME}/License.rdoc
+${GEM_LIB}/gems/${DISTNAME}/Code-of-Conduct.md
+${GEM_LIB}/gems/${DISTNAME}/Contributing.md
+${GEM_LIB}/gems/${DISTNAME}/History.md
+${GEM_LIB}/gems/${DISTNAME}/License.md
 ${GEM_LIB}/gems/${DISTNAME}/Manifest.txt
 ${GEM_LIB}/gems/${DISTNAME}/README.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile
@@ -40,9 +36,13 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/diff/lcs/string.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/
 ${GEM_LIB}/gems/${DISTNAME}/spec/change_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/diff_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/ds1.csv
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/ds2.csv
 ${GEM_LIB}/gems/${DISTNAME}/spec/hunk_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/issues_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/lcs_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/ldiff_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/patch_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/sdiff_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/spec_helper.rb
