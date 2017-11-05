@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2017/07/27 09:55:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2017/11/05 21:46:04 naddy Exp $
 
 COMMENT-kipi =		KDE image plugins collection
 COMMENT-main =		KDE photo management utility
@@ -16,9 +16,9 @@ PKGNAME-kipi =		kipi-plugins-${VERSION}
 PKGNAME-main =		${PKGNAME}
 PKGNAME-mediawiki =	libmediawiki-1.0.0
 
-REVISION-main =		2
-REVISION-kipi =		3
-REVISION-mediawiki =	5
+REVISION-main =		3
+REVISION-kipi =		4
+REVISION-mediawiki =	6
 
 EXTRACT_SUFX =		.tar.bz2
 
@@ -35,9 +35,9 @@ MASTER_SITES =	${MASTER_SITE_KDE:=stable/digikam/} \
 
 MULTI_PACKAGES =	-main -kipi -mediawiki
 
-MODULES =		x11/kde4 multimedia/phonon devel/gettext
+MODULES =		x11/kde4 multimedia/phonon
 
-# Do not use WANTLIB due to gettext module automatically adding to it
+# Do not use WANTLIB due to modules automatically adding to it
 
 WANTLIB-common =  ${MODQT4_WANTLIB} ${MODKDE4_WANTLIB}
 WANTLIB-common += m pthread ${COMPILER_LIBCXX}
@@ -45,7 +45,7 @@ WANTLIB-common += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtSvg
 WANTLIB-common += ${KDE4LIB}/kdeui
 
 WANTLIB-kipi =  ${WANTLIB-common}
-WANTLIB-kipi += ${MODGETTEXT_WANTLIB} ${MODPHONON_WANTLIB}
+WANTLIB-kipi += ${MODPHONON_WANTLIB}
 WANTLIB-kipi += c GL GLU ICE SM X11 Xext Xrandr expat z
 WANTLIB-kipi += lib/qt4/QtNetwork lib/qt4/QtOpenGL lib/qt4/QtXmlPatterns
 WANTLIB-kipi += lib/qt4/QtTest lib/qt4/QtXml
@@ -57,7 +57,7 @@ WANTLIB-kipi += ${KDE4LIB}/nepomuk ${KDE4LIB}/nepomukutils ${KDE4LIB}/solid
 WANTLIB-kipi += ${KDE4LIB}/threadweaver
 WANTLIB-kipi += opencv_core opencv_highgui opencv_imgproc opencv_objdetect
 WANTLIB-kipi += exslt gdk_pixbuf-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gpod
-WANTLIB-kipi += gthread-2.0 jpeg
+WANTLIB-kipi += gthread-2.0 intl jpeg
 WANTLIB-kipi += qjson kgeomap kqoauth kvkontakte mediawiki png qca soprano
 WANTLIB-kipi += tiff xml2 xslt MagickCore-6.Q16
 WANTLIB-kipi += QtGLib-2.0 QtGStreamer-1.0 QtGStreamerUtils-1.0
@@ -94,18 +94,17 @@ WANTLIB-mediawiki += ${KDE4LIB}/kio
 
 BUILD_DEPENDS =		devel/bison \
 			devel/boost \
+			devel/gettext-tools \
 			math/eigen3 \
 			misc/shared-desktop-ontologies
 
-RUN_DEPENDS-kipi =	${MODGETTEXT_RUN_DEPENDS} \
-			${MODKDE4_RUN_DEPENDS} \
+RUN_DEPENDS-kipi =	${MODKDE4_RUN_DEPENDS} \
 			devel/desktop-file-utils \
 			misc/shared-desktop-ontologies \
 			x11/gtk+3,-guic \
 			${MODKDE4_DEP_DIR}/pim-runtime
 
-RUN_DEPENDS-main =	${MODGETTEXT_RUN_DEPENDS} \
-			${MODKDE4_RUN_DEPENDS} \
+RUN_DEPENDS-main =	${MODKDE4_RUN_DEPENDS} \
 			devel/desktop-file-utils \
 			misc/shared-desktop-ontologies \
 			x11/gtk+3,-guic \
@@ -115,7 +114,6 @@ LIBS_DEPENDS-common =	${MODQT4_LIB_DEPENDS} \
 			${MODKDE4_LIB_DEPENDS}
 
 LIB_DEPENDS-kipi =	${LIB_DEPENDS-common} \
-			${MODGETTEXT_LIB_DEPENDS} \
 			${MODPHONON_LIB_DEPENDS} \
 			${BASE_PKGPATH},-mediawiki \
 			audio/libgpod \
