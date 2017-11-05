@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.547 2017/11/04 21:21:09 jasper Exp $
+# $OpenBSD: Quirks.pm,v 1.548 2017/11/05 16:34:38 kili Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1143,6 +1143,7 @@ my $obsolete_reason = {
 	'mixmaster' => 2,
 	'xscorch' => 0,
 	'libwbxml' => 5,
+	'haskell-platform' => 6,
 };
 
 # reasons for obsolete packages
