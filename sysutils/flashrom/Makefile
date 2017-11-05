@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2017/05/18 15:29:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2017/11/05 12:00:10 sthen Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64
 
 COMMENT=	flash-ROM programmer for BIOS etc
 
-DISTNAME=	flashrom-0.9.9
-REVISION=	1
+DISTNAME=	flashrom-0.9.9.1
 EXTRACT_SUFX=	.tar.bz2
 
 CATEGORIES=	sysutils
@@ -29,6 +28,7 @@ LIB_DEPENDS=	devel/libusb-compat \
 MAKE_FLAGS=	LDFLAGS="-L./pciutils/lib" WARNERROR=no
 FAKE_FLAGS=	PREFIX="${TRUEPREFIX}" MANDIR="${TRUEPREFIX}/man"
 
+PATCHORIG=	.orig.port
 USE_GMAKE=	Yes
 NO_TEST=	Yes
 

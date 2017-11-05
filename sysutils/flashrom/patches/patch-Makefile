@@ -1,10 +1,11 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2016/06/01 16:42:23 sthen Exp $
+$OpenBSD: patch-Makefile,v 1.2 2017/11/05 12:00:10 sthen Exp $
 
 use patched pciutils.
 
---- Makefile.orig	Sun Mar 13 17:47:39 2016
-+++ Makefile	Mon May 30 23:26:58 2016
-@@ -1079,11 +1079,7 @@ endif
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -1082,11 +1082,7 @@ endif
  define LIBPCI_TEST
  /* Avoid a failing test due to libpci header symbol shadowing breakage */
  #define index shadow_workaround_index
@@ -17,7 +18,7 @@ use patched pciutils.
  struct pci_access *pacc;
  int main(int argc, char **argv)
  {
-@@ -1098,11 +1094,7 @@ export LIBPCI_TEST
+@@ -1101,11 +1097,7 @@ export LIBPCI_TEST
  define PCI_GET_DEV_TEST
  /* Avoid a failing test due to libpci header symbol shadowing breakage */
  #define index shadow_workaround_index

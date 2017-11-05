@@ -1,9 +1,9 @@
-$OpenBSD: patch-hwaccess_c,v 1.1 2017/05/18 15:29:35 sthen Exp $
+$OpenBSD: patch-hwaccess_c,v 1.2 2017/11/05 12:00:10 sthen Exp $
 
 Index: hwaccess.c
 --- hwaccess.c.orig
 +++ hwaccess.c
-@@ -114,6 +114,8 @@ int rget_io_perms(void)
+@@ -126,6 +126,8 @@ int rget_io_perms(void)
  #if defined (__OpenBSD__)
  		msg_perr("If you are root already please set securelevel=-1 in /etc/rc.securelevel and\n"
  			 "reboot, or reboot into single user mode.\n");
