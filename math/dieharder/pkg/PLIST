@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/09/11 18:29:52 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/11/05 18:19:06 jasper Exp $
 @bin bin/dieharder
 include/dieharder/
 include/dieharder/Dtest.h
@@ -53,3 +53,5 @@ lib/libdieharder.la
 @lib lib/libdieharder.so.${LIBdieharder_VERSION}
 @man man/man1/dieharder.1
 @man man/man3/libdieharder.3
+share/doc/dieharder/
+share/doc/dieharder/dieharder.pdf
