@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.469 2017/10/22 23:48:17 abieber Exp $
+# $OpenBSD: Makefile,v 1.470 2017/11/05 17:45:34 sthen Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -253,6 +253,8 @@
      SUBDIR += py-Rijndael
      SUBDIR += py-artifacts
      SUBDIR += py-artifacts,python3
+     SUBDIR += py-asn1crypto
+     SUBDIR += py-asn1crypto,python3
      SUBDIR += py-bcrypt
      SUBDIR += py-bcrypt,python3
      SUBDIR += py-crack
