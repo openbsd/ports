@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2017/08/11 19:04:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.59 2017/11/05 19:17:23 sthen Exp $
 
 # archs with atomic ops
 ONLY_FOR_ARCHS-server=	alpha aarch64 amd64 i386 mips64 mips64el powerpc sparc64
@@ -8,7 +8,7 @@ COMMENT-main=	multithreaded SQL database (client)
 COMMENT-server=	multithreaded SQL database (server)
 COMMENT-tests=	multithreaded SQL database (regression test suite/benchmark)
 
-VERSION=	10.0.32
+VERSION=	10.0.33
 DISTNAME=	mariadb-${VERSION}
 PKGNAME-main=	mariadb-client-${VERSION}
 PKGNAME-server=	mariadb-server-${VERSION}

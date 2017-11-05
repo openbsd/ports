@@ -1,4 +1,4 @@
-$OpenBSD: patch-scripts_CMakeLists_txt,v 1.7 2017/08/11 19:04:49 sthen Exp $
+$OpenBSD: patch-scripts_CMakeLists_txt,v 1.8 2017/11/05 19:17:23 sthen Exp $
 Index: scripts/CMakeLists.txt
 --- scripts/CMakeLists.txt.orig
 +++ scripts/CMakeLists.txt
@@ -25,5 +25,5 @@ Index: scripts/CMakeLists.txt
 -ENDIF()
 +SET(localstatedir ${MYSQL_DATADIR})
  
- IF(UNIX)
- CONFIGURE_FILE(${CMAKE_CURRENT_SOURCE_DIR}/mysql_install_db.sh
+ SET(resolveip_locations "$basedir/${INSTALL_BINDIR} $basedir/bin")
+ SET(mysqld_locations "$basedir/${INSTALL_SBINDIR} $basedir/libexec $basedir/sbin $basedir/bin")
