@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.44 2017/01/03 19:23:48 landry Exp $
+# $OpenBSD: Makefile,v 1.45 2017/11/05 16:56:23 ajacoutot Exp $
 
 COMMENT=		Genealogical Research Analysis Management Programming System
 
-MODPY_EGG_VERSION=	4.2.5
+MODPY_EGG_VERSION=	4.2.6
 DISTNAME=		gramps-${MODPY_EGG_VERSION}
-REVISION=		0
 
 CATEGORIES=		misc x11
 
