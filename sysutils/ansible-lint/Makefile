@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2017/09/04 17:28:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2017/11/05 17:07:01 ajacoutot Exp $
 
 COMMENT =		best practices checker for ansible
 
-MODPY_EGG_VERSION =	3.4.15
+MODPY_EGG_VERSION =	3.4.17
 DISTNAME =		ansible-lint-${MODPY_EGG_VERSION}
 
 CATEGORIES =		sysutils
@@ -16,5 +16,7 @@ MODPY_PI =		Yes
 
 RUN_DEPENDS =		sysutils/ansible
 PORTHOME =		${WRKDIR}
+
+TEST_DEPENDS =		sysutils/ansible
 
 .include <bsd.port.mk>
