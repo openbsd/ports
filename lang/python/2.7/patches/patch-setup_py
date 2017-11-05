@@ -1,6 +1,7 @@
-$OpenBSD: patch-setup_py,v 1.12 2016/07/03 20:10:33 rpointel Exp $
---- setup.py.orig	Sat Jun 25 23:49:32 2016
-+++ setup.py	Fri Jul  1 10:35:01 2016
+$OpenBSD: patch-setup_py,v 1.13 2017/11/05 06:33:45 jca Exp $
+Index: setup.py
+--- setup.py.orig
++++ setup.py
 @@ -35,6 +35,11 @@ COMPILED_WITH_PYDEBUG = ('--with-pydebug' in sysconfig
  # This global variable is used to hold the list of modules to be disabled.
  disabled_module_list = []
@@ -75,7 +76,7 @@ $OpenBSD: patch-setup_py,v 1.12 2016/07/03 20:10:33 rpointel Exp $
              data = open(f).read()
              m = re.search(r"#s*define\s+HASHVERSION\s+2\s*", data)
              if m is not None:
-@@ -1840,7 +1850,7 @@ class PyBuildExt(build_ext):
+@@ -1843,7 +1853,7 @@ class PyBuildExt(build_ext):
          # For 8.4a2, the X11 headers are not included. Rather than include a
          # complicated search, this is a hard-coded path. It could bail out
          # if X11 libs are not found...
@@ -84,7 +85,7 @@ $OpenBSD: patch-setup_py,v 1.12 2016/07/03 20:10:33 rpointel Exp $
          frameworks = ['-framework', 'Tcl', '-framework', 'Tk']
  
          # All existing framework builds of Tcl/Tk don't support 64-bit
-@@ -1895,8 +1905,7 @@ class PyBuildExt(build_ext):
+@@ -1898,8 +1908,7 @@ class PyBuildExt(build_ext):
          # The versions with dots are used on Unix, and the versions without
          # dots on Windows, for detection by cygwin.
          tcllib = tklib = tcl_includes = tk_includes = None
@@ -94,7 +95,7 @@ $OpenBSD: patch-setup_py,v 1.12 2016/07/03 20:10:33 rpointel Exp $
              tklib = self.compiler.find_library_file(lib_dirs,
                                                          'tk' + version)
              tcllib = self.compiler.find_library_file(lib_dirs,
-@@ -1939,17 +1948,9 @@ class PyBuildExt(build_ext):
+@@ -1942,17 +1951,9 @@ class PyBuildExt(build_ext):
          if host_platform == 'sunos5':
              include_dirs.append('/usr/openwin/include')
              added_lib_dirs.append('/usr/openwin/lib')

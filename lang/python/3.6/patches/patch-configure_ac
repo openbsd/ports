@@ -1,7 +1,8 @@
-$OpenBSD: patch-configure_ac,v 1.1 2016/12/26 19:40:12 rpointel Exp $
---- configure.ac.orig	Fri Dec 23 03:21:22 2016
-+++ configure.ac	Fri Dec 23 12:08:12 2016
-@@ -126,7 +126,7 @@ VERSION=PYTHON_VERSION
+$OpenBSD: patch-configure_ac,v 1.2 2017/11/05 06:33:45 jca Exp $
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -117,7 +117,7 @@ VERSION=PYTHON_VERSION
  
  # Version number of Python's own shared library file.
  AC_SUBST(SOVERSION)

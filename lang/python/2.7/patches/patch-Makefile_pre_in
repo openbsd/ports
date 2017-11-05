@@ -1,7 +1,8 @@
-$OpenBSD: patch-Makefile_pre_in,v 1.10 2016/12/19 20:47:26 rpointel Exp $
---- Makefile.pre.in.orig	Sat Dec 17 21:05:06 2016
-+++ Makefile.pre.in	Sun Dec 18 08:21:50 2016
-@@ -583,7 +583,7 @@ gdbhooks: $(BUILDPYTHON)-gdb.py
+$OpenBSD: patch-Makefile_pre_in,v 1.11 2017/11/05 06:33:45 jca Exp $
+Index: Makefile.pre.in
+--- Makefile.pre.in.orig
++++ Makefile.pre.in
+@@ -554,7 +554,7 @@ gdbhooks: $(BUILDPYTHON)-gdb.py
  
  SRC_GDB_HOOKS=$(srcdir)/Tools/gdb/libpython.py
  $(BUILDPYTHON)-gdb.py: $(SRC_GDB_HOOKS)

@@ -1,10 +1,11 @@
-$OpenBSD: patch-Lib_test_test_locale_py,v 1.1 2016/12/26 19:40:12 rpointel Exp $
+$OpenBSD: patch-Lib_test_test_locale_py,v 1.2 2017/11/05 06:33:45 jca Exp $
 
 http://bugs.python.org/issue25191
 
---- Lib/test/test_locale.py.orig	Sun Sep 13 13:41:23 2015
-+++ Lib/test/test_locale.py	Sun Sep 20 10:09:14 2015
-@@ -512,8 +512,12 @@ class TestMiscellaneous(unittest.TestCase):
+Index: Lib/test/test_locale.py
+--- Lib/test/test_locale.py.orig
++++ Lib/test/test_locale.py
+@@ -517,8 +517,12 @@ class TestMiscellaneous(unittest.TestCase):
          loc = locale.getlocale(locale.LC_CTYPE)
          if verbose:
              print('testing with %a' % (loc,), end=' ', flush=True)
