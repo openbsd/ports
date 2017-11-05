@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.152 2017/11/04 16:44:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.153 2017/11/05 16:58:37 jasper Exp $
 
 USE_WXNEEDED=		Yes
 
@@ -111,7 +111,8 @@ PORTHOME=		${WRKDIR}
 .include <bsd.port.arch.mk>
 
 post-patch:
-# XXX: Generate this file ahead of time as it may not be created in time
+# XXX: https://bugzilla.gnome.org/show_bug.cgi?id=789937
+# Generate this file ahead of time as it may not be created in time
 # due to ninja's randomization.
 	cd ${WRKSRC}/src/st/ && \
 		perl ../data-to-c.pl st-scroll-view-fade.glsl \
