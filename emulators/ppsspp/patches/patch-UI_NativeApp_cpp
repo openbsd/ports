@@ -1,0 +1,14 @@
+$OpenBSD: patch-UI_NativeApp_cpp,v 1.1.1.1 2017/11/05 22:06:29 bentley Exp $
+
+Index: UI/NativeApp.cpp
+--- UI/NativeApp.cpp.orig
++++ UI/NativeApp.cpp
+@@ -325,7 +325,7 @@ void NativeInit(int argc, const char *argv[], const ch
+ #if !defined(MOBILE_DEVICE) && !defined(_WIN32)
+ 	VFSRegister("", new DirectoryAssetReader((File::GetExeDirectory() + "assets/").c_str()));
+ 	VFSRegister("", new DirectoryAssetReader((File::GetExeDirectory()).c_str()));
+-	VFSRegister("", new DirectoryAssetReader("/usr/share/ppsspp/assets/"));
++	VFSRegister("", new DirectoryAssetReader("${PREFIX}/share/ppsspp/assets/"));
+ #endif
+ 	VFSRegister("", new DirectoryAssetReader("assets/"));
+ 	VFSRegister("", new DirectoryAssetReader(savegame_dir));

@@ -1,0 +1,30 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2017/11/05 22:06:29 bentley Exp $
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -134,6 +134,8 @@ if(NOT OPENGL_LIBRARIES)
+ endif()
+ 
+ find_package(SDL2)
++include_directories(${X11BASE}/include)
++include_directories(${LOCALBASE}/lib/libzip/include)
+ include(FindThreads)
+ 
+ if(APPLE)
+@@ -234,7 +236,6 @@ if(NOT MSVC)
+ 		if (NOT ${CMAKE_C_COMPILER_ID} STREQUAL "Intel" AND NOT ${CMAKE_CXX_COMPILER_ID} STREQUAL "Clang")
+ 			add_definitions(-Wno-psabi)
+ 		endif()
+-		add_definitions(-D_XOPEN_SOURCE=700)
+ 		add_definitions(-D_XOPEN_SOURCE_EXTENDED -D__BSD_VISIBLE=1)
+ 		add_definitions(-D_LARGEFILE64_SOURCE=1 -D_FILE_OFFSET_BITS=64)
+ 	elseif(ANDROID)
+@@ -520,6 +521,7 @@ endif()
+ find_package(LibZip)
+ if(LIBZIP_FOUND)
+ 	add_definitions(-DSHARED_LIBZIP)
++	include_directories(${LIBZIP_INCLUDE_DIRS})
+ else()
+ 	add_library(libzip STATIC
+ 		ext/native/ext/libzip/zip.h
