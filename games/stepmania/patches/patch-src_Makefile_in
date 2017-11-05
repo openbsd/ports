@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_Makefile_in,v 1.6 2017/09/21 05:07:30 ajacoutot Exp $
+$OpenBSD: patch-src_Makefile_in,v 1.7 2017/11/05 17:47:34 espie Exp $
 Index: src/Makefile.in
 --- src/Makefile.in.orig
 +++ src/Makefile.in
@@ -11,6 +11,15 @@ Index: src/Makefile.in
  LTLIBICONV = @LTLIBICONV@
  LTLIBOBJS = @LTLIBOBJS@
  MAINT = @MAINT@
+@@ -2203,7 +2203,7 @@ VERSION = @VERSION@
+ VIDEO_CFLAGS = @VIDEO_CFLAGS@
+ VIDEO_LIBS = @VIDEO_LIBS@
+ XCFLAGS = @XCFLAGS@
+-XLIBS = @XLIBS@
++XLIBS = @XLIBS@ -lX11
+ XMKMF = @XMKMF@
+ abs_builddir = @abs_builddir@
+ abs_srcdir = @abs_srcdir@
 @@ -2716,7 +2716,7 @@ main_SOURCES = $(PNG) $(Screens) $(DataStructures) $(F
  	$(StepMania) $(Arch) $(ActorsInGameplayAndMenus) \
  	$(ActorsInMenus) $(ActorsInGameplay) $(Rage) $(Actors) \
