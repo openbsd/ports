@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.exiftran,v 1.4 2017/04/23 22:31:12 sthen Exp $
+# $OpenBSD: Makefile.exiftran,v 1.5 2017/11/05 17:28:00 ajacoutot Exp $
 
 .PATH: ${.CURDIR}/../..
 PROG=	exiftran
@@ -10,10 +10,10 @@ SRCS+=	transupp.c
 .PATH: ${.CURDIR}/../../rd
 SRCS+=	read-jpeg.c
 
-LDADD=	-L${PREFIX}/lib -ljpeg -lexif -lm
+LDADD=	-L${PREFIX}/lib -ljpeg -lexif -lm $$(pkg-config --libs pixman-1)
 
 CFLAGS+= -I${PREFIX}/include -I${.CURDIR}/../../jpeg/62 \
-	-I${.CURDIR}/../.. -DHAVE_NEW_EXIF
+	-I${.CURDIR}/../.. $$(pkg-config --cflags pixman-1) -DHAVE_NEW_EXIF
 
 MAN=
 

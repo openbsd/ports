@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2017/04/28 18:01:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2017/11/05 17:28:00 ajacoutot Exp $
 
 COMMENT=	command line utility to transform jpeg files
 
-V=		2.13
+V=		2.14
 DISTNAME=	fbida-${V}
 
 PKGNAME=	exiftran-${V}
@@ -14,7 +14,7 @@ HOMEPAGE=	https://www.kraxel.org/blog/linux/fbida/
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c exif jpeg m
+WANTLIB += c exif jpeg m pixman-1
 
 MASTER_SITES=	http://www.kraxel.org/releases/fbida/
 
@@ -35,6 +35,6 @@ do-install:
 		${PREFIX}/bin/exiftran
 	${INSTALL_PROGRAM} ${WRKBUILD}/build/thumbnail.cgi/thumbnail.cgi \
 		${PREFIX}/bin/thumbnail.cgi
-	${INSTALL_MAN} ${WRKSRC}/exiftran.man ${PREFIX}/man/man1/exiftran.1
+	${INSTALL_MAN} ${WRKSRC}/man/exiftran.1 ${PREFIX}/man/man1/
 
 .include <bsd.port.mk>
