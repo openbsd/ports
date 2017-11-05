@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2017/09/11 18:53:38 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.28 2017/11/05 18:57:17 jasper Exp $
 bin/idea
 bin/intellij
 intellij/
@@ -169,7 +169,6 @@ intellij/lib/libpty/linux/x86/libpty.so
 intellij/lib/libpty/linux/x86_64/
 intellij/lib/libpty/linux/x86_64/libpty.so
 intellij/lib/log4j.jar
-intellij/lib/lz4-java-1.3.jar
 intellij/lib/markdownj-core-0.4.2-SNAPSHOT.jar
 intellij/lib/maven-aether-provider-3.3.9-all.jar
 intellij/lib/microba.jar
@@ -462,18 +461,19 @@ intellij/plugins/javaFX/lib/javaFX.jar
 intellij/plugins/javaFX/lib/resources_en.jar
 intellij/plugins/junit/
 intellij/plugins/junit/lib/
+intellij/plugins/junit/lib/apiguardian-api-1.0.0.jar
 intellij/plugins/junit/lib/idea-junit.jar
-intellij/plugins/junit/lib/junit-jupiter-api-5.0.0-RC2.jar
-intellij/plugins/junit/lib/junit-jupiter-engine-5.0.0-RC2.jar
-intellij/plugins/junit/lib/junit-platform-commons-1.0.0-RC2.jar
-intellij/plugins/junit/lib/junit-platform-engine-1.0.0-RC2.jar
-intellij/plugins/junit/lib/junit-platform-launcher-1.0.0-RC2.jar
-intellij/plugins/junit/lib/junit-platform-runner-1.0.0-RC2.jar
-intellij/plugins/junit/lib/junit-platform-suite-api-1.0.0-RC2.jar
+intellij/plugins/junit/lib/junit-jupiter-api-5.0.0.jar
+intellij/plugins/junit/lib/junit-jupiter-engine-5.0.0.jar
+intellij/plugins/junit/lib/junit-platform-commons-1.0.0.jar
+intellij/plugins/junit/lib/junit-platform-engine-1.0.0.jar
+intellij/plugins/junit/lib/junit-platform-launcher-1.0.0.jar
+intellij/plugins/junit/lib/junit-platform-runner-1.0.0.jar
+intellij/plugins/junit/lib/junit-platform-suite-api-1.0.0.jar
 intellij/plugins/junit/lib/junit-rt.jar
-intellij/plugins/junit/lib/junit-vintage-engine-4.12.0-RC2.jar
+intellij/plugins/junit/lib/junit-vintage-engine-4.12.0.jar
 intellij/plugins/junit/lib/junit5-rt.jar
-intellij/plugins/junit/lib/opentest4j-1.0.0-RC1.jar
+intellij/plugins/junit/lib/opentest4j-1.0.0.jar
 intellij/plugins/junit/lib/resources_en.jar
 intellij/plugins/maven/
 intellij/plugins/maven/lib/
