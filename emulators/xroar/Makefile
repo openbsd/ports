@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2017/08/21 22:45:51 juanfra Exp $
+# $OpenBSD: Makefile,v 1.7 2017/11/05 11:14:38 espie Exp $
 
 COMMENT =		Dragon and CoCo emulator
 
@@ -34,7 +34,7 @@ CONFIGURE_ARGS =	--with-gtk2 \
 			--with-gtkgl \
 			--with-sdl2 \
 			--without-pulse
-CONFIGURE_ENV =		GL_LIBS="-L${X11BASE}/lib"
+CONFIGURE_ENV =		GL_LIBS="-L${X11BASE}/lib" CC='${CC}' OBJC='${CC}'
 
 NO_TEST =		Yes
 
