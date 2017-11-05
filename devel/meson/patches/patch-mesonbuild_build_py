@@ -1,4 +1,4 @@
-$OpenBSD: patch-mesonbuild_build_py,v 1.2 2017/11/04 14:27:40 ajacoutot Exp $
+$OpenBSD: patch-mesonbuild_build_py,v 1.3 2017/11/05 11:02:43 ajacoutot Exp $
 
 Index: mesonbuild/build.py
 --- mesonbuild/build.py.orig
@@ -17,19 +17,19 @@ Index: mesonbuild/build.py
              # number of the version by default.
              self.soversion = self.ltversion.split('.')[0]
 +        if is_openbsd():
-+            libversion = os.getenv('LIB' + self.name + '_VERSION')
-+            if libversion is not None:
-+                self.ltversion = libversion.format(self)
++            self.libversion = os.getenv('LIB' + self.name + '_VERSION')
++            if self.libversion is not None:
++                self.ltversion = self.libversion.format(self)
 +                self.soversion = self.ltversion
          # Visual Studio module-definitions file
          if 'vs_module_defs' in kwargs:
              path = kwargs['vs_module_defs']
-@@ -1458,6 +1463,8 @@ class SharedLibrary(BuildTarget):
-         aliases = {}
-         # Aliases are only useful with .so and .dylib libraries. Also if
-         # there's no self.soversion (no versioning), we don't need aliases.
-+        if is_openbsd():
+@@ -1464,6 +1469,8 @@ class SharedLibrary(BuildTarget):
+         # filename. If ltversion != soversion we create an soversion alias:
+         # libfoo.so.0 -> libfoo.so.0.100.0
+         # Where libfoo.so.0.100.0 is the actual library
++        if is_openbsd() and self.libversion is not None:
 +            return {}
-         if self.suffix not in ('so', 'dylib') or not self.soversion:
-             return {}
-         # With .so libraries, the minor and micro versions are also in the
+         if self.suffix == 'so' and self.ltversion and self.ltversion != self.soversion:
+             alias_tpl = self.filename_tpl.replace('ltversion', 'soversion')
+             ltversion_filename = alias_tpl.format(self)
