@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2017/10/27 20:12:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.68 2017/11/05 10:23:48 landry Exp $
 
 # patches/patch-Source_JavaScriptCore_javascriptcoregtk_pc_in
 # patches/patch-Source_WebKit_gtk_webkit2gtk-web-extension_pc_in
@@ -19,6 +19,7 @@ EXTRACT_SUFX =		.tar.xz
 API =			4.0
 SUBST_VARS =		API
 DPB_PROPERTIES =	parallel
+REVISION =		0
 
 SHARED_LIBS +=  javascriptcoregtk-${API}     2.3 # 18.6
 SHARED_LIBS +=  webkit2gtk-${API}            2.3 # 37.24
@@ -27,8 +28,7 @@ CATEGORIES =		www
 
 HOMEPAGE =		http://webkitgtk.org/
 
-MAINTAINER =		Landry Breuil <landry@openbsd.org> \
-			Antoine Jacoutot <ajacoutot@openbsd.org>
+MAINTAINER =		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2 and BSD
 PERMIT_PACKAGE_CDROM =	Yes

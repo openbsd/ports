@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.155 2017/10/23 17:11:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.156 2017/11/05 10:23:48 landry Exp $
 
 USE_WXNEEDED =	Yes
 
@@ -15,13 +15,12 @@ EPOCH =		1
 CATEGORIES =	www
 DPB_PROPERTIES =parallel
 EXTRACT_SUFX =	.tar.xz
-REVISION =	3
+REVISION =	4
 
 HOMEPAGE =	http://webkitgtk.org/
 MASTER_SITES =	${HOMEPAGE}/releases/
 
-MAINTAINER =	Landry Breuil <landry@openbsd.org> \
-		Antoine Jacoutot <ajacoutot@openbsd.org>
+MAINTAINER =	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 SHARED_LIBS += javascriptcoregtk-${WEBKIT_API_VERSION}	5.0 # 16.19
 SHARED_LIBS += webkitgtk-${WEBKIT_API_VERSION}		7.0 # 22.17
