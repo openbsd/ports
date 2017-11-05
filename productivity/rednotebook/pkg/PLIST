@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2017/09/15 13:44:23 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.17 2017/11/05 17:02:00 ajacoutot Exp $
 bin/rednotebook
 lib/python${MODPY_VERSION}/site-packages/rednotebook/
 lib/python${MODPY_VERSION}/site-packages/rednotebook-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
@@ -106,8 +106,6 @@ lib/python${MODPY_VERSION}/site-packages/rednotebook/util/filesystem.py
 lib/python${MODPY_VERSION}/site-packages/rednotebook/util/markup.py
 lib/python${MODPY_VERSION}/site-packages/rednotebook/util/statistics.py
 lib/python${MODPY_VERSION}/site-packages/rednotebook/util/utils.py
-share/appdata/
-share/appdata/rednotebook.appdata.xml
 share/applications/rednotebook.desktop
 share/icons/hicolor/scalable/apps/rednotebook.svg
 share/locale/ar/LC_MESSAGES/rednotebook.mo
@@ -177,6 +175,8 @@ share/locale/xh/LC_MESSAGES/rednotebook.mo
 share/locale/zh_CN/LC_MESSAGES/rednotebook.mo
 share/locale/zh_HK/LC_MESSAGES/rednotebook.mo
 share/locale/zh_TW/LC_MESSAGES/rednotebook.mo
+share/metainfo/
+share/metainfo/rednotebook.appdata.xml
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/update-desktop-database
