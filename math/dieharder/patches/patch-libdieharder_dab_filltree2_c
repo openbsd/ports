@@ -1,0 +1,23 @@
+$OpenBSD: patch-libdieharder_dab_filltree2_c,v 1.1 2017/11/05 08:55:32 jca Exp $
+
+Index: libdieharder/dab_filltree2.c
+--- libdieharder/dab_filltree2.c.orig
++++ libdieharder/dab_filltree2.c
+@@ -92,7 +92,7 @@ static double targetData[128] = {  // size=128, genera
+ 0.00000000000e+00,0.00000000000e+00,0.00000000000e+00,0.00000000000e+00,
+ };
+ 
+-inline int insertBit(uint x, uchar *array, uint *i, uint *d);
++static inline int insertBit(uint x, uchar *array, uint *i, uint *d);
+ 
+ int dab_filltree2(Test **test, int irun) {
+  int size = (ntuple == 0) ? 128 : ntuple;
+@@ -181,7 +181,7 @@ int dab_filltree2(Test **test, int irun) {
+  * The function returns >= 0 if the path went too deep; the
+  * returned value is the last position of the path.
+  */
+-inline int insertBit(uint x, uchar *array, uint *i, uint *d) {
++static inline int insertBit(uint x, uchar *array, uint *i, uint *d) {
+  if (x != 0) {
+    *i += *d;
+  } else {
