@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/03/27 09:45:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2017/11/05 16:54:38 ajacoutot Exp $
 
 COMMENT =	convert Lat/Lon to/from GB Ordnance Survey grid reference
 
-DISTNAME =	Geo-Coordinates-OSGB-2.16
+DISTNAME =	Geo-Coordinates-OSGB-2.19
 
 CATEGORIES =	geo
 

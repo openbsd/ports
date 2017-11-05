@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/03/27 09:45:38 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/11/05 16:54:38 ajacoutot Exp $
 ${P5SITE}/Geo/
 ${P5SITE}/Geo/Coordinates/
 ${P5SITE}/Geo/Coordinates/OSGB/
@@ -12,10 +12,8 @@ ${P5SITE}/Geo/Coordinates/OSGB/Maps.pm
 @man man/man3p/Geo::Coordinates::OSGB::Maps.3p
 share/examples/p5-Geo-Coordinates-OSGB/
 share/examples/p5-Geo-Coordinates-OSGB/National_grid.pdf
-share/examples/p5-Geo-Coordinates-OSGB/bng_to_ll.pl
+share/examples/p5-Geo-Coordinates-OSGB/bngl.pl
 share/examples/p5-Geo-Coordinates-OSGB/gb-coastline.shapes
-share/examples/p5-Geo-Coordinates-OSGB/gbguessr.pl
-share/examples/p5-Geo-Coordinates-OSGB/ll_to_bng.pl
 share/examples/p5-Geo-Coordinates-OSGB/ostn-boundary-polygons.wkt
 share/examples/p5-Geo-Coordinates-OSGB/plot_maps.pl
 share/examples/p5-Geo-Coordinates-OSGB/what_map.pl
