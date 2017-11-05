@@ -1,0 +1,17 @@
+$OpenBSD: patch-help_lv_lv_po,v 1.1 2017/11/05 22:25:22 jasper Exp $
+
+Unbreak with itstool-2.0.3
+https://github.com/voidlinux/void-packages/blob/master/srcpkgs/eog/patches/fix-markdown-itstool.patch
+
+Index: help/lv/lv.po
+--- help/lv/lv.po.orig
++++ help/lv/lv.po
+@@ -1807,7 +1807,7 @@ msgid ""
+ "check <gui>Slideshow Shuffle</gui> and close the dialog."
+ msgstr ""
+ "Lai to izdarītu, atveriet lietotnes izvēlni augšējā joslā, spiediet uz <gui"
+-" style=\"menuitem\">Iestatījumi, ejiet uz cilni <gui>Spraudņi</gui> un"
++" style=\"menuitem\">Iestatījumi</gui>, ejiet uz cilni <gui>Spraudņi</gui> un"
+ " atzīmējiet <gui>Slīdrādes maisītājs</gui> un aizveriet dialoglodziņu."
+ 
+ #. (itstool) path: info/desc
