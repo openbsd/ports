@@ -1,0 +1,2 @@
+GPG backend for the hiera eyaml backend, allows you to use gpg keys for
+encryption.
