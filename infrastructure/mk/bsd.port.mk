@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1369 2017/10/11 14:27:20 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1370 2017/11/05 09:10:13 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -261,6 +261,9 @@ ERRORS += "Fatal: unknown clean command: ${_w}\n(not in ${_okay_words})"
 .  endif
 .endfor
 
+# Used to build wrapper scripts to run compilers, appended by compiler MODULES
+COMPILER_LINKS ?=
+
 # MODULES support
 # reserved name spaces: for module=NAME, modname*, _modname* variables and
 # targets.
@@ -384,9 +387,6 @@ SYSCONFDIR ?= ${BASESYSCONFDIR}
 BASELOCALSTATEDIR ?= ${VARBASE}
 # Defaut localstatedir for gnu ports
 LOCALSTATEDIR ?= ${BASELOCALSTATEDIR}
-
-# Used to build wrapper scripts to run compilers, appended by compiler MODULES
-COMPILER_LINKS ?=
 
 RCDIR ?= /etc/rc.d
 USE_WXNEEDED ?= No
