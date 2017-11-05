@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_borg__endian_h,v 1.1 2017/11/04 12:29:38 jasper Exp $
+$OpenBSD: patch-src_borg__endian_h,v 1.2 2017/11/05 06:32:36 jca Exp $
 
-__builtin_bswap32 unavailable at least on sparc6
+__builtin_bswap32 unavailable at least on sparc64
 
 Index: src/borg/_endian.h
 --- src/borg/_endian.h.orig

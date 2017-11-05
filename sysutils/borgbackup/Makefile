@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2017/11/04 12:29:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2017/11/05 06:32:36 jca Exp $
 
 COMMENT =		deduplicating backup program
 
@@ -35,9 +35,6 @@ TEST_DEPENDS +=		${RUN_DEPENDS} \
 
 MODPY_SETUPTOOLS =	Yes
 
-post-patch:
-	${SUBST_CMD} ${WRKSRC}/src/borg/testsuite/archiver.py
-
 post-build:
 	${MODPY_CMD} build_ext --inplace
 	cd ${WRKSRC}/docs; env PYTHONPATH=${WRKSRC} \
@@ -45,7 +42,6 @@ post-build:
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/docs/_build/man/borg.1 ${PREFIX}/man/man1/borg.1
-	rm ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/borg/testsuite/archiver.py.beforesubst
 
 do-test: fake
 	cd ${WRKSRC}; \
