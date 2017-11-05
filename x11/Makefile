@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.602 2017/11/01 14:33:07 landry Exp $
+# $OpenBSD: Makefile,v 1.603 2017/11/05 17:18:49 jeremy Exp $
 
      SUBDIR =
      SUBDIR += 2bwm
@@ -247,6 +247,7 @@
      SUBDIR += rox-filer
      SUBDIR += roxterm
      SUBDIR += ruby-dbus
+     SUBDIR += ruby-tk,ruby24
      SUBDIR += rxvt-unicode
      SUBDIR += sakura
      SUBDIR += sawfish
