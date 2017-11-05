@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_common_common_DefinesScorched_cpp,v 1.1.1.1 2010/10/26 10:34:00 phessler Exp $
---- src/common/common/DefinesScorched.cpp.orig	Mon Oct 25 14:04:21 2010
-+++ src/common/common/DefinesScorched.cpp	Mon Oct 25 14:04:36 2010
-@@ -58,7 +58,7 @@ void S3D::showURL(const std::string &url)
+$OpenBSD: patch-src_common_common_DefinesScorched_cpp,v 1.2 2017/11/05 08:51:46 kirby Exp $
+--- src/common/common/DefinesScorched.cpp.orig	Fri Aug  1 20:47:31 2014
++++ src/common/common/DefinesScorched.cpp	Sat Sep  5 18:01:41 2015
+@@ -62,7 +62,7 @@ void S3D::showURL(const std::string &url)
  	std::string buffer = S3D::formatStringBuffer("open %s", url.c_str());
  	system(buffer.c_str());
  #else
