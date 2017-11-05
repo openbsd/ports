@@ -1,15 +1,28 @@
-@comment $OpenBSD: PLIST,v 1.10 2017/04/16 15:52:39 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2017/11/05 18:50:00 ajacoutot Exp $
 @bin bin/lou_allround
 @bin bin/lou_checkhyphens
 @bin bin/lou_checktable
-@bin bin/lou_checkyaml
 @bin bin/lou_compare
 @bin bin/lou_debug
+bin/lou_maketable
+bin/lou_maketable.d/
+bin/lou_maketable.d/export_chunked_words.py
+bin/lou_maketable.d/generate_alphabet.py
+bin/lou_maketable.d/lou_maketable.mk
+bin/lou_maketable.d/make_suggestions.py
+bin/lou_maketable.d/submit_rows.py
+bin/lou_maketable.d/submit_rows.sh
+bin/lou_maketable.d/submit_rules.py
+bin/lou_maketable.d/submit_rules.sh
+bin/lou_maketable.d/substrings.pl
+bin/lou_maketable.d/utils.py
+bin/lou_maketable.d/wrap_patgen.sh
+@bin bin/lou_tableinfo
 @bin bin/lou_trace
 @bin bin/lou_translate
 include/liblouis/
+include/liblouis/internal.h
 include/liblouis/liblouis.h
-include/liblouis/louis.h
 lib/liblouis.a
 lib/liblouis.la
 @lib lib/liblouis.so.${LIBlouis_VERSION}
@@ -23,6 +36,7 @@ lib/python${MODPY_VERSION}/site-packages/louis/${MODPY_PYCACHE}__init__.${MODPY_
 @man man/man1/lou_checktable.1
 @man man/man1/lou_checkyaml.1
 @man man/man1/lou_debug.1
+@man man/man1/lou_tableinfo.1
 @man man/man1/lou_trace.1
 @man man/man1/lou_translate.1
 share/liblouis/
@@ -79,18 +93,17 @@ share/liblouis/tables/cs.tbl
 share/liblouis/tables/cy-cy-g1.utb
 share/liblouis/tables/cy-cy-g2.ctb
 share/liblouis/tables/cy.tbl
-share/liblouis/tables/da-chardefs6.cti
-share/liblouis/tables/da-dk-common6.uti
+share/liblouis/tables/da-dk-6miscChars.cti
 share/liblouis/tables/da-dk-g08.ctb
+share/liblouis/tables/da-dk-g16-lit.ctb
 share/liblouis/tables/da-dk-g16.ctb
 share/liblouis/tables/da-dk-g18.ctb
-share/liblouis/tables/da-dk-g26-patches.cti
+share/liblouis/tables/da-dk-g26-lit.ctb
 share/liblouis/tables/da-dk-g26.ctb
+share/liblouis/tables/da-dk-g26l-lit.ctb
 share/liblouis/tables/da-dk-g26l.ctb
 share/liblouis/tables/da-dk-g28.ctb
 share/liblouis/tables/da-dk-g28l.ctb
-share/liblouis/tables/da-dk-g2core.cti
-share/liblouis/tables/da-dk-nocaps.uti
 share/liblouis/tables/da-dk-octobraille.dis
 share/liblouis/tables/da-dk.dis
 share/liblouis/tables/da-lt.ctb
@@ -190,7 +203,6 @@ share/liblouis/tables/gez.tbl
 share/liblouis/tables/gon.ctb
 share/liblouis/tables/gon.tbl
 share/liblouis/tables/gr-bb.ctb
-share/liblouis/tables/gr-gr-g1.utb
 share/liblouis/tables/gr-pl-comp8.uti
 share/liblouis/tables/gu-in-g1.utb
 share/liblouis/tables/gu.tbl
@@ -201,13 +213,20 @@ share/liblouis/tables/he.ctb
 share/liblouis/tables/he.tbl
 share/liblouis/tables/hi-in-g1.utb
 share/liblouis/tables/hi.tbl
-share/liblouis/tables/hr.ctb
-share/liblouis/tables/hr.tbl
+share/liblouis/tables/hr-chardefs.cti
+share/liblouis/tables/hr-comp8.tbl
+share/liblouis/tables/hr-comp8.utb
+share/liblouis/tables/hr-digits.uti
+share/liblouis/tables/hr-g1.ctb
+share/liblouis/tables/hr-g1.tbl
+share/liblouis/tables/hr-translation.cti
 share/liblouis/tables/hu-backtranslate-correction.dis
 share/liblouis/tables/hu-chardefs.cti
 share/liblouis/tables/hu-exceptionwords.cti
 share/liblouis/tables/hu-hu-comp8.ctb
 share/liblouis/tables/hu-hu-g1.ctb
+share/liblouis/tables/hu-hu-g2.ctb
+share/liblouis/tables/hu-hu-g2_exceptions.cti
 share/liblouis/tables/hu.tbl
 share/liblouis/tables/hy.ctb
 share/liblouis/tables/hy.tbl
@@ -340,6 +359,8 @@ share/liblouis/tables/sd.tbl
 share/liblouis/tables/se-se.ctb
 share/liblouis/tables/se-se.dis
 share/liblouis/tables/si-in-g1.utb
+share/liblouis/tables/sin.cti
+share/liblouis/tables/sin.utb
 share/liblouis/tables/sk-chardefs.cti
 share/liblouis/tables/sk-g1.ctb
 share/liblouis/tables/sk-sk-g1.utb

@@ -1,11 +1,12 @@
-$OpenBSD: patch-tools_lou_compare_c,v 1.1 2016/10/31 16:39:25 ajacoutot Exp $
---- tools/lou_compare.c.orig	Mon Oct 31 17:35:24 2016
-+++ tools/lou_compare.c	Mon Oct 31 17:35:48 2016
+$OpenBSD: patch-tools_lou_compare_c,v 1.2 2017/11/05 18:50:00 ajacoutot Exp $
+Index: tools/lou_compare.c
+--- tools/lou_compare.c.orig
++++ tools/lou_compare.c
 @@ -4,6 +4,7 @@
  #include "config.h"
  #include <unistd.h>
  #include <fcntl.h>
 +#include <sys/stat.h> /* S_IRUSR */
  #include "liblouis.h"
- #include "louis.h"
+ #include "internal.h"
  
