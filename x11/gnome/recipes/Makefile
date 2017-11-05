@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2017/11/02 11:22:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.24 2017/11/05 18:21:25 jasper Exp $
 
 COMMENT =		recipe manager for GNOME
 
 GNOME_PROJECT =		gnome-recipes
 GNOME_VERSION =		2.0.0
+REVISION =		0
 
 CATEGORIES =		misc
 

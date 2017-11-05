@@ -1,17 +1,21 @@
-$OpenBSD: patch-src_gr-mail_c,v 1.1 2017/11/02 11:22:38 jasper Exp $
+$OpenBSD: patch-src_gr-mail_c,v 1.2 2017/11/05 18:21:25 jasper Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=789812
+From f255a2322c0d386e1695282a2df8a5019655bc4d Mon Sep 17 00:00:00 2001
+From: Matthias Clasen <mclasen@redhat.com>
+Date: Sat, 4 Nov 2017 13:53:02 -0400
+Subject: [PATCH] Fix the build on OpenBSD
 
-patch-src_gr-mail_c
 Index: src/gr-mail.c
 --- src/gr-mail.c.orig
 +++ src/gr-mail.c
-@@ -284,7 +284,7 @@ window_handle_exported (GtkWindow  *window,
-                         int fd;
-                         int fd_in;
+@@ -32,6 +32,10 @@
+ #include "gr-mail.h"
+ #include "gr-utils.h"
  
--                        fd = g_open (md->attachments[i], O_PATH | O_CLOEXEC);
-+                        fd = g_open (md->attachments[i], O_CLOEXEC);
-                         if (fd == -1) {
-                                 g_warning ("Failed to open %s, skipping", md->attachments[i]);
-                                 continue;
++#ifndef O_PATH
++#define O_PATH 0
++#endif
++
+ typedef struct {
+         GtkWindow *window;
+         char *handle;
