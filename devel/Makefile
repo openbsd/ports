@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1664 2017/11/06 01:21:49 bcallah Exp $
+# $OpenBSD: Makefile,v 1.1665 2017/11/06 13:51:53 bentley Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -510,6 +510,7 @@
      SUBDIR += ode
      SUBDIR += ois
      SUBDIR += omake
+     SUBDIR += open-ath9k-htc-firmware
      SUBDIR += openmpi
      SUBDIR += openocd
      SUBDIR += ophis
