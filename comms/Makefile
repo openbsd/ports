@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2016/11/25 12:02:22 kirby Exp $
+# $OpenBSD: Makefile,v 1.70 2017/11/06 10:13:12 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += amtterm
@@ -17,7 +17,6 @@
      SUBDIR += flipit
      SUBDIR += gammu
      SUBDIR += gmfsk
-     SUBDIR += gnokii
      SUBDIR += gpsk31
      SUBDIR += hamlib
      SUBDIR += hylafax
