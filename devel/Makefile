@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1663 2017/11/05 16:44:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.1664 2017/11/06 01:21:49 bcallah Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -348,6 +348,7 @@
      SUBDIR += libexecinfo
      SUBDIR += libf2c
      SUBDIR += libffi
+     SUBDIR += libfirm
      SUBDIR += libfmt
      SUBDIR += libftdi
      SUBDIR += libgdata
