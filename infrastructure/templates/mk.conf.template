@@ -1,4 +1,4 @@
-# $OpenBSD: mk.conf.template,v 1.26 2017/05/31 22:30:21 jca Exp $
+# $OpenBSD: mk.conf.template,v 1.27 2017/11/06 20:43:22 naddy Exp $
 
 # This file contains some mk.conf entries suitable for ports work.
 #
@@ -62,3 +62,6 @@
 .poison _SYSTRACE_CMD
 .poison USE_SYSTRACE
 .poison WANT_CXX
+.poison MODGETTEXT_LIB_DEPENDS
+.poison MODGETTEXT_RUN_DEPENDS
+.poison MODGETTEXT_WANTLIB
