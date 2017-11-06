@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.72 2017/10/25 13:47:07 robert Exp $
+@comment $OpenBSD: PLIST,v 1.73 2017/11/06 07:38:28 jeremy Exp $
 @pkgpath www/chromium,proprietary
 bin/chrome
+@bin bin/chromedriver
 chrome/
 @bin chrome/chrome
 chrome/chrome_100_percent.pak

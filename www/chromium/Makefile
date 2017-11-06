@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.345 2017/10/29 14:36:53 robert Exp $
+# $OpenBSD: Makefile,v 1.346 2017/11/06 07:38:28 jeremy Exp $
 
 .include <bsd.port.arch.mk>
 
@@ -10,7 +10,7 @@ DPB_PROPERTIES=		parallel
 COMMENT=		Chromium browser
 
 V=			62.0.3202.62
-REVISION=		0
+REVISION=		1
 
 DISTNAME=		chromium-${V}
 
@@ -97,7 +97,7 @@ BUILDTYPE=	Debug
 BUILDTYPE=	Release
 .endif
 
-ALL_TARGET=	chrome
+ALL_TARGET=	chrome chromedriver
 TEST_TARGET=	base_unittests
 
 CONFIGURE_STYLE=none # prevent python MODULE from overriding do-build
@@ -182,6 +182,7 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/chrome
 	${INSTALL_PROGRAM} ${BUILDDIR}/chrome ${PREFIX}/chrome
 	${SUBST_PROGRAM} ${FILESDIR}/chrome ${PREFIX}/bin/chrome
+	${INSTALL_PROGRAM} ${BUILDDIR}/chromedriver ${PREFIX}/bin/chromedriver
 	${INSTALL_MAN} ${BUILDDIR}/chrome.1 ${PREFIX}/man/man1
 
 	${INSTALL_DATA} ${BUILDDIR}/*.pak ${PREFIX}/chrome
