@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.12 2016/01/20 16:20:43 kili Exp $
+# $OpenBSD: Makefile,v 1.13 2017/11/06 00:39:51 kili Exp $
+
+BROKEN =		unused, will be removed
 
 COMMENT =		fast JSON parsing and encoding
 
