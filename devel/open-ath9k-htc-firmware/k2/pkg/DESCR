@@ -1,0 +1,3 @@
+open-ath9k-htc-firmware-k2 is the firmware which resides in RAM on the
+AR9271 NIC, developed for Qualcomm Atheros and released under a free license.
+It is used by athn(4) to provide wireless services.
