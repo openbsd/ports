@@ -1,0 +1,25 @@
+$OpenBSD: patch-snolib_setuputil_sno,v 1.1.1.1 2017/11/06 08:14:14 bcallah Exp $
+
+Install correctly.
+
+Index: snolib/setuputil.sno
+--- snolib/setuputil.sno.orig
++++ snolib/setuputil.sno
+@@ -370,7 +370,7 @@ setup.posix.installcmd
+ 	destdir = HOST(HOST_GETENV, 'DESTDIR')
+ 	libfile = setup.dlname(t)
+ 	shared = (HOST(HOST_SHARED_OBJ_SUBDIR), 'shared')
+-	command = 'cp -f ' libfile ' ' destdir dest '/' shared
++	command = 'cp -f ' libfile ' ' dest '/' shared
+ 	setup.posix.system(command)		:f(FRETURN)
+ 
+ 	sno = setup.sno(t)
+@@ -392,7 +392,7 @@ setup.posix.instcmd.xloop
+ 	manfiles = FILE(fn) manfiles ' ' fn 	:(setup.posix.instcmd.xloop)
+ setup.posix.instcmd.xdone
+ 
+-	command = 'cp -f ' snofiles ' ' destdir dest
++	command = 'cp -f ' snofiles ' ' dest
+ 	setup.posix.system(command)		:f(FRETURN)
+ 
+ 	IDENT(manfiles)				:s(RETURN)

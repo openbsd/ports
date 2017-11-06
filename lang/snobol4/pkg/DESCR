@@ -1,0 +1,10 @@
+CSNOBOL4 is a free port of the original SIL (SNOBOL4 Implementation
+Language) "macro" version of SNOBOL4 (developed at Bell Labs) with the
+C language as a target.
+
+SNOBOL4, while known primarily as a string language excels at any task
+involving symbolic manipulations. It provides dynamic typing, garbage
+collection, user data types, and on the fly compilation.
+
+CSNOBOL4 supports the full SNOBOL4 language plus BLOCKS and SPITBOL and
+other extensions.

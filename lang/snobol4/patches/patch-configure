@@ -1,0 +1,67 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2017/11/06 08:14:14 bcallah Exp $
+
+Just lie. Does the wrong thing if you don't tell it you're using gcc.
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -13,10 +13,7 @@ OPTIONS="$*"
+ VERSION=2.0
+ VERSION_DATE="January 1, 2015"
+ 
+-if [ ! "$CC" ]; then
+-    # on most system gcc is preferred if it can be found
+-    WANTGCC=true
+-fi
++WANTGCC=true
+ 
+ # save any CFLAGS passed to us...
+ INITIAL_CFLAGS="$CFLAGS"
+@@ -366,21 +363,9 @@ echo '#define HAVE_BUILD_VARS'			>> $CONFIG_H
+ 
+ if [ "$CC" ]; then
+     echo 'using CC environment variable' 1>&2
+-    CCPATH="$CC"
++    GCCPATH="$CC"
+ fi
+ 
+-if [ "$WANTGCC" ]; then
+-    # look for gcc up front (for Solaris/x86)
+-    echo 'looking for gcc' 1>&2
+-    for DIR in `echo $PATH | tr ':' ' '`; do
+-	if [ -x $DIR/gcc ]; then
+-	    echo "found gcc in $DIR" 1>&2
+-	    GCCPATH=gcc
+-	    break
+-	fi
+-    done
+-fi
+-
+ TMP=conf$$
+ 
+ # didn't find gcc in PATH; check if CC is gcc or clang
+@@ -529,14 +514,13 @@ esac
+ 
+ # compiler options
+ if [ "$GCCPATH" -a "$WANTGCC" ]; then
+-    echo using gcc 1>&2
+     CCPATH="$GCCPATH"
+     CCVERS=-v
+     echo 'CCM=$(CC) -M'				>> $CONFIG_M4
+ 
+     # w/ gcc v3 -O3 turns on things OTHER than -finline-functions,
+     # so make -O3 the default, and use -fno-inline-functions
+-    OPT=-O3
++    OPT=
+ 
+     if [ ! "$INLINE_OK" ]; then
+ 	echo 'ADD_OPT([-fno-inline-functions])'	>> $CONFIG_M4
+@@ -624,7 +608,7 @@ elif [ "$CC_IS" = clang ]; then
+     CCVERS=-v
+     echo 'CCM=$(CC) -M'				>> $CONFIG_M4
+ 
+-    OPT=-O3
++    OPT=
+ 
+     # disable warnings enabled by default in code generated from SIL;
+     echo 'SNOBOL4_C_CFLAGS=-Wno-return-type -Wno-switch' >> $CONFIG_M4

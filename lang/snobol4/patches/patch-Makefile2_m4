@@ -1,0 +1,18 @@
+$OpenBSD: patch-Makefile2_m4,v 1.1.1.1 2017/11/06 08:14:14 bcallah Exp $
+
+Index: Makefile2.m4
+--- Makefile2.m4.orig
++++ Makefile2.m4
+@@ -636,9 +636,9 @@ install: snobol4 sdb timing.out $(GENERATED_DOCS)
+ 	$(INSTALL) sdb $(BINDIR)/sdb-$(VERS)
+ 	$(INSTALL) snopea $(BINDIR)/snopea-$(VERS)
+ 	rm -f $(BINDIR)/snobol4 $(BINDIR)/sdb $(BINDIR)/snopea
+-	ln -s $(BINDIR)/snobol4-$(VERS) $(BINDIR)/snobol4
+-	ln -s $(BINDIR)/sdb-$(VERS) $(BINDIR)/sdb
+-	ln -s $(BINDIR)/snopea-$(VERS) $(BINDIR)/snopea
++	$(INSTALL) $(INSTALL_BIN_FLAGS) snobol4 $(BINDIR)/snobol4
++	$(INSTALL) sdb $(BINDIR)/sdb
++	$(INSTALL) snopea $(BINDIR)/snopea
+ 	$(INSTALL) -d $(MAN1DIR)
+ 	for F in $(GENERATED_DOCS_DOCDIR1); do \
+ 		$(INSTALL) -m 644 $$F $(MAN1DIR); \
