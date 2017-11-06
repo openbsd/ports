@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.149 2017/06/05 20:20:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.150 2017/11/06 19:15:05 kili Exp $
+
+BROKEN =		save bulk builders from fallout
 
 COMMENT =		compiler for the functional language Haskell
 
