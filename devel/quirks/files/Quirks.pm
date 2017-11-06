@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.548 2017/11/05 16:34:38 kili Exp $
+# $OpenBSD: Quirks.pm,v 1.549 2017/11/06 10:13:51 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1144,6 +1144,7 @@ my $obsolete_reason = {
 	'xscorch' => 0,
 	'libwbxml' => 5,
 	'haskell-platform' => 6,
+	'gnokii' => 0,
 };
 
 # reasons for obsolete packages
