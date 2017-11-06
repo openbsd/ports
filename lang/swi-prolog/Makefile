@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.73 2017/09/29 19:46:53 naddy Exp $
+# $OpenBSD: Makefile,v 1.74 2017/11/06 21:57:01 edd Exp $
 
 BROKEN-hppa =		undefined reference to __sync_fetch_and_add_4
 BROKEN-sparc64 =	infinite loop or aborts during build
 
 COMMENT =		Prolog for the real world
 
-V =			6.6.4
-REVISION =		12
-DISTNAME =		pl-$V
+V =			7.6.0
+DISTNAME =		swipl-$V
 PKGNAME =		swi-prolog-$V
 CATEGORIES =		lang
 
-SHARED_LIBS =		pl	5.0
+SHARED_LIBS =		swipl	0.0 # 7.5
 
 HOMEPAGE =		http://www.swi-prolog.org/
 
@@ -20,67 +19,55 @@ MAINTAINER =		Edd Barrett <edd@openbsd.org>
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += ICE SM X11 Xext Xft Xinerama Xpm Xt c crypto execinfo
-WANTLIB += fontconfig freetype gmp jpeg m ncursesw pthread readline ssl
-WANTLIB += z
+WANTLIB += ICE SM X11 Xext Xft Xinerama Xpm Xt archive c crypto
+WANTLIB += db edit execinfo fontconfig freetype gmp iodbc jpeg
+WANTLIB += m ncursesw ossp-uuid pcre pthread readline ssl z
 
 MASTER_SITES =		${HOMEPAGE}download/stable/src/ \
 			https://distfiles.nl/
 
+
+# The reccommended way to build is using build.templ. We mimick this as best
+# we can and use the top-level configure script.
 CONFIGURE_STYLE =		gnu
-MODGNU_CONFIG_GUESS_DIRS =	${WRKSRC}/src \
+MODGNU_CONFIG_GUESS_DIRS =	${WRKSRC}/packages/clib \
 				${WRKSRC}/packages/jpl \
-				${WRKSRC}/packages/xpce/src
+				${WRKSRC}/packages/xpce/ \
+				${WRKSRC}/packages/xpce/src \
+				${WRKSRC}/src
 
-CONFIGURE_ENV +=	CIFLAGS=' -I${LOCALBASE}/include' \
-			LDFLAGS=' -L${LOCALBASE}/lib' \
-			COFLAGS='${CFLAGS}'
+CFLAGS +=		-I${LOCALBASE}/include
+LDFLAGS +=		-L${LOCALBASE}/lib
+CONFIGURE_ENV +=	CIFLAGS='${CFLAGS}' \
+			LDFLAGS='${LDFLAGS}'
+MAKE_ENV =		${CONFIGURE_ENV}
 
-CONFIGURE_ARGS =	--enable-mt \
-			--disable-custom-flags \
-			--with-world \
-			--with-jpeg=${LOCALBASE} \
-			--enable-shared
+CONFIGURE_ARGS +=	--enable-shared \
+			--with-world
 
 USE_GMAKE =		Yes
 
-# Don't pick up bash
-MAKE_ENV =		MAKESHELL=/bin/sh
-
-MAKE_FLAGS =		SONAMEOPT= \
-			SHAREDV=libpl.so.${LIBpl_VERSION}
-
-MODULES =		gcc4
-# for atomic builtins
-MODGCC4_ARCHS =		arm
-
-AUTOCONF_VERSION =	2.69
-BUILD_DEPENDS =		${MODGNU_AUTOCONF_DEPENDS} \
-			${RUN_DEPENDS}
+BUILD_DEPENDS =		${RUN_DEPENDS}
+BUILD_DEPENDS +=	shells/bash
 LIB_DEPENDS =		devel/gmp \
 			devel/libexecinfo \
-			graphics/jpeg
+			graphics/jpeg \
+			devel/uuid \
+			databases/db/v4 \
+			archivers/libarchive \
+			databases/iodbc \
+			devel/pcre
 
 FULLARCH =		${MACHINE_ARCH:S/amd64/x86_64/}-openbsd${OSREV}
 SUBST_VARS +=		V BOOT FULLARCH
 
-# only packages/clib/maildrop/rfc822/configure.in is patched
 pre-configure:
-	cd ${WRKSRC}/packages/clib/maildrop/rfc822 && \
-	    AUTOCONF_VERSION=${AUTOCONF_VERSION} autoconf
+	${SUBST_CMD} ${WRKSRC}/src/Makefile.in
 
 post-install:
 	cd ${PREFIX}/lib && \
-		ln -sf swipl-$V/lib/${FULLARCH}/libpl.so.${LIBpl_VERSION}
+		ln -sf swipl-$V/lib/${FULLARCH}/libswipl.so.${LIBswipl_VERSION}
 	mv ${PREFIX}/lib/swipl-${V}/doc ${PREFIX}/share/doc/swipl
-
-# Swipl multithreading flaky at best on OpenBSD.
-# We are not sure if this is our threading implementation or their code.
-# The following tests fail (hang). We remove them to allow the rest
-# of the tests to execute atleast.
-# When updating, uncomment these to see if they still fail.
-pre-test:
-	rm -f ${WRKBUILD}/src/Tests/core/test_resource_error.pl
 
 .include <bsd.port.arch.mk>
 
