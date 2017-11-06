@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/02/23 13:53:07 rpointel Exp $
+# $OpenBSD: Makefile,v 1.2 2017/11/06 09:03:26 rpointel Exp $
 
 COMMENT =		engine and tools to automate creation of super timeline
 
-MODPY_EGG_VERSION =	1.5.1
+MODPY_EGG_VERSION =	20170930
 DISTNAME =		plaso-${MODPY_EGG_VERSION}
 
 CATEGORIES =		security
@@ -44,9 +44,12 @@ RUN_DEPENDS +=	devel/ipython \
 		sysutils/libvslvm \
 		devel/py-bencode \
 		devel/py-binplist \
+		devel/py-certifi \
+		textproc/py-chardet \
 		devel/py-construct \
 		devel/py-dateutil \
 		devel/py-efilter \
+		devel/py-future \
 		devel/py-hachoir-core \
 		devel/py-hachoir-metadata \
 		devel/py-hachoir-parser \
@@ -69,7 +72,8 @@ RUN_DEPENDS +=	devel/ipython \
 		sysutils/py-psutil \
 		sysutils/py-tsk \
 		textproc/py-yaml \
-		www/py-requests
+		www/py-requests \
+		www/py-urllib3
 
 TEST_DEPENDS +=	devel/py-test \
 		${RUN_DEPENDS}
