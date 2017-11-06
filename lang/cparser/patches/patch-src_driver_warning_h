@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_driver_warning_h,v 1.1.1.1 2017/11/06 01:21:07 bcallah Exp $
+
+Turn off -Wexperimental by default.
+The entire amd64 backend is considered experimental.
+We don't need a -Wexperimental warning for every single file compiled on amd64.
+
+Index: src/driver/warning.h
+--- src/driver/warning.h.orig
++++ src/driver/warning.h
+@@ -34,7 +34,7 @@ void print_warning_opt_help(void);
+ 	M(WARN_ENDIF_LABELS,                  ON,  "endif-labels",                  "Warn whenever an '#else' or an '#endif' are followed by text") \
+ 	M(WARN_ENUM_CONVERSION,               ON,  "enum-conversion",               "warn about implicit conversion between different enum types") \
+ 	M(WARN_ERROR,                         OFF, "error",                         "Treat warnings as errors") \
+-	M(WARN_EXPERIMENTAL,                  ON,  "experimental",                  "Warn if experimental/unstable compiler features are used") \
++	M(WARN_EXPERIMENTAL,                  OFF, "experimental",                  "Warn if experimental/unstable compiler features are used") \
+ 	M(WARN_FATAL_ERRORS,                  OFF, "fatal-errors",                  "First error stops the compilation") \
+ 	M(WARN_FLOAT_EQUAL,                   OFF, "float-equal",                   "Warn if floating point values are used in equality comparisons") \
+ 	M(WARN_FORMAT,                        ON,  "format",                        "Check printf-style format strings") \

@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_driver_predefs_c,v 1.1.1.1 2017/11/06 01:21:07 bcallah Exp $
+
+cparser doesn't understand __attribute__((__gnu_inline__)).
+This causes all sorts of multiple definition linker errors.
+So let's set the GCC compatibility to too old for it.
+
+Also doesn't understand _Pragma.
+Let's say we're GCC 3.4.6 (for now) because of all this.
+
+Index: src/driver/predefs.c
+--- src/driver/predefs.c.orig
++++ src/driver/predefs.c
+@@ -245,9 +245,9 @@ void add_predefined_macros(void)
+ 	add_define("__CPARSER_PATCHLEVEL__", CPARSER_PATCHLEVEL, false);
+ 
+ 	/* let's pretend we are a GCC compiler */
+-	add_define("__GNUC__",            "4", false);
+-	add_define("__GNUC_MINOR__",      "6", false);
+-	add_define("__GNUC_PATCHLEVEL__", "0", false);
++	add_define("__GNUC__",            "3", false);
++	add_define("__GNUC_MINOR__",      "4", false);
++	add_define("__GNUC_PATCHLEVEL__", "6", false);
+ 	if (dialect.cpp)
+ 		add_define("__GNUG__", "4", false);
+ 

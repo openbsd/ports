@@ -1,0 +1,27 @@
+$OpenBSD: patch-src_driver_target_c,v 1.1.1.1 2017/11/06 01:21:07 bcallah Exp $
+
+Add OpenBSD and set it up properly.
+
+Index: src/driver/target.c
+--- src/driver/target.c.orig
++++ src/driver/target.c
+@@ -288,6 +288,10 @@ static void set_options_for_machine(machine_triple_t c
+ 	} else if (strstr(os, "bsd") != NULL) {
+ 		init_generic_elf();
+ 		init_unix();
++#if defined(__OpenBSD__)
++		target.pic_mode = 1;
++		ppdef( "__OpenBSD__", "1");
++#endif
+ 	} else if (streq(os, "elf") || streq(os, "octopos") || streq(os, "irtss")) {
+ 		init_generic_elf();
+ 	} else if (strstart(os, "darwin")) {
+@@ -514,6 +518,8 @@ static machine_triple_t *get_host_machine_triple(void)
+ 	machine->operating_system = xstrdup("linux-gnu");
+ #elif defined(__linux__)
+ 	machine->operating_system = xstrdup("linux");
++#elif defined(__OpenBSD__)
++	machine->operating_system = xstrdup("bsd");
+ #elif defined(__midipix__)
+ 	machine->operating_system = xstrdup("midipix");
+ #elif defined(__ELF__)

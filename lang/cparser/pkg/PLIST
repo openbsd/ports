@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/11/06 01:21:07 bcallah Exp $
+@bin bin/cparser
+lib/cparser/
+lib/cparser/1.22.1/
+lib/cparser/1.22.1/include/
+lib/cparser/1.22.1/include/float.h
+lib/cparser/1.22.1/include/iso646.h
+lib/cparser/1.22.1/include/limits.h
+lib/cparser/1.22.1/include/stdarg.h
+lib/cparser/1.22.1/include/stdbool.h
+lib/cparser/1.22.1/include/stddef.h
+@man man/man1/cparser.1
