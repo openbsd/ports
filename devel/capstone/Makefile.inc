@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.1 2017/11/06 08:54:28 rpointel Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2017/11/06 09:53:33 ajacoutot Exp $
 
 VERSION =	3.0.4
 DISTNAME =	capstone-${VERSION}
@@ -12,4 +12,3 @@ MAINTAINER ?=	Benoit Lecocq <benoit@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES = 		http://capstone-engine.org/download/${VERSION}/
-

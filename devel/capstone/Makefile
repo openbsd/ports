@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.11 2017/11/06 08:54:28 rpointel Exp $
+# $OpenBSD: Makefile,v 1.12 2017/11/06 09:53:33 ajacoutot Exp $
 
 SUBDIR =
 SUBDIR += main
 SUBDIR += python
 
-.include <bsd.port.mk>
+.include <bsd.port.subdir.mk>
