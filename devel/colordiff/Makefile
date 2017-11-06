@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2015/04/29 12:03:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2017/11/06 16:54:17 edd Exp $
 
 COMMENT =		colorized diff tool
-DISTNAME =		colordiff-1.0.13
-REVISION =		1
+DISTNAME =		colordiff-1.0.18
 CATEGORIES =		devel
-HOMEPAGE =		http://www.colordiff.org/
+HOMEPAGE =		https://www.colordiff.org/
 MAINTAINER =		Edd Barrett <edd@openbsd.org>
 
 # GPLv2+
@@ -18,12 +17,12 @@ MODULES =		perl
 NO_BUILD =		Yes
 NO_TEST =		Yes
 
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/Makefile
+MAKE_ENV +=		INSTALL_DIR=${PREFIX}/bin \
+			MAN_DIR=${PREFIX}/man/man1 \
+			ETC_DIR=${EXAMPLES_DIR}
 
 EXAMPLES_DIR =		${PREFIX}/share/examples/colordiff
 post-install:
-	${INSTALL_DATA_DIR} ${EXAMPLES_DIR}
-	${INSTALL_DATA} ${WRKBUILD}/colordiffrc* ${EXAMPLES_DIR}
+	${INSTALL_DATA} ${WRKBUILD}/colordiffrc-* ${EXAMPLES_DIR}
 
 .include <bsd.port.mk>
