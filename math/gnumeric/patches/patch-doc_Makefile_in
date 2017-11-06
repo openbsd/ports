@@ -1,0 +1,16 @@
+$OpenBSD: patch-doc_Makefile_in,v 1.4 2017/11/06 10:37:55 ajacoutot Exp $
+
+'ascii' codec can't decode byte 0xc2 in position 97: ordinal not in range(128)
+
+Index: doc/Makefile.in
+--- doc/Makefile.in.orig
++++ doc/Makefile.in
+@@ -460,7 +460,7 @@ EXTRA_DIST = make-func-list.pl C/func.defs textdefs.te
+ noinst_DATA = $(am__append_1)
+ DISTCLEANFILES = C/func.defs
+ HELP_ID = gnumeric
+-HELP_LINGUAS = cs de es
++HELP_LINGUAS = de es
+ HELP_FILES = gnumeric.xml
+ HELP_EXTRA = \
+ 	about-authors.xml			\
