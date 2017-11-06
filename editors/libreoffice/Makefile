@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.172 2017/08/24 09:45:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.173 2017/11/06 17:51:39 naddy Exp $
 
 USE_WXNEEDED=	Yes
 
@@ -166,8 +166,7 @@ BUILD_DEPENDS +=	x11/gnome/librsvg
 
 COMPILER =	gcc
 
-MODULES+=	lang/python \
-		devel/gettext
+MODULES+=	lang/python
 
 # XXX can't use ${MODPY_DEFAULT_VERSION_3}, it specifically wants 3.3 and
 # will try (and fail) to build its own copy if not available.
@@ -198,10 +197,10 @@ WANTLIB-main=	${COMPILER_LIBCXX} gdk-x11-2.0>=400.14 gtk-x11-2.0>=400.14 \
 WANTLIB-main+=	ICE SM X11 Xcomposite Xcursor Xdamage \
 		Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo \
 		crypto expat fontconfig freetype gio-2.0 glib-2.0 \
-		gobject-2.0 gthread-2.0 \
+		gobject-2.0 gthread-2.0 iconv intl \
 		jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
 		pthread ssl xml2 z gdk_pixbuf-2.0 \
-		util ${MODGETTEXT_WANTLIB}
+		util
 WANTLIB-main+=	hunspell-1.6
 WANTLIB-main+=	${MODPY_WANTLIB}
 WANTLIB-main+=	clucene-contribs-lib clucene-core clucene-shared
