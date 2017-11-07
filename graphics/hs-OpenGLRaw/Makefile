@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2016/03/01 22:01:18 kili Exp $
+# $OpenBSD: Makefile,v 1.9 2017/11/07 22:34:25 kili Exp $
+
+BROKEN =		will be removed
 
 COMMENT =		raw Haskell binding for OpenGL
-
-# Dependency of meta/haskell-platform.
-# Please do *not* update without thinking.
-PORTROACH =		ignore:1
 
 DISTNAME =		OpenGLRaw-2.6.0.0
 REVISION =		1
