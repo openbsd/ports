@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2016/01/20 16:20:44 kili Exp $
+# $OpenBSD: Makefile,v 1.12 2017/11/07 22:08:20 kili Exp $
 
 COMMENT =		extra concurrency primitives
 
 DISTNAME =		concurrent-extra-0.7.0.9
-REVISION =		2
+REVISION =		3
 CATEGORIES =		devel
 
 # BSD3
@@ -12,7 +12,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 MODULES =		lang/ghc
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	9OFxPvomtrN1KY01buq4VI
+MODGHC_PACKAGE_KEY =	CoAja2W1GIG1iVDXNJFZRa
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
 RUN_DEPENDS =		devel/hs-stm>=2.1.2.1,<2.5 \
