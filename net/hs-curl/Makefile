@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2016/01/20 16:26:19 kili Exp $
+# $OpenBSD: Makefile,v 1.9 2017/11/07 22:37:15 kili Exp $
 
 COMMENT =		Haskell binding to libcurl
 
 DISTNAME =		curl-1.3.8
-REVISION =		5
+REVISION =		6
 CATEGORIES =		net
 
 HOMEPAGE =		https://github.com/GaloisInc/curl
@@ -17,7 +17,7 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	9JZlSJNY6JRIY3XmrL566R
+MODGHC_PACKAGE_KEY =	CYMsKVICG8A995d32iL7dH
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
 RUN_DEPENDS =		net/curl
