@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2016/01/29 20:28:09 kili Exp $
+# $OpenBSD: Makefile,v 1.20 2017/11/07 21:34:28 kili Exp $
 
 COMMENT =		HTML combinator library
 
@@ -7,7 +7,7 @@ COMMENT =		HTML combinator library
 PORTROACH =		ignore:1
 
 DISTNAME =		html-1.0.1.2
-REVISION =		13
+REVISION =		14
 CATEGORIES =		www devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
@@ -19,6 +19,6 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	3z3nL6m7IhuGkUl83NkAdQ
+MODGHC_PACKAGE_KEY =	Jj2JgpzqaYBEsxjiTkT0Vw
 
 .include <bsd.port.mk>
