@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2015/12/20 11:05:17 kili Exp $
+@comment $OpenBSD: PLIST,v 1.12 2017/11/07 21:02:18 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/HS${DISTNAME}-${MODGHC_PACKAGE_KEY}.o
 lib/ghc/${DISTNAME}/Test/
@@ -40,13 +40,6 @@ share/doc/hs-${DISTNAME}/html/minus.gif
 share/doc/hs-${DISTNAME}/html/ocean.css
 share/doc/hs-${DISTNAME}/html/plus.gif
 share/doc/hs-${DISTNAME}/html/synopsis.png
-share/hs-${DISTNAME}/
-share/hs-${DISTNAME}/README.md
-share/hs-${DISTNAME}/doc/
-share/hs-${DISTNAME}/doc/Guide.html
-share/hs-${DISTNAME}/examples/
-share/hs-${DISTNAME}/examples/Example.hs
-share/hs-${DISTNAME}/prologue.txt
 @exec /usr/bin/env HOME=/nonexistent %D/lib/ghc/${DISTNAME}/register.sh -v0
 @unexec /usr/bin/env HOME=/nonexistent %D/lib/ghc/${DISTNAME}/unregister.sh -v0 --force
 lib/ghc/${DISTNAME}/unregister.sh
