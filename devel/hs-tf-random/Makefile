@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2016/01/29 20:28:08 kili Exp $
+# $OpenBSD: Makefile,v 1.5 2017/11/07 22:22:51 kili Exp $
 
 COMMENT =		high-quality splittable PRNG
 
@@ -7,7 +7,7 @@ COMMENT =		high-quality splittable PRNG
 PORTROACH =		ignore:1
 
 DISTNAME =		tf-random-0.5
-REVISION =		1
+REVISION =		2
 CATEGORIES =		devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
@@ -19,7 +19,7 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	1eLmkn3WUnC8NZpPuDLGKF
+MODGHC_PACKAGE_KEY =	4z8OJUaXC1FRNfrLPFWAD
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
 RUN_DEPENDS =		devel/hs-primitive>=0.3 \
