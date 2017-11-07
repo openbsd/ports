@@ -1,0 +1,18 @@
+$OpenBSD: patch-monad-control_cabal,v 1.1 2017/11/07 22:16:47 kili Exp $
+
+Dependency changed in the "online" version of the package description,
+but not in the dist file.
+
+--- monad-control.cabal.orig	Fri Feb 13 20:55:40 2015
++++ monad-control.cabal	Fri Dec 30 14:38:40 2016
+@@ -42,8 +42,8 @@ Library
+ 
+   Build-depends: base                 >= 4.5   && < 5
+                , stm                  >= 2.3   && < 3
+-               , transformers         >= 0.2   && < 0.5
+-               , transformers-compat  >= 0.3   && < 0.5
++               , transformers         >= 0.2   && < 0.6
++               , transformers-compat  >= 0.3   && < 0.6
+                , transformers-base    >= 0.4.4 && < 0.5
+ 
+   Ghc-options: -Wall
