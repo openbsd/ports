@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.29 2016/06/20 12:19:33 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.30 2017/11/07 21:59:36 kili Exp $
 
 COMMENT =		parser and writer for config files
 
 DISTNAME =		ConfigFile-1.1.4
-REVISION =		6
+REVISION =		7
 CATEGORIES =		devel sysutils
 HOMEPAGE =		https://github.com/jgoerzen/configfile/wiki
 
@@ -16,7 +16,7 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	G6pYW3K6WyuDd6ZJuQJ97h
+MODGHC_PACKAGE_KEY =	7CzxnBOMDE5COFEXwnYW9
 
 RUN_DEPENDS +=		devel/hs-MissingH>=1.0.0 \
 			devel/hs-mtl
