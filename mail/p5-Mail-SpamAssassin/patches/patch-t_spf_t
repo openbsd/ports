@@ -1,0 +1,22 @@
+$OpenBSD: patch-t_spf_t,v 1.1 2017/11/07 07:39:07 giovanni Exp $
+
+Index: t/spf.t
+--- t/spf.t.orig
++++ t/spf.t
+@@ -12,6 +12,7 @@ use constant HAS_MAILSPF => eval { require Mail::SPF; 
+ # on non-Linux unices as root, due to a bug in Sys::Hostname::Long
+ # (it is used by Mail::SPF::Query, which is now obsoleted by Mail::SPF)
+ use constant IS_LINUX   => $^O eq 'linux';
++use constant IS_OPENBSD => $^O eq 'openbsd';
+ use constant IS_WINDOWS => ($^O =~ /^(mswin|dos|os2)/oi);
+ use constant AM_ROOT    => $< == 0;
+ 
+@@ -20,7 +21,7 @@ use constant HAS_UNSAFE_HOSTNAME =>  # Bug 3806 - modu
+ 
+ use constant DO_RUN =>
+   TEST_ENABLED && (HAS_SPFQUERY || HAS_MAILSPF) &&
+-  (!HAS_UNSAFE_HOSTNAME || !AM_ROOT || IS_LINUX || IS_WINDOWS);
++  (!HAS_UNSAFE_HOSTNAME || !AM_ROOT || IS_LINUX || IS_WINDOWS || IS_OPENBSD);
+ 
+ BEGIN {
+ 
