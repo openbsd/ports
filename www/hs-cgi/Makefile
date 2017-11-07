@@ -1,13 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2016/01/29 20:28:09 kili Exp $
+# $OpenBSD: Makefile,v 1.27 2017/11/07 22:42:58 kili Exp $
 
 COMMENT =		CGI library for Haskell
 
-# Dependency of meta/haskell-platform.
-# Please do *not* update without thinking.
-PORTROACH =		ignore:1
-
 DISTNAME =		cgi-3001.2.2.2
-REVISION =		1
+REVISION =		2
 CATEGORIES =		www devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
@@ -19,7 +15,7 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	CEOwOunYNPs8KwnXyLMnk8
+MODGHC_PACKAGE_KEY =	L0bV6rsmk7u9Gw6gNDTDvP
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
 RUN_DEPENDS =		devel/hs-exceptions<0.9 \
