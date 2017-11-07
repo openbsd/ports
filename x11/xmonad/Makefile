@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.50 2016/09/12 17:51:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.51 2017/11/07 22:46:32 kili Exp $
+
+BROKEN =		missing devel/hs-setlocale
 
 COMMENT-main =		tiling window manager
 COMMENT-lib =		libraries for runtime configuration
 
-DISTNAME =		xmonad-0.11.1
+DISTNAME =		xmonad-0.12
 PKGNAME-main =		${DISTNAME}
 PKGNAME-lib =		${DISTNAME:S,-,-lib-,}
-REVISION-lib =		1
 CATEGORIES =		x11
 HOMEPAGE =		http://www.xmonad.org/
 
@@ -22,15 +23,15 @@ WANTLIB-lib =
 MODULES =		lang/ghc
 MODGHC_BUILD =		cabal hackage haddock register nort
 
-MODGHC_PACKAGE_KEY =	69emmTIdOBCCVIsKs9lHOh
+MODGHC_PACKAGE_KEY =	DasI1QAyR302MhCeEFEsfY
 
 # Required because of the nort tag in MODGHC_BUILD
 SUBST_VARS +=		MODGHC_PACKAGE_KEY
 
 BUILD_DEPENDS =		${RUN_DEPENDS-lib}
-RUN_DEPENDS-lib =	devel/hs-extensible-exceptions \
+RUN_DEPENDS-lib =	devel/hs-data-default \
+			devel/hs-extensible-exceptions \
 			devel/hs-mtl \
-			devel/hs-syb \
 			devel/hs-utf8-string>=0.3,<1.1 \
 			x11/hs-X11>=1.5,<1.7
 LIB_DEPENDS-main =	converters/libiconv
