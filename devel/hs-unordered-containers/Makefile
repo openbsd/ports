@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2016/01/29 20:28:08 kili Exp $
+# $OpenBSD: Makefile,v 1.13 2017/11/07 22:24:04 kili Exp $
 
 COMMENT =		efficient hashing-based container types
 
@@ -7,7 +7,7 @@ COMMENT =		efficient hashing-based container types
 PORTROACH =		ignore:1
 
 DISTNAME =		unordered-containers-0.2.5.1
-REVISION =		1
+REVISION =		2
 CATEGORIES =		devel
 
 # BSD3
@@ -17,7 +17,7 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	A6bVq0vdIMX7egYGM1u3oi
+MODGHC_PACKAGE_KEY =	IKzRec31e0nEGmSRvmK8qa
 
 RUN_DEPENDS =		devel/hs-hashable>=1.0.1.1
 BUILD_DEPENDS =		${RUN_DEPENDS}
