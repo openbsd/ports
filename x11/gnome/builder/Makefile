@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.63 2017/11/03 13:41:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.64 2017/11/07 11:02:12 ajacoutot Exp $
 
 COMMENT=		IDE for GNOME
 
 GNOME_PROJECT=		gnome-builder
 GNOME_VERSION=		3.26.2
+REVISION=		0
 
 SHARED_LIBS +=  gstyle-private            1.0 # 0.0
 
@@ -29,7 +30,9 @@ MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 MODGNOME_TOOLS=		desktop-file-utils gobject-introspection \
 			gtk-update-icon-cache vala yelp
 
-BUILD_DEPENDS=		devel/ectags
+BUILD_DEPENDS=		devel/ectags \
+			textproc/py-sphinx${MODPY_FLAVOR}
+
 RUN_DEPENDS=		devel/ectags
 
 # python auto-completion
