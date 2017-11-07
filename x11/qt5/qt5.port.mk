@@ -1,4 +1,4 @@
-# $OpenBSD: qt5.port.mk,v 1.18 2017/11/05 08:16:25 jca Exp $
+# $OpenBSD: qt5.port.mk,v 1.19 2017/11/07 20:32:20 landry Exp $
 
 # This fragment defines MODQT_* variables to make it easier to substitute
 # qt3/qt4/qt5 in a port.
@@ -33,19 +33,26 @@ MODQT_LRELEASE ?= ${MODQT5_LRELEASE}
 
 _MODQT5_CMAKE_PKGS = \
 	Qt5 \
+	Qt53DAnimation \
 	Qt53DCore \
+	Qt53DExtras \
 	Qt53DInput \
 	Qt53DLogic \
 	Qt53DQuick \
+	Qt53DQuickAnimation \
+	Qt53DQuickExtras \
 	Qt53DQuickInput \
+	Qt53DQuickScene2D \
 	Qt53DQuickRender \
-	Qt5Render \
+	Qt53DRender \
 	Qt5Bluetooth \
+	Qt5Charts \
 	Qt5Concurrent \
 	Qt5Core \
+	Qt5DataVisualization \
 	Qt5DBus \
 	Qt5Designer \
-	Qt5Enginio \
+	Qt5Gamepad \
 	Qt5Gui \
 	Qt5Help \
 	Qt5LinguistTools \
@@ -53,23 +60,30 @@ _MODQT5_CMAKE_PKGS = \
 	Qt5Multimedia \
 	Qt5MultimediaWidgets \
 	Qt5Network \
+	Qt5NetworkAuth \
 	Qt5Nfc \
 	Qt5OpenGL \
 	Qt5OpenGLExtensions \
 	Qt5Positioning \
 	Qt5PrintSupport \
+	Qt5Purchasing \
 	Qt5Qml \
 	Qt5Quick \
+	Qt5QuickControls2 \
 	Qt5QuickTest \
 	Qt5QuickWidgets \
+	Qt5RemoteObjects \
+	Qt5RepParser \
 	Qt5Script \
 	Qt5ScriptTools \
+	Qt5Scxml \
 	Qt5Sensors \
 	Qt5SerialBus \
 	Qt5SerialPort \
 	Qt5Sql \
 	Qt5Svg \
 	Qt5Test \
+	Qt5TextToSpeech \
 	Qt5UiPlugin \
 	Qt5UiTools \
 	Qt5WebChannel \
