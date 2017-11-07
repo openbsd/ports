@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2016/01/29 20:28:08 kili Exp $
+# $OpenBSD: Makefile,v 1.5 2017/11/07 22:17:12 kili Exp $
 
 COMMENT =		URI manipulation
 
@@ -7,7 +7,7 @@ COMMENT =		URI manipulation
 PORTROACH =		ignore:1
 
 DISTNAME =		network-uri-2.6.0.3
-REVISION =		1
+REVISION =		2
 CATEGORIES =		devel net
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
@@ -19,7 +19,7 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	CxVdIrhuTmgL7JRJWSeTsJ
+MODGHC_PACKAGE_KEY =	6W3sg3RLwTVJuGlk5cvpRM
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
 RUN_DEPENDS =		devel/hs-parsec>=3.0,<3.2
