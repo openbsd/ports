@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2016/01/29 20:28:07 kili Exp $
+# $OpenBSD: Makefile,v 1.14 2017/11/07 22:12:11 kili Exp $
 
 COMMENT =		class for hashable data types
 
@@ -6,8 +6,7 @@ COMMENT =		class for hashable data types
 # Please do *not* update without thinking.
 PORTROACH =		ignore:1
 
-DISTNAME =		hashable-1.2.3.3
-REVISION =		1
+DISTNAME =		hashable-1.2.4.0
 CATEGORIES =		devel
 
 # BSD3
@@ -17,7 +16,7 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	ESoMujpGY6DK6X3JJiQzUF
+MODGHC_PACKAGE_KEY =	Aa0ySgsUua387fhBIrOKgA
 
 RUN_DEPENDS =		devel/hs-text>=0.11.0.5
 BUILD_DEPENDS =		${RUN_DEPENDS}
