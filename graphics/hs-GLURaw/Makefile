@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2016/03/01 22:01:18 kili Exp $
+# $OpenBSD: Makefile,v 1.9 2017/11/07 22:33:03 kili Exp $
+
+BROKEN =		will be removed
 
 COMMENT =		raw Haskell binding for the OpenGL utility library
-
-# Dependency of meta/haskell-platform.
-# Please do *not* update without thinking.
-PORTROACH =		ignore:1
 
 DISTNAME =		GLURaw-1.5.0.2
 REVISION =		1
