@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1665 2017/11/06 13:51:53 bentley Exp $
+# $OpenBSD: Makefile,v 1.1666 2017/11/07 18:16:36 jasper Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -103,7 +103,6 @@
      SUBDIR += dbus-sharp-glib
      SUBDIR += dconf
      SUBDIR += ddd
-     SUBDIR += dee
      SUBDIR += dejagnu
      SUBDIR += desktop-file-utils
      SUBDIR += dex2jar
