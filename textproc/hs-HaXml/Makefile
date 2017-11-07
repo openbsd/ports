@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2017/06/30 13:49:09 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.32 2017/11/07 22:40:37 kili Exp $
 
 COMMENT =		utilities for manipulating XML documents
 
@@ -17,7 +17,7 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	3ZVDCzAeHr3GLa7DbN7iB6
+MODGHC_PACKAGE_KEY =	B9wvDmvOZoF7ZEYuCxncwg
 
 LIB_DEPENDS +=		converters/libiconv
 RUN_DEPENDS +=		devel/hs-random \
