@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2016/01/20 16:26:19 kili Exp $
+# $OpenBSD: Makefile,v 1.9 2017/11/07 21:31:49 kili Exp $
 
 COMMENT =		Haskell package for determining the hostname
 
 DISTNAME =		hostname-1.0
-REVISION =		5
+REVISION =		6
 CATEGORIES =		devel net
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
@@ -15,6 +15,6 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	3HfIQy11Ojb2in3623bzR3
+MODGHC_PACKAGE_KEY =	42Ipmmd3lMbCN35rV9k5gh
 
 .include <bsd.port.mk>
