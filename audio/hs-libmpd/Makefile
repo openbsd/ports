@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2017/08/11 09:15:41 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.27 2017/11/07 21:53:11 kili Exp $
 
 COMMENT=		Haskell interface to MPD
 
 DISTNAME=		libmpd-0.9.0.7
+REVISION=		0
 CATEGORIES=		audio
 
 MAINTAINER=		David Coppa <dcoppa@openbsd.org>
@@ -16,7 +17,7 @@ MODULES=		lang/ghc
 
 MODGHC_BUILD=		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY=	0IUMsdifnJYCWtEd9IZj8X
+MODGHC_PACKAGE_KEY=	4mQHYcArvTBKGux73hcKiU
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		devel/hs-data-default>=0.4,<1.0 \
