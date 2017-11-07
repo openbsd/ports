@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2016/01/29 20:28:08 kili Exp $
+# $OpenBSD: Makefile,v 1.25 2017/11/07 22:18:18 kili Exp $
 
 COMMENT =		module layer over regex-posix to replace Text.Regex
 
@@ -7,7 +7,7 @@ COMMENT =		module layer over regex-posix to replace Text.Regex
 PORTROACH =		ignore:1
 
 DISTNAME =		regex-compat-0.95.1
-REVISION =		5
+REVISION =		6
 CATEGORIES =		devel
 
 HOMEPAGE =		http://sourceforge.net/projects/lazy-regex
@@ -21,7 +21,7 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	EyUO1k1s8YNJ81jSdgVW1z
+MODGHC_PACKAGE_KEY =	JPDhOGKcrkD8S1t3VsLLUt
 
 RUN_DEPENDS =		devel/hs-mtl \
 			devel/hs-regex-base>=0.93 \
