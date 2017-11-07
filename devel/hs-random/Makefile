@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2016/01/29 20:28:08 kili Exp $
+# $OpenBSD: Makefile,v 1.11 2017/11/07 21:19:40 kili Exp $
 
 COMMENT =		random number library
 
@@ -7,7 +7,7 @@ COMMENT =		random number library
 PORTROACH =		ignore:1
 
 DISTNAME =		random-1.1
-REVISION =		1
+REVISION =		2
 CATEGORIES =		devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
@@ -19,6 +19,6 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	9Kgekc9yEaLHLNUuw6paWL
+MODGHC_PACKAGE_KEY =	54KmMHXjttlERYcr1mvsAe
 
 .include <bsd.port.mk>
