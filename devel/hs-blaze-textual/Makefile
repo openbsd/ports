@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2016/01/20 16:20:44 kili Exp $
+# $OpenBSD: Makefile,v 1.10 2017/11/07 22:02:56 kili Exp $
 
 COMMENT =		fast rendering of common datatypes
 
 DISTNAME =		blaze-textual-0.2.0.8
-REVISION =		3
+REVISION =		4
 CATEGORIES =		devel
 
 # BSD3
@@ -13,7 +13,7 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	Ihv38W3jAVkJkEc54mmDgw
+MODGHC_PACKAGE_KEY =	GBpTjxtAI31FC7u8S3WLvX
 
 RUN_DEPENDS =		devel/hs-blaze-builder>=0.2.1.4 \
 			devel/hs-old-locale \
