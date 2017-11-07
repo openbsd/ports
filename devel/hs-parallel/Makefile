@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2016/01/29 20:28:08 kili Exp $
+# $OpenBSD: Makefile,v 1.23 2017/11/07 21:18:32 kili Exp $
 
 COMMENT =		parallel programming library
 
@@ -6,8 +6,7 @@ COMMENT =		parallel programming library
 # Please do *not* update without thinking.
 PORTROACH =		ignore:1
 
-DISTNAME =		parallel-3.2.0.6
-REVISION =		1
+DISTNAME =		parallel-3.2.1.0
 CATEGORIES =		devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
@@ -19,6 +18,6 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	3arfJHZNth8DfwPPt7zuRB
+MODGHC_PACKAGE_KEY =	6VcN0yUHtcs831TgbJiSSi
 
 .include <bsd.port.mk>
