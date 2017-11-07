@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2017/11/04 14:32:48 rpointel Exp $
+# $OpenBSD: Makefile,v 1.9 2017/11/07 16:22:56 rpointel Exp $
 
 COMMENT =		Python module to read and work with PE files
 
-MODPY_EGG_VERSION =	2017.9.3
+MODPY_EGG_VERSION =	2017.11.5
 DISTNAME =		pefile-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
@@ -21,7 +21,10 @@ MODULES =		lang/python
 MODPY_SETUPTOOLS = 	Yes
 MODPY_PI =		Yes
 
-RUN_DEPENDS =		devel/py-future
+FLAVORS =	python3
+FLAVOR ?=
+
+RUN_DEPENDS =		devel/py-future${MODPY_FLAVOR}
 
 NO_TEST =		Yes
 
