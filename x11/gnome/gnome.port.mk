@@ -1,4 +1,4 @@
-# $OpenBSD: gnome.port.mk,v 1.109 2017/11/03 13:35:14 ajacoutot Exp $
+# $OpenBSD: gnome.port.mk,v 1.110 2017/11/07 09:00:16 ajacoutot Exp $
 #
 # Module for GNOME related ports
 
@@ -137,7 +137,8 @@ MODGNOME_CONFIGURE_ARGS_vala=	--enable-vala --enable-vala-bindings
 .       elif ${CONFIGURE_STYLE:Mcmake}
 MODGNOME_CONFIGURE_ARGS_vala=	-DENABLE_VALA_BINDINGS=ON
 .       endif
-MODGNOME_BUILD_DEPENDS +=	lang/vala
+# cyclic: lang/vala -> math/graphviz -> x11/gnome/librsvg -> lang/vala
+MODGNOME_BUILD_DEPENDS +=	lang/vala,no_valadoc,bootstrap
 .   endif
 
 .   if ${MODGNOME_TOOLS:Myelp}

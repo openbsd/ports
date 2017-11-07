@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.94 2017/11/06 17:53:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.95 2017/11/07 09:00:16 ajacoutot Exp $
 
 COMMENT-main=		compiler for the GObject type system
 COMMENT-valadoc=	Vala documentation generator
@@ -35,7 +35,7 @@ MODULES=		x11/gnome
 
 BUILD_DEPENDS=		textproc/libxslt
 
-MULTI_PACKAGES=		-main #-valadoc
+MULTI_PACKAGES=		-main -valadoc
 
 LIB_DEPENDS-main=	devel/glib2
 
@@ -50,8 +50,8 @@ CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.69
 
 # cyclic: lang/vala -> math/graphviz -> x11/gnome/librsvg -> lang/vala
-#PSEUDO_FLAVORS=		no_valadoc bootstrap
-#FLAVOR?=
+PSEUDO_FLAVORS=		no_valadoc bootstrap
+FLAVOR?=
 
 .include <bsd.port.arch.mk>
 
