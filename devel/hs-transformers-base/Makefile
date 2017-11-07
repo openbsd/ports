@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2016/01/20 16:22:29 kili Exp $
+# $OpenBSD: Makefile,v 1.10 2017/11/07 22:23:19 kili Exp $
 
 COMMENT =		lift computations from the bottom of a transformer stack
 
 DISTNAME =		transformers-base-0.4.4
-REVISION =		0
+REVISION =		1
 CATEGORIES =		devel
 
 # BSD3
@@ -13,7 +13,7 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	GEeDj980gLF9zrP5uK3QX8
+MODGHC_PACKAGE_KEY =	25SoAegOdaF8rLEnnb5jPI
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
 
