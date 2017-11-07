@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2016/01/20 16:22:25 kili Exp $
+# $OpenBSD: Makefile,v 1.12 2017/11/07 21:14:37 kili Exp $
 
 COMMENT=		simple type class for success/failure computations
 
 DISTNAME=		failure-0.1.0.1
-REVISION=		8
+REVISION=		9
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.haskell.org/haskellwiki/Failure
@@ -15,6 +15,6 @@ MODULES=		lang/ghc
 
 MODGHC_BUILD =          cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	E0YDpyawI66GcQGRbCJCr7
+MODGHC_PACKAGE_KEY =	1XwMCA83CXk42qxcznFAJM
 
 .include <bsd.port.mk>
