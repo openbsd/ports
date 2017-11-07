@@ -1,13 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2016/01/29 20:28:07 kili Exp $
+# $OpenBSD: Makefile,v 1.14 2017/11/07 22:03:26 kili Exp $
 
 COMMENT =		case insensitive string comparison
 
-# Dependency of meta/haskell-platform.
-# Please do *not* update without thinking.
-PORTROACH =		ignore:1
-
-DISTNAME =		case-insensitive-1.2.0.5
-REVISION =		0
+DISTNAME =		case-insensitive-1.2.0.6
 CATEGORIES =		devel
 
 # BSD3
@@ -17,7 +12,7 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	FEOKgbOKlTVG5A7KrFIMjj
+MODGHC_PACKAGE_KEY =	Cbq2rcWML3n1jpqsTRqRcn
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
 RUN_DEPENDS =		devel/hs-hashable>=1.0,<1.3 \
