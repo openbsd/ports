@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2016/01/20 16:20:44 kili Exp $
+# $OpenBSD: Makefile,v 1.15 2017/11/07 21:13:41 kili Exp $
 
 COMMENT =		directory-like tree datatype
 
 DISTNAME =		directory-tree-0.11.0
-REVISION =		3
+REVISION =		4
 CATEGORIES =		devel
 
 MAINTAINER =		Jim Razmus II <jim@openbsd.org>
@@ -15,6 +15,6 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	BYyBOa0E63iDUhLkzI8b5G
+MODGHC_PACKAGE_KEY =	DXbG5XTcrW28oahqtzAUI5
 
 .include <bsd.port.mk>
