@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2016/01/20 16:22:29 kili Exp $
+# $OpenBSD: Makefile,v 1.5 2017/11/07 21:30:40 kili Exp $
 
 COMMENT =		support for reading and writing UTF8 strings
 
 DISTNAME =		utf8-string-1.0.1.1
-REVISION =		1
+REVISION =		2
 CATEGORIES =		devel
 
 # BSD3
@@ -13,6 +13,6 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	L8eKHa7Iv9q7FVKUYW6u4b
+MODGHC_PACKAGE_KEY =	2T8mBCuEDlXDo8zed8Onw4
 
 .include <bsd.port.mk>
