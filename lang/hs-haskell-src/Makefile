@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2016/01/29 20:28:09 kili Exp $
+# $OpenBSD: Makefile,v 1.24 2017/11/07 22:35:59 kili Exp $
 
 COMMENT =		manipulating Haskell source code
 
@@ -7,7 +7,7 @@ COMMENT =		manipulating Haskell source code
 PORTROACH =		ignore:1
 
 DISTNAME =		haskell-src-1.0.2.0
-REVISION =		1
+REVISION =		2
 CATEGORIES =		lang devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
@@ -19,7 +19,7 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	L5FnTXYimTzE7JszPj0uf6
+MODGHC_PACKAGE_KEY =	LWJhH60HaHSDbuVJrdJiUp
 
 BUILD_DEPENDS =		${RUN_DEPENDS} \
 			devel/happy
