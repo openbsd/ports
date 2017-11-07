@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2016/01/20 16:26:19 kili Exp $
+# $OpenBSD: Makefile,v 1.14 2017/11/07 22:38:34 kili Exp $
 
 COMMENT=		symmetrical block and stream ciphers
 
 DISTNAME=		cryptocipher-0.2.8
-REVISION=		8
+REVISION=		9
 CATEGORIES=		security
 
 # 3-clause BSD
@@ -13,7 +13,7 @@ MODULES=		lang/ghc
 
 MODGHC_BUILD =          cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	6a1bmBdno5oLoH2KdFX4qf
+MODGHC_PACKAGE_KEY =	H4BSh6zTkOH135C2v30ih8
 
 RUN_DEPENDS =		devel/hs-mtl \
 			devel/hs-vector \
