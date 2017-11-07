@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2016/01/20 16:22:26 kili Exp $
+# $OpenBSD: Makefile,v 1.6 2017/11/07 21:16:52 kili Exp $
 
 COMMENT =		Haskell 98 natural numbers
 
 DISTNAME =		nats-0.1
-REVISION =		3
+REVISION =		4
 CATEGORIES =		devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
@@ -15,6 +15,6 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	EHPgUsyhrV33FWDkavtVaW
+MODGHC_PACKAGE_KEY =	5Lt003z0GMEHbFOklSrgRb
 
 .include <bsd.port.mk>
