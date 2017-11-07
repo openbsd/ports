@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2016/01/29 20:28:07 kili Exp $
+# $OpenBSD: Makefile,v 1.24 2017/11/07 21:14:57 kili Exp $
 
 BROKEN-i386 =		needs a fixed rts/Linker.c in ghc
 
@@ -9,7 +9,7 @@ COMMENT =		functional graph library
 PORTROACH =		ignore:1
 
 DISTNAME =		fgl-5.5.2.3
-REVISION =		0
+REVISION =		1
 CATEGORIES =		devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
@@ -21,6 +21,6 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	1PvuJSbzF40BnsvFgNAS4e
+MODGHC_PACKAGE_KEY =	GbGZZMWoUKr1QBAdhlf5Ya
 
 .include <bsd.port.mk>
