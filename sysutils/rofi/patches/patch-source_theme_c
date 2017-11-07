@@ -1,0 +1,37 @@
+$OpenBSD: patch-source_theme_c,v 1.1 2017/11/07 20:28:19 jasper Exp $
+
+From 5f1be779a2c30bd2a02ea8c501dbf9d187326bd4 Mon Sep 17 00:00:00 2001
+From: Dave Davenport <qball@gmpclient.org>
+Date: Fri, 20 Oct 2017 22:13:28 +0200
+Subject: [PATCH] Fixes parsing of non-existing fields.
+
+Index: source/theme.c
+--- source/theme.c.orig
++++ source/theme.c
+@@ -802,7 +802,7 @@ void rofi_theme_convert_old ( void )
+             "* { selected-normal-background: %s; }",
+             "* { selected-normal-foreground: %s; }"
+         };
+-        for ( int i = 0; retv && retv[i]; i++ ) {
++        for ( int i = 0; retv && retv[i] && i < 5; i++ ) {
+             char *str = g_strdup_printf ( conf[i], rofi_theme_convert_color ( retv[i] ) );
+             rofi_theme_parse_string ( str );
+             g_free ( str );
+@@ -818,7 +818,7 @@ void rofi_theme_convert_old ( void )
+             "* { selected-urgent-background: %s; }",
+             "* { selected-urgent-foreground: %s; }"
+         };
+-        for ( int i = 0; retv && retv[i]; i++ ) {
++        for ( int i = 0; retv && retv[i] && i < 5; i++ ) {
+             char *str = g_strdup_printf ( conf[i], rofi_theme_convert_color ( retv[i] ) );
+             rofi_theme_parse_string ( str );
+             g_free ( str );
+@@ -834,7 +834,7 @@ void rofi_theme_convert_old ( void )
+             "* { selected-active-background: %s; }",
+             "* { selected-active-foreground: %s; }"
+         };
+-        for ( int i = 0; retv && retv[i]; i++ ) {
++        for ( int i = 0; retv && retv[i] && i < 5; i++ ) {
+             char *str = g_strdup_printf ( conf[i], rofi_theme_convert_color ( retv[i] ) );
+             rofi_theme_parse_string ( str );
+             g_free ( str );
