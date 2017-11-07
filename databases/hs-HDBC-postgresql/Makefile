@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2017/08/22 12:41:58 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.24 2017/11/07 21:56:01 kili Exp $
 
 COMMENT=		postgresql driver for HDBC
 
 DISTNAME=		HDBC-postgresql-2.3.2.5
+REVISION=		0
 CATEGORIES=		databases
 
 HOMEPAGE=		https://github.com/hdbc/hdbc-postgresql/wiki
@@ -15,7 +16,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 MODULES=		lang/ghc
 
 MODGHC_BUILD=		cabal hackage haddock register
-MODGHC_PACKAGE_KEY=	Lnzuk56AQgSERSgUalPem0
+MODGHC_PACKAGE_KEY=	K2srNEvR2q97jXqMi7rov4
 
 RUN_DEPENDS +=		databases/hs-HDBC>=2.2.6 \
 			databases/postgresql \
