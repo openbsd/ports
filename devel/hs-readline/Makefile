@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2016/01/20 16:22:27 kili Exp $
+# $OpenBSD: Makefile,v 1.19 2017/11/07 21:19:52 kili Exp $
 
 COMMENT =		interface to the GNU readline library
 
 DISTNAME =		readline-1.0.3.0
-REVISION =		3
+REVISION =		4
 CATEGORIES =		devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
@@ -15,6 +15,6 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	LhW0CAEIVrvCOHNig0WVsm
+MODGHC_PACKAGE_KEY =	FjwjUr6ywFj4F2NoUgUOty
 
 .include <bsd.port.mk>
