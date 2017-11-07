@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2016/02/29 20:08:38 mmcc Exp $
+# $OpenBSD: Makefile,v 1.25 2017/11/07 22:17:48 kili Exp $
 
 COMMENT =		Monadic parser combinators
 
@@ -7,7 +7,7 @@ COMMENT =		Monadic parser combinators
 PORTROACH =		ignore:1
 
 DISTNAME =		parsec-3.1.9
-REVISION =		2
+REVISION =		3
 CATEGORIES =		devel
 HOMEPAGE =		https://github.com/aslatter/parsec
 
@@ -20,7 +20,7 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	8bOz3HeEMD67ZDdQubQs32
+MODGHC_PACKAGE_KEY =	DcQEV7HEPYVIqQc0KjARvh
 
 RUN_DEPENDS =		devel/hs-mtl \
 			devel/hs-text>=0.2,<1.3
