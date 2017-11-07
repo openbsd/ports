@@ -1,0 +1,18 @@
+$OpenBSD: patch-common_c,v 1.1 2017/11/07 09:38:51 jca Exp $
+
+Fix off-by-one spotted by MALLOC_OPTIONS=S.
+
+  autocutsel(13807) in free(): chunk canary corrupted 0x9be30f1ad00 0x60@0x60
+
+Index: common.c
+--- common.c.orig
++++ common.c
+@@ -91,7 +91,7 @@ Boolean ConvertSelection(Widget w, Atom *selection, At
+     
+     XmuConvertStandardSelection(w, req->time, selection, target, type,
+         &std_targets, &std_length, format);
+-    *value = XtMalloc(sizeof(Atom)*(std_length + 4));
++    *value = XtMalloc(sizeof(Atom)*(std_length + 5));
+     targetP = *(Atom**)value;
+     atoms = targetP;
+     *length = std_length + 5;
