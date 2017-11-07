@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.472 2017/11/05 22:06:30 sebastia Exp $
+# $OpenBSD: Makefile,v 1.473 2017/11/07 16:23:31 rpointel Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -288,6 +288,7 @@
      SUBDIR += py-pbkdf2
      SUBDIR += py-pbkdf2,python3
      SUBDIR += py-pefile
+     SUBDIR += py-pefile,python3
      SUBDIR += py-potr
      SUBDIR += py-potr,python3
      SUBDIR += py-rsa
