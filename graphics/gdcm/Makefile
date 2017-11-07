@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2017/10/07 09:44:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2017/11/07 21:06:44 kili Exp $
 
 COMMENT =			cross-platform DICOM implementation
 
 DISTNAME =			gdcm-2.8.3
+REVISION =			0
+
 SHARED_LIBS +=  gdcmCommon                0.0 # 2.8
 SHARED_LIBS +=  gdcmDICT                  0.0 # 2.8
 SHARED_LIBS +=  gdcmDSED                  0.0 # 2.8
@@ -27,6 +29,10 @@ PERMIT_PACKAGE_CDROM =		Yes
 MASTER_SITES =			${MASTER_SITE_SOURCEFORGE:=gdcm/}
 
 MODULES =			devel/cmake
+
+# c++-11
+COMPILER =			base-clang ports-gcc
+CXXFLAGS +=			-std=c++11
 
 WANTLIB += ${COMPILER_LIBCXX} c crypto expat json-c m openjp2
 WANTLIB += poppler ssl uuid xml2 z
