@@ -1,6 +1,6 @@
-$OpenBSD: patch-testsuite_tests_cabal_ghcpkg01_stdout,v 1.2 2015/09/19 07:42:57 kili Exp $
---- testsuite/tests/cabal/ghcpkg01.stdout.orig	Tue Dec 23 03:31:10 2014
-+++ testsuite/tests/cabal/ghcpkg01.stdout	Sun Aug  9 17:35:53 2015
+$OpenBSD: patch-testsuite_tests_cabal_ghcpkg01_stdout,v 1.3 2017/11/07 02:58:34 kili Exp $
+--- testsuite/tests/cabal/ghcpkg01.stdout.orig	Mon May 16 19:08:53 2016
++++ testsuite/tests/cabal/ghcpkg01.stdout	Wed Nov  2 11:07:59 2016
 @@ -15,6 +15,7 @@ description:
      A Test Package
  category: none
@@ -9,7 +9,7 @@ $OpenBSD: patch-testsuite_tests_cabal_ghcpkg01_stdout,v 1.2 2015/09/19 07:42:57 
  exposed: True
  exposed-modules:
      A
-@@ -40,6 +41,7 @@ description:
+@@ -41,6 +42,7 @@ description:
      A Test Package
  category: none
  author: simonmar@microsoft.com
@@ -17,7 +17,7 @@ $OpenBSD: patch-testsuite_tests_cabal_ghcpkg01_stdout,v 1.2 2015/09/19 07:42:57 
  exposed: True
  exposed-modules:
      A
-@@ -71,6 +73,7 @@ description:
+@@ -73,6 +75,7 @@ description:
      A Test Package (new version)
  category: none
  author: simonmar@microsoft.com
@@ -25,7 +25,7 @@ $OpenBSD: patch-testsuite_tests_cabal_ghcpkg01_stdout,v 1.2 2015/09/19 07:42:57 
  exposed: False
  exposed-modules:
      A
-@@ -96,6 +99,7 @@ description:
+@@ -99,6 +102,7 @@ description:
      A Test Package (new version)
  category: none
  author: simonmar@microsoft.com
@@ -33,7 +33,7 @@ $OpenBSD: patch-testsuite_tests_cabal_ghcpkg01_stdout,v 1.2 2015/09/19 07:42:57 
  exposed: False
  exposed-modules:
      A
-@@ -121,6 +125,7 @@ description:
+@@ -125,6 +129,7 @@ description:
      A Test Package
  category: none
  author: simonmar@microsoft.com
@@ -41,7 +41,7 @@ $OpenBSD: patch-testsuite_tests_cabal_ghcpkg01_stdout,v 1.2 2015/09/19 07:42:57 
  exposed: True
  exposed-modules:
      A
-@@ -153,6 +158,7 @@ description:
+@@ -158,6 +163,7 @@ description:
      A Test Package
  category: none
  author: simonmar@microsoft.com

@@ -1,8 +1,8 @@
-$OpenBSD: patch-testsuite_driver_testlib_py,v 1.7 2015/09/19 07:42:57 kili Exp $
---- testsuite/driver/testlib.py.orig	Tue Jul 21 15:52:50 2015
-+++ testsuite/driver/testlib.py	Sun Aug  9 17:35:53 2015
-@@ -1634,6 +1634,13 @@ def compare_outputs( kind, normaliser, expected_file, 
-     actual_raw = read_no_crs(actual_file)
+$OpenBSD: patch-testsuite_driver_testlib_py,v 1.8 2017/11/07 02:58:34 kili Exp $
+--- testsuite/driver/testlib.py.orig	Mon May 16 19:08:53 2016
++++ testsuite/driver/testlib.py	Wed Nov  2 11:19:10 2016
+@@ -1641,6 +1641,13 @@ def compare_outputs(way, kind, normaliser, expected_fi
+     actual_raw = read_no_crs(actual_path)
      actual_str = normaliser(actual_raw)
  
 +    # Strip OpenBSDs linker warnings about strcpy(3) & friends.
@@ -12,22 +12,22 @@ $OpenBSD: patch-testsuite_driver_testlib_py,v 1.7 2015/09/19 07:42:57 kili Exp $
 +        actual_str = re.sub('.*/libgmp\.so\.[0-9]*\.[0-9]*: warning: .* is .* misused, please use .*\n',
 +                            '', actual_str)
 +
-     if expected_str == actual_str:
+     # See Note [Output comparison].
+     if whitespace_normaliser(expected_str) == whitespace_normaliser(actual_str):
          return 1
-     else:
-@@ -1657,13 +1664,13 @@ def compare_outputs( kind, normaliser, expected_file, 
-         # This does mean that the diff might contain changes that
-         # would be normalised away.
-         if (config.verbose >= 1):
--            r = os.system( 'diff -uw ' + expected_file_for_diff + \
-+            r = os.system( 'diff -auw ' + expected_file_for_diff + \
-                                    ' ' + actual_file )
+@@ -1656,13 +1663,13 @@ def compare_outputs(way, kind, normaliser, expected_fi
+ 
+         if config.verbose >= 1 and _expect_pass(way):
+             # See Note [Output comparison].
+-            r = os.system('diff -uw {0} {1}'.format(expected_normalised_path,
++            r = os.system('diff -auw {0} {1}'.format(expected_normalised_path,
+                                                     actual_normalised_path))
  
              # If for some reason there were no non-whitespace differences,
              # then do a full diff
              if r == 0:
--                r = os.system( 'diff -u ' + expected_file_for_diff + \
-+                r = os.system( 'diff -au ' + expected_file_for_diff + \
-                                       ' ' + actual_file )
+-                r = os.system('diff -u {0} {1}'.format(expected_normalised_path,
++                r = os.system('diff -au {0} {1}'.format(expected_normalised_path,
+                                                        actual_normalised_path))
  
-         if config.accept:
+         if config.accept and (getTestOpts().expect == 'fail' or

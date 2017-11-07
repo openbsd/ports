@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.150 2017/11/06 19:15:05 kili Exp $
+# $OpenBSD: Makefile,v 1.151 2017/11/07 02:58:34 kili Exp $
 
 BROKEN =		save bulk builders from fallout
 
@@ -14,12 +14,11 @@ COMMENT =		compiler for the functional language Haskell
 NO_CCACHE =		Yes
 
 DISTNAME =		ghc-${MODGHC_VER}
-REVISION =		9
 CATEGORIES =		lang devel
 HOMEPAGE =		https://www.haskell.org/ghc/
 
 # Version of the precompiled binaries
-BIN_VER =		7.10.2.20170417
+BIN_VER =		7.10.3.20170417
 
 # Pull in lang/ghc to get MODGHC_VER and ONLY_FOR_ARCHS, which is maintained
 # in ghc.port.mk. lang/python needed for regression tests.
@@ -33,7 +32,7 @@ PERMIT_PACKAGE_CDROM =		Yes
 LIB_DEPENDS =		converters/libiconv
 
 BUILD_DEPENDS =		archivers/gtar \
-			textproc/docbook-xsl
+			textproc/py-sphinx 
 RUN_DEPENDS =
 
 # We can't use the wrapper script, because it then gets hardcoded into
@@ -51,8 +50,8 @@ DIST_SUBDIR =		ghc
 
 BINDISTFILE =		${BINDISTFILE-${MACHINE_ARCH}}
 
-DISTFILES =		ghc-${MODGHC_VER}b-src.tar.bz2 \
-			ghc-${MODGHC_VER}b-testsuite.tar.bz2 \
+DISTFILES =		ghc-${MODGHC_VER}-src.tar.xz \
+			ghc-${MODGHC_VER}-testsuite.tar.xz \
 			${BINDISTFILE}
 
 .for m in amd64 i386
@@ -61,42 +60,36 @@ BINDISTFILE-$m =	ghc-${BIN_VER}-$m-unknown-openbsd.tar.bz2:0 \
 SUPDISTFILES +=		${BINDISTFILE-$m}
 .endfor
 
-# Newest madness from the haskell world: packages are now stored in a
-# directory named after the package 'key', which is made out of an
-# abbreviation of the package name and the package version or whatever.
-# At this point, we can as well factor out package version numbers to
-# get smaller PLIST diffs for future updates.
-
+# Substvars for all libraries, assuming that ghc-bnot, ghc-boot-th and
+# ghci will always have the same version number as ghc.
 GHC_ITEMS = \
-	CABAL			1.22.5.0	3ux67khMI118y6VpwrFnXN \
-	ARRAY			0.5.1.0		67iodizgJQIIxYVTp4emlA \
-	BASE			4.8.2.0		HQfYBxpPvuw8OunzQu6JGM \
-	BINARY			0.7.5.0		3uXFWMoAGBg0xKP9MHKRwi \
-	BIN_PACKAGE_DB		0.0.0.0		JPOxOw4FLalDxRNtBqZ2ji \
-	BYTESTRING		0.10.6.0	6VWy06pWzJq9evDvK2d4w6 \
-	CONTAINERS		0.5.6.2		2C3ZI8RgPO2LBMidXKTvIU \
-	DEEPSEQ			1.4.1.1		6vMKxt5sPFR0XsbRWvvq59 \
-	DIRECTORY		1.2.2.0		0hFG6ZxK1nk4zsyOqbNHfm \
-	FILEPATH		1.4.0.0		Ey7a1in9roBAE8bUFJ5R9m \
-	GHC			7.10.3		0AG9TOjDEtx4Ji3wSwHOBe \
-	GHC_PRIM		0.4.0.0		8TmvWUcS1U1IKHT0levwg3 \
-	HASKELINE		0.7.2.1		GGvi737nHHfG6zm2y7Rimi \
-	HOOPL			3.10.0.2	FCWMV1gJiCi02IwN4CnRgk \
-	HPC			0.6.0.2		FUjQx3d1H3dEEtLFWv7hFw \
-	INTEGER_GMP		1.0.0.0		2aU3IZNMF9a7mQ0OzsZ0dS \
-	PRETTY			1.1.2.0		JItwetRppk1H5Uq3xbjDGC \
-	PROCESS			1.2.3.0		52AgREEfSrnJLlkGV9YZZJ \
-	TEMPLATE_HASKELL	2.10.0.0	GJPvtLC64aA4c1Jl10o2qt \
-	TERMINFO		0.4.0.1		6iVf4EBnOgfIaaOCLRs8jl \
-	TIME			1.5.0.1		FTheb6LSxyX1UABIbBXRfn \
-	TRANSFORMERS		0.4.2.0		GZTjP9K5WFq01xC9BAGQpF \
-	UNIX			2.7.1.0		KZL8h98IqDM57kQSPo1mKx \
-	XHTML			3000.2.1	0ACfOp3hebWD9jGWE4v4Gh
+	CABAL			1.24.0.0	\
+	ARRAY			0.5.1.1		\
+	BASE			4.9.0.0		\
+	BINARY			0.8.3.0		\
+	BYTESTRING		0.10.8.1	\
+	CONTAINERS		0.5.7.1		\
+	DEEPSEQ			1.4.2.0		\
+	DIRECTORY		1.2.6.2		\
+	FILEPATH		1.4.1.0		\
+	GHC			8.0.1		\
+	GHC_PRIM		0.5.0.0		\
+	HASKELINE		0.7.2.3		\
+	HOOPL			3.10.2.1	\
+	HPC			0.6.0.3		\
+	INTEGER_GMP		1.0.0.1		\
+	PRETTY			1.1.3.3		\
+	PROCESS			1.4.2.0		\
+	TEMPLATE_HASKELL	2.11.0.0	\
+	TERMINFO		0.4.0.2		\
+	TIME			1.6.0.1		\
+	TRANSFORMERS		0.5.2.0		\
+	UNIX			2.7.2.0		\
+	XHTML			3000.2.1
 
-.for _i _v _s in ${GHC_ITEMS}
+.for _i _v in ${GHC_ITEMS}
 ${_i}_VER =	${_v}
-${_i}_KEY =	${_s}
-SUBST_VARS +=	${_i}_VER ${_i}_KEY
+SUBST_VARS +=	${_i}_VER
 .endfor
 
 USE_GMAKE =		Yes
@@ -132,23 +125,7 @@ CONFIGURE_ENV +=	HOME=${PORTHOME}
 MAKE_FLAGS +=		StripLibraries=YES \
 			INSTALL_BIN_OPTS=-s \
 			HSCOLOUR_SRCS=NO \
-			BUILD_DOCBOOK_PDF=NO \
-			BUILD_DOCBOOK_PS=NO
-
-# Thank god that they're only building compilers and no nuclear
-# power plants. Note that we do not override CREATE_DATA, because
-# it's now used for *changing* permissions instead of initially
-# creating the files, and because we remove them anyway in post-install
-# (they are re-created during pkg_add).
-FAKE_FLAGS +=		CREATE_SCRIPT="${INSTALL_SCRIPT} /dev/null " \
-			INSTALL_DATA="${INSTALL_DATA} \$$1 \$$2 \$$3" \
-			INSTALL_DIR="${INSTALL_DATA_DIR} \$$1" \
-			INSTALL_DOC="${INSTALL_DATA} \$$1 \$$2 \$$3" \
-			INSTALL_HEADER="${INSTALL_DATA} \$$1 \$$2 \$$3" \
-			INSTALL_MAN="${INSTALL_MAN} \$$1 \$$2 \$$3" \
-			INSTALL_PROGRAM="${INSTALL_PROGRAM} \$$1 \$$2 \$$3" \
-			INSTALL_SCRIPT="${INSTALL_SCRIPT} \$$1 \$$2 \$$3" \
-			INSTALL_SHLIB="${INSTALL} ${INSTALL_COPY} -S -o ${LIBOWN} -g ${LIBGRP} -m ${LIBMODE} \$$1 \$$2 \$$3"
+			BUILD_SPHINX_PDF=NO
 
 # For mktexpk (via dvips when building the PostScript documentation):
 PORTHOME =		${WRKDIR}
@@ -242,10 +219,8 @@ bootstrap: patch
 	echo INTEGER_LIBRARY=integer-gmp2 >> ${WRKSRC}/mk/build.mk
 	echo SRC_CC_OPTS+=-g -O0 >> ${WRKSRC}/mk/build.mk
 	echo HADDOCK_DOCS=NO >> ${WRKSRC}/mk/build.mk
-	echo LATEX_DOCS=NO >> ${WRKSRC}/mk/build.mk
-	echo BUILD_DOCBOOK_HTML=NO >> ${WRKSRC}/mk/build.mk
-	echo BUILD_DOCBOOK_PDF=NO >> ${WRKSRC}/mk/build.mk
-	echo BUILD_DOCBOOK_PS=NO >> ${WRKSRC}/mk/build.mk
+	echo BUILD_SPHINX_HTML=NO >> ${WRKSRC}/mk/build.mk
+	echo BUILD_SPHINX_PDF=NO >> ${WRKSRC}/mk/build.mk
 	echo GhcWithSMP=NO >> ${WRKSRC}/mk/build.mk
 	echo LD_OPTS=-optl-static -optl-s >> ${WRKSRC}/mk/build.mk
 

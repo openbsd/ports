@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.16 2015/12/20 11:04:27 kili Exp $
---- configure.orig	Tue Dec  8 19:50:55 2015
-+++ configure	Fri Dec 11 20:03:40 2015
-@@ -4150,7 +4150,7 @@ $as_echo "$as_me: Building in-tree ghc-pwd" >&6;}
+$OpenBSD: patch-configure,v 1.17 2017/11/07 02:58:34 kili Exp $
+--- configure.orig	Tue May 17 18:36:51 2016
++++ configure	Wed Nov  2 11:07:58 2016
+@@ -4234,7 +4234,7 @@ $as_echo "$as_me: Building in-tree ghc-pwd" >&6;}
                  rm -rf utils/ghc-pwd/dist-boot
      mkdir  utils/ghc-pwd/dist-boot
                  GHC_LDFLAGS=`perl -e 'foreach (@ARGV) { print "-optl$_ " }' -- $LDFLAGS`
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure,v 1.16 2015/12/20 11:04:27 kili Exp $
      then
          as_fn_error $? "Building ghc-pwd failed" "$LINENO" 5
      fi
-@@ -7901,7 +7901,7 @@ $as_echo_n "checking for extra options to pass gcc whe
+@@ -8475,7 +8475,7 @@ $as_echo_n "checking for extra options to pass gcc whe
  if ${fp_cv_gcc_extra_opts+:} false; then :
    $as_echo_n "(cached) " >&6
  else

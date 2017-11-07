@@ -1,12 +1,12 @@
-$OpenBSD: patch-mk_config_mk_in,v 1.11 2015/09/19 07:42:57 kili Exp $
+$OpenBSD: patch-mk_config_mk_in,v 1.12 2017/11/07 02:58:34 kili Exp $
 
 Don't build shared libs for now.
 
---- mk/config.mk.in.orig	Tue Jul 21 15:52:50 2015
-+++ mk/config.mk.in	Sun Aug  9 17:43:48 2015
-@@ -97,7 +97,9 @@ endif
- # Some platforms don't support shared libraries
+--- mk/config.mk.in.orig	Mon May 16 19:08:53 2016
++++ mk/config.mk.in	Wed Nov  2 11:07:58 2016
+@@ -110,7 +110,9 @@ endif
  NoSharedLibsPlatformList = \
+ 	powerpc-ibm-aix \
  	x86_64-unknown-mingw32 \
 -	i386-unknown-mingw32
 +	i386-unknown-mingw32 \

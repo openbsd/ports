@@ -1,53 +1,18 @@
-$OpenBSD: patch-rts_Linker_c,v 1.11 2015/12/20 11:04:27 kili Exp $
-
-Workaround error: unknown symbol '__guard_local'.
-
-Disable check for .init_array sections, we don't have them.
-
---- rts/Linker.c.orig	Thu Nov 26 00:39:20 2015
-+++ rts/Linker.c	Fri Dec 11 20:03:40 2015
-@@ -860,6 +860,14 @@ typedef struct _RtsSymbolVal {
- #define RTS_DARWIN_ONLY_SYMBOLS
+$OpenBSD: patch-rts_Linker_c,v 1.12 2017/11/07 02:58:34 kili Exp $
+Index: rts/Linker.c
+--- rts/Linker.c.orig
++++ rts/Linker.c
+@@ -4439,6 +4439,13 @@ ocRunInit_PEi386 ( ObjectCode *oc )
+ #  include <machine/reloc.h>
+ #  define R_386_32    RELOC_32
+ #  define R_386_PC32  RELOC_PC32
++/* Crude hack alert!
++ * When SHN_XINDEX is defined, this code als assumes the existance of
++ * SHT_SYMTAB_SHNDX. which doesn't exist at the moment on OpenBSD.
++ */
++#  ifdef SHN_XINDEX
++#    undef SHN_XINDEX
++#  endif
  #endif
  
-+#if defined(openbsd_HOST_OS)
-+#define RTS_OPENBSD_ONLY_SYMBOLS                            \
-+     SymE_NeedsProto(__guard_local)                         \
-+     SymE_NeedsProto(__stack_smash_handler)
-+#else
-+#define RTS_OPENBSD_ONLY_SYMBOLS
-+#endif
-+
- #ifndef SMP
- # define MAIN_CAP_SYM SymI_HasProto(MainCapability)
- #else
-@@ -1481,6 +1489,7 @@ RTS_POSIX_ONLY_SYMBOLS
- RTS_MINGW_ONLY_SYMBOLS
- RTS_CYGWIN_ONLY_SYMBOLS
- RTS_DARWIN_ONLY_SYMBOLS
-+RTS_OPENBSD_ONLY_SYMBOLS
- RTS_LIBGCC_SYMBOLS
- RTS_LIBFFI_SYMBOLS
- #undef SymI_NeedsProto
-@@ -1525,6 +1534,7 @@ static RtsSymbolVal rtsSyms[] = {
-       RTS_MINGW_ONLY_SYMBOLS
-       RTS_CYGWIN_ONLY_SYMBOLS
-       RTS_DARWIN_ONLY_SYMBOLS
-+      RTS_OPENBSD_ONLY_SYMBOLS
-       RTS_LIBGCC_SYMBOLS
-       RTS_LIBFFI_SYMBOLS
- #if defined(darwin_HOST_OS) && defined(i386_HOST_ARCH)
-@@ -5318,11 +5328,13 @@ static int getSectionKind_ELF( Elf_Shdr *hdr, int *is_
-         return SECTIONKIND_CODE_OR_RODATA;
-     }
- 
-+#ifndef openbsd_HOST_OS  
-     if (hdr->sh_type == SHT_INIT_ARRAY
-         && (hdr->sh_flags & SHF_ALLOC) && (hdr->sh_flags & SHF_WRITE)) {
-        /* .init_array section */
-         return SECTIONKIND_INIT_ARRAY;
-     }
-+#endif
- 
-     if (hdr->sh_type == SHT_NOBITS
-         && (hdr->sh_flags & SHF_ALLOC) && (hdr->sh_flags & SHF_WRITE)) {
+ /* If elf.h doesn't define it */
