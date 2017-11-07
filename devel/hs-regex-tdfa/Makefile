@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2016/01/20 16:22:28 kili Exp $
+# $OpenBSD: Makefile,v 1.3 2017/11/07 22:19:20 kili Exp $
 
 COMMENT =		tagged DFA regex engine
 
 DISTNAME =		regex-tdfa-1.2.1
-REVISION =		0
+REVISION =		1
 CATEGORIES =		devel
 
 # BSD
@@ -13,7 +13,7 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	87OfGdSuv7s0CDlaylxxOU
+MODGHC_PACKAGE_KEY =	JKWpDBfLVpUH6amfqO8Va8
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
 
