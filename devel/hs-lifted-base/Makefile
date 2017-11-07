@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2016/01/20 16:22:26 kili Exp $
+# $OpenBSD: Makefile,v 1.8 2017/11/07 22:14:22 kili Exp $
 
 COMMENT =		lifted IO operations from the base library
 
 DISTNAME =		lifted-base-0.2.3.6
-REVISION =		0
+REVISION =		1
 CATEGORIES =		devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
@@ -15,7 +15,7 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	CmtNodhjsFtIf8rSjHsqyO
+MODGHC_PACKAGE_KEY =	DiCX83ndSBi8woj8jk4T8o
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
 
