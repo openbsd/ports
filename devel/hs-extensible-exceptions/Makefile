@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2016/01/20 16:22:25 kili Exp $
+# $OpenBSD: Makefile,v 1.6 2017/11/07 21:14:22 kili Exp $
 
 COMMENT =		extensible exceptions for Haskell
 
 DISTNAME =		extensible-exceptions-0.1.1.4
-REVISION =		3
+REVISION =		4
 CATEGORIES =		devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
@@ -15,6 +15,6 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	FEBYnjUcabpEXD3JqlYlJc
+MODGHC_PACKAGE_KEY =	3h0ykvvAO915cRhUyj3rRV
 
 .include <bsd.port.mk>
