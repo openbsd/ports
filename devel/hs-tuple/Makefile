@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2016/01/20 16:22:29 kili Exp $
+# $OpenBSD: Makefile,v 1.8 2017/11/07 22:23:42 kili Exp $
 
 COMMENT =		various functions on tuples
 
 DISTNAME =		tuple-0.2.0.1
-REVISION =		4
+REVISION =		5
 CATEGORIES =		devel
 
 # BSD3
@@ -13,7 +13,7 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	B4RYqDDJuFF8bAUvst5wdK
+MODGHC_PACKAGE_KEY =	ATo98tYVGmi2BVay1e4TH6
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
 RUN_DEPENDS =		devel/hs-OneTuple
