@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2016/01/29 20:28:09 kili Exp $
+# $OpenBSD: Makefile,v 1.4 2017/11/07 21:31:32 kili Exp $
 
 COMMENT =		half precision floating point
 
@@ -7,7 +7,7 @@ COMMENT =		half precision floating point
 PORTROACH =		ignore:1
 
 DISTNAME =		half-0.2.2.1
-REVISION =		0
+REVISION =		1
 CATEGORIES =		devel math
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
@@ -19,6 +19,6 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	95G55q5jL6d7kizMvUlRqm
+MODGHC_PACKAGE_KEY =	1XxH1kXnbwQ8TT8aKwR9aE
 
 .include <bsd.port.mk>
