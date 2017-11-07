@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2016/01/29 20:28:07 kili Exp $
+# $OpenBSD: Makefile,v 1.24 2017/11/07 21:00:11 kili Exp $
 
 COMMENT =		zlib bindings for Haskell
 
@@ -7,7 +7,7 @@ COMMENT =		zlib bindings for Haskell
 PORTROACH =		ignore:1
 
 DISTNAME =		zlib-0.5.4.2
-REVISION =		1
+REVISION =		2
 CATEGORIES =		archivers devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
@@ -19,6 +19,6 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	KhrLrSZSsjD5l0kgY5QHUE
+MODGHC_PACKAGE_KEY =	C2rXIM8kVg68AvfBaSbvMz
 
 .include <bsd.port.mk>
