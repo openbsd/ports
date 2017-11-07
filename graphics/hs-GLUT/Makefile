@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.24 2016/03/01 22:01:18 kili Exp $
+# $OpenBSD: Makefile,v 1.25 2017/11/07 22:33:38 kili Exp $
+
+BROKEN =		will be removed
 
 COMMENT =		Haskell binding for the OpenGL Utility Toolkit
-
-# Dependency of meta/haskell-platform.
-# Please do *not* update without thinking.
-PORTROACH =		ignore:1
 
 DISTNAME =		GLUT-2.7.0.3
 REVISION =		1
