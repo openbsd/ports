@@ -1,8 +1,8 @@
-$OpenBSD: patch-Makefile,v 1.73 2017/09/27 15:06:08 danj Exp $
+$OpenBSD: patch-Makefile,v 1.74 2017/11/08 09:17:14 benoit Exp $
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -2410,7 +2410,7 @@ export TEST_NO_MALLOC_CHECK
+@@ -2435,7 +2435,7 @@ export TEST_NO_MALLOC_CHECK
  
  ### Testing rules
  
