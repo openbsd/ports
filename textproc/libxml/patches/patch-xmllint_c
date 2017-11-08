@@ -1,7 +1,8 @@
-$OpenBSD: patch-xmllint_c,v 1.4 2007/07/05 16:05:09 steven Exp $
---- xmllint.c.orig	Tue Apr 17 14:28:16 2007
-+++ xmllint.c	Mon Jul  2 12:50:32 2007
-@@ -103,7 +103,7 @@
+$OpenBSD: patch-xmllint_c,v 1.5 2017/11/08 06:51:35 steven Exp $
+Index: xmllint.c
+--- xmllint.c.orig
++++ xmllint.c
+@@ -87,7 +87,7 @@
  #endif
  
  #ifndef XML_XML_DEFAULT_CATALOG
