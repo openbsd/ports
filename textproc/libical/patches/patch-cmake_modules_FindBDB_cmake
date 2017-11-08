@@ -1,0 +1,14 @@
+$OpenBSD: patch-cmake_modules_FindBDB_cmake,v 1.1 2017/11/08 05:35:31 ajacoutot Exp $
+
+Index: cmake/modules/FindBDB.cmake
+--- cmake/modules/FindBDB.cmake.orig
++++ cmake/modules/FindBDB.cmake
+@@ -19,7 +19,7 @@ endif()
+ find_path(
+   BDB_INCLUDE_DIR
+   NAMES db.h
+-  HINTS /usr/local/opt/db/include
++  HINTS ${LOCALBASE}/include/db4
+   DOC "Include directory for the Berkeley DB library"
+ )
+ mark_as_advanced(BDB_INCLUDE_DIR)

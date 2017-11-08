@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_libicalss_icalbdbsetimpl_h,v 1.1 2017/11/08 05:35:31 ajacoutot Exp $
+
+don't pick up /usr/include/db.h;
+
+Index: src/libicalss/icalbdbsetimpl.h
+--- src/libicalss/icalbdbsetimpl.h.orig
++++ src/libicalss/icalbdbsetimpl.h
+@@ -19,7 +19,7 @@
+ #define ICALBDBSETIMPL_H
+ 
+ #include "icalset.h"
+-#include <db.h>
++#include <db4/db.h>
+ 
+ /* This definition is in its own file so it can be kept out of the
+    main header file, but used by "friend classes" like icaldirset*/

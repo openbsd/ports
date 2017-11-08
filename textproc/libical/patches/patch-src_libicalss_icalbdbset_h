@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_libicalss_icalbdbset_h,v 1.1 2017/11/08 05:35:31 ajacoutot Exp $
+
+don't pick up /usr/include/db.h
+
+Index: src/libicalss/icalbdbset.h
+--- src/libicalss/icalbdbset.h.orig
++++ src/libicalss/icalbdbset.h
+@@ -21,7 +21,7 @@
+ #include "libical_icalss_export.h"
+ #include "icalset.h"
+ 
+-#include <db.h>
++#include <db4/db.h>
+ 
+ typedef struct icalbdbset_impl icalbdbset;
+ 

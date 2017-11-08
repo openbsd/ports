@@ -1,8 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.6 2016/04/26 10:24:46 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2017/11/08 05:35:31 ajacoutot Exp $
+@pkgpath textproc/libical
 include/libical/
 include/libical/ical.h
 include/libical/icalarray.h
 include/libical/icalattach.h
+include/libical/icalbdbset_cxx.h
 include/libical/icalcalendar.h
 include/libical/icalclassify.h
 include/libical/icalcluster.h
@@ -60,7 +62,8 @@ lib/cmake/LibIcal/LibIcalConfigVersion.cmake
 lib/cmake/LibIcal/LibIcalTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/LibIcal/LibIcalTargets.cmake
 lib/girepository-1.0/
-lib/girepository-1.0/libical-2.0.0.typelib
+lib/girepository-1.0/ICalGLib-3.0.typelib
+lib/girepository-1.0/libical-3.0.0.typelib
 lib/libical.a
 @lib lib/libical.so.${LIBical_VERSION}
 lib/libical_cxx.a
@@ -72,5 +75,4 @@ lib/libicalss_cxx.a
 lib/libicalvcal.a
 @lib lib/libicalvcal.so.${LIBicalvcal_VERSION}
 lib/pkgconfig/libical.pc
-share/gir-1.0/
-share/gir-1.0/libical-2.0.0.gir
+share/gir-1.0/libical-3.0.0.gir
