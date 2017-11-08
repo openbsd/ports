@@ -1,50 +1,34 @@
-# $OpenBSD: Makefile,v 1.90 2017/11/04 16:05:23 kili Exp $
+# $OpenBSD: Makefile,v 1.91 2017/11/08 18:30:24 kili Exp $
 
 COMMENT=	PDF viewer for X11
 
-DISTNAME=	xpdf-4.00
+DISTNAME=	xpdf-3.04
 CATEGORIES=	textproc x11
+EPOCH=		0
 
-MASTER_SITES=	https://www.xpdfreader.com/dl/
+MASTER_SITES=	ftp://ftp.foolabs.com/pub/xpdf/ \
+		http://mirror.ctan.org/support/xpdf/
 
-HOMEPAGE=	https://www.xpdfreader.com/
+HOMEPAGE=	http://www.foolabs.com/xpdf/
 
 # GPLv2 only or GPLv3 only or both (at our choice)
 PERMIT_PACKAGE_CDROM=	Yes
 
-MODULES=	devel/cmake \
-		X11/qt5
+LIB_DEPENDS+=	graphics/png x11/motif
+USE_GMAKE=	Yes
+CONFIGURE_STYLE=gnu
+CONFIGURE_ARGS=	--enable-multithreaded \
+		--without-Sgm-library \
+		--without-libpaper-library
+
+CONFIGURE_ENV=  CPPFLAGS='-I${X11BASE}/include/freetype2 -I${X11BASE}/include -I${LOCALBASE}/include -DLOCALBASE="\"${LOCALBASE}\""' \
+		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib -lm -lz"
+MAKE_ENV+=MOTIFLIB='-L${LOCALBASE}/lib -lXm'
 
 RUN_DEPENDS=	print/ghostscript/gnu-fonts
 
-# Add jpeg, png, tiff as rdep and bdep so cmake always pick them up and
-# xpdf is able to export to those formats. Not strictly needed for jpeg
-# and png, because they are pulled in by qt and its dependencies, but
-# better be explicit here.
-# In addtion, qtimageformats is required at runtime to let tiff export
-# work.
-RUN_DEPENDS +=	graphics/jpeg \
-		graphics/png \
-		graphics/tiff \
-		x11/qt5/qtimageformats
-
-BUILD_DEPENDS +=graphics/jpeg \
-		graphics/png \
-		graphics/tiff
-
-# Don't pick up libpaper -- the build currently fails to link against
-# it.
-CONFIGURE_ARGS +=	-DHAVE_PAPER_H=0
-
-# XXX
-# Doesn't work, neither with -DCMAKE_LIBRARY_PATH=${LOCALBASE}/lib nor
-# with CMAKE_LIBRARY_PATH=${LOCALBASE}/lib in the environment.
-# CONFIGURE_ARGS +=	-DXPDFWIDGET_PRINTING=true
-
-CXXFLAGS+=	-DLOCALBASE=\\\"${LOCALBASE}\\\"
-
-WANTLIB=	Qt5Core Qt5Gui Qt5Widgets freetype c m png pthread \
-		${COMPILER_LIBCXX} z
+WANTLIB=	ICE SM X11 Xext Xpm Xt freetype Xm \
+		c m png pthread ${COMPILER_LIBCXX} z
 
 NO_TEST=	Yes
 
@@ -53,9 +37,13 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/sample-xpdfrc \
 		${PREFIX}/share/examples/xpdf/xpdfrc
 # already in poppler-utils
-.for i in pdffonts pdfimages pdfinfo pdftohtml pdftoppm pdftops pdftotext
+.for i in pdffonts pdfimages pdfinfo pdftoppm pdftops pdftotext
 	rm ${PREFIX}/man/man1/$i.1
 	rm ${PREFIX}/bin/$i
 .endfor
+# forgotten in Makefile.in (there's also a pdfthtml, but it conflicts
+# with poppler-utils):
+	${INSTALL_PROGRAM} ${WRKBUILD}/xpdf/pdftopng ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/doc/pdftopng.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
