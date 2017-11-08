@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2017/08/24 09:31:35 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.14 2017/11/08 05:36:11 ajacoutot Exp $
 COMMENT =		accounting for KDE 4
 CATEGORIES =		productivity x11
 HOMEPAGE =		https://kmymoney.org/
 MAINTAINER =		Vadim Zhukov <zhuk@openbsd.org>
 VERSION =		4.8.0
 DISTNAME =		kmymoney-${VERSION}
-REVISION =		1
+REVISION =		2
 
 SHARED_LIBS =	kmm_kdchart				1.1
 SHARED_LIBS +=	kmm_mymoney				1.1
@@ -55,8 +55,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 LIB_DEPENDS =	devel/gwenhywfar>=4.13.1p3 \
 		devel/libofx>=0.9.4 \
 		productivity/aqbanking>=5.5.1p1 \
-		productivity/libalkimia,${MODKDE4_FLAVOR}>=5 \
-		textproc/libical
+		productivity/libalkimia,${MODKDE4_FLAVOR}>=5
 
 CONFIGURE_ARGS =	-DENABLE_KBANKING:Bool=Yes \
 			-DUSE_HTML_HANDBOOK:Bool=Yes \
