@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1030 2017/11/08 09:57:09 kirby Exp $
+# $OpenBSD: Makefile,v 1.1031 2017/11/08 14:10:54 fcambus Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -484,7 +484,6 @@
      SUBDIR += pidgin,gtkspell
      SUBDIR += pidgin-icb
      SUBDIR += pidgin-sipe
-     SUBDIR += pidgin-tlen
      SUBDIR += pidgin-window-merge
      SUBDIR += pktstat
      SUBDIR += plushs
