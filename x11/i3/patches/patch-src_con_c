@@ -1,0 +1,28 @@
+$OpenBSD: patch-src_con_c,v 1.20 2017/11/08 21:14:27 danj Exp $
+
+backport https://github.com/i3/i3/pull/2849/commits/c028f0cb173ebc4c7033c758c7f942adfbc224af
+and https://github.com/i3/i3/pull/2849/commits/26014ca1a22c1b862c782f4dfa3d40a5ab629627
+
+Index: src/con.c
+--- src/con.c.orig
++++ src/con.c
+@@ -1735,7 +1756,7 @@ void con_set_layout(Con *con, layout_t layout) {
+             con->workspace_layout = ws_layout;
+             DLOG("Setting layout to %d\n", layout);
+             con->layout = layout;
+-        } else if (layout == L_STACKED || layout == L_TABBED) {
++        } else if (layout == L_STACKED || layout == L_TABBED || layout == L_SPLITV || layout == L_SPLITH) {
+             DLOG("Creating new split container\n");
+             /* 1: create a new split container */
+             Con *new = con_new(NULL, NULL);
+@@ -1827,6 +1848,10 @@ void con_toggle_layout(Con *con, const char *toggle_mo
+                  * change to the opposite split layout. */
+                 if (parent->layout != L_SPLITH && parent->layout != L_SPLITV) {
+                     layout = parent->last_split_layout;
++                    /* In case last_split_layout was not initialized… */
++                    if (layout == L_DEFAULT) {
++                        layout = L_SPLITH;
++                    }
+                 } else {
+                     layout = (parent->layout == L_SPLITH) ? L_SPLITV : L_SPLITH;
+                 }
