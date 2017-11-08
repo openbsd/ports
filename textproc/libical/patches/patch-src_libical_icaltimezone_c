@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_libical_icaltimezone_c,v 1.4 2017/11/08 08:18:14 ajacoutot Exp $
+$OpenBSD: patch-src_libical_icaltimezone_c,v 1.5 2017/11/08 09:35:48 ajacoutot Exp $
 
-XXX SIGABRT; trying to lock an already locked mutex?
+https://github.com/libical/libical/issues/320
 
 From aade7e4ff5ca87cda1c0c6503c8f0ff211c66860 Mon Sep 17 00:00:00 2001
 From: Milan Crha <mcrha@redhat.com>
