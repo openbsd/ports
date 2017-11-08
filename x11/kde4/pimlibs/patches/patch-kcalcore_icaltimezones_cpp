@@ -1,7 +1,12 @@
-$OpenBSD: patch-kcalcore_icaltimezones_cpp,v 1.4 2014/07/09 20:03:30 zhuk Exp $
+$OpenBSD: patch-kcalcore_icaltimezones_cpp,v 1.5 2017/11/08 05:37:50 ajacoutot Exp $
+
 Allow UUID library to be found even if not in default search path.
---- kcalcore/icaltimezones.cpp.orig	Thu May  8 11:26:48 2014
-+++ kcalcore/icaltimezones.cpp	Sun May 18 20:22:24 2014
+
+Fix build with libical >= 3.0.0
+
+Index: kcalcore/icaltimezones.cpp
+--- kcalcore/icaltimezones.cpp.orig
++++ kcalcore/icaltimezones.cpp
 @@ -39,7 +39,7 @@ extern "C" {
  #include <icaltimezone.h>
  }
@@ -11,7 +16,24 @@ Allow UUID library to be found even if not in default search path.
  #include <uuid/uuid.h>
  #endif
  
-@@ -788,7 +788,7 @@ class ICalTimeZoneSourcePrivate (public)
+@@ -54,7 +54,7 @@ static QDateTime toQDateTime(const icaltimetype &t)
+ {
+     return QDateTime(QDate(t.year, t.month, t.day),
+                      QTime(t.hour, t.minute, t.second),
+-                     (t.is_utc ? Qt::UTC : Qt::LocalTime));
++                     (icaltime_is_utc(t) ? Qt::UTC : Qt::LocalTime));
+ }
+ 
+ // Maximum date for time zone data.
+@@ -81,7 +81,6 @@ static icaltimetype writeLocalICalDateTime(const QDate
+     t.second = local.time().second();
+     t.is_date = 0;
+     t.zone = 0;
+-    t.is_utc = 0;
+     return t;
+ }
+ 
+@@ -788,7 +787,7 @@ class ICalTimeZoneSourcePrivate (public)
                                         int &prevOffset, KTimeZone::Phase &);
      static QByteArray icalTzidPrefix;
  
@@ -20,7 +42,16 @@ Allow UUID library to be found even if not in default search path.
      static void parseTransitions(const MSSystemTime &date, const KTimeZone::Phase &phase,
                                   int prevOffset, QList<KTimeZone::Transition> &transitions);
  #endif
-@@ -980,7 +980,7 @@ ICalTimeZone ICalTimeZoneSource::parse(icalcomponent *
+@@ -886,7 +885,7 @@ ICalTimeZone ICalTimeZoneSource::parse(icalcomponent *
+         case ICAL_LASTMODIFIED_PROPERTY:
+         {
+             const icaltimetype t = icalproperty_get_lastmodified(p);
+-            if (t.is_utc) {
++            if (icaltime_is_utc(t)) {
+                 data->d->lastModified = toQDateTime(t);
+             } else {
+                 kDebug() << "LAST-MODIFIED not UTC";
+@@ -980,7 +979,7 @@ ICalTimeZone ICalTimeZoneSource::parse(icalcomponent *
      return ICalTimeZone(this, name, data);
  }
  
@@ -29,7 +60,7 @@ Allow UUID library to be found even if not in default search path.
  ICalTimeZone ICalTimeZoneSource::parse(MSTimeZone *tz, ICalTimeZones &zones)
  {
      const ICalTimeZone zone = parse(tz);
-@@ -1048,7 +1048,7 @@ ICalTimeZone ICalTimeZoneSource::parse(MSTimeZone *tz)
+@@ -1048,7 +1047,7 @@ ICalTimeZone ICalTimeZoneSource::parse(MSTimeZone *tz)
  
      return ICalTimeZone(this, name, idata);
  }
@@ -38,7 +69,7 @@ Allow UUID library to be found even if not in default search path.
  
  ICalTimeZone ICalTimeZoneSource::parse(const QString &name, const QStringList &tzList,
                                         ICalTimeZones &zones)
-@@ -1111,7 +1111,7 @@ ICalTimeZone ICalTimeZoneSource::parse(const QString &
+@@ -1111,7 +1110,7 @@ ICalTimeZone ICalTimeZoneSource::parse(const QString &
      return ICalTimeZone(this, name, idata);
  }
  
@@ -47,7 +78,7 @@ Allow UUID library to be found even if not in default search path.
  //@cond PRIVATE
  void ICalTimeZoneSourcePrivate::parseTransitions(const MSSystemTime &date,
          const KTimeZone::Phase &phase, int prevOffset,
-@@ -1165,7 +1165,7 @@ void ICalTimeZoneSourcePrivate::parseTransitions(const
+@@ -1165,7 +1164,7 @@ void ICalTimeZoneSourcePrivate::parseTransitions(const
      }
  }
  //@endcond
@@ -56,3 +87,28 @@ Allow UUID library to be found even if not in default search path.
  
  ICalTimeZone ICalTimeZoneSource::parse(icaltimezone *tz)
  {
+@@ -1259,7 +1258,7 @@ QList<QDateTime> ICalTimeZoneSourcePrivate::parsePhase
+     // Convert DTSTART to QDateTime, and from local time to UTC
+     const QDateTime localStart = toQDateTime(dtstart);     // local time
+     dtstart.second -= prevOffset;
+-    dtstart.is_utc = 1;
++    dtstart = icaltime_convert_to_zone(dtstart, icaltimezone_get_utc_timezone());
+     const QDateTime utcStart = toQDateTime(icaltime_normalize(dtstart));       // UTC
+ 
+     transitions += utcStart;
+@@ -1286,13 +1285,12 @@ QList<QDateTime> ICalTimeZoneSourcePrivate::parsePhase
+                     t.minute = dtstart.minute;
+                     t.second = dtstart.second;
+                     t.is_date = 0;
+-                    t.is_utc = 0;    // dtstart is in local time
+                 }
+                 // RFC2445 states that RDATE must be in local time,
+                 // but we support UTC as well to be safe.
+-                if (!t.is_utc) {
++                if (!icaltime_is_utc(t)) {
+                     t.second -= prevOffset;    // convert to UTC
+-                    t.is_utc = 1;
++                    t = icaltime_convert_to_zone(t, icaltimezone_get_utc_timezone());
+                     t = icaltime_normalize(t);
+                 }
+                 transitions += toQDateTime(t);
