@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.552 2017/11/08 16:18:38 jasper Exp $
+# $OpenBSD: Quirks.pm,v 1.553 2017/11/08 19:38:45 kili Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1148,6 +1148,11 @@ my $obsolete_reason = {
 	'dee' => 5,
 	'pidgin-tlen' => 6,
 	'pep8' => 5,
+	'hs-aeson' => 6,
+	'hs-GLURaw' => 6,
+	'hs-GLUT' => 6,
+	'hs-OpenGL' => 6,
+	'hs-OpenGLRaw' => 6,
 };
 
 # reasons for obsolete packages
