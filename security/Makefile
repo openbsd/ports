@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.475 2017/11/08 19:41:22 kili Exp $
+# $OpenBSD: Makefile,v 1.476 2017/11/08 20:23:28 rpointel Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -149,6 +149,7 @@
      SUBDIR += opensc
      SUBDIR += openssl
      SUBDIR += ophcrack
+     SUBDIR += origami
      SUBDIR += otpcalc
      SUBDIR += outguess
      SUBDIR += p0f
