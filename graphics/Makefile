@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.445 2017/10/23 21:39:49 bcallah Exp $
+# $OpenBSD: Makefile,v 1.446 2017/11/08 19:33:19 kili Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -94,10 +94,6 @@
      SUBDIR += gthumb
      SUBDIR += gtkam
      SUBDIR += gtkimageview
-     SUBDIR += hs-GLURaw
-     SUBDIR += hs-GLUT
-     SUBDIR += hs-OpenGL
-     SUBDIR += hs-OpenGLRaw
      SUBDIR += hugin
      SUBDIR += icoutils
      SUBDIR += iec16022
