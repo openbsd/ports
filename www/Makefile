@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.834 2017/11/01 20:43:07 danj Exp $
+# $OpenBSD: Makefile,v 1.835 2017/11/08 22:27:34 fcambus Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -104,6 +104,7 @@
      SUBDIR += mozplugger
      SUBDIR += netsurf
      SUBDIR += newsbeuter
+     SUBDIR += newsboat
      SUBDIR += nextcloud
      SUBDIR += nghttp2
      SUBDIR += nginx
