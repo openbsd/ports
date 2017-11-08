@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2017/09/25 17:12:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2017/11/08 16:14:54 jasper Exp $
 
 COMMENT=		unified interface for interacting with cloud services
 
@@ -27,7 +27,6 @@ RUN_DEPENDS=		sysutils/py-lockfile
 
 # XXX needs https://pypi.python.org/pypi/requests-mock
 TEST_DEPENDS=		devel/flake8 \
-			devel/pep8 \
 			devel/py-mock \
 			devel/py-test-runner \
 			sysutils/py-lockfile
