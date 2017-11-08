@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/02/01 14:24:02 kili Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/11/08 19:05:01 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/HS${DISTNAME}-${MODGHC_PACKAGE_KEY}.o
 lib/ghc/${DISTNAME}/Shelly/
@@ -38,6 +38,7 @@ share/doc/hs-${DISTNAME}/html/doc-index-I.html
 share/doc/hs-${DISTNAME}/html/doc-index-K.html
 share/doc/hs-${DISTNAME}/html/doc-index-L.html
 share/doc/hs-${DISTNAME}/html/doc-index-M.html
+share/doc/hs-${DISTNAME}/html/doc-index-N.html
 share/doc/hs-${DISTNAME}/html/doc-index-O.html
 share/doc/hs-${DISTNAME}/html/doc-index-P.html
 share/doc/hs-${DISTNAME}/html/doc-index-Q.html
