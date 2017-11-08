@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.58 2017/11/01 19:28:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.59 2017/11/08 08:25:23 ajacoutot Exp $
 
 COMMENT=	gobject-based plugins engine
 
 GNOME_PROJECT=	libpeas
 GNOME_VERSION=	1.22.0
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	devel
 
@@ -50,9 +50,6 @@ CONFIGURE_ARGS=	--disable-glade-catalog \
 BUILD_DEPENDS +=lang/python/${MODPY_DEFAULT_VERSION_2}
 RUN_DEPENDS +=	lang/python/${MODPY_DEFAULT_VERSION_2}
 WANTLIB +=	python${MODPY_DEFAULT_VERSION_2}
-CONFIGURE_ENV=	PYTHON2="${LOCALBASE}/bin/python${MODPY_DEFAULT_VERSION_2}" \
-		PYTHON3="${MODPY_BIN}" \
-		PYTHON3_CONFIG="${LOCALBASE}/bin/python${MODPY_DEFAULT_VERSION_3}-config"
 
 post-install:
 	rm ${PREFIX}/lib/libpeas-1.0/loaders/*.{a,la}
