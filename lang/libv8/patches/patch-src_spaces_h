@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_spaces_h,v 1.1 2017/11/08 18:06:24 sthen Exp $
+
+Index: src/spaces.h
+--- src/spaces.h.orig
++++ src/spaces.h
+@@ -464,7 +464,7 @@ class MemoryChunk {
+   }
+ 
+   bool TryParallelSweeping() {
+-    return NoBarrier_CompareAndSwap(&parallel_sweeping_, 1, 0) == 1;
++    return NoBarrier_CompareAndSwap(reinterpret_cast<Atomic32 *>(&parallel_sweeping_), 1, 0) == 1;
+   }
+ 
+   // Manage live byte count (count of bytes known to be live,
