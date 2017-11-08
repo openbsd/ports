@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_plugins_vcalendar_vcalendar_c,v 1.1 2017/11/08 05:37:00 ajacoutot Exp $
+
+From 73d48910780a64de0deec8fe59e87318618f049a Mon Sep 17 00:00:00 2001
+From: Michael Rasmussen <mir@datanom.net>
+Date: Fri, 14 Apr 2017 12:47:41 +0200
+Subject: [PATCH] Fix bug #3808: Replace icaltime_from_timet with icaltime_from_timet_with_zone
+
+Index: src/plugins/vcalendar/vcalendar.c
+--- src/plugins/vcalendar/vcalendar.c.orig
++++ src/plugins/vcalendar/vcalendar.c
+@@ -157,8 +157,8 @@ static void create_meeting_from_message_cb_ui(GtkActio
+ 			gchar *orgname = NULL;
+ 			gchar *summary = g_strdup(msginfo->subject ? msginfo->subject:_("no subject"));
+ 			gchar *description = file_read_stream_to_str(fp);
+-			gchar *dtstart = g_strdup(icaltime_as_ical_string(icaltime_from_timet(t, FALSE)));
+-			gchar *dtend = g_strdup(icaltime_as_ical_string(icaltime_from_timet(t2, FALSE)));
++			gchar *dtstart = g_strdup(icaltime_as_ical_string(icaltime_from_timet_with_zone(t, FALSE, NULL)));
++			gchar *dtend = g_strdup(icaltime_as_ical_string(icaltime_from_timet_with_zone(t2, FALSE, NULL)));
+ 			gchar *recur = NULL;
+ 			gchar *tzid = g_strdup("UTC");
+ 			gchar *url = NULL;
