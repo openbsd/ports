@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_gcal-utils_c,v 1.1 2017/11/08 06:16:54 ajacoutot Exp $
+
+Fix build with libical >= 3.0.0
+
+Index: src/gcal-utils.c
+--- src/gcal-utils.c.orig
++++ src/gcal-utils.c
+@@ -211,7 +211,6 @@ gcal_dup_icaltime (const icaltimetype *date)
+   new_date->hour = date->hour;
+   new_date->minute = date->minute;
+   new_date->second = date->second;
+-  new_date->is_utc = date->is_utc;
+   new_date->is_date = date->is_date;
+   new_date->is_daylight = date->is_daylight;
+   new_date->zone = date->zone;
