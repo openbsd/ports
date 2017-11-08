@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2017/06/28 16:09:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2017/11/08 13:47:32 jasper Exp $
 
 COMMENT=		dbus debugger
 
@@ -21,7 +21,7 @@ MODGNOME_TOOLS += yelp
 BUILD_DEPENDS=		x11/gtk+3
 
 # needed for tests
-BUILD_DEPENDS +=	devel/pep8
+BUILD_DEPENDS +=	devel/py-codestyle
 
 RUN_DEPENDS=		devel/py-gobject3
 
@@ -37,5 +37,6 @@ MODPY_ADJ_FILES=	src/d-feet.in \
 TEST_IS_INTERACTIVE=	x11
 
 CONFIGURE_STYLE=	gnu
+CONFIGURE_ENV +=	PEP8=${LOCALBASE}/bin/pycodestyle
 
 .include <bsd.port.mk>

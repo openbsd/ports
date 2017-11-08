@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_tests_Makefile_in,v 1.1 2017/11/08 13:47:32 jasper Exp $
+
+Use the value for PEP8 as determined by configure instead of hardcoding
+
+Index: src/tests/Makefile.in
+--- src/tests/Makefile.in.orig
++++ src/tests/Makefile.in
+@@ -816,7 +816,7 @@ uninstall-am:
+ 
+ 
+ check-local:
+-	pep8 --max-line-length=99 --ignore=E123,E402 $(PEP8_EXCLUDES) $(top_srcdir)/src/
++	@PEP8@ --max-line-length=99 --ignore=E123,E402 $(PEP8_EXCLUDES) $(top_srcdir)/src/
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
