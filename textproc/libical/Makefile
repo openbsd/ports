@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2017/11/08 08:18:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2017/11/08 10:04:53 ajacoutot Exp $
 
 COMMENT-main=		implementation of the iCalendar protocols and data units
 COMMENT-glib=		GObject wrapper for libical library
@@ -52,6 +52,12 @@ CONFIGURE_ARGS=		-DGOBJECT_INTROSPECTION=true \
 			-DICAL_GLIB_VAPI=true
 
 CFLAGS +=		-I${LOCALBASE}/include
+
+# needed for libical-glib tests
+MODULES +=		lang/python
+MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
+MODPY_RUNDEP=		No
+TEST_DEPENDS=		${MODPY_RUN_DEPENDS}
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/cmake/modules/FindBDB.cmake
