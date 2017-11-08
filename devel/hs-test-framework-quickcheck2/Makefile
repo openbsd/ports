@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2016/01/27 20:22:09 kili Exp $
+# $OpenBSD: Makefile,v 1.11 2017/11/08 18:56:50 kili Exp $
 
 COMMENT =		QuickCheck2 support for hs-test-framework
 
 DISTNAME =		test-framework-quickcheck2-0.3.0.3
-REVISION =		0
+REVISION =		1
 CATEGORIES =		devel
 
 HOMEPAGE =		http://batterseapower.github.com/test-framework/
@@ -17,7 +17,7 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	HNogubjHuWLIedKpGoRkev
+MODGHC_PACKAGE_KEY =	ISKCujwpde99sWTSDLd1qm
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
 RUN_DEPENDS =		devel/hs-QuickCheck>=2.4,<2.9 \
