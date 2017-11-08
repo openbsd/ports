@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2017/11/01 14:13:45 landry Exp $
+# $OpenBSD: Makefile,v 1.25 2017/11/08 07:10:43 landry Exp $
 
 COMMENT =		Qt Widgets for Technical Applications
 DISTNAME =		qwt-6.1.3
@@ -45,7 +45,7 @@ pre-configure:
 post-configure:
 # ensure CXXFLAGS/-std=c++11 is passed to all clang++ invocations,including the ones generating dependencies
 .if ${FLAVOR:Mqt5}
-	sed -i -e 's/@$$(CXX) -M/@$$(CXX) $$(CXXFLAGS) -M/' ${WRKSRC}/build-amd64/{src,designer}/Makefile
+	sed -i -e 's/@$$(CXX) -M/@$$(CXX) $$(CXXFLAGS) -M/' ${WRKBUILD}/{src,designer}/Makefile
 .endif
 
 post-install:
