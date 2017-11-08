@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2016/01/20 16:22:28 kili Exp $
+# $OpenBSD: Makefile,v 1.11 2017/11/08 18:52:43 kili Exp $
 
 COMMENT =		framework for running and organising tests
 
@@ -17,7 +17,7 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	3NFiLqktI2rJr0ddXUOneN
+MODGHC_PACKAGE_KEY =	3KmZLZEmFBG4XYJiggPSFQ
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
 RUN_DEPENDS =		net/hs-hostname>=1.0 \
@@ -26,7 +26,7 @@ RUN_DEPENDS =		net/hs-hostname>=1.0 \
 			devel/hs-ansi-wl-pprint>=0.5.1 \
 			devel/hs-extensible-exceptions>=0.1.1 \
 			devel/hs-old-locale>=1.0 \
-			devel/hs-random>=1.0 \
+			devel/hs-random>=1.0,<2 \
 			devel/hs-regex-posix>=0.72
 
 .include <bsd.port.mk>
