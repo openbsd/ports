@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2017/10/23 17:10:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2017/11/08 22:20:58 fcambus Exp $
 
 COMMENT=	dropping jewels game for X11
 
@@ -6,7 +6,7 @@ DISTNAME=	xjewel-1.6
 REVISION =	6
 CATEGORIES=	games
 
-MASTER_SITES=	ftp://ftp.warwick.ac.uk/pub/x11/
+MASTER_SITES=	${MASTER_SITE_XCONTRIB:S/contrib/R5contrib/}
 EXTRACT_SUFX=	.tar.z
 
 PERMIT_PACKAGE_CDROM=	Yes
