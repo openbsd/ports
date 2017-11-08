@@ -1,0 +1,11 @@
+$OpenBSD: patch-etc_icinga2_scripts_mail-service-notification_sh,v 1.3 2017/11/08 10:13:10 sthen Exp $
+
+Index: etc/icinga2/scripts/mail-service-notification.sh
+--- etc/icinga2/scripts/mail-service-notification.sh.orig
++++ etc/icinga2/scripts/mail-service-notification.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/ksh
+ #
+ # Copyright (C) 2012-2017 Icinga Development Team (https://www.icinga.com/)
+ 
