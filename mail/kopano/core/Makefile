@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2017/11/04 16:54:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2017/11/08 05:37:16 ajacoutot Exp $
 
 COMMENT-main=	MS Exchange groupware suite replacement
 COMMENT-mapi=	kopano MAPI extensions for PHP
 
 PKGNAME-main=	kopano-core-${V}.${BUILD}
 PKGNAME-mapi=	kopano-mapi-${V}.${BUILD}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	mail www productivity
 
