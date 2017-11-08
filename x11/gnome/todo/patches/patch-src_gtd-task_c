@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_gtd-task_c,v 1.1 2017/11/08 05:37:37 ajacoutot Exp $
+
+Fix build with libical >= 3.0.0
+
+Index: src/gtd-task.c
+--- src/gtd-task.c.orig
++++ src/gtd-task.c
+@@ -778,7 +778,6 @@ gtd_task_set_complete (GtdTask  *task,
+           dt->minute = g_date_time_get_minute (now);
+           dt->second = g_date_time_get_seconds (now);
+           dt->is_date = 0;
+-          dt->is_utc = 1;
+ 
+           /* convert timezone
+            *
