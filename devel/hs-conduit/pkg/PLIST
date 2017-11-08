@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2015/12/28 12:57:19 kili Exp $
+@comment $OpenBSD: PLIST,v 1.7 2017/11/08 19:03:15 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Data/
 lib/ghc/${DISTNAME}/Data/Conduit/
@@ -35,6 +35,7 @@ share/doc/hs-${DISTNAME}/html/Data-Conduit-List.html
 share/doc/hs-${DISTNAME}/html/Data-Conduit.html
 share/doc/hs-${DISTNAME}/html/conduit.haddock
 share/doc/hs-${DISTNAME}/html/doc-index-36.html
+share/doc/hs-${DISTNAME}/html/doc-index-46.html
 share/doc/hs-${DISTNAME}/html/doc-index-60.html
 share/doc/hs-${DISTNAME}/html/doc-index-61.html
 share/doc/hs-${DISTNAME}/html/doc-index-62.html
