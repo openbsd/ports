@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.357 2017/11/04 22:06:01 bentley Exp $
+# $OpenBSD: Makefile,v 1.358 2017/11/08 14:55:29 bcallah Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -128,6 +128,7 @@
      SUBDIR += heroes
      SUBDIR += hex-a-hop
      SUBDIR += hypatia
+     SUBDIR += hyperrogue
      SUBDIR += icebreaker
      SUBDIR += instead
      SUBDIR += instead-launcher
