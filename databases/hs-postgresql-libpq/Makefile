@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2016/01/20 16:15:45 kili Exp $
+# $OpenBSD: Makefile,v 1.15 2017/11/08 19:00:36 kili Exp $
 
 COMMENT =		low-level binding to libpq
 
 DISTNAME =		postgresql-libpq-0.9.0.1
-REVISION =		3
+REVISION =		4
 CATEGORIES =		databases
 
 HOMEPAGE =		https://github.com/lpsmith/postgresql-libpq
@@ -17,7 +17,7 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	EwTHhmhC3nP0atcLa1ITZZ
+MODGHC_PACKAGE_KEY =	Bbaszd4skMkAWBmqbk5JVg
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
 RUN_DEPENDS =		databases/postgresql
