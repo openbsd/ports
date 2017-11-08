@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.550 2017/11/07 18:16:50 jasper Exp $
+# $OpenBSD: Quirks.pm,v 1.551 2017/11/08 14:13:26 fcambus Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1146,6 +1146,7 @@ my $obsolete_reason = {
 	'haskell-platform' => 6,
 	'gnokii' => 0,
 	'dee' => 5,
+	'pidgin-tlen' => 6,
 };
 
 # reasons for obsolete packages
