@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2017/10/27 08:03:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.62 2017/11/08 16:15:15 jasper Exp $
 
 COMMENT-main=		Python bindings for GLib and GObject
 COMMENT-common=		common files for py-gobject3
@@ -59,8 +59,11 @@ CONFIGURE_STYLE=	gnu
 
 TEST_IS_INTERACTIVE=	x11
 TEST_DEPENDS=		${BUILD_PKGPATH} \
-			devel/pep8 \
+			devel/py-codestyle \
 			devel/pyflakes
+
+post-patch:
+	sed -i 's,pep8,pycodestyle,g' ${WRKSRC}/Makefile.in
 
 post-install:
 	rm ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/gi/*.{a,la}
