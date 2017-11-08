@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1667 2017/11/08 16:17:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.1668 2017/11/08 19:37:21 kili Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -197,7 +197,6 @@
      SUBDIR += hs-StateVar
      SUBDIR += hs-abstract-deque
      SUBDIR += hs-abstract-par
-     SUBDIR += hs-aeson
      SUBDIR += hs-ansi-terminal
      SUBDIR += hs-ansi-wl-pprint
      SUBDIR += hs-async
