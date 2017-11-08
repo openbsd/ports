@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2017/06/16 19:01:05 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.23 2017/11/08 11:45:13 jasper Exp $
 @bin bin/birdfont
 @bin bin/birdfont-autotrace
 @bin bin/birdfont-export
@@ -9,8 +9,6 @@
 @man man/man1/birdfont-export.1
 @man man/man1/birdfont-import.1
 @man man/man1/birdfont.1
-share/appdata/
-share/appdata/birdfont.appdata.xml
 share/applications/birdfont.desktop
 share/birdfont/
 share/birdfont/birdfont_window_icon.png
@@ -31,6 +29,8 @@ share/locale/it/LC_MESSAGES/birdfont.mo
 share/locale/nl/LC_MESSAGES/birdfont.mo
 share/locale/pt_BR/LC_MESSAGES/birdfont.mo
 share/locale/sv/LC_MESSAGES/birdfont.mo
+share/metainfo/
+share/metainfo/birdfont.appdata.xml
 share/mime/packages/birdfont.xml
 @exec %D/bin/update-mime-database %D/share/mime
 @unexec-delete %D/bin/update-mime-database %D/share/mime
