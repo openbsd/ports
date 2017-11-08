@@ -1,0 +1,15 @@
+$OpenBSD: patch-sysdeps_openbsd_prockernel_c,v 1.16 2017/11/08 15:26:12 jasper Exp $
+
+Index: sysdeps/openbsd/prockernel.c
+--- sysdeps/openbsd/prockernel.c.orig
++++ sysdeps/openbsd/prockernel.c
+@@ -69,6 +69,9 @@ glibtop_get_proc_kernel_p (glibtop *server,
+ 	/* It does not work for the swapper task. */
+ 	if (pid == 0) return;
+ 
++        /* XXXKVM */
++        return;
++
+ 	glibtop_suid_enter (server);
+ 
+ 	/* Get the process information */

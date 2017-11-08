@@ -1,0 +1,14 @@
+$OpenBSD: patch-sysdeps_openbsd_proctime_c,v 1.12 2017/11/08 15:26:12 jasper Exp $
+
+Index: sysdeps/openbsd/proctime.c
+--- sysdeps/openbsd/proctime.c.orig
++++ sysdeps/openbsd/proctime.c
+@@ -72,6 +72,8 @@ glibtop_get_proc_time_p (glibtop *server, glibtop_proc
+ 	/* It does not work for the swapper task. */
+ 	if (pid == 0) return;
+ 
++        /* XXXKVM */
++        return;
+ 
+ 	/* Get the process information */
+ 	pinfo = kvm_getprocs (server->machine->kd, KERN_PROC_PID, pid,

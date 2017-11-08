@@ -1,0 +1,15 @@
+$OpenBSD: patch-sysdeps_openbsd_sem_limits_c,v 1.1 2017/11/08 15:26:12 jasper Exp $
+
+Index: sysdeps/openbsd/sem_limits.c
+--- sysdeps/openbsd/sem_limits.c.orig
++++ sysdeps/openbsd/sem_limits.c
+@@ -56,6 +56,9 @@ static struct nlist nlst [] = {
+ void
+ _glibtop_init_sem_limits_p (glibtop *server)
+ {
++	/* XXXKVM */
++	return;
++
+ 	if (kvm_nlist (server->machine->kd, nlst) < 0) {
+ 		glibtop_warn_io_r (server, "kvm_nlist (sem_limits)");
+ 		return;

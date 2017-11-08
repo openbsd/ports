@@ -1,11 +1,22 @@
-$OpenBSD: patch-sysdeps_openbsd_procmem_c,v 1.9 2017/04/17 09:46:45 espie Exp $
---- sysdeps/openbsd/procmem.c.orig	Sun Apr 16 14:05:33 2017
-+++ sysdeps/openbsd/procmem.c	Sun Apr 16 14:17:23 2017
+$OpenBSD: patch-sysdeps_openbsd_procmem_c,v 1.10 2017/11/08 15:26:12 jasper Exp $
+Index: sysdeps/openbsd/procmem.c
+--- sysdeps/openbsd/procmem.c.orig
++++ sysdeps/openbsd/procmem.c
 @@ -42,6 +42,7 @@
  /* XXX until uvm gets cleaned up */
  #include <sys/mutex.h>
  typedef int boolean_t;
-+#define RBT_PROTOTYPE(a, b, c, d)	extern int nope
++#define RBT_PROTOTYPE(a, b, c, d)     extern int nope
  #include <uvm/uvm.h>
  
  /* Fixme ... */
+@@ -111,6 +112,9 @@ glibtop_get_proc_mem_p (glibtop *server, glibtop_proc_
+ 
+ 	/* It does not work for the swapper task. */
+ 	if (pid == 0) return;
++
++        /* XXXKVM */
++        return;
+ 
+ 	/* Get the process data */
+ 	pinfo = kvm_getprocs (server->machine->kd, KERN_PROC_PID, pid,

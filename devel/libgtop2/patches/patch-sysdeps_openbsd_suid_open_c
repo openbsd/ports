@@ -1,0 +1,22 @@
+$OpenBSD: patch-sysdeps_openbsd_suid_open_c,v 1.7 2017/11/08 15:26:12 jasper Exp $
+
+Index: sysdeps/openbsd/suid_open.c
+--- sysdeps/openbsd/suid_open.c.orig
++++ sysdeps/openbsd/suid_open.c
+@@ -68,12 +68,14 @@ glibtop_open_p (glibtop *server, const char *program_n
+ 	server->machine->euid = geteuid ();
+ 	server->machine->gid = getgid ();
+ 	server->machine->egid = getegid ();
++/* XXXKVM */
++#if 0
+ 	/* Setup machine-specific data */
+ 	server->machine->kd = kvm_openfiles (NULL, NULL, NULL, O_RDONLY, errbuf);
+ 
+ 	if (server->machine->kd == NULL)
+-		glibtop_error_io_r (server, "kvm_open");
+-
++		glibtop_error_io_r (server, "kvm_openfiles");
++#endif
+ 	/* Drop priviledges. */
+ 
+ 	if (setreuid (server->machine->euid, server->machine->uid))

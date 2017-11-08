@@ -1,0 +1,15 @@
+$OpenBSD: patch-sysdeps_openbsd_shm_limits_c,v 1.1 2017/11/08 15:26:12 jasper Exp $
+
+Index: sysdeps/openbsd/shm_limits.c
+--- sysdeps/openbsd/shm_limits.c.orig
++++ sysdeps/openbsd/shm_limits.c
+@@ -50,6 +50,9 @@ static struct nlist nlst [] = {
+ void
+ _glibtop_init_shm_limits_p (glibtop *server)
+ {
++	/* XXXKVM */
++	return;
++
+ 	if (kvm_nlist (server->machine->kd, nlst) < 0) {
+ 		glibtop_warn_io_r (server, "kvm_nlist (shm_limits)");
+ 		return;

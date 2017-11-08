@@ -1,0 +1,15 @@
+$OpenBSD: patch-sysdeps_openbsd_proclist_c,v 1.6 2017/11/08 15:26:12 jasper Exp $
+
+Index: sysdeps/openbsd/proclist.c
+--- sysdeps/openbsd/proclist.c.orig
++++ sysdeps/openbsd/proclist.c
+@@ -69,6 +69,9 @@ glibtop_get_proclist_p (glibtop *server, glibtop_procl
+ 
+ 	memset (buf, 0, sizeof (glibtop_proclist));
+ 
++        /* XXXKVM */
++        return NULL;
++
+ 	which = (int)(real_which & GLIBTOP_KERN_PROC_MASK);
+ 
+ 	/* Get the process data */

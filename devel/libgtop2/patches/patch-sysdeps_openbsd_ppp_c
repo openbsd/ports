@@ -1,0 +1,25 @@
+$OpenBSD: patch-sysdeps_openbsd_ppp_c,v 1.1 2017/11/08 15:26:12 jasper Exp $
+
+Index: sysdeps/openbsd/ppp.c
+--- sysdeps/openbsd/ppp.c.orig
++++ sysdeps/openbsd/ppp.c
+@@ -68,6 +68,9 @@ static struct nlist nlst [] = {
+ void
+ _glibtop_init_ppp_p (glibtop *server)
+ {
++	/* XXXKVM */
++	return;
++
+ #ifdef HAVE_I4B
+ #ifdef HAVE_I4B_ACCT
+ 	server->sysdeps.ppp = _glibtop_sysdeps_ppp |
+@@ -97,6 +100,9 @@ glibtop_get_ppp_p (glibtop *server, glibtop_ppp *buf, 
+ 	glibtop_init_p (server, (1L << GLIBTOP_SYSDEPS_PPP), 0);
+ 
+ 	memset (buf, 0, sizeof (glibtop_ppp));
++
++	/* XXXKVM */
++	return;
+ 
+ 	if (kvm_read (server->machine->kd, nlst [0].n_value,
+ 		      &data, sizeof (data)) != sizeof (data))
