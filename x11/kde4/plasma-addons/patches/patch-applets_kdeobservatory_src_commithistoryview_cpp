@@ -1,0 +1,18 @@
+$OpenBSD: patch-applets_kdeobservatory_src_commithistoryview_cpp,v 1.1 2017/11/09 18:37:08 landry Exp $
+
+Fix build with qwt6
+
+Index: applets/kdeobservatory/src/commithistoryview.cpp
+--- applets/kdeobservatory/src/commithistoryview.cpp.orig
++++ applets/kdeobservatory/src/commithistoryview.cpp
+@@ -143,8 +143,8 @@ void CommitHistoryView::updateViews(const Plasma::Data
+ 
+         QwtPlotGrid *grid = new QwtPlotGrid;
+         grid->enableXMin(true);
+-        grid->setMajPen(QPen(Qt::white, 0, Qt::DotLine));
+-        grid->setMinPen(QPen(Qt::NoPen));
++        grid->setMajorPen(QPen(Qt::white, 0, Qt::DotLine));
++        grid->setMinorPen(QPen(Qt::NoPen));
+         grid->attach(plot);
+ 
+         proxy->setWidget(plot);

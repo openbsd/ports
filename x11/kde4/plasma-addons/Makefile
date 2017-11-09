@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2017/07/27 11:57:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2017/11/09 18:37:08 landry Exp $
 
 COMMENT =	extra KDE plasmoids
 DISTNAME =	kdeplasma-addons-${MODKDE4_VERSION}
-REVISION =	4
+REVISION =	5
 
 SHARED_LIBS =	lancelot-datamodels		51.1 # 1.7
 SHARED_LIBS +=	lancelot			51.1 # 1.9
@@ -55,7 +55,7 @@ LIB_DEPENDS =	devel/qjson \
 		security/qca \
 		security/qoauth \
 		x11/dbusmenu-qt \
-		x11/qwt \
+		qwt-*-!qt5:x11/qwt \
 		${MODKDE4_DEP_DIR}/libkexiv2>=${MODKDE4_DEP_VERSION} \
 		${MODKDE4_DEP_DIR}/marble>=${MODKDE4_DEP_VERSION}
 
