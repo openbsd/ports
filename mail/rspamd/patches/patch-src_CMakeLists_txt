@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_CMakeLists_txt,v 1.6 2017/08/20 10:11:14 jasper Exp $
+$OpenBSD: patch-src_CMakeLists_txt,v 1.7 2017/11/09 21:51:05 sthen Exp $
 Index: src/CMakeLists.txt
---- src/CMakeLists.txt.orig
-+++ src/CMakeLists.txt
+--- src/CMakeLists.txt.orig	Sun Oct 22 12:16:54 2017
++++ src/CMakeLists.txt	Tue Nov  7 21:02:29 2017
 @@ -163,9 +163,9 @@ ENDIF()
  ADD_EXECUTABLE(rspamd ${RSPAMDSRC} ${CMAKE_CURRENT_BINARY_DIR}/workers.c)
  SET_TARGET_PROPERTIES(rspamd PROPERTIES LINKER_LANGUAGE C)

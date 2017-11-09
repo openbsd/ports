@@ -1,11 +1,11 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.11 2017/06/29 12:00:38 landry Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.12 2017/11/09 21:51:05 sthen Exp $
 
 don't pick up libevent2 from ports, otherwise rspamd links against
 both libevent from base *and* libevent2
 
 Index: CMakeLists.txt
---- CMakeLists.txt.orig
-+++ CMakeLists.txt
+--- CMakeLists.txt.orig	Sun Oct 22 12:16:54 2017
++++ CMakeLists.txt	Tue Nov  7 21:02:29 2017
 @@ -530,14 +530,14 @@ SET(POE_LOOP "Loop::IO_Poll")
  SET(TAR "tar")
  
