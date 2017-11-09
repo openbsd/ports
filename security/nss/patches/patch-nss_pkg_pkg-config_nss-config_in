@@ -1,0 +1,20 @@
+$OpenBSD: patch-nss_pkg_pkg-config_nss-config_in,v 1.1 2017/11/09 18:45:24 landry Exp $
+
+Index: nss/pkg/pkg-config/nss-config.in
+--- nss/pkg/pkg-config/nss-config.in.orig
++++ nss/pkg/pkg-config/nss-config.in
+@@ -1,10 +1,10 @@
+ #!/bin/sh
+ 
+-prefix=@prefix@
++prefix=${TRUEPREFIX}
+ 
+-major_version=@MOD_MAJOR_VERSION@
+-minor_version=@MOD_MINOR_VERSION@
+-patch_version=@MOD_PATCH_VERSION@
++major_version=$(awk '/NSS_VMAJOR/ {print $3}' ${TRUEPREFIX}/include/nss/nss.h)
++minor_version=$(awk '/NSS_VMINOR/ {print $3}' ${TRUEPREFIX}/include/nss/nss.h)
++patch_version=$(awk '/NSS_VPATCH/ {print $3}' ${TRUEPREFIX}/include/nss/nss.h)
+ 
+ usage()
+ {

@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.80 2017/09/27 06:45:19 landry Exp $
+# $OpenBSD: Makefile,v 1.81 2017/11/09 18:45:24 landry Exp $
 
 COMMENT=		libraries to support development of security-enabled apps
 
 VERSION=		3.33
+NSPR_VERSION=		4.17
 DISTNAME=		nss-${VERSION}
+REVISION=		0
 
 SO_VERSION=		49.1
 .for _lib in freebl3 nss3 nssckbi nssdbm3 nssutil3 smime3 softokn3 ssl3
@@ -21,7 +23,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 MASTER_SITES=		https://ftp.mozilla.org/pub/mozilla.org/security/nss/releases/${DISTNAME:U:C/[-.]/_/g}_RTM/src/
 
 LIB_DEPENDS=		databases/sqlite3 \
-			devel/nspr>=4.12
+			devel/nspr>=${NSPR_VERSION}
 WANTLIB += c pthread z nspr4 plc4 plds4 sqlite3>=22
 
 MAKE_ENV=		BUILD_OPT=1 \
@@ -42,7 +44,7 @@ NSSDIST=		${WRKDIST}/dist
 NSSOBJ=			${NSSDIST}/OpenBSD`uname -r`${OBJ64}_OPT.OBJ
 
 ALL_TARGET=		nss_build_all
-SUBST_VARS +=		VERSION
+SUBST_VARS +=		VERSION NSPR_VERSION
 
 # Don't forget to sync these with http://wiki.mozilla.org/NSS:ToolsToShip
 MAIN_TOOLS=		certutil modutil pk12util signtool ssltap crlutil \
@@ -55,11 +57,10 @@ do-install:
 	${INSTALL_DATA} ${NSSOBJ}/lib/*.so.${SO_VERSION} ${PREFIX}/lib/
 	${INSTALL_DATA} ${NSSOBJ}/lib/{libcrmf.a,*.chk} ${PREFIX}/lib/
 	cd ${NSSOBJ}/bin && ${INSTALL_PROGRAM} ${MAIN_TOOLS} ${PREFIX}/bin/
-	${SUBST_CMD} -m 0644 -c ${FILESDIR}/nss.pc \
-		${PREFIX}/lib/pkgconfig/nss.pc \
-		${FILESDIR}/nss-config ${PREFIX}/bin/nss-config
-	chown ${BINOWN}:${BINGRP} ${PREFIX}/{bin/nss-config,lib/pkgconfig/nss.pc}
-	chmod +x ${PREFIX}/bin/nss-config
+	${SUBST_CMD} -m 644 -o ${BINOWN} -g ${BINGRP} \
+		-c ${WRKSRC}/pkg/pkg-config/nss.pc.in ${PREFIX}/lib/pkgconfig/nss.pc
+	${SUBST_CMD} -m ${BINMODE} -o ${BINOWN} -g ${BINGRP} \
+		-c ${WRKSRC}/pkg/pkg-config/nss-config.in ${PREFIX}/bin/nss-config
 
 do-test:
 	cd ${WRKSRC}/tests && ${SETENV} ${MAKE_ENV} \
