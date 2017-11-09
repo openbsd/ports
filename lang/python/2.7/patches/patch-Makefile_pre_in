@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile_pre_in,v 1.11 2017/11/05 06:33:45 jca Exp $
+$OpenBSD: patch-Makefile_pre_in,v 1.12 2017/11/09 10:05:14 jca Exp $
 Index: Makefile.pre.in
 --- Makefile.pre.in.orig
 +++ Makefile.pre.in
@@ -11,3 +11,12 @@ Index: Makefile.pre.in
  
  # This rule is here for OPENSTEP/Rhapsody/MacOSX. It builds a temporary
  # minimal framework (not including the Lib directory and such) in the current
+@@ -1138,7 +1138,7 @@ libinstall:	build_all $(srcdir)/Lib/$(PLATDIR) $(srcdi
+ 		$(PYTHON_FOR_BUILD) -m lib2to3.pgen2.driver $(DESTDIR)$(LIBDEST)/lib2to3/PatternGrammar.txt
+ 
+ # Create the PLATDIR source directory, if one wasn't distributed..
+-$(srcdir)/Lib/$(PLATDIR):
++$(srcdir)/Lib/$(PLATDIR): pybuilddir.txt
+ 	mkdir $(srcdir)/Lib/$(PLATDIR)
+ 	cp $(srcdir)/Lib/plat-generic/regen $(srcdir)/Lib/$(PLATDIR)/regen
+ 	export PATH; PATH="`pwd`:$$PATH"; \
