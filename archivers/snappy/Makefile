@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2017/07/26 22:45:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2017/11/09 15:07:08 jasper Exp $
 
 COMMENT =	fast compression/decompression library
 
-GH_TAGNAME =	1.1.6
+GH_TAGNAME =	1.1.7
 GH_PROJECT =	snappy
 GH_ACCOUNT =	google
-REVISION =	0
 
 SHARED_LIBS =	snappy	0.0	# 4.1
 
@@ -18,20 +17,12 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB +=		m ${COMPILER_LIBCXX}
 
-BUILD_DEPENDS=          ${MODGNU_AUTOCONF_DEPENDS} \
-                        ${MODGNU_AUTOMAKE_DEPENDS} \
-                        devel/libtool
-# XXX Depends on libtool macros
+MODULES =		devel/cmake
 
-USE_GMAKE =		Yes
-AUTOMAKE_VERSION =	1.14
-AUTOCONF_VERSION =	2.69
-CONFIGURE_STYLE = 	autoconf no-autoheader
+CONFIGURE_ARGS +=	-DBUILD_SHARED_LIBS=ON \
+			-DSNAPPY_BUILD_TESTS=OFF
 
-CONFIGURE_ARGS += --disable-gtest
-
-post-patch:
-	cd ${WRKBUILD} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} ./autogen.sh
+# Requires gtest to be linked in
+NO_TEST =		Yes
 
 .include <bsd.port.mk>

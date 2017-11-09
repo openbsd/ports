@@ -1,17 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.2 2017/07/26 19:20:12 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2017/11/09 15:07:08 jasper Exp $
 include/snappy-c.h
 include/snappy-sinksource.h
 include/snappy-stubs-public.h
 include/snappy.h
-lib/libsnappy.a
-lib/libsnappy.la
+lib/cmake/
+lib/cmake/Snappy/
+lib/cmake/Snappy/SnappyConfig.cmake
+lib/cmake/Snappy/SnappyConfigVersion.cmake
+lib/cmake/Snappy/SnappyTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/Snappy/SnappyTargets.cmake
 @lib lib/libsnappy.so.${LIBsnappy_VERSION}
-lib/pkgconfig/snappy.pc
-share/doc/snappy/
-share/doc/snappy/COPYING
-share/doc/snappy/ChangeLog
-share/doc/snappy/INSTALL
-share/doc/snappy/NEWS
-share/doc/snappy/README
-share/doc/snappy/format_description.txt
-share/doc/snappy/framing_format.txt
