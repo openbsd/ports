@@ -1,20 +1,20 @@
-# $OpenBSD: Makefile,v 1.23 2014/11/05 11:43:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2017/11/09 11:11:10 bentley Exp $
 
 COMMENT =	distributed version control system by Canonical
 
 MODPY_EGG_VERSION = 2.4.2
 DISTNAME =	bzr-${MODPY_EGG_VERSION}
 CATEGORIES =	devel
-REVISION =	0
+REVISION =	1
 
-HOMEPAGE =	http://bazaar-vcs.org/
+HOMEPAGE =	https://bazaar.canonical.com/
 
 # GPL 
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += ${MODPY_WANTLIB} pthread
 
-MASTER_SITES =	http://launchpad.net/bzr/${MODPY_EGG_VERSION:C/..$//}/${MODPY_EGG_VERSION}/+download/
+MASTER_SITES =	https://launchpad.net/bzr/${MODPY_EGG_VERSION:C/..$//}/${MODPY_EGG_VERSION}/+download/
 
 MODULES =	lang/python
 
