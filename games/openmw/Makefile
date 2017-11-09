@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2017/08/06 09:39:56 pascal Exp $
+# $OpenBSD: Makefile,v 1.12 2017/11/09 16:36:55 pascal Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 
@@ -6,6 +6,7 @@ COMMENT =		open source implementation of TES III: Morrowind
 
 V =			0.42.0
 DISTNAME =		openmw-$V
+REVISION =		0
 
 CATEGORIES =		games
 
@@ -16,18 +17,18 @@ MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 # GPLv3 / custom BSD-like font license / DejaVu license
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += BulletCollision GL LinearMath MyGUIEngine OpenThreads
-WANTLIB += QtGui QtNetwork QtOpenGL SDL2 avcodec avformat avutil
-WANTLIB += boost_filesystem-mt boost_program_options-mt boost_system-mt
-WANTLIB += c m openal osg osgAnimation
-WANTLIB += osgDB osgFX osgGA osgParticle osgText osgUtil
-WANTLIB += osgViewer pthread swresample swscale unshield ${COMPILER_LIBCXX}
+WANTLIB += ${COMPILER_LIBCXX} BulletCollision GL LinearMath MyGUIEngine
+WANTLIB += OpenThreads Qt5Core Qt5Gui Qt5Network Qt5OpenGL Qt5Widgets
+WANTLIB += SDL2 avcodec avformat avutil boost_filesystem-mt boost_program_options-mt
+WANTLIB += boost_system-mt c m openal osg osgAnimation osgDB osgFX
+WANTLIB += osgGA osgParticle osgText osgUtil osgViewer swresample
+WANTLIB += swscale unshield
 
 GH_ACCOUNT =		OpenMW
 GH_PROJECT =		openmw
 GH_TAGNAME =		openmw-$V
 
-MODULES =		devel/cmake x11/qt4
+MODULES =		devel/cmake x11/qt5
 COMPILER =		gcc
 BUILD_DEPENDS = 	sysutils/e2fsprogs
 LIB_DEPENDS =		audio/openal \
@@ -45,7 +46,9 @@ CONFIGURE_ARGS += 	-DBINDIR=${LOCALBASE}/bin \
 			-DGLOBAL_CONFIG_PATH="${SYSCONFDIR}" \
 			-DCMAKE_EXE_LINKER_FLAGS="-L${X11BASE}/lib" \
 			-DMORROWIND_DATA_FILES="${LOCALBASE}/share/openmw/data"\
-			-DOPENMW_RESOURCE_FILES="${LOCALBASE}/share/openmw/resources"
+			-DOPENMW_RESOURCE_FILES="${LOCALBASE}/share/openmw/resources" \
+			-DDESIRED_QT_VERSION=5 \
+			-DCMAKE_PREFIX_PATH="${LOCALBASE}/lib/qt5/cmake"
 
 NO_TEST =		Yes
 
