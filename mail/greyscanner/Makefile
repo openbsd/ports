@@ -1,17 +1,18 @@
-# $OpenBSD: Makefile,v 1.9 2013/12/05 00:27:50 jim Exp $
+# $OpenBSD: Makefile,v 1.10 2017/11/09 12:14:12 bentley Exp $
 
 COMMENT =	greytrapping daemon to complement OpenBSD spamd
 
 DISTNAME =	greyscanner-1.02
 CATEGORIES =	mail
-HOMEPAGE =	https://bitbucket.org/bonetruck/greyscanner/
+HOMEPAGE =	https://bitbucket.org/jimrazmus/greyscanner/
+REVISION =	0
 
 MAINTAINER =	Jim Razmus II <jim@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =	https://bitbucket.org/bonetruck/greyscanner/downloads/
+MASTER_SITES =	https://bitbucket.org/jimrazmus/greyscanner/downloads/
 
 RUN_DEPENDS =	mail/p5-Email-Valid \
 		net/p5-Net-DNS
