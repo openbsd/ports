@@ -1,0 +1,15 @@
+$OpenBSD: patch-data_gnome-initial-setup-copy-worker_desktop_in_in,v 1.1 2017/11/09 15:11:34 ajacoutot Exp $
+
+From a8551a4832ab32662723e3cc7abd591c01dbbd78 Mon Sep 17 00:00:00 2001
+From: Sam Spilsbury <sam@endlessm.com>
+Date: Thu, 17 Aug 2017 15:59:35 +0800
+Subject: copy-worker: Don't start if gnome-initial-setup-done was touched
+
+Index: data/gnome-initial-setup-copy-worker.desktop.in.in
+--- data/gnome-initial-setup-copy-worker.desktop.in.in.orig
++++ data/gnome-initial-setup-copy-worker.desktop.in.in
+@@ -6,3 +6,4 @@ OnlyShowIn=GNOME;
+ NoDisplay=true
+ X-GNOME-AutoRestart=false
+ X-GNOME-Autostart-Phase=EarlyInitialization
++AutostartCondition=unless-exists gnome-initial-setup-done

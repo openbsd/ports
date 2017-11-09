@@ -1,0 +1,40 @@
+$OpenBSD: patch-gnome-initial-setup_pages_goa_gis-goa-page_c,v 1.1 2017/11/09 15:11:35 ajacoutot Exp $
+
+From db63ec68a61578c62b02c3a34b2a334b626b8b73 Mon Sep 17 00:00:00 2001
+From: Cosimo Cecchi <cosimo@endlessm.com>
+Date: Thu, 7 Sep 2017 13:24:39 -0700
+Subject: goa: fix a memory leak
+
+From 526b4fcaf51dde4ce3ccf64eb4642751080e8c7d Mon Sep 17 00:00:00 2001
+From: Rui Matos <tiagomatos@gmail.com>
+Date: Wed, 25 Oct 2017 18:13:04 +0200
+Subject: goa: Fix a GIcon leak
+
+Index: gnome-initial-setup/pages/goa/gis-goa-page.c
+--- gnome-initial-setup/pages/goa/gis-goa-page.c.orig
++++ gnome-initial-setup/pages/goa/gis-goa-page.c
+@@ -121,7 +121,7 @@ add_provider_to_list (GisGoaPage *page, const char *pr
+   GtkWidget *checkmark;
+   GtkWidget *account_label;
+   GIcon *icon;
+-  gchar *markup;
++  gchar *markup, *provider_name;
+   GoaProvider *provider;
+   ProviderWidget *provider_widget;
+ 
+@@ -136,11 +136,14 @@ add_provider_to_list (GisGoaPage *page, const char *pr
+ 
+   icon = goa_provider_get_provider_icon (provider, NULL);
+   image = gtk_image_new_from_gicon (icon, GTK_ICON_SIZE_DIALOG);
++  g_object_unref (icon);
+ 
+-  markup = g_strdup_printf ("<b>%s</b>", goa_provider_get_provider_name (provider, NULL));
++  provider_name = goa_provider_get_provider_name (provider, NULL);
++  markup = g_strdup_printf ("<b>%s</b>", provider_name);
+   label = gtk_label_new (NULL);
+   gtk_label_set_markup (GTK_LABEL (label), markup);
+   g_free (markup);
++  g_free (provider_name);
+ 
+   checkmark = gtk_image_new_from_icon_name ("object-select-symbolic", GTK_ICON_SIZE_MENU);
+ 
