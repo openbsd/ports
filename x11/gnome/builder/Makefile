@@ -1,4 +1,8 @@
-# $OpenBSD: Makefile,v 1.64 2017/11/07 11:02:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.65 2017/11/09 07:11:06 ajacoutot Exp $
+
+# XXX fails to build if graphics/gd is installed
+# XXX https://bugzilla.gnome.org/show_bug.cgi?id=787578
+# XXX https://github.com/mesonbuild/meson/issues/2182
 
 COMMENT=		IDE for GNOME
 
