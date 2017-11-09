@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2016/10/01 13:56:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2017/11/09 16:50:39 ajacoutot Exp $
 
 COMMENT=	IPC library used by GnuPG and gpgme
 
 DISTNAME=	libassuan-2.4.3
-REVISION=	0
+REVISION=	1
 EXTRACT_SUFX=	.tar.bz2
 
 SHARED_LIBS +=  assuan            2.0      # 7.3
@@ -23,6 +23,6 @@ LIB_DEPENDS=	security/libgpg-error
 
 CONFIGURE_STYLE=gnu
 
-CFLAGS+=	-fPIC -DEPROTO=ENOPROTOOPT
+CFLAGS+=	-fPIC
 
 .include <bsd.port.mk>

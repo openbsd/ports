@@ -1,4 +1,4 @@
-$OpenBSD: patch-sshfs_c,v 1.3 2015/09/25 07:17:57 landry Exp $
+$OpenBSD: patch-sshfs_c,v 1.4 2017/11/09 16:50:39 ajacoutot Exp $
 --- sshfs.c.orig	Wed Jan  8 16:34:52 2014
 +++ sshfs.c	Fri Sep 25 09:16:48 2015
 @@ -11,7 +11,6 @@
@@ -17,12 +17,3 @@ $OpenBSD: patch-sshfs_c,v 1.3 2015/09/25 07:17:57 landry Exp $
  #include <netinet/in.h>
  #include <netinet/tcp.h>
  #include <glib.h>
-@@ -1552,7 +1552,7 @@ static int sftp_error_to_errno(uint32_t error)
- 	case SSH_FX_NO_SUCH_FILE:      return ENOENT;
- 	case SSH_FX_PERMISSION_DENIED: return EACCES;
- 	case SSH_FX_FAILURE:           return EPERM;
--	case SSH_FX_BAD_MESSAGE:       return EBADMSG;
-+	case SSH_FX_BAD_MESSAGE:       return ENOMSG;
- 	case SSH_FX_NO_CONNECTION:     return ENOTCONN;
- 	case SSH_FX_CONNECTION_LOST:   return ECONNABORTED;
- 	case SSH_FX_OP_UNSUPPORTED:    return EOPNOTSUPP;

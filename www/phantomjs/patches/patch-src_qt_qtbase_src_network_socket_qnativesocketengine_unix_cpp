@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_qt_qtbase_src_network_socket_qnativesocketengine_unix_cpp,v 1.1 2017/07/05 11:54:22 sthen Exp $
+$OpenBSD: patch-src_qt_qtbase_src_network_socket_qnativesocketengine_unix_cpp,v 1.2 2017/11/09 16:50:39 ajacoutot Exp $
 
 Index: src/qt/qtbase/src/network/socket/qnativesocketengine_unix.cpp
 --- src/qt/qtbase/src/network/socket/qnativesocketengine_unix.cpp.orig
@@ -11,17 +11,7 @@ Index: src/qt/qtbase/src/network/socket/qnativesocketengine_unix.cpp
  #ifndef QT_NO_IPV6IFNAME
  #include <net/if.h>
  #endif
-@@ -589,7 +590,9 @@ int QNativeSocketEnginePrivate::nativeAccept()
-             setError(QAbstractSocket::SocketResourceError, NotSocketErrorString);
-             break;
-         case EPROTONOSUPPORT:
-+#ifdef EPROTO
-         case EPROTO:
-+#endif
-         case EAFNOSUPPORT:
-         case EINVAL:
-             setError(QAbstractSocket::UnsupportedSocketOperationError, ProtocolUnsupportedErrorString);
-@@ -1150,48 +1153,31 @@ int QNativeSocketEnginePrivate::nativeSelect(int timeo
+@@ -1150,48 +1151,31 @@ int QNativeSocketEnginePrivate::nativeSelect(int timeo
  
  int QNativeSocketEnginePrivate::nativeSelect(int timeout, bool selectForRead) const
  {
