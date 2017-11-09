@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2017/11/03 11:14:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.62 2017/11/09 19:44:12 landry Exp $
 
 BROKEN-powerpc=		undefined reference to __sync_add_and_fetch_8
 
@@ -8,6 +8,7 @@ COMMENT=		access, organize and share your photos on GNOME
 
 GNOME_PROJECT=		gnome-photos
 GNOME_VERSION=		3.26.2
+REVISION=		0
 
 CATEGORIES=		graphics
 
@@ -24,7 +25,7 @@ WANTLIB += gpg-error graphite2 grilo-0.3 gthread-2.0 gtk-3 harfbuzz
 WANTLIB += iconv icudata icui18n icuuc intl jpeg json-glib-1.0
 WANTLIB += kvm lzma m nghttp2 nspr4 nss3 oauth p11-kit pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 plc4 plds4
-WANTLIB += png pthread rest-0.7 smime3 softokn3 soup-2.4 soup-gnome-2.4
+WANTLIB += png pthread rest-0.7 smime3 nssutil3 soup-2.4 soup-gnome-2.4
 WANTLIB += sqlite3 ssl ssl3 uuid xcb xcb-render xcb-shm xml2 z
 WANTLIB += tracker-control-${TRACKER_API}
 WANTLIB += tracker-sparql-${TRACKER_API}

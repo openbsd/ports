@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.173 2017/11/06 17:51:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.174 2017/11/09 19:44:12 landry Exp $
 
 USE_WXNEEDED=	Yes
 
@@ -11,7 +11,7 @@ COMMENT-java=	optional integration of LibreOffice java features
 BV=		5.2
 VERSION=	${BV}.7.2
 REVISION=	1
-REVISION-main=	6
+REVISION-main=	7
 DISTNAME=	libreoffice-${VERSION}
 WRKDIST=	${WRKDIR}/libreoffice-${VERSION}
 PKGNAME=	libreoffice-${VERSION}
@@ -205,7 +205,7 @@ WANTLIB-main+=	hunspell-1.6
 WANTLIB-main+=	${MODPY_WANTLIB}
 WANTLIB-main+=	clucene-contribs-lib clucene-core clucene-shared
 WANTLIB-main+=	cups exslt lcms2
-WANTLIB-main+=	nspr4 nss3 plc4 plds4 smime3 softokn3 ssl3
+WANTLIB-main+=	nspr4 nss3 nssutil3 plc4 plds4 smime3 ssl3
 WANTLIB-main+=	png raptor2
 WANTLIB-main+=	lber ldap
 WANTLIB-main+=	GLEW

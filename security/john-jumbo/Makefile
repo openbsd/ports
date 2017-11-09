@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2016/12/31 18:24:08 jca Exp $
+# $OpenBSD: Makefile,v 1.16 2017/11/09 19:44:12 landry Exp $
 
 COMMENT =	extremely fast password cracker, with community patches
 BROKEN-alpha =	DES_bs.c:173: internal compiler error: in get_callee_fndecl, at tree.c:5940
@@ -6,7 +6,7 @@ BROKEN-arm =	uaf_encode_plug.c:61: error: stray '$' in program
 
 V =		1.8.0
 JV =		1
-REVISION =	1
+REVISION =	2
 EXTRACT_SUFX =	.tar.xz
 
 DISTNAME =	john-$V-jumbo-${JV}
@@ -20,7 +20,7 @@ PERMIT_PACKAGE_CDROM =	see doc/john-1.7.9-jumbo-7-licensing.txt
 PERMIT_PACKAGE_FTP =	Yes
 
 WANTLIB += c crypto m nspr4 nss3 pcap plc4 plds4 pthread smime3
-WANTLIB += softokn3 sqlite3 ssl ssl3 z
+WANTLIB += nssutil3 sqlite3 ssl ssl3 z
 
 MASTER_SITES =		http://www.openwall.com/john/j/
 

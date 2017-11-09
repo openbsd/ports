@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2017/11/09 16:50:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2017/11/09 19:44:12 landry Exp $
 
 COMMENT=	library for fingerprint reader devices
 
 DISTNAME=	libfprint-0.4.0
-REVISION=	10
+REVISION=	11
 
 CATEGORIES=    	security
 
@@ -21,7 +21,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += ICE MagickCore-6.Q16 SM X11 Xext Xt bz2 djvulibre expat
 WANTLIB += fftw3 fontconfig freetype glib-2.0 jbig jpeg lcms2
 WANTLIB += lzma m nspr4 nss3 nssutil3 openjp2 pcre plc4 plds4
-WANTLIB += png pthread smime3 softokn3 sqlite3 ssl3
+WANTLIB += png pthread smime3 sqlite3 ssl3
 WANTLIB += tiff usb-1.0 webp xcb xml2 z
 
 MODULES=		devel/gettext

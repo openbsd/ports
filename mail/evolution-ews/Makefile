@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.96 2017/11/01 21:35:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.97 2017/11/09 19:44:12 landry Exp $
 
 COMMENT=		evolution connector for MS Exchange via EWS
 
 GNOME_PROJECT=		evolution-ews
 GNOME_VERSION=		3.26.2
+REVISION=		0
 
 CATEGORIES=		mail
 
@@ -19,7 +20,7 @@ WANTLIB += edata-cal-1.2 edataserver-1.2 edataserverui-1.2 gdk-3
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gtk-3 ical icalss icalvcal icui18n icuuc intl javascriptcoregtk-4.0
 WANTLIB += m mspack nspr4 nss3 pango-1.0 pangocairo-1.0 plc4 plds4
-WANTLIB += pthread secret-1 smime3 softokn3 soup-2.4 sqlite3 ssl3
+WANTLIB += pthread secret-1 smime3 soup-2.4 sqlite3 ssl3
 WANTLIB += webkit2gtk-4.0 xml2
 WANTLIB += lib/evolution/email-engine
 WANTLIB += lib/evolution/evolution-calendar
