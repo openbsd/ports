@@ -1,4 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/02/04 09:45:49 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2017/11/09 15:07:02 jasper Exp $
+@bin bin/cabrip
+@bin bin/chmextract
+@bin bin/msexpand
+@bin bin/oabextract
 include/mspack.h
 lib/libmspack.a
 lib/libmspack.la

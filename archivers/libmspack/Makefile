@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2016/03/11 19:59:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2017/11/09 15:07:02 jasper Exp $
 
 COMMENT=	library for handling microsoft compression formats
 
-DISTNAME=	libmspack-0.5alpha
+DISTNAME=	libmspack-0.6alpha
 EPOCH=		0
 SHARED_LIBS +=  mspack               3.0      # 1.0
 CATEGORIES=	archivers
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_CDROM=   Yes
 
 MASTER_SITES=	http://www.cabextract.org.uk/libmspack/
 
+WANTLIB +=	c
 CONFIGURE_STYLE=gnu
 
 .include <bsd.port.mk>
