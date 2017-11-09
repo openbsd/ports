@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.553 2017/11/08 19:38:45 kili Exp $
+# $OpenBSD: Quirks.pm,v 1.554 2017/11/09 18:16:58 espie Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -493,6 +493,7 @@ my $stem_extensions = {
 # 6.3
 	'ruby-arirang' => 'arirang',
 	'ja-mplus-ttf' => 'mixfont-mplus-ipa',
+	'kdirstat' => 'qdirstat',
 };
 
 my $obsolete_reason = {
