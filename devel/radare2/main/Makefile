@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2017/03/03 21:09:08 jca Exp $
+# $OpenBSD: Makefile,v 1.8 2017/11/09 15:12:51 rpointel Exp $
 
 COMMENT =		reverse engineers disassembler and debugger
 
 DISTNAME =		radare2-${V}
+REVISION =		0
 
 # In radare, all libs have the same version
 LIBV =			2.0	# 0.10.6
@@ -16,7 +17,7 @@ SHARED_LIBS+=		${_lib} ${LIBV}
 WANTLIB =		c capstone crypto kvm m pthread ssl util z zip
 
 LIB_DEPENDS =		archivers/libzip \
-			devel/capstone>=3.0.4p0
+			devel/capstone/main>=3.0.4p0
 
 # --with-sysmagic triggers build error
 CONFIGURE_ARGS +=	--mandir=${PREFIX}/man \
