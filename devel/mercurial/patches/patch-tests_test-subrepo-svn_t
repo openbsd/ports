@@ -1,0 +1,27 @@
+$OpenBSD: patch-tests_test-subrepo-svn_t,v 1.2 2017/11/09 19:28:46 juanfra Exp $
+
+Index: tests/test-subrepo-svn.t
+--- tests/test-subrepo-svn.t.orig
++++ tests/test-subrepo-svn.t
+@@ -57,6 +57,21 @@ add first svn sub with leading whitespaces
+   $ mkdir subdir
+   $ svn co --quiet "$SVNREPOURL"/src subdir/s
+   $ hg add .hgsub
++
++svn subrepo is disabled by default
++
++  $ hg ci -m1
++  abort: svn subrepos not allowed
++  (see 'hg help config.subrepos' for details)
++  [255]
++
++so enable it
++
++  $ cat >> $HGRCPATH <<EOF
++  > [subrepos]
++  > svn:allowed = true
++  > EOF
++
+   $ hg ci -m1
+ 
+ make sure we avoid empty commits (issue2445)
