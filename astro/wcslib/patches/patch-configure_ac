@@ -1,7 +1,8 @@
-$OpenBSD: patch-configure_ac,v 1.1.1.1 2013/04/11 14:05:18 zhuk Exp $
---- configure.ac.orig	Tue Jan 29 09:29:22 2013
-+++ configure.ac	Wed Feb 13 17:18:09 2013
-@@ -17,8 +17,13 @@ AC_REVISION([$Revision: 1.1.1.1 $])
+$OpenBSD: patch-configure_ac,v 1.2 2017/11/09 15:12:04 jasper Exp $
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -12,8 +12,13 @@ AC_REVISION([$Revision: 1.2 $])
  AC_SUBST([PACKAGE_VERSION])
  AC_DEFINE_UNQUOTED([WCSLIB_VERSION], [$PACKAGE_VERSION], [Define wcslib version])
  
@@ -17,7 +18,7 @@ $OpenBSD: patch-configure_ac,v 1.1.1.1 2013/04/11 14:05:18 zhuk Exp $
  AC_SUBST([LIBVER])
  
  AC_CONFIG_SRCDIR([C/wcs.h])
-@@ -256,6 +261,12 @@ if test "x$ac_cv_c_compiler_gnu" = xyes ; then
+@@ -251,6 +256,12 @@ if test "x$ac_cv_c_compiler_gnu" = xyes ; then
        CFLAGS="$CFLAGS -mdynamic-no-pic"
        ;;
      esac

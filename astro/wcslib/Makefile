@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.8 2016/03/11 20:28:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2017/11/09 15:12:04 jasper Exp $
 
 BROKEN-hppa=	ICE on prj.c:4381
 COMMENT =	implementation of the FITS WCS standard
 CATEGORIES =	astro devel
-DISTNAME =	wcslib-4.17
+DISTNAME =	wcslib-5.17
 HOMEPAGE =	http://www.atnf.csiro.au/people/mcalabre/WCS/wcslib/
-REVISION =	2
 
-SHARED_LIBS =	wcs		0.0
+SHARED_LIBS =	wcs		1.0
 
 # LGPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
@@ -37,9 +36,5 @@ CONFIGURE_ARGS +=	--without-pgplot
 AUTOCONF_VERSION =	2.61
 MAKE_FILE =		GNUmakefile
 SUBST_VARS =		DISTNAME
-
-# source files are 0444
-post-extract:
-	chmod u+w ${WRKSRC}/*
 
 .include <bsd.port.mk>
