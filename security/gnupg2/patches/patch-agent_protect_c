@@ -1,0 +1,33 @@
+$OpenBSD: patch-agent_protect_c,v 1.1 2017/11/09 11:20:52 edd Exp $
+
+Fix gpg-agent hanging on virtual machines.
+
+From upstram:
+https://dev.gnupg.org/T3472
+https://dev.gnupg.org/D450
+
+
+Index: agent/protect.c
+--- agent/protect.c.orig
++++ agent/protect.c
+@@ -23,6 +23,7 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
++#include <time.h>
+ #include <ctype.h>
+ #include <assert.h>
+ #include <unistd.h>
+@@ -104,6 +105,12 @@ calibrate_get_time (struct calibrate_time_s *data)
+                    &data->creation_time, &data->exit_time,
+                    &data->kernel_time, &data->user_time);
+ # endif
++#elif defined (CLOCK_THREAD_CPUTIME_ID)
++  struct timespec tmp;
++
++  clock_gettime (CLOCK_THREAD_CPUTIME_ID, &tmp);
++  data->ticks = (clock_t)(((unsigned long long)tmp.tv_sec * 1000000000 +
++                           tmp.tv_nsec) * CLOCKS_PER_SEC / 1000000000);
+ #else
+   struct tms tmp;
+ 
