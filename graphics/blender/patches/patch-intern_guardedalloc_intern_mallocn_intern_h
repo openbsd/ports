@@ -1,9 +1,10 @@
-$OpenBSD: patch-intern_guardedalloc_intern_mallocn_intern_h,v 1.4 2015/09/22 18:48:40 pascal Exp $
+$OpenBSD: patch-intern_guardedalloc_intern_mallocn_intern_h,v 1.5 2017/11/09 17:00:28 pascal Exp $
 
 Don't use malloc.h header on OpenBSD.
 
---- intern/guardedalloc/intern/mallocn_intern.h.orig	Tue Jun 30 15:07:35 2015
-+++ intern/guardedalloc/intern/mallocn_intern.h	Thu Sep 10 19:35:19 2015
+Index: intern/guardedalloc/intern/mallocn_intern.h
+--- intern/guardedalloc/intern/mallocn_intern.h.orig
++++ intern/guardedalloc/intern/mallocn_intern.h
 @@ -57,6 +57,8 @@
  #  define HAVE_MALLOC_STATS
  #elif defined(__FreeBSD__)
@@ -21,5 +22,5 @@ Don't use malloc.h header on OpenBSD.
 +#if !defined(__APPLE__) && !defined(__FreeBSD__) && !defined(__NetBSD__) && \
 +	!defined(__OpenBSD__)
  // Needed for memalign on Linux and _aligned_alloc on Windows.
- #  ifdef FREE_WINDOWS
- /* make sure _aligned_malloc is included */
+ 
+ #  include <malloc.h>
