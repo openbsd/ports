@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.12 2017/07/26 22:45:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2017/11/09 16:36:22 pascal Exp $
 
 PORTROACH =		limitw:1,even
 
 COMMENT =		3D graphics toolkit
 
-V =			3.4.0
-DISTNAME =		OpenSceneGraph-${V}
-PKGNAME =		openscenegraph-${V}
-REVISION =		2
+V =			3.4.1
+GH_ACCOUNT =		openscenegraph
+GH_PROJECT =		OpenSceneGraph
+GH_TAGNAME =		OpenSceneGraph-$V
+DISTNAME =		openscenegraph-${V}
 
 SUBST_VARS +=		V
 
@@ -40,26 +41,25 @@ MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 # OSGPL (see LICENSE.txt)
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += GL Half Iex IlmImf IlmThread QtGui QtOpenGL SDL X11
-WANTLIB += Xrandr avcodec avdevice avformat avresample avutil
-WANTLIB += c cairo curl freetype gdk_pixbuf-2.0 gif gio-2.0 glib-2.0
-WANTLIB += gobject-2.0 intl jasper jpeg m png poppler-glib pthread
-WANTLIB += rsvg-2 ${COMPILER_LIBCXX} swresample swscale tiff z
-
-MASTER_SITES =		${HOMEPAGE}/downloads/stable_releases/OpenSceneGraph-$V/source/
-EXTRACT_SUFX =		.zip
+WANTLIB += ${COMPILER_LIBCXX} GL Half Iex IlmImf IlmThread Qt5Core
+WANTLIB += Qt5Gui Qt5OpenGL Qt5Widgets SDL X11 Xrandr avcodec
+WANTLIB += avdevice avformat avresample avutil c cairo curl freetype
+WANTLIB += gdal gdk_pixbuf-2.0 gif gio-2.0 glib-2.0 gobject-2.0 intl
+WANTLIB += jasper jpeg m png poppler-glib rsvg-2 swresample swscale
+WANTLIB += tiff z
 
 MODULES =		devel/cmake \
-			x11/qt4
+			x11/qt5
 LIB_DEPENDS =		graphics/openexr \
 			graphics/ffmpeg \
 			graphics/gdk-pixbuf2 \
 			graphics/giflib \
+			geo/gdal \
 			net/curl \
 			print/poppler \
 			x11/gnome/librsvg
 
-CONFIGURE_ARGS =	-DDESIRED_QT_VERSION=4 \
+CONFIGURE_ARGS =	-DDESIRED_QT_VERSION=5 \
 			-DOSG_USE_AGGRESSIVE_WARNINGS=OFF
 
 NO_TEST =		Yes

@@ -1,8 +1,8 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.6 2017/06/29 09:35:45 ajacoutot Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.7 2017/11/09 16:36:22 pascal Exp $
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -658,13 +658,15 @@ ELSE()
+@@ -654,13 +654,15 @@ ELSE()
      FIND_PACKAGE(COLLADA)
      FIND_PACKAGE(FBX)
      FIND_PACKAGE(ZLIB)
@@ -20,7 +20,7 @@ Index: CMakeLists.txt
      FIND_PACKAGE(OurDCMTK)
      FIND_PACKAGE(FFmpeg)
      FIND_PACKAGE(GStreamer COMPONENTS app pbutils)
-@@ -848,12 +850,6 @@ IF(CYGWIN)
+@@ -844,12 +846,6 @@ IF(CYGWIN)
    SET(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -D_DEBUG")
  ENDIF()
  

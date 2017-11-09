@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/09/22 18:49:15 pascal Exp $
+@comment $OpenBSD: PLIST,v 1.3 2017/11/09 16:36:22 pascal Exp $
 @bin bin/osgarchive
 @bin bin/osgconv
 @bin bin/osgfilecache
@@ -179,6 +179,7 @@ include/osg/TransferFunction
 include/osg/Transform
 include/osg/TriangleFunctor
 include/osg/TriangleIndexFunctor
+include/osg/TriangleLinePointIndexFunctor
 include/osg/Types
 include/osg/Uniform
 include/osg/UserDataContainer
@@ -590,6 +591,13 @@ include/osgViewer/api/X11/
 include/osgViewer/api/X11/GraphicsHandleX11
 include/osgViewer/api/X11/GraphicsWindowX11
 include/osgViewer/api/X11/PixelBufferX11
+include/osgViewer/config/
+include/osgViewer/config/AcrossAllScreens
+include/osgViewer/config/PanoramicSphericalDisplay
+include/osgViewer/config/SingleScreen
+include/osgViewer/config/SingleWindow
+include/osgViewer/config/SphericalDisplay
+include/osgViewer/config/WoWVxDisplay
 include/osgVolume/
 include/osgVolume/Export
 include/osgVolume/FixedFunctionTechnique
@@ -675,6 +683,7 @@ lib/osgPlugins-${V}/osgdb_dxf.so
 lib/osgPlugins-${V}/osgdb_exr.so
 lib/osgPlugins-${V}/osgdb_ffmpeg.so
 lib/osgPlugins-${V}/osgdb_freetype.so
+lib/osgPlugins-${V}/osgdb_gdal.so
 lib/osgPlugins-${V}/osgdb_gif.so
 lib/osgPlugins-${V}/osgdb_gles.so
 lib/osgPlugins-${V}/osgdb_glsl.so
@@ -691,6 +700,7 @@ lib/osgPlugins-${V}/osgdb_md2.so
 lib/osgPlugins-${V}/osgdb_mdl.so
 lib/osgPlugins-${V}/osgdb_normals.so
 lib/osgPlugins-${V}/osgdb_obj.so
+lib/osgPlugins-${V}/osgdb_ogr.so
 lib/osgPlugins-${V}/osgdb_openflight.so
 lib/osgPlugins-${V}/osgdb_osc.so
 lib/osgPlugins-${V}/osgdb_osg.so
@@ -708,7 +718,6 @@ lib/osgPlugins-${V}/osgdb_png.so
 lib/osgPlugins-${V}/osgdb_pnm.so
 lib/osgPlugins-${V}/osgdb_pov.so
 lib/osgPlugins-${V}/osgdb_pvr.so
-lib/osgPlugins-${V}/osgdb_qfont.so
 lib/osgPlugins-${V}/osgdb_revisions.so
 lib/osgPlugins-${V}/osgdb_rgb.so
 lib/osgPlugins-${V}/osgdb_rot.so

@@ -1,21 +1,23 @@
-$OpenBSD: patch-applications_present3D_Cluster_cpp,v 1.3 2015/09/22 18:49:15 pascal Exp $
---- applications/present3D/Cluster.cpp.orig	Mon Apr 13 12:43:56 2015
-+++ applications/present3D/Cluster.cpp	Thu Sep 10 20:46:22 2015
+$OpenBSD: patch-applications_present3D_Cluster_cpp,v 1.4 2017/11/09 16:36:22 pascal Exp $
+Index: applications/present3D/Cluster.cpp
+--- applications/present3D/Cluster.cpp.orig
++++ applications/present3D/Cluster.cpp
 @@ -33,7 +33,7 @@
  #if defined(__linux)
      #include <unistd.h>
      #include <linux/sockios.h>
--#elif defined(__FreeBSD__) || defined(__DragonFly__)
-+#elif defined(__FreeBSD__) || defined(__DragonFly__) || defined(__OpenBSD__)
+-#elif defined(__FreeBSD__) || defined(__DragonFly__) || defined(__FreeBSD_kernel__)
++#elif defined(__FreeBSD__) || defined(__DragonFly__) || defined(__FreeBSD_kernel__) || defined(__OpenBSD__)
      #include <unistd.h>
      #include <sys/sockio.h>
  #elif defined(__sgi)
-@@ -338,7 +338,7 @@ void Receiver::sync( void )
+@@ -340,7 +340,8 @@ void Receiver::sync( void )
      }
  
  #if defined(__linux) || defined(__FreeBSD__) || defined( __APPLE__ ) || \
--    defined(__DragonFly__)
-+    defined(__DragonFly__) || defined(__OpenBSD__)
+-    defined(__DragonFly__) || defined(__FreeBSD_kernel__) || defined(__GNU__)
++    defined(__DragonFly__) || defined(__FreeBSD_kernel__) || defined(__GNU__) \
++    || defined(__OpenBSD__)
      socklen_t
  #else
      int
