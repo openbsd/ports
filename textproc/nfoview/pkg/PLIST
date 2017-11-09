@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2017/06/06 17:06:14 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.5 2017/11/09 19:09:56 bcallah Exp $
 bin/nfoview
 lib/python${MODPY_VERSION}/site-packages/nfoview/
 lib/python${MODPY_VERSION}/site-packages/nfoview-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
@@ -40,8 +40,6 @@ lib/python${MODPY_VERSION}/site-packages/nfoview/util.py
 lib/python${MODPY_VERSION}/site-packages/nfoview/view.py
 lib/python${MODPY_VERSION}/site-packages/nfoview/window.py
 @man man/man1/nfoview.1
-share/appdata/
-share/appdata/nfoview.appdata.xml
 share/applications/nfoview.desktop
 share/icons/hicolor/16x16/apps/nfoview.png
 share/icons/hicolor/22x22/apps/nfoview.png
@@ -65,6 +63,8 @@ share/locale/ru/LC_MESSAGES/nfoview.mo
 share/locale/sr/LC_MESSAGES/nfoview.mo
 share/locale/sv/LC_MESSAGES/nfoview.mo
 share/locale/tr/LC_MESSAGES/nfoview.mo
+share/metainfo/
+share/metainfo/nfoview.appdata.xml
 share/nfoview/
 share/nfoview/menu.ui
 share/nfoview/preferences-dialog.ui
