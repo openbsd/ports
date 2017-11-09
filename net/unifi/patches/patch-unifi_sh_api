@@ -1,7 +1,7 @@
-$OpenBSD: patch-unifi_sh_api,v 1.4 2017/07/03 22:01:47 sthen Exp $
+$OpenBSD: patch-unifi_sh_api,v 1.5 2017/11/09 14:55:00 sthen Exp $
 Index: unifi_sh_api
---- unifi_sh_api.orig
-+++ unifi_sh_api
+--- unifi_sh_api.orig	Thu Nov  9 13:37:02 2017
++++ unifi_sh_api	Thu Nov  9 13:37:02 2017
 @@ -1,4 +1,4 @@
 -#!/bin/sh
 +#!/bin/ksh

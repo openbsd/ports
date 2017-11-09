@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.31 2017/10/17 13:02:08 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.32 2017/11/09 14:55:00 sthen Exp $
 @newgroup _unifi:732
 @newuser _unifi:732:_unifi:daemon:unifi user:/usr/local/share/unifi:/sbin/nologin
 bin/unifi
@@ -194,6 +194,9 @@ share/unifi/webapps/ROOT/app-unifi/fonts/fontawesome-webfont.ttf
 share/unifi/webapps/ROOT/app-unifi/fonts/fontawesome-webfont.woff
 share/unifi/webapps/ROOT/app-unifi/fonts/fontawesome-webfont.woff2
 share/unifi/webapps/ROOT/app-unifi/images/
+share/unifi/webapps/ROOT/app-unifi/images/badges/
+share/unifi/webapps/ROOT/app-unifi/images/badges/app-store-badge.png
+share/unifi/webapps/ROOT/app-unifi/images/badges/google-play-badge.png
 share/unifi/webapps/ROOT/app-unifi/images/devices/
 share/unifi/webapps/ROOT/app-unifi/images/devices/uap/
 share/unifi/webapps/ROOT/app-unifi/images/devices/uap/BZ2/
