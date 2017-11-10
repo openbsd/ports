@@ -1,4 +1,6 @@
-$OpenBSD: patch-configure,v 1.2 2017/11/10 07:05:53 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.3 2017/11/10 08:06:02 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=790153
 
 From 95b37e2480a2cdc3ee003380b9c587e4663fe872 Mon Sep 17 00:00:00 2001
 From: Kalev Lember <klember@redhat.com>
