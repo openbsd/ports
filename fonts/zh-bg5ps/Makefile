@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2015/07/18 21:54:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2017/11/10 11:00:27 jasper Exp $
 
 COMMENT=	convert Big5/GB encoded files to postscript
 
@@ -21,8 +21,9 @@ CONFIGURE_STYLE=none
 
 NO_TEST=	Yes
 
+MODPY_ADJ_FILES =bg5ps
+
 pre-configure:
-	sed -i "s|/usr/local/bin/python.*|${MODPY_BIN}|" ${WRKSRC}/bg5ps
 	${SUBST_CMD} ${WRKSRC}/bg5ps.conf
 
 MAKE_FLAGS=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include/freetype1" \

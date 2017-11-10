@@ -1,11 +1,6 @@
---- bg5ps.orig	Mon Feb 14 21:46:43 2000
-+++ bg5ps	Fri Jul  8 11:33:55 2011
-@@ -1,4 +1,4 @@
--#!/usr/bin/python
-+#!/usr/local/bin/python2.1
- ################################################################################
- # bg5ps.py which use the ttf2ps program to convert the Big5 Coding chinese     #
- # text into printable postscript file.  Since it uses true type font, the      #
+Index: bg5ps
+--- bg5ps.orig
++++ bg5ps
 @@ -11,7 +11,7 @@
  #
  # Revision 1.5  2000/02/14 20:40:04  platin
