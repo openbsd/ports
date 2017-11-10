@@ -1,7 +1,10 @@
-$OpenBSD: patch-scheduler_auth_c,v 1.8 2017/11/10 14:47:54 ajacoutot Exp $
+$OpenBSD: patch-scheduler_auth_c,v 1.9 2017/11/10 16:08:34 ajacoutot Exp $
 
-2nd chunk:
-https://github.com/apple/cups/issues/5166
+2nd+ chunks:
+From 363746937a07afe7ee6f9373200e4cdd04659c48 Mon Sep 17 00:00:00 2001
+From: Michael R Sweet <michaelrsweet@gmail.com>
+Date: Fri, 10 Nov 2017 10:20:54 -0500
+Subject: [PATCH] Workaround getgrouplist group data overwrite bug on OpenBSD (Issue #5166)
 
 Index: scheduler/auth.c
 --- scheduler/auth.c.orig
@@ -15,16 +18,69 @@ Index: scheduler/auth.c
  	    endpwent();			/* Close the password file */
  
  	    if (!pw)
-@@ -1192,6 +1192,12 @@ cupsdCheckGroup(
- #  else
-       getgrouplist(username, user->pw_gid, groups, &ngroups);
- #endif /* __APPLE__ */
+@@ -1146,7 +1146,8 @@ cupsdCheckGroup(
+     const char    *groupname)		/* I - Group name */
+ {
+   int		i;			/* Looping var */
+-  struct group	*group;			/* System group info */
++  struct group	*group;			/* Group info */
++  gid_t		groupid;		/* ID of named group */
+ #ifdef HAVE_MBR_UID_TO_UUID
+   uuid_t	useruuid,		/* UUID for username */
+ 		groupuuid;		/* UUID for groupname */
+@@ -1176,6 +1177,8 @@ cupsdCheckGroup(
+     * Group exists, check it...
+     */
+ 
++    groupid = group->gr_gid;
 +
-+/* On OpenBSD, getgrouplist overwrites the group structure */
-+#  ifdef __OpenBSD__
-+      group = getgrnam(groupname);
-+      endgrent();
-+#  endif
+ #ifdef HAVE_GETGROUPLIST
+     if (user)
+     {
+@@ -1194,22 +1197,27 @@ cupsdCheckGroup(
+ #endif /* __APPLE__ */
  
        for (i = 0; i < ngroups; i ++)
-         if ((int)group->gr_gid == (int)groups[i])
+-        if ((int)group->gr_gid == (int)groups[i])
++        if ((int)groupid == (int)groups[i])
+ 	  return (1);
+     }
+-#endif /* HAVE_GETGROUPLIST */
+ 
++#else
+     for (i = 0; group->gr_mem[i]; i ++)
++    {
+       if (!_cups_strcasecmp(username, group->gr_mem[i]))
+ 	return (1);
++    }
++#endif /* HAVE_GETGROUPLIST */
+   }
++  else
++    groupid = (gid_t)-1;
+ 
+  /*
+   * Group doesn't exist or user not in group list, check the group ID
+   * against the user's group ID...
+   */
+ 
+-  if (user && group && group->gr_gid == user->pw_gid)
++  if (user && groupid == user->pw_gid)
+     return (1);
+ 
+ #ifdef HAVE_MBR_UID_TO_UUID
+@@ -1219,13 +1227,13 @@ cupsdCheckGroup(
+ 
+   if (user && !mbr_uid_to_uuid(user->pw_uid, useruuid))
+   {
+-    if (group)
++    if (groupid != (gid_t)-1)
+     {
+      /*
+       * Map group name to UUID and check membership...
+       */
+ 
+-      if (!mbr_gid_to_uuid(group->gr_gid, groupuuid))
++      if (!mbr_gid_to_uuid(groupid, groupuuid))
+         if (!mbr_check_membership(useruuid, groupuuid, &is_member))
+ 	  if (is_member)
+ 	    return (1);
