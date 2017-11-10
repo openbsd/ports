@@ -1,19 +1,18 @@
-# $OpenBSD: Makefile,v 1.20 2017/05/03 19:29:25 jca Exp $
+# $OpenBSD: Makefile,v 1.21 2017/11/10 11:38:26 fcambus Exp $
 
 COMMENT=		wm-dockapp; displays the time in different time zones
 
 DISTNAME=		wmtz-0.7
-REVISION=		1
-CATEGORIES=     	x11 x11/windowmaker
+REVISION=		2
+CATEGORIES=		x11 x11/windowmaker
 
-HOMEPAGE=		http://www.geocities.com/jl1n/wmtz/wmtz.html
+HOMEPAGE=		http://www.dockapps.net/wmtz
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=		X11 Xext Xpm c m
 
-MASTER_SITES=		http://www.geocities.com/jl1n/wmtz/ \
-			http://web.cs.mun.ca/~gstarkes/wmaker/dockapps/files/
+MASTER_SITES=		http://www.dockapps.net/download/
 
 MAKE_FLAGS=		CC="${CC}"
 
