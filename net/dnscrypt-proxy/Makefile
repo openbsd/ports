@@ -1,12 +1,21 @@
-# $OpenBSD: Makefile,v 1.31 2017/08/02 09:32:40 giovanni Exp $
+# $OpenBSD: Makefile,v 1.32 2017/11/10 16:35:07 sthen Exp $
 
 COMMENT-main=		secure communications between a DNS client and resolver
 COMMENT-plugins=	example plugins for dnscrypt-proxy
 
+# if updating, update to a newer resolvers csv file, or comment-out and
+# fall back to the included one
 V=			1.9.5
+REVISION-main=		0
 DISTNAME=		dnscrypt-proxy-${V}
 PKGNAME-main=		dnscrypt-proxy-${V}
 PKGNAME-plugins=	dnscrypt-proxy-plugins-${V}
+
+R=			20171030
+MASTER_SITES0=		https://raw.githubusercontent.com/jedisct1/dnscrypt-proxy/0bbec277e61325a4a2f00e29ab039a7d308fb6c2/
+DISTFILES=		${DISTNAME}${EXTRACT_SUFX} \
+			dnscrypt-resolvers.$R{dnscrypt-resolvers}.csv:0
+EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
 
 CATEGORIES=		net
 
@@ -60,6 +69,8 @@ DOCS=			README-PLUGINS.markdown \
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/dnscrypt-proxy
 	cd ${WRKSRC}; ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/dnscrypt-proxy
+	${INSTALL_DATA} ${FULLDISTDIR}/dnscrypt-resolvers.$R.csv \
+	    ${PREFIX}/share/dnscrypt-proxy/dnscrypt-resolvers.csv
 	rm -f ${PREFIX}/lib/dnscrypt-proxy/*.la
 
 .include <bsd.port.mk>
