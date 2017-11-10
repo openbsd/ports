@@ -1,4 +1,4 @@
-# $OpenBSD: config.site,v 1.29 2017/10/31 14:39:10 naddy Exp $
+# $OpenBSD: config.site,v 1.30 2017/11/10 07:10:02 ajacoutot Exp $
 # Quick start macros for autoconf.
 # XXX kludge for a function we don't actually have.
 #ac_cv_func_getservbyname_r=${ac_cv_func_getservbyname_r=no}
@@ -934,7 +934,7 @@ fp_cv_const_EAGAIN=${fp_cv_const_EAGAIN=35}
 fp_cv_const_EALREADY=${fp_cv_const_EALREADY=37}
 fp_cv_const_EAUTH=${fp_cv_const_EAUTH=80}
 fp_cv_const_EBADF=${fp_cv_const_EBADF=9}
-fp_cv_const_EBADMSG=${fp_cv_const_EBADMSG=-1}
+fp_cv_const_EBADMSG=${fp_cv_const_EBADMSG=92}
 fp_cv_const_EBADRPC=${fp_cv_const_EBADRPC=72}
 fp_cv_const_EBUSY=${fp_cv_const_EBUSY=16}
 fp_cv_const_ECHILD=${fp_cv_const_ECHILD=10}
@@ -1006,7 +1006,7 @@ fp_cv_const_EPROCLIM=${fp_cv_const_EPROCLIM=67}
 fp_cv_const_EPROCUNAVAIL=${fp_cv_const_EPROCUNAVAIL=76}
 fp_cv_const_EPROGMISMATCH=${fp_cv_const_EPROGMISMATCH=75}
 fp_cv_const_EPROGUNAVAIL=${fp_cv_const_EPROGUNAVAIL=74}
-fp_cv_const_EPROTO=${fp_cv_const_EPROTO=-1}
+fp_cv_const_EPROTO=${fp_cv_const_EPROTO=95}
 fp_cv_const_EPROTONOSUPPORT=${fp_cv_const_EPROTONOSUPPORT=43}
 fp_cv_const_EPROTOTYPE=${fp_cv_const_EPROTOTYPE=41}
 fp_cv_const_ERANGE=${fp_cv_const_ERANGE=34}
