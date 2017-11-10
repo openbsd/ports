@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2017/11/10 19:31:09 landry Exp $
+# $OpenBSD: Makefile,v 1.17 2017/11/10 20:33:32 jca Exp $
 
 COMMENT-main =		Xfce desktop meta-package (base installation)
 COMMENT-extras =	Xfce desktop meta-package (full installation)
@@ -8,7 +8,7 @@ PKGNAME=	xfce-${V}
 
 PKGNAME-main =		xfce-${V}
 PKGNAME-extras =	xfce-extras-${V}
-REVISION-main =		8
+REVISION-main =		9
 REVISION-extras =	1
 
 MAINTAINER =	Landry Breuil <landry@openbsd.org>

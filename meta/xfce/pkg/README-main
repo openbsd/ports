@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.11 2017/11/10 19:31:09 landry Exp $
+$OpenBSD: README-main,v 1.12 2017/11/10 20:33:33 jca Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -14,7 +14,7 @@ Xfce desktop environment is launched through the 'startxfce4' script.
 Simply add '${LOCALBASE}/bin/startxfce4' to your .xinitrc/.xsession
 script if you use startx, xenodm or slim.
 If you use gdm or kdm, have a look at
-http://wiki.xfce.org/faq#starting_xfce. An xfce4.desktop file is
+https://wiki.xfce.org/faq#starting_xfce. An xfce4.desktop file is
 provided for use by gdm.
 
 Logging out and shutting down the computer
@@ -65,8 +65,8 @@ too:
 export LC_MESSAGES=fr
 
 where 'fr' is your language tag.
-See http://www.openbsd.org/faq/faq8.html#locales for more information
+See https://www.openbsd.org/faq/faq8.html#locales for more information
 on that topic.
 
-More generally, http://wiki.xfce.org/faq and http://wiki.xfce.org/tips
+More generally, https://wiki.xfce.org/faq and https://wiki.xfce.org/tips
 are the best resources for user-level documentation.
