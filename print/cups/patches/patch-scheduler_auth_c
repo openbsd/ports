@@ -1,6 +1,11 @@
-$OpenBSD: patch-scheduler_auth_c,v 1.7 2016/09/19 09:16:51 ajacoutot Exp $
---- scheduler/auth.c.orig	Wed Sep 14 01:39:47 2016
-+++ scheduler/auth.c	Sat Sep 17 15:26:03 2016
+$OpenBSD: patch-scheduler_auth_c,v 1.8 2017/11/10 14:47:54 ajacoutot Exp $
+
+2nd chunk:
+https://github.com/apple/cups/issues/5166
+
+Index: scheduler/auth.c
+--- scheduler/auth.c.orig
++++ scheduler/auth.c
 @@ -649,7 +649,7 @@ cupsdAuthorize(cupsd_client_t *con)	/* I - Client conn
  #  endif /* HAVE_SHADOW_H */
  
@@ -10,3 +15,16 @@ $OpenBSD: patch-scheduler_auth_c,v 1.7 2016/09/19 09:16:51 ajacoutot Exp $
  	    endpwent();			/* Close the password file */
  
  	    if (!pw)
+@@ -1192,6 +1192,12 @@ cupsdCheckGroup(
+ #  else
+       getgrouplist(username, user->pw_gid, groups, &ngroups);
+ #endif /* __APPLE__ */
++
++/* On OpenBSD, getgrouplist overwrites the group structure */
++#  ifdef __OpenBSD__
++      group = getgrnam(groupname);
++      endgrent();
++#  endif
+ 
+       for (i = 0; i < ngroups; i ++)
+         if ((int)group->gr_gid == (int)groups[i])
