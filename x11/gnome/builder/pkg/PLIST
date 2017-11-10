@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2017/11/10 07:18:31 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.26 2017/11/10 10:26:58 ajacoutot Exp $
 @bin bin/gnome-builder
 @bin bin/gnome-builder-cli
 include/gnome-builder/
@@ -261,6 +261,9 @@ include/gnome-builder/libide/workbench/ide-workbench.h
 include/gnome-builder/libide/workers/
 include/gnome-builder/libide/workers/ide-worker.h
 lib/gnome-builder/
+lib/gnome-builder/girepository-1.0/
+lib/gnome-builder/girepository-1.0/Gstyle-1.0.typelib
+lib/gnome-builder/girepository-1.0/Ide-1.0.typelib
 lib/gnome-builder/libgd.so
 @lib lib/gnome-builder/libgstyle-private.so.${LIBgstyle-private_VERSION}
 lib/gnome-builder/libide-1.0.so
@@ -334,6 +337,7 @@ lib/gnome-builder/plugins/libsymbol-tree-plugin.so
 lib/gnome-builder/plugins/libsysmon.so
 lib/gnome-builder/plugins/libterminal.so
 lib/gnome-builder/plugins/libtodo-plugin.so
+lib/gnome-builder/plugins/libvala-pack-plugin.so
 lib/gnome-builder/plugins/libxml-pack-plugin.so
 lib/gnome-builder/plugins/make.plugin
 lib/gnome-builder/plugins/make_plugin/
@@ -371,6 +375,7 @@ lib/gnome-builder/plugins/symbol-tree.plugin
 lib/gnome-builder/plugins/sysmon.plugin
 lib/gnome-builder/plugins/terminal.plugin
 lib/gnome-builder/plugins/todo.plugin
+lib/gnome-builder/plugins/vala-pack.plugin
 lib/gnome-builder/plugins/xml-pack.plugin
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/Ide.py
 @bin libexec/gnome-builder-worker
@@ -677,6 +682,9 @@ share/glib-2.0/schemas/org.gnome.builder.workbench.gschema.xml
 share/gnome-builder/
 share/gnome-builder/fonts/
 share/gnome-builder/fonts/BuilderBlocks.ttf
+share/gnome-builder/gir-1.0/
+share/gnome-builder/gir-1.0/Gstyle-1.0.gir
+share/gnome-builder/gir-1.0/Ide-1.0.gir
 share/gnome-builder/plugins/
 share/gnome-builder/plugins/beautifier_plugin/
 share/gnome-builder/plugins/beautifier_plugin/data/
@@ -752,6 +760,11 @@ share/gnome-builder/plugins/meson_templates/resources/src/window.js
 share/gnome-builder/plugins/meson_templates/resources/src/window.py
 share/gnome-builder/plugins/meson_templates/resources/src/window.ui
 share/gnome-builder/plugins/meson_templates/resources/src/window.vala
+share/gnome-builder/vapi/
+share/gnome-builder/vapi/gstyle-private.deps
+share/gnome-builder/vapi/gstyle-private.vapi
+share/gnome-builder/vapi/libide-1.0.deps
+share/gnome-builder/vapi/libide-1.0.vapi
 share/gtksourceview${MODPY_BIN_SUFFIX}.0/styles/builder-dark.xml
 share/gtksourceview${MODPY_BIN_SUFFIX}.0/styles/builder.xml
 share/icons/hicolor/16x16/apps/org.gnome.Builder.png

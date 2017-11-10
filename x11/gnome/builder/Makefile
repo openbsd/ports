@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.68 2017/11/10 07:18:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.69 2017/11/10 10:26:58 ajacoutot Exp $
 
 COMMENT=		IDE for GNOME
 
 GNOME_PROJECT=		gnome-builder
 GNOME_VERSION=		3.26.2
-REVISION=		3
+REVISION=		4
 
 SHARED_LIBS +=  gstyle-private            1.0 # 0.0
 
@@ -17,7 +17,7 @@ WANTLIB += atk-1.0 c cairo dazzle-1.0 devhelp-3 enchant fontconfig
 WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 girepository-1.0 git2-glib-1.0
 WANTLIB += glib-2.0 gobject-2.0 gspell-1 gtk-3 gtksourceview-3.0
 WANTLIB += intl jsonrpc_glib-1.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre peas-1.0 template_glib-1.0 vte-2.91
+WANTLIB += pcre peas-1.0 template_glib-1.0 vala-0.38 vte-2.91
 WANTLIB += webkit2gtk-4.0 xml2
 
 MODULES=		devel/dconf \
@@ -27,7 +27,8 @@ MODULES=		devel/dconf \
 
 MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
-MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache yelp
+MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache \
+			gobject-introspection vala yelp
 
 BUILD_DEPENDS=		devel/ectags \
 			textproc/py-sphinx${MODPY_FLAVOR}
@@ -45,6 +46,7 @@ LIB_DEPENDS=		devel/jsonrpc-glib \
 			devel/libpeas \
 			devel/template-glib \
 			devel/vte3 \
+			lang/vala \
 			textproc/gspell \
 			x11/gnome/devhelp \
 			x11/gnome/libdazzle \
@@ -63,15 +65,15 @@ CONFIGURE_ARGS=		-Dwith_valgrind=false \
 # XXX C library 'libclang' not found
 CONFIGURE_ARGS +=	-Dwith_clang=false
 
+MODGNOME_LDFLAGS +=	-L${X11BASE}/lib
+
 # XXX fails to build if graphics/gd is installed
 # XXX https://bugzilla.gnome.org/show_bug.cgi?id=787578
 # XXX https://github.com/mesonbuild/meson/issues/2182
-# MODGNOME_TOOLS +=	gobject-introspection vala
-# WANTLIB += vala-0.38
-# LIB_DEPENDS +=	lang/vala
-CONFIGURE_ARGS +=	-Dwith_introspection=false \
-			-Dwith_vala_pack=false
-
-MODGNOME_LDFLAGS +=	-L${X11BASE}/lib
+pre-configure:
+	echo "#!/bin/sh" >${WRKDIR}/bin/g-ir-scanner
+	echo "exec ${LOCALBASE}/bin/g-ir-scanner -L${WRKBUILD}/subprojects/libgd/libgd \"\$$@\"" \
+		>>${WRKDIR}/bin/g-ir-scanner
+	chmod 0555 ${WRKDIR}/bin/g-ir-scanner
 
 .include <bsd.port.mk>
