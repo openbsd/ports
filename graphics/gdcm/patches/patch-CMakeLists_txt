@@ -1,11 +1,11 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2017/08/01 16:38:46 jasper Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2017/11/10 09:48:38 jasper Exp $
 
 Unbreak build: we don't provide library symlinks
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -111,7 +111,11 @@ else()
+@@ -116,7 +116,11 @@ else()
  endif()
  
  if(BUILD_SHARED_LIBS)
