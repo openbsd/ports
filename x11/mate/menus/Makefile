@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2017/05/30 21:59:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2017/11/10 10:28:53 jasper Exp $
 
 COMMENT=		implementation of the FreeDesktop menu spec for MATE
 
@@ -12,7 +12,7 @@ CATEGORIES=		x11
 # GPLv2/LGPLv2/GFDLv1.1
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ffi iconv intl m pthread python2.7 util z
+WANTLIB += ffi iconv intl m pthread ${MODPY_WANTLIB} util z
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += pcre
 

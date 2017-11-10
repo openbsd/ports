@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/11/04 22:03:17 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2017/11/10 10:28:53 jasper Exp $
 
 COMMENT =	2D game engine
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += GL SDL2 SDL2_image SDL2_ttf boost_filesystem-mt boost_regex-mt
 WANTLIB += boost_system-mt fifechan fifechan_opengl fifechan_sdl
-WANTLIB += m ogg openal png pthread python2.7 tinyxml vorbis
+WANTLIB += m ogg openal png pthread ${MODPY_WANTLIB} tinyxml vorbis
 WANTLIB += vorbisfile z
 
 MODULES =		devel/cmake \
