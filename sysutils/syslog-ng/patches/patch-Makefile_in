@@ -1,8 +1,52 @@
-$OpenBSD: patch-Makefile_in,v 1.10 2017/06/08 18:19:37 steven Exp $
-temporary hack until libtool is fixed.
---- Makefile.in.orig	Wed Dec 21 16:00:32 2016
-+++ Makefile.in	Sun Feb  5 23:53:33 2017
-@@ -6203,7 +6203,7 @@ lib/str-repr/lib_libsyslog_ng_la-encode.lo:  \
+$OpenBSD: patch-Makefile_in,v 1.11 2017/11/10 21:58:26 steven Exp $
+- temporary hack until libtool is fixed.
+- work around different getent API, adapted from
+https://github.com/balabit/syslog-ng/commit/8b33cbe143b00d6af72cb5145fecd67e6158a9dd
+- avoid rebuilding libeventlog, already in devel/eventlog
+
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -3572,7 +3572,7 @@ noinst_LIBRARIES = 
+ noinst_DATA = 
+ noinst_LTLIBRARIES = modules/dbparser/libsyslog-ng-patterndb.la \
+ 	modules/diskq/libsyslog-ng-disk-buffer.la
+-lib_LTLIBRARIES = lib/eventlog/src/libevtlog.la lib/libsyslog-ng.la
++lib_LTLIBRARIES = lib/libsyslog-ng.la
+ 
+ # this is intentionally formatted so conflicts are less likely to arise. one name in every line.
+ pkginclude_HEADERS = syslog-ng-config.h lib/eventlog/src/evtmaps.h \
+@@ -4183,7 +4183,9 @@ compatinclude_HEADERS = \
+ 	lib/compat/string.h		\
+ 	lib/compat/time.h		\
+ 	lib/compat/openssl_support.h	\
+-	lib/compat/pcre.h
++	lib/compat/pcre.h		\
++	lib/compat/getent.h		\
++	lib/compat/getent-bb.h
+ 
+ compat_sources = \
+ 	lib/compat/getutent.c		\
+@@ -4194,7 +4196,8 @@ compat_sources = \
+ 	lib/compat/strcasestr.c		\
+ 	lib/compat/strtok_r.c		\
+ 	lib/compat/time.c		\
+-	lib/compat/openssl_support.c
++	lib/compat/openssl_support.c	\
++	lib/compat/getent.c
+ 
+ lib_compat_tests_TESTS = \
+ 	lib/compat/tests/test_strtok_r
+@@ -4327,7 +4330,7 @@ lib_libsyslog_ng_la_LDFLAGS = -no-undefined -release $
+ 					  -version-info ${LSNG_CURRENT}:${LSNG_REVISION}:${LSNG_AGE}
+ 
+ lib_test_subdirs = lib_filter lib_logproto lib_parser lib_rewrite lib_template lib_stats lib_control
+-lib_libsyslog_ng_la_DEPENDENCIES = lib/eventlog/src/libevtlog.la \
++lib_libsyslog_ng_la_DEPENDENCIES = \
+ 	$(am__append_8)
+ 
+ # this is intentionally formatted so conflicts are less likely to arise. one name in every line.
+@@ -7089,7 +7092,7 @@ lib/str-repr/lib_libsyslog_ng_la-encode.lo:  \
  	lib/str-repr/$(am__dirstamp) \
  	lib/str-repr/$(DEPDIR)/$(am__dirstamp)
  lib/libsyslog-ng.la: $(lib_libsyslog_ng_la_OBJECTS) $(lib_libsyslog_ng_la_DEPENDENCIES) $(EXTRA_lib_libsyslog_ng_la_DEPENDENCIES) lib/$(am__dirstamp)

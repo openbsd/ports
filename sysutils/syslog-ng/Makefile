@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.57 2017/06/13 00:22:33 schwarze Exp $
+# $OpenBSD: Makefile,v 1.58 2017/11/10 21:58:26 steven Exp $
 
-COMMENT=	syslogd replacement
+COMMENT=	log management solution
 
-V =		3.9.1
-REL =		3.9
+V =		3.12.1
+REL =		3.12
 DISTNAME =	syslog-ng-$V
-REVISION =	0
 CATEGORIES =	sysutils
 
 MAINTAINER =	Steven Mestdagh <steven@openbsd.org>
@@ -17,8 +16,8 @@ PERMIT_PACKAGE_CDROM =		Yes
 
 MASTER_SITES =	http://github.com/balabit/syslog-ng/releases/download/${DISTNAME}/
 
-SHARED_LIBS =	syslog-ng		4.0 \
-		syslog-ng-${REL}	4.0
+SHARED_LIBS =	syslog-ng		5.0 \
+		syslog-ng-${REL}	5.0
 
 MODULES =	devel/gettext
 
@@ -36,6 +35,7 @@ LIB_DEPENDS =	devel/glib2 \
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--disable-tcp-wrapper \
+			--with-module-dir=${PREFIX}/lib/syslog-ng \
 			--with-pidfile-dir=/var/run \
 			--enable-json \
 			--with-mongoc=no \
@@ -54,7 +54,10 @@ CONFIGURE_ENV +=	OPENSSL_CFLAGS="-I/usr/include/openssl" \
 			OPENSSL_LIBS="-lssl -lcrypto" 
 # json-c only installs libjson-c.pc; syslog-ng checks for libjson.pc
 CONFIGURE_ENV +=	JSON_C_CFLAGS="`pkg-config json-c --cflags`" \
-			JSON_C_LIBS="`pkg-config json-c --libs`"
+			JSON_C_LIBS="`pkg-config json-c --libs`" \
+			EVTLOG_LIBS="-L${LOCALBASE}/lib -levtlog" \
+			EVTLOG_CFLAGS="-I${LOCALBASE}/include/eventlog"
+
 USE_GMAKE =	Yes
 
 SYSCONFDIR =	${BASESYSCONFDIR}/syslog-ng

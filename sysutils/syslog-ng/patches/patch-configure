@@ -1,9 +1,20 @@
-$OpenBSD: patch-configure,v 1.5 2017/06/08 18:19:37 steven Exp $
+$OpenBSD: patch-configure,v 1.6 2017/11/10 21:58:26 steven Exp $
+- avoid rebuilding libeventlog, already in devel/eventlog
 
 Index: configure
 --- configure.orig
 +++ configure
-@@ -17316,7 +17316,7 @@ fi
+@@ -14441,9 +14441,6 @@ done
+ 
+ 
+ 
+-EVTLOG_LIBS="-Wl,${WHOLE_ARCHIVE_OPT} -L\$(top_builddir)/lib/eventlog/src -levtlog -Wl,${NO_WHOLE_ARCHIVE_OPT}"
+-EVTLOG_NO_LIBTOOL_LIBS="-Wl,${WHOLE_ARCHIVE_OPT} -L\$(top_builddir)/lib/eventlog/src/.libs -levtlog -Wl,${NO_WHOLE_ARCHIVE_OPT}"
+-EVTLOG_CFLAGS="-I\$(top_srcdir)/lib/eventlog/src -I\$(top_builddir)/lib/eventlog/src"
+ 
+ 
+ old_LIBS=$LIBS
+@@ -17352,7 +17349,7 @@ fi
   else
      pkg_failed=untried
  fi

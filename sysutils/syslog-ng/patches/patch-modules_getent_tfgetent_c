@@ -1,0 +1,26 @@
+$OpenBSD: patch-modules_getent_tfgetent_c,v 1.1 2017/11/10 21:58:26 steven Exp $
+work around different getent API, adapted from
+https://github.com/balabit/syslog-ng/commit/8b33cbe143b00d6af72cb5145fecd67e6158a9dd
+
+Index: modules/getent/tfgetent.c
+--- modules/getent/tfgetent.c.orig
++++ modules/getent/tfgetent.c
+@@ -20,6 +20,10 @@
+  * COPYING for details.
+  */
+ 
++#if defined(sun) || defined(__sun) || defined(__OpenBSD__)
++#define _POSIX_PTHREAD_SEMANTICS
++#endif
++
+ #include "syslog-ng.h"
+ #include "logmsg/logmsg.h"
+ #include "plugin.h"
+@@ -27,6 +31,7 @@
+ #include "cfg.h"
+ #include "parse-number.h"
+ #include "template/simple-function.h"
++#include "compat/getent.h"
+ 
+ #include <grp.h>
+ #include <pwd.h>
