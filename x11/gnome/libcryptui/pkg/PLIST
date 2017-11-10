@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2015/05/22 11:31:19 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2017/11/10 06:57:04 ajacoutot Exp $
 @conflict seahorse-<=3.1.0
 @bin bin/seahorse-daemon
 include/libcryptui/
@@ -8,7 +8,6 @@ include/libcryptui/cryptui-key-list.h
 include/libcryptui/cryptui-key-store.h
 include/libcryptui/cryptui-keyset.h
 include/libcryptui/cryptui.h
-lib/girepository-1.0/
 lib/girepository-1.0/CryptUI-0.0.typelib
 lib/libcryptui.a
 lib/libcryptui.la
@@ -23,10 +22,7 @@ share/cryptui/ui/
 share/cryptui/ui/seahorse-notify.xml
 share/cryptui/ui/seahorse-pgp-generate.xml
 share/cryptui/ui/seahorse-progress.xml
-share/dbus-1/
-share/dbus-1/services/
 share/dbus-1/services/org.gnome.seahorse.service
-share/gir-1.0/
 share/gir-1.0/CryptUI-0.0.gir
 share/glib-2.0/schemas/org.gnome.seahorse.recipients.gschema.xml
 share/gtk-doc/html/libcryptui/
@@ -58,8 +54,6 @@ share/locale/be@latin/LC_MESSAGES/cryptui.mo
 share/locale/bg/LC_MESSAGES/cryptui.mo
 share/locale/bn/LC_MESSAGES/cryptui.mo
 share/locale/bn_IN/LC_MESSAGES/cryptui.mo
-share/locale/br/
-share/locale/br/LC_MESSAGES/
 share/locale/br/LC_MESSAGES/cryptui.mo
 share/locale/ca/LC_MESSAGES/cryptui.mo
 share/locale/ca@valencia/LC_MESSAGES/cryptui.mo
