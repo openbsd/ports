@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.108 2017/04/13 07:38:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.109 2017/11/10 07:05:38 ajacoutot Exp $
 
 COMMENT=		GNOME encryption interface
 
 GNOME_PROJECT=		seahorse
 GNOME_VERSION=		3.20.0
+REVISION=		0
 
 CATEGORIES=		security
 
@@ -28,7 +29,8 @@ LIB_DEPENDS=		databases/openldap \
 			security/gpgme \
 			net/avahi
 
-CONFIGURE_STYLE=	gnu
+AUTOCONF_VERSION=	2.69
+CONFIGURE_STYLE=	autoconf
 
 # security/gpgme depends on either gnupg-1 or gnupg-2; we want 2.X
 BUILD_DEPENDS +=	gnupg->=2:security/gnupg2
