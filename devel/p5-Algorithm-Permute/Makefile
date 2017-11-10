@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.22 2016/03/20 19:56:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2017/11/10 05:57:15 benoit Exp $
 
 COMMENT=	interface to handy and fast permutation
 
 MODULES=	cpan
-DISTNAME=	Algorithm-Permute-0.12
-REVISION=	5
+DISTNAME =	Algorithm-Permute-0.16
 CATEGORIES=	devel
 
 PERMIT_PACKAGE_CDROM=   Yes
 
 WANTLIB += c perl
+
+TEST_DEPENDS =	devel/p5-Test-LeakTrace
 
 .include <bsd.port.mk>
