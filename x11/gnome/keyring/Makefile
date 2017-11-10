@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.126 2017/10/23 17:11:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.127 2017/11/10 13:12:43 ajacoutot Exp $
 
 COMMENT=		password agent for the GNOME project
 
 GNOME_PROJECT=		gnome-keyring
-GNOME_VERSION=		3.20.1
-REVISION=		0
+GNOME_VERSION=		3.27.2
 
 # GPLv2/LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
+WANTLIB += Xtst X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
 WANTLIB += c cairo cairo-gobject dbus-1 epoxy expat ffi fontconfig
 WANTLIB += freetype gck-1 gcr-base-3 gcr-ui-3 gcrypt gdk-3 gdk_pixbuf-2.0
