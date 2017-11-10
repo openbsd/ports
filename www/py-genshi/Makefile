@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2017/11/01 20:37:52 danj Exp $
+# $OpenBSD: Makefile,v 1.15 2017/11/10 20:36:28 danj Exp $
 
 COMMENT =	toolkit for generation of output for the web
 
 MODPY_EGG_VERSION =	0.7
 DISTNAME =	Genshi-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:L}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	www
 
@@ -40,10 +40,10 @@ do-distpatch:
 	done
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-genshi
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/py-genshi
-	cd ${WRKSRC}/doc && pax -rw * ${PREFIX}/share/doc/py-genshi
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/${MODPY_PY_PREFIX}genshi
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/${MODPY_PY_PREFIX}genshi
+	cd ${WRKSRC}/doc && pax -rw * ${PREFIX}/share/doc/${MODPY_PY_PREFIX}genshi
 	cd ${WRKSRC}/examples && \
-	    pax -rw * ${PREFIX}/share/examples/py-genshi
+	    pax -rw * ${PREFIX}/share/examples/${MODPY_PY_PREFIX}genshi
 
 .include <bsd.port.mk>
