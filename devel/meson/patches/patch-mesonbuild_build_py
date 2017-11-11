@@ -1,4 +1,4 @@
-$OpenBSD: patch-mesonbuild_build_py,v 1.3 2017/11/05 11:02:43 ajacoutot Exp $
+$OpenBSD: patch-mesonbuild_build_py,v 1.4 2017/11/11 21:07:06 ajacoutot Exp $
 
 Index: mesonbuild/build.py
 --- mesonbuild/build.py.orig
@@ -12,19 +12,29 @@ Index: mesonbuild/build.py
  from .mesonlib import typeslistify, stringlistify, classify_unity_sources
  from .mesonlib import get_filenames_templates_dict, substitute_values
  from .environment import for_windows, for_darwin, for_cygwin
-@@ -1397,6 +1397,11 @@ class SharedLibrary(BuildTarget):
+@@ -1397,6 +1397,21 @@ class SharedLibrary(BuildTarget):
              # We replicate what Autotools does here and take the first
              # number of the version by default.
              self.soversion = self.ltversion.split('.')[0]
 +        if is_openbsd():
 +            self.libversion = os.getenv('LIB' + self.name + '_VERSION')
 +            if self.libversion is not None:
++                self.ltversion_orig = self.ltversion if self.ltversion is not None else self.soversion
 +                self.ltversion = self.libversion.format(self)
 +                self.soversion = self.ltversion
++                shared_libs_log = os.path.join(self.environment.get_build_dir(), 'shared_libs.log')
++                if not os.path.isfile(shared_libs_log):
++                    f = open(shared_libs_log, 'w+')
++                    f.write("# SHARED_LIBS+= {:<25}<obsd version> # <orig version>\n".format("<libname>"))
++                    f.close
++                f = open(shared_libs_log, 'a')
++                f.write("SHARED_LIBS += {:<25} {} # {}\n".format(self.name, \
++                        self.soversion, self.ltversion_orig))
++                f.close 
          # Visual Studio module-definitions file
          if 'vs_module_defs' in kwargs:
              path = kwargs['vs_module_defs']
-@@ -1464,6 +1469,8 @@ class SharedLibrary(BuildTarget):
+@@ -1464,6 +1479,8 @@ class SharedLibrary(BuildTarget):
          # filename. If ltversion != soversion we create an soversion alias:
          # libfoo.so.0 -> libfoo.so.0.100.0
          # Where libfoo.so.0.100.0 is the actual library
