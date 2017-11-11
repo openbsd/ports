@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.117 2017/09/25 17:26:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.118 2017/11/11 10:43:31 ajacoutot Exp $
 
 COMMENT=		easy and universal access to shared and/or personal files
 
 V=			10.0.3
 DISTNAME=		owncloud-${V}
 EXTRACT_SUFX=		.tar.bz2
+REVISION=		0
 
 CATEGORIES=		www
 
@@ -67,8 +68,8 @@ do-install:
 		${INSTDIR}/occ
 
 	${INSTALL_DATA_DIR} ${PREFIX}/conf/modules.sample
-	${SUBST_CMD} -m 0644 -c ${FILESDIR}/httpd-owncloud.conf.dist.in \
-		${PREFIX}/conf/modules.sample/httpd-owncloud.conf.dist
+	${SUBST_CMD} -m 0644 -c ${FILESDIR}/apache-httpd-owncloud.conf.dist.in \
+		${PREFIX}/conf/modules.sample/apache-httpd-owncloud.conf.dist
 	${INSTALL_DATA} ${FILESDIR}/config.php.dist.in \
 		${INSTDIR}/config/config.php.dist
 

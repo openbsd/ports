@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.68 2017/09/25 17:26:18 ajacoutot Exp $
-@unexec-delete rm -f /var/www/conf/modules/httpd-owncloud.conf
-conf/modules.sample/httpd-owncloud.conf.dist
+@comment $OpenBSD: PLIST,v 1.69 2017/11/11 10:43:31 ajacoutot Exp $
+@unexec-delete rm -f /var/www/conf/modules/apache-httpd-owncloud.conf
+conf/modules.sample/apache-httpd-owncloud.conf.dist
 @sample /var/www/conf/modules.sample/
-@sample /var/www/conf/modules.sample/httpd-owncloud.conf
+@sample /var/www/conf/modules.sample/apache-httpd-owncloud.conf
 owncloud/
 owncloud/.htaccess.dist
 @sample owncloud/.htaccess
