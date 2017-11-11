@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.3 2016/07/11 09:17:45 kirby Exp $
+$OpenBSD: README-main,v 1.4 2017/11/11 11:01:21 kirby Exp $
 
 +-----------------------------------------------------------------------
 | Running pnp4nagios on OpenBSD
@@ -80,7 +80,7 @@ server {
 
   location /pnp4nagios {
 
-    alias /var/www/pnp4nagios;
+    alias ${VARBASE}/www/pnp4nagios;
   }
 
   location ~ ^(/pnp4nagios.*\.php)(.*)$ {
@@ -113,7 +113,14 @@ chroot = ${VARBASE}/www
 Icinga-web2 configuration
 -------------------------
 Pnp4nagios integration with Icinga-web2 is done via PNP
-module, that can be found here: 
+module, that can be found here:
  - https://github.com/Icinga/icingaweb2-module-pnp
 For installation and configuration follow the modules
 instructions.
+
+RRD tweaks.
+=====================
+Optionally you may want to use rrdcached to reduce disk I/O.
+Here is a sample /etc/rc.conf.local part:
+rrdcached_flags=-b ${VARBASE}/www/pnp4nagios/rrd -m 0660 -s _icinga -l unix:${VARBASE}/www/pnp4nagios/rrd/rrdcached.sock -j ${VARBASE}/www/pnp4nagios/rrd//journal -p ${VARBASE}/www/pnp4nagios/rrd/rrdcached.pid -w 1800 -z 1800 -F -P FLUSH,PENDING
+rrdcached_user=_icinga

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2017/08/23 14:28:31 kirby Exp $
+# $OpenBSD: Makefile,v 1.8 2017/11/11 11:01:21 kirby Exp $
 
 COMMENT-main =	Nagios/Icinga addon which graphs performance data
 COMMENT-cgi =	pnp4nagios CGI scripts
@@ -7,6 +7,7 @@ V = 		0.6.26
 DISTNAME =	pnp4nagios-${V}
 PKGNAME-main =	${DISTNAME}
 PKGNAME-cgi =	pnp4nagios-cgi-${V}
+REVISION-main = 0
 
 CATEGORIES =	www
 
