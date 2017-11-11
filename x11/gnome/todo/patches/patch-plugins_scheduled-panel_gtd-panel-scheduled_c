@@ -1,0 +1,70 @@
+$OpenBSD: patch-plugins_scheduled-panel_gtd-panel-scheduled_c,v 1.1 2017/11/11 14:34:57 ajacoutot Exp $
+
+From bb565a4489983938bbcf461345f6edb5cf8b78b0 Mon Sep 17 00:00:00 2001
+From: Georges Basile Stavracas Neto <georges.stavracas@gmail.com>
+Date: Sat, 11 Nov 2017 03:51:05 -0200
+Subject: [PATCH] scheduled: Use autoptr
+
+From 0d63fb1ee3ec07c7a9a3f15d2a94f852225a71a8 Mon Sep 17 00:00:00 2001
+From: Georges Basile Stavracas Neto <georges.stavracas@gmail.com>
+Date: Sat, 11 Nov 2017 03:53:47 -0200
+Subject: [PATCH] scheduled: Round up when comparing UTC dates
+
+Index: plugins/scheduled-panel/gtd-panel-scheduled.c
+--- plugins/scheduled-panel/gtd-panel-scheduled.c.orig
++++ plugins/scheduled-panel/gtd-panel-scheduled.c
+@@ -57,15 +57,21 @@ get_date_offset (GDateTime *dt,
+                  gint      *days_diff,
+                  gint      *years_diff)
+ {
+-  g_autoptr (GDateTime) now;
++  g_autoptr (GDateTime) now, utc;
+ 
+   now = g_date_time_new_now_local ();
++  utc = g_date_time_new_utc (g_date_time_get_year (now),
++                             g_date_time_get_month (now),
++                             g_date_time_get_day_of_month (now),
++                             g_date_time_get_hour (now),
++                             g_date_time_get_minute (now),
++                             g_date_time_get_seconds (now));
+ 
+   if (days_diff)
+-    *days_diff = g_date_time_difference (dt, now) / G_TIME_SPAN_DAY;
++    *days_diff = ceil ((gdouble) g_date_time_difference (dt, utc) / (gdouble) G_TIME_SPAN_DAY);
+ 
+   if (years_diff)
+-    *years_diff = g_date_time_get_year (dt) - g_date_time_get_year (now);
++    *years_diff = g_date_time_get_year (dt) - g_date_time_get_year (utc);
+ }
+ 
+ static gchar*
+@@ -163,7 +169,7 @@ gtd_panel_scheduled_header_func (GtkListBoxRow     *ro
+                                  GtdTask           *before_task,
+                                  GtdPanelScheduled *panel)
+ {
+-  GDateTime *dt;
++  g_autoptr (GDateTime) dt = NULL;
+   gchar *text;
+   gint span;
+ 
+@@ -181,7 +187,7 @@ gtd_panel_scheduled_header_func (GtkListBoxRow     *ro
+     }
+   else
+     {
+-      GDateTime *before_dt;
++      g_autoptr (GDateTime) before_dt = NULL;
+       gint diff;
+ 
+       before_dt = gtd_task_get_due_date (before_task);
+@@ -199,11 +205,7 @@ gtd_panel_scheduled_header_func (GtkListBoxRow     *ro
+         {
+           gtk_list_box_row_set_header (row, NULL);
+         }
+-
+-      g_clear_pointer (&before_dt, g_date_time_unref);
+     }
+-
+-  g_clear_pointer (&dt, g_date_time_unref);
+ }
+ 
+ static gint
