@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/03/24 19:12:50 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2017/11/11 08:07:20 bentley Exp $
 
 COMMENT =	display system information in the terminal for screenshots
 
 V =		3.8.0
 PKGNAME =	screenfetch-$V
+REVISION =	0
 
 GH_ACCOUNT =	KittyKatt
 GH_PROJECT =	screenFetch

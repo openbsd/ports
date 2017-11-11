@@ -1,0 +1,15 @@
+$OpenBSD: patch-screenfetch-dev,v 1.1 2017/11/11 08:07:20 bentley Exp $
+Fix RAM output.
+From upstream 77613487a23fd5a12b70945cf8075c2773553643.
+Index: screenfetch-dev
+--- screenfetch-dev.orig
++++ screenfetch-dev
+@@ -1421,7 +1421,7 @@ detectmem () {
+ 		usedmem=$(($used_mem / 1024^2 ))
+ 	elif [ "$distro" == "OpenBSD" ]; then
+ 		totalmem=$(($(sysctl -n hw.physmem) / 1024 / 1024))
+-		usedmem=$(($(vmstat | awk '!/[a-z]/{print $4}') / 1024))
++		usedmem=$(vmstat | awk '!/[a-z]/{gsub("M",""); print $3}')
+ 	elif [ "$distro" == "NetBSD" ]; then
+ 		phys_mem=$(awk '/MemTotal/ { print $2 }' /proc/meminfo)
+ 		totalmem=$((${phys_mem} / 1024))
