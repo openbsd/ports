@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: proot,v 1.57 2017/04/30 20:56:19 espie Exp $
+# $OpenBSD: proot,v 1.58 2017/11/11 13:57:04 espie Exp $
 #
 # Copyright (c) 2016 Marc Espie <espie@openbsd.org>
 #
@@ -146,8 +146,10 @@ sub do_parm
 		    $state->{loguser} = MyUser->new($v);
 	    }, FETCH_USER => sub {
 		    $state->{fetchuser} = MyUser->new($v);
+		    $state->{FETCH_USER} = $state->{fetchuser}->user;
 	    }, BUILD_USER => sub {
 		    $state->{builduser} = MyUser->new($v);
+		    $state->{BUILD_USER} = $state->{builduser}->user;
 	    }, PORTSDIR => sub {
 		    $state->{PORTSDIR} = File::Spec->canonpath($v);
 	    }, DISTDIR => sub {
@@ -324,7 +326,7 @@ sub handle_options
 	if ($< != 0) {
 		$state->fatal("Must be root");
 	}
-	for my $i (qw(PORTSDIR DISTDIR WRKOBJDIR PACKAGE_REPOSITORY PLIST_REPOSITORY LOCKDIR LOGDIR)) {
+	for my $i (qw(PORTSDIR DISTDIR WRKOBJDIR PACKAGE_REPOSITORY PLIST_REPOSITORY LOCKDIR LOGDIR FETCH_USER BUILD_USER)) {
 		if (defined $state->{$i}) {
 			$state->{write}{$i} = 1;
 		}
@@ -887,7 +889,7 @@ sub unpopulate_chroot
 	    	find(
 		    sub {
 		    	my $devno = (lstat $_)[0];
-			if ($state->{dontrm_dev}{$devno} || 
+			if (!defined $devno || $state->{dontrm_dev}{$devno} || 
 			    $state->{dontrm}{$File::Find::name}) {
 				$File::Find::prune = 1 if -d _;
 				return;
