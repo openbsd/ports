@@ -1,20 +1,20 @@
-# $OpenBSD: Makefile,v 1.7 2017/05/31 08:08:16 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2017/11/11 11:24:42 kirby Exp $
 
 COMMENT-main =	graphical sdl rogue-like game
 COMMENT-data =	data for Tales of Maj'Eyal
-
-# '
 
 V =		1.5.1
 PKGNAME-main =	tome4-${V}
 PKGNAME-data =	tome4-data-${V}
 CATEGORIES =	games x11
+REVISION-main =	0
+REVISION-data =	0
 
 MASTER_SITES =	http://te4.org/dl/t-engine/ \
 		http://distfiles-openbsd.perso.pw/
 DISTNAME =	t-engine4-src-${V}
 EXTRACT_SUFX =	.tar.bz2
-HOMEPAGE =	http://te4.org
+HOMEPAGE =	https://te4.org/
 
 MULTI_PACKAGES =-main -data
 
