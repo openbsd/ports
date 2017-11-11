@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.265 2017/11/08 05:36:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.266 2017/11/11 15:19:10 sthen Exp $
 
 BROKEN-aarch64=	linker problems with BlocksRuntime that only show up at runtime
 
 COMMENT-main=	open source multi-protocol PBX and telephony toolkit
 
-VER=		13.17.2
+VER=		13.18.2
 PJ_V=		2.6
 PORTROACH=	limitw:0,odd
 DISTNAME=	asterisk-${VER:S/beta/-beta/:S/rc/-rc/}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} pjproject-${PJ_V}.tar.bz2:0
 PKGNAME-main=	asterisk-${VER}
-REVISION-calendar=	0
 
 CATEGORIES=	telephony
 
@@ -104,7 +103,7 @@ MAKE_FLAGS+=		ASTCFLAGS="${CFLAGS}" \
 			OPTIMIZE=
 
 CONFIGURE_ARGS+=	--localstatedir=/var \
-			--with-externals-cache=${FULLDISTDIR} \
+			--with-download-cache=${FULLDISTDIR} \
 			--with-pjproject-bundled
 
 CONFIGURE_ARGS+=	--with-asound=no \
@@ -249,14 +248,19 @@ RUN_DEPENDS$i +=	asterisk-${VER}:telephony/asterisk
 # otherwise asterisk patchset for pjsua gets in the way
 PATCHORIG=		.orig.port
 
-# some of the patches have MS-DOS line endings which patch doesn't like
 post-extract:
 	@cd ${WRKSRC}/third-party/; \
 	    grep 'PJPROJECT_VERSION = ${PJ_V}$$' versions.mak > /dev/null || \
 	    (echo "PJ_V != PJPROJECT_VERSION; update in port"; \
 	     grep 'PJPROJECT_VERSION' versions.mak; exit 1)
-	@perl -i -pe 's/\r$$//' ${WRKSRC}/third-party/pjproject/patches/*patch
 	mv ${WRKDIR}/pjproject-${PJ_V} ${WRKSRC}/third-party/pjproject/source
+
+# some of the patches have MS-DOS line endings which patch doesn't like.
+# done before actual patch, because we have libressl patches for one of the
+# files that asterisk is patching.
+pre-patch:
+	@perl -i -pe 's/\r$$//' ${WRKSRC}/third-party/pjproject/patches/*patch \
+	    ${WRKSRC}/third-party/pjproject/source/pjlib/build/*vc*proj*
 	cd ${WRKSRC}/third-party/pjproject; ./apply_patches patches source
 	touch ${WRKSRC}/third-party/pjproject/source/.unpacked
 

@@ -1,6 +1,7 @@
-$OpenBSD: patch-sounds_sounds_xml,v 1.6 2015/10/12 22:07:29 sthen Exp $
---- sounds/sounds.xml.orig	Fri Aug  7 20:14:21 2015
-+++ sounds/sounds.xml	Fri Oct  9 15:30:56 2015
+$OpenBSD: patch-sounds_sounds_xml,v 1.7 2017/11/11 15:19:10 sthen Exp $
+Index: sounds/sounds.xml
+--- sounds/sounds.xml.orig
++++ sounds/sounds.xml
 @@ -10,7 +10,6 @@
  		</member>
  		<member name="CORE-SOUNDS-EN-GSM" displayname="English, GSM format" >
@@ -9,7 +10,7 @@ $OpenBSD: patch-sounds_sounds_xml,v 1.6 2015/10/12 22:07:29 sthen Exp $
  		</member>
  		<member name="CORE-SOUNDS-EN-G729" displayname="English, G.729 format">
  			<support_level>core</support_level>
-@@ -246,7 +245,6 @@
+@@ -273,7 +272,6 @@
  	</category>
  	<category name="MENUSELECT_MOH" displayname="Music On Hold File Packages" positive_output="yes">
  		<member name="MOH-OPSOUND-WAV" displayname="opsound.org Music On Hold Files, WAV format" >

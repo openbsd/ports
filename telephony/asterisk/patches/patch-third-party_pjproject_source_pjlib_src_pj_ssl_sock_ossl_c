@@ -1,4 +1,4 @@
-$OpenBSD: patch-third-party_pjproject_source_pjlib_src_pj_ssl_sock_ossl_c,v 1.1 2017/08/05 12:29:21 sthen Exp $
+$OpenBSD: patch-third-party_pjproject_source_pjlib_src_pj_ssl_sock_ossl_c,v 1.2 2017/11/11 15:19:10 sthen Exp $
 
 excise openssl-1.0.2 EC and various openssl-1.1.0 pieces
 
@@ -23,7 +23,7 @@ Index: third-party/pjproject/source/pjlib/src/pj/ssl_sock_ossl.c
  #  define OPENSSL_NO_SSL2	    /* seems to be removed in 1.1.0 */
  #  define M_ASN1_STRING_data(x)	    ASN1_STRING_get0_data(x)
  #  define M_ASN1_STRING_length(x)   ASN1_STRING_length(x)
-@@ -453,7 +453,7 @@ static pj_status_t init_openssl(void)
+@@ -579,7 +579,7 @@ static pj_status_t init_openssl(void)
  
  	SSL_set_session(ssl, SSL_SESSION_new());
  
@@ -32,7 +32,7 @@ Index: third-party/pjproject/source/pjlib/src/pj/ssl_sock_ossl.c
  	openssl_curves_num = SSL_get_shared_curve(ssl,-1);
  	if (openssl_curves_num > PJ_ARRAY_SIZE(openssl_curves))
  	    openssl_curves_num = PJ_ARRAY_SIZE(openssl_curves);
-@@ -1070,7 +1070,7 @@ static pj_status_t set_cipher_list(pj_ssl_sock_t *ssoc
+@@ -1196,7 +1196,7 @@ static pj_status_t set_cipher_list(pj_ssl_sock_t *ssoc
  
  static pj_status_t set_curves_list(pj_ssl_sock_t *ssock)
  {
@@ -41,7 +41,7 @@ Index: third-party/pjproject/source/pjlib/src/pj/ssl_sock_ossl.c
      int ret;
      int curves[PJ_SSL_SOCK_MAX_CURVES];
      unsigned cnt;
-@@ -1101,7 +1101,7 @@ static pj_status_t set_curves_list(pj_ssl_sock_t *ssoc
+@@ -1227,7 +1227,7 @@ static pj_status_t set_curves_list(pj_ssl_sock_t *ssoc
  
  static pj_status_t set_sigalgs(pj_ssl_sock_t *ssock)
  {
