@@ -1,7 +1,9 @@
-$OpenBSD: patch-src_libical_icaltimezone_c,v 1.5 2017/11/08 09:35:48 ajacoutot Exp $
+$OpenBSD: patch-src_libical_icaltimezone_c,v 1.6 2017/11/11 14:49:16 ajacoutot Exp $
 
+1st chunk:
 https://github.com/libical/libical/issues/320
 
+2nd chunk: From Fedora
 From aade7e4ff5ca87cda1c0c6503c8f0ff211c66860 Mon Sep 17 00:00:00 2001
 From: Milan Crha <mcrha@redhat.com>
 Date: Mon, 6 Nov 2017 14:29:09 +0100
