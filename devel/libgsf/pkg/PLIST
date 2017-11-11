@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2016/08/21 12:07:38 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.24 2017/11/11 20:21:34 ajacoutot Exp $
 @conflict libgsf-gnome-*
 @pkgpath devel/libgsf
 @pkgpath devel/libgsf,no_gnome
@@ -153,5 +153,4 @@ share/locale/uk/LC_MESSAGES/libgsf.mo
 share/locale/zh_CN/LC_MESSAGES/libgsf.mo
 share/locale/zh_HK/LC_MESSAGES/libgsf.mo
 share/locale/zh_TW/LC_MESSAGES/libgsf.mo
-share/thumbnailers/
 share/thumbnailers/gsf-office.thumbnailer
