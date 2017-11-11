@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2017/08/08 06:50:54 bentley Exp $
+# $OpenBSD: Makefile,v 1.24 2017/11/11 23:58:26 bentley Exp $
 
 BROKEN-powerpc =CPUCore.cc:2347: error: insn does not satisfy its constraints
 BROKEN-hppa =	OOM when building src/cpu/CPUCore.cc
@@ -59,8 +59,5 @@ MAKE_FLAGS =	CC="${CC}" \
 CFLAGS += -fomit-frame-pointer
 CXXFLAGS += -fomit-frame-pointer
 .endif
-
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/build/python-search.sh
 
 .include <bsd.port.mk>
