@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.78 2017/07/26 22:45:29 sthen Exp $
-
+# $OpenBSD: Makefile,v 1.79 2017/11/12 19:35:37 rsadowski Exp $
 
 COMMENT=	graphical frontend for LaTeX (nearly WYSIWYG)
 
-DISTNAME=	lyx-2.2.0
-REVISION=	1
+DISTNAME=	lyx-2.2.3
+
 CATEGORIES=	print editors
 
-HOMEPAGE=	http://www.lyx.org/
+HOMEPAGE=	https://www.lyx.org/
 
 MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/stable/2.2.x/ \
 		ftp://ftp.ntua.gr/pub/X11/LyX/stable/2.2.x/ \
@@ -15,12 +14,17 @@ MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/stable/2.2.x/ \
 		http://ftp.icm.edu.pl/packages/lyx/stable/ \
 		http://mirror.ufs.ac.za/applications/lyx/stable/2.2.x/
 
+WANTLIB += ${COMPILER_LIBCXX} QtGui QtSvg aspell boost_regex-mt
+WANTLIB += boost_signals-mt c enchant iconv m magic z
+
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-MODULES=	devel/gettext lang/python x11/qt4
+MODULES=	lang/python \
+		x11/qt4
 
 RUN_DEPENDS=	print/texlive/base \
+		devel/gettext \
 		graphics/ImageMagick \
 		x11/gtk+3,-guic \
 		devel/desktop-file-utils
@@ -31,10 +35,6 @@ LIB_DEPENDS=	${MODQT4_LIB_DEPENDS}>=4.5.3 \
 		textproc/enchant \
 		textproc/aspell/core
 
-WANTLIB += lib/qt4/QtGui>=8 lib/qt4/QtSvg aspell c m pthread ${COMPILER_LIBCXX} z
-WANTLIB += boost_regex-mt>=1 boost_signals-mt>=1
-WANTLIB += glib-2.0 gmodule-2.0 enchant magic
-
 SEPARATE_BUILD=	Yes
 USE_GMAKE=	Yes
 
@@ -42,12 +42,14 @@ CONFIGURE_STYLE=		gnu
 
 CONFIGURE_ARGS=	--with-extra-lib="${X11BASE}/lib ${LOCALBASE}/lib" \
 		--with-extra-inc="${X11BASE}/include ${LOCALBASE}/include" \
-		--without-hunspell \
+		--with-qt-dir="${MODQT4_QTDIR}" \
 		--without-included-boost \
+		--without-hunspell \
+		--disable-cxx11 \
 		--with-packaging=posix
+
+#QTDIR=${MODQT4_QTDIR}
 CONFIGURE_ENV+=	PYTHON=${MODPY_BIN} \
-		ac_cv_path_QT_MOC=${MODQT4_MOC} \
-		ac_cv_path_QT_UIC=${MODQT4_UIC} \
 		lyx_cv_callstack_printing=no \
 		ac_cv_func_fork=yes LIBS=-pthread
 
@@ -67,5 +69,7 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
 	${SUBST_DATA} ${FILESDIR}/lyx.desktop \
 		${PREFIX}/share/applications/lyx.desktop
+	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
+		${PREFIX}/share/lyx/scripts
 
 .include <bsd.port.mk>
