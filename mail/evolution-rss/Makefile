@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.73 2017/11/09 19:44:12 landry Exp $
+# $OpenBSD: Makefile,v 1.74 2017/11/12 12:25:46 ajacoutot Exp $
 
 COMMENT=		RSS reader plugin for evolution
 
 GNOME_PROJECT=		evolution-rss
 GNOME_VERSION=		0.3.95
-REVISION=		15
+REVISION=		16
 
 CATEGORIES=		mail
 
@@ -16,30 +16,28 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += EGL GL ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage
-WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xt Xxf86vm archive
-WANTLIB += atk-1.0 atk-bridge-2.0 atspi bz2 c cairo cairo-gobject
-WANTLIB += camel-1.2 canberra canberra-gtk3 crypto cryptui db
-WANTLIB += dbus-1 dbus-glib-1 drm ebackend-1.2 ebook-1.2 ebook-contacts-1.2
-WANTLIB += ecal-1.2 edata-book-1.2 edataserver-1.2 edataserverui-1.2
-WANTLIB += enchant epoxy ${LIBECXX} expat ffi fontconfig freetype
-WANTLIB += gailutil-3 gbm gck-1 gcr-base-3 gcr-ui-3 gcrypt gdk-3
-WANTLIB += gdk_pixbuf-2.0 gio-2.0 glapi glib-2.0 gmodule-2.0 gnome-autoar-0
-WANTLIB += gnome-autoar-gtk-0 gnome-desktop-3 gobject-2.0 gpg-error
-WANTLIB += graphite2 gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstfft-1.0
-WANTLIB += gstpbutils-1.0 gstreamer-1.0 gsttag-1.0 gstvideo-1.0
-WANTLIB += gthread-2.0 gtk-3 gtkhtml-4.0 gtkhtml-editor-4.0 gtkspell3-3
-WANTLIB += harfbuzz harfbuzz-icu hyphen ical icalss icalvcal iconv
-WANTLIB += icudata icui18n icuuc intl javascriptcoregtk-4.0 jpeg
-WANTLIB += json-glib-1.0 ltdl lz4 lzma m notify nspr4 nss3 nssutil3
-WANTLIB += ogg orc-0.4 p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 plc4 plds4 png pthread Xtst
-WANTLIB += secret-1 smime3 soup-2.4 soup-gnome-2.4 sqlite3
-WANTLIB += ssl3 ${COMPILER_LIBCXX} vorbis vorbisfile webkit2gtk-4.0 webp xcb
-WANTLIB += xcb-dri2 xcb-glx xcb-render xcb-shm xcb-xfixes xml2
-WANTLIB += xslt z
-WANTLIB += GLESv2 gstallocators-1.0 gstbadallocators-1.0 gstgl-1.0
-WANTLIB += tasn1
+WANTLIB += ${COMPILER_LIBCXX} EGL GL GLESv2 ICE SM X11 X11-xcb
+WANTLIB += Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
+WANTLIB += Xrandr Xrender Xt Xtst Xxf86vm archive atk-1.0 atk-bridge-2.0
+WANTLIB += atspi bz2 c cairo cairo-gobject camel-1.2 canberra
+WANTLIB += canberra-gtk3 crypto cryptui db dbus-1 dbus-glib-1
+WANTLIB += drm ebackend-1.2 ebook-1.2 ebook-contacts-1.2 ecal-1.2
+WANTLIB += edata-book-1.2 edataserver-1.2 edataserverui-1.2 enchant
+WANTLIB += epoxy expat ffi fontconfig freetype gailutil-3 gbm
+WANTLIB += gck-1 gcr-base-3 gcr-ui-3 gcrypt gdk-3 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glapi glib-2.0 gmodule-2.0 gnome-autoar-0 gnome-autoar-gtk-0
+WANTLIB += gnome-desktop-3 gobject-2.0 gpg-error graphite2 gstallocators-1.0
+WANTLIB += gstapp-1.0 gstaudio-1.0 gstbadallocators-1.0 gstbase-1.0
+WANTLIB += gstfft-1.0 gstgl-1.0 gstpbutils-1.0 gstreamer-1.0 gsttag-1.0
+WANTLIB += gstvideo-1.0 gthread-2.0 gtk-3 gtkspell3-3 harfbuzz
+WANTLIB += harfbuzz-icu hyphen ical icalss icalvcal iconv icudata
+WANTLIB += icui18n icuuc intl javascriptcoregtk-4.0 jpeg json-glib-1.0
+WANTLIB += ltdl lz4 lzma m notify nspr4 nss3 nssutil3 ogg orc-0.4
+WANTLIB += p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
+WANTLIB += pixman-1 plc4 plds4 png secret-1 smime3 soup-2.4 soup-gnome-2.4
+WANTLIB += sqlite3 ssl3 tasn1 vorbis vorbisfile webkit2gtk-4.0
+WANTLIB += webp xcb xcb-dri2 xcb-glx xcb-render xcb-shm xcb-xfixes
+WANTLIB += xml2 xslt z
 WANTLIB += lib/evolution/eabutil
 WANTLIB += lib/evolution/econtacteditor
 WANTLIB += lib/evolution/econtactlisteditor
@@ -58,8 +56,7 @@ MASTER_SITES=		http://gnome.eu.org/
 MODULES=		devel/dconf \
 			x11/gnome
 
-LIB_DEPENDS=		mail/evolution \
-			www/gtkhtml4
+LIB_DEPENDS=		mail/evolution
 
 MODGNOME_TOOLS=		desktop-file-utils
 
