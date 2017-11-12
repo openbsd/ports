@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1031 2017/11/08 14:10:54 fcambus Exp $
+# $OpenBSD: Makefile,v 1.1032 2017/11/12 20:05:18 danj Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -576,6 +576,8 @@
      SUBDIR += py-socketio-client,python3
      SUBDIR += py-socks
      SUBDIR += py-socks,python3
+     SUBDIR += py-stem
+     SUBDIR += py-stem
      SUBDIR += py-twitter
      SUBDIR += py-websocket-client
      SUBDIR += py-websocket-client,python3
@@ -649,7 +651,6 @@
      SUBDIR += sslh
      SUBDIR += sslsniffer
      SUBDIR += ssvnc
-     SUBDIR += stem
      SUBDIR += supybot
      SUBDIR += syncthing
      SUBDIR += synergy
