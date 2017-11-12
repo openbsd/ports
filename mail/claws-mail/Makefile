@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.109 2017/11/09 19:44:12 landry Exp $
+# $OpenBSD: Makefile,v 1.110 2017/11/12 22:01:46 naddy Exp $
 
 COMMENT-main=		mail and news client
 COMMENT-bogofilter=	bogofilter plugin
@@ -14,9 +14,9 @@ PKGNAME-spamassassin=	claws-mail-spamassassin-${V}
 PKGNAME-pdfviewer=	claws-mail-pdfviewer-${V}
 PKGNAME-gdata=		claws-mail-gdata-${V}
 
-REVISION=		0
-REVISION-gdata=		1
-REVISION-main=		2
+REVISION=		1
+REVISION-gdata=		2
+REVISION-main=		3
 
 CATEGORIES=		mail news
 
@@ -46,15 +46,15 @@ WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 cairo crypto curl etpan execinfo
 WANTLIB += expat ffi fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
-WANTLIB += gthread-2.0 gtk-x11-2.0 harfbuzz m nghttp2 pango-1.0
+WANTLIB += gthread-2.0 gtk-x11-2.0 harfbuzz iconv intl m nghttp2 pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB += sasl2 ssl xcb xcb-render xcb-shm z
 
 WANTLIB-main =  ${WANTLIB}
 WANTLIB-main += ICE SM X11-xcb archive assuan bz2 c canberra canberra-gtk
-WANTLIB-main += croco-0.6 dbus-1 dbus-glib-1 enchant gmp gnutls gpg-error gpgme
-WANTLIB-main += hogweed ical icalss icalvcal icui18n icuuc idn2 ltdl lz4
-WANTLIB-main += lzma nettle notify ogg p11-kit perl rsvg-2
+WANTLIB-main += croco-0.6 db dbus-1 dbus-glib-1 enchant gmp gnutls gpg-error
+WANTLIB-main += gpgme hogweed ical icalss icalvcal icudata icui18n icuuc idn2
+WANTLIB-main += ltdl lz4 lzma nettle notify ogg p11-kit perl rsvg-2
 WANTLIB-main += startup-notification-1 ${COMPILER_LIBCXX} tasn1 unistring vorbis
 WANTLIB-main += vorbisfile xcb-util xml2
 
@@ -102,7 +102,6 @@ CONFIGURE_ARGS+=	--disable-acpi_notifier-plugin \
 			--disable-python-plugin \
 			--enable-new-addrbook
 
-MODULES=		devel/gettext
 USE_GMAKE=		Yes
 LIBTOOL_FLAGS=		--tag=disable-static
 CONFIGURE_STYLE=	autoconf
