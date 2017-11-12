@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2016/04/09 20:14:49 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2017/11/12 09:14:58 kirby Exp $
 
 COMMENT =		offline browser
 DISTNAME =		httrack-3.48.21
@@ -28,7 +28,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =  c crypto iconv pthread ssl z
 
-MASTER_SITES =		http://mirror.httrack.com/
+MASTER_SITES =		https://mirror.httrack.com/ \
+			https://mirror.httrack.com/historical/
 
 LIB_DEPENDS =		converters/libiconv
 
