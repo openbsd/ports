@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2017/11/01 16:47:17 landry Exp $
+# $OpenBSD: Makefile,v 1.62 2017/11/12 20:09:08 naddy Exp $
 
 COMMENT-main =	translator library for geospatial data formats
 COMMENT-python =python bindings and utilities for GDAL
@@ -15,6 +15,8 @@ FULLPKGNAME-python =	py-${DISTNAME}
 FULLPKGPATH-python =	geo/gdal,-python${FLAVOR_EXT:S/-/,/g}
 FULLPKGNAME-perl =	p5-Geo-GDAL-${V}
 FULLPKGPATH-perl =	geo/gdal,-perl
+REVISION-main	=	0
+REVISION-python =	0
 
 SHARED_LIBS =	gdal 30.0 #22.0
 CATEGORIES =	geo devel
@@ -28,7 +30,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES =	http://download.osgeo.org/gdal/${V}/
 
-MODULES =	perl lang/python devel/gettext
+MODULES =	perl lang/python
 FLAVORS =	python3
 FLAVOR ?=
 
@@ -38,8 +40,7 @@ FULLPKGNAME-python =	py3-${DISTNAME}
 
 MULTI_PACKAGES =	-main -python -perl
 
-LIB_DEPENDS-main =	${LIB_DEPENDS} \
-			databases/sqlite3 \
+LIB_DEPENDS-main =	databases/sqlite3 \
 			graphics/tiff \
 			net/curl \
 			math/qhull \
@@ -57,10 +58,10 @@ LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			devel/proj \
 			devel/geotiff
 
-WANTLIB-main =		${WANTLIB} c expat m ${COMPILER_LIBCXX} z tiff openjp2 ssl crypto qhull \
-			curl pq geos geos_c png gif jpeg jasper json-c geotiff \
-			proj pthread freexl pcre spatialite sqlite3 xml2 lzma nghttp2 webp
-
+WANTLIB-main =		c crypto curl expat freexl geos geos_c geotiff gif \
+			iconv jasper jpeg json-c lzma m nghttp2 openjp2 \
+			pcre png pq proj pthread qhull spatialite sqlite3 \
+			ssl tiff xml2 webp z ${COMPILER_LIBCXX}
 
 LIB_DEPENDS-python =	${MODPY_LIB_DEPENDS} \
 			${FULLPKGNAME-main}:${FULLPKGPATH-main}
