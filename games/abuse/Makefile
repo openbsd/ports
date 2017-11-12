@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2017/07/26 22:45:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.49 2017/11/12 06:37:15 kirby Exp $
 
 COMMENT =	SDL port of the legendary 2D platform shooter
 
@@ -22,7 +22,7 @@ WANTLIB += X11-xcb glapi xcb-dri2 xcb-glx
 WANTLIB += expat
 
 MASTER_SITES =	${HOMEPAGE}raw-attachment/wiki/download/
-MASTER_SITES0 =	http://openbsd.fi/dist/
+MASTER_SITES0 =	http://www.linklevel.net/distfiles/
 
 # Needs AC_PROG_LIBTOOL
 BUILD_DEPENDS =	devel/libtool \
