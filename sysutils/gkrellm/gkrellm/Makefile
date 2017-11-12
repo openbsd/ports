@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2017/04/23 13:48:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.74 2017/11/12 15:17:47 naddy Exp $
 
 COMMENT-main=	single process stack of system monitors for GTK+2 (server)
 COMMENT-client=	single process stack of system monitors for GTK+2
@@ -7,6 +7,7 @@ V=		2.3.10
 DISTNAME=	gkrellm-${V}
 PKGNAME-main=	gkrellm-server-${V}
 PKGNAME-client=	gkrellm-${V}
+REVISION=	0
 CATEGORIES=	sysutils
 
 HOMEPAGE=	http://www.gkrellm.net/
@@ -27,8 +28,7 @@ MULTI_PACKAGES+=-client
 WRKBUILD=	${WRKDIST}/server
 .endif
 
-MODULES=		devel/gettext
-WANTLIB=		c kvm pthread glib-2.0 gmodule-2.0 gthread-2.0
+WANTLIB=		c kvm pthread glib-2.0 gmodule-2.0 gthread-2.0 intl
 LIB_DEPENDS=		devel/glib2
 LIB_DEPENDS-client=	${LIB_DEPENDS} \
 			x11/gtk+2
@@ -39,6 +39,8 @@ WANTLIB-client += Xinerama Xrandr Xrender atk-1.0 cairo crypto fontconfig
 WANTLIB-client += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 gobject-2.0
 WANTLIB-client += gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB-client += ssl z
+
+BUILD_DEPENDS=	devel/gettext-tools
 
 NO_TEST=	Yes
 USE_GMAKE=	Yes

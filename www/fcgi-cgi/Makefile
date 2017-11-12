@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2016/09/04 13:59:13 giovanni Exp $
+# $OpenBSD: Makefile,v 1.17 2017/11/12 15:17:47 naddy Exp $
 
 COMMENT-main=	wrapper to run CGI applications via FastCGI
 COMMENT-static=	static-linked fcgi-cgi wrapper for chroot use
@@ -7,6 +7,7 @@ V=		0.2.2
 DISTNAME=	fcgi-cgi-$V
 PKGNAME-main=	fcgi-cgi-$V
 PKGNAME-static=	fcgi-cgi-static-$V
+REVISION=	0
 CATEGORIES=	www
 
 HOMEPAGE=	http://redmine.lighttpd.net/projects/fcgi-cgi/wiki
@@ -14,7 +15,7 @@ HOMEPAGE=	http://redmine.lighttpd.net/projects/fcgi-cgi/wiki
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c ev glib-2.0 m pthread
+WANTLIB += c ev glib-2.0 intl m
 
 MASTER_SITES=	http://cgit.lighttpd.net/fcgi-cgi.git/snapshot/ \
 		https://spacehopper.org/mirrors/
@@ -31,8 +32,6 @@ RUN_DEPENDS=	www/spawn-fcgi
 RUN_DEPENDS-static= www/fcgi-cgi,-main
 LIB_DEPENDS=	devel/libev \
 		devel/glib2
-
-MODULES=	devel/gettext
 
 CONFIGURE_STYLE= gnu
 PREFIX-static=	${VARBASE}/www/${TRUEPREFIX}

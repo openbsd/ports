@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2017/07/26 22:45:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.54 2017/11/12 15:17:47 naddy Exp $
 
 # Other archs have not been tested
 ONLY_FOR_ARCHS =	amd64
@@ -16,7 +16,7 @@ V =			160
 DISTNAME =		mame0${V}s
 PKGNAME-main =		sdlmame-0.${V}
 PKGNAME-tools =		sdlmame-tools-0.${V}
-REVISION =		4
+REVISION =		5
 
 CATEGORIES =		emulators games
 
@@ -40,8 +40,7 @@ DIST_SUBDIR =		mame
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
 			history${V}.zip:1
 
-MODULES =		devel/gettext \
-			lang/python
+MODULES =		lang/python
 
 RUN_DEPENDS-main =	fonts/liberation-fonts
 LIB_DEPENDS =		devel/sdl-ttf

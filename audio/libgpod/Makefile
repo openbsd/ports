@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2017/11/01 16:41:44 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.47 2017/11/12 15:17:47 naddy Exp $
 
 COMMENT-main=	library to access the contents of an iPod
 COMMENT-python= python bindings for libgpod
@@ -11,7 +11,7 @@ SHARED_LIBS=	gpod	721.0	# 7.1
 CATEGORIES=	audio
 MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE:=gtkpod/}
 
-REVISION-main=	8
+REVISION-main=	9
 REVISION-python= 7
 
 HOMEPAGE=	http://www.gtkpod.org/libgpod/
@@ -23,8 +23,7 @@ MULTI_PACKAGES= -main -python
 
 USE_GMAKE=	Yes
 
-MODULES=	devel/gettext \
-		lang/python \
+MODULES=	lang/python \
 		textproc/intltool
 
 BUILD_DEPENDS=		audio/py-mutagen \
@@ -34,14 +33,15 @@ RUN_DEPENDS-python=	audio/py-mutagen \
 			devel/py-gobject
 LIB_DEPENDS-python=	${BUILD_PKGPATH},-main
 LIB_DEPENDS=		databases/sqlite3 \
+			devel/gettext \
 			devel/glib2 \
 			devel/libplist \
 			graphics/gdk-pixbuf2 \
 			textproc/libxml \
 			devel/libusb1
 
-WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 m z pcre
-WANTLIB += gdk_pixbuf-2.0 lzma xml2 png ffi sqlite3 plist
+WANTLIB += ffi gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += iconv intl lzma m pcre plist png sqlite3 xml2 z
 WANTLIB-main += ${WANTLIB} c pthread usb-1.0
 WANTLIB-python += ${WANTLIB} gpod pthread
 

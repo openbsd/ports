@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2017/10/23 17:10:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.61 2017/11/12 15:17:47 naddy Exp $
 
 PORTROACH=		limit:^0\.2
 
@@ -17,8 +17,8 @@ CATEGORIES=		graphics devel
 PKGNAME-main=		gegl-${V}
 PKGNAME-plugins=	gegl-plugins-${V}
 
-REVISION-main=		5
-REVISION-plugins=	8
+REVISION-main=		6
+REVISION-plugins=	9
 
 SHARED_LIBS +=  gegl-${API_VERSION}		0.0 # 199.1
 
@@ -33,10 +33,9 @@ MASTER_SITES=		http://download.gimp.org/pub/gegl/${V:R}/
 MULTI_PACKAGES=		-main -plugins
 
 WANTLIB += ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += gthread-2.0 m pcre z
+WANTLIB += gthread-2.0 iconv intl m pcre z
 
-MODULES=		devel/gettext \
-			textproc/intltool
+MODULES=		textproc/intltool
 
 USE_GMAKE=		Yes
 
@@ -49,8 +48,7 @@ WANTLIB-main += Xext jasper xcb-shm graphite2 harfbuzz
 
 BUILD_DEPENDS=		graphics/exiv2
 
-LIB_DEPENDS-main= 	${LIB_DEPENDS} \
-			x11/gnome/librsvg \
+LIB_DEPENDS-main= 	x11/gnome/librsvg \
 			graphics/babl>=0.1.10
 
 WANTLIB-plugins += ${WANTLIB} ${COMPILER_LIBCXX} ${LIBECXX}
@@ -60,8 +58,7 @@ WANTLIB-plugins += Half Iex IexMath IlmThread Imath xvidcore
 WANTLIB-plugins += crypto opus pthread ssl swresample x265
 
 RUN_DEPENDS-plugins= 	${BUILD_PKGPATH},-main
-LIB_DEPENDS-plugins= 	${LIB_DEPENDS} \
-			graphics/ilmbase \
+LIB_DEPENDS-plugins= 	graphics/ilmbase \
 			graphics/openexr \
 			graphics/ffmpeg
 

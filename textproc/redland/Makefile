@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2017/07/26 22:45:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2017/11/12 15:17:47 naddy Exp $
 
 MULTI_PACKAGES=		-main -mysql -pgsql
 
@@ -12,9 +12,9 @@ PKGNAME-main=		redland-$V
 PKGNAME-mysql=		redland-mysql-$V
 PKGNAME-pgsql=		redland-pgsql-$V
 
-REVISION-main=		4
-REVISION-mysql=		5
-REVISION-pgsql=		5
+REVISION-main=		5
+REVISION-mysql=		6
+REVISION-pgsql=		6
 
 CATEGORIES=		textproc
 
@@ -27,11 +27,8 @@ MASTER_SITES=		http://download.librdf.org/source/
 # LGPL 2.1+, GPL 2+ or Apache 2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += crypto curl gcrypt gmp gpg-error ltdl m mpfr nghttp2
-WANTLIB += pcre pthread raptor2 rasqal ssl xml2 xslt yajl z
-WANTLIB += lzma uuid
-
-MODULES=		devel/gettext
+WANTLIB += crypto curl gcrypt gmp gpg-error iconv intl ltdl lzma m mpfr
+WANTLIB += nghttp2 pcre pthread raptor2 rasqal ssl uuid xml2 xslt yajl z
 
 LIB_DEPENDS=		devel/libtool,-ltdl \
 			textproc/raptor \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2017/07/26 22:45:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2017/11/12 15:17:47 naddy Exp $
 
 COMMENT-main=	schematic and PCB editing software
 COMMENT-docs=	documentation for the kicad library of components
@@ -10,7 +10,7 @@ PKGNAME=	kicad-${V:S/-//g}
 PKGNAME-main=	kicad-${V:S/-//g}
 PKGNAME-docs=	kicad-docs-${V:S/-//g}
 
-REVISION-main=	6
+REVISION-main=	7
 REVISION-docs=	2
 
 CATEGORIES=	cad
@@ -30,12 +30,13 @@ DIST_SUBDIR=	kicad
 
 MULTI_PACKAGES=	-main -docs
 
-MODULES=	devel/cmake \
-		devel/gettext
+MODULES=	devel/cmake
+
+BUILD_DEPENDS=	devel/gettext-tools
 
 # kicad includes some boost headers, but somehow
 # randomly fails if boost is present then junked
-BUILD_DEPENDS =	devel/boost
+BUILD_DEPENDS+=	devel/boost
 
 RUN_DEPENDS-main=	cad/kicad-library \
 			devel/desktop-file-utils \
@@ -44,8 +45,8 @@ RUN_DEPENDS-main=	cad/kicad-library \
 
 LIB_DEPENDS=	x11/wxWidgets
 
-WANTLIB-main += ${WANTLIB} GL GLU c m pthread ${COMPILER_LIBCXX}
-WANTLIB-main += ICE SM X11 Xext wx_base wx_base_net wx_gtk2_adv wx_gtk2_aui
+WANTLIB-main += GL GLU c m pthread ${COMPILER_LIBCXX}
+WANTLIB-main += wx_base wx_base_net wx_gtk2_adv wx_gtk2_aui
 WANTLIB-main += wx_gtk2_core wx_gtk2_gl wx_gtk2_html z
 WANTLIB-docs=
 RUN_DEPENDS-docs=
