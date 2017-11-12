@@ -1,7 +1,8 @@
-$OpenBSD: patch-src_platform_services-bsd_c,v 1.1 2017/05/23 09:00:53 benoit Exp $
---- src/platform/services-bsd.c.orig	Tue May 23 10:28:40 2017
-+++ src/platform/services-bsd.c	Tue May 23 10:29:07 2017
-@@ -73,7 +73,7 @@
+$OpenBSD: patch-src_platform_services-bsd_c,v 1.2 2017/11/12 16:00:15 bcallah Exp $
+Index: src/platform/services-bsd.c
+--- src/platform/services-bsd.c.orig
++++ src/platform/services-bsd.c
+@@ -73,7 +73,7 @@ typedef struct statfs statst;
   * df(1) manual page. However, df and df -a have the same output on 2 machines
   * on which I could test. Use this workaround for now.
   */
