@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2017/11/05 06:32:36 jca Exp $
+# $OpenBSD: Makefile,v 1.16 2017/11/12 13:43:43 jasper Exp $
 
 COMMENT =		deduplicating backup program
 
-MODPY_EGG_VERSION =	1.1.1
+MODPY_EGG_VERSION =	1.1.2
 DISTNAME =		borgbackup-${MODPY_EGG_VERSION}
 
 MODPY_PI =		Yes

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2017/11/04 12:29:38 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2017/11/12 13:43:43 jasper Exp $
 bin/borg
 bin/borgfs
 lib/python${MODPY_VERSION}/site-packages/borg/
@@ -51,6 +51,8 @@ lib/python${MODPY_VERSION}/site-packages/borg/algorithms/xxh64/
 lib/python${MODPY_VERSION}/site-packages/borg/algorithms/xxh64/xxhash.c
 lib/python${MODPY_VERSION}/site-packages/borg/algorithms/xxh64/xxhash.h
 lib/python${MODPY_VERSION}/site-packages/borg/archive.py
+lib/python${MODPY_VERSION}/site-packages/borg/archiver.build/
+lib/python${MODPY_VERSION}/site-packages/borg/archiver.build/.sconsign.dblite
 lib/python${MODPY_VERSION}/site-packages/borg/archiver.py
 lib/python${MODPY_VERSION}/site-packages/borg/cache.py
 lib/python${MODPY_VERSION}/site-packages/borg/cache_sync/
