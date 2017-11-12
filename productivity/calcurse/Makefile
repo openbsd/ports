@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.23 2017/03/15 09:26:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2017/11/12 14:01:26 fcambus Exp $
 
 COMMENT=	text-based calendar and scheduling application
 
-DISTNAME=	calcurse-4.2.2
+DISTNAME=	calcurse-4.3.0
 EPOCH=		0
 
 CATEGORIES=	productivity
@@ -18,7 +18,13 @@ WANTLIB += c iconv intl m ncursesw pthread
 
 MASTER_SITES=	${HOMEPAGE}files/
 
+RUN_DEPENDS=	www/py-httplib2${MODPY_FLAVOR}
+
 LIB_DEPENDS=	devel/gettext
+
+MODULES=	lang/python
+
+MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--without-asciidoc
