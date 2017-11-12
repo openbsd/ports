@@ -1,17 +1,14 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/02/04 06:16:44 rpointel Exp $
+# $OpenBSD: Makefile,v 1.2 2017/11/12 16:17:16 bcallah Exp $
 
 COMMENT =	command-line based markdown presentation tool
 
-VERSION = 	1.0.9
-DISTNAME =	mdp-${VERSION}
-
 GH_ACCOUNT =	visit1985
 GH_PROJECT =	mdp
-GH_TAGNAME =	${VERSION}
+GH_TAGNAME =	1.0.10
 
 CATEGORIES =	textproc
 
-# GPLv3
+# GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c ncursesw
@@ -20,10 +17,10 @@ MAKE_FLAGS =		PREFIX=${PREFIX}
 
 USE_GMAKE =		Yes
 
-post-install:
-	mv ${PREFIX}/share/man/* ${PREFIX}/man/
-	rmdir ${PREFIX}/share/man
-
 NO_TEST =		Yes
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/mdp ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/mdp.1 ${PREFIX}/man/man1/
 
 .include <bsd.port.mk>
