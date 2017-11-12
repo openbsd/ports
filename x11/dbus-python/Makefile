@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2017/01/03 18:54:48 shadchin Exp $
+# $OpenBSD: Makefile,v 1.37 2017/11/12 15:49:45 naddy Exp $
 
 PORTROACH=		limitw:2,even
 
@@ -9,7 +9,7 @@ V =			1.2.4
 DISTNAME =		dbus-python-${V}
 
 PKGNAME-main =		py-dbus-${V}
-REVISION-main =		0
+REVISION-main =		1
 FULLPKGNAME-common =	py-dbus-common-${V}
 FULLPKGPATH-common =	x11/dbus-python,-common
 
@@ -22,9 +22,8 @@ MAINTAINER =		Antoine Jacoutot <ajacoutot@openbsd.org>
 # ISC-like
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB-main += ${WANTLIB}
 WANTLIB-main += dbus-1 dbus-glib-1 ffi gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB-main += gobject-2.0 pcre pthread z
+WANTLIB-main += gobject-2.0 iconv intl pcre pthread z
 
 WANTLIB-common +=	#empty
 
@@ -32,8 +31,7 @@ MASTER_SITES =		${HOMEPAGE}releases/dbus-python/
 
 MULTI_PACKAGES =	-main -common
 
-MODULES =		lang/python \
-			devel/gettext
+MODULES =		lang/python
 
 FLAVORS =		python3
 FLAVOR ?=
@@ -45,10 +43,9 @@ FULLPKGNAME-main=	${PKGNAME-main:S/^py-/py3-/}
 FULLPKGPATH-main=	x11/dbus-python,-main${MODPY_FLAVOR}
 .endif
 
-LIB_DEPENDS-main =	${LIB_DEPENDS} \
-			x11/dbus-glib
+LIB_DEPENDS-main =	x11/dbus-glib
 
-RUN_DEPENDS-main =	${RUN_DEPENDS} \
+RUN_DEPENDS-main =	${MODPY_RUN_DEPENDS} \
 			x11/dbus-python,-common
 
 LIB_DEPENDS-common =	#empty
