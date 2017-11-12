@@ -1,11 +1,14 @@
 mOpenBSD: patch-configure,v 1.1 2015/10/12 05:48:33 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=790175
-
 From 0fad0fcf8adca04f9b0a5a8832a268c835fcd9bd Mon Sep 17 00:00:00 2001
 From: Kalev Lember <klember@redhat.com>
 Date: Tue, 1 Sep 2015 19:48:25 +0200
 Subject: Allow building with gnupg 2.1
+
+From 66582fdc98382771d7160e043a34fddc90b089c7 Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Fri, 10 Nov 2017 16:49:39 +0100
+Subject: Accept GnuPG 2.2.x as supported version
 
 Index: configure
 --- configure.orig
