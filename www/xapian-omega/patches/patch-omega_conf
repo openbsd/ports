@@ -1,7 +1,8 @@
-$OpenBSD: patch-omega_conf,v 1.1.1.1 2009/07/23 15:16:45 ajacoutot Exp $
---- omega.conf.orig	Mon Jun 15 23:29:55 2009
-+++ omega.conf	Mon Jun 15 23:30:46 2009
-@@ -1,11 +1,11 @@
+$OpenBSD: patch-omega_conf,v 1.2 2017/11/13 23:36:05 jeremy Exp $
+Index: omega.conf
+--- omega.conf.orig
++++ omega.conf
+@@ -1,8 +1,8 @@
  # Directory containing Xapian databases:
 -database_dir /var/lib/omega/data
 +database_dir /var/omega/data
@@ -10,7 +11,9 @@ $OpenBSD: patch-omega_conf,v 1.1.1.1 2009/07/23 15:16:45 ajacoutot Exp $
 -template_dir /var/lib/omega/templates
 +template_dir /var/omega/templates
  
- # Directory to write Omega logs to:
+ # Default template name if the CGI parameter "FMT" is not specified.
+ # (If not specified here, the default template name is "query"):
+@@ -16,4 +16,4 @@ template_dir /var/lib/omega/templates
  log_dir /var/log/omega
  
  # Directory containing any cdb files for the $lookup OmegaScript command:

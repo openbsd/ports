@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2017/07/26 22:45:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2017/11/13 23:36:05 jeremy Exp $
 
 COMMENT=	web search application
 
-V=		1.2.15
+V=		1.4.5
 PORTROACH=	limitw:1,even
 DISTNAME=	xapian-omega-${V}
-REVISION =	1
 
 CATEGORIES=	www textproc
 
@@ -17,7 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += c m uuid ${COMPILER_LIBCXX} z xapian pcre magic
 
 MASTER_SITES=	http://oligarchy.co.uk/xapian/${V}/
-
+EXTRACT_SUFX=	.tar.xz
 
 LIB_DEPENDS=	databases/xapian-core>=${V} \
 		devel/pcre \

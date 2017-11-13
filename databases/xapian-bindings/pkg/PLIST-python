@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST-python,v 1.1.1.1 2015/04/05 21:41:02 robert Exp $
+@comment $OpenBSD: PLIST-python,v 1.2 2017/11/13 23:36:05 jeremy Exp $
+@comment lib/python${MODPY_VERSION}/site-packages/xapian/_xapian.a
 lib/python${MODPY_VERSION}/site-packages/xapian/
 lib/python${MODPY_VERSION}/site-packages/xapian/__init__.py
 lib/python${MODPY_VERSION}/site-packages/xapian/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/xapian/__init__.pyo
-@comment lib/python${MODPY_VERSION}/site-packages/xapian/_xapian.a
+lib/python${MODPY_VERSION}/site-packages/xapian/__init__.${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/xapian/_xapian.a
 lib/python${MODPY_VERSION}/site-packages/xapian/_xapian.so
 share/doc/xapian-bindings/
 share/doc/xapian-bindings/python/
@@ -12,4 +13,44 @@ share/doc/xapian-bindings/python/examples/simpleexpand.py
 share/doc/xapian-bindings/python/examples/simpleindex.py
 share/doc/xapian-bindings/python/examples/simplematchdecider.py
 share/doc/xapian-bindings/python/examples/simplesearch.py
-share/doc/xapian-bindings/python/index.html
+share/doc/xapian-bindings/python/html/
+share/doc/xapian-bindings/python/html/.buildinfo
+share/doc/xapian-bindings/python/html/_modules/
+share/doc/xapian-bindings/python/html/_modules/index.html
+share/doc/xapian-bindings/python/html/_modules/xapian.html
+share/doc/xapian-bindings/python/html/_sources/
+share/doc/xapian-bindings/python/html/_sources/examples.txt
+share/doc/xapian-bindings/python/html/_sources/index.txt
+share/doc/xapian-bindings/python/html/_sources/introduction.txt
+share/doc/xapian-bindings/python/html/_sources/xapian.txt
+share/doc/xapian-bindings/python/html/_static/
+share/doc/xapian-bindings/python/html/_static/ajax-loader.gif
+share/doc/xapian-bindings/python/html/_static/basic.css
+share/doc/xapian-bindings/python/html/_static/classic.css
+share/doc/xapian-bindings/python/html/_static/comment-bright.png
+share/doc/xapian-bindings/python/html/_static/comment-close.png
+share/doc/xapian-bindings/python/html/_static/comment.png
+share/doc/xapian-bindings/python/html/_static/default.css
+share/doc/xapian-bindings/python/html/_static/doctools.js
+share/doc/xapian-bindings/python/html/_static/down-pressed.png
+share/doc/xapian-bindings/python/html/_static/down.png
+share/doc/xapian-bindings/python/html/_static/file.png
+share/doc/xapian-bindings/python/html/_static/jquery.js
+share/doc/xapian-bindings/python/html/_static/minus.png
+share/doc/xapian-bindings/python/html/_static/plus.png
+share/doc/xapian-bindings/python/html/_static/pygments.css
+share/doc/xapian-bindings/python/html/_static/searchtools.js
+share/doc/xapian-bindings/python/html/_static/sidebar.js
+share/doc/xapian-bindings/python/html/_static/underscore.js
+share/doc/xapian-bindings/python/html/_static/up-pressed.png
+share/doc/xapian-bindings/python/html/_static/up.png
+share/doc/xapian-bindings/python/html/_static/websupport.js
+share/doc/xapian-bindings/python/html/examples.html
+share/doc/xapian-bindings/python/html/genindex.html
+share/doc/xapian-bindings/python/html/index.html
+share/doc/xapian-bindings/python/html/introduction.html
+share/doc/xapian-bindings/python/html/objects.inv
+share/doc/xapian-bindings/python/html/${MODPY_PY_PREFIX}modindex.html
+share/doc/xapian-bindings/python/html/search.html
+share/doc/xapian-bindings/python/html/searchindex.js
+share/doc/xapian-bindings/python/html/xapian.html

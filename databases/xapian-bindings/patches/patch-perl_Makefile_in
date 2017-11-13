@@ -1,12 +1,13 @@
-$OpenBSD: patch-perl_Makefile_in,v 1.1.1.1 2015/04/05 21:41:02 robert Exp $
---- perl/Makefile.in.orig	Sun Apr  5 20:52:56 2015
-+++ perl/Makefile.in	Sun Apr  5 20:53:06 2015
-@@ -966,7 +966,7 @@ clean-local:
+$OpenBSD: patch-perl_Makefile_in,v 1.2 2017/11/13 23:36:05 jeremy Exp $
+Index: perl/Makefile.in
+--- perl/Makefile.in.orig
++++ perl/Makefile.in
+@@ -1480,7 +1480,7 @@ clean-local:
  
- auto/Search/Xapian/Xapian$(PERL_SO): Xapian.la
- 	@$(MKDIR_P) auto/Search/Xapian
+ auto/Xapian/Xapian$(PERL_SO): Xapian.la
+ 	@$(MKDIR_P) auto/Xapian
 -	$(LIBTOOL) --config > libtoolconfig.tmp
 +	$(LIBTOOL) --config | grep -v pic > libtoolconfig.tmp
- 	. ./libtoolconfig.tmp; cp "$$objdir/Xapian$(PERL_SO)" auto/Search/Xapian
+ 	. ./libtoolconfig.tmp; cp "$$objdir/Xapian$(PERL_SO)" auto/Xapian
  	rm -f libtoolconfig.tmp
  
