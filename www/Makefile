@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.836 2017/11/12 12:26:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.837 2017/11/13 23:57:54 jeremy Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -500,7 +500,6 @@
      SUBDIR += ruby-sinatra
      SUBDIR += ruby-thin,ruby23
      SUBDIR += ruby-thin,ruby24
-     SUBDIR += ruby-thin_http
      SUBDIR += ruby-unicorn,ruby23
      SUBDIR += ruby-unicorn,ruby24
      SUBDIR += ruby-vegas

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.476 2017/11/08 20:23:28 rpointel Exp $
+# $OpenBSD: Makefile,v 1.477 2017/11/13 23:57:54 jeremy Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -321,10 +321,8 @@
      SUBDIR += ruby-gpgme,ruby24
      SUBDIR += ruby-pledge,ruby23
      SUBDIR += ruby-pledge,ruby24
-     SUBDIR += ruby-ezcrypto
      SUBDIR += ruby-hmac
      SUBDIR += ruby-openid
-     SUBDIR += ruby-yadis
      SUBDIR += samdump2
      SUBDIR += scanlogd
      SUBDIR += scanssh

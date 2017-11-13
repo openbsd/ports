@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.549 2017/11/11 10:44:29 steven Exp $
+# $OpenBSD: Makefile,v 1.550 2017/11/13 23:57:54 jeremy Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -436,9 +436,7 @@
      SUBDIR += ripgrep
      SUBDIR += rman
      SUBDIR += rubber
-     SUBDIR += ruby-ascii85
      SUBDIR += ruby-builder
-     SUBDIR += ruby-classifier
      SUBDIR += ruby-erubis
      SUBDIR += ruby-fast-stemmer,ruby23
      SUBDIR += ruby-fast-stemmer,ruby24
@@ -448,19 +446,16 @@
      SUBDIR += ruby-haml
      SUBDIR += ruby-hpricot,ruby23
      SUBDIR += ruby-hpricot,ruby24
-     SUBDIR += ruby-htmlentities
      SUBDIR += ruby-hyperestraier,ruby23
      SUBDIR += ruby-hyperestraier,ruby24
      SUBDIR += ruby-icalendar
      SUBDIR += ruby-kramdown
      SUBDIR += ruby-liquid
-     SUBDIR += ruby-markaby
      SUBDIR += ruby-maruku
      SUBDIR += ruby-mustache
      SUBDIR += ruby-nokogiri,ruby23
      SUBDIR += ruby-nokogiri,ruby24
      SUBDIR += ruby-nori
-     SUBDIR += ruby-pdf-reader
      SUBDIR += ruby-pygments.rb
      SUBDIR += ruby-rdiscount,ruby23
      SUBDIR += ruby-rdiscount,ruby24
@@ -470,9 +465,7 @@
      SUBDIR += ruby-redcloth,ruby24
      SUBDIR += ruby-rexical
      SUBDIR += ruby-ronn
-     SUBDIR += ruby-rtex
      SUBDIR += ruby-syntax
-     SUBDIR += ruby-templater
      SUBDIR += ruby-text
      SUBDIR += ruby-treetop
      SUBDIR += ruby-yard

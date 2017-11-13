@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.343 2017/11/05 22:03:16 sebastia Exp $
+# $OpenBSD: Makefile,v 1.344 2017/11/13 23:57:54 jeremy Exp $
 
      SUBDIR =
      SUBDIR += apache-couchdb
@@ -229,7 +229,6 @@
      SUBDIR += ruby-sqlite3,ruby24
      SUBDIR += ruby-tiny_tds,ruby23
      SUBDIR += ruby-tiny_tds,ruby24
-     SUBDIR += ruby-validatable
      SUBDIR += sharedance
      SUBDIR += skytools
      SUBDIR += soprano
