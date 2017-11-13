@@ -1,7 +1,8 @@
-$OpenBSD: patch-src_backend_storage_lmgr_s_lock_c,v 1.2 2015/01/08 15:01:11 pea Exp $
---- src/backend/storage/lmgr/s_lock.c.orig	Sun May 11 14:16:48 2014
-+++ src/backend/storage/lmgr/s_lock.c	Thu May 15 21:52:50 2014
-@@ -219,7 +219,7 @@ static void
+$OpenBSD: patch-src_backend_storage_lmgr_s_lock_c,v 1.3 2017/11/13 17:17:30 danj Exp $
+Index: src/backend/storage/lmgr/s_lock.c
+--- src/backend/storage/lmgr/s_lock.c.orig
++++ src/backend/storage/lmgr/s_lock.c
+@@ -251,7 +251,7 @@ static void
  tas_dummy()
  {
  	__asm__		__volatile__(
