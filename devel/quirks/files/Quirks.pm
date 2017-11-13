@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.557 2017/11/12 20:05:47 danj Exp $
+# $OpenBSD: Quirks.pm,v 1.558 2017/11/13 14:35:41 pascal Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -495,6 +495,7 @@ my $stem_extensions = {
 	'ja-mplus-ttf' => 'mixfont-mplus-ipa',
 	'kdirstat' => 'qdirstat',
 	'stem' => 'py-stem',
+	'arm' => 'nyx',
 };
 
 my $obsolete_reason = {
