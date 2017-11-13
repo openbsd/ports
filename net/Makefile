@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1032 2017/11/12 20:05:18 danj Exp $
+# $OpenBSD: Makefile,v 1.1033 2017/11/13 14:34:35 pascal Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -13,7 +13,6 @@
      SUBDIR += apache-activemq
      SUBDIR += argus
      SUBDIR += argus-clients
-     SUBDIR += arm
      SUBDIR += arp-scan
      SUBDIR += arpcatch
      SUBDIR += arpd
@@ -290,6 +289,7 @@
      SUBDIR += ntopng
      SUBDIR += ntp
      SUBDIR += nylon
+     SUBDIR += nyx
      SUBDIR += obfs4proxy
      SUBDIR += ocserv
      SUBDIR += oggfwd
