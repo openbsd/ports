@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1668 2017/11/08 19:37:21 kili Exp $
+# $OpenBSD: Makefile,v 1.1669 2017/11/13 20:54:57 rpointel Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1417,6 +1417,7 @@
      SUBDIR += py-mccabe
      SUBDIR += py-mccabe,python3
      SUBDIR += py-minimock
+     SUBDIR += py-minimock,python3
      SUBDIR += py-mock
      SUBDIR += py-mock,python3
      SUBDIR += py-modulegraph
