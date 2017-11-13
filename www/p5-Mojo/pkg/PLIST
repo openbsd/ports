@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2015/07/19 14:23:45 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2017/11/13 07:21:26 remi Exp $
 @conflict p5-Mojo-*
 bin/hypnotoad
 bin/mojo
@@ -28,6 +28,7 @@ ${P5SITE}/Mojo/DOM/HTML.pm
 ${P5SITE}/Mojo/Date.pm
 ${P5SITE}/Mojo/EventEmitter.pm
 ${P5SITE}/Mojo/Exception.pm
+${P5SITE}/Mojo/File.pm
 ${P5SITE}/Mojo/Headers.pm
 ${P5SITE}/Mojo/HelloWorld.pm
 ${P5SITE}/Mojo/Home.pm
@@ -37,6 +38,9 @@ ${P5SITE}/Mojo/IOLoop/Client.pm
 ${P5SITE}/Mojo/IOLoop/Delay.pm
 ${P5SITE}/Mojo/IOLoop/Server.pm
 ${P5SITE}/Mojo/IOLoop/Stream.pm
+${P5SITE}/Mojo/IOLoop/Subprocess.pm
+${P5SITE}/Mojo/IOLoop/TLS.pm
+${P5SITE}/Mojo/IOLoop/resources/
 ${P5SITE}/Mojo/JSON/
 ${P5SITE}/Mojo/JSON.pm
 ${P5SITE}/Mojo/JSON/Pointer.pm
@@ -57,7 +61,11 @@ ${P5SITE}/Mojo/Server.pm
 ${P5SITE}/Mojo/Server/CGI.pm
 ${P5SITE}/Mojo/Server/Daemon.pm
 ${P5SITE}/Mojo/Server/Hypnotoad.pm
+${P5SITE}/Mojo/Server/Morbo/
 ${P5SITE}/Mojo/Server/Morbo.pm
+${P5SITE}/Mojo/Server/Morbo/Backend/
+${P5SITE}/Mojo/Server/Morbo/Backend.pm
+${P5SITE}/Mojo/Server/Morbo/Backend/Poll.pm
 ${P5SITE}/Mojo/Server/PSGI.pm
 ${P5SITE}/Mojo/Server/Prefork.pm
 ${P5SITE}/Mojo/Template.pm
@@ -74,6 +82,7 @@ ${P5SITE}/Mojo/UserAgent/Proxy.pm
 ${P5SITE}/Mojo/UserAgent/Server.pm
 ${P5SITE}/Mojo/UserAgent/Transactor.pm
 ${P5SITE}/Mojo/Util.pm
+${P5SITE}/Mojo/WebSocket.pm
 ${P5SITE}/Mojolicious/
 ${P5SITE}/Mojolicious.pm
 ${P5SITE}/Mojolicious/Command/
@@ -105,11 +114,11 @@ ${P5SITE}/Mojolicious/Guides/FAQ.pod
 ${P5SITE}/Mojolicious/Guides/Growing.pod
 ${P5SITE}/Mojolicious/Guides/Rendering.pod
 ${P5SITE}/Mojolicious/Guides/Routing.pod
+${P5SITE}/Mojolicious/Guides/Testing.pod
 ${P5SITE}/Mojolicious/Guides/Tutorial.pod
 ${P5SITE}/Mojolicious/Lite.pm
 ${P5SITE}/Mojolicious/Plugin/
 ${P5SITE}/Mojolicious/Plugin.pm
-${P5SITE}/Mojolicious/Plugin/Charset.pm
 ${P5SITE}/Mojolicious/Plugin/Config.pm
 ${P5SITE}/Mojolicious/Plugin/DefaultHelpers.pm
 ${P5SITE}/Mojolicious/Plugin/EPLRenderer.pm
@@ -132,29 +141,31 @@ ${P5SITE}/Mojolicious/Types.pm
 ${P5SITE}/Mojolicious/Validator/
 ${P5SITE}/Mojolicious/Validator.pm
 ${P5SITE}/Mojolicious/Validator/Validation.pm
-${P5SITE}/Mojolicious/public/
-${P5SITE}/Mojolicious/public/favicon.ico
-${P5SITE}/Mojolicious/public/mojo/
-${P5SITE}/Mojolicious/public/mojo/failraptor.png
-${P5SITE}/Mojolicious/public/mojo/jquery/
-${P5SITE}/Mojolicious/public/mojo/jquery/jquery.js
-${P5SITE}/Mojolicious/public/mojo/logo-black.png
-${P5SITE}/Mojolicious/public/mojo/logo-white.png
-${P5SITE}/Mojolicious/public/mojo/noraptor.png
-${P5SITE}/Mojolicious/public/mojo/notfound.png
-${P5SITE}/Mojolicious/public/mojo/pinstripe-dark.png
-${P5SITE}/Mojolicious/public/mojo/pinstripe-light.png
-${P5SITE}/Mojolicious/public/mojo/prettify/
-${P5SITE}/Mojolicious/public/mojo/prettify/prettify-mojo-dark.css
-${P5SITE}/Mojolicious/public/mojo/prettify/prettify-mojo-light.css
-${P5SITE}/Mojolicious/public/mojo/prettify/run_prettify.js
-${P5SITE}/Mojolicious/public/mojo/stripes.png
-${P5SITE}/Mojolicious/templates/
-${P5SITE}/Mojolicious/templates/development.html.ep
-${P5SITE}/Mojolicious/templates/exception.html.ep
-${P5SITE}/Mojolicious/templates/mojobar.html.ep
-${P5SITE}/Mojolicious/templates/not_found.html.ep
-${P5SITE}/Mojolicious/templates/perldoc.html.ep
+${P5SITE}/Mojolicious/resources/
+${P5SITE}/Mojolicious/resources/public/
+${P5SITE}/Mojolicious/resources/public/favicon.ico
+${P5SITE}/Mojolicious/resources/public/mojo/
+${P5SITE}/Mojolicious/resources/public/mojo/failraptor.png
+${P5SITE}/Mojolicious/resources/public/mojo/jquery/
+${P5SITE}/Mojolicious/resources/public/mojo/jquery/jquery.js
+${P5SITE}/Mojolicious/resources/public/mojo/logo-black.png
+${P5SITE}/Mojolicious/resources/public/mojo/logo-white.png
+${P5SITE}/Mojolicious/resources/public/mojo/noraptor.png
+${P5SITE}/Mojolicious/resources/public/mojo/notfound.png
+${P5SITE}/Mojolicious/resources/public/mojo/pinstripe-dark.png
+${P5SITE}/Mojolicious/resources/public/mojo/pinstripe-light.png
+${P5SITE}/Mojolicious/resources/public/mojo/prettify/
+${P5SITE}/Mojolicious/resources/public/mojo/prettify/prettify-mojo-dark.css
+${P5SITE}/Mojolicious/resources/public/mojo/prettify/prettify-mojo-light.css
+${P5SITE}/Mojolicious/resources/public/mojo/prettify/run_prettify.js
+${P5SITE}/Mojolicious/resources/public/mojo/stripes.png
+${P5SITE}/Mojolicious/resources/templates/
+${P5SITE}/Mojolicious/resources/templates/mojo/
+${P5SITE}/Mojolicious/resources/templates/mojo/debug.html.ep
+${P5SITE}/Mojolicious/resources/templates/mojo/exception.html.ep
+${P5SITE}/Mojolicious/resources/templates/mojo/menubar.html.ep
+${P5SITE}/Mojolicious/resources/templates/mojo/not_found.html.ep
+${P5SITE}/Mojolicious/resources/templates/mojo/perldoc.html.ep
 ${P5SITE}/Test/
 ${P5SITE}/Test/Mojo.pm
 ${P5SITE}/ojo.pm
@@ -181,6 +192,7 @@ ${P5SITE}/ojo.pm
 @man man/man3p/Mojo::Date.3p
 @man man/man3p/Mojo::EventEmitter.3p
 @man man/man3p/Mojo::Exception.3p
+@man man/man3p/Mojo::File.3p
 @man man/man3p/Mojo::Headers.3p
 @man man/man3p/Mojo::HelloWorld.3p
 @man man/man3p/Mojo::Home.3p
@@ -189,6 +201,8 @@ ${P5SITE}/ojo.pm
 @man man/man3p/Mojo::IOLoop::Delay.3p
 @man man/man3p/Mojo::IOLoop::Server.3p
 @man man/man3p/Mojo::IOLoop::Stream.3p
+@man man/man3p/Mojo::IOLoop::Subprocess.3p
+@man man/man3p/Mojo::IOLoop::TLS.3p
 @man man/man3p/Mojo::JSON.3p
 @man man/man3p/Mojo::JSON::Pointer.3p
 @man man/man3p/Mojo::Loader.3p
@@ -206,6 +220,8 @@ ${P5SITE}/ojo.pm
 @man man/man3p/Mojo::Server::Daemon.3p
 @man man/man3p/Mojo::Server::Hypnotoad.3p
 @man man/man3p/Mojo::Server::Morbo.3p
+@man man/man3p/Mojo::Server::Morbo::Backend.3p
+@man man/man3p/Mojo::Server::Morbo::Backend::Poll.3p
 @man man/man3p/Mojo::Server::PSGI.3p
 @man man/man3p/Mojo::Server::Prefork.3p
 @man man/man3p/Mojo::Template.3p
@@ -220,6 +236,7 @@ ${P5SITE}/ojo.pm
 @man man/man3p/Mojo::UserAgent::Server.3p
 @man man/man3p/Mojo::UserAgent::Transactor.3p
 @man man/man3p/Mojo::Util.3p
+@man man/man3p/Mojo::WebSocket.3p
 @man man/man3p/Mojolicious.3p
 @man man/man3p/Mojolicious::Command.3p
 @man man/man3p/Mojolicious::Command::cgi.3p
@@ -247,10 +264,10 @@ ${P5SITE}/ojo.pm
 @man man/man3p/Mojolicious::Guides::Growing.3p
 @man man/man3p/Mojolicious::Guides::Rendering.3p
 @man man/man3p/Mojolicious::Guides::Routing.3p
+@man man/man3p/Mojolicious::Guides::Testing.3p
 @man man/man3p/Mojolicious::Guides::Tutorial.3p
 @man man/man3p/Mojolicious::Lite.3p
 @man man/man3p/Mojolicious::Plugin.3p
-@man man/man3p/Mojolicious::Plugin::Charset.3p
 @man man/man3p/Mojolicious::Plugin::Config.3p
 @man man/man3p/Mojolicious::Plugin::DefaultHelpers.3p
 @man man/man3p/Mojolicious::Plugin::EPLRenderer.3p
