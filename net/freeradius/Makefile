@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2016/08/17 20:58:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.73 2017/11/13 16:39:15 naddy Exp $
 
 PORTROACH=	limit:^2\.
 
@@ -12,8 +12,8 @@ COMMENT-pgsql=	freeradius pgsql rlm addon
 COMMENT-ldap=	freeradius ldap rlm addon
 
 V=		2.2.9
-REVISION=	3
-REVISION-main=	5
+REVISION=	4
+REVISION-main=	6
 DISTNAME=	freeradius-server-$V
 EXTRACT_SUFX=	.tar.bz2
 
@@ -30,12 +30,8 @@ MASTER_SITES=	ftp://ftp.freeradius.org/pub/radius/ \
 
 HOMEPAGE=	http://www.freeradius.org/
 
-MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
-
 # GPLv2 - LGPLv2 - OpenSSL exemption
 PERMIT_PACKAGE_CDROM=	Yes
-
-MODULES=	devel/gettext
 
 CONFIGURE_STYLE=autoconf dest
 AUTOCONF_VERSION=2.69
@@ -72,7 +68,7 @@ BUILD_DEPENDS=		net/net-snmp
 LIB_DEPENDS-main=	databases/gdbm \
 			devel/libexecinfo \
 			devel/libtool,-ltdl
-WANTLIB-main=		${WANTLIB} c execinfo pcap pthread readline \
+WANTLIB-main=		c execinfo iconv intl pcap pthread readline \
 			termcap gdbm>=3 ltdl>=4 crypto ssl
 
 PSEUDO_FLAVORS=	no_ldap no_mysql no_pgsql no_iodbc
@@ -131,7 +127,7 @@ post-configure:
 post-install:
 .for f in bin/radlast bin/radtest sbin/checkrad sbin/radwatch \
     share/examples/freeradius/dictionary share/examples/freeradius/radiusd.conf
-	perl -pi -e 's,\$${DESTDIR},,g' ${PREFIX}/$f
+	perl -pi -e 's,\$$\{DESTDIR},,g' ${PREFIX}/$f
 .endfor
 	rm ${PREFIX}/lib/freeradius/*.la ${PREFIX}/lib/freeradius/*.a \
 		${PREFIX}/lib/libfreeradius-eap-*.la
