@@ -1,2 +1,4 @@
-SHA256 (lapack-3.1.1.tgz) = 5MM1swtDlPliDWCBgxn/Eq8q6mOCdRXp9+YriN/3oCo=
-SIZE (lapack-3.1.1.tgz) = 10407595
+SHA256 (lapack-3.7.1/lapack-3.7.1.tgz) = 9sU/2fVpMvPds9XiTBwH5M2bOwjn+J3pyGcSXuzJocg=
+SHA256 (lapack-3.7.1/manpages.tgz) = u1F5eMDMeWzCO/9NMLuw9LrXoo5pXbhsKf3J/tYKIsQ=
+SIZE (lapack-3.7.1/lapack-3.7.1.tgz) = 9137261
+SIZE (lapack-3.7.1/manpages.tgz) = 2673950

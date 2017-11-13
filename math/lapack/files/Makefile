@@ -1,9 +1,12 @@
-# $OpenBSD: Makefile,v 1.6 2016/09/01 10:53:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2017/11/13 06:57:36 steven Exp $
 
-LIB=	lapack
+LIB = lapack
 
-ALLAUX = ilaenv.f ieeeck.f lsamen.f xerbla.f iparmq.f	\
-    ../INSTALL/ilaver.f ../INSTALL/lsame.f
+TIMER = INT_ETIME
+
+ALLAUX = ilaenv.f ieeeck.f lsamen.f xerbla.f xerbla_array.f iparmq.f \
+   iparam2stage.f ilaprec.f ilatrans.f ilauplo.f iladiag.f chla_transtype.f \
+   ../INSTALL/ilaver.f ../INSTALL/lsame.f ../INSTALL/slamch.f
 
 SCLAUX = \
    sbdsdc.f \
@@ -17,10 +20,10 @@ SCLAUX = \
    slartg.f slaruv.f slas2.f  slascl.f \
    slasd0.f slasd1.f slasd2.f slasd3.f slasd4.f slasd5.f slasd6.f \
    slasd7.f slasd8.f slasda.f slasdq.f slasdt.f \
-   slaset.f slasq1.f slasq2.f slasq3.f slazq3.f slasq4.f slazq4.f slasq5.f slasq6.f \
+   slaset.f slasq1.f slasq2.f slasq3.f slasq4.f slasq5.f slasq6.f \
    slasr.f  slasrt.f slassq.f slasv2.f spttrf.f sstebz.f sstedc.f \
    ssteqr.f ssterf.f slaisnan.f sisnan.f \
-   ../INSTALL/slamch.f ../INSTALL/second_${TIMER}.f
+   slartgp.f slartgs.f ../INSTALL/second_${TIMER}.f
 
 DZLAUX = \
    dbdsdc.f \
@@ -34,225 +37,356 @@ DZLAUX = \
    dlartg.f dlaruv.f dlas2.f  dlascl.f \
    dlasd0.f dlasd1.f dlasd2.f dlasd3.f dlasd4.f dlasd5.f dlasd6.f \
    dlasd7.f dlasd8.f dlasda.f dlasdq.f dlasdt.f \
-   dlaset.f dlasq1.f dlasq2.f dlasq3.f dlazq3.f dlasq4.f dlazq4.f dlasq5.f dlasq6.f \
+   dlaset.f dlasq1.f dlasq2.f dlasq3.f dlasq4.f dlasq5.f dlasq6.f \
    dlasr.f  dlasrt.f dlassq.f dlasv2.f dpttrf.f dstebz.f dstedc.f \
    dsteqr.f dsterf.f dlaisnan.f disnan.f \
+   dlartgp.f dlartgs.f \
    ../INSTALL/dlamch.f ../INSTALL/dsecnd_${TIMER}.f
 
 SLASRC = \
-   sgbbrd.f sgbcon.f sgbequ.f sgbrfs.f sgbsv.f  \
+   sbdsvdx.f spotrf2.f sgetrf2.f \
+   sgbbrd.f sgbcon.f sgbequ.f sgbrfs.f sgbsv.f \
    sgbsvx.f sgbtf2.f sgbtrf.f sgbtrs.f sgebak.f sgebal.f sgebd2.f \
    sgebrd.f sgecon.f sgeequ.f sgees.f  sgeesx.f sgeev.f  sgeevx.f \
-   sgegs.f  sgegv.f  sgehd2.f sgehrd.f sgelq2.f sgelqf.f \
-   sgels.f  sgelsd.f sgelss.f sgelsx.f sgelsy.f sgeql2.f sgeqlf.f \
-   sgeqp3.f sgeqpf.f sgeqr2.f sgeqrf.f sgerfs.f sgerq2.f sgerqf.f \
-   sgesc2.f sgesdd.f sgesv.f  sgesvd.f sgesvx.f sgetc2.f sgetf2.f \
-   sgetrf.f sgetri.f \
-   sgetrs.f sggbak.f sggbal.f sgges.f  sggesx.f sggev.f  sggevx.f \
-   sggglm.f sgghrd.f sgglse.f sggqrf.f \
-   sggrqf.f sggsvd.f sggsvp.f sgtcon.f sgtrfs.f sgtsv.f  \
+   sgehd2.f sgehrd.f sgelq2.f sgelqf.f \
+   sgels.f  sgelsd.f sgelss.f sgelsy.f sgeql2.f sgeqlf.f \
+   sgeqp3.f sgeqr2.f sgeqr2p.f sgeqrf.f sgeqrfp.f sgerfs.f \
+   sgerq2.f sgerqf.f sgesc2.f sgesdd.f sgesv.f  sgesvd.f sgesvdx.f sgesvx.f \
+   sgetc2.f sgetf2.f sgetri.f \
+   sggbak.f sggbal.f sgges.f  sgges3.f sggesx.f \
+   sggev.f  sggev3.f sggevx.f \
+   sggglm.f sgghrd.f sgghd3.f sgglse.f sggqrf.f \
+   sggrqf.f sggsvd3.f sggsvp3.f sgtcon.f sgtrfs.f sgtsv.f \
    sgtsvx.f sgttrf.f sgttrs.f sgtts2.f shgeqz.f \
    shsein.f shseqr.f slabrd.f slacon.f slacn2.f \
    slaein.f slaexc.f slag2.f  slags2.f slagtm.f slagv2.f slahqr.f \
-   slahrd.f slahr2.f slaic1.f slaln2.f slals0.f slalsa.f slalsd.f \
+   slahr2.f slaic1.f slaln2.f slals0.f slalsa.f slalsd.f \
    slangb.f slange.f slangt.f slanhs.f slansb.f slansp.f \
    slansy.f slantb.f slantp.f slantr.f slanv2.f \
    slapll.f slapmt.f \
    slaqgb.f slaqge.f slaqp2.f slaqps.f slaqsb.f slaqsp.f slaqsy.f \
    slaqr0.f slaqr1.f slaqr2.f slaqr3.f slaqr4.f slaqr5.f \
-   slaqtr.f slar1v.f slar2v.f \
-   slarf.f  slarfb.f slarfg.f slarft.f slarfx.f slargv.f \
+   slaqtr.f slar1v.f slar2v.f ilaslr.f ilaslc.f \
+   slarf.f  slarfb.f slarfg.f slarfgp.f slarft.f slarfx.f slarfy.f slargv.f \
    slarrv.f slartv.f \
-   slarz.f  slarzb.f slarzt.f slaswp.f slasy2.f slasyf.f \
-   slatbs.f slatdf.f slatps.f slatrd.f slatrs.f slatrz.f slatzm.f \
+   slarz.f  slarzb.f slarzt.f slaswp.f slasy2.f slasyf.f slasyf_rook.f \
+   slasyf_rk.f \
+   slatbs.f slatdf.f slatps.f slatrd.f slatrs.f slatrz.f \
    slauu2.f slauum.f sopgtr.f sopmtr.f sorg2l.f sorg2r.f \
    sorgbr.f sorghr.f sorgl2.f sorglq.f sorgql.f sorgqr.f sorgr2.f \
-   sorgrq.f sorgtr.f sorm2l.f sorm2r.f \
+   sorgrq.f sorgtr.f sorm2l.f sorm2r.f sorm22.f \
    sormbr.f sormhr.f sorml2.f sormlq.f sormql.f sormqr.f sormr2.f \
    sormr3.f sormrq.f sormrz.f sormtr.f spbcon.f spbequ.f spbrfs.f \
    spbstf.f spbsv.f  spbsvx.f \
-   spbtf2.f spbtrf.f spbtrs.f spocon.f spoequ.f sporfs.f sposv.f  \
-   sposvx.f spotf2.f spotrf.f spotri.f spotrs.f sppcon.f sppequ.f \
+   spbtf2.f spbtrf.f spbtrs.f spocon.f spoequ.f sporfs.f sposv.f \
+   sposvx.f spotf2.f spotri.f spstrf.f spstf2.f \
+   sppcon.f sppequ.f \
    spprfs.f sppsv.f  sppsvx.f spptrf.f spptri.f spptrs.f sptcon.f \
-   spteqr.f sptrfs.f sptsv.f  sptsvx.f spttrs.f sptts2.f srscl.f  \
+   spteqr.f sptrfs.f sptsv.f  sptsvx.f spttrs.f sptts2.f srscl.f \
    ssbev.f  ssbevd.f ssbevx.f ssbgst.f ssbgv.f  ssbgvd.f ssbgvx.f \
    ssbtrd.f sspcon.f sspev.f  sspevd.f sspevx.f sspgst.f \
    sspgv.f  sspgvd.f sspgvx.f ssprfs.f sspsv.f  sspsvx.f ssptrd.f \
    ssptrf.f ssptri.f ssptrs.f sstegr.f sstein.f sstev.f  sstevd.f sstevr.f \
-   sstevx.f ssycon.f ssyev.f  ssyevd.f ssyevr.f ssyevx.f ssygs2.f \
+   sstevx.f \
+   ssycon.f ssyev.f  ssyevd.f ssyevr.f ssyevx.f ssygs2.f \
    ssygst.f ssygv.f  ssygvd.f ssygvx.f ssyrfs.f ssysv.f  ssysvx.f \
-   ssytd2.f ssytf2.f ssytrd.f ssytrf.f ssytri.f ssytrs.f stbcon.f \
+   ssytd2.f ssytf2.f ssytrd.f ssytrf.f ssytri.f ssytri2.f ssytri2x.f \
+   ssyswapr.f ssytrs.f ssytrs2.f \
+   ssyconv.f ssyconvf.f ssyconvf_rook.f \
+   ssytf2_rook.f ssytrf_rook.f ssytrs_rook.f \
+   ssytri_rook.f ssycon_rook.f ssysv_rook.f \
+   ssytf2_rk.f ssytrf_rk.f ssytrs_3.f \
+   ssytri_3.f ssytri_3x.f ssycon_3.f ssysv_rk.f \
+   slasyf_aa.f ssysv_aa.f ssytrf_aa.f ssytrs_aa.f \
+   stbcon.f \
    stbrfs.f stbtrs.f stgevc.f stgex2.f stgexc.f stgsen.f \
    stgsja.f stgsna.f stgsy2.f stgsyl.f stpcon.f stprfs.f stptri.f \
    stptrs.f \
-   strcon.f strevc.f strexc.f strrfs.f strsen.f strsna.f strsyl.f \
-   strti2.f strtri.f strtrs.f stzrqf.f stzrzf.f sstemr.f
+   strcon.f strevc.f strevc3.f strexc.f strrfs.f strsen.f strsna.f strsyl.f \
+   strti2.f strtri.f strtrs.f stzrzf.f sstemr.f \
+   slansf.f spftrf.f spftri.f spftrs.f ssfrk.f stfsm.f stftri.f stfttp.f \
+   stfttr.f stpttf.f stpttr.f strttf.f strttp.f \
+   sgejsv.f sgesvj.f sgsvj0.f sgsvj1.f \
+   sgeequb.f ssyequb.f spoequb.f sgbequb.f \
+   sbbcsd.f slapmr.f sorbdb.f sorbdb1.f sorbdb2.f sorbdb3.f sorbdb4.f \
+   sorbdb5.f sorbdb6.f sorcsd.f sorcsd2by1.f \
+   sgeqrt.f sgeqrt2.f sgeqrt3.f sgemqrt.f \
+   stpqrt.f stpqrt2.f stpmqrt.f stprfb.f \
+   sgelqt.f sgelqt3.f sgemlqt.f \
+   sgetsls.f sgeqr.f slatsqr.f slamtsqr.f sgemqr.f \
+   sgelq.f slaswlq.f slamswlq.f sgemlq.f \
+   stplqt.f stplqt2.f stpmlqt.f \
+   ssytrd_2stage.f ssytrd_sy2sb.f ssytrd_sb2st.f ssb2st_kernels.f \
+   ssyevd_2stage.f ssyev_2stage.f ssyevx_2stage.f ssyevr_2stage.f \
+   ssbev_2stage.f ssbevx_2stage.f ssbevd_2stage.f ssygv_2stage.f
+
+DSLASRC = spotrs.f sgetrs.f spotrf.f sgetrf.f
 
 CLASRC = \
+   cpotrf2.f cgetrf2.f \
    cbdsqr.f cgbbrd.f cgbcon.f cgbequ.f cgbrfs.f cgbsv.f  cgbsvx.f \
    cgbtf2.f cgbtrf.f cgbtrs.f cgebak.f cgebal.f cgebd2.f cgebrd.f \
    cgecon.f cgeequ.f cgees.f  cgeesx.f cgeev.f  cgeevx.f \
-   cgegs.f  cgegv.f  cgehd2.f cgehrd.f cgelq2.f cgelqf.f \
-   cgels.f  cgelsd.f cgelss.f cgelsx.f cgelsy.f cgeql2.f cgeqlf.f cgeqp3.f \
-   cgeqpf.f cgeqr2.f cgeqrf.f cgerfs.f cgerq2.f cgerqf.f \
-   cgesc2.f cgesdd.f cgesv.f  cgesvd.f cgesvx.f cgetc2.f cgetf2.f cgetrf.f \
-   cgetri.f cgetrs.f \
-   cggbak.f cggbal.f cgges.f  cggesx.f cggev.f  cggevx.f cggglm.f \
-   cgghrd.f cgglse.f cggqrf.f cggrqf.f \
-   cggsvd.f cggsvp.f \
-   cgtcon.f cgtrfs.f cgtsv.f  cgtsvx.f cgttrf.f cgttrs.f cgtts2.f chbev.f  \
+   cgehd2.f cgehrd.f cgelq2.f cgelqf.f \
+   cgels.f  cgelsd.f cgelss.f cgelsy.f cgeql2.f cgeqlf.f cgeqp3.f \
+   cgeqr2.f cgeqr2p.f cgeqrf.f cgeqrfp.f cgerfs.f \
+   cgerq2.f cgerqf.f cgesc2.f cgesdd.f cgesv.f  cgesvd.f  cgesvdx.f \
+   cgesvj.f cgejsv.f cgsvj0.f cgsvj1.f \
+   cgesvx.f cgetc2.f cgetf2.f cgetri.f \
+   cggbak.f cggbal.f cgges.f  cgges3.f cggesx.f \
+   cggev.f  cggev3.f cggevx.f cggglm.f \
+   cgghrd.f cgghd3.f cgglse.f cggqrf.f cggrqf.f \
+   cggsvd3.f cggsvp3.f \
+   cgtcon.f cgtrfs.f cgtsv.f  cgtsvx.f cgttrf.f cgttrs.f cgtts2.f chbev.f \
    chbevd.f chbevx.f chbgst.f chbgv.f  chbgvd.f chbgvx.f chbtrd.f \
    checon.f cheev.f  cheevd.f cheevr.f cheevx.f chegs2.f chegst.f \
    chegv.f  chegvd.f chegvx.f cherfs.f chesv.f  chesvx.f chetd2.f \
    chetf2.f chetrd.f \
-   chetrf.f chetri.f chetrs.f chgeqz.f chpcon.f chpev.f  chpevd.f \
-   chpevx.f chpgst.f chpgv.f  chpgvd.f chpgvx.f chprfs.f chpsv.f  \
+   chetrf.f chetri.f chetri2.f chetri2x.f cheswapr.f \
+   chetrs.f chetrs2.f \
+   chetf2_rook.f chetrf_rook.f chetri_rook.f \
+   chetrs_rook.f checon_rook.f chesv_rook.f \
+   chetf2_rk.f chetrf_rk.f chetri_3.f chetri_3x.f \
+   chetrs_3.f checon_3.f chesv_rk.f \
+   chesv_aa.f chetrf_aa.f chetrs_aa.f clahef_aa.f \
+   chgeqz.f chpcon.f chpev.f  chpevd.f \
+   chpevx.f chpgst.f chpgv.f  chpgvd.f chpgvx.f chprfs.f chpsv.f \
    chpsvx.f \
    chptrd.f chptrf.f chptri.f chptrs.f chsein.f chseqr.f clabrd.f \
    clacgv.f clacon.f clacn2.f clacp2.f clacpy.f clacrm.f clacrt.f cladiv.f \
    claed0.f claed7.f claed8.f \
    claein.f claesy.f claev2.f clags2.f clagtm.f \
-   clahef.f clahqr.f \
-   clahrd.f clahr2.f claic1.f clals0.f clalsa.f clalsd.f clangb.f clange.f clangt.f \
+   clahef.f clahef_rook.f clahef_rk.f clahqr.f \
+   clahr2.f claic1.f clals0.f clalsa.f clalsd.f clangb.f clange.f clangt.f \
    clanhb.f clanhe.f \
    clanhp.f clanhs.f clanht.f clansb.f clansp.f clansy.f clantb.f \
    clantp.f clantr.f clapll.f clapmt.f clarcm.f claqgb.f claqge.f \
    claqhb.f claqhe.f claqhp.f claqp2.f claqps.f claqsb.f \
    claqr0.f claqr1.f claqr2.f claqr3.f claqr4.f claqr5.f \
-   claqsp.f claqsy.f clar1v.f clar2v.f clarf.f  clarfb.f clarfg.f clarft.f \
-   clarfx.f clargv.f clarnv.f clarrv.f clartg.f clartv.f \
+   claqsp.f claqsy.f clar1v.f clar2v.f ilaclr.f ilaclc.f \
+   clarf.f  clarfb.f clarfg.f clarft.f clarfgp.f \
+   clarfx.f clarfy.f clargv.f clarnv.f clarrv.f clartg.f clartv.f \
    clarz.f  clarzb.f clarzt.f clascl.f claset.f clasr.f  classq.f \
-   claswp.f clasyf.f clatbs.f clatdf.f clatps.f clatrd.f clatrs.f clatrz.f \
-   clatzm.f clauu2.f clauum.f cpbcon.f cpbequ.f cpbrfs.f cpbstf.f cpbsv.f  \
+   claswp.f clasyf.f clasyf_rook.f clasyf_rk.f clasyf_aa.f \
+   clatbs.f clatdf.f clatps.f clatrd.f clatrs.f clatrz.f \
+   clauu2.f clauum.f cpbcon.f cpbequ.f cpbrfs.f cpbstf.f cpbsv.f \
    cpbsvx.f cpbtf2.f cpbtrf.f cpbtrs.f cpocon.f cpoequ.f cporfs.f \
-   cposv.f  cposvx.f cpotf2.f cpotrf.f cpotri.f cpotrs.f cppcon.f \
-   cppequ.f cpprfs.f cppsv.f  cppsvx.f cpptrf.f cpptri.f cpptrs.f \
+   cposv.f  cposvx.f cpotf2.f cpotri.f cpstrf.f cpstf2.f \
+   cppcon.f cppequ.f cpprfs.f cppsv.f  cppsvx.f cpptrf.f cpptri.f cpptrs.f \
    cptcon.f cpteqr.f cptrfs.f cptsv.f  cptsvx.f cpttrf.f cpttrs.f cptts2.f \
-   crot.f   cspcon.f cspmv.f  cspr.f   csprfs.f cspsv.f  \
+   crot.f   cspcon.f cspmv.f  cspr.f   csprfs.f cspsv.f \
    cspsvx.f csptrf.f csptri.f csptrs.f csrscl.f cstedc.f \
-   cstegr.f cstein.f csteqr.f csycon.f csymv.f  \
-   csyr.f   csyrfs.f csysv.f  csysvx.f csytf2.f csytrf.f csytri.f \
-   csytrs.f ctbcon.f ctbrfs.f ctbtrs.f ctgevc.f ctgex2.f \
+   cstegr.f cstein.f csteqr.f \
+   csycon.f csymv.f csyr.f csyrfs.f csysv.f csysvx.f \
+   csytf2.f csytrf.f csytri.f csytri2.f csytri2x.f \
+   csyswapr.f csytrs.f csytrs2.f \
+   csyconv.f csyconvf.f csyconvf_rook.f \
+   csytf2_rook.f csytrf_rook.f csytrs_rook.f \
+   csytri_rook.f csycon_rook.f csysv_rook.f \
+   csytf2_rk.f csytrf_rk.f csytrf_aa.f csytrs_3.f csytrs_aa.f \
+   csytri_3.f csytri_3x.f csycon_3.f csysv_rk.f csysv_aa.f \
+   ctbcon.f ctbrfs.f ctbtrs.f ctgevc.f ctgex2.f \
    ctgexc.f ctgsen.f ctgsja.f ctgsna.f ctgsy2.f ctgsyl.f ctpcon.f \
    ctprfs.f ctptri.f \
-   ctptrs.f ctrcon.f ctrevc.f ctrexc.f ctrrfs.f ctrsen.f ctrsna.f \
-   ctrsyl.f ctrti2.f ctrtri.f ctrtrs.f ctzrqf.f ctzrzf.f cung2l.f cung2r.f \
+   ctptrs.f ctrcon.f ctrevc.f ctrevc3.f ctrexc.f ctrrfs.f ctrsen.f ctrsna.f \
+   ctrsyl.f ctrti2.f ctrtri.f ctrtrs.f ctzrzf.f cung2l.f cung2r.f \
    cungbr.f cunghr.f cungl2.f cunglq.f cungql.f cungqr.f cungr2.f \
-   cungrq.f cungtr.f cunm2l.f cunm2r.f cunmbr.f cunmhr.f cunml2.f \
+   cungrq.f cungtr.f cunm2l.f cunm2r.f cunmbr.f cunmhr.f cunml2.f cunm22.f \
    cunmlq.f cunmql.f cunmqr.f cunmr2.f cunmr3.f cunmrq.f cunmrz.f \
-   cunmtr.f cupgtr.f cupmtr.f icmax1.f scsum1.f cstemr.f
+   cunmtr.f cupgtr.f cupmtr.f icmax1.f scsum1.f cstemr.f \
+   chfrk.f ctfttp.f clanhf.f cpftrf.f cpftri.f cpftrs.f ctfsm.f ctftri.f \
+   ctfttr.f ctpttf.f ctpttr.f ctrttf.f ctrttp.f \
+   cgeequb.f cgbequb.f csyequb.f cpoequb.f cheequb.f \
+   cbbcsd.f clapmr.f cunbdb.f cunbdb1.f cunbdb2.f cunbdb3.f cunbdb4.f \
+   cunbdb5.f cunbdb6.f cuncsd.f cuncsd2by1.f \
+   cgeqrt.f cgeqrt2.f cgeqrt3.f cgemqrt.f \
+   ctpqrt.f ctpqrt2.f ctpmqrt.f ctprfb.f \
+   cgelqt.f cgelqt3.f cgemlqt.f \
+   cgetsls.f cgeqr.f clatsqr.f clamtsqr.f cgemqr.f \
+   cgelq.f claswlq.f clamswlq.f cgemlq.f \
+   ctplqt.f ctplqt2.f ctpmlqt.f \
+   chetrd_2stage.f chetrd_he2hb.f chetrd_hb2st.f chb2st_kernels.f \
+   cheevd_2stage.f cheev_2stage.f cheevx_2stage.f cheevr_2stage.f \
+   chbev_2stage.f chbevx_2stage.f chbevd_2stage.f chegv_2stage.f
+
+ZCLASRC = cpotrs.f cgetrs.f cpotrf.f cgetrf.f
 
 DLASRC = \
-   dgbbrd.f dgbcon.f dgbequ.f dgbrfs.f dgbsv.f  \
+   dpotrf2.f dgetrf2.f \
+   dbdsvdx.f \
+   dgbbrd.f dgbcon.f dgbequ.f dgbrfs.f dgbsv.f \
    dgbsvx.f dgbtf2.f dgbtrf.f dgbtrs.f dgebak.f dgebal.f dgebd2.f \
    dgebrd.f dgecon.f dgeequ.f dgees.f  dgeesx.f dgeev.f  dgeevx.f \
-   dgegs.f  dgegv.f  dgehd2.f dgehrd.f dgelq2.f dgelqf.f \
-   dgels.f  dgelsd.f dgelss.f dgelsx.f dgelsy.f dgeql2.f dgeqlf.f \
-   dgeqp3.f dgeqpf.f dgeqr2.f dgeqrf.f dgerfs.f dgerq2.f dgerqf.f \
-   dgesc2.f dgesdd.f dgesv.f  dgesvd.f dgesvx.f dgetc2.f dgetf2.f \
-   dgetrf.f dgetri.f \
-   dgetrs.f dggbak.f dggbal.f dgges.f  dggesx.f dggev.f  dggevx.f \
-   dggglm.f dgghrd.f dgglse.f dggqrf.f \
-   dggrqf.f dggsvd.f dggsvp.f dgtcon.f dgtrfs.f dgtsv.f  \
+   dgehd2.f dgehrd.f dgelq2.f dgelqf.f \
+   dgels.f  dgelsd.f dgelss.f dgelsy.f dgeql2.f dgeqlf.f \
+   dgeqp3.f dgeqr2.f dgeqr2p.f dgeqrf.f dgeqrfp.f dgerfs.f \
+   dgerq2.f dgerqf.f dgesc2.f dgesdd.f dgesv.f  dgesvd.f dgesvdx.f dgesvx.f \
+   dgetc2.f dgetf2.f dgetrf.f dgetri.f \
+   dgetrs.f dggbak.f dggbal.f dgges.f  dgges3.f dggesx.f \
+   dggev.f  dggev3.f dggevx.f \
+   dggglm.f dgghrd.f dgghd3.f dgglse.f dggqrf.f \
+   dggrqf.f dggsvd3.f dggsvp3.f dgtcon.f dgtrfs.f dgtsv.f \
    dgtsvx.f dgttrf.f dgttrs.f dgtts2.f dhgeqz.f \
    dhsein.f dhseqr.f dlabrd.f dlacon.f dlacn2.f \
    dlaein.f dlaexc.f dlag2.f  dlags2.f dlagtm.f dlagv2.f dlahqr.f \
-   dlahrd.f dlahr2.f dlaic1.f dlaln2.f dlals0.f dlalsa.f dlalsd.f \
+   dlahr2.f dlaic1.f dlaln2.f dlals0.f dlalsa.f dlalsd.f \
    dlangb.f dlange.f dlangt.f dlanhs.f dlansb.f dlansp.f \
    dlansy.f dlantb.f dlantp.f dlantr.f dlanv2.f \
    dlapll.f dlapmt.f \
    dlaqgb.f dlaqge.f dlaqp2.f dlaqps.f dlaqsb.f dlaqsp.f dlaqsy.f \
    dlaqr0.f dlaqr1.f dlaqr2.f dlaqr3.f dlaqr4.f dlaqr5.f \
-   dlaqtr.f dlar1v.f dlar2v.f \
-   dlarf.f  dlarfb.f dlarfg.f dlarft.f dlarfx.f dlargv.f \
-   dlarrv.f dlartv.f \
-   dlarz.f  dlarzb.f dlarzt.f dlaswp.f dlasy2.f dlasyf.f \
-   dlatbs.f dlatdf.f dlatps.f dlatrd.f dlatrs.f dlatrz.f dlatzm.f dlauu2.f \
+   dlaqtr.f dlar1v.f dlar2v.f iladlr.f iladlc.f \
+   dlarf.f  dlarfb.f dlarfg.f dlarfgp.f dlarft.f dlarfx.f dlarfy.f \
+   dlargv.f dlarrv.f dlartv.f \
+   dlarz.f  dlarzb.f dlarzt.f dlaswp.f dlasy2.f \
+   dlasyf.f dlasyf_rook.f dlasyf_rk.f \
+   dlatbs.f dlatdf.f dlatps.f dlatrd.f dlatrs.f dlatrz.f dlauu2.f \
    dlauum.f dopgtr.f dopmtr.f dorg2l.f dorg2r.f \
    dorgbr.f dorghr.f dorgl2.f dorglq.f dorgql.f dorgqr.f dorgr2.f \
-   dorgrq.f dorgtr.f dorm2l.f dorm2r.f \
+   dorgrq.f dorgtr.f dorm2l.f dorm2r.f dorm22.f \
    dormbr.f dormhr.f dorml2.f dormlq.f dormql.f dormqr.f dormr2.f \
    dormr3.f dormrq.f dormrz.f dormtr.f dpbcon.f dpbequ.f dpbrfs.f \
    dpbstf.f dpbsv.f  dpbsvx.f \
-   dpbtf2.f dpbtrf.f dpbtrs.f dpocon.f dpoequ.f dporfs.f dposv.f  \
-   dposvx.f dpotf2.f dpotrf.f dpotri.f dpotrs.f dppcon.f dppequ.f \
+   dpbtf2.f dpbtrf.f dpbtrs.f dpocon.f dpoequ.f dporfs.f dposv.f \
+   dposvx.f dpotf2.f dpotrf.f dpotri.f dpotrs.f dpstrf.f dpstf2.f \
+   dppcon.f dppequ.f \
    dpprfs.f dppsv.f  dppsvx.f dpptrf.f dpptri.f dpptrs.f dptcon.f \
-   dpteqr.f dptrfs.f dptsv.f  dptsvx.f dpttrs.f dptts2.f drscl.f  \
+   dpteqr.f dptrfs.f dptsv.f  dptsvx.f dpttrs.f dptts2.f drscl.f \
    dsbev.f  dsbevd.f dsbevx.f dsbgst.f dsbgv.f  dsbgvd.f dsbgvx.f \
-   dsbtrd.f  dspcon.f dspev.f  dspevd.f dspevx.f dspgst.f \
+   dsbtrd.f dspcon.f dspev.f  dspevd.f dspevx.f dspgst.f \
    dspgv.f  dspgvd.f dspgvx.f dsprfs.f dspsv.f  dspsvx.f dsptrd.f \
    dsptrf.f dsptri.f dsptrs.f dstegr.f dstein.f dstev.f  dstevd.f dstevr.f \
-   dstevx.f dsycon.f dsyev.f  dsyevd.f dsyevr.f \
+   dstevx.f \
+   dsycon.f dsyev.f  dsyevd.f dsyevr.f \
    dsyevx.f dsygs2.f dsygst.f dsygv.f  dsygvd.f dsygvx.f dsyrfs.f \
    dsysv.f  dsysvx.f \
-   dsytd2.f dsytf2.f dsytrd.f dsytrf.f dsytri.f dsytrs.f dtbcon.f \
-   dtbrfs.f dtbtrs.f dtgevc.f dtgex2.f dtgexc.f dtgsen.f \
+   dsytd2.f dsytf2.f dsytrd.f dsytrf.f dsytri.f dsytri2.f dsytri2x.f \
+   dsyswapr.f dsytrs.f dsytrs2.f \
+   dsyconv.f dsyconvf.f dsyconvf_rook.f \
+   dsytf2_rook.f dsytrf_rook.f dsytrs_rook.f \
+   dsytri_rook.f dsycon_rook.f dsysv_rook.f \
+   dsytf2_rk.f dsytrf_rk.f dsytrs_3.f \
+   dsytri_3.f dsytri_3x.f dsycon_3.f dsysv_rk.f \
+   dlasyf_aa.f dsysv_aa.f dsytrf_aa.f dsytrs_aa.f \
+   dtbcon.f dtbrfs.f dtbtrs.f dtgevc.f dtgex2.f dtgexc.f dtgsen.f \
    dtgsja.f dtgsna.f dtgsy2.f dtgsyl.f dtpcon.f dtprfs.f dtptri.f \
    dtptrs.f \
-   dtrcon.f dtrevc.f dtrexc.f dtrrfs.f dtrsen.f dtrsna.f dtrsyl.f \
-   dtrti2.f dtrtri.f dtrtrs.f dtzrqf.f dtzrzf.f dstemr.f \
-   dsgesv.f dlag2s.f slag2d.f
+   dtrcon.f dtrevc.f dtrevc3.f dtrexc.f dtrrfs.f dtrsen.f dtrsna.f dtrsyl.f \
+   dtrti2.f dtrtri.f dtrtrs.f dtzrzf.f dstemr.f \
+   dsgesv.f dsposv.f dlag2s.f slag2d.f dlat2s.f \
+   dlansf.f dpftrf.f dpftri.f dpftrs.f dsfrk.f dtfsm.f dtftri.f dtfttp.f \
+   dtfttr.f dtpttf.f dtpttr.f dtrttf.f dtrttp.f \
+   dgejsv.f dgesvj.f dgsvj0.f dgsvj1.f \
+   dgeequb.f dsyequb.f dpoequb.f dgbequb.f \
+   dbbcsd.f dlapmr.f dorbdb.f dorbdb1.f dorbdb2.f dorbdb3.f dorbdb4.f \
+   dorbdb5.f dorbdb6.f dorcsd.f dorcsd2by1.f \
+   dgeqrt.f dgeqrt2.f dgeqrt3.f dgemqrt.f \
+   dtpqrt.f dtpqrt2.f dtpmqrt.f dtprfb.f \
+   dgelqt.f dgelqt3.f dgemlqt.f \
+   dgetsls.f dgeqr.f dlatsqr.f dlamtsqr.f dgemqr.f \
+   dgelq.f dlaswlq.f dlamswlq.f dgemlq.f \
+   dtplqt.f dtplqt2.f dtpmlqt.f \
+   dsytrd_2stage.f dsytrd_sy2sb.f dsytrd_sb2st.f dsb2st_kernels.f \
+   dsyevd_2stage.f dsyev_2stage.f dsyevx_2stage.f dsyevr_2stage.f \
+   dsbev_2stage.f dsbevx_2stage.f dsbevd_2stage.f dsygv_2stage.f
 
 ZLASRC = \
+   zpotrf2.f zgetrf2.f \
    zbdsqr.f zgbbrd.f zgbcon.f zgbequ.f zgbrfs.f zgbsv.f  zgbsvx.f \
    zgbtf2.f zgbtrf.f zgbtrs.f zgebak.f zgebal.f zgebd2.f zgebrd.f \
    zgecon.f zgeequ.f zgees.f  zgeesx.f zgeev.f  zgeevx.f \
-   zgegs.f  zgegv.f  zgehd2.f zgehrd.f zgelq2.f zgelqf.f \
-   zgels.f  zgelsd.f zgelss.f zgelsx.f zgelsy.f zgeql2.f zgeqlf.f zgeqp3.f \
-   zgeqpf.f zgeqr2.f zgeqrf.f zgerfs.f zgerq2.f zgerqf.f \
-   zgesc2.f zgesdd.f zgesv.f  zgesvd.f zgesvx.f zgetc2.f zgetf2.f zgetrf.f \
+   zgehd2.f zgehrd.f zgelq2.f zgelqf.f \
+   zgels.f  zgelsd.f zgelss.f zgelsy.f zgeql2.f zgeqlf.f zgeqp3.f \
+   zgeqr2.f zgeqr2p.f zgeqrf.f zgeqrfp.f zgerfs.f zgerq2.f zgerqf.f \
+   zgesc2.f zgesdd.f zgesv.f  zgesvd.f zgesvdx.f \
+   zgesvj.f zgejsv.f zgsvj0.f zgsvj1.f \
+   zgesvx.f zgetc2.f zgetf2.f zgetrf.f \
    zgetri.f zgetrs.f \
-   zggbak.f zggbal.f zgges.f  zggesx.f zggev.f  zggevx.f zggglm.f \
-   zgghrd.f zgglse.f zggqrf.f zggrqf.f \
-   zggsvd.f zggsvp.f \
-   zgtcon.f zgtrfs.f zgtsv.f  zgtsvx.f zgttrf.f zgttrs.f zgtts2.f zhbev.f  \
+   zggbak.f zggbal.f zgges.f  zgges3.f zggesx.f \
+   zggev.f  zggev3.f zggevx.f zggglm.f \
+   zgghrd.f zgghd3.f zgglse.f zggqrf.f zggrqf.f \
+   zggsvd3.f zggsvp3.f \
+   zgtcon.f zgtrfs.f zgtsv.f  zgtsvx.f zgttrf.f zgttrs.f zgtts2.f zhbev.f \
    zhbevd.f zhbevx.f zhbgst.f zhbgv.f  zhbgvd.f zhbgvx.f zhbtrd.f \
    zhecon.f zheev.f  zheevd.f zheevr.f zheevx.f zhegs2.f zhegst.f \
    zhegv.f  zhegvd.f zhegvx.f zherfs.f zhesv.f  zhesvx.f zhetd2.f \
    zhetf2.f zhetrd.f \
-   zhetrf.f zhetri.f zhetrs.f zhgeqz.f zhpcon.f zhpev.f  zhpevd.f \
-   zhpevx.f zhpgst.f zhpgv.f  zhpgvd.f zhpgvx.f zhprfs.f zhpsv.f  \
+   zhetrf.f zhetri.f zhetri2.f zhetri2x.f zheswapr.f \
+   zhetrs.f zhetrs2.f \
+   zhetf2_rook.f zhetrf_rook.f zhetri_rook.f \
+   zhetrs_rook.f zhecon_rook.f zhesv_rook.f \
+   zhetf2_rk.f zhetrf_rk.f zhetri_3.f zhetri_3x.f \
+   zhetrs_3.f zhecon_3.f zhesv_rk.f \
+   zhesv_aa.f zhetrf_aa.f zhetrs_aa.f zlahef_aa.f \
+   zhgeqz.f zhpcon.f zhpev.f  zhpevd.f \
+   zhpevx.f zhpgst.f zhpgv.f  zhpgvd.f zhpgvx.f zhprfs.f zhpsv.f \
    zhpsvx.f \
    zhptrd.f zhptrf.f zhptri.f zhptrs.f zhsein.f zhseqr.f zlabrd.f \
    zlacgv.f zlacon.f zlacn2.f zlacp2.f zlacpy.f zlacrm.f zlacrt.f zladiv.f \
    zlaed0.f zlaed7.f zlaed8.f \
    zlaein.f zlaesy.f zlaev2.f zlags2.f zlagtm.f \
-   zlahef.f zlahqr.f \
-   zlahrd.f zlahr2.f zlaic1.f zlals0.f zlalsa.f zlalsd.f zlangb.f zlange.f \
+   zlahef.f zlahef_rook.f zlahef_rk.f zlahqr.f \
+   zlahr2.f zlaic1.f zlals0.f zlalsa.f zlalsd.f zlangb.f zlange.f \
    zlangt.f zlanhb.f \
    zlanhe.f \
    zlanhp.f zlanhs.f zlanht.f zlansb.f zlansp.f zlansy.f zlantb.f \
    zlantp.f zlantr.f zlapll.f zlapmt.f zlaqgb.f zlaqge.f \
    zlaqhb.f zlaqhe.f zlaqhp.f zlaqp2.f zlaqps.f zlaqsb.f \
    zlaqr0.f zlaqr1.f zlaqr2.f zlaqr3.f zlaqr4.f zlaqr5.f \
-   zlaqsp.f zlaqsy.f zlar1v.f zlar2v.f zlarcm.f zlarf.f  zlarfb.f \
-   zlarfg.f zlarft.f \
-   zlarfx.f zlargv.f zlarnv.f zlarrv.f zlartg.f zlartv.f \
-   zlarz.f  zlarzb.f zlarzt.f zlascl.f zlaset.f zlasr.f  \
-   zlassq.f zlaswp.f zlasyf.f \
-   zlatbs.f zlatdf.f zlatps.f zlatrd.f zlatrs.f zlatrz.f zlatzm.f zlauu2.f \
-   zlauum.f zpbcon.f zpbequ.f zpbrfs.f zpbstf.f zpbsv.f  \
+   zlaqsp.f zlaqsy.f zlar1v.f zlar2v.f ilazlr.f ilazlc.f \
+   zlarcm.f zlarf.f  zlarfb.f \
+   zlarfg.f zlarft.f zlarfgp.f \
+   zlarfx.f zlarfy.f zlargv.f zlarnv.f zlarrv.f zlartg.f zlartv.f \
+   zlarz.f  zlarzb.f zlarzt.f zlascl.f zlaset.f zlasr.f \
+   zlassq.f zlaswp.f zlasyf.f zlasyf_rook.f zlasyf_rk.f zlasyf_aa.f \
+   zlatbs.f zlatdf.f zlatps.f zlatrd.f zlatrs.f zlatrz.f zlauu2.f \
+   zlauum.f zpbcon.f zpbequ.f zpbrfs.f zpbstf.f zpbsv.f \
    zpbsvx.f zpbtf2.f zpbtrf.f zpbtrs.f zpocon.f zpoequ.f zporfs.f \
-   zposv.f  zposvx.f zpotf2.f zpotrf.f zpotri.f zpotrs.f zppcon.f \
-   zppequ.f zpprfs.f zppsv.f  zppsvx.f zpptrf.f zpptri.f zpptrs.f \
+   zposv.f  zposvx.f zpotf2.f zpotrf.f zpotri.f zpotrs.f zpstrf.f zpstf2.f \
+   zppcon.f zppequ.f zpprfs.f zppsv.f  zppsvx.f zpptrf.f zpptri.f zpptrs.f \
    zptcon.f zpteqr.f zptrfs.f zptsv.f  zptsvx.f zpttrf.f zpttrs.f zptts2.f \
-   zrot.f   zspcon.f zspmv.f  zspr.f   zsprfs.f zspsv.f  \
+   zrot.f   zspcon.f zspmv.f  zspr.f   zsprfs.f zspsv.f \
    zspsvx.f zsptrf.f zsptri.f zsptrs.f zdrscl.f zstedc.f \
-   zstegr.f zstein.f zsteqr.f zsycon.f zsymv.f  \
-   zsyr.f   zsyrfs.f zsysv.f  zsysvx.f zsytf2.f zsytrf.f zsytri.f \
-   zsytrs.f ztbcon.f ztbrfs.f ztbtrs.f ztgevc.f ztgex2.f \
+   zstegr.f zstein.f zsteqr.f \
+   zsycon.f zsymv.f zsyr.f zsyrfs.f zsysv.f zsysvx.f \
+   zsytf2.f zsytrf.f zsytri.f zsytri2.f zsytri2x.f \
+   zsyswapr.f zsytrs.f zsytrs2.f \
+   zsyconv.f zsyconvf.f zsyconvf_rook.f \
+   zsytf2_rook.f zsytrf_rook.f zsytrs_rook.f zsytrs_aa.f \
+   zsytri_rook.f zsycon_rook.f zsysv_rook.f \
+   zsytf2_rk.f zsytrf_rk.f zsytrf_aa.f zsytrs_3.f \
+   zsytri_3.f zsytri_3x.f zsycon_3.f zsysv_rk.f zsysv_aa.f \
+   ztbcon.f ztbrfs.f ztbtrs.f ztgevc.f ztgex2.f \
    ztgexc.f ztgsen.f ztgsja.f ztgsna.f ztgsy2.f ztgsyl.f ztpcon.f \
    ztprfs.f ztptri.f \
-   ztptrs.f ztrcon.f ztrevc.f ztrexc.f ztrrfs.f ztrsen.f ztrsna.f \
-   ztrsyl.f ztrti2.f ztrtri.f ztrtrs.f ztzrqf.f ztzrzf.f zung2l.f \
+   ztptrs.f ztrcon.f ztrevc.f ztrevc3.f ztrexc.f ztrrfs.f ztrsen.f ztrsna.f \
+   ztrsyl.f ztrti2.f ztrtri.f ztrtrs.f ztzrzf.f zung2l.f \
    zung2r.f zungbr.f zunghr.f zungl2.f zunglq.f zungql.f zungqr.f zungr2.f \
-   zungrq.f zungtr.f zunm2l.f zunm2r.f zunmbr.f zunmhr.f zunml2.f \
+   zungrq.f zungtr.f zunm2l.f zunm2r.f zunmbr.f zunmhr.f zunml2.f zunm22.f \
    zunmlq.f zunmql.f zunmqr.f zunmr2.f zunmr3.f zunmrq.f zunmrz.f \
    zunmtr.f zupgtr.f \
    zupmtr.f izmax1.f dzsum1.f zstemr.f \
-   zcgesv.f zlag2c.f clag2z.f
+   zcgesv.f zcposv.f zlag2c.f clag2z.f zlat2c.f \
+   zhfrk.f ztfttp.f zlanhf.f zpftrf.f zpftri.f zpftrs.f ztfsm.f ztftri.f \
+   ztfttr.f ztpttf.f ztpttr.f ztrttf.f ztrttp.f \
+   zgeequb.f zgbequb.f zsyequb.f zpoequb.f zheequb.f \
+   zbbcsd.f zlapmr.f zunbdb.f zunbdb1.f zunbdb2.f zunbdb3.f zunbdb4.f \
+   zunbdb5.f zunbdb6.f zuncsd.f zuncsd2by1.f \
+   zgeqrt.f zgeqrt2.f zgeqrt3.f zgemqrt.f \
+   ztpqrt.f ztpqrt2.f ztpmqrt.f ztprfb.f \
+   ztplqt.f ztplqt2.f ztpmlqt.f \
+   zgelqt.f zgelqt3.f zgemlqt.f \
+   zgetsls.f zgeqr.f zlatsqr.f zlamtsqr.f zgemqr.f \
+   zgelq.f zlaswlq.f zlamswlq.f zgemlq.f \
+   zhetrd_2stage.f zhetrd_he2hb.f zhetrd_hb2st.f zhb2st_kernels.f \
+   zheevd_2stage.f zheev_2stage.f zheevx_2stage.f zheevr_2stage.f \
+   zhbev_2stage.f zhbevx_2stage.f zhbevd_2stage.f zhegv_2stage.f
 
-SRCS=${ALLAUX} ${SLASRC} ${SCLAUX} ${CLASRC} ${DLASRC} ${DZLAUX} ${ZLASRC}
+SRCS=${SLASRC} ${DLASRC} ${DSLASRC} ${CLASRC} ${ZLASRC} ${ZCLASRC} \
+   ${SCLAUX} ${DZLAUX} ${ALLAUX}
+
+printsrc:
+	@echo ${SRCS}
 
 .include <bsd.lib.mk>
 
