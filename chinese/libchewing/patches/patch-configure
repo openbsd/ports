@@ -1,0 +1,14 @@
+$OpenBSD: patch-configure,v 1.4 2017/11/13 13:21:35 kevlo Exp $
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -15425,7 +15425,7 @@ fi
+ { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_no_undefined" >&5
+ $as_echo "$ac_cv_no_undefined" >&6; }
+ if test x$ac_cv_no_undefined = "xyes"; then :
+-  NO_UNDEFINED_LDFLAGS="-Wl,--no-undefined"
++  NO_UNDEFINED_LDFLAGS=""
+ fi
+ 
+ 

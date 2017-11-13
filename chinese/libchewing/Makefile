@@ -1,24 +1,35 @@
-# $OpenBSD: Makefile,v 1.9 2016/03/11 19:59:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2017/11/13 13:21:35 kevlo Exp $
 
-COMMENT=	intelligent phonetic input method library
+COMMENT =	intelligent phonetic input method library
 
-V =		0.3.3
-DISTNAME=	libchewing-$V
-PKGNAME=	zh-libchewing-$V
-REVISION =	2
+V =		0.5.1
+DISTNAME =	libchewing-$V
+PKGNAME =	zh-libchewing-$V
 
-SHARED_LIBS=	chewing	0.0	# .3.1
+SHARED_LIBS =	chewing	0.1	# .3.3
 
-CATEGORIES=	chinese inputmethods
+CATEGORIES =	chinese inputmethods
 
-HOMEPAGE= 	http://chewing.im/
+HOMEPAGE =	http://chewing.im/
+
+MAINTAINER = 	Kevin Lo <kevlo@openbsd.org>
 
 # LGPLv2.1 only
 PERMIT_PACKAGE_CDROM=	Yes
 
+WANTLIB +=	m pthread sqlite3
+
 MASTER_SITES =	https://github.com/chewing/libchewing/releases/download/v$V/
+
 EXTRACT_SUFX=	.tar.bz2
 
-CONFIGURE_STYLE=gnu
+BUILD_DEPENDS =	print/texinfo
+LIB_DEPENDS =	databases/sqlite3
+
+MAKE_FLAGS =	MAKEINFO=${LOCALBASE}/bin/gmakeinfo
+
+CONFIGURE_STYLE =	gnu
+CONFIGURE_ARGS =	CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
