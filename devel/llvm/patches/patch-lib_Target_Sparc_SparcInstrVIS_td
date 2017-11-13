@@ -1,0 +1,56 @@
+$OpenBSD: patch-lib_Target_Sparc_SparcInstrVIS_td,v 1.3 2017/11/13 07:49:28 ajacoutot Exp $
+
+[Sparc] efficient pattern for UINT_TO_FP conversion
+
+while investigating performance degradation of imagick benchmark
+there were found inefficient pattern for UINT_TO_FP conversion.
+That pattern causes RAW hazard in assembly code. Specifically,
+uitofp IR operator results in poor assembler :
+
+st          %i0, [%fp - 952]
+ldd         [%fp - 952], %f0
+
+it stores 32-bit integer register into memory location and then
+loads 64-bit floating point data from that location.
+That is exactly RAW hazard case. To optimize that case it is
+possible to use SPISD::ITOF and SPISD::XTOF for conversion from
+integer to floating point data type and to use ISD::BITCAST to
+copy from integer register into floating point register.
+The fix is to write custom UINT_TO_FP pattern using SPISD::ITOF,
+SPISD::XTOF, ISD::BITCAST.
+
+Index: lib/Target/Sparc/SparcInstrVIS.td
+--- lib/Target/Sparc/SparcInstrVIS.td.orig
++++ lib/Target/Sparc/SparcInstrVIS.td
+@@ -243,16 +243,21 @@ def LZCNT     : VISInstFormat<0b000010111, (outs I64Re
+                    (ins I64Regs:$rs2), "lzcnt $rs2, $rd", []>;
+ 
+ let rs1 = 0 in {
+-def MOVSTOSW : VISInstFormat<0b100010011, (outs I64Regs:$rd),
+-                   (ins DFPRegs:$rs2), "movstosw $rs2, $rd", []>;
+-def MOVSTOUW : VISInstFormat<0b100010001, (outs I64Regs:$rd),
+-                   (ins DFPRegs:$rs2), "movstouw $rs2, $rd", []>;
+-def MOVDTOX  : VISInstFormat<0b100010000, (outs I64Regs:$rd),
+-                   (ins DFPRegs:$rs2), "movdtox $rs2, $rd", []>;
+-def MOVWTOS  :  VISInstFormat<0b100011001, (outs DFPRegs:$rd),
+-                   (ins I64Regs:$rs2), "movdtox $rs2, $rd", []>;
+-def MOVXTOD  :  VISInstFormat<0b100011000, (outs DFPRegs:$rd),
+-                   (ins I64Regs:$rs2), "movdtox $rs2, $rd", []>;
++def MOVSTOSW : VISInstFormat<0b100010011, (outs I64Regs:$rd), (ins FPRegs:$rs2), 
++                   "movstosw $rs2, $rd", 
++                   [(set I64Regs:$rd, (sext (i32 (bitconvert FPRegs:$rs2))))]>;
++def MOVSTOUW : VISInstFormat<0b100010001, (outs I64Regs:$rd), (ins FPRegs:$rs2), 
++                   "movstouw $rs2, $rd", 
++                   [(set I64Regs:$rd, (zext (i32 (bitconvert FPRegs:$rs2))))]>;
++def MOVDTOX  : VISInstFormat<0b100010000, (outs I64Regs:$rd), (ins DFPRegs:$rs2), 
++                   "movdtox $rs2, $rd", 
++                   [(set I64Regs:$rd, (bitconvert DFPRegs:$rs2))]>;
++def MOVWTOS  :  VISInstFormat<0b100011001, (outs FPRegs:$rd), (ins IntRegs:$rs2), 
++                   "movwtos $rs2, $rd", 
++                   [(set FPRegs:$rd, (bitconvert i32:$rs2))]>;
++def MOVXTOD  :  VISInstFormat<0b100011000, (outs DFPRegs:$rd), (ins I64Regs:$rs2),
++                   "movxtod $rs2, $rd", 
++                   [(set DFPRegs:$rd, (bitconvert I64Regs:$rs2))]>;
+ }
+ 
+ def PDISTN   : VISInst<0b000111111, "pdistn">;
