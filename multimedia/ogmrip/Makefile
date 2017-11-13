@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2017/10/23 17:10:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2017/11/13 16:06:28 naddy Exp $
 
 COMMENT-main =		DVD ripper/converter
 COMMENT-dvdcpy =	copy selected info from DVD
@@ -7,8 +7,8 @@ V =			1.0.1
 DISTNAME =		ogmrip-$V
 PKGNAME-main =		ogmrip-$V
 PKGNAME-dvdcpy =	dvdcpy-$V
-REVISION-dvdcpy =	2
-REVISION-main =		5
+REVISION-dvdcpy =	3
+REVISION-main =		6
 
 SHARED_LIBS +=  ogmdvd-gtk                0.0 # 1.0
 SHARED_LIBS +=  ogmdvd                    0.0 # 1.0
@@ -34,17 +34,16 @@ WANTLIB-main += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c
 WANTLIB-main += cairo dvdread dbus-1 dbus-glib-1 enca enchant expat ffi
 WANTLIB-main += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB-main += glade-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
-WANTLIB-main += gtk-x11-2.0 jpeg m notify ogg pango-1.0 pangocairo-1.0
-WANTLIB-main += pangoft2-1.0 pcre pixman-1 png pthread
+WANTLIB-main += gtk-x11-2.0 iconv intl jpeg m notify ogg pango-1.0
+WANTLIB-main += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB-main += ${COMPILER_LIBCXX} theora tiff xcb xcb-render xcb-shm xml2 z
 WANTLIB-main += harfbuzz graphite2 Xau Xdmcp lzma
 
-WANTLIB-dvdcpy += c dvdread dvdcss
+WANTLIB-dvdcpy += c dvdread
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=ogmrip/}
 
-MODULES =		devel/gettext \
-			devel/gconf2 \
+MODULES =		devel/gconf2 \
 			textproc/intltool
 BUILD_DEPENDS =		x11/mplayer \
 			textproc/gsed
