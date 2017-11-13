@@ -1,4 +1,4 @@
-# $OpenBSD: pkgpath.mk,v 1.67 2017/06/28 10:20:28 espie Exp $
+# $OpenBSD: pkgpath.mk,v 1.68 2017/11/13 14:01:44 espie Exp $
 # ex:ts=4 sw=4 filetype=make:
 #	pkgpath.mk - 2003 Marc Espie
 #	This file is in the public domain.
@@ -115,6 +115,27 @@ _cache_fragment = \
 		trap "rm -rf 2>/dev/null $${_DEPENDS_CACHE}" 0; \
 		trap 'exit 1' 1 2 3 13 15;; \
 	esac; PKGPATH=${PKGPATH}; export PKGPATH
+.endif
+
+PORTS_PRIVSEP ?= No
+FETCH_USER ?= _pfetch
+BUILD_USER ?= _pbuild
+
+.if ${PORTS_PRIVSEP:L} == "yes"
+_PFETCH = ${SUDO} -u ${FETCH_USER}
+_PBUILD = ${SUDO} -u ${BUILD_USER}
+_PMAKESYS = cd ${.CURDIR} && PKGPATH=${PKGPATH} exec ${_PBUILD} ${MAKE}
+# Some operations will need sudo in privsep mode
+_PSUDO = ${SUDO}
+_pkgmode = ${BUILD_USER}:$$(id -g ${BUILD_USER})
+_usermode = -o $$(id -u) -g $$(id -g)
+.else
+_PFETCH =
+_PBUILD =
+_PSUDO =
+_PMAKESYS = ${_MAKESYS}
+_pkgmode = $$(id -u):$$(id -g)
+_usermode =
 .endif
 
 _MAKE = cd ${.CURDIR} && PKGPATH=${PKGPATH} exec ${MAKE}

@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1370 2017/11/05 09:10:13 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1371 2017/11/13 14:01:44 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1845,7 +1845,7 @@ _list_port_libs = \
 .if empty(PLIST_DB)
 _register_plist =:
 .else
-_register_plist = install -d ${PLISTDIR_MODE} ${PLIST_DB:S/:/ /g} && ${_PERLSCRIPT}/register-plist ${PLIST_DB}
+_register_plist = ${_PBUILD} install -d ${PLISTDIR_MODE} ${PLIST_DB:S/:/ /g} && ${_PBUILD} ${_PERLSCRIPT}/register-plist ${PLIST_DB}
 .endif
 .if ${CHECK_LIB_DEPENDS:L} == "yes"
 _check_lib_depends = ${_CHECK_LIB_DEPENDS}
@@ -1944,11 +1944,12 @@ ${_CACHE_REPO}${_PKGFILE${_S}}:
 # The real package
 
 ${_PACKAGE_COOKIE${_S}}:
-	@install -d ${PACKAGE_REPOSITORY_MODE} ${@D} ${_TMP_REPO}
+	@${_PBUILD} install -d ${PACKAGE_REPOSITORY_MODE} ${@D} 
+	@${_PSUDO} install -d $(_usermode) ${_TMP_REPO}
 .  if ${FETCH_PACKAGES:L} == "yes" && !defined(_TRIED_FETCHING_${_PACKAGE_COOKIE${_S}})
 	@f=${_CACHE_REPO}${_PKGFILE${_S}}; \
-	cd ${.CURDIR} && ${MAKE} $$f && \
-		{ ln $$f $@ 2>/dev/null || cp -p $$f $@ ; } || \
+	cd ${.CURDIR} && ${_PBUILD} ${MAKE} $$f && \
+		{ ${_PBUILD} ln $$f $@ 2>/dev/null || ${_PBUILD} cp -p $$f $@ ; } || \
 		cd ${.CURDIR} && ${MAKE} _TRIED_FETCHING_${_PACKAGE_COOKIE${_S}}=Yes _internal-package-only
 .  else
 	@${_MAKE} ${_PACKAGE_COOKIE_DEPS}
@@ -1965,9 +1966,9 @@ ${_PACKAGE_COOKIE${_S}}:
 		${_check_lib_depends} $$tmp && \
 		${_register_plist${_S}} $$tmp && \
 		${_checksum_package} && \
-		mv $$tmp ${_PACKAGE_COOKIE${_S}} && \
-		mode=$$(id -u):$$(id -g) && \
-		${_FAKESUDO} chown $${mode} ${_PACKAGE_COOKIE${_S}}; then \
+		${_PSUDO} mv $$tmp ${_PACKAGE_COOKIE${_S}} && \
+		mode=${_pkgmode} && \
+		${_PSUDO} chown $${mode} ${_PACKAGE_COOKIE${_S}}; then \
 		 	exit 0; \
 	else \
 		${_FAKESUDO} rm -f $$tmp; \
@@ -2914,7 +2915,8 @@ ${DISTDIR}/$p:
 .    endfor
 	@exit 1
 .  else
-	@lock=${@:T}.dist; ${_SIMPLE_LOCK}; install -d ${DISTDIR_MODE} ${@:H}; \
+	@lock=${@:T}.dist; ${_SIMPLE_LOCK}; \
+	${_PFETCH} install -d ${DISTDIR_MODE} ${@:H}; \
 	cd ${@:H}; \
 	test -f ${@:T} && exit 0; \
 	f=$f; \
@@ -2925,22 +2927,22 @@ ${DISTDIR}/$p:
 	for site in ${$m}; do \
 		file=$@.part; \
 		${ECHO_MSG} ">> Fetch $${site}$u"; \
-		if ${FETCH_CMD} -o $$file $${site}$u; then \
+		if ${_PFETCH} ${FETCH_CMD} -o $$file $${site}$u; then \
 				if ${_MAKESUM}; then \
-					mv $$file $@; \
+					${_PFETCH} mv $$file $@; \
 					exit 0; \
 				else \
 					ck=`${_size_fragment} $$file $p`; \
 					if grep -q "^$$ck\$$" ${CHECKSUM_FILE}; then \
-						mv $$file $@; \
+						${_PFETCH} mv $$file $@; \
 						exit 0; \
 					else \
 						if grep -q "SIZE ($p)" ${CHECKSUM_FILE}; then \
 							${ECHO_MSG} ">> Size does not match for $p"; \
-							rm -f $$file; \
+							${_PFETCH} rm -f $$file; \
 						else \
 							${ECHO_MSG} ">> No size recorded for $p"; \
-							rm -f $$file; \
+							${_PFETCH} rm -f $$file; \
 							exit 1; \
 						fi; \
 					fi; \
@@ -2953,10 +2955,10 @@ ${DISTDIR}/$p:
 .for _l _o in ${_PACKAGE_LINKS}
 ${PACKAGE_REPOSITORY}/${_l}: ${PACKAGE_REPOSITORY}/${_o}
 	@echo "Link to $@"
-	@install -d ${PACKAGE_REPOSITORY_MODE} ${@D}
-	@rm -f $@
-	@ln $? $@ 2>/dev/null || \
-	  cp -p $? $@
+	@${_PBUILD} install -d ${PACKAGE_REPOSITORY_MODE} ${@D}
+	@${_PBUILD} rm -f $@
+	@${_PBUILD} ln $? $@ 2>/dev/null || \
+	  ${_PBUILD} cp -p $? $@
 .endfor
 
 # Cleaning up
@@ -2994,10 +2996,10 @@ _internal-clean:
 .if ${_clean:Mdist}
 	@${ECHO_MSG} "===>  Dist cleaning for ${FULLPKGNAME${SUBPACKAGE}}"
 	@if cd ${DISTDIR} 2>/dev/null; then \
-		rm -f ${MAKESUMFILES}; \
+		${_PFETCH} rm -f ${MAKESUMFILES}; \
 	fi
 .  if !empty(DIST_SUBDIR)
-	-@rmdir ${FULLDISTDIR}
+	-@${_PFETCH} rmdir ${FULLDISTDIR}
 .  endif
 .endif
 .if ${_clean:Minstall}
@@ -3008,9 +3010,11 @@ _internal-clean:
 .  endif
 .endif
 .if ${_clean:Mpackages} || ${_clean:Mpackage} && ${_clean:Msub}
-	rm -f ${_PACKAGE_COOKIES} ${_UPDATE_COOKIES} ${_CACHE_PACKAGE_COOKIES}
+	${_PBUILD} rm -f ${_PACKAGE_COOKIES}
+	rm -f ${_UPDATE_COOKIES} ${_CACHE_PACKAGE_COOKIES}
 .elif ${_clean:Mpackage}
-	rm -f ${_PACKAGE_COOKIES${SUBPACKAGE}} ${_UPDATE_COOKIE${SUBPACKAGE}}
+	${_PBUILD} rm -f ${_PACKAGE_COOKIES${SUBPACKAGE}}
+	rm -f ${_PACKAGE_COOKIES${SUBPACKAGE}}
 .endif
 .if ${_clean:Mbulk}
 	rm -f ${_BULK_COOKIE}
@@ -3018,7 +3022,7 @@ _internal-clean:
 .if ${_clean:Mplist}
 .  for _d in ${PLIST_DB:S/:/ /}
 .    for _p in ${PKGNAMES}
-	rm -f ${_d}/${_p}
+	${_PBUILD} rm -f ${_d}/${_p}
 .    endfor
 .  endfor
 .endif
