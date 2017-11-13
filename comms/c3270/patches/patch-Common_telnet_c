@@ -1,0 +1,16 @@
+$OpenBSD: patch-Common_telnet_c,v 1.1 2017/11/13 22:05:33 jeremy Exp $
+
+Work around bad SSL library detection.
+
+Index: Common/telnet.c
+--- Common/telnet.c.orig
++++ Common/telnet.c
+@@ -3688,7 +3688,7 @@ ssl_base_init(char *cl_hostname, bool *pending)
+ 	ssl_pending = pending;
+     }
+ 
+-#if !defined(_WIN32) && OPENSSL_VERSION_NUMBER < 0x10100000L /*[*/
++#if !defined(_WIN32) && OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER) /*[*/
+     SSL_load_error_strings();
+     SSL_library_init();
+ #else /*][*/
