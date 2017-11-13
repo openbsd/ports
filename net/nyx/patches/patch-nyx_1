@@ -1,0 +1,14 @@
+$OpenBSD: patch-nyx_1,v 1.1.1.1 2017/11/13 14:32:56 pascal Exp $
+
+Index: nyx.1
+--- nyx.1.orig
++++ nyx.1
+@@ -57,7 +57,7 @@ provides usage information
+ Your personal nyx configuration file
+ 
+ .TP
+-\fB/usr/share/doc/nyx/nyxrc.sample\fR
++\fB${PREFIX}/share/doc/nyx/nyxrc.sample\fR
+ Sample nyxrc configuration file that documents all options
+ 
+ .SH AUTHOR
