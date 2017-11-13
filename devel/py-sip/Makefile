@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2017/07/26 22:45:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.40 2017/11/13 19:13:47 landry Exp $
 
 COMMENT=	automatically generate Python bindings for C and C++ libs
 
@@ -7,7 +7,7 @@ COMMENT=	automatically generate Python bindings for C and C++ libs
 
 DISTNAME=	sip-4.19.3
 PKGNAME=	py-${DISTNAME}
-REVISION =	1
+REVISION =	2
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.riverbankcomputing.co.uk/software/sip/intro
@@ -39,6 +39,8 @@ CONFIGURE_ARGS=	-b ${PREFIX}/bin \
 NO_TEST=	Yes
 
 SUBST_VARS +=	MODPY_LIB_SUFFIX
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/configure.py
 
 post-install:
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py ${WRKINST}${MODPY_SITEPKG}
