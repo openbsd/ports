@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: State.pm,v 1.20 2017/04/14 16:39:32 espie Exp $
+# $OpenBSD: State.pm,v 1.21 2017/11/13 13:51:21 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -265,6 +265,11 @@ sub make_args
 	my @l = ($self->{make}, "-C", $self->{ports});
 	if ($self->{build_once}) {
 		push(@l, 'BUILD_ONCE=Yes');
+	}
+	# Paradoxically, we don't need privsep at the ports level
+	# since we do our own
+	if ($self->{noportsprivsep}) {
+		push(@l, 'PORTS_PRIVSEP=No');
 	}
 	return @l;
 }

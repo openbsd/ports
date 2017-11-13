@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Config.pm,v 1.69 2017/04/14 16:39:32 espie Exp $
+# $OpenBSD: Config.pm,v 1.70 2017/11/13 13:51:21 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -113,7 +113,9 @@ sub parse_command_line
 	if (!defined $state->{base_user}) {
 		$state->usage("Can't figure out who I am");
 	}
-	if ($state->{base_user}{uid} != 0) {
+	if ($state->{base_user}{uid} == 0) {
+		$state->{noportsprivsep} = 1;
+	} else {
 		$state->errsay("Running dpb as root with a build_user is the preferred setup");
 	}
 	$class->setup_users($state);
