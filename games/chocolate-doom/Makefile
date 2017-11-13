@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.21 2017/01/03 00:28:53 bentley Exp $
+# $OpenBSD: Makefile,v 1.22 2017/11/13 11:25:27 bentley Exp $
 
 COMMENT =	portable release of Doom, Heretic, Hexen, and Strife
 V =		2.3.0
 DISTNAME =	chocolate-doom-${V}
 CATEGORIES =	games x11
+REVISION =	0
 
-HOMEPAGE =	http://www.chocolate-doom.org/
+HOMEPAGE =	https://www.chocolate-doom.org/
 
 MAINTAINER =	Ryan Freeman <ryan@slipgate.org>
 
@@ -19,7 +20,7 @@ LIB_DEPENDS =	devel/sdl-mixer \
 		audio/libsamplerate \
 		graphics/png
 
-MASTER_SITES =	http://www.chocolate-doom.org/downloads/${V}/
+MASTER_SITES =	https://www.chocolate-doom.org/downloads/${V}/
 
 RUN_DEPENDS =	devel/desktop-file-utils
 
