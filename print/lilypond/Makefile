@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2017/07/26 22:45:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.48 2017/11/13 15:38:07 naddy Exp $
 
 COMMENT-main=		text based music notation system
 COMMENT-docs=		lilypond documentation
@@ -9,8 +9,8 @@ DISTNAME-docs=		${DISTNAME}-1.documentation
 PKGNAME-main=		lilypond-${VERSION}
 PKGNAME-docs=		lilypond-docs-${VERSION}
 CATEGORIES=		print
-REVISION-main=		1
-REVISION-docs=		0
+REVISION-main=		2
+REVISION-docs=		1
 
 DISTFILES=		${DISTNAME}.tar.gz ${DISTNAME-docs}.tar.bz2:0
 EXTRACT_ONLY=		${DISTNAME}.tar.gz
@@ -56,18 +56,18 @@ WANTLIB-docs =
 LIB_DEPENDS-docs=
 RUN_DEPENDS-docs=
 
-WANTLIB-main=		c fontconfig freetype gmp gthread-2.0 ltdl m \
-			pthread ${COMPILER_LIBCXX} z guile>=20 glib-2.0>=1000 \
-			gmodule-2.0>=1000 gobject-2.0>=1000 \
-			pango-1.0>=1200 pangoft2-1.0>=1200 ${WANTLIB}
-MODULES=		devel/gettext lang/python
-LIB_DEPENDS-main=	${LIB_DEPENDS} \
+WANTLIB-main=		c fontconfig freetype glib-2.0 gmp gobject-2.0 \
+			guile intl ltdl m pango-1.0 pangoft2-1.0 pthread z \
+			${COMPILER_LIBCXX}
+MODULES=		lang/python
+LIB_DEPENDS-main=	devel/gettext \
 			lang/guile \
 			devel/glib2 \
 			devel/pango
 RUN_DEPENDS=		print/ghostscript/gnu
 BUILD_DEPENDS= 		fonts/mftrace \
 			devel/bison \
+			devel/gettext-tools \
 			archivers/bzip2 \
 			devel/autoconf/${AUTOCONF_VERSION} \
 			${RUN_DEPENDS}

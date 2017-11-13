@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.9 2014/05/27 20:43:50 kili Exp $
+@comment $OpenBSD: PLIST-main,v 1.10 2017/11/13 15:38:07 naddy Exp $
 @pkgpath print/lilypond
 bin/abc2ly
 bin/convert-ly
@@ -24,6 +24,8 @@ lib/lilypond/${VERSION}/python/midi.so
 @man man/man1/lilysong.1
 @man man/man1/midi2ly.1
 @man man/man1/musicxml2ly.1
+share/emacs/
+share/emacs/site-lisp/
 share/emacs/site-lisp/lilypond-font-lock.el
 share/emacs/site-lisp/lilypond-indent.el
 share/emacs/site-lisp/lilypond-init.el
@@ -362,21 +364,58 @@ share/lilypond/${VERSION}/vim/syntax/
 share/lilypond/${VERSION}/vim/syntax/lilypond-words
 share/lilypond/${VERSION}/vim/syntax/lilypond-words.vim
 share/lilypond/${VERSION}/vim/syntax/lilypond.vim
+share/locale/
+share/locale/ca/
+share/locale/ca/LC_MESSAGES/
 share/locale/ca/LC_MESSAGES/lilypond.mo
+share/locale/cs/
+share/locale/cs/LC_MESSAGES/
 share/locale/cs/LC_MESSAGES/lilypond.mo
+share/locale/da/
+share/locale/da/LC_MESSAGES/
 share/locale/da/LC_MESSAGES/lilypond.mo
+share/locale/de/
+share/locale/de/LC_MESSAGES/
 share/locale/de/LC_MESSAGES/lilypond.mo
+share/locale/el/
+share/locale/el/LC_MESSAGES/
 share/locale/el/LC_MESSAGES/lilypond.mo
+share/locale/eo/
+share/locale/eo/LC_MESSAGES/
 share/locale/eo/LC_MESSAGES/lilypond.mo
+share/locale/es/
+share/locale/es/LC_MESSAGES/
 share/locale/es/LC_MESSAGES/lilypond.mo
+share/locale/fi/
+share/locale/fi/LC_MESSAGES/
 share/locale/fi/LC_MESSAGES/lilypond.mo
+share/locale/fr/
+share/locale/fr/LC_MESSAGES/
 share/locale/fr/LC_MESSAGES/lilypond.mo
+share/locale/it/
+share/locale/it/LC_MESSAGES/
 share/locale/it/LC_MESSAGES/lilypond.mo
+share/locale/ja/
+share/locale/ja/LC_MESSAGES/
 share/locale/ja/LC_MESSAGES/lilypond.mo
+share/locale/nl/
+share/locale/nl/LC_MESSAGES/
 share/locale/nl/LC_MESSAGES/lilypond.mo
+share/locale/ru/
+share/locale/ru/LC_MESSAGES/
 share/locale/ru/LC_MESSAGES/lilypond.mo
+share/locale/sv/
+share/locale/sv/LC_MESSAGES/
 share/locale/sv/LC_MESSAGES/lilypond.mo
+share/locale/tr/
+share/locale/tr/LC_MESSAGES/
 share/locale/tr/LC_MESSAGES/lilypond.mo
+share/locale/uk/
+share/locale/uk/LC_MESSAGES/
 share/locale/uk/LC_MESSAGES/lilypond.mo
+share/locale/vi/
+share/locale/vi/LC_MESSAGES/
 share/locale/vi/LC_MESSAGES/lilypond.mo
+share/locale/zh_TW/
+share/locale/zh_TW/LC_MESSAGES/
 share/locale/zh_TW/LC_MESSAGES/lilypond.mo
