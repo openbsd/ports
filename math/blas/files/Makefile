@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/08/19 21:23:29 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2017/11/13 06:56:38 steven Exp $
 #	@(#)Makefile	5.7 (Berkeley) 6/27/91
 
 # BLAS sources
@@ -24,6 +24,9 @@ SRCS =	caxpy.f  ccopy.f  cdotc.f  cdotu.f  cgbmv.f  cgemm.f  cgemv.f	\
 	zhbmv.f	 zhemm.f  zhemv.f  zher.f   zher2.f  zher2k.f zherk.f	\
 	zhpmv.f	 zhpr.f   zhpr2.f  zrotg.f  zscal.f  zswap.f  zsymm.f	\
 	zsyr2k.f zsyrk.f  ztbmv.f  ztbsv.f  ztpmv.f  ztpsv.f  ztrmm.f	\
-	ztrmv.f	 ztrsm.f  ztrsv.f
+	ztrmv.f	 ztrsm.f  ztrsv.f  xerbla_array.f
+
+printsrc:
+	@echo ${SRCS}
 
 .include <bsd.lib.mk>

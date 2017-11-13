@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.7 2015/03/16 18:07:49 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.8 2017/11/13 06:56:38 steven Exp $
+@conflict lapack-<=3.1.1p5
 lib/libblas.a
 @lib lib/libblas.so.${LIBblas_VERSION}
 lib/libblas_p.a
@@ -78,6 +79,7 @@ lib/libblas_p.a
 @man man/man3f/idamax.3f
 @man man/man3f/isamax.3f
 @man man/man3f/izamax.3f
+@man man/man3f/lsame.3f
 @man man/man3f/sasum.3f
 @man man/man3f/saxpy.3f
 @man man/man3f/scabs1.3f
@@ -115,6 +117,7 @@ lib/libblas_p.a
 @man man/man3f/strmv.3f
 @man man/man3f/strsm.3f
 @man man/man3f/strsv.3f
+@man man/man3f/xerbla.3f
 @man man/man3f/xerbla_array.3f
 @man man/man3f/zaxpy.3f
 @man man/man3f/zcopy.3f

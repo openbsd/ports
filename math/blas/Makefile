@@ -1,48 +1,51 @@
-# $OpenBSD: Makefile,v 1.26 2017/06/17 15:25:37 schwarze Exp $
+# $OpenBSD: Makefile,v 1.27 2017/11/13 06:56:38 steven Exp $
 
 COMMENT=	Basic Linear Algebra Subprograms
 
-VERSION=	1.0
-DISTNAME=	blas
-PKGNAME=	${DISTNAME}-${VERSION}
-REVISION=	8
-SHARED_LIBS=	blas	2.0
+VERSION=	3.7.1
+DISTNAME=	blas-${VERSION}
+
+SHARED_LIBS=	blas	2.1
 
 CATEGORIES=	math
-DISTFILES=	blas.tgz manpages.tgz:0
+DISTFILES=	${DISTNAME}.tgz manpages.tgz:0
 
 HOMEPAGE=	http://www.netlib.org/blas/
+
+MAINTAINER=	Steven Mestdagh <steven@openbsd.org>
 
 # freely available
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	https://spacehopper.org/mirrors/blas-20110419/ \
-		ftp://ftp.netlib.org/blas/ \
-		ftp://netlib.bell-labs.com/netlib/blas/ \
-		http://www.netlib.no/netlib/blas/
+MASTER_SITES=	http://www.netlib.org/blas/
 MASTER_SITES0=	${MASTER_SITES:S/blas/lapack/}
 EXTRACT_SUFX=	.tgz
-DIST_SUBDIR=	${DISTNAME}-${VERSION}
-WRKDIST=	${WRKDIR}/BLAS
+DIST_SUBDIR=	${DISTNAME}
+WRKDIST=	${WRKDIR}/${DISTNAME:U}
 
 MODULES=	fortran
-MODFORTRAN_COMPILER = g77
+MODFORTRAN_COMPILER = gfortran
 BUILD_DEPENDS=	${MODFORTRAN_BUILD_DEPENDS}
 
 MAKE_FILE=	${FILESDIR}/Makefile
 MAKE_ENV=	SHLIB_MAJOR=${LIBblas_VERSION:R} \
 		SHLIB_MINOR=${LIBblas_VERSION:E} \
-		FC=${FC}
+		FC="${MODFORTRAN_COMPILER} -cpp"
 FAKE_FLAGS=	LIBDIR=${LOCALBASE}/lib DEBUGLIBS=no
+USE_GROFF=	Yes
 
-MANSRC=		${WRKDIR}/manpages/blas/man/manl
+MANSRC=		${WRKDIR}/man/man3
 
 post-build:
-	rm ${MANSRC}/{lsame,xerbla}.l
-	@perl -pi -e 's/(\.TH\s+\w+)\s+l(.*)/\1 3f\2/' ${MANSRC}/*.l
-	@cd ${MANSRC} && for m in *.l; do mv $$m $${m%\.l}.3f; done
+	@cd ${MANSRC} && for m in *.f.3 ; do perl -pi \
+		-e 'if ($$. == 1) {s/(\.TH\s+)"([^"]+)\.f"\s+3\s+("[^"]+")/\1 \2 3f \3 "BLAS Version ${VERSION}" "BLAS Version ${VERSION}"/}' \
+		-e 'if ($$. == 5) {s/^(\w+)\.f \\-/\1/}' $$m ; done
+	@cd ${MANSRC} && \
+		for m in BLAS_SRC*.f.3; do mv $$m $${m#BLAS_SRC_}; done && \
+		for m in *.f.3; do mv $$m $${m%\.f\.3}.3f; done
 
 post-install:
-	${INSTALL_MAN} ${MANSRC}/*.3f ${PREFIX}/man/man3f
+	@cd ${MANSRC} && for m in `${MAKE} -f ${MAKE_FILE} printsrc` ; do \
+		${INSTALL_MAN} $${m%.f}.3f ${PREFIX}/man/man3f ; done
 
 .include <bsd.port.mk>
