@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.98 2017/11/03 12:28:53 steven Exp $
+# $OpenBSD: Makefile,v 1.99 2017/11/13 07:11:53 steven Exp $
 
 COMMENT =	high-level language for numerical computations
 
 VERSION =	4.2.1
 DISTNAME =	octave-${VERSION}
+REVISION =	0
 CATEGORIES =	math
 
 SHARED_LIBS +=	octave		8.0
@@ -44,6 +45,8 @@ BUILD_DEPENDS =	${MODFORTRAN_BUILD_DEPENDS} \
 		textproc/gsed \
 		math/gnuplot
 
+MODFORTRAN_COMPILER =	gfortran
+
 # configure checks for desktop-file-install(1)
 BUILD_DEPENDS +=devel/desktop-file-utils
 
@@ -78,8 +81,7 @@ CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include \
 		-I${LOCALBASE}/include/ereadline" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 		LRELEASE="${MODQT_LRELEASE}" \
-		F77=${FC} CXXFLAGS="${CXXFLAGS} -std=gnu++11"
-
+		CXXFLAGS="${CXXFLAGS} -std=gnu++11"
 
 # needed to build on amd64
 GCC_ARCH =	${MACHINE_ARCH}-unknown-openbsd${OSREV}
