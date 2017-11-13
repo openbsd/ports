@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2017/02/27 23:08:14 jca Exp $
+# $OpenBSD: Makefile,v 1.6 2017/11/13 07:10:46 steven Exp $
 
 BROKEN-hppa=	undefined refs to dtrsv/dgemv/dtrsm/dgemm/dger in libumfpack.a
 
@@ -6,6 +6,7 @@ COMMENT=		suite of sparse matrix algorithms
 
 DISTNAME=		SuiteSparse-4.4.6
 PKGNAME=		${DISTNAME:L}
+REVISION=		0
 
 CATEGORIES=		math
 
@@ -28,6 +29,7 @@ WANTLIB += ${MODFORTRAN_WANTLIB} blas lapack m
 MASTER_SITES=		http://faculty.cse.tamu.edu/davis/SuiteSparse/
 
 MODULES=		fortran
+MODFORTRAN_COMPILER=	gfortran
 
 BUILD_DEPENDS=		${MODFORTRAN_BUILD_DEPENDS}
 LIB_DEPENDS=		${MODFORTRAN_LIB_DEPENDS} \
@@ -89,7 +91,7 @@ post-build:
 			libcolamd.so.${LIBcolamd_VERSION} \
 			libccolamd.so.${LIBccolamd_VERSION} \
 			libsuitesparseconfig.so.${LIBsuitesparseconfig_VERSION} \
-			-lm -L${LOCALBASE}/lib -lblas -lg2c -llapack
+			-lm -L${LOCALBASE}/lib -lblas -lgfortran -llapack
 
 	cd ${WRKSRC} && \
 		${CC} -shared -o libcsparse.so.${LIBcsparse_VERSION} \
@@ -115,13 +117,13 @@ post-build:
 			UMFPACK/Lib/*.o libamd.so.${LIBamd_VERSION} \
 			libcholmod.so.${LIBcholmod_VERSION} \
 			libsuitesparseconfig.so.${LIBsuitesparseconfig_VERSION} \
-			-lm -L${LOCALBASE}/lib -lblas -lg2c -llapack
+			-lm -L${LOCALBASE}/lib -lblas -lgfortran -llapack
 
 	cd ${WRKSRC} && \
 		${CC} -shared -o libspqr.so.${LIBspqr_VERSION} \
 			SPQR/Lib/*.o libcholmod.so.${LIBcholmod_VERSION} \
 			libsuitesparseconfig.so.${LIBsuitesparseconfig_VERSION} \
-			-lm -L${LOCALBASE}/lib -lblas -lg2c -llapack
+			-lm -L${LOCALBASE}/lib -lblas -lgfortran -llapack
 
 	cd ${WRKSRC} && \
 		${CC} -shared -o librbio.so.${LIBrbio_VERSION} \

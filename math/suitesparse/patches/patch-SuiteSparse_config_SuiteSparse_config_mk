@@ -1,4 +1,4 @@
-$OpenBSD: patch-SuiteSparse_config_SuiteSparse_config_mk,v 1.1.1.1 2015/07/20 23:10:35 ajacoutot Exp $
+$OpenBSD: patch-SuiteSparse_config_SuiteSparse_config_mk,v 1.2 2017/11/13 07:10:46 steven Exp $
 --- SuiteSparse_config/SuiteSparse_config.mk.orig	Wed Mar 25 19:15:00 2015
 +++ SuiteSparse_config/SuiteSparse_config.mk	Mon Jul 20 04:52:54 2015
 @@ -90,13 +90,13 @@ F77FLAGS = $(FFLAGS) -O
@@ -24,7 +24,7 @@ $OpenBSD: patch-SuiteSparse_config_SuiteSparse_config_mk,v 1.1.1.1 2015/07/20 23
  # This is probably slow ... it might connect to the Standard Reference BLAS:
 -# BLAS = -lblas -lgfortran
 -  LAPACK = -llapack
-+  BLAS = -L${LOCALBASE}/lib -lblas -lg2c
++  BLAS = -L${LOCALBASE}/lib -lblas -lgfortran
 +  LAPACK = -L${LOCALBASE}/lib -llapack
  
  # MKL 
