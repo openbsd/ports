@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.30 2017/05/18 12:58:43 pea Exp $
+# $OpenBSD: Makefile,v 1.31 2017/11/13 18:33:14 rsadowski Exp $
 
 COMMENT =	personal accounting application
 
-DISTNAME =	homebank-5.1.5
+DISTNAME =	homebank-5.1.6
 
 CATEGORIES =	productivity x11
 
