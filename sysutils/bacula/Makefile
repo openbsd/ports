@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.117 2017/11/03 10:54:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.118 2017/11/13 15:36:16 naddy Exp $
 
 # XXX building this port while a version is already installed on the
 # system will lead to unexpected hidden dependencies!!!
@@ -18,6 +18,7 @@ PKGNAME-bat=		bacula-bat-$V
 PKGNAME-mysql=		bacula-mysql-$V
 PKGNAME-pgsql=		bacula-pgsql-$V
 PKGNAME-sqlite3=	bacula-sqlite3-$V
+REVISION=		0
 
 CATEGORIES=		sysutils
 
@@ -38,14 +39,14 @@ HOMEPAGE=		http://www.bacula.org/
 
 MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
 
-WANTLIB += c pthread crypto ssl z m ${COMPILER_LIBCXX}
+WANTLIB += c crypto iconv intl m pthread ssl z ${COMPILER_LIBCXX}
 
 # AGPLv3 with exception for OpenSSL (majority),
 # FDL (docs), LGPL (some libraries), and PD
 # http://www.bacula.org/7.0.x-manuals/en/main/Bacula_Copyright_Trademark_.html
 PERMIT_PACKAGE_CDROM=	Yes
 
-MODULES=		devel/gettext
+LIB_DEPENDS=		devel/gettext
 
 LOCALSTATEDIR=		${BASELOCALSTATEDIR}/bacula
 SYSCONFDIR=		${BASESYSCONFDIR}/bacula
