@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2017/05/02 12:02:49 tsg Exp $
+# $OpenBSD: Makefile,v 1.11 2017/11/13 15:58:56 bcallah Exp $
 
 COMMENT =	run arbitrary commands when files change
 
-DISTNAME =	entr-3.7
-REV =		c5b62bde107d
+DISTNAME =	entr-3.9
+REV =		332fd96a324a
 
 CATEGORIES =	sysutils
 
