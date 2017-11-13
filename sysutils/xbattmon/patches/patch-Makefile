@@ -1,0 +1,14 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2017/11/13 17:24:12 steven Exp $
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -2,7 +2,7 @@ VERSION = 1.1
+ 
+ include config.mk
+ 
+-OBJ = strtonum.o xbattmon.o
++OBJ = xbattmon.o
+ BIN = xbattmon
+ 
+ all: $(BIN)
