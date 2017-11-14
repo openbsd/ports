@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2017/04/20 06:12:58 landry Exp $
+@comment $OpenBSD: PLIST,v 1.8 2017/11/14 20:12:26 landry Exp $
 bin/${MOZILLA_PROJECT}-esr
 lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/
 lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/application.ini
@@ -57,3 +57,5 @@ share/applications/${MOZILLA_PROJECT}-esr.desktop
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/pixmaps/
 share/pixmaps/${MOZILLA_PROJECT}-esr.png
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

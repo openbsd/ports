@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.65 2017/10/23 17:11:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.66 2017/11/14 20:12:26 landry Exp $
 
 COMMENT =	Firefox web browser, Extended Support Release
 ONLY_FOR_ARCHS =	amd64 i386
 
-MOZILLA_VERSION =	52.4.0esr
+MOZILLA_VERSION =	52.5.0esr
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
 
@@ -18,7 +18,7 @@ CATEGORIES =	www
 PERMIT_PACKAGE_CDROM=	Yes
 
 # lots of logic in mozilla.port.mk
-MODULES =	www/mozilla devel/gettext lang/python
+MODULES =	www/mozilla lang/python
 
 MODPY_RUNDEP =	No
 
@@ -30,7 +30,7 @@ MOZILLA_USE_BUNDLED_LIBEVENT =	Yes
 # firefox >= 46 defaults to gtk+3
 MOZILLA_USE_GTK3 = Yes
 
-WANTLIB += X11-xcb pixman-1 xcb xcb-shm ${COMPILER_LIBCXX}
+WANTLIB += X11-xcb intl pixman-1 xcb xcb-shm ${COMPILER_LIBCXX}
 
 # Regression tests are too hard to adapt to run here
 NO_TEST =	Yes
