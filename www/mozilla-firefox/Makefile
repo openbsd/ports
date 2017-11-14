@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.331 2017/10/27 16:53:44 landry Exp $
+# $OpenBSD: Makefile,v 1.332 2017/11/14 20:08:59 landry Exp $
 
 COMMENT =	Mozilla web browser
 ONLY_FOR_ARCHS =	amd64 i386
 
 # Don't forget to bump www/firefox-i18n after updates.
 
-MOZILLA_VERSION =	56.0.2
+MOZILLA_VERSION =	57.0
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
 
-SO_VERSION =	74.0
+SO_VERSION =	75.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 MOZILLA_LIBS =	mozavcodec mozavutil mozgtk xul clearkey lgpllibs
@@ -20,7 +20,7 @@ CATEGORIES =	www
 PERMIT_PACKAGE_CDROM=	Yes
 
 # lots of logic in mozilla.port.mk
-MODULES =	www/mozilla devel/gettext lang/python
+MODULES =	www/mozilla lang/python
 
 MODPY_RUNDEP =	No
 
@@ -36,14 +36,17 @@ MOZILLA_USE_BUNDLED_ICU =	Yes
 
 # firefox >= 53 needs rust
 BUILD_DEPENDS +=	lang/rust
+# stylo build needs LLVM
+BUILD_DEPENDS +=	devel/llvm
 
-WANTLIB += X11-xcb pixman-1 xcb xcb-shm ${COMPILER_LIBCXX}
+WANTLIB += X11-xcb intl pixman-1 xcb xcb-shm ${COMPILER_LIBCXX}
 
 # Regression tests are too hard to adapt to run here
 NO_TEST =	Yes
 
 CONFIGURE_STYLE =	simple
 CONFIGURE_ARGS +=	--prefix=${PREFIX}
+MAKE_ENV +=		BUILD_VERBOSE_LOG="1"
 
 # needed to find sqlite header
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include"
@@ -52,8 +55,16 @@ CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include"
 CONFIGURE_ARGS +=	--enable-pie
 CONFIGURE_ARGS +=	--enable-release #1386371
 CONFIGURE_ARGS +=	--enable-rust-simd #1261841
-# bug 1341234
-CONFIGURE_ARGS +=	--disable-stylo
+CONFIGURE_ARGS +=	--enable-webrender=build
+# bug 1409680
+.if ${MACHINE_ARCH} == "i386"
+CONFIGURE_ARGS +=	--disable-debug-symbols
+.endif
+#CONFIGURE_ARGS +=	--enable-linker=lld
+
+SUBST_VARS +=	LOCALBASE X11BASE
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/layout/style/bindgen.toml.in
 
 post-install:
 	${SUBST_MAN} ${FILESDIR}/mozilla-firefox.1 \

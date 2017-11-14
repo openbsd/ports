@@ -1,0 +1,16 @@
+$OpenBSD: patch-modules_libpref_init_all_js,v 1.1 2017/11/14 20:08:59 landry Exp $
+
+https://bugzilla.mozilla.org/show_bug.cgi?id=1221580
+
+Index: modules/libpref/init/all.js
+--- modules/libpref/init/all.js.orig
++++ modules/libpref/init/all.js
+@@ -539,7 +539,7 @@ pref("media.navigator.audio.full_duplex", true);
+ pref("media.navigator.hardware.vp8_encode.acceleration_enabled", true);
+ pref("media.navigator.hardware.vp8_encode.acceleration_remote_enabled", true);
+ pref("media.navigator.hardware.vp8_decode.acceleration_enabled", false);
+-#elif defined(XP_LINUX)
++#elif defined(XP_LINUX) || defined(MOZ_SNDIO)
+ pref("media.peerconnection.capture_delay", 70);
+ pref("media.getusermedia.playout_delay", 50);
+ pref("media.navigator.audio.full_duplex", true);
