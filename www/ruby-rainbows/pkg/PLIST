@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2016/01/03 16:43:47 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.7 2017/11/14 17:03:55 jeremy Exp $
 ${GEM_BIN}/rainbows${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -29,6 +29,7 @@ ${GEM_LIB}/gems/${DISTNAME}/Static_Files
 ${GEM_LIB}/gems/${DISTNAME}/Summary
 ${GEM_LIB}/gems/${DISTNAME}/TODO
 ${GEM_LIB}/gems/${DISTNAME}/TUNING
+${GEM_LIB}/gems/${DISTNAME}/Test_Suite
 ${GEM_LIB}/gems/${DISTNAME}/archive/
 ${GEM_LIB}/gems/${DISTNAME}/archive/.gitignore
 ${GEM_LIB}/gems/${DISTNAME}/archive/rfmig.rb
@@ -274,6 +275,7 @@ ${GEM_LIB}/gems/${DISTNAME}/t/t0040-keepalive_requests-setting.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/t0041-optional-pool-size.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/t0042-client_header_buffer_size.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/t0043-quit-keepalive-disconnect.sh
+${GEM_LIB}/gems/${DISTNAME}/t/t0044-autopush.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/t0045-client_max_header_size.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/t0050-response-body-close-has-env.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/t0100-rack-input-hammer-chunked.sh
