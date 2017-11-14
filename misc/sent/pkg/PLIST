@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/11/14 19:38:55 jung Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/11/14 17:19:37 bcallah Exp $
 @bin bin/sent
 share/examples/sent/
 share/examples/sent/example
 share/examples/sent/nyan.png
+share/examples/sent/transparent_test.ff
