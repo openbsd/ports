@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.48 2017/08/08 10:20:29 landry Exp $
+# $OpenBSD: Makefile.inc,v 1.49 2017/11/14 20:46:57 landry Exp $
 
 # Unversioned distfiles
 PORTROACH =	ignore:1
@@ -8,7 +8,7 @@ ONLY_FOR_ARCHS =	amd64 i386
 
 PKG_ARCH =	*
 
-FV =		2.48
+FV =		2.49.1
 V =		${FV:C/b.$//}
 NAME =		seamonkey-i18n
 
