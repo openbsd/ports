@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2017/11/06 10:13:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.71 2017/11/14 20:27:36 fcambus Exp $
 
      SUBDIR =
      SUBDIR += amtterm
@@ -36,6 +36,7 @@
      SUBDIR += picocom
      SUBDIR += pilot-link
      SUBDIR += py-gammu
+     SUBDIR += qodem
      SUBDIR += qpage
      SUBDIR += qtserialport
      SUBDIR += rtl-sdr
