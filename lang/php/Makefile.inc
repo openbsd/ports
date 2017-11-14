@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.96 2017/08/24 10:03:25 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.97 2017/11/14 11:57:25 sthen Exp $
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
 
@@ -8,7 +8,7 @@ COMMENT-fastcgi=	stand-alone FastCGI version of PHP
 PKGNAME-main?=		php-${V}
 PKGNAME-fastcgi?=	php-fastcgi-${V}
 
-DISTFILES?=		php-${V}.tar.bz2
+DISTFILES+=		php-${V}.tar.bz2
 
 DISTNAME?=		php-${V}
 CATEGORIES=		lang www
@@ -20,7 +20,6 @@ MASTER_SITES=		http://se.php.net/distributions/ \
 			http://us.php.net/distributions/ \
 			http://no.php.net/distributions/ \
 			http://uk.php.net/distributions/
-MASTER_SITES0=		https://download.suhosin.org/
 
 # UPGRADERS: please read BOTH the PHP and Zend licenses
 # and make sure they are safe before an upgrade
@@ -47,11 +46,6 @@ INI_TEMPLATES?=		development production
 # XXX use the bundled libtool because it needs some specific options we
 # don't have.
 USE_LIBTOOL?=		No
-
-.if ${PV} != "7.0"
-FLAVORS=		no_suhosin
-.endif
-FLAVOR?=
 
 PATCHORIG=		.orig.port
 CONFIGURE_STYLE=	autoconf
@@ -355,18 +349,6 @@ RUN_DEPENDS-main=	mail/femail,-chroot
 LIB_DEPENDS-fastcgi=	${LIB_DEPENDS-main}
 RUN_DEPENDS-fastcgi=
 
-SUHOSIN_V=		0.9.38
-.if ${FLAVOR:Mno_suhosin} || ${PV} == "7.0"
-SUPDISTFILES=		suhosin-${SUHOSIN_V}.tar.gz:0
-.else
-DISTFILES+=		suhosin-${SUHOSIN_V}.tar.gz:0
-PATCH_LIST=		patch-* suhosin-*
-CONFIGURE_ARGS+=	--enable-suhosin
-
-pre-patch:
-	@mv ${WRKDIR}/suhosin-${SUHOSIN_V} ${WRKSRC}/ext/suhosin
-.endif
-
 pre-fake:
 	${INSTALL_DATA_DIR} ${PREFIX}/${APACHE_MODULE_SUBDIR}/modules
 
@@ -384,11 +366,7 @@ pre-configure:
 MODULE_NAME-${i}=	${i}
 DESCR-${i}=		${.CURDIR}/../files/DESCR-${i}
 PKGNAME-${i}=		php-${i}-${V}
-.if ${V:M5.4*}
-PKGSPEC-${i}=		php-${i}->=5.4,<5.5
-.elif ${V:M5.5*}
-PKGSPEC-${i}=		php-${i}->=5.5,<5.6
-.elif ${V:M5.6*}
+.if ${V:M5.6*}
 PKGSPEC-${i}=		php-${i}->=5.6,<5.7
 .elif ${V:M7.0*}
 PKGSPEC-${i}=		php-${i}->=7.0,<7.1

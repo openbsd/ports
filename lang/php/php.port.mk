@@ -1,11 +1,9 @@
-# $OpenBSD: php.port.mk,v 1.16 2017/04/25 11:26:43 sthen Exp $
+# $OpenBSD: php.port.mk,v 1.17 2017/11/14 11:57:25 sthen Exp $
 
 CATEGORIES+=		lang/php
 
 MODPHP_VERSION?=	5.6
-.if ${MODPHP_VERSION} == 5.5
-MODPHP_VSPEC = >=${MODPHP_VERSION},<5.6
-.elif ${MODPHP_VERSION} == 5.6
+.if ${MODPHP_VERSION} == 5.6
 MODPHP_VSPEC = >=${MODPHP_VERSION},<5.7
 .elif ${MODPHP_VERSION} == 7.0
 MODPHP_VSPEC = >=${MODPHP_VERSION},<7.1
