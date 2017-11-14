@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2017/11/13 23:36:05 jeremy Exp $
+# $OpenBSD: Makefile,v 1.9 2017/11/14 22:18:19 jeremy Exp $
 
 COMMENT-main=	perl bindings for Xapian
 COMMENT-python=	python bindings for Xapian
@@ -10,6 +10,8 @@ DISTNAME=	xapian-bindings-${V}
 PKGNAME-main=	xapian-bindings-perl-${V}
 PKGNAME-python=	xapian-bindings-python-${V}
 PKGNAME-ruby=	ruby${MODRUBY_BINREV}-xapian-${V}
+
+REVISION-python=	0
 
 MODULES=	lang/python \
 		lang/ruby
@@ -28,18 +30,27 @@ EXTRACT_SUFX=	.tar.xz
 
 LIB_DEPENDS=		databases/xapian-core
 
+BUILD_DEPENDS=		textproc/py-sphinx
+
 WANTLIB += ${COMPILER_LIBCXX} m uuid z xapian
 WANTLIB-main = ${WANTLIB} c perl
 
+RUN_DEPENDS-python =	textproc/py-sphinx
 RUN_DEPENDS-ruby =	${MODRUBY_RUN_DEPENDS}
 SUBST_VARS+=		MODRUBY_BINREV
 
 AUTOCONF_VERSION=	2.68
 CONFIGURE_STYLE=	autoconf
 CONFIGURE_ENV=		RUBY="${RUBY}" RDOC="${RUBY:S/ruby/rdoc/}"
-CONFIGURE_ARGS=		--without-php \
-			--without-tcl --without-csharp \
-			--without-java --without-lua
+CONFIGURE_ARGS=		--with-perl \
+			--with-python \
+			--with-ruby \
+			--without-python3 \
+			--without-php \
+			--without-tcl \
+			--without-csharp \
+			--without-java \
+			--without-lua
 
 post-install:
 	mv ${PREFIX}/share/doc/xapian-bindings/ruby{,${MODRUBY_BINREV}}
