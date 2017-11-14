@@ -1,0 +1,5 @@
+Qodem is a from-scratch clone implementation of the Qmodem
+communications program made popular in the days when Bulletin Board
+Systems ruled the night. Qodem emulates the dialing directory and the
+terminal screen features of Qmodem over both modem and Internet
+connections.
