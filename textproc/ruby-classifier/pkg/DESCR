@@ -1,3 +1,0 @@
-Classifier is a general module to allow Bayesian and other types of
-classifications. It supports both Bayes and LSI (Latent Semantic
-Indexing) classifications.
