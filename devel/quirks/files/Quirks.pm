@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.558 2017/11/13 14:35:41 pascal Exp $
+# $OpenBSD: Quirks.pm,v 1.559 2017/11/14 14:59:06 bcallah Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -496,6 +496,7 @@ my $stem_extensions = {
 	'kdirstat' => 'qdirstat',
 	'stem' => 'py-stem',
 	'arm' => 'nyx',
+	'luabitop' => 'lua-bitop',
 };
 
 my $obsolete_reason = {
