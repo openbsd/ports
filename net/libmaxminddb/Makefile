@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2017/11/10 12:05:00 fcambus Exp $
+# $OpenBSD: Makefile,v 1.20 2017/11/14 22:13:26 fcambus Exp $
 
 COMMENT-main =	library for MaxMind GeoIP2/GeoLite2 IP geolocation databases
 COMMENT-db =	GeoIP2 GeoLite2 database: IPv4/v6 address to country
 COMMENT-city =	GeoIP2 GeoLite2 database: IPv4/v6 address to city
 COMMENT-asn =	GeoIP2 GeoLite2 database: IPv4/v6 address to AS number
 
-V =		1.2.1
+V =		1.3.0
 D =		20171110
 DISTNAME =	libmaxminddb-${V}
 PKGNAME-main =	libmaxminddb-${V}
@@ -14,7 +14,6 @@ PKGNAME-city =	geolite2-city-${D}
 PKGNAME-asn =	geolite2-asn-${D}
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
 		geolite2-data-$D.tar.xz:0
-REVISION-main =	0
 
 SHARED_LIBS +=	maxminddb	0.0	# 0.7
 

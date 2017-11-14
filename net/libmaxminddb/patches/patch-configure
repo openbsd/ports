@@ -1,9 +1,9 @@
-$OpenBSD: patch-configure,v 1.1 2017/06/04 10:57:59 espie Exp $
+$OpenBSD: patch-configure,v 1.2 2017/11/14 22:13:26 fcambus Exp $
 
 Index: configure
 --- configure.orig
 +++ configure
-@@ -12407,35 +12407,6 @@ fi
+@@ -12261,35 +12261,6 @@ fi
  
  
  
