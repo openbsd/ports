@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.155 2017/11/09 19:44:12 landry Exp $
+# $OpenBSD: Makefile,v 1.156 2017/11/14 12:02:01 ajacoutot Exp $
 
 USE_WXNEEDED=		Yes
 
@@ -103,13 +103,8 @@ RUN_DEPENDS +=		inputmethods/ibus \
 
 MODGNOME_LDFLAGS +=	-L${X11BASE}/lib
 
-# XXX: needed for g-ir-scanner(1)
-MAKE_ENV +=		${_MODGNOME_ldflags}
-
 # /gnome-shell-3.18.4_writes_to_HOME
 PORTHOME=		${WRKDIR}
-
-.include <bsd.port.arch.mk>
 
 # XXX: https://bugzilla.gnome.org/show_bug.cgi?id=789937
 # Generate this file upfront as it may not be created in time
