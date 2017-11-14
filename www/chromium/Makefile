@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.348 2017/11/08 13:50:40 robert Exp $
+# $OpenBSD: Makefile,v 1.349 2017/11/14 10:25:38 sthen Exp $
+
+ONLY_FOR_ARCHS=		amd64
 
 .include <bsd.port.arch.mk>
 
 USE_WXNEEDED=		Yes
 
-ONLY_FOR_ARCHS=		amd64
 DPB_PROPERTIES=		parallel
 
 COMMENT=		Chromium browser
