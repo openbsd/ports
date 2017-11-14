@@ -1,0 +1,2 @@
+This module allows for setting and clearing input and output headers,
+while nginx's default only allows for adding headers.

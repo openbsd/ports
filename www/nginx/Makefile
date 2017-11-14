@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.114 2017/11/02 14:08:18 jeremy Exp $
+# $OpenBSD: Makefile,v 1.115 2017/11/14 16:43:09 jeremy Exp $
 
 BROKEN-arm=	src/core/ngx_rwlock.c:116:2: error: \#error ngx_atomic_cmp_set() is not defined!
 BROKEN-hppa=	src/core/ngx_rwlock.c:116:2: error: \#error ngx_atomic_cmp_set() is not defined!
@@ -11,6 +11,7 @@ COMMENT-mailproxy=	nginx mail proxy module
 COMMENT-stream=		nginx TCP/UDP proxy module
 COMMENT-naxsi=		nginx web application firewall module
 COMMENT-lua=		nginx lua scripting module
+COMMENT-headers_more=	nginx module for setting/adding/clearing headers
 COMMENT-perl=		nginx perl scripting module
 COMMENT-passenger=	nginx passenger (ruby/python/nodejs) integration module
 
@@ -26,6 +27,7 @@ PKGNAME-mailproxy= 	nginx-mailproxy-${VERSION}
 PKGNAME-stream=		nginx-stream-${VERSION}
 PKGNAME-naxsi=		nginx-naxsi-${VERSION}
 PKGNAME-lua=		nginx-lua-${VERSION}
+PKGNAME-headers_more=	nginx-headers-more-${VERSION}
 PKGNAME-perl=		nginx-perl-${VERSION}
 PKGNAME-passenger=	nginx-passenger-${VERSION}
 
@@ -36,11 +38,13 @@ MASTER_SITES0=	https://github.com/simpl/ngx_devel_kit/archive/
 MASTER_SITES1=	https://github.com/nbs-system/naxsi/archive/
 MASTER_SITES2=	https://github.com/openresty/lua-nginx-module/archive/
 MASTER_SITES3=	https://raw.githubusercontent.com/rnagy/nginx_chroot_patch/master/
+MASTER_SITES4=	https://github.com/openresty/headers-more-nginx-module/archive/
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		ngx_devel_kit-v0.3.0.tar.gz{v0.3.0.tar.gz}:0 \
 		naxsi-0.55.1.tar.gz{0.55.1.tar.gz}:1 \
-		lua-nginx-module-v0.10.6.tar.gz{v0.10.6.tar.gz}:2
+		lua-nginx-module-v0.10.6.tar.gz{v0.10.6.tar.gz}:2 \
+		headers-more-nginx-module-v0.32.tar.gz{v0.32.tar.gz}:4
 
 HOMEPAGE=	http://nginx.org/
 
@@ -52,7 +56,8 @@ PERMIT_PACKAGE_CDROM=	yes
 
 # XXX -lua removed following libressl api change; re-add to
 # MULTI_PACKAGES when this is worked-around
-MULTI_PACKAGES =	-main -image_filter -geoip -xslt -mailproxy -stream -naxsi -perl -passenger	# -lua
+MULTI_PACKAGES =	-main -image_filter -geoip -xslt -mailproxy -stream \
+			-naxsi -perl -passenger -headers_more	# -lua
 
 FLAVOR ?=
 PSEUDO_FLAVORS =	no_lua
@@ -67,6 +72,7 @@ WANTLIB-geoip=		GeoIP
 WANTLIB-xslt=		exslt xml2 xslt
 WANTLIB-naxsi=
 WANTLIB-lua=		${MODLUA_WANTLIB} m
+WANTLIB-headers_more=
 WANTLIB-perl=		c m perl
 WANTLIB-passenger=	m pthread ${COMPILER_LIBCXX}
 
@@ -86,6 +92,7 @@ RUN_DEPENDS-geoip=	www/nginx,-main=${VERSION}
 RUN_DEPENDS-xslt=	www/nginx,-main=${VERSION}
 RUN_DEPENDS-naxsi=	www/nginx,-main=${VERSION}
 RUN_DEPENDS-lua=	www/nginx,-main=${VERSION}
+RUN_DEPENDS-headers_more=www/nginx,-main=${VERSION}
 RUN_DEPENDS-perl=	www/nginx,-main=${VERSION}
 RUN_DEPENDS-passenger=	www/nginx,-main=${VERSION} \
 			ruby23-passenger-*|ruby24-passenger-*:www/ruby-passenger
@@ -100,6 +107,7 @@ PREFIX-image_filter=	${NGINX_MODULES_DIR}
 PREFIX-geoip=		${NGINX_MODULES_DIR}
 PREFIX-xslt=		${NGINX_MODULES_DIR}
 PREFIX-lua=		${NGINX_MODULES_DIR}
+PREFIX-headers_more=	${NGINX_MODULES_DIR}
 PREFIX-passenger=	${NGINX_MODULES_DIR}
 
 CFLAGS+=	-Wall -Wpointer-arith \
@@ -153,6 +161,7 @@ CONFIGURE_ARGS+=	--prefix=${NGINX_DIR} \
 			--with-stream=dynamic \
 			--add-dynamic-module=${WRKSRC}/naxsi/naxsi_src/ \
 			--add-dynamic-module=${WRKSRC}/ngx_devel_kit \
+			--add-dynamic-module=${WRKSRC}/headers-more-nginx-module \
 			--add-dynamic-module=${LOCALBASE}/lib/phusion-passenger${GEM_BIN_SUFFIX}/src/nginx_module
 
 SUBSTFILES=		conf/nginx.conf \
@@ -166,7 +175,8 @@ pre-patch:
 	    mv ../naxsi-* naxsi
 	cd ${WRKSRC} && \
 	    mv ../ngx_devel_kit-* ngx_devel_kit && \
-	    mv ../lua-nginx-module-* lua-nginx-module
+	    mv ../lua-nginx-module-* lua-nginx-module && \
+	    mv ../headers-more-nginx-module-* headers-more-nginx-module
 
 pre-configure:
 	@cd ${WRKSRC} && ${SUBST_CMD} ${SUBSTFILES}
