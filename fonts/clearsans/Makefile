@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/11/15 08:48:45 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2017/11/15 09:49:39 bentley Exp $
 
 TYPEFACE =		clearsans
 COMMENT =		versatile font for on-screen legibility
@@ -23,8 +23,7 @@ WRKDIST =		${WRKDIR}
 FONT_DISTDIR =		${WRKDIST}/TTF
 DOCDIR =		${PREFIX}/share/doc/clearsans
 
-do-install:
-	${MODFONT_do-install}
+post-install:
 	${INSTALL_DATA_DIR} ${DOCDIR}
 	${INSTALL_DATA} ${WRKDIST}/*.txt ${DOCDIR}
 

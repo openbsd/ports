@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2017/11/15 09:01:54 bentley Exp $
+# $OpenBSD: Makefile,v 1.7 2017/11/15 09:49:39 bentley Exp $
 
 TYPEFACE =		andika
 V =			5.000
@@ -23,9 +23,8 @@ NO_TEST =		Yes
 
 DOCDIR =		${PREFIX}/share/doc/andika
 
-do-install:
+post-install:
 	${INSTALL_DATA_DIR} ${DOCDIR}
-	${MODFONT_do-install}
 	${INSTALL_DATA} ${WRKDIST}/*.txt ${DOCDIR}
 
 .include <bsd.port.mk>

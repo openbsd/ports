@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/01/27 08:32:14 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2017/11/15 09:49:39 bentley Exp $
 
 TYPEFACE =		sunscreen
 V =			1.0
@@ -24,8 +24,7 @@ NO_TEST =		Yes
 WRKDIST =		${WRKDIR}/${DISTNAME}
 DOCDIR =		${PREFIX}/share/doc/sunscreen
 
-do-install:
-	${MODFONT_do-install}
+post-install:
 	${INSTALL_DATA_DIR} ${DOCDIR}
 	${INSTALL_DATA} ${WRKDIST}/*.txt ${DOCDIR}
 
