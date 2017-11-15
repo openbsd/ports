@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/11/01 15:19:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2017/11/15 20:35:35 ajacoutot Exp $
 
 TRACKER_API=		2.0
 SUBST_VARS=		TRACKER_API
@@ -6,7 +6,7 @@ SUBST_VARS=		TRACKER_API
 COMMENT=		tracker miners and metadata extractors
 
 GNOME_PROJECT=		tracker-miners
-GNOME_VERSION=		2.0.2
+GNOME_VERSION=		2.0.3
 
 SHARED_LIBS +=  tracker-extract           1.0 # 0.0
 
