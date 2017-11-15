@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.32 2016/06/29 16:14:43 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.33 2017/11/15 13:54:07 sthen Exp $
 @option is-branch
 @conflict freeradius-*
 @conflict radiusd-cistron-*
@@ -106,7 +106,7 @@ lib/freeradius/rlm_wimax.so
 lib/libfreeradius-eap.a
 lib/libfreeradius-eap.la
 @lib lib/libfreeradius-eap.so.${LIBfreeradius-eap_VERSION}
-lib/libfreeradius-radius-020209.la
+lib/libfreeradius-radius-020210.la
 lib/libfreeradius-radius.a
 lib/libfreeradius-radius.la
 @lib lib/libfreeradius-radius.so.${LIBfreeradius-radius_VERSION}

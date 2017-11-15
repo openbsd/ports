@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2017/11/13 16:39:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.74 2017/11/15 13:54:07 sthen Exp $
 
 PORTROACH=	limit:^2\.
 
@@ -11,9 +11,7 @@ COMMENT-mysql=	freeradius mysql rlm addon
 COMMENT-pgsql=	freeradius pgsql rlm addon
 COMMENT-ldap=	freeradius ldap rlm addon
 
-V=		2.2.9
-REVISION=	4
-REVISION-main=	6
+V=		2.2.10
 DISTNAME=	freeradius-server-$V
 EXTRACT_SUFX=	.tar.bz2
 
