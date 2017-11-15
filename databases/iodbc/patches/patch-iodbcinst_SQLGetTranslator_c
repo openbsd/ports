@@ -1,16 +1,17 @@
-$OpenBSD: patch-iodbcinst_SQLGetTranslator_c,v 1.1 2011/06/16 01:29:57 sthen Exp $
---- iodbcinst/SQLGetTranslator.c.orig	Thu Sep 10 14:04:55 2009
-+++ iodbcinst/SQLGetTranslator.c	Fri Jun  3 12:35:57 2011
-@@ -172,7 +172,7 @@ GetTranslator (HWND hwndParent, LPSTR lpszName, WORD c
- 	    CFRelease (libname);
- 	}
+$OpenBSD: patch-iodbcinst_SQLGetTranslator_c,v 1.2 2017/11/15 15:45:12 sthen Exp $
+Index: iodbcinst/SQLGetTranslator.c
+--- iodbcinst/SQLGetTranslator.c.orig
++++ iodbcinst/SQLGetTranslator.c
+@@ -251,7 +251,7 @@ GetTranslator (HWND hwndParent, LPSTR lpszName, WORD c
+ # endif
  #else
+ 
 -      CALL_TRSCHOOSE_DIALBOX ("libiodbcadm.so.2");
 +      CALL_TRSCHOOSE_DIALBOX ("libiodbcadm.so");
  #endif
  
        if (ret == SQL_NO_DATA)
-@@ -229,7 +229,7 @@ GetTranslator (HWND hwndParent, LPSTR lpszName, WORD c
+@@ -308,7 +308,7 @@ GetTranslator (HWND hwndParent, LPSTR lpszName, WORD c
  	    }
  
  	  /* The last ressort, a proxy driver */

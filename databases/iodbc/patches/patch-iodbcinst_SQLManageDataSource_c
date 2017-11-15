@@ -1,10 +1,11 @@
-$OpenBSD: patch-iodbcinst_SQLManageDataSource_c,v 1.1 2011/06/16 01:29:57 sthen Exp $
---- iodbcinst/SQLManageDataSource.c.orig	Thu Sep 10 14:04:55 2009
-+++ iodbcinst/SQLManageDataSource.c	Fri Jun  3 12:35:57 2011
-@@ -134,7 +134,7 @@ ManageDataSources (HWND hwndParent)
-     }
- 
+$OpenBSD: patch-iodbcinst_SQLManageDataSource_c,v 1.2 2017/11/15 15:45:12 sthen Exp $
+Index: iodbcinst/SQLManageDataSource.c
+--- iodbcinst/SQLManageDataSource.c.orig
++++ iodbcinst/SQLManageDataSource.c
+@@ -139,7 +139,7 @@ ManageDataSources (HWND hwndParent)
+ # endif
  #else
+ 
 -  CALL_ADMIN_DIALBOX ("libiodbcadm.so.2");
 +  CALL_ADMIN_DIALBOX ("libiodbcadm.so");
  #endif

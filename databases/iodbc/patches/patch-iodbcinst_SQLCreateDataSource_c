@@ -1,7 +1,8 @@
-$OpenBSD: patch-iodbcinst_SQLCreateDataSource_c,v 1.1 2011/06/16 01:29:57 sthen Exp $
---- iodbcinst/SQLCreateDataSource.c.orig	Thu Sep 10 14:04:55 2009
-+++ iodbcinst/SQLCreateDataSource.c	Fri Jun  3 12:35:57 2011
-@@ -157,11 +157,11 @@ CreateDataSource (HWND parent, LPCSTR lpszDSN, SQLCHAR
+$OpenBSD: patch-iodbcinst_SQLCreateDataSource_c,v 1.2 2017/11/15 15:45:12 sthen Exp $
+Index: iodbcinst/SQLCreateDataSource.c
+--- iodbcinst/SQLCreateDataSource.c.orig
++++ iodbcinst/SQLCreateDataSource.c
+@@ -172,11 +172,11 @@ CreateDataSource (HWND parent, LPCSTR lpszDSN, SQLCHAR
  #else
    if (waMode == 'A')
      {
