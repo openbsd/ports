@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.33 2017/10/23 17:10:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2017/11/15 16:48:41 jasper Exp $
 
 COMMENT =		DeaDBeeF is an audio player
 DISTNAME =		deadbeef-0.7.2
-REVISION =		5
+REVISION =		6
 CATEGORIES =		audio
 
 HOMEPAGE =		http://deadbeef.sourceforge.net/
@@ -10,7 +10,7 @@ HOMEPAGE =		http://deadbeef.sourceforge.net/
 # GPLv2 & LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} FLAC ICE Imlib2 SM X11 Xcomposite
+WANTLIB += ${COMPILER_LIBCXX} FLAC Imlib2 X11 Xtst Xcomposite
 WANTLIB += Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender
 WANTLIB += atk-1.0 atk-bridge-2.0 atspi avcodec avformat avutil
 WANTLIB += bz2 c cairo cairo-gobject cddb cdio crypto curl dbus-1
