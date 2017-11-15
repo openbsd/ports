@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.6 2015/04/27 18:30:46 rpe Exp $
+# $OpenBSD: Makefile,v 1.7 2017/11/15 21:28:05 sthen Exp $
 
 COMMENT=	mail anomalies in the system logfiles to the administrator
 
 V=		1.3.17
+REVISION=	0
 DISTNAME=	logcheck_${V}
 PKGNAME=	logtail-${V}
 EXTRACT_SUFX=	.tar.xz
 
 CATEGORIES=	sysutils
-
-MAINTAINER=	William Yodlowsky <william@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

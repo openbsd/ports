@@ -1,20 +1,18 @@
-# $OpenBSD: Makefile,v 1.21 2017/07/26 22:45:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2017/11/15 21:28:05 sthen Exp $
 
 COMMENT=		tree window manager
 DISTNAME=		treewm-0.4.5
-REVISION =		4
+REVISION=		5
 CATEGORIES=		x11
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=treewm/}
 
 HOMEPAGE=		http://treewm.sourceforge.net/
 
-MAINTAINER=		William Yodlowsky <william@openbsd.org>
-
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		ICE SM X11 Xau Xdmcp Xext Xmu Xpm Xt Xxf86vm c m ${COMPILER_LIBCXX}
+WANTLIB += ICE SM X11 Xau Xdmcp Xext Xmu Xpm Xt Xxf86vm c m ${COMPILER_LIBCXX}
 
 BUILD_DEPENDS=		devel/imake
 

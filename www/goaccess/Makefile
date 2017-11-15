@@ -1,13 +1,15 @@
-# $OpenBSD: Makefile,v 1.16 2017/04/09 14:21:09 kirby Exp $
+# $OpenBSD: Makefile,v 1.17 2017/11/15 21:28:05 sthen Exp $
 
 COMMENT =		realtime console web log analyzer
 
 DISTNAME =		goaccess-1.2
+REVISION =		0
 
 CATEGORIES =		www
+
 HOMEPAGE =		http://goaccess.io/
-MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>, \
-			William Yodlowsky <william@openbsd.org>
+
+MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes

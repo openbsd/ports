@@ -1,21 +1,19 @@
-# $OpenBSD: Makefile,v 1.32 2017/10/23 17:11:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2017/11/15 21:28:05 sthen Exp $
 
 COMMENT=	X keygrabber for blackbox
 
 DISTNAME=	bbkeys-0.9.0
-REVISION =	7
+REVISION=	8
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=bbkeys/}
 
 HOMEPAGE=	http://bbkeys.sourceforge.net/
 
-MAINTAINER=	William Yodlowsky <william@openbsd.org>
-
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	c freetype expat fontconfig ICE iconv m SM ${COMPILER_LIBCXX} X11 Xau \
-		Xdmcp Xext Xft Xrender z xcb
+WANTLIB += c freetype expat fontconfig ICE iconv m SM ${COMPILER_LIBCXX}
+WANTLIB += X11 Xau Xdmcp Xext Xft Xrender z xcb
 
 LIB_DEPENDS=	converters/libiconv
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2016/09/13 16:12:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.41 2017/11/15 21:28:05 sthen Exp $
 
 COMMENT=		new MH mail handling program
 
@@ -6,14 +6,12 @@ DISTNAME=		nmh-1.6
 CATEGORIES=		mail
 MASTER_SITES=		${MASTER_SITE_SAVANNAH:=nmh/}
 HOMEPAGE=		http://www.nongnu.org/nmh/
-REVISION=		0
+REVISION=		1
 
 # BSD-like
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=		c crypto edit iconv ssl termcap
-
-MAINTAINER=		William Yodlowsky <william@openbsd.org>
 
 SYSCONFDIR=		${PREFIX}/lib/nmh
 CONFIGURE_STYLE=	gnu

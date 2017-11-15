@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.25 2017/10/23 17:11:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2017/11/15 21:28:05 sthen Exp $
 
 COMMENT=	hacked 9wm, with support for virtual screens
 
 DISTNAME=	w9wm-0.4.2
-REVISION =	5
+REVISION=	6
 CATEGORIES=	plan9
 
 HOMEPAGE=	http://www.grassouille.org/code/w9wm.en.html
-
-MAINTAINER =	William Yodlowsky <william@openbsd.org>
 
 # nonstandard license
 PERMIT_PACKAGE_CDROM =	No

@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.26 2017/09/23 10:51:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2017/11/15 21:28:05 sthen Exp $
 
-COMMENT=	interface to the system's process table
+COMMENT=	interface to the system's process table#'
 
 DISTNAME =	Proc-ProcessTable-0.53
 CATEGORIES=	sysutils
-REVISION =	0
-
-MAINTAINER=	William Yodlowsky <william@openbsd.org>
+REVISION =	1
 
 # Artistic License
 PERMIT_PACKAGE_CDROM=	Yes

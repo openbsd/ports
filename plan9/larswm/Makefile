@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.31 2017/10/23 17:11:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2017/11/15 21:28:05 sthen Exp $
 
 COMMENT=	9wm with automatic window tiling and virtual desktops
 
 DISTNAME=	larswm-7.5.3
-REVISION =	5
+REVISION=	6
 CATEGORIES=	plan9
 
 HOMEPAGE =	http://larswm.sourceforge.net/
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=larswm/} \
 		https://spacehopper.org/mirrors/
-
-MAINTAINER =	William Yodlowsky <william@openbsd.org>
 
 # nonstandard license
 PERMIT_PACKAGE_CDROM =	No
