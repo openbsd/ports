@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2017/11/02 22:23:35 bentley Exp $
+# $OpenBSD: Makefile,v 1.43 2017/11/15 08:49:25 bentley Exp $
 
      SUBDIR =
      SUBDIR += abyssinica
@@ -12,6 +12,7 @@
      SUBDIR += blockzone
      SUBDIR += cantarell-fonts
      SUBDIR += charis
+     SUBDIR += clearsans
      SUBDIR += comic-neue
      SUBDIR += dai-banna
      SUBDIR += dina-fonts
