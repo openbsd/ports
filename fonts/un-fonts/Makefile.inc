@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile.inc,v 1.4 2015/03/31 09:45:11 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.5 2017/11/15 04:38:21 bentley Exp $
 
 CATEGORIES ?=	fonts x11 japanese korean
 
-HOMEPAGE ?=	http://kldp.net/projects/unfonts/
+HOMEPAGE ?=	https://kldp.net/unfonts/
+
+MASTER_SITES ?=	https://kldp.net/unfonts/release/
 
 WRKDIST = 	${WRKDIR}/un-fonts
 
