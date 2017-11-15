@@ -1,7 +1,8 @@
-$OpenBSD: patch-utils_makehrtf_c,v 1.2 2016/11/03 10:27:15 jasper Exp $
---- utils/makehrtf.c.orig	Fri Aug 15 08:06:59 2014
-+++ utils/makehrtf.c	Sun Sep  4 22:48:18 2016
-@@ -2071,7 +2071,7 @@ static int StoreMhr (const HrirDataT * hData, const ch
+$OpenBSD: patch-utils_makehrtf_c,v 1.3 2017/11/15 13:02:42 sthen Exp $
+Index: utils/makehrtf.c
+--- utils/makehrtf.c.orig
++++ utils/makehrtf.c
+@@ -2070,7 +2070,7 @@ static int StoreMhr (const HrirDataT * hData, const ch
    step = hData -> mIrSize;
    end = hData -> mIrCount * step;
    n = hData -> mIrPoints;

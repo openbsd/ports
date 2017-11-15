@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.48 2017/08/18 12:47:58 visa Exp $
+# $OpenBSD: Makefile,v 1.49 2017/11/15 13:02:42 sthen Exp $
 
 BROKEN-hppa =	undefined reference to __sync atomic ops
 
 COMMENT =	cross-platform 3D audio API
 
-V =		1.16.0
+V =		1.17.2
 EPOCH =		0
 DISTNAME =	openal-soft-$V
 PKGNAME =	openal-$V
 CATEGORIES =	audio
-SHARED_LIBS =	openal	2.2
-REVISION =	1
+SHARED_LIBS =	openal	3.0
 
 HOMEPAGE =	http://kcat.strangesoft.net/openal.html
 
@@ -25,33 +24,28 @@ MASTER_SITES =	${HOMEPAGE:S,.html,-releases/,}
 EXTRACT_SUFX =	.tar.bz2
 
 CONFIGURE_ARGS =-DCMAKE_BUILD_TYPE=OpenBSD \
-		-DALSOFT_SYSCONFDIR=${SYSCONFDIR} \
-		-DALSOFT_CONFIG_DESTINATION=share/examples/openal \
+		-DALSOFT_CONFIG=share/examples/openal \
 		-DALSOFT_DLOPEN=Off \
 		-DALSOFT_UTILS=On \
 		-DALSOFT_EXAMPLES=Off \
 		-DALSOFT_REQUIRE_SNDIO=On \
-		-DALSOFT_BACKEND_ALSA=Off \
-		-DALSOFT_BACKEND_COREAUDIO=Off \
-		-DALSOFT_BACKEND_DSOUND=Off \
-		-DALSOFT_BACKEND_JACK=Off \
-		-DALSOFT_BACKEND_MMDEVAPI=Off \
-		-DALSOFT_BACKEND_OPENSL=Off \
-		-DALSOFT_BACKEND_OSS=Off \
-		-DALSOFT_BACKEND_PORTAUDIO=Off \
-		-DALSOFT_BACKEND_PULSEAUDIO=Off \
-		-DALSOFT_BACKEND_QSA=Off \
-		-DALSOFT_BACKEND_SOLARIS=Off \
 		-DALSOFT_BACKEND_WAVE=Off \
-		-DALSOFT_BACKEND_WINMM=Off \
+		-DALSOFT_CPUEXT_SSE=Off \
+		-DALSOFT_CPUEXT_SSE2=Off \
+		-DALSOFT_CPUEXT_SSE3=Off \
+		-DALSOFT_CPUEXT_SSE4_1=Off \
+		-DCMAKE_DISABLE_FIND_PACKAGE_ALSA:Bool=Yes \
+		-DCMAKE_DISABLE_FIND_PACKAGE_AudioIO:Bool=Yes \
+		-DCMAKE_DISABLE_FIND_PACKAGE_JACK:Bool=Yes \
+		-DCMAKE_DISABLE_FIND_PACKAGE_OSS:Bool=Yes \
+		-DCMAKE_DISABLE_FIND_PACKAGE_PortAudio:Bool=Yes \
+		-DCMAKE_DISABLE_FIND_PACKAGE_PulseAudio:Bool=Yes \
+		-DCMAKE_DISABLE_FIND_PACKAGE_QSA:Bool=Yes \
 		-DALSOFT_NO_CONFIG_UTIL=On
 
 MODULES =	devel/cmake
 
-COMPILER =		clang gcc
-# clang fails on those architectures
-MODGCC4_ARCHS =		sparc64 powerpc
-MODCLANG_ARCHS =	aarch64 amd64 arm i386 mips64 mips64el
+COMPILER =		base-clang ports-clang ports-gcc
 
 SEPARATE_BUILD =Yes
 NO_TEST =	Yes

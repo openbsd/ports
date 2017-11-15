@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.8 2016/11/03 10:27:16 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.9 2017/11/15 13:02:42 sthen Exp $
+@bin bin/altonegen
+@bin bin/bsincgen
 @bin bin/makehrtf
 @bin bin/openal-info
 include/AL/
