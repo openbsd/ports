@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.86 2017/11/01 16:34:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.87 2017/11/15 19:47:04 jasper Exp $
 
 COMMENT=		terminal emulation library
 
 GNOME_PROJECT=		vte
 GNOME_VERSION=		0.50.2
+REVISION=		0
 API_V=			2.91
 
 PKGNAME=		vte3-${GNOME_VERSION}
@@ -26,7 +27,7 @@ WANTLIB += gmp gnutls gobject-2.0 graphite2 gthread-2.0 gtk-3
 WANTLIB += harfbuzz hogweed m nettle p11-kit pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB += tasn1 xcb xcb-render xcb-shm z iconv intl idn2 pcre2-8
-WANTLIB += unistring xcb-xkb
+WANTLIB += unistring
 WANTLIB += ${COMPILER_LIBCXX}
 
 MODULES=		x11/gnome

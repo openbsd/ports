@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.78 2017/10/23 17:10:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.79 2017/11/15 19:47:04 jasper Exp $
 
 COMMENT=	editor for the GConf configuration system
 
 GNOME_PROJECT=	gconf-editor
 GNOME_VERSION=	3.0.1
-REVISION=	9
+REVISION=	10
 
 CATEGORIES=	devel x11
 
@@ -14,7 +14,7 @@ MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
+WANTLIB += Xtst X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
 WANTLIB += c cairo cairo-gobject dbus-1 dbus-glib-1 epoxy expat
 WANTLIB += ffi fontconfig freetype gdk-3 gdk_pixbuf-2.0 gio-2.0

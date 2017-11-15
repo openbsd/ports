@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.43 2017/10/23 17:10:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.44 2017/11/15 19:47:04 jasper Exp $
 
 COMMENT=	gtk-based git repository viewer
 
 GNOME_VERSION=	0.7
 GNOME_PROJECT=	giggle
-REVISION=	5
+REVISION=	6
 
 CATEGORIES=	devel x11
 
@@ -14,7 +14,7 @@ SHARED_LIBS +=  giggle-git           0.0      # 0.0
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
+WANTLIB += Xtst X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi c cairo
 WANTLIB += cairo-gobject dbus-1 epoxy expat ffi fontconfig freetype
 WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
