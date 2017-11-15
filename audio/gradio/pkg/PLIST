@@ -1,20 +1,19 @@
-@comment $OpenBSD: PLIST,v 1.2 2017/01/07 11:38:46 landry Exp $
+@comment $OpenBSD: PLIST,v 1.3 2017/11/15 17:01:35 jasper Exp $
 @bin bin/gradio
+share/appdata/
+share/appdata/de.haeckerfelix.gradio.appdata.xml
 share/applications/de.haeckerfelix.gradio.desktop
-share/glib-2.0/schemas/de.haecker-felix.gradio.gschema.xml
-share/gradio/
-share/gradio/gradio.css
-share/icons/hicolor/128x128/apps/de.haeckerfelix.gradio.png
+share/glib-2.0/schemas/de.haeckerfelix.gradio.gschema.xml
 share/icons/hicolor/16x16/apps/de.haeckerfelix.gradio.png
-share/icons/hicolor/192x192/apps/de.haeckerfelix.gradio.png
+share/icons/hicolor/24x24/apps/de.haeckerfelix.gradio.png
+share/icons/hicolor/256x256/apps/de.haeckerfelix.gradio.png
 share/icons/hicolor/32x32/apps/de.haeckerfelix.gradio.png
 share/icons/hicolor/48x48/apps/de.haeckerfelix.gradio.png
-share/icons/hicolor/64x64/apps/de.haeckerfelix.gradio.png
-share/icons/hicolor/scalable/categories/globe-symbolic.svg
-share/icons/hicolor/scalable/categories/language-symbolic.svg
-share/icons/hicolor/scalable/categories/map-marker-symbolic.svg
-share/icons/hicolor/scalable/categories/tags-symbolic.svg
+share/icons/hicolor/512x512/apps/de.haeckerfelix.gradio.png
+share/icons/hicolor/scalable/apps/de.haeckerfelix.gradio.svg
 share/icons/hicolor/symbolic/apps/de.haeckerfelix.gradio-symbolic.svg
+share/locale/de/LC_MESSAGES/gradio.mo
+share/locale/hr/LC_MESSAGES/gradio.mo
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/update-desktop-database
