@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.24 2017/10/23 17:10:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2017/11/15 23:03:00 ajacoutot Exp $
 
 COMMENT=		graph based image processing framework (API version 0.3)
 
-V=			0.3.20
+V=			0.3.22
 DISTNAME=		gegl-${V}
 PKGNAME=		gegl03-${V}
 EXTRACT_SUFX=		.tar.bz2
-REVISION=		0
 
-SHARED_LIBS +=  gegl-0.3             0.3      # 320.0
+SHARED_LIBS +=  gegl-0.3             0.4      # 322.0
 
 API_VERSION=		0.3
 SUBST_VARS=		API_VERSION
@@ -30,8 +29,7 @@ WANTLIB += xcb-shm xml2 z
 
 MASTER_SITES=		http://download.gimp.org/pub/gegl/${API_VERSION}/
 
-MODULES=		textproc/intltool \
-			x11/gnome
+MODULES=		x11/gnome
 
 MODGNOME_TOOLS=		vala gobject-introspection
 
