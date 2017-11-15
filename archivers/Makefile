@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.85 2017/10/13 12:04:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.86 2017/11/15 07:20:20 bentley Exp $
 
      SUBDIR =
      SUBDIR += arc
@@ -6,6 +6,7 @@
      SUBDIR += bzip2
      SUBDIR += cabextract
      SUBDIR += deco
+     SUBDIR += deutex
      SUBDIR += fastjar
      SUBDIR += freeze
      SUBDIR += fuse-zip
