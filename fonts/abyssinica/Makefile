@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2017/07/21 06:56:10 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.6 2017/11/15 09:01:53 bentley Exp $
 
 COMMENT =		Ethiopic Unicode script
 
@@ -6,8 +6,9 @@ TYPEFACE =		abyssinica
 V =			1.500
 DISTNAME =		AbyssinicaSIL-$V
 CATEGORIES =		fonts
+REVISION =		0
 
-HOMEPAGE =		http://software.sil.org/abyssinica/
+HOMEPAGE =		https://software.sil.org/abyssinica/
 
 MAINTAINER =		George Rosamond <george@nycbug.org>
 
@@ -16,7 +17,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		font
 
-MASTER_SITES =		http://software.sil.org/downloads/r/abyssinica/
+MASTER_SITES =		https://software.sil.org/downloads/r/abyssinica/
 
 NO_BUILD =		Yes
 NO_TEST =		Yes
