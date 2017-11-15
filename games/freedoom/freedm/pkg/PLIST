@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/11/15 08:52:59 bentley Exp $
+share/doc/freedm/
+share/doc/freedm/COPYING.txt
+share/doc/freedm/CREDITS.txt
+share/doc/freedm/README.html
+share/doom/
+share/doom/freedm.wad
