@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2016/10/14 13:14:45 phessler Exp $
+# $OpenBSD: Makefile,v 1.5 2017/11/15 21:50:47 sthen Exp $
 
 PORTROACH =		skipv:initial
 
-COMMENT = bgp filtering automation for Cisco and Juniper routers
+COMMENT =		bgp filtering automation for Cisco and Juniper routers
 
-VERSION =		0.1.32
+VERSION =		0.1.33
 GH_PROJECT =		bgpq3
 GH_ACCOUNT =		snar
 GH_TAGNAME =		v${VERSION}
