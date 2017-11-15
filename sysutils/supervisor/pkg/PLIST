@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2016/11/02 22:43:13 danj Exp $
+@comment $OpenBSD: PLIST,v 1.5 2017/11/15 16:38:14 landry Exp $
 bin/echo_supervisord_conf
 bin/pidproxy
 bin/supervisorctl
@@ -84,6 +84,7 @@ lib/python${MODPY_VERSION}/site-packages/supervisor/scripts/sample_exiting_event
 lib/python${MODPY_VERSION}/site-packages/supervisor/scripts/sample_exiting_eventlistener.pyc
 lib/python${MODPY_VERSION}/site-packages/supervisor/skel/
 lib/python${MODPY_VERSION}/site-packages/supervisor/skel/sample.conf
+@sample ${SYSCONFDIR}/supervisord.conf
 lib/python${MODPY_VERSION}/site-packages/supervisor/socket_manager.py
 lib/python${MODPY_VERSION}/site-packages/supervisor/socket_manager.pyc
 lib/python${MODPY_VERSION}/site-packages/supervisor/states.py

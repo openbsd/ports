@@ -1,6 +1,7 @@
-$OpenBSD: patch-supervisor_skel_sample_conf,v 1.4 2017/06/07 03:49:50 benoit Exp $
---- supervisor/skel/sample.conf.orig	Fri Jun  2 06:04:35 2017
-+++ supervisor/skel/sample.conf	Wed Jun  7 05:39:03 2017
+$OpenBSD: patch-supervisor_skel_sample_conf,v 1.5 2017/11/15 16:38:14 landry Exp $
+Index: supervisor/skel/sample.conf
+--- supervisor/skel/sample.conf.orig
++++ supervisor/skel/sample.conf
 @@ -13,7 +13,7 @@
  ;    "command=bash -c 'foo ; bar'" will truncate to "command=bash -c 'foo ".
  
@@ -10,7 +11,7 @@ $OpenBSD: patch-supervisor_skel_sample_conf,v 1.4 2017/06/07 03:49:50 benoit Exp
  ;chmod=0700                 ; socket file mode (default 0700)
  ;chown=nobody:nogroup       ; socket file uid:gid owner
  ;username=user              ; default is no username (open server)
-@@ -25,11 +25,11 @@
+@@ -25,11 +25,11 @@ file=/tmp/supervisor.sock   ; the path to the socket f
  ;password=123               ; default is no password (open server)
  
  [supervisord]
@@ -24,7 +25,7 @@ $OpenBSD: patch-supervisor_skel_sample_conf,v 1.4 2017/06/07 03:49:50 benoit Exp
  nodaemon=false               ; start in foreground if true; default false
  minfds=1024                  ; min. avail startup file descriptors; default 1024
  minprocs=200                 ; min. avail process descriptors;default 200
-@@ -54,7 +54,7 @@
+@@ -54,7 +54,7 @@ supervisor.rpcinterface_factory = supervisor.rpcinterf
  ; or inet_http_server section.
  
  [supervisorctl]
@@ -33,7 +34,7 @@ $OpenBSD: patch-supervisor_skel_sample_conf,v 1.4 2017/06/07 03:49:50 benoit Exp
  ;serverurl=http://127.0.0.1:9001 ; use an http:// url to specify an inet socket
  ;username=chris              ; should be same as in [*_http_server] if set
  ;password=123                ; should be same as in [*_http_server] if set
-@@ -73,7 +73,7 @@
+@@ -73,7 +73,7 @@ serverurl=unix:///tmp/supervisor.sock ; use a unix:// 
  ;umask=022                     ; umask for process (default None)
  ;priority=999                  ; the relative start priority (default 999)
  ;autostart=true                ; start at supervisord start (default: true)
@@ -42,7 +43,7 @@ $OpenBSD: patch-supervisor_skel_sample_conf,v 1.4 2017/06/07 03:49:50 benoit Exp
  ;startretries=3                ; max # of serial start failures when starting (default 3)
  ;autorestart=unexpected        ; when to restart if exited after running (def: unexpected)
  ;exitcodes=0,2                 ; 'expected' exit codes used with autorestart (default 0,2)
-@@ -93,7 +93,7 @@
+@@ -93,7 +93,7 @@ serverurl=unix:///tmp/supervisor.sock ; use a unix:// 
  ;stderr_logfile_backups=10     ; # of stderr logfile backups (0 means none, default 10)
  ;stderr_capture_maxbytes=1MB   ; number of bytes in 'capturemode' (default 0)
  ;stderr_events_enabled=false   ; emit events on stderr writes (default false)
@@ -51,7 +52,7 @@ $OpenBSD: patch-supervisor_skel_sample_conf,v 1.4 2017/06/07 03:49:50 benoit Exp
  ;serverurl=AUTO                ; override serverurl computation (childutils)
  
  ; The sample eventlistener section below shows all possible eventlistener
-@@ -110,7 +110,7 @@
+@@ -110,7 +110,7 @@ serverurl=unix:///tmp/supervisor.sock ; use a unix:// 
  ;umask=022                     ; umask for process (default None)
  ;priority=-1                   ; the relative start priority (default -1)
  ;autostart=true                ; start at supervisord start (default: true)
@@ -60,7 +61,7 @@ $OpenBSD: patch-supervisor_skel_sample_conf,v 1.4 2017/06/07 03:49:50 benoit Exp
  ;startretries=3                ; max # of serial start failures when starting (default 3)
  ;autorestart=unexpected        ; autorestart if exited after running (def: unexpected)
  ;exitcodes=0,2                 ; 'expected' exit codes used with autorestart (default 0,2)
-@@ -128,7 +128,7 @@
+@@ -128,7 +128,7 @@ serverurl=unix:///tmp/supervisor.sock ; use a unix:// 
  ;stderr_logfile_maxbytes=1MB   ; max # logfile bytes b4 rotation (default 50MB)
  ;stderr_logfile_backups=10     ; # of stderr logfile backups (0 means none, default 10)
  ;stderr_events_enabled=false   ; emit events on stderr writes (default false)
@@ -69,9 +70,11 @@ $OpenBSD: patch-supervisor_skel_sample_conf,v 1.4 2017/06/07 03:49:50 benoit Exp
  ;serverurl=AUTO                ; override serverurl computation (childutils)
  
  ; The sample group section below shows all possible group values.  Create one
-@@ -145,4 +145,4 @@
+@@ -144,5 +144,5 @@ serverurl=unix:///tmp/supervisor.sock ; use a unix:// 
+ ; interpreted as relative to this file.  Included files *cannot*
  ; include files themselves.
  
- ;[include]
+-;[include]
 -;files = relative/directory/*.ini
-+;files = supervisord.d/*.ini
++[include]
++files = supervisord.d/*.ini
