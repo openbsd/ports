@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.53 2017/10/23 17:10:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.54 2017/11/16 07:58:43 jasper Exp $
 
 COMMENT=		GTK+ subtitles editor
 
 V=			0.53.0
 DISTNAME=		subtitleeditor-${V}
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		graphics editors
 
@@ -15,7 +15,7 @@ HOMEPAGE=		http://home.gna.org/subtitleeditor/
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
+WANTLIB += Xtst X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atkmm-1.6
 WANTLIB += atspi c cairo cairo-gobject cairomm-1.0 dbus-1 enchant
 WANTLIB += epoxy expat ffi fontconfig freetype gdk-3 gdk_pixbuf-2.0

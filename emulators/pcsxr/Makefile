@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.19 2017/10/23 17:10:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2017/11/16 07:58:43 jasper Exp $
 
 COMMENT =	Playstation 1 emulator
 
 DISTNAME =	pcsxr-1.9.94.r87113p0
 PKGNAME =	pcsxr-1.9.94beta0
-REVISION =	5
+REVISION =	6
 CATEGORIES =	emulators games
 HOMEPAGE =	http://pcsxr.codeplex.com/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += GL ICE SDL SM X11 X11-xcb Xau Xcomposite Xcursor Xdamage
-WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender Xtst Xv Xxf86vm
+WANTLIB += GL SDL X11 X11-xcb Xcomposite Xcursor Xdamage
+WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xtst Xv Xxf86vm
 WANTLIB += atk-1.0 atk-bridge-2.0 atspi c cairo cairo-gobject cdio
 WANTLIB += dbus-1 drm epoxy expat ffi fontconfig freetype gdk-3
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glapi glib-2.0 gmodule-2.0 gobject-2.0
