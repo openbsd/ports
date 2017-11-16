@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2015/11/01 17:25:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2017/11/16 04:16:16 kirby Exp $
 
 COMMENT=		GObject library for playing system sounds
 
 GNOME_PROJECT=		gsound
 GNOME_VERSION=		1.0.2
+REVISION=		0
 
 SHARED_LIBS +=  gsound                    0.0 # 0.0
 
@@ -15,10 +16,9 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c canberra ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += ltdl m ogg pcre pthread vorbis vorbisfile z
+WANTLIB += iconv intl ltdl m ogg pcre pthread vorbis vorbisfile z
 
-MODULES=		devel/gettext \
-			x11/gnome
+MODULES=		x11/gnome
 
 MODGNOME_TOOLS=		gobject-introspection vala
 

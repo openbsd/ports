@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.73 2017/09/08 15:44:15 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.74 2017/11/16 04:16:16 kirby Exp $
 
 COMMENT =		input and output plugins for Audacious
 
 V =			3.9
-
 DISTNAME =		audacious-plugins-$V
+REVISION =		0
+
 CATEGORIES =		audio multimedia
 
 HOMEPAGE =		http://audacious-media-player.org/
@@ -17,8 +18,8 @@ WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0 audgui
 WANTLIB += audtag avcodec avformat avutil c cairo cddb cdio cdio_cdda
 WANTLIB += cue curl dbus-1 dbus-glib-1 faad fontconfig freetype
 WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 gtk-x11-2.0 m mms modplug mp3lame mpg123
-WANTLIB += neon notify ogg pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += gobject-2.0 gtk-x11-2.0 iconv intl m mms modplug mp3lame
+WANTLIB += mpg123 neon notify ogg pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += samplerate sndfile sndio soxr vorbis vorbisenc vorbisfile
 WANTLIB += wavpack xml2 z
 
@@ -26,11 +27,10 @@ MASTER_SITES =		http://distfiles.audacious-media-player.org/
 
 EXTRACT_SUFX =		.tar.bz2
 
-MODULES =		devel/gettext
-
 COMPILER =		base-clang ports-gcc
 
-BUILD_DEPENDS =		${RUN_DEPENDS}
+BUILD_DEPENDS =		${RUN_DEPENDS} \
+			devel/gettext-tools
 
 RUN_DEPENDS =		audio/audacious>=${V}
 # needed for the gio plugin

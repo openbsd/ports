@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.28 2013/10/11 23:48:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.29 2017/11/16 04:16:16 kirby Exp $
 
 COMMENT=		minimalistic console-based audio player
 
 DISTNAME=		herrie-2.2
-REVISION=		2
+REVISION=		3
 CATEGORIES=		audio
 
 HOMEPAGE=		http://herrie.info/
@@ -13,14 +13,13 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c ncurses ogg pthread mad>=2 id3tag>=3 sndfile>=1
 WANTLIB += vorbis>=5 vorbisfile>=4 glib-2.0>=1000 gthread-2.0>=1000
-WANTLIB += curl>=9 ao
-
-MODULES=		devel/gettext
+WANTLIB += curl>=9 ao intl
 
 MASTER_SITES=		${HOMEPAGE}/distfiles/ \
 			http://www.stack.nl/~ed/projects/herrie/distfiles/ \
 			http://www.il.fontys.nl/~ed/projects/herrie/distfiles/
 
+BUILD_DEPENDS=		devel/gettext-tools
 LIB_DEPENDS=		audio/libmad \
 			audio/libid3tag \
 			audio/libsndfile \
