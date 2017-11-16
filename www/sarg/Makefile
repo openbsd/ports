@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2017/06/02 11:33:16 schwarze Exp $
+# $OpenBSD: Makefile,v 1.26 2017/11/16 22:23:42 naddy Exp $
 
 COMMENT=		Squid Analysis Report Generator
 
 DISTNAME=		sarg-2.3.10
-REVISION=		0
+REVISION=		1
 CATEGORIES=		www
 
 HOMEPAGE=		http://sarg.sourceforge.net/
@@ -13,13 +13,12 @@ MAINTAINER=		Robert Peichaer <rpe@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		c gd m pcre pthread
+WANTLIB=		c gd iconv intl m pcre
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=sarg/}
 
-MODULES=		devel/gettext
-
-LIB_DEPENDS=		devel/pcre \
+LIB_DEPENDS=		devel/gettext \
+			devel/pcre \
  			graphics/gd
 
 CONFIGURE_STYLE=	gnu

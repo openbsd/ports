@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.44 2016/03/11 19:59:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.45 2017/11/16 22:23:42 naddy Exp $
 
 COMMENT =	easy to use, graphical editor
 
 DISTNAME =	cooledit-3.17.17
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	editors
 
@@ -16,7 +16,7 @@ MAINTAINER =	Marc Espie <espie@openbsd.org>
 FLAVORS =	python
 FLAVOR ?=
 
-WANTLIB =	X11 c util xcb
+WANTLIB =	X11 c iconv intl util xcb
 
 MASTER_SITES =	http://fossies.org/linux/misc/
 
@@ -29,7 +29,8 @@ WANTLIB +=	pthread m ${MODPY_WANTLIB}
 CONFIGURE_ENV +=NOPYTHON=Yes
 .endif
 
-MODULES +=	devel/gettext
+BUILD_DEPENDS += devel/gettext-tools
+LIB_DEPENDS +=	devel/gettext
 
 CONFIGURE_STYLE = gnu
 CONFIGURE_ENV += XTERM_CMD=xterm LDFLAGS="-L${LOCALBASE}/lib"

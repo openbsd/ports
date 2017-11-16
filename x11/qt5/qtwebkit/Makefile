@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.6 2017/08/24 09:45:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2017/11/16 22:23:42 naddy Exp $
 
 QT5NAME =		QtWebkit
-REVISION =		2
+REVISION =		3
 COMMENT =		old Webkit integration framework for Qt
 USE_WXNEEDED =		Yes
 DPB_PROPERTIES =	parallel
@@ -18,12 +18,12 @@ WANTLIB += Qt5Core Qt5Gui Qt5Network Qt5OpenGL Qt5Positioning Qt5PrintSupport
 WANTLIB += Qt5Qml Qt5Quick Qt5Sensors Qt5Sql Qt5WebChannel Qt5Widgets
 WANTLIB += GL X11 Xext Xrender c gio-2.0 glib-2.0
 WANTLIB += gobject-2.0 gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstpbutils-1.0
-WANTLIB += gstreamer-1.0 gstvideo-1.0 icudata icui18n icuuc jpeg lzma
+WANTLIB += gstreamer-1.0 gstvideo-1.0 icudata icui18n icuuc intl jpeg lzma
 WANTLIB += m png pthread sqlite3 webp xml2 xslt z gstfft-1.0
 
 MASTER_SITES =		http://download.qt.io/community_releases/${DIST_VERSION:R}/${DIST_VERSION}-final/
 
-MODULES =		devel/gettext perl lang/python lang/ruby
+MODULES =		perl lang/python lang/ruby
 MODPY_RUNDEP =		No
 MODRUBY_RUNDEP =	No
 

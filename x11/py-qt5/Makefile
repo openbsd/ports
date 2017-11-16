@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2017/07/30 15:57:44 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2017/11/16 22:23:42 naddy Exp $
 
 COMMENT	=	python Qt5 bindings
 
 V=		5.9
 DISTNAME=	PyQt5_gpl-${V}
 PKGNAME=	py-qt5-${V}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES=	x11 devel
 
@@ -16,7 +16,7 @@ MAINTAINER=	KDE porting team <openbsd-kde@googlegroups.com>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB =  ${COMPILER_LIBCXX} ${MODPY_WANTLIB}
-WANTLIB += dbus-1 glib-2.0 m pthread pulse pulse-mainloop-glib
+WANTLIB += dbus-1 glib-2.0 intl m pthread pulse pulse-mainloop-glib
 WANTLIB += GL Qt5Bluetooth Qt5Core Qt5DBus Qt5Designer
 WANTLIB += Qt5Gui Qt5Help Qt5Multimedia Qt5MultimediaWidgets Qt5Network
 WANTLIB += Qt5OpenGL Qt5Positioning Qt5PrintSupport Qt5Qml Qt5Quick
@@ -50,8 +50,7 @@ NO_TEST=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pyqt/}
 
-MODULES=	devel/gettext \
-		lang/python \
+MODULES=	lang/python \
 		x11/qt5
 
 CONFIGURE_STYLE=simple

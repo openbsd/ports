@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2017/02/28 11:32:16 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.32 2017/11/16 22:23:42 naddy Exp $
 
 COMMENT=	lua bindings to libraries using GObject-Introspection
 
@@ -7,6 +7,7 @@ GH_PROJECT=	lgi
 GH_TAGNAME=	0.9.1
 
 PKGNAME=	lua-${DISTNAME}
+REVISION=	0
 CATEGORIES=	devel
 
 MAINTAINER=	Florian Stinglmayr <florian@n0la.org>
@@ -14,14 +15,12 @@ MAINTAINER=	Florian Stinglmayr <florian@n0la.org>
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
 
-MODULES=	devel/gettext \
-		lang/lua
+MODULES=	lang/lua
 
-WANTLIB += ffi girepository-1.0 glib-2.0 gmodule-2.0 gobject-2.0 iconv
+WANTLIB += ffi girepository-1.0 glib-2.0 gmodule-2.0 gobject-2.0 intl
 WANTLIB += pthread
 
-LIB_DEPENDS=	converters/libiconv \
-		devel/gobject-introspection
+LIB_DEPENDS=	devel/gobject-introspection
 
 FLAVORS=	lua52 lua53
 FLAVOR?=
