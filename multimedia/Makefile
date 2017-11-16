@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.100 2017/11/14 06:29:59 bentley Exp $
+# $OpenBSD: Makefile,v 1.101 2017/11/16 16:04:22 bcallah Exp $
 
      SUBDIR =
      SUBDIR += assimp
@@ -36,8 +36,6 @@
      SUBDIR += libv4l
      SUBDIR += libvpx
      SUBDIR += lives
-     SUBDIR += livestreamer
-     SUBDIR += livestreamer-curses
      SUBDIR += lsdvd
      SUBDIR += mediainfo
      SUBDIR += mediatomb
