@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.97 2017/11/14 11:57:25 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.98 2017/11/16 07:05:06 martijn Exp $
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
 
@@ -71,12 +71,8 @@ CONFIGURE_ARGS+=	--enable-shared \
 			--with-pdo-sqlite \
 			--enable-sqlite-utf8 \
 			--with-sqlite3 \
-			--program-suffix=-${PV}
-
-# readline is broken in PHP-5.3
-.if ${PV} != 5.3
-CONFIGURE_ARGS +=	--with-readline
-.endif
+			--program-suffix=-${PV} \
+			--with-readline
 
 # apache module
 CONFIGURE_ARGS+=	--with-apxs2=${LOCALBASE}/sbin/apxs2
@@ -143,7 +139,7 @@ MULTI_PACKAGES+=	-gd
 COMMENT-gd=		image manipulation extensions for php5
 LIB_DEPENDS-gd=		graphics/jpeg \
 			graphics/png
-.if ${PV} != "7.0"
+.if ${PV} == "5.6"
 LIB_DEPENDS-gd+=	devel/t1lib
 WANTLIB-gd+=		t1>=5
 .endif
@@ -194,15 +190,6 @@ CONFIGURE_ARGS+=	--with-mcrypt=shared,${LOCALBASE}
 LIB_DEPENDS-mcrypt=	security/libmcrypt devel/libtool,-ltdl
 WANTLIB-mcrypt=		mcrypt ltdl>=1 pthread
 
-.if ${PV} != "7.0"
-# mysql
-MULTI_PACKAGES+=	-mysql
-COMMENT-mysql=		mysql database access extensions for php5
-CONFIGURE_ARGS+=	--with-mysql=shared,${LOCALBASE}
-LIB_DEPENDS-mysql=	databases/mariadb
-WANTLIB-mysql=		pthread lib/mysql/mysqlclient
-.endif
-
 # mysqli
 MULTI_PACKAGES+=	-mysqli
 COMMENT-mysqli=		mysql database access extensions for php5
@@ -215,10 +202,7 @@ MULTI_PACKAGES+=	-odbc
 COMMENT-odbc=		odbc database access extensions for php5
 CONFIGURE_ARGS+=        --with-iodbc=shared,${LOCALBASE}
 LIB_DEPENDS-odbc=	databases/iodbc
-WANTLIB-odbc=		iodbc>=2 pthread
-.if ${PV} != "5.3"
-WANTLIB-odbc+=		iodbcinst
-.endif
+WANTLIB-odbc=		iodbc>=2 pthread iodbcinst
 
 # pcntl
 MULTI_PACKAGES+=	-pcntl
@@ -276,30 +260,12 @@ CONFIGURE_ARGS+=	--with-snmp=shared,${LOCALBASE} --enable-ucd-snmp-hack
 LIB_DEPENDS-snmp=	net/net-snmp
 WANTLIB-snmp=		crypto m netsnmp>=6.2 pthread
 
-.if ${PV} != "7.0"
-# sybase-ct
-MULTI_PACKAGES+=	-sybase_ct
-COMMENT-sybase_ct=	sybase database access extensions for php5
-CONFIGURE_ARGS+=	--with-sybase-ct=shared,${LOCALBASE}
-LIB_DEPENDS-sybase_ct=	databases/freetds
-WANTLIB-sybase_ct=	ct pthread
-.endif
-
 # pdo-dblib
 MULTI_PACKAGES+=	-pdo_dblib
 COMMENT-pdo_dblib=	PDO DB-LIB support for php5
 CONFIGURE_ARGS+=        --with-pdo-dblib=shared,${LOCALBASE}
 LIB_DEPENDS-pdo_dblib=	databases/freetds
 WANTLIB-pdo_dblib=	sybdb>=6 pthread
-
-.if ${PV} != "7.0"
-# mssql
-MULTI_PACKAGES+=	-mssql
-COMMENT-mssql=		microsoft sql access extensions for php5
-CONFIGURE_ARGS+=        --with-mssql=shared,${LOCALBASE}
-LIB_DEPENDS-mssql=	databases/freetds
-WANTLIB-mssql=		sybdb>=6 pthread
-.endif
 
 # tidy
 MULTI_PACKAGES+=	-tidy
@@ -341,7 +307,6 @@ PHPXS_SUBST+= -e 's,${i},${${i}},'
 WANTLIB-main+=		c crypto iconv intl lzma m pthread ssl xml2>=8 z
 WANTLIB-main+=		ncurses readline ${COMPILER_LIBCXX}
 
-# php 5.4/5.5 : WANTLIB-main += ${COMPILER_LIBCXX}
 WANTLIB-fastcgi=	${WANTLIB-main}
 LIB_DEPENDS-main=	devel/gettext \
 			textproc/libxml
