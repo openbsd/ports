@@ -1,6 +1,7 @@
+$OpenBSD: patch-src_ario-util_h,v 1.2 2017/11/16 04:10:16 kirby Exp $
+
 XXX: Only needed on powerpc, seems not to affect amd64 or loongson.
 
-$OpenBSD: patch-src_ario-util_h,v 1.1.1.1 2013/05/09 14:24:55 bcallah Exp $
 --- src/ario-util.h.orig	Fri May  3 22:23:22 2013
 +++ src/ario-util.h	Fri May  3 22:23:52 2013
 @@ -18,7 +18,7 @@
