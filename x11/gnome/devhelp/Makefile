@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.106 2017/10/31 16:31:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.107 2017/11/16 20:51:01 kili Exp $
 
 COMMENT=		API documentation browser for GNOME
 
 GNOME_PROJECT=		devhelp
 GNOME_VERSION=		3.26.0
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  devhelp-3            1.0      # 4.0
 
@@ -43,5 +43,10 @@ LIB_DEPENDS=		www/webkitgtk4
 RUN_DEPENDS +=		x11/gnome/devel-docs
 
 CONFIGURE_STYLE=	gnu
+
+# Prevent a temporarily built and used Devhelp binary from beeing
+# killed when kern.wxabort is enabled, because g-ir-scanner doesn't
+# use the right flags when linking.
+USE_WXNEEDED=		Yes
 
 .include <bsd.port.mk>
