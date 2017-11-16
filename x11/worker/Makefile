@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.29 2017/10/23 17:11:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2017/11/16 16:02:51 bcallah Exp $
 
 BROKEN-hppa =	no atomic ops
 COMMENT =	Midnight Commander-like file manager for X
-DISTNAME =	worker-3.12.0
+DISTNAME =	worker-3.13.0
 CATEGORIES =	x11
-REVISION =	0
 
 HOMEPAGE =	http://www.boomerangsworld.de/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -29,5 +28,8 @@ CONFIGURE_ARGS =	--without-avfs \
 			--without-libmagic \
 			--disable-inotify \
 			--disable-lua
+
+TEST_DEPENDS =	devel/check
+TEST_FLAGS =	CXXFLAGS="${CXXFLAGS} -std=c++11 -I${LOCALBASE}/include"
 
 .include <bsd.port.mk>
