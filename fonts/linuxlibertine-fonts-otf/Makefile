@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2015/03/31 09:45:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2017/11/16 03:21:24 bentley Exp $
 
 COMMENT =		high-quality libre OTF fonts (serif, 19th century book type)
 
@@ -12,7 +12,7 @@ CATEGORIES =		fonts
 
 HOMEPAGE =		http://www.linuxlibertine.org/
 
-# GPLv2 / SIL Open Font License (OFL) 1.0
+# GPLv2 / SIL OFL 1.1
 PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=linuxlibertine/}
