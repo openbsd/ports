@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2017/07/26 22:45:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2017/11/16 18:39:25 naddy Exp $
 
 COMMENT =	IRC-friendly instant messaging client
 
 DISTNAME=	minbif-1.0.5
 CATEGORIES=	net
-REVISION=	1
+REVISION=	2
 
 HOMEPAGE =	http://minbif.im/
 MASTER_SITES=	${HOMEPAGE}attachments/download/148/
@@ -12,11 +12,12 @@ MASTER_SITES=	${HOMEPAGE}attachments/download/148/
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-MODULES =	devel/gettext devel/cmake
+MODULES =	devel/cmake
 
 LIB_DEPENDS =	net/pidgin,-libpurple \
 		security/gnutls
-WANTLIB =	purple c glib-2.0 gthread-2.0 m pthread ${COMPILER_LIBCXX} gnutls
+WANTLIB =	purple c glib-2.0 gthread-2.0 intl m pthread \
+		${COMPILER_LIBCXX} gnutls
 CONFIGURE_ENV+=	CPPFLAGS+="-I${X11BASE}/include"
 
 NO_TEST =	Yes

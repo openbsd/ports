@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.63 2017/10/23 17:10:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.64 2017/11/16 18:39:25 naddy Exp $
 
 COMMENT=	game where you deal drugs on the streets of NY
 
 DISTNAME=	dopewars-1.5.12
-REVISION=	13
+REVISION=	14
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=dopewars/}
 
@@ -12,9 +12,7 @@ HOMEPAGE=	http://dopewars.sourceforge.net/
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c glib-2.0 ncurses pthread
-
-MODULES+=	devel/gettext
+WANTLIB += c glib-2.0 iconv intl curses
 
 LIB_DEPENDS+=   devel/glib2
 
@@ -38,11 +36,10 @@ CONFIGURE_ARGS+= --disable-gui-client
 .else
 RUN_DEPENDS+=	devel/xdg-utils
 LIB_DEPENDS+=	x11/gtk+2
-WANTLIB += GL X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
-WANTLIB += Xrandr Xrender atk-1.0 cairo expat fontconfig freetype
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
+WANTLIB += Xrandr Xrender atk-1.0 cairo fontconfig freetype
 WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 gobject-2.0 gtk-x11-2.0
-WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
-WANTLIB += xcb xcb-render xcb-shm z
+WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 z
 .endif
 
 post-patch:

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.89 2017/07/26 22:45:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.90 2017/11/16 18:39:25 naddy Exp $
 
 COMMENT =	client for The Mana World
 V =		1.6.3.26
-REVISION =	2
+REVISION =	3
 DISTNAME =	manaplus-${V}
 EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	games x11
@@ -12,17 +12,18 @@ HOMEPAGE =	http://manaplus.org/
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += GL X11 c crypto curl m nghttp2 physfs png pthread ssl ${COMPILER_LIBCXX} xml2 z
+WANTLIB += GL X11 c crypto curl iconv intl m nghttp2 physfs png pthread 
+WANTLIB += ssl ${COMPILER_LIBCXX} xml2 z
 
 MASTER_SITES =	http://download.evolonline.org/manaplus/download/${V}/
 
 FLAVORS =	sdl2
 FLAVOR ?=
 
-MODULES =	devel/gettext
 RUN_DEPENDS =	devel/desktop-file-utils \
 		devel/xdg-utils
-LIB_DEPENDS =	devel/physfs \
+LIB_DEPENDS =	devel/gettext \
+		devel/physfs \
 		net/curl \
 		textproc/libxml
 
@@ -31,7 +32,8 @@ CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include"
 CONFIGURE_ARGS =	--without-librt
 
 BUILD_DEPENDS =		${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS}
+			${MODGNU_AUTOMAKE_DEPENDS} \
+			devel/gettext-tools
 
 .if ${FLAVOR:Msdl2}
 WANTLIB += SDL2 SDL2_gfx SDL2_image SDL2_mixer SDL2_net SDL2_ttf

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.62 2017/06/02 10:51:56 schwarze Exp $
+# $OpenBSD: Makefile,v 1.63 2017/11/16 18:39:25 naddy Exp $
 
 PORTROACH=	limit:^2
 
 COMMENT=	AFP file and print services for IP networks
 
 DISTNAME=	netatalk-2.2.5
-REVISION=	8
+REVISION=	9
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=netatalk/}
 EXTRACT_SUFX=	.tar.bz2
@@ -15,9 +15,8 @@ HOMEPAGE=	http://netatalk.sourceforge.net/
 # GPLv2+ and BSD or similar
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c crypto db gcrypt gpg-error pthread rpcsvc
+WANTLIB += c crypto db gcrypt gpg-error iconv intl rpcsvc
 
-MODULES=	devel/gettext
 LIB_DEPENDS=	databases/db/v4 \
 		security/libgcrypt 
 
@@ -36,7 +35,7 @@ FLAVORS=	avahi
 FLAVOR?=
 
 .if ${FLAVOR:Mavahi}
-WANTLIB+=	avahi-client avahi-common dbus-1
+WANTLIB+=	avahi-client avahi-common dbus-1 pthread
 LIB_DEPENDS+=	net/avahi
 .else
 CONFIGURE_ARGS+= --disable-zeroconf

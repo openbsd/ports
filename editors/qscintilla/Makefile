@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2017/10/30 13:49:31 landry Exp $
+# $OpenBSD: Makefile,v 1.20 2017/11/16 18:39:25 naddy Exp $
 
 COMMENT =	Qt port of the Scintilla source code editor
 
@@ -6,6 +6,7 @@ COMMENT =	Qt port of the Scintilla source code editor
 VERSION =	2.10.1
 DISTNAME =	QScintilla_gpl-${VERSION}
 PKGNAME =	qscintilla-${VERSION}
+REVISION =	0
 CATEGORIES =	editors x11
 
 
@@ -17,7 +18,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 MASTER_SITES =  ${MASTER_SITE_SOURCEFORGE:=pyqt/}
 
 WANTLIB =	${COMPILER_LIBCXX} m
-MODULES =	devel/gettext devel/qmake
+MODULES =	devel/qmake
 FLAVORS = qt5
 FLAVOR?=
 
