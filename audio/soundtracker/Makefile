@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.30 2017/10/23 17:10:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2017/11/16 19:52:09 kirby Exp $
 
 COMMENT=		music tracking tool for X11
 
 V=			0.6.8
 DISTNAME=		soundtracker_$V.gtk2_17092006_1613
 PKGNAME=		soundtracker-$V
-REVISION=		6
+REVISION=		7
 CATEGORIES=		audio
 HOMEPAGE=		http://www.shaltev.org/programming.html
 
@@ -19,18 +19,15 @@ EXTRACT_SUFX=		.tar.bz2
 
 WANTLIB += ICE ORBit-2 SM X11 Xcomposite Xcursor Xdamage Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender art_lgpl_2 atk-1.0
-WANTLIB += bonobo-2 bonobo-activation bonoboui-2 c cairo expat
+WANTLIB += bonobo-2 bonobo-activation bonoboui-2 c cairo
 WANTLIB += fontconfig freetype gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gnome-2 gnomecanvas-2
 WANTLIB += gnomeui-2 gnomevfs-2 gobject-2.0 gthread-2.0 gtk-x11-2.0
-WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
-WANTLIB += popt pthread sndfile sndio xcb xcb-render
-WANTLIB += xcb-shm z
+WANTLIB += intl m pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += popt pthread sndfile sndio z
 
 LIB_DEPENDS=		audio/libsndfile \
 			x11/gnome/libgnomeui
-
-MODULES=		devel/gettext
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--disable-alsa \

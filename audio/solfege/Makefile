@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2015/08/25 13:18:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2017/11/16 19:52:09 kirby Exp $
 
 COMMENT =	solfege and ear training program
 DISTNAME =	solfege-3.22.2
 CATEGORIES =	audio x11
 BROKEN-hppa =	SIGILL when running lilypond
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	http://www.solfege.org/
 
@@ -13,10 +13,10 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=solfege/}
 
-MODULES =	devel/gettext \
-		lang/python
+MODULES =	lang/python
 
-BUILD_DEPENDS =	print/lilypond,-main \
+BUILD_DEPENDS =	devel/gettext-tools \
+		print/lilypond,-main \
 		sysutils/coreutils \
 		x11/py-gtk2
 

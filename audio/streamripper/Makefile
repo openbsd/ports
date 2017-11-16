@@ -1,21 +1,19 @@
-# $OpenBSD: Makefile,v 1.26 2015/01/24 11:07:57 schwarze Exp $
+# $OpenBSD: Makefile,v 1.27 2017/11/16 19:52:09 kirby Exp $
 
 COMMENT=	rip shoutcast streams to local mp3s
 
 DISTNAME=	streamripper-1.64.6
-REVISION=	1
+REVISION=	2
 CATEGORIES=	audio
 
 HOMEPAGE=	http://streamripper.sourceforge.net/
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=streamripper/}
 
-MODULES=	devel/gettext
-
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c glib-2.0 iberty m mad>=2 ogg>=5.2 pthread vorbis>=3.0
+WANTLIB += c glib-2.0 iberty iconv intl m mad>=2 ogg>=5.2 pthread vorbis>=3.0
 
 LIB_DEPENDS=	audio/libmad \
 		audio/libogg \
