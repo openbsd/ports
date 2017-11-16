@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2015/03/31 09:45:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2017/11/16 03:33:09 bentley Exp $
 
 COMMENT =		fonts from the League of Moveable Type
 
@@ -20,11 +20,7 @@ MASTER_SITES =		http://s3.amazonaws.com/theleague-production/fonts/
 
 MAINTAINER=		Ian Darwin <ian@openbsd.org>
 
-# Custom "SIL OPEN FONT LICENSE Version 1.1":
-# "Permission is hereby granted, free of charge, to any person obtaining
-# a copy of the Font Software, to use, study, copy, merge, embed, modify,
-# redistribute, and sell modified and unmodified copies of the Font Software..."
-# Allows redistribution of unmodified fonts even if bundled for sale with other software.
+# SIL OFL 1.1
 PERMIT_PACKAGE_CDROM =	Yes
 
 DIST_SUBDIR =		leaguefonts

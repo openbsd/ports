@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2015/03/31 09:45:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2017/11/16 03:33:09 bentley Exp $
 
 PKG_ARCH =	*
 
@@ -13,7 +13,7 @@ HOMEPAGE =	https://fedorahosted.org/liberation-fonts
 
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
-# SIL Open Font License, Version 1.1
+# SIL OFL 1.1
 PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =	https://fedorahosted.org/releases/l/i/liberation-fonts/

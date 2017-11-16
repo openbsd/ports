@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2016/09/26 20:25:34 fcambus Exp $
+# $OpenBSD: Makefile,v 1.6 2017/11/16 03:33:09 bentley Exp $
 
 PKG_ARCH =		*
 
@@ -12,7 +12,7 @@ HOMEPAGE =		http://sourcefoundry.org/hack/
 
 MAINTAINER =		Michael McConville <mmcco@mykolab.com>
 
-# SIL Open Font License v1.1
+# SIL OFL 1.1
 PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =		https://github.com/chrissimpkins/Hack/releases/download/v$V/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2017/08/04 16:59:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2017/11/16 03:33:09 bentley Exp $
 
 COMMENT =		fixed width fonts especially for long hacking sessions
 
@@ -9,7 +9,7 @@ HOMEPAGE =		http://terminus-font.sourceforge.net/
 
 MAINTAINER =		LEVAI Daniel <leva@ecentrum.hu>
 
-# OFL http://scripts.sil.org/OFL
+# SIL OFL 1.1
 PERMIT_PACKAGE_CDROM =		Yes
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=terminus-font/}

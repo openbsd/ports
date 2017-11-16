@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2017/08/04 17:36:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2017/11/16 03:33:09 bentley Exp $
 
 BROKEN-macppc =			fontforge doesnt validate fonts
 BROKEN-sparc64 =		fontforge doesnt validate fonts
@@ -13,7 +13,7 @@ CATEGORIES =			fonts
 
 MAINTAINER =			Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
-# SIL Open Font License
+# SIL OFL 1.1
 PERMIT_PACKAGE_CDROM =		Yes
 
 BUILD_DEPENDS =			graphics/ttfautohint \
