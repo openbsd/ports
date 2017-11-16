@@ -1,4 +1,4 @@
-# $OpenBSD: kde4.port.mk,v 1.37 2017/05/31 08:08:18 espie Exp $
+# $OpenBSD: kde4.port.mk,v 1.38 2017/11/16 23:20:40 naddy Exp $
 
 # The version of KDE SC in x11/kde4
 _MODKDE4_STABLE =	4.14.3
@@ -112,7 +112,7 @@ MODKDE4_RESOURCES ?=	No
 
 .if ${MODKDE4_RESOURCES:L} == "no"
 MODKDE4_USE ?=		runtime
-COMPILER =		gcc
+COMPILER =		base-clang ports-gcc
 .else
 MODKDE4_USE ?=		libs
 .endif

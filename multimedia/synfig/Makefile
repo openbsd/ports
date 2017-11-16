@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2017/10/23 17:10:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2017/11/16 23:20:39 naddy Exp $
 
 COMMENT =		2D animation software
 REVISION =		8
@@ -32,7 +32,7 @@ MASTER_SITES=		http://download.tuxfamily.org/synfig/releases/${V}/
 MODULES =		devel/gettext
 
 # c++11
-COMPILER =		gcc
+COMPILER =		base-clang ports-gcc
 
 BUILD_DEPENDS =		devel/etl>=0.04.19
 LIB_DEPENDS =		archivers/xz \

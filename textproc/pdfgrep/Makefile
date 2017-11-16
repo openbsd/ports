@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2017/07/27 10:05:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2017/11/16 23:20:40 naddy Exp $
 
 COMMENT =		tool to search text in PDF files
 
@@ -14,7 +14,7 @@ MAINTAINER =		Reinhold Straub <demarchie@web.de>
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-COMPILER =		gcc
+COMPILER =		base-clang ports-gcc
 
 # uses pledge()
 WANTLIB +=		c m pthread poppler-cpp pcre gcrypt gpg-error

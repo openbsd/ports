@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2017/08/21 07:03:10 jca Exp $
+# $OpenBSD: Makefile,v 1.12 2017/11/16 23:20:38 naddy Exp $
 
 COMMENT=	decision procedure for bit-vectors and arrays
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} boost_program_options-mt c m minisat
 
-COMPILER=	gcc
+COMPILER=	base-clang ports-gcc
 
 MODULES=	devel/cmake \
 		lang/python

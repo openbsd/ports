@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2017/08/24 09:45:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2017/11/16 23:20:40 naddy Exp $
 
 COMMENT=		Python extension wrapping the ICU C++ API
 
@@ -24,7 +24,7 @@ MODPY_SETUPTOOLS=	Yes
 FLAVORS=		python3
 FLAVOR?=
 
-COMPILER=		gcc
+COMPILER=		base-clang ports-gcc
 
 LIB_DEPENDS=		textproc/icu4c
 

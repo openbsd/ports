@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2017/08/12 20:15:34 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.13 2017/11/16 23:20:38 naddy Exp $
 
 COMMENT =		jump 'n' run game
 
@@ -25,7 +25,7 @@ MASTER_SITES =		https://github.com/SuperTux/supertux/releases/download/v${V}/
 MAKE_ENV +=		CXXFLAGS="${CXXFLAGS}"
 
 MODULES +=		devel/cmake
-COMPILER =		gcc
+COMPILER =		base-clang ports-gcc
 RUN_DEPENDS =		devel/desktop-file-utils
 LIB_DEPENDS =		devel/sdl2-image \
 			graphics/glew \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2017/08/10 20:14:56 jung Exp $
+# $OpenBSD: Makefile,v 1.18 2017/11/16 23:20:39 naddy Exp $
 
 COMMENT=		geographically-aware, authoritative-only DNS server
 
@@ -22,7 +22,7 @@ MASTER_SITES=		https://github.com/gdnsd/gdnsd/releases/download/v$V/
 
 USE_GMAKE=		Yes
 # TLS
-COMPILER =		gcc
+COMPILER =		base-clang ports-gcc
 COMPILER_LANGS =	c
 
 BUILD_DEPENDS=		devel/ragel

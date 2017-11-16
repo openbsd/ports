@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2017/10/19 10:05:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2017/11/16 23:20:39 naddy Exp $
 
 COMMENT=		network analysis and security monitoring framework
 
@@ -23,7 +23,7 @@ MASTER_SITES=		https://www.bro.org/downloads/
 MODULES=		lang/python
 
 # c++11
-COMPILER =		gcc
+COMPILER =		base-clang ports-gcc
 
 MODPY_ADJ_FILES=	aux/broctl/bin/broctl.in \
 			aux/broctl/bin/stats-to-csv \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2017/09/15 20:37:58 jca Exp $
+# $OpenBSD: Makefile,v 1.22 2017/11/16 23:20:40 naddy Exp $
 
 COMMENT=		background browser and setter for X11
 
@@ -20,7 +20,7 @@ WANTLIB += pangoft2-1.0 pangomm-1.4 pthread sigc-2.0 z
 
 MASTER_SITES=		${HOMEPAGE}/files/
 
-COMPILER =		clang
+COMPILER =		base-clang ports-clang
 CXXFLAGS +=		-std=c++11
 
 LIB_DEPENDS=		devel/gettext \

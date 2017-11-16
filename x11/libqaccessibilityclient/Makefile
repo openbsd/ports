@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2017/07/27 10:15:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2017/11/16 23:20:40 naddy Exp $
 
 COMMENT =		Qt-based library for writing accessibility apps
 DISTNAME =		libqaccessibilityclient-0.1.1
@@ -21,7 +21,7 @@ EXTRACT_SUFX =		.tar.bz2
 DIST_SUBDIR =		kde
 
 MODULES =		devel/cmake x11/qt4
-COMPILER =		gcc
+COMPILER =		base-clang ports-gcc
 
 CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_Qt5Widgets=Yes \
 			-DCMAKE_DISABLE_FIND_PACKAGE_Qt5DBus=Yes

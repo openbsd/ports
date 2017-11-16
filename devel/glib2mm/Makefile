@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.91 2017/10/26 08:51:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.92 2017/11/16 23:20:37 naddy Exp $
 
 # g++3 chokes on the code
 NOT_FOR_ARCHS=		${GCC3_ARCHS}
@@ -32,7 +32,7 @@ WANTLIB += ${COMPILER_LIBCXX}
 MODULES=		x11/gnome
 
 # c++11
-COMPILER =		gcc
+COMPILER =		base-clang ports-gcc
 
 # clang-format
 BUILD_DEPENDS=		devel/llvm

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2017/10/29 10:10:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2017/11/16 23:20:38 naddy Exp $
 
 COMMENT =		historical real-time strategy game
 
@@ -35,7 +35,7 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 			games/0ad/data=${V}
 MODULES =		lang/python
 
-COMPILER =		gcc
+COMPILER =		base-clang ports-gcc
 
 MODPY_RUNDEP =		No
 MODPY_ADJ_FILES =	../../../libraries/source/cxxtest-4.4/bin/cxxtestgen

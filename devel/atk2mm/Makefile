@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2017/07/27 09:34:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2017/11/16 23:20:37 naddy Exp $
 
 COMMENT=		C++ binding for the ATK library
 
@@ -25,7 +25,7 @@ WANTLIB += ${COMPILER_LIBCXX}
 MODULES=		devel/gettext \
 			x11/gnome
 # c++11
-COMPILER =		gcc 
+COMPILER =		base-clang ports-gcc
 
 LIB_DEPENDS=		devel/glib2mm \
 			devel/atk

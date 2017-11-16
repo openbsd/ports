@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2017/07/27 09:55:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2017/11/16 23:20:39 naddy Exp $
 
 COMMENT =		C++ MIME library
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB +=		m
 WANTLIB += ${COMPILER_LIBCXX}
 
-COMPILER =		gcc
+COMPILER =		base-clang ports-gcc
 
 AUTOCONF_VERSION =	2.64
 AUTOMAKE_VERSION =	1.11

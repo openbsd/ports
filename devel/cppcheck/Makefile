@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2017/10/09 00:58:36 gsoares Exp $
+# $OpenBSD: Makefile,v 1.49 2017/11/16 23:20:37 naddy Exp $
 
 COMMENT =		C/C++ static checker
 
@@ -34,7 +34,7 @@ MAKE_FLAGS =		BIN=${PREFIX}/bin SRCDIR=build \
 			LDFLAGS="-L${PREFIX}/lib -lpcre -lexecinfo"
 
 MODULES =		lang/python
-COMPILER =		gcc
+COMPILER =		base-clang ports-gcc
 MODPY_RUNDEP =		No
 CONFIGURE_STYLE =	none
 

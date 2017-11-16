@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2017/11/12 14:22:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.27 2017/11/16 23:20:40 naddy Exp $
 
 COMMENT =		recipe manager for GNOME
 
@@ -14,7 +14,7 @@ MODULES =		devel/dconf \
 			devel/meson \
 			x11/gnome
 
-COMPILER =		clang
+COMPILER =		base-clang ports-clang
 COMPILER_LANGS =	c
 
 WANTLIB += c cairo canberra gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0

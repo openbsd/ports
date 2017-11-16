@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2017/11/11 23:58:26 bentley Exp $
+# $OpenBSD: Makefile,v 1.25 2017/11/16 23:20:38 naddy Exp $
 
 BROKEN-powerpc =CPUCore.cc:2347: error: insn does not satisfy its constraints
 BROKEN-hppa =	OOM when building src/cpu/CPUCore.cc
@@ -29,7 +29,7 @@ MAKE_ENV +=	INSTALL_BASE=${PREFIX}/share/openmsx \
 		INSTALL_SHARE_DIR=${PREFIX}/share/openmsx \
 		INSTALL_DOC_DIR=${PREFIX}/share/doc/openmsx
 
-COMPILER =	gcc
+COMPILER =	base-clang ports-gcc
 LIB_DEPENDS =	audio/libvorbis \
 		converters/libiconv \
 		devel/sdl-ttf \

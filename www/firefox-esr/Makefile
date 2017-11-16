@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2017/11/14 20:12:26 landry Exp $
+# $OpenBSD: Makefile,v 1.67 2017/11/16 23:20:40 naddy Exp $
 
 COMMENT =	Firefox web browser, Extended Support Release
 ONLY_FOR_ARCHS =	amd64 i386
@@ -22,7 +22,7 @@ MODULES =	www/mozilla lang/python
 
 MODPY_RUNDEP =	No
 
-COMPILER = 	clang
+COMPILER = 	base-clang ports-clang
 MODCLANG_ARCHS =	amd64 i386
 
 # firefox >= 44 doesnt build with base libevent

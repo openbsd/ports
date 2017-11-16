@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.171 2017/10/23 17:10:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.172 2017/11/16 23:20:38 naddy Exp $
 
 USE_WXNEEDED=	Yes
 
@@ -27,7 +27,7 @@ WANTLIB=	SDL2 X11 atk-1.0 bz2 c cairo cairo-gobject curl drm epoxy \
 		${COMPILER_LIBCXX}
 
 # Using TLS emulation layer
-COMPILER =	gcc
+COMPILER =	base-clang ports-gcc
 
 MODULES=	lang/python
 

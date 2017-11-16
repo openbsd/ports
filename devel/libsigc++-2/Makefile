@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2017/07/27 09:09:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.41 2017/11/16 23:20:38 naddy Exp $
 
 COMMENT=		callback framework for C++
 
@@ -22,7 +22,7 @@ WANTLIB += ${COMPILER_LIBCXX} m
 MODULES=		x11/gnome
 
 # c++11
-COMPILER =		gcc
+COMPILER =		base-clang ports-gcc
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		M4='m4 -g'

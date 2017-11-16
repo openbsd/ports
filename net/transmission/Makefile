@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.119 2017/10/23 17:11:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.120 2017/11/16 23:20:39 naddy Exp $
 
 COMMENT-main=	BitTorrent command line and daemon client
 COMMENT-gtk=	BitTorrent client with GTK+ interface
@@ -26,7 +26,7 @@ ONLY_FOR_ARCHS-qt=	${MODGCC4_ARCHS} ${CLANG_ARCHS}
 # keep in sync with lang/gcc/${MODGCC4_VERSION}/Makefile
 MODGCC4_ARCHS=  amd64 arm hppa i386 mips64 mips64el powerpc sparc64
 
-COMPILER =	gcc
+COMPILER =	base-clang ports-gcc
 COMPILER_LANGS =	c
 
 

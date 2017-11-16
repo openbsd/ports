@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2017/07/27 09:55:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2017/11/16 23:20:38 naddy Exp $
 
 COMMENT=		LaTeX development environment
 DISTNAME=		texmaker-4.5
@@ -21,7 +21,7 @@ WANTLIB += Xext Xi Xinerama Xrender c fontconfig freetype hunspell-1.6
 WANTLIB += m poppler-qt4 pthread z
 
 # c++-11 for required for poppler
-COMPILER=		gcc
+COMPILER=		base-clang ports-gcc
 
 MODULES=		devel/qmake x11/qt4
 MODQMAKE_ARGS=		DESKTOPDIR=${LOCALBASE}/share/applications \

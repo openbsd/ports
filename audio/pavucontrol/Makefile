@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2017/11/16 18:39:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2017/11/16 23:20:37 naddy Exp $
 
 # XXX check if still needed at next update
 CXXFLAGS +=		-std=c++11
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 MODULES =		textproc/intltool
 
 # c++11
-COMPILER =		gcc
+COMPILER =		base-clang ports-gcc
 
 USE_GMAKE =		Yes
 

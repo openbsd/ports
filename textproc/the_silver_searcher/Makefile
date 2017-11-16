@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2017/09/07 13:31:21 fcambus Exp $
+# $OpenBSD: Makefile,v 1.30 2017/11/16 23:20:40 naddy Exp $
 
 COMMENT =	code searching tool, with a focus on speed (ag)
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB += c lzma pcre pthread z
 
 # TLS
-COMPILER =	gcc
+COMPILER =	base-clang ports-gcc
 COMPILER_LANGS =	c
 
 MASTER_SITES =	http://geoff.greer.fm/ag/releases/

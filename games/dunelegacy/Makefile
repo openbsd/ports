@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2017/11/03 17:24:49 kirby Exp $
+# $OpenBSD: Makefile,v 1.9 2017/11/16 23:20:38 naddy Exp $
 
 COMMENT =		improved opensource version of Dune 2
 
@@ -19,7 +19,7 @@ WANTLIB =		SDL2 SDL2_mixer c enet m pthread ${COMPILER_LIBCXX}
 MASTER_SITES = 		${MASTER_SITE_SOURCEFORGE:=dunelegacy/}
 EXTRACT_SUFX =		.tar.bz2
 
-COMPILER = 		gcc
+COMPILER = 		base-clang ports-gcc
 
 LIB_DEPENDS =		devel/sdl2-mixer \
 			net/enet

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2017/10/30 13:56:46 landry Exp $
+# $OpenBSD: Makefile,v 1.77 2017/11/16 23:20:38 naddy Exp $
 
 COMMENT =	desktop geographical information system
 
@@ -28,7 +28,7 @@ MODULES =	devel/cmake \
 		lang/python
 
 
-COMPILER =	gcc
+COMPILER =	base-clang ports-gcc
 
 BUILD_DEPENDS =	x11/py-qt4>=4.8.4 \
 		security/qca,-ossl \

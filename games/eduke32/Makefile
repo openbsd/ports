@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2017/08/04 22:33:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2017/11/16 23:20:38 naddy Exp $
 
 COMMENT =	Enhanced Duke Nukem 3D engine
 RDATE =		20160610
@@ -44,7 +44,7 @@ RUN_DEPENDS =	games/duke3ddata
 
 MASTER_SITES =	http://dukeworld.duke4.net/eduke32/synthesis/${RDATE}-${RTAG}/
 
-COMPILER =	gcc
+COMPILER =	base-clang ports-gcc
 
 # make sure we can see compilation output, respect CC/CXX, don't strip!
 MAKE_ENV =	PRETTY_OUTPUT=0 \

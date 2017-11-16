@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2017/07/26 22:45:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2017/11/16 23:20:39 naddy Exp $
 
 COMMENT =	command line todo list manager
 
@@ -16,7 +16,7 @@ MASTER_SITES =	${HOMEPAGE}download/
 PERMIT_PACKAGE_CDROM =		Yes
 
 # Needs C++11; linker issues with clang
-COMPILER =		gcc
+COMPILER =		base-clang ports-gcc
 MODULES =		devel/cmake \
 			lang/lua \
 			lang/python

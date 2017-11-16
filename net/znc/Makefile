@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2017/07/27 09:55:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2017/11/16 23:20:39 naddy Exp $
 
 COMMENT=	advanced IRC bouncer
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=	c crypto m pthread ssl z
 WANTLIB += ${COMPILER_LIBCXX}
 
-COMPILER =	gcc
+COMPILER =	base-clang ports-gcc
 
 
 MAKE_FLAGS=	VERBOSE=1

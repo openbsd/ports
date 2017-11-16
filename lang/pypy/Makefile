@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2017/05/31 08:08:16 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2017/11/16 23:20:39 naddy Exp $
 
 ONLY_FOR_ARCHS =	amd64
 
@@ -58,7 +58,7 @@ SUPDISTFILES =		${BOOTSTRAP-amd64}:0
 MODULES +=		lang/python lang/tcl x11/tk
 MODPY_VERSION =		2.7
 
-COMPILER =		gcc
+COMPILER =		base-clang ports-gcc
 COMPILER_LANGS =	c
 
 USE_GMAKE =		Yes

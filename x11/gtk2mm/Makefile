@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2017/10/23 17:11:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.69 2017/11/16 23:20:40 naddy Exp $
 
 PORTROACH=		limit:^2
 
@@ -34,7 +34,7 @@ WANTLIB += xcb-render xcb-shm z
 MODULES=		x11/gnome
 
 # c++11
-COMPILER =		gcc
+COMPILER =		base-clang ports-gcc
 
 LIB_DEPENDS=		devel/atk2mm \
 			devel/pangomm \

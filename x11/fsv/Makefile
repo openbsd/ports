@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2017/10/23 17:11:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2017/11/16 23:20:40 naddy Exp $
 
 # XXX check if still needed at next update
 #CXXFLAGS +=		-std=c++11
@@ -36,7 +36,7 @@ EXTRACT_SUFX=		.tar.bz2
 MODULES=		devel/gettext
 
 # c++11
-COMPILER =		gcc
+COMPILER =		base-clang ports-gcc
 
 LIB_DEPENDS=		graphics/ftgl \
 			x11/gtkglarea \

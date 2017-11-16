@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2017/10/23 17:10:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2017/11/16 23:20:39 naddy Exp $
 
 COMMENT=		GObject library for handling and rendering XPS documents
 
@@ -27,7 +27,7 @@ MODULES=		x11/gnome
 
 # XXX <unknown>:: Fatal: GXPS: Namespace is empty
 # https://bugzilla.gnome.org/show_bug.cgi?id=767910
-COMPILER =		gcc
+COMPILER =		base-clang ports-gcc
 COMPILER_LANGS =	c
 
 MODGNOME_TOOLS=		docbook gobject-introspection

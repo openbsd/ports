@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/07/31 22:14:44 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2017/11/16 23:20:38 naddy Exp $
 
 ONLY_FOR_ARCHS =	${CXX11_ARCHS}
 
@@ -24,7 +24,7 @@ WANTLIB += ${COMPILER_LIBCXX} SDL2 SDL2_mixer avcodec avformat
 WANTLIB += avutil c freetype m swresample swscale ${MODLUA_WANTLIB}
 
 # base clang or ports gcc
-COMPILER =	gcc
+COMPILER =	base-clang ports-gcc
 
 MODULES =	devel/cmake \
 		lang/lua

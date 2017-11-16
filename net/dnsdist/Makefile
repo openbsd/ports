@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2017/09/06 08:59:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2017/11/16 23:20:39 naddy Exp $
 
 COMMENT=		highly DNS-, DoS- and abuse-aware loadbalancer
 
@@ -31,7 +31,7 @@ CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LIBEDIT_CFLAGS=' '
 SYSCONFDIR=		${BASESYSCONFDIR}/dnsdist
 
-COMPILER =		gcc
+COMPILER =		base-clang ports-gcc
 
 MODULES+=		lang/lua
 MODLUA_VERSION=		5.3

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.129 2017/11/04 21:28:36 landry Exp $
+# $OpenBSD: Makefile,v 1.130 2017/11/16 23:20:39 naddy Exp $
 
 COMMENT-main=	PDF rendering library
 COMMENT-qt4=	qt4 interface to PDF rendering library
@@ -46,7 +46,7 @@ MULTI_PACKAGES=-main -qt4 -qt5 -utils
 .include <bsd.port.arch.mk>
 
 # c++-11
-COMPILER=	gcc
+COMPILER=	base-clang ports-gcc
 
 cWANTLIB=	expat freetype fontconfig jpeg m pthread tiff z
 

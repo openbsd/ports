@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2017/07/23 10:08:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2017/11/16 23:20:38 naddy Exp $
 
 BROKEN-hppa =		no atomic ops
 COMMENT=		the Git library, take 2
@@ -15,7 +15,7 @@ MODULES=		devel/cmake \
 MODPY_RUNDEP=		No
 
 # for atomic builtins
-COMPILER=		gcc
+COMPILER=		base-clang ports-gcc
 COMPILER_LANGS=		c
 MODGCC4_ARCHS=		arm
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2017/08/12 19:28:43 abieber Exp $
+# $OpenBSD: Makefile,v 1.21 2017/11/16 23:20:40 naddy Exp $
 
 BROKEN-powerpc = help2man: can't get `--help' info from ./luakit
 
@@ -22,7 +22,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 USE_GMAKE =		Yes
 
-COMPILER =	gcc
+COMPILER =	base-clang ports-gcc
 
 WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += atk-1.0 c cairo cairo-gobject gdk-3 gdk_pixbuf-2.0

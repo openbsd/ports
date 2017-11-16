@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.156 2017/11/05 10:23:48 landry Exp $
+# $OpenBSD: Makefile,v 1.157 2017/11/16 23:20:40 naddy Exp $
 
 USE_WXNEEDED =	Yes
 
@@ -32,7 +32,7 @@ MODULES =	lang/python \
 		lang/ruby \
 		x11/gnome
 
-COMPILER =	gcc
+COMPILER =	base-clang ports-gcc
 # cant use clang = needs <chrono> header in StdLib ?
 
 MAKE_FILE =		GNUmakefile

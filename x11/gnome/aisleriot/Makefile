@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2017/10/31 07:35:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2017/11/16 23:20:40 naddy Exp $
 
 COMMENT =		suite of solitaire card games
 
@@ -35,7 +35,7 @@ MODGCONF2_SCHEMAS_DIR =	aisleriot
 CFLAGS += -Wno-strict-prototypes
 
 # need to matche lang/guile2
-COMPILER =		gcc
+COMPILER =		base-clang ports-gcc
 COMPILER_LANGS =	c
 
 LIB_DEPENDS =		audio/libcanberra,-gtk3 \

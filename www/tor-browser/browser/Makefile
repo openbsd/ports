@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2017/10/21 20:18:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2017/11/16 23:20:40 naddy Exp $
 # Some of this comes from www/firefox-esr as apropos, since Tor
 # browser is a fork of ESR.  It is a good idea to look at that
 # Makefile when editing this one (ESR versions not always the same).
@@ -35,7 +35,7 @@ MODULES =		www/mozilla lang/python
 
 MODPY_RUNDEP =		No
 
-COMPILER =		clang
+COMPILER =		base-clang ports-clang
 MODCLANG_ARCHS =	amd64 i386
 
 MOZILLA_USE_BUNDLED_NSS =	Yes

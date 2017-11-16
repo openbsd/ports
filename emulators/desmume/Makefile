@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2017/07/26 22:45:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2017/11/16 23:20:38 naddy Exp $
 
 USE_WXNEEDED =	Yes
 
@@ -41,7 +41,7 @@ MODULES =	devel/gettext \
 		textproc/intltool
 
 
-COMPILER =	gcc
+COMPILER =	base-clang ports-gcc
 
 CONFIGURE_STYLE =	gnu
 

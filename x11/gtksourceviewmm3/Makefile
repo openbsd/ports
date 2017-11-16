@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2017/10/23 17:11:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2017/11/16 23:20:40 naddy Exp $
 
 COMMENT=		C++ wrapper for gtksourceview3
 
@@ -34,7 +34,7 @@ MODULES=		devel/gettext \
 			x11/gnome
 
 # c++11
-COMPILER =		gcc
+COMPILER =		base-clang ports-gcc
 
 LIB_DEPENDS=		x11/gtk3mm \
 			x11/gtksourceview3

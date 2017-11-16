@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2017/07/26 22:45:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2017/11/16 23:20:40 naddy Exp $
 
 COMMENT =	third-party client for Google Drive
 
@@ -25,7 +25,7 @@ WANTLIB += expat gcrypt gpg-error iberty m pthread yajl z ${COMPILER_LIBCXX}
 
 MODULES =	devel/cmake
 
-COMPILER =	gcc
+COMPILER =	base-clang ports-gcc
 
 CXXFLAGS +=	-I${LOCALBASE}/include
 

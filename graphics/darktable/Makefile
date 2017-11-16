@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2017/07/26 22:45:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.78 2017/11/16 23:20:38 naddy Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64
 
@@ -35,7 +35,7 @@ MODULES=	devel/cmake \
 		textproc/intltool
 MODLUA_VERSION=	5.2
 # TLS emulation
-COMPILER =	gcc
+COMPILER =	base-clang ports-gcc
 
 BUILD_DEPENDS=	sysutils/coreutils
 RUN_DEPENDS=	devel/desktop-file-utils \

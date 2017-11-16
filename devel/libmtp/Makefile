@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2017/11/07 18:14:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.39 2017/11/16 23:20:38 naddy Exp $
 
 COMMENT=		Media Transfer Protocol (MTP) implementation
 
@@ -17,7 +17,7 @@ WANTLIB += c gcrypt gpg-error iconv intl pthread usb-1.0
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=libmtp/}
 
 # avoid "libmtp.so.7.0: undefined reference to `.L2085'"
-COMPILER=		gcc
+COMPILER=		base-clang ports-gcc
 COMPILER_LANGS=		c
 MODGCC4_ARCHS=		mips64 mips64el
 

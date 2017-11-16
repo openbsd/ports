@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2017/07/26 22:45:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2017/11/16 23:20:38 naddy Exp $
 
 COMMENT =		OSM data to PostgreSQL converter
 #https://github.com/openstreetmap/osm2pgsql/issues/634
@@ -39,7 +39,7 @@ TEST_DEPENDS =		databases/py-psycopg2	\
 			geo/postgis		\
 			databases/postgresql,-contrib
 
-COMPILER =		gcc
+COMPILER =		base-clang ports-gcc
 
 MODPY_ADJ_FILES =	tests/regression-test.py
 

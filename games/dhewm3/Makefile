@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2017/07/27 09:55:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2017/11/16 23:20:38 naddy Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 
@@ -24,7 +24,7 @@ REVISION =		0
 
 MODULES =		devel/cmake
 
-COMPILER =		gcc
+COMPILER =		base-clang ports-gcc
 
 LIB_DEPENDS =		devel/sdl2 \
 			audio/openal \

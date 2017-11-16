@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2017/10/04 20:47:23 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.29 2017/11/16 23:20:39 naddy Exp $
 
 BROKEN-hppa =		undefined reference to __sync_fetch_and_add_4
 
@@ -22,7 +22,7 @@ WANTLIB += c jasper jpeg lcms2 m pthread ${COMPILER_LIBCXX}
 
 MASTER_SITES =		https://www.libraw.org/data/
 
-COMPILER =		gcc
+COMPILER =		base-clang ports-gcc
 # for atomic builtins (__sync_fetch_and_add_4)
 MODGCC4_ARCHS =		arm
 

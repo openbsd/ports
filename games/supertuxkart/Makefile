@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2017/07/26 22:45:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2017/11/16 23:20:38 naddy Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 powerpc
 
@@ -26,7 +26,7 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=supertuxkart/SuperTuxKart/}
 EXTRACT_SUFX =		.tar.xz
 
 MODULES =		devel/cmake
-COMPILER =		gcc
+COMPILER =		base-clang ports-gcc
 
 RUN_DEPENDS =		devel/desktop-file-utils
 LIB_DEPENDS =		audio/openal>=0.0.8p7 \

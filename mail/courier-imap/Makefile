@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.114 2017/10/31 07:45:04 giovanni Exp $
+# $OpenBSD: Makefile,v 1.115 2017/11/16 23:20:39 naddy Exp $
 
 COMMENT-main=		imap server for maildir format mailboxes
 COMMENT-pop3=		pop3 server for maildir format mailboxes
@@ -20,7 +20,7 @@ MAINTAINER=		Giovanni Bechis <giovanni@openbsd.org>
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 
-COMPILER =		gcc
+COMPILER =		base-clang ports-gcc
 
 WANTLIB=		c courierauth courierauthcommon courierauthsasl gdbm
 WANTLIB+=		iconv intl idn m pcre ${COMPILER_LIBCXX}

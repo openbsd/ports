@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2017/07/27 09:55:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.36 2017/11/16 23:20:38 naddy Exp $
 
 COMMENT =	GPS track manager
 
@@ -25,7 +25,7 @@ EXTRACT_SUFX = .tar.bz2
 
 MODULES =	devel/gettext textproc/intltool x11/gnome
 
-COMPILER =	gcc
+COMPILER =	base-clang ports-gcc
 MODGCC4_ARCHS =	amd64 i386 powerpc sparc64
 
 CONFIGURE_STYLE =	gnu

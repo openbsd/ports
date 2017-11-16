@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2017/07/27 11:09:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2017/11/16 23:20:37 naddy Exp $
 
 PKG_ARCH=		*
 
@@ -21,7 +21,7 @@ MODULES=		lang/python
 # see FILESDIR/unoconv.in
 # should really be the following, but using the module is easier
 # RUN_DEPENDS +=	STEM->=4.9,<4.10:lang/gcc/4.9,-libs
-COMPILER =		gcc
+COMPILER =		base-clang ports-gcc
 
 NO_BUILD=		Yes
 NO_TEST=		Yes

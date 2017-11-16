@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2017/07/17 23:15:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2017/11/16 23:20:39 naddy Exp $
 
 PORTROACH=	limit:^3\.
 
@@ -56,7 +56,7 @@ TEST_IS_INTERACTIVE=Yes # doesn't exit properly
 MODULES=	lang/python
 
 # thread-local storage
-COMPILER =	gcc
+COMPILER =	base-clang ports-gcc
 COMPILER_LANGS =	c
 
 MULTI_PACKAGES= -main -freetds -iodbc -ldap -memcached -mysql -pgsql -python

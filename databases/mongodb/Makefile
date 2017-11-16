@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2017/07/26 22:45:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2017/11/16 23:20:37 naddy Exp $
 
 PORTROACH =	limitw:1,even
 USE_WXNEEDED =	Yes
@@ -33,7 +33,7 @@ MODULES =	devel/scons \
 # XXX should come from scons module, but broken when gcc module also used:
 NO_CCACHE =	Yes
 
-COMPILER =	gcc
+COMPILER =	base-clang ports-gcc
 MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODSCONS_ENV =	CC="${CC}" \
 		CXX="${CXX}" \

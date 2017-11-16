@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2017/10/23 17:10:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.36 2017/11/16 23:20:38 naddy Exp $
 
 PORTROACH=		limitw:1,even
 
@@ -32,7 +32,7 @@ LIB_DEPENDS=		graphics/cairo \
 			devel/libsigc++-2
 
 # c++11
-COMPILER =		gcc
+COMPILER =		base-clang ports-gcc
 
 USE_GMAKE=		Yes
 

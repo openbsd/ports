@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.87 2017/09/19 11:50:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.88 2017/11/16 23:20:37 naddy Exp $
 
 # XXX
 # sndio: what to do with (channel) map
@@ -34,7 +34,7 @@ MASTER_SITES=		http://freedesktop.org/software/pulseaudio/releases/
 MODULES=		textproc/intltool
 
 # C++11; no associated WANTLIB: only checked by configure but never used
-COMPILER=		gcc
+COMPILER=		base-clang ports-gcc
 
 USE_GMAKE=		Yes
 

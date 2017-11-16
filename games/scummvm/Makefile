@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2017/07/26 22:45:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.74 2017/11/16 23:20:38 naddy Exp $
 
 COMMENT=	graphical adventure game interpreter
 V=		1.9.0
@@ -23,7 +23,7 @@ BUILD_DEPENDS=	devel/nasm
 
 # GCC 4.2.1 miscompiles this on at least ppc, so play safe and
 # just use a newer compiler everywhere.
-COMPILER=	gcc
+COMPILER=	base-clang ports-gcc
 
 RUN_DEPENDS=	devel/desktop-file-utils
 LIB_DEPENDS=	audio/libmad \

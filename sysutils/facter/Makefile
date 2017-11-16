@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2017/11/01 10:12:25 jeremy Exp $
+# $OpenBSD: Makefile,v 1.50 2017/11/16 23:20:40 naddy Exp $
 
 # XXXTODO: Subpackage facter.jar for use with puppetserver
 COMMENT =		collect and display system facts
@@ -20,7 +20,7 @@ MASTER_SITES =		https://downloads.puppetlabs.com/facter/
 MODULES +=		devel/cmake \
 			lang/ruby
 
-COMPILER =		gcc
+COMPILER =		base-clang ports-gcc
 
 WANTLIB += boost_atomic-mt boost_chrono-mt boost_date_time-mt
 WANTLIB += boost_filesystem-mt boost_locale-mt

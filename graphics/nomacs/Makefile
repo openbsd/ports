@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2017/07/27 09:55:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2017/11/16 23:20:39 naddy Exp $
 
 COMMENT =		small and fast Qt image viewer
 
@@ -26,7 +26,7 @@ WANTLIB += ${COMPILER_LIBCXX}
 MODULES =		devel/cmake \
 			x11/qt5 \
 
-COMPILER =		gcc
+COMPILER =		base-clang ports-gcc
 
 RUN_DEPENDS =		devel/desktop-file-utils
 

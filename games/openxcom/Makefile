@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2017/07/26 22:45:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2017/11/16 23:20:38 naddy Exp $
 
 BROKEN-alpha =	OOM on XcomRuleset.cpp
 BROKEN-hppa =	OOM on Engine/Scalers/hq4x.cpp
@@ -22,7 +22,7 @@ MASTER_SITES =		${HOMEPAGE}/wp-content/uploads/downloads/2014/06/
 
 MODULES =		devel/cmake
 
-COMPILER =		gcc
+COMPILER =		base-clang ports-gcc
 
 RUN_DEPENDS =		audio/timidity \
 			devel/desktop-file-utils \

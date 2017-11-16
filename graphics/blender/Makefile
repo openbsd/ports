@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.83 2017/11/09 17:00:28 pascal Exp $
+# $OpenBSD: Makefile,v 1.84 2017/11/16 23:20:38 naddy Exp $
 
 ONLY_FOR_ARCHS = amd64 i386
 
@@ -29,7 +29,7 @@ MODULES =	devel/cmake \
 		lang/python \
 
 
-COMPILER =	gcc
+COMPILER =	base-clang ports-gcc
 
 MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 

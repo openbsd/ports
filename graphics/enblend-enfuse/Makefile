@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2017/07/26 22:45:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.36 2017/11/16 23:20:38 naddy Exp $
 
 ONLY_FOR_ARCHS = ${GCC4_ARCHS} ${CLANG_ARCHS}
 .if (${MACHINE_ARCH} != "i386" && ${MACHINE_ARCH} != "amd64" && ${MACHINE_ARCH} != "arm64")
@@ -25,7 +25,7 @@ WANTLIB += jpeg lcms2 m png pthread tiff vigraimpex z ${COMPILER_LIBCXX}
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=enblend/}
 
-COMPILER =	gcc
+COMPILER =	base-clang ports-gcc
 BUILD_DEPENDS =	devel/help2man\
 		math/gnuplot \
 		print/texlive/base \

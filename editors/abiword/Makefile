@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.117 2017/11/12 18:16:22 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.118 2017/11/16 23:20:38 naddy Exp $
 
 # XXX error: 'nullptr' was not declared in this scope
 CXXFLAGS +=	-std=c++11
@@ -43,7 +43,7 @@ MASTER_SITES=   http://www.abisource.com/downloads/abiword/${VERSION}/source/
 
 MODULES=	lang/python
 
-COMPILER =	gcc
+COMPILER =	base-clang ports-gcc
 
 .if ${MACHINE_ARCH} == "hppa"
 CFLAGS +=	-O0

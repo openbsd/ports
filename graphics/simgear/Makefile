@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2017/08/21 17:55:37 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.14 2017/11/16 23:20:39 naddy Exp $
 
 COMMENT =		library set for simulations, games and visualizations
 
@@ -24,7 +24,7 @@ WANTLIB += GL GLU OpenThreads curl expat m openal osg osgDB osgGA osgParticle
 WANTLIB += osgSim osgText osgUtil osgViewer pthread z ${COMPILER_LIBCXX}
 
 MODULES =		devel/cmake
-COMPILER =		gcc
+COMPILER =		base-clang ports-gcc
 BUILD_DEPENDS =		devel/boost
 LIB_DEPENDS =		graphics/openscenegraph \
 			audio/openal

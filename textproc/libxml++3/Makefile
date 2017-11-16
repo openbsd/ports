@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2017/07/27 10:05:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2017/11/16 23:20:40 naddy Exp $
 
 COMMENT=		C++ wrapper for the libxml XML parser library
 
@@ -26,7 +26,7 @@ WANTLIB += ${COMPILER_LIBCXX}
 MODULES=		x11/gnome
 
 # c++11
-COMPILER =		gcc
+COMPILER =		base-clang ports-gcc
 
 LIB_DEPENDS=		devel/glib2mm \
 			textproc/libxml

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2017/11/05 11:14:38 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2017/11/16 23:20:38 naddy Exp $
 
 COMMENT =		Dragon and CoCo emulator
 
@@ -21,7 +21,7 @@ WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pangox-1.0 pthread sndfile z
 
 MASTER_SITES =		http://www.6809.org.uk/xroar/dl/
 
-COMPILER =		gcc
+COMPILER =		base-clang ports-gcc
 COMPILER_LANGS =	c
 
 LIB_DEPENDS =		audio/libsndfile \

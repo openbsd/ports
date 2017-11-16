@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2017/11/10 11:39:38 fcambus Exp $
+# $OpenBSD: Makefile,v 1.6 2017/11/16 23:20:39 naddy Exp $
 
 COMMENT =	run SQL queries directly on PCAP files
 
@@ -17,7 +17,7 @@ WANTLIB +=	${COMPILER_LIBCXX} c m z
 
 MASTER_SITES =	https://www.dns-oarc.net/files/packetq/
 
-COMPILER =	gcc
+COMPILER =	base-clang ports-gcc
 
 CONFIGURE_STYLE = gnu
 

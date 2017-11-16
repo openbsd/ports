@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2017/07/26 22:45:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2017/11/16 23:20:38 naddy Exp $
 
 COMMENT =	emulates the Super Nintendo Entertainment System
 BROKEN-alpha =	ICE/failure on filter/hq2x.cpp
@@ -34,7 +34,7 @@ LIB_DEPENDS =	devel/sdl \
 MODULES =	devel/gettext \
 		textproc/intltool \
 
-COMPILER =	gcc
+COMPILER =	base-clang ports-gcc
 
 USE_GMAKE =	Yes
 

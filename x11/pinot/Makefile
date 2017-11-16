@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2017/10/23 17:11:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.70 2017/11/16 23:20:41 naddy Exp $
 
 COMMENT=	personal search and metasearch
 
@@ -29,7 +29,7 @@ WANTLIB += xml++-2.6 xml2 z assuan gpg-error gpgme-pthread
 MASTER_SITES=	${MASTER_SITE_GOOGLECODE:=pinot-search/}
 
 # c++11
-COMPILER =	gcc
+COMPILER =	base-clang ports-gcc
 
 BUILD_DEPENDS=	devel/boost \
 		devel/desktop-file-utils \

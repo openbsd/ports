@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2017/11/10 07:29:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2017/11/16 23:20:37 naddy Exp $
 
 COMMENT=		library for AppStream metadata
 
@@ -30,7 +30,7 @@ MODULES=		devel/meson \
 MODGNOME_TOOLS=		docbook gobject-introspection
 
 # C11
-COMPILER=		clang
+COMPILER=		base-clang ports-clang
 COMPILER_LANGS=		c
 
 BUILD_DEPENDS=		devel/gperf

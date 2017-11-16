@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.112 2017/11/02 19:22:40 jca Exp $
+# $OpenBSD: Makefile,v 1.113 2017/11/16 23:20:37 naddy Exp $
 
 BROKEN-hppa =		no atomic ops
 COMMENT =		Music Player Daemon
@@ -22,7 +22,7 @@ WANTLIB =		FLAC audiofile avcodec avformat avutil \
 
 MASTER_SITES =		http://www.musicpd.org/download/mpd/${VER:R}/
 
-COMPILER =		clang
+COMPILER =		base-clang ports-clang
 
 BUILD_DEPENDS =		devel/boost
 

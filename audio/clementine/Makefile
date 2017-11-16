@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2017/07/26 22:45:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2017/11/16 23:20:37 naddy Exp $
 
 COMMENT =	Qt4-based featureful music player
 
@@ -31,7 +31,7 @@ WANTLIB += protobuf qca qjson tag>=5.0 usb-1.0 xml2 ${COMPILER_LIBCXX}
 WANTLIB += plist
 
 MODULES =		devel/cmake devel/gettext x11/qt4
-COMPILER =		gcc
+COMPILER =		base-clang ports-gcc
 
 BUILD_DEPENDS =		devel/boost \
 			devel/cmake>=2.8.10.2p3 \

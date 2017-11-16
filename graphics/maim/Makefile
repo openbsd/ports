@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2017/08/24 09:45:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2017/11/16 23:20:39 naddy Exp $
 
 V =		5.4.65
 REVISION =	0
@@ -19,7 +19,7 @@ WANTLIB += Xrandr Xrender c icuuc jpeg m png slopy z
 
 MODULES =		devel/cmake
 
-COMPILER =		gcc
+COMPILER =		base-clang ports-gcc
 
 BUILD_DEPENDS =		graphics/glm
 

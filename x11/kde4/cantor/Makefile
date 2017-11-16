@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2017/07/27 11:57:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2017/11/16 23:20:40 naddy Exp $
 
 COMMENT =	KDE mathematical applications
 DISTNAME =	cantor-${MODKDE4_VERSION}
@@ -26,7 +26,7 @@ WANTLIB += luajit-${MODLUA_DEFAULT_VERSION} gfortran
 # Makefile.inc, it's listed too late to influence modgcc, since
 # it's already been read
 MODULES =	devel/gettext lang/lua lang/python gcc4 # XXX fortran
-COMPILER =	gcc
+COMPILER =	base-clang ports-gcc
 MODGCC4_ARCHS =	*
 MODGCC4_LANGS =	fortran
 

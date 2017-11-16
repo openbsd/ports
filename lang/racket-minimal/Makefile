@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2017/10/31 15:53:28 juanfra Exp $
+# $OpenBSD: Makefile,v 1.42 2017/11/16 23:20:39 naddy Exp $
 
 USE_WXNEEDED =		Yes
 
@@ -36,7 +36,7 @@ MASTER_SITES =		https://mirror.racket-lang.org/installers/${V}/ \
 EXTRACT_SUFX =		.tgz
 
 # "places" and "futures" require TLS.
-COMPILER =		gcc
+COMPILER =		base-clang ports-gcc
 COMPILER_LANGS =	c
 MODGCC4_ARCHS =		arm
 

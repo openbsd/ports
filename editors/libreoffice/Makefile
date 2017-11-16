@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.174 2017/11/09 19:44:12 landry Exp $
+# $OpenBSD: Makefile,v 1.175 2017/11/16 23:20:38 naddy Exp $
 
 USE_WXNEEDED=	Yes
 
@@ -164,7 +164,7 @@ BUILD_DEPENDS+=	archivers/zip \
 # and librsvg is only dlopen()ed if found
 BUILD_DEPENDS +=	x11/gnome/librsvg
 
-COMPILER =	gcc
+COMPILER =	base-clang ports-gcc
 
 MODULES+=	lang/python
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2017/10/23 17:10:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2017/11/16 23:20:39 naddy Exp $
 
 BROKEN =	undefined reference to '_ZN6icu_5613UnicodeStringC1EOS0_'
 
@@ -36,7 +36,7 @@ MODULES =	devel/gettext \
 		lang/python
 
 # clang doesnt ship cstdint ?
-COMPILER =	gcc
+COMPILER =	base-clang ports-gcc
 MODGCC4_ARCHS =	amd64 i386 powerpc sparc64
 
 TEST_DEPENDS =	shells/bash \

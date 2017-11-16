@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2017/10/23 17:11:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.47 2017/11/16 23:20:40 naddy Exp $
 
 # XXX check if still needed at next update
 CXXFLAGS +=		-std=c++11
@@ -47,7 +47,7 @@ MODULES=		devel/gettext \
 			textproc/intltool
 
 # c++11 (although only for building against libsigc++)
-COMPILER =		gcc
+COMPILER =		base-clang ports-gcc
 
 USE_GMAKE=		Yes
 

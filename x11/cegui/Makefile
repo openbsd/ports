@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2017/07/26 22:45:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2017/11/16 23:20:40 naddy Exp $
 
 COMMENT =		widgets library for graphics engines
 
@@ -34,7 +34,7 @@ EXTRACT_SUFX =		.tar.bz2
 
 MODULES =		devel/cmake
 
-COMPILER =		gcc
+COMPILER =		base-clang ports-gcc
 
 BUILD_DEPENDS =		graphics/glm
 LIB_DEPENDS =		x11/ogre \

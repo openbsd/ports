@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2017/07/26 22:45:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2017/11/16 23:20:38 naddy Exp $
 
 COMMENT =	free multi-dimensional Tetris-like game
 DISTNAME =	galois-0.4
@@ -22,7 +22,7 @@ MASTER_SITES =	${MASTER_SITE_SAVANNAH:=galois/source/}
 MODULES =	devel/gettext
 
 # c++11
-COMPILER =	gcc
+COMPILER =	base-clang ports-gcc
 
 LIB_DEPENDS =	textproc/libxml++>=2.40.0 \
 		x11/gtk2mm

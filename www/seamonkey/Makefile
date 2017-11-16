@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.211 2017/11/14 20:46:56 landry Exp $
+# $OpenBSD: Makefile,v 1.212 2017/11/16 23:20:40 naddy Exp $
 
 COMMENT-main =		Mozilla application suite
 COMMENT-lightning =	Mozilla Seamonkey calendar extension
@@ -29,7 +29,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 MODULES =	www/mozilla lang/python
 MODPY_RUNDEP =	No
 
-COMPILER =		clang
+COMPILER =		base-clang ports-clang
 MODCLANG_ARCHS =	amd64 i386
 
 # gecko >= 44 doesnt build with base libevent

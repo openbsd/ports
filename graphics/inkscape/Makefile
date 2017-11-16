@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2017/10/23 17:10:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.66 2017/11/16 23:20:39 naddy Exp $
 
 COMMENT =	SVG vector drawing application
 
@@ -33,7 +33,7 @@ MODULES=	textproc/intltool \
 		lang/python \
 		lang/ruby
 
-COMPILER =	gcc
+COMPILER =	base-clang ports-gcc
 
 # We are just substituting paths at build time
 MODPY_BUILDDEP =	No

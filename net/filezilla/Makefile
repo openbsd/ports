@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2017/10/23 17:11:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.52 2017/11/16 23:20:39 naddy Exp $
 
 COMMENT=	fast FTP and SFTP GUI client with a lot of features
 BROKEN-hppa=	serverpath.h:17:19: error: variable 'CServerPath final' has initializer but incomplete type
@@ -33,7 +33,7 @@ WANTLIB += wx_gtk2_html wx_gtk2_xrc xcb xcb-render xcb-shm z
 
 MODULES=	devel/gettext
 
-COMPILER =	gcc
+COMPILER =	base-clang ports-gcc
 
 LIB_DEPENDS=	databases/sqlite3 \
 		devel/harfbuzz \

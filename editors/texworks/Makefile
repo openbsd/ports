@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2017/07/27 09:55:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.39 2017/11/16 23:20:38 naddy Exp $
 
 COMMENT-main =		easy to use LaTeX and ConTeXt editor
 COMMENT-python =	Python scripting for TeXworks
@@ -37,7 +37,7 @@ MODQMAKE_PROJECTS =	plugins-src/TWLuaPlugin/TWLuaPlugin.pro \
 			TeXworks.pro
 
 # c++-11 required for poppler
-COMPILER =		gcc
+COMPILER =		base-clang ports-gcc
 
 WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += ICE QtDBus QtGui QtScript QtScriptTools QtXml SM X11

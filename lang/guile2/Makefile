@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2017/07/30 06:51:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2017/11/16 23:20:39 naddy Exp $
 
 # When updating, check that x11/gnome/aisleriot MODGNOME_CPPFLAGS references the
 # proper guile2 includes directory
@@ -27,7 +27,7 @@ WANTLIB += unistring
 MASTER_SITES=		${MASTER_SITE_GNU:=guile/}
 
 # internal compiler error: in unify_nodes, at tree-ssa-structalias.c:1231
-COMPILER =		gcc
+COMPILER =		base-clang ports-gcc
 COMPILER_LANGS =	c
 
 USE_GMAKE=		Yes

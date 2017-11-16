@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2017/07/27 09:55:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2017/11/16 23:20:39 naddy Exp $
 
 COMMENT=		GObject wrapper around exiv2
 
@@ -28,7 +28,7 @@ MODGNOME_TOOLS=		gobject-introspection vala
 MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 # C++11
-COMPILER =		gcc
+COMPILER =		base-clang ports-gcc
 CXXFLAGS +=		-std=c++11
 
 LIB_DEPENDS=		devel/glib2 \

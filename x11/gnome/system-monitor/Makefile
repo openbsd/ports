@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2017/11/03 11:22:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.76 2017/11/16 23:20:40 naddy Exp $
 
 COMMENT=		sytem monitor for GNOME
 
@@ -26,7 +26,7 @@ MODULES=		devel/dconf \
 			x11/gnome
 
 # c++11
-COMPILER =		gcc
+COMPILER =		base-clang ports-gcc
 
 LIB_DEPENDS=		devel/libgtop2>=2.38.0 \
 			x11/gnome/librsvg \

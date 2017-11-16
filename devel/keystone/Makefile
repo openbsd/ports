@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2017/10/29 17:56:04 jca Exp $
+# $OpenBSD: Makefile,v 1.8 2017/11/16 23:20:37 naddy Exp $
 
 COMMENT =	multi-platform, multi-architecture assembler framework
 
@@ -26,7 +26,7 @@ MODULES =	devel/cmake \
 MODPY_RUNDEP =	No
 
 # atomics
-COMPILER =	clang
+COMPILER =	base-clang ports-clang
 
 
 CONFIGURE_ARGS = -DBUILD_SHARED_LIBS=ON

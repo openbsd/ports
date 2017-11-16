@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2017/07/27 09:55:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2017/11/16 23:20:38 naddy Exp $
 
 COMMENT =		editor for the TikZ language
 
@@ -31,7 +31,7 @@ MODQMAKE_ARGS=          DESKTOPDIR=${LOCALBASE}/share/applications \
 			QCOLLECTIONGENERATORCOMMAND=${LOCALBASE}/lib/qt4/bin/qcollectiongenerator
 
 # c++-11 reqwuired for poppler
-COMPILER=		gcc
+COMPILER=		base-clang ports-gcc
 
 MAKE_ENV =		MAKEOBJDIR=.
 WRKDIST =		${WRKDIR}/ktikz

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2017/11/11 11:24:42 kirby Exp $
+# $OpenBSD: Makefile,v 1.9 2017/11/16 23:20:38 naddy Exp $
 
 COMMENT-main =	graphical sdl rogue-like game
 COMMENT-data =	data for Tales of Maj'Eyal
@@ -39,7 +39,7 @@ RUN_DEPENDS-main =	games/tome4,-data
 LIB_DEPENDS-data =
 WANTLIB-data =
 
-COMPILER =	gcc
+COMPILER =	base-clang ports-gcc
 COMPILER_LANGS =	c
 
 

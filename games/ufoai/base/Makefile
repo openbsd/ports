@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2017/07/27 09:55:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2017/11/16 23:20:38 naddy Exp $
 
 COMMENT-main =		squad-based tactical strategy game
 COMMENT-editor = 	UFO:AI map editor
@@ -29,7 +29,7 @@ WANTLIB-editor += gtk-x11-2.0 gtkglext-x11-1.0 gtksourceview-2.0
 WANTLIB-editor += openal pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB-editor += pangox-1.0 vorbisfile xml2 ${cWANTLIB}
 
-COMPILER =		gcc
+COMPILER =		base-clang ports-gcc
 
 BUILD_DEPENDS = 	devel/gettext-tools
 RUN_DEPENDS = 		games/ufoai/data \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2017/08/24 09:45:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2017/11/16 23:20:39 naddy Exp $
 
 GH_ACCOUNT =	naelstrof
 GH_PROJECT =	slop
@@ -20,7 +20,7 @@ WANTLIB += c icuuc m
 
 MODULES =		devel/cmake
 
-COMPILER =		gcc
+COMPILER =		base-clang ports-gcc
 
 BUILD_DEPENDS +=	graphics/glm
 

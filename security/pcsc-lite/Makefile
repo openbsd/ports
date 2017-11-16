@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2017/08/11 10:06:01 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.41 2017/11/16 23:20:40 naddy Exp $
 
 COMMENT=	resource manager for PC/SC
 
@@ -26,7 +26,7 @@ WANTLIB=		c pthread usb-1.0
 MODULES+=		lang/python
 
 # thread-local storage
-COMPILER=		gcc
+COMPILER=		base-clang ports-gcc
 COMPILER_LANGS=		c
 
 LIB_DEPENDS=		devel/libusb1

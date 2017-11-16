@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2017/07/27 09:55:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2017/11/16 23:20:39 naddy Exp $
 
 COMMENT =		3D fractal renderer
 
@@ -27,7 +27,7 @@ LIB_DEPENDS =		graphics/png \
 
 RUN_DEPENDS =		devel/desktop-file-utils
 
-COMPILER =		gcc
+COMPILER =		base-clang ports-gcc
 
 NO_TEST =		Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2017/07/27 10:05:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2017/11/16 23:20:40 naddy Exp $
 
 # XXX check if still needed at next update
 CXXFLAGS +=		-std=c++11
@@ -25,7 +25,7 @@ WANTLIB += ${COMPILER_LIBCXX}
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gsmartcontrol/}
 
 # c++11
-COMPILER =		gcc
+COMPILER =		base-clang ports-gcc
 
 RUN_DEPENDS=		devel/desktop-file-utils \
 			sysutils/smartmontools \

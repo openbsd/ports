@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2017/11/09 16:36:55 pascal Exp $
+# $OpenBSD: Makefile,v 1.13 2017/11/16 23:20:38 naddy Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 
@@ -29,7 +29,7 @@ GH_PROJECT =		openmw
 GH_TAGNAME =		openmw-$V
 
 MODULES =		devel/cmake x11/qt5
-COMPILER =		gcc
+COMPILER =		base-clang ports-gcc
 BUILD_DEPENDS = 	sysutils/e2fsprogs
 LIB_DEPENDS =		audio/openal \
 			devel/bullet \

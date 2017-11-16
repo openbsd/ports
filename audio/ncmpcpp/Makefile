@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2017/09/14 16:21:15 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.67 2017/11/16 23:20:37 naddy Exp $
 
 BROKEN-alpha =		error: looser throw specifier for 'virtual OutOfBounds::~OutOfBounds()'
 BROKEN-hppa =		bindings.h:85:4: error: type 'Binding' is not a direct base of 'Binding'
@@ -34,7 +34,7 @@ LIB_DEPENDS =		audio/libmpdclient>=2.4 \
 			devel/readline \
 			net/curl
 
-COMPILER =		gcc
+COMPILER =		base-clang ports-gcc
 
 FAKE_FLAGS =		docdir="${PREFIX}/share/examples/ncmpcpp/"
 

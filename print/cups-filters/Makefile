@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.129 2017/10/23 17:11:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.130 2017/11/16 23:20:39 naddy Exp $
 
 BROKEN-alpha=	ICE in cupsfilters/image-jpeg.c:316
 BROKEN-hppa=	ICE on filter/pdftopdf/qpdf_pdftopdf.cc:147
@@ -30,7 +30,7 @@ WANTLIB += ${COMPILER_LIBCXX}
 MASTER_SITES=	http://www.openprinting.org/download/cups-filters/
 
 # cc1plus: error: unrecognized command line option "-std=c++0x"
-COMPILER =	gcc
+COMPILER =	base-clang ports-gcc
 
 .if ${MACHINE_ARCH} == "hppa"
 CFLAGS +=	-O0

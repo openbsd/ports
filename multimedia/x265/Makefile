@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2017/07/26 22:45:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2017/11/16 23:20:39 naddy Exp $
 
 COMMENT=	free H.265/HEVC encoder
 
@@ -25,7 +25,7 @@ WRKSRC=		${WRKDIST}/source
 
 MODULES=	devel/cmake
 
-COMPILER =	clang
+COMPILER =	base-clang ports-clang
 MODCLANG_ARCHS=	amd64 i386
 
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"

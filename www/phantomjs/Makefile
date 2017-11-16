@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2017/11/09 16:50:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2017/11/16 23:20:40 naddy Exp $
 
 USE_WXNEEDED =		Yes
 
@@ -23,7 +23,7 @@ MAINTAINER =		Francisco de Borja Lopez Rio <borja@codigo23.net>
 # BSD, but statically linked to patched LGPL'ed qt5 and webkit
 PERMIT_PACKAGE_CDROM =	Yes
 
-COMPILER =		gcc
+COMPILER =		base-clang ports-gcc
 MODULES =		devel/gettext lang/python lang/ruby
 
 WANTLIB +=		${COMPILER_LIBCXX} X11 Xau Xdmcp c crypto \

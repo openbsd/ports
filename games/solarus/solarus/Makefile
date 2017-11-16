@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2017/07/26 22:45:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2017/11/16 23:20:38 naddy Exp $
 
 V =		1.5.3
 COMMENT =	open-source Zelda-like 2D game engine
@@ -23,7 +23,7 @@ MODULES +=	devel/cmake \
 		lang/lua \
 		x11/qt5
 
-COMPILER =	gcc
+COMPILER =	base-clang ports-gcc
 
 LIB_DEPENDS =	audio/libmodplug \
 		audio/libvorbis \
