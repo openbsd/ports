@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2017/09/25 23:36:13 bcallah Exp $
+# $OpenBSD: Makefile,v 1.5 2017/11/16 14:38:39 bcallah Exp $
 
 COMMENT =	pipe video streams into a video player
 CATEGORIES =	multimedia net
 
 GH_ACCOUNT =	streamlink
 GH_PROJECT =	streamlink
-GH_TAGNAME =	0.8.1
-REVISION =	0
+GH_TAGNAME =	0.9.0
 
 HOMEPAGE =	https://streamlink.github.io/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -31,6 +30,7 @@ RUN_DEPENDS =	devel/py-iso3166${MODPY_FLAVOR} \
 
 TEST_DEPENDS =	devel/py-test${MODPY_FLAVOR} \
 		devel/py-mock${MODPY_FLAVOR} \
-		devel/py-country${MODPY_FLAVOR}
+		devel/py-country${MODPY_FLAVOR} \
+		${RUN_DEPENDS}
 
 .include <bsd.port.mk>

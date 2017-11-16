@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2017/09/13 19:59:09 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.4 2017/11/16 14:38:39 bcallah Exp $
 bin/streamlink
 lib/python${MODPY_VERSION}/site-packages/streamlink/
 lib/python${MODPY_VERSION}/site-packages/streamlink-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -214,6 +214,7 @@ lib/python${MODPY_VERSION}/site-packages/streamlink/plugins/${MODPY_PYCACHE}spor
 lib/python${MODPY_VERSION}/site-packages/streamlink/plugins/${MODPY_PYCACHE}sportschau.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/streamlink/plugins/${MODPY_PYCACHE}srgssr.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/streamlink/plugins/${MODPY_PYCACHE}ssh101.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/streamlink/plugins/${MODPY_PYCACHE}startv.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/streamlink/plugins/${MODPY_PYCACHE}streamable.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/streamlink/plugins/${MODPY_PYCACHE}streamboat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/streamlink/plugins/${MODPY_PYCACHE}streamingvideoprovider.${MODPY_PYC_MAGIC_TAG}pyc
@@ -255,6 +256,7 @@ lib/python${MODPY_VERSION}/site-packages/streamlink/plugins/${MODPY_PYCACHE}vidi
 lib/python${MODPY_VERSION}/site-packages/streamlink/plugins/${MODPY_PYCACHE}vk.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/streamlink/plugins/${MODPY_PYCACHE}vrtbe.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/streamlink/plugins/${MODPY_PYCACHE}wattv.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/streamlink/plugins/${MODPY_PYCACHE}webcast_india_gov.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/streamlink/plugins/${MODPY_PYCACHE}webtv.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/streamlink/plugins/${MODPY_PYCACHE}weeb.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/streamlink/plugins/${MODPY_PYCACHE}wwenetwork.${MODPY_PYC_MAGIC_TAG}pyc
@@ -393,6 +395,7 @@ lib/python${MODPY_VERSION}/site-packages/streamlink/plugins/sportal.py
 lib/python${MODPY_VERSION}/site-packages/streamlink/plugins/sportschau.py
 lib/python${MODPY_VERSION}/site-packages/streamlink/plugins/srgssr.py
 lib/python${MODPY_VERSION}/site-packages/streamlink/plugins/ssh101.py
+lib/python${MODPY_VERSION}/site-packages/streamlink/plugins/startv.py
 lib/python${MODPY_VERSION}/site-packages/streamlink/plugins/streamable.py
 lib/python${MODPY_VERSION}/site-packages/streamlink/plugins/streamboat.py
 lib/python${MODPY_VERSION}/site-packages/streamlink/plugins/streamingvideoprovider.py
@@ -434,6 +437,7 @@ lib/python${MODPY_VERSION}/site-packages/streamlink/plugins/vidio.py
 lib/python${MODPY_VERSION}/site-packages/streamlink/plugins/vk.py
 lib/python${MODPY_VERSION}/site-packages/streamlink/plugins/vrtbe.py
 lib/python${MODPY_VERSION}/site-packages/streamlink/plugins/wattv.py
+lib/python${MODPY_VERSION}/site-packages/streamlink/plugins/webcast_india_gov.py
 lib/python${MODPY_VERSION}/site-packages/streamlink/plugins/webtv.py
 lib/python${MODPY_VERSION}/site-packages/streamlink/plugins/weeb.py
 lib/python${MODPY_VERSION}/site-packages/streamlink/plugins/wwenetwork.py
