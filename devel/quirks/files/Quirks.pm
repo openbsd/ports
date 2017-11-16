@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.560 2017/11/16 16:07:39 bcallah Exp $
+# $OpenBSD: Quirks.pm,v 1.561 2017/11/16 20:17:28 naddy Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1161,6 +1161,7 @@ my $obsolete_reason = {
 	'gnuvd' => 6,
 	'gtkhtml4' => 5,
 	'livestreamer-curses' => 6,
+	'xdmchoose' => 6,
 };
 
 # reasons for obsolete packages

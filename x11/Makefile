@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.603 2017/11/05 17:18:49 jeremy Exp $
+# $OpenBSD: Makefile,v 1.604 2017/11/16 20:17:28 naddy Exp $
 
      SUBDIR =
      SUBDIR += 2bwm
@@ -357,7 +357,6 @@
      SUBDIR += xdesktopwaves
      SUBDIR += xdg-user-dirs-gtk
      SUBDIR += xdimmer
-     SUBDIR += xdmchoose
      SUBDIR += xdotool
      SUBDIR += xdrawchem
      SUBDIR += xdtm
@@ -403,6 +402,7 @@
      SUBDIR += xtraceroute
      SUBDIR += xtu
      SUBDIR += xvkbd
+     SUBDIR += xwallpaper
      SUBDIR += xwit
      SUBDIR += xwrits
      SUBDIR += xzoom
@@ -410,6 +410,5 @@
      SUBDIR += yakuake-kde4
      SUBDIR += yeahconsole
      SUBDIR += yeahlaunch
-     SUBDIR += xwallpaper
 
 .include <bsd.port.subdir.mk>
