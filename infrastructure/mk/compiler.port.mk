@@ -1,4 +1,4 @@
-# $OpenBSD: compiler.port.mk,v 1.4 2017/08/22 10:27:33 espie Exp $
+# $OpenBSD: compiler.port.mk,v 1.5 2017/11/17 00:24:01 naddy Exp $
 #
 #  Copyright (c) 2017 Marc Espie
 # 
@@ -23,9 +23,6 @@
 #  OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
 #  SUCH DAMAGE.
 # 
-
-COMPILER:= ${COMPILER:S/^gcc$/base-clang ports-gcc/}
-COMPILER:= ${COMPILER:S/^clang$/base-clang ports-clang/}
 
 .for c in ${COMPILER:L}
 .  if "$c" == "base-gcc"
