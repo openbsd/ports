@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2017/11/17 14:59:18 jca Exp $
+# $OpenBSD: Makefile,v 1.11 2017/11/17 15:09:05 jca Exp $
 
 COMMENT=		manage large numbers of patches
 
 DISTNAME=		quilt-0.65
+REVISION=		0
 CATEGORIES=		devel
 
 HOMEPAGE=		http://savannah.nongnu.org/projects/quilt/
@@ -11,11 +12,7 @@ MAINTAINER=		Kent R. Spillner <kspillner@openbsd.org>
 # GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		c
-
 MASTER_SITES=		${MASTER_SITE_SAVANNAH:=quilt/}
-
-MODULES=		devel/gettext
 
 USE_GMAKE=		Yes
 
@@ -30,7 +27,8 @@ RUN_DEPENDS=		devel/gpatch \
 			textproc/gdiff \
 			textproc/gsed
 
-BUILD_DEPENDS=		${RUN_DEPENDS}
+BUILD_DEPENDS=		${RUN_DEPENDS} \
+			devel/gettext-tools
 
 CONFIGURE_STYLE=	autoconf no-autoheader
 AUTOCONF_VERSION=	2.69

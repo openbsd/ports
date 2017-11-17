@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/02/10 16:02:04 kspillner Exp $
+@comment $OpenBSD: PLIST,v 1.5 2017/11/17 15:09:05 jca Exp $
 bin/guards
 bin/quilt
 @man man/man1/guards.1
@@ -7,6 +7,8 @@ share/doc/quilt/
 share/doc/quilt/README
 share/doc/quilt/README.MAIL
 share/doc/quilt/quilt.pdf
+share/emacs/
+share/emacs/site-lisp/
 share/emacs/site-lisp/quilt.el
 share/examples/quilt/
 share/examples/quilt/bash_completion.d/
