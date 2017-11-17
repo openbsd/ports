@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2017/11/17 15:09:05 jca Exp $
+# $OpenBSD: Makefile,v 1.12 2017/11/17 15:20:00 jca Exp $
 
 COMMENT=		manage large numbers of patches
 
@@ -30,8 +30,7 @@ RUN_DEPENDS=		devel/gpatch \
 BUILD_DEPENDS=		${RUN_DEPENDS} \
 			devel/gettext-tools
 
-CONFIGURE_STYLE=	autoconf no-autoheader
-AUTOCONF_VERSION=	2.69
+CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-date=${LOCALBASE}/bin/gdate \
 			--with-diff=${LOCALBASE}/bin/gdiff \
 			--with-find=${LOCALBASE}/bin/gfind \
