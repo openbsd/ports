@@ -1,3 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/11/06 13:50:39 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/11/17 23:50:44 bentley Exp $
 share/open-ath9k-htc-firmware/
 share/open-ath9k-htc-firmware/htc_9271.fw
+share/open-ath9k-htc-firmware/license

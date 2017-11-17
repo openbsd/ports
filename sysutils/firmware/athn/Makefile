@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2017/11/06 13:56:01 bentley Exp $
+# $OpenBSD: Makefile,v 1.8 2017/11/17 23:50:44 bentley Exp $
 
 FW_DRIVER=	athn
 FW_VER=		1.1
@@ -24,5 +24,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/ar9271.fw ${PREFIX}/firmware/athn-ar9271
 	${INSTALL_DATA} ${LOCALBASE}/share/open-ath9k-htc-firmware/htc_7010.fw ${PREFIX}/firmware/athn-open-ar7010
 	${INSTALL_DATA} ${LOCALBASE}/share/open-ath9k-htc-firmware/htc_9271.fw ${PREFIX}/firmware/athn-open-ar9271
+	${INSTALL_DATA} ${LOCALBASE}/share/open-ath9k-htc-firmware/license ${PREFIX}/firmware/athn-open-license
 
 .include <bsd.port.mk>
