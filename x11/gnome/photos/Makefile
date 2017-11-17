@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2017/11/09 19:44:12 landry Exp $
+# $OpenBSD: Makefile,v 1.63 2017/11/17 12:10:30 ajacoutot Exp $
 
 BROKEN-powerpc=		undefined reference to __sync_add_and_fetch_8
 
@@ -8,7 +8,7 @@ COMMENT=		access, organize and share your photos on GNOME
 
 GNOME_PROJECT=		gnome-photos
 GNOME_VERSION=		3.26.2
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		graphics
 
@@ -54,6 +54,9 @@ RUN_DEPENDS +=		x11/gnome/online-miners
 
 # calls grl_registry_load...plugin
 RUN_DEPENDS +=		x11/gnome/grilo-plugins
+
+# org.freedesktop.Tracker schema
+RUN_DEPENDS +=		x11/gnome/tracker-miners
 
 .if ${MACHINE_ARCH} == i386
 # undefined reference to `__sync_add_and_fetch_8'

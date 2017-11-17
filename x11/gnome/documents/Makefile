@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.87 2017/11/03 13:51:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.88 2017/11/17 12:10:30 ajacoutot Exp $
 
 TRACKER_API=		2.0
 
@@ -6,6 +6,7 @@ COMMENT=		document and e-books manager for GNOME
 
 GNOME_PROJECT=		gnome-documents
 GNOME_VERSION=		3.26.1
+REVISION=		0
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -64,6 +65,9 @@ RUN_DEPENDS +=		x11/gnome/epub-thumbnailer
 
 # src/application.js
 RUN_DEPENDS +=		x11/gnome/online-miners
+
+# org.freedesktop.Tracker schema
+RUN_DEPENDS +=		x11/gnome/tracker-miners
 
 CONFIGURE_STYLE=	gnu
 
