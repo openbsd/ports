@@ -1,6 +1,9 @@
-$OpenBSD: patch-src_libicalss_CMakeLists_txt,v 1.1 2017/11/11 14:16:46 ajacoutot Exp $
+$OpenBSD: patch-src_libicalss_CMakeLists_txt,v 1.2 2017/11/17 08:14:10 ajacoutot Exp $
 
-https://github.com/libical/libical/issues/321
+From 2f5f57552cc43eb56b654ba152bff648ada3d369 Mon Sep 17 00:00:00 2001
+From: Allen Winter <allen.winter@kdab.com>
+Date: Thu, 16 Nov 2017 18:19:15 -0500
+Subject: [PATCH] src/libicalss/CMakeLists.txt - add dependency to ical-header ISSUE#321
 
 Index: src/libicalss/CMakeLists.txt
 --- src/libicalss/CMakeLists.txt.orig
