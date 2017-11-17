@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.39 2017/08/21 19:25:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.40 2017/11/17 14:47:42 naddy Exp $
 
 BRANCH=		21.4
 VERSION=	22
-REVISION=	17
+REVISION=	18
 
-WANTLIB=	c m ncurses util
+WANTLIB=	c m curses util
 
 CFLAGS +=	-fno-pie -fgnu89-inline
 
@@ -62,8 +62,9 @@ CONFIGURE_ARGS+=--with-xim=xlib
 .endif
 
 .if ${FLAVOR:Mmule}
-MODULES=	devel/gettext
+LIB_DEPENDS+=	devel/gettext
 CONFIGURE_ARGS+=--with-mule
+WANTLIB+=	iconv intl
 
 . if ${FLAVOR:Mcanna}
 LIB_DEPENDS+=	japanese/canna
