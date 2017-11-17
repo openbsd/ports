@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/10/15 07:29:10 feinerer Exp $
+# $OpenBSD: Makefile,v 1.2 2017/11/17 18:24:07 feinerer Exp $
 
 COMMENT =		command line tool for PostgreSQL server activity monitoring
 
-MODPY_EGG_VERSION =	1.3.1
+MODPY_EGG_VERSION =	1.4.0
 DISTNAME =		pg_activity-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
