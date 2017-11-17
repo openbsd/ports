@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.149 2017/11/05 20:17:15 denis Exp $
+# $OpenBSD: OpenBSD,v 1.150 2017/11/17 22:07:22 ccardenas Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -166,6 +166,7 @@
 59.33		18.07		"anton"		# Anton Lindqvist
 59.33		18.08		"art"		# Artur Grabowski
 59.43		17.81		"maja"		# Mats O Jansson
+47.507603	-121.740109	"ccardenas"	# Carlos Cardenas
 
 #-27.48         153.20          "d"             # David Leonard
 #-33.536466     151.093514      "dons"          # Don Stewart
