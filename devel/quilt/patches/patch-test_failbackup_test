@@ -1,0 +1,14 @@
+$OpenBSD: patch-test_failbackup_test,v 1.1 2017/11/17 14:59:18 jca Exp $
+
+Index: test/failbackup.test
+--- test/failbackup.test.orig
++++ test/failbackup.test
+@@ -16,7 +16,7 @@ What happens when refresh fails because of a permissio
+ 	$ cat > test.txt
+ 	< This is updated test.txt.
+ 	$ quilt refresh --backup
+-	>~ mv: cannot move [`']?%{P}test.diff'? to [`']?%{P}test.diff~'?: Permission denied
++	>~ mv: rename [`']?%{P}test.diff'? to [`']?%{P}test.diff~'?: Permission denied
+ 	$ echo %{?}
+ 	> 1
+ 
