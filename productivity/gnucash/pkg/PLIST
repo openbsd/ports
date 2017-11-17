@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.35 2017/10/11 08:21:16 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.36 2017/11/17 09:16:38 ajacoutot Exp $
 @conflict gnucash-docs-*
 @pkgpath productivity/gnucash-docs
 bin/gnc-fq-check
@@ -224,6 +224,7 @@ include/gnucash/tree-view-utils.h
 include/gnucash/window-main-summarybar.h
 include/gnucash/window-report.h
 lib/gnucash/
+@lib lib/gnucash/libgncmod-app-utils-python.so.${LIBgncmod-app-utils-python_VERSION}
 lib/gnucash/libgncmod-app-utils.so
 lib/gnucash/libgncmod-backend-dbi.so
 lib/gnucash/libgncmod-backend-xml.so
@@ -240,6 +241,8 @@ lib/gnucash/libgncmod-html.so
 lib/gnucash/libgncmod-ledger-core.so
 lib/gnucash/libgncmod-locale-reports-us.so
 lib/gnucash/libgncmod-log-replay.so
+lib/gnucash/libgncmod-ofx.so
+lib/gnucash/libgncmod-python.so
 lib/gnucash/libgncmod-qif-import.so
 @lib lib/gnucash/libgncmod-qif.so.${LIBgncmod-qif_VERSION}
 lib/gnucash/libgncmod-register-core.so
@@ -259,6 +262,9 @@ lib/libgnc-backend-xml-utils.la
 lib/libgnc-business-ledger.a
 lib/libgnc-business-ledger.la
 @lib lib/libgnc-business-ledger.so.${LIBgnc-business-ledger_VERSION}
+lib/libgnc-core-utils-python.a
+lib/libgnc-core-utils-python.la
+@lib lib/libgnc-core-utils-python.so.${LIBgnc-core-utils-python_VERSION}
 lib/libgnc-core-utils.a
 lib/libgnc-core-utils.la
 @lib lib/libgnc-core-utils.so.${LIBgnc-core-utils_VERSION}
@@ -271,6 +277,18 @@ lib/libgnc-module.la
 lib/libgnc-qof.a
 lib/libgnc-qof.la
 @lib lib/libgnc-qof.so.${LIBgnc-qof_VERSION}
+lib/python${MODPY_VERSION}/site-packages/gnucash/
+lib/python${MODPY_VERSION}/site-packages/gnucash/__init__.py
+lib/python${MODPY_VERSION}/site-packages/gnucash/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/gnucash/_gnucash_core_c.so
+lib/python${MODPY_VERSION}/site-packages/gnucash/function_class.py
+lib/python${MODPY_VERSION}/site-packages/gnucash/function_class.pyc
+lib/python${MODPY_VERSION}/site-packages/gnucash/gnucash_business.py
+lib/python${MODPY_VERSION}/site-packages/gnucash/gnucash_business.pyc
+lib/python${MODPY_VERSION}/site-packages/gnucash/gnucash_core.py
+lib/python${MODPY_VERSION}/site-packages/gnucash/gnucash_core.pyc
+lib/python${MODPY_VERSION}/site-packages/gnucash/gnucash_core_c.py
+lib/python${MODPY_VERSION}/site-packages/gnucash/gnucash_core_c.pyc
 libexec/gnucash/
 libexec/gnucash/overrides/
 libexec/gnucash/overrides/gnucash-env
@@ -362,6 +380,7 @@ share/glib-2.0/schemas/org.gnucash.dialogs.export.csv.gschema.xml
 share/glib-2.0/schemas/org.gnucash.dialogs.gschema.xml
 share/glib-2.0/schemas/org.gnucash.dialogs.import.csv.gschema.xml
 share/glib-2.0/schemas/org.gnucash.dialogs.import.generic.gschema.xml
+share/glib-2.0/schemas/org.gnucash.dialogs.import.ofx.gschema.xml
 share/glib-2.0/schemas/org.gnucash.dialogs.import.qif.gschema.xml
 share/glib-2.0/schemas/org.gnucash.dialogs.reconcile.gschema.xml
 share/glib-2.0/schemas/org.gnucash.dialogs.sxs.gschema.xml
@@ -2291,6 +2310,23 @@ share/gnucash/pixmaps/gnucash-icon.ico
 share/gnucash/pixmaps/gnucash_splash.png
 share/gnucash/pixmaps/stock_split_title.png
 share/gnucash/pixmaps/stock_split_watermark.png
+share/gnucash/python/
+share/gnucash/python/init.py
+share/gnucash/python/init.pyc
+share/gnucash/python/pycons/
+share/gnucash/python/pycons/__init__.py
+share/gnucash/python/pycons/__init__.pyc
+share/gnucash/python/pycons/console.py
+share/gnucash/python/pycons/console.pyc
+share/gnucash/python/pycons/ishell.py
+share/gnucash/python/pycons/ishell.pyc
+share/gnucash/python/pycons/pycons
+share/gnucash/python/pycons/setup.py
+share/gnucash/python/pycons/setup.pyc
+share/gnucash/python/pycons/shell.py
+share/gnucash/python/pycons/shell.pyc
+share/gnucash/python/pycons/simple_plot.py
+share/gnucash/python/pycons/simple_plot.pyc
 share/gnucash/scm/
 share/gnucash/scm/build-config.scm
 share/gnucash/scm/business-options.scm
@@ -2444,6 +2480,7 @@ share/gnucash/ui/gnc-plugin-csv-import-ui.xml
 share/gnucash/ui/gnc-plugin-customer_import-ui.xml
 share/gnucash/ui/gnc-plugin-file-history-ui.xml
 share/gnucash/ui/gnc-plugin-log-replay-ui.xml
+share/gnucash/ui/gnc-plugin-ofx-ui.xml
 share/gnucash/ui/gnc-plugin-page-account-tree-ui.xml
 share/gnucash/ui/gnc-plugin-page-account-tree2-ui.xml
 share/gnucash/ui/gnc-plugin-page-budget-ui.xml
