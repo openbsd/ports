@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.8 2017/07/28 10:50:45 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.9 2017/11/17 00:21:00 naddy Exp $
 
 CATEGORIES ?=		textproc x11
 MASTER_SITES ?=		https://pwmt.org/projects/zathura/plugins/download/
@@ -17,5 +17,5 @@ MAKE_FLAGS ?=	VERBOSE=1 \
 NO_TEST ?=	Yes
 USE_GMAKE ?=	Yes
 
-COMPILER ?=	gcc
+COMPILER ?=	base-clang ports-gcc
 COMPILER_LANGS ?= c
