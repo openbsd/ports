@@ -1,4 +1,8 @@
-# $OpenBSD: Makefile,v 1.107 2017/11/16 20:51:01 kili Exp $
+# $OpenBSD: Makefile,v 1.108 2017/11/17 12:16:01 ajacoutot Exp $
+
+# build time requirement for WebKit2-4.0 introspection:
+# g-ir-scanner(1) only passes -L/-l LDFLAGS
+USE_WXNEEDED=		Yes
 
 COMMENT=		API documentation browser for GNOME
 
@@ -43,10 +47,5 @@ LIB_DEPENDS=		www/webkitgtk4
 RUN_DEPENDS +=		x11/gnome/devel-docs
 
 CONFIGURE_STYLE=	gnu
-
-# Prevent a temporarily built and used Devhelp binary from beeing
-# killed when kern.wxabort is enabled, because g-ir-scanner doesn't
-# use the right flags when linking.
-USE_WXNEEDED=		Yes
 
 .include <bsd.port.mk>
