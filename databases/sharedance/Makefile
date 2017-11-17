@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2017/11/15 21:28:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2017/11/17 08:07:38 ajacoutot Exp $
 
 COMMENT=	high-performance server that centralizes key/data pairs
 
 DISTNAME=	sharedance-0.6
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	databases
 
