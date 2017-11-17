@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2017/11/16 18:37:01 martijn Exp $
+# $OpenBSD: Makefile,v 1.55 2017/11/17 06:47:17 martijn Exp $
 
 BROKEN-alpha=	pcre_jit_compile.c:65:2: error: #error Unsupported architecture
 
@@ -7,8 +7,6 @@ V=		${PV}.31
 REVISION=	0
 
 MASTER_SITES0=	https://download.suhosin.org/
-
-WANTLIB-main+=	${COMPILER_LIBCXX} ncurses readline
 
 FLAVORS=	no_suhosin
 FLAVOR?=
