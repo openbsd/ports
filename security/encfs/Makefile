@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2017/08/22 01:39:02 jca Exp $
+# $OpenBSD: Makefile,v 1.15 2017/11/17 00:22:39 naddy Exp $
 
 COMMENT =		fuse-based cryptographic filesystem
 
@@ -16,7 +16,7 @@ WANTLIB += ${COMPILER_LIBCXX} c crypto fuse intl m ssl tinyxml2
 
 MASTER_SITES =		https://github.com/vgough/encfs/releases/download/v$V/
 
-COMPILER =		clang gcc
+COMPILER =		base-clang ports-clang ports-gcc
 
 MODULES =		devel/cmake
 BUILD_DEPENDS =		devel/gettext-tools

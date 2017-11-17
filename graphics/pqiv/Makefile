@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2017/08/12 13:30:16 danj Exp $
+# $OpenBSD: Makefile,v 1.14 2017/11/17 00:22:39 naddy Exp $
 
 COMMENT=		command line image viewer
 
@@ -20,7 +20,7 @@ WANTLIB += X11 atk-1.0 c cairo cairo-gobject gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gobject-2.0 gtk-3 m pango-1.0 pangocairo-1.0
 WANTLIB += intl
 
-COMPILER=		clang gcc
+COMPILER=		base-clang ports-clang ports-gcc
 
 LIB_DEPENDS=		x11/gtk+3
 

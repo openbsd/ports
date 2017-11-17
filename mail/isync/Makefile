@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2017/10/17 17:24:14 danj Exp $
+# $OpenBSD: Makefile,v 1.33 2017/11/17 00:22:39 naddy Exp $
 
 COMMENT=	synchronize IMAP4 and maildir mailboxes
 
@@ -13,7 +13,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB= c crypto db sasl2 ssl z
 
-COMPILER=		clang gcc
+COMPILER=		base-clang ports-clang ports-gcc
 
 LIB_DEPENDS=		databases/db/v4 \
 			security/cyrus-sasl2

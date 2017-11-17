@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.45 2017/09/19 07:26:50 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.46 2017/11/17 00:22:39 naddy Exp $
 
 # Most frequent usage of the GStreamer packages:
 # core		base library
@@ -49,7 +49,7 @@ TEST_DEPENDS +=	${BASE_PKGPATH}
 
 MODULES +=		lang/python
 
-COMPILER =		gcc clang
+COMPILER =		base-clang ports-gcc ports-clang
 COMPILER_LANGS ?=	c
 MODGCC4_ARCHS =		powerpc
 

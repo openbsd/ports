@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2017/10/28 07:36:00 robert Exp $
+# $OpenBSD: Makefile,v 1.67 2017/11/17 00:22:39 naddy Exp $
 
 .include <bsd.port.arch.mk>
 
@@ -34,7 +34,7 @@ MASTER_SITES=		https://downloads.iridiumbrowser.de/source/ \
 
 MODULES=	lang/python
 
-COMPILER =	clang gcc
+COMPILER =	base-clang ports-clang ports-gcc
 
 MODPY_RUNDEP=	No
 

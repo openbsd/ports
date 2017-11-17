@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.349 2017/11/14 10:25:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.350 2017/11/17 00:22:39 naddy Exp $
 
 ONLY_FOR_ARCHS=		amd64
 
@@ -34,7 +34,7 @@ MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official
 
 MODULES=	lang/python
 
-COMPILER =	clang gcc
+COMPILER =	base-clang ports-clang ports-gcc
 
 MODPY_RUNDEP=	No
 
