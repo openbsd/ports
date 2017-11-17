@@ -1,8 +1,8 @@
-$OpenBSD: patch-agent_appconfig_constants_unix_go,v 1.2 2017/05/28 09:25:31 ajacoutot Exp $
+$OpenBSD: patch-agent_appconfig_constants_unix_go,v 1.3 2017/11/17 09:14:50 ajacoutot Exp $
 Index: agent/appconfig/constants_unix.go
 --- agent/appconfig/constants_unix.go.orig
 +++ agent/appconfig/constants_unix.go
-@@ -18,48 +18,48 @@ package appconfig
+@@ -18,55 +18,55 @@ package appconfig
  
  const (
  	// DefaultProgramFolder is the default folder for SSM
@@ -15,6 +15,10 @@ Index: agent/appconfig/constants_unix.go
  	// PackageRoot specifies the directory under which packages will be downloaded and installed
 -	PackageRoot = "/var/lib/amazon/ssm/packages"
 +	PackageRoot = "/var/db/amazon/ssm/packages"
+ 
+ 	// PackageLockRoot specifies the directory under which package lock files will reside
+-	PackageLockRoot = "/var/lib/amazon/ssm/locks/packages"
++	PackageLockRoot = "/var/db/amazon/ssm/locks/packages"
  
  	// PackagePlatform is the platform name to use when looking for packages
  	PackagePlatform = "linux"
@@ -30,7 +34,9 @@ Index: agent/appconfig/constants_unix.go
  	// LocalCommandRootSubmitted is the directory where locally submitted command documents
  	// are moved when they have been picked up
 -	LocalCommandRootSubmitted = "/var/lib/amazon/ssm/localcommands/submitted"
+-	LocalCommandRootCompleted = "/var/lib/amazon/ssm/localcommands/completed"
 +	LocalCommandRootSubmitted = "/var/db/amazon/ssm/localcommands/submitted"
++	LocalCommandRootCompleted = "/var/db/amazon/ssm/localcommands/completed"
  
  	// LocalCommandRootInvalid is the directory where locally submitted command documents
  	// are moved if the service cannot validate the document (generally impossible via cli)
@@ -61,4 +67,8 @@ Index: agent/appconfig/constants_unix.go
 +	DefaultPluginPath = "/var/db/amazon/ssm/plugins"
  
  	// ManifestCacheDirectory represents the directory for storing all downloaded manifest files
- 	ManifestCacheDirectory = "/var/lib/amazon/ssm/manifests"
+-	ManifestCacheDirectory = "/var/lib/amazon/ssm/manifests"
++	ManifestCacheDirectory = "/var/db/amazon/ssm/manifests"
+ 
+ 	// List all plugin names, unfortunately golang doesn't support const arrays of strings
+ 
