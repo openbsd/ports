@@ -1,6 +1,8 @@
-$OpenBSD: patch-flare-engine_0_19_CMakeLists_txt,v 1.1 2014/11/04 15:22:30 dcoppa Exp $
---- flare-engine.0.19/CMakeLists.txt.orig	Tue Nov  4 16:16:14 2014
-+++ flare-engine.0.19/CMakeLists.txt	Tue Nov  4 16:18:26 2014
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2017/11/18 17:01:06 kirby Exp $
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
 @@ -23,19 +23,6 @@ elseif ()
    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fno-enforce-eh-specs")
  endif ()

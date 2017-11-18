@@ -1,10 +1,13 @@
-# $OpenBSD: Makefile,v 1.9 2017/07/26 22:45:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2017/11/18 17:01:06 kirby Exp $
 
-COMMENT =		free/libre action roleplaying engine
+COMMENT-main =		free/libre action roleplaying engine
+COMMENT-data =		free/libre action roleplaying engine data
 
 V =			0.19
-PKGNAME =		flare-${V}
-REVISION =		2
+DISTNAME = 		flare.${V}
+PKGNAME-main =		flare-${V}
+PKGNAME-data =		flare-data-${V}
+REVISION-main =		3
 
 CATEGORIES =		games
 
@@ -15,16 +18,15 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 
-WANTLIB +=		SDL SDL_image SDL_mixer SDL_ttf c m pthread ${COMPILER_LIBCXX}
+WANTLIB-main +=		SDL SDL_image SDL_mixer SDL_ttf c m pthread ${COMPILER_LIBCXX}
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=flare-game/}
-DISTFILES =		flare-engine.${V}.tar.gz \
-			flare-game.${V}.tar.gz
 
 MODULES =		devel/cmake
-RUN_DEPENDS =		devel/desktop-file-utils \
+RUN_DEPENDS-main =	devel/desktop-file-utils \
+			games/flare,-data \
 			x11/gtk+3,-guic
-LIB_DEPENDS =		devel/sdl-image \
+LIB_DEPENDS-main =	devel/sdl-image \
 			devel/sdl-mixer \
 			devel/sdl-ttf
 
@@ -32,12 +34,20 @@ CONFIGURE_ARGS =	-DBINDIR=bin \
 			-DDATADIR=share/flare \
 			-DMANDIR=man
 
-WRKSRC =		${WRKDIR}/flare-engine.${V}
+MULTI_PACKAGES = 	-main -data
+PKG_ARCH-data = 	*
 
 NO_TEST =		Yes
 
+post-extract:
+	@sed -i -e "s,\@FLARE_EXECUTABLE_PATH@,flare,g" \
+		${WRKSRC}/distribution/flare.desktop.in
 post-install:
-	cp -R ${WRKDIR}/flare-game.${V}/mods/* \
-		${PREFIX}/share/flare/default/mods
+	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/
+	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/scalable/apps/
+	${INSTALL_DATA}  ${WRKSRC}/distribution/flare.desktop.in \
+		${PREFIX}/share/applications/flare.desktop
+	${INSTALL_DATA}  ${WRKSRC}/distribution/flare_logo.svg \
+		${PREFIX}/share/icons/hicolor/scalable/apps/flare.svg
 
 .include <bsd.port.mk>

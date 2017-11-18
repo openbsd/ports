@@ -1,0 +1,80 @@
+@comment $OpenBSD: PLIST-main,v 1.1 2017/11/18 17:01:06 kirby Exp $
+@pkgpath games/flare
+@bin bin/flare
+@man man/man1/flare.1
+share/applications/flare.desktop
+share/flare/default/mods/default/
+share/flare/default/mods/default/cutscenes/
+share/flare/default/mods/default/cutscenes/credits.txt
+share/flare/default/mods/default/cutscenes/intro_example.txt
+share/flare/default/mods/default/engine/
+share/flare/default/mods/default/engine/combat.txt
+share/flare/default/mods/default/engine/death_penalty.txt
+share/flare/default/mods/default/engine/elements.txt
+share/flare/default/mods/default/engine/font_colors.txt
+share/flare/default/mods/default/engine/font_settings.txt
+share/flare/default/mods/default/engine/gameplay.txt
+share/flare/default/mods/default/engine/languages.txt
+share/flare/default/mods/default/engine/misc.txt
+share/flare/default/mods/default/engine/resolutions.txt
+share/flare/default/mods/default/engine/tileset_config.txt
+share/flare/default/mods/default/engine/tooltips.txt
+share/flare/default/mods/default/fonts/
+share/flare/default/mods/default/fonts/LiberationSans-Regular.ttf
+share/flare/default/mods/default/images/
+share/flare/default/mods/default/images/logo/
+share/flare/default/mods/default/images/logo/icon.png
+share/flare/default/mods/default/images/menus/
+share/flare/default/mods/default/images/menus/buttons/
+share/flare/default/mods/default/images/menus/buttons/button_default.png
+share/flare/default/mods/default/images/menus/buttons/button_x.png
+share/flare/default/mods/default/images/menus/buttons/checkbox_default.png
+share/flare/default/mods/default/images/menus/buttons/down.png
+share/flare/default/mods/default/images/menus/buttons/left.png
+share/flare/default/mods/default/images/menus/buttons/listbox_default.png
+share/flare/default/mods/default/images/menus/buttons/right.png
+share/flare/default/mods/default/images/menus/buttons/scrollbar_default.png
+share/flare/default/mods/default/images/menus/buttons/slider_default.png
+share/flare/default/mods/default/images/menus/buttons/up.png
+share/flare/default/mods/default/images/menus/config.png
+share/flare/default/mods/default/images/menus/confirm_bg.png
+share/flare/default/mods/default/images/menus/logo.png
+share/flare/default/mods/default/images/menus/tab_active.png
+share/flare/default/mods/default/images/menus/tab_inactive.png
+share/flare/default/mods/default/languages/
+share/flare/default/mods/default/languages/data.gd.po
+share/flare/default/mods/default/languages/data.pot
+share/flare/default/mods/default/languages/data.uk.po
+share/flare/default/mods/default/languages/engine.be.po
+share/flare/default/mods/default/languages/engine.cs.po
+share/flare/default/mods/default/languages/engine.de.po
+share/flare/default/mods/default/languages/engine.el.po
+share/flare/default/mods/default/languages/engine.es.po
+share/flare/default/mods/default/languages/engine.fi.po
+share/flare/default/mods/default/languages/engine.fr.po
+share/flare/default/mods/default/languages/engine.gd.po
+share/flare/default/mods/default/languages/engine.gl.po
+share/flare/default/mods/default/languages/engine.it.po
+share/flare/default/mods/default/languages/engine.ja.po
+share/flare/default/mods/default/languages/engine.nb.po
+share/flare/default/mods/default/languages/engine.nl.po
+share/flare/default/mods/default/languages/engine.pl.po
+share/flare/default/mods/default/languages/engine.pot
+share/flare/default/mods/default/languages/engine.ru.po
+share/flare/default/mods/default/languages/engine.sk.po
+share/flare/default/mods/default/languages/engine.sv.po
+share/flare/default/mods/default/languages/engine.uk.po
+share/flare/default/mods/default/languages/engine.zh.po
+share/flare/default/mods/default/languages/regenerate_po.sh
+share/flare/default/mods/default/languages/xgettext.py
+share/flare/default/mods/default/menus/
+share/flare/default/mods/default/menus/config.txt
+share/flare/default/mods/default/menus/fps.txt
+share/flare/default/mods/default/menus/gameload.txt
+share/flare/default/mods/default/menus/gamenew.txt
+share/flare/default/mods/default/menus/menus.txt
+share/icons/hicolor/scalable/apps/flare.svg
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
