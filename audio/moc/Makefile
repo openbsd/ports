@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.13 2017/07/26 22:45:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2017/11/18 12:01:14 jasper Exp $
 
 COMMENT =	console audio player
-DISTNAME =	moc-2.5.1
+DISTNAME =	moc-2.5.2
 CATEGORIES =	audio
 HOMEPAGE =	http://moc.daper.net/
-MASTER_SITES =	http://ftp.daper.net/pub/soft/moc/stable/
+MASTER_SITES =	http://ftp.daper.net/pub/soft/moc/stable/ \
+		https://distfiles.nl/
 EXTRACT_SUFX =	.tar.bz2
-REVISION =	5
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM = Yes
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_CDROM = Yes
 # uses pledge()
 WANTLIB += FLAC avcodec avformat avutil bz2 c crypto curl db
 WANTLIB += faad gsm iconv id3tag intl ltdl m mad magic mp3lame mpcdec
-WANTLIB += ncursesw nghttp2 ogg opus pthread samplerate sndfile sndio
+WANTLIB += ncurses nghttp2 ogg opus pthread samplerate sndfile sndio
 WANTLIB += speex ssl ${COMPILER_LIBCXX} swresample tag tag_c vorbis vorbisenc
 WANTLIB += vorbisfile vpx wavpack x264 x265 xvidcore z
 
