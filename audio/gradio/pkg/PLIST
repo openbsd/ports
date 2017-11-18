@@ -1,9 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.3 2017/11/15 17:01:35 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2017/11/18 11:40:20 jasper Exp $
 @bin bin/gradio
 share/appdata/
 share/appdata/de.haeckerfelix.gradio.appdata.xml
 share/applications/de.haeckerfelix.gradio.desktop
+share/dbus-1/services/de.haeckerfelix.gradio.service
 share/glib-2.0/schemas/de.haeckerfelix.gradio.gschema.xml
+share/gnome-shell/
+share/gnome-shell/search-providers/
+share/gnome-shell/search-providers/de.haeckerfelix.gradio.search-provider.ini
 share/icons/hicolor/16x16/apps/de.haeckerfelix.gradio.png
 share/icons/hicolor/24x24/apps/de.haeckerfelix.gradio.png
 share/icons/hicolor/256x256/apps/de.haeckerfelix.gradio.png
@@ -13,8 +17,16 @@ share/icons/hicolor/512x512/apps/de.haeckerfelix.gradio.png
 share/icons/hicolor/scalable/apps/de.haeckerfelix.gradio.svg
 share/icons/hicolor/symbolic/apps/de.haeckerfelix.gradio-symbolic.svg
 share/locale/de/LC_MESSAGES/gradio.mo
+share/locale/fr/LC_MESSAGES/gradio.mo
 share/locale/hr/LC_MESSAGES/gradio.mo
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+share/locale/it/LC_MESSAGES/gradio.mo
+share/locale/ka/LC_MESSAGES/gradio.mo
+share/locale/nb/LC_MESSAGES/gradio.mo
+share/locale/pl/LC_MESSAGES/gradio.mo
+share/locale/pt_BR/LC_MESSAGES/gradio.mo
+share/locale/sk/LC_MESSAGES/gradio.mo
+share/locale/sr/LC_MESSAGES/gradio.mo
+share/locale/sv/LC_MESSAGES/gradio.mo@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
