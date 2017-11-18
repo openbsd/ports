@@ -1,0 +1,38 @@
+$OpenBSD: patch-doc_makefile_in,v 1.1 2017/11/18 00:03:05 bcallah Exp $
+
+Don't install gnome help pages.
+
+Index: doc/makefile.in
+--- doc/makefile.in.orig
++++ doc/makefile.in
+@@ -45,26 +45,12 @@ distclean : clean
+ 	- rm -f ${AC}
+ 
+ install :
+-	mkdir -p ${prefix}/share/gnome/help/galois/C
+-	cp ${HELP} ${prefix}/share/gnome/help/galois/C
++	install -d ${prefix}/man/man6
++	install -c -S -m 644 galois.6 ${prefix}/man/man6
+ 	for L in it ; do \
+-	    mkdir -p ${prefix}/share/gnome/help/galois/$$L ;\
+-	    cp galois-$$L.xml \
+-	       ${prefix}/share/gnome/help/galois/$$L/galois.xml ;\
+-	    cp ${HELP_DEPS} ${prefix}/share/gnome/help/galois/$$L ;\
+-	    cp galois-$$L.html \
+-	       ${prefix}/share/gnome/help/galois/$$L/galois.html ;\
++	    install -d ${prefix}/man/$$L/man6 ;\
++	    install -c -S -m 644 galois-$$L.6 ${prefix}/man/$$L/man6/galois.6 ;\
+ 	done
+-	mkdir -p ${prefix}/share/man/man6
+-	cp galois.6 ${prefix}/share/man/man6
+-	gzip -9 -f ${prefix}/share/man/man6/galois.6
+-	for L in it ; do \
+-	    mkdir -p ${prefix}/share/man/$$L/man6 ;\
+-	    cp galois-$$L.6 ${prefix}/share/man/$$L/man6/galois.6 ;\
+-	    gzip -9 -f ${prefix}/share/man/$$L/man6/galois.6 ;\
+-	done
+-	mkdir -p ${prefix}/share/omf/galois
+-	cp ${OMF} ${prefix}/share/omf/galois
+ uninstall :
+ 	- cd ${prefix}/share/gnome/help/galois/C && rm -f ${HELP}
+ 	- rmdir ${prefix}/share/gnome/help/galois/C

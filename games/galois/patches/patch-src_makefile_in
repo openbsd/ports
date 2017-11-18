@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_makefile_in,v 1.1 2017/11/18 00:03:05 bcallah Exp $
+
+Index: src/makefile.in
+--- src/makefile.in.orig
++++ src/makefile.in
+@@ -50,8 +50,8 @@ distclean : clean
+ 	- rm -f ${AC}
+ 
+ install : galois
+-	mkdir -p ${prefix}/games
+-	cp galois ${prefix}/games
++	install -d ${prefix}/bin
++	install -c -S -s -m 755 galois ${prefix}/bin
+ uninstall :
+ 	- rm -f ${prefix}/games/galois
+ 
