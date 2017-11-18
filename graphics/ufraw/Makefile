@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2017/07/26 22:45:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.45 2017/11/18 22:23:59 naddy Exp $
 
 COMMENT=	read and manipulate raw images from digital cameras
 
@@ -25,6 +25,8 @@ WANTLIB += png pthread ${COMPILER_LIBCXX} tiff z
 
 # don't remove unless you are sure:
 WANTLIB += lensfun
+
+BUILD_DEPENDS=	devel/gettext-tools
 
 LIB_DEPENDS=	gimp->=2,<3:graphics/gimp/stable \
 		graphics/lcms2 \

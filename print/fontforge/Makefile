@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2017/10/23 17:11:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.42 2017/11/18 22:23:59 naddy Exp $
 
 BROKEN-i386=		hangs at runtime. started after switch to clang
 
@@ -34,6 +34,8 @@ WANTLIB += xml2 z
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=fontforge/}
 
 MODULES=		devel/gettext lang/python
+
+BUILD_DEPENDS=		devel/gettext-tools
 
 LIB_DEPENDS=		${MODPY_LIB_DEPENDS}	\
 			graphics/cairo	\

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2017/07/27 09:55:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2017/11/18 22:23:59 naddy Exp $
 
 COMMENT =		CD/DVD creator
 DISTNAME =		k3b-2.0.3a
@@ -32,6 +32,8 @@ WANTLIB += ${COMPILER_LIBCXX}
 MASTER_SITES =		${MASTER_SITE_KDE:=stable/k3b/}
 
 MODULES =		x11/kde4 devel/gettext
+
+BUILD_DEPENDS =		devel/gettext-tools
 
 RUN_DEPENDS =		devel/desktop-file-utils \
 			misc/shared-mime-info \

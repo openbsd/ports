@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2015/09/18 19:35:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2017/11/18 22:23:59 naddy Exp $
 
 COMMENT=	tiny download accelerator
 DISTNAME=	axel-2.4
@@ -16,6 +16,8 @@ MASTER_SITES=	http://alioth.debian.org/frs/download.php/3015/
 WANTLIB=	c pthread
 
 MODULES=	devel/gettext
+
+BUILD_DEPENDS=	devel/gettext-tools
 
 USE_GMAKE=	Yes
 NO_TEST=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2017/10/23 17:10:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2017/11/18 22:23:59 naddy Exp $
 
 COMMENT=	helper library for networking and security applications
 
@@ -32,6 +32,7 @@ WANTLIB += xcb-shm z
 MASTER_SITES=	http://www.aquamaniac.de/sites/download/
 
 MODULES=		devel/gettext x11/qt4
+BUILD_DEPENDS=		devel/gettext-tools
 LIB_DEPENDS=		graphics/png \
 			security/libgcrypt \
 			security/gnutls \

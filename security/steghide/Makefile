@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2017/07/26 22:45:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2017/11/18 22:24:00 naddy Exp $
 
 COMMENT =		software able to hide data in various kind of files
 
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=steghide/}
 
+BUILD_DEPENDS =		devel/gettext-tools
 LIB_DEPENDS =		security/libmcrypt \
 			security/mhash \
 			graphics/jpeg

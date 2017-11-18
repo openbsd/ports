@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2017/10/23 17:10:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2017/11/18 22:23:59 naddy Exp $
 
 # XXX doesn't build if already installed
 COMMENT=	graphical subversion client
@@ -36,6 +36,8 @@ WANTLIB += wx_gtk2_richtext wx_gtk2_xrc xcb xcb-render xcb-shm
 WANTLIB += z
 
 USE_GMAKE=	Yes
+
+BUILD_DEPENDS=	devel/gettext-tools
 
 LIB_DEPENDS=	x11/wxWidgets \
 		devel/subversion \

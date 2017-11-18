@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2017/08/29 11:42:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2017/11/18 22:23:59 naddy Exp $
 
 COMMENT=	lightweight DLNA/UPnP-AV media server (aka ReadyMedia)
 
@@ -28,6 +28,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 MODULES=	devel/gettext
+BUILD_DEPENDS=	devel/gettext-tools
 LIB_DEPENDS=	audio/flac \
 		audio/libid3tag \
 		databases/sqlite3 \

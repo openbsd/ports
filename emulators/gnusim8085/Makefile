@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2017/10/23 17:10:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2017/11/18 22:23:59 naddy Exp $
 
 COMMENT =		graphical 8085 simulator, assembler, and debugger
 
@@ -23,6 +23,7 @@ WANTLIB += xcb xcb-render xcb-shm z
 MASTER_SITES =		http://launchpad.net/gnusim8085/trunk/${V}/+download/
 
 MODULES =		devel/gettext
+BUILD_DEPENDS =		devel/gettext-tools
 RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+3,-guic
 LIB_DEPENDS =		x11/gtksourceview

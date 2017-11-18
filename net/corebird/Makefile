@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2017/10/28 18:31:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2017/11/18 22:23:59 naddy Exp $
 
 COMMENT =		native Gtk+ Twitter client
 
@@ -35,6 +35,8 @@ MODULES =		devel/dconf \
 MODGNOME_TOOLS =	desktop-file-utils \
 			gtk-update-icon-cache \
 			vala
+
+BUILD_DEPENDS =		devel/gettext-tools
 
 LIB_DEPENDS =		databases/sqlite3 \
 			devel/json-glib \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2017/07/26 22:45:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2017/11/18 22:23:59 naddy Exp $
 
 COMMENT =		puzzle game featuring dominoes
 
@@ -21,6 +21,8 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=pushover/}
 MODULES =		devel/gettext \
 			lang/lua
 BUILD_DEPENDS =		devel/libtool
+# requires aclocal/lib-link.m4
+BUILD_DEPENDS +=	devel/gettext-tools
 LIB_DEPENDS =		devel/sdl-mixer \
 			devel/sdl-ttf \
 			graphics/png

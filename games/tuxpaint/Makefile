@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2016/03/18 21:38:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2017/11/18 22:23:59 naddy Exp $
 
 COMMENT=	drawing program for children
 
@@ -20,7 +20,8 @@ WANTLIB += png pthread rsvg-2 z
 
 MODULES=	devel/gettext
 
-BUILD_DEPENDS=	devel/gperf
+BUILD_DEPENDS=	devel/gettext-tools \
+		devel/gperf
 
 LIB_DEPENDS=	devel/sdl-image \
 		devel/sdl-mixer \

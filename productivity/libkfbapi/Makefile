@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2017/07/27 10:05:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2017/11/18 22:23:59 naddy Exp $
 
 CATEGORIES =	productivity
 COMMENT =	library for accessing Facebook services
@@ -27,6 +27,8 @@ WANTLIB += qjson soprano
 MODULES =		x11/kde4 devel/gettext
 MODKDE4_USE =		libs pim
 MODKDE4_LIB_LINKS =	Yes
+
+BUILD_DEPENDS =		devel/gettext-tools
 
 LIB_DEPENDS =		devel/qjson
 

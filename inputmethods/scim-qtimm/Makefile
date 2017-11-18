@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2017/07/26 22:45:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2017/11/18 22:23:59 naddy Exp $
 
 COMMENT=	scim plugin for qt
 
@@ -19,6 +19,7 @@ EXTRACT_SUFX=	.tar.bz2
 
 MODULES=	devel/gettext \
 		x11/qt3
+BUILD_DEPENDS=	devel/gettext-tools
 LIB_DEPENDS=	inputmethods/scim
 
 SUBST_VARS=     MODQT_PLUGINS

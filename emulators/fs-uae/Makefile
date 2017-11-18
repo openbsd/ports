@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2017/07/26 22:45:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2017/11/18 22:23:59 naddy Exp $
 
 BROKEN-powerpc =	error: invalid 'asm': invalid %k value
 BROKEN-alpha =		error: invalid 'asm': invalid %xn code
@@ -23,6 +23,7 @@ WANTLIB += pthread ${COMPILER_LIBCXX} z
 MASTER_SITES =		${HOMEPAGE}stable/$V/
 
 MODULES =		devel/gettext
+BUILD_DEPENDS =		devel/gettext-tools
 LIB_DEPENDS =		devel/sdl \
 			graphics/png \
 			audio/openal \

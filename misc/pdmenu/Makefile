@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2016/04/26 16:37:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.27 2017/11/18 22:23:59 naddy Exp $
 
 COMMENT=		simple slang-based menu program
 
@@ -16,6 +16,7 @@ WANTLIB=		c curses m slang
 
 MASTER_SITES=		${MASTER_SITE_DEBIAN:=main/p/pdmenu/}
 
+BUILD_DEPENDS=		devel/gettext-tools
 LIB_DEPENDS=		devel/libslang
 MODULES=		devel/gettext
 

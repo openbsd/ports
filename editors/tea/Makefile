@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2017/10/23 17:10:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2017/11/18 22:23:59 naddy Exp $
 
 COMMENT=	powerful and simple GTK editor
 
@@ -21,6 +21,7 @@ WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gtk-x11-2.0
 WANTLIB += gtksourceview-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pixman-1 png pthread ${COMPILER_LIBCXX} xcb xml2 z zzip>=13
 
+BUILD_DEPENDS=	devel/gettext-tools
 LIB_DEPENDS=	x11/gtk+2 \
 		gtksourceview->=2,<3:x11/gtksourceview \
 		textproc/aspell/core \

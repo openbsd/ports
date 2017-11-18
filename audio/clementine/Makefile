@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2017/11/16 23:20:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.29 2017/11/18 22:23:59 naddy Exp $
 
 COMMENT =	Qt4-based featureful music player
 
@@ -35,6 +35,7 @@ COMPILER =		base-clang ports-gcc
 
 BUILD_DEPENDS =		devel/boost \
 			devel/cmake>=2.8.10.2p3 \
+			devel/gettext-tools \
 			devel/sparsehash
 
 RUN_DEPENDS =		devel/desktop-file-utils \

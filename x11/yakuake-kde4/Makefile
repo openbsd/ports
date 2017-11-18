@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2017/07/27 10:15:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2017/11/18 22:24:00 naddy Exp $
 
 CATEGORIES =	x11 sysutils
 COMMENT =	quake-style terminal emulator for KDE 4
@@ -22,6 +22,8 @@ WANTLIB += ${KDE4LIB}/kdeui ${KDE4LIB}/kio ${KDE4LIB}/knewstuff3
 WANTLIB += ${KDE4LIB}/knotifyconfig ${KDE4LIB}/kparts ${KDE4LIB}/nepomuk
 WANTLIB += ${KDE4LIB}/nepomukutils
 WANTLIB += soprano
+
+BUILD_DEPENDS =	devel/gettext-tools
 
 RUN_DEPENDS =	${MODKDE4_DEP_DIR}/konsole \
 		devel/desktop-file-utils \

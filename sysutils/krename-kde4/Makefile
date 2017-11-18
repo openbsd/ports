@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2017/07/27 10:05:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2017/11/18 22:24:00 naddy Exp $
 
 COMMENT =	powerful batch file renamer for KDE4
 
@@ -32,6 +32,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=krename/}
 
 MODULES =		x11/kde4 devel/gettext
+
+BUILD_DEPENDS =	devel/gettext-tools
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+3,-guic

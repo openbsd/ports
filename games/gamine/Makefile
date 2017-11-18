@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2017/10/23 17:10:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2017/11/18 22:23:59 naddy Exp $
 
 COMMENT=	interactive game for young children
 
@@ -25,6 +25,8 @@ MASTER_SITES=	${HOMEPAGE}
 
 MODULES=	devel/gettext \
 		devel/gconf2
+
+BUILD_DEPENDS=	devel/gettext-tools
 
 RUN_DEPENDS=	devel/desktop-file-utils \
 		multimedia/gstreamer-0.10/plugins-good \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2017/07/27 09:34:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2017/11/18 22:23:59 naddy Exp $
 
 CATEGORIES =	devel x11
 COMMENT =	integrated development environment for KDE 4
@@ -44,7 +44,8 @@ WANTLIB += ${COMPILER_LIBCXX}
 MODULES =	x11/kde4 devel/gettext lang/python
 MODKDE4_USE =	workspace
 
-BUILD_DEPENDS =	misc/shared-mime-info
+BUILD_DEPENDS =	devel/gettext-tools \
+		misc/shared-mime-info
 
 RUN_DEPENDS =	${MODKDE4_DEP_DIR}/kate \
 		devel/desktop-file-utils \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2017/07/27 10:05:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2017/11/18 22:23:59 naddy Exp $
 
 CATEGORIES =	productivity
 COMMENT =	Google contacts/calendar connector for Akonadi
@@ -25,6 +25,7 @@ MODULES =		x11/kde4 devel/gettext
 MODKDE4_USE =		pim
 
 BUILD_DEPENDS =	devel/boost \
+		devel/gettext-tools \
 		textproc/libxslt
 
 LIB_DEPENDS = 	productivity/libgcal

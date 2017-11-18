@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2017/07/26 22:45:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2017/11/18 22:23:59 naddy Exp $
 
 COMMENT =		infinite-world block sandbox game
 V =			0.4.14
@@ -27,6 +27,8 @@ MODULES =		devel/cmake \
 CONFIGURE_ARGS =	-DENABLE_GETTEXT=ON -DCUSTOM_MANDIR=${PREFIX}/man
 CONFIGURE_ARGS+=	-DENABLE_REDIS=FALSE -DENABLE_LEVELDB=FALSE
 CONFIGURE_ENV +=	CXXFLAGS="-I${X11BASE}/include"
+
+BUILD_DEPENDS =		devel/gettext-tools
 
 RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+3,-guic

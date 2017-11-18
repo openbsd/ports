@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2015/06/18 07:22:59 bentley Exp $
+# $OpenBSD: Makefile,v 1.31 2017/11/18 22:23:59 naddy Exp $
 
 COMMENT =	Red Hat package manager
 
@@ -16,6 +16,7 @@ MASTER_SITES =	http://rpm.org/releases/historical/rpm-3.0.x/
 
 MODULES =	devel/gettext
 WANTLIB += 	bz2 c popt z
+BUILD_DEPENDS =	devel/gettext-tools
 LIB_DEPENDS +=	archivers/bzip2 \
 		devel/popt
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2017/09/22 20:52:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2017/11/18 22:23:59 naddy Exp $
 
 COMMENT=	online banking interface and financial data framework
 
@@ -30,6 +30,7 @@ WANTLIB += xslt z
 MASTER_SITES=	http://www.aquamaniac.de/sites/download/
 
 MODULES=		devel/gettext
+BUILD_DEPENDS=		devel/gettext-tools
 LIB_DEPENDS=		devel/gmp \
 			devel/gwenhywfar \
 			security/xmlsec

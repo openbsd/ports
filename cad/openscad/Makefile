@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2017/10/30 13:55:10 landry Exp $
+# $OpenBSD: Makefile,v 1.20 2017/11/18 22:23:59 naddy Exp $
 
 COMMENT =		the programmer's solid 3D CAD modeller#'
 BROKEN-sparc64=	SIGILL on src/cgalutils.cc with CGAL-4.6.3
@@ -27,6 +27,7 @@ MODULES =		devel/gettext \
 			devel/qmake \
 			x11/qt4
 BUILD_DEPENDS =		devel/bison \
+			devel/gettext-tools \
 			math/eigen3
 LIB_DEPENDS =		devel/boost \
 			devel/gmp \

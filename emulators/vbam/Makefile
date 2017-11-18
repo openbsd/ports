@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2017/11/16 23:20:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2017/11/18 22:23:59 naddy Exp $
 
 # XXX check if still needed at next update
 CXXFLAGS +=		-std=c++11 -fpermissive
@@ -35,6 +35,8 @@ MODULES =		devel/cmake \
 
 # c++11
 COMPILER =		base-clang ports-gcc
+
+BUILD_DEPENDS =		devel/gettext-tools
 
 RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+3,-guic

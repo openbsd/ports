@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2017/07/26 22:45:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2017/11/18 22:23:59 naddy Exp $
 
 COMMENT =	2D arcade game
 
@@ -20,6 +20,8 @@ WANTLIB =	SDL2 SDL2_image SDL2_mixer SDL2_net SDL2_ttf c m pthread ${COMPILER_LI
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=blobwars/}
 
 MODULES =	devel/gettext
+
+BUILD_DEPENDS =	devel/gettext-tools
 
 LIB_DEPENDS =	devel/sdl2-image \
 		devel/sdl2-mixer \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2017/07/27 09:34:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2017/11/18 22:23:59 naddy Exp $
 
 CATEGORIES =	devel
 COMMENT =	IDE creation toolkit for KDE 4
@@ -44,7 +44,8 @@ WANTLIB += ${COMPILER_LIBCXX}
 
 MODULES =	x11/kde4 devel/gettext
 
-BUILD_DEPENDS =	devel/boost
+BUILD_DEPENDS =	devel/boost \
+		devel/gettext-tools
 
 RUN_DEPENDS =	x11/gtk+3,-guic
 

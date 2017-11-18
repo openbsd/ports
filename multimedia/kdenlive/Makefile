@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2017/07/27 09:55:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2017/11/18 22:23:59 naddy Exp $
 
 COMMENT =		non-linear video editor for KDE
 VERSION =		0.9.10
@@ -26,6 +26,8 @@ MASTER_SITES =		${MASTER_SITE_KDE:=stable/kdenlive/${VERSION}/src/}
 EXTRACT_SUFX =		.tar.bz2
 
 MODULES =		x11/kde4 devel/gettext
+
+BUILD_DEPENDS =		devel/gettext-tools
 
 RUN_DEPENDS =		devel/desktop-file-utils \
 			misc/shared-mime-info \

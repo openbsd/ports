@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2017/07/26 22:45:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2017/11/18 22:23:59 naddy Exp $
 
 COMMENT=	economic and military simulation game
 
@@ -19,6 +19,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB +=	GL GLEW SDL SDL_gfx SDL_image SDL_mixer SDL_net SDL_ttf
 WANTLIB +=	c m png pthread ${COMPILER_LIBCXX} z execinfo ${MODLUA_WANTLIB}
 WANTLIB +=	boost_signals-mt
+
+BUILD_DEPENDS =	devel/gettext-tools
 
 LIB_DEPENDS =	devel/boost \
 		devel/libexecinfo \

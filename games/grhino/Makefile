@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2017/07/26 22:45:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2017/11/18 22:23:59 naddy Exp $
 
 COMMENT =		Othello/Reversi-like game
 DISTNAME =		grhino-${V}
@@ -26,6 +26,8 @@ MODULES =		devel/gettext \
 			x11/gnome
 
 MODGNOME_TOOLS += desktop-file-utils yelp
+
+BUILD_DEPENDS =		devel/gettext-tools
 
 LIB_DEPENDS =		x11/gnome/libgnomeui
 

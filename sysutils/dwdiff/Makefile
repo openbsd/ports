@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2017/08/24 09:45:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2017/11/18 22:24:00 naddy Exp $
 
 COMMENT =		word-based diff program
 
@@ -19,6 +19,8 @@ MASTER_SITES =		http://os.ghalkes.nl/dist/
 EXTRACT_SUFX =		.tgz
 
 MODULES =		devel/gettext
+
+BUILD_DEPENDS =		devel/gettext-tools
 
 LIB_DEPENDS =		textproc/icu4c
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2017/10/23 17:10:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2017/11/18 22:23:59 naddy Exp $
 
 COMMENT =		video editor and a VJ tool
 
@@ -35,7 +35,8 @@ RUN_DEPENDS =		graphics/ImageMagick \
 			audio/vorbis-tools \
 			multimedia/transcode \
 			devel/desktop-file-utils
-BUILD_DEPENDS =		audio/vorbis-tools
+BUILD_DEPENDS =		audio/vorbis-tools \
+			devel/gettext-tools
 LIB_DEPENDS =		multimedia/libtheora \
 			devel/sdl \
 			multimedia/libdv \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2017/10/23 17:11:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2017/11/18 22:24:00 naddy Exp $
 
 COMMENT=	X11 counterpart of curses-based misc/dialog
 
@@ -21,6 +21,7 @@ WANTLIB += xcb-render xcb-shm
 MASTER_SITES=	http://xdialog.free.fr/
 EXTRACT_SUFX=	.tar.bz2
 
+BUILD_DEPENDS=	devel/gettext-tools
 LIB_DEPENDS=	x11/gtk+2
 MODULES=	devel/gettext
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2017/11/08 05:36:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2017/11/18 22:24:00 naddy Exp $
 
 COMMENT=	handy personal organizer
 
@@ -23,6 +23,8 @@ WANTLIB += pthread tar xml2 z icui18n icuuc lzma
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=osmo-pim/}
 
 MODULES=	devel/gettext
+
+BUILD_DEPENDS=	devel/gettext-tools
 
 LIB_DEPENDS=	security/libgringotts \
 		devel/libnotify \

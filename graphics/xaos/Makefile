@@ -21,6 +21,8 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=xaos/XaoS/${VERSION}/}
 
 MODULES =		devel/gettext
 
+BUILD_DEPENDS =		devel/gettext-tools
+
 LIB_DEPENDS =		graphics/png \
 			devel/gsl
 

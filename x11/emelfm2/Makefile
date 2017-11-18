@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2016/03/27 20:53:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.27 2017/11/18 22:24:00 naddy Exp $
 
 COMMENT =		GTK+2 file manager
 
@@ -21,7 +21,8 @@ LIB_DEPENDS =	x11/gtk+3
 
 MODULES =	devel/gettext
 
-BUILD_DEPENDS =	devel/libmagic
+BUILD_DEPENDS =	devel/gettext-tools \
+		devel/libmagic
 RUN_DEPENDS =	devel/desktop-file-utils \
 		devel/xdg-utils
 
