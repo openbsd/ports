@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/10/13 12:03:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2017/11/18 11:42:39 jasper Exp $
 
 COMMENT=		Web Open Font Format 2.0 library
 
 GH_ACCOUNT=		google
 GH_PROJECT=		woff2
-GH_TAGNAME=		v1.0.1
+GH_TAGNAME=		v1.0.2
 
 SHARED_LIBS +=  woff2common               0.0 # 1.0
 SHARED_LIBS +=  woff2dec                  0.0 # 1.0
