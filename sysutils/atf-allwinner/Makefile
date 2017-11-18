@@ -1,10 +1,10 @@
-#	$OpenBSD: Makefile,v 1.1.1.1 2017/08/21 02:19:59 jsg Exp $
+#	$OpenBSD: Makefile,v 1.2 2017/11/18 04:45:40 jsg Exp $
 
 COMMENT=	ARM Trusted Firmware for Allwinner A64/H5
 GH_ACCOUNT=	apritzel
 GH_PROJECT=	arm-trusted-firmware
-GH_COMMIT=	87e8aedd80e6448a55b2328768d956fcb5f5d410
-VERSION=	20170702
+GH_COMMIT=	91f2402d941036a0db092d5375d0535c270b9121
+VERSION=	20171017
 
 DISTNAME=	${GH_PROJECT}-allwinner-${VERSION}
 PKGNAME=	atf-allwinner-${VERSION}
