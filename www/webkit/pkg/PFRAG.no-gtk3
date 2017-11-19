@@ -1,6 +1,0 @@
-@comment $OpenBSD: PFRAG.no-gtk3,v 1.3 2012/04/03 15:39:35 landry Exp $
-@bin bin/GtkLauncher
-@bin bin/jsc-1
-@lib lib/libjavascriptcoregtk-${WEBKIT_API_VERSION}.so.${LIBjavascriptcoregtk-1.0_VERSION}
-@lib lib/libwebkitgtk-${WEBKIT_API_VERSION}.so.${LIBwebkitgtk-1.0_VERSION}
-lib/pkgconfig/webkit-${WEBKIT_API_VERSION}.pc

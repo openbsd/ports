@@ -1,6 +1,0 @@
-@comment $OpenBSD: PFRAG.gtk3,v 1.8 2015/04/08 21:42:14 ajacoutot Exp $
-@bin bin/GtkLauncher-3
-@bin bin/jsc-3
-@lib lib/libjavascriptcoregtk-${WEBKIT_API_VERSION}.so.${LIBjavascriptcoregtk-3.0_VERSION}
-@lib lib/libwebkitgtk-${WEBKIT_API_VERSION}.so.${LIBwebkitgtk-3.0_VERSION}
-lib/pkgconfig/webkitgtk-${WEBKIT_API_VERSION}.pc
