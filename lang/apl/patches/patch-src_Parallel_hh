@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_Parallel_hh,v 1.1 2017/11/19 15:01:53 bcallah Exp $
+
+sparc64 wants this to be a long. But everyone else is happy with an int.
+Found examining the sparc64 build logs.
+
+Index: src/Parallel.hh
+--- src/Parallel.hh.orig
++++ src/Parallel.hh
+@@ -67,7 +67,11 @@
+    //
+    // parallel execution disabled, no need for atomicity
+    //
++#if defined(__sparc__)
++typedef long _Atomic_word;
++#else
+ typedef int _Atomic_word;
++#endif
+ 
+ inline int atomic_fetch_add(volatile _Atomic_word & counter, int increment)
+    { const int ret = counter;   counter += increment;   return ret; }
