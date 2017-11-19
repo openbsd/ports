@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.24 2017/07/27 17:27:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2017/11/19 19:40:58 kirby Exp $
 
 ONLY_FOR_ARCHS = powerpc i386 amd64
 # arm needs missing EABI symbols
+# games/tome4 is using embedded copy of luajit
 
 SHARED_LIBS +=	luajit-${MODLUA_VERSION} 1.0 # 2.0.5
 
