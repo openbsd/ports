@@ -1,3 +1,0 @@
-To store passwords securely, they should be salted, then hashed
-with a slow hash function. This library uses PBKDF1-SHA256, and
-handles all the details.

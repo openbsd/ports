@@ -1,2 +1,0 @@
-Facilities for manipulating Haskell source code: an abstract syntax,
-lexer, parser and pretty-printer.
