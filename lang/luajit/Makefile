@@ -1,5 +1,7 @@
-# $OpenBSD: Makefile,v 1.25 2017/11/19 19:40:58 kirby Exp $
+# $OpenBSD: Makefile,v 1.26 2017/11/19 19:49:51 kirby Exp $
 
+# ../src/luajit2/src/lj_arch.h:55:2: error: #error "No support for
+# this architecture (yet)"
 ONLY_FOR_ARCHS = powerpc i386 amd64
 # arm needs missing EABI symbols
 # games/tome4 is using embedded copy of luajit
