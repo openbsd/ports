@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2015/08/25 13:18:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2017/11/19 15:44:10 naddy Exp $
 
 COMMENT =	action RPG mod based upon the FLARE engine
 DISTNAME =	polymorphable-20130410
-REVISION =	1
+REVISION =	2
 CATEGORIES =	games x11
 
 HOMEPAGE =	https://github.com/makrohn/polymorphable
