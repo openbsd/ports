@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.31 2017/06/27 12:04:08 abieber Exp $
+@comment $OpenBSD: PLIST,v 1.32 2017/11/19 19:38:46 ajacoutot Exp $
 @pkgpath www/node
 @bin bin/node
 bin/node-gyp
@@ -752,7 +752,7 @@ lib/node_modules/node-gyp/lib/build.js
 @comment lib/node_modules/node-gyp/lib/build.js.orig
 lib/node_modules/node-gyp/lib/clean.js
 lib/node_modules/node-gyp/lib/configure.js
-@comment lib/node_modules/node-gyp/lib/configure.js.beforesubst
+@comment @comment lib/node_modules/node-gyp/lib/configure.js.beforesubst
 @comment lib/node_modules/node-gyp/lib/configure.js.orig
 lib/node_modules/node-gyp/lib/find-node-directory.js
 lib/node_modules/node-gyp/lib/install.js
@@ -1790,7 +1790,7 @@ lib/node_modules/npm/appveyor.yml
 lib/node_modules/npm/bin/
 lib/node_modules/npm/bin/node-gyp-bin/
 lib/node_modules/npm/bin/node-gyp-bin/node-gyp
-lib/node_modules/npm/bin/node-gyp-bin/node-gyp.beforesubst
+@comment lib/node_modules/npm/bin/node-gyp-bin/node-gyp.beforesubst
 lib/node_modules/npm/bin/node-gyp-bin/node-gyp.cmd
 @comment lib/node_modules/npm/bin/node-gyp-bin/node-gyp.orig
 lib/node_modules/npm/bin/npm

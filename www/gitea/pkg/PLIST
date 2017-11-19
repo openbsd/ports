@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2017/04/05 00:57:47 danj Exp $
+@comment $OpenBSD: PLIST,v 1.3 2017/11/19 19:38:46 ajacoutot Exp $
 @newgroup _gitea:787
 @newuser _gitea:787:_gitea:daemon:Gitea Account:/nonexistent:/sbin/nologin
 @bin sbin/gitea
@@ -15,7 +15,7 @@ share/gitea/conf/app.ini
 @sample ${SYSCONFDIR}/gitea/conf/app.ini
 @owner
 @group
-share/gitea/conf/app.ini.beforesubst
+@comment share/gitea/conf/app.ini.beforesubst
 share/gitea/conf/app.ini.orig
 share/gitea/options/
 share/gitea/options/gitignore/

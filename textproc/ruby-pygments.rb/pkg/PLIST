@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/06/23 07:46:25 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2017/11/19 19:38:47 ajacoutot Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
@@ -15,7 +15,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/pygments/
 ${GEM_LIB}/gems/${DISTNAME}/lib/pygments.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/pygments/lexer.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/pygments/mentos.py
-${GEM_LIB}/gems/${DISTNAME}/lib/pygments/mentos.py.beforesubst
+@comment ${GEM_LIB}/gems/${DISTNAME}/lib/pygments/mentos.py.beforesubst
 ${GEM_LIB}/gems/${DISTNAME}/lib/pygments/popen.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/pygments/version.rb
 ${GEM_LIB}/gems/${DISTNAME}/pygments.rb.gemspec

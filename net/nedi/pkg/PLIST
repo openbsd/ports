@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2014/10/29 20:41:18 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2017/11/19 19:38:46 ajacoutot Exp $
 nedi/
 nedi/License.txt
 nedi/Readme.txt
@@ -1098,7 +1098,7 @@ nedi/html/log.dist/msg.txt
 @sample nedi/html/log/msg.txt
 @mode
 @group
-nedi/html/log.dist/msg.txt.beforesubst
+@comment nedi/html/log.dist/msg.txt.beforesubst
 nedi/html/map/
 nedi/html/map/map-top.png
 nedi/html/me.php
@@ -1135,7 +1135,7 @@ nedi/html/themes/silverlite.css
 nedi/html/themes/square.png
 nedi/html/themes/vineyard.css
 nedi/inc/
-nedi/inc/crontab.beforesubst
+@comment nedi/inc/crontab.beforesubst
 nedi/inc/crontab.dist
 @sample nedi/inc/crontab
 nedi/inc/iab.txt
@@ -1149,7 +1149,7 @@ nedi/inc/oui.txt
 nedi/inc/wlan.txt
 nedi/master.pl
 nedi/moni.pl
-nedi/nedi.conf.beforesubst
+@comment nedi/nedi.conf.beforesubst
 nedi/nedi.conf.dist
 @mode g+w
 @group www

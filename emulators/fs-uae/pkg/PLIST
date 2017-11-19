@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2014/03/15 13:04:16 edd Exp $
+@comment $OpenBSD: PLIST,v 1.5 2017/11/19 19:38:46 ajacoutot Exp $
 @bin bin/fs-uae
 @bin bin/fs-uae-device-helper
 share/applications/fs-uae.desktop
@@ -8,7 +8,7 @@ share/doc/fs-uae/README
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/fs-uae/
 share/examples/fs-uae/fs-uae.conf
-share/examples/fs-uae/fs-uae.conf.beforesubst
+@comment share/examples/fs-uae/fs-uae.conf.beforesubst
 share/fs-uae/
 share/fs-uae/2x_1920_1080/
 share/fs-uae/2x_1920_1080/theme.conf
