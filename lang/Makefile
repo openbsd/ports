@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.211 2017/11/08 11:02:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.212 2017/11/19 01:04:03 kili Exp $
 
      SUBDIR =
      SUBDIR += STk
@@ -42,7 +42,6 @@
      SUBDIR += gravity
      SUBDIR += guile
      SUBDIR += guile2
-     SUBDIR += hs-haskell-src
      SUBDIR += icon
      SUBDIR += intel2gas
      SUBDIR += iverilog

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.344 2017/11/13 23:57:54 jeremy Exp $
+# $OpenBSD: Makefile,v 1.345 2017/11/19 01:04:03 kili Exp $
 
      SUBDIR =
      SUBDIR += apache-couchdb
@@ -13,11 +13,7 @@
      SUBDIR += gnats
      SUBDIR += gq
      SUBDIR += hs-HDBC
-     SUBDIR += hs-HDBC-mysql
-     SUBDIR += hs-HDBC-postgresql
      SUBDIR += hs-HDBC-sqlite3
-     SUBDIR += hs-hedis
-     SUBDIR += hs-postgresql-libpq
      SUBDIR += hs-resource-pool
      SUBDIR += iodbc
      SUBDIR += jxplorer
