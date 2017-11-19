@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2017/09/04 02:40:05 jsg Exp $
+# $OpenBSD: Makefile,v 1.10 2017/11/19 08:06:42 jsg Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS} ${CLANG_ARCHS}
 
 COMMENT=	Device Tree Blobs
-VERSION=	4.13
+VERSION=	4.14
 DISTNAME=	linux-${VERSION}
 PKGNAME=	dtb-${VERSION:S/-//}
 CATEGORIES=	sysutils
