@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2017/11/17 23:50:44 bentley Exp $
+# $OpenBSD: Makefile,v 1.9 2017/11/19 10:00:39 espie Exp $
 
 FW_DRIVER=	athn
 FW_VER=		1.1
-REVISION=	3
+REVISION=	4
 
 EXTRACT_SUFX=	.tgz
 WRKDIST=	${WRKDIR}
