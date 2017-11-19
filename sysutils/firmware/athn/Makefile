@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2017/11/19 10:00:39 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2017/11/19 13:04:00 sthen Exp $
 
 FW_DRIVER=	athn
 FW_VER=		1.1
@@ -13,7 +13,7 @@ PERMIT_PACKAGE_CDROM=	firmware
 PERMIT_PACKAGE_FTP=	firmware
 PERMIT_DISTFILES_FTP=	Yes
 
-BUILD_DEPENDS=		devel/open-ath9k-htc-firmware/k2 \
+BUILD_DEPENDS=		devel/open-ath9k-htc-firmware/k2>=1.4.0pl20171105p0 \
 			devel/open-ath9k-htc-firmware/magpie
 
 do-install:
