@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1371 2017/11/13 14:01:44 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1372 2017/11/19 17:31:04 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -2636,6 +2636,9 @@ ${_PATCH_COOKIE}: ${_EXTRACT_COOKIE}
 	fi
 # End of PATCH.
 .endif
+.if target(post-patch)
+	@${_MAKESYS} post-patch
+.endif
 .if ${USE_WXNEEDED:L} == "yes"
 	@wrktmp=`df -P ${WRKOBJDIR} | awk 'END { print $$6 }'`; \
 	if ! mount | grep -q " $${wrktmp} .*wxallowed"; then \
@@ -2651,9 +2654,6 @@ ${_PATCH_COOKIE}: ${_EXTRACT_COOKIE}
 	@printf '#!/bin/sh\nexec ${COMPILER_WRAPPER} ${_comp} -B ${WRKDIR}/bin "$$@"\n' > ${WRKDIR}/bin/${_wrap}
 	@chmod 555 ${WRKDIR}/bin/${_wrap}
 .endfor
-.if target(post-patch)
-	@${_MAKESYS} post-patch
-.endif
 .for _m in ${MODULES:T:U}
 .  if defined(MOD${_m}_post-patch)
 	@${MOD${_m}_post-patch}
