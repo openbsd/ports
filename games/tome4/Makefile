@@ -1,7 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2017/11/19 19:42:48 kirby Exp $
+# $OpenBSD: Makefile,v 1.11 2017/11/19 19:47:43 kirby Exp $
 
 # tome4 ships embedded copy of luajit wich is known to
-# work on the arches listed below:
+# work on the arches listed below.
+# Other arches will fail with
+# ../src/luajit2/src/lj_arch.h:55:2: error: #error "No support for
+# this architecture (yet)"
 ONLY_FOR_ARCHS = powerpc i386 amd64
 
 COMMENT-main =	graphical sdl rogue-like game
