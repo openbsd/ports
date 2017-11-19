@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2017/07/26 22:45:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2017/11/19 19:25:21 ajacoutot Exp $
 
 COMMENT=	distributed version control system
 
@@ -20,7 +20,8 @@ EXTRACT_SUFX=	.tar.bz2
 
 MODULES=	devel/gettext \
 		lang/lua
-BUILD_DEPENDS=	devel/boost
+BUILD_DEPENDS=	devel/boost \
+		devel/gettext-tools
 LIB_DEPENDS=	databases/sqlite3 \
 		devel/libidn \
 		devel/pcre \
