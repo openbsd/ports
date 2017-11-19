@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.79 2017/11/15 12:41:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.80 2017/11/19 10:40:05 landry Exp $
 
 BROKEN-hppa=		no atomic primitives
 
@@ -46,7 +46,9 @@ WANTLIB-icu += harfbuzz icudata icuuc
 
 BUILD_DEPENDS=		devel/gobject-introspection
 
-LIB_DEPENDS-main=	graphics/cairo \
+# LIB_DEPENDS needed for estdc++ in WANTLIB on non-clang archs
+LIB_DEPENDS-main=	${LIB_DEPENDS} \
+			graphics/cairo \
 			graphics/graphite2
 
 LIB_DEPENDS-icu=	devel/harfbuzz,-main=${V} \
