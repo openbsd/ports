@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2017/07/26 22:45:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2017/11/19 00:52:22 naddy Exp $
 
 COMMENT =	spelling, stemming, morphological analysis and generation
 
@@ -7,7 +7,7 @@ GH_ACCOUNT =	hunspell
 GH_PROJECT =	hunspell
 GH_TAGNAME =	v1.6.1
 DISTNAME =	hunspell-1.6.1
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS =	hunspell-1.6 	0.0 #	.0.0
 
@@ -18,9 +18,9 @@ HOMEPAGE =	http://hunspell.github.io/
 # GPL/LGPL/MPL
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c m ncurses ncursesw readline ${COMPILER_LIBCXX}
+WANTLIB += c iconv m curses readline ${COMPILER_LIBCXX}
 
-MODULES =		devel/gettext
+LIB_DEPENDS =		converters/libiconv
 
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.15
