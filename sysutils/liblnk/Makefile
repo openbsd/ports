@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2017/11/03 13:08:03 rpointel Exp $
+# $OpenBSD: Makefile,v 1.3 2017/11/19 14:52:23 naddy Exp $
 
 COMMENT =	library and tools to access the Windows Shortcut File
 
 VERSION = 	20171101
 DISTNAME =	liblnk-alpha-${VERSION}
 PKGNAME =	${DISTNAME:S/-alpha//}
+REVISION =	0
 
 SHARED_LIBS +=  lnk                       0.1 # 1.0
 
@@ -19,17 +20,19 @@ MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 # LGPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += bfio c fwsi m pthread util ${MODPY_WANTLIB}
+WANTLIB += bfio c fwsi iconv intl m pthread util ${MODPY_WANTLIB}
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--enable-python
 
 WRKDIST =	${WRKDIR}/${PKGNAME}
 
-MODULES +=	devel/gettext \
-		lang/python
+MODULES +=	lang/python
 
-LIB_DEPENDS +=	devel/libbfio \
+BUILD_DEPENDS +=devel/gettext-tools
+
+LIB_DEPENDS +=	devel/gettext \
+		devel/libbfio \
 		sysutils/libfwsi
 
 TEST_DEPENDS +=	shells/bash
