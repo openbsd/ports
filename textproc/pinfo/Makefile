@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2015/06/05 08:11:53 bentley Exp $
+# $OpenBSD: Makefile,v 1.13 2017/11/19 00:53:16 naddy Exp $
 
 COMMENT=		info viewer with lynx-style navigation
 
 DISTNAME=		pinfo-0.6.9
+REVISION=		0
 CATEGORIES=		textproc devel
 
 HOMEPAGE=		https://alioth.debian.org/frs/?group_id=30592
@@ -14,9 +15,9 @@ MASTER_SITES=		https://alioth.debian.org/frs/download.php/latestfile/434/ \
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-WANTLIB=		c ncurses readline 
+WANTLIB=		c curses iconv intl readline 
 
-MODULES+=		devel/gettext
+LIB_DEPENDS=		devel/gettext
 
 AUTOCONF_VERSION=	2.59
 CONFIGURE_STYLE=	autoconf

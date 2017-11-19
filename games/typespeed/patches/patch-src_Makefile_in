@@ -1,6 +1,7 @@
-$OpenBSD: patch-src_Makefile_in,v 1.1 2017/02/27 21:01:09 naddy Exp $
---- src/Makefile.in.orig	Wed Aug 13 16:37:49 2008
-+++ src/Makefile.in	Mon Feb 27 21:58:18 2017
+$OpenBSD: patch-src_Makefile_in,v 1.2 2017/11/19 00:53:16 naddy Exp $
+Index: src/Makefile.in
+--- src/Makefile.in.orig
++++ src/Makefile.in
 @@ -85,7 +85,7 @@ AUTOCONF = @AUTOCONF@
  AUTOHEADER = @AUTOHEADER@
  AUTOMAKE = @AUTOMAKE@
@@ -10,3 +11,12 @@ $OpenBSD: patch-src_Makefile_in,v 1.1 2017/02/27 21:01:09 naddy Exp $
  CCDEPMODE = @CCDEPMODE@
  CFLAGS = @CFLAGS@
  CPP = @CPP@
+@@ -199,7 +199,7 @@ typespeed_CPPFLAGS = -DLOCALEDIR=\"$(localedir)\" -DTV
+         -DHIGHFILE=\"$(highscoredir)/$(HIGHFILE)\" \
+ 	-DWORDDIR=\"$(WORDDIR)\" -DRULEDIR=\"$(RULEDIR)\"
+ 
+-typespeed_LDADD = @LIBINTL@
++typespeed_LDADD = @LTLIBINTL@
+ typespeed_SOURCES = file.c gettext.h menu.c misc.c network.c pathnames.h \
+ 	    typespeed.c typespeed.h
+ 

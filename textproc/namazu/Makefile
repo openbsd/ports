@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2017/07/05 10:22:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2017/11/19 00:53:16 naddy Exp $
 
 COMMENT=	small to medium scale full-text search engine
 DISTNAME=	namazu-2.0.21
-REVISION=	1
+REVISION=	2
 
 SHARED_LIBS+=	nmz 0.1	# .8.3
 
@@ -12,11 +12,11 @@ HOMEPAGE=	http://www.namazu.org/
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	c m
+WANTLIB=	c iconv intl m
 
 MASTER_SITES=	${HOMEPAGE}stable/
 
-MODULES=	devel/gettext
+LIB_DEPENDS=	devel/gettext
 BUILD_DEPENDS=	misc/p5-File-MMagic
 RUN_DEPENDS=	archivers/unzip \
 		misc/p5-File-MMagic
