@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.561 2017/11/16 20:17:28 naddy Exp $
+# $OpenBSD: Quirks.pm,v 1.562 2017/11/19 19:27:00 kili Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1162,6 +1162,53 @@ my $obsolete_reason = {
 	'gtkhtml4' => 5,
 	'livestreamer-curses' => 6,
 	'xdmchoose' => 6,
+	'hs-BoundedChan' => 6,
+	'hs-HDBC-mysql' => 6,
+	'hs-HDBC-postgresql' => 6,
+	'hs-MonadRandom' => 6,
+	'hs-ObjectName' => 6,
+	'hs-PSQueue' => 6,
+	'hs-StateVar' => 6,
+	'hs-abstract-deque' => 6,
+	'hs-abstract-par' => 6,
+	'hs-base-unicode-symbols' => 6,
+	'hs-blaze-textual' => 6,
+	'hs-bytestring-mmap' => 6,
+	'hs-bytestring-nums' => 6,
+	'hs-case-insensitive' => 6,
+	'hs-cgi' => 6,
+	'hs-cmdlib' => 6,
+	'hs-concurrent-extra' => 6,
+	'hs-crypto' => 6,
+	'hs-cryptocipher' => 6,
+	'hs-curl' => 6,
+	'hs-data-hash' => 6,
+	'hs-directory-tree' => 6,
+	'hs-enumerator' => 6,
+	'hs-failure' => 6,
+	'hs-ghc-paths' => 6,
+	'hs-half' => 6,
+	'hs-hashtables' => 6,
+	'hs-haskell-src' => 6,
+	'hs-hedis' => 6,
+	'hs-hexpat' => 6,
+	'hs-hood' => 6,
+	'hs-largeword' => 6,
+	'hs-logict' => 6,
+	'hs-murmur-hash' => 6,
+	'hs-mwc-random' => 6,
+	'hs-network-info' => 6,
+	'hs-newtype' => 6,
+	'hs-parallel' => 6,
+	'hs-patch-combinators' => 6,
+	'hs-postgresql-libpq' => 6,
+	'hs-pwstore-fast' => 6,
+	'hs-readline' => 6,
+	'hs-sendfile' => 6,
+	'hs-skein' => 6,
+	'hs-strict' => 6,
+	'hs-tuple' => 6,
+	'hs-zlib-bindings' => 6,
 };
 
 # reasons for obsolete packages
