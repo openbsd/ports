@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2017/11/10 10:26:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.70 2017/11/20 18:23:33 ajacoutot Exp $
 
 COMMENT=		IDE for GNOME
 
@@ -67,9 +67,8 @@ CONFIGURE_ARGS +=	-Dwith_clang=false
 
 MODGNOME_LDFLAGS +=	-L${X11BASE}/lib
 
-# XXX fails to build if graphics/gd is installed
-# XXX https://bugzilla.gnome.org/show_bug.cgi?id=787578
-# XXX https://github.com/mesonbuild/meson/issues/2182
+# XXX remove when merged into a stable release, fixed in:
+# https://git.gnome.org/browse/gnome-builder/commit/?id=d5b86775e5c13447c48b3e46a126eba6159ead82
 pre-configure:
 	echo "#!/bin/sh" >${WRKDIR}/bin/g-ir-scanner
 	echo "exec ${LOCALBASE}/bin/g-ir-scanner -L${WRKBUILD}/subprojects/libgd/libgd \"\$$@\"" \
