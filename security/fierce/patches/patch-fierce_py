@@ -1,0 +1,14 @@
+$OpenBSD: patch-fierce_py,v 1.1.1.1 2017/11/20 17:56:08 jasper Exp $
+
+Index: fierce.py
+--- fierce.py.orig
++++ fierce.py
+@@ -21,7 +21,7 @@ import dns.zone
+ def find_subdomain_list_file(filename):
+     # First check the list directory relative to where we are. This
+     # will typically happen if they simply cloned the Github repository
+-    filename_path = os.path.join(os.path.dirname(__file__), "lists", filename)
++    filename_path = os.path.join("${PREFIX}/share/fierce", "lists", filename)
+     if os.path.exists(filename_path):
+         return os.path.abspath(filename_path)
+ 
