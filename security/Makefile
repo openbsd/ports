@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.479 2017/11/20 17:57:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.480 2017/11/20 18:49:57 jasper Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -359,7 +359,6 @@
      SUBDIR += towitoko
      SUBDIR += vault
      SUBDIR += volatility
-     SUBDIR += vomit
      SUBDIR += vpnc
      SUBDIR += wpa_supplicant
      SUBDIR += xca
