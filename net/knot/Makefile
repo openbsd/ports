@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2017/11/16 23:20:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2017/11/20 14:25:30 jca Exp $
 
 COMMENT =		authoritative DNS server
 
 DISTNAME =		knot-2.4.5
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=	zscanner             1.0      # .1.0
 SHARED_LIBS +=	knot                 1.1      # .5.0
@@ -41,6 +41,8 @@ CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--with-storage=${LOCALSTATEDIR}/db/knot \
 			--with-libidn \
 			--disable-dnstap
+# Disable workaround for old clang versions.
+CONFIGURE_ARGS +=	--enable-fastparser=force
 
 CONFIGURE_ENV =		ac_cv_path_PDFLATEX="false" \
 			ac_cv_path_SPHINXBUILD="false"
