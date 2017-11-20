@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.562 2017/11/19 19:27:00 kili Exp $
+# $OpenBSD: Quirks.pm,v 1.563 2017/11/20 18:51:45 jasper Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1209,6 +1209,7 @@ my $obsolete_reason = {
 	'hs-strict' => 6,
 	'hs-tuple' => 6,
 	'hs-zlib-bindings' => 6,
+	'vomit' => 0,
 };
 
 # reasons for obsolete packages
