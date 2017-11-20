@@ -1,8 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.7 2017/10/31 19:50:00 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.8 2017/11/20 17:57:25 jasper Exp $
 bin/sqlmap
 share/sqlmap/
+share/sqlmap/.github/
+share/sqlmap/.github/CODE_OF_CONDUCT.md
+share/sqlmap/.github/CONTRIBUTING.md
+share/sqlmap/.github/ISSUE_TEMPLATE.md
 share/sqlmap/.travis.yml
-share/sqlmap/ISSUE_TEMPLATE.md
+share/sqlmap/LICENSE
 share/sqlmap/extra/
 share/sqlmap/extra/__init__.py
 share/sqlmap/extra/__init__.pyc
@@ -552,6 +556,8 @@ share/sqlmap/tamper/charencode.py
 share/sqlmap/tamper/charencode.pyc
 share/sqlmap/tamper/charunicodeencode.py
 share/sqlmap/tamper/charunicodeencode.pyc
+share/sqlmap/tamper/charunicodeescape.py
+share/sqlmap/tamper/charunicodeescape.pyc
 share/sqlmap/tamper/commalesslimit.py
 share/sqlmap/tamper/commalesslimit.pyc
 share/sqlmap/tamper/commalessmid.py
@@ -925,6 +931,8 @@ share/sqlmap/waf/datapower.py
 share/sqlmap/waf/datapower.pyc
 share/sqlmap/waf/denyall.py
 share/sqlmap/waf/denyall.pyc
+share/sqlmap/waf/dosarrest.py
+share/sqlmap/waf/dosarrest.pyc
 share/sqlmap/waf/dotdefender.py
 share/sqlmap/waf/dotdefender.pyc
 share/sqlmap/waf/edgecast.py
@@ -1005,6 +1013,8 @@ share/sqlmap/waf/webappsecure.py
 share/sqlmap/waf/webappsecure.pyc
 share/sqlmap/waf/webknight.py
 share/sqlmap/waf/webknight.pyc
+share/sqlmap/waf/wordfence.py
+share/sqlmap/waf/wordfence.pyc
 share/sqlmap/waf/yundun.py
 share/sqlmap/waf/yundun.pyc
 share/sqlmap/waf/yunsuo.py
