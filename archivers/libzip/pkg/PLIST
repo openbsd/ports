@@ -1,14 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.8 2017/07/06 07:57:33 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.9 2017/11/20 19:13:23 bcallah Exp $
 @bin bin/zipcmp
 @bin bin/zipmerge
 @bin bin/ziptool
 include/zip.h
-lib/libzip/
+include/zipconf.h
 lib/libzip.a
 lib/libzip.la
 @lib lib/libzip.so.${LIBzip_VERSION}
-lib/libzip/include/
-lib/libzip/include/zipconf.h
 lib/pkgconfig/libzip.pc
 @man man/man1/zipcmp.1
 @man man/man1/zipmerge.1
@@ -71,10 +69,12 @@ lib/pkgconfig/libzip.pc
 @man man/man3/zip_get_name.3
 @man man/man3/zip_get_num_entries.3
 @man man/man3/zip_get_num_files.3
+@man man/man3/zip_libzip_version.3
 @man man/man3/zip_name_locate.3
 @man man/man3/zip_open.3
 @man man/man3/zip_open_from_source.3
 @man man/man3/zip_register_progress_callback.3
+@man man/man3/zip_register_progress_callback_with_state.3
 @man man/man3/zip_rename.3
 @man man/man3/zip_replace.3
 @man man/man3/zip_set_archive_comment.3
