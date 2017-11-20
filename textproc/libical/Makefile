@@ -1,17 +1,14 @@
-# $OpenBSD: Makefile,v 1.29 2017/11/08 10:04:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2017/11/20 18:17:51 ajacoutot Exp $
 
 COMMENT-main=		implementation of the iCalendar protocols and data units
 COMMENT-glib=		GObject wrapper for libical library
 
 GH_ACCOUNT=		libical
 GH_PROJECT=		libical
-GH_TAGNAME=		v3.0.0
+GH_TAGNAME=		v3.0.1
 
 PKGNAME-main=		${PKGNAME}
 PKGNAME-glib=		${GH_PROJECT}-glib-${GH_TAGNAME:C/^v//}
-
-REVISION-main=		2
-REVISION-glib=		1
 
 SHARED_LIBS +=  ical                 4.0
 SHARED_LIBS +=  icalss               4.0

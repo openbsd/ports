@@ -1,31 +1,26 @@
-$OpenBSD: patch-src_libical_icaltimezone_c,v 1.6 2017/11/11 14:49:16 ajacoutot Exp $
+$OpenBSD: patch-src_libical_icaltimezone_c,v 1.7 2017/11/20 18:17:51 ajacoutot Exp $
 
-1st chunk:
 https://github.com/libical/libical/issues/320
-
-2nd chunk: From Fedora
-From aade7e4ff5ca87cda1c0c6503c8f0ff211c66860 Mon Sep 17 00:00:00 2001
-From: Milan Crha <mcrha@redhat.com>
-Date: Mon, 6 Nov 2017 14:29:09 +0100
-Subject: [PATCH] Correct possible deadlock caused in icaltimezone_load_builtin_timezone()
 
 Index: src/libical/icaltimezone.c
 --- src/libical/icaltimezone.c.orig
 +++ src/libical/icaltimezone.c
-@@ -1818,11 +1818,9 @@ static void icaltimezone_load_builtin_timezone(icaltim
+@@ -1818,13 +1818,9 @@ static void icaltimezone_load_builtin_timezone(icaltim
      if (zone->component)
          return;
  
 -    icaltimezone_builtin_lock();
 -
      /* If the location isn't set, it isn't a builtin timezone. */
-     if (!zone->location || !zone->location[0])
--        return;
-+        goto out;
+-    if (!zone->location || !zone->location[0]) {
+-        icaltimezone_builtin_unlock();
++    if (!zone->location || !zone->location[0])
+         return;
+-    }
  
      if (use_builtin_tzdata) {
          char *filename;
-@@ -1878,7 +1876,6 @@ static void icaltimezone_load_builtin_timezone(icaltim
+@@ -1880,7 +1876,6 @@ static void icaltimezone_load_builtin_timezone(icaltim
      }
  
    out:
