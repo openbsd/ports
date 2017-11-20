@@ -1,0 +1,17 @@
+$OpenBSD: patch-lib_puppet_provider_package_pip_rb,v 1.1.1.1 2017/11/20 12:45:17 sebastia Exp $
+
+Allow the pip package provider to work, at least for the
+default python version.
+
+Index: lib/puppet/provider/package/pip.rb
+--- lib/puppet/provider/package/pip.rb.orig
++++ lib/puppet/provider/package/pip.rb
+@@ -56,7 +56,7 @@ Puppet::Type.type(:package).provide :pip,
+     if Puppet.features.microsoft_windows?
+       ["pip.exe"]
+     else
+-      ["pip", "pip-python"]
++      ["pip", "pip-python", "pip${MODPY_VERSION}"]
+     end
+   end
+ 

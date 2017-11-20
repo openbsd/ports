@@ -1,0 +1,19 @@
+$OpenBSD: patch-ext_rack_config_ru,v 1.1.1.1 2017/11/20 12:45:17 sebastia Exp $
+Index: ext/rack/config.ru
+--- ext/rack/config.ru.orig
++++ ext/rack/config.ru
+@@ -14,11 +14,11 @@ ARGV << "--rack"
+ # Rack applications typically don't start as root.  Set --confdir, --vardir,
+ # --logdir, --rundir to prevent reading configuration from
+ # ~/ based pathing.
+-ARGV << "--confdir" << "/etc/puppetlabs/puppet"
+-ARGV << "--vardir"  << "/opt/puppetlabs/server/data/puppetmaster"
++ARGV << "--confdir" << "${SYSCONFDIR}/puppetlabs/puppet"
++ARGV << "--vardir"  << "/var/puppetlabs/server/data/puppetmaster"
+ ARGV << "--logdir"  << "/var/log/puppetlabs/puppetmaster"
+ ARGV << "--rundir"  << "/var/run/puppetlabs/puppetmaster"
+-ARGV << "--codedir"  << "/etc/puppetlabs/code"
++ARGV << "--codedir"  << "${SYSCONFIDR}/puppetlabs/code"
+ 
+ # disable always_retry_plugsin as a performance improvement. This is safe for a master to
+ # apply. This is intended to allow agents to recognize new features that may be
