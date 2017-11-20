@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.43 2016/09/21 20:29:31 sebastia Exp $
+# $OpenBSD: Makefile.inc,v 1.44 2017/11/20 12:24:43 sebastia Exp $
 
 PKG_ARCH ?=	*
 COMMENT ?=	centralised configuration management for networks
@@ -59,6 +59,4 @@ SUBST_VARS +=		MODRUBY_BINREV
 
 post-install:
 	find ${PREFIX} -type f \( -name '*.beforesubst' -or -name '*.orig' \) -exec rm {} \;
-	${INSTALL_DATA_DIR} ${PREFIX}/share/emacs/site-lisp/
-	${INSTALL_DATA} ${WRKSRC}/ext/emacs/* ${PREFIX}/share/emacs/site-lisp/
 	gunzip ${PREFIX}/man/*/*.gz

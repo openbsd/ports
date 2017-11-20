@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2017/10/10 20:56:53 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.15 2017/11/20 12:24:43 sebastia Exp $
 @option is-branch
 @conflict puppet->=3,<4
 @newgroup _puppet:580
@@ -1522,10 +1522,6 @@ ${MODRUBY_SITEDIR}/semver.rb
 @man man/man8/puppet-status.8
 @man man/man8/puppet.8
 share/doc/pkg-readmes/${FULLPKGNAME}
-share/emacs/
-share/emacs/site-lisp/
-share/emacs/site-lisp/puppet-mode-init.el
-share/emacs/site-lisp/puppet-mode.el
 share/examples/ruby${MODRUBY_BINREV}-puppet/
 @sample ${SYSCONFDIR}/puppetlabs/
 share/examples/ruby${MODRUBY_BINREV}-puppet/puppet/
