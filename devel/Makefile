@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1673 2017/11/19 01:04:03 kili Exp $
+# $OpenBSD: Makefile,v 1.1674 2017/11/20 19:18:26 kili Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -244,6 +244,7 @@
      SUBDIR += hs-system-filepath
      SUBDIR += hs-tagged
      SUBDIR += hs-tar
+     SUBDIR += hs-temporary
      SUBDIR += hs-test-framework
      SUBDIR += hs-test-framework-hunit
      SUBDIR += hs-test-framework-quickcheck2
