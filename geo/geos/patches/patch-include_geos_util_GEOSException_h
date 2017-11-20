@@ -1,0 +1,11 @@
+$OpenBSD: patch-include_geos_util_GEOSException_h,v 1.1 2017/11/20 09:09:47 landry Exp $
+
+Index: include/geos/util/GEOSException.h
+--- include/geos/util/GEOSException.h.orig
++++ include/geos/util/GEOSException.h
+@@ -1,4 +1,4 @@
+-﻿/**********************************************************************
++/**********************************************************************
+  *
+  * GEOS - Geometry Engine Open Source
+  * http://geos.osgeo.org

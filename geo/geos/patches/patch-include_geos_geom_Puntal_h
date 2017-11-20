@@ -1,0 +1,11 @@
+$OpenBSD: patch-include_geos_geom_Puntal_h,v 1.1 2017/11/20 09:09:47 landry Exp $
+
+Index: include/geos/geom/Puntal.h
+--- include/geos/geom/Puntal.h.orig
++++ include/geos/geom/Puntal.h
+@@ -1,4 +1,4 @@
+-﻿/**********************************************************************
++/**********************************************************************
+  *
+  * GEOS - Geometry Engine Open Source
+  * http://geos.osgeo.org

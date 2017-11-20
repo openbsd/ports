@@ -1,0 +1,11 @@
+$OpenBSD: patch-include_geos_geom_Lineal_h,v 1.1 2017/11/20 09:09:47 landry Exp $
+
+Index: include/geos/geom/Lineal.h
+--- include/geos/geom/Lineal.h.orig
++++ include/geos/geom/Lineal.h
+@@ -1,4 +1,4 @@
+-﻿/**********************************************************************
++/**********************************************************************
+  *
+  * GEOS - Geometry Engine Open Source
+  * http://geos.osgeo.org

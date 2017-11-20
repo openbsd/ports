@@ -1,0 +1,11 @@
+$OpenBSD: patch-include_geos_geom_Polygonal_h,v 1.1 2017/11/20 09:09:47 landry Exp $
+
+Index: include/geos/geom/Polygonal.h
+--- include/geos/geom/Polygonal.h.orig
++++ include/geos/geom/Polygonal.h
+@@ -1,4 +1,4 @@
+-﻿/**********************************************************************
++/**********************************************************************
+  *
+  * GEOS - Geometry Engine Open Source
+  * http://geos.osgeo.org
