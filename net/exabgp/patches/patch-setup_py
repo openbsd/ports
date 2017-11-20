@@ -1,14 +1,15 @@
-$OpenBSD: patch-setup_py,v 1.2 2017/01/13 14:08:52 phessler Exp $
---- setup.py.orig	Thu Sep 15 12:57:50 2016
-+++ setup.py	Wed Dec 14 20:34:45 2016
-@@ -276,6 +276,10 @@ if os_name == 'NetBSD':
- 	files_definition= [
- 		('share/exabgp',configuration('etc/exabgp')),
- 	]
-+elif os_name == 'OpenBSD':
-+	files_definition= [
-+		('share/examples/exabgp',configuration('etc/exabgp')),
-+	]
- else:
- 	files_definition = [
- 		('etc/exabgp',configuration('etc/exabgp')),
+$OpenBSD: patch-setup_py,v 1.3 2017/11/20 18:39:33 danj Exp $
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -330,8 +330,8 @@ def testFilesOf (direcotry):
+ os_name = platform.system()
+ 
+ files_definition = [
+-	('share/exabgp/processes',filesOf('etc/exabgp')),
+-	('share/exabgp/etc',testFilesOf('qa/conf')),
++	('share/examples/exabgp/processes',filesOf('etc/exabgp')),
++	('share/examples/exabgp/etc',testFilesOf('qa/conf')),
+ ]
+ 
+ if os_name != 'NetBSD':
