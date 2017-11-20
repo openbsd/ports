@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.8 2015/07/18 21:07:40 jeremy Exp $
+# $OpenBSD: Makefile,v 1.9 2017/11/20 20:57:17 jeremy Exp $
 
 COMMENT =	Ruby markdown interpreter
 
 DISTNAME =	maruku-0.6.1
-REVISION =	2
+REVISION =	3
 CATEGORIES =	textproc
 
-HOMEPAGE =	http://maruku.rubyforge.org/
+HOMEPAGE =	https://github.com/bhollis/maruku
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM = Yes

@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.13 2015/07/19 02:10:31 jeremy Exp $
+# $OpenBSD: Makefile,v 1.14 2017/11/20 20:57:17 jeremy Exp $
 
 COMMENT=		automate interaction with websites
 
 DISTNAME=		mechanize-0.9.3
-REVISION =		7
+REVISION =		8
 CATEGORIES=		www
 
-HOMEPAGE=		http://mechanize.rubyforge.org/mechanize
+HOMEPAGE=		http://docs.seattlerb.org/mechanize/
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

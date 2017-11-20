@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2013/10/26 23:55:36 jeremy Exp $
+# $OpenBSD: Makefile,v 1.11 2017/11/20 20:57:17 jeremy Exp $
 
 COMMENT =	MIME library for Ruby
 
 DISTNAME =	mime-0.1
-REVISION =	6
+REVISION =	7
 CATEGORIES =	mail
 
 MAINTAINER =	Clint Pachl <pachl@ecentryx.com>
@@ -11,7 +11,7 @@ MAINTAINER =	Clint Pachl <pachl@ecentryx.com>
 # Ruby license
 PERMIT_PACKAGE_CDROM =   Yes
 
-HOMEPAGE =	http://mime.rubyforge.org/
+HOMEPAGE =	https://ecentryx.com/gems/mime/
 
 MODULES =	lang/ruby
 CONFIGURE_STYLE = ruby gem

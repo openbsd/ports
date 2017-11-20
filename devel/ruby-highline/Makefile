@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.18 2014/09/23 19:07:27 jeremy Exp $
+# $OpenBSD: Makefile,v 1.19 2017/11/20 20:57:17 jeremy Exp $
 
 COMMENT =		high-level IO library for Ruby
 
 DISTNAME =		highline-1.6.21
+REVISION =		0
 CATEGORIES =		devel
 
-HOMEPAGE =		http://highline.rubyforge.org/
+HOMEPAGE =		https://github.com/JEG2/highline
 
 # Ruby license
 PERMIT_PACKAGE_CDROM = Yes

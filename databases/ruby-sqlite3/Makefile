@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.39 2017/11/04 15:45:57 jeremy Exp $
+# $OpenBSD: Makefile,v 1.40 2017/11/20 20:57:17 jeremy Exp $
 
 COMMENT=	access a SQLite3 database from ruby
 
 DISTNAME=	sqlite3-1.3.13
+REVISION=	0
 CATEGORIES=	databases
 
 MAINTAINER =	Jeremy Evans <jeremy@openbsd.org>
 
-HOMEPAGE=	http://sqlite-ruby.rubyforge.org/
+HOMEPAGE=	https://github.com/sparklemotion/sqlite3-ruby
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
