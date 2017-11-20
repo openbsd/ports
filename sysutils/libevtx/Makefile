@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/02/07 14:01:31 rpointel Exp $
+# $OpenBSD: Makefile,v 1.2 2017/11/20 19:49:32 ajacoutot Exp $
 
 COMMENT =	library and tools to access the Windows XML Event Log (EVTX)
 
 VERSION = 	20170122
 DISTNAME =	libevtx-alpha-${VERSION}
 PKGNAME =	${DISTNAME:S/-alpha//}
+REVISION =	0
 
 SHARED_LIBS +=  evtx                       0.0 # 1.0
 
@@ -19,7 +20,7 @@ MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 # LGPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += bfio c m pthread util ${MODPY_WANTLIB}
+WANTLIB += bfio c iconv intl m pthread util ${MODPY_WANTLIB}
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--enable-python \
@@ -28,10 +29,12 @@ CONFIGURE_ARGS +=	--enable-python \
 
 WRKDIST =	${WRKDIR}/${PKGNAME}
 
-MODULES +=	devel/gettext \
-		lang/python
+MODULES +=	lang/python
 
 MODPY_ADJ_FILES += tests/pyevtx_test_support.py
+
+# xgettext(1)
+BUILD_DEPENDS +=	devel/gettext-tools
 
 LIB_DEPENDS +=	devel/libbfio
 
