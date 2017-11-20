@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2017/11/16 23:20:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.71 2017/11/20 11:11:20 sthen Exp $
 
 BROKEN-arm =	needs atomic ops; __sync_add_and_fetch_4
 BROKEN-hppa =	needs atomic ops; __sync_add_and_fetch_4
@@ -8,7 +8,7 @@ COMMENT-main =	network monitoring system
 COMMENT-mysql =	MySQL support for icinga2
 COMMENT-pgsql =	PostgreSQL support for icinga2
 
-V =		2.7.2
+V =		2.8.0
 EPOCH =		0
 GH_ACCOUNT =	Icinga
 GH_PROJECT =	icinga2
@@ -42,8 +42,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += boost_atomic-mt boost_chrono-mt boost_date_time-mt
 WANTLIB += boost_program_options-mt boost_regex-mt boost_system-mt
-WANTLIB += boost_thread-mt crypto execinfo m pthread ssl
-WANTLIB += yajl ${COMPILER_LIBCXX}
+WANTLIB += boost_thread-mt crypto m pthread ssl yajl
+WANTLIB += ${COMPILER_LIBCXX}
 
 MODULES =		devel/cmake
 
@@ -56,10 +56,9 @@ BUILD_DEPENDS =		devel/bison
 
 MULTI_PACKAGES =	-main -mysql -pgsql
 
-WANTLIB-main +=		${WANTLIB} c edit termcap
+WANTLIB-main +=		${WANTLIB} c curses edit
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			devel/boost \
-			devel/libexecinfo \
 			devel/libyajl
 RUN_DEPENDS-main =	net/monitoring-plugins
 RUN_DEPENDS =           ${BASE_PKGPATH},-main # default for subpackages
