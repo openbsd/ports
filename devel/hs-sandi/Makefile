@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2017/11/09 07:58:41 kili Exp $
-
-BROKEN =		missing dependency
+# $OpenBSD: Makefile,v 1.5 2017/11/20 23:42:13 kili Exp $
 
 COMMENT =		data encoding library
 
@@ -18,8 +16,8 @@ MODGHC_PACKAGE_KEY =	CE2FEFbNCNW62Jp9Seg67k
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
 
-# Missing: textproc/hs-stringsearch>=0.3,<0.4
 RUN_DEPENDS =		devel/hs-conduit>=1.2,<1.3 \
-			devel/hs-exceptions>=0.6,<0.9
+			devel/hs-exceptions>=0.6,<0.9 \
+			textproc/hs-stringsearch>=0.3,<0.4
 
 .include <bsd.port.mk>
