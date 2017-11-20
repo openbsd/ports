@@ -1,0 +1,15 @@
+$OpenBSD: patch-ext_bin_puppetdb,v 1.1.1.1 2017/11/20 12:47:32 sebastia Exp $
+Index: ext/bin/puppetdb
+--- ext/bin/puppetdb.orig
++++ ext/bin/puppetdb
+@@ -12,8 +12,8 @@ elif [ `uname` == "OpenBSD" ] ; then
+     JAVA_BIN=$(javaPathHelper -c puppetdb)
+     JAVA_ARGS="-Xmx192m"
+     USER="_puppetdb"
+-    INSTALL_DIR="/opt/puppetlabs/server/apps/puppetdb"
+-    CONFIG="/etc/puppetlabs/puppetdb/conf.d"
++    INSTALL_DIR="${PREFIX}/share/puppetdb"
++    CONFIG="${PREFIX}/puppetlabs/puppetdb/conf.d"
+ else
+     echo "You seem to be missing some important configuration files; could not find /etc/default/puppetdb or /etc/sysconfig/puppetdb" >&2
+     exit 1
