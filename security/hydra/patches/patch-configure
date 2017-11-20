@@ -1,8 +1,8 @@
-$OpenBSD: patch-configure,v 1.9 2017/07/04 15:04:49 gonzalo Exp $
+$OpenBSD: patch-configure,v 1.10 2017/11/20 13:04:09 jasper Exp $
 Index: configure
 --- configure.orig
 +++ configure
-@@ -427,106 +427,6 @@ fi
+@@ -443,106 +443,6 @@ fi
    fi
  #fi
  
@@ -109,7 +109,7 @@ Index: configure
  if [ "X" != "X$DEBUG" ]; then
     echo DEBUG: SVN_PATH=$SVN_PATH/libsvn_client-1
     echo DEBUG: APR_PATH=$APR_PATH/libapr
-@@ -553,26 +453,6 @@ if [ "X" = "X$SVN_PATH" -o "X" = "X$APR_PATH" ]; then
+@@ -569,26 +469,6 @@ if [ "X" = "X$SVN_PATH" -o "X" = "X$APR_PATH" ]; then
      echo "                                                               ... NOT found, module svn disabled"
  fi
  
@@ -136,7 +136,7 @@ Index: configure
  for i in $INCDIRS ; do
      if [ "X" != "X$FIREBIRD_PATH" ]; then
          if [ -f "$i/ibase.h" ]; then
-@@ -642,26 +522,6 @@ if [ -f "/usr/include/math.h" ]; then
+@@ -658,26 +538,6 @@ if [ -f "/usr/include/math.h" ]; then
  else
        echo "                                       ... math.h not found, module Mysql disabled"
  fi
@@ -163,7 +163,7 @@ Index: configure
  for i in $INCDIRS ; do
      if [ "X" != "X$AFP_PATH" ]; then
          if [ -f "$i/afpfs-ng/afp.h" ]; then
-@@ -682,26 +542,6 @@ if [ "X" = "X$AFP_PATH" -o "X" = "X$AFP_IPATH" ]; then
+@@ -698,26 +558,6 @@ if [ "X" = "X$AFP_PATH" -o "X" = "X$AFP_IPATH" ]; then
      AFP_IPATH=""
  fi
  
@@ -190,7 +190,7 @@ Index: configure
  for i in $INCDIRS ; do
      if [ "X" != "X$NCP_PATH" ]; then
          if [ -f "$i/ncp/nwcalls.h" ]; then
-@@ -722,27 +562,6 @@ if [ "X" = "X$NCP_PATH" -o "X" = "X$NCP_IPATH" ]; then
+@@ -738,27 +578,6 @@ if [ "X" = "X$NCP_PATH" -o "X" = "X$NCP_IPATH" ]; then
      NCP_IPATH=""
  fi
  
@@ -218,7 +218,7 @@ Index: configure
  if [ "X" != "X$DEBUG" ]; then
     echo DEBUG: SAPR3_PATH=$SAPR3_PATH/librfc
     echo DEBUG: SAPR3_IPATH=$SAPR3_IPATH/saprfc.h
-@@ -826,47 +645,6 @@ if [ "X" != "X$DEBUG" ]; then
+@@ -842,47 +661,6 @@ if [ "X" != "X$DEBUG" ]; then
     echo DEBUG: ORACLE_INC=$INCDIRS
  fi
  
@@ -266,7 +266,7 @@ Index: configure
  if [ "X" != "X$DEBUG" ]; then
     echo DEBUG: ORACLE_PATH=$ORACLE_PATH/libocci
  fi
-@@ -898,13 +676,6 @@ if [ "X" != "X$DEBUG" ]; then
+@@ -914,13 +692,6 @@ if [ "X" != "X$DEBUG" ]; then
     echo DEBUG: ORACLE_PATH=$ORACLE_PATH/libaio
  fi
  

@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.58 2017/07/04 15:04:49 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.59 2017/11/20 13:04:09 jasper Exp $
 
 COMMENT-main=	parallelized network logon cracker
 COMMENT-gui=	GTK frontend for hydra
 
-VERSION=	8.5
+VERSION=	8.6
 PKGNAME-main=	hydra-${VERSION}
 PKGNAME-gui=	hydra-gui-${VERSION}
 CATEGORIES=	security
 
 GH_ACCOUNT =	vanhauser-thc
 GH_PROJECT =	thc-hydra
-GH_TAGNAME =	v${VERSION}
+GH_TAGNAME =	${VERSION}
 
 HOMEPAGE=	https://thc.org/thc-hydra/
 
@@ -52,12 +52,12 @@ WANTLIB-main=	${WANTLIB} m crypto curses idn mysqlclient pcre pq ssh ssl
 
 LIB_DEPENDS-gui=x11/gtk+2
 
-RUN_DEPENDS-gui=${PKGPATH},-main
+RUN_DEPENDS-gui=${BASE_PKGPATH},-main
 
-WANTLIB-gui=	X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama \
-		Xrandr Xrender atk-1.0 cairo fontconfig freetype gdk-x11-2.0 \
-		gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 gtk-x11-2.0 \
-		pango-1.0 pangocairo-1.0 pangoft2-1.0 intl ${WANTLIB}
+WANTLIB-gui += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
+WANTLIB-gui += Xrandr Xrender atk-1.0 cairo fontconfig freetype gdk-x11-2.0
+WANTLIB-gui += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 gtk-x11-2.0
+WANTLIB-gui += intl pango-1.0 pangocairo-1.0 pangoft2-1.0 ${WANTLIB}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/hydra
