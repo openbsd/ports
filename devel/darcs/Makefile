@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2017/11/08 19:09:47 kili Exp $
+# $OpenBSD: Makefile,v 1.67 2017/11/20 23:43:46 kili Exp $
 
 # Needs template Haskell in Setup.lhs, which doesn't work on i386.
 NOT_FOR_ARCHS =		i386
@@ -21,9 +21,6 @@ LIB_DEPENDS =		converters/libiconv \
 
 # Yes, build dependencies, because GHC libs are still static and we
 # don't want to pull in all of ghc.
-# graphviz would need at least new ports hs-wl-pprint-text, hs-colour
-# (not to be confused with hscolour) and hs-temporary, so that feature
-# (darcs show dependencies) is patched out for now.
 BUILD_DEPENDS =		archivers/hs-zip-archive>=0.2.3,<0.4 \
 			archivers/hs-zlib>=0.5.4.1,<0.7.0.0 \
 			devel/hs-async>=2.0.1.4,<2.2 \
@@ -45,6 +42,7 @@ BUILD_DEPENDS =		archivers/hs-zip-archive>=0.2.3,<0.4 \
 			devel/hs-unix-compat>=0.1.2,<0.5 \
 			devel/hs-utf8-string>=0.3.6,<1.1 \
 			devel/hs-vector>=0.10.0.1,<0.13 \
+			graphics/hs-graphviz>=2999.17.0.1,<2999.19 \
 			net/hs-HTTP>=4000.2.8,<4000.4 \
 			security/hs-cryptohash>=0.4,<0.12 \
 			textproc/hs-attoparsec>=0.11,<0.14 \
