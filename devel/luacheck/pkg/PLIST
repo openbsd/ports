@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2017/03/15 10:27:42 jsg Exp $
+@comment $OpenBSD: PLIST,v 1.6 2017/11/20 02:21:56 jsg Exp $
 bin/luacheck
 share/doc/luacheck/
 share/doc/luacheck/_sources/
@@ -63,6 +63,9 @@ share/lua/${MODLUA_VERSION}/luacheck/check.lua
 share/lua/${MODLUA_VERSION}/luacheck/config.lua
 share/lua/${MODLUA_VERSION}/luacheck/core_utils.lua
 share/lua/${MODLUA_VERSION}/luacheck/detect_globals.lua
+share/lua/${MODLUA_VERSION}/luacheck/detect_uninit_access.lua
+share/lua/${MODLUA_VERSION}/luacheck/detect_unreachable_code.lua
+share/lua/${MODLUA_VERSION}/luacheck/detect_unused_rec_funcs.lua
 share/lua/${MODLUA_VERSION}/luacheck/expand_rockspec.lua
 share/lua/${MODLUA_VERSION}/luacheck/filter.lua
 share/lua/${MODLUA_VERSION}/luacheck/format.lua
@@ -71,12 +74,15 @@ share/lua/${MODLUA_VERSION}/luacheck/globbing.lua
 share/lua/${MODLUA_VERSION}/luacheck/init.lua
 share/lua/${MODLUA_VERSION}/luacheck/inline_options.lua
 share/lua/${MODLUA_VERSION}/luacheck/lexer.lua
+share/lua/${MODLUA_VERSION}/luacheck/lfs_fs.lua
 share/lua/${MODLUA_VERSION}/luacheck/linearize.lua
+share/lua/${MODLUA_VERSION}/luacheck/love_standard.lua
+share/lua/${MODLUA_VERSION}/luacheck/lua_fs.lua
 share/lua/${MODLUA_VERSION}/luacheck/main.lua
 share/lua/${MODLUA_VERSION}/luacheck/multithreading.lua
+share/lua/${MODLUA_VERSION}/luacheck/ngx_standard.lua
 share/lua/${MODLUA_VERSION}/luacheck/options.lua
 share/lua/${MODLUA_VERSION}/luacheck/parser.lua
-share/lua/${MODLUA_VERSION}/luacheck/reachability.lua
 share/lua/${MODLUA_VERSION}/luacheck/standards.lua
 share/lua/${MODLUA_VERSION}/luacheck/utils.lua
 share/lua/${MODLUA_VERSION}/luacheck/version.lua
