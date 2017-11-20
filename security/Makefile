@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.478 2017/11/19 01:04:03 kili Exp $
+# $OpenBSD: Makefile,v 1.479 2017/11/20 17:57:09 jasper Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -46,6 +46,7 @@
      SUBDIR += encfs
      SUBDIR += erl-bcrypt
      SUBDIR += fcrackzip
+     SUBDIR += fierce
      SUBDIR += flasm
      SUBDIR += foremost
      SUBDIR += fragroute
