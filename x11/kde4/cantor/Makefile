@@ -1,11 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2017/11/16 23:20:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2017/11/20 15:44:30 rsadowski Exp $
 
 COMMENT =	KDE mathematical applications
 DISTNAME =	cantor-${MODKDE4_VERSION}
-REVISION =	7
-
-# Bogus message about "backend /usr/local/bin/latex" at startup when no
-# backend is choosen on the command line.
+REVISION =	8
 
 SHARED_LIBS =  cantorlibs                50.0 # 0.0
 SHARED_LIBS += cantor_config             50.0 # 0.0
@@ -19,16 +16,14 @@ WANTLIB += ${KDE4LIB}/kdeui ${KDE4LIB}/kio ${KDE4LIB}/knewstuff3
 WANTLIB += ${KDE4LIB}/kparts ${KDE4LIB}/kpty ${KDE4LIB}/ktexteditor
 WANTLIB += ${KDE4LIB}/nepomuk ${KDE4LIB}/nepomukutils
 WANTLIB += lib/R/lib/R lib/R/lib/Rblas lib/R/lib/Rlapack
-WANTLIB += cln glib-2.0 qalculate soprano spectre xml2
+WANTLIB += cln glib-2.0 qalculate soprano spectre xml2 intl
 WANTLIB += luajit-${MODLUA_DEFAULT_VERSION} gfortran
 
-# XXX module order is important there. Since we get x11/kde4 from
-# Makefile.inc, it's listed too late to influence modgcc, since
-# it's already been read
-MODULES =	devel/gettext lang/lua lang/python gcc4 # XXX fortran
-COMPILER =	base-clang ports-gcc
-MODGCC4_ARCHS =	*
-MODGCC4_LANGS =	fortran
+MODULES =	lang/lua \
+		lang/python \
+		fortran
+
+MODFORTRAN_COMPILER =	gfortran
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+3,-guic
@@ -38,6 +33,7 @@ LIB_DEPENDS = 	databases/soprano \
 		math/R>=2.15.1p4 \
 		math/libqalculate \
 		print/libspectre \
+		devel/gettext \
 		${MODKDE4_DEP_DIR}/analitza>=${MODKDE4_DEP_VERSION}
 
 .include <bsd.port.mk>
