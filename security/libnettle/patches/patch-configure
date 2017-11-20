@@ -1,12 +1,13 @@
-$OpenBSD: patch-configure,v 1.6 2016/01/30 09:16:41 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.7 2017/11/20 09:09:45 ajacoutot Exp $
 
 Fix relocation errors on (at least) sparc64.
 
 We don't want extra debug flags in regular builds.
 
---- configure.orig	Thu Jan 28 21:02:21 2016
-+++ configure	Sat Jan 30 10:11:42 2016
-@@ -7068,6 +7068,7 @@ else
+Index: configure
+--- configure.orig
++++ configure
+@@ -7090,6 +7090,7 @@ else
  	bsdi4.*)	CCPIC="-fPIC" ;;
  	bsdi*)		CCPIC="" ;;
  	darwin*)	CCPIC="-fPIC" ;;
@@ -14,7 +15,7 @@ We don't want extra debug flags in regular builds.
  	# Could also use -fpic, depending on the number of symbol references
  	solaris*)	CCPIC="-fPIC" ;;
  	cygwin*)	CCPIC="" ;;
-@@ -7754,7 +7755,7 @@ if test x$GCC = xyes ; then
+@@ -7776,7 +7777,7 @@ if test x$GCC = xyes ; then
    if $CC --version | grep '^2\.96$' 1>/dev/null 2>&1; then
      true
    else

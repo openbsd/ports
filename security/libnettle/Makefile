@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.19 2016/12/29 15:51:29 jca Exp $
+# $OpenBSD: Makefile,v 1.20 2017/11/20 09:09:45 ajacoutot Exp $
 
 COMMENT=		cryptographic library
 
-DISTNAME=		nettle-3.3
-REVISION=		0
+DISTNAME=		nettle-3.4
 PKGNAME=		lib${DISTNAME}
 
 SHARED_LIBS +=  hogweed                   2.0 # 6.2
-SHARED_LIBS +=  nettle                    2.2 # 4.2
+SHARED_LIBS +=  nettle                    3.0 # 4.2
 
 CATEGORIES=		security devel
 
