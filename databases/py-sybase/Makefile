@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2016/03/20 16:12:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.25 2017/11/21 00:12:59 naddy Exp $
 
 COMMENT=	Python interface to the Sybase relational database system
 
 DISTNAME=	sybase-0.37
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	databases
+REVISION=	0
 
 HOMEPAGE=	http://www.object-craft.com.au/projects/sybase/
 MASTER_SITES=	${HOMEPAGE}download/
@@ -12,11 +13,10 @@ MASTER_SITES=	${HOMEPAGE}download/
 # BSD 
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ${MODPY_WANTLIB}
-WANTLIB += ct pthread
+WANTLIB =  ${MODPY_WANTLIB}
+WANTLIB += ct iconv intl pthread
 
-MODULES=	lang/python \
-		devel/gettext
+MODULES=	lang/python
 
 MODPY_DISTUTILS_BUILD=		build_ext
 MODPY_DISTUTILS_BUILDARGS=	-D HAVE_FREETDS=61

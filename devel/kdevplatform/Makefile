@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2017/11/18 22:23:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2017/11/21 00:12:59 naddy Exp $
 
 CATEGORIES =	devel
 COMMENT =	IDE creation toolkit for KDE 4
@@ -6,7 +6,7 @@ KDEV_V =	4.7.2
 KDEVPLAT_V =	1.7.2
 DISTNAME =	kdevplatform-${KDEVPLAT_V}
 HOMEPAGE =	http://www.kdevelop.org/
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS =	kdevplatformdebugger		0.1 # 3.0
 SHARED_LIBS +=	kdevplatformdocumentation	0.1 # 3.0
@@ -27,7 +27,7 @@ DIST_SUBDIR =	kde
 # LGPLv2+
 PERMIT_PACKAGE_CDROM =          Yes
 
-WANTLIB =  c m pthread
+WANTLIB =  c iconv intl m pthread
 WANTLIB += QtDBus QtDeclarative QtGui QtNetwork QtScript QtSvg QtTest
 WANTLIB += QtWebKit QtXml
 WANTLIB += ${KDE4LIB}/kcmutils ${KDE4LIB}/kdeui ${KDE4LIB}/kfile
@@ -42,7 +42,7 @@ WANTLIB += svn_repos-1 svn_subr-1 svn_wc-1
 WANTLIB += grantlee_core
 WANTLIB += ${COMPILER_LIBCXX}
 
-MODULES =	x11/kde4 devel/gettext
+MODULES =	x11/kde4
 
 BUILD_DEPENDS =	devel/boost \
 		devel/gettext-tools

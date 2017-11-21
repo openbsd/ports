@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2017/11/20 21:43:48 awolk Exp $
+# $OpenBSD: Makefile,v 1.20 2017/11/21 00:13:02 naddy Exp $
 
 COMMENT =		native Gtk+ Twitter client
 
 V =			1.7.3
 DISTNAME =		corebird-${V}
 MASTER_SITES =		https://github.com/baedert/corebird/releases/download/${V}/
+REVISION =		0
 
 EXTRACT_SUFX =		.tar.xz
 CATEGORIES =		net
@@ -21,14 +22,13 @@ WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
 WANTLIB += c cairo cairo-gobject dbus-1 enchant epoxy expat ffi
 WANTLIB += fontconfig freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gspell-1 gstbase-1.0
-WANTLIB += gstreamer-1.0 gstvideo-1.0 gthread-2.0 gtk-3 harfbuzz
+WANTLIB += gstreamer-1.0 gstvideo-1.0 gthread-2.0 gtk-3 harfbuzz iconv intl
 WANTLIB += json-glib-1.0 lzma m orc-0.4 pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB += soup-2.4 sqlite3 ${COMPILER_LIBCXX} xcb
 WANTLIB += xcb-render xcb-shm xml2 z
 
 MODULES =		devel/dconf \
-			devel/gettext \
 			x11/gnome
 
 MODGNOME_TOOLS =	desktop-file-utils \

@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.10 2017/11/18 22:23:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2017/11/21 00:13:02 naddy Exp $
 
 CATEGORIES =	net
 COMMENT =	torrent client for KDE 4
 V =		4.3.1
 DISTNAME =	ktorrent-$V
 HOMEPAGE =	http://ktorrent.pwsp.net/
-REVISION =	5
+REVISION =	6
 
 EXTRACT_SUFX =	.tar.bz2
 
 SHARED_LIBS =	ktcore		0.0
 
-WANTLIB =  c m pthread ${COMPILER_LIBCXX}
+WANTLIB =  c iconv intl m pthread ${COMPILER_LIBCXX}
 WANTLIB += lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtGui
 WANTLIB += lib/qt4/QtNetwork lib/qt4/QtScript lib/qt4/QtSql
 WANTLIB += lib/qt4/QtSvg lib/qt4/QtWebKit lib/qt4/QtXml
@@ -28,7 +28,7 @@ MASTER_SITES =	${HOMEPAGE}downloads/$V/
 # GPLv2+
 PERMIT_PACKAGE_CDROM =          Yes
 
-MODULES =		devel/gettext x11/kde4 multimedia/phonon
+MODULES =		x11/kde4 multimedia/phonon
 MODKDE4_USE =		pim workspace
 
 BUILD_DEPENDS =	devel/gettext-tools

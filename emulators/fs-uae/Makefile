@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2017/11/19 19:38:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2017/11/21 00:13:00 naddy Exp $
 
 BROKEN-powerpc =	error: invalid 'asm': invalid %k value
 BROKEN-alpha =		error: invalid 'asm': invalid %xn code
@@ -9,7 +9,7 @@ V =			2.4.0
 MODPY_EGG_VERSION =	${V}
 DISTNAME =		fs-uae-$V
 CATEGORIES =		emulators
-REVISION =		3
+REVISION =		4
 
 HOMEPAGE =		http://fengestad.no/fs-uae/
 MAINTAINER =		Edd Barrett <edd@openbsd.org>
@@ -17,12 +17,11 @@ MAINTAINER =		Edd Barrett <edd@openbsd.org>
 # GPLv2, LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += GL GLU SDL X11 c freetype glib-2.0 gthread-2.0 m openal png
-WANTLIB += pthread ${COMPILER_LIBCXX} z
+WANTLIB += GL GLU SDL X11 c freetype glib-2.0 gthread-2.0 iconv intl m
+WANTLIB += openal png pthread ${COMPILER_LIBCXX} z
 
 MASTER_SITES =		${HOMEPAGE}stable/$V/
 
-MODULES =		devel/gettext
 BUILD_DEPENDS =		devel/gettext-tools
 LIB_DEPENDS =		devel/sdl \
 			graphics/png \

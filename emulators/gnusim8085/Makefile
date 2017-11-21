@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2017/11/18 22:23:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2017/11/21 00:13:00 naddy Exp $
 
 COMMENT =		graphical 8085 simulator, assembler, and debugger
 
 V =			1.3.7
 DISTNAME =		gnusim8085-${V}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		emulators devel
 
@@ -13,16 +13,15 @@ HOMEPAGE =		http://gnusim8085.org/
 # GPLv2+
 PERMIT_PACKAGE_CDROM =		Yes
 
-WANTLIB += GL X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
+WANTLIB =  GL X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 c cairo expat fontconfig freetype
 WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
 WANTLIB += gtk-x11-2.0 gtksourceview-2.0 iconv intl m pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pixman-1 png pthread
-WANTLIB += xcb xcb-render xcb-shm z
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pixman-1 png pthread xcb
+WANTLIB += xcb-render xcb-shm z
 
 MASTER_SITES =		http://launchpad.net/gnusim8085/trunk/${V}/+download/
 
-MODULES =		devel/gettext
 BUILD_DEPENDS =		devel/gettext-tools
 RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+3,-guic

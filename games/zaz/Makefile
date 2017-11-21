@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2017/07/26 22:45:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2017/11/21 00:13:01 naddy Exp $
 
 COMMENT =	zuma-like arkade game
 DISTNAME =	zaz-1.0.0
-REVISION =	1
+REVISION =	2
 CATEGORIES =	games
 
 HOMEPAGE =	http://zaz.sourceforge.net/
@@ -12,13 +12,12 @@ MAINTAINER =	Matthias Kilian <kili@openbsd.org>
 # GPLv3+
 PERMIT_PACKAGE_CDROM =		Yes
 
-WANTLIB =	GL SDL SDL_image c freetype ftgl m ogg pthread ${COMPILER_LIBCXX} \
-		theoradec theoraenc vorbis vorbisenc vorbisfile z
+WANTLIB =	GL SDL SDL_image c freetype ftgl iconv intl m ogg pthread \
+		${COMPILER_LIBCXX} theoradec theoraenc \
+		vorbis vorbisenc vorbisfile z
 
 EXTRACT_SUFX =	.tar.bz2
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=zaz/}
-
-MODULES =	devel/gettext
 
 LIB_DEPENDS =	audio/libvorbis \
 		devel/sdl-image \

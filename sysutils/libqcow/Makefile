@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2017/04/05 11:45:20 rpointel Exp $
+# $OpenBSD: Makefile,v 1.3 2017/11/21 00:13:03 naddy Exp $
 
 COMMENT =	library and tools to access the QEMU Copy-On-Write (QCOW)
 
 VERSION = 	20170222
 DISTNAME =	libqcow-alpha-${VERSION}
 PKGNAME =	${DISTNAME:S/-alpha//}
+REVISION =	0
 
 SHARED_LIBS +=  qcow                       0.0 # 1.0
 
@@ -19,15 +20,15 @@ MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 # LGPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += bfio c crypto fuse m pthread util z ${MODPY_WANTLIB}
+WANTLIB =  ${MODPY_WANTLIB}
+WANTLIB += bfio c crypto fuse iconv intl m pthread util z
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--enable-python
 
 WRKDIST =	${WRKDIR}/${PKGNAME}
 
-MODULES +=	devel/gettext \
-		lang/python
+MODULES +=	lang/python
 
 LIB_DEPENDS +=	devel/libbfio
 

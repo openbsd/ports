@@ -1,8 +1,8 @@
-#	$OpenBSD: Makefile,v 1.26 2017/10/23 17:10:51 sthen Exp $
+#	$OpenBSD: Makefile,v 1.27 2017/11/21 00:13:01 naddy Exp $
 
 COMMENT=	ZBar barcode reader
 DISTNAME=	zbar-0.10
-REVISION=	18
+REVISION=	19
 
 SHARED_LIBS=	zbar	0.0 \
 		zbargtk	0.0
@@ -18,18 +18,16 @@ MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 # LGPL 2.1
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ICE MagickCore-6.Q16 MagickWand-6.Q16 SM X11 Xcomposite
-WANTLIB += Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender
-WANTLIB += Xt Xv atk-1.0 bz2 c cairo djvulibre expat ffi fftw3
-WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
-WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
-WANTLIB += gtk-x11-2.0 harfbuzz jbig jpeg lcms2 lzma m openjp2
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png pthread tiff webp xcb xcb-render
-WANTLIB += xcb-shm xml2 z
+WANTLIB =  ICE MagickCore-6.Q16 MagickWand-6.Q16 SM X11 Xcomposite
+WANTLIB += Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender Xt Xv
+WANTLIB += atk-1.0 bz2 c cairo djvulibre expat ffi fftw3 fontconfig
+WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-x11-2.0
+WANTLIB += harfbuzz iconv intl jbig jpeg lcms2 lzma m openjp2 pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread tiff
+WANTLIB += webp xcb xcb-render xcb-shm xml2 z
 
-MODULES=	devel/gettext \
-		lang/python
+MODULES=	lang/python
 
 LIB_DEPENDS=	graphics/ImageMagick \
 		devel/libffi \

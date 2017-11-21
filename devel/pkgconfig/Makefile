@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2017/05/28 08:29:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.41 2017/11/21 00:13:00 naddy Exp $
 
 COMMENT=		tool for managing library compile/link flags
 
@@ -8,6 +8,7 @@ VERSION=		0.29.2
 DISTNAME=		pkg-config-${VERSION}
 PKGNAME=		pkgconfig-${VERSION}
 CATEGORIES=		devel
+REVISION=		0
 
 HOMEPAGE=		http://www.freedesktop.org/software/pkgconfig/
 MASTER_SITES=		http://pkgconfig.freedesktop.org/releases/
@@ -15,9 +16,7 @@ MASTER_SITES=		http://pkgconfig.freedesktop.org/releases/
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		c pcre glib-2.0 pthread
-
-MODULES=		devel/gettext
+WANTLIB=  c glib-2.0 iconv intl pcre pthread
 
 LIB_DEPENDS=		devel/glib2
 

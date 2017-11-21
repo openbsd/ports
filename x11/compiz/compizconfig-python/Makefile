@@ -1,20 +1,19 @@
-# $OpenBSD: Makefile,v 1.3 2015/04/21 18:51:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2017/11/21 00:13:04 naddy Exp $
 
 COMMENT =	compiz configuration system bindings
 
 DISTNAME =	compizconfig-python-0.8.4
-REVISION =	1
+REVISION =	2
 
 MASTER_SITES =	http://releases.compiz.org/components/compizconfig-python/
 
-WANTLIB += ICE SM X11 X11-xcb Xcomposite Xdamage Xext Xfixes Xinerama
-WANTLIB += Xrandr Xrender compizconfig glib-2.0 lzma m pcre pthread
-WANTLIB += startup-notification-1 xcb xcb-util xml2 xslt z
+WANTLIB =  ICE SM X11 X11-xcb Xcomposite Xdamage Xext Xfixes Xinerama
+WANTLIB += Xrandr Xrender compizconfig glib-2.0 iconv intl lzma m pcre
+WANTLIB += pthread startup-notification-1 xcb xcb-util xml2 xslt z
 
 LIB_DEPENDS =	x11/compiz/libcompizconfig
 
-MODULES =	devel/gettext \
-		lang/python
+MODULES =	lang/python
 
 BUILD_DEPENDS =	devel/pyrex
 

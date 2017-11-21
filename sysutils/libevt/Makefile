@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/02/04 08:43:28 rpointel Exp $
+# $OpenBSD: Makefile,v 1.2 2017/11/21 00:13:03 naddy Exp $
 
 COMMENT =	library and tools to access the Windows Event Log (EVT)
 
 VERSION = 	20170120
 DISTNAME =	libevt-alpha-${VERSION}
 PKGNAME =	${DISTNAME:S/-alpha//}
+REVISION =	0
 
 SHARED_LIBS +=  evt                       0.0 # 1.0
 
@@ -19,7 +20,8 @@ MAINTAINER = 	Remi Pointel <rpointel@openbsd.org>
 # LGPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += bfio c m pthread util ${MODPY_WANTLIB}
+WANTLIB =  ${MODPY_WANTLIB}
+WANTLIB += bfio c iconv intl m pthread util
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--enable-python \
@@ -28,8 +30,7 @@ CONFIGURE_ARGS +=	--enable-python \
 
 WRKDIST =	${WRKDIR}/${PKGNAME}
 
-MODULES +=	devel/gettext \
-		lang/python
+MODULES +=	lang/python
 
 LIB_DEPENDS +=	devel/libbfio
 

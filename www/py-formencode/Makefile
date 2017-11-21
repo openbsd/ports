@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2016/01/06 17:01:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2017/11/21 00:13:04 naddy Exp $
 
 COMMENT =		HTML form validation, generation, and conversion
 
 MODPY_EGG_VERSION =	1.2.4
 DISTNAME =		FormEncode-${MODPY_EGG_VERSION}
 PKGNAME =		py-formencode-${MODPY_EGG_VERSION}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		www
 
@@ -16,8 +16,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MODPY_PI =		Yes
 
-MODULES =		devel/gettext \
-			lang/python
+MODULES =		lang/python
 
 TEST_DEPENDS =	databases/py-sqlobject \
 			devel/py-nose

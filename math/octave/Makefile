@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.99 2017/11/13 07:11:53 steven Exp $
+# $OpenBSD: Makefile,v 1.100 2017/11/21 00:13:02 naddy Exp $
 
 COMMENT =	high-level language for numerical computations
 
 VERSION =	4.2.1
 DISTNAME =	octave-${VERSION}
-REVISION =	0
+REVISION =	1
 CATEGORIES =	math
 
 SHARED_LIBS +=	octave		8.0
@@ -27,8 +27,8 @@ WANTLIB += Xext Xfixes Xft Xi Xinerama Xmu Xrandr Xrender Xt Xxf86vm amd
 WANTLIB += arpack blas bz2 c camd ccolamd cholmod colamd crypto curl
 WANTLIB += cxsparse drm ereadline expat fftw3 fftw3_threads fftw3f
 WANTLIB += fftw3f_threads fltk fltk_gl fontconfig freetype gl2ps glapi
-WANTLIB += glpk glut gmp hdf5 lapack lcms2 ltdl lzma m ncurses nghttp2
-WANTLIB += ogg pcre png portaudio pthread qhull qrupdate
+WANTLIB += glpk glut gmp hdf5 iconv intl lapack lcms2 ltdl lzma m ncurses
+WANTLIB += nghttp2 ogg pcre png portaudio pthread qhull qrupdate
 WANTLIB += sndfile sndio ssl ${COMPILER_LIBCXX} suitesparseconfig
 WANTLIB += umfpack util vorbis vorbisenc xcb xcb-dri2 xcb-glx z
 WANTLIB += execinfo glib-2.0 graphite2 gthread-2.0 harfbuzz icudata
@@ -36,8 +36,7 @@ WANTLIB += icui18n icuuc pcre2-16
 
 MASTER_SITES =	${MASTER_SITE_GNU:=octave/}
 
-MODULES =	devel/gettext \
-		fortran \
+MODULES =	fortran \
 		x11/qt5
 
 BUILD_DEPENDS =	${MODFORTRAN_BUILD_DEPENDS} \

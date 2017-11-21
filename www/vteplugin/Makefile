@@ -1,25 +1,23 @@
-# $OpenBSD: Makefile,v 1.20 2015/05/20 11:34:32 jca Exp $
+# $OpenBSD: Makefile,v 1.21 2017/11/21 00:13:04 naddy Exp $
 
 COMMENT =	npapi vte-based terminal for web browsers
 
 DISTNAME =	vteplugin-0.1
-REVISION =	12
+REVISION =	13
 CATEGORIES =	www x11
 
 # WTFPL
 PERMIT_PACKAGE_CDROM=	Yes
 
+WANTLIB =  X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
+WANTLIB += Xrender atk-1.0 cairo fontconfig freetype gdk-x11-2.0
+WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 gtk-x11-2.0 iconv
+WANTLIB += intl m pango-1.0 pangocairo-1.0 pangoft2-1.0 pthread vte z
+
 EXTRACT_SUFX=.tar.bz2
 
 MASTER_SITES =	http://blog.renevier.net/public/
-MODULES =	devel/gettext
-
 LIB_DEPENDS =	devel/vte
-WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
-WANTLIB += Xrandr Xrender atk-1.0 cairo fontconfig freetype gdk-x11-2.0
-WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 gtk-x11-2.0
-WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pthread vte
-WANTLIB += z
 
 do-build:
 	${CC} ${CFLAGS} -fPIC `pkg-config --cflags vte` ${WRKSRC}/npunix.c -c -o ${WRKSRC}/npunix.o

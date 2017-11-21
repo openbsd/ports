@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2016/03/18 21:38:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2017/11/21 00:13:02 naddy Exp $
 
 COMMENT =	OTR (off the record) encryption support for irssi
 
 V =		1.0.1
-REVISION =	1
+REVISION =	2
 DISTNAME =	irssi-otr-$V
 
 CATEGORIES =	net security
@@ -15,12 +15,10 @@ MAINTAINER =	Florian Stinglmayr <florian@n0la.org>
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c gcrypt gpg-error otr pthread
+WANTLIB =  c gcrypt gpg-error iconv intl otr pthread
 
 MASTER_SITES =	https://www.otr.im/dist/irssi-otr/
 EXTRACT_SUFX = 	.tar.bz2
-
-MODULES =	devel/gettext
 
 BUILD_DEPENDS =	net/irssi>=0.8.15p5 \
 		devel/libtool \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2015/10/13 06:29:38 bentley Exp $
+# $OpenBSD: Makefile,v 1.29 2017/11/21 00:13:00 naddy Exp $
 
 COMMENT=	graphically improved game of yore
 
@@ -7,7 +7,7 @@ DATAVERSION=	1.5
 SOUNDVERSION=	1.0
 MUSICVERSION=	1.0
 DISTNAME=	heroes-${VERSION}
-REVISION =	4
+REVISION =	5
 CATEGORIES=	games x11
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -21,15 +21,15 @@ HOMEPAGE=	http://heroes.sourceforge.net/
 MAINTAINER=	Peter Valchev <pvalchev@sightly.net>
 
 PERMIT_PACKAGE_CDROM=   Yes
-WANTLIB=	SDL SDL_mixer c m pthread
+
+WANTLIB=  SDL SDL_mixer c iconv intl m pthread
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=heroes/}
 
 USE_GMAKE=	Yes
 
-MODULES=	devel/gettext
-
-LIB_DEPENDS=	devel/sdl \
+LIB_DEPENDS=	devel/gettext \
+		devel/sdl \
 		devel/sdl-mixer
 
 CONFIGURE_ARGS= --disable-debug \

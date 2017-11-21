@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.31 2017/07/26 22:45:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2017/11/21 00:13:00 naddy Exp $
 
 COMMENT=	Oxyd/Rock'n'Roll clone
 
 V=		1.01
 DISTNAME=	enigma-${V}-64bit
 PKGNAME=	enigma-${V}
-REVISION =	6
+REVISION =	7
 
 CATEGORIES=	games x11
 
@@ -15,14 +15,12 @@ HOMEPAGE=	http://www.nongnu.org/enigma/
 PERMIT_PACKAGE_CDROM=   Yes
 
 WANTLIB=	SDL c m enet pthread ${COMPILER_LIBCXX} z SDL_image>=1 \
-		SDL_mixer>=2 SDL_ttf>=7 png>=8 zipios>=1 \
+		SDL_mixer>=2 SDL_ttf>=7 iconv intl png>=8 zipios>=1 \
 		xerces-c
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=enigma-game/}
 
 WRKDIST=	${WRKDIR}/enigma-${V}
-
-MODULES=	devel/gettext
 
 RUN_DEPENDS=	devel/desktop-file-utils \
 		x11/gtk+3,-guic

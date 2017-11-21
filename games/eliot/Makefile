@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2017/07/26 22:45:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2017/11/21 00:13:00 naddy Exp $
 
 V =		2.1
 COMMENT =	scrabble game
 DISTNAME =	eliot-${V}
 CATEGORIES =	games
-REVISION =	1
+REVISION =	2
 
 HOMEPAGE =	http://nongnu.org/eliot/
 
@@ -22,7 +22,7 @@ MASTER_SITES0 =	${MASTER_SITE_SAVANNAH:=eliot/dict/}
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-MODULES =	x11/qt4 devel/gettext
+MODULES =	x11/qt4
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -34,7 +34,7 @@ BUILD_DEPENDS =	devel/boost \
 RUN_DEPENDS =	devel/desktop-file-utils
 LIB_DEPENDS =	textproc/arabica devel/libconfig
 WANTLIB +=	lib/qt4/QtGui lib/qt4/QtNetwork c m pthread ${COMPILER_LIBCXX}
-WANTLIB +=	arabica config++ expat ncursesw
+WANTLIB +=	arabica config++ expat iconv intl ncursesw
 
 post-configure:
 	${SUBST_CMD} ${WRKSRC}/qt/main_window.cpp

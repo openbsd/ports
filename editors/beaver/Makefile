@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2017/04/25 21:45:02 jca Exp $
+# $OpenBSD: Makefile,v 1.32 2017/11/21 00:13:00 naddy Exp $
 
 COMMENT=	lightweight Gtk text editor with syntax highlighting
 
@@ -6,7 +6,7 @@ DISTNAME=	beaver0_3_0_1
 PKGNAME=	beaver-0.3.0.1
 CATEGORIES=	editors
 
-REVISION=	9
+REVISION=	10
 
 HOMEPAGE=	http://beaver-editor.sourceforge.net/
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=beaver-editor/}
@@ -15,13 +15,10 @@ EXTRACT_SUFX=	.tgz
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	X11 Xcomposite Xcursor Xdamage Xext Xfixes \
-		Xi Xinerama Xrandr Xrender atk-1.0 c cairo fontconfig \
-		freetype gio-2.0 glib-2.0 gobject-2.0 \
-		m pango-1.0 pangocairo-1.0 pangoft2-1.0 pthread \
-		z gdk_pixbuf-2.0 gdk-x11-2.0 gtk-x11-2.0
-
-MODULES=	devel/gettext
+WANTLIB=  X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
+WANTLIB+= Xrender atk-1.0 c cairo fontconfig freetype gdk-x11-2.0
+WANTLIB+= gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 gtk-x11-2.0 iconv
+WANTLIB+= intl m pango-1.0 pangocairo-1.0 pangoft2-1.0 pthread z
 
 LIB_DEPENDS=	x11/gtk+2
 

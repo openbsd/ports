@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2017/11/16 23:20:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.39 2017/11/21 00:13:00 naddy Exp $
 
 COMMENT =	emulates the Super Nintendo Entertainment System
 BROKEN-alpha =	ICE/failure on filter/hq2x.cpp
@@ -7,7 +7,7 @@ BROKEN-powerpc =ICE/failure on filter/hq2x.cpp
 
 DISTNAME =	snes9x-1.54.1
 CATEGORIES =	emulators games
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	http://www.snes9x.com/
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_FTP =	Yes
 WANTLIB += SDL X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender Xv atk-1.0 c cairo fontconfig freetype
 WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
-WANTLIB += gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
+WANTLIB += gthread-2.0 gtk-x11-2.0 iconv intl m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 png pthread xml2 z ${COMPILER_LIBCXX}
 
 MASTER_SITES =	https://sites.google.com/site/bearoso/snes9x/
@@ -31,8 +31,7 @@ LIB_DEPENDS =	devel/sdl \
 		textproc/libxml \
 		x11/gtk+2 
 
-MODULES =	devel/gettext \
-		textproc/intltool \
+MODULES =	textproc/intltool \
 
 COMPILER =	base-clang ports-gcc
 

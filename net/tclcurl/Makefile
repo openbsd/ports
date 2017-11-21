@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2017/05/10 01:08:52 stu Exp $
+# $OpenBSD: Makefile,v 1.30 2017/11/21 00:13:03 naddy Exp $
 
 COMMENT =	Tcl bindings for Curl
 
@@ -6,17 +6,18 @@ V =		7.19.6
 
 DISTNAME =	TclCurl-${V}
 CATEGORIES =	net
-REVISION =	5
+REVISION =	6
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB +=	crypto curl nghttp2 ssl z
+WANTLIB =  crypto curl iconv intl nghttp2 ssl z
 
 MASTER_SITES =	https://distfiles.nl/
-MODULES =	lang/tcl devel/gettext
-LIB_DEPENDS =	net/curl
+MODULES =	lang/tcl
+LIB_DEPENDS =	devel/gettext \
+		net/curl
 BUILD_DEPENDS =	${MODTCL_BUILD_DEPENDS}
 RUN_DEPENDS =	${MODTCL_RUN_DEPENDS}
 FAKE_FLAGS =	PKG_DIR=tclcurl INSTALL_LIBRARY='$$(INSTALL_DATA)'

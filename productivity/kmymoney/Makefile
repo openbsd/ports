@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2017/11/18 22:23:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2017/11/21 00:13:03 naddy Exp $
 COMMENT =		accounting for KDE 4
 CATEGORIES =		productivity x11
 HOMEPAGE =		https://kmymoney.org/
 MAINTAINER =		Vadim Zhukov <zhuk@openbsd.org>
 VERSION =		4.8.0
 DISTNAME =		kmymoney-${VERSION}
-REVISION =		2
+REVISION =		3
 
 SHARED_LIBS =	kmm_kdchart				1.1
 SHARED_LIBS +=	kmm_mymoney				1.1
@@ -32,13 +32,13 @@ WANTLIB += ${KDE4LIB}/akonadi-contact ${KDE4LIB}/akonadi-kde
 WANTLIB += ${KDE4LIB}/kcalcore ${KDE4LIB}/kmime
 WANTLIB += ${KDE4LIB}/kpimidentities ${KDE4LIB}/kpimutils
 WANTLIB += alkimia assuan gmp gpg-error gpgme++-pthread gpgme-pthread
-WANTLIB += ical icalss ofx osp qgpgme soprano
+WANTLIB += ical icalss iconv intl ofx osp qgpgme soprano
 WANTLIB += aqbanking gwengui-cpp gwengui-qt4 gwenhywfar
 WANTLIB += QtDeclarative QtScript krosscore
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/kmymoney/${VERSION}/src/}
 
-MODULES =		x11/kde4 devel/gettext lang/python multimedia/phonon
+MODULES =		x11/kde4 lang/python multimedia/phonon
 MODKDE4_USE =		pim
 
 BUILD_DEPENDS =	devel/boost \

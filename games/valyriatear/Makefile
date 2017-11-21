@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2017/11/18 22:23:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2017/11/21 00:13:01 naddy Exp $
 
 COMMENT =	free J-RPG game
 CATEGORIES =	games x11
-REVISION =	3
+REVISION =	4
 
 GH_ACCOUNT =	Bertram25
 GH_PROJECT =	ValyriaTear
@@ -16,12 +16,11 @@ HOMEPAGE =	https://valyriatear.blogspot.com/
 # For specific details, see the LICENSES file.
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += GL GLU ICE SDL SDL_image SDL_ttf SM X11 Xext c m
+WANTLIB += GL GLU ICE SDL SDL_image SDL_ttf SM X11 Xext c iconv intl m
 WANTLIB += ogg openal png pthread ${COMPILER_LIBCXX} vorbis vorbisfile
 WANTLIB += z ${MODLUA_WANTLIB}
 
 MODULES =	devel/cmake \
-		devel/gettext \
 		lang/lua
 
 BUILD_DEPENDS =	devel/boost>=1.52 \

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2017/06/13 07:43:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2017/11/21 00:13:02 naddy Exp $
 
 COMMENT =		shell client for ogmrip
 
 DISTNAME =		shrip-0.6.0
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		multimedia
 
@@ -12,14 +12,13 @@ MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c dvdcss dvdread enca ffi gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 lzma m ogmdvd ogmjob ogmrip ogmrip-lavc
-WANTLIB += ogmrip-mplayer pcre pthread xml2 z
+WANTLIB =  c dvdcss dvdread enca ffi gio-2.0 glib-2.0 gmodule-2.0
+WANTLIB += gobject-2.0 iconv intl lzma m ogmdvd ogmjob ogmrip
+WANTLIB += ogmrip-lavc ogmrip-mplayer pcre pthread xml2 z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=ogmrip/}
 
-MODULES =		devel/gettext \
-			textproc/intltool
+MODULES =		textproc/intltool
 
 LIB_DEPENDS =		multimedia/ogmrip,-main
 

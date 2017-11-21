@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.29 2017/11/18 22:23:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.30 2017/11/21 00:12:59 naddy Exp $
 
 COMMENT =	Qt4-based featureful music player
 
 V =		1.2.3
 DISTNAME =	clementine-${V}
 CATEGORIES =	audio x11
-REVISION =	8
+REVISION =	9
 
 HOMEPAGE =	http://clementine-player.org/
 
@@ -24,13 +24,13 @@ WANTLIB += lib/qt4/QtOpenGL lib/qt4/QtSql lib/qt4/QtWebKit
 WANTLIB += lib/qt4/QtXml lib/qt4/QtXmlPatterns
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += gstapp-0.10 gstbase-0.10 gstcdda-0.10 gstreamer-0.10
-WANTLIB += gsttag-0.10
+WANTLIB += gsttag-0.10 iconv intl
 WANTLIB += cdio chromaprint gpod execinfo fftw3 lastfm mtp mygpo-qt
 WANTLIB += protobuf qca qjson tag>=5.0 usb-1.0 xml2 ${COMPILER_LIBCXX}
 # those are dlopen'ed
 WANTLIB += plist
 
-MODULES =		devel/cmake devel/gettext x11/qt4
+MODULES =		devel/cmake x11/qt4
 COMPILER =		base-clang ports-gcc
 
 BUILD_DEPENDS =		devel/boost \

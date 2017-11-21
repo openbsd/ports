@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2016/11/04 11:35:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2017/11/21 00:13:03 naddy Exp $
 
 # as error: ``operation combines symbols in different segments''
 # (known toolchain problem)
@@ -9,7 +9,7 @@ CATEGORIES=	net devel textproc
 
 V=		1.06.35
 DISTNAME=	xmlrpc-c-${V}
-REVISION=	2
+REVISION=	3
 
 EXTRACT_SUFX=	.tgz
 
@@ -30,11 +30,10 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xmlrpc-c/}
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB+= c crypto curl nghttp2 pthread ssl z
+WANTLIB=  c crypto curl iconv intl nghttp2 pthread ssl z
 
-MODULES=		devel/gettext
-
-LIB_DEPENDS=		net/curl
+LIB_DEPENDS=		devel/gettext \
+			net/curl
 
 CONFIGURE_STYLE=	gnu
 USE_GMAKE=		Yes

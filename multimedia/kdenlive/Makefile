@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2017/11/18 22:23:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2017/11/21 00:13:02 naddy Exp $
 
 COMMENT =		non-linear video editor for KDE
 VERSION =		0.9.10
 DISTNAME =		kdenlive-${VERSION}
 CATEGORIES =		multimedia
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE =		http://www.kdenlive.org/
 MAINTAINER =		KDE porting team <openbsd-kde@googlegroups.com>
@@ -12,7 +12,7 @@ MAINTAINER =		KDE porting team <openbsd-kde@googlegroups.com>
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =  c m pthread
+WANTLIB =  c iconv intl m pthread
 WANTLIB += GL GLU ICE SM X11 Xext
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
 WANTLIB += lib/qt4/QtOpenGL lib/qt4/QtScript lib/qt4/QtSvg lib/qt4/QtXml
@@ -25,7 +25,7 @@ WANTLIB += ${COMPILER_LIBCXX}
 MASTER_SITES =		${MASTER_SITE_KDE:=stable/kdenlive/${VERSION}/src/}
 EXTRACT_SUFX =		.tar.bz2
 
-MODULES =		x11/kde4 devel/gettext
+MODULES =		x11/kde4
 
 BUILD_DEPENDS =		devel/gettext-tools
 

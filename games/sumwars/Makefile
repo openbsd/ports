@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2017/11/16 23:20:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2017/11/21 00:13:00 naddy Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 
@@ -7,7 +7,7 @@ COMMENT =		role playing game
 V =			0.5.8
 DISTNAME =		sumwars-${V}-src
 PKGNAME =		sumwars-${V}
-REVISION =		3
+REVISION =		4
 
 SUBST_VARS +=		V
 
@@ -23,14 +23,13 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB += CEGUIBase-0 CEGUIOgreRenderer-0 OIS OgreMain OgreRTShaderSystem
 WANTLIB += OgreTerrain X11 Xrandr alut boost_chrono-mt boost_date_time-mt
 WANTLIB += boost_filesystem-mt boost_system-mt boost_thread-mt
-WANTLIB += c enet m ogg openal physfs pthread tinyxml vorbis
+WANTLIB += c enet iconv intl m ogg openal physfs pthread tinyxml vorbis
 WANTLIB += vorbisfile boost_atomic-mt ${MODLUA_WANTLIB} ${COMPILER_LIBCXX}
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=sumwars/}
 EXTRACT_SUFX =		.tar.bz2
 
 MODULES =		devel/cmake \
-			devel/gettext \
 			lang/lua
 MODLUA_VERSION =	5.2
 
@@ -38,6 +37,7 @@ COMPILER =		base-clang ports-gcc
 LIB_DEPENDS =		x11/cegui \
 			audio/freealut \
 			audio/libvorbis \
+			devel/gettext \
 			devel/physfs \
 			devel/ois \
 			net/enet

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2017/11/16 07:58:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2017/11/21 00:13:00 naddy Exp $
 
 COMMENT =	Playstation 1 emulator
 
 DISTNAME =	pcsxr-1.9.94.r87113p0
 PKGNAME =	pcsxr-1.9.94beta0
-REVISION =	6
+REVISION =	7
 CATEGORIES =	emulators games
 HOMEPAGE =	http://pcsxr.codeplex.com/
 
@@ -16,7 +16,7 @@ WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xtst Xv Xxf86vm
 WANTLIB += atk-1.0 atk-bridge-2.0 atspi c cairo cairo-gobject cdio
 WANTLIB += dbus-1 drm epoxy expat ffi fontconfig freetype gdk-3
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glapi glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += graphite2 gthread-2.0 gtk-3 harfbuzz m pango-1.0
+WANTLIB += graphite2 gthread-2.0 gtk-3 harfbuzz iconv intl m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB += sndio ${COMPILER_LIBCXX} usbhid xcb xcb-dri2 xcb-glx
 WANTLIB += xcb-render xcb-shm z
@@ -25,7 +25,7 @@ MASTER_SITES =	http://www.elsasser.org/openbsd/distfiles/
 
 USE_GMAKE =	Yes
 
-MODULES =	devel/gettext textproc/intltool
+MODULES =	textproc/intltool
 
 CONFIGURE_STYLE =	autoconf
 AUTOCONF_VERSION =	2.69

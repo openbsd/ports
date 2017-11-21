@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2017/11/18 22:23:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.43 2017/11/21 00:13:03 naddy Exp $
 
 BROKEN-i386=		hangs at runtime. started after switch to clang
 
@@ -12,7 +12,7 @@ SHARED_LIBS=		fontforge	4.0 \
 			gioftp		2.1 \
 			gunicode	5.1 \
 			gutils		2.1
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		print
 
@@ -23,17 +23,16 @@ MAINTAINER=		Matthias Kilian <kili@openbsd.org>
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ${MODPY_WANTLIB}
+WANTLIB =  ${MODPY_WANTLIB}
 WANTLIB += ICE SM X11 Xext Xft Xi Xrender c cairo expat ffi fontconfig
 WANTLIB += freetype gif glib-2.0 gmodule-2.0 gobject-2.0 graphite2
-WANTLIB += gthread-2.0 harfbuzz jpeg lzma m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pangoxft-1.0 pcre pixman-1 png pthread
-WANTLIB += tiff util xcb xcb-render xcb-shm xkbfile xkbui
-WANTLIB += xml2 z
+WANTLIB += gthread-2.0 harfbuzz iconv intl jpeg lzma m pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pangoxft-1.0 pcre pixman-1 png
+WANTLIB += pthread tiff util xcb xcb-render xcb-shm xkbfile xkbui xml2 z
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=fontforge/}
 
-MODULES=		devel/gettext lang/python
+MODULES=		lang/python
 
 BUILD_DEPENDS=		devel/gettext-tools
 

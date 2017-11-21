@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2017/11/02 17:38:19 rpointel Exp $
+# $OpenBSD: Makefile,v 1.3 2017/11/21 00:13:03 naddy Exp $
 
 COMMENT =	library and tools to access FileVault Drive Encryption
 
 VERSION = 	20170930
 DISTNAME =	libfvde-experimental-${VERSION}
 PKGNAME =	${DISTNAME:S/-experimental//}
+REVISION =	0
 
 SHARED_LIBS +=  fvde                       0.1 # 1.0
 
@@ -19,15 +20,15 @@ MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 # LGPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += bfio c crypto fuse m pthread ${MODPY_WANTLIB} util z
+WANTLIB =  ${MODPY_WANTLIB}
+WANTLIB += bfio c crypto fuse iconv intl m pthread util z
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--enable-python
 
 WRKDIST =	${WRKDIR}/${PKGNAME}
 
-MODULES +=	devel/gettext \
-		lang/python
+MODULES +=	lang/python
 
 LIB_DEPENDS +=	devel/libbfio
 

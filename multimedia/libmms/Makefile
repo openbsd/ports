@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2015/04/21 18:24:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2017/11/21 00:13:02 naddy Exp $
 
 COMMENT =	library for parsing mms:// and mmsh:// type network streams
 
 DISTNAME =	libmms-0.6.2
 CATEGORIES =	multimedia net
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=libmms/}
-REVISION=	3
+REVISION=	4
 
 SHARED_LIBS =	mms 1.0 #0.2
 
@@ -14,9 +14,7 @@ HOMEPAGE =	http://libmms.sourceforge.net/
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += glib-2.0 pcre pthread
-
-MODULES =	devel/gettext
+WANTLIB =  glib-2.0 iconv intl pcre pthread
 
 LIB_DEPENDS =	devel/glib2
 

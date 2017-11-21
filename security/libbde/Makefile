@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2017/11/02 12:09:48 rpointel Exp $
+# $OpenBSD: Makefile,v 1.5 2017/11/21 00:13:03 naddy Exp $
 
 COMMENT =		access the BitLocker Drive Encryption encrypted volumes
 
 VERSION =		20170902
 DISTNAME =		libbde-alpha-${VERSION}
 PKGNAME =		libbde-${VERSION}
+REVISION =		0
 
 SHARED_LIBS +=  bde                       0.1 # 1.0
 
@@ -19,7 +20,8 @@ MAINTAINER =		Remi Pointel <rpointel@openbsd.org>
 # LGPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += bfio c crypto fuse m pthread util ${MODPY_WANTLIB}
+WANTLIB =  ${MODPY_WANTLIB}
+WANTLIB += bfio c crypto fuse iconv intl m pthread util
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--mandir=${PREFIX}/man \
@@ -29,8 +31,7 @@ CONFIGURE_ARGS +=	--mandir=${PREFIX}/man \
 
 WRKDIST =		${WRKDIR}/${PKGNAME}
 
-MODULES =		devel/gettext \
-			lang/python
+MODULES =		lang/python
 
 LIB_DEPENDS +=		devel/libbfio
 

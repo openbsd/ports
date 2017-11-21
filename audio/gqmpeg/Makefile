@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.60 2017/10/23 17:10:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.61 2017/11/21 00:12:59 naddy Exp $
 
 COMMENT=		front-end to various audio players
 
 DISTNAME=		gqmpeg-0.91.1
-REVISION=		11
+REVISION=		12
 CATEGORIES=		audio
 
 HOMEPAGE=		http://gqmpeg.sourceforge.net/
@@ -11,16 +11,14 @@ HOMEPAGE=		http://gqmpeg.sourceforge.net/
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig
-WANTLIB += freetype gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
-WANTLIB += xcb z gdk_pixbuf-2.0 gdk-x11-2.0 gtk-x11-2.0
-WANTLIB += gthread-2.0 pthread xcb-render GL xcb-shm
+WANTLIB =  GL X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
+WANTLIB += Xrandr Xrender atk-1.0 c cairo expat fontconfig freetype
+WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
+WANTLIB += gobject-2.0 gthread-2.0 gtk-x11-2.0 iconv intl m pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pixman-1 png pthread xcb
+WANTLIB += xcb-render xcb-shm z
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gqmpeg/}
-
-MODULES=		devel/gettext
 
 RUN_DEPENDS=		audio/mpg321 \
 			devel/desktop-file-utils

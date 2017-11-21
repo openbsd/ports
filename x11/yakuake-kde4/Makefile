@@ -1,20 +1,20 @@
-# $OpenBSD: Makefile,v 1.8 2017/11/18 22:24:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2017/11/21 00:13:05 naddy Exp $
 
 CATEGORIES =	x11 sysutils
 COMMENT =	quake-style terminal emulator for KDE 4
 HOMEPAGE =	http://yakuake.kde.org/
 VERSION =	2.9.9
 DISTNAME =	yakuake-${VERSION}
-REVISION =	2
+REVISION =	3
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/yakuake/${VERSION}/src/}
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =          Yes
 
-MODULES =		devel/gettext x11/kde4
+MODULES =		x11/kde4
 
-WANTLIB =  c m pthread X11
+WANTLIB =  c iconv intl m pthread X11
 WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg
 WANTLIB += lib/qt4/QtXml

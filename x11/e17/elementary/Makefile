@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2017/10/23 17:11:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2017/11/21 00:13:04 naddy Exp $
 
 BROKEN-i386 =		segfault during build since switch to clang
 
@@ -6,25 +6,24 @@ COMMENT =		basic widget set, based on EFL
 
 VERSION =		1.7.10
 DISTNAME =		elementary-${VERSION}
-REVISION =		8
+REVISION =		9
 
 SHARED_LIBS +=	elementary                1.0 # 8.10
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += ${MODLUA_WANTLIB}
+WANTLIB =  ${MODLUA_WANTLIB}
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender Xss Xtst c cares crypto curl dbus-1 ecore ecore_con
 WANTLIB += ecore_evas ecore_file ecore_imf ecore_imf_evas ecore_input
 WANTLIB += ecore_input_evas ecore_ipc ecore_x edbus edje eet efreet
 WANTLIB += efreet_mime efreet_trash eina eio embryo emotion ethumb
 WANTLIB += ethumb_client evas exif expat fontconfig freetype fribidi
-WANTLIB += glib-2.0 graphite2 harfbuzz jpeg m nghttp2 pcre pthread
-WANTLIB += ssl xcb z
+WANTLIB += glib-2.0 graphite2 harfbuzz iconv intl jpeg m nghttp2 pcre
+WANTLIB += pthread ssl xcb z
 
-MODULES =		devel/gettext \
-			lang/lua \
+MODULES =		lang/lua \
 			x11/e17
 
 MODE17_DESKTOP_FILE =	Yes

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2017/08/22 19:19:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2017/11/21 00:13:01 naddy Exp $
 
 COMMENT =	japanese input engine for ibus
 
 GH_ACCOUNT =	ibus
 GH_PROJECT =	ibus-anthy
 GH_TAGNAME =	1.5.4
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS =	anthygobject-1.0	1.0 # 5.504
 
@@ -18,13 +18,13 @@ MAINTAINER =	Federico G. Schwindt <fgsch@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =	anthy anthydic ffi glib-2.0 gobject-2.0 m pcre pthread
+WANTLIB =  anthy anthydic ffi glib-2.0 gobject-2.0 iconv intl m pcre
+WANTLIB += pthread
 
 # XXX: Remove when upgrading to newer tag
 MASTER_SITES =	https://distfiles.nl/
 
-MODULES =	devel/gettext \
-		lang/python \
+MODULES =	lang/python \
 		textproc/intltool
 
 BUILD_DEPENDS =	inputmethods/ibus>=1.5.0

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2017/10/23 17:10:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2017/11/21 00:12:59 naddy Exp $
 
 COMMENT =		suite of tools for electronic design automation
 DISTNAME =		geda-gaf-1.6.0
@@ -6,7 +6,7 @@ CATEGORIES =		cad
 HOMEPAGE =		http://geda.seul.org
 MAINTAINER =		Edd Barrett <edd@openbsd.org>
 
-REVISION =		11
+REVISION =		12
 
 SHARED_LIBS = 		geda	0.0	# 38.0
 
@@ -17,13 +17,11 @@ WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender Xxf86vm atk-1.0 c cairo drm expat ffi
 WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gmp gobject-2.0 graphite2 gthread-2.0
-WANTLIB += gtk-x11-2.0 guile harfbuzz ltdl m pango-1.0 pangocairo-1.0
+WANTLIB += gtk-x11-2.0 guile harfbuzz iconv intl ltdl m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread ${COMPILER_LIBCXX}
 WANTLIB += xcb xcb-render xcb-shm z
 
 MASTER_SITES =		http://geda.seul.org/release/v1.6/1.6.0/
-
-MODULES =		devel/gettext
 
 LIB_DEPENDS =		devel/glib2 \
 			x11/gtk+2 \

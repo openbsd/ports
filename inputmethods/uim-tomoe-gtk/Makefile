@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2017/10/23 17:10:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2017/11/21 00:13:01 naddy Exp $
 
 COMMENT=	japanese handwriting
 
 DISTNAME=	uim-tomoe-gtk-0.6.0
-REVISION=	1
+REVISION=	2
 
 HOMEPAGE= 	https://osdn.jp/projects/tomoe/
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tomoe/uim-tomoe-gtk/}
@@ -13,15 +13,15 @@ CATEGORIES=	inputmethods japanese
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
-WANTLIB += Xrandr Xrender atk-1.0 c cairo expat ffi fontconfig
-WANTLIB += freetype gcroots gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
-WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
-WANTLIB += gtk-x11-2.0 harfbuzz m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png pthread tomoe tomoe-gtk
-WANTLIB += uim uim-scm xcb xcb-render xcb-shm z
+WANTLIB =  X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
+WANTLIB += Xrender atk-1.0 c cairo expat ffi fontconfig freetype gcroots
+WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
+WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-x11-2.0 harfbuzz iconv
+WANTLIB += intl m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
+WANTLIB += png pthread tomoe tomoe-gtk uim uim-scm xcb xcb-render
+WANTLIB += xcb-shm z
 
-MODULES=	devel/gettext textproc/intltool
+MODULES=	textproc/intltool
 
 BUILD_DEPENDS=	textproc/gsed
 

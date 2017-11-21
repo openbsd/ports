@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2017/11/18 22:23:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2017/11/21 00:13:02 naddy Exp $
 
 COMMENT=	lightweight DLNA/UPnP-AV media server (aka ReadyMedia)
 
 V=		1.2.1
 DISTNAME=	minidlna-$V
 PKGNAME=	minidlna-$V
+REVISION=	0
 
 CATEGORIES=	multimedia
 
@@ -15,7 +16,7 @@ HOMEPAGE=	http://sourceforge.net/projects/minidlna/
 # GPLv2 only
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += FLAC avformat avutil c exif id3tag jpeg ogg
+WANTLIB =  FLAC avformat avutil c exif iconv id3tag intl jpeg ogg
 WANTLIB += pthread sqlite3 vorbis
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=minidlna/}
@@ -27,7 +28,6 @@ CONFIGURE_ARGS= --with-log-path=/var/log/minidlna \
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-MODULES=	devel/gettext
 BUILD_DEPENDS=	devel/gettext-tools
 LIB_DEPENDS=	audio/flac \
 		audio/libid3tag \

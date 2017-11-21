@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2017/11/18 22:23:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2017/11/21 00:13:02 naddy Exp $
 
 COMMENT =		KDE library implementing VK.com API
 VERSION =		4.12.0
 DISTNAME =		libkvkontakte-${VERSION}
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS =		kvkontakte	0.0
 
@@ -14,7 +14,7 @@ MAINTAINER =		KDE porting team <openbsd-kde@googlegroups.com>
 # LGPLv2.1+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =  m pthread ${COMPILER_LIBCXX}
+WANTLIB =  iconv intl m pthread ${COMPILER_LIBCXX}
 WANTLIB += QtDBus QtGui QtNetwork QtSvg QtWebKit QtXml
 WANTLIB += ${KDE4LIB}/kdeui ${KDE4LIB}/kdewebkit
 WANTLIB += ${KDE4LIB}/kio ${KDE4LIB}/kparts
@@ -28,7 +28,7 @@ LIB_DEPENDS =		devel/qjson>=0.7
 MASTER_SITES =		${MASTER_SITE_KDE:=stable/libkvkontakte/${VERSION}/src/}
 EXTRACT_SUFX =		.tar.xz
 
-MODULES =		x11/kde4 devel/gettext
+MODULES =		x11/kde4
 MODKDE4_USE =		libs
 
 # - requires VK auth;

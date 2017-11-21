@@ -1,25 +1,24 @@
-# $OpenBSD: Makefile,v 1.14 2017/11/19 19:25:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2017/11/21 00:13:00 naddy Exp $
 
 COMMENT=	distributed version control system
 
 VERSION=	1.1
 DISTNAME=	monotone-${VERSION}
 CATEGORIES=	devel
-REVISION=	1
+REVISION=	2
 
 HOMEPAGE=	http://monotone.ca/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += botan-1.10 c idn m pcre pthread sqlite3 ${COMPILER_LIBCXX} z
-WANTLIB += ${MODLUA_WANTLIB}
+WANTLIB += botan-1.10 c iconv idn intl m pcre pthread sqlite3 z
+WANTLIB += ${COMPILER_LIBCXX} ${MODLUA_WANTLIB}
 
 MASTER_SITES=	${HOMEPAGE}/downloads/${VERSION}/
 EXTRACT_SUFX=	.tar.bz2
 
-MODULES=	devel/gettext \
-		lang/lua
+MODULES=	lang/lua
 BUILD_DEPENDS=	devel/boost \
 		devel/gettext-tools
 LIB_DEPENDS=	databases/sqlite3 \

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.26 2015/10/30 15:54:50 benoit Exp $
+# $OpenBSD: Makefile,v 1.27 2017/11/21 00:13:00 naddy Exp $
 
 COMMENT =	breakout game with many levels, powerups, good graphics
 
 DISTNAME =	lbreakout2-2.6.5
 CATEGORIES =	games x11
+REVISION =	0
 
 HOMEPAGE =	http://lgames.sourceforge.net/index.php?action=show_project&project=LBreakout2
 
@@ -12,11 +13,9 @@ MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =	SDL c m pthread z png>=9.0 SDL_mixer
+WANTLIB =  SDL SDL_mixer c iconv intl m png>=9.0 pthread z
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=lgames/}
-
-MODULES =	devel/gettext
 
 LIB_DEPENDS =	devel/sdl-mixer \
 		graphics/png

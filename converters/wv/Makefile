@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.30 2016/06/01 08:34:25 landry Exp $
+# $OpenBSD: Makefile,v 1.31 2017/11/21 00:12:59 naddy Exp $
 
 COMMENT =	convert various Microsoft formats into HTML/PNG
 
 DISTNAME =	wv-1.2.9
+REVISION =	0
 
 SHARED_LIBS =	wv-1.2		1.0 \
 		wv		1.0
@@ -13,11 +14,9 @@ HOMEPAGE =	http://wvware.sourceforge.net/
 
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += X11 bz2 c expat ffi freetype gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 gsf-1 jpeg lzma m pcre png pthread wmf-0.2
-WANTLIB += wmflite-0.2 xcb xml2 z
-
-MODULES =	devel/gettext
+WANTLIB =  X11 bz2 c expat ffi freetype gio-2.0 glib-2.0 gmodule-2.0
+WANTLIB += gobject-2.0 gsf-1 iconv intl jpeg lzma m pcre png pthread
+WANTLIB += wmf-0.2 wmflite-0.2 xcb xml2 z
 
 MASTER_SITES =	http://abisource.com/downloads/wv/1.2.9/
 

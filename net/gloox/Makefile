@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2017/08/08 08:57:45 bentley Exp $
+# $OpenBSD: Makefile,v 1.17 2017/11/21 00:13:02 naddy Exp $
 
 COMMENT =	extensible C++ library for XMPP clients and components
 
 DISTNAME =	gloox-1.0.20
 SHARED_LIBS +=	gloox                2.0      # 8.0
 CATEGORIES =	net devel
+REVISION =	0
 
 HOMEPAGE =	https://camaya.net/gloox/
 MASTER_SITES =	https://camaya.net/download/
@@ -14,9 +15,8 @@ MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 # GPLv3 with OpenSSL exemption
 PERMIT_PACKAGE_CDROM =		Yes
 
-WANTLIB += crypto idn m pthread ssl ${COMPILER_LIBCXX} z
+WANTLIB += crypto iconv idn intl m pthread ssl ${COMPILER_LIBCXX} z
 
-MODULES =			devel/gettext
 LIB_DEPENDS =			devel/libidn
 
 USE_GMAKE =			Yes

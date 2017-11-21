@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2017/05/18 21:27:47 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2017/11/21 00:13:04 naddy Exp $
 
 COMMENT=	mount SMB shares from userland via FUSE
 
 DISTNAME=	usmb-20130204
-REVISION=	4
+REVISION=	5
 
 CATEGORIES=	sysutils
 
@@ -12,12 +12,11 @@ HOMEPAGE=	http://ametros.net/code.html
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c fuse glib-2.0 smbclient pthread xml2
+WANTLIB =  c fuse glib-2.0 iconv intl pthread smbclient xml2
 
 # http://repo.or.cz/w/usmb.git/snapshot/aa94e132c12faf1a00f547ea4a96b5728612dea6.tar.gz
 MASTER_SITES=	https://spacehopper.org/mirrors/
 
-MODULES=	devel/gettext
 BUILD_DEPENDS=	textproc/gsed
 LIB_DEPENDS=	devel/glib2 \
 		net/samba \

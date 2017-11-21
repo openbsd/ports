@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2017/11/18 22:24:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2017/11/21 00:13:03 naddy Exp $
 
 COMMENT =	powerful batch file renamer for KDE4
 
@@ -10,7 +10,7 @@ DOCFILES =	krename-3.0.12.pdf \
 		krename-3.0.3-ru.pdf
 DISTFILES =	${SRCFILES} ${DOCFILES}
 EXTRACT_ONLY =	${SRCFILES}
-REVISION =	3
+REVISION =	4
 
 CATEGORIES =	sysutils x11
 HOMEPAGE =	http://www.krename.net/
@@ -19,7 +19,7 @@ PORTROACH =	limit:^4
 
 PKGSPEC =	krename->=3.9
 
-WANTLIB =  c freetype m pthread
+WANTLIB =  c freetype iconv intl m pthread
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg
 WANTLIB += lib/qt4/QtXml
 WANTLIB += ${KDE4LIB}/kdeui ${KDE4LIB}/kio ${KDE4LIB}/kjsapi
@@ -31,7 +31,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=krename/}
 
-MODULES =		x11/kde4 devel/gettext
+MODULES =		x11/kde4
 
 BUILD_DEPENDS =	devel/gettext-tools
 

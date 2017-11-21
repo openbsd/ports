@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2016/01/08 10:37:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2017/11/21 00:12:59 naddy Exp $
 
 PORTROACH=	skipv:bm_start
 
@@ -6,6 +6,7 @@ COMMENT=	radio contest logger
 
 DISTNAME=	tlf-1.2.1
 CATEGORIES=	comms hamradio
+REVISION=	0
 
 HOMEPAGE=	http://home.iae.nl/users/reinc/TLF-0.2.html
 
@@ -15,8 +16,7 @@ WRKDIST=	${WRKDIR}/tlf-${DISTNAME}
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	glib-2.0 hamlib>=2 ncurses panel pthread sndio c m
-MODULES+=	devel/gettext
+WANTLIB=  c glib-2.0 hamlib>=2 iconv intl m ncurses panel pthread sndio
 
 AUTOCONF_VERSION= 2.69
 AUTOMAKE_VERSION= 1.11

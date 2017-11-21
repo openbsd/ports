@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.27 2017/07/26 22:45:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2017/11/21 00:13:01 naddy Exp $
 
 COMMENT =	OpenStreetMap editor
 
 GH_ACCOUNT =	openstreetmap
 GH_PROJECT =	merkaartor
 GH_TAGNAME =	0.18.3
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	geo x11
 
@@ -16,7 +16,7 @@ MAINTAINER =	Landry Breuil <landry@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 NO_TEST =	Yes
-MODULES =	devel/gettext x11/qt4
+MODULES =	x11/qt4
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+3,-guic
 
@@ -24,7 +24,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 LIB_DEPENDS =	devel/proj \
 		geo/gdal
 
-WANTLIB += QtGui QtNetwork QtSvg QtWebKit QtXml c m proj pthread gdal
+WANTLIB += QtGui QtNetwork QtSvg QtWebKit QtXml c iconv intl m proj pthread gdal
 WANTLIB += ${COMPILER_LIBCXX} z ICE SM X11 Xext Xi Xinerama Xrender fontconfig freetype
 
 do-configure:

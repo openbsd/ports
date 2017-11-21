@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.25 2017/07/27 10:05:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2017/11/21 00:13:03 naddy Exp $
 
 COMMENT=	generate and manipulate maps of your thoughts
 
 DISTNAME=	vym-2.5.0
 CATEGORIES=	productivity x11
-REVISION=	2
+REVISION=	3
 
 HOMEPAGE=	http://www.insilmaril.de/vym/
 
@@ -15,11 +15,10 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=vym/}
 EXTRACT_SUFX=	.tar.bz2
 
 WANTLIB += GL Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport
-WANTLIB += Qt5Svg Qt5Widgets Qt5Xml c m pthread
+WANTLIB += Qt5Svg Qt5Widgets Qt5Xml c iconv intl m pthread
 WANTLIB += ${COMPILER_LIBCXX}
 
-MODULES=	devel/gettext \
-		devel/qmake \
+MODULES=	devel/qmake \
 		x11/qt5
 
 RUN_DEPENDS=	archivers/zip \

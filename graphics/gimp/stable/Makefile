@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.118 2017/10/23 17:10:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.119 2017/11/21 00:13:01 naddy Exp $
 
 COMMENT=	GNU Image Manipulation Program
 
 DISTNAME=	gimp-2.8.22
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS+=	gimp-2.0	272.0	# 800.0
 SHARED_LIBS+=	gimpbase-2.0	272.0	# 800.0
@@ -49,21 +49,20 @@ LIB_DEPENDS=	archivers/bzip2 \
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
+WANTLIB =  ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xmu Xpm Xrandr Xrender Xt aa atk-1.0 avahi-client
 WANTLIB += avahi-common babl-0.1 bz2 c cairo croco-0.6 crypto cups
 WANTLIB += cupsimage curl dbus-1 dbus-glib-1 execinfo exif expat ffi
 WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gegl-0.2
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gmp gnutls gobject-2.0 graphite2
-WANTLIB += gs gthread-2.0 gtk-x11-2.0 harfbuzz hogweed idn2 ijs jasper
-WANTLIB += jbig2dec jpeg lcms lcms2 lzma m mng ncurses nettle nghttp2
-WANTLIB += openjp2 p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
-WANTLIB += pixman-1 png poppler poppler-glib pthread
-WANTLIB += rsvg-2 ssl tasn1 tiff wmf-0.2 wmflite-0.2 xcb xcb-render
-WANTLIB += xcb-shm xml2 unistring z
+WANTLIB += gs gthread-2.0 gtk-x11-2.0 harfbuzz hogweed iconv idn2 ijs
+WANTLIB += intl jasper jbig2dec jpeg lcms lcms2 lzma m mng ncurses
+WANTLIB += nettle nghttp2 openjp2 p11-kit pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre pixman-1 png poppler poppler-glib pthread
+WANTLIB += rsvg-2 ssl tasn1 tiff unistring wmf-0.2 wmflite-0.2 xcb
+WANTLIB += xcb-render xcb-shm xml2 z
 
-MODULES=	devel/gettext \
-		textproc/intltool \
+MODULES=	textproc/intltool \
 		lang/python
 
 USE_GMAKE=	Yes

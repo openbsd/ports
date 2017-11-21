@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2016/03/18 23:12:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2017/11/21 00:13:00 naddy Exp $
 
 COMMENT=	data synchronization framework
 
 V=		0.36
 DISTNAME=	libopensync-${V}
-REVISION =	4
+REVISION =	5
 SHARED_LIBS +=	opensync 1.1
 CATEGORIES=	devel comms
 
@@ -15,15 +15,15 @@ HOMEPAGE=	http://www.opensync.org/
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
 
+WANTLIB=  c glib-2.0>=1200 gmodule-2.0>=1200 gthread-2.0>=1200 iconv
+WANTLIB+= intl pthread sqlite3>=8 xml2>=9
+
 MASTER_SITES=	http://www.opensync.org/download/releases/${V}/
 
-WANTLIB=	c pthread sqlite3>=8 xml2>=9 glib-2.0>=1200 \
-		gmodule-2.0>=1200 gthread-2.0>=1200
 
 SEPARATE_BUILD=	Yes
 
-MODULES=	devel/cmake \
-		devel/gettext
+MODULES=	devel/cmake
 
 CFLAGS+=	-pthread
 

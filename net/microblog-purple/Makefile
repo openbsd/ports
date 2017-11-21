@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2017/10/23 17:11:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2017/11/21 00:13:02 naddy Exp $
 
 COMMENT=	Twitter, Identica, and Status.net plugin for libpurple
 
 VERSION=	0.3.0
 DISTNAME=	mbpurple-${VERSION}
 PKGNAME=	microblog-purple-${VERSION}
-REVISION=	6
+REVISION=	7
 CATEGORIES=	net
 
 HOMEPAGE=	https://microblog-purple.googlecode.com/
@@ -14,17 +14,16 @@ MAINTAINER=	Sebastian Reitenbach <sebastia@openbsd.org>
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi
+WANTLIB =  GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender Xxf86vm atk-1.0 cairo drm expat
 WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
-WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0 m
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png pthread
-WANTLIB += purple xcb xcb-render xcb-shm z
+WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0
+WANTLIB += iconv intl m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1
+WANTLIB += png pthread purple xcb xcb-render xcb-shm z
 
 MASTER_SITES=	${HOMEPAGE}/files/
 
-MODULES=	devel/gettext \
-		textproc/intltool
+MODULES=	textproc/intltool
 
 
 BUILD_DEPENDS=	net/pidgin

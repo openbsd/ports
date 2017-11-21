@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2016/03/11 20:28:31 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2017/11/21 00:13:03 naddy Exp $
 
 COMMENT=		Open Crypto Development Kit
 
@@ -7,22 +7,20 @@ DISTNAME=		opencdk-${VERSION}
 CATEGORIES=		security
 SHARED_LIBS=		opencdk	9.0	# .10.5
 
-REVISION=		2
+REVISION=		3
 
 HOMEPAGE=		http://www.gnutls.org/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		gpg-error z gcrypt>=13
+WANTLIB=  gcrypt>=13 gpg-error iconv intl z
 
 MASTER_SITES=	ftp://ftp.gnupg.org/gcrypt/alpha/gnutls/opencdk/ \
 		ftp://gd.tuwien.ac.at/privacy/gnupg/alpha/gnutls/opencdk/ \
 		http://sunsite.dk/pub/security/gcrypt/alpha/gnutls/opencdk/ \
 		http://ftp.linux.it/pub/mirrors/gnupg/alpha/gnutls/opencdk/
 EXTRACT_SUFX=	.tar.bz2
-
-MODULES=	devel/gettext
 
 LIB_DEPENDS=	security/libgcrypt
 

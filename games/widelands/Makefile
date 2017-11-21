@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2017/11/18 22:23:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2017/11/21 00:13:01 naddy Exp $
 
 COMMENT=	economic and military simulation game
 
 V=		17
-REVISION=	2
+REVISION=	3
 DISTNAME= 	widelands-build${V}-src
 PKGNAME=	widelands-0.${V}
 CATEGORIES=	games
@@ -17,12 +17,13 @@ MASTER_SITES =	https://launchpad.net/widelands/build${V}/build-${V}/+download/
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB +=	GL GLEW SDL SDL_gfx SDL_image SDL_mixer SDL_net SDL_ttf
-WANTLIB +=	c m png pthread ${COMPILER_LIBCXX} z execinfo ${MODLUA_WANTLIB}
-WANTLIB +=	boost_signals-mt
+WANTLIB +=	c iconv intl m png pthread ${COMPILER_LIBCXX} z execinfo
+WANTLIB +=	${MODLUA_WANTLIB} boost_signals-mt
 
 BUILD_DEPENDS =	devel/gettext-tools
 
 LIB_DEPENDS =	devel/boost \
+		devel/gettext \
 		devel/libexecinfo \
 		devel/sdl-gfx \
 		devel/sdl-image \
@@ -33,7 +34,6 @@ LIB_DEPENDS =	devel/boost \
 		graphics/glew
 
 MODULES =	devel/cmake \
-		devel/gettext \
 		lang/lua \
 		lang/python
 

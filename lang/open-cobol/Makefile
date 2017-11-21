@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2015/03/16 18:07:49 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2017/11/21 00:13:02 naddy Exp $
 
 COMMENT=	open source COBOL compiler
 
 DISTNAME=	open-cobol-1.1
 SHARED_LIBS +=	cob                  3.0      # .2.0
 CATEGORIES=	lang
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	http://www.opencobol.org/
 
@@ -13,14 +13,14 @@ HOMEPAGE=	http://www.opencobol.org/
 # run-time library: LGPL
 PERMIT_PACKAGE_CDROM=	Yes
 
+WANTLIB=  c db gmp iconv intl m ncurses
+
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=open-cobol/}
 
 LIB_DEPENDS=	databases/db/v4 \
+		devel/gettext \
 	 	devel/gmp
 
-MODULES=	devel/gettext
-
-WANTLIB=	c db gmp m ncurses
 
 AUTOCONF_VERSION=	2.59
 CONFIGURE_STYLE=autoconf

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2017/06/07 21:58:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2017/11/21 00:13:02 naddy Exp $
 
 COMMENT=		XMPP plugin for irssi
 
 DISTNAME=		irssi-xmpp-0.53
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		net
 
@@ -14,11 +14,9 @@ MAINTAINER =		Joerg Jung <jung@openbsd.org>
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		glib-2.0 idn loudmouth-1
+WANTLIB=  glib-2.0 iconv idn intl loudmouth-1
 
 MASTER_SITES=		${HOMEPAGE}files/
-
-MODULES=		devel/gettext
 
 BUILD_DEPENDS=		net/irssi>=0.8.15p5
 LIB_DEPENDS=		net/loudmouth

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2017/11/18 22:23:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2017/11/21 00:13:00 naddy Exp $
 
 COMMENT =	2D arcade game
 
 DISTNAME =	blobwars-2.00
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	games
 
@@ -15,11 +15,10 @@ MAINTAINER =	Matthias Kilian <kili@openbsd.org>
 # LGPLv2.1, BSD, GPLv2, "Public Domain", "Fair use".
 PERMIT_PACKAGE_CDROM =		Yes
 
-WANTLIB =	SDL2 SDL2_image SDL2_mixer SDL2_net SDL2_ttf c m pthread ${COMPILER_LIBCXX} z
+WANTLIB =	SDL2 SDL2_image SDL2_mixer SDL2_net SDL2_ttf c iconv intl \
+		m pthread ${COMPILER_LIBCXX} z
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=blobwars/}
-
-MODULES =	devel/gettext
 
 BUILD_DEPENDS =	devel/gettext-tools
 

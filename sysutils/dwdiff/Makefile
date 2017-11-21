@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2017/11/18 22:24:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2017/11/21 00:13:03 naddy Exp $
 
 COMMENT =		word-based diff program
 
 DISTNAME =		dwdiff-2.0.9
-REVISION =		0
+REVISION =		1
 CATEGORIES =		sysutils textproc
 
 HOMEPAGE =		http://os.ghalkes.nl/dwdiff.html
@@ -13,16 +13,15 @@ MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		c icudata icui18n icuuc m pthread
+WANTLIB =  c iconv icudata icui18n icuuc intl m pthread
 
 MASTER_SITES =		http://os.ghalkes.nl/dist/
 EXTRACT_SUFX =		.tgz
 
-MODULES =		devel/gettext
-
 BUILD_DEPENDS =		devel/gettext-tools
 
-LIB_DEPENDS =		textproc/icu4c
+LIB_DEPENDS =		devel/gettext \
+			textproc/icu4c
 
 CONFIGURE_STYLE =	simple
 CONFIGURE_ENV =		CFLAGS="-I${LOCALBASE}/include ${CFLAGS}" \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2017/11/18 22:23:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2017/11/21 00:13:00 naddy Exp $
 
 # XXX check if still needed at next update
 CXXFLAGS +=		-std=c++11 -fpermissive
@@ -9,7 +9,7 @@ BROKEN-hppa =		ICE or OOM on src/filters/hq/c/hq_base.h:421
 
 DISTNAME =		vbam-1.8.0.1054-src
 PKGNAME =		${DISTNAME:S/-src//}
-REVISION =		10
+REVISION =		11
 
 CATEGORIES =		emulators
 
@@ -25,13 +25,12 @@ WANTLIB += c cairo cairomm-1.0 fontconfig freetype gdk-x11-2.0
 WANTLIB += gdk_pixbuf-2.0 gdkglext-x11-1.0 gdkglextmm-x11-1.2
 WANTLIB += gdkmm-2.4 gio-2.0 giomm-2.4 glib-2.0 glibmm-2.4 gmodule-2.0
 WANTLIB += gobject-2.0 gtk-x11-2.0 gtkglext-x11-1.0 gtkglextmm-x11-1.2
-WANTLIB += gtkmm-2.4 m pango-1.0 pangocairo-1.0 pangoft2-1.0 pangomm-1.4
-WANTLIB += pangox-1.0 png pthread sigc-2.0 z
+WANTLIB += gtkmm-2.4 iconv intl m pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pangomm-1.4 pangox-1.0 png pthread sigc-2.0 z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=vbam/}
 
-MODULES =		devel/cmake \
-			devel/gettext
+MODULES =		devel/cmake
 
 # c++11
 COMPILER =		base-clang ports-gcc

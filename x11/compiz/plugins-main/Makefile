@@ -1,23 +1,22 @@
-# $OpenBSD: Makefile,v 1.5 2017/10/23 17:11:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2017/11/21 00:13:04 naddy Exp $
 
 COMMENT =	main plugins for compiz
 
 V =		0.8.8
 DISTNAME =	compiz-plugins-main-${V}
-REVISION =	3
+REVISION =	4
 
 MASTER_SITES =	http://releases.compiz.org/${V}/
 
-WANTLIB += GL GLU ICE SM X11 X11-xcb Xcomposite Xdamage Xext Xfixes
-WANTLIB += Xinerama Xrandr Xrender cairo expat ffi fontconfig freetype
-WANTLIB += glib-2.0 gobject-2.0 graphite2 gthread-2.0
-WANTLIB += harfbuzz jpeg lzma m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png pthread
-WANTLIB += startup-notification-1 xcb xcb-render xcb-shm xcb-util xml2
-WANTLIB += xslt z Xxf86vm drm glapi xcb-dri2 xcb-glx
+WANTLIB =  GL GLU ICE SM X11 X11-xcb Xcomposite Xdamage Xext Xfixes
+WANTLIB += Xinerama Xrandr Xrender Xxf86vm cairo drm expat ffi
+WANTLIB += fontconfig freetype glapi glib-2.0 gobject-2.0 graphite2
+WANTLIB += gthread-2.0 harfbuzz iconv intl jpeg lzma m pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
+WANTLIB += startup-notification-1 xcb xcb-dri2 xcb-glx xcb-render
+WANTLIB += xcb-shm xcb-util xml2 xslt z
 
-MODULES =	devel/gettext \
-		textproc/intltool
+MODULES =	textproc/intltool
 
 USE_GMAKE =	Yes
 

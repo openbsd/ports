@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.26 2017/10/23 17:11:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2017/11/21 00:13:04 naddy Exp $
 
 COMMENT =		video (and audio) codec playback library
 
 DISTNAME =		emotion-1.7.10
-REVISION =		7
+REVISION =		8
 
 SHARED_LIBS +=	emotion                   2.0 # 8.10
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ${MODLUA_WANTLIB}
+WANTLIB =  ${MODLUA_WANTLIB}
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender Xss Xtst c cares crypto curl ecore ecore_con
 WANTLIB += ecore_evas ecore_file ecore_imf ecore_imf_evas ecore_input
@@ -18,11 +18,10 @@ WANTLIB += ecore_input_evas ecore_ipc ecore_x edje eet eina eio embryo
 WANTLIB += evas expat ffi fontconfig freetype fribidi glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gstbase-0.10
 WANTLIB += gstinterfaces-0.10 gstreamer-0.10 gstvideo-0.10 gthread-2.0
-WANTLIB += harfbuzz jpeg lzma m nghttp2 orc-0.4 pcre pthread
+WANTLIB += harfbuzz iconv intl jpeg lzma m nghttp2 orc-0.4 pcre pthread
 WANTLIB += ssl xcb xml2 z
 
-MODULES =		devel/gettext \
-			lang/lua \
+MODULES =		lang/lua \
 			x11/e17
 
 MODE17_PURGE_LA =	lib/edje/modules/emotion

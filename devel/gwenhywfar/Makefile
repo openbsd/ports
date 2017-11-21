@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2017/11/18 22:23:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2017/11/21 00:12:59 naddy Exp $
 
 COMMENT=	helper library for networking and security applications
 
 # update the "release=XX" in DISTFILES, not just DISTNAME
 DISTNAME=	gwenhywfar-4.13.1
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}{download.php?package=01\&release=78\&file=01}
-REVISION=	7
+REVISION=	8
 
 SHARED_LIBS +=	gwenhywfar           1.3      # 73.1
 SHARED_LIBS +=	gwengui-gtk2         0.0      # unknown
@@ -24,14 +24,14 @@ WANTLIB += Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0
 WANTLIB += c cairo crypto expat ffi fontconfig freetype gcrypt
 WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gmp gnutls gobject-2.0 gpg-error graphite2 gthread-2.0
-WANTLIB += gtk-x11-2.0 harfbuzz hogweed idn2 m nettle p11-kit
+WANTLIB += gtk-x11-2.0 harfbuzz hogweed iconv idn2 intl m nettle p11-kit
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png ssl tasn1 unistring xcb xcb-render
 WANTLIB += xcb-shm z
 
 MASTER_SITES=	http://www.aquamaniac.de/sites/download/
 
-MODULES=		devel/gettext x11/qt4
+MODULES=		x11/qt4
 BUILD_DEPENDS=		devel/gettext-tools
 LIB_DEPENDS=		graphics/png \
 			security/libgcrypt \

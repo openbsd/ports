@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.34 2016/05/05 19:52:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.35 2017/11/21 00:12:59 naddy Exp $
 
 COMMENT=	X amateur station tracking and info reporting
 
 DISTNAME=	xastir-2.0.6
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=    	comms hamradio geo
 
@@ -12,6 +12,10 @@ HOMEPAGE=	http://www.xastir.org/
 MAINTAINER=	Aaron Bieber <abieber@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
+
+WANTLIB =  GraphicsMagick ICE SM X11 Xext Xm Xpm Xt bz2 c curl db
+WANTLIB += freetype gdal geotiff iconv intl lcms2 ltdl lzma m pcre proj
+WANTLIB += pthread shp tiff z
 
 MASTER_SITES=	$(MASTER_SITE_SOURCEFORGE:=xastir/)
 
@@ -36,11 +40,6 @@ CONFIGURE_ARGS=		--with-shapelib					\
 			--with-bdb-libdir=$(LOCALBASE)/lib/db4		\
 			--with-bdb-incdir=$(LOCALBASE)/include/db4
 
-WANTLIB += GraphicsMagick ICE SM X11 Xext Xm Xpm Xt bz2 c curl
-WANTLIB += db freetype gdal geotiff lcms2 ltdl lzma m pcre proj
-WANTLIB += pthread shp tiff z
-
-MODULES=	devel/gettext
 
 LIB_DEPENDS=	net/curl \
 		devel/shapelib \

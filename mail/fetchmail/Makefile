@@ -1,25 +1,25 @@
-# $OpenBSD: Makefile,v 1.149 2017/08/11 04:18:19 bluhm Exp $
+# $OpenBSD: Makefile,v 1.150 2017/11/21 00:13:02 naddy Exp $
 
 COMMENT=	mail retrieval utility for POP2, POP3, KPOP, IMAP and more
 
 DISTNAME=	fetchmail-6.3.26
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=fetchmail/}
-REVISION=	1
+REVISION=	2
 
 HOMEPAGE=	http://www.fetchmail.info/
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c crypto ssl
+WANTLIB =  c crypto iconv intl ssl
 
-MODULES=		devel/gettext \
-			lang/python
+MODULES=		lang/python
 MODPY_RUNDEP=		No
 MODPY_ADJ_FILES=	fetchmailconf.py
 SUBST_VARS+=		MODPY_LIBDIR
 BUILD_DEPENDS=		devel/bison
+LIB_DEPENDS=		devel/gettext
 
 SEPARATE_BUILD=		Yes
 CONFIGURE_STYLE=	autoconf

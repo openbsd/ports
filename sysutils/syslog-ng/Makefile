@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2017/11/10 21:58:26 steven Exp $
+# $OpenBSD: Makefile,v 1.59 2017/11/21 00:13:04 naddy Exp $
 
 COMMENT=	log management solution
 
@@ -6,6 +6,7 @@ V =		3.12.1
 REL =		3.12
 DISTNAME =	syslog-ng-$V
 CATEGORIES =	sysutils
+REVISION =	0
 
 MAINTAINER =	Steven Mestdagh <steven@openbsd.org>
 
@@ -14,16 +15,15 @@ HOMEPAGE =	https://syslog-ng.org/
 # GPL v2
 PERMIT_PACKAGE_CDROM =		Yes
 
+WANTLIB =  GeoIP c crypto curl dbi evtlog glib-2.0 gmodule-2.0
+WANTLIB += gthread-2.0 iconv intl ivykis json-c m nghttp2 pcre pthread
+WANTLIB += ssl z
+
 MASTER_SITES =	http://github.com/balabit/syslog-ng/releases/download/${DISTNAME}/
 
 SHARED_LIBS =	syslog-ng		5.0 \
 		syslog-ng-${REL}	5.0
 
-MODULES =	devel/gettext
-
-WANTLIB =	c m pcre crypto ssl evtlog dbi ivykis pthread \
-		glib-2.0 gmodule-2.0 gthread-2.0 json-c \
-		curl nghttp2 z GeoIP
 
 LIB_DEPENDS =	devel/glib2 \
 		devel/json-c \

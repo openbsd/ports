@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2017/10/23 17:10:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2017/11/21 00:13:00 naddy Exp $
 
 COMMENT=		python bindings for libnotify
 
 V=			0.1.1
 DISTNAME=		notify-python-${V}
 PKGNAME=		py-notify-${V}
-REVISION =		13
+REVISION =		14
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.galago-project.org/
@@ -13,19 +13,18 @@ HOMEPAGE=		http://www.galago-project.org/
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi
+WANTLIB =  GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender Xxf86vm atk-1.0 cairo drm expat ffi
 WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
-WANTLIB += gtk-x11-2.0 harfbuzz m notify pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread xcb
+WANTLIB += gtk-x11-2.0 harfbuzz iconv intl m notify pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread xcb
 WANTLIB += xcb-render xcb-shm z
 
 MASTER_SITES=		${HOMEPAGE}/files/releases/source/notify-python/
 EXTRACT_SUFX=		.tar.bz2
 
-MODULES=		devel/gettext \
-			lang/python
+MODULES=		lang/python
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		x11/py-gtk2

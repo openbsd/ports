@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2017/07/26 22:45:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.46 2017/11/21 00:13:00 naddy Exp $
 
 # Other archs have not been tested
 ONLY_FOR_ARCHS =	amd64
@@ -10,7 +10,7 @@ COMMENT =		emulates game consoles and old home computers
 V =			160
 DISTNAME =		mame0${V}s
 PKGNAME =		sdlmess-0.${V}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		emulators games
 
@@ -22,7 +22,7 @@ PERMIT_PACKAGE_CDROM =	unclear license
 PERMIT_PACKAGE_FTP =	unclear license
 PERMIT_DISTFILES_FTP =	unclear license
 
-WANTLIB += SDL SDL_ttf X11 Xinerama c expat fontconfig freetype
+WANTLIB += SDL SDL_ttf X11 Xinerama c expat fontconfig freetype iconv intl
 WANTLIB += m pthread ${COMPILER_LIBCXX} util z
 
 MASTER_SITES =		https://github.com/mamedev/mame/releases/download/mame0${V}/
@@ -34,8 +34,7 @@ DIST_SUBDIR =		mame
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
 			history${V}.zip:1
 
-MODULES =		devel/gettext \
-			lang/python
+MODULES =		lang/python
 
 RUN_DEPENDS-main =	fonts/liberation-fonts
 LIB_DEPENDS =		devel/sdl-ttf

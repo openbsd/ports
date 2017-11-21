@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2017/11/16 23:20:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.38 2017/11/21 00:13:04 naddy Exp $
 
 PORTROACH=		limit:^2
 
@@ -6,7 +6,7 @@ COMMENT=		C++ wrapper for the libxml XML parser library
 
 GNOME_VERSION=		2.40.1
 GNOME_PROJECT=		libxml++
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  xml++-2.6            2.0      # 2.7
 
@@ -20,12 +20,11 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 # LGPLv2.1+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ffi glib-2.0 glibmm-2.4 gmodule-2.0 gobject-2.0 lzma m pcre
-WANTLIB += pthread sigc-2.0 xml2 z
+WANTLIB += ffi glib-2.0 glibmm-2.4 gmodule-2.0 gobject-2.0 iconv intl
+WANTLIB += lzma m pcre pthread sigc-2.0 xml2 z
 WANTLIB += ${COMPILER_LIBCXX}
 
-MODULES=		devel/gettext \
-			x11/gnome
+MODULES=		x11/gnome
 
 # c++11
 COMPILER =		base-clang ports-gcc

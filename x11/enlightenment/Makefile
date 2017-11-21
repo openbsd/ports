@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2017/10/23 17:11:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.71 2017/11/21 00:13:04 naddy Exp $
 
 COMMENT=	themed window manager
 
@@ -7,7 +7,7 @@ DISTNAME=	e16-$V
 PKGNAME=	enlightenment-$V
 DOCS=		e16-docs-0.16.8.0.2
 THEMES=		e16-themes-1.0.1
-REVISION=	8
+REVISION=	9
 
 CATEGORIES=	x11
 
@@ -16,19 +16,17 @@ HOMEPAGE=	http://www.enlightenment.org/
 # X11
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += FLAC ICE Imlib2 SM X11 Xcomposite Xdamage Xext Xfixes
-WANTLIB += Xft Xinerama Xrandr Xrender audiofile c expat ffi fontconfig
+WANTLIB =  FLAC ICE Imlib2 SM X11 Xcomposite Xdamage Xext Xfixes Xft
+WANTLIB += Xinerama Xrandr Xrender audiofile c expat ffi fontconfig
 WANTLIB += freetype glib-2.0 gmodule-2.0 gobject-2.0 graphite2
-WANTLIB += gthread-2.0 harfbuzz m ogg pango-1.0 pangoft2-1.0 pangoxft-1.0
-WANTLIB += pcre pthread sndio xcb z
+WANTLIB += gthread-2.0 harfbuzz iconv intl m ogg pango-1.0 pangoft2-1.0
+WANTLIB += pangoxft-1.0 pcre pthread sndio xcb z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=enlightenment/}
 
 DISTFILES=	${DISTNAME}.tar.gz \
 		${DOCS}.tar.gz \
 		${THEMES}.tar.gz
-
-MODULES=	devel/gettext
 
 AUTOCONF_VERSION=	2.65
 AUTOMAKE_VERSION=	1.11

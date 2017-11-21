@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.28 2015/10/08 12:02:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.29 2017/11/21 00:13:01 naddy Exp $
 
 COMMENT=		very small and pretty fast gdk/Imlib image viewer
 
 DISTNAME=		qiv-2.3.1
 CATEGORIES=		graphics
+REVISION=		0
 
 EXTRACT_SUFX=		.tgz
 
@@ -14,13 +15,11 @@ MASTER_SITES=		${HOMEPAGE}/download/
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += Imlib2 X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
-WANTLIB += Xinerama Xrandr Xrender c cairo exif fontconfig freetype
-WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
-WANTLIB += jpeg lcms2 m magic pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pthread tiff z
-
-MODULES=		devel/gettext
+WANTLIB =  Imlib2 X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
+WANTLIB += Xrandr Xrender c cairo exif fontconfig freetype gdk-x11-2.0
+WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 iconv intl jpeg
+WANTLIB += lcms2 m magic pango-1.0 pangocairo-1.0 pangoft2-1.0 pthread
+WANTLIB += tiff z
 
 LIB_DEPENDS=		devel/libmagic \
 			graphics/imlib2 \

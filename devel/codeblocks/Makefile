@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2017/11/16 23:20:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.44 2017/11/21 00:12:59 naddy Exp $
 
 BROKEN-alpha=	sqvm.cpp:394:1: internal compiler error: Segmentation fault
 BROKEN-arm=	wxwidgets va_list c++ mangling requires gcc < 4.4
@@ -7,7 +7,7 @@ COMMENT=	Code::Blocks C/C++ IDE
 V=		16.01
 DISTNAME=	codeblocks_${V}
 PKGNAME=	codeblocks-${V}
-REVISION=	3
+REVISION=	4
 
 WRKDIST=	${WRKDIR}/codeblocks-${V}.release
 
@@ -36,7 +36,7 @@ WANTLIB += ICE SDL SM X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 bz2 c cairo
 WANTLIB += expat ffi fontconfig freetype gamin-1 gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
-WANTLIB += gthread-2.0 gtk-x11-2.0 harfbuzz hunspell-1.6 iodbc
+WANTLIB += gthread-2.0 gtk-x11-2.0 harfbuzz hunspell-1.6 iconv intl iodbc
 WANTLIB += jpeg m mspack pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread sndio ${LIBCXX}
 WANTLIB += tiff usbhid wx_base wx_base_net wx_base_odbc wx_base_xml
@@ -45,8 +45,6 @@ WANTLIB += wx_gtk2_html wx_gtk2_qa wx_gtk2_richtext wx_gtk2_xrc
 WANTLIB += xcb xcb-render xcb-shm z ${COMPILER_LIBCXX}
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=codeblocks/Sources/${V}/}
-
-MODULES=	devel/gettext
 
 BUILD_DEPENDS=	archivers/zip \
 		devel/boost

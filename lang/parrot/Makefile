@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.41 2017/08/24 09:45:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.42 2017/11/21 00:13:02 naddy Exp $
 
 COMMENT=	virtual machine designed for interpreted languages
 
 V=		7.10.0
 DISTNAME=	parrot-$V
-REVISION=	2
+REVISION=	3
 CATEGORIES=	lang perl6
 SHARED_LIBS=	parrot	11.0
 
@@ -16,13 +16,13 @@ MASTER_SITES=	http://ftp.parrot.org/releases/all/$V/ \
 # Artistic2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += GL GLU c glut gmp icudata icuuc m ncurses pthread
+WANTLIB += GL GLU c glut gmp iconv icudata icuuc intl m ncurses pthread
 WANTLIB += readline ${COMPILER_LIBCXX} util z ffi
 
-MODULES =		devel/gettext
 BUILD_DEPENDS=		graphics/glew \
 			devel/pcre
 LIB_DEPENDS=		textproc/icu4c \
+			devel/gettext \
 			devel/gmp \
 			graphics/freeglut \
 			devel/libffi

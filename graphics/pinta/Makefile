@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2017/08/24 20:12:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2017/11/21 00:13:01 naddy Exp $
 
 V =		1.6
 COMMENT =	open source drawing/editing program modeled after Paint.NET
 DISTNAME =	pinta-${V}
 CATEGORIES =	graphics x11
-REVISION =	2
+REVISION =	3
 
 HOMEPAGE =	http://pinta-project.com/
 
@@ -14,8 +14,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 # These tarballs have a proper configure. GH checkout does not...
 MASTER_SITES =	https://github.com/PintaProject/Pinta/releases/download/${V}/
 
-MODULES =	devel/gettext \
-		lang/mono \
+MODULES =	lang/mono \
 		textproc/intltool
 
 BUILD_DEPENDS =	devel/mono-addins \

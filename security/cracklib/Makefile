@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2016/03/11 20:28:30 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2017/11/21 00:13:03 naddy Exp $
 
 COMMENT =		sensible unix password cracker
 
 DISTNAME =		cracklib-2.9.5
 SHARED_LIBS =		crack	0.4	# 11.0
 CATEGORIES =		security
+REVISION =		0
 
 HOMEPAGE =		http://sourceforge.net/projects/cracklib/
 
@@ -13,12 +14,11 @@ MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		c z
+WANTLIB =  c iconv intl z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=cracklib/}
 
-MODULES =		lang/python \
-			devel/gettext
+MODULES =		lang/python
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--without-x \

@@ -1,19 +1,19 @@
-# $OpenBSD: Makefile,v 1.6 2017/11/04 22:28:01 bentley Exp $
+# $OpenBSD: Makefile,v 1.7 2017/11/21 00:13:04 naddy Exp $
 
 COMMENT =		lightweight web browser, with SDL interface
 
 NETSURF_PROJECT =	netsurf-fb
 NETSURF_VERSION =	3.7
 DISTNAME =		netsurf-${NETSURF_VERSION}-src
+REVISION =		0
 
 HOMEPAGE=		http://www.netsurf-browser.org/
 MASTER_SITES =		http://download.netsurf-browser.org/netsurf/releases/source/
 
-MODULES =		devel/gettext
-
 BUILD_DEPENDS =		www/netsurf/nsgenbind>=0.4 \
 			www/p5-HTML-Parser
-LIB_DEPENDS =		devel/sdl \
+LIB_DEPENDS =		devel/gettext \
+			devel/sdl \
 			graphics/jpeg \
 			graphics/png \
 			www/netsurf/hubbub>=0.3.4 \
@@ -30,10 +30,10 @@ LIB_DEPENDS =		devel/sdl \
 			net/curl
 TEST_DEPENDS =		devel/check
 
-WANTLIB += SDL c crypto css curl dom expat freetype hubbub jpeg m
-WANTLIB += nsbmp nsfb nsgif nspsl nsutils parserutils png pthread ssl
-WANTLIB += svgtiny utf8proc wapcaplet xcb xcb-icccm xcb-image
-WANTLIB += xcb-keysyms xcb-shm xcb-util z nslog
+WANTLIB =  SDL c crypto css curl dom expat freetype hubbub iconv intl
+WANTLIB += jpeg m nsbmp nsfb nsgif nslog nspsl nsutils parserutils png
+WANTLIB += pthread ssl svgtiny utf8proc wapcaplet xcb xcb-icccm
+WANTLIB += xcb-image xcb-keysyms xcb-shm xcb-util z
 
 MAKE_FLAGS +=		NETSURF_USE_HARU_PDF=NO \
 			NETSURF_USE_LIBICONV_PLUG=NO \

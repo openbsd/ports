@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2017/11/15 16:49:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2017/11/21 00:13:01 naddy Exp $
 
 COMMENT=	GTK+ support library for colord
 
 DISTNAME=	colord-gtk-0.1.26
 EXTRACT_SUFX=	.tar.xz
-REVISION=	3
+REVISION=	4
 
 SHARED_LIBS +=  colord-gtk           0.0      # 1.0
 
@@ -17,18 +17,17 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 # LGPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += Xtst X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
-WANTLIB += Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi c cairo
+WANTLIB =  X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
+WANTLIB += Xrender Xtst atk-1.0 atk-bridge-2.0 atspi c cairo
 WANTLIB += cairo-gobject colord colordprivate dbus-1 epoxy expat ffi
 WANTLIB += fontconfig freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-3 harfbuzz
-WANTLIB += lcms2 m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png pthread xcb xcb-render xcb-shm z
+WANTLIB += iconv intl lcms2 m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
+WANTLIB += pixman-1 png pthread xcb xcb-render xcb-shm z
 
 MASTER_SITES=	http://www.freedesktop.org/software/colord/releases/
 
-MODULES=	devel/gettext \
-		textproc/intltool
+MODULES=	textproc/intltool
 
 BUILD_DEPENDS=	devel/gobject-introspection \
 		lang/vala \

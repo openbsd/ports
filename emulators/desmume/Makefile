@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2017/11/16 23:20:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2017/11/21 00:13:00 naddy Exp $
 
 USE_WXNEEDED =	Yes
 
 COMMENT =	Nintendo DS emulator
 
 DISTNAME =	desmume-0.9.11
-REVISION =	4
+REVISION =	5
 
 CATEGORIES =	emulators
 
@@ -20,7 +20,7 @@ WANTLIB += agg c m pthread ${LIBCXX} z GL GLU X11 Xcomposite
 WANTLIB += Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender
 WANTLIB += fontconfig freetype gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gobject-2.0 gthread-2.0 SDL SoundTouch
-WANTLIB += atk-1.0 cairo gdk-x11-2.0 gtk-x11-2.0
+WANTLIB += atk-1.0 cairo gdk-x11-2.0 gtk-x11-2.0 iconv intl
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 zzip
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=desmume/}
@@ -37,8 +37,7 @@ LIB_DEPENDS =	archivers/zziplib \
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
-MODULES =	devel/gettext \
-		textproc/intltool
+MODULES =	textproc/intltool
 
 
 COMPILER =	base-clang ports-gcc

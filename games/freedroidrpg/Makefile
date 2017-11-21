@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2017/04/19 11:16:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2017/11/21 00:13:00 naddy Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS} ${CLANG_ARCHS}
 
@@ -7,21 +7,22 @@ COMMENT=	isometric RPG game
 DISTNAME =	freedroidRPG-0.16.1
 PKGNAME =	${DISTNAME:L}
 CATEGORIES=	games x11
+REVISION =	0
 
 HOMEPAGE =	http://www.freedroid.org/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += GL SDL SDL_gfx SDL_image SDL_mixer X11 c execinfo jpeg
-WANTLIB += ${MODLUA_WANTLIB} m ogg png pthread vorbis z
+WANTLIB =  ${MODLUA_WANTLIB}
+WANTLIB += GL SDL SDL_gfx SDL_image SDL_mixer X11 c execinfo iconv intl
+WANTLIB += jpeg m ogg png pthread vorbis z
 
 MASTER_SITES =	ftp://ftp.osuosl.org/pub/freedroid/${DISTNAME:R}/
 
 WRKDIST =	${WRKDIR}/${DISTNAME:L}
 
-MODULES =	devel/gettext \
-		lang/lua \
+MODULES =	lang/lua \
 		lang/python
 
 MODLUA_SA =	Yes

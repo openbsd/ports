@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.69 2017/10/23 17:11:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.70 2017/11/21 00:13:04 naddy Exp $
 
 COMMENT =		the enlightened window manager
 
 VERSION =		0.17.6
 DISTNAME =		enlightenment-${VERSION}
 EPOCH =			1
-REVISION =		10
+REVISION =		11
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += ${MODLUA_WANTLIB}
+WANTLIB =  ${MODLUA_WANTLIB}
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender Xss Xtst c cares crypto curl dbus-1
 WANTLIB += ecore ecore_con ecore_evas ecore_file ecore_imf
@@ -18,11 +18,10 @@ WANTLIB += ecore_imf_evas ecore_input ecore_input_evas ecore_ipc ecore_x
 WANTLIB += edbus edje eet efreet efreet_mime efreet_trash ehal eina eio
 WANTLIB += elementary embryo emotion enotify ethumb ethumb_client eukit
 WANTLIB += evas execinfo exif expat fontconfig freetype fribidi glib-2.0
-WANTLIB += graphite2 harfbuzz jpeg m nghttp2 pcre pthread
-WANTLIB += ssl xcb xcb-keysyms xcb-shape z
+WANTLIB += graphite2 harfbuzz iconv intl jpeg m nghttp2 pcre pthread ssl
+WANTLIB += xcb xcb-keysyms xcb-shape z
 
-MODULES +=		devel/gettext \
-			lang/lua \
+MODULES +=		lang/lua \
 			x11/e17
 
 MODE17_DESKTOP_FILE =	Yes

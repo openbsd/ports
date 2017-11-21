@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2017/11/18 22:23:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2017/11/21 00:12:59 naddy Exp $
 
 CATEGORIES =	devel x11
 COMMENT =	integrated development environment for KDE 4
 KDEV_V =	4.7.1
 KDEVPLAT_V =	1.7.1
-REVISION =	0
+REVISION =	1
 DISTNAME =	kdevelop-${KDEV_V}
 HOMEPAGE =	http://www.kdevelop.org/
 
@@ -20,7 +20,7 @@ DIST_SUBDIR =	kde
 # GPLv2+, LGPLv2.1+, GNU FDLv1.2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =  c m pthread
+WANTLIB =  c iconv intl m pthread
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtDeclarative lib/qt4/QtGui
 WANTLIB += lib/qt4/QtHelp lib/qt4/QtNetwork lib/qt4/QtScript
 WANTLIB += lib/qt4/QtSvg lib/qt4/QtWebKit lib/qt4/QtXml
@@ -41,7 +41,7 @@ WANTLIB += kdevplatformutil kdevplatformvcs
 WANTLIB += processcore processui qjson soprano sublime
 WANTLIB += ${COMPILER_LIBCXX}
 
-MODULES =	x11/kde4 devel/gettext lang/python
+MODULES =	x11/kde4 lang/python
 MODKDE4_USE =	workspace
 
 BUILD_DEPENDS =	devel/gettext-tools \

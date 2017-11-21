@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.31 2017/10/23 17:11:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2017/11/21 00:13:04 naddy Exp $
 
 COMMENT=	modular log analyzer
 
 DISTNAME=	modlogan-0.8.13
-REVISION=	9
+REVISION=	10
 CATEGORIES=	sysutils www
 
 HOMEPAGE=	http://jan.kneschke.de/projects/modlogan/
@@ -13,12 +13,12 @@ MASTER_SITES=	${HOMEPAGE}/download/
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-MODULES=	devel/gettext
+WANTLIB =  adns bz2 c expat fontconfig freetype gd iconv intl jpeg m
+WANTLIB += pcre png pthread tiff webp z
 
-WANTLIB += adns bz2 c expat fontconfig freetype gd jpeg m pcre
-WANTLIB += png pthread tiff webp z
 
 LIB_DEPENDS=	archivers/bzip2 \
+		devel/gettext \
 		devel/pcre \
 		graphics/gd \
 		net/adns

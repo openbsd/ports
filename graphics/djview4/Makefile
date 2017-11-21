@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.31 2017/07/26 22:45:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2017/11/21 00:13:01 naddy Exp $
 
 COMMENT=	portable DjVu viewer and browser plugin
 
 DISTNAME=	djview-4.10.6
 PKGNAME=	${DISTNAME:S/djview/djview4/}
-REVISION=	1
+REVISION=	2
 CATEGORIES=	graphics print
 
 HOMEPAGE=	http://djvu.sourceforge.net/djview4.html
@@ -15,12 +15,12 @@ MAINTAINER=	Alexandr Shadchin <shadchin@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += GL ICE QtGui QtNetwork QtOpenGL SM X11 Xext Xi Xinerama
-WANTLIB += Xrender c djvulibre fontconfig freetype glib-2.0 m
+WANTLIB += Xrender c djvulibre fontconfig freetype glib-2.0 iconv intl m
 WANTLIB += pcre pthread ${COMPILER_LIBCXX} tiff
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=djvu/}
 
-MODULES=	x11/qt4 devel/gettext
+MODULES=	x11/qt4
 
 LIB_DEPENDS=	graphics/djvulibre
 

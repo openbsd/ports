@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2017/01/03 19:26:58 landry Exp $
+# $OpenBSD: Makefile,v 1.9 2017/11/21 00:13:04 naddy Exp $
 
 COMMENT =	fd.o-compliant menu editor
 
 MODPY_EGG_VERSION =	2.1.3
 DISTNAME =	menulibre-${MODPY_EGG_VERSION}
 CATEGORIES =	sysutils x11
-REVISION =	0
+REVISION =	1
 
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES =	https://launchpad.net/menulibre/2.1/${MODPY_EGG_VERSION}/+download/
 
-MODULES=	lang/python devel/gettext textproc/intltool
+MODULES=	lang/python textproc/intltool
 MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 PORTHOME =	${WRKDIR}

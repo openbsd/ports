@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.31 2017/11/18 22:24:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.32 2017/11/21 00:13:03 naddy Exp $
 
 COMMENT=	handy personal organizer
 
 DISTNAME=	osmo-0.2.10
 CATEGORIES=	productivity
-REVISION=	3
+REVISION=	4
 
 HOMEPAGE=	http://clayo.org/osmo/
 
@@ -13,16 +13,14 @@ MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
-WANTLIB += Xrandr Xrender atk-1.0 c cairo fontconfig freetype
-WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
-WANTLIB += gringotts gthread-2.0 gtk-x11-2.0 gtkspell ical icalss
-WANTLIB += icalvcal m notify pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pthread tar xml2 z icui18n icuuc lzma
+WANTLIB =  X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
+WANTLIB += Xrender atk-1.0 c cairo fontconfig freetype gdk-x11-2.0
+WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 gringotts
+WANTLIB += gthread-2.0 gtk-x11-2.0 gtkspell ical icalss icalvcal iconv
+WANTLIB += icui18n icuuc intl lzma m notify pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pthread tar xml2 z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=osmo-pim/}
-
-MODULES=	devel/gettext
 
 BUILD_DEPENDS=	devel/gettext-tools
 

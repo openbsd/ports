@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2017/05/07 16:45:12 landry Exp $
+# $OpenBSD: Makefile,v 1.13 2017/11/21 00:13:00 naddy Exp $
 
 COMMENT =	collection of puzzles games
 
 DISTNAME =	puzzles-20170507
 CATEGORIES =	games
+REVISION =	0
 
 MASTER_SITES =	https://rhaalovely.net/stuff/
 HOMEPAGE =	http://www.chiark.greenend.org.uk/~sgtatham/puzzles/
@@ -16,20 +17,19 @@ GITWEB_URL =	https://git.tartarus.org/
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
 
+WANTLIB =  X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
+WANTLIB += Xrender atk-1.0 c cairo fontconfig freetype gdk-x11-2.0
+WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 gtk-x11-2.0 iconv
+WANTLIB += intl m pango-1.0 pangocairo-1.0 pangoft2-1.0 pthread z
+
 WRKDIST =	${WRKDIR}/puzzles
 USE_GMAKE =	yes
 MAKE_FILE =	Makefile.gtk
-MODULES =	devel/gettext
 LIB_DEPENDS =	x11/gtk+2
 RUN_DEPENDS =	devel/desktop-file-utils devel/xdg-utils \
 		x11/gtk+3,-guic
 MAKE_FLAGS =	CC="${CC}"
 
-WANTLIB += atk-1.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gobject-2.0 pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
-WANTLIB += Xrandr Xrender c cairo fontconfig freetype gdk-x11-2.0
-WANTLIB += gtk-x11-2.0 m pthread z
 
 # needs textproc/halibut, convert from ImageMagick, and a running X
 dist:

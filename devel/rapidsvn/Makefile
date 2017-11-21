@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2017/11/18 22:23:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.32 2017/11/21 00:13:00 naddy Exp $
 
 # XXX doesn't build if already installed
 COMMENT=	graphical subversion client
@@ -6,7 +6,7 @@ COMMENT=	graphical subversion client
 VERSION=	0.12.1
 DISTNAME=	rapidsvn-${VERSION}
 CATEGORIES=	devel
-REVISION=	9
+REVISION=	10
 
 HOMEPAGE=	http://www.rapidsvn.org/
 
@@ -23,7 +23,7 @@ WANTLIB += ICE SDL SM X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm apr-1 aprutil-1
 WANTLIB += atk-1.0 c cairo db expat ffi fontconfig freetype gdk-x11-2.0
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += graphite2 gthread-2.0 gtk-x11-2.0 harfbuzz iodbc jpeg
+WANTLIB += graphite2 gthread-2.0 gtk-x11-2.0 harfbuzz iconv intl iodbc jpeg
 WANTLIB += m mspack pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
 WANTLIB += pixman-1 png pthread sasl2 serf-1 sndio
 WANTLIB += sqlite3 ${COMPILER_LIBCXX} svn_client-1 svn_delta-1 svn_diff-1
@@ -42,8 +42,6 @@ BUILD_DEPENDS=	devel/gettext-tools
 LIB_DEPENDS=	x11/wxWidgets \
 		devel/subversion \
 		databases/sqlite3
-MODULES=	devel/gettext
-
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--with-apr-config=${LOCALBASE}/bin/apr-1-config \
 		--with-apu-config=${LOCALBASE}/bin/apu-1-config \

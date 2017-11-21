@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2017/11/16 23:20:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.34 2017/11/21 00:13:01 naddy Exp $
 
 BROKEN =	undefined reference to '_ZN6icu_5613UnicodeStringC1EOS0_'
 
@@ -11,7 +11,7 @@ COMMENT =	toolkit for developing mapping applications
 DISTNAME =	mapnik-v3.0.10
 PKGNAME =	${DISTNAME:S/v//}
 EXTRACT_SUFX =	.tar.bz2
-REVISION =	3
+REVISION =	4
 
 SHARED_LIBS =	mapnik 3.0 #3.0
 CATEGORIES =	graphics geo
@@ -25,14 +25,13 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += X11 Xau Xdmcp Xext Xrender boost_filesystem-mt
 WANTLIB += boost_program_options-mt boost_regex-mt harfbuzz webp
-WANTLIB += boost_system-mt c cairo expat fontconfig
-WANTLIB += freetype gdal glib-2.0 gobject-2.0 icuuc jpeg m pcre pixman-1
+WANTLIB += boost_system-mt c cairo expat fontconfig freetype 
+WANTLIB += gdal glib-2.0 gobject-2.0 iconv icuuc intl jpeg m pcre pixman-1
 WANTLIB += png>=17.0 pq proj pthread sqlite3 tiff
 WANTLIB += xcb xcb-render xcb-shm z ${COMPILER_LIBCXX}
 
 MASTER_SITES =	http://mapnik.s3.amazonaws.com/dist/v3.0.10/
-MODULES =	devel/gettext \
-		devel/scons \
+MODULES =	devel/scons \
 		lang/python
 
 # clang doesnt ship cstdint ?

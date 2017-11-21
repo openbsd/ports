@@ -4,7 +4,7 @@ COMMENT =		interactive fractal zoomer and morpher
 
 VERSION =		3.6
 DISTNAME =		xaos-${VERSION}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		graphics
 
@@ -15,15 +15,14 @@ MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		X11 Xext c gsl gslcblas m png z
+WANTLIB =  X11 Xext c gsl gslcblas iconv intl m png z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=xaos/XaoS/${VERSION}/}
-
-MODULES =		devel/gettext
 
 BUILD_DEPENDS =		devel/gettext-tools
 
 LIB_DEPENDS =		graphics/png \
+			devel/gettext \
 			devel/gsl
 
 USE_GMAKE =		Yes

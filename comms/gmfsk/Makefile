@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.40 2017/10/23 17:10:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.41 2017/11/21 00:12:59 naddy Exp $
 
 COMMENT=	GNOME multimode HF terminal
 
 GNOME_PROJECT=	gmfsk
 GNOME_VERSION=	0.6
-REVISION=	24
+REVISION=	25
 CATEGORIES=	comms hamradio
 
 HOMEPAGE=	http://gmfsk.connect.fi/
@@ -21,12 +21,11 @@ WANTLIB += bonobo-2 bonobo-activation bonoboui-2 c cairo expat
 WANTLIB += fftw fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gnome-2 gnomecanvas-2
 WANTLIB += gnomeui-2 gnomevfs-2 gobject-2.0 gthread-2.0 gtk-x11-2.0
-WANTLIB += hamlib m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1
+WANTLIB += hamlib iconv intl m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1
 WANTLIB += png popt pthread sndio ${COMPILER_LIBCXX} xcb xcb-render
 WANTLIB += xcb-shm z
 
-MODULES=		devel/gettext \
-			x11/gnome \
+MODULES=		x11/gnome \
 			devel/gconf2
 
 MODGNOME_TOOLS +=	yelp

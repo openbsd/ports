@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.62 2014/11/20 09:11:21 brad Exp $
+# $OpenBSD: Makefile,v 1.63 2017/11/21 00:13:02 naddy Exp $
 
 COMMENT=	X11-based presentation tool
 
 DISTNAME=	magicpoint-1.09a
-REVISION=	0
+REVISION=	1
 EPOCH=		0
 CATEGORIES=	misc productivity
 MASTER_SITES=	ftp://sh.wide.ad.jp/WIDE/free-ware/mgp/
@@ -12,17 +12,17 @@ HOMEPAGE=	http://member.wide.ad.jp/wg/mgp/
 
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xmu Xt Xtst c gif m mng png ttf util
+WANTLIB=  ICE SM X11 Xau Xdmcp Xext Xmu Xt Xtst c gif iconv intl m mng
+WANTLIB+= png ttf util
 
 # plus sign is for localized (i.e. Japanese) version
-LIB_DEPENDS+=	print/freetype \
+LIB_DEPENDS+=	devel/gettext \
+		print/freetype \
 		graphics/png \
 		graphics/libmng \
 		graphics/giflib
 RUN_DEPENDS+=	graphics/netpbm \
 		print/ghostscript/gnu-fonts
-
-MODULES=	devel/gettext
 
 AUTOCONF_VERSION=2.13
 # XXX while autoconf will append gnu in CONFIGURE_STYLE, we explicitely

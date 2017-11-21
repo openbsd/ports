@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2017/06/30 13:37:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2017/11/21 00:13:03 naddy Exp $
 
 COMMENT=	simple RADIUS client library
 
@@ -6,6 +6,7 @@ SHARED_LIBS +=	radcli               0.1      # 5.1
 
 V=		1.2.8
 DISTNAME=	radcli-$V
+REVISION=	0
 
 CATEGORIES=	net
 
@@ -16,12 +17,11 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 # recent code BSD, some old MERIT/Livingston
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ffi gmp gnutls hogweed idn2 nettle p11-kit pthread tasn1
-WANTLIB += unistring z
+WANTLIB =  ffi gmp gnutls hogweed iconv idn2 intl nettle p11-kit pthread
+WANTLIB += tasn1 unistring z
 
 MASTER_SITES=	https://github.com/radcli/radcli/releases/download/$V/
 
-MODULES=	devel/gettext
 LIB_DEPENDS=	security/gnutls
 
 CONFIGURE_STYLE= gnu

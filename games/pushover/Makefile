@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2017/11/18 22:23:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2017/11/21 00:13:00 naddy Exp $
 
 COMMENT =		puzzle game featuring dominoes
 
 DISTNAME =		pushover-0.0.5
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		games
 
@@ -12,18 +12,18 @@ HOMEPAGE =		http://pushover.sourceforge.net/
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += FLAC SDL SDL_mixer SDL_ttf c freetype m mikmod ogg
+WANTLIB += FLAC SDL SDL_mixer SDL_ttf c freetype iconv intl m mikmod ogg
 WANTLIB += png pthread smpeg sndio ${COMPILER_LIBCXX} usbhid vorbis vorbisfile z
 WANTLIB += ${MODLUA_WANTLIB}
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=pushover/}
 
-MODULES =		devel/gettext \
-			lang/lua
+MODULES =		lang/lua
 BUILD_DEPENDS =		devel/libtool
 # requires aclocal/lib-link.m4
 BUILD_DEPENDS +=	devel/gettext-tools
-LIB_DEPENDS =		devel/sdl-mixer \
+LIB_DEPENDS =		devel/gettext \
+			devel/sdl-mixer \
 			devel/sdl-ttf \
 			graphics/png
 

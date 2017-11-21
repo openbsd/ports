@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.44 2017/10/23 17:10:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.45 2017/11/21 00:13:02 naddy Exp $
 
 COMMENT =	GTK client for LiveJournal
 
 DISTNAME =	logjam-4.6.2
-REVISION =	1
+REVISION =	2
 CATEGORIES =	misc x11
 
 HOMEPAGE =	http://andy-shev.github.com/LogJam/
@@ -11,19 +11,18 @@ HOMEPAGE =	http://andy-shev.github.com/LogJam/
 # GPLv2
 PERMIT_PACKAGE_CDROM =   Yes
 
-WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
+WANTLIB =  X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender atk-1.0 c cairo dbus-1 dbus-glib-1 expat ffi
 WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
-WANTLIB += gtk-x11-2.0 harfbuzz lzma m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread soup-2.4
-WANTLIB += sqlite3 xcb xcb-render xcb-shm xml2 z
+WANTLIB += gtk-x11-2.0 harfbuzz iconv intl lzma m pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
+WANTLIB += soup-2.4 sqlite3 xcb xcb-render xcb-shm xml2 z
 
 MASTER_SITES =	${HOMEPAGE}/download/
 EXTRACT_SUFX =	.tar.bz2
 
-MODULES =	devel/gettext \
-		textproc/intltool
+MODULES =	textproc/intltool
 
 
 LIB_DEPENDS =	devel/libsoup \

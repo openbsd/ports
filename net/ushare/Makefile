@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2017/04/19 23:25:06 jca Exp $
+# $OpenBSD: Makefile,v 1.19 2017/11/21 00:13:03 naddy Exp $
 
 PORTROACH=	skipv:1.1
 
 COMMENT=	UPnP A/V media server
 
 DISTNAME=	ushare-1.1a
-REVISION=	11
+REVISION=	12
 EXTRACT_SUFX=	.tar.bz2
 
 CATEGORIES=	net multimedia
@@ -15,13 +15,12 @@ HOMEPAGE=	http://ushare.geexbox.org/
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c pthread ixml threadutil upnp
+WANTLIB =  c iconv intl ixml pthread threadutil upnp
 
 MASTER_SITES=	${HOMEPAGE}releases/
 
-MODULES=	devel/gettext
-
-LIB_DEPENDS=	net/libupnp
+LIB_DEPENDS=	devel/gettext \
+		net/libupnp
 
 USE_GMAKE=	Yes
 NO_TEST=	Yes

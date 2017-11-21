@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.78 2017/10/23 17:11:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.79 2017/11/21 00:13:05 naddy Exp $
 
 COMMENT =		K Desktop Environment, games
 
@@ -12,14 +12,14 @@ SHARED_LIBS +=	atlantikclient       4.0      # .3.0
 SHARED_LIBS +=	atlantikui           4.0      # .3.0
 SHARED_LIBS +=	kolf                 4.0      # .3.0
 
-MODULES =	x11/kde devel/gettext
+MODULES =	x11/kde
 
 RUN_DEPENDS +=	devel/desktop-file-utils \
 		x11/gtk+3,-guic
 LIB_DEPENDS = 	x11/kde/libs3
 SEPARATE_BUILD =	flavored
 
-REVISION =	19
+REVISION =	20
 WANTLIB = GL ICE SM X11 Xau Xcursor Xdamage Xdmcp Xext Xfixes Xft Xi Xinerama \
 	Xmu Xrandr Xrender Xt Xxf86vm art_lgpl_2 artsflow artsflow_idl \
 	audiofile c drm expat fam fontconfig freetype glib-2.0 gmodule-2.0 \
@@ -29,7 +29,7 @@ WANTLIB = GL ICE SM X11 Xau Xcursor Xdamage Xdmcp Xext Xfixes Xft Xi Xinerama \
 	lib/kde3/kparts m mad mcop mng ogg pcre png pthread \
 	qtmcop sndio soundserver_idl ${COMPILER_LIBCXX} util vorbis vorbisenc vorbisfile \
 	xcb z
-WANTLIB += avahi-client avahi-common dbus-1 dns_sd
+WANTLIB += avahi-client avahi-common dbus-1 dns_sd iconv intl
 WANTLIB += FLAC X11-xcb glapi xcb-dri2 xcb-glx
 
 post-install:

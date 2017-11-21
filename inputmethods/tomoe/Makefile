@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2016/05/29 21:41:45 bentley Exp $
+# $OpenBSD: Makefile,v 1.12 2017/11/21 00:13:01 naddy Exp $
 
 COMMENT=	japanese handwriting recognition library
 
 DISTNAME=	tomoe-0.6.0
-REVISION=	2
+REVISION=	3
 
 HOMEPAGE= 	https://osdn.jp/projects/tomoe/
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tomoe/}
@@ -15,10 +15,9 @@ SHARED_LIBS +=  tomoe                1.0      # 1.0
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ffi glib-2.0 gmodule-2.0 gobject-2.0 pcre pthread
+WANTLIB =  ffi glib-2.0 gmodule-2.0 gobject-2.0 iconv intl pcre pthread
 
-MODULES=	devel/gettext \
-		textproc/intltool
+MODULES=	textproc/intltool
 
 BUILD_DEPENDS=	textproc/gsed
 

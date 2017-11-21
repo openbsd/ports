@@ -1,18 +1,19 @@
-# $OpenBSD: Makefile,v 1.21 2017/11/18 22:23:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2017/11/21 00:13:00 naddy Exp $
 
 COMMENT =		infinite-world block sandbox game
 V =			0.4.14
 DISTNAME =		minetest-${V}
 CATEGORIES =		games x11
-REVISION =		1
+REVISION =		2
 
 HOMEPAGE =		http://www.minetest.net/
 
 # source LGPLv2.1/ datas CC BY-SA 3.0
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += GL GLU ICE Irrlicht SM X11 Xext Xxf86vm bz2 c curl freetype jpeg m ogg openal
-WANTLIB += png pthread spatialindex sqlite3 ${COMPILER_LIBCXX} vorbis vorbisfile z
+WANTLIB += GL GLU ICE Irrlicht SM X11 Xext Xxf86vm bz2 c curl freetype 
+WANTLIB += iconv intl jpeg m ogg openal png pthread spatialindex sqlite3 
+WANTLIB += ${COMPILER_LIBCXX} vorbis vorbisfile z
 WANTLIB += luajit-${MODLUA_VERSION}
 
 MASTER_SITES =		https://github.com/minetest/
@@ -21,7 +22,6 @@ DISTFILES =		minetest-{minetest/archive/}${V}${EXTRACT_SUFX} \
 			minetest-game-{minetest_game/archive/}${V}${EXTRACT_SUFX}
 
 MODULES =		devel/cmake \
-			devel/gettext \
 			lang/lua
 
 CONFIGURE_ARGS =	-DENABLE_GETTEXT=ON -DCUSTOM_MANDIR=${PREFIX}/man

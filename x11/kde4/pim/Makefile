@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.32 2017/07/27 11:57:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2017/11/21 00:13:05 naddy Exp $
 
 COMMENT =	KDE personal information management
 DISTNAME =	kdepim-4.14.10
 PKGSPEC =	kdepim-${MODKDE4_SPEC}
-REVISION =	3
+REVISION =	4
 DPB_PROPERTIES +=	parallel
 
 MASTER_SITES =	${MASTER_SITE_KDE:=Attic/applications/15.04.3/src/}
@@ -98,9 +98,9 @@ WANTLIB += ${KDE4LIB}/kidletime ${KDE4LIB}/kutils
 WANTLIB += ${KDE4LIB}/balooqueryparser ${KDE4LIB}/kfile
 WANTLIB += akonadiprotocolinternals prison soprano
 WANTLIB += assuan gpg-error gpgme++ gpgme++-pthread gpgme-pthread
-WANTLIB += grantlee_core grantlee_gui qjson qgpgme sasl2
+WANTLIB += grantlee_core grantlee_gui iconv intl qjson qgpgme sasl2
 
-MODULES =	devel/gettext multimedia/phonon
+MODULES =	multimedia/phonon
 
 # textproc/dblatex could be detected but will not be used
 BUILD_DEPENDS =	devel/boost \

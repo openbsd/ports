@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.257 2017/11/16 23:20:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.258 2017/11/21 00:13:02 naddy Exp $
 
 COMMENT-main =		Mozilla e-mail, rss and usenet client
 COMMENT-lightning =	Mozilla Thunderbird calendar extension
@@ -15,8 +15,8 @@ MULTI_PACKAGES =	-main -lightning
 PKGNAME-main =		${PKGNAME}
 PKGNAME-lightning =	lightning-5.4.2.1
 EPOCH-lightning =	0
-REVISION-lightning =	1
-REVISION-main =		4
+REVISION-lightning =	2
+REVISION-main =		5
 
 HOMEPAGE =	http://www.mozilla.org/thunderbird/
 
@@ -31,7 +31,9 @@ CATEGORIES=	mail news
 # MPL
 PERMIT_PACKAGE_CDROM=	Yes
 
-MODULES =	www/mozilla devel/gettext lang/python
+WANTLIB-lightning =  iconv intl
+
+MODULES =	www/mozilla lang/python
 MODPY_RUNDEP =	No
 
 COMPILER =	base-clang ports-clang
@@ -54,9 +56,6 @@ CONFIGURE_ARGS +=	--prefix=${PREFIX}
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include"
 
 RUN_DEPENDS-lightning = STEM->=${MOZILLA_VERSION:S/b/beta/}:${BUILD_PKGPATH},-main
-WANTLIB-lightning =
-
-WANTLIB += X11-xcb pixman-1 xcb xcb-shm
 
 # build lightning xpi
 CONFIGURE_ARGS +=	--enable-calendar

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2016/03/18 23:12:19 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2017/11/21 00:13:03 naddy Exp $
 
 COMMENT =	allows deniable private conversations using Pidgin
 
 DISTNAME =	pidgin-otr-4.0.1
 CATEGORIES =	security net
 EPOCH =		0
+REVISION =	0
 
 HOMEPAGE =	http://otr.cypherpunks.ca/
 
@@ -13,14 +14,14 @@ MASTER_SITES =	${HOMEPAGE}
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
+WANTLIB =  c gcrypt gpg-error iconv intl otr>=4.0 pthread
+
 RUN_DEPENDS =	net/pidgin>=2.0.0
 BUILD_DEPENDS =	${RUN_DEPENDS} \
 		devel/libtool
 LIB_DEPENDS =	security/libotr>=4.0.0
 
-MODULES =	devel/gettext \
-		textproc/intltool
-WANTLIB =	c gpg-error gcrypt otr>=4.0 pthread
+MODULES =	textproc/intltool
 
 USE_LIBTOOL = 	gnu
 LIBTOOL_FLAGS += --tag=disable-static

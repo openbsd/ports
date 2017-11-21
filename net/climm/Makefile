@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2016/05/07 12:40:58 pascal Exp $
+# $OpenBSD: Makefile,v 1.5 2017/11/21 00:13:02 naddy Exp $
 
 COMMENT =		simple, command-line multi messenger
 
 DISTNAME =		climm-0.7.1
-REVISION = 		1
+REVISION = 		2
 
 CATEGORIES =		net
 
@@ -14,13 +14,13 @@ MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c gcrypt gnutls gpg-error iksemel otr pthread ${MODTCL_WANTLIB}
+WANTLIB =  ${MODTCL_WANTLIB}
+WANTLIB += c gcrypt gnutls gpg-error iconv iksemel intl otr pthread
 
 MASTER_SITES =		${HOMEPAGE}/source/
 EXTRACT_SUFX =		.tgz
 
-MODULES =		devel/gettext \
-			lang/tcl
+MODULES =		lang/tcl
 LIB_DEPENDS =		security/libotr>=4.0.0 \
 			security/gnutls \
 			textproc/iksemel \

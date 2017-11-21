@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.26 2017/10/23 17:11:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2017/11/21 00:13:04 naddy Exp $
 
 COMMENT =		enlightenment DBus component
 
 DISTNAME =		e_dbus-1.7.10
 EPOCH =			1
-REVISION =		3
+REVISION =		4
 
 SO_VERSION =		5.0	# 8.10
 .for _lib in edbus enotify econnman0_7x ehal eofono ebluez eukit
@@ -14,14 +14,12 @@ SHARED_LIBS +=		${_lib} ${SO_VERSION}
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
+WANTLIB =  X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender Xss Xtst c cares crypto curl dbus-1 ecore ecore_con
 WANTLIB += ecore_evas ecore_input ecore_input_evas ecore_ipc ecore_x eet
 WANTLIB += eina evas expat fontconfig freetype fribidi glib-2.0
-WANTLIB += graphite2 harfbuzz jpeg m nghttp2 pcre pthread
-WANTLIB += ssl xcb z
-
-MODULES =		devel/gettext
+WANTLIB += graphite2 harfbuzz iconv intl jpeg m nghttp2 pcre pthread ssl
+WANTLIB += xcb z
 
 LIB_DEPENDS =		x11/dbus \
 			devel/fribidi \

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.76 2017/09/26 14:17:16 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.77 2017/11/21 00:13:03 naddy Exp $
 
 COMMENT=	Secure Internet Live Conferencing (SILC) client
 
 DISTNAME=	silc-client-1.1.11
-REVISION=	2
+REVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=silc/}
 EXTRACT_SUFX=	.tar.bz2
@@ -15,10 +15,9 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	c crypto glib-2.0>=1000 gmodule-2.0>=1000 ncurses pcre pthread \
-		ssl
+WANTLIB=  c crypto glib-2.0>=1000 gmodule-2.0>=1000 iconv intl ncurses
+WANTLIB+= pcre pthread ssl
 
-MODULES=	devel/gettext
 LIB_DEPENDS+=	devel/glib2
 
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"

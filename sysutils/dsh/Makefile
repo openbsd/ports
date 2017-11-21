@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2016/03/11 19:59:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2017/11/21 00:13:03 naddy Exp $
 
 COMMENT=	dancers shell or distributed shell
 
 DISTNAME =	dsh-0.25.10
 CATEGORIES=	sysutils net
+REVISION =	0
 
 HOMEPAGE=	http://www.netfort.gr.jp/~dancer/software/dsh.html.en
 MASTER_SITES=	http://www.netfort.gr.jp/~dancer/software/downloads/
@@ -11,11 +12,10 @@ MASTER_SITES=	http://www.netfort.gr.jp/~dancer/software/downloads/
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c dshconfig
+WANTLIB =  c dshconfig iconv intl
 
-LIB_DEPENDS=		devel/libdshconfig
-
-MODULES=		devel/gettext
+LIB_DEPENDS=		devel/gettext \
+			devel/libdshconfig
 
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ENV =         CPPFLAGS="-I${LOCALBASE}/include" \

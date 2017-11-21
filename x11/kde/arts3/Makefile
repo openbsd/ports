@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.84 2017/10/23 17:11:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.85 2017/11/21 00:13:05 naddy Exp $
 
 COMMENT =		K Desktop Environment, aRTs
 CATEGORIES =		x11 x11/kde
 VERSION =		3.5.10
-REVISION =		11
+REVISION =		12
 DISTNAME =		arts-1.5.10
 MODKDE_VERSION =	3.5.8
 
@@ -24,7 +24,7 @@ SHARED_LIBS +=	gmcop                2.0      # .1.0
 SHARED_LIBS +=	qtmcop               2.0      # .1.0
 SHARED_LIBS +=	x11globalcomm        2.0      # .1.0
 
-MODULES =	x11/kde devel/gettext
+MODULES =	x11/kde
 
 LIB_DEPENDS = 	devel/libaudiofile \
 		devel/glib2 \
@@ -41,9 +41,10 @@ CONFIGURE_ARGS +=	${ENABLE_SHARED} \
 
 WANTLIB += GL ICE SM X11 Xcursor Xdamage Xext Xfixes Xft Xi Xinerama Xmu
 WANTLIB += Xrandr Xrender Xt Xxf86vm audiofile c drm expat fontconfig
-WANTLIB += freetype glib-2.0 gmodule-2.0 gthread-2.0 jpeg lcms m mad mng
-WANTLIB += ogg pcre png pthread sndio ${COMPILER_LIBCXX} vorbis vorbisenc vorbisfile
-WANTLIB += xcb xcb-glx z FLAC X11-xcb Xau Xdmcp glapi xcb-dri2
+WANTLIB += freetype glib-2.0 gmodule-2.0 gthread-2.0 iconv intl jpeg lcms m
+WANTLIB += mad mng ogg pcre png pthread sndio ${COMPILER_LIBCXX} vorbis
+WANTLIB += vorbisenc vorbisfile xcb xcb-glx z FLAC X11-xcb Xau Xdmcp glapi
+WANTLIB += xcb-dri2
 
 post-patch:
 	cp ${FILESDIR}/audioiosndio.cc ${WRKSRC}/flow

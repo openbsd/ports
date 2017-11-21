@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2017/10/23 17:11:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2017/11/21 00:13:05 naddy Exp $
 
 COMMENT =	GTK+2 widget to display large amounts of numerical data
 
 DISTNAME =	gtkdatabox-0.9.1.1
-REVISION =	7
+REVISION =	8
 
 SHARED_LIBS =	gtkdatabox 0.0
 
@@ -16,17 +16,14 @@ MAINTAINER =	Pierre-Emmanuel Andre <pea@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB = 	X11 Xcomposite Xcursor Xdamage Xext Xfixes \
-		Xi Xinerama Xrandr Xrender expat fontconfig freetype \
-		m pixman-1 z gio-2.0 atk-1.0 cairo glib-2.0 \
-		pango-1.0 pangocairo-1.0 pangoft2-1.0 gmodule-2.0 \
-		gobject-2.0 png xcb pcre gthread-2.0 \
-		xcb-render gdk-x11-2.0 gdk_pixbuf-2.0 \
-		gtk-x11-2.0 ffi graphite2 harfbuzz pthread xcb-shm
+WANTLIB =  X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
+WANTLIB += Xrender atk-1.0 cairo expat ffi fontconfig freetype
+WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
+WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-x11-2.0 harfbuzz iconv
+WANTLIB += intl m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
+WANTLIB += png pthread xcb xcb-render xcb-shm z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gtkdatabox/}
-
-MODULES =	devel/gettext
 
 LIB_DEPENDS =	x11/gtk+2
 

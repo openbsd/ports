@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.36 2017/10/23 17:11:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2017/11/21 00:13:05 naddy Exp $
 
 CATEGORIES=	x11
 
 COMMENT=	GUI for ogle
 DISTNAME=	ogle_gui-0.9.2
-REVISION=	12
+REVISION=	13
 
 HOMEPAGE=	http://www.dtek.chalmers.se/groups/dvd/
 # Authors can be reached at dvd@dtek.chalmers.se
@@ -15,20 +15,16 @@ CONFIGURE_STYLE=	gnu
 # GPL
 PERMIT_PACKAGE_CDROM=Yes
 
-WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr c expat gio-2.0 pcre pixman-1 pthread
-WANTLIB += z xcb dvdcontrol xml2 msgevents
-WANTLIB += gthread-2.0 xcb-render xcb-shm
-WANTLIB += Xrender atk-1.0 fontconfig freetype glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 m pango-1.0 glade-2.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 cairo png gdk-x11-2.0
-WANTLIB += gdk_pixbuf-2.0 gtk-x11-2.0
-WANTLIB += ffi graphite2 harfbuzz lzma
+WANTLIB =  X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
+WANTLIB += Xrender atk-1.0 c cairo dvdcontrol expat ffi fontconfig
+WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glade-2.0
+WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
+WANTLIB += gtk-x11-2.0 harfbuzz iconv intl lzma m msgevents pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread xcb
+WANTLIB += xcb-render xcb-shm xml2 z
 
 LIB_DEPENDS=	x11/ogle \
 		textproc/libxml \
-
-MODULES=	devel/gettext
 
 LIB_DEPENDS+=	devel/libglade2 \
 		x11/gtk+2

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.67 2017/04/16 15:37:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.68 2017/11/21 00:13:04 naddy Exp $
 
 COMMENT=	framework for granting privileged operations to users
 
 DISTNAME=	polkit-0.113
-REVISION=	4
+REVISION=	5
 
 SHARED_LIBS +=  polkit-gobject-1	2.0 # .0.0
 SHARED_LIBS +=  polkit-agent-1		2.0 # .0.0
@@ -17,12 +17,12 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c expat gio-2.0 glib-2.0 gobject-2.0 mozjs-17.0 pthread
+WANTLIB =  c expat gio-2.0 glib-2.0 gobject-2.0 iconv intl mozjs-17.0
+WANTLIB += pthread
 
 MASTER_SITES=	http://www.freedesktop.org/software/polkit/releases/
 
-MODULES=	devel/gettext \
-		lang/python \
+MODULES=	lang/python \
 		textproc/intltool
 
 # man pages

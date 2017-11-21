@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.26 2017/11/16 23:20:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.27 2017/11/21 00:12:59 naddy Exp $
 
 COMMENT=		C++ binding for the ATK library
 
 GNOME_PROJECT=		atkmm
 GNOME_VERSION=		2.24.2
 PKGNAME=		atk2mm-${GNOME_VERSION}
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		devel
 
@@ -19,11 +19,10 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += atk-1.0 ffi glib-2.0 glibmm-2.4 gmodule-2.0 gobject-2.0
-WANTLIB += m pcre pthread sigc-2.0
+WANTLIB += iconv intl m pcre pthread sigc-2.0
 WANTLIB += ${COMPILER_LIBCXX}
 
-MODULES=		devel/gettext \
-			x11/gnome
+MODULES=		x11/gnome
 # c++11
 COMPILER =		base-clang ports-gcc
 

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:44:50 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2017/11/21 00:13:04 naddy Exp $
 
 COMMENT = 		simple web image gallery generator
 
 DISTNAME =		swiggle-0.4
+REVISION =		0
 
 CATEGORIES =		www graphics
 
@@ -11,11 +12,9 @@ MAINTAINER =		Sergey Bronnikov <estetus@gmail.com>
 
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB +=		c exif jpeg
+WANTLIB =  c exif iconv intl jpeg
 
 MASTER_SITES =		${HOMEPAGE}/files/
-
-MODULES =		devel/gettext
 
 LIB_DEPENDS =		graphics/libexif \
 			graphics/jpeg

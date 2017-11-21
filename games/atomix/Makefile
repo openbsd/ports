@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2017/10/23 17:10:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2017/11/21 00:13:00 naddy Exp $
 
 COMMENT=	build molecules out of single atoms
 
 DISTNAME=	atomix-2.14.0
-REVISION=	11
+REVISION=	12
 CATEGORIES=	games
 EXTRACT_SUFX=	.tar.bz2
 
@@ -14,18 +14,16 @@ HOMEPAGE =	https://wiki.gnome.org/Apps/Atomix
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += GL ICE ORBit-2 SM X11 Xcomposite Xcursor Xdamage Xext
-WANTLIB += Xfixes Xi Xinerama Xrandr Xrender art_lgpl_2 atk-1.0
-WANTLIB += bonobo-2 bonobo-activation bonoboui-2 c cairo expat
-WANTLIB += fontconfig freetype gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gnome-2 gnomecanvas-2
-WANTLIB += gnomeui-2 gnomevfs-2 gobject-2.0 gthread-2.0 gtk-x11-2.0
-WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
-WANTLIB += popt pthread xcb xcb-render xcb-shm xml2
-WANTLIB += z
+WANTLIB =  GL ICE ORBit-2 SM X11 Xcomposite Xcursor Xdamage Xext Xfixes
+WANTLIB += Xi Xinerama Xrandr Xrender art_lgpl_2 atk-1.0 bonobo-2
+WANTLIB += bonobo-activation bonoboui-2 c cairo expat fontconfig
+WANTLIB += freetype gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB += gmodule-2.0 gnome-2 gnomecanvas-2 gnomeui-2 gnomevfs-2
+WANTLIB += gobject-2.0 gthread-2.0 gtk-x11-2.0 iconv intl m pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pixman-1 png popt pthread xcb
+WANTLIB += xcb-render xcb-shm xml2 z
 
-MODULES=	textproc/intltool \
-		devel/gettext
+MODULES=	textproc/intltool
 
 LIB_DEPENDS=	x11/gnome/libgnome \
 		x11/gnome/libgnomeui

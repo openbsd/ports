@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2017/10/23 17:11:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2017/11/21 00:13:04 naddy Exp $
 
 COMMENT=	Equinox GTK+2 engine
 
 V=		1.50
 DISTNAME=	121881-equinox-${V}
 PKGNAME=	gtk2-equinox-engine-${V}
-REVISION=	5
+REVISION=	6
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		140449-equinox-themes-${V}${EXTRACT_SUFX}
@@ -21,13 +21,11 @@ WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender Xxf86vm atk-1.0 cairo drm expat ffi
 WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
-WANTLIB += gtk-x11-2.0 harfbuzz m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png pthread ${COMPILER_LIBCXX} xcb
+WANTLIB += gtk-x11-2.0 harfbuzz iconv intl m pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread ${COMPILER_LIBCXX} xcb
 WANTLIB += xcb-render xcb-shm z
 
 MASTER_SITES=	http://gnome-look.org/CONTENT/content-files/
-
-MODULES=	devel/gettext
 
 LIB_DEPENDS=	x11/gtk+2
 

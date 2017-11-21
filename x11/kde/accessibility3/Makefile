@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.63 2017/10/23 17:11:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.64 2017/11/21 00:13:05 naddy Exp $
 
 COMMENT = 		X11 toolkit, accessibility aids
 CATEGORIES =		x11 x11/kde
 VERSION =		3.5.10
-REVISION =		22
+REVISION =		23
 DISTNAME =		kdeaccessibility-${VERSION}
 MODKDE_VERSION ?=	3.5.8
 SHARED_LIBS +=	KTTSD_Lib            1.0      # .0.1
 SHARED_LIBS +=	kttsd                2.0      # .1.0
 
-MODULES =	x11/kde devel/gettext
+MODULES =	x11/kde
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+3,-guic
@@ -21,7 +21,7 @@ SEPARATE_BUILD =	flavored
 WANTLIB =	GL FLAC ICE SM X11 Xcursor Xdamage Xext Xfixes Xft Xi
 WANTLIB +=	Xinerama Xmu Xrandr Xrender Xt Xtst Xxf86vm art_lgpl_2
 WANTLIB +=	artsflow artsflow_idl audiofile c drm expat fam fontconfig
-WANTLIB +=	freetype glib-2.0 gmodule-2.0 gthread-2.0 idn jpeg
+WANTLIB +=	freetype glib-2.0 gmodule-2.0 gthread-2.0 iconv idn intl jpeg
 WANTLIB +=	kmedia2_idl lcms lib/kde3/DCOP lib/kde3/artskde
 WANTLIB +=	lib/kde3/kabc lib/kde3/kdecore>=6 lib/kde3/kdefx
 WANTLIB +=	lib/kde3/kdeprint lib/kde3/kdesu lib/kde3/kdeui lib/kde3/kio

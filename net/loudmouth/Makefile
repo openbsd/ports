@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.26 2016/03/11 20:28:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.27 2017/11/21 00:13:02 naddy Exp $
 
 COMMENT=		lightweight Jabber client library
 
 V=			1.4.3
 DISTNAME=       	loudmouth-$V
-REVISION=		6
+REVISION=		7
 SHARED_LIBS +=	loudmouth-1          3.0      # .1.0
 CATEGORIES=		net devel
 
@@ -13,9 +13,7 @@ HOMEPAGE=       	http://groups.google.com/group/loudmouth-dev/
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += crypto glib-2.0 idn>=16 pcre pthread ssl
-
-MODULES=		devel/gettext
+WANTLIB =  crypto glib-2.0 iconv idn>=16 intl pcre pthread ssl
 
 MASTER_SITES=   	${MASTER_SITE_GNOME:=sources/loudmouth/${V:C/^([0-9]+\.[0-9]+).*/\1/}/}
 EXTRACT_SUFX=   	.tar.bz2

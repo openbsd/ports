@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2017/07/26 22:45:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2017/11/21 00:13:00 naddy Exp $
 
 COMMENT=		collection of tools for manipulating EPROM load files
 
 DISTNAME=		srecord-1.64
-REVISION =		1
+REVISION =		2
 CATEGORIES=		devel
 
 SHARED_LIBS +=  srecord              0.0      # 0.0
@@ -15,9 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=srecord/}
 
-MODULES=		devel/gettext
-
-WANTLIB += c gcrypt gpg-error m ${COMPILER_LIBCXX}
+WANTLIB += c gcrypt gpg-error iconv intl m ${COMPILER_LIBCXX}
 
 BUILD_DEPENDS=		devel/boost \
 			print/ghostscript/gnu

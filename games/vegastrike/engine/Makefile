@@ -1,23 +1,22 @@
-# $OpenBSD: Makefile,v 1.8 2017/07/26 22:45:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2017/11/21 00:13:01 naddy Exp $
 
 COMMENT =		3D space simulator
 
 DISTNAME =		vegastrike-src-${V}
 PKGNAME =		vegastrike-${V}
-REVISION =		1
+REVISION =		2
 
 WANTLIB += GL GLU OgreMain SDL X11 Xcomposite Xcursor Xdamage
 WANTLIB += Xext Xfixes Xi Xinerama Xmu Xrandr Xrender atk-1.0
 WANTLIB += boost_python boost_thread-mt c cairo expat fontconfig
 WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += glut gobject-2.0 gtk-x11-2.0 jpeg m ogg openal pango-1.0
+WANTLIB += glut gobject-2.0 gtk-x11-2.0 iconv intl jpeg m ogg openal pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 png pthread ${COMPILER_LIBCXX} util
 WANTLIB += vorbis vorbisfile z
 
 PATCHORIG =		.orig.port
 
-MODULES =		lang/python \
-			devel/gettext
+MODULES =		lang/python
 RUN_DEPENDS =		games/vegastrike/data>=${V}
 LIB_DEPENDS =		x11/gtk+2 \
 			audio/openal \

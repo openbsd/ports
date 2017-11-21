@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2015/06/04 06:26:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2017/11/21 00:13:01 naddy Exp $
 
 COMMENT=		(S)VCD authoring software
 
 DISTNAME=		vcdimager-0.7.24
 CATEGORIES=		graphics multimedia
+REVISION=		0
 
 SHARED_LIBS +=  vcdinfo              0.0      # 2.0
 
@@ -14,9 +15,7 @@ HOMEPAGE=		http://www.vcdimager.org/
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c cdio iso9660 lzma m popt pthread xml2 z
-
-MODULES=		devel/gettext
+WANTLIB =  c cdio iconv intl iso9660 lzma m popt pthread xml2 z
 
 USE_GMAKE=		Yes
 

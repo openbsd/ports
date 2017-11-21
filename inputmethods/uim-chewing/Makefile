@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2016/03/18 21:38:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2017/11/21 00:13:01 naddy Exp $
 
 COMMENT=	chewing input method for uim
 
 V =		0.1.0
 DISTNAME=	uim-chewing-$V
-REVISION =	1
+REVISION =	2
 
 CATEGORIES=	inputmethods chinese
 
@@ -13,9 +13,7 @@ HOMEPAGE= 	https://github.com/uim/uim-chewing
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += chewing gcroots uim uim-scm
-
-MODULES=	devel/gettext
+WANTLIB =  chewing gcroots iconv intl uim uim-scm
 
 MASTER_SITES=	https://github.com/uim/uim-chewing/releases/download/uim-chewing-$V/
 

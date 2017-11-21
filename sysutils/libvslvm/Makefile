@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/02/21 12:33:47 rpointel Exp $
+# $OpenBSD: Makefile,v 1.2 2017/11/21 00:13:04 naddy Exp $
 
 COMMENT =	library to access the LVM volume system format
 
 VERSION = 	20160110
 DISTNAME =	libvslvm-experimental-${VERSION}
 PKGNAME =	${DISTNAME:S/-experimental//}
+REVISION =	0
 
 SHARED_LIBS +=  vslvm                       0.0 # 1.0
 
@@ -19,15 +20,15 @@ MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 # LGPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += bfio c fuse m pthread util ${MODPY_WANTLIB}
+WANTLIB =  ${MODPY_WANTLIB}
+WANTLIB += bfio c fuse iconv intl m pthread util
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--enable-python
 
 WRKDIST =	${WRKDIR}/${PKGNAME}
 
-MODULES +=	devel/gettext \
-		lang/python
+MODULES +=	lang/python
 
 LIB_DEPENDS +=	devel/libbfio
 

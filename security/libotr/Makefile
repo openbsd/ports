@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.30 2016/05/07 12:40:58 pascal Exp $
+# $OpenBSD: Makefile,v 1.31 2017/11/21 00:13:03 naddy Exp $
 
 COMMENT=	portable OTR messaging library and toolkit
 
 DISTNAME=	libotr-4.1.1
 CATEGORIES=	security
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS +=  otr                  4.1      # 6.0
 
@@ -17,9 +17,7 @@ MAINTAINER =	Pascal Stumpf <pascal@stumpf.co>
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c gcrypt gpg-error
-
-MODULES=	devel/gettext
+WANTLIB =  c gcrypt gpg-error iconv intl
 
 LIB_DEPENDS=	security/libgcrypt
 

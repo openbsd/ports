@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2017/11/18 22:23:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2017/11/21 00:13:00 naddy Exp $
 
 COMMENT =		Othello/Reversi-like game
 DISTNAME =		grhino-${V}
 V =			0.16.1
-REVISION=		4
+REVISION=		5
 CATEGORIES =		games
 HOMEPAGE =		http://rhino.sourceforge.net/
 
@@ -16,14 +16,13 @@ WANTLIB += ICE ORBit-2 SM X11 Xcomposite Xcursor Xdamage Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender art_lgpl_2 atk-1.0
 WANTLIB += bonobo-2 bonobo-activation bonoboui-2 c cairo fontconfig
 WANTLIB += freetype gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
-WANTLIB += glib-2.0 gmodule-2.0 gnome-2 gnomecanvas-2 gnomeui-2
-WANTLIB += gnomevfs-2 gobject-2.0 gthread-2.0 gtk-x11-2.0 m pango-1.0
+WANTLIB += glib-2.0 gmodule-2.0 gnome-2 gnomecanvas-2 gnomeui-2 gnomevfs-2
+WANTLIB += gobject-2.0 gthread-2.0 gtk-x11-2.0 iconv intl m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 popt pthread ${COMPILER_LIBCXX} z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=rhino/GRhino/${V}/}
 
-MODULES =		devel/gettext \
-			x11/gnome
+MODULES =		x11/gnome
 
 MODGNOME_TOOLS += desktop-file-utils yelp
 

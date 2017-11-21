@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2017/02/28 02:54:56 jca Exp $
+# $OpenBSD: Makefile,v 1.10 2017/11/21 00:13:04 naddy Exp $
 
 COMMENT =	XML parser written in Vala
 DISTNAME =	libxmlbird-1.2.0
 CATEGORIES =	textproc
+REVISION =	0
 
 SHARED_LIBS +=	xmlbird 0.0			# 1.0.6
 
@@ -13,13 +14,13 @@ MAINTAINER =	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 # LGPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
 
+WANTLIB =  glib-2.0 iconv intl
+
 MASTER_SITES =		http://birdfont.org/xmlbird-releases/
 EXTRACT_SUFX =		.tar.xz
 
-WANTLIB += glib-2.0
 
-MODULES =		devel/gettext \
-			lang/python
+MODULES =		lang/python
 MODPY_ADJ_FILES =       configure install.py
 
 BUILD_DEPENDS =		devel/py-doit \

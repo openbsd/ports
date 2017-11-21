@@ -1,21 +1,21 @@
-# $OpenBSD: Makefile,v 1.30 2016/06/27 11:23:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.31 2017/11/21 00:13:02 naddy Exp $
 
 COMMENT=		DLNA integration for GUPnP
 
 GNOME_PROJECT=		gupnp-dlna
 GNOME_VERSION=		0.10.5
+REVISION=		0
 
 SHARED_LIBS +=	gupnp-dlna-2.0            0.0 # 3.0
 SHARED_LIBS +=	gupnp-dlna-gst-2.0        0.0 # 3.0
 
-MODULES=		devel/gettext \
-			x11/gnome
+MODULES=		x11/gnome
 
 MODGNOME_TOOLS += gobject-introspection vala
 
-WANTLIB += c ffi glib-2.0 gmodule-2.0 gobject-2.0 gstaudio-1.0
+WANTLIB =  c ffi glib-2.0 gmodule-2.0 gobject-2.0 gstaudio-1.0
 WANTLIB += gstbase-1.0 gstpbutils-1.0 gstreamer-1.0 gsttag-1.0
-WANTLIB += gstvideo-1.0 m pcre pthread xml2 z lzma orc-0.4
+WANTLIB += gstvideo-1.0 iconv intl lzma m orc-0.4 pcre pthread xml2 z
 
 LIB_DEPENDS=		multimedia/gstreamer1/plugins-base
 RUN_DEPENDS=		net/gupnp/core

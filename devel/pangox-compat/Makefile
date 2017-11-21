@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2016/03/18 23:12:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2017/11/21 00:13:00 naddy Exp $
 
 COMMENT=		pangox compatibility library
 
 GNOME_VERSION=		0.0.2
 GNOME_PROJECT=		pangox-compat
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS +=  pangox-1.0         2906.0   # 0.0
 
@@ -17,11 +17,10 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += X11 ffi glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
-WANTLIB += m pango-1.0 pcre pthread xcb
+WANTLIB =  X11 ffi glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 iconv
+WANTLIB += intl m pango-1.0 pcre pthread xcb
 
-MODULES=		devel/gettext \
-			x11/gnome
+MODULES=		x11/gnome
 
 LIB_DEPENDS=		devel/pango>=1.31.2
 

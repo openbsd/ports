@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2017/11/18 22:23:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2017/11/21 00:13:02 naddy Exp $
 
 COMMENT =		CD/DVD creator
 DISTNAME =		k3b-2.0.3a
 CATEGORIES =		multimedia
-REVISION =		0
+REVISION =		1
 
 # bump away from KDE3 version
 SHARED_LIBS =		k3blib		50.1
@@ -14,7 +14,7 @@ HOMEPAGE =		http://www.k3b.org/
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =  c m pthread
+WANTLIB =  c iconv intl m pthread
 WANTLIB += ICE SM X11 Xext
 WANTLIB += lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtGui
 WANTLIB += lib/qt4/QtNetwork lib/qt4/QtSql lib/qt4/QtSvg
@@ -31,7 +31,7 @@ WANTLIB += ${COMPILER_LIBCXX}
 
 MASTER_SITES =		${MASTER_SITE_KDE:=stable/k3b/}
 
-MODULES =		x11/kde4 devel/gettext
+MODULES =		x11/kde4
 
 BUILD_DEPENDS =		devel/gettext-tools
 
