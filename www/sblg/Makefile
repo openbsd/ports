@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2017/10/31 07:33:22 bentley Exp $
+# $OpenBSD: Makefile,v 1.11 2017/11/21 07:44:19 bentley Exp $
 
 COMMENT =	simple off-line blog utility
 
-DISTNAME =	sblg-0.4.10
+DISTNAME =	sblg-0.4.11
 
 CATEGORIES =	www
 
