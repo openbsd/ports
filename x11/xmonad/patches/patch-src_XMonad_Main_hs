@@ -1,0 +1,26 @@
+$OpenBSD: patch-src_XMonad_Main_hs,v 1.1 2017/11/21 00:02:19 kili Exp $
+
+I don't like the idea of yet another port with nothing than a binding
+for setlocale(3), and I don't know which part of xmonad would benefit
+from it.
+
+Index: src/XMonad/Main.hs
+--- src/XMonad/Main.hs.orig
++++ src/XMonad/Main.hs
+@@ -15,7 +15,6 @@
+ 
+ module XMonad.Main (xmonad) where
+ 
+-import System.Locale.SetLocale
+ import Control.Arrow (second)
+ import Data.Bits
+ import Data.List ((\\))
+@@ -153,8 +152,6 @@ xmonadNoargs :: (LayoutClass l Window, Read (l Window)
+     -> Maybe String -- ^ serialized extensible state
+     -> IO ()
+ xmonadNoargs initxmc serializedWinset serializedExtstate = do
+-    -- setup locale information from environment
+-    setLocale LC_ALL (Just "")
+     -- ignore SIGPIPE and SIGCHLD
+     installSignalHandlers
+     -- First, wrap the layout in an existential, to keep things pretty:

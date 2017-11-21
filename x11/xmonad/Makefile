@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2017/11/07 22:46:32 kili Exp $
-
-BROKEN =		missing devel/hs-setlocale
+# $OpenBSD: Makefile,v 1.52 2017/11/21 00:02:18 kili Exp $
 
 COMMENT-main =		tiling window manager
 COMMENT-lib =		libraries for runtime configuration
@@ -23,7 +21,7 @@ WANTLIB-lib =
 MODULES =		lang/ghc
 MODGHC_BUILD =		cabal hackage haddock register nort
 
-MODGHC_PACKAGE_KEY =	DasI1QAyR302MhCeEFEsfY
+MODGHC_PACKAGE_KEY =	Gx5TWm0BSEJHl229E6kZrP
 
 # Required because of the nort tag in MODGHC_BUILD
 SUBST_VARS +=		MODGHC_PACKAGE_KEY
