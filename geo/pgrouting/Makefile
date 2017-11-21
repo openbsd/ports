@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2017/11/16 23:20:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2017/11/21 20:41:18 landry Exp $
 
 COMMENT =	geospatial routing extension for PostgreSQL
 
-GH_TAGNAME =	v2.5.1
+V =		2.5.2
+GH_TAGNAME =	v${V}
 GH_PROJECT =	pgrouting
 GH_ACCOUNT =	pgRouting
 
@@ -26,7 +27,7 @@ RUN_DEPENDS =	geo/postgis
 BUILD_DEPENDS =	databases/postgresql,-server
 TEST_DEPENDS =	${BUILD_PKGPATH}
 TEST_ENV =	LD_PRELOAD=libpthread.so
-
+SUBST_VARS =	V
 MODPOSTGRESQL_TEST_CMD = \
 	cd ${WRKSRC}; \
 	./tools/testers/algorithm-tester.pl

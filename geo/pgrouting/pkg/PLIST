@@ -1,19 +1,20 @@
-@comment $OpenBSD: PLIST,v 1.7 2017/10/28 17:37:30 landry Exp $
+@comment $OpenBSD: PLIST,v 1.8 2017/11/21 20:41:18 landry Exp $
 lib/postgresql/libpgrouting-2.5.so
-share/postgresql/extension/pgrouting--2.0.0--2.5.1.sql
-share/postgresql/extension/pgrouting--2.0.1--2.5.1.sql
-share/postgresql/extension/pgrouting--2.1.0--2.5.1.sql
-share/postgresql/extension/pgrouting--2.2.0--2.5.1.sql
-share/postgresql/extension/pgrouting--2.2.1--2.5.1.sql
-share/postgresql/extension/pgrouting--2.2.2--2.5.1.sql
-share/postgresql/extension/pgrouting--2.2.3--2.5.1.sql
-share/postgresql/extension/pgrouting--2.2.4--2.5.1.sql
-share/postgresql/extension/pgrouting--2.3.0--2.5.1.sql
-share/postgresql/extension/pgrouting--2.3.1--2.5.1.sql
-share/postgresql/extension/pgrouting--2.3.2--2.5.1.sql
-share/postgresql/extension/pgrouting--2.4.0--2.5.1.sql
-share/postgresql/extension/pgrouting--2.4.1--2.5.1.sql
-share/postgresql/extension/pgrouting--2.4.2--2.5.1.sql
-share/postgresql/extension/pgrouting--2.5.0--2.5.1.sql
-share/postgresql/extension/pgrouting--2.5.1.sql
+share/postgresql/extension/pgrouting--2.0.0--${V}.sql
+share/postgresql/extension/pgrouting--2.0.1--${V}.sql
+share/postgresql/extension/pgrouting--2.1.0--${V}.sql
+share/postgresql/extension/pgrouting--2.2.0--${V}.sql
+share/postgresql/extension/pgrouting--2.2.1--${V}.sql
+share/postgresql/extension/pgrouting--2.2.2--${V}.sql
+share/postgresql/extension/pgrouting--2.2.3--${V}.sql
+share/postgresql/extension/pgrouting--2.2.4--${V}.sql
+share/postgresql/extension/pgrouting--2.3.0--${V}.sql
+share/postgresql/extension/pgrouting--2.3.1--${V}.sql
+share/postgresql/extension/pgrouting--2.3.2--${V}.sql
+share/postgresql/extension/pgrouting--2.4.0--${V}.sql
+share/postgresql/extension/pgrouting--2.4.1--${V}.sql
+share/postgresql/extension/pgrouting--2.4.2--${V}.sql
+share/postgresql/extension/pgrouting--2.5.0--${V}.sql
+share/postgresql/extension/pgrouting--2.5.1--${V}.sql
+share/postgresql/extension/pgrouting--${V}.sql
 share/postgresql/extension/pgrouting.control
