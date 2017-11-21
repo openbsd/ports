@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2017/11/16 23:20:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2017/11/21 06:08:37 feinerer Exp $
 
 COMMENT =	featherweight lemon-scented bar
 
-VERSION =	1.2
+VERSION =	1.3
 
 PKGNAME =	lemonbar-${VERSION}
 
