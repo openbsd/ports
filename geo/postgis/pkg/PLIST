@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2017/10/28 16:40:55 landry Exp $
+@comment $OpenBSD: PLIST,v 1.21 2017/11/21 20:39:53 landry Exp $
 @bin bin/pgsql2shp
 @bin bin/raster2pgsql
 @bin bin/shp2pgsql
@@ -288,17 +288,18 @@ share/postgresql/extension/postgis--2.2.2--${V}.sql
 share/postgresql/extension/postgis--2.2.3--${V}.sql
 share/postgresql/extension/postgis--2.2.4--${V}.sql
 share/postgresql/extension/postgis--2.2.5--${V}.sql
+share/postgresql/extension/postgis--2.2.6--${V}.sql
 share/postgresql/extension/postgis--2.3.0--${V}.sql
 share/postgresql/extension/postgis--2.3.1--${V}.sql
 share/postgresql/extension/postgis--2.3.2--${V}.sql
 share/postgresql/extension/postgis--2.3.3--${V}.sql
+share/postgresql/extension/postgis--2.3.4--${V}.sql
+share/postgresql/extension/postgis--2.3.5--${V}.sql
 share/postgresql/extension/postgis--2.4.0--${V}.sql
-share/postgresql/extension/postgis--2.4.0dev--${V}.sql
-share/postgresql/extension/postgis--2.4.0rc1--${V}.sql
-share/postgresql/extension/postgis--2.4.0rc2--${V}.sql
-share/postgresql/extension/postgis--2.4.0rc3--${V}.sql
+share/postgresql/extension/postgis--2.4.1--${V}.sql
 share/postgresql/extension/postgis--${V}--${V}next.sql
 share/postgresql/extension/postgis--${V}.sql
+share/postgresql/extension/postgis--${V}dev--${V}.sql
 share/postgresql/extension/postgis--${V}next--${V}.sql
 share/postgresql/extension/postgis--unpackaged--${V}.sql
 share/postgresql/extension/postgis.control
@@ -326,17 +327,18 @@ share/postgresql/extension/postgis_tiger_geocoder--2.2.2--${V}.sql
 share/postgresql/extension/postgis_tiger_geocoder--2.2.3--${V}.sql
 share/postgresql/extension/postgis_tiger_geocoder--2.2.4--${V}.sql
 share/postgresql/extension/postgis_tiger_geocoder--2.2.5--${V}.sql
+share/postgresql/extension/postgis_tiger_geocoder--2.2.6--${V}.sql
 share/postgresql/extension/postgis_tiger_geocoder--2.3.0--${V}.sql
 share/postgresql/extension/postgis_tiger_geocoder--2.3.1--${V}.sql
 share/postgresql/extension/postgis_tiger_geocoder--2.3.2--${V}.sql
 share/postgresql/extension/postgis_tiger_geocoder--2.3.3--${V}.sql
+share/postgresql/extension/postgis_tiger_geocoder--2.3.4--${V}.sql
+share/postgresql/extension/postgis_tiger_geocoder--2.3.5--${V}.sql
 share/postgresql/extension/postgis_tiger_geocoder--2.4.0--${V}.sql
-share/postgresql/extension/postgis_tiger_geocoder--2.4.0dev--${V}.sql
-share/postgresql/extension/postgis_tiger_geocoder--2.4.0rc1--${V}.sql
-share/postgresql/extension/postgis_tiger_geocoder--2.4.0rc2--${V}.sql
-share/postgresql/extension/postgis_tiger_geocoder--2.4.0rc3--${V}.sql
+share/postgresql/extension/postgis_tiger_geocoder--2.4.1--${V}.sql
 share/postgresql/extension/postgis_tiger_geocoder--${V}--${V}next.sql
 share/postgresql/extension/postgis_tiger_geocoder--${V}.sql
+share/postgresql/extension/postgis_tiger_geocoder--${V}dev--${V}.sql
 share/postgresql/extension/postgis_tiger_geocoder--${V}next--${V}.sql
 share/postgresql/extension/postgis_tiger_geocoder--unpackaged--${V}.sql
 share/postgresql/extension/postgis_tiger_geocoder.control
@@ -365,17 +367,18 @@ share/postgresql/extension/postgis_topology--2.2.2--${V}.sql
 share/postgresql/extension/postgis_topology--2.2.3--${V}.sql
 share/postgresql/extension/postgis_topology--2.2.4--${V}.sql
 share/postgresql/extension/postgis_topology--2.2.5--${V}.sql
+share/postgresql/extension/postgis_topology--2.2.6--${V}.sql
 share/postgresql/extension/postgis_topology--2.3.0--${V}.sql
 share/postgresql/extension/postgis_topology--2.3.1--${V}.sql
 share/postgresql/extension/postgis_topology--2.3.2--${V}.sql
 share/postgresql/extension/postgis_topology--2.3.3--${V}.sql
+share/postgresql/extension/postgis_topology--2.3.4--${V}.sql
+share/postgresql/extension/postgis_topology--2.3.5--${V}.sql
 share/postgresql/extension/postgis_topology--2.4.0--${V}.sql
-share/postgresql/extension/postgis_topology--2.4.0dev--${V}.sql
-share/postgresql/extension/postgis_topology--2.4.0rc1--${V}.sql
-share/postgresql/extension/postgis_topology--2.4.0rc2--${V}.sql
-share/postgresql/extension/postgis_topology--2.4.0rc3--${V}.sql
+share/postgresql/extension/postgis_topology--2.4.1--${V}.sql
 share/postgresql/extension/postgis_topology--${V}--${V}next.sql
 share/postgresql/extension/postgis_topology--${V}.sql
+share/postgresql/extension/postgis_topology--${V}dev--${V}.sql
 share/postgresql/extension/postgis_topology--${V}next--${V}.sql
 share/postgresql/extension/postgis_topology--unpackaged--${V}.sql
 share/postgresql/extension/postgis_topology.control

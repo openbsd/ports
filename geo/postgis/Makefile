@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.41 2017/11/21 00:13:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.42 2017/11/21 20:39:53 landry Exp $
 
-V =	2.4.1
+V =	2.4.2
 COMMENT=	geographic objects support for PostgreSQL
 DISTNAME=	postgis-${V}
 CATEGORIES=	geo databases
-REVISION=	0
 
 SHARED_LIBS +=	lwgeom 0.0 lwgeom-2.4 0.0 # 4.0
 
