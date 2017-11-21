@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.69 2017/11/07 16:33:30 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.70 2017/11/21 09:23:21 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/botocore/
 lib/python${MODPY_VERSION}/site-packages/botocore-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/botocore-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -21,6 +21,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}endpoint.${MOD
 lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}errorfactory.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}handlers.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}history.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}hooks.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}loaders.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}model.${MODPY_PYC_MAGIC_TAG}pyc
@@ -86,6 +87,10 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/budgets/2016-10-20/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/budgets/2016-10-20/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/budgets/2016-10-20/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/budgets/2016-10-20/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/ce/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/ce/2017-10-25/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/ce/2017-10-25/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/ce/2017-10-25/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/clouddirectory/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/clouddirectory/2016-05-10/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/clouddirectory/2016-05-10/paginators-1.json
@@ -709,6 +714,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/endpoint.py
 lib/python${MODPY_VERSION}/site-packages/botocore/errorfactory.py
 lib/python${MODPY_VERSION}/site-packages/botocore/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/botocore/handlers.py
+lib/python${MODPY_VERSION}/site-packages/botocore/history.py
 lib/python${MODPY_VERSION}/site-packages/botocore/hooks.py
 lib/python${MODPY_VERSION}/site-packages/botocore/loaders.py
 lib/python${MODPY_VERSION}/site-packages/botocore/model.py
