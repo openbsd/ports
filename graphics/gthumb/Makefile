@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.102 2017/10/23 17:10:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.103 2017/11/21 18:16:48 jasper Exp $
 
 COMMENT=	image viewer and browser for GNOME
 
 GNOME_PROJECT=	gthumb
-GNOME_VERSION=	3.4.5
-REVISION=	1
+GNOME_VERSION=	3.6.0
 
 API_V=		${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 SUBST_VARS=	API_V
@@ -17,14 +16,14 @@ MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
+WANTLIB += Xtst X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
 WANTLIB += c cairo cairo-gobject clutter-1.0 clutter-gtk-1.0
 WANTLIB += dbus-1 epoxy exiv2 expat ffi fontconfig freetype gdk-3
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += graphite2 gstreamer-1.0 gstvideo-1.0 gthread-2.0 gtk-3
+WANTLIB += graphite2 gstreamer-1.0 gthread-2.0 gtk-3
 WANTLIB += harfbuzz jpeg json-glib-1.0 m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread
+WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread colord
 WANTLIB += rsvg-2 secret-1 soup-2.4 ${COMPILER_LIBCXX} tiff lcms2 raw
 WANTLIB += webkit2gtk-4.0 webp xcb xcb-render xcb-shm z iconv intl
 
@@ -37,6 +36,7 @@ BUILD_DEPENDS +=	multimedia/gstreamer1/plugins-base
 BUILD_DEPENDS +=	devel/bison
 
 LIB_DEPENDS=	graphics/clutter/clutter-gtk  \
+		graphics/colord \
 		graphics/exiv2 \
 		graphics/libraw \
 		graphics/libwebp \
