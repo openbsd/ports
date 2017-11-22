@@ -1,0 +1,14 @@
+$OpenBSD: patch-lib_replace_wscript,v 1.8 2017/11/22 16:15:44 jca Exp $
+
+Index: lib/replace/wscript
+--- lib/replace/wscript.orig
++++ lib/replace/wscript
+@@ -167,6 +167,8 @@ def configure(conf):
+                         msg='Checking for IPV6_V6ONLY in linux/in6.h',
+                         local_include=False)
+ 
++    # these headers need to be tested as a group on freebsd and openbsd
++    conf.CHECK_HEADERS(headers='sys/socket.h net/if.h', together=True)
+     conf.CHECK_CODE('''
+                        struct sockaddr_storage sa_store;
+                        struct addrinfo *ai = NULL;

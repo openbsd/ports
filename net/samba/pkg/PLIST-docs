@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-docs,v 1.24 2016/04/12 17:42:09 jca Exp $
+@comment $OpenBSD: PLIST-docs,v 1.25 2017/11/22 16:15:44 jca Exp $
 @pkgpath net/samba,-docs
 share/examples/samba/LDAP/
 share/examples/samba/LDAP/README
@@ -42,6 +42,13 @@ share/examples/samba/autofs/auto.smb
 share/examples/samba/dce-dfs/
 share/examples/samba/dce-dfs/README
 share/examples/samba/dce-dfs/smb.conf
+share/examples/samba/fuse/
+share/examples/samba/fuse/README
+share/examples/samba/fuse/clifuse.c
+share/examples/samba/fuse/clifuse.h
+share/examples/samba/fuse/smb2mount.c
+share/examples/samba/fuse/wscript
+share/examples/samba/fuse/wscript_build
 share/examples/samba/libsmbclient/
 share/examples/samba/libsmbclient/Makefile
 share/examples/samba/libsmbclient/Makefile.internal.in

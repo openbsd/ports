@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.245 2017/11/22 15:09:24 jca Exp $
+# $OpenBSD: Makefile,v 1.246 2017/11/22 16:15:44 jca Exp $
 
-VERSION =		4.5.15
+VERSION =		4.6.11
 DISTNAME =		samba-${VERSION}
 
 COMMENT-main =		SMB and CIFS client and server for UNIX
@@ -15,20 +15,17 @@ PKGNAME-tevent =	tevent-${TEVENT_V}
 PKGNAME-util =		samba-util-${VERSION}
 PKGNAME-docs =		samba-docs-${VERSION}
 
-REVISION-tevent =	2
-REVISION-ldb =		1
-
 PKG_ARCH-docs =		*
 
-LDB_V =			1.1.27
-TEVENT_V =		0.9.29
+LDB_V =			1.1.29
+TEVENT_V =		0.9.34
 
 SHARED_LIBS =		asn1-samba4		0.0 \
 			com_err-samba4		0.0 \
 			dcerpc			0.0 \
-			dcerpc-binding		1.0 \
+			dcerpc-binding		1.1 \
 			dcerpc-samr		0.0 \
-			dcerpc-server		2.0 \
+			dcerpc-server		3.0 \
 			gssapi-samba4		0.0 \
 			hcrypto-samba4		0.0 \
 			hdb-samba4		0.0 \
@@ -36,31 +33,31 @@ SHARED_LIBS =		asn1-samba4		0.0 \
 			heimntlm-samba4		0.0 \
 			hx509-samba4		0.0 \
 			kdc-samba4		0.0 \
-			krb5-samba4		0.0 \
-			ldb			0.3 \
+			krb5-samba4		0.1 \
+			ldb			0.4 \
 			ndr			0.2 \
 			ndr-krb5pac		0.1 \
 			ndr-nbt			0.1 \
-			ndr-standard		1.0 \
+			ndr-standard		2.0 \
 			netapi			2.0 \
-			pyldb-util		0.0 \
+			pyldb-util		0.1 \
 			roken-samba4		0.0 \
-			samba-credentials	0.0 \
+			samba-credentials	0.1 \
 			samba-errors		0.0 \
-			samba-hostconfig	2.0 \
-			samba-passdb		0.1 \
+			samba-hostconfig	2.1 \
+			samba-passdb		1.0 \
 			samba-policy		0.0 \
-			samba-util		1.1 \
+			samba-util		2.0 \
 			samdb			0.0 \
 			smbclient		4.1 \
-			smbconf			1.0 \
+			smbconf			2.0 \
 			smbldap			0.0 \
-			tevent			0.2 \
+			tevent			0.3 \
 			tevent-util		0.1 \
 			wbclient		3.1 \
 			wind-samba4		0.0 \
-			replace			1.0 \
-			util-setid		1.0
+			replace			2.0 \
+			util-setid		2.0
 
 CATEGORIES =		net sysutils security
 
@@ -103,7 +100,8 @@ MULTI_PACKAGES =	-main -ldb -tevent -util -docs
 
 MODULES =		lang/python perl
 
-BUILD_DEPENDS =		devel/p5-Parse-Yapp>=1.0.5 \
+BUILD_DEPENDS =		devel/cmocka \
+			devel/p5-Parse-Yapp>=1.0.5 \
 			net/py-dnspython \
 			textproc/docbook-xsl \
 			x11/dbus

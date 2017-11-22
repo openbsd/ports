@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.38 2017/03/12 22:19:50 jca Exp $
+@comment $OpenBSD: PLIST-main,v 1.39 2017/11/22 16:15:44 jca Exp $
 @pkgpath net/samba,ldap,-main
 @pkgpath net/samba,ads,-main
 @pkgpath net/samba,,-main
@@ -9,6 +9,7 @@ bin/findsmb
 @bin bin/gentest
 @bin bin/locktest
 @bin bin/masktest
+@bin bin/mvxattr
 @bin bin/ndrdump
 @bin bin/net
 @bin bin/nmblookup
@@ -122,7 +123,6 @@ include/samba-4.0/util/tevent_ntstatus.h
 include/samba-4.0/util/tevent_unix.h
 include/samba-4.0/util/tevent_werror.h
 include/samba-4.0/util/time.h
-include/samba-4.0/util/xfile.h
 include/samba-4.0/util_ldb.h
 include/samba-4.0/wbclient.h
 @lib lib/libdcerpc-binding.so.${LIBdcerpc-binding_VERSION}
@@ -161,6 +161,8 @@ lib/pkgconfig/samba-util.pc
 lib/pkgconfig/samdb.pc
 lib/pkgconfig/smbclient.pc
 lib/pkgconfig/wbclient.pc
+lib/python${MODPY_VERSION}/
+lib/python${MODPY_VERSION}/site-packages/
 lib/python${MODPY_VERSION}/site-packages/samba/
 lib/python${MODPY_VERSION}/site-packages/samba/__init__.py
 lib/python${MODPY_VERSION}/site-packages/samba/__init__.pyc
@@ -546,6 +548,9 @@ lib/python${MODPY_VERSION}/site-packages/samba/tests/samba_tool/__init__.${MODPY
 lib/python${MODPY_VERSION}/site-packages/samba/tests/samba_tool/base.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/samba_tool/base.pyc
 lib/python${MODPY_VERSION}/site-packages/samba/tests/samba_tool/base.${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/samba/tests/samba_tool/dnscmd.${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/samba/tests/samba_tool/dnscmd.py
+lib/python${MODPY_VERSION}/site-packages/samba/tests/samba_tool/dnscmd.pyc
 lib/python${MODPY_VERSION}/site-packages/samba/tests/samba_tool/fsmo.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/samba_tool/fsmo.pyc
 lib/python${MODPY_VERSION}/site-packages/samba/tests/samba_tool/fsmo.${MODPY_PYOEXTENSION}
@@ -803,7 +808,6 @@ lib/samba/libsmbd-conn-samba4.so
 lib/samba/libsmbd-shim-samba4.so
 lib/samba/libsmbldaphelper-samba4.so
 lib/samba/libsmbpasswdparser-samba4.so
-lib/samba/libsmbregistry-samba4.so
 lib/samba/libsocket-blocking-samba4.so
 lib/samba/libsys-rw-samba4.so
 lib/samba/libtalloc-report-samba4.so
@@ -877,6 +881,7 @@ lib/samba/vfs/time_audit.so
 lib/samba/vfs/unityed_media.so
 lib/samba/vfs/worm.so
 lib/samba/vfs/xattr_tdb.so
+lib/security/
 lib/security/pam_winbind.so
 lib/winbind_krb5_locator.so
 ${P5SITE}/Parse/
@@ -919,6 +924,7 @@ libexec/samba/
 @man man/man1/locktest.1
 @man man/man1/log2pcap.1
 @man man/man1/masktest.1
+@man man/man1/mvxattr.1
 @man man/man1/ndrdump.1
 @man man/man1/nmblookup.1
 @man man/man1/ntlm_auth.1
@@ -1032,10 +1038,12 @@ sbin/samba_upgradedns
 @bin sbin/smbd
 @bin sbin/winbindd
 share/doc/pkg-readmes/${FULLPKGNAME}
+@comment share/doc/samba/
 share/examples/samba/
 @sample ${SYSCONFDIR}/samba/
 share/examples/samba/smb.conf.default
 @sample ${SYSCONFDIR}/samba/smb.conf
+@comment share/perl5/
 share/samba/
 share/samba/setup/
 share/samba/setup/DB_CONFIG
