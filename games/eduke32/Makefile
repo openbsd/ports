@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.14 2017/11/16 23:20:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2017/11/22 03:43:46 kirby Exp $
 
 COMMENT =	Enhanced Duke Nukem 3D engine
-RDATE =		20160610
-RTAG =		5775
+RDATE =		20171105
+RTAG =		6496
 DISTNAME =	eduke32_src_${RDATE}-${RTAG}
 PKGNAME =	eduke32-2.0.0.${RTAG}
 EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	games x11
-REVISION =	1
 
 HOMEPAGE =	http://www.eduke32.com/
 
@@ -25,7 +24,7 @@ BUILD_DEPENDS = archivers/unzip \
 BUILD_DEPENDS += devel/nasm
 .endif
 
-WANTLIB += c m ogg png pthread vorbis vorbisfile vpx z lz4
+WANTLIB += c m ogg pthread vorbis vorbisfile vpx lz4
 WANTLIB += SDL2 SDL2_mixer FLAC execinfo ${COMPILER_LIBCXX}
 
 LIB_DEPENDS =	archivers/lz4 \
@@ -47,11 +46,12 @@ MASTER_SITES =	http://dukeworld.duke4.net/eduke32/synthesis/${RDATE}-${RTAG}/
 COMPILER =	base-clang ports-gcc
 
 # make sure we can see compilation output, respect CC/CXX, don't strip!
-MAKE_ENV =	PRETTY_OUTPUT=0 \
-		PACKAGE_REPOSITORY=1
-MAKE_FLAGS +=	CC="${CC}" \
+MAKE_FLAGS +=	PRETTY_OUTPUT=0 \
+		CC="${CC}" \
 		CXX="${CXX}" \
-		STRIP=true
+		STRIP=true \
+		PACKAGE_REPOSITORY=1
+MAKE_FILE =	GNUmakefile
 USE_GMAKE =	Yes
 NO_TEST =	Yes
 
@@ -60,8 +60,8 @@ WRKDIST =	${WRKDIR}/eduke32_${RDATE}-${RTAG}
 post-extract:
 	# check for data files in correct location
 	@sed -i "s,/usr/share/games/eduke32,${TRUEPREFIX}/share/duke3d," \
-		${WRKSRC}/source/common.c
-	rm ${WRKSRC}/build/include/lz4.h ${WRKSRC}/build/src/lz4.c
+		${WRKSRC}/source/duke3d/src/common.cpp
+	rm ${WRKSRC}/source/build/include/lz4.h ${WRKSRC}/source/build/src/lz4.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/eduke32 ${PREFIX}/bin

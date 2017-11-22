@@ -1,0 +1,22 @@
+$OpenBSD: patch-GNUmakefile,v 1.1 2017/11/22 03:43:46 kirby Exp $
+
+Index: GNUmakefile
+--- GNUmakefile.orig
++++ GNUmakefile
+@@ -161,7 +161,6 @@ engine_objs := \
+     textfont.cpp \
+     smalltextfont.cpp \
+     kplib.cpp \
+-    lz4.c \
+     osd.cpp \
+     pragmas.cpp \
+     scriptfile.cpp \
+@@ -581,7 +580,7 @@ ifeq ($(SUBPLATFORM),LINUX)
+ endif
+ 
+ ifeq ($(PLATFORM),BSD)
+-    LIBS += -lFLAC -lvorbisfile -lvorbis -logg -lexecinfo
++    LIBS += -lFLAC -lvorbisfile -lvorbis -logg -lexecinfo -llz4
+ endif
+ 
+ ifeq ($(PLATFORM),DARWIN)

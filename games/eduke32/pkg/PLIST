@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/08/20 05:16:02 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.3 2017/11/22 03:43:46 kirby Exp $
 @bin bin/eduke32
 @bin bin/mapster32
 share/doc/eduke32/
@@ -14,9 +14,7 @@ share/examples/eduke32/
 share/examples/eduke32/_clipshape0.map
 share/examples/eduke32/a.m32
 share/examples/eduke32/aspect.map
-share/examples/eduke32/duke3d.def.sample
 share/examples/eduke32/dump_used_assets.m32
-share/examples/eduke32/enhance.con.sample
 share/examples/eduke32/m32script_ex.map
 share/examples/eduke32/r_usenewshading.map
 share/examples/eduke32/ror.map
@@ -26,4 +24,4 @@ share/examples/eduke32/startpos.m32
 share/examples/eduke32/test_tileoffsets.map
 share/examples/eduke32/tests.m32
 share/examples/eduke32/trueror1.map
-share/examples/eduke32/weapons.con.sample
+share/examples/eduke32/weapons.sample.con
