@@ -1,0 +1,32 @@
+$OpenBSD: patch-src_lib_openssl_c,v 1.1 2017/11/22 22:35:25 sthen Exp $
+
+Index: src/lib/openssl.c
+--- src/lib/openssl.c.orig
++++ src/lib/openssl.c
+@@ -69,7 +69,7 @@ void openssl_post_errors(JCR *jcr, int code, const cha
+    }
+ }
+ 
+-#if (OPENSSL_VERSION_NUMBER < 0x10100000L)
++#if (OPENSSL_VERSION_NUMBER < 0x10100000L) || defined(LIBRESSL_VERSION_NUMBER)
+ /* Array of mutexes for use with OpenSSL static locking */
+ static pthread_mutex_t *mutexes;
+ 
+@@ -263,7 +263,7 @@ int init_crypto (void)
+ {
+    int stat = 0;
+ 
+-#if (OPENSSL_VERSION_NUMBER < 0x10100000L)
++#if (OPENSSL_VERSION_NUMBER < 0x10100000L) || defined(LIBRESSL_VERSION_NUMBER)
+    if ((stat = openssl_init_threads()) != 0) {
+       berrno be;
+       Jmsg1(NULL, M_ABORT, 0,
+@@ -310,7 +310,7 @@ int cleanup_crypto (void)
+       Jmsg0(NULL, M_ERROR, 0, _("Failed to save OpenSSL PRNG\n"));
+    }
+ 
+-#if (OPENSSL_VERSION_NUMBER < 0x10100000L)
++#if (OPENSSL_VERSION_NUMBER < 0x10100000L) || defined(LIBRESSL_VERSION_NUMBER)
+    openssl_cleanup_threads();
+ 
+    /* Free libssl and libcrypto error strings */

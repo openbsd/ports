@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.118 2017/11/13 15:36:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.119 2017/11/22 22:35:25 sthen Exp $
 
 # XXX building this port while a version is already installed on the
 # system will lead to unexpected hidden dependencies!!!
@@ -10,7 +10,7 @@ COMMENT-mysql=		Bacula libbaccats support for MySQL
 COMMENT-pgsql=		Bacula libbaccats support for PostgreSQL
 COMMENT-sqlite3=	Bacula libbaccats support for SQLite3
 
-V=			9.0.5
+V=			9.0.6
 DISTNAME=		bacula-$V
 PKGNAME-main=		bacula-client-$V
 PKGNAME-server=		bacula-server-$V
@@ -18,7 +18,6 @@ PKGNAME-bat=		bacula-bat-$V
 PKGNAME-mysql=		bacula-mysql-$V
 PKGNAME-pgsql=		bacula-pgsql-$V
 PKGNAME-sqlite3=	bacula-sqlite3-$V
-REVISION=		0
 
 CATEGORIES=		sysutils
 
@@ -56,7 +55,7 @@ CONFIGURE_STYLE=	gnu
 USE_GMAKE=		Yes
 NO_TEST=		Yes
 
-PSEUDO_FLAVORS=		no_bat
+PSEUDO_FLAVORS=		no_bat no_pgsql no_mysql
 FLAVOR?=
 
 MULTI_PACKAGES=		-main -server -bat -mysql -pgsql -sqlite3
@@ -84,12 +83,7 @@ CONFIGURE_ARGS=		--enable-smartalloc \
 			--with-readline=/usr \
 			--with-openssl \
 			--with-basename=bacula \
-			--with-hostname=bacula.domain.tld
-
-# build support for all DBs at once,
-# the libbaccats pkg will decide DB support on a system
-CONFIGURE_ARGS +=	--with-mysql \
-			--with-postgresql \
+			--with-hostname=bacula.domain.tld \
 			--with-sqlite3
 
 MAKE_FLAGS=		NO_ECHO=
@@ -110,7 +104,7 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ENV +=	ac_cv_func_${ac_func}=no
 .endfor
 
-WANTLIB-main += ${WANTLIB} lzo2 ncurses readline
+WANTLIB-main += ${WANTLIB} lzo2 curses readline
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			archivers/lzo2
 
@@ -139,10 +133,23 @@ LIB_DEPENDS-bat=	${LIB_DEPENDS} \
 			sysutils/bacula,-main
 
 .include <bsd.port.arch.mk>
+
 .if !${BUILD_PACKAGES:M-bat}
 CONFIGURE_ARGS +=	--disable-bat
 .else
 CONFIGURE_ARGS +=	--enable-bat
+.endif
+
+.if !${BUILD_PACKAGES:M-mysql}
+CONFIGURE_ARGS +=	--without-mysql
+.else
+CONFIGURE_ARGS +=	--with-mysql
+.endif
+
+.if !${BUILD_PACKAGES:M-pgsql}
+CONFIGURE_ARGS +=	--without-postgresql
+.else
+CONFIGURE_ARGS +=	--with-postgresql
 .endif
 
 pre-configure:
@@ -157,9 +164,6 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/examples/autochangers/chio-changer-openbsd \
 		${PREFIX}/libexec/bacula/chio-changer-openbsd.dist
 	rm ${PREFIX}/libexec/bacula/updatedb/update*.in
-	rm ${PREFIX}/lib/libbaccats.la
-	mv ${PREFIX}/libexec/bacula/query.sql{,.dist}
-	mv ${PREFIX}/libexec/bacula/mtx-changer.conf{,.dist}
 	rm ${PREFIX}/sbin/bacula
 # does nothing
 	cd ${PREFIX}/libexec/bacula/updatedb && rm update_bacula_tables_8_to_9
@@ -177,6 +181,12 @@ post-install:
 	rm ${PREFIX}/man/man1/bat.1
 .endif
 	mv ${WRKINST}/etc/bacula/* ${PREFIX}/share/examples/bacula/
-	rmdir ${WRKINST}/{etc,var}/bacula
+	rmdir ${WRKINST}/etc/bacula
+.if ${BUILD_PACKAGES:M-server}
+	rm ${PREFIX}/lib/libbaccats.la
+	mv ${PREFIX}/libexec/bacula/query.sql{,.dist}
+	mv ${PREFIX}/libexec/bacula/mtx-changer.conf{,.dist}
+	rmdir ${WRKINST}/var/bacula
+.endif
 
 .include <bsd.port.mk>
