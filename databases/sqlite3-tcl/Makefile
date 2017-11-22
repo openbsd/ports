@@ -1,9 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2017/11/14 06:18:15 stu Exp $
+# $OpenBSD: Makefile,v 1.5 2017/11/22 20:54:18 stu Exp $
 
-COMMENT =		Tcl bindings for sqlite3 (embedded SQL implementation)
+COMMENT =		Tcl bindings for SQLite3
 
-DISTNAME =		sqlite-autoconf-3200100
-PKGNAME =		sqlite3-tcl-3.20.1
+V =			3.21.0
+VER =			${V:S/.//g}
+
+DISTNAME =		sqlite-autoconf-${VER}000
+PKGNAME =		sqlite3-tcl-${V}
 CATEGORIES =		databases
 HOMEPAGE =		http://www.sqlite.org/
 MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
@@ -32,5 +35,6 @@ NO_TEST =		Yes
 CFLAGS +=		-DSQLITE_ENABLE_UNLOCK_NOTIFY
 
 WRKSRC =		${WRKDIST}/tea
+SUBST_VARS =		VER
 
 .include <bsd.port.mk>
