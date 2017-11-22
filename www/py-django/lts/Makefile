@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2017/10/09 12:53:31 rpointel Exp $
+# $OpenBSD: Makefile,v 1.24 2017/11/22 10:16:01 rpointel Exp $
 
 PORTROACH =	limit:^1\.11
 
 COMMENT =	high-level Python web framework (LTS version)
 
-MODPY_EGG_VERSION =	1.11.6
+MODPY_EGG_VERSION =	1.11.7
 LNAME =			django-lts
 
 MODPY_VERSION = ${MODPY_DEFAULT_VERSION_3}
