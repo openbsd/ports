@@ -1,0 +1,16 @@
+$OpenBSD: patch-xcprint_c,v 1.1 2017/11/22 06:22:25 tb Exp $
+
+Avoid printf "%s" NULL
+
+Index: xcprint.c
+--- xcprint.c.orig
++++ xcprint.c
+@@ -86,7 +86,7 @@ errxdisplay(char *display)
+     if (display == NULL)
+ 	display = getenv("DISPLAY");
+ 
+-    fprintf(stderr, "Error: Can't open display: %s\n", display);
++    fprintf(stderr, "Error: Can't open display: %s\n", display ? display : "(null)");
+     exit(EXIT_FAILURE);
+ }
+ 

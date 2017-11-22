@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2016/09/13 20:13:38 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.16 2017/11/22 06:22:24 tb Exp $
 
 COMMENT=		command line interface to X selections
 GH_ACCOUNT=		astrand
 GH_PROJECT=		xclip
 GH_TAGNAME=		0.13
+REVISION=		0
 CATEGORIES=		x11
 
 MAINTAINER=		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
