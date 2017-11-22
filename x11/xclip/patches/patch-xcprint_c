@@ -1,6 +1,9 @@
-$OpenBSD: patch-xcprint_c,v 1.1 2017/11/22 06:22:25 tb Exp $
+$OpenBSD: patch-xcprint_c,v 1.2 2017/11/22 19:06:20 tb Exp $
 
 Avoid printf "%s" NULL
+
+merged upstream:
+https://github.com/astrand/xclip/commit/26c84990d9b2b2447a4d0b55be53b715f7ddda30
 
 Index: xcprint.c
 --- xcprint.c.orig
