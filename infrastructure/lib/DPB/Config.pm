@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Config.pm,v 1.70 2017/11/13 13:51:21 espie Exp $
+# $OpenBSD: Config.pm,v 1.71 2017/11/23 12:36:25 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -121,11 +121,10 @@ sub parse_command_line
 	$class->setup_users($state);
 
 	($state->{ports}, $state->{localarch},
-	    $state->{distdir}, $state->{xenocara}) =
+	    $state->{distdir}) =
 		DPB::Vars->get(DPB::Host::Localhost->getshell($state), 
 		$state->make,
-		"PORTSDIR", "MACHINE_ARCH", "DISTDIR", 
-		"PORTS_BUILD_XENOCARA_TOO");
+		"PORTSDIR", "MACHINE_ARCH", "DISTDIR");
     	if (!defined $state->{ports}) {
 		$state->usage("Can't obtain vital information from the ports tree");
 	}
@@ -179,21 +178,17 @@ sub parse_command_line
 	# reparse things properly now that we can chroot
 	my $p;
 	($state->{ports}, $state->{portspath}, $state->{repo}, $state->{localarch},
-	    $state->{distdir}, $state->{localbase}, $state->{xenocara}, $p) =
+	    $state->{distdir}, $state->{localbase}, $p) =
 		DPB::Vars->get(DPB::Host::Localhost->getshell($state), 
 		$state->make,
 		"PORTSDIR", "PORTSDIR_PATH", "PACKAGE_REPOSITORY", 
 		"MACHINE_ARCH", "DISTDIR", "LOCALBASE", 
-		"PORTS_BUILD_XENOCARA_TOO", "SIGNING_PARAMETERS");
+		"SIGNING_PARAMETERS");
 
     	if (!defined $state->{portspath}) {
 		$state->usage("Can't obtain vital information from the ports tree");
 	}
-	if ($state->{xenocara} =~ m/Yes/i) {
-		$state->{xenocara} = 1;
-	} else {
-		$state->{xenocara} = 0;
-	}
+	$state->{xenocara} = 0;
 	$state->{portspath} = [ map {$state->anchor($_)} split(/:/, $state->{portspath}) ];
 	$state->{realports} = $state->anchor($state->{ports});
 	$state->{realdistdir} = $state->anchor($state->{distdir});
