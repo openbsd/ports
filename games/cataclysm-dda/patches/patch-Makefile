@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2017/10/29 17:27:18 bcallah Exp $
+$OpenBSD: patch-Makefile,v 1.2 2017/11/23 05:04:43 kirby Exp $
 
 Index: Makefile
 --- Makefile.orig
@@ -49,15 +49,6 @@ Index: Makefile
  PKG_CONFIG = $(CROSS)pkg-config
  SDL2_CONFIG = $(CROSS)sdl2-config
  
-@@ -464,7 +457,7 @@ ifdef LUA
-   else
-     ifdef LUA_USE_PKGCONFIG
-       # On unix-like systems, use pkg-config to find lua
--      LUA_CANDIDATES = lua5.3 lua5.2 lua-5.3 lua-5.2 lua5.1 lua-5.1 lua $(LUA_BINARY)
-+      LUA_CANDIDATES = lua5.3 lua5.2 lua-5.3 lua-5.2 lua53 lua52 lua5.1 lua-5.1 lua51 lua $(LUA_BINARY)
-       LUA_FOUND = $(firstword $(foreach lua,$(LUA_CANDIDATES),\
-           $(shell if $(PKG_CONFIG) --silence-errors --exists $(lua); then echo $(lua);fi)))
-       LUA_PKG = $(if $(LUA_FOUND),$(LUA_FOUND),$(error "Lua not found by $(PKG_CONFIG), install it or make without 'LUA=1'"))
 @@ -696,7 +689,6 @@ $(BUILD_PREFIX)$(TARGET_NAME).a: $(ODIR) $(OBJS)
  .PHONY: version json-verify
  version:

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/10/29 17:27:18 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2017/11/23 05:04:43 kirby Exp $
 
 COMMENT=		rogue-like zombie survival game
 DISTNAME=		cataclysm-dda-2017.10.13
 CATEGORIES=		games
+REVISION=		0
 
 GH_ACCOUNT=		CleverRaven
 GH_PROJECT=		Cataclysm-DDA
@@ -20,6 +21,8 @@ FLAVOR?=
 WANTLIB=		${COMPILER_LIBCXX} ${MODLUA_WANTLIB} c \
 			iconv intl m pthread
 
+COMPILER=		base-clang ports-gcc
+
 MODULES=		lang/lua \
 			textproc/intltool
 MODLUA_VERSION=		5.3
@@ -29,10 +32,10 @@ BUILD_DEPENDS=		devel/libexecinfo
 
 LIB_DEPENDS=		devel/gettext
 
-MAKE_ENV=		CXXFLAGS="${CXXFLAGS}"
+MAKE_ENV=		CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
 
-MAKE_FLAGS=		CLANG="${CXX}" RELEASE=1 USE_XDG_DIR=1 LOCALIZE=1 \
-			LANGUAGES=all LUA=1 LUA_BINARY=${MODLUA_BIN}
+MAKE_FLAGS=		RELEASE=1 USE_XDG_DIR=1 LOCALIZE=1 LANGUAGES=all \
+			LUA=1 LUA_BINARY=${MODLUA_BIN:T}
 
 .if ${FLAVOR:Mno_x11}
 WANTLIB+=		ncurses
