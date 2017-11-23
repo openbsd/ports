@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1372 2017/11/19 17:31:04 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1373 2017/11/23 12:10:36 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -2795,7 +2795,7 @@ ${_FAKE_COOKIE}: ${_BUILD_COOKIE} ${_FAKESUDO_CHECK_COOKIE}
 .if ${FAKE_AS_ROOT:L} != "yes"
 	@ln -sf /bin/echo ${WRKDIR}/bin/chown
 	@ln -sf /bin/echo ${WRKDIR}/bin/chgrp
-	@install -m ${BINMODE} ${_INSTALL_WRAPPER} ${WRKDIR}/bin/install
+	@install -C -m ${BINMODE} ${_INSTALL_WRAPPER} ${WRKDIR}/bin/install
 .endif
 .for _m in ${MODULES:T:U}
 .  if defined(MOD${_m}_pre-fake)
