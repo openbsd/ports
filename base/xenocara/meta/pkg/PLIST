@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.2 2012/11/05 21:58:11 espie Exp $
-libdata/base/${FULLPKGNAME}.gen
-@exec %D/libexec/component-install ${FULLPKGNAME}

@@ -1,1 +1,0 @@
-@exec /sbin/ldconfig -R ${X11BASE}/lib
