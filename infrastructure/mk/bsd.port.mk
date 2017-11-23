@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1373 2017/11/23 12:10:36 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1374 2017/11/23 12:29:15 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -23,7 +23,6 @@
 # change without notice.
 #
 # a few experimental variables are voluntarily NOT documented
-# PORTS_BUILD_XENOCARA_TOO, XENOCARA_COMPONENT, 
 # PARALLEL_BUILD, PARALLEL_INSTALL, DANGEROUS, GLOBAL_DEPENDS_CACHE
 #
 # Enquiries as to the bsd.port.mk framework should usually be directed
@@ -145,17 +144,11 @@ PLIST_DB ?= ${PLIST_REPOSITORY}/${MACHINE_ARCH}
 .endif
 PACKAGE_REPOSITORY ?= ${PORTSDIR}/packages
 
-# experimental, don't touch the default unless you really know
-# what you are doing
-PORTS_BUILD_XENOCARA_TOO ?= No
-
-.if ${PORTS_BUILD_XENOCARA_TOO:L} == "no"
-.  if !exists(${X11BASE}/man/mandoc.db)
-.    if exists(${X11BASE}/man/whatis.db)
+.if !exists(${X11BASE}/man/mandoc.db)
+.  if exists(${X11BASE}/man/whatis.db)
 ERRORS += "Your X11/system is not current"
-.    else
+.  else
 ERRORS += "Fatal: building ports requires correctly installed X11"
-.    endif
 .  endif
 .endif
 
@@ -847,15 +840,6 @@ WRKBUILD ?= ${WRKSRC}
 .endif
 WRKCONF ?= ${WRKBUILD}
 
-XENOCARA_COMPONENT ?= No
-# XXX autodetermine makefile actual name, can't do this in
-# xenocara.port.mk, since WRKBUILD isn't known yet.
-.if ${XENOCARA_COMPONENT:L} == "yes"
-.  if exists(${WRKBUILD}/Makefile.bsd-wrapper)
-MAKE_FILE ?= Makefile.bsd-wrapper
-.  endif
-.endif
-
 MAKE_FILE ?= Makefile
 ALL_TARGET ?= all
 
@@ -1150,11 +1134,7 @@ DESCR${_S} ?= ${PKGDIR}/DESCR${_S}
 
 MTREE_FILE ?=
 
-.if ${XENOCARA_COMPONENT:L} == "yes"
-MTREE_FILE += /etc/mtree/BSD.x11.dist
-.else
 MTREE_FILE += ${PORTSDIR}/infrastructure/db/fake.mtree
-.endif
 
 .for _S in ${MULTI_PACKAGES}
 # Fill out package command, and package dependencies
@@ -1572,10 +1552,6 @@ USE_X11 = Yes
 .    endfor
 .  endif
 .endfor
-
-.if ${USE_X11:L} == "yes" && ${PORTS_BUILD_XENOCARA_TOO:L} == "yes"
-BUILD_DEPENDS += base/xenocara/meta
-.endif
 
 .if ${NO_DEPENDS:L} == "no"
 _BUILD_DEPLIST = ${BUILD_DEPENDS}
@@ -2485,13 +2461,11 @@ ${WRKDIR}/.test-sudo:
 
 ${_WRKDIR_COOKIE}:
 	@rm -rf ${WRKDIR}
-.if ${PORTS_BUILD_XENOCARA_TOO:L} != "yes"
 	@appdefaults=${LOCALBASE}/lib/X11/app-defaults; \
 	if ! test -d $$appdefaults -a -h $$appdefaults; then \
 		echo 1>&2 "Fatal: $$appdefaults should exist and be a symlink"; \
 		exit 1; \
 	fi
-.endif
 	@install -d ${WRKOBJDIR_MODE} `dirname ${WRKDIR}`
 	@mkdir -p ${WRKDIR} ${WRKDIR}/bin
 .if ${FAKE_AS_ROOT:L} != "yes"
