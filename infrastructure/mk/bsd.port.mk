@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1374 2017/11/23 12:29:15 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1375 2017/11/23 18:11:05 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -143,6 +143,8 @@ PLIST_REPOSITORY ?= ${PORTSDIR}/plist
 PLIST_DB ?= ${PLIST_REPOSITORY}/${MACHINE_ARCH}
 .endif
 PACKAGE_REPOSITORY ?= ${PORTSDIR}/packages
+
+FIX_EXTRACT_PERMISSIONS ?= No
 
 .if !exists(${X11BASE}/man/mandoc.db)
 .  if exists(${X11BASE}/man/whatis.db)
@@ -1132,9 +1134,6 @@ DESCR${_S} ?= ${PKGDIR}/DESCR${_S}
 .  endfor
 .endif
 
-MTREE_FILE ?=
-
-MTREE_FILE += ${PORTSDIR}/infrastructure/db/fake.mtree
 
 .for _S in ${MULTI_PACKAGES}
 # Fill out package command, and package dependencies
@@ -2502,6 +2501,9 @@ ${_EXTRACT_COOKIE}: ${_WRKDIR_COOKIE}
 	@${MOD${_m}_post-extract}
 .  endif
 .endfor
+.if ${FIX_EXTRACT_PERMISSIONS:L} == "yes"
+	@chmod -R a+rX ${WRKDIR}
+.endif
 	@${_MAKE_COOKIE} $@
 
 .if !target(do-extract)
@@ -2764,9 +2766,10 @@ ${_FAKE_COOKIE}: ${_BUILD_COOKIE} ${_FAKESUDO_CHECK_COOKIE}
 .else
 	install -d -m 755 ${WRKINST}
 .endif
-	@cat ${MTREE_FILE}| \
-		${_FAKESUDO} /usr/sbin/mtree -U -e -d -p ${WRKINST} >/dev/null
+	@${_FAKESUDO} /usr/sbin/mtree -U -e -d -p ${WRKINST} \
+		<${PORTSDIR}/infrastructure/db/fake.mtree >/dev/null
 .if ${FAKE_AS_ROOT:L} != "yes"
+	@chmod -R a+rX ${WRKINST}
 	@ln -sf /bin/echo ${WRKDIR}/bin/chown
 	@ln -sf /bin/echo ${WRKDIR}/bin/chgrp
 	@install -C -m ${BINMODE} ${_INSTALL_WRAPPER} ${WRKDIR}/bin/install
