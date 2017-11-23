@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.23 2017/05/10 12:32:48 pea Exp $
+# $OpenBSD: Makefile,v 1.24 2017/11/23 17:35:07 landry Exp $
 
 COMMENT =	standards compliant, simple to use Wiki
 
+REVISION =	0
 VERSION =	2017-02-19b
 DISTNAME =	dokuwiki-${VERSION}
 PKGNAME =	dokuwiki-${VERSION:S/-/./g}
@@ -27,7 +28,8 @@ INSTDIR =	${PREFIX}/dokuwiki
 TINSTDIR =	${TRUEPREFIX}/dokuwiki
 SUBST_VARS =	INSTDIR TINSTDIR
 
-RUN_DEPENDS =	lang/php/${MODPHP_VERSION},-gd
+RUN_DEPENDS =	lang/php/${MODPHP_VERSION},-gd \
+		security/pecl-libsodium
 
 do-install:
 	cp -Rp ${WRKDIST} ${INSTDIR}
