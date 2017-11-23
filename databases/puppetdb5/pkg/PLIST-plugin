@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST-plugin,v 1.1.1.1 2017/11/20 12:47:32 sebastia Exp $
+@comment $OpenBSD: PLIST-plugin,v 1.2 2017/11/23 10:21:17 sebastia Exp $
 @conflict puppetdb-terminus-*
-@pkgpath databases/puppetdb4,-plugin
+@pkgpath databases/puppetdb5,-plugin
 ${MODRUBY_SITEDIR}/puppet/util/puppetdb/
 ${MODRUBY_SITEDIR}/puppet/face/node/deactivate.rb
 ${MODRUBY_SITEDIR}/puppet/face/node/status.rb
