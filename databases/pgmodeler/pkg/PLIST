@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/06/20 09:45:38 feinerer Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/11/23 17:56:07 feinerer Exp $
 @bin bin/pgmodeler
 @bin bin/pgmodeler-cli
 lib/pgmodeler/
@@ -17,6 +17,7 @@ share/doc/pgmodeler/LICENSE
 share/doc/pgmodeler/README.md
 share/doc/pgmodeler/RELEASENOTES.md
 share/examples/pgmodeler/
+share/examples/pgmodeler/3dcitydb.dbm
 share/examples/pgmodeler/demo.dbm
 share/examples/pgmodeler/oldsample.dbm
 share/examples/pgmodeler/pagila.dbm
@@ -42,6 +43,7 @@ share/pgmodeler/conf/dtd/pgmodeler.dtd
 share/pgmodeler/conf/dtd/relationships.dtd
 share/pgmodeler/conf/dtd/snippets.dtd
 share/pgmodeler/conf/dtd/source-code-highlight.dtd
+share/pgmodeler/conf/dtd/sql-history.dtd
 share/pgmodeler/conf/example.dbm
 share/pgmodeler/conf/objects-style.conf
 share/pgmodeler/conf/pattern-highlight.conf
@@ -51,6 +53,7 @@ share/pgmodeler/conf/pgmodeler_logo.png
 share/pgmodeler/conf/relationships.conf
 share/pgmodeler/conf/schemas/
 share/pgmodeler/conf/schemas/application-dbm.sch
+share/pgmodeler/conf/schemas/commands.sch
 share/pgmodeler/conf/schemas/connections.sch
 share/pgmodeler/conf/schemas/desktop.sch
 share/pgmodeler/conf/schemas/file.sch
@@ -60,6 +63,7 @@ share/pgmodeler/conf/schemas/pgmodeler.sch
 share/pgmodeler/conf/schemas/relationships.sch
 share/pgmodeler/conf/schemas/snippet.sch
 share/pgmodeler/conf/schemas/snippets.sch
+share/pgmodeler/conf/schemas/sql-history.sch
 share/pgmodeler/conf/schemas/widget.sch
 share/pgmodeler/conf/snippets.conf
 share/pgmodeler/conf/sql-highlight.conf
@@ -122,6 +126,7 @@ share/pgmodeler/schemas/catalog/role.sch
 share/pgmodeler/schemas/catalog/rule.sch
 share/pgmodeler/schemas/catalog/schema.sch
 share/pgmodeler/schemas/catalog/sequence.sch
+share/pgmodeler/schemas/catalog/server.sch
 share/pgmodeler/schemas/catalog/table.sch
 share/pgmodeler/schemas/catalog/tablespace.sch
 share/pgmodeler/schemas/catalog/template.sch
@@ -145,6 +150,7 @@ share/pgmodeler/schemas/sql/eventtrigger.sch
 share/pgmodeler/schemas/sql/excelement.sch
 share/pgmodeler/schemas/sql/extension.sch
 share/pgmodeler/schemas/sql/function.sch
+share/pgmodeler/schemas/sql/genericsql.sch
 share/pgmodeler/schemas/sql/idxelement.sch
 share/pgmodeler/schemas/sql/index.sch
 share/pgmodeler/schemas/sql/language.sch
@@ -195,6 +201,7 @@ share/pgmodeler/schemas/xml/dtd/element.dtd
 share/pgmodeler/schemas/xml/dtd/eventtrigger.dtd
 share/pgmodeler/schemas/xml/dtd/extension.dtd
 share/pgmodeler/schemas/xml/dtd/function.dtd
+share/pgmodeler/schemas/xml/dtd/genericsql.dtd
 share/pgmodeler/schemas/xml/dtd/index.dtd
 share/pgmodeler/schemas/xml/dtd/label.dtd
 share/pgmodeler/schemas/xml/dtd/language.dtd
@@ -220,6 +227,7 @@ share/pgmodeler/schemas/xml/eventtrigger.sch
 share/pgmodeler/schemas/xml/excelement.sch
 share/pgmodeler/schemas/xml/extension.sch
 share/pgmodeler/schemas/xml/function.sch
+share/pgmodeler/schemas/xml/genericsql.sch
 share/pgmodeler/schemas/xml/idxelement.sch
 share/pgmodeler/schemas/xml/index.sch
 share/pgmodeler/schemas/xml/info.sch
