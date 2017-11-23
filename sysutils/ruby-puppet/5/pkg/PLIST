@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/11/20 12:45:17 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/11/23 10:11:45 sebastia Exp $
 @option is-branch
-@conflict puppet->=3,<4
-@pkgpath sysutils/ruby-puppet/4
+@conflict puppet-*
+@pkgpath sysutils/ruby-puppet/5
 @newgroup _puppet:580
 @newuser _puppet:580:580:daemon:Puppet user:/var/empty:/sbin/nologin
 @extraunexec rm -rf ${SYSCONFDIR}/puppetlabs/*
