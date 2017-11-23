@@ -1,19 +1,19 @@
-# $OpenBSD: Makefile,v 1.21 2017/10/29 13:01:32 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.22 2017/11/23 08:54:05 jasper Exp $
 
 COMMENT=	security auditing tool
 
-DISTNAME =	lynis-2.5.6
+DISTNAME =	lynis-2.5.7
 
 CATEGORIES=	security
 
-HOMEPAGE=	http://cisofy.com
+HOMEPAGE=	https://cisofy.com
 
 MAINTAINER=	Gonzalo L. R. <gonzalo@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	http://cisofy.com/files/
+MASTER_SITES=	https://cisofy.com/files/
 
 PKG_ARCH=	*
 
@@ -23,15 +23,15 @@ NO_TEST=	Yes
 WRKDIST=	${WRKDIR}/lynis
 
 post-extract:
-	@perl -pi -e 's,usr/share,usr/local/share,g' \
-		${WRKDIST}/lynis
+	sed -i 's,usr/share,usr/local/share,g' ${WRKDIST}/lynis
+
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/{,doc,examples}/lynis/
 	@cp -r ${WRKDIST}/{plugins,db,include} \
 		${PREFIX}/share/lynis/
-	cd ${WRKSRC}; ${INSTALL_DATA} LICENSE \
-		FAQ CHANGELOG.md README INSTALL \
-		${PREFIX}/share/doc/lynis/
+.for f in LICENSE FAQ CHANGELOG.md README INSTALL
+	${INSTALL_DATA} ${WRKSRC}/$f ${PREFIX}/share/doc/lynis/
+.endfor
 	${INSTALL_DATA} ${WRKSRC}/default.prf \
 		${PREFIX}/share/examples/lynis/
 	${INSTALL_MAN} ${WRKSRC}/lynis.8 ${PREFIX}/man/man8/
