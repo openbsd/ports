@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2017/06/30 16:43:53 pirofti Exp $
+@comment $OpenBSD: PLIST,v 1.21 2017/11/23 20:00:05 pirofti Exp $
 bin/rt
 bin/rt-crontool
 bin/rt-mailgate
@@ -29,10 +29,10 @@ libdata/perl5/site_perl/RT/Action/SLA_SetDue.pm
 libdata/perl5/site_perl/RT/Action/SLA_SetStarts.pm
 libdata/perl5/site_perl/RT/Action/SendEmail.pm
 libdata/perl5/site_perl/RT/Action/SendForward.pm
+libdata/perl5/site_perl/RT/Action/SetCustomFieldToNow.pm
 libdata/perl5/site_perl/RT/Action/SetPriority.pm
 libdata/perl5/site_perl/RT/Action/SetStatus.pm
 libdata/perl5/site_perl/RT/Action/UpdateParentTimeWorked.pm
-libdata/perl5/site_perl/RT/Action/UpdateUserTimeWorked.pm
 libdata/perl5/site_perl/RT/Action/UserDefined.pm
 libdata/perl5/site_perl/RT/Approval/
 libdata/perl5/site_perl/RT/Approval.pm
@@ -94,6 +94,10 @@ libdata/perl5/site_perl/RT/CustomField.pm
 libdata/perl5/site_perl/RT/CustomFieldValue.pm
 libdata/perl5/site_perl/RT/CustomFieldValues/
 libdata/perl5/site_perl/RT/CustomFieldValues.pm
+libdata/perl5/site_perl/RT/CustomFieldValues/Canonicalizer/
+libdata/perl5/site_perl/RT/CustomFieldValues/Canonicalizer.pm
+libdata/perl5/site_perl/RT/CustomFieldValues/Canonicalizer/Lowercase.pm
+libdata/perl5/site_perl/RT/CustomFieldValues/Canonicalizer/Uppercase.pm
 libdata/perl5/site_perl/RT/CustomFieldValues/External.pm
 libdata/perl5/site_perl/RT/CustomFieldValues/Groups.pm
 libdata/perl5/site_perl/RT/CustomFields.pm
@@ -339,6 +343,7 @@ share/doc/rt3/customizing/assets/
 share/doc/rt3/customizing/assets/tutorial.pod
 share/doc/rt3/customizing/assets/tutorialdata
 share/doc/rt3/customizing/lifecycles.pod
+share/doc/rt3/customizing/scrip_conditions_and_action.pod
 share/doc/rt3/customizing/search_result_columns.pod
 share/doc/rt3/customizing/sla.pod
 share/doc/rt3/customizing/styling_rt.pod
@@ -361,6 +366,7 @@ share/doc/rt3/images/action-decline.png
 share/doc/rt3/images/added-terms.png
 share/doc/rt3/images/advanced-search.png
 share/doc/rt3/images/complicated-search-arrows.png
+share/doc/rt3/images/create-setowner-action.png
 share/doc/rt3/images/current-search.png
 share/doc/rt3/images/customize-dashboards-menu.png
 share/doc/rt3/images/dashboard-chart.png
@@ -383,6 +389,7 @@ share/doc/rt3/images/search-arrows.png
 share/doc/rt3/images/search-criteria.png
 share/doc/rt3/images/search-results.png
 share/doc/rt3/images/sorting-display-columns.png
+share/doc/rt3/images/status-change-condition.png
 share/doc/rt3/images/subscriptions.png
 share/doc/rt3/images/theme_editor_defaults.png
 share/doc/rt3/images/with-created-before.png
@@ -1039,6 +1046,20 @@ share/examples/rt3/upgrade/4.4.1/
 @sample ${SYSCONFDIR}/rt3/upgrade/4.4.1/
 share/examples/rt3/upgrade/4.4.1/content
 @sample ${SYSCONFDIR}/rt3/upgrade/4.4.1/content
+share/examples/rt3/upgrade/4.4.2/
+@sample ${SYSCONFDIR}/rt3/upgrade/4.4.2/
+share/examples/rt3/upgrade/4.4.2/content
+@sample ${SYSCONFDIR}/rt3/upgrade/4.4.2/content
+share/examples/rt3/upgrade/4.4.2/indexes
+@sample ${SYSCONFDIR}/rt3/upgrade/4.4.2/indexes
+share/examples/rt3/upgrade/4.4.2/schema.Oracle
+@sample ${SYSCONFDIR}/rt3/upgrade/4.4.2/schema.Oracle
+share/examples/rt3/upgrade/4.4.2/schema.Pg
+@sample ${SYSCONFDIR}/rt3/upgrade/4.4.2/schema.Pg
+share/examples/rt3/upgrade/4.4.2/schema.SQLite
+@sample ${SYSCONFDIR}/rt3/upgrade/4.4.2/schema.SQLite
+share/examples/rt3/upgrade/4.4.2/schema.mysql
+@sample ${SYSCONFDIR}/rt3/upgrade/4.4.2/schema.mysql
 share/examples/rt3/upgrade/generate-rtaddressregexp
 @sample ${SYSCONFDIR}/rt3/upgrade/generate-rtaddressregexp
 share/examples/rt3/upgrade/generate-rtaddressregexp.in
@@ -1088,6 +1109,14 @@ share/rt3/fonts/DroidSans.ttf
 share/rt3/fonts/DroidSansFallback.ttf
 share/rt3/html/
 share/rt3/html/Admin/
+share/rt3/html/Admin/Actions/
+share/rt3/html/Admin/Actions/Create.html
+share/rt3/html/Admin/Actions/Display.html
+share/rt3/html/Admin/Actions/Elements/
+share/rt3/html/Admin/Actions/Elements/EditBasics
+share/rt3/html/Admin/Actions/Elements/ShowBasics
+share/rt3/html/Admin/Actions/Modify.html
+share/rt3/html/Admin/Actions/autohandler
 share/rt3/html/Admin/Articles/
 share/rt3/html/Admin/Articles/Classes/
 share/rt3/html/Admin/Articles/Classes/CustomFields.html
@@ -1104,6 +1133,7 @@ share/rt3/html/Admin/Assets/
 share/rt3/html/Admin/Assets/Catalogs/
 share/rt3/html/Admin/Assets/Catalogs/Create.html
 share/rt3/html/Admin/Assets/Catalogs/CustomFields.html
+share/rt3/html/Admin/Assets/Catalogs/DefaultValues.html
 share/rt3/html/Admin/Assets/Catalogs/Elements/
 share/rt3/html/Admin/Assets/Catalogs/Elements/EditBasics
 share/rt3/html/Admin/Assets/Catalogs/GroupRights.html
@@ -1112,6 +1142,14 @@ share/rt3/html/Admin/Assets/Catalogs/Roles.html
 share/rt3/html/Admin/Assets/Catalogs/UserRights.html
 share/rt3/html/Admin/Assets/Catalogs/index.html
 share/rt3/html/Admin/Assets/index.html
+share/rt3/html/Admin/Conditions/
+share/rt3/html/Admin/Conditions/Create.html
+share/rt3/html/Admin/Conditions/Display.html
+share/rt3/html/Admin/Conditions/Elements/
+share/rt3/html/Admin/Conditions/Elements/EditBasics
+share/rt3/html/Admin/Conditions/Elements/ShowBasics
+share/rt3/html/Admin/Conditions/Modify.html
+share/rt3/html/Admin/Conditions/autohandler
 share/rt3/html/Admin/CustomFields/
 share/rt3/html/Admin/CustomFields/GroupRights.html
 share/rt3/html/Admin/CustomFields/Modify.html
@@ -1126,8 +1164,11 @@ share/rt3/html/Admin/Elements/
 share/rt3/html/Admin/Elements/AddCustomFieldValue
 share/rt3/html/Admin/Elements/ConfigureDashboardsInMenu
 share/rt3/html/Admin/Elements/ConfigureMyRT
+share/rt3/html/Admin/Elements/EditActions
+share/rt3/html/Admin/Elements/EditConditions
 share/rt3/html/Admin/Elements/EditCustomField
 share/rt3/html/Admin/Elements/EditCustomFieldValues
+share/rt3/html/Admin/Elements/EditCustomFieldValuesCanonicalizer
 share/rt3/html/Admin/Elements/EditCustomFieldValuesSource
 share/rt3/html/Admin/Elements/EditCustomFields
 share/rt3/html/Admin/Elements/EditQueueWatcherGroup
@@ -1156,6 +1197,8 @@ share/rt3/html/Admin/Elements/ShowKeyInfo
 share/rt3/html/Admin/Elements/UpgradeHistory
 share/rt3/html/Admin/Elements/UpgradeHistoryRow
 share/rt3/html/Admin/Global/
+share/rt3/html/Admin/Global/Actions.html
+share/rt3/html/Admin/Global/Conditions.html
 share/rt3/html/Admin/Global/CustomFields/
 share/rt3/html/Admin/Global/CustomFields/Catalog-Assets.html
 share/rt3/html/Admin/Global/CustomFields/Class-Article.html
@@ -1452,6 +1495,10 @@ share/rt3/html/Elements/RT__SavedSearch/
 share/rt3/html/Elements/RT__SavedSearch/ColumnMap
 share/rt3/html/Elements/RT__Scrip/
 share/rt3/html/Elements/RT__Scrip/ColumnMap
+share/rt3/html/Elements/RT__ScripAction/
+share/rt3/html/Elements/RT__ScripAction/ColumnMap
+share/rt3/html/Elements/RT__ScripCondition/
+share/rt3/html/Elements/RT__ScripCondition/ColumnMap
 share/rt3/html/Elements/RT__Template/
 share/rt3/html/Elements/RT__Template/ColumnMap
 share/rt3/html/Elements/RT__Ticket/
@@ -1651,6 +1698,11 @@ share/rt3/html/REST/1.0/ticket/
 share/rt3/html/REST/1.0/ticket/comment
 share/rt3/html/REST/1.0/ticket/link
 share/rt3/html/REST/1.0/ticket/merge
+share/rt3/html/Reports/
+share/rt3/html/Reports/CreatedByDates.html
+share/rt3/html/Reports/ResolvedByDates.html
+share/rt3/html/Reports/ResolvedByOwner.html
+share/rt3/html/Reports/index.html
 share/rt3/html/Search/
 share/rt3/html/Search/Article.html
 share/rt3/html/Search/Build.html
@@ -1798,6 +1850,7 @@ share/rt3/html/User/Elements/
 share/rt3/html/User/Elements/AssetList
 share/rt3/html/User/Elements/Portlets/
 share/rt3/html/User/Elements/Portlets/ActiveTickets
+share/rt3/html/User/Elements/Portlets/CreateAsset
 share/rt3/html/User/Elements/Portlets/CreateTicket
 share/rt3/html/User/Elements/Portlets/ExtraInfo
 share/rt3/html/User/Elements/Portlets/InactiveTickets
@@ -2320,6 +2373,7 @@ share/rt3/static/images/jquery_ui/ui-icons_454545_256x240.png
 share/rt3/static/images/jquery_ui/ui-icons_888888_256x240.png
 share/rt3/static/images/jquery_ui/ui-icons_cd0a0a_256x240.png
 share/rt3/static/images/pause.png
+share/rt3/static/images/request-tracker-logo.png
 share/rt3/static/images/star-empty.png
 share/rt3/static/images/star-full.png
 share/rt3/static/images/stopwatch.png
