@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2017/07/26 22:45:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.58 2017/11/23 15:11:12 espie Exp $
 
 COMMENT-main=		library handling all the details of proxy configuration
 COMMENT-webkit=		pacrunner libproxy plugin for webkit-based browsers
@@ -36,7 +36,7 @@ FLAVOR?=		no_webkit bootstrap
 
 MULTI_PACKAGES=		-main -webkit
 
-BUILD_DEPENDS=		lang/vala
+BUILD_DEPENDS=		lang/vala,bootstrap,no_valadoc
 
 RUN_DEPENDS-main=	${MODPY_RUN_DEPENDS}
 LIB_DEPENDS-main=	devel/glib2
