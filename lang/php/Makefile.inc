@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.99 2017/11/16 18:37:01 martijn Exp $
+# $OpenBSD: Makefile.inc,v 1.100 2017/11/23 18:57:13 martijn Exp $
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
 
@@ -69,7 +69,6 @@ CONFIGURE_ARGS+=	--enable-shared \
 			--with-pear=${LOCALBASE}/share/php-${PV} \
 			--with-config-file-scan-dir=${SYSCONFDIR}/php-${PV} \
 			--with-pdo-sqlite \
-			--enable-sqlite-utf8 \
 			--with-sqlite3 \
 			--program-suffix=-${PV} \
 			--with-readline
@@ -98,8 +97,6 @@ CONFIGURE_ARGS+= 	--with-openssl \
 			--enable-sysvshm \
 			--enable-mbstring \
 			--enable-exif \
-			--enable-zend-multibyte \
-			--enable-fastcgi \
 			--enable-fpm \
 			--with-fpm-user=www \
 			--with-fpm-group=www
@@ -256,7 +253,7 @@ WANTLIB-soap=		iconv m pthread z xml2>=8 lzma
 # snmp
 MULTI_PACKAGES+=	-snmp
 COMMENT-snmp=		snmp protocol extensions for php
-CONFIGURE_ARGS+=	--with-snmp=shared,${LOCALBASE} --enable-ucd-snmp-hack
+CONFIGURE_ARGS+=	--with-snmp=shared,${LOCALBASE}
 LIB_DEPENDS-snmp=	net/net-snmp
 WANTLIB-snmp=		crypto m netsnmp>=6.2 pthread
 
