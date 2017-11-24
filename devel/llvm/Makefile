@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.165 2017/11/13 07:49:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.166 2017/11/24 16:42:04 jca Exp $
 
 # XXX: Remember to bump MODCLANG_VERSION in lang/clang/clang.port.mk when
 # updating this port.
 
+# XXX If broken on an architecture, remove the arch from LLVM_ARCHS.
 ONLY_FOR_ARCHS = ${LLVM_ARCHS}
 BROKEN-powerpc =	relocation truncated to fit: R_PPC_PLTREL24
 
