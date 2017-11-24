@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Init.pm,v 1.29 2017/06/20 15:46:18 espie Exp $
+# $OpenBSD: Init.pm,v 1.30 2017/11/24 14:26:20 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -226,7 +226,7 @@ sub init_cores
 		if (!defined $core->prop->{jobs}) {
 			$job->add_tasks(DPB::Task::Ncpu->new);
 		}
-		DPB::Signature->add_tasks($state->{xenocara}, $job);
+		DPB::Signature->add_tasks($job);
 #		$self->add_startup($state, $logger, $core, $job, "/bin/sh",
 #		    $state->ports."/infrastructure/bin/default-dpb-startup");
 		if (defined $startup) {

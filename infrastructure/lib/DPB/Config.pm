@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Config.pm,v 1.71 2017/11/23 12:36:25 espie Exp $
+# $OpenBSD: Config.pm,v 1.72 2017/11/24 14:26:20 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -188,7 +188,6 @@ sub parse_command_line
     	if (!defined $state->{portspath}) {
 		$state->usage("Can't obtain vital information from the ports tree");
 	}
-	$state->{xenocara} = 0;
 	$state->{portspath} = [ map {$state->anchor($_)} split(/:/, $state->{portspath}) ];
 	$state->{realports} = $state->anchor($state->{ports});
 	$state->{realdistdir} = $state->anchor($state->{distdir});
