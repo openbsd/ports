@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2017/11/24 08:42:26 rpointel Exp $
+# $OpenBSD: Makefile,v 1.18 2017/11/24 12:18:35 jca Exp $
 
 COMMENT =		source code beautifier
 
@@ -17,9 +17,11 @@ WANTLIB += c m ${COMPILER_LIBCXX}
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=uncrustify/}
 
-WRKDIST =	${WRKDIR}
+COMPILER =	base-clang ports-clang ports-gcc
 
 MODULES =	devel/cmake
+
+WRKDIST =	${WRKDIR}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/uncrustify/
