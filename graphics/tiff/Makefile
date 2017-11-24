@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.84 2017/07/26 22:45:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.85 2017/11/24 11:23:50 landry Exp $
 
 COMMENT=	tools and library routines for working with TIFF images
 
-DISTNAME=	tiff-4.0.8
-REVISION =	1
-SHARED_LIBS=	tiff	40.1	# 7.6
+DISTNAME=	tiff-4.0.9
+SHARED_LIBS=	tiff	40.2	# 7.6
 SHARED_LIBS+=	tiffxx	40.1	# 7.6
 CATEGORIES=	graphics
 
