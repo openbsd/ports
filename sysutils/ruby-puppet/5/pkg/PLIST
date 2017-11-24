@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.2 2017/11/23 10:11:45 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.3 2017/11/24 07:33:52 sebastia Exp $
 @option is-branch
+@option no-default-conflict
 @conflict puppet-*
 @pkgpath sysutils/ruby-puppet/5
 @newgroup _puppet:580
