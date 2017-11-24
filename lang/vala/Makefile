@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.96 2017/11/09 10:36:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.97 2017/11/24 13:40:35 ajacoutot Exp $
 
 COMMENT-main=		compiler for the GObject type system
 COMMENT-valadoc=	Vala documentation generator
@@ -46,9 +46,10 @@ SUBST_VARS+=		API_V
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.69
 
-# cyclic: lang/vala -> math/graphviz -> x11/gnome/librsvg -> lang/vala
+# multiple dep loops like:
+# lang/vala -> math/graphviz -> x11/gnome/librsvg -> lang/vala
 PSEUDO_FLAVORS=		no_valadoc bootstrap
-FLAVOR?=
+FLAVOR?=		no_valadoc bootstrap
 
 .include <bsd.port.arch.mk>
 
