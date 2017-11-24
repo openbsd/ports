@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/04/20 13:48:29 fcambus Exp $
+# $OpenBSD: Makefile,v 1.2 2017/11/24 16:00:13 fcambus Exp $
 
 COMMENT =	swiss army knife for video game console emulators
 
-DISTNAME =	ucon64-2.0.3-src
+DISTNAME =	ucon64-2.1.0-src
 PKGNAME =	${DISTNAME:S/-src//}
 
 CATEGORIES =	emulators
@@ -22,7 +22,7 @@ WRKSRC =	${WRKDIST}/src
 
 CONFIGURE_STYLE = gnu
 
-CONFIGURE_ARGS = --disable-discmage --disable-dload --disable-parallel
+CONFIGURE_ARGS = --without-libdiscmage --disable-dload --disable-parallel
 
 USE_GMAKE =	Yes
 
