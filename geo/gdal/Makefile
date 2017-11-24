@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.62 2017/11/12 20:09:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.63 2017/11/24 19:18:07 landry Exp $
 
 COMMENT-main =	translator library for geospatial data formats
 COMMENT-python =python bindings and utilities for GDAL
 COMMENT-perl =	perl bindings for GDAL
 
-V =		2.2.2
+V =		2.2.3
 DISTNAME =	gdal-${V}
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
 		gdalautotest-${V}${EXTRACT_SUFX}
@@ -15,8 +15,6 @@ FULLPKGNAME-python =	py-${DISTNAME}
 FULLPKGPATH-python =	geo/gdal,-python${FLAVOR_EXT:S/-/,/g}
 FULLPKGNAME-perl =	p5-Geo-GDAL-${V}
 FULLPKGPATH-perl =	geo/gdal,-perl
-REVISION-main	=	0
-REVISION-python =	0
 
 SHARED_LIBS =	gdal 30.0 #22.0
 CATEGORIES =	geo devel
@@ -40,6 +38,7 @@ FULLPKGNAME-python =	py3-${DISTNAME}
 
 MULTI_PACKAGES =	-main -python -perl
 
+MODPY_RUNDEP = No
 LIB_DEPENDS-main =	databases/sqlite3 \
 			graphics/tiff \
 			net/curl \
@@ -63,6 +62,8 @@ WANTLIB-main =		c crypto curl expat freexl geos geos_c geotiff gif \
 			pcre png pq proj pthread qhull spatialite sqlite3 \
 			ssl tiff xml2 webp z ${COMPILER_LIBCXX}
 
+RUN_DEPENDS-python =	${MODPY_RUN_DEPENDS} \
+			math/py-numpy${MODPY_FLAVOR}
 LIB_DEPENDS-python =	${MODPY_LIB_DEPENDS} \
 			${FULLPKGNAME-main}:${FULLPKGPATH-main}
 WANTLIB-python =	${MODPY_WANTLIB} gdal m pthread ${COMPILER_LIBCXX}
@@ -74,8 +75,6 @@ WANTLIB-perl += c crypto curl expat freexl geos_c geotiff gif iconv
 WANTLIB-perl += jasper jpeg json-c lzma m nghttp2 openjp2 pcre png
 WANTLIB-perl += pq pthread qhull spatialite sqlite3 ssl tiff xml2 webp z
 
-
-RUN_DEPENDS +=		math/py-numpy${MODPY_FLAVOR}
 BUILD_DEPENDS +=	${RUN_DEPENDS} devel/swig
 
 TEST_DEPENDS +=		${FULLPKGNAME-python}:${FULLPKGPATH-python}

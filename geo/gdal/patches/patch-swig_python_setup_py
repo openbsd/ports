@@ -1,7 +1,19 @@
-$OpenBSD: patch-swig_python_setup_py,v 1.8 2017/05/19 09:19:48 landry Exp $
+$OpenBSD: patch-swig_python_setup_py,v 1.9 2017/11/24 19:18:07 landry Exp $
+
+https://trac.osgeo.org/gdal/changeset/40801/
+
 Index: swig/python/setup.py
 --- swig/python/setup.py.orig
 +++ swig/python/setup.py
+@@ -7,7 +7,7 @@
+ # Howard Butler hobu.inc@gmail.com
+ 
+ 
+-gdal_version = '2.2.2'
++gdal_version = '2.2.3'
+ 
+ import sys
+ import os
 @@ -216,7 +216,7 @@ class gdal_ext(build_ext):
          self.include_dirs.append(os.path.join(self.gdaldir,'include'))
  
