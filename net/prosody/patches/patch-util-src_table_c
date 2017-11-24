@@ -1,0 +1,19 @@
+$OpenBSD: patch-util-src_table_c,v 1.1 2017/11/24 12:47:34 jca Exp $
+
+Index: util-src/table.c
+--- util-src/table.c.orig
++++ util-src/table.c
+@@ -8,10 +8,12 @@ static int Lcreate_table(lua_State *L) {
+ 
+ static int Lpack(lua_State *L) {
+ 	unsigned int n_args = lua_gettop(L);
++	int arg;
++
+ 	lua_createtable(L, n_args, 1);
+ 	lua_insert(L, 1);
+ 
+-	for(int arg = n_args; arg >= 1; arg--) {
++	for(n_args; arg >= 1; arg--) {
+ 		lua_rawseti(L, 1, arg);
+ 	}
+ 
