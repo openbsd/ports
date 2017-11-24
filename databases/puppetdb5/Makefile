@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2017/11/23 10:21:17 sebastia Exp $
+# $OpenBSD: Makefile,v 1.3 2017/11/24 07:33:19 sebastia Exp $
 
 COMMENT-main=	fast, scalable, and reliable data warehouse for Puppet
 COMMENT-plugin= PuppetDB terminus plugin
@@ -8,8 +8,8 @@ DISTNAME=	puppetdb-$V
 PKGNAME-main=	${DISTNAME}
 PKGNAME-plugin= puppetdb-termini-$V
 CATEGORIES=	databases
-REVISION-main=	0
-REVISION-plugin=0
+REVISION-main=	1
+REVISION-plugin=1
 
 HOMEPAGE=	http://docs.puppetlabs.com/puppetdb/latest/
 
