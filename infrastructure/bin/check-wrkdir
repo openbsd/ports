@@ -1,0 +1,116 @@
+#! /usr/bin/perl
+# $OpenBSD: check-wrkdir,v 1.1 2017/11/24 14:47:26 espie Exp $
+# Copyright (c) 2017 Marc Espie <espie@openbsd.org>
+#
+# Permission to use, copy, modify, and distribute this software for any
+# purpose with or without fee is hereby granted, provided that the above
+# copyright notice and this permission notice appear in all copies.
+#
+# THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+# WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+# MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+# ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+# WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+# ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+# OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
+use strict;
+use warnings;
+# this script can check a wrkdir for permission issues and unwanted changes
+
+# synopsis: 
+#  check-wrkdir [-i ignoredir] wrkdir timestamp-file [other ignored files]
+
+use File::Find;
+use Getopt::Std;
+
+our $opt_i;
+my $prog = $0;
+
+$prog =~ s/.*\///;
+
+getopt('i:');
+
+my $done;
+
+sub read_timestamps
+{
+	my $name = shift;
+	my $h = {};
+	if (open(my $fh, "<", $name)) {
+		while (<$fh>) {
+			chomp;
+			if (m/^(.*) === (\d+)$/) {
+				$h->{$1} = $2;
+			} elsif (m/^r\|(.*)$/) {
+				$done->{$1} = 1;
+			}
+		}
+		close $fh;
+	}
+	return $h;
+}
+
+my $known;
+
+my $wrkdir = shift;
+my $ts_file = $ARGV[0];
+
+if (-e $ts_file) {
+	$known = read_timestamps($ts_file);
+}
+
+my $ignored = {map {($_, 1)} @ARGV};
+
+my @notreadable;
+my @changed;
+open(my $fh, ">", $ts_file) or die $!;
+
+find(
+    sub {
+    	my ($mode, $mtime) = (lstat $_)[2, 9];
+	my $f = $File::Find::name;
+	if (defined $opt_i) {
+		if ($f eq $opt_i) {
+			$File::Find::prune = 1;
+			return;
+		}
+	}
+
+	if (-f _) {
+		if (!$ignored->{$f}) {
+			print $fh "$f === $mtime\n";
+			if ($known->{$f} && $known->{$f} != $mtime) {
+				push(@changed, $f);
+			}
+		}
+		if (($mode & 0444) != 0444) {
+			if (!$done->{$f}) {
+				push(@notreadable, $f);
+			}
+			print $fh "r|$f\n";
+		}
+	} elsif (-d _) {
+		my $d = "$f/";
+		if (($mode & 0555) != 0555) {
+			if (!$done->{$d}) {
+				push(@notreadable, $d);
+			}
+			print $fh "r|$d\n";
+		}
+	}
+    }, $wrkdir);
+close($fh);
+
+if (@notreadable > 0) {
+	print "$prog: not readable:\n";
+	for my $e (sort @notreadable) {
+		print $e, "\n";
+	}
+}
+if (@changed > 0) {
+	print "$prog: files modified:\n";
+	for my $e (sort @changed) {
+		print $e, "\n";
+	}
+}
