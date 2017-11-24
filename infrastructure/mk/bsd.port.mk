@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1375 2017/11/23 18:11:05 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1376 2017/11/24 14:48:33 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -686,10 +686,13 @@ _BUILD_COOKIE =			${WRKDIR}/.build_done
 _TEST_COOKIE =			${WRKDIR}/.test_done
 .endif
 
+_TS_COOKIE = ${WRKDIR}/.check-wrkdir_stamp
+
 _ALL_COOKIES = ${_EXTRACT_COOKIE} ${_PATCH_COOKIE} ${_CONFIGURE_COOKIE} \
 	${_INSTALL_PRE_COOKIE} ${_BUILD_COOKIE} ${_TEST_COOKIE} \
 	${_PACKAGE_COOKIES} ${_CACHE_PACKAGE_COOKIES} \
 	${_DISTPATCH_COOKIE} ${_PREPATCH_COOKIE} ${_FAKE_COOKIE} \
+	${_TS_COOKIE} \
 	${_WRKDIR_COOKIE} ${_DEPBUILD_COOKIES} \
 	${_DEPRUN_COOKIES} ${_DEPTEST_COOKIES} ${_UPDATE_COOKIES} \
 	${_DEPBUILDLIB_COOKIES} ${_DEPRUNLIB_COOKIES} \
@@ -1843,6 +1846,20 @@ _register_plist${_s} = ${_register_plist}
 .  endif
 .endfor
 
+# script that can verify permissions and timestamps
+
+CHECK_WRKDIR ?= No
+WRKDIR_CHANGES_OKAY = ${_ALL_COOKIES}
+.if ${CONFIGURE_STYLE:L:Mmodbuild}
+WRKDIR_CHANGES_OKAY += ${WRKBUILD}/_build/runtime_params
+.endif
+
+.if ${CHECK_WRKDIR:L} == "yes"
+_check_wrkdir = :
+.else
+_check_wrkdir = ${_PERLSCRIPT}/check-wrkdir
+.endif
+
 ###
 ### end of variable setup. Only targets now
 ###
@@ -2709,6 +2726,7 @@ ${_BUILD_COOKIE}: ${_CONFIGURE_COOKIE}
 	@${_MAKESYS} post-build
 .  endif
 .endif
+	@${_check_wrkdir} ${WRKDIR} ${_TS_COOKIE} ${WRKDIR_CHANGES_OKAY} 
 	@${_MAKE_COOKIE} $@
 
 ${_TEST_COOKIE}: ${_BUILD_COOKIE}
@@ -2801,6 +2819,7 @@ ${_FAKE_COOKIE}: ${_BUILD_COOKIE} ${_FAKESUDO_CHECK_COOKIE}
 .if target(_hook-post-install)
 	@${_SUDOMAKESYS} _hook-post-install ${FAKE_SETUP}
 .endif
+	@${_check_wrkdir} ${WRKDIR} ${_TS_COOKIE} ${WRKDIR_CHANGES_OKAY} 
 	@${_FAKESUDO} ${_MAKE_COOKIE} $@
 
 # XXX this is a separate step that is "always on" and doesn't generate
