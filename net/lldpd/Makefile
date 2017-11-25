@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.32 2017/08/22 10:16:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2017/11/25 13:11:55 sthen Exp $
 
 COMMENT=	LLDP (802.1ab)/CDP/EDP/SONMP/FDP daemon and SNMP subagent
 
-DISTNAME=	lldpd-0.9.8
+DISTNAME=	lldpd-0.9.9
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		LLDP-MIB-200505060000Z.txt:0
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
@@ -20,7 +20,7 @@ HOMEPAGE=	http://vincentbernat.github.com/lldpd/
 # that it can be used for its intended purpose."
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c event_core event_extra pthread readline termcap
+WANTLIB += c curses event_core event_extra pthread readline
 
 MASTER_SITES=	http://media.luffy.cx/files/lldpd/
 MASTER_SITES0=	http://www.ieee802.org/1/files/public/MIBs/

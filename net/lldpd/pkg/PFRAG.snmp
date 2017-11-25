@@ -1,4 +1,2 @@
-@comment $OpenBSD: PFRAG.snmp,v 1.1 2015/07/18 22:31:04 sthen Exp $
-share/snmp/
-share/snmp/mibs/
+@comment $OpenBSD: PFRAG.snmp,v 1.2 2017/11/25 13:11:55 sthen Exp $
 share/snmp/mibs/LLDP-MIB.txt
