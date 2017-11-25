@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1376 2017/11/24 14:48:33 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1377 2017/11/25 12:19:07 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1849,7 +1849,7 @@ _register_plist${_s} = ${_register_plist}
 # script that can verify permissions and timestamps
 
 CHECK_WRKDIR ?= No
-WRKDIR_CHANGES_OKAY = ${_ALL_COOKIES}
+WRKDIR_CHANGES_OKAY += ${_ALL_COOKIES}
 .if ${CONFIGURE_STYLE:L:Mmodbuild}
 WRKDIR_CHANGES_OKAY += ${WRKBUILD}/_build/runtime_params
 .endif
