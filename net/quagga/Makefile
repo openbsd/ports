@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.54 2017/11/03 14:28:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.55 2017/11/25 12:40:18 sthen Exp $
 
 COMMENT=	multi-threaded routing daemon
 
 DISTNAME=	quagga-1.2.2
+REVISION=	0
 CATEGORIES=	net
 MASTER_SITES=	http://download.savannah.gnu.org/releases/quagga/
 
@@ -15,12 +16,11 @@ HOMEPAGE=	http://www.quagga.net/
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c curses execinfo m readline termcap
+WANTLIB += c curses m readline termcap
 
 LOCALSTATEDIR=	${BASELOCALSTATEDIR}/quagga
 
 BUILD_DEPENDS=	lang/gawk
-LIB_DEPENDS=	devel/libexecinfo
 
 USE_GMAKE=	Yes
 SYSCONFDIR=	${BASESYSCONFDIR}/quagga
@@ -28,12 +28,11 @@ SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.69
 CONFIGURE_ARGS+= --includedir=${LOCALBASE}/include/quagga \
+		--disable-backtrace \
 		--enable-user=_quagga \
 		--enable-group=_quagga \
 		--enable-vty-group=_quagga \
 		--enable-vtysh
-# trust the compiler to use PIE by default where supported.
-CONFIGURE_ARGS+= --disable-pie
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		LIBS=-lcurses
