@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.57 2017/10/23 17:10:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.58 2017/11/25 17:02:34 ajacoutot Exp $
 
 COMMENT=		base elements for GStreamer
 
 DISTNAME=		gst-plugins-base-${V}
 PKGNAME=		${GST_PKGNAME_PREFIX}-plugins-base-${V}
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  gsttag-1.0           3.3      # 1203.0
 SHARED_LIBS +=  gstaudio-1.0         3.3      # 1203.0
@@ -67,7 +67,7 @@ pre-configure:
 # https://bugzilla.gnome.org/show_bug.cgi?id=726571
 # XXX check if still needed at next release
 .for i in audio riff tag sdp fft pbutils rtp allocators app rtsp video
-	sed -i 's,--libtool="\$$\(top_builddir\)/libtool",--libtool="\$${LIBTOOL}",g' \
+	sed -i 's,--libtool="\$$(top_builddir)/libtool",--libtool="\$${LIBTOOL}",g' \
 		${WRKSRC}/gst-libs/gst/$i/Makefile.am
 .endfor
 

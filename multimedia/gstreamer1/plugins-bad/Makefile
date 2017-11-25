@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.63 2017/10/23 17:10:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.64 2017/11/25 17:02:34 ajacoutot Exp $
 
 COMMENT=		bad elements for GStreamer
 
 DISTNAME=		gst-plugins-bad-${V}
 PKGNAME=		${GST_PKGNAME_PREFIX}-plugins-bad-${V}
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS +=  gstphotography-1.0   3.3      # 1203.0
 SHARED_LIBS +=  gstbasecamerabinsrc-1.0 3.3   # 1203.0
@@ -145,7 +145,7 @@ CFLAGS +=		-I${X11BASE}/include
 pre-configure:
 # https://bugzilla.gnome.org/show_bug.cgi?id=726571
 # XXX check if still needed at next release
-	sed -i 's,--libtool="\$$\(top_builddir\)/libtool",--libtool="\$${LIBTOOL}",g' \
+	sed -i 's,--libtool="\$$(top_builddir)/libtool",--libtool="\$${LIBTOOL}",g' \
 		${WRKSRC}/*/Makefile.in
 
 	sed -i 's,/dev/dvd,/dev/rcd0c,g' \
