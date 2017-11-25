@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2015/01/24 13:46:44 schwarze Exp $
+# $OpenBSD: Makefile,v 1.32 2017/11/25 13:27:48 espie Exp $
 
 COMMENT=	communication package for X11
 
@@ -9,6 +9,7 @@ CATEGORIES=	comms x11
 
 MASTER_SITES=	ftp://sipb.mit.edu/pub/seyon/
 EXTRACT_SUFX=	-tar.Z
+FIX_EXTRACT_PERMISSIONS =	Yes
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

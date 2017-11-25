@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/09/03 16:16:09 edd Exp $
+# $OpenBSD: Makefile,v 1.2 2017/11/25 13:27:48 espie Exp $
 
 COMMENT =		Amiga DMS unpacker
 DISTNAME =		xdms-1.3.2
 EXTRACT_SUFX =		.tar.bz2
+FIX_EXTRACT_PERMISSIONS =	Yes
 CATEGORIES =		archivers emulators
 
 HOMEPAGE =		http://zakalwe.fi/~shd/foss/xdms/

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.64 2016/03/20 19:56:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.65 2017/11/25 13:27:48 espie Exp $
 
 COMMENT =	unified perl interface for database access
 
 MODULES =	cpan
 DISTNAME =	DBI-1.633
+FIX_EXTRACT_PERMISSIONS =	Yes
 CATEGORIES =	databases
 
 HOMEPAGE =	http://dbi.perl.org/
