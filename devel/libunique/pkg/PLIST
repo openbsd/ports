@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/03/16 18:07:43 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2017/11/25 21:57:47 ajacoutot Exp $
 include/unique-1.0/
 include/unique-1.0/unique/
 include/unique-1.0/unique/unique.h
@@ -7,16 +7,12 @@ include/unique-1.0/unique/uniquebackend.h
 include/unique-1.0/unique/uniqueenumtypes.h
 include/unique-1.0/unique/uniquemessage.h
 include/unique-1.0/unique/uniqueversion.h
-lib/girepository-1.0/
 lib/girepository-1.0/Unique-1.0.typelib
 lib/libunique-1.0.a
 lib/libunique-1.0.la
 @lib lib/libunique-1.0.so.${LIBunique-1.0_VERSION}
 lib/pkgconfig/unique-1.0.pc
-share/gir-1.0/
 share/gir-1.0/Unique-1.0.gir
-share/gtk-doc/
-share/gtk-doc/html/
 share/gtk-doc/html/unique/
 share/gtk-doc/html/unique/UniqueApp.html
 share/gtk-doc/html/unique/UniqueBackend.html
