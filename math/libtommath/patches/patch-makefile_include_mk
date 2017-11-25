@@ -1,0 +1,18 @@
+$OpenBSD: patch-makefile_include_mk,v 1.1 2017/11/25 21:42:51 afresh1 Exp $
+
+Index: makefile_include.mk
+--- makefile_include.mk.orig
++++ makefile_include.mk
+@@ -87,12 +87,6 @@ LIBPATH  ?= $(PREFIX)/lib
+ INCPATH  ?= $(PREFIX)/include
+ DATAPATH ?= $(PREFIX)/share/doc/libtommath/pdf
+ 
+-#make the code coverage of the library
+-#
+-coverage: CFLAGS += -fprofile-arcs -ftest-coverage -DTIMING_NO_LOGS
+-coverage: LFLAGS += -lgcov
+-coverage: LDFLAGS += -lgcov
+-
+ coverage: $(COVERAGE)
+ 	$(COVERAGE_APP)
+ 

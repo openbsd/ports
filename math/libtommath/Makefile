@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2017/02/27 19:53:23 jca Exp $
+# $OpenBSD: Makefile,v 1.7 2017/11/25 21:42:51 afresh1 Exp $
 
 COMMENT =		number theoretic multiple-precision integer library
 CATEGORIES =		math
@@ -8,7 +8,7 @@ MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
 
 GH_ACCOUNT =		libtom
 GH_PROJECT =		libtommath
-GH_TAGNAME =		v1.0
+GH_TAGNAME =		v1.0.1
 
 # WTFPL
 PERMIT_PACKAGE_CDROM =	Yes
