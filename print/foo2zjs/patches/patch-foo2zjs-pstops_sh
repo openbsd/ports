@@ -1,0 +1,13 @@
+$OpenBSD: patch-foo2zjs-pstops_sh,v 1.1 2017/11/25 17:37:46 ajacoutot Exp $
+use gsed
+Index: foo2zjs-pstops.sh
+--- foo2zjs-pstops.sh.orig
++++ foo2zjs-pstops.sh
+@@ -49,6 +49,7 @@ debug() {
+ case `uname -s` in
+ Darwin)		sed=gsed;;
+ FreeBSD)	sed=gsed;;
++OpenBSD)	sed=gsed;;
+ *)		sed=sed;;
+ esac
+ 

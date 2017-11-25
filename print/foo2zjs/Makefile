@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.65 2017/04/04 21:24:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.66 2017/11/25 17:37:46 ajacoutot Exp $
 
 COMMENT=	driver for ZjStream wire protocol compatible printers
 
 VERSION=	20170320
 DISTNAME=	foo2zjs-${VERSION}
+REVISION=	0
 
 CATEGORIES=	print
 
@@ -30,6 +31,9 @@ LIB_DEPENDS=	print/cups,-libs
 
 # foomatic-rip(1), foomatic-db(-engine)
 RUN_DEPENDS +=	print/cups-filters
+
+# patch-foo2zjs-pstops_sh
+RUN_DEPENDS +=	textproc/gsed
 
 MAKE_FLAGS+=	CUPS_SERVERBIN=`cups-config --serverbin`
 
