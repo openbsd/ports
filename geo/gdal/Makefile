@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2017/11/24 19:19:27 landry Exp $
+# $OpenBSD: Makefile,v 1.65 2017/11/25 15:48:42 landry Exp $
 
 COMMENT-main =	translator library for geospatial data formats
 COMMENT-python =python bindings and utilities for GDAL
@@ -75,7 +75,7 @@ WANTLIB-perl += c crypto curl expat freexl geos_c geotiff gif iconv
 WANTLIB-perl += jasper jpeg json-c lzma m nghttp2 openjp2 pcre png
 WANTLIB-perl += pq pthread qhull spatialite sqlite3 ssl tiff xml2 webp z
 
-BUILD_DEPENDS +=	${RUN_DEPENDS} devel/swig
+BUILD_DEPENDS +=	${RUN_DEPENDS} math/py-numpy${MODPY_FLAVOR} devel/swig
 
 TEST_DEPENDS +=		${FULLPKGNAME-python}:${FULLPKGPATH-python}
 TEST_ENV =		GDAL_DOWNLOAD_TEST_DATA=1 GDAL_RUN_SLOW_TESTS=yes
