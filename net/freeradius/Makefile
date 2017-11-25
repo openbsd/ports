@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2017/11/15 13:54:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.75 2017/11/25 13:12:39 sthen Exp $
 
 PORTROACH=	limit:^2\.
 
@@ -12,6 +12,7 @@ COMMENT-pgsql=	freeradius pgsql rlm addon
 COMMENT-ldap=	freeradius ldap rlm addon
 
 V=		2.2.10
+REVISION=	0
 DISTNAME=	freeradius-server-$V
 EXTRACT_SUFX=	.tar.bz2
 
@@ -33,7 +34,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 CONFIGURE_STYLE=autoconf dest
 AUTOCONF_VERSION=2.69
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -lexecinfo"
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
+		ac_cv_header_execinfo_h=false
 
 CONFIGURE_ARGS=	--with-large-files \
 		--with-snmp \
@@ -64,10 +66,9 @@ USE_LIBTOOL=	gnu
 BUILD_DEPENDS=		net/net-snmp
 
 LIB_DEPENDS-main=	databases/gdbm \
-			devel/libexecinfo \
 			devel/libtool,-ltdl
-WANTLIB-main=		c execinfo iconv intl pcap pthread readline \
-			termcap gdbm>=3 ltdl>=4 crypto ssl
+WANTLIB-main=		c iconv intl pcap pthread readline \
+			curses gdbm>=3 ltdl>=4 crypto ssl
 
 PSEUDO_FLAVORS=	no_ldap no_mysql no_pgsql no_iodbc
 FLAVOR?=
@@ -81,7 +82,7 @@ CONFIGURE_ARGS+=	--without-rlm_sql_iodbc
 .endif
 
 LIB_DEPENDS-iodbc=	databases/iodbc
-WANTLIB-iodbc=		execinfo iodbc>=2 pthread
+WANTLIB-iodbc=		iodbc>=2
 RUN_DEPENDS-iodbc=	#empty
 
 .if !${BUILD_PACKAGES:M-ldap}
@@ -90,7 +91,7 @@ CONFIGURE_ARGS+=	--without-rlm_ldap
 
 LIB_DEPENDS-ldap=	databases/openldap \
 			${BASE_PKGPATH}
-WANTLIB-ldap=		crypto execinfo ssl sasl2 \
+WANTLIB-ldap=		crypto ssl sasl2 \
 			lber>=8 ldap_r>=8 freeradius-radius>=1 pthread
 RUN_DEPENDS-ldap=	#empty
 
@@ -99,7 +100,7 @@ CONFIGURE_ARGS+=	--without-rlm_sql_mysql
 .endif
 
 LIB_DEPENDS-mysql=	databases/mariadb
-WANTLIB-mysql=		crypto execinfo ssl m pthread z mysqlclient_r
+WANTLIB-mysql=		crypto ssl m pthread z mysqlclient_r
 RUN_DEPENDS-mysql=	#empty
 
 .if ${BUILD_PACKAGES:M-pgsql}
@@ -109,7 +110,7 @@ CONFIGURE_ARGS+=	--without-rlm_sql_postgresql
 .endif
 
 LIB_DEPENDS-pgsql=	databases/postgresql
-WANTLIB-pgsql=		execinfo pq>=2
+WANTLIB-pgsql=		pq>=2
 RUN_DEPENDS-pgsql=	#empty
 
 .for i in ${MULTI_PACKAGES:N-main}
