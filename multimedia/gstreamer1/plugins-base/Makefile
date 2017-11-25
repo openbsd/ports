@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2017/11/25 17:02:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.59 2017/11/25 17:53:30 ajacoutot Exp $
 
 COMMENT=		base elements for GStreamer
 
@@ -66,10 +66,8 @@ post-extract:
 pre-configure:
 # https://bugzilla.gnome.org/show_bug.cgi?id=726571
 # XXX check if still needed at next release
-.for i in audio riff tag sdp fft pbutils rtp allocators app rtsp video
 	sed -i 's,--libtool="\$$(top_builddir)/libtool",--libtool="\$${LIBTOOL}",g' \
-		${WRKSRC}/gst-libs/gst/$i/Makefile.am
-.endfor
+		${WRKSRC}/gst-libs/gst/*/Makefile.am
 
 # autopoint(1) uses HOME, make sure it exists
 	cd ${WRKSRC} && HOME=${WRKDIST} \
