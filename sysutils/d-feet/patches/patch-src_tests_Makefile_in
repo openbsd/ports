@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_tests_Makefile_in,v 1.1 2017/11/08 13:47:32 jasper Exp $
+$OpenBSD: patch-src_tests_Makefile_in,v 1.2 2017/11/25 10:52:06 ajacoutot Exp $
 
 Use the value for PEP8 as determined by configure instead of hardcoding
 
 Index: src/tests/Makefile.in
 --- src/tests/Makefile.in.orig
 +++ src/tests/Makefile.in
-@@ -816,7 +816,7 @@ uninstall-am:
+@@ -800,7 +800,7 @@ uninstall-am:
  
  
  check-local:
