@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2017/03/07 21:21:20 pascal Exp $
+# $OpenBSD: Makefile,v 1.16 2017/11/25 21:50:50 afresh1 Exp $
 
 ONLY_FOR_ARCHS =	amd64 arm i386 mips64 mips64el powerpc sparc64
 BROKEN-arm =		missing atomic ops (both AO_* and gcc builtin)
@@ -6,11 +6,11 @@ BROKEN-sparc64 =	undefined reference to `AO_fetch_compare_and_swap_full'
 
 COMMENT =		virtual machine for nqp/rakudo
 
-V =			2017.02
+V =			2017.10
 DISTNAME =		MoarVM-$V
 PKGNAME =		moarvm-$V
 
-SHARED_LIBS =		moar	7.0
+SHARED_LIBS =		moar	8.0
 
 CATEGORIES =		lang
 

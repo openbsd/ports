@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.8 2017/03/07 21:21:20 pascal Exp $
+@comment $OpenBSD: PLIST,v 1.9 2017/11/25 21:50:50 afresh1 Exp $
 @bin bin/moar
 include/libuv/
 include/libuv/android-ifaddrs.h
-include/libuv/pthread-fixes.h
+include/libuv/pthread-barrier.h
 include/libuv/stdint-msvc2008.h
 include/libuv/tree.h
 include/libuv/uv-aix.h
@@ -10,6 +10,8 @@ include/libuv/uv-bsd.h
 include/libuv/uv-darwin.h
 include/libuv/uv-errno.h
 include/libuv/uv-linux.h
+include/libuv/uv-os390.h
+include/libuv/uv-posix.h
 include/libuv/uv-sunos.h
 include/libuv/uv-threadpool.h
 include/libuv/uv-unix.h
@@ -37,7 +39,6 @@ include/moar/6model/reprs/Decoder.h
 include/moar/6model/reprs/HashAttrStore.h
 include/moar/6model/reprs/KnowHOWAttributeREPR.h
 include/moar/6model/reprs/KnowHOWREPR.h
-include/moar/6model/reprs/Lexotic.h
 include/moar/6model/reprs/MVMAsyncTask.h
 include/moar/6model/reprs/MVMCFunction.h
 include/moar/6model/reprs/MVMCallCapture.h
@@ -52,7 +53,9 @@ include/moar/6model/reprs/MVMIter.h
 include/moar/6model/reprs/MVMMultiCache.h
 include/moar/6model/reprs/MVMNull.h
 include/moar/6model/reprs/MVMOSHandle.h
+include/moar/6model/reprs/MVMSpeshLog.h
 include/moar/6model/reprs/MVMStaticFrame.h
+include/moar/6model/reprs/MVMStaticFrameSpesh.h
 include/moar/6model/reprs/MVMString.h
 include/moar/6model/reprs/MVMThread.h
 include/moar/6model/reprs/MultiDimArray.h
@@ -76,6 +79,7 @@ include/moar/config.h
 include/moar/core/
 include/moar/core/alloc.h
 include/moar/core/args.h
+include/moar/core/bitmap.h
 include/moar/core/bytecode.h
 include/moar/core/bytecodedump.h
 include/moar/core/callsite.h
@@ -102,6 +106,7 @@ include/moar/core/regionalloc.h
 include/moar/core/threadcontext.h
 include/moar/core/threads.h
 include/moar/core/validation.h
+include/moar/core/vector.h
 include/moar/gc/
 include/moar/gc/allocation.h
 include/moar/gc/collect.h
@@ -118,6 +123,7 @@ include/moar/gen/
 include/moar/gen/config.h
 include/moar/instrument/
 include/moar/instrument/crossthreadwrite.h
+include/moar/instrument/line_coverage.h
 include/moar/io/
 include/moar/io/asyncsocket.h
 include/moar/io/asyncsocketudp.h
@@ -129,15 +135,19 @@ include/moar/io/io.h
 include/moar/io/procops.h
 include/moar/io/signals.h
 include/moar/io/syncfile.h
-include/moar/io/syncpipe.h
 include/moar/io/syncsocket.h
-include/moar/io/syncstream.h
 include/moar/io/timers.h
 include/moar/jit/
 include/moar/jit/compile.h
-include/moar/jit/emit.h
+include/moar/jit/core_templates.h
+include/moar/jit/expr.h
+include/moar/jit/expr_ops.h
 include/moar/jit/graph.h
+include/moar/jit/internal.h
+include/moar/jit/label.h
 include/moar/jit/log.h
+include/moar/jit/register.h
+include/moar/jit/tile.h
 include/moar/mast/
 include/moar/mast/compiler.h
 include/moar/mast/driver.h
@@ -150,6 +160,7 @@ include/moar/moar.h
 include/moar/platform/
 include/moar/platform/inttypes.h
 include/moar/platform/io.h
+include/moar/platform/memmem.h
 include/moar/platform/mmap.h
 include/moar/platform/setjmp.h
 include/moar/platform/stdint.h
@@ -161,21 +172,28 @@ include/moar/profiler/heapsnapshot.h
 include/moar/profiler/instrument.h
 include/moar/profiler/log.h
 include/moar/profiler/profile.h
+include/moar/profiler/telemeh.h
 include/moar/spesh/
+include/moar/spesh/arg_guard.h
 include/moar/spesh/args.h
 include/moar/spesh/candidate.h
 include/moar/spesh/codegen.h
+include/moar/spesh/dead_bb_elimination.h
 include/moar/spesh/deopt.h
 include/moar/spesh/dump.h
 include/moar/spesh/facts.h
 include/moar/spesh/graph.h
 include/moar/spesh/inline.h
+include/moar/spesh/iterator.h
 include/moar/spesh/log.h
 include/moar/spesh/lookup.h
 include/moar/spesh/manipulate.h
 include/moar/spesh/optimize.h
 include/moar/spesh/osr.h
+include/moar/spesh/plan.h
+include/moar/spesh/stats.h
 include/moar/spesh/threshold.h
+include/moar/spesh/worker.h
 include/moar/strings/
 include/moar/strings/ascii.h
 include/moar/strings/decode_stream.h
@@ -184,6 +202,7 @@ include/moar/strings/latin1.h
 include/moar/strings/nfg.h
 include/moar/strings/normalize.h
 include/moar/strings/ops.h
+include/moar/strings/parse_num.h
 include/moar/strings/unicode.h
 include/moar/strings/unicode_gen.h
 include/moar/strings/unicode_ops.h

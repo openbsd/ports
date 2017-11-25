@@ -1,7 +1,7 @@
-$OpenBSD: patch-Configure_pl,v 1.7 2017/03/07 21:21:20 pascal Exp $
---- Configure.pl.orig	Mon Feb 13 10:55:25 2017
-+++ Configure.pl	Tue Mar  7 19:45:06 2017
-@@ -72,10 +72,6 @@ if (-d '.git') {
+$OpenBSD: patch-Configure_pl,v 1.8 2017/11/25 21:50:50 afresh1 Exp $
+--- Configure.pl.orig	Tue Oct  3 13:51:01 2017
++++ Configure.pl	Fri Nov 10 09:48:34 2017
+@@ -74,11 +74,6 @@ if (-d '.git') {
      else { softfail("git error: $msg") }
  }
  
@@ -9,10 +9,11 @@ $OpenBSD: patch-Configure_pl,v 1.7 2017/03/07 21:21:20 pascal Exp $
 -$args{optimize}     = 3 if not defined $args{optimize} or $args{optimize} eq "";
 -$args{debug}        = 3 if defined $args{debug} and $args{debug} eq "";
 -
- for (qw(instrument static big-endian has-libtommath has-sha has-libuv
-         has-libatomic_ops has-dynasm asan ubsan valgrind)) {
+-
+ for (qw(coverage instrument static big-endian has-libtommath has-sha has-libuv
+         has-libatomic_ops asan ubsan valgrind)) {
      $args{$_} = 0 unless defined $args{$_};
-@@ -321,16 +317,13 @@ $config{ldlibs} = ' -lubsan ' . $config{ldlibs} if $ar
+@@ -331,16 +326,13 @@ $config{ldlibs} = ' -lubsan ' . $config{ldlibs} if $ar
  # macro defs
  $config{ccdefflags} = join ' ', map { $config{ccdef} . $_ } @{$config{defs}};
  
@@ -28,16 +29,16 @@ $OpenBSD: patch-Configure_pl,v 1.7 2017/03/07 21:21:20 pascal Exp $
 -push @cflags, $config{ccoptiflags}  if $args{optimize};
  push @cflags, $config{ccdebugflags} if $args{debug};
  push @cflags, $config{ccinstflags}  if $args{instrument};
- push @cflags, $config{ccwarnflags};
-@@ -347,7 +340,6 @@ $config{cflags} = join ' ', @cflags;
+ push @cflags, $config{ld_covflags}  if $args{coverage};
+@@ -360,7 +352,6 @@ $config{cflags} = join ' ', @cflags;
  
  # generate LDFLAGS
  my @ldflags = ($config{ldmiscflags});
 -push @ldflags, $config{ldoptiflags}  if $args{optimize};
  push @ldflags, $config{lddebugflags} if $args{debug};
  push @ldflags, $config{ldinstflags}       if $args{instrument};
- push @ldflags, $config{ldrpath}           unless $args{static};
-@@ -358,6 +350,10 @@ $config{ldflags} = join ' ', @ldflags;
+ push @ldflags, $config{ld_covflags}  if $args{coverage};
+@@ -372,6 +363,10 @@ $config{ldflags} = join ' ', @ldflags;
  # setup library names
  $config{moarlib} = sprintf $config{lib}, $NAME;
  $config{moardll} = sprintf $config{dll}, $NAME;

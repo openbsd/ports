@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_core_Compiler_pm,v 1.1 2017/11/25 21:50:50 afresh1 Exp $
+--- src/core/Compiler.pm.orig	Fri Nov 10 08:23:44 2017
++++ src/core/Compiler.pm	Fri Nov 10 08:24:04 2017
+@@ -3,7 +3,7 @@ class Compiler does Systemic {
+     has Str $.release;
+     has Str $!build-date;
+     has Str $.codename;
+-    BEGIN my $id = $*W.handle.Str ~ '.' ~ nqp::time_n();
++    BEGIN my $id = 'OpenBSD';
+ 
+     submethod BUILD (
+       :$!name      = 'rakudo',
