@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2017/11/21 00:13:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2017/11/26 19:51:30 ajacoutot Exp $
 
 COMMENT =		access the Expert Witness Compression Format
 
@@ -25,6 +25,9 @@ WANTLIB += z
 MASTER_SITES =		https://github.com/libyal/libewf/releases/download/${VERSION}/
 
 MODULES =		lang/python
+
+BUILD_DEPENDS =		devel/gettext-tools
+
 LIB_DEPENDS +=		devel/libbfio \
 			archivers/bzip2 \
 			sysutils/libsmdev \
