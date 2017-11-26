@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.480 2017/11/20 18:49:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.481 2017/11/26 10:21:45 jasper Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -306,6 +306,7 @@
      SUBDIR += radiusniff
      SUBDIR += rarcrack
      SUBDIR += rdp
+     SUBDIR += recon-ng
      SUBDIR += regripper
      SUBDIR += reop
      SUBDIR += rhash
