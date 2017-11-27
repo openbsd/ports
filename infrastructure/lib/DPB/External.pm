@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: External.pm,v 1.1 2017/11/27 15:41:55 espie Exp $
+# $OpenBSD: External.pm,v 1.2 2017/11/27 17:00:50 espie Exp $
 #
 # Copyright (c) 2017 Marc Espie <espie@openbsd.org>
 #
@@ -38,6 +38,12 @@ sub print
 {
 	my $self = shift;
 	$self->{fh}->print(@_);
+}
+
+sub unknown_command
+{
+	my $self = shift;
+	$self->print("Unknown command: ", $self->line, "\ndpb\$ ");
 }
 
 package DPB::External;
