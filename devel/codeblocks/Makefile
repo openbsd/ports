@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2017/11/21 00:12:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.45 2017/11/27 22:13:47 espie Exp $
 
 BROKEN-alpha=	sqvm.cpp:394:1: internal compiler error: Segmentation fault
 BROKEN-arm=	wxwidgets va_list c++ mangling requires gcc < 4.4
@@ -7,7 +7,7 @@ COMMENT=	Code::Blocks C/C++ IDE
 V=		16.01
 DISTNAME=	codeblocks_${V}
 PKGNAME=	codeblocks-${V}
-REVISION=	4
+REVISION=	5
 
 WRKDIST=	${WRKDIR}/codeblocks-${V}.release
 
@@ -73,6 +73,7 @@ CXXFLAGS +=	-std=c++11 -Wno-c++11-narrowing
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-contrib-plugins=all
+CONFIGURE_ARGS += --enable-debug
 
 MAKE_ENV=	AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
 		AUTOCONF_VERSION=${AUTOCONF_VERSION}
