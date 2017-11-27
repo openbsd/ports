@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2017/07/26 22:45:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2017/11/27 18:12:30 kirby Exp $
 
 SHARED_LIBS += 		gemrb_core 0.0
 
 COMMENT =		open-source implementation of Bioware's Infinity Engine
 
-DISTNAME =		gemrb-0.8.4
-REVISION = 		1
+DISTNAME =		gemrb-0.8.5
 
 CATEGORIES =		games emulators x11
 
@@ -18,8 +17,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=gemrb/}
 
-WANTLIB += SDL SDL_mixer c freetype iconv m openal png pthread ${COMPILER_LIBCXX}
-WANTLIB += vlc vorbisfile z ${MODPY_WANTLIB}
+WANTLIB += SDL SDL_mixer c freetype iconv m openal png pthread
+WANTLIB += vlc vorbisfile z ${MODPY_WANTLIB} ${COMPILER_LIBCXX}
 
 MODULES =		devel/cmake \
 			lang/python
@@ -35,8 +34,7 @@ CONFIGURE_ARGS +=	-DSYSCONF_DIR=${SYSCONFDIR}/gemrb \
 			-DEXAMPLE_CONF_DIR=${PREFIX}/share/examples/gemrb/ \
 			-DMAN_DIR=${PREFIX}/man/man6 \
 			-DCMAKE_MODULE_LINKER_FLAGS=-lc \
-			-DCMAKE_CXX_FLAGS="${CXXFLAGS} \
-			-DSYSCONFDIR=\\\"\${SYSCONFDIR}/gemrb\\\"" \
+			-DCMAKE_CXX_FLAGS=${CXXFLAGS} \
 			-DDISABLE_WERROR=1
 
 NO_TEST =		Yes
