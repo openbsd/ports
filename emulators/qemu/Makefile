@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.172 2017/11/16 23:20:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.173 2017/11/27 08:10:09 ajacoutot Exp $
 
 USE_WXNEEDED=	Yes
 
@@ -10,7 +10,7 @@ DISTNAME=	qemu-2.10.1
 CATEGORIES=	emulators
 MASTER_SITES=	http://wiki.qemu.org/download/
 EXTRACT_SUFX=	.tar.xz
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	http://www.qemu.org/
 
@@ -62,8 +62,6 @@ EXTRA_LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib
 
 # until the system headers are fixed properly.
 EXTRA_CFLAGS+=	-Wno-redundant-decls
-
-EXTRA_CFLAGS+=	-DTIME_MAX=LLONG_MAX
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE=simple

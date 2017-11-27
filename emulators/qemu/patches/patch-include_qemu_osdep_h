@@ -1,0 +1,53 @@
+$OpenBSD: patch-include_qemu_osdep_h,v 1.1 2017/11/27 08:10:09 ajacoutot Exp $
+
+osdep.h: Make TIME_MAX handle different time_t types
+
+In our various supported host OSes, the time_t type may be either 32
+or 64 bit, and could in theory also be either signed or unsigned.
+Notably, in OpenBSD time_t is a 64 bit type even if 'long' is 32
+bits, so using LONG_MAX for TIME_MAX is incorrect.
+
+Use an approach suggested by Paolo Bonzini which calculates
+the maximum value of the type rather than hardcoding it;
+to do this we use the TYPE_MAXIMUM macro from Gnulib.
+
+Index: include/qemu/osdep.h
+--- include/qemu/osdep.h.orig
++++ include/qemu/osdep.h
+@@ -131,8 +131,35 @@ extern int daemon(int, int);
+ #if !defined(ESHUTDOWN)
+ #define ESHUTDOWN 4099
+ #endif
++
++/* time_t may be either 32 or 64 bits depending on the host OS, and
++ * can be either signed or unsigned, so we can't just hardcode a
++ * specific maximum value. This is not a C preprocessor constant,
++ * so you can't use TIME_MAX in an #ifdef, but for our purposes
++ * this isn't a problem.
++ */
++
++/* The macros TYPE_SIGNED, TYPE_WIDTH, and TYPE_MAXIMUM are from
++ * Gnulib, and are under the LGPL v2.1 or (at your option) any
++ * later version.
++ */
++
++/* True if the real type T is signed.  */
++#define TYPE_SIGNED(t) (!((t)0 < (t)-1))
++
++/* The width in bits of the integer type or expression T.
++ * Padding bits are not supported.
++ */
++#define TYPE_WIDTH(t) (sizeof(t) * CHAR_BIT)
++
++/* The maximum and minimum values for the integer type T.  */
++#define TYPE_MAXIMUM(t)                                                \
++  ((t) (!TYPE_SIGNED(t)                                                \
++        ? (t)-1                                                        \
++        : ((((t)1 << (TYPE_WIDTH(t) - 2)) - 1) * 2 + 1)))
++
+ #ifndef TIME_MAX
+-#define TIME_MAX LONG_MAX
++#define TIME_MAX TYPE_MAXIMUM(time_t)
+ #endif
+ 
+ /* HOST_LONG_BITS is the size of a native pointer in bits. */
