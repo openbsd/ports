@@ -1,0 +1,50 @@
+$OpenBSD: patch-lib_efi_loader_efi_device_path_c,v 1.1 2017/11/27 03:53:47 jsg Exp $
+
+efi_loader: initialise partition_signature memory
+
+Zero partition_signature in the efi_device_path_hard_drive_path
+structure when signature_type is 0 (no signature) as required by the
+UEFI specification.
+
+This is required so that efi_dp_match() will work as expected
+when doing memcmp() comparisons.  Previously uninitialised memory
+would cause it not match nodes when it should have when the signature
+type was not GUID.
+
+Corrects a problem where the loaded image protocol would not return a
+device path with MEDIA_DEVICE causing the OpenBSD bootloader to fail
+on rpi_3 and other targets.
+
+Index: lib/efi_loader/efi_device_path.c
+--- lib/efi_loader/efi_device_path.c.orig
++++ lib/efi_loader/efi_device_path.c
+@@ -427,10 +427,27 @@ static void *dp_part_fill(void *buf, struct blk_desc *
+ 			hddp->partmap_type = 2;
+ 		else
+ 			hddp->partmap_type = 1;
+-		hddp->signature_type = desc->sig_type;
+-		if (hddp->signature_type != 0)
++
++		switch (desc->sig_type) {
++		case SIG_TYPE_NONE:
++		default:
++			hddp->signature_type = 0;
++			memset(hddp->partition_signature, 0,
++			       sizeof(hddp->partition_signature));
++			break;
++		case SIG_TYPE_MBR:
++			hddp->signature_type = 1;
++			memset(hddp->partition_signature, 0,
++			       sizeof(hddp->partition_signature));
++			memcpy(hddp->partition_signature, &desc->mbr_sig,
++			       sizeof(desc->mbr_sig));
++			break;
++		case SIG_TYPE_GUID:
++			hddp->signature_type = 2;
+ 			memcpy(hddp->partition_signature, &desc->guid_sig,
+ 			       sizeof(hddp->partition_signature));
++			break;
++		}
+ 
+ 		buf = &hddp[1];
+ 	}
