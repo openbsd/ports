@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2017/10/08 08:32:03 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.26 2017/11/27 17:59:54 jasper Exp $
 @conflict glade3-<3.8.0p1
 @bin bin/glade
 @bin bin/glade-previewer
@@ -50,7 +50,6 @@ lib/libgladeui-2.la
 lib/pkgconfig/gladeui-2.0.pc
 @man man/man1/glade-previewer.1
 @man man/man1/glade.1
-share/appdata/glade.appdata.xml
 share/applications/glade.desktop
 share/gir-1.0/Gladeui-2.0.gir
 share/glade/
@@ -506,6 +505,12 @@ share/help/oc/glade/figures/
 share/help/oc/glade/figures/main-window.png
 share/help/oc/glade/index.docbook
 share/help/oc/glade/legal.xml
+share/help/pl/
+share/help/pl/glade/
+share/help/pl/glade/figures/
+share/help/pl/glade/figures/main-window.png
+share/help/pl/glade/index.docbook
+share/help/pl/glade/legal.xml
 share/help/pt_BR/glade/
 share/help/pt_BR/glade/figures/
 share/help/pt_BR/glade/figures/main-window.png
@@ -614,6 +619,8 @@ share/locale/vi/LC_MESSAGES/glade.mo
 share/locale/zh_CN/LC_MESSAGES/glade.mo
 share/locale/zh_HK/LC_MESSAGES/glade.mo
 share/locale/zh_TW/LC_MESSAGES/glade.mo
+share/metainfo/
+share/metainfo/glade.appdata.xml
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/update-desktop-database
