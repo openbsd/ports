@@ -1,11 +1,14 @@
-# $OpenBSD: Makefile,v 1.81 2017/11/09 19:28:46 juanfra Exp $
+# $OpenBSD: Makefile,v 1.82 2017/11/27 12:53:51 juanfra Exp $
 
 COMMENT-main =		fast, lightweight source control management
 COMMENT-x11 =		graphical tooling for mercurial
 
-# Keep in sync with devel/tortoisehg and devel/py-hg-git
-MODPY_EGG_VERSION =	4.3.3
-REVISION =		0
+# Keep in sync with:
+#   devel/tortoisehg
+# Test also with:
+#   devel/py-hg-git
+#   devel/hgview
+MODPY_EGG_VERSION =	4.4.1
 DISTNAME =		mercurial-${MODPY_EGG_VERSION}
 CATEGORIES =		devel
 
@@ -29,7 +32,9 @@ MULTI_PACKAGES =	-main -x11
 BUILD_DEPENDS =		devel/gettext-tools
 TEST_DEPENDS =		${RUN_DEPENDS} \
 			archivers/unzip \
-			devel/git
+			devel/git \
+			devel/mercurial,-main \
+			devel/mercurial,-x11
 RUN_DEPENDS-x11 +=	${BASE_PKGPATH},-main \
 			${MODTK_RUN_DEPENDS}
 
@@ -88,6 +93,9 @@ post-install:
 	ln -s ${TRUEPREFIX}/share/mercurial/hgk ${PREFIX}/bin/hgk
 
 do-test:
-	@cd ${WRKSRC}/tests && ${MODPY_BIN} run-tests.py -v 1>&2
+	@echo "Running the tests with ${MAKE_JOBS} jobs."
+	@rm -rf ${WRKSRC}/tmp-tests
+	@cd ${WRKSRC}/tests && ${MODPY_BIN} run-tests.py \
+		-j${MAKE_JOBS} --with-hg=${LOCALBASE}/bin/hg 1>&2
 
 .include <bsd.port.mk>
