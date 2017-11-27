@@ -1,9 +1,9 @@
-$OpenBSD: patch-includes_common_php,v 1.17 2017/11/02 12:49:42 sthen Exp $
+$OpenBSD: patch-includes_common_php,v 1.18 2017/11/27 17:41:36 sthen Exp $
 
 Index: includes/common.php
 --- includes/common.php.orig
 +++ includes/common.php
-@@ -1130,7 +1130,11 @@ function version_info($remote = false)
+@@ -1131,6 +1131,9 @@ function version_info($remote = false)
          $output['local_sha']    = $local_sha;
          $output['local_date']   = $local_date;
          $output['local_branch'] = rtrim(`git rev-parse --abbrev-ref HEAD`);
@@ -11,11 +11,9 @@ Index: includes/common.php
 +        $output['local_ver']    = '%LNMS_VERSION%';
 +        $output['local_date']   = filemtime($config['install_dir'].'/CHANGELOG');
      }
-+
-     $output['db_schema']   = get_db_schema() ?: '?';
+     $output['db_schema']   = dbIsConnected() ? get_db_schema() : '?';
      $output['php_ver']     = phpversion();
-     $output['mysql_ver']   = dbIsConnected() ? dbFetchCell('SELECT version()') : '?';
-@@ -1138,7 +1142,7 @@ function version_info($remote = false)
+@@ -1139,7 +1142,7 @@ function version_info($remote = false)
          ($config['rrdtool'] ?: 'rrdtool') . ' --version |head -n1'
      )), 1, 1)));
      $output['netsnmp_ver'] = str_replace('version: ', '', rtrim(shell_exec(
@@ -24,7 +22,7 @@ Index: includes/common.php
      )));
  
      return $output;
-@@ -1737,12 +1741,7 @@ function set_numeric($value, $default = 0)
+@@ -1744,12 +1747,7 @@ function set_numeric($value, $default = 0)
  
  function check_git_exists()
  {

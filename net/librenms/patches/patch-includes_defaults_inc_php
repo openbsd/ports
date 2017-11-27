@@ -1,4 +1,4 @@
-$OpenBSD: patch-includes_defaults_inc_php,v 1.27 2017/11/02 12:49:42 sthen Exp $
+$OpenBSD: patch-includes_defaults_inc_php,v 1.28 2017/11/27 17:41:36 sthen Exp $
 
 Index: includes/defaults.inc.php
 --- includes/defaults.inc.php.orig
@@ -7,8 +7,8 @@ Index: includes/defaults.inc.php
  $config['own_hostname'] = 'localhost';
  
  // Location of executables
--$config['fping']                    = 'fping';
--$config['fping6']                   = 'fping6';
+-//$config['fping']                    = '/usr/sbin/fping';
+-//$config['fping6']                   = '/usr/sbin/fping6';
 +$config['fping']                    = '/usr/local/sbin/fping';
 +$config['fping6']                   = '/usr/local/sbin/fping6';
  $config['fping_options']['retries'] = 3;

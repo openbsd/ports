@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.52 2017/11/02 13:13:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.53 2017/11/27 17:41:36 sthen Exp $
 
 COMMENT =	auto-discovering network management/monitoring system
 
 GH_ACCOUNT =	librenms
 GH_PROJECT =	librenms
-GH_TAGNAME =	1.33.01
+GH_TAGNAME =	1.34
 EPOCH =		0
 
 CATEGORIES =	net www
@@ -59,8 +59,9 @@ do-install:
 	cd ${WRKSRC}; pax -rw . ${INSTDIR}
 	find ${INSTDIR} -name '*.orig' -print0 | xargs -r0 rm
 	mkdir -p ${INSTDIR}/{rrd,logs}
-	cd ${INSTDIR}; sed -i 's,%PHP%,${MODPHP_BIN},' daily.sh poller-wrapper.py validate.php; \
-	    sed -i 's,%LNMS_VERSION%,${DISTNAME:S/librenms-//},' includes/common.php
+	cd ${INSTDIR}; \
+	   sed -i 's,%PHP%,${MODPHP_BIN},' daily.sh *-wrapper.py validate.php; \
+	   sed -i 's,%LNMS_VERSION%,${DISTNAME:S/librenms-//},' includes/common.php
 	cp /usr/share/snmp/mibs/OPENBSD-* ${INSTDIR}/mibs/
 	rm -r ${INSTDIR}/tests
 

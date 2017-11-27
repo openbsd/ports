@@ -1,9 +1,9 @@
-$OpenBSD: patch-includes_functions_php,v 1.12 2017/10/04 20:47:14 sthen Exp $
+$OpenBSD: patch-includes_functions_php,v 1.13 2017/11/27 17:41:36 sthen Exp $
 
 Index: includes/functions.php
 --- includes/functions.php.orig
 +++ includes/functions.php
-@@ -375,7 +375,7 @@ function delete_device($id)
+@@ -433,7 +433,7 @@ function delete_device($id)
          }
      }
  
@@ -12,3 +12,12 @@ Index: includes/functions.php
      $tmp = explode("\n", $ex);
      if ($tmp[sizeof($tmp)-1] != "OK") {
          $ret .= "Could not remove files:\n$ex\n";
+@@ -2445,7 +2445,7 @@ function return_num($entry)
+ function locate_binary($binary)
+ {
+     if (!str_contains($binary, '/')) {
+-        $output = `whereis -b $binary`;
++        $output = `whereis $binary`;
+         $target = trim(substr($output, strpos($output, ':') + 1));
+ 
+         if (file_exists($target)) {
