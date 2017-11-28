@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.123 2017/06/25 18:30:38 schwarze Exp $
+.\"	$OpenBSD: dpb.1,v 1.124 2017/11/28 14:40:58 espie Exp $
 .\"
 .\" Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: June 25 2017 $
+.Dd $Mdocdate: November 28 2017 $
 .Dt DPB 1
 .Os
 .Sh NAME
@@ -208,6 +208,10 @@ is not run as root.
 Don't fetch distfiles that are not allowed for cdrom.
 .It Ar COLOR
 Set to 1 to have the normal display in color.
+.It Ar CONTROL
+Let
+.Nm
+create a unix socket of the given name for external control.
 .It Ar CONNECTION_TIMEOUT
 Connection timeout for ssh.
 Defaults to 60 seconds.
@@ -1003,6 +1007,35 @@ may vanish before human intervention addresses the problem.
 .Pp
 This is supposed to be a temporary hack, as kde4 is large and
 having official packages helps a great deal in debugging it.
+.Sh EXTERNAL CONTROL
+If
+.Fl D Ar CONTROL Ns = Ns Ar path
+if used,
+.Nm
+will create a Unix socket at the given
+.Pa path ,
+only accessible by
+.Ar LOG_USER ,
+that can accept a few commands, .e.g.,
+usable as
+.Li nc -U path
+.Pp
+Currents commands are as follows:
+.Bl -tag -offset aaaa -with addhost
+.It Cm addhost Ar hostline
+Add a new host
+.It Cm addpath Ar fullpkgpath ...
+Add new fullpkgpath to scan
+.It Cm bye
+close the socket connection.
+.It Cm dontclean Ar pkgpath ...
+Add new pkgpath to list of paths that should not be cleaned after build
+.It Cm help
+Self explanatory
+.It Cm stats
+Show the current stats line
+.El
+.Pp
 .Sh SHUTTING DOWN GRACEFULLY
 .Nm
 periodically checks for a file named
