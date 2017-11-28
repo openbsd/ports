@@ -1,13 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2017/11/01 10:12:25 jeremy Exp $
+# $OpenBSD: Makefile,v 1.8 2017/11/28 12:08:41 jasper Exp $
 
 COMMENT=		web scanner
 
-DISTNAME=		whatweb-0.4.8
-REVISION =		1
-
+GH_TAGNAME =		v0.4.9
 GH_PROJECT=		WhatWeb
 GH_ACCOUNT=		urbanadventurer
-GH_COMMIT=		48b9682a0fbf1607f1d3565f9aab3442aee14d12
 
 CATEGORIES=		net www
 
@@ -25,7 +22,7 @@ NO_TEST=		Yes
 NO_BUILD=		Yes
 
 do-install:
-	perl -pi -e 's,/usr/share,${TRUEPREFIX}/share,g' ${WRKSRC}/whatweb
+	sed -i 's,/usr/share,${TRUEPREFIX}/share,g' ${WRKSRC}/whatweb
 	${INSTALL_SCRIPT} ${WRKSRC}/whatweb ${PREFIX}/bin/whatweb
 	${INSTALL_MAN} ${WRKSRC}/whatweb.1 ${PREFIX}/man/man1/whatweb.1
 	${INSTALL_DATA_DIR} ${PREFIX}/share/{,doc}/whatweb
