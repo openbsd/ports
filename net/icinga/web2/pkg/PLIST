@@ -1,13 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.9 2017/10/10 12:03:39 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.10 2017/11/28 21:01:42 sthen Exp $
 @newgroup _icingaweb2:762
 @newuser _icingaweb2:762:_icingaweb2:daemon:Icinga-web2 user:/var/www/icinga-web2:/sbin/nologin
 @extraunexec rm -rf %D/etc/icingaweb2/*
 @extraunexec rm -rf %D/icinga-web2/tmp/*
 icinga-web2/
 icinga-web2/.mailmap
+icinga-web2/.travis.yml
 icinga-web2/AUTHORS
+icinga-web2/CHANGELOG.md
+icinga-web2/CONTRIBUTING.md
 icinga-web2/COPYING
-icinga-web2/ChangeLog
 icinga-web2/README.md
 icinga-web2/RELEASE.md
 icinga-web2/VERSION
@@ -51,6 +53,12 @@ icinga-web2/application/fonts/fontello-ifont/css/ifont-ie7-codes.css
 icinga-web2/application/fonts/fontello-ifont/css/ifont-ie7.css
 icinga-web2/application/fonts/fontello-ifont/css/ifont.css
 icinga-web2/application/fonts/fontello-ifont/demo.html
+icinga-web2/application/fonts/fontello-ifont/font/
+icinga-web2/application/fonts/fontello-ifont/font/ifont.eot
+icinga-web2/application/fonts/fontello-ifont/font/ifont.svg
+icinga-web2/application/fonts/fontello-ifont/font/ifont.ttf
+icinga-web2/application/fonts/fontello-ifont/font/ifont.woff
+icinga-web2/application/fonts/fontello-ifont/font/ifont.woff2
 icinga-web2/application/fonts/icingaweb.md
 icinga-web2/application/forms/
 icinga-web2/application/forms/Account/
@@ -64,6 +72,7 @@ icinga-web2/application/forms/AutoRefreshForm.php
 icinga-web2/application/forms/Config/
 icinga-web2/application/forms/Config/General/
 icinga-web2/application/forms/Config/General/ApplicationConfigForm.php
+icinga-web2/application/forms/Config/General/DefaultAuthenticationDomainConfigForm.php
 icinga-web2/application/forms/Config/General/LoggingConfigForm.php
 icinga-web2/application/forms/Config/General/ThemingConfigForm.php
 icinga-web2/application/forms/Config/GeneralConfigForm.php
@@ -71,7 +80,6 @@ icinga-web2/application/forms/Config/Resource/
 icinga-web2/application/forms/Config/Resource/DbResourceForm.php
 icinga-web2/application/forms/Config/Resource/FileResourceForm.php
 icinga-web2/application/forms/Config/Resource/LdapResourceForm.php
-icinga-web2/application/forms/Config/Resource/LivestatusResourceForm.php
 icinga-web2/application/forms/Config/Resource/SshResourceForm.php
 icinga-web2/application/forms/Config/ResourceConfigForm.php
 icinga-web2/application/forms/Config/User/
@@ -143,8 +151,10 @@ icinga-web2/application/locale/ru_RU/LC_MESSAGES/icinga.po
 icinga-web2/application/views/
 icinga-web2/application/views/helpers/
 icinga-web2/application/views/helpers/CreateTicketLinks.php
+icinga-web2/application/views/helpers/FormDate.php
 icinga-web2/application/views/helpers/FormDateTime.php
 icinga-web2/application/views/helpers/FormNumber.php
+icinga-web2/application/views/helpers/FormTime.php
 icinga-web2/application/views/helpers/FormTriStateCheckbox.php
 icinga-web2/application/views/helpers/ProtectId.php
 icinga-web2/application/views/helpers/Util.php
@@ -204,6 +214,7 @@ icinga-web2/application/views/scripts/list/
 icinga-web2/application/views/scripts/list/applicationlog.phtml
 icinga-web2/application/views/scripts/mixedPagination.phtml
 icinga-web2/application/views/scripts/navigation/
+icinga-web2/application/views/scripts/navigation/dashboard.phtml
 icinga-web2/application/views/scripts/navigation/index.phtml
 icinga-web2/application/views/scripts/navigation/shared.phtml
 icinga-web2/application/views/scripts/pivottablePagination.phtml
@@ -228,6 +239,9 @@ icinga-web2/doc/04-Resources.md
 icinga-web2/doc/05-Authentication.md
 icinga-web2/doc/06-Security.md
 icinga-web2/doc/07-Preferences.md
+icinga-web2/doc/20-Advanced-Topics.md
+icinga-web2/doc/70-Troubleshooting.md
+icinga-web2/doc/80-Upgrading.md
 icinga-web2/doc/90-SELinux.md
 icinga-web2/doc/99-Vagrant.md
 icinga-web2/doc/accessibility/
@@ -256,10 +270,13 @@ icinga-web2/etc/bash_completion.d/icingacli
 icinga-web2/etc/schema/
 icinga-web2/etc/schema/mysql-upgrades/
 icinga-web2/etc/schema/mysql-upgrades/2.0.0beta3-2.0.0rc1.sql
+icinga-web2/etc/schema/mysql-upgrades/2.5.0.sql
 icinga-web2/etc/schema/mysql.schema.sql
 icinga-web2/etc/schema/pgsql-upgrades/
 icinga-web2/etc/schema/pgsql-upgrades/2.0.0beta3-2.0.0rc1.sql
+icinga-web2/etc/schema/pgsql-upgrades/2.5.0.sql
 icinga-web2/etc/schema/pgsql.schema.sql
+icinga-web2/icingaweb2.ruleset.xml
 icinga-web2/library/
 icinga-web2/library/Icinga/
 icinga-web2/library/Icinga/Application/
@@ -283,6 +300,7 @@ icinga-web2/library/Icinga/Application/Logger.php
 icinga-web2/library/Icinga/Application/Logger/LogWriter.php
 icinga-web2/library/Icinga/Application/Logger/Writer/
 icinga-web2/library/Icinga/Application/Logger/Writer/FileWriter.php
+icinga-web2/library/Icinga/Application/Logger/Writer/PhpWriter.php
 icinga-web2/library/Icinga/Application/Logger/Writer/StderrWriter.php
 icinga-web2/library/Icinga/Application/Logger/Writer/StdoutWriter.php
 icinga-web2/library/Icinga/Application/Logger/Writer/SyslogWriter.php
@@ -302,9 +320,11 @@ icinga-web2/library/Icinga/Authentication/AdmissionLoader.php
 icinga-web2/library/Icinga/Authentication/Auth.php
 icinga-web2/library/Icinga/Authentication/AuthChain.php
 icinga-web2/library/Icinga/Authentication/Authenticatable.php
+icinga-web2/library/Icinga/Authentication/PasswordHelper.php
 icinga-web2/library/Icinga/Authentication/Role.php
 icinga-web2/library/Icinga/Authentication/User/
 icinga-web2/library/Icinga/Authentication/User/DbUserBackend.php
+icinga-web2/library/Icinga/Authentication/User/DomainAwareInterface.php
 icinga-web2/library/Icinga/Authentication/User/ExternalBackend.php
 icinga-web2/library/Icinga/Authentication/User/LdapUserBackend.php
 icinga-web2/library/Icinga/Authentication/User/UserBackend.php
@@ -317,6 +337,7 @@ icinga-web2/library/Icinga/Authentication/UserGroup/UserGroupBackendInterface.ph
 icinga-web2/library/Icinga/Chart/
 icinga-web2/library/Icinga/Chart/Axis.php
 icinga-web2/library/Icinga/Chart/Chart.php
+icinga-web2/library/Icinga/Chart/Donut.php
 icinga-web2/library/Icinga/Chart/Format.php
 icinga-web2/library/Icinga/Chart/Graph/
 icinga-web2/library/Icinga/Chart/Graph/BarGraph.php
@@ -421,8 +442,10 @@ icinga-web2/library/Icinga/Exception/AlreadyExistsException.php
 icinga-web2/library/Icinga/Exception/AuthenticationException.php
 icinga-web2/library/Icinga/Exception/ConfigurationError.php
 icinga-web2/library/Icinga/Exception/Http/
+icinga-web2/library/Icinga/Exception/Http/BaseHttpException.php
 icinga-web2/library/Icinga/Exception/Http/HttpBadRequestException.php
 icinga-web2/library/Icinga/Exception/Http/HttpException.php
+icinga-web2/library/Icinga/Exception/Http/HttpExceptionInterface.php
 icinga-web2/library/Icinga/Exception/Http/HttpMethodNotAllowedException.php
 icinga-web2/library/Icinga/Exception/Http/HttpNotFoundException.php
 icinga-web2/library/Icinga/Exception/IcingaException.php
@@ -451,6 +474,11 @@ icinga-web2/library/Icinga/File/Ini/Dom/Section.php
 icinga-web2/library/Icinga/File/Ini/IniParser.php
 icinga-web2/library/Icinga/File/Ini/IniWriter.php
 icinga-web2/library/Icinga/File/Pdf.php
+icinga-web2/library/Icinga/File/Storage/
+icinga-web2/library/Icinga/File/Storage/LocalFileStorage.php
+icinga-web2/library/Icinga/File/Storage/LocalFileStorageIterator.php
+icinga-web2/library/Icinga/File/Storage/StorageInterface.php
+icinga-web2/library/Icinga/File/Storage/TemporaryLocalFileStorage.php
 icinga-web2/library/Icinga/Legacy/
 icinga-web2/library/Icinga/Legacy/DashboardConfig.php
 icinga-web2/library/Icinga/Protocol/
@@ -471,10 +499,6 @@ icinga-web2/library/Icinga/Protocol/Ldap/LdapQuery.php
 icinga-web2/library/Icinga/Protocol/Ldap/LdapUtils.php
 icinga-web2/library/Icinga/Protocol/Ldap/Node.php
 icinga-web2/library/Icinga/Protocol/Ldap/Root.php
-icinga-web2/library/Icinga/Protocol/Livestatus/
-icinga-web2/library/Icinga/Protocol/Livestatus/Connection.php
-icinga-web2/library/Icinga/Protocol/Livestatus/Query.php
-icinga-web2/library/Icinga/Protocol/Livestatus/ResponseRow.php
 icinga-web2/library/Icinga/Protocol/Nrpe/
 icinga-web2/library/Icinga/Protocol/Nrpe/Connection.php
 icinga-web2/library/Icinga/Protocol/Nrpe/Packet.php
@@ -544,9 +568,11 @@ icinga-web2/library/Icinga/Web/Form/Decorator/Spinner.php
 icinga-web2/library/Icinga/Web/Form/Element/
 icinga-web2/library/Icinga/Web/Form/Element/Button.php
 icinga-web2/library/Icinga/Web/Form/Element/CsrfCounterMeasure.php
+icinga-web2/library/Icinga/Web/Form/Element/Date.php
 icinga-web2/library/Icinga/Web/Form/Element/DateTimePicker.php
 icinga-web2/library/Icinga/Web/Form/Element/Note.php
 icinga-web2/library/Icinga/Web/Form/Element/Number.php
+icinga-web2/library/Icinga/Web/Form/Element/Time.php
 icinga-web2/library/Icinga/Web/Form/Element/TriStateCheckbox.php
 icinga-web2/library/Icinga/Web/Form/ErrorLabeller.php
 icinga-web2/library/Icinga/Web/Form/FormElement.php
@@ -1988,6 +2014,11 @@ icinga-web2/modules/doc/application/controllers/IndexController.php
 icinga-web2/modules/doc/application/controllers/ModuleController.php
 icinga-web2/modules/doc/application/controllers/SearchController.php
 icinga-web2/modules/doc/application/controllers/StyleController.php
+icinga-web2/modules/doc/application/locale/
+icinga-web2/modules/doc/application/locale/de_DE/
+icinga-web2/modules/doc/application/locale/de_DE/LC_MESSAGES/
+icinga-web2/modules/doc/application/locale/de_DE/LC_MESSAGES/doc.mo
+icinga-web2/modules/doc/application/locale/de_DE/LC_MESSAGES/doc.po
 icinga-web2/modules/doc/application/views/
 icinga-web2/modules/doc/application/views/scripts/
 icinga-web2/modules/doc/application/views/scripts/chapter.phtml
@@ -2004,7 +2035,9 @@ icinga-web2/modules/doc/application/views/scripts/style/guide.phtml
 icinga-web2/modules/doc/application/views/scripts/toc.phtml
 icinga-web2/modules/doc/configuration.php
 icinga-web2/modules/doc/doc/
-icinga-web2/modules/doc/doc/1-module-documentation.md
+icinga-web2/modules/doc/doc/01-About.md
+icinga-web2/modules/doc/doc/02-Installation.md
+icinga-web2/modules/doc/doc/03-Module-Documentation.md
 icinga-web2/modules/doc/doc/img/
 icinga-web2/modules/doc/doc/img/markdown.png
 icinga-web2/modules/doc/library/
@@ -2032,6 +2065,14 @@ icinga-web2/modules/doc/public/css/module.less
 icinga-web2/modules/doc/public/js/
 icinga-web2/modules/doc/public/js/module.js
 icinga-web2/modules/doc/run.php
+icinga-web2/modules/migrate/
+icinga-web2/modules/migrate/application/
+icinga-web2/modules/migrate/application/clicommands/
+icinga-web2/modules/migrate/application/clicommands/ConfigCommand.php
+icinga-web2/modules/migrate/library/
+icinga-web2/modules/migrate/library/Migrate/
+icinga-web2/modules/migrate/library/Migrate/Config/
+icinga-web2/modules/migrate/library/Migrate/Config/UserDomainMigration.php
 icinga-web2/modules/monitoring/
 icinga-web2/modules/monitoring/application/
 icinga-web2/modules/monitoring/application/clicommands/
@@ -2086,6 +2127,7 @@ icinga-web2/modules/monitoring/application/forms/Config/Transport/ApiTransportFo
 icinga-web2/modules/monitoring/application/forms/Config/Transport/LocalTransportForm.php
 icinga-web2/modules/monitoring/application/forms/Config/Transport/RemoteTransportForm.php
 icinga-web2/modules/monitoring/application/forms/Config/TransportConfigForm.php
+icinga-web2/modules/monitoring/application/forms/Config/TransportReorderForm.php
 icinga-web2/modules/monitoring/application/forms/EventOverviewForm.php
 icinga-web2/modules/monitoring/application/forms/Navigation/
 icinga-web2/modules/monitoring/application/forms/Navigation/ActionForm.php
@@ -2094,7 +2136,6 @@ icinga-web2/modules/monitoring/application/forms/Navigation/ServiceActionForm.ph
 icinga-web2/modules/monitoring/application/forms/Setup/
 icinga-web2/modules/monitoring/application/forms/Setup/BackendPage.php
 icinga-web2/modules/monitoring/application/forms/Setup/IdoResourcePage.php
-icinga-web2/modules/monitoring/application/forms/Setup/LivestatusResourcePage.php
 icinga-web2/modules/monitoring/application/forms/Setup/SecurityPage.php
 icinga-web2/modules/monitoring/application/forms/Setup/TransportPage.php
 icinga-web2/modules/monitoring/application/forms/Setup/WelcomePage.php
@@ -2153,6 +2194,8 @@ icinga-web2/modules/monitoring/application/views/scripts/downtime/show.phtml
 icinga-web2/modules/monitoring/application/views/scripts/downtimes/
 icinga-web2/modules/monitoring/application/views/scripts/downtimes/delete-all.phtml
 icinga-web2/modules/monitoring/application/views/scripts/downtimes/show.phtml
+icinga-web2/modules/monitoring/application/views/scripts/form/
+icinga-web2/modules/monitoring/application/views/scripts/form/reorder-command-transports.phtml
 icinga-web2/modules/monitoring/application/views/scripts/health/
 icinga-web2/modules/monitoring/application/views/scripts/health/disable-notifications.phtml
 icinga-web2/modules/monitoring/application/views/scripts/health/info.phtml
@@ -2221,6 +2264,7 @@ icinga-web2/modules/monitoring/application/views/scripts/show/components/comment
 icinga-web2/modules/monitoring/application/views/scripts/show/components/contacts.phtml
 icinga-web2/modules/monitoring/application/views/scripts/show/components/customvars.phtml
 icinga-web2/modules/monitoring/application/views/scripts/show/components/downtime.phtml
+icinga-web2/modules/monitoring/application/views/scripts/show/components/extensions.phtml
 icinga-web2/modules/monitoring/application/views/scripts/show/components/flags.phtml
 icinga-web2/modules/monitoring/application/views/scripts/show/components/flapping.phtml
 icinga-web2/modules/monitoring/application/views/scripts/show/components/grapher.phtml
@@ -2245,10 +2289,19 @@ icinga-web2/modules/monitoring/application/views/scripts/timeline/
 icinga-web2/modules/monitoring/application/views/scripts/timeline/index.phtml
 icinga-web2/modules/monitoring/configuration.php
 icinga-web2/modules/monitoring/doc/
-icinga-web2/modules/monitoring/doc/commandtransports.md
-icinga-web2/modules/monitoring/doc/configuration.md
-icinga-web2/modules/monitoring/doc/restrict-custom-variables.md
-icinga-web2/modules/monitoring/doc/security.md
+icinga-web2/modules/monitoring/doc/01-About.md
+icinga-web2/modules/monitoring/doc/02-Installation.md
+icinga-web2/modules/monitoring/doc/03-Configuration.md
+icinga-web2/modules/monitoring/doc/04-Backends.md
+icinga-web2/modules/monitoring/doc/05-Command-Transports.md
+icinga-web2/modules/monitoring/doc/06-Security.md
+icinga-web2/modules/monitoring/doc/10-Restrict-Custom-Variables.md
+icinga-web2/modules/monitoring/doc/11-Add-Columns-List-Views.md
+icinga-web2/modules/monitoring/doc/20-Hooks.md
+icinga-web2/modules/monitoring/doc/img/
+icinga-web2/modules/monitoring/doc/img/hooks-detailviewextension-01.png
+icinga-web2/modules/monitoring/doc/img/list_hosts_add_columns.png
+icinga-web2/modules/monitoring/doc/img/list_services_add_columns.png
 icinga-web2/modules/monitoring/library/
 icinga-web2/modules/monitoring/library/Monitoring/
 icinga-web2/modules/monitoring/library/Monitoring/Backend/
@@ -2310,14 +2363,8 @@ icinga-web2/modules/monitoring/library/Monitoring/Backend/Ido/Query/Servicestatu
 icinga-web2/modules/monitoring/library/Monitoring/Backend/Ido/Query/ServicestatussummaryQuery.php
 icinga-web2/modules/monitoring/library/Monitoring/Backend/Ido/Query/StatehistoryQuery.php
 icinga-web2/modules/monitoring/library/Monitoring/Backend/Ido/Query/StatussummaryQuery.php
-icinga-web2/modules/monitoring/library/Monitoring/Backend/Livestatus/
-icinga-web2/modules/monitoring/library/Monitoring/Backend/Livestatus/LivestatusBackend.php
-icinga-web2/modules/monitoring/library/Monitoring/Backend/Livestatus/Query/
-icinga-web2/modules/monitoring/library/Monitoring/Backend/Livestatus/Query/DowntimeQuery.php
-icinga-web2/modules/monitoring/library/Monitoring/Backend/Livestatus/Query/HostgroupQuery.php
-icinga-web2/modules/monitoring/library/Monitoring/Backend/Livestatus/Query/ServicegroupQuery.php
-icinga-web2/modules/monitoring/library/Monitoring/Backend/Livestatus/Query/StatusQuery.php
-icinga-web2/modules/monitoring/library/Monitoring/Backend/Livestatus/Query/StatusSummaryQuery.php
+icinga-web2/modules/monitoring/library/Monitoring/Backend/Ido/Query/UnhandledhostproblemsQuery.php
+icinga-web2/modules/monitoring/library/Monitoring/Backend/Ido/Query/UnhandledserviceproblemsQuery.php
 icinga-web2/modules/monitoring/library/Monitoring/Backend/MonitoringBackend.php
 icinga-web2/modules/monitoring/library/Monitoring/BackendStep.php
 icinga-web2/modules/monitoring/library/Monitoring/Cli/
@@ -2385,12 +2432,16 @@ icinga-web2/modules/monitoring/library/Monitoring/DataView/Servicegroupsummary.p
 icinga-web2/modules/monitoring/library/Monitoring/DataView/Servicestatus.php
 icinga-web2/modules/monitoring/library/Monitoring/DataView/Servicestatussummary.php
 icinga-web2/modules/monitoring/library/Monitoring/DataView/Statussummary.php
+icinga-web2/modules/monitoring/library/Monitoring/DataView/Unhandledhostproblems.php
+icinga-web2/modules/monitoring/library/Monitoring/DataView/Unhandledserviceproblems.php
 icinga-web2/modules/monitoring/library/Monitoring/Environment.php
 icinga-web2/modules/monitoring/library/Monitoring/Exception/
 icinga-web2/modules/monitoring/library/Monitoring/Exception/CommandTransportException.php
+icinga-web2/modules/monitoring/library/Monitoring/Exception/CurlException.php
 icinga-web2/modules/monitoring/library/Monitoring/Exception/UnsupportedBackendException.php
 icinga-web2/modules/monitoring/library/Monitoring/Hook/
 icinga-web2/modules/monitoring/library/Monitoring/Hook/DataviewExtensionHook.php
+icinga-web2/modules/monitoring/library/Monitoring/Hook/DetailviewExtensionHook.php
 icinga-web2/modules/monitoring/library/Monitoring/Hook/HostActionsHook.php
 icinga-web2/modules/monitoring/library/Monitoring/Hook/IdoQueryExtensionHook.php
 icinga-web2/modules/monitoring/library/Monitoring/Hook/ObjectActionsHook.php
@@ -2458,6 +2509,9 @@ icinga-web2/modules/monitoring/test/php/library/Monitoring/Object/MacroTest.php
 icinga-web2/modules/monitoring/test/php/library/Monitoring/Plugin/
 icinga-web2/modules/monitoring/test/php/library/Monitoring/Plugin/PerfdataSetTest.php
 icinga-web2/modules/monitoring/test/php/library/Monitoring/Plugin/PerfdataTest.php
+icinga-web2/modules/monitoring/test/php/library/Monitoring/Web/
+icinga-web2/modules/monitoring/test/php/library/Monitoring/Web/Rest/
+icinga-web2/modules/monitoring/test/php/library/Monitoring/Web/Rest/RestRequestTest.php
 icinga-web2/modules/monitoring/test/php/regression/
 icinga-web2/modules/monitoring/test/php/regression/Bug11728Test.php
 icinga-web2/modules/monitoring/test/php/regression/Bug11796Test.php
@@ -2558,50 +2612,31 @@ icinga-web2/modules/translation/application/
 icinga-web2/modules/translation/application/clicommands/
 icinga-web2/modules/translation/application/clicommands/CompileCommand.php
 icinga-web2/modules/translation/application/clicommands/RefreshCommand.php
+icinga-web2/modules/translation/application/clicommands/TestCommand.php
 icinga-web2/modules/translation/doc/
+icinga-web2/modules/translation/doc/01-About.md
+icinga-web2/modules/translation/doc/02-Installation.md
+icinga-web2/modules/translation/doc/03-Translation.md
 icinga-web2/modules/translation/doc/img/
 icinga-web2/modules/translation/doc/img/poedit_001.png
 icinga-web2/modules/translation/doc/img/poedit_002.png
 icinga-web2/modules/translation/doc/img/poedit_003.png
 icinga-web2/modules/translation/doc/img/poedit_004.png
 icinga-web2/modules/translation/doc/img/poedit_005.png
-icinga-web2/modules/translation/doc/translation.md
 icinga-web2/modules/translation/library/
 icinga-web2/modules/translation/library/Translation/
 icinga-web2/modules/translation/library/Translation/Cli/
+icinga-web2/modules/translation/library/Translation/Cli/ArrayToTextTableHelper.php
 icinga-web2/modules/translation/library/Translation/Cli/TranslationCommand.php
 icinga-web2/modules/translation/library/Translation/Util/
 icinga-web2/modules/translation/library/Translation/Util/GettextTranslationHelper.php
 icinga-web2/modules/translation/module.info
 icinga-web2/packages/
 icinga-web2/packages/RPM.md
-icinga-web2/packages/debian/
-icinga-web2/packages/debian/README.1st
-icinga-web2/packages/debian/changelog
-icinga-web2/packages/debian/compat
-icinga-web2/packages/debian/control
-icinga-web2/packages/debian/icinga-php.install
-icinga-web2/packages/debian/icingacli.install
-icinga-web2/packages/debian/icingaweb-common.dirs
-icinga-web2/packages/debian/icingaweb-common.install
-icinga-web2/packages/debian/icingaweb-module-doc.install
-icinga-web2/packages/debian/icingaweb-module-monitoring.install
-icinga-web2/packages/debian/icingaweb-module-setup.install
-icinga-web2/packages/debian/icingaweb-module-test.install
-icinga-web2/packages/debian/icingaweb-module-translation.install
-icinga-web2/packages/debian/icingaweb-vendor-htmlpurifier.install
-icinga-web2/packages/debian/icingaweb-vendor-jshrink.install
-icinga-web2/packages/debian/icingaweb-vendor-lessphp.install
-icinga-web2/packages/debian/icingaweb-vendor-parsedown.install
-icinga-web2/packages/debian/icingaweb-vendor-zend.install
-icinga-web2/packages/debian/icingaweb.install
-icinga-web2/packages/debian/rules
-icinga-web2/packages/debian/source/
-icinga-web2/packages/debian/source/format
-icinga-web2/packages/debian/substvars
 icinga-web2/packages/files/
 icinga-web2/packages/files/apache/
 icinga-web2/packages/files/apache/icingaweb2.conf
+icinga-web2/packages/files/apache/icingaweb2.fpm.conf
 icinga-web2/packages/files/bin/
 icinga-web2/packages/files/bin/icingacli
 icinga-web2/packages/files/config/
@@ -2619,6 +2654,7 @@ icinga-web2/packages/selinux/icingaweb2.fc
 icinga-web2/packages/selinux/icingaweb2.if
 icinga-web2/packages/selinux/icingaweb2.sh
 icinga-web2/packages/selinux/icingaweb2.te
+icinga-web2/phpcs.xml
 icinga-web2/public/
 icinga-web2/public/css/
 icinga-web2/public/css/icinga/
@@ -2649,10 +2685,12 @@ icinga-web2/public/css/pdf/pdfprint.less
 icinga-web2/public/css/themes/
 icinga-web2/public/css/themes/Winter.less
 icinga-web2/public/css/themes/high-contrast.less
+icinga-web2/public/css/themes/solarized-dark.less
 icinga-web2/public/css/vendor/
 icinga-web2/public/css/vendor/normalize.css
 icinga-web2/public/css/vendor/tipsy.css
 icinga-web2/public/error_norewrite.html
+icinga-web2/public/error_unavailable.html
 icinga-web2/public/font/
 icinga-web2/public/font/ifont.eot
 icinga-web2/public/font/ifont.svg
@@ -2662,10 +2700,14 @@ icinga-web2/public/font/ifont.woff2
 icinga-web2/public/img/
 icinga-web2/public/img/favicon.png
 icinga-web2/public/img/icinga-logo-big-dark.png
+icinga-web2/public/img/icinga-logo-big-dark.svg
 icinga-web2/public/img/icinga-logo-big.png
 icinga-web2/public/img/icinga-logo-big.svg
+icinga-web2/public/img/icinga-logo-compact.svg
+icinga-web2/public/img/icinga-logo-dark.svg
 icinga-web2/public/img/icinga-logo.png
 icinga-web2/public/img/icinga-logo.svg
+icinga-web2/public/img/icingaweb2-background.jpg
 icinga-web2/public/img/icons/
 icinga-web2/public/img/icons/acknowledgement.png
 icinga-web2/public/img/icons/acknowledgement_petrol.png
@@ -2733,6 +2775,7 @@ icinga-web2/public/img/icons/save_petrol.png
 icinga-web2/public/img/icons/search.png
 icinga-web2/public/img/icons/search_icinga_blue.png
 icinga-web2/public/img/icons/search_petrol.png
+icinga-web2/public/img/icons/search_white.png
 icinga-web2/public/img/icons/service.png
 icinga-web2/public/img/icons/service_petrol.png
 icinga-web2/public/img/icons/servicegroup.png
@@ -2755,6 +2798,7 @@ icinga-web2/public/img/touch-icon.png
 icinga-web2/public/img/tree/
 icinga-web2/public/img/tree/tree-minus.gif
 icinga-web2/public/img/tree/tree-plus.gif
+icinga-web2/public/img/website-icon.svg
 icinga-web2/public/img/winter/
 icinga-web2/public/img/winter/logo_icinga_big_winter.png
 icinga-web2/public/img/winter/snow1.png
@@ -2769,7 +2813,10 @@ icinga-web2/public/js/icinga/behavior/
 icinga-web2/public/js/icinga/behavior/actiontable.js
 icinga-web2/public/js/icinga/behavior/application-state.js
 icinga-web2/public/js/icinga/behavior/autofocus.js
+icinga-web2/public/js/icinga/behavior/detach.js
 icinga-web2/public/js/icinga/behavior/dropdown.js
+icinga-web2/public/js/icinga/behavior/expandable.js
+icinga-web2/public/js/icinga/behavior/flyover.js
 icinga-web2/public/js/icinga/behavior/form.js
 icinga-web2/public/js/icinga/behavior/navigation.js
 icinga-web2/public/js/icinga/behavior/selectable.js
@@ -2819,6 +2866,8 @@ icinga-web2/test/php/library/Icinga/Application/ConfigTest/files/config.ini
 icinga-web2/test/php/library/Icinga/Application/ConfigTest/files/modules/
 icinga-web2/test/php/library/Icinga/Application/ConfigTest/files/modules/amodule/
 icinga-web2/test/php/library/Icinga/Application/ConfigTest/files/modules/amodule/config.ini
+icinga-web2/test/php/library/Icinga/Authentication/
+icinga-web2/test/php/library/Icinga/Authentication/PasswordHelperTest.php
 icinga-web2/test/php/library/Icinga/Chart/
 icinga-web2/test/php/library/Icinga/Chart/GraphChartTest.php
 icinga-web2/test/php/library/Icinga/Chart/PieChartTest.php
@@ -2833,11 +2882,14 @@ icinga-web2/test/php/library/Icinga/File/CsvTest.php
 icinga-web2/test/php/library/Icinga/File/Ini/
 icinga-web2/test/php/library/Icinga/File/Ini/IniParserTest.php
 icinga-web2/test/php/library/Icinga/File/Ini/IniWriterTest.php
+icinga-web2/test/php/library/Icinga/File/Storage/
+icinga-web2/test/php/library/Icinga/File/Storage/LocalFileStorageTest.php
 icinga-web2/test/php/library/Icinga/Logger/
 icinga-web2/test/php/library/Icinga/Logger/Writer/
 icinga-web2/test/php/library/Icinga/Logger/Writer/StreamWriterTest.php
 icinga-web2/test/php/library/Icinga/Protocol/
 icinga-web2/test/php/library/Icinga/Protocol/Ldap/
+icinga-web2/test/php/library/Icinga/Protocol/Ldap/LdapUtilsTest.php
 icinga-web2/test/php/library/Icinga/Protocol/Ldap/QueryTest.php
 icinga-web2/test/php/library/Icinga/Test/
 icinga-web2/test/php/library/Icinga/Test/BaseTestCaseTest.php
@@ -2855,6 +2907,7 @@ icinga-web2/test/php/library/Icinga/Util/StringHelperTest.php
 icinga-web2/test/php/library/Icinga/Util/TimezoneDetectTest.php
 icinga-web2/test/php/library/Icinga/Util/TranslatorTest.php
 icinga-web2/test/php/library/Icinga/Web/
+icinga-web2/test/php/library/Icinga/Web/ConfigFormTest.php
 icinga-web2/test/php/library/Icinga/Web/Form/
 icinga-web2/test/php/library/Icinga/Web/Form/Element/
 icinga-web2/test/php/library/Icinga/Web/Form/Element/DateTimePickerTest.php
@@ -2875,6 +2928,7 @@ icinga-web2/test/php/library/Icinga/Web/UrlTest.php
 icinga-web2/test/php/library/Icinga/Web/Widget/
 icinga-web2/test/php/library/Icinga/Web/Widget/DashboardTest.php
 icinga-web2/test/php/library/Icinga/Web/Widget/SearchDashboardTest.php
+icinga-web2/test/php/phpunit-compat.php
 icinga-web2/test/php/regression/
 icinga-web2/test/php/regression/Bug11831Test.php
 icinga-web2/test/php/regression/Bug4102Test.php
@@ -2893,6 +2947,9 @@ icinga-web2/test/php/res/locale/fr_FR/LC_MESSAGES/icingatest.po
 icinga-web2/test/php/res/status/
 icinga-web2/test/php/res/status/icinga.objects.cache
 icinga-web2/test/php/res/status/icinga.status.dat
+icinga-web2/test/setup_vendor.sh
+icinga-web2/test/travis-ldap.ini
+icinga-web2/test/travis_database.sh
 @owner _icingaweb2
 @group _icingaweb2
 @mode 700
