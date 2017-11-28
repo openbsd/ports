@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.113 2017/07/14 07:42:51 zhuk Exp $
+# $OpenBSD: portcheck,v 1.114 2017/11/28 18:30:16 jca Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -928,9 +928,6 @@ sub_checks() {
 #     with %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 #     and "devel/dconf" in MODULES (or at least RDEP on devel/dconf).
 #
-#   * If package installs .mo files under ${PREFIX}/share/locale/, then
-#     run-time dependency on devel/gettext should exists.
-#
 #   * If package installs files under ${PREFIX}/share/dbus-1/system-services/,
 #     it must have a run-time dependency on x11/dbus,-suid.
 #
@@ -995,9 +992,6 @@ check_plist() {
 
 	# List of icon themes that remove cache file
 	local rm_cache_themes=
-
-	local gettext_dep=false
-	local translation_found=false
 
 	local dbus_suid_dep=false
 	local dbus_suid_dep_needed=false
@@ -1147,13 +1141,6 @@ check_plist() {
 		@?(un)exec?(-delete|-update)" %D/bin/glib-compile-schemas"*)
 			err "${portref}incorrect glib-compile-schemas" \
 			    "invocation: ${l#@* }"
-			;;
-
-		"@depend devel/gettext"*)
-			gettext_dep=true
-			;;
-		share/locale/*/*/*.mo)
-			translation_found=true
 			;;
 
 		"@depend x11/qt4,-main"*)
@@ -1353,12 +1340,6 @@ check_plist() {
 		err "${portref}missing @unexec-delete of glib-compile-schemas"
 	fi
 
-	# gettext
-	$translation_found && ! $gettext_dep && ! $is_static &&
-		[[ $fullpkgname != gettext-* ]] &&
-		err "${portref}translation file(s) found without" \
-		    "devel/gettext dependency in RUN_DEPENDS"
-
 	# QML
 	$qml_found && ! $qt4_dep && ! $qt5_dep &&
 		[[ $fullpkgname != qt4-[0-9]* ]] &&
@@ -1447,7 +1428,6 @@ check_plist() {
 }
 
 # Checks made:
-#   * devel/gettext dependency is not forgotten.
 #   * lib/kde/ and lib/kde4/ prefixes not missing where applicable.
 #   * stdc++ doesn't get into WANTLIB when gcc4.port.mk is used.
 check_wantlib() {
