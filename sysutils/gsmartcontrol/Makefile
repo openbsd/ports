@@ -1,13 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2017/11/16 23:20:40 naddy Exp $
-
-# XXX check if still needed at next update
-CXXFLAGS +=		-std=c++11
+# $OpenBSD: Makefile,v 1.18 2017/11/28 21:22:01 kirby Exp $
 
 COMMENT=		graphical hard drive inspection tool (smartctl front-end)
 
-DISTNAME=		gsmartcontrol-1.0.2
+DISTNAME=		gsmartcontrol-1.1.3
 EXTRACT_SUFX=		.tar.bz2
-REVISION=		0
 
 CATEGORIES=		sysutils x11
 
@@ -19,8 +15,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += atk-1.0 atkmm-1.6 c cairo cairo-gobject cairomm-1.0
 WANTLIB += gdk-3 gdk_pixbuf-2.0 gdkmm-3.0 gio-2.0 giomm-2.4 glib-2.0
 WANTLIB += glibmm-2.4 gobject-2.0 gtk-3 gtkmm-3.0 intl m pango-1.0
-WANTLIB += pangocairo-1.0 pangomm-1.4 pcre pthread sigc-2.0 util
-WANTLIB += ${COMPILER_LIBCXX}
+WANTLIB += pangocairo-1.0 pangomm-1.4 pcre pcrecpp pthread sigc-2.0
+WANTLIB += util ${COMPILER_LIBCXX}
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gsmartcontrol/}
 

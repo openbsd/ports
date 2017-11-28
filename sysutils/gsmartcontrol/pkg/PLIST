@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.5 2017/07/23 12:32:53 ajacoutot Exp $
-@bin bin/gsmartcontrol
+@comment $OpenBSD: PLIST,v 1.6 2017/11/28 21:22:01 kirby Exp $
 bin/gsmartcontrol-root
 @man man/man1/gsmartcontrol-root.1
 @man man/man1/gsmartcontrol.1
+@bin sbin/gsmartcontrol
 share/applications/gsmartcontrol.desktop
 share/doc/gsmartcontrol/
 share/doc/gsmartcontrol/AUTHORS.txt
@@ -14,7 +14,6 @@ share/doc/gsmartcontrol/LICENSE_gpl2.txt
 share/doc/gsmartcontrol/LICENSE_gpl3.txt
 share/doc/gsmartcontrol/LICENSE_gsmartcontrol.txt
 share/doc/gsmartcontrol/LICENSE_hz.txt
-share/doc/gsmartcontrol/LICENSE_pcrecpp.txt
 share/doc/gsmartcontrol/LICENSE_unlicense.txt
 share/doc/gsmartcontrol/LICENSE_zlib.txt
 share/doc/gsmartcontrol/NEWS
@@ -41,6 +40,9 @@ share/metainfo/gsmartcontrol.appdata.xml
 share/pixmaps/
 share/pixmaps/gsmartcontrol.png
 share/pixmaps/gsmartcontrol.xpm
+share/polkit-1/
+share/polkit-1/actions/
+share/polkit-1/actions/org.gsmartcontrol.policy
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/update-desktop-database

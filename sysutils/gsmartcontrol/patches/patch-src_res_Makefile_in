@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_res_Makefile_in,v 1.2 2017/07/23 12:32:53 ajacoutot Exp $
+$OpenBSD: patch-src_res_Makefile_in,v 1.3 2017/11/28 21:22:01 kirby Exp $
 
 Work around .cpp suffix rules.  These rules are not actually needed as the files
 are distributed with the tarball.  Upstream workaround of setting SUFFIXES=
@@ -7,7 +7,7 @@ earlier in the Makefile only works with GNU make.
 Index: src/res/Makefile.in
 --- src/res/Makefile.in.orig
 +++ src/res/Makefile.in
-@@ -605,9 +605,6 @@ uninstall-am:
+@@ -604,9 +604,6 @@ uninstall-am:
  mostlyclean-local:
  	rm -f *.ui.cpp *.tmp_ui *.txt.cpp
  
