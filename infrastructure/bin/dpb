@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.123 2017/11/28 10:31:50 espie Exp $
+# $OpenBSD: dpb,v 1.124 2017/11/28 14:29:30 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -182,6 +182,7 @@ sub handle_non_waiting_jobs
 	my $checked = 0;
 	my $force_report = 0;
 	my $reaped = DPB::Core->reap;
+	$state->{external}->receive_commands;
 	$keep_going = !-e $state->logdir."/stop";
 	if (DPB::Core->avail > 1) {
 		$state->engine->recheck_errors;
@@ -190,7 +191,6 @@ sub handle_non_waiting_jobs
 		$state->engine->check_buildable;
 		$checked = 1;
 	}
-	$state->{external}->receive_commands;
 
 	while ($keep_going && DPB::Core->avail && $state->engine->can_build) {
 		$force_report = 1;
