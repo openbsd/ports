@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2015/11/09 12:44:20 jca Exp $
+@comment $OpenBSD: PLIST,v 1.10 2017/11/28 03:43:07 kevlo Exp $
 @bin bin/mlmmj-bounce
 @bin bin/mlmmj-list
 @bin bin/mlmmj-maintd
@@ -52,6 +52,23 @@ share/mlmmj/text.skel/ast/probe
 share/mlmmj/text.skel/ast/prologue
 share/mlmmj/text.skel/ast/wait-post
 share/mlmmj/text.skel/ast/wait-sub
+share/mlmmj/text.skel/cs/
+share/mlmmj/text.skel/cs/confirm
+share/mlmmj/text.skel/cs/deny
+share/mlmmj/text.skel/cs/deny-post
+share/mlmmj/text.skel/cs/digest
+share/mlmmj/text.skel/cs/faq
+share/mlmmj/text.skel/cs/finish
+share/mlmmj/text.skel/cs/finish-sub
+share/mlmmj/text.skel/cs/gatekeep-sub
+share/mlmmj/text.skel/cs/help
+share/mlmmj/text.skel/cs/list
+share/mlmmj/text.skel/cs/moderate-post
+share/mlmmj/text.skel/cs/notify
+share/mlmmj/text.skel/cs/probe
+share/mlmmj/text.skel/cs/prologue
+share/mlmmj/text.skel/cs/wait-post
+share/mlmmj/text.skel/cs/wait-sub
 share/mlmmj/text.skel/de/
 share/mlmmj/text.skel/de/confirm
 share/mlmmj/text.skel/de/deny

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2016/04/09 20:14:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2017/11/28 03:43:07 kevlo Exp $
 
 COMMENT=	mailing list manager
 
-DISTNAME=	mlmmj-1.2.19.0
+DISTNAME=	mlmmj-1.3.0
 CATEGORIES=    	mail
 
 HOMEPAGE=	http://mlmmj.org/
