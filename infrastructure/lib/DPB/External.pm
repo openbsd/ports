@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: External.pm,v 1.3 2017/11/28 10:16:18 espie Exp $
+# $OpenBSD: External.pm,v 1.4 2017/11/28 10:45:44 espie Exp $
 #
 # Copyright (c) 2017 Marc Espie <espie@openbsd.org>
 #
@@ -56,8 +56,7 @@ sub server
 
 	my $o = bless {state => $state, 
 	    commands => []}, $class;
-
-	my $path = $state->{subst}->value('CONTROL');
+	my $path = $state->expand_path($state->{subst}->value('CONTROL'));
 
 	# this ensures the socket belongs to log_user.
 	$state->{log_user}->run_as(
