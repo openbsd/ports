@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: External.pm,v 1.2 2017/11/27 17:00:50 espie Exp $
+# $OpenBSD: External.pm,v 1.3 2017/11/28 10:16:18 espie Exp $
 #
 # Copyright (c) 2017 Marc Espie <espie@openbsd.org>
 #
@@ -54,9 +54,10 @@ sub server
 {
 	my ($class, $state) = @_;
 
-	my $o = bless {commands => []}, $class;
+	my $o = bless {state => $state, 
+	    commands => []}, $class;
 
-	my $path = $state->{subst}->value('SOCKET');
+	my $path = $state->{subst}->value('CONTROL');
 
 	# this ensures the socket belongs to log_user.
 	$state->{log_user}->run_as(
@@ -111,6 +112,23 @@ sub command
 		return shift @{$self->{commands}};
 	} else {
 		return undef;
+	}
+}
+
+sub receive_commands
+{
+	my $self = shift;
+	my $command;
+	while (defined($command = $self->command)) {
+		my $line = $command->line;
+		if ($line =~ m/^dontclean\s+(.*)/) {
+			$self->{state}->{builder}{dontclean}{$1} = 1;
+		} elsif ($line =~ m/^addhost\s+(.*)/) {
+			my @list = split(/\s+/, $1);
+			DPB::Config->add_host($self->{state}, @list);
+		} else {
+			$command->unknown_command;
+		}
 	}
 }
 

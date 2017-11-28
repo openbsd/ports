@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Config.pm,v 1.72 2017/11/24 14:26:20 espie Exp $
+# $OpenBSD: Config.pm,v 1.73 2017/11/28 10:16:18 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -217,6 +217,12 @@ sub parse_command_line
 	if ($state->define_present('LOGDIR')) {
 		$state->{logdir} = $state->{subst}->value('LOGDIR');
 	}
+	if ($state->define_present('CONTROL')) {
+		require DPB::External;
+		$state->{external} = DPB::External->server($state);
+	} else {
+		$state->{external} = DPB::ExternalStub->new;
+	}
 	if ($state->{opt}{s}) {
 		$state->{wantsize} = 1;
 	} elsif ($state->define_present('WANTSIZE')) {
@@ -391,6 +397,7 @@ sub parse_config_files
 		DPB::Core::Init->new('localhost', $prop);
 	}
 	$state->{default_prop} = $prop;
+	$state->{override_prop} = $override_prop;
 }
 
 sub parse_hosts_file
@@ -433,6 +440,30 @@ sub parse_hosts_file
 		    	$state->{build_user} = $prop->{build_user};
 		}
 	}
+}
+
+sub add_host
+{
+	my ($class, $state, $host, @properties) = @_;
+	my $prop = DPB::HostProperties->new($state->{default_prop});
+	for my $arg (@properties) {
+		if ($arg =~ m/^(.*?)=(.*)$/) {
+			$prop->{$1} = $2;
+		}
+	}
+	$prop->finalize_with_overrides($state->{override_prop});
+	DPB::Core::Init->new($host, $prop);
+}
+
+package DPB::ExternalStub;
+sub new
+{
+	my $class = shift;
+	bless {}, $class;
+}
+
+sub receive_commands
+{
 }
 
 1;
