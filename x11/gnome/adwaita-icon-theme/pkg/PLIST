@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2017/10/26 13:24:20 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2017/11/28 08:11:04 ajacoutot Exp $
 @conflict gnome-themes-standard-<3.14.0
 @unexec-delete rm -f %D/share/icons/Adwaita/icon-theme.cache
 share/icons/Adwaita/
@@ -2125,7 +2125,6 @@ share/icons/Adwaita/512x512/emblems/emblem-package.png
 share/icons/Adwaita/512x512/emblems/emblem-readonly.png
 share/icons/Adwaita/512x512/emblems/emblem-shared.png
 share/icons/Adwaita/512x512/emblems/emblem-symbolic-link.png
-share/icons/Adwaita/512x512/emblems/emblem-synchronizing.png
 share/icons/Adwaita/512x512/emblems/emblem-unreadable.png
 share/icons/Adwaita/512x512/mimetypes/
 share/icons/Adwaita/512x512/mimetypes/application-x-executable.png
