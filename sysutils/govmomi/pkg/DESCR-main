@@ -1,0 +1,3 @@
+govc is designed to be a user friendly CLI alternative to the vSphere GUI and
+well suited for automation tasks. It also acts as a test harness for the govmomi
+APIs and provides working examples of how to use the APIs.

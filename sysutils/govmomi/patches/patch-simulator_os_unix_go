@@ -1,0 +1,21 @@
+$OpenBSD: patch-simulator_os_unix_go,v 1.1.1.1 2017/11/28 08:42:19 ajacoutot Exp $
+
+Index: simulator/os_unix.go
+--- simulator/os_unix.go.orig
++++ simulator/os_unix.go
+@@ -27,12 +27,12 @@ func (ds *Datastore) stat() error {
+ 		return err
+ 	}
+ 
+-	bsize := uint64(stat.Bsize) / 512
++	bsize := uint64(stat.F_bsize) / 512
+ 
+-	info.FreeSpace = int64(stat.Bfree*bsize) >> 1
++	info.FreeSpace = int64(stat.F_bfree*bsize) >> 1
+ 
+ 	ds.Summary.FreeSpace = info.FreeSpace
+-	ds.Summary.Capacity = int64(stat.Blocks*bsize) >> 1
++	ds.Summary.Capacity = int64(stat.F_blocks*bsize) >> 1
+ 
+ 	return nil
+ }
