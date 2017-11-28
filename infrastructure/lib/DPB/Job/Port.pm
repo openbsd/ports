@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.170 2017/05/07 14:50:14 espie Exp $
+# $OpenBSD: Port.pm,v 1.171 2017/11/28 10:15:10 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -804,8 +804,13 @@ sub want_percent { 0 }
 sub setup
 {
 	my ($task, $core) = @_;
-	print {$core->job->{lock}} "cleaned\n";
-	return $task;
+	my $job = $core->job;
+	if ($job->{builder}{dontclean}{$job->{v}->pkgpath}) {
+		return $job->next_task($core);
+	} else {
+		print {$job->{lock}} "cleaned\n";
+		return $task;
+	}
 }
 sub finalize
 {
