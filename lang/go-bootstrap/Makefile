@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2017/10/10 14:57:06 jsing Exp $
+# $OpenBSD: Makefile,v 1.8 2017/11/28 16:25:43 jsing Exp $
 
 ONLY_FOR_ARCHS =	${GO_ARCHS}
 
 COMMENT =		Go programming language
 
 VERSION =		1.4
-RELEASE =		20170531
+RELEASE =		20171003
 DISTNAME = 		go${VERSION}-bootstrap-${RELEASE}
 PKGNAME = 		go-bootstrap-${VERSION}.${RELEASE}
 CATEGORIES =		lang
@@ -21,7 +21,7 @@ PERMIT_DISTFILES_FTP =  bootstrap only
 
 WANTLIB =		c m pthread
 
-MASTER_SITES =		https://storage.googleapis.com/golang/
+MASTER_SITES =		https://dl.google.com/go/
 
 BUILD_DEPENDS =		shells/bash
 
