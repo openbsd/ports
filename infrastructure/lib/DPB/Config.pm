@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Config.pm,v 1.73 2017/11/28 10:16:18 espie Exp $
+# $OpenBSD: Config.pm,v 1.74 2017/11/28 10:31:50 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -92,8 +92,8 @@ sub parse_command_line
 		},
 	};
 
-	$state->SUPER_handle_options('aceimqrRstuUvh:S:xX:A:B:C:f:F:I:j:J:M:p:P:b:l:L:',
-    "[-aceimqrRsuUvx] [-A arch] [-B chroot] [-C plist] [-f m] [-F m]",
+	$state->SUPER_handle_options('acemqrRstuUvh:S:xX:A:B:C:f:F:I:j:J:M:p:P:b:l:L:',
+    "[-acemqrRsuUvx] [-A arch] [-B chroot] [-C plist] [-f m] [-F m]",
     "[-I pathlist] [-J p] [-j n] [-p parallel] [-P pathlist] [-h hosts]",
     "[-L logdir] [-l lockdir] [-b log] [-M threshold] [-X pathlist]",
     "[pathlist ...]");
@@ -102,10 +102,6 @@ sub parse_command_line
 		if (defined $o && $o !~ m/^\d+$/) {
 			$state->usage("-$l takes an integer argument, not $o");
 		}
-	}
-	if ($state->opt('i')) {
-		require DPB::Interactive;
-		$state->{interactive} = DPB::Interactive->new;
 	}
 
     	$state->{chroot} = $state->opt('B');
@@ -267,7 +263,7 @@ sub parse_command_line
 		$state->{want_fetchinfo} = 1;
 	}
 
-	my $k = $state->is_interactive ? "STARTUPI" : "STARTUP";
+	my $k = "STARTUP";
 	if ($state->define_present($k)) {
 		$state->{startup_script} = $state->expand_chrooted_path($state->{subst}->value($k));
 	}

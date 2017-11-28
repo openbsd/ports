@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.122 2017/11/28 10:16:18 espie Exp $
+# $OpenBSD: dpb,v 1.123 2017/11/28 10:31:50 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -102,7 +102,7 @@ DPB::Trace->setup(\%SIG);
 my $state = DPB::State->new('dpb');
 $state->handle_options;
 
-$state->{all} = !$state->is_interactive;
+$state->{all} = 1;
 
 my $default_handling =
     sub {
@@ -221,9 +221,7 @@ sub handle_non_waiting_jobs
 	}
 	DPB::Core->log_concurrency(time(), $state->{concurrent});
 	DPB::Core->wake_jobs;
-	if ($state->want_report) {
-		$reporter->report($force_report);
-	}
+	$reporter->report($force_report);
 }
 
 sub main_loop
@@ -253,8 +251,7 @@ sub main_loop
 				}
 			}
 		}
-		if ($state->may_ask_for_commands) {
-		} elsif (!$state->opt('q') || !$state->engine->recheck_errors) {
+		if (!$state->opt('q') || !$state->engine->recheck_errors) {
 			last;
 		}
 	}
