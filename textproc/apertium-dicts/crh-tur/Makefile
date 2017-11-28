@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/11/04 00:05:24 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2017/11/28 06:30:34 bentley Exp $
 
 L =	crh-tur
 LANG =	Crimean Tatar/Turkish
-V =	0.2.0
+V =	0.3.0
 
 USE_GMAKE =	Yes
 
