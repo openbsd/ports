@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1378 2017/11/26 16:28:28 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1379 2017/11/28 10:26:00 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1850,9 +1850,8 @@ _register_plist${_s} = ${_register_plist}
 
 CHECK_WRKDIR ?= No
 WRKDIR_CHANGES_OKAY += ${_ALL_COOKIES}
-.if ${CONFIGURE_STYLE:L:Mmodbuild}
 WRKDIR_CHANGES_OKAY += ${WRKBUILD}/_build/runtime_params
-.endif
+WRKDIR_CHANGES_OKAY += ${WRKBUILD}/.ninja_log
 
 .if ${CHECK_WRKDIR:L} == "yes"
 _check_wrkdir = ${_PERLSCRIPT}/check-wrkdir

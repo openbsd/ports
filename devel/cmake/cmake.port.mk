@@ -1,4 +1,4 @@
-# $OpenBSD: cmake.port.mk,v 1.61 2017/11/25 12:19:07 espie Exp $
+# $OpenBSD: cmake.port.mk,v 1.62 2017/11/28 10:26:00 espie Exp $
 
 BUILD_DEPENDS+=	devel/cmake
 
@@ -16,7 +16,6 @@ USE_NINJA = No
 
 .if ${USE_NINJA:L} == "yes"
 BUILD_DEPENDS += devel/ninja>=1.5.1
-WRKDIR_CHANGES_OKAY += ${WRKBUILD}/.ninja_log
 _MODCMAKE_GEN = Ninja
 NINJA ?= ninja
 NINJA_FLAGS ?= -v -j ${MAKE_JOBS}
