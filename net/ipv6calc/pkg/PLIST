@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2009/12/22 10:27:42 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.7 2017/11/28 12:03:28 jasper Exp $
 @bin bin/ipv6calc
 @bin bin/ipv6loganon
 @bin bin/ipv6logconv
@@ -7,3 +7,14 @@
 @man man/man8/ipv6loganon.8
 @man man/man8/ipv6logconv.8
 @man man/man8/ipv6logstats.8
+share/ipv6calc/
+share/ipv6calc/tools/
+share/ipv6calc/tools/DBIP-generate-db.pl
+share/ipv6calc/tools/DBIP-update.sh
+share/ipv6calc/tools/GeoIP-update.sh
+share/ipv6calc/tools/IP2Location-update.sh
+share/ipv6calc/tools/ipv6calc-create-registry-list-ipv4.pl
+share/ipv6calc/tools/ipv6calc-create-registry-list-ipv6.pl
+share/ipv6calc/tools/ipv6calc-db-update.sh
+share/ipv6calc/tools/ipv6calc-registries-check-run-create.sh
+share/ipv6calc/tools/ipv6calc-update-registries.sh
