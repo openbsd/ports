@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2017/05/28 10:49:14 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2017/11/28 11:55:12 jasper Exp $
 lib/python${MODPY_VERSION}/site-packages/paho/
 lib/python${MODPY_VERSION}/site-packages/paho/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/paho/${MODPY_PYCACHE}/
@@ -8,9 +8,11 @@ lib/python${MODPY_VERSION}/site-packages/paho/mqtt/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/paho/mqtt/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/paho/mqtt/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/paho/mqtt/${MODPY_PYCACHE}client.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/paho/mqtt/${MODPY_PYCACHE}matcher.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/paho/mqtt/${MODPY_PYCACHE}publish.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/paho/mqtt/${MODPY_PYCACHE}subscribe.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/paho/mqtt/client.py
+lib/python${MODPY_VERSION}/site-packages/paho/mqtt/matcher.py
 lib/python${MODPY_VERSION}/site-packages/paho/mqtt/publish.py
 lib/python${MODPY_VERSION}/site-packages/paho/mqtt/subscribe.py
 lib/python${MODPY_VERSION}/site-packages/paho_mqtt-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -20,16 +22,19 @@ lib/python${MODPY_VERSION}/site-packages/paho_mqtt-${MODPY_EGG_VERSION}-py${MODP
 lib/python${MODPY_VERSION}/site-packages/paho_mqtt-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
 lib/python${MODPY_VERSION}/site-packages/paho_mqtt-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 share/examples/${MODPY_PY_PREFIX}paho-mqtt/
-share/examples/${MODPY_PY_PREFIX}paho-mqtt/mqtt_clear_retain.py
-share/examples/${MODPY_PY_PREFIX}paho-mqtt/pub-multiple.py
-share/examples/${MODPY_PY_PREFIX}paho-mqtt/pub-single.py
-share/examples/${MODPY_PY_PREFIX}paho-mqtt/pub-utf8-27.py
-share/examples/${MODPY_PY_PREFIX}paho-mqtt/pub-wait.py
-share/examples/${MODPY_PY_PREFIX}paho-mqtt/session_present.py
-share/examples/${MODPY_PY_PREFIX}paho-mqtt/sub-callback.py
-share/examples/${MODPY_PY_PREFIX}paho-mqtt/sub-class.py
-share/examples/${MODPY_PY_PREFIX}paho-mqtt/sub-multiple-callback.py
-share/examples/${MODPY_PY_PREFIX}paho-mqtt/sub-simple.py
-share/examples/${MODPY_PY_PREFIX}paho-mqtt/sub-srv.py
-share/examples/${MODPY_PY_PREFIX}paho-mqtt/sub-ws.py
-share/examples/${MODPY_PY_PREFIX}paho-mqtt/sub.py
+share/examples/${MODPY_PY_PREFIX}paho-mqtt/aws_iot.py
+share/examples/${MODPY_PY_PREFIX}paho-mqtt/client_logger.py
+share/examples/${MODPY_PY_PREFIX}paho-mqtt/client_mqtt_clear_retain.py
+share/examples/${MODPY_PY_PREFIX}paho-mqtt/client_pub-wait.py
+share/examples/${MODPY_PY_PREFIX}paho-mqtt/client_session_present.py
+share/examples/${MODPY_PY_PREFIX}paho-mqtt/client_sub-class.py
+share/examples/${MODPY_PY_PREFIX}paho-mqtt/client_sub-multiple-callback.py
+share/examples/${MODPY_PY_PREFIX}paho-mqtt/client_sub-srv.py
+share/examples/${MODPY_PY_PREFIX}paho-mqtt/client_sub-ws.py
+share/examples/${MODPY_PY_PREFIX}paho-mqtt/client_sub.py
+share/examples/${MODPY_PY_PREFIX}paho-mqtt/context.py
+share/examples/${MODPY_PY_PREFIX}paho-mqtt/publish_multiple.py
+share/examples/${MODPY_PY_PREFIX}paho-mqtt/publish_single.py
+share/examples/${MODPY_PY_PREFIX}paho-mqtt/publish_utf8-27.py
+share/examples/${MODPY_PY_PREFIX}paho-mqtt/subscribe_callback.py
+share/examples/${MODPY_PY_PREFIX}paho-mqtt/subscribe_simple.py
