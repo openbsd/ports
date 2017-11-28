@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: External.pm,v 1.4 2017/11/28 10:45:44 espie Exp $
+# $OpenBSD: External.pm,v 1.5 2017/11/28 10:52:28 espie Exp $
 #
 # Copyright (c) 2017 Marc Espie <espie@openbsd.org>
 #
@@ -19,32 +19,6 @@ use strict;
 use warnings;
 
 # socket for external commands
-
-package DPB::External::Command;
-
-sub new
-{
-	my ($class, $line, $fh) = @_;
-	bless { line => $line, fh => $fh}, $class;
-}
-
-sub line
-{
-	my $self = shift;
-	return $self->{line};
-}
-
-sub print
-{
-	my $self = shift;
-	$self->{fh}->print(@_);
-}
-
-sub unknown_command
-{
-	my $self = shift;
-	$self->print("Unknown command: ", $self->line, "\ndpb\$ ");
-}
 
 package DPB::External;
 use IO::Socket;
@@ -66,10 +40,12 @@ sub server
 		    Type => SOCK_STREAM,
 		    Local => $path);
 	    	if (!defined $o->{server}) {
-			$state->fatal("Can't create socket named #1", $path);
+			$state->fatal("Can't create socket named #1: #2", 
+			    $path, $!);
 		}
 		chmod 0700, $path or 
-		    $state->fatal("Can't fix rights for socket #1", $path);
+		    $state->fatal("Can't enforce permissions for socket #1:#2", 
+			$path, $!);
 	    });
 	# NOW we can listen
 	$o->{server}->listen;
@@ -77,7 +53,21 @@ sub server
 	return $o;
 }
 
-sub peek
+sub handle_command
+{
+	my ($self, $line, $fh) = @_;
+	if ($line =~ m/^dontclean\s+(.*)/) {
+		$self->{state}->{builder}{dontclean}{$1} = 1;
+	} elsif ($line =~ m/^addhost\s+(.*)/) {
+		my @list = split(/\s+/, $1);
+		DPB::Config->add_host($self->{state}, @list);
+	} else {
+		$fh->print("Unknown command: ", $self->line, "\n");
+	}
+	$fh->print('dpb$ ');
+}
+
+sub receive_commands
 {
 	my $self = shift;
 	while (my @ready = $self->{select}->can_read(0)) {
@@ -93,40 +83,9 @@ sub peek
 					$fh->close;
 					$self->{select}->remove($fh);
 				} else {
-					$fh->print('dpb$ ');
-					push(@{$self->{commands}}, 
-					    DPB::External::Command->new(
-					    	$line, $fh));
+					$self->handle_command($line, $fh);
 				}
 			}
-		}
-	}
-}
-
-sub command
-{
-	my $self = shift;
-	$self->peek;
-	if (@{$self->{commands}} > 0) {
-		return shift @{$self->{commands}};
-	} else {
-		return undef;
-	}
-}
-
-sub receive_commands
-{
-	my $self = shift;
-	my $command;
-	while (defined($command = $self->command)) {
-		my $line = $command->line;
-		if ($line =~ m/^dontclean\s+(.*)/) {
-			$self->{state}->{builder}{dontclean}{$1} = 1;
-		} elsif ($line =~ m/^addhost\s+(.*)/) {
-			my @list = split(/\s+/, $1);
-			DPB::Config->add_host($self->{state}, @list);
-		} else {
-			$command->unknown_command;
 		}
 	}
 }
