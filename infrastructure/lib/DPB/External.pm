@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: External.pm,v 1.7 2017/11/28 13:17:49 espie Exp $
+# $OpenBSD: External.pm,v 1.8 2017/11/28 14:30:05 espie Exp $
 #
 # Copyright (c) 2017 Marc Espie <espie@openbsd.org>
 #
@@ -29,7 +29,7 @@ sub server
 	my ($class, $state) = @_;
 
 	my $o = bless {state => $state, 
-	    commands => []}, $class;
+	    subdirlist => {}}, $class;
 	my $path = $state->expand_path($state->{subst}->value('CONTROL'));
 
 	# this ensures the socket belongs to log_user.
@@ -56,19 +56,32 @@ sub server
 sub handle_command
 {
 	my ($self, $line, $fh) = @_;
+	my $state = $self->{state};
 	if ($line =~ m/^dontclean\s+(.*)/) {
-		$self->{state}->{builder}{dontclean}{$1} = 1;
+		for my $p (split(/\s+/, $1)) {
+			$state->{builder}{dontclean}{$p} = 1;
+		}
 	} elsif ($line =~ m/^addhost\s+(.*)/) {
 		my @list = split(/\s+/, $1);
-		DPB::Config->add_host($self->{state}, @list);
+		DPB::Config->add_host($state, @list);
 	} elsif ($line =~ m/^stats\b/) {
-		$fh->print($self->{state}->engine->statline, "\n");
+		$fh->print($state->engine->statline, "\n");
+	} elsif ($line =~ m/^addpath\s+(.*)/) {
+		$state->interpret_paths(split(/\s+/, $1),
+		    sub {
+			my ($pkgpath, $weight) = @_;
+			if (defined $weight) {
+				$state->heuristics->set_weight($pkgpath);
+			}
+			$pkgpath->add_to_subdirlist($self->{subdirlist});
+		    });
 	} elsif ($line =~ m/^help\b/) {
 		$fh->print(
 		    "Commands:\n",
 		    "\taddhost <hostline>\n",
+		    "\taddpath <fullpkgpath>...\n",
 		    "\tbye\n",
-		    "\tdontclean <pkgpath>\n",
+		    "\tdontclean <pkgpath>...\n",
 		    "\tstats\n"
 		);
 	} else {
@@ -80,6 +93,7 @@ sub handle_command
 sub receive_commands
 {
 	my $self = shift;
+
 	while (my @ready = $self->{select}->can_read(0)) {
 		foreach my $fh (@ready) {
 			if ($fh == $self->{server}) {
@@ -97,6 +111,15 @@ sub receive_commands
 				}
 			}
 		}
+	}
+
+	if (keys %{$self->{subdirlist}} > 0 && DPB::Core->avail) {
+		# XXX store value first, re-entrancy
+		my $subdirlist = $self->{subdirlist};
+		$self->{subdirlist} = {};
+		my $core = DPB::Core->get;
+		$self->{state}->grabber->grab_subdirs($core, $subdirlist, 
+		    undef);
 	}
 }
 
