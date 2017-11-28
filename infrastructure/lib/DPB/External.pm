@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: External.pm,v 1.8 2017/11/28 14:30:05 espie Exp $
+# $OpenBSD: External.pm,v 1.9 2017/11/28 15:38:07 espie Exp $
 #
 # Copyright (c) 2017 Marc Espie <espie@openbsd.org>
 #
@@ -24,6 +24,7 @@ package DPB::External;
 use IO::Socket;
 use IO::Select;
 
+my $motto = "shut up and hack!";
 sub server
 {
 	my ($class, $state) = @_;
@@ -66,6 +67,8 @@ sub handle_command
 		DPB::Config->add_host($state, @list);
 	} elsif ($line =~ m/^stats\b/) {
 		$fh->print($state->engine->statline, "\n");
+	} elsif ($line =~ m/^pf{6}\b/) {
+		$fh->print($motto, "\n");
 	} elsif ($line =~ m/^addpath\s+(.*)/) {
 		$state->interpret_paths(split(/\s+/, $1),
 		    sub {
