@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST-gtk3,v 1.1.1.1 2017/11/28 02:56:56 kevlo Exp $
+lib/gtk-3.0/3.0.0/immodules/im-fcitx.so
+@exec /usr/local/bin/gtk-query-immodules-3.0 --update-cache
+@unexec-delete /usr/local/bin/gtk-query-immodules-3.0 --update-cache

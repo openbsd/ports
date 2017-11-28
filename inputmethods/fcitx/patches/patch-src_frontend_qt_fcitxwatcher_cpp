@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_frontend_qt_fcitxwatcher_cpp,v 1.1.1.1 2017/11/28 02:56:56 kevlo Exp $
+
+Index: src/frontend/qt/fcitxwatcher.cpp
+--- src/frontend/qt/fcitxwatcher.cpp.orig
++++ src/frontend/qt/fcitxwatcher.cpp
+@@ -23,6 +23,7 @@
+ #include <QDBusServiceWatcher>
+ #include <QDir>
+ #include <QFileSystemWatcher>
++#include <errno.h>
+ #include <signal.h>
+ 
+ // utils function in fcitx-utils and fcitx-config

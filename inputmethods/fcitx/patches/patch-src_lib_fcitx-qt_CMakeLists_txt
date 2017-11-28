@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_lib_fcitx-qt_CMakeLists_txt,v 1.1.1.1 2017/11/28 02:56:56 kevlo Exp $
+
+Index: src/lib/fcitx-qt/CMakeLists.txt
+--- src/lib/fcitx-qt/CMakeLists.txt.orig
++++ src/lib/fcitx-qt/CMakeLists.txt
+@@ -57,7 +57,6 @@ set_target_properties(fcitx-qt
+                       PROPERTIES VERSION 0.1
+                       SOVERSION 0
+                       COMPILE_FLAGS "-fvisibility=hidden"
+-                      LINK_FLAGS "-Wl,--no-undefined"
+                       AUTOMOC TRUE
+ )
+ 

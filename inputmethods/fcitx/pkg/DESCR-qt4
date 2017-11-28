@@ -1,0 +1,4 @@
+QT4 input module for fcitx.
+
+Usage requires setting the following in the environment:
+export QT_IM_MODULE=fcitx

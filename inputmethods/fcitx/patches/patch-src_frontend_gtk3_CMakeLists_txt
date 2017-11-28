@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_frontend_gtk3_CMakeLists_txt,v 1.1.1.1 2017/11/28 02:56:56 kevlo Exp $
+
+Index: src/frontend/gtk3/CMakeLists.txt
+--- src/frontend/gtk3/CMakeLists.txt.orig
++++ src/frontend/gtk3/CMakeLists.txt
+@@ -23,8 +23,7 @@ set(FCITX_GTK3_IM_MODULE_SOURCES
+ 
+ add_library(im-fcitx-gtk3 MODULE ${FCITX_GTK3_IM_MODULE_SOURCES})
+ set_target_properties( im-fcitx-gtk3 PROPERTIES PREFIX ""
+-  COMPILE_FLAGS "-fvisibility=hidden" OUTPUT_NAME "im-fcitx"
+-  LINK_FLAGS "-Wl,--no-undefined")
++  COMPILE_FLAGS "-fvisibility=hidden" OUTPUT_NAME "im-fcitx")
+ 
+ target_link_libraries(im-fcitx-gtk3 XKBCommon::XKBCommon ${GTK3_LIBRARIES} ${GIO2_LIBRARIES}
+     fcitx-gclient fcitx-utils)

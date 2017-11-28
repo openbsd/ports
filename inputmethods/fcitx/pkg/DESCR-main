@@ -1,0 +1,7 @@
+Fcitx is an input method framework with support for many languages and
+scripts.  It has three built-in input method engines, Pinyin, QuWei and
+and Table-based input methods.
+
+Usage requires setting the following in the environment:
+export XMODIFIERS="@im=fcitx"
+

@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_lib_fcitx-config_CMakeLists_txt,v 1.1.1.1 2017/11/28 02:56:56 kevlo Exp $
+
+Index: src/lib/fcitx-config/CMakeLists.txt
+--- src/lib/fcitx-config/CMakeLists.txt.orig
++++ src/lib/fcitx-config/CMakeLists.txt
+@@ -21,9 +21,7 @@ target_link_libraries(fcitx-config fcitx-utils)
+ set_target_properties(fcitx-config
+   PROPERTIES VERSION 4.1
+   SOVERSION 4
+-  COMPILE_FLAGS "-fvisibility=hidden"
+-  LINK_FLAGS "-Wl,--no-undefined"
+-  )
++  COMPILE_FLAGS "-fvisibility=hidden")
+ 
+ configure_file(fcitx-config.pc.in ${CMAKE_CURRENT_BINARY_DIR}/fcitx-config.pc)
+ 

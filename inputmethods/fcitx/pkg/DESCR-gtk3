@@ -1,0 +1,4 @@
+GTK+3 input module for fcitx.
+
+Usage requires setting the following in the environment:
+export GTK_IM_MODULE="fcitx"

@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_frontend_gtk2_CMakeLists_txt,v 1.1.1.1 2017/11/28 02:56:56 kevlo Exp $
+
+Index: src/frontend/gtk2/CMakeLists.txt
+--- src/frontend/gtk2/CMakeLists.txt.orig
++++ src/frontend/gtk2/CMakeLists.txt
+@@ -29,7 +29,7 @@ set(FCITX_GTK2_IM_MODULE_SOURCES ${FCITX_GTK2_IM_MODUL
+ 
+ add_library(im-fcitx MODULE ${FCITX_GTK2_IM_MODULE_SOURCES})
+ set_target_properties( im-fcitx PROPERTIES PREFIX ""
+-  COMPILE_FLAGS "-fvisibility=hidden" LINK_FLAGS "-Wl,--no-undefined")
++  COMPILE_FLAGS "-fvisibility=hidden")
+ target_link_libraries(im-fcitx XKBCommon::XKBCommon ${GTK2_LIBRARIES} ${GIO2_LIBRARIES}
+     fcitx-gclient fcitx-utils)
+ install(TARGETS im-fcitx DESTINATION "${GTK2_IM_MODULEDIR}")
