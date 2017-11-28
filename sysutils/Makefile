@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.459 2017/11/13 17:25:08 steven Exp $
+# $OpenBSD: Makefile,v 1.460 2017/11/28 08:43:01 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -98,6 +98,7 @@
      SUBDIR += google-cloud-sdk
      SUBDIR += google-compute-engine
      SUBDIR += gource
+     SUBDIR += govmomi
      SUBDIR += gpioflicker
      SUBDIR += grive2
      SUBDIR += grub
