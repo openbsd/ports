@@ -1,8 +1,12 @@
-# $OpenBSD: Makefile,v 1.14 2015/06/10 20:01:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2017/11/28 03:01:44 kevlo Exp $
 
      SUBDIR =
      SUBDIR += anthy
      SUBDIR += cellwriter
+     SUBDIR += fcitx
+     SUBDIR += fcitx-anthy
+     SUBDIR += fcitx-chewing
+     SUBDIR += fcitx-tables
      SUBDIR += ibus
      SUBDIR += ibus-anthy
      SUBDIR += ibus-skk
