@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2017/05/13 13:19:42 benoit Exp $
+# $OpenBSD: Makefile,v 1.12 2017/11/28 11:52:32 jasper Exp $
 
 COMMENT =	DNS query performance tester from BIND 9
 
-V =		9.11.1
+V =		9.11.2
 DISTNAME =	bind-$V
 PKGNAME =	queryperf-${V:S/-P/pl/}
 CATEGORIES =	net benchmarks
-
-REVISION =	0
 
 MASTER_SITES +=	${MASTER_SITE_ISC:=bind9/$V/}
 
