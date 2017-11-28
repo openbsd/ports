@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: External.pm,v 1.5 2017/11/28 10:52:28 espie Exp $
+# $OpenBSD: External.pm,v 1.6 2017/11/28 13:13:22 espie Exp $
 #
 # Copyright (c) 2017 Marc Espie <espie@openbsd.org>
 #
@@ -61,8 +61,15 @@ sub handle_command
 	} elsif ($line =~ m/^addhost\s+(.*)/) {
 		my @list = split(/\s+/, $1);
 		DPB::Config->add_host($self->{state}, @list);
+	} elsif ($line =~ m/^help\b/) {
+		$fh->print(
+		    "Commands:\n",
+		    "\taddhost <hostline>\n",
+		    "\tbye\n",
+		    "\tdontclean <pkgpath>\n"
+		);
 	} else {
-		$fh->print("Unknown command: ", $self->line, "\n");
+		$fh->print("Unknown command: ", $line, " (help for details)\n");
 	}
 	$fh->print('dpb$ ');
 }
