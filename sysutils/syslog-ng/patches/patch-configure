@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.6 2017/11/10 21:58:26 steven Exp $
+$OpenBSD: patch-configure,v 1.7 2017/11/28 18:03:07 steven Exp $
 - avoid rebuilding libeventlog, already in devel/eventlog
 
 Index: configure
@@ -14,7 +14,7 @@ Index: configure
  
  
  old_LIBS=$LIBS
-@@ -17352,7 +17349,7 @@ fi
+@@ -17665,7 +17662,7 @@ fi
   else
      pkg_failed=untried
  fi
