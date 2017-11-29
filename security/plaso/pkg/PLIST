@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2017/11/06 09:03:26 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.3 2017/11/29 09:47:07 rpointel Exp $
 bin/image_export.py
 bin/log2timeline.py
 bin/pinfo.py
@@ -109,6 +109,8 @@ lib/python${MODPY_VERSION}/site-packages/plaso/cli/helpers/output_modules.py
 lib/python${MODPY_VERSION}/site-packages/plaso/cli/helpers/output_modules.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/cli/helpers/parsers.py
 lib/python${MODPY_VERSION}/site-packages/plaso/cli/helpers/parsers.pyc
+lib/python${MODPY_VERSION}/site-packages/plaso/cli/helpers/profiling.py
+lib/python${MODPY_VERSION}/site-packages/plaso/cli/helpers/profiling.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/cli/helpers/server_config.py
 lib/python${MODPY_VERSION}/site-packages/plaso/cli/helpers/server_config.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/cli/helpers/shared_4n6time_output.py
@@ -385,6 +387,8 @@ lib/python${MODPY_VERSION}/site-packages/plaso/formatters/skydrivelog.py
 lib/python${MODPY_VERSION}/site-packages/plaso/formatters/skydrivelog.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/formatters/skype.py
 lib/python${MODPY_VERSION}/site-packages/plaso/formatters/skype.pyc
+lib/python${MODPY_VERSION}/site-packages/plaso/formatters/sophos_av.py
+lib/python${MODPY_VERSION}/site-packages/plaso/formatters/sophos_av.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/formatters/ssh.py
 lib/python${MODPY_VERSION}/site-packages/plaso/formatters/ssh.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/formatters/symantec.py
@@ -453,6 +457,8 @@ lib/python${MODPY_VERSION}/site-packages/plaso/lib/errors.py
 lib/python${MODPY_VERSION}/site-packages/plaso/lib/errors.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/lib/lexer.py
 lib/python${MODPY_VERSION}/site-packages/plaso/lib/lexer.pyc
+lib/python${MODPY_VERSION}/site-packages/plaso/lib/line_reader_file.py
+lib/python${MODPY_VERSION}/site-packages/plaso/lib/line_reader_file.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/lib/objectfilter.py
 lib/python${MODPY_VERSION}/site-packages/plaso/lib/objectfilter.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/lib/pfilter.py
@@ -574,6 +580,8 @@ lib/python${MODPY_VERSION}/site-packages/plaso/parsers/docker.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/docker.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/dpkg.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/dpkg.pyc
+lib/python${MODPY_VERSION}/site-packages/plaso/parsers/dsv_parser.py
+lib/python${MODPY_VERSION}/site-packages/plaso/parsers/dsv_parser.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/esedb.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/esedb.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/esedb_plugins/
@@ -692,6 +700,8 @@ lib/python${MODPY_VERSION}/site-packages/plaso/parsers/shared/shell_items.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/shared/shell_items.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/skydrivelog.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/skydrivelog.pyc
+lib/python${MODPY_VERSION}/site-packages/plaso/parsers/sophos_av.py
+lib/python${MODPY_VERSION}/site-packages/plaso/parsers/sophos_av.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/sqlite.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/sqlite.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/sqlite_plugins/

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2017/11/06 09:03:26 rpointel Exp $
+# $OpenBSD: Makefile,v 1.3 2017/11/29 09:47:07 rpointel Exp $
 
 COMMENT =		engine and tools to automate creation of super timeline
 
-MODPY_EGG_VERSION =	20170930
+MODPY_EGG_VERSION =	20171118
 DISTNAME =		plaso-${MODPY_EGG_VERSION}
 
 CATEGORIES =		security
