@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.20 2017/11/29 11:52:49 jca Exp $
+# $OpenBSD: Makefile,v 1.21 2017/11/29 11:57:02 jca Exp $
 
+# http://build-failures.rhaalovely.net//alpha/2017-11-19/devel/gtest.log
 BROKEN-alpha =	googletest/test/gtest_unittest.cc:2730: error: unrecognizable insn:
 
 COMMENT =	C++ unit test framework
