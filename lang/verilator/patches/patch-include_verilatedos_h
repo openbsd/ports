@@ -1,0 +1,20 @@
+$OpenBSD: patch-include_verilatedos_h,v 1.1 2017/11/29 13:24:13 jca Exp $
+
+__builtin_unreachable() available with gcc>=4.5
+
+Index: include/verilatedos.h
+--- include/verilatedos.h.orig
++++ include/verilatedos.h
+@@ -46,7 +46,11 @@
+ # define VL_FUNC  __func__
+ # define VL_LIKELY(x)	__builtin_expect(!!(x), 1)
+ # define VL_UNLIKELY(x)	__builtin_expect(!!(x), 0)
+-# define VL_UNREACHABLE __builtin_unreachable();
++# if (__GNUC__ == 4 && __GNUC_MINOR__ >= 5) || __GNUC__ > 4 || defined(__clang__)
++#  define VL_UNREACHABLE __builtin_unreachable();
++# else
++#  define VL_UNREACHABLE ;
++# endif
+ # define VL_PREFETCH_RD(p) __builtin_prefetch((p),0)
+ # define VL_PREFETCH_RW(p) __builtin_prefetch((p),1)
+ #elif defined(_MSC_VER)
