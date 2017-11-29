@@ -1,0 +1,2 @@
+Sub::Attribute is a role to define attribute handlers for specific
+subroutine attributes.

@@ -1,0 +1,18 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/11/29 13:05:14 bluhm Exp $
+${P5ARCH}/
+${P5ARCH}/Sub/
+${P5ARCH}/Sub/Attribute.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/Sub/
+${P5ARCH}/auto/Sub/Attribute/
+${P5ARCH}/auto/Sub/Attribute/Attribute.so
+@man man/man3p/Sub::Attribute.3p
+share/examples/p5-Sub-Attribute/
+share/examples/p5-Sub-Attribute/example_abstract.pl
+share/examples/p5-Sub-Attribute/example_exporter.pl
+share/examples/p5-Sub-Attribute/lib/
+share/examples/p5-Sub-Attribute/lib/Attribute/
+share/examples/p5-Sub-Attribute/lib/Attribute/Abstract.pm
+share/examples/p5-Sub-Attribute/lib/Attribute/Exporter.pm
+share/examples/p5-Sub-Attribute/loud.pl
+share/examples/p5-Sub-Attribute/namespace.pl
