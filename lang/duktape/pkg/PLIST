@@ -1,4 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/03/27 15:39:00 fcambus Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/11/29 13:57:47 bcallah Exp $
 @bin bin/duk
+include/duk_config.h
+include/duktape.h
+@lib lib/libduktape.so.${LIBduktape_VERSION}
 share/examples/duktape/
 share/examples/duktape/mandel.js
