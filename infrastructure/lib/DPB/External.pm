@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: External.pm,v 1.9 2017/11/28 15:38:07 espie Exp $
+# $OpenBSD: External.pm,v 1.10 2017/11/29 11:21:49 espie Exp $
 #
 # Copyright (c) 2017 Marc Espie <espie@openbsd.org>
 #
@@ -123,6 +123,8 @@ sub receive_commands
 		my $core = DPB::Core->get;
 		$self->{state}->grabber->grab_subdirs($core, $subdirlist, 
 		    undef);
+		$self->{state}->grabber->complete_subdirs($core, undef);
+		$core->mark_ready;
 	}
 }
 
