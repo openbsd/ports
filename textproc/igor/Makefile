@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.4 2015/08/30 14:30:22 schwarze Exp $
+# $OpenBSD: Makefile,v 1.5 2017/11/29 13:26:36 schwarze Exp $
 
 COMMENT =		FreeBSD Documentation Project sanity check script
-VERSION =		1.555
+VERSION =		1.595
 DISTNAME =		igor-${VERSION}
 CATEGORIES =		textproc
 HOMEPAGE =		http://www.wonkity.com/~wblock/igor/
