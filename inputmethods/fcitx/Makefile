@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/11/28 02:56:56 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2017/11/29 01:27:36 kevlo Exp $
 
 COMMENT-main =	flexible input method framework
 COMMENT-gtk3 = 	fcitx for GTK+3
@@ -9,6 +9,7 @@ DISTNAME = 	fcitx-$V
 PKGNAME-main =	fcitx-$V
 PKGNAME-gtk3 =	fcitx-gtk3-$V
 PKGNAME-qt4 =	fcitx-qt4-$V
+REVISION =	0
 
 SHARED_LIBS +=	fcitx-config	0.0 # 4.1
 SHARED_LIBS +=	fcitx-core	0.0 # 0.3
@@ -37,8 +38,10 @@ WANTLIB-main +=		X11 Xext Xfixes Xinerama Xrender c cairo dbus-1 \
 
 BUILD_DEPENDS =		devel/gettext-tools \
 			devel/iso-codes \
-			devel/kf5/extra-cmake-modules
-RUN_DEPENDS-main =	devel/desktop-file-utils
+			devel/kf5/extra-cmake-modules \
+			shells/bash
+RUN_DEPENDS-main =	devel/desktop-file-utils \
+			shells/bash
 LIB_DEPENDS-main =	devel/gettext-tools \
 			devel/libexecinfo \
 			sysutils/e2fsprogs \
