@@ -1,22 +1,31 @@
-# $OpenBSD: Makefile,v 1.13 2016/03/20 16:12:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2017/11/29 21:04:38 job Exp $
 
-COMMENT=	Radix tree implementation for Python
+COMMENT =		Radix tree implementation for Python
 
-DISTNAME =	py-radix-0.5
-CATEGORIES=	devel net
+MODPY_EGG_VERSION = 	0.10.0
+DISTNAME =		py-radix-${MODPY_EGG_VERSION}
+CATEGORIES=		devel net
 
-MASTER_SITES=	http://www2.mindrot.org/files/py-radix/
-HOMEPAGE=	http://www.mindrot.org/py-radix.html
+HOMEPAGE =		https://github.com/mjschultz/py-radix/
+
+MAINTAINER =		Job Snijders <job@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
-MODULES=		lang/python
+MODPY_PI =		Yes
+MODPY_SETUPTOOLS =	Yes
 
+FLAVORS=		python3
+FLAVOR?=
+
+MODULES =		lang/python
 WANTLIB +=		${MODPY_WANTLIB} pthread
 
-do-test: fake
-	@cd ${WRKSRC} && ${MAKE_ENV} \
-	    PYTHONPATH=${WRKINST}${MODPY_SITEPKG} ${MODPY_BIN} ./test.py
+TEST_DEPENDS =		devel/py-nose${MODPY_FLAVOR} \
+			devel/py-coverage${MODPY_FLAVOR}
+
+do-test:
+	@cd ${WRKSRC} && ${MODPY_BIN} setup.py nosetests
 
 .include <bsd.port.mk>
