@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.12 2017/08/02 22:57:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2017/11/29 11:58:44 jca Exp $
 
+BROKEN-powerpc=	libgcc/libgcc2.c:1999:1: internal compiler error: in create_edge, at cgraph.c:850
 # see ${WRKBUILD}/arm-none-eabi/libgcc/config.log
 BROKEN-i386=	ICE: Floating point exception from xgcc during libgcc autoconf "checking for suffix of object files"
 BROKEN-armv7=	error during libgcc autoconf "checking for suffix of object files", probably similar to i386
