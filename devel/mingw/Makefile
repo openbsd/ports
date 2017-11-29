@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2017/07/28 09:35:40 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2017/11/29 13:14:40 espie Exp $
 
 COMMENT =	development environment for native Windows applications
 
@@ -28,6 +28,9 @@ DISTFILES =	${DISTNAME}${EXTRACT_SUFX} ${TOOLCHAIN}
 
 # In binutils, ld/scripttempl/pe.sc requires bash to do string replacement.
 BUILD_DEPENDS =	shells/bash
+
+# some script will get gsed if it's around, don't fight it
+BUILD_DEPENDS += textproc/gsed
 
 SCRIPT_MASTER = files/Other/Cross-Hosted%20MinGW%20Build%20Tool/${BASENAME}-${V}
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=mingw/}${SCRIPT_MASTER}-rc1
