@@ -1,0 +1,5 @@
+Lua bindings to libpsl, a C library that handles the Public Suffix List.
+
+The PSL is a list of domains where there may be sub-domains outside of the
+administrator's control. e.g. the administrator of '.com' does not manage
+'github.com'.
