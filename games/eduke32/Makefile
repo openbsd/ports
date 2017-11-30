@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2017/11/22 03:43:46 kirby Exp $
+# $OpenBSD: Makefile,v 1.16 2017/11/30 03:32:32 kirby Exp $
 
 COMMENT =	Enhanced Duke Nukem 3D engine
 RDATE =		20171105
@@ -50,7 +50,8 @@ MAKE_FLAGS +=	PRETTY_OUTPUT=0 \
 		CC="${CC}" \
 		CXX="${CXX}" \
 		STRIP=true \
-		PACKAGE_REPOSITORY=1
+		PACKAGE_REPOSITORY=1 \
+		HAVE_XMP=0
 MAKE_FILE =	GNUmakefile
 USE_GMAKE =	Yes
 NO_TEST =	Yes
