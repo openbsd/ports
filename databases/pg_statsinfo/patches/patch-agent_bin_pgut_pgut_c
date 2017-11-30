@@ -1,0 +1,19 @@
+$OpenBSD: patch-agent_bin_pgut_pgut_c,v 1.1 2017/11/30 16:16:24 jeremy Exp $
+
+Fix build with PostgreSQL 10.
+
+Index: agent/bin/pgut/pgut.c
+--- agent/bin/pgut/pgut.c.orig
++++ agent/bin/pgut/pgut.c
+@@ -388,7 +388,10 @@ parse_time(const char *value, time_t *time)
+ static char *
+ prompt_for_password(void)
+ {
+-	return simple_prompt("Password: ", 100, false);
++	char * dest;
++	dest = malloc(100);
++	simple_prompt("Password: ", dest, 100, false);
++	return dest;
+ }
+ 
+ #if PG_VERSION_NUM < 80300

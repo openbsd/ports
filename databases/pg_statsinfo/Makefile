@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2016/12/18 18:21:03 jeremy Exp $
+# $OpenBSD: Makefile,v 1.10 2017/11/30 16:16:24 jeremy Exp $
 
 COMMENT =	monitor PostgreSQL activity & statistics
 
-DISTNAME =	pg_statsinfo-3.2.1
+DISTNAME =	pg_statsinfo-3.3.0
 CATEGORIES =	databases
-REVISION =	1
 
 HOMEPAGE =	http://pgstatsinfo.sourceforge.net/
 
