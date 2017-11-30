@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2017/11/21 20:41:18 landry Exp $
+# $OpenBSD: Makefile,v 1.21 2017/11/30 16:23:07 jeremy Exp $
 
 COMMENT =	geospatial routing extension for PostgreSQL
 
@@ -6,6 +6,8 @@ V =		2.5.2
 GH_TAGNAME =	v${V}
 GH_PROJECT =	pgrouting
 GH_ACCOUNT =	pgRouting
+
+REVISION =	0
 
 CATEGORIES =	geo databases
 
