@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.230 2017/11/13 16:30:55 pea Exp $
+# $OpenBSD: Makefile,v 1.231 2017/11/30 16:13:12 pea Exp $
 
 COMMENT-main=	PostgreSQL RDBMS (client)
 COMMENT-server=	PostgreSQL RDBMS (server)
@@ -7,8 +7,8 @@ COMMENT-contrib=PostgreSQL RDBMS contributions
 COMMENT-plpython=Python procedural language for PostgreSQL
 COMMENT-pg_upgrade=Support for upgrading PostgreSQL data from previous version
 
-VERSION=	9.6.6
-PREV_MAJOR=	9.5
+VERSION=	10.1
+PREV_MAJOR=	9.6
 DISTNAME=	postgresql-${VERSION}
 PKGNAME-main=	postgresql-client-${VERSION}
 PKGNAME-server=	postgresql-server-${VERSION}
@@ -18,10 +18,10 @@ PKGNAME-plpython=postgresql-plpython-${VERSION}
 PKGNAME-pg_upgrade=postgresql-pg_upgrade-${VERSION}
 
 CATEGORIES=	databases
-SHARED_LIBS=	ecpg		7.8 \
-		ecpg_compat	4.8 \
-		pgtypes		4.7 \
-		pq		6.9 
+SHARED_LIBS=	ecpg		7.9 \
+		ecpg_compat	4.9 \
+		pgtypes		4.8 \
+		pq		6.10 
 
 HOMEPAGE=	http://www.postgresql.org/
 
@@ -96,10 +96,10 @@ WANTLIB-server=	${WANTLIB-main} perl pq>=4
 RUN_DEPENDS-contrib= databases/postgresql,-server=${VERSION}
 LIB_DEPENDS-contrib= databases/postgresql=${VERSION} \
 		     ${LIB_DEPENDS-main}
-WANTLIB-contrib=	${WANTLIB-main} pq>=4
+WANTLIB-contrib=	${WANTLIB-main} pq>=4 perl
 
 RUN_DEPENDS-pg_upgrade=	databases/postgresql,-server=${VERSION} \
-			databases/postgresql-previous
+			databases/postgresql-previous>=${PREV_MAJOR}
 LIB_DEPENDS-pg_upgrade= databases/postgresql=${VERSION} \
 		     ${LIB_DEPENDS-main}
 WANTLIB-pg_upgrade=	${WANTLIB-main} pq>=4

@@ -19,3 +19,9 @@ The OpenBSD PostgreSQL port build produces several packages:
 
 * postgresql-contrib-${VERSION} - contributions
   Additional utilities and usefull libraries.
+
+* postgresql-plpython-${VERSION} - PL/Python procedural language.
+
+* postgresql-pg_upgrade-${VERSION} - Used to upgrade database
+  clusters directly from the previous version without a dump
+  and restore.

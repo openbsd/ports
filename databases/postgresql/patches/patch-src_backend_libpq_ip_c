@@ -1,11 +1,12 @@
-$OpenBSD: patch-src_backend_libpq_ip_c,v 1.2 2016/02/13 21:54:28 sthen Exp $
+$OpenBSD: patch-src_backend_libpq_ip_c,v 1.3 2017/11/30 16:13:12 pea Exp $
 
 Use the address family from the address, not from the netmask,
 since the latter is unreliable. Fixes "samenet"/"samehost".
 
---- src/backend/libpq/ip.c.orig	Mon Feb  8 21:15:19 2016
-+++ src/backend/libpq/ip.c	Fri Feb 12 17:18:09 2016
-@@ -423,17 +423,16 @@ run_ifaddr_callback(PgIfAddrCallback callback, void *c
+Index: src/backend/libpq/ifaddr.c
+--- src/backend/libpq/ifaddr.c.orig
++++ src/backend/libpq/ifaddr.c
+@@ -200,17 +200,16 @@ run_ifaddr_callback(PgIfAddrCallback callback, void *c
  	/* Check that the mask is valid */
  	if (mask)
  	{

@@ -1,5 +1,21 @@
-@comment $OpenBSD: PLIST-plpython,v 1.6 2014/09/02 13:39:39 pea Exp $
+@comment $OpenBSD: PLIST-plpython,v 1.7 2017/11/30 16:13:12 pea Exp $
+include/postgresql/server/plpy_util.h
+include/postgresql/server/plpython.h
+lib/postgresql/hstore_plpython2.so
+lib/postgresql/ltree_plpython2.so
 lib/postgresql/plpython2.so
+share/postgresql/extension/hstore_plpython2u--1.0.sql
+share/postgresql/extension/hstore_plpython2u.control
+share/postgresql/extension/hstore_plpython3u--1.0.sql
+share/postgresql/extension/hstore_plpython3u.control
+share/postgresql/extension/hstore_plpythonu--1.0.sql
+share/postgresql/extension/hstore_plpythonu.control
+share/postgresql/extension/ltree_plpython2u--1.0.sql
+share/postgresql/extension/ltree_plpython2u.control
+share/postgresql/extension/ltree_plpython3u--1.0.sql
+share/postgresql/extension/ltree_plpython3u.control
+share/postgresql/extension/ltree_plpythonu--1.0.sql
+share/postgresql/extension/ltree_plpythonu.control
 share/postgresql/extension/plpython2u--1.0.sql
 share/postgresql/extension/plpython2u--unpackaged--1.0.sql
 share/postgresql/extension/plpython2u.control
