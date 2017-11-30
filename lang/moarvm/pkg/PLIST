@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2017/11/25 21:50:50 afresh1 Exp $
+@comment $OpenBSD: PLIST,v 1.10 2017/11/30 19:36:34 afresh1 Exp $
 @bin bin/moar
 include/libuv/
 include/libuv/android-ifaddrs.h
@@ -139,7 +139,7 @@ include/moar/io/syncsocket.h
 include/moar/io/timers.h
 include/moar/jit/
 include/moar/jit/compile.h
-include/moar/jit/core_templates.h
+%%jit%%
 include/moar/jit/expr.h
 include/moar/jit/expr_ops.h
 include/moar/jit/graph.h

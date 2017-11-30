@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2017/11/25 21:50:50 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.17 2017/11/30 19:36:34 afresh1 Exp $
 
 ONLY_FOR_ARCHS =	amd64 arm i386 mips64 mips64el powerpc sparc64
 BROKEN-arm =		missing atomic ops (both AO_* and gcc builtin)
@@ -9,6 +9,7 @@ COMMENT =		virtual machine for nqp/rakudo
 V =			2017.10
 DISTNAME =		MoarVM-$V
 PKGNAME =		moarvm-$V
+REVISION =		0
 
 SHARED_LIBS =		moar	8.0
 
@@ -30,6 +31,12 @@ LIB_DEPENDS =		devel/libffi \
 			devel/boehm-gc,-atomic
 
 MAKE_FLAGS =		NOISY=1
+
+.if ${MACHINE_ARCH} == "amd64"
+PKG_ARGS+=-Djit=1
+.else
+PKG_ARGS+=-Djit=0
+.endif
 
 CONFIGURE_STYLE =	simple
 CONFIGURE_SCRIPT =	/usr/bin/perl Configure.pl
