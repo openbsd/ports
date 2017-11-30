@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2017/11/29 01:27:36 kevlo Exp $
+# $OpenBSD: Makefile,v 1.3 2017/11/30 02:39:15 kevlo Exp $
 
 COMMENT-main =	flexible input method framework
 COMMENT-gtk3 = 	fcitx for GTK+3
@@ -37,6 +37,7 @@ WANTLIB-main +=		X11 Xext Xfixes Xinerama Xrender c cairo dbus-1 \
 			pthread uuid xkbfile xml2
 
 BUILD_DEPENDS =		devel/gettext-tools \
+			devel/gobject-introspection \
 			devel/iso-codes \
 			devel/kf5/extra-cmake-modules \
 			shells/bash
