@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.552 2017/11/20 19:22:05 kili Exp $
+# $OpenBSD: Makefile,v 1.553 2017/11/30 20:15:18 jasper Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -361,6 +361,8 @@
      SUBDIR += py-defusedxml,python3
      SUBDIR += py-demjson
      SUBDIR += py-demjson,python3
+     SUBDIR += py-dicttoxml
+     SUBDIR += py-dicttoxml,python3
      SUBDIR += py-docutils
      SUBDIR += py-docutils,python3
      SUBDIR += py-elasticsearch
@@ -417,6 +419,8 @@
      SUBDIR += py-sphinx_rtd_theme,python3
      SUBDIR += py-stemmer
      SUBDIR += py-stemmer,python3
+     SUBDIR += py-unicodecsv
+     SUBDIR += py-unicodecsv,python3
      SUBDIR += py-unidecode
      SUBDIR += py-unidecode,python3
      SUBDIR += py-vatnumber
