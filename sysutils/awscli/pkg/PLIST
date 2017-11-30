@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.44 2017/10/06 15:17:57 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.45 2017/11/30 09:49:55 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
@@ -228,6 +228,19 @@ lib/python${MODPY_VERSION}/site-packages/awscli/customizations/generatecliskelet
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/generatecliskeleton.pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/globalargs.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/globalargs.pyc
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/history/
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/history/__init__.py
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/history/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/history/commands.py
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/history/commands.pyc
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/history/constants.py
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/history/constants.pyc
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/history/db.py
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/history/db.pyc
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/history/list.py
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/history/list.pyc
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/history/show.py
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/history/show.pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/iamvirtmfa.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/iamvirtmfa.pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/iot.py
