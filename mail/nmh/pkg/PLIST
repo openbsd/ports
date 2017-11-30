@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2014/06/18 05:51:47 pascal Exp $
+@comment $OpenBSD: PLIST,v 1.13 2017/11/30 11:14:53 pascal Exp $
 @bin bin/ali
 @bin bin/anno
 @bin bin/burst
@@ -17,7 +17,9 @@
 @bin bin/mark
 @bin bin/mhbuild
 @bin bin/mhfixmsg
+@bin bin/mhical
 @bin bin/mhlist
+@bin bin/mhlogin
 bin/mhmail
 @bin bin/mhn
 @bin bin/mhparam
@@ -25,7 +27,6 @@ bin/mhmail
 @bin bin/mhshow
 @bin bin/mhstore
 @bin bin/msgchk
-@bin bin/msh
 @bin bin/new
 @bin bin/next
 @bin bin/packf
@@ -47,16 +48,20 @@ bin/sendfiles
 @bin bin/whom
 lib/nmh/
 lib/nmh/MailAliases
+lib/nmh/bash_completion_nmh
 lib/nmh/components
 lib/nmh/digestcomps
 lib/nmh/distcomps
 lib/nmh/forwcomps
+lib/nmh/mhical.12hour
+lib/nmh/mhical.24hour
 lib/nmh/mhl.body
 lib/nmh/mhl.digest
 lib/nmh/mhl.format
 lib/nmh/mhl.forward
 lib/nmh/mhl.headers
 lib/nmh/mhl.reply
+lib/nmh/mhl.replywithoutbody
 lib/nmh/mhn.defaults
 lib/nmh/mhshow.marker
 lib/nmh/mts.conf
@@ -64,6 +69,7 @@ lib/nmh/rcvdistcomps
 lib/nmh/rcvdistcomps.outbox
 lib/nmh/replcomps
 lib/nmh/replgroupcomps
+lib/nmh/rmmproc.messageid
 lib/nmh/scan.MMDDYY
 lib/nmh/scan.YYYYMMDD
 lib/nmh/scan.curses
@@ -75,21 +81,20 @@ lib/nmh/scan.size
 lib/nmh/scan.time
 lib/nmh/scan.timely
 lib/nmh/scan.unseen
-@bin libexec/ap
-@bin libexec/conflict
-@bin libexec/dp
-@bin libexec/fmtdump
-@bin libexec/mhl
-@bin libexec/mhtest
-@bin libexec/mkstemp
-@bin libexec/post
-@bin libexec/rcvdist
-@bin libexec/rcvpack
-@bin libexec/rcvstore
-@bin libexec/rcvtty
-@bin libexec/slocal
-libexec/spost
-@bin libexec/viamail
+libexec/nmh/
+@bin libexec/nmh/ap
+@bin libexec/nmh/dp
+@bin libexec/nmh/fmtdump
+@bin libexec/nmh/mhl
+@bin libexec/nmh/mkstemp
+@bin libexec/nmh/post
+@bin libexec/nmh/rcvdist
+@bin libexec/nmh/rcvpack
+@bin libexec/nmh/rcvstore
+@bin libexec/nmh/rcvtty
+@bin libexec/nmh/slocal
+libexec/nmh/spost
+@bin libexec/nmh/viamail
 @man man/man1/ali.1
 @man man/man1/anno.1
 @man man/man1/burst.1
@@ -109,8 +114,10 @@ libexec/spost
 @man man/man1/mh-mkstemp.1
 @man man/man1/mhbuild.1
 @man man/man1/mhfixmsg.1
+@man man/man1/mhical.1
 @man man/man1/mhl.1
 @man man/man1/mhlist.1
+@man man/man1/mhlogin.1
 @man man/man1/mhmail.1
 @man man/man1/mhn.1
 @man man/man1/mhparam.1
@@ -118,7 +125,6 @@ libexec/spost
 @man man/man1/mhshow.1
 @man man/man1/mhstore.1
 @man man/man1/msgchk.1
-@man man/man1/msh.1
 @man man/man1/new.1
 @man man/man1/next.1
 @man man/man1/packf.1
@@ -152,16 +158,15 @@ libexec/spost
 @man man/man5/mh-tailor.5
 @man man/man5/mh_profile.5
 @man man/man5/mts.conf.5
+@man man/man7/MH.7
 @man man/man7/mh-chart.7
 @man man/man7/mh-mime.7
 @man man/man7/nmh.7
 @man man/man8/ap.8
-@man man/man8/conflict.8
 @man man/man8/dp.8
 @man man/man8/fmtdump.8
 @man man/man8/post.8
 share/doc/nmh/
-share/doc/nmh/COMPLETION-BASH
 share/doc/nmh/COMPLETION-TCSH
 share/doc/nmh/COMPLETION-ZSH
 share/doc/nmh/COPYRIGHT
@@ -175,7 +180,6 @@ share/doc/nmh/README
 share/doc/nmh/README-ATTACHMENTS
 share/doc/nmh/README-HOOKS
 share/doc/nmh/README-components
-share/doc/nmh/README-iCalendar
 share/doc/nmh/README.SASL
 share/doc/nmh/README.about
 share/doc/nmh/README.developers
@@ -183,7 +187,8 @@ share/doc/nmh/README.manpages
 share/doc/nmh/TODO
 share/doc/nmh/VERSION
 share/doc/nmh/contrib/
-share/doc/nmh/contrib/build_nmh
+share/doc/nmh/contrib/localpostproc
 share/doc/nmh/contrib/ml
+share/doc/nmh/contrib/replaliases
 share/doc/nmh/contrib/replyfilter
 share/doc/nmh/contrib/vpick

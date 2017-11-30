@@ -1,24 +1,24 @@
-# $OpenBSD: Makefile,v 1.41 2017/11/15 21:28:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.42 2017/11/30 11:14:53 pascal Exp $
 
 COMMENT=		new MH mail handling program
 
-DISTNAME=		nmh-1.6
+DISTNAME=		nmh-1.7
 CATEGORIES=		mail
 MASTER_SITES=		${MASTER_SITE_SAVANNAH:=nmh/}
 HOMEPAGE=		http://www.nongnu.org/nmh/
-REVISION=		1
 
 # BSD-like
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		c crypto edit iconv ssl termcap
+WANTLIB=		c crypto curses edit iconv ssl
 
-SYSCONFDIR=		${PREFIX}/lib/nmh
+SYSCONFDIR=		${PREFIX}/lib
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--libdir='$${exec_prefix}/libexec' \
 			--with-locking=fcntl \
 			--with-readline \
-			--with-tls
+			--with-tls \
+			--without-oauth
 
 LIB_DEPENDS =		converters/libiconv
 # needed for replyfilter
@@ -38,9 +38,9 @@ USE_GROFF =		Yes
 WANTLIB +=		sasl2
 LIB_DEPENDS+=		security/cyrus-sasl2
 CONFIGURE_ARGS+=	--with-cyrus-sasl
+.else
+CONFIGURE_ARGS+=	--without-cyrus-sasl
 .endif
-
-NO_TEST=		Yes
 
 post-install:
 	${INSTALL_SCRIPT} ${PREFIX}/share/doc/nmh/contrib/replyfilter \
