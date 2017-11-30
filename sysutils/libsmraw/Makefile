@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2017/11/21 00:13:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2017/11/30 14:27:23 jca Exp $
 
 COMMENT =	library and tools to access the (split) RAW image format
 
@@ -30,6 +30,7 @@ WRKDIST =	${WRKDIR}/${PKGNAME}
 
 MODULES +=	lang/python
 
+BUILD_DEPENDS =	devel/gettext-tools
 LIB_DEPENDS +=	devel/libbfio
 
 TEST_DEPENDS +=	shells/bash
