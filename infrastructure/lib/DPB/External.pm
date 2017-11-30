@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: External.pm,v 1.11 2017/11/30 11:17:53 espie Exp $
+# $OpenBSD: External.pm,v 1.12 2017/11/30 14:54:00 espie Exp $
 #
 # Copyright (c) 2017 Marc Espie <espie@openbsd.org>
 #
@@ -54,6 +54,25 @@ sub server
 	return $o;
 }
 
+sub status
+{
+	my ($self, $v) = @_;
+	if (!defined $v->{info}) {
+		return "unscanned/unknown";
+	}
+	if ($v->{info} == DPB::PortInfo->stub) {
+		return "ignored";
+	}
+	my $status = $self->{state}->{engine}->status($v);
+	if (!defined $status) {
+		$status = DPB::Core->status($v);
+	}
+	if (!defined $status) {
+		return "???";
+	}
+	return $status;
+}
+
 sub handle_command
 {
 	my ($self, $line, $fh) = @_;
@@ -69,6 +88,12 @@ sub handle_command
 		}
 	} elsif ($line =~ m/^stats\b/) {
 		$fh->print($state->engine->statline, "\n");
+	} elsif ($line =~ m/^status\s+(.*)/) {
+		for my $p (split(/\s+/, $1)) {
+			my $v = DPB::PkgPath->new($p);
+			$v->quick_dump($fh);
+			$fh->print("\t", $self->status($v), "\n");
+		}
 	} elsif ($line =~ m/^pf{6}\b/) {
 		$fh->print($motto, "\n");
 	} elsif ($line =~ m/^addpath\s+(.*)/) {
@@ -87,7 +112,8 @@ sub handle_command
 		    "\taddpath <fullpkgpath>...\n",
 		    "\tbye\n",
 		    "\tdontclean <pkgpath>...\n",
-		    "\tstats\n"
+		    "\tstats\n",
+		    "\tstatus <fullpkgpath>...\n"
 		);
 	} else {
 		$fh->print("Unknown command: ", $line, " (help for details)\n");

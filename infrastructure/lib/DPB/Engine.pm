@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.124 2017/05/04 23:40:29 espie Exp $
+# $OpenBSD: Engine.pm,v 1.125 2017/11/30 14:54:00 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -65,6 +65,25 @@ sub new
 	$o->{log} = $state->logger->append("engine");
 	$o->{stats} = DPB::Stats->new($state);
 	return $o;
+}
+
+sub status
+{
+	my ($self, $v) = @_;
+	for my $k (qw(built tobuild installable)) {
+		if ($self->{$k}{$v}) {
+			return $k;
+		}
+	}
+	if ($self->{buildable}->contains($v)) {
+		return "buildable";
+	}
+	for my $k (qw(errors locks nfslist)) {
+		if (grep {$_ == $v} @{$self->{$k}}) {
+			return $k;
+		}
+	}
+	return undef;
 }
 
 sub recheck_errors
