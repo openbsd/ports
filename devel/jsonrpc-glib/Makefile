@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/11/03 11:32:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2017/11/30 14:23:35 jca Exp $
 
 COMMENT=		JSON-RPC library for GLib
 
@@ -15,6 +15,10 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += gio-2.0 glib-2.0 gobject-2.0 json-glib-1.0
+
+# -std=gnu11
+COMPILER=		base-clang ports-gcc ports-clang
+COMPILER_LANGS=		c
 
 MODULES=		devel/meson \
 			x11/gnome
