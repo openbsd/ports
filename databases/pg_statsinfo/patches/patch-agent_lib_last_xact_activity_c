@@ -1,0 +1,60 @@
+$OpenBSD: patch-agent_lib_last_xact_activity_c,v 1.3 2017/11/30 16:18:22 jeremy Exp $
+
+Index: agent/lib/last_xact_activity.c
+--- agent/lib/last_xact_activity.c.orig
++++ agent/lib/last_xact_activity.c
+@@ -97,10 +97,11 @@ static void make_status_snapshot(void);
+ static statEntry *get_snapshot_entry(int beid);
+ static Size buffer_size(int nbackends);
+ #if PG_VERSION_NUM >= 90000
+-static void myProcessUtility0(Node *parsetree, const char *queryString);
++static void myProcessUtility0(PlannedStmt *pstmt, const char *queryString);
+ #if PG_VERSION_NUM >= 90300
+-static void myProcessUtility(Node *parsetree, const char *queryString,
++static void myProcessUtility(PlannedStmt *pstmt, const char *queryString,
+ 			   ProcessUtilityContext context, ParamListInfo params,
++			   QueryEnvironment *queryEnv,
+ 			   DestReceiver *dest, char *completionTag);
+ #else
+ static void myProcessUtility(Node *parsetree,
+@@ -326,10 +327,11 @@ exit_transaction_if_needed()
+ }
+ 
+ static void
+-myProcessUtility0(Node *parsetree, const char *queryString)
++myProcessUtility0(PlannedStmt *pstmt, const char *queryString)
+ {
+ 	statEntry *entry;
+ 	TransactionStmt *stmt;
++	Node *parsetree = pstmt->utilityStmt;
+ 
+ 	entry = get_stat_entry(MyBackendId);
+ 
+@@ -412,22 +414,23 @@ myProcessUtility0(Node *parsetree, const char *querySt
+  */
+ #if PG_VERSION_NUM >= 90300
+ static void
+-myProcessUtility(Node *parsetree, const char *queryString,
++myProcessUtility(PlannedStmt *pstmt, const char *queryString,
+ 				 ProcessUtilityContext context, ParamListInfo params,
++				 QueryEnvironment *queryEnv,
+ 				 DestReceiver *dest, char *completionTag)
+ {
+ 	/*
+ 	 * Do my process before other hook runs.
+ 	 */
+-	myProcessUtility0(parsetree, queryString);
++	myProcessUtility0(pstmt, queryString);
+ 
+ 	PG_TRY();
+ 	{
+ 		if (prev_ProcessUtility_hook)
+-			prev_ProcessUtility_hook(parsetree, queryString, context, params,
++			prev_ProcessUtility_hook(pstmt, queryString, context, params, queryEnv,
+ 									 dest, completionTag);
+ 		else
+-			standard_ProcessUtility(parsetree, queryString, context, params,
++			standard_ProcessUtility(pstmt, queryString, context, params, queryEnv,
+ 									dest, completionTag);
+ 	}
+ 	PG_CATCH();

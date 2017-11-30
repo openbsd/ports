@@ -1,0 +1,19 @@
+$OpenBSD: patch-reporter_pgut_pgut_c,v 1.1 2017/11/30 16:18:22 jeremy Exp $
+
+Work with PostgreSQL 10.
+
+Index: reporter/pgut/pgut.c
+--- reporter/pgut/pgut.c.orig
++++ reporter/pgut/pgut.c
+@@ -387,7 +387,10 @@ parse_time(const char *value, time_t *time)
+ static char *
+ prompt_for_password(void)
+ {
+-	return simple_prompt("Password: ", 100, false);
++	char * dest;
++	dest = malloc(100);
++	simple_prompt("Password: ", dest, 100, false);
++	return dest;
+ }
+ 
+ #if PG_VERSION_NUM < 80300
