@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_interfaces_libpq_Makefile,v 1.1.1.1 2016/12/18 18:13:25 jeremy Exp $
+$OpenBSD: patch-src_interfaces_libpq_Makefile,v 1.2 2017/11/30 16:21:25 jeremy Exp $
 --- src/interfaces/libpq/Makefile.orig	Mon May  6 13:57:06 2013
 +++ src/interfaces/libpq/Makefile	Thu May 16 15:10:02 2013
 @@ -16,8 +16,8 @@ include $(top_builddir)/src/Makefile.global
@@ -6,7 +6,7 @@ $OpenBSD: patch-src_interfaces_libpq_Makefile,v 1.1.1.1 2016/12/18 18:13:25 jere
  # shared library parameters
  NAME= pq
 -SO_MAJOR_VERSION= 5
--SO_MINOR_VERSION= 8
+-SO_MINOR_VERSION= 9
 +SO_MAJOR_VERSION= ${LIBpq_MAJOR}
 +SO_MINOR_VERSION= ${LIBpq_MINOR}
  
