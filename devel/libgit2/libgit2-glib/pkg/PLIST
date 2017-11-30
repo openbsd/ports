@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2017/04/16 10:13:19 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.15 2017/11/30 20:09:33 jasper Exp $
 include/libgit2-glib-1.0/
 include/libgit2-glib-1.0/libgit2-glib/
 include/libgit2-glib-1.0/libgit2-glib/ggit-annotated-commit.h
@@ -122,7 +122,6 @@ share/gtk-doc/html/libgit2-glib-1.0/GgitTree.html
 share/gtk-doc/html/libgit2-glib-1.0/GgitTreeBuilder.html
 share/gtk-doc/html/libgit2-glib-1.0/GgitTreeEntry.html
 share/gtk-doc/html/libgit2-glib-1.0/annotation-glossary.html
-share/gtk-doc/html/libgit2-glib-1.0/api-index-deprecated.html
 share/gtk-doc/html/libgit2-glib-1.0/api-index-full.html
 share/gtk-doc/html/libgit2-glib-1.0/home.png
 share/gtk-doc/html/libgit2-glib-1.0/index.html
