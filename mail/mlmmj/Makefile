@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2017/11/28 03:43:07 kevlo Exp $
+# $OpenBSD: Makefile,v 1.20 2017/11/30 00:46:17 jca Exp $
 
 COMMENT=	mailing list manager
 
@@ -19,7 +19,9 @@ LIB_DEPENDS=	converters/libiconv
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=--enable-receive-strip=yes
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+# make sure ${WRKSRC}/include/unistr.h is included instead of
+# /usr/local/include/unistr.h from libunistring
+CONFIGURE_ENV=	CPPFLAGS="-I${WRKSRC}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -liconv"
 
 DOCS=	README* TUNABLES
