@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.83 2016/05/08 09:31:38 espie Exp $
+# $OpenBSD: Core.pm,v 1.84 2017/11/30 11:17:53 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -109,6 +109,12 @@ sub host
 {
 	my $self = shift;
 	return $self->{host};
+}
+
+sub has_host
+{
+	my ($class, $hostname) = @_;
+	return $allhosts{$hostname};
 }
 
 sub prop

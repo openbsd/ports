@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Init.pm,v 1.30 2017/11/24 14:26:20 espie Exp $
+# $OpenBSD: Init.pm,v 1.31 2017/11/30 11:17:53 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -114,7 +114,11 @@ sub new
 		$host = 'localhost';
 		$prop->{iamroot} = $< == 0;
 	}
-	return $init->{$host} //= DPB::Core->new_noreg($host, $prop);
+	if (DPB::Core->has_host($host)) {
+		return 0;
+	} else {
+		return $init->{$host} //= DPB::Core->new_noreg($host, $prop);
+	}
 }
 
 sub hostcount

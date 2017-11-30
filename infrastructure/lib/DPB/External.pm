@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: External.pm,v 1.10 2017/11/29 11:21:49 espie Exp $
+# $OpenBSD: External.pm,v 1.11 2017/11/30 11:17:53 espie Exp $
 #
 # Copyright (c) 2017 Marc Espie <espie@openbsd.org>
 #
@@ -64,7 +64,9 @@ sub handle_command
 		}
 	} elsif ($line =~ m/^addhost\s+(.*)/) {
 		my @list = split(/\s+/, $1);
-		DPB::Config->add_host($state, @list);
+		if (!DPB::Config->add_host($state, @list)) {
+			$fh->print("Can't add: host already exists\n");
+		}
 	} elsif ($line =~ m/^stats\b/) {
 		$fh->print($state->engine->statline, "\n");
 	} elsif ($line =~ m/^pf{6}\b/) {
