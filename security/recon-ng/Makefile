@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/11/26 10:20:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2017/11/30 20:16:07 jasper Exp $
 
 COMMENT =		web reconnaissance framework
 
 VERSION =		4.9.2
 DISTNAME =		recon-ng-${VERSION}
+REVISION =		0
 
 HOMEPAGE =		https://bitbucket.org/LaNMaSteR53/recon-ng
 
@@ -22,15 +23,15 @@ RUN_DEPENDS =		devel/py-jsonrpclib${MODPY_FLAVOR} \
 			devel/py-olefile${MODPY_FLAVOR} \
 			devel/py-xlsxwriter${MODPY_FLAVOR} \
 			net/py-dnspython${MODPY_FLAVOR} \
+			textproc/py-dicttoxml${MODPY_FLAVOR} \
 			textproc/py-lxml${MODPY_FLAVOR} \
+			textproc/py-unicodecsv${MODPY_FLAVOR} \
+			www/py-flask${MODPY_FLAVOR} \
 			www/py-mechanize${MODPY_FLAVOR}
 
 # Could make use of:
 # PyPDF2
-# dicttoxml
 # slowaes
-# unicodecsv
-# flask (ported, but recon-web needs dicttoxml too)
 
 MODULES =		lang/python
 
@@ -39,15 +40,14 @@ NO_TEST =		Yes
 
 SUBST_VARS +=		VERSION
 
-# recon-web needs unported modules
-MODPY_ADJ_FILES =	recon-cli recon-ng recon-rpc # recon-web
+MODPY_ADJ_FILES =	recon-cli recon-ng recon-rpc recon-web
 
 pre-install:
 	${SUBST_CMD} ${WRKSRC}/recon/core/base.py
 	rm ${WRKSRC}/recon/core/*.{beforesubst,orig}
 
 do-install:
-.for s in cli ng rpc #web
+.for s in cli ng rpc web
 	${INSTALL_SCRIPT} ${WRKSRC}/recon-$s ${PREFIX}/bin
 .endfor
 	${INSTALL_DATA_DIR} ${PREFIX}/share/recon-ng/data/

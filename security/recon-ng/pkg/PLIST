@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/11/26 10:20:55 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/11/30 20:16:07 jasper Exp $
 bin/recon-cli
 bin/recon-ng
 bin/recon-rpc
+bin/recon-web
 lib/python${MODPY_VERSION}/site-packages/recon/
 lib/python${MODPY_VERSION}/site-packages/recon/__init__.py
 lib/python${MODPY_VERSION}/site-packages/recon/core/
