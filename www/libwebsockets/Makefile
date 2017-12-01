@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.14 2017/09/13 09:04:43 awolk Exp $
+# $OpenBSD: Makefile,v 1.15 2017/12/01 14:04:13 awolk Exp $
 
 COMMENT =		lightweight C library for fast bi-directional websockets
 
 GH_ACCOUNT =		warmcat
 GH_PROJECT =		libwebsockets
-V =			2.3.0
-GH_TAGNAME =		v$V
+GH_TAGNAME =		v2.4.1
 
-SHARED_LIBS =		websockets 8.0 # 11
+SHARED_LIBS =		websockets 9.0 # 12
 
 CATEGORIES =		www
 
@@ -22,8 +21,12 @@ WANTLIB += 		crypto m ssl z
 
 MODULES =		devel/cmake
 
-CONFIGURE_ARGS +=	-DLWS_WITHOUT_TESTAPPS=ON
+CONFIGURE_ARGS +=	-DLWS_WITHOUT_TESTAPPS=ON \
+			-DLWS_WITHOUT_TEST_SERVER=ON
 
 NO_TEST =		Yes
+
+post-install:
+	@rm -r ${WRKINST}/usr/local/share/libwebsockets-test-server
 
 .include <bsd.port.mk>
