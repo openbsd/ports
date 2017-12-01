@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.82 2017/11/15 17:42:08 landry Exp $
+# $OpenBSD: Makefile,v 1.83 2017/12/01 11:25:32 landry Exp $
 
 COMMENT=		libraries to support development of security-enabled apps
 
-VERSION=		3.34
+VERSION=		3.34.1
 NSPR_VERSION=		4.17
 DISTNAME=		nss-${VERSION}
 
