@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.73 2017/11/30 09:49:14 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.74 2017/12/01 08:29:36 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/botocore/
 lib/python${MODPY_VERSION}/site-packages/botocore-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/botocore-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -53,6 +53,10 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/acm/2015-12-08/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/acm/2015-12-08/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/acm/2015-12-08/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/acm/2015-12-08/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/alexaforbusiness/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/alexaforbusiness/2017-11-09/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/alexaforbusiness/2017-11-09/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/alexaforbusiness/2017-11-09/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/apigateway/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/apigateway/2015-07-09/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/apigateway/2015-07-09/examples-1.json
@@ -95,6 +99,10 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/ce/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/ce/2017-10-25/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/ce/2017-10-25/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/ce/2017-10-25/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/cloud9/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/cloud9/2017-09-23/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/cloud9/2017-09-23/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/cloud9/2017-09-23/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/clouddirectory/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/clouddirectory/2016-05-10/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/clouddirectory/2016-05-10/paginators-1.json
@@ -608,6 +616,10 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/rekognition/2016-06-27/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/rekognition/2016-06-27/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/rekognition/2016-06-27/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/rekognition/2016-06-27/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/resource-groups/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/resource-groups/2017-11-27/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/resource-groups/2017-11-27/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/resource-groups/2017-11-27/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/resourcegroupstaggingapi/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/resourcegroupstaggingapi/2017-01-26/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/resourcegroupstaggingapi/2017-01-26/paginators-1.json
@@ -640,6 +652,9 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/sdb/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/sdb/2009-04-15/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/sdb/2009-04-15/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/sdb/2009-04-15/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/serverlessrepo/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/serverlessrepo/2017-09-08/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/serverlessrepo/2017-09-08/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/servicecatalog/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/servicecatalog/2015-12-10/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/servicecatalog/2015-12-10/examples-1.json
