@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2017/12/01 14:17:12 jca Exp $
+# $OpenBSD: Makefile,v 1.11 2017/12/01 14:41:22 jca Exp $
 
 COMMENT-main=	perl bindings for Xapian
 COMMENT-python=	python bindings for Xapian
@@ -27,6 +27,9 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=	http://oligarchy.co.uk/xapian/${V}/
 EXTRACT_SUFX=	.tar.xz
+
+# -std=gnu++11
+COMPILER=       base-clang ports-gcc ports-clang
 
 LIB_DEPENDS=		databases/xapian-core
 

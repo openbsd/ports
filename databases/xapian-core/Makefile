@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2017/12/01 14:33:40 jca Exp $
+# $OpenBSD: Makefile,v 1.30 2017/12/01 14:41:22 jca Exp $
 
 COMMENT=	search engine library
 
@@ -19,6 +19,9 @@ WANTLIB += c m ${COMPILER_LIBCXX} z uuid
 
 MASTER_SITES=	http://oligarchy.co.uk/xapian/${V}/
 EXTRACT_SUFX=	.tar.xz
+
+# -std=gnu++11
+COMPILER=       base-clang ports-gcc ports-clang
 
 LIB_DEPENDS=	sysutils/e2fsprogs>=1.42.7
 
