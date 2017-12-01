@@ -1,11 +1,12 @@
-$OpenBSD: patch-cmake_xapian-config_cmake_in,v 1.1 2014/07/11 10:37:55 zhuk Exp $
+$OpenBSD: patch-cmake_xapian-config_cmake_in,v 1.2 2017/12/01 14:33:40 jca Exp $
 Allow Xapian library to be found by CMake-based ports.
---- cmake/xapian-config.cmake.in.orig	Tue May 27 12:08:01 2014
-+++ cmake/xapian-config.cmake.in	Tue May 27 12:09:01 2014
+Index: cmake/xapian-config.cmake.in
+--- cmake/xapian-config.cmake.in.orig
++++ cmake/xapian-config.cmake.in
 @@ -1,5 +1,5 @@
  SET(prefix "@prefix@")
  SET(exec_prefix "@exec_prefix@")
 -SET(XAPIAN_LIBRARIES "@libdir@/libxapian@LIBRARY_VERSION_SUFFIX@@SHLIBEXT@" CACHE FILEPATH "Libraries for Xapian")
-+SET(XAPIAN_LIBRARIES "@libdir@/libxapian@LIBRARY_VERSION_SUFFIX@@SHLIBEXT@.@LIBxapian_VERSION@" CACHE FILEPATH "Libraries for Xapian")
++SET(XAPIAN_LIBRARIES "@libdir@/libxapian@LIBRARY_VERSION_SUFFIX@@SHLIBEXT@.${LIBxapian_VERSION}" CACHE FILEPATH "Libraries for Xapian")
  SET(XAPIAN_INCLUDE_DIR "@incdir@" CACHE PATH "Include path for Xapian")
  SET(XAPIAN_FOUND "TRUE")
