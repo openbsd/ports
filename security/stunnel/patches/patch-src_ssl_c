@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_ssl_c,v 1.6 2017/09/12 16:15:24 gsoares Exp $
+$OpenBSD: patch-src_ssl_c,v 1.7 2017/12/01 00:08:44 gsoares Exp $
 Index: src/ssl.c
 --- src/ssl.c.orig
 +++ src/ssl.c
@@ -9,9 +9,9 @@ Index: src/ssl.c
 -#if OPENSSL_VERSION_NUMBER>=0x10100000L
 +#if OPENSSL_VERSION_NUMBER>=0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)
      OPENSSL_init_ssl(OPENSSL_INIT_LOAD_SSL_STRINGS |
-         OPENSSL_INIT_LOAD_CRYPTO_STRINGS, NULL);
+         OPENSSL_INIT_LOAD_CRYPTO_STRINGS | OPENSSL_INIT_LOAD_CONFIG, NULL);
  #else
-@@ -86,7 +86,7 @@ int ssl_init(void) { /* init TLS before parsing config
+@@ -87,7 +87,7 @@ int ssl_init(void) { /* init TLS before parsing config
  }
  
  #ifndef OPENSSL_NO_DH

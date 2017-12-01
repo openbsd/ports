@@ -1,7 +1,16 @@
-$OpenBSD: patch-src_ctx_c,v 1.5 2017/09/12 16:15:24 gsoares Exp $
+$OpenBSD: patch-src_ctx_c,v 1.6 2017/12/01 00:08:44 gsoares Exp $
 Index: src/ctx.c
 --- src/ctx.c.orig
 +++ src/ctx.c
+@@ -93,7 +93,7 @@ NOEXPORT int ui_retry();
+ /* session callbacks */
+ NOEXPORT int sess_new_cb(SSL *, SSL_SESSION *);
+ NOEXPORT SSL_SESSION *sess_get_cb(SSL *,
+-#if OPENSSL_VERSION_NUMBER>=0x10100000L
++#if OPENSSL_VERSION_NUMBER>=0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)
+     const
+ #endif
+     unsigned char *, int, int *);
 @@ -295,7 +295,7 @@ NOEXPORT int matches_wildcard(char *servername, char *
  
  #ifndef OPENSSL_NO_DH
@@ -20,3 +29,12 @@ Index: src/ctx.c
      SSL_CONF_CTX *cctx;
      NAME_LIST *curr;
      char *cmd, *param;
+@@ -907,7 +907,7 @@ NOEXPORT int sess_new_cb(SSL *ssl, SSL_SESSION *sess) 
+ }
+ 
+ NOEXPORT SSL_SESSION *sess_get_cb(SSL *ssl,
+-#if OPENSSL_VERSION_NUMBER>=0x10100000L
++#if OPENSSL_VERSION_NUMBER>=0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)
+         const
+ #endif
+         unsigned char *key, int key_len, int *do_copy) {
