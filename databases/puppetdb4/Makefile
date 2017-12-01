@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2017/11/24 07:33:18 sebastia Exp $
+# $OpenBSD: Makefile,v 1.18 2017/12/01 10:01:32 sebastia Exp $
 
 PORTROACH=	limit:^4
 
@@ -6,12 +6,11 @@ COMMENT-main=	fast, scalable, and reliable data warehouse for Puppet
 COMMENT-plugin= PuppetDB terminus plugin
 
 V=		4.4.0
+EPOCH=		0
 DISTNAME=	puppetdb-$V
 PKGNAME-main=	${DISTNAME}
 PKGNAME-plugin= puppetdb-termini-$V
 CATEGORIES=	databases
-REVISION-main=	3
-REVISION-plugin=5
 
 HOMEPAGE=	http://docs.puppetlabs.com/puppetdb/latest/
 
@@ -29,9 +28,9 @@ MODJAVA_VER=	1.8+
 MULTI_PACKAGES= -main -plugin
 
 BUILD_DEPENDS =	sysutils/coreutils
-RUN_DEPENDS-plugin=sysutils/ruby-puppet/4>=4.2.0
+RUN_DEPENDS-plugin=sysutils/ruby-puppet/4>=4.0.0v0,<5.0.0v0
 
-RUN_DEPENDS-main=${BASE_PKGPATH},-plugin=$V \
+RUN_DEPENDS-main=${BASE_PKGPATH},-plugin=${V}v0 \
 		${MODJAVA_RUN_DEPENDS} \
 		java/javaPathHelper \
 		shells/bash

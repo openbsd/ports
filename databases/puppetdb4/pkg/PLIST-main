@@ -1,8 +1,5 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2017/11/24 07:33:19 sebastia Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2017/12/01 10:01:33 sebastia Exp $
 @option is-branch
-@option no-default-conflict
-@conflict puppetdb-*
-@pkgpath databases/puppetdb4,-main
 @newgroup _puppetdb:719
 @newuser _puppetdb:719:719:daemon:PuppetDB user:/nonexistent:/sbin/nologin
 bin/puppetdb
