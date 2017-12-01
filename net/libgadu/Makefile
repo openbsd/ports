@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.23 2016/11/01 08:11:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.24 2017/12/01 22:12:40 fcambus Exp $
 
 COMMENT=	implementation of Gadu-Gadu IM protocol
 
-VER=		1.12.1
+VER=		1.12.2
 DISTNAME=	libgadu-${VER}
 EPOCH=		0
 CATEGORIES=	net
 MASTER_SITES=	http://github.com/wojtekka/libgadu/releases/download/${VER}/
-REVISION=	0
 
 SHARED_LIBS=	gadu	7.0
 
