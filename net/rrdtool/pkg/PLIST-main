@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.8 2017/05/18 13:51:42 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.9 2017/12/01 10:36:51 landry Exp $
 @conflict p5-RRD-*
 @pkgpath net/rrdtool,-perl
 @newgroup _rrdcached:726
@@ -68,10 +68,12 @@ share/examples/rrdtool/rrdtool-chroot
 share/examples/rrdtool/shared-demo.pl
 share/examples/rrdtool/stripes.pl
 share/locale/hu/LC_MESSAGES/rrdtool.mo
-@mode 750
+@mode 770
 @owner _rrdcached
+@group _rrdcached
 @sample /var/db/rrd/
 @sample /var/db/rrd/journal/
 @mode
 @owner
+@group
 @rcscript ${RCDIR}/rrdcached
