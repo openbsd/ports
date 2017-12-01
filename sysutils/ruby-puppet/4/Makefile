@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.30 2017/11/24 07:33:52 sebastia Exp $
+# $OpenBSD: Makefile,v 1.31 2017/12/01 10:02:30 sebastia Exp $
 
 PORTROACH=		limit:^4
 
 VERSION=		4.10.9
-REVISION=		1
+EPOCH=			0
 
 RUN_DEPENDS+=		databases/ruby-hiera3,${MODRUBY_FLAVOR} \
 			devel/ruby-gettext-setup,${MODRUBY_FLAVOR}>=0.10,<1 \

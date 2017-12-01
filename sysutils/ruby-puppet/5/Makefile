@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.3 2017/11/24 07:33:52 sebastia Exp $
+# $OpenBSD: Makefile,v 1.4 2017/12/01 10:02:30 sebastia Exp $
 
 VERSION=		5.3.2
-REVISION=		1
+REVISION=		2
 
 RUN_DEPENDS+=		databases/ruby-hiera3,${MODRUBY_FLAVOR} \
 			devel/ruby-gettext-setup,${MODRUBY_FLAVOR}>=0.10,<1 \
