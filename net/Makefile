@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1036 2017/11/29 18:35:53 fcambus Exp $
+# $OpenBSD: Makefile,v 1.1037 2017/12/01 17:13:50 job Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
      SUBDIR += adns
      SUBDIR += adsuck
      SUBDIR += aggregate
+     SUBDIR += aggregate6
      SUBDIR += aimsniff
      SUBDIR += aircontrol
      SUBDIR += amule

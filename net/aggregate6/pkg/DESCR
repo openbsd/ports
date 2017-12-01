@@ -1,0 +1,13 @@
+aggregate6 takes a list of IPv4 and IPv6 prefixes in conventional
+format on stdin, and performs two optimisations to attempt to reduce
+the length of the prefix list.
+
+The first optimisation is to remove any supplied prefixes which are
+superfluous because they are already included in another supplied
+prefix. For example, 2001:67c:208c:10::/64 would be removed if
+2001:67c:208c::/48 was also supplied.
+
+The second optimisation identifies adjacent prefixes that can
+be combined under a single, shorter-length prefix. For example,
+2001:67c:208c::/48 and 2001:67c:208d::/48 can be combined into the
+single prefix 2001:67c:208c::/47.

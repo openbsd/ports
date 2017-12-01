@@ -1,0 +1,14 @@
+$OpenBSD: patch-setup_py,v 1.1 2017/12/01 17:13:50 job Exp $
+
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -70,7 +70,7 @@ setup(
+         'Programming Language :: Python :: 3',
+         'Programming Language :: Python :: 3.6'
+     ],
+-    setup_requires=["nose", "coverage", "mock"],
++    tests_require=["nose", "coverage", "mock"],
+     install_requires=["py-radix==0.10.0"] + (
+         ["future", "ipaddress"] if sys.version_info.major == 2 else []
+     ),
