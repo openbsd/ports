@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2017/11/13 23:36:05 jeremy Exp $
+# $OpenBSD: Makefile,v 1.28 2017/12/01 14:11:35 jca Exp $
 
 COMMENT=	search engine library
 
@@ -28,7 +28,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	LIBxapian_VERSION=${LIBxapian_VERSION}
 
-AUTOCONF_VERSION=	2.68
+AUTOCONF_VERSION=	2.69
 
 .include <bsd.port.arch.mk>
 # amd64-capable CPUs all have SSE
