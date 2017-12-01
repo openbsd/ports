@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.35 2017/08/08 06:36:03 jca Exp $
+# $OpenBSD: Makefile,v 1.36 2017/12/01 17:10:48 giovanni Exp $
 
 COMMENT=		control and monitor storage systems using SMART
 
-DISTNAME=		smartmontools-6.5
-REVISION =		2
+DISTNAME=		smartmontools-6.6
 CATEGORIES=		sysutils
 
 HOMEPAGE=		https://www.smartmontools.org/
@@ -21,5 +20,6 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--docdir=${PREFIX}/share/doc/smartmontools \
 			--with-exampledir=${PREFIX}/share/examples/smartmontools \
 			--with-libcap-ng=no \
-			--without-drivedbdir
+			--without-drivedbdir \
+			--without-gnupg
 .include <bsd.port.mk>
