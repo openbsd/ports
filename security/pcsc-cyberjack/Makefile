@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2017/11/19 17:28:03 feinerer Exp $
+# $OpenBSD: Makefile,v 1.7 2017/12/01 13:03:59 jca Exp $
 
 COMMENT =		REINER SCT cyberJack chipcard reader driver
 
@@ -20,6 +20,9 @@ WANTLIB += ${COMPILER_LIBCXX} m usb-1.0
 MASTER_SITES =		http://support.reiner-sct.de/downloads/LINUX/V3.99.5_SP11/
 
 EXTRACT_SUFX =		.tar.bz2
+
+# -std=c++11
+COMPILER =		base-clang ports-clang ports-gcc
 
 BUILD_DEPENDS =		devel/libtool \
 			security/pcsc-lite
