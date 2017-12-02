@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2017/07/23 10:01:10 zhuk Exp $
+# $OpenBSD: Makefile,v 1.40 2017/12/02 13:40:32 espie Exp $
 
 COMMENT-main=		UW e-mail client
 COMMENT-c-client=	UW c-client mail access routines
@@ -6,6 +6,7 @@ COMMENT-imap=		UW IMAP4rev1/POP2/POP3 mail servers
 COMMENT-mailutil=	UW IMAP4rev1/POP2/POP3 mail utility
 COMMENT-pico=		UW text editor
 COMMENT-pilot=		UW file system navigator
+FIX_EXTRACT_PERMISSIONS =	Yes
 
 V=			2.21
 DISTNAME=		alpine-${V}
