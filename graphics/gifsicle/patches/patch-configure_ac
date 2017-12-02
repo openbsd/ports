@@ -1,0 +1,14 @@
+$OpenBSD: patch-configure_ac,v 1.1 2017/12/02 16:31:06 jca Exp $
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -236,7 +236,7 @@ dnl
+ 
+ AC_SEARCH_LIBS([pthread_create], [pthread], [have_threads=yes], [have_threads=no])
+ AC_MSG_CHECKING([for __sync_add_and_fetch])
+-AC_COMPILE_IFELSE([AC_LANG_PROGRAM(
++AC_LINK_IFELSE([AC_LANG_PROGRAM(
+     [AC_INCLUDES_DEFAULT
+     extern volatile int x;],
+     [[printf("%d", __sync_add_and_fetch(&x, 1));]])],

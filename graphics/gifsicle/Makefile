@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2017/09/22 21:30:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.46 2017/12/02 16:31:06 jca Exp $
 
 COMMENT =	creating & editing GIF images and animations
 
@@ -18,7 +18,8 @@ HOMEPAGE =		http://www.lcdf.org/gifsicle/
 
 MASTER_SITES =		http://www.lcdf.org/gifsicle/
 
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE =	autoconf
+AUTOCONF_VERSION =	2.69
 SEPARATE_BUILD =	Yes
 
 .include <bsd.port.mk>
