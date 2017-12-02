@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.29 2017/10/25 05:12:57 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.30 2017/12/02 15:46:10 benoit Exp $
 @bin bin/highlight
 @man man/man1/highlight.1
 share/doc/highlight/
@@ -80,6 +80,7 @@ share/highlight/langDefs/fortran77.lang
 share/highlight/langDefs/fortran90.lang
 share/highlight/langDefs/frink.lang
 share/highlight/langDefs/fsharp.lang
+share/highlight/langDefs/fstab.lang
 share/highlight/langDefs/fx.lang
 share/highlight/langDefs/gambas.lang
 share/highlight/langDefs/gdb.lang
