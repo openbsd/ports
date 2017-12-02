@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.96 2017/10/23 17:11:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.97 2017/12/02 18:39:20 ajacoutot Exp $
 
 BROKEN-i386=		hangs during build while running g-ir-scanner
 
@@ -6,9 +6,7 @@ COMMENT=		simple GTK desktop news aggregator
 
 GH_ACCOUNT=		lwindolf
 GH_PROJECT=		liferea
-GH_TAGNAME=		v1.12-rc3
-PKGNAME=		liferea-1.12rc3
-REVISION=		0
+GH_TAGNAME=		v1.12.0
 
 CATEGORIES=		www news x11
 
@@ -19,9 +17,9 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} EGL GL GLESv2 ICE SM X11 X11-xcb
 WANTLIB += Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
-WANTLIB += Xrandr Xrender Xt Xxf86vm atk-1.0 atk-bridge-2.0 atspi
-WANTLIB += c cairo cairo-gobject dbus-1 drm enchant epoxy expat
-WANTLIB += ffi fontconfig freetype gbm gcrypt gdk-3 gdk_pixbuf-2.0
+WANTLIB += Xrandr Xrender Xt Xtst Xxf86vm atk-1.0 atk-bridge-2.0
+WANTLIB += atspi c cairo cairo-gobject dbus-1 drm enchant epoxy
+WANTLIB += expat ffi fontconfig freetype gbm gcrypt gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 girepository-1.0 glapi glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 gpg-error graphite2 gstallocators-1.0 gstapp-1.0
 WANTLIB += gstaudio-1.0 gstbadallocators-1.0 gstbase-1.0 gstfft-1.0
@@ -30,8 +28,8 @@ WANTLIB += gthread-2.0 gtk-3 harfbuzz harfbuzz-icu hyphen iconv
 WANTLIB += icudata icui18n icuuc intl javascriptcoregtk-4.0 jpeg
 WANTLIB += json-glib-1.0 lzma m notify orc-0.4 pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre peas-1.0 peas-gtk-1.0 pixman-1 png
-WANTLIB += secret-1 soup-2.4 sqlite3 tasn1 webkit2gtk-4.0
-WANTLIB += webp xcb xcb-dri2 xcb-glx xcb-render xcb-shm xcb-xfixes
+WANTLIB += secret-1 soup-2.4 sqlite3 tasn1 webkit2gtk-4.0 webp
+WANTLIB += xcb xcb-dri2 xcb-glx xcb-render xcb-shm xcb-xfixes
 WANTLIB += xml2 xslt z
 
 MODULES=		devel/dconf \

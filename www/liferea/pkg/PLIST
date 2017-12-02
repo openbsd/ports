@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2017/09/22 19:56:39 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.27 2017/12/02 18:39:20 ajacoutot Exp $
 @bin bin/liferea
 bin/liferea-add-feed
 lib/liferea/
@@ -6,10 +6,13 @@ lib/liferea/girepository-1.0/
 lib/liferea/girepository-1.0/Liferea-3.0.typelib
 lib/liferea/plugins/
 lib/liferea/plugins/${MODPY_PYCACHE}/
+lib/liferea/plugins/${MODPY_PYCACHE}bold-unread.${MODPY_PYC_MAGIC_TAG}pyc
 lib/liferea/plugins/${MODPY_PYCACHE}gnome-keyring.${MODPY_PYC_MAGIC_TAG}pyc
 lib/liferea/plugins/${MODPY_PYCACHE}libnotify.${MODPY_PYC_MAGIC_TAG}pyc
 lib/liferea/plugins/${MODPY_PYCACHE}media-player.${MODPY_PYC_MAGIC_TAG}pyc
 lib/liferea/plugins/${MODPY_PYCACHE}trayicon.${MODPY_PYC_MAGIC_TAG}pyc
+lib/liferea/plugins/bold-unread.plugin
+lib/liferea/plugins/bold-unread.py
 lib/liferea/plugins/gnome-keyring.plugin
 lib/liferea/plugins/gnome-keyring.py
 lib/liferea/plugins/libnotify.plugin
