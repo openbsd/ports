@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.23 2016/09/02 22:18:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.24 2017/12/02 18:42:14 ajacoutot Exp $
 
-COMMENT=	PGP packet visualizer
+COMMENT=		PGP packet visualizer
 
-DISTNAME =	pgpdump-0.31
-CATEGORIES=	security
+DISTNAME=		pgpdump-0.32
+CATEGORIES=		security
 
-HOMEPAGE=	http://www.mew.org/~kazu/proj/pgpdump/
+HOMEPAGE=		http://www.mew.org/~kazu/proj/pgpdump/
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-WANTLIB=		c z
+
+WANTLIB += c z
 
 MASTER_SITES=		${HOMEPAGE}
 
