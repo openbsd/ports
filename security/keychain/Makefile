@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.26 2017/05/04 13:32:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2017/12/02 18:49:53 ajacoutot Exp $
 
 COMMENT=		front-end to ssh-agent and gpg-agent
 
-DISTNAME=		keychain-2.8.3
+DISTNAME=		keychain-2.8.4
 CATEGORIES=		security
 
 HOMEPAGE=		http://www.funtoo.org/Keychain
