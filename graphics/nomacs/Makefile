@@ -1,19 +1,18 @@
-# $OpenBSD: Makefile,v 1.12 2017/11/16 23:20:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2017/12/02 08:49:02 rsadowski Exp $
 
-COMMENT =		small and fast Qt image viewer
+COMMENT =	small and fast Qt image viewer
 
 GH_ACCOUNT =	nomacs
 GH_PROJECT =	nomacs
-GH_TAGNAME =	3.6.1
-REVISION =	0
+GH_TAGNAME =	3.8.0
 
-CATEGORIES =		graphics
+CATEGORIES =	graphics
 
-HOMEPAGE =		http://www.nomacs.org
+HOMEPAGE =	https://nomacs.org
 
-MAINTAINER =		Rafael Sadowski <rafael@sizeofvoid.org>
+MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
-SHARED_LIBS +=  nomacsCore                2.0 # 3.3
+SHARED_LIBS +=  nomacsCore                3.0 # 3.3
 
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
@@ -26,8 +25,6 @@ WANTLIB += ${COMPILER_LIBCXX}
 MODULES =		devel/cmake \
 			x11/qt5 \
 
-COMPILER =		base-clang ports-gcc
-
 RUN_DEPENDS =		devel/desktop-file-utils
 
 LIB_DEPENDS =		archivers/quazip \
@@ -39,10 +36,9 @@ LIB_DEPENDS =		archivers/quazip \
 			x11/qt5/qtsvg
 
 CONFIGURE_ARGS =	-DUSE_SYSTEM_QUAZIP:Bool=ON \
-			-DDISABLE_QT_DEBUG:Bool=ON
+			-DDISABLE_QT_DEBUG:Bool=ON \
+			-DENABLE_TRANSLATIONS:Bool=ON
 
 WRKDIST =		${WRKDIR}/${PKGNAME}/ImageLounge
-
-NO_TEST =		Yes
 
 .include <bsd.port.mk>
