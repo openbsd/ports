@@ -1,4 +1,4 @@
-# $OpenBSD: qmake.port.mk,v 1.8 2017/06/15 15:55:14 zhuk Exp $
+# $OpenBSD: qmake.port.mk,v 1.9 2017/12/02 21:38:10 espie Exp $
 
 .if empty(CONFIGURE_STYLE)
 CONFIGURE_STYLE =	qmake
@@ -77,8 +77,7 @@ MODQMAKE_build += \
                 ${MAKE_PROGRAM} ${MAKE_FLAGS} -f Makefile ${ALL_TARGET};
 MODQMAKE_install += \
 	${_MODQMAKE_CD_${_qp:/=_}}; \
-	umask 022; \
-	${_FAKESUDO} ${SETENV} ${MAKE_ENV} ${FAKE_SETUP} \
+	${SETENV} ${MAKE_ENV} ${FAKE_SETUP} \
 		${MAKE_PROGRAM} ${ALL_FAKE_FLAGS} ${_MODQMAKE_FAKE_FLAGS} \
 		-f Makefile ${FAKE_TARGET};
 MODQMAKE_test += \
