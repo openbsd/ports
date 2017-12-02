@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2017/10/23 17:11:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.77 2017/12/02 21:39:49 juanfra Exp $
 
 COMMENT=	extensible window manager
 
@@ -8,8 +8,8 @@ REVISION=	6
 
 CATEGORIES=	x11
 
-MASTER_SITES=	http://download.tuxfamily.org/sawfish/ \
-		http://download.tuxfamily.org/sawfish/Archive/
+MASTER_SITES=	https://download.tuxfamily.org/sawfish/ \
+		https://download.tuxfamily.org/sawfish/Archive/
 EXTRACT_SUFX=	.tar.xz
 
 HOMEPAGE=	http://sawfish.wikia.com/

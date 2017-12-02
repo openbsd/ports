@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2017/11/21 00:13:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.67 2017/12/02 21:39:49 juanfra Exp $
 
 COMMENT=	Emacs Lisp-like runtime library
 
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=  c ffi gdbm gmp iconv intl m ncurses pthread readline
 
-MASTER_SITES=           http://download.tuxfamily.org/librep/
+MASTER_SITES=           https://download.tuxfamily.org/librep/
 EXTRACT_SUFX=           .tar.xz
 
 

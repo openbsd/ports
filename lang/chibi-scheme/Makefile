@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2016/03/16 16:46:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2017/12/02 21:39:49 juanfra Exp $
 
 # The next version will work on other architectures again
 ONLY_FOR_ARCHS =	amd64 i386
@@ -21,7 +21,7 @@ PERMIT_PACKAGE_CDROM = Yes
 WANTLIB =	c m
 
 MASTER_SITES =	http://synthcode.com/scheme/chibi/ \
-		http://download.tuxfamily.org/jod/lang/chibi-scheme/ \
+		https://download.tuxfamily.org/jod/lang/chibi-scheme/ \
 		ftp://download.tuxfamily.org/jod/lang/chibi-scheme/
 
 EXTRACT_SUFX =	.tgz

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2017/11/16 23:20:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.43 2017/12/02 21:39:49 juanfra Exp $
 
 USE_WXNEEDED =		Yes
 
@@ -31,7 +31,7 @@ MASTER_SITES =		https://mirror.racket-lang.org/installers/${V}/ \
 			http://pre.racket-lang.org/installers/ \
 			https://www.cs.utah.edu/plt/snapshots/current/installers/ \
 			http://plt.eecs.northwestern.edu/snapshots/current/installers/ \
-			http://download.tuxfamily.org/jod/lang/racket/ \
+			https://download.tuxfamily.org/jod/lang/racket/ \
 			ftp://download.tuxfamily.org/jod/lang/racket/
 EXTRACT_SUFX =		.tgz
 

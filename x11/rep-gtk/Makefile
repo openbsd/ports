@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2017/10/23 17:11:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.63 2017/12/02 21:39:49 juanfra Exp $
 
 COMMENT=	GTK+ binding for librep Lisp environment
 
@@ -22,7 +22,7 @@ WANTLIB += iconv intl m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread xcb xcb-render
 WANTLIB += xcb-shm z
 
-MASTER_SITES=		http://download.tuxfamily.org/librep/rep-gtk/
+MASTER_SITES=		https://download.tuxfamily.org/librep/rep-gtk/
 EXTRACT_SUFX=		.tar.xz
 
 BUILD_DEPENDS=		${RUN_DEPENDS}

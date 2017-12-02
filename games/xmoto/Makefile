@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2017/07/26 22:45:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2017/12/02 21:39:49 juanfra Exp $
 
 COMMENT =	challenging 2D motocross platform game
 
@@ -12,7 +12,7 @@ HOMEPAGE =	http://xmoto.tuxfamily.org/
 
 MAINTAINER =	Kirill Bychkov <kirby@openbsd.org>
 
-MASTER_SITES =	http://download.tuxfamily.org/xmoto/xmoto/${V}/
+MASTER_SITES =	https://download.tuxfamily.org/xmoto/xmoto/${V}/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes

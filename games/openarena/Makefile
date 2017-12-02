@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2017/08/23 14:15:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2017/12/02 21:39:49 juanfra Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 macppc
 
@@ -29,7 +29,7 @@ DISTNAME =		openarena-${V}
 DISTFILES =		${DISTNAME}.zip openarena-engine-source-${E_V}.tar.bz2:0
 
 HOMEPAGE =		http://www.openarena.ws/
-MS_PREFIX =		http://download.tuxfamily.org/openarena/rel/
+MS_PREFIX =		https://download.tuxfamily.org/openarena/rel/
 MASTER_SITES =		${MS_PREFIX}${V:S/.//g}/ \
 			${MS_PREFIX}${E_V:S/.//g}/source/
 MASTER_SITES0 =		http://files.poulsander.com/~poul19/public_files/oa/dev088/ \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2017/11/21 00:13:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2017/12/02 21:39:49 juanfra Exp $
 
 COMMENT =		2D animation software
 REVISION =		9
@@ -27,7 +27,7 @@ WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB += sigc-2.0 tiff webp xcb xcb-render xcb-shm
 WANTLIB += xml++-2.6 xml2 z boost_system-mt lcms ${COMPILER_LIBCXX}
 
-MASTER_SITES=		http://download.tuxfamily.org/synfig/releases/${V}/
+MASTER_SITES=		https://download.tuxfamily.org/synfig/releases/${V}/
 
 # c++11
 COMPILER =		base-clang ports-gcc

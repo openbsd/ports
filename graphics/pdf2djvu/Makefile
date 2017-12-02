@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2017/11/16 23:20:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2017/12/02 21:39:49 juanfra Exp $
 
 COMMENT =		creates DjVu files from PDF files
 
@@ -18,7 +18,7 @@ WANTLIB += GraphicsMagick GraphicsMagick++ c djvulibre exiv2 iconv intl m
 WANTLIB += poppler pthread ${LIBCXX}
 
 MASTER_SITES =		https://github.com/jwilk/pdf2djvu/releases/download/${V}/ \
-			http://download.tuxfamily.org/jod/graphics/pdf2djvu/ \
+			https://download.tuxfamily.org/jod/graphics/pdf2djvu/ \
 			ftp://download.tuxfamily.org/jod/graphics/pdf2djvu/
 
 EXTRACT_SUFX =		.tar.xz
