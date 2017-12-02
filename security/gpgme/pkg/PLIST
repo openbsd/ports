@@ -1,18 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.8 2016/09/19 17:13:55 edd Exp $
+@comment $OpenBSD: PLIST,v 1.9 2017/12/02 12:44:33 edd Exp $
 bin/gpgme-config
 @bin bin/gpgme-tool
 include/gpgme.h
 @info info/gpgme.info
-lib/libgpgme-pthread.a
-lib/libgpgme-pthread.la
-@lib lib/libgpgme-pthread.so.${LIBgpgme-pthread_VERSION}
 lib/libgpgme.a
 lib/libgpgme.la
 @lib lib/libgpgme.so.${LIBgpgme_VERSION}
 share/aclocal/gpgme.m4
-@comment share/common-lisp/
-@comment share/common-lisp/source/
-@comment share/common-lisp/source/gpgme/
-@comment share/common-lisp/source/gpgme/gpgme-package.lisp
-@comment share/common-lisp/source/gpgme/gpgme.asd
-@comment share/common-lisp/source/gpgme/gpgme.lisp

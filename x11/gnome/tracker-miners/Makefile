@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2017/11/15 20:35:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2017/12/02 12:44:33 edd Exp $
 
 TRACKER_API=		2.0
 SUBST_VARS=		TRACKER_API
+REVISION =		0
 
 COMMENT=		tracker miners and metadata extractors
 
@@ -16,7 +17,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += ${COMPILER_LIBCXX} X11 Xext Xrender archive assuan
 WANTLIB += bz2 c cairo crypto cue enca exempi exif expat ffi fontconfig
 WANTLIB += freetype gcrypt gif gio-2.0 glib-2.0 gmime-3.0 gmodule-2.0
-WANTLIB += gobject-2.0 gpg-error gpgme-pthread gsf-1 gstaudio-1.0
+WANTLIB += gobject-2.0 gpg-error gpgme gsf-1 gstaudio-1.0
 WANTLIB += gstbase-1.0 gstpbutils-1.0 gstreamer-1.0 gsttag-1.0
 WANTLIB += gstvideo-1.0 gthread-2.0 gxps iconv icudata icui18n
 WANTLIB += icuuc idn intl iptcdata jpeg json-glib-1.0 kvm lcms2

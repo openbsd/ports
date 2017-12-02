@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.43 2017/11/21 00:13:05 naddy Exp $
+# $OpenBSD: Makefile,v 1.44 2017/12/02 12:44:33 edd Exp $
 
 COMMENT =	libraries for KDE PIM services
 DISTNAME =	kdepimlibs-4.14.10
-REVISION =	2
+REVISION =	3
 
 DPB_PROPERTIES =	parallel
 
@@ -54,7 +54,7 @@ WANTLIB += ${KDE4LIB}/kcmutils ${KDE4LIB}/kdeui ${KDE4LIB}/kemoticons
 WANTLIB += ${KDE4LIB}/kio ${KDE4LIB}/kparts ${KDE4LIB}/nepomuk
 WANTLIB += ${KDE4LIB}/nepomukutils ${KDE4LIB}/solid
 WANTLIB += akonadiprotocolinternals assuan uuid gpg-error gpgme
-WANTLIB += gpgme-pthread ical icalss iconv intl lber ldap prison qjson sasl2
+WANTLIB += ical icalss iconv intl lber ldap prison qjson sasl2
 WANTLIB += soprano xml2
 
 MODULES =	multimedia/phonon

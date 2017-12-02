@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.70 2017/11/16 23:20:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.71 2017/12/02 12:44:33 edd Exp $
 
 COMMENT=	personal search and metasearch
 
 DISTNAME=	pinot-1.06
-REVISION=	13
+REVISION=	14
 
 SHARED_LIBS +=  xapianbackend             0.0 # 1.0
 
@@ -14,8 +14,8 @@ HOMEPAGE=	https://code.google.com/p/pinot-search/
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
-WANTLIB += Xrandr Xrender atk-1.0 atk-bridge-2.0 atkmm-1.6 atspi c cairo
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
+WANTLIB += Xrandr Xrender Xtst atk-1.0 atk-bridge-2.0 atkmm-1.6 atspi c cairo
 WANTLIB += cairo-gobject cairomm-1.0 crypto curl dbus-1 dbus-glib-1
 WANTLIB += epoxy exiv2 expat ffi fontconfig freetype gdk-3
 WANTLIB += gdk_pixbuf-2.0 gdkmm-3.0 gio-2.0 giomm-2.4 glib-2.0
@@ -24,7 +24,7 @@ WANTLIB += gthread-2.0 gtk-3 gtkmm-3.0 harfbuzz iconv intl lzma m
 WANTLIB += nghttp2 pango-1.0 pangocairo-1.0 pangoft2-1.0 pangomm-1.4
 WANTLIB += pcre pixman-1 png pthread sigc-2.0 sqlite3 ssl
 WANTLIB += ${LIBCXX} tag textcat uuid xapian xcb xcb-render xcb-shm
-WANTLIB += xml++-2.6 xml2 z assuan gpg-error gpgme-pthread
+WANTLIB += xml++-2.6 xml2 z assuan gpg-error gpgme
 
 MASTER_SITES=	${MASTER_SITE_GOOGLECODE:=pinot-search/}
 

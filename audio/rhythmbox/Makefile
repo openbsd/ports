@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.164 2017/11/15 16:48:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.165 2017/12/02 12:44:33 edd Exp $
 
 COMMENT=		integrated music management application for GNOME
 
 GNOME_PROJECT=		rhythmbox
 GNOME_VERSION=		3.4.2
-REVISION=		3
+REVISION=		4
 
 SHARED_LIBS +=  rhythmbox-core       0.0      # 7.0
 
@@ -21,7 +21,7 @@ WANTLIB += Xrandr Xrender Xtst archive assuan atk-1.0 atk-bridge-2.0
 WANTLIB += atspi bz2 c cairo cairo-gobject crypto dbus-1 epoxy
 WANTLIB += expat ffi fontconfig freetype gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 girepository-1.0 glib-2.0 gmime-3.0 gmodule-2.0
-WANTLIB += gobject-2.0 gpg-error gpgme-pthread gpod graphite2
+WANTLIB += gobject-2.0 gpg-error gpgme gpod graphite2
 WANTLIB += grilo-0.3 gstaudio-1.0 gstbase-1.0 gstcontroller-1.0
 WANTLIB += gstpbutils-1.0 gstreamer-1.0 gsttag-1.0 gstvideo-1.0
 WANTLIB += gthread-2.0 gtk-3 harfbuzz iconv idn intl json-glib-1.0

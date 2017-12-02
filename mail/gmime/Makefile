@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2017/04/25 09:00:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.58 2017/12/02 12:44:33 edd Exp $
 
 PORTROACH=		limit:^2\.6
 
@@ -6,7 +6,7 @@ COMMENT=		MIME messages creation and parsing library
 
 GNOME_PROJECT=		gmime
 GNOME_VERSION=		2.6.23
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  gmime-2.6            0.2      # 623.0
 
@@ -20,7 +20,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += assuan ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += gpg-error gpgme-pthread gthread-2.0 iconv intl pcre
+WANTLIB += gpg-error gpgme gthread-2.0 iconv intl pcre
 WANTLIB += pthread z
 
 MODULES=		x11/gnome

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.33 2017/11/21 00:13:05 naddy Exp $
+# $OpenBSD: Makefile,v 1.34 2017/12/02 12:44:33 edd Exp $
 
 COMMENT =	KDE personal information management
 DISTNAME =	kdepim-4.14.10
 PKGSPEC =	kdepim-${MODKDE4_SPEC}
-REVISION =	4
+REVISION =	5
 DPB_PROPERTIES +=	parallel
 
 MASTER_SITES =	${MASTER_SITE_KDE:=Attic/applications/15.04.3/src/}
@@ -97,7 +97,7 @@ WANTLIB += ${KDE4LIB}/baloopim ${KDE4LIB}/kemoticons ${KDE4LIB}/kgapi2
 WANTLIB += ${KDE4LIB}/kidletime ${KDE4LIB}/kutils
 WANTLIB += ${KDE4LIB}/balooqueryparser ${KDE4LIB}/kfile
 WANTLIB += akonadiprotocolinternals prison soprano
-WANTLIB += assuan gpg-error gpgme++ gpgme++-pthread gpgme-pthread
+WANTLIB += assuan gpg-error gpgme++ gpgme++-pthread gpgme
 WANTLIB += grantlee_core grantlee_gui iconv intl qjson qgpgme sasl2
 
 MODULES =	multimedia/phonon
