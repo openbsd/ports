@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.7 2017/05/08 20:45:23 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.8 2017/12/02 09:30:03 ajacoutot Exp $
 
 PKGNAME ?=		${BEAT}-${VERSION}
 
@@ -25,6 +25,9 @@ MODGO_SUBDIR =		${WRKDIST}/${BEAT}
 
 pre-build:
 	cp -r ${WRKDIST}/{libbeat,vendor} ${WRKSRC}/../
+	if [ -d ${WRKDIST}/metricbeat ]; then \
+		cp -R ${WRKDIST}/metricbeat/ ${WRKSRC}/../; \
+	fi
 .else
 ALL_TARGET ?=		github.com/${GH_ACCOUNT}/${BEAT}
 .endif

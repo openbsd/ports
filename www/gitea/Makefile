@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2017/11/19 19:38:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2017/12/02 09:30:03 ajacoutot Exp $
 
 COMMENT =		compact self-hosted Git service
 
@@ -30,7 +30,7 @@ ALL_TARGET ?=		code.gitea.io/${GH_PROJECT}
 WRKSRC ?=		${MODGO_WORKSPACE}/src/${ALL_TARGET}
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/conf/app.ini
+	${SUBST_CMD} ${WRKDIST}/conf/app.ini
 
 do-install:
 	${INSTALL_PROGRAM} ${MODGO_WORKSPACE}/bin/gitea ${PREFIX}/sbin

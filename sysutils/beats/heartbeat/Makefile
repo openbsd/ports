@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2017/11/08 11:49:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2017/12/02 09:30:03 ajacoutot Exp $
 
 COMMENT =	lightweight shipper for real-time network analytics
 
@@ -14,8 +14,5 @@ CONFIGS =	heartbeat.yml heartbeat.template.json \
 		heartbeat.template-es6x.json
 
 WANTLIB += c pthread
-
-pre-configure:
-	cp -R ${WRKDIST}/metricbeat/ ${WRKSRC}/../
 
 .include <bsd.port.mk>

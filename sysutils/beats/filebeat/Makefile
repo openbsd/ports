@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2017/11/08 11:49:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2017/12/02 09:30:03 ajacoutot Exp $
 
 COMMENT =	lightweight shipper for log file data
 
@@ -17,8 +17,5 @@ CONFIGS =	filebeat.yml filebeat.template.json \
 BEATS_MODULES =	Yes
 
 WANTLIB +=	c pthread
-
-pre-configure:
-	cp -R ${WRKDIST}/metricbeat/ ${WRKSRC}/../
 
 .include <bsd.port.mk>
