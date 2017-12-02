@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.1 2017/12/01 17:13:50 job Exp $
+# $OpenBSD: Makefile,v 1.2 2017/12/02 15:03:58 job Exp $
 
 COMMENT=	optimise a list of IPv4/IPv6 prefixes
 
 MODPY_EGG_VERSION=	1.0.11
 
 DISTNAME=	aggregate6-${MODPY_EGG_VERSION}
-FULLPKGNAME=	${DISTNAME}
 CATEGORIES=	net
 
 HOMEPAGE=	https://github.com/job/aggregate6/
