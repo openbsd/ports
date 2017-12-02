@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2016/05/12 14:00:13 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2017/12/02 11:34:17 espie Exp $
 
 COMMENT=	portable multitasking and networking framework for perl
 
@@ -7,6 +7,7 @@ PKG_ARCH=	*
 DISTNAME=	POE-1.294
 REVISION=	1
 CATEGORIES=	devel
+FIX_EXTRACT_PERMISSIONS = Yes
 
 HOMEPAGE=	http://poe.perl.org/
 

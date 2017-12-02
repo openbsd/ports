@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2016/03/20 19:57:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.44 2017/12/02 11:34:17 espie Exp $
 
 COMMENT=	library for WWW access in Perl
 
@@ -7,6 +7,7 @@ PKG_ARCH=	*
 DISTNAME=	libwww-perl-6.15
 PKGNAME=	p5-${DISTNAME:S/-perl-/-/}
 CATEGORIES=	www
+FIX_EXTRACT_PERMISSIONS = Yes
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
