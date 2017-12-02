@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2017/09/11 05:44:27 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.10 2017/12/02 08:50:20 rsadowski Exp $
 
 COMMENT =	IRC client for KDE
 
-V =		1.7.2
+V =		1.7.4
 DISTNAME =	konversation-$V
 
 MAINTAINER =	KDE porting team <openbsd-kde@googlegroups.com>
