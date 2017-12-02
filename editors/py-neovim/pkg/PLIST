@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/05/12 10:14:09 edd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/12/02 12:30:56 edd Exp $
 lib/python${MODPY_VERSION}/site-packages/neovim/
 lib/python${MODPY_VERSION}/site-packages/neovim-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/neovim-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -12,6 +12,7 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/neovim/${MODPY_PYCACHE}
 lib/python${MODPY_VERSION}/site-packages/neovim/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/neovim/${MODPY_PYCACHE}compat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/neovim/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/neovim/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/neovim/api/
 lib/python${MODPY_VERSION}/site-packages/neovim/api/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/neovim/api/${MODPY_PYCACHE}/
@@ -58,3 +59,4 @@ lib/python${MODPY_VERSION}/site-packages/neovim/plugin/decorators.py
 lib/python${MODPY_VERSION}/site-packages/neovim/plugin/host.py
 lib/python${MODPY_VERSION}/site-packages/neovim/plugin/script_host.py
 lib/python${MODPY_VERSION}/site-packages/neovim/util.py
+lib/python${MODPY_VERSION}/site-packages/neovim/version.py
