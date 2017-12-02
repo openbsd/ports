@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2017/11/19 19:47:43 kirby Exp $
+# $OpenBSD: Makefile,v 1.12 2017/12/02 15:26:12 jca Exp $
 
 # tome4 ships embedded copy of luajit wich is known to
 # work on the arches listed below.
 # Other arches will fail with
 # ../src/luajit2/src/lj_arch.h:55:2: error: #error "No support for
 # this architecture (yet)"
-ONLY_FOR_ARCHS = powerpc i386 amd64
+ONLY_FOR_ARCHS = i386 amd64
 
 COMMENT-main =	graphical sdl rogue-like game
 COMMENT-data =	data for Tales of Maj'Eyal
