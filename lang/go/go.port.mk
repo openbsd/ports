@@ -1,4 +1,4 @@
-# $OpenBSD: go.port.mk,v 1.16 2017/04/22 09:55:16 ajacoutot Exp $
+# $OpenBSD: go.port.mk,v 1.17 2017/12/02 09:29:14 ajacoutot Exp $
 
 ONLY_FOR_ARCHS ?=	${GO_ARCHS}
 
@@ -77,7 +77,7 @@ RUN_DEPENDS +=		${MODGO_RUN_DEPENDS}
 MODGO_TEST_TARGET =	${MODGO_TEST_CMD} ${TEST_TARGET}
 
 .if empty(CONFIGURE_STYLE)
-MODGO_post-patch +=	${MODGO_SETUP_WORKSPACE}
+MODGO_pre-configure +=	${MODGO_SETUP_WORKSPACE}
 
 .  if !target(do-build)
 do-build:
