@@ -1,7 +1,9 @@
-$OpenBSD: patch-src_Netclient_cpp,v 1.2 2010/08/06 18:01:21 naddy Exp $
---- src/Netclient.cpp.orig	Fri Aug  3 21:43:44 2007
-+++ src/Netclient.cpp	Fri Aug  3 21:45:07 2007
-@@ -140,6 +140,7 @@ bool Netclient::getValue(Window win, Atom atom, Atom t
+$OpenBSD: patch-src_Netclient_cpp,v 1.3 2017/12/02 18:18:21 ajacoutot Exp $
+
+Index: src/Netclient.cpp
+--- src/Netclient.cpp.orig
++++ src/Netclient.cpp
+@@ -141,6 +141,7 @@ bool Netclient::getValue(Window win, Atom atom, Atom t
    int result;
    unsigned long maxread = nelements;
    bool ret = False;
@@ -9,7 +11,7 @@ $OpenBSD: patch-src_Netclient_cpp,v 1.2 2010/08/06 18:01:21 naddy Exp $
  
    // try get the first element
    result = XGetWindowProperty(_display.XDisplay(), win, atom, 0l, 1l, False,
-@@ -148,18 +149,19 @@ bool Netclient::getValue(Window win, Atom atom, Atom t
+@@ -149,18 +150,19 @@ bool Netclient::getValue(Window win, Atom atom, Atom t
    ret = (result == Success && ret_type == type && ret_size == size &&
           nelements > 0);
    if (ret) {
@@ -33,7 +35,7 @@ $OpenBSD: patch-src_Netclient_cpp,v 1.2 2010/08/06 18:01:21 naddy Exp $
        result = XGetWindowProperty(_display.XDisplay(), win, atom, 0l, remain, False, type,
                                    &ret_type, &ret_size, &nelements, &ret_bytes,
                                    &c_val);
-@@ -173,8 +175,8 @@ bool Netclient::getValue(Window win, Atom atom, Atom t
+@@ -174,8 +176,8 @@ bool Netclient::getValue(Window win, Atom atom, Atom t
        if (! ret)
          return getValue(win, atom, type, maxread, value, size);
    

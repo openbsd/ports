@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.5 2005/06/23 20:36:39 sturm Exp $
-bin/bbkeys
+@comment $OpenBSD: PLIST,v 1.6 2017/12/02 18:18:21 ajacoutot Exp $
+@bin bin/bbkeys
 @man man/man1/bbkeys.1
 @man man/man5/bbkeysrc.5
 share/bbkeys/

@@ -1,10 +1,11 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2005/06/23 20:36:39 sturm Exp $
---- Makefile.in.orig	Fri Jun 17 20:24:58 2005
-+++ Makefile.in	Fri Jun 17 20:25:49 2005
-@@ -24,9 +24,9 @@ top_builddir = .
- 
+$OpenBSD: patch-Makefile_in,v 1.2 2017/12/02 18:18:21 ajacoutot Exp $
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -19,9 +19,9 @@ pkgdatadir = $(datadir)/@PACKAGE@
+ pkglibdir = $(libdir)/@PACKAGE@
+ pkgincludedir = $(includedir)/@PACKAGE@
  am__cd = CDPATH="$${ZSH_VERSION+.}$(PATH_SEPARATOR)" && cd
- INSTALL = @INSTALL@
 -install_sh_DATA = $(install_sh) -c -m 644
 -install_sh_PROGRAM = $(install_sh) -c
 -install_sh_SCRIPT = $(install_sh) -c
