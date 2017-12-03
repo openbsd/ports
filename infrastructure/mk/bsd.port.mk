@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1379 2017/11/28 10:26:00 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1380 2017/12/03 11:10:10 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -2764,11 +2764,17 @@ ${_TEST_COOKIE}: ${_BUILD_COOKIE}
 .endif
 	@${_MAKE_COOKIE} $@
 
-# XXX we don't care about the order
+_post-install-modules:
 .for _m in ${MODULES:T:U}
 .  if defined(MOD${_m}_post-install)
-_hook-post-install::
 	@${MOD${_m}_post-install}
+.  endif
+.endfor
+
+_pre-fake-modules:
+.for _m in ${MODULES:T:U}
+.  if defined(MOD${_m}_pre-fake)
+	@${MOD${_m}_pre-fake}
 .  endif
 .endfor
 
@@ -2791,11 +2797,7 @@ ${_FAKE_COOKIE}: ${_BUILD_COOKIE} ${_FAKESUDO_CHECK_COOKIE}
 	@ln -sf /bin/echo ${WRKDIR}/bin/chgrp
 	@install -C -m ${BINMODE} ${_INSTALL_WRAPPER} ${WRKDIR}/bin/install
 .endif
-.for _m in ${MODULES:T:U}
-.  if defined(MOD${_m}_pre-fake)
-	@${MOD${_m}_pre-fake}
-.  endif
-.endfor
+	${_SUDOMAKESYS} _pre-fake-modules ${FAKE_SETUP}
 .if target(pre-fake)
 	@${_SUDOMAKESYS} pre-fake ${FAKE_SETUP}
 .endif
@@ -2815,8 +2817,7 @@ ${_FAKE_COOKIE}: ${_BUILD_COOKIE} ${_FAKESUDO_CHECK_COOKIE}
 .if target(post-install)
 	@${_SUDOMAKESYS} post-install ${FAKE_SETUP}
 .endif
-.if target(_hook-post-install)
-	@${_SUDOMAKESYS} _hook-post-install ${FAKE_SETUP}
+	@${_SUDOMAKESYS} _post-install-modules ${FAKE_SETUP}
 .endif
 	@${_check_wrkdir} ${WRKDIR} ${_TS_COOKIE} ${WRKDIR_CHANGES_OKAY} 
 	@${_FAKESUDO} ${_MAKE_COOKIE} $@
@@ -3476,7 +3477,8 @@ _all_phony = ${_recursive_depends_targets} \
     show-required-by subpackage uninstall _print-metadata \
 	run-depends-args lib-depends-args all-lib-depends-args wantlib-args \
 	port-wantlib-args fake-wantlib-args no-wantlib-args no-lib-depends-args \
-	_recurse-show-run-depends show-run-depends
+	_recurse-show-run-depends show-run-depends \
+	_post-install-modules _pre-fake-modules
 
 .if defined(_DEBUG_TARGETS)
 .  for _t in ${_all_phony}
