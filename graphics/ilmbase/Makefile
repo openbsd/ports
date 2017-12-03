@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.17 2017/07/26 22:45:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2017/12/03 13:04:26 ajacoutot Exp $
 
 COMMENT=	ILM base libraries
 
-DISTNAME=	ilmbase-2.2.0
+DISTNAME=	ilmbase-2.2.1
 CATEGORIES=	graphics
-REVISION=	0
 
-SHARED_LIBS +=	Half                 5.0      # 12.0
-SHARED_LIBS +=	Iex                  5.0      # 12.0
-SHARED_LIBS +=	IexMath              0.0      # 12.0
-SHARED_LIBS +=	Imath                5.0      # 12.0
-SHARED_LIBS +=	IlmThread            5.0      # 12.0
+SHARED_LIBS +=	Half                 5.0      # 23.0
+SHARED_LIBS +=	Iex                  5.0      # 23.0
+SHARED_LIBS +=	IexMath              0.0      # 23.0
+SHARED_LIBS +=	Imath                5.0      # 23.0
+SHARED_LIBS +=	IlmThread            5.0      # 23.0
 
 HOMEPAGE=	http://www.openexr.com/
 
