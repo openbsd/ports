@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2017/01/03 18:54:48 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.8 2017/12/03 12:45:52 ajacoutot Exp $
 bin/spd-conf
 @bin bin/spd-say
 @bin bin/spdsend
@@ -88,6 +88,7 @@ share/examples/speech-dispatcher/speech-dispatcher/modules/swift-generic.conf
 share/examples/speech-dispatcher/speech-dispatcher/speechd.conf
 @sample ${SYSCONFDIR}/speech-dispatcher/speechd.conf
 share/locale/cs/LC_MESSAGES/speech-dispatcher.mo
+share/locale/de/LC_MESSAGES/speech-dispatcher.mo
 share/locale/hu/LC_MESSAGES/speech-dispatcher.mo
 share/sounds/
 share/sounds/speech-dispatcher/
