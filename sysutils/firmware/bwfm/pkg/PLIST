@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/10/12 09:50:15 patrick Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/12/03 11:47:55 sthen Exp $
+firmware/bcm4329-fullmac-4.bin
 firmware/brcmfmac43143-sdio.bin
 firmware/brcmfmac43143.bin
 firmware/brcmfmac43236b.bin
@@ -14,6 +15,7 @@ firmware/brcmfmac4335-sdio.bin
 firmware/brcmfmac43362-sdio.bin
 firmware/brcmfmac4339-sdio.bin
 firmware/brcmfmac43430-sdio.bin
+firmware/brcmfmac43430a0-sdio.bin
 firmware/brcmfmac43455-sdio.bin
 firmware/brcmfmac4350-pcie.bin
 firmware/brcmfmac4350c2-pcie.bin
