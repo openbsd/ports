@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2014/06/13 19:24:26 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.6 2017/12/03 16:41:43 espie Exp $
 
 COMMENT=		simple, lightweight tiling and floating window manager
 
 DISTNAME=		echinus-0.4.9
 
 CATEGORIES=		x11
+FIX_EXTRACT_PERMISSIONS=Yes
 
 HOMEPAGE=		http://plhk.ru/
 

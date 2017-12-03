@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2013/10/19 10:35:00 jung Exp $
+# $OpenBSD: Makefile,v 1.12 2017/12/03 16:41:43 espie Exp $
 
 COMMENT=	object oriented type setting language
 
 DISTNAME=	lout-3.40
 CATEGORIES=	print textproc
+FIX_EXTRACT_PERMISSIONS =	Yes
 
 HOMEPAGE=	http://savannah.nongnu.org/projects/lout/
 MASTER_SITES=	${MASTER_SITE_SAVANNAH:=lout/}
