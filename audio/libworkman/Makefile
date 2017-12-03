@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2015/03/16 18:07:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2017/12/03 11:13:33 espie Exp $
 
 COMMENT=		multi-platform CD-Player library
 
@@ -7,6 +7,7 @@ PKGNAME=		libworkman-1.4
 REVISION=		1
 SHARED_LIBS=		workman	1.4
 CATEGORIES=		audio
+FIX_EXTRACT_PERMISSIONS=Yes
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
