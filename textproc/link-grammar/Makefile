@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2017/11/16 23:20:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.46 2017/12/03 13:59:07 ajacoutot Exp $
 
 ONLY_FOR_ARCHS-java =	i386 amd64
 
@@ -6,17 +6,14 @@ COMMENT-main =		syntactic parser of different languages
 COMMENT-java =		Java bindings for link-grammar
 COMMENT-python =	Python bindings for link-grammar
 
-VERSION =		5.3.16
+VERSION =		5.4.2
 DISTNAME =		link-grammar-${VERSION}
 
 PKGNAME-main =		${DISTNAME}
 PKGNAME-java =		link-grammar-java-${VERSION}
 PKGNAME-python =	py-link-grammar-${VERSION}
-REVISION-java =		1
-REVISION-main =		0
-REVISION-python =	0
 
-SHARED_LIBS +=  link-grammar         4.0      # 8.7
+SHARED_LIBS +=  link-grammar         5.0      # 8.7
 SHARED_LIBS +=  link-grammar-java    4.0      # 8.7
 
 CATEGORIES =		textproc
@@ -40,6 +37,8 @@ MASTER_SITES =		http://www.abisource.com/downloads/link-grammar/${VERSION}/
 MODULES =		lang/python
 
 MODPY_ADJ_FILES =	bindings/python-examples/tests.py
+
+USE_GMAKE =		Yes
 
 # -std=c++03
 COMPILER =		base-clang ports-clang
