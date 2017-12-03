@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2017/11/12 13:43:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2017/12/03 19:11:09 sthen Exp $
 
 COMMENT =		deduplicating backup program
 
-MODPY_EGG_VERSION =	1.1.2
+MODPY_EGG_VERSION =	1.1.3
 DISTNAME =		borgbackup-${MODPY_EGG_VERSION}
-
-MODPY_PI =		Yes
 
 CATEGORIES =		sysutils
 
@@ -15,25 +13,21 @@ MAINTAINER =		Bjorn Ketelaars <bjorn.ketelaars@hydroxide.nl>
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		lang/python
-
+MODPY_PI =		Yes
+MODPY_SETUPTOOLS =	Yes
 MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 WANTLIB +=		${MODPY_WANTLIB} crypto lz4 pthread
 
 LIB_DEPENDS +=		${MODPY_LIB_DEPENDS} archivers/lz4
-
 BUILD_DEPENDS +=	${RUN_DEPENDS} \
 			devel/py-setuptools_scm${MODPY_FLAVOR} \
 			textproc/py-sphinx_guzzle_theme${MODPY_FLAVOR}
-
 RUN_DEPENDS +=		net/py-msgpack${MODPY_FLAVOR}
-
 TEST_DEPENDS +=		${RUN_DEPENDS} \
 			devel/py-test${MODPY_FLAVOR} \
 			devel/py-test-benchmark${MODPY_FLAVOR} \
 			devel/py-test-xdist${MODPY_FLAVOR}
-
-MODPY_SETUPTOOLS =	Yes
 
 post-build:
 	${MODPY_CMD} build_ext --inplace
