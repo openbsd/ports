@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2017/05/26 21:17:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2017/12/03 13:09:35 ajacoutot Exp $
 
 COMMENT=	ICC compatible color management system
 
-V=		1.9.2
+V=		2.0.0
 DISTNAME=	Argyll_V${V}_src
 PKGNAME=	argyllcms-${V}
 EXTRACT_SUFX=	.zip
@@ -20,12 +20,14 @@ WANTLIB += m png pthread ssl tiff z
 
 MASTER_SITES=	${HOMEPAGE}
 
-BUILD_DEPENDS=	devel/jam
+BUILD_DEPENDS=	devel/jam \
+		editors/vim # xxd(1)
 
 LIB_DEPENDS=	graphics/png \
 		graphics/tiff
 
 MAKE_ENV=	CCOPTFLAG="${CFLAGS} -I${X11BASE}/include" \
+		LINKDEBUGFLAG="-L${LOCALBASE}/lib" \
 		REFSUBDIR="share/color/argyll/ref"
 
 NO_TEST=	Yes
