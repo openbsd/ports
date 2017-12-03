@@ -19,6 +19,7 @@ holds all the information retrieved through various variables, e.g.,:
     DISTNAME 
     DIST_SUBDIR 
     EPOCH
+    FIX_EXTRACT_PERMISSIONS
     FLAVORS 
     FULLPKGNAME
     GH_*

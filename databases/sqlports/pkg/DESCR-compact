@@ -28,6 +28,7 @@ stored in specialized tables, e.g.,:
     DISTNAME 
     DIST_SUBDIR 
     EPOCH
+    FIX_EXTRACT_PERMISSIONS
     FLAVORS 
     FULLPKGNAME
     GH_*
