@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2017/07/26 22:45:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2017/12/03 13:32:52 ajacoutot Exp $
 
 COMMENT =		Color Transformation Language interpreter
 
 V =			1.5.2
 DISTNAME =		ctl-$V
+REVISION =		1
 
 SHARED_LIBS +=  IlmCtl               1.0      # .2.0
 SHARED_LIBS +=  IlmCtlMath           1.0      # .2.0
@@ -23,7 +24,6 @@ GH_ACCOUNT =		ampas
 GH_PROJECT =		ctl
 GH_TAGNAME =		ctl-${V}
 MASTER_SITES =		${MASTER_SITES_GITHUB}
-REVISION =		0
 
 MODULES =		devel/cmake
 LIB_DEPENDS =		graphics/openexr \
