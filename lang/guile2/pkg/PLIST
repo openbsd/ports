@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2017/05/11 14:10:21 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2017/12/03 14:42:50 ajacoutot Exp $
 bin/guild
 @bin bin/guile2
 bin/guile2-config
@@ -138,6 +138,7 @@ lib/guile/${V}/
 lib/guile/${V}/ccache/
 lib/guile/${V}/ccache/ice-9/
 lib/guile/${V}/ccache/ice-9/and-let-star.go
+lib/guile/${V}/ccache/ice-9/arrays.go
 lib/guile/${V}/ccache/ice-9/atomic.go
 lib/guile/${V}/ccache/ice-9/binary-ports.go
 lib/guile/${V}/ccache/ice-9/boot-9.go
@@ -476,7 +477,7 @@ lib/guile/${V}/extensions/guile-readline.so.0.0
 lib/libguile-${V}.a
 lib/libguile-${V}.la
 @lib lib/libguile-${V}.so.${LIBguile-2.2_VERSION}
-lib/libguile-${V}.so.${LIBguile-2.2_VERSION}-gdb.scm
+lib/libguile-${V}.so.0.1-gdb.scm
 lib/pkgconfig/guile-${V}.pc
 @man man/man1/guile2.1
 share/aclocal/guile2.m4
@@ -485,6 +486,7 @@ share/guile/${V}/
 share/guile/${V}/guile-procedures.txt
 share/guile/${V}/ice-9/
 share/guile/${V}/ice-9/and-let-star.scm
+share/guile/${V}/ice-9/arrays.scm
 share/guile/${V}/ice-9/atomic.scm
 share/guile/${V}/ice-9/binary-ports.scm
 share/guile/${V}/ice-9/boot-9.scm

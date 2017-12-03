@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2017/11/16 23:20:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2017/12/03 14:42:50 ajacoutot Exp $
 
 # When updating, check that x11/gnome/aisleriot MODGNOME_CPPFLAGS references the
 # proper guile2 includes directory
@@ -6,7 +6,7 @@
 COMMENT=		GNU's Ubiquitous Intelligent Language for Extension
 
 # '
-VERSION=		2.2.2
+VERSION=		2.2.3
 DISTNAME=		guile-${VERSION}
 PKGNAME=		guile2-${VERSION}
 V=			${VERSION:C,.[0-9]+$,,}
@@ -16,12 +16,12 @@ CATEGORIES=		lang
 
 HOMEPAGE=		https://www.gnu.org/software/guile/
 
-SHARED_LIBS +=  guile-2.2            0.0      # 3.0
+SHARED_LIBS +=  guile-2.2            0.1      # 4.0
 
 # GPLv3, LGPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c ffi gc gmp iconv intl ltdl m ncurses pthread readline
+WANTLIB += c curses ffi gc gmp iconv intl ltdl m pthread readline
 WANTLIB += unistring
 
 MASTER_SITES=		${MASTER_SITE_GNU:=guile/}
