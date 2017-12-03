@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2017/10/23 17:10:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2017/12/03 13:34:13 ajacoutot Exp $
 
 COMMENT =		viewers for OpenEXR
-V =			2.2.0
+V =			2.2.1
 DISTNAME =		openexr_viewers-$V
 PKGNAME =		${DISTNAME:S/_/-/}
 SUBST_VARS +=		V
-REVISION =		1
 
 CATEGORIES =		graphics
 HOMEPAGE =		http://www.openexr.com/
