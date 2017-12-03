@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1380 2017/12/03 11:10:10 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1381 2017/12/03 12:57:35 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -2818,7 +2818,6 @@ ${_FAKE_COOKIE}: ${_BUILD_COOKIE} ${_FAKESUDO_CHECK_COOKIE}
 	@${_SUDOMAKESYS} post-install ${FAKE_SETUP}
 .endif
 	@${_SUDOMAKESYS} _post-install-modules ${FAKE_SETUP}
-.endif
 	@${_check_wrkdir} ${WRKDIR} ${_TS_COOKIE} ${WRKDIR_CHANGES_OKAY} 
 	@${_FAKESUDO} ${_MAKE_COOKIE} $@
 
