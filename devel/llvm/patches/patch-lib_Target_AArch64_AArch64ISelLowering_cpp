@@ -1,47 +1,13 @@
-$OpenBSD: patch-lib_Target_AArch64_AArch64ISelLowering_cpp,v 1.5 2017/09/25 10:44:19 ajacoutot Exp $
+$OpenBSD: patch-lib_Target_AArch64_AArch64ISelLowering_cpp,v 1.6 2017/12/03 10:19:37 ajacoutot Exp $
 
-- [AArch64] Fix bug in store of vector 0 DAGCombine.
-
-Avoid using XZR/WZR directly as operands to split stores of zero
-vectors.  Doing so can lead to the XZR/WZR being used by an instruction
-that doesn't allow it (e.g. add).
-
-Fixes bug 34674.
-
-- Disable the Load Stack Guard for OpenBSD on AArch64.  We don't use it
-  on any other platform and it causes a segfault in combination with our
-  IR Stack Guard.
+Disable the Load Stack Guard for OpenBSD on AArch64.  We don't use it
+on any other platform and it causes a segfault in combination with our
+IR Stack Guard.
 
 Index: lib/Target/AArch64/AArch64ISelLowering.cpp
 --- lib/Target/AArch64/AArch64ISelLowering.cpp.orig
 +++ lib/Target/AArch64/AArch64ISelLowering.cpp
-@@ -9347,11 +9347,20 @@ static SDValue replaceZeroVectorStore(SelectionDAG &DA
-       return SDValue();
-   }
- 
--  // Use WZR/XZR here to prevent DAGCombiner::MergeConsecutiveStores from
--  // undoing this transformation.
--  SDValue SplatVal = VT.getVectorElementType().getSizeInBits() == 32
--                         ? DAG.getRegister(AArch64::WZR, MVT::i32)
--                         : DAG.getRegister(AArch64::XZR, MVT::i64);
-+  // Use a CopyFromReg WZR/XZR here to prevent
-+  // DAGCombiner::MergeConsecutiveStores from undoing this transformation.
-+  SDLoc DL(&St);
-+  unsigned ZeroReg;
-+  EVT ZeroVT;
-+  if (VT.getVectorElementType().getSizeInBits() == 32) {
-+    ZeroReg = AArch64::WZR;
-+    ZeroVT = MVT::i32;
-+  } else {
-+    ZeroReg = AArch64::XZR;
-+    ZeroVT = MVT::i64;
-+  }
-+  SDValue SplatVal =
-+      DAG.getCopyFromReg(DAG.getEntryNode(), DL, ZeroReg, ZeroVT);
-   return splitStoreSplat(DAG, St, SplatVal, NumVecElts);
- }
- 
-@@ -10568,7 +10577,8 @@ void AArch64TargetLowering::ReplaceNodeResults(
+@@ -10577,7 +10577,8 @@ void AArch64TargetLowering::ReplaceNodeResults(
  }
  
  bool AArch64TargetLowering::useLoadStackGuardNode() const {
