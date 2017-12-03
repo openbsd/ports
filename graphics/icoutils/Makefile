@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2017/11/21 00:13:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2017/12/03 12:51:35 ajacoutot Exp $
 
 COMMENT =		extractor and converter for .ico and .cur files
 
-DISTNAME =		icoutils-0.31.3
-REVISION =		0
+DISTNAME =		icoutils-0.32.2
 
 CATEGORIES =		graphics
 
