@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2016/03/20 19:56:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2017/12/04 17:56:27 espie Exp $
 
 COMMENT=	module to read TNEF files
 
@@ -6,6 +6,7 @@ DISTNAME =	Convert-TNEF-0.18
 CATEGORIES=	converters
 MODULES=	cpan
 PKG_ARCH=	*
+FIX_EXTRACT_PERMISSIONS=Yes
 
 MAINTAINER=	Ibrahim Khalifa <ibo@toontown.org>
 

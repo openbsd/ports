@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2017/07/27 19:11:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2017/12/04 17:56:27 espie Exp $
 
 REV=		1.0
 VERSION=	${REV}.2a
@@ -6,6 +6,7 @@ EPOCH=		0
 REVISION=	5
 SHARED_LIBS=	net	0.0
 PKGSPEC =	libnet->=1.0v0,<1.1v0
+FIX_EXTRACT_PERMISSIONS=Yes
 
 MASTER_SITES=	http://www.packetfactory.net/libnet/dist/deprecated/
 

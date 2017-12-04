@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2015/06/23 08:02:06 bentley Exp $
+# $OpenBSD: Makefile,v 1.26 2017/12/04 17:56:27 espie Exp $
 
 COMMENT=	NetBIOS Auditing Tool / Security Kit
 
@@ -7,6 +7,7 @@ PKGNAME=	nbaudit-1.0
 REVISION =	1
 CATEGORIES=	security net
 MASTER_SITES=	${MASTER_SITE_PACKETSTORM:=NT/scanners/}
+FIX_EXTRACT_PERMISSIONS=Yes
 
 PERMIT_PACKAGE_CDROM=	Yes
 

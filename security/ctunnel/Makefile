@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 11:41:24 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2017/12/04 17:56:27 espie Exp $
 
 COMMENT=	provide cryptographic tunnel
 
 DISTNAME=	ctunnel-0.4
 CATEGORIES=	security
 REVISION=	0
+FIX_EXTRACT_PERMISSIONS=Yes
 
 HOMEPAGE=	http://nardcore.org/ctunnel/
 

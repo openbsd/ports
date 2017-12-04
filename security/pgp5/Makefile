@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2017/08/24 10:25:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.42 2017/12/04 17:56:27 espie Exp $
 
 COMMENT=	Pretty Good Privacy 5.0i (world wide use)
 
@@ -6,6 +6,7 @@ DISTNAME=	pgp50i-unix-src
 PKGNAME=	pgp-5.0i
 REVISION=	2
 CATEGORIES=	security
+FIX_EXTRACT_PERMISSIONS=Yes
 
 MASTER_SITES=	https://spacehopper.org/mirrors/
 

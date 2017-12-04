@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2016/03/20 19:56:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2017/12/04 17:56:27 espie Exp $
 
 # Lacks p5-Term-Gnuplot regress dependency!
 
@@ -9,6 +9,7 @@ MODULES=	cpan
 DISTNAME=	Math-Pari-2.01080605
 CATEGORIES=	math
 REVISION=	1
+FIX_EXTRACT_PERMISSIONS=Yes
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes

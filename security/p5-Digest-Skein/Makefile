@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2016/03/22 13:39:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2017/12/04 17:56:27 espie Exp $
 
 COMMENT =	interface to the Skein digest algorithm
 
 DISTNAME =	Digest-Skein-0.05
 CATEGORIES =	security
+FIX_EXTRACT_PERMISSIONS=Yes
 
 REVISION =	4
 

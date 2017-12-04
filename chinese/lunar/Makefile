@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2015/01/22 18:41:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.25 2017/12/04 17:56:27 espie Exp $
 
 COMMENT=	convert solar calendar to lunar calendar
 
 DISTNAME=	lunar-2.1
 PKGNAME=	zh-lunar-2.1
 REVISION =	0
+FIX_EXTRACT_PERMISSIONS=Yes
 
 CATEGORIES=	chinese
 

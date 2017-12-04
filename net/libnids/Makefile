@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2017/11/29 13:02:24 jca Exp $
+# $OpenBSD: Makefile,v 1.42 2017/12/04 17:56:27 espie Exp $
 
 COMMENT=	network monitoring library with TCP/IP reassembly
 
@@ -6,6 +6,7 @@ SHARED_LIBS= nids 0.0
 
 DISTNAME=	libnids-1.24
 REVISION=	1
+FIX_EXTRACT_PERMISSIONS=Yes
 
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=libnids/}
