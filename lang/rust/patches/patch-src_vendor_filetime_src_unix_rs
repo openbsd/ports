@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_vendor_filetime_src_unix_rs,v 1.1 2017/12/04 17:31:49 landry Exp $
+We don't have lutimes(2)
+Index: src/vendor/filetime/src/unix.rs
+--- src/vendor/filetime/src/unix.rs.orig
++++ src/vendor/filetime/src/unix.rs
+@@ -14,12 +14,12 @@ pub fn set_file_times(p: &Path, atime: FileTime, mtime
+     set_file_times_u(p, atime, mtime, libc::utimes)
+ }
+ 
+-#[cfg(target_os = "android")]
++#[cfg(any(target_os = "android", target_os="openbsd"))]
+ pub fn set_symlink_file_times(_p: &Path, _atime: FileTime, _mtime: FileTime) -> io::Result<()> {
+-   Err(io::Error::new(io::ErrorKind::Other, "not supported on Android"))
++   Err(io::Error::new(io::ErrorKind::Other, "not supported on Android or OpenBSD"))
+ }
+ 
+-#[cfg(not(target_os = "android"))]
++#[cfg(not(any(target_os = "android", target_os="openbsd")))]
+ pub fn set_symlink_file_times(p: &Path, atime: FileTime, mtime: FileTime) -> io::Result<()> {
+    set_file_times_u(p, atime, mtime, libc::lutimes)
+ }

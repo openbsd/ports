@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_bootstrap_dist_rs,v 1.1 2017/12/04 17:31:49 landry Exp $
+Stop in the middle of "Extended" step: we have generated tarballs for rustc,
+rust-std and cargo: it is enough and generating a combined tarball in memory
+requires too much RAM for i386
+Index: src/bootstrap/dist.rs
+--- src/bootstrap/dist.rs.orig
++++ src/bootstrap/dist.rs
+@@ -1182,6 +1182,10 @@ impl Step for Extended {
+             target,
+         });
+ 
++        if target.contains("openbsd") {
++            return;
++        }
++
+         let tmp = tmpdir(build);
+         let overlay = tmp.join("extended-overlay");
+         let etc = build.src.join("src/etc/installer");

@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_librustc_llvm_build_rs,v 1.1 2017/12/04 17:31:49 landry Exp $
+Use c++ for OpenBSD instead of stdc++
+Index: src/librustc_llvm/build.rs
+--- src/librustc_llvm/build.rs.orig
++++ src/librustc_llvm/build.rs
+@@ -252,8 +252,8 @@ fn main() {
+     let llvm_static_stdcpp = env::var_os("LLVM_STATIC_STDCPP");
+ 
+     let stdcppname = if target.contains("openbsd") {
+-        // OpenBSD has a particular C++ runtime library name
+-        "estdc++"
++        // llvm-config on OpenBSD doesn't mention stdlib=libc++
++        "c++"
+     } else if target.contains("netbsd") && llvm_static_stdcpp.is_some() {
+         // NetBSD uses a separate library when relocation is required
+         "stdc++_pic"

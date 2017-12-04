@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_librustc_back_target_i686_unknown_openbsd_rs,v 1.4 2017/12/04 17:31:49 landry Exp $
+i386 should be pentiumpro (no SSE2, no ...)
+Index: src/librustc_back/target/i686_unknown_openbsd.rs
+--- src/librustc_back/target/i686_unknown_openbsd.rs.orig
++++ src/librustc_back/target/i686_unknown_openbsd.rs
+@@ -13,7 +13,7 @@ use target::{Target, TargetResult};
+ 
+ pub fn target() -> TargetResult {
+     let mut base = super::openbsd_base::opts();
+-    base.cpu = "pentium4".to_string();
++    base.cpu = "pentiumpro".to_string();
+     base.max_atomic_width = Some(64);
+     base.pre_link_args.get_mut(&LinkerFlavor::Gcc).unwrap().push("-m32".to_string());
+     base.stack_probes = true;

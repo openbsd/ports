@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_tools_cargo_src_cargo_util_config_rs,v 1.2 2017/10/17 17:19:24 danj Exp $
+$OpenBSD: patch-src_tools_cargo_src_cargo_util_config_rs,v 1.3 2017/12/04 17:31:49 landry Exp $
 fallback to LOCALBASE as default path for cargo binary.
 Index: src/tools/cargo/src/cargo/util/config.rs
 --- src/tools/cargo/src/cargo/util/config.rs.orig
 +++ src/tools/cargo/src/cargo/util/config.rs
-@@ -124,7 +124,13 @@ impl Config {
- 
+@@ -154,7 +154,13 @@ impl Config {
+     /// Get the path to the `cargo` executable
      pub fn cargo_exe(&self) -> CargoResult<&Path> {
          self.cargo_exe.get_or_try_init(||
 -            env::current_exe().and_then(|path| path.canonicalize())

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2017/10/23 17:10:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.54 2017/12/04 17:31:49 landry Exp $
 
 # snapshots are only available for amd64 and i386, for now
 ONLY_FOR_ARCHS =	amd64 i386
@@ -8,13 +8,13 @@ DPB_PROPERTIES =	parallel
 COMMENT-main =		compiler for Rust Language
 COMMENT-doc =		html documentation for rustc
 
-V =			1.21.0
-CARGO_V =		0.22.0
+V =			1.22.1
+CARGO_V =		0.23.0
 DISTNAME =		rustc-${V}-src
 
 # rustc bootstrap version
-BV-amd64 =		1.21.0-20171011
-BV-i386 =		1.21.0-20171011
+BV-amd64 =		1.22.0-20171121
+BV-i386 =		1.22.1-20171125
 BV =			${BV-${MACHINE_ARCH}}
 
 PKGNAME =		rust-${V}
@@ -32,7 +32,7 @@ MAINTAINER =		Sebastien Marie <semarie@online.fr>
 # with portions covered by various BSD-like licenses
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB-main =		${MODGCC4_CPPWANTLIB} c crypto curl git2 m pthread ssh2 ssl
+WANTLIB-main =		${COMPILER_LIBCXX} c crypto curl git2 m pthread ssh2 ssl z
 WANTLIB-doc =
 
 MASTER_SITES =		https://static.rust-lang.org/dist/ \
@@ -58,13 +58,13 @@ TRIPLE_ARCH =		i686-unknown-openbsd
 PKG_ARGS +=		-Damd64=0 -Di386=1
 .endif
 
-MODULES +=		gcc4 \
-			lang/python \
+MODULES +=		lang/python \
 			gnu
 MODPY_RUNDEP =		No
 
 BUILD_DEPENDS +=	devel/cmake
-#BUILD_DEPENDS +=	devel/llvm
+BUILD_DEPENDS +=	shells/bash
+BUILD_DEPENDS +=	devel/llvm
 
 .if ! ${BUILD_DEPENDS:Mdevel/llvm}
 # use ninja to compile embedded llvm
@@ -75,23 +75,7 @@ LIB_DEPENDS +=		devel/libgit2/libgit2 \
 			net/curl \
 			security/libssh2
 
-# libgcc.a path
-CONFIG =		${MACHINE_ARCH}-unknown-openbsd${OSREV}
-SYSV =			4.2.1
-SYSLIBPATH =		/usr/lib/gcc-lib/${CONFIG}/${SYSV}
-
-# rustllvm need c++11
-MODGCC4_LANGS =		c++
-MODGCC4_ARCHS =		*	# patches required for base clang
-
-# need to be keep in sync
-LIBESTDC_VERSION =	17.1
-
-# note: RUSTFLAGS extra flags passed to rust
-# 		-L modgcc-libs : disambiguate libestdc++.so
-MAKE_ENV =	RUST_BACKTRACE=1 \
-	RUSTFLAGS="-L ${WRKDIR}/modgcc-libs -C link-arg=-Wl,--no-keep-memory" \
-	LIBGIT2_SYS_USE_PKG_CONFIG=1
+MAKE_ENV =	LIBGIT2_SYS_USE_PKG_CONFIG=1
 
 # build/configuration variables
 PATCHORIG =		.openbsd.orig
@@ -104,39 +88,21 @@ USE_LIBTOOL =		gnu
 TEST_DEPENDS +=		${FULLPKGNAME-main}:${BUILD_PKGPATH} \
 			devel/git
 
-TEST_TARGET ?=	src/test/run-pass \
-		src/test/compile-fail \
-		src/test/parse-fail \
-		src/test/run-fail \
-		src/test/mir-opt \
-		src/test/incremental \
-		src/test/ui \
-		src/test/compile-fail-fulldeps \
-		src/test/run-make \
-		src/test/rustdoc \
-		src/test/pretty \
-		src/test/run-pass/pretty \
-		src/test/run-fail/pretty \
-		path/to/nowhere
-
 # - disable vendor checksum checks
 # - SUBSTR cargo testsuite
 SUBST_VARS +=	WRKBUILD
 post-patch:
-	sed -ie 's/"files":{[^}]*}/"files":{}/' \
+	sed -i 's/"files":{[^}]*}/"files":{}/' \
 		${WRKSRC}/src/vendor/*/.cargo-checksum.json
 	${SUBST_CMD} ${WRKSRC}/src/tools/cargo/tests/cargotest/support/paths.rs
 
 # - check datasize limit before configuring (and building)
 pre-configure:
-	@if [ `ulimit -d` -lt 2097152 ]; then \
-		echo datasize limit is too low - amd64 build takes approx 2GB; \
+	@if [ `ulimit -d` -lt 3145728 ]; then \
+		echo datasize limit is too low - amd64 build takes approx 4GB; \
 		exit 1; fi
 
 # - generate config.toml file
-# - copy libestdc++ from MODGCC4 to specific directory
-#   in order to disambiguate version linking (having multiple libestdc++
-#   at build time)
 do-configure:
 	echo '[build]' >${WRKBUILD}/config.toml
 	echo 'rustc = "${WRKDIR}/rustc-bootstrap-${MACHINE_ARCH}-${BV}/bin/rustc"' \
@@ -157,6 +123,9 @@ do-configure:
 	echo 'channel = "stable"' >>${WRKBUILD}/config.toml
 	echo 'rpath = false' >>${WRKBUILD}/config.toml
 	echo 'codegen-tests = false' >>${WRKBUILD}/config.toml
+.if "${MACHINE_ARCH}" == "i386"
+	echo 'codegen-units = 16' >>${WRKBUILD}/config.toml
+.endif
 
 	echo '[dist]' >>${WRKBUILD}/config.toml
 	echo 'src-tarball = false' >>${WRKBUILD}/config.toml
@@ -171,10 +140,6 @@ do-configure:
 		>>${WRKBUILD}/config.toml
 .endif
 
-	rm -rf ${WRKDIR}/modgcc-libs
-	mkdir -p ${WRKDIR}/modgcc-libs
-	cp ${LOCALBASE}/lib/libestdc++.so.${LIBESTDC_VERSION} \
-		${WRKDIR}/modgcc-libs
 
 BUILD_BIN = cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
 	    ${MODPY_BIN} ${WRKSRC}/x.py
@@ -189,7 +154,8 @@ do-install:
 	mkdir ${WRKBUILD}/_extractdist
 	cd ${WRKBUILD}/_extractdist && tar zxf \
 		${WRKBUILD}/build/dist/${_c}-${TRIPLE_ARCH}.tar.gz
-	cd ${WRKBUILD}/_extractdist/${_c}-${TRIPLE_ARCH} && ./install.sh \
+	cd ${WRKBUILD}/_extractdist/${_c}-${TRIPLE_ARCH} && \
+		${LOCALBASE}/bin/bash ./install.sh \
 		--prefix="${PREFIX}" \
 		--mandir="${PREFIX}/man"
 	rm -rf ${WRKBUILD}/_extractdist
@@ -213,14 +179,11 @@ post-install:
 		${PREFIX}/share/bash-completion/completions
 	rmdir ${PREFIX}${SYSCONFDIR}/bash_completion.d \
 		${PREFIX}${SYSCONFDIR}
-	# make a link to libgcc.a inside rustlib
-	ln -fs ${SYSLIBPATH}/libgcc.a \
-		${PREFIX}/lib/rustlib/${TRIPLE_ARCH}/lib
 	# compile python stuff
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py ${PREFIX}/lib/rustlib/etc
 
 do-test:
-	${BUILD_BIN} test --jobs=${MAKE_JOBS} ${TEST_TARGET}
+	${BUILD_BIN} test --jobs=${MAKE_JOBS}
 
 # bootstrap target permits to regenerate the bootstrap archive
 BOOTSTRAPDIR=${WRKDIR}/rustc-bootstrap-${MACHINE_ARCH}-${V}-new

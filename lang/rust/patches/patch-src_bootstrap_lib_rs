@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_bootstrap_lib_rs,v 1.7 2017/10/17 17:19:24 danj Exp $
+$OpenBSD: patch-src_bootstrap_lib_rs,v 1.8 2017/12/04 17:31:49 landry Exp $
 Let us compilation choice to be honored.
 Index: src/bootstrap/lib.rs
 --- src/bootstrap/lib.rs.orig
 +++ src/bootstrap/lib.rs
-@@ -603,7 +603,6 @@ impl Build {
-         // gcc-rs because the build scripts will determine that for themselves.
+@@ -622,7 +622,6 @@ impl Build {
+         // cc-rs because the build scripts will determine that for themselves.
          let mut base = self.cc[&target].0.args().iter()
                             .map(|s| s.to_string_lossy().into_owned())
 -                           .filter(|s| !s.starts_with("-O") && !s.starts_with("/O"))

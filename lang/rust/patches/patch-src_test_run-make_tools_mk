@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_test_run-make_tools_mk,v 1.4 2017/12/04 17:31:49 landry Exp $
+Use c++ for OpenBSD instead of stdc++
+Index: src/test/run-make/tools.mk
+--- src/test/run-make/tools.mk.orig
++++ src/test/run-make/tools.mk
+@@ -86,7 +86,7 @@ ifeq ($(UNAME),SunOS)
+ 	EXTRACFLAGS := -lm -lpthread -lposix4 -lsocket -lresolv
+ else
+ ifeq ($(UNAME),OpenBSD)
+-	EXTRACFLAGS := -lm -lpthread
++	EXTRACFLAGS := -lm -lpthread -lc++abi
+ 	RUSTC := $(RUSTC) -C linker="$(word 1,$(CC:ccache=))"
+ else
+ 	EXTRACFLAGS := -lm -lrt -ldl -lpthread
