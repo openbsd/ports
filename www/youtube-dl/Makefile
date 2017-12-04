@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.172 2017/10/09 20:12:45 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.173 2017/12/04 13:38:11 pirofti Exp $
 
 COMMENT =	CLI program to download videos from YouTube and other sites
 
-VERSION =	2017.10.07
+VERSION =	2017.11.26
 MODPY_EGG_VERSION =	${VERSION:S/.0/./g}
 
 DISTNAME =	youtube-dl-${VERSION}
@@ -20,12 +20,18 @@ MASTER_SITES =	https://yt-dl.org/downloads/${VERSION}/
 MODULES =	lang/python
 
 MODPY_SETUPTOOLS =	Yes
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 TEST_DEPENDS +=	devel/flake8 \
-		devel/py-nose
+		devel/py-nose${MODPY_FLAVOR}
+
+TEST_ENV =	PATH=${PORTPATH}
+
+pre-test:
+	ln -sf ${LOCALBASE}/bin/nosetests-3 ${WRKDIR}/bin/nosetests
 
 do-test:
-	cd ${WRKSRC} && ${MAKE_PROGRAM} ${TEST_TARGET}
+	${TEST_ENV} ${MAKE_PROGRAM} -C ${WRKSRC} ${TEST_TARGET}
 
 PKG_ARCH =	*
 
