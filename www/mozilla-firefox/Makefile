@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.334 2017/11/30 19:33:41 landry Exp $
+# $OpenBSD: Makefile,v 1.335 2017/12/04 17:35:12 landry Exp $
 
 COMMENT =	Mozilla web browser
 ONLY_FOR_ARCHS =	amd64 i386
@@ -8,6 +8,7 @@ ONLY_FOR_ARCHS =	amd64 i386
 MOZILLA_VERSION =	57.0.1
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
+REVISION =		0
 
 HOMEPAGE =	https://www.mozilla.org/firefox/
 SO_VERSION =	75.0
@@ -60,6 +61,7 @@ CONFIGURE_ARGS +=	--enable-webrender=build
 # bug 1409680
 .if ${MACHINE_ARCH} == "i386"
 CONFIGURE_ARGS +=	--disable-debug-symbols
+MAKE_ENV +=		RUSTFLAGS="-C target-cpu=pentium4 --cfg target_feature=\"sse2\""
 .endif
 #CONFIGURE_ARGS +=	--enable-linker=lld
 
