@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2016/11/16 19:55:30 jca Exp $
+# $OpenBSD: Makefile,v 1.23 2017/12/04 18:58:08 espie Exp $
 
 COMMENT=	open-source LDAP software (server, legacy version)
 
@@ -79,16 +79,16 @@ post-install:
 		 ${PREFIX}/share/examples/openldap/schema
 	${INSTALL_DATA} ${WRKSRC}/servers/slapd/DB_CONFIG \
 		${PREFIX}/share/examples/openldap
-	@rm -r ${DESTDIR}${SYSCONFDIR}/openldap
-	@rm -r ${DESTDIR}/var/openldap-data ${DESTDIR}/var/openldap-slurp
+	rm -rf ${DESTDIR}${SYSCONFDIR}/openldap
+	rm -rf ${DESTDIR}/var/openldap-data ${DESTDIR}/var/openldap-slurp
 #Remove the client part
-	@cd ${PREFIX} && rm -fR bin include lib man/man5/ldap.conf.5 \
+	cd ${PREFIX} && rm -fR bin include lib man/man5/ldap.conf.5 \
 		man/man5/ldif.5 share/examples/openldap/ldap.conf \
 		man/man3/ld_errno.3
-	@find ${PREFIX}/man/man1 -name 'ldap*' -exec rm -f {} \;
-	@find ${PREFIX}/man/man3 -name 'ber_*' -exec rm -f {} \;
-	@find ${PREFIX}/man/man3 -name 'lber*' -exec rm -f {} \;
-	@find ${PREFIX}/man/man3 -name 'ldap*' -exec rm -f {} \;
-	@find ${PREFIX}/man/man5 -name 'slapo*' -exec rm -f {} \;
+	find ${PREFIX}/man/man1 -name 'ldap*' -exec rm -f {} \;
+	find ${PREFIX}/man/man3 -name 'ber_*' -exec rm -f {} \;
+	find ${PREFIX}/man/man3 -name 'lber*' -exec rm -f {} \;
+	find ${PREFIX}/man/man3 -name 'ldap*' -exec rm -f {} \;
+	find ${PREFIX}/man/man5 -name 'slapo*' -exec rm -f {} \;
 
 .include <bsd.port.mk>
