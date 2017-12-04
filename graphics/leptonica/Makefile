@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2017/12/03 13:44:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2017/12/04 11:52:04 ajacoutot Exp $
 
 COMMENT=	image processing and analysis library
 
 DISTNAME=	leptonica-1.74.4
+REVISION=	0
 
 SHARED_LIBS +=  lept                 2.2      # 5.1
 
@@ -25,7 +26,7 @@ TEST_DEPENDS=	shells/bash \
 		math/gnuplot
 
 CONFIGURE_STYLE=autoconf
-AUTOCONF_VERSION=2.68
+AUTOCONF_VERSION=2.69
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lm -lz"
 
