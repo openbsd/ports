@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2017/07/26 22:45:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.52 2017/12/04 17:39:33 espie Exp $
 
 # adjust lang/ocaml if gdb is ported to aarch64
 NOT_FOR_ARCHS=	aarch64
@@ -28,6 +28,7 @@ WANTLIB = c expat kvm m ncurses pthread ${MODPY_WANTLIB} ${COMPILER_LIBCXX} util
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--program-prefix=e \
 		--disable-nls \
+		--without-guile \
 		--without-lzma \
 	 	--enable-target=all \
 		--with-python=${MODPY_BIN}
