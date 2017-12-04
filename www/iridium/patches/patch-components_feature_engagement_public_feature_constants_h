@@ -1,0 +1,14 @@
+$OpenBSD: patch-components_feature_engagement_public_feature_constants_h,v 1.1 2017/12/04 13:55:41 robert Exp $
+
+Index: components/feature_engagement/public/feature_constants.h
+--- components/feature_engagement/public/feature_constants.h.orig
++++ components/feature_engagement/public/feature_constants.h
+@@ -29,7 +29,7 @@ extern const base::Feature kIPHChromeHomeExpandFeature
+ extern const base::Feature kIPHMediaDownloadFeature;
+ #endif  // defined(OS_ANDROID)
+ 
+-#if defined(OS_WIN) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_BSD)
+ extern const base::Feature kIPHIncognitoWindowFeature;
+ extern const base::Feature kIPHNewTabFeature;
+ #endif  // defined(OS_WIN) || defined(OS_LINUX)

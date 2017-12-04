@@ -1,9 +1,9 @@
-$OpenBSD: clang-third_party_WebKit_Source_platform_BUILD_gn,v 1.2 2017/10/28 07:36:00 robert Exp $
+$OpenBSD: clang-third_party_WebKit_Source_platform_BUILD_gn,v 1.3 2017/12/04 13:55:41 robert Exp $
 
 Index: third_party/WebKit/Source/platform/BUILD.gn
 --- third_party/WebKit/Source/platform/BUILD.gn.orig
 +++ third_party/WebKit/Source/platform/BUILD.gn
-@@ -172,6 +172,7 @@ executable("character_data_generator") {
+@@ -173,6 +173,7 @@ executable("character_data_generator") {
      "//build/win:default_exe_manifest",
      "//third_party/icu",
    ]

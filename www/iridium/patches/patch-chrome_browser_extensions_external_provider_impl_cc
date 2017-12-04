@@ -1,8 +1,8 @@
-$OpenBSD: patch-chrome_browser_extensions_external_provider_impl_cc,v 1.5 2017/10/28 07:36:00 robert Exp $
+$OpenBSD: patch-chrome_browser_extensions_external_provider_impl_cc,v 1.6 2017/12/04 13:55:41 robert Exp $
 Index: chrome/browser/extensions/external_provider_impl.cc
 --- chrome/browser/extensions/external_provider_impl.cc.orig
 +++ chrome/browser/extensions/external_provider_impl.cc
-@@ -687,7 +687,7 @@ void ExternalProviderImpl::CreateExternalProviders(
+@@ -689,7 +689,7 @@ void ExternalProviderImpl::CreateExternalProviders(
          Manifest::EXTERNAL_PREF, Manifest::EXTERNAL_PREF_DOWNLOAD,
          oem_extension_creation_flags));
    }
@@ -11,7 +11,7 @@ Index: chrome/browser/extensions/external_provider_impl.cc
    if (!profile->IsLegacySupervised()) {
      provider_list->push_back(base::MakeUnique<ExternalProviderImpl>(
          service,
-@@ -713,7 +713,7 @@ void ExternalProviderImpl::CreateExternalProviders(
+@@ -715,7 +715,7 @@ void ExternalProviderImpl::CreateExternalProviders(
          bundled_extension_creation_flags));
  
      // Define a per-user source of external extensions.

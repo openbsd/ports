@@ -1,7 +1,8 @@
-$OpenBSD: patch-content_utility_utility_main_cc,v 1.6 2017/10/28 07:36:00 robert Exp $
---- content/utility/utility_main.cc.orig.port	Fri Apr 28 07:34:50 2017
-+++ content/utility/utility_main.cc	Fri Apr 28 07:40:18 2017
-@@ -19,6 +19,8 @@
+$OpenBSD: patch-content_utility_utility_main_cc,v 1.7 2017/12/04 13:55:42 robert Exp $
+Index: content/utility/utility_main.cc
+--- content/utility/utility_main.cc.orig
++++ content/utility/utility_main.cc
+@@ -20,6 +20,8 @@
  
  #if defined(OS_LINUX)
  #include "content/common/sandbox_linux/sandbox_linux.h"
@@ -10,7 +11,7 @@ $OpenBSD: patch-content_utility_utility_main_cc,v 1.6 2017/10/28 07:36:00 robert
  #endif
  
  #if defined(OS_WIN)
-@@ -40,6 +42,8 @@ int UtilityMain(const MainFunctionParams& parameters) 
+@@ -44,6 +46,8 @@ int UtilityMain(const MainFunctionParams& parameters) 
    // Seccomp-BPF policy.
    if (parameters.zygote_child)
      LinuxSandbox::InitializeSandbox();

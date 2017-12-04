@@ -1,9 +1,18 @@
-$OpenBSD: patch-base_process_process_metrics_h,v 1.7 2017/10/28 07:36:00 robert Exp $
+$OpenBSD: patch-base_process_process_metrics_h,v 1.8 2017/12/04 13:55:41 robert Exp $
 
 Index: base/process/process_metrics.h
 --- base/process/process_metrics.h.orig
 +++ base/process/process_metrics.h
-@@ -215,7 +215,7 @@ class BASE_EXPORT ProcessMetrics {
+@@ -103,7 +103,7 @@ struct CommittedKBytes {
+   size_t image;
+ };
+ 
+-#if defined(OS_LINUX) || defined(OS_ANDROID)
++#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
+ // Minor and major page fault counts since the process creation.
+ // Both counts are process-wide, and exclude child processes.
+ //
+@@ -227,7 +227,7 @@ class BASE_EXPORT ProcessMetrics {
    // otherwise.
    bool GetIOCounters(IoCounters* io_counters) const;
  
@@ -12,7 +21,7 @@ Index: base/process/process_metrics.h
    // Returns the number of file descriptors currently open by the process, or
    // -1 on error.
    int GetOpenFdCount() const;
-@@ -225,7 +225,7 @@ class BASE_EXPORT ProcessMetrics {
+@@ -237,7 +237,7 @@ class BASE_EXPORT ProcessMetrics {
    int GetOpenFdSoftLimit() const;
  #endif  // defined(OS_LINUX) || defined(OS_AIX)
  
@@ -20,8 +29,8 @@ Index: base/process/process_metrics.h
 +#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
    // Bytes of swap as reported by /proc/[pid]/status.
    uint64_t GetVmSwapBytes() const;
- #endif  // defined(OS_LINUX) || defined(OS_ANDROID)
-@@ -307,7 +307,7 @@ BASE_EXPORT void SetFdLimit(unsigned int max_descripto
+ 
+@@ -323,7 +323,7 @@ BASE_EXPORT void SetFdLimit(unsigned int max_descripto
  #endif  // defined(OS_POSIX)
  
  #if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || \
@@ -30,7 +39,16 @@ Index: base/process/process_metrics.h
  // Data about system-wide memory consumption. Values are in KB. Available on
  // Windows, Mac, Linux, Android and Chrome OS.
  //
-@@ -355,7 +355,7 @@ struct BASE_EXPORT SystemMemoryInfoKB {
+@@ -356,7 +356,7 @@ struct BASE_EXPORT SystemMemoryInfoKB {
+   int avail_phys = 0;
+ #endif
+ 
+-#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_AIX)
++#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_AIX) || defined(OS_BSD)
+   // This provides an estimate of available memory as described here:
+   // https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=34e431b0ae398fc54ea69ff85ec700722c9da773
+   // NOTE: this is ONLY valid in kernels 3.14 and up.  Its value will always
+@@ -371,7 +371,7 @@ struct BASE_EXPORT SystemMemoryInfoKB {
  #endif
  
  #if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_AIX) || \

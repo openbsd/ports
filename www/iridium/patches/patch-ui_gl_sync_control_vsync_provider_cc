@@ -1,6 +1,8 @@
-$OpenBSD: patch-ui_gl_sync_control_vsync_provider_cc,v 1.8 2017/10/28 07:36:01 robert Exp $
---- ui/gl/sync_control_vsync_provider.cc.orig.port	Fri Apr 28 07:37:08 2017
-+++ ui/gl/sync_control_vsync_provider.cc	Fri Apr 28 07:37:21 2017
+$OpenBSD: patch-ui_gl_sync_control_vsync_provider_cc,v 1.9 2017/12/04 13:55:42 robert Exp $
+
+Index: ui/gl/sync_control_vsync_provider.cc
+--- ui/gl/sync_control_vsync_provider.cc.orig
++++ ui/gl/sync_control_vsync_provider.cc
 @@ -11,7 +11,7 @@
  #include "base/trace_event/trace_event.h"
  #include "build/build_config.h"
@@ -25,6 +27,6 @@ $OpenBSD: patch-ui_gl_sync_control_vsync_provider_cc,v 1.8 2017/10/28 07:36:01 r
    TRACE_EVENT0("gpu", "SyncControlVSyncProvider::GetVSyncParameters");
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
-   base::TimeTicks timebase;
- 
    // The actual clock used for the system time returned by glXGetSyncValuesOML
+   // is unspecified. In practice, the clock used is likely to be either
+   // CLOCK_REALTIME or CLOCK_MONOTONIC, so we compare the returned time to the

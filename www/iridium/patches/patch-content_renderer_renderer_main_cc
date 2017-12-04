@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_renderer_renderer_main_cc,v 1.10 2017/10/28 07:36:00 robert Exp $
+$OpenBSD: patch-content_renderer_renderer_main_cc,v 1.11 2017/12/04 13:55:42 robert Exp $
 Index: content/renderer/renderer_main.cc
 --- content/renderer/renderer_main.cc.orig
 +++ content/renderer/renderer_main.cc
@@ -23,7 +23,7 @@ Index: content/renderer/renderer_main.cc
  namespace content {
  namespace {
  // This function provides some ways to test crash and assertion handling
-@@ -190,9 +197,13 @@ int RendererMain(const MainFunctionParams& parameters)
+@@ -191,9 +198,13 @@ int RendererMain(const MainFunctionParams& parameters)
    // is OK.
    InitializeWebRtcModule();
  #endif
@@ -38,7 +38,7 @@ Index: content/renderer/renderer_main.cc
      // TODO(markus): Check if it is OK to unconditionally move this
      // instruction down.
      auto render_process = RenderProcessImpl::Create();
-@@ -202,7 +213,7 @@ int RendererMain(const MainFunctionParams& parameters)
+@@ -203,7 +214,7 @@ int RendererMain(const MainFunctionParams& parameters)
      bool run_loop = true;
      if (!no_sandbox)
        run_loop = platform.EnableSandbox();

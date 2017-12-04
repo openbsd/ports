@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_media_router_discovery_discovery_network_list_posix_cc,v 1.1 2017/10/28 07:36:00 robert Exp $
+$OpenBSD: patch-chrome_browser_media_router_discovery_discovery_network_list_posix_cc,v 1.2 2017/12/04 13:55:41 robert Exp $
 
 Index: chrome/browser/media/router/discovery/discovery_network_list_posix.cc
 --- chrome/browser/media/router/discovery/discovery_network_list_posix.cc.orig
@@ -27,8 +27,8 @@ Index: chrome/browser/media/router/discovery/discovery_network_list_posix.cc
  #include <netpacket/packet.h>
  #else
  #include <net/if_dl.h>
-@@ -27,7 +28,7 @@
- 
+@@ -28,7 +29,7 @@
+ namespace media_router {
  namespace {
  
 -#if !defined(OS_MACOSX)

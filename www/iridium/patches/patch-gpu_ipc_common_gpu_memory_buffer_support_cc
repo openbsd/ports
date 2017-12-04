@@ -1,4 +1,4 @@
-$OpenBSD: patch-gpu_ipc_common_gpu_memory_buffer_support_cc,v 1.1 2017/10/28 07:36:00 robert Exp $
+$OpenBSD: patch-gpu_ipc_common_gpu_memory_buffer_support_cc,v 1.2 2017/12/04 13:55:42 robert Exp $
 
 Index: gpu/ipc/common/gpu_memory_buffer_support.cc
 --- gpu/ipc/common/gpu_memory_buffer_support.cc.orig
@@ -21,7 +21,7 @@ Index: gpu/ipc/common/gpu_memory_buffer_support.cc
    return gfx::NATIVE_PIXMAP;
  #endif
    return gfx::EMPTY_BUFFER;
-@@ -47,7 +47,7 @@ bool IsNativeGpuMemoryBufferConfigurationSupported(gfx
+@@ -50,7 +50,7 @@ bool IsNativeGpuMemoryBufferConfigurationSupported(gfx
    return false;
  #endif
  

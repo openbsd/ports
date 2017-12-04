@@ -1,4 +1,4 @@
-$OpenBSD: patch-components_new_or_sad_tab_strings_grdp,v 1.1 2017/10/28 07:36:00 robert Exp $
+$OpenBSD: patch-components_new_or_sad_tab_strings_grdp,v 1.2 2017/12/04 13:55:41 robert Exp $
 
 Index: components/new_or_sad_tab_strings.grdp
 --- components/new_or_sad_tab_strings.grdp.orig
@@ -9,7 +9,7 @@ Index: components/new_or_sad_tab_strings.grdp
        </if>
 -      <if expr="is_win or is_linux or chromeos">
 +      <if expr="is_win or is_posix or chromeos">
-         <message name="IDS_SAD_TAB_RELOAD_INCOGNITO" desc="One of the bullet points displayed on the web page if a reload failed to fix the issue, advising the user to open the web page in Chrome's Incognito mode." formatter_data="android_java">
+         <message name="IDS_SAD_TAB_RELOAD_INCOGNITO" desc="One of the bullet points displayed on the web page if a reload failed to fix the issue, advising the user to open the web page in Chrome's Incognito mode.">
            Open page in a new Incognito window (Ctrl-Shift-N)
          </message>
 @@ -63,7 +63,7 @@
@@ -18,7 +18,7 @@ Index: components/new_or_sad_tab_strings.grdp
        </if>
 -      <if expr="is_linux and not chromeos">
 +      <if expr="is_posix and not chromeos">
-         <message name="IDS_SAD_TAB_RELOAD_CLOSE_TABS" desc="One of the bullet points displayed on the web page if a reload failed to fix the issue, advising the user to close other Chrome tabs or programs running on their computer." formatter_data="android_java">
+         <message name="IDS_SAD_TAB_RELOAD_CLOSE_TABS" desc="One of the bullet points displayed on the web page if a reload failed to fix the issue, advising the user to close other Chrome tabs or programs running on their computer.">
            Close other tabs or programs
          </message>
 @@ -73,7 +73,7 @@
@@ -27,7 +27,7 @@ Index: components/new_or_sad_tab_strings.grdp
        </if>
 -      <if expr="is_linux and not chromeos">
 +      <if expr="is_posix and not chromeos">
-         <message name="IDS_SAD_TAB_RELOAD_CLOSE_NOTABS" desc="One of the bullet points displayed on the web page if a reload failed to fix the issue, advising the user to close other programs running on their computer (Linux)." formatter_data="android_java">
+         <message name="IDS_SAD_TAB_RELOAD_CLOSE_NOTABS" desc="One of the bullet points displayed on the web page if a reload failed to fix the issue, advising the user to close other programs running on their computer (Linux).">
            Close other programs
          </message>
 @@ -88,7 +88,7 @@
@@ -36,6 +36,6 @@ Index: components/new_or_sad_tab_strings.grdp
        </if>
 -      <if expr="is_win or is_linux or is_macosx or chromeos">
 +      <if expr="is_win or is_posix or is_macosx or chromeos">
-         <message name="IDS_SAD_TAB_RELOAD_RESTART_DEVICE" desc="One of the bullet points displayed on the web page if a reload failed to fix the issue, advising the user to restart their computer." formatter_data="android_java">
+         <message name="IDS_SAD_TAB_RELOAD_RESTART_DEVICE" desc="One of the bullet points displayed on the web page if a reload failed to fix the issue, advising the user to restart their computer.">
            Restart your computer
          </message>

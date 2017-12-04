@@ -1,13 +1,14 @@
-$OpenBSD: patch-chrome_browser_sync_chrome_sync_client_cc,v 1.7 2017/10/28 07:36:00 robert Exp $
+$OpenBSD: patch-chrome_browser_sync_chrome_sync_client_cc,v 1.8 2017/12/04 13:55:41 robert Exp $
+
 Index: chrome/browser/sync/chrome_sync_client.cc
 --- chrome/browser/sync/chrome_sync_client.cc.orig
 +++ chrome/browser/sync/chrome_sync_client.cc
-@@ -668,7 +668,7 @@ void ChromeSyncClient::RegisterDesktopDataTypes(
+@@ -665,7 +665,7 @@ void ChromeSyncClient::RegisterDesktopDataTypes(
    }
  #endif  // BUILDFLAG(ENABLE_APP_LIST)
  
--#if defined(OS_LINUX) || defined(OS_WIN) || defined(OS_CHROMEOS)
-+#if defined(OS_LINUX) || defined(OS_WIN) || defined(OS_CHROMEOS) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_WIN)
++#if defined(OS_LINUX) || defined(OS_WIN) || defined(OS_BSD)
    // Dictionary sync is enabled by default.
    if (!disabled_types.Has(syncer::DICTIONARY)) {
      sync_service->RegisterDataTypeController(

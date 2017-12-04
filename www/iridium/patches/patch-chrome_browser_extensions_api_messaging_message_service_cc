@@ -1,8 +1,9 @@
-$OpenBSD: patch-chrome_browser_extensions_api_messaging_message_service_cc,v 1.8 2017/10/28 07:36:00 robert Exp $
-Index: chrome/browser/extensions/api/messaging/message_service.cc
---- chrome/browser/extensions/api/messaging/message_service.cc.orig
-+++ chrome/browser/extensions/api/messaging/message_service.cc
-@@ -106,7 +106,7 @@ MessageService::PolicyPermission MessageService::IsNat
+$OpenBSD: patch-chrome_browser_extensions_api_messaging_message_service_cc,v 1.9 2017/12/04 13:55:41 robert Exp $
+
+Index: extensions/browser/api/messaging/message_service.cc
+--- extensions/browser/api/messaging/message_service.cc.orig
++++ extensions/browser/api/messaging/message_service.cc
+@@ -59,7 +59,7 @@ namespace extensions {
  
  const char kReceivingEndDoesntExistError[] =
      "Could not establish connection. Receiving end does not exist.";
@@ -11,7 +12,7 @@ Index: chrome/browser/extensions/api/messaging/message_service.cc
  const char kMissingPermissionError[] =
      "Access to native messaging requires nativeMessaging permission.";
  const char kProhibitedByPoliciesError[] =
-@@ -384,7 +384,7 @@ void MessageService::OpenChannelToNativeApp(
+@@ -330,7 +330,7 @@ void MessageService::OpenChannelToNativeApp(
    if (!source)
      return;
  

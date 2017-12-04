@@ -1,42 +1,43 @@
-$OpenBSD: patch-content_gpu_gpu_main_cc,v 1.15 2017/10/28 07:36:00 robert Exp $
+$OpenBSD: patch-content_gpu_gpu_main_cc,v 1.16 2017/12/04 13:55:42 robert Exp $
+
 Index: content/gpu/gpu_main.cc
 --- content/gpu/gpu_main.cc.orig
 +++ content/gpu/gpu_main.cc
-@@ -84,6 +84,10 @@
+@@ -85,6 +85,10 @@
  #include "ui/ozone/public/ozone_platform.h"
  #endif
  
-+#if defined(OS_BSD)
++#if defined(OS_BSD)   
 +#include "content/common/sandbox_init_openbsd.h"
 +#endif
 +
- #if defined(OS_CHROMEOS) && defined(ARCH_CPU_X86_FAMILY)
+ #if BUILDFLAG(USE_VAAPI)
  #include "media/gpu/vaapi_wrapper.h"
  #endif
-@@ -92,7 +96,7 @@ namespace content {
+@@ -93,7 +97,7 @@ namespace content {
  
  namespace {
  
 -#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_OPENBSD)
++#if defined(OS_LINUX) || defined(OS_BSD)
  bool StartSandboxLinux(gpu::GpuWatchdogThread*);
  #elif defined(OS_WIN)
  bool StartSandboxWindows(const sandbox::SandboxInterfaceInfo*);
-@@ -146,7 +150,7 @@ class ContentSandboxHelper : public gpu::GpuSandboxHel
+@@ -147,7 +151,7 @@ class ContentSandboxHelper : public gpu::GpuSandboxHel
  
    bool EnsureSandboxInitialized(
        gpu::GpuWatchdogThread* watchdog_thread) override {
 -#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_OPENBSD)
++#if defined(OS_LINUX) || defined(OS_BSD)
      return StartSandboxLinux(watchdog_thread);
  #elif defined(OS_WIN)
      return StartSandboxWindows(sandbox_info_);
-@@ -305,12 +309,13 @@ int GpuMain(const MainFunctionParams& parameters) {
+@@ -307,12 +311,13 @@ int GpuMain(const MainFunctionParams& parameters) {
  
  namespace {
  
 -#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_OPENBSD)
++#if defined(OS_LINUX) || defined(OS_BSD)
  bool StartSandboxLinux(gpu::GpuWatchdogThread* watchdog_thread) {
    TRACE_EVENT0("gpu,startup", "Initialize sandbox");
  
@@ -46,7 +47,7 @@ Index: content/gpu/gpu_main.cc
    if (watchdog_thread) {
      // LinuxSandbox needs to be able to ensure that the thread
      // has really been stopped.
-@@ -325,6 +330,9 @@ bool StartSandboxLinux(gpu::GpuWatchdogThread* watchdo
+@@ -327,6 +332,9 @@ bool StartSandboxLinux(gpu::GpuWatchdogThread* watchdo
      options.timer_slack = base::TIMER_SLACK_MAXIMUM;
      watchdog_thread->StartWithOptions(options);
    }

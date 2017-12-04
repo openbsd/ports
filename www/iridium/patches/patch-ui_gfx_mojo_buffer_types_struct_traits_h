@@ -1,11 +1,11 @@
-$OpenBSD: patch-ui_gfx_mojo_buffer_types_struct_traits_h,v 1.1 2017/10/28 07:36:01 robert Exp $
+$OpenBSD: patch-ui_gfx_mojo_buffer_types_struct_traits_h,v 1.2 2017/12/04 13:55:42 robert Exp $
 
 Index: ui/gfx/mojo/buffer_types_struct_traits.h
 --- ui/gfx/mojo/buffer_types_struct_traits.h.orig
 +++ ui/gfx/mojo/buffer_types_struct_traits.h
-@@ -244,7 +244,7 @@ struct StructTraits<gfx::mojom::NativePixmapHandleData
-                               void* context);
- 
+@@ -250,7 +250,7 @@ template <>
+ struct StructTraits<gfx::mojom::NativePixmapHandleDataView,
+                     gfx::NativePixmapHandle> {
    static bool IsNull(const gfx::NativePixmapHandle& handle) {
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)

@@ -1,8 +1,8 @@
-$OpenBSD: patch-media_capture_video_video_capture_device_factory_cc,v 1.6 2017/10/28 07:36:01 robert Exp $
+$OpenBSD: patch-media_capture_video_video_capture_device_factory_cc,v 1.7 2017/12/04 13:55:42 robert Exp $
 Index: media/capture/video/video_capture_device_factory.cc
 --- media/capture/video/video_capture_device_factory.cc.orig
 +++ media/capture/video/video_capture_device_factory.cc
-@@ -51,7 +51,7 @@ VideoCaptureDeviceFactory::VideoCaptureDeviceFactory()
+@@ -52,7 +52,7 @@ VideoCaptureDeviceFactory::VideoCaptureDeviceFactory()
  VideoCaptureDeviceFactory::~VideoCaptureDeviceFactory() {}
  
  #if !defined(OS_MACOSX) && !defined(OS_LINUX) && !defined(OS_ANDROID) && \

@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_public_common_content_switches_cc,v 1.15 2017/10/28 07:36:00 robert Exp $
+$OpenBSD: patch-content_public_common_content_switches_cc,v 1.16 2017/12/04 13:55:42 robert Exp $
 Index: content/public/common/content_switches.cc
 --- content/public/common/content_switches.cc.orig
 +++ content/public/common/content_switches.cc
@@ -11,7 +11,7 @@ Index: content/public/common/content_switches.cc
  // Allows debugging of sandboxed processes (see zygote_main_linux.cc).
  const char kAllowSandboxDebugging[]         = "allow-sandbox-debugging";
  
-@@ -1003,7 +1005,7 @@ const char kDisableVaapiAcceleratedVideoEncode[] =
+@@ -1031,7 +1033,7 @@ const char kDisableVaapiAcceleratedVideoEncode[] =
      "disable-vaapi-accelerated-video-encode";
  #endif
  

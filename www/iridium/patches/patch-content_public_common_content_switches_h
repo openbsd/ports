@@ -1,8 +1,8 @@
-$OpenBSD: patch-content_public_common_content_switches_h,v 1.15 2017/10/28 07:36:00 robert Exp $
+$OpenBSD: patch-content_public_common_content_switches_h,v 1.16 2017/12/04 13:55:42 robert Exp $
 Index: content/public/common/content_switches.h
 --- content/public/common/content_switches.h.orig
 +++ content/public/common/content_switches.h
-@@ -196,6 +196,7 @@ CONTENT_EXPORT extern const char kMojoLocalStorage[];
+@@ -198,6 +198,7 @@ CONTENT_EXPORT extern const char kMojoLocalStorage[];
  CONTENT_EXPORT extern const char kMuteAudio[];
  CONTENT_EXPORT extern const char kNoReferrers[];
  CONTENT_EXPORT extern const char kNoSandbox[];
@@ -10,7 +10,7 @@ Index: content/public/common/content_switches.h
  CONTENT_EXPORT extern const char kNoZygote[];
  CONTENT_EXPORT extern const char kEnableAppContainer[];
  CONTENT_EXPORT extern const char kDisableAppContainer[];
-@@ -286,7 +287,7 @@ CONTENT_EXPORT extern const char kDisablePanelFitting[
+@@ -292,7 +293,7 @@ CONTENT_EXPORT extern const char kDisablePanelFitting[
  CONTENT_EXPORT extern const char kDisableVaapiAcceleratedVideoEncode[];
  #endif
  

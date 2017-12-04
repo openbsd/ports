@@ -1,6 +1,7 @@
-$OpenBSD: patch-base_threading_thread_task_runner_handle_cc,v 1.2 2017/10/28 07:36:00 robert Exp $
---- base/threading/thread_task_runner_handle.cc.orig.port	Thu Apr 27 20:01:49 2017
-+++ base/threading/thread_task_runner_handle.cc	Thu Apr 27 22:28:06 2017
+$OpenBSD: patch-base_threading_thread_task_runner_handle_cc,v 1.3 2017/12/04 13:55:41 robert Exp $
+Index: base/threading/thread_task_runner_handle.cc
+--- base/threading/thread_task_runner_handle.cc.orig
++++ base/threading/thread_task_runner_handle.cc
 @@ -7,6 +7,7 @@
  #include <utility>
  
@@ -9,7 +10,7 @@ $OpenBSD: patch-base_threading_thread_task_runner_handle_cc,v 1.2 2017/10/28 07:
  #include "base/lazy_instance.h"
  #include "base/logging.h"
  #include "base/memory/ptr_util.h"
-@@ -34,6 +35,7 @@ bool ThreadTaskRunnerHandle::IsSet() {
+@@ -37,6 +38,7 @@ bool ThreadTaskRunnerHandle::IsSet() {
    return !!lazy_tls_ptr.Pointer()->Get();
  }
  
@@ -17,9 +18,9 @@ $OpenBSD: patch-base_threading_thread_task_runner_handle_cc,v 1.2 2017/10/28 07:
  // static
  ScopedClosureRunner ThreadTaskRunnerHandle::OverrideForTesting(
      scoped_refptr<SingleThreadTaskRunner> overriding_task_runner) {
-@@ -77,6 +79,7 @@ ScopedClosureRunner ThreadTaskRunnerHandle::OverrideFo
-       base::Passed(&overriding_task_runner),
-       base::Unretained(ttrh->task_runner_.get())));
+@@ -86,6 +88,7 @@ ScopedClosureRunner ThreadTaskRunnerHandle::OverrideFo
+       base::Unretained(ttrh->task_runner_.get()),
+       base::Passed(&no_running_during_override)));
  }
 +#endif
  

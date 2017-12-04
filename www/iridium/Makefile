@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2017/11/17 00:22:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.68 2017/12/04 13:55:41 robert Exp $
 
 .include <bsd.port.arch.mk>
 
@@ -9,7 +9,7 @@ DPB_PROPERTIES=		parallel
 
 COMMENT=		Iridium browser
 
-V=			2017.10
+V=			2017.11
 DISTNAME=		iridium-browser-${V}
 PKGNAME=		iridium-${V}
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX}

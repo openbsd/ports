@@ -1,9 +1,9 @@
-$OpenBSD: patch-base_test_launcher_test_launcher_cc,v 1.4 2017/10/28 07:36:00 robert Exp $
+$OpenBSD: patch-base_test_launcher_test_launcher_cc,v 1.5 2017/12/04 13:55:41 robert Exp $
 
 Index: base/test/launcher/test_launcher.cc
 --- base/test/launcher/test_launcher.cc.orig
 +++ base/test/launcher/test_launcher.cc
-@@ -50,6 +50,7 @@
+@@ -51,6 +51,7 @@
  #include "testing/gtest/include/gtest/gtest.h"
  
  #if defined(OS_POSIX)

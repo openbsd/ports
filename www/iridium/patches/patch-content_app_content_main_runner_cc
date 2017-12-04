@@ -1,8 +1,9 @@
-$OpenBSD: patch-content_app_content_main_runner_cc,v 1.14 2017/10/28 07:36:00 robert Exp $
+$OpenBSD: patch-content_app_content_main_runner_cc,v 1.15 2017/12/04 13:55:41 robert Exp $
+
 Index: content/app/content_main_runner.cc
 --- content/app/content_main_runner.cc.orig
 +++ content/app/content_main_runner.cc
-@@ -86,10 +86,10 @@
+@@ -83,10 +83,10 @@
  #include "base/posix/global_descriptors.h"
  #include "content/public/common/content_descriptors.h"
  
@@ -15,25 +16,25 @@ Index: content/app/content_main_runner.cc
  #include "content/zygote/zygote_main.h"
  #endif
  
-@@ -281,7 +281,7 @@ struct MainFunction {
-   int (*function)(const MainFunctionParams&);
+@@ -299,7 +299,7 @@ struct MainFunction {
  };
  
--#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID)
-+#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID) && !defined(OS_BSD)
+ #if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID) && \
+-    !defined(OS_FUCHSIA)
++    !defined(OS_FUCHSIA) && !defined(OS_BSD)
  // On platforms that use the zygote, we have a special subset of
  // subprocesses that are launched via the zygote.  This function
  // fills in some process-launching bits around ZygoteMain().
-@@ -408,7 +408,7 @@ int RunNamedProcessTypeMain(
-     }
+@@ -428,7 +428,7 @@ int RunNamedProcessTypeMain(
    }
  
--#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID)
-+#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID) && !defined(OS_BSD)
+ #if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID) && \
+-    !defined(OS_FUCHSIA)
++    !defined(OS_FUCHSIA) && !defined(OS_BSD)
    // Zygote startup is special -- see RunZygote comments above
    // for why we don't use ZygoteMain directly.
    if (process_type == switches::kZygoteProcess)
-@@ -476,10 +476,10 @@ class ContentMainRunnerImpl : public ContentMainRunner
+@@ -498,7 +498,7 @@ class ContentMainRunnerImpl : public ContentMainRunner
          kFieldTrialDescriptor + base::GlobalDescriptors::kBaseDescriptor);
  #endif  // !OS_ANDROID
  
@@ -41,8 +42,4 @@ Index: content/app/content_main_runner.cc
 +#if defined(OS_LINUX)
      g_fds->Set(kCrashDumpSignal,
                 kCrashDumpSignal + base::GlobalDescriptors::kBaseDescriptor);
--#endif  // OS_LINUX || OS_OPENBSD
-+#endif  // OS_LINUX
- 
- #endif  // !OS_WIN
- 
+ #endif  // OS_LINUX || OS_OPENBSD

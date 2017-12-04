@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_extensions_api_webrtc_audio_private_webrtc_audio_private_api_cc,v 1.1 2017/10/28 07:36:00 robert Exp $
+$OpenBSD: patch-chrome_browser_extensions_api_webrtc_audio_private_webrtc_audio_private_api_cc,v 1.2 2017/12/04 13:55:41 robert Exp $
 
 Index: chrome/browser/extensions/api/webrtc_audio_private/webrtc_audio_private_api.cc
 --- chrome/browser/extensions/api/webrtc_audio_private/webrtc_audio_private_api.cc.orig
 +++ chrome/browser/extensions/api/webrtc_audio_private/webrtc_audio_private_api.cc
-@@ -316,7 +316,9 @@ bool WebrtcAudioPrivateSetAudioExperimentsFunction::Ru
+@@ -314,7 +314,9 @@ bool WebrtcAudioPrivateSetAudioExperimentsFunction::Ru
        return false;
      }
  

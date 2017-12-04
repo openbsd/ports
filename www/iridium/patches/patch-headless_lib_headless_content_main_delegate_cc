@@ -1,9 +1,9 @@
-$OpenBSD: patch-headless_lib_headless_content_main_delegate_cc,v 1.1 2017/10/28 07:36:00 robert Exp $
+$OpenBSD: patch-headless_lib_headless_content_main_delegate_cc,v 1.2 2017/12/04 13:55:42 robert Exp $
 
 Index: headless/lib/headless_content_main_delegate.cc
 --- headless/lib/headless_content_main_delegate.cc.orig
 +++ headless/lib/headless_content_main_delegate.cc
-@@ -235,7 +235,7 @@ int HeadlessContentMainDelegate::RunProcess(
+@@ -248,7 +248,7 @@ int HeadlessContentMainDelegate::RunProcess(
  }
  #endif  // !defined(CHROME_MULTIPLE_DLL_CHILD)
  

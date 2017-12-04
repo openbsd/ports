@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_ui_startup_startup_browser_creator_cc,v 1.13 2017/10/28 07:36:00 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_startup_startup_browser_creator_cc,v 1.14 2017/12/04 13:55:41 robert Exp $
 Index: chrome/browser/ui/startup/startup_browser_creator.cc
 --- chrome/browser/ui/startup/startup_browser_creator.cc.orig
 +++ chrome/browser/ui/startup/startup_browser_creator.cc
@@ -11,14 +11,3 @@ Index: chrome/browser/ui/startup/startup_browser_creator.cc
  #include "ui/events/devices/x11/touch_factory_x11.h"  // nogncheck
  #endif
  
-@@ -665,8 +665,10 @@ bool StartupBrowserCreator::ProcessCmdLineImpl(
-   }
- #endif  // OS_CHROMEOS
- 
-+#if 0 /* XXX */
- #if defined(TOOLKIT_VIEWS) && defined(USE_X11)
-   ui::TouchFactory::SetTouchDeviceListFromCommandLine();
-+#endif
- #endif
- 
- #if defined(OS_MACOSX)

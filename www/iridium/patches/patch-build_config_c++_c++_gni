@@ -1,14 +1,14 @@
-$OpenBSD: patch-build_config_c++_c++_gni,v 1.1 2017/10/28 07:36:00 robert Exp $
+$OpenBSD: patch-build_config_c++_c++_gni,v 1.2 2017/12/04 13:55:41 robert Exp $
 
 Index: build/config/c++/c++.gni
 --- build/config/c++/c++.gni.orig
 +++ build/config/c++/c++.gni
-@@ -8,7 +8,7 @@ declare_args() {
-   # Use libc++ (buildtools/third_party/libc++ and
-   # buildtools/third_party/libc++abi) instead of stdlibc++ as standard
-   # library.
--  use_custom_libcxx = (is_linux && !is_chromeos &&
-+  use_custom_libcxx = (is_linux && !is_chromeos && !is_openbsd &&
-                        (!is_chromecast || is_cast_desktop_build)) || is_msan
+@@ -12,7 +12,7 @@ declare_args() {
+   # is not supported.
+   use_custom_libcxx =
+       is_msan || is_fuchsia ||
+-      (is_linux && is_clang &&
++      (is_linux && is_clang && !is_openbsd &&
+        (!is_chromeos || default_toolchain != "//build/toolchain/cros:target"))
  
-   # ASan, MSan and TSan builds need to override operator new, operator delete,
+   # Use libc++ instead of stdlibc++ when using the host_cpu toolchain, even if

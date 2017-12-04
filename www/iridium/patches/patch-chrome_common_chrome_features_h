@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_common_chrome_features_h,v 1.1 2017/10/28 07:36:00 robert Exp $
+$OpenBSD: patch-chrome_common_chrome_features_h,v 1.2 2017/12/04 13:55:41 robert Exp $
 
 Index: chrome/common/chrome_features.h
 --- chrome/common/chrome_features.h.orig
 +++ chrome/common/chrome_features.h
-@@ -43,7 +43,7 @@ extern const base::Feature kAssetDownloadSuggestionsFe
+@@ -44,7 +44,7 @@ extern const base::Feature kAssetDownloadSuggestionsFe
  extern const base::Feature kAutomaticTabDiscarding;
  #endif  // defined(OS_WIN) || defined(OS_MACOSX)
  

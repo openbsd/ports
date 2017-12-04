@@ -1,11 +1,11 @@
-$OpenBSD: patch-services_resource_coordinator_public_cpp_memory_instrumentation_os_metrics_h,v 1.1 2017/10/28 07:36:01 robert Exp $
+$OpenBSD: patch-services_resource_coordinator_public_cpp_memory_instrumentation_os_metrics_h,v 1.2 2017/12/04 13:55:42 robert Exp $
 
 Index: services/resource_coordinator/public/cpp/memory_instrumentation/os_metrics.h
 --- services/resource_coordinator/public/cpp/memory_instrumentation/os_metrics.h.orig
 +++ services/resource_coordinator/public/cpp/memory_instrumentation/os_metrics.h
-@@ -21,7 +21,7 @@ class SERVICES_RESOURCE_COORDINATOR_PUBLIC_CPP_EXPORT 
-  private:
-   FRIEND_TEST_ALL_PREFIXES(OSMetricsTest, ParseProcSmaps);
+@@ -29,7 +29,7 @@ class SERVICES_RESOURCE_COORDINATOR_PUBLIC_CPP_EXPORT 
+   FRIEND_TEST_ALL_PREFIXES(profiling::ProfilingJsonExporterTest, MemoryMaps);
+   static std::vector<mojom::VmRegionPtr> GetProcessMemoryMaps(base::ProcessId);
  
 -#if defined(OS_LINUX) || defined(OS_ANDROID)
 +#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
