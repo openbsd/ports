@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.23 2017/11/21 00:13:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2017/12/04 21:09:39 espie Exp $
 
 COMMENT =		word-based diff program
 
 DISTNAME =		dwdiff-2.0.9
 REVISION =		1
 CATEGORIES =		sysutils textproc
+FIX_EXTRACT_PERMISSIONS=Yes
 
 HOMEPAGE =		http://os.ghalkes.nl/dwdiff.html
 

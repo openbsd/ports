@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2016/10/04 22:38:02 bluhm Exp $
+# $OpenBSD: Makefile,v 1.23 2017/12/04 21:09:39 espie Exp $
 
 COMMENT =		(re)name a sub
 
 DISTNAME =		Sub-Name-0.21
 
 CATEGORIES =		devel
+FIX_EXTRACT_PERMISSIONS=Yes
 
 MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 

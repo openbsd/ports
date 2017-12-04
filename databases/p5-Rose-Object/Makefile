@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2016/03/20 19:56:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2017/12/04 21:09:39 espie Exp $
 
 COMMENT =	object oriented DBMS for perl
 
 DISTNAME =	Rose-Object-0.860
 CATEGORIES =	databases devel
+FIX_EXTRACT_PERMISSIONS=Yes
 
 # perl
 PERMIT_PACKAGE_CDROM =	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2016/03/20 19:56:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2017/12/04 21:09:38 espie Exp $
 
 COMMENT =	DBI driver abstraction for rendering charts and graphs
 
@@ -7,6 +7,7 @@ REVISION =	0
 CATEGORIES =	databases graphics
 MODULES =	cpan
 PKG_ARCH =	*
+FIX_EXTRACT_PERMISSIONS=Yes
 
 MAINTAINER =	Okan Demirmen <okan@openbsd.org>
 
