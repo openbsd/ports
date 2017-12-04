@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.841 2017/12/03 10:11:51 rpointel Exp $
+# $OpenBSD: Makefile,v 1.842 2017/12/04 13:09:06 sthen Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -324,7 +324,6 @@
      SUBDIR += p5-WWW-Shorten-Googl
      SUBDIR += p5-WWW-Tumblr
      SUBDIR += p5-WWW-Wikipedia
-     SUBDIR += p5-WWW-YouTube-Download
      SUBDIR += p5-Weather-Com
      SUBDIR += p5-WebService-Audioscrobbler
      SUBDIR += p5-WebService-MusicBrainz
