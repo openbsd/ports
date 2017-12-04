@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/08/18 12:07:51 pirofti Exp $
+# $OpenBSD: Makefile,v 1.2 2017/12/04 11:52:27 ajacoutot Exp $
 
 COMMENT =	optimizes PDF/DJVU files for mobile e-readers
 
@@ -7,6 +7,7 @@ DISTNAME =	k2pdfopt_v${V}_src
 PKGNAME =	k2pdfopt-${V}
 MASTER_SITES =	http://willus.com/k2pdfopt/src/
 EXTRACT_SUFX =	.zip
+REVISION =	0
 
 CATEGORIES =	converters
 
