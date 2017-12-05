@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.7 2017/08/21 17:58:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2017/12/05 23:58:01 helg Exp $
 
 COMMENT =		navigate zip archives through FUSE
 
-DISTNAME =		fuse-zip-0.4.2
+DISTNAME =		fuse-zip-0.4.4
 
 CATEGORIES =		archivers
 
 HOMEPAGE =		https://bitbucket.org/agalanin/fuse-zip
 
-# LGPLv3+
+# GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c fuse m ${COMPILER_LIBCXX} z zip
@@ -22,6 +22,8 @@ MAKE_FLAGS =		CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
 FAKE_FLAGS =		INSTALLPREFIX="${WRKINST}${PREFIX}"
 
 USE_GMAKE =		Yes
+
+TEST_TARGET =		check
 
 do-configure:
 	ln -s ${LOCALBASE}/bin/gmake ${WRKDIR}/bin/make
