@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.81 2017/11/05 00:01:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.82 2017/12/05 08:19:35 kirby Exp $
 
 COMMENT-main =		ssh based config management framework
 COMMENT-html =		offline Ansible documentation in HTML format
@@ -7,10 +7,12 @@ MODPY_EGG_VERSION =	2.4.1.0
 DISTNAME =		ansible-${MODPY_EGG_VERSION}
 PKGNAME-main =		${PKGNAME}
 PKGNAME-html =		ansible-html-${MODPY_EGG_VERSION}
+REVISION-main =		0
+REVISION-html =		0
 
 CATEGORIES =		sysutils
 
-HOMEPAGE =		http://www.ansible.com/
+HOMEPAGE =		https://www.ansible.com/
 
 MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
@@ -19,7 +21,7 @@ MULTI_PACKAGES =	-main -html
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		http://releases.ansible.com/ansible/
+MASTER_SITES =		https://releases.ansible.com/ansible/
 
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
