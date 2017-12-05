@@ -1,0 +1,20 @@
+$OpenBSD: patch-iserv_ghc_mk,v 1.1 2017/12/05 20:21:19 kili Exp $
+
+Seriously -- if there are knobs to disable threads it should be possible
+to build everything without threads.
+
+Index: iserv/ghc.mk
+--- iserv/ghc.mk.orig
++++ iserv/ghc.mk
+@@ -19,9 +19,11 @@ iserv_stage2_p_MORE_HC_OPTS += -debug
+ iserv_stage2_dyn_MORE_HC_OPTS += -debug
+ endif
+ 
++ifeq "$(GhcThreaded)" "YES"
+ iserv_stage2_MORE_HC_OPTS += -threaded
+ iserv_stage2_p_MORE_HC_OPTS += -threaded
+ iserv_stage2_dyn_MORE_HC_OPTS += -threaded
++endif
+ 
+ # Override the default way, because we want a specific version of this
+ # program for each way.  Note that it's important to do this even for

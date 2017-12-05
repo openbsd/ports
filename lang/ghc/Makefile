@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.152 2017/11/08 22:00:59 kili Exp $
+# $OpenBSD: Makefile,v 1.153 2017/12/05 20:21:19 kili Exp $
 
 COMMENT =		compiler for the functional language Haskell
 
@@ -192,7 +192,7 @@ do-test:
 # It doesn't matter wether this is the actual date of the bootstrapper
 # build. It's just used to get different distfiles whenever new
 # bootstrappers have to be built.
-BOOTSTRAP_DATE =	20170417
+BOOTSTRAP_DATE =	20171204
 
 # Create a bootstrapper. This compiles a stripped-down version of
 # ghc and creates a `bindist', i.e. a tarball with binaries that
@@ -214,7 +214,8 @@ bootstrap: patch
 	echo GhcLibWays=v >> ${WRKSRC}/mk/build.mk
 	echo GhcRTSWays= >> ${WRKSRC}/mk/build.mk
 	echo GhcWithInterpreter=NO >> ${WRKSRC}/mk/build.mk
-	echo INTEGER_LIBRARY=integer-gmp2 >> ${WRKSRC}/mk/build.mk
+	echo GhcThreaded=NO >> ${WRKSRC}/mk/build.mk
+	echo INTEGER_LIBRARY=integer-simple >> ${WRKSRC}/mk/build.mk
 	echo SRC_CC_OPTS+=-g -O0 >> ${WRKSRC}/mk/build.mk
 	echo HADDOCK_DOCS=NO >> ${WRKSRC}/mk/build.mk
 	echo BUILD_SPHINX_HTML=NO >> ${WRKSRC}/mk/build.mk
