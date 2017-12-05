@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.46 2017/08/10 18:38:40 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.47 2017/12/05 23:28:56 jca Exp $
 @pkgpath shells/zsh,-main
 @shell bin/zsh
 @bin bin/zsh-${V}
@@ -155,6 +155,7 @@ share/zsh/${V}/functions/_bindkey
 share/zsh/${V}/functions/_bison
 share/zsh/${V}/functions/_bittorrent
 share/zsh/${V}/functions/_bogofilter
+share/zsh/${V}/functions/_bpf_filters
 share/zsh/${V}/functions/_bpython
 share/zsh/${V}/functions/_brace_parameter
 share/zsh/${V}/functions/_brctl
@@ -537,6 +538,7 @@ share/zsh/${V}/functions/_netstat
 share/zsh/${V}/functions/_newsgroups
 share/zsh/${V}/functions/_next_label
 share/zsh/${V}/functions/_next_tags
+share/zsh/${V}/functions/_ngrep
 share/zsh/${V}/functions/_nice
 share/zsh/${V}/functions/_nkf
 share/zsh/${V}/functions/_nl
@@ -657,6 +659,7 @@ share/zsh/${V}/functions/_retrieve_mac_apps
 share/zsh/${V}/functions/_ri
 share/zsh/${V}/functions/_rlogin
 share/zsh/${V}/functions/_rm
+share/zsh/${V}/functions/_route
 share/zsh/${V}/functions/_rpm
 share/zsh/${V}/functions/_rpmbuild
 share/zsh/${V}/functions/_rrdtool
@@ -812,6 +815,7 @@ share/zsh/${V}/functions/_vorbis
 share/zsh/${V}/functions/_vorbiscomment
 share/zsh/${V}/functions/_vserver
 share/zsh/${V}/functions/_vux
+share/zsh/${V}/functions/_w
 share/zsh/${V}/functions/_w3m
 share/zsh/${V}/functions/_wait
 share/zsh/${V}/functions/_wajig
@@ -825,6 +829,7 @@ share/zsh/${V}/functions/_webbrowser
 share/zsh/${V}/functions/_wget
 share/zsh/${V}/functions/_whereis
 share/zsh/${V}/functions/_which
+share/zsh/${V}/functions/_who
 share/zsh/${V}/functions/_whois
 share/zsh/${V}/functions/_widgets
 share/zsh/${V}/functions/_wiggle

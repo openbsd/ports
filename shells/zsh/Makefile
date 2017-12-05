@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.85 2017/08/10 18:38:39 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.86 2017/12/05 23:28:56 jca Exp $
 
 COMMENT=	Z shell, Bourne shell-compatible
 
-V=		5.4.1
+V=		5.4.2
 DISTNAME=	zsh-$V
 CATEGORIES=	shells
 
@@ -16,7 +16,7 @@ MASTER_SITES+=	http://www.zsh.org/pub/
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	c iconv m pcre ncursesw
+WANTLIB=	c curses iconv m pcre
 
 LIB_DEPENDS=	converters/libiconv \
 		devel/pcre
@@ -52,7 +52,7 @@ pre-configure:
 	sed -i -e "s,/bin/zsh,${TRUEPREFIX}/bin/zsh,g" \
 		${WRKSRC}/Functions/${i}
 .endfor
-	@find ${WRKSRC} -name "*.orig" -exec rm -f {} \;
+	@find ${WRKSRC} -name "*.orig" -delete
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/zsh/$V/scripts/
