@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.78 2017/11/21 00:13:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.79 2017/12/05 08:33:44 landry Exp $
 
 COMMENT =	desktop geographical information system
 
 DISTNAME =	qgis-2.18.14
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	geo x11
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS =	qgis_core	19.0 \
 		qgis_app	5.1 \
@@ -49,7 +49,7 @@ LIB_DEPENDS =	${MODPY_LIB_DEPENDS} \
 		databases/sqlite3 \
 		devel/proj \
 		x11/qt4>=4.7.2 \
-		x11/qwt \
+		qwt-*-!qt5:x11/qwt \
 		www/fcgi \
 		editors/qscintilla \
 		geo/gdal \
