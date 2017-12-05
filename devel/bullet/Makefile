@@ -1,24 +1,31 @@
-# $OpenBSD: Makefile,v 1.13 2017/09/22 20:59:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2017/12/05 19:58:55 pascal Exp $
 
 COMMENT =	physics library
 
 GH_ACCOUNT =	bulletphysics
 GH_PROJECT =	bullet3
-GH_TAGNAME =	2.86.1
+GH_TAGNAME =	2.87
 DISTNAME =	bullet-${GH_TAGNAME}
-REVISION =	1
 
-SHARED_LIBS +=  BulletCollision           3.0 # 2.79
-SHARED_LIBS +=  BulletDynamics            3.0 # 2.79
-SHARED_LIBS +=  BulletInverseDynamics     1.0 # 2.83
-SHARED_LIBS +=  BulletSoftBody            3.0 # 2.79
-SHARED_LIBS +=  LinearMath                3.0 # 2.79
-SHARED_LIBS +=  Bullet2FileLoader         2.0 # 2.83
-SHARED_LIBS +=  Bullet3Collision          2.0 # 2.83
-SHARED_LIBS +=  Bullet3Common             2.0 # 2.83
-SHARED_LIBS +=  Bullet3Dynamics           2.0 # 2.83
-SHARED_LIBS +=  Bullet3Geometry           2.0 # 2.83
-SHARED_LIBS +=  Bullet3OpenCL_clew        2.0 # 2.83
+SHARED_LIBS +=  BulletCollision           4.0 # 2.79
+SHARED_LIBS +=  BulletDynamics            4.0 # 2.79
+SHARED_LIBS +=  BulletFileLoader          0.0 # 2.87
+SHARED_LIBS +=  BulletInverseDynamics     2.0 # 2.83
+SHARED_LIBS +=  BulletInverseDynamicsUtils 0.0 # 2.87
+SHARED_LIBS +=  BulletRobotics            0.0 # 2.87
+SHARED_LIBS +=  BulletSoftBody            4.0 # 2.79
+SHARED_LIBS +=  BulletWorldImporter       0.0 # 2.87
+SHARED_LIBS +=  BulletXmlWorldImporter    0.0 # 2.87
+SHARED_LIBS +=  LinearMath                4.0 # 2.79
+SHARED_LIBS +=  ConvexDecomposition       0.0 # 2.87
+SHARED_LIBS +=  GIMPACTUtils              0.0 # 2.87
+SHARED_LIBS +=  HACD                      0.0 # 2.87
+SHARED_LIBS +=  Bullet2FileLoader         3.0 # 2.83
+SHARED_LIBS +=  Bullet3Collision          3.0 # 2.83
+SHARED_LIBS +=  Bullet3Common             3.0 # 2.83
+SHARED_LIBS +=  Bullet3Dynamics           3.0 # 2.83
+SHARED_LIBS +=  Bullet3Geometry           3.0 # 2.83
+SHARED_LIBS +=  Bullet3OpenCL_clew        3.0 # 2.83
 
 CATEGORIES =		devel
 
