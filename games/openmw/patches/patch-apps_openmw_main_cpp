@@ -1,12 +1,13 @@
-$OpenBSD: patch-apps_openmw_main_cpp,v 1.1 2017/05/23 17:54:54 espie Exp $
+$OpenBSD: patch-apps_openmw_main_cpp,v 1.2 2017/12/05 19:59:13 pascal Exp $
 
 Index: apps/openmw/main.cpp
 --- apps/openmw/main.cpp.orig
 +++ apps/openmw/main.cpp
-@@ -1,5 +1,6 @@
- #include <iostream>
- #include <cstdio>
+@@ -4,6 +4,7 @@
+ #include <components/files/configurationmanager.hpp>
+ #include <components/files/escape.hpp>
+ #include <components/fallback/validate.hpp>
 +#include <unistd.h>
  
- #include <components/version/version.hpp>
- #include <components/files/configurationmanager.hpp>
+ #include <SDL_messagebox.h>
+ #include "engine.hpp"

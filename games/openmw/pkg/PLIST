@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2017/08/06 09:39:56 pascal Exp $
+@comment $OpenBSD: PLIST,v 1.5 2017/12/05 19:59:13 pascal Exp $
 @bin bin/bsatool
 @bin bin/esmtool
 @bin bin/openmw
@@ -72,6 +72,7 @@ share/openmw/resources/mygui/openmw_hud_box.skin.xml
 share/openmw/resources/mygui/openmw_hud_energybar.skin.xml
 share/openmw/resources/mygui/openmw_infobox.layout
 share/openmw/resources/mygui/openmw_interactive_messagebox.layout
+share/openmw/resources/mygui/openmw_interactive_messagebox_notransp.layout
 share/openmw/resources/mygui/openmw_inventory_window.layout
 share/openmw/resources/mygui/openmw_itemselection_dialog.layout
 share/openmw/resources/mygui/openmw_jail_screen.layout
