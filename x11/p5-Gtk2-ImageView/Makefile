@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2017/09/23 10:51:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2017/12/05 16:25:46 espie Exp $
 
 COMMENT=		Perl bindings to the GtkImageView image viewer widget
 
@@ -6,6 +6,7 @@ DISTNAME=		Gtk2-ImageView-0.05
 REVISION=		4
 
 CATEGORIES=		x11
+FIX_EXTRACT_PERMISSIONS=Yes
 
 # LGPLv3
 PERMIT_PACKAGE_CDROM=	Yes

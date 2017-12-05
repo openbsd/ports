@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/07/29 10:14:21 bluhm Exp $
+# $OpenBSD: Makefile,v 1.2 2017/12/05 16:25:45 espie Exp $
 
 COMMENT =	a serialization framework for Moose classes
 
 DISTNAME =	MooseX-Storage-0.52
 CATEGORIES =	devel
+FIX_EXTRACT_PERMISSIONS=Yes
 
 MAINTAINER =		Matthias Pitzl <pitzl@genua.de>
 

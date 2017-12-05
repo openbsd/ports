@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.25 2014/10/24 06:41:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2017/12/05 16:25:46 espie Exp $
 
 COMMENT=		lightweight window manager with emphasis on usability
 
 DISTNAME=		pwm-20060517
 REVISION=		2
 CATEGORIES=		x11
+FIX_EXTRACT_PERMISSIONS=Yes
 
 HOMEPAGE=		http://iki.fi/tuomov/
 MASTER_SITES=		${HOMEPAGE}dl/

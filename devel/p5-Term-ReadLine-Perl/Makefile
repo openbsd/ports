@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2016/05/12 14:00:13 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2017/12/05 16:25:45 espie Exp $
 
 COMMENT=		minimal interface to Readline
 DISTNAME =		Term-ReadLine-Perl-1.0303
 REVISION =		0
 CATEGORIES=		devel perl5
+FIX_EXTRACT_PERMISSIONS=Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

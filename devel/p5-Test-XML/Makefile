@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/03/20 19:56:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2017/12/05 16:25:45 espie Exp $
 
 COMMENT =	compare XML in perl tests
 
@@ -6,6 +6,7 @@ MODULES =	cpan
 PKG_ARCH =	*
 DISTNAME =	Test-XML-0.08
 CATEGORIES =	devel
+FIX_EXTRACT_PERMISSIONS=Yes
 
 # perl
 PERMIT_PACKAGE_CDROM =	Yes

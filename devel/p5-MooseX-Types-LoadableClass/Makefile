@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2016/11/26 01:38:22 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.6 2017/12/05 16:25:45 espie Exp $
 
 COMMENT =	ClassName type constraint with coercion to load the class
 
@@ -6,6 +6,7 @@ MODULES =	cpan
 PKG_ARCH =	*
 DISTNAME =	MooseX-Types-LoadableClass-0.014
 CATEGORIES =	devel
+FIX_EXTRACT_PERMISSIONS=Yes
 
 MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
 

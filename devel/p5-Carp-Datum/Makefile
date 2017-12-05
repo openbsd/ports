@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2016/03/20 19:56:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2017/12/05 16:25:45 espie Exp $
 
 COMMENT=	debugging and tracing ultimate module
 
@@ -7,6 +7,7 @@ PKG_ARCH=	*
 DISTNAME=	Carp-Datum-0.1.3
 REVISION=	3
 CATEGORIES=	devel perl5
+FIX_EXTRACT_PERMISSIONS=Yes
 
 # Artistic License
 PERMIT_PACKAGE_CDROM=	Yes

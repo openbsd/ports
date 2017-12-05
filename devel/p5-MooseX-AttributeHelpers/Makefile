@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2017/05/09 08:41:24 benoit Exp $
+# $OpenBSD: Makefile,v 1.12 2017/12/05 16:25:45 espie Exp $
 
 COMMENT =	extend your attribute interfaces
 
 DISTNAME =	MooseX-AttributeHelpers-0.25
 CATEGORIES =	devel
+FIX_EXTRACT_PERMISSIONS=Yes
 
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes

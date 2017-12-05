@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2016/11/23 22:02:15 bluhm Exp $
+# $OpenBSD: Makefile,v 1.6 2017/12/05 16:25:45 espie Exp $
 
 COMMENT =	import packages into other packages
 
@@ -6,6 +6,7 @@ MODULES =	cpan
 PKG_ARCH =	*
 DISTNAME =	Import-Into-1.002005
 CATEGORIES =	devel
+FIX_EXTRACT_PERMISSIONS=Yes
 
 CPAN_AUTHOR =	HAARG
 

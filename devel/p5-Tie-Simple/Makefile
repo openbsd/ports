@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/03/20 19:56:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2017/12/05 16:25:45 espie Exp $
 
 COMMENT =	Variable ties made easier
 
@@ -7,6 +7,7 @@ PKG_ARCH =	*
 DISTNAME =	Tie-Simple-1.03
 CPAN_AUTHOR =	HANENKAMP
 CATEGORIES =	devel
+FIX_EXTRACT_PERMISSIONS=Yes
 
 MAINTAINER =	Florian Obser <florian+ports@narrans.de>
 

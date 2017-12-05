@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2017/01/20 13:02:39 bluhm Exp $
+# $OpenBSD: Makefile,v 1.12 2017/12/05 16:25:45 espie Exp $
 
 COMMENT =	keep imports out of your namespace
 
@@ -6,6 +6,7 @@ MODULES =	cpan
 PKG_ARCH =	*
 DISTNAME =	namespace-autoclean-0.28
 CATEGORIES =	devel
+FIX_EXTRACT_PERMISSIONS=Yes
 
 MAINTAINER =	Cesare Gargano <gar@plusiagamma.org>
 

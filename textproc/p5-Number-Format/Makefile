@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2016/03/20 19:57:06 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2017/12/05 16:25:46 espie Exp $
 
 COMMENT =	Perl extension for formatting numbers
 
@@ -6,6 +6,7 @@ MODULES =	cpan
 PKG_ARCH =	*
 DISTNAME =	Number-Format-1.75
 CATEGORIES =	textproc
+FIX_EXTRACT_PERMISSIONS=Yes
 
 # Artistic License
 PERMIT_PACKAGE_CDROM =	Yes
