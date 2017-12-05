@@ -1,4 +1,4 @@
-# $OpenBSD: pkgpath.mk,v 1.68 2017/11/13 14:01:44 espie Exp $
+# $OpenBSD: pkgpath.mk,v 1.69 2017/12/05 17:46:43 espie Exp $
 # ex:ts=4 sw=4 filetype=make:
 #	pkgpath.mk - 2003 Marc Espie
 #	This file is in the public domain.
@@ -102,7 +102,8 @@ GLOBAL_DEPENDS_CACHE ?=
 # XXX this is to speed up dpb builds beware of consequences !
 .if !empty(GLOBAL_DEPENDS_CACHE)
 _cache_fragment = \
-	mkdir -p ${GLOBAL_DEPENDS_CACHE}; \
+	${_PBUILD} mkdir -p ${GLOBAL_DEPENDS_CACHE}; \
+	${_MK_READABLE} ${GLOBAL_DEPENDS_CACHE}; \
 	_DEPENDS_CACHE=${GLOBAL_DEPENDS_CACHE}; \
 	PKG_PATH=${PKGPATH}; \
 	export _DEPENDS_CACHE PKGPATH
@@ -110,12 +111,14 @@ _cache_fragment = \
 .else
 _cache_fragment = \
 	case X$${_DEPENDS_CACHE} in \
-		X) _DEPENDS_CACHE=$$(mktemp -d ${TMPDIR}/dep_cache.XXXXXXXXX|| exit 1); \
+		X) _DEPENDS_CACHE=$$(${_PBUILD} mktemp -d ${TMPDIR}/dep_cache.XXXXXXXXX|| exit 1); \
+		${_MK_READABLE} $${_DEPENDS_CACHE}; \
 		export _DEPENDS_CACHE; \
-		trap "rm -rf 2>/dev/null $${_DEPENDS_CACHE}" 0; \
+		trap "${_PBUILD} rm -rf 2>/dev/null $${_DEPENDS_CACHE}" 0; \
 		trap 'exit 1' 1 2 3 13 15;; \
 	esac; PKGPATH=${PKGPATH}; export PKGPATH
 .endif
+
 
 PORTS_PRIVSEP ?= No
 FETCH_USER ?= _pfetch
@@ -124,7 +127,9 @@ BUILD_USER ?= _pbuild
 .if ${PORTS_PRIVSEP:L} == "yes"
 _PFETCH = ${SUDO} -u ${FETCH_USER}
 _PBUILD = ${SUDO} -u ${BUILD_USER}
-_PMAKESYS = cd ${.CURDIR} && PKGPATH=${PKGPATH} exec ${_PBUILD} ${MAKE}
+_MK_READABLE = ${_PBUILD} chmod a+rX
+_PMAKE = cd ${.CURDIR} && PKGPATH=${PKGPATH} exec ${_PBUILD} ${MAKE}
+_PREDIR = |${_PBUILD} tee >/dev/null
 # Some operations will need sudo in privsep mode
 _PSUDO = ${SUDO}
 _pkgmode = ${BUILD_USER}:$$(id -g ${BUILD_USER})
@@ -133,14 +138,15 @@ _usermode = -o $$(id -u) -g $$(id -g)
 _PFETCH =
 _PBUILD =
 _PSUDO =
-_PMAKESYS = ${_MAKESYS}
+_PREDIR = >
+_PMAKE = ${_MAKE}
+_MK_READABLE = :
 _pkgmode = $$(id -u):$$(id -g)
 _usermode =
 .endif
 
-_MAKE = cd ${.CURDIR} && PKGPATH=${PKGPATH} exec ${MAKE}
 _SUDOMAKE = cd ${.CURDIR} && PKGPATH=${PKGPATH} exec ${SUDO} ${MAKE}
-_MAKESYS = cd ${.CURDIR} && PKGPATH=${PKGPATH} exec ${MAKE}
+_MAKE = cd ${.CURDIR} && PKGPATH=${PKGPATH} exec ${MAKE}
 _SUDOMAKESYS = cd ${.CURDIR} && umask 022 && PKGPATH=${PKGPATH} exec ${_FAKESUDO} ${MAKE}
 
 REPORT_PROBLEM_LOGFILE ?=

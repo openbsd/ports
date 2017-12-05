@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1381 2017/12/03 12:57:35 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1382 2017/12/05 17:46:43 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -699,6 +699,7 @@ _ALL_COOKIES = ${_EXTRACT_COOKIE} ${_PATCH_COOKIE} ${_CONFIGURE_COOKIE} \
 	${_DEPBUILDWANTLIB_COOKIE} ${_DEPRUNWANTLIB_COOKIE} ${_DEPLIBSPECS_COOKIES}
 
 _MAKE_COOKIE = touch
+_PMAKE_COOKIE = ${_PBUILD} ${_MAKE_COOKIE}
 
 GMAKE ?= gmake
 
@@ -947,7 +948,7 @@ _BINOWNGRP = -o ${BINOWN} -g ${BINGRP}
 _SHAREOWNGRP = -o ${SHAREOWN} -g ${SHAREGRP}
 _MANOWNGRP = -o ${MANOWN} -g ${MANGRP}
 .else
-_FAKESUDO =
+_FAKESUDO = ${_PBUILD}
 _FAKESUDO_CHECK_COOKIE =
 _BINOWNGRP = 
 _SHAREOWNGRP =
@@ -1660,8 +1661,8 @@ ERRORS += "Fatal: $w ends with a slash"
 # to remove locks handling, define LOCKDIR to an empty value
 LOCKDIR ?= ${WRKOBJDIR}/locks
 
-LOCK_CMD ?= ${_PERLSCRIPT}/dolock
-UNLOCK_CMD ?= rm -f
+LOCK_CMD ?= ${_PBUILD} ${_PERLSCRIPT}/dolock
+UNLOCK_CMD ?= ${_PBUILD} rm -f
 _LOCKS_HELD ?=
 LOCK_VERBOSE ?= No
 .if !empty(LOCKDIR)
@@ -1780,11 +1781,11 @@ _emit_run_depends = for i in ${RUN_DEPENDS${SUBPACKAGE}:QL}; do echo "$$i"; done
 _libs2cache = \
 	cached_libs=$${_DEPENDS_CACHE}/$$(echo $$subdir|sed -e 's/\//--/g'); \
 	if ! test -f $$cached_libs; then \
-		t=$$(mktemp $${_DEPENDS_CACHE}/tmp.XXXXXXXXXX||exit 1); \
-		if eval $$toset ${MAKE} print-plist-libs >$$t; \
+		t=$$(${_PBUILD} mktemp $${_DEPENDS_CACHE}/tmp.XXXXXXXXXX||exit 1); \
+		if eval $$toset ${MAKE} print-plist-libs ${_PREDIR} $$t; \
 		then  \
-			chmod 0644 $$t; \
-			mv $$t $$cached_libs || rm $$t; \
+			${_PBUILD} chmod 0644 $$t; \
+			${_PBUILD} mv $$t $$cached_libs || rm $$t; \
 		else \
 			echo 1>&2 "Problem with dependency $$subdir"; \
 			exit 1; \
@@ -1854,7 +1855,7 @@ WRKDIR_CHANGES_OKAY += ${WRKBUILD}/_build/runtime_params
 WRKDIR_CHANGES_OKAY += ${WRKBUILD}/.ninja_log
 
 .if ${CHECK_WRKDIR:L} == "yes"
-_check_wrkdir = ${_PERLSCRIPT}/check-wrkdir
+_check_wrkdir = ${_PBUILD} ${_PERLSCRIPT}/check-wrkdir
 .else
 _check_wrkdir = :
 .endif
@@ -1920,6 +1921,7 @@ check-register-all:
 
 .for _S in ${MULTI_PACKAGES}
 
+# run under _pbuild
 ${_CACHE_REPO}${_PKGFILE${_S}}:
 	@install -d ${PACKAGE_REPOSITORY_MODE} ${@D}
 	@${ECHO_MSG} -n "===>  Looking for ${_PKGFILE${_S}} in \$$PKG_PATH - "
@@ -1935,8 +1937,7 @@ ${_CACHE_REPO}${_PKGFILE${_S}}:
 # The real package
 
 ${_PACKAGE_COOKIE${_S}}:
-	@${_PBUILD} install -d ${PACKAGE_REPOSITORY_MODE} ${@D} 
-	@${_PSUDO} install -d $(_usermode) ${_TMP_REPO}
+	@${_PBUILD} install -d ${PACKAGE_REPOSITORY_MODE} ${@D} ${_TMP_REPO}
 .  if ${FETCH_PACKAGES:L} == "yes" && !defined(_TRIED_FETCHING_${_PACKAGE_COOKIE${_S}})
 	@f=${_CACHE_REPO}${_PKGFILE${_S}}; \
 	cd ${.CURDIR} && ${_PBUILD} ${MAKE} $$f && \
@@ -2080,8 +2081,8 @@ ${WRKDIR}/.dep-${_i:C,>=,ge-,g:C,<=,le-,g:C,<,lt-,g:C,>,gt-,g:C,\*,ANY,g:C,[|:/=
 		Xpackage|Xfake) wantsub=false; check_installed=true; try_install=false;; \
 		Xpatch|Xconfigure|Xbuild) \
 			wantsub=true; check_installed=false; try_install=false; \
-			install -d ${WRKOBJDIR_MODE} `dirname ${WRKDIR}`; \
-			mkdir -p ${WRKDIR}/$$dir; \
+			${_PBUILD} install -d ${WRKOBJDIR_MODE} `dirname ${WRKDIR}`; \
+			${_PBUILD} mkdir -p ${WRKDIR}/$$dir; \
 			toset="$$toset _MASTER='[${FULLPKGNAME${SUBPACKAGE}}]${_MASTER}' WRKDIR=${WRKDIR}/$$dir";; \
 		*) \
 			${ECHO_MSG} "===> Error: can't depend on $$target"; \
@@ -2098,16 +2099,17 @@ ${WRKDIR}/.dep-${_i:C,>=,ge-,g:C,<=,le-,g:C,<,lt-,g:C,>,gt-,g:C,\*,ANY,g:C,[|:/=
 						second_pass=true;; \
 				esac; \
 				$$try_install && ${_force_update_fragment}; \
-				if $$(${PKG_INFO} -e "$$pkg" -r "$$pkg" $$default >$@t); then \
-					sed -ne '/^inst:/s///p' <$@t| \
+				x=`mktemp /tmp/dep2.XXXXXXXXXX`; \
+				if $$(${PKG_INFO} -e "$$pkg" -r "$$pkg" $$default >$$x); then \
+					sed -ne '/^inst:/s///p' <$$x| \
 						{ read v || v=found; \
-							echo "$$v" >$@; \
+							echo "$$v" ${_PREDIR} $@; \
 							${ECHO_MSG} "$$h> $$v"; } ;\
-					rm $@t; \
+					rm $$x; \
 					break; \
 				else \
 					r=$$?; \
-					rm $@t; \
+					rm $$x; \
 					case $$r in \
 					1|3) \
 							${ECHO_MSG} "$$h not found";; \
@@ -2136,7 +2138,7 @@ ${WRKDIR}/.dep-${_i:C,>=,ge-,g:C,<=,le-,g:C,<,lt-,g:C,>,gt-,g:C,\*,ANY,g:C,[|:/=
 			if (eval $$toset exec ${MAKE} $$target) && \
 				! test -e $${_ignore_cookie}; then \
 				if $$wantsub; then \
-					eval $$toset ${MAKE} show-prepare-results >$@; \
+					eval $$toset ${MAKE} show-prepare-results ${_PREDIR} $@; \
 				fi; \
 				${ECHO_MSG} "===> Returning to build of ${FULLPKGNAME${SUBPACKAGE}}${_MASTER}"; \
 			else \
@@ -2146,9 +2148,9 @@ ${WRKDIR}/.dep-${_i:C,>=,ge-,g:C,<=,le-,g:C,<,lt-,g:C,>,gt-,g:C,\*,ANY,g:C,[|:/=
 			$$try_install || break; \
 		done; \
 	done
-	@install -d ${WRKOBJDIR_MODE} `dirname ${WRKDIR}`
-	@mkdir -p ${WRKDIR} ${WRKDIR}/bin
-	@${_MAKE_COOKIE} $@
+	@${_PBUILD} install -d ${WRKOBJDIR_MODE} `dirname ${WRKDIR}`
+	@${_PBUILD} mkdir -p ${WRKDIR} ${WRKDIR}/bin
+	@${_PMAKE_COOKIE} $@
 .  endif
 .endfor
 
@@ -2162,7 +2164,7 @@ show-prepare-test-results: prepare test-depends
 # the dependencies in the Makefile are changed
 .  if !empty(_DEPLIBSPECS_COOKIES)
 ${_DEPLIBSPECS_COOKIES}: ${_WRKDIR_COOKIE}
-	@${_MAKE_COOKIE} $@
+	@${_PMAKE_COOKIE} $@
 .endif
 
 # similar rules for _DEPBUILDWANTLIB_COOKIE and _DEPRUNWANTLIB_COOKIE
@@ -2196,7 +2198,7 @@ ${_DEP${_m}WANTLIB_COOKIE}: ${_DEP${_m}LIBSPECS_COOKIES} \
 		exit 1; \
 	fi
 .    endif
-	@${_MAKE_COOKIE} $@
+	@${_PMAKE_COOKIE} $@
 .  endif
 
 .endfor
@@ -2223,7 +2225,7 @@ _internal-all _internal-build _internal-checksum _internal-configure \
 	@${ECHO_MSG} "===>  ${FULLPKGNAME${SUBPACKAGE}}${_MASTER} ${IGNORE${SUBPACKAGE}} ${_EXTRA_IGNORE}."
 .  endif
 .  if defined(_IGNORE_COOKIE)
-	@echo "${IGNORE${SUBPACKAGE}} ${_EXTRA_IGNORE}" >${_IGNORE_COOKIE}
+	@echo "${IGNORE${SUBPACKAGE}} ${_EXTRA_IGNORE}" ${_PREDIR} ${_IGNORE_COOKIE}
 .  endif
 .else
 
@@ -2472,46 +2474,51 @@ ${WRKDIR}/.test-sudo:
 			echo >&2 "Error: sudo does not let env variables through"; \
 			exit 1; \
 	fi
-	@${_MAKE_COOKIE} $@
+	@${_PMAKE_COOKIE} $@
 
 ${_WRKDIR_COOKIE}:
-	@rm -rf ${WRKDIR}
+	@${_PBUILD} rm -rf ${WRKDIR}
 	@appdefaults=${LOCALBASE}/lib/X11/app-defaults; \
 	if ! test -d $$appdefaults -a -h $$appdefaults; then \
 		echo 1>&2 "Fatal: $$appdefaults should exist and be a symlink"; \
 		exit 1; \
 	fi
-	@install -d ${WRKOBJDIR_MODE} `dirname ${WRKDIR}`
-	@mkdir -p ${WRKDIR} ${WRKDIR}/bin
+	@${_PBUILD} install -d ${WRKOBJDIR_MODE} `dirname ${WRKDIR}`
+	@${_PBUILD} mkdir -p ${WRKDIR} ${WRKDIR}/bin
 .if ${FAKE_AS_ROOT:L} != "yes"
-	@install -m ${BINMODE} ${_INSTALL_WRAPPER} ${WRKDIR}/bin/install
+	@${_PBUILD} install -m ${BINMODE} ${_INSTALL_WRAPPER} ${WRKDIR}/bin/install
 .endif
 .if !empty(WRKDIR_LINKNAME)
-	@ln -sf ${WRKDIR} ${.CURDIR}/${WRKDIR_LINKNAME}
+	@${_PBUILD} ln -sf ${WRKDIR} ${.CURDIR}/${WRKDIR_LINKNAME}
 .endif
 # poison some common gettext-tools binaries
 .if !defined(BUILD_DEPENDS) || !${BUILD_DEPENDS:Mdevel/gettext-tools} && \
 		!${BUILD_DEPENDS:M*textproc/intltool}
 	@printf '#!/bin/sh\n\
 		echo "*** $$0 was called without gettext-tools dependency ***" >&2\n\
-		exit 1\n' > ${WRKDIR}/bin/msgfmt
-	@chmod 555 ${WRKDIR}/bin/msgfmt
+		exit 1\n' ${_PREDIR} ${WRKDIR}/bin/msgfmt
+	@${_PBUILD} chmod 555 ${WRKDIR}/bin/msgfmt
 .  for name in msgcat msginit autopoint
-	@ln -sf msgfmt ${WRKDIR}/bin/${name}
+	@${_PBUILD} ln -sf msgfmt ${WRKDIR}/bin/${name}
 .  endfor
 .endif
-	@${_MAKE_COOKIE} $@
+	@${_PMAKE_COOKIE} $@
 
 ${_EXTRACT_COOKIE}: ${_WRKDIR_COOKIE}
 	@${_MAKE} _internal-checksum _internal-prepare
 	@${ECHO_MSG} "===>  Extracting for ${FULLPKGNAME}${_MASTER}"
 .if target(pre-extract)
-	@${_MAKESYS} pre-extract
+	@${_PMAKE} pre-extract
 .endif
-	@${_MAKESYS} do-extract
+	@${_PMAKE} do-extract
 .if target(post-extract)
-	@${_MAKESYS} post-extract
+	@${_PMAKE} post-extract
 .endif
+	@${_PMAKE} _post-extract-finalize
+	@${_PMAKE_COOKIE} $@
+
+# run as _pbuild
+_post-extract-finalize:
 .for _m in ${MODULES:T:U}
 .  if defined(MOD${_m}_post-extract)
 	@${MOD${_m}_post-extract}
@@ -2520,8 +2527,8 @@ ${_EXTRACT_COOKIE}: ${_WRKDIR_COOKIE}
 .if ${FIX_EXTRACT_PERMISSIONS:L} == "yes"
 	@chmod -R a+rX ${WRKDIR}
 .endif
-	@${_MAKE_COOKIE} $@
 
+# run as _pbuild
 .if !target(do-extract)
 do-extract:
 # What EXTRACT normally does:
@@ -2537,9 +2544,11 @@ do-extract:
 
 # Both distpatch and patch invoke pre-patch, if it's defined.
 # Hence it needs special treatment (a specific cookie).
+
+# run as _pbuild
 .if target(pre-patch)
 ${_PREPATCH_COOKIE}:
-	@${_MAKESYS} pre-patch
+	@${_MAKE} pre-patch
 .  if ${PATCH_CHECK_ONLY:L} != "yes"
 	@${_MAKE_COOKIE} $@
 .  endif
@@ -2551,16 +2560,17 @@ ${_PREPATCH_COOKIE}:
 
 ${_DISTPATCH_COOKIE}: ${_EXTRACT_COOKIE}
 .if target(pre-patch)
-	@${_MAKE} ${_PREPATCH_COOKIE}
+	@${_PMAKE} ${_PREPATCH_COOKIE}
 .endif
-	@${_MAKESYS} do-distpatch
+	@${_PMAKE} do-distpatch
 .if target(post-distpatch)
-	@${_MAKESYS} post-distpatch
+	@${_PMAKE} post-distpatch
 .endif
 .if ${PATCH_CHECK_ONLY:L} != "yes"
-	@${_MAKE_COOKIE} $@
+	@${_PMAKE_COOKIE} $@
 .endif
 
+# run as _pbuild
 .if !target(do-distpatch)
 do-distpatch:
 # What DISTPATCH normally does
@@ -2585,10 +2595,10 @@ do-distpatch:
 ${_PATCH_COOKIE}: ${_EXTRACT_COOKIE}
 	@${ECHO_MSG} "===>  Patching for ${FULLPKGNAME}${_MASTER}"
 .if target(pre-patch)
-	@${_MAKE} ${_PREPATCH_COOKIE}
+	@${_PMAKE} ${_PREPATCH_COOKIE}
 .endif
 .if target(do-patch)
-	@${_MAKESYS} do-patch
+	@${_PMAKE} do-patch
 .else
 # What PATCH normally does:
 # XXX test for efficiency, don't bother with distpatch if it's not needed
@@ -2609,7 +2619,7 @@ ${_PATCH_COOKIE}: ${_EXTRACT_COOKIE}
 							*) ${ECHO_MSG} "===>   Applying OpenBSD patch $$i" ;; \
 						esac; \
 						if [ -s $$i ]; then \
-							${PATCH} ${PATCH_ARGS} < $$i || \
+							${_PBUILD} ${PATCH} ${PATCH_ARGS} < $$i || \
 								{ echo "***>   $$i did not apply cleanly"; \
 								error=true; }; \
 						else \
@@ -2629,8 +2639,15 @@ ${_PATCH_COOKIE}: ${_EXTRACT_COOKIE}
 # End of PATCH.
 .endif
 .if target(post-patch)
-	@${_MAKESYS} post-patch
+	@${_PMAKE} post-patch
 .endif
+	@${_PMAKE} _post-patch-finalize
+.if ${PATCH_CHECK_ONLY:L} != "yes"
+	@${_PMAKE_COOKIE} $@
+.endif
+
+# Run as _pbuild
+_post-patch-finalize:
 .if ${USE_WXNEEDED:L} == "yes"
 	@wrktmp=`df -P ${WRKOBJDIR} | awk 'END { print $$6 }'`; \
 	if ! mount | grep -q " $${wrktmp} .*wxallowed"; then \
@@ -2638,7 +2655,7 @@ ${_PATCH_COOKIE}: ${_EXTRACT_COOKIE}
 			"(in ${PKGPATH})" >&2; \
 		false; \
 	fi
-	@printf '#!/bin/sh\nexec /usr/bin/ld -z wxneeded "$$@"\n' > ${WRKDIR}/bin/ld
+	@printf '#!/bin/sh\nexec /usr/bin/ld -z wxneeded "$$@"\n' >${WRKDIR}/bin/ld
 	@chmod 555 ${WRKDIR}/bin/ld
 .endif
 .for _wrap _comp in ${COMPILER_LINKS}
@@ -2667,31 +2684,19 @@ ${_PATCH_COOKIE}: ${_EXTRACT_COOKIE}
 			;; \
 		esac; done
 .endif
-.if ${PATCH_CHECK_ONLY:L} != "yes"
-	@${_MAKE_COOKIE} $@
-.endif
 
 
-# The real configure
-
-${_CONFIGURE_COOKIE}: ${_PATCH_COOKIE}
-	@${ECHO_MSG} "===>  Configuring for ${FULLPKGNAME}${_MASTER}"
-.if defined(_CONFIG_SITE)
-	@cd ${PORTSDIR}/infrastructure/db && cat ${CONFIG_SITE_LIST} >${_CONFIG_SITE}
-	@echo "Using ${_CONFIG_SITE} (generated)"
-.endif
-	@mkdir -p ${WRKBUILD}
-.if target(pre-configure)
-	@${_MAKESYS} pre-configure
-.endif
+# run as _pbuild
+_pre-configure-modules:
 .for _m in ${MODULES:T:U}
 .  if defined(MOD${_m}_pre-configure)
 	@${MOD${_m}_pre-configure}
 .  endif
 .endfor
-.if target(do-configure)
-	@${_MAKESYS} do-configure
-.else
+
+# run as _pbuild
+.if !target(do-configure)
+do-configure:
 # What CONFIGURE normally does
 .  for _c in ${CONFIGURE_STYLE:U}
 .    if defined(MOD${_c}_configure)
@@ -2700,10 +2705,26 @@ ${_CONFIGURE_COOKIE}: ${_PATCH_COOKIE}
 .  endfor
 # End of CONFIGURE.
 .endif
-.if target(post-configure)
-	@${_MAKESYS} post-configure
+
+
+# The real configure
+
+${_CONFIGURE_COOKIE}: ${_PATCH_COOKIE}
+	@${ECHO_MSG} "===>  Configuring for ${FULLPKGNAME}${_MASTER}"
+.if defined(_CONFIG_SITE)
+	@cd ${PORTSDIR}/infrastructure/db && cat ${CONFIG_SITE_LIST} ${_PREDIR} ${_CONFIG_SITE}
+	@echo "Using ${_CONFIG_SITE} (generated)"
 .endif
-	@${_MAKE_COOKIE} $@
+	@${_PBUILD} mkdir -p ${WRKBUILD}
+.if target(pre-configure)
+	@${_PMAKE} pre-configure
+.endif
+	@${_PMAKE} _pre-configure-modules
+	@${_PMAKE} do-configure
+.if target(post-configure)
+	@${_PMAKE} post-configure
+.endif
+	@${_PMAKE_COOKIE} $@
 
 # The real build
 
@@ -2711,22 +2732,22 @@ ${_BUILD_COOKIE}: ${_CONFIGURE_COOKIE}
 .if ${NO_BUILD:L} == "no"
 	@${ECHO_MSG} "===>  Building for ${FULLPKGNAME}${_MASTER}"
 .  if target(pre-build)
-	@${_MAKESYS} pre-build
+	@${_PMAKE} pre-build
 .  endif
 .  if target(do-build)
-	@${_MAKESYS} do-build
+	@${_PMAKE} do-build
 .  else
 # What BUILD normally does:
-	@cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
+	@cd ${WRKBUILD} && exec ${_PBUILD} ${SETENV} ${MAKE_ENV} \
 		${MAKE_PROGRAM} ${MAKE_FLAGS} -f ${MAKE_FILE} ${ALL_TARGET}
 # End of BUILD
 .  endif
 .  if target(post-build)
-	@${_MAKESYS} post-build
+	@${_PMAKE} post-build
 .  endif
 .endif
 	@${_check_wrkdir} ${WRKDIR} ${_TS_COOKIE} ${WRKDIR_CHANGES_OKAY} 
-	@${_MAKE_COOKIE} $@
+	@${_PMAKE_COOKIE} $@
 
 ${_TEST_COOKIE}: ${_BUILD_COOKIE}
 .if ${NO_TEST:L} == "no"
@@ -2742,7 +2763,7 @@ ${_TEST_COOKIE}: ${_BUILD_COOKIE}
 .    endif
 .  endif
 .  if target(pre-test)
-	@${_MAKE} pre-test
+	@${_PMAKE} pre-test
 .  endif
 .  if target(do-test)
 	@cd ${.CURDIR} && exec 3>&1 && exit `exec 4>&1 1>&3; \
@@ -2751,19 +2772,20 @@ ${_TEST_COOKIE}: ${_BUILD_COOKIE}
 .  else
 # What TEST normally does:
 	@cd ${WRKBUILD} && exec 3>&1 && exit `exec 4>&1 1>&3; \
-		(exec; set +e; ${SETENV} ${ALL_TEST_ENV} ${MAKE_PROGRAM} \
+		(exec; set +e; ${_PBUILD} ${SETENV} ${ALL_TEST_ENV} ${MAKE_PROGRAM} \
 		${ALL_TEST_FLAGS} -f ${MAKE_FILE} ${TEST_TARGET}; \
 		echo $$? >&4) 2>&1 ${TEST_LOG}`
 # End of TEST
 .  endif
 .  if target(post-test)
-	@${_MAKE} post-test
+	@${_PMAKE} post-test
 .  endif
 .else
 	@echo 1>&2 "No regression tests for ${FULLPKGNAME}"
 .endif
-	@${_MAKE_COOKIE} $@
+	@${_PMAKE_COOKIE} $@
 
+# run as _pbuild
 _post-install-modules:
 .for _m in ${MODULES:T:U}
 .  if defined(MOD${_m}_post-install)
@@ -2771,6 +2793,7 @@ _post-install-modules:
 .  endif
 .endfor
 
+# run as _pbuild
 _pre-fake-modules:
 .for _m in ${MODULES:T:U}
 .  if defined(MOD${_m}_pre-fake)
@@ -2787,15 +2810,15 @@ ${_FAKE_COOKIE}: ${_BUILD_COOKIE} ${_FAKESUDO_CHECK_COOKIE}
 .if ${FAKE_AS_ROOT:L} == "yes"
 	@${_FAKESUDO} install -d -m 755 ${_BINOWNGRP} ${WRKINST}
 .else
-	install -d -m 755 ${WRKINST}
+	${_FAKESUDO} install -d -m 755 ${WRKINST}
 .endif
 	@${_FAKESUDO} /usr/sbin/mtree -U -e -d -p ${WRKINST} \
 		<${PORTSDIR}/infrastructure/db/fake.mtree >/dev/null
 .if ${FAKE_AS_ROOT:L} != "yes"
-	@chmod -R a+rX ${WRKINST}
-	@ln -sf /bin/echo ${WRKDIR}/bin/chown
-	@ln -sf /bin/echo ${WRKDIR}/bin/chgrp
-	@install -C -m ${BINMODE} ${_INSTALL_WRAPPER} ${WRKDIR}/bin/install
+	@${_FAKESUDO} chmod -R a+rX ${WRKINST}
+	@${_PBUILD} ln -sf /bin/echo ${WRKDIR}/bin/chown
+	@${_PBUILD} ln -sf /bin/echo ${WRKDIR}/bin/chgrp
+	@${_PBUILD} install -C -m ${BINMODE} ${_INSTALL_WRAPPER} ${WRKDIR}/bin/install
 .endif
 	${_SUDOMAKESYS} _pre-fake-modules ${FAKE_SETUP}
 .if target(pre-fake)
@@ -2978,15 +3001,15 @@ _internal-clean:
 .  endif
 .  for l in ${_WRKDIRS}
 .    if "$l" != ""
-	@if [ -L $l ]; then rm -rf `readlink $l`; fi
-	@if [ -e $l ]; then rm -rf $l; fi
+	@if [ -L $l ]; then ${_PBUILD} rm -rf `readlink $l`; fi
+	@if [ -e $l ]; then ${_PBUILD} rm -rf $l; fi
 .    endif
 .  endfor
 .  if !empty(WRKDIR_LINKNAME)
 	@if [ -L ${WRKDIR_LINKNAME} ]; then rm -f ${.CURDIR}/${WRKDIR_LINKNAME}; fi
 .  endif
 .elif ${_clean:Mbuild} && ${SEPARATE_BUILD:L} != "no"
-	@rm -rf ${WRKBUILD} ${_CONFIGURE_COOKIE} ${_BUILD_COOKIE}
+	@${_PBUILD} rm -rf ${WRKBUILD} ${_CONFIGURE_COOKIE} ${_BUILD_COOKIE}
 .endif
 .if ${_clean:Mdist}
 	@${ECHO_MSG} "===>  Dist cleaning for ${FULLPKGNAME${SUBPACKAGE}}"
@@ -3187,8 +3210,8 @@ wantlib-args:
 	a=$${_DEPENDS_CACHE}/portstree-${FULLPKGNAME${SUBPACKAGE}}; \
 	b=$${_DEPENDS_CACHE}/inst-${FULLPKGNAME${SUBPACKAGE}}; \
 	if cd ${.CURDIR} && \
-	${MAKE} port-wantlib-args >$$a && \
-	${MAKE} fake-wantlib-args >$$b; then \
+	${MAKE} port-wantlib-args ${_PREDIR} $$a && \
+	${MAKE} fake-wantlib-args ${_PREDIR} $$b; then \
 		if ! cmp -s $$a $$b; \
 		then \
 			echo 1>&2 "${_check_msg}: Libraries in packing-lists in the ports tree"; \
@@ -3196,7 +3219,7 @@ wantlib-args:
 			diff 1>&2 -u $$a $$b ${_check_error}; \
 		fi; \
 		cat $$b; \
-		rm $$a $$b; \
+		${_PBUILD} rm $$a $$b; \
 	else \
 		exit 1; \
 	fi
@@ -3477,7 +3500,8 @@ _all_phony = ${_recursive_depends_targets} \
 	run-depends-args lib-depends-args all-lib-depends-args wantlib-args \
 	port-wantlib-args fake-wantlib-args no-wantlib-args no-lib-depends-args \
 	_recurse-show-run-depends show-run-depends \
-	_post-install-modules _pre-fake-modules
+	_post-extract-finalize _post-patch-finalize _pre-fake-modules \
+	_post-install-modules
 
 .if defined(_DEBUG_TARGETS)
 .  for _t in ${_all_phony}
