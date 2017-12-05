@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2017/10/23 17:11:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2017/12/05 19:24:14 jca Exp $
 
 COMMENT=	small EWMH compliant pager
 
@@ -20,6 +20,8 @@ EXTRACT_SUFX=	.tar.bz2
 CONFIGURE_STYLE=simple
 
 USE_GMAKE=	Yes
+MAKE_FLAGS=	V=2
+
 NO_TEST=	Yes
 
 .include <bsd.port.mk>
