@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.24 2017/11/23 17:35:07 landry Exp $
+# $OpenBSD: Makefile,v 1.25 2017/12/05 10:54:15 pea Exp $
 
 COMMENT =	standards compliant, simple to use Wiki
 
-REVISION =	0
-VERSION =	2017-02-19b
+VERSION =	2017-02-19e
 DISTNAME =	dokuwiki-${VERSION}
 PKGNAME =	dokuwiki-${VERSION:S/-/./g}
 CATEGORIES =	www
