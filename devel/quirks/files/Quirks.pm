@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.564 2017/12/04 13:10:07 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.565 2017/12/06 17:52:03 jca Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1211,6 +1211,7 @@ my $obsolete_reason = {
 	'hs-zlib-bindings' => 6,
 	'vomit' => 0,
 	'p5-WWW-YouTube-Download' => 6,
+	'oggtag' => 6,
 };
 
 # reasons for obsolete packages
