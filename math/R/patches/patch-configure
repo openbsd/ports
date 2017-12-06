@@ -1,9 +1,9 @@
-$OpenBSD: patch-configure,v 1.32 2017/10/09 12:55:30 feinerer Exp $
+$OpenBSD: patch-configure,v 1.33 2017/12/06 18:22:52 feinerer Exp $
 
 Index: configure
 --- configure.orig
 +++ configure
-@@ -40291,8 +40291,8 @@ fi
+@@ -40301,8 +40301,8 @@ fi
  
  fi
  if test "${have_zlib}" = yes; then
@@ -14,7 +14,7 @@ Index: configure
  if ${r_cv_header_zlib_h+:} false; then :
    $as_echo_n "(cached) " >&6
  else
-@@ -40307,7 +40307,7 @@ else
+@@ -40317,7 +40317,7 @@ else
  #include <zlib.h>
  int main() {
  #ifdef ZLIB_VERNUM
