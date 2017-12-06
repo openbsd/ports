@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.69 2017/12/06 13:55:23 robert Exp $
+# $OpenBSD: Makefile,v 1.70 2017/12/06 15:34:48 sthen Exp $
+
+ONLY_FOR_ARCHS=		amd64
 
 .include <bsd.port.arch.mk>
 
 USE_WXNEEDED=		Yes
 
-ONLY_FOR_ARCHS=		i386 amd64
 DPB_PROPERTIES=		parallel
 
 COMMENT=		Iridium browser
