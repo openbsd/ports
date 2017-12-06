@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.42 2017/06/07 02:17:01 schwarze Exp $
+# $OpenBSD: Makefile,v 1.43 2017/12/06 14:19:41 bluhm Exp $
 
 COMMENT=	filtering local mail delivery agent
 
 DISTNAME=	procmail-3.22
 CATEGORIES=	mail
-REVISION=	7
+REVISION=	8
 
 MASTER_SITES=	${HOMEPAGE} \
 		http://mirror.switch.ch/ftp/mirror/procmail/ \

@@ -1,10 +1,15 @@
-$OpenBSD: patch-src_formisc_c,v 1.2 2014/09/05 13:52:19 sthen Exp $
+$OpenBSD: patch-src_formisc_c,v 1.3 2017/12/06 14:19:41 bluhm Exp $
 
 Hunk #1: CVE-2014-3618, heap overflow in formail when parsing addresses
 with unbalanced quotes.
 
---- src/formisc.c.orig	Fri Jun 29 03:20:45 2001
-+++ src/formisc.c	Thu Sep  4 16:15:48 2014
+Hunk #2: CVE-2017-16844: heap-based buffer overflow in loadbuf()
+http://bugs.debian.org/876511
+Patch taken from Debian package procmail_3.22-25+deb9u1.
+
+Index: src/formisc.c
+--- src/formisc.c.orig
++++ src/formisc.c
 @@ -84,12 +84,11 @@ normal:	   *target++= *start++;
  	case '"':*target++=delim='"';start++;
        }
@@ -19,6 +24,15 @@ with unbalanced quotes.
        }
       hitspc=2;
     }
+@@ -104,7 +103,7 @@ void loadsaved(sp)const struct saved*const sp;	     /*
+ }
+ 							    /* append to buf */
+ void loadbuf(text,len)const char*const text;const size_t len;
+-{ if(buffilled+len>buflen)			  /* buf can't hold the text */
++{ while(buffilled+len>buflen)			  /* buf can't hold the text */
+      buf=realloc(buf,buflen+=Bsize);
+   tmemmove(buf+buffilled,text,len);buffilled+=len;
+ }
 @@ -115,7 +114,7 @@ void loadchar(c)const int c;		      /* append one char
    buf[buffilled++]=c;
  }
