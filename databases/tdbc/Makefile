@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2017/11/04 18:57:19 stu Exp $
+# $OpenBSD: Makefile,v 1.10 2017/12/06 05:48:57 stu Exp $
 
 COMMENT =		Tcl Database Connectivity
 
@@ -6,6 +6,7 @@ V =			1.0.5
 
 DISTNAME =		tdbc${V}
 PKGNAME =		tdbc-${V}
+REVISION =		0
 SHARED_LIBS =		tdbc${V:S/.//g} 0.0
 CATEGORIES =		databases
 HOMEPAGE =		http://tdbc.tcl.tk/
