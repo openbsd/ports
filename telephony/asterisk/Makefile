@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.266 2017/11/11 15:19:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.267 2017/12/06 14:22:39 sthen Exp $
 
 BROKEN-aarch64=	linker problems with BlocksRuntime that only show up at runtime
 
 COMMENT-main=	open source multi-protocol PBX and telephony toolkit
 
-VER=		13.18.2
+VER=		13.18.3
 PJ_V=		2.6
 PORTROACH=	limitw:0,odd
 DISTNAME=	asterisk-${VER:S/beta/-beta/:S/rc/-rc/}
@@ -25,9 +25,9 @@ PERMIT_PACKAGE_CDROM=	patent licensing clauses
 PERMIT_PACKAGE_FTP=	Yes
 
 WANTLIB-main += ${MODGCC4_CPPWANTLIB}
-WANTLIB-main += c crypto curl execinfo gsm iconv iksemel jansson lzma
-WANTLIB-main += m nghttp2 ogg portaudio pthread spandsp sqlite3 ssl
-WANTLIB-main += termcap tiff uriparser uuid vorbis vorbisenc vorbisfile
+WANTLIB-main += c crypto curl curses execinfo gsm iconv iksemel jansson
+WANTLIB-main += lzma m nghttp2 ogg portaudio pthread spandsp sqlite3 ssl
+WANTLIB-main += tiff uriparser uuid vorbis vorbisenc vorbisfile
 WANTLIB-main += xml2 xslt z
 
 # XXX Requires either nested functions (gcc only), or -fblocks (clang).
