@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.396 2017/11/05 17:20:14 jeremy Exp $
+# $OpenBSD: Makefile,v 1.397 2017/12/06 21:20:36 jca Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -138,7 +138,6 @@
      SUBDIR += nosefart
      SUBDIR += nspmod
      SUBDIR += ocp
-     SUBDIR += oggtag
      SUBDIR += openal
      SUBDIR += opencore-amr
      SUBDIR += opennap
