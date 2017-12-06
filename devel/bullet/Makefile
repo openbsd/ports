@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2017/12/05 19:58:55 pascal Exp $
+# $OpenBSD: Makefile,v 1.15 2017/12/06 09:17:59 pascal Exp $
 
 COMMENT =	physics library
 
@@ -46,6 +46,7 @@ BUILD_DEPENDS =		graphics/freeglut
 CONFIGURE_ARGS +=	-DBUILD_SHARED_LIBS=ON \
 			-DBUILD_CPU_DEMOS=OFF \
 			-DBUILD_EXTRAS=ON \
+			-DBUILD_PYBULLET=OFF \
 			-DINSTALL_LIBS=ON \
 			-DCMAKE_SHARED_LINKER_FLAGS="-L${X11BASE}/lib" \
 			-DCMAKE_MODULE_LINKER_FLAGS="-L${X11BASE}/lib" \
