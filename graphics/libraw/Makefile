@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2017/11/16 23:20:39 naddy Exp $
-
-BROKEN-hppa =		undefined reference to __sync_fetch_and_add_4
+# $OpenBSD: Makefile,v 1.30 2017/12/06 17:46:51 sthen Exp $
 
 COMMENT =		library for reading RAW files
 
@@ -22,9 +20,11 @@ WANTLIB += c jasper jpeg lcms2 m pthread ${COMPILER_LIBCXX}
 
 MASTER_SITES =		https://www.libraw.org/data/
 
-COMPILER =		base-clang ports-gcc
+MODULES =		gcc4
 # for atomic builtins (__sync_fetch_and_add_4)
-MODGCC4_ARCHS =		arm
+# XXX remove when armv7 switches to clang in base?
+MODGCC4_ARCHS =		arm hppa
+MODGCC4_LANGS =		c++
 
 LIB_DEPENDS =		graphics/jasper \
 			graphics/lcms2
