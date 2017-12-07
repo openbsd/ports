@@ -1,22 +1,19 @@
-# $OpenBSD: Makefile,v 1.5 2017/12/02 21:39:49 juanfra Exp $
+# $OpenBSD: Makefile,v 1.6 2017/12/07 22:41:51 rsadowski Exp $
 
 COMMENT =		C++ class and template library
 
-V =			0.04.19
+V =			1.2.1
 DISTNAME =		ETL-${V}
 PKGNAME =		etl-${V}
-# Keep in sync with multimedia/synfig
-SYNFIG_V =		1.0.1
-REVISION =		0
 
 CATEGORIES =		devel
 
-HOMEPAGE =		http://www.synfig.org/
+HOMEPAGE =		https://www.synfig.org/
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES=		https://download.tuxfamily.org/synfig/releases/${SYNFIG_V}/
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=synfig/}
 
 CONFIGURE_STYLE =	gnu
 
