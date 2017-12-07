@@ -1,11 +1,11 @@
-$OpenBSD: patch-configure_ac,v 1.1 2017/07/24 17:11:22 sthen Exp $
+$OpenBSD: patch-configure_ac,v 1.2 2017/12/07 22:42:50 rsadowski Exp $
 
 Don't override CXXFLAGS optimisation levels.
 
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -46,7 +46,6 @@ AC_C_BIGENDIAN
+@@ -47,7 +47,6 @@ AC_C_BIGENDIAN
  
  # -- A R G U M E N T S ----------------------------------------
  
