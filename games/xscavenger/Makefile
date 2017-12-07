@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2017/10/23 17:10:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2017/12/07 18:54:36 espie Exp $
 
 DISTNAME=	xscavenger-1.4.4
 REVISION =	3
 EXTRACT_SUFX=	.tgz
 CATEGORIES=	games
+FIX_EXTRACT_PERMISSIONS=Yes
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

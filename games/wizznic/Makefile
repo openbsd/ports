@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2017/05/17 12:10:53 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2017/12/07 18:54:36 espie Exp $
 
 COMMENT =		brick-matching puzzle game
 
@@ -6,6 +6,7 @@ V =			0.9.9
 DISTNAME =		wizznic-${V}-src
 PKGNAME =		wizznic-${V}
 REVISION =		0
+FIX_EXTRACT_PERMISSIONS=Yes
 
 CATEGORIES =		games
 
