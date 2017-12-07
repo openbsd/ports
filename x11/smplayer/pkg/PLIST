@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2017/03/01 13:04:15 gonzalo Exp $
+@comment $OpenBSD: PLIST,v 1.16 2017/12/07 13:25:35 gonzalo Exp $
 @bin bin/simple_web_server
 @bin bin/smplayer
 @man man/man1/smplayer.1
@@ -13,7 +13,6 @@ share/doc/smplayer/Copying_openssl.txt
 share/doc/smplayer/Finding_subtitles.txt
 share/doc/smplayer/Install.txt
 share/doc/smplayer/Not_so_obvious_things.txt
-share/doc/smplayer/Notes_about_mpv.txt
 share/doc/smplayer/Portable_Edition.txt
 share/doc/smplayer/Readme.txt
 share/doc/smplayer/Release_notes.txt
