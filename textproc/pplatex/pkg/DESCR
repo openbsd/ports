@@ -1,0 +1,4 @@
+LaTeX is able to produce really nice document layouts. But it is also
+able to produce a lot of noise on the command line. pplatex is a
+command-line tool that parses the logs of latex and pdflatex and prints
+warnings and errors in an human readable format.
