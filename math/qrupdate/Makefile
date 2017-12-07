@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2015/03/16 18:07:50 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2017/12/07 15:00:30 espie Exp $
 
 COMMENT =	library for fast updates of QR and Cholesky decompositions
 
@@ -6,6 +6,7 @@ DISTNAME =	qrupdate-1.1.2
 SHARED_LIBS +=  qrupdate	0.0	# .1.1
 CATEGORIES =	math
 REVISION =	0
+FIX_EXTRACT_PERMISSIONS=Yes
 
 HOMEPAGE =	http://qrupdate.sourceforge.net/
 
