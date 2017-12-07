@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 11:35:44 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2017/12/07 23:11:51 espie Exp $
 
 COMMENT=	subtitle ripper, used with transcode
 
@@ -7,6 +7,7 @@ PKGNAME=	subtitleripper-0.3.4
 REVISION=	1
 EXTRACT_SUFX=	.tgz
 CATEGORIES=	multimedia
+FIX_EXTRACT_PERMISSIONS=Yes
 
 HOMEPAGE=	http://subtitleripper.sourceforge.net/
 
