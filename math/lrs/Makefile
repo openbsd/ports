@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 11:23:55 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2017/12/07 14:41:24 espie Exp $
 
 COMMENT =		solve vertex enumeration and convex hull problems
 
 DISTNAME =		lrslib-042c
 PKGNAME =		lrs-042
 REVISION =		0
+FIX_EXTRACT_PERMISSIONS=Yes
 
 CATEGORIES =		math
 
