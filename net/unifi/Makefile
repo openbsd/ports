@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.50 2017/11/16 22:21:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.51 2017/12/07 22:06:10 sthen Exp $
 
 COMMENT=	controller for Ubiquiti uniFi (wifi/routing/switching/voip)
 
 # https://community.ubnt.com/t5/UniFi-Updates-Blog/bg-p/Blog_UniFi
 # https://community.ubnt.com/t5/UniFi-Beta-Blog/bg-p/Blog_UniFi_Beta
-VERSION=	5.6.24
-MASTER_SITES=	http://dl.ubnt.com/unifi/${VERSION}-e2998a5aab/
+VERSION=	5.6.26
+MASTER_SITES=	http://dl.ubnt.com/unifi/${VERSION}-f6a8a26e43/
 
 V=		${VERSION:C/-.*//}
+S=		1.1.2.6
 DISTFILES=	unifi-$V{UniFi.unix}.zip unifi_sh_api-$V{unifi_sh_api}
 EXTRACT_ONLY=	unifi-$V.zip
 PKGNAME=	unifi-$V
@@ -15,7 +16,7 @@ PKGNAME=	unifi-$V
 # newer unifi uses newer snappy-java, but upstream stopped distributing
 # openbsd .so's. use a locally built one to replace.
 MASTER_SITES0=	https://spacehopper.org/mirrors/
-DISTFILES+=	snappy-java-1.1.2.6.jar:0
+DISTFILES+=	snappy-java-$S.jar:0
 
 CATEGORIES=	net
 
@@ -44,7 +45,7 @@ SUBST_VARS=	VERSION
 
 post-extract:
 	cp ${FULLDISTDIR}/unifi_sh_api-$V ${WRKSRC}/unifi_sh_api
-	cp ${FULLDISTDIR}/snappy-java-1.1.2.6.jar ${WRKSRC}/lib/
+	cp ${FULLDISTDIR}/snappy-java-$S.jar ${WRKSRC}/lib/
 
 do-install:
 	${INSTALL_DATA_DIR} ${INSTDIR}{,/backup,/data,/run,/work}
