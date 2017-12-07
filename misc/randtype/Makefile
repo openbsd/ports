@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2017/02/27 18:30:43 jca Exp $
+# $OpenBSD: Makefile,v 1.7 2017/12/07 20:14:55 espie Exp $
 
 COMMENT=	output characters or lines at random intervals
 
@@ -9,6 +9,7 @@ HOMEPAGE=	http://bjk.sourceforge.net/randtype/
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=bjk/}
 
 MAINTAINER=	Girish Venkatachalam <girish1729@gmail.com>
+FIX_EXTRACT_PERMISSIONS=Yes
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

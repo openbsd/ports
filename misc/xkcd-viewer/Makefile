@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/27 21:25:58 landry Exp $
+# $OpenBSD: Makefile,v 1.9 2017/12/07 20:14:55 espie Exp $
 
 COMMENT=	XKCD comic viewer
 
@@ -8,6 +8,7 @@ REVISION=	2
 CATEGORIES=	misc
 
 MASTER_SITES=	http://www.autistici.org/fox/files/XKCD_viewer/
+FIX_EXTRACT_PERMISSIONS=Yes
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
