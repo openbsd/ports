@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2016/03/20 19:56:43 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2017/12/07 21:26:05 espie Exp $
 
 COMMENT =	perl extension for parsing US street addresses
 MODULES =	cpan
 PKG_ARCH =	*
 DISTNAME =	Geo-StreetAddress-US-1.04
 CATEGORIES =	geo
+FIX_EXTRACT_PERMISSIONS=Yes
 
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes
