@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2013/10/11 21:21:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2017/12/07 13:12:44 espie Exp $
 
 COMMENT= 		fire up programs in case of user inactivity under X
 
 DISTNAME=		xautolock-2.2
 EXTRACT_SUFX=		.tgz
 CATEGORIES=		x11
+FIX_EXTRACT_PERMISSIONS=Yes
 
 MASTER_SITES=		${MASTER_SITE_SUNSITE:=X11/screensavers/}
 

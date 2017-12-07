@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2015/06/10 08:46:52 bentley Exp $
+# $OpenBSD: Makefile,v 1.15 2017/12/07 13:12:44 espie Exp $
 
 COMMENT =	clone of arcade game 'Defender' with a Linux theme
 
 DISTNAME =	defendguin-0.0.12
 CATEGORIES =	games x11
+FIX_EXTRACT_PERMISSIONS=Yes
 
 HOMEPAGE =	http://www.newbreedsoftware.com/defendguin/
 

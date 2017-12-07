@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2017/07/26 22:45:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2017/12/07 13:12:44 espie Exp $
 
 COMMENT=		top-like monitor for Squid
 
@@ -6,6 +6,7 @@ DISTNAME=		sqtop-2011-11-01
 PKGNAME=		sqtop-2011.11.01
 REVISION=		2
 CATEGORIES=		www
+FIX_EXTRACT_PERMISSIONS=Yes
 
 MAINTAINER=		Gonzalo L. R. <gonzalo@openbsd.org>
 

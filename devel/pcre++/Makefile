@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2017/07/26 22:45:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2017/12/07 13:12:44 espie Exp $
 
 COMMENT=		wrapper class around the pcre library
 
@@ -6,6 +6,7 @@ DISTNAME=		pcre++-0.9.5
 PKGNAME=		${DISTNAME}
 REVISION =		7
 SHARED_LIBS=		pcre++ 1.0
+FIX_EXTRACT_PERMISSIONS=Yes
 
 CATEGORIES=		devel
 HOMEPAGE=		http://www.daemon.de/PCRE

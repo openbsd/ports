@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/11/04 21:46:21 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2017/12/07 13:12:44 espie Exp $
 
 COMMENT =	NASE A60 Algol interpreter
 DISTNAME =	a60-0.23a
@@ -6,6 +6,7 @@ CATEGORIES =	lang
 
 HOMEPAGE =	https://www.bertnase.de/a60/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+FIX_EXTRACT_PERMISSIONS=Yes
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes

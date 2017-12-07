@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2017/08/24 20:12:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2017/12/07 13:12:44 espie Exp $
 
 # need some kind of tls
 ONLY_FOR_ARCHS =	${CLANG_ARCHS}
+USE_WXNEEDED =		Yes
 
 COMMENT=		framework for creating extensible applications
 

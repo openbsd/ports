@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2016/03/20 19:57:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2017/12/07 13:12:44 espie Exp $
 
 COMMENT=	concise attribute rewriting
 
@@ -7,6 +7,7 @@ PKG_ARCH=	*
 DISTNAME=	HTML-RewriteAttributes-0.05
 REVISION=	0
 CATEGORIES=	www devel
+FIX_EXTRACT_PERMISSIONS=Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=   Yes

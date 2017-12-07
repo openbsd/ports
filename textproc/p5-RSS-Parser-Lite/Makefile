@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2016/03/20 19:57:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2017/12/07 13:12:44 espie Exp $
 
 COMMENT =		simple and pure Perl RSS parser
 
 DISTNAME =		RSS-Parser-Lite-0.12
 CATEGORIES =		textproc
+FIX_EXTRACT_PERMISSIONS=Yes
 
 # perl
 PERMIT_PACKAGE_CDROM =	Yes

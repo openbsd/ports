@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2017/11/16 16:07:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.43 2017/12/07 13:12:44 espie Exp $
 
 COMMENT=	scanner frontend for SANE
 
@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.xsane.org/download/
 HOMEPAGE=	http://www.xsane.org/
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
+FIX_EXTRACT_PERMISSIONS=Yes
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

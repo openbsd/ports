@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.25 2017/05/08 10:10:32 schwarze Exp $
+# $OpenBSD: Makefile,v 1.26 2017/12/07 13:12:44 espie Exp $
 
 COMMENT=	tool for managing X11 cut-buffers
 
 DISTNAME=	xcb-2.4
 REVISION=	2
 CATEGORIES=	x11
+FIX_EXTRACT_PERMISSIONS=Yes
 
 MASTER_SITES=	http://www.goof.com/pcg/marc/data/
 

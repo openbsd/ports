@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2015/12/10 12:34:55 jca Exp $
+# $OpenBSD: Makefile,v 1.23 2017/12/07 13:12:44 espie Exp $
 
 COMMENT=	paragraph reflow for email
 
@@ -7,6 +7,7 @@ DISTNAME=	Par${VERSION:S/.//}
 PKGNAME=	par-${VERSION}
 REVISION=	1
 CATEGORIES=	textproc
+FIX_EXTRACT_PERMISSIONS=Yes
 
 HOMEPAGE=	http://www.nicemice.net/par/
 

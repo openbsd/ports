@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2016/03/09 17:32:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2017/12/07 13:12:44 espie Exp $
 
 PKG_ARCH=		*
 
@@ -8,6 +8,7 @@ V=			3.0
 REVISION=		5
 DISTNAME=		jmk-x11-fonts-${V}
 PKGNAME=		jmk-fonts-${V}
+FIX_EXTRACT_PERMISSIONS=Yes
 
 CATEGORIES=		fonts x11
 

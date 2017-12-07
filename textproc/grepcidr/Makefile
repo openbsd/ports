@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2014/06/01 11:22:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2017/12/07 13:12:44 espie Exp $
 
 COMMENT=	filter files for IP address matches
 
@@ -11,6 +11,7 @@ CATEGORIES=	textproc net
 HOMEPAGE=	http://www.pc-tools.net/unix/grepcidr/
 
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
+FIX_EXTRACT_PERMISSIONS=Yes
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes

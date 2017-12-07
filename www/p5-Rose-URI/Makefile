@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2016/03/20 19:57:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2017/12/07 13:12:44 espie Exp $
 
 COMMENT =	URI objects for Rose
 
@@ -6,6 +6,7 @@ MODULES =	cpan
 PKG_ARCH =	*
 DISTNAME =	Rose-URI-1.00
 CATEGORIES =	www
+FIX_EXTRACT_PERMISSIONS=Yes
 
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes

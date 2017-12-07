@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2016/03/20 19:57:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2017/12/07 13:12:44 espie Exp $
 
 COMMENT =	cache the output of entire pages
 
@@ -7,6 +7,7 @@ PKG_ARCH =	*
 DISTNAME =	Catalyst-Plugin-PageCache-0.31
 REVISION =	0
 CATEGORIES =	www
+FIX_EXTRACT_PERMISSIONS=Yes
 
 MAINTAINER =	Jim Razmus II <jim@openbsd.org>
 

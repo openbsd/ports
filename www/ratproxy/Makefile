@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2017/05/11 20:50:55 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2017/12/07 13:12:44 espie Exp $
 
 COMMENT=		passive web application security assessment tool
 
 DISTNAME=		ratproxy-1.58
 REVISION=		1
 CATEGORIES=		www security
+FIX_EXTRACT_PERMISSIONS=Yes
 
 HOMEPAGE=		https://ratproxy.googlecode.com/
 

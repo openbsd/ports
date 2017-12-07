@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2017/08/21 19:43:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2017/12/07 13:12:44 espie Exp $
 
 COMMENT=	.NET library for the Google Data API
 
@@ -6,6 +6,7 @@ V=		1.9.0.0
 DISTNAME=	libgoogle-data-mono-${V}
 PKGNAME=	mono-gdata-${V}
 REVISION=	1
+FIX_EXTRACT_PERMISSIONS=Yes
 
 CATEGORIES=	devel
 
