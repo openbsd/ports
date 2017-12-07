@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1382 2017/12/05 17:46:43 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1383 2017/12/07 20:14:25 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -2234,7 +2234,7 @@ lib-depends-check:
 	${_CHECK_LIB_DEPENDS} ${_PACKAGE_COOKIE}
 
 ${WRKINST}/.saved_libs: ${_FAKE_COOKIE} ${_FAKESUDO_CHECK_COOKIE}
-	@${_FAKESUDO} ${_CHECK_LIB_DEPENDS} -O $@t && ${_FAKESUDO} mv $@t $@
+	@${_FAKESUDO} ${SETENV} ${_CHECK_LIB_DEPENDS} -O $@t && ${_FAKESUDO} mv $@t $@
 
 port-lib-depends-check: ${WRKINST}/.saved_libs
 	@-${_cache_fragment}; for s in ${BUILD_PACKAGES}; do \
