@@ -1,4 +1,4 @@
-$OpenBSD: patch-mininet_util_py,v 1.1.1.1 2017/08/21 18:47:12 akoshibe Exp $
+$OpenBSD: patch-mininet_util_py,v 1.2 2017/12/07 06:33:40 akoshibe Exp $
 Remove methods that do OS-specific things to their own platform dirs.
 Index: mininet/util.py
 --- mininet/util.py.orig
@@ -48,10 +48,21 @@ Index: mininet/util.py
          cmd = [ str( arg ) for arg in cmd ]
      elif isinstance( cmd, list ) and shell:
          cmd = " ".join( arg for arg in cmd )
-@@ -145,55 +144,6 @@ def isShellBuiltin( cmd ):
+@@ -134,66 +133,6 @@ def quietRun( cmd, **kwargs ):
  
- isShellBuiltin.builtIns = None
+ # pylint: enable=maybe-no-member
  
+-def isShellBuiltin( cmd ):
+-    "Return True if cmd is a bash builtin."
+-    if isShellBuiltin.builtIns is None:
+-        isShellBuiltin.builtIns = quietRun( 'bash -c enable' )
+-    space = cmd.find( ' ' )
+-    if space > 0:
+-        cmd = cmd[ :space]
+-    return cmd in isShellBuiltin.builtIns
+-
+-isShellBuiltin.builtIns = None
+-
 -# Interface management
 -#
 -# Interfaces are managed as strings which are simply the
@@ -104,7 +115,7 @@ Index: mininet/util.py
  def retry( retries, delaySecs, fn, *args, **keywords ):
      """Try something several times before giving up.
         n: number of times to retry
-@@ -208,33 +158,6 @@ def retry( retries, delaySecs, fn, *args, **keywords )
+@@ -208,33 +147,6 @@ def retry( retries, delaySecs, fn, *args, **keywords )
          error( "*** gave up after %i retries\n" % tries )
          exit( 1 )
  
@@ -138,7 +149,7 @@ Index: mininet/util.py
  # Support for dumping network
  
  def dumpNodeConnections( nodes ):
-@@ -403,73 +326,6 @@ def pmonitor(popens, timeoutms=500, readline=True,
+@@ -403,73 +315,6 @@ def pmonitor(popens, timeoutms=500, readline=True,
          else:
              yield None, ''
  
@@ -212,7 +223,7 @@ Index: mininet/util.py
  def natural( text ):
      "To sort sanely/alphabetically: sorted( l, key=natural )"
      def num( s ):
-@@ -480,16 +336,6 @@ def natural( text ):
+@@ -480,16 +325,6 @@ def natural( text ):
  def naturalSeq( t ):
      "Natural sort key function for sequences"
      return [ natural( x ) for x in t ]

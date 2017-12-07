@@ -1,10 +1,10 @@
-$OpenBSD: patch-mininet_node_py,v 1.3 2017/09/16 06:03:05 akoshibe Exp $
+$OpenBSD: patch-mininet_node_py,v 1.4 2017/12/07 06:33:40 akoshibe Exp $
 Original Node functions are now in BaseNode, subclassed by OS-
 specific Node objects.  
 Index: mininet/node.py
 --- mininet/node.py.orig
 +++ mininet/node.py
-@@ -53,602 +53,45 @@ Future enhancements:
+@@ -53,602 +53,44 @@ Future enhancements:
  """
  
  import os
@@ -38,8 +38,7 @@ Index: mininet/node.py
  from mininet.log import info, error, warn, debug
 -from mininet.util import ( quietRun, errRun, errFail, moveIntf, isShellBuiltin,
 -                           numCores, retry, mountCgroups )
-+from mininet.util import ( quietRun, errRun, errFail, isShellBuiltin,
-+                           retry )
++from mininet.util import ( quietRun, errRun, errFail, retry )
  from mininet.moduledeps import moduleDeps, pathCheck, TUN
 -from mininet.link import Link, Intf, TCIntf, OVSIntf
 +from mininet.link import Link, TCIntf, OVSIntf
@@ -632,7 +631,7 @@ Index: mininet/node.py
      "CPU limited host"
  
      def __init__( self, name, sched='cfs', **kwargs ):
-@@ -702,8 +145,8 @@ class CPULimitedHost( Host ):
+@@ -702,8 +144,8 @@ class CPULimitedHost( Host ):
             args: Popen() args, single list, or string
             kwargs: Popen() keyword args"""
          # Tell mnexec to execute command in our cgroup
@@ -643,7 +642,7 @@ Index: mininet/node.py
          # if our cgroup is not given any cpu time,
          # we cannot assign the RR Scheduler.
          if self.sched == 'rt':
-@@ -739,7 +182,7 @@ class CPULimitedHost( Host ):
+@@ -739,7 +181,7 @@ class CPULimitedHost( Host ):
          quietRun( 'chrt -p %s %s' % ( self.rtprio, self.pid ) )
          result = quietRun( 'chrt -p %s' % self.pid )
          firstline = result.split( '\n' )[ 0 ]
@@ -652,7 +651,7 @@ Index: mininet/node.py
          if lastword != 'SCHED_RR':
              error( '*** error: could not assign SCHED_RR to %s\n' % self.name )
          return lastword
-@@ -837,6 +280,105 @@ class CPULimitedHost( Host ):
+@@ -837,6 +279,105 @@ class CPULimitedHost( Host ):
          cls.inited = True
  
  
@@ -758,7 +757,7 @@ Index: mininet/node.py
  # Some important things to note:
  #
  # The "IP" address which setIP() assigns to the switch is not
-@@ -873,7 +415,7 @@ class Switch( Node ):
+@@ -873,7 +414,7 @@ class Switch( Node ):
          self.opts = opts
          self.listenPort = listenPort
          if not self.inNamespace:
@@ -767,7 +766,7 @@ Index: mininet/node.py
  
      def defaultDpid( self, dpid=None ):
          "Return correctly formatted dpid from dpid or switch name (s1 -> 1)"
-@@ -1033,7 +575,7 @@ class UserSwitch( Switch ):
+@@ -1033,7 +574,7 @@ class UserSwitch( Switch ):
  class OVSSwitch( Switch ):
      "Open vSwitch switch. Depends on ovs-vsctl."
  
@@ -776,7 +775,7 @@ Index: mininet/node.py
                    inband=False, protocols=None,
                    reconnectms=1000, stp=False, batch=False, **params ):
          """name: name for switch
-@@ -1072,8 +614,8 @@ class OVSSwitch( Switch ):
+@@ -1072,8 +613,8 @@ class OVSSwitch( Switch ):
                     'Make sure that Open vSwitch is installed, '
                     'that ovsdb-server is running, and that\n'
                     '"ovs-vsctl show" works correctly.\n'
@@ -787,7 +786,7 @@ Index: mininet/node.py
              exit( 1 )
          version = quietRun( 'ovs-vsctl --version' )
          cls.OVSVersion = findall( r'\d+\.\d+', version )[ 0 ]
-@@ -1153,7 +695,7 @@ class OVSSwitch( Switch ):
+@@ -1153,7 +694,7 @@ class OVSSwitch( Switch ):
          opts = ( ' other_config:datapath-id=%s' % self.dpid +
                   ' fail_mode=%s' % self.failMode )
          if not self.inband:
@@ -796,7 +795,7 @@ Index: mininet/node.py
          if self.datapath == 'user':
              opts += ' datapath_type=netdev'
          if self.protocols and not self.isOldOVS():
-@@ -1239,7 +781,7 @@ class OVSSwitch( Switch ):
+@@ -1239,7 +780,7 @@ class OVSSwitch( Switch ):
             deleteIntfs: delete interfaces? (True)"""
          self.cmd( 'ovs-vsctl del-br', self )
          if self.datapath == 'user':
@@ -805,7 +804,7 @@ Index: mininet/node.py
          super( OVSSwitch, self ).stop( deleteIntfs )
  
      @classmethod
-@@ -1259,9 +801,88 @@ class OVSSwitch( Switch ):
+@@ -1259,9 +800,88 @@ class OVSSwitch( Switch ):
          return switches
  
  
@@ -895,7 +894,7 @@ Index: mininet/node.py
  class OVSBridge( OVSSwitch ):
      "OVSBridge is an OVSSwitch in standalone/bridge mode"
  
-@@ -1386,7 +1007,7 @@ class Controller( Node ):
+@@ -1386,7 +1006,7 @@ class Controller( Node ):
          listening = self.cmd( "echo A | telnet -e A %s %d" %
                                ( self.ip, self.port ) )
          if 'Connected' in listening:
@@ -904,24 +903,19 @@ Index: mininet/node.py
              pstr = ':%d ' % self.port
              clist = servers[ 0:1 ] + [ s for s in servers if pstr in s ]
              raise Exception( "Please shut down the controller which is"
-@@ -1405,9 +1026,13 @@ class Controller( Node ):
+@@ -1405,7 +1025,10 @@ class Controller( Node ):
          self.execed = False
  
      def stop( self, *args, **kwargs ):
 -        "Stop controller."
--        self.cmd( 'kill %' + self.command )
--        self.cmd( 'wait %' + self.command )
 +        """
 +	Stop controller. Find processes associated with the command, and kill
-+	them.
++        them.
 +	"""
-+        pids = " ".join( self.cmd( 'pgrep ' + self.command ).split( '\n' ) )
-+        self.cmd( 'pkill ' + pids + ' 2>/dev/null' )
-+        self.cmd( 'wait ' + pids )
+         self.cmd( 'kill %' + self.command )
+         self.cmd( 'wait %' + self.command )
          super( Controller, self ).stop( *args, **kwargs )
- 
-     def IP( self, intf=None ):
-@@ -1470,12 +1095,19 @@ class NOX( Controller ):
+@@ -1470,12 +1093,19 @@ class NOX( Controller ):
  
  class Ryu( Controller ):
      "Controller to run Ryu application"
@@ -943,7 +937,7 @@ Index: mininet/node.py
          if not ryuArgs:
              warn( 'warning: no Ryu modules specified; '
                    'running simple_switch only\n' )
-@@ -1538,7 +1170,50 @@ class RemoteController( Controller ):
+@@ -1538,7 +1168,50 @@ class RemoteController( Controller ):
          else:
              return True
  

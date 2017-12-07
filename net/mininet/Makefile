@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2017/09/16 06:03:05 akoshibe Exp $
+# $OpenBSD: Makefile,v 1.6 2017/12/07 06:33:40 akoshibe Exp $
 
 COMMENT =	emulator for rapid prototyping of software defined networks
 
 DISTNAME =	mininet-0.0.20170813
-REVISION =	2
+REVISION =	3
 GH_ACCOUNT =	mininet
 GH_PROJECT =	mininet
 GH_COMMIT =	87e26ef931ee6063332ceba77db472140f832d3a
@@ -24,10 +24,6 @@ BUILD_DEPENDS =		devel/help2man
 RUN_DEPENDS =		net/socat \
 			net/iperf
 
-MAKE_ENV =	BINDIR=${PREFIX}/bin \
-		MANDIR=${PREFIX}/man/man1 \
-		PKGDIR=${MODPY_SITEPKG} \
-		PYTHON=${MODPY_BIN}
 do-build:
 	$(CC) ${WRKSRC}/mnexec.c -o ${WRKBUILD}/mnexec
 	help2man -N -n "create a Mininet network."  --no-discard-stderr \
@@ -45,6 +41,8 @@ pre-install:
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mininet
+	${INSTALL_DATA} ${WRKSRC}/util/switchd.conf \
+		${PREFIX}/share/examples/mininet/switchd.mininet.conf-sample
 .for f in examples/README.md examples/*.py
 	${INSTALL_DATA} ${WRKSRC}/$f ${PREFIX}/share/examples/mininet
 .endfor

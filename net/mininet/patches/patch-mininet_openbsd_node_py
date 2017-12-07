@@ -1,9 +1,9 @@
-$OpenBSD: patch-mininet_openbsd_node_py,v 1.2 2017/09/09 21:18:30 akoshibe Exp $
+$OpenBSD: patch-mininet_openbsd_node_py,v 1.3 2017/12/07 06:33:40 akoshibe Exp $
 
 Index: mininet/openbsd/node.py
 --- mininet/openbsd/node.py.orig
 +++ mininet/openbsd/node.py
-@@ -0,0 +1,150 @@
+@@ -0,0 +1,161 @@
 +"""
 +Node: rdomain(4) based node. This is somewhat more similar to Linux's network
 +namespace moreso than a jail since it creates a separate network address space
@@ -33,6 +33,10 @@ Index: mininet/openbsd/node.py
 +       one pair interface if inNamespace=True."""
 +
 +    index=1     # rdomain ID, can only go to 255
++    builtins='. : [ alias bg break builtin cd command continue echo eval exec' \
++             ' exit export false fc fg getopts jobs kill let print pwd read' \
++             ' readonly return set shift suspend test times trap true typeset' \
++             ' ulimit umask unalias unset wait whence'
 +
 +    def __init__( self, name, inNamespace=True, **params ):
 +        BaseNode.__init__( self, name, inNamespace, **params )
@@ -69,6 +73,13 @@ Index: mininet/openbsd/node.py
 +                          '-is', 'mininet:' + self.name ]
 +        return Popen( cmd, stdin=slave, stdout=slave, stderr=slave,
 +                      close_fds=False )
++
++    def isShellBuiltin( self, cmd ):
++        "Return True if cmd is a builtin."
++        space = cmd.find( ' ' )
++        if space > 0:
++            cmd = cmd[ :space]
++        return cmd in Node.builtins
 +
 +    def mountPrivateDirs( self ):
 +        "mount private directories"
