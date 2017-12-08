@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2016/03/20 19:56:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2017/12/08 12:14:03 espie Exp $
 
 COMMENT =	FTP over SSL/TLS client class
 
@@ -6,6 +6,7 @@ MODULES =	cpan
 PKG_ARCH =	*
 DISTNAME =	Net-FTPSSL-0.30
 CATEGORIES =	net 
+FIX_EXTRACT_PERMISSIONS=Yes
 
 MAINTAINER =	Pierre-Emmanuel Andre <pea@openbsd.org>
 
