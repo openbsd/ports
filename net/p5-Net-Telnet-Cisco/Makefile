@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2016/05/12 14:00:13 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2017/12/08 12:23:30 espie Exp $
 
 COMMENT=		module to interact with a Cisco router
 
@@ -7,6 +7,7 @@ PKG_ARCH=		*
 DISTNAME=		Net-Telnet-Cisco-1.10
 REVISION=		1
 CATEGORIES=		net
+FIX_EXTRACT_PERMISSIONS=Yes
 
 HOMEPAGE=		http://nettelnetcisco.sourceforge.net/
 
