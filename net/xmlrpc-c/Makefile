@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2017/11/21 00:13:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2017/12/08 17:25:07 espie Exp $
 
 # as error: ``operation combines symbols in different segments''
 # (known toolchain problem)
@@ -10,6 +10,7 @@ CATEGORIES=	net devel textproc
 V=		1.06.35
 DISTNAME=	xmlrpc-c-${V}
 REVISION=	3
+FIX_EXTRACT_PERMISSIONS=Yes
 
 EXTRACT_SUFX=	.tgz
 
