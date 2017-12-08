@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.31 2017/11/16 23:20:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.32 2017/12/08 18:58:53 jca Exp $
 
-BROKEN-hppa =		no atomic ops
 COMMENT=		the Git library, take 2
 
 GH_ACCOUNT =		libgit2
@@ -14,10 +13,10 @@ MODULES=		devel/cmake \
 
 MODPY_RUNDEP=		No
 
-# for atomic builtins
-COMPILER=		base-clang ports-gcc
+COMPILER=		base-clang ports-gcc base-gcc
 COMPILER_LANGS=		c
-MODGCC4_ARCHS=		arm
+# for atomic builtins
+MODGCC4_ARCHS=		arm hppa
 
 # bundles https://github.com/nodejs/http-parser
 LIB_DEPENDS=		net/curl \
