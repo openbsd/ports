@@ -1,8 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.7 2012/09/11 12:45:44 sthen Exp $
-@newgroup _tacacs:511
-@newuser _tacacs:511:_tacacs:daemon:TACACS+ user:/nonexistent:/sbin/nologin
-@man man/man1/tac_plus.1
-@bin sbin/generate_passwd
-@bin sbin/tac_plus
-share/doc/tacacs+/
-share/doc/tacacs+/users_guide

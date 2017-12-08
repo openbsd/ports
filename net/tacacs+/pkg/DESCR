@@ -1,4 +1,0 @@
-Cisco's TACACS+ Server
-
-TACACS+ is used for authentication, authorization, and accounting
-on Cisco routers. This daemon provides a server for TACACS+ routers.
