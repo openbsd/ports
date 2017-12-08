@@ -1,8 +1,8 @@
-$OpenBSD: patch-util_cairo-fdr_Makefile_in,v 1.6 2017/06/27 13:14:24 ajacoutot Exp $
+$OpenBSD: patch-util_cairo-fdr_Makefile_in,v 1.7 2017/12/08 09:56:26 ajacoutot Exp $
 Index: util/cairo-fdr/Makefile.in
 --- util/cairo-fdr/Makefile.in.orig
 +++ util/cairo-fdr/Makefile.in
-@@ -443,7 +443,7 @@ AM_CPPFLAGS = -I$(top_srcdir)/src \
+@@ -447,7 +447,7 @@ AM_CPPFLAGS = -I$(top_srcdir)/src \
  cairo_fdr_la_SOURCES = fdr.c
  cairo_fdr_la_CPPFLAGS = $(AM_CPPFLAGS)
  cairo_fdr_la_CFLAGS = $(CAIRO_CFLAGS)
