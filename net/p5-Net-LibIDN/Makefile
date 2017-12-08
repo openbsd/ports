@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2017/09/23 10:51:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2017/12/08 12:19:41 espie Exp $
 
 COMMENT =	Perl bindings for GNU Libidn
 
@@ -6,6 +6,7 @@ MODULES =	cpan
 DISTNAME =	Net-LibIDN-0.12
 CATEGORIES =	net
 REVISION =	1
+FIX_EXTRACT_PERMISSIONS=Yes
 
 # Artistic
 PERMIT_PACKAGE_CDROM =Yes
