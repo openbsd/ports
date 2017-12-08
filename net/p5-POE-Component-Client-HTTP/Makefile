@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2016/03/20 19:56:56 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2017/12/08 12:31:48 espie Exp $
 
 COMMENT=	POE HTTP user-agent component
 
@@ -7,6 +7,7 @@ PKG_ARCH=	*
 DISTNAME=	POE-Component-Client-HTTP-0.88
 REVISION=	1
 CATEGORIES=	net www
+FIX_EXTRACT_PERMISSIONS=Yes
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
