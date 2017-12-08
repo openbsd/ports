@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2017/12/07 22:42:50 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.23 2017/12/08 13:56:34 ajacoutot Exp $
 
 COMMENT =		2D animation software
 
@@ -31,6 +31,8 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=synfig/}
 
 # c++11
 COMPILER =		base-clang ports-gcc
+
+MODULES =		textproc/intltool
 
 BUILD_DEPENDS =		devel/etl>=1.2.1 \
 			devel/gettext-tools
