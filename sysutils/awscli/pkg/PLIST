@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.45 2017/11/30 09:49:55 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.46 2017/12/08 09:13:21 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
@@ -634,6 +634,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/configservice/stop-conf
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/configservice/subscribe.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/configure/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/configure/_description.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/configure/add-model.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/configure/get/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/configure/get/_description.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/configure/get/_examples.rst
@@ -709,18 +710,25 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/confirm-p
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/confirm-public-virtual-interface.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/create-bgp-peer.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/create-connection.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/create-direct-connect-gateway-association.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/create-direct-connect-gateway.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/create-interconnect.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/create-lag.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/create-private-virtual-interface.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/create-public-virtual-interface.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/delete-bgp-peer.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/delete-connection.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/delete-direct-connect-gateway-association.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/delete-direct-connect-gateway.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/delete-interconnect.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/delete-lag.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/delete-virtual-interface.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/describe-connection-loa.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/describe-connections-on-interconnect.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/describe-connections.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/describe-direct-connect-gateway-associations.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/describe-direct-connect-gateway-attachments.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/describe-direct-connect-gateways.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/describe-hosted-connections.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/describe-interconnect-loa.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/describe-interconnects.rst
@@ -759,6 +767,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/dynamodb/scan.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/dynamodb/update-item.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/dynamodb/update-table.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/accept-reserved-instances-exchange-quote.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/accept-vpc-peering-connection.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/allocate-address.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/allocate-hosts.rst
@@ -787,6 +796,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/confirm-product-ins
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/co${MODPY_PY_PREFIX}image.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/co${MODPY_PY_PREFIX}snapshot.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-customer-gateway.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-default-subnet.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-default-vpc.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-dhcp-options.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-egress-only-internet-gateway.rst
@@ -851,6 +861,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-conversion
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-customer-gateways.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-dhcp-options.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-egress-only-internet-gateways.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-elastic-gpus.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-export-tasks.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-flow-logs.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-hosts.rst
@@ -923,6 +934,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/enable-vpc-classic-
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/enable-vpc-classic-link.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-console-output.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-password-data.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-reserved-instances-exchange-quote.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/import-key-pair.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-hosts.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-id-format.rst
@@ -939,6 +951,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-volume-attri
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-vpc-attribute.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-vpc-endpoint.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-vpc-peering-connection-options.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-vpc-tenancy.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/monitor-instances.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/move-address-to-vpc.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/purchase-reserved-instances-offering.rst
@@ -979,8 +992,12 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecr/create-repository.r
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecr/delete-repository.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecr/describe-repositories.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecr/get-authorization-token.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecr/get-lifecycle-policy-preview.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecr/get-lifecycle-policy.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecr/get-login.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecr/get-login_description.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecr/put-lifecycle-policy.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecr/start-lifecycle-policy-preview.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecs/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecs/create-cluster.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecs/create-service.rst
@@ -1070,6 +1087,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/elb/set-load-balancer-l
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/elb/set-load-balancer-policies-for-backend-server.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/elb/set-load-balancer-policies-of-listener.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/elbv2/
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/elbv2/add-listener-certificates.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/elbv2/add-tags.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/elbv2/create-listener.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/elbv2/create-load-balancer.rst
@@ -1080,6 +1098,8 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/elbv2/delete-load-balan
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/elbv2/delete-rule.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/elbv2/delete-target-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/elbv2/deregister-targets.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/elbv2/describe-account-limits.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/elbv2/describe-listener-certificates.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/elbv2/describe-listeners.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/elbv2/describe-load-balancer-attributes.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/elbv2/describe-load-balancers.rst
@@ -1095,7 +1115,9 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/elbv2/modify-rule.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/elbv2/modify-target-group-attributes.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/elbv2/modify-target-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/elbv2/register-targets.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/elbv2/remove-listener-certificates.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/elbv2/remove-tags.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/elbv2/set-ip-address-type.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/elbv2/set-rule-priorities.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/elbv2/set-security-groups.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/elbv2/set-subnets.rst
