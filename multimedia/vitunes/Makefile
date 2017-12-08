@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2014/03/25 21:20:39 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2017/12/08 01:04:14 espie Exp $
 
 COMMENT =		curses media indexer and player for vi users
 
@@ -10,6 +10,7 @@ CATEGORIES =		multimedia
 HOMEPAGE =		http://vitunes.org/
 
 MAINTAINER =		Laurent Fanis <laurent.fanis@gmail.com>
+FIX_EXTRACT_PERMISSIONS=Yes
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
