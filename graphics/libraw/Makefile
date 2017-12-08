@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2017/12/06 17:46:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2017/12/08 18:57:20 jca Exp $
 
 COMMENT =		library for reading RAW files
 
@@ -20,11 +20,9 @@ WANTLIB += c jasper jpeg lcms2 m pthread ${COMPILER_LIBCXX}
 
 MASTER_SITES =		https://www.libraw.org/data/
 
-MODULES =		gcc4
+COMPILER =		base-clang ports-gcc base-gcc
 # for atomic builtins (__sync_fetch_and_add_4)
-# XXX remove when armv7 switches to clang in base?
 MODGCC4_ARCHS =		arm hppa
-MODGCC4_LANGS =		c++
 
 LIB_DEPENDS =		graphics/jasper \
 			graphics/lcms2
