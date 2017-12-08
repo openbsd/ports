@@ -1,26 +1,25 @@
-# $OpenBSD: Makefile,v 1.65 2017/11/25 17:52:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.66 2017/12/08 14:38:36 ajacoutot Exp $
 
 COMMENT=		bad elements for GStreamer
 
 DISTNAME=		gst-plugins-bad-${V}
 PKGNAME=		${GST_PKGNAME_PREFIX}-plugins-bad-${V}
-REVISION=		3
 
-SHARED_LIBS +=  gstphotography-1.0   3.3      # 1203.0
-SHARED_LIBS +=  gstbasecamerabinsrc-1.0 3.3   # 1203.0
-SHARED_LIBS +=  gstcodecparsers-1.0  3.3      # 1203.0
-SHARED_LIBS +=  gstinsertbin-1.0     2.3      # 1203.0
-SHARED_LIBS +=  gsturidownloader-1.0 2.3      # 1203.0
-SHARED_LIBS +=  gstmpegts-1.0        2.3      # 1203.0
-SHARED_LIBS +=  gstbadbase-1.0       2.3      # 1203.0
-SHARED_LIBS +=  gstplayer-1.0        0.3      # 1203.0
-SHARED_LIBS +=  gstbadallocators-1.0 0.1      # 1203.0
-SHARED_LIBS +=  gstgl-1.0            2.3      # 1203.0
-SHARED_LIBS +=  gstadaptivedemux-1.0 1.3      # 1203.0
-SHARED_LIBS +=  gstbadvideo-1.0      2.3      # 1203.0
-SHARED_LIBS +=  gstbadaudio-1.0      0.3      # 1203.0
+SHARED_LIBS +=  gstphotography-1.0   3.3      # 1204.0
+SHARED_LIBS +=  gstbasecamerabinsrc-1.0 3.3   # 1204.0
+SHARED_LIBS +=  gstcodecparsers-1.0  3.3      # 1204.0
+SHARED_LIBS +=  gstinsertbin-1.0     2.3      # 1204.0
+SHARED_LIBS +=  gsturidownloader-1.0 2.3      # 1204.0
+SHARED_LIBS +=  gstmpegts-1.0        2.3      # 1204.0
+SHARED_LIBS +=  gstbadbase-1.0       2.3      # 1204.0
+SHARED_LIBS +=  gstplayer-1.0        0.3      # 1204.0
+SHARED_LIBS +=  gstbadallocators-1.0 0.1      # 1204.0
+SHARED_LIBS +=  gstgl-1.0            2.3      # 1204.0
+SHARED_LIBS +=  gstadaptivedemux-1.0 1.3      # 1204.0
+SHARED_LIBS +=  gstbadvideo-1.0      2.3      # 1204.0
+SHARED_LIBS +=  gstbadaudio-1.0      0.3      # 1204.0
 
-WANTLIB += EGL GL GLESv2 ICE SM SoundTouch X11 X11-xcb Xcomposite
+WANTLIB += EGL GL GLESv2 Xtst SoundTouch X11 X11-xcb Xcomposite
 WANTLIB += Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender
 WANTLIB += Xxf86vm ass atk-1.0 atk-bridge-2.0 atspi bs2b bz2 cairo
 WANTLIB += cairo-gobject croco-0.6 dbus-1 drm epoxy expat ffi
