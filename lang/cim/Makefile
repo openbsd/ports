@@ -1,0 +1,26 @@
+# $OpenBSD: Makefile,v 1.1.1.1 2017/12/09 00:21:17 bcallah Exp $
+
+COMMENT =	GNU Simula compiler
+DISTNAME =	cim-5.1
+CATEGORIES =	lang
+
+SHARED_LIBS +=	cim                       0.0 # 3.0
+
+HOMEPAGE =	https://www.gnu.org/software/cim/
+MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+
+# GPLv2 only
+PERMIT_PACKAGE_CDROM =	Yes
+
+WANTLIB += c m
+
+MASTER_SITES =	${MASTER_SITE_GNU:=cim/}
+
+CONFIGURE_STYLE =	gnu
+
+# It's really really not C99.
+# SCFLAGS is what cim calls cc with.
+MAKE_FLAGS =	CFLAGS="${CFLAGS} -std=gnu89" \
+		SCFLAGS="${CFLAGS} -std=gnu89 -w"
+
+.include <bsd.port.mk>

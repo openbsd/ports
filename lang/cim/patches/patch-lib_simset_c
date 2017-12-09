@@ -1,0 +1,194 @@
+$OpenBSD: patch-lib_simset_c,v 1.1.1.1 2017/12/09 00:21:17 bcallah Exp $
+
+This needed to be regen'd from the tarball.
+
+Index: lib/simset.c
+--- lib/simset.c.orig
++++ lib/simset.c
+@@ -1,7 +1,7 @@
+ /*Cim_ccode*/
+-#include "../../lib/cim.h"
++#include "./cim.h"
+ void __m_SIMSET();
+-__map __mapSIMSET[3]={"../../lib/simset.sim",0L,1L,
++__map __mapSIMSET[3]={"./simset.sim",0L,1L,
+ "",-123L,124L,
+ "",0L,9223372036854775807L};
+ typedef struct /*  */
+@@ -231,119 +231,119 @@ short __rl221SIMSET[3]={(short)((char *)&((__bs221 *)0
+ extern __ptyp __p221SIMSET;__pty   __pl221SIMSET[1]={&__p221SIMSET};
+ __ptyp __p221SIMSET={'P',0,4,sizeof(__bs221),25,__m_SIMSET,0,0,3,0,__rl221SIMSET,0,__pl221SIMSET,__NULL};
+ void __m_SIMSET(void){goto __s;
+-# 25 "../../lib/simset.sim"
++# 25 "./simset.sim"
+ __sto= (__dhp)&__blokk205SIMSET;__rb(&__p205SIMSET);goto __ll0;/* START CLASS SIMSET *//* START CLASS LINKAGE *//* START PROCEDURE SUC */__l8:
+-# 31 "../../lib/simset.sim"
++# 31 "./simset.sim"
+ 
+-# 32 "../../lib/simset.sim"
++# 32 "./simset.sim"
+ ;((__bs208 *)__lb)->er=(((__bp=(__rin(((__bs207 *)__lb->sl)->zzsuc,&__p211SIMSET)?((__bs207 *)__lb->sl)->zzsuc:__NULL))!=__NULL && (__bp->pp->pref[1]!= &__p211SIMSET))?(__dhp)__rerror(__errqual):__bp);__er=((__bs208 *)__lb)->er;__rep();goto __sw;/* SLUTT PROCEDURE SUC *//* START PROCEDURE PRED */__l9:
+-# 34 "../../lib/simset.sim"
++# 34 "./simset.sim"
+ 
+-# 35 "../../lib/simset.sim"
++# 35 "./simset.sim"
+ ;((__bs209 *)__lb)->er=(((__bp=(__rin(((__bs207 *)__lb->sl)->zzpred,&__p211SIMSET)?((__bs207 *)__lb->sl)->zzpred:__NULL))!=__NULL && (__bp->pp->pref[1]!= &__p211SIMSET))?(__dhp)__rerror(__errqual):__bp);__er=((__bs209 *)__lb)->er;__rep();goto __sw;/* SLUTT PROCEDURE PRED *//* START PROCEDURE PREV */__l10:
+-# 37 "../../lib/simset.sim"
++# 37 "./simset.sim"
+ ;((__bs210 *)__lb)->er=((__bs207 *)__lb->sl)->zzpred;__er=((__bs210 *)__lb)->er;__rep();goto __sw;/* SLUTT PROCEDURE PREV */__l5:
+-# 28 "../../lib/simset.sim"
++# 28 "./simset.sim"
+ __renddecl(0);goto __sw;__l6:__rinner(0);goto __sw;__l7:
+-# 39 "../../lib/simset.sim"
++# 39 "./simset.sim"
+ __rendclass(0);goto __sw;/* SLUTT CLASS LINKAGE *//* START CLASS LINK *//* START PROCEDURE OUT */__l14:
+-# 45 "../../lib/simset.sim"
++# 45 "./simset.sim"
+ 
+-# 46 "../../lib/simset.sim"
++# 46 "./simset.sim"
+ ;if(!((((__bs207 *)__lb->sl)->zzsuc!=__NULL)))goto __ll1;
+-# 47 "../../lib/simset.sim"
++# 47 "./simset.sim"
+ ;((__bs207 *)((__bp=((__bs207 *)__lb->sl)->zzsuc)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzpred=((__bs207 *)__lb->sl)->zzpred;
+-# 48 "../../lib/simset.sim"
++# 48 "./simset.sim"
+ ;((__bs207 *)((__bp=((__bs207 *)__lb->sl)->zzpred)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsuc=((__bs207 *)__lb->sl)->zzsuc;
+-# 49 "../../lib/simset.sim"
++# 49 "./simset.sim"
+ ;((__bs207 *)__lb->sl)->zzsuc=((__bs207 *)__lb->sl)->zzpred=__NULL;
+-# 50 "../../lib/simset.sim"
++# 50 "./simset.sim"
+ __ll1:__repp();goto __sw;/* SLUTT PROCEDURE OUT *//* START PROCEDURE FOLLOW */__l15:
+-# 52 "../../lib/simset.sim"
++# 52 "./simset.sim"
+ (((__bp=((__bs213 *)__lb)->PTR)!=__NULL && (__bp->pp->pref[0]!= &__p207SIMSET))?(__dhp)__rerror(__errqual):__bp);
+-# 53 "../../lib/simset.sim"
++# 53 "./simset.sim"
+ __sl=__lb->sl;__rcpp(&__p212SIMSET);__rcpb(26,__m_SIMSET);goto __sw;__l26:;;
+-# 54 "../../lib/simset.sim"
++# 54 "./simset.sim"
+ ;if(!(((((__bs213 *)__lb)->PTR!=__NULL)&&(((__bs207 *)((__bp=((__bs213 *)__lb)->PTR)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsuc!=__NULL))))goto __ll2;
+-# 55 "../../lib/simset.sim"
++# 55 "./simset.sim"
+ ;((__bs207 *)__lb->sl)->zzpred=((__bs213 *)__lb)->PTR;
+-# 56 "../../lib/simset.sim"
++# 56 "./simset.sim"
+ ;((__bs207 *)__lb->sl)->zzsuc=((__bs207 *)((__bp=((__bs213 *)__lb)->PTR)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsuc;
+-# 57 "../../lib/simset.sim"
++# 57 "./simset.sim"
+ (((__bs213 *)__lb)->__r1=(((__bs207 *)__lb->sl)->zzsuc));((__bs207 *)((__bp=((__bs213 *)__lb)->__r1)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzpred=((__bs207 *)((__bp=((__bs213 *)__lb)->PTR)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsuc=__lb->sl;
+-# 58 "../../lib/simset.sim"
++# 58 "./simset.sim"
+ __ll2:__repp();goto __sw;/* SLUTT PROCEDURE FOLLOW *//* START PROCEDURE PRECEDE */__l16:
+-# 60 "../../lib/simset.sim"
++# 60 "./simset.sim"
+ (((__bp=((__bs214 *)__lb)->PTR)!=__NULL && (__bp->pp->pref[0]!= &__p207SIMSET))?(__dhp)__rerror(__errqual):__bp);
+-# 61 "../../lib/simset.sim"
++# 61 "./simset.sim"
+ __sl=__lb->sl;__rcpp(&__p212SIMSET);__rcpb(27,__m_SIMSET);goto __sw;__l27:;;
+-# 62 "../../lib/simset.sim"
++# 62 "./simset.sim"
+ ;if(!(((((__bs214 *)__lb)->PTR!=__NULL)&&(((__bs207 *)((__bp=((__bs214 *)__lb)->PTR)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzpred!=__NULL))))goto __ll3;
+-# 63 "../../lib/simset.sim"
++# 63 "./simset.sim"
+ ;((__bs207 *)__lb->sl)->zzsuc=((__bs214 *)__lb)->PTR;
+-# 64 "../../lib/simset.sim"
++# 64 "./simset.sim"
+ ;((__bs207 *)__lb->sl)->zzpred=((__bs207 *)((__bp=((__bs214 *)__lb)->PTR)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzpred;
+-# 65 "../../lib/simset.sim"
++# 65 "./simset.sim"
+ (((__bs214 *)__lb)->__r1=(((__bs207 *)__lb->sl)->zzpred));((__bs207 *)((__bp=((__bs214 *)__lb)->__r1)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsuc=((__bs207 *)((__bp=((__bs214 *)__lb)->PTR)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzpred=__lb->sl;
+-# 66 "../../lib/simset.sim"
++# 66 "./simset.sim"
+ __ll3:__repp();goto __sw;/* SLUTT PROCEDURE PRECEDE *//* START PROCEDURE INTO */__l17:
+-# 68 "../../lib/simset.sim"
++# 68 "./simset.sim"
+ (((__bp=((__bs215 *)__lb)->S)!=__NULL && (__bp->pp->pref[1]!= &__p216SIMSET))?(__dhp)__rerror(__errqual):__bp);__sl=__lb->sl;__rcpp(&__p214SIMSET);((__bs214 *)__pb)->PTR=((__bs215 *)__lb)->S;__rcpb(28,__m_SIMSET);goto __sw;__l28:;;__repp();goto __sw;/* SLUTT PROCEDURE INTO */__l11:
+-# 42 "../../lib/simset.sim"
++# 42 "./simset.sim"
+ __renddecl(1);goto __sw;__l12:__rinner(1);goto __sw;__l13:
+-# 70 "../../lib/simset.sim"
++# 70 "./simset.sim"
+ __rendclass(1);goto __sw;/* SLUTT CLASS LINK *//* START CLASS HEAD *//* START PROCEDURE FIRST */__l21:
+-# 76 "../../lib/simset.sim"
++# 76 "./simset.sim"
+ 
+-# 78 "../../lib/simset.sim"
++# 78 "./simset.sim"
+ ;((__bs217 *)__lb)->er=(((__bp=(__rin(((__bs207 *)__lb->sl)->zzsuc,&__p211SIMSET)?((__bs207 *)__lb->sl)->zzsuc:__NULL))!=__NULL && (__bp->pp->pref[1]!= &__p211SIMSET))?(__dhp)__rerror(__errqual):__bp);__er=((__bs217 *)__lb)->er;__rep();goto __sw;/* SLUTT PROCEDURE FIRST *//* START PROCEDURE LAST */__l22:
+-# 80 "../../lib/simset.sim"
++# 80 "./simset.sim"
+ 
+-# 82 "../../lib/simset.sim"
++# 82 "./simset.sim"
+ ;((__bs218 *)__lb)->er=(((__bp=(__rin(((__bs207 *)__lb->sl)->zzpred,&__p211SIMSET)?((__bs207 *)__lb->sl)->zzpred:__NULL))!=__NULL && (__bp->pp->pref[1]!= &__p211SIMSET))?(__dhp)__rerror(__errqual):__bp);__er=((__bs218 *)__lb)->er;__rep();goto __sw;/* SLUTT PROCEDURE LAST *//* START PROCEDURE EMPTY */__l23:
+-# 84 "../../lib/simset.sim"
++# 84 "./simset.sim"
+ ;(((__bs219 *)__lb)->ec=((((__bs207 *)__lb->sl)->zzsuc==__lb->sl)));__ev.c=((__bs219 *)__lb)->ec;__rep();goto __sw;/* SLUTT PROCEDURE EMPTY *//* START PROCEDURE CARDINAL */__l24:
+-# 86 "../../lib/simset.sim"
++# 86 "./simset.sim"
+ 
+-# 94 "../../lib/simset.sim"
++# 94 "./simset.sim"
+ ;((__bs220 *)__lb)->PTR=((__bs207 *)__lb->sl)->zzsuc;
+-# 95 "../../lib/simset.sim"
++# 95 "./simset.sim"
+ __ll4:;if(!((((__bs220 *)__lb)->PTR!=__lb->sl)))goto __ll5;
+-# 96 "../../lib/simset.sim"
++# 96 "./simset.sim"
+ ;(((__bs220 *)__lb)->I=((((__bs220 *)__lb)->I+1L)));
+-# 97 "../../lib/simset.sim"
++# 97 "./simset.sim"
+ ;((__bs220 *)__lb)->PTR=((__bs207 *)((__bp=((__bs220 *)__lb)->PTR)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsuc;
+-# 98 "../../lib/simset.sim"
++# 98 "./simset.sim"
+ goto __ll4;__ll5:
+-# 101 "../../lib/simset.sim"
++# 101 "./simset.sim"
+ ;(((__bs220 *)__lb)->ev=(((__bs220 *)__lb)->I));__ev.i=((__bs220 *)__lb)->ev;__rep();goto __sw;/* SLUTT PROCEDURE CARDINAL *//* START PROCEDURE CLEAR */__l25:
+-# 104 "../../lib/simset.sim"
++# 104 "./simset.sim"
+ 
+-# 107 "../../lib/simset.sim"
++# 107 "./simset.sim"
+ ;((__bs221 *)__lb)->PTR=((__bs207 *)__lb->sl)->zzsuc;
+-# 108 "../../lib/simset.sim"
++# 108 "./simset.sim"
+ __ll6:;if(!((((__bs221 *)__lb)->PTR!=__lb->sl)))goto __ll7;
+-# 110 "../../lib/simset.sim"
++# 110 "./simset.sim"
+ ;((__bs221 *)__lb)->PTRSUC=((__bs207 *)((__bp=((__bs221 *)__lb)->PTR)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsuc;
+-# 111 "../../lib/simset.sim"
++# 111 "./simset.sim"
+ (((__bs221 *)__lb)->__r1=(((__bs221 *)__lb)->PTR));((__bs207 *)((__bp=((__bs221 *)__lb)->__r1)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsuc=((__bs207 *)((__bp=((__bs221 *)__lb)->PTR)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzpred=__NULL;
+-# 112 "../../lib/simset.sim"
++# 112 "./simset.sim"
+ ;((__bs221 *)__lb)->PTR=((__bs221 *)__lb)->PTRSUC;
+-# 113 "../../lib/simset.sim"
++# 113 "./simset.sim"
+ goto __ll6;__ll7:
+-# 115 "../../lib/simset.sim"
++# 115 "./simset.sim"
+ ;((__bs207 *)__lb->sl)->zzsuc=((__bs207 *)__lb->sl)->zzpred=__lb->sl;__repp();goto __sw;/* SLUTT PROCEDURE CLEAR */__l18:
+-# 73 "../../lib/simset.sim"
++# 73 "./simset.sim"
+ __renddecl(1);goto __sw;__l19:
+-# 118 "../../lib/simset.sim"
++# 118 "./simset.sim"
+ ;((__bs207 *)__lb)->zzsuc=((__bs207 *)__lb)->zzpred=__lb;
+-# 73 "../../lib/simset.sim"
++# 73 "./simset.sim"
+ __rinner(1);goto __sw;__l20:
+-# 118 "../../lib/simset.sim"
++# 118 "./simset.sim"
+ __rendclass(1);goto __sw;/* SLUTT CLASS HEAD */__l2:
+-# 25 "../../lib/simset.sim"
++# 25 "./simset.sim"
+ __renddecl(0);goto __sw;__l3:__rinner(0);goto __sw;__l4:
+-# 120 "../../lib/simset.sim"
++# 120 "./simset.sim"
+ __rendclass(0);goto __sw;/* SLUTT CLASS SIMSET */__ll0:__rbe();__sw:if(__goto.ment!=(void (*)())__m_SIMSET)return;__s:switch(__goto.ent){case 2: goto __l2;
+ case 3: goto __l3;
+ case 4: goto __l4;

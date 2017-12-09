@@ -1,0 +1,15 @@
+$OpenBSD: patch-lib_lowcase_c,v 1.1.1.1 2017/12/09 00:21:17 bcallah Exp $
+
+Needs ctype.h
+
+Index: lib/lowcase.c
+--- lib/lowcase.c.orig
++++ lib/lowcase.c
+@@ -17,6 +17,7 @@
+  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+  */
+ 
++#include <ctype.h>
+ #include "cim.h"
+ 
+ /******************************************************************************

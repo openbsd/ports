@@ -1,0 +1,16 @@
+$OpenBSD: patch-lib_copytexttoc_c,v 1.1.1.1 2017/12/09 00:21:17 bcallah Exp $
+
+Unconditional pick up of string.h
+
+Index: lib/copytexttoc.c
+--- lib/copytexttoc.c.orig
++++ lib/copytexttoc.c
+@@ -29,7 +29,7 @@
+ #if STDC_HEADERS || HAVE_STRING_H
+ #include <string.h>
+ #else
+-#include <strings.h>
++#include <string.h>
+ #endif
+ 
+ char *__rcopytexttoc (__txtvp t)

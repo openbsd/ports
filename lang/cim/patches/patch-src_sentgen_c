@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_sentgen_c,v 1.1.1.1 2017/12/09 00:21:17 bcallah Exp $
+
+return from main instead of exit to avoid having to #include <stdlib.h>
+awkwardly in generated C code.
+
+Index: src/sentgen.c
+--- src/sentgen.c.orig
++++ src/sentgen.c
+@@ -130,7 +130,7 @@ static void module_gen (sent_t *sent)
+ 
+       fprintf (ccode, "goto __sw;__l0:__rstart(__argc,__argv);"
+ 	       "goto __start;__l1:__slutt:__rslutt();"
+-	       "exit(0);__start:");
++	       "return 0;__start:");
+       if (!option_line)
+ 	fprintf (ccode, "__curent_map=__mapmain;");
+     }

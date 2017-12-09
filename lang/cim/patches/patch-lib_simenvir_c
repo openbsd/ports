@@ -1,0 +1,15 @@
+$OpenBSD: patch-lib_simenvir_c,v 1.1.1.1 2017/12/09 00:21:17 bcallah Exp $
+
+Avoid multiple redefiniton of __init.
+
+Index: lib/simenvir.c
+--- lib/simenvir.c.orig
++++ lib/simenvir.c
+@@ -20,6 +20,6 @@ void __m_SIMENVIR(void)
+ {
+ }
+ 
+-void __init_SIMENVIR(void)
++void ___init_SIMENVIR(void)
+ {
+ }

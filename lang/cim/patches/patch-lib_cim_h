@@ -1,0 +1,18 @@
+$OpenBSD: patch-lib_cim_h,v 1.1.1.1 2017/12/09 00:21:17 bcallah Exp $
+
+Avoid multiple defintion of __init when linking.
+Change the whole trio of functions so they stay
+grouped for ease of human reading.
+
+Index: lib/cim.h
+--- lib/cim.h.orig
++++ lib/cim.h
+@@ -651,7 +651,7 @@ __dhp __rsyserr (void);
+ 
+ /* ENVIRONMENT.C */
+ 
+-void __init_SIMENVIR (void);
++void ___init_SIMENVIR (void);
+ void __rprintfilline (void);
+ void __rhisto (__arrp A, __arrp B, double c, double d);
+ /*

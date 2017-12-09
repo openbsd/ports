@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_expchecker_c,v 1.1.1.1 2017/12/09 00:21:17 bcallah Exp $
+
+Clang doesn't like when non-void functions use return; by itself.
+
+Index: src/expchecker.c
+--- src/expchecker.c.orig
++++ src/expchecker.c
+@@ -230,7 +230,7 @@ static void sametype (exp_t **rel, exp_t **rer)
+ /******************************************************************************
+                                                                ARGUMENTERROR */
+ 
+-static argumenterror (int melding, exp_t *re)
++static void argumenterror (int melding, exp_t *re)
+ {
+   int i = 1;
+   if (TYPE == TERROR)

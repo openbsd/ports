@@ -1,0 +1,404 @@
+$OpenBSD: patch-lib_simulation_c,v 1.1.1.1 2017/12/09 00:21:17 bcallah Exp $
+
+This needed to be regen'd from the tarball.
+
+Index: lib/simulation.c
+--- lib/simulation.c.orig
++++ lib/simulation.c
+@@ -1,5 +1,5 @@
+ /*Cim_ccode*/
+-#include "../../lib/cim.h"
++#include "./cim.h"
+ struct __tt1 {__txt tvar;__th h;char string[27];}
+ __tk1SIMULATION={(__textref)&__tk1SIMULATION.h.pp,26,1,1,(__pty)__TEXT,(__dhp)&__tk1SIMULATION.h.pp,__CONSTANT,26,"No\040Evtime\040for\040idle\040process"};
+ struct __tt2 {__txt tvar;__th h;char string[11];}
+@@ -15,7 +15,7 @@ __tk6SIMULATION={(__textref)&__tk6SIMULATION.h.pp,10,1
+ struct __tt7 {__txt tvar;__th h;char string[11];}
+ __tk7SIMULATION={(__textref)&__tk7SIMULATION.h.pp,10,1,1,(__pty)__TEXT,(__dhp)&__tk7SIMULATION.h.pp,__CONSTANT,10,"SQS:\040Empty"};
+ void __m_SIMULATION();
+-__map __mapSIMULATION[3]={"../../lib/simulation.sim",0L,1L,
++__map __mapSIMULATION[3]={"./simulation.sim",0L,1L,
+ "",-233L,234L,
+ "",0L,9223372036854775807L};
+ typedef struct /*  */
+@@ -351,255 +351,255 @@ short __rl236SIMULATION[7]={(short)((char *)&((__bs236
+ extern __ptyp __p236SIMULATION;__pty   __pl236SIMULATION[1]={&__p236SIMULATION};
+ __ptyp __p236SIMULATION={'P',0,3,sizeof(__bs236),22,__m_SIMULATION,0,0,7,0,__rl236SIMULATION,0,__pl236SIMULATION,__NULL};
+ void __m_SIMULATION(void){goto __s;
+-# 27 "../../lib/simulation.sim"
++# 27 "./simulation.sim"
+ __sto= (__dhp)&__blokk205SIMULATION;__rb(&__p205SIMULATION);goto __ll0;/* START CLASS SIMULATION *//* START PROCEDURE CURRENT */__l5:
+-# 33 "../../lib/simulation.sim"
++# 33 "./simulation.sim"
+ ;((__bs223 *)__lb)->er=((__bs225 *)((__bp=((__bs222 *)__lb->sl)->zzsqs)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqssuc;__er=((__bs223 *)__lb)->er;__rep();goto __sw;/* SLUTT PROCEDURE CURRENT *//* START PROCEDURE TIME */__l6:
+-# 35 "../../lib/simulation.sim"
++# 35 "./simulation.sim"
+ ;(((__bs224 *)__lb)->ef=(((__bs225 *)((__bp=((__bs225 *)((__bp=((__bs222 *)__lb->sl)->zzsqs)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqssuc)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzevtime));__ev.f=((__bs224 *)__lb)->ef;__rep();goto __sw;/* SLUTT PROCEDURE TIME *//* START CLASS PROCESS *//* START PROCEDURE IDLE */__l10:
+-# 46 "../../lib/simulation.sim"
++# 46 "./simulation.sim"
+ ;(((__bs226 *)__lb)->ec=((((__bs225 *)__lb->sl)->zzsqssuc==__NULL)));__ev.c=((__bs226 *)__lb)->ec;__rep();goto __sw;/* SLUTT PROCEDURE IDLE *//* START PROCEDURE TERMINATED */__l11:
+-# 48 "../../lib/simulation.sim"
++# 48 "./simulation.sim"
+ ;(((__bs227 *)__lb)->ec=(((__bs225 *)__lb->sl)->zzterminated_process));__ev.c=((__bs227 *)__lb)->ec;__rep();goto __sw;/* SLUTT PROCEDURE TERMINATED *//* START PROCEDURE EVTIME */__l12:
+-# 50 "../../lib/simulation.sim"
++# 50 "./simulation.sim"
+ 
+-# 51 "../../lib/simulation.sim"
++# 51 "./simulation.sim"
+ ;if(!((((__bs225 *)__lb->sl)->zzsqssuc==__NULL)))goto __ll2;
+-# 52 "../../lib/simulation.sim"
++# 52 "./simulation.sim"
+ ;__rterror((__txtvp)&__tk1SIMULATION);goto __ll1;__ll2:;(((__bs228 *)__lb)->ef=(((__bs225 *)__lb->sl)->zzevtime));__ll1:__ev.f=((__bs228 *)__lb)->ef;__rep();goto __sw;/* SLUTT PROCEDURE EVTIME *//* START PROCEDURE NEXTEV */__l13:
+-# 54 "../../lib/simulation.sim"
++# 54 "./simulation.sim"
+ 
+-# 56 "../../lib/simulation.sim"
++# 56 "./simulation.sim"
+ ;((__bs229 *)__lb)->er=(((__bp=(((((__bs225 *)__lb->sl)->zzsqssuc==__NULL)||(((__bs225 *)__lb->sl)->zzsqssuc==((__bs222 *)__lb->sl->sl)->zzsqs))?__NULL:((__bs225 *)__lb->sl)->zzsqssuc))!=__NULL && (__bp->pp->pref[2]!= &__p225SIMULATION))?(__dhp)__rerror(__errqual):__bp);__er=((__bs229 *)__lb)->er;__rep();goto __sw;/* SLUTT PROCEDURE NEXTEV */__l7:
+-# 37 "../../lib/simulation.sim"
++# 37 "./simulation.sim"
+ __renddecl(2);goto __sw;__l8:
+-# 58 "../../lib/simulation.sim"
++# 58 "./simulation.sim"
+ ;((__bs225 *)__lb)->zzsqssuc=((__bs225 *)__lb)->zzsqspred=__NULL;
+-# 60 "../../lib/simulation.sim"
++# 60 "./simulation.sim"
+ ;__rdetach(__lb,23,__m_SIMULATION);goto __sw;__l23:;
+-# 61 "../../lib/simulation.sim"
++# 61 "./simulation.sim"
+ __rinner(2);goto __sw;__l9:
+-# 62 "../../lib/simulation.sim"
++# 62 "./simulation.sim"
+ ;(((__bs225 *)__lb)->zzterminated_process=(1));
+-# 65 "../../lib/simulation.sim"
++# 65 "./simulation.sim"
+ ;((__bs225 *)((__bp=((__bs225 *)__lb)->zzsqssuc)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqspred=((__bs225 *)__lb)->zzsqspred;
+-# 66 "../../lib/simulation.sim"
++# 66 "./simulation.sim"
+ ;((__bs225 *)((__bp=((__bs225 *)__lb)->zzsqspred)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqssuc=((__bs225 *)__lb)->zzsqssuc;
+-# 67 "../../lib/simulation.sim"
++# 67 "./simulation.sim"
+ ;((__bs225 *)__lb)->zzsqspred=((__bs225 *)__lb)->zzsqssuc=__NULL;
+-# 69 "../../lib/simulation.sim"
++# 69 "./simulation.sim"
+ ;if(!((((__bs225 *)((__bp=((__bs222 *)__lb->sl)->zzsqs)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqssuc==((__bs222 *)__lb->sl)->zzsqs)))goto __ll4;
+-# 70 "../../lib/simulation.sim"
++# 70 "./simulation.sim"
+ ;__rterror((__txtvp)&__tk2SIMULATION);goto __ll3;__ll4:;__rresume(((__bs225 *)((__bp=((__bs222 *)__lb->sl)->zzsqs)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqssuc,24,__m_SIMULATION);goto __sw;__l24:;__ll3:
+-# 72 "../../lib/simulation.sim"
++# 72 "./simulation.sim"
+ ;__rterror((__txtvp)&__tk3SIMULATION);
+-# 73 "../../lib/simulation.sim"
++# 73 "./simulation.sim"
+ __rendclass(2);goto __sw;/* SLUTT CLASS PROCESS *//* START PROCEDURE activat */__l14:
+-# 75 "../../lib/simulation.sim"
++# 75 "./simulation.sim"
+ (((__bp=((__bs230 *)__lb)->X)!=__NULL && (__bp->pp->pref[2]!= &__p225SIMULATION))?(__dhp)__rerror(__errqual):__bp);(((__bp=((__bs230 *)__lb)->Y)!=__NULL && (__bp->pp->pref[2]!= &__p225SIMULATION))?(__dhp)__rerror(__errqual):__bp);
+-# 85 "../../lib/simulation.sim"
++# 85 "./simulation.sim"
+ ;if(!(((((__bs230 *)__lb)->X!=__NULL)&&((!((__bs225 *)((__bp=((__bs230 *)__lb)->X)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzterminated_process)&&(((__bs230 *)__lb)->REAC||(((__bs225 *)((__bp=((__bs230 *)__lb)->X)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqssuc==__NULL))))))goto __ll5;
+-# 87 "../../lib/simulation.sim"
++# 87 "./simulation.sim"
+ ;((__bs230 *)__lb)->cur=((__bs225 *)((__bp=((__bs222 *)__lb->sl)->zzsqs)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqssuc;;(((__bs230 *)__lb)->tm=(((__bs225 *)((__bp=((__bs230 *)__lb)->cur)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzevtime));
+-# 89 "../../lib/simulation.sim"
++# 89 "./simulation.sim"
+ ;if(!(((unsigned char)((__bs230 *)__lb)->CODE==(unsigned char)1)))goto __ll7;
+-# 91 "../../lib/simulation.sim"
++# 91 "./simulation.sim"
+ ;if(!((((__bs230 *)__lb)->X==((__bs230 *)__lb)->cur)))goto __ll8;;goto __l25;__ll8:
+-# 92 "../../lib/simulation.sim"
++# 92 "./simulation.sim"
+ ;(((__bs230 *)__lb)->T=(((__bs230 *)__lb)->tm));;((__bs230 *)__lb)->b=((__bs222 *)__lb->sl)->zzsqs;
+-# 93 "../../lib/simulation.sim"
++# 93 "./simulation.sim"
+ goto __ll6;__ll7:
+-# 94 "../../lib/simulation.sim"
++# 94 "./simulation.sim"
+ ;if(!(((unsigned char)((__bs230 *)__lb)->CODE==(unsigned char)2)))goto __ll10;
+-# 96 "../../lib/simulation.sim"
++# 96 "./simulation.sim"
+ ;if(!((((__bs230 *)__lb)->T<=((__bs230 *)__lb)->tm)))goto __ll11;
+-# 97 "../../lib/simulation.sim"
++# 97 "./simulation.sim"
+ ;if(!((((__bs230 *)__lb)->PRIO&&(((__bs230 *)__lb)->X==((__bs230 *)__lb)->cur))))goto __ll13;;goto __l25;__ll13:;(((__bs230 *)__lb)->T=(((__bs230 *)__lb)->tm));__ll12:__ll11:
+-# 98 "../../lib/simulation.sim"
++# 98 "./simulation.sim"
+ goto __ll9;__ll10:
+-# 99 "../../lib/simulation.sim"
++# 99 "./simulation.sim"
+ ;if(!(((unsigned char)((__bs230 *)__lb)->CODE==(unsigned char)3)))goto __ll15;
+-# 101 "../../lib/simulation.sim"
++# 101 "./simulation.sim"
+ ;(((__bs230 *)__lb)->T=((((__bs230 *)__lb)->T+((__bs230 *)__lb)->tm)));
+-# 102 "../../lib/simulation.sim"
++# 102 "./simulation.sim"
+ ;if(!((((__bs230 *)__lb)->T<=((__bs230 *)__lb)->tm)))goto __ll16;
+-# 103 "../../lib/simulation.sim"
++# 103 "./simulation.sim"
+ ;if(!((((__bs230 *)__lb)->PRIO&&(((__bs230 *)__lb)->X==((__bs230 *)__lb)->cur))))goto __ll18;;goto __l25;__ll18:;(((__bs230 *)__lb)->T=(((__bs230 *)__lb)->tm));__ll17:__ll16:
+-# 104 "../../lib/simulation.sim"
++# 104 "./simulation.sim"
+ goto __ll14;__ll15:
+-# 107 "../../lib/simulation.sim"
++# 107 "./simulation.sim"
+ ;if(!(((((__bs230 *)__lb)->Y==__NULL)||(((__bs225 *)((__bp=((__bs230 *)__lb)->Y)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqssuc==__NULL))))goto __ll19;
+-# 109 "../../lib/simulation.sim"
++# 109 "./simulation.sim"
+ ;if(!((((__bs225 *)((__bp=((__bs230 *)__lb)->X)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqssuc!=__NULL)))goto __ll20;
+-# 111 "../../lib/simulation.sim"
++# 111 "./simulation.sim"
+ ;((__bs225 *)((__bp=((__bs225 *)((__bp=((__bs230 *)__lb)->X)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqssuc)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqspred=((__bs225 *)((__bp=((__bs230 *)__lb)->X)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqspred;
+-# 112 "../../lib/simulation.sim"
++# 112 "./simulation.sim"
+ ;((__bs225 *)((__bp=((__bs225 *)((__bp=((__bs230 *)__lb)->X)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqspred)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqssuc=((__bs225 *)((__bp=((__bs230 *)__lb)->X)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqssuc;
+-# 113 "../../lib/simulation.sim"
++# 113 "./simulation.sim"
+ ;((__bs225 *)((__bp=((__bs230 *)__lb)->X)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqspred=__NULL;;((__bs225 *)((__bp=((__bs230 *)__lb)->X)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqssuc=__NULL;
+-# 114 "../../lib/simulation.sim"
++# 114 "./simulation.sim"
+ __ll20:
+-# 116 "../../lib/simulation.sim"
++# 116 "./simulation.sim"
+ ;if(!((((__bs225 *)((__bp=((__bs222 *)__lb->sl)->zzsqs)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqssuc==((__bs222 *)__lb->sl)->zzsqs)))goto __ll21;;__rterror((__txtvp)&__tk4SIMULATION);__ll21:
+-# 117 "../../lib/simulation.sim"
++# 117 "./simulation.sim"
+ ;goto __l25;__ll19:
+-# 120 "../../lib/simulation.sim"
++# 120 "./simulation.sim"
+ ;if(!((((__bs230 *)__lb)->X==((__bs230 *)__lb)->Y)))goto __ll22;;goto __l25;__ll22:
+-# 122 "../../lib/simulation.sim"
++# 122 "./simulation.sim"
+ ;(((__bs230 *)__lb)->T=(((__bs225 *)((__bp=((__bs230 *)__lb)->Y)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzevtime));
+-# 124 "../../lib/simulation.sim"
++# 124 "./simulation.sim"
+ ;if(!(((unsigned char)((__bs230 *)__lb)->CODE==(unsigned char)4)))goto __ll24;;((__bs230 *)__lb)->b=((__bs225 *)((__bp=((__bs230 *)__lb)->Y)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqspred;goto __ll23;__ll24:;((__bs230 *)__lb)->b=((__bs230 *)__lb)->Y;__ll23:
+-# 125 "../../lib/simulation.sim"
++# 125 "./simulation.sim"
+ __ll14:__ll9:__ll6:
+-# 127 "../../lib/simulation.sim"
++# 127 "./simulation.sim"
+ ;if(!((((__bs225 *)((__bp=((__bs230 *)__lb)->X)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqssuc!=__NULL)))goto __ll25;
+-# 129 "../../lib/simulation.sim"
++# 129 "./simulation.sim"
+ ;((__bs225 *)((__bp=((__bs225 *)((__bp=((__bs230 *)__lb)->X)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqssuc)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqspred=((__bs225 *)((__bp=((__bs230 *)__lb)->X)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqspred;
+-# 130 "../../lib/simulation.sim"
++# 130 "./simulation.sim"
+ ;((__bs225 *)((__bp=((__bs225 *)((__bp=((__bs230 *)__lb)->X)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqspred)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqssuc=((__bs225 *)((__bp=((__bs230 *)__lb)->X)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqssuc;
+-# 131 "../../lib/simulation.sim"
++# 131 "./simulation.sim"
+ __ll25:
+-# 133 "../../lib/simulation.sim"
++# 133 "./simulation.sim"
+ ;if(!((((__bs230 *)__lb)->b==__NULL)))goto __ll26;
+-# 135 "../../lib/simulation.sim"
++# 135 "./simulation.sim"
+ ;((__bs230 *)__lb)->b=((__bs225 *)((__bp=((__bs222 *)__lb->sl)->zzsqs)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqspred;
+-# 136 "../../lib/simulation.sim"
++# 136 "./simulation.sim"
+ __ll27:;if(!((((__bs225 *)((__bp=((__bs230 *)__lb)->b)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzevtime>((__bs230 *)__lb)->T)))goto __ll28;;((__bs230 *)__lb)->b=((__bs225 *)((__bp=((__bs230 *)__lb)->b)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqspred;goto __ll27;__ll28:
+-# 137 "../../lib/simulation.sim"
++# 137 "./simulation.sim"
+ ;if(!(((__bs230 *)__lb)->PRIO))goto __ll29;
+-# 138 "../../lib/simulation.sim"
++# 138 "./simulation.sim"
+ __ll30:;if(!((((__bs225 *)((__bp=((__bs230 *)__lb)->b)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzevtime==((__bs230 *)__lb)->T)))goto __ll31;;((__bs230 *)__lb)->b=((__bs225 *)((__bp=((__bs230 *)__lb)->b)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqspred;goto __ll30;__ll31:__ll29:
+-# 139 "../../lib/simulation.sim"
++# 139 "./simulation.sim"
+ __ll26:
+-# 141 "../../lib/simulation.sim"
++# 141 "./simulation.sim"
+ ;(((__bs225 *)((__bp=((__bs230 *)__lb)->X)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzevtime=(((__bs230 *)__lb)->T));
+-# 142 "../../lib/simulation.sim"
++# 142 "./simulation.sim"
+ ;((__bs225 *)((__bp=((__bs230 *)__lb)->X)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqspred=((__bs230 *)__lb)->b;;((__bs225 *)((__bp=((__bs230 *)__lb)->X)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqssuc=((__bs225 *)((__bp=((__bs230 *)__lb)->b)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqssuc;
+-# 143 "../../lib/simulation.sim"
++# 143 "./simulation.sim"
+ ;((__bs225 *)((__bp=((__bs230 *)__lb)->b)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqssuc=((__bs230 *)__lb)->X;;((__bs225 *)((__bp=((__bs225 *)((__bp=((__bs230 *)__lb)->X)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqssuc)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqspred=((__bs230 *)__lb)->X;
+-# 145 "../../lib/simulation.sim"
++# 145 "./simulation.sim"
+ ;if(!((((__bs225 *)((__bp=((__bs222 *)__lb->sl)->zzsqs)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqssuc!=((__bs230 *)__lb)->cur)))goto __ll32;;__rresume(((__bs225 *)((__bp=((__bs222 *)__lb->sl)->zzsqs)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqssuc,26,__m_SIMULATION);goto __sw;__l26:;__ll32:
+-# 146 "../../lib/simulation.sim"
++# 146 "./simulation.sim"
+ __ll5:
+-# 147 "../../lib/simulation.sim"
++# 147 "./simulation.sim"
+ /*exit_230*/__l25:
+-# 148 "../../lib/simulation.sim"
++# 148 "./simulation.sim"
+ __repp();goto __sw;/* SLUTT PROCEDURE activat *//* START PROCEDURE HOLD */__l15:
+-# 150 "../../lib/simulation.sim"
++# 150 "./simulation.sim"
+ 
+-# 153 "../../lib/simulation.sim"
++# 153 "./simulation.sim"
+ ;((__bs231 *)__lb)->p=((__bs225 *)((__bp=((__bs222 *)__lb->sl)->zzsqs)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqssuc;
+-# 154 "../../lib/simulation.sim"
++# 154 "./simulation.sim"
+ ;if(!((((__bs231 *)__lb)->t> 0.0000000000000000e+00)))goto __ll33;;(((__bs225 *)((__bp=((__bs231 *)__lb)->p)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzevtime=((((__bs225 *)((__bp=((__bs231 *)__lb)->p)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzevtime+((__bs231 *)__lb)->t)));__ll33:
+-# 155 "../../lib/simulation.sim"
++# 155 "./simulation.sim"
+ ;(((__bs231 *)__lb)->t=(((__bs225 *)((__bp=((__bs231 *)__lb)->p)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzevtime));
+-# 156 "../../lib/simulation.sim"
++# 156 "./simulation.sim"
+ ;if(!(((((__bs225 *)((__bp=((__bs231 *)__lb)->p)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqssuc!=((__bs222 *)__lb->sl)->zzsqs)&&(((__bs225 *)((__bp=((__bs225 *)((__bp=((__bs231 *)__lb)->p)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqssuc)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzevtime<=((__bs231 *)__lb)->t))))goto __ll34;
+-# 158 "../../lib/simulation.sim"
++# 158 "./simulation.sim"
+ ;((__bs225 *)((__bp=((__bs225 *)((__bp=((__bs231 *)__lb)->p)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqssuc)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqspred=((__bs225 *)((__bp=((__bs231 *)__lb)->p)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqspred;
+-# 159 "../../lib/simulation.sim"
++# 159 "./simulation.sim"
+ ;((__bs225 *)((__bp=((__bs225 *)((__bp=((__bs231 *)__lb)->p)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqspred)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqssuc=((__bs225 *)((__bp=((__bs231 *)__lb)->p)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqssuc;
+-# 161 "../../lib/simulation.sim"
++# 161 "./simulation.sim"
+ ;((__bs231 *)__lb)->q=((__bs225 *)((__bp=((__bs222 *)__lb->sl)->zzsqs)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqspred;
+-# 162 "../../lib/simulation.sim"
++# 162 "./simulation.sim"
+ __ll35:;if(!((((__bs225 *)((__bp=((__bs231 *)__lb)->q)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzevtime>((__bs231 *)__lb)->t)))goto __ll36;;((__bs231 *)__lb)->q=((__bs225 *)((__bp=((__bs231 *)__lb)->q)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqspred;goto __ll35;__ll36:
+-# 164 "../../lib/simulation.sim"
++# 164 "./simulation.sim"
+ ;((__bs225 *)((__bp=((__bs231 *)__lb)->p)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqspred=((__bs231 *)__lb)->q;;((__bs225 *)((__bp=((__bs231 *)__lb)->p)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqssuc=((__bs225 *)((__bp=((__bs231 *)__lb)->q)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqssuc;
+-# 165 "../../lib/simulation.sim"
++# 165 "./simulation.sim"
+ ;((__bs225 *)((__bp=((__bs231 *)__lb)->q)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqssuc=((__bs231 *)__lb)->p;;((__bs225 *)((__bp=((__bs225 *)((__bp=((__bs231 *)__lb)->p)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqssuc)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqspred=((__bs231 *)__lb)->p;
+-# 167 "../../lib/simulation.sim"
++# 167 "./simulation.sim"
+ ;__rresume(((__bs225 *)((__bp=((__bs222 *)__lb->sl)->zzsqs)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqssuc,27,__m_SIMULATION);goto __sw;__l27:;
+-# 168 "../../lib/simulation.sim"
++# 168 "./simulation.sim"
+ __ll34:
+-# 169 "../../lib/simulation.sim"
++# 169 "./simulation.sim"
+ __repp();goto __sw;/* SLUTT PROCEDURE HOLD *//* START PROCEDURE PASSIVATE */__l16:
+-# 171 "../../lib/simulation.sim"
++# 171 "./simulation.sim"
+ 
+-# 173 "../../lib/simulation.sim"
++# 173 "./simulation.sim"
+ ;((__bs232 *)__lb)->p=((__bs225 *)((__bp=((__bs222 *)__lb->sl)->zzsqs)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqssuc;
+-# 174 "../../lib/simulation.sim"
++# 174 "./simulation.sim"
+ ;((__bs225 *)((__bp=((__bs225 *)((__bp=((__bs232 *)__lb)->p)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqssuc)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqspred=((__bs225 *)((__bp=((__bs232 *)__lb)->p)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqspred;
+-# 175 "../../lib/simulation.sim"
++# 175 "./simulation.sim"
+ ;((__bs225 *)((__bp=((__bs225 *)((__bp=((__bs232 *)__lb)->p)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqspred)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqssuc=((__bs225 *)((__bp=((__bs232 *)__lb)->p)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqssuc;
+-# 176 "../../lib/simulation.sim"
++# 176 "./simulation.sim"
+ ;((__bs225 *)((__bp=((__bs232 *)__lb)->p)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqspred=__NULL;;((__bs225 *)((__bp=((__bs232 *)__lb)->p)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqssuc=__NULL;
+-# 178 "../../lib/simulation.sim"
++# 178 "./simulation.sim"
+ ;if(!((((__bs225 *)((__bp=((__bs222 *)__lb->sl)->zzsqs)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqssuc==((__bs222 *)__lb->sl)->zzsqs)))goto __ll38;
+-# 179 "../../lib/simulation.sim"
++# 179 "./simulation.sim"
+ ;__rterror((__txtvp)&__tk5SIMULATION);goto __ll37;__ll38:;__rresume(((__bs225 *)((__bp=((__bs222 *)__lb->sl)->zzsqs)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqssuc,28,__m_SIMULATION);goto __sw;__l28:;__ll37:
+-# 180 "../../lib/simulation.sim"
++# 180 "./simulation.sim"
+ __repp();goto __sw;/* SLUTT PROCEDURE PASSIVATE *//* START PROCEDURE WAIT */__l17:
+-# 182 "../../lib/simulation.sim"
++# 182 "./simulation.sim"
+ (((__bp=((__bs233 *)__lb)->S)!=__NULL && (__bp->pp->pref[1]!= &__p216SIMSET))?(__dhp)__rerror(__errqual):__bp);
+-# 184 "../../lib/simulation.sim"
++# 184 "./simulation.sim"
+ ;((__bs233 *)__lb)->p=((__bs225 *)((__bp=((__bs222 *)__lb->sl)->zzsqs)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqssuc;
+-# 185 "../../lib/simulation.sim"
++# 185 "./simulation.sim"
+ __sl=((__bp=((__bs233 *)__lb)->p)==__NULL?(__dhp)__rerror(__errnone):__bp);__rcpp(&__p215SIMSET);((__bs215 *)__pb)->S=((__bs233 *)__lb)->S;__rcpb(29,__m_SIMULATION);return;__l29:;;
+-# 187 "../../lib/simulation.sim"
++# 187 "./simulation.sim"
+ ;((__bs225 *)((__bp=((__bs225 *)((__bp=((__bs233 *)__lb)->p)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqssuc)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqspred=((__bs225 *)((__bp=((__bs233 *)__lb)->p)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqspred;
+-# 188 "../../lib/simulation.sim"
++# 188 "./simulation.sim"
+ ;((__bs225 *)((__bp=((__bs225 *)((__bp=((__bs233 *)__lb)->p)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqspred)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqssuc=((__bs225 *)((__bp=((__bs233 *)__lb)->p)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqssuc;
+-# 189 "../../lib/simulation.sim"
++# 189 "./simulation.sim"
+ ;((__bs225 *)((__bp=((__bs233 *)__lb)->p)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqspred=__NULL;;((__bs225 *)((__bp=((__bs233 *)__lb)->p)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqssuc=__NULL;
+-# 191 "../../lib/simulation.sim"
++# 191 "./simulation.sim"
+ ;if(!((((__bs225 *)((__bp=((__bs222 *)__lb->sl)->zzsqs)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqssuc==((__bs222 *)__lb->sl)->zzsqs)))goto __ll40;
+-# 192 "../../lib/simulation.sim"
++# 192 "./simulation.sim"
+ ;__rterror((__txtvp)&__tk6SIMULATION);goto __ll39;__ll40:;__rresume(((__bs225 *)((__bp=((__bs222 *)__lb->sl)->zzsqs)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqssuc,30,__m_SIMULATION);goto __sw;__l30:;__ll39:
+-# 193 "../../lib/simulation.sim"
++# 193 "./simulation.sim"
+ __repp();goto __sw;/* SLUTT PROCEDURE WAIT *//* START PROCEDURE CANCEL */__l18:
+-# 195 "../../lib/simulation.sim"
++# 195 "./simulation.sim"
+ (((__bp=((__bs234 *)__lb)->x)!=__NULL && (__bp->pp->pref[2]!= &__p225SIMULATION))?(__dhp)__rerror(__errqual):__bp);
+-# 198 "../../lib/simulation.sim"
++# 198 "./simulation.sim"
+ ;if(!(((((__bs234 *)__lb)->x!=__NULL)&&(((__bs225 *)((__bp=((__bs234 *)__lb)->x)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqssuc!=__NULL))))goto __ll41;
+-# 200 "../../lib/simulation.sim"
++# 200 "./simulation.sim"
+ ;((__bs234 *)__lb)->cur=((__bs225 *)((__bp=((__bs222 *)__lb->sl)->zzsqs)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqssuc;
+-# 201 "../../lib/simulation.sim"
++# 201 "./simulation.sim"
+ ;((__bs225 *)((__bp=((__bs225 *)((__bp=((__bs234 *)__lb)->x)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqssuc)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqspred=((__bs225 *)((__bp=((__bs234 *)__lb)->x)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqspred;
+-# 202 "../../lib/simulation.sim"
++# 202 "./simulation.sim"
+ ;((__bs225 *)((__bp=((__bs225 *)((__bp=((__bs234 *)__lb)->x)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqspred)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqssuc=((__bs225 *)((__bp=((__bs234 *)__lb)->x)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqssuc;
+-# 203 "../../lib/simulation.sim"
++# 203 "./simulation.sim"
+ ;((__bs225 *)((__bp=((__bs234 *)__lb)->x)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqspred=__NULL;;((__bs225 *)((__bp=((__bs234 *)__lb)->x)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqssuc=__NULL;
+-# 205 "../../lib/simulation.sim"
++# 205 "./simulation.sim"
+ ;if(!((((__bs234 *)__lb)->x==((__bs234 *)__lb)->cur)))goto __ll42;
+-# 207 "../../lib/simulation.sim"
++# 207 "./simulation.sim"
+ ;if(!((((__bs225 *)((__bp=((__bs222 *)__lb->sl)->zzsqs)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqssuc==((__bs222 *)__lb->sl)->zzsqs)))goto __ll44;
+-# 208 "../../lib/simulation.sim"
++# 208 "./simulation.sim"
+ ;__rterror((__txtvp)&__tk7SIMULATION);goto __ll43;__ll44:;__rresume(((__bs225 *)((__bp=((__bs222 *)__lb->sl)->zzsqs)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqssuc,31,__m_SIMULATION);goto __sw;__l31:;__ll43:
+-# 209 "../../lib/simulation.sim"
++# 209 "./simulation.sim"
+ __ll42:
+-# 210 "../../lib/simulation.sim"
++# 210 "./simulation.sim"
+ __ll41:
+-# 211 "../../lib/simulation.sim"
++# 211 "./simulation.sim"
+ __repp();goto __sw;/* SLUTT PROCEDURE CANCEL *//* START CLASS zzmain_program */__l19:
+-# 213 "../../lib/simulation.sim"
++# 213 "./simulation.sim"
+ __renddecl(3);goto __sw;__l20:
+-# 215 "../../lib/simulation.sim"
++# 215 "./simulation.sim"
+ __ll45:;if(!(1))goto __ll46;
+-# 216 "../../lib/simulation.sim"
++# 216 "./simulation.sim"
+ ;__rdetach(__lb,32,__m_SIMULATION);goto __sw;__l32:;goto __ll45;__ll46:
+-# 213 "../../lib/simulation.sim"
++# 213 "./simulation.sim"
+ __rinner(3);goto __sw;__l21:
+-# 216 "../../lib/simulation.sim"
++# 216 "./simulation.sim"
+ __rendclass(3);goto __sw;/* SLUTT CLASS zzmain_program *//* START PROCEDURE ACCUM */__l22:
+-# 218 "../../lib/simulation.sim"
++# 218 "./simulation.sim"
+ 
+-# 221 "../../lib/simulation.sim"
++# 221 "./simulation.sim"
+ if(__rgetsa(&((__bs236 *)__lb)->A,0L,33,__m_SIMULATION))goto __sw;__l33:;((__bs236 *)__lb)->__r1= __er;((__bs236 *)__lb)->__v1.i= __ev.i;if(__rgetav(__TREAL,&((__bs236 *)__lb)->A,0L,34,__m_SIMULATION))goto __sw;__l34:;((__bs236 *)__lb)->__v2.f= __ev.f;if(__rgetav(__TREAL,&((__bs236 *)__lb)->C,0L,35,__m_SIMULATION))goto __sw;__l35:;((__bs236 *)__lb)->__v3.f= __ev.f;__sl=__lb->sl;__rcp(&__p224SIMULATION,0L);__rcpb(36,__m_SIMULATION);goto __sw;__l36:;((__bs236 *)__lb)->__v4.f= __ev.f;if(__rgetav(__TREAL,&((__bs236 *)__lb)->B,0L,37,__m_SIMULATION))goto __sw;__l37:;((__bs236 *)__lb)->__v5.f= __ev.f;(__ev.f=((((__bs236 *)__lb)->__v2.f+(((__bs236 *)__lb)->__v3.f*(((__bs236 *)__lb)->__v4.f-((__bs236 *)__lb)->__v5.f)))));if((__nvp= &((__bs236 *)__lb)->A)->conv==__NOCONV) *(double *)(((char *)((__bs236 *)__lb)->__r1)+((__bs236 *)__lb)->__v1.i)=__ev.f;else if(__nvp->conv==__INTREAL) *(long *)(((char *)((__bs236 *)__lb)->__r1)+((__bs236 *)__lb)->__v1.i)=__ev.f;else  *(double *)(((char *)((__bs236 *)__lb)->__r1)+((__bs236 *)__lb)->__v1.i)=__rintrea(__ev.f);if(__rgetsa(&((__bs236 *)__lb)->B,0L,38,__m_SIMULATION))goto __sw;__l38:;((__bs236 *)__lb)->__r1= __er;((__bs236 *)__lb)->__v1.i= __ev.i;__sl=__lb->sl;__rcp(&__p224SIMULATION,0L);__rcpb(39,__m_SIMULATION);goto __sw;__l39:;((__bs236 *)__lb)->__v2.f= __ev.f;(__ev.f=(((__bs236 *)__lb)->__v2.f));if((__nvp= &((__bs236 *)__lb)->B)->conv==__NOCONV) *(double *)(((char *)((__bs236 *)__lb)->__r1)+((__bs236 *)__lb)->__v1.i)=__ev.f;else if(__nvp->conv==__INTREAL) *(long *)(((char *)((__bs236 *)__lb)->__r1)+((__bs236 *)__lb)->__v1.i)=__ev.f;else  *(double *)(((char *)((__bs236 *)__lb)->__r1)+((__bs236 *)__lb)->__v1.i)=__rintrea(__ev.f);if(__rgetsa(&((__bs236 *)__lb)->C,0L,40,__m_SIMULATION))goto __sw;__l40:;((__bs236 *)__lb)->__r1= __er;((__bs236 *)__lb)->__v1.i= __ev.i;if(__rgetav(__TREAL,&((__bs236 *)__lb)->C,0L,41,__m_SIMULATION))goto __sw;__l41:;((__bs236 *)__lb)->__v2.f= __ev.f;(__ev.f=((((__bs236 *)__lb)->__v2.f+((__bs236 *)__lb)->D)));if((__nvp= &((__bs236 *)__lb)->C)->conv==__NOCONV) *(double *)(((char *)((__bs236 *)__lb)->__r1)+((__bs236 *)__lb)->__v1.i)=__ev.f;else if(__nvp->conv==__INTREAL) *(long *)(((char *)((__bs236 *)__lb)->__r1)+((__bs236 *)__lb)->__v1.i)=__ev.f;else  *(double *)(((char *)((__bs236 *)__lb)->__r1)+((__bs236 *)__lb)->__v1.i)=__rintrea(__ev.f);
+-# 222 "../../lib/simulation.sim"
++# 222 "./simulation.sim"
+ __repp();goto __sw;/* SLUTT PROCEDURE ACCUM */__l2:
+-# 27 "../../lib/simulation.sim"
++# 27 "./simulation.sim"
+ __renddecl(1);goto __sw;__l3:
+-# 224 "../../lib/simulation.sim"
++# 224 "./simulation.sim"
+ __sl=__lb;__rcp(&__p225SIMULATION,0L);__rccb(42,__m_SIMULATION);goto __sw;__l42:;((__bs222 *)__lb)->__r1= __er;((__bs222 *)__lb)->zzsqs=((__bs222 *)__lb)->__r1;;(((__bs225 *)((__bp=((__bs222 *)__lb)->zzsqs)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzevtime=( -1.0000000000000000e+00));
+-# 226 "../../lib/simulation.sim"
++# 226 "./simulation.sim"
+ __sl=__lb;__rcp(&__p235SIMULATION,0L);__rccb(43,__m_SIMULATION);goto __sw;__l43:;((__bs222 *)__lb)->__r1= __er;((__bs222 *)__lb)->MAIN=((__bs222 *)__lb)->__r1;
+-# 227 "../../lib/simulation.sim"
++# 227 "./simulation.sim"
+ ;((__bs225 *)((__bp=((__bs222 *)__lb)->zzsqs)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqssuc=((__bs222 *)__lb)->MAIN;;((__bs225 *)((__bp=((__bs222 *)__lb)->zzsqs)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqspred=((__bs222 *)__lb)->MAIN;
+-# 228 "../../lib/simulation.sim"
++# 228 "./simulation.sim"
+ ;((__bs225 *)((__bp=((__bs222 *)__lb)->MAIN)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqssuc=((__bs222 *)__lb)->zzsqs;;((__bs225 *)((__bp=((__bs222 *)__lb)->MAIN)==__NULL?(__dhp)__rerror(__errnone):__bp))->zzsqspred=((__bs222 *)__lb)->zzsqs;
+-# 27 "../../lib/simulation.sim"
++# 27 "./simulation.sim"
+ __rinner(1);goto __sw;__l4:
+-# 230 "../../lib/simulation.sim"
++# 230 "./simulation.sim"
+ __rendclass(1);goto __sw;/* SLUTT CLASS SIMULATION */__ll0:__rbe();__sw:if(__goto.ment!=(void (*)())__m_SIMULATION)return;__s:switch(__goto.ent){case 2: goto __l2;
+ case 3: goto __l3;
+ case 4: goto __l4;

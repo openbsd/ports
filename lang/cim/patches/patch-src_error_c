@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_error_c,v 1.1.1.1 2017/12/09 00:21:17 bcallah Exp $
+
+Needs ctype.h
+
+Index: src/error.c
+--- src/error.c.orig
++++ src/error.c
+@@ -26,6 +26,7 @@
+  * Dette tabellverket brukes s} i forbindelse med utskrift              
+  * av feilmeldinger. */
+ 
++#include <ctype.h>
+ #include "const.h"
+ #include "cimcomp.h"
+ #include "error.h"

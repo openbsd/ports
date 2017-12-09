@@ -1,0 +1,16 @@
+$OpenBSD: patch-lib_simfile_c,v 1.1.1.1 2017/12/09 00:21:17 bcallah Exp $
+
+Avoid multiple redefinition of __init.
+
+Index: lib/simfile.c
+--- lib/simfile.c.orig
++++ lib/simfile.c
+@@ -290,7 +290,7 @@ case 30: goto __l30;case 31: goto __l31;
+ }
+ }
+ 
+-void __init_FILE (void)
++void ___init_FILE (void)
+ {
+   /*  I N I T I E R I N G   a v   B A S I C I O */
+ #if 0  

@@ -1,0 +1,28 @@
+$OpenBSD: patch-src_strgen_c,v 1.1.1.1 2017/12/09 00:21:17 bcallah Exp $
+
+Avoid multiple redefinition of __init.
+Clang doesn't like when non-void functions use return; by itself.
+
+Index: src/strgen.c
+--- src/strgen.c.orig
++++ src/strgen.c
+@@ -294,7 +294,7 @@ static void specifier_structure (block_t *rb);
+ /******************************************************************************
+                                                         BLOCKSTRUCTURE       */
+ 
+-static blockstructure (block_t *rb)
++static void blockstructure (block_t *rb)
+ {
+   int i;
+   decl_t *rd;
+@@ -813,8 +813,8 @@ void stat_pointers (void)
+   struct stamp *st;
+ 
+   if (!separat_comp)
+-    { /* TBD __init(){__init_FILE();__init_SIMENVIR(); should be removed */
+-      fprintf (ccode, "\nvoid __init(void){__init_FILE();__init_SIMENVIR();}\n");
++    { /* TBD ___init(){___init_FILE();___init_SIMENVIR(); should be removed */
++      fprintf (ccode, "\nvoid ___init(void){___init_FILE();___init_SIMENVIR();}\n");
+       fprintf 
+ 	(ccode, 
+ 	 "__do_for_each_stat_pointer(void(*doit)(),void(*doit_notest)(),int force){\n");

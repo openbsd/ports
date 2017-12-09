@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_extspec_c,v 1.1.1.1 2017/12/09 00:21:17 bcallah Exp $
+
+Needs ctype.h
+Clang doesn't like when non-void functions use return; by itself.
+
+Index: src/extspec.c
+--- src/extspec.c.orig
++++ src/extspec.c
+@@ -20,6 +20,7 @@
+ 
+ /* TBD: Innlesing av identifikatorer mm må gjøres mer robust. */
+ 
++#include <ctype.h>
+ #include "const.h"
+ #include "dekl.h"
+ #include "filelist.h"
+@@ -565,7 +566,7 @@ static void write_text_mif (FILE *f, unsigned char *s)
+ /******************************************************************************
+                                                               WRITE_DECL_MIF */
+ 
+-static write_decl_mif (FILE *f, decl_t *rd, int level)
++static void write_decl_mif (FILE *f, decl_t *rd, int level)
+ {
+   if (rd->kind == KBLOKK || rd->kind == KPRBLK || rd->kind == KFOR || 
+       rd->kind == KINSP) return;
