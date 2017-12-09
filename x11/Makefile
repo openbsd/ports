@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.604 2017/11/16 20:17:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.605 2017/12/09 14:11:09 zhuk Exp $
 
      SUBDIR =
      SUBDIR += 2bwm
@@ -157,6 +157,7 @@
      SUBDIR += lsw
      SUBDIR += lumina
      SUBDIR += lupe
+     SUBDIR += lxappearance
      SUBDIR += lxrandr
      SUBDIR += mate
      SUBDIR += menu-cache
