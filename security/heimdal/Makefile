@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.27 2017/10/14 08:02:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2017/12/09 07:56:53 ajacoutot Exp $
 
 COMMENT-main=		Kerberos 5 implementation
 COMMENT-devel-docs=	Heimdal C functions documentation
 COMMENT-libs=		Heimdal libraries and headers
 
-V=			7.4.0
+V=			7.5.0
 DISTNAME=		heimdal-${V}
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-devel-docs=	heimdal-devel-docs-${V}
 PKGNAME-libs=		heimdal-libs-${V}
-
-REVISION-libs=		0
 
 CATEGORIES=		security net
 
@@ -48,7 +46,7 @@ BUILD_DEPENDS=		devel/bison \
 
 SYSCONFDIR=		${BASESYSCONFDIR}/heimdal
 
-WANTLIB += c crypto curses pthread termcap util
+WANTLIB += c crypto curses pthread util
 
 WANTLIB-main=		${WANTLIB} com_err util
 WANTLIB-main +=		heimdal/lib/asn1
