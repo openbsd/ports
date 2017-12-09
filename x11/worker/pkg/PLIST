@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2017/11/16 16:02:52 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.9 2017/12/09 17:43:42 bcallah Exp $
 @bin bin/worker
 man/fr/
 man/fr/man1/
@@ -95,6 +95,8 @@ share/worker/config-updates/update-3.12.0-utf8.conf
 share/worker/config-updates/update-3.12.0.conf
 share/worker/config-updates/update-3.13.0-utf8.conf
 share/worker/config-updates/update-3.13.0.conf
+share/worker/config-updates/update-3.14.0-utf8.conf
+share/worker/config-updates/update-3.14.0.conf
 share/worker/config-updates/update-3.2.0-utf8.conf
 share/worker/config-updates/update-3.2.0.conf
 share/worker/config-updates/update-3.3.3-utf8.conf
@@ -118,6 +120,7 @@ share/worker/scripts/cd2mp3.sh
 share/worker/scripts/cd2ogg.sh
 share/worker/scripts/cd2wav.sh
 share/worker/scripts/displaywrapper_worker
+share/worker/scripts/git_modified_files.sh
 share/worker/scripts/xeditor
 share/worker/scripts/xliwrapper_worker
 @exec %D/bin/update-desktop-database
