@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.213 2017/11/24 13:40:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.214 2017/12/09 00:21:44 bcallah Exp $
 
      SUBDIR =
      SUBDIR += STk
@@ -12,6 +12,7 @@
      SUBDIR += brandy
      SUBDIR += chibi-scheme
      SUBDIR += chicken
+     SUBDIR += cim
      SUBDIR += classpath
      SUBDIR += clisp
      SUBDIR += clojure
