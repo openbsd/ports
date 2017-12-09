@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.108 2017/11/17 12:16:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.109 2017/12/09 16:53:44 ajacoutot Exp $
 
 # build time requirement for WebKit2-4.0 introspection:
 # g-ir-scanner(1) only passes -L/-l LDFLAGS
@@ -7,8 +7,7 @@ USE_WXNEEDED=		Yes
 COMMENT=		API documentation browser for GNOME
 
 GNOME_PROJECT=		devhelp
-GNOME_VERSION=		3.26.0
-REVISION=		1
+GNOME_VERSION=		3.26.1
 
 SHARED_LIBS +=  devhelp-3            1.0      # 4.0
 
