@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.14 2017/08/21 13:49:41 visa Exp $
+# $OpenBSD: Makefile.inc,v 1.15 2017/12/09 21:28:58 juanfra Exp $
 
 COMMENT ?=	real-time, concurrent and distributed functional language
 
@@ -27,7 +27,11 @@ MODGNU_CONFIG_GUESS_DIRS ?=	${WRKSRC}/erts/autoconf \
 				${WRKSRC}/lib/erl_interface/src/auxdir \
 				${WRKSRC}/lib/wx/autoconf
 
-.if ${MACHINE_ARCH} == i386
+# "error: No native atomic implementation found"
+# Erlang 20 does not support enable/disable-smp-support
+.if ${MACHINE_ARCH} == arm || ${MACHINE_ARCH} == hppa
+CONFIGURE_ARGS +=	--disable-smp-support
+.elif ${MACHINE_ARCH} == i386
 CONFIGURE_ARGS +=	--enable-ethread-pre-pentium4-compatibility
 .elif ${MACHINE_ARCH} == mips64 || ${MACHINE_ARCH} == mips64el
 CFLAGS +=		-mxgot
@@ -82,3 +86,6 @@ post-install:
 	tar zxf ${FULLDISTDIR}/otp_doc_man_${V}.tar.gz -C ${DOC_DIR}
 	rm -r ${DOC_DIR}/man/man7/*MIB.7
 	rm -r ${DOC_DIR}/man/man7/*TM.7
+	if [ ! -x ${PREFIX}/lib/erlang${MAJ_V}/${ERTS}/bin/beam.smp ]; then \
+		cp -v ${PREFIX}/lib/erlang${MAJ_V}/${ERTS}/bin/beam \
+		${PREFIX}/lib/erlang${MAJ_V}/${ERTS}/bin/beam.smp; fi

@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.18 2017/07/26 22:45:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2017/12/09 21:28:58 juanfra Exp $
 
 BROKEN-alpha=	beam/erl_process.c:6692: internal compiler error: in final_scan_insn, at final.c:2449
-BROKEN-hppa =	error: No native atomic implementation found.
 
 COMMENT-main=	${COMMENT}
 COMMENT-wx=	WxWidgets bindings for Erlang
@@ -13,7 +12,7 @@ DISTNAME=	otp_src_$V
 PKGNAME-main=	erlang-$V
 PKGNAME-wx=	erlang-wx-$V
 
-REVISION-main=	8
+REVISION-main=	9
 REVISION-wx=	2
 
 VERSION_SPEC=	>=17v0,<18v0
@@ -22,12 +21,11 @@ PKGSPEC-wx=	erlang-wx-${VERSION_SPEC}
 
 BUILD_DEPENDS+=	textproc/libxslt
 
-CONFIGURE_ARGS=	--without-jinterface	\
+CONFIGURE_ARGS+=--without-jinterface	\
 		--without-odbc		\
 		--enable-threads 	\
 		--enable-kernel-poll \
-		--disable-hipe \
-		--enable-smp-support
+		--disable-hipe
 
 MULTI_PACKAGES = -main -wx
 
