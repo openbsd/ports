@@ -1,0 +1,6 @@
+#!/bin/sh
+
+exec ${MODPHP_BIN} \
+	-d allow_url_fopen=1 \
+	-d suhosin.executor.include.whitelist=phar \
+	${TRUEPREFIX}/bin/wp-cli.phar "$@"
