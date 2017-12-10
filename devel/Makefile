@@ -1,4 +1,4 @@
-#${MODPY_COMMENT} $OpenBSD: Makefile,v 1.1678 2017/12/08 12:29:46 jasper Exp $
+#${MODPY_COMMENT} $OpenBSD: Makefile,v 1.1679 2017/12/10 12:05:37 jasper Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1329,6 +1329,7 @@
      SUBDIR += py-gevent
      SUBDIR += py-gevent,python3
      SUBDIR += py-gitdb
+     SUBDIR += py-gitdb,python3
      SUBDIR += py-gitpython
      SUBDIR += py-gobject
      SUBDIR += py-gobject3
