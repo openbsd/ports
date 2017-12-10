@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2017/09/09 20:03:15 bcallah Exp $
+# $OpenBSD: Makefile,v 1.6 2017/12/10 08:18:29 bcallah Exp $
 
 V =		0.1.1
 COMMENT =	open source re-implementation of RollerCoaster Tycoon 2
 DISTNAME =	openrct2-${V}
+REVISION =	0
 CATEGORIES =	games x11
 
 HOMEPAGE =	https://openrct2.org/

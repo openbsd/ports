@@ -1,0 +1,25 @@
+$OpenBSD: README,v 1.1 2017/12/10 08:18:29 bcallah Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+OpenRCT2
+========
+OpenRCT2 requires the original game files from RollerCoaster Tycoon 2
+to work properly.  These can come from an original CD or from GOG.com.
+
+If using the GOG.com version, you must extract the files from
+setup_rollercoaster_tycoon_2.exe using the innoextract package. The
+files will be in a directory named app. You must keep this directory,
+though it can be renamed and moved to a location of your choosing, and
+you can delete everything else that is extracted from the exe, such as
+the tmp directory. You must edit the game_path variable in
+~/.config/OpenRCT2/config.ini to point to this directory. You must use
+the full path.
+
+If you have a copy of the original RollerCoaster Tycoon, you can use
+its data files as well to play the original game. If using the GOG.com
+version, RollerCoaster Tycoon Deluxe, follow the same steps as above
+with setup_rollercoaster_tycoon_deluxe.exe and edit rct1_path in
+~/.config/OpenRCT2/config.ini to point to this directory.
