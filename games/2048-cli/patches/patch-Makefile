@@ -1,0 +1,16 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2017/12/10 22:44:51 bcallah Exp $
+
+Don't hardcode optimization flags.
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -2,7 +2,7 @@ CC             ?= clang
+ TTF_FONT_PATH  ?= res/Anonymous Pro.ttf
+ CFLAGS         += -DTTF_FONT_PATH="\"$(TTF_FONT_PATH)\""
+ CFLAGS         += -Wno-visibility -Wno-incompatible-pointer-types -Wall -Wextra
+-CFLAGS         += -DINVERT_COLORS -DVT100 -O2
++CFLAGS         += -DINVERT_COLORS -DVT100
+ LFLAGS         +=
+ 
+ PROGRAM := 2048

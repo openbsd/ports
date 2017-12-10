@@ -1,0 +1,3 @@
+2048-cli is a terminal-based version of the popular 2048 sliding block
+puzzle game. Supports animations, colors, stores your high score, and
+includes an AI.
