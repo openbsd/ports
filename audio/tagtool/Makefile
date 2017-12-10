@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.34 2017/11/21 00:12:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.35 2017/12/10 11:00:57 mpi Exp $
 
 COMMENT=	Ogg Vorbis and MP3 files tagger
 
 DISTNAME=	tagtool-0.12.3
-REVISION=	20
+REVISION=	21
 CATEGORIES=	audio
 
 MAINTAINER=	Vlad Glagolev <stealth@sourcemage.org>
@@ -36,7 +36,7 @@ RUN_DEPENDS=	devel/desktop-file-utils \
 CONFIGURE_STYLE=gnu
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -lm -logg"
+		LDFLAGS="-L${LOCALBASE}/lib -lm -logg -Wl,--export-dynamic"
 
 USE_GMAKE=	Yes
 
