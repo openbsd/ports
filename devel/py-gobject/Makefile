@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.59 2017/11/21 00:13:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.60 2017/12/10 16:12:51 ajacoutot Exp $
 
 PORTROACH=		limit:^2\.28
 
 COMMENT=		Python bindings for glib2 gobject (deprecated)
 
 GNOME_PROJECT=		pygobject
-GNOME_VERSION=		2.28.6
-EXTRACT_SUFX=		.tar.bz2
+GNOME_VERSION=		2.28.7
 
 PKGNAME=		py-gobject-${GNOME_VERSION}
 EPOCH=			0
-REVISION=		7
 
 CATEGORIES=		devel
 
@@ -39,5 +37,6 @@ TEST_IS_INTERACTIVE=	x11
 post-install:
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
 		${PREFIX}/share/pygobject/2.0/codegen
+	rm ${WRKINST}/${MODPY_SITEPKG}/*/{,*}/*.{a,la}
 
 .include <bsd.port.mk>

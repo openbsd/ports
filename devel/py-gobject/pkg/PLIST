@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2011/09/21 13:37:14 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.21 2017/12/10 16:12:51 ajacoutot Exp $
 @conflict py-gtk2-2.8.6*
 bin/pygobject-codegen-2.0
 include/pygtk-2.0/
@@ -11,46 +11,36 @@ lib/pkgconfig/pygobject-2.0.pc
 lib/python${MODPY_VERSION}/site-packages/glib/
 lib/python${MODPY_VERSION}/site-packages/glib/__init__.py
 lib/python${MODPY_VERSION}/site-packages/glib/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/glib/__init__.pyo
-@comment lib/python${MODPY_VERSION}/site-packages/glib/_glib.a
-@comment lib/python${MODPY_VERSION}/site-packages/glib/_glib.la
+lib/python${MODPY_VERSION}/site-packages/glib/__init__.${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/glib/_glib.so
 lib/python${MODPY_VERSION}/site-packages/glib/option.py
 lib/python${MODPY_VERSION}/site-packages/glib/option.pyc
-lib/python${MODPY_VERSION}/site-packages/glib/option.pyo
+lib/python${MODPY_VERSION}/site-packages/glib/option.${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gobject/
 lib/python${MODPY_VERSION}/site-packages/gobject/__init__.py
 lib/python${MODPY_VERSION}/site-packages/gobject/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/gobject/__init__.pyo
-@comment lib/python${MODPY_VERSION}/site-packages/gobject/_gobject.a
-@comment lib/python${MODPY_VERSION}/site-packages/gobject/_gobject.la
+lib/python${MODPY_VERSION}/site-packages/gobject/__init__.${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gobject/_gobject.so
 lib/python${MODPY_VERSION}/site-packages/gobject/constants.py
 lib/python${MODPY_VERSION}/site-packages/gobject/constants.pyc
-lib/python${MODPY_VERSION}/site-packages/gobject/constants.pyo
+lib/python${MODPY_VERSION}/site-packages/gobject/constants.${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gobject/propertyhelper.py
 lib/python${MODPY_VERSION}/site-packages/gobject/propertyhelper.pyc
-lib/python${MODPY_VERSION}/site-packages/gobject/propertyhelper.pyo
+lib/python${MODPY_VERSION}/site-packages/gobject/propertyhelper.${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/dsextras.py
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/dsextras.pyc
-lib/python${MODPY_VERSION}/site-packages/gtk-2.0/dsextras.pyo
+lib/python${MODPY_VERSION}/site-packages/gtk-2.0/dsextras.${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gio/
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gio/__init__.py
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gio/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gio/__init__.pyo
-@comment lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gio/_gio.a
-@comment lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gio/_gio.la
+lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gio/__init__.${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gio/_gio.so
-@comment lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gio/unix.a
-@comment lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gio/unix.la
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gio/unix.so
 lib/python${MODPY_VERSION}/site-packages/pygtk.pth
 lib/python${MODPY_VERSION}/site-packages/pygtk.py
 lib/python${MODPY_VERSION}/site-packages/pygtk.pyc
-lib/python${MODPY_VERSION}/site-packages/pygtk.pyo
-share/gtk-doc/
-share/gtk-doc/html/
+lib/python${MODPY_VERSION}/site-packages/pygtk.${MODPY_PYOEXTENSION}
 share/gtk-doc/html/pygobject/
 share/gtk-doc/html/pygobject/class-gioappinfo.html
 share/gtk-doc/html/pygobject/class-gioapplaunchcontext.html
@@ -114,10 +104,10 @@ share/pygobject/2.0/
 share/pygobject/2.0/codegen/
 share/pygobject/2.0/codegen/__init__.py
 share/pygobject/2.0/codegen/__init__.pyc
-share/pygobject/2.0/codegen/__init__.pyo
+share/pygobject/2.0/codegen/__init__.${MODPY_PYOEXTENSION}
 share/pygobject/2.0/codegen/argtypes.py
 share/pygobject/2.0/codegen/argtypes.pyc
-share/pygobject/2.0/codegen/argtypes.pyo
+share/pygobject/2.0/codegen/argtypes.${MODPY_PYOEXTENSION}
 share/pygobject/2.0/codegen/code-coverage.py
 share/pygobject/2.0/codegen/code-coverage.pyc
 share/pygobject/2.0/codegen/codegen.py
@@ -126,17 +116,17 @@ share/pygobject/2.0/codegen/createdefs.py
 share/pygobject/2.0/codegen/createdefs.pyc
 share/pygobject/2.0/codegen/definitions.py
 share/pygobject/2.0/codegen/definitions.pyc
-share/pygobject/2.0/codegen/definitions.pyo
+share/pygobject/2.0/codegen/definitions.${MODPY_PYOEXTENSION}
 share/pygobject/2.0/codegen/defsconvert.py
 share/pygobject/2.0/codegen/defsconvert.pyc
 share/pygobject/2.0/codegen/defsgen.py
 share/pygobject/2.0/codegen/defsgen.pyc
 share/pygobject/2.0/codegen/defsparser.py
 share/pygobject/2.0/codegen/defsparser.pyc
-share/pygobject/2.0/codegen/defsparser.pyo
+share/pygobject/2.0/codegen/defsparser.${MODPY_PYOEXTENSION}
 share/pygobject/2.0/codegen/docextract.py
 share/pygobject/2.0/codegen/docextract.pyc
-share/pygobject/2.0/codegen/docextract.pyo
+share/pygobject/2.0/codegen/docextract.${MODPY_PYOEXTENSION}
 share/pygobject/2.0/codegen/docextract_to_xml.py
 share/pygobject/2.0/codegen/docextract_to_xml.pyc
 share/pygobject/2.0/codegen/docgen.py
@@ -151,10 +141,10 @@ share/pygobject/2.0/codegen/mkskel.py
 share/pygobject/2.0/codegen/mkskel.pyc
 share/pygobject/2.0/codegen/override.py
 share/pygobject/2.0/codegen/override.pyc
-share/pygobject/2.0/codegen/override.pyo
+share/pygobject/2.0/codegen/override.${MODPY_PYOEXTENSION}
 share/pygobject/2.0/codegen/reversewrapper.py
 share/pygobject/2.0/codegen/reversewrapper.pyc
-share/pygobject/2.0/codegen/reversewrapper.pyo
+share/pygobject/2.0/codegen/reversewrapper.${MODPY_PYOEXTENSION}
 share/pygobject/2.0/codegen/scanvirtuals.py
 share/pygobject/2.0/codegen/scanvirtuals.pyc
 share/pygobject/2.0/codegen/scmexpr.py
