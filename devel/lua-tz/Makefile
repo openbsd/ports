@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.2 2017/06/12 10:57:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2017/12/10 13:01:30 fcambus Exp $
 
 COMMENT =	Lua library for time and date manipulation
 
-V =		0.3
+V =		0.4
 PKGNAME =	lua-tz-${V}
 
 GH_ACCOUNT =	daurnimator
 GH_PROJECT =	luatz
 GH_TAGNAME =	v${V}
-REVISION =	0
 
 CATEGORIES =	devel
 
