@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2017/09/06 17:14:29 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.21 2017/12/10 12:27:38 jasper Exp $
 include/gtksourceview-${MAJOR_VERSION}/
 include/gtksourceview-${MAJOR_VERSION}/gtksourceview/
 include/gtksourceview-${MAJOR_VERSION}/gtksourceview/completion-providers/
@@ -190,6 +190,7 @@ share/gtksourceview-${MAJOR_VERSION}/language-specs/latex.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/lex.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/libtool.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/llvm.lang
+share/gtksourceview-${MAJOR_VERSION}/language-specs/logcat.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/lua.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/m4.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/makefile.lang
