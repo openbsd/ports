@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/03/12 23:55:26 bluhm Exp $
+# $OpenBSD: Makefile,v 1.2 2017/12/11 12:42:19 bluhm Exp $
 
 COMMENT =	CGI interface for FastCGI
-DISTNAME =	CGI-Fast-2.12
+DISTNAME =	CGI-Fast-2.13
 CATEGORIES =	www
 
 MAINTAINER =	Mikolaj Kucharski <mikolaj@kucharski.name>
@@ -13,7 +13,5 @@ MODULES =	cpan
 PKG_ARCH =	*
 RUN_DEPENDS =	www/fcgi \
 		www/p5-CGI>=4.00
-
-TEST_DEPENDS =	devel/p5-Test-Deep>=0.11
 
 .include <bsd.port.mk>
