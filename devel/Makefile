@@ -1,4 +1,4 @@
-#${MODPY_COMMENT} $OpenBSD: Makefile,v 1.1679 2017/12/10 12:05:37 jasper Exp $
+#${MODPY_COMMENT} $OpenBSD: Makefile,v 1.1680 2017/12/11 10:08:28 edd Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -148,6 +148,7 @@
      SUBDIR += git-cola
      SUBDIR += git-cvs
      SUBDIR += git-lfs
+     SUBDIR += github-backup
      SUBDIR += gitsh
      SUBDIR += glade
      SUBDIR += glib2
