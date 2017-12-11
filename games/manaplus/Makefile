@@ -1,63 +1,50 @@
-# $OpenBSD: Makefile,v 1.90 2017/11/16 18:39:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.91 2017/12/11 22:31:40 bcallah Exp $
 
+V =		1.7.11.11
 COMMENT =	client for The Mana World
-V =		1.6.3.26
-REVISION =	3
 DISTNAME =	manaplus-${V}
 EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	games x11
 
-HOMEPAGE =	http://manaplus.org/
+HOMEPAGE =	https://manaplus.org/
+MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += GL X11 c crypto curl iconv intl m nghttp2 physfs png pthread 
-WANTLIB += ssl ${COMPILER_LIBCXX} xml2 z
+WANTLIB += ${COMPILER_LIBCXX} GL SDL2 SDL2_gfx SDL2_image SDL2_mixer
+WANTLIB += SDL2_net SDL2_ttf X11 c crypto curl execinfo iconv
+WANTLIB += intl m nghttp2 png ssl xml2 z
 
 MASTER_SITES =	http://download.evolonline.org/manaplus/download/${V}/
 
-FLAVORS =	sdl2
-FLAVOR ?=
+# Base gcc miscompiles on at least macppc
+COMPILER =	base-clang ports-gcc
 
-RUN_DEPENDS =	devel/desktop-file-utils \
-		devel/xdg-utils
+BUILD_DEPENDS =	${MODGNU_AUTOCONF_DEPENDS} \
+		${MODGNU_AUTOMAKE_DEPENDS} \
+		devel/gettext-tools
+
 LIB_DEPENDS =	devel/gettext \
-		devel/physfs \
-		net/curl \
-		textproc/libxml
-
-CONFIGURE_STYLE =	gnu
-CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include"
-CONFIGURE_ARGS =	--without-librt
-
-BUILD_DEPENDS =		${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS} \
-			devel/gettext-tools
-
-.if ${FLAVOR:Msdl2}
-WANTLIB += SDL2 SDL2_gfx SDL2_image SDL2_mixer SDL2_net SDL2_ttf
-
-LIB_DEPENDS +=	devel/sdl2-gfx \
+		devel/libexecinfo \
+		devel/sdl2-gfx \
 		devel/sdl2-image \
 		devel/sdl2-mixer \
 		devel/sdl2-net \
-		devel/sdl2-ttf
+		devel/sdl2-ttf \
+		net/curl \
+		textproc/libxml
 
-CONFIGURE_ARGS +=	--with-sdl2 --without-internalsdlgfx
-.else
-WANTLIB += SDL SDL_gfx SDL_image SDL_mixer SDL_net SDL_ttf
+RUN_DEPENDS =	devel/desktop-file-utils \
+		devel/xdg-utils
 
-LIB_DEPENDS +=	devel/sdl-gfx \
-		devel/sdl-image \
-		devel/sdl-mixer \
-		devel/sdl-net \
-		devel/sdl-ttf
+CONFIGURE_STYLE =	gnu
+CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include"
+CONFIGURE_ARGS =	--without-librt \
+			--with-sdl2 \
+			--without-internalsdlgfx
 
-RUN_DEPENDS +=	x11/xsel
-.endif
-
-FAKE_FLAGS +=		desktopdir=${PREFIX}/share/applications/
+FAKE_FLAGS +=	desktopdir=${PREFIX}/share/applications/
 
 AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.9
