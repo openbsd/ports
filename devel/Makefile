@@ -1,4 +1,4 @@
-#${MODPY_COMMENT} $OpenBSD: Makefile,v 1.1680 2017/12/11 10:08:28 edd Exp $
+#${MODPY_COMMENT} $OpenBSD: Makefile,v 1.1681 2017/12/12 16:24:47 rpointel Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1418,6 +1418,8 @@
      SUBDIR += py-path.py,python3
      SUBDIR += py-pathlib
      SUBDIR += py-pathlib,python3
+     SUBDIR += py-pathspec
+     SUBDIR += py-pathspec,python3
      SUBDIR += py-parsedatetime
      SUBDIR += py-parsedatetime,python3
      SUBDIR += py-parsing
