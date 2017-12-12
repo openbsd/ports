@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2017/08/08 15:55:14 pea Exp $
+@comment $OpenBSD: PLIST,v 1.19 2017/12/12 16:22:22 pea Exp $
 @option no-default-conflict
 @option is-branch
 @conflict gnupg->=2
@@ -32,6 +32,7 @@
 @man man/man1/gpgconf.1
 @man man/man1/gpgparsemail.1
 @man man/man1/gpgsm.1
+@man man/man1/gpgtar.1
 @man man/man1/gpgv2.1
 @man man/man1/scdaemon.1
 @man man/man1/symcryptrun.1
