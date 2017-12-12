@@ -1,7 +1,8 @@
-$OpenBSD: patch-configure_ac,v 1.1 2016/06/13 17:32:27 semarie Exp $
---- configure.ac.orig	Wed Jun  8 23:30:46 2016
-+++ configure.ac	Wed Jun  8 23:31:20 2016
-@@ -56,6 +56,7 @@ dnl Checks for library functions.
+$OpenBSD: patch-configure_ac,v 1.2 2017/12/12 01:10:50 jca Exp $
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -60,6 +60,7 @@ dnl Checks for library functions.
  AC_FUNC_MEMCMP
  AC_CHECK_FUNCS([stricmp] [strcasecmp])
  AC_CHECK_FUNCS([strchr] [memcpy])

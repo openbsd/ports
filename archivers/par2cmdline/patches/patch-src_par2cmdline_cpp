@@ -1,4 +1,4 @@
-$OpenBSD: patch-par2cmdline_cpp,v 1.1 2016/06/13 17:32:27 semarie Exp $
+$OpenBSD: patch-src_par2cmdline_cpp,v 1.1 2017/12/12 01:10:50 jca Exp $
 
 pledge:
     'par2 create' - stdio rpath wpath cpath
@@ -11,8 +11,9 @@ pledge:
         may delete par files, only if -p option was given, otherwise
         cpath is not required
 
---- par2cmdline.cpp.orig	Wed Jun  8 23:31:42 2016
-+++ par2cmdline.cpp	Wed Jun  8 23:38:36 2016
+Index: src/par2cmdline.cpp
+--- src/par2cmdline.cpp.orig
++++ src/par2cmdline.cpp
 @@ -34,6 +34,14 @@ int main(int argc, char *argv[])
    _CrtSetDbgFlag(_CrtSetDbgFlag(_CRTDBG_REPORT_FLAG) | _CRTDBG_ALLOC_MEM_DF | /*_CRTDBG_CHECK_CRT_DF | */_CRTDBG_DELAY_FREE_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
  #endif

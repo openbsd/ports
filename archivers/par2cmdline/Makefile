@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2017/07/26 22:45:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2017/12/12 01:10:50 jca Exp $
 
 COMMENT =	command line implementation of the PAR v2.0 specification
 
-V =		0.6.14
+V =		0.7.4
 DISTNAME =	par2cmdline-$V
-DISTFILES =	${DISTNAME}{v$V}.tar.gz
-REVISION =	2
 
 CATEGORIES =	archivers
 
@@ -19,7 +17,7 @@ WANTLIB =	c m ${COMPILER_LIBCXX}
 
 MAINTAINER =	Mikolaj Kucharski <mikolaj@kucharski.name>
 
-MASTER_SITES =	${HOMEPAGE}archive/
+MASTER_SITES =	${HOMEPAGE}releases/download/v$V/
 
 BUILD_DEPENDS =	${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS}
@@ -41,8 +39,5 @@ post-patch:
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/par2cmdline
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/par2cmdline
-
-pre-test:
-	sed -i -e 's,^tar -xf,tar -xzf,' ${WRKSRC}/tests/test*
 
 .include <bsd.port.mk>
