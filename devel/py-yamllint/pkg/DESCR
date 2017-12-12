@@ -1,0 +1,3 @@
+Yamllint does not only check for syntax validity, but for weirdnesses like key
+repetition and cosmetic problems such as lines length, trailing spaces, and
+indentation.
