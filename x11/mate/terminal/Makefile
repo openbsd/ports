@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2017/10/23 17:11:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2017/12/12 19:55:53 robert Exp $
 
 COMMENT=		MATE terminal
 
 MATE_PROJECT=		mate-terminal
 MATE_VERSION=		1.18.1
-REVISION=		2
+REVISION=		3
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -23,7 +23,8 @@ MODULES=		devel/dconf \
 			x11/gnome
 
 BUILD_DEPENDS=		devel/gsettings-desktop-schemas
-RUN_DEPENDS=		devel/gsettings-desktop-schemas
+RUN_DEPENDS=		devel/gsettings-desktop-schemas \
+			x11/mate/desktop
 
 LIB_DEPENDS=		devel/vte3
 
