@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2017/05/06 13:45:49 fcambus Exp $
+# $OpenBSD: Makefile,v 1.11 2017/12/12 00:25:48 jca Exp $
 
-COMMENT =	simple (or small or suckless) X Image Viewer
+COMMENT =	simple X Image Viewer
 
 GH_PROJECT =	sxiv
 GH_ACCOUNT =	muennich
-GH_TAGNAME =	v1.3.2
-REVISION =	0
+GH_TAGNAME =	v24
 
 CATEGORIES =	graphics x11
 
@@ -14,17 +13,21 @@ MAINTAINER =	Matthew Via <via@matthewvia.info>
 # GPLv2+
 PERMIT_PACKAGE_CDROM =		Yes
 
-WANTLIB +=	Imlib2 exif gif X11 c
+WANTLIB +=	Imlib2 X11 Xft c exif gif lib/inotify/inotify
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+3,-guic
 
-LIB_DEPENDS =	graphics/imlib2 \
+LIB_DEPENDS =	devel/libinotify \
+		graphics/imlib2 \
 		graphics/libexif
 
-MAKE_FLAGS =	CC=${CC} MANPREFIX=${PREFIX}/man \
-		CFLAGS="${CFLAGS} -I${X11BASE}/include -I${PREFIX}/include" \
-		LDFLAGS="-L${PREFIX}/lib -L${X11BASE}/lib -lX11 -lImlib2 -lexif -lgif"
+MAKE_FLAGS =	CC="${CC}" \
+		V=1 \
+		PREFIX=${PREFIX} \
+		MANPREFIX=${PREFIX}/man \
+		CFLAGS="${CFLAGS} -I${X11BASE}/include -I${X11BASE}/include/freetype2 -I${LOCALBASE}/include -I${LOCALBASE}/include/inotify" \
+		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib -L${LOCALBASE}/lib/inotify -linotify -Wl,-rpath ${LOCALBASE}/lib/inotify"
 
 NO_TEST =	Yes
 

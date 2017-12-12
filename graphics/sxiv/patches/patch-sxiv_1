@@ -1,8 +1,9 @@
-$OpenBSD: patch-sxiv_1,v 1.1 2015/12/25 02:03:00 mmcc Exp $
---- sxiv.1.orig	Sun Dec 20 07:21:25 2015
-+++ sxiv.1	Wed Dec 23 20:11:36 2015
-@@ -354,7 +354,7 @@ image gets loaded. The path of this script is
- and the first argument to this script is the path of the loaded image.
+$OpenBSD: patch-sxiv_1,v 1.2 2017/12/12 00:25:48 jca Exp $
+Index: sxiv.1
+--- sxiv.1.orig
++++ sxiv.1
+@@ -381,7 +381,7 @@ and the arguments given to it are: 1) path to image fi
+ 3) image height.
  .P
  There is also an example script installed together with sxiv as
 -.IR PREFIX/share/sxiv/exec/image-info .
@@ -10,7 +11,7 @@ $OpenBSD: patch-sxiv_1,v 1.1 2015/12/25 02:03:00 mmcc Exp $
  .SH EXTERNAL KEY HANDLER
  Additional external keyboard commands can be defined using a handler program
  located in
-@@ -372,7 +372,7 @@ where C/M/S indicate Ctrl/Meta(Alt)/Shift modifier sta
+@@ -399,7 +399,7 @@ where C/M/S indicate Ctrl/Meta(Alt)/Shift modifier sta
  keysym as listed in /usr/include/X11/keysymdef.h without the "XK_" prefix.
  
  There is also an example script installed together with sxiv as
