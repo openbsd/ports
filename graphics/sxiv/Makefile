@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.11 2017/12/12 00:25:48 jca Exp $
+# $OpenBSD: Makefile,v 1.12 2017/12/12 12:59:31 jca Exp $
 
 COMMENT =	simple X Image Viewer
 
 GH_PROJECT =	sxiv
 GH_ACCOUNT =	muennich
 GH_TAGNAME =	v24
+REVISION =	0
 
 CATEGORIES =	graphics x11
 
-MAINTAINER =	Matthew Via <via@matthewvia.info>
+MAINTAINER =	Klemens Nanni <kl3@posteo.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =		Yes
