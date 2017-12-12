@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2017/11/17 00:22:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2017/12/12 00:46:28 danj Exp $
 
 COMMENT=		command line image viewer
 
 GH_ACCOUNT=		phillipberndt
 GH_PROJECT=		pqiv
-GH_TAGNAME=		2.9
-REVISION=		0
+GH_TAGNAME=		2.10.1
 
 CATEGORIES=		graphics
 
