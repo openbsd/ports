@@ -1,0 +1,13 @@
+$OpenBSD: patch-usmb_file_h,v 1.1 2017/12/12 13:41:21 helg Exp $
+
+Index: usmb_file.h
+--- usmb_file.h.orig
++++ usmb_file.h
+@@ -31,6 +31,7 @@
+                  struct fuse_file_info *fi);
+   int usmb_write (const char *filename, const char *buff, size_t len, off_t off,
+                   struct fuse_file_info *fi);
++  int usmb_mknod (const char *filename, mode_t mode, dev_t dev);
+   int usmb_create (const char *filename, mode_t mode,
+                    struct fuse_file_info *fi);
+   int usmb_rename (const char *from, const char *to);

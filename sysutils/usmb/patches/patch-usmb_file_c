@@ -1,0 +1,36 @@
+$OpenBSD: patch-usmb_file_c,v 1.1 2017/12/12 13:41:21 helg Exp $
+
+Index: usmb_file.c
+--- usmb_file.c.orig
++++ usmb_file.c
+@@ -202,6 +202,30 @@ int usmb_write (const char *filename UNUSED, const cha
+ }
+ 
+ 
++/* File systems must support mknod on OpenBSD */
++int usmb_mknod (const char *filename, mode_t mode, __attribute__((unused)) dev_t dev)
++{
++  char *url = make_url (filename);
++  if (NULL == url)
++    return -ENOMEM;
++
++  if (S_ISCHR(mode) || S_ISBLK(mode) || S_ISFIFO(mode) || S_ISSOCK(mode))
++    return -EPERM;
++
++  DEBUG (fprintf (stderr, "mknod (%s)", url));
++
++  SMBCFILE *file = smbc_getFunctionCreat (ctx) (ctx, url, mode);
++  DEBUG (fprintf (stderr, " = %p\n", (void *)file));
++  int ret = (NULL == file) ? -errno : 0;
++
++  /* File must not be open when mknod returns. */
++  if (ret == 0)
++    smbc_getFunctionClose (ctx) (ctx, file);
++  free (url);
++  return ret;
++}
++
++
+ int usmb_create (const char *filename, mode_t mode, struct fuse_file_info *fi)
+ {
+   char *url = make_url (filename);
