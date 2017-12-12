@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2017/08/11 10:37:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2017/12/12 16:07:46 fcambus Exp $
 
 COMMENT =	MESS port with advanced video support for monitors and TVs
 
-V =		3.5
+V =		3.6
 DISTNAME =	advancemame-$V
 PKGNAME =	advancemess-$V
 
@@ -29,8 +29,6 @@ CFLAGS +=	 -fno-pie -fomit-frame-pointer
 .endif
 
 CONFIGURE_STYLE = gnu
-
-CONFIGURE_ARGS += --with-emu=mess
 
 USE_GMAKE =	Yes
 
