@@ -1,4 +1,4 @@
-#${MODPY_COMMENT} $OpenBSD: Makefile,v 1.1681 2017/12/12 16:24:47 rpointel Exp $
+#${MODPY_COMMENT} $OpenBSD: Makefile,v 1.1682 2017/12/12 20:52:23 rpointel Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1562,6 +1562,8 @@
      SUBDIR += py-xlsxwriter
      SUBDIR += py-xlsxwriter,python3
      SUBDIR += py-xmlrunner
+     SUBDIR += py-yamllint
+     SUBDIR += py-yamllint,python3
      SUBDIR += py-zopecomponent
      SUBDIR += py-zopeevent
      SUBDIR += py-zopeevent,python3
