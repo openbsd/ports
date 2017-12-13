@@ -1,4 +1,4 @@
-$OpenBSD: patch-poller-wrapper_py,v 1.12 2017/11/27 17:41:36 sthen Exp $
+$OpenBSD: patch-poller-wrapper_py,v 1.13 2017/12/13 15:30:43 sthen Exp $
 
 Index: poller-wrapper.py
 --- poller-wrapper.py.orig
@@ -21,12 +21,3 @@ Index: poller-wrapper.py
  db_username = config['db_user']
  db_password = config['db_pass']
  db_port = int(config['db_port'])
-@@ -310,7 +310,7 @@ def poll_worker():
- # EOC5
-             try:
-                 start_time = time.time()
--                command = "/usr/bin/env php %s -h %s >> /dev/null 2>&1" % (poller_path, device_id)
-+                command = "%PHP% %s -h %s >> /dev/null 2>&1" % (poller_path, device_id)
-                 subprocess.check_call(command, shell=True)
-                 elapsed_time = int(time.time() - start_time)
-                 print_queue.put([threading.current_thread().name, device_id, elapsed_time])

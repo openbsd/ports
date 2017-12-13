@@ -1,0 +1,17 @@
+$OpenBSD: patch-LibreNMS_FileLock_php,v 1.1 2017/12/13 15:30:43 sthen Exp $
+
+Use a directory which is reasonably expected to have write-access for the
+user running LibreNMS.
+
+Index: LibreNMS/FileLock.php
+--- LibreNMS/FileLock.php.orig
++++ LibreNMS/FileLock.php
+@@ -29,7 +29,7 @@ class FileLock
+         global $config;
+ 
+         $this->name = $lock_name;
+-        $this->file = "$config[install_dir]/.$lock_name.lock";
++        $this->file = "$config[log_dir]/.$lock_name.lock";
+         $this->handle = fopen($this->file, "w+");
+     }
+ 

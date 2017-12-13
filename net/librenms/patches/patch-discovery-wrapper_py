@@ -1,4 +1,4 @@
-$OpenBSD: patch-discovery-wrapper_py,v 1.1 2017/11/27 17:41:36 sthen Exp $
+$OpenBSD: patch-discovery-wrapper_py,v 1.2 2017/12/13 15:30:43 sthen Exp $
 
 Index: discovery-wrapper.py
 --- discovery-wrapper.py.orig
@@ -12,12 +12,3 @@ Index: discovery-wrapper.py
      try:
          proc = subprocess.Popen(config_cmd, stdout=subprocess.PIPE, stdin=subprocess.PIPE)
      except:
-@@ -305,7 +305,7 @@ def poll_worker():
- # EOC5
-             try:
-                 start_time = time.time()
--                command = "/usr/bin/env php %s -h %s >> /dev/null 2>&1" % (discovery_path, device_id)
-+                command = "%PHP% %s -h %s >> /dev/null 2>&1" % (discovery_path, device_id)
-                 subprocess.check_call(command, shell=True)
-                 elapsed_time = int(time.time() - start_time)
-                 print_queue.put([threading.current_thread().name, device_id, elapsed_time])

@@ -1,9 +1,14 @@
-$OpenBSD: patch-daily_sh,v 1.20 2017/11/02 12:49:42 sthen Exp $
+$OpenBSD: patch-daily_sh,v 1.21 2017/12/13 15:30:43 sthen Exp $
 
 Index: daily.sh
 --- daily.sh.orig
 +++ daily.sh
-@@ -26,10 +26,10 @@ COMPOSER="php ${LIBRENMS_DIR}/scripts/composer_wrapper
+@@ -22,14 +22,14 @@
+ # define DAILY_SCRIPT as the full path to this script and LIBRENMS_DIR as the directory this script is in
+ DAILY_SCRIPT=$(readlink -f "$0")
+ LIBRENMS_DIR=$(dirname "$DAILY_SCRIPT")
+-COMPOSER="php ${LIBRENMS_DIR}/scripts/composer_wrapper.php"
++COMPOSER="%PHP% ${LIBRENMS_DIR}/scripts/composer_wrapper.php"
  
  # set log_file, using librenms $config['log_dir'], if set
  # otherwise we default to <LibreNMS Install Directory>/logs
@@ -34,9 +39,21 @@ Index: daily.sh
      done
  }
  
-@@ -154,7 +154,7 @@ main () {
+@@ -116,7 +116,7 @@ set_notifiable_result() {
+     local arg_type=$1;
+     local arg_result=$2;
+ 
+-    php "${LIBRENMS_DIR}/daily.php" -f handle_notifiable -t ${arg_type} -r ${arg_result};
++    %PHP% "${LIBRENMS_DIR}/daily.php" -f handle_notifiable -t ${arg_type} -r ${arg_result};
+ }
+ 
+ #######################################
+@@ -152,9 +152,9 @@ main () {
+     fi
+ 
      if [[ -z "$arg" ]]; then
-         status_run 'Checking PHP version' "php ${LIBRENMS_DIR}/daily.php -f check_php_ver" 'check_php_ver'
+-        status_run 'Checking PHP version' "php ${LIBRENMS_DIR}/daily.php -f check_php_ver" 'check_php_ver'
++        status_run 'Checking PHP version' "%PHP% ${LIBRENMS_DIR}/daily.php -f check_php_ver" 'check_php_ver'
  
 -        up=$(php daily.php -f update >&2; echo $?)
 +        up=$(%PHP% daily.php -f update >&2; echo $?)

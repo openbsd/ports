@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2017/11/27 17:41:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.54 2017/12/13 15:30:43 sthen Exp $
 
 COMMENT =	auto-discovering network management/monitoring system
 
@@ -6,6 +6,7 @@ GH_ACCOUNT =	librenms
 GH_PROJECT =	librenms
 GH_TAGNAME =	1.34
 EPOCH =		0
+REVISION =	0
 
 CATEGORIES =	net www
 
@@ -24,7 +25,6 @@ RUN_DEPENDS =	databases/py-mysql \
 		lang/php/${MODPHP_VERSION},-curl \
 		lang/php/${MODPHP_VERSION},-gd \
 		lang/php/${MODPHP_VERSION},-mcrypt \
-		lang/php/${MODPHP_VERSION},-mysql \
 		lang/php/${MODPHP_VERSION},-mysqli \
 		lang/php/${MODPHP_VERSION},-snmp \
 		net/fping \
@@ -46,7 +46,7 @@ SUBST_VARS =	INSTDIR MODPHP_BIN
 
 R =	s,^\#!( )?(/usr/bin/env |/bin/)bash,\#!${LOCALBASE}/bin/bash,;
 R +=	s,^\#!( )?/usr/bin/(env )?python.*,\#!${MODPY_BIN},;
-R +=	s,^\#!( )?/usr/bin/(env )?php,\#!${MODPHP_BIN},;
+R +=	s,/usr/bin/(env )?php,${MODPHP_BIN},g;
 R +=	s,/opt/librenms,/var/www/librenms,g;
 R +=	s,/var/www/librenms,${TRUEPREFIX}/librenms,g;
 R +=	s,/usr/local,${LOCALBASE},g
@@ -60,7 +60,7 @@ do-install:
 	find ${INSTDIR} -name '*.orig' -print0 | xargs -r0 rm
 	mkdir -p ${INSTDIR}/{rrd,logs}
 	cd ${INSTDIR}; \
-	   sed -i 's,%PHP%,${MODPHP_BIN},' daily.sh *-wrapper.py validate.php; \
+	   sed -i 's,%PHP%,${MODPHP_BIN},' daily.sh *-wrapper.py *-service.py validate.php LibreNMS/Validations/Php.php html/includes/output/capture.inc.php; \
 	   sed -i 's,%LNMS_VERSION%,${DISTNAME:S/librenms-//},' includes/common.php
 	cp /usr/share/snmp/mibs/OPENBSD-* ${INSTDIR}/mibs/
 	rm -r ${INSTDIR}/tests

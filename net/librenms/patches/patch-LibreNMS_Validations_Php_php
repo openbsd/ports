@@ -1,0 +1,23 @@
+$OpenBSD: patch-LibreNMS_Validations_Php_php,v 1.1 2017/12/13 15:30:43 sthen Exp $
+
+Index: LibreNMS/Validations/Php.php
+--- LibreNMS/Validations/Php.php.orig
++++ LibreNMS/Validations/Php.php
+@@ -84,7 +84,7 @@ class Php implements ValidationGroup
+         foreach ($required_modules as $extension) {
+             if (!extension_loaded($extension)) {
+                 $validator->fail("Missing PHP extension: $extension", "Please install $extension");
+-            } elseif (shell_exec("php -r \"var_export(extension_loaded('$extension'));\"") == 'false') {
++            } elseif (shell_exec("%PHP% -r \"var_export(extension_loaded('$extension'));\"") == 'false') {
+                 $validator->fail("Missing CLI PHP extension: $extension", "Please install $extension");
+             }
+         }
+@@ -131,7 +131,7 @@ class Php implements ValidationGroup
+         $ini_tz = ini_get('date.timezone');
+         $sh_tz = rtrim(shell_exec('date +%Z'));
+         $php_tz = date('T');
+-        $php_cli_tz = rtrim(shell_exec('php -r "echo date(\'T\');"'));
++        $php_cli_tz = rtrim(shell_exec('%PHP% -r "echo date(\'T\');"'));
+ 
+         if (empty($ini_tz)) {
+             // make sure timezone is set
