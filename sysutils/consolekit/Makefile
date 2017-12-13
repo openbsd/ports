@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.63 2017/10/24 01:35:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.64 2017/12/13 15:36:22 ajacoutot Exp $
 
 COMMENT=		framework for defining and tracking users, sessions & seats
 
 PKGNAME=		${DISTNAME:L}
 
-GH_TAGNAME=		1.2.0
+GH_TAGNAME=		1.2.1
 GH_ACCOUNT=		ConsoleKit2
 GH_PROJECT=		ConsoleKit2
-REVISION=		0
 
 CATEGORIES=		sysutils	
 
-SHARED_LIBS +=  consolekit           0.0      # 1.0
+SHARED_LIBS +=  consolekit           0.1      # 1.0
 SHARED_LIBS +=  ck-connector         1.2      # 0.0
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
