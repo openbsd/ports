@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2017/11/03 21:08:47 bentley Exp $
+# $OpenBSD: Makefile,v 1.9 2017/12/13 08:29:40 ajacoutot Exp $
 
 V =		0.2.1
 COMMENT =	third person, 3D physics game
 DISTNAME =	irrlamb-$V-src
 PKGNAME =	irrlamb-$V
 CATEGORIES =	games x11
+REVISION =	0
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM =		Yes
@@ -24,6 +25,7 @@ COMPILER =	base-clang ports-gcc
 
 LIB_DEPENDS =	audio/libvorbis \
 		audio/openal \
+		databases/sqlite3 \
 		devel/bullet \
 		x11/irrlicht
 
