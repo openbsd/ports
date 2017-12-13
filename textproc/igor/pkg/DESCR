@@ -1,2 +1,4 @@
 Automated proofreader for text files, man pages, and DocBook SGML
-source files.
+source files.  It produces a considerable amount of false positives
+and its stylistic advice should be taken with a grain of salt.
+It can be useful to find common typos.
