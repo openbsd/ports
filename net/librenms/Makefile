@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2017/12/13 15:56:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.56 2017/12/13 16:25:15 sthen Exp $
 
 COMMENT =	auto-discovering network management/monitoring system
 
@@ -6,7 +6,7 @@ GH_ACCOUNT =	librenms
 GH_PROJECT =	librenms
 GH_TAGNAME =	1.34
 EPOCH =		0
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	net www
 
@@ -53,6 +53,7 @@ R +=	s,/usr/local,${LOCALBASE},g
 
 post-extract:
 	find ${WRKSRC} -type f -print0 | xargs -r0 perl -pi -e '$R'
+	sed -i 's, librenms , _librenms ,' ${WRKSRC}/librenms.nonroot.cron
 
 do-install:
 	${INSTALL_DATA_DIR} ${INSTDIR}
