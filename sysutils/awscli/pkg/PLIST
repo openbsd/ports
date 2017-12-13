@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.46 2017/12/08 09:13:21 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.47 2017/12/13 12:10:01 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
@@ -313,6 +313,8 @@ lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3errormsg.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3errormsg.pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3uploader.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3uploader.pyc
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/sagemaker.py
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/sagemaker.pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/scalarparse.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/scalarparse.pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/servicecatalog/
