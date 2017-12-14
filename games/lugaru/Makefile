@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2017/11/16 23:20:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2017/12/14 11:00:20 jca Exp $
 
 COMMENT =	third-person rabbit combat action game
 
@@ -22,7 +22,7 @@ EXTRACT_SUFX =		.tar.xz
 
 MODULES =		devel/cmake
 
-COMPILER =		base-clang ports-gcc
+COMPILER =		base-clang ports-clang
 RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+3,-guic
 LIB_DEPENDS =		audio/libvorbis \
