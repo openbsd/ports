@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.71 2017/12/14 06:02:30 jca Exp $
+# $OpenBSD: Makefile,v 1.72 2017/12/14 08:14:33 jca Exp $
 
 # patches/patch-Source_JavaScriptCore_javascriptcoregtk_pc_in
 # patches/patch-Source_WebKit_gtk_webkit2gtk-web-extension_pc_in
 # patches/patch-Source_WebKit_gtk_webkit2gtk_pc_in
 USE_WXNEEDED =		Yes
 
-BROKEN-alpha =		error: Compiler GCC >= 4.7 or Clang >= 3.3 is required for C compilation
-BROKEN-hppa =		error: Compiler GCC >= 4.7 or Clang >= 3.3 is required for C compilation
+BROKEN-alpha =		GCC 5.0.0 is required to build WebKitGTK+, use a newer GCC version or clang
+BROKEN-hppa =		GCC 5.0.0 is required to build WebKitGTK+, use a newer GCC version or clang
 
 PORTROACH =		limitw:1,even
 
@@ -49,7 +49,8 @@ MODULES =		devel/cmake \
 			lang/ruby \
 			x11/gnome
 
-COMPILER =		base-clang ports-gcc
+# gcc>=5.0.0 or clang
+COMPILER =		base-clang ports-clang ports-gcc
 
 MODRUBY_RUNDEP =	No
 MODPY_RUNDEP =		No
