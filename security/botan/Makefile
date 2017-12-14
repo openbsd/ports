@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2017/10/09 20:06:26 bluhm Exp $
-
-ONLY_FOR_ARCHS =	${GCC4_ARCHS} ${CLANG_ARCHS}
+# $OpenBSD: Makefile,v 1.28 2017/12/14 22:50:45 rsadowski Exp $
 
 COMMENT =	portable, easy to use, and efficient C++ crypto library
 
@@ -8,6 +6,7 @@ PORTROACH =	limit:^1\.10\.
 VERSION =	1.10.17
 DISTNAME =	Botan-${VERSION}
 PKGNAME =	botan-${VERSION}
+REVISION =	0
 
 SHARED_LIBS =	botan-1.10	1.1
 
@@ -22,6 +21,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =		bz2 crypto gmp m pthread ${COMPILER_LIBCXX} z
 
+COMPILER =		base-clang ports-gcc
+
 MASTER_SITES =		${HOMEPAGE}releases/
 
 SUPDISTFILES =		${DISTFILES}.asc
@@ -31,9 +32,8 @@ MODULES =		lang/python
 MODPY_RUNDEP =		No
 LIB_DEPENDS =		archivers/bzip2 \
 			devel/gmp
-BUILD_DEPENDS =		devel/boost
 
-CXXFLAGS +=		-I${LOCALBASE}/include
+CXXFLAGS +=		-std=c++11 -Wno-c++11-narrowing -I${LOCALBASE}/include
 MAKE_FLAGS =		CXX="${CXX}" LIB_OPT="${CXXFLAGS} -finline-functions" \
 			CHECK_OPT="${CXXFLAGS}" LDFLAGS="-L${LOCALBASE}/lib" \
 			LIBbotan_VERSION=${LIBbotan-1.10_VERSION}
@@ -46,7 +46,7 @@ CONFIGURE_ARGS =	--cpu=${MACHINE_ARCH} \
 			--with-bzip2 \
 			--with-gnump \
 			--with-openssl \
-			--with-tr1-implementation=boost \
+			--with-tr1-implementation=system \
 			--with-zlib \
 			--without-sphinx
 

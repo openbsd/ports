@@ -1,0 +1,33 @@
+$OpenBSD: patch-src_ssl_tls_record_h,v 1.1 2017/12/14 22:50:45 rsadowski Exp $
+
+Index: src/ssl/tls_record.h
+--- src/ssl/tls_record.h.orig
++++ src/ssl/tls_record.h
+@@ -17,8 +17,13 @@
+ 
+ #if defined(BOTAN_USE_STD_TR1)
+ 
+-#if defined(BOTAN_BUILD_COMPILER_IS_MSVC)
++#if defined(BOTAN_BUILD_COMPILER_IS_MSVC) || (defined(BOTAN_BUILD_COMPILER_IS_CLANG) || defined(BOTAN_BUILD_COMPILER_IS_GCC))
+     #include <functional>
++    namespace std {
++        namespace tr1 {
++            using std::function;
++        }
++    }
+ #else
+     #include <tr1/functional>
+ #endif
+@@ -31,7 +36,11 @@
+ 
+ namespace Botan {
+ 
+-using namespace std::tr1::placeholders;
++#if (defined(BOTAN_BUILD_COMPILER_IS_CLANG) || defined(BOTAN_BUILD_COMPILER_IS_GCC))
++    using namespace std::placeholders;
++#else
++    using namespace std::tr1::placeholders;
++#endif
+ 
+ /**
+ * TLS Record Writer
