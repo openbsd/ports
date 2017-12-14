@@ -1,0 +1,19 @@
+$OpenBSD: patch-include_czmq_prelude_h,v 1.1 2017/12/14 11:46:54 jasper Exp $
+
+From 6054b8e9a54f5113fb65e1a060b9044068661795 Mon Sep 17 00:00:00 2001
+From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date: Thu, 14 Dec 2017 10:46:45 +0100
+Subject: [PATCH] Problem: uuid header not correctly included on OpenBSD
+
+Index: include/czmq_prelude.h
+--- include/czmq_prelude.h.orig
++++ include/czmq_prelude.h
+@@ -596,7 +596,7 @@ unsigned int if_nametoindex (const char *ifname);
+ #   define HAVE_UUID 1
+ #endif
+ #if defined (HAVE_UUID)
+-#   if defined (__UTYPE_FREEBSD) || defined (__UTYPE_NETBSD)
++#   if defined (__UTYPE_FREEBSD) || defined (__UTYPE_NETBSD) || defined(__UTYPE_OPENBSD)
+ #       include <uuid.h>
+ #   elif defined __UTYPE_HPUX
+ #       include <dce/uuid.h>

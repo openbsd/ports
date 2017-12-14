@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2015/10/30 22:20:21 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2017/12/14 11:46:54 jasper Exp $
 
 COMMENT=		high-level C binding for ZeroMQ
 
-DISTNAME=		czmq-3.0.2
+V =			4.0.2
+DISTNAME=		czmq-$V
 
-SHARED_LIBS +=	czmq                      0.0 # 3.0
+SHARED_LIBS +=	czmq                      1.0 # 4.2
 
 CATEGORIES=		net
 
@@ -13,19 +14,19 @@ HOMEPAGE=		http://czmq.zeromq.org/
 # MPLv2.0
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c pthread sodium zmq
+WANTLIB += c ossp-uuid pthread sodium zmq
 
-MASTER_SITES=		http://download.zeromq.org/
+MASTER_SITES=		https://github.com/zeromq/czmq/releases/download/v$V/
 
-LIB_DEPENDS=		net/zeromq
+LIB_DEPENDS=		devel/uuid \
+			net/zeromq
 
 CONFIGURE_STYLE=	gnu
 
-# conflicts with lang/mono
-CONFIGURE_ARGS +=	--without-makecert
-
 CONFIGURE_ENV += 	ac_cv_prog_czmq_have_xmlto=no \
-			ac_cv_prog_czmq_have_asciidoc=no
+			ac_cv_prog_czmq_have_asciidoc=no \
+			uuid_CFLAGS="`pkg-config --cflags ossp-uuid`" \
+			uuid_LIBS="`pkg-config --libs ossp-uuid`"
 
 ### XXX error: stray '\357' in program
 UTFAIL=			zactor zauth zarmour zbeacon zcertstore zchunk zconfig \
