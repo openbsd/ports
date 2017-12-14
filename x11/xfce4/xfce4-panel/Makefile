@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.66 2017/11/26 18:59:32 landry Exp $
+# $OpenBSD: Makefile,v 1.67 2017/12/14 10:16:07 landry Exp $
 
 COMMENT=	Xfce4 desktop panel
 
 XFCE_PROJECT=	xfce4-panel
-XFCE_VERSION=	4.12.1
-REVISION =	2
+XFCE_VERSION=	4.12.2
 
 PORTROACH=	limitw:1,even
 
