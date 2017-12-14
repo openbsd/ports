@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2017/07/26 22:45:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2017/12/14 00:24:36 jca Exp $
 
 COMMENT=		library for powerful image loading capabilities
 
@@ -28,7 +28,7 @@ LIB_DEPENDS=		converters/libiconv \
 			devel/sdl \
 			graphics/freeglut \
 			graphics/ilmbase \
-			graphics/jasper \
+			graphics/jasper>=2.0.14 \
 			graphics/libmng \
 			graphics/lcms \
 			graphics/openexr \
