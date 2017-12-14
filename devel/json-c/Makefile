@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2017/09/25 10:09:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2017/12/14 00:29:47 jca Exp $
 
 COMMENT=		JSON implementation in C
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES =		https://s3.amazonaws.com/json-c_releases/releases/
 
-CONFIGURE_STYLE=	autoconf autoheader
+CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.69
 
 # not enabled by default at present, but we want to make sure we
