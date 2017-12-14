@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.82 2017/12/05 08:19:35 kirby Exp $
+# $OpenBSD: Makefile,v 1.83 2017/12/14 10:16:24 jasper Exp $
 
 COMMENT-main =		ssh based config management framework
 COMMENT-html =		offline Ansible documentation in HTML format
 
-MODPY_EGG_VERSION =	2.4.1.0
+MODPY_EGG_VERSION =	2.4.2.0
 DISTNAME =		ansible-${MODPY_EGG_VERSION}
 PKGNAME-main =		${PKGNAME}
 PKGNAME-html =		ansible-html-${MODPY_EGG_VERSION}
-REVISION-main =		0
-REVISION-html =		0
 
 CATEGORIES =		sysutils
 
@@ -26,7 +24,8 @@ MASTER_SITES =		https://releases.ansible.com/ansible/
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
 
-BUILD_DEPENDS =		textproc/py-sphinx
+BUILD_DEPENDS =		archivers/gtar \
+			textproc/py-sphinx
 RUN_DEPENDS =		security/py-crypto \
 			security/py-keyczar \
 			security/py-paramiko \
@@ -42,6 +41,9 @@ NO_TEST =		Yes
 DOCDIR =		${PREFIX}/share/doc/ansible
 EXDIR =			${PREFIX}/share/examples/ansible
 PLUGINDIR =		${PREFIX}/share/ansible_plugins
+
+# tar: A hard link to the directory ansible-2.4.2.0/test/integration/targets/copy/files/subdir/subdir1/circles/subdir1/circles/subdir1/circles/subdir1/circles/[..]subdi is not allowed
+TAR =			${LOCALBASE}/bin/gtar
 
 pre-configure:
 	sed -i -e "s,/usr/share,${TRUEPREFIX}/share,g;" \
