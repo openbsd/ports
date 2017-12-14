@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2017/12/14 17:25:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2017/12/14 17:43:00 sthen Exp $
 
 COMMENT=		Lumina Desktop Environment
 
@@ -6,7 +6,7 @@ GH_ACCOUNT=		trueos
 GH_PROJECT=		lumina
 GH_TAGNAME=		v1.4.0-p1
 PKGNAME=		lumina-1.4.0pl1
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		x11
 
@@ -20,23 +20,23 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += GL Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Multimedia
 WANTLIB += Qt5MultimediaWidgets Qt5Network Qt5PrintSupport Qt5Svg
-WANTLIB += Qt5Widgets Qt5X11Extras Xdamage c glib-2.0 intl m pulse
-WANTLIB += pulse-mainloop-glib xcb xcb-composite xcb-damage xcb-ewmh
-WANTLIB += xcb-icccm xcb-image xcb-util
+WANTLIB += Qt5Widgets Qt5X11Extras Xdamage c glib-2.0 intl m
+WANTLIB += poppler-qt5 pulse pulse-mainloop-glib xcb xcb-composite
+WANTLIB += xcb-damage xcb-ewmh xcb-icccm xcb-image xcb-util
 
 MODULES=		x11/qt5
 
 RUN_DEPENDS=		devel/desktop-file-utils \
 			devel/git \
 			devel/kf5/oxygen-icons \
-			print/poppler \
 			multimedia/gstreamer1/plugins-base \
 			x11/fluxbox \
 			x11/numlockx \
 			x11/xscreensaver \
 			x11/gtk+3,-guic
 
-LIB_DEPENDS=		x11/qt5/qtmultimedia \
+LIB_DEPENDS=		print/poppler,-qt5 \
+			x11/qt5/qtmultimedia \
 			x11/qt5/qtsvg \
 			x11/qt5/qtx11extras
 
