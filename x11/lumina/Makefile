@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2017/12/14 17:22:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2017/12/14 17:25:02 sthen Exp $
 
 COMMENT=		Lumina Desktop Environment
 
@@ -6,10 +6,11 @@ GH_ACCOUNT=		trueos
 GH_PROJECT=		lumina
 GH_TAGNAME=		v1.4.0-p1
 PKGNAME=		lumina-1.4.0pl1
+REVISION=		0
 
 CATEGORIES=		x11
 
-HOMEPAGE=		http://lumina-desktop.org/
+HOMEPAGE=		https://lumina-desktop.org/
 
 MAINTAINER=		Bryan C. Everly <bryan@bceassociates.com>
 
@@ -17,10 +18,11 @@ MAINTAINER=		Bryan C. Everly <bryan@bceassociates.com>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX}
-WANTLIB += GL Qt5Concurrent Qt5Core Qt5Gui Qt5Multimedia Qt5MultimediaWidgets
-WANTLIB += Qt5Network Qt5Svg Qt5Widgets Qt5X11Extras Xdamage c
-WANTLIB += m glib-2.0 intl pthread pulse-mainloop-glib pulse xcb
-WANTLIB += xcb-composite xcb-damage xcb-ewmh xcb-icccm xcb-image xcb-util
+WANTLIB += GL Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Multimedia
+WANTLIB += Qt5MultimediaWidgets Qt5Network Qt5PrintSupport Qt5Svg
+WANTLIB += Qt5Widgets Qt5X11Extras Xdamage c glib-2.0 intl m pulse
+WANTLIB += pulse-mainloop-glib xcb xcb-composite xcb-damage xcb-ewmh
+WANTLIB += xcb-icccm xcb-image xcb-util
 
 MODULES=		x11/qt5
 
