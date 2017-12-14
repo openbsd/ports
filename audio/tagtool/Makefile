@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.35 2017/12/10 11:00:57 mpi Exp $
+# $OpenBSD: Makefile,v 1.36 2017/12/14 19:02:04 jca Exp $
 
 COMMENT=	Ogg Vorbis and MP3 files tagger
 
 DISTNAME=	tagtool-0.12.3
-REVISION=	21
+REVISION=	22
 CATEGORIES=	audio
 
 MAINTAINER=	Vlad Glagolev <stealth@sourcemage.org>
@@ -14,14 +14,12 @@ EXTRACT_SUFX=	.tar.bz2
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig
-WANTLIB += freetype gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 iconv intl
-WANTLIB += m ogg pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1
-WANTLIB += png ${COMPILER_LIBCXX} xcb xml2 z gthread-2.0 pthread
-WANTLIB += xcb-render id3>=3.8 vorbis>=5
-WANTLIB += gtk-x11-2.0 gdk-x11-2.0 gdk_pixbuf-2.0 glade-2.0>=0.3
-WANTLIB += vorbisfile>=4 GL xcb-shm
+WANTLIB += ${COMPILER_LIBCXX} X11 Xcomposite Xcursor Xdamage Xext
+WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo fontconfig
+WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glade-2.0
+WANTLIB += glib-2.0 gobject-2.0 gtk-x11-2.0 id3 intl m ogg pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 vorbis vorbisfile xml2
+WANTLIB += z
 
 MODULES=	textproc/intltool
 
