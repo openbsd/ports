@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2015/07/26 19:19:33 steven Exp $
+# $OpenBSD: Makefile,v 1.10 2017/12/14 00:16:14 jca Exp $
 
 COMMENT =	framework for analysis of layer 2 network protocols
 
 DISTNAME =	yersinia-0.7.3
+REVISION =	0
 CATEGORIES =	net security
 
 HOMEPAGE =	http://www.yersinia.net/
@@ -14,7 +15,7 @@ PERMIT_PACKAGE_CDROM =		Yes
 
 MASTER_SITES =	http://www.yersinia.net/download/
 
-WANTLIB =	c ncurses panel pcap pthread net
+WANTLIB =	c curses panel pcap pthread lib/libnet-1.1/net=11
 
 LIB_DEPENDS =	net/libnet/1.1
 
