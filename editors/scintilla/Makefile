@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2017/11/01 17:01:23 jeremy Exp $
+# $OpenBSD: Makefile,v 1.27 2017/12/14 06:44:23 jca Exp $
 
 COMMENT=	source code editing component for GTK+
 
@@ -29,6 +29,9 @@ MAKE_ENV=	CXX='${CXX}' CXXFLAGS='${CXXFLAGS}' \
 		CC='${CC}' GTK3=1
 
 WANTLIB=	m ${COMPILER_LIBCXX}
+
+# -std=gnu++14
+COMPILER=	base-clang ports-clang ports-gcc
 
 # Not LIB_DEPENDS as it's only shared libraries that don't link directly
 # to gtk+3

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2017/11/16 18:39:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2017/12/14 06:44:23 jca Exp $
 
 COMMENT =	Qt port of the Scintilla source code editor
 
@@ -21,6 +21,9 @@ WANTLIB =	${COMPILER_LIBCXX} m
 MODULES =	devel/qmake
 FLAVORS = qt5
 FLAVOR?=
+
+# C++11 (at least)
+COMPILER=	base-clang ports-clang ports-gcc
 
 .if ${FLAVOR} == "qt5"
 FULLPKGNAME =	qscintilla-qt5-${VERSION}
