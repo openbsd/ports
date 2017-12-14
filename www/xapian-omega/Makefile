@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2017/11/13 23:36:05 jeremy Exp $
+# $OpenBSD: Makefile,v 1.22 2017/12/14 05:54:18 jca Exp $
 
 COMMENT=	web search application
 
@@ -17,6 +17,9 @@ WANTLIB += c m uuid ${COMPILER_LIBCXX} z xapian pcre magic
 
 MASTER_SITES=	http://oligarchy.co.uk/xapian/${V}/
 EXTRACT_SUFX=	.tar.xz
+
+# C++11
+COMPILER=       base-clang ports-gcc ports-clang
 
 LIB_DEPENDS=	databases/xapian-core>=${V} \
 		devel/pcre \
