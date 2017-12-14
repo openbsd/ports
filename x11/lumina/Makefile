@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.26 2017/09/22 21:30:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2017/12/14 17:22:26 sthen Exp $
 
 COMMENT=		Lumina Desktop Environment
 
 GH_ACCOUNT=		trueos
 GH_PROJECT=		lumina
-GH_TAGNAME=		v1.3.0-p1
-PKGNAME=		lumina-1.3.0pl1
-REVISION=		2
+GH_TAGNAME=		v1.4.0-p1
+PKGNAME=		lumina-1.4.0pl1
 
 CATEGORIES=		x11
 
@@ -26,7 +25,9 @@ WANTLIB += xcb-composite xcb-damage xcb-ewmh xcb-icccm xcb-image xcb-util
 MODULES=		x11/qt5
 
 RUN_DEPENDS=		devel/desktop-file-utils \
+			devel/git \
 			devel/kf5/oxygen-icons \
+			print/poppler \
 			multimedia/gstreamer1/plugins-base \
 			x11/fluxbox \
 			x11/numlockx \
