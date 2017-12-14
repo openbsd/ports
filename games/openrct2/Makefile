@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.6 2017/12/10 08:18:29 bcallah Exp $
+# $OpenBSD: Makefile,v 1.7 2017/12/14 07:08:15 jca Exp $
+
+# "#error Unknown endianess!" in src/openrct2/common.h
+NOT_FOR_ARCHS =	${BE_ARCHS}
 
 V =		0.1.1
 COMMENT =	open source re-implementation of RollerCoaster Tycoon 2
