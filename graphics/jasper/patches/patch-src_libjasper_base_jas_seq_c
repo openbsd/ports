@@ -1,93 +1,9 @@
-$OpenBSD: patch-src_libjasper_base_jas_seq_c,v 1.2 2016/02/04 10:08:07 jasper Exp $
+$OpenBSD: patch-src_libjasper_base_jas_seq_c,v 1.3 2017/12/14 00:23:28 jca Exp $
 
-Security fix for CVE-2016-2089, patch (rows_ NULL check) from RH:
-https://bugzilla.redhat.com/show_bug.cgi?id=1302636
-
---- src/libjasper/base/jas_seq.c.orig	Thu Feb  4 10:57:40 2016
-+++ src/libjasper/base/jas_seq.c	Thu Feb  4 10:57:15 2016
-@@ -114,7 +114,7 @@ jas_matrix_t *jas_matrix_create(int numrows, int numco
- 	matrix->datasize_ = numrows * numcols;
- 
- 	if (matrix->maxrows_ > 0) {
--		if (!(matrix->rows_ = jas_malloc(matrix->maxrows_ *
-+		if (!(matrix->rows_ = jas_alloc2(matrix->maxrows_,
- 		  sizeof(jas_seqent_t *)))) {
- 			jas_matrix_destroy(matrix);
- 			return 0;
-@@ -122,7 +122,7 @@ jas_matrix_t *jas_matrix_create(int numrows, int numco
- 	}
- 
- 	if (matrix->datasize_ > 0) {
--		if (!(matrix->data_ = jas_malloc(matrix->datasize_ *
-+		if (!(matrix->data_ = jas_alloc2(matrix->datasize_,
- 		  sizeof(jas_seqent_t)))) {
- 			jas_matrix_destroy(matrix);
- 			return 0;
-@@ -220,7 +220,7 @@ void jas_matrix_bindsub(jas_matrix_t *mat0, jas_matrix
- 	mat0->numrows_ = r1 - r0 + 1;
- 	mat0->numcols_ = c1 - c0 + 1;
- 	mat0->maxrows_ = mat0->numrows_;
--	mat0->rows_ = jas_malloc(mat0->maxrows_ * sizeof(jas_seqent_t *));
-+	mat0->rows_ = jas_alloc2(mat0->maxrows_, sizeof(jas_seqent_t *));
- 	for (i = 0; i < mat0->numrows_; ++i) {
- 		mat0->rows_[i] = mat1->rows_[r0 + i] + c0;
- 	}
-@@ -262,6 +262,10 @@ void jas_matrix_divpow2(jas_matrix_t *matrix, int n)
- 	int rowstep;
- 	jas_seqent_t *data;
- 
-+	if (!matrix->rows_) {
-+		return;
-+	}
-+
- 	rowstep = jas_matrix_rowstep(matrix);
- 	for (i = matrix->numrows_, rowstart = matrix->rows_[0]; i > 0; --i,
- 	  rowstart += rowstep) {
-@@ -282,6 +286,10 @@ void jas_matrix_clip(jas_matrix_t *matrix, jas_seqent_
- 	jas_seqent_t *data;
- 	int rowstep;
- 
-+	if (!matrix->rows_) {
-+		return;
-+	}
-+
- 	rowstep = jas_matrix_rowstep(matrix);
- 	for (i = matrix->numrows_, rowstart = matrix->rows_[0]; i > 0; --i,
- 	  rowstart += rowstep) {
-@@ -306,6 +314,10 @@ void jas_matrix_asr(jas_matrix_t *matrix, int n)
- 	int rowstep;
- 	jas_seqent_t *data;
- 
-+	if (!matrix->rows_) {
-+		return;
-+	}
-+
- 	assert(n >= 0);
- 	rowstep = jas_matrix_rowstep(matrix);
- 	for (i = matrix->numrows_, rowstart = matrix->rows_[0]; i > 0; --i,
-@@ -325,6 +337,10 @@ void jas_matrix_asl(jas_matrix_t *matrix, int n)
- 	int rowstep;
- 	jas_seqent_t *data;
- 
-+	if (!matrix->rows_) {
-+		return;
-+	}
-+
- 	rowstep = jas_matrix_rowstep(matrix);
- 	for (i = matrix->numrows_, rowstart = matrix->rows_[0]; i > 0; --i,
- 	  rowstart += rowstep) {
-@@ -367,6 +383,10 @@ void jas_matrix_setall(jas_matrix_t *matrix, jas_seqen
- 	int rowstep;
- 	jas_seqent_t *data;
- 
-+	if (!matrix->rows_) {
-+		return;
-+	}
-+
- 	rowstep = jas_matrix_rowstep(matrix);
- 	for (i = matrix->numrows_, rowstart = matrix->rows_[0]; i > 0; --i,
- 	  rowstart += rowstep) {
-@@ -432,7 +452,8 @@ int jas_seq2d_output(jas_matrix_t *matrix, FILE *out)
+Index: src/libjasper/base/jas_seq.c
+--- src/libjasper/base/jas_seq.c.orig
++++ src/libjasper/base/jas_seq.c
+@@ -492,7 +492,8 @@ int jas_seq2d_output(jas_matrix_t *matrix, FILE *out)
  	for (i = 0; i < jas_matrix_numrows(matrix); ++i) {
  		for (j = 0; j < jas_matrix_numcols(matrix); ++j) {
  			x = jas_matrix_get(matrix, i, j);
@@ -95,9 +11,9 @@ https://bugzilla.redhat.com/show_bug.cgi?id=1302636
 +			snprintf(sbuf, sizeof sbuf, 
 +			    "%s%4ld", (strlen(buf) > 0) ? " " : "",
  			  JAS_CAST(long, x));
- 			n = strlen(buf);
- 			if (n + strlen(sbuf) > MAXLINELEN) {
-@@ -440,7 +461,7 @@ int jas_seq2d_output(jas_matrix_t *matrix, FILE *out)
+ 			n = JAS_CAST(int, strlen(buf));
+ 			if (n + JAS_CAST(int, strlen(sbuf)) > MAXLINELEN) {
+@@ -500,7 +501,7 @@ int jas_seq2d_output(jas_matrix_t *matrix, FILE *out)
  				fputs("\n", out);
  				buf[0] = '\0';
  			}

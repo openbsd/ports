@@ -1,0 +1,16 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2017/12/14 00:23:28 jca Exp $
+
+Don't pick up optional deps at configure time.
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -199,8 +199,6 @@ endif()
+ # Perform plaform checks.
+ ################################################################################
+ 
+-find_package(Doxygen)
+-find_package(LATEX COMPONENTS PDFLATEX)
+ find_program(BASH_PROGRAM bash)
+ 
+ # On some (or maybe all?) systems, LATEX_FOUND is not set by FindLATEX.
