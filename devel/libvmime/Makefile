@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2017/09/13 10:38:34 robert Exp $
+# $OpenBSD: Makefile,v 1.34 2017/12/14 17:07:17 jca Exp $
 
 COMMENT=	C++ class library for working with Internet mail
 
@@ -21,6 +21,9 @@ MAINTAINER=	Robert Nagy <robert@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += icuuc m pthread ${COMPILER_LIBCXX}
+
+# C++11 (else falls back on boost)
+COMPILER=	base-clang ports-clang ports-gcc
 
 MODULES=	devel/cmake
 
