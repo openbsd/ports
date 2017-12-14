@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.18 2017/11/28 21:22:01 kirby Exp $
+# $OpenBSD: Makefile,v 1.19 2017/12/14 09:47:24 kirby Exp $
 
 COMMENT=		graphical hard drive inspection tool (smartctl front-end)
 
 DISTNAME=		gsmartcontrol-1.1.3
 EXTRACT_SUFX=		.tar.bz2
+REVISION=		0
 
 CATEGORIES=		sysutils x11
 
-HOMEPAGE=		http://gsmartcontrol.sourceforge.net/
+HOMEPAGE=		https://gsmartcontrol.sourceforge.io/home/
 
 # GPLv2 or GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
