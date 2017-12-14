@@ -3,7 +3,7 @@ Fix paths to docs
 Index: src/app/qgisapp.cpp
 --- src/app/qgisapp.cpp.orig
 +++ src/app/qgisapp.cpp
-@@ -1712,7 +1712,7 @@ void QgisApp::createActions()
+@@ -1718,7 +1718,7 @@ void QgisApp::createActions()
    mActionReportaBug->setShortcut( QString() );
  #endif
  
@@ -12,7 +12,7 @@ Index: src/app/qgisapp.cpp
  
    connect( mActionHelpContents, SIGNAL( triggered() ), this, SLOT( helpContents() ) );
    connect( mActionHelpAPI, SIGNAL( triggered() ), this, SLOT( apiDocumentation() ) );
-@@ -9161,7 +9161,7 @@ void QgisApp::helpContents()
+@@ -9187,7 +9187,7 @@ void QgisApp::helpContents()
  
  void QgisApp::apiDocumentation()
  {
@@ -21,7 +21,7 @@ Index: src/app/qgisapp.cpp
    {
      openURL( "api/index.html" );
    }
-@@ -9190,7 +9190,7 @@ void QgisApp::openURL( QString url, bool useQgisDocDir
+@@ -9216,7 +9216,7 @@ void QgisApp::openURL( QString url, bool useQgisDocDir
    // open help in user browser
    if ( useQgisDocDirectory )
    {
