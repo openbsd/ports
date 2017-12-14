@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2017/11/16 23:20:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.71 2017/12/14 06:02:30 jca Exp $
 
 # patches/patch-Source_JavaScriptCore_javascriptcoregtk_pc_in
 # patches/patch-Source_WebKit_gtk_webkit2gtk-web-extension_pc_in
@@ -86,7 +86,7 @@ CONFIGURE_ARGS =	-DPORT=GTK \
 			-DCMAKE_EXE_LINKER_FLAGS="${LDFLAGS}" \
 			-DCMAKE_SHARED_LINKER_FLAGS="${LDFLAGS}"
 
-# old gtk+2 plugins (flash, java, ...); mostly usefull on Linux
+# old gtk+2 plugins (flash, java, ...); mostly useful on Linux
 CONFIGURE_ARGS +=	-DENABLE_PLUGIN_PROCESS_GTK2=OFF
 
 # sync with Source/JavaScriptCore/assembler/MacroAssembler.h
