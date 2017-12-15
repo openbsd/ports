@@ -1,0 +1,14 @@
+$OpenBSD: patch-utils_notify_notify_others_go,v 1.1 2017/12/15 14:33:17 abieber Exp $
+
+This is fixed upstream. Can be removed next release.
+
+Index utils/notify/notify_others.go
+--- utils/notify/notify_others.go
++++ utils/notify/notify_others.go
+@@ -10,5 +10,5 @@ import (
+
+ // Notify is not yet implemented on this platform
+ func Notify(subj, msg string) error {
+-	return errors.New("GOOS %s not yet supported", runtime.GOOS)
++	return errors.Errorf("GOOS %s not yet supported", runtime.GOOS)
+ }
