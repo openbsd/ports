@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.37 2017/08/31 08:32:36 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.38 2017/12/15 16:25:31 ajacoutot Exp $
 @conflict kqemu-*
 @conflict qemu-*
 @pkgpath emulators/kqemu
@@ -7,6 +7,7 @@
 @bin bin/qemu-ga
 @bin bin/qemu-img
 @bin bin/qemu-io
+@bin bin/qemu-keymap
 @bin bin/qemu-nbd
 @bin bin/qemu-system-aarch64
 @bin bin/qemu-system-alpha
@@ -39,6 +40,7 @@
 @bin bin/qemu-system-xtensaeb
 @man man/man1/qemu-img.1
 @man man/man1/qemu.1
+@man man/man7/qemu-block-drivers.7
 @man man/man7/qemu-ga-ref.7
 @man man/man7/qemu-qmp-ref.7
 @man man/man8/qemu-ga.8
