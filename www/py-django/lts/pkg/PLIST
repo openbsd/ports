@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2017/11/22 10:16:01 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.23 2017/12/15 14:18:10 rpointel Exp $
 @conflict py3-django->=1.9,<1.10
 @comment bin/django-admin
 bin/${LNAME}-admin.py
@@ -6056,10 +6056,12 @@ lib/python${MODPY_VERSION}/site-packages/django/db/migrations/operations/${MODPY
 lib/python${MODPY_VERSION}/site-packages/django/db/migrations/operations/${MODPY_PYCACHE}fields.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/django/db/migrations/operations/${MODPY_PYCACHE}models.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/django/db/migrations/operations/${MODPY_PYCACHE}special.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/django/db/migrations/operations/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/django/db/migrations/operations/base.py
 lib/python${MODPY_VERSION}/site-packages/django/db/migrations/operations/fields.py
 lib/python${MODPY_VERSION}/site-packages/django/db/migrations/operations/models.py
 lib/python${MODPY_VERSION}/site-packages/django/db/migrations/operations/special.py
+lib/python${MODPY_VERSION}/site-packages/django/db/migrations/operations/utils.py
 lib/python${MODPY_VERSION}/site-packages/django/db/migrations/optimizer.py
 lib/python${MODPY_VERSION}/site-packages/django/db/migrations/questioner.py
 lib/python${MODPY_VERSION}/site-packages/django/db/migrations/recorder.py
@@ -6823,6 +6825,7 @@ share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.11.3.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.11.4.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.11.5.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.11.6.txt
+share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.11.7.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/${MODPY_EGG_VERSION}.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.11.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.2.1.txt
