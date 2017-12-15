@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2017/11/02 10:16:38 jeremy Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2017/12/15 16:46:52 jeremy Exp $
 @option no-default-conflict
 @option is-branch
 @conflict ruby->=2.3,<2.4
@@ -841,6 +841,7 @@ lib/ruby/${REV}/rubygems/resolver/specification.rb
 lib/ruby/${REV}/rubygems/resolver/stats.rb
 lib/ruby/${REV}/rubygems/resolver/vendor_set.rb
 lib/ruby/${REV}/rubygems/resolver/vendor_specification.rb
+lib/ruby/${REV}/rubygems/safe_yaml.rb
 lib/ruby/${REV}/rubygems/security.rb
 lib/ruby/${REV}/rubygems/security/
 lib/ruby/${REV}/rubygems/security/policies.rb

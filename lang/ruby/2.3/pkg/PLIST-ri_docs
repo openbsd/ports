@@ -3414,6 +3414,10 @@ share/ri/${REV}/system/Gem/Resolver/soft_missing-i.ri
 share/ri/${REV}/system/Gem/Resolver/stats-i.ri
 share/ri/${REV}/system/Gem/RubyVersionMismatch/
 share/ri/${REV}/system/Gem/RubyVersionMismatch/cdesc-RubyVersionMismatch.ri
+share/ri/${REV}/system/Gem/SafeYAML/
+share/ri/${REV}/system/Gem/SafeYAML/cdesc-SafeYAML.ri
+share/ri/${REV}/system/Gem/SafeYAML/load-c.ri
+share/ri/${REV}/system/Gem/SafeYAML/safe_load-c.ri
 share/ri/${REV}/system/Gem/Security/
 share/ri/${REV}/system/Gem/Security/Exception/
 share/ri/${REV}/system/Gem/Security/Exception/cdesc-Exception.ri
