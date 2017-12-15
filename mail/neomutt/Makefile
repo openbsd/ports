@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2017/12/15 01:32:22 jca Exp $
+# $OpenBSD: Makefile,v 1.22 2017/12/15 20:14:24 sthen Exp $
 
 COMMENT=	tty-based e-mail client, Mutt with patches
 
 GH_ACCOUNT=	neomutt
 GH_PROJECT=	neomutt
-GH_TAGNAME=	neomutt-20171027
+GH_TAGNAME=	neomutt-20171215
 DISTNAME=	${GH_TAGNAME}
 
 CATEGORIES=	mail
@@ -16,7 +16,7 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 # uses pledge()
-WANTLIB+=	c crypto iconv idn intl ncursesw ssl z
+WANTLIB+=	c crypto curses iconv idn intl ssl z
 
 LIB_DEPENDS+=	devel/gettext \
 		devel/libidn
@@ -29,25 +29,22 @@ FLAVOR?=
 FLAVOR_COMMA=	${FLAVOR_EXT:S/-/,/g}
 SUBST_VARS=	FLAVOR_COMMA
 
-AUTOCONF_VERSION= 2.69
-AUTOMAKE_VERSION= 1.15
-CONFIGURE_STYLE= autoconf
-BUILD_DEPENDS+=	${MODGNU_AUTOCONF_DEPENDS} \
-		${MODGNU_AUTOMAKE_DEPENDS} \
+CONFIGURE_STYLE= simple
+BUILD_DEPENDS+=	lang/jimtcl \
 		devel/gettext-tools
-CONFIGURE_ARGS+= --disable-fcntl \
-		--enable-flock \
-		--disable-notmuch \
-		--mandir=${PREFIX}/man \
-		--with-curses \
-		--with-docdir="${PREFIX}/share/doc/neomutt" \
-		--without-tokyocabinet \
-		--without-gdbm \
-		--with-idn \
-		--with-ssl
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		ISPELL="${LOCALBASE}/bin/ispell"
+CONFIGURE_ARGS+= --mandir="${PREFIX}/man" \
+		--with-ui=ncurses \
+		--docdir="${PREFIX}/share/doc/neomutt" \
+		--flock \
+		--disable-fcntl \
+		--fmemopen \
+		--ssl
+
+CONFIGURE_ENV=	autosetup_tclsh="${LOCALBASE}/bin/jimsh" \
+		CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+## ^^ ???
+
 SYSCONFDIR=	${BASESYSCONFDIR}/mutt
 FAKE_FLAGS=	sysconfdir="${PREFIX}/share/examples/neomutt"
 
@@ -55,13 +52,13 @@ DEBUG+=		-g
 #CONFIGURE_ARGS+= --enable-debug
 
 .if ${FLAVOR:Mgpgme}
-CONFIGURE_ARGS+= --enable-gpgme
+CONFIGURE_ARGS+= --gpgme
 LIB_DEPENDS+=	security/gpgme
-WANTLIB+=	assuan gpg-error gpgme
+WANTLIB+=	gpgme
 .endif
 
 .if ${FLAVOR:Msasl}
-CONFIGURE_ARGS+= --with-sasl=${LOCALBASE}
+CONFIGURE_ARGS+= --sasl=${LOCALBASE}
 LIB_DEPENDS+=	security/cyrus-sasl2
 WANTLIB+=	sasl2
 .endif
@@ -71,18 +68,12 @@ WANTLIB+=	sasl2
 .if ${MACHINE_ARCH} == hppa || ${MACHINE_ARCH} == powerpc
 LIB_DEPENDS+=	databases/qdbm
 WANTLIB+=	qdbm
-CONFIGURE_ARGS+= --without-kyotocabinet \
-		--with-qdbm
+CONFIGURE_ARGS+= --qdbm
 .else
 LIB_DEPENDS+=	databases/kyotocabinet
 WANTLIB+=	kyotocabinet
-CONFIGURE_ARGS+= --with-kyotocabinet \
-		--without-qdbm
+CONFIGURE_ARGS+= --kyotocabinet
 .endif
-
-post-patch:
-	cd ${WRKSRC}; AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-	    AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autoreconf --install
 
 post-install:
 	@mv -f ${PREFIX}/share/doc/neomutt/samples/* ${PREFIX}/share/examples/neomutt

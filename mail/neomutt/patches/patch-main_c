@@ -1,11 +1,11 @@
-$OpenBSD: patch-main_c,v 1.9 2017/10/29 19:51:31 sthen Exp $
+$OpenBSD: patch-main_c,v 1.10 2017/12/15 20:14:24 sthen Exp $
 
 Pledge
 
 Index: main.c
 --- main.c.orig
 +++ main.c
-@@ -426,6 +426,30 @@ int main(int argc, char **argv, char **env)
+@@ -414,6 +414,30 @@ int main(int argc, char **argv, char **env)
        }
    }
  

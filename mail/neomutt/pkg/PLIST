@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.8 2017/10/13 16:27:13 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.9 2017/12/15 20:14:24 sthen Exp $
 @bin bin/neomutt
-lib/neomutt/
-@bin lib/neomutt/pgpewrap
-@bin lib/neomutt/pgpring
-lib/neomutt/smime_keys
+libexec/neomutt/
+@bin libexec/neomutt/pgpewrap
+@bin libexec/neomutt/pgpring
+libexec/neomutt/smime_keys
 @man man/man1/neomutt.1
 @man man/man1/pgpewrap_neomutt.1
 @man man/man1/pgpring_neomutt.1
@@ -62,7 +62,6 @@ share/doc/neomutt/mime.types
 @sample ${SYSCONFDIR}/mime.types
 share/doc/neomutt/mimesupport.html
 share/doc/neomutt/miscellany.html
-share/doc/neomutt/neomutt-syntax.vim
 share/doc/neomutt/optionalfeatures.html
 share/doc/neomutt/reference.html
 share/doc/neomutt/samples/

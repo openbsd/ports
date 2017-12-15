@@ -1,0 +1,18 @@
+$OpenBSD: patch-doc_Makefile_autosetup,v 1.1 2017/12/15 20:14:24 sthen Exp $
+
+Index: doc/Makefile.autosetup
+--- doc/Makefile.autosetup.orig
++++ doc/Makefile.autosetup
+@@ -48,11 +48,8 @@ doc/manual.html:	doc/manual.xml \
+ 	xsltproc --nonet -o $@ $(SRCDIR)/doc/html.xsl doc/manual.xml
+ 
+ doc/manual.txt: doc/manual.html
+-	-LC_ALL=C w3m -dump -O UTF8 doc/manual.html > $@ || \
+ 	LC_ALL=C lynx -dump -nolist -with_backspaces \
+-		-display_charset=us-ascii doc/manual.html > $@ || \
+-	LC_ALL=C elinks -dump -no-numbering -no-references \
+-		doc/manual.html | sed -e 's,\\001, ,g' > $@
++		-display_charset=us-ascii doc/manual.html > $@
+ 
+ $(CHUNKED_DOCFILES): doc/index.html
+ 
