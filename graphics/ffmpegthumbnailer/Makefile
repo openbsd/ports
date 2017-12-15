@@ -1,29 +1,27 @@
-# $OpenBSD: Makefile,v 1.32 2017/07/26 22:45:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2017/12/15 21:11:42 landry Exp $m
 
 COMMENT=	lightweight video thumbnailer for file managers
 
-DISTNAME=	ffmpegthumbnailer-2.0.8
-REVISION=	5
 CATEGORIES=	graphics multimedia
-MASTER_SITES=	${MASTER_SITE_GOOGLECODE:=ffmpegthumbnailer/}
 
-SHARED_LIBS=	ffmpegthumbnailer	4.1
+GH_ACCOUNT=	dirkvdb
+GH_PROJECT=	ffmpegthumbnailer
+GH_TAGNAME=	2.2.0
 
+SHARED_LIBS=	ffmpegthumbnailer 5.0
 HOMEPAGE=	https://github.com/dirkvdb/ffmpegthumbnailer
+MAINTAINER=	Victor Kukshiev <andrey0bolkonsky@gmail.com>
+MASTER_SITES=	https://github.com/dirkvdb/ffmpegthumbnailer/releases/download/${GH_TAGNAME}/
+EXTRACT_SUFX=	.tar.bz2
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += avcodec avformat avutil c jpeg m png pthread ${COMPILER_LIBCXX}
-WANTLIB += swscale xvidcore
+MODULES =	devel/cmake
+WANTLIB += avcodec avfilter avformat avutil c jpeg m png pthread ${COMPILER_LIBCXX} z
 
 LIB_DEPENDS=	graphics/ffmpeg \
 		graphics/jpeg \
 		graphics/png
-
-CONFIGURE_STYLE= autoconf
-AUTOCONF_VERSION= 2.69
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
