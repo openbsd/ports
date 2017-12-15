@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.24 2017/10/05 20:10:12 fcambus Exp $
+# $OpenBSD: Makefile,v 1.25 2017/12/15 21:42:01 fcambus Exp $
 
 COMMENT =	ncurses Git repository browser
 
-V =		2.3.0
+V =		2.3.1
 DISTNAME =	tig-$V
 
 CATEGORIES =	devel
@@ -14,7 +14,7 @@ MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =	c iconv ncursesw
+WANTLIB +=	c curses iconv
 
 MASTER_SITES =	https://github.com/jonas/tig/releases/download/tig-$V/
 
@@ -30,6 +30,8 @@ ALL_TARGET =	all doc-man doc-html
 
 CONFIGURE_STYLE = gnu
 CONFIGURE_ARGS += --with-libiconv=${LOCALBASE} DOCBOOK2PDF=false
+
+MAKE_FLAGS =	V=1
 
 FAKE_FLAGS =	sysconfdir=${PREFIX}/share/examples/tig
 
