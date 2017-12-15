@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2017/11/16 23:20:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.30 2017/12/15 16:47:34 sthen Exp $
 
 ONLY_FOR_ARCHS =	amd64
 
@@ -19,7 +19,7 @@ COMMENT =		fast implementation of the Python language
 # CPython to build PyPy instead. Note this is slower.
 
 V =			5.3.1
-BOOTSTRAP_V =		${V}
+BOOTSTRAP_V =		${V}-0
 DISTNAME =		pypy2-v${V}-src
 PKGNAME =		pypy-${V}
 BOOTSTRAP-amd64 =	pypy-bootstrap-amd64-${BOOTSTRAP_V}.tar.xz
