@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2017/10/29 19:51:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2017/12/15 01:32:22 jca Exp $
 
 COMMENT=	tty-based e-mail client, Mutt with patches
 
@@ -68,7 +68,7 @@ WANTLIB+=	sasl2
 
 .include <bsd.port.arch.mk>
 
-.if ${ARCH} == arm || ${ARCH} == hppa || ${ARCH} == powerpc
+.if ${MACHINE_ARCH} == hppa || ${MACHINE_ARCH} == powerpc
 LIB_DEPENDS+=	databases/qdbm
 WANTLIB+=	qdbm
 CONFIGURE_ARGS+= --without-kyotocabinet \
