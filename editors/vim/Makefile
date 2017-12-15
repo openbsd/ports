@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.165 2017/11/02 22:07:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.166 2017/12/15 01:44:21 jca Exp $
 
 COMMENT-main=	vi clone, many additional features
 COMMENT-lang=	vi clone, NLS subpackage
@@ -10,6 +10,7 @@ GH_PROJECT=	vim
 GH_TAGNAME=	v$V
 
 PKGNAME-main=	vim-$V
+REVISION-main=	0
 PKGNAME-lang=	vim-lang-$V
 P=		vim${V:R:S/.//}
 CATEGORIES=	editors
@@ -38,7 +39,8 @@ BUILD_PACKAGES := ${BUILD_PACKAGES:N-lang}
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		ac_cv_lib_elf_main=no
 CONFIGURE_ARGS+= --with-tlib="curses" \
 		--enable-multibyte \
 		--enable-cscope
@@ -133,7 +135,7 @@ CONFIGURE_ARGS+= --enable-gui="gtk2" \
 		--enable-xim \
 		--with-x
 WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
-WANTLIB += Xi Xinerama Xpm Xrandr Xrender Xt atk-1.0 cairo elf
+WANTLIB += Xi Xinerama Xpm Xrandr Xrender Xt atk-1.0 cairo
 WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gobject-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pthread z
