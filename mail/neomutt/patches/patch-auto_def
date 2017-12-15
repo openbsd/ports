@@ -1,0 +1,20 @@
+$OpenBSD: patch-auto_def,v 1.1 2017/12/15 20:51:22 sthen Exp $
+
+Index: auto.def
+--- auto.def.orig
++++ auto.def
+@@ -361,12 +361,14 @@ if {[get-define want-smime]} {
+ # SASL
+ if {[get-define want-sasl]} {
+   foreach sasl_lib {sasl2 sasl} {
++    cc-with {-includes sys/types.h} {
+     if {[check-inc-and-lib sasl [opt-val with-sasl $prefix] \
+                            sasl/sasl.h sasl_encode64 $sasl_lib]} {
+       # RHEL6 doesn't have this function yet
+       cc-check-functions sasl_client_done
+       define USE_SASL
+       break
++    }
+     }
+   }
+   if {![get-define USE_SASL]} {

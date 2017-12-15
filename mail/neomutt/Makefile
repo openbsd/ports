@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2017/12/15 20:14:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2017/12/15 20:51:22 sthen Exp $
 
 COMMENT=	tty-based e-mail client, Mutt with patches
 
@@ -41,15 +41,13 @@ CONFIGURE_ARGS+= --mandir="${PREFIX}/man" \
 		--ssl
 
 CONFIGURE_ENV=	autosetup_tclsh="${LOCALBASE}/bin/jimsh" \
-		CPPFLAGS="-I${LOCALBASE}/include" \
+		CFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-## ^^ ???
 
 SYSCONFDIR=	${BASESYSCONFDIR}/mutt
 FAKE_FLAGS=	sysconfdir="${PREFIX}/share/examples/neomutt"
 
 DEBUG+=		-g
-#CONFIGURE_ARGS+= --enable-debug
 
 .if ${FLAVOR:Mgpgme}
 CONFIGURE_ARGS+= --gpgme
@@ -58,7 +56,7 @@ WANTLIB+=	gpgme
 .endif
 
 .if ${FLAVOR:Msasl}
-CONFIGURE_ARGS+= --sasl=${LOCALBASE}
+CONFIGURE_ARGS+= --sasl
 LIB_DEPENDS+=	security/cyrus-sasl2
 WANTLIB+=	sasl2
 .endif
