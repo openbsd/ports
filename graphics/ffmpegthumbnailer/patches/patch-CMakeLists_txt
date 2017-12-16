@@ -1,0 +1,14 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2017/12/16 08:53:34 landry Exp $
+ upstream pulll request: https://github.com/dirkvdb/ffmpegthumbnailer/pull/163
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -178,7 +178,7 @@ IF (ENABLE_SHARED)
+     ADD_LIBRARY(libffmpegthumbnailer SHARED ${LIB_SRC_LIST})
+     TARGET_LINK_LIBRARIES(libffmpegthumbnailer ${FFMPEGTHUMBNAILER_LIBRARIES})
+     SET_TARGET_PROPERTIES(libffmpegthumbnailer PROPERTIES
+-        PREFIX ""
++        OUTPUT_NAME ffmpegthumbnailer
+         VERSION ${FFMPEGTHUMBNAILER_SOVERSION_CURRENT}.${FFMPEGTHUMBNAILER_SOVERSION_REVISION}.${FFMPEGTHUMBNAILER_SOVERSION_AGE}
+         SOVERSION ${FFMPEGTHUMBNAILER_SOVERSION_CURRENT}
+         PUBLIC_HEADER "${LIB_HDRS}"
