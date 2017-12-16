@@ -1,0 +1,18 @@
+$OpenBSD: patch-share_completions_pkg_add_fish,v 1.1.1.1 2017/12/16 05:14:32 abieber Exp $
+
+This can be removed when 3.0 is released:
+https://github.com/fish-shell/fish-shell/pull/4584/
+
+Index: share/completions/pkg_add.fish
+--- share/completions/pkg_add.fish.orig
++++ share/completions/pkg_add.fish
+@@ -0,0 +1,9 @@
++#completion for pkg_add
++
++complete -c pkg_add -o D -d 'failsafe to overwrite' -xa 'allversions arch checksum dontmerge donttie downgrade installed libdepends nonroot paranoid repair scripts SIGNER snap unsigned updatedepends'
++complete -c pkg_add -o V -d 'Turn on stats'
++complete -c pkg_add -o a -d 'Automated package installation'
++complete -c pkg_add -o h -d 'Print help'
++complete -c pkg_add -o u -d 'Update packages'
++complete -c pkg_add -o z -d 'Fuzzy match'
++

@@ -1,0 +1,17 @@
+$OpenBSD: patch-share_completions_pkg_delete_fish,v 1.1.1.1 2017/12/16 05:14:32 abieber Exp $
+
+This can be removed when 3.0 is released:
+https://github.com/fish-shell/fish-shell/pull/4584/
+
+Index: share/completions/pkg_delete.fish
+--- share/completions/pkg_delete.fish.orig
++++ share/completions/pkg_delete.fish
+@@ -0,0 +1,8 @@
++#completion for pkg_delete
++
++
++complete -c pkg_delete -a '(__fish_print_packages)' --description 'Package'
++
++complete -c pkg_delete -o a -d 'Delete unsed deps'
++complete -c pkg_delete -o V -d 'Turn on stats'
++
