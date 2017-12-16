@@ -1,33 +1,34 @@
-# $OpenBSD: Makefile,v 1.43 2017/11/21 00:13:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.44 2017/12/16 10:40:01 kirby Exp $
 
 COMMENT=	graphical multiplayer 3D tank war game
 
-DISTNAME=	bzflag-2.4.2
+V=		2.4.12
+DISTNAME=	bzflag-${V}
 CATEGORIES=	games x11
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=bzflag/}
+MASTER_SITES=	https://download.bzflag.org/bzflag/source/${V}/
 EXTRACT_SUFX=	.tar.bz2
-REVISION=	6
 
-HOMEPAGE=	http://www.bzflag.org/
+HOMEPAGE=	https://www.bzflag.org/
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=   Yes
 
-WANTLIB += GL GLEW GLU ICE SDL SM X11 X11-xcb Xdamage Xext Xfixes Xi Xmu
-WANTLIB += Xt Xxf86vm c cares crypto curl drm expat glapi iconv intl m ncurses
-WANTLIB += nghttp2 pthread sndio ssl ${COMPILER_LIBCXX} usbhid xcb xcb-dri2 xcb-glx
-WANTLIB += z
+WANTLIB += GL GLU SDL2 X11 X11-xcb Xdamage Xext Xfixes Xxf86vm
+WANTLIB += c cares crypto curl drm expat glapi m ncurses
+WANTLIB += nghttp2 pthread sndio ssl usbhid xcb xcb-dri2
+WANTLIB += xcb-glx z ${COMPILER_LIBCXX}
 
-LIB_DEPENDS=	devel/sdl \
-		graphics/glew \
+# c++0x
+COMPILER=	base-clang ports-gcc
+
+LIB_DEPENDS=	devel/sdl2 \
 		net/curl \
 		net/libcares
 RUN_DEPENDS=	devel/desktop-file-utils
 
-USE_GMAKE=	Yes
+SEPARATE_BUILD=	Yes
 LIBTOOL_FLAGS=	--tag=disable-static
-CONFIGURE_STYLE= autoconf
-AUTOCONF_VERSION= 2.68
+CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib" \
 		ac_cv_lib_bind_gethostent=no

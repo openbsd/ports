@@ -1,0 +1,26 @@
+$OpenBSD: patch-src_bzfs_VotingArbiter_h,v 1.1 2017/12/16 10:40:01 kirby Exp $
+C++ Defect Report Core Issue 1344.
+Deducing basic properties of class, such as the presence of a default 
+constructor should not require full program knowledge. Thus, the default
+parameters should be in the class declaration.
+
+clang flags this as an error.
+
+Index: src/bzfs/VotingArbiter.h
+--- src/bzfs/VotingArbiter.h.orig
++++ src/bzfs/VotingArbiter.h
+@@ -89,9 +89,11 @@ class VotingArbiter (protected)
+ public:
+ 
+   /* default constructor */
+-  VotingArbiter(unsigned short int voteTime, unsigned short int vetoTime,
+-		unsigned short int votesRequired, float votePercentage,
+-		unsigned short int voteRepeatTime);
++  VotingArbiter(unsigned short int voteTime = 60, 
++  		unsigned short int vetoTime = 20,
++		unsigned short int votesRequired = 2, 
++		float votePercentage = 50.1,
++		unsigned short int voteRepeatTime = 300);
+   /* default copy constructor */
+   VotingArbiter(const VotingArbiter& arbiter);
+   ~VotingArbiter(void);
