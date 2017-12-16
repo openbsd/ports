@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_zlib_BUILD_gn,v 1.4 2017/10/25 13:47:07 robert Exp $
+$OpenBSD: patch-third_party_zlib_BUILD_gn,v 1.5 2017/12/16 15:34:40 robert Exp $
 
 Index: third_party/zlib/BUILD.gn
 --- third_party/zlib/BUILD.gn.orig
 +++ third_party/zlib/BUILD.gn
-@@ -133,7 +133,7 @@ static_library("minizip") {
+@@ -193,7 +193,7 @@ static_library("minizip") {
        "contrib/minizip/iowin32.h",
      ]
    }

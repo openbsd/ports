@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_task_manager_sampling_task_group_cc,v 1.5 2017/10/25 13:47:07 robert Exp $
+$OpenBSD: patch-chrome_browser_task_manager_sampling_task_group_cc,v 1.6 2017/12/16 15:34:40 robert Exp $
 
 Index: chrome/browser/task_manager/sampling/task_group.cc
 --- chrome/browser/task_manager/sampling/task_group.cc.orig
@@ -11,10 +11,10 @@ Index: chrome/browser/task_manager/sampling/task_group.cc
 +#if defined(OS_LINUX) || defined(OS_BSD)
      REFRESH_TYPE_FD_COUNT |
  #endif  // defined(OS_LINUX)
- #if !defined(DISABLE_NACL)
+ #if BUILDFLAG(ENABLE_NACL)
 @@ -103,7 +103,7 @@ TaskGroup::TaskGroup(
        nacl_debug_stub_port_(nacl::kGdbDebugStubPortUnknown),
- #endif  // !defined(DISABLE_NACL)
+ #endif  // BUILDFLAG(ENABLE_NACL)
        idle_wakeups_per_second_(-1),
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)

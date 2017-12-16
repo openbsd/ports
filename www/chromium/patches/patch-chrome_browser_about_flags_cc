@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_about_flags_cc,v 1.38 2017/10/25 13:47:07 robert Exp $
+$OpenBSD: patch-chrome_browser_about_flags_cc,v 1.39 2017/12/16 15:34:39 robert Exp $
 
 Index: chrome/browser/about_flags.cc
 --- chrome/browser/about_flags.cc.orig
 +++ chrome/browser/about_flags.cc
-@@ -886,7 +886,7 @@ const FeatureEntry::FeatureVariation
+@@ -878,7 +878,7 @@ const FeatureEntry::FeatureVariation
          {"Learning", kSpeculativeResourcePrefetchingLearning,
           arraysize(kSpeculativeResourcePrefetchingLearning), nullptr}};
  
@@ -12,7 +12,7 @@ Index: chrome/browser/about_flags.cc
  const FeatureEntry::FeatureParam kPauseBackgroundTabsMinimalEngagment[] = {
      {pausetabs::kFeatureName, pausetabs::kModeParamMinimal}};
  
-@@ -1879,7 +1879,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -1875,7 +1875,7 @@ const FeatureEntry kFeatureEntries[] = {
       ENABLE_DISABLE_VALUE_TYPE(switches::kEnableTranslateNewUX,
                                 switches::kDisableTranslateNewUX)},
  #endif  // OS_MACOSX
@@ -21,7 +21,7 @@ Index: chrome/browser/about_flags.cc
      {"translate-2016q2-ui", flag_descriptions::kTranslate2016q2UiName,
       flag_descriptions::kTranslate2016q2UiDescription,
       kOsCrOS | kOsWin | kOsLinux,
-@@ -2389,7 +2389,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -2407,7 +2407,7 @@ const FeatureEntry kFeatureEntries[] = {
       flag_descriptions::kEnableMaterialDesignExtensionsDescription, kOsDesktop,
       FEATURE_VALUE_TYPE(features::kMaterialDesignExtensions)},
  #endif  // ENABLE_EXTENSIONS
@@ -30,16 +30,16 @@ Index: chrome/browser/about_flags.cc
      {"enable-input-ime-api", flag_descriptions::kEnableInputImeApiName,
       flag_descriptions::kEnableInputImeApiDescription, kOsWin | kOsLinux,
       ENABLE_DISABLE_VALUE_TYPE(switches::kEnableInputImeAPI,
-@@ -2991,7 +2991,7 @@ const FeatureEntry kFeatureEntries[] = {
-      flag_descriptions::kNewOmniboxAnswerTypesDescription, kOsAll,
-      FEATURE_VALUE_TYPE(omnibox::kNewOmniboxAnswerTypes)},
+@@ -3008,7 +3008,7 @@ const FeatureEntry kFeatureEntries[] = {
+      flag_descriptions::kLeftToRightUrlsDescription, kOsDesktop,
+      FEATURE_VALUE_TYPE(features::kLeftToRightUrls)},
  
 -#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN)
 +#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN) || defined(OS_BSD)
      {"omnibox-entity-suggestions",
       flag_descriptions::kOmniboxEntitySuggestionsName,
       flag_descriptions::kOmniboxEntitySuggestionsDescription, kOsDesktop,
-@@ -3069,7 +3069,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -3086,7 +3086,7 @@ const FeatureEntry kFeatureEntries[] = {
       FEATURE_VALUE_TYPE(chrome::android::kCustomContextMenu)},
  #endif  // OS_ANDROID
  

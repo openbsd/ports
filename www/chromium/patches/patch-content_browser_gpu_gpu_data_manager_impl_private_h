@@ -1,9 +1,9 @@
-$OpenBSD: patch-content_browser_gpu_gpu_data_manager_impl_private_h,v 1.4 2017/10/25 13:47:07 robert Exp $
+$OpenBSD: patch-content_browser_gpu_gpu_data_manager_impl_private_h,v 1.5 2017/12/16 15:34:40 robert Exp $
 
 Index: content/browser/gpu/gpu_data_manager_impl_private.h
 --- content/browser/gpu/gpu_data_manager_impl_private.h.orig
 +++ content/browser/gpu/gpu_data_manager_impl_private.h
-@@ -154,7 +154,7 @@ class CONTENT_EXPORT GpuDataManagerImplPrivate {
+@@ -155,7 +155,7 @@ class CONTENT_EXPORT GpuDataManagerImplPrivate {
                             UnblockOtherDomainFrom3DAPIs);
    FRIEND_TEST_ALL_PREFIXES(GpuDataManagerImplPrivateTest,
                             UnblockThisDomainFrom3DAPIs);

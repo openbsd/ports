@@ -1,9 +1,9 @@
-$OpenBSD: patch-device_serial_BUILD_gn,v 1.4 2017/10/25 13:47:07 robert Exp $
+$OpenBSD: patch-device_serial_BUILD_gn,v 1.5 2017/12/16 15:34:40 robert Exp $
 
 Index: device/serial/BUILD.gn
 --- device/serial/BUILD.gn.orig
 +++ device/serial/BUILD.gn
-@@ -51,6 +51,13 @@ if (is_win || is_linux || is_mac) {
+@@ -58,6 +58,13 @@ if (is_win || is_linux || is_mac) {
        "//third_party/re2",
      ]
  

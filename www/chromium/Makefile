@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.353 2017/12/07 11:12:05 robert Exp $
-
-ONLY_FOR_ARCHS=		amd64
+# $OpenBSD: Makefile,v 1.354 2017/12/16 15:34:39 robert Exp $
 
 .include <bsd.port.arch.mk>
 
@@ -10,9 +8,7 @@ DPB_PROPERTIES=		parallel
 
 COMMENT=		Chromium browser
 
-V=			62.0.3202.94
-
-REVISION=		1
+V=			63.0.3239.108
 
 DISTNAME=		chromium-${V}
 
@@ -63,6 +59,7 @@ WANTLIB += X11-xcb xcb
 WANTLIB += GL expat
 WANTLIB += atk-1.0 cairo gdk-3 gtk-3 pango-1.0
 WANTLIB += pangocairo-1.0
+WANTLIB += Xcomposite Xdamage
 
 RUN_DEPENDS=	devel/xdg-utils \
 		devel/desktop-file-utils \
@@ -100,6 +97,8 @@ BUILDTYPE=	Debug
 BUILDTYPE=	Release
 .endif
 
+SUBST_VARS+=	WRKSRC
+
 ALL_TARGET=	chrome chromedriver
 TEST_TARGET=	base_unittests
 
@@ -116,7 +115,7 @@ GN_SYSTEM_LIBS=	libevent \
 
 GN_ARGS=	enable_nacl=false \
 		is_debug=false \
-		enable_webrtc=false \
+		enable_webrtc=true \
 		enable_one_click_signin=true \
 		enable_remoting=false \
 		use_kerberos=false \
@@ -177,6 +176,9 @@ do-configure:
 	@cd ${WRKSRC} && env -i ${CONFIGURE_ENV} ${WRKSRC}/out/Release/gn \
 		gen --args="${GN_ARGS}" out/${BUILDTYPE}
 
+pre-build:
+	${SUBST_CMD} ${WRKSRC}/build/gn_run_binary.py
+	
 do-build:
 	@cd ${WRKSRC} && env -i ${MAKE_ENV} ninja \
 		-j ${MAKE_JOBS} -C out/${BUILDTYPE} ${ALL_TARGET}
@@ -186,8 +188,9 @@ do-install:
 	${INSTALL_PROGRAM} ${BUILDDIR}/chrome ${PREFIX}/chrome
 	${SUBST_PROGRAM} ${FILESDIR}/chrome ${PREFIX}/bin/chrome
 	${INSTALL_PROGRAM} ${BUILDDIR}/chromedriver ${PREFIX}/bin/chromedriver
-	${INSTALL_MAN} ${BUILDDIR}/chrome.1 ${PREFIX}/man/man1
-
+	${INSTALL_MAN} ${WRKSRC}/chrome/app/resources/manpage.1.in ${PREFIX}/man/man1/chrome.1
+	@perl -pi -e "s,\@\@PACKAGE\@\@,chromium,g;s,\@\@MENUNAME\@\@,Chromium Web Browser,g" \
+		${PREFIX}/man/man1/chrome.1
 	${INSTALL_DATA} ${BUILDDIR}/*.pak ${PREFIX}/chrome
 
 	${INSTALL_DATA_DIR} ${PREFIX}/chrome/locales
@@ -197,9 +200,21 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/chrome/resources
 	@cp -Rp ${BUILDDIR}/resources/* ${PREFIX}/chrome/resources
 	@chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/chrome/resources
-.for f in protoc icudtl.dat mksnapshot natives_blob.bin snapshot_blob.bin
+.for f in protoc icudtl.dat mksnapshot natives_blob.bin snapshot_blob.bin v8_context_snapshot.bin
 	${INSTALL_DATA} ${BUILDDIR}/${f} ${PREFIX}/chrome
 .endfor
+
+	# ANGLE
+.for f in libEGL.so libGLESv2.so
+	${INSTALL_DATA} ${BUILDDIR}/${f} ${PREFIX}/chrome
+.endfor
+
+	# SwiftShader
+	${INSTALL_DATA_DIR} ${PREFIX}/chrome/swiftshader
+.for f in libEGL.so libGLESv2.so
+	${INSTALL_DATA} ${BUILDDIR}/swiftshader/${f} ${PREFIX}/chrome/swiftshader
+.endfor
+
 .for s in 22 24 48 64 128 256
 	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/${s}x${s}/apps
 	${INSTALL_DATA} ${WRKSRC}/chrome/app/theme/chromium/product_logo_${s}.png \

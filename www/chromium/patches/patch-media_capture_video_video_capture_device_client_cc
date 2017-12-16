@@ -1,8 +1,8 @@
-$OpenBSD: patch-media_capture_video_video_capture_device_client_cc,v 1.7 2017/09/09 19:16:43 robert Exp $
+$OpenBSD: patch-media_capture_video_video_capture_device_client_cc,v 1.8 2017/12/16 15:34:40 robert Exp $
 Index: media/capture/video/video_capture_device_client.cc
 --- media/capture/video/video_capture_device_client.cc.orig
 +++ media/capture/video/video_capture_device_client.cc
-@@ -252,7 +252,7 @@ void VideoCaptureDeviceClient::OnIncomingCapturedData(
+@@ -253,7 +253,7 @@ void VideoCaptureDeviceClient::OnIncomingCapturedData(
  // see http://linuxtv.org/downloads/v4l-dvb-apis/packed-rgb.html.
  // Windows RGB24 defines blue at lowest byte,
  // see https://msdn.microsoft.com/en-us/library/windows/desktop/dd407253

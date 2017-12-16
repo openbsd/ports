@@ -1,12 +1,12 @@
-$OpenBSD: patch-tools_gn_args_cc,v 1.6 2017/07/27 14:23:46 robert Exp $
+$OpenBSD: patch-tools_gn_args_cc,v 1.7 2017/12/16 15:34:40 robert Exp $
 
 Index: tools/gn/args.cc
 --- tools/gn/args.cc.orig
 +++ tools/gn/args.cc
-@@ -304,6 +304,8 @@ void Args::SetSystemVarsLocked(Scope* dest) const {
-   os = "netbsd";
- #elif defined(OS_AIX)
+@@ -306,6 +306,8 @@ void Args::SetSystemVarsLocked(Scope* dest) const {
    os = "aix";
+ #elif defined(OS_FUCHSIA)
+   os = "fuchsia";
 +#elif defined(OS_OPENBSD)
 +  os = "openbsd";
  #else

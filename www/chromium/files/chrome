@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: chrome,v 1.14 2016/06/02 21:03:38 sthen Exp $
+# $OpenBSD: chrome,v 1.15 2017/12/16 15:34:39 robert Exp $
 
 DATASIZE="716800"
 OPENFILES="400"
@@ -46,5 +46,14 @@ fi
 # https://code.google.com/p/chromium/issues/detail?id=395446
 #
 [ -z ${LANG} ] && _l=en_US.UTF-8 || _l=${LANG}
+
+# Always use our versions of ffmpeg libs.
+# This also makes RPMs find the compatibly-named library symlinks.
+if [[ -n "$LD_LIBRARY_PATH" ]]; then
+	LD_LIBRARY_PATH="${TRUEPREFIX}/chrome:${TRUEPREFIX}/chrome/lib:$LD_LIBRARY_PATH"
+else
+	LD_LIBRARY_PATH="${TRUEPREFIX}/chrome:${TRUEPREFIX}/chrome/lib"
+fi
+export LD_LIBRARY_PATH
 
 LANG=${_l} exec "${TRUEPREFIX}/chrome/chrome" "${@}"

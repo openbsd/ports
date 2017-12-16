@@ -1,4 +1,4 @@
-$OpenBSD: patch-net_proxy_proxy_config_service_linux_cc,v 1.11 2017/09/09 19:16:43 robert Exp $
+$OpenBSD: patch-net_proxy_proxy_config_service_linux_cc,v 1.12 2017/12/16 15:34:40 robert Exp $
 Index: net/proxy/proxy_config_service_linux.cc
 --- net/proxy/proxy_config_service_linux.cc.orig
 +++ net/proxy/proxy_config_service_linux.cc
@@ -28,7 +28,7 @@ Index: net/proxy/proxy_config_service_linux.cc
  
  }  // namespace
  
-@@ -1559,8 +1563,10 @@ ProxyConfigServiceLinux::Delegate::Delegate(
+@@ -1560,8 +1564,10 @@ ProxyConfigServiceLinux::Delegate::Delegate(
      case base::nix::DESKTOP_ENVIRONMENT_KDE3:
      case base::nix::DESKTOP_ENVIRONMENT_KDE4:
      case base::nix::DESKTOP_ENVIRONMENT_KDE5:

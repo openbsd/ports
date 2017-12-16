@@ -1,9 +1,9 @@
-$OpenBSD: patch-content_renderer_render_thread_impl_cc,v 1.22 2017/10/25 13:47:07 robert Exp $
+$OpenBSD: patch-content_renderer_render_thread_impl_cc,v 1.23 2017/12/16 15:34:40 robert Exp $
 
 Index: content/renderer/render_thread_impl.cc
 --- content/renderer/render_thread_impl.cc.orig
 +++ content/renderer/render_thread_impl.cc
-@@ -221,12 +221,21 @@
+@@ -219,12 +219,21 @@
  #include "content/common/external_ipc_dumper.h"
  #endif
  
@@ -25,7 +25,7 @@ Index: content/renderer/render_thread_impl.cc
  using base::ThreadRestrictions;
  using blink::WebDocument;
  using blink::WebFrame;
-@@ -927,7 +936,7 @@ void RenderThreadImpl::Init(
+@@ -929,7 +938,7 @@ void RenderThreadImpl::Init(
    GetConnector()->BindInterface(mojom::kBrowserServiceName,
                                  mojo::MakeRequest(&storage_partition_service_));
  
@@ -34,16 +34,16 @@ Index: content/renderer/render_thread_impl.cc
    ChildProcess::current()->SetIOThreadPriority(base::ThreadPriority::DISPLAY);
    ChildThreadImpl::current()->SetThreadPriority(
        categorized_worker_pool_->background_worker_thread_id(),
-@@ -1143,7 +1152,7 @@ void RenderThreadImpl::InitializeCompositorThread() {
-   compositor_task_runner_->PostTask(
+@@ -1147,7 +1156,7 @@ void RenderThreadImpl::InitializeCompositorThread() {
        FROM_HERE,
-       base::Bind(base::IgnoreResult(&ThreadRestrictions::SetIOAllowed), false));
+       base::BindOnce(base::IgnoreResult(&ThreadRestrictions::SetIOAllowed),
+                      false));
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
    ChildThreadImpl::current()->SetThreadPriority(compositor_thread_->ThreadId(),
                                                  base::ThreadPriority::DISPLAY);
  #endif
-@@ -1455,7 +1464,7 @@ media::GpuVideoAcceleratorFactories* RenderThreadImpl:
+@@ -1458,7 +1467,7 @@ media::GpuVideoAcceleratorFactories* RenderThreadImpl:
    const bool enable_video_accelerator =
        !cmd_line->HasSwitch(switches::kDisableAcceleratedVideoDecode);
    const bool enable_gpu_memory_buffer_video_frames =

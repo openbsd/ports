@@ -1,13 +1,13 @@
-$OpenBSD: patch-content_zygote_zygote_main_linux_cc,v 1.4 2017/10/08 16:02:46 robert Exp $
+$OpenBSD: patch-content_zygote_zygote_main_linux_cc,v 1.5 2017/12/16 15:34:40 robert Exp $
 Index: content/zygote/zygote_main_linux.cc
 --- content/zygote/zygote_main_linux.cc.orig
 +++ content/zygote/zygote_main_linux.cc
-@@ -131,7 +131,7 @@ static void ProxyLocaltimeCallToBrowser(time_t input, 
+@@ -139,7 +139,7 @@ bool ReadTimeStruct(base::PickleIterator* iter,
    } else {
      base::AutoLock lock(g_timezones_lock.Get());
      auto ret_pair = g_timezones.Get().insert(timezone);
 -    output->tm_zone = ret_pair.first->c_str();
 +    output->tm_zone = (char *)ret_pair.first->c_str();
    }
- }
  
+   return true;

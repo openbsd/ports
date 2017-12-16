@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_views_mus_aura_init_cc,v 1.8 2017/09/09 19:16:43 robert Exp $
+$OpenBSD: patch-ui_views_mus_aura_init_cc,v 1.9 2017/12/16 15:34:40 robert Exp $
 
 Index: ui/views/mus/aura_init.cc
 --- ui/views/mus/aura_init.cc.orig
@@ -21,8 +21,8 @@ Index: ui/views/mus/aura_init.cc
    if (font_loader_.get()) {
      SkFontConfigInterface::SetGlobal(nullptr);
      // FontLoader is ref counted. We need to explicitly shutdown the background
-@@ -105,7 +105,7 @@ bool AuraInit::Init(service_manager::Connector* connec
-     return false;
+@@ -112,7 +112,7 @@ bool AuraInit::Init(service_manager::Connector* connec
+   }
  
  // Initialize the skia font code to go ask fontconfig underneath.
 -#if defined(OS_LINUX)

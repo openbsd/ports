@@ -1,8 +1,9 @@
-$OpenBSD: patch-chrome_browser_browser_resources_grd,v 1.38 2017/10/25 13:47:07 robert Exp $
+$OpenBSD: patch-chrome_browser_browser_resources_grd,v 1.39 2017/12/16 15:34:39 robert Exp $
+
 Index: chrome/browser/browser_resources.grd
 --- chrome/browser/browser_resources.grd.orig
 +++ chrome/browser/browser_resources.grd
-@@ -416,7 +416,7 @@
+@@ -370,7 +370,7 @@
          <include name="IDR_ABOUT_VOICESEARCH_JS" file="resources\about_voicesearch.js" type="BINDATA" />
          <include name="IDR_PLUGIN_DB_JSON" file="resources\plugin_metadata\plugins_chromeos.json" type="BINDATA" />
        </if>
@@ -11,10 +12,10 @@ Index: chrome/browser/browser_resources.grd
          <include name="IDR_PLUGIN_DB_JSON" file="resources\plugin_metadata\plugins_linux.json" type="BINDATA" />
        </if>
        <if expr="is_android">
-@@ -672,7 +672,7 @@
-       <if expr="not is_ios">
-         <include name="IDR_SSL_ERROR_ASSISTANT_PB" file="${root_gen_dir}/chrome/browser/resources/ssl/ssl_error_assistant/ssl_error_assistant.pb" use_base_dir="false" type="BINDATA" />
+@@ -620,7 +620,7 @@
+         <include name="IDR_WELCOME_WIN10_PIN_SMALL_WEBP" file="resources\welcome\win10\pin-small.webp" type="BINDATA" />
        </if>
+       <include name="IDR_SSL_ERROR_ASSISTANT_PB" file="${root_gen_dir}/chrome/browser/resources/ssl/ssl_error_assistant/ssl_error_assistant.pb" use_base_dir="false" type="BINDATA" />
 -      <if expr="is_android or is_linux">
 +      <if expr="is_android or is_posix">
          <include name="IDR_SANDBOX_INTERNALS_HTML" file="resources\sandbox_internals\sandbox_internals.html" flattenhtml="true" allowexternalscript="true" type="BINDATA" compress="gzip" />

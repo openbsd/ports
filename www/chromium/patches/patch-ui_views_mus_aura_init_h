@@ -1,10 +1,10 @@
-$OpenBSD: patch-ui_views_mus_aura_init_h,v 1.5 2017/09/09 19:16:43 robert Exp $
+$OpenBSD: patch-ui_views_mus_aura_init_h,v 1.6 2017/12/16 15:34:40 robert Exp $
 Index: ui/views/mus/aura_init.h
 --- ui/views/mus/aura_init.h.orig
 +++ ui/views/mus/aura_init.h
-@@ -88,7 +88,7 @@ class VIEWS_MUS_EXPORT AuraInit {
-                            const std::string& resource_file,
-                            const std::string& resource_file_200);
+@@ -90,7 +90,7 @@ class VIEWS_MUS_EXPORT AuraInit {
+                            const std::string& resource_file_200,
+                            bool register_path_provider);
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)

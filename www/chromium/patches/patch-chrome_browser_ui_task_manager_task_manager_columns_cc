@@ -1,7 +1,8 @@
-$OpenBSD: patch-chrome_browser_ui_task_manager_task_manager_columns_cc,v 1.5 2017/04/28 14:21:00 robert Exp $
---- chrome/browser/ui/task_manager/task_manager_columns.cc.orig.port	Fri Apr 28 07:28:44 2017
-+++ chrome/browser/ui/task_manager/task_manager_columns.cc	Fri Apr 28 07:28:54 2017
-@@ -80,7 +80,7 @@ const TableColumnData kColumns[] = {
+$OpenBSD: patch-chrome_browser_ui_task_manager_task_manager_columns_cc,v 1.6 2017/12/16 15:34:40 robert Exp $
+Index: chrome/browser/ui/task_manager/task_manager_columns.cc
+--- chrome/browser/ui/task_manager/task_manager_columns.cc.orig
++++ chrome/browser/ui/task_manager/task_manager_columns.cc
+@@ -81,7 +81,7 @@ const TableColumnData kColumns[] = {
      {IDS_TASK_MANAGER_IDLE_WAKEUPS_COLUMN, ui::TableColumn::RIGHT, -1, 0,
       arraysize("idlewakeups") * kCharWidth, -1, true, false, false},
  

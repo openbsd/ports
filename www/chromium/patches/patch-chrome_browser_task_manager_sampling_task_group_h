@@ -1,17 +1,17 @@
-$OpenBSD: patch-chrome_browser_task_manager_sampling_task_group_h,v 1.4 2017/09/09 19:16:43 robert Exp $
+$OpenBSD: patch-chrome_browser_task_manager_sampling_task_group_h,v 1.5 2017/12/16 15:34:40 robert Exp $
 Index: chrome/browser/task_manager/sampling/task_group.h
 --- chrome/browser/task_manager/sampling/task_group.h.orig
 +++ chrome/browser/task_manager/sampling/task_group.h
-@@ -99,7 +99,7 @@ class TaskGroup {
+@@ -102,7 +102,7 @@ class TaskGroup {
    int nacl_debug_stub_port() const { return nacl_debug_stub_port_; }
- #endif  // !defined(DISABLE_NACL)
+ #endif  // BUILDFLAG(ENABLE_NACL)
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
    int open_fd_count() const { return open_fd_count_; }
  #endif  // defined(OS_LINUX)
  
-@@ -127,7 +127,7 @@ class TaskGroup {
+@@ -130,7 +130,7 @@ class TaskGroup {
  
    void OnIdleWakeupsRefreshDone(int idle_wakeups_per_second);
  
@@ -20,9 +20,9 @@ Index: chrome/browser/task_manager/sampling/task_group.h
    void OnOpenFdCountRefreshDone(int open_fd_count);
  #endif  // defined(OS_LINUX)
  
-@@ -182,7 +182,7 @@ class TaskGroup {
+@@ -185,7 +185,7 @@ class TaskGroup {
    int nacl_debug_stub_port_;
- #endif  // !defined(DISABLE_NACL)
+ #endif  // BUILDFLAG(ENABLE_NACL)
    int idle_wakeups_per_second_;
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)

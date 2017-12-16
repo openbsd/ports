@@ -1,4 +1,4 @@
-$OpenBSD: patch-net_socket_udp_socket_posix_cc,v 1.6 2017/10/25 13:47:07 robert Exp $
+$OpenBSD: patch-net_socket_udp_socket_posix_cc,v 1.7 2017/12/16 15:34:40 robert Exp $
 Index: net/socket/udp_socket_posix.cc
 --- net/socket/udp_socket_posix.cc.orig
 +++ net/socket/udp_socket_posix.cc
@@ -11,7 +11,7 @@ Index: net/socket/udp_socket_posix.cc
  
  // Returns IPv4 address in network order.
  int GetIPv4AddressFromIndex(int socket, uint32_t index, uint32_t* address) {
-@@ -822,7 +822,7 @@ int UDPSocketPosix::SetMulticastOptions() {
+@@ -830,7 +830,7 @@ int UDPSocketPosix::SetMulticastOptions() {
    if (multicast_interface_ != 0) {
      switch (addr_family_) {
        case AF_INET: {
@@ -20,7 +20,7 @@ Index: net/socket/udp_socket_posix.cc
          ip_mreqn mreq;
          mreq.imr_ifindex = multicast_interface_;
          mreq.imr_address.s_addr = htonl(INADDR_ANY);
-@@ -897,7 +897,7 @@ int UDPSocketPosix::JoinGroup(const IPAddress& group_a
+@@ -905,7 +905,7 @@ int UDPSocketPosix::JoinGroup(const IPAddress& group_a
        if (addr_family_ != AF_INET)
          return ERR_ADDRESS_INVALID;
  

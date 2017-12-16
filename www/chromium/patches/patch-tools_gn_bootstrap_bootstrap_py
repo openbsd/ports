@@ -1,4 +1,4 @@
-$OpenBSD: patch-tools_gn_bootstrap_bootstrap_py,v 1.11 2017/10/25 13:47:07 robert Exp $
+$OpenBSD: patch-tools_gn_bootstrap_bootstrap_py,v 1.12 2017/12/16 15:34:40 robert Exp $
 
 Index: tools/gn/bootstrap/bootstrap.py
 --- tools/gn/bootstrap/bootstrap.py.orig
@@ -13,15 +13,15 @@ Index: tools/gn/bootstrap/bootstrap.py
  
  def check_call(cmd, **kwargs):
    logging.debug('Running: %s', ' '.join(cmd))
-@@ -577,7 +578,6 @@ def write_gn_ninja(path, root_gen_dir, options):
-       'base/tracked_objects.cc',
-       'base/tracking_info.cc',
+@@ -576,7 +577,6 @@ def write_gn_ninja(path, root_gen_dir, options):
+       'base/trace_event/trace_log_constants.cc',
+       'base/trace_event/tracing_agent.cc',
        'base/unguessable_token.cc',
 -      'base/value_iterators.cc',
        'base/values.cc',
-       'base/value_iterators.cc',
        'base/vlog.cc',
-@@ -640,6 +640,39 @@ def write_gn_ninja(path, root_gen_dir, options):
+   ])
+@@ -633,6 +633,40 @@ def write_gn_ninja(path, root_gen_dir, options):
          'cflags': cflags + ['-DHAVE_CONFIG_H'],
      }
  
@@ -36,7 +36,6 @@ Index: tools/gn/bootstrap/bootstrap.py
 +        'tool': 'cxx',
 +    }
 +    static_libraries['base']['sources'].extend([
-+        'base/metrics/field_trial_params.cc',
 +        'base/memory/shared_memory_handle_posix.cc',
 +        'base/memory/shared_memory_posix.cc',
 +        'base/process/memory_stubs.cc',
@@ -47,9 +46,11 @@ Index: tools/gn/bootstrap/bootstrap.py
 +        'base/process/process_metrics_openbsd.cc',
 +        'base/strings/sys_string_conversions_posix.cc',
 +        'base/sys_info_openbsd.cc',
-+        'base/task_scheduler/scheduler_worker_pool.cc',
-+        'base/threading/scoped_blocking_call.cc',
 +        'base/threading/platform_thread_linux.cc',
++        'base/synchronization/waitable_event_posix.cc',
++        'base/time/time_exploded_posix.cc',
++        'base/time/time_now_posix.cc',
++        'base/value_iterators.cc',
 +    ])
 +    static_libraries['libevent']['include_dirs'].extend([
 +        os.path.join(SRC_ROOT, 'base', 'third_party', 'libevent', 'openbsd')
@@ -61,7 +62,7 @@ Index: tools/gn/bootstrap/bootstrap.py
    if is_linux or is_aix:
      ldflags.extend(['-pthread'])
  
-@@ -676,17 +709,6 @@ def write_gn_ninja(path, root_gen_dir, options):
+@@ -671,17 +705,6 @@ def write_gn_ninja(path, root_gen_dir, options):
        ])
        static_libraries['libevent']['sources'].extend([
           'base/third_party/libevent/epoll.c',

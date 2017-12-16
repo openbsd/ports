@@ -1,8 +1,8 @@
-$OpenBSD: patch-chrome_browser_download_download_commands_cc,v 1.14 2017/09/09 19:16:43 robert Exp $
+$OpenBSD: patch-chrome_browser_download_download_commands_cc,v 1.15 2017/12/16 15:34:39 robert Exp $
 Index: chrome/browser/download/download_commands.cc
 --- chrome/browser/download/download_commands.cc.orig
 +++ chrome/browser/download/download_commands.cc
-@@ -222,7 +222,7 @@ bool DownloadCommands::IsCommandChecked(Command comman
+@@ -247,7 +247,7 @@ bool DownloadCommands::IsCommandChecked(Command comman
        return download_item_->GetOpenWhenComplete() ||
               download_crx_util::IsExtensionDownload(*download_item_);
      case ALWAYS_OPEN_TYPE:
@@ -11,7 +11,7 @@ Index: chrome/browser/download/download_commands.cc
        if (CanOpenPdfInSystemViewer()) {
          DownloadPrefs* prefs = DownloadPrefs::FromBrowserContext(
              download_item_->GetBrowserContext());
-@@ -266,7 +266,7 @@ void DownloadCommands::ExecuteCommand(Command command)
+@@ -291,7 +291,7 @@ void DownloadCommands::ExecuteCommand(Command command)
        bool is_checked = IsCommandChecked(ALWAYS_OPEN_TYPE);
        DownloadPrefs* prefs = DownloadPrefs::FromBrowserContext(
            download_item_->GetBrowserContext());
@@ -20,7 +20,7 @@ Index: chrome/browser/download/download_commands.cc
        if (CanOpenPdfInSystemViewer()) {
          prefs->SetShouldOpenPdfInSystemReader(!is_checked);
          DownloadItemModel(download_item_)
-@@ -379,7 +379,7 @@ Browser* DownloadCommands::GetBrowser() const {
+@@ -404,7 +404,7 @@ Browser* DownloadCommands::GetBrowser() const {
    return browser_displayer.browser();
  }
  
@@ -29,7 +29,7 @@ Index: chrome/browser/download/download_commands.cc
  bool DownloadCommands::IsDownloadPdf() const {
    base::FilePath path = download_item_->GetTargetFilePath();
    return path.MatchesExtension(FILE_PATH_LITERAL(".pdf"));
-@@ -396,7 +396,7 @@ bool DownloadCommands::CanOpenPdfInSystemViewer() cons
+@@ -421,7 +421,7 @@ bool DownloadCommands::CanOpenPdfInSystemViewer() cons
    return IsDownloadPdf() &&
           (IsAdobeReaderDefaultPDFViewer() ? is_adobe_pdf_reader_up_to_date
                                            : true);

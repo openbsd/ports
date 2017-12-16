@@ -1,10 +1,10 @@
-$OpenBSD: patch-content_browser_utility_process_host_impl_cc,v 1.12 2017/10/25 13:47:07 robert Exp $
+$OpenBSD: patch-content_browser_utility_process_host_impl_cc,v 1.13 2017/12/16 15:34:40 robert Exp $
 
 Index: content/browser/utility_process_host_impl.cc
 --- content/browser/utility_process_host_impl.cc.orig
 +++ content/browser/utility_process_host_impl.cc
-@@ -34,7 +34,7 @@
- #include "services/service_manager/public/cpp/interface_provider.h"
+@@ -35,7 +35,7 @@
+ #include "services/service_manager/sandbox/sandbox_type.h"
  #include "ui/base/ui_base_switches.h"
  
 -#if defined(OS_POSIX) && !defined(OS_ANDROID) && !defined(OS_MACOSX)
@@ -12,12 +12,12 @@ Index: content/browser/utility_process_host_impl.cc
  #include "content/public/browser/zygote_handle_linux.h"
  #endif  // defined(OS_POSIX) && !defined(OS_ANDROID) && !defined(OS_MACOSX)
  
-@@ -90,7 +90,7 @@ class UtilitySandboxedProcessLauncherDelegate
+@@ -96,7 +96,7 @@ class UtilitySandboxedProcessLauncherDelegate
  
  #elif defined(OS_POSIX)
  
 -#if !defined(OS_MACOSX) && !defined(OS_ANDROID) && !defined(OS_FUCHSIA)
 +#if !defined(OS_MACOSX) && !defined(OS_ANDROID) && !defined(OS_FUCHSIA) && !defined(OS_BSD)
    ZygoteHandle GetZygote() override {
-     if (IsUnsandboxedSandboxType(sandbox_type_) || !exposed_dir_.empty())
-       return nullptr;
+     if (service_manager::IsUnsandboxedSandboxType(sandbox_type_) ||
+         !exposed_dir_.empty()) {

@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_ui_webui_about_ui_cc,v 1.42 2017/09/09 19:16:43 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_webui_about_ui_cc,v 1.43 2017/12/16 15:34:40 robert Exp $
 
 Index: chrome/browser/ui/webui/about_ui.cc
 --- chrome/browser/ui/webui/about_ui.cc.orig
 +++ chrome/browser/ui/webui/about_ui.cc
-@@ -420,7 +420,7 @@ std::string ChromeURLs() {
+@@ -330,7 +330,7 @@ std::string ChromeURLs() {
    return html;
  }
  
@@ -12,7 +12,7 @@ Index: chrome/browser/ui/webui/about_ui.cc
  
  const char kAboutDiscardsRunCommand[] = "run";
  const char kAboutDiscardsSkipUnloadHandlersCommand[] = "skip_unload_handlers";
-@@ -564,10 +564,13 @@ std::string AboutDiscards(const std::string& path) {
+@@ -474,10 +474,13 @@ std::string AboutDiscards(const std::string& path) {
        "<a href='%s%s'>Discard tab now (safely)</a>",
        chrome::kChromeUIDiscardsURL, kAboutDiscardsRunCommand));
  
@@ -26,7 +26,7 @@ Index: chrome/browser/ui/webui/about_ui.cc
    // Start with summary statistics.
    output.append(AddStringRow(
        "Total", base::IntToString(meminfo.total / 1024)));
-@@ -599,6 +602,7 @@ std::string AboutDiscards(const std::string& path) {
+@@ -509,6 +512,7 @@ std::string AboutDiscards(const std::string& path) {
    output.append(AddStringRow(
        "Graphics", base::IntToString(meminfo.gem_size / 1024 / 1024)));
  #endif  // OS_CHROMEOS
@@ -34,7 +34,7 @@ Index: chrome/browser/ui/webui/about_ui.cc
    output.append("</table>");
    AppendFooter(&output);
    return output;
-@@ -666,7 +670,7 @@ class AboutDnsHandler : public base::RefCountedThreadS
+@@ -576,7 +580,7 @@ class AboutDnsHandler : public base::RefCountedThreadS
    DISALLOW_COPY_AND_ASSIGN(AboutDnsHandler);
  };
  
@@ -43,7 +43,7 @@ Index: chrome/browser/ui/webui/about_ui.cc
  std::string AboutLinuxProxyConfig() {
    std::string data;
    AppendHeader(&data, 0,
-@@ -723,14 +727,14 @@ void AboutUIHTMLSource::StartDataRequest(
+@@ -633,14 +637,14 @@ void AboutUIHTMLSource::StartDataRequest(
                       .as_string();
      }
  

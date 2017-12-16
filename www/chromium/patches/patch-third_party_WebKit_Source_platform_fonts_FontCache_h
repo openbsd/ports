@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_WebKit_Source_platform_fonts_FontCache_h,v 1.9 2017/09/09 19:16:43 robert Exp $
+$OpenBSD: patch-third_party_WebKit_Source_platform_fonts_FontCache_h,v 1.10 2017/12/16 15:34:40 robert Exp $
 
 Index: third_party/WebKit/Source/platform/fonts/FontCache.h
 --- third_party/WebKit/Source/platform/fonts/FontCache.h.orig
@@ -12,7 +12,7 @@ Index: third_party/WebKit/Source/platform/fonts/FontCache.h
    static void SetSystemFontFamily(const AtomicString&);
  #endif
  
-@@ -282,7 +282,7 @@ class PLATFORM_EXPORT FontCache {
+@@ -281,7 +281,7 @@ class PLATFORM_EXPORT FontCache {
                                     const FontFaceCreationParams&,
                                     CString& name);
  

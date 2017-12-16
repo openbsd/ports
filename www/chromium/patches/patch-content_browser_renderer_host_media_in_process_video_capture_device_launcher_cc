@@ -1,9 +1,9 @@
-$OpenBSD: patch-content_browser_renderer_host_media_in_process_video_capture_device_launcher_cc,v 1.2 2017/09/09 19:16:43 robert Exp $
+$OpenBSD: patch-content_browser_renderer_host_media_in_process_video_capture_device_launcher_cc,v 1.3 2017/12/16 15:34:40 robert Exp $
 
 Index: content/browser/renderer_host/media/in_process_video_capture_device_launcher.cc
 --- content/browser/renderer_host/media/in_process_video_capture_device_launcher.cc.orig
 +++ content/browser/renderer_host/media/in_process_video_capture_device_launcher.cc
-@@ -234,7 +234,7 @@ void InProcessVideoCaptureDeviceLauncher::DoStartTabCa
+@@ -242,7 +242,7 @@ void InProcessVideoCaptureDeviceLauncher::DoStartTabCa
    DCHECK(device_task_runner_->BelongsToCurrentThread());
  
    std::unique_ptr<media::VideoCaptureDevice> video_capture_device;
@@ -12,7 +12,7 @@ Index: content/browser/renderer_host/media/in_process_video_capture_device_launc
    video_capture_device = WebContentsVideoCaptureDevice::Create(id);
  #endif
  
-@@ -265,7 +265,7 @@ void InProcessVideoCaptureDeviceLauncher::DoStartDeskt
+@@ -273,7 +273,7 @@ void InProcessVideoCaptureDeviceLauncher::DoStartDeskt
    }
  
    if (desktop_id.type == DesktopMediaID::TYPE_WEB_CONTENTS) {

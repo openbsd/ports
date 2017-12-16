@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_ui_webui_chrome_web_ui_controller_factory_cc,v 1.22 2017/10/25 13:47:07 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_webui_chrome_web_ui_controller_factory_cc,v 1.23 2017/12/16 15:34:40 robert Exp $
 
 Index: chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc
 --- chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc.orig
 +++ chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc
-@@ -177,7 +177,7 @@
+@@ -179,7 +179,7 @@
  #include "chrome/browser/ui/webui/welcome_win10_ui.h"
  #endif
  
@@ -12,7 +12,7 @@ Index: chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc
  #include "chrome/browser/ui/webui/sandbox_internals_ui.h"
  #endif
  
-@@ -292,7 +292,7 @@ bool IsAboutUI(const GURL& url) {
+@@ -290,7 +290,7 @@ bool IsAboutUI(const GURL& url) {
  #if defined(OS_CHROMEOS)
            || url.host_piece() == chrome::kChromeUIOSCreditsHost
  #endif

@@ -1,11 +1,11 @@
-$OpenBSD: patch-third_party_webrtc_rtc_base_physicalsocketserver_h,v 1.1 2017/09/09 19:16:43 robert Exp $
+$OpenBSD: patch-third_party_webrtc_rtc_base_physicalsocketserver_h,v 1.2 2017/12/16 15:34:40 robert Exp $
 
 Index: third_party/webrtc/rtc_base/physicalsocketserver.h
 --- third_party/webrtc/rtc_base/physicalsocketserver.h.orig
 +++ third_party/webrtc/rtc_base/physicalsocketserver.h
 @@ -11,7 +11,7 @@
- #ifndef WEBRTC_RTC_BASE_PHYSICALSOCKETSERVER_H_
- #define WEBRTC_RTC_BASE_PHYSICALSOCKETSERVER_H_
+ #ifndef RTC_BASE_PHYSICALSOCKETSERVER_H_
+ #define RTC_BASE_PHYSICALSOCKETSERVER_H_
  
 -#if defined(WEBRTC_POSIX) && defined(WEBRTC_LINUX)
 +#if defined(WEBRTC_POSIX) && defined(WEBRTC_LINUX) && !defined(WEBRTC_BSD)

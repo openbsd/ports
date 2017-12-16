@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_renderer_renderer_main_cc,v 1.15 2017/10/25 13:47:07 robert Exp $
+$OpenBSD: patch-content_renderer_renderer_main_cc,v 1.16 2017/12/16 15:34:40 robert Exp $
 Index: content/renderer/renderer_main.cc
 --- content/renderer/renderer_main.cc.orig
 +++ content/renderer/renderer_main.cc
@@ -15,7 +15,7 @@ Index: content/renderer/renderer_main.cc
  #endif
  
 +#if defined(OS_BSD)
-+#include "content/browser/renderer_host/render_sandbox_host_linux.h"
++#include "content/browser/sandbox_host_linux.h"
 +#include "content/common/font_config_ipc_linux.h"
 +#include "content/common/sandbox_linux/sandbox_linux.h"
 +#endif
