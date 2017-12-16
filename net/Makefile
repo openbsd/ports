@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1040 2017/12/16 20:21:09 fcambus Exp $
+# $OpenBSD: Makefile,v 1.1041 2017/12/16 20:37:34 naddy Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -286,7 +286,6 @@
      SUBDIR += nslint,static
      SUBDIR += nsping
      SUBDIR += nssl
-     SUBDIR += ntimed
      SUBDIR += ntopng
      SUBDIR += ntp
      SUBDIR += nylon
