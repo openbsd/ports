@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.114 2017/11/28 18:30:16 jca Exp $
+# $OpenBSD: portcheck,v 1.115 2017/12/16 18:36:54 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -946,6 +946,8 @@ sub_checks() {
 #
 #   * Qt5-QML-enabled port depend on x11/qt5/qtdeclarative.
 #
+#   * @rcscript items and pkg-readmes have @mode, @owner and @group reset.
+#
 check_plist() {
 	$debugging && echo "CALLED: check_plist($*)" >&2
 
@@ -1007,6 +1009,8 @@ check_plist() {
 
 	local qml_found=false qt5_qml_found=false non_qt5_qml_found=false
 	local qt4_dep=false qt5_dep=false qt5declarative_dep=false
+
+	local owner_set=false group_set=false mode_set=false
 
 	# Temporary ones
 	local app l theme varname py
@@ -1208,6 +1212,30 @@ check_plist() {
 			;;
 		"@man "*.gz)
 			err "${portref}compressed $l"
+			;;
+
+		@owner)
+			owner_set=false
+			;;
+		@group)
+			group_set=false
+			;;
+		@mode)
+			mode_set=false
+			;;
+		"@owner "*)
+			owner_set=true
+			;;
+		"@group "*)
+			group_set=true
+			;;
+		"@mode "*)
+			mode_set=true
+			;;
+		"@rcscript "*|share/doc/pkg-readmes/*)
+			! $owner_set || err "${portref}$l has @owner set"
+			! $group_set || err "${portref}$l has @group set"
+			! $mode_set  || err "${portref}$l has @mode set"
 			;;
 		esac
 	done
