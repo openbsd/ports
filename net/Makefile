@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1039 2017/12/16 17:36:44 fcambus Exp $
+# $OpenBSD: Makefile,v 1.1040 2017/12/16 20:21:09 fcambus Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -496,7 +496,6 @@
      SUBDIR += poink
      SUBDIR += pop3gwd
      SUBDIR += poptop
-     SUBDIR += pork
      SUBDIR += powerdns
      SUBDIR += profanity
      SUBDIR += prosody
