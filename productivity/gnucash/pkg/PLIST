@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.36 2017/11/17 09:16:38 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.37 2017/12/17 11:00:09 ajacoutot Exp $
 @conflict gnucash-docs-*
 @pkgpath productivity/gnucash-docs
 bin/gnc-fq-check
@@ -341,6 +341,7 @@ share/doc/gnucash/Money95mfunds_fr.qif
 share/doc/gnucash/Money95stocks_fr.qif
 share/doc/gnucash/NEWS
 share/doc/gnucash/README
+share/doc/gnucash/README-ca.win32-bin.txt
 share/doc/gnucash/README-de.win32-bin.txt
 share/doc/gnucash/README-fr.win32-bin.txt
 share/doc/gnucash/README-it.win32-bin.txt
