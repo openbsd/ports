@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2017/07/26 22:45:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2017/12/17 20:10:12 pascal Exp $
 
 COMMENT-main =		Worms-like strategy game
 COMMENT-server =	Worms-like strategy game, server
@@ -7,8 +7,7 @@ MULTI_PACKAGES =	-main -server
 
 SHARED_LIBS +=  physlayer                 0.0 # 0.0
 
-R =			0.9.22
-REVISION =		8
+R =			0.9.23
 V =			$R
 DISTNAME =		hedgewars-src-$V
 PKGNAME-main =		hedgewars-$V
@@ -23,16 +22,16 @@ MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB-main += QtGui QtNetwork SDL SDL_image SDL_mixer SDL_net SDL_ttf
-WANTLIB-main += c m physfs png pthread ${COMPILER_LIBCXX} util z
-WANTLIB-main += ${MODLUA_WANTLIB} ${MODQT4_WANTLIB}
+WANTLIB-main += ${COMPILER_LIBCXX} QtCore QtGui QtNetwork SDL2 SDL2_image
+WANTLIB-main += ${MODLUA_WANTLIB} SDL2_mixer SDL2_net SDL2_ttf c m physfs png
+WANTLIB-main += z
 
 # dlopen()ed; do not remove.
 WANTLIB-main += GL GLU glut
 
-WANTLIB-server = c iconv m pthread util
+WANTLIB-server += c iconv m
 
-MASTER_SITES =		http://download.gna.org/hedgewars/
+MASTER_SITES =		http://www.hedgewars.org/download/releases/
 EXTRACT_SUFX =		.tar.bz2
 
 MODULES =		devel/cmake \
@@ -45,17 +44,18 @@ BUILD_DEPENDS +=	archivers/hs-zlib \
 			devel/hs-network \
 			devel/hs-random \
 			devel/hs-hslogger \
-			devel/hs-dataenc \
+			devel/hs-sandi \
+			devel/hs-regex-tdfa \
 			devel/hs-utf8-string \
 			lang/fpc>=3.0.0p2 \
 			security/hs-SHA \
 			security/hs-entropy \
 			textproc/hs-bytestring-show
 
-LIB_DEPENDS-main =	devel/sdl-image \
-			devel/sdl-ttf \
-			devel/sdl-net \
-			devel/sdl-mixer \
+LIB_DEPENDS-main =	devel/sdl2-image \
+			devel/sdl2-ttf \
+			devel/sdl2-net \
+			devel/sdl2-mixer \
 			devel/physfs \
 			graphics/freeglut \
 			${MODQT4_LIB_DEPENDS} \
