@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.115 2017/12/16 18:36:54 zhuk Exp $
+# $OpenBSD: portcheck,v 1.116 2017/12/17 14:02:02 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -995,7 +995,7 @@ check_plist() {
 	# List of icon themes that remove cache file
 	local rm_cache_themes=
 
-	local dbus_suid_dep=false
+	local dbus_suid_dep=false is_dbus_suid=false
 	local dbus_suid_dep_needed=false
 
 	# Lists of .py, .pyc and .pyo items found, accordingly
@@ -1171,6 +1171,9 @@ check_plist() {
 			;;
 		"@depend x11/dbus,-suid"*)
 			dbus_suid_dep=true
+			;;
+		"@bin libexec/dbus-daemon-launch-helper")
+			is_dbus_suid=true
 			;;
 
 		lib/ghc/*/register.sh)
@@ -1383,7 +1386,7 @@ check_plist() {
 		    "outside PREFIX/lib/qt5/qml/"
 
 	# dbus,-suid
-	if $dbus_suid_dep_needed && ! $dbus_suid_dep; then
+	if $dbus_suid_dep_needed && ! $dbus_suid_dep && ! $is_dbus_suid; then
 		err "${portref}missing" \
 		    "RUN_DEPENDS${subpkg}+=x11/dbus,-suid"
 	fi
