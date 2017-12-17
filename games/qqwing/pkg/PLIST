@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/12/17 16:58:14 bcallah Exp $
+@bin bin/qqwing
+include/qqwing.hpp
+lib/libqqwing.a
+lib/libqqwing.la
+@lib lib/libqqwing.so.${LIBqqwing_VERSION}
+lib/pkgconfig/qqwing.pc
+@man man/man1/qqwing.1
