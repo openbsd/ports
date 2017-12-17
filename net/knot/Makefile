@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2017/12/17 11:05:42 jca Exp $
+# $OpenBSD: Makefile,v 1.24 2017/12/17 11:08:16 jca Exp $
 
 COMMENT =		authoritative DNS server
 
 DISTNAME =		knot-2.6.3
+REVISION =		0
 
 SHARED_LIBS +=	zscanner             1.0      # .1.0
 SHARED_LIBS +=	knot                 2.0      # .7.0
@@ -12,8 +13,7 @@ CATEGORIES =		net
 
 HOMEPAGE =		https://www.knot-dns.cz/
 
-MAINTAINER =		Pierre Emeriaud <petrus.lt+openbsd@gmail.com>, \
-			Jeremie Courreges-Anglas <jca@wxcvbn.org>
+MAINTAINER =		Jeremie Courreges-Anglas <jca@wxcvbn.org>
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
