@@ -1,0 +1,72 @@
+$OpenBSD: patch-makefile,v 1.1.1.1 2017/12/17 23:38:19 akoshibe Exp $
+
+Build with BSD make.
+Don't hardcode CC or YACC.
+A proper install routine.
+
+Index: makefile
+--- makefile.orig
++++ makefile
+@@ -4,29 +4,18 @@
+ # terms in the LICENSE file that is included in this source directory.
+ # Tool documentation is available at http://spinroot.com
+ 
+-CC=gcc
+-CFLAGS?=-O2 -DNXT	# on some systems add: -I/usr/include
+-			# on a PC:    make CFLAGS=-O2 -DNXT -DPC
+-			# on Solaris: make CFLAGS=-O2 -DNXT -DSOLARIS
+-			# on a Mac:   make CFLAGS=-O2 -DNXT -DMAC
+-			# on HP-UX:   make CFLAGS=-O2 -DNXT -Aa
++CC?=gcc
++CFLAGS?=-O2 -DNXT
+ 
+-			# debugging: make CFLAGS=-pg -g -DNXT
+-
+ # for a more picky compilation use gcc-4 and add:
+ PICKY=-std=c99 -Wstrict-prototypes -pedantic -fno-strength-reduce \
+ 	-fno-builtin -W -Wshadow -Wpointer-arith \
+ 	-Wcast-qual -Winline -Wall
+ 
+-# when running spin with a different compiler:
+-			# on OS2:         spin -Picc -E/Pd+ -E/Q+
+-			# for Visual C++: spin -PCL  -E/E
++YACC?=yacc
++YFLAGS=-v -d
++INSTALL?=install -c
+ 
+-YACC=yacc		# on Solaris: /usr/ccs/bin/yacc
+-YFLAGS=-v -d 		# creates y.output and y.tab.h
+-DESTDIR?=/usr/local/bin
+-INSTALL?=cp
+-
+ SPIN_OS= spinlex.o sym.o vars.o main.o msc_tcl.o \
+ 	mesg.o flow.o sched.o run.o pangen1.o pangen2.o \
+ 	pangen3.o pangen4.o pangen5.o guided.o dstep.o \
+@@ -39,13 +28,16 @@ spin:	$(SPIN_OS) $(TL_OS) spin.o
+ 	$(CC) $(CFLAGS) -o spin spin.o $(SPIN_OS) $(TL_OS)
+ 
+ install: spin
+-	$(INSTALL) spin $(DESTDIR)
++	install -d -m 755 $(PREFIX)/bin
++	$(INSTALL) -s -m 755 spin $(PREFIX)/bin
++	install -d -m 755 $(PREFIX)/man/man1
++	$(INSTALL) -m 644 ../Man/spin.1 $(PREFIX)/man/man1
+ 
+ spin.o:	spin.y
+ 	$(YACC) $(YFLAGS) spin.y
+-	$(CC) $(CFLAGS) -c y?tab.c
+-	rm -f y?tab.c
+-	mv y?tab.o spin.o
++	$(CC) $(CFLAGS) -c y.tab.c
++	rm -f y.tab.c
++	mv y.tab.o spin.o
+ 
+ $(SPIN_OS): spin.h spin.o
+ 
+@@ -56,5 +48,5 @@ pangen1.o: pangen1.h pangen3.h pangen6.h
+ pangen2.o: pangen2.h pangen4.h pangen5.h pangen7.h
+ 
+ clean:
+-	rm -f spin *.o y?tab.[ch] y.output y.debug
++	rm -f spin *.o y.tab.[ch] y.output y.debug
+ 	rm -f pan.[chmotb] a.out core *stackdump

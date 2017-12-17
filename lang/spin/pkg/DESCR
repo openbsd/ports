@@ -1,0 +1,8 @@
+Spin is a software verification tool for analyzing the consistency of
+asynchronous systems. Examples of asynchronous systems include multi-threaded
+programs, distributed systems, and communications protocols. Spin takes a
+system model specified in Promela (the PROcess MEta LAnguage). It also takes
+a specifciation of the requirements for logical correctness, and allows both
+interactive and exhaustive simulations of the system for verifying these
+properties.
+

@@ -1,0 +1,34 @@
+# $OpenBSD: Makefile,v 1.1.1.1 2017/12/17 23:38:19 akoshibe Exp $
+
+V =		6.4.7
+COMMENT =	tool for formal verification of parallel software
+DISTNAME =	spin${V:S/.//g}
+PKGNAME =	spin-${V}
+CATEGORIES =	lang
+
+HOMEPAGE =	https://spinroot.com/
+MAINTAINER =	Ori Bernstein <ori@eigenstate.org>
+
+# BSD
+PERMIT_PACKAGE_CDROM =	Yes
+
+WANTLIB += c
+
+MASTER_SITES =	https://spinroot.com/spin/Src/
+
+ALL_TARGET =	spin
+MAKE_FILE =	makefile
+MAKE_FLAGS =	CFLAGS="${CFLAGS} -std=c99 -DNXT"
+
+NO_TEST =	Yes
+
+WRKDIST =	${WRKDIR}/Spin/Src${V}
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/spin
+	cd ${WRKSRC}/../Examples && find * -type d -exec ${INSTALL_DATA_DIR} \
+		"${PREFIX}/share/examples/spin/{}" \;
+	cd ${WRKSRC}/../Examples && find * -type f -exec ${INSTALL_DATA} \
+		"{}" "${PREFIX}/share/examples/spin/{}" \;
+
+.include <bsd.port.mk>
