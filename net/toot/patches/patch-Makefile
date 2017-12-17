@@ -1,0 +1,14 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2017/12/17 21:03:54 danj Exp $
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -19,7 +19,7 @@ publish :
+ 	twine upload dist/*
+ 
+ coverage:
+-	py.test --cov=toot --cov-report html tests/
++	py.test-3 --cov=toot --cov-report html tests/
+ 
+ deb:
+ 	@python setup.py --command-packages=stdeb.command bdist_deb
