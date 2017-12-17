@@ -1,0 +1,17 @@
+Autobahn|Python is a subproject of Autobahn and provides open-source
+implementations of the WebSocket Protocol and the Web Application
+Messaging Protocol (WAMP) for Python 2 and 3, and running on Twisted
+and asyncio.
+
+You can use Autobahn|Python to create clients and servers in Python
+speaking just plain WebSocket or WAMP.
+
+WebSocket allows bidirectional real-time messaging on the Web and
+beyond, while WAMP adds real-time application communication on top of
+WebSocket.
+
+WAMP provides asynchronous Remote Procedure Calls and Publish &
+Subscribe for applications in one protocol running over WebSocket.
+WAMP is a routed protocol, so you need a WAMP Router to connect your
+Autobahn|Python based clients. We provide Crossbar.io, but there are
+other options as well.
