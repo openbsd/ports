@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1041 2017/12/16 20:37:34 naddy Exp $
+# $OpenBSD: Makefile,v 1.1042 2017/12/17 21:04:35 danj Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -674,6 +674,7 @@
      SUBDIR += tkabber
      SUBDIR += tkirc
      SUBDIR += tn5250
+     SUBDIR += toot
      SUBDIR += tor
      SUBDIR += torsocks
      SUBDIR += totd
