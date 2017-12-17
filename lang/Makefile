@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.214 2017/12/09 00:21:44 bcallah Exp $
+# $OpenBSD: Makefile,v 1.215 2017/12/17 23:41:25 akoshibe Exp $
 
      SUBDIR =
      SUBDIR += STk
@@ -96,6 +96,7 @@
      SUBDIR += seed7
      SUBDIR += snobol4
      SUBDIR += spidermonkey
+     SUBDIR += spin
      SUBDIR += squeak
      SUBDIR += swi-prolog
      SUBDIR += tcl
