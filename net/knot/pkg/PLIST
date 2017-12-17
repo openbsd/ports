@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2017/06/01 13:42:01 jca Exp $
+@comment $OpenBSD: PLIST,v 1.4 2017/12/17 11:05:42 jca Exp $
 @newgroup _knot:751
 @newuser _knot:751:_knot::Knot DNS Server:/var/empty:/sbin/nologin
 @bin bin/kdig
@@ -12,20 +12,18 @@ include/dnssec/binary.h
 include/dnssec/crypto.h
 include/dnssec/dnssec.h
 include/dnssec/error.h
-include/dnssec/event.h
-include/dnssec/kasp.h
 include/dnssec/key.h
 include/dnssec/keyid.h
-include/dnssec/keystate.h
 include/dnssec/keystore.h
 include/dnssec/keytag.h
-include/dnssec/keyusage.h
 include/dnssec/list.h
 include/dnssec/nsec.h
 include/dnssec/random.h
 include/dnssec/sign.h
 include/dnssec/tsig.h
 include/dnssec/version.h
+include/knot/
+include/knot/module.h
 include/libknot/
 include/libknot/attribute.h
 include/libknot/binary.h
@@ -75,6 +73,11 @@ include/libknot/rrtype/txt.h
 include/libknot/tsig-op.h
 include/libknot/tsig.h
 include/libknot/version.h
+include/libknot/yparser/
+include/libknot/yparser/yparser.h
+include/libknot/yparser/ypformat.h
+include/libknot/yparser/ypschema.h
+include/libknot/yparser/yptrafo.h
 include/zscanner/
 include/zscanner/error.h
 include/zscanner/scanner.h
@@ -88,14 +91,13 @@ lib/libknot.la
 lib/libzscanner.a
 lib/libzscanner.la
 @lib lib/libzscanner.so.${LIBzscanner_VERSION}
+lib/pkgconfig/knotd.pc
 lib/pkgconfig/libdnssec.pc
 lib/pkgconfig/libknot.pc
 lib/pkgconfig/libzscanner.pc
-@bin libexec/knot1to2
 @man man/man1/kdig.1
 @man man/man1/khost.1
 @man man/man1/kjournalprint.1
-@man man/man1/knot1to2.1
 @man man/man1/knsec3hash.1
 @man man/man1/knsupdate.1
 @man man/man1/kzonecheck.1
@@ -103,9 +105,11 @@ lib/pkgconfig/libzscanner.pc
 @man man/man8/keymgr.8
 @man man/man8/knotc.8
 @man man/man8/knotd.8
+@man man/man8/pykeymgr.8
 @bin sbin/keymgr
 @bin sbin/knotc
 @bin sbin/knotd
+sbin/pykeymgr
 share/examples/knot/
 @sample ${SYSCONFDIR}/knot/
 share/examples/knot/example.com.zone

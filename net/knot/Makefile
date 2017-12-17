@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.22 2017/11/20 14:27:32 jca Exp $
+# $OpenBSD: Makefile,v 1.23 2017/12/17 11:05:42 jca Exp $
 
 COMMENT =		authoritative DNS server
 
-DISTNAME =		knot-2.4.5
-REVISION =		2
+DISTNAME =		knot-2.6.3
 
 SHARED_LIBS +=	zscanner             1.0      # .1.0
-SHARED_LIBS +=	knot                 1.1      # .5.0
-SHARED_LIBS +=	dnssec               0.0      # .3.0
+SHARED_LIBS +=	knot                 2.0      # .7.0
+SHARED_LIBS +=	dnssec               1.0      # .5.0
 
 CATEGORIES =		net
 
@@ -19,22 +18,26 @@ MAINTAINER =		Pierre Emeriaud <petrus.lt+openbsd@gmail.com>, \
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c curses edit ffi gmp gnutls hogweed iconv idn idn2
-WANTLIB += intl jansson m nettle p11-kit pthread tasn1 unistring
-WANTLIB += urcu urcu-common z
+WANTLIB += c curses edit ffi gmp gnutls hogweed iconv idn2 intl
+WANTLIB += m nettle p11-kit pthread tasn1 unistring urcu urcu-common
+WANTLIB += z
 
 MASTER_SITES =		https://secure.nic.cz/files/knot-dns/
 EXTRACT_SUFX =		.tar.xz
 
-# Needs TLS emulation, and atomic builtins on arm
-COMPILER =		base-clang ports-gcc
+# atomics
+COMPILER =		base-clang ports-gcc ports-clang
 COMPILER_LANGS =	c
+
+MODULES =		lang/python
+# XXX pykeymgr requires py-lmdb (python-lmdb)
+MODPY_RUNDEP =		No
+MODPY_ADJ_FILES =	src/utils/pykeymgr/pykeymgr.in
 
 BUILD_DEPENDS =		devel/bison
 LIB_DEPENDS =		devel/gettext \
-			devel/libidn \
+			devel/libidn2 \
 			devel/liburcu \
-			devel/jansson \
 			security/gnutls
 
 CONFIGURE_STYLE =	gnu
