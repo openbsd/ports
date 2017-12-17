@@ -1,4 +1,4 @@
-#${MODPY_COMMENT} $OpenBSD: Makefile,v 1.1683 2017/12/17 18:04:24 landry Exp $
+#${MODPY_COMMENT} $OpenBSD: Makefile,v 1.1684 2017/12/17 20:31:14 kili Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -204,7 +204,6 @@
      SUBDIR += hs-convertible
      SUBDIR += hs-data-default
      SUBDIR += hs-data-ordlist
-     SUBDIR += hs-dataenc
      SUBDIR += hs-dlist
      SUBDIR += hs-enclosed-exceptions
      SUBDIR += hs-exceptions
