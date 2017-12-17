@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.569 2017/12/16 20:37:34 naddy Exp $
+# $OpenBSD: Quirks.pm,v 1.570 2017/12/17 20:36:04 kili Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1216,6 +1216,7 @@ my $obsolete_reason = {
 	'aimsniff' => 6,
 	'pork' => 6,
 	'ntimed' => 3,
+	'hs-dataenc' => 3,
 };
 
 # reasons for obsolete packages
