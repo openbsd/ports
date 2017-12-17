@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.8 2017/08/14 19:34:29 danj Exp $
+@comment $OpenBSD: PLIST-main,v 1.9 2017/12/17 02:21:24 danj Exp $
 @bin bin/weechat
 bin/weechat-curses
 include/weechat/
@@ -11,6 +11,7 @@ lib/weechat/plugins/buflist.so
 lib/weechat/plugins/charset.so
 lib/weechat/plugins/exec.so
 lib/weechat/plugins/fifo.so
+lib/weechat/plugins/fset.so
 lib/weechat/plugins/irc.so
 lib/weechat/plugins/logger.so
 lib/weechat/plugins/perl.so

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2017/11/04 21:48:06 naddy Exp $
+# $OpenBSD: Makefile,v 1.34 2017/12/17 02:21:23 danj Exp $
 
 COMMENT-main=	fast, light and extensible chat client
 COMMENT-lua=	Lua bindings for weechat
@@ -6,7 +6,7 @@ COMMENT-python=	Python bindings for weechat
 COMMENT-ruby=	Ruby bindings for weechat
 COMMENT-tcl=	Tcl bindings for weechat
 
-V=		1.9.1
+V=		2.0
 DISTNAME=	weechat-${V}
 
 PKGNAME-main=	weechat-${V}
@@ -14,9 +14,6 @@ PKGNAME-lua=	weechat-lua-${V}
 PKGNAME-python=	weechat-python-${V}
 PKGNAME-ruby=	weechat-ruby-${V}
 PKGNAME-tcl=	weechat-tcl-${V}
-
-REVISION-main=	0
-REVISION-ruby=	0
 
 CATEGORIES=	net
 
@@ -30,7 +27,7 @@ MASTER_SITES=	${HOMEPAGE}/files/src/
 
 MULTI_PACKAGES=	-main -lua -python -ruby -tcl
 
-WANTLIB-main=	c curl iconv intl m ncursesw perl pthread \
+WANTLIB-main=	c curl iconv intl m curses perl pthread \
 		gcrypt gnutls gpg-error z
 
 WANTLIB-lua=	${MODLUA_WANTLIB} m
@@ -72,6 +69,7 @@ CONFIGURE_ARGS+=-DENABLE_ASPELL=no \
 		-DENABLE_RUBY=yes \
 		-DENABLE_LUA=yes \
 		-DENABLE_TCL=yes \
+		-DENABLE_PHP=no \
 		-DENABLE_PYTHON=yes \
 		-DENABLE_JAVASCRIPT=no \
 		-DHAVE_BACKTRACE=no \
