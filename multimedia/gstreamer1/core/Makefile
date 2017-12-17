@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.43 2017/12/08 14:38:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.44 2017/12/17 10:53:17 ajacoutot Exp $
 
 COMMENT=		framework for streaming media
 
 DISTNAME=		gstreamer-${V}
 PKGNAME=		${GST_PKGNAME_PREFIX}-${V}
+REVISION=		0
 
 SHARED_LIBS +=  gstreamer-1.0        3.3      # 1204.0
 SHARED_LIBS +=  gstbase-1.0          3.3      # 1204.0
@@ -28,5 +29,9 @@ CONFIGURE_ENV +=	ac_cv_lib_gmp___gmpz_init_set_d=no \
 
 # require (at least) gtk+
 CONFIGURE_ARGS +=	--disable-examples
+
+# PTP helper does not do anything on OpenBSD (functionality needs to be
+# implemented): no need to install it suid root
+CONFIGURE_ARGS +=	--with-ptp-helper-permissions=none
 
 .include <bsd.port.mk>
