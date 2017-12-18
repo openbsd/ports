@@ -1,6 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2017/11/16 10:46:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2017/12/18 08:46:15 bentley Exp $
 
 BROKEN-i386 =	std::bad_alloc when compiling fifePYTHON_wrap.cxx
+BROKEN-powerpc =out of memory when compiling fifePYTHON_wrap.cxx
+BROKEN-sparc64 =out of memory when compiling fifePYTHON_wrap.cxx
 
 COMMENT =	2D game engine
 
