@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2017/11/21 00:13:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2017/12/18 11:54:51 jca Exp $
 
 USE_WXNEEDED =		Yes
 
 ONLY_FOR_ARCHS =	${CXX11_ARCHS}
+BROKEN-powerpc =	relocation truncated to fit: R_PPC_PLTREL24 against symbol... (executable too big)
 # nojunk: qmake include parser is bogus, c.f. x11/qt4
 DPB_PROPERTIES =	nojunk parallel
 
