@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2017/10/12 15:05:31 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.16 2017/12/18 11:35:50 jca Exp $
 
 COMMENT =	website access log visualization
 
@@ -19,6 +19,9 @@ WANTLIB += z ${COMPILER_LIBCXX}
 CONFIGURE_STYLE =gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib"
+
+# -std=gnu++0x
+COMPILER =	base-clang ports-gcc ports-clang
 
 BUILD_DEPENDS =	graphics/glm \
 		devel/boost
