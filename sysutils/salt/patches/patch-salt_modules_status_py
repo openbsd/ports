@@ -1,4 +1,4 @@
-$OpenBSD: patch-salt_modules_status_py,v 1.1 2017/12/10 12:46:49 jasper Exp $
+$OpenBSD: patch-salt_modules_status_py,v 1.2 2017/12/18 21:06:02 jasper Exp $
 
 Add OpenBSD support to:
 
@@ -7,6 +7,7 @@ Add OpenBSD support to:
 - status.meminfo
 - status.netstats
 - status.version
+- status.w
 
 Index: salt/modules/status.py
 --- salt/modules/status.py.orig
@@ -63,7 +64,7 @@ Index: salt/modules/status.py
      CLI Example:
  
      .. code-block:: bash
-@@ -552,10 +576,23 @@ def meminfo():
+@@ -552,10 +576,25 @@ def meminfo():
  
          return ret
  
@@ -74,7 +75,9 @@ Index: salt/modules/status.py
 +        vmstat = __salt__['cmd.run']('vmstat').splitlines()
 +        # We're only interested in memory and page values which are printed
 +        # as subsequent fields.
-+        fields = vmstat[1].split()[2:10]
++        fields = ['active virtual pages', 'free list size', 'page faults',
++                  'pages reclaimed', 'pages paged in', 'pages paged out',
++                  'pages freed', 'pages scanned']
 +        data = vmstat[2].split()[2:10]
 +        ret = dict(zip(fields, data))
 +        return ret
@@ -87,7 +90,7 @@ Index: salt/modules/status.py
          'AIX': aix_meminfo,
      }
  
-@@ -571,6 +608,9 @@ def cpuinfo():
+@@ -571,6 +610,9 @@ def cpuinfo():
      .. versionchanged:: 2016.11.4
          Added support for AIX
  
@@ -97,7 +100,7 @@ Index: salt/modules/status.py
      CLI Example:
  
      .. code-block:: bash
-@@ -601,14 +641,19 @@ def cpuinfo():
+@@ -601,14 +643,19 @@ def cpuinfo():
  
      def bsd_cpuinfo():
          '''
@@ -121,7 +124,7 @@ Index: salt/modules/status.py
              comps[0] = comps[0].strip()
              ret[comps[0]] = comps[1].strip()
          return ret
-@@ -753,6 +798,7 @@ def cpuinfo():
+@@ -753,6 +800,7 @@ def cpuinfo():
      get_version = {
          'Linux': linux_cpuinfo,
          'FreeBSD': bsd_cpuinfo,
@@ -129,7 +132,7 @@ Index: salt/modules/status.py
          'OpenBSD': bsd_cpuinfo,
          'SunOS': sunos_cpuinfo,
          'AIX': aix_cpuinfo,
-@@ -1053,6 +1099,9 @@ def netstats():
+@@ -1053,6 +1101,9 @@ def netstats():
      .. versionchanged:: 2016.11.4
          Added support for AIX
  
@@ -139,7 +142,7 @@ Index: salt/modules/status.py
      CLI Example:
  
      .. code-block:: bash
-@@ -1098,7 +1147,7 @@ def netstats():
+@@ -1098,7 +1149,7 @@ def netstats():
              if line.startswith('\t\t'):
                  continue  # Skip, too detailed
              if not line.startswith('\t'):
@@ -148,7 +151,7 @@ Index: salt/modules/status.py
                  ret[key] = {}
              else:
                  comps = line.split()
-@@ -1158,7 +1207,7 @@ def netstats():
+@@ -1158,7 +1209,7 @@ def netstats():
      # dict that returns a function that does the right thing per platform
      get_version = {
          'Linux': linux_netstats,
@@ -157,7 +160,79 @@ Index: salt/modules/status.py
          'SunOS': sunos_netstats,
          'AIX': aix_netstats,
      }
-@@ -1437,6 +1486,9 @@ def version():
+@@ -1357,23 +1408,56 @@ def w():  # pylint: disable=C0103
+ 
+         salt '*' status.w
+     '''
+-    user_list = []
+-    users = __salt__['cmd.run']('w -h').splitlines()
+-    for row in users:
+-        if not row:
+-            continue
+-        comps = row.split()
+-        rec = {'idle': comps[3],
+-               'jcpu': comps[4],
+-               'login': comps[2],
+-               'pcpu': comps[5],
+-               'tty': comps[1],
+-               'user': comps[0],
+-               'what': ' '.join(comps[6:])}
+-        user_list.append(rec)
+-    return user_list
++    def linux_w():
++        '''
++        Linux specific implementation for w
++        '''
++        user_list = []
++        users = __salt__['cmd.run']('w -fh').splitlines()
++        for row in users:
++            if not row:
++                continue
++            comps = row.split()
++            rec = {'idle': comps[3],
++                   'jcpu': comps[4],
++                   'login': comps[2],
++                   'pcpu': comps[5],
++                   'tty': comps[1],
++                   'user': comps[0],
++                   'what': ' '.join(comps[6:])}
++            user_list.append(rec)
++        return user_list
+ 
++    def bsd_w():
++        '''
++        Generic BSD implementation for w
++        '''
++        user_list = []
++        users = __salt__['cmd.run']('w -h').splitlines()
++        for row in users:
++            if not row:
++                continue
++            comps = row.split()
++            rec = {'from': comps[2],
++                   'idle': comps[4],
++                   'login': comps[3],
++                   'tty': comps[1],
++                   'user': comps[0],
++                   'what': ' '.join(comps[5:])}
++            user_list.append(rec)
++        return user_list
+ 
++    # dict that returns a function that does the right thing per platform
++    get_version = {
++        'Darwin': bsd_w,
++        'FreeBSD': bsd_w,
++        'Linux': linux_w,
++        'OpenBSD': bsd_w,
++    }
++
++    errmsg = 'This method is unsupported on the current operating system!'
++    return get_version.get(__grains__['kernel'], lambda: errmsg)()
++
+ def all_status():
+     '''
+     Return a composite of all status data and info for this minion.
+@@ -1437,6 +1521,9 @@ def version():
      .. versionchanged:: 2016.11.4
          Added support for AIX
  
@@ -167,7 +242,7 @@ Index: salt/modules/status.py
      CLI Example:
  
      .. code-block:: bash
-@@ -1453,10 +1505,17 @@ def version():
+@@ -1453,10 +1540,17 @@ def version():
          except IOError:
              return {}
  
