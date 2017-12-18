@@ -1,0 +1,26 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/12/18 20:35:46 landry Exp $
+lib/python${MODPY_VERSION}/site-packages/buildbot_www/
+lib/python${MODPY_VERSION}/site-packages/buildbot_www-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/buildbot_www-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/buildbot_www-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/buildbot_www-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/buildbot_www-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/buildbot_www-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/buildbot_www/VERSION
+lib/python${MODPY_VERSION}/site-packages/buildbot_www/__init__.py
+lib/python${MODPY_VERSION}/site-packages/buildbot_www/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/buildbot_www/static/
+lib/python${MODPY_VERSION}/site-packages/buildbot_www/static/d3.min.js
+lib/python${MODPY_VERSION}/site-packages/buildbot_www/static/fonts/
+lib/python${MODPY_VERSION}/site-packages/buildbot_www/static/fonts/FontAwesome.otf
+lib/python${MODPY_VERSION}/site-packages/buildbot_www/static/fonts/fontawesome-webfont.eot
+lib/python${MODPY_VERSION}/site-packages/buildbot_www/static/fonts/fontawesome-webfont.svg
+lib/python${MODPY_VERSION}/site-packages/buildbot_www/static/fonts/fontawesome-webfont.ttf
+lib/python${MODPY_VERSION}/site-packages/buildbot_www/static/fonts/fontawesome-webfont.woff
+lib/python${MODPY_VERSION}/site-packages/buildbot_www/static/img/
+lib/python${MODPY_VERSION}/site-packages/buildbot_www/static/img/favicon.ico
+lib/python${MODPY_VERSION}/site-packages/buildbot_www/static/img/nobody.png
+lib/python${MODPY_VERSION}/site-packages/buildbot_www/static/index.html
+lib/python${MODPY_VERSION}/site-packages/buildbot_www/static/scripts.js
+lib/python${MODPY_VERSION}/site-packages/buildbot_www/static/styles.css
+lib/python${MODPY_VERSION}/site-packages/buildbot_www/static/tests.js

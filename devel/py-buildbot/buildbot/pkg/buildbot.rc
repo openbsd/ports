@@ -1,0 +1,25 @@
+#!/bin/sh
+#
+# $OpenBSD: buildbot.rc,v 1.1.1.1 2017/12/18 20:35:45 landry Exp $
+
+daemon="${TRUEPREFIX}/bin/buildbot"
+daemon_flags="${HOMEDIR}"
+daemon_user="_buildbot"
+
+. /etc/rc.d/rc.subr
+
+pexp="${MODPY_BIN} .*logfile=twistd.log --python=buildbot.tac"
+
+rc_start() {
+	${rcexec} "${daemon} start ${daemon_flags}"
+}
+
+rc_reload() {
+	${daemon} reconfig ${daemon_flags}
+}
+
+rc_stop() {
+	${daemon} stop ${daemon_flags}
+}
+
+rc_cmd $1

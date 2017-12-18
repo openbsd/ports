@@ -1,0 +1,40 @@
+$OpenBSD: README,v 1.1.1.1 2017/12/18 20:35:46 landry Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+On OpenBSD, the BuildBot package has an associated _buildbot user for
+running the master.  The default master directory is expected to be
+found in ${HOMEDIR}.  Before being run for the first time, the
+master directory must be initialized.  This is done as follows:
+
+    # su -m _buildbot -c "buildbot create-master ${HOMEDIR}"
+
+The next step is to create a ${HOMEDIR}/master.cfg configuration
+file that fits your needs.  Please refer to the BuildBot documentation
+on how to do so. 
+
+
+Databases
+=========
+BuildBot supports number of different databases (via SQLAlchemy), but
+you need to install Python database adapter(s) to use them:
+* py-mysql - for MySQL database, 
+* py-psycopg2 - for PostgreSQL database.
+
+SQLite works out-of-the-box.
+
+
+Upgrading
+=========
+If you're upgrading SQLite-based BuildBot from older release, you must
+migrate its database before the first run using following command:
+
+    # su -m _buildbot -c "buildbot upgrade-master ${HOMEDIR}"
+
+If you're using BuildBot with either MySQL or PostgreSQL database, you
+must also pass the connection string:
+
+    # su -m _buildbot -c "buildbot upgrade-master \
+           --db=postgresql://buildbot:<password>@localhost/buildbot ${HOMEDIR}"
