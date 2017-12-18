@@ -1,0 +1,16 @@
+$OpenBSD: patch-meson_build,v 1.5 2017/12/18 18:11:11 jca Exp $
+
+Drop flags that break the build with base gcc.
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -109,8 +109,6 @@ elif cc.get_id() == 'gcc' or cc.get_id() == 'clang'
+     '-Wno-uninitialized',
+     '-Wno-shadow',
+     '-Wno-int-conversion',
+-    '-Wno-discarded-qualifiers',
+-    '-Werror=redundant-decls',
+     '-Werror=implicit',
+     '-Werror=nonnull',
+     '-Werror=init-self',
