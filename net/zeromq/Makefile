@@ -1,30 +1,32 @@
-# $OpenBSD: Makefile,v 1.26 2017/11/09 16:50:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2017/12/18 21:03:54 jasper Exp $
 
 COMMENT =		open source message queue optimised for performance
 
-DISTNAME =		zeromq-4.1.4
-REVISION =		1
+V =			4.2.3
+DISTNAME =		zeromq-${V}
 
-SHARED_LIBS +=  zmq                  4.1      # 5.0
+SHARED_LIBS +=  zmq                  4.2      # 6.3
 
 CATEGORIES =		net
 HOMEPAGE =		http://zeromq.org/
 
-MAINTAINER =		Rodrigo Mosconi <openbsd@mosconi.mat.br>
+MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # LGPLv3
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c m pthread sodium ${COMPILER_LIBCXX}
 
-MASTER_SITES =		http://download.zeromq.org/
+MASTER_SITES =		https://github.com/zeromq/libzmq/releases/download/v$V/
 
 LIB_DEPENDS =		security/libsodium
 
 USE_GMAKE =		Yes
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS =	--with-libsodium=${LOCALBASE}
+
+# XXX: verify tweetnacl (the default) uses proper randomness before using it
+CONFIGURE_ARGS +=	--with-libsodium
 
 # XXX libsodium: https://github.com/jedisct1/libsodium/pull/104
 CONFIGURE_ENV =		CXXFLAGS="-Wno-long-long ${CXXFLAGS}"
