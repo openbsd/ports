@@ -1,0 +1,27 @@
+$OpenBSD: patch-willuslib_willus_h,v 1.1 2017/12/18 14:52:02 jca Exp $
+
+- clang defines unix, __unix and __unix__, base gcc only defines __unix__
+- stop assuming that non-x86 archs are all little-endian
+
+Index: willuslib/willus.h
+--- willuslib/willus.h.orig
++++ willuslib/willus.h
+@@ -107,7 +107,7 @@ typedef double  real;
+ #define MINGW
+ #endif
+ 
+-#if (!defined(UNIX) && (defined(DJEMX) || defined(MINGW) || defined(CYGWIN32) || defined(unix) || defined(__unix) || defined(__MACH__)))
++#if (!defined(UNIX) && (defined(DJEMX) || defined(MINGW) || defined(CYGWIN32) || defined(unix) || defined(__unix) || defined(__unix__) || defined(__MACH__)))
+ #define UNIX
+ #endif
+ 
+@@ -160,7 +160,8 @@ typedef double  real;
+ #define WILLUS_X86
+ #endif
+ 
+-#if (!defined(WILLUS_BIGENDIAN) && !defined(WILLUS_X86))
++#include <endian.h>
++#if (!defined(WILLUS_BIGENDIAN) && BYTE_ORDER == BIG_ENDIAN)
+ #define WILLUS_BIGENDIAN
+ #endif
+ 
