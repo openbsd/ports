@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_frontends_qt4_GuiView_cpp,v 1.1 2017/12/19 14:06:52 jca Exp $
+
+- kill UTF-8 BOM, base gcc chokes on it
+
+Index: src/frontends/qt4/GuiView.cpp
+--- src/frontends/qt4/GuiView.cpp.orig
++++ src/frontends/qt4/GuiView.cpp
+@@ -1,4 +1,4 @@
+-﻿/**
++/**
+  * \file GuiView.cpp
+  * This file is part of LyX, the document processor.
+  * Licence details can be found in the file COPYING.
