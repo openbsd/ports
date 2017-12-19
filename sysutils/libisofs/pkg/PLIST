@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/12/19 20:17:30 landry Exp $
+include/libisofs/
+include/libisofs/libisofs.h
+lib/libisofs.a
+lib/libisofs.la
+@lib lib/libisofs.so.${LIBisofs_VERSION}
+lib/pkgconfig/libisofs-1.pc

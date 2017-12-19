@@ -1,0 +1,4 @@
+libisofs is a library to create an ISO-9660 filesystem with extensions
+like Rock Ridge or Joliet. It is also a full featured ISO-9660 editor,
+allowing you to modify an ISO image or multisession disc, including
+file addition/removal, change of file names and attributes, etc.
