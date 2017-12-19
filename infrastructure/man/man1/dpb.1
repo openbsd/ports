@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.124 2017/11/28 14:40:58 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.125 2017/12/19 16:08:15 espie Exp $
 .\"
 .\" Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: November 28 2017 $
+.Dd $Mdocdate: December 19 2017 $
 .Dt DPB 1
 .Os
 .Sh NAME
@@ -1395,6 +1395,24 @@ Saves all terminal output, so that it can be replayed at hi speed with
 Logs the directories that were walked in the ports tree for dependency
 information, including the path to a dependency that triggered this
 particular step.
+.El
+.Sh DIAGNOSTICS
+.Bl -tag -offset aaaa -width truc
+.It Waiting for hosts to finish STARTUP...
+.It (Junk lock obtained for <host> at <time>)
+.It (Junk lock released for <host> at <time>)
+.It Received IO
+.It (Junk lock failure for <host> at <time>)
+.It Short-cut: depends already handled by <fullpkgpath>
+.It Forced junk, retainting: <tag>
+.It Don't run junk because nojunk in <fullpkgpath>
+.It Still tainted: <bool>
+.It Can't run junk because of lock on <>
+.It Avoided depends for <dependencies>
+.It Woken up <fullpkgpath>
+.It SPINNING ON MAIN
+.It SPINNING ON FETCH
+.It Killed: <job> stuck at <somewhere>
 .El
 .Sh BUGS AND LIMITATIONS
 .Nm
