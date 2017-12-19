@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.460 2017/11/28 08:43:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.461 2017/12/19 20:21:56 landry Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -115,6 +115,7 @@
      SUBDIR += iwatch
      SUBDIR += krename-kde4
      SUBDIR += ktsuss
+     SUBDIR += libburn
      SUBDIR += libesedb
      SUBDIR += libevt
      SUBDIR += libevtx
@@ -122,6 +123,8 @@
      SUBDIR += libfsntfs
      SUBDIR += libfwnt
      SUBDIR += libfwsi
+     SUBDIR += libisofs
+     SUBDIR += libisoburn
      SUBDIR += liblnk
      SUBDIR += libmsiecf
      SUBDIR += libolecf
@@ -334,7 +337,6 @@
      SUBDIR += xbattbar
      SUBDIR += xbattmon
      SUBDIR += xjobs
-     SUBDIR += xorriso
      SUBDIR += xps
      SUBDIR += xstatbar
      SUBDIR += xuvmstat
