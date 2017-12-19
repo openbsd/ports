@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_include_watchdog_wd_utils_h,v 1.1 2017/12/19 09:02:03 pea Exp $
+
+Index: src/include/watchdog/wd_utils.h
+--- src/include/watchdog/wd_utils.h.orig
++++ src/include/watchdog/wd_utils.h
+@@ -26,6 +26,7 @@
+ #define WD_UTILS_H
+ 
+ #include <ifaddrs.h>
++#include <pthread.h>
+ #include "parser/pg_list.h"
+ 
+ #define WD_NG (0)

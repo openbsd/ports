@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.7 2016/04/04 22:57:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2017/12/19 09:02:03 pea Exp $
 
 COMMENT= 	connection pool server for PostgreSQL
 
-DISTNAME= 	pgpool-II-3.2.12
-REVISION=	0
+DISTNAME= 	pgpool-II-3.7.0
 
 CATEGORIES= 	databases
 
-HOMEPAGE= 	http://www.pgpool.net/
+HOMEPAGE= 	https://www.pgpool.net/
 
 MAINTAINER= 	Pierre-Emmanuel Andre <pea@openbsd.org>
 
@@ -21,7 +20,7 @@ MASTER_SITES=		http://www.pgpool.net/mediawiki/images/
 WANTLIB= 		c crypto m pq ssl pthread
 
 CONFIGURE_STYLE= 	gnu
-CONFIGURE_ARGS= 	--with-openssl 
+CONFIGURE_ARGS= 	--with-openssl
 
 USE_GMAKE=		Yes
 FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/pgpool-II/
@@ -30,11 +29,12 @@ BUILD_DEPENDS = 	databases/postgresql,-server
 LIB_DEPENDS = 		databases/postgresql
 
 post-install:
-	@cd ${WRKSRC}/sql/pgpool-regclass && \
+	@cd ${WRKSRC}/src/sql/pgpool-regclass && \
 		env -i ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} \
 		-f ${MAKE_FILE} ${ALL_TARGET} && \
 		env -i ${MAKE_ENV} \
 		PREFIX=${WRKINST}${PREFIX} ${DESTDIRNAME}=${WRKINST} TRUEPREFIX=${PREFIX} \
 		${MAKE_PROGRAM} ${ALL_FAKE_FLAGS} -f ${MAKE_FILE} ${FAKE_TARGET}
+	${INSTALL_MAN} ${WRKDIST}/./doc/src/sgml/man8/pgpool.8 ${PREFIX}/man/man8/
 
 .include <bsd.port.mk>
