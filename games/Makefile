@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.362 2017/12/19 03:28:10 bcallah Exp $
+# $OpenBSD: Makefile,v 1.363 2017/12/19 13:15:11 kirby Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -38,6 +38,7 @@
      SUBDIR += bzflag
      SUBDIR += capitan-sevilla
      SUBDIR += cataclysm-dda
+     SUBDIR += cataclysm-dda,no_x11
      SUBDIR += cdogs-sdl
      SUBDIR += cgames
      SUBDIR += cgoban
