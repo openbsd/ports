@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.30 2017/02/07 16:55:18 okan Exp $
+# $OpenBSD: Makefile,v 1.31 2017/12/19 14:14:27 okan Exp $
 
 COMMENT=	simple event correlator
 
-V=		2.7.11
+V=		2.7.12
 DISTNAME=	sec-${V}
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/simple-evcorr/sec/releases/download/${V}/
@@ -11,7 +11,7 @@ HOMEPAGE=	http://simple-evcorr.github.io/
 
 MAINTAINER=	Okan Demirmen <okan@openbsd.org>
 
-# GPLv2
+# GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
 NO_BUILD=	Yes
