@@ -1,0 +1,7 @@
+libburn is a library by which preformatted data get onto optical media:
+CD, DVD, BD (Blu-Ray). On OpenBSD it uses /dev/cdNc.
+
+libburn also offers a facility for reading data blocks from its drives
+without using the normal block device i/o, which has its advantages and
+disadvantages. It seems appropriate, nevertheless, to do writing and
+reading via the same channel.
