@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2017/07/02 16:33:10 fcambus Exp $
+# $OpenBSD: Makefile,v 1.9 2017/12/20 14:39:45 fcambus Exp $
 
 COMMENT =	ansi and ascii art to png converter
 
 GH_ACCOUNT =	ansilove
 GH_PROJECT =	ansilove
-GH_TAGNAME =	3.0.7
+GH_TAGNAME =	3.0.8
 
 CATEGORIES =	graphics
 
