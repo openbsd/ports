@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.135 2017/11/16 23:20:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.136 2017/12/20 18:37:52 jca Exp $
 
 COMMENT=	multimedia decoding library
 
@@ -32,9 +32,8 @@ WANTLIB += z
 XINEAPI_REV=	2.6
 SUBST_VARS+=	XINEAPI_REV
 
-COMPILER=	base-clang ports-clang
+COMPILER=	base-clang base-gcc
 COMPILER_LANGS=	c
-MODCLANG_ARCHS=	amd64 i386
 
 BUILD_DEPENDS=	textproc/xmlto
 LIB_DEPENDS=	audio/flac \

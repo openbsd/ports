@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.280 2017/11/16 23:20:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.281 2017/12/20 18:37:52 jca Exp $
 
 COMMENT=	movie player supporting many formats
 
@@ -26,8 +26,7 @@ WANTLIB=	EGL GL SDL X11 Xext Xinerama Xss Xv Xxf86dga Xxf86vm ass \
 		swresample util x264 xvidcore z
 
 
-COMPILER =	base-clang ports-clang
-MODCLANG_ARCHS=	amd64 i386
+COMPILER =	base-clang base-gcc
 COMPILER_LANGS =	c
 
 LIB_DEPENDS=	archivers/bzip2 \
