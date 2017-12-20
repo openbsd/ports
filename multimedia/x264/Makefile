@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2017/11/16 23:20:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.45 2017/12/20 18:28:48 jca Exp $
 
 COMMENT=	free H.264/MPEG-4 AVC encoder
 
@@ -21,9 +21,8 @@ PERMIT_PACKAGE_FTP=	Yes
 
 WANTLIB=	c m pthread
 
-COMPILER=	base-clang ports-clang
+COMPILER=	base-clang base-gcc
 COMPILER_LANGS=	c
-MODCLANG_ARCHS=	amd64 i386
 
 .if ${MACHINE_ARCH} == "amd64"
 BUILD_DEPENDS+=	devel/nasm>=2.13.01
