@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-idle,v 1.3 2017/11/03 13:13:06 ajacoutot Exp $
+@comment $OpenBSD: PLIST-idle,v 1.4 2017/12/20 19:47:30 rpointel Exp $
 @option no-default-conflict
 @option is-branch
 @conflict python-idle->=3.6,<3.7
@@ -37,6 +37,9 @@ lib/python3.6/idlelib/__pycache__/__init__.cpython-36.pyc
 lib/python3.6/idlelib/__pycache__/__main__.cpython-36.opt-1.pyc
 lib/python3.6/idlelib/__pycache__/__main__.cpython-36.opt-2.pyc
 lib/python3.6/idlelib/__pycache__/__main__.cpython-36.pyc
+lib/python3.6/idlelib/__pycache__/_pyclbr.cpython-36.opt-1.pyc
+lib/python3.6/idlelib/__pycache__/_pyclbr.cpython-36.opt-2.pyc
+lib/python3.6/idlelib/__pycache__/_pyclbr.cpython-36.pyc
 lib/python3.6/idlelib/__pycache__/autocomplete.cpython-36.opt-1.pyc
 lib/python3.6/idlelib/__pycache__/autocomplete.cpython-36.opt-2.pyc
 lib/python3.6/idlelib/__pycache__/autocomplete.cpython-36.pyc
@@ -184,9 +187,6 @@ lib/python3.6/idlelib/__pycache__/stackviewer.cpython-36.pyc
 lib/python3.6/idlelib/__pycache__/statusbar.cpython-36.opt-1.pyc
 lib/python3.6/idlelib/__pycache__/statusbar.cpython-36.opt-2.pyc
 lib/python3.6/idlelib/__pycache__/statusbar.cpython-36.pyc
-lib/python3.6/idlelib/__pycache__/tabbedpages.cpython-36.opt-1.pyc
-lib/python3.6/idlelib/__pycache__/tabbedpages.cpython-36.opt-2.pyc
-lib/python3.6/idlelib/__pycache__/tabbedpages.cpython-36.pyc
 lib/python3.6/idlelib/__pycache__/textview.cpython-36.opt-1.pyc
 lib/python3.6/idlelib/__pycache__/textview.cpython-36.opt-2.pyc
 lib/python3.6/idlelib/__pycache__/textview.cpython-36.pyc
@@ -208,6 +208,7 @@ lib/python3.6/idlelib/__pycache__/zoomheight.cpython-36.pyc
 lib/python3.6/idlelib/__pycache__/zzdummy.cpython-36.opt-1.pyc
 lib/python3.6/idlelib/__pycache__/zzdummy.cpython-36.opt-2.pyc
 lib/python3.6/idlelib/__pycache__/zzdummy.cpython-36.pyc
+lib/python3.6/idlelib/_pyclbr.py
 lib/python3.6/idlelib/autocomplete.py
 lib/python3.6/idlelib/autocomplete_w.py
 lib/python3.6/idlelib/autoexpand.py
@@ -263,6 +264,9 @@ lib/python3.6/idlelib/idle_test/__pycache__/test_autocomplete.cpython-36.pyc
 lib/python3.6/idlelib/idle_test/__pycache__/test_autoexpand.cpython-36.opt-1.pyc
 lib/python3.6/idlelib/idle_test/__pycache__/test_autoexpand.cpython-36.opt-2.pyc
 lib/python3.6/idlelib/idle_test/__pycache__/test_autoexpand.cpython-36.pyc
+lib/python3.6/idlelib/idle_test/__pycache__/test_browser.cpython-36.opt-1.pyc
+lib/python3.6/idlelib/idle_test/__pycache__/test_browser.cpython-36.opt-2.pyc
+lib/python3.6/idlelib/idle_test/__pycache__/test_browser.cpython-36.pyc
 lib/python3.6/idlelib/idle_test/__pycache__/test_calltips.cpython-36.opt-1.pyc
 lib/python3.6/idlelib/idle_test/__pycache__/test_calltips.cpython-36.opt-2.pyc
 lib/python3.6/idlelib/idle_test/__pycache__/test_calltips.cpython-36.pyc
@@ -338,6 +342,9 @@ lib/python3.6/idlelib/idle_test/__pycache__/test_replace.cpython-36.pyc
 lib/python3.6/idlelib/idle_test/__pycache__/test_rstrip.cpython-36.opt-1.pyc
 lib/python3.6/idlelib/idle_test/__pycache__/test_rstrip.cpython-36.opt-2.pyc
 lib/python3.6/idlelib/idle_test/__pycache__/test_rstrip.cpython-36.pyc
+lib/python3.6/idlelib/idle_test/__pycache__/test_run.cpython-36.opt-1.pyc
+lib/python3.6/idlelib/idle_test/__pycache__/test_run.cpython-36.opt-2.pyc
+lib/python3.6/idlelib/idle_test/__pycache__/test_run.cpython-36.pyc
 lib/python3.6/idlelib/idle_test/__pycache__/test_scrolledlist.cpython-36.opt-1.pyc
 lib/python3.6/idlelib/idle_test/__pycache__/test_scrolledlist.cpython-36.opt-2.pyc
 lib/python3.6/idlelib/idle_test/__pycache__/test_scrolledlist.cpython-36.pyc
@@ -370,6 +377,7 @@ lib/python3.6/idlelib/idle_test/mock_idle.py
 lib/python3.6/idlelib/idle_test/mock_tk.py
 lib/python3.6/idlelib/idle_test/test_autocomplete.py
 lib/python3.6/idlelib/idle_test/test_autoexpand.py
+lib/python3.6/idlelib/idle_test/test_browser.py
 lib/python3.6/idlelib/idle_test/test_calltips.py
 lib/python3.6/idlelib/idle_test/test_colorizer.py
 lib/python3.6/idlelib/idle_test/test_config.py
@@ -395,6 +403,7 @@ lib/python3.6/idlelib/idle_test/test_query.py
 lib/python3.6/idlelib/idle_test/test_redirector.py
 lib/python3.6/idlelib/idle_test/test_replace.py
 lib/python3.6/idlelib/idle_test/test_rstrip.py
+lib/python3.6/idlelib/idle_test/test_run.py
 lib/python3.6/idlelib/idle_test/test_scrolledlist.py
 lib/python3.6/idlelib/idle_test/test_search.py
 lib/python3.6/idlelib/idle_test/test_searchbase.py
@@ -428,7 +437,6 @@ lib/python3.6/idlelib/searchbase.py
 lib/python3.6/idlelib/searchengine.py
 lib/python3.6/idlelib/stackviewer.py
 lib/python3.6/idlelib/statusbar.py
-lib/python3.6/idlelib/tabbedpages.py
 lib/python3.6/idlelib/textview.py
 lib/python3.6/idlelib/tooltip.py
 lib/python3.6/idlelib/tree.py

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tests,v 1.5 2017/10/16 05:16:24 rpointel Exp $
+@comment $OpenBSD: PLIST-tests,v 1.6 2017/12/20 19:47:30 rpointel Exp $
 @option no-default-conflict
 @option is-branch
 @conflict python-tests->=3.6,<3.7
@@ -968,6 +968,9 @@ lib/python3.6/test/__pycache__/test_readline.cpython-36.pyc
 lib/python3.6/test/__pycache__/test_regrtest.cpython-36.opt-1.pyc
 lib/python3.6/test/__pycache__/test_regrtest.cpython-36.opt-2.pyc
 lib/python3.6/test/__pycache__/test_regrtest.cpython-36.pyc
+lib/python3.6/test/__pycache__/test_repl.cpython-36.opt-1.pyc
+lib/python3.6/test/__pycache__/test_repl.cpython-36.opt-2.pyc
+lib/python3.6/test/__pycache__/test_repl.cpython-36.pyc
 lib/python3.6/test/__pycache__/test_reprlib.cpython-36.opt-1.pyc
 lib/python3.6/test/__pycache__/test_reprlib.cpython-36.opt-2.pyc
 lib/python3.6/test/__pycache__/test_reprlib.cpython-36.pyc
@@ -2719,6 +2722,7 @@ lib/python3.6/test/test_range.py
 lib/python3.6/test/test_re.py
 lib/python3.6/test/test_readline.py
 lib/python3.6/test/test_regrtest.py
+lib/python3.6/test/test_repl.py
 lib/python3.6/test/test_reprlib.py
 lib/python3.6/test/test_resource.py
 lib/python3.6/test/test_richcmp.py
@@ -2942,6 +2946,7 @@ lib/python3.6/test/tracedmodules/testmod.py
 lib/python3.6/test/win_console_handler.py
 lib/python3.6/test/wrongcert.pem
 lib/python3.6/test/xmltestdata/
+lib/python3.6/test/xmltestdata/expat224_utf8_bug.xml
 lib/python3.6/test/xmltestdata/simple-ns.xml
 lib/python3.6/test/xmltestdata/simple.xml
 lib/python3.6/test/xmltestdata/test.xml
