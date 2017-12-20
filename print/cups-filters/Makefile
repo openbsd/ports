@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.130 2017/11/16 23:20:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.131 2017/12/20 08:40:23 ajacoutot Exp $
 
 BROKEN-alpha=	ICE in cupsfilters/image-jpeg.c:316
 BROKEN-hppa=	ICE on filter/pdftopdf/qpdf_pdftopdf.cc:147
 
 COMMENT=	OpenPrinting CUPS filters
 
-DISTNAME=	cups-filters-1.17.9
-REVISION=	0
+DISTNAME=	cups-filters-1.18.0
 
 CATEGORIES=	print
 
@@ -23,8 +22,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += avahi-client avahi-common avahi-glib c cups cupsimage
 WANTLIB += dbus-1 expat ffi fontconfig freetype gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gmp gnutls gobject-2.0 hogweed iconv idn2
-WANTLIB += ijs intl jpeg lcms2 m nettle openjp2 p11-kit pcre
-WANTLIB += png poppler pthread qpdf tasn1 tiff unistring z
+WANTLIB += intl jpeg lcms2 m nettle openjp2 p11-kit pcre png
+WANTLIB += poppler pthread qpdf tasn1 tiff unistring z
 WANTLIB += ${COMPILER_LIBCXX}
 
 MASTER_SITES=	http://www.openprinting.org/download/cups-filters/
@@ -45,7 +44,6 @@ RUN_DEPENDS=	print/ghostscript/gnu \
 		textproc/mupdf
 
 LIB_DEPENDS=	print/cups,-libs \
-		print/ijs \
 		print/poppler \
 		print/qpdf>=7.0beta1
 
@@ -68,6 +66,11 @@ CONFIGURE_ARGS=	--with-gs-path=${LOCALBASE}/bin/gs \
 		--with-shell=/bin/ksh \
 		--without-php \
 		--disable-braille
+
+# deprecated but still needed for direct printing with foomatic
+CONFIGURE_ARGS +=	--enable-ijs
+LIB_DEPENDS +=		print/ijs
+WANTLIB +=		ijs
 
 # http://bzr.linuxfoundation.org/loggerhead/openprinting/cups-filters/revision/7554
 CONFIGURE_ENV +=ac_cv_prog_CUPS_PDFTOPS=${LOCALBASE}/bin/pdftops

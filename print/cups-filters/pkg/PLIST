@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.31 2017/08/23 07:41:02 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.32 2017/12/20 08:40:23 ajacoutot Exp $
 @conflict cups-<1.6.0
 @conflict ghostscript-<9.06p3
 @conflict foomatic-filters-*
@@ -45,7 +45,6 @@ libexec/cups/filter/imagetops
 @bin libexec/cups/filter/imagetoraster
 @bin libexec/cups/filter/mupdftoraster
 @bin libexec/cups/filter/pdftoijs
-@bin libexec/cups/filter/pdftoopvp
 @bin libexec/cups/filter/pdftopdf
 @bin libexec/cups/filter/pdftops
 @bin libexec/cups/filter/pdftoraster
@@ -105,8 +104,6 @@ share/doc/cups-filters/NEWS
 share/doc/cups-filters/README
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/cups-filters/
-share/examples/cups-filters/99pdftoopvp.conf
-@sample /etc/fonts/conf.d/99-pdftoopvp.conf
 share/examples/cups-filters/cups/
 @mode 0644
 share/examples/cups-filters/cups/cups-browsed.conf
