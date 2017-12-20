@@ -1,5 +1,17 @@
-$OpenBSD: patch-tools_lld_ELF_Driver_cpp,v 1.5 2017/09/01 06:40:28 ajacoutot Exp $
+$OpenBSD: patch-tools_lld_ELF_Driver_cpp,v 1.6 2017/12/20 08:06:46 ajacoutot Exp $
 
+- Make the behavior of the -v option more closer to GNU linkers.
+
+  Previously, lld exited with an error status if the only option given to
+  the command was -v. GNU linkers gracefully exit in that case. This patch
+  makes lld behave like GNU.
+
+  Note that even with this patch, lld's -v and --version options behave
+  slightly differently than GNU linkers' counterparts. For example,
+  if you run `ld.bfd -v -v`, the version string is printed out twice.
+  But that is an edge case that I don't think we need to take care of.
+
+  Fixes https://bugs.llvm.org/show_bug.cgi?id=31582
 - ELF: Add /usr/lib as default search path.
 
   GNU ld and gold have this path as default search path.
@@ -9,7 +21,21 @@ $OpenBSD: patch-tools_lld_ELF_Driver_cpp,v 1.5 2017/09/01 06:40:28 ajacoutot Exp
 Index: tools/lld/ELF/Driver.cpp
 --- tools/lld/ELF/Driver.cpp.orig
 +++ tools/lld/ELF/Driver.cpp
-@@ -410,6 +410,15 @@ static std::vector<StringRef> getArgs(opt::InputArgLis
+@@ -345,9 +345,10 @@ void LinkerDriver::main(ArrayRef<const char *> ArgsArr
+   if (Args.hasArg(OPT_v) || Args.hasArg(OPT_version))
+     message(getLLDVersion() + " (compatible with GNU linkers)");
+ 
+-  // ld.bfd always exits after printing out the version string.
+-  // ld.gold proceeds if a given option is -v. Because gold's behavior
+-  // is more permissive than ld.bfd, we chose what gold does here.
++  // The behavior of -v or --version is a bit strange, but this is
++  // needed for compatibility with GNU linkers.
++  if (Args.hasArg(OPT_v) && !Args.hasArg(OPT_INPUT))
++    return;
+   if (Args.hasArg(OPT_version))
+     return;
+ 
+@@ -410,6 +411,15 @@ static std::vector<StringRef> getArgs(opt::InputArgLis
    return V;
  }
  
@@ -25,7 +51,7 @@ Index: tools/lld/ELF/Driver.cpp
  static std::string getRpath(opt::InputArgList &Args) {
    std::vector<StringRef> V = getArgs(Args, OPT_rpath);
    return llvm::join(V.begin(), V.end(), ":");
-@@ -654,12 +663,13 @@ void LinkerDriver::readConfigs(opt::InputArgList &Args
+@@ -654,12 +664,13 @@ void LinkerDriver::readConfigs(opt::InputArgList &Args
    Config->OptRemarksWithHotness = Args.hasArg(OPT_opt_remarks_with_hotness);
    Config->Optimize = getInteger(Args, OPT_O, 1);
    Config->OutputFile = Args.getLastArgValue(OPT_o);
