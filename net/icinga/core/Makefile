@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.94 2017/02/07 21:40:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.95 2017/12/20 15:11:32 sthen Exp $
 
 COMMENT-main =		network monitoring system (improved fork of Nagios)
 COMMENT-cgi =		cgi scripts for Icinga (classic Nagios-style UI)
@@ -6,7 +6,7 @@ COMMENT-ido =		store Icinga configuration and events in a database
 
 GH_ACCOUNT =		Icinga
 GH_PROJECT=		icinga-core
-GH_TAGNAME =		v1.14.0
+GH_TAGNAME =		v1.14.2
 PKGNAME-main =		icinga-${GH_TAGNAME:S/v//}
 PKGNAME-cgi =		icinga-cgi-${GH_TAGNAME:S/v//}
 PKGNAME-ido =		icinga-idoutils-${GH_TAGNAME:S/v//}
@@ -65,8 +65,7 @@ CONFIGURE_ARGS += \
 CFLAGS +=	-Wformat -fPIC -I${LOCALBASE}/include \
 		-L${X11BASE}/lib -L${LOCALBASE}/lib
 
-INSTALL_TARGET = install-unstripped install-idoutils install-config \
-		 install-webconf
+INSTALL_TARGET = install install-idoutils install-config install-webconf
 
 # perl tests work; C tests fail if embedded-perl is enabled
 TEST_TARGET = test

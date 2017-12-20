@@ -1,10 +1,11 @@
-$OpenBSD: patch-cgi_Makefile_in,v 1.7 2013/10/25 16:16:23 sthen Exp $
+$OpenBSD: patch-cgi_Makefile_in,v 1.8 2017/12/20 15:11:32 sthen Exp $
 
 Allows for simpler use in a chroot jail
 
---- cgi/Makefile.in.orig	Tue Oct 22 10:40:32 2013
-+++ cgi/Makefile.in	Fri Oct 25 00:29:23 2013
-@@ -51,7 +51,7 @@ endif
+Index: cgi/Makefile.in
+--- cgi/Makefile.in.orig
++++ cgi/Makefile.in
+@@ -50,7 +50,7 @@ endif
  #CFLAGS_DEBUG=-ggdb3 -g3
  #CFLAGS+=$(CFLAGS_WARN) $(CFLAGS_DEBUG)
  
