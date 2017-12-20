@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/12/17 23:38:19 akoshibe Exp $
+# $OpenBSD: Makefile,v 1.2 2017/12/20 16:52:20 jca Exp $
 
 V =		6.4.7
+REVISION =	0
 COMMENT =	tool for formal verification of parallel software
 DISTNAME =	spin${V:S/.//g}
 PKGNAME =	spin-${V}
@@ -14,7 +15,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c
 
-MASTER_SITES =	https://spinroot.com/spin/Src/
+MASTER_SITES =	https://eigenstate.org/distfiles/ \
+		https://spinroot.com/spin/Src/
 
 ALL_TARGET =	spin
 MAKE_FILE =	makefile
