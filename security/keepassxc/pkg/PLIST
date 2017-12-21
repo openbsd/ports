@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.5 2017/11/02 23:34:23 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2017/12/21 07:54:27 rsadowski Exp $
 @bin bin/keepassxc
 @bin bin/keepassxc-cli
 lib/keepassxc/
 lib/keepassxc/libkeepassx-autotype-xcb.so
-share/applications/org.keepassxc.desktop
+share/applications/org.keepassxc.KeePassXC.desktop
 share/icons/hicolor/128x128/apps/keepassxc-dark.png
 share/icons/hicolor/128x128/apps/keepassxc-locked.png
 share/icons/hicolor/128x128/apps/keepassxc-unlocked.png
@@ -238,6 +238,7 @@ share/keepassxc/icons/database/C66_Money.png
 share/keepassxc/icons/database/C67_Certificate.png
 share/keepassxc/icons/database/C68_BlackBerry.png
 share/keepassxc/translations/
+share/keepassxc/translations/keepassx_ca.qm
 share/keepassxc/translations/keepassx_cs.qm
 share/keepassxc/translations/keepassx_da.qm
 share/keepassxc/translations/keepassx_de.qm
@@ -268,7 +269,7 @@ share/keepassxc/translations/keepassx_zh_TW.qm
 share/keepassxc/wordlists/
 share/keepassxc/wordlists/eff_large.wordlist
 share/metainfo/
-share/metainfo/org.keepassxc.appdata.xml
+share/metainfo/org.keepassxc.KeePassXC.appdata.xml
 share/mime/packages/keepassxc.xml
 @exec %D/bin/update-mime-database %D/share/mime
 @unexec-delete %D/bin/update-mime-database %D/share/mime
