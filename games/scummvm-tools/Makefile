@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.29 2017/07/26 22:45:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2017/12/21 10:23:27 jsg Exp $
 
 COMMENT=	collection of various tools for scummvm
-V=		1.9.0
+V=		2.0.0
 DISTNAME=	scummvm-tools-${V}
 CATEGORIES=	games
 MASTER_SITES=	http://www.scummvm.org/frs/scummvm-tools/${V}/
-REVISION=	0
 
 HOMEPAGE=	http://www.scummvm.org/
 
