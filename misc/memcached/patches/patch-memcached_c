@@ -1,31 +1,15 @@
-$OpenBSD: patch-memcached_c,v 1.14 2017/10/31 07:39:25 giovanni Exp $
+$OpenBSD: patch-memcached_c,v 1.15 2017/12/21 14:56:43 giovanni Exp $
+
 Index: memcached.c
 --- memcached.c.orig
 +++ memcached.c
-@@ -23,6 +23,7 @@
- #include <sys/uio.h>
- #include <ctype.h>
- #include <stdarg.h>
-+#include <unistd.h>
- 
- /* some POSIX systems need the following definition
-  * to get mlockall flags out of sys/mman.h.  */
-@@ -6861,6 +6862,18 @@ int main (int argc, char **argv) {
- 
-     if (pid_file != NULL) {
-         save_pid(pid_file);
-+    }
-+
-+    if (settings.socketpath != NULL) {
-+           if (pledge("stdio unix", NULL) == -1) {
-+              fprintf(stderr, "%s: pledge: %s\n", argv[0], strerror(errno));
-+              exit(1);
-+           }
+@@ -6927,6 +6927,9 @@ int main (int argc, char **argv) {
+     /* Drop privileges no longer needed */
+     if (settings.drop_privileges) {
+         drop_privileges();
 +    } else {
-+           if (pledge("stdio inet", NULL) == -1) {
-+              fprintf(stderr, "%s: pledge: %s\n", argv[0], strerror(errno));
-+              exit(1);
-+           }
++        fprintf(stderr, "no_drop_privileges option unsupported on this operating system.\n");
++        exit(EXIT_FAILURE);
      }
  
-     /* Drop privileges no longer needed */
+     /* Initialize the uriencode lookup table. */
