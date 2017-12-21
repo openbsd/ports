@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2017/11/21 00:13:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2017/12/21 19:36:17 kili Exp $
 
 COMMENT =		simple LaTeX editor
 
 DISTNAME =		gummi-0.6.5
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		editors
 
