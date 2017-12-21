@@ -1,7 +1,8 @@
-$OpenBSD: patch-configure,v 1.18 2016/11/01 13:03:14 jsg Exp $
---- configure.orig	Tue Oct 11 08:50:16 2016
-+++ configure	Tue Nov  1 19:50:55 2016
-@@ -1973,22 +1973,6 @@ if test "$_use_cxx11" = "yes" ; then
+$OpenBSD: patch-configure,v 1.19 2017/12/21 10:10:01 jsg Exp $
+Index: configure
+--- configure.orig
++++ configure
+@@ -2024,22 +2024,6 @@ if test "$_use_cxx11" = "yes" ; then
  fi
  echo $_use_cxx11
  
@@ -24,10 +25,32 @@ $OpenBSD: patch-configure,v 1.18 2016/11/01 13:03:14 jsg Exp $
  # If possible, we want to use -Wglobal-constructors
  # However, not all compilers support that, so check whether the active one does.
  echocheck "whether -Wglobal-constructors work"
-@@ -3838,18 +3822,16 @@ if test "$_flac" = auto ; then
- int main(void) { return FLAC__STREAM_SYNC_LEN >> 30; /* guaranteed to be 0 */ }
+@@ -3929,16 +3913,15 @@ if test "$_vorbis" = auto ; then
+ int main(void) { vorbis_packet_blocksize(0,0); return 0; }
  EOF
- 	if test "$_vorbis" = yes ; then
+ 	if test "$_ogg" = yes ; then
+-		cc_check $OGG_CFLAGS $OGG_LIBS $VORBIS_CFLAGS $VORBIS_LIBS \
+-			-lvorbisfile -lvorbis -logg && _vorbis=yes
++		cc_check `pkg-config --cflags --libs ogg vorbis vorbisfile` && _vorbis=yes
+ 	else
+-		cc_check $VORBIS_CFLAGS $VORBIS_LIBS \
+-			-lvorbisfile -lvorbis && _vorbis=yes
++		cc_check `pkg-config --cflags --libs vorbis vorbisfile` && _vorbis=yes
++		
+ 	fi
+ fi
+ if test "$_vorbis" = yes ; then
+-	append_var LIBS "$VORBIS_LIBS -lvorbisfile -lvorbis"
+-	append_var INCLUDES "$VORBIS_CFLAGS"
++	append_var LIBS "`pkg-config --libs vorbis vorbisfile`"
++	append_var LIBS "`pkg-config --cflags vorbis vorbisfile`"
+ fi
+ define_in_config_if_yes "$_vorbis" 'USE_VORBIS'
+ echo "$_vorbis"
+@@ -4002,16 +3985,14 @@ int main(void) {
+ }
+ EOF
+ 	if test "$_ogg" = yes ; then
 -		cc_check $FLAC_CFLAGS $FLAC_LIBS $OGG_CFLAGS $OGG_LIBS \
 -			-lFLAC -logg && _flac=yes
 +		cc_check `pkg-config --cflags --libs flac ogg` && _flac=yes
@@ -38,12 +61,10 @@ $OpenBSD: patch-configure,v 1.18 2016/11/01 13:03:14 jsg Exp $
  	fi
  fi
  if test "$_flac" = yes ; then
- 	if test "$_vorbis" = yes ; then
--		append_var LIBS "$FLAC_LIBS $OGG_LIBS -lFLAC -logg"
-+		append_var LIBS "`pkg-config --libs flac ogg`"
- 	else
--		append_var LIBS "$FLAC_LIBS -lFLAC"
-+		append_var LIBS "`pkg-config --libs flac`"
- 	fi
- 	append_var INCLUDES "$FLAC_CFLAGS"
+-	append_var LIBS "$FLAC_LIBS -lFLAC"
+-	append_var INCLUDES "$FLAC_CFLAGS"
++	append_var LIBS "`pkg-config --libs flac`"
++	append_var INCLUDES "`pkg-config --cflags flac`"
  fi
+ define_in_config_if_yes "$_flac" 'USE_FLAC'
+ echo "$_flac"
