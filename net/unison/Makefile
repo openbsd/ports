@@ -1,12 +1,15 @@
-# $OpenBSD: Makefile,v 1.13 2017/11/16 22:23:42 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2017/12/21 15:31:48 giovanni Exp $
 
 COMMENT=	multi-platform file synchronization tool
 CATEGORIES=	net
 
-V=		2.48.4
-REVISION=	2
-DISTNAME=	unison-${V}
-MASTER_SITES=	${HOMEPAGE}download/releases/stable/
+REV=		v3
+VER=		2.48.15
+GH_ACCOUNT=	bcpierce00
+GH_PROJECT=	unison
+GH_TAGNAME=	v${VER}${REV}
+DISTNAME=	${GH_TAGNAME}
+PKGNAME=	${GH_PROJECT}-${VER}
 
 HOMEPAGE=	http://www.cis.upenn.edu/~bcpierce/unison/
 MAINTAINER=	Giovanni Bechis <giovanni@openbsd.org>
@@ -14,7 +17,7 @@ MAINTAINER=	Giovanni Bechis <giovanni@openbsd.org>
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	c m util
+WANTLIB=	c curses m pthread util
 
 MODULES=	lang/ocaml
 
@@ -39,6 +42,8 @@ WANTLIB += pangocairo-1.0 pangoft2-1.0 gdk_pixbuf-2.0
 WANTLIB += gdk-x11-2.0 gtk-x11-2.0 atk-1.0 cairo z
 .endif
 
+TEST_DEPENDS +=	emacs->=24:editors/emacs
+
 # CFLAGS _must_ be empty.  This is an OCaml compiler.
 MAKE_FLAGS+=	NATIVE=${MODOCAML_NATIVE:S/Yes/true/:S/No/false/} \
 		OCAMLOPT=ocamlopt.opt \
@@ -52,7 +57,7 @@ ALL_TARGET=	unison
 
 DOCS=		BUGS.txt NEWS README
 
-WRKDIST=	${WRKDIR}/src
+WRKDIST=	${WRKDIR}/${PKGNAME}${REV}/src
 
 # Avoid the nightmare of their Makefile install target.
 # Do not use INSTALL_PROGRAM, as the bytecode version must not be stripped!
