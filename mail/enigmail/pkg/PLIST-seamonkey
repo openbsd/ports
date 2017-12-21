@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-seamonkey,v 1.6 2017/08/30 20:42:13 giovanni Exp $
+@comment $OpenBSD: PLIST-seamonkey,v 1.7 2017/12/21 14:46:47 giovanni Exp $
 @conflict enigmail-seamonkey-<=1.6v0p1
 @pkgpath www/seamonkey,-enigmail
 lib/mozilla/
@@ -77,6 +77,7 @@ lib/mozilla/extensions/{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}/{847b3a00-7ab1-11d
 lib/mozilla/extensions/{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}/{847b3a00-7ab1-11d4-8f02-006008948af5}/modules/prefs.jsm
 lib/mozilla/extensions/{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}/{847b3a00-7ab1-11d4-8f02-006008948af5}/modules/promise.jsm
 lib/mozilla/extensions/{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}/{847b3a00-7ab1-11d4-8f02-006008948af5}/modules/protocolHandler.jsm
+lib/mozilla/extensions/{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}/{847b3a00-7ab1-11d4-8f02-006008948af5}/modules/rng.jsm
 lib/mozilla/extensions/{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}/{847b3a00-7ab1-11d4-8f02-006008948af5}/modules/rules.jsm
 lib/mozilla/extensions/{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}/{847b3a00-7ab1-11d4-8f02-006008948af5}/modules/streams.jsm
 lib/mozilla/extensions/{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}/{847b3a00-7ab1-11d4-8f02-006008948af5}/modules/subprocess.jsm
