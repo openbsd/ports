@@ -1,0 +1,16 @@
+$OpenBSD: patch-CorsixTH_Lua_app_lua,v 1.1 2017/12/22 07:36:17 bcallah Exp $
+
+Do not check or download updates.
+
+Index: CorsixTH/Lua/app.lua
+--- CorsixTH/Lua/app.lua.orig
++++ CorsixTH/Lua/app.lua
+@@ -63,7 +63,7 @@ function App:App()
+   }
+   self.strings = {}
+   self.savegame_version = SAVEGAME_VERSION
+-  self.check_for_updates = true
++  self.check_for_updates = false
+ end
+ 
+ --! Starts a Lua DBGp client & connects it to a DBGp server.
