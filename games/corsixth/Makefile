@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.2 2017/11/16 23:20:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2017/12/22 07:35:15 bcallah Exp $
 
 ONLY_FOR_ARCHS =	${CXX11_ARCHS}
 
-V =		0.60.1
+V =		0.61
 COMMENT =	open source clone of Theme Hospital
-DISTNAME =	corsixth-${V}
+PKGNAME =	corsixth-${V}
 CATEGORIES =	games x11
 
-# Switch to GH_TAGNAME at next update.
 GH_ACCOUNT =	CorsixTH
 GH_PROJECT =	CorsixTH
-#GH_TAGNAME =	v${V}
-GH_COMMIT =	6a079fd02bc456be7410e4394d7661308e86b3bf
+GH_TAGNAME =	v${V}
 
 # https site is a little broken.
 HOMEPAGE =	http://corsixth.com/
@@ -23,8 +21,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB += ${COMPILER_LIBCXX} SDL2 SDL2_mixer avcodec avformat
 WANTLIB += avutil c freetype m swresample swscale ${MODLUA_WANTLIB}
 
-# base clang or ports gcc
-COMPILER =	base-clang ports-gcc
+# C++14
+COMPILER =	base-clang ports-gcc ports-clang
 
 MODULES =	devel/cmake \
 		lang/lua

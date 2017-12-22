@@ -1,11 +1,11 @@
-$OpenBSD: patch-CorsixTH_CMakeLists_txt,v 1.1.1.1 2017/07/31 22:14:44 bcallah Exp $
+$OpenBSD: patch-CorsixTH_CMakeLists_txt,v 1.2 2017/12/22 07:35:15 bcallah Exp $
 
 Install to the correct location.
 
 Index: CorsixTH/CMakeLists.txt
 --- CorsixTH/CMakeLists.txt.orig
 +++ CorsixTH/CMakeLists.txt
-@@ -212,10 +212,10 @@ IF(APPLE)
+@@ -222,10 +222,10 @@ IF(APPLE)
      FIXUP_BUNDLE(${CMAKE_INSTALL_PREFIX}/CorsixTH.app \"\" \"\")
      ")
  ELSE()
