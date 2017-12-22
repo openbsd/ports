@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.363 2017/12/19 13:15:11 kirby Exp $
+# $OpenBSD: Makefile,v 1.364 2017/12/22 10:23:48 bcallah Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -197,6 +197,7 @@
      SUBDIR += pioneers
      SUBDIR += pokerth
      SUBDIR += polymorphable
+     SUBDIR += postal
      SUBDIR += prboom
      SUBDIR += prboom-plus
      SUBDIR += pushover
