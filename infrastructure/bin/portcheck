@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.116 2017/12/17 14:02:02 zhuk Exp $
+# $OpenBSD: portcheck,v 1.117 2017/12/22 22:59:53 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -1011,6 +1011,7 @@ check_plist() {
 	local qt4_dep=false qt5_dep=false qt5declarative_dep=false
 
 	local owner_set=false group_set=false mode_set=false
+	local readme_seen=false
 
 	# Temporary ones
 	local app l theme varname py
@@ -1235,10 +1236,16 @@ check_plist() {
 		"@mode "*)
 			mode_set=true
 			;;
-		"@rcscript "*|share/doc/pkg-readmes/*)
+		"@rcscript "*)
 			! $owner_set || err "${portref}$l has @owner set"
 			! $group_set || err "${portref}$l has @group set"
 			! $mode_set  || err "${portref}$l has @mode set"
+			;;
+		share/doc/pkg-readmes/*)
+			! $owner_set || err "${portref}$l has @owner set"
+			! $group_set || err "${portref}$l has @group set"
+			! $mode_set  || err "${portref}$l has @mode set"
+			readme_seen=true
 			;;
 		esac
 	done
@@ -1456,6 +1463,13 @@ check_plist() {
 	    "\${PREFIX}/man/ rather than under \${PREFIX}/share/man/"
 	$wrong_info && err "${portref}info pages should go under" \
 	    "\${PREFIX}/info/ rather than under \${PREFIX}/share/info/"
+
+	if ! $readme_seen; then
+		local readme=pkg/README${subpkg}
+		if [ -e "$readme" ]; then
+			err "${portref}missing share/doc/pkg-readmes/\${FULLPKGNAME} in PLIST${subpkg}"
+		fi
+	fi
 }
 
 # Checks made:
@@ -1865,6 +1879,7 @@ check_pkg_dir() {
 		check_trailing_whitespace "$F"
 		check_long_lines "$F"
 		check_hardcoded "$F"
+		check_rcscript "$dir" "${F##*/}"
 		head -n 5 -- "$F" |
 			egrep -q '^#[[:space:]]*\$OpenBSD(:.*)?\$$' ||
 			err "$F does not have \$OpenBSD\$ RCS tag at the top"
@@ -1906,6 +1921,17 @@ check_hardcoded() {
 		    END { $? = $ec; }' \
 		"$1" || err "hardcoded paths detected in $1, consider using" \
 		    "SUBST_VARS and TRUEPREFIX/LOCALBASE/LOCALSTATEDIR/VARBASE"
+}
+
+# Checks made:
+#   * All pkg/foo.rc files are found in some PLIST* or PFRAG*.
+check_rcscript() {
+	$debugging && echo "CALLED: check_rcscript($*)" >&2
+	local dir="$1" rcname="$2"
+
+	fgrep -xsq "@rcscript \${RCDIR}/${rcname%.rc}" \
+	    "$dir"/PLIST* "$dir"/PFRAG* || err \
+		"$F is not mentioned in any packing list"
 }
 
 # Checks made:
