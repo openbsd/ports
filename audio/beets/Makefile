@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.26 2017/06/28 17:59:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2017/12/22 14:39:22 sthen Exp $
 
 COMMENT =	CLI tools to manage music collections
 
-MODPY_EGG_VERSION = 1.4.5
+MODPY_EGG_VERSION = 1.4.6
 DISTNAME =	beets-${MODPY_EGG_VERSION}
 CATEGORIES =	audio
 
@@ -17,11 +17,9 @@ MODULES =	lang/python
 MODPY_SETUPTOOLS = Yes
 MODPY_PI =	Yes
 
-# not yet:
-# MODPY_VERSION = ${MODPY_DEFAULT_VERSION_3}
-
-# remove when switching to py3
-RUN_DEPENDS+=	devel/py-enum34>=1.0.4
+MODPY_VERSION = ${MODPY_DEFAULT_VERSION_3}
+# needed if using py2 instead:
+# RUN_DEPENDS+=	devel/py-enum34>=1.0.4
 
 RUN_DEPENDS+=	audio/py-discogs-client${MODPY_FLAVOR}>=2.0.2 \
 		audio/py-last${MODPY_FLAVOR} \
