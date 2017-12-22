@@ -1,5 +1,5 @@
-Takes a list of prefixes in conventional format on stdin, and performs two
-optimisations to attempt to reduce the length of the prefix list.
+Takes a list of IPv4 prefixes in conventional format on stdin, and performs
+two optimisations to attempt to reduce the length of the prefix list.
 
 The first optimisation is to remove any supplied prefixes which are
 superfluous because they are already included in another supplied prefix.
@@ -9,3 +9,6 @@ supplied.
 The second optimisation identifies adjacent prefixes that can be combined
 under a single, shorter-length prefix. For example, 203.97.2.0/24 and
 203.97.3.0/24 can be combined into the single prefix 203.97.2.0/23.
+
+See the "aggregate6" package for an alternative tool that supports both
+IPv4 and IPv6.
