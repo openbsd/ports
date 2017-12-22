@@ -1,4 +1,6 @@
-$OpenBSD: patch-src_update-desktop-database_c,v 1.12 2017/11/03 10:32:53 jasper Exp $
+$OpenBSD: patch-src_update-desktop-database_c,v 1.13 2017/12/22 09:47:55 jasper Exp $
+
+https://bugs.freedesktop.org/show_bug.cgi?id=104367
 
 Index: src/update-desktop-database.c
 --- src/update-desktop-database.c.orig
