@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_external_libindi_libs_indibase_baseclient_cpp,v 1.1 2017/12/22 14:36:29 ajacoutot Exp $
+
+https://github.com/Stellarium/stellarium/pull/52
+
+Index: src/external/libindi/libs/indibase/baseclient.cpp
+--- src/external/libindi/libs/indibase/baseclient.cpp.orig
++++ src/external/libindi/libs/indibase/baseclient.cpp
+@@ -42,6 +42,7 @@
+ #include <netdb.h>
+ #include <unistd.h>
+ #include <sys/types.h>
++#include <sys/socket.h>
+ #include <netinet/in.h>
+ #define net_read read
+ #define net_write write
