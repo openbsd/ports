@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/12/22 10:23:26 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2017/12/22 21:45:58 bcallah Exp $
 
 V =		20171127
 COMMENT =	Postal 1, the non-stop killing isometric shooter game
 DISTNAME =	postal-1-open-source-${V}
 PKGNAME =	postal-${V}
+REVISION =	0
 CATEGORIES =	games x11
 
 HOMEPAGE =	http://runningwithscissors.com/
