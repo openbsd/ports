@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.41 2017/07/14 11:36:43 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.42 2017/12/22 16:11:08 sthen Exp $
 @conflict xscreensaver-data-*
 @conflict xscreensaver-gle-*
 @conflict xscreensaver-<5.07p3-no_gle
@@ -79,6 +79,7 @@ libexec/xscreensaver/
 @bin libexec/xscreensaver/engine
 @bin libexec/xscreensaver/epicycle
 @bin libexec/xscreensaver/eruption
+@bin libexec/xscreensaver/esper
 @bin libexec/xscreensaver/euler2d
 @bin libexec/xscreensaver/extrusion
 @bin libexec/xscreensaver/fadeplot
@@ -309,6 +310,7 @@ libexec/xscreensaver/webcollage
 @man man/man6/engine.6
 @man man/man6/epicycle.6
 @man man/man6/eruption.6
+@man man/man6/esper.6
 @man man/man6/euler2d.6
 @man man/man6/extrusion.6
 @man man/man6/fadeplot.6
@@ -562,6 +564,7 @@ share/xscreensaver/config/energystream.xml
 share/xscreensaver/config/engine.xml
 share/xscreensaver/config/epicycle.xml
 share/xscreensaver/config/eruption.xml
+share/xscreensaver/config/esper.xml
 share/xscreensaver/config/euler2d.xml
 share/xscreensaver/config/extrusion.xml
 share/xscreensaver/config/fadeplot.xml

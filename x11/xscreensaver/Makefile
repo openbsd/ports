@@ -1,16 +1,13 @@
-# $OpenBSD: Makefile,v 1.93 2017/07/14 11:36:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.94 2017/12/22 16:11:08 sthen Exp $
 
 COMMENT=		screen saver and locker for the X Window System
 
-DISTNAME=		xscreensaver-5.37
-REVISION=		0
+# XXX x11/kde4/artwork plist may need regen if an update adds a new hack.
+DISTNAME=		xscreensaver-5.38
 
 CATEGORIES=		x11
 
 HOMEPAGE=		http://www.jwz.org/xscreensaver/
-
-# After updating this port, remember to make update-plist in
-# x11/kde/artwork3 and x11/kde4/artwork, too.
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
@@ -53,7 +50,7 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 FAKE_FLAGS=		install_prefix=${WRKINST}
 
 pre-configure:
-	perl -pi -e 's,gnome-open,xdg-open,g' ${WRKSRC}/configure
+	sed -i 's,gnome-open,xdg-open,g' ${WRKSRC}/configure
 
 post-install:
 # remove conflicts (misc/deco, games/circuit)
