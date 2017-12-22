@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/12/22 10:23:26 bcallah Exp $
+@bin bin/postal1

@@ -1,0 +1,28 @@
+$OpenBSD: README,v 1.1.1.1 2017/12/22 10:23:26 bcallah Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Postal
+======
+Postal requires the original game files from Postal 1 to work properly.
+These can come from an original CD or from GOG.com.
+
+If using the GOG.com version, you must extract the files from
+setup_postal_1.0_-_28.11.2016_(9399).exe using the innoextract package.
+The files will be in a directory named app. You must keep this
+directory, though it can be renamed and moved to a location of your
+choosing, and you can delete everything else that is extracted from the
+exe, such as the tmp directory.
+
+After extracting and optionally renaming and moving the game files
+directory, you will need to cd into the game files directory. Using the
+dos2unix package, you must strip the MS-DOS newlines from the POSTAL.INI
+and res/levels/postal\ plus\ realms.ini files. You should do this before
+running the postal1 binary for the first time.
+
+Your working directory must be the game files directory when launching
+the postal1 binary.
+
+To go to the next level, press F1 after completing your objective.

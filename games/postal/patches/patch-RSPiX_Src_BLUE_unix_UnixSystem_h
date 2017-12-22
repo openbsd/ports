@@ -1,0 +1,23 @@
+$OpenBSD: patch-RSPiX_Src_BLUE_unix_UnixSystem_h,v 1.1.1.1 2017/12/22 10:23:26 bcallah Exp $
+
+Fix formatting.
+
+Index: RSPiX/Src/BLUE/unix/UnixSystem.h
+--- RSPiX/Src/BLUE/unix/UnixSystem.h.orig
++++ RSPiX/Src/BLUE/unix/UnixSystem.h
+@@ -244,13 +244,13 @@ inline bool rspObjCmp(const T* p1, const T* p2, size_t
+ 
+ inline char *ltoa(int32_t l, char *buf, int bufsize)
+ {
+-    snprintf(buf, bufsize, "%ld", l);
++    snprintf(buf, bufsize, "%d", l);
+     return(buf);
+ }
+ 
+ inline char *ltoa(uint32_t l, char *buf, int bufsize)
+ {
+-    snprintf(buf, bufsize, "%ld", l);
++    snprintf(buf, bufsize, "%u", l);
+     return(buf);
+ }
+ 

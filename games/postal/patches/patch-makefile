@@ -1,0 +1,70 @@
+$OpenBSD: patch-makefile,v 1.1.1.1 2017/12/22 10:23:26 bcallah Exp $
+
+Don't hardcode optimization flags.
+Proper includes.
+
+Index: makefile
+--- makefile.orig
++++ makefile
+@@ -35,8 +35,8 @@ else ifeq ($(macosx_x86),1)
+   target := macosx_x86
+   CLIENTEXE := $(BINDIR)/postal1-x86
+ else
+-  target := linux_x86_64
+-  CLIENTEXE := $(BINDIR)/postal1-x86_64
++  target := openbsd
++  CLIENTEXE := $(BINDIR)/postal1
+ endif
+ 
+ # ----------------------------------------------------- ... bleh.
+@@ -48,9 +48,9 @@ ifeq ($(strip $(target)),linux_x86)
+   CXX := g++
+   LINKER := g++ -m32
+ endif
+-ifeq ($(strip $(target)),linux_x86_64)
++ifeq ($(strip $(target)),openbsd)
+   macosx := false
+-  CPUARCH := x86_64
++  CPUARCH ?= x86_64
+   CC ?= gcc
+   CXX ?= g++
+   LINKER ?= g++
+@@ -279,7 +279,8 @@ CFLAGS += -DLOCALE=US -DTARGET=POSTAL_2015
+ 
+ # includes ...
+ CFLAGS += -I$(SRCDIR)
+-CFLAGS += -I$(SRCDIR)/SDL2/include
++CFLAGS += -I${LOCALBASE}/include
++CFLAGS += -I${LOCALBASE}/include/SDL2
+ CFLAGS += -I$(SRCDIR)/RSPiX
+ CFLAGS += -I$(SRCDIR)/RSPiX/Inc
+ CFLAGS += -I$(SRCDIR)/RSPiX/Src
+@@ -307,17 +308,7 @@ ifeq ($(strip $(macosx)),true)
+   LIBS += SDL2/libs/macosx/libSDL2-2.0.0.dylib
+   STEAMLDFLAGS += steamworks/sdk/redistributable_bin/osx32/libsteam_api.dylib
+ else
+-  ifeq ($(CPUARCH),arm)
+-    LIBS += -lSDL2
+-  else
+-	ifeq ($(CPUARCH),x86_64)
+-	  LIBS += -lSDL2
+-	else
+-	  LIBS += SDL2/libs/linux-x86/libSDL2-2.0.so.0
+-	  LDFLAGS += -Wl,-rpath,\$$ORIGIN
+-	  STEAMLDFLAGS += steamworks/sdk/redistributable_bin/linux32/libsteam_api.so
+-	endif
+- endif
++  LIBS += -lSDL2
+ endif
+ 
+ ifeq ($(strip $(steamworks)),true)
+@@ -339,8 +330,7 @@ debugon:
+ 	$(eval CFLAGS += -DDEBUG -D_DEBUG -O0 -g)
+ 
+ debugoff:
+-	$(eval OPTFLAG := -O3)
+-	$(eval CFLAGS += -DNDEBUG -D_NDEBUG -O2)
++	$(eval CFLAGS += -DNDEBUG -D_NDEBUG)
+ 
+ $(BINDIR)/%.o: $(SRCDIR)/%.s
+ 	$(CC) $(CFLAGS) -DELF -x assembler-with-cpp -o $@ -c $<
