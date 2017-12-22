@@ -1,4 +1,4 @@
-$OpenBSD: patch-build_config_compiler_BUILD_gn,v 1.5 2017/12/04 13:55:41 robert Exp $
+$OpenBSD: patch-build_config_compiler_BUILD_gn,v 1.6 2017/12/22 08:21:56 robert Exp $
 
 Index: build/config/compiler/BUILD.gn
 --- build/config/compiler/BUILD.gn.orig
@@ -68,7 +68,7 @@ Index: build/config/compiler/BUILD.gn
          cflags += [ "-gdwarf-3" ]
        }
 -      cflags += [ "-g2" ]
-+      cflags += [ "-g1" ]
++      cflags += [ "-g0" ]
      }
      if (use_debug_fission) {
        cflags += [ "-gsplit-dwarf" ]
