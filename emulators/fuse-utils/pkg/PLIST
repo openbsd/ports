@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2017/01/03 13:20:43 fcambus Exp $
+@comment $OpenBSD: PLIST,v 1.9 2017/12/22 13:54:27 fcambus Exp $
 @bin bin/audio2tape
 @bin bin/createhdf
 @bin bin/fmfconv
@@ -11,6 +11,7 @@
 @bin bin/scl2trd
 @bin bin/snap2tzx
 @bin bin/snapconv
+@bin bin/snapdump
 @bin bin/tape2pulses
 @bin bin/tape2wav
 @bin bin/tapeconv
@@ -28,6 +29,7 @@
 @man man/man1/scl2trd.1
 @man man/man1/snap2tzx.1
 @man man/man1/snapconv.1
+@man man/man1/snapdump.1
 @man man/man1/tape2pulses.1
 @man man/man1/tape2wav.1
 @man man/man1/tapeconv.1
