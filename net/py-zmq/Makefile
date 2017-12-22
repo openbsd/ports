@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2017/01/15 13:28:04 shadchin Exp $
+# $OpenBSD: Makefile,v 1.17 2017/12/22 10:24:05 jasper Exp $
 
 COMMENT =		Python bindings for ZeroMQ
 
-MODPY_EGG_VERSION =	16.0.2
+MODPY_EGG_VERSION =	16.0.3
 DISTNAME =		pyzmq-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/py/py-/}
 
