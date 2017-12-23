@@ -1,0 +1,12 @@
+Vis aims to be a modern, legacy free, simple yet efficient editor combining the
+strengths of both vi(m) and sam.
+
+It extends vi's modal editing with built-in support for multiple
+cursors/selections and combines it with sam's structural regular expression
+based command language.
+
+As an universal editor it has decent Unicode support and should cope with
+arbitrary files including: large, binary or single-line ones.
+
+Efficient syntax highlighting is provided using Parsing Expression Grammars
+which can be conveniently expressed using Lua in the form of LPeg.
