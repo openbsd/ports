@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2015/10/10 12:33:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2017/12/23 17:59:29 feinerer Exp $
 
      SUBDIR =
      SUBDIR += asterisk
@@ -9,6 +9,7 @@
      SUBDIR += astmanproxy
      SUBDIR += baresip
      SUBDIR += bcg729
+     SUBDIR += coturn
      SUBDIR += fobbit
      SUBDIR += gsutil
      SUBDIR += iaxclient
