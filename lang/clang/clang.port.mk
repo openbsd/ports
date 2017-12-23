@@ -1,6 +1,6 @@
-# $OpenBSD: clang.port.mk,v 1.28 2017/12/03 12:31:23 ajacoutot Exp $
+# $OpenBSD: clang.port.mk,v 1.29 2017/12/23 09:43:59 ajacoutot Exp $
 
-MODCLANG_VERSION=	5.0.1rc2
+MODCLANG_VERSION=	5.0.1
 
 MODCLANG_ARCHS ?= ${LLVM_ARCHS}
 MODCLANG_LANGS ?=
