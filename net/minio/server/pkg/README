@@ -1,0 +1,31 @@
+$OpenBSD: README,v 1.1.1.1 2017/12/23 21:19:39 landry Exp $
+
++-------------------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-------------------------------------------------------------------------------
+
+Fetching access/secret
+======================
+
+By default minio server runs as _minio user, and creates its configuration file
+at first startup in ${VARBASE}/minio/.minio/config.json. This file contains the
+randomly generated accessKey and secretKey tokens that should be used by
+minioc/S3-compatible clients to authenticate to the server.
+
+Its API/web interface is accessible by default on port 9000, listening on all
+network interfaces.
+
+Bumping file limits
+===================
+
+Per https://github.com/minio/minio-service it is advised to run minio with more
+file descriptors than what is allowed by the default daemon login class.
+
+Add this to the login.conf(5) file if you want to bump those limits:
+
+minio:\
+	:openfiles-cur=4096:\
+	:openfiles-max=8192:\
+	:tc=daemon:
+
+Refer to https://docs.minio.io/ for more details on how to run minio.

@@ -1,0 +1,14 @@
+#!/bin/sh
+#
+# $OpenBSD: minio.rc,v 1.1.1.1 2017/12/23 21:19:39 landry Exp $
+
+daemon="${TRUEPREFIX}/bin/minio server"
+daemon_flags="${VARBASE}/minio/export"
+daemon_user="_minio"
+
+. /etc/rc.d/rc.subr
+
+rc_bg=YES
+rc_reload=NO
+
+rc_cmd $1

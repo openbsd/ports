@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/12/23 21:19:39 landry Exp $
+@newgroup _minio:796
+@newuser _minio:796:_minio:daemon:Minio user:${VARBASE}/minio:/sbin/nologin
+@bin bin/minio
+share/doc/pkg-readmes/${FULLPKGNAME}
+@rcscript ${RCDIR}/minio
+@owner _minio
+@group _minio
+@mode 0750
+@sample ${VARBASE}/minio/
+@sample ${VARBASE}/minio/export/
+@extraunexec rm -rf ${VARBASE}/minio/{.,}*
