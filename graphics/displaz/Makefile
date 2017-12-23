@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2017/07/27 09:55:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2017/12/23 11:32:28 landry Exp $
 
 COMMENT =	viewer for geospatial point clouds
-DISTNAME =	displaz-0.3.3pre0
-GH_ACCOUNT =	landryb
+GH_ACCOUNT =	c42f
 GH_PROJECT =	displaz
-GH_COMMIT =	b11cb5fccdeb617f9dac5b859165b60cf38a54c2
-REVISION =	0
+GH_TAGNAME =	v0.4.0
 
 HOMEPAGE =	http://c42f.github.io/displaz/
 
@@ -28,6 +26,10 @@ WANTLIB += ${COMPILER_LIBCXX}
 
 CONFIGURE_ARGS =	-DDISPLAZ_EMBED_GLEW=false \
 			-DLASLIB_LIBRARY=${LOCALBASE}/lib/liblas.a \
+
+SUBST_VARS +=	TRUEPREFIX
+post-patch:
+	${SUBST_CMD} ${WRKSRC}/src/gui/guimain.cpp
 
 post-install:
 	# glsl 1.4 works..

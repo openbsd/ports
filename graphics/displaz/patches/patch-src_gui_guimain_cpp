@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_gui_guimain_cpp,v 1.1 2017/12/23 11:32:28 landry Exp $
+
+Index: src/gui/guimain.cpp
+--- src/gui/guimain.cpp.orig
++++ src/gui/guimain.cpp
+@@ -25,15 +25,7 @@ class GeometryMutator;
+ /// the install directories are laid out.
+ static void setupQFileSearchPaths()
+ {
+-    QString installBinDir = QCoreApplication::applicationDirPath();
+-    if (!installBinDir.endsWith("/bin"))
+-    {
+-        std::cerr << "WARNING: strange install location detected "
+-                     "- shaders will not be found\n";
+-        return;
+-    }
+-    QString installBaseDir = installBinDir;
+-    installBaseDir.chop(4);
++    QString installBaseDir = "${TRUEPREFIX}";
+     QDir::addSearchPath("shaders", installBaseDir + "/" + DISPLAZ_SHADER_DIR);
+     QDir::addSearchPath("doc", installBaseDir + "/" + DISPLAZ_DOC_DIR);
+ }
