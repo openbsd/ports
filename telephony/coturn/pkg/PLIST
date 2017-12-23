@@ -1,0 +1,125 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/12/23 17:55:38 feinerer Exp $
+@newgroup _turnserver:795
+@newuser _turnserver:795:795:daemon:TURN Server user:/var/empty:/sbin/nologin
+@bin bin/turnadmin
+@bin bin/turnserver
+@bin bin/turnutils_natdiscovery
+@bin bin/turnutils_oauth
+@bin bin/turnutils_peer
+@bin bin/turnutils_stunclient
+@bin bin/turnutils_uclient
+include/turn/
+include/turn/client/
+include/turn/client/TurnMsgLib.h
+include/turn/client/ns_turn_ioaddr.h
+include/turn/client/ns_turn_msg.h
+include/turn/client/ns_turn_msg_addr.h
+include/turn/client/ns_turn_msg_defs.h
+include/turn/client/ns_turn_msg_defs_experimental.h
+include/turn/ns_turn_defs.h
+lib/libturnclient.a
+@man man/man1/coturn.1
+@man man/man1/turnadmin.1
+@man man/man1/turnserver.1
+@man man/man1/turnutils.1
+@man man/man1/turnutils_natdiscovery.1
+@man man/man1/turnutils_oauth.1
+@man man/man1/turnutils_peer.1
+@man man/man1/turnutils_stunclient.1
+@man man/man1/turnutils_uclient.1
+share/doc/turnserver/
+share/doc/turnserver/INSTALL
+share/doc/turnserver/LICENSE
+share/doc/turnserver/README.turnadmin
+share/doc/turnserver/README.turnserver
+share/doc/turnserver/README.turnutils
+share/doc/turnserver/postinstall.txt
+share/doc/turnserver/schema.mongo.sh
+share/doc/turnserver/schema.sql
+share/doc/turnserver/schema.stats.redis
+share/doc/turnserver/schema.userdb.redis
+share/examples/turnserver/
+share/examples/turnserver/etc/
+share/examples/turnserver/etc/turn_client_cert.pem
+share/examples/turnserver/etc/turn_client_pkey.pem
+share/examples/turnserver/etc/turn_server_cert.pem
+share/examples/turnserver/etc/turn_server_pkey.pem
+share/examples/turnserver/etc/turnserver.conf
+@mode 640
+@group _turnserver
+@sample ${SYSCONFDIR}/turnserver.conf
+@mode
+@group
+share/examples/turnserver/scripts/
+share/examples/turnserver/scripts/basic/
+share/examples/turnserver/scripts/basic/dos_attack.sh
+share/examples/turnserver/scripts/basic/relay.sh
+share/examples/turnserver/scripts/basic/tcp_client.sh
+share/examples/turnserver/scripts/basic/tcp_client_c2c_tcp_relay.sh
+share/examples/turnserver/scripts/basic/udp_c2c_client.sh
+share/examples/turnserver/scripts/basic/udp_client.sh
+share/examples/turnserver/scripts/loadbalance/
+share/examples/turnserver/scripts/loadbalance/master_relay.sh
+share/examples/turnserver/scripts/loadbalance/slave_relay_1.sh
+share/examples/turnserver/scripts/loadbalance/slave_relay_2.sh
+share/examples/turnserver/scripts/loadbalance/tcp_c2c_tcp_relay.sh
+share/examples/turnserver/scripts/loadbalance/udp_c2c.sh
+share/examples/turnserver/scripts/longtermsecure/
+share/examples/turnserver/scripts/longtermsecure/secure_dos_attack.sh
+share/examples/turnserver/scripts/longtermsecure/secure_dtls_client.sh
+share/examples/turnserver/scripts/longtermsecure/secure_dtls_client_cert.sh
+share/examples/turnserver/scripts/longtermsecure/secure_relay.sh
+share/examples/turnserver/scripts/longtermsecure/secure_relay_cert.sh
+share/examples/turnserver/scripts/longtermsecure/secure_sctp_client.sh
+share/examples/turnserver/scripts/longtermsecure/secure_tcp_client.sh
+share/examples/turnserver/scripts/longtermsecure/secure_tcp_client_c2c_tcp_relay.sh
+share/examples/turnserver/scripts/longtermsecure/secure_tls_client.sh
+share/examples/turnserver/scripts/longtermsecure/secure_tls_client_c2c_tcp_relay.sh
+share/examples/turnserver/scripts/longtermsecure/secure_tls_client_cert.sh
+share/examples/turnserver/scripts/longtermsecure/secure_udp_c2c.sh
+share/examples/turnserver/scripts/longtermsecure/secure_udp_client.sh
+share/examples/turnserver/scripts/longtermsecuredb/
+share/examples/turnserver/scripts/longtermsecuredb/secure_relay_with_db_mongo.sh
+share/examples/turnserver/scripts/longtermsecuredb/secure_relay_with_db_mysql.sh
+share/examples/turnserver/scripts/longtermsecuredb/secure_relay_with_db_mysql_ssl.sh
+share/examples/turnserver/scripts/longtermsecuredb/secure_relay_with_db_psql.sh
+share/examples/turnserver/scripts/longtermsecuredb/secure_relay_with_db_redis.sh
+share/examples/turnserver/scripts/longtermsecuredb/secure_relay_with_db_sqlite.sh
+share/examples/turnserver/scripts/mobile/
+share/examples/turnserver/scripts/mobile/mobile_dtls_client.sh
+share/examples/turnserver/scripts/mobile/mobile_relay.sh
+share/examples/turnserver/scripts/mobile/mobile_tcp_client.sh
+share/examples/turnserver/scripts/mobile/mobile_tls_client_c2c_tcp_relay.sh
+share/examples/turnserver/scripts/mobile/mobile_udp_client.sh
+share/examples/turnserver/scripts/oauth.sh
+share/examples/turnserver/scripts/peer.sh
+share/examples/turnserver/scripts/readme.txt
+share/examples/turnserver/scripts/restapi/
+share/examples/turnserver/scripts/restapi/secure_relay_secret.sh
+share/examples/turnserver/scripts/restapi/secure_relay_secret_with_db_mongo.sh
+share/examples/turnserver/scripts/restapi/secure_relay_secret_with_db_mysql.sh
+share/examples/turnserver/scripts/restapi/secure_relay_secret_with_db_psql.sh
+share/examples/turnserver/scripts/restapi/secure_relay_secret_with_db_redis.sh
+share/examples/turnserver/scripts/restapi/secure_relay_secret_with_db_sqlite.sh
+share/examples/turnserver/scripts/restapi/secure_udp_client_with_secret.sh
+share/examples/turnserver/scripts/restapi/shared_secret_maintainer.pl
+share/examples/turnserver/scripts/selfloadbalance/
+share/examples/turnserver/scripts/selfloadbalance/secure_dos_attack.sh
+share/examples/turnserver/scripts/selfloadbalance/secure_relay.sh
+share/examples/turnserver/turndb
+@mode 0640
+@owner _turnserver
+@group _turnserver
+@sample ${LOCALSTATEDIR}/db/turndb
+@mode
+@owner
+@group
+share/turnserver/
+share/turnserver/schema.mongo.sh
+share/turnserver/schema.sql
+share/turnserver/schema.stats.redis
+share/turnserver/schema.userdb.redis
+share/turnserver/testmongosetup.sh
+share/turnserver/testredisdbsetup.sh
+share/turnserver/testsqldbsetup.sql
+@rcscript ${RCDIR}/turnserver

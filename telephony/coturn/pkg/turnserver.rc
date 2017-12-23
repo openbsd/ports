@@ -1,0 +1,12 @@
+#!/bin/sh
+#
+# $OpenBSD: turnserver.rc,v 1.1.1.1 2017/12/23 17:55:38 feinerer Exp $
+
+daemon="${TRUEPREFIX}/bin/turnserver --daemon"
+daemon_user="_turnserver"
+
+. /etc/rc.d/rc.subr
+
+rc_reload=NO
+
+rc_cmd $1
