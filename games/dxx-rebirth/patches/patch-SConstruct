@@ -1,0 +1,93 @@
+$OpenBSD: patch-SConstruct,v 1.1.1.1 2017/12/24 19:13:43 bcallah Exp $
+
+Don't hardcode optimization flags
+Never pass -Werror
+Remove unrecognized warning flags
+add openbsd6 - will need better solution to not break with openbsd7
+
+Index: SConstruct
+--- SConstruct.orig
++++ SConstruct
+@@ -803,7 +803,6 @@ help:assume C++ compiler works
+ 		forced, expected = self._check_sconf_forced(calling_function)
+ 		caller_modified_env_flags = self.PreservedEnvironment(context.env, self.__flags_Werror.keys() + testflags.keys())
+ 		# Always pass -Werror
+-		context.env.Append(**self.__flags_Werror)
+ 		context.env.Append(**testflags)
+ 		# If forced is None, run the test.  Otherwise, skip the test and
+ 		# take an action determined by the value of forced.
+@@ -1736,7 +1735,7 @@ help:assume compiler supports __attribute__((unused))
+ 		self._check_macro(context,macro_name=macro_name,macro_value=macro_value,test="""
+ __attribute_unused
+ static void a(){}
+-""", msg='for function __attribute__((unused))', successflags={'CXXFLAGS' : [get_Werror_string(context.env['CXXFLAGS']) + 'unused']})
++""", msg='for function __attribute__((unused))', successflags={'CXXFLAGS' : 'CXXFLAGS'})
+ 	@_custom_test
+ 	def check_attribute_warn_unused_result(self,context):
+ 		"""
+@@ -2285,7 +2284,7 @@ $ x86_64-pc-linux-gnu-g++-5.4.0 -x c++ -S -Wformat -o 
+ 	@_custom_test
+ 	def check_compiler_useless_cast(self,context):
+ 		Compile = self.Compile
+-		flags = {'CXXFLAGS' : [get_Werror_string(context.env['CXXFLAGS']) + 'useless-cast']}
++		flags = {'CXXFLAGS' : 'CXXFLAGS'}
+ 		if Compile(context, text='''
+ /*
+  * SDL on Raspbian provokes a warning from -Wuseless-cast
+@@ -2420,8 +2419,6 @@ where the cast is useless.
+ ''', msg='for struct timespec', successflags=_successflags)
+ 	__preferred_compiler_options = [
+ 		'-fvisibility=hidden',
+-		'-Wsuggest-attribute=noreturn',
+-		'-Wlogical-op',
+ 		'-Wold-style-cast',
+ 		# Starting in gcc-7, Rebirth default options cause gcc to enable
+ 		# -Wformat-truncation automatically.  Unless proven otherwise by
+@@ -2452,7 +2449,6 @@ where the cast is useless.
+ 		#	   snprintf(SecludedSpawnText, sizeof(SecludedSpawnText), "Use %u Furthest Sites", Netgame.SecludedSpawns + 1);
+ 		#	   ~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 		#
+-		'-Wno-format-truncation',
+ 		# gcc-7 with -Wextra enables -Wimplicit-fallthrough, which warns
+ 		# for various sites in Rebirth.  All the sites where fallthrough
+ 		# is obviously correct are already marked to suppress this
+@@ -3398,7 +3394,7 @@ class DXXCommon(LazyObjectConstructor):
+ 				'variable': EnumVariable,
+ 				'arguments': (
+ 					('host_endian', None, 'endianness of host platform', {'allowed_values' : ('little', 'big')}),
+-					('host_platform', 'linux' if sys.platform == 'linux2' else sys.platform, 'cross-compile to specified platform', {'allowed_values' : ('win32', 'darwin', 'linux')}),
++					('host_platform', 'linux' if sys.platform == 'linux2' else sys.platform, 'cross-compile to specified platform', {'allowed_values' : ('win32', 'darwin', 'linux', 'openbsd6')}),
+ 				),
+ 			},
+ 			{
+@@ -3803,22 +3799,10 @@ class DXXCommon(LazyObjectConstructor):
+ 				RCCOMSTR						= "RC  %s %s $SOURCE" % format_tuple,
+ 			)
+ 
+-		Werror = get_Werror_string(user_settings.CXXFLAGS)
+ 		env.Prepend(CXXFLAGS = [
+ 			'-ftabstop=4',
+ 			'-Wall',
+ 			'-Wshadow',
+-			Werror + 'extra',
+-			Werror + 'format=2',
+-			Werror + 'missing-braces',
+-			Werror + 'missing-include-dirs',
+-			Werror + 'uninitialized',
+-			Werror + 'undef',
+-			Werror + 'pointer-arith',
+-			Werror + 'cast-qual',
+-			Werror + 'missing-declarations',
+-			Werror + 'redundant-decls',
+-			Werror + 'vla',
+ 		])
+ 		env.Append(
+ 			CXXFLAGS = ['-funsigned-char'],
+@@ -3884,7 +3868,6 @@ class DXXCommon(LazyObjectConstructor):
+ 		env = self.env
+ 		user_settings = self.user_settings
+ 
+-		env.Prepend(CXXFLAGS = ['-g', '-O2'])
+ 		# Raspberry Pi?
+ 		if user_settings.raspberrypi == 'yes':
+ 			rpi_vc_path = user_settings.rpi_vc_path
