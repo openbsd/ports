@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2017/11/15 21:28:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2017/12/24 08:10:56 landry Exp $
 
 COMMENT =	cpp-like generic file pre-processor
 
 DISTNAME =	filepp-1.8.0
-REVISION =	2
+REVISION =	3
 CATEGORIES =	textproc devel
 MASTER_SITES =	http://www-users.york.ac.uk/~dm26/filepp/
 
@@ -16,5 +16,8 @@ CONFIGURE_STYLE =	gnu dest
 NO_BUILD =		Yes
 PKG_ARCH =		*
 TEST_TARGET =	fulltest
+
+post-configure:
+	sed -i 's,$${DESTDIR}${TRUEPREFIX},${TRUEPREFIX},g' ${WRKSRC}/filepp
 
 .include <bsd.port.mk>
