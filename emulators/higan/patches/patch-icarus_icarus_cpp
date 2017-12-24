@@ -1,0 +1,26 @@
+$OpenBSD: patch-icarus_icarus_cpp,v 1.1.1.1 2017/12/24 06:51:38 bentley Exp $
+
+Index: icarus/icarus.cpp
+--- icarus/icarus.cpp.orig
++++ icarus/icarus.cpp
+@@ -4,6 +4,20 @@ using namespace nall;
+ #include <hiro/hiro.hpp>
+ using namespace hiro;
+ 
++auto locateShared(string name) -> string {
++  string location = {Path::program(), name};
++  if(inode::exists(location)) return location;
++
++  location = {Path::shared(), "icarus/", name}; 
++  if(inode::exists(location)) return location;
++
++  location = {Path::config(), "icarus/", name};
++  if(inode::exists(location)) return location;
++
++  directory::create({Path::local(), "icarus/"});
++  return {Path::local(), "icarus/", name};
++}
++
+ auto locate(string name) -> string {
+   string location = {Path::program(), name};
+   if(inode::exists(location)) return location;

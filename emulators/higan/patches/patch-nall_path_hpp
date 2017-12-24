@@ -1,0 +1,14 @@
+$OpenBSD: patch-nall_path_hpp,v 1.1.1.1 2017/12/24 06:51:38 bentley Exp $
+
+Index: nall/path.hpp
+--- nall/path.hpp.orig
++++ nall/path.hpp
+@@ -117,7 +117,7 @@ inline auto shared() -> string {
+   #elif defined(PLATFORM_MACOS)
+   string result = "/Library/Application Support/";
+   #else
+-  string result = "/usr/share/";
++  string result = "${PREFIX}/share/";
+   #endif
+   if(!result) result = ".";
+   if(!result.endsWith("/")) result.append("/");

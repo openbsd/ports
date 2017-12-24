@@ -1,0 +1,14 @@
+$OpenBSD: patch-higan_target-tomoko_program_medium_cpp,v 1.1.1.1 2017/12/24 06:51:38 bentley Exp $
+
+Index: higan/target-tomoko/program/medium.cpp
+--- higan/target-tomoko/program/medium.cpp.orig
++++ higan/target-tomoko/program/medium.cpp
+@@ -17,7 +17,7 @@ auto Program::loadMedium() -> void {
+ auto Program::loadMedium(Emulator::Interface& interface, const Emulator::Interface::Medium& medium) -> void {
+   unloadMedium();
+ 
+-  mediumPaths.append(locate({medium.name, ".sys/"}));
++  mediumPaths.append(locateShared({medium.name, ".sys/"}));
+ 
+   Emulator::audio.reset(2, audio->frequency());
+   inputManager->bind(emulator = &interface);

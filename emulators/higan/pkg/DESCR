@@ -1,0 +1,17 @@
+higan is a multi-system emulator. It currently supports the following systems:
+
+ - Nintendo Famicom
+ - Nintendo Super Famicom
+   - Super Game Boy
+   - BS-X Satellaview
+   - Sufami Turbo
+ - Nintendo Game Boy
+ - Nintendo Game Boy Color
+ - Nintendo Game Boy Advance
+ - Sega Master System
+ - Sega Game Gear
+ - Sega Mega Drive
+ - NEC PC Engine
+ - NEC SuperGrafx
+ - Bandai WonderSwan
+ - Bandai WonderSwan Color

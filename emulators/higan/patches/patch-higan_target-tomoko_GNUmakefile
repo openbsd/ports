@@ -1,0 +1,14 @@
+$OpenBSD: patch-higan_target-tomoko_GNUmakefile,v 1.1.1.1 2017/12/24 06:51:38 bentley Exp $
+
+Index: higan/target-tomoko/GNUmakefile
+--- higan/target-tomoko/GNUmakefile.orig
++++ higan/target-tomoko/GNUmakefile
+@@ -31,7 +31,7 @@ else ifeq ($(platform),linux)
+   ruby += input.sdl input.xlib input.udev
+ else ifeq ($(platform),bsd)
+   ruby += video.glx video.xvideo video.xshm video.sdl
+-  ruby += audio.oss audio.openal
++  ruby += audio.openal
+   ruby += input.sdl input.xlib
+ endif
+ 
