@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.267 2017/12/06 14:22:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.268 2017/12/24 19:37:16 sthen Exp $
 
 BROKEN-aarch64=	linker problems with BlocksRuntime that only show up at runtime
 
 COMMENT-main=	open source multi-protocol PBX and telephony toolkit
 
-VER=		13.18.3
+VER=		13.18.5
 PJ_V=		2.6
 PORTROACH=	limitw:0,odd
 DISTNAME=	asterisk-${VER:S/beta/-beta/:S/rc/-rc/}
