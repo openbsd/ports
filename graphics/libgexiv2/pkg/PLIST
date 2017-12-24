@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.9 2017/05/13 08:44:51 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2017/12/24 14:54:58 ajacoutot Exp $
 include/gexiv2/
+include/gexiv2/gexiv2-enums.h
 include/gexiv2/gexiv2-log.h
 include/gexiv2/gexiv2-managed-stream.h
 include/gexiv2/gexiv2-metadata.h
@@ -32,7 +33,6 @@ share/gtk-doc/html/gexiv2/home.png
 share/gtk-doc/html/gexiv2/index.html
 share/gtk-doc/html/gexiv2/left-insensitive.png
 share/gtk-doc/html/gexiv2/left.png
-share/gtk-doc/html/gexiv2/object-tree.html
 share/gtk-doc/html/gexiv2/right-insensitive.png
 share/gtk-doc/html/gexiv2/right.png
 share/gtk-doc/html/gexiv2/style.css

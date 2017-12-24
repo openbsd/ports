@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.27 2017/11/16 23:20:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.28 2017/12/24 14:54:58 ajacoutot Exp $
 
 COMMENT=		GObject wrapper around exiv2
 
-GNOME_VERSION=		0.10.6
+GNOME_VERSION=		0.10.7
 GNOME_PROJECT=		gexiv2
 PKGNAME=		lib${DISTNAME}
-REVISION=		0
 
 CATEGORIES=		graphics
 
-SHARED_LIBS +=  gexiv2               2.1      # 2.0
+SHARED_LIBS +=  gexiv2               3.0      # 2.0
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 			Antoine Jacoutot <ajacoutot@openbsd.org>
@@ -17,9 +16,8 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += exiv2 expat ffi glib-2.0 gobject-2.0 iconv intl m pcre
-WANTLIB += pthread z
-WANTLIB += ${COMPILER_LIBCXX}
+WANTLIB += ${COMPILER_LIBCXX} exiv2 expat ffi glib-2.0 gobject-2.0
+WANTLIB += iconv intl m pcre z
 
 MODULES=		lang/python \
 			x11/gnome
