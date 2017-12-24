@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2017/12/24 01:30:45 jca Exp $
+
+Fix passing --export-dynamic to the linker.
+
+Index: src/Makefile.in
+--- src/Makefile.in.orig
++++ src/Makefile.in
+@@ -194,7 +194,8 @@ AM_CPPFLAGS = @PACKAGE_CFLAGS@ \
+ 	-DPACKAGE_DATA_DIR=\""$(datadir)"\" \
+ 	-DPACKAGE_LOCALE_DIR=\""$(prefix)/$(DATADIRNAME)/locale"\"
+ 
+-AM_CFLAGS = -export-dynamic -Wall
++AM_CFLAGS = -Wall
++AM_LDFLAGS = -rdynamic
+ all: all-am
+ 
+ .SUFFIXES:
