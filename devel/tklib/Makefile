@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2017/06/02 19:54:15 schwarze Exp $
+# $OpenBSD: Makefile,v 1.19 2017/12/25 04:38:47 stu Exp $
 
 COMMENT =	Tk Standard Library
 
-DISTNAME =	tklib-0.6pl3
-REVISION =	0
+DISTNAME =	tklib-0.6pl4
 CATEGORIES =	devel x11/tk
 HOMEPAGE =	http://core.tcl.tk/tklib/home
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
@@ -13,7 +12,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 GH_ACCOUNT =	tcltk
 GH_PROJECT =	tklib
-GH_COMMIT =	51f8f78bb5130e7f811dec33dcecc9211f4698bd
+GH_COMMIT =	ca3929712227511ec2ade3540e1121032a4f8baa
 
 MODULES =	x11/tk
 BUILD_DEPENDS =	devel/tcllib
