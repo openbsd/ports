@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2017/11/22 12:46:04 stu Exp $
+# $OpenBSD: Makefile,v 1.17 2017/12/25 04:34:48 stu Exp $
 
 COMMENT =		graphical toolkit for Tcl
 
-P =			7
+P =			8
 DISTNAME =		tk8.6.${P}
 PKGNAME =		tk-8.6.${P}
-REVISION =		0
 SHARED_LIBS =		tk86 1.${P}
 CATEGORIES =		x11 x11/tk
 HOMEPAGE =		http://www.tcl.tk/
@@ -43,12 +42,7 @@ CONFIGURE_ARGS +=	--includedir="${PREFIX}/include/tk8.6" \
 			--enable-man-symlinks \
 			--disable-rpath \
 			--with-tcl="${LOCALBASE}/lib/tcl/tcl8.6" \
-			EXTRA_INSTALL_BINARIES='@echo "Installing libtk86.a to $$(LIB_INSTALL_DIR)/" \
-			&& $$(INSTALL_DATA) libtk86.a $$(LIB_INSTALL_DIR)/libtk86.a \
-			&& (cd $$(LIB_INSTALL_DIR) ; $$(RANLIB) libtk86.a)' \
 			SHLIB_VERSION="${LIBtk86_VERSION}"
-
-ALL_TARGET =		all libtk86.a
 
 TEST_IS_INTERACTIVE =	X11
 WRKSRC =		${WRKDIST}/unix
@@ -60,10 +54,5 @@ TESTFLAGS =
 
 pre-test:
 	mkdir -p ${TESTHOME}
-
-post-install:
-	${INSTALL_DATA} ${WRKDIST}/license.terms ${PREFIX}/lib/tcl/tk8.6/man
-	ln -s libtk86.a ${PREFIX}/lib/libtk86_pic.a
-	ln -s libtkstub86.a ${PREFIX}/lib/libtkstub86_pic.a
 
 .include <bsd.port.mk>

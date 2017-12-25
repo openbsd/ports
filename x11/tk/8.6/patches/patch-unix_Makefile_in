@@ -1,22 +1,12 @@
-$OpenBSD: patch-unix_Makefile_in,v 1.5 2017/05/10 01:21:05 stu Exp $
---- unix/Makefile.in.orig	Tue Jul 26 10:07:50 2016
-+++ unix/Makefile.in	Sat Apr 22 02:21:57 2017
-@@ -593,6 +593,10 @@ ${STUB_LIB_FILE}: ${STUB_LIB_OBJS}
- 	rm -f $@
- 	@MAKE_STUB_LIB@
- 
-+libtk86.a: ${OBJS}
-+	rm -f $@
-+	${STLIB_LD} $@ ${OBJS} ; ${RANLIB} $@
-+
- # Build Aqua resource files
- ${TK_RSRC_FILE}: $(AQUA_RESOURCES)
- 	rm -f $@
-@@ -736,10 +740,10 @@ install-binaries: $(TK_STUB_LIB_FILE) $(TK_LIB_FILE) $
+$OpenBSD: patch-unix_Makefile_in,v 1.6 2017/12/25 04:34:48 stu Exp $
+Index: unix/Makefile.in
+--- unix/Makefile.in.orig
++++ unix/Makefile.in
+@@ -737,10 +737,10 @@ install-binaries: $(TK_STUB_LIB_FILE) $(TK_LIB_FILE) $
  	    echo "}";\
  	    fi \
  	    ) > "$(PKG_INDEX)"; \
-+	    chmod 444 "$(PKG_INDEX)"; \
++	    chmod 644 "$(PKG_INDEX)"; \
  	    fi
  	@echo "Installing $(LIB_FILE) to $(DLL_INSTALL_DIR)/"
  	@@INSTALL_LIB@
@@ -24,7 +14,7 @@ $OpenBSD: patch-unix_Makefile_in,v 1.5 2017/05/10 01:21:05 stu Exp $
  	@if test -f "tk${MAJOR_VERSION}${MINOR_VERSION}.dll"; then \
  	    $(INSTALL_LIBRARY) "tk${MAJOR_VERSION}${MINOR_VERSION}.dll" "$(DLL_INSTALL_DIR)";\
  	    chmod 555 "$(DLL_INSTALL_DIR)/tk${MAJOR_VERSION}${MINOR_VERSION}.dll";\
-@@ -757,7 +761,7 @@ install-binaries: $(TK_STUB_LIB_FILE) $(TK_LIB_FILE) $
+@@ -758,7 +758,7 @@ install-binaries: $(TK_STUB_LIB_FILE) $(TK_LIB_FILE) $
  	@EXTRA_INSTALL_BINARIES@
  	@echo "Installing pkg-config file to $(LIB_INSTALL_DIR)/pkgconfig/"
  	@$(INSTALL_DATA_DIR) $(LIB_INSTALL_DIR)/pkgconfig
@@ -33,20 +23,21 @@ $OpenBSD: patch-unix_Makefile_in,v 1.5 2017/05/10 01:21:05 stu Exp $
  
  install-libraries: libraries
  	@for i in "$(SCRIPT_INSTALL_DIR)" "$(SCRIPT_INSTALL_DIR)/images" \
-@@ -812,6 +816,7 @@ install-demos:
+@@ -813,6 +813,7 @@ install-demos:
  	    if [ -f $$i ] ; then \
  		sed -e '3 s|exec wish|exec wish$(VERSION)|' \
  			$$i > "$(DEMO_INSTALL_DIR)"/`basename $$i`; \
-+		chmod 444 "$(DEMO_INSTALL_DIR)"/`basename $$i`; \
++		chmod 644 "$(DEMO_INSTALL_DIR)"/`basename $$i`; \
  	    fi; \
  	    done;
  	@for i in $(DEMOPROGS); \
-@@ -819,7 +824,7 @@ install-demos:
- 	    if test $$i = "square"; then \
- 	    rm -f  "$(DEMO_INSTALL_DIR)/$$i"; \
- 	    else \
--	    chmod 755 "$(DEMO_INSTALL_DIR)/$$i"; \
-+	    chmod 555 "$(DEMO_INSTALL_DIR)/$$i"; \
- 	    fi; \
- 	    done;
- 	@echo "Installing demo image files to $(DEMO_INSTALL_DIR)/images/";
+@@ -852,6 +853,9 @@ install-doc:
+ 	@for i in $(TOP_DIR)/doc/*.n; do \
+ 	    $(SHELL) $(UNIX_DIR)/installManPage $(MAN_FLAGS) $$i "$(MANN_INSTALL_DIR)"; \
+ 	done
++
++	@echo "Installing license.terms to $(MAN_INSTALL_DIR)/"
++	@$(INSTALL_DATA) $(TOP_DIR)/license.terms "$(MAN_INSTALL_DIR)"
+ 
+ install-headers:
+ 	@if test "$(@TK_WINDOWINGSYSTEM@_XLIB_HDRS)" != ""; then \

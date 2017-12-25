@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2017/05/10 01:21:05 stu Exp $
+@comment $OpenBSD: PLIST,v 1.11 2017/12/25 04:34:48 stu Exp $
 @option no-default-conflict
 @option is-branch
 @conflict tk->=8.6,<8.7
@@ -7,11 +7,8 @@ include/tk8.6/
 include/tk8.6/tk.h
 include/tk8.6/tkDecls.h
 include/tk8.6/tkPlatDecls.h
-lib/libtk86.a
 @lib lib/libtk86.so.${LIBtk86_VERSION}
-lib/libtk86_pic.a
 lib/libtkstub86.a
-lib/libtkstub86_pic.a
 lib/pkgconfig/tk86.pc
 lib/tcl/tk8.6/
 lib/tcl/tk8.6/bgerror.tcl
@@ -522,6 +519,7 @@ share/examples/tk8.6/image1.tcl
 share/examples/tk8.6/image2.tcl
 share/examples/tk8.6/images/
 share/examples/tk8.6/images/earth.gif
+share/examples/tk8.6/images/earthmenu.png
 share/examples/tk8.6/images/earthris.gif
 share/examples/tk8.6/images/flagdown.xbm
 share/examples/tk8.6/images/flagup.xbm
