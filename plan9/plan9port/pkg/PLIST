@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2015/12/04 04:26:33 gsoares Exp $
+@comment $OpenBSD: PLIST,v 1.7 2017/12/25 14:35:51 gsoares Exp $
 @unexec-delete rm -f ${TRUEPREFIX}/plan9/man/whatis.db
 bin/9
 plan9/
@@ -83,8 +83,6 @@ plan9/bin/bundle
 @bin plan9/bin/cleanname
 @bin plan9/bin/cmapcube
 @bin plan9/bin/cmp
-plan9/bin/codereview
-plan9/bin/codereview.py
 @bin plan9/bin/col
 @bin plan9/bin/colors
 @bin plan9/bin/comm
@@ -172,7 +170,6 @@ plan9/bin/lc
 @bin plan9/bin/listen1
 @bin plan9/bin/look
 plan9/bin/lookman
-plan9/bin/lpbin/
 @bin plan9/bin/ls
 plan9/bin/macedit
 plan9/bin/man
@@ -264,6 +261,7 @@ plan9/bin/start
 plan9/bin/stop
 @bin plan9/bin/strings
 @bin plan9/bin/sum
+@bin plan9/bin/svgpic
 @bin plan9/bin/tail
 @bin plan9/bin/tar
 @bin plan9/bin/tbl
@@ -377,6 +375,7 @@ plan9/dist/manindexbottom.html
 plan9/dist/manindextop.html
 plan9/dist/mantrailer.html
 plan9/dist/manweb
+plan9/dist/mkdirlist
 plan9/dist/mkfile
 plan9/dist/mkfilelist
 plan9/dist/pkg/
@@ -403,6 +402,7 @@ plan9/dist/pkg/sky-data
 plan9/dist/pkg/src
 plan9/dist/pkg/troff
 plan9/dist/pkg/unixdist
+plan9/dist/publish
 plan9/dist/spaceglenda100.png
 plan9/dist/ss.html
 plan9/dist/troff/
@@ -4143,9 +4143,6 @@ plan9/lib/acme.rc
 plan9/lib/amspell
 plan9/lib/bclib
 plan9/lib/brspell
-plan9/lib/codereview/
-plan9/lib/codereview/codereview.cfg
-plan9/lib/codereview/codereview.py
 plan9/lib/darwin-main.c
 plan9/lib/fortunes
 plan9/lib/git/
@@ -4197,7 +4194,6 @@ plan9/lib/units
 plan9/lib/words
 plan9/lib/yaccpar
 plan9/lib/yaccpars
-plan9/log/
 plan9/lp/
 plan9/lp/bin/
 plan9/lp/bin/UNLOCK
@@ -4271,7 +4267,6 @@ plan9/mail/lib/qmail
 plan9/mail/lib/remotemail
 plan9/mail/lib/rewrite
 plan9/mail/lib/validateattachment
-plan9/mail/queue/
 plan9/man/
 plan9/man/fonts
 plan9/man/index.html
@@ -4299,7 +4294,6 @@ plan9/man/man1/INDEX
 @man plan9/man/man1/cleanname.1
 @man plan9/man/man1/clog.1
 @man plan9/man/man1/cmp.1
-@man plan9/man/man1/codereview.1
 @man plan9/man/man1/col.1
 @man plan9/man/man1/colors.1
 @man plan9/man/man1/comm.1
@@ -4564,10 +4558,6 @@ plan9/man/man4/INDEX
 @man plan9/man/man4/srv.4
 @man plan9/man/man4/tapefs.4
 @man plan9/man/man4/vacfs.4
-plan9/man/man5/
-plan9/man/man5/INDEX
-plan9/man/man6/
-plan9/man/man6/INDEX
 plan9/man/man7/
 @man plan9/man/man7/0intro.7
 plan9/man/man7/INDEX
@@ -6413,6 +6403,25 @@ plan9/src/cmd/split.c
 plan9/src/cmd/srv.c
 plan9/src/cmd/strings.c
 plan9/src/cmd/sum.c
+plan9/src/cmd/svgpic/
+plan9/src/cmd/svgpic/arcgen.c
+plan9/src/cmd/svgpic/blockgen.c
+plan9/src/cmd/svgpic/boxgen.c
+plan9/src/cmd/svgpic/circgen.c
+plan9/src/cmd/svgpic/for.c
+plan9/src/cmd/svgpic/input.c
+plan9/src/cmd/svgpic/linegen.c
+plan9/src/cmd/svgpic/main.c
+plan9/src/cmd/svgpic/misc.c
+plan9/src/cmd/svgpic/mkfile
+plan9/src/cmd/svgpic/movegen.c
+plan9/src/cmd/svgpic/pic.h
+plan9/src/cmd/svgpic/picl.lx
+plan9/src/cmd/svgpic/picy.y
+plan9/src/cmd/svgpic/plsvg.c
+plan9/src/cmd/svgpic/print.c
+plan9/src/cmd/svgpic/symtab.c
+plan9/src/cmd/svgpic/textgen.c
 plan9/src/cmd/tail.c
 @comment plan9/src/cmd/tapefs/
 @comment plan9/src/cmd/tapefs/32vfs.c
@@ -6951,6 +6960,7 @@ plan9/src/lib9/fmt/vsmprint.c
 plan9/src/lib9/fmt/vsnprint.c
 plan9/src/lib9/fmtlock2.c
 plan9/src/lib9/fork.c
+plan9/src/lib9/frand.c
 plan9/src/lib9/get9root.c
 plan9/src/lib9/getcallerpc-386.c
 plan9/src/lib9/getcallerpc-arm.c
@@ -7907,9 +7917,12 @@ plan9/troff/font/devutf/DejaVuSerifBoldOblique
 plan9/troff/font/devutf/DejaVuSerifOblique
 plan9/troff/font/devutf/GR
 plan9/troff/font/devutf/H
+plan9/troff/font/devutf/HB
+plan9/troff/font/devutf/HI
 plan9/troff/font/devutf/HK
 plan9/troff/font/devutf/HL
 plan9/troff/font/devutf/HM
+plan9/troff/font/devutf/HX
 plan9/troff/font/devutf/Helvetica-Narrow
 plan9/troff/font/devutf/Helvetica-Narrow-Bold
 plan9/troff/font/devutf/Helvetica-Narrow-BoldOblique
@@ -8067,3 +8080,4 @@ plan9/unix/mkfile.regexp
 plan9/unix/mkfile.utf
 plan9/unix/mkfile.what
 plan9/unix/utf.h
+share/doc/pkg-readmes/${FULLPKGNAME}

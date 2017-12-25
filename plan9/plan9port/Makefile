@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.22 2017/05/09 22:22:36 gsoares Exp $
+# $OpenBSD: Makefile,v 1.23 2017/12/25 14:35:51 gsoares Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 powerpc
 BROKEN-powerpc =	threading issues
 
 COMMENT =		Plan 9 from user space
 
-DISTNAME =		plan9port-20170505
+DISTNAME =		plan9port-20171127
 
 GH_ACCOUNT =		9fans
 GH_PROJECT =		plan9port
-GH_COMMIT =		c976381d67e1c1ff16f155cbcc6c905245d0520f
+GH_COMMIT =		2023d484f2aa079651e6ff84a955bb1e9b7cbdc9
 
 CATEGORIES =		plan9
 
@@ -51,8 +51,6 @@ post-patch:
 		OpenBSD-x86_64.c && cp Darwin-x86_64-asm.s \
 		OpenBSD-x86_64-asm.S && mv OpenBSD-386-asm.s \
 		OpenBSD-386-asm.S
-	find ${WRKSRC} -name .cvsignore -exec rm -f {} \;
-	cd ${WRKSRC} && rm -rf .hg .hgignore .hgtags .gitignore
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/INSTALL ${WRKSRC}/bin/{9c,9l}
@@ -61,10 +59,11 @@ do-build:
 	cd ${WRKSRC} && env CC9="${CC}" CCFLAGS="${CFLAGS}" ./INSTALL -b
 
 do-install:
-	find ${WRKSRC}/src -name '*.orig' -exec rm -f {} \+
-	cd ${WRKSRC} && rm *.orig && sed -i 's#/usr/local#${TRUEPREFIX}#' \
+.for l in .cvsignore .hg .hgignore .hgtags .gitignore .gitkeep *.orig *.beforesubst .travis.yml
+	find ${WRKSRC} -name "$l" -exec rm -f {} \;
+.endfor
+	cd ${WRKSRC} && sed -i 's#/usr/local#${TRUEPREFIX}#' \
 		`cat lib/moveplan9.files`
-
 	${INSTALL_DATA_DIR} ${PLAN9}
 	cd ${WRKSRC} && pax -rw . ${PLAN9}
 	cd ${PREFIX} && ln -s ../plan9/bin/9 bin/9

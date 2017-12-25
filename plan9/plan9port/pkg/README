@@ -1,0 +1,25 @@
+$OpenBSD: README,v 1.1 2017/12/25 14:35:51 gsoares Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Running plan9port binaries
+==========================
+The plan9port tools consist of many small binaries intimately tied
+together, some of them conflicting with OpenBSD base utilities. To
+avoid runtime conflicts, you may wish to append
+${TRUEPREFIX}/plan9/bin to your PATH.
+
+Alternatively, plan9port tools can be run with ${TRUEPREFIX}/bin/9
+
+9 man 1 intro
+
+Reading plan9port manual pages
+==============================
+You may add the plan9/man directory to man.conf(5) or set
+
+export MANPATH=:${TRUEPREFIX}/plan9/man
+
+in the shell where you want to read plan9port manuals. Note the
+leading colon.

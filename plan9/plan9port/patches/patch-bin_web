@@ -1,18 +1,16 @@
-$OpenBSD: patch-bin_web,v 1.1 2016/06/03 01:44:51 gsoares Exp $
+$OpenBSD: patch-bin_web,v 1.2 2017/12/25 14:35:51 gsoares Exp $
 
-# https://plan9port-review.googlesource.com/#/c/1561/2
+# https://github.com/9fans/plan9port/pull/118
 
---- bin/web.orig	Thu Jun  2 22:05:28 2016
-+++ bin/web	Thu Jun  2 22:06:11 2016
-@@ -34,7 +34,10 @@ plumbunix()
+Index: bin/web
+--- bin/web.orig
++++ bin/web
+@@ -34,7 +34,7 @@ plumbunix()
  		$BROWSER -remote 'openURL('"$@"',new-tab)' ||
  		$BROWSER "$@"
  		;;
--	*google-chrome*|*chromium*)
-+	*chrome*|*chromium*)
-+		$BROWSER "$@"
-+		;;
-+		*)
+-	*chrome*|*chromium*)
++	*)
  		$BROWSER "$@"
  		;;
  	esac
