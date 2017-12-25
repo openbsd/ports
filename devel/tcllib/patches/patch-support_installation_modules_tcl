@@ -1,8 +1,8 @@
-$OpenBSD: patch-support_installation_modules_tcl,v 1.8 2017/05/14 09:01:31 stu Exp $
+$OpenBSD: patch-support_installation_modules_tcl,v 1.9 2017/12/25 04:38:15 stu Exp $
 Index: support/installation/modules.tcl
 --- support/installation/modules.tcl.orig
 +++ support/installation/modules.tcl
-@@ -32,118 +32,120 @@ array set guide {}
+@@ -32,119 +32,121 @@ array set guide {}
  
  Exclude calendar
  Exclude exif
@@ -44,6 +44,7 @@ Index: support/installation/modules.tcl
 +Module  cron        _tcm  _man  _null
 +Module  csv         _tcm  _man _exa
 +Module  debug       _tcl  _man  _null
+ Module  defer       _tcl  _man  _null
  Module  des         _tcl  _man  _null
 -Module  dicttool    _tcl  _man  _null
 +Module  dicttool    _tcm  _man  _null
@@ -167,7 +168,7 @@ Index: support/installation/modules.tcl
  Module  tool        _tcl  _man  _null
  Module  tool_datatype        _tcl  _man  _null
  Module  transfer    _tcl  _man  _null
-@@ -151,14 +153,14 @@ Module  treeql      _tcl  _man  _null
+@@ -152,14 +154,14 @@ Module  treeql      _tcl  _man  _null
  Module  try         _tcl  _man  _null
  Module  udpcluster  _tcl  _man  _null
  Module  uev         _tcl  _man  _null

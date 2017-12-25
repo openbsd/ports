@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2017/05/14 09:01:31 stu Exp $
+@comment $OpenBSD: PLIST,v 1.17 2017/12/25 04:38:15 stu Exp $
 bin/dtplite
 lib/tcl/amazon-s3/
 lib/tcl/amazon-s3/S3.tcl
@@ -59,6 +59,9 @@ lib/tcl/debug/debug.tcl
 lib/tcl/debug/heartbeat.tcl
 lib/tcl/debug/pkgIndex.tcl
 lib/tcl/debug/timestamp.tcl
+lib/tcl/defer/
+lib/tcl/defer/defer.tcl
+lib/tcl/defer/pkgIndex.tcl
 lib/tcl/des/
 lib/tcl/des/des.tcl
 lib/tcl/des/pkgIndex.tcl
@@ -294,6 +297,7 @@ lib/tcl/math/pdf_stat.tcl
 lib/tcl/math/pkgIndex.tcl
 lib/tcl/math/plotstat.tcl
 lib/tcl/math/polynomials.tcl
+lib/tcl/math/primes.tcl
 lib/tcl/math/qcomplex.tcl
 lib/tcl/math/rational_funcs.tcl
 lib/tcl/math/romannumerals.tcl
@@ -359,11 +363,11 @@ lib/tcl/modules/85/rcs-0.1.tm
 lib/tcl/modules/85/report-0.3.2.tm
 lib/tcl/modules/85/smtpd-1.5.tm
 lib/tcl/modules/85/soundex-1.0.tm
-lib/tcl/modules/85/tar-0.10.tm
+lib/tcl/modules/85/tar-0.11.tm
 lib/tcl/modules/85/tiff-0.2.1.tm
 lib/tcl/modules/85/units-2.2.1.tm
 lib/tcl/modules/85/uuid-1.0.5.tm
-lib/tcl/modules/85/websocket-1.4.tm
+lib/tcl/modules/85/websocket-1.4.1.tm
 lib/tcl/nettool/
 lib/tcl/nettool/available_ports.tcl
 lib/tcl/nettool/generic.tcl
@@ -446,6 +450,7 @@ lib/tcl/pop3d/pop3d.tcl
 lib/tcl/pop3d/pop3d_dbox.tcl
 lib/tcl/pop3d/pop3d_udb.tcl
 lib/tcl/practcl/
+lib/tcl/practcl/build.tcl
 lib/tcl/practcl/pkgIndex.tcl
 lib/tcl/practcl/practcl.tcl
 lib/tcl/pt/
@@ -636,16 +641,9 @@ lib/tcl/tie/tie_growfile.tcl
 lib/tcl/tie/tie_log.tcl
 lib/tcl/tie/tie_rarray.tcl
 lib/tcl/tool/
-lib/tcl/tool/ensemble.tcl
-lib/tcl/tool/event.tcl
-lib/tcl/tool/index.tcl
-lib/tcl/tool/metaclass.tcl
-lib/tcl/tool/option.tcl
-lib/tcl/tool/organ.tcl
-lib/tcl/tool/pipeline.tcl
+lib/tcl/tool/build.tcl
 lib/tcl/tool/pkgIndex.tcl
-lib/tcl/tool/script.tcl
-lib/tcl/tool/uuid.tcl
+lib/tcl/tool/tool.tcl
 lib/tcl/tool_datatype/
 lib/tcl/tool_datatype/datatype.tcl
 lib/tcl/tool_datatype/pkgIndex.tcl
@@ -809,6 +807,7 @@ lib/tcl/zip/pkgIndex.tcl
 @man man/mann/debug_heartbeat.n
 @man man/mann/debug_timestamp.n
 @man man/mann/decimal.n
+@man man/mann/defer.n
 @man man/mann/deleg_method.n
 @man man/mann/deleg_proc.n
 @man man/mann/des.n
