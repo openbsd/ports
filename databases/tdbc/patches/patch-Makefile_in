@@ -1,8 +1,8 @@
-$OpenBSD: patch-Makefile_in,v 1.3 2017/11/04 18:57:19 stu Exp $
+$OpenBSD: patch-Makefile_in,v 1.4 2017/12/25 04:36:57 stu Exp $
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -415,15 +415,15 @@ install-lib-binaries: binaries
+@@ -422,15 +422,15 @@ install-lib-binaries: binaries
  	@$(INSTALL_DATA_DIR) $(DESTDIR)$(pkglibdir)
  	@list='$(lib_BINARIES)'; for p in $$list; do \
  	  if test -f $$p; then \
