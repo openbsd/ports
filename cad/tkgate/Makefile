@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2016/09/13 11:44:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2017/12/25 19:50:37 kirby Exp $
 
 COMMENT =		Tcl/Tk based digital circuit editor and simulator
 
 DISTNAME =		tkgate-2.0-rc3
 PKGNAME = 		tkgate-2.0rc3
+REVISION =              0
 
 CATEGORIES =		cad x11
-
-HOMEPAGE =		http://www.tkgate.org/
 
 MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 
