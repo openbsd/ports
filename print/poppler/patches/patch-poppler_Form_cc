@@ -1,0 +1,13 @@
+$OpenBSD: patch-poppler_Form_cc,v 1.1 2017/12/25 22:56:43 kili Exp $
+
+Index: poppler/Form.cc
+--- poppler/Form.cc.orig
++++ poppler/Form.cc
+@@ -28,6 +28,7 @@
+ #endif
+ 
+ #include <set>
++#include <ctype.h>
+ #include <limits>
+ #include <stddef.h>
+ #include <string.h>
