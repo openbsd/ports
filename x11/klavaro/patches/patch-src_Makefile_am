@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_Makefile_am,v 1.1 2017/12/24 01:30:45 jca Exp $
+$OpenBSD: patch-src_Makefile_am,v 1.2 2017/12/25 13:01:26 jca Exp $
 
 For upstream: fix passing --export-dynamic to the linker. -rdynamic is
 implemented by at least gcc and clang.  Using -export-dynamic with gcc
@@ -13,5 +13,5 @@ Index: src/Makefile.am
  
 -AM_CFLAGS = -export-dynamic -Wall
 +AM_CFLAGS = -Wall
-+AM_LDAGS = -rdynamic
++AM_LDFLAGS = -rdynamic
  
