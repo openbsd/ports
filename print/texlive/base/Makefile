@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.94 2017/10/23 17:11:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.95 2017/12/25 22:50:42 kili Exp $
 
 COMMENT =		base binaries for TeXLive typesetting distribution
 
@@ -6,7 +6,7 @@ COMMENT =		base binaries for TeXLive typesetting distribution
 DISTNAME =		texlive-${DIST_V}b-source
 PKGNAME =		texlive_base-${V}
 WRKDIST =		${WRKDIR}/texlive-${DIST_V}-source
-REVISION =		4
+REVISION =		5
 
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
 			texlive-${DIST_V}-extra${EXTRACT_SUFX}
@@ -19,7 +19,7 @@ SHARED_LIBS +=		texlua52	0.0 # 7.4
 WANTLIB += ICE SM X11 Xau Xaw Xdmcp Xext Xi Xmu Xpm Xrender Xt
 WANTLIB += c cairo expat fontconfig freetype gd glib-2.0 graphite2
 WANTLIB += harfbuzz harfbuzz-icu iconv icudata icui18n icuio icuuc intl
-WANTLIB += jpeg lcms2 m openjp2 paper pcre pixman-1 png poppler
+WANTLIB += jpeg m paper pcre pixman-1 png
 WANTLIB += potrace pthread ${COMPILER_LIBCXX} tiff webp xcb
 WANTLIB += xcb-render xcb-shm z zzip
 WANTLIB += ${LIBCXX}
@@ -35,7 +35,6 @@ RUN_DEPENDS =		print/ghostscript/gnu \
 LIB_DEPENDS =		converters/libiconv \
 			graphics/png \
 			graphics/gd \
-			print/poppler \
 			graphics/cairo \
 			textproc/icu4c \
 			graphics/graphite2 \
@@ -46,17 +45,11 @@ LIB_DEPENDS =		converters/libiconv \
 
 MODULES =		textproc/intltool perl
 
-# c++-11 required for poppler
-COMPILER =		base-clang ports-gcc
-
 # Never set SEPARATE_BUILD
 CONFIGURE_STYLE =	gnu
 
 CPPFLAGS =	-I${X11BASE}/include \
-		-I${LOCALBASE}/include \
-		-I${LOCALBASE}/include/poppler
-
-CXXFLAGS +=	-std=c++11
+		-I${LOCALBASE}/include
 
 LDFLAGS =	-L${LOCALBASE}/lib \
 		-L${X11BASE}/lib
@@ -90,6 +83,10 @@ PKG_ARGS +=		-Dxindy=1
 PKG_ARGS +=		-Dxindy=0
 .endif
 
+# --with-system-poppler and --with-system-xpdf temporarily removed to
+# build it with the bundled poppler, because xpdftex fails to build
+# without patches and a newer poppler (> 0.58), and it fails at runtime
+# with my current patches to build with the new poppler object API.
 CONFIGURE_ARGS +=	--mandir=${PREFIX}/man \
 			--with-system-freetype2 \
 			--with-system-gd \
@@ -112,12 +109,10 @@ CONFIGURE_ARGS +=	--mandir=${PREFIX}/man \
 			--with-banner-add="-OpenBSD_Ports" \
 			--disable-luajittex \
 			--disable-mfluajit \
-			--with-system-xpdf \
 			--with-system-icu \
 			--with-system-cairo \
 			--with-system-harfbuzz \
 			--with-system-graphite2 \
-			--with-system-poppler \
 			--with-system-libpaper \
 			--with-system-zziplib \
 			--with-system-potrace
