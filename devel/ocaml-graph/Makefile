@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2017/09/16 09:02:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2017/12/25 08:51:11 jasper Exp $
 
 COMMENT =	OCaml graph library
 CATEGORIES =	devel
 
-V =		1.8.7
+V =		1.8.8
 DISTNAME =	ocamlgraph-${V}
 PKGNAME =	ocaml-graph-${V}
 MASTER_SITES =	http://ocamlgraph.lri.fr/download/
