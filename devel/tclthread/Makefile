@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2017/11/04 18:56:31 stu Exp $
+# $OpenBSD: Makefile,v 1.9 2017/12/25 04:35:29 stu Exp $
 
 COMMENT =		thread extension for Tcl
 
-V =			2.8.1
+V =			2.8.2
 
 DISTNAME =		thread${V}
 PKGNAME =		tclthread-${V}

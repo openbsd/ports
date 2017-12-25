@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.5 2017/11/04 18:56:31 stu Exp $
+@comment $OpenBSD: PLIST,v 1.6 2017/12/25 04:35:29 stu Exp $
 include/tclThread.h
-@lib lib/libtclthread281.so.${LIBtclthread281_VERSION}
+@lib lib/libtclthread282.so.${LIBtclthread282_VERSION}
 lib/tcl/tclthread/
 lib/tcl/tclthread/pkgIndex.tcl
 lib/tcl/tclthread/ttrace.tcl
