@@ -1,11 +1,11 @@
-$OpenBSD: patch-unix_configure,v 1.7 2017/11/04 18:55:26 stu Exp $
+$OpenBSD: patch-unix_configure,v 1.8 2017/12/25 04:33:39 stu Exp $
 
 Setting this here will allow it to propagate through everything.
 
 Index: unix/configure
 --- unix/configure.orig
 +++ unix/configure
-@@ -19034,7 +19034,7 @@ if test "$FRAMEWORK_BUILD" = "1" ; then
+@@ -10376,7 +10376,7 @@ if test "$FRAMEWORK_BUILD" = "1" ; then
  elif test "$prefix/lib" != "$libdir"; then
      TCL_PACKAGE_PATH="${libdir} ${prefix}/lib ${TCL_PACKAGE_PATH}"
  else

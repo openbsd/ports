@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2017/11/04 18:55:26 stu Exp $
+# $OpenBSD: Makefile,v 1.20 2017/12/25 04:33:39 stu Exp $
 
 COMMENT =		Tool Command Language
 
-P =			7
+P =			8
 DISTNAME =		tcl8.6.${P}
 PKGNAME =		tcl-8.6.${P}
 SHARED_LIBS =		tcl86 1.${P}
@@ -36,14 +36,10 @@ CONFIGURE_ARGS +=	--includedir="${PREFIX}/include/tcl8.6" \
 			--sysconfdir="${SYSCONFDIR}" \
 			--enable-man-symlinks \
 			--disable-rpath \
-			EXTRA_INSTALL_BINARIES='@echo "Installing libtcl86.a to $$(LIB_INSTALL_DIR)/" \
-			&& $$(INSTALL_DATA) libtcl86.a $$(LIB_INSTALL_DIR)/libtcl86.a \
-			&& (cd $$(LIB_INSTALL_DIR) ; $$(RANLIB) libtcl86.a)' \
 			SHLIB_VERSION="${LIBtcl86_VERSION}"
 
-ALL_TARGET =		binaries libtcl86.a
-
 WRKSRC =		${WRKDIST}/unix
+ALL_TARGET =		binaries
 TEST_TARGET =		test-tcl
 
 TESTHOME =		${WRKDIR}/testhome
@@ -62,10 +58,5 @@ pre-configure:
 
 pre-test:
 	mkdir -p ${TESTHOME}
-
-post-install:
-	${INSTALL_DATA} ${WRKDIST}/license.terms ${PREFIX}/lib/tcl/tcl8.6/man
-	ln -s libtcl86.a ${PREFIX}/lib/libtcl86_pic.a
-	ln -s libtclstub86.a ${PREFIX}/lib/libtclstub86_pic.a
 
 .include <bsd.port.mk>

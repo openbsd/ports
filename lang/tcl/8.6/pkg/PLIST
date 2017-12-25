@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2017/11/04 18:55:26 stu Exp $
+@comment $OpenBSD: PLIST,v 1.12 2017/12/25 04:33:39 stu Exp $
 @option no-default-conflict
 @option is-branch
 @conflict tcl->=8.6,<8.7
@@ -11,11 +11,8 @@ include/tcl8.6/tclOODecls.h
 include/tcl8.6/tclPlatDecls.h
 include/tcl8.6/tclTomMath.h
 include/tcl8.6/tclTomMathDecls.h
-lib/libtcl86.a
 @lib lib/libtcl86.so.${LIBtcl86_VERSION}
-lib/libtcl86_pic.a
 lib/libtclstub86.a
-lib/libtclstub86_pic.a
 lib/pkgconfig/tcl86.pc
 lib/tcl/
 lib/tcl/modules/
@@ -924,7 +921,7 @@ lib/tcl/tcl8.6/man/mann/
 @man lib/tcl/tcl8.6/man/mann/yieldto.n
 @man lib/tcl/tcl8.6/man/mann/zlib.n
 lib/tcl/tcl8.6/modules/
-lib/tcl/tcl8.6/modules/http-2.8.11.tm
+lib/tcl/tcl8.6/modules/http-2.8.12.tm
 lib/tcl/tcl8.6/modules/msgcat-1.6.1.tm
 lib/tcl/tcl8.6/modules/platform/
 lib/tcl/tcl8.6/modules/platform-1.0.14.tm
