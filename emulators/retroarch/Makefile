@@ -1,21 +1,22 @@
-# $OpenBSD: Makefile,v 1.3 2017/10/06 23:07:02 bentley Exp $
+# $OpenBSD: Makefile,v 1.4 2017/12/25 21:53:29 bentley Exp $
 
 COMMENT =		generic multi-emulator frontend
 
-V =			1.6.7
+V =			1.6.9
 DISTNAME =		retroarch-$V
 
 CATEGORIES =		emulators
 
-HOMEPAGE =		http://www.libretro.com/
+HOMEPAGE =		https://www.libretro.com/
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
 
+WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += EGL GL SDL2 X11 X11-xcb Xext Xinerama Xv Xxf86vm ass
 WANTLIB += avcodec avformat avutil c drm freetype gbm m openal
 WANTLIB += ossaudio pthread swresample swscale usb-1.0 xcb xkbcommon
-WANTLIB += z dbus-1 stdc++
+WANTLIB += z dbus-1
 
 GH_ACCOUNT =		libretro
 GH_PROJECT =		RetroArch
