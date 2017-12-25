@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.41 2017/06/04 23:21:01 schwarze Exp $
+# $OpenBSD: Makefile,v 1.42 2017/12/25 04:32:26 stu Exp $
 
 COMMENT =		Tool Command Language
 
 DISTNAME =		tcl8.5.19
 PKGNAME =		tcl-8.5.19
-REVISION =		0
+REVISION =		1
 SHARED_LIBS =		tcl85 1.8
 CATEGORIES =		lang lang/tcl
 HOMEPAGE =		http://www.tcl.tk/
@@ -54,7 +54,9 @@ TESTFLAGS =
 # Skip them until they're improved.
 # fCmd-9.4.b expects to be able to overwrite a read-only directory.
 # http-4.14, socket-14.14 expect certain socket errors to occur later rather than sooner. Bug 2911139.
-TESTFLAGS += -skip 'fCmd-9.4.b http-4.14 socket-14.14'
+# cmdAH-2.6.3 will pass functionally but test has bad result comparison.
+# stack-3.1 is very resource-hungry and usually fails.
+TESTFLAGS += -skip 'fCmd-9.4.b http-4.14 socket-14.14 cmdAH-2.6.3 stack-3.1'
 
 pre-configure:
 	@${SUBST_CMD} ${WRKDIST}/library/init.tcl

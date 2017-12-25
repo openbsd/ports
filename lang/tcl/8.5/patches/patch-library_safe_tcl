@@ -1,0 +1,14 @@
+$OpenBSD: patch-library_safe_tcl,v 1.3 2017/12/25 04:32:26 stu Exp $
+
+Index: library/safe.tcl
+--- library/safe.tcl.orig
++++ library/safe.tcl
+@@ -344,6 +344,8 @@ proc ::safe::InterpSetConfig {slave access_path static
+ 	    # Prevent the addition of dirs on the tm list to the
+ 	    # result if they are already known.
+ 	    if {[dict exists $remap_access_path $dir]} {
++		# The dir must nevertheless be added to the slave's tm_path. Bug [eb268f246f].
++		lappend slave_tm_path [dict get $remap_access_path $dir]
+ 		continue
+ 	    }
+ 
