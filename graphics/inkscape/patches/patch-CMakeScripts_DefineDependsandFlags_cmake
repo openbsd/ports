@@ -1,0 +1,19 @@
+$OpenBSD: patch-CMakeScripts_DefineDependsandFlags_cmake,v 1.1 2017/12/25 22:59:24 kili Exp $
+
+Fix build with poppler->=0.58.
+From upstream commit 9418824967eb4c53371ef8588243fed4cab496e0.
+
+Index: CMakeScripts/DefineDependsandFlags.cmake
+--- CMakeScripts/DefineDependsandFlags.cmake.orig
++++ CMakeScripts/DefineDependsandFlags.cmake
+@@ -124,6 +124,10 @@ if(ENABLE_POPPLER)
+ 		POPPLER_VERSION VERSION_EQUAL   "0.29.0")
+ 	    set(POPPLER_EVEN_NEWER_NEW_COLOR_SPACE_API ON)
+ 	endif()
++	if(POPPLER_VERSION VERSION_GREATER "0.58.0" OR
++		POPPLER_VERSION VERSION_EQUAL   "0.58.0")
++            set(POPPLER_NEW_OBJECT_API ON)
++	endif()
+     else()
+ 	set(ENABLE_POPPLER_CAIRO OFF)
+     endif()
