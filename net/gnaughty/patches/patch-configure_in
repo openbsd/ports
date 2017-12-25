@@ -1,0 +1,18 @@
+$OpenBSD: patch-configure_in,v 1.1 2017/12/25 07:04:45 jca Exp $
+
+clang doesn't pass -export-dynamic to ld(1), use -rdynamic to unbreak
+libglade.
+
+Index: configure.in
+--- configure.in.orig
++++ configure.in
+@@ -31,7 +31,8 @@ AC_SUBST(PCRE_LIBS)
+ AC_SUBST(GNAUGHTY_LIBS)
+ AC_SUBST(GNAUGHTY_CFLAGS)
+ 
+-CFLAGS="$CFLAGS -Wall -export-dynamic"
++CFLAGS="$CFLAGS -Wall"
++LDFLAGS="$LDFLAGS -rdynamic"
+ 
+ # Checks for header files.
+ AC_HEADER_STDC

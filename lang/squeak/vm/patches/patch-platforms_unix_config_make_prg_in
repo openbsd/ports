@@ -1,0 +1,20 @@
+$OpenBSD: patch-platforms_unix_config_make_prg_in,v 1.1 2017/12/25 07:04:45 jca Exp $
+
+Use -rdynamic where appropriate, for some reason libtool doesn't
+recognize -export-dynamic and passes it to clang, which doesn't
+understand it.
+
+Index: platforms/unix/config/make.prg.in
+--- platforms/unix/config/make.prg.in.orig
++++ platforms/unix/config/make.prg.in
+@@ -8,8 +8,8 @@ o		= .o
+ a		= .a
+ x		=
+ COMPILE		= $(CC) $(CFLAGS) $(XCFLAGS) \
+-		  $(LDFLAGS) $(XLDFLAGS) -export-dynamic -c -o
++		  $(LDFLAGS) $(XLDFLAGS) -c -o
+ LINK		= $(LIBTOOL) --mode=link \
+ 		  $(CC) $(CFLAGS) $(XCFLAGS) \
+-		  $(LDFLAGS) $(XLDFLAGS) -export-dynamic -R$(libdir) -o
++		  $(LDFLAGS) $(XLDFLAGS) -rdynamic -R$(libdir) -o
+ RANLIB		= :
