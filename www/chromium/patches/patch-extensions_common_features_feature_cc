@@ -1,0 +1,14 @@
+$OpenBSD: patch-extensions_common_features_feature_cc,v 1.1 2017/12/25 00:17:32 robert Exp $
+
+Index: extensions/common/features/feature.cc
+--- extensions/common/features/feature.cc.orig
++++ extensions/common/features/feature.cc
+@@ -26,6 +26,8 @@ Feature::Platform Feature::GetCurrentPlatform() {
+   return MACOSX_PLATFORM;
+ #elif defined(OS_WIN)
+   return WIN_PLATFORM;
++#elif defined(OS_OPENBSD)
++  return LINUX_PLATFORM;
+ #else
+   return UNSPECIFIED_PLATFORM;
+ #endif

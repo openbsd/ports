@@ -1,4 +1,8 @@
-$OpenBSD: patch-net_socket_udp_socket_posix_cc,v 1.7 2017/12/16 15:34:40 robert Exp $
+$OpenBSD: patch-net_socket_udp_socket_posix_cc,v 1.8 2017/12/25 00:17:32 robert Exp $
+
+Make other clients happy by using SO_REUSEPORT and SO_REUSEADDR so that they
+can bind to the same multicast port for listening.
+
 Index: net/socket/udp_socket_posix.cc
 --- net/socket/udp_socket_posix.cc.orig
 +++ net/socket/udp_socket_posix.cc
@@ -11,7 +15,25 @@ Index: net/socket/udp_socket_posix.cc
  
  // Returns IPv4 address in network order.
  int GetIPv4AddressFromIndex(int socket, uint32_t index, uint32_t* address) {
-@@ -830,7 +830,7 @@ int UDPSocketPosix::SetMulticastOptions() {
+@@ -617,13 +617,16 @@ int UDPSocketPosix::SetBroadcast(bool broadcast) {
+   DCHECK_CALLED_ON_VALID_THREAD(thread_checker_);
+   int value = broadcast ? 1 : 0;
+   int rv;
+-#if defined(OS_MACOSX)
++#if defined(OS_MACOSX) || defined(OS_BSD)
+   // SO_REUSEPORT on OSX permits multiple processes to each receive
+   // UDP multicast or broadcast datagrams destined for the bound
+   // port.
+   // This is only being set on OSX because its behavior is platform dependent
+   // and we are playing it safe by only setting it on platforms where things
+   // break.
++  rv = setsockopt(socket_, SOL_SOCKET, SO_REUSEADDR, &value, sizeof(value));
++  if (rv != 0)
++    return MapSystemError(errno);
+   rv = setsockopt(socket_, SOL_SOCKET, SO_REUSEPORT, &value, sizeof(value));
+   if (rv != 0)
+     return MapSystemError(errno);
+@@ -830,7 +833,7 @@ int UDPSocketPosix::SetMulticastOptions() {
    if (multicast_interface_ != 0) {
      switch (addr_family_) {
        case AF_INET: {
@@ -20,7 +42,28 @@ Index: net/socket/udp_socket_posix.cc
          ip_mreqn mreq;
          mreq.imr_ifindex = multicast_interface_;
          mreq.imr_address.s_addr = htonl(INADDR_ANY);
-@@ -905,7 +905,7 @@ int UDPSocketPosix::JoinGroup(const IPAddress& group_a
+@@ -841,8 +844,20 @@ int UDPSocketPosix::SetMulticastOptions() {
+         if (error != OK)
+           return error;
+ #endif
++#if defined(OS_BSD)
++        int value = 1;
++        if (setsockopt(socket_, SOL_SOCKET, SO_REUSEADDR, &value, sizeof(value)) != 0)
++          return MapSystemError(errno);
++        if (setsockopt(socket_, SOL_SOCKET, SO_REUSEPORT, &value, sizeof(value)) != 0)
++          return MapSystemError(errno);
++#endif
+         int rv = setsockopt(socket_, IPPROTO_IP, IP_MULTICAST_IF,
++#if defined(OS_BSD)
++                            reinterpret_cast<const char*>(&mreq.imr_interface.s_addr),
++                            sizeof(mreq.imr_interface.s_addr));
++#else
+                             reinterpret_cast<const char*>(&mreq), sizeof(mreq));
++#endif
+         if (rv)
+           return MapSystemError(errno);
+         break;
+@@ -905,7 +920,7 @@ int UDPSocketPosix::JoinGroup(const IPAddress& group_a
        if (addr_family_ != AF_INET)
          return ERR_ADDRESS_INVALID;
  
