@@ -1,0 +1,31 @@
+$OpenBSD: patch-src_mongo_db_ftdc_compressor_cpp,v 1.1 2017/12/26 19:18:57 rsadowski Exp $
+
+Index: src/mongo/db/ftdc/compressor.cpp
+--- src/mongo/db/ftdc/compressor.cpp.orig
++++ src/mongo/db/ftdc/compressor.cpp
+@@ -38,6 +38,7 @@
+ #include "mongo/db/service_context.h"
+ #include "mongo/util/assert_util.h"
+ 
++
+ namespace mongo {
+ 
+ using std::swap;
+@@ -47,7 +48,7 @@ FTDCCompressor::addSample(const BSONObj& sample, Date_
+     if (_referenceDoc.isEmpty()) {
+         FTDCBSONUtil::extractMetricsFromDocument(sample, sample, &_metrics);
+         _reset(sample, date);
+-        return {boost::none_t()};
++        return {boost::none};
+     }
+ 
+     _metrics.resize(0);
+@@ -107,7 +108,7 @@ FTDCCompressor::addSample(const BSONObj& sample, Date_
+     }
+ 
+     // The buffer is not full, inform the caller
+-    return {boost::none_t()};
++    return {boost::none};
+ }
+ 
+ StatusWith<std::tuple<ConstDataRange, Date_t>> FTDCCompressor::getCompressedSamples() {

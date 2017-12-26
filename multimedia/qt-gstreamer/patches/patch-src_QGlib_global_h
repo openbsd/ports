@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_QGlib_global_h,v 1.1 2017/12/26 19:18:57 rsadowski Exp $
+
+Workaround for boost>=1.57 and MOC
+
+The workaround to define BOOST_TT_HAS_OPERATOR_HPP_INCLUDED
+doesn't work anymore.
+
+https://bugreports.qt-project.org/browse/QTBUG-22829 for details.
+
+Index: src/QGlib/global.h
+--- src/QGlib/global.h.orig
++++ src/QGlib/global.h
+@@ -86,8 +86,10 @@ typedef RefPointer<Object> ObjectPtr;
+ # define QGLIB_STATIC_ASSERT(expr, message) static_assert(expr, message)
+ # define QGLIB_HAVE_CXX0X_STATIC_ASSERT 1
+ #else
++#ifndef Q_MOC_RUN
+ # include <boost/static_assert.hpp>
+ # define QGLIB_STATIC_ASSERT(expr, message) BOOST_STATIC_ASSERT(expr)
++#endif
+ #endif
+ 
+ //check for the C++0x features that we need

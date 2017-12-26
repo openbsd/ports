@@ -1,8 +1,9 @@
-$OpenBSD: patch-src_QGst_CMakeLists_txt,v 1.1.1.1 2014/07/09 10:41:13 zhuk Exp $
+$OpenBSD: patch-src_QGst_CMakeLists_txt,v 1.2 2017/12/26 19:18:57 rsadowski Exp $
 Avoid forcing specific library version.
---- src/QGst/CMakeLists.txt.orig	Thu Jun 26 17:21:57 2014
-+++ src/QGst/CMakeLists.txt	Thu Jun 26 17:22:49 2014
-@@ -143,9 +143,7 @@ run_codegen("QGst" "${QtGStreamer_CODEGEN_INCLUDES}" "
+Index: src/QGst/CMakeLists.txt
+--- src/QGst/CMakeLists.txt.orig
++++ src/QGst/CMakeLists.txt
+@@ -165,9 +165,7 @@ run_codegen("QGst" "${QtGStreamer_CODEGEN_INCLUDES}" "
  
  # Build and link QtGStreamer
  add_library(${QTGSTREAMER_LIBRARY} ${SHARED_OR_STATIC} ${QtGStreamer_SRCS})
@@ -12,8 +13,8 @@ Avoid forcing specific library version.
 +set_target_properties(${QTGSTREAMER_LIBRARY} PROPERTIES OUTPUT_NAME ${QTGSTREAMER_LIBRARY}-${QTGSTREAMER_API_VERSION})
  target_link_libraries(${QTGSTREAMER_LIBRARY} LINK_PUBLIC ${QTGLIB_LIBRARY})
  target_link_libraries(${QTGSTREAMER_LIBRARY} LINK_PRIVATE ${GOBJECT_LIBRARIES}
-                                   ${GSTREAMER_LIBRARY} ${GSTREAMER_INTERFACES_LIBRARY}
-@@ -154,9 +152,7 @@ qt4or5_use_modules(${QTGSTREAMER_LIBRARY} LINK_PUBLIC 
+                                   ${GSTREAMER_LIBRARY}
+@@ -189,9 +187,7 @@ endif()
  
  # Build and link QtGStreamerUi
  add_library(${QTGSTREAMER_UI_LIBRARY} ${SHARED_OR_STATIC} ${QtGStreamerUi_SRCS})
@@ -24,7 +25,7 @@ Avoid forcing specific library version.
  target_link_libraries(${QTGSTREAMER_UI_LIBRARY} LINK_PUBLIC ${QTGSTREAMER_LIBRARY})
  qt4or5_use_modules(${QTGSTREAMER_UI_LIBRARY} LINK_PUBLIC Widgets Gui)
  qt4or5_use_modules(${QTGSTREAMER_UI_LIBRARY} LINK_PRIVATE Core)
-@@ -166,9 +162,7 @@ endif()
+@@ -201,9 +197,7 @@ endif()
  
  # Build and link QtGStreamerUtils
  add_library(${QTGSTREAMER_UTILS_LIBRARY} ${SHARED_OR_STATIC} ${QtGStreamerUtils_SRCS})

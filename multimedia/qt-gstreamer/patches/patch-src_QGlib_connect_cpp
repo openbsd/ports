@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_QGlib_connect_cpp,v 1.1 2017/12/26 19:18:57 rsadowski Exp $
+
+Workaround for boost>=1.57 and MOC
+
+The workaround to define BOOST_TT_HAS_OPERATOR_HPP_INCLUDED
+doesn't work anymore.
+
+https://bugreports.qt-project.org/browse/QTBUG-22829 for details.
+
+Index: src/QGlib/connect.cpp
+--- src/QGlib/connect.cpp.orig
++++ src/QGlib/connect.cpp
+@@ -21,8 +21,10 @@
+ #include <QtCore/QHash>
+ #include <QtCore/QMutex>
+ #include <boost/multi_index_container.hpp>
++#ifndef Q_MOC_RUN
+ #include <boost/multi_index/sequenced_index.hpp>
+ #include <boost/multi_index/ordered_index.hpp>
++#endif
+ #include <boost/multi_index/member.hpp>
+ 
+ namespace QGlib {
