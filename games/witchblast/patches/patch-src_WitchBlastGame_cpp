@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_WitchBlastGame_cpp,v 1.1.1.1 2017/12/26 20:14:34 awolk Exp $
+
+fix save location for death certificates (rip_...)
+
+Index: src/WitchBlastGame.cpp
+--- src/WitchBlastGame.cpp.orig
++++ src/WitchBlastGame.cpp
+@@ -2816,7 +2816,7 @@ void WitchBlastGame::renderMessages()
+ void WitchBlastGame::saveDeathScreen()
+ {
+   std::stringstream ss;
+-  ss << "rip_";
++  ss << BASE_DATA_DIR << "data/rip_";
+   time_t t = time(0);   // get time now
+   struct tm * now = localtime( & t );
+ 

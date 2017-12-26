@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# create the directory for game config and save data
+# if it doesn't exist yet
+mkdir -p ~/.local/share/witchblast/data
+
+cd ${TRUEPREFIX}/share/witchblast && ./Witch_Blast

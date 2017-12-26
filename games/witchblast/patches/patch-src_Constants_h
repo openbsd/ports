@@ -1,0 +1,30 @@
+$OpenBSD: patch-src_Constants_h,v 1.1.1.1 2017/12/26 20:14:34 awolk Exp $
+
+Set config, save, and hiscore files to path in ~/.local/share/witchblast
+
+Index: src/Constants.h
+--- src/Constants.h.orig
++++ src/Constants.h
+@@ -18,14 +18,18 @@
+ #define CONSTANTS_H_INCLUDED
+ 
+ #include <string>
++#include <stdlib.h>
+ 
+ const std::string APP_NAME =      "Witch Blast";
+ const std::string APP_VERSION =   "0.7.5";
+ 
+-const std::string CONFIG_FILE =     "config.dat";
+-const std::string SAVE_FILE =       "game.sav";
+-const std::string SAVE_DATA_FILE =  "data/data.sav";
+-const std::string HISCORES_FILE =   "data/scores.dat";
++const std::string userhome = getenv("HOME");
++const std::string BASE_DATA_DIR = userhome + "/.local/share/witchblast/";
++
++const std::string CONFIG_FILE =     BASE_DATA_DIR + "config.dat";
++const std::string SAVE_FILE =       BASE_DATA_DIR + "game.sav";
++const std::string SAVE_DATA_FILE =  BASE_DATA_DIR + "data/data.sav";
++const std::string HISCORES_FILE =   BASE_DATA_DIR + "data/scores.dat";
+ 
+ const std::string SAVE_VERSION =    "SAVE_0.7";
+ const std::string SCORE_VERSION =   "V075";

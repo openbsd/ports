@@ -1,0 +1,28 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2017/12/26 20:14:34 awolk Exp $
+
+Add Unix install targets that are missing in source
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -106,6 +106,20 @@ if(APPLE)
+     DESTINATION ".")
+ endif()
+ 
++if(UNIX)
++	install(PROGRAMS ${CMAKE_BINARY_DIR}/Witch_Blast DESTINATION ${CMAKE_INSTALL_PREFIX}/share/witchblast)
++	install(
++	  DIRECTORY 
++	    ${CMAKE_SOURCE_DIR}/data
++	    ${CMAKE_SOURCE_DIR}/media
++	  DESTINATION 
++	    ${CMAKE_INSTALL_PREFIX}/share/witchblast)
++	install(FILES
++	  ${CMAKE_SOURCE_DIR}/COPYING.txt 
++	  ${CMAKE_SOURCE_DIR}/readme.txt
++	  DESTINATION ${CMAKE_INSTALL_PREFIX}/share/doc/witchblast)
++endif()
++
+ # Packaging
+ SET(CPACK_PACKAGE_VERSION "0.7.5")
+ SET(CPACK_PACKAGE_VERSION_MAJOR "0")
