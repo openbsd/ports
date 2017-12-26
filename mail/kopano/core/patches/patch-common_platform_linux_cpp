@@ -1,9 +1,9 @@
-$OpenBSD: patch-common_platform_linux_cpp,v 1.1.1.1 2017/09/13 10:38:41 robert Exp $
+$OpenBSD: patch-common_platform_linux_cpp,v 1.2 2017/12/26 19:17:11 robert Exp $
 
 Index: common/platform.linux.cpp
 --- common/platform.linux.cpp.orig
 +++ common/platform.linux.cpp
-@@ -45,7 +45,7 @@
+@@ -44,7 +44,7 @@
  #else
  #	include <uuid.h>
  #endif
@@ -12,7 +12,7 @@ Index: common/platform.linux.cpp
  #	include <cxxabi.h>
  #	include <execinfo.h>
  #endif
-@@ -54,9 +54,6 @@
+@@ -53,9 +53,6 @@
  #ifdef __APPLE__
  // bsd
  #define ICONV_CONST const
@@ -22,7 +22,7 @@ Index: common/platform.linux.cpp
  #else
  // linux
  #define ICONV_CONST
-@@ -79,22 +76,10 @@ HRESULT CoCreateGuid(LPGUID pNewGUID) {
+@@ -78,22 +75,10 @@ HRESULT CoCreateGuid(LPGUID pNewGUID) {
  		return MAPI_E_INVALID_PARAMETER;
  
  #if HAVE_UUID_CREATE
@@ -45,7 +45,7 @@ Index: common/platform.linux.cpp
  #else
  	uuid_t g;
  	uuid_generate(g);
-@@ -142,6 +127,12 @@ void Sleep(unsigned int msec) {
+@@ -139,6 +124,12 @@ void Sleep(unsigned int msec) {
  
  namespace KC {
  
@@ -58,11 +58,11 @@ Index: common/platform.linux.cpp
  static void rand_fail(void)
  {
  	fprintf(stderr, "Cannot access/use /dev/urandom, this is fatal (%s)\n", strerror(errno));
-@@ -178,6 +169,7 @@ void rand_get(char *p, int n)
+@@ -175,6 +166,7 @@ void rand_get(char *p, int n)
  
  		close(fd);
  	}
 +#endif
  	
  void rand_init() {
- 	unsigned int seed = 0;
+ 	if (rand_init_done)

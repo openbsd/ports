@@ -1,4 +1,4 @@
-$OpenBSD: patch-installer_linux_unix_cfg,v 1.1.1.1 2017/09/13 10:38:42 robert Exp $
+$OpenBSD: patch-installer_linux_unix_cfg,v 1.2 2017/12/26 19:17:11 robert Exp $
 Index: installer/linux/unix.cfg
 --- installer/linux/unix.cfg.orig
 +++ installer/linux/unix.cfg
@@ -6,5 +6,5 @@ Index: installer/linux/unix.cfg
  # except_group_gids =
  
  # Create a user as non-active when it has this Unix shell
--non_login_shell = /bin/false
+-non_login_shell = /sbin/nologin /bin/false
 +non_login_shell = /sbin/nologin

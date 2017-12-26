@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2017/12/18 11:40:37 jca Exp $
+# $OpenBSD: Makefile,v 1.7 2017/12/26 19:17:11 robert Exp $
 
 COMMENT-main=	MS Exchange groupware suite replacement
 COMMENT-mapi=	kopano MAPI extensions for PHP
 
 PKGNAME-main=	kopano-core-${V}.${BUILD}
 PKGNAME-mapi=	kopano-mapi-${V}.${BUILD}
-REVISION-main=	2
-REVISION-mapi=	1
 
 CATEGORIES=	mail www productivity
 
@@ -16,7 +14,6 @@ SHARED_LIBS +=  mapi			  3.0 # .0.0
 SHARED_LIBS +=  kcarchiver                0.0 # 0.0
 SHARED_LIBS +=  kcarchivercore            0.0 # 0.0
 SHARED_LIBS +=  kcfreebusy                0.0 # 0.0
-SHARED_LIBS +=  kchl                      0.0 # 0.0
 SHARED_LIBS +=  kcicalmapi                0.0 # 0.0
 SHARED_LIBS +=  kcinetmapi                0.0 # 0.0
 SHARED_LIBS +=  kcmapi                    0.0 # 0.0
@@ -48,7 +45,7 @@ WANTLIB += lzma crypto
 
 WANTLIB-main += ${WANTLIB} ${MODPY_WANTLIB}
 WANTLIB-main += curl nghttp2 ical icalss
-WANTLIB-main += mysqlclient ncurses sasl2 ssl xml2
+WANTLIB-main += mysqlclient curses sasl2 ssl xml2
 WANTLIB-main += gsoapssl++
 WANTLIB-main += ${LIBCXX}
 WANTLIB-main += icalvcal lber ldap_r
@@ -87,18 +84,14 @@ USE_LIBTOOL=	gnu
 
 MODPY_ADJ_FILES=tools/python-scripts/optimize-imap.py \
 		tools/python-scripts/update-resource-recipients \
-		installer/linux/kopano7-upgrade \
 		ECtools/utils/kopano-mailbox-permissions \
 		ECtools/utils/kopano-set-oof
 
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.69
 
-CONFIGURE_ENV=	CPPFLAGS="-fpermissive -I${LOCALBASE}/include \
-			-I${LOCALBASE}/include/kopano" \
-		LDFLAGS="-L${LOCALBASE}/lib -lexecinfo \
-			-L${LOCALBASE}/lib/kopano" \
-		ZAFARA_LDFLAGS="-L${LOCALBASE}/lib/kopano" \
+CONFIGURE_ENV=	CPPFLAGS="-fpermissive -I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib -lexecinfo" \
 		PHP_SYSCONF_DIR="${SYSCONFDIR}/php-${MODPHP_VERSION}" \
 		ac_cv_lib_pam_pam_start=no
 CONFIGURE_ARGS=	--disable-static \
@@ -160,8 +153,6 @@ post-install:
 		${PREFIX}/share/examples/kopano
 	mv ${PREFIX}/share/doc/kopano/kopano.schema \
 		${PREFIX}/share/examples/kopano
-#X	mv ${PREFIX}/share/examples/kopano.ini \
-#X		${PREFIX}/share/examples/kopano
 	perl -pi -e 's,/usr/bin/env python,${MODPY_BIN},g' \
 		${PREFIX}/sbin/kopano-search \
 		${PREFIX}/sbin/kopano-search-xapian-compact.py \

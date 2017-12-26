@@ -1,4 +1,4 @@
-$OpenBSD: patch-caldav_CalDAV_cpp,v 1.1.1.1 2017/09/13 10:38:41 robert Exp $
+$OpenBSD: patch-caldav_CalDAV_cpp,v 1.2 2017/12/26 19:17:11 robert Exp $
 
 Index: caldav/CalDAV.cpp
 --- caldav/CalDAV.cpp.orig
@@ -14,6 +14,6 @@ Index: caldav/CalDAV.cpp
  		{ "pid_file", "/var/run/kopano/ical.pid" },
 -		{ "running_path", "/var/lib/kopano" },
 +		{ "running_path", "/var/empty" },
- 		{ "process_model", "fork" },
+ 		{ "process_model", "thread" },
  		{ "server_bind", "" },
  		{"ical_port", "8080", CONFIGSETTING_NONEMPTY},

@@ -1,9 +1,9 @@
-$OpenBSD: patch-provider_libserver_ECSession_cpp,v 1.1.1.1 2017/09/13 10:38:42 robert Exp $
+$OpenBSD: patch-provider_libserver_ECSession_cpp,v 1.2 2017/12/26 19:17:11 robert Exp $
 
 Index: provider/libserver/ECSession.cpp
 --- provider/libserver/ECSession.cpp.orig
 +++ provider/libserver/ECSession.cpp
-@@ -46,7 +46,7 @@
+@@ -47,7 +47,7 @@
  #include "ECICS.h"
  #include <kopano/ECIConv.h>
  #include "versions.h"
@@ -12,7 +12,7 @@ Index: provider/libserver/ECSession.cpp
  #define WHITESPACE " \t\n\r"
  #else
  #define WHITESPACE L" \t\n\r"
-@@ -760,11 +760,20 @@ ECRESULT ECAuthSession::ValidateUserSocket(int socket,
+@@ -752,11 +752,20 @@ ECRESULT ECAuthSession::ValidateUserSocket(int socket,
  	uid_t uid;
  	char strbuf[1024];
  #ifdef SO_PEERCRED

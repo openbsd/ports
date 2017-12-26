@@ -1,9 +1,9 @@
-$OpenBSD: patch-provider_server_ECServer_cpp,v 1.1.1.1 2017/09/13 10:38:42 robert Exp $
+$OpenBSD: patch-provider_server_ECServer_cpp,v 1.2 2017/12/26 19:17:11 robert Exp $
 
 Index: provider/server/ECServer.cpp
 --- provider/server/ECServer.cpp.orig
 +++ provider/server/ECServer.cpp
-@@ -57,6 +57,10 @@
+@@ -62,6 +62,10 @@
  #include "ECICS.h"
  #include <openssl/ssl.h>
  
@@ -11,10 +11,10 @@ Index: provider/server/ECServer.cpp
 +#include <sys/resource.h>
 +#endif
 +
- using namespace std;
- 
  // The following value is based on:
-@@ -789,10 +793,10 @@ static int running_server(char *szName, const char *sz
+ // http://dev.mysql.com/doc/refman/5.0/en/server-system-variables.html#sysvar_thread_stack
+ // Since the remote MySQL server can be 32 or 64 bit we'll just go with the value specified
+@@ -821,10 +825,10 @@ static int running_server(char *szName, const char *sz
  		{"thread_stacksize", "512", CONFIGSETTING_UNUSED},
  		{ "allow_local_users",			"yes", CONFIGSETTING_RELOADABLE },			// allow any user connect through the Unix socket
  		{ "local_admin_users",			"root", CONFIGSETTING_RELOADABLE },			// this local user is admin
@@ -28,7 +28,7 @@ Index: provider/server/ECServer.cpp
  		{"allocator_library", "libtcmalloc_minimal.so.4"},
  		{ "coredump_enabled",			"yes" },
  
-@@ -833,7 +837,7 @@ static int running_server(char *szName, const char *sz
+@@ -867,7 +871,7 @@ static int running_server(char *szName, const char *sz
  		{"attachment_s3_bucketname", ""},
  		{"attachment_s3_region", ""},
  #endif
@@ -37,7 +37,7 @@ Index: provider/server/ECServer.cpp
  		{ "attachment_compression",		"6" },
  
  		// Log options
-@@ -907,7 +911,7 @@ static int running_server(char *szName, const char *sz
+@@ -941,7 +945,7 @@ static int running_server(char *szName, const char *sz
  
  		{"client_update_enabled", "no", CONFIGSETTING_UNUSED},
  		{"client_update_log_level", "1", CONFIGSETTING_UNUSED | CONFIGSETTING_RELOADABLE},

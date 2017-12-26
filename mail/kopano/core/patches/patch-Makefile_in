@@ -1,9 +1,9 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2017/09/27 08:36:53 robert Exp $
+$OpenBSD: patch-Makefile_in,v 1.3 2017/12/26 19:17:11 robert Exp $
 
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -4898,7 +4898,7 @@ provider/plugin.sym provider/provider.sym: ${top_build
+@@ -4764,7 +4764,7 @@ default.sym provider/plugin.sym provider/provider.sym:
  
  .PHONY: source-moved-check
  source-moved-check:
@@ -11,4 +11,4 @@ Index: Makefile.in
 +	@${top_srcdir}/pwdcheck.sh "${abs_top_builddir}" || true
  
  version:
- 	touch $@
+ 	echo "@PACKAGE_VERSION@" >version

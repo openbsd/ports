@@ -1,9 +1,9 @@
-$OpenBSD: patch-ECtools_monitor_monitor_cpp,v 1.1.1.1 2017/09/13 10:38:41 robert Exp $
+$OpenBSD: patch-ECtools_monitor_monitor_cpp,v 1.2 2017/12/26 19:17:11 robert Exp $
 
 Index: ECtools/monitor/monitor.cpp
 --- ECtools/monitor/monitor.cpp.orig
 +++ ECtools/monitor/monitor.cpp
-@@ -169,10 +169,10 @@ int main(int argc, char *argv[]) {
+@@ -145,10 +145,10 @@ int main(int argc, char *argv[]) {
  	static const configsetting_t lpDefaults[] = {
  		{ "smtp_server","localhost" },
  		{ "server_socket", "default:" },

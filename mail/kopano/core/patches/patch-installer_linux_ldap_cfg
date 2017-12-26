@@ -1,0 +1,20 @@
+$OpenBSD: patch-installer_linux_ldap_cfg,v 1.1 2017/12/26 19:17:11 robert Exp $
+
+Index: installer/linux/ldap.cfg
+--- installer/linux/ldap.cfg.orig
++++ installer/linux/ldap.cfg
+@@ -3,11 +3,11 @@
+ #
+ 
+ # Select implementation.
+-# If you have any reason to override settings from /usr/share/kopano/*.cfg,
++# If you have any reason to override settings from /usr/local/share/kopano/*.cfg,
+ # do so at the end of this (/etc-resident) config file.
+ #
+-!include /usr/share/kopano/ldap.openldap.cfg
+-#!include /usr/share/kopano/ldap.active-directory.cfg
++!include /usr/local/share/kopano/ldap.openldap.cfg
++#!include /usr/local/share/kopano/ldap.active-directory.cfg
+ 
+ # LDAP host name/IP address
+ ldap_host = localhost
