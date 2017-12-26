@@ -1,6 +1,9 @@
-$OpenBSD: patch-src_external_libindi_libs_indibase_baseclient_cpp,v 1.1 2017/12/22 14:36:29 ajacoutot Exp $
+$OpenBSD: patch-src_external_libindi_libs_indibase_baseclient_cpp,v 1.2 2017/12/26 11:18:24 ajacoutot Exp $
 
-https://github.com/Stellarium/stellarium/pull/52
+From 1faf120f778bc9370782440fc9046c0e0a9f0c3f Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@bsdfrog.org>
+Date: Fri, 22 Dec 2017 16:01:46 +0100
+Subject: [PATCH] Include sys/socket.h for AF_INET (#52)
 
 Index: src/external/libindi/libs/indibase/baseclient.cpp
 --- src/external/libindi/libs/indibase/baseclient.cpp.orig
