@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2017/12/15 14:33:17 abieber Exp $
+# $OpenBSD: Makefile,v 1.4 2017/12/26 13:57:47 abieber Exp $
 
 COMMENT =	pass compatible password manager wirtten in go
 
 GH_ACCOUNT =	justwatchcom
 GH_PROJECT =	gopass
-GH_TAGNAME =	v1.6.4
+GH_TAGNAME =	v1.6.6
 
 CATEGORIES =	security
 
