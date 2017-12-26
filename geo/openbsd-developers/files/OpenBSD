@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.151 2017/11/18 01:09:16 ccardenas Exp $
+# $OpenBSD: OpenBSD,v 1.152 2017/12/26 06:13:10 ians Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -15,6 +15,7 @@
 -12.56		-38.31		"gsoares"	# Gleydson Soares
 15.58		-61.35		"joris"		# Joris Vink
 25.0		121.400		"kevlo"		# Kevin Lo
+29.748037	-95.410201	"ians"		# Ian Sutton
 30.448		-97.684		"marco"		# Marco Peereboom
 30.475		-97.612		"bcook"		# Brent Cook
 34.710962	-82.872323	"okan"		# Okan Demirmen
