@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.88 2017/11/16 23:20:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.89 2017/12/26 17:38:47 jca Exp $
 
 # XXX
 # sndio: what to do with (channel) map
@@ -94,6 +94,10 @@ CONFIGURE_ARGS=		--disable-atomic-arm-linux-helpers \
 			--disable-gconf \
 			--disable-avahi \
 			--disable-orc
+
+.if ${MACHINE_ARCH} == "aarch64"
+CONFIGURE_ARGS+=	--disable-neon-opt
+.endif
 
 CONFIGURE_ENV=		CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib \
