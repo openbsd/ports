@@ -1,9 +1,9 @@
-$OpenBSD: patch-tools_build_src_engine_jam_h,v 1.1 2017/05/21 09:49:30 espie Exp $
+$OpenBSD: patch-tools_build_src_engine_jam_h,v 1.2 2017/12/26 19:18:49 rsadowski Exp $
 
 Index: tools/build/src/engine/jam.h
 --- tools/build/src/engine/jam.h.orig
 +++ tools/build/src/engine/jam.h
-@@ -281,7 +281,9 @@
+@@ -318,7 +318,9 @@
  #ifdef __OpenBSD__
      #define OSMINOR "OS=OPENBSD"
      #define OS_OPENBSD

@@ -1,7 +1,8 @@
-$OpenBSD: patch-boost_test_impl_execution_monitor_ipp,v 1.2 2010/09/19 20:47:29 jasper Exp $
---- boost/test/impl/execution_monitor.ipp.orig	Sat Nov 28 10:19:18 2009
-+++ boost/test/impl/execution_monitor.ipp	Sun Sep 19 22:33:20 2010
-@@ -341,14 +341,18 @@ system_signal_exception::report() const
+$OpenBSD: patch-boost_test_impl_execution_monitor_ipp,v 1.3 2017/12/26 19:18:49 rsadowski Exp $
+Index: boost/test/impl/execution_monitor.ipp
+--- boost/test/impl/execution_monitor.ipp.orig
++++ boost/test/impl/execution_monitor.ipp
+@@ -376,14 +376,18 @@ system_signal_exception::report() const
          report_error( execution_exception::system_error,
                        "signal: the expiration of a timer set by timer_settimer()" );
          break;
