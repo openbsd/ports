@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.34 2017/11/15 16:48:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.35 2017/12/26 18:16:42 jca Exp $
 
 COMMENT =		DeaDBeeF is an audio player
 DISTNAME =		deadbeef-0.7.2
-REVISION =		6
+REVISION =		7
 CATEGORIES =		audio
 
 HOMEPAGE =		http://deadbeef.sourceforge.net/
@@ -85,6 +85,9 @@ CONFIGURE_ENV +=	CPPFLAGS='-I${LOCALBASE}/lib/libzip/include \
 				  -I${X11BASE}/include \
 				  -I${WRKSRC}/plugins/dumb/dumb-kode54/include' \
 			LDFLAGS='-L${LOCALBASE}/lib -L${X11BASE}/lib'
+.if ${MACHINE_ARCH} != "amd64"
+CONFIGURE_ENV +=	ax_cv_c_flags__msse2='no'
+.endif
 
 post-patch:
 	@mkdir -p ${WRKSRC}/m4 # XXX need for autoreconf
