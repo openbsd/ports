@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.92 2017/05/12 21:26:32 espie Exp $
+# $OpenBSD: Makefile,v 1.93 2017/12/26 06:37:21 jca Exp $
 
 BROKEN-powerpc=		dumped executable fails with SIGABRT
 
@@ -43,7 +43,7 @@ CONFIGURE_ARGS=		${GCCARCH} --with-pop --with-system-malloc
 ARCH_LDFLAGS =		-Wl,-G0
 CFLAGS +=		-mno-sdata
 .elif ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "hppa" || \
-    ${MACHINE_ARCH} == "sparc64"
+    ${MACHINE_ARCH} == "sparc64" || ${MACHINE_ARCH} == "aarch64"
 ARCH_LDFLAGS =
 .else
 ARCH_LDFLAGS =		-Z
