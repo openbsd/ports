@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_raknet_Types_h,v 1.1 2017/12/26 06:27:55 jca Exp $
+
+Index: src/raknet/Types.h
+--- src/raknet/Types.h.orig
++++ src/raknet/Types.h
+@@ -100,12 +100,12 @@
+ 
+ #include <stdlib.h>
+ 
+-#if defined(__GLIBC__) && !defined(HOST_ENDIAN_IS_BIG) && !defined(HOST_ENDIAN_IS_LITTLE)
++#if !defined(HOST_ENDIAN_IS_BIG) && !defined(HOST_ENDIAN_IS_LITTLE)
+ 	#include <endian.h>
+-	
+-	#if (__BYTE_ORDER == __LITTLE_ENDIAN)
++
++	#if (BYTE_ORDER == LITTLE_ENDIAN)
+ 		#define HOST_ENDIAN_IS_LITTLE
+-	#elif (__BYTE_ORDER == __BIG_ENDIAN)
++	#elif (BYTE_ORDER == BIG_ENDIAN)
+ 		#define HOST_ENDIAN_IS_BIG
+ 	#endif
+ #endif
