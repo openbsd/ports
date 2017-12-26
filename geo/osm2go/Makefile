@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2017/11/21 00:13:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2017/12/26 06:16:43 jca Exp $
 
 COMMENT =	Openstreetmap editor for handheld devices
 
@@ -26,6 +26,7 @@ WANTLIB += png popt pthread soup-2.4 xcb xcb-render xcb-shm xml2 z
 MASTER_SITES =	http://repository.maemo.org/extras-devel/pool/diablo/free/source/o/osm2go/
 
 CONFIGURE_STYLE =	gnu
+CONFIGURE_ENV =		LIBS="-lm"
 
 MODULES =	devel/gconf2
 
