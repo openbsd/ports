@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.3 2017/09/27 08:37:20 robert Exp $
+# $OpenBSD: Makefile,v 1.4 2017/12/26 19:18:28 robert Exp $
 
 COMMENT=	next generation web interface for Kopano
 
-WAPP_VERSION=	3.4.0
+WAPP_VERSION=	3.4.3
 
 PLUGINS_WITH_DEFCONF= \
 		contactfax-${WAPP_VERSION}.${MINOR}-${RPMVER} \
-		desktopnotifications-2.0.0.7-6.4 \
-		filepreviewer-2.0.0.13-8.1 \
+		desktopnotifications-2.0.1.0-12.1 \
+		filepreviewer-2.0.0.15-9.1 \
 		gmaps-${WAPP_VERSION}.${MINOR}-${RPMVER} \
-		intranet-0.1-24.1 \
+		intranet-0.1-28.1 \
 		pimfolder-${WAPP_VERSION}.${MINOR}-${RPMVER} \
 		titlecounter-${WAPP_VERSION}.${MINOR}-${RPMVER}
 		
@@ -18,8 +18,8 @@ PLUGINS=	${PLUGINS_WITH_DEFCONF} \
 		folderwidgets-${WAPP_VERSION}.${MINOR}-${RPMVER} \
 		quickitems-${WAPP_VERSION}.${MINOR}-${RPMVER}
 
-MINOR=		899
-RPMVER=		576.1
+MINOR=		1127
+RPMVER=		669.1
 PKGNAME=	kopano-webapp-${WAPP_VERSION}.${MINOR}
 
 EXTRACT_SUFX=	# empty
@@ -31,17 +31,17 @@ EDISTFILES+=    kopano-webapp-lang-${WAPP_VERSION}.${MINOR}-${RPMVER}.noarch.rpm
 EXTRACT_ONLY=   ${EDISTFILES:C/:[0-9]$//}
 
 DISTFILES+=	kopano-webapp-${WAPP_VERSION}.${MINOR}-${RPMVER}.noarch.rpm \
-		kopano-webapp-plugin-spell-2.0.0.2-5.1.noarch.rpm \
-		kopano-webapp-plugin-spell-de-at-2.0.0.0-2.4.noarch.rpm \
-		kopano-webapp-plugin-spell-de-ch-2.0.0.0-2.4.noarch.rpm \
-		kopano-webapp-plugin-spell-de-de-2.0.0.0-2.4.noarch.rpm \
-		kopano-webapp-plugin-spell-en-gb-2.0.0.0-2.4.noarch.rpm \
-		kopano-webapp-plugin-spell-en-us-2.0.0.0-2.4.noarch.rpm \
-		kopano-webapp-plugin-spell-es-es-2.0.0.0-2.4.noarch.rpm \
-		kopano-webapp-plugin-spell-fr-fr-2.0.0.0-2.4.noarch.rpm \
-		kopano-webapp-plugin-spell-it-1.0.0-15.4.noarch.rpm \
-		kopano-webapp-plugin-spell-nl-2.0.0.0-2.4.noarch.rpm \
-		kopano-webapp-plugin-spell-pl-pl-2.0.0.0-7.4.noarch.rpm \
+		kopano-webapp-plugin-spell-2.0.0.2-9.1.noarch.rpm \
+		kopano-webapp-plugin-spell-de-at-2.0.0.0-4.1.noarch.rpm \
+		kopano-webapp-plugin-spell-de-ch-2.0.0.0-4.1.noarch.rpm \
+		kopano-webapp-plugin-spell-de-de-2.0.0.0-5.1.noarch.rpm \
+		kopano-webapp-plugin-spell-en-gb-2.0.0.0-4.1.noarch.rpm \
+		kopano-webapp-plugin-spell-en-us-2.0.0.0-5.1.noarch.rpm \
+		kopano-webapp-plugin-spell-es-es-2.0.0.0-4.1.noarch.rpm \
+		kopano-webapp-plugin-spell-fr-fr-2.0.0.0-5.1.noarch.rpm \
+		kopano-webapp-plugin-spell-it-1.0.0-17.1.noarch.rpm \
+		kopano-webapp-plugin-spell-nl-2.0.0.0-4.1.noarch.rpm \
+		kopano-webapp-plugin-spell-pl-pl-2.0.0.0-10.1.noarch.rpm \
 		${EDISTFILES}
 
 MASTER_SITES=	http://nerd.hu/distfiles/kopano-webapp/

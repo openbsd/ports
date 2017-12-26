@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2017/09/27 08:37:20 robert Exp $
+@comment $OpenBSD: PLIST,v 1.4 2017/12/26 19:18:28 robert Exp $
 @conflict zarafa-webapp-*
 @pkgpath mail/zarafa/webapp
 kopano-webapp/
@@ -284,6 +284,9 @@ kopano-webapp/client/fingerprint.js.map
 kopano-webapp/client/kopano-debug.js
 kopano-webapp/client/kopano.js
 kopano-webapp/client/kopano.js.map
+kopano-webapp/client/resize-debug.js
+kopano-webapp/client/resize.js
+kopano-webapp/client/resize.js.map
 kopano-webapp/client/resources/
 kopano-webapp/client/resources/config.rb
 kopano-webapp/client/resources/css/
@@ -301,7 +304,7 @@ kopano-webapp/client/resources/fonts/kopanowebappdings.woff
 kopano-webapp/client/resources/fonts/kopanowebappdings.woff2
 kopano-webapp/client/resources/images/
 kopano-webapp/client/resources/images/buttons/
-kopano-webapp/client/resources/images/buttons-sa0668d9a97.png
+kopano-webapp/client/resources/images/buttons-sd93182de2e.png
 kopano-webapp/client/resources/images/buttons/arrow_down_s_btn.png
 kopano-webapp/client/resources/images/buttons/arrow_down_s_white_btn.png
 kopano-webapp/client/resources/images/buttons/arrow_left_l.png
@@ -378,7 +381,7 @@ kopano-webapp/client/resources/images/buttons/triangle_right_stop_outline.png
 kopano-webapp/client/resources/images/default_contact_profile.png
 kopano-webapp/client/resources/images/favicon.ico
 kopano-webapp/client/resources/images/icons/
-kopano-webapp/client/resources/images/icons-s2479700b37.png
+kopano-webapp/client/resources/images/icons-s723580684a.png
 kopano-webapp/client/resources/images/icons/arrow_down_l.png
 kopano-webapp/client/resources/images/icons/arrow_down_l_white.png
 kopano-webapp/client/resources/images/icons/arrow_down_s.png
@@ -434,6 +437,7 @@ kopano-webapp/client/resources/images/icons/icon_distlist.png
 kopano-webapp/client/resources/images/icons/icon_download.png
 kopano-webapp/client/resources/images/icons/icon_download_zip.png
 kopano-webapp/client/resources/images/icons/icon_edit_recipient.png
+kopano-webapp/client/resources/images/icons/icon_export.png
 kopano-webapp/client/resources/images/icons/icon_favorites.png
 kopano-webapp/client/resources/images/icons/icon_flag.png
 kopano-webapp/client/resources/images/icons/icon_flag_Reminder.png
@@ -542,9 +546,11 @@ kopano-webapp/client/resources/images/loading_m.png
 kopano-webapp/client/resources/images/loginbg_daybreak.jpg
 kopano-webapp/client/resources/images/loginbg_daybreak_blurred.jpg
 kopano-webapp/client/resources/images/whatsnew/
+kopano-webapp/client/resources/images/whatsnew/flagitem.png
+kopano-webapp/client/resources/images/whatsnew/iconwebapp.png
 kopano-webapp/client/resources/images/whatsnew/improvedcategories.png
-kopano-webapp/client/resources/images/whatsnew/improvedsearch.png
-kopano-webapp/client/resources/images/whatsnew/improvedsearch_icon.png
+kopano-webapp/client/resources/images/whatsnew/searchfolder.png
+kopano-webapp/client/resources/images/whatsnew/transformflags.png
 kopano-webapp/client/resources/scss/
 kopano-webapp/client/resources/scss/base/
 kopano-webapp/client/resources/scss/base/_colors.scss
@@ -1001,6 +1007,7 @@ kopano-webapp/kopano-webapp.conf.dist
 kopano-webapp/kopano.php
 kopano-webapp/plugins/
 kopano-webapp/plugins/contactfax/
+kopano-webapp/plugins/contactfax/LICENSE.txt
 kopano-webapp/plugins/contactfax/config.php.dist
 @sample kopano-webapp/plugins/contactfax/config.php
 kopano-webapp/plugins/contactfax/js/
@@ -1577,6 +1584,7 @@ kopano-webapp/plugins/filepreviewer/manifest.xml
 kopano-webapp/plugins/filepreviewer/php/
 kopano-webapp/plugins/filepreviewer/php/plugin.filepreviewer.php
 kopano-webapp/plugins/folderwidgets/
+kopano-webapp/plugins/folderwidgets/LICENSE.txt
 kopano-webapp/plugins/folderwidgets/js/
 kopano-webapp/plugins/folderwidgets/js/folderwidgets-debug.js
 kopano-webapp/plugins/folderwidgets/js/folderwidgets.js
@@ -1591,6 +1599,7 @@ kopano-webapp/plugins/folderwidgets/resources/images/mail.png
 kopano-webapp/plugins/folderwidgets/resources/images/tasks.png
 kopano-webapp/plugins/folderwidgets/resources/images/today_tentative.png
 kopano-webapp/plugins/gmaps/
+kopano-webapp/plugins/gmaps/LICENSE.txt
 kopano-webapp/plugins/gmaps/config.php.dist
 @sample kopano-webapp/plugins/gmaps/config.php
 kopano-webapp/plugins/gmaps/js/
@@ -1618,6 +1627,7 @@ kopano-webapp/plugins/intranet/resources/css/intranet.css
 kopano-webapp/plugins/intranet/resources/icons/
 kopano-webapp/plugins/intranet/resources/icons/icon_intranet.png
 kopano-webapp/plugins/pimfolder/
+kopano-webapp/plugins/pimfolder/LICENSE.txt
 kopano-webapp/plugins/pimfolder/config.php.dist
 @sample kopano-webapp/plugins/pimfolder/config.php
 kopano-webapp/plugins/pimfolder/js/
@@ -1633,6 +1643,7 @@ kopano-webapp/plugins/pimfolder/resources/css/pimfolder.css
 kopano-webapp/plugins/pimfolder/resources/icons/
 kopano-webapp/plugins/pimfolder/resources/icons/pim_folder_icon.png
 kopano-webapp/plugins/quickitems/
+kopano-webapp/plugins/quickitems/LICENSE.txt
 kopano-webapp/plugins/quickitems/js/
 kopano-webapp/plugins/quickitems/js/quickitems-debug.js
 kopano-webapp/plugins/quickitems/js/quickitems.js
@@ -1647,6 +1658,7 @@ kopano-webapp/plugins/quickitems/resources/images/quicknote.png
 kopano-webapp/plugins/quickitems/resources/images/quicktask.png
 kopano-webapp/plugins/spellchecker/
 kopano-webapp/plugins/spellchecker-languagepack-dutch/
+kopano-webapp/plugins/spellchecker-languagepack-dutch/LICENSE.txt
 kopano-webapp/plugins/spellchecker-languagepack-dutch/dicts/
 kopano-webapp/plugins/spellchecker-languagepack-dutch/dicts/README_nl_NL.txt
 kopano-webapp/plugins/spellchecker-languagepack-dutch/dicts/license_en_EN.txt
@@ -1660,6 +1672,7 @@ kopano-webapp/plugins/spellchecker-languagepack-dutch/manifest.xml
 kopano-webapp/plugins/spellchecker-languagepack-dutch/php/
 kopano-webapp/plugins/spellchecker-languagepack-dutch/php/plugin.SpellcheckerLanguagepackDutch.php
 kopano-webapp/plugins/spellchecker-languagepack-english-gb/
+kopano-webapp/plugins/spellchecker-languagepack-english-gb/LICENSE.txt
 kopano-webapp/plugins/spellchecker-languagepack-english-gb/dicts/
 kopano-webapp/plugins/spellchecker-languagepack-english-gb/dicts/WordNet_license.txt
 kopano-webapp/plugins/spellchecker-languagepack-english-gb/dicts/en_GB.aff
@@ -1671,6 +1684,7 @@ kopano-webapp/plugins/spellchecker-languagepack-english-gb/manifest.xml
 kopano-webapp/plugins/spellchecker-languagepack-english-gb/php/
 kopano-webapp/plugins/spellchecker-languagepack-english-gb/php/plugin.SpellcheckerLanguagepackEnglishGb.php
 kopano-webapp/plugins/spellchecker-languagepack-english-us/
+kopano-webapp/plugins/spellchecker-languagepack-english-us/LICENSE.txt
 kopano-webapp/plugins/spellchecker-languagepack-english-us/dicts/
 kopano-webapp/plugins/spellchecker-languagepack-english-us/dicts/COPYING_GPLv2.txt
 kopano-webapp/plugins/spellchecker-languagepack-english-us/dicts/COPYING_GPLv3.txt
@@ -1685,6 +1699,7 @@ kopano-webapp/plugins/spellchecker-languagepack-english-us/manifest.xml
 kopano-webapp/plugins/spellchecker-languagepack-english-us/php/
 kopano-webapp/plugins/spellchecker-languagepack-english-us/php/plugin.SpellcheckerLanguagepackEnglishUs.php
 kopano-webapp/plugins/spellchecker-languagepack-french/
+kopano-webapp/plugins/spellchecker-languagepack-french/LICENSE.txt
 kopano-webapp/plugins/spellchecker-languagepack-french/dicts/
 kopano-webapp/plugins/spellchecker-languagepack-french/dicts/COPYING_GPLv2.txt
 kopano-webapp/plugins/spellchecker-languagepack-french/dicts/COPYING_GPLv3.txt
@@ -1701,6 +1716,7 @@ kopano-webapp/plugins/spellchecker-languagepack-french/manifest.xml
 kopano-webapp/plugins/spellchecker-languagepack-french/php/
 kopano-webapp/plugins/spellchecker-languagepack-french/php/plugin.SpellcheckerLanguagepackFrench.php
 kopano-webapp/plugins/spellchecker-languagepack-german-at/
+kopano-webapp/plugins/spellchecker-languagepack-german-at/LICENSE.txt
 kopano-webapp/plugins/spellchecker-languagepack-german-at/dicts/
 kopano-webapp/plugins/spellchecker-languagepack-german-at/dicts/COPYING_GPLv2.txt
 kopano-webapp/plugins/spellchecker-languagepack-german-at/dicts/COPYING_GPLv3.txt
@@ -1714,6 +1730,7 @@ kopano-webapp/plugins/spellchecker-languagepack-german-at/manifest.xml
 kopano-webapp/plugins/spellchecker-languagepack-german-at/php/
 kopano-webapp/plugins/spellchecker-languagepack-german-at/php/plugin.SpellcheckerLanguagepackGermanAt.php
 kopano-webapp/plugins/spellchecker-languagepack-german-ch/
+kopano-webapp/plugins/spellchecker-languagepack-german-ch/LICENSE.txt
 kopano-webapp/plugins/spellchecker-languagepack-german-ch/dicts/
 kopano-webapp/plugins/spellchecker-languagepack-german-ch/dicts/COPYING_GPLv2.txt
 kopano-webapp/plugins/spellchecker-languagepack-german-ch/dicts/COPYING_GPLv3.txt
@@ -1728,6 +1745,7 @@ kopano-webapp/plugins/spellchecker-languagepack-german-ch/manifest.xml
 kopano-webapp/plugins/spellchecker-languagepack-german-ch/php/
 kopano-webapp/plugins/spellchecker-languagepack-german-ch/php/plugin.SpellcheckerLanguagepackGermanCh.php
 kopano-webapp/plugins/spellchecker-languagepack-german-de/
+kopano-webapp/plugins/spellchecker-languagepack-german-de/LICENSE.txt
 kopano-webapp/plugins/spellchecker-languagepack-german-de/dicts/
 kopano-webapp/plugins/spellchecker-languagepack-german-de/dicts/COPYING_GPLv2.txt
 kopano-webapp/plugins/spellchecker-languagepack-german-de/dicts/COPYING_GPLv3.txt
@@ -1742,6 +1760,7 @@ kopano-webapp/plugins/spellchecker-languagepack-german-de/manifest.xml
 kopano-webapp/plugins/spellchecker-languagepack-german-de/php/
 kopano-webapp/plugins/spellchecker-languagepack-german-de/php/plugin.SpellcheckerLanguagepackGermanDe.php
 kopano-webapp/plugins/spellchecker-languagepack-italian-it/
+kopano-webapp/plugins/spellchecker-languagepack-italian-it/LICENSE.txt
 kopano-webapp/plugins/spellchecker-languagepack-italian-it/dicts/
 kopano-webapp/plugins/spellchecker-languagepack-italian-it/dicts/COPYING_GPLv3.txt
 kopano-webapp/plugins/spellchecker-languagepack-italian-it/dicts/it_IT.aff
@@ -1753,6 +1772,7 @@ kopano-webapp/plugins/spellchecker-languagepack-italian-it/manifest.xml
 kopano-webapp/plugins/spellchecker-languagepack-italian-it/php/
 kopano-webapp/plugins/spellchecker-languagepack-italian-it/php/plugin.SpellcheckerLanguagepackItalianIt.php
 kopano-webapp/plugins/spellchecker-languagepack-polish-pl/
+kopano-webapp/plugins/spellchecker-languagepack-polish-pl/LICENSE.txt
 kopano-webapp/plugins/spellchecker-languagepack-polish-pl/dicts/
 kopano-webapp/plugins/spellchecker-languagepack-polish-pl/dicts/README_en.txt
 kopano-webapp/plugins/spellchecker-languagepack-polish-pl/dicts/README_pl.txt
@@ -1765,6 +1785,7 @@ kopano-webapp/plugins/spellchecker-languagepack-polish-pl/manifest.xml
 kopano-webapp/plugins/spellchecker-languagepack-polish-pl/php/
 kopano-webapp/plugins/spellchecker-languagepack-polish-pl/php/plugin.SpellcheckerLanguagepackPolishPl.php
 kopano-webapp/plugins/spellchecker-languagepack-spanish/
+kopano-webapp/plugins/spellchecker-languagepack-spanish/LICENSE.txt
 kopano-webapp/plugins/spellchecker-languagepack-spanish/dicts/
 kopano-webapp/plugins/spellchecker-languagepack-spanish/dicts/Changelog.txt
 kopano-webapp/plugins/spellchecker-languagepack-spanish/dicts/GPLv3.txt
@@ -1779,6 +1800,7 @@ kopano-webapp/plugins/spellchecker-languagepack-spanish/js/spellchecker-language
 kopano-webapp/plugins/spellchecker-languagepack-spanish/manifest.xml
 kopano-webapp/plugins/spellchecker-languagepack-spanish/php/
 kopano-webapp/plugins/spellchecker-languagepack-spanish/php/plugin.SpellcheckerLanguagepackSpanish.php
+kopano-webapp/plugins/spellchecker/LICENSE.txt
 kopano-webapp/plugins/spellchecker/config.php.dist
 @sample kopano-webapp/plugins/spellchecker/config.php
 kopano-webapp/plugins/spellchecker/js/
@@ -1804,6 +1826,7 @@ kopano-webapp/plugins/spellchecker/tinymce-plugin/spellchecker/plugin.js
 kopano-webapp/plugins/spellchecker/tinymce-plugin/spellchecker/plugin.min.js
 kopano-webapp/plugins/spellchecker/tinymce-plugin/spellchecker/spellchecker.php
 kopano-webapp/plugins/titlecounter/
+kopano-webapp/plugins/titlecounter/LICENSE.txt
 kopano-webapp/plugins/titlecounter/config.php.dist
 @sample kopano-webapp/plugins/titlecounter/config.php
 kopano-webapp/plugins/titlecounter/js/
@@ -1897,6 +1920,7 @@ kopano-webapp/server/includes/modules/class.itemmodule.php
 kopano-webapp/server/includes/modules/class.listmodule.php
 kopano-webapp/server/includes/modules/class.maillistmodule.php
 kopano-webapp/server/includes/modules/class.module.php
+kopano-webapp/server/includes/modules/class.reminderitemmodule.php
 kopano-webapp/server/includes/modules/class.reminderlistmodule.php
 kopano-webapp/server/includes/modules/class.resolvenamesmodule.php
 kopano-webapp/server/includes/modules/class.restoreitemslistmodule.php
@@ -1921,7 +1945,6 @@ kopano-webapp/server/includes/notifiers/class.stickynotelistnotifier.php
 kopano-webapp/server/includes/notifiers/class.tasklistnotifier.php
 kopano-webapp/server/includes/templates/
 kopano-webapp/server/includes/templates/login.php
-kopano-webapp/server/includes/templates/template.js
 kopano-webapp/server/includes/templates/webclient.php
 kopano-webapp/server/includes/templates/webclient_separatewindow.php
 kopano-webapp/server/includes/templates/welcome.php
