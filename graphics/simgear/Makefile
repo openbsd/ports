@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2017/11/16 23:20:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2017/12/26 19:19:15 rsadowski Exp $
 
 COMMENT =		library set for simulations, games and visualizations
 
 DISTNAME =		simgear-2016.3.1
-REVISION =		1
+REVISION =		2
 
 SHARED_LIBS +=  SimGearCore               4.0 # 2.10
 SHARED_LIBS +=  SimGearScene              4.0 # 2.10

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2017/11/16 23:20:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2017/12/26 19:19:15 rsadowski Exp $
 
 # Block.s: Assembler messages:
 # Block.s:73: Error: junk `(%rip)' after expression
@@ -12,6 +12,7 @@ COMMENT =	bastard tetris
 GH_ACCOUNT =	fph
 GH_PROJECT =	bastet
 GH_TAGNAME =	0.43.2
+REVISION =	0
 
 CATEGORIES =	games
 

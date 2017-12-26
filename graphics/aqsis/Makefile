@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2017/07/26 22:45:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2017/12/26 19:19:15 rsadowski Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS} ${CLANG_ARCHS}
 
@@ -6,7 +6,7 @@ COMMENT=	photorealistic 3D rendering solution
 
 V=		1.8.2
 DISTNAME=	aqsis-${V}
-REVISION=	2
+REVISION=	3
 CATEGORIES=	graphics
 
 SO_VERSION=	1.0 # 1.6
@@ -43,16 +43,8 @@ LIB_DEPENDS=	devel/boost \
 NO_TEST=	Yes
 MODCMAKE_WANTCOLOR=No
 SEPARATE_BUILD=	Yes
-MAKE_FLAGS=	VERBOSE=1
 
 CXXFLAGS+=	-pthread -I${X11BASE}/include
-
-CONFIGURE_ARGS=	-DAQSIS_BOOST_FILESYSTEM_LIBRARY_NAME=boost_filesystem-mt \
-		-DAQSIS_BOOST_REGEX_LIBRARY_NAME=boost_regex-mt \
-		-DAQSIS_BOOST_THREAD_LIBRARY_NAME=boost_thread-mt \
-		-DAQSIS_BOOST_WAVE_LIBRARY_NAME=boost_wave-mt \
-		-DCMAKE_INSTALL_PREFIX="${PREFIX}" \
-		-DSYSCONFDIR="${SYSCONFDIR}"
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/aqsis

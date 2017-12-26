@@ -1,0 +1,25 @@
+$OpenBSD: patch-simgear_scene_material_Effect_hxx,v 1.1 2017/12/26 19:19:15 rsadowski Exp $
+
+Index: simgear/scene/material/Effect.hxx
+--- simgear/scene/material/Effect.hxx.orig
++++ simgear/scene/material/Effect.hxx
+@@ -19,7 +19,7 @@
+ 
+ #include <vector>
+ #include <string>
+-#include <boost/tr1/unordered_map.hpp>
++#include <unordered_map>
+ 
+ #include <boost/functional/hash.hpp>
+ 
+@@ -127,8 +127,8 @@ class Effect : public osg::Object (protected)
+             bool operator()(const Key& lhs, const Key& rhs) const;
+         };
+     };
+-    typedef std::tr1::unordered_map<Key, osg::observer_ptr<Effect>,
+-                                    boost::hash<Key>, Key::EqualTo> Cache;
++    typedef std::unordered_map<Key, osg::observer_ptr<Effect>,
++                               boost::hash<Key>, Key::EqualTo> Cache;
+     Cache* getCache()
+     {
+         if (!_cache)
