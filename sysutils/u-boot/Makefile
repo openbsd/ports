@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.29 2017/11/27 03:53:47 jsg Exp $
+#	$OpenBSD: Makefile,v 1.30 2017/12/26 13:14:21 kevlo Exp $
 
 BROKEN-sparc64=	Error: the specified option is not accepted in ISB at operand 1 -- isb sy
 
@@ -7,6 +7,7 @@ FLAVOR?=	arm
 
 COMMENT=	U-Boot firmware
 VERSION=	2017.11
+REVISION=	0
 DISTNAME=	u-boot-${VERSION}
 PKGNAME=	u-boot-${FLAVOR}-${VERSION:S/-//}
 FULLPKGNAME=	${PKGNAME}
@@ -77,6 +78,7 @@ SUNXI=\
 	A20-OLinuXino-Lime2-eMMC \
 	A20-OLinuXino_MICRO \
 	Bananapi \
+	Bananapi_m2m \
 	Bananapro \
 	CHIP \
 	CHIP_pro \
