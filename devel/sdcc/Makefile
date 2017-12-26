@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2017/07/26 22:45:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2017/12/26 17:08:02 jca Exp $
 
 COMMENT=	Small Device C Compiler
 BROKEN-sparc64=	illegal operands building SDCCval.c
 BROKEN-alpha=	sdcc segfaults when building the device library
+BROKEN-aarch64=	*** BFD does not support target aarch64-unknown-openbsd6.2.
 
 DISTNAME=	sdcc-src-3.6.0
 PKGNAME=	${DISTNAME:S/-src//}
