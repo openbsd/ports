@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2017/11/16 23:20:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.29 2017/12/26 19:19:04 rsadowski Exp $
 
 BROKEN-powerpc =	undefined reference to __atomic_fetch_add_8
 
@@ -6,33 +6,33 @@ COMMENT =		library for reading and writing images
 
 GH_ACCOUNT = 		OpenImageIO
 GH_PROJECT = 		oiio
-V =			1.6.16
+V =			1.8.6
 GH_TAGNAME =		Release-$V
 DISTNAME =		openimageio-${V}
-REVISION =		0
 
-SHARED_LIBS +=		OpenImageIO		4.0 # 1.0
-SHARED_LIBS +=  	OpenImageIO_Util	1.0 # 1.5
+SHARED_LIBS +=		OpenImageIO		5.0 # 1.0
+SHARED_LIBS +=  	OpenImageIO_Util	2.0 # 1.5
 
 CATEGORIES =		graphics devel
 
-HOMEPAGE =		https://sites.google.com/site/openimageio/
+HOMEPAGE =		http://www.openimageio.org
 
 MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += GL GLEW GLU Half Iex IlmImf IlmThread Imath OpenColorIO
-WANTLIB += QtGui QtOpenGL avcodec avformat avutil boost_filesystem-mt
-WANTLIB += boost_python-mt boost_regex-mt boost_system-mt boost_thread-mt
-WANTLIB += boost_atomic-mt boost_chrono-mt boost_date_time-mt
-WANTLIB += c freetype gif jpeg m openjpeg png pthread ${MODPY_WANTLIB}
-WANTLIB += raw_r ${LIBCXX} swscale tiff webp z
+WANTLIB += ${COMPILER_LIBCXX} GL GLEW GLU Half Iex IlmImf IlmThread
+WANTLIB += Imath OpenColorIO Qt5Core Qt5Gui Qt5OpenGL Qt5Widgets
+WANTLIB += avcodec avformat avutil boost_atomic-mt boost_chrono-mt
+WANTLIB += boost_date_time-mt boost_filesystem-mt boost_python-mt
+WANTLIB += boost_system-mt boost_thread-mt bz2 c freetype gif
+WANTLIB += jpeg m openjpeg png raw_r ${MODPY_WANTLIB} swscale tiff webp
+WANTLIB += z
 
 MODULES =		devel/cmake \
 			lang/python \
-			x11/qt4 \
+			x11/qt5 \
 
 COMPILER =		base-clang ports-gcc
 
@@ -50,8 +50,8 @@ LIB_DEPENDS =		devel/boost \
 			graphics/ffmpeg \
 			graphics/libraw
 
-CONFIGURE_ARGS +=	-DPYLIB_INSTALL_DIR="lib/python${MODPY_VERSION}/site-packages" \
-			-DUSE_OPENCV=OFF
+CONFIGURE_ARGS +=	-DUSE_OPENCV=OFF \
+			-DCMAKE_INSTALL_MANDIR="man/man1"
 
 CXXFLAGS +=		-pthread
 .if ${MACHINE_ARCH} == "i386"

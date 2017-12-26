@@ -1,7 +1,8 @@
-$OpenBSD: patch-src_libutil_sysutil_cpp,v 1.5 2016/08/08 14:14:01 pascal Exp $
---- src/libutil/sysutil.cpp.orig	Thu Mar 31 20:07:45 2016
-+++ src/libutil/sysutil.cpp	Fri Apr  1 12:08:52 2016
-@@ -128,7 +128,7 @@ Sysutil::memory_used (bool resident)
+$OpenBSD: patch-src_libutil_sysutil_cpp,v 1.6 2017/12/26 19:19:04 rsadowski Exp $
+Index: src/libutil/sysutil.cpp
+--- src/libutil/sysutil.cpp.orig
++++ src/libutil/sysutil.cpp
+@@ -135,7 +135,7 @@ Sysutil::memory_used (bool resident)
          return counters.PagefileUsage;
      else return 0;
  
@@ -10,12 +11,3 @@ $OpenBSD: patch-src_libutil_sysutil_cpp,v 1.5 2016/08/08 14:14:01 pascal Exp $
      // FIXME -- does somebody know a good method for figuring this out for
      // FreeBSD?
      return 0;   // Punt
-@@ -252,7 +252,7 @@ Sysutil::this_program_path ()
-     int r = 0;
- #else
-     // No idea what platform this is
--    ASSERT (0);
-+    int r = 0;
- #endif
- 
-     if (r > 0)

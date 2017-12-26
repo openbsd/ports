@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2016/08/08 14:14:01 pascal Exp $
+@comment $OpenBSD: PLIST,v 1.8 2017/12/26 19:19:04 rsadowski Exp $
 @conflict idiff-*
 @bin bin/iconvert
 @bin bin/idiff
@@ -11,15 +11,18 @@ include/OpenImageIO/
 include/OpenImageIO/SHA1.h
 include/OpenImageIO/argparse.h
 include/OpenImageIO/array_view.h
+include/OpenImageIO/atomic.h
+include/OpenImageIO/benchmark.h
 include/OpenImageIO/color.h
-include/OpenImageIO/coordinate.h
 include/OpenImageIO/dassert.h
+include/OpenImageIO/deepdata.h
 include/OpenImageIO/errorhandler.h
 include/OpenImageIO/export.h
 include/OpenImageIO/filesystem.h
 include/OpenImageIO/filter.h
 include/OpenImageIO/fmath.h
 include/OpenImageIO/fstream_mingw.h
+include/OpenImageIO/function_view.h
 include/OpenImageIO/hash.h
 include/OpenImageIO/image_view.h
 include/OpenImageIO/imagebuf.h
@@ -31,6 +34,7 @@ include/OpenImageIO/missing_math.h
 include/OpenImageIO/oiioversion.h
 include/OpenImageIO/optparser.h
 include/OpenImageIO/osdep.h
+include/OpenImageIO/parallel.h
 include/OpenImageIO/paramlist.h
 include/OpenImageIO/platform.h
 include/OpenImageIO/plugin.h
@@ -60,19 +64,18 @@ lib/python${MODPY_VERSION}/site-packages/OpenImageIO.so.${LIBOpenImageIO_VERSION
 @man man/man1/idiff.1
 @man man/man1/igrep.1
 @man man/man1/iinfo.1
-@man man/man1/iv.1
 @man man/man1/maketx.1
 @man man/man1/oiiotool.1
 share/doc/OpenImageIO/
-share/doc/OpenImageIO/CHANGES
+share/doc/OpenImageIO/CHANGES.md
 share/doc/OpenImageIO/LICENSE
 share/doc/OpenImageIO/openimageio.pdf
 share/fonts/
-share/fonts/oiio/
-share/fonts/oiio/DroidSans-Bold.ttf
-share/fonts/oiio/DroidSans.ttf
-share/fonts/oiio/DroidSansMono.ttf
-share/fonts/oiio/DroidSerif-Bold.ttf
-share/fonts/oiio/DroidSerif-BoldItalic.ttf
-share/fonts/oiio/DroidSerif-Italic.ttf
-share/fonts/oiio/DroidSerif.ttf
+share/fonts/OpenImageIO/
+share/fonts/OpenImageIO/DroidSans-Bold.ttf
+share/fonts/OpenImageIO/DroidSans.ttf
+share/fonts/OpenImageIO/DroidSansMono.ttf
+share/fonts/OpenImageIO/DroidSerif-Bold.ttf
+share/fonts/OpenImageIO/DroidSerif-BoldItalic.ttf
+share/fonts/OpenImageIO/DroidSerif-Italic.ttf
+share/fonts/OpenImageIO/DroidSerif.ttf
