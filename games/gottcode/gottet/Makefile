@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2017/11/04 22:44:49 bentley Exp $
+# $OpenBSD: Makefile,v 1.3 2017/12/27 21:25:55 bcallah Exp $
 
 GAME =		gottet
 COMMENT =	Tetris clone game
-DISTNAME =	${GAME}-1.1.4-src
-REVISION =	0
+DISTNAME =	${GAME}-1.1.5-src
 
 pre-configure:
 	sed -i 's,share/man,man,g' ${WRKSRC}/gottet.pro
