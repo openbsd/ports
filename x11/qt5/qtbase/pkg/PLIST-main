@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2017/11/19 19:38:46 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2017/12/27 16:27:06 rsadowski Exp $
 @conflict qt5-<5.6
 bin/moc-qt5
 bin/qmake-qt5
@@ -1844,6 +1844,7 @@ include/X11/qt5/QtTest/${VERSION}/QtTest/private/qtestcoreelement_p.h
 include/X11/qt5/QtTest/${VERSION}/QtTest/private/qtestcorelist_p.h
 include/X11/qt5/QtTest/${VERSION}/QtTest/private/qtestelement_p.h
 include/X11/qt5/QtTest/${VERSION}/QtTest/private/qtestelementattribute_p.h
+include/X11/qt5/QtTest/${VERSION}/QtTest/private/qtesthelpers_p.h
 include/X11/qt5/QtTest/${VERSION}/QtTest/private/qtestlog_p.h
 include/X11/qt5/QtTest/${VERSION}/QtTest/private/qtestresult_p.h
 include/X11/qt5/QtTest/${VERSION}/QtTest/private/qtesttable_p.h

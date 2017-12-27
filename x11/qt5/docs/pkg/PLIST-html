@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-html,v 1.4 2017/10/24 10:12:19 rsadowski Exp $
+@comment $OpenBSD: PLIST-html,v 1.5 2017/12/27 16:27:06 rsadowski Exp $
 @conflict qt3d-html-*
 @conflict qtactiveqt-html-*
 @conflict qtbase-html-*
@@ -7244,8 +7244,11 @@ share/doc/qt5/html/qt3dcore-qframeallocatorprivate-members.html
 share/doc/qt5/html/qt3dcore-qframeallocatorprivate.html
 share/doc/qt5/html/qt3dcore-qframechunk-members.html
 share/doc/qt5/html/qt3dcore-qframechunk.html
+share/doc/qt5/html/qt3dcore-qhandle-data.html
 share/doc/qt5/html/qt3dcore-qhandle-members.html
 share/doc/qt5/html/qt3dcore-qhandle.html
+share/doc/qt5/html/qt3dcore-qhandledata-members.html
+share/doc/qt5/html/qt3dcore-qhandledata.html
 share/doc/qt5/html/qt3dcore-qlockableobserverinterface-members.html
 share/doc/qt5/html/qt3dcore-qlockableobserverinterface.html
 share/doc/qt5/html/qt3dcore-qnode-members.html
@@ -13882,6 +13885,7 @@ share/doc/qt5/html/usingadaptors.html
 share/doc/qt5/html/videooverview.html
 share/doc/qt5/html/views.html
 share/doc/qt5/html/viewsstyling.html
+share/doc/qt5/html/vxworks.html
 share/doc/qt5/html/websockets-overview.html
 share/doc/qt5/html/whatsnew50.html
 share/doc/qt5/html/whatsnew51.html

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2017/07/29 11:40:15 zhuk Exp $
+# $OpenBSD: Makefile,v 1.6 2017/12/27 16:27:06 rsadowski Exp $
 
 COMMENT-main =		C++ general-purpose toolkit, meta-package
 COMMENT-examples =	examples for Qt5, meta-package
@@ -6,8 +6,6 @@ COMMENT-examples =	examples for Qt5, meta-package
 PKGNAME =		qt5-${MODQT5_VERSION}
 PKGNAME-main =		${PKGNAME}
 PKGNAME-examples =	qt5-examples-${MODQT5_VERSION}
-
-REVISION-main =		0
 
 MULTI_PACKAGES =	-main -examples
 
