@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.84 2017/11/16 23:20:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.85 2017/12/27 13:47:16 kili Exp $
 
 ONLY_FOR_ARCHS = amd64 i386
 
@@ -59,7 +59,8 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 
 NO_TEST =	Yes
 
-CXXFLAGS +=	-I${LOCALBASE}/include -I${X11BASE}/include -pthread
+CXXFLAGS +=	-I${LOCALBASE}/include -I${X11BASE}/include -pthread \
+		-std=c++11
 CFLAGS +=	-I${LOCALBASE}/include
 
 MODPY_ADJ_FILES =	release/bin/blender-thumbnailer.py \
