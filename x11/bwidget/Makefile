@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2014/09/20 17:46:24 stu Exp $
+# $OpenBSD: Makefile,v 1.13 2017/12/27 23:46:53 stu Exp $
 
 COMMENT =		high-level widget set for Tcl/Tk
 
-DISTNAME =		bwidget-1.9.8
+DISTNAME =		bwidget-1.9.11
 CATEGORIES =		x11
 HOMEPAGE =		http://sourceforge.net/projects/tcllib/
 MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
@@ -13,6 +13,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=tcllib/}
 MODULES =		x11/tk
 RUN_DEPENDS =		${MODTK_RUN_DEPENDS}
+TEST_DEPENDS =		${MODTK_BUILD_DEPENDS}
 TEST_FLAGS +=		TCLLIBPATH="${WRKSRC}"
 TEST_IS_INTERACTIVE =	X11
 NO_BUILD =		Yes
@@ -45,6 +46,5 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${SRC}/${GLOB} ${DEST}
 .endfor
 	chmod ${BINMODE} ${BW_EXA_DIR}/demo.tcl
-	rm ${BW_LIB_DIR}/widget-old.tcl
 
 .include <bsd.port.mk>
