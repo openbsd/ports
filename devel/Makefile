@@ -1,4 +1,4 @@
-#${MODPY_COMMENT} $OpenBSD: Makefile,v 1.1684 2017/12/17 20:31:14 kili Exp $
+#${MODPY_COMMENT} $OpenBSD: Makefile,v 1.1685 2017/12/27 17:39:18 remi Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -316,6 +316,7 @@
      SUBDIR += libeventextra
      SUBDIR += libexecinfo
      SUBDIR += libf2c
+     SUBDIR += libfastjson
      SUBDIR += libffi
      SUBDIR += libfirm
      SUBDIR += libfmt
@@ -335,6 +336,7 @@
      SUBDIR += libiscsi
      SUBDIR += libivykis
      SUBDIR += libixp
+     SUBDIR += liblognorm
      SUBDIR += liblouis
      SUBDIR += libmagic
      SUBDIR += libmemcached
