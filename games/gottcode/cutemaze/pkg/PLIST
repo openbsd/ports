@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2017/11/02 12:22:12 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2017/12/27 21:25:17 bcallah Exp $
 @bin bin/cutemaze
 @man man/man6/cutemaze.6
 share/applications/cutemaze.desktop
@@ -6,6 +6,7 @@ share/cutemaze/
 share/cutemaze/translations/
 share/cutemaze/translations/cutemaze_cs.qm
 share/cutemaze/translations/cutemaze_de.qm
+share/cutemaze/translations/cutemaze_el.qm
 share/cutemaze/translations/cutemaze_en.qm
 share/cutemaze/translations/cutemaze_eo.qm
 share/cutemaze/translations/cutemaze_es.qm
