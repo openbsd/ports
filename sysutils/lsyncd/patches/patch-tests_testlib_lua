@@ -1,12 +1,28 @@
-$OpenBSD: patch-tests_testlib_lua,v 1.1.1.1 2016/01/23 19:15:13 landry Exp $
---- tests/testlib.lua.orig	Sat Jan 23 18:42:55 2016
-+++ tests/testlib.lua	Sat Jan 23 18:43:08 2016
-@@ -26,7 +26,7 @@ cwriteln('random seed: ', seed)
- -- @returns the name of the directory
+$OpenBSD: patch-tests_testlib_lua,v 1.2 2017/12/27 13:21:50 awolk Exp $
+
+Do not color test output as it messes up the terminal
+
+Index: tests/testlib.lua
+--- tests/testlib.lua.orig
++++ tests/testlib.lua
+@@ -2,9 +2,9 @@
+ posix = require( 'posix' )
+ 
+ -- escape codes to colorize output on terminal
+-local c1='\027[47;34m'
++local c1=''
+ 
+-local c0='\027[0m'
++local c0=''
+ 
  --
- function mktempd()
--	local f = io.popen('mktemp -td ltest.XXX', 'r')
-+	local f = io.popen('mktemp -td ltest.XXXXXXXX', 'r')
- 	local s = f:read('*a')
- 	f:close()
- 	s = s:gsub('[\n\r]+', ' ')
+ -- Writes colorized.
+@@ -34,7 +34,7 @@ cwriteln( 'random seed: ', seed )
+ --
+ function mktempd
+ ( )
+-	local f = io.popen( 'mktemp -td ltest.XXX', 'r' )
++        local f = io.popen( 'mktemp -td ltest.XXXXXXXX', 'r' )
+ 
+ 	local s = f:read( '*a' )
+ 

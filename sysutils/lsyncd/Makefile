@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.2 2016/01/23 19:30:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2017/12/27 13:21:50 awolk Exp $
 
 COMMENT =	synchronizes directories with remote targets upon changes
 GH_PROJECT =	lsyncd
 GH_ACCOUNT =	axkibe
-GH_COMMIT =	cce7db5ebd352690917792848c2aea92c08efdd5
-DISTNAME =	lsyncd-2.1.6
+GH_TAGNAME =	release-2.2.2
+DISTNAME =	lsyncd-2.2.2
 CATEGORIES =	sysutils
+
+MAINTAINER =	Adam Wolk <awolk@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
@@ -26,6 +28,9 @@ TEST_DEPENDS =	${RUN_DEPENDS} \
 
 TESTS =	churn-direct churn-rsyncssh exclude-rsyncssh schedule \
 	churn-rsync exclude-rsync l4rsyncdata
+
+# expects to ssh without password to localhost
+TEST_IS_INTERACTIVE =	Yes
 
 WANTLIB +=	${MODLUA_WANTLIB} lib/inotify/inotify c m pthread
 

@@ -1,48 +1,54 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2016/01/23 19:15:13 landry Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2017/12/27 13:21:50 awolk Exp $
 
 No need to regen the manpage
 
---- CMakeLists.txt.orig	Thu Oct 15 08:29:47 2015
-+++ CMakeLists.txt	Sat Jan 23 19:41:46 2016
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
 @@ -6,7 +6,7 @@ set( CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_S
  
  
  # finding Lua
--find_package(Lua REQUIRED)
-+find_package(Lua ${MODLUA_VERSION})
+-find_package( Lua REQUIRED )
++find_package( Lua ${MODLUA_VERSION} )
  include_directories ( ${LUA_INCLUDE_DIR} )
  
  
-@@ -54,7 +54,7 @@ add_custom_command( OUTPUT runner.c 
- # this supposes the Lua compiler 'luac' is sitting right next to the Lua interpreter 'lua'
- add_custom_command( OUTPUT runner.out
-     COMMAND ${CMAKE_COMMAND} -E echo "Compiling built-in runner" 
--	COMMAND ${LUA_EXECUTABLE}c -o runner.out ${PROJECT_SOURCE_DIR}/lsyncd.lua
-+	COMMAND ${LUA_COMPILER} -o runner.out ${PROJECT_SOURCE_DIR}/lsyncd.lua
-     DEPENDS ${PROJECT_SOURCE_DIR}/lsyncd.lua
- ) 
+@@ -47,7 +47,7 @@ include_directories("${PROJECT_BINARY_DIR}")
+ # also called "runner"
+ add_custom_command( OUTPUT runner.c
+ 	COMMAND ${CMAKE_COMMAND} -E echo "Generating built-in runner linkable"
+-	COMMAND ${LUA_EXECUTABLE} ${PROJECT_SOURCE_DIR}/bin2carray.lua runner.out runner runner.c
++        COMMAND ${LUA_EXECUTABLE} ${PROJECT_SOURCE_DIR}/bin2carray.lua runner.out runner runner.c
+ 	DEPENDS runner.out
+ )
  
-@@ -75,21 +75,13 @@ set( DEFAULT_CONFIGS
+@@ -62,7 +62,7 @@ add_custom_command( OUTPUT runner.out
+ #   rsync rysnc-ssh and direct
+ add_custom_command( OUTPUT defaults.c
+ 	COMMAND ${CMAKE_COMMAND} -E echo "Generating built-in default configs"
+-	COMMAND ${LUA_EXECUTABLE} ${PROJECT_SOURCE_DIR}/bin2carray.lua defaults.out defaults defaults.c
++        COMMAND ${LUA_EXECUTABLE} ${PROJECT_SOURCE_DIR}/bin2carray.lua defaults.out defaults defaults.c
+ 	DEPENDS defaults.out
+ )
  
- add_custom_command( OUTPUT defaults.out
-     COMMAND ${CMAKE_COMMAND} -E echo "Compiling built-in default configs"
--	COMMAND ${LUA_EXECUTABLE}c -o defaults.out ${DEFAULT_CONFIGS}
-+	COMMAND ${LUA_COMPILER} -o defaults.out ${DEFAULT_CONFIGS}
-     DEPENDS ${DEFAULT_CONFIGS}
- ) 
+@@ -79,13 +79,6 @@ add_custom_command( OUTPUT defaults.out
+ 	DEPENDS ${DEFAULT_CONFIGS}
+ )
  
 -# the manpage
--add_custom_command( OUTPUT doc/lsyncd.1
--    COMMAND ${CMAKE_COMMAND} -E echo "Updating the manpage"
--	COMMAND a2x --format=manpage doc/lsyncd.1.txt
--    DEPENDS doc/lsyncd.1.txt
+-add_custom_target( manpage
+-	COMMAND ${CMAKE_COMMAND} -E echo "Updating the manpage"
+-	COMMAND a2x --format=manpage doc/manpage/lsyncd.1.txt
+-	DEPENDS doc/manpage/lsyncd.1.txt
 -)
--add_custom_target( manpage ALL DEPENDS doc/lsyncd.1 )
 -
- # compiling and linking it all together
- add_executable( lsyncd ${LSYNCD_SRC} )
+ add_custom_target( tests
+ 	COMMAND echo "Running the tests"
+ 	COMMAND echo "Note you are expected to:"
+@@ -106,4 +99,4 @@ add_executable( lsyncd ${LSYNCD_SRC} )
  target_link_libraries( lsyncd ${LUA_LIBRARIES} )
  
  install( TARGETS lsyncd RUNTIME DESTINATION bin )
--install( FILES doc/lsyncd.1 DESTINATION man)
-+install( FILES doc/lsyncd.1 DESTINATION man/man1)
+-install( FILES doc/manpage/lsyncd.1 DESTINATION man )
++install( FILES doc/manpage/lsyncd.1 DESTINATION man/man1 )
