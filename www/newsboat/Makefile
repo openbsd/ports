@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/11/08 22:25:57 fcambus Exp $
+# $OpenBSD: Makefile,v 1.2 2017/12/27 15:07:07 fcambus Exp $
 
 COMMENT =	RSS/Atom feed reader for text terminals
 
 GH_ACCOUNT =	newsboat
 GH_PROJECT =	newsboat
-GH_TAGNAME =	r2.10.1
+GH_TAGNAME =	r2.10.2
 
 PKGNAME =	${DISTNAME:S/-r/-/}
 
@@ -17,8 +17,8 @@ MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB +=	${COMPILER_LIBCXX} c crypto curl iconv intl json-c
-WANTLIB +=	m ncursesw sqlite3 stfl xml2
+WANTLIB +=	${COMPILER_LIBCXX} c crypto curl curses iconv intl
+WANTLIB +=	json-c m sqlite3 stfl xml2
 
 COMPILER =	base-clang ports-gcc
 

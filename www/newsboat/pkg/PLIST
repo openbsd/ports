@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/11/08 22:25:57 fcambus Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/12/27 15:07:07 fcambus Exp $
 @bin bin/newsboat
 @bin bin/podboat
 @man man/man1/newsboat.1
@@ -24,6 +24,7 @@ share/locale/nl/LC_MESSAGES/newsboat.mo
 share/locale/pl/LC_MESSAGES/newsboat.mo
 share/locale/pt_BR/LC_MESSAGES/newsboat.mo
 share/locale/ru/LC_MESSAGES/newsboat.mo
+share/locale/sk/LC_MESSAGES/newsboat.mo
 share/locale/sv/LC_MESSAGES/newsboat.mo
 share/locale/tr/LC_MESSAGES/newsboat.mo
 share/locale/uk/LC_MESSAGES/newsboat.mo
