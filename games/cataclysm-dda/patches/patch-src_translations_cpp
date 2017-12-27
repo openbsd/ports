@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_translations_cpp,v 1.1 2017/11/23 05:04:43 kirby Exp $
+$OpenBSD: patch-src_translations_cpp,v 1.2 2017/12/27 22:00:17 bcallah Exp $
 
 Index: src/translations.cpp
 --- src/translations.cpp.orig
 +++ src/translations.cpp
-@@ -80,7 +80,7 @@ void set_language()
+@@ -176,7 +176,7 @@ void set_language()
  
      // Step 2. Bind to gettext domain.
      std::string locale_dir;
