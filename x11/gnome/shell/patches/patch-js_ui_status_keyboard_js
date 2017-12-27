@@ -1,0 +1,28 @@
+$OpenBSD: patch-js_ui_status_keyboard_js,v 1.1 2017/12/27 11:51:50 ajacoutot Exp $
+
+From 3b4be770a0590bcee9c739f3d9264320e23d555b Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Marco=20Trevisan=20=28Trevi=C3=B1o=29?= <mail@3v1n0.net>
+Date: Sat, 28 Oct 2017 02:23:02 -0500
+Subject: status/keyboard: Reset menuItems and Label objects on change
+
+Index: js/ui/status/keyboard.js
+--- js/ui/status/keyboard.js.orig
++++ js/ui/status/keyboard.js
+@@ -529,6 +529,7 @@ var InputSourceManager = new Lang.Class({
+         let sources = this._settings.inputSources;
+         let nSources = sources.length;
+ 
++        this._currentSource = null;
+         this._inputSources = {};
+         this._ibusSources = {};
+ 
+@@ -826,6 +827,9 @@ var InputSourceIndicator = new Lang.Class({
+             this._menuItems[i].destroy();
+         for (let i in this._indicatorLabels)
+             this._indicatorLabels[i].destroy();
++
++        this._menuItems = {};
++        this._indicatorLabels = {};
+ 
+         let menuIndex = 0;
+         for (let i in this._inputSourceManager.inputSources) {

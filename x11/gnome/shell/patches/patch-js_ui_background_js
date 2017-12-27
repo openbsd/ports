@@ -1,0 +1,19 @@
+$OpenBSD: patch-js_ui_background_js,v 1.1 2017/12/27 11:51:50 ajacoutot Exp $
+
+From 983a7ca8f5682f9550fdb0b2cd32b36fa1c3b997 Mon Sep 17 00:00:00 2001
+From: Ray Strode <rstrode@redhat.com>
+Date: Fri, 15 Dec 2017 10:05:34 -0500
+Subject: background: don't leak wall clock when background changes
+
+Index: js/ui/background.js
+--- js/ui/background.js.orig
++++ js/ui/background.js
+@@ -289,6 +289,8 @@ var Background = new Lang.Class({
+             this._clock.disconnect(this._timezoneChangedId);
+         this._timezoneChangedId = 0;
+ 
++        this._clock = null;
++
+         if (this._prepareForSleepId != 0)
+             LoginManager.getLoginManager().disconnect(this._prepareForSleepId);
+         this._prepareForSleepId = 0;

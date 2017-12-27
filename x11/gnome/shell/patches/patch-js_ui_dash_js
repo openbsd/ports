@@ -1,0 +1,44 @@
+$OpenBSD: patch-js_ui_dash_js,v 1.1 2017/12/27 11:51:50 ajacoutot Exp $
+
+From d5805f9f0df7bb6156179894b6b5f70e41261a52 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Marco=20Trevisan=20=28Trevi=C3=B1o=29?= <mail@3v1n0.net>
+Date: Mon, 4 Dec 2017 20:45:35 -0500
+Subject: dash: Make sure item labels are only destroyed once
+
+From ac596ca1c13faf9739e1b835ea86dc4200d09b27 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Marco=20Trevisan=20=28Trevi=C3=B1o=29?= <mail@3v1n0.net>
+Date: Tue, 5 Dec 2017 17:04:24 -0500
+Subject: dash: Do not shadow ClutterActor's destroy()
+
+Index: js/ui/dash.js
+--- js/ui/dash.js.orig
++++ js/ui/dash.js
+@@ -50,6 +50,10 @@ var DashItemContainer = new Lang.Class({
+         this._childScale = 0;
+         this._childOpacity = 0;
+         this.animatingOut = false;
++
++        this.connect('destroy', () => {
++            this.label.destroy();
++        });
+     },
+ 
+     vfunc_allocate: function(box, flags) {
+@@ -177,16 +181,8 @@ var DashItemContainer = new Lang.Class({
+                          });
+     },
+ 
+-    destroy: function() {
+-        if (this.label)
+-            this.label.destroy();
+-
+-        this.parent();
+-    },
+-
+     animateOutAndDestroy: function() {
+-        if (this.label)
+-            this.label.destroy();
++        this.label.hide();
+ 
+         if (this.child == null) {
+             this.destroy();

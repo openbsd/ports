@@ -1,0 +1,28 @@
+$OpenBSD: patch-js_ui_dateMenu_js,v 1.1 2017/12/27 11:51:50 ajacoutot Exp $
+
+From b7b59d78b5a011fbae05786decbdd5a710ca9dba Mon Sep 17 00:00:00 2001
+From: Bastien Nocera <hadess@hadess.net>
+Date: Mon, 4 Dec 2017 14:30:01 +0100
+Subject: dateMenu: Ignore malformed world-clocks settings
+
+From a3736d3a3951af8d5f67c3d0a961e5df9be7825f Mon Sep 17 00:00:00 2001
+From: Bastien Nocera <hadess@hadess.net>
+Date: Mon, 4 Dec 2017 14:30:01 +0100
+Subject: dateMenu: Fix possible crash with unknown locations
+
+Index: js/ui/dateMenu.js
+--- js/ui/dateMenu.js.orig
++++ js/ui/dateMenu.js
+@@ -132,8 +132,11 @@ var WorldClocksSection = new Lang.Class({
+         let world = GWeather.Location.get_world();
+         let clocks = settings.get_value('world-clocks').deep_unpack();
+         for (let i = 0; i < clocks.length; i++) {
++            if (!clocks[i].location)
++                continue;
+             let l = world.deserialize(clocks[i].location);
+-            this._locations.push({ location: l });
++            if (l)
++                this._locations.push({ location: l });
+         }
+ 
+         this._locations.sort(function(a, b) {
