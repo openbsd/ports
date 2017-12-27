@@ -1,7 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/10/25 11:40:37 fcambus Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/12/27 15:08:39 fcambus Exp $
 share/doc/${FULLPKGNAME}/
+share/doc/${FULLPKGNAME}/README.md
 share/doc/${FULLPKGNAME}/gettime.md
 share/doc/${FULLPKGNAME}/index.md
+share/doc/${FULLPKGNAME}/links.md
 share/doc/${FULLPKGNAME}/parse.md
 share/doc/${FULLPKGNAME}/timetable.md
 share/doc/${FULLPKGNAME}/tzinfo.md
