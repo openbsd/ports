@@ -1,0 +1,71 @@
+$OpenBSD: patch-src_Makefile_am,v 1.1.1.1 2017/12/27 17:34:48 remi Exp $
+
+Only install the liblognorm.h header, others look like private headers.
+Use _SOURCES for those instead of _HEADERS / EXTRA_DIST.
+
+Index: src/Makefile.am
+--- src/Makefile.am.orig
++++ src/Makefile.am
+@@ -24,23 +24,32 @@ lib_LTLIBRARIES = liblognorm.la
+ liblognorm_la_SOURCES = \
+ 	liblognorm.c \
+ 	pdag.c \
++	pdag.h \
+ 	annot.c \
++	annot.h \
+ 	samp.c \
++	samp.h \
+ 	lognorm.c \
++	lognorm.h \
+ 	parser.c \
++	parser.h \
+ 	enc_syslog.c \
+ 	enc_csv.c \
+-	enc_xml.c
++	enc_xml.c \
++	enc.h \
++	lognorm-features.h \
++	helpers.h \
++	internal.h
+ 
+ # Users violently requested that v2 shall be able to understand v1
+ # rulebases. As both are very very different, we now include the
+ # full v1 engine for this purpose. This here is what does this.
+ # see also: https://github.com/rsyslog/liblognorm/issues/103
+ liblognorm_la_SOURCES += \
+-	v1_liblognorm.c \
+-	v1_parser.c \
+-	v1_ptree.c \
+-	v1_samp.c
++	v1_liblognorm.c v1_liblognorm.h \
++	v1_parser.c v1_parser.h \
++	v1_ptree.c v1_ptree.h \
++	v1_samp.c v1_samp.h
+ 
+ liblognorm_la_CPPFLAGS = $(JSON_C_CFLAGS) $(WARN_CFLAGS) $(LIBESTR_CFLAGS) $(PCRE_CFLAGS)
+ liblognorm_la_LIBADD = $(rt_libs) $(JSON_C_LIBS) $(LIBESTR_LIBS) $(PCRE_LIBS) -lestr
+@@ -49,22 +58,5 @@ liblognorm_la_LIBADD = $(rt_libs) $(JSON_C_LIBS) $(LIB
+ # Note: v2 now starts at version 5, as v1 previously also had 4
+ liblognorm_la_LDFLAGS = -version-info 6:0:1
+ 
+-EXTRA_DIST = \
+-	internal.h \
+-	liblognorm.h \
+-	lognorm.h \
+-	pdag.h \
+-	annot.h \
+-	samp.h \
+-	enc.h \
+-	parser.h \
+-	helpers.h
+-
+-# and now the old cruft:
+-EXTRA_DIST += \
+-	v1_liblognorm.h \
+-	v1_parser.h \
+-	v1_samp.h \
+-	v1_ptree.h
+-
+-include_HEADERS = liblognorm.h samp.h lognorm.h pdag.h annot.h enc.h parser.h lognorm-features.h
++# Public API
++include_HEADERS = liblognorm.h
