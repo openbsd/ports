@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2017/11/03 11:24:05 rpe Exp $
+# $OpenBSD: Makefile,v 1.14 2017/12/27 10:34:53 rpe Exp $
 
 COMMENT =		Simple Revision Control
 
-DISTNAME =		src-1.15
+DISTNAME =		src-1.17
 
 CATEGORIES =		devel
 
@@ -20,12 +20,15 @@ MODPY_ADJ_FILES =	src
 
 RUN_DEPENDS =		devel/grcs \
 			devel/rcs-fast-import
+
 TEST_DEPENDS =		devel/git \
+			devel/pylint \
 			${RUN_DEPENDS}
 
 USE_GMAKE =		Yes
 NO_BUILD =		Yes
 
+TEST_ENV =		PYLINTHOME=${WRKSRC}/.pylint.d
 TEST_TARGET =		check
 
 post-extract:
@@ -35,12 +38,9 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/src ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/src.1 ${PREFIX}/man/man1
 
-# Disable pylint in test, needs >= 1.0.0 that supports --msg-template.
 # Disable sscs and python 3.x tests.
 pre-test:
-	sed -i	-e 's/^check: pylint/check:/' \
-		-e 's/-p python2$$/-p '${MODPY_BIN:C/^.*\///}'/' \
-		-e '/srctest -b sccs/d ' \
-		-e '/p python3/d' ${WRKSRC}/Makefile
+	sed -i	-e '/srctest -b sccs/d ' -e '/p python3/d' ${WRKSRC}/Makefile
+	ln -s ${LOCALBASE}/bin/gdiff ${WRKDIR}/bin/diff
 
 .include <bsd.port.mk>
