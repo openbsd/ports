@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2017/11/08 09:55:16 kirby Exp $
+@comment $OpenBSD: PLIST,v 1.7 2017/12/27 20:55:47 kirby Exp $
 @conflict ocsync-*
 @conflict mirall-*
 @pkgpath net/ocsync
@@ -17,7 +17,6 @@ include/owncloudsync/mirall/networkjobs.h
 include/owncloudsync/mirall/progressdispatcher.h
 include/owncloudsync/mirall/syncengine.h
 include/owncloudsync/mirall/syncfileitem.h
-include/owncloudsync/mirall/syncjournaldb.h
 include/owncloudsync/mirall/syncresult.h
 @lib lib/libowncloudsync.so.${LIBowncloudsync_VERSION}
 lib/owncloud/
@@ -31,6 +30,9 @@ share/examples/mirall/ownCloud/
 @sample ${SYSCONFDIR}/ownCloud/
 share/examples/mirall/ownCloud/sync-exclude.lst
 @sample ${SYSCONFDIR}/ownCloud/sync-exclude.lst
+share/icons/hicolor/1024x1024/
+share/icons/hicolor/1024x1024/apps/
+share/icons/hicolor/1024x1024/apps/owncloud.png
 share/icons/hicolor/128x128/apps/ownCloud_error.png
 share/icons/hicolor/128x128/apps/ownCloud_error_shared.png
 share/icons/hicolor/128x128/apps/ownCloud_ok.png
@@ -48,6 +50,7 @@ share/icons/hicolor/16x16/apps/ownCloud_sync.png
 share/icons/hicolor/16x16/apps/ownCloud_sync_shared.png
 share/icons/hicolor/16x16/apps/ownCloud_warn.png
 share/icons/hicolor/16x16/apps/ownCloud_warn_shared.png
+share/icons/hicolor/16x16/apps/owncloud.png
 share/icons/hicolor/22x22/apps/owncloud.png
 share/icons/hicolor/256x256/apps/ownCloud_error.png
 share/icons/hicolor/256x256/apps/ownCloud_error_shared.png
