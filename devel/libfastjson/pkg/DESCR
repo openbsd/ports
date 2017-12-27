@@ -1,0 +1,4 @@
+libfastjson is a fork from json-c. It's aim is to provide:
+ -  a small library with essential json handling functions
+ -  sufficiently good json support (not 100% standards compliant)
+ -  be very fast in processing

@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/12/27 17:29:05 remi Exp $
+include/libfastjson/
+include/libfastjson/atomic.h
+include/libfastjson/json.h
+include/libfastjson/json_object.h
+include/libfastjson/json_object_iterator.h
+include/libfastjson/json_object_private.h
+include/libfastjson/json_tokener.h
+include/libfastjson/json_util.h
+lib/libfastjson.a
+lib/libfastjson.la
+@lib lib/libfastjson.so.${LIBfastjson_VERSION}
+lib/pkgconfig/libfastjson.pc

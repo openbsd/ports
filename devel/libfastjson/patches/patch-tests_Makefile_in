@@ -1,0 +1,17 @@
+$OpenBSD: patch-tests_Makefile_in,v 1.1.1.1 2017/12/27 17:29:05 remi Exp $
+
+Without this patch the build stops with this error message:
+*** Parse error in /usr/ports/pobj/libfastjson-0.99.8/libfastjson-0.99.8/tests: Need an operator in 'VALGRIND=' (Makefile:1323)
+
+
+Index: tests/Makefile.in
+--- tests/Makefile.in.orig
++++ tests/Makefile.in
+@@ -1320,7 +1320,6 @@ uninstall-am:
+ 
+ .PRECIOUS: Makefile
+ 
+-export VALGRIND=@VALGRIND@
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
