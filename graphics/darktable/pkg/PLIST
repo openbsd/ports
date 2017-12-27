@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2016/12/24 22:59:55 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.19 2017/12/27 15:20:42 sthen Exp $
 @bin bin/darktable
 @bin bin/darktable-chart
 @bin bin/darktable-cli
@@ -64,6 +64,7 @@ lib/darktable/plugins/libgamma.so
 lib/darktable/plugins/libglobaltonemap.so
 lib/darktable/plugins/libgraduatednd.so
 lib/darktable/plugins/libgrain.so
+lib/darktable/plugins/libhazeremoval.so
 lib/darktable/plugins/libhighlights.so
 lib/darktable/plugins/libhighpass.so
 lib/darktable/plugins/libhotpixels.so
@@ -175,6 +176,7 @@ share/darktable/kernels/extended.cl
 share/darktable/kernels/gaussian.cl
 share/darktable/kernels/highpass.cl
 share/darktable/kernels/liquify.cl
+share/darktable/kernels/locallaplacian.cl
 share/darktable/kernels/nlmeans.cl
 share/darktable/kernels/programs.conf
 share/darktable/kernels/sharpen.cl
@@ -184,24 +186,6 @@ share/darktable/latex/photobook.cls
 share/darktable/lua/
 share/darktable/lua/darktable/
 share/darktable/lua/darktable/debug.lua
-share/darktable/lua/darktable/external/
-share/darktable/lua/darktable/external/pygy_require/
-share/darktable/lua/darktable/external/pygy_require/.gitignore
-share/darktable/lua/darktable/external/pygy_require/README.md
-share/darktable/lua/darktable/external/pygy_require/require.lua
-share/darktable/lua/darktable/external/pygy_require/rockspecs/
-share/darktable/lua/darktable/external/pygy_require/rockspecs/require-0.1.1-1.rockspec
-share/darktable/lua/darktable/external/pygy_require/rockspecs/require-0.1.2-1.rockspec
-share/darktable/lua/darktable/external/pygy_require/rockspecs/require-0.1.3-1.rockspec
-share/darktable/lua/darktable/external/pygy_require/rockspecs/require-0.1.4-1.rockspec
-share/darktable/lua/darktable/external/pygy_require/rockspecs/require-0.1.4-2.rockspec
-share/darktable/lua/darktable/external/pygy_require/rockspecs/require-0.1.4-3.rockspec
-share/darktable/lua/darktable/external/pygy_require/rockspecs/require-0.1.4-4.rockspec
-share/darktable/lua/darktable/external/pygy_require/rockspecs/require-0.1.4-5.rockspec
-share/darktable/lua/darktable/external/pygy_require/rockspecs/require-0.1.5-1.rockspec
-share/darktable/lua/darktable/external/pygy_require/rockspecs/require-0.1.6-1.rockspec
-share/darktable/lua/darktable/external/pygy_require/rockspecs/require-0.1.7-1.rockspec
-share/darktable/lua/darktable/external/pygy_require/rockspecs/require-0.1.7-2.rockspec
 share/darktable/luarc
 share/darktable/noiseprofiles.json
 share/darktable/pixmaps/
@@ -264,6 +248,8 @@ share/darktable/pixmaps/plugins/darkroom/graduatednd.png
 share/darktable/pixmaps/plugins/darkroom/graduatednd.svg
 share/darktable/pixmaps/plugins/darkroom/grain.png
 share/darktable/pixmaps/plugins/darkroom/grain.svg
+share/darktable/pixmaps/plugins/darkroom/hazeremoval.png
+share/darktable/pixmaps/plugins/darkroom/hazeremoval.svg
 share/darktable/pixmaps/plugins/darkroom/highlights.png
 share/darktable/pixmaps/plugins/darkroom/highlights.svg
 share/darktable/pixmaps/plugins/darkroom/highpass.png
@@ -379,6 +365,7 @@ share/locale/ca/LC_MESSAGES/darktable.mo
 share/locale/cs/LC_MESSAGES/darktable.mo
 share/locale/da/LC_MESSAGES/darktable.mo
 share/locale/de/LC_MESSAGES/darktable.mo
+share/locale/el/LC_MESSAGES/darktable.mo
 share/locale/es/LC_MESSAGES/darktable.mo
 share/locale/fr/LC_MESSAGES/darktable.mo
 share/locale/he/LC_MESSAGES/darktable.mo
