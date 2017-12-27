@@ -1,0 +1,14 @@
+GNU libmicrohttpd is a small C library that is supposed to make it easy
+to run an HTTP server as part of another application.
+
+Features:
+* C library: fast and small
+* API is simple, expressive and fully reentrant
+* Implementation is HTTP 1.1 compliant
+* HTTP server can listen on multiple ports
+* Four different threading models (select, poll, pthread, thread pool)
+* Support for IPv6
+* Support for SHOUTcast
+* Support for incremental processing of POST data
+* Support for basic and digest authentication
+* Support for TLS
