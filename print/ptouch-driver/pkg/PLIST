@@ -1,14 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/03/07 21:57:15 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/12/27 13:35:48 ajacoutot Exp $
 @conflict foomatic-db-<4.0.20110101p0
 @bin libexec/cups/filter/rastertoptch
-share/foomatic/
-share/foomatic/db/
-share/foomatic/db/source/
-share/foomatic/db/source/driver/
 share/foomatic/db/source/driver/ptouch.xml
-share/foomatic/db/source/opt/
 share/foomatic/db/source/opt/Brother-Ptouch-AdvanceDistance.xml
-share/foomatic/db/source/opt/Brother-Ptouch-AdvanceMedia.xml
 share/foomatic/db/source/opt/Brother-Ptouch-Align.xml
 share/foomatic/db/source/opt/Brother-Ptouch-BytesPerLine.xml
 share/foomatic/db/source/opt/Brother-Ptouch-ConcatPages.xml
@@ -26,7 +20,6 @@ share/foomatic/db/source/opt/Brother-Ptouch-Resolution.xml
 share/foomatic/db/source/opt/Brother-Ptouch-RollFedMedia.xml
 share/foomatic/db/source/opt/Brother-Ptouch-SoftwareMirror.xml
 share/foomatic/db/source/opt/Brother-Ptouch-TransferMode.xml
-share/foomatic/db/source/printer/
 share/foomatic/db/source/printer/Brother-PT-1500PC.xml
 share/foomatic/db/source/printer/Brother-PT-18R.xml
 share/foomatic/db/source/printer/Brother-PT-1950.xml
@@ -48,4 +41,5 @@ share/foomatic/db/source/printer/Brother-PT-9600.xml
 share/foomatic/db/source/printer/Brother-PT-PC.xml
 share/foomatic/db/source/printer/Brother-QL-500.xml
 share/foomatic/db/source/printer/Brother-QL-550.xml
+share/foomatic/db/source/printer/Brother-QL-570.xml
 share/foomatic/db/source/printer/Brother-QL-650TD.xml
