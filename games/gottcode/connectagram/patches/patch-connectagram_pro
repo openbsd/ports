@@ -1,9 +1,9 @@
-$OpenBSD: patch-connectagram_pro,v 1.1 2017/11/02 12:22:12 ajacoutot Exp $
+$OpenBSD: patch-connectagram_pro,v 1.2 2017/12/27 21:24:44 bcallah Exp $
 
 Index: connectagram.pro
 --- connectagram.pro.orig
 +++ connectagram.pro
-@@ -112,7 +112,7 @@ macx {
+@@ -115,7 +115,7 @@ macx {
  	qm.CONFIG += no_check_exist
  
  	man.files = doc/connectagram.6
