@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2017/12/26 19:18:28 robert Exp $
+# $OpenBSD: Makefile,v 1.5 2017/12/27 13:30:45 robert Exp $
 
 COMMENT=	next generation web interface for Kopano
 
 WAPP_VERSION=	3.4.3
+
+REVISION=	0
 
 PLUGINS_WITH_DEFCONF= \
 		contactfax-${WAPP_VERSION}.${MINOR}-${RPMVER} \
@@ -42,7 +44,14 @@ DISTFILES+=	kopano-webapp-${WAPP_VERSION}.${MINOR}-${RPMVER}.noarch.rpm \
 		kopano-webapp-plugin-spell-it-1.0.0-17.1.noarch.rpm \
 		kopano-webapp-plugin-spell-nl-2.0.0.0-4.1.noarch.rpm \
 		kopano-webapp-plugin-spell-pl-pl-2.0.0.0-10.1.noarch.rpm \
-		${EDISTFILES}
+
+DISTFILES+=	kopano-webapp-plugin-files-2.1.1.233-153.1.noarch.rpm \
+		kopano-webapp-plugin-filesbackend-owncloud-2.1.1.67-44.1.noarch.rpm \
+		kopano-webapp-plugin-filesbackend-smb-2.1.1.35-32.1.noarch.rpm
+
+DISTFILES+=	kopano-webapp-plugin-meetings-3.0.0.92-7.2.noarch.rpm
+		
+DISTFILES+=	${EDISTFILES}
 
 MASTER_SITES=	http://nerd.hu/distfiles/kopano-webapp/
 
@@ -83,6 +92,14 @@ do-install:
 		${INSTDIR}/kopano-webapp.conf.dist
 	cat ${WRKSRC}/etc/kopano/webapp/config.php > \
 		${INSTDIR}/config.php.dist
+
+	rm ${INSTDIR}/plugins/files/config.php   
+	cat ${WRKSRC}/etc/kopano/webapp/config-files.php > \
+		${INSTDIR}/plugins/files/config.php.dist
+
+	rm ${INSTDIR}/plugins/spreedwebrtc/config.php   
+	cat ${WRKSRC}/etc/kopano/webapp/config-meetings.php > \
+		${INSTDIR}/plugins/spreedwebrtc/config.php.dist
 
 	rm ${INSTDIR}/plugins/spellchecker/config.php
 	cat ${WRKSRC}/etc/kopano/webapp/config-spellchecker.php > \

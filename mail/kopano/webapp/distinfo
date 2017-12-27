@@ -3,9 +3,13 @@ SHA256 (kopano/kopano-webapp-lang-3.4.3.1127-669.1.noarch.rpm) = 3BnMubfNwV0EhJQ
 SHA256 (kopano/kopano-webapp-plugin-contactfax-3.4.3.1127-669.1.noarch.rpm) = ntkK8n7lvecBdERCL+HbM1DkhigUZfAiotJ4Vy+riUs=
 SHA256 (kopano/kopano-webapp-plugin-desktopnotifications-2.0.1.0-12.1.noarch.rpm) = 8w/f/hIcpdiOkiFxAf2lWJuFx6dVqsl1URnbXDLYIM8=
 SHA256 (kopano/kopano-webapp-plugin-filepreviewer-2.0.0.15-9.1.noarch.rpm) = OmGdvRN1r35FKTprjFWa45w2FDzHOO02GRcPJbt0JxQ=
+SHA256 (kopano/kopano-webapp-plugin-files-2.1.1.233-153.1.noarch.rpm) = pUNkNMroT9bddIprg6e9j7FPO0c7jMs9i85lDyVVQzs=
+SHA256 (kopano/kopano-webapp-plugin-filesbackend-owncloud-2.1.1.67-44.1.noarch.rpm) = 7IkvWH+ZD4wPG6DVoHBIuxO1SNVE5oaGceO8irWeDHw=
+SHA256 (kopano/kopano-webapp-plugin-filesbackend-smb-2.1.1.35-32.1.noarch.rpm) = PA3uBfOUfrDog39j7mikaIpIPgbubB+DWRwF6+Bp2rg=
 SHA256 (kopano/kopano-webapp-plugin-folderwidgets-3.4.3.1127-669.1.noarch.rpm) = l09c/5yAXyQ8ogDL11PqIPx2zojtmNw+xKXo9t/Fdbc=
 SHA256 (kopano/kopano-webapp-plugin-gmaps-3.4.3.1127-669.1.noarch.rpm) = T40RheJxQhg7FT75eTLe2N3sMu9Evy6qUcrC14oW9eM=
 SHA256 (kopano/kopano-webapp-plugin-intranet-0.1-28.1.noarch.rpm) = fOIN/EKRYdDG8NKP3A+FVny8BX89Ee6bZnFIQwmYl44=
+SHA256 (kopano/kopano-webapp-plugin-meetings-3.0.0.92-7.2.noarch.rpm) = JJJmTN3yoTDRPKtKryVzeeHGraIZE62jr8ZrAmbyH6Y=
 SHA256 (kopano/kopano-webapp-plugin-pimfolder-3.4.3.1127-669.1.noarch.rpm) = aMvgBedzyMTPBMADBO+/vLME09xa0eA7Uik2KQd/ccA=
 SHA256 (kopano/kopano-webapp-plugin-quickitems-3.4.3.1127-669.1.noarch.rpm) = 5V1GV0PjtHDSDVAN0Jrh41lAB43MpV7z2TQKS6vpdvY=
 SHA256 (kopano/kopano-webapp-plugin-spell-2.0.0.2-9.1.noarch.rpm) = OYG6E+yTD7EUbzgRb8qAOMOFjLsBh+4R/ucUTXfRZXc=
@@ -25,9 +29,13 @@ SIZE (kopano/kopano-webapp-lang-3.4.3.1127-669.1.noarch.rpm) = 392520
 SIZE (kopano/kopano-webapp-plugin-contactfax-3.4.3.1127-669.1.noarch.rpm) = 15412
 SIZE (kopano/kopano-webapp-plugin-desktopnotifications-2.0.1.0-12.1.noarch.rpm) = 23080
 SIZE (kopano/kopano-webapp-plugin-filepreviewer-2.0.0.15-9.1.noarch.rpm) = 2536308
+SIZE (kopano/kopano-webapp-plugin-files-2.1.1.233-153.1.noarch.rpm) = 2086504
+SIZE (kopano/kopano-webapp-plugin-filesbackend-owncloud-2.1.1.67-44.1.noarch.rpm) = 163716
+SIZE (kopano/kopano-webapp-plugin-filesbackend-smb-2.1.1.35-32.1.noarch.rpm) = 90776
 SIZE (kopano/kopano-webapp-plugin-folderwidgets-3.4.3.1127-669.1.noarch.rpm) = 23708
 SIZE (kopano/kopano-webapp-plugin-gmaps-3.4.3.1127-669.1.noarch.rpm) = 15928
 SIZE (kopano/kopano-webapp-plugin-intranet-0.1-28.1.noarch.rpm) = 12592
+SIZE (kopano/kopano-webapp-plugin-meetings-3.0.0.92-7.2.noarch.rpm) = 277748
 SIZE (kopano/kopano-webapp-plugin-pimfolder-3.4.3.1127-669.1.noarch.rpm) = 13328
 SIZE (kopano/kopano-webapp-plugin-quickitems-3.4.3.1127-669.1.noarch.rpm) = 37696
 SIZE (kopano/kopano-webapp-plugin-spell-2.0.0.2-9.1.noarch.rpm) = 27788
