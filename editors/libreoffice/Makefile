@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.175 2017/11/16 23:20:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.176 2017/12/27 20:41:37 ajacoutot Exp $
 
 USE_WXNEEDED=	Yes
 
@@ -160,8 +160,8 @@ BUILD_DEPENDS+=	archivers/zip \
 		${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS}
 
-# configure checks for librsvg support; no LIB/RUN_DEPENDS because libcups
-# and librsvg is only dlopen()ed if found
+# configure checks for librsvg support; no LIB/RUN_DEPENDS because it is only
+# dlopen()ed if found
 BUILD_DEPENDS +=	x11/gnome/librsvg
 
 COMPILER =	base-clang ports-gcc
