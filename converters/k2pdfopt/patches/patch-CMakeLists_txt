@@ -1,8 +1,14 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2017/08/18 12:07:51 pirofti Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2017/12/28 16:00:42 jca Exp $
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
+@@ -1,4 +1,4 @@
+-project(k2pdfopt C)
++project(k2pdfopt)
+ cmake_minimum_required(VERSION 2.6)
+ 
+ # ---- Test for packages
 @@ -52,6 +52,8 @@ endif(JPEG_FOUND)
  include(FindJasper)
  if(JASPER_FOUND)
