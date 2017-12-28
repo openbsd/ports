@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.9 2017/12/28 07:54:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2017/12/28 07:55:45 ajacoutot Exp $
 
 # sync with editors/libreoffice
 ONLY_FOR_ARCHS=		amd64 i386
-COMPILER =		base-clang ports-gcc
 
 PKG_ARCH=		*
 
