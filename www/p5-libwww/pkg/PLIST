@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2014/10/23 19:49:45 nigel Exp $
+@comment $OpenBSD: PLIST,v 1.20 2017/12/28 21:01:29 nigel Exp $
 bin/lwp-download
 bin/lwp-dump
 bin/lwp-mirror
@@ -9,12 +9,13 @@ ${P5SITE}/LWP/Authen/Basic.pm
 ${P5SITE}/LWP/Authen/Digest.pm
 ${P5SITE}/LWP/Authen/Ntlm.pm
 ${P5SITE}/LWP/ConnCache.pm
+${P5SITE}/LWP/Debug/
 ${P5SITE}/LWP/Debug.pm
+${P5SITE}/LWP/Debug/TraceHTTP.pm
 ${P5SITE}/LWP/DebugFile.pm
 ${P5SITE}/LWP/MemberMixin.pm
 ${P5SITE}/LWP/Protocol/
 ${P5SITE}/LWP/Protocol.pm
-${P5SITE}/LWP/Protocol/GHTTP.pm
 ${P5SITE}/LWP/Protocol/cpan.pm
 ${P5SITE}/LWP/Protocol/data.pm
 ${P5SITE}/LWP/Protocol/file.pm
@@ -28,8 +29,9 @@ ${P5SITE}/LWP/Protocol/nogo.pm
 ${P5SITE}/LWP/RobotUA.pm
 ${P5SITE}/LWP/Simple.pm
 ${P5SITE}/LWP/UserAgent.pm
-${P5SITE}/lwpcook.pod
-${P5SITE}/lwptut.pod
+${P5SITE}/libwww/
+${P5SITE}/libwww/lwpcook.pod
+${P5SITE}/libwww/lwptut.pod
 @man man/man1/lwp-download.1
 @man man/man1/lwp-dump.1
 @man man/man1/lwp-mirror.1
@@ -43,5 +45,5 @@ ${P5SITE}/lwptut.pod
 @man man/man3p/LWP::RobotUA.3p
 @man man/man3p/LWP::Simple.3p
 @man man/man3p/LWP::UserAgent.3p
-@man man/man3p/lwpcook.3p
-@man man/man3p/lwptut.3p
+@man man/man3p/libwww::lwpcook.3p
+@man man/man3p/libwww::lwptut.3p
