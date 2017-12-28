@@ -1,0 +1,17 @@
+$OpenBSD: patch-Makefile_in,v 1.5 2017/12/28 14:14:06 kirby Exp $
+
+- pre-generated parser.c is used
+- fixes parallel build with our make
+
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -2384,8 +2384,6 @@ uninstall-am: uninstall-libLTLIBRARIES uninstall-local
+ .PRECIOUS: Makefile
+ 
+ 
+-src/xkbcomp/parser.c: $(top_builddir)/src/$(am__dirstamp) $(top_builddir)/src/xkbcomp/$(am__dirstamp)
+-src/xkbcomp/parser.h: $(top_builddir)/src/$(am__dirstamp) $(top_builddir)/src/xkbcomp/$(am__dirstamp)
+ 
+ @ENABLE_DOCS_TRUE@@HAVE_DOXYGEN_TRUE@doc/html: doc/Doxyfile $(doxygen_input)
+ @ENABLE_DOCS_TRUE@@HAVE_DOXYGEN_TRUE@	$(AM_V_GEN)(\
