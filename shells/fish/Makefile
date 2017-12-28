@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/12/16 05:14:32 abieber Exp $
+# $OpenBSD: Makefile,v 1.2 2017/12/28 19:57:22 jca Exp $
 
 COMMENT =		friendly interactive shell
 
@@ -15,6 +15,9 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB += ${COMPILER_LIBCXX} c curses intl m pcre2-32
 
 MASTER_SITES =		https://fishshell.com/files/$V/
+
+# C++11
+COMPILER =		base-clang ports-gcc ports-clang
 
 MODULES =		lang/python
 
