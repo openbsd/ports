@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2017/07/26 22:45:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2017/12/28 16:37:46 jca Exp $
 
 COMMENT =	console-based OPL2 audio player
 
 DISTNAME =	adplay-1.7
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	audio
 
@@ -24,7 +24,8 @@ LIB_DEPENDS =	audio/adplug \
 
 CXXFLAGS +=	-I${LOCALBASE}/include/libbinio
 
-CONFIGURE_STYLE = gnu
+CONFIGURE_STYLE = autoconf
+AUTOCONF_VERSION= 2.64
 
 CONFIGURE_ARGS = --disable-output-ao \
 		 --disable-output-esound \

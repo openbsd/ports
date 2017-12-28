@@ -1,0 +1,13 @@
+$OpenBSD: patch-configure_in,v 1.1 2017/12/28 16:37:46 jca Exp $
+
+Index: configure.in
+--- configure.in.orig
++++ configure.in
+@@ -16,7 +16,6 @@ AC_PROG_CPP
+ AC_PROG_CXXCPP
+ 
+ # Nothing works without these libraries...
+-AC_CHECK_LIB(stdc++,main,,AC_MSG_ERROR([libstdc++ not installed]))
+ PKG_CHECK_MODULES([adplug], [adplug >= 2.0],,[
+ AC_MSG_WARN([You seem to be using a version of AdPlug prior to 2.0. \
+ I will try to do the old-style library search for which i cannot check \
