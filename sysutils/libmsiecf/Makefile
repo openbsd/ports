@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2017/11/21 00:13:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2017/12/28 15:58:53 naddy Exp $
 
 COMMENT =	library and tools to access the IE Cache File (index.dat)
 
@@ -29,6 +29,8 @@ CONFIGURE_ARGS +=	--enable-python
 WRKDIST =	${WRKDIR}/${PKGNAME}
 
 MODULES +=	lang/python
+
+BUILD_DEPENDS =	devel/gettext-tools
 
 LIB_DEPENDS +=	devel/libbfio
 
