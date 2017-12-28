@@ -1,11 +1,15 @@
-# $OpenBSD: Makefile,v 1.8 2017/11/16 23:20:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2017/12/28 07:54:41 ajacoutot Exp $
+
+# sync with editors/libreoffice
+ONLY_FOR_ARCHS=		amd64 i386
+COMPILER =		base-clang ports-gcc
 
 PKG_ARCH=		*
 
 COMMENT=		UNiversal Office CONVerter
 
 DISTNAME=		unoconv-0.7
-REVISION=		4
+REVISION=		5
 
 CATEGORIES=		converters textproc
 
@@ -17,11 +21,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 MASTER_SITES=		http://dag.wieers.com/home-made/unoconv/
 
 MODULES=		lang/python
-
-# see FILESDIR/unoconv.in
-# should really be the following, but using the module is easier
-# RUN_DEPENDS +=	STEM->=4.9,<4.10:lang/gcc/4.9,-libs
-COMPILER =		base-clang ports-gcc
 
 NO_BUILD=		Yes
 NO_TEST=		Yes
@@ -43,17 +42,5 @@ do-install:
 	cd ${WRKBUILD} && \
 		${SETENV} ${MAKE_ENV} ${_FAKE_SETUP} \
 		${MAKE_PROGRAM} ${ALL_FAKE_FLAGS} -f ${MAKE_FILE} install-links
-
-.include <bsd.port.arch.mk>
-.if ${PROPERTIES:Mclang}
-PKG_ARGS += -DPRELOAD_WRAPPER=0
-.else
-post-install:
-	mv ${PREFIX}/bin/unoconv ${PREFIX}/bin/unoconv.py
-	${SUBST_CMD} -m 0555 -o ${BINOWN} -g ${BINGRP} \
-		-c ${FILESDIR}/unoconv.in \
-		${PREFIX}/bin/unoconv
-PKG_ARGS += -DPRELOAD_WRAPPER=1
-.endif
 
 .include <bsd.port.mk>

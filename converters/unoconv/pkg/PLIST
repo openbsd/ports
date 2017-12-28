@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2017/05/31 15:03:27 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2017/12/28 07:54:41 ajacoutot Exp $
 @conflict odt2txt-*
 bin/doc2odt
 bin/doc2pdf
@@ -24,6 +24,5 @@ bin/ppt2odp
 bin/sdw2odt
 bin/sxw2odt
 bin/unoconv
-%%PRELOAD_WRAPPER%%
 bin/xls2ods
 @man man/man1/unoconv.1
