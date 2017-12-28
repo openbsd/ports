@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2017/09/27 10:06:22 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2017/12/28 07:12:21 rsadowski Exp $
 @conflict qt-creator-<=4.3.1p1
 @bin bin/qbs
 @bin bin/qbs-config
@@ -60,6 +60,7 @@ lib/qbs/plugins/libvisualstudiogenerator.so
 libexec/qbs/
 libexec/qbs/dmgbuild
 @bin libexec/qbs/qbs_processlauncher
+@man man/man1/qbs.1
 share/qbs/
 share/qbs/examples/
 share/qbs/examples/app-and-lib/
@@ -149,6 +150,13 @@ share/qbs/examples/collidingmice/main.cpp
 share/qbs/examples/collidingmice/mice.qrc
 share/qbs/examples/collidingmice/mouse.cpp
 share/qbs/examples/collidingmice/mouse.h
+share/qbs/examples/compiled-qml/
+share/qbs/examples/compiled-qml/MainForm.ui.qml
+share/qbs/examples/compiled-qml/cheese.jpg
+share/qbs/examples/compiled-qml/main.cpp
+share/qbs/examples/compiled-qml/main.qml
+share/qbs/examples/compiled-qml/myapp.qbs
+share/qbs/examples/compiled-qml/qml.qrc
 share/qbs/examples/examples.qbs
 share/qbs/examples/helloworld-complex/
 share/qbs/examples/helloworld-complex/hello.qbs
@@ -204,6 +212,7 @@ share/qbs/imports/qbs/Probes/GccVersionProbe.qbs
 share/qbs/imports/qbs/Probes/IncludeProbe.qbs
 share/qbs/imports/qbs/Probes/InnoSetupProbe.qbs
 share/qbs/imports/qbs/Probes/JdkProbe.qbs
+share/qbs/imports/qbs/Probes/JdkVersionProbe.qbs
 share/qbs/imports/qbs/Probes/MsvcProbe.qbs
 share/qbs/imports/qbs/Probes/NodeJsProbe.qbs
 share/qbs/imports/qbs/Probes/NpmProbe.qbs
@@ -257,7 +266,6 @@ share/qbs/modules/bundle/BundleModule.qbs
 share/qbs/modules/bundle/MacOSX-Package-Types.xcspec
 share/qbs/modules/bundle/MacOSX-Product-Types.xcspec
 share/qbs/modules/bundle/bundle.js
-share/qbs/modules/bundle/update-specs.sh
 share/qbs/modules/cli/
 share/qbs/modules/cli/CLIModule.qbs
 share/qbs/modules/cli/cli.js
@@ -283,6 +291,8 @@ share/qbs/modules/cpp/tvos-gcc.qbs
 share/qbs/modules/cpp/watchos-gcc.qbs
 share/qbs/modules/cpp/windows-mingw.qbs
 share/qbs/modules/cpp/windows-msvc.qbs
+share/qbs/modules/cpufeatures/
+share/qbs/modules/cpufeatures/cpufeatures.qbs
 share/qbs/modules/dmg/
 share/qbs/modules/dmg/DMGModule.qbs
 share/qbs/modules/dmg/dmg.js
@@ -323,6 +333,8 @@ share/qbs/modules/typescript/TypeScriptModule.qbs
 share/qbs/modules/typescript/qbs-tsc-scan/
 share/qbs/modules/typescript/qbs-tsc-scan/qbs-tsc-scan.ts
 share/qbs/modules/typescript/typescript.js
+share/qbs/modules/vcs/
+share/qbs/modules/vcs/vcs-module.qbs
 share/qbs/modules/wix/
 share/qbs/modules/wix/WiXModule.qbs
 share/qbs/modules/xcode/

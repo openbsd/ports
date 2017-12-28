@@ -1,0 +1,14 @@
+$OpenBSD: patch-doc_man_man_qbs,v 1.1 2017/12/28 07:12:21 rsadowski Exp $
+
+Index: doc/man/man.qbs
+--- doc/man/man.qbs.orig
++++ doc/man/man.qbs
+@@ -18,7 +18,7 @@ Product {
+         name: "man page"
+         files: ["qbs.1"]
+         qbs.install: qbsbuildconfig.installManPage
+-        qbs.installDir: "share/man/man1"
++        qbs.installDir: "man/man1"
+     }
+ 
+     Group {
