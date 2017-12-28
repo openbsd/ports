@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.54 2017/03/28 10:51:37 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.55 2017/12/28 21:56:32 sthen Exp $
 @conflict p5-PerlMagick-*
 @pkgpath graphics/ImageMagick,no_x11
 bin/Magick++-config
@@ -1151,6 +1151,9 @@ share/doc/ImageMagick/www/api/transform.html
 share/doc/ImageMagick/www/api/version.html
 share/doc/ImageMagick/www/api/wand-view.html
 share/doc/ImageMagick/www/architecture.html
+share/doc/ImageMagick/www/assets/
+share/doc/ImageMagick/www/assets/magick.css
+share/doc/ImageMagick/www/assets/magick.js
 share/doc/ImageMagick/www/binary-releases.html
 share/doc/ImageMagick/www/changelog.html
 share/doc/ImageMagick/www/cipher.html
@@ -1166,9 +1169,6 @@ share/doc/ImageMagick/www/conjure.html
 share/doc/ImageMagick/www/connected-components.html
 share/doc/ImageMagick/www/contact.html
 share/doc/ImageMagick/www/convert.html
-share/doc/ImageMagick/www/css/
-share/doc/ImageMagick/www/css/README.txt
-share/doc/ImageMagick/www/css/magick.css
 share/doc/ImageMagick/www/develop.html
 share/doc/ImageMagick/www/display.html
 share/doc/ImageMagick/www/distribute-pixel-cache.html
@@ -1188,9 +1188,6 @@ share/doc/ImageMagick/www/import.html
 share/doc/ImageMagick/www/index.html
 share/doc/ImageMagick/www/install-source.html
 share/doc/ImageMagick/www/jp2.html
-share/doc/ImageMagick/www/js/
-share/doc/ImageMagick/www/js/README.txt
-share/doc/ImageMagick/www/js/magick.js
 share/doc/ImageMagick/www/license.html
 share/doc/ImageMagick/www/links.html
 share/doc/ImageMagick/www/magick++.html
@@ -1232,8 +1229,12 @@ share/doc/ImageMagick/www/source/mime.xml
 share/doc/ImageMagick/www/source/piechart.mvg
 share/doc/ImageMagick/www/source/piechart.svg
 share/doc/ImageMagick/www/source/policy.xml
+share/doc/ImageMagick/www/source/quantization-table.xml
 share/doc/ImageMagick/www/source/thresholds.xml
+share/doc/ImageMagick/www/source/type-apple.xml
+share/doc/ImageMagick/www/source/type-dejavu.xml
 share/doc/ImageMagick/www/source/type-ghostscript.xml
+share/doc/ImageMagick/www/source/type-urw-base35.xml
 share/doc/ImageMagick/www/source/type-windows.xml
 share/doc/ImageMagick/www/source/type.xml
 share/doc/ImageMagick/www/source/wand.c
