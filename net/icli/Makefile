@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.10 2017/07/05 10:22:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2017/12/28 12:53:01 kirby Exp $
 
 COMMENT=	command-line interface to Icinga
 
 V=		0.48
 DISTNAME=	App-Icli-$V
 PKGNAME=	icli-$V
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	net
 
-HOMEPAGE=	http://finalrewind.org/projects/App-Icli/
+HOMEPAGE=	https://finalrewind.org/projects/App-Icli/
 
 # custom, see COPYING.
 PERMIT_PACKAGE_CDROM=	Yes
