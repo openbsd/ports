@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.172 2017/12/29 15:49:21 espie Exp $
+# $OpenBSD: Port.pm,v 1.173 2017/12/29 17:08:18 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -308,10 +308,10 @@ sub setup
 		my $o = $job->{builder}->locker->lock_has_other_owner($core);
 		my $status = 'waiting-for-lock #'.$job->{lock_order};
 		if (defined $o) {
-			$status .= ' locked by '.$o;
+			$status ='locked by '.$o;
 		}
 		return DPB::Task::Port::Lock->new($status);
-	} 
+	}
 
 	return $task;
 }
