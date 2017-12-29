@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.126 2017/12/29 14:48:43 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.127 2017/12/29 15:00:34 espie Exp $
 .\"
 .\" Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 .\"
@@ -1322,9 +1322,20 @@ dependencies each time
 decides to junk.
 .It Pa locks/
 Directory where locks are created.
-The slash in a pkgpath is replaced with a dot like so:
+There are three types of locks:
+.Bl -bullet
+.It
+pkgpath locks for building, where the slash in a pkgpath is replaced
+with a dot like so:
 .Pa locks/devel.make
 to flatten the structure.
+.It
+distfile locks for fetching, using the distfile name without the path like so:
+.Pa locks/distfile.dist .
+.It
+host locks for dependency handling and junking, like so:
+.Pa locks/host:hostname .
+.El
 .It Pa packages/pkgname.log
 one file or symlink per pkgname.
 .It Pa paths/some/path.log
