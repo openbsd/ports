@@ -1,4 +1,5 @@
-$OpenBSD: patch-external_libpagemaker_ExternalProject_libpagemaker_mk,v 1.2 2017/07/31 15:39:05 robert Exp $
+$OpenBSD: patch-external_libpagemaker_ExternalProject_libpagemaker_mk,v 1.3 2017/12/29 07:39:30 robert Exp $
+
 Index: external/libpagemaker/ExternalProject_libpagemaker.mk
 --- external/libpagemaker/ExternalProject_libpagemaker.mk.orig
 +++ external/libpagemaker/ExternalProject_libpagemaker.mk
@@ -6,8 +7,8 @@ Index: external/libpagemaker/ExternalProject_libpagemaker.mk
  			--disable-werror \
  			--disable-weffc \
  			$(if $(verbose),--disable-silent-rules,--enable-silent-rules) \
--			CXXFLAGS="$(CXXFLAGS) $(if $(SYSTEM_BOOST),$(BOOST_CPPFLAGS),-I$(call gb_UnpackedTarball_get_dir,boost)) \
-+			CPPFLAGS="-fPIC $(CPPFLAGS) $(if $(SYSTEM_BOOST),$(BOOST_CPPFLAGS),-I$(call gb_UnpackedTarball_get_dir,boost)) \
+-			CXXFLAGS="$(CXXFLAGS) $(BOOST_CPPFLAGS) \
++			CPPFLAGS="-fPIC $(CPPFLAGS) $(BOOST_CPPFLAGS) \
  				-DBOOST_ERROR_CODE_HEADER_ONLY -DBOOST_SYSTEM_NO_DEPRECATED" \
  			$(if $(CROSS_COMPILING),--build=$(BUILD_PLATFORM) --host=$(HOST_PLATFORM)) \
  		&& $(MAKE) \

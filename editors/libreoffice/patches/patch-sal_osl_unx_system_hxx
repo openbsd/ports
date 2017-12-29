@@ -1,0 +1,13 @@
+$OpenBSD: patch-sal_osl_unx_system_hxx,v 1.1 2017/12/29 07:39:30 robert Exp $
+
+Index: sal/osl/unx/system.hxx
+--- sal/osl/unx/system.hxx.orig
++++ sal/osl/unx/system.hxx
+@@ -128,7 +128,6 @@
+ #endif
+ 
+ #ifdef OPENBSD
+-#   define  ETIME ETIMEDOUT
+ #   include <pthread.h>
+ #   include <sys/sem.h>
+ #   include <dlfcn.h>

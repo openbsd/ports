@@ -1,0 +1,14 @@
+$OpenBSD: patch-external_libstaroffice_ExternalPackage_libstaroffice_mk,v 1.1 2017/12/29 07:39:30 robert Exp $
+
+Index: external/libstaroffice/ExternalPackage_libstaroffice.mk
+--- external/libstaroffice/ExternalPackage_libstaroffice.mk.orig
++++ external/libstaroffice/ExternalPackage_libstaroffice.mk
+@@ -16,7 +16,7 @@ $(eval $(call gb_ExternalPackage_add_file,libstaroffic
+ else ifeq ($(OS),WNT)
+ $(eval $(call gb_ExternalPackage_add_file,libstaroffice,$(LIBO_LIB_FOLDER)/libstaroffice-0.0.dll,src/lib/.libs/libstaroffice-0.0.dll))
+ else ifeq ($(DISABLE_DYNLOADING),)
+-$(eval $(call gb_ExternalPackage_add_file,libstaroffice,$(LIBO_LIB_FOLDER)/libstaroffice-0.0-lo.so.0,src/lib/.libs/libstaroffice-0.0-lo.so.0.0.$(STAROFFICE_VERSION_MICRO)))
++$(eval $(call gb_ExternalPackage_add_file,libstaroffice,$(LIBO_LIB_FOLDER)/libstaroffice-0.0-lo.so.0.0,src/lib/.libs/libstaroffice-0.0-lo.so.0.$(STAROFFICE_VERSION_MICRO)))
+ endif
+ 
+ # vim: set noet sw=4 ts=4:

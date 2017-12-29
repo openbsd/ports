@@ -1,7 +1,8 @@
-$OpenBSD: patch-desktop_source_app_app_cxx,v 1.10 2016/09/04 12:02:49 robert Exp $
---- desktop/source/app/app.cxx.orig.port	Sun Sep  4 13:21:35 2016
-+++ desktop/source/app/app.cxx	Sun Sep  4 13:27:45 2016
-@@ -631,7 +631,7 @@ void Desktop::DeInit()
+$OpenBSD: patch-desktop_source_app_app_cxx,v 1.11 2017/12/29 07:39:30 robert Exp $
+Index: desktop/source/app/app.cxx
+--- desktop/source/app/app.cxx.orig
++++ desktop/source/app/app.cxx
+@@ -664,7 +664,7 @@ void Desktop::DeInit()
          // clear lockfile
          m_xLockfile.reset();
  

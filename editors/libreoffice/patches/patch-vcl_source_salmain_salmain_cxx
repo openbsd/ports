@@ -1,0 +1,20 @@
+$OpenBSD: patch-vcl_source_salmain_salmain_cxx,v 1.1 2017/12/29 07:39:30 robert Exp $
+
+Index: vcl/source/salmain/salmain.cxx
+--- vcl/source/salmain/salmain.cxx.orig
++++ vcl/source/salmain/salmain.cxx
+@@ -28,12 +28,12 @@
+ 
+ #include "salinst.hxx"
+ 
+-#if defined( UNX ) && !defined MACOSX && !defined IOS && !defined ANDROID && !defined LIBO_HEADLESS
++#if defined( UNX ) && !defined MACOSX && !defined IOS && !defined ANDROID && !defined LIBO_HEADLESS && !defined OPENBSD
+ #include "opengl/x11/glxtest.hxx"
+ #endif
+ 
+ SAL_IMPLEMENT_MAIN() {
+-#if defined( UNX ) && !defined MACOSX && !defined IOS && !defined ANDROID && !defined LIBO_HEADLESS
++#if defined( UNX ) && !defined MACOSX && !defined IOS && !defined ANDROID && !defined LIBO_HEADLESS && !defined OPENBSD
+     fire_glxtest_process();
+ #endif
+     tools::extendApplicationEnvironment();

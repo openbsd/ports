@@ -1,17 +1,17 @@
-$OpenBSD: patch-shell_source_unix_exec_shellexec_cxx,v 1.6 2017/07/04 08:17:55 robert Exp $
+$OpenBSD: patch-shell_source_unix_exec_shellexec_cxx,v 1.7 2017/12/29 07:39:30 robert Exp $
 Index: shell/source/unix/exec/shellexec.cxx
 --- shell/source/unix/exec/shellexec.cxx.orig
 +++ shell/source/unix/exec/shellexec.cxx
-@@ -157,7 +157,7 @@ void SAL_CALL ShellExec::execute( const OUString& aCom
+@@ -150,7 +150,7 @@ void SAL_CALL ShellExec::execute( const OUString& aCom
          if (std::getenv("LIBO_FLATPAK") != nullptr) {
              aBuffer.append("/app/bin/xdg-open");
          } else {
 -            aBuffer.append("/usr/bin/xdg-open");
-+            aBuffer.append("${LOCALBASE}/bin/xdg-open");
++            aBuffer.append("/usr/local/bin/xdg-open");
          }
  #endif
          aBuffer.append(" ");
-@@ -198,7 +198,7 @@ void SAL_CALL ShellExec::execute( const OUString& aCom
+@@ -191,7 +191,7 @@ void SAL_CALL ShellExec::execute( const OUString& aCom
      }
  
      OString cmd =

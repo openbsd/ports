@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.176 2017/12/27 20:41:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.177 2017/12/29 07:39:30 robert Exp $
 
 USE_WXNEEDED=	Yes
 
@@ -8,10 +8,12 @@ COMMENT-main=	multi-platform productivity suite
 COMMENT-kde=	optional integration of LibreOffice to the KDE environment
 COMMENT-java=	optional integration of LibreOffice java features
 
-BV=		5.2
+SHARED_LIBS +=  orcus-0.12                0.0 # 0.0
+SHARED_LIBS +=  orcus-parser-0.12         0.0 # 0.0
+SHARED_LIBS +=  staroffice-0.0-lo         0.0 # 0.0
+
+BV=		5.3
 VERSION=	${BV}.7.2
-REVISION=	1
-REVISION-main=	7
 DISTNAME=	libreoffice-${VERSION}
 WRKDIST=	${WRKDIR}/libreoffice-${VERSION}
 PKGNAME=	libreoffice-${VERSION}
@@ -48,71 +50,64 @@ EDISTFILES+=	libreoffice-${_dfile}-${VERSION}.tar.xz
 .endfor
 EXTRACT_ONLY=	${EDISTFILES:C/:[0-9]$//}
 
-DISTFILES+=	${EDISTFILES} \
-		boost_1_60_0.tar.bz2:0 \
-		0168229624cfac409e766913506961a8-ucpp-1.3.2.tar.gz:0 \
-		0279a21fab6f245e85a6f85fea54f511-source-code-font-1.009.tar.gz:0 \
-		907d6e99f241876695c19ff3db0b8923-source-code-pro-2.030R-ro-1.050R-it.tar.gz:0 \
-		048751f3271906db5126ab76870444c4-commons-codec-1.9-src.zip:0 \
-		134d8262145fc793c6af494dcace3e71-liberation-fonts-ttf-1.07.4.tar.gz:0 \
-		17410483b5b5f267aa18b7e00b65e6e0-hsqldb_1_8_0.zip:0 \
-		ce12af00283eb90d9281956524250d6e-xmlsec1-1.2.20.tar.gz:0 \
-		libcmis-0.5.1.tar.gz:0 \
-		26b3e95ddf3d9c077c480ea45874b3b8-lp_solve_5.5.tar.gz:0 \
-		2c9b0f83ed5890af02c0df1c1776f39b-commons-httpclient-3.1-src.tar.gz:0 \
-		3404ab6b1792ae5f16bbd603bd1e1d03-libformula-1.1.7.zip:0 \
-		35c94d2df8893241173de1d16b6034c0-swingExSrc.zip:0 \
-		35efabc239af896dfb79be7ebdd6e6b9-gentiumbasic-fonts-1.10.zip:0 \
-		368f114c078f94214a308a74c7e991bc-crosextrafonts-20130214.tar.gz:0 \
-		39bb3fcea1514f1369fcfc87542390fd-sacjava-1.3.zip:0 \
-		3bdf40c0d199af31923e900d082ca2dd-libfonts-1.1.6.zip:0 \
-		a8c2c5b8f09e7ede322d5c602ff6a4b6-mythes-1.2.4.tar.gz:0 \
-		5c781723a0d9ed6188960defba8e91cf-liberation-fonts-ttf-2.00.1.tar.gz:0 \
-		7681383be6ce489d84c1c74f4e7f9643-liborcus-0.7.0.tar.bz2:0 \
-		798b2ffdc8bcfe7bca2cf92b62caf685-rhino1_5R5.zip:0 \
-		7a15edea7d415ac5150ea403e27401fd-open-sans-font-ttf-1.10.tar.gz:0 \
-		8ab049135b2d15313da5d9f0656894a1-commons-lang3-3.3.1-src.tar.gz:0 \
-		8ce2fcd72becf06c41f7201d15373ed9-librepository-1.1.6.zip:0 \
-		97b2d4dba862397f446b217e2b623e71-libloader-1.1.6.zip:0 \
-		5ade6ae2a99bc1e9e57031ca88d36dad-hyphen-2.8.8.tar.gz:0 \
-		d8b5214d35bcd2bfcb2cffa7795b351d-dejavu-fonts-ttf-2.35.zip:0 \
-		a7983f859eafb2677d7ff386a023bc40-xsltml_2.1.2.zip:0 \
-		mdds-1.2.2.tar.bz2:0 \
-		aa899eff126216dafe721149fbdb511b-liblangtag-0.5.8.tar.bz2:0 \
-		language-subtag-registry-2016-07-19.tar.bz2:0 \
-		cb4207cb913c7a5a8bfa5b91234618ee-mdds_0.11.2.tar.bz2:0 \
-		ace6ab49184e329db254e454a010f56d-libxml-1.1.7.zip:0 \
-		10d61fbaa6a06348823651b1bd7940fe-libexttextcat-3.4.4.tar.bz2:0 \
-		ba2930200c9f019c2d93a8c88c651a0f-flow-engine-0.9.4.zip:0 \
-		bae83fa5dc7f081768daace6e199adc3-glm-0.9.4.6-libreoffice.zip:0 \
-		c3c1a8ba7452950636e871d25020ce0d-pt-serif-font-1.0000W.tar.gz:0 \
-		c74b7223abe75949b4af367942d96c7a-crosextrafonts-carlito-20130920.tar.gz:0 \
-		d62650a6f908e85643e557a236ea989c-vigra1.6.0.tar.gz:0 \
-		d8bd5eed178db6e2b18eeed243f85aa8-flute-1.1.6.zip:0 \
-		db60e4fde8dd6d6807523deb71ee34dc-liblayout-0.2.10.zip:0 \
-		e7a384790b13c29113e22e596ade9687-LinLibertineG-20120116.zip:0 \
-		commons-logging-1.2-src.tar.gz:0 \
-		beeca87be45ec87d241ddd0e1bad80c1-bsh-2.0b6-src.zip:0 \
-		edc4d741888bc0d38e32dbaa17149596-source-sans-pro-2.010R-ro-1.065R-it.tar.gz:0 \
-		eeb2c7ddf0d302fba4bfc6e97eac9624-libbase-1.1.6.zip:0 \
-		f94d9870737518e3b597f9265f4e9803-libserializer-1.1.6.zip:0 \
-		4311dd9ace498b57c85f611e0670df64-graphite2-minimal-1.3.8.tgz:0 \
-		libabw-0.1.1.tar.bz2:0 \
-		libcdr-0.1.2.tar.bz2:0 \
-		libe-book-0.1.2.tar.bz2:0 \
-		libetonyek-0.1.6.tar.bz2:0 \
-		libfreehand-0.1.1.tar.bz2:0 \
-		libgltf-0.0.2.tar.bz2:1 \
-		libmspub-0.1.2.tar.bz2:0 \
-		libmwaw-0.3.7.tar.bz2:0 \
-		libodfgen-0.1.6.tar.bz2:0 \
-		libpagemaker-0.0.3.tar.bz2:0 \
-		librevenge-0.0.4.tar.bz2:0 \
-		libvisio-0.1.5.tar.bz2:0 \
-		libwpd-0.10.0.tar.bz2:0 \
-		libwpd-0.10.1.tar.bz2:0 \
-		libwpg-0.3.1.tar.bz2:0 \
-		libwps-0.4.3.tar.bz2:0
+DISTFILES += ${EDISTFILES}
+DISTFILES += 10d61fbaa6a06348823651b1bd7940fe-libexttextcat-3.4.4.tar.bz2:0
+DISTFILES += 134d8262145fc793c6af494dcace3e71-liberation-fonts-ttf-1.07.4.tar.gz:0
+DISTFILES += 1725634df4bb3dcb1b2c91a6175f8789-GentiumBasic_1102.zip:0
+DISTFILES += 17410483b5b5f267aa18b7e00b65e6e0-hsqldb_1_8_0.zip:0
+DISTFILES += 26b3e95ddf3d9c077c480ea45874b3b8-lp_solve_5.5.tar.gz:0
+DISTFILES += 33e1e61fab06a547851ed308b4ffef42-dejavu-fonts-ttf-2.37.zip:0
+DISTFILES += 3404ab6b1792ae5f16bbd603bd1e1d03-libformula-1.1.7.zip:0
+DISTFILES += 35c94d2df8893241173de1d16b6034c0-swingExSrc.zip:0
+DISTFILES += 368f114c078f94214a308a74c7e991bc-crosextrafonts-20130214.tar.gz:0
+DISTFILES += 39bb3fcea1514f1369fcfc87542390fd-sacjava-1.3.zip:0
+DISTFILES += 3bdf40c0d199af31923e900d082ca2dd-libfonts-1.1.6.zip:0
+DISTFILES += 5ade6ae2a99bc1e9e57031ca88d36dad-hyphen-2.8.8.tar.gz:0
+DISTFILES += 5c781723a0d9ed6188960defba8e91cf-liberation-fonts-ttf-2.00.1.tar.gz:0
+DISTFILES += 798b2ffdc8bcfe7bca2cf92b62caf685-rhino1_5R5.zip:0
+DISTFILES += 7a15edea7d415ac5150ea403e27401fd-open-sans-font-ttf-1.10.tar.gz:0
+DISTFILES += 86b1daaa438f5a7bea9a52d7b9799ac0-xmlsec1-1.2.23.tar.gz:0
+DISTFILES += 8ce2fcd72becf06c41f7201d15373ed9-librepository-1.1.6.zip:0
+DISTFILES += 907d6e99f241876695c19ff3db0b8923-source-code-pro-2.030R-ro-1.050R-it.tar.gz:0
+DISTFILES += 97b2d4dba862397f446b217e2b623e71-libloader-1.1.6.zip:0
+DISTFILES += EmojiOneColor-SVGinOT-1.3.tar.gz:0
+DISTFILES += a7983f859eafb2677d7ff386a023bc40-xsltml_2.1.2.zip:0
+DISTFILES += a8c2c5b8f09e7ede322d5c602ff6a4b6-mythes-1.2.4.tar.gz:0
+DISTFILES += ace6ab49184e329db254e454a010f56d-libxml-1.1.7.zip:0
+DISTFILES += ba2930200c9f019c2d93a8c88c651a0f-flow-engine-0.9.4.zip:0
+DISTFILES += beeca87be45ec87d241ddd0e1bad80c1-bsh-2.0b6-src.zip:0
+DISTFILES += c3c1a8ba7452950636e871d25020ce0d-pt-serif-font-1.0000W.tar.gz:0
+DISTFILES += c74b7223abe75949b4af367942d96c7a-crosextrafonts-carlito-20130920.tar.gz:0
+DISTFILES += commons-logging-1.2-src.tar.gz:0
+DISTFILES += d8bd5eed178db6e2b18eeed243f85aa8-flute-1.1.6.zip:0
+DISTFILES += db60e4fde8dd6d6807523deb71ee34dc-liblayout-0.2.10.zip:0
+DISTFILES += e7a384790b13c29113e22e596ade9687-LinLibertineG-20120116.zip:0
+DISTFILES += edc4d741888bc0d38e32dbaa17149596-source-sans-pro-2.010R-ro-1.065R-it.tar.gz:0
+DISTFILES += eeb2c7ddf0d302fba4bfc6e97eac9624-libbase-1.1.6.zip:0
+DISTFILES += f94d9870737518e3b597f9265f4e9803-libserializer-1.1.6.zip:0
+DISTFILES += language-subtag-registry-2017-04-19.tar.bz2:0
+DISTFILES += libabw-0.1.1.tar.bz2:0
+DISTFILES += libcdr-0.1.2.tar.bz2:0
+DISTFILES += libcdr-0.1.3.tar.bz2:0
+DISTFILES += libcmis-0.5.1.tar.gz:0
+DISTFILES += libe-book-0.1.2.tar.bz2:0
+DISTFILES += libetonyek-0.1.6.tar.bz2:0
+DISTFILES += libfreehand-0.1.1.tar.bz2:0
+DISTFILES += libgltf-0.0.2.tar.bz2:1
+DISTFILES += liblangtag-0.6.2.tar.bz2:0
+DISTFILES += libmspub-0.1.2.tar.bz2:0
+DISTFILES += libmwaw-0.3.9.tar.bz2:0
+DISTFILES += libodfgen-0.1.6.tar.bz2:0
+DISTFILES += liborcus-0.12.1.tar.gz:0
+DISTFILES += libpagemaker-0.0.3.tar.bz2:0
+DISTFILES += librevenge-0.0.4.tar.bz2:0
+DISTFILES += libstaroffice-0.0.2.tar.bz2:0
+DISTFILES += libvisio-0.1.5.tar.bz2:0
+DISTFILES += libwpd-0.10.1.tar.bz2:0
+DISTFILES += libwpg-0.3.1.tar.bz2:0
+DISTFILES += libwps-0.4.4.tar.bz2:0
+DISTFILES += libzmf-0.0.1.tar.bz2:0
+DISTFILES += mdds-1.2.2.tar.bz2:0
 
 DIST_SUBDIR=	libreoffice
 
@@ -164,8 +159,6 @@ BUILD_DEPENDS+=	archivers/zip \
 # dlopen()ed if found
 BUILD_DEPENDS +=	x11/gnome/librsvg
 
-COMPILER =	base-clang ports-gcc
-
 MODULES+=	lang/python
 
 # XXX can't use ${MODPY_DEFAULT_VERSION_3}, it specifically wants 3.3 and
@@ -177,8 +170,10 @@ LIB_DEPENDS-main=x11/gtk+2 \
 		${MODPY_LIB_DEPENDS} \
 		databases/openldap \
 		databases/postgresql \
+		devel/boost \
 		devel/harfbuzz,-icu \
 		graphics/lcms2 \
+		graphics/graphite2 \
 		${MODGCC4_CPPLIBDEP} \
 		print/cups,-libs \
 		print/poppler \
@@ -214,6 +209,9 @@ WANTLIB-main+=	lzma
 WANTLIB-main+=	cairo-gobject gmodule-2.0
 WANTLIB-main+=	dconf gdk-3 gtk-3
 WANTLIB-main+=	poppler
+WANTLIB-main+=	bz2 graphite2
+WANTLIB-main+=	boost_filesystem boost_filesystem-mt boost_iostreams-mt
+WANTLIB-main+=	boost_system boost_system-mt boost_date_time-mt
 
 RUN_DEPENDS-main=	devel/desktop-file-utils \
 			devel/libexecinfo \
@@ -277,7 +275,7 @@ CONFIGURE_ARGS+=\
 		--disable-mergelibs \
 		--disable-dependency-tracking \
 		--disable-online-update \
-		--disable-orcus \
+		--enable-orcus \
 		--enable-gio \
 		--enable-kde4 \
 		--enable-systray \
@@ -291,11 +289,13 @@ CONFIGURE_ARGS+=\
 		--with-system-harfbuzz \
 		--with-system-glew \
 		--with-system-clucene \
+		--with-system-cppunit \
 		--with-system-libxml \
-		--without-system-boost \
+		--with-system-boost \
 		--with-system-cairo \
 		--with-system-curl \
 		--with-system-expat \
+		--with-system-graphite \
 		--with-system-hunspell \
 		--with-system-icu \
 		--with-system-jars \
@@ -316,10 +316,10 @@ CONFIGURE_ARGS+=\
 		--without-gssapi \
 		--without-system-apache-commons \
 		--without-system-beanshell \
-		--with-system-cppunit \
 		--without-system-hsqldb \
 		--without-system-jfreereport \
-		--without-system-libwpd
+		--without-system-libwpd \
+		--without-system-orcus
 
 .if ${BUILD_PACKAGES:M-java}
 BUILD_DEPENDS+=	devel/apache-ant

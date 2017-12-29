@@ -1,4 +1,4 @@
-$OpenBSD: patch-shell_source_unix_misc_senddoc_sh,v 1.1 2017/07/04 08:17:55 robert Exp $
+$OpenBSD: patch-shell_source_unix_misc_senddoc_sh,v 1.2 2017/12/29 07:39:30 robert Exp $
 
 Index: shell/source/unix/misc/senddoc.sh
 --- shell/source/unix/misc/senddoc.sh.orig
@@ -8,7 +8,7 @@ Index: shell/source/unix/misc/senddoc.sh
              shift;
          done
 -        /usr/bin/open -a "${MAILER}" ${ATTACH}
-+        ${LOCALBASE}/bin/open -a "${MAILER}" ${ATTACH}
++        /usr/local/bin/open -a "${MAILER}" ${ATTACH}
          ;;
  
      *)
@@ -18,8 +18,8 @@ Index: shell/source/unix/misc/senddoc.sh
  
 -        if [ -x /usr/bin/xdg-email ] ; then
 -            MAILER=/usr/bin/xdg-email
-+        if [ -x ${LOCALBASE}/bin/xdg-email ] ; then
-+            MAILER=${LOCALBASE}/bin/xdg-email
++        if [ -x /usr/local/bin/xdg-email ] ; then
++            MAILER=/usr/local/bin/xdg-email
          elif [ -n "$DESKTOP_LAUNCH" ]; then
              # http://lists.freedesktop.org/pipermail/xdg/2004-August/002873.html
              MAILER=${DESKTOP_LAUNCH}
@@ -27,10 +27,10 @@ Index: shell/source/unix/misc/senddoc.sh
 -            MAILER=/usr/bin/kde-open
 -        elif [ -x /usr/bin/xdg-open ] ; then
 -            MAILER=/usr/bin/xdg-open
-+        elif [ -n "$KDE_FULL_SESSION" -a -x ${LOCALBASE}/bin/kde-open ] ; then
-+            MAILER=${LOCALBASE}/bin/kde-open
-+        elif [ -x ${LOCALBASE}/bin/xdg-open ] ; then
-+            MAILER=${LOCALBASE}/bin/xdg-open
++        elif [ -n "$KDE_FULL_SESSION" -a -x /usr/local/bin/kde-open ] ; then
++            MAILER=/usr/local/bin/kde-open
++        elif [ -x /usr/local/bin/xdg-open ] ; then
++            MAILER=/usr/local/bin/xdg-open
          else
              echo "Unsupported mail client: `basename $MAILER | sed 's/-.*^//'`"
              exit 2
@@ -39,7 +39,7 @@ Index: shell/source/unix/misc/senddoc.sh
                      ;;
                  --attach)
 -                    if [ "$MAILER" = "/usr/bin/xdg-email" ]; then
-+                    if [ "$MAILER" = "${LOCALBASE}/bin/xdg-email" ]; then
++                    if [ "$MAILER" = "/usr/local/bin/xdg-email" ]; then
                          MAILTO="${MAILTO:-}${MAILTO:+&}attach="`echo "file://$2" | "${URI_ENCODE}"`
                      else
                          MAILTO="${MAILTO:-}${MAILTO:+&}attachment="`echo "file://$2" | "${URI_ENCODE}"`
