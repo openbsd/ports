@@ -303,7 +303,7 @@ buildset_top_matter = [
     "@pkgpath print/texlive/texmf-minimal",
     "@pkgpath print/teTeX/texmf",
     # Scaffold a dir for ports wishing to install extra tex macros.
-    "share/texmf-local",
+    "share/texmf-local/",
 ]
 buildset_bottom_matter = [
     "@exec-update if [ -e \"%D/bin/mktexlsr\" ]; " +

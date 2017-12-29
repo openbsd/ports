@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.31 2017/05/21 11:57:46 edd Exp $
+@comment $OpenBSD: PLIST,v 1.32 2017/12/29 17:43:35 edd Exp $
 @conflict teTeX_base-*
 @conflict pdfjam-*
 @conflict ht-<2
-@conflict texlive_texmf-buildset-<2015
+@conflict texlive_texmf-buildset-<2016
 @pkgpath print/teTeX/base
 @pkgpath print/pdfjam
 @pkgpath print/teTeX/base,-fmt
