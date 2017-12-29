@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.171 2017/11/28 10:15:10 espie Exp $
+# $OpenBSD: Port.pm,v 1.172 2017/12/29 15:49:21 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -305,8 +305,12 @@ sub setup
 		unshift(@{$job->{tasks}}, $task);
 		$job->{wakemeup} = 1;
 		$job->{lock_order} = $core->prop->{waited_for_lock}++;
-		return DPB::Task::Port::Lock->new(
-		    'waiting-for-lock #'.$job->{lock_order});
+		my $o = $job->{builder}->locker->lock_has_other_owner($core);
+		my $status = 'waiting-for-lock #'.$job->{lock_order};
+		if (defined $o) {
+			$status .= ' locked by '.$o;
+		}
+		return DPB::Task::Port::Lock->new($status);
 	} 
 
 	return $task;
@@ -316,7 +320,6 @@ sub try_lock
 {
 	my ($self, $core) = @_;
 	my $job = $core->job;
-	my $locker = $job->{builder}->locker;
 
 	my $fh = $job->{builder}->locker->lock($core);
 	if ($fh) {

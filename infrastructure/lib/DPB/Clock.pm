@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Clock.pm,v 1.8 2015/08/11 22:39:57 espie Exp $
+# $OpenBSD: Clock.pm,v 1.9 2017/12/29 15:49:21 espie Exp $
 #
 # Copyright (c) 2011-2013 Marc Espie <espie@openbsd.org>
 #
@@ -120,6 +120,7 @@ sub check_change
 		(!defined $sz && defined $self->{sz})) {
 		$self->{sz} = $sz;
 		$self->{time} = $current;
+		$self->{checked} = 0;
 	}
 	my $d = $current - $self->{time};
 	if ($d > $self->{max}) {
@@ -143,16 +144,38 @@ sub percent_message
 	}
 	return $progress;
 }
+
+sub extra_info
+{
+	my $self = shift;
+	if (!$self->{checked}) {
+		$self->{checked} = 1;
+		$self->{extra_info} = '';
+		if (open (my $fh, $self->{file})) {
+			# optimistic grab of last line of file
+			seek $fh, -150, 2;
+			local $/;
+			local $_ = <$fh>;
+			chomp;
+			if (m/Awaiting lock.*/) {
+				$self->{extra_info} = "stuck on $&";
+			}
+			close $fh;
+		}
+	}
+	return $self->{extra_info};
+}
+
 sub frozen_message
 {
 	my ($self, $diff) = @_;
 	my $unchanged = " frozen for ";
 	if ($diff > 7200) {
-		$unchanged .= int($diff/3600)." HOURS!";
+		$unchanged .= int($diff/3600)." HOURS!".$self->extra_info;
 	} elsif ($diff > 300) {
-		$unchanged .= int($diff/60)."mn";
+		$unchanged .= int($diff/60)."mn".$self->extra_info;
 	} elsif ($diff > 10) {
-		$unchanged .= int($diff)."s";
+		$unchanged .= int($diff)."s".$self->extra_info;
 	} else {
 		$unchanged = "";
 	}

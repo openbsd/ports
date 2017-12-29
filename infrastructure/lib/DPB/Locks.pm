@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Locks.pm,v 1.38 2016/11/07 21:26:06 afresh1 Exp $
+# $OpenBSD: Locks.pm,v 1.39 2017/12/29 15:49:21 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -152,6 +152,26 @@ sub dolock
 			return 0;
 		}
 	    });
+}
+
+sub lock_has_other_owner
+{
+	my ($self, $v) = @_;
+	my $lock = $self->lockname($v);
+	if (open my $fh, '<', $lock) {
+		while (<$fh>) {
+			next unless m/^dpb\=(\d+)\s+on\s+(\S+)$/;
+			my ($pid, $host) = ($1, $2);
+			if ($pid eq $self->{dpb_pid} && 
+			    $host eq $self->{dpb_host}) {
+			    	return undef;
+			} else {
+				return "pid $pid on $host";
+			}
+		}
+		close $fh;
+	}
+	return undef;
 }
 
 sub lock
