@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.38 2017/11/16 23:20:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.39 2017/12/29 08:30:05 ajacoutot Exp $
+
+PORTROACH=		limit:^1
 
 COMMENT=		generic spell checking library
 
