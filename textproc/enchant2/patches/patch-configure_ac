@@ -1,0 +1,28 @@
+$OpenBSD: patch-configure_ac,v 1.1.1.1 2017/12/29 09:05:40 ajacoutot Exp $
+
+From 924e3b2d06fcfa04daed51ea24126cd3f703ac00 Mon Sep 17 00:00:00 2001
+From: Ting-Wei Lan <lantw44@gmail.com>
+Date: Thu, 28 Dec 2017 16:27:53 +0800
+Subject: [PATCH] configure.ac: += operator is not supported by POSIX shell
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -236,7 +236,7 @@ AC_DEFUN([ENCHANT_CHECK_PKG_CONFIG_PROVIDER],
+       [PKG_CHECK_MODULES([$2], [m4_default([$3], [$1])],
+          [$2[]_CFLAGS="$[]$2[]_CFLAGS -DENCHANT_[]$2[]_DICT_DIR='\"$[]$1_dir\"'"
+          with_$1=yes
+-         build_providers+=" $1"],
++         build_providers="$build_providers $1"],
+          [if test "x$with_$1" != xcheck; then
+             AC_MSG_FAILURE([--with-[]$1 was given, but test(s) for $1 failed])
+           fi
+@@ -260,7 +260,7 @@ AC_DEFUN([ENCHANT_CHECK_LIB_PROVIDER],
+          with_[]$1=no
+       else
+          with_[]$1=yes
+-         build_providers+=" $1"
++         build_providers="$build_providers $1"
+          LIBS="$LIBS $5"
+       fi])
+    AM_CONDITIONAL(WITH_[]$2, test "x$with_[]$1" = xyes)])
