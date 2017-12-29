@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.71 2017/11/20 11:11:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.72 2017/12/29 19:12:40 kirby Exp $
 
 BROKEN-arm =	needs atomic ops; __sync_add_and_fetch_4
 BROKEN-hppa =	needs atomic ops; __sync_add_and_fetch_4
-BROKEN-powerpc = link fails, .gnu.linkonce.t.foo referenced in section .gnu.linkonce.r.foo [..] defined in discarded section
 
 COMMENT-main =	network monitoring system
 COMMENT-mysql =	MySQL support for icinga2
