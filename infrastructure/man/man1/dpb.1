@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.125 2017/12/19 16:08:15 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.126 2017/12/29 14:48:43 espie Exp $
 .\"
 .\" Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: December 19 2017 $
+.Dd $Mdocdate: December 29 2017 $
 .Dt DPB 1
 .Os
 .Sh NAME
@@ -1399,20 +1399,109 @@ particular step.
 .Sh DIAGNOSTICS
 .Bl -tag -offset aaaa -width truc
 .It Waiting for hosts to finish STARTUP...
+Displayed on the console while
+.Nm
+is setting up hosts, getting essential data from the ports tree,
+running a
+.Ar STARTUP
+script, collecting base library signatures.
 .It (Junk lock obtained for <host> at <time>)
 .It (Junk lock released for <host> at <time>)
+Printed in a
+.Pa paths/pkgpath.log
+file when attempting to get a
+.Sq junk lock .
+On a given host, all dependency operations are serialized.
+The dependency computation itself is handled by the main
+.Nm
+process, which needs to know exactly which dependencies are used
+at a given point, so that
+.Ar junk
+can clean up the host correctly.
+In particular,
+.Ar junk
+will not clean up dependencies already scheduled for installation.
+Ports that do no obtain the lock on first try are put to sleep.
 .It Received IO
-.It (Junk lock failure for <host> at <time>)
-.It Short-cut: depends already handled by <fullpkgpath>
-.It Forced junk, retainting: <tag>
-.It Don't run junk because nojunk in <fullpkgpath>
-.It Still tainted: <bool>
-.It Can't run junk because of lock on <>
-.It Avoided depends for <dependencies>
+Printed in a
+.Pa paths/pkgpath.log
+file when woken up before trying attempting to obtain a
+.Ar junk
+lock again...
 .It Woken up <fullpkgpath>
+Printed in a
+.Pa paths/pkgpath.log
+when waking another task by sending it SIGIO,
+so that it may attempt to obtain the junk lock again.
+.It (Junk lock failure for <host> at <time>)
+All ports sleeping for a
+.Ar junk
+lock are woken at the same time, so only one of them will obtain the lock,
+and the others will fail and be put to sleep again.
+.It Short-cut: depends already handled by <fullpkgpath>
+Printed in a
+.Pa paths/pkgpath.log
+when a port wakes up after others that ran
+.Xr pkg_add 1 .
+As
+.Nm
+maintains dependencies for a given host globally, it coalesces depends lists
+together.
+.It Don't run junk because nojunk in <fullpkgpath>
+Printed in a
+.Pa paths/pkgpath.log
+while evaluating whether to run
+.Ar junk .
+Normally,
+.Ar junk
+happens at regular intervals, but ports marked
+.Sq nojunk
+will delay that.
+.Nm
+still keeps track of attempted junks.
+.It Still tainted: <bool>
+A host may have a tag (kde3/kde4) that prevents building differently tagged
+ports.
+This will be cleansed by
+.Ar junk
+eventually.
+This prints in
+.Ar path/pkgpath.log
+to indicate whether this particular
+.Ar junk
+will keep the host tainted with a tag or not.
+.It Forced junk, retainting: <tag>
+Printed at end of
+.Ar prepare-results ,
+when an eventual junk was run even though some ports still hold a tag.
+.It Can't run junk because of lock on <fullpkgpath>
+.Ar junk
+can't happen because
+.Ar fullpkgpath
+is locked and is marked
+.Sq nojunk .
+.It Avoided depends for <dependencies>
+As dependencies are handled globally per-host, some ports can avoid
+.Xr pkg_add 1
+altogether because another port already installed the correct dependencies.
 .It SPINNING ON MAIN
+Printed in
+.Ar debug.log ,
+this is an actual bug: the engine said it can build, there are cores available,
+but
+.Nm
+can't start a new build job.
 .It SPINNING ON FETCH
-.It Killed: <job> stuck at <somewhere>
+Printed in
+.Ar debug.log ,
+this is an actual bug: the engine said it can fetch, there are fetching
+cores available, but
+.Nm
+can't start a new fetch job.
+.It KILLED: <job> stuck at <somewhere>
+Printed in
+.Ar path/pkgpath.log
+when a port exceeds its timeout.
 .El
 .Sh BUGS AND LIMITATIONS
 .Nm
