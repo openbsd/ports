@@ -1,0 +1,15 @@
+$OpenBSD: patch-doc_CMakeLists_txt,v 1.1.1.1 2017/12/29 22:41:06 bcallah Exp $
+
+Install manual page to the correct location.
+
+Index: doc/CMakeLists.txt
+--- doc/CMakeLists.txt.orig
++++ doc/CMakeLists.txt
+@@ -20,6 +20,6 @@ if (UNIX AND NOT APPLE)
+ 		)
+ 	INSTALL (
+ 		FILES ${man1}
+-		DESTINATION "share/man/man1"
++		DESTINATION "man/man1"
+ 		)
+ endif ()
