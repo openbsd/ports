@@ -1,4 +1,4 @@
-.\"	$OpenBSD: bulk.8,v 1.10 2016/09/18 22:09:12 schwarze Exp $
+.\"	$OpenBSD: bulk.8,v 1.11 2017/12/29 17:58:42 espie Exp $
 .\"
 .\"	Copyright (c) 2016 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
-.Dd $Mdocdate: September 18 2016 $
+.Dd $Mdocdate: December 29 2017 $
 .Dt BULK 8
 .Os
 .Sh NAME
@@ -79,18 +79,15 @@ need to be nfs exportable, nor even inside the chroot.
 .Ox
 now comes with default users for package builds, namely _pbuild and _pfetch.
 .Pp
-However, the default
+The default
 .Xr login.conf 5
-is too small for building the largest ports and for machines with
-lots of cores.
-You should probably increase the limit on the number of processes and
-on the default data size for _pbuild.
+is appropriate for most setups, but _pbuild's datasize-cur will need
+to be bumped for a few ports, like pypy.
+Likewise, maxproc-cur is too small for machines with more than 4-6 cpus.
 .Pp
-Note that _pbuild does not need network access, and can be blocked using
-.Xr pf 4
-with a rule such as
-.Bd -literal -offset indent
-block out quick proto {tcp,udp} from self user _pbuild
+Note that _pbuild does not need network access, and is now blocked by default
+in
+.Xr pf 4 .
 .Ed
 .Pp
 Recent
@@ -100,6 +97,12 @@ systems do not need any kind of
 setup for bulk ports builds, as
 .Xr dpb 1
 is run as root and drops permissions appropriately.
+.Pp
+However, you may still want to setup
+.Xr doas 1
+for root, if you want to manually fix ports, as
+.Ar PORTS_PRIVSEP
+relies on it.
 .Ss 2. Setup chrooted builds on the master
 Populate the initial chroot with
 .Xr proot 1 .
