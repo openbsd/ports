@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: MiniCurses.pm,v 1.12 2016/06/28 15:28:20 espie Exp $
+# $OpenBSD: MiniCurses.pm,v 1.13 2017/12/29 16:52:34 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -163,6 +163,11 @@ sub mogrify
 	if ($line =~ m/waiting-for-lock/) {
 		$line = $self->color($line, BLUE);
 		$self->default_fg(BLUE);
+	} elsif ($line =~ m/stuck on/) {
+			$line = $self->bg($self->color($line, BLACK), RED);
+			$self->default_bg(RED);
+			$self->default_fg(BLACK);
+			$percent = WHITE;
 	} elsif ($line =~ m/frozen/) {
 		if ($line =~ m/for\s+\d+\s*(mn|HOURS)/) {
 			$line = $self->bg($self->color($line, BLACK), RED);
