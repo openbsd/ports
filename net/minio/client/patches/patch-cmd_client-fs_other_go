@@ -1,6 +1,7 @@
-$OpenBSD: patch-cmd_client-fs_other_go,v 1.1.1.1 2017/12/23 21:19:39 landry Exp $
+$OpenBSD: patch-cmd_client-fs_other_go,v 1.2 2017/12/29 08:47:05 landry Exp $
 
 https://github.com/minio/mc/pull/2342
+https://github.com/minio/mc/commit/96dc4f920d0b36b80a247880af78adfb40cac161
 
 Index: cmd/client-fs_other.go
 --- cmd/client-fs_other.go.orig
