@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.5 2017/01/03 19:24:43 landry Exp $
+# $OpenBSD: Makefile,v 1.6 2017/12/29 07:23:08 florian Exp $
 
 COMMENT =		python bindings for the RIPE Atlas API
 
 MODPY_EGG_VERSION =	1.3
 DISTNAME =		ripe.atlas.cousteau-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		net
 
 HOMEPAGE =		https://github.com/RIPE-NCC/ripe-atlas-cousteau
 
-MAINTAINER=		Florian Obser <florian+ports@narrans.de>
+MAINTAINER =		Stuart Henderson <sthen@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
