@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2017/04/19 13:10:16 edd Exp $
+# $OpenBSD: Makefile,v 1.5 2017/12/29 15:19:14 edd Exp $
 
 COMMENT =		TeX Live texmf subsetter tool and Python library.
 
 DISTNAME =		texscythe-${MODPY_EGG_VERSION}
 PKGNAME =		py-texscythe-${MODPY_EGG_VERSION}
-MODPY_EGG_VERSION =	0.3
+MODPY_EGG_VERSION =	0.3.1
 
 CATEGORIES =		devel print
 
@@ -26,8 +26,8 @@ BUILD_DEPENDS +=	${RUN_DEPENDS}
 # pre-build database for last two texlive versions.
 # texlive port can then use these directly for PLIST generation.
 post-build:
+	cd ${WRKBUILD} && ./texscyther -t texlive2017.tlpdb.gz --initdb
 	cd ${WRKBUILD} && ./texscyther -t texlive2016.tlpdb.gz --initdb
-	cd ${WRKBUILD} && ./texscyther -t texlive2015.tlpdb.gz --initdb
 
 do-test:
 	@${MODPY_TEST_TARGET} --pytest-args="--runslow"
@@ -35,6 +35,6 @@ do-test:
 EXAMPLES =		${PREFIX}/share/examples/py-texscythe/
 post-install:
 	${INSTALL_DATA_DIR} ${EXAMPLES}
-	${INSTALL_DATA} ${WRKSRC}/texlive201{5,6}.tlpdb.gz{,.db} ${EXAMPLES}
+	${INSTALL_DATA} ${WRKSRC}/texlive201{6,7}.tlpdb.gz{,.db} ${EXAMPLES}
 
 .include <bsd.port.mk>
