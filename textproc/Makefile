@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.554 2017/12/07 15:57:03 pirofti Exp $
+# $OpenBSD: Makefile,v 1.555 2017/12/29 09:06:11 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -37,6 +37,7 @@
      SUBDIR += ebook-tools
      SUBDIR += elasticsearch
      SUBDIR += enchant
+     SUBDIR += enchant2
      SUBDIR += exempi
      SUBDIR += extract_url
      SUBDIR += fcbanner
