@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.447 2017/11/20 19:25:21 kili Exp $
+# $OpenBSD: Makefile,v 1.448 2017/12/29 22:41:58 bcallah Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -43,6 +43,7 @@
      SUBDIR += djvulibre
      SUBDIR += dmtx-utils
      SUBDIR += dpic
+     SUBDIR += drawpile
      SUBDIR += dumpmpeg
      SUBDIR += dvdrip
      SUBDIR += enblend-enfuse
