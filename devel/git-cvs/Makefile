@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.7 2015/11/01 23:09:18 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2017/12/29 07:24:49 florian Exp $
 
 COMMENT =	import changesets from CVS into Git
 
 MODPY_EGG_VERSION = 0.1.0
-REVISION =	1
+REVISION =	2
 
 DISTNAME =	git-cvs-${MODPY_EGG_VERSION}
 DISTFILES =	${DISTNAME}{${MODPY_EGG_VERSION}}.tar.gz
 CATEGORIES =	devel
 
 HOMEPAGE =	https://github.com/ustuehler/git-cvs
-
-MAINTAINER =	Florian Obser <florian+ports@narrans.de>
 
 # BSD
 PERMIT_PACKAGE_CDROM = Yes

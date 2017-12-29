@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2017/09/23 10:51:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2017/12/29 07:24:49 florian Exp $
 
 COMMENT =	perl module for IPv4/IPv6 address parsing
 
 MODULES =	cpan
 DISTNAME =	Net-IP-XS-0.13
 CATEGORIES =	net
-REVISION =	0
-
-MAINTAINER =	Florian Obser <florian+ports@narrans.de>
+REVISION =	1
 
 # GPL
 PERMIT_PACKAGE_CDROM =	Yes

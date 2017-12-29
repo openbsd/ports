@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.3 2017/01/03 19:24:43 landry Exp $
+# $OpenBSD: Makefile,v 1.4 2017/12/29 07:24:49 florian Exp $
 
 COMMENT =		python socket.io client library
 
 MODPY_EGG_VERSION =	0.6.7
 DISTNAME =		socketIO_client-${MODPY_EGG_VERSION}
 PKGNAME =		py-socketIO-client-${MODPY_EGG_VERSION}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		net
 
 HOMEPAGE =		https://github.com/invisibleroads/socketIO-client
-
-MAINTAINER=		Florian Obser <florian+ports@narrans.de>
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes

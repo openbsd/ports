@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.5 2017/01/03 19:24:43 landry Exp $
+# $OpenBSD: Makefile,v 1.6 2017/12/29 07:24:49 florian Exp $
 
 COMMENT =		WebSocket client for Python
 
 MODPY_EGG_VERSION =	0.37.0
 DISTNAME =		websocket_client-${MODPY_EGG_VERSION}
 PKGNAME =		py-websocket-client-${MODPY_EGG_VERSION}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		net
 
 HOMEPAGE =		https://github.com/liris/websocket-client
-
-MAINTAINER=		Florian Obser <florian+ports@narrans.de>
 
 # LGPLv2.1+
 PERMIT_PACKAGE_CDROM =	Yes
