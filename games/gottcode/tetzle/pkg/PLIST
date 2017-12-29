@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2017/11/02 12:22:12 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2017/12/29 23:32:46 bcallah Exp $
 @bin bin/tetzle
 @man man/man6/tetzle.6
 share/applications/tetzle.desktop
@@ -21,6 +21,7 @@ share/pixmaps/
 share/pixmaps/tetzle.xpm
 share/tetzle/
 share/tetzle/translations/
+share/tetzle/translations/tetzle_ca.qm
 share/tetzle/translations/tetzle_cs.qm
 share/tetzle/translations/tetzle_de.qm
 share/tetzle/translations/tetzle_en.qm
