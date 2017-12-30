@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2017/12/29 07:23:08 florian Exp $
+# $OpenBSD: Makefile,v 1.8 2017/12/30 21:57:21 sthen Exp $
 
 COMMENT =		official command-line client for RIPE Atlas
 
-MODPY_EGG_VERSION =	2.0.2
+MODPY_EGG_VERSION =	2.2.2
 DISTNAME =		ripe.atlas.tools-${MODPY_EGG_VERSION}
-REVISION =		1
 
 CATEGORIES =		net
 

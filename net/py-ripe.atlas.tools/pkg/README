@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1.1.1 2015/11/17 20:57:41 florian Exp $
+$OpenBSD: README,v 1.2 2017/12/30 21:57:21 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -17,7 +17,7 @@ https://atlas.ripe.net/docs/built-in/
 
 Searching for public measurements
 ---------------------------------
-$ ripe-atlas measurements --search ping
+$ ripe-atlas measurement-search --type ping
 
 Examples
 ========

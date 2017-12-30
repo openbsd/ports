@@ -1,0 +1,38 @@
+$OpenBSD: patch-ripe_atlas_tools_commands_measurement_search_py,v 1.1 2017/12/30 21:57:21 sthen Exp $
+
+XXX prints escaped ansi colour sequences in "ripe-atlas measurement-search --type ping"
+e.g.
+
+Id      Type       Description                                            Status
+================================================================================
+b'\x1b[33m1000475 ping       Ping to 202.12.29.197(www.apricot.net)                Stopped\x1b[0m'
+b'\x1b[33m1000476 ping       Ping to 202.12.29.197(www.apricot.net)                Stopped\x1b[0m'
+b'\x1b[33m1001588 ping       Ping to 62.76.32.86(ulsu.ru)                          Stopped\x1b[0m'
+b'\x1b[33m1001603 ping       Ping to 212.117.166.225(amsterdamian.com)             Stopped\x1b[0m'
+[..snip..]
+
+Reverting to earlier code.
+
+
+Index: ripe/atlas/tools/commands/measurement_search.py
+--- ripe/atlas/tools/commands/measurement_search.py.orig
++++ ripe/atlas/tools/commands/measurement_search.py
+@@ -147,10 +147,14 @@ class Command(TabularFieldsMixin, BaseCommand):
+         print(colourise(hr, "bold"))
+ 
+         for measurement in truncated_measurements:
+-            lformat = self._get_line_format().format(*self._get_line_items(measurement))
+-            lcolour = self._get_colour_from_status(measurement.status_id)
+-            log = colourise(lformat, lcolour).encode("utf8")
+-            print(log)
++            print(colourise(self._get_line_format().format(
++                *self._get_line_items(measurement)
++            ), self._get_colour_from_status(measurement.status_id)))
++
++            # lformat = self._get_line_format().format(*self._get_line_items(measurement))
++            # lcolour = self._get_colour_from_status(measurement.status_id)
++            # log = colourise(lformat, lcolour).encode("utf8")
++            # print(log)
+ 
+         print(colourise(hr, "bold"))
+ 
