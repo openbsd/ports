@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2017/11/05 18:50:00 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2017/12/30 08:43:25 ajacoutot Exp $
 @bin bin/lou_allround
 @bin bin/lou_checkhyphens
 @bin bin/lou_checktable
@@ -280,6 +280,8 @@ share/liblouis/tables/litdigits6Dots.uti
 share/liblouis/tables/litdigits6DotsPlusDot6.uti
 share/liblouis/tables/loweredDigits6Dots.uti
 share/liblouis/tables/loweredDigits8Dots.uti
+share/liblouis/tables/lt-6dot.tbl
+share/liblouis/tables/lt-6dot.utb
 share/liblouis/tables/lt.ctb
 share/liblouis/tables/lt.tbl
 share/liblouis/tables/lv.tbl
@@ -317,6 +319,7 @@ share/liblouis/tables/nl_BE.tbl
 share/liblouis/tables/nl_NL.tbl
 share/liblouis/tables/no-no-8dot-fallback-6dot-g0.utb
 share/liblouis/tables/no-no-8dot.utb
+share/liblouis/tables/no-no-braillo-047-01.dis
 share/liblouis/tables/no-no-chardefs6.uti
 share/liblouis/tables/no-no-comp8.ctb
 share/liblouis/tables/no-no-g0.utb
