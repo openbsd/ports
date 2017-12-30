@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.31 2017/07/30 16:06:20 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2017/12/30 14:12:20 kirby Exp $
 
 BROKEN-hppa =	ICE on moc_qtsingleapplication.cxx
-BROKEN-powerpc = libmscore/pitchspelling.h:56:42: error: enumerator value -1 is too large for underlying type 'char'
 
 V =		2.1
 REVISION =	1
