@@ -1,4 +1,4 @@
-$OpenBSD: patch-setup_py,v 1.4 2017/07/22 20:53:21 ajacoutot Exp $
+$OpenBSD: patch-setup_py,v 1.5 2017/12/30 09:00:51 ajacoutot Exp $
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
@@ -9,40 +9,40 @@ Index: setup.py
 +    'openbsd': ['${LOCALBASE}/include'],
      'win32': ['c:/icu/include'],
      'sunos5': [],
- }
-@@ -48,6 +49,7 @@ CFLAGS = {
+     'cygwin': [],
+@@ -49,6 +50,7 @@ CFLAGS = {
      'darwin': ['-DPYICU_VER="%s"' %(VERSION), '-std=c++11'],
      'linux': ['-DPYICU_VER="%s"' %(VERSION), '-std=c++11'],
      'freebsd': ['-DPYICU_VER="%s"' %(VERSION), '-std=c++11'],
 +    'openbsd': ['-DPYICU_VER="%s"' %(VERSION), '-std=c++11'],
      'win32': ['/Zc:wchar_t', '/EHsc', '/DPYICU_VER=\\"%s\\"' %(VERSION)],
      'sunos5': ['-DPYICU_VER="%s"' %(VERSION), '-std=c++11'],
- }
-@@ -57,6 +59,7 @@ DEBUG_CFLAGS = {
+     'cygwin': ['-DPYICU_VER="%s"' %(VERSION), '-D_GNU_SOURCE=1', '-std=c++11'],
+@@ -59,6 +61,7 @@ DEBUG_CFLAGS = {
      'darwin': ['-O0', '-g', '-DDEBUG'],
      'linux': ['-O0', '-g', '-DDEBUG'],
      'freebsd': ['-O0', '-g', '-DDEBUG'],
 +    'openbsd': ['-O0', '-g', '-DDEBUG'],
      'win32': ['/Od', '/DDEBUG'],
      'sunos5': ['-DDEBUG'],
- }
-@@ -65,6 +68,7 @@ LFLAGS = {
+     'cygwin': ['-Og', '-g', '-DDEBUG'],
+@@ -68,6 +71,7 @@ LFLAGS = {
      'darwin': ['-L/usr/local/lib'],
      'linux': [],
      'freebsd': ['-L/usr/local/lib'],
 +    'openbsd': ['-L${LOCALBASE}/lib'],
      'win32': ['/LIBPATH:c:/icu/lib'],
      'sunos5': [],
- }
-@@ -73,6 +77,7 @@ LIBRARIES = {
+     'cygwin': [],
+@@ -77,6 +81,7 @@ LIBRARIES = {
      'darwin': ['icui18n', 'icuuc', 'icudata'],
      'linux': ['icui18n', 'icuuc', 'icudata'],
      'freebsd': ['icui18n', 'icuuc', 'icudata'],
 +    'openbsd': ['icui18n', 'icuuc', 'icudata'],
      'win32': ['icuin', 'icuuc', 'icudt'],
      'sunos5': ['icui18n', 'icuuc', 'icudata'],
- }
-@@ -82,6 +87,8 @@ if platform.startswith(('linux', 'gnu')):
+     'cygwin': ['icui18n', 'icuuc', 'icudata'],
+@@ -87,6 +92,8 @@ if platform.startswith(('linux', 'gnu')):
      platform = 'linux'
  elif platform.startswith('freebsd'):
      platform = 'freebsd'
