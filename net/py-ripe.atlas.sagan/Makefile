@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2017/12/29 07:23:08 florian Exp $
+# $OpenBSD: Makefile,v 1.8 2017/12/30 21:43:25 sthen Exp $
 
 COMMENT =		parsing library for RIPE Atlas measurement results
 
-MODPY_EGG_VERSION =	1.1.11
+MODPY_EGG_VERSION =	1.2.2
 DISTNAME =		ripe.atlas.sagan-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
 
 CATEGORIES =		net
 
