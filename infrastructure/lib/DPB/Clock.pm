@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Clock.pm,v 1.10 2017/12/29 16:52:34 espie Exp $
+# $OpenBSD: Clock.pm,v 1.11 2017/12/30 10:40:58 espie Exp $
 #
 # Copyright (c) 2011-2013 Marc Espie <espie@openbsd.org>
 #
@@ -121,7 +121,6 @@ sub check_change
 		(!defined $sz && defined $self->{sz})) {
 		$self->{sz} = $sz;
 		$self->{time} = $current;
-		$self->{checked} = 0;
 	}
 	my $d = $current - $self->{time};
 	if ($d > $self->{max}) {
