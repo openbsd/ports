@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2017/07/25 11:12:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2017/12/30 09:05:23 ajacoutot Exp $
 
 PKG_ARCH=		*
 
 COMMENT=		spellchecking library for Python
 
-MODPY_EGG_VERSION=	1.6.11
+MODPY_EGG_VERSION=	2.0.0
 DISTNAME=		pyenchant-${MODPY_EGG_VERSION}
 PKGNAME=		py-enchant-${MODPY_EGG_VERSION}
 
