@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2017/12/02 18:39:20 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.28 2017/12/30 09:21:49 ajacoutot Exp $
 @bin bin/liferea
 bin/liferea-add-feed
 lib/liferea/
@@ -124,6 +124,7 @@ share/liferea/opml/feedlist_fr.opml
 share/liferea/opml/feedlist_gl.opml
 share/liferea/opml/feedlist_he.opml
 share/liferea/opml/feedlist_hu.opml
+share/liferea/opml/feedlist_id.opml
 share/liferea/opml/feedlist_it.opml
 share/liferea/opml/feedlist_nl.opml
 share/liferea/opml/feedlist_pl.opml
