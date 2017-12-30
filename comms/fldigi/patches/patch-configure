@@ -1,8 +1,8 @@
-$OpenBSD: patch-configure,v 1.2 2017/09/04 16:48:45 sthen Exp $
+$OpenBSD: patch-configure,v 1.3 2017/12/30 22:02:40 sthen Exp $
 Index: configure
 --- configure.orig
 +++ configure
-@@ -12782,10 +12782,6 @@ fi
+@@ -12786,10 +12786,6 @@ fi
  $PULSEAUDIO_CFLAGS $HAMLIB_CFLAGS $PNG_CFLAGS $XMLRPC_CFLAGS $MAC_UNIVERSAL_CFLAGS \
  $INTL_CFLAGS $PTW32_CFLAGS $BFD_CFLAGS -pipe -Wall -fexceptions $OPT_CFLAGS $DEBUG_CFLAGS"
  
@@ -13,7 +13,7 @@ Index: configure
    if test "x$target_mingw32" = "xyes"; then
        FLDIGI_BUILD_CXXFLAGS="-mthreads $FLDIGI_BUILD_CXXFLAGS"
    fi
-@@ -12805,10 +12801,6 @@ $EXTRA_LIBS $FLXMLRPC_LIBS"
+@@ -12809,10 +12805,6 @@ $EXTRA_LIBS $FLXMLRPC_LIBS"
  # CPPFLAGS
    FLARQ_BUILD_CPPFLAGS="-I\$(srcdir) -I\$(srcdir)/include -I\$(srcdir)/fileselector \
  -I\$(srcdir)/flarq-src -I\$(srcdir)/flarq-src/include"
