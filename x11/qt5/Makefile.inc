@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile.inc,v 1.7 2017/07/29 00:07:13 zhuk Exp $
+# $OpenBSD: Makefile.inc,v 1.8 2017/12/31 09:50:53 kirby Exp $
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS} ${CLANG_ARCHS}
-BROKEN-powerpc =	never built - gcc ICE
 
 .include "Makefile.version"
 
