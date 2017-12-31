@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2017/12/14 17:43:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2017/12/31 17:39:38 ajacoutot Exp $
 
 COMMENT=		Lumina Desktop Environment
 
@@ -35,7 +35,7 @@ RUN_DEPENDS=		devel/desktop-file-utils \
 			x11/xscreensaver \
 			x11/gtk+3,-guic
 
-LIB_DEPENDS=		print/poppler,-qt5 \
+LIB_DEPENDS=		print/poppler,,-qt5 \
 			x11/qt5/qtmultimedia \
 			x11/qt5/qtsvg \
 			x11/qt5/qtx11extras
