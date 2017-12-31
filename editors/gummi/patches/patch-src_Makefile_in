@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_Makefile_in,v 1.1 2017/12/21 19:36:17 kili Exp $
+$OpenBSD: patch-src_Makefile_in,v 1.2 2017/12/31 20:05:45 kili Exp $
 
 Using -export-dynamic isn't supported by clang, and it's pure luck
 that it works as expected with gcc. -rdynamic works with both and
@@ -8,9 +8,9 @@ warnings when compiling (rather than linking) with clang.
 Index: src/Makefile.in
 --- src/Makefile.in.orig
 +++ src/Makefile.in
-@@ -224,7 +224,7 @@ top_build_prefix = @top_build_prefix@
- top_builddir = @top_builddir@
+@@ -301,7 +301,7 @@ top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
+ AUTOMAKE_OPTIONS = subdir-objects
  AM_CFLAGS = $(GUI_CFLAGS) \
 -	    -export-dynamic -Wall -O2 \
 +	    -rdynamic -Wall -O2 \
