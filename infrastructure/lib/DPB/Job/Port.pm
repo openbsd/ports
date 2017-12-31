@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.173 2017/12/29 17:08:18 espie Exp $
+# $OpenBSD: Port.pm,v 1.174 2017/12/31 13:03:07 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -513,6 +513,7 @@ sub setup
 	my ($task, $core) = @_;
 	my $job = $core->job;
 	$job->{pos} = tell($job->{logfh});
+	$job->track_lock;
 	return $task->SUPER::setup($core);
 }
 
@@ -689,6 +690,7 @@ sub setup
 	my $job = $core->job;
 
 	$job->{builder}{state}{affinity}->start($job->{v}, $core);
+	$job->track_lock;
 
 	return $job->next_task($core);
 }
@@ -1054,9 +1056,15 @@ sub set_watch
 			last;
 		}
 	}
-	$self->{watched} = DPB::Watch->new(
+	$self->{watched} = DPB::Port::Watch->new(
 	    $logger->file($logger->log_pkgpath($v)),
 	    $expected, $self->{offset}, $self->{started});
+}
+
+sub track_lock
+{
+	my $self = shift;
+	$self->{watched}->track_lock;
 }
 
 sub watched
@@ -1288,6 +1296,51 @@ sub new
 	push(@{$job->{tasks}},
 		    DPB::Task::Port::Install->new('install'));
 	return $job;
+}
+
+package DPB::Port::Watch;
+our @ISA = qw(DPB::Watch);
+
+# set things up so that we only trak Awaiting lock once.
+
+sub track_lock
+{
+	my $self = shift;
+	$self->{tracked} //= 1;
+}
+
+
+sub tweak_msg
+{
+	my ($self, $rmsg) = @_;
+	if (defined $self->{tracked} && $self->{tracked} == 1) {
+		# we tracked already, so never do it again
+		$self->{tracked} = 0;
+		if (my $fh = $self->{file}->open('<')) {
+			# optimistic grab of last line of file
+			seek $fh, -150, 2;
+			local $/;
+			local $_ = <$fh>;
+			chomp;
+			if (m/Awaiting lock\s+(.*)/) {
+				$self->{override} = " stuck on $1";
+			}
+			close $fh;
+		}
+	}
+	if (defined $self->{override}) {
+		$$rmsg = $self->{override};
+	}
+}
+
+sub frozen_message
+{
+	my ($self, $diff) = @_;
+	my $msg = $self->SUPER::frozen_message($diff);
+	if ($msg ne "") {
+		$self->tweak_msg(\$msg);
+	}
+	return $msg;
 }
 
 1;

@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Clock.pm,v 1.12 2017/12/30 10:47:23 espie Exp $
+# $OpenBSD: Clock.pm,v 1.13 2017/12/31 13:03:07 espie Exp $
 #
 # Copyright (c) 2011-2013 Marc Espie <espie@openbsd.org>
 #
@@ -146,28 +146,6 @@ sub percent_message
 	return $progress;
 }
 
-sub tweak_msg
-{
-	my ($self, $rmsg) = @_;
-	if (!$self->{checked}) {
-		$self->{checked} = 1;
-		delete $self->{override};
-		if (my $fh = $self->{file}->open('<')) {
-			# optimistic grab of last line of file
-			seek $fh, -150, 2;
-			local $/;
-			local $_ = <$fh>;
-			chomp;
-			if (m/Awaiting lock\s+(.*)/) {
-				$self->{override} = " stuck on $1";
-			}
-			close $fh;
-		}
-	}
-	if (defined $self->{override}) {
-		$$rmsg = $self->{override};
-	}
-}
 
 sub frozen_message
 {
@@ -175,13 +153,10 @@ sub frozen_message
 	my $unchanged = " frozen for ";
 	if ($diff > 7200) {
 		$unchanged .= int($diff/3600)." HOURS!";
-		$self->tweak_msg(\$unchanged);
 	} elsif ($diff > 300) {
 		$unchanged .= int($diff/60)."mn";
-		$self->tweak_msg(\$unchanged);
 	} elsif ($diff > 10) {
 		$unchanged .= int($diff)."s";
-		$self->tweak_msg(\$unchanged);
 	} else {
 		$unchanged = "";
 	}
