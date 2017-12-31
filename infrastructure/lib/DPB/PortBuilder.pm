@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortBuilder.pm,v 1.78 2017/10/05 22:41:32 espie Exp $
+# $OpenBSD: PortBuilder.pm,v 1.79 2017/12/31 13:01:53 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -245,6 +245,7 @@ sub build
 		$self->report($v, $job, $core); 
 		&$final_sub($job->{failed});
 	    });
+	$job->set_watch($self->logger, $v);
 	$core->start_job($job, $v);
 	if ($job->{parallel}) {
 		$core->can_swallow($job->{parallel}-1);
@@ -252,7 +253,6 @@ sub build
 	print $lock "host=", $core->hostname, "\n",
 	    "pid=$core->{pid}\n",
 	    "start=$start (", DPB::Util->time2string($start), ")\n";
-	$job->set_watch($self->logger, $v);
 }
 
 sub force_junk
