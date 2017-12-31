@@ -1,0 +1,14 @@
+$OpenBSD: patch-include_clang_Frontend_CompilerInvocation_h,v 1.1.1.1 2017/12/31 18:06:38 bcallah Exp $
+
+Index: include/clang/Frontend/CompilerInvocation.h
+--- include/clang/Frontend/CompilerInvocation.h.orig
++++ include/clang/Frontend/CompilerInvocation.h
+@@ -48,7 +48,7 @@ class DiagnosticsEngine;
+ /// report the error(s).
+ bool ParseDiagnosticArgs(DiagnosticOptions &Opts, llvm::opt::ArgList &Args,
+                          DiagnosticsEngine *Diags = nullptr,
+-                         bool DefaultDiagColor = true,
++                         bool DefaultDiagColor = false,
+                          bool DefaultShowOpt = true);
+ 
+ class CompilerInvocationBase {

@@ -1,0 +1,16 @@
+$OpenBSD: patch-runtime_flang_open_c,v 1.1.1.1 2017/12/31 18:06:38 bcallah Exp $
+
+No async IO support
+
+Index: runtime/flang/open.c
+--- runtime/flang/open.c.orig
++++ runtime/flang/open.c
+@@ -928,7 +928,7 @@ ENTF90IO(OPEN_ASYNC, open_async)(__INT_T *istat, DCHAR
+   /* enable asynchronous i/o */
+ 
+   retval = 0;
+-#if !defined(TARGET_WIN_X8632) && !defined(TARGET_OSX)
++#if !defined(TARGET_WIN_X8632) && !defined(TARGET_OSX) && !defined(__OpenBSD__)
+   if ((Fcb->acc == FIO_STREAM || Fcb->acc == FIO_SEQUENTIAL
+        || Fcb->acc == FIO_DIRECT)
+       &&

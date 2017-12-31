@@ -1,0 +1,25 @@
+$OpenBSD: patch-lib_Driver_ToolChains_Gnu_cpp,v 1.1.1.1 2017/12/31 18:06:38 bcallah Exp $
+
+Index: lib/Driver/ToolChains/Gnu.cpp
+--- lib/Driver/ToolChains/Gnu.cpp.orig
++++ lib/Driver/ToolChains/Gnu.cpp
+@@ -2345,6 +2345,9 @@ bool Generic_GCC::IsIntegratedAssemblerDefault() const
+   case llvm::Triple::systemz:
+   case llvm::Triple::mips:
+   case llvm::Triple::mipsel:
++  case llvm::Triple::sparc:
++  case llvm::Triple::sparcel:
++  case llvm::Triple::sparcv9:
+     return true;
+   case llvm::Triple::mips64:
+   case llvm::Triple::mips64el:
+@@ -2352,7 +2355,8 @@ bool Generic_GCC::IsIntegratedAssemblerDefault() const
+     // identify the ABI in use (Debian) or only use N64 for MIPS64 (Android).
+     // Other targets are unable to distinguish N32 from N64.
+     if (getTriple().getEnvironment() == llvm::Triple::GNUABI64 ||
+-        getTriple().isAndroid())
++        getTriple().isAndroid() ||
++        getTriple().isOSOpenBSD())
+       return true;
+     return false;
+   default:

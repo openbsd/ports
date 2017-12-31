@@ -1,0 +1,97 @@
+$OpenBSD: patch-runtime_flang_unf_c,v 1.1.1.1 2017/12/31 18:06:38 bcallah Exp $
+
+No async IO support
+
+Index: runtime/flang/unf.c
+--- runtime/flang/unf.c.orig
++++ runtime/flang/unf.c
+@@ -146,11 +146,7 @@ adjust_fpos(FIO_FCB *cur_file, long offset, int whence
+ {
+   int retval;
+ 
+-  if (cur_file->asy_rw) {
+-    Fio_asy_fseek(cur_file->asyptr, offset, whence);
+-  } else {
+     retval = __io_fseek(cur_file->fp, offset, whence);
+-  }
+   return retval;
+ }
+ 
+@@ -241,13 +237,8 @@ write_unf_buf()
+ static bool
+ unf_fwrite(char *buf, long size, long num, FIO_FCB *fcb)
+ {
+-  if (fcb->asy_rw) {
+-    /* Do this write asynchronously. */
+-    return (Fio_asy_write(fcb->asyptr, buf, size * num) == 0);
+-  } else {
+     /* Do this write "normally." */
+     return (FWRITE(buf, size, num, fcb->fp) == num);
+-  }
+   return FALSE;
+ }
+ 
+@@ -380,6 +371,7 @@ __unf_init(bool read, bool byte_swap)
+     }
+   }
+ 
++#if 0
+   if (a) { /* starting async i/o? */
+     if (Fcb->asyptr == (void *)0) {
+       UNF_ERR(FIO_EASYNC);
+@@ -395,6 +387,7 @@ __unf_init(bool read, bool byte_swap)
+       UNF_ERR(__io_errno());
+     }
+   }
++#endif
+ 
+   if (!read) {
+     if (Fcb->acc != FIO_DIRECT && !tmp_gbl)
+@@ -490,6 +483,7 @@ unf_read_do_resid:
+ 
+   if ((stride == 0) || (stride == item_length)) {
+     unf_rec.u.s.bytecnt += nbytes;
++#if 0
+     if (Fcb->asy_rw) { /* XXXXXX XX */
+       if (Fio_asy_read(Fcb->asyptr, item, nbytes) == -1) {
+         ret_val = __fortio_error(__io_errno());
+@@ -497,6 +491,7 @@ unf_read_do_resid:
+       }
+       return (0);
+     }
++#endif
+     if (__io_fread(item, nbytes, 1, Fcb->fp) != 1) {
+       if (__io_feof(Fcb->fp)) {
+         ret_val = __fortio_error(FIO_EEOF);
+@@ -801,6 +796,7 @@ __f90io_unf_write(int type,   /* data type of data (se
+     return 0;
+   }
+ 
++#if 0
+   if (Fcb->asy_rw) { /* stop any async i/o */
+     Fcb->asy_rw = 0;
+     if (Fio_asy_disable(Fcb->asyptr) == -1) {
+@@ -808,6 +804,7 @@ __f90io_unf_write(int type,   /* data type of data (se
+       goto unf_write_err;
+     }
+   }
++#endif
+ 
+   /* copy 'count' items from 'item' into buffer, skipping by stride  */
+ 
+@@ -1365,6 +1362,7 @@ usw_read_do_resid:
+     return 0;
+   }
+ 
++#if 0
+   if (Fcb->asy_rw) { /* stop any async i/o */
+     Fcb->asy_rw = 0;
+     if (Fio_asy_disable(Fcb->asyptr) == -1) {
+@@ -1372,6 +1370,7 @@ usw_read_do_resid:
+       goto uswr_err;
+     }
+   }
++#endif
+ 
+   /* copy 'count' items from stream into 'item', skipping by 'stride' */
+ 

@@ -1,0 +1,17 @@
+$OpenBSD: patch-runtime_flangrti_CMakeLists_txt,v 1.1.1.1 2017/12/31 18:06:38 bcallah Exp $
+
+We need -lexecinfo. Use the static version for ease.
+
+Index: runtime/flangrti/CMakeLists.txt
+--- runtime/flangrti/CMakeLists.txt.orig
++++ runtime/flangrti/CMakeLists.txt
+@@ -200,6 +200,9 @@ if (NOT DEFINED LIBOMP_EXPORT_DIR)
+   target_link_libraries(flangrti_shared ${FLANG_LIBOMP})
+ endif()
+ 
++# Import execinfo
++target_link_libraries(flangrti_shared ${FLANG_LIBEXECINFO})
++
+ if( ${TARGET_ARCHITECTURE} STREQUAL "aarch64" )
+   target_compile_definitions(flangrti_static PRIVATE TARGET_LINUX_ARM)
+   target_compile_definitions(flangrti_shared PRIVATE TARGET_LINUX_ARM)

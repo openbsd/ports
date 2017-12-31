@@ -1,0 +1,19 @@
+$OpenBSD: patch-lib_Driver_ToolChains_OpenBSD_h,v 1.1.1.1 2017/12/31 18:06:38 bcallah Exp $
+
+Index: lib/Driver/ToolChains/OpenBSD.h
+--- lib/Driver/ToolChains/OpenBSD.h.orig
++++ lib/Driver/ToolChains/OpenBSD.h
+@@ -59,6 +59,13 @@ class LLVM_LIBRARY_VISIBILITY OpenBSD : public Generic
+   bool IsObjCNonFragileABIDefault() const override { return true; }
+   bool isPIEDefault() const override { return true; }
+ 
++  CXXStdlibType GetCXXStdlibType(const llvm::opt::ArgList &Args) const override;
++  void AddClangCXXStdlibIncludeArgs(
++      const llvm::opt::ArgList &DriverArgs,
++      llvm::opt::ArgStringList &CC1Args) const override;
++  void AddCXXStdlibLibArgs(const llvm::opt::ArgList &Args,
++                           llvm::opt::ArgStringList &CmdArgs) const override;
++
+   unsigned GetDefaultStackProtectorLevel(bool KernelOrKext) const override {
+     return 2;
+   }

@@ -1,0 +1,23 @@
+$OpenBSD: patch-runtime_flang_wait_c,v 1.1.1.1 2017/12/31 18:06:38 bcallah Exp $
+
+No async IO support
+
+Index: runtime/flang/wait.c
+--- runtime/flang/wait.c.orig
++++ runtime/flang/wait.c
+@@ -56,6 +56,7 @@ __INT_T *id;
+ 
+   /* check for outstanding async i/o */
+ 
++#if 0
+   if (f->asy_rw) {/* stop any async i/o */
+     f->asy_rw = 0;
+     if (Fio_asy_disable(f->asyptr) == -1) {
+@@ -64,6 +65,7 @@ __INT_T *id;
+       return s;
+     }
+   }
++#endif
+ 
+   __fortio_errend03();
+   return 0; /* no error occurred */

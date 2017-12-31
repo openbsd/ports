@@ -1,0 +1,16 @@
+$OpenBSD: patch-runtime_flangrti_dumpregs_h,v 1.1.1.1 2017/12/31 18:06:38 bcallah Exp $
+
+No gregset_t, from FreeBSD
+
+Index: runtime/flangrti/dumpregs.h
+--- runtime/flangrti/dumpregs.h.orig
++++ runtime/flangrti/dumpregs.h
+@@ -21,6 +21,6 @@
+  *  Declare routines that access the machine registers
+  */
+ 
+-void dumpregs(gregset_t *regs);
+-gregset_t *getRegs(ucontext_t *u);
++void dumpregs(void *regs);
++void *getRegs(ucontext_t *u);
+ 

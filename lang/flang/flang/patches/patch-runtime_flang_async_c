@@ -1,0 +1,21 @@
+$OpenBSD: patch-runtime_flang_async_c,v 1.1.1.1 2017/12/31 18:06:38 bcallah Exp $
+
+No async IO support
+
+Index: runtime/flang/async.c
+--- runtime/flang/async.c.orig
++++ runtime/flang/async.c
+@@ -27,6 +27,8 @@
+  * Fio_asy_close - called from close
+  */
+ 
++#if 0
++
+ #if !defined(TARGET_WIN_X8664)
+ #include <unistd.h>
+ #include <stdlib.h>
+@@ -416,3 +418,4 @@ Fio_asy_close(struct asy *asy)
+   return (n);
+ }
+ 
++#endif

@@ -1,0 +1,13 @@
+$OpenBSD: patch-include_clang_Sema_Sema_h,v 1.1.1.1 2017/12/31 18:06:38 bcallah Exp $
+
+Index: include/clang/Sema/Sema.h
+--- include/clang/Sema/Sema.h.orig
++++ include/clang/Sema/Sema.h
+@@ -10255,6 +10255,7 @@ class Sema { (public)
+     FST_FreeBSDKPrintf,
+     FST_OSTrace,
+     FST_OSLog,
++    FST_Syslog,
+     FST_Unknown
+   };
+   static FormatStringType GetFormatStringType(const FormatAttr *Format);

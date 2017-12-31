@@ -1,0 +1,16 @@
+$OpenBSD: patch-runtime_flang_CMakeLists_txt,v 1.1.1.1 2017/12/31 18:06:38 bcallah Exp $
+
+No -lrt
+
+Index: runtime/flang/CMakeLists.txt
+--- runtime/flang/CMakeLists.txt.orig
++++ runtime/flang/CMakeLists.txt
+@@ -491,7 +491,7 @@ add_flang_library(flang_shared
+ set_property(TARGET flang_shared PROPERTY OUTPUT_NAME flang)
+ target_link_libraries(flang_shared ${CMAKE_BINARY_DIR}/${CMAKE_CFG_INTDIR}/lib/libflangrti.so)
+ # Resolve symbols against libm and librt
+-target_link_libraries(flang_shared m rt)
++target_link_libraries(flang_shared m)
+ 
+ set(SHARED_LIBRARY FALSE)
+ 

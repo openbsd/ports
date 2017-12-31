@@ -1,0 +1,22 @@
+$OpenBSD: patch-runtime_flang_inquire_c,v 1.1.1.1 2017/12/31 18:06:38 bcallah Exp $
+
+No async IO support
+
+Index: runtime/flang/inquire.c
+--- runtime/flang/inquire.c.orig
++++ runtime/flang/inquire.c
+@@ -104,12 +104,14 @@ inquire(__INT_T *unit, char *file_ptr, __INT_T *bitv, 
+ 
+   /* check for outstanding async i/o */
+ 
++#if 0
+   if ((f != NULL) && f->asy_rw) { /* stop any async i/o */
+     f->asy_rw = 0;
+     if (Fio_asy_disable(f->asyptr) == -1) {
+       return (__fortio_error(__io_errno()));
+     }
+   }
++#endif
+ 
+   f2 = f; /* save fcb for inquire2 */
+ 

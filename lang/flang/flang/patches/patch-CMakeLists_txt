@@ -1,0 +1,23 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2017/12/31 18:06:38 bcallah Exp $
+
+Add OpenBSD/amd64
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -51,6 +51,15 @@ if( ${TARGET_OS} STREQUAL "Linux" )
+     message("Unsupported architecture: ${TARGET_ARCHITECTURE}" )
+     return()
+   endif()
++elseif( ${TARGET_OS} STREQUAL "OpenBSD")
++  set(OS "OPENBSD")
++  set(OSNAME "OpenBSD")
++  if( ${TARGET_ARCHITECTURE} STREQUAL "amd64" )
++    set(ARCHNAME x86-64)
++    set(ARCH X86)
++    set(WRDSZ 64)
++    set(TARGET_ARCHITECTURE x86_64)
++  endif()
+ else()
+   message("Unsupported OS: ${TARGET_OS}" )
+   return()

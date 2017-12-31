@@ -1,0 +1,13 @@
+$OpenBSD: patch-lib_Sema_SemaDeclAttr_cpp,v 1.1.1.1 2017/12/31 18:06:38 bcallah Exp $
+
+Index: lib/Sema/SemaDeclAttr.cpp
+--- lib/Sema/SemaDeclAttr.cpp.orig
++++ lib/Sema/SemaDeclAttr.cpp
+@@ -3168,6 +3168,7 @@ static FormatAttrKind getFormatAttrKind(StringRef Form
+       .Case("freebsd_kprintf", SupportedFormat) // FreeBSD.
+       .Case("os_trace", SupportedFormat)
+       .Case("os_log", SupportedFormat)
++      .Case("syslog", SupportedFormat)
+ 
+       .Cases("gcc_diag", "gcc_cdiag", "gcc_cxxdiag", "gcc_tdiag", IgnoredFormat)
+       .Default(InvalidFormat);

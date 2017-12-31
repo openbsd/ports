@@ -1,0 +1,36 @@
+$OpenBSD: patch-runtime_flangrti_trace_lin_c,v 1.1.1.1 2017/12/31 18:06:38 bcallah Exp $
+
+We don't have sys/ucontext.h
+No gregset_t, make them void
+
+Index: runtime/flangrti/trace_lin.c
+--- runtime/flangrti/trace_lin.c.orig
++++ runtime/flangrti/trace_lin.c
+@@ -16,7 +16,9 @@
+  */
+ 
+ #include <signal.h>
++#if !defined(__OpenBSD__)
+ #include <sys/ucontext.h>
++#endif
+ #include <execinfo.h>
+ #include <stdioInterf.h>
+ #include "dumpregs.h"
+@@ -85,7 +87,7 @@ static struct sigs sigs[] = {
+     {0, CODNULL, NULL} /* end of list */
+ };
+ 
+-static gregset_t *regs; /* pointer to regs at signal  */
++static void *regs; /* pointer to regs at signal  */
+ 
+ /* walk the stack back */
+ 
+@@ -99,7 +101,7 @@ __abort_trace(int skip)
+   char **strings;
+   size_t i;
+ 
+-  if (regs != (gregset_t *)0) {
++  if (regs != (void *)0) {
+     dumpregs(regs);
+   }
+ 

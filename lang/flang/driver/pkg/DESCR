@@ -1,0 +1,2 @@
+Flang is a Fortran compiler targeting LLVM.
+This package contains the compiler driver, a modified version of clang.

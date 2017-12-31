@@ -1,0 +1,3 @@
+Flang is a Fortran compiler targeting LLVM.
+This package includes the compiler passes and runtime library.
+Flang is based on the Nvidia PGI Fortran compiler.

@@ -1,0 +1,20 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/12/31 18:06:38 bcallah Exp $
+@bin bin/flang1
+@bin bin/flang2
+include/ieee_arithmetic.mod
+include/ieee_exceptions.mod
+include/ieee_features.mod
+include/iso_c_binding.mod
+include/iso_fortran_env.mod
+include/omp_lib.h
+include/omp_lib.mod
+include/omp_lib_kinds.mod
+lib/libflang.a
+@lib lib/libflang.so.${LIBflang_VERSION}
+lib/libflangADT.a
+lib/libflangArgParser.a
+lib/libflangmain.a
+lib/libflangrti.a
+@lib lib/libflangrti.so.${LIBflangrti_VERSION}
+lib/libompstub.a
+@lib lib/libompstub.so.${LIBompstub_VERSION}
