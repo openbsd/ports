@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.177 2017/12/29 07:39:30 robert Exp $
+# $OpenBSD: Makefile,v 1.178 2017/12/31 09:00:27 robert Exp $
 
 USE_WXNEEDED=	Yes
 
@@ -22,6 +22,8 @@ PKGNAME-kde=	libreoffice-kde-${VERSION}
 PKGNAME-java=	libreoffice-java-${VERSION}
 CATEGORIES=	editors productivity
 DPB_PROPERTIES=	parallel tag:kde4
+
+REVISION-main=	0
 
 EPOCH=		0
 
@@ -144,6 +146,7 @@ BUILD_DEPENDS+=	archivers/zip \
 		devel/gperf \
 		devel/libexecinfo \
 		graphics/glew \
+		graphics/glm \
 		shells/bash \
 		archivers/p5-Archive-Zip \
 		misc/findutils \
@@ -217,6 +220,7 @@ RUN_DEPENDS-main=	devel/desktop-file-utils \
 			devel/libexecinfo \
 			devel/xdg-utils \
 			graphics/glew \
+			graphics/glm \
 			misc/shared-mime-info \
 			security/nss \
 			textproc/clucene \
@@ -296,6 +300,7 @@ CONFIGURE_ARGS+=\
 		--with-system-curl \
 		--with-system-expat \
 		--with-system-graphite \
+		--with-system-glm \
 		--with-system-hunspell \
 		--with-system-icu \
 		--with-system-jars \
