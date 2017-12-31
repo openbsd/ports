@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.555 2017/12/29 09:06:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.556 2017/12/31 01:52:32 sthen Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -353,6 +353,8 @@
      SUBDIR += py-alabaster,python3
      SUBDIR += py-chardet
      SUBDIR += py-chardet,python3
+     SUBDIR += py-colored
+     SUBDIR += py-colored,python3
      SUBDIR += py-commonmark
      SUBDIR += py-commonmark,python3
      SUBDIR += py-cssselect
