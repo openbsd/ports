@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.10 2017/11/02 13:09:26 jca Exp $
+# $OpenBSD: Makefile,v 1.11 2017/12/31 10:09:04 kirby Exp $
 
-BROKEN-powerpc =	SIGILL when building
 COMMENT =	program for extreme audio stretching
 DISTNAME =	paulstretch-2.2-2
 REVISION =	4
