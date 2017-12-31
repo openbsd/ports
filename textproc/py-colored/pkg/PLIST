@@ -1,0 +1,18 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/12/31 01:52:09 sthen Exp $
+lib/python${MODPY_VERSION}/site-packages/colored/
+lib/python${MODPY_VERSION}/site-packages/colored-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/colored/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/colored/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/colored/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/colored/${MODPY_PYCACHE}back.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/colored/${MODPY_PYCACHE}colored.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/colored/${MODPY_PYCACHE}colors.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/colored/${MODPY_PYCACHE}fore.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/colored/${MODPY_PYCACHE}hex.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/colored/${MODPY_PYCACHE}style.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/colored/back.py
+lib/python${MODPY_VERSION}/site-packages/colored/colored.py
+lib/python${MODPY_VERSION}/site-packages/colored/colors.py
+lib/python${MODPY_VERSION}/site-packages/colored/fore.py
+lib/python${MODPY_VERSION}/site-packages/colored/hex.py
+lib/python${MODPY_VERSION}/site-packages/colored/style.py
