@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.29 2017/12/26 19:19:04 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.30 2018/01/01 02:31:19 sthen Exp $
 
 BROKEN-powerpc =	undefined reference to __atomic_fetch_add_8
+BROKEN-i386 =		clang segfault compiling imagebufalgo_pixelmath.cpp
 
 COMMENT =		library for reading and writing images
 
