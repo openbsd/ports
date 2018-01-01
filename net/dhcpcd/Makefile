@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.27 2017/10/27 12:14:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.28 2018/01/01 14:58:24 sthen Exp $
 
 COMMENT=		DHCPv4/IPv4LL/IPv6RS/DHCPv6 quad stack client
 
-DISTNAME=		dhcpcd-6.11.5
-REVISION=		5
+DISTNAME=		dhcpcd-7.0.0
 
 CATEGORIES=		net
 EXTRACT_SUFX=		.tar.xz
 
-HOMEPAGE=		http://roy.marples.name/projects/dhcpcd/
+HOMEPAGE=		https://roy.marples.name/projects/dhcpcd
 
 # BSD-2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -17,7 +16,7 @@ WANTLIB += c
 
 MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
 
-MASTER_SITES=		http://roy.marples.name/downloads/dhcpcd/ \
+MASTER_SITES=		https://roy.marples.name/downloads/dhcpcd/ \
 			ftp://roy.marples.name/pub/dhcpcd/
 
 CONFIGURE_STYLE=	simple

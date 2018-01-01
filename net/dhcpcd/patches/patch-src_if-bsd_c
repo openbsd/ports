@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_if-bsd_c,v 1.1 2018/01/01 14:58:24 sthen Exp $
+
+OpenBSD removed these ioctl()s, it no longer keeps track of prefix
+and router lists in kernel so there's no risk of dhcpcd(8) having its
+advertised routers and prefixes expired.
+
+Index: src/if-bsd.c
+--- src/if-bsd.c.orig
++++ src/if-bsd.c
+@@ -1514,10 +1514,14 @@ if_checkipv6(struct dhcpcd_ctx *ctx, const struct inte
+ 		char dummy[IFNAMSIZ + 8];
+ 
+ 		strlcpy(dummy, "lo0", sizeof(dummy));
++#ifdef SIOCSRTRFLUSH_IN6
+ 		if (ioctl(s, SIOCSRTRFLUSH_IN6, (void *)&dummy) == -1)
+ 			logwarn("SIOCSRTRFLUSH_IN6");
++#endif
++#ifdef SIOCSPFXFLUSH_IN6
+ 		if (ioctl(s, SIOCSPFXFLUSH_IN6, (void *)&dummy) == -1)
+ 			logwarn("SIOCSPFXFLUSH_IN6");
++#endif
+ #endif
+ 	}
+ 
