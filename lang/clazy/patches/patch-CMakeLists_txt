@@ -1,0 +1,13 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2018/01/01 11:30:16 rsadowski Exp $
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -173,7 +173,6 @@ add_clang_plugin(ClangLazy ${CLAZY_PLUGIN_SRCS})
+ 
+ set_target_properties(ClangLazy PROPERTIES
+   LINKER_LANGUAGE CXX
+-  PREFIX ""
+ )
+ 
+ install(TARGETS ClangLazy
