@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.366 2017/12/26 20:17:19 awolk Exp $
+# $OpenBSD: Makefile,v 1.367 2018/01/01 01:04:14 bcallah Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -213,6 +213,7 @@
      SUBDIR += redeclipse
      SUBDIR += renpy
      SUBDIR += residualvm
+     SUBDIR += returntotheroots
      SUBDIR += rftg
      SUBDIR += ri-li
      SUBDIR += roadfighter
