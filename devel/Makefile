@@ -1,4 +1,4 @@
-#${MODPY_COMMENT} $OpenBSD: Makefile,v 1.1685 2017/12/27 17:39:18 remi Exp $
+#${MODPY_COMMENT} $OpenBSD: Makefile,v 1.1686 2018/01/01 11:31:07 rsadowski Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -62,6 +62,8 @@
      SUBDIR += chmlib
      SUBDIR += cil
      SUBDIR += cln
+     SUBDIR += cln
+     SUBDIR += clazy
      SUBDIR += cmake
      SUBDIR += cmocka
      SUBDIR += cmockery
