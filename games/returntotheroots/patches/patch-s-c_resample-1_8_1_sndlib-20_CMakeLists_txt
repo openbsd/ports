@@ -1,0 +1,14 @@
+$OpenBSD: patch-s-c_resample-1_8_1_sndlib-20_CMakeLists_txt,v 1.1.1.1 2018/01/01 01:03:55 bcallah Exp $
+
+Index: s-c/resample-1.8.1/sndlib-20/CMakeLists.txt
+--- s-c/resample-1.8.1/sndlib-20/CMakeLists.txt.orig
++++ s-c/resample-1.8.1/sndlib-20/CMakeLists.txt
+@@ -7,6 +7,8 @@ ELSEIF(APPLE)
+ 	SET(MUS_MAC_OSX TRUE)
+ ELSEIF(${CMAKE_SYSTEM_NAME} STREQUAL "FreeBSD")
+ 	SET(MUS_OSS TRUE)
++ELSEIF(${CMAKE_SYSTEM_NAME} STREQUAL "OpenBSD")
++	SET(MUS_OSS TRUE)
+ ELSE()
+ 	MESSAGE(FATAL_ERROR "Unknown system: ${CMAKE_SYSTEM_NAME}")
+ ENDIF()

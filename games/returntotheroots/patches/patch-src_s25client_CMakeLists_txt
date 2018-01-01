@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_s25client_CMakeLists_txt,v 1.1.1.1 2018/01/01 01:03:55 bcallah Exp $
+
+Build halts and complains with empty s25client_RC
+
+Index: src/s25client/CMakeLists.txt
+--- src/s25client/CMakeLists.txt.orig
++++ src/s25client/CMakeLists.txt
+@@ -18,7 +18,7 @@ ELSE()
+ 	SET(s25client_RC "")
+ ENDIF()
+ 
+-ADD_EXECUTABLE(s25client s25client.cpp ${s25client_RC})
++ADD_EXECUTABLE(s25client s25client.cpp)
+ TARGET_LINK_LIBRARIES(s25client s25Main)
+ 
+ if(APPLE)
+@@ -29,6 +29,8 @@ elseif(WIN32)
+ elseif(CMAKE_SYSTEM_NAME STREQUAL "Linux")
+ 	TARGET_LINK_LIBRARIES(s25client pthread)
+ elseif(CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
++	TARGET_LINK_LIBRARIES(s25client execinfo)
++elseif(CMAKE_SYSTEM_NAME STREQUAL "OpenBSD")
+ 	TARGET_LINK_LIBRARIES(s25client execinfo)
+ ENDif()
+ 

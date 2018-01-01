@@ -1,0 +1,25 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2018/01/01 01:03:55 bcallah Exp $
+
+Disable updater. Don't install a useless bash script.
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -410,7 +410,7 @@ endif()
+ 
+ # Building the updater when using non-default paths (especially absolute paths)
+ # is not recommended as it most likely won't work
+-set(RTTR_BUILD_UPDATER_DEF ON)
++set(RTTR_BUILD_UPDATER_DEF OFF)
+ foreach(curDirVar BINDIR DATADIR LIBDIR DOCDIR DRIVERDIR)
+ 	if(IS_ABSOLUTE ${RTTR_${curDirVar}})
+ 		set(RTTR_BUILD_UPDATER_DEF OFF)
+@@ -471,7 +471,7 @@ IF (WIN32)
+ 	install(PROGRAMS "release/bin/rttr.bat" DESTINATION "${RTTR_BINDIR}")
+ ELSEIF(CMAKE_SYSTEM_NAME STREQUAL "Linux" OR CMAKE_SYSTEM_NAME STREQUAL "FreeBSD" OR CYGWIN)
+ 	install(PROGRAMS "release/bin/rttr.sh" DESTINATION "${RTTR_BINDIR}")
+-ELSEIF(NOT APPLE)
++ELSEIF(NOT APPLE AND NOT CMAKE_SYSTEM_NAME STREQUAL "OpenBSD")
+ 	message(FATAL_ERROR "${CMAKE_SYSTEM_NAME} not supported")
+ ENDIF()
+ 

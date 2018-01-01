@@ -1,0 +1,14 @@
+$OpenBSD: patch-libutil_src_Socket_cpp,v 1.1.1.1 2018/01/01 01:03:55 bcallah Exp $
+
+Index: libutil/src/Socket.cpp
+--- libutil/src/Socket.cpp.orig
++++ libutil/src/Socket.cpp
+@@ -61,7 +61,7 @@ ResolvedAddr::ResolvedAddr(const HostAddr& hostAddr, b
+         if(resolveAll)
+         {
+             hints.ai_flags = AI_ADDRCONFIG;
+-#ifndef __FreeBSD__
++#if !defined(__FreeBSD__) && !defined(__OpenBSD__)
+             // Defined, but getaddrinfo complains about it on FreeBSD -> Check again with the combination with AI_V4MAPPED
+             hints.ai_flags |= AI_ALL | AI_V4MAPPED;
+ #endif

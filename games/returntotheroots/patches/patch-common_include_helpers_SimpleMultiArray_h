@@ -1,0 +1,15 @@
+$OpenBSD: patch-common_include_helpers_SimpleMultiArray_h,v 1.1.1.1 2018/01/01 01:03:55 bcallah Exp $
+
+Needs something that gets you size_t.
+
+Index: common/include/helpers/SimpleMultiArray.h
+--- common/include/helpers/SimpleMultiArray.h.orig
++++ common/include/helpers/SimpleMultiArray.h
+@@ -18,6 +18,7 @@
+ #ifndef SimpleMultiArray_h__
+ #define SimpleMultiArray_h__
+ 
++#include <stdlib.h>
+ #include <boost/static_assert.hpp>
+ #include <boost/type_traits/add_const.hpp>
+ #include <boost/type_traits/conditional.hpp>

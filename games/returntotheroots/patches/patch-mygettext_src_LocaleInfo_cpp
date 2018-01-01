@@ -1,0 +1,15 @@
+$OpenBSD: patch-mygettext_src_LocaleInfo_cpp,v 1.1.1.1 2018/01/01 01:03:55 bcallah Exp $
+
+Missing cstdlib
+
+Index: mygettext/src/LocaleInfo.cpp
+--- mygettext/src/LocaleInfo.cpp.orig
++++ mygettext/src/LocaleInfo.cpp
+@@ -8,6 +8,7 @@
+ #include "LocaleInfo.h"
+ #include <boost/config.hpp>
+ #include <cstring>
++#include <cstdlib>
+ #if defined(BOOST_WINDOWS) || defined(__CYGWIN__)
+ #ifndef NOMINMAX
+ #define NOMINMAX

@@ -1,0 +1,17 @@
+$OpenBSD: patch-libutil_cmake_Modules_FindLUA_cmake,v 1.1.1.1 2018/01/01 01:03:55 bcallah Exp $
+
+Index: libutil/cmake/Modules/FindLUA.cmake
+--- libutil/cmake/Modules/FindLUA.cmake.orig
++++ libutil/cmake/Modules/FindLUA.cmake
+@@ -39,6 +39,11 @@ if(NOT LUA_LIBRARY OR NOT LUA_INCLUDE_DIR)
+         set(LUA_INCLUDE_DIR "/usr/local/include/lua${LUA_VERSION}")
+     endif()
+ 
++    if(${CMAKE_HOST_SYSTEM_NAME} MATCHES "OpenBSD")
++        SET(LUA_LIBRARY "/usr/local/lib/liblua${LUA_VERSION}.a")
++        set(LUA_INCLUDE_DIR "/usr/local/include/lua-${LUA_VERSION}")
++    endif()
++
+     if(NOT EXISTS ${LUA_LIBRARY})
+         MESSAGE(STATUS "Checking LUA library for default fallbacks")
+         string(REGEX REPLACE "(.)(.)" "\\1.\\2" LUA_DOT_VERSION "${LUA_VERSION}")

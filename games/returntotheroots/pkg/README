@@ -1,0 +1,22 @@
+$OpenBSD: README,v 1.1.1.1 2018/01/01 01:03:55 bcallah Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Return to the Roots
+===================
+Return to the Roots requires the original game files from The Settlers 2
+Gold Edition to work properly.  These can come from an original CD or
+from GOG.com.
+
+If using the GOG.com version, you must extract the files from
+setup_settlers2_gold_2.0.0.14.exe using the innoextract package. The
+files will be in a directory named app. You must copy the contents of
+the app directory to the ${TRUEPREFIX}/share/s25rttr/S2/ directory.
+
+The easiest way to do this is to execute the following:
+$ doas cp -R app/* ${TRUEPREFIX}/share/s25rttr/S2
+
+You can then delete everything extracted from the exe, such as the tmp
+directory.

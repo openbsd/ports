@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_test_CMakeLists_txt,v 1.1.1.1 2018/01/01 01:03:55 bcallah Exp $
+
+Let test link.
+
+Index: src/test/CMakeLists.txt
+--- src/test/CMakeLists.txt.orig
++++ src/test/CMakeLists.txt
+@@ -24,6 +24,7 @@ target_link_libraries(Test
+                         audioMockup
+                         videoMockup
+ 						${Boost_UNIT_TEST_FRAMEWORK_LIBRARY}
++			execinfo
+ 					  )
+ 
+ add_test(NAME MainTest COMMAND Test WORKING_DIRECTORY ${CMAKE_BINARY_DIR})

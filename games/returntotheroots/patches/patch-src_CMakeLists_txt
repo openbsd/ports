@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_CMakeLists_txt,v 1.1.1.1 2018/01/01 01:03:55 bcallah Exp $
+
+Index: src/CMakeLists.txt
+--- src/CMakeLists.txt.orig
++++ src/CMakeLists.txt
+@@ -43,7 +43,7 @@ ENDif()
+ # LUA
+ ################################################################################
+ 
+-SET(LUA_VERSION "52")
++SET(LUA_VERSION "5.2")
+ 
+ FIND_PACKAGE(LUA REQUIRED)
+ 

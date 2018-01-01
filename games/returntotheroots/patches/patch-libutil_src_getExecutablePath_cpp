@@ -1,0 +1,25 @@
+$OpenBSD: patch-libutil_src_getExecutablePath_cpp,v 1.1.1.1 2018/01/01 01:03:55 bcallah Exp $
+
+Still don't know why everyone wants this...
+
+Index: libutil/src/getExecutablePath.cpp
+--- libutil/src/getExecutablePath.cpp.orig
++++ libutil/src/getExecutablePath.cpp
+@@ -94,6 +94,9 @@ std::string getExecutablePath()
+ 
+ std::string getExecutablePath()
+ {
++#ifdef __OpenBSD__
++    return "${LOCALBASE}/bin/s25client";
++#else
+     int mib[4] = {CTL_KERN, KERN_PROC, KERN_PROC_PATHNAME, -1};
+     std::vector<char> buf(1024, 0);
+     size_t size = buf.size();
+@@ -105,6 +108,7 @@ std::string getExecutablePath()
+     boost::system::error_code ec;
+     bfs::path p(bfs::canonical(path, ec));
+     return ec ? "" : p.make_preferred().string();
++#endif
+ }
+ 
+ #elif(BOOST_OS_LINUX)
