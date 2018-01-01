@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/01/01 11:30:16 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2018/01/01 20:28:44 rsadowski Exp $
 
 COMMENT =	static source code analyzer for Qt5-based C++
 
 GH_ACCOUNT =	KDE
 GH_PROJECT =	clazy
 GH_TAGNAME =	v1.3
+REVISION =	0
 
-CATEGORIES =	devel
+CATEGORIES =	lang devel
 
 SHARED_LIBS +=  clazylib                  0.0 # 0.1
 
