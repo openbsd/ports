@@ -1,6 +1,7 @@
-$OpenBSD: patch-external_libgltf_ExternalProject_libgltf_mk,v 1.2 2016/03/01 21:39:58 robert Exp $
---- external/libgltf/ExternalProject_libgltf.mk.orig.port	Wed Jan 27 01:58:25 2016
-+++ external/libgltf/ExternalProject_libgltf.mk	Wed Feb 10 14:23:02 2016
+$OpenBSD: patch-external_libgltf_ExternalProject_libgltf_mk,v 1.3 2018/01/01 13:37:49 robert Exp $
+Index: external/libgltf/ExternalProject_libgltf.mk
+--- external/libgltf/ExternalProject_libgltf.mk.orig
++++ external/libgltf/ExternalProject_libgltf.mk
 @@ -56,6 +56,7 @@ ifneq (,$(gb_ENABLE_DBGUTIL))
  libgltf_CPPFLAGS+=-D_GLIBCXX_DEBUG
  endif
@@ -9,3 +10,12 @@ $OpenBSD: patch-external_libgltf_ExternalProject_libgltf_mk,v 1.2 2016/03/01 21:
  
  $(call gb_ExternalProject_get_state_target,libgltf,build) :
  	$(call gb_ExternalProject_run,build,\
+@@ -68,7 +69,7 @@ $(call gb_ExternalProject_get_state_target,libgltf,bui
+ 			--disable-werror \
+ 			BOOST_CFLAGS="$(BOOST_CPPFLAGS)" \
+ 			GLEW_CFLAGS="$(if $(SYSTEM_GLEW),$(GLEW_CFLAGS),-I$(call gb_UnpackedTarball_get_dir,glew)/include) -DGLEW_NO_GLU" \
+-			GLM_CFLAGS="$(if $(SYSTEM_GLM),$(GLM_CFLAGS),-I$(call gb_UnpackedTarball_get_dir,glm))" \
++			GLM_CFLAGS="$(if $(SYSTEM_GLM),-I/usr/local/include,-I$(call gb_UnpackedTarball_get_dir,glm))" \
+ 			$(if $(libgltf_CPPFLAGS),CPPFLAGS='$(libgltf_CPPFLAGS)') \
+ 		&& $(MAKE) \
+ 	)
