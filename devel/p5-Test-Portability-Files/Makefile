@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2016/09/23 18:27:59 bluhm Exp $
+# $OpenBSD: Makefile,v 1.3 2018/01/01 12:34:10 bluhm Exp $
 
-COMMENT =		check file names portability
+COMMENT =	check file names portability
 
-DISTNAME =		Test-Portability-Files-0.07
+DISTNAME =	Test-Portability-Files-0.09
 
-CATEGORIES =		devel
+CATEGORIES =	devel
 
 MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
