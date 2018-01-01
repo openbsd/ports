@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.18 2017/11/09 19:09:56 bcallah Exp $
+# $OpenBSD: Makefile,v 1.19 2018/01/01 17:07:02 bcallah Exp $
 
 COMMENT =	simple viewer for NFO files
 MODPY_EGG_VERSION =	1.23
 DISTNAME =	nfoview-${MODPY_EGG_VERSION}
+REVISION =	0
 CATEGORIES =	textproc x11
 
 GH_ACCOUNT =	otsaloma
 GH_PROJECT =	nfoview
 GH_TAGNAME =	${MODPY_EGG_VERSION}
 
-HOMEPAGE =	http://otsaloma.github.io/nfoview/
+HOMEPAGE =	https://otsaloma.io/nfoview/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv3+
