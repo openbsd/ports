@@ -1,0 +1,13 @@
+$OpenBSD: patch-mono_metadata_w32process-unix-bsd_c,v 1.1 2018/01/02 13:19:10 robert Exp $
+
+Index: mono/metadata/w32process-unix-bsd.c
+--- mono/metadata/w32process-unix-bsd.c.orig
++++ mono/metadata/w32process-unix-bsd.c
+@@ -7,6 +7,7 @@
+ 
+ #ifdef USE_BSD_BACKEND
+ 
++#include <signal.h>
+ #include <errno.h>
+ #include <sys/proc.h>
+ #include <sys/sysctl.h>

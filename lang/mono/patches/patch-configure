@@ -1,0 +1,25 @@
+$OpenBSD: patch-configure,v 1.6 2018/01/02 13:19:10 robert Exp $
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -26806,6 +26806,9 @@ fi
+ 			BTLS_PLATFORM=i386
+ 			;;
+ 		  openbsd*|freebsd*|kfreebsd-gnu*)
++			AOT_SUPPORTED="yes"
++			BTLS_SUPPORTED=yes
++			BTLS_PLATFORM=i386
+ 		        ;;
+ 		esac
+ 		;;
+@@ -26839,6 +26842,9 @@ fi
+ 			boehm_supported=false
+ 			;;
+ 		  openbsd*|freebsd*|kfreebsd-gnu*)
++			AOT_SUPPORTED="yes"
++			BTLS_SUPPORTED=yes
++			BTLS_PLATFORM=x86_64
+ 			;;
+ 		  mingw*)
+ 			;;

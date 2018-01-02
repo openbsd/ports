@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.112 2017/08/24 20:12:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.113 2018/01/02 13:19:10 robert Exp $
 
 USE_WXNEEDED=	Yes
 
@@ -6,8 +6,8 @@ BROKEN=		unreliable build, frequently segfaults in dpb (TLS?)
 
 COMMENT=	cross platform, open source .NET developement framework
 
-V=		4.6.2
-DISTNAME=	mono-${V}.16
+V=		5.8.0.88
+DISTNAME=	mono-${V}
 
 CATEGORIES=	lang devel
 
@@ -15,6 +15,7 @@ SHARED_LIBS +=  mono-2.0		1.0	# .0.0
 SHARED_LIBS +=  monoboehm-2.0           1.0     # .0.0
 SHARED_LIBS +=  mono-profiler-iomap	0.0	# .0.0
 SHARED_LIBS +=  mono-profiler-aot	1.0	# .0.0
+SHARED_LIBS +=  mono-profiler-coverage	0.0	# .0.0
 SHARED_LIBS +=  mono-profiler-log	0.0	# .0.0
 
 HOMEPAGE=	http://www.mono-project.com/
@@ -26,7 +27,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	c iconv m pthread z
 
-MASTER_SITES=	http://download.mono-project.com/sources/mono/
+MASTER_SITES=	https://download.mono-project.com/sources/mono/
 EXTRACT_SUFX=	.tar.bz2
 
 MODULES=	lang/mono \
@@ -40,6 +41,7 @@ SUBST_VARS=	LIBTOOL
 
 BUILD_DEPENDS=	devel/bison \
 		devel/gettext-tools \
+		devel/cmake \
 		lang/gawk \
 		shells/bash \
 		${RUN_DEPENDS}
@@ -59,10 +61,11 @@ CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
 CONFIGURE_ENV+=	CFLAGS="-march=i586"
 .endif
 
-WRKDIST=	${WRKDIR}/mono-${V}
-
 CONFIGURE_ARGS=	--with-gc=included \
+		--with-tls=pthread \
 		--without-sgen \
+		--enable-btls \
+		--with-csc=mcs \
 		--disable-quiet-build \
 		--disable-shared-handles \
 		--without-sigaltstack
@@ -101,7 +104,7 @@ pre-build:
 # make _tmpinst more available
 post-build:
 	for i in ${WRKBUILD}/runtime/_tmpinst/bin/*; do \
-		ln -s $$i ${WRKDIR}/bin; \
+		ln -fs $$i ${WRKDIR}/bin; \
 	done
 
 .include <bsd.port.mk>
