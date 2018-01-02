@@ -1,10 +1,14 @@
 # -*- coding: utf-8 -*-
-# $OpenBSD: vmctl.py,v 1.1 2017/12/25 13:06:16 jasper Exp $
+# $OpenBSD: vmctl.py,v 1.2 2018/01/02 19:56:26 jasper Exp $
 '''
 Manage vms running on the OpenBSD VMM hypervisor using vmctl(8).
 
+.. versionadded:: Fluorine
+
+:codeauthor: :email:`Jasper Lievisse Adriaanse <jasper@openbsd.org>`
+
 .. note::
-    
+
     This module requires the `vmd` service to be running on the OpenBSD
     target machine.
 '''
@@ -18,6 +22,7 @@ import re
 # Imoprt salt libs:
 import salt.utils
 from salt.exceptions import (CommandExecutionError, SaltInvocationError)
+from salt.ext.six.moves import zip
 
 log = logging.getLogger(__name__)
 
@@ -30,6 +35,17 @@ def __virtual__():
         return True
 
     return (False, 'The vmm execution module cannot be loaded: either the system is not OpenBSD or the vmctl binary was not found')
+
+
+def _id_to_name(id):
+    '''
+    Lookup the name associated with a VM id.
+    '''
+    vm = status(id=id)
+    if vm == {}:
+        return None
+    else:
+        return vm['name']
 
 
 def create_disk(name, size):
@@ -45,7 +61,7 @@ def create_disk(name, size):
 
         salt '*' vmctl.create_disk /path/to/disk.img size=10G
     '''
-    ret = {'created': False}
+    ret = False
     cmd = 'vmctl create {0} -s {1}'.format(name, size)
 
     result = __salt__['cmd.run_all'](cmd,
@@ -53,7 +69,7 @@ def create_disk(name, size):
                                      python_shell=False)
 
     if result['retcode'] == 0:
-        ret['created'] = True
+        ret = True
     else:
         raise CommandExecutionError(
             'Problem encountered creating disk image',
@@ -76,13 +92,13 @@ def load(path):
 
         salt '*' vmctl.load path=/etc/vm.switches.conf
     '''
-    ret = {'loaded': False, 'path': path}
+    ret = False
     cmd = 'vmctl load {0}'.format(path)
     result = __salt__['cmd.run_all'](cmd,
                                      output_loglevel='trace',
                                      python_shell=False)
     if result['retcode'] == 0:
-        ret['changes'] = True
+        ret = True
     else:
         raise CommandExecutionError(
             'Problem encountered running vmctl',
@@ -102,13 +118,13 @@ def reload():
 
         salt '*' vmctl.reload
     '''
-    ret = {'changes': False}
+    ret = False
     cmd = 'vmctl reload'
     result = __salt__['cmd.run_all'](cmd,
                                      output_loglevel='trace',
                                      python_shell=False)
     if result['retcode'] == 0:
-        ret['changes'] = True
+        ret = True
     else:
         raise CommandExecutionError(
             'Problem encountered running vmctl',
@@ -130,7 +146,7 @@ def reset(all=False, vms=False, switches=False):
 
     vms:
         Reset and terminate all VMs.
-    
+
 
     CLI Example:
 
@@ -138,7 +154,7 @@ def reset(all=False, vms=False, switches=False):
 
         salt '*' vmctl.reset all=True
     '''
-    ret = {'changes': False}
+    ret = False
     cmd = ['vmctl', 'reset']
 
     if all:
@@ -152,7 +168,7 @@ def reset(all=False, vms=False, switches=False):
                                      output_loglevel='trace',
                                      python_shell=False)
     if result['retcode'] == 0:
-        ret['changes'] = True
+        ret = True
     else:
         raise CommandExecutionError(
             'Problem encountered running vmctl',
@@ -162,7 +178,7 @@ def reset(all=False, vms=False, switches=False):
     return ret
 
 
-def start(name=None, id=None, bootpath=None, disk=None, disks=[], local_iface=False,
+def start(name=None, id=None, bootpath=None, disk=None, disks=None, local_iface=False,
           memory=None, nics=0, switch=None):
     '''
     Starts a VM defined by the specified parameters.
@@ -198,7 +214,8 @@ def start(name=None, id=None, bootpath=None, disk=None, disks=[], local_iface=Fa
 
     .. code-block:: bash
 
-        salt '*' vmctl.load path=/etc/vm.switches.conf
+        salt '*' vmctl.start 2   # start VM with id 2
+        salt '*' vmctl.start name=web1 bootpath='/bsd.rd' nics=2 memory=512M disk='/disk.img'
     '''
     ret = {'changes': False, 'console': None}
     cmd = ['vmctl', 'start']
@@ -209,6 +226,7 @@ def start(name=None, id=None, bootpath=None, disk=None, disks=[], local_iface=Fa
         cmd.append(name)
     else:
         cmd.append(id)
+        name = _id_to_name(id)
 
     if nics > 0:
         cmd.append('-i {0}'.format(nics))
@@ -227,14 +245,22 @@ def start(name=None, id=None, bootpath=None, disk=None, disks=[], local_iface=Fa
     if local_iface:
         cmd.append('-L')
 
-    if disk and len(disks) > 0:
+    if disk and (disks and len(disks) > 0):
         raise SaltInvocationError('Must provide either "disks" or "disk"')
 
     if disk:
         cmd.extend(['-d', disk])
 
-    if len(disks) > 0:
-         cmd.extend(['-d', x] for x in disks)
+    if disks and len(disks) > 0:
+        cmd.extend(['-d', x] for x in disks)
+
+    # Before attempting to define a new VM, make sure it doesn't already exist.
+    # Otherwise return to indicate nothing was changed.
+    if len(cmd) > 3:
+        vmstate = status(name)
+        if vmstate:
+            ret['comment'] = 'VM already exists and cannot be redefined'
+            return ret
 
     result = __salt__['cmd.run_all'](cmd,
                                      output_loglevel='trace',
@@ -273,17 +299,11 @@ def status(name=None, id=None):
 
     .. code-block:: bash
 
-        salt '*' vmctl.load path=/etc/vm.switches.conf
+        salt '*' vmctl.status           # to list all VMs
+        salt '*' vmctl.status name=web1 # to get a single VM
     '''
     ret = {}
     cmd = ['vmctl', 'status']
-
-    if not (name or id):
-        raise SaltInvocationError('Must provide either "name" or "id"')
-    elif name:
-        cmd.append(name)
-    else:
-        cmd.append(id)
 
     result = __salt__['cmd.run_all'](cmd,
                                      output_loglevel='trace',
@@ -297,7 +317,7 @@ def status(name=None, id=None):
 
     # Grab the header and save it with the lowercase names.
     header = result['stdout'].splitlines()[0].split()
-    header = list(map(lambda x: x.lower(), header)) 
+    header = list([x.lower() for x in header])
 
     # A VM can be in one of the following states (from vmm.c:vcpu_state_decode())
     # - stopped
@@ -306,16 +326,9 @@ def status(name=None, id=None):
     # - terminated
     # - unknown
 
-    # When the status is requested of a single VM, the last lines contain info
-    # on the the vcpu state which is not relevant for us.
-    if id or name:
-        output = [result['stdout'].splitlines()[1]]
-    else:
-        output = result['stdout'].splitlines()[1:]
-
-    for line in output:
+    for line in result['stdout'].splitlines()[1:]:
         data = line.split()
-        vm = dict(zip(header, data))
+        vm = dict(list(zip(header, data)))
         vmname = vm.pop('name')
         if vm['pid'] == '-':
             # If the VM has no PID it's not running.
@@ -327,7 +340,21 @@ def status(name=None, id=None):
             vm['state'] = data[-1]
         else:
             vm['state'] = 'running'
-        ret[vmname] = vm
+
+        # When the status is requested of a single VM (by name) which is stopping,
+        # vmctl doesn't print the status line. So we'll parse the full list and
+        # return when we've found the requested VM.
+        if id and int(vm['id']) == id:
+            return {vmname: vm}
+        elif name and vmname == name:
+            return {vmname: vm}
+        else:
+            ret[vmname] = vm
+
+    # Assert we've not come this far when an id or name have been provided. That
+    # means the requested VM does not exist.
+    if id or name:
+        return {}
 
     return ret
 
@@ -351,7 +378,7 @@ def stop(name=None, id=None):
     '''
     ret = {}
     cmd = ['vmctl', 'stop']
-    
+
     if not (name or id):
         raise SaltInvocationError('Must provide either "name" or "id"')
     elif name:
