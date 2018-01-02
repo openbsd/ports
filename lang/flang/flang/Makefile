@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/12/31 18:06:38 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2018/01/02 14:17:52 bcallah Exp $
 
 COMMENT =	LLVM Fortran compiler passes and runtime library
 DISTNAME =	flang-5.0.1.20171221
+REVISION =	0
 
 SHARED_LIBS +=	flang                     0.0 # 5.0
 SHARED_LIBS +=	flangrti                  0.0 # 5.0
@@ -17,7 +18,8 @@ COMPILER =	base-clang ports-gcc ports-clang
 
 MODULES =	devel/cmake
 
-BUILD_DEPENDS =	${RUN_DEPENDS}
+BUILD_DEPENDS =	devel/llvm \
+		${RUN_DEPENDS}
 
 LIB_DEPENDS =	devel/libexecinfo
 
