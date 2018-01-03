@@ -1,4 +1,4 @@
-$OpenBSD: patch-man_imapd_conf_5,v 1.11 2017/05/28 15:46:11 ajacoutot Exp $
+$OpenBSD: patch-man_imapd_conf_5,v 1.12 2018/01/03 07:55:52 ajacoutot Exp $
 
 Index: man/imapd.conf.5
 --- man/imapd.conf.5.orig
@@ -21,7 +21,7 @@ Index: man/imapd.conf.5
  .INDENT 0.0
  .INDENT 3.5
  The pathname of the sendmail executable.  Sieve invokes sendmail
-@@ -3454,7 +3454,7 @@ per draft\-ietf\-vacation\-seconds.txt .
+@@ -3463,7 +3463,7 @@ per draft\-ietf\-vacation\-seconds.txt .
  .UNINDENT
  .UNINDENT
  .sp
