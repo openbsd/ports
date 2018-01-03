@@ -1,4 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2017/11/16 23:20:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2018/01/03 08:05:29 bentley Exp $
+
+# icu4c namespace problem when mixing gcc 4.2 and a c++11 compiler:
+# undefined reference to `_ZN6icu_5713UnicodeStringC1EOS0_'
+ONLY_FOR_ARCHS=		${CLANG_ARCHS}
 
 GH_ACCOUNT =	naelstrof
 GH_PROJECT =	slop
