@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.175 2018/01/03 14:23:06 espie Exp $
+# $OpenBSD: Port.pm,v 1.176 2018/01/03 23:19:51 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -1186,7 +1186,13 @@ sub add_normal_tasks
 	}
 	if ($c) {
 		$hostprop->{junk_count}++;
-		push(@todo, qw(depends show-prepare-results));
+		push(@todo, 'depends');
+		# depends only install dependencies, stuff that have
+		# an extra :patch/:configure stage need to complete prepare !
+		if (exists $self->{v}{info}{BEXTRA}) {
+			push(@todo, 'prepare');
+		}
+		push(@todo, 'show-prepare-results');
 	}
 	# gc stuff we will no longer need
 	delete $self->{v}{info}{solved};
