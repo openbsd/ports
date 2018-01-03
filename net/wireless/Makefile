@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.2 2017/08/15 20:01:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2018/01/03 23:27:01 danj Exp $
 
 COMMENT =	automatically scan for and configure wireless networks
 GH_ACCOUNT =	farhaven
 GH_PROJECT =	wireless
-GH_TAGNAME =	v3
+GH_TAGNAME =	v4
 
 CATEGORIES =	net
+
+MAINTAINER =	Gregor Best <gbe@unobtanium.de>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
