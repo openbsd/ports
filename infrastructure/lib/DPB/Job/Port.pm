@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.174 2017/12/31 13:03:07 espie Exp $
+# $OpenBSD: Port.pm,v 1.175 2018/01/03 14:23:06 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -1316,16 +1316,11 @@ sub tweak_msg
 	if (defined $self->{tracked} && $self->{tracked} == 1) {
 		# we tracked already, so never do it again
 		$self->{tracked} = 0;
-		if (my $fh = $self->{file}->open('<')) {
-			# optimistic grab of last line of file
-			seek $fh, -150, 2;
-			local $/;
-			local $_ = <$fh>;
-			chomp;
-			if (m/Awaiting lock\s+(.*)/) {
-				$self->{override} = " stuck on $1";
-			}
-			close $fh;
+		# optimistic grab of last line of file
+		my $line = $self->peek(150);
+		chomp $line;
+		if ($line =~ m/Awaiting lock\s+(.*)/) {
+			$self->{override} = " stuck on $1";
 		}
 	}
 	if (defined $self->{override}) {

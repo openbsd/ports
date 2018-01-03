@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Clock.pm,v 1.13 2017/12/31 13:03:07 espie Exp $
+# $OpenBSD: Clock.pm,v 1.14 2018/01/03 14:23:06 espie Exp $
 #
 # Copyright (c) 2011-2013 Marc Espie <espie@openbsd.org>
 #
@@ -176,6 +176,18 @@ sub stopped_clock
 {
 	my ($self, $gap) = @_;
 	$self->{time} += $gap if defined $self->{time};
+}
+
+sub peek
+{
+	my ($self, $length) = @_;
+	if (my $fh = $self->{file}->open('<')) {
+		seek $fh, -$length, 2;
+		local $/;
+		return <$fh>;
+	} else {
+		return "";
+	}
 }
 
 sub DESTROY
