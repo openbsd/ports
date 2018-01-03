@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.299 2017/12/23 20:23:03 landry Exp $
+$OpenBSD: user.list,v 1.300 2018/01/03 21:08:29 landry Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -305,3 +305,5 @@ id  user		group		port options
 794 _burp		_burp		sysutils/burp
 795 _turnserver		_turnserver	telephony/coturn
 796 _minio		_minio		net/minio/server
+797 _influx		_influx		databases/influxdb
+798 _grafana		_grafana	sysutils/grafana
