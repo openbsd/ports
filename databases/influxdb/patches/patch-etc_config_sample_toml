@@ -1,0 +1,36 @@
+$OpenBSD: patch-etc_config_sample_toml,v 1.1.1.1 2018/01/03 17:43:24 landry Exp $
+
+Index: etc/config.sample.toml
+--- etc/config.sample.toml.orig
++++ etc/config.sample.toml
+@@ -9,7 +9,7 @@
+ # The data includes a random ID, os, arch, version, the number of series and other
+ # usage data. No data from user databases is ever transmitted.
+ # Change this option to true to disable reporting.
+-# reporting-disabled = false
++reporting-disabled = true
+ 
+ # Bind address to use for the RPC service for backup and restore.
+ # bind-address = "127.0.0.1:8088"
+@@ -23,7 +23,7 @@
+ 
+ [meta]
+   # Where the metadata/raft database is stored
+-  dir = "/var/lib/influxdb/meta"
++  dir = "/var/influxdb/meta"
+ 
+   # Automatically create a default retention policy when creating a database.
+   # retention-autocreate = true
+@@ -42,10 +42,10 @@
+ 
+ [data]
+   # The directory where the TSM storage engine stores TSM files.
+-  dir = "/var/lib/influxdb/data"
++  dir = "/var/influxdb/data"
+ 
+   # The directory where the TSM storage engine stores WAL files.
+-  wal-dir = "/var/lib/influxdb/wal"
++  wal-dir = "/var/influxdb/wal"
+ 
+   # The amount of time that a write will wait before fsyncing.  A duration
+   # greater than 0 can be used to batch up multiple fsync calls.  This is useful for slower

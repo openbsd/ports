@@ -1,0 +1,24 @@
+$OpenBSD: patch-man_Makefile,v 1.1.1.1 2018/01/03 17:43:24 landry Exp $
+
+Index: man/Makefile
+--- man/Makefile.orig
++++ man/Makefile
+@@ -1,6 +1,6 @@
+ #!/usr/bin/make -f
+ 
+-DESTDIR = /usr/local
++DESTDIR = ${PREFIX}
+ 
+ MAN1_TXT =
+ MAN1_TXT += influxd.txt
+@@ -23,8 +23,8 @@ build: $(DOC_MAN1)
+ 
+ install: build
+ 	@echo '  INSTALL $(DOC_MAN1)' && \
+-	mkdir -p $(DESTDIR)/share/man/man1 && \
+-	install -m 0644 $(DOC_MAN1) $(DESTDIR)/share/man/man1
++	mkdir -p $(DESTDIR)/man/man1 && \
++	install -m 0644 $(DOC_MAN1) $(DESTDIR)/man/man1
+ 
+ clean:
+ 	rm -f $(MAN_XML) $(DOC_MAN1)

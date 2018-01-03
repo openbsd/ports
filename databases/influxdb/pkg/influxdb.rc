@@ -1,0 +1,13 @@
+#!/bin/sh
+#
+# $OpenBSD: influxdb.rc,v 1.1.1.1 2018/01/03 17:43:24 landry Exp $
+
+daemon="${TRUEPREFIX}/bin/influxd"
+daemon_user="_influx"
+
+. /etc/rc.d/rc.subr
+
+rc_bg=YES
+rc_reload=NO
+
+rc_cmd $1
