@@ -1,18 +1,20 @@
-# $OpenBSD: Makefile,v 1.10 2017/11/21 00:12:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2018/01/03 08:02:26 rsadowski Exp $
 
 COMMENT =	Qt-based MPD client
 
-DISTNAME =	cantata-2.0.1
-REVISION =	2
+GH_ACCOUNT=	CDrummond
+GH_PROJECT=	cantata
+GH_TAGNAME=	v2.2.0
 
 CATEGORIES =	audio
 
-GH_TAGNAME=	v2.0.1
-GH_ACCOUNT=	CDrummond
-GH_PROJECT=	cantata
-
 # GPLv2 only
 PERMIT_PACKAGE_CDROM =	Yes
+
+WANTLIB += ${COMPILER_LIBCXX} Qt5Concurrent Qt5Core Qt5DBus Qt5Gui
+WANTLIB += Qt5Multimedia Qt5Network Qt5Sql Qt5Svg Qt5Widgets Qt5Xml
+WANTLIB += avcodec avformat avutil c cddb cdio cdio_cdda cdio_paranoia
+WANTLIB += m mpg123 mtp musicbrainz5 tag z
 
 MODULES =	devel/cmake \
 		x11/qt5
@@ -20,7 +22,7 @@ MODULES =	devel/cmake \
 RUN_DEPENDS +=	devel/desktop-file-utils
 RUN_DEPENDS +=	x11/gtk+3,-guic
 LIB_DEPENDS +=	audio/mpg123 \
-		audio/speexdsp \
+		audio/libcdio \
 		audio/libcddb \
 		audio/libmusicbrainz5 \
 		audio/taglib \
@@ -28,12 +30,6 @@ LIB_DEPENDS +=	audio/mpg123 \
 		x11/qt5/qtsvg \
 		devel/libmtp \
 		graphics/ffmpeg
-
-WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Multimedia
-WANTLIB += Qt5Network Qt5Sql Qt5Svg Qt5Widgets Qt5Xml avcodec
-WANTLIB += avformat avutil c cdda_interface cdda_paranoia cddb
-WANTLIB += iconv intl m mpg123 mtp musicbrainz5 pthread speexdsp tag z
-WANTLIB += ${COMPILER_LIBCXX}
 
 CONFIGURE_ARGS +=	-DCMAKE_INSTALL_PREFIX:Path=${PREFIX} \
 			-DENABLE_LIBVLC=OFF \

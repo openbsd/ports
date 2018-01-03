@@ -1,0 +1,20 @@
+$OpenBSD: patch-devices_extractjob_h,v 1.1 2018/01/03 08:02:26 rsadowski Exp $
+
+If libcdios header is found before cdparanioas, CD_FRAMESIZE_RAW is not defined
+because our libcdio is too old (this define got added in 0.82):
+
+http://git.savannah.gnu.org/cgit/libcdio.git/tree/include/cdio/sector.h?h=release-0.82#n274
+
+Index: devices/extractjob.h
+--- devices/extractjob.h.orig
++++ devices/extractjob.h
+@@ -27,6 +27,9 @@
+ 
+ #include "filejob.h"
+ #include "encoders.h"
++#ifndef CD_FRAMESIZE_RAW
++#define CD_FRAMESIZE_RAW        CDIO_CD_FRAMESIZE_RAW
++#endif
+ 
+ class ExtractJob : public FileJob
+ {
