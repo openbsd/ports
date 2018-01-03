@@ -1,0 +1,69 @@
+$OpenBSD: patch-build_detect_platform,v 1.7 2018/01/03 20:25:25 rsadowski Exp $
+
+Don't use SONAME.
+Skip checks for optional features.
+
+Index: build_detect_platform
+--- build_detect_platform.orig
++++ build_detect_platform
+@@ -123,6 +123,7 @@ case "$TARGET_OS" in
+         PLATFORM_LDFLAGS="-pthread"
+         PORT_FILE=port/port_posix.cc
+         PORT_SSE_FILE=port/port_posix_sse.cc
++        PLATFORM_SHARED_LDFLAGS="-shared"
+         ;;
+     DragonFly)
+         PLATFORM=OS_DRAGONFLYBSD
+@@ -187,51 +188,7 @@ if [ "$CROSS_COMPILE" = "true" ]; then
+     # Cross-compiling; do not try any compilation tests.
+     true
+ else
+-    CXXOUTPUT="${TMPDIR}/leveldb_build_detect_platform-cxx.$$"
+-
+-    # If -std=c++0x works, use <atomic> as fallback for when memory barriers
+-    # are not available.
+-    $CXX $CXXFLAGS -std=c++0x -x c++ - -o $CXXOUTPUT 2>/dev/null  <<EOF
+-      #include <atomic>
+-      int main() {}
+-EOF
+-    if [ "$?" = 0 ]; then
+-        COMMON_FLAGS="$COMMON_FLAGS -DLEVELDB_PLATFORM_POSIX -DLEVELDB_ATOMIC_PRESENT"
+-        PLATFORM_CXXFLAGS="-std=c++0x"
+-    else
+-        COMMON_FLAGS="$COMMON_FLAGS -DLEVELDB_PLATFORM_POSIX"
+-    fi
+-
+-    # Test whether Snappy library is installed
+-    # http://code.google.com/p/snappy/
+-    $CXX $CXXFLAGS -x c++ - -o $CXXOUTPUT 2>/dev/null  <<EOF
+-      #include <snappy.h>
+-      int main() {}
+-EOF
+-    if [ "$?" = 0 ]; then
+-        COMMON_FLAGS="$COMMON_FLAGS -DSNAPPY"
+-        PLATFORM_LIBS="$PLATFORM_LIBS -lsnappy"
+-    fi
+-
+-    # Test whether tcmalloc is available
+-    $CXX $CXXFLAGS -x c++ - -o $CXXOUTPUT -ltcmalloc 2>/dev/null  <<EOF
+-      int main() {}
+-EOF
+-    if [ "$?" = 0 ]; then
+-        PLATFORM_LIBS="$PLATFORM_LIBS -ltcmalloc"
+-    fi
+-
+-    rm -f $CXXOUTPUT 2>/dev/null
+-
+-    # Test if gcc SSE 4.2 is supported
+-    $CXX $CXXFLAGS -x c++ - -o $CXXOUTPUT -msse4.2 2>/dev/null  <<EOF
+-      int main() {}
+-EOF
+-    if [ "$?" = 0 ]; then
+-        PLATFORM_SSEFLAGS="-msse4.2"
+-    fi
+-
+-    rm -f $CXXOUTPUT 2>/dev/null
++    COMMON_FLAGS="$COMMON_FLAGS -DLEVELDB_PLATFORM_POSIX"
+ fi
+ 
+ # Use the SSE 4.2 CRC32C intrinsics iff runtime checks indicate compiler supports them.

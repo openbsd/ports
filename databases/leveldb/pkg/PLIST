@@ -1,0 +1,25 @@
+@comment $OpenBSD: PLIST,v 1.7 2018/01/03 20:25:25 rsadowski Exp $
+include/leveldb/
+include/leveldb/c.h
+include/leveldb/cache.h
+include/leveldb/comparator.h
+include/leveldb/db.h
+include/leveldb/dumpfile.h
+include/leveldb/env.h
+include/leveldb/filter_policy.h
+include/leveldb/iterator.h
+include/leveldb/options.h
+include/leveldb/slice.h
+include/leveldb/status.h
+include/leveldb/table.h
+include/leveldb/table_builder.h
+include/leveldb/write_batch.h
+lib/libleveldb.a
+@lib lib/libleveldb.so.${LIBleveldb_VERSION}
+lib/libmemenv.a
+share/doc/leveldb/
+share/doc/leveldb/LICENSE
+share/doc/leveldb/impl.md
+share/doc/leveldb/index.md
+share/doc/leveldb/log_format.md
+share/doc/leveldb/table_format.md
