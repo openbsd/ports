@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.113 2018/01/02 13:19:10 robert Exp $
+# $OpenBSD: Makefile,v 1.114 2018/01/03 16:35:53 robert Exp $
 
 USE_WXNEEDED=	Yes
 
@@ -13,6 +13,7 @@ CATEGORIES=	lang devel
 
 SHARED_LIBS +=  mono-2.0		1.0	# .0.0
 SHARED_LIBS +=  monoboehm-2.0           1.0     # .0.0
+SHARED_LIBS +=  monosgen-2.0            0.0	# .1.0
 SHARED_LIBS +=  mono-profiler-iomap	0.0	# .0.0
 SHARED_LIBS +=  mono-profiler-aot	1.0	# .0.0
 SHARED_LIBS +=  mono-profiler-coverage	0.0	# .0.0
@@ -63,7 +64,6 @@ CONFIGURE_ENV+=	CFLAGS="-march=i586"
 
 CONFIGURE_ARGS=	--with-gc=included \
 		--with-tls=pthread \
-		--without-sgen \
 		--enable-btls \
 		--with-csc=mcs \
 		--disable-quiet-build \

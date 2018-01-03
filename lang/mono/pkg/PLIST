@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2018/01/02 13:19:10 robert Exp $
+@comment $OpenBSD: PLIST,v 1.27 2018/01/03 16:35:53 robert Exp $
 bin/al
 bin/al2
 bin/caspol
@@ -52,6 +52,7 @@ bin/mono-heapviz
 bin/mono-package-runtime
 bin/mono-service
 bin/mono-service2
+@bin bin/mono-sgen
 bin/mono-sgen-gdb.py
 bin/mono-shlib-cop
 bin/mono-symbolicate
@@ -61,6 +62,7 @@ bin/mono-xmltool
 bin/monodocer
 bin/monodocs2html
 bin/monodocs2slashdoc
+bin/monograph
 bin/monolinker
 bin/monop
 bin/monop2
@@ -70,6 +72,7 @@ bin/nunit-console
 bin/nunit-console2
 bin/nunit-console4
 bin/pdb2mdb
+@bin bin/pedump
 bin/permview
 bin/peverify
 bin/resgen
@@ -162,6 +165,9 @@ lib/libmono-profiler-log.la
 lib/libmonoboehm-2.0.a
 lib/libmonoboehm-2.0.la
 @lib lib/libmonoboehm-2.0.so.${LIBmonoboehm-2.0_VERSION}
+lib/libmonosgen-2.0.a
+lib/libmonosgen-2.0.la
+@lib lib/libmonosgen-2.0.so.${LIBmonosgen-2.0_VERSION}
 lib/mono/
 lib/mono-source-libs/
 lib/mono-source-libs/Options.cs
@@ -2975,6 +2981,7 @@ lib/pkgconfig/mono-nunit.pc
 lib/pkgconfig/mono-options.pc
 lib/pkgconfig/mono.pc
 lib/pkgconfig/monodoc.pc
+lib/pkgconfig/monosgen-2.pc
 lib/pkgconfig/reactive.pc
 lib/pkgconfig/system.web.extensions.design_1.0.pc
 lib/pkgconfig/system.web.extensions_1.0.pc
