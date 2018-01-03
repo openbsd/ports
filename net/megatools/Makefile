@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2017/11/21 00:13:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2018/01/03 10:39:00 bentley Exp $
+
+PORTROACH =		limit:[0-9]\.tar\.gz
 
 COMMENT =		command line client application for Mega
 
