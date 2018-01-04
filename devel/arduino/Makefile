@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2016/10/01 11:54:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2018/01/04 06:20:51 bentley Exp $
 
 COMMENT=	open-source electronics prototyping platform
 
@@ -9,15 +9,15 @@ PKGNAME=	arduino-${V}
 # If updating the port, check whether this needs to be adjusted.
 DISTNAME=	arduino-${V}-src
 EPOCH=		0
-REVISION =	5
+REVISION =	6
 CATEGORIES=	devel
-HOMEPAGE=	http://www.arduino.cc/
+HOMEPAGE=	https://www.arduino.cc/
 
 # arduino core + libraries: LGPLv2.1
 # frontend application: GPLv2 (not shipped yet)
 PERMIT_PACKAGE_CDROM=   Yes
 
-MASTER_SITES=	${MASTER_SITE_GOOGLECODE:=arduino/}
+MASTER_SITES=	https://downloads.arduino.cc/
 
 RUN_DEPENDS=	devel/avr/binutils \
 		devel/avr/gcc \
