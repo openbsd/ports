@@ -1,0 +1,31 @@
+$OpenBSD: patch-folks_potential-match_vala,v 1.1 2018/01/04 19:22:59 ajacoutot Exp $
+
+From 765febf7a02adf62b01f86eb4e7dbfd548b4e99d Mon Sep 17 00:00:00 2001
+From: Niels De Graef <nielsdegraef@gmail.com>
+Date: Wed, 3 Jan 2018 23:19:31 +0100
+Subject: PotentialMatch: use a correct index upper bound.
+
+From 7a71777f7ef9b7780ad24c225da47c01b7bdb9e6 Mon Sep 17 00:00:00 2001
+From: Niels De Graef <nielsdegraef@gmail.com>
+Date: Thu, 4 Jan 2018 13:06:10 +0100
+Subject: PotentialMatch: prevent out-of-bounds indexing.
+
+Index: folks/potential-match.vala
+--- folks/potential-match.vala.orig
++++ folks/potential-match.vala
+@@ -665,12 +665,11 @@ public class Folks.PotentialMatch : Object
+     {
+       var haystack_len = haystack.length; /* in unichars */
+ 
+-      unichar ch = haystack[pos];
+-      if (pos < haystack_len && ch == c)
++      if (pos < haystack_len && haystack[pos] == c)
+         return 0;
+ 
+-      uint idx = ((int) pos - (int) max_dist).clamp (0, haystack_len);
+-      ch = 0;
++      uint idx = ((int) pos - (int) max_dist).clamp (0, haystack_len - 1);
++      unichar ch = 0;
+ 
+       while (idx < pos + max_dist && (ch = haystack[idx]) != 0)
+         {

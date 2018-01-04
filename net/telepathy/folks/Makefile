@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.100 2017/11/09 19:44:12 landry Exp $
+# $OpenBSD: Makefile,v 1.101 2018/01/04 19:22:59 ajacoutot Exp $
 
 # XXX: PORTROACH set below to override the value from gnome.port.mk
 
@@ -6,7 +6,7 @@ COMMENT=		people aggregation library
 
 GNOME_PROJECT=		folks
 GNOME_VERSION=		0.11.4
-REVISION=		5
+REVISION=		6
 
 # MODULE_VERSION in config.h
 API_V=			43
@@ -20,26 +20,25 @@ SUBST_VARS=		API_V
 
 HOMEPAGE=		https://wiki.gnome.org/Projects/Folks
 
-WANTLIB += EGL GL ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage
-WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xt Xxf86vm atk-1.0
-WANTLIB += atk-bridge-2.0 atspi c cairo cairo-gobject camel-1.2
-WANTLIB += db dbus-1 dbus-glib-1 drm ebackend-1.2 ebook-1.2 ebook-contacts-1.2
-WANTLIB += edata-book-1.2 edataserver-1.2 enchant epoxy $(LIBECXX)
-WANTLIB += expat ffi fontconfig freetype gbm gck-1 gcr-base-3
-WANTLIB += gcrypt gdk-3 gdk_pixbuf-2.0 gee-0.8 gio-2.0 glapi glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 gpg-error graphite2 gstapp-1.0
-WANTLIB += gstaudio-1.0 gstbase-1.0 gstfft-1.0 gstpbutils-1.0
-WANTLIB += gstreamer-1.0 gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3
-WANTLIB += harfbuzz harfbuzz-icu hyphen iconv icudata icui18n
-WANTLIB += icuuc intl javascriptcoregtk-4.0 jpeg json-glib-1.0
-WANTLIB += lzma m ncurses notify nspr4 nss3 nssutil3 orc-0.4 p11-kit
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += plc4 plds4 png pthread readline secret-1
-WANTLIB += smime3 soup-2.4 sqlite3 ssl3 telepathy-glib
-WANTLIB += webkit2gtk-4.0 webp xcb xcb-dri2 xcb-glx xcb-render
-WANTLIB += xcb-shm xcb-xfixes xml2 xslt z
-WANTLIB += GLESv2 gstallocators-1.0 gstbadallocators-1.0 gstgl-1.0
-WANTLIB += tasn1
+WANTLIB += ${COMPILER_LIBCXX} EGL GL GLESv2 ICE SM X11 X11-xcb
+WANTLIB += Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
+WANTLIB += Xrandr Xrender Xt Xtst Xxf86vm atk-1.0 atk-bridge-2.0
+WANTLIB += atspi c cairo cairo-gobject camel-1.2 curses db dbus-1
+WANTLIB += dbus-glib-1 drm ebackend-1.2 ebook-1.2 ebook-contacts-1.2
+WANTLIB += edata-book-1.2 edataserver-1.2 enchant epoxy expat
+WANTLIB += ffi fontconfig freetype gbm gck-1 gcr-base-3 gcrypt
+WANTLIB += gdk-3 gdk_pixbuf-2.0 gee-0.8 gio-2.0 glapi glib-2.0
+WANTLIB += gmodule-2.0 gobject-2.0 gpg-error graphite2 gstallocators-1.0
+WANTLIB += gstapp-1.0 gstaudio-1.0 gstbadallocators-1.0 gstbase-1.0
+WANTLIB += gstfft-1.0 gstgl-1.0 gstpbutils-1.0 gstreamer-1.0 gsttag-1.0
+WANTLIB += gstvideo-1.0 gthread-2.0 gtk-3 harfbuzz harfbuzz-icu
+WANTLIB += hyphen iconv icudata icui18n icuuc intl javascriptcoregtk-4.0
+WANTLIB += jpeg json-glib-1.0 lzma m notify nspr4 nss3 nssutil3
+WANTLIB += orc-0.4 p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pcre pixman-1 plc4 plds4 png readline secret-1 smime3
+WANTLIB += soup-2.4 sqlite3 ssl3 tasn1 telepathy-glib webkit2gtk-4.0
+WANTLIB += webp xcb xcb-dri2 xcb-glx xcb-render xcb-shm xcb-xfixes
+WANTLIB += xml2 xslt z
 
 MODULES=		devel/dconf \
 			x11/gnome
