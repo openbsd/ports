@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/12/26 20:14:34 awolk Exp $
+# $OpenBSD: Makefile,v 1.2 2018/01/04 05:24:16 bentley Exp $
 
 COMMENT =	roguelite dungeon crawler game
 
 GH_ACCOUNT =	Cirrus-Minor
 GH_PROJECT =	witchblast
 GH_TAGNAME =	v0.7.5
+REVISION =	0
 
 CATEGORIES =	games x11
 
-MAINTAINER =		Thomas Frohwein (frohwein@ymail.com)
+MAINTAINER =	Thomas Frohwein <frohwein@ymail.com>
 
 # GPLv3, Music is CC-BY-NC-SA, fonts are SIL Open Font License
 PERMIT_PACKAGE_CDROM =	Non-commercial
