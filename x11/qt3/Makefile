@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.121 2017/07/26 22:45:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.122 2018/01/04 09:34:24 bentley Exp $
 
 # no libGL (toolchain issue)
 NOT_FOR_ARCHS= m88k
@@ -43,7 +43,7 @@ QT_PLUGINS=		plugins-${LIBqt-mt_VERSION:R}
 VERSION=	3.8
 DISTNAME=	qt-x11-free-3.${VERSION}
 CATEGORIES=	x11
-MASTER_SITES=	http://download.qt-project.org/archive/qt/3/
+MASTER_SITES=	https://download.qt-project.org/archive/qt/3/
 
 # Old official site
 #MASTER_SITES0=	http://freedesktop.org/~daisuke/
