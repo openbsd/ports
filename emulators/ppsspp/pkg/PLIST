@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/11/05 22:06:29 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/01/04 05:09:32 bentley Exp $
 @bin bin/PPSSPPSDL
 share/ppsspp/
 share/ppsspp/assets/
@@ -97,6 +97,7 @@ share/ppsspp/assets/shaders/scanlines.fsh
 share/ppsspp/assets/shaders/sharpen.fsh
 share/ppsspp/assets/shaders/upscale_spline36.fsh
 share/ppsspp/assets/shaders/upscale_spline36.vsh
+share/ppsspp/assets/shaders/videoAA.fsh
 share/ppsspp/assets/shaders/vignette.fsh
 share/ppsspp/assets/ui_atlas.zim
 share/ppsspp/assets/ui_atlas_lowmem.zim
