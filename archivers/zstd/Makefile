@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2017/10/24 14:58:14 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.13 2018/01/04 14:47:20 sthen Exp $
 
 COMMENT =		zstandard fast real-time compression algorithm
 
 GH_ACCOUNT =		facebook
 GH_PROJECT =		zstd
-GH_TAGNAME =		v1.3.2
+GH_TAGNAME =		v1.3.3
+SHARED_LIBS =		zstd	0.0	#1.3.3
 
 CATEGORIES =		archivers
 
@@ -22,18 +23,12 @@ COMPILER =		base-clang ports-clang ports-gcc
 COMPILER_LANGS =	c
 
 MAKE_ENV =		CC="${CC}" CXX="${CXX}" \
-			CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}"
-FAKE_FLAGS =		PREFIX="${PREFIX}" MANDIR="${PREFIX}/man/man1"
+			CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" \
+			LIBzstd_VERSION="${LIBzstd_VERSION}"
+FAKE_FLAGS =		PREFIX="${PREFIX}"
 
 USE_GMAKE =		Yes
 
-WRKSRC =		${WRKDIST}/programs
-
-ALL_TARGET =		zstd
-TEST_TARGET =		all test
-
-do-test:
-	cd "${WRKDIST}/tests" && ${SETENV} ${ALL_TEST_ENV} ${MAKE_PROGRAM} \
-		${ALL_TEST_FLAGS} -f ${MAKE_FILE} ${TEST_TARGET} ${TEST_LOG}
+TEST_TARGET =		check
 
 .include <bsd.port.mk>

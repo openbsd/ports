@@ -1,8 +1,8 @@
-$OpenBSD: patch-tests_playTests_sh,v 1.7 2017/10/24 14:58:14 rsadowski Exp $
+$OpenBSD: patch-tests_playTests_sh,v 1.8 2018/01/04 14:47:20 sthen Exp $
 Index: tests/playTests.sh
 --- tests/playTests.sh.orig
 +++ tests/playTests.sh
-@@ -67,6 +67,7 @@ UNAME=$(uname)
+@@ -69,6 +69,7 @@ UNAME=$(uname)
  case "$UNAME" in
    Darwin) MD5SUM="md5 -r" ;;
    FreeBSD) MD5SUM="gmd5sum" ;;
@@ -10,7 +10,7 @@ Index: tests/playTests.sh
    *) MD5SUM="md5sum" ;;
  esac
  
-@@ -209,7 +210,7 @@ rm ./*.tmp ./*.zstd
+@@ -237,7 +238,7 @@ rm ./*.tmp ./*.zstd
  $ECHO "frame concatenation tests completed"
  
  

@@ -1,10 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.3 2017/05/05 18:16:53 juanfra Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/01/04 14:47:20 sthen Exp $
 bin/unzstd
 @bin bin/zstd
 bin/zstdcat
 bin/zstdgrep
 bin/zstdless
 bin/zstdmt
+include/zbuff.h
+include/zdict.h
+include/zstd.h
+include/zstd_errors.h
+lib/libzstd.a
+@lib lib/libzstd.so.${LIBzstd_VERSION}
+lib/pkgconfig/libzstd.pc
 @man man/man1/unzstd.1
 @man man/man1/zstd.1
 @man man/man1/zstdcat.1
