@@ -1,0 +1,14 @@
+#!/bin/sh
+#
+# $OpenBSD: grafana.rc,v 1.1.1.1 2018/01/04 20:46:00 landry Exp $
+
+daemon="${TRUEPREFIX}/bin/grafana-server"
+daemon_user="_grafana"
+daemon_flags="-homepath ${TRUEPREFIX}/share/grafana -config ${SYSCONFDIR}/grafana/config.ini"
+
+. /etc/rc.d/rc.subr
+
+rc_bg=YES
+rc_reload=NO
+
+rc_cmd $1

@@ -1,0 +1,23 @@
+$OpenBSD: patch-conf_sample_ini,v 1.1.1.1 2018/01/04 20:46:00 landry Exp $
+
+Index: conf/sample.ini
+--- conf/sample.ini.orig
++++ conf/sample.ini
+@@ -13,7 +13,7 @@
+ [paths]
+ # Path to where grafana can store temp files, sessions, and the sqlite3 db (if that is used)
+ #
+-;data = /var/lib/grafana
++data = /var/grafana
+ #
+ # Directory where grafana can store logs
+ #
+@@ -21,7 +21,7 @@
+ #
+ # Directory where grafana will automatically scan and look for plugins
+ #
+-;plugins = /var/lib/grafana/plugins
++plugins = /var/grafana/plugins
+ 
+ #
+ #################################### Server ####################################
