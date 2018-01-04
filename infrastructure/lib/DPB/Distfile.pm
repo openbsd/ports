@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Distfile.pm,v 1.11 2017/05/13 09:56:03 espie Exp $
+# $OpenBSD: Distfile.pm,v 1.12 2018/01/04 12:11:26 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -216,6 +216,7 @@ sub find_copy
 {
 	my ($self, $name) = @_;
 
+	return 0 if !defined $self->{sha};
 	# sha256 must match AND size as well
 	my $alternate = $self->{repo}{reverse}{$self->{sha}->stringize};
 	if (defined $alternate) {
