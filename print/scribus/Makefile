@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.60 2017/07/26 22:45:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.61 2018/01/04 06:00:50 bentley Exp $
 
-COMMENT=	DTP program
+COMMENT=	desktop publishing program
 DISTNAME=	scribus-1.4.5
 CATEGORIES=	print
-REVISION=	0
+REVISION=	1
 
-HOMEPAGE=	http://www.scribus.net/
+HOMEPAGE=	https://www.scribus.net/
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
