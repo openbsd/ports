@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2017/12/25 21:53:29 bentley Exp $
+# $OpenBSD: Makefile,v 1.5 2018/01/04 08:31:47 bentley Exp $
 
 COMMENT =		generic multi-emulator frontend
 
-V =			1.6.9
+V =			1.7.0
 DISTNAME =		retroarch-$V
 
 CATEGORIES =		emulators
@@ -16,7 +16,7 @@ WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += EGL GL SDL2 X11 X11-xcb Xext Xinerama Xv Xxf86vm ass
 WANTLIB += avcodec avformat avutil c drm freetype gbm m openal
 WANTLIB += ossaudio pthread swresample swscale usb-1.0 xcb xkbcommon
-WANTLIB += z dbus-1
+WANTLIB += z usb
 
 GH_ACCOUNT =		libretro
 GH_PROJECT =		RetroArch
@@ -27,9 +27,9 @@ MAINTAINER =		Anthony J. Bentley <anthony@anjbe.name>
 RUN_DEPENDS =		devel/desktop-file-utils
 LIB_DEPENDS =		audio/openal \
 			devel/libusb1 \
+			devel/libusb-compat \
 			devel/sdl2 \
 			graphics/ffmpeg \
-			x11/dbus \
 			x11/xkbcommon
 
 MAKE_FLAGS =		V=1 \
