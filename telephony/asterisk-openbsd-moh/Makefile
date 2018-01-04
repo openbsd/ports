@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2017/04/26 20:34:32 ian Exp $
+# $OpenBSD: Makefile,v 1.28 2018/01/04 06:15:08 bentley Exp $
 
 # strictly speaking not, as they are just sound files, but packaging
 # these on arch which don't build asterisk is a waste of cycles on build
@@ -11,6 +11,7 @@ PORTROACH=		ignore:1
 COMMENT =		add OpenBSD songs to Asterisk music-on-hold
 
 PKGNAME =		asterisk-openbsd-moh-6.1
+REVISION =		0
 REL_LIST =		30 31 32 33 34 35 36 37 38 39 \
 			40 41 42 43 44 45 46 47 48 49 \
 			50 51 52 53 54 55 56 57 \
@@ -25,14 +26,14 @@ EXTRACT_ONLY=
 
 CATEGORIES =		telephony
 
-HOMEPAGE =		http://www.openbsd.org/lyrics.html
+HOMEPAGE =		https://www.openbsd.org/lyrics.html
 
 MAINTAINER=		Ian Darwin <ian@openbsd.org>
 
 # Copyright held by Theo; ok for non-commercial-redistribution
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		http://ftp.openbsd.org/pub/OpenBSD/songs/
+MASTER_SITES =		https://ftp.openbsd.org/pub/OpenBSD/songs/
 
 BUILD_DEPENDS =		audio/madplay
 
