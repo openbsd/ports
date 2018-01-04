@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.846 2018/01/03 19:59:37 schwarze Exp $
+# $OpenBSD: Makefile,v 1.847 2018/01/04 10:08:15 fcambus Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -32,7 +32,6 @@
      SUBDIR += cronolog
      SUBDIR += dansguardian
      SUBDIR += darkhttpd
-     SUBDIR += decss
      SUBDIR += dillo
      SUBDIR += dokuwiki
      SUBDIR += drupal7
