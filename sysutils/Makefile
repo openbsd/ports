@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.461 2017/12/19 20:21:56 landry Exp $
+# $OpenBSD: Makefile,v 1.462 2018/01/04 20:46:32 landry Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -100,6 +100,7 @@
      SUBDIR += gource
      SUBDIR += govmomi
      SUBDIR += gpioflicker
+     SUBDIR += grafana
      SUBDIR += grive2
      SUBDIR += grub
      SUBDIR += gsmartcontrol
