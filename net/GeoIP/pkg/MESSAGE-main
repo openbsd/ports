@@ -1,0 +1,5 @@
+
+GeoIP legacy databases are deprecated upstream and updates to these will stop.
+The free GeoLite legacy databases will no longer be updated after 1 April 2018.
+See https://blog.maxmind.com/tag/geolite-legacy/
+
