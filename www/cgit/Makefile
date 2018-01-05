@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2017/03/22 20:23:52 landry Exp $
+# $OpenBSD: Makefile,v 1.23 2018/01/05 08:31:26 bentley Exp $
 
 COMMENT =	web frontend for git repositories
 
 DISTNAME =	cgit-1.1
 CATEGORIES =	www devel
+REVISION =	0
 
 DISTFILES =	${DISTNAME}.tar.gz:0 \
 		git-2.10.2.tar.gz:1
@@ -17,10 +18,13 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 USE_GMAKE =	yes
 
+BUILD_DEPENDS =	textproc/asciidoc
 LIB_DEPENDS =	converters/libiconv
 
 PREFIX =	${VARBASE}/www
 MAKE_FLAGS +=	V=1 NO_GETTEXT=1 NO_LUA=1 LDFLAGS+='${STATIC} -L${LOCALBASE}/lib'
+
+ALL_TARGET =	all doc-man
 
 post-extract:
 	rmdir ${WRKSRC}/git
@@ -28,5 +32,6 @@ post-extract:
 
 post-install:
 	mv ${PREFIX}/htdocs ${PREFIX}/cgit
+	${INSTALL_MAN} ${WRKBUILD}/cgitrc.5 ${WRKINST}${LOCALBASE}/man/man5
 
 .include <bsd.port.mk>
