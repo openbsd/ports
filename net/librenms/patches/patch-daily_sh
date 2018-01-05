@@ -1,14 +1,9 @@
-$OpenBSD: patch-daily_sh,v 1.21 2017/12/13 15:30:43 sthen Exp $
+$OpenBSD: patch-daily_sh,v 1.22 2018/01/05 14:51:42 sthen Exp $
 
 Index: daily.sh
 --- daily.sh.orig
 +++ daily.sh
-@@ -22,14 +22,14 @@
- # define DAILY_SCRIPT as the full path to this script and LIBRENMS_DIR as the directory this script is in
- DAILY_SCRIPT=$(readlink -f "$0")
- LIBRENMS_DIR=$(dirname "$DAILY_SCRIPT")
--COMPOSER="php ${LIBRENMS_DIR}/scripts/composer_wrapper.php"
-+COMPOSER="%PHP% ${LIBRENMS_DIR}/scripts/composer_wrapper.php"
+@@ -25,10 +25,10 @@ LIBRENMS_DIR=$(dirname "$DAILY_SCRIPT")
  
  # set log_file, using librenms $config['log_dir'], if set
  # otherwise we default to <LibreNMS Install Directory>/logs
@@ -21,7 +16,7 @@ Index: daily.sh
  LIBRENMS_USER_ID=$(id -u "$LIBRENMS_USER")
  
  
-@@ -71,7 +71,7 @@ status_run() {
+@@ -70,7 +70,7 @@ status_run() {
      else
          printf " \033[0;31mFAIL\033[0m\n";
          if [[ "${arg_option}" == "update" ]]; then
@@ -30,7 +25,7 @@ Index: daily.sh
          fi
          if [[ ! -z "${tmp}" ]]; then
              # print output in case of failure
-@@ -96,7 +96,7 @@ call_daily_php() {
+@@ -95,7 +95,7 @@ call_daily_php() {
      local args=( "$@" );
  
      for arg in "${args[@]}"; do
@@ -39,7 +34,7 @@ Index: daily.sh
      done
  }
  
-@@ -116,7 +116,7 @@ set_notifiable_result() {
+@@ -115,7 +115,7 @@ set_notifiable_result() {
      local arg_type=$1;
      local arg_result=$2;
  
@@ -48,7 +43,7 @@ Index: daily.sh
  }
  
  #######################################
-@@ -152,9 +152,9 @@ main () {
+@@ -146,9 +146,9 @@ main () {
      fi
  
      if [[ -z "$arg" ]]; then
@@ -60,7 +55,7 @@ Index: daily.sh
          if [[ "$up" == "0" ]]; then
              ${DAILY_SCRIPT} no-code-update
              set_notifiable_result update 1  # make sure there are no update notifications if update is disabled
-@@ -212,12 +212,12 @@ main () {
+@@ -189,12 +189,12 @@ main () {
              no-code-update)
                  # Updates of the code are disabled, just check for schema updates
                  # and clean up the db.

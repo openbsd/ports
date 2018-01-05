@@ -1,4 +1,4 @@
-$OpenBSD: patch-includes_common_php,v 1.18 2017/11/27 17:41:36 sthen Exp $
+$OpenBSD: patch-includes_common_php,v 1.19 2018/01/05 14:51:42 sthen Exp $
 
 Index: includes/common.php
 --- includes/common.php.orig
@@ -22,7 +22,7 @@ Index: includes/common.php
      )));
  
      return $output;
-@@ -1744,12 +1747,7 @@ function set_numeric($value, $default = 0)
+@@ -1702,12 +1705,7 @@ function set_numeric($value, $default = 0)
  
  function check_git_exists()
  {

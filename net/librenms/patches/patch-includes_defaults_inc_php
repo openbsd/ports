@@ -1,4 +1,4 @@
-$OpenBSD: patch-includes_defaults_inc_php,v 1.29 2017/12/13 15:30:43 sthen Exp $
+$OpenBSD: patch-includes_defaults_inc_php,v 1.30 2018/01/05 14:51:42 sthen Exp $
 
 N.B. snmpgetnext was not in upstream file at time of adding here
 
@@ -44,9 +44,9 @@ Index: includes/defaults.inc.php
 +$config['dot']            = '/usr/local/bin/dot';
 +$config['sfdp']           = '/usr/local/bin/sfdp';
  
- // Memcached - Keep immediate statistics
- $config['memcached']['enable'] = false;
-@@ -501,11 +502,11 @@ $config['billing']['bill_autoadd'] = 0;
+ $config['slow_statistics'] = true;
+ // THIS WILL CHANGE TO FALSE IN FUTURE
+@@ -495,11 +496,11 @@ $config['billing']['bill_autoadd'] = 0;
  $config['billing']['base'] = 1000;
  // Set the base to divider bytes to kB, MB, GB ,... (1000|1024)
  // External Integration
@@ -61,7 +61,7 @@ Index: includes/defaults.inc.php
  $config['smokeping']['pings']             = 20;
  // $config['oxidized']['enabled']         = FALSE;//Set to TRUE
  // $config['oxidized']['url']             = 'http://127.0.0.1:8888';// Set the Oxidized rest URL
-@@ -513,7 +514,7 @@ $config['smokeping']['pings']             = 20;
+@@ -507,7 +508,7 @@ $config['smokeping']['pings']             = 20;
  // NFSen RRD dir.
  $config['nfsen_enable'] = 0;
  // $config['nfsen_split_char']   = "_";
@@ -70,7 +70,7 @@ Index: includes/defaults.inc.php
  // $config['nfsen_suffix']   = "_yourdomain_com";
  // Location Mapping
  // Use this feature to map ugly locations to pretty locations
-@@ -852,7 +853,7 @@ $config['api_demo'] = 0;
+@@ -853,7 +854,7 @@ $config['api_demo'] = 0;
  // Set this to 1 if you want to disable some untrusting features for the API
  // Distributed Poller-Settings
  $config['distributed_poller']                = false;

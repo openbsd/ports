@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.7 2016/04/05 13:39:49 sthen Exp $
+$OpenBSD: README,v 1.8 2018/01/05 14:51:42 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -48,6 +48,21 @@ PHP modules; to do this in bulk:
 
 Reload your web server and/or php_fpm so that changes take effect.
 
+Sample php-fpm configuration
+----------------------------
+[librenms]
+user = _librenms
+group = _librenms
+listen = /var/www/run/php-fpm-lnms.sock
+listen.owner = www
+listen.group = www
+listen.mode = 0660
+pm = dynamic
+pm.max_children = 20
+pm.start_servers = 2
+pm.min_spare_servers = 1
+pm.max_spare_servers = 3
+
 Sample NGINX configuration
 --------------------------
 server {
@@ -59,7 +74,7 @@ server {
     try_files	$uri $uri/ @librenms;
   }
   location ~ \.php {
-    fastcgi_pass	unix:run/php-fpm.sock;
+    fastcgi_pass	unix:run/php-fpm-lnms.sock;
     fastcgi_index	index.php;
     fastcgi_param	DOCUMENT_ROOT /var/www$document_root;
     fastcgi_param	SCRIPT_FILENAME /var/www$document_root$fastcgi_script_name;
