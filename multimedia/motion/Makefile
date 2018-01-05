@@ -1,20 +1,17 @@
-# $OpenBSD: Makefile,v 1.13 2016/09/23 09:16:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2018/01/05 05:12:27 bentley Exp $
 
 COMMENT=	motion detection software for video
 
-GH_ACCOUNT=	Mr-Dave
+GH_ACCOUNT=	Motion-Project
 GH_PROJECT=	motion
 GH_COMMIT=	9b4c16cae0ea77950cc156a9c82947ac51825f68
 V=		3.4.1
-REVISION=	3
+REVISION=	4
 DISTNAME=	motion-$V
 
 CATEGORIES=	multimedia
 
-# there are several different forks at the moment which will hopefully
-# be re-merged at some point; we are tracking the version from
-# https://github.com/Mr-Dave/motion
-HOMEPAGE=	http://www.lavrsen.dk/foswiki/bin/view/Motion/
+HOMEPAGE=	https://motion-project.github.io/
 
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
