@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.572 2018/01/04 10:09:35 fcambus Exp $
+# $OpenBSD: Quirks.pm,v 1.573 2018/01/05 07:20:28 bentley Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1219,6 +1219,8 @@ my $obsolete_reason = {
 	'hs-dataenc' => 3,
 	'man2web' => 2,
 	'decss' => 6,
+	'libgcal' => 6,
+	'akonadi-googledata' => 6,
 };
 
 # reasons for obsolete packages
