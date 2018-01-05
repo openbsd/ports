@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.116 2017/11/15 21:28:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.117 2018/01/05 12:48:01 landry Exp $
 
 BROKEN-arm=	src/core/ngx_rwlock.c:116:2: error: \#error ngx_atomic_cmp_set() is not defined!
 BROKEN-hppa=	src/core/ngx_rwlock.c:116:2: error: \#error ngx_atomic_cmp_set() is not defined!
@@ -17,6 +17,8 @@ COMMENT-passenger=	nginx passenger (ruby/python/nodejs) integration module
 
 VERSION=	1.12.1
 REVISION=	1
+REVISION-main=	2
+REVISION-lua=	2
 DISTNAME=	nginx-${VERSION}
 CATEGORIES=	www
 
@@ -42,7 +44,7 @@ MASTER_SITES4=	https://github.com/openresty/headers-more-nginx-module/archive/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		ngx_devel_kit-v0.3.0.tar.gz{v0.3.0.tar.gz}:0 \
 		naxsi-0.55.1.tar.gz{0.55.1.tar.gz}:1 \
-		lua-nginx-module-v0.10.6.tar.gz{v0.10.6.tar.gz}:2 \
+		lua-nginx-module-v0.10.11.tar.gz{v0.10.11.tar.gz}:2 \
 		headers-more-nginx-module-v0.32.tar.gz{v0.32.tar.gz}:4
 
 HOMEPAGE=	http://nginx.org/
@@ -52,10 +54,8 @@ MAINTAINER=	Robert Nagy <robert@openbsd.org>
 # BSD-like
 PERMIT_PACKAGE_CDROM=	yes
 
-# XXX -lua removed following libressl api change; re-add to
-# MULTI_PACKAGES when this is worked-around
 MULTI_PACKAGES =	-main -image_filter -geoip -xslt -mailproxy -stream \
-			-naxsi -perl -passenger -headers_more	# -lua
+			-naxsi -perl -passenger -headers_more -lua
 
 FLAVOR ?=
 PSEUDO_FLAVORS =	no_lua
@@ -81,6 +81,7 @@ LIB_DEPENDS-xslt=	textproc/libxml \
 			textproc/libxslt
 LIB_DEPENDS-image_filter=graphics/gd
 LIB_DEPENDS-geoip=	net/GeoIP
+LIB_DEPENDS-lua=	${MODLUA_LIB_DEPENDS}
 
 RUN_DEPENDS-main=	# blank (override addition from lua.port.mk)
 RUN_DEPENDS-mailproxy=	www/nginx,-main=${VERSION}
