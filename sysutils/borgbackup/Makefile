@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2017/12/30 21:38:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2018/01/05 12:33:08 sthen Exp $
 
 COMMENT =		deduplicating backup program
 
 MODPY_EGG_VERSION =	1.1.4
 DISTNAME =		borgbackup-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		sysutils
 
@@ -17,9 +18,12 @@ MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
-WANTLIB +=		${MODPY_WANTLIB} crypto lz4 pthread
+WANTLIB +=		${MODPY_WANTLIB} b2 crypto lz4 pthread zstd
 
-LIB_DEPENDS +=		${MODPY_LIB_DEPENDS} archivers/lz4
+LIB_DEPENDS +=		${MODPY_LIB_DEPENDS} \
+			archivers/lz4 \
+			archivers/zstd \
+			security/libb2
 BUILD_DEPENDS +=	${RUN_DEPENDS} \
 			devel/py-setuptools_scm${MODPY_FLAVOR} \
 			textproc/py-sphinx_guzzle_theme${MODPY_FLAVOR}
