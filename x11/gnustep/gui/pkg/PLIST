@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2017/04/11 20:34:27 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.15 2018/01/05 08:00:09 sebastia Exp $
 bin/GSSpeechServer
 @bin bin/gclose
 @bin bin/gcloseall
@@ -57,6 +57,8 @@ include/AppKit/GSXibParser.h
 include/AppKit/IMConnectors.h
 include/AppKit/IMCustomObject.h
 include/AppKit/IMLoading.h
+include/AppKit/NSAccessibility.h
+include/AppKit/NSAccessibilityConstants.h
 include/AppKit/NSActionCell.h
 include/AppKit/NSAffineTransform.h
 include/AppKit/NSAlert.h
@@ -106,6 +108,7 @@ include/AppKit/NSFontManager.h
 include/AppKit/NSFontPanel.h
 include/AppKit/NSForm.h
 include/AppKit/NSFormCell.h
+include/AppKit/NSGestureRecognizer.h
 include/AppKit/NSGlyphGenerator.h
 include/AppKit/NSGradient.h
 include/AppKit/NSGraphics.h
@@ -143,6 +146,7 @@ include/AppKit/NSPageLayout.h
 include/AppKit/NSPanel.h
 include/AppKit/NSParagraphStyle.h
 include/AppKit/NSPasteboard.h
+include/AppKit/NSPasteboardItem.h
 include/AppKit/NSPopUpButton.h
 include/AppKit/NSPopUpButtonCell.h
 include/AppKit/NSPopover.h
@@ -154,6 +158,7 @@ include/AppKit/NSProgressIndicator.h
 include/AppKit/NSResponder.h
 include/AppKit/NSRulerMarker.h
 include/AppKit/NSRulerView.h
+include/AppKit/NSRunningApplication.h
 include/AppKit/NSSavePanel.h
 include/AppKit/NSScreen.h
 include/AppKit/NSScrollView.h
@@ -165,6 +170,7 @@ include/AppKit/NSSegmentedCell.h
 include/AppKit/NSSegmentedControl.h
 include/AppKit/NSSelection.h
 include/AppKit/NSShadow.h
+include/AppKit/NSSharingService.h
 include/AppKit/NSSlider.h
 include/AppKit/NSSliderCell.h
 include/AppKit/NSSound.h
@@ -185,6 +191,7 @@ include/AppKit/NSTableHeaderCell.h
 include/AppKit/NSTableHeaderView.h
 include/AppKit/NSTableView.h
 include/AppKit/NSText.h
+include/AppKit/NSTextAlternatives.h
 include/AppKit/NSTextAttachment.h
 include/AppKit/NSTextContainer.h
 include/AppKit/NSTextField.h
@@ -202,9 +209,12 @@ include/AppKit/NSTrackingArea.h
 include/AppKit/NSTreeController.h
 include/AppKit/NSTreeNode.h
 include/AppKit/NSUserDefaultsController.h
+include/AppKit/NSUserInterfaceItemIdentification.h
+include/AppKit/NSUserInterfaceLayout.h
 include/AppKit/NSUserInterfaceValidation.h
 include/AppKit/NSView.h
 include/AppKit/NSViewController.h
+include/AppKit/NSVisualEffectView.h
 include/AppKit/NSWindow.h
 include/AppKit/NSWindowController.h
 include/AppKit/NSWorkspace.h
