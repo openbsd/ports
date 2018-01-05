@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2017/04/19 21:16:43 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.24 2018/01/05 07:57:37 sebastia Exp $
 @conflict swi-prolog-<=5.6.27p5
 @bin bin/HTMLLinker
 @bin bin/autogsdoc
@@ -53,8 +53,11 @@ include/Foundation/NSError.h
 include/Foundation/NSErrorRecoveryAttempting.h
 include/Foundation/NSException.h
 include/Foundation/NSExpression.h
+include/Foundation/NSFileCoordinator.h
 include/Foundation/NSFileHandle.h
 include/Foundation/NSFileManager.h
+include/Foundation/NSFilePresenter.h
+include/Foundation/NSFileVersion.h
 include/Foundation/NSFormatter.h
 include/Foundation/NSGarbageCollector.h
 include/Foundation/NSGeometry.h
@@ -124,6 +127,7 @@ include/Foundation/NSURLProtectionSpace.h
 include/Foundation/NSURLProtocol.h
 include/Foundation/NSURLRequest.h
 include/Foundation/NSURLResponse.h
+include/Foundation/NSURLSession.h
 include/Foundation/NSUUID.h
 include/Foundation/NSUndoManager.h
 include/Foundation/NSUserDefaults.h
@@ -622,7 +626,6 @@ ${LIBDIR}/Resources/NSTimeZones/zones/CST6CDT
 ${LIBDIR}/Resources/NSTimeZones/zones/Canada/
 ${LIBDIR}/Resources/NSTimeZones/zones/Canada/Atlantic
 ${LIBDIR}/Resources/NSTimeZones/zones/Canada/Central
-${LIBDIR}/Resources/NSTimeZones/zones/Canada/East-Saskatchewan
 ${LIBDIR}/Resources/NSTimeZones/zones/Canada/Eastern
 ${LIBDIR}/Resources/NSTimeZones/zones/Canada/Mountain
 ${LIBDIR}/Resources/NSTimeZones/zones/Canada/Newfoundland
