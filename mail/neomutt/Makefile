@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2017/12/15 20:51:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2018/01/05 13:56:02 sthen Exp $
 
 COMMENT=	tty-based e-mail client, Mutt with patches
 
@@ -25,9 +25,6 @@ BUILD_DEPENDS+=	textproc/docbook-xsl \
 
 FLAVORS=	gpgme sasl
 FLAVOR?=
-
-FLAVOR_COMMA=	${FLAVOR_EXT:S/-/,/g}
-SUBST_VARS=	FLAVOR_COMMA
 
 CONFIGURE_STYLE= simple
 BUILD_DEPENDS+=	lang/jimtcl \
