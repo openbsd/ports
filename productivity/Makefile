@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.77 2017/09/15 13:44:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.78 2018/01/05 07:15:31 bentley Exp $
 
      SUBDIR =
      SUBDIR += akonadi
-     SUBDIR += akonadi-googledata
      SUBDIR += aqbanking
      SUBDIR += attica
      SUBDIR += baikal
@@ -24,7 +23,6 @@
      SUBDIR += kmymoney
      SUBDIR += ledger
      SUBDIR += libalkimia
-     SUBDIR += libgcal
      SUBDIR += libkfbapi
      SUBDIR += libkgapi
      SUBDIR += librcps
