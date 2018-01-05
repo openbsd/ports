@@ -1,0 +1,25 @@
+$OpenBSD: README,v 1.1.1.1 2018/01/05 23:50:19 bcallah Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+FreeSerf
+========
+FreeSerf requires the original game files from The Settlers or Serf City
+to function properly.  These can come from the original disks or
+installation, either the DOS or Amiga version.
+
+The DOS data file is called SPAE.PA, SPAD.PA, SPAF.PA, or SPAU.PA,
+depending on the language of the game. The Amiga data files are called
+gfxheader, gsxfast, gfxchip, gfxpics, sounds, and music.
+
+If the DOS data file is lowercase (e.g. spau.pa), then it must be
+renamed to all capital letters.
+
+The files must be placed in ~/.local/share/freeserf or the current
+working directory.
+
+It is important, if using the DOS version, to copy the file from an
+actual installation and not directly from the disk. The file on disk is
+compressed, and will not work with FreeSerf.
