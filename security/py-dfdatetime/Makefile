@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2017/11/29 09:46:31 rpointel Exp $
+# $OpenBSD: Makefile,v 1.4 2018/01/06 10:08:17 rpointel Exp $
 
 COMMENT =	Digital Forensics date and time
 
-MODPY_EGG_VERSION = 20171109
+MODPY_EGG_VERSION = 20171228
 DISTNAME =	py-dfdatetime-${MODPY_EGG_VERSION}
 
 GH_ACCOUNT =	log2timeline

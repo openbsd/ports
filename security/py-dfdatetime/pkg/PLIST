@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2017/10/09 18:42:42 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/01/06 10:08:17 rpointel Exp $
 lib/python${MODPY_VERSION}/site-packages/dfdatetime/
 lib/python${MODPY_VERSION}/site-packages/dfdatetime-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/dfdatetime-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -9,6 +9,7 @@ lib/python${MODPY_VERSION}/site-packages/dfdatetime/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/dfdatetime/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/dfdatetime/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dfdatetime/${MODPY_PYCACHE}cocoa_time.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/dfdatetime/${MODPY_PYCACHE}decorators.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dfdatetime/${MODPY_PYCACHE}definitions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dfdatetime/${MODPY_PYCACHE}delphi_date_time.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dfdatetime/${MODPY_PYCACHE}fake_time.${MODPY_PYC_MAGIC_TAG}pyc
@@ -25,6 +26,7 @@ lib/python${MODPY_VERSION}/site-packages/dfdatetime/${MODPY_PYCACHE}time_element
 lib/python${MODPY_VERSION}/site-packages/dfdatetime/${MODPY_PYCACHE}uuid_time.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dfdatetime/${MODPY_PYCACHE}webkit_time.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dfdatetime/cocoa_time.py
+lib/python${MODPY_VERSION}/site-packages/dfdatetime/decorators.py
 lib/python${MODPY_VERSION}/site-packages/dfdatetime/definitions.py
 lib/python${MODPY_VERSION}/site-packages/dfdatetime/delphi_date_time.py
 lib/python${MODPY_VERSION}/site-packages/dfdatetime/fake_time.py
