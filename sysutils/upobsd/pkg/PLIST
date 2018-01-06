@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/01/06 09:34:31 landry Exp $
+@bin bin/elfrdsetroot
+bin/upobsd
+@man man/man1/upobsd.1
