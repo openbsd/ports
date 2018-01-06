@@ -1,0 +1,17 @@
+Hanazono is a Ming-style Japanese font containing over 100,000 characters
+defined in the ISO/IEC 10646 standard / the Unicode standard.
+
+It is divided into two files:
+
+- HanaMinA.ttf, containing:
+  - Non-kanji
+  - CJK Unified Ideographs (URO, URO+, Ext.A)
+  - CJK Compatibility Ideographs (with Supplement)
+  - Kanji chars defined in JIS X 0213:2004
+  - IVD (with base chars in SIP)
+  - Table of General Standard Chinese Characters
+  - HKSCS (Hong Kong Supplementary Character Set)
+  - CDP-EUDC
+
+- HanaMinB.ttf, containing:
+  - CJK Unified Ideographs (Ext.B, Ext.C, Ext.D, Ext.E, Ext.F)
