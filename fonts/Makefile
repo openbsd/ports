@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2017/11/15 08:49:25 bentley Exp $
+# $OpenBSD: Makefile,v 1.44 2018/01/06 04:44:14 bentley Exp $
 
      SUBDIR =
      SUBDIR += abyssinica
@@ -30,7 +30,9 @@
      SUBDIR += go-fonts
      SUBDIR += gohufont
      SUBDIR += hack-fonts
+     SUBDIR += hanazono
      SUBDIR += hermit-font
+     SUBDIR += ibm-plex
      SUBDIR += inconsolata-font
      SUBDIR += intlfonts
      SUBDIR += ja-funetfonts
