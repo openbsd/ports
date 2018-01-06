@@ -1,19 +1,16 @@
-# $OpenBSD: Makefile,v 1.25 2016/09/02 22:22:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2018/01/06 11:39:24 feinerer Exp $
 
 COMMENT=	command-line utility to rip and encode audio cds
 
-DISTNAME=	abcde-2.7.2
+DISTNAME=	abcde-2.8.1
 CATEGORIES=	audio
 
-HOMEPAGE=	http://abcde.einval.com/
+HOMEPAGE=	https://abcde.einval.com/
 
-# Artistic or GPLv2, but "Copyright for this work is to expire
-# January 1, 2010, after which it shall be public domain."
+# Artistic or GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	http://abcde.einval.com/download/
-MASTER_SITES0=	http://lly.org/~rcw/id3/ \
-		http://lly.org/~rcw/id3/old/
+MASTER_SITES=	https://abcde.einval.com/download/
 
 RUN_DEPENDS=	audio/cdparanoia \
 		audio/cd-discid \

@@ -3,4 +3,5 @@ that grabs tracks off a CD, encodes them to ogg or mp3 format, and
 tags and names them with data from a CDDB server, all in one go.
 
 To use mp3 format, install the lame package, and set OUTPUTTYPE=mp3 in
-${SYSCONFDIR}/abcde.conf (copy this to ~/.abcde.conf for per-user configuration).
+${SYSCONFDIR}/abcde.conf (copy this to ~/.abcde.conf for per-user
+configuration).
