@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2017/07/26 22:45:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2018/01/06 17:05:04 jsg Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64
 
@@ -13,25 +13,13 @@ MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 MULTI_PACKAGES=	-main -data
 
 N=		redeclipse
-V=		1.5.8
+V=		1.6.0
 PKGNAME=	${N}-${V}
 PKGNAME-main=	${N}-${V}
 PKGNAME-data=	${N}-data-${V}
-REVISION-data=	0
-REVISION-main=	0
-
-DISTFILES=	redeclipse-{base/archive/v}${V}${EXTRACT_SUFX}
-
-
-SM=	acerspyro actors appleflap blendbrush caustics crosshairs dziq \
-	elyvisions fonts freezurbern john jojo jwin luckystrike maps mayhem \
-	mikeplus64 misc nieb nobiax particles philipk projectiles props \
-	skyboxes snipergoth sounds textures torley trak ulukai unnamed \
-	vanities vegetation weapons wicked
-
-.for MOD in ${SM}
-DISTFILES+=	redeclipse-data-${MOD}-{${MOD}/archive/v}${V}${EXTRACT_SUFX}
-.endfor
+MASTER_SITES=	https://github.com/red-eclipse/base/releases/download/v${V}/
+DISTNAME=	redeclipse_${V}_combined
+EXTRACT_SUFX=	.tar.bz2
 
 PKG_ARCH-data=	*
 
@@ -49,7 +37,7 @@ LIB_DEPENDS-main=	devel/sdl2-mixer \
 WANTLIB-main+=		GL X11 SDL2 SDL2_image SDL2_mixer c enet m pthread \
 			${COMPILER_LIBCXX} z
 
-WRKDIST=		${WRKDIR}/base-${V}/src
+WRKDIST=		${WRKDIR}/redeclipse-${V}/src
 USE_GMAKE=		Yes
 MAKE_ENV+=		CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
 			    TRUEPREFIX="${TRUEPREFIX}"
@@ -58,13 +46,8 @@ NO_TEST=		Yes
 INSTALL_TARGET=		system-install
 
 post-extract:
-.for MOD in ${SM}
-	rm -f ${WRKDIR}/${MOD}-${V}/.gitattributes
-	rm -rf ${WRKDIR}/${MOD}-${V}/.github
-	rm -f ${WRKDIR}/${MOD}-${V}/.gitignore
-	rm -f ${WRKDIR}/${MOD}-${V}/.gitmodules
-	rmdir ${WRKDIR}/base-${V}/data/${MOD}
-	mv ${WRKDIR}/${MOD}-${V} ${WRKDIR}/base-${V}/data/${MOD}
-.endfor
+			find ${WRKDIR} \( -name .gitattributes -or \
+			    -name .github -or -name .gitignore -or -name \
+			    .gitmodules \) -exec rm -r {} +
 
 .include <bsd.port.mk>

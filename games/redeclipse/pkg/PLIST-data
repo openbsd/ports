@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-data,v 1.8 2017/01/23 11:40:16 jsg Exp $
+@comment $OpenBSD: PLIST-data,v 1.9 2018/01/06 17:05:04 jsg Exp $
 share/redeclipse/
 share/redeclipse/config/
 share/redeclipse/config/brush.cfg
@@ -67,6 +67,7 @@ share/redeclipse/data/acerspyro/cc-by-sa.txt
 share/redeclipse/data/acerspyro/models.cfg
 share/redeclipse/data/acerspyro/readme.txt
 share/redeclipse/data/acerspyro/trademark.txt
+share/redeclipse/data/acerspyro/version.txt
 share/redeclipse/data/actors/
 share/redeclipse/data/actors/cc-by-sa.txt
 share/redeclipse/data/actors/drone/
@@ -260,6 +261,7 @@ share/redeclipse/data/actors/turret/skin1.png
 share/redeclipse/data/actors/turret/skin2.dds
 share/redeclipse/data/actors/turret/skin2.png
 share/redeclipse/data/actors/turret/turret.md5mesh
+share/redeclipse/data/actors/version.txt
 share/redeclipse/data/appleflap/
 share/redeclipse/data/appleflap/applegrass.jpg
 share/redeclipse/data/appleflap/applegrass_nm.jpg
@@ -284,6 +286,7 @@ share/redeclipse/data/appleflap/snow.jpg
 share/redeclipse/data/appleflap/snow_nm.jpg
 share/redeclipse/data/appleflap/snow_spec.jpg
 share/redeclipse/data/appleflap/textures.cfg
+share/redeclipse/data/appleflap/version.txt
 share/redeclipse/data/blendbrush/
 share/redeclipse/data/blendbrush/cc-by-sa.txt
 share/redeclipse/data/blendbrush/circle_128_hard.png
@@ -331,6 +334,7 @@ share/redeclipse/data/blendbrush/square_32_solid.png
 share/redeclipse/data/blendbrush/square_64_hard.png
 share/redeclipse/data/blendbrush/square_64_solid.png
 share/redeclipse/data/blendbrush/trademark.txt
+share/redeclipse/data/blendbrush/version.txt
 share/redeclipse/data/caustics/
 share/redeclipse/data/caustics/caust00.png
 share/redeclipse/data/caustics/caust01.png
@@ -367,6 +371,7 @@ share/redeclipse/data/caustics/caust31.png
 share/redeclipse/data/caustics/cc-by-sa.txt
 share/redeclipse/data/caustics/readme.txt
 share/redeclipse/data/caustics/trademark.txt
+share/redeclipse/data/caustics/version.txt
 share/redeclipse/data/crosshairs/
 share/redeclipse/data/crosshairs/cc-by-sa.txt
 share/redeclipse/data/crosshairs/circle-01-hit.png
@@ -447,6 +452,7 @@ share/redeclipse/data/crosshairs/trident-02-hit.png
 share/redeclipse/data/crosshairs/trident-02.png
 share/redeclipse/data/crosshairs/trident-03-hit.png
 share/redeclipse/data/crosshairs/trident-03.png
+share/redeclipse/data/crosshairs/version.txt
 share/redeclipse/data/dziq/
 share/redeclipse/data/dziq/boards01.jpg
 share/redeclipse/data/dziq/boards01_b.jpg
@@ -553,6 +559,7 @@ share/redeclipse/data/dziq/vent_end_pipe/obj.cfg
 share/redeclipse/data/dziq/vent_end_pipe/vent_end_pipe.jpg
 share/redeclipse/data/dziq/vent_end_pipe/vent_end_pipe.obj
 share/redeclipse/data/dziq/vent_end_pipe/vent_end_pipe_n.jpg
+share/redeclipse/data/dziq/version.txt
 share/redeclipse/data/dziq/volt_sign/
 share/redeclipse/data/dziq/volt_sign/Thumbs.db
 share/redeclipse/data/dziq/volt_sign/obj.cfg
@@ -636,6 +643,7 @@ share/redeclipse/data/elyvisions/tron_ft.png
 share/redeclipse/data/elyvisions/tron_lf.png
 share/redeclipse/data/elyvisions/tron_rt.png
 share/redeclipse/data/elyvisions/tron_up.png
+share/redeclipse/data/elyvisions/version.txt
 share/redeclipse/data/fonts/
 share/redeclipse/data/fonts/Play-Bold.ttf
 share/redeclipse/data/fonts/Play-Regular.ttf
@@ -648,6 +656,7 @@ share/redeclipse/data/fonts/play1.png
 share/redeclipse/data/fonts/play2.png
 share/redeclipse/data/fonts/readme.txt
 share/redeclipse/data/fonts/trademark.txt
+share/redeclipse/data/fonts/version.txt
 share/redeclipse/data/freezurbern/
 share/redeclipse/data/freezurbern/arid2_bk.jpg
 share/redeclipse/data/freezurbern/arid2_dn.jpg
@@ -692,6 +701,7 @@ share/redeclipse/data/freezurbern/tropic_ft.png
 share/redeclipse/data/freezurbern/tropic_lf.png
 share/redeclipse/data/freezurbern/tropic_rt.png
 share/redeclipse/data/freezurbern/tropic_up.png
+share/redeclipse/data/freezurbern/version.txt
 share/redeclipse/data/freezurbern/violence_bk.jpg
 share/redeclipse/data/freezurbern/violence_dn.jpg
 share/redeclipse/data/freezurbern/violence_ft.jpg
@@ -719,6 +729,7 @@ share/redeclipse/data/john/target/move.iqm
 share/redeclipse/data/john/target/norm.png
 share/redeclipse/data/john/target/skin.png
 share/redeclipse/data/john/trademark.txt
+share/redeclipse/data/john/version.txt
 share/redeclipse/data/jojo/
 share/redeclipse/data/jojo/barrel01/
 share/redeclipse/data/jojo/barrel01/normal.png
@@ -950,6 +961,7 @@ share/redeclipse/data/jojo/teamsigma/normal.png
 share/redeclipse/data/jojo/teamsigma/skin.png
 share/redeclipse/data/jojo/textures.cfg
 share/redeclipse/data/jojo/trademark.txt
+share/redeclipse/data/jojo/version.txt
 share/redeclipse/data/jojo/windowstile.png
 share/redeclipse/data/jojo/windowstile02.png
 share/redeclipse/data/jojo/windowstile02_g.png
@@ -994,6 +1006,7 @@ share/redeclipse/data/jwin/space_ft.jpg
 share/redeclipse/data/jwin/space_lf.jpg
 share/redeclipse/data/jwin/space_rt.jpg
 share/redeclipse/data/jwin/space_up.jpg
+share/redeclipse/data/jwin/version.txt
 share/redeclipse/data/luckystrike/
 share/redeclipse/data/luckystrike/asphalt_01.jpg
 share/redeclipse/data/luckystrike/asphalt_01_n.jpg
@@ -1141,6 +1154,7 @@ share/redeclipse/data/luckystrike/torche/mesh.md5mesh
 share/redeclipse/data/luckystrike/torche/norm.png
 share/redeclipse/data/luckystrike/torche/skin.jpg
 share/redeclipse/data/luckystrike/trademark.txt
+share/redeclipse/data/luckystrike/version.txt
 share/redeclipse/data/luckystrike/window01.jpg
 share/redeclipse/data/luckystrike/window01_n.jpg
 share/redeclipse/data/luckystrike/window01_s.jpg
@@ -1425,6 +1439,7 @@ share/redeclipse/data/maps/venus.mpz
 share/redeclipse/data/maps/venus.png
 share/redeclipse/data/maps/venus.txt
 share/redeclipse/data/maps/venus.wpt
+share/redeclipse/data/maps/version.txt
 share/redeclipse/data/maps/vorticity.cfg
 share/redeclipse/data/maps/vorticity.mpz
 share/redeclipse/data/maps/vorticity.png
@@ -1499,6 +1514,7 @@ share/redeclipse/data/mayhem/trough_ft.jpg
 share/redeclipse/data/mayhem/trough_lf.jpg
 share/redeclipse/data/mayhem/trough_rt.jpg
 share/redeclipse/data/mayhem/trough_up.jpg
+share/redeclipse/data/mayhem/version.txt
 share/redeclipse/data/mikeplus64/
 share/redeclipse/data/mikeplus64/bricks2_c.png
 share/redeclipse/data/mikeplus64/bricks_c.png
@@ -1581,6 +1597,7 @@ share/redeclipse/data/mikeplus64/sftile_s.png
 share/redeclipse/data/mikeplus64/sftile_z.png
 share/redeclipse/data/mikeplus64/textures.cfg
 share/redeclipse/data/mikeplus64/trademark.txt
+share/redeclipse/data/mikeplus64/version.txt
 share/redeclipse/data/mikeplus64/wittlewamp/
 share/redeclipse/data/mikeplus64/wittlewamp/diffuse.png
 share/redeclipse/data/mikeplus64/wittlewamp/mask.png
@@ -1608,6 +1625,7 @@ share/redeclipse/data/misc/panel_full.png
 share/redeclipse/data/misc/panel_full_n.png
 share/redeclipse/data/misc/readme.txt
 share/redeclipse/data/misc/textures.cfg
+share/redeclipse/data/misc/version.txt
 share/redeclipse/data/nieb/
 share/redeclipse/data/nieb/bench/
 share/redeclipse/data/nieb/bench/2/
@@ -1993,6 +2011,7 @@ share/redeclipse/data/nieb/storage_tote/masks.png
 share/redeclipse/data/nieb/storage_tote/model.obj
 share/redeclipse/data/nieb/storage_tote/normal.png
 share/redeclipse/data/nieb/storage_tote/obj.cfg
+share/redeclipse/data/nieb/version.txt
 share/redeclipse/data/nieb/white_board/
 share/redeclipse/data/nieb/white_board/base_diffuse.png
 share/redeclipse/data/nieb/white_board/base_masks.png
@@ -2036,6 +2055,7 @@ share/redeclipse/data/nobiax/pallet2/model.obj
 share/redeclipse/data/nobiax/pallet2/normal.png
 share/redeclipse/data/nobiax/pallet2/obj.cfg
 share/redeclipse/data/nobiax/readme.txt
+share/redeclipse/data/nobiax/version.txt
 share/redeclipse/data/particles/
 share/redeclipse/data/particles/blob.png
 share/redeclipse/data/particles/blood.png
@@ -2065,6 +2085,7 @@ share/redeclipse/data/particles/solid.png
 share/redeclipse/data/particles/spark.png
 share/redeclipse/data/particles/stain.png
 share/redeclipse/data/particles/teleport.png
+share/redeclipse/data/particles/version.txt
 share/redeclipse/data/philipk/
 share/redeclipse/data/philipk/pk01/
 share/redeclipse/data/philipk/pk01/door01_add.png
@@ -2407,6 +2428,7 @@ share/redeclipse/data/philipk/pk02/wall_big02b_n.png
 share/redeclipse/data/philipk/pk02/wall_big02b_s.png
 share/redeclipse/data/philipk/readme.txt
 share/redeclipse/data/philipk/textures.cfg
+share/redeclipse/data/philipk/version.txt
 share/redeclipse/data/projectiles/
 share/redeclipse/data/projectiles/cartridge/
 share/redeclipse/data/projectiles/cartridge/mask.dds
@@ -2473,6 +2495,7 @@ share/redeclipse/data/projectiles/shell/md5.cfg
 share/redeclipse/data/projectiles/shell/skin.dds
 share/redeclipse/data/projectiles/shell/skin.jpg
 share/redeclipse/data/projectiles/trademark.txt
+share/redeclipse/data/projectiles/version.txt
 share/redeclipse/data/props/
 share/redeclipse/data/props/ball/
 share/redeclipse/data/props/ball/ball.md5mesh
@@ -2499,6 +2522,7 @@ share/redeclipse/data/props/point/obj.cfg
 share/redeclipse/data/props/point/skin.png
 share/redeclipse/data/props/readme.txt
 share/redeclipse/data/props/trademark.txt
+share/redeclipse/data/props/version.txt
 share/redeclipse/data/skyboxes/
 share/redeclipse/data/skyboxes/clouds01.png
 share/redeclipse/data/skyboxes/clouds02.png
@@ -2576,6 +2600,7 @@ share/redeclipse/data/skyboxes/sunsetflat_ft.jpg
 share/redeclipse/data/skyboxes/sunsetflat_lf.jpg
 share/redeclipse/data/skyboxes/sunsetflat_rt.jpg
 share/redeclipse/data/skyboxes/sunsetflat_up.jpg
+share/redeclipse/data/skyboxes/version.txt
 share/redeclipse/data/skyboxes/yellow_bk.jpg
 share/redeclipse/data/skyboxes/yellow_dn.jpg
 share/redeclipse/data/skyboxes/yellow_ft.jpg
@@ -2627,6 +2652,7 @@ share/redeclipse/data/snipergoth/metal-fan/obj.cfg
 share/redeclipse/data/snipergoth/models.cfg
 share/redeclipse/data/snipergoth/readme.txt
 share/redeclipse/data/snipergoth/trademark.txt
+share/redeclipse/data/snipergoth/version.txt
 share/redeclipse/data/snipergoth/water.jpg
 share/redeclipse/data/snipergoth/waterdudv.jpg
 share/redeclipse/data/snipergoth/watern.jpg
@@ -2848,6 +2874,7 @@ share/redeclipse/data/sounds/theme.ogg
 share/redeclipse/data/sounds/theme_chip.it
 share/redeclipse/data/sounds/theme_chip.ogg
 share/redeclipse/data/sounds/trademark.txt
+share/redeclipse/data/sounds/version.txt
 share/redeclipse/data/sounds/voice/
 share/redeclipse/data/sounds/voice/argh.ogg
 share/redeclipse/data/sounds/voice/argh2.ogg
@@ -3273,6 +3300,7 @@ share/redeclipse/data/textures/teamomega.png
 share/redeclipse/data/textures/teamsigma.png
 share/redeclipse/data/textures/textskin.png
 share/redeclipse/data/textures/textskinborder.png
+share/redeclipse/data/textures/version.txt
 share/redeclipse/data/textures/waiting.png
 share/redeclipse/data/textures/warning.png
 share/redeclipse/data/textures/water.jpg
@@ -3594,6 +3622,7 @@ share/redeclipse/data/torley/glass/semutta_z.png
 share/redeclipse/data/torley/glass/textures.cfg
 share/redeclipse/data/torley/readme.txt
 share/redeclipse/data/torley/textures.cfg
+share/redeclipse/data/torley/version.txt
 share/redeclipse/data/trak/
 share/redeclipse/data/trak/cc-by-sa.txt
 share/redeclipse/data/trak/readme.txt
@@ -3990,6 +4019,7 @@ share/redeclipse/data/trak/trak7/wall1b.jpg
 share/redeclipse/data/trak/trak7/wallplain1.png
 share/redeclipse/data/trak/trak7/wallplain1_gloss.png
 share/redeclipse/data/trak/trak7/wallplain1_nm.png
+share/redeclipse/data/trak/version.txt
 share/redeclipse/data/ulukai/
 share/redeclipse/data/ulukai/corona_bk.png
 share/redeclipse/data/ulukai/corona_dn.png
@@ -4004,6 +4034,7 @@ share/redeclipse/data/ulukai/redeclipse_ft.png
 share/redeclipse/data/ulukai/redeclipse_lf.png
 share/redeclipse/data/ulukai/redeclipse_rt.png
 share/redeclipse/data/ulukai/redeclipse_up.png
+share/redeclipse/data/ulukai/version.txt
 share/redeclipse/data/unnamed/
 share/redeclipse/data/unnamed/brick01.png
 share/redeclipse/data/unnamed/brick01_g.png
@@ -4322,6 +4353,7 @@ share/redeclipse/data/unnamed/unnamedtrim01.png
 share/redeclipse/data/unnamed/unnamedtrim01_g.png
 share/redeclipse/data/unnamed/unnamedtrim01_n.png
 share/redeclipse/data/unnamed/unnamedtrim01_s.png
+share/redeclipse/data/unnamed/version.txt
 share/redeclipse/data/unnamed/wall01-a.png
 share/redeclipse/data/unnamed/wall01-a_n.png
 share/redeclipse/data/unnamed/wall01-a_z.png
@@ -4740,6 +4772,7 @@ share/redeclipse/data/vanities/tophat/metal/proj/iqm.cfg
 share/redeclipse/data/vanities/tophat/metal/skin.png
 share/redeclipse/data/vanities/tophat/tophat.iqm
 share/redeclipse/data/vanities/trademark.txt
+share/redeclipse/data/vanities/version.txt
 share/redeclipse/data/vanities/wings/
 share/redeclipse/data/vanities/wings/iqm.cfg
 share/redeclipse/data/vanities/wings/mask.png
@@ -4829,6 +4862,7 @@ share/redeclipse/data/vegetation/tree13/readme.txt
 share/redeclipse/data/vegetation/tree13/skin_evergreen_n.jpg
 share/redeclipse/data/vegetation/tree13/skin_evergreen_snow.png
 share/redeclipse/data/vegetation/tree13/tris.md3
+share/redeclipse/data/vegetation/version.txt
 share/redeclipse/data/vegetation/weeds/
 share/redeclipse/data/vegetation/weeds/md3.cfg
 share/redeclipse/data/vegetation/weeds/tris.md3
@@ -5040,6 +5074,7 @@ share/redeclipse/data/weapons/sword/sword.md5mesh
 share/redeclipse/data/weapons/sword/vwep/
 share/redeclipse/data/weapons/sword/vwep/md5.cfg
 share/redeclipse/data/weapons/trademark.txt
+share/redeclipse/data/weapons/version.txt
 share/redeclipse/data/weapons/zapper/
 share/redeclipse/data/weapons/zapper/hwep/
 share/redeclipse/data/weapons/zapper/hwep/md5.cfg
@@ -5082,6 +5117,7 @@ share/redeclipse/data/wicked/stone03s.jpg
 share/redeclipse/data/wicked/stone03z.jpg
 share/redeclipse/data/wicked/textures.cfg
 share/redeclipse/data/wicked/trademark.txt
+share/redeclipse/data/wicked/version.txt
 share/redeclipse/data/wicked/wickedbarrel01.jpg
 share/redeclipse/data/wicked/wickedbarrel01n.jpg
 share/redeclipse/data/wicked/wickedbarrel01s.jpg
