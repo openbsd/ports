@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/01/06 09:34:31 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2018/01/06 14:34:17 landry Exp $
 
 COMMENT =	download, verify and patch bsd.rd image
 
-V =		d8868e286065
-DISTNAME =	upobsd-0.0.20180105
+V =		ad19e93e1914
+DISTNAME =	upobsd-0.0.20180106
 
 CATEGORIES =	sysutils
 
