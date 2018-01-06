@@ -1,0 +1,13 @@
+$OpenBSD: patch-qmltermwidget_lib_ProcessInfo_cpp,v 1.1 2018/01/06 04:46:12 bentley Exp $
+
+Index: qmltermwidget/lib/ProcessInfo.cpp
+--- qmltermwidget/lib/ProcessInfo.cpp.orig
++++ qmltermwidget/lib/ProcessInfo.cpp
+@@ -27,6 +27,7 @@
+ #include <unistd.h>
+ #include <pwd.h>
+ #include <sys/param.h>
++#include <errno.h>
+ 
+ // Qt
+ #include <QtCore/QDir>

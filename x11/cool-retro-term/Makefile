@@ -1,9 +1,19 @@
-# $OpenBSD: Makefile,v 1.12 2017/07/27 10:15:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2018/01/06 04:46:12 bentley Exp $
 
 COMMENT =	good looking terminal emulator which mimics old CRT displays
-DISTNAME =	cool-retro-term-1.0.0
+
 CATEGORIES =	x11
-REVISION =	7
+
+GH_ACCOUNT =	Swordfish90
+GH_PROJECT =	cool-retro-term
+GH_TAGNAME =	1.0.1
+
+QMLTERMWIDGET =	08958f7c83a7d05627f623b8904f3e79a0b7366b
+MASTER_SITES0 =	https://github.com/Swordfish90/qmltermwidget/archive/
+DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
+		${QMLTERMWIDGET}.tar.gz:0
+
+USE_WXNEEDED =	Yes
 
 HOMEPAGE =	https://github.com/Swordfish90/cool-retro-term
 
@@ -14,18 +24,22 @@ WANTLIB += GL Qt5Core Qt5Gui Qt5Network Qt5Qml Qt5Quick Qt5Sql
 WANTLIB += Qt5Widgets c m pthread
 WANTLIB += ${COMPILER_LIBCXX}
 
-MASTER_SITES =	http://mirrors.nycbug.org/pub/distfiles/
-
 MODULES =	devel/qmake x11/qt5
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/gtk+3,-guic
+		x11/gtk+3,-guic \
+		x11/qt5/qtgraphicaleffects \
+		x11/qt5/qtquickcontrols
 
 LIB_DEPENDS =	x11/qt5/qtdeclarative
 
 MAKE_FLAGS =	CXX="${CXX}" CXXFLAGS="${CXXFLAGS} -fPIC -std=c++11"
 
 NO_TEST =	Yes
+
+post-extract:
+	rmdir ${WRKSRC}/qmltermwidget
+	ln -s ${WRKDIR}/qmltermwidget-${QMLTERMWIDGET} ${WRKSRC}/qmltermwidget
 
 pre-configure:
 	 ${SUBST_CMD} ${WRKSRC}/{app/app,cool-retro-term}.pro

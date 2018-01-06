@@ -1,7 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/03/21 19:14:40 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/01/06 04:46:12 bentley Exp $
 @bin bin/cool-retro-term
-lib/qt5/
-lib/qt5/qml/
 lib/qt5/qml/QMLTermWidget/
 lib/qt5/qml/QMLTermWidget/QMLTermScrollbar.qml
 lib/qt5/qml/QMLTermWidget/color-schemes/
