@@ -1,6 +1,6 @@
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Size.pm,v 1.7 2016/10/21 00:45:43 espie Exp $
+# $OpenBSD: Size.pm,v 1.8 2018/01/07 10:49:15 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -99,14 +99,18 @@ sub parse_size_file
 	my $self = shift;
 	my $state = $self->{state};
 	return if $state->{fetch_only};
-	open my $fh, '<', $state->opt('S') // $state->{size_log}  or return;
+	my $fname = $state->opt('S') // $state->{size_log};
+	open my $fh, '<', $fname  or return;
 
 	print "Reading size stats...";
 
 	my @rewrite = ();
 	while (<$fh>) {
-		chomp;
 		my $s = DPB::Serialize::Size->read($_);
+		if (!defined $s->{size}) {
+			print "bogus line #$. in $fname\n";
+			next;
+		}
 		push(@rewrite, $s);
 		$self->add_size_info(DPB::PkgPath->new($s->{pkgpath}), 
 		    $s->{pkgname}, $s->{size});

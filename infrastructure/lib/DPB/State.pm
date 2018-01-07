@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: State.pm,v 1.22 2017/11/28 10:31:50 espie Exp $
+# $OpenBSD: State.pm,v 1.23 2018/01/07 10:49:15 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -282,7 +282,10 @@ sub parse_build_file
 	while (<$fh>) {
 		next if m/!$/;
 		my $s = DPB::Serialize::Build->read($_);
-		next if !defined $s->{size};
+		if (!defined $s->{size}) {
+			print "bogus line #$. in ", $fname, "\n";
+			next;
+		}
 		my $o = DPB::PkgPath->new($s->{pkgpath});
 		push(@{$o->{stats}}, $s);
 	}

@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Serialize.pm,v 1.1 2013/11/16 16:39:28 espie Exp $
+# $OpenBSD: Serialize.pm,v 1.2 2018/01/07 10:49:15 espie Exp $
 #
 # Copyright (c) 2013 Marc Espie <espie@openbsd.org>
 #
@@ -28,20 +28,22 @@ sub read
 	chomp $line;
 	my @list = $class->list;
 	my $r = {};
-	my @e;
-	($r->{pkgpath}, @e) = split(/\s+/, $line);
-	if ($r->{pkgpath} =~ m/^(.*)\((.*)\)$/) {
-		($r->{pkgpath}, $r->{pkgname}) = ($1, $2);
-	}
-	while (@e > 0) {
-		my $v = shift @e;
-		if ($v =~ m/^(\w+)\=(.*)$/) {
-			$r->{$1} = $2;
-		} else {
-			my $k = shift @list or return;
-			$r->{$k} = $v;
+	my @e = split(/\s+/, $line);
+	if (@e >= 1) {
+		$r->{pkgpath} = shift @e;
+		if ($r->{pkgpath} =~ m/^(.*)\((.*)\)$/) {
+			($r->{pkgpath}, $r->{pkgname}) = ($1, $2);
 		}
-	}
+		while (@e > 0) {
+			my $v = shift @e;
+			if ($v =~ m/^(\w+)\=(.*)$/) {
+				$r->{$1} = $2;
+			} else {
+				my $k = shift @list or return;
+				$r->{$k} = $v;
+			}
+		}
+    	}
 	return $r;
 }
 
