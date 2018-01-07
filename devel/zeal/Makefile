@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2017/11/22 14:27:29 awolk Exp $
+# $OpenBSD: Makefile,v 1.8 2018/01/07 17:33:25 awolk Exp $
 
 # qt5 webkit
 USE_WXNEEDED =	Yes
@@ -7,7 +7,7 @@ COMMENT =	simple offline API documentation browser
 
 GH_ACCOUNT =	zealdocs
 GH_PROJECT =	zeal
-GH_TAGNAME =	v0.4.0
+GH_TAGNAME =	v0.5.0
 
 CATEGORIES =	devel
 
