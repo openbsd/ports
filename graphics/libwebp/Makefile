@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2017/12/03 13:10:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2018/01/07 22:17:48 rsadowski Exp $
 
 COMMENT=	Google WebP image format conversion tool
 
 DISTNAME=	libwebp-0.6.1
 CATEGORIES=	graphics
 MASTER_SITES=	http://downloads.webmproject.org/releases/webp/
+REVISION=	0
 
 SHARED_LIBS +=  webp                 4.0      # 6.0
 SHARED_LIBS +=  webpdecoder          2.0      # 2.0
@@ -24,7 +25,8 @@ LIB_DEPENDS=	graphics/giflib \
 		graphics/tiff
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	--enable-everything
+CONFIGURE_ARGS=	--enable-everything \
+		--disable-sdl
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
