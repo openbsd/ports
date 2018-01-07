@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2017/11/21 00:13:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2018/01/07 12:07:11 jasper Exp $
 
 COMMENT=		automated hinting process based on FreeType's autohinter #'
 
-V =			1.7
+V =			1.8.1
 DISTNAME =		ttfautohint-${V}
+SHARED_LIBS +=  ttfautohint               0.0 # 1.0
 CATEGORIES =		graphics
-REVISION =		0
 
 MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
@@ -23,6 +23,7 @@ WANTLIB += z ${COMPILER_LIBCXX}
 
 LIB_DEPENDS =		devel/harfbuzz
 
+USE_GMAKE =		Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--without-doc \
 			--without-qt
