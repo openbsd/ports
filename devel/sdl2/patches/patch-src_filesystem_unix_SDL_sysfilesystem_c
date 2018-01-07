@@ -1,10 +1,11 @@
-$OpenBSD: patch-src_filesystem_unix_SDL_sysfilesystem_c,v 1.1 2016/11/10 10:08:04 jca Exp $
+$OpenBSD: patch-src_filesystem_unix_SDL_sysfilesystem_c,v 1.2 2018/01/07 22:56:46 awolk Exp $
 
 Disable SDL_GetBasePath implementation, not functional.
 
---- src/filesystem/unix/SDL_sysfilesystem.c.orig	Thu Oct 20 05:56:26 2016
-+++ src/filesystem/unix/SDL_sysfilesystem.c	Fri Oct 21 15:15:01 2016
-@@ -91,24 +91,6 @@ SDL_GetBasePath(void)
+Index: src/filesystem/unix/SDL_sysfilesystem.c
+--- src/filesystem/unix/SDL_sysfilesystem.c.orig
++++ src/filesystem/unix/SDL_sysfilesystem.c
+@@ -95,24 +95,6 @@ SDL_GetBasePath(void)
          }
      }
  #endif
