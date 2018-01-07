@@ -1,22 +1,36 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1 2014/03/27 04:00:25 bentley Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2018/01/07 22:05:09 bentley Exp $
 
-Don't set -O2 or -O3.
+Don't set -O3.
 
---- CMakeLists.txt.orig	Fri Oct 26 13:55:24 2012
-+++ CMakeLists.txt	Fri Oct 26 13:57:13 2012
-@@ -218,14 +218,7 @@ EXEC_PROGRAM (
-     OUTPUT_VARIABLE WLBUILD_COMPILERVERSION
-     )
-     STRING(REGEX REPLACE ".*(4)\\.(5)\\.([0-9]).*" "\\1.\\2.\\3" WLBUILD_COMPILERVERSION_REP ${WLBUILD_COMPILERVERSION})
--    IF (WLBUILD_COMPILERVERSION_REP STREQUAL "4.5.1" OR WLBUILD_COMPILERVERSION_REP STREQUAL "4.5.2")
--        message("Detected gcc ${WLBUILD_COMPILERVERSION_REP}")
--        message("Suffering from gcc bug, disabling -O3")
--        set (CMAKE_CXX_FLAGS_RELEASE "-O2 -DNDEBUG" CACHE STRING "Set by widelands CMakeLists.txt" FORCE)
--    ELSE (WLBUILD_COMPILERVERSION_REP STREQUAL "4.5.1" OR WLBUILD_COMPILERVERSION_REP STREQUAL "4.5.2")
--        #This line is the default and should be preserved.
--        set (CMAKE_CXX_FLAGS_RELEASE "-O3 -DNDEBUG" CACHE STRING "Set by widelands CMakeLists.txt" FORCE)
--    ENDIF (WLBUILD_COMPILERVERSION_REP STREQUAL "4.5.1" OR WLBUILD_COMPILERVERSION_REP STREQUAL "4.5.2")
-+    set (CMAKE_CXX_FLAGS_RELEASE "-DNDEBUG" CACHE STRING "Set by widelands CMakeLists.txt" FORCE)
- ENDIF (${CMAKE_COMPILER_IS_GNUCXX})
+Don't install source docs.
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -93,10 +93,8 @@ endif (NOT CMAKE_BUILD_TYPE OR CMAKE_BUILD_TYPE STREQU
+ if(CMAKE_BUILD_TYPE STREQUAL "Debug")
+   set(WL_DEBUG_FLAGS "-g -DDEBUG")
+ elseif(CMAKE_BUILD_TYPE STREQUAL "Release")
+-  set(WL_OPTIMIZE_FLAGS "-O3")
+   set(WL_DEBUG_FLAGS "-DNDEBUG -DNOPARACHUTE")
+ elseif(CMAKE_BUILD_TYPE STREQUAL "RelWithDebInfo")
+-  set(WL_OPTIMIZE_FLAGS "-O3")
+   set(WL_DEBUG_FLAGS "-g -DNDEBUG -DNOPARACHUTE")
+ else()
+   message(FATAL_ERROR "Unknown CMAKE_BUILD_TYPE: ${CMAKE_BUILD_TYPE}")
+@@ -297,15 +295,6 @@ install(
+   DESTINATION ${WL_INSTALL_BASEDIR}
+   CONFIGURATIONS Debug;Release
+   COMPONENT CoreLicenseFiles
+-)
+-
+-install(
+-  DIRECTORY
+-    doc
+-  DESTINATION ${WL_INSTALL_BASEDIR}
+-  CONFIGURATIONS Debug
+-  COMPONENT DocFiles
+-  PATTERN "CMakeLists.txt" EXCLUDE
+ )
  
- #If building with MSVC, then check for 3rdparty libs
+ set_directory_properties(PROPERTIES ADDITIONAL_MAKE_CLEAN_FILES ${WL_INSTALL_DATADIR}/locale)
