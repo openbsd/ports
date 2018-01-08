@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2017/09/07 16:52:55 giovanni Exp $
+# $OpenBSD: Makefile,v 1.11 2018/01/08 07:28:16 giovanni Exp $
 
 COMMENT= 	fast lookup of country codes by IP address
 
 MODULES=	cpan
 PKG_ARCH=	*
-D=		20170907
+D=		20180107
 DISTNAME=	IP-Country-2.28
 PKGNAME=	p5-${DISTNAME}.$D
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -20,6 +20,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 MASTER_SITES0 =		https://paclan.it/distfiles/
 
 RUN_DEPENDS =		geo/p5-Geography-Countries
+
+SUBST_VARS =	WRKDIR
 
 post-patch:
 	${SUBST_CMD} ${WRKSRC}/dbmScripts/ipcc_maker.pl
