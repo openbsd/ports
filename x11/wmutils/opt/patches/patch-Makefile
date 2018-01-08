@@ -1,0 +1,20 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2018/01/08 19:24:31 bcallah Exp $
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -22,12 +22,10 @@ manpages:
+ $(OBJ): $(HDR) util.o
+ 
+ .o:
+-	@echo "LD $@"
+-	@$(LD) $< -o $@ $(LDFLAGS) util.o
++	$(LD) $< -o $@ $(LDFLAGS) util.o
+ 
+ .c.o:
+-	@echo "CC $<"
+-	@$(CC) -c $< -o $@ $(CFLAGS)
++	$(CC) -c $< -o $@ $(CFLAGS)
+ 
+ install: $(BIN)
+ 	mkdir -p $(DESTDIR)$(PREFIX)/bin/

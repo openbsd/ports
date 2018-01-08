@@ -1,0 +1,4 @@
+wmutils opt contains programs to move windows with the mouse, control
+window borders, and view a window's events and title. These programs
+rely on wmutils-core to be useful, but can be run without it if you have
+another method of getting window IDs to operate on.

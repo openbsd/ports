@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/01/08 19:24:31 bcallah Exp $
+@bin bin/chwb2
+@bin bin/wew
+@bin bin/wname
+@bin bin/xmmv
+@man man/man1/chwb2.1
+@man man/man1/wew.1
+@man man/man1/wname.1
+@man man/man1/xmmv.1

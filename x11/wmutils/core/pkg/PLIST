@@ -1,0 +1,27 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/01/08 19:24:31 bcallah Exp $
+@bin bin/chwb
+@bin bin/chwso
+@bin bin/ignw
+@bin bin/killw
+@bin bin/lswin
+@bin bin/mapw
+@bin bin/pfw
+@bin bin/wattr
+@bin bin/wintf
+@bin bin/wmp
+@bin bin/wmv
+@bin bin/wrs
+@bin bin/wtp
+@man man/man1/chwb.1
+@man man/man1/chwso.1
+@man man/man1/ignw.1
+@man man/man1/killw.1
+@man man/man1/lswin.1
+@man man/man1/mapw.1
+@man man/man1/pfw.1
+@man man/man1/wattr.1
+@man man/man1/wintf.1
+@man man/man1/wmp.1
+@man man/man1/wmutils.1
+@man man/man1/wmv.1
+@man man/man1/wrs.1

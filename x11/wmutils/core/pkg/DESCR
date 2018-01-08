@@ -1,0 +1,4 @@
+wmutils is a set of tools for X windows manipulation. Each tool only has
+one purpose, to make it as flexible and reliable as possible. This
+package includes tools to list, kill, move, teleport, focus and resize
+windows, and more.
