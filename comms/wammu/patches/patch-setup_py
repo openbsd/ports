@@ -1,7 +1,8 @@
-$OpenBSD: patch-setup_py,v 1.2 2016/12/18 12:31:02 kirby Exp $
---- setup.py.orig	Wed Dec 14 12:18:55 2016
-+++ setup.py	Sun Dec 18 15:28:56 2016
-@@ -357,14 +357,14 @@ class install_data_wammu(distutils.command.install_dat
+$OpenBSD: patch-setup_py,v 1.3 2018/01/08 07:51:48 kirby Exp $
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -359,14 +359,14 @@ class install_data_wammu(distutils.command.install_dat
          """
          # add .mo files to data files
          for (_locale, _src, _dst) in list_message_files():
@@ -19,7 +20,7 @@ $OpenBSD: patch-setup_py,v 1.2 2016/12/18 12:31:02 kirby Exp $
  
          # install data files
          super(install_data_wammu, self).run()
-@@ -414,23 +414,23 @@ data_files.append((os.path.join('share', 'pixmaps'), [
+@@ -410,24 +410,24 @@ data_files.append((os.path.join('share', 'pixmaps'), [
      'icon/wammu.ico',
      'icon/wammu.svg',
      ]))
@@ -38,6 +39,7 @@ $OpenBSD: patch-setup_py,v 1.2 2016/12/18 12:31:02 kirby Exp $
 -data_files.append((os.path.join('share', 'man', 'pt_BR', 'man1'), ['man/pt_BR/wammu.1', 'man/pt_BR/wammu-configure.1']))
 -data_files.append((os.path.join('share', 'man', 'ru', 'man1'), ['man/ru/wammu.1', 'man/ru/wammu-configure.1']))
 -data_files.append((os.path.join('share', 'man', 'sk', 'man1'), ['man/sk/wammu.1', 'man/sk/wammu-configure.1']))
+-data_files.append((os.path.join('share', 'man', 'sv', 'man1'), ['man/sv/wammu.1', 'man/sv/wammu-configure.1']))
 -data_files.append((os.path.join('share', 'man', 'tr', 'man1'), ['man/sk/wammu.1', 'man/tr/wammu-configure.1']))
 -data_files.append((os.path.join('share', 'man', 'uk', 'man1'), ['man/sk/wammu.1', 'man/uk/wammu-configure.1']))
 +data_files.append((os.path.join('man', 'man1'), ['wammu.1', 'wammu-configure.1']))
@@ -55,8 +57,9 @@ $OpenBSD: patch-setup_py,v 1.2 2016/12/18 12:31:02 kirby Exp $
 +data_files.append((os.path.join('man', 'pt_BR', 'man1'), ['man/pt_BR/wammu.1', 'man/pt_BR/wammu-configure.1']))
 +data_files.append((os.path.join('man', 'ru', 'man1'), ['man/ru/wammu.1', 'man/ru/wammu-configure.1']))
 +data_files.append((os.path.join('man', 'sk', 'man1'), ['man/sk/wammu.1', 'man/sk/wammu-configure.1']))
++data_files.append((os.path.join('man', 'sv', 'man1'), ['man/sv/wammu.1', 'man/sv/wammu-configure.1']))
 +data_files.append((os.path.join('man', 'tr', 'man1'), ['man/sk/wammu.1', 'man/tr/wammu-configure.1']))
 +data_files.append((os.path.join('man', 'uk', 'man1'), ['man/sk/wammu.1', 'man/uk/wammu-configure.1']))
  
- distutils.core.setup(
+ setup(
      name="wammu",

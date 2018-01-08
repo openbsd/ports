@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/11/25 11:58:01 kirby Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/01/08 07:51:48 kirby Exp $
 bin/wammu
 bin/wammu-configure
 lib/python${MODPY_VERSION}/site-packages/Wammu/
@@ -96,11 +96,17 @@ lib/python${MODPY_VERSION}/site-packages/Wammu/Wizard.py
 lib/python${MODPY_VERSION}/site-packages/Wammu/Wizard.pyc
 lib/python${MODPY_VERSION}/site-packages/Wammu/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Wammu/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/Wammu/test_imap.py
+lib/python${MODPY_VERSION}/site-packages/Wammu/test_imap.pyc
 lib/python${MODPY_VERSION}/site-packages/Wammu/test_paths.py
 lib/python${MODPY_VERSION}/site-packages/Wammu/test_paths.pyc
 lib/python${MODPY_VERSION}/site-packages/Wammu/test_utils.py
 lib/python${MODPY_VERSION}/site-packages/Wammu/test_utils.pyc
-lib/python${MODPY_VERSION}/site-packages/wammu-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/wammu-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/wammu-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/wammu-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/wammu-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/wammu-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 man/cs/
 man/cs/man1/
 @man man/cs/man1/wammu-configure.1
@@ -158,6 +164,10 @@ man/sk/
 man/sk/man1/
 @man man/sk/man1/wammu-configure.1
 @man man/sk/man1/wammu.1
+man/sv/
+man/sv/man1/
+@man man/sv/man1/wammu-configure.1
+@man man/sv/man1/wammu.1
 man/tr/
 man/tr/man1/
 @man man/tr/man1/wammu-configure.1
@@ -212,6 +222,9 @@ share/locale/hu/LC_MESSAGES/wammu.mo
 share/locale/id/LC_MESSAGES/wammu.mo
 share/locale/it/LC_MESSAGES/wammu.mo
 share/locale/ko/LC_MESSAGES/wammu.mo
+share/locale/nb_NO/
+share/locale/nb_NO/LC_MESSAGES/
+share/locale/nb_NO/LC_MESSAGES/wammu.mo
 share/locale/nl/LC_MESSAGES/wammu.mo
 share/locale/pl/LC_MESSAGES/wammu.mo
 share/locale/pt_BR/LC_MESSAGES/wammu.mo
