@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.5 2017/09/16 12:59:33 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/01/08 01:37:02 abieber Exp $
 bin/chirpw
+bin/rpttool
 lib/python${MODPY_VERSION}/site-packages/chirp/
 lib/python${MODPY_VERSION}/site-packages/chirp-daily_${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/chirp/__init__.py
@@ -45,6 +46,8 @@ lib/python${MODPY_VERSION}/site-packages/chirp/drivers/baofeng_uv3r.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/baofeng_uv3r.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/baofeng_wp970i.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/baofeng_wp970i.pyc
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/bf-t1.py
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/bf-t1.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/bj9900.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/bj9900.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/bjuv55.py
@@ -153,6 +156,8 @@ lib/python${MODPY_VERSION}/site-packages/chirp/drivers/kenwood_live.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/kenwood_live.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/kguv8d.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/kguv8d.pyc
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/kguv8dplus.py
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/kguv8dplus.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/kyd.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/kyd.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/kyd_IP620.py
@@ -177,6 +182,8 @@ lib/python${MODPY_VERSION}/site-packages/chirp/drivers/retevis_rt22.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/retevis_rt22.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/retevis_rt23.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/retevis_rt23.pyc
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/retevis_rt26.py
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/retevis_rt26.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/rfinder.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/rfinder.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/rh5r_v2.py
