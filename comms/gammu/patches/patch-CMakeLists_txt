@@ -1,6 +1,7 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.3 2017/04/05 08:02:05 kirby Exp $
---- CMakeLists.txt.orig	Tue Mar 28 19:32:09 2017
-+++ CMakeLists.txt	Wed Mar 29 12:21:31 2017
+$OpenBSD: patch-CMakeLists_txt,v 1.4 2018/01/08 07:50:46 kirby Exp $
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
 @@ -22,6 +22,9 @@ option (MYSQL_TESTING "Enable testing of MySQL SMSD ba
  option (ODBC_TESTING "Enable testing of ODBC MySQL SMSD backend" OFF)
  option (BUILD_SHARED_LIBS "Build shared libraries" ON)
@@ -19,8 +20,8 @@ $OpenBSD: patch-CMakeLists_txt,v 1.3 2017/04/05 08:02:05 kirby Exp $
  check_symbol_exists (getpwnam "pwd.h" HAVE_GETPWNAM)
  check_symbol_exists (getgrnam "grp.h" HAVE_GETGRNAM)
  check_symbol_exists (getpwuid "pwd.h" HAVE_GETPWUID)
-@@ -183,9 +185,12 @@ find_package (Threads)
- find_package(PythonInterp 2)
+@@ -180,9 +182,12 @@ endif()
+ find_package (Threads)
  
  # Packages in sources
 -macro_optional_find_package (MySQL)
@@ -35,7 +36,7 @@ $OpenBSD: patch-CMakeLists_txt,v 1.3 2017/04/05 08:02:05 kirby Exp $
  macro_optional_find_package (LibDBI)
  macro_optional_find_package (Libintl)
  macro_optional_find_package (Iconv)
-@@ -474,7 +479,6 @@ if(CMAKE_COMPILER_IS_GNUCC OR CMAKE_COMPILER_IS_MINGW 
+@@ -471,7 +476,6 @@ if(CMAKE_COMPILER_IS_GNUCC OR CMAKE_COMPILER_IS_MINGW 
      MACRO_TUNE_COMPILER("-Wno-pointer-sign")
  
      MACRO_TUNE_COMPILER("-Wwrite-strings")
