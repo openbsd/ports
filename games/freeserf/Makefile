@@ -1,4 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/01/05 23:50:19 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2018/01/08 19:37:46 bcallah Exp $
+
+# Does not build on 32-bit. Reported upstream:
+# https://github.com/freeserf/freeserf/issues/373
+ONLY_FOR_ARCHS =	${LP64_ARCHS}
 
 COMMENT =	Settlers 1 (Serf City) clone
 DISTNAME =	freeserf-0.1.1.20171204
