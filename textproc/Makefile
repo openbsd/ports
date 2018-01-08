@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.556 2017/12/31 01:52:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.557 2018/01/08 20:28:02 benno Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -111,6 +111,7 @@
      SUBDIR += libxslt
      SUBDIR += link-grammar
      SUBDIR += linuxdoc
+     SUBDIR += loccount
      SUBDIR += lowdown
      SUBDIR += lq-sp
      SUBDIR += lttoolbox
