@@ -1,0 +1,9 @@
+loccount counts physical source lines of code.
+
+Identifying over 60 languages by file extension and filename pattern, it can
+also emit results as self-describing JSON and perform cost estimation using the
+COCOMO I model.
+
+loccount is a re-implementation of David A. Wheeler's sloccount tool in Go. Bugs
+excepted, the largely unchanged algorithms can be expected to produce identical
+output while supporting more languages.
