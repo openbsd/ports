@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.605 2017/12/09 14:11:09 zhuk Exp $
+# $OpenBSD: Makefile,v 1.606 2018/01/08 19:24:57 bcallah Exp $
 
      SUBDIR =
      SUBDIR += 2bwm
@@ -324,6 +324,7 @@
      SUBDIR += wmpinboard
      SUBDIR += wmtime
      SUBDIR += wmtz
+     SUBDIR += wmutils
      SUBDIR += wmweather
      SUBDIR += wmx
      SUBDIR += worker
