@@ -1,2 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/01/15 08:54:43 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/01/08 00:22:54 jca Exp $
 @bin bin/dhex
+@man man/man1/dhex.1
+@man man/man5/dhex_markers.5
+@man man/man5/dhex_searchlog.5
+@man man/man5/dhexrc.5
