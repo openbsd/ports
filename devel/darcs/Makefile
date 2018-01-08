@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2017/11/20 23:43:46 kili Exp $
+# $OpenBSD: Makefile,v 1.68 2018/01/08 10:18:39 kili Exp $
 
 # Needs template Haskell in Setup.lhs, which doesn't work on i386.
 NOT_FOR_ARCHS =		i386
@@ -8,11 +8,12 @@ USE_WXNEEDED =		Yes
 COMMENT =		advanced revision control system written in Haskell
 
 DISTNAME =		darcs-2.12.5
+REVISION =		0
 
 CATEGORIES =		devel
 HOMEPAGE =		http://www.darcs.net/
 
-WANTLIB =		c curl>=2 iconv m ncursesw pthread util z
+WANTLIB =		c curl>=2 curses iconv m pthread util z
 MODULES =		lang/ghc
 MODGHC_BUILD =		cabal hackage nort
 MODGHC_SETUP_CONF_ARGS =-f 'curl -library' --enable-tests
