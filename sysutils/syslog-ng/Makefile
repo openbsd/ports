@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2017/11/28 18:03:07 steven Exp $
+# $OpenBSD: Makefile,v 1.61 2018/01/09 07:36:06 steven Exp $
 
 COMMENT=	log management solution
 
@@ -6,7 +6,7 @@ V =		3.12.1
 REL =		3.12
 DISTNAME =	syslog-ng-$V
 CATEGORIES =	sysutils
-REVISION =	1
+REVISION =	2
 
 MAINTAINER =	Steven Mestdagh <steven@openbsd.org>
 
@@ -44,12 +44,14 @@ CONFIGURE_ARGS +=	--disable-tcp-wrapper \
 			--disable-mongodb \
 			--disable-amqp \
 			--disable-stomp \
+			--disable-redis \
 			--enable-geoip \
 			--without-libnet \
 			--with-ivykis=system \
 			--with-libcurl=${LOCALBASE} \
 			--enable-sql \
 			--enable-manpages
+
 CONFIGURE_ENV +=	OPENSSL_CFLAGS="-I/usr/include/openssl" \
 			OPENSSL_LIBS="-lssl -lcrypto" 
 # json-c only installs libjson-c.pc; syslog-ng checks for libjson.pc
