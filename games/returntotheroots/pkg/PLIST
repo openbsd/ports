@@ -1,7 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/01/01 01:03:55 bcallah Exp $
-bin/RTTR/
-@bin bin/RTTR/s-c_resample
-@bin bin/RTTR/sound-convert
+@comment $OpenBSD: PLIST,v 1.2 2018/01/09 03:47:55 bcallah Exp $
 @bin bin/s25client
 @bin bin/s25edit
 lib/driver/
@@ -9,6 +6,9 @@ lib/driver/audio/
 lib/driver/audio/libaudioSDL.so
 lib/driver/video/
 lib/driver/video/libvideoSDL.so
+libexec/s25rttr/
+@bin libexec/s25rttr/s-c_resample
+@bin libexec/s25rttr/sound-convert
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/doc/s25rttr/
 share/doc/s25rttr/de_DE/
@@ -334,8 +334,12 @@ share/s25rttr/RTTR/MUSIC/SNG/SNG_0011.OGG
 share/s25rttr/RTTR/MUSIC/SNG/SNG_0012.OGG
 share/s25rttr/RTTR/MUSIC/SNG/SNG_0013.OGG
 share/s25rttr/RTTR/MUSIC/SNG/SNG_0014.OGG
-share/s25rttr/RTTR/SAVE/
-share/s25rttr/RTTR/SAVE/README
+share/s25rttr/RTTR/gamedata/
+share/s25rttr/RTTR/gamedata/world/
+share/s25rttr/RTTR/gamedata/world/default.lua
+share/s25rttr/RTTR/gamedata/world/greenland.lua
+share/s25rttr/RTTR/gamedata/world/wasteland.lua
+share/s25rttr/RTTR/gamedata/world/winterworld.lua
 share/s25rttr/RTTR/languages/
 share/s25rttr/RTTR/languages/README.md
 share/s25rttr/RTTR/languages/rttr-cs.mo

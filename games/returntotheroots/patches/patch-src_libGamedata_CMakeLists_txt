@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_libGamedata_CMakeLists_txt,v 1.1 2018/01/09 03:47:55 bcallah Exp $
+
+Index: src/libGamedata/CMakeLists.txt
+--- src/libGamedata/CMakeLists.txt.orig
++++ src/libGamedata/CMakeLists.txt
+@@ -15,7 +15,7 @@ SOURCE_GROUP(other FILES ${SOURCES_OTHER})
+ # LUA
+ ################################################################################
+ 
+-SET(LUA_VERSION "52")
++SET(LUA_VERSION "5.2")
+ 
+ FIND_PACKAGE(LUA REQUIRED)
+ 
+@@ -34,6 +34,6 @@ TARGET_LINK_LIBRARIES(gamedata
+ 	PUBLIC ${LUA_LIBRARY}
+ )
+ 
+-if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
+-	TARGET_LINK_LIBRARIES(gamedata PUBLIC dl)
+-ENDif()
+\ No newline at end of file
++if(CMAKE_SYSTEM_NAME STREQUAL "OpenBSD")
++	TARGET_LINK_LIBRARIES(gamedata PUBLIC)
++ENDif()

@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_test_CMakeLists_txt,v 1.1.1.1 2018/01/01 01:03:55 bcallah Exp $
+$OpenBSD: patch-src_test_CMakeLists_txt,v 1.2 2018/01/09 03:47:55 bcallah Exp $
 
 Let test link.
 
 Index: src/test/CMakeLists.txt
 --- src/test/CMakeLists.txt.orig
 +++ src/test/CMakeLists.txt
-@@ -24,6 +24,7 @@ target_link_libraries(Test
+@@ -28,6 +28,7 @@ target_link_libraries(Test
                          audioMockup
                          videoMockup
  						${Boost_UNIT_TEST_FRAMEWORK_LIBRARY}

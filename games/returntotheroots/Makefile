@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/01/01 01:03:55 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2018/01/09 03:47:55 bcallah Exp $
 
-V =		0.8.2.20171230
+V =		0.8.2.20180107
 COMMENT =	open source engine remake of The Settlers 2 (s25client)
 DISTNAME =	s25client-${V}
 PKGNAME =	returntotheroots-${V}
@@ -35,7 +35,8 @@ LIB_DEPENDS =	archivers/bzip2 \
 		devel/sdl-mixer \
 		net/miniupnp/miniupnpc
 
-CONFIGURE_ARGS =	-DRTTR_ENABLE_WERROR:Bool=OFF
+CONFIGURE_ARGS =	-DRTTR_ENABLE_WERROR:Bool=OFF \
+			-DRTTR_EXTRA_BINDIR="${LOCALBASE}/libexec/s25rttr"
 
 post-extract:
 	@cp ${WRKSRC}/cmake/freebsd.cmake ${WRKSRC}/cmake/openbsd.cmake
