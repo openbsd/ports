@@ -1,17 +1,13 @@
-# $OpenBSD: Makefile,v 1.2 2018/01/08 19:37:46 bcallah Exp $
-
-# Does not build on 32-bit. Reported upstream:
-# https://github.com/freeserf/freeserf/issues/373
-ONLY_FOR_ARCHS =	${LP64_ARCHS}
+# $OpenBSD: Makefile,v 1.3 2018/01/09 23:03:00 bcallah Exp $
 
 COMMENT =	Settlers 1 (Serf City) clone
-DISTNAME =	freeserf-0.1.1.20171204
+DISTNAME =	freeserf-0.1.1.20180109
 CATEGORIES =	games x11
 
 # Switch to GH_TAGNAME or a real tarball once 0.2 is released.
 GH_ACCOUNT =	freeserf
 GH_PROJECT =	freeserf
-GH_COMMIT =	ab1e267fe1fd8acf9f067f35ec3044e027f486e5
+GH_COMMIT =	3e885957f48010cd511ffb4faacc5a68c5d51d5a
 
 HOMEPAGE =	http://jonls.dk/freeserf/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
