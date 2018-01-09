@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.267 2017/11/03 13:16:05 bentley Exp $
+# $OpenBSD: Makefile,v 1.268 2018/01/09 12:31:54 ajacoutot Exp $
 
 # Everything is a Freaking GLib/GTK+ problem
 CFLAGS +=		-g
@@ -7,9 +7,8 @@ INSTALL_STRIP=		# empty
 COMMENT=		general-purpose utility library
 
 GNOME_PROJECT=		glib
-GNOME_VERSION=		2.54.2
+GNOME_VERSION=		2.54.3
 PKGNAME=		${DISTNAME:S/glib/glib2/}
-REVISION=		0
 
 CATEGORIES=		devel
 
@@ -21,11 +20,11 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # would trigger an abort():
 # GLib-GObject:ERROR:gvaluetypes.c:457:_g_value_types_init:
 # assertion failed: (type == G_TYPE_CHAR)
-SHARED_LIBS +=  glib-2.0             4200.6   # 5400.2
-SHARED_LIBS +=  gmodule-2.0          4200.6   # 5400.2
-SHARED_LIBS +=  gthread-2.0          4200.6   # 5400.2
-SHARED_LIBS +=  gobject-2.0          4200.6   # 5400.2
-SHARED_LIBS +=  gio-2.0              4200.6   # 5400.2
+SHARED_LIBS +=  glib-2.0             4200.6   # 5400.3
+SHARED_LIBS +=  gmodule-2.0          4200.6   # 5400.3
+SHARED_LIBS +=  gthread-2.0          4200.6   # 5400.3
+SHARED_LIBS +=  gobject-2.0          4200.6   # 5400.3
+SHARED_LIBS +=  gio-2.0              4200.6   # 5400.3
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
