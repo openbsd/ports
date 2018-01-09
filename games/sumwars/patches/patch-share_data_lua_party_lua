@@ -1,0 +1,16 @@
+$OpenBSD: patch-share_data_lua_party_lua,v 1.1 2018/01/09 21:02:36 schwarze Exp $
+
+table.getn was renamed to # in Lua 5.1
+
+Index: share/data/lua/party.lua
+--- share/data/lua/party.lua.orig
++++ share/data/lua/party.lua
+@@ -74,7 +74,7 @@ function groupObjectsArc(objects,location,lookatloc,ra
+ 		if (radius == nil) then
+ 			radius = math.sqrt(dir[1]*dir[1] + dir[2]*dir[2]);
+ 		end;
+-		generateArc(loc,lookatloc,radius,table.getn(objects),arcangle,angle);
++		generateArc(loc,lookatloc,radius,#objects,arcangle,angle);
+ 		
+ 		-- zweimal ausfuehren, weil beim ersten Mal haeuffig noch Verdraengung stattfindet
+ 		for i,obj in ipairs(objects) do

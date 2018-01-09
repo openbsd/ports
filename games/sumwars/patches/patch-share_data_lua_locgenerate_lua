@@ -1,0 +1,25 @@
+$OpenBSD: patch-share_data_lua_locgenerate_lua,v 1.1 2018/01/09 21:02:36 schwarze Exp $
+
+table.getn was renamed to # in Lua 5.1
+
+Index: share/data/lua/locgenerate.lua
+--- share/data/lua/locgenerate.lua.orig
++++ share/data/lua/locgenerate.lua
+@@ -4,7 +4,7 @@ function generateArc(locations, center, radius, number
+ 	angle = angle or 0;
+ 	arcangle = arcangle or 120;
+ 	number = number or 1;
+-	local n = table.getn(locations);
++	local n = #locations;
+ 	local inc = arcangle / (number);
+ 	local angl = angle - 0.5*arcangle + inc*0.5;
+ 	local i;
+@@ -28,7 +28,7 @@ function generateRect(locations, center, number, dim, 
+ 	local i,j
+ 	local x,y;
+ 	local jmax;
+-	local n = table.getn(locations);
++	local n = #locations;
+ 	for i=1,dim2 do
+ 		x = ((dim2+1)/2 - i)*dist;
+ 		jmax = math.min(number,dim);

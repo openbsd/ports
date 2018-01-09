@@ -1,0 +1,16 @@
+$OpenBSD: patch-share_data_objects_councilExperiment_xml,v 1.1 2018/01/09 21:02:36 schwarze Exp $
+
+math.mod was renamed to math.fmod in Lua 5.1
+
+Index: share/data/objects/councilExperiment.xml
+--- share/data/objects/councilExperiment.xml.orig
++++ share/data/objects/councilExperiment.xml
+@@ -12,7 +12,7 @@
+ 					colorCode = 0;
+ 				end
+ 				
+-				colorCode = math.mod((colorCode + 1),3)
++				colorCode = math.fmod((colorCode + 1),3)
+ 				
+ 				if(colorCode == 0)then
+ 					setObjectAnimation(trigger.used_object,"blue",200);

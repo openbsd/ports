@@ -1,7 +1,8 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2014/08/19 22:40:34 pascal Exp $
---- CMakeLists.txt.orig	Sun Mar 18 13:32:49 2012
-+++ CMakeLists.txt	Sun Mar 18 13:33:07 2012
-@@ -125,10 +125,6 @@ IF(WIN32)
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2018/01/09 21:02:36 schwarze Exp $
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -133,10 +133,6 @@ IF(WIN32)
    SET(CMAKE_MODULE_PATH "$ENV{OGRE_HOME}/CMake/;${CMAKE_MODULE_PATH}")
  ENDIF(WIN32)
  

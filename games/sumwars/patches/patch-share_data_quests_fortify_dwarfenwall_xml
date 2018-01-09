@@ -1,0 +1,16 @@
+$OpenBSD: patch-share_data_quests_fortify_dwarfenwall_xml,v 1.1 2018/01/09 21:02:36 schwarze Exp $
+
+table.getn was renamed to # in Lua 5.1
+
+Index: share/data/quests/fortify_dwarfenwall.xml
+--- share/data/quests/fortify_dwarfenwall.xml.orig
++++ share/data/quests/fortify_dwarfenwall.xml
+@@ -506,7 +506,7 @@
+ 			<Effect>
+ 				setCutsceneMode(false);
+ 				fortify_dwall_tmp.elemental = createObject("fireElemS","locElemental");
+-				fortify_dwall_tmp.playernr = table.getn(getPlayers());
++				fortify_dwall_tmp.playernr = #getPlayers();
+ 				fortify_dwall_tmp.inactive_pl = {};
+ 				fortify_dwall_tmp.inactive_pl_nr = 0;
+ 				fortify_dwall_tmp.inactive_pl_wall = {};

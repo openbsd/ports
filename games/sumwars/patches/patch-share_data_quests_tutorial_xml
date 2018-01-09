@@ -1,0 +1,16 @@
+$OpenBSD: patch-share_data_quests_tutorial_xml,v 1.1 2018/01/09 21:02:36 schwarze Exp $
+
+table.getn was renamed to # in Lua 5.1
+
+Index: share/data/quests/tutorial.xml
+--- share/data/quests/tutorial.xml.orig
++++ share/data/quests/tutorial.xml
+@@ -1159,7 +1159,7 @@
+ 				setCutsceneMode(true)
+ 				addCameraPosition(0,"locBackroute2" , -120,40, 20);
+ 				tutorial_tmp.slugs = createMonsterGroup("tutorialMutantSlugs","locBackroute3",3);
+-				tutorial_tmp.slugnr = table.getn(tutorial_tmp.slugs);
++				tutorial_tmp.slugnr = #tutorial_tmp.slugs;
+ 				
+ 				timedExecute("door_toggle('slugFarmFoodDoor')",1000);
+ 				startTimer("go_backroute2",2000);
