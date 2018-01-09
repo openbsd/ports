@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.45 2016/09/09 20:35:19 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.46 2018/01/09 13:22:24 ajacoutot Exp $
 @conflict gail-*
 @conflict gtk+2-docs-*
 @pkgpath x11/gtk+2
@@ -401,18 +401,6 @@ share/gtk-doc/html/gdk2/GdkDisplayManager.html
 share/gtk-doc/html/gdk2/GdkScreen.html
 share/gtk-doc/html/gdk2/X_cursor.png
 share/gtk-doc/html/gdk2/annotation-glossary.html
-share/gtk-doc/html/gdk2/api-index-2-10.html
-share/gtk-doc/html/gdk2/api-index-2-12.html
-share/gtk-doc/html/gdk2/api-index-2-14.html
-share/gtk-doc/html/gdk2/api-index-2-16.html
-share/gtk-doc/html/gdk2/api-index-2-18.html
-share/gtk-doc/html/gdk2/api-index-2-2.html
-share/gtk-doc/html/gdk2/api-index-2-20.html
-share/gtk-doc/html/gdk2/api-index-2-22.html
-share/gtk-doc/html/gdk2/api-index-2-4.html
-share/gtk-doc/html/gdk2/api-index-2-6.html
-share/gtk-doc/html/gdk2/api-index-2-8.html
-share/gtk-doc/html/gdk2/api-index-deprecated.html
 share/gtk-doc/html/gdk2/api-index-full.html
 share/gtk-doc/html/gdk2/arrow.png
 share/gtk-doc/html/gdk2/based_arrow_down.png
@@ -742,19 +730,6 @@ share/gtk-doc/html/gtk2/WindowWidgets.html
 share/gtk-doc/html/gtk2/aboutdialog.png
 share/gtk-doc/html/gtk2/accel-label.png
 share/gtk-doc/html/gtk2/annotation-glossary.html
-share/gtk-doc/html/gtk2/api-index-2-10.html
-share/gtk-doc/html/gtk2/api-index-2-12.html
-share/gtk-doc/html/gtk2/api-index-2-14.html
-share/gtk-doc/html/gtk2/api-index-2-16.html
-share/gtk-doc/html/gtk2/api-index-2-18.html
-share/gtk-doc/html/gtk2/api-index-2-2.html
-share/gtk-doc/html/gtk2/api-index-2-20.html
-share/gtk-doc/html/gtk2/api-index-2-22.html
-share/gtk-doc/html/gtk2/api-index-2-24.html
-share/gtk-doc/html/gtk2/api-index-2-4.html
-share/gtk-doc/html/gtk2/api-index-2-6.html
-share/gtk-doc/html/gtk2/api-index-2-8.html
-share/gtk-doc/html/gtk2/api-index-deprecated.html
 share/gtk-doc/html/gtk2/api-index-full.html
 share/gtk-doc/html/gtk2/application-exit.png
 share/gtk-doc/html/gtk2/assistant.png
