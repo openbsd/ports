@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_modules_perl_modperl_common_util_h,v 1.1 2018/01/09 20:45:42 sthen Exp $
+
+https://marc.info/?l=apache-modperl&m=143930336811571&w=2
+
+Index: src/modules/perl/modperl_common_util.h
+--- src/modules/perl/modperl_common_util.h.orig
++++ src/modules/perl/modperl_common_util.h
+@@ -19,7 +19,7 @@
+ #ifndef MODPERL_COMMON_UTIL_H
+ #define MODPERL_COMMON_UTIL_H
+ 
+-#ifdef MP_DEBUG
++#if defined(MP_DEBUG) || defined(__clang__)
+ #define MP_INLINE
+ #else
+ #define MP_INLINE APR_INLINE
