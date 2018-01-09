@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2017/10/26 07:53:22 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.4 2018/01/09 21:10:38 rsadowski Exp $
 
 COMMENT =		CMake modules required by KDE5
 DISTNAME =		extra-cmake-modules-${VERSION}
@@ -15,9 +15,5 @@ PKG_ARCH =		*
 
 # use depleted
 CONFIGURE_ARGS +=	-DMAN_INSTALL_DIR=${PREFIX}/man
-
-# XXX Don't run compileall.py because it needs land/python
-post-install:
-	rm ${PREFIX}/share/ECM/kde-modules/*.orig
 
 .include <bsd.port.mk>

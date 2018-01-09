@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/05/26 23:58:58 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/01/09 21:10:39 rsadowski Exp $
 bin/preparetips5
 include/KF5/KConfigWidgets/
 include/KF5/KConfigWidgets/KCModule
@@ -39,6 +39,7 @@ lib/cmake/KF5ConfigWidgets/KF5ConfigWidgetsTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5ConfigWidgets/KF5ConfigWidgetsTargets.cmake
 @lib lib/libKF5ConfigWidgets.so.${LIBKF5ConfigWidgets_VERSION}
 @man man/man1/preparetips5.1
+share/examples/xdg/kconfigwidgets.categories
 share/kf5/mkspecs/qt_KConfigWidgets.pri
 share/locale/af/LC_MESSAGES/kconfigwidgets5.mo
 share/locale/af/kf5_entry.desktop

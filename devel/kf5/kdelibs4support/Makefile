@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2017/10/26 07:53:23 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.8 2018/01/09 21:10:39 rsadowski Exp $
 
 COMMENT =		legacy support for kdelibs-4.x compatibility
+# 
+VERSION =		5.39.0
 DISTNAME =		kdelibs4support-${VERSION}
 
-SHARED_LIBS =		KF5KDELibs4Support	3.0
+SHARED_LIBS =		KF5KDELibs4Support	5.0
 
 WANTLIB += ${COMPILER_LIBCXX} ICE KF5Auth KF5Bookmarks KF5Codecs
 WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
@@ -54,11 +56,6 @@ LIB_DEPENDS =		devel/kf5/kcompletion \
 IS_PORTING_AID =	Yes
 
 CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_NetworkManager=Yes
-
-# TODO: The following tests FAILED:
-#         24 - ksavefiletest (Failed)
-#         27 - kmimetypetest (Failed)
-#         29 - kstandarddirstest (Failed)
 
 TEST_IS_INTERACTIVE =	X11
 PORTHOME =		${WRKDIR}

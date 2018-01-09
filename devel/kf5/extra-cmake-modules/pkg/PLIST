@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2017/10/26 07:53:22 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/01/09 21:10:38 rsadowski Exp $
 @man man/man7/ecm-developer.7
 @man man/man7/ecm-find-modules.7
 @man man/man7/ecm-kde-modules.7
@@ -12,6 +12,7 @@ share/ECM/cmake/ECMConfigVersion.cmake
 share/ECM/find-modules/
 share/ECM/find-modules/ECMFindModuleHelpersStub.cmake
 share/ECM/find-modules/FindEGL.cmake
+share/ECM/find-modules/FindGLIB2.cmake
 share/ECM/find-modules/FindGperf.cmake
 share/ECM/find-modules/FindInotify.cmake
 share/ECM/find-modules/FindKF5.cmake
@@ -19,9 +20,11 @@ share/ECM/find-modules/FindLibGit2.cmake
 share/ECM/find-modules/FindOpenEXR.cmake
 share/ECM/find-modules/FindPng2Ico.cmake
 share/ECM/find-modules/FindPoppler.cmake
+share/ECM/find-modules/FindPulseAudio.cmake
 share/ECM/find-modules/FindPythonModuleGeneration.cmake
 share/ECM/find-modules/FindQHelpGenerator.cmake
 share/ECM/find-modules/FindQtWaylandScanner.cmake
+share/ECM/find-modules/FindSasl2.cmake
 share/ECM/find-modules/FindSharedMimeInfo.cmake
 share/ECM/find-modules/FindWayland.cmake
 share/ECM/find-modules/FindWaylandScanner.cmake
@@ -35,6 +38,7 @@ share/ECM/find-modules/sip_generator.py
 share/ECM/kde-modules/
 share/ECM/kde-modules/KDECMakeSettings.cmake
 share/ECM/kde-modules/KDECompilerSettings.cmake
+share/ECM/kde-modules/KDECompilerSettings.cmake.orig
 share/ECM/kde-modules/KDEFrameworkCompilerSettings.cmake
 share/ECM/kde-modules/KDEInstallDirs.cmake
 share/ECM/kde-modules/KDEPackageAppTemplates.cmake
@@ -84,12 +88,15 @@ share/doc/ECM/html/
 share/doc/ECM/html/_sources/
 share/doc/ECM/html/_sources/find-module/
 share/doc/ECM/html/_sources/find-module/FindEGL.txt
+share/doc/ECM/html/_sources/find-module/FindGLIB2.txt
 share/doc/ECM/html/_sources/find-module/FindKF5.txt
 share/doc/ECM/html/_sources/find-module/FindLibGit2.txt
 share/doc/ECM/html/_sources/find-module/FindOpenEXR.txt
 share/doc/ECM/html/_sources/find-module/FindPng2Ico.txt
 share/doc/ECM/html/_sources/find-module/FindPoppler.txt
+share/doc/ECM/html/_sources/find-module/FindPulseAudio.txt
 share/doc/ECM/html/_sources/find-module/FindQtWaylandScanner.txt
+share/doc/ECM/html/_sources/find-module/FindSasl2.txt
 share/doc/ECM/html/_sources/find-module/FindSharedMimeInfo.txt
 share/doc/ECM/html/_sources/find-module/FindWayland.txt
 share/doc/ECM/html/_sources/find-module/FindWaylandScanner.txt
@@ -157,12 +164,15 @@ share/doc/ECM/html/_static/up.png
 share/doc/ECM/html/_static/websupport.js
 share/doc/ECM/html/find-module/
 share/doc/ECM/html/find-module/FindEGL.html
+share/doc/ECM/html/find-module/FindGLIB2.html
 share/doc/ECM/html/find-module/FindKF5.html
 share/doc/ECM/html/find-module/FindLibGit2.html
 share/doc/ECM/html/find-module/FindOpenEXR.html
 share/doc/ECM/html/find-module/FindPng2Ico.html
 share/doc/ECM/html/find-module/FindPoppler.html
+share/doc/ECM/html/find-module/FindPulseAudio.html
 share/doc/ECM/html/find-module/FindQtWaylandScanner.html
+share/doc/ECM/html/find-module/FindSasl2.html
 share/doc/ECM/html/find-module/FindSharedMimeInfo.html
 share/doc/ECM/html/find-module/FindWayland.html
 share/doc/ECM/html/find-module/FindWaylandScanner.html

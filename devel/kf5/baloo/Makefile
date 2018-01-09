@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2017/10/27 07:21:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2018/01/09 21:10:38 rsadowski Exp $
 
 COMMENT =	KDE file search and metadata handling framework
 VERSION =	15.04.26
@@ -41,7 +41,7 @@ LIB_DEPENDS =	databases/xapian-core \
 		devel/kf5/kconfig \
 		devel/kf5/kcrash \
 		devel/kf5/kdbusaddons \
-		devel/kf5/kdelibs4support \
+		devel/kf5/kdelibs4support<=5.39.0 \
 		devel/kf5/kfilemetadata \
 		devel/kf5/ki18n \
 		devel/kf5/kidletime \

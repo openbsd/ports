@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/05/26 23:58:57 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/01/09 21:10:39 rsadowski Exp $
 include/KF5/
 include/KF5/KArchive/
 include/KF5/KArchive/K7Zip
@@ -33,6 +33,8 @@ lib/cmake/KF5Archive/KF5ArchiveConfigVersion.cmake
 lib/cmake/KF5Archive/KF5ArchiveTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5Archive/KF5ArchiveTargets.cmake
 @lib lib/libKF5Archive.so.${LIBKF5Archive_VERSION}
+share/examples/xdg/
+share/examples/xdg/karchive.categories
 share/kf5/
 share/kf5/mkspecs/
 share/kf5/mkspecs/qt_KArchive.pri

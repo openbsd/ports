@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2017/10/26 07:53:24 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.5 2018/01/09 21:10:40 rsadowski Exp $
 
 COMMENT =		highlighting engine for structured text and code
 DISTNAME =		syntax-highlighting-${VERSION}
 
-SHARED_LIBS =		KF5SyntaxHighlighting	2.0 # 5.29
+SHARED_LIBS =		KF5SyntaxHighlighting	3.0 # 5.29
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Network c m
 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2017/10/26 07:53:23 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.5 2018/01/09 21:10:39 rsadowski Exp $
 
 COMMENT =	create documentation from DocBook
 DISTNAME =	kdoctools-${VERSION}
 
-SHARED_LIBS +=  KF5DocTools               1.0 # 5.34
+SHARED_LIBS +=  KF5DocTools               2.0 # 5.34
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Archive Qt5Core c exslt m xml2
 WANTLIB += xslt

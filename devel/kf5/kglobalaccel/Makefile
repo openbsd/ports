@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2017/10/26 07:53:23 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.7 2018/01/09 21:10:39 rsadowski Exp $
 
 COMMENT =	global desktop keyboard shortcuts for KDE
 DISTNAME =	kglobalaccel-${VERSION}
 
-SHARED_LIBS =	KF5GlobalAccel		3.0
-SHARED_LIBS +=	KF5GlobalAccelPrivate	3.0
+SHARED_LIBS =	KF5GlobalAccel		4.0
+SHARED_LIBS +=	KF5GlobalAccelPrivate	4.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5ConfigCore KF5CoreAddons KF5Crash
 WANTLIB += KF5DBusAddons KF5WindowSystem Qt5Core Qt5DBus Qt5Gui

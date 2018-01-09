@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2017/10/26 07:53:23 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.6 2018/01/09 21:10:39 rsadowski Exp $
 
 COMMENT =		extensions for the Qt model-view framework
 DISTNAME =		kitemviews-${VERSION}
 
-SHARED_LIBS =		KF5ItemViews		3.0
+SHARED_LIBS =		KF5ItemViews		4.0
 
 WANTLIB =		${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Widgets m
 

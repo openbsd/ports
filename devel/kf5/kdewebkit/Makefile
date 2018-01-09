@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2017/10/26 07:53:23 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.8 2018/01/09 21:10:39 rsadowski Exp $
 
 COMMENT =	integration of the HTML rendering engine WebKit into KDE
 DISTNAME =	kdewebkit-${VERSION}
 
-SHARED_LIBS =	KF5WebKit		3.0
+SHARED_LIBS =	KF5WebKit		4.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons

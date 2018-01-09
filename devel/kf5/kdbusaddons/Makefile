@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2017/10/26 07:53:23 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.7 2018/01/09 21:10:39 rsadowski Exp $
 
 COMMENT =	KDE convenience classes for DBus
 DISTNAME =	kdbusaddons-${VERSION}
 
-SHARED_LIBS =	KF5DBusAddons		3.0
+SHARED_LIBS =	KF5DBusAddons		4.0
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5DBus Qt5Gui Qt5X11Extras
 WANTLIB += c m

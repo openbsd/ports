@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2017/10/26 07:53:23 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.8 2018/01/09 21:10:39 rsadowski Exp $
 
 COMMENT =		original KDE HTML rendering engine
 DISTNAME =		khtml-${VERSION}
 
-SHARED_LIBS =		KF5KHtml	3.0
+SHARED_LIBS =		KF5KHtml	4.0
 
 WANTLIB += ${COMPILER_LIBCXX} ICE KF5Archive KF5Auth KF5Bookmarks
 WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui

@@ -1,6 +1,6 @@
-# $OpenBSD: kf5.port.mk,v 1.5 2017/10/26 07:53:22 rsadowski Exp $
+# $OpenBSD: kf5.port.mk,v 1.6 2018/01/09 21:10:38 rsadowski Exp $
 
-MODKF5_VERSION =	5.38.0
+MODKF5_VERSION =	5.41.0
 
 MAINTAINER ?=		KDE porting team <openbsd-kde@googlegroups.com>
 
@@ -29,6 +29,12 @@ CONFIGURE_ARGS += \
 
 # XXX it's very strange this is off by default
 CONFIGURE_ARGS +=	-DALLOW_UNDEFINED_LIB_SYMBOLS=Yes
+
+# The PythonModuleGeneration CMake find module picks up highest Python3
+# version it could find, and fails to build anyway.
+# The module needs more fixes. Also, it's not clear how to deal
+# with multiple Python dependencies.
+CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_PythonModuleGeneration:Bool=Yes
 .endif
 
 # make sure cmake module preceeds qt5, unless we really want qmake

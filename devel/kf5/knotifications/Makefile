@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2017/10/26 07:53:23 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.8 2018/01/09 21:10:39 rsadowski Exp $
 
 COMMENT =	KDE desktop notifications framework
 DISTNAME =	knotifications-${VERSION}
 
-SHARED_LIBS =	KF5Notifications	3.0
+SHARED_LIBS =	KF5Notifications	4.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Codecs KF5ConfigCore KF5CoreAddons
 WANTLIB += KF5WindowSystem Qt5Core Qt5DBus Qt5Gui Qt5Widgets Qt5X11Extras

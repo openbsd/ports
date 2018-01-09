@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2017/10/26 07:53:23 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.7 2018/01/09 21:10:39 rsadowski Exp $
 
 COMMENT =		KDE framework for aggregating and accessing people contacts
 DISTNAME =		kpeople-${VERSION}
 
-SHARED_LIBS =   	KF5People		3.0 # 5.17
-SHARED_LIBS +=  	KF5PeopleBackend	3.0 # 5.17
-SHARED_LIBS +=  	KF5PeopleWidgets	3.0 # 5.17
+SHARED_LIBS =   	KF5People		4.0 # 5.17
+SHARED_LIBS +=  	KF5PeopleBackend	4.0 # 5.17
+SHARED_LIBS +=  	KF5PeopleWidgets	4.0 # 5.17
 
 WANTLIB += ${COMPILER_LIBCXX} KF5ConfigCore KF5CoreAddons KF5I18n
 WANTLIB += KF5ItemViews KF5Service KF5WidgetsAddons Qt5Core Qt5DBus
