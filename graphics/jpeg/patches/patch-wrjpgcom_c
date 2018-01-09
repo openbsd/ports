@@ -1,12 +1,13 @@
-$OpenBSD: patch-wrjpgcom_c,v 1.3 2016/06/25 12:34:30 sthen Exp $
---- wrjpgcom.c.orig	Tue Jun  7 18:33:40 2016
-+++ wrjpgcom.c	Wed Jun  8 14:19:53 2016
+$OpenBSD: patch-wrjpgcom_c,v 1.4 2018/01/09 21:05:48 rsadowski Exp $
+Index: wrjpgcom.c
+--- wrjpgcom.c.orig
++++ wrjpgcom.c
 @@ -452,7 +452,7 @@ main (int argc, char **argv)
                    (unsigned int) MAX_COM_LENGTH);
            exit(EXIT_FAILURE);
          }
 -        strcpy(comment_arg, argv[argn]+1);
-+	strlcpy(comment_arg, argv[argn]+1, MAX_COM_LENGTH);
++        strlcpy(comment_arg, argv[argn]+1, MAX_COM_LENGTH);
          for (;;) {
            comment_length = (unsigned int) strlen(comment_arg);
            if (comment_length > 0 && comment_arg[comment_length-1] == '"') {
@@ -16,8 +17,8 @@ $OpenBSD: patch-wrjpgcom_c,v 1.3 2016/06/25 12:34:30 sthen Exp $
            }
 -          strcat(comment_arg, " ");
 -          strcat(comment_arg, argv[argn]);
-+	  strlcat(comment_arg, " ", MAX_COM_LENGTH);
-+	  strlcat(comment_arg, argv[argn], MAX_COM_LENGTH);
++          strlcat(comment_arg, " ", MAX_COM_LENGTH);
++          strlcat(comment_arg, argv[argn], MAX_COM_LENGTH);
          }
        } else if (strlen(argv[argn]) >= (size_t) MAX_COM_LENGTH) {
          fprintf(stderr, "Comment text may not exceed %u bytes\n",
