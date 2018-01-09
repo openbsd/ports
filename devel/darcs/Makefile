@@ -1,7 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2018/01/08 10:18:39 kili Exp $
-
-# Needs template Haskell in Setup.lhs, which doesn't work on i386.
-NOT_FOR_ARCHS =		i386
+# $OpenBSD: Makefile,v 1.69 2018/01/09 02:28:18 kili Exp $
 
 USE_WXNEEDED =		Yes
 
