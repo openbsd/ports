@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.32 2017/11/19 19:38:46 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.33 2018/01/09 02:11:12 abieber Exp $
 @pkgpath www/node
 @bin bin/node
 bin/node-gyp
@@ -108,6 +108,7 @@ include/node/uv-darwin.h
 include/node/uv-errno.h
 include/node/uv-linux.h
 include/node/uv-os390.h
+include/node/uv-posix.h
 include/node/uv-sunos.h
 include/node/uv-threadpool.h
 include/node/uv-unix.h
