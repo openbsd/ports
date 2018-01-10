@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.300 2018/01/03 21:08:29 landry Exp $
+$OpenBSD: user.list,v 1.301 2018/01/10 16:20:58 claudio Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -307,3 +307,4 @@ id  user		group		port options
 796 _minio		_minio		net/minio/server
 797 _influx		_influx		databases/influxdb
 798 _grafana		_grafana	sysutils/grafana
+799 _prometheus		_prometheus	sysutils/prometheus
