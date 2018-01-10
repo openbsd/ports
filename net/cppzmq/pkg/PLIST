@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/01/10 18:00:19 jasper Exp $
+include/zmq.hpp
+include/zmq_addon.hpp
+share/cmake/
+share/cmake/cppzmq/
+share/cmake/cppzmq/cppzmqConfig.cmake
+share/cmake/cppzmq/cppzmqConfigVersion.cmake
+share/cmake/cppzmq/cppzmqTargets.cmake
+share/cmake/cppzmq/libzmqPkgConfigFallback.cmake
