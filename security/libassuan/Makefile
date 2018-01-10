@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2017/12/02 18:48:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2018/01/10 10:59:50 pea Exp $
 
 COMMENT=		IPC library used by GnuPG and gpgme
 
-DISTNAME=		libassuan-2.4.5
+DISTNAME=		libassuan-2.5.1
 EXTRACT_SUFX=		.tar.bz2
 
-SHARED_LIBS +=  assuan            2.0      # 7.3
+SHARED_LIBS +=  assuan            2.1      # 8.1
 
 CATEGORIES=		security devel
 
