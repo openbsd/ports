@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.464 2018/01/10 16:43:15 claudio Exp $
+# $OpenBSD: Makefile,v 1.465 2018/01/10 20:36:34 sthen Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -113,6 +113,7 @@
      SUBDIR += inotify-tools
      SUBDIR += ioping
      SUBDIR += ipmitool
+     SUBDIR += iucode-tool
      SUBDIR += iwatch
      SUBDIR += krename-kde4
      SUBDIR += ktsuss
