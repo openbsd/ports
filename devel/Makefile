@@ -1,4 +1,4 @@
-#${MODPY_COMMENT} $OpenBSD: Makefile,v 1.1687 2018/01/01 20:23:07 rsadowski Exp $
+#${MODPY_COMMENT} $OpenBSD: Makefile,v 1.1688 2018/01/10 16:43:15 claudio Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1196,6 +1196,7 @@
      SUBDIR += popt
      SUBDIR += premake4
      SUBDIR += proj
+     SUBDIR += promu
      SUBDIR += protobuf
      SUBDIR += protobuf-c
      SUBDIR += pscan
