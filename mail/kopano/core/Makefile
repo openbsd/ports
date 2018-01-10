@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2017/12/26 19:17:11 robert Exp $
+# $OpenBSD: Makefile,v 1.8 2018/01/10 15:46:11 robert Exp $
 
 COMMENT-main=	MS Exchange groupware suite replacement
 COMMENT-mapi=	kopano MAPI extensions for PHP
@@ -45,10 +45,10 @@ WANTLIB += lzma crypto
 
 WANTLIB-main += ${WANTLIB} ${MODPY_WANTLIB}
 WANTLIB-main += curl nghttp2 ical icalss
-WANTLIB-main += mysqlclient curses sasl2 ssl xml2
+WANTLIB-main += mysqlclient curses ssl xml2
 WANTLIB-main += gsoapssl++
 WANTLIB-main += ${LIBCXX}
-WANTLIB-main += icalvcal lber ldap_r
+WANTLIB-main += icalvcal ldap_r
 
 RUN_DEPENDS-main= ${MODPY_RUN_DEPENDS} \
 		databases/xapian-bindings,-python \
@@ -91,7 +91,6 @@ CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.69
 
 CONFIGURE_ENV=	CPPFLAGS="-fpermissive -I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -lexecinfo" \
 		PHP_SYSCONF_DIR="${SYSCONFDIR}/php-${MODPHP_VERSION}" \
 		ac_cv_lib_pam_pam_start=no
 CONFIGURE_ARGS=	--disable-static \
