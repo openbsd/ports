@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2017/11/16 23:20:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2018/01/10 13:22:25 sthen Exp $
 # Some of this comes from www/firefox-esr as apropos, since Tor
 # browser is a fork of ESR.  It is a good idea to look at that
 # Makefile when editing this one (ESR versions not always the same).
@@ -6,21 +6,15 @@
 COMMENT =		modified version of Firefox ESR for browsing over Tor
 ONLY_FOR_ARCHS =	amd64 i386
 
-GH_PROJECT =		torb
-GH_TAGNAME =		v${TB_VERSION}-esr52.4.0
 MOZILLA_VERSION =	${TB_VERSION}
 MOZILLA_PROJECT =	${BROWSER_NAME}
 MOZILLA_CODENAME =	browser
 
-MASTER_SITES =		https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/archive/
 EXTRACT_SUFX =		.tar.gz
-DIST_SUBDIR =		${BROWSER_NAME}
-WRKDIST =		${WRKDIR}/${GH_PROJECT}-${GH_TAGNAME:C/^v//}
-
 PATCHORIG =		.pat.orig
 
 PKGNAME =		${TB_PREFIX}-browser-${TB_VERSION}
-DISTNAME =		${GH_TAGNAME}
+DISTNAME =		${BROWSER_NAME}-${TB_VERSION}
 
 SO_VERSION =		2.0
 MOZILLA_LIBS =		xul lgpllibs mozavcodec mozavutil
@@ -42,7 +36,7 @@ MOZILLA_USE_BUNDLED_NSS =	Yes
 MOZILLA_USE_BUNDLED_LIBEVENT =	Yes
 MOZILLA_USE_BUNDLED_SQLITE =	Yes
 
-WANTLIB +=		X11-xcb xcb xcb-shm intl ${LIBECXX}
+WANTLIB +=		X11-xcb intl xcb xcb-shm ${COMPILER_LIBCXX}
 
 LIB_DEPENDS +=		devel/gettext
 
@@ -63,7 +57,7 @@ CONFIGURE_ARGS +=	--with-app-name=${BROWSER_NAME}			\
 			--with-tor-browser-version=${TB_VERSION}	\
 			--disable-tor-browser-update
 
-RUN_DEPENDS +=		net/tor>=0.3.1.7
+RUN_DEPENDS +=		net/tor>=0.3.1.9
 
 # bug 857628
 CONFIGURE_ARGS +=	--enable-pie
@@ -97,7 +91,7 @@ post-install:
 	${INSTALL_DATA_DIR} ${BROWSER_DIR}/distribution
 	echo "[Global]\nid=OpenBSD\nversion=${OSREV}\n" > ${BROWSER_INI}
 	echo "about=Packaged by ${MAINTAINER}\n" >> ${BROWSER_INI}
-# install desktop file
+	# install desktop file
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/
 	${SUBST_DATA} ${FILESDIR}/${BROWSER_NAME}.desktop \
 		${PREFIX}/share/applications/${BROWSER_NAME}.desktop

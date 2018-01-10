@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile.inc,v 1.11 2017/10/21 20:18:45 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.12 2018/01/10 13:22:25 sthen Exp $
 
 MAINTAINER ?=		Sean Levy <attila@stalphonsos.com>
 HOMEPAGE ?=		https://www.torproject.org
-GH_ACCOUNT ?=		torbsd
+MASTER_SITES ?=		https://bits.torbsd.org/pub/OpenBSD/distfiles/
 PERMIT_PACKAGE_CDROM ?= Yes
 CATEGORIES =		www
 BROWSER_NAME =		tor-browser
 # XXX If updating, bump REVISION of any extensions which did not get updated.
-TB_VERSION =		7.0.6
+TB_VERSION =		7.0.11
 TB_PREFIX =		tb
 
 SUBST_VARS +=		BROWSER_NAME TB_VERSION
@@ -32,10 +32,6 @@ ADDON_XPI_FILE ?=	${TB_NAME}.xpi
 # Directory that the port's makexpi.sh script dumps into, if it has one
 ADDON_SUBDIR ?=		pkg
 ADDON_BUILDDIR ?= 	${WRKBUILD}/${ADDON_SUBDIR}
-.  if !defined(MASTER_SITES)
-GH_PROJECT ?=		${ADDON_NAME}
-GH_TAGNAME ?=		${V}
-.  endif
 
 CONFIGURE_STYLE ?=	none
 BUILD_DEPENDS +=	archivers/zip archivers/unzip
