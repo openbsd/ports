@@ -1,0 +1,31 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/01/10 16:26:19 claudio Exp $
+@newgroup _prometheus:799
+@newuser _prometheus:799:_prometheus:daemon:prometheus:/nonexistent:/sbin/nologin
+@bin bin/prometheus
+@bin bin/promtool
+share/doc/prometheus/
+share/doc/prometheus/LICENSE
+share/doc/prometheus/NOTICE
+share/examples/prometheus/
+@sample ${SYSCONFDIR}/prometheus/
+share/examples/prometheus/console_libraries/
+share/examples/prometheus/console_libraries/menu.lib
+share/examples/prometheus/console_libraries/prom.lib
+share/examples/prometheus/consoles/
+share/examples/prometheus/consoles/index.html.example
+share/examples/prometheus/consoles/node-cpu.html
+share/examples/prometheus/consoles/node-disk.html
+share/examples/prometheus/consoles/node-overview.html
+share/examples/prometheus/consoles/node.html
+share/examples/prometheus/consoles/prometheus-overview.html
+share/examples/prometheus/consoles/prometheus.html
+share/examples/prometheus/prometheus.yml
+@sample ${SYSCONFDIR}/prometheus/prometheus.yml
+@mode 0755
+@owner _prometheus
+@group _prometheus
+@sample ${LOCALSTATEDIR}/prometheus/
+@mode
+@owner
+@group
+@rcscript ${RCDIR}/prometheus
