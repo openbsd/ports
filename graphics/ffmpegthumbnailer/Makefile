@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2017/12/15 21:11:42 landry Exp $m
+# $OpenBSD: Makefile,v 1.34 2018/01/10 22:46:21 landry Exp $m
 
 COMMENT=	lightweight video thumbnailer for file managers
 
@@ -17,6 +17,7 @@ EXTRACT_SUFX=	.tar.bz2
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
+COMPILER =	base-clang ports-gcc
 MODULES =	devel/cmake
 WANTLIB += avcodec avfilter avformat avutil c jpeg m png pthread ${COMPILER_LIBCXX} z
 
