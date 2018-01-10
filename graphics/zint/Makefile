@@ -1,33 +1,34 @@
-# $OpenBSD: Makefile,v 1.11 2017/07/26 22:45:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2018/01/10 15:12:08 kirby Exp $
 
 COMMENT-main =		library for encoding data in several barcode variants
 COMMENT-x11 = 		graphical interface for the zint barcode generator
 
-V = 			2.4.3
-DISTNAME =		zint-${V}
-PKGNAME-main = 		${DISTNAME}
+V = 			2.6.2
+DISTNAME =		zint-${V}.src
+PKGNAME-main = 		zint-${V}
 PKGNAME-x11 = 		zint-gui-${V}
 
-REVISION-main =		3
-REVISION-x11 =		4
-
-SHARED_LIBS += 		QZint	0.0 # 2.4
-SHARED_LIBS += 		zint	0.0 # 2.4
+SHARED_LIBS += 		QZint	1.0 # 2.6
+SHARED_LIBS += 		zint	1.0 # 2.6
 
 CATEGORIES =		graphics
+
+HOMEPAGE = 		http://www.zint.org.uk/
 
 MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
 
-cWANTLIB = 		c m png z
-WANTLIB-main = 		${cWANTLIB}
-WANTLIB-x11 = 		${cWANTLIB} QtCore QtGui QtXml ${COMPILER_LIBCXX} zint pthread
+cWANTLIB = c m png z
+WANTLIB-main = ${cWANTLIB}
+WANTLIB-x11 += ${cWANTLIB} Qt5Core Qt5Gui Qt5Widgets zint pthread
+WANTLIB-x11 += ${COMPILER_LIBCXX}
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=zint/}
 
 MODULES =		devel/cmake
+CONFIGURE_ARGS += 	-DDATA_INSTALL_DIR=OFF
 
 LIB_DEPENDS-main = 		graphics/png
 
@@ -40,9 +41,9 @@ TEST_DEPENDS = 	${BASE_PKGPATH},-main
 
 .if !${FLAVOR:Mno_x11}
 MULTI_PACKAGES +=       -x11
-MODULES +=		x11/qt4
+MODULES +=		x11/qt5
 LIB_DEPENDS-x11 += 	${BASE_PKGPATH},-main \
-			${MODQT4_LIB_DEPENDS}
+			${MODQT5_LIB_DEPENDS}
 RUN_DEPENDS-x11 += 	devel/desktop-file-utils
 
 post-install:
