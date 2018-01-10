@@ -1,0 +1,40 @@
+$OpenBSD: patch-iucode_tool_c,v 1.1.1.1 2018/01/10 20:36:11 sthen Exp $
+
+Index: iucode_tool.c
+--- iucode_tool.c.orig
++++ iucode_tool.c
+@@ -31,6 +31,7 @@
+ #include <dirent.h>
+ #include <time.h>
+ #include <cpuid.h>
++#include <limits.h>
+ 
+ #include "intel_microcode.h"
+ 
+@@ -1796,7 +1797,7 @@ static int write_intel_microcodes(int dirfd,
+ 		e = e->next;
+ 	}
+ 	if (unlikely(!total_written)) {
+-		return ENODATA;	/* don't create empty files */
++		return ENOTSUP;	/* don't create empty files */
+ 	} else if (unlikely(ft == 1 && total_written > UINT32_MAX)) {
+ 		/* file too large for cpio archive members */
+ 		print_err("%s: too much data", filename);
+@@ -2430,7 +2431,7 @@ static int do_write_microcode(const char * const filen
+ 
+ 	print_msg(1, "Writing selected microcodes to: %s", filename);
+ 	rc = write_intel_microcodes(AT_FDCWD, filename, ft, microcodes);
+-	if (rc == ENODATA) {
++	if (rc == ENOTSUP) {
+ 		print_warn("All microcodes in %s were skipped, file unchanged", filename);
+ 		return 0;
+ 	}
+@@ -2607,7 +2608,7 @@ static int do_write_firmware(const char * const dirnam
+ 
+ 		if (!rc)
+ 			count++;
+-		if (rc == ENODATA)
++		if (rc == ENOTSUP)
+ 			rc = 0;
+ 	}
+ 
