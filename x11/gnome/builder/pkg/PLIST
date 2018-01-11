@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2017/11/10 10:26:58 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.27 2018/01/11 21:24:42 ajacoutot Exp $
 @bin bin/gnome-builder
 @bin bin/gnome-builder-cli
 include/gnome-builder/
@@ -379,6 +379,7 @@ lib/gnome-builder/plugins/vala-pack.plugin
 lib/gnome-builder/plugins/xml-pack.plugin
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/Ide.py
 @bin libexec/gnome-builder-worker
+share/appdata/
 share/appdata/org.gnome.Builder.appdata.xml
 share/applications/org.gnome.Builder.desktop
 share/dbus-1/services/org.gnome.Builder.service
