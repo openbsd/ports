@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.557 2018/01/08 20:28:02 benno Exp $
+# $OpenBSD: Makefile,v 1.558 2018/01/11 09:48:39 fcambus Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -196,6 +196,8 @@
      SUBDIR += p5-Lingua-Stem-Snowball-No
      SUBDIR += p5-Lingua-Stem-Snowball-Se
      SUBDIR += p5-Lingua-Treebank
+     SUBDIR += p5-List-SomeUtils
+     SUBDIR += p5-List-SomeUtils-XS
      SUBDIR += p5-List-UtilsBy
      SUBDIR += p5-Mojolicious-Plugin-TtRenderer
      SUBDIR += p5-Number-Format
