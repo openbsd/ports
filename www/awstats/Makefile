@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2016/12/19 17:31:45 rpe Exp $
+# $OpenBSD: Makefile,v 1.15 2018/01/11 19:40:29 rpe Exp $
 
 COMMENT=		free real-time logfile analyzer
 
-DISTNAME=		awstats-7.6
+DISTNAME=		awstats-7.7
 
 CATEGORIES=		www
 
