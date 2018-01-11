@@ -1,4 +1,4 @@
-# $OpenBSD: site.OS.m4,v 1.4 2018/01/09 15:06:00 jca Exp $
+# $OpenBSD: site.OS.m4,v 1.5 2018/01/11 07:56:50 ajacoutot Exp $
 # OpenBSD Sendmail port configuration, generated from __file__
 dnl
 dnl Target directories
@@ -43,9 +43,7 @@ ifelse(`${WANT_LOCALBASE}', `Yes',dnl
 dnl
 ifelse(`${WANT_LDAP}', `Yes',dnl
 	`APPENDDEF(`confMAPDEF', `-DLDAPMAP')dnl
-dnl Explicitely link against liblber, ld.lld doesn't automatically
-dnl follow inter-libraries deps like binutils-2.17 ld does.
-	 APPENDDEF(`confLIBS', `-lldap -llber')')dnl
+	 APPENDDEF(`confLIBS', `-lldap')')dnl
 dnl
 ifelse(`${WANT_SMTP_AUTH}', `Yes',dnl
 	`APPENDDEF(`conf_sendmail_ENVDEF', `-DSASL')dnl
