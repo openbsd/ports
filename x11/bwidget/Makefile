@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2017/12/27 23:46:53 stu Exp $
+# $OpenBSD: Makefile,v 1.14 2018/01/11 17:01:19 stu Exp $
 
 COMMENT =		high-level widget set for Tcl/Tk
 
-DISTNAME =		bwidget-1.9.11
+DISTNAME =		bwidget-1.9.12
 CATEGORIES =		x11
 HOMEPAGE =		http://sourceforge.net/projects/tcllib/
 MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
