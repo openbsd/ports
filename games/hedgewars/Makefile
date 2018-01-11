@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2017/12/17 20:10:12 pascal Exp $
+# $OpenBSD: Makefile,v 1.17 2018/01/11 19:27:02 rpe Exp $
 
 COMMENT-main =		Worms-like strategy game
 COMMENT-server =	Worms-like strategy game, server
@@ -12,6 +12,7 @@ V =			$R
 DISTNAME =		hedgewars-src-$V
 PKGNAME-main =		hedgewars-$V
 PKGNAME-server =	hedgewars-server-$V
+REVISION-server =	0
 
 CATEGORIES =		games
 

@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: gitdaemon.rc,v 1.2 2017/12/01 14:47:45 sthen Exp $
+# $OpenBSD: gitdaemon.rc,v 1.3 2018/01/11 19:27:02 rpe Exp $
 
 daemon="${TRUEPREFIX}/bin/git daemon --detach"
 daemon_flags="--user=_gitdaemon"

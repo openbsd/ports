@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: squid.rc,v 1.7 2015/09/10 13:00:10 sthen Exp $
+# $OpenBSD: squid.rc,v 1.8 2018/01/11 19:27:12 rpe Exp $
 
 daemon="${TRUEPREFIX}/sbin/squid"
 daemon_timeout="35"

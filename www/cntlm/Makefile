@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2017/09/07 09:44:22 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.17 2018/01/11 19:27:11 rpe Exp $
 
 COMMENT =		fast NTLM/NTLMv2 authenticating HTTP proxy
 DISTNAME =		cntlm-0.93beta5
-REVISION =		3
+REVISION =		4
 CATEGORIES =		www
 HOMEPAGE =		http://cntlm.sourceforge.net/
 

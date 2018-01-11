@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: sympa.rc,v 1.6 2012/08/26 20:35:22 landry Exp $
+# $OpenBSD: sympa.rc,v 1.7 2018/01/11 19:27:04 rpe Exp $
 
 daemon="${TRUEPREFIX}/sbin/sympa"
 

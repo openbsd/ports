@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: amavisd.rc,v 1.7 2015/07/15 19:26:44 ajacoutot Exp $
+# $OpenBSD: amavisd.rc,v 1.8 2018/01/11 19:27:02 rpe Exp $
 
 daemon="${TRUEPREFIX}/sbin/amavisd"
 

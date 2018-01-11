@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: munin_node.rc,v 1.7 2015/07/15 19:40:58 ajacoutot Exp $
+# $OpenBSD: munin_node.rc,v 1.8 2018/01/11 19:27:06 rpe Exp $
 
 daemon="${TRUEPREFIX}/sbin/munin-node"
 

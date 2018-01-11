@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: aircontrol.rc,v 1.7 2015/07/15 19:49:41 ajacoutot Exp $
+# $OpenBSD: aircontrol.rc,v 1.8 2018/01/11 19:27:04 rpe Exp $
 
 daemon="${TRUEPREFIX}/bin/catalina.sh"
 daemon_flags="-Xmx768M -server"

@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: nsca.rc,v 1.1 2011/11/12 00:49:49 sthen Exp $
+# $OpenBSD: nsca.rc,v 1.2 2018/01/11 19:27:06 rpe Exp $
 
 daemon="${TRUEPREFIX}/sbin/nsca"
 daemon_flags="-c ${SYSCONFDIR}/nsca.cfg"

@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: zabbix_agentd.rc,v 1.5 2014/04/09 06:27:56 robert Exp $
+# $OpenBSD: zabbix_agentd.rc,v 1.6 2018/01/11 19:27:08 rpe Exp $
 
 daemon="${TRUEPREFIX}/sbin/zabbix_agentd"
 

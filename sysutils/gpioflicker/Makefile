@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 11:41:30 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2018/01/11 19:27:10 rpe Exp $
 
 COMMENT=		flashes gpio led whenever pf logs to pflog0
 
 DISTNAME=		gpioflicker-0.3
 CATEGORIES=		sysutils
+REVISION=		0
 
 HOMEPAGE=		http://www.pro-bono-publico.de/openbsd/gpio/
 

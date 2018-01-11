@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2014/08/20 21:15:23 kili Exp $
+# $OpenBSD: Makefile,v 1.20 2018/01/11 19:27:12 rpe Exp $
 
 COMMENT=	HTTP caching proxy
 
 DISTNAME=	polipo-1.1.1
 CATEGORIES=	www
+REVISION=	0
 
 HOMEPAGE=	http://www.pps.univ-paris-diderot.fr/~jch/software/polipo/
 

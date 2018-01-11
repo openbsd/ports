@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: turnserver.rc,v 1.1.1.1 2017/12/23 17:55:38 feinerer Exp $
+# $OpenBSD: turnserver.rc,v 1.2 2018/01/11 19:27:11 rpe Exp $
 
 daemon="${TRUEPREFIX}/bin/turnserver --daemon"
 daemon_user="_turnserver"

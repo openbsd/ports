@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2016/03/18 16:09:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2018/01/11 19:27:01 rpe Exp $
 
 COMMENT =		interface to various LCD displays
 DISTNAME =		lcdproc-0.5.5
-REVISION =		7
+REVISION =		8
 CATEGORIES =		comms devel
 HOMEPAGE =		http://www.lcdproc.org
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2017/06/23 14:54:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2018/01/11 19:27:07 rpe Exp $
 
 COMMENT-main=		OLSR routing daemon
 COMMENT-gui=		OLSR routing daemon GUI
@@ -8,7 +8,7 @@ DISTNAME=		olsrd-${VERSION}
 PKGNAME-main=		olsrd-${VERSION}
 PKGNAME-gui=		olsrd-gui-${VERSION}
 
-REVISION-main=		1
+REVISION-main=		2
 REVISION-gui=		1
 
 CATEGORIES=	net

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2017/11/16 23:20:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2018/01/11 19:27:05 rpe Exp $
 
 COMMENT=		highly DNS-, DoS- and abuse-aware loadbalancer
 
 DISTNAME=		dnsdist-1.2.0
 EXTRACT_SUFX=		.tar.bz2
+REVISION=		0
 
 CATEGORIES=		net
 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2015/06/23 10:38:06 jca Exp $
+# $OpenBSD: Makefile,v 1.5 2018/01/11 19:27:05 rpe Exp $
 
 COMMENT =		small memory footprint dynamic dns updater
 
 DISTNAME =		inadyn-1.98.0
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		net
 

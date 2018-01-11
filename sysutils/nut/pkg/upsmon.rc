@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: upsmon.rc,v 1.1 2011/09/19 15:59:57 sthen Exp $
+# $OpenBSD: upsmon.rc,v 1.2 2018/01/11 19:27:10 rpe Exp $
 
 daemon="${TRUEPREFIX}/sbin/upsmon"
 

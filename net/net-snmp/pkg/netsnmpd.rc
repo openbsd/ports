@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: netsnmpd.rc,v 1.4 2016/10/11 20:47:43 sthen Exp $
+# $OpenBSD: netsnmpd.rc,v 1.5 2018/01/11 19:27:06 rpe Exp $
 
 daemon="${TRUEPREFIX}/sbin/snmpd"
 

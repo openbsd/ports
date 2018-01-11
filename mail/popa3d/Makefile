@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2017/12/08 00:16:59 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2018/01/11 19:27:03 rpe Exp $
 
 COMMENT =	tiny pop3 daemon
 
 DISTNAME =	popa3d-1.0.3
-REVISION =	0
+REVISION =	1
 FIX_EXTRACT_PERMISSIONS=Yes
 
 CATEGORIES =	mail

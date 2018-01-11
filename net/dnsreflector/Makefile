@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2014/07/16 12:36:27 jca Exp $
+# $OpenBSD: Makefile,v 1.10 2018/01/11 19:27:05 rpe Exp $
 
 COMMENT=		DNS queries reflector
 
 DISTNAME=		dnsreflector-1.03
 CATEGORIES=		net sysutils
+REVISION=		0
 
 HOMEPAGE=		http://www.wolfermann.org/dnsreflector.html
 

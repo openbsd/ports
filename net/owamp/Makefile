@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:35:50 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2018/01/11 19:27:07 rpe Exp $
 
 COMMENT =	rfc4656 one-way active measurement protocol
 
 DISTNAME =	owamp-3.1
+REVISION =	0
 
 CATEGORIES =	net
 

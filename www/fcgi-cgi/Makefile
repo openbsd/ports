@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2017/11/12 15:17:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2018/01/11 19:27:11 rpe Exp $
 
 COMMENT-main=	wrapper to run CGI applications via FastCGI
 COMMENT-static=	static-linked fcgi-cgi wrapper for chroot use
@@ -9,6 +9,7 @@ PKGNAME-main=	fcgi-cgi-$V
 PKGNAME-static=	fcgi-cgi-static-$V
 REVISION=	0
 CATEGORIES=	www
+REVISION-main=	0
 
 HOMEPAGE=	http://redmine.lighttpd.net/projects/fcgi-cgi/wiki
 

@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: smbd.rc,v 1.7 2015/08/25 11:07:45 jca Exp $
+# $OpenBSD: smbd.rc,v 1.8 2018/01/11 19:27:08 rpe Exp $
 
 smbcontrol="${TRUEPREFIX}/bin/smbcontrol"
 

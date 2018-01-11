@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: supervisord.rc,v 1.1.1.1 2014/05/14 09:56:44 jasper Exp $
+# $OpenBSD: supervisord.rc,v 1.2 2018/01/11 19:27:10 rpe Exp $
 
 daemon="${TRUEPREFIX}/bin/supervisord"
 daemon_flags="-c ${SYSCONFDIR}/supervisord.conf --pidfile /var/run/supervisor/supervisord.pid"

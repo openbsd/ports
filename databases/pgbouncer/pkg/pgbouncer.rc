@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: pgbouncer.rc,v 1.3 2011/12/17 22:01:12 sthen Exp $
+# $OpenBSD: pgbouncer.rc,v 1.4 2018/01/11 19:27:01 rpe Exp $
 
 daemon="${TRUEPREFIX}/bin/pgbouncer -d"
 daemon_flags="-q -u _pgbouncer ${SYSCONFDIR}/pgbouncer/pgbouncer.ini"

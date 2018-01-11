@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.35 2017/12/04 21:09:39 espie Exp $
+# $OpenBSD: Makefile,v 1.36 2018/01/11 19:27:09 rpe Exp $
 
 COMMENT=	TCP port scan detection tool
 
 DISTNAME=	scanlogd-2.2.7
-REVISION=	1
+REVISION=	2
 CATEGORIES=	security
 FIX_EXTRACT_PERMISSIONS=Yes
 

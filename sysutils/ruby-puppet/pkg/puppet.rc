@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: puppet.rc,v 1.2 2015/07/15 14:49:02 ajacoutot Exp $
+# $OpenBSD: puppet.rc,v 1.3 2018/01/11 19:27:10 rpe Exp $
 
 daemon="${TRUEPREFIX}/bin/puppet agent"
 

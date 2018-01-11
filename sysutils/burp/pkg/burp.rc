@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: burp.rc,v 1.2 2017/11/03 12:18:07 landry Exp $
+# $OpenBSD: burp.rc,v 1.3 2018/01/11 19:27:10 rpe Exp $
 
 daemon="${TRUEPREFIX}/sbin/burp"
 daemon_flags="-c ${SYSCONFDIR}/burp/burp-server.conf"

@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: lldpd.rc,v 1.4 2016/06/28 17:03:27 ajacoutot Exp $
+# $OpenBSD: lldpd.rc,v 1.5 2018/01/11 19:27:06 rpe Exp $
 
 daemon="${TRUEPREFIX}/sbin/lldpd"
 

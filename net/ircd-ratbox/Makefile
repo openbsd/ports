@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2017/09/22 21:37:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2018/01/11 19:27:05 rpe Exp $
 
 COMMENT =	advanced, stable and fast irc server
 
@@ -6,7 +6,7 @@ DISTNAME =	ircd-ratbox-3.0.10
 CATEGORIES =	net
 MASTER_SITES =	${HOMEPAGE}download/
 EXTRACT_SUFX =	.tar.bz2
-REVISION =	2
+REVISION =	3
 
 HOMEPAGE =	http://www.ratbox.org/
 

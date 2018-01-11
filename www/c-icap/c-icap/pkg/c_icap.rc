@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: c_icap.rc,v 1.1.1.1 2013/04/16 09:59:35 sthen Exp $
+# $OpenBSD: c_icap.rc,v 1.2 2018/01/11 19:27:11 rpe Exp $
 
 daemon="${TRUEPREFIX}/bin/c-icap"
 

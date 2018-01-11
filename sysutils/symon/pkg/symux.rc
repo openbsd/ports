@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: symux.rc,v 1.2 2011/05/19 20:01:27 gsoares Exp $
+# $OpenBSD: symux.rc,v 1.3 2018/01/11 19:27:10 rpe Exp $
 
 daemon="${TRUEPREFIX}/libexec/symux"
 

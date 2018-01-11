@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: influxdb.rc,v 1.1.1.1 2018/01/03 17:43:24 landry Exp $
+# $OpenBSD: influxdb.rc,v 1.2 2018/01/11 19:27:01 rpe Exp $
 
 daemon="${TRUEPREFIX}/bin/influxd"
 daemon_user="_influx"

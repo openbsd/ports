@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2017/07/08 07:02:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2018/01/11 19:27:06 rpe Exp $
 
 COMMENT-main=	server to accept passive check results for Nagios/Icinga
 COMMENT-client=	client to send passive check results to Nagios/Icinga
@@ -9,7 +9,7 @@ PKGNAME-main=	nsca-ng-$V
 PKGNAME-client=	nsca-ng-client-$V
 CATEGORIES=	net
 
-REVISION-main=	0
+REVISION-main=	1
 
 HOMEPAGE=	https://www.nsca-ng.org/
 

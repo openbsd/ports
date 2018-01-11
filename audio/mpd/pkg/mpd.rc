@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: mpd.rc,v 1.5 2017/11/02 19:22:40 jca Exp $
+# $OpenBSD: mpd.rc,v 1.6 2018/01/11 19:27:01 rpe Exp $
 
 daemon="${TRUEPREFIX}/sbin/mpd"
 

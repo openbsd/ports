@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: puppetmaster.rc,v 1.1 2015/04/04 09:28:45 jasper Exp $
+# $OpenBSD: puppetmaster.rc,v 1.2 2018/01/11 19:27:10 rpe Exp $
 
 daemon="${TRUEPREFIX}/bin/puppet master"
 

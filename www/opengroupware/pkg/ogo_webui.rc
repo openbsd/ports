@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: ogo_webui.rc,v 1.1.1.1 2013/10/29 06:16:26 sebastia Exp $
+# $OpenBSD: ogo_webui.rc,v 1.2 2018/01/11 19:27:11 rpe Exp $
 
 daemon="${TRUEPREFIX}/sbin/ogo-webui"
 daemon_user="_opengroupware"

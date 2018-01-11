@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2017/12/30 21:59:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.74 2018/01/11 19:27:05 rpe Exp $
 
 BROKEN-arm =	needs atomic ops; __sync_add_and_fetch_4
 BROKEN-hppa =	needs atomic ops; __sync_add_and_fetch_4
@@ -16,6 +16,7 @@ GH_TAGNAME =	v$V
 PKGNAME-main =	icinga2-$V
 PKGNAME-mysql =	icinga2-ido-mysql-$V
 PKGNAME-pgsql =	icinga2-ido-pgsql-$V
+REVISION-main =	0
 
 SHARED_LIBS +=	base                      0.0 # 2.6
 SHARED_LIBS +=	checker                   0.0 # 2.6

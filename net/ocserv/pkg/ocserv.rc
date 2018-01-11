@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: ocserv.rc,v 1.1.1.1 2015/03/26 02:07:59 sthen Exp $
+# $OpenBSD: ocserv.rc,v 1.2 2018/01/11 19:27:07 rpe Exp $
 
 daemon="${TRUEPREFIX}/sbin/ocserv"
 daemon_flags="-c ${SYSCONFDIR}/ocserv/ocserv.conf"

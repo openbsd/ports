@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: srcpd.rc,v 1.5 2015/07/15 14:59:15 ajacoutot Exp $
+# $OpenBSD: srcpd.rc,v 1.6 2018/01/11 19:27:04 rpe Exp $
 
 daemon="${TRUEPREFIX}/sbin/srcpd"
 

@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: elasticsearch.rc,v 1.5 2016/12/17 12:11:02 jasper Exp $
+# $OpenBSD: elasticsearch.rc,v 1.6 2018/01/11 19:27:11 rpe Exp $
 
 daemon="${TRUEPREFIX}/elasticsearch/bin/elasticsearch"
 daemon_flags="-d -Edefault.path.conf=${SYSCONFDIR}/elasticsearch -p /var/run/elasticsearch/elasticsearch.pid"

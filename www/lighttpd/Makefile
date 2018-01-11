@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.149 2017/11/13 07:48:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.150 2018/01/11 19:27:11 rpe Exp $
 
 COMMENT=	secure, fast, compliant, and very flexible web-server
 
@@ -6,6 +6,7 @@ DISTNAME=	lighttpd-1.4.48
 CATEGORIES=	www net
 MASTER_SITES=	http://download.lighttpd.net/lighttpd/releases-1.4.x/
 EXTRACT_SUFX=	.tar.xz
+REVISION=	0
 
 HOMEPAGE=	http://www.lighttpd.net/
 

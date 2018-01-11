@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: nginx.rc,v 1.13 2015/12/02 10:21:49 ajacoutot Exp $
+# $OpenBSD: nginx.rc,v 1.14 2018/01/11 19:27:11 rpe Exp $
 
 daemon="${TRUEPREFIX}/sbin/nginx"
 

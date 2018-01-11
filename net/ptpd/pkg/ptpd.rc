@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: ptpd.rc,v 1.1 2017/09/09 21:22:49 naddy Exp $
+# $OpenBSD: ptpd.rc,v 1.2 2018/01/11 19:27:07 rpe Exp $
 
 daemon="${TRUEPREFIX}/sbin/ptpd"
 

@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: rmilter.rc,v 1.1.1.1 2016/12/02 14:57:41 sthen Exp $
+# $OpenBSD: rmilter.rc,v 1.2 2018/01/11 19:27:04 rpe Exp $
 
 daemon="${TRUEPREFIX}/sbin/rmilter"
 daemon_flags="-c ${SYSCONFDIR}/rmilter/rmilter.conf"

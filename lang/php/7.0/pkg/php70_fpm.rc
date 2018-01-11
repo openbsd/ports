@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: php70_fpm.rc,v 1.1.1.1 2015/12/14 17:58:46 robert Exp $
+# $OpenBSD: php70_fpm.rc,v 1.2 2018/01/11 19:27:02 rpe Exp $
 
 daemon="${TRUEPREFIX}/sbin/php-fpm-${PV}"
 

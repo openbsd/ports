@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: quagga_ospfd.rc,v 1.1 2013/04/18 20:29:08 sthen Exp $
+# $OpenBSD: quagga_ospfd.rc,v 1.2 2018/01/11 19:27:07 rpe Exp $
 
 daemon="${TRUEPREFIX}/sbin/ospfd -d"
 

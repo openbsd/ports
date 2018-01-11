@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: rocrail.rc,v 1.4 2017/05/27 19:57:06 ajacoutot Exp $
+# $OpenBSD: rocrail.rc,v 1.5 2018/01/11 19:27:04 rpe Exp $
 
 daemon="${TRUEPREFIX}/bin/rocrail"
 daemon_user="_rocrail"

@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: unifi.rc,v 1.6 2017/05/27 19:57:08 ajacoutot Exp $
+# $OpenBSD: unifi.rc,v 1.7 2018/01/11 19:27:08 rpe Exp $
 
 daemon="${TRUEPREFIX}/share/unifi/lib/ace.jar"
 daemon_user="_unifi"

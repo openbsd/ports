@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.57 2017/12/16 20:53:06 zhuk Exp $
+# $OpenBSD: Makefile,v 1.58 2018/01/11 19:27:01 rpe Exp $
 
 COMMENT=	manage remote serial consoles via TCP/IP
 
 DISTNAME=	conserver-8.2.1
-REVISION=	4
+REVISION=	5
 CATEGORIES=	comms
 
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>

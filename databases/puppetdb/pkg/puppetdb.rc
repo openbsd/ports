@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: puppetdb.rc,v 1.6 2017/05/27 19:57:06 ajacoutot Exp $
+# $OpenBSD: puppetdb.rc,v 1.7 2018/01/11 19:27:02 rpe Exp $
 
 daemon=$(${LOCALBASE}/bin/javaPathHelper -c puppetdb)
 daemon_flags="-cp ${PREFIX}/share/puppetdb/puppetdb.jar clojure.main -m com.puppetlabs.puppetdb.core services -c ${SYSCONFDIR}/puppetdb/conf.d/"

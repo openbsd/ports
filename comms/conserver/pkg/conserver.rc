@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: conserver.rc,v 1.7 2014/08/21 19:58:07 sthen Exp $
+# $OpenBSD: conserver.rc,v 1.8 2018/01/11 19:27:01 rpe Exp $
 
 daemon="${TRUEPREFIX}/sbin/conserver -d"
 daemon_flags="-n"

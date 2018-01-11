@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: courier_authdaemond.rc,v 1.6 2015/07/15 21:14:06 ajacoutot Exp $
+# $OpenBSD: courier_authdaemond.rc,v 1.7 2018/01/11 19:27:02 rpe Exp $
 
 daemon="${TRUEPREFIX}/sbin/authdaemond"
 

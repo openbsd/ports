@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: cnupm.rc,v 1.1 2015/08/14 13:06:52 zhuk Exp $
+# $OpenBSD: cnupm.rc,v 1.2 2018/01/11 19:27:04 rpe Exp $
 
 daemon="${TRUEPREFIX}/sbin/cnupm"
 

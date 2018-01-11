@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: distccd.rc,v 1.1.1.1 2015/12/28 08:15:31 jasper Exp $
+# $OpenBSD: distccd.rc,v 1.2 2018/01/11 19:27:02 rpe Exp $
 
 daemon="${PREFIX}/bin/distccd"
 daemon_user="_distcc"

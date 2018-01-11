@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: kopano_ical.rc,v 1.1.1.1 2017/09/13 10:38:42 robert Exp $
+# $OpenBSD: kopano_ical.rc,v 1.2 2018/01/11 19:27:03 rpe Exp $
 
 daemon="${TRUEPREFIX}/sbin/kopano-ical"
 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.43 2017/05/08 18:10:25 schwarze Exp $
+# $OpenBSD: Makefile,v 1.44 2018/01/11 19:27:04 rpe Exp $
 
 COMMENT=	monitor arp & rarp requests
 
 DISTNAME=	arpwatch-2.1a15
-REVISION=	14
+REVISION=	15
 CATEGORIES=	net
 
 MASTER_SITES=	ftp://ftp.ee.lbl.gov/

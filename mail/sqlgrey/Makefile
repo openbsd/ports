@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2014/07/11 05:59:24 giovanni Exp $
+# $OpenBSD: Makefile,v 1.9 2018/01/11 19:27:04 rpe Exp $
 
 COMMENT =	postfix greylist daemon
 
 DISTNAME =	sqlgrey-1.8.0
 CATEGORIES =	mail
+REVISION =	0
 
 HOMEPAGE =	http://sqlgrey.sf.net/
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=sqlgrey/}

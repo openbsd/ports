@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: ngircd.rc,v 1.1.1.1 2012/09/29 12:32:01 fgsch Exp $
+# $OpenBSD: ngircd.rc,v 1.2 2018/01/11 19:27:07 rpe Exp $
 
 daemon="${TRUEPREFIX}/sbin/ngircd"
 

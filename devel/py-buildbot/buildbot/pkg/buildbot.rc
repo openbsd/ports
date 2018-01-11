@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: buildbot.rc,v 1.1.1.1 2017/12/18 20:35:45 landry Exp $
+# $OpenBSD: buildbot.rc,v 1.2 2018/01/11 19:27:02 rpe Exp $
 
 daemon="${TRUEPREFIX}/bin/buildbot"
 daemon_flags="${HOMEDIR}"

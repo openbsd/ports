@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: greyscanner.rc,v 1.1 2011/05/01 20:05:54 sthen Exp $
+# $OpenBSD: greyscanner.rc,v 1.2 2018/01/11 19:27:03 rpe Exp $
 
 daemon="${TRUEPREFIX}/sbin/greyscanner"
 

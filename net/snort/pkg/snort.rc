@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: snort.rc,v 1.2 2016/05/02 02:29:58 lteo Exp $
+# $OpenBSD: snort.rc,v 1.3 2018/01/11 19:27:08 rpe Exp $
 
 daemon="${TRUEPREFIX}/bin/snort -D"
 daemon_flags="-c ${SYSCONFDIR}/snort/snort.conf -u _snort -g _snort -t ${LOCALSTATEDIR}/snort -l ${LOCALSTATEDIR}/snort/log"

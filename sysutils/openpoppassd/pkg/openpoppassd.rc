@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: openpoppassd.rc,v 1.1 2011/03/31 12:21:39 ajacoutot Exp $
+# $OpenBSD: openpoppassd.rc,v 1.2 2018/01/11 19:27:10 rpe Exp $
 
 daemon="${TRUEPREFIX}/libexec/openpoppassd"
 

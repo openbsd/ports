@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: hedgewars_server.rc,v 1.4 2017/05/27 19:57:06 ajacoutot Exp $
+# $OpenBSD: hedgewars_server.rc,v 1.5 2018/01/11 19:27:02 rpe Exp $
 
 daemon="${TRUEPREFIX}/bin/hedgewars-server"
 daemon_user="_hedgewars"

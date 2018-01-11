@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: squeezelite.rc,v 1.1 2016/04/04 12:05:37 sthen Exp $
+# $OpenBSD: squeezelite.rc,v 1.2 2018/01/11 19:27:01 rpe Exp $
 
 daemon="${TRUEPREFIX}/bin/squeezelite -z"
 daemon_user="_squeezelite"

@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: milter_regex.rc,v 1.4 2010/12/27 14:50:23 ajacoutot Exp $
+# $OpenBSD: milter_regex.rc,v 1.5 2018/01/11 19:27:03 rpe Exp $
 
 daemon="${TRUEPREFIX}/libexec/milter-regex"
 

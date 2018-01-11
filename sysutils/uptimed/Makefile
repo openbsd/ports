@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2015/09/16 17:21:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2018/01/11 19:27:11 rpe Exp $
 
 COMMENT =	keeps a list of uptime records
 DISTNAME =	uptimed-0.3.17
 CATEGORIES =	sysutils
-REVISION =	2
+REVISION =	3
 
 SHARED_LIBS +=	uptimed                   0.0 # 0.0
 

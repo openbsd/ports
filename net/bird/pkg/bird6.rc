@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: bird6.rc,v 1.5 2015/07/15 14:35:48 ajacoutot Exp $
+# $OpenBSD: bird6.rc,v 1.6 2018/01/11 19:27:04 rpe Exp $
 
 daemon="${TRUEPREFIX}/sbin/bird6"
 

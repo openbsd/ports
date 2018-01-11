@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: mcastproxy.rc,v 1.1.1.1 2017/07/30 21:12:36 jca Exp $
+# $OpenBSD: mcastproxy.rc,v 1.2 2018/01/11 19:27:06 rpe Exp $
 
 daemon="${TRUEPREFIX}/sbin/mcast-proxy"
 

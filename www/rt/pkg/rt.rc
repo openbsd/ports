@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: rt.rc,v 1.5 2017/05/27 19:57:07 ajacoutot Exp $
+# $OpenBSD: rt.rc,v 1.6 2018/01/11 19:27:12 rpe Exp $
 
 daemon="${TRUEPREFIX}/sbin/rt-server"
 

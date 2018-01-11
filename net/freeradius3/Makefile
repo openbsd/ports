@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2017/11/16 23:20:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.28 2018/01/11 19:27:05 rpe Exp $
 
 PORTROACH=	limit:^3\.
 
@@ -23,6 +23,7 @@ PKGNAME-memcached= freeradius-memcached-$V
 PKGNAME-mysql=	freeradius-mysql-$V
 PKGNAME-pgsql=	freeradius-pgsql-$V
 PKGNAME-python=	freeradius-python-$V
+REVISION-main=	0
 
 CATEGORIES=	net security
 

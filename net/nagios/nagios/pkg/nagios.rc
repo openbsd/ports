@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: nagios.rc,v 1.2 2011/12/17 22:01:13 sthen Exp $
+# $OpenBSD: nagios.rc,v 1.3 2018/01/11 19:27:06 rpe Exp $
 
 daemon="${TRUEPREFIX}/sbin/nagios -d"
 daemon_flags="${SYSCONFDIR}/nagios/nagios.cfg"

@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: dkim_filter.rc,v 1.1 2014/01/15 00:20:42 sthen Exp $
+# $OpenBSD: dkim_filter.rc,v 1.2 2018/01/11 19:27:03 rpe Exp $
 
 daemon="${TRUEPREFIX}/libexec/dkim-filter"
 daemon_flags="-x ${SYSCONFDIR}/dkim-filter.conf"

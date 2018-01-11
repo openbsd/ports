@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2017/11/05 18:49:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2018/01/11 19:27:02 rpe Exp $
 
 COMMENT-main =		distributed builds for C, C++ and Objective C
 COMMENT-gtk =		GTK+ monitor for distcc
@@ -17,6 +17,7 @@ PKGNAME-server =	distcc-server-${VERSION}
 EPOCH =			0
 REVISION =		0
 CATEGORIES =		devel net
+REVISION-server =	0
 
 HOMEPAGE =		https://github.com/distcc/distcc
 

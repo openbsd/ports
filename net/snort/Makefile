@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.97 2017/01/23 11:22:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.98 2018/01/11 19:27:08 rpe Exp $
 
 COMMENT =		highly flexible sniffer/NIDS
 
 VERSION =		2.9.9.0
 DISTNAME =		snort-${VERSION}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		net security
 

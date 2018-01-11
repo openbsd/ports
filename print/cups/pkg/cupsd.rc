@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: cupsd.rc,v 1.26 2017/10/31 15:55:15 ajacoutot Exp $
+# $OpenBSD: cupsd.rc,v 1.27 2018/01/11 19:27:08 rpe Exp $
 
 daemon="${TRUEPREFIX}/sbin/cupsd"
 

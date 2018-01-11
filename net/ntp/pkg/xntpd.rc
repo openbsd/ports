@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: xntpd.rc,v 1.1 2011/07/11 17:43:14 landry Exp $
+# $OpenBSD: xntpd.rc,v 1.2 2018/01/11 19:27:07 rpe Exp $
 
 daemon="${TRUEPREFIX}/sbin/ntpd"
 

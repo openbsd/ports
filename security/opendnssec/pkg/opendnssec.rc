@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: opendnssec.rc,v 1.1.1.1 2015/10/13 17:03:55 jca Exp $
+# $OpenBSD: opendnssec.rc,v 1.2 2018/01/11 19:27:09 rpe Exp $
 
 daemon="${TRUEPREFIX}/sbin/ods-control"
 

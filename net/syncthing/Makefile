@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2017/06/17 07:26:50 feinerer Exp $
+# $OpenBSD: Makefile,v 1.18 2018/01/11 19:27:08 rpe Exp $
 
 COMMENT =	open decentralized synchronization utility
 
 V =		0.14.30
 DISTNAME =	syncthing-${V}
 DISTFILES =	syncthing-source-v${V}${EXTRACT_SUFX}
+REVISION =	0
 
 CATEGORIES =	net
 HOMEPAGE =	https://syncthing.net/

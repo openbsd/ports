@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: cvsyncd.rc,v 1.1 2012/04/10 19:52:44 phessler Exp $
+# $OpenBSD: cvsyncd.rc,v 1.2 2018/01/11 19:27:04 rpe Exp $
 
 daemon="${TRUEPREFIX}/bin/cvsyncd"
 daemon_user="_cvsyncd"

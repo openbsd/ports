@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2017/11/21 00:13:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2018/01/11 19:27:04 rpe Exp $
 
 COMMENT=	lightweight DLNA/UPnP-AV media server (aka ReadyMedia)
 
 V=		1.2.1
 DISTNAME=	minidlna-$V
 PKGNAME=	minidlna-$V
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	multimedia
 

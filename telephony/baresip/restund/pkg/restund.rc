@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: restund.rc,v 1.1.1.1 2014/09/25 19:32:37 sthen Exp $
+# $OpenBSD: restund.rc,v 1.2 2018/01/11 19:27:11 rpe Exp $
 
 daemon="${TRUEPREFIX}/sbin/restund"
 daemon_user="_restund"

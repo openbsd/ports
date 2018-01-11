@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/11/03 11:31:01 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2018/01/11 19:27:10 rpe Exp $
 
 COMMENT =	BackUp and Restore Program
 DISTNAME =	burp-2.0.54
+REVISION =	0
 
 CATEGORIES =	sysutils
 HOMEPAGE =	http://burp.grke.org/

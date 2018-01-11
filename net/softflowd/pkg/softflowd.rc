@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: softflowd.rc,v 1.1 2013/06/17 13:25:31 sthen Exp $
+# $OpenBSD: softflowd.rc,v 1.2 2018/01/11 19:27:08 rpe Exp $
 
 daemon="${TRUEPREFIX}/sbin/softflowd"
 

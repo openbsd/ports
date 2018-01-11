@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: ipropd_slave.rc,v 1.1 2014/07/13 14:10:14 ajacoutot Exp $
+# $OpenBSD: ipropd_slave.rc,v 1.2 2018/01/11 19:27:09 rpe Exp $
 
 daemon="${TRUEPREFIX}/heimdal/libexec/ipropd-slave --detach"
 

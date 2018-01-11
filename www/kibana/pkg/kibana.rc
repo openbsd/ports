@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: kibana.rc,v 1.4 2017/05/27 19:57:08 ajacoutot Exp $
+# $OpenBSD: kibana.rc,v 1.5 2018/01/11 19:27:11 rpe Exp $
 
 daemon="${TRUEPREFIX}/kibana/bin/kibana"
 daemon_user="_kibana"

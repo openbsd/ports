@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.87 2018/01/03 08:03:56 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.88 2018/01/11 19:27:03 rpe Exp $
 
 COMMENT=	mailing list manager with web interface
 
 DISTNAME=	mailman-2.1.25
 CATEGORIES=	mail www
+REVISION=	0
 
 HOMEPAGE=	https://www.gnu.org/software/mailman/
 

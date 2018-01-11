@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: apache2.rc,v 1.4 2016/06/22 08:27:07 ajacoutot Exp $
+# $OpenBSD: apache2.rc,v 1.5 2018/01/11 19:27:11 rpe Exp $
 
 daemon="${TRUEPREFIX}/sbin/httpd2"
 

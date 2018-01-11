@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2017/10/17 10:39:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2018/01/11 19:27:07 rpe Exp $
 
 COMMENT=	network traffic probe with web ui and deep packet inspection
 
@@ -7,6 +7,7 @@ GH_PROJECT=	ntopng
 GH_TAGNAME=	3.0
 NDPI_V=		2.0
 DISTFILES=	ntopng-${GH_TAGNAME}.tar.gz ndpi-${NDPI_V}.tar.gz:0
+REVISION=	0
 
 CATEGORIES=	net
 

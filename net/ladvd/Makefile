@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2017/06/30 08:12:58 jca Exp $
+# $OpenBSD: Makefile,v 1.21 2018/01/11 19:27:06 rpe Exp $
 
 COMMENT =		link advertisement (LLDP/CDP etc) daemon
 
@@ -7,7 +7,7 @@ CATEGORIES =		net
 DISTNAME =		ladvd-1.1.1
 MASTER_SITES =		https://github.com/sspans/ladvd/files/1065794/
 HOMEPAGE =		http://blinkenlights.nl/software/ladvd/
-REVISION =		0
+REVISION =		1
 
 MAINTAINER =		Paul de Weerd <weerd@weirdnet.nl>
 

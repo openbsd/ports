@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: kea.rc,v 1.2 2015/12/23 15:58:55 ajacoutot Exp $
+# $OpenBSD: kea.rc,v 1.3 2018/01/11 19:27:06 rpe Exp $
 
 daemon="${TRUEPREFIX}/sbin/keactrl"
 

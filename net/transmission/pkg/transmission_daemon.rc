@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: transmission_daemon.rc,v 1.1 2011/01/10 08:35:16 fgsch Exp $
+# $OpenBSD: transmission_daemon.rc,v 1.2 2018/01/11 19:27:08 rpe Exp $
 
 daemon="${TRUEPREFIX}/bin/transmission-daemon"
 daemon_user="_transmission"

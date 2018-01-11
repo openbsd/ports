@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: sabnzbd.rc,v 1.2 2015/07/16 00:12:02 ajacoutot Exp $
+# $OpenBSD: sabnzbd.rc,v 1.3 2018/01/11 19:27:08 rpe Exp $
 
 datadir="/var/sabnzbd"
 

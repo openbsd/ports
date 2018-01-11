@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2017/12/29 07:24:49 florian Exp $
+# $OpenBSD: Makefile,v 1.59 2018/01/11 19:27:07 rpe Exp $
 
 BROKEN-hppa =		undefined reference to '__sync_fetch_and_add_4'
 
@@ -18,7 +18,7 @@ PKGNAME-ldap=		powerdns-ldap-${V}
 CATEGORIES=		net
 HOMEPAGE=		http://www.powerdns.com/
 REVISION-ldap=		1
-REVISION-main=		1
+REVISION-main=		2
 REVISION-mysql=		1
 REVISION-pgsql=		1
 

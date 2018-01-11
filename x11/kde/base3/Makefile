@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.156 2017/11/12 15:17:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.157 2018/01/11 19:27:12 rpe Exp $
 
 COMMENT-main =		K Desktop Environment, basic applications
 COMMENT-samba =		K Desktop Environment, samba support
@@ -13,7 +13,7 @@ PKGNAME-en_US =		kde3-locale-en_US-${VERSION}
 PKGNAME-locale =	kde3-locale-${VERSION}
 PKG_ARCH-en_US =	*
 PKG_ARCH-locale =	*
-REVISION-main =		51
+REVISION-main =		52
 REVISION-samba =	28
 REVISION-en_US =	6
 REVISION-locale =	5

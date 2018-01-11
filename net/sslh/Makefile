@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2016/04/17 09:14:26 landry Exp $
+# $OpenBSD: Makefile,v 1.15 2018/01/11 19:27:08 rpe Exp $
 
 COMMENT =	SSL/SSH multiplexer
 
@@ -7,6 +7,7 @@ GH_PROJECT =	sslh
 V =		1.18
 GH_TAGNAME =	v$V
 CATEGORIES =	security net
+REVISION =	0
 
 HOMEPAGE =	http://www.rutschle.net/tech/sslh.shtml
 

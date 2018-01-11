@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: smtp_vilter.rc,v 1.6 2015/07/15 16:15:35 ajacoutot Exp $
+# $OpenBSD: smtp_vilter.rc,v 1.7 2018/01/11 19:27:04 rpe Exp $
 
 daemon="${TRUEPREFIX}/sbin/smtp-vilter"
 

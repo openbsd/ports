@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2017/08/27 11:14:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2018/01/11 19:27:06 rpe Exp $
 
 COMMENT=	high-performance and extensible DHCP server engine from ISC
 
@@ -6,6 +6,7 @@ VERSION=	1.2.0
 
 DISTNAME=	kea-${VERSION}
 PKGNAME=	${DISTNAME:S/-P/pl/}
+REVISION=	0
 
 SHARED_LIBS +=  kea-asiodns               0.0 # 0.0
 SHARED_LIBS +=  kea-asiolink              2.0 # 4.0

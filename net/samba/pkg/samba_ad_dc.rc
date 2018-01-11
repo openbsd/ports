@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: samba_ad_dc.rc,v 1.2 2016/04/12 17:42:09 jca Exp $
+# $OpenBSD: samba_ad_dc.rc,v 1.3 2018/01/11 19:27:08 rpe Exp $
 
 smbcontrol="${TRUEPREFIX}/bin/smbcontrol"
 

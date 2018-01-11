@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2017/10/13 15:46:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.75 2018/01/11 19:27:05 rpe Exp $
 
 BROKEN-hppa=		libpt.so.7.0: undefined reference to __sync_fetch_and_or_4
 
@@ -8,6 +8,7 @@ DISTNAME=		gnugk-4.7.20171013
 GH_ACCOUNT=		willamowius
 GH_PROJECT=		gnugk
 GH_COMMIT=		240e0cc08d1cfe42a30a9b6f77e193e834dcd15b
+REVISION=		0
 
 CATEGORIES=		net telephony
 

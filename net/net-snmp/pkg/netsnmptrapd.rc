@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: netsnmptrapd.rc,v 1.3 2016/01/07 12:35:53 sthen Exp $
+# $OpenBSD: netsnmptrapd.rc,v 1.4 2018/01/11 19:27:06 rpe Exp $
 
 daemon="${TRUEPREFIX}/sbin/snmptrapd"
 daemon_flags="-u _netsnmp"

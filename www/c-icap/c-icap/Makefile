@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2017/07/04 11:06:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2018/01/11 19:27:11 rpe Exp $
 
 MULTI_PACKAGES=	-main -db -ldap
 COMMENT-main=	ICAP server for use with web proxies
@@ -10,6 +10,7 @@ DISTNAME=	c_icap-$V
 PKGNAME-main=	c-icap-$V
 PKGNAME-db=	c-icap-db-$V
 PKGNAME-ldap=	c-icap-ldap-$V
+REVISION-main=	0
 
 SHARED_LIBS +=	icapapi                   2.0 # 5.2
 

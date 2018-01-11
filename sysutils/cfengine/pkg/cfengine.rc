@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: cfengine.rc,v 1.4 2015/11/29 15:50:20 ajacoutot Exp $
+# $OpenBSD: cfengine.rc,v 1.5 2018/01/11 19:27:10 rpe Exp $
 
 # "meta" script running the following rc.d(8) scripts with the given argument;
 # note that daemon_flags, daemon_user, daemon_timeout and daemon_class are not

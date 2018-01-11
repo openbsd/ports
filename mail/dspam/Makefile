@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2017/07/26 22:45:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.62 2018/01/11 19:27:03 rpe Exp $
 
 COMMENT-main =	anti-spam filter
 COMMENT-pgsql =	PostgreSQL driver for dspam
@@ -6,7 +6,7 @@ COMMENT-mysql =	MySQL driver for dspam
 
 VERSION =	3.10.2
 DISTNAME =	dspam-${VERSION}
-REVISION-main =	6
+REVISION-main =	7
 REVISION-mysql = 5
 REVISION-pgsql = 4
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.117 2018/01/05 12:48:01 landry Exp $
+# $OpenBSD: Makefile,v 1.118 2018/01/11 19:27:11 rpe Exp $
 
 BROKEN-arm=	src/core/ngx_rwlock.c:116:2: error: \#error ngx_atomic_cmp_set() is not defined!
 BROKEN-hppa=	src/core/ngx_rwlock.c:116:2: error: \#error ngx_atomic_cmp_set() is not defined!
@@ -17,7 +17,7 @@ COMMENT-passenger=	nginx passenger (ruby/python/nodejs) integration module
 
 VERSION=	1.12.1
 REVISION=	1
-REVISION-main=	2
+REVISION-main=	3
 REVISION-lua=	2
 DISTNAME=	nginx-${VERSION}
 CATEGORIES=	www

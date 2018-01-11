@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: kdm.rc,v 1.9 2017/05/27 13:53:07 ajacoutot Exp $
+# $OpenBSD: kdm.rc,v 1.10 2018/01/11 19:27:12 rpe Exp $
 
 daemon="${TRUEPREFIX}/bin/kdm"
 

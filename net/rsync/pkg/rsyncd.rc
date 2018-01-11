@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: rsyncd.rc,v 1.2 2016/04/06 21:17:29 sthen Exp $
+# $OpenBSD: rsyncd.rc,v 1.3 2018/01/11 19:27:08 rpe Exp $
 
 daemon="${TRUEPREFIX}/bin/rsync --daemon"
 

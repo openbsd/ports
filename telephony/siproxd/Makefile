@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2016/04/21 19:44:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2018/01/11 19:27:11 rpe Exp $
 
 COMMENT=	proxy/masquerading daemon for the SIP protocol
 
 DISTNAME=	siproxd-0.8.2
 CATEGORIES=	telephony net
+REVISION=	0
 
 HOMEPAGE=	http://siproxd.sourceforge.net/
 

@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: icinga.rc,v 1.3 2012/05/27 19:39:28 sthen Exp $
+# $OpenBSD: icinga.rc,v 1.4 2018/01/11 19:27:05 rpe Exp $
 
 daemon="${TRUEPREFIX}/bin/icinga -d"
 daemon_flags="${SYSCONFDIR}/icinga.cfg"

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2016/01/22 17:07:41 mmcc Exp $
+# $OpenBSD: Makefile,v 1.6 2018/01/11 19:27:12 rpe Exp $
 
 COMMENT=	tiny/turbo/throttling HTTP server
 
 DISTNAME=	sthttpd-2.26.4
-REVISION=	2
+REVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://opensource.dyc.edu/pub/sthttpd/
 

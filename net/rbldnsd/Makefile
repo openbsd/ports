@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2017/11/15 21:28:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2018/01/11 19:27:07 rpe Exp $
 
 COMMENT=	small daemon for DNSBLs
 
 DISTNAME=	rbldnsd-0.997a
 CATEGORIES=	net
-REVISION=	2
+REVISION=	3
 
 HOMEPAGE=	http://www.corpit.ru/mjt/rbldnsd.html
 

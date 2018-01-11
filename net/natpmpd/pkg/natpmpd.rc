@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: natpmpd.rc,v 1.1.1.1 2011/12/23 15:15:30 sthen Exp $
+# $OpenBSD: natpmpd.rc,v 1.2 2018/01/11 19:27:06 rpe Exp $
 
 daemon="${TRUEPREFIX}/sbin/natpmpd"
 

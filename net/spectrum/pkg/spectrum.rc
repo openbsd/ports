@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: spectrum.rc,v 1.5 2015/07/15 17:49:24 ajacoutot Exp $
+# $OpenBSD: spectrum.rc,v 1.6 2018/01/11 19:27:08 rpe Exp $
 
 daemon="${TRUEPREFIX}/sbin/spectrumctl"
 daemon_flags="--config-dir=${SYSCONFDIR}/spectrum"

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 11:41:30 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2018/01/11 19:27:10 rpe Exp $
 
 COMMENT=		log file monitoring daemon
 
 DISTNAME=		logfmon-1.1
-REVISION=		0
+REVISION=		1
 CATEGORIES=		sysutils
 
 HOMEPAGE=		http://sourceforge.net/projects/logfmon/

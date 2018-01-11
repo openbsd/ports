@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: milter_spamd.rc,v 1.6 2015/07/15 19:47:35 ajacoutot Exp $
+# $OpenBSD: milter_spamd.rc,v 1.7 2018/01/11 19:27:03 rpe Exp $
 
 daemon="${TRUEPREFIX}/libexec/milter-spamd"
 

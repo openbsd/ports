@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: memcached.rc,v 1.3 2017/07/17 08:35:08 landry Exp $
+# $OpenBSD: memcached.rc,v 1.4 2018/01/11 19:27:04 rpe Exp $
 
 daemon="${TRUEPREFIX}/bin/memcached -d"
 daemon_flags="-u _memcached"

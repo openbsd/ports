@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: salt_minion.rc,v 1.3 2014/06/17 12:30:39 ajacoutot Exp $
+# $OpenBSD: salt_minion.rc,v 1.4 2018/01/11 19:27:10 rpe Exp $
 
 daemon="${TRUEPREFIX}/bin/salt-minion -d"
 

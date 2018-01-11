@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: ziproxy.rc,v 1.1 2012/09/27 13:17:12 gonzalo Exp $
+# $OpenBSD: ziproxy.rc,v 1.2 2018/01/11 19:27:08 rpe Exp $
 
 daemon="${TRUEPREFIX}/bin/ziproxy"
 daemon_flags="-d > /var/run/ziproxy.pid"

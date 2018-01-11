@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: lcdexec.rc,v 1.1.1.1 2011/12/01 19:05:11 edd Exp $
+# $OpenBSD: lcdexec.rc,v 1.2 2018/01/11 19:27:01 rpe Exp $
 
 daemon="${TRUEPREFIX}/bin/lcdexec"
 daemon_user="_lcdproc"

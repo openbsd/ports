@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2017/05/27 19:57:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2018/01/11 19:27:09 rpe Exp $
 
 COMMENT=		block "nasty" hosts with pf(4) based on Snort's rules
 
 DISTNAME=		snort2pf-4.5
 CATEGORIES=		security net
-REVISION=		4
+REVISION=		5
 
 HOMEPAGE=		http://sourceforge.net/projects/snort2pf/
 

@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: tor.rc,v 1.5 2015/07/20 19:55:58 ajacoutot Exp $
+# $OpenBSD: tor.rc,v 1.6 2018/01/11 19:27:08 rpe Exp $
 
 daemon="${TRUEPREFIX}/bin/tor"
 daemon_timeout=60

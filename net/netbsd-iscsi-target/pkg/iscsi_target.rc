@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/ksh
 
 daemon="${TRUEPREFIX}/bin/iscsi-target"
 

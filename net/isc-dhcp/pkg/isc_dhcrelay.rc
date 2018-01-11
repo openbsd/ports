@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: isc_dhcrelay.rc,v 1.1 2014/10/12 20:10:16 sthen Exp $
+# $OpenBSD: isc_dhcrelay.rc,v 1.2 2018/01/11 19:27:06 rpe Exp $
 
 daemon="${TRUEPREFIX}/sbin/dhcrelay"
 

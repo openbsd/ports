@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: google_accounts_daemon.rc,v 1.1.1.1 2017/06/29 14:35:10 ajacoutot Exp $
+# $OpenBSD: google_accounts_daemon.rc,v 1.2 2018/01/11 19:27:10 rpe Exp $
 
 daemon="${MODPY_BIN} ${TRUEPREFIX}/bin/google_accounts_daemon"
 

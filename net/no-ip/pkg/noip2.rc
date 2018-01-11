@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: noip2.rc,v 1.1 2011/11/28 08:37:52 sthen Exp $
+# $OpenBSD: noip2.rc,v 1.2 2018/01/11 19:27:07 rpe Exp $
 
 daemon="${TRUEPREFIX}/sbin/noip2"
 

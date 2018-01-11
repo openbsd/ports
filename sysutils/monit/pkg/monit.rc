@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: monit.rc,v 1.3 2014/09/24 09:30:48 jasper Exp $
+# $OpenBSD: monit.rc,v 1.4 2018/01/11 19:27:10 rpe Exp $
 
 daemon="${TRUEPREFIX}/bin/monit"
 

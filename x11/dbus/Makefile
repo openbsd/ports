@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.146 2017/11/14 08:34:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.147 2018/01/11 19:27:12 rpe Exp $
 
 PORTROACH=		limitw:1,even
 DPB_PROPERTIES=		parallel
@@ -12,6 +12,7 @@ EPOCH-main=		0
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-suid=		dbus-daemon-launch-helper-${V}
+REVISION-main=		0
 
 SHARED_LIBS +=  dbus-1               11.2     # 22.4
 
