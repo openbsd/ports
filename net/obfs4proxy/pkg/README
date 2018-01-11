@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1.1.1 2017/08/29 17:02:48 landry Exp $
+$OpenBSD: README,v 1.2 2018/01/11 03:25:38 danj Exp $
 
 +-----------------------------------------------------------------------
 | ${FULLPKGNAME} on OpenBSD
@@ -13,7 +13,7 @@ To enable this Pluggable Transport in your Tor Bridge, use the
 following configurations in your 'torrc' file:
 
 	# Use obfs4proxy to provide the obfuscator
-	ServerTransportPlugin obfs4 exec ${PREFIX}/bin/obfs4proxy managed
+	ServerTransportPlugin obfs4 exec ${PREFIX}/bin/obfs4proxy
 
 	# Enable Extended ORPort
 	ExtORPort auto

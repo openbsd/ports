@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/08/29 17:02:48 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2018/01/11 03:25:38 danj Exp $
 
 COMMENT =		a look-like nothing obfuscation protocol for TCP
 
 DISTNAME =		obfs4proxy-0.0.7
+
+REVISION =		0
 
 MASTER_SITES =	https://people.torproject.org/~yawning/releases/obfs4proxy/
 EXTRACT_SUFX =		.tar.xz
