@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.30 2017/12/21 10:23:27 jsg Exp $
+# $OpenBSD: Makefile,v 1.31 2018/01/12 14:13:21 jsg Exp $
 
 COMMENT=	collection of various tools for scummvm
 V=		2.0.0
+REVISION=	0
 DISTNAME=	scummvm-tools-${V}
 CATEGORIES=	games
 MASTER_SITES=	http://www.scummvm.org/frs/scummvm-tools/${V}/
@@ -22,6 +23,9 @@ WANTLIB=		c freetype iconv m ogg ${COMPILER_LIBCXX} z FLAC mad png pthread vorbi
 
 NO_TEST=	Yes
 USE_GMAKE=	Yes
+
+# extract_prince uses C++11 std::to_string
+COMPILER=	base-clang ports-gcc
 
 LIB_DEPENDS=	audio/flac \
 		graphics/png \
