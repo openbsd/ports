@@ -1,4 +1,4 @@
-$OpenBSD: patch-doc_sample_config,v 1.18 2017/10/10 09:20:48 sthen Exp $
+$OpenBSD: patch-doc_sample_config,v 1.19 2018/01/12 22:28:51 sthen Exp $
 
 no seccomp, gssapi
 
@@ -67,7 +67,7 @@ Index: doc/sample.config
  # A banner to be displayed on clients
  #banner = "Welcome"
  
-@@ -322,9 +301,8 @@ min-reauth-time = 300
+@@ -328,9 +307,8 @@ min-reauth-time = 300
  # Banning clients in ocserv works with a point system. IP addresses
  # that get a score over that configured number are banned for
  # min-reauth-time seconds. By default a wrong password attempt is 10 points,
@@ -79,7 +79,7 @@ Index: doc/sample.config
  #
  # Score banning cannot be reliably used when receiving proxied connections
  # locally from an HTTP server (i.e., when listen-clear-file is used).
-@@ -338,7 +316,6 @@ ban-reset-time = 1200
+@@ -344,7 +322,6 @@ ban-reset-time = 1200
  # In case you'd like to change the default points.
  #ban-points-wrong-password = 10
  #ban-points-connection = 1
@@ -87,7 +87,7 @@ Index: doc/sample.config
  
  # Cookie timeout (in seconds)
  # Once a client is authenticated he's provided a cookie with
-@@ -405,7 +382,7 @@ rekey-method = ssl
+@@ -411,7 +388,7 @@ rekey-method = ssl
  use-occtl = true
  
  # PID file. It can be overridden in the command line.
@@ -96,7 +96,7 @@ Index: doc/sample.config
  
  # Set the protocol-defined priority (SO_PRIORITY) for packets to
  # be sent. That is a number from 0 to 6 with 0 being the lowest
-@@ -520,6 +497,11 @@ no-route = 192.168.5.0/255.255.255.0
+@@ -526,6 +503,11 @@ no-route = 192.168.5.0/255.255.255.0
  # any other routes. In case of defaultroute, the no-routes are restricted.
  # All the routes applied by ocserv can be reverted using /etc/ocserv/ocserv-fw
  # --removeall. This option can be set globally or in the per-user configuration.
@@ -108,7 +108,7 @@ Index: doc/sample.config
  #restrict-user-to-routes = true
  
  # This option implies restrict-user-to-routes set to true. If set, the
-@@ -592,23 +574,6 @@ no-route = 192.168.5.0/255.255.255.0
+@@ -598,23 +580,6 @@ no-route = 192.168.5.0/255.255.255.0
  # and '%{G}', if present will be replaced by the username and group name.
  #proxy-url = http://example.com/
  #proxy-url = http://example.com/%{U}/
