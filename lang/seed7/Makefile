@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.58 2017/10/25 20:03:55 bcallah Exp $
+# $OpenBSD: Makefile,v 1.59 2018/01/12 14:47:23 bcallah Exp $
 
 BROKEN-hppa =	SIGILL during build
 BROKEN-arm =	gmake: *** [makefile:279: ../bin/make7] Bus error (core dumped)
 
 COMMENT =	high-level, extensible programming language
 
-V =		20170915
+V =		20180107
 DISTNAME =	seed7_05_${V}
 PKGNAME =	seed7-${V}
 
@@ -18,7 +18,7 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 # Runtime libraries: LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += X11 c m ncurses
+WANTLIB += X11 c curses m
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=seed7/}
 EXTRACT_SUFX =	.tgz
