@@ -1,8 +1,8 @@
-$OpenBSD: patch-lib_isc_unix_net_c,v 1.3 2017/07/28 23:38:06 sthen Exp $
+$OpenBSD: patch-lib_isc_unix_net_c,v 1.4 2018/01/12 17:08:01 sthen Exp $
 Index: lib/isc/unix/net.c
 --- lib/isc/unix/net.c.orig
 +++ lib/isc/unix/net.c
-@@ -736,7 +736,7 @@ try_dscp_v6(void) {
+@@ -727,7 +727,7 @@ try_dscp_v6(void) {
  	if (setsockopt(s, IPPROTO_IPV6, IPV6_TCLASS, &dscp, sizeof(dscp)) == 0)
  		dscp_result |= ISC_NET_DSCPSETV6;
  

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2017/05/03 20:20:42 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.12 2018/01/12 17:08:01 sthen Exp $
 @pkgpath net/isc-bind,ratelimit
 @newgroup _bind:741
 @newuser _bind:741:_bind:daemon:bind user:/nonexistent:/sbin/nologin
@@ -10,6 +10,7 @@ bin/bind9-config
 @bin bin/dig
 @bin bin/host
 bin/isc-config.sh
+@bin bin/mdig
 @bin bin/named-rrchecker
 @bin bin/nslookup
 @bin bin/nsupdate
@@ -21,10 +22,12 @@ include/dns/
 include/dns/acache.h
 include/dns/acl.h
 include/dns/adb.h
+include/dns/badcache.h
 include/dns/bit.h
 include/dns/byaddr.h
 include/dns/cache.h
 include/dns/callbacks.h
+include/dns/catz.h
 include/dns/cert.h
 include/dns/client.h
 include/dns/clientinfo.h
@@ -38,15 +41,19 @@ include/dns/dlz.h
 include/dns/dlz_dlopen.h
 include/dns/dns64.h
 include/dns/dnssec.h
+include/dns/dnstap.h
 include/dns/ds.h
 include/dns/dsdigest.h
+include/dns/dyndb.h
 include/dns/ecdb.h
+include/dns/edns.h
 include/dns/enumclass.h
 include/dns/enumtype.h
 include/dns/events.h
 include/dns/fixedname.h
 include/dns/forward.h
 include/dns/geoip.h
+include/dns/ipkeylist.h
 include/dns/iptable.h
 include/dns/journal.h
 include/dns/keydata.h
@@ -63,6 +70,7 @@ include/dns/name.h
 include/dns/ncache.h
 include/dns/nsec.h
 include/dns/nsec3.h
+include/dns/nta.h
 include/dns/opcode.h
 include/dns/order.h
 include/dns/peer.h
@@ -151,6 +159,7 @@ include/isc/heap.h
 include/isc/hex.h
 include/isc/hmacmd5.h
 include/isc/hmacsha.h
+include/isc/ht.h
 include/isc/httpd.h
 include/isc/int.h
 include/isc/interfaceiter.h
@@ -166,6 +175,7 @@ include/isc/log.h
 include/isc/magic.h
 include/isc/md5.h
 include/isc/mem.h
+include/isc/meminfo.h
 include/isc/msgcat.h
 include/isc/msgs.h
 include/isc/mutex.h
@@ -293,7 +303,7 @@ lib/liblwres.la
 lib/python${MODPY_VERSION}/
 lib/python${MODPY_VERSION}/site-packages/
 lib/python${MODPY_VERSION}/site-packages/isc/
-lib/python${MODPY_VERSION}/site-packages/isc-1.0-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/isc-2.0-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/isc/__init__.py
 lib/python${MODPY_VERSION}/site-packages/isc/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/isc/checkds.py
@@ -308,8 +318,18 @@ lib/python${MODPY_VERSION}/site-packages/isc/keydict.py
 lib/python${MODPY_VERSION}/site-packages/isc/keydict.pyc
 lib/python${MODPY_VERSION}/site-packages/isc/keyevent.py
 lib/python${MODPY_VERSION}/site-packages/isc/keyevent.pyc
+lib/python${MODPY_VERSION}/site-packages/isc/keymgr.py
+lib/python${MODPY_VERSION}/site-packages/isc/keymgr.pyc
+lib/python${MODPY_VERSION}/site-packages/isc/keyseries.py
+lib/python${MODPY_VERSION}/site-packages/isc/keyseries.pyc
 lib/python${MODPY_VERSION}/site-packages/isc/keyzone.py
 lib/python${MODPY_VERSION}/site-packages/isc/keyzone.pyc
+lib/python${MODPY_VERSION}/site-packages/isc/parsetab.py
+lib/python${MODPY_VERSION}/site-packages/isc/parsetab.pyc
+lib/python${MODPY_VERSION}/site-packages/isc/policy.py
+lib/python${MODPY_VERSION}/site-packages/isc/policy.pyc
+lib/python${MODPY_VERSION}/site-packages/isc/rndc.py
+lib/python${MODPY_VERSION}/site-packages/isc/rndc.pyc
 lib/python${MODPY_VERSION}/site-packages/isc/utils.py
 lib/python${MODPY_VERSION}/site-packages/isc/utils.pyc
 @man man/man1/arpaname.1
@@ -318,6 +338,7 @@ lib/python${MODPY_VERSION}/site-packages/isc/utils.pyc
 @man man/man1/dig.1
 @man man/man1/host.1
 @man man/man1/isc-config.sh.1
+@man man/man1/mdig.1
 @man man/man1/named-rrchecker.1
 @man man/man1/nslookup.1
 @man man/man1/nsupdate.1
@@ -415,6 +436,7 @@ lib/python${MODPY_VERSION}/site-packages/isc/utils.pyc
 @man man/man8/dnssec-importkey.8
 @man man/man8/dnssec-keyfromlabel.8
 @man man/man8/dnssec-keygen.8
+@man man/man8/dnssec-keymgr.8
 @man man/man8/dnssec-revoke.8
 @man man/man8/dnssec-settime.8
 @man man/man8/dnssec-signzone.8
@@ -438,6 +460,7 @@ sbin/dnssec-coverage
 @bin sbin/dnssec-importkey
 @bin sbin/dnssec-keyfromlabel
 @bin sbin/dnssec-keygen
+sbin/dnssec-keymgr
 @bin sbin/dnssec-revoke
 @bin sbin/dnssec-settime
 @bin sbin/dnssec-signzone

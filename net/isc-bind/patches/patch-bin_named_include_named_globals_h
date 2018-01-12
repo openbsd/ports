@@ -1,9 +1,10 @@
-$OpenBSD: patch-bin_named_include_named_globals_h,v 1.5 2014/08/22 20:32:13 sthen Exp $
---- bin/named/include/named/globals.h.orig	Mon Apr  7 23:02:19 2014
-+++ bin/named/include/named/globals.h	Sun Apr 13 22:38:25 2014
-@@ -147,7 +147,7 @@ EXTERN const char *		lwresd_g_defaultpidfile INIT(NS_L
- 							     "/run/lwresd.pid");
- #endif
+$OpenBSD: patch-bin_named_include_named_globals_h,v 1.6 2018/01/12 17:08:01 sthen Exp $
+Index: bin/named/include/named/globals.h
+--- bin/named/include/named/globals.h.orig
++++ bin/named/include/named/globals.h
+@@ -154,7 +154,7 @@ EXTERN const char *		ns_g_defaultdnstap
+ EXTERN const char *		ns_g_defaultdnstap	INIT(NULL);
+ #endif /* HAVE_DNSTAP */
  
 -EXTERN const char *		ns_g_username		INIT(NULL);
 +EXTERN const char *		ns_g_username		INIT("_bind");

@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.74 2018/01/11 19:27:05 rpe Exp $
+# $OpenBSD: Makefile,v 1.75 2018/01/12 17:08:01 sthen Exp $
 
 COMMENT=	Berkeley Internet Name Daemon: DNS server and tools
 
-V=		9.10.6
-REVISION=	1
+V=		9.11.2
 
 DISTNAME=	bind-$V
 PKGNAME=	isc-bind-${V:S/-P/pl/}
@@ -26,7 +25,7 @@ HOMEPAGE=	http://www.isc.org/software/bind
 
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
-# ISC
+# MPL 2.0
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	c iconv json-c lzma m pthread xml2 z
@@ -37,6 +36,7 @@ MODULES=	lang/python
 # used for dnssec-checkds/dnssec-coverage, but don't want to force the run dep.
 # XXX subpackage?
 MODPY_RUNDEP=	No
+BUILD_DEPENDS=	devel/py-ply
 LIB_DEPENDS=	converters/libiconv \
 		devel/json-c \
 		textproc/libxml

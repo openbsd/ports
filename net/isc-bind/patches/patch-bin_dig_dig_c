@@ -1,8 +1,8 @@
-$OpenBSD: patch-bin_dig_dig_c,v 1.3 2017/07/28 23:38:06 sthen Exp $
+$OpenBSD: patch-bin_dig_dig_c,v 1.4 2018/01/12 17:08:01 sthen Exp $
 Index: bin/dig/dig.c
 --- bin/dig/dig.c.orig
 +++ bin/dig/dig.c
-@@ -2142,6 +2142,11 @@ main(int argc, char **argv) {
+@@ -2183,6 +2183,11 @@ main(int argc, char **argv) {
  	ISC_LIST_INIT(server_list);
  	ISC_LIST_INIT(search_list);
  
@@ -12,11 +12,11 @@ Index: bin/dig/dig.c
 +	}
 +
  	debug("main()");
- 	preparse_args(argc, argv);
  	progname = argv[0];
-@@ -2149,6 +2154,13 @@ main(int argc, char **argv) {
- 	check_result(result, "isc_app_start");
+ 	preparse_args(argc, argv);
+@@ -2191,6 +2196,13 @@ main(int argc, char **argv) {
  	setup_libs();
+ 	setup_system(ipv4only, ipv6only);
  	parse_args(ISC_FALSE, ISC_FALSE, argc, argv);
 +
 +	/* inet for network connections, dns for resolv.conf */
@@ -25,6 +25,6 @@ Index: bin/dig/dig.c
 +		exit(1);
 +	}
 +
- 	setup_system();
- 	if (domainopt[0] != '\0') {
- 		set_search_domain(domainopt);
+ 	if (keyfile[0] != 0)
+ 		setup_file_key();
+ 	else if (keysecret[0] != 0)
