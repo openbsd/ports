@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.16 2017/07/14 17:04:12 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.17 2018/01/12 22:11:41 sthen Exp $
 @pkgpath www/apache-httpd${FLAVOR_COMMA}
 @pkgpath www/apache-httpd-openbsd
 @bin bin/ab
@@ -1008,6 +1008,8 @@ share/doc/apache2/mod/mpm_winnt.html.ja.utf8
 share/doc/apache2/mod/mpmt_os2.html
 share/doc/apache2/mod/mpmt_os2.html.en
 share/doc/apache2/mod/mpmt_os2.html.fr
+share/doc/apache2/mod/overrides.html
+share/doc/apache2/mod/overrides.html.en
 share/doc/apache2/mod/prefork.html
 share/doc/apache2/mod/prefork.html.de
 share/doc/apache2/mod/prefork.html.en

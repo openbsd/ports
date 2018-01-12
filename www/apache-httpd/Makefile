@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.86 2018/01/11 19:27:11 rpe Exp $
+# $OpenBSD: Makefile,v 1.87 2018/01/12 22:11:41 sthen Exp $
 
 COMMENT-main=		apache HTTP server
 COMMENT-common=		/var/www files for Apache HTTPd
 
-V=			2.4.27
-REVISION-main=		1
+V=			2.4.29
 DISTNAME=		httpd-${V}
 PKGNAME=		apache-httpd-${V}
 
@@ -14,7 +13,7 @@ FULLPKGPATH-common=	www/apache-httpd,-common
 
 CATEGORIES=		www net
 
-HOMEPAGE=		http://httpd.apache.org/
+HOMEPAGE=		https://httpd.apache.org/
 
 # Apache 2.0
 PERMIT_PACKAGE_CDROM=	Yes
