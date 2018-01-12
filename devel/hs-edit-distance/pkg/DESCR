@@ -1,0 +1,2 @@
+Optimized edit distances for fuzzy matching, including Levenshtein
+and restricted Damerau-Levenshtein algorithms.
