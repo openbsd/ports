@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.100 2017/10/23 17:10:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.101 2018/01/12 19:32:54 bentley Exp $
 
 COMMENT=	cross-platform multimedia library
 
 VERSION=	1.2.15
 DISTNAME=	SDL-${VERSION}
 PKGNAME=	${DISTNAME:L}
-REVISION=	8
+REVISION=	9
 CATEGORIES=	devel
 MASTER_SITES=	${HOMEPAGE}release/
 
 SHARED_LIBS=	SDL	8.0
 
-HOMEPAGE=	http://www.libsdl.org/
+HOMEPAGE=	https://www.libsdl.org/
 
 # LGPLv2.1+
 PERMIT_PACKAGE_CDROM=   Yes

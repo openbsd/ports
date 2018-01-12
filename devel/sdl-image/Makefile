@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.41 2017/10/11 15:38:41 espie Exp $
+# $OpenBSD: Makefile,v 1.42 2018/01/12 19:32:54 bentley Exp $
 
 COMMENT=	SDL image library
 
 DISTNAME=	SDL_image-1.2.12
 PKGNAME=	${DISTNAME:L:S/_/-/}
-REVISION=	3
+REVISION=	4
 CATEGORIES=	devel graphics
 MASTER_SITES=	${HOMEPAGE}release/
 
 SHARED_LIBS=	SDL_image	3.1
 
-HOMEPAGE=	http://www.libsdl.org/projects/SDL_image/
+HOMEPAGE=	https://www.libsdl.org/projects/SDL_image/
 
 # Zlib
 PERMIT_PACKAGE_CDROM=   Yes
