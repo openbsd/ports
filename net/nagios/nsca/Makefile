@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.19 2018/01/11 19:27:06 rpe Exp $
+# $OpenBSD: Makefile,v 1.20 2018/01/12 20:03:23 kili Exp $
 
 COMMENT-main=	nagios service check acceptor
 COMMENT-client=	nagios service check acceptor - client
 
 VERSION=	2.9.1
-REVISION=	1
+REVISION-client=	1
+REVISION-main=		2
 DISTNAME=	nsca-${VERSION}
 PKGNAME-main=	nsca-${VERSION}
 PKGNAME-client=	nsca-client-${VERSION}
 CATEGORIES=	net
-REVISION-main=	0
 
 HOMEPAGE=	http://www.nagios.org/
 
