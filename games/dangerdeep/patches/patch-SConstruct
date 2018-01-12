@@ -1,4 +1,4 @@
-$OpenBSD: patch-SConstruct,v 1.1.1.1 2013/06/07 03:41:44 bentley Exp $
+$OpenBSD: patch-SConstruct,v 1.2 2018/01/12 20:13:31 kili Exp $
 --- SConstruct.orig	Sat May  8 03:41:20 2010
 +++ SConstruct	Sat Jun  1 11:12:50 2013
 @@ -207,8 +207,6 @@ else:
@@ -28,7 +28,7 @@ $OpenBSD: patch-SConstruct,v 1.1.1.1 2013/06/07 03:41:44 bentley Exp $
  		gllibdir = ''
  		for i in gllibdirs:
 -			if (os.system('test -f '+i+'libGL.so') == 0):
-+			if (os.system('test -f '+i+'libGL.so*') == 0):
++			if (os.system('ls '+i+' | grep -q ^libGL\\.so') == 0):
  				gllibdir = i
  				break
  		if (gllibdir == ''):
