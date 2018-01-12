@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.109 2018/01/11 19:27:07 rpe Exp $
+# $OpenBSD: Makefile,v 1.110 2018/01/12 14:03:50 sthen Exp $
 
 COMMENT-main=	system to store and display time-series data
 COMMENT-update=	lightweight update-only tool for rrdtool
@@ -12,8 +12,7 @@ PKGNAME-main=	${DISTNAME}
 PKGNAME-update=	rrdupdate-${VERSION}
 PKGNAME-python= py-rrd-${VERSION}
 PKGNAME-ruby=	ruby${MODRUBY_BINREV}-rrd-${VERSION}
-REVISION=	4
-REVISION-main=	0
+REVISION=	5
 
 SHARED_LIBS +=	rrd                  5.2      # 9.0
 
@@ -34,7 +33,6 @@ PSEUDO_FLAVORS=	no_ruby no_python
 MULTI_PACKAGES= -main -python -ruby -update
 
 MODULES=	lang/python lang/ruby
-MODPY_SETUPTOOLS= Yes
 
 CONFIGURE_STYLE= gnu
 CPPFLAGS+=	-I${X11BASE}/include/ \
@@ -59,6 +57,7 @@ MODRUBY_RUNDEP=   No
 
 .if ${BUILD_PACKAGES:M-python}
 CONFIGURE_ARGS+= --enable-python
+MODPY_SETUPTOOLS= Yes
 .else
 CONFIGURE_ARGS+= --disable-python
 MODPY_BUILDDEP= No
