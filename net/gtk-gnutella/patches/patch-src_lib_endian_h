@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_lib_endian_h,v 1.1 2018/01/13 12:18:46 phessler Exp $
+
+Index: src/lib/endian.h
+--- src/lib/endian.h.orig
++++ src/lib/endian.h
+@@ -244,6 +244,7 @@ poke_le64(gpointer p, guint64 v)
+  * SUN's XDR implementation.
+  */
+ #if \
++	defined(__aarch64__) || \
+ 	defined(__alpha__) || \
+ 	defined(__arm__) || \
+ 	defined(__hppa__) || \
