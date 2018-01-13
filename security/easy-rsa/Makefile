@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2016/02/18 13:50:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2018/01/13 01:23:46 sthen Exp $
 
 COMMENT =	small RSA key management package
 
-V =		3.0.1
+V =		3.0.3
 PKGNAME =	easy-rsa-$V
 DISTNAME =	EasyRSA-$V
 EXTRACT_SUFX =	.tgz
@@ -13,7 +13,7 @@ HOMEPAGE =	http://openvpn.net/
 # GPLv2 only
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =	https://github.com/OpenVPN/easy-rsa/releases/download/$V/
+MASTER_SITES =	https://github.com/OpenVPN/easy-rsa/releases/download/v$V/
 
 # relies on passing environment variables to $ENV:: in config files
 RUN_DEPENDS =	security/openssl

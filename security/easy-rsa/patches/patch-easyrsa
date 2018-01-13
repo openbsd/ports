@@ -1,12 +1,21 @@
-$OpenBSD: patch-easyrsa,v 1.1 2016/02/18 13:50:00 sthen Exp $
---- easyrsa.orig	Thu Feb 18 11:41:22 2016
-+++ easyrsa	Thu Feb 18 11:41:37 2016
-@@ -1003,7 +1003,7 @@ Note: using Easy-RSA configuration from: $vars"
+$OpenBSD: patch-easyrsa,v 1.2 2018/01/13 01:23:46 sthen Exp $
+
+Makes extensive use of passing environment variables and using
+$ENV:: in OpenSSL config files. Bizarrely, parsing of these config
+files is done by the library rather than the openssl(1) command
+line tool, and this was removed from LibreSSL, so easy-rsa won't
+work with LibreSSL without extensive changes, so patching to use
+OpenSSL from ports instead.
+
+Index: easyrsa
+--- easyrsa.orig
++++ easyrsa
+@@ -1042,7 +1042,7 @@ Note: using Easy-RSA configuration from: $vars"
  	
  	# Set defaults, preferring existing env-vars if present
- 	set_var EASYRSA		"$PWD"
+ 	set_var EASYRSA		"${0%/*}"
 -	set_var EASYRSA_OPENSSL	openssl
 +	set_var EASYRSA_OPENSSL	"/usr/local/bin/eopenssl"
- 	set_var EASYRSA_PKI	"$EASYRSA/pki"
+ 	set_var EASYRSA_PKI	"$PWD/pki"
  	set_var EASYRSA_DN	cn_only
  	set_var EASYRSA_REQ_COUNTRY	"US"
