@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2017/05/27 19:27:20 jung Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/01/13 20:12:47 jung Exp $
 lib/python${MODPY_VERSION}/site-packages/icalendar/
 lib/python${MODPY_VERSION}/site-packages/icalendar-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/icalendar-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -18,6 +18,7 @@ lib/python${MODPY_VERSION}/site-packages/icalendar/${MODPY_PYCACHE}parser_tools.
 lib/python${MODPY_VERSION}/site-packages/icalendar/${MODPY_PYCACHE}prop.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/icalendar/${MODPY_PYCACHE}timezone_cache.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/icalendar/${MODPY_PYCACHE}tools.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/icalendar/${MODPY_PYCACHE}windows_to_olson.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/icalendar/cal.py
 lib/python${MODPY_VERSION}/site-packages/icalendar/caselessdict.py
 lib/python${MODPY_VERSION}/site-packages/icalendar/compat.py
@@ -66,8 +67,11 @@ lib/python${MODPY_VERSION}/site-packages/icalendar/tests/test_unit_parser_tools.
 lib/python${MODPY_VERSION}/site-packages/icalendar/tests/test_unit_prop.py
 lib/python${MODPY_VERSION}/site-packages/icalendar/tests/test_unit_tools.py
 lib/python${MODPY_VERSION}/site-packages/icalendar/tests/time.ics
+lib/python${MODPY_VERSION}/site-packages/icalendar/tests/timezone_rdate.ics
 lib/python${MODPY_VERSION}/site-packages/icalendar/tests/timezone_same_start.ics
+lib/python${MODPY_VERSION}/site-packages/icalendar/tests/timezone_same_start_and_offset.ics
 lib/python${MODPY_VERSION}/site-packages/icalendar/tests/timezoned.ics
 lib/python${MODPY_VERSION}/site-packages/icalendar/tests/x_location.ics
 lib/python${MODPY_VERSION}/site-packages/icalendar/timezone_cache.py
 lib/python${MODPY_VERSION}/site-packages/icalendar/tools.py
+lib/python${MODPY_VERSION}/site-packages/icalendar/windows_to_olson.py
