@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2016/09/03 14:23:37 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2018/01/13 01:11:36 sthen Exp $
 @pkgpath security/xmlsec
 @bin bin/xmlsec1
 bin/xmlsec1-config
@@ -40,7 +40,6 @@ include/xmlsec1/xmlsec/parser.h
 include/xmlsec1/xmlsec/private/
 include/xmlsec1/xmlsec/private.h
 include/xmlsec1/xmlsec/private/xslt.h
-include/xmlsec1/xmlsec/soap.h
 include/xmlsec1/xmlsec/strings.h
 include/xmlsec1/xmlsec/templates.h
 include/xmlsec1/xmlsec/transforms.h

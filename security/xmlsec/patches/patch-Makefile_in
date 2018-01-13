@@ -1,0 +1,14 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2018/01/13 01:11:36 sthen Exp $
+
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -1167,7 +1167,7 @@ check: check-all check-info
+ 
+ check-all: $(TEST_APP) 
+ 	for crypto in $(CHECK_CRYPTO_LIST) ; do \
+-		make check-crypto-$$crypto ; \
++		$(MAKE) check-crypto-$$crypto ; \
+ 	done
+ 
+ check-crypto-%: $(TEST_APP) 

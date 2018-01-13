@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-docs,v 1.6 2016/09/03 14:23:37 sthen Exp $
+@comment $OpenBSD: PLIST-docs,v 1.7 2018/01/13 01:11:36 sthen Exp $
 share/doc/xmlsec1/
 share/doc/xmlsec1/api/
 share/doc/xmlsec1/api/home.png
@@ -13,8 +13,11 @@ share/doc/xmlsec1/api/images/transform.png
 share/doc/xmlsec1/api/images/transforms-chain.png
 share/doc/xmlsec1/api/images/verif-dec-model.png
 share/doc/xmlsec1/api/index.html
+share/doc/xmlsec1/api/left-insensitive.png
 share/doc/xmlsec1/api/left.png
+share/doc/xmlsec1/api/right-insensitive.png
 share/doc/xmlsec1/api/right.png
+share/doc/xmlsec1/api/up-insensitive.png
 share/doc/xmlsec1/api/up.png
 share/doc/xmlsec1/api/xmlsec-app.html
 share/doc/xmlsec1/api/xmlsec-base64.html
@@ -39,6 +42,7 @@ share/doc/xmlsec1/api/xmlsec-gcrypt-ref.html
 share/doc/xmlsec1/api/xmlsec-gnutls-app.html
 share/doc/xmlsec1/api/xmlsec-gnutls-crypto.html
 share/doc/xmlsec1/api/xmlsec-gnutls-ref.html
+share/doc/xmlsec1/api/xmlsec-gnutls-x509.html
 share/doc/xmlsec1/api/xmlsec-index.html
 share/doc/xmlsec1/api/xmlsec-io.html
 share/doc/xmlsec1/api/xmlsec-keyinfo.html
