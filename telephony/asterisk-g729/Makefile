@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.19 2017/08/22 22:51:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2018/01/13 01:07:01 sthen Exp $
 
 COMMENT=	G.729a voice codec for Asterisk
-DISTNAME=	asterisk-g72x-1.4.1
+DISTNAME=	asterisk-g72x-1.4.2
 PKGNAME=	${DISTNAME:S/g72x/g729/}
 EXTRACT_SUFX=	.tar.bz2
 CATEGORIES=	telephony
