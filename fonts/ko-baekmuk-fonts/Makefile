@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2015/09/25 12:50:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2018/01/13 03:00:46 bentley Exp $
 
 PKG_ARCH=	*
 
@@ -10,7 +10,7 @@ PKGNAME=	ko-baekmuk-fonts-${V}
 REVISION=	5
 CATEGORIES=	fonts korean x11
 
-MASTER_SITES=	http://distcache.freebsd.org/ports-distfiles/ \
+MASTER_SITES=	${_MASTER_SITE_FREEBSD} \
 		ftp://ftp.mizi.com/pub/baekmuk/
 HOMEPAGE=	http://www.mizi.co.kr
 

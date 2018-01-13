@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2015/06/05 08:11:53 bentley Exp $
+# $OpenBSD: Makefile,v 1.34 2018/01/13 03:00:46 bentley Exp $
 
 COMMENT=	curses version of the classic game
 
@@ -13,7 +13,7 @@ PERMIT_PACKAGE_FTP=	no license
 PERMIT_DISTFILES_FTP=	no license
 WANTLIB=		c curses termcap
 
-MASTER_SITES= 	http://distcache.freebsd.org/ports-distfiles/
+MASTER_SITES= 	${_MASTER_SITE_FREEBSD}
 EXTRACT_SUFX=	.Z
 EXTRACT_CASES=	*.Z) ${GZIP_CMD} -dc ${FULLDISTDIR}/$$archive | \
 		${_PERL_FIX_SHAR} | /bin/sh ;;
