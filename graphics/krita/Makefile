@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.6 2017/10/23 06:25:26 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.7 2018/01/14 10:05:03 rsadowski Exp $
 
 COMMENT =	advanced drawing and image manipulation
 
-VERSION =	3.3.1
+VERSION =	3.3.2.1
 DISTNAME =	krita-${VERSION}
 
 SHARED_LIBS +=  kritabasicflakes          0.0 # 16.0
 SHARED_LIBS +=  kritacolord               0.0 # 16.0
 SHARED_LIBS +=  kritaflake                1.0 # 16.0
 SHARED_LIBS +=  kritaodf                  0.0 # 16.0
-SHARED_LIBS +=  kritapigment              0.0 # 16.0
+SHARED_LIBS +=  kritapigment              1.0 # 16.0
 SHARED_LIBS +=  kritaplugin               0.0 # 16.0
 SHARED_LIBS +=  kritastore                0.0 # 16.0
 SHARED_LIBS +=  kritatext                 0.0 # 16.0
@@ -26,7 +26,7 @@ SHARED_LIBS +=  kritaglobal               2.0 # 14.0
 SHARED_LIBS +=  kritaimage                52.0 # 0.0
 SHARED_LIBS +=  kritalibbrush             51.0 # 0.0
 SHARED_LIBS +=  kritalibpaintop           51.0 # 0.0
-SHARED_LIBS +=  kritaui                   54.0 # 0.0
+SHARED_LIBS +=  kritaui                   55.0 # 0.0
 
 CATEGORIES =	graphics
 DPB_PROPERTIES =	parallel
@@ -48,8 +48,8 @@ WANTLIB += Qt5Xml SM X11 Xext Xi boost_system-mt c exiv2 fftw3
 WANTLIB += gsl gslcblas jpeg lcms2 m png poppler-qt5 raw tiff
 WANTLIB += xcb xcb-util z
 
-MASTER_SITES =	${MASTER_SITE_KDE:=stable/krita/${VERSION}/}
-EXTRACT_SUFX =	.tar.gz
+MASTER_SITES =	${MASTER_SITE_KDE:=stable/krita/${VERSION:S/.1//}/}
+EXTRACT_SUFX =	.tar.xz
 
 MODULES =	devel/kf5
 
