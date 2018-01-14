@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2018/01/14 20:40:18 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.13 2018/01/14 20:56:23 rsadowski Exp $
 
 COMMENT =	crypto and TLS for C++11
 
@@ -17,7 +17,7 @@ MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 # BSD 2-Clause
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} bz2 c crypto lzma m pthread z
+WANTLIB += ${COMPILER_LIBCXX} bz2 c crypto lzma m z
 
 MASTER_SITES =		${HOMEPAGE}releases/
 
