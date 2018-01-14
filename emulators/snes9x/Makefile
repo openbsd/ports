@@ -1,37 +1,39 @@
-# $OpenBSD: Makefile,v 1.39 2017/11/21 00:13:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.40 2018/01/14 21:11:16 fcambus Exp $
 
 COMMENT =	emulates the Super Nintendo Entertainment System
 BROKEN-alpha =	ICE/failure on filter/hq2x.cpp
 BROKEN-hppa =	ICE/failure on filter/hq2x.cpp
 BROKEN-powerpc =ICE/failure on filter/hq2x.cpp
 
-DISTNAME =	snes9x-1.54.1
+DISTNAME =	snes9x-1.55
+
 CATEGORIES =	emulators games
-REVISION =	1
 
 HOMEPAGE =	http://www.snes9x.com/
 
+MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
+
 # non-commercial
-PERMIT_PACKAGE_CDROM =	No
+PERMIT_PACKAGE_CDROM =	non-commercial
 PERMIT_PACKAGE_FTP =	Yes
 
-WANTLIB += SDL X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
-WANTLIB += Xrandr Xrender Xv atk-1.0 c cairo fontconfig freetype
-WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
-WANTLIB += gthread-2.0 gtk-x11-2.0 iconv intl m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 png pthread xml2 z ${COMPILER_LIBCXX}
+WANTLIB += ${COMPILER_LIBCXX} GL SDL X11 Xext Xrandr Xv atk-1.0
+WANTLIB += c cairo cairo-gobject gdk-3 gdk_pixbuf-2.0 gio-2.0
+WANTLIB += glib-2.0 gobject-2.0 gthread-2.0 gtk-3 intl m pango-1.0
+WANTLIB += pangocairo-1.0 png xml2 z
 
 MASTER_SITES =	https://sites.google.com/site/bearoso/snes9x/
 EXTRACT_SUFX =	.tar.bz2
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+3,-guic
+
 LIB_DEPENDS =	devel/sdl \
 		graphics/png \
 		textproc/libxml \
-		x11/gtk+2 
+		x11/gtk+3
 
-MODULES =	textproc/intltool \
+MODULES =	textproc/intltool
 
 COMPILER =	base-clang ports-gcc
 
@@ -42,17 +44,15 @@ CONFIGURE_ARGS = --without-portaudio \
 		 --without-oss \
 		 --without-alsa \
 		 --without-pulseaudio \
-		 --without-opengl 
+		 --without-system-zip \
+		 --with-gtk3
+
 CONFIGURE_ENV = CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LIBS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 
 NO_TEST =	Yes
 
 WRKSRC =	${WRKDIST}/gtk
-
-# fix build with glib2>=2.50
-pre-configure:
-	sed -i "s,-pedantic,," ${WRKSRC}/configure
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/snes9x

@@ -1,7 +1,8 @@
-$OpenBSD: patch-gtk_configure,v 1.5 2016/11/18 07:28:57 bentley Exp $
---- gtk/configure.orig	Fri Oct 14 20:19:21 2016
-+++ gtk/configure	Mon Oct 17 01:16:27 2016
-@@ -7072,7 +7072,7 @@ else
+$OpenBSD: patch-gtk_configure,v 1.6 2018/01/14 21:11:16 fcambus Exp $
+Index: gtk/configure
+--- gtk/configure.orig
++++ gtk/configure
+@@ -7170,7 +7170,7 @@ else
    CFLAGS="$CFLAGS -fomit-frame-pointer"
  fi
  
