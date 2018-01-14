@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/10/23 14:43:38 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/01/14 10:10:09 rsadowski Exp $
 include/dlib/
 include/dlib/algs.h
 include/dlib/all/
@@ -14,6 +14,7 @@ include/dlib/any/any_function_impl.h
 include/dlib/any/any_function_impl2.h
 include/dlib/any/any_trainer.h
 include/dlib/any/any_trainer_abstract.h
+include/dlib/appveyor/
 include/dlib/array/
 include/dlib/array.h
 include/dlib/array/array_kernel.h
@@ -86,6 +87,7 @@ include/dlib/clustering/spectral_cluster_abstract.h
 include/dlib/cmake_utils/
 include/dlib/cmake_utils/add_global_compiler_switch.cmake
 include/dlib/cmake_utils/check_if_neon_available.cmake
+include/dlib/cmake_utils/set_compiler_specific_options.cmake
 include/dlib/cmake_utils/tell_visual_studio_to_use_static_runtime.cmake
 include/dlib/cmake_utils/test_for_cpp11/
 include/dlib/cmake_utils/test_for_cuda/
@@ -172,6 +174,8 @@ include/dlib/disjoint_subsets/
 include/dlib/disjoint_subsets.h
 include/dlib/disjoint_subsets/disjoint_subsets.h
 include/dlib/disjoint_subsets/disjoint_subsets_abstract.h
+include/dlib/disjoint_subsets/disjoint_subsets_sized.h
+include/dlib/disjoint_subsets/disjoint_subsets_sized_abstract.h
 include/dlib/dnn/
 include/dlib/dnn.h
 include/dlib/dnn/core.h
@@ -302,6 +306,14 @@ include/dlib/geometry/rectangle.h
 include/dlib/geometry/rectangle_abstract.h
 include/dlib/geometry/vector.h
 include/dlib/geometry/vector_abstract.h
+include/dlib/global_optimization/
+include/dlib/global_optimization.h
+include/dlib/global_optimization/find_max_global.h
+include/dlib/global_optimization/find_max_global_abstract.h
+include/dlib/global_optimization/global_function_search.h
+include/dlib/global_optimization/global_function_search_abstract.h
+include/dlib/global_optimization/upper_bound_function.h
+include/dlib/global_optimization/upper_bound_function_abstract.h
 include/dlib/graph/
 include/dlib/graph.h
 include/dlib/graph/graph_kernel_1.h
@@ -554,6 +566,7 @@ include/dlib/matrix/lapack/gesdd.h
 include/dlib/matrix/lapack/gesvd.h
 include/dlib/matrix/lapack/getrf.h
 include/dlib/matrix/lapack/ormqr.h
+include/dlib/matrix/lapack/pbtrf.h
 include/dlib/matrix/lapack/potrf.h
 include/dlib/matrix/lapack/syev.h
 include/dlib/matrix/lapack/syevr.h
@@ -619,6 +632,7 @@ include/dlib/memory_manager_stateless.h
 include/dlib/memory_manager_stateless/memory_manager_stateless_kernel_1.h
 include/dlib/memory_manager_stateless/memory_manager_stateless_kernel_2.h
 include/dlib/memory_manager_stateless/memory_manager_stateless_kernel_abstract.h
+include/dlib/metaprogramming.h
 include/dlib/misc_api/
 include/dlib/misc_api.h
 include/dlib/misc_api/misc_api_kernel_1.h
