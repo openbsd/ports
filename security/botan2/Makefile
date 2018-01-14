@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.11 2017/11/16 23:20:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2018/01/14 20:40:18 rsadowski Exp $
 
 COMMENT =	crypto and TLS for C++11
 
-VERSION =	2.3.0
+VERSION =	2.4.0
 DISTNAME =	Botan-${VERSION}
 PKGNAME =	botan2-${VERSION}
 
-SHARED_LIBS =	botan-2		3.0
+SHARED_LIBS =	botan-2		4.0
 
 CATEGORIES =	security
 
@@ -17,8 +17,7 @@ MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 # BSD 2-Clause
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		bz2 c crypto m lzma pthread z
-WANTLIB +=		${COMPILER_LIBCXX}
+WANTLIB += ${COMPILER_LIBCXX} bz2 c crypto lzma m pthread z
 
 MASTER_SITES =		${HOMEPAGE}releases/
 
@@ -38,6 +37,7 @@ CONFIGURE_SCRIPT =	${WRKSRC}/configure.py
 CONFIGURE_ARGS =	--with-build-dir=${WRKBUILD} \
 			--prefix=${PREFIX} \
 			--distribution-info="`uname -sr`" \
+			--mandir=${PREFIX}/man \
 			--with-bzip2 \
 			--with-lzma \
 			--with-openssl \
@@ -53,7 +53,7 @@ PKG_ARGS =		-Dx86=0
 SUBST_VARS =		CXX CXXFLAGS LIBbotan-2_VERSION
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/src/build-data/cc/gcc.txt
+	${SUBST_CMD} ${WRKSRC}/src/build-data/cc/{clang,gcc}.txt
 	${SUBST_CMD} ${WRKSRC}/src/build-data/os/openbsd.txt
 	${SUBST_CMD} ${WRKSRC}/src/tests/main.cpp
 	ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python

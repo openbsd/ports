@@ -1,14 +1,14 @@
-$OpenBSD: patch-src_tests_main_cpp,v 1.2 2017/10/09 20:05:07 bluhm Exp $
+$OpenBSD: patch-src_tests_main_cpp,v 1.3 2018/01/14 20:40:18 rsadowski Exp $
 
 Index: src/tests/main.cpp
 --- src/tests/main.cpp.orig
 +++ src/tests/main.cpp
-@@ -178,7 +178,7 @@ class Test_Runner final : public Botan_CLI::Command
-          const bool log_success = flag_set("log-success");
-          const bool run_online_tests = flag_set("run-online-tests");
-          const bool run_long_tests = flag_set("run-long-tests");
--         const std::string data_dir = get_arg_or("data-dir", "src/tests/data");
-+         const std::string data_dir = get_arg_or("data-dir", "${LOCALBASE}/share/botan-2/data");
-          const std::string pkcs11_lib = get_arg("pkcs11-lib");
-          const std::string provider = get_arg("provider");
-          const size_t runs = get_arg_sz("test-runs");
+@@ -73,7 +73,7 @@ int main(int argc, char* argv[])
+          return 0;
+          }
+ 
+-      const std::string data_dir = parser.get_arg_or("data-dir", "src/tests/data");
++      const std::string data_dir = parser.get_arg_or("data-dir", "${LOCALBASE}/share/botan-2/data");
+       const std::string pkcs11_lib = parser.get_arg("pkcs11-lib");
+       const std::string provider = parser.get_arg("provider");
+       const std::string drbg_seed = parser.get_arg("drbg-seed");
