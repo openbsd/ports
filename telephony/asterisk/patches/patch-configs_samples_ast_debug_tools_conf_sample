@@ -1,6 +1,7 @@
-$OpenBSD: patch-configs_samples_ast_debug_tools_conf_sample,v 1.1 2017/03/18 21:42:04 sthen Exp $
---- configs/samples/ast_debug_tools.conf.sample.orig	Wed Feb 15 10:16:11 2017
-+++ configs/samples/ast_debug_tools.conf.sample	Wed Feb 15 10:16:28 2017
+$OpenBSD: patch-configs_samples_ast_debug_tools_conf_sample,v 1.2 2018/01/14 13:11:48 sthen Exp $
+Index: configs/samples/ast_debug_tools.conf.sample
+--- configs/samples/ast_debug_tools.conf.sample.orig
++++ configs/samples/ast_debug_tools.conf.sample
 @@ -18,7 +18,7 @@
  # The exclusion of files ending ".txt" is just for
  # demonstration purposes as non-coredumps will be ignored
@@ -8,5 +9,5 @@ $OpenBSD: patch-configs_samples_ast_debug_tools_conf_sample,v 1.1 2017/03/18 21:
 -COREDUMPS=(/tmp/core[-._]asterisk!(*.txt) /tmp/core[-._]$(hostname)!(*.txt))
 +COREDUMPS=(/var/crash/asterisk/*.core /tmp/asterisk.core)
  
- # Date command for the "running" coredump and tarballs.
- # DATEFORMAT will be executed to get the timestamp.
+ # The directory to contain output files and work directories.
+ # For output from existing core files, the default is the

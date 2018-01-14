@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.269 2018/01/11 19:27:11 rpe Exp $
+# $OpenBSD: Makefile,v 1.270 2018/01/14 13:11:48 sthen Exp $
 
 BROKEN-aarch64=	linker problems with BlocksRuntime that only show up at runtime
 
 COMMENT-main=	open source multi-protocol PBX and telephony toolkit
 
-VER=		13.18.5
-PJ_V=		2.6
+VER=		13.19.0
+PJ_V=		2.7.1
 PORTROACH=	limitw:0,odd
 DISTNAME=	asterisk-${VER:S/beta/-beta/:S/rc/-rc/}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} pjproject-${PJ_V}.tar.bz2:0
 PKGNAME-main=	asterisk-${VER}
-REVISION-main=	0
 
 CATEGORIES=	telephony
 
@@ -262,13 +261,11 @@ post-extract:
 pre-patch:
 	@perl -i -pe 's/\r$$//' ${WRKSRC}/third-party/pjproject/patches/*patch \
 	    ${WRKSRC}/third-party/pjproject/source/pjlib/build/*vc*proj*
-	cd ${WRKSRC}/third-party/pjproject; ./apply_patches patches source
+	cd ${WRKSRC}/third-party/pjproject/source; ../apply_patches ../patches .
 	touch ${WRKSRC}/third-party/pjproject/source/.unpacked
 
 post-patch:
-.if ${PROPERTIES:Mclang}
-	sed -i.beforesubst -e 's, -ftrampolines,,' ${WRKSRC}/Makefile
-.endif
+	@#for clang#  sed -i.beforesubst -e 's, -ftrampolines,,' ${WRKSRC}/Makefile
 	cd ${WRKSRC}; \
 	    AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
 	    AUTOCONF_VERSION=${AUTOCONF_VERSION} \
