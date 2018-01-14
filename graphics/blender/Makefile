@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.85 2017/12/27 13:47:16 kili Exp $
+# $OpenBSD: Makefile,v 1.86 2018/01/14 09:46:18 bentley Exp $
 
 ONLY_FOR_ARCHS = amd64 i386
 
 COMMENT =	3D creation software
 
 DISTNAME =	blender-2.79
+REVISION =	0
 
 CATEGORIES =	graphics
 
-HOMEPAGE =	http://www.blender.org/
+HOMEPAGE =	https://www.blender.org/
 
 MAINTAINER =	Pascal Stumpf <pascal@stumpf.co>
 
@@ -22,7 +23,7 @@ WANTLIB += boost_system-mt boost_thread-mt c freetype jpeg m openal
 WANTLIB += openjpeg png pthread ${MODPY_WANTLIB} swscale tiff tinyxml
 WANTLIB += util yaml-cpp z boost_atomic-mt boost_chrono-mt ${COMPILER_LIBCXX}
 
-MASTER_SITES =	http://download.blender.org/source/ \
+MASTER_SITES =	https://download.blender.org/source/ \
 		http://mirror.cs.umn.edu/blender.org/source/
 
 MODULES =	devel/cmake \
