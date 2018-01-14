@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2018/01/11 00:13:49 juanfra Exp $
+# $OpenBSD: Makefile,v 1.15 2018/01/14 10:30:28 juanfra Exp $
 
 COMMENT =		zstandard fast real-time compression algorithm
 
@@ -14,10 +14,7 @@ HOMEPAGE =		https://facebook.github.io/zstd/
 
 MAINTAINER =		Bjorn Ketelaars <bjorn.ketelaars@hydroxide.nl>
 
-# zstd doesn't use known patented code or algorithms, however the project
-# includes an additional patent grant in the file PATENTS.
-# https://github.com/facebook/zstd/issues/335
-# BSD 3 clauses + GPLv2.
+# BSD 3 clauses + GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =		c lz4 lzma pthread  z
