@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/01/14 04:24:37 stu Exp $
+lib/tcl/tdbcmysql/
+lib/tcl/tdbcmysql/libtdbcmysql${VER}.so
+lib/tcl/tdbcmysql/pkgIndex.tcl
+lib/tcl/tdbcmysql/tdbcmysql.tcl
+@man man/mann/tdbc_mysql.n

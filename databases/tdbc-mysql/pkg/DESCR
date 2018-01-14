@@ -1,0 +1,2 @@
+Provides a database interface that conforms to Tcl DataBase Connectivity (TDBC)
+and allows a Tcl script to connect to a MariaDB database.
