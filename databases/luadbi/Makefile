@@ -1,24 +1,21 @@
-# $OpenBSD: Makefile,v 1.11 2017/08/21 18:49:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2018/01/14 15:36:40 landry Exp $
 
 COMMENT-main=	database interface library for Lua (including SQLite3)
 COMMENT-mysql=	MySQL driver for luadbi
 COMMENT-pgsql=	PostgreSQL driver for luadbi
 
-V=		0.5
-DISTNAME=	luadbi.$V
-PKGNAME-main=	luadbi-$V
-PKGNAME-mysql=	luadbi-mysql-$V
-PKGNAME-pgsql=	luadbi-pgsql-$V
-REVISION-main=	2
-REVISION-mysql=	4
-REVISION-pgsql=	1
+GH_ACCOUNT=	mwild1
+GH_PROJECT=	luadbi
+V=		0.6
+GH_TAGNAME=	v${V}
+PKGNAME-main=	${GH_PROJECT}-${V}
+PKGNAME-mysql=	${GH_PROJECT}-mysql-$V
+PKGNAME-pgsql=	${GH_PROJECT}-pgsql-$V
 
 CATEGORIES=	databases
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
-
-MASTER_SITES=		https://distfiles.nl/
 
 MULTI_PACKAGES=		-main -mysql -pgsql
 
@@ -40,20 +37,18 @@ MODULES=		lang/lua
 USE_GMAKE=		Yes
 
 ALL_TARGET=		free # == sqlite3 mysql postgresql
+INSTALL_TARGET=		install_free
+# requires luarocks
 NO_TEST=		Yes
 
 MAKE_FLAGS=	CC="${CC}" \
 		COMMON_LDFLAGS="-L${LOCALBASE}/lib" \
-		CFLAGS="${CFLAGS} -I${MODLUA_INCL_DIR} -I${LOCALBASE}/include -I${LOCALBASE}/include/mysql \
-			-I${LOCALBASE}/include/postgresql/ -I${LOCALBASE}/include/postgresql/server \
-			-I. -fpic -shared"
+		LUA_INC="-I${MODLUA_INCL_DIR}" \
+		MYSQL_INC="-I${LOCALBASE}/include/mysql" \
+		SQLITE3_INC="-I${LOCALBASE}/include" \
+		PSQL_INC="-I${LOCALBASE}/include/postgresql"
 
-WRKDIST=	${WRKDIR}
-
-do-install:
-	${INSTALL_DATA_DIR} ${MODLUA_LIBDIR} ${MODLUA_DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/DBI.lua ${MODLUA_DATADIR}
-# XXX: Not using INSTALL_PROGRAM, it strips the library.
-	${INSTALL_SCRIPT} ${WRKSRC}/*.so ${MODLUA_LIBDIR}
+FAKE_FLAGS=	LUA_LDIR=${MODLUA_DATADIR} \
+		LUA_CDIR=${MODLUA_LIBDIR}
 
 .include <bsd.port.mk>
