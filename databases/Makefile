@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.350 2018/01/14 04:27:13 stu Exp $
+# $OpenBSD: Makefile,v 1.351 2018/01/14 13:12:26 sthen Exp $
 
      SUBDIR =
      SUBDIR += apache-couchdb
@@ -243,7 +243,7 @@
      SUBDIR += tdb
      SUBDIR += tdbc
      SUBDIR += tdbc-mysql
-     SUBDIR += tdbc-postres
+     SUBDIR += tdbc-postgres
      SUBDIR += tdbc-sqlite3
      SUBDIR += tinycdb
      SUBDIR += tokyocabinet
