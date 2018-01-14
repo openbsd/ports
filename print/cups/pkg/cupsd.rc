@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: cupsd.rc,v 1.27 2018/01/11 19:27:08 rpe Exp $
+# $OpenBSD: cupsd.rc,v 1.28 2018/01/14 14:42:18 rpe Exp $
 
 daemon="${TRUEPREFIX}/sbin/cupsd"
 
@@ -22,7 +22,7 @@ rc_pre() {
 
 	# no existing printcap means we're not running lpd(8) so link cups'
 	# printcap so base lp commands can find and use cups printers
-	if [ ! -e /etc/printcap ]; then
+	if [[ ! -e /etc/printcap ]]; then
 		ln -s ${SYSCONFDIR}/cups/printcap /etc/printcap
 		# please check_mtree() in security(8); /etc/mtree/special
 		chmod -h 0644 /etc/printcap
@@ -30,7 +30,7 @@ rc_pre() {
 }
 
 rc_post() {
-	if [ -h /etc/printcap ]; then                           
+	if [[ -h /etc/printcap ]]; then                           
 		rm /etc/printcap                                
 	fi
 }

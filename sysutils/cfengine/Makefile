@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.57 2018/01/11 19:27:10 rpe Exp $
+# $OpenBSD: Makefile,v 1.58 2018/01/14 14:42:18 rpe Exp $
 
 BROKEN =	pkg_add fails: problem with symlinks
 
 COMMENT =	GNU system administration tool for networks
 
 DISTNAME =	cfengine-3.7.2
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=  promises	0.0 # 1.0
 CATEGORIES =	sysutils

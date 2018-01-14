@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: gdm.rc,v 1.42 2018/01/11 19:27:12 rpe Exp $
+# $OpenBSD: gdm.rc,v 1.43 2018/01/14 14:42:18 rpe Exp $
 
 daemon="${TRUEPREFIX}/sbin/gdm"
 
@@ -24,7 +24,7 @@ rc_stop() {
 
 # /etc/X11/xenodm/TakeConsole, fbtab(5)
 rc_post() {
-	if [ -c /dev/drm0 ]; then
+	if [[ -c /dev/drm0 ]]; then
 		chown root /dev/drm0
 	fi
 	# XXX OpenBSD needs an implementation of XDG_RUNTIME_DIR

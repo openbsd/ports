@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: xl2tpd.rc,v 1.3 2018/01/11 19:27:08 rpe Exp $
+# $OpenBSD: xl2tpd.rc,v 1.4 2018/01/14 14:42:18 rpe Exp $
 
 daemon="${TRUEPREFIX}/sbin/xl2tpd"
 daemon_user="_xl2tpd"
@@ -9,7 +9,7 @@ daemon_user="_xl2tpd"
 
 rc_pre() {
 	/usr/bin/install -d -o ${daemon_user} /var/run/xl2tpd
-	[ -p /var/run/xl2tpd/l2tp-control ] ||
+	[[ -p /var/run/xl2tpd/l2tp-control ]] ||
 	    mkfifo /var/run/xl2tpd/l2tp-control
 }
 

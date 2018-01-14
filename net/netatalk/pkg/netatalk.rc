@@ -1,18 +1,18 @@
 #!/bin/ksh
 #
-# $OpenBSD: netatalk.rc,v 1.8 2018/01/11 19:27:06 rpe Exp $
+# $OpenBSD: netatalk.rc,v 1.9 2018/01/14 14:42:18 rpe Exp $
 
 # "meta" script running the following rc.d(8) scripts with the given argument;
 # note that daemon_flags, daemon_user, daemon_timeout and daemon_class are not
 # passed to the child scripts.
 _pkg_scripts="cnid_metad afpd"
 
-if [ "$1" = restart ]; then
+if [[ $1 == restart ]]; then
 	$0 stop && $0 start
 	exit
 fi
 
-if [ "$1" = stop ]; then
+if [[ $1 == stop ]]; then
 	for _i in ${_pkg_scripts}; do _l="${_i} ${_l}"; done
 	_pkg_scripts=${_l% }
 fi

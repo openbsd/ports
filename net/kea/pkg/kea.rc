@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: kea.rc,v 1.3 2018/01/11 19:27:06 rpe Exp $
+# $OpenBSD: kea.rc,v 1.4 2018/01/14 14:42:18 rpe Exp $
 
 daemon="${TRUEPREFIX}/sbin/keactrl"
 
@@ -9,7 +9,7 @@ daemon="${TRUEPREFIX}/sbin/keactrl"
 pexp="${TRUEPREFIX}/sbin/kea-dhcp(4|6|-ddns).*"
 
 rc_pre() {
-	if ! [ -d ${LOCALSTATEDIR}/run/kea ]; then
+	if [[ ! -d ${LOCALSTATEDIR}/run/kea ]]; then
 		install -d -o root -g _kea -m 775 ${LOCALSTATEDIR}/run/kea
 	fi
 }

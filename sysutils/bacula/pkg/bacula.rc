@@ -1,17 +1,17 @@
 #!/bin/ksh
 #
-# $OpenBSD: bacula.rc,v 1.5 2018/01/11 19:27:09 rpe Exp $
+# $OpenBSD: bacula.rc,v 1.6 2018/01/14 14:42:18 rpe Exp $
 
 # "meta" script running the following rc.d(8) scripts with the given argument;
 # note that daemon_flags, daemon_user, daemon_timeout and daemon_class are not
 # passed to the child scripts.
 
-if [ "$1" = restart ]; then
+if [[ $1 == restart ]]; then
 	$0 stop && $0 start
 	exit
 fi
 
-if [ "$1" = stop ]; then
+if [[ $1 == stop ]]; then
 	# stop the FD first so that SD will fail jobs and update catalog
 	_pkg_scripts="bacula_fd bacula_sd bacula_dir"
 else
