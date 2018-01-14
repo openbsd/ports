@@ -1,0 +1,17 @@
+$OpenBSD: patch-tests_util_piglit-util_h,v 1.1.1.1 2018/01/14 21:49:14 sthen Exp $
+
+attempt to fix error of
+"cannot initialize variable of type 'char *'
+with an rvalue type const char *
+
+Index: tests/util/piglit-util.h
+--- tests/util/piglit-util.h.orig
++++ tests/util/piglit-util.h
+@@ -30,6 +30,7 @@ extern "C" {
+ #endif
+ 
+ #include "config.h"
++#include <string.h>
+ 
+ #if defined(_WIN32)
+ 

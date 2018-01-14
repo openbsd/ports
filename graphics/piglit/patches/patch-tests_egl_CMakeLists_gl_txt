@@ -1,0 +1,24 @@
+$OpenBSD: patch-tests_egl_CMakeLists_gl_txt,v 1.1.1.1 2018/01/14 21:49:14 sthen Exp $
+
+account for OpenBSD
+
+Index: tests/egl/CMakeLists.gl.txt
+--- tests/egl/CMakeLists.gl.txt.orig
++++ tests/egl/CMakeLists.gl.txt
+@@ -10,7 +10,7 @@ link_libraries (
+ 	${OPENGL_gl_LIBRARY}
+ )
+ 
+-IF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
++IF(${CMAKE_SYSTEM_NAME} MATCHES "Linux" OR ${CMAKE_SYSTEM_NAME} MATCHES "OpenBSD")
+ 	piglit_add_executable (egl-nok-swap-region egl-util.c egl-nok-swap-region.c)
+ 	target_link_libraries(egl-nok-swap-region pthread ${X11_X11_LIB})
+ 	piglit_add_executable (egl-nok-texture-from-pixmap egl-util.c egl-nok-texture-from-pixmap.c)
+@@ -33,6 +33,6 @@ IF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+ 	target_link_libraries(egl-invalid-attr pthread)
+ 	piglit_add_executable (egl-context-priority egl-context-priority.c)
+ 	target_link_libraries(egl-context-priority pthread)
+-ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
++ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Linux" OR ${CMAKE_SYSTEM_NAME} MATCHES "OpenBSD")
+ 
+ # vim: ft=cmake:

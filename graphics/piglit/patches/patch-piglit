@@ -1,0 +1,13 @@
+$OpenBSD: patch-piglit,v 1.1.1.1 2018/01/14 21:49:14 sthen Exp $
+
+from FreeBSD; set to python2
+
+Index: piglit
+--- piglit.orig
++++ piglit
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python3
++#!/usr/bin/env python2
+ 
+ # Copyright (c) 2014 Intel Corporation
+ 
