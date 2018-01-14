@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.40 2017/11/04 19:54:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.41 2018/01/14 14:30:02 sthen Exp $
 
 COMMENT =	compiler cache
 
-DISTNAME =	ccache-3.3.4
-REVISION =	0
+DISTNAME =	ccache-3.3.5
 CATEGORIES =	devel
 
 HOMEPAGE =	http://ccache.samba.org/
