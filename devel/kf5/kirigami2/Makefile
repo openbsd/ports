@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/10/26 08:05:56 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2018/01/14 13:42:33 rsadowski Exp $
 
 COMMENT =	QtQuick based components set
 DISTNAME =	kirigami2-${VERSION}
 PKGNAME =	kf5-${DISTNAME}
 
+SHARED_LIBS +=  KF5Kirigami2              0.0 # 5.41
+
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Network Qt5Qml
-WANTLIB += Qt5Quick m
+WANTLIB += Qt5Quick Qt5QuickControls2 m
 
 BUILD_DEPENDS =	devel/gettext-tools \
 		devel/kf5/plasma-framework \
