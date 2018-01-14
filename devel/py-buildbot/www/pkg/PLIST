@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/12/18 20:35:46 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/01/14 17:12:10 landry Exp $
 lib/python${MODPY_VERSION}/site-packages/buildbot_www/
 lib/python${MODPY_VERSION}/site-packages/buildbot_www-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/buildbot_www-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -19,6 +19,9 @@ lib/python${MODPY_VERSION}/site-packages/buildbot_www/static/fonts/fontawesome-w
 lib/python${MODPY_VERSION}/site-packages/buildbot_www/static/fonts/fontawesome-webfont.woff
 lib/python${MODPY_VERSION}/site-packages/buildbot_www/static/img/
 lib/python${MODPY_VERSION}/site-packages/buildbot_www/static/img/favicon.ico
+lib/python${MODPY_VERSION}/site-packages/buildbot_www/static/img/icon.png
+lib/python${MODPY_VERSION}/site-packages/buildbot_www/static/img/icon.svg
+lib/python${MODPY_VERSION}/site-packages/buildbot_www/static/img/icon16.svg
 lib/python${MODPY_VERSION}/site-packages/buildbot_www/static/img/nobody.png
 lib/python${MODPY_VERSION}/site-packages/buildbot_www/static/index.html
 lib/python${MODPY_VERSION}/site-packages/buildbot_www/static/scripts.js

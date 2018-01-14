@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2017/12/18 20:42:31 landry Exp $
+@comment $OpenBSD: PLIST,v 1.9 2018/01/14 17:12:10 landry Exp $
 @newgroup _buildslave:674
 @newuser _buildslave:674:_buildslave:daemon:BuildBot slave daemon:${HOMEDIR}:/sbin/nologin
 bin/buildbot-worker
@@ -45,10 +45,6 @@ lib/python${MODPY_VERSION}/site-packages/buildbot_worker/interfaces.pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot_worker/monkeypatches/
 lib/python${MODPY_VERSION}/site-packages/buildbot_worker/monkeypatches/__init__.py
 lib/python${MODPY_VERSION}/site-packages/buildbot_worker/monkeypatches/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/buildbot_worker/monkeypatches/bug4881.py
-lib/python${MODPY_VERSION}/site-packages/buildbot_worker/monkeypatches/bug4881.pyc
-lib/python${MODPY_VERSION}/site-packages/buildbot_worker/monkeypatches/bug5079.py
-lib/python${MODPY_VERSION}/site-packages/buildbot_worker/monkeypatches/bug5079.pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot_worker/monkeypatches/testcase_assert.py
 lib/python${MODPY_VERSION}/site-packages/buildbot_worker/monkeypatches/testcase_assert.pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot_worker/null.py
