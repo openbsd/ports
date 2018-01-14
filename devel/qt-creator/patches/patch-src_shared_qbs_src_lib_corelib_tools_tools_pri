@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_shared_qbs_src_lib_corelib_tools_tools_pri,v 1.4 2017/09/21 19:10:37 rsadowski Exp $
+$OpenBSD: patch-src_shared_qbs_src_lib_corelib_tools_tools_pri,v 1.5 2018/01/14 10:07:48 rsadowski Exp $
 Index: src/shared/qbs/src/lib/corelib/tools/tools.pri
 --- src/shared/qbs/src/lib/corelib/tools/tools.pri.orig
 +++ src/shared/qbs/src/lib/corelib/tools/tools.pri
-@@ -104,6 +104,10 @@ osx {
+@@ -106,6 +106,10 @@ osx {
      LIBS += -framework Security
  }
  
