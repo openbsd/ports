@@ -1,0 +1,51 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2018/01/15 23:57:42 jeremy Exp $
+
+Fix so name, checking for DOT and DOXYGEN.
+
+Set correct shared library name.
+
+Override the arch setting to remove OpenBSD version from it,
+so ports don't have to be bumped when OpenBSD version changes.
+
+Rename HEAP_ALIGN_LOG to HEAP_PAGE_ALIGN_LOG to make ruby use
+operating system page size as GC heap page size (as was true
+in earlier ruby versions).
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -19988,14 +19988,14 @@ fi
+   if test $rb_cv_page_size_log != no; then :
+ 
+     cat >>confdefs.h <<_ACEOF
+-#define HEAP_ALIGN_LOG $rb_cv_page_size_log
++#define HEAP_PAGE_ALIGN_LOG $rb_cv_page_size_log
+ _ACEOF
+ 
+ 
+ else
+ 
+     cat >>confdefs.h <<_ACEOF
+-#define HEAP_ALIGN_LOG 12
++#define HEAP_PAGE_ALIGN_LOG 12
+ _ACEOF
+ 
+ 
+@@ -26267,7 +26267,7 @@ fi
+   openbsd*|mirbsd*) :
+ 
+ 	SOLIBS='$(LIBS)'
+-	LIBRUBY_SO='lib$(RUBY_SO_NAME).$(SOEXT).$(MAJOR).'`expr ${MINOR} \* 10 + ${TEENY}`
++  LIBRUBY_SO='lib$(RUBY_SO_NAME).so.'${LIBruby25_VERSION}
+ 	 ;; #(
+   solaris*) :
+ 
+@@ -27742,7 +27742,7 @@ _ACEOF
+ 
+ else
+ 
+-    arch="${target_cpu}-${target_os}"
++    arch="${target_cpu}-openbsd"
+     cat >>confdefs.h <<_ACEOF
+ #define RUBY_PLATFORM "$arch"
+ _ACEOF
