@@ -1,10 +1,11 @@
-$OpenBSD: patch-setup_py,v 1.2 2017/03/09 18:55:47 sthen Exp $
---- setup.py.orig	Sun Jan 15 13:47:03 2017
-+++ setup.py	Thu Mar  9 17:49:55 2017
-@@ -83,7 +83,7 @@ class sdist(_sdist):
- data_files = [('share/doc/flent',
+$OpenBSD: patch-setup_py,v 1.3 2018/01/15 12:41:27 sthen Exp $
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -84,7 +84,7 @@ data_files = [('share/doc/flent',
                 ['BUGS',
-                 'README.rst'] + glob("*.example")),
+                 'README.rst',
+                 'flent-paper.batch'] + glob("*.example")),
 -              ('share/man/man1',
 +              ('man/man1',
                 ['man/flent.1']),
