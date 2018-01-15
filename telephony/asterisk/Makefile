@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.270 2018/01/14 13:11:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.271 2018/01/15 11:45:04 sthen Exp $
 
 BROKEN-aarch64=	linker problems with BlocksRuntime that only show up at runtime
 
@@ -105,6 +105,7 @@ MAKE_FLAGS+=		ASTCFLAGS="${CFLAGS}" \
 CONFIGURE_ARGS+=	--localstatedir=/var \
 			--with-download-cache=${FULLDISTDIR} \
 			--with-pjproject-bundled
+CONFIGURE_ENV+=		PJPROJECT_CONFIGURE_OPTS="--disable-bcg729"
 
 CONFIGURE_ARGS+=	--with-asound=no \
 			--with-cap=no \
