@@ -1,19 +1,19 @@
-# $OpenBSD: Makefile,v 1.17 2017/12/02 12:44:33 edd Exp $
+# $OpenBSD: Makefile,v 1.18 2018/01/15 23:12:48 rsadowski Exp $
 COMMENT =		accounting for KDE 4
 CATEGORIES =		productivity x11
 HOMEPAGE =		https://kmymoney.org/
 MAINTAINER =		Vadim Zhukov <zhuk@openbsd.org>
-VERSION =		4.8.0
+VERSION =		4.8.1.1
 DISTNAME =		kmymoney-${VERSION}
-REVISION =		4
 
-SHARED_LIBS =	kmm_kdchart				1.1
-SHARED_LIBS +=	kmm_mymoney				1.1
-SHARED_LIBS +=	kmm_plugin				1.1
-SHARED_LIBS +=	kmm_widgets				1.1
-SHARED_LIBS +=	payeeidentifier_iban_bic		0.0 # 4.14
-SHARED_LIBS +=	payeeidentifier_iban_bic_widgets	0.0 # 4.14
-SHARED_LIBS +=	payeeidentifier_nationalAccount		0.0 # 4.14
+SHARED_LIBS += kmm_kdchart                      1.1 # 0.0
+SHARED_LIBS += kmm_mymoney                      1.1 # 0.0
+SHARED_LIBS += kmm_payeeidentifier              0.0 # 0.0
+SHARED_LIBS += kmm_plugin                       1.1 # 0.0
+SHARED_LIBS += kmm_widgets                      1.1 # 0.0
+SHARED_LIBS += payeeidentifier_iban_bic         0.0 # 4.14
+SHARED_LIBS += payeeidentifier_iban_bic_widgets 0.0 # 4.14
+SHARED_LIBS += payeeidentifier_nationalAccount  0.0 # 4.14
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
@@ -32,13 +32,16 @@ WANTLIB += ${KDE4LIB}/akonadi-contact ${KDE4LIB}/akonadi-kde
 WANTLIB += ${KDE4LIB}/kcalcore ${KDE4LIB}/kmime
 WANTLIB += ${KDE4LIB}/kpimidentities ${KDE4LIB}/kpimutils
 WANTLIB += alkimia assuan gmp gpg-error gpgme++-pthread gpgme
-WANTLIB += ical icalss iconv intl ofx osp qgpgme soprano
+WANTLIB += ical icalss ofx osp qgpgme soprano
 WANTLIB += aqbanking gwengui-cpp gwengui-qt4 gwenhywfar
 WANTLIB += QtDeclarative QtScript krosscore
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/kmymoney/${VERSION}/src/}
 
-MODULES =		x11/kde4 lang/python multimedia/phonon
+MODULES =		devel/cmake \
+			x11/kde4 \
+			lang/python \
+			multimedia/phonon
 MODKDE4_USE =		pim
 
 BUILD_DEPENDS =	devel/boost \
@@ -67,6 +70,7 @@ CONFIGURE_ARGS =	-DENABLE_KBANKING:Bool=Yes \
 TEST_IS_INTERACTIVE =	X11
 
 post-install:
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py ${PREFIX}/share/apps/kmm_weboob/weboob.py
+	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
+		${PREFIX}/share/apps/kmm_weboob/weboob.py
 
 .include <bsd.port.mk>

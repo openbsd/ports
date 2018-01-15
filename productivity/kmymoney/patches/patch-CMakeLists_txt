@@ -1,8 +1,9 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1 2017/01/14 11:19:04 zhuk Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2018/01/15 23:12:48 rsadowski Exp $
 Unbreak configuring: there is no separate gwengui-cpp CMake config.
---- CMakeLists.txt.orig	Tue Jun 14 22:17:54 2016
-+++ CMakeLists.txt	Thu Jan 12 19:42:47 2017
-@@ -177,11 +177,11 @@ option(ENABLE_KBANKING "Enable KBanking plugin" ON)
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -198,11 +198,11 @@ option(ENABLE_KBANKING "Enable KBanking plugin" ON)
  if(ENABLE_KBANKING)
    find_package(GWENHYWFAR CONFIG "4.13.0")
    find_package(gwengui-qt4 CONFIG "4.13.0")

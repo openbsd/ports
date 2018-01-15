@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2017/01/14 11:19:04 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/01/15 23:12:48 rsadowski Exp $
 @bin bin/kmymoney
 include/kde4/kmymoney/
 include/kde4/kmymoney/databasestoreableobject.h
@@ -81,10 +81,12 @@ include/kde4/kmymoney/onlinetasks/interfaces/ionlinetasksettings.h
 include/kde4/kmymoney/onlinetasks/interfaces/onlinetask.h
 include/kde4/kmymoney/onlinetasks/interfaces/onlinetaskconverter.h
 include/kde4/kmymoney/onlinetasks/interfaces/onlinetasksettingsfactory.h
-include/kde4/kmymoney/onlinetasks/national/
-include/kde4/kmymoney/onlinetasks/national/germanonlinetransfer.h
 include/kde4/kmymoney/onlinetasks/sepa/
 include/kde4/kmymoney/onlinetasks/sepa/sepaonlinetransfer.h
+include/kde4/kmymoney/payeeidentifier/
+include/kde4/kmymoney/payeeidentifier/ibanandbic/
+include/kde4/kmymoney/payeeidentifier/ibanandbic/ibanbic.h
+include/kde4/kmymoney/payeeidentifier/payeeidentifier.h
 include/kde4/kmymoney/pluginloader.h
 include/kde4/kmymoney/register.h
 include/kde4/kmymoney/registeritem.h
@@ -109,24 +111,23 @@ lib/kde4/kmm_ofximport.so
 lib/kde4/kmm_printcheck.so
 lib/kde4/kmm_reconciliationreport.so
 lib/kde4/kmm_weboob.so
-lib/kde4/konlinetasks_national.so
-lib/kde4/konlinetasks_sepa.so
+lib/kde4/libkonlinetasks_sepa.so
 lib/kde4/payeeidentifier_iban_bic_delegates.so
 lib/kde4/payeeidentifier_ibanbic_storageplugin.so
 lib/kde4/payeeidentifier_nationalAccount_ui.so
 lib/kde4/payeeidentifier_nationalaccount_storageplugin.so
 @lib lib/libkmm_kdchart.so.${LIBkmm_kdchart_VERSION}
 @lib lib/libkmm_mymoney.so.${LIBkmm_mymoney_VERSION}
-lib/libkmm_payeeidentifier.so
+@lib lib/libkmm_payeeidentifier.so.${LIBkmm_payeeidentifier_VERSION}
 @lib lib/libkmm_plugin.so.${LIBkmm_plugin_VERSION}
 @lib lib/libkmm_widgets.so.${LIBkmm_widgets_VERSION}
 @lib lib/libpayeeidentifier_iban_bic.so.${LIBpayeeidentifier_iban_bic_VERSION}
 @lib lib/libpayeeidentifier_iban_bic_widgets.so.${LIBpayeeidentifier_iban_bic_widgets_VERSION}
 @lib lib/libpayeeidentifier_nationalAccount.so.${LIBpayeeidentifier_nationalAccount_VERSION}
 share/applications/kde4/kmymoney-developer.desktop
-share/applications/kde4/kmymoney.desktop
+share/applications/kde4/org.kde.kmymoney.desktop
 share/apps/appdata/
-share/apps/appdata/kmymoney.appdata.xml
+share/apps/appdata/org.kde.kmymoney.appdata.xml
 share/apps/kconf_update/kmymoney.upd
 share/apps/kmm_csvexport/
 share/apps/kmm_csvexport/kmm_csvexport.rc
@@ -191,8 +192,6 @@ share/apps/kmymoney/html/images/tr.png
 share/apps/kmymoney/html/images/trans_logo.png
 share/apps/kmymoney/html/kmymoney.css
 share/apps/kmymoney/html/welcome.css
-share/apps/kmymoney/ibanbicdata/
-share/apps/kmymoney/ibanbicdata/bankdata.de.db
 share/apps/kmymoney/icons/
 share/apps/kmymoney/icons/hicolor/
 share/apps/kmymoney/icons/hicolor/16x16/
@@ -703,7 +702,9 @@ share/apps/kmymoney/templates/de_DE/otherasset.kmt
 share/apps/kmymoney/templates/de_DE/otherloan.kmt
 share/apps/kmymoney/templates/de_DE/skr03.kmt
 share/apps/kmymoney/templates/de_DE/skr04.kmt
+share/apps/kmymoney/templates/de_DE/skr49.kmt
 share/apps/kmymoney/templates/de_DE/studium.kmt
+share/apps/kmymoney/templates/de_DE/wohnungsw.kmt
 share/apps/kmymoney/templates/dk/
 share/apps/kmymoney/templates/dk/car.kmt
 share/apps/kmymoney/templates/dk/common.kmt
@@ -896,25 +897,29 @@ share/apps/kmymoney/templates/it/renter.kmt
 share/apps/kmymoney/templates/it/retiremt.kmt
 share/apps/kmymoney/templates/it/spouseinc.kmt
 share/apps/kmymoney/templates/it/spouseretire.kmt
-share/apps/kmymoney/templates/jp/
-share/apps/kmymoney/templates/jp/brokerage.kmt
-share/apps/kmymoney/templates/jp/business.kmt
-share/apps/kmymoney/templates/jp/carloan.kmt
-share/apps/kmymoney/templates/jp/cdmoneymkt.kmt
-share/apps/kmymoney/templates/jp/checkbook.kmt
-share/apps/kmymoney/templates/jp/childcare.kmt
-share/apps/kmymoney/templates/jp/common.kmt
-share/apps/kmymoney/templates/jp/eduloan.kmt
-share/apps/kmymoney/templates/jp/fixedassets.kmt
-share/apps/kmymoney/templates/jp/homeloan.kmt
-share/apps/kmymoney/templates/jp/homeown.kmt
-share/apps/kmymoney/templates/jp/otherloan.kmt
-share/apps/kmymoney/templates/jp/renter.kmt
-share/apps/kmymoney/templates/jp/retiremt.kmt
-share/apps/kmymoney/templates/jp/spouseinc.kmt
-share/apps/kmymoney/templates/jp/spouseretire.kmt
+share/apps/kmymoney/templates/ja_JP/
+share/apps/kmymoney/templates/ja_JP/brokerage.kmt
+share/apps/kmymoney/templates/ja_JP/business.kmt
+share/apps/kmymoney/templates/ja_JP/carloan.kmt
+share/apps/kmymoney/templates/ja_JP/cdmoneymkt.kmt
+share/apps/kmymoney/templates/ja_JP/checkbook.kmt
+share/apps/kmymoney/templates/ja_JP/childcare.kmt
+share/apps/kmymoney/templates/ja_JP/common.kmt
+share/apps/kmymoney/templates/ja_JP/eduloan.kmt
+share/apps/kmymoney/templates/ja_JP/fixedassets.kmt
+share/apps/kmymoney/templates/ja_JP/full.kmt
+share/apps/kmymoney/templates/ja_JP/homeloan.kmt
+share/apps/kmymoney/templates/ja_JP/homeown.kmt
+share/apps/kmymoney/templates/ja_JP/otherloan.kmt
+share/apps/kmymoney/templates/ja_JP/renter.kmt
+share/apps/kmymoney/templates/ja_JP/retiremt.kmt
+share/apps/kmymoney/templates/ja_JP/spouseinc.kmt
+share/apps/kmymoney/templates/ja_JP/spouseretire.kmt
 share/apps/kmymoney/templates/nl_NL/
+share/apps/kmymoney/templates/nl_NL/checkbook.kmt
 share/apps/kmymoney/templates/nl_NL/default_accounts.kmt
+share/apps/kmymoney/templates/nl_NL/full.kmt
+share/apps/kmymoney/templates/nl_NL/rgs_1.1.kmt
 share/apps/kmymoney/templates/pt_BR/
 share/apps/kmymoney/templates/pt_BR/brokerage.kmt
 share/apps/kmymoney/templates/pt_BR/carloan.kmt
@@ -953,7 +958,11 @@ share/apps/kmymoney/templates/ro_RO/common.kmt
 share/apps/kmymoney/templates/ro_RO/default_categories-template.kmt
 share/apps/kmymoney/templates/ro_RO/homeloan.kmt
 share/apps/kmymoney/templates/ru_RU/
+share/apps/kmymoney/templates/ru_RU/common.kmt
 share/apps/kmymoney/templates/ru_RU/default_accounts.kmt
+share/apps/kmymoney/templates/ru_RU/homeloan.kmt
+share/apps/kmymoney/templates/ru_RU/homeown.kmt
+share/apps/kmymoney/templates/ru_RU/renter.kmt
 share/apps/kmymoney/templates/sk/
 share/apps/kmymoney/templates/sk/brokerage.kmt
 share/apps/kmymoney/templates/sk/carloan.kmt
@@ -1046,6 +1055,7 @@ share/doc/HTML/de/kmymoney/details-reports.docbook
 share/doc/HTML/de/kmymoney/details-schedules.docbook
 share/doc/HTML/de/kmymoney/details-search.docbook
 share/doc/HTML/de/kmymoney/details-settings.docbook
+share/doc/HTML/de/kmymoney/details-tags.docbook
 share/doc/HTML/de/kmymoney/details-widgets.docbook
 share/doc/HTML/de/kmymoney/faq.docbook
 share/doc/HTML/de/kmymoney/firsttime.docbook
@@ -1646,6 +1656,7 @@ share/icons/hicolor/128x128/apps/kmymoney.png
 share/icons/hicolor/128x128/mimetypes/application-x-kmymoney.png
 share/icons/hicolor/16x16/apps/kmymoney.png
 share/icons/hicolor/16x16/mimetypes/application-x-kmymoney.png
+share/icons/hicolor/22x22/apps/kmymoney.png
 share/icons/hicolor/22x22/mimetypes/application-x-kmymoney.png
 share/icons/hicolor/32x32/apps/kmymoney.png
 share/icons/hicolor/32x32/mimetypes/application-x-kmymoney.png
@@ -1660,8 +1671,6 @@ share/icons/locolor/16x16/apps/kmymoney.png
 share/icons/locolor/32x32/
 share/icons/locolor/32x32/apps/
 share/icons/locolor/32x32/apps/kmymoney.png
-share/kde4/services/ibanbicdata/
-share/kde4/services/ibanbicdata/germany.desktop
 share/kde4/services/kcm_kmm_icalendarexport.desktop
 share/kde4/services/kcm_kmm_printcheck.desktop
 share/kde4/services/kmm_csvexport.desktop
@@ -1676,9 +1685,6 @@ share/kde4/services/kmymoney-ibanbic-delegate.desktop
 share/kde4/services/kmymoney-ibanbic-storageplugin.desktop
 share/kde4/services/kmymoney-nationalaccount-delegate.desktop
 share/kde4/services/kmymoney-nationalaccount-storageplugin.desktop
-share/kde4/services/kmymoney-nationalorders.desktop
-share/kde4/services/kmymoney-nationalordersui.desktop
-share/kde4/services/kmymoney-nationalstorageplugin.desktop
 share/kde4/services/kmymoney-sepaorders.desktop
 share/kde4/services/kmymoney-sepaordersui.desktop
 share/kde4/services/kmymoney-sepastorageplugin.desktop
@@ -1717,7 +1723,6 @@ share/locale/sk/LC_MESSAGES/kmymoney.mo
 share/locale/sv/LC_MESSAGES/kmymoney.mo
 share/locale/tr/LC_MESSAGES/kmymoney.mo
 share/locale/uk/LC_MESSAGES/kmymoney.mo
-share/locale/zh_CN/LC_MESSAGES/kmymoney.mo
 share/locale/zh_TW/LC_MESSAGES/kmymoney.mo
 share/mime/packages/x-kmymoney.xml
 @exec %D/bin/update-desktop-database
