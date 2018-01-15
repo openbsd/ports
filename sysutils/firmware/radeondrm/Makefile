@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.5 2015/09/28 07:16:02 jsg Exp $
+# $OpenBSD: Makefile,v 1.6 2018/01/15 15:15:42 jsg Exp $
 
 FW_DRIVER=	radeondrm
-FW_VER=		20150927
+FW_VER=		20170119
 DISTNAME=	radeon-firmware-${FW_VER}
 
 MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 
 HOMEPAGE=	https://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/tree/radeon
 
-FIRMWARE= \
+PREV_FIRMWARE= \
 ARUBA_me.bin ARUBA_pfp.bin ARUBA_rlc.bin BARTS_mc.bin BARTS_me.bin \
 BARTS_pfp.bin BARTS_smc.bin BONAIRE_ce.bin BONAIRE_mc.bin \
 BONAIRE_mc2.bin BONAIRE_me.bin BONAIRE_mec.bin BONAIRE_pfp.bin \
@@ -45,8 +45,11 @@ TURKS_me.bin TURKS_pfp.bin TURKS_smc.bin VERDE_ce.bin VERDE_mc.bin \
 VERDE_mc2.bin VERDE_me.bin VERDE_pfp.bin VERDE_rlc.bin VERDE_smc.bin
 
 do-install:
-.for i in ${FIRMWARE}
-	${INSTALL_DATA} ${WRKDIR}/radeon/$i \
+	${INSTALL_DATA_DIR} ${PREFIX}/firmware/radeon
+	${INSTALL_DATA} ${WRKDIR}/radeon/*.bin \
+	    ${PREFIX}/firmware/radeon/
+.for i in ${PREV_FIRMWARE}
+	${INSTALL_DATA} ${WRKDIR}/radeon-20150927/$i \
 	    ${PREFIX}/firmware/radeon-${i:L:S/.bin//}
 .endfor
 	${INSTALL_DATA} ${WRKDIR}/radeon/LICENSE.radeon \
