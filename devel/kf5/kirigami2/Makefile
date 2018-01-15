@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2018/01/14 13:42:33 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.3 2018/01/15 08:07:44 ajacoutot Exp $
 
 COMMENT =	QtQuick based components set
 DISTNAME =	kirigami2-${VERSION}
 PKGNAME =	kf5-${DISTNAME}
+REVISION =	0
 
 SHARED_LIBS +=  KF5Kirigami2              0.0 # 5.41
 
