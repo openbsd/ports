@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.271 2018/01/15 11:45:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.272 2018/01/15 11:48:48 sthen Exp $
 
 BROKEN-aarch64=	linker problems with BlocksRuntime that only show up at runtime
 
@@ -75,7 +75,8 @@ BUILD_DEPENDS=		security/libsrtp>=1.4.4 # statically linked
 
 MASTER_SITES=	https://downloads.asterisk.org/pub/telephony/asterisk/releases/ \
 		https://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
-MASTER_SITES0=	http://www.pjsip.org/release/${PJ_V}/
+MASTER_SITES0=	https://raw.githubusercontent.com/asterisk/third-party/master/pjproject/$(PJ_V)/ \
+		http://www.pjsip.org/release/${PJ_V}/
 
 USE_GMAKE=		Yes
 
