@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2017/03/02 12:19:22 pascal Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/01/15 23:26:33 pascal Exp $
 %%amd64%%
 %%i386%%
 @bin bin/bin2obj
@@ -568,6 +568,9 @@ lib/fpc/${V}/units/${CONFIG}/fcl-image/xwdfile.ppu
 lib/fpc/${V}/units/${CONFIG}/fcl-js/
 lib/fpc/${V}/units/${CONFIG}/fcl-js/jsbase.o
 lib/fpc/${V}/units/${CONFIG}/fcl-js/jsbase.ppu
+lib/fpc/${V}/units/${CONFIG}/fcl-js/jsminifier.o
+lib/fpc/${V}/units/${CONFIG}/fcl-js/jsminifier.ppu
+lib/fpc/${V}/units/${CONFIG}/fcl-js/jsminifier.rsj
 lib/fpc/${V}/units/${CONFIG}/fcl-js/jsparser.o
 lib/fpc/${V}/units/${CONFIG}/fcl-js/jsparser.ppu
 lib/fpc/${V}/units/${CONFIG}/fcl-js/jsparser.rsj
@@ -588,6 +591,9 @@ lib/fpc/${V}/units/${CONFIG}/fcl-json/fpjson.rsj
 lib/fpc/${V}/units/${CONFIG}/fcl-json/fpjsonrtti.o
 lib/fpc/${V}/units/${CONFIG}/fcl-json/fpjsonrtti.ppu
 lib/fpc/${V}/units/${CONFIG}/fcl-json/fpjsonrtti.rsj
+lib/fpc/${V}/units/${CONFIG}/fcl-json/fpjsontopas.o
+lib/fpc/${V}/units/${CONFIG}/fcl-json/fpjsontopas.ppu
+lib/fpc/${V}/units/${CONFIG}/fcl-json/fpjsontopas.rsj
 lib/fpc/${V}/units/${CONFIG}/fcl-json/jsonconf.o
 lib/fpc/${V}/units/${CONFIG}/fcl-json/jsonconf.ppu
 lib/fpc/${V}/units/${CONFIG}/fcl-json/jsonconf.rsj
@@ -613,6 +619,11 @@ lib/fpc/${V}/units/${CONFIG}/fcl-net/ssockets.o
 lib/fpc/${V}/units/${CONFIG}/fcl-net/ssockets.ppu
 lib/fpc/${V}/units/${CONFIG}/fcl-net/ssockets.rsj
 lib/fpc/${V}/units/${CONFIG}/fcl-passrc/
+lib/fpc/${V}/units/${CONFIG}/fcl-passrc/pasresolveeval.o
+lib/fpc/${V}/units/${CONFIG}/fcl-passrc/pasresolveeval.ppu
+lib/fpc/${V}/units/${CONFIG}/fcl-passrc/pasresolveeval.rsj
+lib/fpc/${V}/units/${CONFIG}/fcl-passrc/pasresolver.o
+lib/fpc/${V}/units/${CONFIG}/fcl-passrc/pasresolver.ppu
 lib/fpc/${V}/units/${CONFIG}/fcl-passrc/passrcutil.o
 lib/fpc/${V}/units/${CONFIG}/fcl-passrc/passrcutil.ppu
 lib/fpc/${V}/units/${CONFIG}/fcl-passrc/pastounittest.o
@@ -621,15 +632,18 @@ lib/fpc/${V}/units/${CONFIG}/fcl-passrc/pastounittest.rsj
 lib/fpc/${V}/units/${CONFIG}/fcl-passrc/pastree.o
 lib/fpc/${V}/units/${CONFIG}/fcl-passrc/pastree.ppu
 lib/fpc/${V}/units/${CONFIG}/fcl-passrc/pastree.rsj
+lib/fpc/${V}/units/${CONFIG}/fcl-passrc/pasuseanalyzer.o
+lib/fpc/${V}/units/${CONFIG}/fcl-passrc/pasuseanalyzer.ppu
 lib/fpc/${V}/units/${CONFIG}/fcl-passrc/paswrite.o
 lib/fpc/${V}/units/${CONFIG}/fcl-passrc/paswrite.ppu
 lib/fpc/${V}/units/${CONFIG}/fcl-passrc/pparser.o
 lib/fpc/${V}/units/${CONFIG}/fcl-passrc/pparser.ppu
-lib/fpc/${V}/units/${CONFIG}/fcl-passrc/pparser.rsj
 lib/fpc/${V}/units/${CONFIG}/fcl-passrc/pscanner.o
 lib/fpc/${V}/units/${CONFIG}/fcl-passrc/pscanner.ppu
 lib/fpc/${V}/units/${CONFIG}/fcl-passrc/pscanner.rsj
 lib/fpc/${V}/units/${CONFIG}/fcl-pdf/
+lib/fpc/${V}/units/${CONFIG}/fcl-pdf/fpfonttextmapping.o
+lib/fpc/${V}/units/${CONFIG}/fcl-pdf/fpfonttextmapping.ppu
 lib/fpc/${V}/units/${CONFIG}/fcl-pdf/fpparsettf.o
 lib/fpc/${V}/units/${CONFIG}/fcl-pdf/fpparsettf.ppu
 lib/fpc/${V}/units/${CONFIG}/fcl-pdf/fppdf.o
@@ -638,6 +652,8 @@ lib/fpc/${V}/units/${CONFIG}/fcl-pdf/fpttf.o
 lib/fpc/${V}/units/${CONFIG}/fcl-pdf/fpttf.ppu
 lib/fpc/${V}/units/${CONFIG}/fcl-pdf/fpttfencodings.o
 lib/fpc/${V}/units/${CONFIG}/fcl-pdf/fpttfencodings.ppu
+lib/fpc/${V}/units/${CONFIG}/fcl-pdf/fpttfsubsetter.o
+lib/fpc/${V}/units/${CONFIG}/fcl-pdf/fpttfsubsetter.ppu
 lib/fpc/${V}/units/${CONFIG}/fcl-process/
 lib/fpc/${V}/units/${CONFIG}/fcl-process/dbugintf.o
 lib/fpc/${V}/units/${CONFIG}/fcl-process/dbugintf.ppu
@@ -945,6 +961,8 @@ lib/fpc/${V}/units/${CONFIG}/fcl-web/httpdefs.ppu
 lib/fpc/${V}/units/${CONFIG}/fcl-web/httpdefs.rsj
 lib/fpc/${V}/units/${CONFIG}/fcl-web/httpprotocol.o
 lib/fpc/${V}/units/${CONFIG}/fcl-web/httpprotocol.ppu
+lib/fpc/${V}/units/${CONFIG}/fcl-web/httproute.o
+lib/fpc/${V}/units/${CONFIG}/fcl-web/httproute.ppu
 lib/fpc/${V}/units/${CONFIG}/fcl-web/iniwebsession.o
 lib/fpc/${V}/units/${CONFIG}/fcl-web/iniwebsession.ppu
 lib/fpc/${V}/units/${CONFIG}/fcl-web/iniwebsession.rsj
@@ -955,6 +973,11 @@ lib/fpc/${V}/units/${CONFIG}/fcl-web/restcodegen.ppu
 lib/fpc/${V}/units/${CONFIG}/fcl-web/sqldbwebdata.o
 lib/fpc/${V}/units/${CONFIG}/fcl-web/sqldbwebdata.ppu
 lib/fpc/${V}/units/${CONFIG}/fcl-web/sqldbwebdata.rsj
+lib/fpc/${V}/units/${CONFIG}/fcl-web/uhpack.ppu
+lib/fpc/${V}/units/${CONFIG}/fcl-web/uhpackimp.o
+lib/fpc/${V}/units/${CONFIG}/fcl-web/uhpackimp.ppu
+lib/fpc/${V}/units/${CONFIG}/fcl-web/uhpacktables.o
+lib/fpc/${V}/units/${CONFIG}/fcl-web/uhpacktables.ppu
 lib/fpc/${V}/units/${CONFIG}/fcl-web/webjsonrpc.o
 lib/fpc/${V}/units/${CONFIG}/fcl-web/webjsonrpc.ppu
 lib/fpc/${V}/units/${CONFIG}/fcl-web/webpage.o
@@ -2064,9 +2087,12 @@ lib/fpc/${V}/units/${CONFIG}/utmp/utmp.o
 lib/fpc/${V}/units/${CONFIG}/utmp/utmp.ppu
 lib/fpc/${V}/units/${CONFIG}/x11/
 lib/fpc/${V}/units/${CONFIG}/x11/cursorfont.ppu
+lib/fpc/${V}/units/${CONFIG}/x11/deckeysym.ppu
 lib/fpc/${V}/units/${CONFIG}/x11/fontconfig.o
 lib/fpc/${V}/units/${CONFIG}/x11/fontconfig.ppu
+lib/fpc/${V}/units/${CONFIG}/x11/hpkeysym.ppu
 lib/fpc/${V}/units/${CONFIG}/x11/keysym.ppu
+lib/fpc/${V}/units/${CONFIG}/x11/sunkeysym.ppu
 lib/fpc/${V}/units/${CONFIG}/x11/x.o
 lib/fpc/${V}/units/${CONFIG}/x11/x.ppu
 lib/fpc/${V}/units/${CONFIG}/x11/xatom.ppu
@@ -2074,6 +2100,7 @@ lib/fpc/${V}/units/${CONFIG}/x11/xcms.o
 lib/fpc/${V}/units/${CONFIG}/x11/xcms.ppu
 lib/fpc/${V}/units/${CONFIG}/x11/xf86dga.o
 lib/fpc/${V}/units/${CONFIG}/x11/xf86dga.ppu
+lib/fpc/${V}/units/${CONFIG}/x11/xf86keysym.ppu
 lib/fpc/${V}/units/${CONFIG}/x11/xf86vmode.o
 lib/fpc/${V}/units/${CONFIG}/x11/xf86vmode.ppu
 lib/fpc/${V}/units/${CONFIG}/x11/xfixes.o
