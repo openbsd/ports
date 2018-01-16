@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2018/01/14 12:27:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2018/01/16 14:03:45 sthen Exp $
 
 SHARED_LIBS +=	lz4                       2.0
 
@@ -6,8 +6,7 @@ COMMENT=	fast BSD-licensed data compression
 
 GH_ACCOUNT=	lz4
 GH_PROJECT=	lz4
-GH_TAGNAME=	v1.8.1
-REVISION=	0
+GH_TAGNAME=	v1.8.1.2
 
 CATEGORIES=	archivers
 

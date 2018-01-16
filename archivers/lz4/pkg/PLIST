@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.5 2017/08/22 10:14:04 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/01/16 14:03:45 sthen Exp $
 @bin bin/lz4
-@bin bin/lz4c
+bin/lz4c
 bin/lz4cat
 bin/unlz4
 include/lz4.h
