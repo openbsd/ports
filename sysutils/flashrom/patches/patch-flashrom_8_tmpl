@@ -1,0 +1,14 @@
+$OpenBSD: patch-flashrom_8_tmpl,v 1.1 2018/01/16 22:16:41 sthen Exp $
+
+Index: flashrom.8.tmpl
+--- flashrom.8.tmpl.orig
++++ flashrom.8.tmpl
+@@ -1144,7 +1144,7 @@ On OpenBSD, you can obtain raw access permission by se
+ .B "securelevel=-1"
+ in
+ .B "/etc/rc.securelevel"
+-and rebooting, or rebooting into single user mode.
++and rebooting, or rebooting into single user mode (preferred).
+ .SH BUGS
+ Please report any bugs to the
+ .MTOB "flashrom@flashrom.org" "flashrom mailing list" .

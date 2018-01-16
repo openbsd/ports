@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.6 2017/11/05 12:00:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2018/01/16 22:16:41 sthen Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-COMMENT=	flash-ROM programmer for BIOS etc
+COMMENT=	flash ROM programmer for BIOS etc
 
-DISTNAME=	flashrom-0.9.9.1
+DISTNAME=	flashrom-1.0
 EXTRACT_SUFX=	.tar.bz2
 
 CATEGORIES=	sysutils
 
-HOMEPAGE=	http://www.flashrom.org/
+HOMEPAGE=	https://www.flashrom.org/
 
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	c ftdi usb-1.0 usb z
 
-MASTER_SITES=	http://download.flashrom.org/releases/
+MASTER_SITES=	https://download.flashrom.org/releases/
 
 # pciutils' libpci.a is linked statically; a patched version is required.
 BUILD_DEPENDS=	sysutils/pciutils:patch
