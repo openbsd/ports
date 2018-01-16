@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/11/15 07:19:50 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2018/01/16 08:51:34 bentley Exp $
 
 COMMENT =	WAD composer for Doom, Heretic, Hexen, and Strife
 
 GH_ACCOUNT =	Doom-Utils
 GH_PROJECT =	deutex
-GH_TAGNAME =	v5.1.0
+GH_TAGNAME =	v5.1.1
 
 CATEGORIES =	archivers
 
