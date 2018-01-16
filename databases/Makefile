@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.351 2018/01/14 13:12:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.352 2018/01/16 01:42:40 jeremy Exp $
 
      SUBDIR =
      SUBDIR += apache-couchdb
@@ -206,6 +206,7 @@
      SUBDIR += riak
      SUBDIR += ruby-amalgalite,ruby23
      SUBDIR += ruby-amalgalite,ruby24
+     SUBDIR += ruby-amalgalite,ruby25
      SUBDIR += ruby-hiera3
      SUBDIR += ruby-hiera-eyaml
      SUBDIR += ruby-hiera-eyaml-gpg
@@ -213,22 +214,29 @@
      SUBDIR += ruby-kirbybase
      SUBDIR += ruby-ldap,ruby23
      SUBDIR += ruby-ldap,ruby24
+     SUBDIR += ruby-ldap,ruby25
      SUBDIR += ruby-mysql,ruby23
      SUBDIR += ruby-mysql,ruby24
+     SUBDIR += ruby-mysql,ruby25
      SUBDIR += ruby-mysql2,ruby23
      SUBDIR += ruby-mysql2,ruby24
+     SUBDIR += ruby-mysql2,ruby25
      SUBDIR += ruby-pg,ruby23
      SUBDIR += ruby-pg,ruby24
+     SUBDIR += ruby-pg,ruby25
      SUBDIR += ruby-redis
      SUBDIR += ruby-redis-namespace
      SUBDIR += ruby-resque
      SUBDIR += ruby-sequel
      SUBDIR += ruby-sequel_pg,ruby23
      SUBDIR += ruby-sequel_pg,ruby24
+     SUBDIR += ruby-sequel_pg,ruby25
      SUBDIR += ruby-sqlite3,ruby23
      SUBDIR += ruby-sqlite3,ruby24
+     SUBDIR += ruby-sqlite3,ruby25
      SUBDIR += ruby-tiny_tds,ruby23
      SUBDIR += ruby-tiny_tds,ruby24
+     SUBDIR += ruby-tiny_tds,ruby25
      SUBDIR += sharedance
      SUBDIR += skytools
      SUBDIR += soprano
