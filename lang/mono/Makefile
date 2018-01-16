@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.114 2018/01/03 16:35:53 robert Exp $
+# $OpenBSD: Makefile,v 1.115 2018/01/16 16:12:54 robert Exp $
 
 USE_WXNEEDED=	Yes
 
@@ -11,7 +11,7 @@ DISTNAME=	mono-${V}
 
 CATEGORIES=	lang devel
 
-SHARED_LIBS +=  mono-2.0		1.0	# .0.0
+SHARED_LIBS +=  mono-2.0		0.0	# .0.0
 SHARED_LIBS +=  monoboehm-2.0           1.0     # .0.0
 SHARED_LIBS +=  monosgen-2.0            0.0	# .1.0
 SHARED_LIBS +=  mono-profiler-iomap	0.0	# .0.0

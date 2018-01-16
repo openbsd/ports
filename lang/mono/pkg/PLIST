@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2018/01/03 16:35:53 robert Exp $
+@comment $OpenBSD: PLIST,v 1.28 2018/01/16 16:12:54 robert Exp $
 bin/al
 bin/al2
 bin/caspol
@@ -62,7 +62,7 @@ bin/mono-xmltool
 bin/monodocer
 bin/monodocs2html
 bin/monodocs2slashdoc
-bin/monograph
+@bin bin/monograph
 bin/monolinker
 bin/monop
 bin/monop2
