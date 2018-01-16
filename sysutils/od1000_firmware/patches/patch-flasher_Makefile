@@ -1,0 +1,16 @@
+$OpenBSD: patch-flasher_Makefile,v 1.1.1.1 2018/01/16 20:30:10 sthen Exp $
+
+Index: flasher/Makefile
+--- flasher/Makefile.orig
++++ flasher/Makefile
+@@ -14,8 +14,8 @@
+ # platforms, make sure to use gmake to build this project
+ #
+ OBJS= hex.o flasher.o main.o
+-CFLAGS= -g -Wall
+-CXXFLAGS= $(CFLAGS)
++COPTFLAGS= -g -Wall
++CFLAGS?= ${COPTFLAGS}
+ LDFLAGS= -g
+ LDLIBS=
+ 

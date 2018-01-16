@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/01/16 20:30:10 sthen Exp $
+@bin bin/od1000_bootloader
+@bin bin/od1000_flasher
+share/doc/pkg-readmes/${FULLPKGNAME}
+share/od1000_firmware/
+share/od1000_firmware/OVERDRIVE1000_ROM.fd
+share/od1000_firmware/README.txt
+share/od1000_firmware/od1000_eeprom.bin
+@comment share/od1000_firmware/pic32_firmware.hex

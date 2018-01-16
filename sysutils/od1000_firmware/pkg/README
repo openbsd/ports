@@ -1,0 +1,38 @@
+$OpenBSD: README,v 1.1.1.1 2018/01/16 20:30:10 sthen Exp $
+
++-------------------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-------------------------------------------------------------------------------
+
+Updating firmware on the SOFTIRON OverDrive 1000
+------------------------------------------------
+
+Firmware maintenance is normally locked on this machine. Enabling it requires
+physical access: press maintenance button on rear panel ATX shield and hold
+for 5 seconds to unlock for 10 minutes, or press and hold for 10 seconds to
+unlock until the USB console is disconnected.
+
+For typical use, unlock firmware updates as above, then:
+
++------------------------------------------------------------------------------
+| # od1000_flasher --program --verify \
+|     ${PREFIX}/share/od1000_firmware/OVERDRIVE1000_ROM.fd --verbose --flash
+| Opening the Overdrive 1000 flasher device.
+| Holding Device in Reset.
+| Erasing flash.
+| Programming flash.
+| [...]
+| Verifying flash.
+| [...]
+| Done.
++------------------------------------------------------------------------------
+
+It's also possible to update the EEPROM and PIC32 firmware.
+See ${PREFIX}/share/od1000_firmware/README.txt and the SOFTIRON manuals,
+e.g. http://cdn.softiron.com/OD1000_QSGv1.pdf
+
+The current PIC32 firmware version is displayed in the attach message on the
+host where the console is connected, for example the following message shows
+that the machine is already at 1.02:
+
+umodem1 at uhub1 port 2 configuration 1 interface 0 "SoftIron, Inc. OverDrive 1000" rev 2.00/1.02 addr 2

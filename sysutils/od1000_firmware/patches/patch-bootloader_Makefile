@@ -1,0 +1,15 @@
+$OpenBSD: patch-bootloader_Makefile,v 1.1.1.1 2018/01/16 20:30:10 sthen Exp $
+
+Index: bootloader/Makefile
+--- bootloader/Makefile.orig
++++ bootloader/Makefile
+@@ -14,7 +14,8 @@
+ # platforms, make sure to use gmake to build this project
+ #
+ OBJS= hex.o bootloader.o main.o
+-CFLAGS= -g -Wall
++COPTFLAGS= -g -Wall
++CFLAGS?= ${COPTFLAGS}
+ CXXFLAGS= $(CFLAGS)
+ LDFLAGS= -g
+ LDLIBS=
