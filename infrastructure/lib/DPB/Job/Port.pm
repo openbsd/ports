@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.176 2018/01/03 23:19:51 espie Exp $
+# $OpenBSD: Port.pm,v 1.177 2018/01/16 21:51:44 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -1322,6 +1322,7 @@ sub tweak_msg
 	if (defined $self->{tracked} && $self->{tracked} == 1) {
 		# we tracked already, so never do it again
 		$self->{tracked} = 0;
+		delete $self->{override};
 		# optimistic grab of last line of file
 		my $line = $self->peek(150);
 		chomp $line;
