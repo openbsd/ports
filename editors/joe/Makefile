@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.50 2017/11/04 21:59:37 fcambus Exp $
+# $OpenBSD: Makefile,v 1.51 2018/01/16 22:09:27 sthen Exp $
 
 COMMENT=		Joe's Own Editor
 
-DISTNAME=		joe-4.5
+DISTNAME=		joe-4.6
 CATEGORIES=		editors
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=joe-editor/}
 
@@ -11,7 +11,7 @@ HOMEPAGE=		http://joe-editor.sourceforge.net/
 # GPLv2 only
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		c ncurses m util
+WANTLIB=		c curses m util
 
 BUILD_DEPENDS=		converters/libiconv
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2017/11/04 21:59:37 fcambus Exp $
+@comment $OpenBSD: PLIST,v 1.20 2018/01/16 22:09:27 sthen Exp $
 bin/jmacs
 @bin bin/joe
 bin/jpico
@@ -8,6 +8,11 @@ bin/rjoe
 man/ru/
 man/ru/man1/
 @man man/ru/man1/joe.1
+@comment share/applications/
+@comment share/applications/jmacs.desktop
+@comment share/applications/joe.desktop
+@comment share/applications/jpico.desktop
+@comment share/applications/jstar.desktop
 share/doc/joe/
 share/doc/joe/ChangeLog
 share/doc/joe/NEWS.md
