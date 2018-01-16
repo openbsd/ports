@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2017/11/04 15:45:35 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.15 2018/01/16 01:43:10 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gemtest
@@ -22,7 +22,6 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/pg/basic_type_mapping.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/pg/coder.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/pg/connection.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/pg/constants.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/pg/deprecated_constants.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/pg/exceptions.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/pg/result.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/pg/text_decoder.rb
