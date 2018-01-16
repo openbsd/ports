@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.8 2017/05/30 13:12:30 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.9 2018/01/16 13:47:46 sthen Exp $
 @option is-branch
 @conflict freeradius-*
 @conflict radiusd-cistron-*
@@ -351,6 +351,8 @@ share/examples/freeradius/certs/ca.cnf
 @sample ${FREERADIUS_ETC}/certs/ca.cnf
 share/examples/freeradius/certs/client.cnf
 @sample ${FREERADIUS_ETC}/certs/client.cnf
+share/examples/freeradius/certs/inner-server.cnf
+@sample ${FREERADIUS_ETC}/certs/inner-server.cnf
 share/examples/freeradius/certs/server.cnf
 @sample ${FREERADIUS_ETC}/certs/server.cnf
 share/examples/freeradius/certs/xpextensions
@@ -587,7 +589,6 @@ share/examples/freeradius/mods-enabled/chap
 share/examples/freeradius/mods-enabled/date
 share/examples/freeradius/mods-enabled/detail
 share/examples/freeradius/mods-enabled/detail.log
-share/examples/freeradius/mods-enabled/dhcp
 share/examples/freeradius/mods-enabled/digest
 share/examples/freeradius/mods-enabled/dynamic_clients
 share/examples/freeradius/mods-enabled/eap

@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_modules_rlm_realm_trustrouter_c,v 1.1 2018/01/16 13:47:46 sthen Exp $
+
+Index: src/modules/rlm_realm/trustrouter.c
+--- src/modules/rlm_realm/trustrouter.c.orig
++++ src/modules/rlm_realm/trustrouter.c
+@@ -279,7 +279,7 @@ static fr_tls_server_conf_t *construct_tls(TIDC_INSTAN
+ 	ssize_t keylen;
+ 	char *hexbuf = NULL;
+ 	DH *aaa_server_dh;
+-#if OPENSSL_VERSION_NUMBER >= 0x10100000L
++#if OPENSSL_VERSION_NUMBER >= 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
+ 	const BIGNUM *dh_pubkey = NULL;
+ #endif
+ 
+@@ -287,7 +287,7 @@ static fr_tls_server_conf_t *construct_tls(TIDC_INSTAN
+ 	if (!tls) return NULL;
+ 
+ 	aaa_server_dh = tid_srvr_get_dh(server);
+-#if OPENSSL_VERSION_NUMBER >= 0x10100000L
++#if OPENSSL_VERSION_NUMBER >= 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
+ 	DH_get0_key(aaa_server_dh, &dh_pubkey, NULL);
+ 	if (NULL == dh_pubkey) {
+ 		DEBUG2("DH error");

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ldap,v 1.3 2016/06/29 16:14:43 espie Exp $
+@comment $OpenBSD: PLIST-ldap,v 1.4 2018/01/16 13:47:46 sthen Exp $
 @option is-branch
 @conflict freeradius-ldap-*
 lib/freeradius/rlm_ldap.so
@@ -13,6 +13,13 @@ share/doc/freeradius/schemas/ldap/openldap/freeradius-clients.ldif
 share/doc/freeradius/schemas/ldap/openldap/freeradius-clients.schema
 share/doc/freeradius/schemas/ldap/openldap/freeradius.ldif
 share/doc/freeradius/schemas/ldap/openldap/freeradius.schema
+share/doc/freeradius/schemas/ldap/samba/
+share/doc/freeradius/schemas/ldap/samba/README.txt
+share/doc/freeradius/schemas/ldap/samba/freeradius-attrs.ldif
+share/doc/freeradius/schemas/ldap/samba/freeradius-classes.ldif
+share/doc/freeradius/schemas/ldap/samba/freeradius-clients-attrs.ldif
+share/doc/freeradius/schemas/ldap/samba/freeradius-clients-classes.ldif
+share/doc/freeradius/schemas/ldap/samba/freeradius-user.ldif
 @mode 640
 @group _freeradius
 share/examples/freeradius/mods-available/ldap
