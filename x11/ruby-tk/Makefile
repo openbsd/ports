@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/11/05 17:17:41 jeremy Exp $
+# $OpenBSD: Makefile,v 1.2 2018/01/16 00:18:45 jeremy Exp $
 
 COMMENT=		ruby graphical tooklit using Tk
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		lang/ruby
 
-FLAVORS =		ruby24
+FLAVORS =		ruby24 ruby25
 
 CONFIGURE_STYLE=	ruby gem ext
 
