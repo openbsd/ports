@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/01/14 21:49:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2018/01/16 08:16:37 ajacoutot Exp $
 
 COMMENT =	automated OpenGL and OpenCL testsuite
 
@@ -27,7 +27,8 @@ MODPY_VERSION =		${MODPY_DEFAULT_VERSION_2}
 
 BUILD_DEPENDS =		www/py-mako \
 			graphics/waffle \
-			devel/py-six
+			devel/py-six \
+			math/py-numpy
 
 LIB_DEPENDS =		graphics/waffle \
 			graphics/png
