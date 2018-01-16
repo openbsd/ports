@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2018/01/14 20:56:23 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.14 2018/01/16 18:49:40 bluhm Exp $
 
 COMMENT =	crypto and TLS for C++11
 
 VERSION =	2.4.0
+REVISION =	0
 DISTNAME =	Botan-${VERSION}
 PKGNAME =	botan2-${VERSION}
 
@@ -17,7 +18,7 @@ MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 # BSD 2-Clause
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} bz2 c crypto lzma m z
+WANTLIB =		${COMPILER_LIBCXX} bz2 c crypto lzma m z
 
 MASTER_SITES =		${HOMEPAGE}releases/
 
@@ -28,6 +29,7 @@ MODULES =		lang/python
 MODPY_RUNDEP =		No
 
 COMPILER =		base-clang ports-gcc
+BUILD_DEPENDS =		textproc/py-docutils
 LIB_DEPENDS =		archivers/bzip2 \
 			archivers/xz
 
@@ -53,7 +55,6 @@ PKG_ARGS =		-Dx86=0
 SUBST_VARS =		CXX CXXFLAGS LIBbotan-2_VERSION
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/src/build-data/cc/{clang,gcc}.txt
 	${SUBST_CMD} ${WRKSRC}/src/build-data/os/openbsd.txt
 	${SUBST_CMD} ${WRKSRC}/src/tests/main.cpp
 	ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
@@ -77,7 +78,9 @@ post-install:
 # if we don't explicitly configure for it, it passes as a good enough gcc,
 # and then we get lots of warnings for unknown warning options...
 .if ${PROPERTIES:Mclang}
-CONFIGURE_ARGS += 	--with-external-includedir=${LOCALBASE}/include \
+CONFIGURE_ARGS +=	--with-external-includedir=${LOCALBASE}/include \
 			--with-external-libdir=${LOCALBASE}/lib \
 			--cc=clang
+.else
+CONFIGURE_ARGS +=	--cc=gcc
 .endif
