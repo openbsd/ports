@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2018/01/11 19:27:11 rpe Exp $
+# $OpenBSD: Makefile,v 1.8 2018/01/17 21:05:38 landry Exp $
 
 COMMENT =		compact self-hosted Git service
 
+VERSION =		1.3.2
 GH_ACCOUNT =		go-gitea
 GH_PROJECT =		gitea
-GH_TAGNAME =		v1.1.0
-REVISION =		3
+GH_TAGNAME =		v${VERSION}
 
 CATEGORIES =		www devel
 
@@ -16,21 +16,23 @@ MAINTAINER =		Robert Nagy <robert@openbsd.org>
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
-RUN_DEPENDS =		devel/git \
-			shells/bash
-
-WANTLIB += c pthread
+WANTLIB +=		c pthread
 
 MODULES =		lang/go
 
 MODGO_ENV =		PATH="${PORTPATH}" CFLAGS="${CFLAGS}"
 MODGO_FLAGS +=		-tags "sqlite cert"
 
-ALL_TARGET ?=		code.gitea.io/${GH_PROJECT}
-WRKSRC ?=		${MODGO_WORKSPACE}/src/${ALL_TARGET}
+RUN_DEPENDS =		devel/git \
+			shells/bash
+
+ALL_TARGET =		code.gitea.io/${GH_PROJECT}
+WRKSRC =		${MODGO_WORKSPACE}/src/${ALL_TARGET}
+
+SUBST_VARS +=		VERSION
 
 pre-configure:
-	${SUBST_CMD} ${WRKDIST}/conf/app.ini
+	${SUBST_CMD} ${WRKDIST}/{conf/app.ini,main.go}
 
 do-install:
 	${INSTALL_PROGRAM} ${MODGO_WORKSPACE}/bin/gitea ${PREFIX}/sbin

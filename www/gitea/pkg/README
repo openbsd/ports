@@ -1,0 +1,35 @@
+$OpenBSD: README,v 1.1 2018/01/17 21:05:38 landry Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Gitea can be setup to serve HTTP requests on its own, or can run behind
+HTTP proxy like relayd(8) or nginx(8). Another option is to let OpenBSD
+httpd(8) serve HTTP requests and pass it to Gitea via FastCGI protocol.
+
+Example configuration for httpd(8) and Gitea communicating via FastCGI
+======================================================================
+
+Relevant configuration directives in ${SYSCONFDIR}/httpd.conf:
+-----------------------------------------------------
+
+	# An HTTPS server using SSL/TLS
+	server "gitea.example.com" {
+		listen on $ext_addr tls port 443
+		tls certificate "/etc/ssl/gitea.example.com.pem"
+		tls key "/etc/ssl/private/gitea.example.com.key"
+		connection { max requests 500, timeout 3600 }
+		location "/*" { fastcgi socket ":10787" }
+	}
+
+Relevant configuration directives in ${SYSCONFDIR}/gitea/conf/app.ini:
+-------------------------------------------------------------
+
+	[server]
+	PROTOCOL               = fcgi
+	DOMAIN                 = gitea.example.com
+	ROOT_URL               = https://gitea.example.com
+	HTTP_ADDR              = 127.0.0.1
+	HTTP_PORT              = 10787
+	LOCAL_ROOT_URL         = https://gitea.example.com/
