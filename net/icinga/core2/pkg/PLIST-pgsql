@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-pgsql,v 1.7 2017/11/20 11:11:20 sthen Exp $
+@comment $OpenBSD: PLIST-pgsql,v 1.8 2018/01/17 12:29:08 sthen Exp $
 @conflict icinga2-<2.2.4v0
 @lib lib/icinga2/libdb_ido_pgsql.so.${LIBdb_ido_pgsql_VERSION}
 share/examples/icinga2/features-available/ido-pgsql.conf
@@ -15,3 +15,4 @@ share/icinga2-ido-pgsql/schema/upgrade/2.4.0.sql
 share/icinga2-ido-pgsql/schema/upgrade/2.5.0.sql
 share/icinga2-ido-pgsql/schema/upgrade/2.6.0.sql
 share/icinga2-ido-pgsql/schema/upgrade/2.8.0.sql
+share/icinga2-ido-pgsql/schema/upgrade/2.8.1.sql

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2018/01/17 09:57:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.76 2018/01/17 12:29:08 sthen Exp $
 
 BROKEN-arm =	needs atomic ops; __sync_add_and_fetch_4
 BROKEN-hppa =	needs atomic ops; __sync_add_and_fetch_4
@@ -7,10 +7,8 @@ COMMENT-main =	network monitoring system
 COMMENT-mysql =	MySQL support for icinga2
 COMMENT-pgsql =	PostgreSQL support for icinga2
 
-V =		2.8.0
+V =		2.8.1
 EPOCH =		0
-REVISION =	0
-REVISION-main =	1
 GH_ACCOUNT =	Icinga
 GH_PROJECT =	icinga2
 GH_TAGNAME =	v$V
@@ -110,7 +108,7 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/vim/vimfiles/$i
 	${INSTALL_DATA} ${WRKSRC}/tools/syntax/vim/$i/* ${PREFIX}/share/vim/vimfiles/$i
 .endfor
-	sed -i "s,/usr/share/icinga2,${PREFIX}/share/icinga2,g" \
+	sed -i "s,/usr/share/icinga2,${TRUEPREFIX}/share/icinga2,g" \
 		${PREFIX}/share/doc/icinga2/markdown/*.md
 
 .if ${FLAVOR:Mtest}
