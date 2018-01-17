@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: proot,v 1.59 2017/12/03 14:55:36 espie Exp $
+# $OpenBSD: proot,v 1.60 2018/01/17 13:33:54 espie Exp $
 #
 # Copyright (c) 2016 Marc Espie <espie@openbsd.org>
 #
@@ -1035,6 +1035,7 @@ sub write_mk_conf
 			print $f "$i = $state->{$i}\n";
 		}
 		print $f "PORTS_PRIVSEP = Yes\n";
+		print $f "SUDO = doas\n";
 		if (exists $state->{mkconf_lines}) {
 			print $f "\n";
 			for my $l (@{$state->{mkconf_lines}}) {
