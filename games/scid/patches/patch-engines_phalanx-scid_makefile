@@ -1,0 +1,18 @@
+$OpenBSD: patch-engines_phalanx-scid_makefile,v 1.1.1.1 2018/01/17 20:18:53 bcallah Exp $
+
+Don't hardcode CC or optimization flags.
+
+Index: engines/phalanx-scid/makefile
+--- engines/phalanx-scid/makefile.orig
++++ engines/phalanx-scid/makefile
+@@ -1,8 +1,8 @@
+-CC = gcc
++CC ?= gcc
+ 
+ ####### choose the line that makes the binary faster on your machine
+ # CFLAGS = -O3 -Wall -fomit-frame-pointer -funroll-loops
+-CFLAGS = -O3 -Wall -fomit-frame-pointer --std=gnu89 -D_GNU_SOURCE
++CFLAGS += -Wall -fomit-frame-pointer -std=gnu89 -D_GNU_SOURCE
+ # -std=c99 
+ #-Werror removed
+ 

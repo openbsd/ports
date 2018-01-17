@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_egtb_tbindex_cpp,v 1.1.1.1 2018/01/17 20:18:53 bcallah Exp $
+
+Fix formatting.
+
+Index: src/egtb/tbindex.cpp
+--- src/egtb/tbindex.cpp.orig
++++ src/egtb/tbindex.cpp
+@@ -244,7 +244,7 @@ static void* PvMalloc
+ #endif
+ 	if (NULL == pv)
+ 		{
+-		printf ("*** Cannot allocate %d bytes of memory\n", cb);
++		printf ("*** Cannot allocate %zu bytes of memory\n", cb);
+ 		exit (1);
+ 		}
+ 	cbAllocated += cb;
+@@ -1206,7 +1206,7 @@ static void VInitEnumerations (void)
+ 								rgcTriplePawnless[pi1][pi2][pi3]);
+ 					}
+ #endif
+-		printf ("\nAllocated %dk\n\n", (cbAllocated + 1023)/1024);
++		printf ("\nAllocated %luk\n\n", (cbAllocated + 1023)/1024);
+ 		}
+ 	}
+ 

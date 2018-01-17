@@ -1,0 +1,15 @@
+$OpenBSD: patch-engines_scidlet_scidlet_cpp,v 1.1.1.1 2018/01/17 20:18:53 bcallah Exp $
+
+Missing sys/select.h
+
+Index: engines/scidlet/scidlet.cpp
+--- engines/scidlet/scidlet.cpp.orig
++++ engines/scidlet/scidlet.cpp
+@@ -17,6 +17,7 @@
+ 
+ #include "../../src/engine.h"
+ 
++#include <sys/select.h>
+ #include <stdarg.h>
+ #include <stdlib.h>
+ #include <string.h>

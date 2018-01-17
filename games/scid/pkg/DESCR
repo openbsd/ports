@@ -1,0 +1,9 @@
+SCID (Shane's Chess Information Database) is an application to view,
+edit, and manage collections of chess games. It can interface with
+XBoard engines (such as Crafty and GNU Chess), and UCI engines (e.g.
+Fruit, Rybka and Stockfish). Using Scid, one may play games against
+human opponents (on the Free Internet Chess Server), or computer
+opponents. Database features include a Move Tree with statistics, Player
+Information and Photos, and General Searches for specific endings (e.g.
+pawn vs. rook or rook vs. queen), positions or players. It has a
+database with 1.4 million games (ScidBase).

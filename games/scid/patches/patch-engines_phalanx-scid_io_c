@@ -1,0 +1,70 @@
+$OpenBSD: patch-engines_phalanx-scid_io_c,v 1.1.1.1 2018/01/17 20:18:53 bcallah Exp $
+
+Fix formatting.
+
+Index: engines/phalanx-scid/io.c
+--- engines/phalanx-scid/io.c.orig
++++ engines/phalanx-scid/io.c
+@@ -160,7 +160,7 @@ sprintf( ss+strlen(ss), "  " );
+ 
+ endprint:;
+ 
+-if( s == NULL ) printf(ss); else strcpy( s, ss );
++if( s == NULL ) printf("%s",ss); else strcpy( s, ss );
+ 
+ }
+ 
+@@ -501,7 +501,7 @@ void printPV( int mpl, int lid, char *s )
+ 
+ 	sprintf( ss+strlen(ss), "\n" );
+ 
+-	if( s == NULL ) printf(ss); else strcpy(s,ss);
++	if( s == NULL ) printf("%s",ss); else strcpy(s,ss);
+ }
+ 
+ 
+@@ -529,7 +529,7 @@ if( Flag.log && s==NULL )
+ 	Flag.xboard = 0;
+ 	infoline(typ,ss);
+ 	Flag.xboard = x;
+-	fprintf(Flag.log, ss);
++	fprintf(Flag.log, "%s", ss);
+ }
+ 
+ if( Flag.xboard == 2 )
+@@ -621,7 +621,7 @@ case 5: printm( PV[0][0], ss+strlen(ss) );
+ if( s != NULL ) strcpy( s, ss );
+ else
+ {
+-	printf(ss);
++	printf("%s",ss);
+ }
+ 
+ }
+@@ -644,7 +644,7 @@ void verboseline( tmove* m, int i, int n )
+ 	sprintf( s+strlen(s), "     " );
+ 	for( j=0; j!=79; j++ ) sprintf( s+strlen(s), "" );
+ 
+-	printf(s);
++	printf("%s",s);
+ }
+ 
+ 
+@@ -678,7 +678,7 @@ void printboard(char *s)
+ 	if( Color == WHITE ) sprintf(ss+strlen(ss),"   White to move\n");
+ 	else sprintf(ss+strlen(ss),"   Black to move\n");
+ 
+-	if( s==NULL ) printf(ss); else strcpy(s,ss);
++	if( s==NULL ) printf("%s",ss); else strcpy(s,ss);
+ 
+ 	/* printf("%08X\n",G[Counter].hashboard); */
+ }
+@@ -697,7 +697,7 @@ int s;
+ if( Flag.log != NULL )
+ {
+ 	fprintf(Flag.log,"\n\nsetting position\n");
+-	fprintf(Flag.log,f);
++	fprintf(Flag.log,"%s",f);
+ 	fprintf(Flag.log,"\n\n");
+ }
+ 

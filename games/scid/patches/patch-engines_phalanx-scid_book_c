@@ -1,0 +1,27 @@
+$OpenBSD: patch-engines_phalanx-scid_book_c,v 1.1.1.1 2018/01/17 20:18:53 bcallah Exp $
+
+Fix formatting.
+
+Index: engines/phalanx-scid/book.c
+--- engines/phalanx-scid/book.c.orig
++++ engines/phalanx-scid/book.c
+@@ -364,15 +364,15 @@ int bookmove( tmove *m, int n )
+ 			for( i=0; i!=index; i++ )
+ 			{ printm( m[moves[i]], s+strlen(s) ); }
+ 			sprintf(s+strlen(s),"\n");
+-			printf(s);
++			printf("%s",s);
+ 			if( Flag.log!=NULL && Flag.ponder<2 )
+ 			{
+ 				char sm[64];
+-				if(Flag.xboard) fprintf(Flag.log,s+26);
+-				else            fprintf(Flag.log,s);
++				if(Flag.xboard) fprintf(Flag.log,"%s",s+26);
++				else            fprintf(Flag.log,"%s",s);
+ 				fprintf(Flag.log,"  selected move ");
+ 				printm( m[moves[ii]], sm );
+-				fprintf(Flag.log,sm);
++				fprintf(Flag.log,"%s",sm);
+ 				fprintf(Flag.log,"\n");
+ 			}
+ 		}
