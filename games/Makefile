@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.369 2018/01/12 22:32:56 bcallah Exp $
+# $OpenBSD: Makefile,v 1.370 2018/01/17 20:19:28 bcallah Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -220,6 +220,7 @@
      SUBDIR += roadfighter
      SUBDIR += rocksndiamonds
      SUBDIR += sauerbraten
+     SUBDIR += scid
      SUBDIR += scorched3d
      SUBDIR += scummvm
      SUBDIR += scummvm-tools
