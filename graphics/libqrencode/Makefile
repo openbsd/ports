@@ -1,21 +1,20 @@
-# $OpenBSD: Makefile,v 1.8 2016/03/16 21:19:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2018/01/17 08:31:14 bentley Exp $
 
 COMMENT=		library for encoding data in a QR Code symbol
 
-DISTNAME=		qrencode-3.4.4
-REVISION=		0
+DISTNAME=		qrencode-4.0.0
 PKGNAME=		lib${DISTNAME}
 
-SHARED_LIBS +=  qrencode             1.0      # 3.4
+SHARED_LIBS +=  qrencode             2.0      # 4.0
 
 CATEGORIES=		graphics
 
-HOMEPAGE=		http://fukuchi.org/works/qrencode/
+HOMEPAGE=		https://fukuchi.org/works/qrencode/
 
 # LGPLv2.1+
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		http://fukuchi.org/works/qrencode/
+MASTER_SITES=		https://fukuchi.org/works/qrencode/
 
 WANTLIB += c m png pthread z
 
