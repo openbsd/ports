@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2017/07/05 10:22:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2018/01/18 06:59:36 bentley Exp $
+
+BROKEN-arm=	out of memory compiling cyreposurgeon.c
 
 COMMENT=	tool for editing version-control repository history
 
