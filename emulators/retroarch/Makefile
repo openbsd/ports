@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2018/01/04 08:31:47 bentley Exp $
+# $OpenBSD: Makefile,v 1.6 2018/01/18 06:51:49 bentley Exp $
 
 COMMENT =		generic multi-emulator frontend
 
@@ -51,6 +51,10 @@ CONFIGURE_ARGS +=	--disable-jack \
 			--enable-al
 
 NO_TEST =		Yes
+
+# strip out byte order marks that break GCC 4.2
+post-extract:
+	sed -i s/$$(printf '\xef\xbb\xbf')// ${WRKSRC}/intl/msg_*
 
 pre-build:
 	${SUBST_CMD} ${WRKSRC}/retroarch.cfg
