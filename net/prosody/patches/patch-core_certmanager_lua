@@ -1,0 +1,14 @@
+$OpenBSD: patch-core_certmanager_lua,v 1.1 2018/01/18 03:22:34 danj Exp $
+
+Index: core/certmanager.lua
+--- core/certmanager.lua.orig
++++ core/certmanager.lua
+@@ -94,7 +94,7 @@ end
+ 
+ -- Built-in defaults
+ local core_defaults = {
+-	capath = "/etc/ssl/certs";
++	cafile = "/etc/ssl/cert.pem";
+ 	depth = 9;
+ 	protocol = "tlsv1+";
+ 	verify = (ssl_x509 and { "peer", "client_once", }) or "none";
