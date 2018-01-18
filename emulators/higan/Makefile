@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/12/24 06:51:38 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2018/01/18 06:30:52 bentley Exp $
 
 COMMENT =	multi-system Nintendo emulator
 
 V =		106
 DISTNAME =	higan_v$V-source
 PKGNAME =	higan-$V
+REVISION =	0
 
 USE_WXNEEDED =	Yes
 

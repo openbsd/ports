@@ -1,0 +1,32 @@
+$OpenBSD: patch-nall_intrinsics_hpp,v 1.1 2018/01/18 06:30:52 bentley Exp $
+
+Check for endianness the POSIX way.
+
+Index: nall/intrinsics.hpp
+--- nall/intrinsics.hpp.orig
++++ nall/intrinsics.hpp
+@@ -106,10 +106,8 @@ namespace nall {
+ 
+ #if defined(PLATFORM_MACOS)
+   #include <machine/endian.h>
+-#elif defined(PLATFORM_LINUX)
++#elif defined(PLATFORM_LINUX) || defined(PLATFORM_BSD)
+   #include <endian.h>
+-#elif defined(PLATFORM_BSD)
+-  #include <sys/endian.h>
+ #endif
+ 
+ /* Processor Detection */
+@@ -143,10 +141,10 @@ namespace nall {
+ 
+ namespace nall {
+ 
+-#if (defined(__BYTE_ORDER) && defined(__LITTLE_ENDIAN) && __BYTE_ORDER == __LITTLE_ENDIAN) || defined(__LITTLE_ENDIAN__) || defined(__i386__) || defined(__amd64__) || defined(_M_IX86) || defined(_M_AMD64)
++#if (defined(BYTE_ORDER) && BYTE_ORDER == LITTLE_ENDIAN) || (defined(__BYTE_ORDER) && defined(__LITTLE_ENDIAN) && __BYTE_ORDER == __LITTLE_ENDIAN) || defined(__LITTLE_ENDIAN__) || defined(__i386__) || defined(__amd64__) || defined(_M_IX86) || defined(_M_AMD64)
+   #define ENDIAN_LSB
+   auto Intrinsics::endian() -> Endian { return Endian::LSB; }
+-#elif (defined(__BYTE_ORDER) && defined(__BIG_ENDIAN) && __BYTE_ORDER == __BIG_ENDIAN) || defined(__BIG_ENDIAN__) || defined(__powerpc__) || defined(_M_PPC)
++#elif (defined(BYTE_ORDER) && BYTE_ORDER == BIG_ENDIAN) || (defined(__BYTE_ORDER) && defined(__BIG_ENDIAN) && __BYTE_ORDER == __BIG_ENDIAN) || defined(__BIG_ENDIAN__) || defined(__powerpc__) || defined(_M_PPC)
+   #define ENDIAN_MSB
+   auto Intrinsics::endian() -> Endian { return Endian::MSB; }
+ #else
