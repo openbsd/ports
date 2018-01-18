@@ -1,8 +1,8 @@
-$OpenBSD: patch-configure_py,v 1.5 2017/10/09 20:05:07 bluhm Exp $
+$OpenBSD: patch-configure_py,v 1.6 2018/01/18 18:12:31 bluhm Exp $
 Index: configure.py
 --- configure.py.orig
 +++ configure.py
-@@ -2916,10 +2916,6 @@ def set_defaults_for_unset_options(options, info_arch,
+@@ -2664,10 +2664,6 @@ def set_defaults_for_unset_options(options, info_arch,
              if have_program('clang++'):
                  options.compiler = 'clang'
          elif options.os == 'openbsd':
