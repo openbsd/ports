@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2017/01/03 00:28:54 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.8 2018/01/18 09:30:58 bentley Exp $
 @bin bin/chocolate-doom
 @bin bin/chocolate-doom-setup
 @bin bin/chocolate-heretic
@@ -16,11 +16,15 @@
 @man man/man5/heretic.cfg.5
 @man man/man5/hexen.cfg.5
 @man man/man5/strife.cfg.5
+@man man/man6/chocolate-doom-setup.6
 @man man/man6/chocolate-doom.6
+@man man/man6/chocolate-heretic-setup.6
 @man man/man6/chocolate-heretic.6
+@man man/man6/chocolate-hexen-setup.6
 @man man/man6/chocolate-hexen.6
 @man man/man6/chocolate-server.6
 @man man/man6/chocolate-setup.6
+@man man/man6/chocolate-strife-setup.6
 @man man/man6/chocolate-strife.6
 share/appdata/
 share/appdata/chocolate-doom.appdata.xml
@@ -34,27 +38,39 @@ share/applications/chocolate-setup.desktop
 share/applications/chocolate-strife.desktop
 share/applications/screensavers/
 share/applications/screensavers/chocolate-doom-screensaver.desktop
+share/bash-completion/completions/chocolate-doom
+share/bash-completion/completions/chocolate-heretic
+share/bash-completion/completions/chocolate-hexen
+share/bash-completion/completions/chocolate-strife
 share/doc/chocolate-doom/
+share/doc/chocolate-doom/CMDLINE.doom
 share/doc/chocolate-doom/ChangeLog
+share/doc/chocolate-doom/INSTALL.doom
 share/doc/chocolate-doom/NEWS.md
 share/doc/chocolate-doom/NOT-BUGS.md
 share/doc/chocolate-doom/PHILOSOPHY.md
 share/doc/chocolate-doom/README.Music.md
 share/doc/chocolate-doom/README.md
 share/doc/chocolate-heretic/
+share/doc/chocolate-heretic/CMDLINE.heretic
 share/doc/chocolate-heretic/ChangeLog
+share/doc/chocolate-heretic/INSTALL.heretic
 share/doc/chocolate-heretic/NEWS.md
 share/doc/chocolate-heretic/PHILOSOPHY.md
 share/doc/chocolate-heretic/README.Music.md
 share/doc/chocolate-heretic/README.md
 share/doc/chocolate-hexen/
+share/doc/chocolate-hexen/CMDLINE.hexen
 share/doc/chocolate-hexen/ChangeLog
+share/doc/chocolate-hexen/INSTALL.hexen
 share/doc/chocolate-hexen/NEWS.md
 share/doc/chocolate-hexen/PHILOSOPHY.md
 share/doc/chocolate-hexen/README.Music.md
 share/doc/chocolate-hexen/README.md
 share/doc/chocolate-strife/
+share/doc/chocolate-strife/CMDLINE.strife
 share/doc/chocolate-strife/ChangeLog
+share/doc/chocolate-strife/INSTALL.strife
 share/doc/chocolate-strife/NEWS.md
 share/doc/chocolate-strife/PHILOSOPHY.md
 share/doc/chocolate-strife/README.Music.md

@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2017/11/13 11:25:27 bentley Exp $
+# $OpenBSD: Makefile,v 1.23 2018/01/18 09:30:58 bentley Exp $
 
 COMMENT =	portable release of Doom, Heretic, Hexen, and Strife
-V =		2.3.0
+V =		3.0.0
 DISTNAME =	chocolate-doom-${V}
 CATEGORIES =	games x11
-REVISION =	0
 
 HOMEPAGE =	https://www.chocolate-doom.org/
 
@@ -13,10 +12,10 @@ MAINTAINER =	Ryan Freeman <ryan@slipgate.org>
 # GPLv2+
 PERMIT_PACKAGE_CDROM =		Yes
 
-WANTLIB += SDL SDL_mixer SDL_net c m png pthread samplerate z
+WANTLIB += SDL2 SDL2_mixer SDL2_net c m png samplerate z
 
-LIB_DEPENDS =	devel/sdl-mixer \
-		devel/sdl-net \
+LIB_DEPENDS =	devel/sdl2-mixer \
+		devel/sdl2-net \
 		audio/libsamplerate \
 		graphics/png
 
@@ -24,31 +23,31 @@ MASTER_SITES =	https://www.chocolate-doom.org/downloads/${V}/
 
 RUN_DEPENDS =	devel/desktop-file-utils
 
-
 CONFIGURE_STYLE =	gnu
+AUTOMAKE_VERSION =	1.15
+AUTOCONF_VERSION =	2.69
+CONFIGURE_ARGS +=	--mandir="${LOCALBASE}/man"
 
-# we don't need to require python to build
-CONFIGURE_ENV +=	HAVE_PYTHON=false
-
-MAN_5 =		chocolate-doom.cfg default.cfg \
-		chocolate-heretic.cfg heretic.cfg \
-		chocolate-hexen.cfg hexen.cfg \
-		chocolate-strife.cfg strife.cfg
-MAN_6 =		chocolate-doom chocolate-server chocolate-setup \
-		chocolate-heretic chocolate-hexen chocolate-strife
+# just used for generating manpages
+BUILD_DEPENDS =	lang/python/2.7
 
 post-extract:
 	# set correct data directory
 	@sed -i 's,"/games/doom","/doom",g' ${WRKSRC}/src/d_iwad.c
+	# set correct python binary name
+	@sed -i 's/HAVE_PYTHON, python/HAVE_PYTHON, python2/' \
+		${WRKSRC}/configure.ac
+	@sed -i 's,/usr/bin/env python,/usr/bin/env python2,' \
+		${WRKSRC}/man/docgen
+	@sed -i 's,/usr/bin/env python,/usr/bin/env python2,' \
+		${WRKSRC}/man/simplecpp
 
+pre-configure:
+	@cd ${WRKSRC}; AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
+	       AUTOCONF_VERSION=${AUTOCONF_VERSION} autoreconf -fi
+ 
 post-install:
 	# Data files get installed to this directory.
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doom/
-.for m in ${MAN_5}
-	${INSTALL_MAN} ${WRKBUILD}/man/$m.5 ${PREFIX}/man/man5/
-.endfor
-.for m in ${MAN_6}
-	${INSTALL_MAN} ${WRKBUILD}/man/$m.6 ${PREFIX}/man/man6/
-.endfor
 
 .include <bsd.port.mk>
