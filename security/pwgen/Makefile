@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.15 2016/01/31 13:35:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2018/01/18 04:09:40 danj Exp $
 
 COMMENT=	simple password generator
 
-DISTNAME=	pwgen-2.07
-REVISION=	2
+DISTNAME=	pwgen-2.08
 CATEGORIES=	security
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
-HOMEPAGE=	http://sourceforge.net/projects/pwgen/
+HOMEPAGE=	https://sourceforge.net/projects/pwgen/
 
-MASTER_SITES= 	${MASTER_SITE_SOURCEFORGE:=pwgen/}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pwgen/}
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,6 +1,8 @@
-$OpenBSD: patch-configure_in,v 1.6 2016/01/31 13:35:28 jasper Exp $
---- configure.in.orig	Tue Oct 28 04:39:37 2014
-+++ configure.in	Mon Jan 18 14:30:48 2016
+$OpenBSD: patch-configure_ac,v 1.1 2018/01/18 04:09:40 danj Exp $
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
 @@ -1,11 +1,12 @@
  AC_INIT(pwgen.c)
  AC_PREREQ(2.50)

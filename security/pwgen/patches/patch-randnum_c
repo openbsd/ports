@@ -1,6 +1,7 @@
-$OpenBSD: patch-randnum_c,v 1.4 2015/02/09 18:56:11 jasper Exp $
---- randnum.c.orig	Tue Oct 28 02:55:43 2014
-+++ randnum.c	Mon Feb  9 19:24:58 2015
+$OpenBSD: patch-randnum_c,v 1.5 2018/01/18 04:09:40 danj Exp $
+Index: randnum.c
+--- randnum.c.orig
++++ randnum.c
 @@ -16,8 +16,18 @@
  #include <fcntl.h>
  #include <errno.h>
@@ -20,7 +21,7 @@ $OpenBSD: patch-randnum_c,v 1.4 2015/02/09 18:56:11 jasper Exp $
  #ifdef HAVE_DRAND48
  extern double drand48(void);
  #endif
-@@ -76,3 +86,4 @@ int pw_random_number(max_num)
+@@ -75,3 +85,4 @@ int pw_random_number(max_num)
  	fprintf(stderr, "No entropy available!\n");
  	exit(1);
  }
