@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.848 2018/01/16 01:42:40 jeremy Exp $
+# $OpenBSD: Makefile,v 1.849 2018/01/19 14:40:46 jca Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -9,7 +9,6 @@
      SUBDIR += ap2-mod_wsgi
      SUBDIR += apache-httpd
      SUBDIR += aria2
-     SUBDIR += arora
      SUBDIR += asql
      SUBDIR += awl
      SUBDIR += awstats
