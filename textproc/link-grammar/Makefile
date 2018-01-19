@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.46 2017/12/03 13:59:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.47 2018/01/19 14:57:54 jca Exp $
 
 ONLY_FOR_ARCHS-java =	i386 amd64
+ONLY_FOR_ARCHS =	${CLANG_ARCHS} ${LLVM_ARCHS}
 
 COMMENT-main =		syntactic parser of different languages
 COMMENT-java =		Java bindings for link-grammar
