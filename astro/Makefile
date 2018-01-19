@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2015/05/19 08:49:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2018/01/19 21:55:44 jung Exp $
 
      SUBDIR =
      SUBDIR += ansiweather
@@ -9,6 +9,7 @@
      SUBDIR += libnova
      SUBDIR += luna
      SUBDIR += phoon
+     SUBDIR += py-astral
      SUBDIR += py-metar
      SUBDIR += sattrack
      SUBDIR += stellarium
