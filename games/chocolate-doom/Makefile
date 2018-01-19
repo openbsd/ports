@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2018/01/18 09:30:58 bentley Exp $
+# $OpenBSD: Makefile,v 1.24 2018/01/19 19:57:38 sthen Exp $
 
 COMMENT =	portable release of Doom, Heretic, Hexen, and Strife
 V =		3.0.0
@@ -28,8 +28,10 @@ AUTOMAKE_VERSION =	1.15
 AUTOCONF_VERSION =	2.69
 CONFIGURE_ARGS +=	--mandir="${LOCALBASE}/man"
 
-# just used for generating manpages
-BUILD_DEPENDS =	lang/python/2.7
+# python just used for generating manpages
+BUILD_DEPENDS =	lang/python/2.7 \
+		${MODGNU_AUTOCONF_DEPENDS} \
+		${MODGNU_AUTOMAKE_DEPENDS}
 
 post-extract:
 	# set correct data directory
