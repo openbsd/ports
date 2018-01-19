@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.14 2017/11/13 07:13:51 steven Exp $
+# $OpenBSD: Makefile,v 1.15 2018/01/19 15:46:58 jca Exp $
+
+BROKEN-powerpc=	configure: error: C compiler cannot create executables
 
 COMMENT=	common libraries for the CMU speech recognition engines
 
