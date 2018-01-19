@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2017/11/07 21:58:37 kili Exp $
+# $OpenBSD: Makefile,v 1.44 2018/01/19 21:57:12 kili Exp $
 
 COMMENT-main =	liberalised reimplementation of cpp in Haskell
 COMMENT-lib =	cpphs library
@@ -6,7 +6,7 @@ COMMENT-lib =	cpphs library
 DISTNAME =	cpphs-1.19.3
 PKGNAME-main =	${DISTNAME}
 PKGNAME-lib =	hs-${DISTNAME}
-REVISION-lib =	3
+REVISION-lib =	4
 CATEGORIES =	devel
 MAINTAINER =	Matthias Kilian <kili@openbsd.org>
 
@@ -29,6 +29,7 @@ RUN_DEPENDS-main =
 LIB_DEPENDS-lib =
 RUN_DEPENDS-lib =	devel/hs-old-locale \
 			devel/hs-old-time \
+			lang/ghc=${MODGHC_VER} \
 			textproc/hs-polyparse>=1.9
 BUILD_DEPENDS +=	${RUN_DEPENDS-lib}
 WANTLIB-lib =
