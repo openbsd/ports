@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2018/01/11 19:27:02 rpe Exp $
+# $OpenBSD: Makefile,v 1.6 2018/01/19 17:52:59 jca Exp $
 
 COMMENT =		RESTful DICOM server for healthcare and medical research
 
@@ -22,6 +22,9 @@ WANTLIB += dcmimgle dcmiod dcmjpeg dcmjpls dcmnet dcmpmap dcmpstat
 WANTLIB += dcmqrdb dcmrt dcmseg dcmsr dcmtls dcmtract dcmwlm gtest
 WANTLIB += i2d iconv ijg12 ijg16 ijg8 jpeg jsoncpp lua5.1 m oflog
 WANTLIB += ofstd png pugixml sqlite3 ssl tiff uuid xml2 z
+
+# c++11
+COMPILER =		base-clang ports-clang ports-gcc
 
 MODULES =		devel/cmake \
 			lang/lua \
