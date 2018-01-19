@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2015/11/21 14:21:56 rpointel Exp $
+# $OpenBSD: Makefile,v 1.3 2018/01/19 23:01:41 espie Exp $
 
 COMMENT =		disassembles SWF
 
 DISTNAME =		flasm16src
 PKGNAME =		flasm-1.62
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		security devel
 
@@ -21,7 +21,7 @@ MASTER_SITES =		http://www.nowrap.de/download/
 
 EXTRACT_SUFX =		.zip
 
-BUILD_DEPENDS =		devel/gperf \
+BUILD_DEPENDS =		devel/gperf>=3.1 \
 			devel/bison
 
 USE_GMAKE =		Yes

@@ -1,0 +1,14 @@
+$OpenBSD: patch-keywords_gperf,v 1.1 2018/01/19 23:01:41 espie Exp $
+
+Index: keywords.gperf
+--- keywords.gperf.orig
++++ keywords.gperf
+@@ -11,7 +11,7 @@ All rights reserved. See LICENSE.TXT for terms of use.
+ #ifdef MEMWATCH
+ #include "memwatch.h"
+ #endif
+-struct keyword *in_word_set(register const char *str, register unsigned int len);
++struct keyword *in_word_set(register const char *str, register size_t len);
+ %}
+ struct keyword {}
+ %%

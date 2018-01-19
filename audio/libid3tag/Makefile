@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2016/03/11 19:59:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2018/01/19 23:01:41 espie Exp $
 
 COMMENT=	library for reading ID3 tags
 
 DISTNAME=	libid3tag-0.15.1b
-REVISION=	4
+REVISION=	5
 SHARED_LIBS +=	id3tag               4.0      # .3.0
 
 CATEGORIES=	audio
@@ -19,13 +19,14 @@ MASTER_SITES=	ftp://ftp.mars.org/pub/mpeg/ \
 
 WANTLIB=	z
 
-BUILD_DEPENDS=	devel/gperf
+BUILD_DEPENDS=	devel/gperf>=3.1
 
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE=gnu
 
 post-patch:
 	cp ${FILESDIR}/id3tag.pc.in ${WRKSRC}
+	rm -f ${WRKSRC}/compat.c
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/pkgconfig

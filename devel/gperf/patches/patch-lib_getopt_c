@@ -1,15 +1,15 @@
-$OpenBSD: patch-lib_getopt_c,v 1.1 2009/03/26 08:16:30 jasper Exp $
+$OpenBSD: patch-lib_getopt_c,v 1.2 2018/01/19 23:01:41 espie Exp $
 
 Include missing header to fix 64-bit issues.
 
---- lib/getopt.c.orig	Thu Apr 16 00:09:41 1998
-+++ lib/getopt.c	Wed Mar 25 21:08:52 2009
-@@ -31,6 +31,8 @@
+Index: lib/getopt.c
+--- lib/getopt.c.orig
++++ lib/getopt.c
+@@ -29,6 +29,7 @@
  #include <config.h>
  #endif
  
 +#include <string.h>
-+
- #if !defined __STDC__ || !__STDC__
- /* This is a separate conditional since some stdc systems
-    reject `defined (const)'.  */
+ #include <stdio.h>
+ 
+ /* Comment out all this code if we are using the GNU C Library, and are not
