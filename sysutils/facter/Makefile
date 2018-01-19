@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.52 2017/12/01 13:02:52 jca Exp $
+# $OpenBSD: Makefile,v 1.53 2018/01/19 16:56:47 jca Exp $
+
+ONLY_FOR_ARCHS =	${CLANG_ARCHS} ${LLVM_ARCHS}
 
 # XXXTODO: Subpackage facter.jar for use with puppetserver
 COMMENT =		collect and display system facts
