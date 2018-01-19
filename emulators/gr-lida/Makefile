@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2017/09/25 21:25:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2018/01/19 17:58:16 jca Exp $
 
 COMMENT =		games cataloging tool and emulator launcher
 
@@ -19,6 +19,9 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB += ${COMPILER_LIBCXX} ICE QtDBus QtGui QtNetwork QtScript
 WANTLIB += QtSql QtXml SM X11 Xext Xi Xinerama Xrender c fontconfig
 WANTLIB += freetype m phonon poppler-qt4 z
+
+# c++11 (poppler-qt4)
+COMPILER =		base-clang ports-gcc
 
 MODULES =		x11/qt4
 LIB_DEPENDS =		print/poppler,,-qt4
