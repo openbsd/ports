@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2017/03/03 09:41:02 landry Exp $
+# $OpenBSD: Makefile,v 1.8 2018/01/19 09:54:42 landry Exp $
 
-V =		0.2.4
+V =		0.2.5
 COMMENT =	spectre postscript plugin for zathura
 DISTNAME =	zathura-ps-${V}
 
