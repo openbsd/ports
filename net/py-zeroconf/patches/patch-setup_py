@@ -1,0 +1,16 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2018/01/19 22:23:58 jung Exp $
+
+py-enum34 install is handled in port Makefile
+
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -55,7 +55,7 @@ setup(
+         'mDNS',
+     ],
+     install_requires=[
+-        'enum-compat',
++        #'enum-compat',
+         # netifaces 0.10.5 has a bug that results in all interfaces' netmasks
+         # to be 255.255.255.255 on Windows which breaks things. See:
+         # * https://github.com/jstasiak/python-zeroconf/issues/84
