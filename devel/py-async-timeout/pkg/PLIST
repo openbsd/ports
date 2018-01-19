@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/01/19 22:12:34 jung Exp $
+lib/python${MODPY_VERSION}/site-packages/async_timeout/
+lib/python${MODPY_VERSION}/site-packages/async_timeout-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/async_timeout-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/async_timeout-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/async_timeout-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/async_timeout-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/async_timeout/__init__.py
+lib/python${MODPY_VERSION}/site-packages/async_timeout/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/async_timeout/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
