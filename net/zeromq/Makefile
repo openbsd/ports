@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2017/12/18 21:03:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.28 2018/01/19 00:54:14 jca Exp $
 
 COMMENT =		open source message queue optimised for performance
 
@@ -24,7 +24,7 @@ LIB_DEPENDS =		security/libsodium
 USE_GMAKE =		Yes
 
 CONFIGURE_STYLE =	gnu
-
+CONFIGURE_ARGS =	--disable-Werror
 # XXX: verify tweetnacl (the default) uses proper randomness before using it
 CONFIGURE_ARGS +=	--with-libsodium
 
