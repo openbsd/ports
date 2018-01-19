@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2017/11/01 17:01:23 jeremy Exp $
+# $OpenBSD: Makefile,v 1.29 2018/01/19 17:11:35 jca Exp $
 
 COMMENT=		flexible and small GTK+ editor
 
@@ -18,6 +18,9 @@ WANTLIB += pango-1.0 pangocairo-1.0 pthread scintilla scintilla_lexers ${COMPILE
 
 MASTER_SITES=		http://www.scintilla.org/
 EXTRACT_SUFX=		.tgz
+
+# c++11
+COMPILER=		base-clang ports-clang ports-gcc
 
 LIB_DEPENDS=		x11/gtk+3 \
 			editors/scintilla
