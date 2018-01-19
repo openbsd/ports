@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.22 2017/11/25 21:50:50 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.23 2018/01/19 15:19:34 jca Exp $
+
+BROKEN-powerpc =	Unhandled exception: Bytecode validation error at offset 150, instruction 24:\
+			out of range SC index 56283
 
 COMMENT =		Not Quite Perl
 
