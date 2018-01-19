@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.144 2017/11/19 01:04:03 kili Exp $
+# $OpenBSD: Makefile,v 1.145 2018/01/19 09:18:41 fcambus Exp $
 
      SUBDIR =
      SUBDIR += R
@@ -83,6 +83,7 @@
      SUBDIR += p5-Math-Fibonacci
      SUBDIR += p5-Math-Fibonacci-Phi
      SUBDIR += p5-Math-GMP
+     SUBDIR += p5-Math-Int64
      SUBDIR += p5-Math-MatrixReal
      SUBDIR += p5-Math-Pari
      SUBDIR += p5-Math-Random-ISAAC
