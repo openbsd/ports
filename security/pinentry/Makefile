@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2017/12/14 10:38:21 jca Exp $
+# $OpenBSD: Makefile,v 1.24 2018/01/19 15:35:18 jca Exp $
 
 COMMENT-main = 	PIN or passphrase entry dialog (ncurses interface)
 COMMENT-gtk2 = 	PIN or passphrase entry dialog (gtk2 interface)
@@ -48,7 +48,8 @@ CONFIGURE_STYLE = 	gnu
 CONFIGURE_ENV = 	CPPFLAGS="-I${LOCALBASE}/include -D_XOPEN_SOURCE_EXTENDED" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS = 	--enable-pinentry-curses \
-			--disable-pinentry-qt
+			--disable-pinentry-qt \
+			--disable-pinentry-fltk
 
 MULTI_PACKAGES =	-main -gtk2 -gnome3
 
