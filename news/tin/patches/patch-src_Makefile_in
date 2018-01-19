@@ -1,7 +1,8 @@
-$OpenBSD: patch-src_Makefile_in,v 1.7 2014/04/29 16:41:36 giovanni Exp $
---- src/Makefile.in.orig	Tue Nov 26 09:11:46 2013
-+++ src/Makefile.in	Fri Apr 18 12:39:03 2014
-@@ -78,6 +78,7 @@ LINK_LIBS	= $(PCRE_LIBS) $(CANLIB) @LIBS@ $(INTL_LIBS)
+$OpenBSD: patch-src_Makefile_in,v 1.8 2018/01/19 07:39:54 giovanni Exp $
+Index: src/Makefile.in
+--- src/Makefile.in.orig
++++ src/Makefile.in
+@@ -79,6 +79,7 @@ LINK_LIBS	= $(PCRE_LIBS) $(CANLIB) @LIBS@ $(INTL_LIBS)
  # Where do you want the binary & manual page installed?
  DESTDIR	= @DESTDIR@
  INS_BINARY_DIR	= @bindir@
@@ -9,7 +10,7 @@ $OpenBSD: patch-src_Makefile_in,v 1.7 2014/04/29 16:41:36 giovanni Exp $
  INS_MANUAL_DIR	= @mandir@/man
  INS_SYSDEF_DIR	= @TIN_DEFAULTS_DIR@
  INS_MANUAL_EXT	= 1
-@@ -329,6 +330,7 @@ help :
+@@ -330,6 +331,7 @@ help :
  $(DESTDIR)$(INS_MANUAL_DIR)$(INS_MANUAL_EXT) \
  $(DESTDIR)$(INS_MANUAL_DIR)5 \
  $(DESTDIR)$(INS_BINARY_DIR) \
@@ -17,16 +18,19 @@ $OpenBSD: patch-src_Makefile_in,v 1.7 2014/04/29 16:41:36 giovanni Exp $
  $(DESTDIR)$(INS_SYSDEF_DIR) :
  	mkdir -p $@
  
-@@ -337,8 +339,6 @@ install_manpage : $(DESTDIR)$(INS_MANUAL_DIR)$(INS_MAN
+@@ -338,11 +340,6 @@ install_manpage : $(DESTDIR)$(INS_MANUAL_DIR)$(INS_MAN
  	@$(INSTALL) -m 444 $(DOCDIR)/tin.1 $(DESTDIR)$(INS_MANUAL_DIR)$(INS_MANUAL_EXT)/$(PROJECT).$(INS_MANUAL_EXT)
  	@( $(CD) $(DESTDIR)$(INS_MANUAL_DIR)$(INS_MANUAL_EXT) && $(RM) -f r$(PROJECT).$(INS_MANUAL_EXT) && $(LN) $(PROJECT).$(INS_MANUAL_EXT) r$(PROJECT).$(INS_MANUAL_EXT) )
  	@$(INSTALL) -m 444 $(DOCDIR)/tin.5 $(DESTDIR)$(INS_MANUAL_DIR)5/$(PROJECT).5
+-	@-$(RM) -f $(DESTDIR)$(INS_MANUAL_DIR)5/r$(PROJECT).5
+-	@$(ECHO) ".so $(INS_MANUAL_DIR)5/$(PROJECT).5" > $(DESTDIR)$(INS_MANUAL_DIR)5/r$(PROJECT).5
+-	@$(CHMOD) 444 $(DESTDIR)$(INS_MANUAL_DIR)5/r$(PROJECT).5
 -	@-if test ! -f $(DESTDIR)$(INS_MANUAL_DIR)5/mbox.5 ; then $(INSTALL) -m 444 $(DOCDIR)/mbox.5 $(DESTDIR)$(INS_MANUAL_DIR)5/mbox.5 ; else $(ECHO) "  ... skipping $(DESTDIR)$(INS_MANUAL_DIR)5/mbox.5 - file already exists" ; fi
 -	@-if test ! -f $(DESTDIR)$(INS_MANUAL_DIR)5/mmdf.5 ; then $(INSTALL) -m 444 $(DOCDIR)/mmdf.5 $(DESTDIR)$(INS_MANUAL_DIR)5/mmdf.5 ; else $(ECHO) "  ... skipping $(DESTDIR)$(INS_MANUAL_DIR)5/mmdf.5 - file already exists" ; fi
  
  uninstall_manpage :
  	@$(ECHO) "Uninstalling $(PROJECT) manual page in $(DESTDIR)$(INS_MANUAL_DIR)$(INS_MANUAL_EXT) ..."
-@@ -376,13 +376,13 @@ uninstall_sysdefs :
+@@ -380,13 +377,13 @@ uninstall_sysdefs :
  	@-$(RM) -f $(DESTDIR)$(INS_SYSDEF_DIR)/tin.defaults
  	@-$(RM) -f $(DESTDIR)$(INS_SYSDEF_DIR)/mime.types
  

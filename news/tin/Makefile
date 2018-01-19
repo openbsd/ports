@@ -1,16 +1,17 @@
-# $OpenBSD: Makefile,v 1.51 2017/08/24 09:45:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.52 2018/01/19 07:39:54 giovanni Exp $
 
 COMMENT=	threaded NNTP- and spool-based UseNet newsreader
 
 DISTNAME=	tin-${MAJORVERSION}.${PATCHLEVEL}
 MAJORVERSION=	2.4
-PATCHLEVEL=	1
-REVISION=	1
+PATCHLEVEL=	2
 CATEGORIES=	news
 
-MASTER_SITES=	http://ftp.funet.fi/pub/unix/news/tin-unoff/ \
+MASTER_SITES=	http://ftp.cuhk.edu.hk/pub/packages/news/tin/v${MAJORVERSION}/ \
 		http://ftp.lip6.fr/pub/unix/news/readers/tin-unoff/ \
-		http://ftp.cuhk.edu.hk/pub/packages/news/tin/v${MAJORVERSION}/ \
+		ftp://ftp.karlsruhe.org:/pub/news/clients/tin/ \
+		ftp://ftp.cuhk.edu.hk:/pub/packages/news/tin/ \
+		ftp://sunsite.icm.edu.pl/pub/unix/news/tin/ \
 		ftp://ftp.tin.org/pub/news/clients/tin/v${MAJORVERSION}/
 
 HOMEPAGE=	http://www.tin.org/
@@ -23,7 +24,7 @@ MAINTAINER=	Giovanni Bechis <giovanni@openbsd.org>
 PERMIT_PACKAGE_CDROM=	no fee
 PERMIT_PACKAGE_FTP=	Yes
 
-WANTLIB=		c>=58.2 iconv icuuc intl ncurses pcre pthread
+WANTLIB=		c>=58.2 iconv icuuc intl curses pcre
 
 CONFIGURE_STYLE=	autoconf no-autoheader
 AUTOCONF_VERSION=	2.13

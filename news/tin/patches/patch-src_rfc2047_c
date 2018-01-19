@@ -1,7 +1,8 @@
-$OpenBSD: patch-src_rfc2047_c,v 1.1 2014/04/29 16:41:36 giovanni Exp $
---- src/rfc2047.c.orig	Fri Apr 18 12:52:50 2014
-+++ src/rfc2047.c	Fri Apr 18 12:53:26 2014
-@@ -1031,9 +1031,8 @@ generate_random_mime_boundary(
+$OpenBSD: patch-src_rfc2047_c,v 1.2 2018/01/19 07:39:54 giovanni Exp $
+Index: src/rfc2047.c
+--- src/rfc2047.c.orig
++++ src/rfc2047.c
+@@ -1049,9 +1049,8 @@ generate_random_mime_boundary(
  {
  	size_t i;
  

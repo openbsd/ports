@@ -1,7 +1,8 @@
-$OpenBSD: patch-src_misc_c,v 1.1 2014/04/29 16:41:36 giovanni Exp $
---- src/misc.c.orig	Fri Apr 18 12:42:33 2014
-+++ src/misc.c	Fri Apr 18 12:45:22 2014
-@@ -2142,8 +2142,6 @@ random_organization(
+$OpenBSD: patch-src_misc_c,v 1.2 2018/01/19 07:39:54 giovanni Exp $
+Index: src/misc.c
+--- src/misc.c.orig
++++ src/misc.c
+@@ -2160,8 +2160,6 @@ random_organization(
  	if (*in_org != '/')	/* M_UNIXism?! */
  		return in_org;
  
@@ -10,7 +11,7 @@ $OpenBSD: patch-src_misc_c,v 1.1 2014/04/29 16:41:36 giovanni Exp $
  	if ((orgfp = fopen(in_org, "r")) == NULL)
  		return selorg;
  
-@@ -2157,7 +2155,7 @@ random_organization(
+@@ -2175,7 +2173,7 @@ random_organization(
  	}
  
  	rewind(orgfp);
