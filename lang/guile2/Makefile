@@ -1,7 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2017/12/03 14:42:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2018/01/19 15:50:11 jca Exp $
 
 # When updating, check that x11/gnome/aisleriot MODGNOME_CPPFLAGS references the
 # proper guile2 includes directory
+
+BROKEN-powerpc=		Segmentation fault (core dumped)
 
 COMMENT=		GNU's Ubiquitous Intelligent Language for Extension
 
