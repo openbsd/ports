@@ -1,4 +1,4 @@
-#${MODPY_COMMENT} $OpenBSD: Makefile,v 1.1689 2018/01/16 01:42:40 jeremy Exp $
+#${MODPY_COMMENT} $OpenBSD: Makefile,v 1.1690 2018/01/19 22:15:50 jung Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1226,6 +1226,7 @@
      SUBDIR += py-astroid,python3
      SUBDIR += py-async
      SUBDIR += py-async,python3
+     SUBDIR += py-async-timeout
      SUBDIR += py-atomicwrites
      SUBDIR += py-atomicwrites,python3
      SUBDIR += py-attrs
