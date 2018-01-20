@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2017/12/02 21:39:49 juanfra Exp $
+# $OpenBSD: Makefile,v 1.44 2018/01/20 22:23:17 juanfra Exp $
 
 USE_WXNEEDED =		Yes
 
@@ -10,6 +10,7 @@ ONLY_FOR_ARCHS =	arm amd64 i386 mips64el powerpc sparc64
 COMMENT =		multi-paradigm programming language
 
 V =			6.11
+REVISION =		0
 PKGNAME =		racket-minimal-$V
 DISTFILES =		racket-minimal-$V-src-builtpkgs${EXTRACT_SUFX} \
 			racket-openbsd-1${EXTRACT_SUFX}
@@ -34,11 +35,6 @@ MASTER_SITES =		https://mirror.racket-lang.org/installers/${V}/ \
 			https://download.tuxfamily.org/jod/lang/racket/ \
 			ftp://download.tuxfamily.org/jod/lang/racket/
 EXTRACT_SUFX =		.tgz
-
-# "places" and "futures" require TLS.
-COMPILER =		base-clang ports-gcc
-COMPILER_LANGS =	c
-MODGCC4_ARCHS =		arm
 
 LIB_DEPENDS =		converters/libiconv \
 			databases/sqlite3 \
