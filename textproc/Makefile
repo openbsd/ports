@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.559 2018/01/16 01:42:40 jeremy Exp $
+# $OpenBSD: Makefile,v 1.560 2018/01/20 15:30:58 nigel Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -251,6 +251,7 @@
      SUBDIR += p5-Text-Aspell
      SUBDIR += p5-Text-Autoformat
      SUBDIR += p5-Text-CSV
+     SUBDIR += p5-Text-CSV-Hashify
      SUBDIR += p5-Text-CSV_XS
      SUBDIR += p5-Text-Diff
      SUBDIR += p5-Text-Diff-HTML
