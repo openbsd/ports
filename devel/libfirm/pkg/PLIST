@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/11/06 01:19:16 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/01/20 09:13:35 landry Exp $
 include/libfirm/
 include/libfirm/adt/
 include/libfirm/adt/array.h
@@ -69,7 +69,7 @@ lib/cmake/
 lib/cmake/libfirm/
 lib/cmake/libfirm/libfirmConfig.cmake
 lib/cmake/libfirm/libfirmConfigVersion.cmake
-lib/cmake/libfirm/libfirmTargets-release.cmake
+lib/cmake/libfirm/libfirmTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/libfirm/libfirmTargets.cmake
 @lib lib/libfirm.so.${LIBfirm_VERSION}
 lib/pkgconfig/libfirm.pc

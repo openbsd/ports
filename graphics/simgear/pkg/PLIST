@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2016/09/19 22:38:50 pascal Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/01/20 09:13:35 landry Exp $
 include/simgear/
 include/simgear/3rdparty/
 include/simgear/3rdparty/utf8/
@@ -367,7 +367,7 @@ include/simgear/xml/easyxml.hxx
 lib/cmake/SimGear/
 lib/cmake/SimGear/SimGearConfig.cmake
 lib/cmake/SimGear/SimGearConfigVersion.cmake
-lib/cmake/SimGear/SimGearTargets-release.cmake
+lib/cmake/SimGear/SimGearTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/SimGear/SimGearTargets.cmake
 @lib lib/libSimGearCore.so.${LIBSimGearCore_VERSION}
 @lib lib/libSimGearScene.so.${LIBSimGearScene_VERSION}

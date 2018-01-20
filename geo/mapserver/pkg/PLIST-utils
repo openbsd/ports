@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-utils,v 1.5 2016/03/08 20:44:39 landry Exp $
+@comment $OpenBSD: PLIST-utils,v 1.6 2018/01/20 09:13:35 landry Exp $
 @bin bin/legend
 @bin bin/msencrypt
 @bin bin/scalebar
@@ -71,5 +71,5 @@ share/mapserver/
 share/mapserver/cmake/
 share/mapserver/cmake/mapserver-config-version.cmake
 share/mapserver/cmake/mapserver-config.cmake
-share/mapserver/cmake/mapserverTargets-release.cmake
+share/mapserver/cmake/mapserverTargets${MODCMAKE_BUILD_SUFFIX}
 share/mapserver/cmake/mapserverTargets.cmake
