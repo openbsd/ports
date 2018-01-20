@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.17 2017/12/04 17:56:27 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2018/01/20 15:05:34 jsg Exp $
 
 COMMENT =	extremely fast password cracker, with community patches
 BROKEN-alpha =	DES_bs.c:173: internal compiler error: in get_callee_fndecl, at tree.c:5940
-BROKEN-arm =	uaf_encode_plug.c:61: error: stray '$' in program
 FIX_EXTRACT_PERMISSIONS=Yes
 
 V =		1.8.0

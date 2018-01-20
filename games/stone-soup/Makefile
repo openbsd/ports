@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.32 2017/11/16 23:20:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.33 2018/01/20 15:05:34 jsg Exp $
 
 BROKEN-hppa =	ICE on dgn-shoals.cc:638
-BROKEN-arm=	tilegen.elf loops burning cpu
 
 COMMENT = 	dungeon crawl stone soup
 CATEGORIES = 	games

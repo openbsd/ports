@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.45 2017/11/27 22:13:47 espie Exp $
+# $OpenBSD: Makefile,v 1.46 2018/01/20 15:05:34 jsg Exp $
 
 BROKEN-alpha=	sqvm.cpp:394:1: internal compiler error: Segmentation fault
-BROKEN-arm=	wxwidgets va_list c++ mangling requires gcc < 4.4
 COMMENT=	Code::Blocks C/C++ IDE
 
 V=		16.01
