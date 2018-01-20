@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.47 2017/12/13 12:10:01 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.48 2018/01/20 11:03:31 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
@@ -770,6 +770,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/dynamodb/update-item.rs
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/dynamodb/update-table.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/accept-reserved-instances-exchange-quote.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/accept-vpc-endpoint-connections.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/accept-vpc-peering-connection.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/allocate-address.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/allocate-hosts.rst
@@ -807,6 +808,8 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-image.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-instance-export-task.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-internet-gateway.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-key-pair.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-launch-template-version.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-launch-template.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-nat-gateway.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-network-acl-entry.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-network-acl.rst
@@ -821,6 +824,8 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-spot-datafee
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-subnet.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-tags.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-volume.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-vpc-endpoint-connection-notification.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-vpc-endpoint-service-configuration.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-vpc-endpoint.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-vpc-peering-connection.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-vpc.rst
@@ -833,6 +838,8 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/delete-egress-only-
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/delete-flow-logs.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/delete-internet-gateway.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/delete-key-pair.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/delete-launch-template-versions.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/delete-launch-template.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/delete-nat-gateway.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/delete-network-acl-entry.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/delete-network-acl.rst
@@ -847,6 +854,8 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/delete-spot-datafee
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/delete-subnet.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/delete-tags.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/delete-volume.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/delete-vpc-endpoint-connection-notifications.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/delete-vpc-endpoint-service-configurations.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/delete-vpc-endpoints.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/delete-vpc-peering-connection.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/delete-vpc.rst
@@ -877,6 +886,8 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-instance-s
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-instances.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-internet-gateways.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-key-pairs.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-launch-template-versions.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-launch-templates.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-moving-addresses.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-nat-gateways.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-network-acls.rst
@@ -911,6 +922,10 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-volumes.rs
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-vpc-attribute.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-vpc-classic-link-dns-support.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-vpc-classic-link.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-vpc-endpoint-connection-notifications.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-vpc-endpoint-connections.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-vpc-endpoint-service-configurations.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-vpc-endpoint-service-permissions.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-vpc-endpoint-services.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-vpc-endpoints.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-vpc-peering-connections.rst
@@ -935,6 +950,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/enable-volume-io.rs
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/enable-vpc-classic-link-dns-support.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/enable-vpc-classic-link.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-console-output.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-launch-template-data.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-password-data.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-reserved-instances-exchange-quote.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/import-key-pair.rst
@@ -944,6 +960,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-identity-id-
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-image-attribute.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-instance-attribute.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-instance-placement.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-launch-template.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-network-interface-attribute.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-reserved-instances.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-snapshot-attribute.rst
@@ -951,6 +968,9 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-spot-fleet-r
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-subnet-attribute.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-volume-attribute.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-vpc-attribute.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-vpc-endpoint-connection-notification.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-vpc-endpoint-service-configuration.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-vpc-endpoint-service-permissions.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-vpc-endpoint.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-vpc-peering-connection-options.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-vpc-tenancy.rst
@@ -960,6 +980,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/purchase-reserved-i
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/purchase-scheduled-instances.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/reboot-instances.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/register-image.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/reject-vpc-endpoint-connections.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/reject-vpc-peering-connection.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/release-address.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/release-hosts.rst
