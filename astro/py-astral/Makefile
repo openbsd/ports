@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/01/19 21:53:46 jung Exp $
+# $OpenBSD: Makefile,v 1.2 2018/01/20 20:00:58 kili Exp $
 
 COMMENT =		calculations for the position of the sun and the moon
 
@@ -21,6 +21,7 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
+BUILD_DEPENDS =		devel/py-tz${MODPY_FLAVOR}
 RUN_DEPENDS =		devel/py-tz${MODPY_FLAVOR}
 TEST_DEPENDS =		${RUN_DEPENDS} \
 			devel/py-test${MODPY_FLAVOR}
