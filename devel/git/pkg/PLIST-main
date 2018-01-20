@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.79 2017/11/08 09:17:14 benoit Exp $
+@comment $OpenBSD: PLIST-main,v 1.80 2018/01/20 09:24:57 benoit Exp $
 @pkgpath devel/git
 @newgroup _gitdaemon:778
 @newuser _gitdaemon:778:_gitdaemon:daemon:GIT Daemon:/nonexistent:/sbin/nologin
@@ -13,6 +13,7 @@ libdata/perl5/site_perl/Git/
 libdata/perl5/site_perl/Git.pm
 libdata/perl5/site_perl/Git/I18N.pm
 libdata/perl5/site_perl/Git/IndexInfo.pm
+libdata/perl5/site_perl/Git/Packet.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/
 libexec/git/
 @bin libexec/git/git
@@ -383,6 +384,7 @@ share/git-core/templates/description
 share/git-core/templates/hooks/
 share/git-core/templates/hooks/applypatch-msg.sample
 share/git-core/templates/hooks/commit-msg.sample
+share/git-core/templates/hooks/fsmonitor-watchman.sample
 share/git-core/templates/hooks/multimail/
 share/git-core/templates/hooks/multimail/git_multimail.py
 share/git-core/templates/hooks/multimail/migrate-mailhook-config
