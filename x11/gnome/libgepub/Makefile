@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2017/11/17 12:16:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2018/01/20 12:33:31 ajacoutot Exp $
 
 # build time requirement for WebKit2-4.0 introspection:
 # g-ir-scanner(1) only passes -L/-l LDFLAGS
@@ -7,12 +7,11 @@ USE_WXNEEDED=		Yes
 COMMENT=		GObject based library for rendering epub docs
 
 GNOME_PROJECT=		libgepub
-GNOME_VERSION=		0.5.2
-REVISION=		0
+GNOME_VERSION=		0.5.3
 
 CATEGORIES=		graphics
 
-SHARED_LIBS +=  gepub                     1.0 # 0.0
+SHARED_LIBS += gepub                     1.0 # 0.0.0
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
