@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.23 2017/12/25 14:35:51 gsoares Exp $
+# $OpenBSD: Makefile,v 1.24 2018/01/20 03:29:56 gsoares Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 powerpc
 BROKEN-powerpc =	threading issues
 
 COMMENT =		Plan 9 from user space
 
-DISTNAME =		plan9port-20171127
+DISTNAME =		plan9port-20180117
 
 GH_ACCOUNT =		9fans
 GH_PROJECT =		plan9port
-GH_COMMIT =		2023d484f2aa079651e6ff84a955bb1e9b7cbdc9
+GH_COMMIT =		019be4481fee53a999ccb73c78e40df5f408b24e
 
 CATEGORIES =		plan9
 
