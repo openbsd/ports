@@ -1,0 +1,19 @@
+The Comma-Separated-Value ('CSV') format is the most common way to store
+spreadsheets or the output of relational database queries in plain-text
+format.  However, since commas (or other designated field-separator
+characters) may be embedded within data entries, the parsing of
+delimited records is non-trivial.  Fortunately, in Perl this parsing is
+well handled by CPAN distribution Text::CSV.  This permits us to address
+more specific data manipulation problems by building modules on top of
+Text::CSV.
+
+Text::CSV::Hashify is designed for the case where you simply want to
+turn a CSV file into a Perl hash.  In particular, it is designed for the
+case where (a) the CSV file's first record is a list of fields in the
+ancestral database table and (b) one field (column) functions as a
+primary key, i.e., each record's entry in that field is non-null and is
+distinct from every other record's entry therein.  Text::CSV::Hashify
+turns that kind of CSV file into one big hash of hashes.
+
+Text::CSV::Hashify can handle less typical cases; please consult the
+documentation for its other functionalities.
