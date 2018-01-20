@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2017/05/02 19:55:23 fcambus Exp $
+# $OpenBSD: Makefile,v 1.5 2018/01/20 14:03:39 jsg Exp $
 
 COMMENT =	web application framework for writing scalable web APIs in C
 
@@ -19,10 +19,6 @@ MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB +=	c crypto pthread ssl
-
-MODULES =	gcc4
-# for __sync_bool_compare_and_swap
-MODGCC4_ARCHS=	arm
 
 FLAVORS =	debug pgsql
 FLAVOR ?=

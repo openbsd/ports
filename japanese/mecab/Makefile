@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2017/08/22 19:19:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2018/01/20 14:03:39 jsg Exp $
 
 # .libs/libmecab.so.0.0: undefined reference to `__sync_val_compare_and_swap_4'
 # .libs/libmecab.so.0.0: undefined reference to `__sync_add_and_fetch_4'
@@ -31,11 +31,6 @@ MASTER_SITES =	https://distfiles.nl/
 
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
 		${PKGNAME-ipadic}-${IPADIC_VER}.tar.gz
-
-# for atomic builtins
-MODULES =	gcc4
-MODGCC4_ARCHS =	arm
-MODGCC4_LANGS =	c++
 
 LIB_DEPENDS-main = converters/libiconv
 RUN_DEPENDS-main = mecab-ipadic-*:japanese/mecab,-ipadic

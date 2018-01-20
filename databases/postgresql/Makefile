@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.233 2018/01/13 12:28:49 phessler Exp $
+# $OpenBSD: Makefile,v 1.234 2018/01/20 14:03:39 jsg Exp $
 
 COMMENT-main=	PostgreSQL RDBMS (client)
 COMMENT-server=	PostgreSQL RDBMS (server)
@@ -46,11 +46,8 @@ USE_GMAKE=	Yes
 
 CONFIGURE_STYLE=gnu
 
-MODULES=	lang/python gcc4
+MODULES=	lang/python
 MODPY_RUNDEP=	No
-
-# for __sync_lock_test_and_set
-MODGCC4_ARCHS=	arm
 
 CONFIGURE_ENV=	ac_cv_path_PYTHON=${MODPY_BIN} \
 		CPPFLAGS="-I${LOCALBASE}/include" \

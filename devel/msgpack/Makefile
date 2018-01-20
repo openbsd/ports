@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2017/08/10 01:46:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2018/01/20 14:03:39 jsg Exp $
 
 COMMENT =		MessagePack implementation for C and C++
 
@@ -17,9 +17,7 @@ GH_ACCOUNT =		msgpack
 GH_PROJECT =		msgpack-c
 GH_TAGNAME =		cpp-${V}
 
-MODULES =		devel/cmake gcc4
-MODGCC4_ARCHS =		arm
-MODGCC4_LANGS =		c++
+MODULES =		devel/cmake
 
 BUILD_DEPENDS =		devel/gtest
 TEST_DEPENDS =		devel/gtest

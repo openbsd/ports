@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2017/09/19 18:28:27 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.60 2018/01/20 14:03:39 jsg Exp $
 
 COMMENT=		ncurses BitTorrent client based on libTorrent
 
@@ -23,8 +23,7 @@ MODULES=		gcc4
 
 # SIGBUS during startup on sparc64 when built using gcc 4.2.1
 # https://github.com/rakshasa/rtorrent/issues/28
-# arm: undefined reference to `__sync_add_and_fetch_4'
-MODGCC4_ARCHS=		arm sparc64
+MODGCC4_ARCHS=		sparc64
 MODGCC4_LANGS=		c++
 
 BUILD_DEPENDS=		devel/cppunit

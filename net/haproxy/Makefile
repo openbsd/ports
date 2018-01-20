@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2018/01/11 19:27:05 rpe Exp $
+# $OpenBSD: Makefile,v 1.46 2018/01/20 14:03:39 jsg Exp $
 
 COMMENT =	reliable, high performance TCP/HTTP load balancer
 
@@ -32,10 +32,6 @@ MAKE_FLAGS +=	USE_OPENSSL=1 USE_PCRE=1
 .if ${MACHINE_ARCH:Mhppa}
 MAKE_FLAGS +=	USE_PRIVATE_CACHE=1
 .endif
-
-# Needs __sync_sub_and_fetch_4, __sync_lock_test_and_set_4, etc
-MODULES =	gcc4
-MODGCC4_ARCHS=	arm
 
 LIB_DEPENDS =	devel/pcre
 

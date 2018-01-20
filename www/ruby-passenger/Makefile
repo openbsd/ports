@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.55 2017/11/17 14:54:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.56 2018/01/20 14:03:39 jsg Exp $
 
 COMMENT =		ruby web application server/nginx module
 BROKEN-alpha =		.got subsegment exceeds 64K (size 83312)
-BROKEN-arm =		.../libuv/src/unix/atomic-ops.h:46: undefined reference to __sync_val_compare_and_swap_4
 BROKEN-hppa =		rake fails when linking PassengerHelperAgent
 BROKEN-sparc64 =	rake fails when linking PassengerHelperAgent
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.150 2018/01/04 09:34:24 bentley Exp $
+# $OpenBSD: Makefile,v 1.151 2018/01/20 14:03:39 jsg Exp $
 
 USE_WXNEEDED =		Yes # QtWebKit
 
@@ -147,14 +147,6 @@ MULTI_PACKAGES +=	-debug
 .else
 CONFIGURE_ARGS +=-release
 .endif
-
-.include <bsd.port.arch.mk>
-
-MODULES =		gcc4
-
-# for __sync_add_and_fetch_4, __sync_sub_and_fetch_4
-MODGCC4_ARCHS =		arm
-MODGCC4_LANGS =		c++
 
 LIB_DEPENDS =
 WANTLIB =

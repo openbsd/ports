@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.76 2018/01/17 12:29:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.77 2018/01/20 14:03:39 jsg Exp $
 
-BROKEN-arm =	needs atomic ops; __sync_add_and_fetch_4
 BROKEN-hppa =	needs atomic ops; __sync_add_and_fetch_4
 
 COMMENT-main =	network monitoring system

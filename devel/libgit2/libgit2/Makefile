@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2017/12/08 18:58:53 jca Exp $
+# $OpenBSD: Makefile,v 1.33 2018/01/20 14:03:39 jsg Exp $
 
 COMMENT=		the Git library, take 2
 
@@ -16,7 +16,7 @@ MODPY_RUNDEP=		No
 COMPILER=		base-clang ports-gcc base-gcc
 COMPILER_LANGS=		c
 # for atomic builtins
-MODGCC4_ARCHS=		arm hppa
+MODGCC4_ARCHS=		hppa
 
 # bundles https://github.com/nodejs/http-parser
 LIB_DEPENDS=		net/curl \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2017/11/02 12:46:44 jca Exp $
+# $OpenBSD: Makefile,v 1.12 2018/01/20 14:03:39 jsg Exp $
 
 BROKEN-hppa =		undefined reference to __sync atomic ops
 
@@ -30,7 +30,7 @@ WANTLIB =		pthread
 
 # For atomic builtins
 MODULES+=		gcc4
-MODGCC4_ARCHS=		alpha arm
+MODGCC4_ARCHS=		alpha
 .if ${MACHINE_ARCH} == "alpha"
 MODGCC4_VERSION=	4.6
 .endif

@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.29 2017/11/09 16:50:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2018/01/20 14:03:39 jsg Exp $
 
-BROKEN-arm =		unrecognized option -mfpu=neon
 # Also:  __sync_fetch_and_add_4 __sync_add_and_fetch_4 __sync_sub_and_fetch_4
 BROKEN-hppa =		undefined reference to __sync_val_compare_and_swap_4
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2017/12/21 07:55:47 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.33 2018/01/20 14:03:39 jsg Exp $
 
 COMMENT =		library for reading RAW files
 
@@ -22,7 +22,7 @@ MASTER_SITES =		https://www.libraw.org/data/
 
 COMPILER =		base-clang ports-gcc base-gcc
 # for atomic builtins (__sync_fetch_and_add_4)
-MODGCC4_ARCHS =		arm hppa
+MODGCC4_ARCHS =		hppa
 
 LIB_DEPENDS =		graphics/jasper \
 			graphics/lcms2

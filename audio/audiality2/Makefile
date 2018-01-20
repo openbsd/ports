@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2017/12/20 20:26:33 jca Exp $
+# $OpenBSD: Makefile,v 1.3 2018/01/20 14:03:39 jsg Exp $
 
 COMMENT =	realtime audio and music engine for games
 
@@ -22,11 +22,6 @@ PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_DISTFILES_FTP =	test/data/*.a2s are all rights reserved
 
 WANTLIB += c SDL2 m
-
-COMPILER =	base-clang ports-gcc base-gcc
-COMPILER_LANGS = c
-# __sync_bool_compare_and_swap_4
-MODGCC4_ARCHS =	arm
 
 MODULES =		devel/cmake
 LIB_DEPENDS =		devel/sdl2

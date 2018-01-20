@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.23 2017/07/26 22:45:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2018/01/20 14:03:39 jsg Exp $
 
-BROKEN-arm =		configure: error: No atomic primitives available for arm-unknown-openbsd6.0
 BROKEN-hppa =		error: Could not determine global symbol label prefix
 BROKEN-powerpc =	checking if Fortran 77 compiler works... no
 

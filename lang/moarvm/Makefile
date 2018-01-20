@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.17 2017/11/30 19:36:34 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.18 2018/01/20 14:03:39 jsg Exp $
 
 ONLY_FOR_ARCHS =	amd64 arm i386 mips64 mips64el powerpc sparc64
-BROKEN-arm =		missing atomic ops (both AO_* and gcc builtin)
 BROKEN-sparc64 =	undefined reference to `AO_fetch_compare_and_swap_full'
 
 COMMENT =		virtual machine for nqp/rakudo
