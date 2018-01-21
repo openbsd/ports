@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2018/01/09 21:10:38 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.8 2018/01/21 13:15:28 rsadowski Exp $
 
 SUBDIR =
 SUBDIR += extra-cmake-modules	# 100% tests passed, 0 tests failed out of 50
@@ -30,7 +30,8 @@ SUBDIR += sonnet		# 100% tests passed, 0 tests failed out of 4
 SUBDIR += threadweaver		# 100% tests passed, 0 tests failed out of 7
 SUBDIR += syntax-highlighting	# 100% tests passed, 0 tests failed out of 8
 SUBDIR += prison		# 100% tests passed, 0 tests failed out of 2
-SUBDIR += kirigami2		# 
+SUBDIR += kirigami2		# 0% tests passed, 1 tests failed out of 1
+SUBDIR += qqc2-desktop-style	# NO_TEST
 
 # tier 2
 SUBDIR += kauth			# 100% tests passed, 0 tests failed out of 2
