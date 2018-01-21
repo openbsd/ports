@@ -1,7 +1,19 @@
-$OpenBSD: patch-config_h,v 1.9 2016/11/22 17:20:25 dcoppa Exp $
---- config.h.orig	Tue Nov 22 12:10:09 2016
-+++ config.h	Tue Nov 22 12:42:04 2016
-@@ -47,7 +47,7 @@
+$OpenBSD: patch-config_h,v 1.10 2018/01/21 20:25:48 juanfra Exp $
+Index: config.h
+--- config.h.orig
++++ config.h
+@@ -3,6 +3,10 @@
+ //! \file config.h
+ //! \brief Library configuration file
+ 
++#if defined(__i386__)
++#define CRYPTOPP_DISABLE_ASM
++#endif
++
+ #ifndef CRYPTOPP_CONFIG_H
+ #define CRYPTOPP_CONFIG_H
+ 
+@@ -47,7 +51,7 @@
  // If the user did not make a choice, then select CryptoNG if either
  // Visual Studio 2015 is available, or Windows 10 or above is available.
  #if !defined(USE_MS_CRYPTOAPI) && !defined(USE_MS_CNGAPI)
@@ -10,7 +22,7 @@ $OpenBSD: patch-config_h,v 1.9 2016/11/22 17:20:25 dcoppa Exp $
  #  define USE_MS_CNGAPI
  # else
  #  define USE_MS_CRYPTOAPI
-@@ -152,16 +152,16 @@
+@@ -152,16 +156,16 @@
  #endif
  
  // __attribute__(init_priority(250)) is supported
@@ -30,7 +42,7 @@ $OpenBSD: patch-config_h,v 1.9 2016/11/22 17:20:25 dcoppa Exp $
  # define HAVE_MSC_INIT_PRIORITY 1
  #endif
  
-@@ -273,7 +273,7 @@ const lword LWORD_MAX = W64LIT(0xffffffffffffffff);
+@@ -273,7 +277,7 @@ const lword LWORD_MAX = W64LIT(0xffffffffffffffff);
  #endif
  
  // Need GCC 4.6/Clang 1.7/Apple Clang 2.0 or above due to "GCC diagnostic {push|pop}"
@@ -39,7 +51,7 @@ $OpenBSD: patch-config_h,v 1.9 2016/11/22 17:20:25 dcoppa Exp $
  	#define CRYPTOPP_GCC_DIAGNOSTIC_AVAILABLE 1
  #endif
  
-@@ -364,7 +364,7 @@ NAMESPACE_END
+@@ -364,7 +368,7 @@ NAMESPACE_END
  #endif
  
  // The section attribute attempts to initialize CPU flags to avoid Valgrind findings above -O1
@@ -48,7 +60,7 @@ $OpenBSD: patch-config_h,v 1.9 2016/11/22 17:20:25 dcoppa Exp $
  	#define CRYPTOPP_SECTION_INIT __attribute__((section ("__DATA,__data")))
  #elif ((__ELF__ >= 1) && (CRYPTOPP_GCC_VERSION >= 40300))
  	#define CRYPTOPP_SECTION_INIT __attribute__((section ("nocommon")))
-@@ -423,7 +423,7 @@ NAMESPACE_END
+@@ -423,7 +427,7 @@ NAMESPACE_END
  #endif
  
  // [GCC Bug 53431] "C++ preprocessor ignores #pragma GCC diagnostic". Clang honors it.
@@ -57,7 +69,7 @@ $OpenBSD: patch-config_h,v 1.9 2016/11/22 17:20:25 dcoppa Exp $
  # pragma GCC diagnostic ignored "-Wunknown-pragmas"
  # pragma GCC diagnostic ignored "-Wunused-function"
  #endif
-@@ -465,7 +465,7 @@ NAMESPACE_END
+@@ -465,7 +469,7 @@ NAMESPACE_END
  		#define CRYPTOPP_BOOL_SSE2_ASM_AVAILABLE 0
  	#endif
  
@@ -66,7 +78,7 @@ $OpenBSD: patch-config_h,v 1.9 2016/11/22 17:20:25 dcoppa Exp $
  		#define CRYPTOPP_BOOL_SSSE3_ASM_AVAILABLE 1
  	#else
  		#define CRYPTOPP_BOOL_SSSE3_ASM_AVAILABLE 0
-@@ -489,21 +489,21 @@ NAMESPACE_END
+@@ -489,21 +493,21 @@ NAMESPACE_END
  // Intrinsics availible in GCC 4.3 (http://gcc.gnu.org/gcc-4.3/changes.html) and
  //   MSVC 2008 (http://msdn.microsoft.com/en-us/library/bb892950%28v=vs.90%29.aspx)
  //   SunCC could generate SSE4 at 12.1, but the intrinsics are missing until 12.4.
@@ -91,7 +103,7 @@ $OpenBSD: patch-config_h,v 1.9 2016/11/22 17:20:25 dcoppa Exp $
  	#define CRYPTOPP_BOOL_AVX_AVAILABLE 1
  #else
  	#define CRYPTOPP_BOOL_AVX_AVAILABLE 0
-@@ -579,7 +579,7 @@ NAMESPACE_END
+@@ -579,7 +583,7 @@ NAMESPACE_END
  // Linux provides X32, which is 32-bit integers, longs and pointers on x86_64 using the full x86_64 register set.
  // Detect via __ILP32__ (http://wiki.debian.org/X32Port). However, __ILP32__ shows up in more places than
  // the System V ABI specs calls out, like on just about any 32-bit system with Clang.
@@ -100,7 +112,7 @@ $OpenBSD: patch-config_h,v 1.9 2016/11/22 17:20:25 dcoppa Exp $
  	#define CRYPTOPP_BOOL_X32 1
  #else
  	#define CRYPTOPP_BOOL_X32 0
-@@ -776,7 +776,7 @@ NAMESPACE_END
+@@ -776,7 +780,7 @@ NAMESPACE_END
  
  // ************** Deprecated ***************
  
@@ -109,7 +121,7 @@ $OpenBSD: patch-config_h,v 1.9 2016/11/22 17:20:25 dcoppa Exp $
  # define CRYPTOPP_DEPRECATED(msg) __attribute__((deprecated (msg)));
  #elif (CRYPTOPP_GCC_VERSION)
  # define CRYPTOPP_DEPRECATED(msg) __attribute__((deprecated));
-@@ -790,7 +790,7 @@ NAMESPACE_END
+@@ -790,7 +794,7 @@ NAMESPACE_END
  // Intel and C++11 language features, http://software.intel.com/en-us/articles/c0x-features-supported-by-intel-c-compiler
  // GCC and C++11 language features, http://gcc.gnu.org/projects/cxx0x.html
  // Clang and C++11 language features, http://clang.llvm.org/cxx_status.html

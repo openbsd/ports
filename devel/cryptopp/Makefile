@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2017/11/01 14:31:47 naddy Exp $
-
-BROKEN-i386 =	asm problems with clang integrated as
+# $OpenBSD: Makefile,v 1.21 2018/01/21 20:25:48 juanfra Exp $
 
 COMMENT = 	C++ library of cryptographic algorithms
 CATEGORIES = 	devel security
@@ -9,7 +7,7 @@ HOMEPAGE = 	http://www.cryptopp.com/
 MASTER_SITES = 	${HOMEPAGE}
 DISTNAME = 	cryptopp565
 PKGNAME = 	cryptopp-5.6.5
-REVISION =      1
+REVISION =      2
 
 EXTRACT_SUFX = 	.zip
 WRKDIST = 	${WRKDIR}
