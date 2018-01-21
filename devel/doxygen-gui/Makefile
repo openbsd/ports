@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2017/08/17 14:29:52 visa Exp $
+# $OpenBSD: Makefile,v 1.8 2018/01/21 10:33:03 rsadowski Exp $
 
 # Memory hog, stuck for days on the same file (configoptions.cpp) during build.
 # XXX check with different optimizer level? see doc/install.doc
@@ -7,16 +7,15 @@ BROKEN-alpha=	.got subsegment exceeds 64K
 
 COMMENT=	GUI front-end for doxygen
 
-VERSION=	1.8.13
+VERSION=	1.8.14
 DISTNAME=	doxygen-${VERSION}.src
-REVISION =	1
 PKGNAME=	doxygen-gui-${VERSION}
 
 CATEGORIES=	devel textproc
 
 HOMEPAGE=	http://www.doxygen.org/
 
-MAINTAINER=	Rafael Sadowski <rafael@sizeofvoid.org>
+MAINTAINER=	Rafael Sadowski <rsadowski@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -38,8 +37,8 @@ MODPY_RUNDEP=	No
 CXXFLAGS+=	-mxgot
 .endif
 
-BUILD_DEPENDS+=	devel/bison
-BUILD_DEPENDS+=	converters/libiconv
+BUILD_DEPENDS+=	devel/bison \
+		converters/libiconv
 
 RUN_DEPENDS=	devel/doxygen
 
