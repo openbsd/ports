@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2017/11/15 21:28:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2018/01/21 09:34:39 landry Exp $
 
 COMMENT=	mail anomalies in the system logfiles to the administrator
 
-V=		1.3.17
-REVISION=	0
+V=		1.3.18
 DISTNAME=	logcheck_${V}
 PKGNAME=	logtail-${V}
 EXTRACT_SUFX=	.tar.xz
