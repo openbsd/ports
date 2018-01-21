@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2017/05/30 21:32:08 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/01/21 14:49:16 ajacoutot Exp $
 @bin bin/atril
 @bin bin/atril-previewer
 @bin bin/atril-thumbnailer
@@ -81,8 +81,8 @@ lib/atril/3/backends/libtiffdocument.so
 @comment lib/atril/3/backends/libxpsdocument.a
 @comment lib/atril/3/backends/libxpsdocument.la
 lib/atril/3/backends/libxpsdocument.so
-@comment lib/atril/3/backends/pdfdocument.atril-backend
-@comment lib/atril/3/backends/psdocument.atril-backend
+lib/atril/3/backends/pdfdocument.atril-backend
+lib/atril/3/backends/psdocument.atril-backend
 lib/atril/3/backends/tiffdocument.atril-backend
 lib/atril/3/backends/xpsdocument.atril-backend
 lib/caja/
