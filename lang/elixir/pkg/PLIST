@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2017/07/26 18:44:59 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.12 2018/01/21 19:40:58 jasper Exp $
 bin/elixir
 bin/elixirc
 bin/iex
@@ -39,6 +39,8 @@ lib/elixir/lib/elixir/ebin/Elixir.Bitwise.beam
 lib/elixir/lib/elixir/ebin/Elixir.Calendar.ISO.beam
 lib/elixir/lib/elixir/ebin/Elixir.Calendar.beam
 lib/elixir/lib/elixir/ebin/Elixir.CaseClauseError.beam
+lib/elixir/lib/elixir/ebin/Elixir.Code.Formatter.beam
+lib/elixir/lib/elixir/ebin/Elixir.Code.Identifier.beam
 lib/elixir/lib/elixir/ebin/Elixir.Code.LoadError.beam
 lib/elixir/lib/elixir/ebin/Elixir.Code.beam
 lib/elixir/lib/elixir/ebin/Elixir.Collectable.BitString.beam
@@ -56,6 +58,7 @@ lib/elixir/lib/elixir/ebin/Elixir.Date.Range.beam
 lib/elixir/lib/elixir/ebin/Elixir.Date.beam
 lib/elixir/lib/elixir/ebin/Elixir.DateTime.beam
 lib/elixir/lib/elixir/ebin/Elixir.Dict.beam
+lib/elixir/lib/elixir/ebin/Elixir.DynamicSupervisor.beam
 lib/elixir/lib/elixir/ebin/Elixir.Enum.EmptyError.beam
 lib/elixir/lib/elixir/ebin/Elixir.Enum.OutOfBoundsError.beam
 lib/elixir/lib/elixir/ebin/Elixir.Enum.beam
@@ -273,6 +276,7 @@ lib/elixir/lib/ex_unit/ebin/Elixir.ExUnit.RunnerStats.beam
 lib/elixir/lib/ex_unit/ebin/Elixir.ExUnit.Server.beam
 lib/elixir/lib/ex_unit/ebin/Elixir.ExUnit.Test.beam
 lib/elixir/lib/ex_unit/ebin/Elixir.ExUnit.TestCase.beam
+lib/elixir/lib/ex_unit/ebin/Elixir.ExUnit.TestModule.beam
 lib/elixir/lib/ex_unit/ebin/Elixir.ExUnit.TimeoutError.beam
 lib/elixir/lib/ex_unit/ebin/Elixir.ExUnit.beam
 lib/elixir/lib/ex_unit/ebin/ex_unit.app
@@ -284,7 +288,6 @@ lib/elixir/lib/iex/ebin/Elixir.IEx.CLI.beam
 lib/elixir/lib/iex/ebin/Elixir.IEx.Config.beam
 lib/elixir/lib/iex/ebin/Elixir.IEx.Evaluator.beam
 lib/elixir/lib/iex/ebin/Elixir.IEx.Helpers.beam
-lib/elixir/lib/iex/ebin/Elixir.IEx.History.State.beam
 lib/elixir/lib/iex/ebin/Elixir.IEx.History.beam
 lib/elixir/lib/iex/ebin/Elixir.IEx.Info.Any.beam
 lib/elixir/lib/iex/ebin/Elixir.IEx.Info.Atom.beam
@@ -360,6 +363,8 @@ lib/elixir/lib/mix/ebin/Elixir.Mix.Shell.Process.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Shell.Quiet.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Shell.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.State.beam
+lib/elixir/lib/mix/ebin/Elixir.Mix.Task.Compiler.Diagnostic.beam
+lib/elixir/lib/mix/ebin/Elixir.Mix.Task.Compiler.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Task.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.App.Start.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.App.Tree.beam
@@ -393,6 +398,7 @@ lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Escript.Build.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Escript.Install.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Escript.Uninstall.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Escript.beam
+lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Format.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Help.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Iex.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Loadconfig.beam
@@ -403,6 +409,7 @@ lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Local.Rebar.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Local.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.New.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Profile.Cprof.beam
+lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Profile.Eprof.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Profile.Fprof.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Run.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Test.Cover.beam
