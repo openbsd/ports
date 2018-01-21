@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.55 2017/11/16 23:20:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.56 2018/01/21 08:27:30 kirby Exp $
 
 COMMENT=		GTK+ subtitles editor
 
 V=			0.53.0
 DISTNAME=		subtitleeditor-${V}
-REVISION=		3
+REVISION=		4
 
 CATEGORIES=		graphics editors
 
 SHARED_LIBS +=  subtitleeditor 0.0     # .0.0
 
-HOMEPAGE=		http://home.gna.org/subtitleeditor/
+HOMEPAGE=		http://kitone.github.io/subtitleeditor/
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
@@ -30,7 +30,7 @@ WANTLIB += pangocairo-1.0 pangoft2-1.0 pangomm-1.4 pcre pixman-1
 WANTLIB += png pthread sigc-2.0 ${LIBCXX} xcb xcb-render
 WANTLIB += xcb-shm xml++-2.6 xml2 z
 
-MASTER_SITES=		http://download.gna.org/subtitleeditor/${V:R}/
+MASTER_SITES=		https://github.com/kitone/subtitleeditor/releases/download/${V}/
 
 BUILD_DEPENDS=		devel/iso-codes
 
