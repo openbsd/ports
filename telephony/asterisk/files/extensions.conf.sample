@@ -1,5 +1,5 @@
-; $OpenBSD: extensions.conf.sample,v 1.4 2010/04/10 12:45:35 sthen Exp $
-; Longer example available in %%LOCALBASE%%/share/examples/asterisk/default
+; $OpenBSD: extensions.conf.sample,v 1.5 2018/01/21 20:59:18 sthen Exp $
+; Longer example available in ${TRUEPREFIX}/share/examples/asterisk/default
 ; For new installations, you may prefer to use extensions.ael rather than
 ; this file.
 

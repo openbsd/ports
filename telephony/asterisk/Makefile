@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.272 2018/01/15 11:48:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.273 2018/01/21 20:59:18 sthen Exp $
 
 BROKEN-aarch64=	linker problems with BlocksRuntime that only show up at runtime
 
 COMMENT-main=	open source multi-protocol PBX and telephony toolkit
 
 VER=		13.19.0
+REVISION-main=	0
 PJ_V=		2.7.1
 PORTROACH=	limitw:0,odd
 DISTNAME=	asterisk-${VER:S/beta/-beta/:S/rc/-rc/}
@@ -288,8 +289,10 @@ post-install:
 	    ${EXAMPLEDIR}/openbsd/$i.sample
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/contrib/scripts/asterisk.ldif \
-		${WRKSRC}/contrib/scripts/asterisk.ldap-schema \
-		${PREFIX}/share/examples/asterisk/
+	    ${WRKSRC}/contrib/scripts/asterisk.ldap-schema \
+	    ${PREFIX}/share/examples/asterisk/
+	@sed -i 's,^#!/bin/bash,#!${LOCALBASE}/bin/bash,' \
+	    ${PREFIX}/sbin/astversion
 	@mv ${WRKINST}/${SYSCONFDIR}/asterisk ${EXAMPLEDIR}/default
 	@chown -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLEDIR}
 	@rm -rf ${WRKINST}/{etc,var/{log,run,spool}}/asterisk
