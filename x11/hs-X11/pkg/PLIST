@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2015/09/20 18:29:21 kili Exp $
+@comment $OpenBSD: PLIST,v 1.12 2018/01/22 22:07:21 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Graphics/
 lib/ghc/${DISTNAME}/Graphics/X11/
@@ -127,38 +127,9 @@ share/doc/hs-${DISTNAME}/html/doc-index-W.html
 share/doc/hs-${DISTNAME}/html/doc-index-X.html
 share/doc/hs-${DISTNAME}/html/doc-index-Z.html
 share/doc/hs-${DISTNAME}/html/doc-index.html
-share/doc/hs-${DISTNAME}/html/frames.html
 share/doc/hs-${DISTNAME}/html/haddock-util.js
 share/doc/hs-${DISTNAME}/html/hslogo-16.png
-share/doc/hs-${DISTNAME}/html/index-frames.html
 share/doc/hs-${DISTNAME}/html/index.html
-share/doc/hs-${DISTNAME}/html/mini_Graphics-X11-ExtraTypes-AP.html
-share/doc/hs-${DISTNAME}/html/mini_Graphics-X11-ExtraTypes-DEC.html
-share/doc/hs-${DISTNAME}/html/mini_Graphics-X11-ExtraTypes-HP.html
-share/doc/hs-${DISTNAME}/html/mini_Graphics-X11-ExtraTypes-Sun.html
-share/doc/hs-${DISTNAME}/html/mini_Graphics-X11-ExtraTypes-XF86.html
-share/doc/hs-${DISTNAME}/html/mini_Graphics-X11-ExtraTypes-XorgDefault.html
-share/doc/hs-${DISTNAME}/html/mini_Graphics-X11-ExtraTypes.html
-share/doc/hs-${DISTNAME}/html/mini_Graphics-X11-Types.html
-share/doc/hs-${DISTNAME}/html/mini_Graphics-X11-XScreenSaver.html
-share/doc/hs-${DISTNAME}/html/mini_Graphics-X11-Xinerama.html
-share/doc/hs-${DISTNAME}/html/mini_Graphics-X11-Xlib-Atom.html
-share/doc/hs-${DISTNAME}/html/mini_Graphics-X11-Xlib-Color.html
-share/doc/hs-${DISTNAME}/html/mini_Graphics-X11-Xlib-Context.html
-share/doc/hs-${DISTNAME}/html/mini_Graphics-X11-Xlib-Cursor.html
-share/doc/hs-${DISTNAME}/html/mini_Graphics-X11-Xlib-Display.html
-share/doc/hs-${DISTNAME}/html/mini_Graphics-X11-Xlib-Event.html
-share/doc/hs-${DISTNAME}/html/mini_Graphics-X11-Xlib-Extras.html
-share/doc/hs-${DISTNAME}/html/mini_Graphics-X11-Xlib-Font.html
-share/doc/hs-${DISTNAME}/html/mini_Graphics-X11-Xlib-Image.html
-share/doc/hs-${DISTNAME}/html/mini_Graphics-X11-Xlib-Misc.html
-share/doc/hs-${DISTNAME}/html/mini_Graphics-X11-Xlib-Region.html
-share/doc/hs-${DISTNAME}/html/mini_Graphics-X11-Xlib-Screen.html
-share/doc/hs-${DISTNAME}/html/mini_Graphics-X11-Xlib-Types.html
-share/doc/hs-${DISTNAME}/html/mini_Graphics-X11-Xlib-Window.html
-share/doc/hs-${DISTNAME}/html/mini_Graphics-X11-Xlib.html
-share/doc/hs-${DISTNAME}/html/mini_Graphics-X11-Xrandr.html
-share/doc/hs-${DISTNAME}/html/mini_Graphics-X11.html
 share/doc/hs-${DISTNAME}/html/minus.gif
 share/doc/hs-${DISTNAME}/html/ocean.css
 share/doc/hs-${DISTNAME}/html/plus.gif
