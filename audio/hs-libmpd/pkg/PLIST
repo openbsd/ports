@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2015/09/24 20:08:45 kili Exp $
+@comment $OpenBSD: PLIST,v 1.10 2018/01/22 21:37:31 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/HS${DISTNAME}-${MODGHC_PACKAGE_KEY}.o
 lib/ghc/${DISTNAME}/Network/
@@ -125,27 +125,10 @@ share/doc/hs-${DISTNAME}/html/doc-index-U.html
 share/doc/hs-${DISTNAME}/html/doc-index-V.html
 share/doc/hs-${DISTNAME}/html/doc-index-W.html
 share/doc/hs-${DISTNAME}/html/doc-index.html
-share/doc/hs-${DISTNAME}/html/frames.html
 share/doc/hs-${DISTNAME}/html/haddock-util.js
 share/doc/hs-${DISTNAME}/html/hslogo-16.png
-share/doc/hs-${DISTNAME}/html/index-frames.html
 share/doc/hs-${DISTNAME}/html/index.html
 share/doc/hs-${DISTNAME}/html/libmpd.haddock
-share/doc/hs-${DISTNAME}/html/mini_Network-MPD-Applicative-ClientToClient.html
-share/doc/hs-${DISTNAME}/html/mini_Network-MPD-Applicative-Connection.html
-share/doc/hs-${DISTNAME}/html/mini_Network-MPD-Applicative-CurrentPlaylist.html
-share/doc/hs-${DISTNAME}/html/mini_Network-MPD-Applicative-Database.html
-share/doc/hs-${DISTNAME}/html/mini_Network-MPD-Applicative-Output.html
-share/doc/hs-${DISTNAME}/html/mini_Network-MPD-Applicative-PlaybackControl.html
-share/doc/hs-${DISTNAME}/html/mini_Network-MPD-Applicative-PlaybackOptions.html
-share/doc/hs-${DISTNAME}/html/mini_Network-MPD-Applicative-Reflection.html
-share/doc/hs-${DISTNAME}/html/mini_Network-MPD-Applicative-Status.html
-share/doc/hs-${DISTNAME}/html/mini_Network-MPD-Applicative-Stickers.html
-share/doc/hs-${DISTNAME}/html/mini_Network-MPD-Applicative-StoredPlaylists.html
-share/doc/hs-${DISTNAME}/html/mini_Network-MPD-Applicative.html
-share/doc/hs-${DISTNAME}/html/mini_Network-MPD-Commands-Extensions.html
-share/doc/hs-${DISTNAME}/html/mini_Network-MPD-Core.html
-share/doc/hs-${DISTNAME}/html/mini_Network-MPD.html
 share/doc/hs-${DISTNAME}/html/minus.gif
 share/doc/hs-${DISTNAME}/html/ocean.css
 share/doc/hs-${DISTNAME}/html/plus.gif
