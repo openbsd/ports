@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/11/03 14:48:11 kili Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/01/22 21:23:53 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/HS${DISTNAME}-${MODGHC_PACKAGE_KEY}.o
 lib/ghc/${DISTNAME}/Hackage/
@@ -148,32 +148,10 @@ share/doc/hs-${DISTNAME}/html/doc-index-U.html
 share/doc/hs-${DISTNAME}/html/doc-index-V.html
 share/doc/hs-${DISTNAME}/html/doc-index-W.html
 share/doc/hs-${DISTNAME}/html/doc-index.html
-share/doc/hs-${DISTNAME}/html/frames.html
 share/doc/hs-${DISTNAME}/html/hackage-security.haddock
 share/doc/hs-${DISTNAME}/html/haddock-util.js
 share/doc/hs-${DISTNAME}/html/hslogo-16.png
-share/doc/hs-${DISTNAME}/html/index-frames.html
 share/doc/hs-${DISTNAME}/html/index.html
-share/doc/hs-${DISTNAME}/html/mini_Hackage-Security-Client-Formats.html
-share/doc/hs-${DISTNAME}/html/mini_Hackage-Security-Client-Repository-Cache.html
-share/doc/hs-${DISTNAME}/html/mini_Hackage-Security-Client-Repository-HttpLib.html
-share/doc/hs-${DISTNAME}/html/mini_Hackage-Security-Client-Repository-Local.html
-share/doc/hs-${DISTNAME}/html/mini_Hackage-Security-Client-Repository-Remote.html
-share/doc/hs-${DISTNAME}/html/mini_Hackage-Security-Client-Repository.html
-share/doc/hs-${DISTNAME}/html/mini_Hackage-Security-Client-Verify.html
-share/doc/hs-${DISTNAME}/html/mini_Hackage-Security-Client.html
-share/doc/hs-${DISTNAME}/html/mini_Hackage-Security-JSON.html
-share/doc/hs-${DISTNAME}/html/mini_Hackage-Security-Key-Env.html
-share/doc/hs-${DISTNAME}/html/mini_Hackage-Security-Server.html
-share/doc/hs-${DISTNAME}/html/mini_Hackage-Security-TUF-FileMap.html
-share/doc/hs-${DISTNAME}/html/mini_Hackage-Security-Trusted.html
-share/doc/hs-${DISTNAME}/html/mini_Hackage-Security-Util-Checked.html
-share/doc/hs-${DISTNAME}/html/mini_Hackage-Security-Util-IO.html
-share/doc/hs-${DISTNAME}/html/mini_Hackage-Security-Util-Lens.html
-share/doc/hs-${DISTNAME}/html/mini_Hackage-Security-Util-Path.html
-share/doc/hs-${DISTNAME}/html/mini_Hackage-Security-Util-Pretty.html
-share/doc/hs-${DISTNAME}/html/mini_Hackage-Security-Util-Some.html
-share/doc/hs-${DISTNAME}/html/mini_Text-JSON-Canonical.html
 share/doc/hs-${DISTNAME}/html/minus.gif
 share/doc/hs-${DISTNAME}/html/ocean.css
 share/doc/hs-${DISTNAME}/html/plus.gif

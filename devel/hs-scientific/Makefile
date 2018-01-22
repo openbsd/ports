@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2017/11/07 22:20:53 kili Exp $
+# $OpenBSD: Makefile,v 1.9 2018/01/22 21:23:53 kili Exp $
 
 COMMENT =		scientific number type
 
@@ -6,8 +6,8 @@ COMMENT =		scientific number type
 # Please do *not* update without thinking.
 PORTROACH =		ignore:1
 
-# 0.3.4.9 for haskell-platform 8.0.2
 DISTNAME =		scientific-0.3.4.6
+REVISION =		0
 CATEGORIES =		devel
 
 HOMEPAGE =		https://github.com/basvandijk/scientific
@@ -21,11 +21,11 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	KHbfTo5SODkPBujZqnDMi
+MODGHC_PACKAGE_KEY =	JWnrWS98ixeAp8KdIqhPYx
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
 RUN_DEPENDS =		devel/hs-hashable>=1.1.2,<1.3 \
 			devel/hs-text>=0.8,<1.3 \
-			devel/hs-vector>=0.5,<0.12
+			devel/hs-vector>=0.5,<0.13
 
 .include <bsd.port.mk>

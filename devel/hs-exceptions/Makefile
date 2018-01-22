@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2017/11/07 22:11:08 kili Exp $
+# $OpenBSD: Makefile,v 1.6 2018/01/22 21:23:53 kili Exp $
 
 COMMENT =		extensible optionally-pure exceptions
 
 DISTNAME =		exceptions-0.8.3
+REVISION =		0
 CATEGORIES =		devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
@@ -14,7 +15,7 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	7py7fmRxowDFpHmiHGKrTb
+MODGHC_PACKAGE_KEY =	IMG8z9bQ0kKKt0LCvLfr9v
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
 RUN_DEPENDS +=		devel/hs-mtl>=2.0,<2.3 \

@@ -1,0 +1,40 @@
+$OpenBSD: patch-scientific_cabal,v 1.1 2018/01/22 21:23:53 kili Exp $
+
+Stupid dependency changes not in contained in the distfile:
+
+http://hackage.haskell.org/package/scientific-0.3.5.2/revisions/
+
+Index: scientific.cabal
+--- scientific.cabal.orig
++++ scientific.cabal
+@@ -68,12 +68,12 @@ library
+                        Utils
+   other-extensions:    DeriveDataTypeable, BangPatterns
+   ghc-options:         -Wall
+-  build-depends:       base        >= 4.3   && < 4.10
++  build-depends:       base        >= 4.3   && < 4.11
+                      , ghc-prim
+                      , deepseq     >= 1.3   && < 1.5
+                      , text        >= 0.8   && < 1.3
+                      , hashable    >= 1.1.2 && < 1.3
+-                     , vector      >= 0.5   && < 0.12
++                     , vector      >= 0.5   && < 0.13
+                      , containers  >= 0.1   && < 0.6
+                      , binary      >= 0.4.1 && < 0.9
+ 
+@@ -98,7 +98,7 @@ test-suite test-scientific
+   ghc-options:      -Wall
+ 
+   build-depends: scientific
+-               , base             >= 4.3   && < 4.10
++               , base             >= 4.3   && < 4.11
+                , binary           >= 0.4.1 && < 0.9
+                , tasty            >= 0.5   && < 0.12
+                , tasty-ant-xml    >= 1.0   && < 1.1
+@@ -120,5 +120,5 @@ benchmark bench-scientific
+   default-language: Haskell2010
+   ghc-options:      -O2
+   build-depends:    scientific
+-                  , base        >= 4.3   && < 4.10
++                  , base        >= 4.3   && < 4.11
+                   , criterion   >= 0.5   && < 1.2
