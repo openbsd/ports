@@ -1,4 +1,4 @@
-#${MODPY_COMMENT} $OpenBSD: Makefile,v 1.1690 2018/01/19 22:15:50 jung Exp $
+#${MODPY_COMMENT} $OpenBSD: Makefile,v 1.1691 2018/01/22 07:38:40 giovanni Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -593,6 +593,7 @@
      SUBDIR += p5-Class-XPath
      SUBDIR += p5-Class-XSAccessor
      SUBDIR += p5-Clone
+     SUBDIR += p5-Clone-PP
      SUBDIR += p5-Config-Any
      SUBDIR += p5-Config-Auto
      SUBDIR += p5-Config-AutoConf
@@ -625,6 +626,7 @@
      SUBDIR += p5-Data-Lazy
      SUBDIR += p5-Data-Munge
      SUBDIR += p5-Data-OptList
+     SUBDIR += p5-Data-Printer
      SUBDIR += p5-Data-Random
      SUBDIR += p5-Data-SExpression
      SUBDIR += p5-Data-ShowTable
