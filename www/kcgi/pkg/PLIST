@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2017/11/01 19:13:44 jturner Exp $
+@comment $OpenBSD: PLIST,v 1.8 2018/01/22 21:58:29 jturner Exp $
 include/kcgi.h
 include/kcgihtml.h
 include/kcgijson.h
@@ -10,6 +10,7 @@ lib/libkcgijson.a
 lib/libkcgiregress.a
 lib/libkcgixml.a
 @man man/man3/kcgi.3
+@man man/man3/kcgi_writer_disable.3
 @man man/man3/kcgihtml.3
 @man man/man3/kcgijson.3
 @man man/man3/kcgiregress.3
