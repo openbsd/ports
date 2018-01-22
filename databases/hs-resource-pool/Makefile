@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2017/11/08 19:01:17 kili Exp $
+# $OpenBSD: Makefile,v 1.6 2018/01/22 21:38:37 kili Exp $
 
 COMMENT =		high-performance striped resource pooling implementation
 
 DISTNAME =		resource-pool-0.2.1.1
-REVISION =		3
+REVISION =		4
 CATEGORIES =		databases devel
 HOMEPAGE =		https://github.com/bos/pool
 
@@ -14,7 +14,7 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	6EZ421mKrOhAOJWQeWGDsW
+MODGHC_PACKAGE_KEY =	HyS213bT9JFC3oeSe0JoRj
 
 RUN_DEPENDS +=		devel/hs-hashable \
 			devel/hs-monad-control>=0.2.0.1 \
