@@ -1,12 +1,12 @@
 #!/bin/sh
 #
-# $OpenBSD: soffice.sh,v 1.1 2011/06/20 13:29:35 robert Exp $
+# $OpenBSD: soffice.sh,v 1.2 2018/01/22 15:48:21 robert Exp $
 #
 
 # This is needed for LibreOffice to be able to open files with
 # special character(s) in their name
 if [ ! "${LC_CTYPE}" ]; then
-	export LC_CTYPE="en_US.ISO8859-15"
+	export LC_CTYPE="en_US.UTF-8"
 fi
 
 case "$0"
