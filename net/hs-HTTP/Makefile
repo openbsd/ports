@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2017/11/07 22:36:21 kili Exp $
+# $OpenBSD: Makefile,v 1.31 2018/01/22 22:05:37 kili Exp $
 
 COMMENT =		library for client-side HTTP
 
@@ -6,7 +6,7 @@ COMMENT =		library for client-side HTTP
 # Please do *not* update without thinking.
 PORTROACH =		ignore:1
 
-DISTNAME =		HTTP-4000.3.3
+DISTNAME =		HTTP-4000.3.7
 CATEGORIES =		net devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
@@ -18,7 +18,7 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	GkJc6HwQgxA8Q2W0uVANNW
+MODGHC_PACKAGE_KEY =	BrMupjBt6VI5SSxxBJEd3T
 
 RUN_DEPENDS =		devel/hs-mtl>=2.0,<2.3 \
 			devel/hs-network-uri>=2.6,<2.7 \
