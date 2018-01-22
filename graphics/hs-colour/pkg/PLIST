@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/11/20 19:22:53 kili Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/01/22 21:44:46 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Data/
 lib/ghc/${DISTNAME}/Data/Colour/
@@ -74,20 +74,9 @@ share/doc/hs-${DISTNAME}/html/doc-index-V.html
 share/doc/hs-${DISTNAME}/html/doc-index-W.html
 share/doc/hs-${DISTNAME}/html/doc-index-Y.html
 share/doc/hs-${DISTNAME}/html/doc-index.html
-share/doc/hs-${DISTNAME}/html/frames.html
 share/doc/hs-${DISTNAME}/html/haddock-util.js
 share/doc/hs-${DISTNAME}/html/hslogo-16.png
-share/doc/hs-${DISTNAME}/html/index-frames.html
 share/doc/hs-${DISTNAME}/html/index.html
-share/doc/hs-${DISTNAME}/html/mini_Data-Colour-CIE-Illuminant.html
-share/doc/hs-${DISTNAME}/html/mini_Data-Colour-CIE.html
-share/doc/hs-${DISTNAME}/html/mini_Data-Colour-Names.html
-share/doc/hs-${DISTNAME}/html/mini_Data-Colour-RGBSpace-HSL.html
-share/doc/hs-${DISTNAME}/html/mini_Data-Colour-RGBSpace-HSV.html
-share/doc/hs-${DISTNAME}/html/mini_Data-Colour-RGBSpace.html
-share/doc/hs-${DISTNAME}/html/mini_Data-Colour-SRGB-Linear.html
-share/doc/hs-${DISTNAME}/html/mini_Data-Colour-SRGB.html
-share/doc/hs-${DISTNAME}/html/mini_Data-Colour.html
 share/doc/hs-${DISTNAME}/html/minus.gif
 share/doc/hs-${DISTNAME}/html/ocean.css
 share/doc/hs-${DISTNAME}/html/plus.gif
