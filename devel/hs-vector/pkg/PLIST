@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2015/09/19 08:13:23 kili Exp $
+@comment $OpenBSD: PLIST,v 1.10 2018/01/22 22:05:07 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Data/
 lib/ghc/${DISTNAME}/Data/Vector/
@@ -108,30 +108,9 @@ share/doc/hs-${DISTNAME}/html/doc-index-W.html
 share/doc/hs-${DISTNAME}/html/doc-index-Y.html
 share/doc/hs-${DISTNAME}/html/doc-index-Z.html
 share/doc/hs-${DISTNAME}/html/doc-index.html
-share/doc/hs-${DISTNAME}/html/frames.html
 share/doc/hs-${DISTNAME}/html/haddock-util.js
 share/doc/hs-${DISTNAME}/html/hslogo-16.png
-share/doc/hs-${DISTNAME}/html/index-frames.html
 share/doc/hs-${DISTNAME}/html/index.html
-share/doc/hs-${DISTNAME}/html/mini_Data-Vector-Fusion-Bundle-Monadic.html
-share/doc/hs-${DISTNAME}/html/mini_Data-Vector-Fusion-Bundle-Size.html
-share/doc/hs-${DISTNAME}/html/mini_Data-Vector-Fusion-Bundle.html
-share/doc/hs-${DISTNAME}/html/mini_Data-Vector-Fusion-Stream-Monadic.html
-share/doc/hs-${DISTNAME}/html/mini_Data-Vector-Fusion-Util.html
-share/doc/hs-${DISTNAME}/html/mini_Data-Vector-Generic-Mutable-Base.html
-share/doc/hs-${DISTNAME}/html/mini_Data-Vector-Generic-Mutable.html
-share/doc/hs-${DISTNAME}/html/mini_Data-Vector-Generic-New.html
-share/doc/hs-${DISTNAME}/html/mini_Data-Vector-Generic.html
-share/doc/hs-${DISTNAME}/html/mini_Data-Vector-Internal-Check.html
-share/doc/hs-${DISTNAME}/html/mini_Data-Vector-Mutable.html
-share/doc/hs-${DISTNAME}/html/mini_Data-Vector-Primitive-Mutable.html
-share/doc/hs-${DISTNAME}/html/mini_Data-Vector-Primitive.html
-share/doc/hs-${DISTNAME}/html/mini_Data-Vector-Storable-Internal.html
-share/doc/hs-${DISTNAME}/html/mini_Data-Vector-Storable-Mutable.html
-share/doc/hs-${DISTNAME}/html/mini_Data-Vector-Storable.html
-share/doc/hs-${DISTNAME}/html/mini_Data-Vector-Unboxed-Mutable.html
-share/doc/hs-${DISTNAME}/html/mini_Data-Vector-Unboxed.html
-share/doc/hs-${DISTNAME}/html/mini_Data-Vector.html
 share/doc/hs-${DISTNAME}/html/minus.gif
 share/doc/hs-${DISTNAME}/html/ocean.css
 share/doc/hs-${DISTNAME}/html/plus.gif
