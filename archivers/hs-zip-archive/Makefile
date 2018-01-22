@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2017/11/07 21:51:57 kili Exp $
+# $OpenBSD: Makefile,v 1.4 2018/01/22 21:36:14 kili Exp $
 
 COMMENT =		library dealing with zip archives
 
 DISTNAME =		zip-archive-0.2.3.7
-REVISION =		1
+REVISION =		2
 CATEGORIES =		archivers devel
 
 # BSD3
@@ -13,7 +13,7 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	7VvBT2PgJGrBVssTz0mZSY
+MODGHC_PACKAGE_KEY =	KKpluOh2rfxHQP3RVsnoLF
 
 BUILD_DEPENDS =	${RUN_DEPENDS}
 
