@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2017/11/07 21:19:25 kili Exp $
+# $OpenBSD: Makefile,v 1.19 2018/01/22 22:03:01 kili Exp $
 
 COMMENT =		primitive memory-related operations
 
@@ -6,8 +6,7 @@ COMMENT =		primitive memory-related operations
 # Please do *not* update without thinking.
 PORTROACH =		ignore:1
 
-DISTNAME =		primitive-0.6.1.0
-REVISION =		2
+DISTNAME =		primitive-0.6.2.0
 CATEGORIES =		devel
 
 MAINTAINER =		Jim Razmus II <jim@openbsd.org>
@@ -19,6 +18,6 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	Ip44DqhfCp21tTUYbecwa
+MODGHC_PACKAGE_KEY =	EI3NK1Xfv9zEcRtyXK2EwZ
 
 .include <bsd.port.mk>
