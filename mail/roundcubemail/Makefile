@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.122 2018/01/14 20:18:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.123 2018/01/22 18:20:53 sthen Exp $
 
 COMMENT=	imap4 webmail client
 
@@ -46,7 +46,7 @@ do-install:
 	chgrp -R wheel ${INSTDIR}/bin; \
 	chmod -R o-rwx ${INSTDIR}/bin; \
 	find ${INSTDIR} \( -name \*.orig -or -name \*.beforesubst -or \
-	    -name \*.src \) -exec rm -f {} +
+	    -name \*.src \) -delete
 	find ${INSTDIR} \( -name \*.png -or -name \*.js -or \
 	    -name \*.css \) -exec chmod -x {} +
 
