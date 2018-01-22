@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2017/11/08 19:03:15 kili Exp $
+# $OpenBSD: Makefile,v 1.10 2018/01/22 21:40:32 kili Exp $
 
 COMMENT =		streaming data processing library
 
 DISTNAME =		conduit-1.2.12.1
+REVISION =		0
 CATEGORIES =		devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
@@ -14,7 +15,7 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	89wCNZMmoUIEN95QvAwXtP
+MODGHC_PACKAGE_KEY =	CxYEwrzwBJqKN5k9tHPTeG
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
 

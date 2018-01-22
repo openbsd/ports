@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2017/11/07 21:12:09 kili Exp $
+# $OpenBSD: Makefile,v 1.15 2018/01/22 21:40:32 kili Exp $
 
 COMMENT =		binary serialization library
 
 DISTNAME =		cereal-0.4.1.0
-REVISION =		3
+REVISION =		4
 CATEGORIES =		devel
 
 MAINTAINER =		Jim Razmus II <jim@openbsd.org>
@@ -15,6 +15,6 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	Iha4559uGZa97tLxsSRCUi
+MODGHC_PACKAGE_KEY =	J7JNgMSSYgsLRU6KWtlHY0
 
 .include <bsd.port.mk>

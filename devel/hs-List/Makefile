@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2017/11/07 21:07:35 kili Exp $
+# $OpenBSD: Makefile,v 1.17 2018/01/22 21:40:32 kili Exp $
 
 COMMENT =		List monad transformer and a List class
 
 DISTNAME =		List-0.5.2
-REVISION =		2
+REVISION =		3
 CATEGORIES =		devel
 
 MAINTAINER =		Jim Razmus II <jim@openbsd.org>
@@ -15,6 +15,6 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	IEwnt2DLvWKCLNMcqncjTD
+MODGHC_PACKAGE_KEY =	KQYI3a9GuV34wW7Ju7wl5W
 
 .include <bsd.port.mk>
