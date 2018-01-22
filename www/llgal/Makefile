@@ -1,19 +1,19 @@
-# $OpenBSD: Makefile,v 1.11 2016/08/12 17:40:41 steven Exp $
+# $OpenBSD: Makefile,v 1.12 2018/01/22 10:26:17 kirby Exp $
 
 COMMENT=	command-line online gallery generator
 
 DISTNAME=	llgal-0.13.18
+REVISION=	0
 CATEGORIES=	www graphics
 
-HOMEPAGE=	http://home.gna.org/llgal/
+HOMEPAGE=	http://bgoglin.free.fr/llgal/
 
 MAINTAINER=	Steven Mestdagh <steven@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	http://download.gna.org/llgal/
-EXTRACT_SUFX=	.tar.bz2
+MASTER_SITES=	https://github.com/bgoglin/llgal/archive/
 
 BUILD_DEPENDS=	devel/gettext-tools
 
@@ -28,6 +28,8 @@ NO_TEST=	Yes
 PKG_ARCH=	*
 
 MAKE_ENV=	SYSCONFDIR=${SYSCONFDIR}
+
+WRKDIST=	${WRKDIR}/llgal-${DISTNAME}
 
 pre-build:
 	@perl -pi -e 's,/usr/share,${PREFIX}/share,' ${WRKSRC}/llgal.1
