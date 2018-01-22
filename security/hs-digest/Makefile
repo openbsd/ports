@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2017/11/07 22:39:13 kili Exp $
+# $OpenBSD: Makefile,v 1.4 2018/01/22 21:47:04 kili Exp $
 
 COMMENT =		cryptographic hashes for bytestrings
 
 DISTNAME =		digest-0.0.1.2
-REVISION =		1
+REVISION =		2
 CATEGORIES =		devel security
 
 # BSD3
@@ -13,7 +13,7 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	Jkg2DJlP1uNCnEMQswznXb
+MODGHC_PACKAGE_KEY =	J7cjlUazOWnIwNGrU2CIF8
 
 RUN_DEPENDS =		archivers/hs-zlib
 

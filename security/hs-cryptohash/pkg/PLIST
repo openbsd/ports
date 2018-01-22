@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2015/09/20 18:29:21 kili Exp $
+@comment $OpenBSD: PLIST,v 1.8 2018/01/22 21:47:04 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Crypto/
 lib/ghc/${DISTNAME}/Crypto/Hash/
@@ -60,27 +60,9 @@ share/doc/hs-${DISTNAME}/html/Crypto-Hash-Whirlpool.html
 share/doc/hs-${DISTNAME}/html/Crypto-MAC-HMAC.html
 share/doc/hs-${DISTNAME}/html/cryptohash.haddock
 share/doc/hs-${DISTNAME}/html/doc-index.html
-share/doc/hs-${DISTNAME}/html/frames.html
 share/doc/hs-${DISTNAME}/html/haddock-util.js
 share/doc/hs-${DISTNAME}/html/hslogo-16.png
-share/doc/hs-${DISTNAME}/html/index-frames.html
 share/doc/hs-${DISTNAME}/html/index.html
-share/doc/hs-${DISTNAME}/html/mini_Crypto-Hash-MD2.html
-share/doc/hs-${DISTNAME}/html/mini_Crypto-Hash-MD4.html
-share/doc/hs-${DISTNAME}/html/mini_Crypto-Hash-MD5.html
-share/doc/hs-${DISTNAME}/html/mini_Crypto-Hash-RIPEMD160.html
-share/doc/hs-${DISTNAME}/html/mini_Crypto-Hash-SHA1.html
-share/doc/hs-${DISTNAME}/html/mini_Crypto-Hash-SHA224.html
-share/doc/hs-${DISTNAME}/html/mini_Crypto-Hash-SHA256.html
-share/doc/hs-${DISTNAME}/html/mini_Crypto-Hash-SHA3.html
-share/doc/hs-${DISTNAME}/html/mini_Crypto-Hash-SHA384.html
-share/doc/hs-${DISTNAME}/html/mini_Crypto-Hash-SHA512.html
-share/doc/hs-${DISTNAME}/html/mini_Crypto-Hash-SHA512t.html
-share/doc/hs-${DISTNAME}/html/mini_Crypto-Hash-Skein256.html
-share/doc/hs-${DISTNAME}/html/mini_Crypto-Hash-Skein512.html
-share/doc/hs-${DISTNAME}/html/mini_Crypto-Hash-Tiger.html
-share/doc/hs-${DISTNAME}/html/mini_Crypto-Hash-Whirlpool.html
-share/doc/hs-${DISTNAME}/html/mini_Crypto-MAC-HMAC.html
 share/doc/hs-${DISTNAME}/html/minus.gif
 share/doc/hs-${DISTNAME}/html/ocean.css
 share/doc/hs-${DISTNAME}/html/plus.gif
