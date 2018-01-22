@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2015/09/20 15:09:36 kili Exp $
+@comment $OpenBSD: PLIST,v 1.8 2018/01/22 21:48:45 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/HS${DISTNAME}-${MODGHC_PACKAGE_KEY}.o
 lib/ghc/${DISTNAME}/Text/
@@ -53,18 +53,9 @@ share/doc/hs-${DISTNAME}/html/doc-index-T.html
 share/doc/hs-${DISTNAME}/html/doc-index-U.html
 share/doc/hs-${DISTNAME}/html/doc-index-X.html
 share/doc/hs-${DISTNAME}/html/doc-index.html
-share/doc/hs-${DISTNAME}/html/frames.html
 share/doc/hs-${DISTNAME}/html/haddock-util.js
 share/doc/hs-${DISTNAME}/html/hslogo-16.png
-share/doc/hs-${DISTNAME}/html/index-frames.html
 share/doc/hs-${DISTNAME}/html/index.html
-share/doc/hs-${DISTNAME}/html/mini_Text-XML-Light-Cursor.html
-share/doc/hs-${DISTNAME}/html/mini_Text-XML-Light-Input.html
-share/doc/hs-${DISTNAME}/html/mini_Text-XML-Light-Lexer.html
-share/doc/hs-${DISTNAME}/html/mini_Text-XML-Light-Output.html
-share/doc/hs-${DISTNAME}/html/mini_Text-XML-Light-Proc.html
-share/doc/hs-${DISTNAME}/html/mini_Text-XML-Light-Types.html
-share/doc/hs-${DISTNAME}/html/mini_Text-XML-Light.html
 share/doc/hs-${DISTNAME}/html/minus.gif
 share/doc/hs-${DISTNAME}/html/ocean.css
 share/doc/hs-${DISTNAME}/html/plus.gif

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2017/11/07 22:41:48 kili Exp $
+# $OpenBSD: Makefile,v 1.16 2018/01/22 21:48:45 kili Exp $
 
 COMMENT =		Haskell bindings to the libXML2 SAX interface
 
 DISTNAME =		libxml-sax-0.7.5
-REVISION =		4
+REVISION =		5
 CATEGORIES =		textproc
 
 HOMEPAGE =		https://john-millikin.com/software/haskell-libxml/
@@ -17,7 +17,7 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	LafUHoRJAzgCYIyfALEgi1
+MODGHC_PACKAGE_KEY =	CWwwLs2Cpr07R9NPn064CX
 
 RUN_DEPENDS =		devel/hs-text>=0.7 \
 			textproc/hs-xml-types>=0.3,<0.4 \

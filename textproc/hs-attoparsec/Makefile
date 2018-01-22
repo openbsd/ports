@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2017/11/07 22:40:54 kili Exp $
+# $OpenBSD: Makefile,v 1.25 2018/01/22 21:48:45 kili Exp $
 
 COMMENT =		fast combinator parsing for bytestrings
 
@@ -7,7 +7,7 @@ COMMENT =		fast combinator parsing for bytestrings
 PORTROACH =		ignore:1
 
 DISTNAME =		attoparsec-0.13.0.1
-REVISION =		2
+REVISION =		3
 CATEGORIES =		textproc
 
 MAINTAINER =		Jim Razmus II <jim@openbsd.org>, \
@@ -20,7 +20,7 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	86ABSVNyJ1IBEgl9XXjGfi
+MODGHC_PACKAGE_KEY =	37w4jz2uUXs3bEMk7HIEHV
 
 RUN_DEPENDS =		devel/hs-text>=1.1.1.3 \
 			devel/hs-scientific>=0.3.1,<0.4

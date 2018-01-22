@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2015/09/19 08:19:54 kili Exp $
+@comment $OpenBSD: PLIST,v 1.11 2018/01/22 21:48:45 kili Exp $
 @conflict hs-attoparsec-text-*
 @pkgpath textproc/hs-attoparsec-text
 lib/ghc/${DISTNAME}/
@@ -72,25 +72,9 @@ share/doc/hs-${DISTNAME}/html/Data-Attoparsec-Zepto.html
 share/doc/hs-${DISTNAME}/html/Data-Attoparsec.html
 share/doc/hs-${DISTNAME}/html/attoparsec.haddock
 share/doc/hs-${DISTNAME}/html/doc-index.html
-share/doc/hs-${DISTNAME}/html/frames.html
 share/doc/hs-${DISTNAME}/html/haddock-util.js
 share/doc/hs-${DISTNAME}/html/hslogo-16.png
-share/doc/hs-${DISTNAME}/html/index-frames.html
 share/doc/hs-${DISTNAME}/html/index.html
-share/doc/hs-${DISTNAME}/html/mini_Data-Attoparsec-ByteString-Char8.html
-share/doc/hs-${DISTNAME}/html/mini_Data-Attoparsec-ByteString-Lazy.html
-share/doc/hs-${DISTNAME}/html/mini_Data-Attoparsec-ByteString.html
-share/doc/hs-${DISTNAME}/html/mini_Data-Attoparsec-Char8.html
-share/doc/hs-${DISTNAME}/html/mini_Data-Attoparsec-Combinator.html
-share/doc/hs-${DISTNAME}/html/mini_Data-Attoparsec-Internal-Types.html
-share/doc/hs-${DISTNAME}/html/mini_Data-Attoparsec-Internal.html
-share/doc/hs-${DISTNAME}/html/mini_Data-Attoparsec-Lazy.html
-share/doc/hs-${DISTNAME}/html/mini_Data-Attoparsec-Number.html
-share/doc/hs-${DISTNAME}/html/mini_Data-Attoparsec-Text-Lazy.html
-share/doc/hs-${DISTNAME}/html/mini_Data-Attoparsec-Text.html
-share/doc/hs-${DISTNAME}/html/mini_Data-Attoparsec-Types.html
-share/doc/hs-${DISTNAME}/html/mini_Data-Attoparsec-Zepto.html
-share/doc/hs-${DISTNAME}/html/mini_Data-Attoparsec.html
 share/doc/hs-${DISTNAME}/html/minus.gif
 share/doc/hs-${DISTNAME}/html/ocean.css
 share/doc/hs-${DISTNAME}/html/plus.gif

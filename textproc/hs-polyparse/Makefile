@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2017/11/07 22:42:05 kili Exp $
+# $OpenBSD: Makefile,v 1.18 2018/01/22 21:48:45 kili Exp $
 
 COMMENT =		alternative parser combinator libraries
 
 DISTNAME =		polyparse-1.12
-REVISION =		0
+REVISION =		1
 CATEGORIES =		textproc
 HOMEPAGE =		http://code.haskell.org/~malcolm/polyparse/
 
@@ -16,7 +16,7 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	9jcL0aGisLx104IXlAGAAj
+MODGHC_PACKAGE_KEY =	1bosF4Whssj874aGh3f9kn
 
 RUN_DEPENDS +=		devel/hs-text
 BUILD_DEPENDS +=	${RUN_DEPENDS}

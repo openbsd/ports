@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.33 2017/11/09 17:38:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2018/01/22 21:48:45 kili Exp $
 
 COMMENT =		utilities for manipulating XML documents
 
 DISTNAME =		HaXml-1.25.4
 CATEGORIES =		textproc
 HOMEPAGE =		http://projects.haskell.org/HaXml/
-REVISION =		0
+REVISION =		1
 
 MAINTAINER =		David Coppa <dcoppa@openbsd.org>
 
@@ -18,7 +18,7 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	B9wvDmvOZoF7ZEYuCxncwg
+MODGHC_PACKAGE_KEY =	2gurZTw8cuoHsdfizbIhnS
 
 LIB_DEPENDS +=		converters/libiconv
 RUN_DEPENDS +=		devel/hs-random \

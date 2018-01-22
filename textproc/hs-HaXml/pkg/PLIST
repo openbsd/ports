@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2017/06/30 13:49:09 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.13 2018/01/22 21:48:45 kili Exp $
 @bin bin/Canonicalise
 @bin bin/CanonicaliseLazy
 @bin bin/DtdToHaskell
@@ -186,54 +186,9 @@ share/doc/hs-${DISTNAME}/html/doc-index-W.html
 share/doc/hs-${DISTNAME}/html/doc-index-X.html
 share/doc/hs-${DISTNAME}/html/doc-index-Z.html
 share/doc/hs-${DISTNAME}/html/doc-index.html
-share/doc/hs-${DISTNAME}/html/frames.html
 share/doc/hs-${DISTNAME}/html/haddock-util.js
 share/doc/hs-${DISTNAME}/html/hslogo-16.png
-share/doc/hs-${DISTNAME}/html/index-frames.html
 share/doc/hs-${DISTNAME}/html/index.html
-share/doc/hs-${DISTNAME}/html/mini_Text-XML-HaXml-ByteStringPP.html
-share/doc/hs-${DISTNAME}/html/mini_Text-XML-HaXml-Combinators.html
-share/doc/hs-${DISTNAME}/html/mini_Text-XML-HaXml-DtdToHaskell-Convert.html
-share/doc/hs-${DISTNAME}/html/mini_Text-XML-HaXml-DtdToHaskell-Instance.html
-share/doc/hs-${DISTNAME}/html/mini_Text-XML-HaXml-DtdToHaskell-TypeDef.html
-share/doc/hs-${DISTNAME}/html/mini_Text-XML-HaXml-Escape.html
-share/doc/hs-${DISTNAME}/html/mini_Text-XML-HaXml-Html-Generate.html
-share/doc/hs-${DISTNAME}/html/mini_Text-XML-HaXml-Html-Parse.html
-share/doc/hs-${DISTNAME}/html/mini_Text-XML-HaXml-Html-ParseLazy.html
-share/doc/hs-${DISTNAME}/html/mini_Text-XML-HaXml-Html-Pretty.html
-share/doc/hs-${DISTNAME}/html/mini_Text-XML-HaXml-Lex.html
-share/doc/hs-${DISTNAME}/html/mini_Text-XML-HaXml-Namespaces.html
-share/doc/hs-${DISTNAME}/html/mini_Text-XML-HaXml-OneOfN.html
-share/doc/hs-${DISTNAME}/html/mini_Text-XML-HaXml-Parse.html
-share/doc/hs-${DISTNAME}/html/mini_Text-XML-HaXml-ParseLazy.html
-share/doc/hs-${DISTNAME}/html/mini_Text-XML-HaXml-Posn.html
-share/doc/hs-${DISTNAME}/html/mini_Text-XML-HaXml-Pretty.html
-share/doc/hs-${DISTNAME}/html/mini_Text-XML-HaXml-SAX.html
-share/doc/hs-${DISTNAME}/html/mini_Text-XML-HaXml-Schema-Environment.html
-share/doc/hs-${DISTNAME}/html/mini_Text-XML-HaXml-Schema-HaskellTypeModel.html
-share/doc/hs-${DISTNAME}/html/mini_Text-XML-HaXml-Schema-NameConversion.html
-share/doc/hs-${DISTNAME}/html/mini_Text-XML-HaXml-Schema-Parse.html
-share/doc/hs-${DISTNAME}/html/mini_Text-XML-HaXml-Schema-PrettyHaskell.html
-share/doc/hs-${DISTNAME}/html/mini_Text-XML-HaXml-Schema-PrettyHsBoot.html
-share/doc/hs-${DISTNAME}/html/mini_Text-XML-HaXml-Schema-PrimitiveTypes.html
-share/doc/hs-${DISTNAME}/html/mini_Text-XML-HaXml-Schema-Schema.html
-share/doc/hs-${DISTNAME}/html/mini_Text-XML-HaXml-Schema-TypeConversion.html
-share/doc/hs-${DISTNAME}/html/mini_Text-XML-HaXml-Schema-XSDTypeModel.html
-share/doc/hs-${DISTNAME}/html/mini_Text-XML-HaXml-ShowXmlLazy.html
-share/doc/hs-${DISTNAME}/html/mini_Text-XML-HaXml-TypeMapping.html
-share/doc/hs-${DISTNAME}/html/mini_Text-XML-HaXml-Types.html
-share/doc/hs-${DISTNAME}/html/mini_Text-XML-HaXml-Util.html
-share/doc/hs-${DISTNAME}/html/mini_Text-XML-HaXml-Validate.html
-share/doc/hs-${DISTNAME}/html/mini_Text-XML-HaXml-Verbatim.html
-share/doc/hs-${DISTNAME}/html/mini_Text-XML-HaXml-Version.html
-share/doc/hs-${DISTNAME}/html/mini_Text-XML-HaXml-Wrappers.html
-share/doc/hs-${DISTNAME}/html/mini_Text-XML-HaXml-XmlContent-Haskell.html
-share/doc/hs-${DISTNAME}/html/mini_Text-XML-HaXml-XmlContent-Parser.html
-share/doc/hs-${DISTNAME}/html/mini_Text-XML-HaXml-XmlContent.html
-share/doc/hs-${DISTNAME}/html/mini_Text-XML-HaXml-Xtract-Combinators.html
-share/doc/hs-${DISTNAME}/html/mini_Text-XML-HaXml-Xtract-Lex.html
-share/doc/hs-${DISTNAME}/html/mini_Text-XML-HaXml-Xtract-Parse.html
-share/doc/hs-${DISTNAME}/html/mini_Text-XML-HaXml.html
 share/doc/hs-${DISTNAME}/html/minus.gif
 share/doc/hs-${DISTNAME}/html/ocean.css
 share/doc/hs-${DISTNAME}/html/plus.gif
