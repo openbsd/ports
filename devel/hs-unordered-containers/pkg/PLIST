@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2015/09/19 08:12:16 kili Exp $
+@comment $OpenBSD: PLIST,v 1.7 2018/01/22 21:43:46 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Data/
 lib/ghc/${DISTNAME}/Data/HashMap/
@@ -29,14 +29,9 @@ share/doc/hs-${DISTNAME}/html/Data-HashMap-Lazy.html
 share/doc/hs-${DISTNAME}/html/Data-HashMap-Strict.html
 share/doc/hs-${DISTNAME}/html/Data-HashSet.html
 share/doc/hs-${DISTNAME}/html/doc-index.html
-share/doc/hs-${DISTNAME}/html/frames.html
 share/doc/hs-${DISTNAME}/html/haddock-util.js
 share/doc/hs-${DISTNAME}/html/hslogo-16.png
-share/doc/hs-${DISTNAME}/html/index-frames.html
 share/doc/hs-${DISTNAME}/html/index.html
-share/doc/hs-${DISTNAME}/html/mini_Data-HashMap-Lazy.html
-share/doc/hs-${DISTNAME}/html/mini_Data-HashMap-Strict.html
-share/doc/hs-${DISTNAME}/html/mini_Data-HashSet.html
 share/doc/hs-${DISTNAME}/html/minus.gif
 share/doc/hs-${DISTNAME}/html/ocean.css
 share/doc/hs-${DISTNAME}/html/plus.gif

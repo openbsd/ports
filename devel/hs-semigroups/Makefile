@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2017/11/07 22:21:22 kili Exp $
+# $OpenBSD: Makefile,v 1.12 2018/01/22 21:43:45 kili Exp $
 
 COMMENT =		Haskell 98 semigroups
 
 DISTNAME =		semigroups-0.9.2
-REVISION =		4
+REVISION =		5
 CATEGORIES =		devel math
 
 # BSD3
@@ -13,7 +13,7 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	GCXiREeL7VGD9EuOR4zASp
+MODGHC_PACKAGE_KEY =	KyCDFOYQ0vPI7UucE0fVIk
 
 RUN_DEPENDS +=		devel/hs-nats>=0.1
 

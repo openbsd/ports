@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2017/11/07 21:30:14 kili Exp $
+# $OpenBSD: Makefile,v 1.17 2018/01/22 21:43:46 kili Exp $
 
 COMMENT =		portable POSIX-compatibility layer
 
 DISTNAME =		unix-compat-0.4.1.1
-REVISION =		4
+REVISION =		5
 CATEGORIES =		devel
 
 MAINTAINER =		Jim Razmus II <jim@openbsd.org>
@@ -15,6 +15,6 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	2jRIsWib2XLKStkcYt77E2
+MODGHC_PACKAGE_KEY =	8FowYqsnywvKDGnEQzk1BX
 
 .include <bsd.port.mk>

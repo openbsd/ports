@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2017/11/09 16:39:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2018/01/22 21:43:45 kili Exp $
 
 COMMENT =		framework for running and organising tests
 
 DISTNAME =		test-framework-0.8.1.1
-REVISION =		2
+REVISION =		3
 CATEGORIES =		devel
 
 HOMEPAGE =		http://batterseapower.github.com/test-framework/
@@ -17,7 +17,7 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	3KmZLZEmFBG4XYJiggPSFQ
+MODGHC_PACKAGE_KEY =	KakqBuIUYoUBZBqwCIlO84
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
 RUN_DEPENDS =		net/hs-hostname>=1.0 \

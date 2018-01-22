@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2017/11/07 21:29:08 kili Exp $
+# $OpenBSD: Makefile,v 1.24 2018/01/22 21:43:45 kili Exp $
 
 COMMENT =		efficient packed Unicode text type
 
@@ -7,7 +7,7 @@ COMMENT =		efficient packed Unicode text type
 PORTROACH =		ignore:1
 
 DISTNAME =		text-1.2.1.3
-REVISION =		2
+REVISION =		3
 CATEGORIES =		devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
@@ -19,6 +19,6 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	K7urvJEq0WALu3FXMx2wrP
+MODGHC_PACKAGE_KEY =	5I6D6Lq0QEU97eY5wqs6DJ
 
 .include <bsd.port.mk>

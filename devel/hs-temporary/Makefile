@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/11/20 19:17:00 kili Exp $
+# $OpenBSD: Makefile,v 1.2 2018/01/22 21:43:45 kili Exp $
 
 COMMENT =		portable temporary file and directory support
 
 DISTNAME =		temporary-1.2.1.1
+REVISION =		0
 CATEGORIES =		devel
 
 # BSD3
@@ -12,7 +13,7 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	Ipxz6mtANgu8gTukaTLAgc
+MODGHC_PACKAGE_KEY =	EaGJD8l9MwE6FMqsytxEjz
 
 RUN_DEPENDS =		devel/hs-exceptions>=0.6
 

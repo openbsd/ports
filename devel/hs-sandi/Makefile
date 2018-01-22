@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2017/11/20 23:42:13 kili Exp $
+# $OpenBSD: Makefile,v 1.6 2018/01/22 21:43:45 kili Exp $
 
 COMMENT =		data encoding library
 
 DISTNAME =		sandi-0.4.1
+REVISION =		0
 CATEGORIES =		devel
 
 # BSD
@@ -12,7 +13,7 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	CE2FEFbNCNW62Jp9Seg67k
+MODGHC_PACKAGE_KEY =	IzshKkho05BGGpyRzAGPU7
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2017/11/07 21:31:02 kili Exp $
+# $OpenBSD: Makefile,v 1.29 2018/01/22 21:43:46 kili Exp $
 
 COMMENT =	Haskell code colourizer
 
@@ -7,6 +7,7 @@ COMMENT =	Haskell code colourizer
 PORTROACH =		ignore:1
 
 DISTNAME =	hscolour-1.24
+REVISION =	0
 
 # Rip off the hs- prefix, even if it contains a Haskell library.
 PKGNAME =	${DISTNAME}
@@ -22,7 +23,7 @@ WANTLIB =	c iconv m
 MODULES =	lang/ghc
 MODGHC_BUILD =	cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	3jesLsp8VQaC4mEWcyDFsm
+MODGHC_PACKAGE_KEY =	2INJ3Qyba2w3oVHuiH7YLO
 
 LIB_DEPENDS =	converters/libiconv
 
