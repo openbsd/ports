@@ -1,16 +1,8 @@
-$OpenBSD: patch-configure,v 1.17 2017/11/07 02:58:34 kili Exp $
---- configure.orig	Tue May 17 18:36:51 2016
-+++ configure	Wed Nov  2 11:07:58 2016
-@@ -4234,7 +4234,7 @@ $as_echo "$as_me: Building in-tree ghc-pwd" >&6;}
-                 rm -rf utils/ghc-pwd/dist-boot
-     mkdir  utils/ghc-pwd/dist-boot
-                 GHC_LDFLAGS=`perl -e 'foreach (@ARGV) { print "-optl$_ " }' -- $LDFLAGS`
--        if ! "$WithGhc" $GHC_LDFLAGS -v0 -no-user-$GHC_PACKAGE_DB_FLAG -hidir utils/ghc-pwd/dist-boot -odir utils/ghc-pwd/dist-boot -stubdir utils/ghc-pwd/dist-boot --make utils/ghc-pwd/Main.hs -o utils/ghc-pwd/dist-boot/ghc-pwd
-+        if ! "$WithGhc" $GHC_LDFLAGS -optl -nopie -v0 -no-user-$GHC_PACKAGE_DB_FLAG -hidir utils/ghc-pwd/dist-boot -odir utils/ghc-pwd/dist-boot -stubdir utils/ghc-pwd/dist-boot --make utils/ghc-pwd/Main.hs -o utils/ghc-pwd/dist-boot/ghc-pwd
-     then
-         as_fn_error $? "Building ghc-pwd failed" "$LINENO" 5
-     fi
-@@ -8475,7 +8475,7 @@ $as_echo_n "checking for extra options to pass gcc whe
+$OpenBSD: patch-configure,v 1.18 2018/01/22 00:42:30 kili Exp $
+Index: configure
+--- configure.orig
++++ configure
+@@ -9152,7 +9152,7 @@ $as_echo_n "checking for extra options to pass gcc whe
  if ${fp_cv_gcc_extra_opts+:} false; then :
    $as_echo_n "(cached) " >&6
  else

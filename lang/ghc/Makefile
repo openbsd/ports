@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.153 2017/12/05 20:21:19 kili Exp $
+# $OpenBSD: Makefile,v 1.154 2018/01/22 00:42:30 kili Exp $
+
+BROKEN =		do not disturb the package builds
 
 COMMENT =		compiler for the functional language Haskell
 
@@ -16,7 +18,7 @@ CATEGORIES =		lang devel
 HOMEPAGE =		https://www.haskell.org/ghc/
 
 # Version of the precompiled binaries
-BIN_VER =		7.10.3.20170417
+BIN_VER =		8.0.1.20171204
 
 # Pull in lang/ghc to get MODGHC_VER and ONLY_FOR_ARCHS, which is maintained
 # in ghc.port.mk. lang/python needed for regression tests.
@@ -53,7 +55,7 @@ DISTFILES =		ghc-${MODGHC_VER}-src.tar.xz \
 			${BINDISTFILE}
 
 .for m in amd64 i386
-BINDISTFILE-$m =	ghc-${BIN_VER}-$m-unknown-openbsd.tar.bz2:0 \
+BINDISTFILE-$m =	ghc-${BIN_VER}-$m-unknown-openbsd.tar.xz:0 \
 			ghc-${BIN_VER}-shlibs-$m.tar.gz:0
 SUPDISTFILES +=		${BINDISTFILE-$m}
 .endfor
@@ -61,29 +63,30 @@ SUPDISTFILES +=		${BINDISTFILE-$m}
 # Substvars for all libraries, assuming that ghc-bnot, ghc-boot-th and
 # ghci will always have the same version number as ghc.
 GHC_ITEMS = \
-	CABAL			1.24.0.0	\
-	ARRAY			0.5.1.1		\
-	BASE			4.9.0.0		\
-	BINARY			0.8.3.0		\
-	BYTESTRING		0.10.8.1	\
-	CONTAINERS		0.5.7.1		\
-	DEEPSEQ			1.4.2.0		\
-	DIRECTORY		1.2.6.2		\
-	FILEPATH		1.4.1.0		\
-	GHC			8.0.1		\
-	GHC_PRIM		0.5.0.0		\
-	HASKELINE		0.7.2.3		\
-	HOOPL			3.10.2.1	\
+	CABAL			2.0.1.0	\
+	ARRAY			0.5.2.0		\
+	BASE			4.10.1.0	\
+	BINARY			0.8.5.1		\
+	BYTESTRING		0.10.8.2	\
+	CONTAINERS		0.5.10.2	\
+	DEEPSEQ			1.4.3.0		\
+	DIRECTORY		1.3.0.2		\
+	FILEPATH		1.4.1.2		\
+	GHC			8.2.2		\
+	GHC_COMPACT		0.1.0.0		\
+	GHC_PRIM		0.5.1.1		\
+	HASKELINE		0.7.4.0		\
+	HOOPL			3.10.2.2	\
 	HPC			0.6.0.3		\
-	INTEGER_GMP		1.0.0.1		\
+	INTEGER_GMP		1.0.1.0		\
 	PRETTY			1.1.3.3		\
-	PROCESS			1.4.2.0		\
-	TEMPLATE_HASKELL	2.11.0.0	\
-	TERMINFO		0.4.0.2		\
-	TIME			1.6.0.1		\
+	PROCESS			1.6.1.0		\
+	TEMPLATE_HASKELL	2.12.0.0	\
+	TERMINFO		0.4.1.0		\
+	TIME			1.8.0.2		\
 	TRANSFORMERS		0.5.2.0		\
-	UNIX			2.7.2.0		\
-	XHTML			3000.2.1
+	UNIX			2.7.2.2		\
+	XHTML			3000.2.2
 
 .for _i _v in ${GHC_ITEMS}
 ${_i}_VER =	${_v}
@@ -100,8 +103,12 @@ CFLAGS +=		-fno-pie
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--with-iconv-includes=${LOCALBASE}/include \
 			--with-iconv-libraries=${LOCALBASE}/lib \
-			--with-gcc="${CC}" \
-			--with-clang="${CC}"
+			CC="${CC}"
+
+# Don't autodetect ld.lld. It fails at some point during the build
+# with /usr/bin/ld.lld: error: cannot preempt symbol: memcpy
+CONFIGURE_ARGS +=	--disable-ld-override
+
 # XXX: wxneeded is a hack. Fix rts/Linker.c, mmapForLinker() and
 #      loadObj_() instead.
 GHC_CC_OPTS =		-fno-pie -nopie

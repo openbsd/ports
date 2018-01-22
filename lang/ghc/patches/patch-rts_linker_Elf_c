@@ -1,8 +1,9 @@
-$OpenBSD: patch-rts_Linker_c,v 1.12 2017/11/07 02:58:34 kili Exp $
-Index: rts/Linker.c
---- rts/Linker.c.orig
-+++ rts/Linker.c
-@@ -4439,6 +4439,13 @@ ocRunInit_PEi386 ( ObjectCode *oc )
+$OpenBSD: patch-rts_linker_Elf_c,v 1.1 2018/01/22 00:42:30 kili Exp $
+
+Index: rts/linker/Elf.c
+--- rts/linker/Elf.c.orig
++++ rts/linker/Elf.c
+@@ -91,6 +91,13 @@
  #  include <machine/reloc.h>
  #  define R_386_32    RELOC_32
  #  define R_386_PC32  RELOC_PC32

@@ -1,15 +1,16 @@
-$OpenBSD: patch-utils_ghc-pkg_Main_hs,v 1.5 2017/11/07 02:58:34 kili Exp $
+$OpenBSD: patch-utils_ghc-pkg_Main_hs,v 1.6 2018/01/22 00:42:30 kili Exp $
 
 Horrible hack to get rid of the annoying warnings when running
 pkg_add -u. This means that you do NOT get any such warning when
 running ghc-pkg unregister ... -v0 --force.
 
---- utils/ghc-pkg/Main.hs.orig	Mon May 16 19:08:54 2016
-+++ utils/ghc-pkg/Main.hs	Wed Nov  2 11:07:59 2016
-@@ -1176,7 +1176,7 @@ modifyPackage fn pkgarg verbosity my_flags force = do
+Index: utils/ghc-pkg/Main.hs
+--- utils/ghc-pkg/Main.hs.orig
++++ utils/ghc-pkg/Main.hs
+@@ -1364,7 +1364,7 @@ modifyPackage fn pkgarg verbosity my_flags force = do
              = display pkgid
          | otherwise = display pkgid ++ "@" ++ display (installedUnitId pkg)
-         where pkgid = sourcePackageId pkg
+         where pkgid = mungedId pkg
 -  when (not (null newly_broken)) $
 +  when (not (null newly_broken || (force == ForceAll && verbosity <= Silent))) $
        dieOrForceAll force ("unregistering would break the following packages: "

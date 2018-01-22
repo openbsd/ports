@@ -1,7 +1,8 @@
-$OpenBSD: patch-testsuite_driver_testlib_py,v 1.8 2017/11/07 02:58:34 kili Exp $
---- testsuite/driver/testlib.py.orig	Mon May 16 19:08:53 2016
-+++ testsuite/driver/testlib.py	Wed Nov  2 11:19:10 2016
-@@ -1641,6 +1641,13 @@ def compare_outputs(way, kind, normaliser, expected_fi
+$OpenBSD: patch-testsuite_driver_testlib_py,v 1.9 2018/01/22 00:42:30 kili Exp $
+Index: testsuite/driver/testlib.py
+--- testsuite/driver/testlib.py.orig
++++ testsuite/driver/testlib.py
+@@ -1551,6 +1551,13 @@ def compare_outputs(way, kind, normaliser, expected_fi
      actual_raw = read_no_crs(actual_path)
      actual_str = normaliser(actual_raw)
  
@@ -15,19 +16,20 @@ $OpenBSD: patch-testsuite_driver_testlib_py,v 1.8 2017/11/07 02:58:34 kili Exp $
      # See Note [Output comparison].
      if whitespace_normaliser(expected_str) == whitespace_normaliser(actual_str):
          return 1
-@@ -1656,13 +1663,13 @@ def compare_outputs(way, kind, normaliser, expected_fi
+@@ -1566,14 +1573,14 @@ def compare_outputs(way, kind, normaliser, expected_fi
  
          if config.verbose >= 1 and _expect_pass(way):
              # See Note [Output comparison].
--            r = os.system('diff -uw {0} {1}'.format(expected_normalised_path,
-+            r = os.system('diff -auw {0} {1}'.format(expected_normalised_path,
-                                                     actual_normalised_path))
+-            r = runCmd('diff -uw "{0}" "{1}"'.format(expected_normalised_path,
++            r = runCmd('diff -auw "{0}" "{1}"'.format(expected_normalised_path,
+                                                         actual_normalised_path),
+                         print_output = 1)
  
              # If for some reason there were no non-whitespace differences,
              # then do a full diff
              if r == 0:
--                r = os.system('diff -u {0} {1}'.format(expected_normalised_path,
-+                r = os.system('diff -au {0} {1}'.format(expected_normalised_path,
-                                                        actual_normalised_path))
+-                r = runCmd('diff -u "{0}" "{1}"'.format(expected_normalised_path,
++                r = runCmd('diff -au "{0}" "{1}"'.format(expected_normalised_path,
+                                                            actual_normalised_path),
+                            print_output = 1)
  
-         if config.accept and (getTestOpts().expect == 'fail' or
