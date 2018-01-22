@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2015/12/28 12:54:50 kili Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/01/22 21:42:27 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Control/
 lib/ghc/${DISTNAME}/Control/Monad/
@@ -26,15 +26,9 @@ share/doc/hs-${DISTNAME}/html/Control-Monad-Trans-Resource.html
 share/doc/hs-${DISTNAME}/html/Data-Acquire-Internal.html
 share/doc/hs-${DISTNAME}/html/Data-Acquire.html
 share/doc/hs-${DISTNAME}/html/doc-index.html
-share/doc/hs-${DISTNAME}/html/frames.html
 share/doc/hs-${DISTNAME}/html/haddock-util.js
 share/doc/hs-${DISTNAME}/html/hslogo-16.png
-share/doc/hs-${DISTNAME}/html/index-frames.html
 share/doc/hs-${DISTNAME}/html/index.html
-share/doc/hs-${DISTNAME}/html/mini_Control-Monad-Trans-Resource-Internal.html
-share/doc/hs-${DISTNAME}/html/mini_Control-Monad-Trans-Resource.html
-share/doc/hs-${DISTNAME}/html/mini_Data-Acquire-Internal.html
-share/doc/hs-${DISTNAME}/html/mini_Data-Acquire.html
 share/doc/hs-${DISTNAME}/html/minus.gif
 share/doc/hs-${DISTNAME}/html/ocean.css
 share/doc/hs-${DISTNAME}/html/plus.gif

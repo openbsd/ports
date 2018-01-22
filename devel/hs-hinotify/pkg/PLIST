@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/01/26 01:31:49 abieber Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/01/22 21:42:27 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/HS${DISTNAME}-${MODGHC_PACKAGE_KEY}.o
 lib/ghc/${DISTNAME}/System/
@@ -15,13 +15,10 @@ share/doc/hs-${DISTNAME}/LICENSE
 share/doc/hs-${DISTNAME}/html/
 share/doc/hs-${DISTNAME}/html/System-INotify.html
 share/doc/hs-${DISTNAME}/html/doc-index.html
-share/doc/hs-${DISTNAME}/html/frames.html
 share/doc/hs-${DISTNAME}/html/haddock-util.js
 share/doc/hs-${DISTNAME}/html/hinotify.haddock
 share/doc/hs-${DISTNAME}/html/hslogo-16.png
-share/doc/hs-${DISTNAME}/html/index-frames.html
 share/doc/hs-${DISTNAME}/html/index.html
-share/doc/hs-${DISTNAME}/html/mini_System-INotify.html
 share/doc/hs-${DISTNAME}/html/minus.gif
 share/doc/hs-${DISTNAME}/html/ocean.css
 share/doc/hs-${DISTNAME}/html/plus.gif

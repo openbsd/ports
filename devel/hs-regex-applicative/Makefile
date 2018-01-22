@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2017/11/07 21:20:06 kili Exp $
+# $OpenBSD: Makefile,v 1.4 2018/01/22 21:42:27 kili Exp $
 
 COMMENT =		regex-based parsing with applicative interface
 
 DISTNAME =		regex-applicative-0.3.2.1
-REVISION =		1
+REVISION =		2
 CATEGORIES =		devel
 
 # BSD
@@ -13,6 +13,6 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	3Bu6V9v5z8g86IbetrD004
+MODGHC_PACKAGE_KEY =	8f63XDYk2VULuRTTJiHsCz
 
 .include <bsd.port.mk>

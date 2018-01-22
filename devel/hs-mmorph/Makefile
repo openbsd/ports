@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2017/11/10 19:13:34 kili Exp $
+# $OpenBSD: Makefile,v 1.8 2018/01/22 21:42:27 kili Exp $
 
 COMMENT =		monad morphisms
 
 DISTNAME =		mmorph-1.0.9
-REVISION =		0
+REVISION =		1
 CATEGORIES =		devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
@@ -15,7 +15,7 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	DmSwQqk5nLj7roLAcydGz
+MODGHC_PACKAGE_KEY =	8UaKrPqOttEJIi786pOOKJ
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
 

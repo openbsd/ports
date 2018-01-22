@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2017/11/07 22:20:29 kili Exp $
+# $OpenBSD: Makefile,v 1.11 2018/01/22 21:42:27 kili Exp $
 
 COMMENT =		deterministic allocation and freeing of scarce resources
 
 DISTNAME =		resourcet-1.1.9
+REVISION =		0
 CATEGORIES =		devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
@@ -14,7 +15,7 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	1ryTiTf9saW86hu9IpcQOX
+MODGHC_PACKAGE_KEY =	8HtEAe2QUDa6ID1wWHBD
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
 

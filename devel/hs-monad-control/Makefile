@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2017/11/07 22:16:47 kili Exp $
+# $OpenBSD: Makefile,v 1.10 2018/01/22 21:42:27 kili Exp $
 
 COMMENT =		lift control operations through monad transformers
 
 DISTNAME =		monad-control-1.0.0.4
-REVISION =		1
+REVISION =		2
 CATEGORIES =		devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
@@ -15,7 +15,7 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	ArboYSj8S8g9kJUeSKL8d7
+MODGHC_PACKAGE_KEY =	7opoGFN1bre3m8PG7yVBzh
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
 

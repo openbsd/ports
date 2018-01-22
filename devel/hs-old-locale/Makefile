@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2017/11/07 21:18:10 kili Exp $
+# $OpenBSD: Makefile,v 1.6 2018/01/22 21:42:27 kili Exp $
 
 COMMENT =		old locale library
 
@@ -7,7 +7,7 @@ COMMENT =		old locale library
 PORTROACH =		ignore:1
 
 DISTNAME =		old-locale-1.0.0.7
-REVISION =		2
+REVISION =		3
 CATEGORIES =		devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
@@ -19,6 +19,6 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	6glXNhHF891B41ZfuI8hU8
+MODGHC_PACKAGE_KEY =	uLYLcRn7Nv8SkmeS8fMf9
 
 .include <bsd.port.mk>

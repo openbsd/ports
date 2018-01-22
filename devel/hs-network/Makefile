@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2017/11/07 21:17:32 kili Exp $
+# $OpenBSD: Makefile,v 1.31 2018/01/22 21:42:27 kili Exp $
 
 COMMENT =		Haskell networking library
 
@@ -7,7 +7,7 @@ COMMENT =		Haskell networking library
 PORTROACH =		ignore:1
 
 DISTNAME =		network-2.6.2.1
-REVISION =		2
+REVISION =		3
 CATEGORIES =		devel net
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
@@ -19,6 +19,6 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	Li0aefQhyJzUSpQ0fLiXL
+MODGHC_PACKAGE_KEY =	EN7QebdZTnQLy4O4vi1CmV
 
 .include <bsd.port.mk>
