@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.16 2017/07/26 22:45:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2018/01/22 07:45:37 kirby Exp $
 
-COMMENT=		lightweight Gtk+2 based image viewer
+COMMENT=		lightweight Gtk+3 based image viewer
 
-DISTNAME=		geeqie-1.3
+DISTNAME=		geeqie-1.4
 EXTRACT_SUFX=		.tar.xz
 CATEGORIES=		graphics
 EPOCH=			0
-REVISION=		0
 
 HOMEPAGE=		http://geeqie.org/
 
-# GPLv2
+# GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += atk-1.0 c cairo cairo-gobject exiv2 gdk-3 gdk_pixbuf-2.0
@@ -41,12 +40,13 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ARGS=		--disable-doxygen-doc \
 			--disable-lirc \
 			--disable-lua \
-			--disable-gps \
+			--disable-ffmpegthumbnailer \
+			--enable-gtk3 \
 			--with-htmldir=${PREFIX}/share/doc/geeqie \
 			--with-readmedir=${PREFIX}/share/doc/geeqie
 
-AUTOCONF_VERSION=	2.61
-AUTOMAKE_VERSION=	1.9
+AUTOCONF_VERSION=	2.69
+AUTOMAKE_VERSION=	1.14
 BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS} \
 			devel/libtool

@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_layout_util_c,v 1.1 2018/01/22 07:45:37 kirby Exp $
+
+Index: src/layout_util.c
+--- src/layout_util.c.orig
++++ src/layout_util.c
+@@ -19,6 +19,7 @@
+  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+  */
+ 
++#include <sys/wait.h>
+ #include "main.h"
+ #include "layout_util.h"
+ 

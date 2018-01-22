@@ -1,0 +1,28 @@
+$OpenBSD: patch-Makefile_am,v 1.1 2018/01/22 07:45:37 kirby Exp $
+
+Index: Makefile.am
+--- Makefile.am.orig
++++ Makefile.am
+@@ -10,9 +10,9 @@ man_MANS = geeqie.1
+ readmedir = @readmedir@
+ 
+ if HAVE_MARKDOWN
+-readme_DATA = README.md COPYING ChangeLog TODO README.lirc AUTHORS README.html ChangeLog.html
++readme_DATA = README.md COPYING TODO README.lirc AUTHORS README.html
+ else
+-readme_DATA = README.md COPYING ChangeLog TODO README.lirc AUTHORS ChangeLog.html
++readme_DATA = README.md COPYING TODO README.lirc AUTHORS
+ endif
+ 
+ desktopdir = $(datadir)/applications
+@@ -36,10 +36,6 @@ dist-hook: geeqie.spec
+ 	cp $(top_builddir)/geeqie.spec $(distdir)
+ 
+ DISTCLEANFILES = config.report
+-
+-.PHONY: ChangeLog
+-ChangeLog.html:
+-	./gen_changelog.sh
+ 
+ README.html: README.md
+ 	./gen_readme.sh
