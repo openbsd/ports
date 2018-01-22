@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2015/09/19 08:09:55 kili Exp $
+@comment $OpenBSD: PLIST,v 1.12 2018/01/22 21:30:17 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Control/
 lib/ghc/${DISTNAME}/Control/Concurrent/
@@ -42,20 +42,9 @@ share/doc/hs-${DISTNAME}/html/Control-Concurrent-STM-TVar.html
 share/doc/hs-${DISTNAME}/html/Control-Concurrent-STM.html
 share/doc/hs-${DISTNAME}/html/Control-Monad-STM.html
 share/doc/hs-${DISTNAME}/html/doc-index.html
-share/doc/hs-${DISTNAME}/html/frames.html
 share/doc/hs-${DISTNAME}/html/haddock-util.js
 share/doc/hs-${DISTNAME}/html/hslogo-16.png
-share/doc/hs-${DISTNAME}/html/index-frames.html
 share/doc/hs-${DISTNAME}/html/index.html
-share/doc/hs-${DISTNAME}/html/mini_Control-Concurrent-STM-TArray.html
-share/doc/hs-${DISTNAME}/html/mini_Control-Concurrent-STM-TBQueue.html
-share/doc/hs-${DISTNAME}/html/mini_Control-Concurrent-STM-TChan.html
-share/doc/hs-${DISTNAME}/html/mini_Control-Concurrent-STM-TMVar.html
-share/doc/hs-${DISTNAME}/html/mini_Control-Concurrent-STM-TQueue.html
-share/doc/hs-${DISTNAME}/html/mini_Control-Concurrent-STM-TSem.html
-share/doc/hs-${DISTNAME}/html/mini_Control-Concurrent-STM-TVar.html
-share/doc/hs-${DISTNAME}/html/mini_Control-Concurrent-STM.html
-share/doc/hs-${DISTNAME}/html/mini_Control-Monad-STM.html
 share/doc/hs-${DISTNAME}/html/minus.gif
 share/doc/hs-${DISTNAME}/html/ocean.css
 share/doc/hs-${DISTNAME}/html/plus.gif

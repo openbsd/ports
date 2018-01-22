@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2017/11/07 21:27:17 kili Exp $
+# $OpenBSD: Makefile,v 1.25 2018/01/22 21:30:17 kili Exp $
 
 COMMENT =		Software Transactional Memory
 
@@ -7,6 +7,7 @@ COMMENT =		Software Transactional Memory
 PORTROACH =		ignore:1
 
 DISTNAME =		stm-2.4.4.1
+REVISION =		0
 CATEGORIES =		devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
@@ -18,6 +19,6 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	4z2NRWnB0NIIUvSJsHW0kF
+MODGHC_PACKAGE_KEY =	6AExGOUG8NB2Rzejnay0ww
 
 .include <bsd.port.mk>
