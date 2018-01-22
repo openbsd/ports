@@ -1,4 +1,4 @@
-$OpenBSD: patch-xmonad_cabal,v 1.10 2017/11/21 00:02:19 kili Exp $
+$OpenBSD: patch-xmonad_cabal,v 1.11 2018/01/22 22:08:42 kili Exp $
 
 I don't like the idea of yet another port with nothing than a binding
 for setlocale(3), and I don't know which part of xmonad would benefit
@@ -7,8 +7,8 @@ from it.
 Index: xmonad.cabal
 --- xmonad.cabal.orig
 +++ xmonad.cabal
-@@ -66,7 +66,6 @@ library
-                    directory,
+@@ -73,7 +73,6 @@ library
+                    directory >= 1.2.3,
                     extensible-exceptions,
                     filepath,
 -                   setlocale,

@@ -1,10 +1,11 @@
-$OpenBSD: patch-XMonad_Core_hs,v 1.5 2017/11/07 22:46:32 kili Exp $
+$OpenBSD: patch-XMonad_Core_hs,v 1.6 2018/01/22 22:08:42 kili Exp $
 
 From Tomas Janousek.
 
---- src/XMonad/Core.hs.orig	Mon Dec 21 20:12:39 2015
-+++ src/XMonad/Core.hs	Fri Dec 30 11:20:22 2016
-@@ -517,7 +517,11 @@ trace = io . hPutStrLn stderr
+Index: src/XMonad/Core.hs
+--- src/XMonad/Core.hs.orig
++++ src/XMonad/Core.hs
+@@ -650,7 +650,11 @@ trace = io . hPutStrLn stderr
  installSignalHandlers :: MonadIO m => m ()
  installSignalHandlers = io $ do
      installHandler openEndedPipe Ignore Nothing

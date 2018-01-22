@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_XMonad_Main_hs,v 1.1 2017/11/21 00:02:19 kili Exp $
+$OpenBSD: patch-src_XMonad_Main_hs,v 1.2 2018/01/22 22:08:42 kili Exp $
 
 I don't like the idea of yet another port with nothing than a binding
 for setlocale(3), and I don't know which part of xmonad would benefit
@@ -9,16 +9,16 @@ Index: src/XMonad/Main.hs
 +++ src/XMonad/Main.hs
 @@ -15,7 +15,6 @@
  
- module XMonad.Main (xmonad) where
+ module XMonad.Main (xmonad, launch) where
  
 -import System.Locale.SetLocale
- import Control.Arrow (second)
+ import qualified Control.Exception.Extensible as E
  import Data.Bits
  import Data.List ((\\))
-@@ -153,8 +152,6 @@ xmonadNoargs :: (LayoutClass l Window, Read (l Window)
-     -> Maybe String -- ^ serialized extensible state
-     -> IO ()
- xmonadNoargs initxmc serializedWinset serializedExtstate = do
+@@ -162,8 +161,6 @@ sendReplace = do
+ -- your custom binary with the resume flag set to @True@.
+ launch :: (LayoutClass l Window, Read (l Window)) => XConfig l -> IO ()
+ launch initxmc = do
 -    -- setup locale information from environment
 -    setLocale LC_ALL (Just "")
      -- ignore SIGPIPE and SIGCHLD

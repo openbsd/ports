@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.52 2017/11/21 00:02:18 kili Exp $
+# $OpenBSD: Makefile,v 1.53 2018/01/22 22:08:42 kili Exp $
 
 COMMENT-main =		tiling window manager
 COMMENT-lib =		libraries for runtime configuration
 
-DISTNAME =		xmonad-0.12
+DISTNAME =		xmonad-0.13
 PKGNAME-main =		${DISTNAME}
 PKGNAME-lib =		${DISTNAME:S,-,-lib-,}
 CATEGORIES =		x11
@@ -21,7 +21,7 @@ WANTLIB-lib =
 MODULES =		lang/ghc
 MODGHC_BUILD =		cabal hackage haddock register nort
 
-MODGHC_PACKAGE_KEY =	Gx5TWm0BSEJHl229E6kZrP
+MODGHC_PACKAGE_KEY =	1dqhBbsPfpPL2BQEiEEfSU
 
 # Required because of the nort tag in MODGHC_BUILD
 SUBST_VARS +=		MODGHC_PACKAGE_KEY
@@ -31,7 +31,7 @@ RUN_DEPENDS-lib =	devel/hs-data-default \
 			devel/hs-extensible-exceptions \
 			devel/hs-mtl \
 			devel/hs-utf8-string>=0.3,<1.1 \
-			x11/hs-X11>=1.5,<1.7
+			x11/hs-X11>=1.8,<1.9
 LIB_DEPENDS-main =	converters/libiconv
 
 # MODGHC_BUILD contains 'nort', an explicity dependency is needed for
