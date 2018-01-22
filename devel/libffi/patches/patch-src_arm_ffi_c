@@ -1,15 +1,36 @@
-$OpenBSD: patch-src_arm_ffi_c,v 1.7 2015/07/15 17:06:48 jasper Exp $
+$OpenBSD: patch-src_arm_ffi_c,v 1.8 2018/01/22 06:28:00 bcallah Exp $
 
-Fix warning: implicit declaration of function '__clear_cache'
+https://svnweb.freebsd.org/ports/head/devel/libffi/files/patch-src__arm__ffi.c?revision=337118&view=markup
 
---- src/arm/ffi.c.orig	Fri Apr 25 19:45:13 2014
-+++ src/arm/ffi.c	Mon Sep 15 22:00:37 2014
-@@ -37,6 +37,8 @@
+Index: src/arm/ffi.c
+--- src/arm/ffi.c.orig
++++ src/arm/ffi.c
+@@ -33,6 +33,11 @@
+ 
+ #include <stdlib.h>
+ 
++#ifdef __arm__
++#include <machine/sysarch.h>
++#include <stdint.h>
++#endif
++
+ /* Forward declares. */
  static int vfp_type_p (ffi_type *);
  static void layout_vfp_args (ffi_cif *);
+@@ -750,6 +755,16 @@ ffi_closure_free (void *ptr)
+ }
  
-+extern void __clear_cache(char *beg, char *end);
+ #else
 +
- int ffi_prep_args_SYSV(char *stack, extended_cif *ecif, float *vfp_space);
- int ffi_prep_args_VFP(char *stack, extended_cif *ecif, float *vfp_space);
++#ifdef __arm__
++#define __clear_cache(start, end) do {					\
++		struct arm_sync_icache_args ua;				\
++									\
++		ua.addr = (uintptr_t)(start);				\
++		ua.len = (char *)(end) - (char *)start;			\
++		sysarch(ARM_SYNC_ICACHE, &ua);				\
++	} while (0);
++#endif
  
+ #define FFI_INIT_TRAMPOLINE(TRAMP,FUN,CTX)				\
+ ({ unsigned char *__tramp = (unsigned char*)(TRAMP);			\

@@ -1,14 +1,19 @@
-$OpenBSD: patch-configure,v 1.7 2016/01/28 08:40:47 jasper Exp $
+$OpenBSD: patch-configure,v 1.8 2018/01/22 06:28:00 bcallah Exp $
 
-- Always link with -pthread for libffi
+- Always link with -pthread for libffi (XXX not needed any more?)
+- Link with libc++abi on arm (to access unwind symbols)
 
---- configure.orig	Tue Jan 26 18:55:54 2016
-+++ configure	Tue Jan 26 18:56:20 2016
-@@ -18522,6 +18522,12 @@ $as_echo "#define SYMBOL_UNDERSCORE 1" >>confdefs.h
+Index: configure
+--- configure.orig
++++ configure
+@@ -18522,6 +18522,15 @@ $as_echo "#define SYMBOL_UNDERSCORE 1" >>confdefs.h
  
  fi
  
 +case "$target" in
++    arm-*-openbsd*)
++      LDFLAGS="-lpthread -lc++abi $LDFLAGS"
++    ;;
 +    *-*-openbsd*)
 +      LDFLAGS="-lpthread $LDFLAGS"
 +    ;;

@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_arm_sysv_S,v 1.7 2018/01/22 06:28:00 bcallah Exp $
+
+https://github.com/libffi/libffi/issues/162
+
+Index: src/arm/sysv.S
+--- src/arm/sysv.S.orig
++++ src/arm/sysv.S
+@@ -396,7 +396,7 @@ LSYM(Lbase_args):
+ 	beq	LSYM(Lepilogue_vfp)
+ 
+ 	cmp	r3, #FFI_TYPE_SINT64
+-	stmeqia	r2, {r0, r1}
++	stmiaeq	r2, {r0, r1}
+ 	beq	LSYM(Lepilogue_vfp)
+ 
+ 	cmp	r3, #FFI_TYPE_FLOAT
