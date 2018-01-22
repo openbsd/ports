@@ -1,0 +1,8 @@
+Data::Printer is a tool to display Perl variables and objects on screen.
+Unlike Data::Dumper, which outputs a format suitable for use with eval,
+Data::Printer's format is intended for human inspection.
+
+- Human-friendly output, with array index and custom separators
+- Full object dumps including methods, inheritance and internals
+- Exposes extra information such as tainted data and weak references
+- Ability to easily create filters for objects and regular structures

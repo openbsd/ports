@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/01/22 07:35:46 giovanni Exp $
+${P5SITE}/DDP.pm
+${P5SITE}/Data/
+${P5SITE}/Data/Printer/
+${P5SITE}/Data/Printer.pm
+${P5SITE}/Data/Printer/Filter/
+${P5SITE}/Data/Printer/Filter.pm
+${P5SITE}/Data/Printer/Filter/DB.pm
+${P5SITE}/Data/Printer/Filter/DateTime.pm
+${P5SITE}/Data/Printer/Filter/Digest.pm
+@man man/man3p/DDP.3p
+@man man/man3p/Data::Printer.3p
+@man man/man3p/Data::Printer::Filter.3p
+@man man/man3p/Data::Printer::Filter::DB.3p
+@man man/man3p/Data::Printer::Filter::DateTime.3p
+@man man/man3p/Data::Printer::Filter::Digest.3p
