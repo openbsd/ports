@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2017/11/07 22:37:34 kili Exp $
+# $OpenBSD: Makefile,v 1.6 2018/01/22 21:46:26 kili Exp $
 
 COMMENT =		HTTP multipart library
 
@@ -7,7 +7,7 @@ COMMENT =		HTTP multipart library
 PORTROACH =		ignore:1
 
 DISTNAME =		multipart-0.1.2
-REVISION =		2
+REVISION =		3
 CATEGORIES =		devel net
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
@@ -19,7 +19,7 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	I8eSzx3XZTfAymoqEx5q3d
+MODGHC_PACKAGE_KEY =	I9G2nJi0K9ZBHXfwRdKmDY
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
 RUN_DEPENDS =		devel/hs-parsec>=2.0
