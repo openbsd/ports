@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2015/09/19 08:09:07 kili Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/01/22 22:03:58 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Data/
 lib/ghc/${DISTNAME}/Data/List/
@@ -17,13 +17,9 @@ share/doc/hs-${DISTNAME}/html/
 share/doc/hs-${DISTNAME}/html/Data-List-Split-Internals.html
 share/doc/hs-${DISTNAME}/html/Data-List-Split.html
 share/doc/hs-${DISTNAME}/html/doc-index.html
-share/doc/hs-${DISTNAME}/html/frames.html
 share/doc/hs-${DISTNAME}/html/haddock-util.js
 share/doc/hs-${DISTNAME}/html/hslogo-16.png
-share/doc/hs-${DISTNAME}/html/index-frames.html
 share/doc/hs-${DISTNAME}/html/index.html
-share/doc/hs-${DISTNAME}/html/mini_Data-List-Split-Internals.html
-share/doc/hs-${DISTNAME}/html/mini_Data-List-Split.html
 share/doc/hs-${DISTNAME}/html/minus.gif
 share/doc/hs-${DISTNAME}/html/ocean.css
 share/doc/hs-${DISTNAME}/html/plus.gif
