@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.467 2018/01/16 20:30:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.468 2018/01/23 18:23:32 jasper Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -219,6 +219,8 @@
      SUBDIR += py-augeas
      SUBDIR += py-augeas,python3
      SUBDIR += py-cef
+     SUBDIR += py-croniter
+     SUBDIR += py-croniter,python3
      SUBDIR += py-daemon
      SUBDIR += py-elasticsearch-curator
      SUBDIR += py-ghmi
