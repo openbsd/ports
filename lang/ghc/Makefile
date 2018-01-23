@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.154 2018/01/22 00:42:30 kili Exp $
-
-BROKEN =		do not disturb the package builds
+# $OpenBSD: Makefile,v 1.155 2018/01/23 20:59:49 kili Exp $
 
 COMMENT =		compiler for the functional language Haskell
 
