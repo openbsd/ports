@@ -1,0 +1,34 @@
+$OpenBSD: patch-src_esi_CustomParser_cc,v 1.1 2018/01/23 15:00:02 sthen Exp $
+
+http://www.squid-cache.org/Versions/v3/3.5/changesets/SQUID-2018_1.patch
+http://www.squid-cache.org/Advisories/SQUID-2018_1.txt
+
+ Due to incorrect pointer handling Squid is vulnerable to denial
+ of service attack when processing ESI responses.
+
+ This problem allows a remote server delivering certain ESI
+ response syntax to trigger a denial of service for all clients
+ accessing the Squid service.
+
+
+Index: src/esi/CustomParser.cc
+--- src/esi/CustomParser.cc.orig
++++ src/esi/CustomParser.cc
+@@ -121,7 +121,7 @@ ESICustomParser::parse(char const *dataToParse, size_t
+ 
+             char * endofName = strpbrk(const_cast<char *>(tag), w_space);
+ 
+-            if (endofName > tagEnd)
++            if (!endofName || endofName > tagEnd)
+                 endofName = const_cast<char *>(tagEnd);
+ 
+             *endofName = '\0';
+@@ -214,7 +214,7 @@ ESICustomParser::parse(char const *dataToParse, size_t
+ 
+             char * endofName = strpbrk(const_cast<char *>(tag), w_space);
+ 
+-            if (endofName > tagEnd)
++            if (!endofName || endofName > tagEnd)
+                 endofName = const_cast<char *>(tagEnd);
+ 
+             *endofName = '\0';

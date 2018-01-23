@@ -1,0 +1,30 @@
+$OpenBSD: patch-src_client_side_request_cc,v 1.1 2018/01/23 15:00:02 sthen Exp $
+
+http://www.squid-cache.org/Versions/v3/3.5/changesets/SQUID-2018_2.patch
+http://www.squid-cache.org/Advisories/SQUID-2018_2.txt
+
+ Due to incorrect pointer handling Squid is vulnerable to denial
+ of service attack when processing ESI responses or downloading
+ intermediate CA certificates.
+
+ This problem allows a remote client delivering certain HTTP
+ requests in conjunction with certain trusted server responses to
+ trigger a denial of service for all clients accessing the Squid
+ service.
+
+Index: src/client_side_request.cc
+--- src/client_side_request.cc.orig
++++ src/client_side_request.cc
+@@ -488,9 +488,9 @@ clientFollowXForwardedForCheck(allow_t answer, void *d
+         * Ensure that the access log shows the indirect client
+         * instead of the direct client.
+         */
+-        ConnStateData *conn = http->getConn();
+-        conn->log_addr = request->indirect_client_addr;
+-        http->al->cache.caddr = conn->log_addr;
++        http->al->cache.caddr = request->indirect_client_addr;
++        if (ConnStateData *conn = http->getConn())
++            conn->log_addr = request->indirect_client_addr;
+     }
+     request->x_forwarded_for_iterator.clean();
+     request->flags.done_follow_x_forwarded_for = true;
