@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.34 2017/10/30 13:56:46 landry Exp $
+@comment $OpenBSD: PLIST,v 1.35 2018/01/23 14:15:33 landry Exp $
 @bin bin/qbrowser
 @bin bin/qgis
 @bin bin/qgis_bench
@@ -4291,6 +4291,7 @@ share/qgis/python/plugins/processing/images/results.png
 share/qgis/python/plugins/processing/images/runalgorithm.png
 share/qgis/python/plugins/processing/images/saga.png
 share/qgis/python/plugins/processing/images/script.png
+share/qgis/python/plugins/processing/images/search.png
 share/qgis/python/plugins/processing/images/taudem.svg
 share/qgis/python/plugins/processing/images/tool.png
 share/qgis/python/plugins/processing/metadata.txt
