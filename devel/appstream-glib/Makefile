@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.34 2017/11/16 23:20:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.35 2018/01/23 16:59:33 ajacoutot Exp $
 
 COMMENT=		library for AppStream metadata
 
-DISTNAME=		appstream-glib-0.7.4
+DISTNAME=		appstream-glib-0.7.5
 EXTRACT_SUFX=		.tar.xz
 
-SHARED_LIBS +=  appstream-glib       3.1
-SHARED_LIBS +=  appstream-builder    3.1
+SHARED_LIBS +=  appstream-glib       3.2
+SHARED_LIBS +=  appstream-builder    3.2
 
 CATEGORIES=		devel
 
@@ -43,10 +43,10 @@ LIB_DEPENDS=		archivers/gcab \
 			sysutils/e2fsprogs \
 			x11/gtk+3
 
-CONFIGURE_ARGS=		-Denable-rpm=false
+CONFIGURE_ARGS=		-Drpm=false
 
 # requires libstemmer
-CONFIGURE_ARGS +=	-Denable-stemmer=false
+CONFIGURE_ARGS +=	-Dstemmer=false
 
 # needed for `make test'
 PORTHOME=		${WRKDIST}
