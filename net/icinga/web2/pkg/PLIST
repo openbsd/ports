@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2017/11/28 21:01:42 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.11 2018/01/23 00:36:48 sthen Exp $
 @newgroup _icingaweb2:762
 @newuser _icingaweb2:762:_icingaweb2:daemon:Icinga-web2 user:/var/www/icinga-web2:/sbin/nologin
 @extraunexec rm -rf %D/etc/icingaweb2/*
@@ -523,6 +523,7 @@ icinga-web2/library/Icinga/User/Preferences/Store/
 icinga-web2/library/Icinga/User/Preferences/Store/DbStore.php
 icinga-web2/library/Icinga/User/Preferences/Store/IniStore.php
 icinga-web2/library/Icinga/Util/
+icinga-web2/library/Icinga/Util/ASN1.php
 icinga-web2/library/Icinga/Util/Color.php
 icinga-web2/library/Icinga/Util/ConfigAwareFactory.php
 icinga-web2/library/Icinga/Util/Dimension.php
@@ -589,6 +590,7 @@ icinga-web2/library/Icinga/Web/Form/Validator/UrlValidator.php
 icinga-web2/library/Icinga/Web/Form/Validator/WritablePathValidator.php
 icinga-web2/library/Icinga/Web/Helper/
 icinga-web2/library/Icinga/Web/Helper/CookieHelper.php
+icinga-web2/library/Icinga/Web/Helper/HtmlPurifier.php
 icinga-web2/library/Icinga/Web/Hook/
 icinga-web2/library/Icinga/Web/Hook.php
 icinga-web2/library/Icinga/Web/Hook/GrapherHook.php
@@ -1790,7 +1792,6 @@ icinga-web2/library/vendor/Zend/Xml/Security.php
 icinga-web2/library/vendor/dompdf/
 icinga-web2/library/vendor/dompdf/LICENSE
 icinga-web2/library/vendor/dompdf/SOURCE
-icinga-web2/library/vendor/dompdf/autoload.inc.php
 icinga-web2/library/vendor/dompdf/lib/
 icinga-web2/library/vendor/dompdf/lib/Cpdf.php
 icinga-web2/library/vendor/dompdf/lib/fonts/
@@ -1892,6 +1893,8 @@ icinga-web2/library/vendor/dompdf/lib/php-svg-lib/src/
 icinga-web2/library/vendor/dompdf/lib/php-svg-lib/src/Svg/
 icinga-web2/library/vendor/dompdf/lib/php-svg-lib/src/Svg/DefaultStyle.php
 icinga-web2/library/vendor/dompdf/lib/php-svg-lib/src/Svg/Document.php
+icinga-web2/library/vendor/dompdf/lib/php-svg-lib/src/Svg/Gradient/
+icinga-web2/library/vendor/dompdf/lib/php-svg-lib/src/Svg/Gradient/Stop.php
 icinga-web2/library/vendor/dompdf/lib/php-svg-lib/src/Svg/Style.php
 icinga-web2/library/vendor/dompdf/lib/php-svg-lib/src/Svg/Surface/
 icinga-web2/library/vendor/dompdf/lib/php-svg-lib/src/Svg/Surface/CPdf.php
@@ -1903,6 +1906,7 @@ icinga-web2/library/vendor/dompdf/lib/php-svg-lib/src/Svg/Tag/
 icinga-web2/library/vendor/dompdf/lib/php-svg-lib/src/Svg/Tag/AbstractTag.php
 icinga-web2/library/vendor/dompdf/lib/php-svg-lib/src/Svg/Tag/Anchor.php
 icinga-web2/library/vendor/dompdf/lib/php-svg-lib/src/Svg/Tag/Circle.php
+icinga-web2/library/vendor/dompdf/lib/php-svg-lib/src/Svg/Tag/ClipPath.php
 icinga-web2/library/vendor/dompdf/lib/php-svg-lib/src/Svg/Tag/Ellipse.php
 icinga-web2/library/vendor/dompdf/lib/php-svg-lib/src/Svg/Tag/Group.php
 icinga-web2/library/vendor/dompdf/lib/php-svg-lib/src/Svg/Tag/Image.php
@@ -1915,7 +1919,9 @@ icinga-web2/library/vendor/dompdf/lib/php-svg-lib/src/Svg/Tag/RadialGradient.php
 icinga-web2/library/vendor/dompdf/lib/php-svg-lib/src/Svg/Tag/Rect.php
 icinga-web2/library/vendor/dompdf/lib/php-svg-lib/src/Svg/Tag/Shape.php
 icinga-web2/library/vendor/dompdf/lib/php-svg-lib/src/Svg/Tag/Stop.php
+icinga-web2/library/vendor/dompdf/lib/php-svg-lib/src/Svg/Tag/StyleTag.php
 icinga-web2/library/vendor/dompdf/lib/php-svg-lib/src/Svg/Tag/Text.php
+icinga-web2/library/vendor/dompdf/lib/php-svg-lib/src/Svg/Tag/UseTag.php
 icinga-web2/library/vendor/dompdf/lib/php-svg-lib/src/autoload.php
 icinga-web2/library/vendor/dompdf/lib/res/
 icinga-web2/library/vendor/dompdf/lib/res/broken_image.png
@@ -2073,6 +2079,7 @@ icinga-web2/modules/migrate/library/
 icinga-web2/modules/migrate/library/Migrate/
 icinga-web2/modules/migrate/library/Migrate/Config/
 icinga-web2/modules/migrate/library/Migrate/Config/UserDomainMigration.php
+icinga-web2/modules/migrate/module.info
 icinga-web2/modules/monitoring/
 icinga-web2/modules/monitoring/application/
 icinga-web2/modules/monitoring/application/clicommands/
@@ -2087,6 +2094,7 @@ icinga-web2/modules/monitoring/application/controllers/CommentsController.php
 icinga-web2/modules/monitoring/application/controllers/ConfigController.php
 icinga-web2/modules/monitoring/application/controllers/DowntimeController.php
 icinga-web2/modules/monitoring/application/controllers/DowntimesController.php
+icinga-web2/modules/monitoring/application/controllers/EventController.php
 icinga-web2/modules/monitoring/application/controllers/HealthController.php
 icinga-web2/modules/monitoring/application/controllers/HostController.php
 icinga-web2/modules/monitoring/application/controllers/HostsController.php
@@ -2194,6 +2202,8 @@ icinga-web2/modules/monitoring/application/views/scripts/downtime/show.phtml
 icinga-web2/modules/monitoring/application/views/scripts/downtimes/
 icinga-web2/modules/monitoring/application/views/scripts/downtimes/delete-all.phtml
 icinga-web2/modules/monitoring/application/views/scripts/downtimes/show.phtml
+icinga-web2/modules/monitoring/application/views/scripts/event/
+icinga-web2/modules/monitoring/application/views/scripts/event/show.phtml
 icinga-web2/modules/monitoring/application/views/scripts/form/
 icinga-web2/modules/monitoring/application/views/scripts/form/reorder-command-transports.phtml
 icinga-web2/modules/monitoring/application/views/scripts/health/
@@ -2273,6 +2283,7 @@ icinga-web2/modules/monitoring/application/views/scripts/show/components/notes.p
 icinga-web2/modules/monitoring/application/views/scripts/show/components/notifications.phtml
 icinga-web2/modules/monitoring/application/views/scripts/show/components/output.phtml
 icinga-web2/modules/monitoring/application/views/scripts/show/components/perfdata.phtml
+icinga-web2/modules/monitoring/application/views/scripts/show/components/reachable.phtml
 icinga-web2/modules/monitoring/application/views/scripts/show/components/servicegroups.phtml
 icinga-web2/modules/monitoring/application/views/scripts/show/components/status.phtml
 icinga-web2/modules/monitoring/application/views/scripts/show/contact.phtml
@@ -2313,16 +2324,19 @@ icinga-web2/modules/monitoring/library/Monitoring/Backend/Ido/Query/AllcontactsQ
 icinga-web2/modules/monitoring/library/Monitoring/Backend/Ido/Query/CommandQuery.php
 icinga-web2/modules/monitoring/library/Monitoring/Backend/Ido/Query/CommentQuery.php
 icinga-web2/modules/monitoring/library/Monitoring/Backend/Ido/Query/CommentdeletionhistoryQuery.php
+icinga-web2/modules/monitoring/library/Monitoring/Backend/Ido/Query/CommenteventQuery.php
 icinga-web2/modules/monitoring/library/Monitoring/Backend/Ido/Query/CommenthistoryQuery.php
 icinga-web2/modules/monitoring/library/Monitoring/Backend/Ido/Query/ContactQuery.php
 icinga-web2/modules/monitoring/library/Monitoring/Backend/Ido/Query/ContactgroupQuery.php
 icinga-web2/modules/monitoring/library/Monitoring/Backend/Ido/Query/CustomvarQuery.php
 icinga-web2/modules/monitoring/library/Monitoring/Backend/Ido/Query/DowntimeQuery.php
 icinga-web2/modules/monitoring/library/Monitoring/Backend/Ido/Query/DowntimeendhistoryQuery.php
+icinga-web2/modules/monitoring/library/Monitoring/Backend/Ido/Query/DowntimeeventQuery.php
 icinga-web2/modules/monitoring/library/Monitoring/Backend/Ido/Query/DowntimestarthistoryQuery.php
 icinga-web2/modules/monitoring/library/Monitoring/Backend/Ido/Query/EventgridQuery.php
 icinga-web2/modules/monitoring/library/Monitoring/Backend/Ido/Query/EventhistoryQuery.php
 icinga-web2/modules/monitoring/library/Monitoring/Backend/Ido/Query/FlappingendhistoryQuery.php
+icinga-web2/modules/monitoring/library/Monitoring/Backend/Ido/Query/FlappingeventQuery.php
 icinga-web2/modules/monitoring/library/Monitoring/Backend/Ido/Query/FlappingstarthistoryQuery.php
 icinga-web2/modules/monitoring/library/Monitoring/Backend/Ido/Query/GroupsummaryQuery.php
 icinga-web2/modules/monitoring/library/Monitoring/Backend/Ido/Query/HostcommentQuery.php
@@ -2343,6 +2357,7 @@ icinga-web2/modules/monitoring/library/Monitoring/Backend/Ido/Query/Hoststatussu
 icinga-web2/modules/monitoring/library/Monitoring/Backend/Ido/Query/IdoQuery.php
 icinga-web2/modules/monitoring/library/Monitoring/Backend/Ido/Query/InstanceQuery.php
 icinga-web2/modules/monitoring/library/Monitoring/Backend/Ido/Query/NotificationQuery.php
+icinga-web2/modules/monitoring/library/Monitoring/Backend/Ido/Query/NotificationeventQuery.php
 icinga-web2/modules/monitoring/library/Monitoring/Backend/Ido/Query/NotificationhistoryQuery.php
 icinga-web2/modules/monitoring/library/Monitoring/Backend/Ido/Query/ProgramstatusQuery.php
 icinga-web2/modules/monitoring/library/Monitoring/Backend/Ido/Query/RuntimesummaryQuery.php
@@ -2361,6 +2376,7 @@ icinga-web2/modules/monitoring/library/Monitoring/Backend/Ido/Query/Servicenotif
 icinga-web2/modules/monitoring/library/Monitoring/Backend/Ido/Query/ServicestatehistoryQuery.php
 icinga-web2/modules/monitoring/library/Monitoring/Backend/Ido/Query/ServicestatusQuery.php
 icinga-web2/modules/monitoring/library/Monitoring/Backend/Ido/Query/ServicestatussummaryQuery.php
+icinga-web2/modules/monitoring/library/Monitoring/Backend/Ido/Query/StatechangeeventQuery.php
 icinga-web2/modules/monitoring/library/Monitoring/Backend/Ido/Query/StatehistoryQuery.php
 icinga-web2/modules/monitoring/library/Monitoring/Backend/Ido/Query/StatussummaryQuery.php
 icinga-web2/modules/monitoring/library/Monitoring/Backend/Ido/Query/UnhandledhostproblemsQuery.php
@@ -2407,13 +2423,16 @@ icinga-web2/modules/monitoring/library/Monitoring/Data/ColumnFilterIterator.php
 icinga-web2/modules/monitoring/library/Monitoring/DataView/
 icinga-web2/modules/monitoring/library/Monitoring/DataView/Command.php
 icinga-web2/modules/monitoring/library/Monitoring/DataView/Comment.php
+icinga-web2/modules/monitoring/library/Monitoring/DataView/Commentevent.php
 icinga-web2/modules/monitoring/library/Monitoring/DataView/Contact.php
 icinga-web2/modules/monitoring/library/Monitoring/DataView/Contactgroup.php
 icinga-web2/modules/monitoring/library/Monitoring/DataView/Customvar.php
 icinga-web2/modules/monitoring/library/Monitoring/DataView/DataView.php
 icinga-web2/modules/monitoring/library/Monitoring/DataView/Downtime.php
+icinga-web2/modules/monitoring/library/Monitoring/DataView/Downtimeevent.php
 icinga-web2/modules/monitoring/library/Monitoring/DataView/Eventgrid.php
 icinga-web2/modules/monitoring/library/Monitoring/DataView/Eventhistory.php
+icinga-web2/modules/monitoring/library/Monitoring/DataView/Flappingevent.php
 icinga-web2/modules/monitoring/library/Monitoring/DataView/Hostcomment.php
 icinga-web2/modules/monitoring/library/Monitoring/DataView/Hostdowntime.php
 icinga-web2/modules/monitoring/library/Monitoring/DataView/Hostgroup.php
@@ -2422,6 +2441,7 @@ icinga-web2/modules/monitoring/library/Monitoring/DataView/Hoststatus.php
 icinga-web2/modules/monitoring/library/Monitoring/DataView/Hoststatussummary.php
 icinga-web2/modules/monitoring/library/Monitoring/DataView/Instance.php
 icinga-web2/modules/monitoring/library/Monitoring/DataView/Notification.php
+icinga-web2/modules/monitoring/library/Monitoring/DataView/Notificationevent.php
 icinga-web2/modules/monitoring/library/Monitoring/DataView/Programstatus.php
 icinga-web2/modules/monitoring/library/Monitoring/DataView/Runtimesummary.php
 icinga-web2/modules/monitoring/library/Monitoring/DataView/Runtimevariables.php
@@ -2431,6 +2451,7 @@ icinga-web2/modules/monitoring/library/Monitoring/DataView/Servicegroup.php
 icinga-web2/modules/monitoring/library/Monitoring/DataView/Servicegroupsummary.php
 icinga-web2/modules/monitoring/library/Monitoring/DataView/Servicestatus.php
 icinga-web2/modules/monitoring/library/Monitoring/DataView/Servicestatussummary.php
+icinga-web2/modules/monitoring/library/Monitoring/DataView/Statechangeevent.php
 icinga-web2/modules/monitoring/library/Monitoring/DataView/Statussummary.php
 icinga-web2/modules/monitoring/library/Monitoring/DataView/Unhandledhostproblems.php
 icinga-web2/modules/monitoring/library/Monitoring/DataView/Unhandledserviceproblems.php
@@ -2470,6 +2491,8 @@ icinga-web2/modules/monitoring/library/Monitoring/TransportStep.php
 icinga-web2/modules/monitoring/library/Monitoring/Web/
 icinga-web2/modules/monitoring/library/Monitoring/Web/Controller/
 icinga-web2/modules/monitoring/library/Monitoring/Web/Controller/MonitoredObjectController.php
+icinga-web2/modules/monitoring/library/Monitoring/Web/Helper/
+icinga-web2/modules/monitoring/library/Monitoring/Web/Helper/PluginOutputPurifier.php
 icinga-web2/modules/monitoring/library/Monitoring/Web/Hook/
 icinga-web2/modules/monitoring/library/Monitoring/Web/Hook/HostActionsHook.php
 icinga-web2/modules/monitoring/library/Monitoring/Web/Hook/ServiceActionsHook.php
@@ -2900,6 +2923,7 @@ icinga-web2/test/php/library/Icinga/User/Store/DbStoreTest.php
 icinga-web2/test/php/library/Icinga/User/Store/IniStoreTest.php
 icinga-web2/test/php/library/Icinga/UserTest.php
 icinga-web2/test/php/library/Icinga/Util/
+icinga-web2/test/php/library/Icinga/Util/ASN1Test.php
 icinga-web2/test/php/library/Icinga/Util/DimensionTest.php
 icinga-web2/test/php/library/Icinga/Util/FileTest.php
 icinga-web2/test/php/library/Icinga/Util/GlobFilterTest.php
