@@ -1,9 +1,9 @@
-$OpenBSD: patch-include_maxminddb_h,v 1.1 2017/06/04 10:57:59 espie Exp $
+$OpenBSD: patch-include_maxminddb_h,v 1.2 2018/01/23 10:07:43 fcambus Exp $
 
 Index: include/maxminddb.h
 --- include/maxminddb.h.orig
 +++ include/maxminddb.h
-@@ -115,7 +115,17 @@ typedef struct MMDB_entry_data_s {
+@@ -123,7 +123,17 @@ typedef struct MMDB_entry_data_s {
  #endif
          bool boolean;
          float float_value;
