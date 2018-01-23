@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2017/12/27 15:20:42 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.20 2018/01/23 00:58:41 sthen Exp $
 @bin bin/darktable
 @bin bin/darktable-chart
 @bin bin/darktable-cli
@@ -347,8 +347,8 @@ share/darktable/watermarks/simple-text.svg
 share/doc/darktable/
 share/doc/darktable/AUTHORS
 share/doc/darktable/LICENSE
-share/doc/darktable/README
-share/doc/darktable/TRANSLATORS
+share/doc/darktable/README.md
+share/doc/darktable/TRANSLATORS.md
 share/doc/darktable/darktablerc.html
 share/icons/hicolor/16x16/apps/darktable.png
 share/icons/hicolor/22x22/apps/darktable.png
