@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.115 2018/01/11 19:27:10 rpe Exp $
+# $OpenBSD: Makefile,v 1.116 2018/01/23 18:24:44 jasper Exp $
 
 # optional dependencies
 # https://github.com/saltstack/salt/blob/develop/doc/conf.py#L54
 # libvirt-python
 # py-GitPython
+# py-croniter
 # py-django
 # py-libcloud (cloud-requirements.txt)
 # py-mako
