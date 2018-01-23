@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.268 2018/01/09 12:31:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.269 2018/01/23 10:43:42 mpi Exp $
 
 # Everything is a Freaking GLib/GTK+ problem
 CFLAGS +=		-g
@@ -9,6 +9,7 @@ COMMENT=		general-purpose utility library
 GNOME_PROJECT=		glib
 GNOME_VERSION=		2.54.3
 PKGNAME=		${DISTNAME:S/glib/glib2/}
+REVISION=		0
 
 CATEGORIES=		devel
 
@@ -54,6 +55,12 @@ CONFIGURE_ARGS=		--enable-static \
 			--with-pcre=system \
 			--disable-fam
 
+AUTOCONF_VERSION=	2.69
+AUTOMAKE_VERSION=	1.15
+BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS} \
+			devel/libtool
+
 .include <bsd.port.arch.mk>
 .if ${PROPERTIES:Mgcc3}
 PATCH_LIST=	patch-* gcc3-*
@@ -71,5 +78,9 @@ pre-configure:
 	sed -i "s,/usr/share,${PREFIX}/share,g" \
 		${WRKSRC}/docs/reference/gio/html/glib-compile-schemas.html \
 		${WRKSRC}/docs/reference/gio/glib-compile-schemas.xml
+	cd ${WRKSRC} && env -i \
+		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
+		autoreconf -fi
 
 .include <bsd.port.mk>

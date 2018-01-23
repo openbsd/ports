@@ -1,0 +1,2083 @@
+commit 59fcc304e9f29467e0cc68c4ec6d4b3c0d0fcd59
+Author: Martin Pieuchot <mpi@openbsd.org>
+Date:   Sat Jan 13 15:25:30 2018 +0100
+
+    kqueue: Multiple fixes and simplifications.
+    
+    - Stop using a custom thread for listening to kqueue(2) events.  Instead
+    call kevent(2) in non blocking mode in a monitor callback.  Under the
+    hood poll(2) is used to figure out if new events are available.
+    
+    - Do not use a socketpair with a custom protocol requiring 2 supplementary
+    context switches per event to commicate between multiple threads.  Calling
+    kevent(2), in non blocking mode, to add/remove events is fine from any
+    context.
+    
+    - Add kqueue(2) events without the EV_ONESHOT flag.  This removes a race
+    were some notifications were lost because events had to be re-added for
+    every new notification.
+    
+    - Get rid of the global hash table and its associated lock and races.  Use
+    the 'cookie' argument of kevent(2) to pass the associated descriptor when
+    registering an event.
+    
+    - Fix _kh_file_appeared_cb() by properly passing a monitor instead of a
+    source to g_file_monitor_emit_event().
+    
+    - Porperly refcount sources.
+    
+    - Remove a lot of abstraction making it harder to fix the remaining issues.
+    
+    This diff does not improve the correctness of the generate events, a lot
+    can still be done.
+    
+    Fix https://bugzilla.gnome.org/show_bug.cgi?id=739424
+
+diff --git gio/kqueue/Makefile.am gio/kqueue/Makefile.am
+index d5657d7e4..24e9724e5 100644
+--- gio/kqueue/Makefile.am
++++ gio/kqueue/Makefile.am
+@@ -4,19 +4,9 @@ noinst_LTLIBRARIES += libkqueue.la
+ 
+ libkqueue_la_SOURCES = \
+        gkqueuefilemonitor.c \
+-       gkqueuefilemonitor.h \
+        kqueue-helper.c \
+        kqueue-helper.h \
+-       kqueue-thread.c \
+-       kqueue-thread.h \
+-       kqueue-sub.c \
+-       kqueue-sub.h \
+        kqueue-missing.c \
+-       kqueue-missing.h \
+-       kqueue-utils.c \
+-       kqueue-utils.h \
+-       kqueue-exclusions.c \
+-       kqueue-exclusions.h \
+        dep-list.c \
+        dep-list.h \
+        $(NULL)
+diff --git gio/kqueue/gkqueuefilemonitor.c gio/kqueue/gkqueuefilemonitor.c
+index 78b749637..a9107b0a9 100644
+--- gio/kqueue/gkqueuefilemonitor.c
++++ gio/kqueue/gkqueuefilemonitor.c
+@@ -22,33 +22,72 @@
+ 
+ #include "config.h"
+ 
+-#include "gkqueuefilemonitor.h"
+-#include "kqueue-helper.h"
+-#include "kqueue-exclusions.h"
++#include <sys/types.h>
++#include <sys/event.h>
++#include <sys/time.h>
++#include <sys/socket.h>
++#include <sys/stat.h>
++
++#include <errno.h>
++#include <fcntl.h>
++#include <string.h>
++
++#include <glib-object.h>
++#include <gio/gfilemonitor.h>
++#include <gio/glocalfilemonitor.h>
++#include <gio/giomodule.h>
+ #include <gio/gpollfilemonitor.h>
+ #include <gio/gfile.h>
+-#include <gio/giomodule.h>
++#include <glib-unix.h>
++#include "glib-private.h"
++
++#include "kqueue-helper.h"
++#include "dep-list.h"
++
++static GSource       *kq_source;
++static int	      kq_queue = -1;
++
++#define G_TYPE_KQUEUE_FILE_MONITOR	(g_kqueue_file_monitor_get_type ())
++#define G_KQUEUE_FILE_MONITOR(inst)	(G_TYPE_CHECK_INSTANCE_CAST ((inst), \
++					G_TYPE_KQUEUE_FILE_MONITOR, GKqueueFileMonitor))
+ 
++typedef GLocalFileMonitorClass GKqueueFileMonitorClass;
+ 
+-struct _GKqueueFileMonitor
++typedef struct
+ {
+   GLocalFileMonitor parent_instance;
+ 
+   kqueue_sub *sub;
+-
++#ifndef O_EVTONLY
+   GFileMonitor *fallback;
+   GFile *fbfile;
+-};
++#endif
++} GKqueueFileMonitor;
++
++GType g_kqueue_file_monitor_get_type (void);
++G_DEFINE_TYPE_WITH_CODE (GKqueueFileMonitor, g_kqueue_file_monitor, G_TYPE_LOCAL_FILE_MONITOR,
++	g_io_extension_point_implement (G_LOCAL_FILE_MONITOR_EXTENSION_POINT_NAME,
++		g_define_type_id,
++                "kqueue",
++		20))
++
++#ifndef O_EVTONLY
++#define O_KQFLAG O_RDONLY
++#else
++#define O_KQFLAG O_EVTONLY
++#endif
++
++#define NOTE_ALL (NOTE_DELETE|NOTE_WRITE|NOTE_EXTEND|NOTE_ATTRIB|NOTE_RENAME)
+ 
+ static gboolean g_kqueue_file_monitor_cancel (GFileMonitor* monitor);
++static gboolean g_kqueue_file_monitor_is_supported (void);
+ 
+-G_DEFINE_TYPE_WITH_CODE (GKqueueFileMonitor, g_kqueue_file_monitor, G_TYPE_LOCAL_FILE_MONITOR,
+-       g_io_extension_point_implement (G_LOCAL_FILE_MONITOR_EXTENSION_POINT_NAME,
+-               g_define_type_id,
+-               "kqueue",
+-               20))
++kqueue_sub* _kqsub_new (const gchar *, GLocalFileMonitor *, GFileMonitorSource *);
++void        _kqsub_free (kqueue_sub *);
++gboolean    _kqsub_cancel (kqueue_sub *);
+ 
+ 
++#ifndef O_EVTONLY
+ static void
+ _fallback_callback (GFileMonitor      *unused,
+                     GFile             *first,
+@@ -57,21 +96,44 @@ _fallback_callback (GFileMonitor      *unused,
+                     gpointer           udata)
+ {
+   GKqueueFileMonitor *kq_mon = G_KQUEUE_FILE_MONITOR (udata);
+-  GFileMonitor *mon = G_FILE_MONITOR (kq_mon);
+-  g_assert (kq_mon != NULL);
+-  g_assert (mon != NULL);
+-  (void) unused;
+ 
+   if (event == G_FILE_MONITOR_EVENT_CHANGED)
+-    {
+-      GLocalFileMonitor *local_monitor = G_LOCAL_FILE_MONITOR (kq_mon);
+-
+-      _kh_dir_diff (kq_mon->sub, local_monitor->source);
+-    }
++      _kh_dir_diff (kq_mon->sub);
+   else
+-    g_file_monitor_emit_event (mon, first, second, event);
++    g_file_monitor_emit_event (G_FILE_MONITOR (kq_mon), first, second, event);
+ }
+ 
++/*
++ * _ke_is_excluded:
++ * @full_path - a path to file to check.
++ *
++ * Returns: TRUE if the file should be excluded from the kqueue-powered
++ *      monitoring, FALSE otherwise.
++ **/
++gboolean
++_ke_is_excluded (const char *full_path)
++{
++  GFile *f = NULL;
++  GMount *mount = NULL;
++
++  f = g_file_new_for_path (full_path);
++
++  if (f != NULL) {
++    mount = g_file_find_enclosing_mount (f, NULL, NULL);
++    g_object_unref (f);
++  }
++
++  if ((mount != NULL && (g_mount_can_unmount (mount))) || g_str_has_prefix (full_path, "/mnt/"))
++  {
++    g_warning ("Excluding %s from kernel notification, falling back to poll", full_path);
++    if (mount)
++      g_object_unref (mount);
++    return TRUE;
++  }
++
++  return FALSE;
++}
++#endif /* !O_EVTONLY */
+ 
+ static void
+ g_kqueue_file_monitor_finalize (GObject *object)
+@@ -80,16 +142,18 @@ g_kqueue_file_monitor_finalize (GObject *object)
+ 
+   if (kqueue_monitor->sub)
+     {
+-      _kh_cancel_sub (kqueue_monitor->sub);
+-      _kh_sub_free (kqueue_monitor->sub);
++      _kqsub_cancel (kqueue_monitor->sub);
++      _kqsub_free (kqueue_monitor->sub);
+       kqueue_monitor->sub = NULL;
+     }
+ 
++#ifndef O_EVTONLY
+   if (kqueue_monitor->fallback)
+     g_object_unref (kqueue_monitor->fallback);
+ 
+   if (kqueue_monitor->fbfile)
+     g_object_unref (kqueue_monitor->fbfile);
++#endif
+ 
+   if (G_OBJECT_CLASS (g_kqueue_file_monitor_parent_class)->finalize)
+     (*G_OBJECT_CLASS (g_kqueue_file_monitor_parent_class)->finalize) (object);
+@@ -103,21 +167,25 @@ g_kqueue_file_monitor_start (GLocalFileMonitor *local_monitor,
+                              GFileMonitorSource *source)
+ {
+   GKqueueFileMonitor *kqueue_monitor = G_KQUEUE_FILE_MONITOR (local_monitor);
+-  GObject *obj;
+-  GKqueueFileMonitorClass *klass;
+-  GObjectClass *parent_class;
+-  kqueue_sub *sub = NULL;
+-  gboolean ret_kh_startup = FALSE;
+-  const gchar *path = NULL; 
+-
+-
+-  ret_kh_startup = _kh_startup ();
+-  g_assert (ret_kh_startup);
++  kqueue_sub *sub;
++  const gchar *path;
+ 
+   path = filename;
+-  if (!path)
++  if (path == NULL)
+     path = dirname;
+ 
++#ifndef O_EVTONLY
++  if (_ke_is_excluded (path))
++    {
++      GFile *file = g_file_new_for_path (path);
++      kqueue_monitor->fbfile = file;
++      kqueue_monitor->fallback = _g_poll_file_monitor_new (file);
++      g_signal_connect (kqueue_monitor->fallback, "changed",
++			G_CALLBACK (_fallback_callback), kqueue_monitor);
++      return;
++    }
++#endif
++
+   /* For a directory monitor, create a subscription object anyway.
+    * It will be used for directory diff calculation routines. 
+    * Wait, directory diff in a GKqueueFileMonitor?
+@@ -125,33 +193,13 @@ g_kqueue_file_monitor_start (GLocalFileMonitor *local_monitor,
+    * file, GIO uses a GKqueueFileMonitor object for that. If a directory
+    * will be created under that path, GKqueueFileMonitor will have to
+    * handle the directory notifications. */
++  sub = _kqsub_new (path, local_monitor, source);
++  if (sub == NULL)
++    return;
+ 
+-  sub = _kh_sub_new (path, TRUE, source);
+-
+-  /* FIXME: what to do about errors here? we can't return NULL or another
+-   * kind of error and an assertion is probably too hard (same issue as in
+-   * the inotify backend) */
+-  g_assert (sub != NULL);
+   kqueue_monitor->sub = sub;
+-
+-  if (!_ke_is_excluded (path))
+-    _kh_add_sub (sub);
+-  else
+-    {
+-      GFile *file = g_file_new_for_path (path);
+-      kqueue_monitor->fbfile = file;
+-      kqueue_monitor->fallback = _g_poll_file_monitor_new (file);
+-      g_signal_connect (kqueue_monitor->fallback,
+-                        "changed",
+-                        G_CALLBACK (_fallback_callback),
+-                        kqueue_monitor);
+-    }
+-}
+-
+-static gboolean
+-g_kqueue_file_monitor_is_supported (void)
+-{
+-  return _kh_startup ();
++  if (!_kqsub_start_watching (sub))
++    _km_add_missing (sub);
+ }
+ 
+ static void
+@@ -174,6 +222,102 @@ g_kqueue_file_monitor_init (GKqueueFileMonitor *monitor)
+ {
+ }
+ 
++static gboolean
++g_kqueue_file_monitor_callback (gint fd, GIOCondition condition, gpointer user_data)
++{
++  gint64 now = g_source_get_time (kq_source);
++  kqueue_sub *sub;
++  GFileMonitorSource *source;
++  struct kevent ev;
++  struct timespec ts;
++
++  memset(&ts, 0, sizeof(ts));
++  while (kevent(fd, NULL, 0, &ev, 1, &ts) > 0)
++    {
++        GFileMonitorEvent mask = 0;
++
++        if (ev.filter != EVFILT_VNODE || ev.udata == NULL)
++          continue;
++
++	sub = ev.udata;
++        source = sub->source;
++
++        if (ev.flags & EV_ERROR)
++          ev.fflags = NOTE_REVOKE;
++
++        if (ev.fflags & (NOTE_DELETE | NOTE_REVOKE))
++          {
++            _kqsub_cancel (sub);
++            _km_add_missing (sub);
++          }
++
++        if (sub->is_dir && ev.fflags & (NOTE_WRITE | NOTE_EXTEND))
++          {
++            _kh_dir_diff (sub);
++            ev.fflags &= ~(NOTE_WRITE | NOTE_EXTEND);
++          }
++
++        /* TODO: The following notifications should be emulated,
++         * if possible:
++         *  - G_FILE_MONITOR_EVENT_PRE_UNMOUNT
++         */
++        if (ev.fflags & NOTE_DELETE)
++          {
++            mask = G_FILE_MONITOR_EVENT_DELETED;
++          }
++        else if (ev.fflags & NOTE_ATTRIB)
++          {
++            mask = G_FILE_MONITOR_EVENT_ATTRIBUTE_CHANGED;
++          }
++        else if (ev.fflags & (NOTE_WRITE | NOTE_EXTEND))
++          {
++            mask = G_FILE_MONITOR_EVENT_CHANGED;
++          }
++        else if (ev.fflags & NOTE_RENAME)
++          {
++            /* Since there’s apparently no way to get the new name of the
++             * file out of kqueue(), all we can do is say that this one has
++             * been deleted. */
++            mask = G_FILE_MONITOR_EVENT_DELETED;
++          }
++        else if (ev.fflags & NOTE_REVOKE)
++          {
++            mask = G_FILE_MONITOR_EVENT_UNMOUNTED;
++          }
++
++        if (mask)
++          g_file_monitor_source_handle_event (source, mask, NULL, NULL, NULL, now);
++
++    }
++
++  return TRUE;
++}
++
++static gboolean
++g_kqueue_file_monitor_is_supported (void)
++{
++  int errsv;
++
++  if (kq_queue == -1)
++    {
++      kq_queue = kqueue ();
++      errsv = errno;
++
++      if (kq_queue == -1)
++        {
++          g_warning ("Unable to create a kqueue: %s", g_strerror (errsv));
++
++          return FALSE;
++        }
++
++      kq_source = g_unix_fd_source_new (kq_queue, G_IO_IN);
++      g_source_set_callback (kq_source, (GSourceFunc) g_kqueue_file_monitor_callback, NULL, NULL);
++      g_source_attach (kq_source, GLIB_PRIVATE_CALL(g_get_worker_context) ());
++    }
++
++  return TRUE;
++}
++
+ static gboolean
+ g_kqueue_file_monitor_cancel (GFileMonitor *monitor)
+ {
+@@ -181,18 +325,134 @@ g_kqueue_file_monitor_cancel (GFileMonitor *monitor)
+ 
+   if (kqueue_monitor->sub)
+     {
+-      _kh_cancel_sub (kqueue_monitor->sub);
+-      _kh_sub_free (kqueue_monitor->sub);
++      _kqsub_cancel (kqueue_monitor->sub);
++      _kqsub_free (kqueue_monitor->sub);
+       kqueue_monitor->sub = NULL;
+     }
++#ifndef O_EVTONLY
+   else if (kqueue_monitor->fallback)
+     {
+       g_signal_handlers_disconnect_by_func (kqueue_monitor->fallback, _fallback_callback, kqueue_monitor);
+       g_file_monitor_cancel (kqueue_monitor->fallback);
+     }
++#endif
+ 
+   if (G_FILE_MONITOR_CLASS (g_kqueue_file_monitor_parent_class)->cancel)
+     (*G_FILE_MONITOR_CLASS (g_kqueue_file_monitor_parent_class)->cancel) (monitor);
+ 
+   return TRUE;
+ }
++
++kqueue_sub*
++_kqsub_new (const gchar *filename, GLocalFileMonitor* mon, GFileMonitorSource *source)
++{
++  kqueue_sub *sub;
++
++  sub = g_slice_new (kqueue_sub);
++  if (sub == NULL)
++    return NULL;
++
++  sub->filename = g_strdup (filename);
++  if (sub->filename == NULL)
++    {
++      g_slice_free (kqueue_sub, sub);
++      return NULL;
++    }
++  sub->mon = mon;
++  g_source_ref ((GSource *) source);
++  sub->source = source;
++  sub->fd = -1;
++  sub->deps = NULL;
++  /* I think that having such flag in the subscription is not good */
++  sub->is_dir = 0;
++
++  return sub;
++}
++
++void
++_kqsub_free (kqueue_sub *sub)
++{
++  g_assert (sub->deps == NULL);
++  g_assert (sub->fd == -1);
++
++  g_source_unref ((GSource *) sub->source);
++  sub->source = NULL;
++  g_free (sub->filename);
++  sub->filename = NULL;
++  g_slice_free (kqueue_sub, sub);
++}
++
++gboolean
++_kqsub_cancel (kqueue_sub *sub)
++{
++  struct kevent ev;
++
++  if (sub->deps)
++    {
++      dl_free (sub->deps);
++      sub->deps = NULL;
++    }
++
++  _km_remove (sub);
++
++  /* Only in the missing list?  We're done! */
++  if (sub->fd == -1)
++    return TRUE;
++
++  EV_SET (&ev, sub->fd, EVFILT_VNODE, EV_DELETE, NOTE_ALL, 0, sub);
++  if (kevent (kq_queue, &ev, 1, NULL, 0, NULL) == -1)
++    {
++      g_warning ("Unable to remove event for: %s", sub->filename, g_strerror (errno));
++      return FALSE;
++    }
++
++  close(sub->fd);
++  sub->fd = -1;
++
++  return TRUE;
++}
++
++gboolean
++_kqsub_start_watching (kqueue_sub *sub)
++{
++  struct stat st;
++  struct kevent ev;
++
++  sub->fd = open (sub->filename, O_KQFLAG);
++  if (sub->fd == -1)
++      return FALSE;
++
++  if (fstat (sub->fd, &st) == -1)
++    {
++      g_warning ("fstat failed for %s: %s", sub->filename, g_strerror (errno));
++      close (sub->fd);
++      sub->fd = -1;
++      return FALSE;
++    }
++
++  sub->is_dir = (st.st_mode & S_IFDIR) ? 1 : 0;
++  if (sub->is_dir)
++    {
++      /* I know, it is very bad to make such decisions in this way and here.
++       * We already do have an user_data at the #kqueue_sub, and it may point to
++       * GKqueueFileMonitor or GKqueueDirectoryMonitor. For a directory case,
++       * we need to scan in contents for the further diffs. Ideally this process
++       * should be delegated to the GKqueueDirectoryMonitor, but for now I will
++       * do it in a dirty way right here. */
++      if (sub->deps)
++        dl_free (sub->deps);
++
++      sub->deps = dl_listing (sub->filename);
++    }
++
++  EV_SET (&ev, sub->fd, EVFILT_VNODE, EV_ADD | EV_CLEAR, NOTE_ALL, 0, sub);
++  if (kevent (kq_queue, &ev, 1, NULL, 0, NULL) == -1)
++    {
++      g_warning ("Unable to add event for %s: %s", sub->filename, g_strerror (errno));
++      close (sub->fd);
++      sub->fd = -1;
++      return FALSE;
++    }
++
++  return TRUE;
++}
+diff --git gio/kqueue/gkqueuefilemonitor.h gio/kqueue/gkqueuefilemonitor.h
+deleted file mode 100644
+index 32752f105..000000000
+--- gio/kqueue/gkqueuefilemonitor.h
++++ /dev/null
+@@ -1,51 +0,0 @@
+-/*******************************************************************************
+-  Copyright (c) 2011, 2012 Dmitry Matveev <me@dmitrymatveev.co.uk>
+-
+-  Permission is hereby granted, free of charge, to any person obtaining a copy
+-  of this software and associated documentation files (the "Software"), to deal
+-  in the Software without restriction, including without limitation the rights
+-  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+-  copies of the Software, and to permit persons to whom the Software is
+-  furnished to do so, subject to the following conditions:
+-
+-  The above copyright notice and this permission notice shall be included in
+-  all copies or substantial portions of the Software.
+-
+-  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+-  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+-  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+-  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+-  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+-  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+-  THE SOFTWARE.
+-*******************************************************************************/
+-
+-#ifndef __G_KQUEUE_FILE_MONITOR_H__
+-#define __G_KQUEUE_FILE_MONITOR_H__
+-
+-#include <glib-object.h>
+-#include <string.h>
+-#include <gio/gfilemonitor.h>
+-#include <gio/glocalfilemonitor.h>
+-#include <gio/giomodule.h>
+-
+-G_BEGIN_DECLS
+-
+-#define G_TYPE_KQUEUE_FILE_MONITOR        (g_kqueue_file_monitor_get_type ())
+-#define G_KQUEUE_FILE_MONITOR(o)          (G_TYPE_CHECK_INSTANCE_CAST ((o), G_TYPE_KQUEUE_FILE_MONITOR, GKqueueFileMonitor))
+-#define G_KQUEUE_FILE_MONITOR_CLASS(k)    (G_TYPE_CHECK_CLASS_CAST ((k), G_TYPE_KQUEUE_FILE_MONITOR, GKqueueFileMonitorClass))
+-#define G_IS_KQUEUE_FILE_MONITOR(o)       (G_TYPE_CHECK_INSTANCE_TYPE ((o), G_TYPE_KQUEUE_FILE_MONITOR))
+-#define G_IS_KQUEUE_FILE_MONITOR_CLASS(k) (G_TYPE_CHECK_CLASS_TYPE ((k), G_TYPE_KQUEUE_FILE_MONITOR))
+-
+-typedef struct _GKqueueFileMonitor      GKqueueFileMonitor;
+-typedef struct _GKqueueFileMonitorClass GKqueueFileMonitorClass;
+-
+-struct _GKqueueFileMonitorClass {
+-  GLocalFileMonitorClass parent_class;
+-};
+-
+-GType g_kqueue_file_monitor_get_type (void);
+-
+-G_END_DECLS
+-
+-#endif /* __G_KQUEUE_FILE_MONITOR_H__ */
+diff --git gio/kqueue/kqueue-exclusions.c gio/kqueue/kqueue-exclusions.c
+deleted file mode 100644
+index 748d7a92a..000000000
+--- gio/kqueue/kqueue-exclusions.c
++++ /dev/null
+@@ -1,65 +0,0 @@
+-/*******************************************************************************
+-  Copyright (c) 2012 Dmitry Matveev <me@dmitrymatveev.co.uk>
+-  Copyright (c) 2012 Antoine Jacoutot <ajacoutot@openbsd.org>
+-
+-  Permission is hereby granted, free of charge, to any person obtaining a copy
+-  of this software and associated documentation files (the "Software"), to deal
+-  in the Software without restriction, including without limitation the rights
+-  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+-  copies of the Software, and to permit persons to whom the Software is
+-  furnished to do so, subject to the following conditions:
+-
+-  The above copyright notice and this permission notice shall be included in
+-  all copies or substantial portions of the Software.
+-
+-  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+-  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+-  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+-  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+-  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+-  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+-  THE SOFTWARE.
+-*******************************************************************************/
+-
+-#include <fcntl.h>
+-#include <glib.h>
+-#include <gio/gio.h>
+-#include "kqueue-exclusions.h"
+-
+-static gboolean ke_debug_enabled = FALSE;
+-#define KE_W if (ke_debug_enabled) g_warning
+-
+-/*
+- * _ke_is_excluded:
+- * @full_path - a path to file to check.
+- *
+- * Returns: TRUE if the file should be excluded from the kqueue-powered
+- *      monitoring, FALSE otherwise.
+- **/
+-gboolean
+-_ke_is_excluded (const char *full_path)
+-{
+-#if defined (O_EVTONLY)
+-  return FALSE;
+-#else
+-  GFile *f = NULL;
+-  GMount *mount = NULL;
+-
+-  f = g_file_new_for_path (full_path);
+-
+-  if (f != NULL) {
+-    mount = g_file_find_enclosing_mount (f, NULL, NULL);
+-    g_object_unref (f);
+-  }
+-
+-  if ((mount != NULL && (g_mount_can_unmount (mount))) || g_str_has_prefix (full_path, "/mnt/"))
+-  {
+-    KE_W ("Excluding %s from kernel notification, falling back to poll", full_path);
+-    if (mount)
+-      g_object_unref (mount);
+-    return TRUE;
+-  }
+-  else
+-    return FALSE;
+-#endif
+-}
+diff --git gio/kqueue/kqueue-exclusions.h gio/kqueue/kqueue-exclusions.h
+deleted file mode 100644
+index f1dad0e7e..000000000
+--- gio/kqueue/kqueue-exclusions.h
++++ /dev/null
+@@ -1,28 +0,0 @@
+-/*******************************************************************************
+-  Copyright (c) 2012 Dmitry Matveev <me@dmitrymatveev.co.uk>
+-
+-  Permission is hereby granted, free of charge, to any person obtaining a copy
+-  of this software and associated documentation files (the "Software"), to deal
+-  in the Software without restriction, including without limitation the rights
+-  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+-  copies of the Software, and to permit persons to whom the Software is
+-  furnished to do so, subject to the following conditions:
+-
+-  The above copyright notice and this permission notice shall be included in
+-  all copies or substantial portions of the Software.
+-
+-  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+-  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+-  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+-  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+-  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+-  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+-  THE SOFTWARE.
+-*******************************************************************************/
+-
+-#ifndef __KQUEUE_EXCLUSIONS_H
+-#define __KQUEUE_EXCLUSIONS_H
+-
+-gboolean _ke_is_excluded  (const char *full_path);
+-
+-#endif /* __KQUEUE_EXCLUDES_H */
+diff --git gio/kqueue/kqueue-helper.c gio/kqueue/kqueue-helper.c
+index e7d583c8b..497c30b15 100644
+--- gio/kqueue/kqueue-helper.c
++++ gio/kqueue/kqueue-helper.c
+@@ -34,83 +34,6 @@
+ #include <errno.h>
+ #include <pthread.h>
+ #include "kqueue-helper.h"
+-#include "kqueue-utils.h"
+-#include "kqueue-thread.h"
+-#include "kqueue-missing.h"
+-#include "kqueue-exclusions.h"
+-
+-static gboolean kh_debug_enabled = FALSE;
+-#define KH_W if (kh_debug_enabled) g_warning
+-
+-static GHashTable *subs_hash_table = NULL;
+-G_LOCK_DEFINE_STATIC (hash_lock);
+-
+-static int kqueue_descriptor = -1;
+-static int kqueue_socket_pair[] = {-1, -1};
+-static pthread_t kqueue_thread;
+-
+-
+-void _kh_file_appeared_cb (kqueue_sub *sub);
+-
+-/**
+- * accessor function for kqueue_descriptor
+- **/
+-int
+-get_kqueue_descriptor()
+-{
+-  return kqueue_descriptor;
+-}
+-
+-/**
+- * convert_kqueue_events_to_gio:
+- * @flags: a set of kqueue filter flags
+- * @done: a pointer to #gboolean indicating that the
+- *      conversion has been done (out)
+- *
+- * Translates kqueue filter flags into GIO event flags.
+- *
+- * Returns: a #GFileMonitorEvent
+- **/
+-static GFileMonitorEvent
+-convert_kqueue_events_to_gio (uint32_t flags, gboolean *done)
+-{
+-  g_assert (done != NULL);
+-  *done = FALSE;
+-
+-  /* TODO: The following notifications should be emulated, if possible:
+-   * - G_FILE_MONITOR_EVENT_PRE_UNMOUNT
+-   */
+-  if (flags & NOTE_DELETE)
+-    {    
+-      *done = TRUE;
+-      return G_FILE_MONITOR_EVENT_DELETED;
+-    }
+-  if (flags & NOTE_ATTRIB)
+-    {
+-      *done = TRUE;
+-      return G_FILE_MONITOR_EVENT_ATTRIBUTE_CHANGED;
+-    }
+-  if (flags & (NOTE_WRITE | NOTE_EXTEND))
+-    {
+-      *done = TRUE;
+-      return G_FILE_MONITOR_EVENT_CHANGED;
+-    }
+-  if (flags & NOTE_RENAME)
+-    {
+-      /* Since there’s apparently no way to get the new name of the file out of
+-       * kqueue(), all we can do is say that this one has been deleted. */
+-      *done = TRUE;
+-      return G_FILE_MONITOR_EVENT_DELETED;
+-    }
+-  if (flags & NOTE_REVOKE)
+-    {
+-      *done = TRUE;
+-      return G_FILE_MONITOR_EVENT_UNMOUNTED;
+-    }
+-
+-  /* done is FALSE */
+-  return 0;
+-}
+ 
+ typedef struct {
+   kqueue_sub *sub;
+@@ -238,318 +161,21 @@ static const traverse_cbs cbs = {
+ 
+ 
+ void
+-_kh_dir_diff (kqueue_sub *sub, GFileMonitorSource *source)
++_kh_dir_diff (kqueue_sub *sub)
+ {
+   dep_list *was;
+   handle_ctx ctx;
+ 
+-  g_assert (sub != NULL);
+-  g_assert (source != NULL);
+-
+   memset (&ctx, 0, sizeof (handle_ctx));
+   ctx.sub = sub;
+-  ctx.source = source;
++  ctx.source = sub->source;
+ 
+   was = sub->deps;
+   sub->deps = dl_listing (sub->filename);
+- 
++
+   dl_calculate (was, sub->deps, &cbs, &ctx);
+ 
+   dl_free (was);
+ }
+ 
+ 
+-/**
+- * process_kqueue_notifications:
+- * @gioc: unused.
+- * @cond: unused.
+- * @data: unused.
+- *
+- * Processes notifications, coming from the kqueue thread.
+- *
+- * Reads notifications from the command file descriptor, emits the
+- * "changed" event on the appropriate monitor.
+- *
+- * A typical GIO Channel callback function.
+- *
+- * Returns: %TRUE
+- **/
+-static gboolean
+-process_kqueue_notifications (GIOChannel   *gioc,
+-                              GIOCondition  cond,
+-                              gpointer      data)
+-{
+-  struct kqueue_notification n;
+-  kqueue_sub *sub = NULL;
+-  GFileMonitorSource *source = NULL;
+-  GFileMonitorEvent mask = 0;
+-  
+-  g_assert (kqueue_socket_pair[0] != -1);
+-  if (!_ku_read (kqueue_socket_pair[0], &n, sizeof (struct kqueue_notification)))
+-    {
+-      KH_W ("Failed to read a kqueue notification, error %d", errno);
+-      return TRUE;
+-    }
+-
+-  G_LOCK (hash_lock);
+-  sub = (kqueue_sub *) g_hash_table_lookup (subs_hash_table, GINT_TO_POINTER (n.fd));
+-  G_UNLOCK (hash_lock);
+-
+-  if (sub == NULL)
+-    {
+-      KH_W ("Got a notification for a deleted or non-existing subscription %d",
+-             n.fd);
+-      return TRUE;
+-    }
+-
+-  source = sub->user_data;
+-  g_assert (source != NULL);
+-
+-  if (n.flags & (NOTE_DELETE | NOTE_REVOKE))
+-    {
+-      if (sub->deps)
+-        {
+-          dl_free (sub->deps);
+-          sub->deps = NULL;  
+-        }  
+-      _km_add_missing (sub);
+-
+-      if (!(n.flags & NOTE_REVOKE))
+-        {
+-          /* Note that NOTE_REVOKE is issued by the kqueue thread
+-           * on EV_ERROR kevent. In this case, a file descriptor is
+-           * already closed from the kqueue thread, no need to close
+-           * it manually */ 
+-          _kh_cancel_sub (sub);
+-        }
+-    }
+-
+-  if (sub->is_dir && n.flags & (NOTE_WRITE | NOTE_EXTEND))
+-    {
+-      _kh_dir_diff (sub, source);
+-      n.flags &= ~(NOTE_WRITE | NOTE_EXTEND);
+-    }
+-
+-  if (n.flags)
+-    {
+-      gboolean done = FALSE;
+-      mask = convert_kqueue_events_to_gio (n.flags, &done);
+-      if (done == TRUE)
+-        g_file_monitor_source_handle_event (source, mask, NULL, NULL, NULL, g_get_monotonic_time ());
+-    }
+-
+-  return TRUE;
+-}
+-
+-
+-/*
+- * _kh_startup_impl:
+- * @unused: unused
+- *
+- * Kqueue backend startup code. Should be called only once.
+- *
+- * Returns: %TRUE on success, %FALSE otherwise.
+- **/
+-static gpointer
+-_kh_startup_impl (gpointer unused)
+-{
+-  GIOChannel *channel = NULL;
+-  gboolean result = FALSE;
+-
+-  kqueue_descriptor = kqueue ();
+-  result = (kqueue_descriptor != -1);
+-  if (!result)
+-    {
+-      KH_W ("Failed to initialize kqueue\n!");
+-      return GINT_TO_POINTER (FALSE);
+-    }
+-
+-  result = socketpair (AF_UNIX, SOCK_STREAM, 0, kqueue_socket_pair);
+-  if (result != 0)
+-    {
+-      KH_W ("Failed to create socket pair\n!");
+-      return GINT_TO_POINTER (FALSE) ;
+-    }
+-
+-  result = pthread_create (&kqueue_thread,
+-                           NULL,
+-                           _kqueue_thread_func,
+-                           &kqueue_socket_pair[1]);
+-  if (result != 0)
+-    {
+-      KH_W ("Failed to run kqueue thread\n!");
+-      return GINT_TO_POINTER (FALSE);
+-    }
+-
+-  _km_init (_kh_file_appeared_cb);
+-
+-  channel = g_io_channel_unix_new (kqueue_socket_pair[0]);
+-  g_io_add_watch (channel, G_IO_IN, process_kqueue_notifications, NULL);
+-
+-  subs_hash_table = g_hash_table_new (g_direct_hash, g_direct_equal);
+-
+-  KH_W ("started gio kqueue backend\n");
+-  return GINT_TO_POINTER (TRUE);
+-}
+-
+-
+-/*
+- * _kh_startup:
+- * Kqueue backend initialization.
+- *
+- * Returns: %TRUE on success, %FALSE otherwise.
+- **/
+-gboolean
+-_kh_startup (void)
+-{
+-  static GOnce init_once = G_ONCE_INIT;
+-  g_once (&init_once, _kh_startup_impl, NULL);
+-  return GPOINTER_TO_INT (init_once.retval);
+-}
+-
+-
+-/**
+- * _kh_start_watching:
+- * @sub: a #kqueue_sub
+- *
+- * Starts watching on a subscription.
+- *
+- * Returns: %TRUE on success, %FALSE otherwise.
+- **/
+-gboolean
+-_kh_start_watching (kqueue_sub *sub)
+-{
+-  g_assert (kqueue_socket_pair[0] != -1);
+-  g_assert (sub != NULL);
+-  g_assert (sub->filename != NULL);
+-
+-  /* kqueue requires a file descriptor to monitor. Sad but true */
+-#if defined (O_EVTONLY)
+-  sub->fd = open (sub->filename, O_EVTONLY);
+-#else
+-  sub->fd = open (sub->filename, O_RDONLY);
+-#endif
+-
+-  if (sub->fd == -1)
+-    {
+-      KH_W ("failed to open file %s (error %d)", sub->filename, errno);
+-      return FALSE;
+-    }
+-
+-  _ku_file_information (sub->fd, &sub->is_dir, NULL);
+-  if (sub->is_dir)
+-    {
+-      /* I know, it is very bad to make such decisions in this way and here.
+-       * We already do have an user_data at the #kqueue_sub, and it may point to
+-       * GKqueueFileMonitor or GKqueueDirectoryMonitor. For a directory case,
+-       * we need to scan in contents for the further diffs. Ideally this process
+-       * should be delegated to the GKqueueDirectoryMonitor, but for now I will
+-       * do it in a dirty way right here. */
+-      if (sub->deps)
+-        dl_free (sub->deps);
+-
+-      sub->deps = dl_listing (sub->filename);  
+-    }
+-
+-  G_LOCK (hash_lock);
+-  g_hash_table_insert (subs_hash_table, GINT_TO_POINTER (sub->fd), sub);
+-  G_UNLOCK (hash_lock);
+-
+-  _kqueue_thread_push_fd (sub->fd);
+-  
+-  /* Bump the kqueue thread. It will pick up a new sub entry to monitor */
+-  if (!_ku_write (kqueue_socket_pair[0], "A", 1))
+-    KH_W ("Failed to bump the kqueue thread (add fd, error %d)", errno);
+-  return TRUE;
+-}
+-
+-
+-/**
+- * _kh_add_sub:
+- * @sub: a #kqueue_sub
+- *
+- * Adds a subscription for monitoring.
+- *
+- * This funciton tries to start watching a subscription with
+- * _kh_start_watching(). On failure, i.e. when a file does not exist yet,
+- * the subscription will be added to a list of missing files to continue
+- * watching when the file will appear.
+- *
+- * Returns: %TRUE
+- **/
+-gboolean
+-_kh_add_sub (kqueue_sub *sub)
+-{
+-  g_assert (sub != NULL);
+-
+-  if (!_kh_start_watching (sub))
+-    _km_add_missing (sub);
+-
+-  return TRUE;
+-}
+-
+-
+-/**
+- * _kh_cancel_sub:
+- * @sub a #kqueue_sub
+- *
+- * Stops monitoring on a subscription.
+- *
+- * Returns: %TRUE
+- **/
+-gboolean
+-_kh_cancel_sub (kqueue_sub *sub)
+-{
+-  gboolean removed = FALSE;
+-  g_assert (kqueue_socket_pair[0] != -1);
+-  g_assert (sub != NULL);
+-
+-  _km_remove (sub);
+-
+-  G_LOCK (hash_lock);
+-  removed = g_hash_table_remove (subs_hash_table, GINT_TO_POINTER (sub->fd));
+-  G_UNLOCK (hash_lock);
+-
+-  if (removed)
+-    {
+-      /* fd will be closed in the kqueue thread */
+-      _kqueue_thread_remove_fd (sub->fd);
+-
+-      /* Bump the kqueue thread. It will pick up a new sub entry to remove*/
+-      if (!_ku_write (kqueue_socket_pair[0], "R", 1))
+-        KH_W ("Failed to bump the kqueue thread (remove fd, error %d)", errno);
+-    }
+-
+-  return TRUE;
+-}
+-
+-
+-/**
+- * _kh_file_appeared_cb:
+- * @sub: a #kqueue_sub
+- *
+- * A callback function for kqueue-missing subsystem.
+- *
+- * Signals that a missing file has finally appeared in the filesystem.
+- * Emits %G_FILE_MONITOR_EVENT_CREATED.
+- **/
+-void
+-_kh_file_appeared_cb (kqueue_sub *sub)
+-{
+-  GFile* child;
+-
+-  g_assert (sub != NULL);
+-  g_assert (sub->filename);
+-
+-  if (!g_file_test (sub->filename, G_FILE_TEST_EXISTS))
+-    return;
+-
+-  child = g_file_new_for_path (sub->filename);
+-
+-  g_file_monitor_emit_event (G_FILE_MONITOR (sub->user_data),
+-                             child,
+-                             NULL,
+-                             G_FILE_MONITOR_EVENT_CREATED);
+-
+-  g_object_unref (child);
+-}
+diff --git gio/kqueue/kqueue-helper.h gio/kqueue/kqueue-helper.h
+index b12a28fae..0236771e4 100644
+--- gio/kqueue/kqueue-helper.h
++++ gio/kqueue/kqueue-helper.h
+@@ -23,16 +23,33 @@
+ #ifndef __KQUEUE_HELPER_H
+ #define __KQUEUE_HELPER_H
+ 
+-#include "kqueue-sub.h"
+ #include <gio/glocalfilemonitor.h>
+ #include <gio/gfilemonitor.h>
+ 
+-gboolean _kh_startup        (void);
+-gboolean _kh_add_sub        (kqueue_sub *sub);
+-gboolean _kh_cancel_sub     (kqueue_sub *sub);
+-
+-gboolean _kh_start_watching (kqueue_sub *sub);
+-
+-void     _kh_dir_diff       (kqueue_sub *sub, GFileMonitorSource *source);
++#include "dep-list.h"
++
++/**
++ * kqueue_sub:
++ * @filename: a name of the file to monitor
++ * @user_data: the pointer to user data
++ * @pair_moves: unused (currently not implemented)
++ * @fd: the associated file descriptor (used by kqueue)
++ *
++ * Represents a subscription on a file or directory.
++ */
++typedef struct
++{
++  GLocalFileMonitor   *mon;
++  GFileMonitorSource  *source;
++  gchar*    filename;
++  int       fd;
++  dep_list* deps;
++  int       is_dir;
++} kqueue_sub;
++
++gboolean _kqsub_start_watching (kqueue_sub *sub);
++void _kh_dir_diff    (kqueue_sub *sub);
++void _km_add_missing (kqueue_sub *sub);
++void _km_remove      (kqueue_sub *sub);
+ 
+ #endif /* __KQUEUE_HELPER_H */
+diff --git gio/kqueue/kqueue-missing.c gio/kqueue/kqueue-missing.c
+index 9decdc937..b41cc0ebd 100644
+--- gio/kqueue/kqueue-missing.c
++++ gio/kqueue/kqueue-missing.c
+@@ -23,12 +23,12 @@
+ #include <glib.h>
+ 
+ #include "kqueue-helper.h"
+-#include "kqueue-sub.h"
+-#include "kqueue-missing.h"
+ 
+ 
+ #define SCAN_MISSING_TIME 4 /* 1/4 Hz */
+ 
++void _kh_file_appeared_cb (kqueue_sub *sub);
++
+ static gboolean km_scan_missing (gpointer user_data);
+ 
+ static gboolean km_debug_enabled = FALSE;
+@@ -38,21 +38,6 @@ static GSList *missing_subs_list = NULL;
+ G_LOCK_DEFINE_STATIC (missing_lock);
+ 
+ static volatile gboolean scan_missing_running = FALSE;
+-static on_create_cb file_appeared_callback;
+-
+-
+-/**
+- * _km_init:
+- * @cb: a callback function. It will be called when a watched file
+- *     will appear.
+- *
+- * Initialize the kqueue-missing module (optional).
+- **/
+-void
+-_km_init (on_create_cb cb)
+-{
+-  file_appeared_callback = cb;
+-}
+ 
+ 
+ /**
+@@ -83,6 +68,35 @@ _km_add_missing (kqueue_sub *sub)
+     }
+ }
+ 
++/**
++ * _kh_file_appeared_cb:
++ * @sub: a #kqueue_sub
++ *
++ * A callback function for kqueue-missing subsystem.
++ *
++ * Signals that a missing file has finally appeared in the filesystem.
++ * Emits %G_FILE_MONITOR_EVENT_CREATED.
++ **/
++void
++_kh_file_appeared_cb (kqueue_sub *sub)
++{
++  GFile* child;
++
++  g_assert (sub != NULL);
++  g_assert (sub->filename);
++
++  if (!g_file_test (sub->filename, G_FILE_TEST_EXISTS))
++    return;
++
++  child = g_file_new_for_path (sub->filename);
++
++  g_file_monitor_emit_event (G_FILE_MONITOR (sub->mon),
++                             child,
++                             NULL,
++                             G_FILE_MONITOR_EVENT_CREATED);
++
++  g_object_unref (child);
++}
+ 
+ /**
+  * km_scan_missing:
+@@ -114,11 +128,10 @@ km_scan_missing (gpointer user_data)
+       g_assert (sub != NULL);
+       g_assert (sub->filename != NULL);
+ 
+-      if (_kh_start_watching (sub))
++      if (_kqsub_start_watching (sub))
+         {
+           KM_W ("file %s now exists, starting watching", sub->filename);
+-          if (file_appeared_callback)
+-            file_appeared_callback (sub);
++          _kh_file_appeared_cb (sub);
+           not_missing = g_slist_prepend (not_missing, head);
+         }
+     }
+diff --git gio/kqueue/kqueue-missing.h gio/kqueue/kqueue-missing.h
+deleted file mode 100644
+index 704a6f300..000000000
+--- gio/kqueue/kqueue-missing.h
++++ /dev/null
+@@ -1,32 +0,0 @@
+-/*******************************************************************************
+-  Copyright (c) 2011, 2012 Dmitry Matveev <me@dmitrymatveev.co.uk>
+-
+-  Permission is hereby granted, free of charge, to any person obtaining a copy
+-  of this software and associated documentation files (the "Software"), to deal
+-  in the Software without restriction, including without limitation the rights
+-  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+-  copies of the Software, and to permit persons to whom the Software is
+-  furnished to do so, subject to the following conditions:
+-
+-  The above copyright notice and this permission notice shall be included in
+-  all copies or substantial portions of the Software.
+-
+-  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+-  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+-  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+-  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+-  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+-  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+-  THE SOFTWARE.
+-*******************************************************************************/
+-
+-#ifndef __G_KQUEUE_MISSING_H
+-#define __G_KQUEUE_MISSING_H
+-
+-typedef void (*on_create_cb) (kqueue_sub *);
+-
+-void _km_init        (on_create_cb cb);
+-void _km_add_missing (kqueue_sub *sub);
+-void _km_remove      (kqueue_sub *sub);
+-
+-#endif /* __G_KQUEUE_MISSING_H */
+diff --git gio/kqueue/kqueue-sub.c gio/kqueue/kqueue-sub.c
+deleted file mode 100644
+index 8b864ba90..000000000
+--- gio/kqueue/kqueue-sub.c
++++ /dev/null
+@@ -1,79 +0,0 @@
+-/*******************************************************************************
+-  Copyright (c) 2011, 2012 Dmitry Matveev <me@dmitrymatveev.co.uk>
+-
+-  Permission is hereby granted, free of charge, to any person obtaining a copy
+-  of this software and associated documentation files (the "Software"), to deal
+-  in the Software without restriction, including without limitation the rights
+-  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+-  copies of the Software, and to permit persons to whom the Software is
+-  furnished to do so, subject to the following conditions:
+-
+-  The above copyright notice and this permission notice shall be included in
+-  all copies or substantial portions of the Software.
+-
+-  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+-  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+-  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+-  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+-  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+-  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+-  THE SOFTWARE.
+-*******************************************************************************/
+-
+-#include <glib.h>
+-
+-#include "kqueue-sub.h"
+-
+-static gboolean ks_debug_enabled = FALSE;
+-#define KS_W if (ks_debug_enabled) g_warning
+-
+-/**
+- * _kh_sub_new:
+- * @filename: a file path to monitor (will be copied)
+- * @pair_moves: pair moves flag. Refer to #GFileMonitorFlags documentation.
+- * @user_data: user-supplied poiner.
+- *
+- * Creates a new subscription object.
+- *
+- * Returns: a pointer to a created subscription object.
+- **/
+-kqueue_sub*
+-_kh_sub_new (const gchar    *filename,
+-             gboolean        pair_moves,
+-             gpointer        user_data)
+-{
+-  kqueue_sub *sub = g_slice_new (kqueue_sub);
+-  g_assert (sub != NULL);
+-  
+-  sub->filename = g_strdup (filename);
+-  sub->pair_moves = pair_moves;
+-  sub->user_data = user_data;
+-  sub->fd = -1;
+-  sub->deps = NULL;
+-  /* I think that having such flag in the subscription is not good */
+-  sub->is_dir = 0;
+-
+-  KS_W ("new subscription for %s being setup\n", sub->filename);
+-  
+-  return sub;
+-}
+-
+-
+-/**
+- * _kh_sub_free:
+- * @sub: a #kqueue_sub
+- *
+- * Frees a subscription object and all its associated memory.
+- **/
+-void
+-_kh_sub_free (kqueue_sub *sub)
+-{
+-  if (sub->deps)
+-    {
+-      dl_free (sub->deps);
+-      sub->deps = NULL;
+-    }
+-
+-  g_free (sub->filename);
+-  g_slice_free (kqueue_sub, sub);
+-}
+diff --git gio/kqueue/kqueue-sub.h gio/kqueue/kqueue-sub.h
+deleted file mode 100644
+index 215c49142..000000000
+--- gio/kqueue/kqueue-sub.h
++++ /dev/null
+@@ -1,50 +0,0 @@
+-/*******************************************************************************
+-  Copyright (c) 2011, 2012 Dmitry Matveev <me@dmitrymatveev.co.uk>
+-
+-  Permission is hereby granted, free of charge, to any person obtaining a copy
+-  of this software and associated documentation files (the "Software"), to deal
+-  in the Software without restriction, including without limitation the rights
+-  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+-  copies of the Software, and to permit persons to whom the Software is
+-  furnished to do so, subject to the following conditions:
+-
+-  The above copyright notice and this permission notice shall be included in
+-  all copies or substantial portions of the Software.
+-
+-  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+-  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+-  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+-  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+-  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+-  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+-  THE SOFTWARE.
+-*******************************************************************************/
+-
+-#ifndef __KQUEUE_SUB_H
+-#define __KQUEUE_SUB_H
+-
+-#include "dep-list.h"
+-
+-/**
+- * kqueue_sub:
+- * @filename: a name of the file to monitor
+- * @user_data: the pointer to user data
+- * @pair_moves: unused (currently not implemented)
+- * @fd: the associated file descriptor (used by kqueue)
+- *
+- * Represents a subscription on a file or directory.
+- */
+-typedef struct
+-{
+-  gchar*    filename;
+-  gpointer  user_data;
+-  gboolean  pair_moves;
+-  int       fd;
+-  dep_list* deps;
+-  int       is_dir;
+-} kqueue_sub;
+-
+-kqueue_sub* _kh_sub_new  (const gchar* filename, gboolean pair_moves, gpointer user_data);
+-void        _kh_sub_free (kqueue_sub* sub);
+-
+-#endif /* __KQUEUE_SUB_H */
+diff --git gio/kqueue/kqueue-thread.c gio/kqueue/kqueue-thread.c
+deleted file mode 100644
+index 642b997db..000000000
+--- gio/kqueue/kqueue-thread.c
++++ /dev/null
+@@ -1,304 +0,0 @@
+-/*******************************************************************************
+-  Copyright (c) 2011, 2012 Dmitry Matveev <me@dmitrymatveev.co.uk>
+-
+-  Permission is hereby granted, free of charge, to any person obtaining a copy
+-  of this software and associated documentation files (the "Software"), to deal
+-  in the Software without restriction, including without limitation the rights
+-  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+-  copies of the Software, and to permit persons to whom the Software is
+-  furnished to do so, subject to the following conditions:
+-
+-  The above copyright notice and this permission notice shall be included in
+-  all copies or substantial portions of the Software.
+-
+-  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+-  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+-  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+-  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+-  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+-  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+-  THE SOFTWARE.
+-*******************************************************************************/
+-
+-#include "config.h"
+-#include <sys/types.h>
+-#include <sys/event.h>
+-#include <sys/time.h>
+-#include <unistd.h>
+-#include <errno.h>
+-#include <glib.h>
+-
+-#include "kqueue-thread.h"
+-#include "kqueue-sub.h"
+-#include "kqueue-utils.h"
+-
+-static gboolean kt_debug_enabled = FALSE;
+-#define KT_W if (kt_debug_enabled) g_warning
+-
+-static GQueue pick_up_fds_queue = G_QUEUE_INIT;
+-G_LOCK_DEFINE_STATIC (pick_up_lock);
+-
+-static GSList *remove_fds_list = NULL;
+-G_LOCK_DEFINE_STATIC (remove_lock);
+-
+-/* GIO does not have analogues for NOTE_LINK and(?) NOTE_REVOKE, so
+- * we do not ask kqueue() to watch for these events for now. */
+-const uint32_t KQUEUE_VNODE_FLAGS =
+-  NOTE_DELETE | NOTE_WRITE | NOTE_EXTEND | NOTE_ATTRIB | NOTE_RENAME;
+-
+-extern int get_kqueue_descriptor(void);
+-
+-/**
+- * _kqueue_thread_collect_fds:
+- * @events: a #kevents - the list of events to monitor. Will be extended
+- *     with new items.
+- *
+- * Picks up new file descriptors for monitoring from a global queue.
+- *
+- * To add new items to the list, use _kqueue_thread_push_fd().
+- */
+-static void
+-_kqueue_thread_collect_fds (kevents *events)
+-{
+-  g_assert (events != NULL);
+-  gint length = 0;
+-
+-  G_LOCK (pick_up_lock);
+-  if ((length = g_queue_get_length (&pick_up_fds_queue)) != 0)
+-    {
+-      gpointer fdp = NULL;
+-      kevents_extend_sz (events, length);
+-
+-      while ((fdp = g_queue_pop_head (&pick_up_fds_queue)) != NULL)
+-        {
+-          struct kevent *pevent = &events->memory[events->kq_size++];
+-          EV_SET (pevent,
+-                  GPOINTER_TO_INT (fdp),
+-                  EVFILT_VNODE,
+-                  EV_ADD | EV_ENABLE | EV_ONESHOT,
+-                  KQUEUE_VNODE_FLAGS,
+-                  0,
+-                  0);
+-        }
+-    }
+-  G_UNLOCK (pick_up_lock);
+-}
+-
+-
+-/**
+- * _kqueue_thread_cleanup_fds:
+- * @events: a #kevents -- list of events to monitor. Cancelled
+- *     subscriptions will be removed from it, and its size
+- *     probably will be reduced.
+- *
+- * Removes file descriptors from monitoring.
+- *
+- * This function will pick up file descriptors from a global list
+- * to cancel monitoring on them. The list will be freed then.
+- *
+- * To add new items to the list, use _kqueue_thread_remove_fd().
+- */
+-static void
+-_kqueue_thread_cleanup_fds (kevents *events)
+-{
+-  g_assert (events != NULL);
+-
+-  G_LOCK (remove_lock);
+-  if (remove_fds_list)
+-    {
+-      size_t oldsize = events->kq_size;
+-      int i, j;
+-
+-      for (i = 1, j = 1; i < oldsize; i++)
+-        {
+-          int fd = events->memory[i].ident;
+-          GSList *elem = g_slist_find (remove_fds_list, GINT_TO_POINTER (fd));
+-          if (elem == NULL)
+-            {
+-              if (i != j)
+-                events->memory[j] = events->memory[i];
+-              ++j;
+-            }
+-          else if (close (fd) == -1)
+-            KT_W ("Failed to close fd %d, error %d", fd, errno);
+-        }
+-
+-      KT_W ("FD Clean up complete, kq_size now %d\n", j);
+-      events->kq_size = j;
+-      kevents_reduce (events);
+-      g_slist_free (remove_fds_list);
+-      remove_fds_list = NULL;
+-    }
+-  G_UNLOCK (remove_lock);
+-}
+-
+-
+-/**
+- * _kqueue_thread_drop_fd:
+- * @events: a #kevents -- list of events to monitor. Cancelled
+- *     subscriptions will be removed from it, and its size
+- *     probably will be reduced.
+- *
+- * Removes a concrete file descriptor from monitoring.
+- */
+-static void
+-_kqueue_thread_drop_fd (kevents *events, int fd)
+-{
+-  g_assert (events != NULL);
+-
+-  int i;
+-  for (i = 1; i < events->kq_size; i++)
+-    {
+-      if (events->memory[i].ident == fd)
+-        {
+-          if (close (fd) == -1)
+-            KT_W ("Failed to close fd %d, error %d", fd, errno);
+-
+-          events->memory[i] = events->memory[--events->kq_size];
+-          return;
+-        }
+-    } 
+-}
+-
+-/**
+- * _kqueue_thread_func:
+- * @arg: a pointer to int -- control file descriptor.
+- *
+- * The thread communicates with the outside world through a so-called
+- * command file descriptor. The thread reads control commands from it
+- * and writes the notifications into it.
+- *
+- * Control commands are single-byte characters:
+- * - 'A' - pick up new file descriptors to monitor
+- * - 'R' - remove some descriptors from monitoring.
+- *
+- * For details, see _kqueue_thread_collect_fds() and
+- * _kqueue_thread_cleanup_fds().
+- *
+- * Notifications, that thread writes into the command file descriptor,
+- * are represented with #kqueue_notification objects.
+- *
+- * Returns: %NULL
+- */
+-void*
+-_kqueue_thread_func (void *arg)
+-{
+-  int fd, kqueue_descriptor;
+-  kevents waiting;
+-
+-  g_assert (arg != NULL);
+-  kevents_init_sz (&waiting, 1);
+-
+-  fd = *(int *) arg;
+-
+-  kqueue_descriptor = get_kqueue_descriptor();
+-  if (kqueue_descriptor == -1)
+-    {
+-      KT_W ("fatal: kqueue is not initialized!\n");
+-      return NULL;
+-    }
+-
+-  EV_SET (&waiting.memory[0],
+-          fd,
+-          EVFILT_READ,
+-          EV_ADD | EV_ENABLE | EV_ONESHOT,
+-          NOTE_LOWAT,
+-          1,
+-          0);
+-  waiting.kq_size = 1;
+-
+-  for (;;)
+-    {
+-      /* TODO: Provide more items in the 'eventlist' to kqueue(2).
+-       * Currently the backend takes notifications from the kernel one
+-       * by one, i.e. there will be a lot of system calls and context
+-       * switches when the application will monitor a lot of files with
+-       * high filesystem activity on each. */
+-     
+-      struct kevent received;
+-      KT_W ("Watching for %zi items", waiting.kq_size);
+-      int ret = kevent (kqueue_descriptor, waiting.memory, waiting.kq_size, &received, 1, NULL);
+-      int kevent_errno = errno;
+-      KT_W ("Awoken.");
+-
+-      if (ret == -1)
+-        {
+-          KT_W ("kevent failed: %d", kevent_errno);
+-          if (kevent_errno == EINTR)
+-            continue;
+-          else
+-            return NULL;
+-        }
+-
+-      if (received.ident == fd)
+-        {
+-          char c;
+-            if (!_ku_read (fd, &c, 1))
+-              {
+-                KT_W ("Failed to read command, error %d", errno);
+-                continue;
+-              }
+-          if (c == 'A')
+-            _kqueue_thread_collect_fds (&waiting);
+-          else if (c == 'R')
+-            _kqueue_thread_cleanup_fds (&waiting);
+-        }
+-      else 
+-        {
+-          struct kqueue_notification kn;
+-          kn.fd = received.ident;
+-
+-          if (received.flags & EV_ERROR)
+-            {
+-              kn.flags = NOTE_REVOKE;
+-              _kqueue_thread_drop_fd (&waiting, received.ident);
+-            }
+-          else
+-            kn.flags = (received.fflags & ~NOTE_REVOKE);
+-
+-          if (!_ku_write (fd, &kn, sizeof (struct kqueue_notification)))
+-            KT_W ("Failed to write a kqueue notification, error %d", errno);
+-        }
+-    }
+-  kevents_free (&waiting);
+-  return NULL;
+-}
+-
+-
+-/**
+- * _kqueue_thread_push_fd:
+- * @fd: a file descriptor
+- *
+- * Puts a new file descriptor into the pick up list for monitroing.
+- *
+- * The kqueue thread will not start monitoring on it immediately, it
+- * should be bumped via its command file descriptor manually.
+- * See kqueue_thread() and _kqueue_thread_collect_fds() for details.
+- */
+-void
+-_kqueue_thread_push_fd (int fd)
+-{
+-  G_LOCK (pick_up_lock);
+-  g_queue_push_tail (&pick_up_fds_queue, GINT_TO_POINTER (fd));
+-  G_UNLOCK (pick_up_lock);
+-}
+-
+-
+-/**
+- * _kqueue_thread_remove_fd:
+- * @fd: a file descriptor
+- *
+- * Puts a new file descriptor into the remove list to cancel monitoring
+- * on it.
+- *
+- * The kqueue thread will not stop monitoring on it immediately, it
+- * should be bumped via its command file descriptor manually.
+- * See kqueue_thread() and _kqueue_thread_collect_fds() for details.
+- */
+-void
+-_kqueue_thread_remove_fd (int fd)
+-{
+-  G_LOCK (remove_lock);
+-  remove_fds_list = g_slist_prepend (remove_fds_list, GINT_TO_POINTER (fd));
+-  G_UNLOCK (remove_lock);
+-}
+diff --git gio/kqueue/kqueue-thread.h gio/kqueue/kqueue-thread.h
+deleted file mode 100644
+index 0e46a0d69..000000000
+--- gio/kqueue/kqueue-thread.h
++++ /dev/null
+@@ -1,45 +0,0 @@
+-/*******************************************************************************
+-  Copyright (c) 2011, 2012 Dmitry Matveev <me@dmitrymatveev.co.uk>
+-
+-  Permission is hereby granted, free of charge, to any person obtaining a copy
+-  of this software and associated documentation files (the "Software"), to deal
+-  in the Software without restriction, including without limitation the rights
+-  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+-  copies of the Software, and to permit persons to whom the Software is
+-  furnished to do so, subject to the following conditions:
+-
+-  The above copyright notice and this permission notice shall be included in
+-  all copies or substantial portions of the Software.
+-
+-  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+-  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+-  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+-  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+-  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+-  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+-  THE SOFTWARE.
+-*******************************************************************************/
+-
+-#ifndef __KQUEUE_THREAD_H
+-#define __KQUEUE_THREAD_H
+-
+-/**
+- * kqueue_notification:
+- * @fd: file descriptor, on which an activity has occured.
+- * @flags: kqueue event flags, see man kevent(2).
+- *
+- * Represents an event occured on a file descriptor. Used for marshalling from
+- * kqueue thread to its subscribers.
+- */
+-struct kqueue_notification {
+-  /*< public >*/
+-  int fd;
+-  uint32_t flags;
+-};
+-
+-
+-void* _kqueue_thread_func      (void *arg);
+-void  _kqueue_thread_push_fd   (int fd);
+-void  _kqueue_thread_remove_fd (int fd);
+-
+-#endif /* __KQUEUE_SUB_H */
+diff --git gio/kqueue/kqueue-utils.c gio/kqueue/kqueue-utils.c
+deleted file mode 100644
+index bba652278..000000000
+--- gio/kqueue/kqueue-utils.c
++++ /dev/null
+@@ -1,210 +0,0 @@
+-/*******************************************************************************
+-  Copyright (c) 2011, 2012 Dmitry Matveev <me@dmitrymatveev.co.uk>
+-
+-  Permission is hereby granted, free of charge, to any person obtaining a copy
+-  of this software and associated documentation files (the "Software"), to deal
+-  in the Software without restriction, including without limitation the rights
+-  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+-  copies of the Software, and to permit persons to whom the Software is
+-  furnished to do so, subject to the following conditions:
+-
+-  The above copyright notice and this permission notice shall be included in
+-  all copies or substantial portions of the Software.
+-
+-  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+-  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+-  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+-  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+-  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+-  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+-  THE SOFTWARE.
+-*******************************************************************************/
+-
+-#include <sys/types.h>
+-#include <sys/event.h>
+-#include <string.h>
+-#include <glib.h>
+-#include <unistd.h>
+-#include <sys/stat.h> 
+-#include <errno.h>
+-#include "kqueue-utils.h"
+-
+-static gboolean ku_debug_enabled = FALSE;
+-#define KU_W if (ku_debug_enabled) g_warning
+-
+-
+-
+-#define KEVENTS_EXTEND_COUNT 10
+-
+-
+-/**
+- * kevents_init_sz:
+- * @kv: a #kevents
+- * @n_initial: the initial preallocated memory size. If it is less than
+- *      %KEVENTS_EXTEND_COUNT, this value will be used instead.
+- *
+- * Initializes a #kevents object.
+- **/
+-void
+-kevents_init_sz (kevents *kv, gsize n_initial)
+-{
+-  g_assert (kv != NULL);
+-
+-  memset (kv, 0, sizeof (kevents));
+-
+-  if (n_initial < KEVENTS_EXTEND_COUNT)
+-    n_initial = KEVENTS_EXTEND_COUNT;
+-
+-  kv->memory = g_new0 (struct kevent, n_initial);
+-  kv->kq_allocated = n_initial;
+-}
+-
+-
+-/**
+- * kevents_extend_sz:
+- * @kv: a #kevents
+- * @n_new: the number of new objects to be added
+- *
+- * Extends the allocated memory, if needed.
+- **/
+-void
+-kevents_extend_sz (kevents *kv, gsize n_new)
+-{
+-  g_assert (kv != NULL);
+-
+-  if (kv->kq_size + n_new <= kv->kq_allocated)
+-    return;
+-
+-  kv->kq_allocated += (n_new + KEVENTS_EXTEND_COUNT);
+-  kv->memory = g_renew (struct kevent, kv->memory, kv->kq_allocated);
+-}
+-
+-
+-/**
+- * kevents_reduce:
+- * @kv: a #kevents
+- *
+- * Reduces the allocated heap size, if needed.
+- *
+- * If the allocated heap size is >= 3*used
+- * and 2*used >= %KEVENTS_EXTEND_COUNT, reduce it to 2*used.
+- **/
+-void
+-kevents_reduce (kevents *kv)
+-{
+-  g_assert (kv != NULL);
+-  gsize candidate_sz;
+-
+-  if (kv->kq_size == 0 || kv->kq_allocated == 0 || kv->memory == NULL)
+-    return;
+-
+-  candidate_sz = 2 * kv->kq_size;
+-
+-  if (((double) kv->kq_allocated / kv->kq_size) >= 3 &&
+-      candidate_sz >= KEVENTS_EXTEND_COUNT)
+-    {
+-      kv->kq_allocated = candidate_sz;
+-      kv->memory = g_renew (struct kevent, kv->memory, kv->kq_allocated);
+-    }
+-}
+-
+-
+-/**
+- * kevents_free:
+- * @kv: a #kevents
+- *
+- * Resets the kevents object and frees all the associated memory.
+- **/
+-void
+-kevents_free (kevents *kv)
+-{
+-  g_assert (kv != NULL);
+-
+-  g_free (kv->memory);
+-  memset (kv, 0, sizeof (kevents));
+-}
+-
+-
+-#define SAFE_GENERIC_OP(fcn, fd, data, size) \
+-  while (size > 0) \
+-    { \
+-      gsize retval = fcn (fd, data, size); \
+-      if (retval == -1) \
+-        { \
+-          if (errno == EINTR) \
+-            continue; \
+-          else \
+-            return FALSE; \
+-        } \
+-      size -= retval; \
+-      data += retval; \
+-    } \
+-  return TRUE;
+-
+-
+-/**
+- * _ku_read:
+- * @fd: a file descriptor
+- * @data: the destination buffer
+- * @size: how many bytes to read
+- *
+- * A ready-to-EINTR version of read().
+- *
+- * This function expects to work with a blocking socket.
+- *
+- * Returns: %TRUE on success, %FALSE otherwise
+- **/
+-gboolean
+-_ku_read (int fd, gpointer data, gsize size)
+-{
+-  SAFE_GENERIC_OP (read, fd, data, size);
+-}
+-
+-
+-/**
+- * _ku_write:
+- * @fd: a file descriptor
+- * @data: the buffer to write
+- * @size: how many bytes to write
+- *
+- * A ready-to-EINTR version of write().
+- *
+- * This function expects to work with a blocking socket.
+- *
+- * Returns: %TRUE on success, %FALSE otherwise
+- **/
+-gboolean
+-_ku_write (int fd, gconstpointer data, gsize size)
+-{
+-  SAFE_GENERIC_OP (write, fd, data, size);
+-}
+-
+-
+-/**
+- * Get some file information by its file descriptor.
+- *
+- * @param[in]  fd      A file descriptor.
+- * @param[out] is_dir  A flag indicating directory.
+- * @param[out] inode   A file's inode number.
+- **/
+-void
+-_ku_file_information (int fd, int *is_dir, ino_t *inode)
+-{
+-  g_assert (fd != -1);
+-
+-  struct stat st;
+-  memset (&st, 0, sizeof (struct stat));
+-
+-  if (fstat (fd, &st) == -1)
+-    {
+-      KU_W ("fstat failed, assuming it is just a file");
+-      is_dir = NULL;
+-      return;
+-    }
+-
+-  if (is_dir != NULL)
+-      *is_dir = ((st.st_mode & S_IFDIR) == S_IFDIR) ? 1 : 0;
+-
+-  if (inode != NULL)
+-      *inode = st.st_ino;
+-}
+diff --git gio/kqueue/kqueue-utils.h gio/kqueue/kqueue-utils.h
+deleted file mode 100644
+index 4e37f4a99..000000000
+--- gio/kqueue/kqueue-utils.h
++++ /dev/null
+@@ -1,53 +0,0 @@
+-/*******************************************************************************
+-  Copyright (c) 2011, 2012 Dmitry Matveev <me@dmitrymatveev.co.uk>
+-
+-  Permission is hereby granted, free of charge, to any person obtaining a copy
+-  of this software and associated documentation files (the "Software"), to deal
+-  in the Software without restriction, including without limitation the rights
+-  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+-  copies of the Software, and to permit persons to whom the Software is
+-  furnished to do so, subject to the following conditions:
+-
+-  The above copyright notice and this permission notice shall be included in
+-  all copies or substantial portions of the Software.
+-
+-  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+-  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+-  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+-  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+-  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+-  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+-  THE SOFTWARE.
+-*******************************************************************************/
+-
+-#ifndef __KQUEUE_UTILS_H
+-#define __KQUEUE_UTILS_H
+-
+-#include <sys/types.h> /* ino_t */
+-
+-/**
+- * kqueue_notification:
+- * @memory: a pointer to the allocated memory
+- * @kq_size: the number of used items
+- * @kq_allocated: the number of allocated items
+- *
+- * Represents a pool of (struct kevent) objects.
+- */
+-typedef struct {
+-  struct kevent *memory;
+-  gsize kq_size;
+-  gsize kq_allocated;
+-} kevents;
+-
+-void kevents_init_sz   (kevents *kv, gsize n_initial);
+-void kevents_extend_sz (kevents *kv, gsize n_new);
+-void kevents_reduce    (kevents *kv);
+-void kevents_free      (kevents *kv);
+-
+-
+-gboolean _ku_read             (int fd, gpointer data, gsize size);
+-gboolean _ku_write            (int fd, gconstpointer data, gsize size);
+-
+-void     _ku_file_information (int fd, int *is_dir, ino_t *inode);
+-
+-#endif /* __KQUEUE_UTILS_H */
+diff --git gio/kqueue/meson.build gio/kqueue/meson.build
+index 8f5b97aa2..74ae8d8c6 100644
+--- gio/kqueue/meson.build
++++ gio/kqueue/meson.build
+@@ -1,14 +1,8 @@
+ kqueue_sources = [
+   'gkqueuefilemonitor.c',
+   'kqueue-helper.c',
+-  'kqueue-thread.c',
+-  'kqueue-sub.c',
+   'kqueue-missing.c',
+-  'kqueue-utils.c',
+-  'kqueue-exclusions.c',
+   'dep-list.c',
+-  # gkqueuefilemonitor.h includes gio.h which includes this
+-  gioenumtypes_h,
+ ]
+ 
+ kqueue_lib = static_library('kqueue',
