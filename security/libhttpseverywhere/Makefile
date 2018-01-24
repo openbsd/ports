@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2017/12/12 08:04:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2018/01/24 23:43:33 ajacoutot Exp $
 
 COMMENT=		library to use HTTPSEverywhere in desktop applications
 
-GNOME_VERSION=		0.6.5
+GNOME_VERSION=		0.6.6
 GNOME_PROJECT=		libhttpseverywhere
 
-SHARED_LIBS += httpseverywhere-0.6       0.0 # 0.6.5
+SHARED_LIBS += httpseverywhere-0.6       0.0 # 0.6.6
 
 CATEGORIES=		security net
 
