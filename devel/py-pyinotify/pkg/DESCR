@@ -1,0 +1,2 @@
+inotify functionality allows you to register one or more directories for
+watching, and to simply block and wait for notification events.
