@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.8 2017/01/13 12:44:28 nigel Exp $
+# $OpenBSD: Makefile,v 1.9 2018/01/24 18:16:27 jasper Exp $
 
 COMMENT =		library to retrieve system information and utilisation
 
-MODPY_EGG_VERSION =	4.4.2
+MODPY_EGG_VERSION =	5.4.3
 GH_ACCOUNT =		giampaolo
 GH_PROJECT =		psutil
 GH_TAGNAME =		release-${MODPY_EGG_VERSION}
 DISTNAME =		psutil-${MODPY_EGG_VERSION}
 PKGNAME =		py-psutil-${MODPY_EGG_VERSION}
 CATEGORIES =		sysutils
-REVISION =		0
 
 HOMEPAGE =		https://github.com/giampaolo/psutil
 
@@ -29,8 +28,5 @@ FLAVOR ?=
 .if ! ${FLAVOR:Mpython3}
 TEST_DEPENDS +=		net/py-ipaddress${MODPY_FLAVOR}
 .endif
-
-do-test:
-	cd ${WRKSRC}; ${MODPY_BIN} psutil/tests/runner.py
 
 .include <bsd.port.mk>
