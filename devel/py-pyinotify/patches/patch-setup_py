@@ -1,18 +1,21 @@
-$OpenBSD: patch-setup_py,v 1.1.1.1 2018/01/24 18:06:34 jasper Exp $
+$OpenBSD: patch-setup_py,v 1.2 2018/01/24 18:40:18 jasper Exp $
+
+https://github.com/seb-m/pyinotify/pull/153
 
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -25,7 +25,7 @@ if sys.version_info < (2, 4):
+@@ -25,7 +25,8 @@ if sys.version_info < (2, 4):
      sys.exit(1)
  
  # check linux platform
 -if not platform.startswith('linux') and not platform.startswith('freebsd'):
-+if not platform.startswith('linux') and not platform.startswith('freebsd') and not platform.startswith('openbsd'):
++if not platform.startswith('linux') and not platform.startswith('freebsd') and \
++    not platform.startswith('openbsd'):
      sys.stderr.write("inotify is not available on %s\n" % platform)
      sys.exit(1)
  
-@@ -73,6 +73,8 @@ def should_compile_ext_mod():
+@@ -73,6 +74,8 @@ def should_compile_ext_mod():
      try_libc_name = 'c'
      if platform.startswith('freebsd'):
          try_libc_name = 'inotify'
@@ -21,7 +24,7 @@ Index: setup.py
  
      libc_name = None
      try:
-@@ -94,6 +96,9 @@ if compile_ext_mod or should_compile_ext_mod():
+@@ -94,6 +97,9 @@ if compile_ext_mod or should_compile_ext_mod():
      # add -fpic if x86_64 arch
      if platform in ["linux-x86_64"]:
          os.environ["CFLAGS"] = "-fpic"
