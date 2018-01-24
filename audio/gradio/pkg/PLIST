@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2017/11/19 02:03:08 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/01/24 08:58:02 landry Exp $
 @bin bin/gradio
 share/appdata/
 share/appdata/de.haeckerfelix.gradio.appdata.xml
@@ -16,17 +16,22 @@ share/icons/hicolor/48x48/apps/de.haeckerfelix.gradio.png
 share/icons/hicolor/512x512/apps/de.haeckerfelix.gradio.png
 share/icons/hicolor/scalable/apps/de.haeckerfelix.gradio.svg
 share/icons/hicolor/symbolic/apps/de.haeckerfelix.gradio-symbolic.svg
+share/locale/cs/LC_MESSAGES/gradio.mo
 share/locale/de/LC_MESSAGES/gradio.mo
+share/locale/es/LC_MESSAGES/gradio.mo
 share/locale/fr/LC_MESSAGES/gradio.mo
 share/locale/hr/LC_MESSAGES/gradio.mo
 share/locale/it/LC_MESSAGES/gradio.mo
 share/locale/ka/LC_MESSAGES/gradio.mo
 share/locale/nb/LC_MESSAGES/gradio.mo
+share/locale/nl/LC_MESSAGES/gradio.mo
 share/locale/pl/LC_MESSAGES/gradio.mo
 share/locale/pt_BR/LC_MESSAGES/gradio.mo
 share/locale/sk/LC_MESSAGES/gradio.mo
 share/locale/sr/LC_MESSAGES/gradio.mo
+share/locale/sr@latin/LC_MESSAGES/gradio.mo
 share/locale/sv/LC_MESSAGES/gradio.mo
+share/locale/tr/LC_MESSAGES/gradio.mo
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/update-desktop-database
