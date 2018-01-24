@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2018/01/14 00:38:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.77 2018/01/24 23:36:24 ajacoutot Exp $
 
 # patches/patch-Source_JavaScriptCore_javascriptcoregtk_pc_in
 # patches/patch-Source_WebKit_gtk_webkit2gtk-web-extension_pc_in
@@ -12,14 +12,13 @@ PORTROACH =		limitw:1,even
 
 COMMENT =		GTK+ port of the WebKit rendering engine
 
-V =			2.18.5
+V =			2.18.6
 DISTNAME =		webkitgtk-${V}
 PKGNAME =		webkitgtk4-${V}
 EXTRACT_SUFX =		.tar.xz
 API =			4.0
 SUBST_VARS =		API
-# XXX https://bugs.webkit.org/show_bug.cgi?id=181631
-#DPB_PROPERTIES =	parallel
+DPB_PROPERTIES =	parallel
 
 SHARED_LIBS +=  javascriptcoregtk-${API}     2.3 # 18.6
 SHARED_LIBS +=  webkit2gtk-${API}            2.3 # 37.24
