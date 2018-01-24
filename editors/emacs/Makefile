@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.71 2017/10/19 16:28:48 jca Exp $
+# $OpenBSD: Makefile,v 1.72 2018/01/24 00:35:14 jca Exp $
+
+BROKEN-arm=		gmake[1]: *** [Makefile:737: bootstrap-emacs] Illegal instruction (core dumped)
 
 COMMENT=		GNU editor: extensible, customizable, self-documenting
 
