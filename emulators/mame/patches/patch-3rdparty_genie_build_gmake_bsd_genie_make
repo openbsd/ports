@@ -1,0 +1,29 @@
+$OpenBSD: patch-3rdparty_genie_build_gmake_bsd_genie_make,v 1.1.1.1 2018/01/24 20:56:12 fcambus Exp $
+
+Index: 3rdparty/genie/build/gmake.bsd/genie.make
+--- 3rdparty/genie/build/gmake.bsd/genie.make.orig
++++ 3rdparty/genie/build/gmake.bsd/genie.make
+@@ -28,8 +28,8 @@ else
+   RM    = $(SILENT) del /F "$(subst /,\\,$(1))" 2> nul || exit 0
+ endif
+ 
+-CC  = gcc
+-CXX = g++
++CC  ?= gcc
++CXX ?= g++
+ AR  = ar
+ 
+ ifndef RESCOMP
+@@ -48,9 +48,9 @@ ifeq ($(config),release)
+   INCLUDES      += -I../../src/host/lua-5.3.0/src
+   INCLUDES      +=
+   ALL_CPPFLAGS  += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
+-  ALL_CFLAGS    += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -Os
+-  ALL_CXXFLAGS  += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -Os
+-  ALL_OBJCFLAGS += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -Os
++  ALL_CFLAGS    += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra
++  ALL_CXXFLAGS  += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra
++  ALL_OBJCFLAGS += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra
+   ALL_RESFLAGS  += $(RESFLAGS) $(DEFINES) $(INCLUDES)
+   ALL_LDFLAGS   += $(LDFLAGS) -L. -s -rdynamic
+   LDDEPS        +=

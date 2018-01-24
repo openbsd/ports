@@ -1,0 +1,15 @@
+$OpenBSD: patch-3rdparty_bx_src_mutex_cpp,v 1.1.1.1 2018/01/24 20:56:12 fcambus Exp $
+
+Index: 3rdparty/bx/src/mutex.cpp
+--- 3rdparty/bx/src/mutex.cpp.orig
++++ 3rdparty/bx/src/mutex.cpp
+@@ -13,7 +13,8 @@
+ 	|| BX_PLATFORM_IOS     \
+ 	|| BX_PLATFORM_OSX     \
+ 	|| BX_PLATFORM_PS4     \
+-	|| BX_PLATFORM_RPI
++	|| BX_PLATFORM_RPI     \
++	|| BX_PLATFORM_BSD
+ #	include <pthread.h>
+ #elif  BX_PLATFORM_WINDOWS \
+ 	|| BX_PLATFORM_WINRT   \

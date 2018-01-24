@@ -1,0 +1,75 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/01/24 20:56:12 fcambus Exp $
+@conflict sdlmame-*
+@conflict sdlmame-tools-*
+@conflict sdlmess-*
+@bin bin/castool
+@bin bin/chdman
+@bin bin/floptool
+@bin bin/imgtool
+@bin bin/jedutil
+@bin bin/ldresample
+@bin bin/ldverify
+@bin bin/mame
+@bin bin/romcmp
+@man man/man1/castool.1
+@man man/man1/chdman.1
+@man man/man1/floptool.1
+@man man/man1/imgtool.1
+@man man/man1/jedutil.1
+@man man/man1/ldresample.1
+@man man/man1/ldverify.1
+@man man/man1/romcmp.1
+@man man/man6/mame.6
+share/examples/mame/
+share/examples/mame/mame.ini
+share/mame/
+share/mame/artwork/
+share/mame/artwork/LICENSE
+share/mame/artwork/README.md
+share/mame/artwork/aperture-grille.png
+share/mame/artwork/aperture.png
+share/mame/artwork/aperture1x2rb.png
+share/mame/artwork/aperture1x3rb.png
+share/mame/artwork/aperture2x4bg.png
+share/mame/artwork/aperture2x4rb.png
+share/mame/artwork/aperture4x6.png
+share/mame/artwork/bgfx/
+share/mame/artwork/bgfx/border_blur/
+share/mame/artwork/bgfx/border_blur/default.lay
+share/mame/artwork/bgfx/chains/
+share/mame/artwork/bgfx/chains/crt-geom/
+share/mame/artwork/bgfx/chains/crt-geom/aperture_1_2_bgr.png
+share/mame/artwork/bgfx/chains/crt-geom/aperture_1_4_rgb.png
+share/mame/artwork/bgfx/chains/crt-geom/aperture_2_4_rgb.png
+share/mame/artwork/bgfx/chains/crt-geom/aperture_2_5_bgr.png
+share/mame/artwork/bgfx/chains/crt-geom/aperture_3_6_rgb.png
+share/mame/artwork/bgfx/chains/crt-geom/delta_1_2x1_bgr.png
+share/mame/artwork/bgfx/chains/crt-geom/delta_1_4x1_rgb.png
+share/mame/artwork/bgfx/chains/crt-geom/delta_2_4x1_rgb.png
+share/mame/artwork/bgfx/chains/crt-geom/delta_2_4x2_rgb.png
+share/mame/artwork/bgfx/chains/crt-geom/none.png
+share/mame/artwork/bgfx/chains/crt-geom/slot_2_4x4_rgb.png
+share/mame/artwork/bgfx/chains/crt-geom/slot_2_5x4_bgr.png
+share/mame/artwork/bgfx/chains/crt-geom/slot_3_7x6_rgb.png
+share/mame/artwork/bgfx/chains/hq2x.png
+share/mame/artwork/bgfx/chains/hq3x.png
+share/mame/artwork/bgfx/chains/hq4x.png
+share/mame/artwork/dir.txt
+share/mame/artwork/monochrome-chessboard.png
+share/mame/artwork/monochrome-matrix.png
+share/mame/artwork/scanlines.png
+share/mame/artwork/shadow-mask.png
+share/mame/artwork/slot-mask-aligned.png
+share/mame/artwork/slot-mask.png
+share/mame/artwork/white.png
+share/mame/keymaps/
+share/mame/keymaps/km_be.map
+share/mame/keymaps/km_br.map
+share/mame/keymaps/km_ch.map
+share/mame/keymaps/km_de.map
+share/mame/keymaps/km_es.map
+share/mame/keymaps/km_fr.map
+share/mame/keymaps/km_gb.map
+share/mame/keymaps/km_it.map
+share/mame/keymaps/km_pt.map
+share/mame/keymaps/km_se.map

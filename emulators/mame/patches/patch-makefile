@@ -1,0 +1,53 @@
+$OpenBSD: patch-makefile,v 1.1.1.1 2018/01/24 20:56:12 fcambus Exp $
+
+- Disable hardcoded -O3 optimizations
+- Fix GCC_VERSION and CLANG_VERSION detection
+
+Index: makefile
+--- makefile.orig
++++ makefile
+@@ -192,7 +192,7 @@ GENIEOS := freebsd
+ endif
+ ifeq ($(firstword $(filter OpenBSD,$(UNAME))),OpenBSD)
+ OS := openbsd
+-GENIEOS := freebsd
++GENIEOS := bsd
+ endif
+ ifeq ($(firstword $(filter Darwin,$(UNAME))),Darwin)
+ OS := macosx
+@@ -533,11 +533,6 @@ PROFILER =
+ SYMBOLS = 1
+ endif
+ 
+-# specify a default optimization level if none explicitly stated
+-ifndef OPTIMIZE
+-OPTIMIZE = 3
+-endif
+-
+ # set the symbols level
+ ifdef SYMBOLS
+ PARAMS += --SYMBOLS='$(SYMBOLS)'
+@@ -914,9 +909,9 @@ FASTBUILD_PARAMS += $(FASTBUILD_TARGET)-x32
+ endif
+ endif
+ else
+-GCC_VERSION      := $(shell $(TOOLCHAIN)$(subst @,,$(CC)) -dumpversion 2> /dev/null)
++GCC_VERSION      := $(shell cc -dumpversion 2> /dev/null)
+ ifneq ($(OS),solaris)
+-CLANG_VERSION    := $(shell $(TOOLCHAIN)$(subst @,,$(CC))  --version  2> /dev/null | head -n 1 | grep -e 'version [0-9]\.[0-9]\(\.[0-9]\)\?' -o | grep -e '[0-9]\.[0-9]\(\.[0-9]\)\?' -o | tail -n 1)
++CLANG_VERSION    := $(shell cc --version  2> /dev/null | head -n 1 | grep -e 'version [0-9]\.[0-9]\.[0-9]' -o | sed -e 's,version ,,' | tail -n 1)
+ endif
+ PYTHON_AVAILABLE := $(shell $(PYTHON) --version > /dev/null 2>&1 && echo python)
+ GIT_AVAILABLE := $(shell git --version > /dev/null 2>&1 && echo git)
+@@ -928,9 +923,9 @@ else
+ $(info Clang $(CLANG_VERSION) detected)
+ ifneq ($(TARGETOS),asmjs)
+ ifeq ($(ARCHITECTURE),_x64)
+-ARCHITECTURE := _x64_clang
++ARCHITECTURE := _x64
+ else
+-ARCHITECTURE := _x86_clang
++ARCHITECTURE := _x86
+ endif
+ endif
+ endif

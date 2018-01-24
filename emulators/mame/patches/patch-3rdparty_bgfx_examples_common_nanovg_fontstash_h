@@ -1,0 +1,15 @@
+$OpenBSD: patch-3rdparty_bgfx_examples_common_nanovg_fontstash_h,v 1.1.1.1 2018/01/24 20:56:12 fcambus Exp $
+
+Don't include malloc.h header on OpenBSD.
+
+Index: 3rdparty/bgfx/examples/common/nanovg/fontstash.h
+--- 3rdparty/bgfx/examples/common/nanovg/fontstash.h.orig
++++ 3rdparty/bgfx/examples/common/nanovg/fontstash.h
+@@ -247,7 +247,6 @@ int fons__tt_getGlyphKernAdvance(FONSttFontImpl *font,
+ static void* fons__tmpalloc(size_t size, void* up);
+ static void fons__tmpfree(void* ptr, void* up);
+ #else
+-#	include <malloc.h>
+ #	include <string.h>
+ #endif // 0
+ 

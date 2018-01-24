@@ -1,0 +1,18 @@
+$OpenBSD: patch-3rdparty_bx_src_thread_cpp,v 1.1.1.1 2018/01/24 20:56:12 fcambus Exp $
+
+Index: 3rdparty/bx/src/thread.cpp
+--- 3rdparty/bx/src/thread.cpp.orig
++++ 3rdparty/bx/src/thread.cpp
+@@ -11,9 +11,10 @@
+ 	|| BX_PLATFORM_IOS     \
+ 	|| BX_PLATFORM_OSX     \
+ 	|| BX_PLATFORM_PS4     \
+-	|| BX_PLATFORM_RPI
++	|| BX_PLATFORM_RPI     \
++	|| BX_PLATFORM_BSD
+ #	include <pthread.h>
+-#	if defined(__FreeBSD__)
++#	if defined(__FreeBSD__) || defined(__OpenBSD__)
+ #		include <pthread_np.h>
+ #	endif
+ #	if BX_PLATFORM_LINUX && (BX_CRT_GLIBC < 21200)

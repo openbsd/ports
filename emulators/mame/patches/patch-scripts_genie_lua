@@ -1,0 +1,73 @@
+$OpenBSD: patch-scripts_genie_lua,v 1.1.1.1 2018/01/24 20:56:12 fcambus Exp $
+
+- Set OPT_FLAGS even when OPTIMIZE is unset, to allow passing CXXFLAGS
+- Remove broken GCC version detection
+
+Index: scripts/genie.lua
+--- scripts/genie.lua.orig
++++ scripts/genie.lua
+@@ -787,17 +787,19 @@ if _OPTIONS["NOWERROR"]==nil then
+ 	}
+ end
+ 
++-- add optional flags
++if _OPTIONS["OPT_FLAGS"] then
++	buildoptions {
++		_OPTIONS["OPT_FLAGS"]
++	}
++end
++
+ -- if we are optimizing, include optimization options
+ if _OPTIONS["OPTIMIZE"] then
+ 	buildoptions {
+ 		"-O".. _OPTIONS["OPTIMIZE"],
+ 		"-fno-strict-aliasing"
+ 	}
+-	if _OPTIONS["OPT_FLAGS"] then
+-		buildoptions {
+-			_OPTIONS["OPT_FLAGS"]
+-		}
+-	end
+ 	if _OPTIONS["LTO"]=="1" then
+ 		buildoptions {
+ -- windows native mingw GCC 5.2 fails with -flto=x with x > 1. bug unfixed as of this commit
+@@ -961,39 +963,6 @@ end
+ 
+ 
+ 
+-		local version = str_to_version(_OPTIONS["gcc_version"])
+-		if string.find(_OPTIONS["gcc"], "clang") or string.find(_OPTIONS["gcc"], "pnacl") or string.find(_OPTIONS["gcc"], "asmjs") or string.find(_OPTIONS["gcc"], "android") then
+-			if (version < 30400) then
+-				print("Clang version 3.4 or later needed")
+-				os.exit(-1)
+-			end
+-			buildoptions {
+-				"-Wno-cast-align",
+-				"-Wno-tautological-compare",
+-				"-Wno-unused-value",
+-				"-Wno-constant-logical-operand",
+-				"-Wno-missing-braces", -- clang is not as permissive as GCC about std::array initialization
+-				"-fdiagnostics-show-note-include-stack",
+-			}
+-			if (version >= 30500) then
+-				buildoptions {
+-					"-Wno-unknown-warning-option",
+-					"-Wno-extern-c-compat",
+-					"-Wno-unknown-attributes",
+-					"-Wno-ignored-qualifiers"
+-				}
+-			end
+-		else
+-			if (version < 50000) then
+-				print("GCC version 5.0 or later needed")
+-				os.exit(-1)
+-			end
+-				buildoptions {
+-					"-Wno-unused-result", -- needed for fgets,fread on linux
+-					-- array bounds checking seems to be buggy in 4.8.1 (try it on video/stvvdp1.c and video/model1.c without -Wno-array-bounds)
+-					"-Wno-array-bounds",
+-				}
+-		end
+ 	end
+ 
+ if (_OPTIONS["PLATFORM"]=="alpha") then
