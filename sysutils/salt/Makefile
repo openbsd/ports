@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.117 2018/01/23 18:32:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.118 2018/01/24 18:10:28 jasper Exp $
 
 # optional dependencies
 # https://github.com/saltstack/salt/blob/develop/doc/conf.py#L54
@@ -10,6 +10,7 @@
 # py-mako
 # py-mongo
 # py-mysql
+# py-pyinotify
 # py-openssl
 # py-redis
 # rabbitmq
