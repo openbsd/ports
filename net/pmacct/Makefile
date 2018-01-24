@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.25 2017/07/26 22:45:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2018/01/24 21:22:58 job Exp $
 
 COMMENT=	IP accounting software
 
-DISTNAME=	pmacct-1.5.3
-REVISION=	1
+DISTNAME=	pmacct-1.7.0
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.pmacct.net/
@@ -17,7 +16,7 @@ MASTER_SITES=	${HOMEPAGE}
 
 NO_TEST=	Yes
 CONFIGURE_STYLE= autoconf no-autoheader
-AUTOCONF_VERSION= 2.13
+AUTOCONF_VERSION= 2.69
 USE_GMAKE=	Yes
 CONFIGURE_ARGS= --enable-ipv6 \
 		--enable-sqlite3 \

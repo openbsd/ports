@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2016/06/02 11:52:32 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.8 2018/01/24 21:22:58 job Exp $
 @pkgpath net/pmacct,threads
 @bin bin/pmacct
 @bin sbin/nfacctd
@@ -6,7 +6,6 @@
 @bin sbin/sfacctd
 %%mysql%%
 %%postgresql%%
-@bin sbin/uacctd
 share/doc/pmacct/
 share/doc/pmacct/CONFIG-KEYS
 share/doc/pmacct/FAQS
@@ -17,7 +16,7 @@ share/doc/pmacct/QUICKSTART
 share/doc/pmacct/README.64bit
 share/doc/pmacct/README.IPv6
 share/doc/pmacct/README.cos
-share/doc/pmacct/README.country
+share/doc/pmacct/README.GeoIP
 share/doc/pmacct/README.custom_primitives
 share/doc/pmacct/README.etype
 share/doc/pmacct/README.iface

@@ -1,5 +1,4 @@
-@comment $OpenBSD: PFRAG.mysql,v 1.4 2016/06/02 11:52:32 sthen Exp $
-@bin bin/pmmyplay
+@comment $OpenBSD: PFRAG.mysql,v 1.5 2018/01/24 21:22:58 job Exp $
 share/doc/pmacct/README.mysql
 share/examples/pmacct/sql/pmacct-create-db_bgp_v1.mysql
 share/examples/pmacct/sql/pmacct-create-db_v1.mysql
