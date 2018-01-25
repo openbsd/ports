@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2017/07/14 16:12:00 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.15 2018/01/25 08:59:59 ajacoutot Exp $
 bin/install-printerdriver
 bin/scp-dbus-service
 bin/system-config-printer
@@ -22,8 +22,6 @@ lib/python${MODPY_VERSION}/site-packages/cupshelpers/ppds.py
 lib/python${MODPY_VERSION}/site-packages/cupshelpers/xmldriverprefs.py
 @man man/man1/system-config-printer-applet.1
 @man man/man1/system-config-printer.1
-share/appdata/
-share/appdata/system-config-printer.appdata.xml
 share/applications/system-config-printer.desktop
 share/dbus-1/interfaces/org.fedoraproject.Config.Printing.xml
 share/dbus-1/services/org.fedoraproject.Config.Printing.service
@@ -77,7 +75,6 @@ share/locale/ko/LC_MESSAGES/system-config-printer.mo
 share/locale/lt/LC_MESSAGES/system-config-printer.mo
 share/locale/lv/LC_MESSAGES/system-config-printer.mo
 share/locale/mai/LC_MESSAGES/system-config-printer.mo
-share/locale/mk/LC_MESSAGES/system-config-printer.mo
 share/locale/ml/LC_MESSAGES/system-config-printer.mo
 share/locale/mr/LC_MESSAGES/system-config-printer.mo
 share/locale/ms/LC_MESSAGES/system-config-printer.mo
@@ -106,6 +103,8 @@ share/locale/uk/LC_MESSAGES/system-config-printer.mo
 share/locale/vi/LC_MESSAGES/system-config-printer.mo
 share/locale/zh_CN/LC_MESSAGES/system-config-printer.mo
 share/locale/zh_TW/LC_MESSAGES/system-config-printer.mo
+share/metainfo/
+share/metainfo/system-config-printer.appdata.xml
 share/system-config-printer/
 share/system-config-printer/HIG.py
 share/system-config-printer/OpenPrintingRequest.py

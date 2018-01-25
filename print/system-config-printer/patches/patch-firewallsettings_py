@@ -1,11 +1,11 @@
-$OpenBSD: patch-firewallsettings_py,v 1.1 2017/07/14 16:12:00 ajacoutot Exp $
+$OpenBSD: patch-firewallsettings_py,v 1.2 2018/01/25 08:59:59 ajacoutot Exp $
 
 Disable Linux specific firewall checks.
 
 Index: firewallsettings.py
 --- firewallsettings.py.orig
 +++ firewallsettings.py
-@@ -219,27 +219,13 @@ class SystemConfigFirewall:
+@@ -227,27 +227,13 @@ class SystemConfigFirewall:
              debugprint ("Exception: %r" % exc)
  
      def write (self):
