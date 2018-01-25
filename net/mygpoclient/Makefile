@@ -1,19 +1,20 @@
-# $OpenBSD: Makefile,v 1.3 2015/11/16 13:52:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2018/01/25 03:35:30 danj Exp $
 
 COMMENT=		gpodder.net client library
 
-MODPY_EGG_VERSION=	1.7
+MODPY_EGG_VERSION=	1.8
 DISTNAME=		mygpoclient-${MODPY_EGG_VERSION}
 CATEGORIES=		net devel
 
-HOMEPAGE=		http://thp.io/2010/mygpoclient/
+MAINTAINER=		Tim Meunier <trondd@kagu-tsuchi.com>
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		${HOMEPAGE}
-
 MODULES=		lang/python
+
+MODPY_PI=		Yes
+MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 NO_TEST=		Yes
 
