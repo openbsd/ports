@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2017/08/24 06:05:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2018/01/25 14:04:18 jturner Exp $
 
+BROKEN =		no longer works with recent kcgi
 COMMENT =		a simple, safe, and minimal CalDAV server
 
 DISTNAME =		kcaldav-0.1.4
-REVISION =		5
+REVISION =		6
 CATEGORIES =		www
 
 HOMEPAGE =		https://kristaps.bsd.lv/kcaldav/
