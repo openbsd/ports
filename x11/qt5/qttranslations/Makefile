@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/12/25 14:13:18 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2018/01/25 15:02:26 rsadowski Exp $
 
 QT5NAME =	QtTranslations
 COMMENT =	unofficial Qt5 translations
@@ -8,7 +8,7 @@ WANTLIB- =
 LIB_DEPENDS- =
 RUN_DEPENDS =	x11/qt5/qtbase>=${QT5_VERSION},<${QT5_NEXT_VERSION}
 
-MODQT5_USE_GCC4_MODULE =	No
+MODQT5_USE_CXX11 =		No
 NO_CCACHE =			Yes
 
 .include <bsd.port.mk>

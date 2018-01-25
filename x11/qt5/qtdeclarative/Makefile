@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2017/12/27 16:27:06 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.10 2018/01/25 15:02:25 rsadowski Exp $
 
 # qmlplugindump
 USE_WXNEEDED =		Yes
@@ -17,7 +17,7 @@ SHARED_LIBS +=		Qt5QuickParticles	2.2
 SHARED_LIBS +=		Qt5QuickTest		2.2
 SHARED_LIBS +=		Qt5QuickWidgets		2.2
 
-WANTLIB-main =  	${WANTLIB} ${COMPILER_LIBCXX}
+WANTLIB-main =		${WANTLIB} ${COMPILER_LIBCXX}
 WANTLIB-main +=		GL Qt5Core Qt5Gui Qt5Network Qt5Sql Qt5Test Qt5Widgets
 WANTLIB-main +=		c m pthread
 

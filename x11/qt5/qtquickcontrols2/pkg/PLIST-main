@@ -1,10 +1,12 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2017/12/27 16:27:07 rsadowski Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2018/01/25 15:02:26 rsadowski Exp $
 include/X11/qt5/QtQuickControls2/
 include/X11/qt5/QtQuickControls2/${VERSION}/
 include/X11/qt5/QtQuickControls2/${VERSION}/QtQuickControls2/
 include/X11/qt5/QtQuickControls2/${VERSION}/QtQuickControls2/private/
 include/X11/qt5/QtQuickControls2/${VERSION}/QtQuickControls2/private/qquickanimatednode_p.h
+include/X11/qt5/QtQuickControls2/${VERSION}/QtQuickControls2/private/qquickclippedtext_p.h
 include/X11/qt5/QtQuickControls2/${VERSION}/QtQuickControls2/private/qquickcolorimageprovider_p.h
+include/X11/qt5/QtQuickControls2/${VERSION}/QtQuickControls2/private/qquickitemgroup_p.h
 include/X11/qt5/QtQuickControls2/${VERSION}/QtQuickControls2/private/qquickpaddedrectangle_p.h
 include/X11/qt5/QtQuickControls2/${VERSION}/QtQuickControls2/private/qquickplaceholdertext_p.h
 include/X11/qt5/QtQuickControls2/${VERSION}/QtQuickControls2/private/qquickproxytheme_p.h
@@ -42,6 +44,8 @@ include/X11/qt5/QtQuickTemplates2/${VERSION}/QtQuickTemplates2/private/qquickcon
 include/X11/qt5/QtQuickTemplates2/${VERSION}/QtQuickTemplates2/private/qquickcontainer_p_p.h
 include/X11/qt5/QtQuickTemplates2/${VERSION}/QtQuickTemplates2/private/qquickcontrol_p.h
 include/X11/qt5/QtQuickTemplates2/${VERSION}/QtQuickTemplates2/private/qquickcontrol_p_p.h
+include/X11/qt5/QtQuickTemplates2/${VERSION}/QtQuickTemplates2/private/qquickdeferredexecute_p_p.h
+include/X11/qt5/QtQuickTemplates2/${VERSION}/QtQuickTemplates2/private/qquickdeferredpointer_p_p.h
 include/X11/qt5/QtQuickTemplates2/${VERSION}/QtQuickTemplates2/private/qquickdelaybutton_p.h
 include/X11/qt5/QtQuickTemplates2/${VERSION}/QtQuickTemplates2/private/qquickdial_p.h
 include/X11/qt5/QtQuickTemplates2/${VERSION}/QtQuickTemplates2/private/qquickdialog_p.h

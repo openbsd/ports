@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-html,v 1.5 2017/12/27 16:27:06 rsadowski Exp $
+@comment $OpenBSD: PLIST-html,v 1.6 2018/01/25 15:02:25 rsadowski Exp $
 @conflict qt3d-html-*
 @conflict qtactiveqt-html-*
 @conflict qtbase-html-*
@@ -5375,6 +5375,8 @@ share/doc/qt5/html/qml-qtquick-fontloader-members.html
 share/doc/qt5/html/qml-qtquick-fontloader.html
 share/doc/qt5/html/qml-qtquick-fontmetrics-members.html
 share/doc/qt5/html/qml-qtquick-fontmetrics.html
+share/doc/qt5/html/qml-qtquick-gestureevent-members.html
+share/doc/qt5/html/qml-qtquick-gestureevent.html
 share/doc/qt5/html/qml-qtquick-gradient-members.html
 share/doc/qt5/html/qml-qtquick-gradient.html
 share/doc/qt5/html/qml-qtquick-gradientstop-members.html
@@ -8668,6 +8670,10 @@ share/doc/qt5/html/qt3drender-render-renderer-members.html
 share/doc/qt5/html/qt3drender-render-renderer-viewsubmissionresultdata-members.html
 share/doc/qt5/html/qt3drender-render-renderer-viewsubmissionresultdata.html
 share/doc/qt5/html/qt3drender-render-renderer.html
+share/doc/qt5/html/qt3drender-render-renderercache-leafnodedata-members.html
+share/doc/qt5/html/qt3drender-render-renderercache-leafnodedata.html
+share/doc/qt5/html/qt3drender-render-renderercache-members.html
+share/doc/qt5/html/qt3drender-render-renderercache.html
 share/doc/qt5/html/qt3drender-render-renderlightfunctor-members.html
 share/doc/qt5/html/qt3drender-render-renderlightfunctor.html
 share/doc/qt5/html/qt3drender-render-renderpass-members.html

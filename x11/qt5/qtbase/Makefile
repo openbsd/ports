@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2017/12/27 16:27:06 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.18 2018/01/25 15:02:25 rsadowski Exp $
 
 DISTNAME =		qtbase-opensource-src-${DIST_VERSION}
 QT5NAME =		Qt5 core
@@ -32,18 +32,16 @@ SHARED_LIBS +=	Qt5Sql				2.2
 SHARED_LIBS +=	Qt5Test				2.2
 SHARED_LIBS +=	Qt5Widgets			2.2
 SHARED_LIBS +=	Qt5Xml				2.2
-SHARED_LIBS +=	Qt5EglDeviceIntegration		1.2
 SHARED_LIBS +=	Qt5EglFSDeviceIntegration	0.1
 SHARED_LIBS +=	Qt5XcbQpa			1.2
 SHARED_LIBS +=	Qt5EglFsKmsSupport		0.1
 
-WANTLIB-main =  ${WANTLIB} ${COMPILER_LIBCXX}
-WANTLIB-main += EGL GL ICE SM X11 X11-xcb
-WANTLIB-main += Xext Xi atk-1.0 c cairo cairo-gobject cups
-WANTLIB-main += dbus-1 drm execinfo fontconfig freetype gbm gdk-3 gdk_pixbuf-2.0
-WANTLIB-main += gio-2.0 glib-2.0 gobject-2.0 gtk-3 gthread-2.0 harfbuzz
-WANTLIB-main += icudata icui18n icuuc iodbc jpeg m pango-1.0 pangocairo-1.0
-WANTLIB-main += pcre2-16 png pthread sqlite3 xcb xcb-glx xcb-icccm xcb-image
+WANTLIB-main += ${COMPILER_LIBCXX} EGL GL ICE SM X11 X11-xcb Xext Xi
+WANTLIB-main += atk-1.0 c cairo cairo-gobject cups dbus-1 drm execinfo
+WANTLIB-main += fontconfig freetype gbm gdk-3 gdk_pixbuf-2.0 gio-2.0
+WANTLIB-main += glib-2.0 gobject-2.0 gthread-2.0 gtk-3 harfbuzz icudata
+WANTLIB-main += icui18n icuuc iodbc jpeg m pango-1.0 pangocairo-1.0
+WANTLIB-main += pcre2-16 png sqlite3 xcb xcb-glx xcb-icccm xcb-image
 WANTLIB-main += xcb-keysyms xcb-randr xcb-render xcb-render-util xcb-shape
 WANTLIB-main += xcb-shm xcb-sync xcb-xfixes xcb-xinerama xcb-xkb xkbcommon
 WANTLIB-main += xkbcommon-x11 z

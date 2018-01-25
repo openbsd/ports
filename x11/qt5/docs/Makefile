@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2017/10/24 10:12:19 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.5 2018/01/25 15:02:25 rsadowski Exp $
 
 COMMENT-html =		HTML documentation for Qt5
 COMMENT-qch =		qdoc-compiled documentation for Qt5
@@ -52,7 +52,7 @@ MASTER_SITES0 =	http://download.qt.io/community_releases/${DIST_VERSION:R}/${QT5
 DISTFILES =	${DOC_COMPONENTS:Nqtwebkit:C/$/-opensource-src-${QT5_DIST_VERSION}${EXTRACT_SUFX}/}
 DISTFILES +=	qtwebkit-opensource-src-${QT5_WEBKIT_VERSION}${EXTRACT_SUFX}
 
-MODQT5_USE_GCC4_MODULE =No
+MODQT5_USE_CXX11 =	No
 CONFIGURE_STYLE =	none
 
 BUILD_DEPENDS =		x11/qt5/qttools>=${QT5_VERSION},<${QT5_NEXT_VERSION} \

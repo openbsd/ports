@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.9 2018/01/04 09:34:24 bentley Exp $
+# $OpenBSD: Makefile.inc,v 1.10 2018/01/25 15:02:25 rsadowski Exp $
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS} ${CLANG_ARCHS}
 
@@ -23,7 +23,7 @@ PKG_ARCH-examples =	*
 DPB_PROPERTIES +=	nojunk
 
 CATEGORIES +=		x11 x11/qt5 devel
-HOMEPAGE ?=		http://www.qt-project.org/
+HOMEPAGE ?=		https://www.qt.io/
 MAINTAINER ?=		KDE porting team <openbsd-kde@googlegroups.com>
 
 # We don't build examples, but provide sources only.

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2018/01/14 10:07:48 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.33 2018/01/25 15:02:25 rsadowski Exp $
 
 #Qt5Webkit
 USE_WXNEEDED =		Yes
@@ -53,7 +53,7 @@ MODQMAKE_INSTALL_ROOT =		${PREFIX}
 MODQMAKE_ARGS =		USE_SYSTEM_BOTAN=1
 
 # qtcreator.sh is created with custom LINK?= in Makefile
-MODQT5_USE_GCC4_MODULE =	No
+MODQT5_USE_CXX11 =	No
 COMPILER =	base-clang ports-gcc
 
 BUILD_DEPENDS =	x11/qt5/qtquickcontrols \
