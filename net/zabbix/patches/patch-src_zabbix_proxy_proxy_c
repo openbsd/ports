@@ -1,9 +1,10 @@
-$OpenBSD: patch-src_zabbix_proxy_proxy_c,v 1.6 2016/07/07 18:47:33 robert Exp $
---- src/zabbix_proxy/proxy.c.orig	Fri Jun 24 16:13:38 2016
-+++ src/zabbix_proxy/proxy.c	Fri Jun 24 16:13:46 2016
-@@ -55,7 +55,7 @@
- #include "setproctitle.h"
- #include "../libs/zbxcrypto/tls.h"
+$OpenBSD: patch-src_zabbix_proxy_proxy_c,v 1.7 2018/01/25 13:56:35 robert Exp $
+Index: src/zabbix_proxy/proxy.c
+--- src/zabbix_proxy/proxy.c.orig
++++ src/zabbix_proxy/proxy.c
+@@ -62,7 +62,7 @@
+ #include "../zabbix_server/ipmi/ipmi_poller.h"
+ #endif
  
 -#define DEFAULT_CONFIG_FILE	SYSCONFDIR "/zabbix_proxy.conf"
 +#define DEFAULT_CONFIG_FILE	SYSCONFDIR "/zabbix/zabbix_proxy.conf"

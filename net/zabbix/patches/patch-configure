@@ -1,7 +1,8 @@
-$OpenBSD: patch-configure,v 1.19 2017/01/08 19:24:53 robert Exp $
---- configure.orig	Wed Dec  7 11:08:07 2016
-+++ configure	Tue Dec 20 08:43:21 2016
-@@ -6313,6 +6313,7 @@ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+$OpenBSD: patch-configure,v 1.20 2018/01/25 13:56:35 robert Exp $
+Index: configure
+--- configure.orig
++++ configure
+@@ -6360,6 +6360,7 @@ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  
  #include <stdlib.h>
  #include <sys/queue.h>
@@ -9,7 +10,7 @@ $OpenBSD: patch-configure,v 1.19 2017/01/08 19:24:53 robert Exp $
  #include <sys/sensors.h>
  int
  main ()
-@@ -9205,7 +9206,7 @@ $as_echo "yes" >&6; }
+@@ -9254,7 +9255,7 @@ $as_echo "yes" >&6; }
  
  			 JABBER_INCDIR="$IKSEMEL_CPPFLAGS"
  			 JABBER_LIBDIR="$IKSEMEL_LDFLAGS"
@@ -18,7 +19,7 @@ $OpenBSD: patch-configure,v 1.19 2017/01/08 19:24:53 robert Exp $
  
  fi
         else
-@@ -9215,7 +9216,7 @@ $as_echo_n "checking for iksemel support... " >&6; }
+@@ -9264,7 +9265,7 @@ $as_echo_n "checking for iksemel support... " >&6; }
                 if test -f $_libiksemel_with/include/iksemel.h; then
                         JABBER_INCDIR="-I$_libiksemel_with/include"
                         JABBER_LIBDIR="-L$_libiksemel_with/lib"

@@ -1,0 +1,11 @@
+ZABBIX is an enterprise-class open source distributed monitoring
+solution designed to monitor and track performance and availability of
+network servers, devices and other IT resources. It supports distributed
+and WEB monitoring, and more.
+
+This package contains the ZABBIX proxy.
+
+Available flavors:
+	mysql - build with support for MySQL
+	pgsql - build with support for PostgreSQL
+	sqlite3 - build with support for SQLite3

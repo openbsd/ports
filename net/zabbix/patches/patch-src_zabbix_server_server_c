@@ -1,9 +1,10 @@
-$OpenBSD: patch-src_zabbix_server_server_c,v 1.7 2017/01/08 19:24:53 robert Exp $
---- src/zabbix_server/server.c.orig	Wed Dec  7 11:07:54 2016
-+++ src/zabbix_server/server.c	Tue Dec 20 08:18:48 2016
-@@ -60,7 +60,7 @@
- #include "setproctitle.h"
- #include "../libs/zbxcrypto/tls.h"
+$OpenBSD: patch-src_zabbix_server_server_c,v 1.8 2018/01/25 13:56:35 robert Exp $
+Index: src/zabbix_server/server.c
+--- src/zabbix_server/server.c.orig
++++ src/zabbix_server/server.c
+@@ -76,7 +76,7 @@
+ #include "ipmi/ipmi_poller.h"
+ #endif
  
 -#define DEFAULT_CONFIG_FILE	SYSCONFDIR "/zabbix_server.conf"
 +#define DEFAULT_CONFIG_FILE	SYSCONFDIR "/zabbix/zabbix_server.conf"

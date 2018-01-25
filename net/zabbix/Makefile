@@ -1,18 +1,20 @@
-# $OpenBSD: Makefile,v 1.132 2018/01/11 19:27:08 rpe Exp $
+# $OpenBSD: Makefile,v 1.133 2018/01/25 13:56:35 robert Exp $
 
 COMMENT-main =		network and application monitoring - agent
 COMMENT-server =	network and application monitoring - server
+COMMENT-proxy =		network and application monitoring - proxy
 COMMENT-web =		network and application monitoring - web frontend
 
-VERSION =		3.2.10
+VERSION =		3.4.6
 DISTNAME =		zabbix-${VERSION}
 FULLPKGNAME-main =	zabbix-agent-${VERSION}
 FULLPKGPATH-main =	net/zabbix,-main
 PKGNAME-server =	zabbix-server-${VERSION}
+PKGNAME-proxy =		zabbix-proxy-${VERSION}
+FULLPKGPATH-proxy =	net/zabbix,-proxy
 FULLPKGNAME-web =	zabbix-web-${VERSION}
 FULLPKGPATH-web =	net/zabbix,-web
 CATEGORIES =		net
-REVISION-main =		0
 
 MAJV =			${VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 
@@ -28,18 +30,19 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=zabbix/}
 MODULES=		lang/php
 MODPHP_BUILDDEP =	No
 
-MULTI_PACKAGES =	-main -web
+MULTI_PACKAGES =	-main -proxy -web
 PSEUDO_FLAVORS =	no_server
 FLAVORS =		mysql pgsql sqlite3
 
 SUBST_VARS +=		PREFIX-web ZABBIX_WEB MAJV
 
 WANTLIB =		c iconv kvm m execinfo lber ldap crypto ssl z \
-			curl nghttp2
+			curl nghttp2 pcre pcreposix
 
 LIB_DEPENDS =		converters/libiconv \
 			databases/openldap \
 			devel/libexecinfo \
+			devel/pcre \
 			net/curl
 
 RUN_DEPENDS-main =
@@ -77,9 +80,14 @@ RUN_DEPENDS-web =	${MODPHP_RUN_DEPENDS} \
 WANTLIB-web =
 ZABBIX_WEB =		${PREFIX-web}/zabbix
 
+LIB_DEPENDS-proxy =	${LIB_DEPENDS} \
+			net/net-snmp \
+			security/libssh2
+WANTLIB-proxy =		${WANTLIB} netsnmp ssh2 xml2
+
 FLAVOR ?=		no_server
 .if empty(FLAVOR)
-FLAVOR =		sqlite3
+FLAVOR =		mysql
 .endif
 
 #if non-backend-related flavors are added, add them to
@@ -87,23 +95,27 @@ FLAVOR =		sqlite3
 #they don't trigger a "Conflicting flavors" error.
 BACKEND =		${FLAVOR}
 .if ${BACKEND} == "mysql"
-MULTI_PACKAGES += -server
+MULTI_PACKAGES +=	-server
+LIB_DEPENDS-proxy +=	databases/mariadb,-main
 LIB_DEPENDS-server +=	databases/mariadb,-main
 CONFIGURE_ARGS +=	--with-mysql
-WANTLIB-server += mysqlclient
+WANTLIB-proxy +=	mysqlclient pthread
+WANTLIB-server +=	event mysqlclient
 .elif ${BACKEND} == "pgsql"
-MULTI_PACKAGES += -server
+MULTI_PACKAGES +=	-server
+LIB_DEPENDS-proxy +=	databases/postgresql,-main
 LIB_DEPENDS-server +=	databases/postgresql,-main
 CONFIGURE_ARGS +=	--with-postgresql
-WANTLIB-server += pq
+WANTLIB-proxy +=	pq
+WANTLIB-server +=	event pq
 .elif ${BACKEND} == "sqlite3"
-MULTI_PACKAGES += -server
-CONFIGURE_ARGS +=	--with-sqlite3
-WANTLIB-server += sqlite3
-LIB_DEPENDS-server += databases/sqlite3
+CONFIGURE_ARGS +=	--with-sqlite3 \
+			--disable-server
+WANTLIB-proxy +=	sqlite3
+LIB_DEPENDS-proxy +=	databases/sqlite3
 .elif ${BACKEND} == "no_server"
-CONFIGURE_ARGS += --disable-server \
-		--disable-proxy
+CONFIGURE_ARGS +=	--disable-server \
+			--disable-proxy
 .else
 ERRORS +=		"Fatal: Conflicting flavors: ${FLAVOR}";
 .endif
