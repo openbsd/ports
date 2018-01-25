@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.7 2017/12/06 14:20:06 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.8 2018/01/25 10:45:18 gonzalo Exp $
 
 COMMENT=		easy and universal access to shared and/or personal files
 
-V=			12.0.4
+V=			12.0.5
 DISTNAME=		nextcloud-${V}
 EXTRACT_SUFX=		.tar.bz2
 
 CATEGORIES=		www
 
-HOMEPAGE=		http://nextcloud.com/
+HOMEPAGE=		https://nextcloud.com/
 
 MAINTAINER=		Gonzalo L. R. <gonzalo@openbsd.org>
 
@@ -21,7 +21,7 @@ MAINTAINER=		Gonzalo L. R. <gonzalo@openbsd.org>
 # Silk icons: Creative Commons Attribution
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		http://download.nextcloud.com/server/releases/
+MASTER_SITES=		https://download.nextcloud.com/server/releases/
 
 MODULES=		lang/php
 
@@ -59,7 +59,7 @@ RUN_DEPENDS +=		databases/pecl-redis
 do-install:
 	cp -Rp ${WRKSRC} ${INSTDIR}
 	mv ${INSTDIR}/.htaccess ${INSTDIR}/.htaccess.dist
-	find ${INSTDIR} -name '*.orig' -print0 | xargs -r0 rm
+	find ${INSTDIR} -name '*.orig' -delete
 	chown -R ${BINOWN}:${BINGRP} ${INSTDIR}
 
 	chmod +x ${INSTDIR}/occ

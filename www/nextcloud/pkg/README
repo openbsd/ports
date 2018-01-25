@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1.1.1 2017/03/14 16:19:02 gonzalo Exp $
+$OpenBSD: README,v 1.2 2018/01/25 10:45:18 gonzalo Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -8,7 +8,7 @@ Nextcloud is installed under
     ${INSTDIR}
 
 Official documentation is available at:
-    http://docs.nextcloud.com/server/${MAJOR}/admin_manual/
+    https://docs.nextcloud.com/server/${MAJOR}/admin_manual/
 
 Post-installation instructions
 ==============================
@@ -19,12 +19,12 @@ Post-installation instructions
 chroot(2)
 ---------
 Nextcloud attempts to use the UTF-8 locale, which does not work by
-default inside the /var/www chroot. This causes warning messages in
+default inside the ${PREFIX} chroot. This causes warning messages in
 nextcloud's admin configuration page and logs. To prevent this problem,
 run the following as root:
-    # mkdir -p /var/www/usr/share/locale/UTF-8/
+    # mkdir -p ${PREFIX}/usr/share/locale/UTF-8/
     # cp /usr/share/locale/UTF-8/LC_CTYPE \
-        /var/www/usr/share/locale/UTF-8/
+        ${PREFIX}/usr/share/locale/UTF-8/
 
 OpenBSD HTTP daemon
 -------------------
@@ -49,7 +49,7 @@ Apache2 configuration for nextcloud is stored under:
 
 It needs to be enabled by running the following command after the apache-httpd
 package is installed:
-# ln -s ../modules.sample/apache-nextcloud.conf /var/www/conf/modules
+# ln -s ../modules.sample/apache-nextcloud.conf ${PREFIX}/conf/modules
 # rcctl restart apache2
 
 PHP
@@ -82,7 +82,7 @@ Configuration is done under:
     ${INSTDIR}/config/config.php
 and the default "datadirectory" is set to:
     ${TINSTDIR}/data
-When running chrooted, /var/www must be stripped from the paths.
+When running chrooted, ${PREFIX} must be stripped from the paths.
 
 Cron job
 --------
@@ -122,7 +122,7 @@ extra packages may be needed (e.g. php-ldap, php-imap).
 Finishing and validating the installation
 -----------------------------------------
 Make sure the web server can resolve its hostname (e.g. if chrooted, by
-creating /var/www/etc/hosts and/or /var/www/etc/resolv.conf).
+creating ${PREFIX}/etc/hosts and/or ${PREFIX}/etc/resolv.conf).
 
 Accessing http://<hostname>/nextcloud with a Web browser will finish the
 installation and create a new admin user.
@@ -130,7 +130,7 @@ installation and create a new admin user.
 Updating
 ========
 Before updating to a new release, read:
-    http://docs.nextcloud.com/server/${MAJOR}/admin_manual/maintenance/upgrade.html
+    https://docs.nextcloud.com/server/${MAJOR}/admin_manual/maintenance/upgrade.html
 
 When using a PostgreSQL or MariaDB, the corresponding MDB2 php package
 must be installed to properly upgrade the database:
