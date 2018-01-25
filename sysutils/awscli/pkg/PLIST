@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.48 2018/01/20 11:03:31 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.49 2018/01/25 08:46:17 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
@@ -526,6 +526,17 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/batch/submit-job.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/batch/terminate-job.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/batch/update-compute-environment.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/batch/update-job-queue.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/cloud9/
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/cloud9/create-environment-ec2.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/cloud9/create-environment-membership.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/cloud9/delete-environment-membership.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/cloud9/delete-environment.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/cloud9/describe-environment-memberships.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/cloud9/describe-environment-status.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/cloud9/describe-environments.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/cloud9/list-environments.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/cloud9/update-environment-membership.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/cloud9/update-environment.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/cloudformation/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/cloudformation/_deploy_description.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/cloudformation/_package_description.rst
@@ -796,6 +807,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/cancel-export-task.
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/cancel-spot-fleet-requests.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/cancel-spot-instance-requests.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/confirm-product-instance.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/co${MODPY_PY_PREFIX}fpga-image.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/co${MODPY_PY_PREFIX}image.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/co${MODPY_PY_PREFIX}snapshot.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-customer-gateway.rst
@@ -804,6 +816,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-default-vpc.
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-dhcp-options.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-egress-only-internet-gateway.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-flow-logs.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-fpga-image.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-image.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-instance-export-task.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-internet-gateway.rst
@@ -836,6 +849,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/delete-customer-gat
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/delete-dhcp-options.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/delete-egress-only-internet-gateway.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/delete-flow-logs.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/delete-fpga-image.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/delete-internet-gateway.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/delete-key-pair.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/delete-launch-template-versions.rst
@@ -875,6 +889,10 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-egress-onl
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-elastic-gpus.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-export-tasks.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-flow-logs.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-fpga-image-attribute.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-fpga-images.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-host-reservation-offerings.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-host-reservations.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-hosts.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-iam-instance-profile-associations.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-id-format.rst
@@ -882,6 +900,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-identity-i
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-image-attribute.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-images.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-instance-attribute.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-instance-credit-specifications.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-instance-status.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-instances.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-internet-gateways.rst
@@ -950,15 +969,18 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/enable-volume-io.rs
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/enable-vpc-classic-link-dns-support.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/enable-vpc-classic-link.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-console-output.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-host-reservation-purchase-preview.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-launch-template-data.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-password-data.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-reserved-instances-exchange-quote.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/import-key-pair.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-fpga-image-attribute.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-hosts.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-id-format.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-identity-id-format.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-image-attribute.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-instance-attribute.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-instance-credit-specification.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-instance-placement.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-launch-template.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-network-interface-attribute.rst
@@ -976,6 +998,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-vpc-peering-
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-vpc-tenancy.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/monitor-instances.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/move-address-to-vpc.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/purchase-host-reservation.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/purchase-reserved-instances-offering.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/purchase-scheduled-instances.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/reboot-instances.rst
@@ -992,6 +1015,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/replace-route.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/report-instance-status.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/request-spot-fleet.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/request-spot-instances.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/reset-fpga-image-attribute.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/reset-image-attribute.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/reset-instance-attribute.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/reset-snapshot-attribute.rst
