@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.5 2016/11/04 16:01:40 rpe Exp $
+# $OpenBSD: Makefile,v 1.6 2018/01/25 10:34:49 fcambus Exp $
 
 # __builtin_clz
 NOT_FOR_ARCHS=	${GCC3_ARCHS}
 
 COMMENT =	parallel implementation of gzip utilizing multiple cores
 
-DISTNAME = 	pigz-2.3.4
+DISTNAME = 	pigz-2.4
 CATEGORIES =	archivers
-HOMEPAGE =	http://zlib.net/pigz/
+HOMEPAGE =	https://zlib.net/pigz/
 
 MAINTAINER =	Thomas Pfaff <tpfaff@tp76.info>
 
@@ -20,7 +20,6 @@ MASTER_SITES =	${HOMEPAGE}
 
 MAKE_FLAGS =	CC="${CC}" CFLAGS="${CFLAGS} -Wall -Wextra"
 
-USE_GMAKE =	Yes
 ALL_TARGET =	pigz
 
 do-install:
