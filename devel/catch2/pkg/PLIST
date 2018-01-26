@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/01/26 20:28:08 rsadowski Exp $
+include/catch/
+include/catch/catch.hpp
+include/catch/catch_reporter_automake.hpp
+include/catch/catch_reporter_tap.hpp
+include/catch/catch_reporter_teamcity.hpp
+share/pkgconfig/catch.pc
