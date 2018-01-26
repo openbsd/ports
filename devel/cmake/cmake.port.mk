@@ -1,4 +1,4 @@
-# $OpenBSD: cmake.port.mk,v 1.62 2017/11/28 10:26:00 espie Exp $
+# $OpenBSD: cmake.port.mk,v 1.63 2018/01/26 13:11:14 jca Exp $
 
 BUILD_DEPENDS+=	devel/cmake
 
@@ -65,6 +65,8 @@ CONFIGURE_ENV +=	MODJAVA_VER=${MODJAVA_VER} \
 			MODTCL_LIB=${MODTCL_LIB} \
 			MODTK_LIB=${MODTK_LIB}
 
+MODCMAKE_DEBUG ?=		No
+
 .if empty(CONFIGURE_STYLE)
 CONFIGURE_STYLE=	cmake
 .endif
@@ -76,7 +78,7 @@ MODCMAKE_configure=	cd ${WRKBUILD} && ${SETENV} \
 		-G ${_MODCMAKE_GEN} ${CONFIGURE_ARGS} ${WRKSRC}
 
 .if !defined(CONFIGURE_ARGS) || ! ${CONFIGURE_ARGS:M*CMAKE_BUILD_TYPE*}
-.  if defined(DEBUG)
+.  if ${MODCMAKE_DEBUG:L} == "yes"
 CONFIGURE_ARGS += -DCMAKE_BUILD_TYPE:String=Debug
 MODCMAKE_BUILD_SUFFIX =	-debug.cmake
 .  else
