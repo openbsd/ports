@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.55 2018/01/11 19:27:08 rpe Exp $
+# $OpenBSD: Makefile,v 1.56 2018/01/26 20:50:07 sthen Exp $
 
 COMMENT=	controller for Ubiquiti uniFi (wifi/routing/switching/voip)
 
 # https://community.ubnt.com/t5/UniFi-Updates-Blog/bg-p/Blog_UniFi
 # https://community.ubnt.com/t5/UniFi-Beta-Blog/bg-p/Blog_UniFi_Beta
-VERSION=	5.6.29
+VERSION=	5.6.30
 MASTER_SITES=	http://dl.ubnt.com/unifi/${VERSION}/
 
 V=		${VERSION:C/-.*//}
@@ -12,7 +12,6 @@ S=		1.1.2.6
 DISTFILES=	unifi-$V{UniFi.unix}.zip unifi_sh_api-$V{unifi_sh_api}
 EXTRACT_ONLY=	unifi-$V.zip
 PKGNAME=	unifi-$V
-REVISION=	0
 
 # newer unifi uses newer snappy-java, but upstream stopped distributing
 # openbsd .so's. use a locally built one to replace.
