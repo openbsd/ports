@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.27 2017/12/30 08:56:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2018/01/26 13:47:10 ajacoutot Exp $
 
 COMMENT=		graph based image processing framework (API version 0.3)
 
-V=			0.3.26
+V=			0.3.28
 DISTNAME=		gegl-${V}
 PKGNAME=		gegl03-${V}
 EXTRACT_SUFX=		.tar.bz2
@@ -38,7 +38,7 @@ USE_GMAKE=		Yes
 BUILD_DEPENDS=		graphics/libgexiv2
 
 LIB_DEPENDS=		devel/json-glib \
-			graphics/babl \
+			graphics/babl>=0.1.42 \
 			graphics/lcms2 \
 			graphics/libraw \
 			graphics/libwebp \
