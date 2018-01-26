@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.98 2017/12/11 18:36:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.99 2018/01/26 19:41:54 jasper Exp $
 
 COMMENT-main=		compiler for the GObject type system
 COMMENT-valadoc=	Vala documentation generator
 
 GNOME_PROJECT=		vala
-GNOME_VERSION=		0.38.4
+GNOME_VERSION=		0.38.5
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-valadoc=	valadoc-${GNOME_VERSION}
@@ -17,7 +17,7 @@ SHARED_LIBS +=  valadoc-0.38            0.0      # 0.0
 CATEGORIES=		lang
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
-			Antoine Jacoutot <ajacoutot@openbsd.org>
+		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -37,7 +37,7 @@ MULTI_PACKAGES=		-main -valadoc
 LIB_DEPENDS-main=	devel/glib2
 
 LIB_DEPENDS-valadoc=	${BASE_PKGPATH},-main=${GNOME_VERSION} \
-			math/graphviz
+		math/graphviz
 
 TEST_DEPENDS=		shells/bash
 
@@ -56,5 +56,8 @@ FLAVOR?=		no_valadoc bootstrap
 .if !${BUILD_PACKAGES:M-valadoc}
 PATCH_LIST=		patch-* no_valadoc-*
 .endif
+
+post-install:
+	rm ${PREFIX}/lib/vala-${API_V}/*.{a,la}
 
 .include <bsd.port.mk>
