@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2017/07/31 11:11:55 zhuk Exp $
+# $OpenBSD: Makefile,v 1.5 2018/01/26 13:03:15 naddy Exp $
 
 QT5NAME =		QtWebkitExamples
 PKG_ARCH =		*
-REVISION =		1
+REVISION =		2
 COMMENT =		examples for old Qt5 Webkit
 DISTNAME =		qtwebkit-examples-opensource-src-${VERSION}
 VERSION =		${QT5_WEBKIT_VERSION}
