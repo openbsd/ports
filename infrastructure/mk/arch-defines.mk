@@ -1,4 +1,4 @@
-# $OpenBSD: arch-defines.mk,v 1.47 2018/01/19 17:50:53 phessler Exp $
+# $OpenBSD: arch-defines.mk,v 1.48 2018/01/26 13:10:08 naddy Exp $
 #
 # ex:ts=4 sw=4 filetype=make:
 #
@@ -65,6 +65,7 @@ _SYSTEM_VERSION-arm = 1
 _SYSTEM_VERSION-${MACHINE_ARCH} ?= 0
 _SYSTEM_VERSION-${ARCH} ?= 0
 
+# @version = ${_SYSTEM_VERSION} + ${_SYSTEM_VERSION-${MACHINE_ARCH}}
 _PKG_ARGS_VERSION += -V ${_SYSTEM_VERSION} -V ${_SYSTEM_VERSION-${MACHINE_ARCH}}
 .if ${ARCH} != ${MACHINE_ARCH}
 _PKG_ARGS_VERSION += -V ${_SYSTEM_VERSION-${ARCH}}
