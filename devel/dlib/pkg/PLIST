@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/01/14 10:10:09 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/01/26 16:17:17 rsadowski Exp $
 include/dlib/
 include/dlib/algs.h
 include/dlib/all/
@@ -265,6 +265,39 @@ include/dlib/external/libpng/pnginfo.h
 include/dlib/external/libpng/pnglibconf.h
 include/dlib/external/libpng/pngpriv.h
 include/dlib/external/libpng/pngstruct.h
+include/dlib/external/pybind11/
+include/dlib/external/pybind11/include/
+include/dlib/external/pybind11/include/pybind11/
+include/dlib/external/pybind11/include/pybind11/attr.h
+include/dlib/external/pybind11/include/pybind11/buffer_info.h
+include/dlib/external/pybind11/include/pybind11/cast.h
+include/dlib/external/pybind11/include/pybind11/chrono.h
+include/dlib/external/pybind11/include/pybind11/common.h
+include/dlib/external/pybind11/include/pybind11/complex.h
+include/dlib/external/pybind11/include/pybind11/detail/
+include/dlib/external/pybind11/include/pybind11/detail/class.h
+include/dlib/external/pybind11/include/pybind11/detail/common.h
+include/dlib/external/pybind11/include/pybind11/detail/descr.h
+include/dlib/external/pybind11/include/pybind11/detail/init.h
+include/dlib/external/pybind11/include/pybind11/detail/internals.h
+include/dlib/external/pybind11/include/pybind11/detail/typeid.h
+include/dlib/external/pybind11/include/pybind11/eigen.h
+include/dlib/external/pybind11/include/pybind11/embed.h
+include/dlib/external/pybind11/include/pybind11/eval.h
+include/dlib/external/pybind11/include/pybind11/functional.h
+include/dlib/external/pybind11/include/pybind11/iostream.h
+include/dlib/external/pybind11/include/pybind11/numpy.h
+include/dlib/external/pybind11/include/pybind11/operators.h
+include/dlib/external/pybind11/include/pybind11/options.h
+include/dlib/external/pybind11/include/pybind11/pybind11.h
+include/dlib/external/pybind11/include/pybind11/pytypes.h
+include/dlib/external/pybind11/include/pybind11/stl.h
+include/dlib/external/pybind11/include/pybind11/stl_bind.h
+include/dlib/external/pybind11/tools/
+include/dlib/external/pybind11/tools/FindCatch.cmake
+include/dlib/external/pybind11/tools/FindEigen3.cmake
+include/dlib/external/pybind11/tools/FindPythonLibsNew.cmake
+include/dlib/external/pybind11/tools/pybind11Tools.cmake
 include/dlib/external/zlib/
 include/dlib/external/zlib/crc32.h
 include/dlib/external/zlib/deflate.h
@@ -704,10 +737,10 @@ include/dlib/pixel.h
 include/dlib/platform.h
 include/dlib/python/
 include/dlib/python.h
-include/dlib/python/boost_python_utils.h
 include/dlib/python/numpy.h
 include/dlib/python/numpy_image.h
 include/dlib/python/pyassert.h
+include/dlib/python/pybind_utils.h
 include/dlib/python/serialize_pickle.h
 include/dlib/quantum_computing/
 include/dlib/quantum_computing.h
