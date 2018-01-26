@@ -1,4 +1,4 @@
-#${MODPY_COMMENT} $OpenBSD: Makefile,v 1.1693 2018/01/24 18:09:17 jasper Exp $
+#${MODPY_COMMENT} $OpenBSD: Makefile,v 1.1694 2018/01/26 20:29:08 rsadowski Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -52,6 +52,7 @@
      SUBDIR += catalyst
      SUBDIR += catalyst-tutorial
      SUBDIR += cargo-generate-vendor
+     SUBDIR += catch2
      SUBDIR += cbmc
      SUBDIR += ccache
      SUBDIR += ccrtp
