@@ -1,0 +1,18 @@
+$OpenBSD: patch-salt_modules_salt_proxy_py,v 1.1 2018/01/27 15:09:30 jasper Exp $
+
+Print the full command, this allows the grep to find a match when
+a proxy minion is running. Otherwise it incorrectly determine the
+given proxy isn't running and fork off another copy repeatedly.
+
+Index: salt/modules/salt_proxy.py
+--- salt/modules/salt_proxy.py.orig
++++ salt/modules/salt_proxy.py
+@@ -72,7 +72,7 @@ def _is_proxy_running(proxyname):
+     '''
+     Check if proxy for this name is running
+     '''
+-    cmd = ('ps ax | grep "salt-proxy --proxyid={0}" | grep -v grep'
++    cmd = ('ps axww | grep "salt-proxy --proxyid={0}" | grep -v grep'
+            .format(salt.ext.six.moves.shlex_quote(proxyname)))
+     cmdout = __salt__['cmd.run_all'](
+         cmd,
