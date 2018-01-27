@@ -1,4 +1,4 @@
-# $OpenBSD: mozilla.port.mk,v 1.108 2017/09/28 16:32:42 landry Exp $
+# $OpenBSD: mozilla.port.mk,v 1.109 2018/01/27 10:04:38 landry Exp $
 
 # ppc: firefox-esr/thunderbird xpcshell segfaults during startup compilation
 # ppc: seamonkey/firefox - failure to link for atomic ops on 64 bits
@@ -20,8 +20,6 @@ MAINTAINER ?=	Landry Breuil <landry@openbsd.org>
 
 MOZILLA_DIST ?=	${MOZILLA_PROJECT}
 MOZILLA_DIST_VERSION ?=	${MOZILLA_VERSION:C/rc.//}
-
-HOMEPAGE ?=	https://www.mozilla.org/projects/${MOZILLA_DIST}
 
 .if ${MOZILLA_VERSION:M*rc?}
 MASTER_SITES ?=	https://ftp.mozilla.org/pub/mozilla.org/${MOZILLA_DIST}/candidates/${MOZILLA_DIST_VERSION}-candidates/build${MOZILLA_VERSION:C/.*(.)/\1/}/source/
