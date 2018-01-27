@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.57 2018/01/27 09:22:00 landry Exp $
+# $OpenBSD: Makefile,v 1.58 2018/01/27 09:23:05 landry Exp $
 
 # snapshots are only available for amd64 and i386, for now
 ONLY_FOR_ARCHS =	amd64 i386
-BROKEN-i386 =		uses too much memory, fails to often in bulks
 
 DPB_PROPERTIES =	parallel
 
