@@ -1,4 +1,4 @@
-# $OpenBSD: mozilla.port.mk,v 1.110 2018/01/27 10:12:46 landry Exp $
+# $OpenBSD: mozilla.port.mk,v 1.111 2018/01/27 10:22:14 landry Exp $
 
 # ppc: firefox-esr/thunderbird xpcshell segfaults during startup compilation
 # ppc: seamonkey/firefox - failure to link for atomic ops on 64 bits
@@ -28,6 +28,18 @@ MASTER_SITES ?=	https://ftp.mozilla.org/pub/mozilla.org/${MOZILLA_DIST}/candidat
 .else
 MASTER_SITES ?=	https://releases.mozilla.org/pub/mozilla.org/${MOZILLA_DIST}/releases/${MOZILLA_DIST_VERSION}/source/ \
 		https://ftp.mozilla.org/pub/mozilla.org/${MOZILLA_DIST}/releases/${MOZILLA_DIST_VERSION}/source/
+.endif
+
+.if defined(MOZILLA_COMMIT) && defined(MOZILLA_BRANCH)
+DISTNAME =	${MOZILLA_DIST}-${MOZILLA_DIST_VERSION}
+DISTFILES =	${MOZILLA_DIST}-${MOZILLA_DIST_VERSION}${EXTRACT_SUFX}{${MOZILLA_COMMIT}${EXTRACT_SUFX}}
+WRKDIST =	${WRKDIR}/mozilla-${MOZILLA_BRANCH}-${MOZILLA_COMMIT}
+MASTER_SITES =	https://hg.mozilla.org/releases/mozilla-${MOZILLA_BRANCH}/archive/
+EXTRACT_SUFX =	.tar.bz2
+MODMOZILLA_pre-configure+= \
+	cp ${WRKSRC}/${CONFIGURE_SCRIPT}.in ${WRKSRC}/${CONFIGURE_SCRIPT}; \
+	cp ${WRKSRC}/js/src/${CONFIGURE_SCRIPT}.in ${WRKSRC}/js/src/${CONFIGURE_SCRIPT}; \
+	chmod +x ${WRKSRC}/${CONFIGURE_SCRIPT}
 .endif
 
 DISTNAME ?=	${MOZILLA_DIST}-${MOZILLA_DIST_VERSION}.source
