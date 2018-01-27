@@ -1,30 +1,83 @@
-$OpenBSD: patch-src_libical_icaltimezone_c,v 1.7 2017/11/20 18:17:51 ajacoutot Exp $
+$OpenBSD: patch-src_libical_icaltimezone_c,v 1.8 2018/01/27 17:34:51 ajacoutot Exp $
 
-https://github.com/libical/libical/issues/320
+From 4cee1aca2034c0c9895bbbeddd1ab12ec48fd02f Mon Sep 17 00:00:00 2001
+From: Allen Winter <allen.winter@kdab.com>
+Date: Sat, 27 Jan 2018 12:01:52 -0500
+Subject: [PATCH] src/libical/icaltimezone.c - fix threading problems on BSD-type systems
 
 Index: src/libical/icaltimezone.c
 --- src/libical/icaltimezone.c.orig
 +++ src/libical/icaltimezone.c
-@@ -1818,13 +1818,9 @@ static void icaltimezone_load_builtin_timezone(icaltim
-     if (zone->component)
-         return;
- 
--    icaltimezone_builtin_lock();
+@@ -281,10 +281,7 @@ static void icaltimezone_init(icaltimezone *zone)
+     zone->component = NULL;
+     zone->builtin_timezone = NULL;
+     zone->end_year = 0;
 -
-     /* If the location isn't set, it isn't a builtin timezone. */
--    if (!zone->location || !zone->location[0]) {
--        icaltimezone_builtin_unlock();
-+    if (!zone->location || !zone->location[0])
-         return;
--    }
- 
-     if (use_builtin_tzdata) {
-         char *filename;
-@@ -1880,7 +1876,6 @@ static void icaltimezone_load_builtin_timezone(icaltim
-     }
- 
-   out:
--    icaltimezone_builtin_unlock();
-     return;
+-    icaltimezone_changes_lock();
+     zone->changes = NULL;
+-    icaltimezone_changes_unlock();
  }
  
+ /** Gets the TZID, LOCATION/X-LIC-LOCATION and TZNAME properties of
+@@ -468,32 +465,19 @@ char *icaltimezone_get_tznames_from_vtimezone(icalcomp
+ 
+ static void icaltimezone_ensure_coverage(icaltimezone *zone, int end_year)
+ {
+-#if defined(HAVE_PTHREAD)
+-    /* Avoid data race in multithreaded when accessing icaltimezone_minimum_expansion_year */
+-    static pthread_mutex_t year_mutex = PTHREAD_MUTEX_INITIALIZER;
+-#endif
+-
+     /* When we expand timezone changes we always expand at least up to this
+        year, plus ICALTIMEZONE_EXTRA_COVERAGE. */
+     static int icaltimezone_minimum_expansion_year = -1;
+ 
+     int changes_end_year;
+ 
+-    icaltimezone_builtin_lock();
+     icaltimezone_load_builtin_timezone(zone);
+-    icaltimezone_builtin_unlock();
+ 
+-#if defined(HAVE_PTHREAD)
+-    pthread_mutex_lock(&year_mutex);
+-#endif
+     if (icaltimezone_minimum_expansion_year == -1) {
+         struct icaltimetype today = icaltime_today();
+ 
+         icaltimezone_minimum_expansion_year = today.year;
+     }
+-#if defined(HAVE_PTHREAD)
+-    pthread_mutex_unlock(&year_mutex);
+-#endif
+ 
+     changes_end_year = end_year;
+     if (changes_end_year < icaltimezone_minimum_expansion_year)
+@@ -501,15 +485,11 @@ static void icaltimezone_ensure_coverage(icaltimezone 
+ 
+     changes_end_year += ICALTIMEZONE_EXTRA_COVERAGE;
+ 
+-    icaltimezone_changes_lock();
+-
+     if (changes_end_year > ICALTIMEZONE_MAX_YEAR)
+         changes_end_year = ICALTIMEZONE_MAX_YEAR;
+ 
+     if (!zone->changes || zone->end_year < end_year)
+         icaltimezone_expand_changes(zone, changes_end_year);
+-
+-    icaltimezone_changes_unlock();
+ }
+ 
+ /* Hold the icaltimezone_changes_lock(); before calling this function */
+@@ -841,10 +821,10 @@ int icaltimezone_get_utc_offset(icaltimezone *zone, st
+     if (zone->builtin_timezone)
+         zone = zone->builtin_timezone;
+ 
++    icaltimezone_changes_lock();
++
+     /* Make sure the changes array is expanded up to the given time. */
+     icaltimezone_ensure_coverage(zone, tt->year);
+-
+-    icaltimezone_changes_lock();
+ 
+     if (!zone->changes || zone->changes->num_elements == 0) {
+         icaltimezone_changes_unlock();
