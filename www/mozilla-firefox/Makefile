@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.340 2018/01/23 19:17:02 landry Exp $
+# $OpenBSD: Makefile,v 1.341 2018/01/27 07:53:50 landry Exp $
 
 COMMENT =	Mozilla web browser
 ONLY_FOR_ARCHS =	amd64 i386
@@ -58,6 +58,7 @@ CONFIGURE_ARGS +=	--enable-release #1386371
 CONFIGURE_ARGS +=	--enable-rust-simd #1261841
 CONFIGURE_ARGS +=	--enable-webrender=build
 .if ${MACHINE_ARCH} == "i386"
+CONFIGURE_ARGS +=	--disable-debug-symbols
 MAKE_ENV +=		RUSTFLAGS="-C target-cpu=pentium4 --cfg target_feature=\"sse2\""
 .endif
 #CONFIGURE_ARGS +=	--enable-linker=lld
