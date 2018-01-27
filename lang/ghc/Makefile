@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.155 2018/01/23 20:59:49 kili Exp $
+# $OpenBSD: Makefile,v 1.156 2018/01/27 23:49:33 kili Exp $
 
 COMMENT =		compiler for the functional language Haskell
 
@@ -12,6 +12,7 @@ COMMENT =		compiler for the functional language Haskell
 NO_CCACHE =		Yes
 
 DISTNAME =		ghc-${MODGHC_VER}
+REVISION =		0
 CATEGORIES =		lang devel
 HOMEPAGE =		https://www.haskell.org/ghc/
 
@@ -21,6 +22,10 @@ BIN_VER =		8.0.1.20171204
 # Pull in lang/ghc to get MODGHC_VER and ONLY_FOR_ARCHS, which is maintained
 # in ghc.port.mk. lang/python needed for regression tests.
 MODULES =		lang/ghc lang/python
+
+MODPY_BUILDDEP =	No
+MODPY_RUNDEP =		No
+MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 # BSD w/o advertising clause + LGPLv3 (from libgmp).
 # Distfile is bundled with other stuff like libffi, mingw
@@ -133,7 +138,7 @@ MAKE_FLAGS +=		StripLibraries=YES \
 # For mktexpk (via dvips when building the PostScript documentation):
 PORTHOME =		${WRKDIR}
 
-TEST_DEPENDS =	print/ghostscript/gnu
+TEST_DEPENDS =	print/ghostscript/gnu ${MODPY_RUN_DEPENDS}
 
 post-extract:
 	cd ${WRKSRC}/libraries/unix && \
