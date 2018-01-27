@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_libcompiler_builtins_build_rs,v 1.1 2018/01/27 09:22:00 landry Exp $
+Use local compiler_rt
+Index: src/libcompiler_builtins/build.rs
+--- src/libcompiler_builtins/build.rs.orig
++++ src/libcompiler_builtins/build.rs
+@@ -12,6 +12,12 @@ fn main() {
+         return;
+     }
+ 
++    if target.contains("openbsd") {
++        println!("cargo:rustc-link-search=native=/usr/lib");
++        println!("cargo:rustc-link-lib=static=compiler_rt");
++        return;
++    }
++
+     // Forcibly enable memory intrinsics on wasm32 as we don't have a libc to
+     // provide them.
+     if target.contains("wasm32") {

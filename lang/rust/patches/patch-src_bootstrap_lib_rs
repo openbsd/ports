@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_bootstrap_lib_rs,v 1.8 2017/12/04 17:31:49 landry Exp $
+$OpenBSD: patch-src_bootstrap_lib_rs,v 1.9 2018/01/27 09:22:00 landry Exp $
 Let us compilation choice to be honored.
 Index: src/bootstrap/lib.rs
 --- src/bootstrap/lib.rs.orig
 +++ src/bootstrap/lib.rs
-@@ -622,7 +622,6 @@ impl Build {
+@@ -636,7 +636,6 @@ impl Build {
          // cc-rs because the build scripts will determine that for themselves.
-         let mut base = self.cc[&target].0.args().iter()
+         let mut base = self.cc[&target].args().iter()
                             .map(|s| s.to_string_lossy().into_owned())
 -                           .filter(|s| !s.starts_with("-O") && !s.starts_with("/O"))
                             .collect::<Vec<_>>();

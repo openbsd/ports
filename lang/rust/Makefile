@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2017/12/10 13:27:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.57 2018/01/27 09:22:00 landry Exp $
 
 # snapshots are only available for amd64 and i386, for now
 ONLY_FOR_ARCHS =	amd64 i386
@@ -9,13 +9,13 @@ DPB_PROPERTIES =	parallel
 COMMENT-main =		compiler for Rust Language
 COMMENT-doc =		html documentation for rustc
 
-V =			1.22.1
-CARGO_V =		0.23.0
+V =			1.23.0
+CARGO_V =		0.24.0
 DISTNAME =		rustc-${V}-src
 
 # rustc bootstrap version
-BV-amd64 =		1.22.0-20171121
-BV-i386 =		1.22.1-20171125
+BV-amd64 =		1.23.0-20180124
+BV-i386 =		1.23.0-20180125
 BV =			${BV-${MACHINE_ARCH}}
 
 PKGNAME =		rust-${V}
@@ -66,17 +66,14 @@ MODPY_RUNDEP =		No
 BUILD_DEPENDS +=	devel/cmake
 BUILD_DEPENDS +=	shells/bash
 BUILD_DEPENDS +=	devel/llvm
-
-.if ! ${BUILD_DEPENDS:Mdevel/llvm}
-# use ninja to compile embedded llvm
 BUILD_DEPENDS +=	devel/ninja
-.endif
 
 LIB_DEPENDS +=		devel/libgit2/libgit2 \
 			net/curl \
 			security/libssh2
 
-MAKE_ENV =	LIBGIT2_SYS_USE_PKG_CONFIG=1
+MAKE_ENV =	LIBGIT2_SYS_USE_PKG_CONFIG=1 \
+		RUST_BACKTRACE=1
 
 # build/configuration variables
 PATCHORIG =		.openbsd.orig
@@ -124,9 +121,6 @@ do-configure:
 	echo 'channel = "stable"' >>${WRKBUILD}/config.toml
 	echo 'rpath = false' >>${WRKBUILD}/config.toml
 	echo 'codegen-tests = false' >>${WRKBUILD}/config.toml
-.if "${MACHINE_ARCH}" == "i386"
-	echo 'codegen-units = 16' >>${WRKBUILD}/config.toml
-.endif
 
 	echo '[dist]' >>${WRKBUILD}/config.toml
 	echo 'src-tarball = false' >>${WRKBUILD}/config.toml
