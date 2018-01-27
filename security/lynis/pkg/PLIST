@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2018/01/22 21:41:56 gonzalo Exp $
+@comment $OpenBSD: PLIST,v 1.15 2018/01/27 21:17:01 gonzalo Exp $
 @group wheel
 bin/lynis
 @man man/man8/lynis.8
@@ -102,6 +102,7 @@ share/lynis/include/tests_storage_nfs
 share/lynis/include/tests_system_integrity
 share/lynis/include/tests_time
 share/lynis/include/tests_tooling
+share/lynis/include/tests_usb
 share/lynis/include/tests_virtualization
 share/lynis/include/tests_webservers
 share/lynis/include/tool_tips
