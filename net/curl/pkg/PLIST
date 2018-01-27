@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.46 2017/10/09 15:34:05 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.47 2018/01/27 00:10:59 naddy Exp $
 @bin bin/curl
 bin/curl-config
 include/curl/
@@ -400,6 +400,7 @@ lib/pkgconfig/libcurl.pc
 @man man/man3/curl_version.3
 @man man/man3/curl_version_info.3
 @man man/man3/libcurl-easy.3
+@man man/man3/libcurl-env.3
 @man man/man3/libcurl-errors.3
 @man man/man3/libcurl-multi.3
 @man man/man3/libcurl-share.3
