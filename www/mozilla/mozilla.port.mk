@@ -1,4 +1,4 @@
-# $OpenBSD: mozilla.port.mk,v 1.109 2018/01/27 10:04:38 landry Exp $
+# $OpenBSD: mozilla.port.mk,v 1.110 2018/01/27 10:12:46 landry Exp $
 
 # ppc: firefox-esr/thunderbird xpcshell segfaults during startup compilation
 # ppc: seamonkey/firefox - failure to link for atomic ops on 64 bits
@@ -127,9 +127,12 @@ CONFIGURE_ARGS +=	--enable-debug-symbols=-g \
 INSTALL_STRIP =
 .endif
 
-.if defined(MOZILLA_USE_GTK3)
+.if !defined(MOZILLA_USE_BUNDLED_CAIRO)
 # https://bugzilla.mozilla.org/show_bug.cgi?id=983843
 CONFIGURE_ARGS +=	--with-system-cairo
+.endif
+
+.if defined(MOZILLA_USE_GTK3)
 CONFIGURE_ARGS +=	--enable-default-toolkit=cairo-gtk3
 MODMOZ_LIB_DEPENDS +=	x11/gtk+3
 MODMOZ_WANTLIB +=	cairo-gobject gdk-3 gtk-3
