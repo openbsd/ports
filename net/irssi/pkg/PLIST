@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2017/06/07 21:57:46 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.25 2018/01/28 17:47:58 sthen Exp $
 @bin bin/irssi
 include/irssi/
 include/irssi/irssi-config
@@ -8,6 +8,7 @@ include/irssi/src/
 include/irssi/src/common.h
 include/irssi/src/core/
 include/irssi/src/core/args.h
+include/irssi/src/core/capsicum.h
 include/irssi/src/core/channel-rec.h
 include/irssi/src/core/channel-setup-rec.h
 include/irssi/src/core/channels-setup.h
@@ -19,6 +20,7 @@ include/irssi/src/core/commands.h
 include/irssi/src/core/core.h
 include/irssi/src/core/expandos.h
 include/irssi/src/core/ignore.h
+include/irssi/src/core/iregex.h
 include/irssi/src/core/levels.h
 include/irssi/src/core/line-split.h
 include/irssi/src/core/log.h
@@ -30,6 +32,7 @@ include/irssi/src/core/modules.h
 include/irssi/src/core/net-disconnect.h
 include/irssi/src/core/net-nonblock.h
 include/irssi/src/core/net-sendbuffer.h
+include/irssi/src/core/network-openssl.h
 include/irssi/src/core/network.h
 include/irssi/src/core/nick-rec.h
 include/irssi/src/core/nicklist.h
@@ -59,6 +62,7 @@ include/irssi/src/fe-common/core/
 include/irssi/src/fe-common/core/chat-completion.h
 include/irssi/src/fe-common/core/command-history.h
 include/irssi/src/fe-common/core/completion.h
+include/irssi/src/fe-common/core/fe-capsicum.h
 include/irssi/src/fe-common/core/fe-channels.h
 include/irssi/src/fe-common/core/fe-common-core.h
 include/irssi/src/fe-common/core/fe-core-commands.h
@@ -66,6 +70,7 @@ include/irssi/src/fe-common/core/fe-exec.h
 include/irssi/src/fe-common/core/fe-messages.h
 include/irssi/src/fe-common/core/fe-queries.h
 include/irssi/src/fe-common/core/fe-recode.h
+include/irssi/src/fe-common/core/fe-settings.h
 include/irssi/src/fe-common/core/fe-tls.h
 include/irssi/src/fe-common/core/fe-windows.h
 include/irssi/src/fe-common/core/formats.h
@@ -155,6 +160,7 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/UI/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/UI/UI.so
 @man man/man1/irssi.1
 share/doc/irssi/
+share/doc/irssi/capsicum.txt
 share/doc/irssi/design.txt
 share/doc/irssi/faq.html
 share/doc/irssi/faq.txt
@@ -164,6 +170,7 @@ share/doc/irssi/perl.txt
 share/doc/irssi/signals.txt
 share/doc/irssi/special_vars.txt
 share/doc/irssi/startup-HOWTO.html
+share/doc/irssi/startup-HOWTO.txt
 share/examples/irssi/
 @sample ${SYSCONFDIR}/irssi/
 share/examples/irssi/irssi.conf
