@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2017/07/30 14:54:28 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2018/01/28 17:05:26 awolk Exp $
 
 # qt5 webkit
 USE_WXNEEDED =	Yes
@@ -8,7 +8,7 @@ COMMENT =	distraction-free Markdown editor
 GH_ACCOUNT =	wereturtle
 GH_PROJECT =	ghostwriter
 GH_TAGNAME =	v1.5.0
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	editors
 
