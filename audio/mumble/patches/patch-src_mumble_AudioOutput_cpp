@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_mumble_AudioOutput_cpp,v 1.1 2018/01/28 21:04:30 rsadowski Exp $
+do not use non-existant template version of std::abs
+commit ea861fe86743c8402bbad77d8d1dd9de8dce447e
+
+Index: src/mumble/AudioOutput.cpp
+--- src/mumble/AudioOutput.cpp.orig
++++ src/mumble/AudioOutput.cpp
+@@ -431,7 +431,7 @@ bool AudioOutput::mix(void *outbuff, unsigned int nsam
+ 					top[2] = 0.0f;
+ 				}
+ 
+-				if (std::abs<float>(front[0] * top[0] + front[1] * top[1] + front[2] * top[2]) > 0.01f) {
++				if (std::abs(front[0] * top[0] + front[1] * top[1] + front[2] * top[2]) > 0.01f) {
+ 					// Not perpendicular. Assume Y up and rotate 90 degrees.
+ 
+ 					float azimuth = 0.0f;
