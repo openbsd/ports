@@ -1,4 +1,4 @@
-# $OpenBSD: meson.port.mk,v 1.15 2017/12/11 19:50:42 ajacoutot Exp $
+# $OpenBSD: meson.port.mk,v 1.16 2018/01/28 08:59:47 ajacoutot Exp $
 
 BUILD_DEPENDS +=	devel/meson>=0.44.0
 SEPARATE_BUILD ?=	Yes
@@ -31,6 +31,9 @@ CONFIGURE_ARGS +=	-Db_lundef=false
 # There is no way to reset both the preferred encoding and the filesystem
 # encoding, so we can just warn about it.
 MAKE_ENV +=		LC_CTYPE="en_US.UTF-8"
+
+# don't pick up llvm-ar(1)
+CONFIGURE_ENV +=	AR="ar"
 
 MODMESON_configure=	${SETENV} CC="${CC}" CFLAGS="${CFLAGS}" CXX="${CXX}" \
 				CXXFLAGS="${CXXFLAGS}" LDFLAGS="${LDFLAGS}" \
