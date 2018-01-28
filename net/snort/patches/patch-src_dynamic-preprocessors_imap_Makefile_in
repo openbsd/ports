@@ -1,7 +1,8 @@
-$OpenBSD: patch-src_dynamic-preprocessors_imap_Makefile_in,v 1.11 2017/01/05 03:08:04 lteo Exp $
---- src/dynamic-preprocessors/imap/Makefile.in.orig	Tue Nov 29 01:12:25 2016
-+++ src/dynamic-preprocessors/imap/Makefile.in	Sun Dec  4 00:36:43 2016
-@@ -346,7 +346,7 @@ top_srcdir = @top_srcdir@
+$OpenBSD: patch-src_dynamic-preprocessors_imap_Makefile_in,v 1.12 2018/01/28 03:09:12 lteo Exp $
+Index: src/dynamic-preprocessors/imap/Makefile.in
+--- src/dynamic-preprocessors/imap/Makefile.in.orig
++++ src/dynamic-preprocessors/imap/Makefile.in
+@@ -358,7 +358,7 @@ top_srcdir = @top_srcdir@
  AUTOMAKE_OPTIONS = foreign no-dependencies
  dynamicpreprocessordir = ${libdir}/snort_dynamicpreprocessor
  dynamicpreprocessor_LTLIBRARIES = libsf_imap_preproc.la
@@ -10,7 +11,7 @@ $OpenBSD: patch-src_dynamic-preprocessors_imap_Makefile_in,v 1.11 2017/01/05 03:
  @SO_WITH_STATIC_LIB_TRUE@libsf_imap_preproc_la_LIBADD = ../libsf_dynamic_preproc.la
  @SO_WITH_STATIC_LIB_FALSE@nodist_libsf_imap_preproc_la_SOURCES = \
  @SO_WITH_STATIC_LIB_FALSE@../include/sf_dynamic_preproc_lib.c \
-@@ -579,7 +579,7 @@ distdir: $(DISTFILES)
+@@ -590,7 +590,7 @@ distdir: $(DISTFILES)
  	done
  check-am: all-am
  check: check-am

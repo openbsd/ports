@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.4 2016/05/02 02:29:58 lteo Exp $
+$OpenBSD: README,v 1.5 2018/01/28 03:09:12 lteo Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -12,7 +12,7 @@ ${SYSCONFDIR}/snort/snort.conf.
 The two most common sources of Snort rules are the official Snort rules
 and the Emerging Threats rules.  To download the official Snort rules,
 you will first need to sign up for an "oinkcode" at
-https://www.snort.org/signup since they are distributed under a
+https://www.snort.org/users/sign_up since they are distributed under a
 commercial license.  Emerging Threats rules can be downloaded without
 signing up.
 
@@ -29,15 +29,12 @@ to the correct directory:
 * Official Snort rules (replace <oinkcode> with yours):
 
     ftp -o snortrules-snapshot-${V}.tar.gz \
-      https://www.snort.org/reg-rules/snortrules-snapshot-${V}.tar.gz/<oinkcode>
+      https://www.snort.org/rules/snortrules-snapshot-${V}.tar.gz?oinkcode=<oinkcode>
     tar -C /etc/snort -xzf snortrules-snapshot-${V}.tar.gz rules preproc_rules
-
-  Note that registered users without a paid subscription are only
-  allowed to download the official Snort ruleset once every 15 minutes.
 
 * Emerging Threats rules:
 
-    ftp http://rules.emergingthreats.net/open/snort-2.9.0/emerging.rules.tar.gz
+    ftp https://rules.emergingthreats.net/open/snort-2.9.0/emerging.rules.tar.gz
     tar -C /etc/snort -xzf emerging.rules.tar.gz
 
   If you use Emerging Threats rules, you will need to uncomment its

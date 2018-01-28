@@ -1,7 +1,8 @@
-$OpenBSD: patch-src_dynamic-preprocessors_reputation_Makefile_in,v 1.10 2016/05/02 02:29:58 lteo Exp $
---- src/dynamic-preprocessors/reputation/Makefile.in.orig	Fri Mar 18 15:11:30 2016
-+++ src/dynamic-preprocessors/reputation/Makefile.in	Fri Apr 29 11:02:26 2016
-@@ -348,7 +348,7 @@ top_srcdir = @top_srcdir@
+$OpenBSD: patch-src_dynamic-preprocessors_reputation_Makefile_in,v 1.11 2018/01/28 03:09:12 lteo Exp $
+Index: src/dynamic-preprocessors/reputation/Makefile.in
+--- src/dynamic-preprocessors/reputation/Makefile.in.orig
++++ src/dynamic-preprocessors/reputation/Makefile.in
+@@ -360,7 +360,7 @@ top_srcdir = @top_srcdir@
  AUTOMAKE_OPTIONS = foreign no-dependencies
  dynamicpreprocessordir = ${libdir}/snort_dynamicpreprocessor
  dynamicpreprocessor_LTLIBRARIES = libsf_reputation_preproc.la
@@ -10,7 +11,7 @@ $OpenBSD: patch-src_dynamic-preprocessors_reputation_Makefile_in,v 1.10 2016/05/
  @SO_WITH_STATIC_LIB_TRUE@libsf_reputation_preproc_la_LIBADD = ../libsf_dynamic_preproc.la
  @SO_WITH_STATIC_LIB_FALSE@nodist_libsf_reputation_preproc_la_SOURCES = \
  @SO_WITH_STATIC_LIB_FALSE@../include/sf_dynamic_preproc_lib.c \
-@@ -609,7 +609,7 @@ distdir: $(DISTFILES)
+@@ -620,7 +620,7 @@ distdir: $(DISTFILES)
  	done
  check-am: all-am
  check: check-am

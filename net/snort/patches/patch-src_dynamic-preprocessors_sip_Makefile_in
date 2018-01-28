@@ -1,16 +1,17 @@
-$OpenBSD: patch-src_dynamic-preprocessors_sip_Makefile_in,v 1.11 2017/01/05 03:08:04 lteo Exp $
---- src/dynamic-preprocessors/sip/Makefile.in.orig	Tue Nov 29 01:12:25 2016
-+++ src/dynamic-preprocessors/sip/Makefile.in	Sun Dec  4 00:36:43 2016
-@@ -342,7 +342,7 @@ top_srcdir = @top_srcdir@
+$OpenBSD: patch-src_dynamic-preprocessors_sip_Makefile_in,v 1.12 2018/01/28 03:09:12 lteo Exp $
+Index: src/dynamic-preprocessors/sip/Makefile.in
+--- src/dynamic-preprocessors/sip/Makefile.in.orig
++++ src/dynamic-preprocessors/sip/Makefile.in
+@@ -363,7 +363,7 @@ top_srcdir = @top_srcdir@
  AUTOMAKE_OPTIONS = foreign no-dependencies
  dynamicpreprocessordir = ${libdir}/snort_dynamicpreprocessor
  dynamicpreprocessor_LTLIBRARIES = libsf_sip_preproc.la
 -libsf_sip_preproc_la_LDFLAGS = -export-dynamic -module @XCCFLAGS@
 +libsf_sip_preproc_la_LDFLAGS = -export-dynamic -module -avoid-version @XCCFLAGS@
- @SO_WITH_STATIC_LIB_TRUE@libsf_sip_preproc_la_LIBADD = ../libsf_dynamic_preproc.la
- @SO_WITH_STATIC_LIB_FALSE@nodist_libsf_sip_preproc_la_SOURCES = \
- @SO_WITH_STATIC_LIB_FALSE@../include/sf_dynamic_preproc_lib.c \
-@@ -543,7 +543,7 @@ distdir: $(DISTFILES)
+ @SO_WITH_STATIC_LIB_TRUE@libsf_sip_preproc_la_LIBADD =  \
+ @SO_WITH_STATIC_LIB_TRUE@	../libsf_dynamic_preproc.la \
+ @SO_WITH_STATIC_LIB_TRUE@	$(am__append_1)
+@@ -583,7 +583,7 @@ distdir: $(DISTFILES)
  	done
  check-am: all-am
  check: check-am
