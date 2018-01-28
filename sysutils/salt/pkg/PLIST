@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.46 2017/12/25 13:06:16 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.47 2018/01/28 12:04:11 jasper Exp $
 @ask-update salt-<2014.1.5p0 Make sure the _salt-master user does not exist
 @comment needs a homedir to store ssh keys for GitFS
 @newgroup _salt:722
@@ -2874,6 +2874,18 @@ lib/python${MODPY_VERSION}/site-packages/salt/wheel/pillar_roots.pyc
 @man man/man7/salt.7
 share/examples/salt/
 @sample ${SYSCONFDIR}/salt/
+@owner _salt
+@group _salt
+@sample ${SYSCONFDIR}/salt/cloud.conf.d/
+@sample ${SYSCONFDIR}/salt/cloud.deploy.d/
+@sample ${SYSCONFDIR}/salt/cloud.maps.d/
+@sample ${SYSCONFDIR}/salt/cloud.profiles.d/
+@sample ${SYSCONFDIR}/salt/cloud.providers.d/
+@sample ${SYSCONFDIR}/salt/master.d/
+@sample ${SYSCONFDIR}/salt/minion.d/
+@sample ${SYSCONFDIR}/salt/proxy.d/
+@group
+@owner
 share/examples/salt/cloud
 @sample ${SYSCONFDIR}/salt/cloud
 share/examples/salt/cloud.profiles
