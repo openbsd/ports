@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.102 2017/12/16 15:59:31 job Exp $
+# $OpenBSD: Makefile,v 1.103 2018/01/28 16:40:57 sthen Exp $
 
 COMMENT=	tty-based e-mail client
 
-DISTNAME=	mutt-1.9.2
+DISTNAME=	mutt-1.9.3
 EPOCH=		3
 
 CATEGORIES=	mail
@@ -14,7 +14,7 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 # uses pledge()
-WANTLIB+=	c crypto iconv idn intl qdbm ssl z
+WANTLIB+=	c crypto curses iconv idn intl qdbm ssl z
 
 MASTER_SITES=	http://ftp.mutt.org/pub/mutt/ \
 		https://ftp.osuosl.org/pub/mutt/ \
@@ -31,6 +31,7 @@ FLAVORS=	gpgme sasl slang
 FLAVOR?=
 
 CONFIGURE_STYLE=  gnu
+SEPARATE_BUILD=	  yes
 
 FLAVOR_COMMA=	${FLAVOR_EXT:S/-/,/g}
 SUBST_VARS=	FLAVOR_COMMA
@@ -78,10 +79,9 @@ WANTLIB+=	sasl2
 .if ${FLAVOR:Mslang}
 CONFIGURE_ARGS+= --with-slang="${PREFIX}"
 LIB_DEPENDS+=	devel/libslang
-WANTLIB+=	m termlib slang>=14
+WANTLIB+=	m slang>=14
 .else
 CONFIGURE_ARGS+= --with-curses
-WANTLIB+=	ncurses
 .endif
 
 post-install:

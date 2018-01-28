@@ -1,18 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.29 2017/10/29 21:34:52 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.30 2018/01/28 16:40:57 sthen Exp $
 @pkgpath mail/mutt/stable${FLAVOR_COMMA}
 @pkgpath mail/mutt/snapshot[,compressed][,hcache][,idn][,sidebar]${FLAVOR_COMMA}
 @pkgpath mail/mutt[,compressed][,idn][,sidebar]${FLAVOR_COMMA}
-bin/flea
 @bin bin/mutt
 @bin bin/mutt_dotlock
-bin/muttbug
 @bin bin/pgpewrap
 @bin bin/pgpring
 bin/smime_keys
-@man man/man1/flea.1
 @man man/man1/mutt.1
 @man man/man1/mutt_dotlock.1
-@man man/man1/muttbug.1
 @man man/man1/pgpewrap.1
 @man man/man1/pgpring.1
 @man man/man1/smime_keys.1
