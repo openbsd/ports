@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2017/11/21 00:13:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2018/01/28 20:24:01 sthen Exp $
 
 COMMENT=	simple RADIUS client library
 
 SHARED_LIBS +=	radcli               0.1      # 5.1
 
-V=		1.2.8
+V=		1.2.9
 DISTNAME=	radcli-$V
-REVISION=	0
 
 CATEGORIES=	net
 
@@ -24,8 +23,10 @@ MASTER_SITES=	https://github.com/radcli/radcli/releases/download/$V/
 
 LIB_DEPENDS=	security/gnutls
 
-CONFIGURE_STYLE= gnu
 FAKE_FLAGS=	pkgsysconfdir=${PREFIX}/share/examples/radcli
+
+SEPARATE_BUILD=		Yes
+CONFIGURE_STYLE=	gnu
 
 # most tests need a running local RADIUS server; run-server.sh script to
 # run this should have been included in the distfile, but isn't.
