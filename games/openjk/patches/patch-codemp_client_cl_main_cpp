@@ -1,0 +1,22 @@
+$OpenBSD: patch-codemp_client_cl_main_cpp,v 1.1.1.1 2018/01/28 16:07:58 bcallah Exp $
+
+Index: codemp/client/cl_main.cpp
+--- codemp/client/cl_main.cpp.orig
++++ codemp/client/cl_main.cpp
+@@ -2372,14 +2372,14 @@ void CL_InitRef( void ) {
+ 
+ 	cl_renderer = Cvar_Get( "cl_renderer", DEFAULT_RENDER_LIBRARY, CVAR_ARCHIVE|CVAR_LATCH|CVAR_PROTECTED, "Which renderer library to use" );
+ 
+-	Com_sprintf( dllName, sizeof( dllName ), "%s_" ARCH_STRING DLL_EXT, cl_renderer->string );
++	Com_sprintf( dllName, sizeof( dllName ), "%s" DLL_EXT, cl_renderer->string );
+ 
+ 	if( !(rendererLib = Sys_LoadDll( dllName, qfalse )) && strcmp( cl_renderer->string, cl_renderer->resetString ) )
+ 	{
+ 		Com_Printf( "failed: trying to load fallback renderer\n" );
+ 		Cvar_ForceReset( "cl_renderer" );
+ 
+-		Com_sprintf( dllName, sizeof( dllName ), DEFAULT_RENDER_LIBRARY "_" ARCH_STRING DLL_EXT );
++		Com_sprintf( dllName, sizeof( dllName ), DEFAULT_RENDER_LIBRARY DLL_EXT );
+ 		rendererLib = Sys_LoadDll( dllName, qfalse );
+ 	}
+ 

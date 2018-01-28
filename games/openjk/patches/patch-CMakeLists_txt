@@ -1,0 +1,50 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2018/01/28 16:07:58 bcallah Exp $
+
+Why would upstream add the arch name at the end of all binaries?
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -127,6 +127,9 @@ else()
+ 	elseif(CMAKE_SYSTEM_PROCESSOR MATCHES "^x86.64$")
+ 		set(X86 ON)
+ 		set(Architecture "x86_64")
++	elseif(CMAKE_SYSTEM_PROCESSOR MATCHES "^amd64$")
++		set(X86 ON)
++		set(Architecture "x86_64")
+ 	elseif(CMAKE_SYSTEM_PROCESSOR STREQUAL "powerpc")
+ 		set(Architecture "ppc")
+ 	elseif(CMAKE_SYSTEM_PROCESSOR STREQUAL "powerpc64")
+@@ -148,19 +151,19 @@ message("Git revision is ${GIT_SHA1}")
+ 
+ 
+ # Binary names
+-set(SPEngine "openjk_sp.${Architecture}")
+-set(SPGame "jagame${Architecture}")
+-set(SPRDVanillaRenderer "rdsp-vanilla_${Architecture}")
+-set(MPEngine "openjk.${Architecture}")
+-set(MPVanillaRenderer "rd-vanilla_${Architecture}")
+-set(MPDed "openjkded.${Architecture}")
+-set(MPGame "jampgame${Architecture}")
+-set(MPCGame "cgame${Architecture}")
+-set(MPUI "ui${Architecture}")
+-set(JK2SPEngine "openjo_sp.${Architecture}")
+-set(JK2SPGame "jospgame${Architecture}")
+-set(JK2SPVanillaRenderer "rdjosp-vanilla_${Architecture}")
+-set(AssetsPk3 "openjk-${Architecture}.pk3")
++set(SPEngine "openjk_sp")
++set(SPGame "jagame")
++set(SPRDVanillaRenderer "rdsp-vanilla")
++set(MPEngine "openjk")
++set(MPVanillaRenderer "rd-vanilla")
++set(MPDed "openjkded")
++set(MPGame "jampgame")
++set(MPCGame "cgame")
++set(MPUI "ui")
++set(JK2SPEngine "openjo_sp")
++set(JK2SPGame "jospgame")
++set(JK2SPVanillaRenderer "rdjosp-vanilla")
++set(AssetsPk3 "openjk.pk3")
+ # Library names
+ set(MPBotLib "botlib")
+ set(SharedLib "shared")

@@ -1,0 +1,14 @@
+$OpenBSD: patch-codemp_server_sv_gameapi_cpp,v 1.1.1.1 2018/01/28 16:07:58 bcallah Exp $
+
+Index: codemp/server/sv_gameapi.cpp
+--- codemp/server/sv_gameapi.cpp.orig
++++ codemp/server/sv_gameapi.cpp
+@@ -2885,7 +2885,7 @@ void SV_BindGame( void ) {
+ 	static gameImport_t gi;
+ 	gameExport_t		*ret;
+ 	GetGameAPI_t		GetGameAPI;
+-	char				dllName[MAX_OSPATH] = "jampgame" ARCH_STRING DLL_EXT;
++	char				dllName[MAX_OSPATH] = "jampgame" DLL_EXT;
+ 
+ 	memset( &gi, 0, sizeof( gi ) );
+ 

@@ -1,0 +1,23 @@
+$OpenBSD: patch-codemp_qcommon_vm_cpp,v 1.1.1.1 2018/01/28 16:07:58 bcallah Exp $
+
+Index: codemp/qcommon/vm.cpp
+--- codemp/qcommon/vm.cpp.orig
++++ codemp/qcommon/vm.cpp
+@@ -137,7 +137,7 @@ vm_t *VM_CreateLegacy( vmSlots_t vmSlot, intptr_t( *sy
+ 	FS_FindPureDLL( vm->name );
+ 	vm->dllHandle = Sys_LoadLegacyGameDll( vm->name, &vm->legacy.main, VM_DllSyscall );
+ 
+-	Com_Printf( "VM_CreateLegacy: %s" ARCH_STRING DLL_EXT, vm->name );
++	Com_Printf( "VM_CreateLegacy: %s" DLL_EXT, vm->name );
+ 	if ( vm->dllHandle ) {
+ 		if ( com_developer->integer )
+ 			Com_Printf( " succeeded [0x%" PRIxPTR "]\n", (uintptr_t)vm->dllHandle );
+@@ -176,7 +176,7 @@ vm_t *VM_Create( vmSlots_t vmSlot ) {
+ 	FS_FindPureDLL( vm->name );
+ 	vm->dllHandle = Sys_LoadGameDll( vm->name, &vm->GetModuleAPI );
+ 
+-	Com_Printf( "VM_Create: %s" ARCH_STRING DLL_EXT, vm->name );
++	Com_Printf( "VM_Create: %s" DLL_EXT, vm->name );
+ 	if ( vm->dllHandle ) {
+ 		if ( com_developer->integer )
+ 			Com_Printf( " succeeded [0x%" PRIxPTR "+0x%" PRIxPTR "]\n", vm->dllHandle, (intptr_t)vm->GetModuleAPI - (intptr_t)vm->dllHandle );

@@ -1,0 +1,32 @@
+$OpenBSD: patch-shared_sys_sys_main_cpp,v 1.1.1.1 2018/01/28 16:07:58 bcallah Exp $
+
+Index: shared/sys/sys_main.cpp
+--- shared/sys/sys_main.cpp.orig
++++ shared/sys/sys_main.cpp
+@@ -466,7 +466,7 @@ void *Sys_LoadLegacyGameDll( const char *name, VMMainP
+ 	void	*libHandle = NULL;
+ 	char	filename[MAX_OSPATH];
+ 
+-	Com_sprintf (filename, sizeof(filename), "%s" ARCH_STRING DLL_EXT, name);
++	Com_sprintf (filename, sizeof(filename), "%s" DLL_EXT, name);
+ 
+ #if defined(_DEBUG)
+ 	libHandle = Sys_LoadLibrary( filename );
+@@ -548,7 +548,7 @@ void *Sys_LoadSPGameDll( const char *name, GetGameAPIP
+ 
+ 	assert( GetGameAPI );
+ 
+-	Com_sprintf (filename, sizeof(filename), "%s" ARCH_STRING DLL_EXT, name);
++	Com_sprintf (filename, sizeof(filename), "%s" DLL_EXT, name);
+ 
+ #if defined(MACOS_X) && !defined(_JK2EXE)
+     //First, look for the old-style mac .bundle that's inside a pk3
+@@ -597,7 +597,7 @@ void *Sys_LoadGameDll( const char *name, GetModuleAPIP
+ 	void	*libHandle = NULL;
+ 	char	filename[MAX_OSPATH];
+ 
+-	Com_sprintf (filename, sizeof(filename), "%s" ARCH_STRING DLL_EXT, name);
++	Com_sprintf (filename, sizeof(filename), "%s" DLL_EXT, name);
+ 
+ #if defined(_DEBUG)
+ 	libHandle = Sys_LoadLibrary( filename );
