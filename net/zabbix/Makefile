@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.133 2018/01/25 13:56:35 robert Exp $
+# $OpenBSD: Makefile,v 1.134 2018/01/28 11:06:59 robert Exp $
 
 COMMENT-main =		network and application monitoring - agent
 COMMENT-server =	network and application monitoring - server
@@ -111,6 +111,9 @@ WANTLIB-server +=	event pq
 .elif ${BACKEND} == "sqlite3"
 CONFIGURE_ARGS +=	--with-sqlite3 \
 			--disable-server
+# The proxy does not use jabber, so just disable the check
+CONFIGURE_ARGS +=	--without-jabber
+
 WANTLIB-proxy +=	sqlite3
 LIB_DEPENDS-proxy +=	databases/sqlite3
 .elif ${BACKEND} == "no_server"
