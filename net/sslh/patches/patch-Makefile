@@ -1,67 +1,9 @@
-$OpenBSD: patch-Makefile,v 1.5 2016/04/17 09:14:26 landry Exp $
---- Makefile.orig	Fri Feb  5 16:46:47 2016
-+++ Makefile	Sat Mar 19 20:27:50 2016
-@@ -12,58 +12,23 @@ PREFIX?=/usr
- BINDIR?=$(PREFIX)/sbin
- MANDIR?=$(PREFIX)/share/man/man8
- 
--MAN=sslh.8.gz	# man page name
-+MAN=sslh.8	# man page name
- 
- # End of configuration -- the rest should take care of
- # itself
- 
--ifneq ($(strip $(COV_TEST)),)
--    CFLAGS_COV=-fprofile-arcs -ftest-coverage
--endif
--
- CC ?= gcc
- CFLAGS ?=-Wall -g $(CFLAGS_COV)
- 
- LIBS=
- OBJS=common.o sslh-main.o probe.o tls.o
- 
--ifneq ($(strip $(USELIBWRAP)),)
--	LIBS:=$(LIBS) -lwrap
--	CPPFLAGS+=-DLIBWRAP
--endif
--
--ifneq ($(strip $(ENABLE_REGEX)),)
--	CPPFLAGS+=-DENABLE_REGEX
--endif
--
--ifneq ($(strip $(USELIBPCRE)),)
--	CPPFLAGS+=-DLIBPCRE
--	LIBS:=$(LIBS) -lpcre
--endif
--
--ifneq ($(strip $(USELIBCONFIG)),)
--	LIBS:=$(LIBS) -lconfig
--	CPPFLAGS+=-DLIBCONFIG
--endif
--
--ifneq ($(strip $(USELIBCAP)),)
--	LIBS:=$(LIBS) -lcap
--	CPPFLAGS+=-DLIBCAP
--endif
--
--ifneq ($(strip $(USESYSTEMD)),)
--        LIBS:=$(LIBS) -lsystemd
--        CPPFLAGS+=-DSYSTEMD
--endif
--
--
- all: sslh $(MAN) echosrv
- 
- .c.o: *.h
- 	$(CC) $(CFLAGS) $(CPPFLAGS) -c $<
- 
- version.h:
--	./genver.sh >version.h
- 
- sslh: sslh-fork sslh-select
- 
-@@ -82,7 +47,7 @@ echosrv: $(OBJS) echosrv.o
+$OpenBSD: patch-Makefile,v 1.6 2018/01/28 16:31:48 sthen Exp $
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -87,7 +83,7 @@ echosrv: version.h $(OBJS) echosrv.o
  	$(CC) $(CFLAGS) $(LDFLAGS) -o echosrv echosrv.o probe.o common.o tls.o $(LIBS)
  
  $(MAN): sslh.pod Makefile

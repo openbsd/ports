@@ -1,6 +1,7 @@
-$OpenBSD: patch-basic_cfg,v 1.4 2016/04/17 09:14:26 landry Exp $
---- basic.cfg.orig	Fri Feb  5 16:46:47 2016
-+++ basic.cfg	Sat Mar 19 20:28:39 2016
+$OpenBSD: patch-basic_cfg,v 1.5 2018/01/28 16:31:48 sthen Exp $
+Index: basic.cfg
+--- basic.cfg.orig
++++ basic.cfg
 @@ -7,7 +7,7 @@ inetd: false;
  numeric: false;
  transparent: false;
@@ -8,5 +9,5 @@ $OpenBSD: patch-basic_cfg,v 1.4 2016/04/17 09:14:26 landry Exp $
 -user: "nobody";
 +user: "_sslh";
  pidfile: "/var/run/sslh.pid";
- 
+ chroot: "/var/empty";
  
