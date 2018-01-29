@@ -1,4 +1,4 @@
-# $OpenBSD: python.port.mk,v 1.95 2017/07/08 08:28:00 landry Exp $
+# $OpenBSD: python.port.mk,v 1.96 2018/01/29 20:49:24 landry Exp $
 #
 #	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
@@ -128,7 +128,7 @@ MODPY_SITEPKG =		${MODPY_LIBDIR}/site-packages
 MODPY_SETUP ?=		setup.py
 
 # build or build_ext are commonly used
-MODPY_DISTUTILS_BUILD ?=	build --build-base=${WRKSRC}
+MODPY_DISTUTILS_BUILD ?=	build --build-base=${WRKBUILD}
 
 .if ${MODPY_SETUPUTILS:L} == "yes"
 MODPY_DISTUTILS_INSTALL ?=	install --prefix=${LOCALBASE} \
