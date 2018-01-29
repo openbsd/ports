@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2018/01/06 11:39:24 feinerer Exp $
+# $OpenBSD: Makefile,v 1.27 2018/01/29 15:47:11 feinerer Exp $
 
 COMMENT=	command-line utility to rip and encode audio cds
 
-DISTNAME=	abcde-2.8.1
+DISTNAME=	abcde-2.7.2
+EPOCH=		0
 CATEGORIES=	audio
 
 HOMEPAGE=	https://abcde.einval.com/
