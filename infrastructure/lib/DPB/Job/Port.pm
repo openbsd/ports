@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.178 2018/01/19 11:59:47 espie Exp $
+# $OpenBSD: Port.pm,v 1.179 2018/01/29 15:45:29 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -1127,6 +1127,10 @@ sub new
 			}
 		}
 	}
+	# note that lonesome *and* parallel can be specified
+	if ($v->{info}->has_property('lonesome')) {
+		$job->{lonesome} = 1;
+	} 
 	if ($prop->{parallel} && $v->{info}->has_property('parallel')) {
 		$job->{parallel} = $prop->{parallel};
 	}

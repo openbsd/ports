@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortBuilder.pm,v 1.79 2017/12/31 13:01:53 espie Exp $
+# $OpenBSD: PortBuilder.pm,v 1.80 2018/01/29 15:45:29 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -247,7 +247,11 @@ sub build
 	    });
 	$job->set_watch($self->logger, $v);
 	$core->start_job($job, $v);
-	if ($job->{parallel}) {
+	# lonesome takes precedence for swallowing everything
+	if ($job->{lonesome}) {
+		# make it arbitrarily high
+		$core->can_swallow(1000);
+	} elsif ($job->{parallel}) {
 		$core->can_swallow($job->{parallel}-1);
 	}
 	print $lock "host=", $core->hostname, "\n",
