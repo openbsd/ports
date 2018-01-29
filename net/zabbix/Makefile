@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.134 2018/01/28 11:06:59 robert Exp $
+# $OpenBSD: Makefile,v 1.135 2018/01/29 08:40:45 sthen Exp $
 
 COMMENT-main =		network and application monitoring - agent
 COMMENT-server =	network and application monitoring - server
@@ -6,6 +6,7 @@ COMMENT-proxy =		network and application monitoring - proxy
 COMMENT-web =		network and application monitoring - web frontend
 
 VERSION =		3.4.6
+REVISION-proxy =	0
 DISTNAME =		zabbix-${VERSION}
 FULLPKGNAME-main =	zabbix-agent-${VERSION}
 FULLPKGPATH-main =	net/zabbix,-main
