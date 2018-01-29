@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2017/10/31 15:53:28 juanfra Exp $
+@comment $OpenBSD: PLIST,v 1.12 2018/01/29 21:06:12 juanfra Exp $
 @conflict racket-<6.2
 @pkgpath lang/racket
 @bin bin/racket
@@ -242,6 +242,10 @@ share/racket/collects/ffi/unsafe/compiled/nsstring_rkt.dep
 share/racket/collects/ffi/unsafe/compiled/nsstring_rkt.zo
 share/racket/collects/ffi/unsafe/compiled/objc_rkt.dep
 share/racket/collects/ffi/unsafe/compiled/objc_rkt.zo
+share/racket/collects/ffi/unsafe/compiled/port_rkt.dep
+share/racket/collects/ffi/unsafe/compiled/port_rkt.zo
+share/racket/collects/ffi/unsafe/compiled/schedule_rkt.dep
+share/racket/collects/ffi/unsafe/compiled/schedule_rkt.zo
 share/racket/collects/ffi/unsafe/compiled/try-atomic_rkt.dep
 share/racket/collects/ffi/unsafe/compiled/try-atomic_rkt.zo
 share/racket/collects/ffi/unsafe/custodian.rkt
@@ -256,11 +260,13 @@ share/racket/collects/ffi/unsafe/global.rkt
 share/racket/collects/ffi/unsafe/nsalloc.rkt
 share/racket/collects/ffi/unsafe/nsstring.rkt
 share/racket/collects/ffi/unsafe/objc.rkt
+share/racket/collects/ffi/unsafe/port.rkt
 share/racket/collects/ffi/unsafe/private/
 share/racket/collects/ffi/unsafe/private/compiled/
 share/racket/collects/ffi/unsafe/private/compiled/win32_rkt.dep
 share/racket/collects/ffi/unsafe/private/compiled/win32_rkt.zo
 share/racket/collects/ffi/unsafe/private/win32.rkt
+share/racket/collects/ffi/unsafe/schedule.rkt
 share/racket/collects/ffi/unsafe/try-atomic.rkt
 share/racket/collects/ffi/vector.rkt
 share/racket/collects/ffi/winapi.rkt
@@ -1763,8 +1769,6 @@ share/racket/collects/syntax/parse/private/compiled/minimatch_rkt.dep
 share/racket/collects/syntax/parse/private/compiled/minimatch_rkt.zo
 share/racket/collects/syntax/parse/private/compiled/opt_rkt.dep
 share/racket/collects/syntax/parse/private/compiled/opt_rkt.zo
-share/racket/collects/syntax/parse/private/compiled/parse-aux_rkt.dep
-share/racket/collects/syntax/parse/private/compiled/parse-aux_rkt.zo
 share/racket/collects/syntax/parse/private/compiled/parse_rkt.dep
 share/racket/collects/syntax/parse/private/compiled/parse_rkt.zo
 share/racket/collects/syntax/parse/private/compiled/rep-attrs_rkt.dep
@@ -1798,7 +1802,6 @@ share/racket/collects/syntax/parse/private/litconv.rkt
 share/racket/collects/syntax/parse/private/make.rkt
 share/racket/collects/syntax/parse/private/minimatch.rkt
 share/racket/collects/syntax/parse/private/opt.rkt
-share/racket/collects/syntax/parse/private/parse-aux.rkt
 share/racket/collects/syntax/parse/private/parse.rkt
 share/racket/collects/syntax/parse/private/rep-attrs.rkt
 share/racket/collects/syntax/parse/private/rep-data.rkt
