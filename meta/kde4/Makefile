@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2017/04/16 12:43:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2018/01/29 15:39:02 jca Exp $
 
 PKGNAME =		kde4-${MODKDE4_VERSION}
 
@@ -97,7 +97,7 @@ KDE4-edu = \
 	${MODKDE4_DEP_DIR}/parley	\
 	${MODKDE4_DEP_DIR}/rocs		\
 	${MODKDE4_DEP_DIR}/step
-# broken
+# XXX not in ports
 #	${MODKDE4_DEP_DIR}/kalzium
 
 KDE4-graphics = \
