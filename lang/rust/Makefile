@@ -1,9 +1,13 @@
-# $OpenBSD: Makefile,v 1.58 2018/01/27 09:23:05 landry Exp $
+# $OpenBSD: Makefile,v 1.59 2018/01/29 18:45:39 landry Exp $
 
 # snapshots are only available for amd64 and i386, for now
 ONLY_FOR_ARCHS =	amd64 i386
 
+.if "${MACHINE_ARCH}" == "i386"
+DPB_PROPERTIES =	lonesome
+.else
 DPB_PROPERTIES =	parallel
+.endif
 
 COMMENT-main =		compiler for Rust Language
 COMMENT-doc =		html documentation for rustc
