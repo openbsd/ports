@@ -1,7 +1,8 @@
-$OpenBSD: patch-configure,v 1.4 2014/07/09 09:16:20 ajacoutot Exp $
---- configure.orig	Wed Jul  9 10:49:15 2014
-+++ configure	Wed Jul  9 10:49:24 2014
-@@ -4391,7 +4391,7 @@ fi
+$OpenBSD: patch-configure,v 1.5 2018/01/29 00:04:23 jca Exp $
+Index: configure
+--- configure.orig
++++ configure
+@@ -4410,7 +4410,7 @@ fi
  if test "$use_debug" = "yes"; then
  	CFLAGS="${CFLAGS} -g -DENABLE_DEBUG"
  else

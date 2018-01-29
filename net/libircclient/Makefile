@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.8 2016/03/10 11:50:13 naddy Exp $ 
+# $OpenBSD: Makefile,v 1.9 2018/01/29 00:04:23 jca Exp $
 
 COMMENT =		library which implements the IRC protocol
-DISTNAME =		libircclient-1.8
-REVISION =		0
+DISTNAME =		libircclient-1.9
 CATEGORIES =		net
 HOMEPAGE =		http://www.ulduzsoft.com/linux/libircclient/
 
