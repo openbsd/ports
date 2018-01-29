@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_common_compat_c,v 1.1 2018/01/29 21:44:30 gsoares Exp $
+
+Index: src/common/compat.c
+--- src/common/compat.c.orig
++++ src/common/compat.c
+@@ -20,7 +20,8 @@
+ #include "compat.h"
+ 
+ #if (defined(__linux__) || defined(__GLIBC__) || defined(__FreeBSD__) || \
+-		defined(__darwin__) || defined(__NetBSD__))
++		defined(__darwin__) || defined(__NetBSD__) || \
++		defined(__OpenBSD__))
+ 
+ /*
+  * Initialize a pthread mutex. This never fails.
+@@ -97,4 +98,4 @@ void tsocks_once(tsocks_once_t *o, void (*init_routine
+ 	tsocks_mutex_unlock(&o->mutex);
+ }
+ 
+-#endif /* __linux__, __GLIBC__, __darwin__, __FreeBSD__, __NetBSD__ */
++#endif /* __linux__, __GLIBC__, __darwin__, __FreeBSD__, __NetBSD__, __OpenBSD__ */

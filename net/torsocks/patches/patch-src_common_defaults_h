@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_common_defaults_h,v 1.1 2018/01/29 21:44:30 gsoares Exp $
+
+Index: src/common/defaults.h
+--- src/common/defaults.h.orig
++++ src/common/defaults.h
+@@ -39,7 +39,7 @@
+ #define DEFAULT_DOMAIN_NAME_SIZE	255
+ 
+ #define DEFAULT_CONF_FILENAME		"torsocks.conf"
+-#define DEFAULT_CONF_FILE			CONFDIR "/tor/" DEFAULT_CONF_FILENAME
++#define DEFAULT_CONF_FILE			CONFDIR "/" DEFAULT_CONF_FILENAME
+ #define DEFAULT_CONF_FILE_ENV		"TORSOCKS_CONF_FILE"
+ 
+ /*

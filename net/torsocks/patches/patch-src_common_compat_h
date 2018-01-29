@@ -1,0 +1,43 @@
+$OpenBSD: patch-src_common_compat_h,v 1.1 2018/01/29 21:44:30 gsoares Exp $
+
+Index: src/common/compat.h
+--- src/common/compat.h.orig
++++ src/common/compat.h
+@@ -23,7 +23,8 @@
+ #endif
+ 
+ #if (defined(__linux__) || defined(__GLIBC__) || defined(__FreeBSD__) || \
+-		defined(__darwin__) || defined(__NetBSD__))
++		defined(__darwin__) || defined(__NetBSD__) || \
++		defined(__OpenBSD__))
+ 
+ #ifndef RTLD_NEXT
+ #define RTLD_NEXT	((void *) -1)
+@@ -58,7 +59,7 @@ void tsocks_once(tsocks_once_t *o, void (*init_routine
+ 
+ #else
+ #error "OS not supported."
+-#endif /* __linux__, __GLIBC__, __darwin__, __FreeBSD__, __NetBSD__ */
++#endif /* __linux__, __GLIBC__, __darwin__, __FreeBSD__, __NetBSD__, __OpenBSD__ */
+ 
+ #if defined(__linux__)
+ #include <unistd.h>
+@@ -176,7 +177,8 @@ void tsocks_once(tsocks_once_t *o, void (*init_routine
+ 
+ #endif /* __linux__ */
+ 
+-#if (defined(__FreeBSD__) || defined(__FreeBSD_kernel__) || defined(__darwin__) || defined(__NetBSD__))
++#if (defined(__FreeBSD__) || defined(__FreeBSD_kernel__) || defined(__darwin__) || \
++		defined(__NetBSD__) || defined(__OpenBSD__))
+ 
+ #include <sys/syscall.h>
+ #include <unistd.h>
+@@ -195,7 +197,7 @@ void tsocks_once(tsocks_once_t *o, void (*init_routine
+ #define TSOCKS_NR_LISTEN    SYS_listen
+ #define TSOCKS_NR_RECVMSG   SYS_recvmsg
+ 
+-#endif /* __FreeBSD__, __FreeBSD_kernel__, __darwin__, __NetBSD__ */
++#endif /* __FreeBSD__, __FreeBSD_kernel__, __darwin__, __NetBSD__, __OpenBSD__ */
+ 
+ #define TSOCKS_CLASSA_NET   0xff000000
+ #define TSOCKS_LOOPBACK_NET 0x7f000000

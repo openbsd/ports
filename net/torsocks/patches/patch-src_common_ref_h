@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_common_ref_h,v 1.1 2018/01/29 21:44:30 gsoares Exp $
+
+Index: src/common/ref.h
+--- src/common/ref.h.orig
++++ src/common/ref.h
+@@ -27,7 +27,7 @@ struct ref {
+ };
+ 
+ #if (defined(__linux__) || defined(__GLIBC__) || defined(__FreeBSD__) || \
+-		defined(__darwin__) || defined(__NetBSD__))
++		defined(__darwin__) || defined(__NetBSD__) || defined(__OpenBSD__))
+ 
+ /*
+  * Get a reference by incrementing the refcount.
+@@ -58,6 +58,6 @@ static inline void ref_put(struct ref *r,
+ 
+ #else
+ #error "OS not supported"
+-#endif /* __linux__, __GLIBC__, __FreeBSD__, __darwin__, __NetBSD__ */
++#endif /* __linux__, __GLIBC__, __FreeBSD__, __darwin__, __NetBSD__, __OpenBSD__ */
+ 
+ #endif /* TORSOCKS_REF_H */
