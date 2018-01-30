@@ -1,4 +1,4 @@
-#${MODPY_COMMENT} $OpenBSD: Makefile,v 1.1694 2018/01/26 20:29:08 rsadowski Exp $
+#${MODPY_COMMENT} $OpenBSD: Makefile,v 1.1695 2018/01/30 09:09:08 fcambus Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -401,6 +401,8 @@
      SUBDIR += lua-cliargs,lua53
      SUBDIR += lua-cmsgpack
      SUBDIR += lua-cmsgpack,lua52
+     SUBDIR += lua-compat53
+     SUBDIR += lua-compat53,lua52
      SUBDIR += lua-lgi
      SUBDIR += lua-lgi,lua52
      SUBDIR += lua-lgi,lua53
