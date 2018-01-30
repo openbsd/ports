@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.39 2017/12/02 12:44:33 edd Exp $
+# $OpenBSD: Makefile,v 1.40 2018/01/30 15:06:37 jca Exp $
 
 COMMENT=		GnuPG Made Easy
 
 DISTNAME=		gpgme-1.9.0
+REVISION=		0
 CATEGORIES=		security devel
 
 SHARED_LIBS +=  gpgme                21.0     # 29.0
 
-HOMEPAGE=		http://www.gnupg.org/gpgme.html
+HOMEPAGE=		https://www.gnupg.org/software/gpgme/index.html
 
 # GPLv2 - LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes

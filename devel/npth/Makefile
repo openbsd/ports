@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.7 2017/08/22 21:07:45 edd Exp $
+# $OpenBSD: Makefile,v 1.8 2018/01/30 15:06:37 jca Exp $
 
 COMMENT=	new GNU Portable Threads Library
 
 DISTNAME=	npth-1.5
+REVISION=	0
 
 SHARED_LIBS=	npth 1.0	# 1.1
 
 CATEGORIES=	devel
 
-HOMEPAGE=	http://www.gnupg.org
+HOMEPAGE=	https://www.gnupg.org/software/npth/index.html
 
 MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
 

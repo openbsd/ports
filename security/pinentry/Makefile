@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2018/01/19 15:35:18 jca Exp $
+# $OpenBSD: Makefile,v 1.25 2018/01/30 15:06:37 jca Exp $
 
 COMMENT-main = 	PIN or passphrase entry dialog (ncurses interface)
 COMMENT-gtk2 = 	PIN or passphrase entry dialog (gtk2 interface)
 COMMENT-gnome3 =PIN or passphrase entry dialog (GNOME 3 interface)
 
 VERSION = 	1.1.0
+REVISION =	0
 DISTNAME = 	pinentry-${VERSION}
 CATEGORIES = 	security
 EXTRACT_SUFX =	.tar.bz2
@@ -15,7 +16,7 @@ PKGNAME-gnome3 =pinentry-gnome3-${VERSION}
 
 MASTER_SITES = 	${MASTER_SITE_GNUPG:=pinentry/}
 
-HOMEPAGE = 	http://www.gnupg.org/related_software/pinentry/index.en.html
+HOMEPAGE = 	https://www.gnupg.org/related_software/pinentry/index.en.html
 
 MAINTAINER = 	Pierre-Emmanuel Andre <pea@openbsd.org>
 

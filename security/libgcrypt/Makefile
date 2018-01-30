@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.61 2017/12/14 14:30:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.62 2018/01/30 15:06:37 jca Exp $
 
 COMMENT=		crypto library based on code used in GnuPG
 
 DISTNAME=		libgcrypt-1.8.2
+REVISION=		0
 CATEGORIES=		security
 
 SHARED_LIBS +=  gcrypt               19.5     # 22.2
 
-HOMEPAGE=		http://www.gnupg.org/
+HOMEPAGE=		https://www.gnupg.org/software/libgcrypt/index.html
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
