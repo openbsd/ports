@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1046 2018/01/19 22:26:42 jung Exp $
+# $OpenBSD: Makefile,v 1.1047 2018/01/30 09:21:42 fcambus Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -217,6 +217,9 @@
      SUBDIR += lldpd
      SUBDIR += lldpd,snmp
      SUBDIR += loudmouth
+     SUBDIR += lua-mmdb
+     SUBDIR += lua-mmdb,lua52
+     SUBDIR += lua-mmdb,lua53
      SUBDIR += lua-psl
      SUBDIR += lua-psl,lua52
      SUBDIR += lua-psl,lua53
