@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2018/01/30 03:23:06 danj Exp $
+# $OpenBSD: Makefile,v 1.7 2018/01/30 03:27:54 danj Exp $
 
 COMMENT =		line oriented search tool using Rust's regex library #'
 
@@ -65,10 +65,10 @@ CONFIGURE_STYLE =	cargo
 post-install:
 	chmod a+rx ${PREFIX}/bin/rg
 	${INSTALL_MAN} ${WRKSRC}/doc/rg.1 ${PREFIX}/man/man1/
-	mkdir -p ${PREFIX}/share/bash-completion/completions
+	${INSTALL_DATA_DIR} ${PREFIX}/share/bash-completion/completions
 	${INSTALL_DATA} ${MODCARGO_TARGET_DIR}/release/build/ripgrep-*/out/rg.bash-completion \
 		${PREFIX}/share/bash-completion/completions/rg
-	mkdir -p ${PREFIX}/share/zsh/site-functions
+	${INSTALL_DATA_DIR} ${PREFIX}/share/zsh/site-functions
 	${INSTALL_DATA} ${MODCARGO_TARGET_DIR}/release/build/ripgrep-*/out/_rg.ps1 \
 		${PREFIX}/share/zsh/site-functions/_rg
 
