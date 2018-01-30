@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/01/30 09:07:32 fcambus Exp $
+lib/lua/${MODLUA_VERSION}/compat53/
+lib/lua/${MODLUA_VERSION}/compat53/string.so
+lib/lua/${MODLUA_VERSION}/compat53/table.so
+lib/lua/${MODLUA_VERSION}/compat53/utf8.so
+share/doc/${FULLPKGNAME}/
+share/doc/${FULLPKGNAME}/README.md
+share/lua/${MODLUA_VERSION}/compat53/
+share/lua/${MODLUA_VERSION}/compat53/init.lua
+share/lua/${MODLUA_VERSION}/compat53/module.lua
