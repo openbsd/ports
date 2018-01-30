@@ -1,0 +1,15 @@
+$OpenBSD: patch-pokerth_pro,v 1.1 2018/01/30 14:47:25 rsadowski Exp $
+
+build server
+
+Index: pokerth.pro
+--- pokerth.pro.orig
++++ pokerth.pro
+@@ -7,6 +7,7 @@ official_server {
+ }
+ client: {
+     SUBDIRS += pokerth_game.pro
++    SUBDIRS += pokerth_server.pro
+ }
+ !mac:!gui_800x480:!client:!qml-client {
+     SUBDIRS += pokerth_server.pro chatcleaner.pro
