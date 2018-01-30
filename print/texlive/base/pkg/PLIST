@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.32 2017/12/29 17:43:35 edd Exp $
+@comment $OpenBSD: PLIST,v 1.33 2018/01/30 20:35:38 edd Exp $
 @conflict teTeX_base-*
 @conflict pdfjam-*
 @conflict ht-<2
-@conflict texlive_texmf-buildset-<2016
+@conflict texlive_texmf-buildset-<2017
 @pkgpath print/teTeX/base
 @pkgpath print/pdfjam
 @pkgpath print/teTeX/base,-fmt
@@ -23,6 +23,7 @@ bin/arlatex
 bin/authorindex
 bin/autoinst
 @bin bin/autosp
+bin/bbl2bib
 bin/bg5+latex
 bin/bg5+pdflatex
 @bin bin/bg5conv
@@ -30,6 +31,7 @@ bin/bg5latex
 bin/bg5pdflatex
 bin/bibdoiadd
 bin/bibexport
+bin/bibmradd
 @bin bin/bibtex
 @bin bin/bibtex8
 @bin bin/bibtexu
@@ -114,6 +116,7 @@ bin/fig4latex
 bin/findhyph
 bin/fmtutil
 bin/fmtutil-sys
+bin/fmtutil-user
 bin/fontinst
 bin/fragmaster
 bin/gbklatex
@@ -140,6 +143,7 @@ bin/jadetex
 bin/jamo-normalize
 bin/kanji-config-updmap
 bin/kanji-config-updmap-sys
+bin/kanji-config-updmap-user
 bin/kanji-fontmap-creator
 bin/komkindex
 @bin bin/kpseaccess
@@ -154,7 +158,9 @@ bin/kpsexpand
 bin/lamed
 bin/latex
 bin/latex-git-log
+bin/latex-papersize
 bin/latex2man
+bin/latex2nemeth
 bin/latexdiff
 bin/latexdiff-vc
 bin/latexfileversion
@@ -175,6 +181,7 @@ bin/lualatex
 bin/luaotfload-tool
 @bin bin/luatex
 bin/luatools
+bin/lwarpmk
 bin/m-tx
 @bin bin/mag
 bin/make4ht
@@ -254,6 +261,7 @@ bin/pdfjam-slides3up
 bin/pdfjam-slides6up
 bin/pdfjoin
 bin/pdflatex
+bin/pdflatexpicscale
 bin/pdfmex
 bin/pdfnup
 @bin bin/pdfopen
@@ -276,7 +284,6 @@ bin/pkfix-helper
 bin/platex
 @bin bin/pltotf
 @bin bin/pmpost
-bin/pmx2pdf
 @bin bin/pmxab
 bin/pmxchords
 bin/pn2pdf
@@ -339,6 +346,9 @@ bin/texloganalyser
 bin/texlua
 bin/texluac
 bin/texmfstart
+bin/texosquery
+bin/texosquery-jre5
+bin/texosquery-jre8
 bin/texsis
 @bin bin/tftopl
 bin/thumbpdf
@@ -355,6 +365,7 @@ bin/ulqda
 @bin bin/upbibtex
 bin/updmap
 bin/updmap-sys
+bin/updmap-user
 bin/updvitomp
 @bin bin/updvitype
 bin/uplatex
@@ -381,10 +392,12 @@ bin/xdvi
 @bin bin/xdvipdfmx
 bin/xelatex
 @bin bin/xetex
+bin/xhlatex
 bin/xmltex
 bin/yplan
 include/kpathsea/
 include/kpathsea/absolute.h
+include/kpathsea/c-auto.h
 include/kpathsea/c-ctype.h
 include/kpathsea/c-dir.h
 include/kpathsea/c-errno.h
@@ -441,8 +454,6 @@ include/texlua52/lua.h
 include/texlua52/lua.hpp
 include/texlua52/luaconf.h
 include/texlua52/lualib.h
-lib/kpathsea/
-lib/kpathsea/c-auto.h
 lib/libkpathsea.a
 lib/libkpathsea.la
 @lib lib/libkpathsea.so.${LIBkpathsea_VERSION}
@@ -462,6 +473,8 @@ lib/pkgconfig/texlua52.pc
 @exec mktexlsr > /dev/null 2>&1
 @unexec-delete rm -f %D/share/texmf-dist/ls-R
 @unexec-delete rm -f %D/share/texmf-var/ls-R
+@unexec-delete rm -f %D/share/texmf-var/luatex-cache/context/0399a8df3aef8d154781d0a9c2b8e28d/trees/*
+@unexec-delete if [ -d %D/share/texmf-var/luatex-cache/context/0399a8df3aef8d154781d0a9c2b8e28d/trees/ ]; then rmdir %D/share/texmf-var/luatex-cache/context/0399a8df3aef8d154781d0a9c2b8e28d/trees/; fi
 @unexec-delete rm -f %D/share/texmf/ls-R
 @unexec-delete rm -f %D/share/texmf-local/ls-R
 ${P5SITE}/TeXLive/

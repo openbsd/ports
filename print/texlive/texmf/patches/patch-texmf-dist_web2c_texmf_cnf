@@ -1,6 +1,7 @@
-$OpenBSD: patch-texmf-dist_web2c_texmf_cnf,v 1.5 2017/05/21 11:57:51 edd Exp $
---- texmf-dist/web2c/texmf.cnf.origy	Thu May 12 23:56:32 2016
-+++ texmf-dist/web2c/texmf.cnf	Thu Dec 29 20:55:14 2016
+$OpenBSD: patch-texmf-dist_web2c_texmf_cnf,v 1.6 2018/01/30 20:35:54 edd Exp $
+Index: texmf-dist/web2c/texmf.cnf
+--- texmf-dist/web2c/texmf.cnf.orig
++++ texmf-dist/web2c/texmf.cnf
 @@ -1,6 +1,10 @@
  % original texmf.cnf -- runtime path configuration file for kpathsea.
  % Public domain.
@@ -35,7 +36,7 @@ $OpenBSD: patch-texmf-dist_web2c_texmf_cnf,v 1.5 2017/05/21 11:57:51 edd Exp $
  
  % TEXMFSYSVAR, where *-sys store cached runtime data.
  TEXMFSYSVAR = $TEXMFROOT/texmf-var
-@@ -443,7 +446,7 @@ LUAINPUTS.dvilualatex = .;$TEXMF/scripts/{$progname,$e
+@@ -457,7 +460,7 @@ LUAINPUTS.dvilualatex = .;$TEXMF/scripts/{$progname,$e
  LUAINPUTS = .;$TEXMF/scripts/{$progname,$engine,}/{lua,}//;$TEXMF/tex/{luatex,plain,generic,}//
  
  % Lua needs to look for binary lua libraries distributed with packages.

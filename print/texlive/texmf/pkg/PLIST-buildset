@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST-buildset,v 1.7 2017/05/21 11:57:52 edd Exp $
+@comment $OpenBSD: PLIST-buildset,v 1.8 2018/01/30 20:35:55 edd Exp $
 @conflict teTeX_texmf-*
-@conflict texlive_base-<2016
-@conflict texlive_texmf-docs-<2016
-@conflict texlive_texmf-minimal-<2016
-@conflict texlive_texmf-full-<2016
-@conflict texlive_texmf-context-<2016
+@conflict texlive_base-<2017
+@conflict texlive_texmf-docs-<2017
+@conflict texlive_texmf-minimal-<2017
+@conflict texlive_texmf-full-<2017
+@conflict texlive_texmf-context-<2017
 @pkgpath print/texlive/texmf-minimal
 @pkgpath print/teTeX/texmf
 share/texmf-local/
@@ -59,7 +59,6 @@ share/texmf-dist/dvips/
 share/texmf-dist/dvips/base/
 share/texmf-dist/dvips/base/color.pro
 share/texmf-dist/dvips/base/crop.pro
-share/texmf-dist/dvips/base/ehandler.ps
 share/texmf-dist/dvips/base/finclude.pro
 share/texmf-dist/dvips/base/hps.pro
 share/texmf-dist/dvips/base/resolution400.ps
@@ -897,6 +896,8 @@ share/texmf-dist/fonts/map/vtex/cm-super/cm-super.ali
 share/texmf-dist/fonts/opentype/
 share/texmf-dist/fonts/opentype/public/
 share/texmf-dist/fonts/opentype/public/inconsolata/
+share/texmf-dist/fonts/opentype/public/inconsolata/InconsolataN-Bold.otf
+share/texmf-dist/fonts/opentype/public/inconsolata/InconsolataN-Regular.otf
 share/texmf-dist/fonts/opentype/public/inconsolata/Inconsolatazi4-Bold.otf
 share/texmf-dist/fonts/opentype/public/inconsolata/Inconsolatazi4-Regular.otf
 share/texmf-dist/fonts/pk/
@@ -2791,6 +2792,22 @@ share/texmf-dist/fonts/tfm/public/inconsolata/ly1-zi4b-4.tfm
 share/texmf-dist/fonts/tfm/public/inconsolata/ly1-zi4b-5.tfm
 share/texmf-dist/fonts/tfm/public/inconsolata/ly1-zi4b-6.tfm
 share/texmf-dist/fonts/tfm/public/inconsolata/ly1-zi4b-7.tfm
+share/texmf-dist/fonts/tfm/public/inconsolata/ly1-zi4nb-0.tfm
+share/texmf-dist/fonts/tfm/public/inconsolata/ly1-zi4nb-1.tfm
+share/texmf-dist/fonts/tfm/public/inconsolata/ly1-zi4nb-2.tfm
+share/texmf-dist/fonts/tfm/public/inconsolata/ly1-zi4nb-3.tfm
+share/texmf-dist/fonts/tfm/public/inconsolata/ly1-zi4nb-4.tfm
+share/texmf-dist/fonts/tfm/public/inconsolata/ly1-zi4nb-5.tfm
+share/texmf-dist/fonts/tfm/public/inconsolata/ly1-zi4nb-6.tfm
+share/texmf-dist/fonts/tfm/public/inconsolata/ly1-zi4nb-7.tfm
+share/texmf-dist/fonts/tfm/public/inconsolata/ly1-zi4nr-0.tfm
+share/texmf-dist/fonts/tfm/public/inconsolata/ly1-zi4nr-1.tfm
+share/texmf-dist/fonts/tfm/public/inconsolata/ly1-zi4nr-2.tfm
+share/texmf-dist/fonts/tfm/public/inconsolata/ly1-zi4nr-3.tfm
+share/texmf-dist/fonts/tfm/public/inconsolata/ly1-zi4nr-4.tfm
+share/texmf-dist/fonts/tfm/public/inconsolata/ly1-zi4nr-5.tfm
+share/texmf-dist/fonts/tfm/public/inconsolata/ly1-zi4nr-6.tfm
+share/texmf-dist/fonts/tfm/public/inconsolata/ly1-zi4nr-7.tfm
 share/texmf-dist/fonts/tfm/public/inconsolata/ly1-zi4r-0.tfm
 share/texmf-dist/fonts/tfm/public/inconsolata/ly1-zi4r-1.tfm
 share/texmf-dist/fonts/tfm/public/inconsolata/ly1-zi4r-2.tfm
@@ -2807,6 +2824,22 @@ share/texmf-dist/fonts/tfm/public/inconsolata/ot1-zi4b-4.tfm
 share/texmf-dist/fonts/tfm/public/inconsolata/ot1-zi4b-5.tfm
 share/texmf-dist/fonts/tfm/public/inconsolata/ot1-zi4b-6.tfm
 share/texmf-dist/fonts/tfm/public/inconsolata/ot1-zi4b-7.tfm
+share/texmf-dist/fonts/tfm/public/inconsolata/ot1-zi4nb-0.tfm
+share/texmf-dist/fonts/tfm/public/inconsolata/ot1-zi4nb-1.tfm
+share/texmf-dist/fonts/tfm/public/inconsolata/ot1-zi4nb-2.tfm
+share/texmf-dist/fonts/tfm/public/inconsolata/ot1-zi4nb-3.tfm
+share/texmf-dist/fonts/tfm/public/inconsolata/ot1-zi4nb-4.tfm
+share/texmf-dist/fonts/tfm/public/inconsolata/ot1-zi4nb-5.tfm
+share/texmf-dist/fonts/tfm/public/inconsolata/ot1-zi4nb-6.tfm
+share/texmf-dist/fonts/tfm/public/inconsolata/ot1-zi4nb-7.tfm
+share/texmf-dist/fonts/tfm/public/inconsolata/ot1-zi4nr-0.tfm
+share/texmf-dist/fonts/tfm/public/inconsolata/ot1-zi4nr-1.tfm
+share/texmf-dist/fonts/tfm/public/inconsolata/ot1-zi4nr-2.tfm
+share/texmf-dist/fonts/tfm/public/inconsolata/ot1-zi4nr-3.tfm
+share/texmf-dist/fonts/tfm/public/inconsolata/ot1-zi4nr-4.tfm
+share/texmf-dist/fonts/tfm/public/inconsolata/ot1-zi4nr-5.tfm
+share/texmf-dist/fonts/tfm/public/inconsolata/ot1-zi4nr-6.tfm
+share/texmf-dist/fonts/tfm/public/inconsolata/ot1-zi4nr-7.tfm
 share/texmf-dist/fonts/tfm/public/inconsolata/ot1-zi4r-0.tfm
 share/texmf-dist/fonts/tfm/public/inconsolata/ot1-zi4r-1.tfm
 share/texmf-dist/fonts/tfm/public/inconsolata/ot1-zi4r-2.tfm
@@ -2823,6 +2856,22 @@ share/texmf-dist/fonts/tfm/public/inconsolata/qx-zi4b-4.tfm
 share/texmf-dist/fonts/tfm/public/inconsolata/qx-zi4b-5.tfm
 share/texmf-dist/fonts/tfm/public/inconsolata/qx-zi4b-6.tfm
 share/texmf-dist/fonts/tfm/public/inconsolata/qx-zi4b-7.tfm
+share/texmf-dist/fonts/tfm/public/inconsolata/qx-zi4nb-0.tfm
+share/texmf-dist/fonts/tfm/public/inconsolata/qx-zi4nb-1.tfm
+share/texmf-dist/fonts/tfm/public/inconsolata/qx-zi4nb-2.tfm
+share/texmf-dist/fonts/tfm/public/inconsolata/qx-zi4nb-3.tfm
+share/texmf-dist/fonts/tfm/public/inconsolata/qx-zi4nb-4.tfm
+share/texmf-dist/fonts/tfm/public/inconsolata/qx-zi4nb-5.tfm
+share/texmf-dist/fonts/tfm/public/inconsolata/qx-zi4nb-6.tfm
+share/texmf-dist/fonts/tfm/public/inconsolata/qx-zi4nb-7.tfm
+share/texmf-dist/fonts/tfm/public/inconsolata/qx-zi4nr-0.tfm
+share/texmf-dist/fonts/tfm/public/inconsolata/qx-zi4nr-1.tfm
+share/texmf-dist/fonts/tfm/public/inconsolata/qx-zi4nr-2.tfm
+share/texmf-dist/fonts/tfm/public/inconsolata/qx-zi4nr-3.tfm
+share/texmf-dist/fonts/tfm/public/inconsolata/qx-zi4nr-4.tfm
+share/texmf-dist/fonts/tfm/public/inconsolata/qx-zi4nr-5.tfm
+share/texmf-dist/fonts/tfm/public/inconsolata/qx-zi4nr-6.tfm
+share/texmf-dist/fonts/tfm/public/inconsolata/qx-zi4nr-7.tfm
 share/texmf-dist/fonts/tfm/public/inconsolata/qx-zi4r-0.tfm
 share/texmf-dist/fonts/tfm/public/inconsolata/qx-zi4r-1.tfm
 share/texmf-dist/fonts/tfm/public/inconsolata/qx-zi4r-2.tfm
@@ -2839,6 +2888,22 @@ share/texmf-dist/fonts/tfm/public/inconsolata/t1-zi4b-4.tfm
 share/texmf-dist/fonts/tfm/public/inconsolata/t1-zi4b-5.tfm
 share/texmf-dist/fonts/tfm/public/inconsolata/t1-zi4b-6.tfm
 share/texmf-dist/fonts/tfm/public/inconsolata/t1-zi4b-7.tfm
+share/texmf-dist/fonts/tfm/public/inconsolata/t1-zi4nb-0.tfm
+share/texmf-dist/fonts/tfm/public/inconsolata/t1-zi4nb-1.tfm
+share/texmf-dist/fonts/tfm/public/inconsolata/t1-zi4nb-2.tfm
+share/texmf-dist/fonts/tfm/public/inconsolata/t1-zi4nb-3.tfm
+share/texmf-dist/fonts/tfm/public/inconsolata/t1-zi4nb-4.tfm
+share/texmf-dist/fonts/tfm/public/inconsolata/t1-zi4nb-5.tfm
+share/texmf-dist/fonts/tfm/public/inconsolata/t1-zi4nb-6.tfm
+share/texmf-dist/fonts/tfm/public/inconsolata/t1-zi4nb-7.tfm
+share/texmf-dist/fonts/tfm/public/inconsolata/t1-zi4nr-0.tfm
+share/texmf-dist/fonts/tfm/public/inconsolata/t1-zi4nr-1.tfm
+share/texmf-dist/fonts/tfm/public/inconsolata/t1-zi4nr-2.tfm
+share/texmf-dist/fonts/tfm/public/inconsolata/t1-zi4nr-3.tfm
+share/texmf-dist/fonts/tfm/public/inconsolata/t1-zi4nr-4.tfm
+share/texmf-dist/fonts/tfm/public/inconsolata/t1-zi4nr-5.tfm
+share/texmf-dist/fonts/tfm/public/inconsolata/t1-zi4nr-6.tfm
+share/texmf-dist/fonts/tfm/public/inconsolata/t1-zi4nr-7.tfm
 share/texmf-dist/fonts/tfm/public/inconsolata/t1-zi4r-0.tfm
 share/texmf-dist/fonts/tfm/public/inconsolata/t1-zi4r-1.tfm
 share/texmf-dist/fonts/tfm/public/inconsolata/t1-zi4r-2.tfm
@@ -2848,6 +2913,8 @@ share/texmf-dist/fonts/tfm/public/inconsolata/t1-zi4r-5.tfm
 share/texmf-dist/fonts/tfm/public/inconsolata/t1-zi4r-6.tfm
 share/texmf-dist/fonts/tfm/public/inconsolata/t1-zi4r-7.tfm
 share/texmf-dist/fonts/tfm/public/inconsolata/ts1-zi4b.tfm
+share/texmf-dist/fonts/tfm/public/inconsolata/ts1-zi4nb.tfm
+share/texmf-dist/fonts/tfm/public/inconsolata/ts1-zi4nr.tfm
 share/texmf-dist/fonts/tfm/public/inconsolata/ts1-zi4r.tfm
 share/texmf-dist/fonts/tfm/public/knuth-lib/
 share/texmf-dist/fonts/tfm/public/knuth-lib/logo10.tfm
@@ -3670,6 +3737,8 @@ share/texmf-dist/fonts/type1/public/cm-super/sfxc3583.pfb
 share/texmf-dist/fonts/type1/public/inconsolata/
 share/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4b.pfb
 share/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb
+share/texmf-dist/fonts/type1/public/inconsolata/InconsolataN-Bold.pfb
+share/texmf-dist/fonts/type1/public/inconsolata/InconsolataN-Regular.pfb
 share/texmf-dist/fonts/type1/public/pdftex/
 share/texmf-dist/fonts/type1/public/pdftex/dummy-space.pfb
 share/texmf-dist/fonts/type1/public/stmaryrd/
@@ -3971,6 +4040,7 @@ share/texmf-dist/scripts/texlive/allneeded.sh
 share/texmf-dist/scripts/texlive/dvi2fax.sh
 share/texmf-dist/scripts/texlive/dvired.sh
 share/texmf-dist/scripts/texlive/fmtutil-sys.sh
+share/texmf-dist/scripts/texlive/fmtutil-user.sh
 share/texmf-dist/scripts/texlive/fmtutil.pl
 share/texmf-dist/scripts/texlive/kpsetool.sh
 share/texmf-dist/scripts/texlive/kpsewhere.sh
@@ -3987,9 +4057,8 @@ share/texmf-dist/scripts/texlive/texconfig-dialog.sh
 share/texmf-dist/scripts/texlive/texconfig-sys.sh
 share/texmf-dist/scripts/texlive/texconfig.sh
 share/texmf-dist/scripts/texlive/texlinks.sh
-share/texmf-dist/scripts/texlive/tlmgr.pl
-share/texmf-dist/scripts/texlive/tlmgrgui.pl
 share/texmf-dist/scripts/texlive/updmap-sys.sh
+share/texmf-dist/scripts/texlive/updmap-user.sh
 share/texmf-dist/scripts/texlive/updmap.pl
 share/texmf-dist/scripts/texlive/var/
 share/texmf-dist/scripts/texlive/var/texcatalogue.keywords
@@ -4003,7 +4072,14 @@ share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 share/texmf-dist/tex/context/base/mkii/syst-tex.mkii
 share/texmf-dist/tex/generic/
 share/texmf-dist/tex/generic/babel-english/
+share/texmf-dist/tex/generic/babel-english/american.ldf
+share/texmf-dist/tex/generic/babel-english/australian.ldf
+share/texmf-dist/tex/generic/babel-english/british.ldf
+share/texmf-dist/tex/generic/babel-english/canadian.ldf
 share/texmf-dist/tex/generic/babel-english/english.ldf
+share/texmf-dist/tex/generic/babel-english/newzealand.ldf
+share/texmf-dist/tex/generic/babel-english/ukenglish.ldf
+share/texmf-dist/tex/generic/babel-english/usenglish.ldf
 share/texmf-dist/tex/generic/babel/
 share/texmf-dist/tex/generic/babel/UKenglish.sty
 share/texmf-dist/tex/generic/babel/USenglish.sty
@@ -4066,6 +4142,9 @@ share/texmf-dist/tex/generic/babel/ukraineb.sty
 share/texmf-dist/tex/generic/babel/usorbian.sty
 share/texmf-dist/tex/generic/babel/welsh.sty
 share/texmf-dist/tex/generic/babel/xebabel.def
+share/texmf-dist/tex/generic/bibtex/
+share/texmf-dist/tex/generic/bibtex/apalike.sty
+share/texmf-dist/tex/generic/bibtex/apalike.tex
 share/texmf-dist/tex/generic/config/
 share/texmf-dist/tex/generic/config/language.dat
 share/texmf-dist/tex/generic/config/language.dat.lua
@@ -4379,7 +4458,6 @@ share/texmf-dist/tex/latex/base/inputenc.sty
 share/texmf-dist/tex/latex/base/lablst.tex
 share/texmf-dist/tex/latex/base/latex.ltx
 share/texmf-dist/tex/latex/base/latex209.def
-share/texmf-dist/tex/latex/base/latexbug.tex
 share/texmf-dist/tex/latex/base/latexrelease.sty
 share/texmf-dist/tex/latex/base/latexsym.sty
 share/texmf-dist/tex/latex/base/latin1.def
@@ -4478,6 +4556,13 @@ share/texmf-dist/tex/latex/base/ts1cmtt.fd
 share/texmf-dist/tex/latex/base/ts1cmvtt.fd
 share/texmf-dist/tex/latex/base/ts1enc.def
 share/texmf-dist/tex/latex/base/ts1enc.dfu
+share/texmf-dist/tex/latex/base/tuenc.def
+share/texmf-dist/tex/latex/base/tulmdh.fd
+share/texmf-dist/tex/latex/base/tulmr.fd
+share/texmf-dist/tex/latex/base/tulmss.fd
+share/texmf-dist/tex/latex/base/tulmssq.fd
+share/texmf-dist/tex/latex/base/tulmtt.fd
+share/texmf-dist/tex/latex/base/tulmvtt.fd
 share/texmf-dist/tex/latex/base/ucmr.fd
 share/texmf-dist/tex/latex/base/ucmss.fd
 share/texmf-dist/tex/latex/base/ucmtt.fd
@@ -4511,10 +4596,6 @@ share/texmf-dist/tex/latex/courier/omsucr.fd
 share/texmf-dist/tex/latex/courier/ot1ucr.fd
 share/texmf-dist/tex/latex/courier/t1ucr.fd
 share/texmf-dist/tex/latex/courier/ts1ucr.fd
-share/texmf-dist/tex/latex/dvipdfmx-def/
-share/texmf-dist/tex/latex/dvipdfmx-def/dvipdfmx.def
-share/texmf-dist/tex/latex/dvisvgm-def/
-share/texmf-dist/tex/latex/dvisvgm-def/dvisvgm.def
 share/texmf-dist/tex/latex/eso-pic/
 share/texmf-dist/tex/latex/eso-pic/eso-pic.sty
 share/texmf-dist/tex/latex/eso-pic/showframe.sty
@@ -4542,10 +4623,16 @@ share/texmf-dist/tex/latex/geometry/geometry.sty
 share/texmf-dist/tex/latex/graphics-cfg/
 share/texmf-dist/tex/latex/graphics-cfg/color.cfg
 share/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+share/texmf-dist/tex/latex/graphics-def/
+share/texmf-dist/tex/latex/graphics-def/dvipdfmx.def
+share/texmf-dist/tex/latex/graphics-def/dvips.def
+share/texmf-dist/tex/latex/graphics-def/dvisvgm.def
+share/texmf-dist/tex/latex/graphics-def/luatex.def
+share/texmf-dist/tex/latex/graphics-def/pdftex.def
+share/texmf-dist/tex/latex/graphics-def/xetex.def
 share/texmf-dist/tex/latex/graphics/
 share/texmf-dist/tex/latex/graphics/color.sty
 share/texmf-dist/tex/latex/graphics/dvipdf.def
-share/texmf-dist/tex/latex/graphics/dvips.def
 share/texmf-dist/tex/latex/graphics/dvipsnam.def
 share/texmf-dist/tex/latex/graphics/dvipsone.def
 share/texmf-dist/tex/latex/graphics/dviwin.def
@@ -4559,6 +4646,7 @@ share/texmf-dist/tex/latex/graphics/pctex32.def
 share/texmf-dist/tex/latex/graphics/pctexhp.def
 share/texmf-dist/tex/latex/graphics/pctexps.def
 share/texmf-dist/tex/latex/graphics/pctexwin.def
+share/texmf-dist/tex/latex/graphics/rotating.sty
 share/texmf-dist/tex/latex/graphics/tcidvi.def
 share/texmf-dist/tex/latex/graphics/trig.sty
 share/texmf-dist/tex/latex/graphics/truetex.def
@@ -4568,6 +4656,7 @@ share/texmf-dist/tex/latex/hyperref/hdvipdfm.def
 share/texmf-dist/tex/latex/hyperref/hdvips.def
 share/texmf-dist/tex/latex/hyperref/hdvipson.def
 share/texmf-dist/tex/latex/hyperref/hdviwind.def
+share/texmf-dist/tex/latex/hyperref/hluatex.def
 share/texmf-dist/tex/latex/hyperref/hpdftex.def
 share/texmf-dist/tex/latex/hyperref/htex4ht.cfg
 share/texmf-dist/tex/latex/hyperref/htex4ht.def
@@ -4591,8 +4680,9 @@ share/texmf-dist/tex/latex/hyperref/puenc.def
 share/texmf-dist/tex/latex/hyperref/puvnenc.def
 share/texmf-dist/tex/latex/hyperref/xr-hyper.sty
 share/texmf-dist/tex/latex/inconsolata/
-share/texmf-dist/tex/latex/inconsolata/Inconsolatazi4.fontspec
+share/texmf-dist/tex/latex/inconsolata/inconsolata.fontspec
 share/texmf-dist/tex/latex/inconsolata/inconsolata.sty
+share/texmf-dist/tex/latex/inconsolata/inconsolatan.fontspec
 share/texmf-dist/tex/latex/inconsolata/ly1zi4.fd
 share/texmf-dist/tex/latex/inconsolata/ot1zi4.fd
 share/texmf-dist/tex/latex/inconsolata/qxzi4.fd
@@ -4822,8 +4912,6 @@ share/texmf-dist/tex/latex/pdfpages/ppnull.def
 share/texmf-dist/tex/latex/pdfpages/pppdftex.def
 share/texmf-dist/tex/latex/pdfpages/ppvtex.def
 share/texmf-dist/tex/latex/pdfpages/ppxetex.def
-share/texmf-dist/tex/latex/pdftex-def/
-share/texmf-dist/tex/latex/pdftex-def/pdftex.def
 share/texmf-dist/tex/latex/preprint/
 share/texmf-dist/tex/latex/preprint/authblk.sty
 share/texmf-dist/tex/latex/preprint/balance.sty
@@ -4936,8 +5024,6 @@ share/texmf-dist/tex/latex/psnfss/upzd.fd
 share/texmf-dist/tex/latex/psnfss/utopia.sty
 share/texmf-dist/tex/latex/pspicture/
 share/texmf-dist/tex/latex/pspicture/pspicture.sty
-share/texmf-dist/tex/latex/rotating/
-share/texmf-dist/tex/latex/rotating/rotating.sty
 share/texmf-dist/tex/latex/stmaryrd/
 share/texmf-dist/tex/latex/stmaryrd/Ustmry.fd
 share/texmf-dist/tex/latex/stmaryrd/stmaryrd.sty
@@ -5028,6 +5114,7 @@ share/texmf-dist/tex/plain/base/
 share/texmf-dist/tex/plain/base/fontchart.tex
 share/texmf-dist/tex/plain/base/gkpmac.tex
 share/texmf-dist/tex/plain/base/letter.tex
+share/texmf-dist/tex/plain/base/list-latin.tex
 share/texmf-dist/tex/plain/base/list.tex
 share/texmf-dist/tex/plain/base/llist.tex
 share/texmf-dist/tex/plain/base/mptmac.tex

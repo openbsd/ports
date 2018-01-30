@@ -1,7 +1,12 @@
 #!/usr/bin/env python2.7
-#
-# This is how we generate the OpenBSD packing lists for TeX Live.
-# It is hooked in to the plist target in the port makefile.
+"""
+Generate packing lists for the TeX Live texmf packages
+
+Usage: mk_plists.py <tlpdb>
+
+Arguments:
+    tlpdb: The TeX Live database file to use.
+"""
 
 import re
 import sys
@@ -14,11 +19,11 @@ PLIST_FULL_OUT = "../pkg/PLIST-full"
 PLIST_DOCS_OUT = "../pkg/PLIST-docs"
 PLIST_CONTEXT_OUT = "../pkg/PLIST-context"
 
-YEAR = 2016
+YEAR = 2017
 MAN_INFO_REGEX = "texmf-dist\/doc\/(man\/man[0-9]\/.*[0-9]|info\/.*\.info)$"
 
 if len(sys.argv) != 2:
-    print("Please specify a tlpdb file")
+    print(__doc__)
     sys.exit(1)
 
 TLPDB = sys.argv[1]
@@ -34,87 +39,87 @@ TEXMF_VAR_FILES = [
     "share/texmf-var/",
     "share/texmf-var/fonts/",
     "share/texmf-var/fonts/map/",
-    "share/texmf-var/fonts/map/dvips/",
-    "share/texmf-var/fonts/map/dvips/updmap/",
-    "share/texmf-var/fonts/map/dvips/updmap/download35.map",
-    "share/texmf-var/fonts/map/dvips/updmap/builtin35.map",
-    "share/texmf-var/fonts/map/dvips/updmap/psfonts_t1.map",
-    "share/texmf-var/fonts/map/dvips/updmap/psfonts_pk.map",
-    "share/texmf-var/fonts/map/dvips/updmap/ps2pk.map",
-    "share/texmf-var/fonts/map/dvips/updmap/psfonts.map",
-    "share/texmf-var/fonts/map/pdftex/",
-    "share/texmf-var/fonts/map/pdftex/updmap/",
-    "share/texmf-var/fonts/map/pdftex/updmap/pdftex_dl14.map",
-    "share/texmf-var/fonts/map/pdftex/updmap/pdftex_ndl14.map",
-    "share/texmf-var/fonts/map/pdftex/updmap/pdftex.map",
     "share/texmf-var/fonts/map/dvipdfmx/",
     "share/texmf-var/fonts/map/dvipdfmx/updmap/",
     "share/texmf-var/fonts/map/dvipdfmx/updmap/kanjix.map",
-    "share/texmf-var/web2c/",
-    "share/texmf-var/web2c/ptex/",
-    "share/texmf-var/web2c/ptex/ptex.fmt",
-    "share/texmf-var/web2c/eptex/",
-    "share/texmf-var/web2c/eptex/eptex.fmt",
-    "share/texmf-var/web2c/eptex/platex.fmt",
-    "share/texmf-var/web2c/tex/",
-    "share/texmf-var/web2c/tex/tex.fmt",
-    "share/texmf-var/web2c/tex/lollipop.fmt",
-    "share/texmf-var/web2c/euptex/",
-    "share/texmf-var/web2c/euptex/euptex.fmt",
-    "share/texmf-var/web2c/euptex/uplatex.fmt",
-    "share/texmf-var/web2c/xetex/",
-    "share/texmf-var/web2c/xetex/xetex.fmt",
-    "share/texmf-var/web2c/xetex/xelatex.fmt",
-    "share/texmf-var/web2c/xetex/pdfcsplain.fmt",
-    "share/texmf-var/web2c/xetex/cont-en.fmt",
-    "share/texmf-var/web2c/luatex/",
-    "share/texmf-var/web2c/luatex/luatex.fmt",
-    "share/texmf-var/web2c/luatex/pdfcsplain.fmt",
-    "share/texmf-var/web2c/luatex/lualatex.fmt",
-    "share/texmf-var/web2c/luatex/dviluatex.fmt",
-    "share/texmf-var/web2c/luatex/dvilualatex.fmt",
-    "share/texmf-var/web2c/pdftex/",
-    "share/texmf-var/web2c/pdftex/pdftex.fmt",
-    "share/texmf-var/web2c/pdftex/amstex.fmt",
-    "share/texmf-var/web2c/pdftex/mex.fmt",
-    "share/texmf-var/web2c/pdftex/pdfxmltex.fmt",
-    "share/texmf-var/web2c/pdftex/utf8mex.fmt",
-    "share/texmf-var/web2c/pdftex/etex.fmt",
-    "share/texmf-var/web2c/pdftex/texsis.fmt",
-    "share/texmf-var/web2c/pdftex/pdfmex.fmt",
-    "share/texmf-var/web2c/pdftex/pdfcslatex.fmt",
-    "share/texmf-var/web2c/pdftex/csplain.fmt",
-    "share/texmf-var/web2c/pdftex/pdfetex.fmt",
-    "share/texmf-var/web2c/pdftex/pdfcsplain.fmt",
-    "share/texmf-var/web2c/pdftex/mllatex.fmt",
-    "share/texmf-var/web2c/pdftex/latex.fmt",
-    "share/texmf-var/web2c/pdftex/xmltex.fmt",
-    "share/texmf-var/web2c/pdftex/jadetex.fmt",
-    "share/texmf-var/web2c/pdftex/pdfjadetex.fmt",
-    "share/texmf-var/web2c/pdftex/cslatex.fmt",
-    "share/texmf-var/web2c/pdftex/mltex.fmt",
-    "share/texmf-var/web2c/pdftex/pdflatex.fmt",
-    "share/texmf-var/web2c/pdftex/cont-en.fmt",
-    "share/texmf-var/web2c/pdftex/mptopdf.fmt",
-    "share/texmf-var/web2c/pdftex/eplain.fmt",
-    "share/texmf-var/web2c/aleph/",
-    "share/texmf-var/web2c/aleph/aleph.fmt",
-    "share/texmf-var/web2c/aleph/lamed.fmt",
-    "share/texmf-var/web2c/uptex/",
-    "share/texmf-var/web2c/uptex/uptex.fmt",
-    "share/texmf-var/web2c/metafont/",
-    "share/texmf-var/web2c/metafont/mf.base",
+    "share/texmf-var/fonts/map/dvips/",
+    "share/texmf-var/fonts/map/dvips/updmap/",
+    "share/texmf-var/fonts/map/dvips/updmap/builtin35.map",
+    "share/texmf-var/fonts/map/dvips/updmap/download35.map",
+    "share/texmf-var/fonts/map/dvips/updmap/ps2pk.map",
+    "share/texmf-var/fonts/map/dvips/updmap/psfonts.map",
+    "share/texmf-var/fonts/map/dvips/updmap/psfonts_pk.map",
+    "share/texmf-var/fonts/map/dvips/updmap/psfonts_t1.map",
+    "share/texmf-var/fonts/map/pdftex/",
+    "share/texmf-var/fonts/map/pdftex/updmap/",
+    "share/texmf-var/fonts/map/pdftex/updmap/pdftex.map",
+    "share/texmf-var/fonts/map/pdftex/updmap/pdftex_dl14.map",
+    "share/texmf-var/fonts/map/pdftex/updmap/pdftex_ndl14.map",
     "share/texmf-var/luatex-cache/",
     "share/texmf-var/luatex-cache/context/",
     "share/texmf-var/luatex-cache/context/0399a8df3aef8d154781d0a9c2b8e28d/",
     "share/texmf-var/luatex-cache/context/0399a8df3aef8d154781d0a9c2b8e28d/formats/",
     "share/texmf-var/luatex-cache/context/0399a8df3aef8d154781d0a9c2b8e28d/formats/luatex/",
-    "share/texmf-var/luatex-cache/context/0399a8df3aef8d154781d0a9c2b8e28d/formats/luatex/cont-en.luv",
-    "share/texmf-var/luatex-cache/context/0399a8df3aef8d154781d0a9c2b8e28d/formats/luatex/cont-en.lui",
     "share/texmf-var/luatex-cache/context/0399a8df3aef8d154781d0a9c2b8e28d/formats/luatex/cont-en.fmt",
-    "share/texmf-var/luatex-cache/context/0399a8df3aef8d154781d0a9c2b8e28d/formats/luatex/cont-nl.luv",
-    "share/texmf-var/luatex-cache/context/0399a8df3aef8d154781d0a9c2b8e28d/formats/luatex/cont-nl.lui",
+    "share/texmf-var/luatex-cache/context/0399a8df3aef8d154781d0a9c2b8e28d/formats/luatex/cont-en.lui",
+    "share/texmf-var/luatex-cache/context/0399a8df3aef8d154781d0a9c2b8e28d/formats/luatex/cont-en.luv",
     "share/texmf-var/luatex-cache/context/0399a8df3aef8d154781d0a9c2b8e28d/formats/luatex/cont-nl.fmt",
+    "share/texmf-var/luatex-cache/context/0399a8df3aef8d154781d0a9c2b8e28d/formats/luatex/cont-nl.lui",
+    "share/texmf-var/luatex-cache/context/0399a8df3aef8d154781d0a9c2b8e28d/formats/luatex/cont-nl.luv",
+    "share/texmf-var/web2c/",
+    "share/texmf-var/web2c/aleph/",
+    "share/texmf-var/web2c/aleph/aleph.fmt",
+    "share/texmf-var/web2c/aleph/lamed.fmt",
+    "share/texmf-var/web2c/eptex/",
+    "share/texmf-var/web2c/eptex/eptex.fmt",
+    "share/texmf-var/web2c/eptex/platex.fmt",
+    "share/texmf-var/web2c/euptex/",
+    "share/texmf-var/web2c/euptex/euptex.fmt",
+    "share/texmf-var/web2c/euptex/uplatex.fmt",
+    "share/texmf-var/web2c/luatex/",
+    "share/texmf-var/web2c/luatex/dvilualatex.fmt",
+    "share/texmf-var/web2c/luatex/dviluatex.fmt",
+    "share/texmf-var/web2c/luatex/lualatex.fmt",
+    "share/texmf-var/web2c/luatex/luatex.fmt",
+    "share/texmf-var/web2c/luatex/pdfcsplain.fmt",
+    "share/texmf-var/web2c/metafont/",
+    "share/texmf-var/web2c/metafont/mf.base",
+    "share/texmf-var/web2c/pdftex/",
+    "share/texmf-var/web2c/pdftex/amstex.fmt",
+    "share/texmf-var/web2c/pdftex/cont-en.fmt",
+    "share/texmf-var/web2c/pdftex/cslatex.fmt",
+    "share/texmf-var/web2c/pdftex/csplain.fmt",
+    "share/texmf-var/web2c/pdftex/eplain.fmt",
+    "share/texmf-var/web2c/pdftex/etex.fmt",
+    "share/texmf-var/web2c/pdftex/jadetex.fmt",
+    "share/texmf-var/web2c/pdftex/latex.fmt",
+    "share/texmf-var/web2c/pdftex/mex.fmt",
+    "share/texmf-var/web2c/pdftex/mllatex.fmt",
+    "share/texmf-var/web2c/pdftex/mltex.fmt",
+    "share/texmf-var/web2c/pdftex/mptopdf.fmt",
+    "share/texmf-var/web2c/pdftex/pdfcslatex.fmt",
+    "share/texmf-var/web2c/pdftex/pdfcsplain.fmt",
+    "share/texmf-var/web2c/pdftex/pdfetex.fmt",
+    "share/texmf-var/web2c/pdftex/pdfjadetex.fmt",
+    "share/texmf-var/web2c/pdftex/pdflatex.fmt",
+    "share/texmf-var/web2c/pdftex/pdfmex.fmt",
+    "share/texmf-var/web2c/pdftex/pdftex.fmt",
+    "share/texmf-var/web2c/pdftex/pdfxmltex.fmt",
+    "share/texmf-var/web2c/pdftex/texsis.fmt",
+    "share/texmf-var/web2c/pdftex/utf8mex.fmt",
+    "share/texmf-var/web2c/pdftex/xmltex.fmt",
+    "share/texmf-var/web2c/ptex/",
+    "share/texmf-var/web2c/ptex/ptex.fmt",
+    "share/texmf-var/web2c/tex/",
+    "share/texmf-var/web2c/tex/lollipop.fmt",
+    "share/texmf-var/web2c/tex/tex.fmt",
+    "share/texmf-var/web2c/uptex/",
+    "share/texmf-var/web2c/uptex/uptex.fmt",
+    "share/texmf-var/web2c/xetex/",
+    "share/texmf-var/web2c/xetex/cont-en.fmt",
+    "share/texmf-var/web2c/xetex/pdfcsplain.fmt",
+    "share/texmf-var/web2c/xetex/xelatex.fmt",
+    "share/texmf-var/web2c/xetex/xetex.fmt",
 ]
 
 CONFLICT_FILES = [
@@ -196,7 +201,10 @@ def filter_junk(filelist):
          # TeXmf bugs
          x not in BUG_MISSING_FILES and
          # Stuff provided by other ports
-         x not in CONFLICT_FILES
+         x not in CONFLICT_FILES and
+         not ("tlmgr" in x and "doc/texlive" not in x) and
+         # We don't need build instructions in our binary packages
+         not x.endswith("/tlbuild.info")
          ]
     return r
 
@@ -269,7 +277,7 @@ buildset_pkgs = [
     "anysize", "appendix", "changebar",
     "fancyvrb", "float", "footmisc",
     "jknapltx", "multirow", "overpic",
-    "rotating", "stmaryrd", "subfigure",
+    "stmaryrd", "subfigure",
     "fancybox", "listings", "pdfpages",
     "titlesec", "wasysym",
     # gnusetp/dbuskit
@@ -331,28 +339,29 @@ print("\n\n")
 # This prevents us pulling in pdftex, xetex, ... again.
 context_pkgs = [
     "!context",
+    "!context-notes-zh-cn",
     "!context-account",
     "!context-algorithmic",
     "!context-animation",
     "!context-annotation",
     "!context-bnf",
     "!context-chromato",
+    "!context-cmscbf",
+    "!context-cmttbf",
     "!context-construction-plan",
     "!context-cyrillicnumbers",
     "!context-degrade",
     "!context-fancybreak",
     "!context-filter",
-    "!context-fixme",
     "!context-french",
     "!context-fullpage",
-    "!context-games",
     "!context-gantt",
     "!context-gnuplot",
+    "!context-inifile",
+    "!context-layout",
     "!context-letter",
     "!context-lettrine",
-    "!context-lilypond",
     "!context-mathsets",
-    "!context-notes-zh-cn",
     "!context-rst",
     "!context-ruby",
     "!context-simplefonts",

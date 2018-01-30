@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.96 2017/12/29 17:43:35 edd Exp $
+# $OpenBSD: Makefile,v 1.97 2018/01/30 20:35:34 edd Exp $
 
 COMMENT =		base binaries for TeXLive typesetting distribution
 
-# This year they used a different datestamp on the -source tarball.
-DISTNAME =		texlive-${DIST_V}b-source
+DISTNAME =		texlive-${DIST_V}-source
 PKGNAME =		texlive_base-${V}
 WRKDIST =		${WRKDIR}/texlive-${DIST_V}-source
-REVISION =		6
 
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
 			texlive-${DIST_V}-extra${EXTRACT_SUFX}
@@ -16,13 +14,14 @@ SHARED_LIBS +=		ptexenc		5.1 # 4.4
 SHARED_LIBS +=		synctex		1.0 # 19.0
 SHARED_LIBS +=		texlua52	0.0 # 7.4
 
-WANTLIB += ICE SM X11 Xau Xaw Xdmcp Xext Xi Xmu Xpm Xrender Xt
-WANTLIB += c cairo expat fontconfig freetype gd glib-2.0 graphite2
-WANTLIB += harfbuzz harfbuzz-icu iconv icudata icui18n icuio icuuc intl
-WANTLIB += jpeg m paper pcre pixman-1 png
-WANTLIB += potrace pthread ${COMPILER_LIBCXX} tiff webp xcb
+WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 Xau Xaw Xdmcp Xext Xi
+WANTLIB += Xmu Xpm Xrender Xt avahi-client avahi-common c cairo
+WANTLIB += cups cupsimage dbus-1 expat ffi fontconfig freetype
+WANTLIB += gd glib-2.0 gmp gnutls graphite2 gs harfbuzz harfbuzz-icu
+WANTLIB += hogweed iconv icudata icui18n icuio icuuc idn2 ijs
+WANTLIB += intl jbig2dec jpeg lcms2 m nettle p11-kit paper pcre
+WANTLIB += pixman-1 png potrace tasn1 tiff unistring webp xcb
 WANTLIB += xcb-render xcb-shm z zzip
-WANTLIB += ${LIBCXX}
 
 RUN_DEPENDS =		print/ghostscript/gnu \
 			print/detex \
@@ -41,7 +40,8 @@ LIB_DEPENDS =		converters/libiconv \
 			devel/harfbuzz,-icu \
 			print/libpaper \
 			archivers/zziplib \
-			graphics/potrace
+			graphics/potrace \
+			print/ghostscript/gnu
 
 MODULES =		textproc/intltool perl
 
@@ -62,8 +62,8 @@ CONFIGURE_ENV +=	TL_MAKE=${GMAKE} \
 WRKBUILD =              ${WRKSRC}/Work
 CONFIGURE_SCRIPT =      ../configure
 MAKE_ENV =		${CONFIGURE_ENV}
-# Not worth the effort.
-NO_TEST =		Yes
+# XXX probably not needed
+#TEST_TARGET =		check
 
 USE_GMAKE =	Yes
 

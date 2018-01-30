@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2017/05/21 11:57:47 edd Exp $
+# $OpenBSD: Makefile,v 1.48 2018/01/30 20:35:49 edd Exp $
 
 COMMENT-context =	texlive texmf for conTeXt
 COMMENT-docs =		texlive documentation
@@ -10,8 +10,9 @@ COMMENT-buildset =	smallest texlive texmf for building ports
 #   * Update the buildset conflict markers in PLIST-buildset.
 #   * Add a more restrictive RUN_DEPEND upon the buildset.
 
-DISTNAME =		texlive-${DIST_V}b-texmf
-MASTER_SITES0 =		https://spacehopper.org/mirrors/
+DISTNAME =		texlive-${DIST_V}-texmf
+MASTER_SITES0 =		https://spacehopper.org/mirrors/ \
+			http://theunixzoo.co.uk/distfiles/
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
 			texlive-${DIST_V}-extra${EXTRACT_SUFX} \
 			texmf-var-pregen-${V}${EXTRACT_SUFX}:0
@@ -68,30 +69,51 @@ pre-configure:
 	@# Don't use substitution from the Python port, since we need to swap in
 	@# different versions.
 	for F in ${PYTHON2_ADJ_FILES}; do \
-	    perl -pi -e '($$. == 1) && s@^.*$$@#!${LOCALBASE}/bin/python${MODPY_DEFAULT_VERSION_2}@' ${WRKSRC}/$$F; \
+	    perl -pi \
+	    -e '$$. == 1 && s|^.*env python[0-9.]*([\s].*)?$$|\#!${LOCALBASE}/bin/python${MODPY_DEFAULT_VERSION_2}$$1|;' \
+	    -e '$$. == 1 && s|^.*python[0-9.]*([\s].*)?$$|\#!${LOCALBASE}/bin/python${MODPY_DEFAULT_VERSION_2}$$1|;' \
+	    -e 'close ARGV if eof;' ${WRKSRC}/$$F; \
 	done
 	for F in ${PYTHON3_ADJ_FILES}; do \
-	    perl -pi -e '($$. == 1) && s@^.*$$@#!${LOCALBASE}/bin/python${MODPY_DEFAULT_VERSION_3}@' ${WRKSRC}/$$F; \
+	    perl -pi \
+	    -e '$$. == 1 && s|^.*env python[0-9.]*([\s].*)?$$|\#!${LOCALBASE}/bin/python${MODPY_DEFAULT_VERSION_3}$$1|;' \
+	    -e '$$. == 1 && s|^.*python[0-9.]*([\s].*)?$$|\#!${LOCALBASE}/bin/python${MODPY_DEFAULT_VERSION_3}$$1|;' \
+	    -e 'close ARGV if eof;' ${WRKSRC}/$$F; \
 	done
-	@# Don't use builtin ruby.port.mk substitution. It uses
-	@# find, which takes an age on such a large directory.
+	@# Don't use ${MODRUBY_ADJ_FILES} as ruby.port.mk uses find(1) which
+	@# takes an age on such a large directory.
 	for F in ${RUBY_ADJ_FILES}; do \
-	    perl -pi -e '($$. == 1) && s@^.*$$@#!${RUBY}@' ${WRKSRC}/$$F; \
+		${MODRUBY_RUBY_ADJ} $$F; \
 	done
 	for F in ${WISH_ADJ_FILES}; do \
 	    ${MODTCL_WISH_ADJ} ${WRKSRC}/$$F; \
 	done
 	for F in ${TEXLUA_ADJ_FILES}; do \
-	    perl -pi -e '($$. == 1) && s@^.*$$@#!${PREFIX}/bin/texlua@' \
-	    ${WRKSRC}/$$F; \
+	    perl -pi \
+	    -e '$$. == 1 && s|^.*env texlua([\s].*)?$$|\#!${LOCALBASE}/bin/texlua$$1|;' \
+	    -e '$$. == 1 && s|^.*texlua([\s].*)?$$|\#!${LOCALBASE}/bin/texlua$$1|;' \
+	    -e 'close ARGV if eof;' ${WRKSRC}/$$F; \
 	done
 	for F in ${LUA_ADJ_FILES}; do \
-	    perl -pi -e '($$. == 1) && s@^.*$$@#!${MODLUA_BIN}@' ${WRKSRC}/$$F; \
+	    perl -pi \
+	    -e '$$. == 1 && s|^.*env lua([\s].*)?$$|\#!${LOCALBASE}/bin/lua$$1|;' \
+	    -e '$$. == 1 && s|^.*lua([\s].*)?$$|\#!${LOCALBASE}/bin/lua$$1|;' \
+	    -e 'close ARGV if eof;' ${WRKSRC}/$$F; \
 	done
 	for F in ${BASH_ADJ_FILES}; do \
-	    perl -pi -e '($$. == 1) && s@^.*$$@#!${LOCALBASE}/bin/bash@' \
-	    ${WRKSRC}/$$F; \
+	    perl -pi \
+	    -e '$$. == 1 && s|^.*env bash([\s].*)?$$|\#!${LOCALBASE}/bin/bash$$1|;' \
+	    -e '$$. == 1 && s|^.*bash([\s].*)?$$|\#!${LOCALBASE}/bin/bash$$1|;' \
+	    -e 'close ARGV if eof;' ${WRKSRC}/$$F; \
 	done
+	for F in ${FONTFORGE_ADJ_FILES}; do \
+	    perl -pi \
+	    -e '$$. == 1 && s|^.*env fontforge([\s].*)?$$|\#!${LOCALBASE}/bin/fontforge$$1|;' \
+	    -e '$$. == 1 && s|^.*fontforge([\s].*)?$$|\#!${LOCALBASE}/bin/fontforge$$1|;' \
+	    -e 'close ARGV if eof;' ${WRKSRC}/$$F; \
+	done
+
+	# This file contains a lookup table of interpreter paths
 	${SUBST_CMD} ${WRKSRC}/texmf-dist/scripts/context/stubs/unix/mtxrun
 
 do-install:
@@ -137,7 +159,12 @@ post-install:
 update-plist: plist
 plist:
 	cd ${FILESDIR} && ${MODPY_BIN} mk_plists.py \
-		${TRUEPREFIX}/share/examples/py-texscythe/texlive2016.tlpdb.gz
+		${TRUEPREFIX}/share/examples/py-texscythe/texlive2017.tlpdb.gz
+
+# regenerate adj.mk
+adj:
+	${MODPY_BIN} ${FILESDIR}/mk_adj.py ${WRKSRC}/texmf-dist \
+		${WRKSRC} > adj.mk
 
 
 .include <bsd.port.mk>
