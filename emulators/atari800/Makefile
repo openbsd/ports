@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/11/03 10:57:23 fcambus Exp $
+# $OpenBSD: Makefile,v 1.2 2018/01/30 09:48:15 fcambus Exp $
 
 COMMENT =	Atari 8-bit computer systems and 5200 game console emulator
 
 DISTNAME =	atari800-3.1.0
+REVISION =	0
+
 CATEGORIES =	emulators
 
-HOMEPAGE =	http://atari800.sourceforge.net/
+HOMEPAGE =	https://atari800.github.io/
 
 MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
