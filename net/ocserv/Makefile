@@ -1,21 +1,22 @@
-# $OpenBSD: Makefile,v 1.27 2018/01/12 22:28:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2018/01/30 00:53:52 sthen Exp $
 
 COMMENT=	server implementing the AnyConnect SSL VPN protocol
 
 DISTNAME=	ocserv-0.11.10
+REVISION=	0
 EXTRACT_SUFX=	.tar.xz
 
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.infradead.org/ocserv/
 
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
+MAINTAINER=	Bjorn Ketelaars <bjorn.ketelaars@hydroxide.nl>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c ev gnutls intl lz4 m ncurses nettle oath pam
-WANTLIB += protobuf-c radcli readline talloc
+WANTLIB =	c curses ev gnutls intl lz4 m nettle oath pam protobuf-c
+WANTLIB +=	radcli readline talloc
 
 MASTER_SITES=	ftp://ftp.infradead.org/pub/ocserv/
 
@@ -32,17 +33,17 @@ TEST_DEPENDS=	net/openconnect \
 		shells/bash \
 		sysutils/coreutils
 
-SEPARATE_BUILD=	Yes
-
-CONFIGURE_STYLE= autoconf
-AUTOCONF_VERSION= 2.69
-USE_GMAKE=	Yes
-CONFIGURE_ARGS=	--enable-local-libopts \
-		--without-http-parser \
-		--without-pcl-lib
+SEPARATE_BUILD=		Yes
+USE_GMAKE=		Yes
+CONFIGURE_STYLE=	autoconf
+CONFIGURE_ARGS=		--enable-local-libopts \
+			--without-http-parser \
+			--without-pcl-lib
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+AUTOCONF_VERSION=	2.69
 
 post-extract:
 	sed -i 's,#!/bin/bash,#!${LOCALBASE}/bin/bash,' \
