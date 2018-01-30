@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2017/11/20 17:57:25 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.9 2018/01/30 07:13:08 gonzalo Exp $
 bin/sqlmap
 share/sqlmap/
 share/sqlmap/.github/
@@ -522,14 +522,16 @@ share/sqlmap/procs/postgresql/
 share/sqlmap/procs/postgresql/dns_request.sql
 share/sqlmap/shell/
 share/sqlmap/shell/README.txt
-share/sqlmap/shell/backdoor.asp_
-share/sqlmap/shell/backdoor.aspx_
-share/sqlmap/shell/backdoor.jsp_
-share/sqlmap/shell/backdoor.php_
-share/sqlmap/shell/stager.asp_
-share/sqlmap/shell/stager.aspx_
-share/sqlmap/shell/stager.jsp_
-share/sqlmap/shell/stager.php_
+share/sqlmap/shell/backdoors/
+share/sqlmap/shell/backdoors/backdoor.asp_
+share/sqlmap/shell/backdoors/backdoor.aspx_
+share/sqlmap/shell/backdoors/backdoor.jsp_
+share/sqlmap/shell/backdoors/backdoor.php_
+share/sqlmap/shell/stagers/
+share/sqlmap/shell/stagers/stager.asp_
+share/sqlmap/shell/stagers/stager.aspx_
+share/sqlmap/shell/stagers/stager.jsp_
+share/sqlmap/shell/stagers/stager.php_
 share/sqlmap/sqlmap.conf
 share/sqlmap/sqlmap.py
 share/sqlmap/sqlmap.pyc
@@ -576,6 +578,8 @@ share/sqlmap/tamper/halfversionedmorekeywords.py
 share/sqlmap/tamper/halfversionedmorekeywords.pyc
 share/sqlmap/tamper/htmlencode.py
 share/sqlmap/tamper/htmlencode.pyc
+share/sqlmap/tamper/ifnull2casewhenisnull.py
+share/sqlmap/tamper/ifnull2casewhenisnull.pyc
 share/sqlmap/tamper/ifnull2ifisnull.py
 share/sqlmap/tamper/ifnull2ifisnull.pyc
 share/sqlmap/tamper/informationschemacomment.py
@@ -907,6 +911,8 @@ share/sqlmap/waf/anquanbao.py
 share/sqlmap/waf/anquanbao.pyc
 share/sqlmap/waf/armor.py
 share/sqlmap/waf/armor.pyc
+share/sqlmap/waf/asm.py
+share/sqlmap/waf/asm.pyc
 share/sqlmap/waf/aws.py
 share/sqlmap/waf/aws.pyc
 share/sqlmap/waf/baidu.py
@@ -1009,6 +1015,8 @@ share/sqlmap/waf/varnish.py
 share/sqlmap/waf/varnish.pyc
 share/sqlmap/waf/wallarm.py
 share/sqlmap/waf/wallarm.pyc
+share/sqlmap/waf/watchguard.py
+share/sqlmap/waf/watchguard.pyc
 share/sqlmap/waf/webappsecure.py
 share/sqlmap/waf/webappsecure.pyc
 share/sqlmap/waf/webknight.py
@@ -1019,6 +1027,8 @@ share/sqlmap/waf/yundun.py
 share/sqlmap/waf/yundun.pyc
 share/sqlmap/waf/yunsuo.py
 share/sqlmap/waf/yunsuo.pyc
+share/sqlmap/waf/zenedge.py
+share/sqlmap/waf/zenedge.pyc
 share/sqlmap/xml/
 share/sqlmap/xml/banner/
 share/sqlmap/xml/banner/generic.xml
