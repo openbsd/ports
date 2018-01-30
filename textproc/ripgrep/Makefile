@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2017/11/01 20:27:22 danj Exp $
+# $OpenBSD: Makefile,v 1.6 2018/01/30 03:23:06 danj Exp $
 
 COMMENT =		line oriented search tool using Rust's regex library #'
 
 GH_ACCOUNT =		BurntSushi
 GH_PROJECT =		ripgrep
-GH_TAGNAME =		0.7.0
+GH_TAGNAME =		0.7.1
 
 CATEGORIES =		textproc sysutils
 

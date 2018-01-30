@@ -38,7 +38,7 @@ SHA256 (cargo/void-1.0.2.tar.gz) = agLkiF7TvA8t6Q6m3UXry7ZtrP/gNUf627DuridwiH0=
 SHA256 (cargo/walkdir-2.0.1.tar.gz) = QLbSAfT4mYqDcZa23pxz41rxTJksu5LEq2QdLC3OUt4=
 SHA256 (cargo/winapi-0.2.8.tar.gz) = Fn3J1pSam4V/NFEnXpEcP0QlWELB96dvM8VRA6kJCHo=
 SHA256 (cargo/winapi-build-0.1.1.tar.gz) = LTFe7js0rKR5ey2msT7Ygmbm1hJWKgxGOQr4KZ/Gmbw=
-SHA256 (ripgrep-0.7.0.tar.gz) = XC8jnfvcWvGPUlUJB3omgm9D193k6j9+3RVuetJwY2Y=
+SHA256 (ripgrep-0.7.1.tar.gz) = 4BBpNjes67QJ89unyvWe8JPRiUozsUAVBBuNQ1R2ZfU=
 SIZE (cargo/aho-corasick-0.6.3.tar.gz) = 24963
 SIZE (cargo/ansi_term-0.9.0.tar.gz) = 11718
 SIZE (cargo/atty-0.2.3.tar.gz) = 5486
@@ -79,4 +79,4 @@ SIZE (cargo/void-1.0.2.tar.gz) = 2356
 SIZE (cargo/walkdir-2.0.1.tar.gz) = 21483
 SIZE (cargo/winapi-0.2.8.tar.gz) = 455145
 SIZE (cargo/winapi-build-0.1.1.tar.gz) = 669
-SIZE (ripgrep-0.7.0.tar.gz) = 474530
+SIZE (ripgrep-0.7.1.tar.gz) = 474458
