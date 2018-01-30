@@ -1,8 +1,8 @@
-$OpenBSD: patch-chrome_browser_after_startup_task_utils_cc,v 1.7 2017/12/16 15:34:39 robert Exp $
+$OpenBSD: patch-chrome_browser_after_startup_task_utils_cc,v 1.8 2018/01/30 07:57:25 robert Exp $
 Index: chrome/browser/after_startup_task_utils.cc
 --- chrome/browser/after_startup_task_utils.cc.orig
 +++ chrome/browser/after_startup_task_utils.cc
-@@ -101,7 +101,7 @@ void QueueTask(std::unique_ptr<AfterStartupTask> queue
+@@ -102,7 +102,7 @@ void QueueTask(std::unique_ptr<AfterStartupTask> queue
  
  void SetBrowserStartupIsComplete() {
    DCHECK_CURRENTLY_ON(BrowserThread::UI);

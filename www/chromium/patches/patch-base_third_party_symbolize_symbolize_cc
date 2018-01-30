@@ -1,7 +1,8 @@
-$OpenBSD: patch-base_third_party_symbolize_symbolize_cc,v 1.4 2017/03/14 12:18:53 robert Exp $
---- base/third_party/symbolize/symbolize.cc.orig.port	Thu Mar  9 21:04:26 2017
-+++ base/third_party/symbolize/symbolize.cc	Fri Mar 10 07:46:16 2017
-@@ -109,7 +109,7 @@ _END_GOOGLE_NAMESPACE_
+$OpenBSD: patch-base_third_party_symbolize_symbolize_cc,v 1.5 2018/01/30 07:57:25 robert Exp $
+Index: base/third_party/symbolize/symbolize.cc
+--- base/third_party/symbolize/symbolize.cc.orig
++++ base/third_party/symbolize/symbolize.cc
+@@ -111,7 +111,7 @@ _END_GOOGLE_NAMESPACE_
  #if defined(__ELF__)
  
  #include <dlfcn.h>

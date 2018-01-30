@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_process_process_metrics_h,v 1.11 2017/12/16 15:34:39 robert Exp $
+$OpenBSD: patch-base_process_process_metrics_h,v 1.12 2018/01/30 07:57:25 robert Exp $
 
 Index: base/process/process_metrics.h
 --- base/process/process_metrics.h.orig
@@ -75,3 +75,12 @@ Index: base/process/process_metrics.h
    int buffers = 0;
    int cached = 0;
    int active_anon = 0;
+@@ -437,7 +437,7 @@ BASE_EXPORT bool GetSystemMemoryInfo(SystemMemoryInfoK
+ #endif  // defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) ||
+         // defined(OS_ANDROID) || defined(OS_AIX) || defined(OS_FUCHSIA)
+ 
+-#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_AIX)
++#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_AIX) || defined(OS_BSD)
+ // Parse the data found in /proc/<pid>/stat and return the sum of the
+ // CPU-related ticks.  Returns -1 on parse error.
+ // Exposed for testing.

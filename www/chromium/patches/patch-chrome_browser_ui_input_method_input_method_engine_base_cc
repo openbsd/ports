@@ -1,7 +1,8 @@
-$OpenBSD: patch-chrome_browser_ui_input_method_input_method_engine_base_cc,v 1.3 2017/03/14 12:18:53 robert Exp $
---- chrome/browser/ui/input_method/input_method_engine_base.cc.orig.port	Fri Mar 10 08:46:05 2017
-+++ chrome/browser/ui/input_method/input_method_engine_base.cc	Fri Mar 10 08:46:11 2017
-@@ -35,7 +35,7 @@
+$OpenBSD: patch-chrome_browser_ui_input_method_input_method_engine_base_cc,v 1.4 2018/01/30 07:57:25 robert Exp $
+Index: chrome/browser/ui/input_method/input_method_engine_base.cc
+--- chrome/browser/ui/input_method/input_method_engine_base.cc.orig
++++ chrome/browser/ui/input_method/input_method_engine_base.cc
+@@ -31,7 +31,7 @@
  #include "ui/base/ime/chromeos/ime_keymap.h"
  #elif defined(OS_WIN)
  #include "ui/events/keycodes/keyboard_codes_win.h"

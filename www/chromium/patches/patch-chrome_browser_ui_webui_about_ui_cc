@@ -1,40 +1,9 @@
-$OpenBSD: patch-chrome_browser_ui_webui_about_ui_cc,v 1.43 2017/12/16 15:34:40 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_webui_about_ui_cc,v 1.44 2018/01/30 07:57:25 robert Exp $
 
 Index: chrome/browser/ui/webui/about_ui.cc
 --- chrome/browser/ui/webui/about_ui.cc.orig
 +++ chrome/browser/ui/webui/about_ui.cc
-@@ -330,7 +330,7 @@ std::string ChromeURLs() {
-   return html;
- }
- 
--#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
-+#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
- 
- const char kAboutDiscardsRunCommand[] = "run";
- const char kAboutDiscardsSkipUnloadHandlersCommand[] = "skip_unload_handlers";
-@@ -474,10 +474,13 @@ std::string AboutDiscards(const std::string& path) {
-       "<a href='%s%s'>Discard tab now (safely)</a>",
-       chrome::kChromeUIDiscardsURL, kAboutDiscardsRunCommand));
- 
-+#if !defined(OS_BSD)
-   base::SystemMemoryInfoKB meminfo;
-   base::GetSystemMemoryInfo(&meminfo);
-+#endif
-   output.append("<h3>System memory information in MB</h3>");
-   output.append("<table>");
-+#if !defined(OS_BSD)
-   // Start with summary statistics.
-   output.append(AddStringRow(
-       "Total", base::IntToString(meminfo.total / 1024)));
-@@ -509,6 +512,7 @@ std::string AboutDiscards(const std::string& path) {
-   output.append(AddStringRow(
-       "Graphics", base::IntToString(meminfo.gem_size / 1024 / 1024)));
- #endif  // OS_CHROMEOS
-+#endif
-   output.append("</table>");
-   AppendFooter(&output);
-   return output;
-@@ -576,7 +580,7 @@ class AboutDnsHandler : public base::RefCountedThreadS
+@@ -390,7 +390,7 @@ class AboutDnsHandler : public base::RefCountedThreadS
    DISALLOW_COPY_AND_ASSIGN(AboutDnsHandler);
  };
  
@@ -43,15 +12,7 @@ Index: chrome/browser/ui/webui/about_ui.cc
  std::string AboutLinuxProxyConfig() {
    std::string data;
    AppendHeader(&data, 0,
-@@ -633,14 +637,14 @@ void AboutUIHTMLSource::StartDataRequest(
-                      .as_string();
-     }
- 
--#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
-+#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
-   } else if (source_name_ == chrome::kChromeUIDiscardsHost) {
-     response = AboutDiscards(path);
- #endif
+@@ -448,7 +448,7 @@ void AboutUIHTMLSource::StartDataRequest(
    } else if (source_name_ == chrome::kChromeUIDNSHost) {
      AboutDnsHandler::Start(profile(), callback);
      return;

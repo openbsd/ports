@@ -1,8 +1,9 @@
-$OpenBSD: patch-chrome_browser_task_manager_sampling_task_group_h,v 1.5 2017/12/16 15:34:40 robert Exp $
+$OpenBSD: patch-chrome_browser_task_manager_sampling_task_group_h,v 1.6 2018/01/30 07:57:25 robert Exp $
+
 Index: chrome/browser/task_manager/sampling/task_group.h
 --- chrome/browser/task_manager/sampling/task_group.h.orig
 +++ chrome/browser/task_manager/sampling/task_group.h
-@@ -102,7 +102,7 @@ class TaskGroup {
+@@ -106,7 +106,7 @@ class TaskGroup {
    int nacl_debug_stub_port() const { return nacl_debug_stub_port_; }
  #endif  // BUILDFLAG(ENABLE_NACL)
  
@@ -11,19 +12,19 @@ Index: chrome/browser/task_manager/sampling/task_group.h
    int open_fd_count() const { return open_fd_count_; }
  #endif  // defined(OS_LINUX)
  
-@@ -130,7 +130,7 @@ class TaskGroup {
- 
-   void OnIdleWakeupsRefreshDone(int idle_wakeups_per_second);
- 
+@@ -122,7 +122,7 @@ class TaskGroup {
+   void RefreshNaClDebugStubPort(int child_process_unique_id);
+   void OnRefreshNaClDebugStubPortDone(int port);
+ #endif
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
    void OnOpenFdCountRefreshDone(int open_fd_count);
  #endif  // defined(OS_LINUX)
  
-@@ -185,7 +185,7 @@ class TaskGroup {
+@@ -184,7 +184,7 @@ class TaskGroup {
+ #if BUILDFLAG(ENABLE_NACL)
    int nacl_debug_stub_port_;
  #endif  // BUILDFLAG(ENABLE_NACL)
-   int idle_wakeups_per_second_;
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
    // The number of file descriptors currently open by the process.

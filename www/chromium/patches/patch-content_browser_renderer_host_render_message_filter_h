@@ -1,13 +1,13 @@
-$OpenBSD: patch-content_browser_renderer_host_render_message_filter_h,v 1.5 2017/09/09 19:16:43 robert Exp $
+$OpenBSD: patch-content_browser_renderer_host_render_message_filter_h,v 1.6 2018/01/30 07:57:25 robert Exp $
 Index: content/browser/renderer_host/render_message_filter.h
 --- content/browser/renderer_host/render_message_filter.h.orig
 +++ content/browser/renderer_host/render_message_filter.h
-@@ -121,7 +121,7 @@ class CONTENT_EXPORT RenderMessageFilter
-                                 bool has_gpu);
+@@ -122,7 +122,7 @@ class CONTENT_EXPORT RenderMessageFilter
+ 
    void OnResolveProxy(const GURL& url, IPC::Message* reply_msg);
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
    void SetThreadPriorityOnFileThread(base::PlatformThreadId ns_tid,
                                       base::ThreadPriority priority);
-   void OnSetThreadPriority(base::PlatformThreadId ns_tid,
+ #endif

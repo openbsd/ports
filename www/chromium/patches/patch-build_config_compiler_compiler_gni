@@ -1,9 +1,9 @@
-$OpenBSD: patch-build_config_compiler_compiler_gni,v 1.8 2017/12/16 15:34:39 robert Exp $
+$OpenBSD: patch-build_config_compiler_compiler_gni,v 1.9 2018/01/30 07:57:25 robert Exp $
 
 Index: build/config/compiler/compiler.gni
 --- build/config/compiler/compiler.gni.orig
 +++ build/config/compiler/compiler.gni
-@@ -152,7 +152,7 @@ declare_args() {
+@@ -155,7 +155,7 @@ declare_args() {
    # TODO(pcc): Enable lld on more architectures on Linux. E.g. we probably need
    # to fix some of crbug.com/742655 to enable it on ARM.
    # TODO(pcc): Remove !is_msan once crbug.com/772559 is fixed.
@@ -12,7 +12,7 @@ Index: build/config/compiler/compiler.gni
              ((is_win && host_os != "win") || is_fuchsia ||
               (use_thin_lto && target_os != "chromeos") ||
               (is_linux && current_cpu == "x64" && target_os != "chromeos"))
-@@ -160,7 +160,7 @@ declare_args() {
+@@ -163,7 +163,7 @@ declare_args() {
  
  declare_args() {
    # Whether to use the gold linker from binutils instead of lld or bfd.

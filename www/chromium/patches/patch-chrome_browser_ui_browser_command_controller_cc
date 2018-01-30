@@ -1,9 +1,10 @@
-$OpenBSD: patch-chrome_browser_ui_browser_command_controller_cc,v 1.26 2017/12/16 15:34:40 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_browser_command_controller_cc,v 1.27 2018/01/30 07:57:25 robert Exp $
+
 Index: chrome/browser/ui/browser_command_controller.cc
 --- chrome/browser/ui/browser_command_controller.cc.orig
 +++ chrome/browser/ui/browser_command_controller.cc
-@@ -75,7 +75,7 @@
- #include "chrome/browser/ui/browser_commands_chromeos.h"
+@@ -83,7 +83,7 @@
+ #include "ui/base/clipboard/clipboard_types.h"
  #endif
  
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
@@ -11,7 +12,7 @@ Index: chrome/browser/ui/browser_command_controller.cc
  #include "ui/base/ime/linux/text_edit_key_bindings_delegate_auralinux.h"
  #endif
  
-@@ -208,7 +208,7 @@ bool BrowserCommandController::IsReservedCommandOrKey(
+@@ -216,7 +216,7 @@ bool BrowserCommandController::IsReservedCommandOrKey(
  #endif
    }
  
@@ -20,21 +21,21 @@ Index: chrome/browser/ui/browser_command_controller.cc
    // If this key was registered by the user as a content editing hotkey, then
    // it is not reserved.
    ui::TextEditKeyBindingsDelegateAuraLinux* delegate =
-@@ -392,7 +392,7 @@ void BrowserCommandController::ExecuteCommandWithDispo
+@@ -425,7 +425,7 @@ bool BrowserCommandController::ExecuteCommandWithDispo
        break;
  #endif
  
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
 +#if (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS)
-     case IDC_USE_SYSTEM_TITLE_BAR: {
-       PrefService* prefs = profile()->GetPrefs();
-       prefs->SetBoolean(prefs::kUseCustomChromeFrame,
-@@ -762,7 +762,7 @@ void BrowserCommandController::InitCommandState() {
+     case IDC_MINIMIZE_WINDOW:
+       browser_->window()->Minimize();
+       break;
+@@ -853,7 +853,7 @@ void BrowserCommandController::InitCommandState() {
    command_updater_.UpdateCommandEnabled(IDC_VISIT_DESKTOP_OF_LRU_USER_2, true);
    command_updater_.UpdateCommandEnabled(IDC_VISIT_DESKTOP_OF_LRU_USER_3, true);
  #endif
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
 +#if (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS)
-   command_updater_.UpdateCommandEnabled(IDC_USE_SYSTEM_TITLE_BAR, true);
- #endif
- 
+   command_updater_.UpdateCommandEnabled(IDC_MINIMIZE_WINDOW, true);
+   command_updater_.UpdateCommandEnabled(IDC_MAXIMIZE_WINDOW, true);
+   command_updater_.UpdateCommandEnabled(IDC_RESTORE_WINDOW, true);

@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_common_pref_names_h,v 1.37 2017/12/16 15:34:40 robert Exp $
+$OpenBSD: patch-chrome_common_pref_names_h,v 1.38 2018/01/30 07:57:25 robert Exp $
 Index: chrome/common/pref_names.h
 --- chrome/common/pref_names.h.orig
 +++ chrome/common/pref_names.h
@@ -20,7 +20,7 @@ Index: chrome/common/pref_names.h
  extern const char kUseCustomChromeFrame[];
  #endif
  extern const char kBackShortcutBubbleShownCount[];
-@@ -496,7 +496,7 @@ extern const char kAppWindowPlacement[];
+@@ -497,7 +497,7 @@ extern const char kAppWindowPlacement[];
  extern const char kDownloadDefaultDirectory[];
  extern const char kDownloadExtensionsToOpen[];
  extern const char kDownloadDirUpgraded[];

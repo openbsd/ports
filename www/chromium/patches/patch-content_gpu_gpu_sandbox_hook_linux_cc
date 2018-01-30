@@ -1,0 +1,14 @@
+$OpenBSD: patch-content_gpu_gpu_sandbox_hook_linux_cc,v 1.1 2018/01/30 07:57:25 robert Exp $
+
+Index: content/gpu/gpu_sandbox_hook_linux.cc
+--- content/gpu/gpu_sandbox_hook_linux.cc.orig
++++ content/gpu/gpu_sandbox_hook_linux.cc
+@@ -95,7 +95,7 @@ inline bool IsLibVAVersion2() {
+ #endif
+ }
+ 
+-constexpr int dlopen_flag = RTLD_NOW | RTLD_GLOBAL | RTLD_NODELETE;
++constexpr int dlopen_flag = RTLD_NOW | RTLD_GLOBAL;
+ 
+ void AddV4L2GpuWhitelist(
+     std::vector<BrokerFilePermission>* permissions,

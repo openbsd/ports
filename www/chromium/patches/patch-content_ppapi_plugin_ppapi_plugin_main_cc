@@ -1,4 +1,5 @@
-$OpenBSD: patch-content_ppapi_plugin_ppapi_plugin_main_cc,v 1.6 2017/10/25 13:47:07 robert Exp $
+$OpenBSD: patch-content_ppapi_plugin_ppapi_plugin_main_cc,v 1.7 2018/01/30 07:57:25 robert Exp $
+
 Index: content/ppapi_plugin/ppapi_plugin_main.cc
 --- content/ppapi_plugin/ppapi_plugin_main.cc.orig
 +++ content/ppapi_plugin/ppapi_plugin_main.cc
@@ -13,10 +14,10 @@ Index: content/ppapi_plugin/ppapi_plugin_main.cc
  #if defined(OS_POSIX) && !defined(OS_ANDROID)
  #include <stdlib.h>
  #endif
-@@ -122,6 +126,8 @@ int PpapiPluginMain(const MainFunctionParams& paramete
- 
- #if defined(OS_LINUX)
-   LinuxSandbox::InitializeSandbox();
+@@ -125,6 +129,8 @@ int PpapiPluginMain(const MainFunctionParams& paramete
+       service_manager::SandboxTypeFromCommandLine(command_line),
+       service_manager::SandboxLinux::PreSandboxHook(),
+       service_manager::SandboxLinux::Options());
 +#elif defined(OS_BSD)
 +  InitializeSandbox();
  #endif

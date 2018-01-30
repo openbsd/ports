@@ -1,17 +1,14 @@
-$OpenBSD: patch-content_common_BUILD_gn,v 1.11 2017/12/16 15:34:40 robert Exp $
+$OpenBSD: patch-content_common_BUILD_gn,v 1.12 2018/01/30 07:57:25 robert Exp $
 Index: content/common/BUILD.gn
 --- content/common/BUILD.gn.orig
 +++ content/common/BUILD.gn
-@@ -486,6 +486,18 @@ source_set("common") {
+@@ -442,6 +442,15 @@ source_set("common") {
      libs += [ "android" ]
    }
  
 +  if (is_openbsd) {
 +    sources -= [
 +      "quarantine/quarantine_linux.cc",
-+      "sandbox_linux/sandbox_linux.cc",
-+      "sandbox_linux/sandbox_seccomp_bpf_linux.cc",
-+      "sandbox_linux/sandbox_debug_handling_linux.cc"
 +    ]
 +    sources += [
 +      "sandbox_init_openbsd.cc"
@@ -21,3 +18,12 @@ Index: content/common/BUILD.gn
    if (is_debug && !is_component_build && enable_plugins) {
      # Content depends on the PPAPI message logging stuff; if this isn't here,
      # some unit test binaries won't compile. This only worked in release mode
+@@ -502,7 +511,7 @@ source_set("common") {
+   }
+ 
+   if (!use_seccomp_bpf) {
+-    if (is_linux && current_cpu != "s390x" && current_cpu != "ppc64") {
++    if (is_linux && current_cpu != "s390x" && current_cpu != "ppc64" && !is_openbsd) {
+       sources -= [
+         "sandbox_linux/bpf_base_policy_linux.cc",
+         "sandbox_linux/bpf_base_policy_linux.h",

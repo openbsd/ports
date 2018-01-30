@@ -1,23 +1,22 @@
-$OpenBSD: patch-components_crash_content_app_BUILD_gn,v 1.10 2017/12/16 15:34:40 robert Exp $
+$OpenBSD: patch-components_crash_content_app_BUILD_gn,v 1.11 2018/01/30 07:57:25 robert Exp $
 
 Index: components/crash/content/app/BUILD.gn
 --- components/crash/content/app/BUILD.gn.orig
 +++ components/crash/content/app/BUILD.gn
-@@ -188,7 +188,7 @@ source_set("app_non_mac_win") {
-     libs = [ "log" ]
-   }
+@@ -34,7 +34,7 @@ static_library("app") {
  
--  if (is_android || is_linux) {
-+  if (is_android || (is_linux && !is_openbsd)) {
+   if (is_mac || is_win) {
+     sources += [ "crashpad.cc" ]
+-  } else if (is_android || is_linux) {
++  } else if (is_android || is_linux && !is_openbsd) {
      # Want these files on both Linux and Android.
      set_sources_assignment_filter([])
      sources += [
-@@ -218,7 +218,7 @@ source_set("app_non_mac_win") {
-       "//sandbox",
-       "//third_party/breakpad:breakpad_handler",
+@@ -64,7 +64,6 @@ static_library("app") {
+       "//components/crash/core/common",
+       "//content/public/common:content_descriptors",
+       "//content/public/common:result_codes",
+-      "//third_party/breakpad:client",
      ]
--  } else if (is_posix && !is_ios) {
-+  } else if (is_posix && !is_ios && !is_openbsd) {
-     deps += [ "//third_party/breakpad:client" ]
-   }
- }
+ 
+     # Clang's -mstackrealign doesn't work well with

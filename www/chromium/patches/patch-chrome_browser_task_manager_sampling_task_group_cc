@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_task_manager_sampling_task_group_cc,v 1.6 2017/12/16 15:34:40 robert Exp $
+$OpenBSD: patch-chrome_browser_task_manager_sampling_task_group_cc,v 1.7 2018/01/30 07:57:25 robert Exp $
 
 Index: chrome/browser/task_manager/sampling/task_group.cc
 --- chrome/browser/task_manager/sampling/task_group.cc.orig
 +++ chrome/browser/task_manager/sampling/task_group.cc
-@@ -28,7 +28,7 @@ const int kBackgroundRefreshTypesMask =
+@@ -29,7 +29,7 @@ const int kBackgroundRefreshTypesMask =
  #if defined(OS_WIN)
      REFRESH_TYPE_START_TIME | REFRESH_TYPE_CPU_TIME |
  #endif  // defined(OS_WIN)
@@ -12,16 +12,16 @@ Index: chrome/browser/task_manager/sampling/task_group.cc
      REFRESH_TYPE_FD_COUNT |
  #endif  // defined(OS_LINUX)
  #if BUILDFLAG(ENABLE_NACL)
-@@ -103,7 +103,7 @@ TaskGroup::TaskGroup(
+@@ -105,7 +105,7 @@ TaskGroup::TaskGroup(
+ #if BUILDFLAG(ENABLE_NACL)
        nacl_debug_stub_port_(nacl::kGdbDebugStubPortUnknown),
  #endif  // BUILDFLAG(ENABLE_NACL)
-       idle_wakeups_per_second_(-1),
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
        open_fd_count_(-1),
  #endif  // defined(OS_LINUX)
-       gpu_memory_has_duplicates_(false),
-@@ -118,7 +118,7 @@ TaskGroup::TaskGroup(
+       idle_wakeups_per_second_(-1),
+@@ -121,7 +121,7 @@ TaskGroup::TaskGroup(
                     weak_ptr_factory_.GetWeakPtr()),
          base::Bind(&TaskGroup::OnIdleWakeupsRefreshDone,
                     weak_ptr_factory_.GetWeakPtr()),
@@ -30,9 +30,9 @@ Index: chrome/browser/task_manager/sampling/task_group.cc
          base::Bind(&TaskGroup::OnOpenFdCountRefreshDone,
                     weak_ptr_factory_.GetWeakPtr()),
  #endif  // defined(OS_LINUX)
-@@ -338,7 +338,7 @@ void TaskGroup::OnIdleWakeupsRefreshDone(int idle_wake
-   OnBackgroundRefreshTypeFinished(REFRESH_TYPE_IDLE_WAKEUPS);
+@@ -284,7 +284,7 @@ void TaskGroup::OnRefreshNaClDebugStubPortDone(int nac
  }
+ #endif  // BUILDFLAG(ENABLE_NACL)
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)

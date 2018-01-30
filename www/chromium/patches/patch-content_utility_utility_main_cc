@@ -1,21 +1,23 @@
-$OpenBSD: patch-content_utility_utility_main_cc,v 1.7 2017/12/16 15:34:40 robert Exp $
+$OpenBSD: patch-content_utility_utility_main_cc,v 1.8 2018/01/30 07:57:25 robert Exp $
 
 Index: content/utility/utility_main.cc
 --- content/utility/utility_main.cc.orig
 +++ content/utility/utility_main.cc
-@@ -21,6 +21,8 @@
- 
- #if defined(OS_LINUX)
- #include "content/common/sandbox_linux/sandbox_linux.h"
-+#elif defined(OS_BSD)
-+#include "content/common/sandbox_init_openbsd.h"
+@@ -24,6 +24,10 @@
+ #include "services/service_manager/sandbox/linux/sandbox_linux.h"
  #endif
  
++#if defined(OS_BSD)
++#include "content/common/sandbox_init_openbsd.h"
++#endif
++
  #if defined(OS_WIN)
-@@ -51,6 +53,8 @@ int UtilityMain(const MainFunctionParams& parameters) 
-   // Seccomp-BPF policy.
-   if (parameters.zygote_child)
-     LinuxSandbox::InitializeSandbox();
+ #include "base/rand_util.h"
+ #include "sandbox/win/src/sandbox.h"
+@@ -61,6 +65,8 @@ int UtilityMain(const MainFunctionParams& parameters) 
+         sandbox_type, std::move(pre_sandbox_hook),
+         service_manager::SandboxLinux::Options());
+   }
 +#elif defined(OS_BSD)
 +  InitializeSandbox();
  #elif defined(OS_WIN)

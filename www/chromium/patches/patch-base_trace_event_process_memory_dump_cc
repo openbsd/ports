@@ -1,9 +1,9 @@
-$OpenBSD: patch-base_trace_event_process_memory_dump_cc,v 1.7 2017/10/25 13:47:07 robert Exp $
+$OpenBSD: patch-base_trace_event_process_memory_dump_cc,v 1.8 2018/01/30 07:57:25 robert Exp $
 
 Index: base/trace_event/process_memory_dump.cc
 --- base/trace_event/process_memory_dump.cc.orig
 +++ base/trace_event/process_memory_dump.cc
-@@ -86,7 +86,7 @@ size_t ProcessMemoryDump::CountResidentBytes(void* sta
+@@ -91,7 +91,7 @@ size_t ProcessMemoryDump::CountResidentBytes(void* sta
    const size_t kMaxChunkSize = 8 * 1024 * 1024;
    size_t max_vec_size =
        GetSystemPageCount(std::min(mapped_size, kMaxChunkSize), page_size);

@@ -1,8 +1,8 @@
-$OpenBSD: patch-chrome_browser_ui_startup_bad_flags_prompt_cc,v 1.11 2017/12/16 15:34:40 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_startup_bad_flags_prompt_cc,v 1.12 2018/01/30 07:57:25 robert Exp $
 Index: chrome/browser/ui/startup/bad_flags_prompt.cc
 --- chrome/browser/ui/startup/bad_flags_prompt.cc.orig
 +++ chrome/browser/ui/startup/bad_flags_prompt.cc
-@@ -116,7 +116,7 @@ void ShowBadFlagsPrompt(Browser* browser) {
+@@ -118,7 +118,7 @@ void ShowBadFlagsPrompt(Browser* browser) {
      // This flag gives extensions more powers.
      extensions::switches::kExtensionsOnChromeURLs,
  

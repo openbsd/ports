@@ -1,0 +1,13 @@
+$OpenBSD: patch-components_crash_core_common_BUILD_gn,v 1.1 2018/01/30 07:57:25 robert Exp $
+
+Index: components/crash/core/common/BUILD.gn
+--- components/crash/core/common/BUILD.gn.orig
++++ components/crash/core/common/BUILD.gn
+@@ -38,7 +38,6 @@ static_library("crash_key") {
+       "crash_key_internal.h",
+     ]
+ 
+-    deps += [ "//third_party/breakpad:client" ]
+   }
+ }
+ 

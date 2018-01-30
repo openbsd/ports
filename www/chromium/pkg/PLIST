@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.74 2017/12/16 15:34:40 robert Exp $
+@comment $OpenBSD: PLIST,v 1.75 2018/01/30 07:57:25 robert Exp $
 @pkgpath www/chromium,proprietary
 bin/chrome
 @bin bin/chromedriver
@@ -234,6 +234,8 @@ chrome/resources/inspector/coverage/
 chrome/resources/inspector/coverage/coverage_module.js
 chrome/resources/inspector/coverage_test_runner/
 chrome/resources/inspector/coverage_test_runner/coverage_test_runner_module.js
+chrome/resources/inspector/cpu_profiler_test_runner/
+chrome/resources/inspector/cpu_profiler_test_runner/cpu_profiler_test_runner_module.js
 chrome/resources/inspector/data_grid/
 chrome/resources/inspector/data_grid/data_grid_module.js
 chrome/resources/inspector/data_grid_test_runner/
@@ -295,10 +297,10 @@ chrome/resources/inspector/extensions_test_runner/extensions_test_runner_module.
 chrome/resources/inspector/formatter/
 chrome/resources/inspector/formatter/formatter_module.js
 chrome/resources/inspector/formatter_worker.js
-chrome/resources/inspector/gonzales/
-chrome/resources/inspector/gonzales/gonzales_module.js
 chrome/resources/inspector/har_importer/
 chrome/resources/inspector/har_importer/har_importer_module.js
+chrome/resources/inspector/heap_profiler_test_runner/
+chrome/resources/inspector/heap_profiler_test_runner/heap_profiler_test_runner_module.js
 chrome/resources/inspector/heap_snapshot_model/
 chrome/resources/inspector/heap_snapshot_model/heap_snapshot_model_module.js
 chrome/resources/inspector/heap_snapshot_worker/
@@ -332,16 +334,10 @@ chrome/resources/inspector/product_registry_impl/
 chrome/resources/inspector/product_registry_impl/product_registry_impl_module.js
 chrome/resources/inspector/profiler/
 chrome/resources/inspector/profiler/profiler_module.js
-chrome/resources/inspector/profiler_test_runner/
-chrome/resources/inspector/profiler_test_runner/profiler_test_runner_module.js
 chrome/resources/inspector/quick_open/
 chrome/resources/inspector/quick_open/quick_open_module.js
 chrome/resources/inspector/resources/
 chrome/resources/inspector/resources/resources_module.js
-chrome/resources/inspector/sass/
-chrome/resources/inspector/sass/sass_module.js
-chrome/resources/inspector/sass_test_runner/
-chrome/resources/inspector/sass_test_runner/sass_test_runner_module.js
 chrome/resources/inspector/screencast/
 chrome/resources/inspector/screencast/screencast_module.js
 chrome/resources/inspector/sdk_test_runner/
@@ -376,10 +372,10 @@ chrome/snapshot_blob.bin
 chrome/swiftshader/
 chrome/swiftshader/libEGL.so
 chrome/swiftshader/libGLESv2.so
-chrome/test_ime_driver.service
 chrome/ui.service
 chrome/v8_context_snapshot.bin
 chrome/views_mus_resources.pak
+chrome/viz.service
 @man man/man1/chrome.1
 share/applications/chromium-browser.desktop
 share/icons/hicolor/128x128/apps/chrome.png

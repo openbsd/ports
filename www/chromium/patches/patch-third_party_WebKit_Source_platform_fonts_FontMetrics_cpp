@@ -1,18 +1,18 @@
-$OpenBSD: patch-third_party_WebKit_Source_platform_fonts_SimpleFontData_cpp,v 1.14 2017/09/09 19:16:43 robert Exp $
+$OpenBSD: patch-third_party_WebKit_Source_platform_fonts_FontMetrics_cpp,v 1.1 2018/01/30 07:57:25 robert Exp $
 
-Index: third_party/WebKit/Source/platform/fonts/SimpleFontData.cpp
---- third_party/WebKit/Source/platform/fonts/SimpleFontData.cpp.orig
-+++ third_party/WebKit/Source/platform/fonts/SimpleFontData.cpp
-@@ -56,7 +56,7 @@ namespace blink {
- const float kSmallCapsFontSizeMultiplier = 0.7f;
- const float kEmphasisMarkFontSizeMultiplier = 0.5f;
+Index: third_party/WebKit/Source/platform/fonts/FontMetrics.cpp
+--- third_party/WebKit/Source/platform/fonts/FontMetrics.cpp.orig
++++ third_party/WebKit/Source/platform/fonts/FontMetrics.cpp
+@@ -38,7 +38,7 @@
+ 
+ namespace blink {
  
 -#if defined(OS_LINUX) || defined(OS_ANDROID)
 +#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
  // This is the largest VDMX table which we'll try to load and parse.
  static const size_t kMaxVDMXTableSize = 1024 * 1024;  // 1 MB
  #endif
-@@ -111,7 +111,7 @@ void SimpleFontData::PlatformInit(bool subpixel_ascent
+@@ -60,7 +60,7 @@ void FontMetrics::AscentDescentWithHacks(
    int vdmx_ascent = 0, vdmx_descent = 0;
    bool is_vdmx_valid = false;
  
@@ -21,10 +21,10 @@ Index: third_party/WebKit/Source/platform/fonts/SimpleFontData.cpp
    // Manually digging up VDMX metrics is only applicable when bytecode hinting
    // using FreeType.  With DirectWrite or CoreText, no bytecode hinting is ever
    // done.  This code should be pushed into FreeType (hinted font metrics).
-@@ -160,7 +160,7 @@ void SimpleFontData::PlatformInit(bool subpixel_ascent
-       visual_overflow_inflation_for_ascent_ = 1;
+@@ -106,7 +106,7 @@ void FontMetrics::AscentDescentWithHacks(
+       visual_overflow_inflation_for_ascent = 1;
      if (descent < metrics.fDescent) {
-       visual_overflow_inflation_for_descent_ = 1;
+       visual_overflow_inflation_for_descent = 1;
 -#if defined(OS_LINUX) || defined(OS_ANDROID)
 +#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
        // When subpixel positioning is enabled, if the descent is rounded down,

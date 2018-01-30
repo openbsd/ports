@@ -1,0 +1,28 @@
+$OpenBSD: patch-chrome_common_webui_url_constants_h,v 1.1 2018/01/30 07:57:25 robert Exp $
+
+Index: chrome/common/webui_url_constants.h
+--- chrome/common/webui_url_constants.h.orig
++++ chrome/common/webui_url_constants.h
+@@ -223,7 +223,7 @@ extern const char kChromeUICastHost[];
+ extern const char kChromeUICastURL[];
+ #endif
+ 
+-#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
+ extern const char kChromeUIDiscardsHost[];
+ extern const char kChromeUIDiscardsURL[];
+ #endif
+@@ -232,11 +232,11 @@ extern const char kChromeUIDiscardsURL[];
+ extern const char kChromeUILinuxProxyConfigHost[];
+ #endif
+ 
+-#if defined(OS_LINUX) || defined(OS_ANDROID)
++#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
+ extern const char kChromeUISandboxHost[];
+ #endif
+ 
+-#if (defined(OS_LINUX) && defined(TOOLKIT_VIEWS)) || defined(USE_AURA)
++#if ((defined(OS_BSD) || defined(OS_LINUX)) && defined(TOOLKIT_VIEWS)) || defined(USE_AURA)
+ extern const char kChromeUITabModalConfirmDialogHost[];
+ #endif
+ 

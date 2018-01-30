@@ -1,0 +1,19 @@
+$OpenBSD: patch-services_device_hid_BUILD_gn,v 1.1 2018/01/30 07:57:25 robert Exp $
+
+Index: services/device/hid/BUILD.gn
+--- services/device/hid/BUILD.gn.orig
++++ services/device/hid/BUILD.gn
+@@ -42,6 +42,13 @@ source_set("hid") {
+     "//services/device/public/interfaces",
+   ]
+ 
++  if (is_openbsd) {
++    sources -= [
++      "hid_connection_linux.cc",
++      "hid_connection_linux.h",
++    ]
++  }
++
+   if (is_linux && use_udev) {
+     sources += [
+       "hid_service_linux.cc",

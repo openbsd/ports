@@ -1,0 +1,14 @@
+$OpenBSD: patch-base_strings_string_number_conversions_cc,v 1.1 2018/01/30 07:57:25 robert Exp $
+
+Index: base/strings/string_number_conversions.cc
+--- base/strings/string_number_conversions.cc.orig
++++ base/strings/string_number_conversions.cc
+@@ -361,7 +361,7 @@ string16 NumberToString16(uint64_t value) {
+   return IntToStringT<string16, uint64_t>::IntToString(value);
+ }
+ 
+-#if defined(OS_MACOSX)
++#if defined(OS_MACOSX) || defined(OS_BSD)
+ std::string NumberToString(size_t value) {
+   return IntToStringT<std::string, size_t>::IntToString(value);
+ }

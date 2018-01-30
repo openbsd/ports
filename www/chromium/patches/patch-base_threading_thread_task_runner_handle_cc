@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_threading_thread_task_runner_handle_cc,v 1.2 2017/10/25 13:47:07 robert Exp $
+$OpenBSD: patch-base_threading_thread_task_runner_handle_cc,v 1.3 2018/01/30 07:57:25 robert Exp $
 Index: base/threading/thread_task_runner_handle.cc
 --- base/threading/thread_task_runner_handle.cc.orig
 +++ base/threading/thread_task_runner_handle.cc
@@ -11,7 +11,7 @@ Index: base/threading/thread_task_runner_handle.cc
  #include "base/logging.h"
  #include "base/memory/ptr_util.h"
 @@ -37,6 +38,7 @@ bool ThreadTaskRunnerHandle::IsSet() {
-   return !!lazy_tls_ptr.Pointer()->Get();
+   return !!thread_task_runner_tls.Pointer()->Get();
  }
  
 +#if defined(OS_BSD)

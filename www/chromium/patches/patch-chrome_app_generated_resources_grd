@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_app_generated_resources_grd,v 1.23 2017/12/16 15:34:39 robert Exp $
+$OpenBSD: patch-chrome_app_generated_resources_grd,v 1.24 2018/01/30 07:57:25 robert Exp $
 
 Index: chrome/app/generated_resources.grd
 --- chrome/app/generated_resources.grd.orig
@@ -12,7 +12,7 @@ Index: chrome/app/generated_resources.grd
  for making strings OS specific.  Other platform defines such as use_titlecase
  are declared in build/common.gypi.
  -->
-@@ -6903,7 +6903,7 @@ I don't think this site should be blocked!
+@@ -6919,7 +6919,7 @@ I don't think this site should be blocked!
          Google Payments
        </message>
  
@@ -21,7 +21,7 @@ Index: chrome/app/generated_resources.grd
          <message name="IDS_THEMES_GROUP_NAME" desc="The title of the themes group">
            Themes
          </message>
-@@ -6911,7 +6911,7 @@ I don't think this site should be blocked!
+@@ -6927,7 +6927,7 @@ I don't think this site should be blocked!
        <message name="IDS_THEMES_RESET_BUTTON" desc="The button to reset your theme">
          Reset to default theme
        </message>
@@ -30,12 +30,12 @@ Index: chrome/app/generated_resources.grd
          <message name="IDS_THEMES_GTK_BUTTON" desc="The button to choose GTK colors and icons as the current theme.">
            Use GTK+ theme
          </message>
-@@ -8061,7 +8061,7 @@ Please help our engineers fix this problem. Tell us wh
+@@ -8076,7 +8076,7 @@ Please help our engineers fix this problem. Tell us wh
          Set as default
        </message>
  
 -      <if expr="is_linux and not chromeos">
 +      <if expr="is_posix and not chromeos">
-         <message name="IDS_SHOW_WINDOW_DECORATIONS_MENU" desc="The menu entry text in the tab strip context menu.  This toggles the system title bar and window borders (window decorations) on linux.">
-           Use system title bar and borders
+         <message name="IDS_MINIMIZE_WINDOW_MENU" desc="The Linux browser window menu item text for minimizing the window.">
+           Minimize
          </message>

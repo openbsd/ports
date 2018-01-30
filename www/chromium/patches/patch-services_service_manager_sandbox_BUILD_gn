@@ -1,0 +1,14 @@
+$OpenBSD: patch-services_service_manager_sandbox_BUILD_gn,v 1.1 2018/01/30 07:57:25 robert Exp $
+
+Index: services/service_manager/sandbox/BUILD.gn
+--- services/service_manager/sandbox/BUILD.gn.orig
++++ services/service_manager/sandbox/BUILD.gn
+@@ -23,7 +23,7 @@ component("sandbox") {
+   deps = [
+     "//base",
+   ]
+-  if (is_linux) {
++  if (is_linux && !is_openbsd) {
+     sources += [
+       "linux/bpf_base_policy_linux.cc",
+       "linux/bpf_base_policy_linux.h",

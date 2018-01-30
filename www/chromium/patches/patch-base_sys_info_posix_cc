@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_sys_info_posix_cc,v 1.9 2017/10/25 13:47:07 robert Exp $
+$OpenBSD: patch-base_sys_info_posix_cc,v 1.10 2018/01/30 07:57:25 robert Exp $
 Index: base/sys_info_posix.cc
 --- base/sys_info_posix.cc.orig
 +++ base/sys_info_posix.cc
@@ -21,4 +21,4 @@ Index: base/sys_info_posix.cc
 +
  // static
  int64_t SysInfo::AmountOfFreeDiskSpace(const FilePath& path) {
-   base::ThreadRestrictions::AssertIOAllowed();
+   AssertBlockingAllowed();

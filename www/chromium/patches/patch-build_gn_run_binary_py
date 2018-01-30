@@ -1,4 +1,4 @@
-$OpenBSD: patch-build_gn_run_binary_py,v 1.1 2017/12/16 15:34:39 robert Exp $
+$OpenBSD: patch-build_gn_run_binary_py,v 1.2 2018/01/30 07:57:25 robert Exp $
 
 Index: build/gn_run_binary.py
 --- build/gn_run_binary.py.orig
@@ -8,7 +8,7 @@ Index: build/gn_run_binary.py
  args = [path] + sys.argv[2:]
  
 -ret = subprocess.call(args)
-+ret = subprocess.call(args, env={"CHROME_EXE_PATH":"${WRKSRC}/out/Release/chrome"})
++ret = subprocess.call(args, env={"CHROME_EXE_PATH":"/usr/ports/pobj/chromium-64.0.3282.119/chromium-64.0.3282.119/out/Release/chrome"})
  if ret != 0:
    print '%s failed with exit code %d' % (sys.argv[1], ret)
  sys.exit(ret)

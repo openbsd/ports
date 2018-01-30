@@ -1,8 +1,8 @@
-$OpenBSD: patch-chrome_browser_notifications_message_center_notification_manager_cc,v 1.14 2017/12/16 15:34:40 robert Exp $
+$OpenBSD: patch-chrome_browser_notifications_message_center_notification_manager_cc,v 1.15 2018/01/30 07:57:25 robert Exp $
 Index: chrome/browser/notifications/message_center_notification_manager.cc
 --- chrome/browser/notifications/message_center_notification_manager.cc.orig
 +++ chrome/browser/notifications/message_center_notification_manager.cc
-@@ -49,7 +49,7 @@ MessageCenterNotificationManager::MessageCenterNotific
+@@ -45,7 +45,7 @@ MessageCenterNotificationManager::MessageCenterNotific
        std::make_unique<FullscreenNotificationBlocker>(message_center));
  #endif
  

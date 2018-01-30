@@ -1,4 +1,4 @@
-$OpenBSD: patch-gpu_ipc_client_gpu_memory_buffer_impl_cc,v 1.1 2017/06/25 21:53:56 robert Exp $
+$OpenBSD: patch-gpu_ipc_client_gpu_memory_buffer_impl_cc,v 1.2 2018/01/30 07:57:25 robert Exp $
 
 Index: gpu/ipc/client/gpu_memory_buffer_impl.cc
 --- gpu/ipc/client/gpu_memory_buffer_impl.cc.orig
@@ -12,7 +12,7 @@ Index: gpu/ipc/client/gpu_memory_buffer_impl.cc
  #include "gpu/ipc/client/gpu_memory_buffer_impl_native_pixmap.h"
  #endif
  
-@@ -50,7 +50,7 @@ std::unique_ptr<GpuMemoryBufferImpl> GpuMemoryBufferIm
+@@ -58,7 +58,7 @@ std::unique_ptr<GpuMemoryBufferImpl> GpuMemoryBufferIm
        return GpuMemoryBufferImplIOSurface::CreateFromHandle(
            handle, size, format, usage, callback);
  #endif

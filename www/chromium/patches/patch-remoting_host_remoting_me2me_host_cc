@@ -1,4 +1,4 @@
-$OpenBSD: patch-remoting_host_remoting_me2me_host_cc,v 1.4 2017/12/16 15:34:40 robert Exp $
+$OpenBSD: patch-remoting_host_remoting_me2me_host_cc,v 1.5 2018/01/30 07:57:25 robert Exp $
 
 Index: remoting/host/remoting_me2me_host.cc
 --- remoting/host/remoting_me2me_host.cc.orig
@@ -43,7 +43,7 @@ Index: remoting/host/remoting_me2me_host.cc
    // Watch for certificate changes and kill the host when changes occur
    std::unique_ptr<CertificateWatcher> cert_watcher_;
  #endif
-@@ -566,10 +566,10 @@ bool HostProcess::InitWithCommandLine(const base::Comm
+@@ -567,10 +567,10 @@ bool HostProcess::InitWithCommandLine(const base::Comm
    enable_window_capture_ = cmd_line->HasSwitch(kWindowIdSwitchName);
    if (enable_window_capture_) {
  
@@ -56,7 +56,7 @@ Index: remoting/host/remoting_me2me_host.cc
  
      // uint32_t is large enough to hold window IDs on all platforms.
      uint32_t window_id;
-@@ -762,7 +762,7 @@ void HostProcess::CreateAuthenticatorFactory() {
+@@ -763,7 +763,7 @@ void HostProcess::CreateAuthenticatorFactory() {
      DCHECK(third_party_auth_config_.token_url.is_valid());
      DCHECK(third_party_auth_config_.token_validation_url.is_valid());
  
@@ -65,7 +65,7 @@ Index: remoting/host/remoting_me2me_host.cc
      if (!cert_watcher_) {
        cert_watcher_.reset(new CertificateWatcher(
            base::Bind(&HostProcess::ShutdownHost, this, kSuccessExitCode),
-@@ -848,7 +848,7 @@ void HostProcess::StartOnUiThread() {
+@@ -849,7 +849,7 @@ void HostProcess::StartOnUiThread() {
        base::Bind(&HostProcess::OnPolicyUpdate, base::Unretained(this)),
        base::Bind(&HostProcess::OnPolicyError, base::Unretained(this)));
  
@@ -74,7 +74,7 @@ Index: remoting/host/remoting_me2me_host.cc
    // If an audio pipe is specific on the command-line then initialize
    // AudioCapturerLinux to capture from it.
    base::FilePath audio_pipe_name = base::CommandLine::ForCurrentProcess()->
-@@ -857,7 +857,7 @@ void HostProcess::StartOnUiThread() {
+@@ -858,7 +858,7 @@ void HostProcess::StartOnUiThread() {
      remoting::AudioCapturerLinux::InitializePipeReader(
          context_->audio_task_runner(), audio_pipe_name);
    }
@@ -83,7 +83,7 @@ Index: remoting/host/remoting_me2me_host.cc
  
  #if defined(OS_POSIX)
    base::FilePath security_key_socket_name =
-@@ -915,7 +915,7 @@ void HostProcess::ShutdownOnUiThread() {
+@@ -916,7 +916,7 @@ void HostProcess::ShutdownOnUiThread() {
    // It is now safe for the HostProcess to be deleted.
    self_ = nullptr;
  
@@ -92,7 +92,7 @@ Index: remoting/host/remoting_me2me_host.cc
    // Cause the global AudioPipeReader to be freed, otherwise the audio
    // thread will remain in-use and prevent the process from exiting.
    // TODO(wez): DesktopEnvironmentFactory should own the pipe reader.
-@@ -1547,7 +1547,7 @@ void HostProcess::StartHost() {
+@@ -1548,7 +1548,7 @@ void HostProcess::StartHost() {
    host_->AddExtension(base::MakeUnique<TestEchoExtension>());
  
    // TODO(simonmorris): Get the maximum session duration from a policy.
@@ -101,7 +101,7 @@ Index: remoting/host/remoting_me2me_host.cc
    host_->SetMaximumSessionDuration(base::TimeDelta::FromHours(20));
  #endif
  
-@@ -1706,7 +1706,7 @@ void HostProcess::OnCrash(const std::string& function_
+@@ -1707,7 +1707,7 @@ void HostProcess::OnCrash(const std::string& function_
  int HostProcessMain() {
    HOST_LOG << "Starting host process: version " << STRINGIZE(VERSION);
  

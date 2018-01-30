@@ -1,10 +1,19 @@
-$OpenBSD: patch-chrome_browser_browser_resources_grd,v 1.39 2017/12/16 15:34:39 robert Exp $
+$OpenBSD: patch-chrome_browser_browser_resources_grd,v 1.40 2018/01/30 07:57:25 robert Exp $
 
 Index: chrome/browser/browser_resources.grd
 --- chrome/browser/browser_resources.grd.orig
 +++ chrome/browser/browser_resources.grd
-@@ -370,7 +370,7 @@
-         <include name="IDR_ABOUT_VOICESEARCH_JS" file="resources\about_voicesearch.js" type="BINDATA" />
+@@ -77,7 +77,7 @@
+       </if>
+     </structures>
+     <includes>
+-      <if expr="is_win or is_macosx or is_linux">
++      <if expr="is_win or is_macosx or is_posix">
+         <include name="IDR_ABOUT_DISCARDS_CSS" file="resources\discards\discards.css" type="BINDATA" />
+         <include name="IDR_ABOUT_DISCARDS_HTML" file="resources\discards\discards.html" flattenhtml="true" allowexternalscript="true" type="BINDATA" />
+         <include name="IDR_ABOUT_DISCARDS_JS" file="resources\discards\discards.js" type="BINDATA" />
+@@ -369,7 +369,7 @@
+       <if expr="chromeos">
          <include name="IDR_PLUGIN_DB_JSON" file="resources\plugin_metadata\plugins_chromeos.json" type="BINDATA" />
        </if>
 -      <if expr="desktop_linux or (is_android and enable_plugins)">
@@ -12,8 +21,8 @@ Index: chrome/browser/browser_resources.grd
          <include name="IDR_PLUGIN_DB_JSON" file="resources\plugin_metadata\plugins_linux.json" type="BINDATA" />
        </if>
        <if expr="is_android">
-@@ -620,7 +620,7 @@
-         <include name="IDR_WELCOME_WIN10_PIN_SMALL_WEBP" file="resources\welcome\win10\pin-small.webp" type="BINDATA" />
+@@ -619,7 +619,7 @@
+         <include name="IDR_WELCOME_WIN10_PIN_WEBP" file="resources\welcome\pin.webp" type="BINDATA" />
        </if>
        <include name="IDR_SSL_ERROR_ASSISTANT_PB" file="${root_gen_dir}/chrome/browser/resources/ssl/ssl_error_assistant/ssl_error_assistant.pb" use_base_dir="false" type="BINDATA" />
 -      <if expr="is_android or is_linux">

@@ -1,9 +1,18 @@
-$OpenBSD: patch-content_gpu_gpu_main_cc,v 1.24 2017/12/16 15:34:40 robert Exp $
+$OpenBSD: patch-content_gpu_gpu_main_cc,v 1.25 2018/01/30 07:57:25 robert Exp $
 
 Index: content/gpu/gpu_main.cc
 --- content/gpu/gpu_main.cc.orig
 +++ content/gpu/gpu_main.cc
-@@ -90,6 +90,10 @@
+@@ -76,7 +76,7 @@
+ #include "ui/gfx/x/x11_switches.h"  // nogncheck
+ #endif
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+ #include "content/common/font_config_ipc_linux.h"
+ #include "content/gpu/gpu_sandbox_hook_linux.h"
+ #include "content/public/common/common_sandbox_support_linux.h"
+@@ -94,6 +94,10 @@
  #include "ui/ozone/public/ozone_platform.h"
  #endif
  
@@ -14,47 +23,71 @@ Index: content/gpu/gpu_main.cc
  #if BUILDFLAG(USE_VAAPI)
  #include "media/gpu/vaapi_wrapper.h"
  #endif
-@@ -98,7 +102,7 @@ namespace content {
+@@ -102,7 +106,7 @@ namespace content {
  
  namespace {
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
- bool StartSandboxLinux(gpu::GpuWatchdogThread*, const gpu::GPUInfo*);
- #elif defined(OS_WIN)
- bool StartSandboxWindows(const sandbox::SandboxInterfaceInfo*);
-@@ -156,7 +160,7 @@ class ContentSandboxHelper : public gpu::GpuSandboxHel
- 
+ bool StartSandboxLinux(gpu::GpuWatchdogThread*,
+                        const gpu::GPUInfo*,
+                        const gpu::GpuPreferences&);
+@@ -163,7 +167,7 @@ class ContentSandboxHelper : public gpu::GpuSandboxHel
    bool EnsureSandboxInitialized(gpu::GpuWatchdogThread* watchdog_thread,
-                                 const gpu::GPUInfo* gpu_info) override {
+                                 const gpu::GPUInfo* gpu_info,
+                                 const gpu::GpuPreferences& gpu_prefs) override {
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
-     return StartSandboxLinux(watchdog_thread, gpu_info);
+     return StartSandboxLinux(watchdog_thread, gpu_info, gpu_prefs);
  #elif defined(OS_WIN)
      return StartSandboxWindows(sandbox_info_);
-@@ -323,13 +327,14 @@ int GpuMain(const MainFunctionParams& parameters) {
+@@ -321,7 +325,7 @@ int GpuMain(const MainFunctionParams& parameters) {
+ 
+   if (command_line.HasSwitch(switches::kEnableOOPRasterization)) {
+     SkGraphics::Init();
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+     // Set up the font IPC so that the GPU process can create typefaces.
+     SkFontConfigInterface::SetGlobal(new FontConfigIPC(GetSandboxFD()))
+         ->unref();
+@@ -340,12 +344,13 @@ int GpuMain(const MainFunctionParams& parameters) {
  
  namespace {
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
  bool StartSandboxLinux(gpu::GpuWatchdogThread* watchdog_thread,
-                        const gpu::GPUInfo* gpu_info) {
+                        const gpu::GPUInfo* gpu_info,
+                        const gpu::GpuPreferences& gpu_prefs) {
    TRACE_EVENT0("gpu,startup", "Initialize sandbox");
- 
-   bool res = false;
  
 +#if !defined(OS_BSD)
    if (watchdog_thread) {
-     // LinuxSandbox needs to be able to ensure that the thread
+     // SandboxLinux needs to be able to ensure that the thread
      // has really been stopped.
-@@ -344,6 +349,9 @@ bool StartSandboxLinux(gpu::GpuWatchdogThread* watchdo
-     options.timer_slack = base::TIMER_SLACK_MAXIMUM;
-     watchdog_thread->StartWithOptions(options);
-   }
-+#else
-+  res = InitializeSandbox();
+@@ -364,18 +369,24 @@ bool StartSandboxLinux(gpu::GpuWatchdogThread* watchdo
+   sandbox_options.vaapi_accelerated_video_encode_enabled =
+       !gpu_prefs.disable_vaapi_accelerated_video_encode;
+ #endif
 +#endif
  
++#if !defined(OS_BSD)
+   bool res = service_manager::SandboxLinux::GetInstance()->InitializeSandbox(
+       service_manager::SandboxTypeFromCommandLine(
+           *base::CommandLine::ForCurrentProcess()),
+       base::BindOnce(GpuProcessPreSandboxHook), sandbox_options);
++#endif
+ 
++#if !defined(OS_BSD)
+   if (watchdog_thread) {
+     base::Thread::Options thread_options;
+     thread_options.timer_slack = base::TIMER_SLACK_MAXIMUM;
+     watchdog_thread->StartWithOptions(thread_options);
+   }
+-
++#else
++  bool res = InitializeSandbox();
++#endif
    return res;
  }
+ #endif  // defined(OS_LINUX)
