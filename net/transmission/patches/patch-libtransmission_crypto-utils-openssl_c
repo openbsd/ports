@@ -1,0 +1,16 @@
+$OpenBSD: patch-libtransmission_crypto-utils-openssl_c,v 1.1 2018/01/30 16:34:35 rsadowski Exp $
+
+Use upstream provided OpenSSL functions
+
+Index: libtransmission/crypto-utils-openssl.c
+--- libtransmission/crypto-utils-openssl.c.orig
++++ libtransmission/crypto-utils-openssl.c
+@@ -230,7 +230,7 @@ tr_rc4_process (tr_rc4_ctx_t   handle,
+ ****
+ ***/
+ 
+-#if OPENSSL_VERSION_NUMBER < 0x10100000
++#if OPENSSL_VERSION_NUMBER < 0x10100000 || defined(LIBRESSL_VERSION_NUMBER)
+ static inline int
+ DH_set0_pqg (DH     * dh,
+              BIGNUM * p,
