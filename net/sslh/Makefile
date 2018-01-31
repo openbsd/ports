@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.16 2018/01/28 16:31:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2018/01/31 12:04:20 sthen Exp $
 
 COMMENT =	SSL/SSH multiplexer
 
-DISTNAME =	sslh-v1.19
+DISTNAME =	sslh-v1.19b
 PKGNAME =	${DISTNAME:S/-v/-/}
 CATEGORIES =	security net
 
-HOMEPAGE =	https://www.rutschle.net/tech/sslh.shtml
+HOMEPAGE =	https://www.rutschle.net/tech/sslh/README.html
 
 MAINTAINER =	Bjorn Ketelaars <bjorn.ketelaars@hydroxide.nl>
 
