@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.72 2017/12/26 19:18:49 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.73 2018/01/31 21:54:49 rsadowski Exp $
 
 COMMENT=	free peer-reviewed portable C++ source libraries
 
-VERSION=	1.65.1
+VERSION=	1.66.0
 DISTNAME=	boost_${VERSION:S/./_/g}
 PKGNAME=	boost-${VERSION}
 CATEGORIES=	devel
@@ -10,7 +10,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=boost/}
 EXTRACT_SUFX=	.tar.bz2
 FIX_EXTRACT_PERMISSIONS =	Yes
 
-SO_VERSION=	7.0
+SO_VERSION=	8.0
 BOOST_LIBS=	boost_atomic-mt \
 		boost_chrono-mt boost_chrono \
 		boost_container-mt boost_container \
@@ -50,9 +50,10 @@ SHARED_LIBS+=	${_lib} ${SO_VERSION}
 
 HOMEPAGE=	http://www.boost.org/
 
-MAINTAINER=	Brad Smith <brad@comstyle.com>
+MAINTAINER=	Brad Smith <brad@comstyle.com> \
+		Rafael Sadowski <rsadowski@openbsd.org>
 
-# MIT-like
+# Boost
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} bz2 c iconv m z

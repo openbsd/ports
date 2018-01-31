@@ -1,10 +1,10 @@
-$OpenBSD: patch-Jamroot,v 1.5 2017/12/26 19:18:49 rsadowski Exp $
+$OpenBSD: patch-Jamroot,v 1.6 2018/01/31 21:54:49 rsadowski Exp $
 Index: Jamroot
 --- Jamroot.orig
 +++ Jamroot
-@@ -133,8 +133,9 @@ import link ;
+@@ -134,8 +134,9 @@ import threadapi-feature ;
  path-constant BOOST_ROOT : . ;
- constant BOOST_VERSION : 1.65.1 ;
+ constant BOOST_VERSION : 1.66.0 ;
  constant BOOST_JAMROOT_MODULE : $(__name__) ;
 +constant SO_VERSION : ${SO_VERSION} ;
  

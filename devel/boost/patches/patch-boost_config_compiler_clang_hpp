@@ -1,4 +1,4 @@
-$OpenBSD: patch-boost_config_compiler_clang_hpp,v 1.3 2017/12/26 19:18:49 rsadowski Exp $
+$OpenBSD: patch-boost_config_compiler_clang_hpp,v 1.4 2018/01/31 21:54:49 rsadowski Exp $
 
 boost does not like mixing different compilers at build and compile
 time.
@@ -42,5 +42,5 @@ Index: boost/config/compiler/clang.hpp
  #define BOOST_ATTRIBUTE_UNUSED __attribute__((__unused__))
 +#endif
  
- #ifndef BOOST_COMPILER
- #  define BOOST_COMPILER "Clang version " __clang_version__
+ // Type aliasing hint.
+ #if __has_attribute(__may_alias__)
