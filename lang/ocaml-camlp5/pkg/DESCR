@@ -1,0 +1,19 @@
+Camlp5 is a preprocessor and pretty-printer for OCaml programs. It also
+provides parsing and printing tools.
+
+As a preprocessor, it allows one to:
+* extend the syntax of OCaml,
+* redefine the whole syntax of the language.
+
+As a pretty printer, it allows one to:
+* display OCaml programs in an elegant way,
+* convert from one syntax to another,
+* check the results of syntax extensions.
+
+Camlp5 also provides some parsing and pretty printing tools:
+* extensible grammars
+* extensible printers
+* stream parsers and lexers
+* pretty print module
+
+It works as a shell command and can also be used in the OCaml toplevel.
