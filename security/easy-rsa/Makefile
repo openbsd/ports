@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2018/01/13 01:23:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2018/01/31 17:10:47 sthen Exp $
 
 COMMENT =	small RSA key management package
 
-V =		3.0.3
+V =		3.0.4
 PKGNAME =	easy-rsa-$V
 DISTNAME =	EasyRSA-$V
 EXTRACT_SUFX =	.tgz

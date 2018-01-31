@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/01/13 01:23:46 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/01/31 17:10:47 sthen Exp $
 @extraunexec rm -rf %D/share/easy-rsa/pki
 share/easy-rsa/
 share/easy-rsa/COPYING.md
 share/easy-rsa/ChangeLog
+share/easy-rsa/README.md
 share/easy-rsa/README.quickstart.md
 share/easy-rsa/doc/
 share/easy-rsa/doc/EasyRSA-Advanced.md
@@ -12,11 +13,12 @@ share/easy-rsa/doc/Hacking.md
 share/easy-rsa/doc/Intro-To-PKI.md
 share/easy-rsa/easyrsa
 share/easy-rsa/gpl-2.0.txt
-share/easy-rsa/openssl-1.0.cnf
+share/easy-rsa/mktemp.txt
+share/easy-rsa/openssl-easyrsa.cnf
 share/easy-rsa/vars.example
 share/easy-rsa/x509-types/
 share/easy-rsa/x509-types/COMMON
 share/easy-rsa/x509-types/ca
 share/easy-rsa/x509-types/client
-share/easy-rsa/x509-types/san
+share/easy-rsa/x509-types/code-signing
 share/easy-rsa/x509-types/server
