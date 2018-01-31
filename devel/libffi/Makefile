@@ -1,20 +1,19 @@
-# $OpenBSD: Makefile,v 1.36 2018/01/22 06:28:00 bcallah Exp $
+# $OpenBSD: Makefile,v 1.37 2018/01/31 17:58:38 jca Exp $
 
 COMMENT=		Foreign Function Interface
 
 DISTNAME=		libffi-3.2.1
-REVISION=		3
+REVISION=		4
 SHARED_LIBS +=  ffi                  1.2      # .6.4
 CATEGORIES=		devel
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
-HOMEPAGE=		http://sourceware.org/libffi/
+HOMEPAGE=		https://sourceware.org/libffi/
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += pthread
 # needed for unwind symbols
 .if ${MACHINE_ARCH} == "arm"
 WANTLIB += c++abi
