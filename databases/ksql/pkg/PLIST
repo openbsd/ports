@@ -1,19 +1,22 @@
-@comment $OpenBSD: PLIST,v 1.2 2017/06/29 13:41:50 jturner Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/02/01 00:32:56 jturner Exp $
 include/ksql.h
 lib/libksql.a
 @man man/man3/ksql.3
 @man man/man3/ksql_alloc.3
 @man man/man3/ksql_alloc_child.3
 @man man/man3/ksql_bind_double.3
+@man man/man3/ksql_cfg_defaults.3
 @man man/man3/ksql_close.3
 @man man/man3/ksql_exec.3
 @man man/man3/ksql_free.3
 @man man/man3/ksql_lastid.3
 @man man/man3/ksql_open.3
+@man man/man3/ksql_role.3
 @man man/man3/ksql_stmt_alloc.3
 @man man/man3/ksql_stmt_double.3
 @man man/man3/ksql_stmt_free.3
 @man man/man3/ksql_stmt_reset.3
+@man man/man3/ksql_stmt_step.3
 @man man/man3/ksql_trace.3
 @man man/man3/ksql_trans_commit.3
 @man man/man3/ksql_trans_open.3
