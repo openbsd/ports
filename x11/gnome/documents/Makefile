@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.88 2017/11/17 12:10:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.89 2018/02/01 12:48:33 ajacoutot Exp $
 
 TRACKER_API=		2.0
 
 COMMENT=		document and e-books manager for GNOME
 
 GNOME_PROJECT=		gnome-documents
-GNOME_VERSION=		3.26.1
-REVISION=		0
+GNOME_VERSION=		3.26.2
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -23,7 +22,7 @@ WANTLIB += gstbadallocators-1.0 gstbase-1.0 gstfft-1.0 gstgl-1.0
 WANTLIB += gstpbutils-1.0 gstreamer-1.0 gsttag-1.0 gstvideo-1.0
 WANTLIB += gthread-2.0 gtk-3 harfbuzz harfbuzz-icu hyphen iconv
 WANTLIB += icudata icui18n icuuc intl javascriptcoregtk-4.0 jpeg
-WANTLIB += json-glib-1.0 kvm lzma m mozjs-52 ncursesw notify orc-0.4
+WANTLIB += json-glib-1.0 kvm lzma m mozjs-52 curses notify orc-0.4
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png readline secret-1 soup-2.4 sqlite3 tasn1 uuid webkit2gtk-4.0
 WANTLIB += webp xcb xcb-dri2 xcb-glx xcb-render xcb-shm xcb-xfixes
