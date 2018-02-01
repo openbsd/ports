@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2018/01/23 05:57:53 bcallah Exp $
+# $OpenBSD: Makefile,v 1.3 2018/02/01 16:22:30 bcallah Exp $
 
 COMMENT =	collaborative drawing program
-DISTNAME =	drawpile-2.0.6
+DISTNAME =	drawpile-2.0.7
 CATEGORIES =	graphics x11
 
 HOMEPAGE =	https://drawpile.net/
@@ -12,7 +12,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5DNSSD Qt5Core Qt5Gui
 WANTLIB += Qt5Multimedia Qt5Network Qt5Sql Qt5Svg Qt5Widgets c
-WANTLIB += gif m microhttpd miniupnpc
+WANTLIB += gif m microhttpd miniupnpc sodium
 
 MASTER_SITES =	https://drawpile.net/files/src/
 
@@ -26,6 +26,7 @@ LIB_DEPENDS =	devel/kf5/karchive \
 		devel/kf5/kdnssd \
 		graphics/giflib \
 		net/miniupnp/miniupnpc \
+		security/libsodium \
 		www/libmicrohttpd \
 		x11/qt5/qtmultimedia \
 		x11/qt5/qtsvg
