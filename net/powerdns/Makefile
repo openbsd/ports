@@ -1,51 +1,45 @@
-# $OpenBSD: Makefile,v 1.59 2018/01/11 19:27:07 rpe Exp $
+# $OpenBSD: Makefile,v 1.60 2018/02/01 21:47:43 sthen Exp $
 
 BROKEN-hppa =		undefined reference to '__sync_fetch_and_add_4'
 
 COMMENT-main=		modular authoritative nameserver (with database support)
 COMMENT-mysql=		MySQL database access module for PowerDNS
-COMMENT-pgsql=		PGSQL database access module for PowerDNS
-COMMENT-ldap=		LDAP module for PowerDNS
+COMMENT-pgsql=		PostgreSQL database access module for PowerDNS
 
-V=			4.0.4
+V=			4.1.0
 DISTNAME=		pdns-${V}
 EXTRACT_SUFX =		.tar.bz2
-PKGNAME=		powerdns-${V}
 PKGNAME-main=		powerdns-${V}
+PKGSPEC-main=		powerdns-=${V}
 PKGNAME-mysql=		powerdns-mysql-${V}
 PKGNAME-pgsql=		powerdns-pgsql-${V}
-PKGNAME-ldap=		powerdns-ldap-${V}
-CATEGORIES=		net
-HOMEPAGE=		http://www.powerdns.com/
-REVISION-ldap=		1
-REVISION-main=		2
-REVISION-mysql=		1
-REVISION-pgsql=		1
 
-MULTI_PACKAGES=		-main -mysql -pgsql -ldap
+CATEGORIES=		net
+
+HOMEPAGE=		http://www.powerdns.com/
+
+MULTI_PACKAGES=		-main -mysql -pgsql
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-COMPILER =		base-clang ports-gcc
-
 WANTLIB += m pthread ${COMPILER_LIBCXX}
-#WANTLIB += ${MODGCC4_CPPWANTLIB}
 
 WANTLIB-main += ${WANTLIB}
-WANTLIB-main += boost_program_options-mt boost_serialization-mt
-WANTLIB-main += bz2 c crypto gmp sqlite3 z
+WANTLIB-main += boost_program_options-mt c crypto sodium sqlite3
 
-MASTER_SITES=		http://downloads.powerdns.com/releases/
+MASTER_SITES=		https://downloads.powerdns.com/releases/
+
+COMPILER =		base-clang ports-gcc
 
 NO_TEST=		Yes
 
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			databases/sqlite3 \
 			devel/boost \
-			devel/gmp
+			security/libsodium
 
-PSEUDO_FLAVORS+=	no_mysql no_pgsql no_ldap
+PSEUDO_FLAVORS+=	no_mysql no_pgsql
 FLAVOR?=
 
 BACKENDS=		gsqlite3
@@ -59,7 +53,9 @@ CONFIGURE_ARGS+=	--disable-shared \
 			--with-dynmodules="${BACKENDS}" \
 			--without-lua \
 			--disable-hardening \
-			--without-protobuf
+			--without-protobuf \
+			--enable-tools
+CONFIGURE_ARGS+=	--without-ldap
 
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
@@ -76,8 +72,8 @@ CONFIGURE_ARGS+=	--without-mysql
 .endif
 LIB_DEPENDS-mysql=	${LIB_DEPENDS} \
 			databases/mariadb
-RUN_DEPENDS-mysql=	${FULLPKGNAME-main}:net/powerdns
-WANTLIB-mysql+=		crypto lib/mysql/mysqlclient ssl z ${WANTLIB}
+RUN_DEPENDS-mysql=	net/powerdns
+WANTLIB-mysql+=		${WANTLIB} crypto lib/mysql/mysqlclient ssl z
 
 # PostgreSQL
 .if ${BUILD_PACKAGES:M-pgsql}
@@ -89,28 +85,16 @@ CONFIGURE_ARGS+=	--without-pgsql
 .endif
 LIB_DEPENDS-pgsql=	${LIB_DEPENDS} \
 			databases/postgresql,-main
-RUN_DEPENDS-pgsql=	${FULLPKGNAME-main}:net/powerdns
-WANTLIB-pgsql=		crypto pq>=2 ssl ${WANTLIB}
-
-# LDAP
-.if ${BUILD_PACKAGES:M-ldap}
-BACKENDS+=		ldap
-.else
-CONFIGURE_ARGS+=	--without-ldap
-.endif
-LIB_DEPENDS-ldap=	${LIB_DEPENDS} \
-			databases/openldap
-RUN_DEPENDS-ldap=	${FULLPKGNAME-main}:net/powerdns
-WANTLIB-ldap+=		${WANTLIB} crypto lber-2.4 ldap_r-2.4 sasl2 ssl
+RUN_DEPENDS-pgsql=	net/powerdns
+WANTLIB-pgsql=		${WANTLIB} crypto pq>=2 ssl
 
 EXAMPLE_DIR=		${PREFIX}/share/examples/pdns/
+
 post-install:
 	rm -f ${PREFIX}/lib/pdns/*.la
 	${INSTALL_DATA_DIR} ${EXAMPLE_DIR}
-.for t in tables-mysql.sql tables-pgsql.sql tables-sqlite.sql
-	${INSTALL_DATA} ${FILESDIR}/$t ${EXAMPLE_DIR}
-.endfor
-	${INSTALL_DATA} ${WRKSRC}/pdns/pdns.conf-dist ${EXAMPLE_DIR}
-	${INSTALL_DATA} ${FILESDIR}/pdns.conf ${EXAMPLE_DIR}
+	cat ${FILESDIR}/pdns.conf ${WRKSRC}/pdns/pdns.conf-dist > \
+	    ${WRKSRC}/pdns.conf # concatenate local and upstream sample configs
+	${INSTALL_DATA} ${WRKSRC}/pdns.conf ${EXAMPLE_DIR}
 
 .include <bsd.port.mk>

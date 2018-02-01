@@ -1,0 +1,14 @@
+$OpenBSD: patch-pdns_mplexer_hh,v 1.1 2018/02/01 21:47:43 sthen Exp $
+needed for timeval
+
+Index: pdns/mplexer.hh
+--- pdns/mplexer.hh.orig
++++ pdns/mplexer.hh
+@@ -21,6 +21,7 @@
+  */
+ #ifndef PDNS_MPLEXER_HH
+ #define PDNS_MPLEXER_HH
++#include <sys/time.h>
+ #include <boost/function.hpp>
+ #include <boost/any.hpp>
+ #include <boost/shared_array.hpp>

@@ -1,14 +1,28 @@
-@comment $OpenBSD: PLIST-main,v 1.10 2017/01/13 15:38:46 florian Exp $
+@comment $OpenBSD: PLIST-main,v 1.11 2018/02/01 21:47:43 sthen Exp $
 @conflict powerdns-sqlite-*
 @conflict powerdns-sqlite3-*
 @pkgpath net/powerdns,-sqlite
 @pkgpath net/powerdns,-sqlite3
 @newgroup _powerdns:609
 @newuser _powerdns:609:_powerdns:daemon:PowerDNS Server:/nonexistent:/sbin/nologin
+@bin bin/dnsbulktest
+@bin bin/dnsgram
+@bin bin/dnsreplay
+@bin bin/dnsscan
+@bin bin/dnsscope
+@bin bin/dnstcpbench
+@bin bin/dnswasher
+@bin bin/dumresp
+@bin bin/ixplore
+@bin bin/nproxy
+@bin bin/nsec3dig
 @bin bin/pdns_control
+@bin bin/pdns_notify
 @bin bin/pdnsutil
+@bin bin/saxfr
+@bin bin/sdig
+@bin bin/stubquery
 @bin bin/zone2json
-@bin bin/zone2ldap
 @bin bin/zone2sql
 lib/pdns/
 lib/pdns/libbindbackend.so
@@ -43,6 +57,4 @@ share/examples/pdns/
 @sample ${SYSCONFDIR}/
 share/examples/pdns/pdns.conf
 @sample ${SYSCONFDIR}/pdns.conf
-share/examples/pdns/pdns.conf-dist
-share/examples/pdns/tables-sqlite.sql
 @rcscript ${RCDIR}/pdns_server

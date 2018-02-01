@@ -1,0 +1,15 @@
+$OpenBSD: patch-pdns_nproxy_cc,v 1.1 2018/02/01 21:47:43 sthen Exp $
+
+needed for chroot et al
+
+Index: pdns/nproxy.cc
+--- pdns/nproxy.cc.orig
++++ pdns/nproxy.cc
+@@ -38,6 +38,7 @@
+ #include <sys/stat.h>
+ #include <fcntl.h>
+ #include <grp.h>
++#include <unistd.h>
+ #include "dnsrecords.hh"
+ #include "mplexer.hh"
+ #include "statbag.hh"
