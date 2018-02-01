@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/01/06 10:08:17 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/02/01 13:22:27 rpointel Exp $
 lib/python${MODPY_VERSION}/site-packages/dfdatetime/
 lib/python${MODPY_VERSION}/site-packages/dfdatetime-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/dfdatetime-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -18,7 +18,9 @@ lib/python${MODPY_VERSION}/site-packages/dfdatetime/${MODPY_PYCACHE}filetime.${M
 lib/python${MODPY_VERSION}/site-packages/dfdatetime/${MODPY_PYCACHE}hfs_time.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dfdatetime/${MODPY_PYCACHE}interface.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dfdatetime/${MODPY_PYCACHE}java_time.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/dfdatetime/${MODPY_PYCACHE}ole_automation_date.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dfdatetime/${MODPY_PYCACHE}posix_time.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/dfdatetime/${MODPY_PYCACHE}precisions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dfdatetime/${MODPY_PYCACHE}rfc2579_date_time.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dfdatetime/${MODPY_PYCACHE}semantic_time.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dfdatetime/${MODPY_PYCACHE}systemtime.${MODPY_PYC_MAGIC_TAG}pyc
@@ -35,7 +37,9 @@ lib/python${MODPY_VERSION}/site-packages/dfdatetime/filetime.py
 lib/python${MODPY_VERSION}/site-packages/dfdatetime/hfs_time.py
 lib/python${MODPY_VERSION}/site-packages/dfdatetime/interface.py
 lib/python${MODPY_VERSION}/site-packages/dfdatetime/java_time.py
+lib/python${MODPY_VERSION}/site-packages/dfdatetime/ole_automation_date.py
 lib/python${MODPY_VERSION}/site-packages/dfdatetime/posix_time.py
+lib/python${MODPY_VERSION}/site-packages/dfdatetime/precisions.py
 lib/python${MODPY_VERSION}/site-packages/dfdatetime/rfc2579_date_time.py
 lib/python${MODPY_VERSION}/site-packages/dfdatetime/semantic_time.py
 lib/python${MODPY_VERSION}/site-packages/dfdatetime/systemtime.py
