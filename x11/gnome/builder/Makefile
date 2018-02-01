@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.71 2018/01/11 21:24:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.72 2018/02/01 11:50:15 ajacoutot Exp $
 
 COMMENT=		IDE for GNOME
 
 GNOME_PROJECT=		gnome-builder
-GNOME_VERSION=		3.26.3
+GNOME_VERSION=		3.26.4
 
 SHARED_LIBS +=  gstyle-private            1.0 # 0.0
 
@@ -48,7 +48,7 @@ LIB_DEPENDS=		devel/jsonrpc-glib \
 			lang/vala \
 			textproc/gspell \
 			x11/gnome/devhelp \
-			x11/gnome/libdazzle \
+			x11/gnome/libdazzle>=3.26.3 \
 			x11/gtksourceview3
 
 .include <bsd.port.arch.mk>

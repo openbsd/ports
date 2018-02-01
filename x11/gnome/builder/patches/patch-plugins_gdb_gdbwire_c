@@ -1,11 +1,11 @@
-$OpenBSD: patch-plugins_gdb_gdbwire_c,v 1.1 2017/11/03 12:39:51 ajacoutot Exp $
+$OpenBSD: patch-plugins_gdb_gdbwire_c,v 1.2 2018/02/01 11:50:15 ajacoutot Exp $
 
 error: format string is not a string literal [-Werror,-Wformat-nonliteral]
 
 Index: plugins/gdb/gdbwire.c
 --- plugins/gdb/gdbwire.c.orig
 +++ plugins/gdb/gdbwire.c
-@@ -608,11 +608,18 @@ gdbwire_logger_log(const char *file, int line, enum gd
+@@ -612,11 +612,18 @@ gdbwire_logger_log(const char *file, int line, enum gd
      va_list ap;
      va_start(ap, fmt);
  
