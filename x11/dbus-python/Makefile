@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.37 2017/11/12 15:49:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.38 2018/02/01 08:43:11 ajacoutot Exp $
 
 PORTROACH=		limitw:2,even
 
 COMMENT-main =		dbus bindings for Python
 COMMENT-common =	common files for py-dbus
 
-V =			1.2.4
+V =			1.2.6
 DISTNAME =		dbus-python-${V}
 
 PKGNAME-main =		py-dbus-${V}
-REVISION-main =		1
 FULLPKGNAME-common =	py-dbus-common-${V}
 FULLPKGPATH-common =	x11/dbus-python,-common
 
