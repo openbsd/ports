@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.574 2018/01/19 14:40:46 jca Exp $
+# $OpenBSD: Quirks.pm,v 1.575 2018/02/01 21:49:32 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1222,6 +1222,7 @@ my $obsolete_reason = {
 	'libgcal' => 6,
 	'akonadi-googledata' => 6,
 	'arora' => 3,
+	'powerdns-ldap' => 6,
 };
 
 # reasons for obsolete packages
