@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/01/06 10:10:13 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/02/01 13:25:08 rpointel Exp $
 bin/image_export.py
 bin/log2timeline.py
 bin/pinfo.py
@@ -31,6 +31,8 @@ lib/python${MODPY_VERSION}/site-packages/plaso/analysis/mediator.py
 lib/python${MODPY_VERSION}/site-packages/plaso/analysis/mediator.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/analysis/nsrlsvr.py
 lib/python${MODPY_VERSION}/site-packages/plaso/analysis/nsrlsvr.pyc
+lib/python${MODPY_VERSION}/site-packages/plaso/analysis/sessionize.py
+lib/python${MODPY_VERSION}/site-packages/plaso/analysis/sessionize.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/analysis/tagging.py
 lib/python${MODPY_VERSION}/site-packages/plaso/analysis/tagging.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/analysis/unique_domains_visited.py
@@ -113,6 +115,8 @@ lib/python${MODPY_VERSION}/site-packages/plaso/cli/helpers/profiling.py
 lib/python${MODPY_VERSION}/site-packages/plaso/cli/helpers/profiling.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/cli/helpers/server_config.py
 lib/python${MODPY_VERSION}/site-packages/plaso/cli/helpers/server_config.pyc
+lib/python${MODPY_VERSION}/site-packages/plaso/cli/helpers/sessionize_analysis.py
+lib/python${MODPY_VERSION}/site-packages/plaso/cli/helpers/sessionize_analysis.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/cli/helpers/shared_4n6time_output.py
 lib/python${MODPY_VERSION}/site-packages/plaso/cli/helpers/shared_4n6time_output.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/cli/helpers/sqlite_4n6time_output.py
@@ -307,6 +311,8 @@ lib/python${MODPY_VERSION}/site-packages/plaso/formatters/firefox_cache.py
 lib/python${MODPY_VERSION}/site-packages/plaso/formatters/firefox_cache.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/formatters/firefox_cookies.py
 lib/python${MODPY_VERSION}/site-packages/plaso/formatters/firefox_cookies.pyc
+lib/python${MODPY_VERSION}/site-packages/plaso/formatters/fseventsd.py
+lib/python${MODPY_VERSION}/site-packages/plaso/formatters/fseventsd.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/formatters/ganalytics.py
 lib/python${MODPY_VERSION}/site-packages/plaso/formatters/ganalytics.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/formatters/gdrive.py
@@ -391,6 +397,8 @@ lib/python${MODPY_VERSION}/site-packages/plaso/formatters/skype.py
 lib/python${MODPY_VERSION}/site-packages/plaso/formatters/skype.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/formatters/sophos_av.py
 lib/python${MODPY_VERSION}/site-packages/plaso/formatters/sophos_av.pyc
+lib/python${MODPY_VERSION}/site-packages/plaso/formatters/srum.py
+lib/python${MODPY_VERSION}/site-packages/plaso/formatters/srum.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/formatters/ssh.py
 lib/python${MODPY_VERSION}/site-packages/plaso/formatters/ssh.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/formatters/symantec.py
@@ -462,8 +470,6 @@ lib/python${MODPY_VERSION}/site-packages/plaso/lib/objectfilter.py
 lib/python${MODPY_VERSION}/site-packages/plaso/lib/objectfilter.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/lib/pfilter.py
 lib/python${MODPY_VERSION}/site-packages/plaso/lib/pfilter.pyc
-lib/python${MODPY_VERSION}/site-packages/plaso/lib/platform_specific.py
-lib/python${MODPY_VERSION}/site-packages/plaso/lib/platform_specific.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/lib/plist.py
 lib/python${MODPY_VERSION}/site-packages/plaso/lib/plist.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/lib/py2to3.py
@@ -592,10 +598,14 @@ lib/python${MODPY_VERSION}/site-packages/plaso/parsers/esedb_plugins/interface.p
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/esedb_plugins/interface.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/esedb_plugins/msie_webcache.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/esedb_plugins/msie_webcache.pyc
+lib/python${MODPY_VERSION}/site-packages/plaso/parsers/esedb_plugins/srum.py
+lib/python${MODPY_VERSION}/site-packages/plaso/parsers/esedb_plugins/srum.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/filestat.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/filestat.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/firefox_cache.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/firefox_cache.pyc
+lib/python${MODPY_VERSION}/site-packages/plaso/parsers/fseventsd.py
+lib/python${MODPY_VERSION}/site-packages/plaso/parsers/fseventsd.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/hachoir.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/hachoir.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/iis.py
@@ -881,20 +891,28 @@ lib/python${MODPY_VERSION}/site-packages/plaso/storage/event_tag_index.py
 lib/python${MODPY_VERSION}/site-packages/plaso/storage/event_tag_index.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/storage/factory.py
 lib/python${MODPY_VERSION}/site-packages/plaso/storage/factory.pyc
-lib/python${MODPY_VERSION}/site-packages/plaso/storage/fake_storage.py
-lib/python${MODPY_VERSION}/site-packages/plaso/storage/fake_storage.pyc
-lib/python${MODPY_VERSION}/site-packages/plaso/storage/gzip_file.py
-lib/python${MODPY_VERSION}/site-packages/plaso/storage/gzip_file.pyc
+lib/python${MODPY_VERSION}/site-packages/plaso/storage/fake/
+lib/python${MODPY_VERSION}/site-packages/plaso/storage/fake/__init__.py
+lib/python${MODPY_VERSION}/site-packages/plaso/storage/fake/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/plaso/storage/fake/writer.py
+lib/python${MODPY_VERSION}/site-packages/plaso/storage/fake/writer.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/storage/identifiers.py
 lib/python${MODPY_VERSION}/site-packages/plaso/storage/identifiers.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/storage/interface.py
 lib/python${MODPY_VERSION}/site-packages/plaso/storage/interface.pyc
-lib/python${MODPY_VERSION}/site-packages/plaso/storage/sqlite_file.py
-lib/python${MODPY_VERSION}/site-packages/plaso/storage/sqlite_file.pyc
+lib/python${MODPY_VERSION}/site-packages/plaso/storage/sqlite/
+lib/python${MODPY_VERSION}/site-packages/plaso/storage/sqlite/__init__.py
+lib/python${MODPY_VERSION}/site-packages/plaso/storage/sqlite/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/plaso/storage/sqlite/merge_reader.py
+lib/python${MODPY_VERSION}/site-packages/plaso/storage/sqlite/merge_reader.pyc
+lib/python${MODPY_VERSION}/site-packages/plaso/storage/sqlite/reader.py
+lib/python${MODPY_VERSION}/site-packages/plaso/storage/sqlite/reader.pyc
+lib/python${MODPY_VERSION}/site-packages/plaso/storage/sqlite/sqlite_file.py
+lib/python${MODPY_VERSION}/site-packages/plaso/storage/sqlite/sqlite_file.pyc
+lib/python${MODPY_VERSION}/site-packages/plaso/storage/sqlite/writer.py
+lib/python${MODPY_VERSION}/site-packages/plaso/storage/sqlite/writer.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/storage/time_range.py
 lib/python${MODPY_VERSION}/site-packages/plaso/storage/time_range.pyc
-lib/python${MODPY_VERSION}/site-packages/plaso/storage/zip_file.py
-lib/python${MODPY_VERSION}/site-packages/plaso/storage/zip_file.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/unix/
 lib/python${MODPY_VERSION}/site-packages/plaso/unix/__init__.py
 lib/python${MODPY_VERSION}/site-packages/plaso/unix/__init__.pyc
@@ -919,10 +937,10 @@ share/doc/plaso/AUTHORS
 share/doc/plaso/LICENSE
 share/doc/plaso/README
 share/plaso/
-share/plaso/README
 share/plaso/filter_windows.txt
+share/plaso/plaso-data.README
 share/plaso/plaso_kibana_example.json
 share/plaso/signatures.conf
-share/plaso/tag_macosx.txt
+share/plaso/tag_macos.txt
 share/plaso/tag_windows.txt
 share/plaso/winevt-rc.db
