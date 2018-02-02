@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.47 2018/01/28 12:04:11 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.48 2018/02/02 08:05:58 ajacoutot Exp $
 @ask-update salt-<2014.1.5p0 Make sure the _salt-master user does not exist
 @comment needs a homedir to store ssh keys for GitFS
 @newgroup _salt:722
@@ -399,6 +399,8 @@ lib/python${MODPY_VERSION}/site-packages/salt/executors/sudo.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/ext/
 lib/python${MODPY_VERSION}/site-packages/salt/ext/__init__.py
 lib/python${MODPY_VERSION}/site-packages/salt/ext/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/salt/ext/backports_abc.py
+lib/python${MODPY_VERSION}/site-packages/salt/ext/backports_abc.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/ext/ipaddress.py
 lib/python${MODPY_VERSION}/site-packages/salt/ext/ipaddress.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/ext/six.py
@@ -1315,8 +1317,8 @@ lib/python${MODPY_VERSION}/site-packages/salt/modules/virt.py
 lib/python${MODPY_VERSION}/site-packages/salt/modules/virt.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/modules/virtualenv_mod.py
 lib/python${MODPY_VERSION}/site-packages/salt/modules/virtualenv_mod.pyc
-lib/python${MODPY_VERSION}//site-packages/salt/modules/vmctl.py
-lib/python${MODPY_VERSION}//site-packages/salt/modules/vmctl.pyc
+lib/python${MODPY_VERSION}/site-packages/salt/modules/vmctl.py
+lib/python${MODPY_VERSION}/site-packages/salt/modules/vmctl.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/modules/vsphere.py
 lib/python${MODPY_VERSION}/site-packages/salt/modules/vsphere.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/modules/win_autoruns.py
@@ -2884,8 +2886,8 @@ share/examples/salt/
 @sample ${SYSCONFDIR}/salt/master.d/
 @sample ${SYSCONFDIR}/salt/minion.d/
 @sample ${SYSCONFDIR}/salt/proxy.d/
-@group
 @owner
+@group
 share/examples/salt/cloud
 @sample ${SYSCONFDIR}/salt/cloud
 share/examples/salt/cloud.profiles
