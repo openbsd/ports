@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2017/11/30 11:14:53 pascal Exp $
+# $OpenBSD: Makefile,v 1.43 2018/02/02 03:55:42 millert Exp $
 
 COMMENT=		new MH mail handling program
 
@@ -29,8 +29,7 @@ RUN_DEPENDS=		mail/p5-MIME-tools \
 FLAVORS=		sasl
 FLAVOR?=
 
-CONFIGURE_ENV=		ac_cv_header_db_h=no \
-			CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 USE_GROFF =		Yes
 
