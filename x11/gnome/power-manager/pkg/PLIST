@@ -1,7 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.14 2016/10/31 10:31:13 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.15 2018/02/02 08:02:56 ajacoutot Exp $
 @bin bin/gnome-power-statistics
-share/appdata/
-share/appdata/org.gnome.PowerStats.appdata.xml
 share/applications/org.gnome.PowerStats.desktop
 share/glib-2.0/schemas/org.gnome.power-manager.gschema.xml
 share/icons/hicolor/16x16/apps/org.gnome.PowerStats.png
@@ -39,6 +37,7 @@ share/locale/eu/LC_MESSAGES/gnome-power-manager.mo
 share/locale/fa/LC_MESSAGES/gnome-power-manager.mo
 share/locale/fi/LC_MESSAGES/gnome-power-manager.mo
 share/locale/fr/LC_MESSAGES/gnome-power-manager.mo
+share/locale/fur/LC_MESSAGES/gnome-power-manager.mo
 share/locale/ga/LC_MESSAGES/gnome-power-manager.mo
 share/locale/gd/LC_MESSAGES/gnome-power-manager.mo
 share/locale/gl/LC_MESSAGES/gnome-power-manager.mo
@@ -92,6 +91,8 @@ share/locale/vi/LC_MESSAGES/gnome-power-manager.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-power-manager.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-power-manager.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-power-manager.mo
+share/metainfo/
+share/metainfo/org.gnome.PowerStats.appdata.xml
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

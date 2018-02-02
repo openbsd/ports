@@ -1,0 +1,13 @@
+$OpenBSD: patch-man_meson_build,v 1.1 2018/02/02 08:02:56 ajacoutot Exp $
+
+gnome-power-statistics.sgml:1: parser error : StartTag: invalid element name
+
+Index: man/meson.build
+--- man/meson.build.orig
++++ man/meson.build
+@@ -1,4 +1,4 @@
+-docbook2man = find_program('docbook2man', required : false)
++docbook2man = find_program('docbook2man-disable', required : false)
+ if docbook2man.found()
+   custom_target('gnome-power-statistics-man',
+     output : 'gnome-power-statistics.1',
