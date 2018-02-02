@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/12/27 19:31:07 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2018/02/02 16:20:46 bcallah Exp $
 
 COMMENT =	tiny embeddable httpd library written in C
-DISTNAME =	libmicrohttpd-0.9.58
+DISTNAME =	libmicrohttpd-0.9.59
 CATEGORIES =	www
 
 SHARED_LIBS +=	microhttpd                0.0 # 58.0
