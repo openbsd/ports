@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2017/11/01 10:12:25 jeremy Exp $
+# $OpenBSD: Makefile,v 1.8 2018/02/02 21:08:09 landry Exp $
 
-VERSION =		0.11.2
+VERSION =		0.12
 
 COMMENT =		interactive shell for git
 
 DISTNAME =		gitsh-${VERSION}
-REVISION =		0
 
 CATEGORIES =		devel
 
@@ -16,7 +15,7 @@ MAINTAINER =		Mike Burns <mike+openbsd@mike-burns.com>
 # License: BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += ereadline ncurses ${MODRUBY_WANTLIB}
+WANTLIB +=		ereadline curses ${MODRUBY_WANTLIB}
 
 MASTER_SITES =		${HOMEPAGE}/releases/download/v${VERSION}/
 
