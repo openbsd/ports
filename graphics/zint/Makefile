@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2018/01/10 15:12:08 kirby Exp $
+# $OpenBSD: Makefile,v 1.13 2018/02/02 15:08:09 kirby Exp $
 
 COMMENT-main =		library for encoding data in several barcode variants
 COMMENT-x11 = 		graphical interface for the zint barcode generator
@@ -7,6 +7,7 @@ V = 			2.6.2
 DISTNAME =		zint-${V}.src
 PKGNAME-main = 		zint-${V}
 PKGNAME-x11 = 		zint-gui-${V}
+REVISION =		0
 
 SHARED_LIBS += 		QZint	1.0 # 2.6
 SHARED_LIBS += 		zint	1.0 # 2.6
