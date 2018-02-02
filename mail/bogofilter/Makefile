@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2017/06/02 08:56:32 schwarze Exp $
+# $OpenBSD: Makefile,v 1.29 2018/02/02 10:39:54 phessler Exp $
 
 COMMENT =	bayesian spam filter
 
@@ -43,6 +43,7 @@ CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include/" \
 			LDFLAGS="-L${LOCALBASE}/lib/ -liconv -lz"
 .else
 BROKEN-hppa =		configure stuck on testing if BDB supports shared environments
+BROKEN-aarch64 =	configure stuck on testing if BDB supports shared environments
 DB_DIR =		db
 LIB_DEPENDS +=		databases/db/v3
 WANTLIB +=		lib/db/db=3
