@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2018/01/18 06:51:49 bentley Exp $
+# $OpenBSD: Makefile,v 1.7 2018/02/02 08:38:05 bentley Exp $
 
 COMMENT =		generic multi-emulator frontend
 
@@ -54,7 +54,8 @@ NO_TEST =		Yes
 
 # strip out byte order marks that break GCC 4.2
 post-extract:
-	sed -i s/$$(printf '\xef\xbb\xbf')// ${WRKSRC}/intl/msg_*
+	sed -i s/$$(printf '\xef\xbb\xbf')// ${WRKSRC}/intl/msg_* \
+		${WRKSRC}/menu/widgets/menu_osk_utf8_pages.h
 
 pre-build:
 	${SUBST_CMD} ${WRKSRC}/retroarch.cfg
