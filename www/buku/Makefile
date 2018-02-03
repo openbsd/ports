@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2017/11/11 08:21:34 feinerer Exp $
+# $OpenBSD: Makefile,v 1.5 2018/02/03 11:50:40 feinerer Exp $
 
 COMMENT =	powerful command-line bookmark manager
 
-MODPY_EGG_VERSION =	3.5
+MODPY_EGG_VERSION =	3.6
 DISTNAME =	buku-${MODPY_EGG_VERSION}
 
 CATEGORIES =	www
@@ -18,7 +18,6 @@ MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 RUN_DEPENDS =		security/py-cryptography${MODPY_FLAVOR} \
 			www/py-beautifulsoup4${MODPY_FLAVOR} \
-			www/py-requests${MODPY_FLAVOR} \
 			www/py-urllib3${MODPY_FLAVOR}
 
 post-install:
