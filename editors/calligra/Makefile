@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2017/07/30 16:53:54 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2018/02/03 21:01:36 rsadowski Exp $
 
 COMMENT =	K Desktop Environment, office suite
-HOMEPAGE =	https://www.calligra-suite.org/
-VERSION =	3.0.1
+HOMEPAGE =	https://www.calligra.org
+VERSION =	3.1.0
 DISTNAME =	calligra-${VERSION}
 CATEGORIES =	editors
-REVISION =	4
 
 DIST_SUBDIR =	kde
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/calligra/${VERSION}/}
@@ -24,47 +23,47 @@ SHARED_LIBS +=  basicflakes               50.0 # 0.0
 SHARED_LIBS +=  calligrasheetscommon      50.0 # 9.0
 SHARED_LIBS +=  calligrasheetsodf         50.0 # 9.0
 SHARED_LIBS +=  calligrastageprivate      50.0 # 0.0
-SHARED_LIBS +=  flake                     50.0 # 0.0
+SHARED_LIBS +=  flake                     51.0 # 0.0
 SHARED_LIBS +=  karboncommon              50.0 # 0.0
 SHARED_LIBS +=  karbonui                  50.0 # 0.0
-SHARED_LIBS +=  komain                    50.0 # 0.0
-SHARED_LIBS +=  komsooxml                 50.0 # 13.0
+SHARED_LIBS +=  komain                    51.0 # 0.0
+SHARED_LIBS +=  komsooxml                 51.0 # 13.0
 SHARED_LIBS +=  koodf                     50.0 # 0.0
 SHARED_LIBS +=  koodf2                    50.0 # 13.0
 SHARED_LIBS +=  koodfreader               50.0 # 13.0
 SHARED_LIBS +=  kopageapp                 50.0 # 0.0
 SHARED_LIBS +=  koplugin                  50.0 # 0.0
-SHARED_LIBS +=  kotext                    50.0 # 0.0
+SHARED_LIBS +=  kotext                    51.0 # 0.0
 SHARED_LIBS +=  kotextlayout              50.0 # 13.0
 SHARED_LIBS +=  kovectorimage             50.0 # 13.0
 SHARED_LIBS +=  koversion                 0.0 # 14.0
 SHARED_LIBS +=  kowidgets                 50.0 # 0.0
 SHARED_LIBS +=  kowidgetutils             50.0 # 0.0
-SHARED_LIBS +=  kowv2                     50.0 # 0.0
-SHARED_LIBS +=  kundo2                    50.0 # 0.0
+SHARED_LIBS +=  kowv2                     51.0 # 0.0
+SHARED_LIBS +=  kundo2                    51.0 # 0.0
 SHARED_LIBS +=  pigmentcms                50.0 # 0.0
 SHARED_LIBS +=  wordsprivate              14.0 # 1.0
 SHARED_LIBS +=  koformula                 15.0 # 1.0
-SHARED_LIBS +=  kostore                   15.0 # 1.0
+SHARED_LIBS +=  kostore                   16.0 # 1.0
 SHARED_LIBS +=  kdeinit5_calligrasheets   0.0 # 0.0
 SHARED_LIBS +=  kdeinit5_calligrawords    0.0 # 0.0
 SHARED_LIBS +=  kdeinit5_karbon           0.0 # 0.0
+SHARED_LIBS +=  gemini                    0.0 # 16.0
 
-WANTLIB += ${COMPILER_LIBCXX}
-WANTLIB += Half ICE Iex IlmImf IlmThread Imath KF5Activities KF5Archive
-WANTLIB += KF5Auth KF5Bookmarks KF5Codecs KF5Completion KF5ConfigCore
-WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5Crash
-WANTLIB += KF5DBusAddons KF5GuiAddons KF5I18n KF5IconThemes KF5ItemViews
-WANTLIB += KF5JS KF5JobWidgets KF5KCMUtils KF5KDELibs4Support
-WANTLIB += KF5KHtml KF5KIOCore KF5KIOFileWidgets KF5KIOWidgets
-WANTLIB += KF5Notifications KF5NotifyConfig KF5Parts KF5Service
-WANTLIB += KF5Solid KF5SonnetCore KF5SonnetUi KF5TextWidgets KF5UnitConversion
-WANTLIB += KF5Wallet KF5WidgetsAddons KF5WindowSystem KF5XmlGui
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5OpenGL Qt5PrintSupport
-WANTLIB += Qt5Qml Qt5Quick Qt5Sql Qt5Svg Qt5WebKit Qt5WebKitWidgets
-WANTLIB += Qt5Widgets Qt5X11Extras Qt5Xml SM X11 Xext c fontconfig
-WANTLIB += freetype gsl iconv jpeg lcms2 m openjpeg phonon4qt5experimental
-WANTLIB += poppler poppler-qt5 pthread z
+WANTLIB += ${COMPILER_LIBCXX} Half ICE Iex IlmImf IlmThread Imath
+WANTLIB += KF5Activities KF5Archive KF5Auth KF5Bookmarks KF5Codecs
+WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
+WANTLIB += KF5CoreAddons KF5Crash KF5DBusAddons KF5GuiAddons KF5I18n
+WANTLIB += KF5IconThemes KF5ItemViews KF5JS KF5JobWidgets KF5KCMUtils
+WANTLIB += KF5KDELibs4Support KF5KHtml KF5KIOCore KF5KIOFileWidgets
+WANTLIB += KF5KIOWidgets KF5Notifications KF5NotifyConfig KF5Parts
+WANTLIB += KF5Service KF5Solid KF5SonnetCore KF5SonnetUi KF5TextWidgets
+WANTLIB += KF5UnitConversion KF5Wallet KF5WidgetsAddons KF5WindowSystem
+WANTLIB += KF5XmlGui Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5OpenGL
+WANTLIB += Qt5PrintSupport Qt5Qml Qt5Quick Qt5QuickWidgets Qt5Sql
+WANTLIB += Qt5Svg Qt5Widgets Qt5X11Extras Qt5Xml SM X11 Xext c
+WANTLIB += fontconfig freetype gsl gslcblas iconv lcms2 m phonon4qt5experimental
+WANTLIB += poppler poppler-qt5 z
 
 BUILD_DEPENDS +=devel/boost \
 		math/eigen3 \
