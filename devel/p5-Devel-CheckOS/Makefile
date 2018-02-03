@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2017/05/26 21:50:35 bluhm Exp $
+# $OpenBSD: Makefile,v 1.5 2018/02/03 17:55:17 bluhm Exp $
 
 COMMENT =	check what OS we are running on
 
-DISTNAME =	Devel-CheckOS-1.80
+DISTNAME =	Devel-CheckOS-1.81
 
 CATEGORIES =	devel
 
