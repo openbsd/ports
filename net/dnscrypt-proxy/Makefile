@@ -1,28 +1,27 @@
-# $OpenBSD: Makefile,v 1.33 2018/01/11 19:27:05 rpe Exp $
+# $OpenBSD: Makefile,v 1.34 2018/02/03 11:03:44 sthen Exp $
 
 COMMENT-main=		secure communications between a DNS client and resolver
 COMMENT-plugins=	example plugins for dnscrypt-proxy
 
-# if updating, update to a newer resolvers csv file, or comment-out and
-# fall back to the included one
+# upstream has moved on to 2.x and old distfiles are no longer available;
+# using mirrored files for now but port needs updating to the golang-based
+# 2.0 version.
 V=			1.9.5
-REVISION-main=		1
+REVISION=		2
 DISTNAME=		dnscrypt-proxy-${V}
 PKGNAME-main=		dnscrypt-proxy-${V}
 PKGNAME-plugins=	dnscrypt-proxy-plugins-${V}
 
 R=			20171030
-MASTER_SITES0=		https://raw.githubusercontent.com/jedisct1/dnscrypt-proxy/0bbec277e61325a4a2f00e29ab039a7d308fb6c2/
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX} \
-			dnscrypt-resolvers.$R{dnscrypt-resolvers}.csv:0
+			dnscrypt-resolvers.$R.csv
 EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
 
 CATEGORIES=		net
 
-MASTER_SITES=		https://download.dnscrypt.org/dnscrypt-proxy/ \
-			https://download.dnscrypt.org/dnscrypt-proxy/old/
+MASTER_SITES=		https://spacehopper.org/mirrors/
 
-HOMEPAGE=		https://dnscrypt.org/
+HOMEPAGE=		https://github.com/jedisct1/dnscrypt-proxy/
 
 MAINTAINER=		Frank Denis <dnscrypt@pureftpd.org>
 
