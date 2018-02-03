@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.5 2017/11/20 18:39:33 danj Exp $
+# $OpenBSD: Makefile,v 1.6 2018/02/03 11:28:23 sthen Exp $
 
 COMMENT=		BGP route injector (supporting flow routes, etc)
 
-MODPY_EGG_VERSION= 	3.4.22
+MODPY_EGG_VERSION= 	3.4.23
 GH_ACCOUNT=		exa-networks
 GH_PROJECT=		exabgp
 GH_TAGNAME=		${MODPY_EGG_VERSION}
 DISTNAME=		exabgp-${MODPY_EGG_VERSION}
 
 CATEGORIES=		net
-
-HOMEPAGE=		https://github.com/exa-networks/exabgp
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
