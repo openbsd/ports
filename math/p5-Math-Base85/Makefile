@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2016/03/20 19:56:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2018/02/03 10:17:31 benoit Exp $
 
 COMMENT =	module handles numbers in base 85
 
-DISTNAME =	Math-Base85-0.2
+DISTNAME =	Math-Base85-0.4
 CATEGORIES =	math
 
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
