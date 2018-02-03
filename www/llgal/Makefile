@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2018/01/22 10:26:17 kirby Exp $
+# $OpenBSD: Makefile,v 1.13 2018/02/03 09:23:40 steven Exp $
 
 COMMENT=	command-line online gallery generator
 
-DISTNAME=	llgal-0.13.18
-REVISION=	0
+DISTNAME=	llgal-0.13.19
 CATEGORIES=	www graphics
 
 HOMEPAGE=	http://bgoglin.free.fr/llgal/
