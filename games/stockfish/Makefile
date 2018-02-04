@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/12/19 03:27:46 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2018/02/04 22:03:36 bcallah Exp $
 
-V =		8
+V =		9
 COMMENT =	open source chess engine
 DISTNAME =	stockfish-${V}-src
 PKGNAME =	stockfish-${V}
@@ -42,7 +42,7 @@ MAKE_ENV =	ARCH=generic-32
 
 NO_TEST =	Yes
 
-WRKSRC =	${WRKDIST}/src
+WRKDIST =	${WRKDIR}/src
 
 pre-configure:
 	sed -i 's,-O3,${CXXFLAGS},g' ${WRKSRC}/Makefile
