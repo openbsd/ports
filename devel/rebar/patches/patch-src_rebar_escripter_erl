@@ -1,12 +1,16 @@
-$OpenBSD: patch-src_rebar_escripter_erl,v 1.1 2015/06/25 13:18:41 jasper Exp $
---- src/rebar_escripter.erl.orig	Thu Jun 25 10:54:14 2015
-+++ src/rebar_escripter.erl	Thu Jun 25 10:54:35 2015
-@@ -71,7 +71,7 @@ escriptize(Config0, AppFile) ->
+$OpenBSD: patch-src_rebar_escripter_erl,v 1.2 2018/02/04 08:50:05 jasper Exp $
+Index: src/rebar_escripter.erl
+--- src/rebar_escripter.erl.orig
++++ src/rebar_escripter.erl
+@@ -71,9 +71,9 @@ escriptize(Config0, AppFile) ->
              %% Archive was successfully created. Prefix that binary with our
              %% header and write to our escript file
              Shebang = rebar_config:get(Config, escript_shebang,
 -                                       "#!/usr/bin/env escript\n"),
 +                                       "#!/usr/bin/env escript${ERL_VERSION}\n"),
              Comment = rebar_config:get(Config, escript_comment, "%%\n"),
-             DefaultEmuArgs = ?FMT("%%! -pa ~s/~s/ebin\n",
+-            DefaultEmuArgs = ?FMT("%%! -pa ~s/~s/ebin\n",
++            DefaultEmuArgs = ?FMT("%%! -escript main rebar -pa ~s/~s/ebin\n",
                                    [AppNameStr, AppNameStr]),
+             EmuArgs = rebar_config:get(Config, escript_emu_args,
+                                        DefaultEmuArgs),
