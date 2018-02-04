@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2017/11/07 20:28:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2018/02/04 09:29:39 jasper Exp $
 
 COMMENT =		window switcher, run dialog and dmenu replacement
 
 GH_PROJECT =		rofi
-GH_TAGNAME =		1.4.2
+GH_TAGNAME =		1.5.0
 GH_ACCOUNT =		DaveDavenPort
-REVISION =		0
 
 CATEGORIES =		sysutils x11
 HOMEPAGE =		https://davedavenport.github.io/rofi/
