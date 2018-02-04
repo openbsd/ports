@@ -1,0 +1,20 @@
+$OpenBSD: patch-kmymoney_CMakeLists_txt,v 1.1 2018/02/04 21:32:32 rsadowski Exp $
+
+reorder to unbreak build. "kmymoneysettings.h" is created by dialogs/settings
+which is used by plugins.
+
+Index: kmymoney/CMakeLists.txt
+--- kmymoney/CMakeLists.txt.orig
++++ kmymoney/CMakeLists.txt
+@@ -34,10 +34,10 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}
+ 
+ add_subdirectory( mymoney )
+ add_subdirectory( models  )
++add_subdirectory( dialogs )
+ add_subdirectory( plugins )
+ add_subdirectory( reports )
+ add_subdirectory( widgets )
+-add_subdirectory( dialogs )
+ add_subdirectory( views )
+ add_subdirectory( converter )
+ add_subdirectory( wizards )
