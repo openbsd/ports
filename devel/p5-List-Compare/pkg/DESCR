@@ -1,0 +1,9 @@
+List::Compare is a Perl module which provides ways of comparing
+two or more lists.
+
+List::Compare provides an object-oriented interface which accepts Perl
+arrays and hashes as arguments and returns data structures representing
+comparisons such as intersection, union, complement, symmetric
+difference, subset and so forth.
+
+A functional interface is also available via List::Compare::Functional.

@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/02/05 14:37:13 bluhm Exp $
+${P5SITE}/List/
+${P5SITE}/List/Compare/
+${P5SITE}/List/Compare.pm
+${P5SITE}/List/Compare/Base/
+${P5SITE}/List/Compare/Base/_Auxiliary.pm
+${P5SITE}/List/Compare/Base/_Engine.pm
+${P5SITE}/List/Compare/Functional.pm
+@man man/man3p/List::Compare.3p
+@man man/man3p/List::Compare::Base::_Auxiliary.3p
+@man man/man3p/List::Compare::Base::_Engine.3p
+@man man/man3p/List::Compare::Functional.3p
