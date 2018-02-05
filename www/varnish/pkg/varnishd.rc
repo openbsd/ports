@@ -1,13 +1,13 @@
 #!/bin/ksh
 #
-# $OpenBSD: varnishd.rc,v 1.4 2018/01/11 19:27:12 rpe Exp $
+# $OpenBSD: varnishd.rc,v 1.5 2018/02/05 14:03:26 gonzalo Exp $
 
 daemon="${PREFIX}/sbin/varnishd"
 daemon_flags="-j unix,user=_varnish,ccgroup=_varnish -f ${SYSCONFDIR}/varnish/default.vcl"
 
 . /etc/rc.d/rc.subr
 
-pexp="varnishd: Varnish-Mgr $(hostname)"
+pexp="varnishd: Varnish-Mgt -i $(hostname)"
 rc_reload=NO
 
 rc_cmd $1
