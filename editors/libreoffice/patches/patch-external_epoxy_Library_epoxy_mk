@@ -1,0 +1,13 @@
+$OpenBSD: patch-external_epoxy_Library_epoxy_mk,v 1.1 2018/02/05 17:15:05 robert Exp $
+
+Index: external/epoxy/Library_epoxy.mk
+--- external/epoxy/Library_epoxy.mk.orig
++++ external/epoxy/Library_epoxy.mk
+@@ -17,6 +17,7 @@ $(eval $(call gb_Library_set_include,epoxy,\
+ 	-I$(call gb_UnpackedTarball_get_dir,epoxy)/include \
+ 	-I$(call gb_UnpackedTarball_get_dir,epoxy)/src \
+ 	$$(INCLUDE) \
++	-I/usr/X11R6/include \
+ ))
+ 
+ # epoxy is riddled with warnings... let's spare use

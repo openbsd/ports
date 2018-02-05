@@ -1,0 +1,14 @@
+$OpenBSD: patch-desktop_Executable_soffice_bin_mk,v 1.3 2018/02/05 17:15:05 robert Exp $
+
+Index: desktop/Executable_soffice_bin.mk
+--- desktop/Executable_soffice_bin.mk.orig
++++ desktop/Executable_soffice_bin.mk
+@@ -21,6 +21,8 @@ $(eval $(call gb_Executable_use_libraries,soffice_bin,
+     sofficeapp \
+ ))
+ 
++$(eval $(call gb_Executable_use_external,soffice_bin,orcus))
++
+ $(eval $(call gb_Executable_add_cobjects,soffice_bin,\
+     desktop/source/app/main \
+ ))

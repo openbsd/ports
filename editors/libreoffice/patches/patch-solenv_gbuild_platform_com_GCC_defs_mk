@@ -1,17 +1,17 @@
-$OpenBSD: patch-solenv_gbuild_platform_com_GCC_defs_mk,v 1.5 2017/12/29 07:39:30 robert Exp $
+$OpenBSD: patch-solenv_gbuild_platform_com_GCC_defs_mk,v 1.6 2018/02/05 17:15:05 robert Exp $
 Index: solenv/gbuild/platform/com_GCC_defs.mk
 --- solenv/gbuild/platform/com_GCC_defs.mk.orig
 +++ solenv/gbuild/platform/com_GCC_defs.mk
-@@ -57,6 +57,7 @@ gb_CFLAGS_COMMON := \
- 	-Wunused-macros \
+@@ -59,6 +59,7 @@ gb_CFLAGS_COMMON := \
+ 	-finput-charset=UTF-8 \
  	-fmessage-length=0 \
  	-fno-common \
 +	-fno-stack-protector \
  	-pipe \
  
  gb_CXXFLAGS_COMMON := \
-@@ -69,6 +70,7 @@ gb_CXXFLAGS_COMMON := \
- 	-Wunused-macros \
+@@ -73,6 +74,7 @@ gb_CXXFLAGS_COMMON := \
+ 	-finput-charset=UTF-8 \
  	-fmessage-length=0 \
  	-fno-common \
 +	-fno-stack-protector \

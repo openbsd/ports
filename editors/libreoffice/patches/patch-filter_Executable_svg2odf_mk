@@ -1,13 +1,16 @@
-$OpenBSD: patch-filter_Executable_svg2odf_mk,v 1.1 2014/10/10 17:13:10 robert Exp $
---- filter/Executable_svg2odf.mk.orig.port	Mon Sep  8 20:01:51 2014
-+++ filter/Executable_svg2odf.mk	Mon Sep  8 20:02:18 2014
-@@ -44,4 +44,9 @@ $(eval $(call gb_Executable_add_exception_objects,svg2
-     filter/source/svg/test/odfserializer \
- ))
+$OpenBSD: patch-filter_Executable_svg2odf_mk,v 1.2 2018/02/05 17:15:05 robert Exp $
+Index: filter/Executable_svg2odf.mk
+--- filter/Executable_svg2odf.mk.orig
++++ filter/Executable_svg2odf.mk
+@@ -11,7 +11,10 @@ $(eval $(call gb_Executable_Executable,svg2odf))
  
-+$(eval $(call gb_Executable_add_libs,svg2odf,\
-+    -lharfbuzz \
-+    -lharfbuzz-icu \
+ $(eval $(call gb_Executable_set_targettype_gui,svg2odf,YES))
+ 
+-$(eval $(call gb_Executable_use_external,svg2odf,boost_headers))
++$(eval $(call gb_Executable_use_externals,svg2odf,\
++    boost_headers \
++    orcus \
 +))
-+
- # vim: set ts=4 sw=4 et:
+ 
+ $(eval $(call gb_Executable_use_sdk_api,svg2odf))
+ 

@@ -1,17 +1,17 @@
-$OpenBSD: patch-oox_Library_oox_mk,v 1.4 2017/12/29 07:39:30 robert Exp $
+$OpenBSD: patch-oox_Library_oox_mk,v 1.5 2018/02/05 17:15:05 robert Exp $
 
 Index: oox/Library_oox.mk
 --- oox/Library_oox.mk.orig
 +++ oox/Library_oox.mk
-@@ -287,7 +287,6 @@ $(eval $(call gb_Library_add_exception_objects,oox,\
+@@ -288,7 +288,6 @@ $(eval $(call gb_Library_add_exception_objects,oox,\
      oox/source/shape/WpsContext \
      oox/source/token/namespacemap \
      oox/source/token/propertynames \
 -    oox/source/token/tokenmap \
+     oox/source/token/relationship \
      oox/source/vml/vmldrawing \
      oox/source/vml/vmldrawingfragment \
-     oox/source/vml/vmlformatting \
-@@ -299,18 +298,20 @@ $(eval $(call gb_Library_add_exception_objects,oox,\
+@@ -301,18 +300,20 @@ $(eval $(call gb_Library_add_exception_objects,oox,\
      oox/source/vml/vmltextbox \
  ))
  

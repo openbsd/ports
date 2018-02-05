@@ -1,0 +1,17 @@
+$OpenBSD: patch-bean_Library_officebean_mk,v 1.1 2018/02/05 17:15:05 robert Exp $
+
+Index: bean/Library_officebean.mk
+--- bean/Library_officebean.mk.orig
++++ bean/Library_officebean.mk
+@@ -15,6 +15,11 @@ $(eval $(call gb_Library_use_externals,officebean,\
+ 	jawt \
+ ))
+ 
++$(eval $(call gb_Library_set_include,officebean,\
++    $$(INCLUDE) \
++    -I/usr/X11R6/include \
++))
++
+ ifneq ($(OS),WNT)
+ $(eval $(call gb_Library_add_cobjects,officebean,\
+ 	bean/native/unix/com_sun_star_comp_beans_LocalOfficeWindow \

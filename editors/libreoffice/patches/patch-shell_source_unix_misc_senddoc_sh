@@ -1,9 +1,9 @@
-$OpenBSD: patch-shell_source_unix_misc_senddoc_sh,v 1.2 2017/12/29 07:39:30 robert Exp $
+$OpenBSD: patch-shell_source_unix_misc_senddoc_sh,v 1.3 2018/02/05 17:15:05 robert Exp $
 
 Index: shell/source/unix/misc/senddoc.sh
 --- shell/source/unix/misc/senddoc.sh.orig
 +++ shell/source/unix/misc/senddoc.sh
-@@ -375,7 +375,7 @@ case `basename "$MAILER" | sed 's/-.*$//'` in
+@@ -375,7 +375,7 @@ case $(basename "$MAILER" | sed 's/-.*$//') in
              esac
              shift;
          done
@@ -12,7 +12,7 @@ Index: shell/source/unix/misc/senddoc.sh
          ;;
  
      *)
-@@ -384,15 +384,15 @@ case `basename "$MAILER" | sed 's/-.*$//'` in
+@@ -384,15 +384,15 @@ case $(basename "$MAILER" | sed 's/-.*$//') in
          # Try to be smart, and send the mail anyway, if we have the
          # possibility to do so.
  
@@ -32,14 +32,14 @@ Index: shell/source/unix/misc/senddoc.sh
 +        elif [ -x /usr/local/bin/xdg-open ] ; then
 +            MAILER=/usr/local/bin/xdg-open
          else
-             echo "Unsupported mail client: `basename $MAILER | sed 's/-.*^//'`"
+             echo "Unsupported mail client: $(basename $MAILER | sed 's/-.*^//')"
              exit 2
-@@ -425,7 +425,7 @@ case `basename "$MAILER" | sed 's/-.*$//'` in
+@@ -425,7 +425,7 @@ case $(basename "$MAILER" | sed 's/-.*$//') in
                      shift
                      ;;
                  --attach)
 -                    if [ "$MAILER" = "/usr/bin/xdg-email" ]; then
 +                    if [ "$MAILER" = "/usr/local/bin/xdg-email" ]; then
-                         MAILTO="${MAILTO:-}${MAILTO:+&}attach="`echo "file://$2" | "${URI_ENCODE}"`
+                         MAILTO="${MAILTO:-}${MAILTO:+&}attach="$(echo "file://$2" | "${URI_ENCODE}")
                      else
-                         MAILTO="${MAILTO:-}${MAILTO:+&}attachment="`echo "file://$2" | "${URI_ENCODE}"`
+                         MAILTO="${MAILTO:-}${MAILTO:+&}attachment="$(echo "file://$2" | "${URI_ENCODE}")

@@ -1,11 +1,12 @@
-$OpenBSD: patch-vcl_unx_generic_app_wmadaptor_cxx,v 1.2 2014/10/10 17:13:10 robert Exp $
---- vcl/unx/generic/app/wmadaptor.cxx.orig.port	Tue Sep 16 22:10:41 2014
-+++ vcl/unx/generic/app/wmadaptor.cxx	Fri Oct  3 19:58:20 2014
+$OpenBSD: patch-vcl_unx_generic_app_wmadaptor_cxx,v 1.3 2018/02/05 17:15:05 robert Exp $
+Index: vcl/unx/generic/app/wmadaptor.cxx
+--- vcl/unx/generic/app/wmadaptor.cxx.orig
++++ vcl/unx/generic/app/wmadaptor.cxx
 @@ -20,6 +20,7 @@
  #include <string.h>
  #include <stdio.h>
  #include <stdlib.h>
 +#include <unistd.h>
  
- #include "sal/alloca.h"
- #include "rtl/locale.h"
+ #include <sal/alloca.h>
+ #include <rtl/locale.h>

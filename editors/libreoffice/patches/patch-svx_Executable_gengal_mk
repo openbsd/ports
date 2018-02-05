@@ -1,0 +1,14 @@
+$OpenBSD: patch-svx_Executable_gengal_mk,v 1.4 2018/02/05 17:15:05 robert Exp $
+
+Index: svx/Executable_gengal.mk
+--- svx/Executable_gengal.mk.orig
++++ svx/Executable_gengal.mk
+@@ -29,6 +29,8 @@ $(eval $(call gb_Executable_use_external,gengal,boost_
+ 
+ $(eval $(call gb_Executable_use_sdk_api,gengal))
+ 
++$(eval $(call gb_Executable_use_externals,gengal,orcus))
++
+ $(eval $(call gb_Executable_use_libraries,gengal,\
+     basegfx \
+     sal \

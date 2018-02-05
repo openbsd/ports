@@ -1,0 +1,17 @@
+$OpenBSD: patch-external_cppunit_openbsd-cppunit_patch_0,v 1.1 2018/02/05 17:15:05 robert Exp $
+
+Index: external/cppunit/openbsd-cppunit.patch.0
+--- external/cppunit/openbsd-cppunit.patch.0.orig
++++ external/cppunit/openbsd-cppunit.patch.0
+@@ -0,0 +1,11 @@
++--- src/Makefile.in.orig	Sun Feb  4 22:09:05 2018
+++++ src/Makefile.in	Sun Feb  4 22:09:32 2018
++@@ -329,7 +329,7 @@
++ top_build_prefix = @top_build_prefix@
++ top_builddir = @top_builddir@
++ top_srcdir = @top_srcdir@
++-SUBDIRS = cppunit DllPlugInTester
+++SUBDIRS = cppunit
++ all: all-recursive
++ 
++ .SUFFIXES:

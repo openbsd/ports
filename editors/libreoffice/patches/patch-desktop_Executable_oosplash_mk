@@ -1,0 +1,17 @@
+$OpenBSD: patch-desktop_Executable_oosplash_mk,v 1.3 2018/02/05 17:15:05 robert Exp $
+
+Index: desktop/Executable_oosplash.mk
+--- desktop/Executable_oosplash.mk.orig
++++ desktop/Executable_oosplash.mk
+@@ -23,6 +23,11 @@ $(eval $(call gb_Executable_add_cobjects,oosplash,\
+     desktop/unx/source/start \
+ ))
+ 
++$(eval $(call gb_Executable_set_include,oosplash,\
++    $$(INCLUDE) \
++    -I/usr/X11R6/include \
++))
++
+ ifneq ($(USE_XINERAMA),)
+ 
+ $(eval $(call gb_Executable_add_defs,oosplash,\

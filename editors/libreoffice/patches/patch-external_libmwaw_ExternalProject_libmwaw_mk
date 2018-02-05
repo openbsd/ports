@@ -1,13 +1,16 @@
-$OpenBSD: patch-external_libmwaw_ExternalProject_libmwaw_mk,v 1.1 2017/07/23 18:54:02 robert Exp $
+$OpenBSD: patch-external_libmwaw_ExternalProject_libmwaw_mk,v 1.2 2018/02/05 17:15:05 robert Exp $
 
 Index: external/libmwaw/ExternalProject_libmwaw.mk
 --- external/libmwaw/ExternalProject_libmwaw.mk.orig
 +++ external/libmwaw/ExternalProject_libmwaw.mk
-@@ -36,6 +36,7 @@ $(call gb_ExternalProject_get_state_target,libmwaw,bui
+@@ -35,8 +35,9 @@ $(call gb_ExternalProject_get_state_target,libmwaw,bui
  			$(if $(ENABLE_DEBUG),--enable-debug,--disable-debug) \
  			$(if $(verbose),--disable-silent-rules,--enable-silent-rules) \
  			--disable-werror \
-+			CPPFLAGS="-fPIC" \
- 			CXXFLAGS="$(CXXFLAGS) $(CXXFLAGS_CXX11)" \
- 			$(if $(filter LINUX,$(OS)),$(if $(SYSTEM_REVENGE),, \
++			CPPFLAGS="$(gb_CPPFLAGS) -fPIC" \
+ 			CXXFLAGS="$(gb_CXXFLAGS) $(if $(ENABLE_OPTIMIZED),$(gb_COMPILEROPTFLAGS),$(gb_COMPILERNOOPTFLAGS))" \
+-			$(if $(filter LINUX,$(OS)),$(if $(SYSTEM_REVENGE),, \
++			$(if $(filter OPENBSD,$(OS)),$(if $(SYSTEM_REVENGE),, \
  				'LDFLAGS=-Wl$(COMMA)-z$(COMMA)origin \
+ 					-Wl$(COMMA)-rpath$(COMMA)\$$$$ORIGIN')) \
+ 			$(if $(CROSS_COMPILING),--build=$(BUILD_PLATFORM) --host=$(HOST_PLATFORM)) \

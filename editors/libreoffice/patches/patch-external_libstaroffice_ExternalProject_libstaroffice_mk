@@ -1,15 +1,15 @@
-$OpenBSD: patch-external_libstaroffice_ExternalProject_libstaroffice_mk,v 1.1 2017/12/29 07:39:30 robert Exp $
+$OpenBSD: patch-external_libstaroffice_ExternalProject_libstaroffice_mk,v 1.2 2018/02/05 17:15:05 robert Exp $
 
 Index: external/libstaroffice/ExternalProject_libstaroffice.mk
 --- external/libstaroffice/ExternalProject_libstaroffice.mk.orig
 +++ external/libstaroffice/ExternalProject_libstaroffice.mk
-@@ -36,8 +36,8 @@ $(call gb_ExternalProject_get_state_target,libstaroffi
+@@ -36,8 +36,9 @@ $(call gb_ExternalProject_get_state_target,libstaroffi
  			$(if $(ENABLE_DEBUG),--enable-debug,--disable-debug) \
  			$(if $(verbose),--disable-silent-rules,--enable-silent-rules) \
  			--disable-werror \
--			CXXFLAGS="$(CXXFLAGS) $(CXXFLAGS_CXX11)" \
++			CPPFLAGS="$(gb_CPPFLAGS) -fPIC" \
+ 			CXXFLAGS="$(gb_CXXFLAGS) $(if $(ENABLE_OPTIMIZED),$(gb_COMPILEROPTFLAGS),$(gb_COMPILERNOOPTFLAGS))" \
 -			$(if $(filter LINUX,$(OS)),$(if $(SYSTEM_REVENGE),, \
-+			CPPFLAGS="-fPIC $(CPPFLAGS) $(CPPFLAGS_CXX11)" \
 +			$(if $(filter OPENBSD,$(OS)),$(if $(SYSTEM_REVENGE),, \
  				'LDFLAGS=-Wl$(COMMA)-z$(COMMA)origin \
  					-Wl$(COMMA)-rpath$(COMMA)\$$$$ORIGIN')) \

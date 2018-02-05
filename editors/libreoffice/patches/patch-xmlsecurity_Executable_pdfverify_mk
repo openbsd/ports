@@ -1,0 +1,14 @@
+$OpenBSD: patch-xmlsecurity_Executable_pdfverify_mk,v 1.1 2018/02/05 17:15:05 robert Exp $
+
+Index: xmlsecurity/Executable_pdfverify.mk
+--- xmlsecurity/Executable_pdfverify.mk.orig
++++ xmlsecurity/Executable_pdfverify.mk
+@@ -11,6 +11,8 @@ $(eval $(call gb_Executable_Executable,pdfverify))
+ 
+ $(eval $(call gb_Executable_use_sdk_api,pdfverify))
+ 
++$(eval $(call gb_Executable_use_external,pdfverify,orcus))
++
+ $(eval $(call gb_Executable_set_include,pdfverify,\
+     $$(INCLUDE) \
+     -I$(SRCDIR)/xmlsecurity/inc \

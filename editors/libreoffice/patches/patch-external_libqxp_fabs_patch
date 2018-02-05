@@ -1,0 +1,17 @@
+$OpenBSD: patch-external_libqxp_fabs_patch,v 1.1 2018/02/05 17:15:05 robert Exp $
+
+Index: external/libqxp/fabs.patch
+--- external/libqxp/fabs.patch.orig
++++ external/libqxp/fabs.patch
+@@ -0,0 +1,11 @@
++--- src/lib/QXPBlockParser.cpp.orig	Sun Feb  4 09:32:53 2018
+++++ src/lib/QXPBlockParser.cpp	Sun Feb  4 09:39:21 2018
++@@ -108,7 +108,7 @@
++ 
++       const int32_t nextVal = bigIdx ? readS32(m_input, be) : readS16(m_input, be);
++       isBig = nextVal < 0;
++-      next = abs(nextVal);
+++      next = fabs(nextVal);
++     }
++   }
++   catch (...)

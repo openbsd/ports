@@ -1,0 +1,13 @@
+$OpenBSD: patch-external_libqxp_UnpackedTarball_libqxp_mk,v 1.1 2018/02/05 17:15:05 robert Exp $
+
+Index: external/libqxp/UnpackedTarball_libqxp.mk
+--- external/libqxp/UnpackedTarball_libqxp.mk.orig
++++ external/libqxp/UnpackedTarball_libqxp.mk
+@@ -23,6 +23,7 @@ endif
+ 
+ $(eval $(call gb_UnpackedTarball_add_patches,libqxp, \
+ 	external/libqxp/android-workaround.patch.1 \
++	external/libqxp/fabs.patch \
+ ))
+ 
+ # vim: set noet sw=4 ts=4:

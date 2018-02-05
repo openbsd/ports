@@ -1,7 +1,16 @@
-$OpenBSD: patch-vcl_Library_vclplug_kde4_mk,v 1.1 2015/05/03 11:30:33 robert Exp $
---- vcl/Library_vclplug_kde4.mk.orig.port	Sat May  2 17:04:07 2015
-+++ vcl/Library_vclplug_kde4.mk	Sat May  2 17:06:33 2015
-@@ -87,10 +87,10 @@ $(eval $(call gb_Library_add_exception_objects,vclplug
+$OpenBSD: patch-vcl_Library_vclplug_kde4_mk,v 1.2 2018/02/05 17:15:05 robert Exp $
+Index: vcl/Library_vclplug_kde4.mk
+--- vcl/Library_vclplug_kde4.mk.orig
++++ vcl/Library_vclplug_kde4.mk
+@@ -24,6 +24,7 @@ $(eval $(call gb_Library_use_custom_headers,vclplug_kd
+ $(eval $(call gb_Library_set_include,vclplug_kde4,\
+     $$(INCLUDE) \
+     -I$(SRCDIR)/vcl/inc \
++    -I/usr/X11R6/include \
+ ))
+ 
+ $(eval $(call gb_Library_add_defs,vclplug_kde4,\
+@@ -87,10 +88,10 @@ $(eval $(call gb_Library_add_exception_objects,vclplug
      vcl/unx/kde4/VCLKDEApplication \
  ))
  
