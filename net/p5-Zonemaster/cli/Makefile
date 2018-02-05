@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.5 2017/12/29 07:23:08 florian Exp $
+# $OpenBSD: Makefile,v 1.6 2018/02/05 01:08:17 sthen Exp $
 
 COMMENT =	tool to check the quality of a DNS zone
 
 MODULES =	cpan
-V =		1.0.3
-CPAN_AUTHOR =	IIS
+CPAN_AUTHOR =	ZNMSTR
+V =		1.0.5
 DISTNAME =	Zonemaster-CLI-v$V
 PKGNAME =	zonemaster-$V
 CATEGORIES =	net
-REVISION =	0
 
 MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 

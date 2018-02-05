@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/01/02 19:55:39 florian Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/02/05 01:08:17 sthen Exp $
 bin/zonemaster-cli
 ${P5SITE}/Zonemaster/CLI.pm
 ${P5SITE}/auto/share/dist/Zonemaster-CLI/
+${P5SITE}/auto/share/dist/Zonemaster-CLI/Makefile
 ${P5SITE}/auto/share/dist/Zonemaster-CLI/en.po
 ${P5SITE}/auto/share/dist/Zonemaster-CLI/fr.po
 ${P5SITE}/auto/share/dist/Zonemaster-CLI/locale/
