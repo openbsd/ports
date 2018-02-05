@@ -1,21 +1,21 @@
-# $OpenBSD: Makefile,v 1.6 2017/11/16 03:33:09 bentley Exp $
+# $OpenBSD: Makefile,v 1.7 2018/02/05 06:25:11 rsadowski Exp $
 
 PKG_ARCH =		*
 
 COMMENT =		typeface designed for source code
 
-V =			2.020
-DISTNAME =		Hack-v${V:S/./_/}-otf
+V =			3.002
+DISTNAME =		Hack-v${V}-ttf
 PKGNAME =		hack-fonts-$V
 CATEGORIES =		fonts
-HOMEPAGE =		http://sourcefoundry.org/hack/
+HOMEPAGE =		https://sourcefoundry.org/hack/
 
-MAINTAINER =		Michael McConville <mmcco@mykolab.com>
+MAINTAINER =		Rafael Sadowski <rsadowski@openbsd.org>
 
-# SIL OFL 1.1
+# MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		https://github.com/chrissimpkins/Hack/releases/download/v$V/
+MASTER_SITES =		https://github.com/source-foundry/Hack/releases/download/v${V}/
 
 WRKDIST =		${WRKDIR}
 
@@ -24,6 +24,6 @@ NO_TEST =		Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/fonts/Hack/
-	${INSTALL_DATA} ${WRKSRC}/*.otf ${PREFIX}/share/fonts/Hack/
+	${INSTALL_DATA} ${WRKSRC}/ttf/*.ttf ${PREFIX}/share/fonts/Hack/
 
 .include <bsd.port.mk>
