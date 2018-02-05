@@ -1,14 +1,10 @@
 #!/bin/ksh
 #
-# $OpenBSD: exim.rc,v 1.5 2018/01/14 14:42:18 rpe Exp $
+# $OpenBSD: exim.rc,v 1.6 2018/02/05 22:34:17 sthen Exp $
 
 daemon="${TRUEPREFIX}/bin/exim -bd"
 daemon_flags="-q30m"
 
 . /etc/rc.d/rc.subr
-
-rc_pre() {
-	[[ ! -f /etc/mailer.conf.exim ]]
-}
 
 rc_cmd $1
