@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.28 2018/01/03 08:03:56 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.29 2018/02/05 21:38:44 okan Exp $
 @pkgpath mail/mailman,postfix
 @pkgpath mail/mailman,sendmail
 @pkgpath mail/mailman,smtpd
@@ -363,6 +363,7 @@ lib/mailman/bin/list_admins
 lib/mailman/bin/list_lists
 lib/mailman/bin/list_members
 lib/mailman/bin/list_owners
+lib/mailman/bin/mailman-config
 lib/mailman/bin/mailmanctl
 lib/mailman/bin/mmsitepass
 lib/mailman/bin/msgfmt.py
@@ -2445,6 +2446,7 @@ lib/mailman/tests/bounces/dumbass_01.txt
 lib/mailman/tests/bounces/exim_01.txt
 lib/mailman/tests/bounces/groupwise_01.txt
 lib/mailman/tests/bounces/groupwise_02.txt
+lib/mailman/tests/bounces/groupwise_03.txt
 lib/mailman/tests/bounces/hotpop_01.txt
 lib/mailman/tests/bounces/llnl_01.txt
 lib/mailman/tests/bounces/microsoft_01.txt

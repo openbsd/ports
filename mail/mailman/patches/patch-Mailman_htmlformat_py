@@ -1,7 +1,7 @@
-$OpenBSD: patch-Mailman_htmlformat_py,v 1.9 2018/01/03 08:03:56 rsadowski Exp $
+$OpenBSD: patch-Mailman_htmlformat_py,v 1.10 2018/02/05 21:38:44 okan Exp $
 Index: Mailman/htmlformat.py
---- Mailman/htmlformat.py.orig
-+++ Mailman/htmlformat.py
+--- Mailman/htmlformat.py.orig	Sun Feb  4 12:04:39 2018
++++ Mailman/htmlformat.py	Sun Feb  4 17:36:01 2018
 @@ -646,12 +646,14 @@ class DefinitionList(Container):
  from mm_cfg import MAILMAN_URL
  PYTHON_URL  = 'http://www.python.org/'
