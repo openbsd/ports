@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/01/10 20:36:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2018/02/05 12:11:07 jca Exp $
+
+# uses cpuid.h
+ONLY_FOR_ARCHS=	i386 amd64
 
 COMMENT=	manipulate microcode update collections for Intel
 
