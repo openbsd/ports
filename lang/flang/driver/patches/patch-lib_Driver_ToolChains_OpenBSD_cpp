@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_Driver_ToolChains_OpenBSD_cpp,v 1.1.1.1 2017/12/31 18:06:38 bcallah Exp $
+$OpenBSD: patch-lib_Driver_ToolChains_OpenBSD_cpp,v 1.2 2018/02/05 04:08:24 bcallah Exp $
 
 Index: lib/Driver/ToolChains/OpenBSD.cpp
 --- lib/Driver/ToolChains/OpenBSD.cpp.orig
@@ -11,7 +11,7 @@ Index: lib/Driver/ToolChains/OpenBSD.cpp
  #include "clang/Driver/Options.h"
  #include "llvm/Option/ArgList.h"
  
-@@ -165,16 +166,20 @@ void openbsd::Linker::ConstructJob(Compilation &C, con
+@@ -165,16 +166,22 @@ void openbsd::Linker::ConstructJob(Compilation &C, con
      }
    }
  
@@ -35,10 +35,12 @@ Index: lib/Driver/ToolChains/OpenBSD.cpp
 +        Args.MakeArgString("-L${LOCALBASE}/lib"));
 +  }
 +
++  CmdArgs.push_back(Args.MakeArgString("-L${LOCALBASE}/lib"));
++
    AddLinkerInputs(getToolChain(), Inputs, Args, CmdArgs, JA);
  
    if (!Args.hasArg(options::OPT_nostdlib, options::OPT_nodefaultlibs)) {
-@@ -188,7 +193,10 @@ void openbsd::Linker::ConstructJob(Compilation &C, con
+@@ -188,8 +195,13 @@ void openbsd::Linker::ConstructJob(Compilation &C, con
  
      // FIXME: For some reason GCC passes -lgcc before adding
      // the default system libraries. Just mimic this for now.
@@ -48,9 +50,12 @@ Index: lib/Driver/ToolChains/OpenBSD.cpp
 +    else
 +      CmdArgs.push_back("-lgcc");
  
++    CmdArgs.push_back("-lflang");
++
      if (Args.hasArg(options::OPT_pthread)) {
        if (!Args.hasArg(options::OPT_shared) && Args.hasArg(options::OPT_pg))
-@@ -204,7 +212,10 @@ void openbsd::Linker::ConstructJob(Compilation &C, con
+         CmdArgs.push_back("-lpthread_p");
+@@ -204,7 +216,10 @@ void openbsd::Linker::ConstructJob(Compilation &C, con
          CmdArgs.push_back("-lc");
      }
  
@@ -62,7 +67,7 @@ Index: lib/Driver/ToolChains/OpenBSD.cpp
    }
  
    if (!Args.hasArg(options::OPT_nostdlib, options::OPT_nostartfiles)) {
-@@ -225,8 +236,7 @@ void openbsd::Linker::ConstructJob(Compilation &C, con
+@@ -225,8 +240,7 @@ void openbsd::Linker::ConstructJob(Compilation &C, con
  OpenBSD::OpenBSD(const Driver &D, const llvm::Triple &Triple,
                   const ArgList &Args)
      : Generic_ELF(D, Triple, Args) {
@@ -72,7 +77,7 @@ Index: lib/Driver/ToolChains/OpenBSD.cpp
  }
  
  Tool *OpenBSD::buildAssembler() const {
-@@ -234,3 +244,62 @@ Tool *OpenBSD::buildAssembler() const {
+@@ -234,3 +248,62 @@ Tool *OpenBSD::buildAssembler() const {
  }
  
  Tool *OpenBSD::buildLinker() const { return new tools::openbsd::Linker(*this); }
