@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2018/01/17 08:31:14 bentley Exp $
+# $OpenBSD: Makefile,v 1.10 2018/02/05 09:28:08 sthen Exp $
 
 COMMENT=		library for encoding data in a QR Code symbol
 
@@ -21,13 +21,13 @@ WANTLIB += c m png pthread z
 LIB_DEPENDS=		graphics/png
 
 # only needed for tests
-BUILD_DEPENDS=		converters/libiconv
+BUILD_DEPENDS=		converters/libiconv \
+			devel/sdl2
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-tools \
-			--with-tests \
-			--with-sdl-prefix=/no
-CONFIGURE_ENV+= 	LIBS=-pthread \
+			--with-tests
+CONFIGURE_ENV+=		LIBS=-pthread \
 			png_CFLAGS="`pkg-config --cflags libpng`" \
 			png_LIBS="`pkg-config --libs libpng`"
 
