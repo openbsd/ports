@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.40 2017/10/08 08:19:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.41 2018/02/05 16:29:47 jasper Exp $
 
 COMMENT=		configuration editing tool and API
 
-DISTNAME=		augeas-1.9.0
+DISTNAME=		augeas-1.10.1
 CATEGORIES=		sysutils devel
 
 SHARED_LIBS +=  augeas                    0.2 # 22.0
 SHARED_LIBS +=  fa                        0.0 # 5.4
-
-MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 HOMEPAGE=		http://augeas.net/
 
@@ -31,9 +29,5 @@ CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/man/augparse.1
-
-# Remove example binary that doesn't really add anything
-post-install:
-	rm ${PREFIX}/bin/dump
 
 .include <bsd.port.mk>

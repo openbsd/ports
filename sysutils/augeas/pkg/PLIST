@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.12 2017/10/08 08:19:25 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.13 2018/02/05 16:29:47 jasper Exp $
+@bin bin/augmatch
 @bin bin/augparse
 @bin bin/augtool
 @bin bin/fadot
@@ -12,6 +13,7 @@ lib/libfa.a
 lib/libfa.la
 @lib lib/libfa.so.${LIBfa_VERSION}
 lib/pkgconfig/augeas.pc
+@man man/man1/augmatch.1
 @man man/man1/augparse.1
 @man man/man1/augtool.1
 share/augeas/
@@ -77,6 +79,7 @@ share/augeas/lenses/dist/gdm.aug
 share/augeas/lenses/dist/getcap.aug
 share/augeas/lenses/dist/group.aug
 share/augeas/lenses/dist/grub.aug
+share/augeas/lenses/dist/grubenv.aug
 share/augeas/lenses/dist/gshadow.aug
 share/augeas/lenses/dist/gtkbookmarks.aug
 share/augeas/lenses/dist/host_conf.aug
@@ -173,6 +176,7 @@ share/augeas/lenses/dist/qpid.aug
 share/augeas/lenses/dist/quote.aug
 share/augeas/lenses/dist/rabbitmq.aug
 share/augeas/lenses/dist/radicale.aug
+share/augeas/lenses/dist/rancid.aug
 share/augeas/lenses/dist/redis.aug
 share/augeas/lenses/dist/reprepro_uploaders.aug
 share/augeas/lenses/dist/resolv.aug
@@ -275,6 +279,7 @@ share/augeas/lenses/dist/tests/test_gdm.aug
 share/augeas/lenses/dist/tests/test_getcap.aug
 share/augeas/lenses/dist/tests/test_group.aug
 share/augeas/lenses/dist/tests/test_grub.aug
+share/augeas/lenses/dist/tests/test_grubenv.aug
 share/augeas/lenses/dist/tests/test_gshadow.aug
 share/augeas/lenses/dist/tests/test_gtkbookmarks.aug
 share/augeas/lenses/dist/tests/test_host_conf.aug
@@ -372,6 +377,7 @@ share/augeas/lenses/dist/tests/test_qpid.aug
 share/augeas/lenses/dist/tests/test_quote.aug
 share/augeas/lenses/dist/tests/test_rabbitmq.aug
 share/augeas/lenses/dist/tests/test_radicale.aug
+share/augeas/lenses/dist/tests/test_rancid.aug
 share/augeas/lenses/dist/tests/test_redis.aug
 share/augeas/lenses/dist/tests/test_reprepro_uploaders.aug
 share/augeas/lenses/dist/tests/test_resolv.aug

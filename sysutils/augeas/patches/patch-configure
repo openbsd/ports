@@ -1,0 +1,22 @@
+$OpenBSD: patch-configure,v 1.1 2018/02/05 16:29:47 jasper Exp $
+
+/usr/bin/../lib/libcompiler_rt.a(gcc_personality_v0.o): In function `__gcc_personality_v0':                                              
+/usr/src/lib/libcompiler_rt/gcc_personality_v0.c:205: undefined reference to `_Unwind_GetLanguageSpecificData'                           
+/usr/src/lib/libcompiler_rt/gcc_personality_v0.c:209: undefined reference to `_Unwind_GetIP'                                             
+/usr/src/lib/libcompiler_rt/gcc_personality_v0.c:210: undefined reference to `_Unwind_GetRegionStart'                                    
+/usr/src/lib/libcompiler_rt/gcc_personality_v0.c:241: undefined reference to `_Unwind_SetGR'                                             
+/usr/src/lib/libcompiler_rt/gcc_personality_v0.c:243: undefined reference to `_Unwind_SetGR'                                             
+/usr/src/lib/libcompiler_rt/gcc_personality_v0.c:244: undefined reference to `_Unwind_SetIP'
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -15475,7 +15475,7 @@ fi
+ 
+     warnCFLAGS=
+ 
+-    common_flags="-fexceptions -fasynchronous-unwind-tables"
++    common_flags=""
+ 
+     case "$enable_compile_warnings" in
+     no)

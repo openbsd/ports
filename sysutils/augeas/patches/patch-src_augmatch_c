@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_augmatch_c,v 1.1 2018/02/05 16:29:47 jasper Exp $
+
+augmatch.c:316:16: warning: implicit declaration of function 'basename' is invalid in C99 [-Wimplicit-function-declaration]
+
+Index: src/augmatch.c
+--- src/augmatch.c.orig
++++ src/augmatch.c
+@@ -25,6 +25,7 @@
+ #include <getopt.h>
+ #include <stdbool.h>
+ #include <ctype.h>
++#include <libgen.h>
+ 
+ #include "memory.h"
+ #include "augeas.h"
