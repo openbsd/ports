@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.88 2016/12/21 20:54:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.89 2018/02/05 20:36:50 naddy Exp $
 
 COMMENT=	pager/text-based web browser
 
 DISTNAME=	w3m-0.5.3
-REVISION=	5
+REVISION=	6
 CATEGORIES=	www
 HOMEPAGE=	http://w3m.sourceforge.net/
 
@@ -16,7 +16,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=w3m/}
 MASTER_SITES0=	${MASTER_SITE_DEBIAN:=main/w/w3m/}
 
 DISTFILES=	${DISTNAME}.tar.gz \
-		w3m_0.5.3-33.debian.tar.xz:0
+		w3m_0.5.3-36.debian.tar.xz:0
 
 BUILD_DEPENDS=	devel/gettext-tools
 
@@ -35,7 +35,7 @@ NO_TEST=	Yes
 .if ${FLAVOR:Mimage}
 LIB_DEPENDS+=	graphics/imlib2
 CONFIGURE_ARGS+=--with-imagelib=imlib2
-WANTLIB+=	Imlib2 X11 Xext freetype
+WANTLIB+=	Imlib2 X11
 .else
 CONFIGURE_ARGS+=--enable-image=no
 .endif
