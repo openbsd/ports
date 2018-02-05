@@ -1,21 +1,22 @@
-$OpenBSD: patch-build_go,v 1.4 2017/03/22 13:42:12 edd Exp $
---- build.go.orig	Wed Mar  1 21:27:02 2017
-+++ build.go	Wed Mar  1 21:27:02 2017
-@@ -436,7 +436,7 @@ func install(target target, tags []string) {
+$OpenBSD: patch-build_go,v 1.5 2018/02/05 11:53:03 edd Exp $
+Index: build.go
+--- build.go.orig
++++ build.go
+@@ -419,7 +419,7 @@ func install(target target, tags []string) {
  		log.Fatal(err)
  	}
  	os.Setenv("GOBIN", filepath.Join(cwd, "bin"))
 -	args := []string{"install", "-v", "-ldflags", ldflags()}
 +	args := []string{"install", "-v", "-x", "-ldflags", ldflags()}
- 	if len(tags) > 0 {
- 		args = append(args, "-tags", strings.Join(tags, " "))
+ 	if pkgdir != "" {
+ 		args = append(args, "-pkgdir", pkgdir)
  	}
-@@ -456,7 +456,7 @@ func build(target target, tags []string) {
+@@ -445,7 +445,7 @@ func build(target target, tags []string) {
  	tags = append(target.tags, tags...)
  
- 	rmr(target.binaryName)
+ 	rmr(target.BinaryName())
 -	args := []string{"build", "-i", "-v", "-ldflags", ldflags()}
 +	args := []string{"build", "-i", "-v", "-x", "-ldflags", ldflags()}
- 	if len(tags) > 0 {
- 		args = append(args, "-tags", strings.Join(tags, " "))
+ 	if pkgdir != "" {
+ 		args = append(args, "-pkgdir", pkgdir)
  	}
