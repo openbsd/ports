@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2018/01/20 14:03:39 jsg Exp $
+# $OpenBSD: Makefile,v 1.18 2018/02/05 06:30:21 rsadowski Exp $
 
 BROKEN-hppa=		__sync_lock_test_and_set_4 in zzuf_mutex_lock
 
@@ -6,10 +6,8 @@ COMMENT=		transparent application input fuzzer
 
 VERSION=		0.14
 DISTNAME=		zzuf-${VERSION}
-REVISION=		0
+REVISION=		1
 CATEGORIES=		misc security
-
-MAINTAINER=		Michael McConville <mmcco@mykolab.com>
 
 MASTER_SITES=		https://github.com/samhocevar/zzuf/releases/download/v${VERSION}/
 
