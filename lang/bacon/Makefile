@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2017/08/05 00:09:42 juanfra Exp $
+# $OpenBSD: Makefile,v 1.11 2018/02/05 11:19:05 juanfra Exp $
 
 COMMENT =		BASIC converter to C translator for Unix system
 
-DISTNAME =		bacon-3.6
+DISTNAME =		bacon-3.7.1
 
 CATEGORIES =		lang
 
@@ -13,25 +13,30 @@ MAINTAINER =		Juan Francisco Cantero Hurtado <juanfra@openbsd.org>
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		c m
+WANTLIB += ${COMPILER_LIBCXX} X11 Xau Xcursor Xdmcp Xext Xfixes
+WANTLIB += Xft Xinerama c fltk fltk_images fontconfig m
 
 MASTER_SITES =		http://www.basic-converter.org/stable/ \
 			http://www.basic-converter.org/museum/
 
 BUILD_DEPENDS =		shells/bash
-RUN_DEPENDS =		shells/bash
+RUN_DEPENDS =		devel/desktop-file-utils \
+			shells/bash
+LIB_DEPENDS =		x11/fltk
+
+PORTHOME =		${WRKDIR}
 
 CONFIGURE_STYLE =	gnu
-# Disable the bacongui. It doesn't works on OpenBSD.
+# Disable the gtk bacongui. It doesn't works on OpenBSD.
 CONFIGURE_ARGS =	--with-bash \
-			--disable-gui
+			--disable-gui-gtk
+CONFIGURE_ENV =		CPPFLAGS="`fltk-config --cxxflags`" \
+			CFLAGS="`fltk-config --cflags` ${CFLAGS}" \
+			CXXFLAGS="`fltk-config --cxxflags` ${CXXFLAGS}" \
+			LDFLAGS="-L. `fltk-config --ldflags`" \
+			CC=${CC} CXX=${CXX}
 
 NO_TEST =		Yes
-
-# Use this step as a test for the compiler.
-post-build:
-	cd ${WRKBUILD} && \
-	./build/bacon -y -a -c cc -r ranlib -d build bacon.bac
 
 # The man page is broken.
 post-install:
