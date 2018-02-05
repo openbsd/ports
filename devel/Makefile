@@ -1,4 +1,4 @@
-#${MODPY_COMMENT} $OpenBSD: Makefile,v 1.1695 2018/01/30 09:09:08 fcambus Exp $
+#${MODPY_COMMENT} $OpenBSD: Makefile,v 1.1696 2018/02/05 14:38:25 bluhm Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -818,6 +818,7 @@
      SUBDIR += p5-Iterator
      SUBDIR += p5-Iterator-Util
      SUBDIR += p5-Lchown
+     SUBDIR += p5-List-Compare
      SUBDIR += p5-List-Cycle
      SUBDIR += p5-List-MoreUtils
      SUBDIR += p5-List-MoreUtils-XS
