@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-valadoc,v 1.3 2017/11/06 09:35:27 ajacoutot Exp $
+@comment $OpenBSD: PLIST-valadoc,v 1.4 2018/02/05 11:03:43 ajacoutot Exp $
 bin/valadoc
 @bin bin/valadoc-${API_V}
 include/valadoc-${API_V}/
@@ -10,16 +10,10 @@ lib/pkgconfig/valadoc-${API_V}.pc
 lib/valadoc/
 lib/valadoc/doclets/
 lib/valadoc/doclets/devhelp/
-lib/valadoc/doclets/devhelp/libdoclet.a
-lib/valadoc/doclets/devhelp/libdoclet.la
 lib/valadoc/doclets/devhelp/libdoclet.so
 lib/valadoc/doclets/gtkdoc/
-lib/valadoc/doclets/gtkdoc/libdoclet.a
-lib/valadoc/doclets/gtkdoc/libdoclet.la
 lib/valadoc/doclets/gtkdoc/libdoclet.so
 lib/valadoc/doclets/html/
-lib/valadoc/doclets/html/libdoclet.a
-lib/valadoc/doclets/html/libdoclet.la
 lib/valadoc/doclets/html/libdoclet.so
 @man man/man1/valadoc-${API_V}.1
 @man man/man1/valadoc.1
