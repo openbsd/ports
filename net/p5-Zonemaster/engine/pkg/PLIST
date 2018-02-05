@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2016/03/05 19:34:50 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/02/05 01:03:36 sthen Exp $
 ${P5SITE}/Zonemaster/
 ${P5SITE}/Zonemaster.pm
 ${P5SITE}/Zonemaster/ASNLookup.pm
@@ -13,6 +13,8 @@ ${P5SITE}/Zonemaster/NSArray.pm
 ${P5SITE}/Zonemaster/Nameserver/
 ${P5SITE}/Zonemaster/Nameserver.pm
 ${P5SITE}/Zonemaster/Nameserver/Cache.pm
+${P5SITE}/Zonemaster/Net/
+${P5SITE}/Zonemaster/Net/IP.pm
 ${P5SITE}/Zonemaster/Overview.pod
 ${P5SITE}/Zonemaster/Packet.pm
 ${P5SITE}/Zonemaster/Recursor.pm
@@ -35,10 +37,24 @@ ${P5SITE}/Zonemaster/Zone.pm
 ${P5SITE}/auto/share/dist/Zonemaster/
 ${P5SITE}/auto/share/dist/Zonemaster/Makefile
 ${P5SITE}/auto/share/dist/Zonemaster/config.json
+${P5SITE}/auto/share/dist/Zonemaster/config_example_logfilter.json
 ${P5SITE}/auto/share/dist/Zonemaster/en.po
 ${P5SITE}/auto/share/dist/Zonemaster/fr.po
 ${P5SITE}/auto/share/dist/Zonemaster/fr_FR.UTF-8.po
 ${P5SITE}/auto/share/dist/Zonemaster/iana-profile.json
+${P5SITE}/auto/share/dist/Zonemaster/locale/
+${P5SITE}/auto/share/dist/Zonemaster/locale/en/
+${P5SITE}/auto/share/dist/Zonemaster/locale/en/LC_MESSAGES/
+${P5SITE}/auto/share/dist/Zonemaster/locale/en/LC_MESSAGES/Zonemaster.mo
+${P5SITE}/auto/share/dist/Zonemaster/locale/fr/
+${P5SITE}/auto/share/dist/Zonemaster/locale/fr/LC_MESSAGES/
+${P5SITE}/auto/share/dist/Zonemaster/locale/fr/LC_MESSAGES/Zonemaster.mo
+${P5SITE}/auto/share/dist/Zonemaster/locale/fr_FR.UTF-8/
+${P5SITE}/auto/share/dist/Zonemaster/locale/fr_FR.UTF-8/LC_MESSAGES/
+${P5SITE}/auto/share/dist/Zonemaster/locale/fr_FR.UTF-8/LC_MESSAGES/Zonemaster.mo
+${P5SITE}/auto/share/dist/Zonemaster/locale/sv/
+${P5SITE}/auto/share/dist/Zonemaster/locale/sv/LC_MESSAGES/
+${P5SITE}/auto/share/dist/Zonemaster/locale/sv/LC_MESSAGES/Zonemaster.mo
 ${P5SITE}/auto/share/dist/Zonemaster/policy.json
 ${P5SITE}/auto/share/dist/Zonemaster/sv.po
 @man man/man3p/Zonemaster.3p
