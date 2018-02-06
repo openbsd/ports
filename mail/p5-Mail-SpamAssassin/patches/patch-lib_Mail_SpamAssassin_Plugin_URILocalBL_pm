@@ -1,0 +1,34 @@
+$OpenBSD: patch-lib_Mail_SpamAssassin_Plugin_URILocalBL_pm,v 1.1 2018/02/06 07:58:03 giovanni Exp $
+
+Compatibility patches for perl 5.23+
+
+Index: lib/Mail/SpamAssassin/Plugin/URILocalBL.pm
+--- lib/Mail/SpamAssassin/Plugin/URILocalBL.pm.orig
++++ lib/Mail/SpamAssassin/Plugin/URILocalBL.pm
+@@ -350,7 +350,7 @@ sub check_uri_local_bl {
+     # look for W3 links only
+     next unless (defined $info->{types}->{a});
+ 
+-    while (my($host, $domain) = each $info->{hosts}) {
++    while (my($host, $domain) = each %{$info->{hosts}}) {
+ 
+       # skip if the domain name was matched
+       if (exists $rule->{exclusions} && exists $rule->{exclusions}->{$domain}) {
+@@ -374,7 +374,7 @@ sub check_uri_local_bl {
+         }
+ 
+         if (exists $rule->{countries}) {
+-          dbg("check: uri_local_bl countries %s\n", join(' ', sort keys $rule->{countries}));
++          dbg("check: uri_local_bl countries %s\n", join(' ', sort keys %{$rule->{countries}}));
+ 
+           my $cc = $self->{geoip}->country_code_by_addr($ip);
+ 
+@@ -403,7 +403,7 @@ sub check_uri_local_bl {
+         }
+ 
+         if (exists $rule->{isps}) {
+-          dbg("check: uri_local_bl isps %s\n", join(' ', map { '"' . $_ . '"'; } sort keys $rule->{isps}));
++          dbg("check: uri_local_bl isps %s\n", join(' ', map { '"' . $_ . '"'; } sort keys %{$rule->{isps}}));
+ 
+           my $isp = $self->{geoisp}->isp_by_name($ip);
+ 
