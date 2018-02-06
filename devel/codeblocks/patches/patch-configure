@@ -1,10 +1,11 @@
-$OpenBSD: patch-configure,v 1.5 2016/01/30 11:20:01 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.6 2018/02/06 15:28:51 sthen Exp $
 
 undefined reference to `free'
 
---- configure.orig	Sat Jan 23 11:48:18 2016
-+++ configure	Fri Jan 29 00:21:58 2016
-@@ -16670,7 +16670,6 @@ if ${ax_cv_check_ldflags___Wl___no_undefined+:} false;
+Index: configure
+--- configure.orig
++++ configure
+@@ -16887,7 +16887,6 @@ if ${ax_cv_check_ldflags___Wl___no_undefined+:} false;
  else
  
    ax_check_save_flags=$LDFLAGS
@@ -12,7 +13,7 @@ undefined reference to `free'
    cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -16694,7 +16693,6 @@ fi
+@@ -16911,7 +16910,6 @@ fi
  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ax_cv_check_ldflags___Wl___no_undefined" >&5
  $as_echo "$ax_cv_check_ldflags___Wl___no_undefined" >&6; }
  if test "x$ax_cv_check_ldflags___Wl___no_undefined" = xyes; then :

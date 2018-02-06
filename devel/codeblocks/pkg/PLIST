@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2016/01/30 11:20:01 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2018/02/06 15:28:51 sthen Exp $
 @bin bin/cb_console_runner
 @bin bin/cb_share_config
 @bin bin/codeblocks
@@ -73,14 +73,13 @@ include/codeblocks/ibaseloader.h
 include/codeblocks/ibaseworkspaceloader.h
 include/codeblocks/id.h
 include/codeblocks/importers_globals.h
-include/codeblocks/incrementalselectlistdlg.h
+include/codeblocks/incremental_select_helper.h
 include/codeblocks/infowindow.h
 include/codeblocks/licenses.h
 include/codeblocks/logger.h
 include/codeblocks/loggers.h
 include/codeblocks/logmanager.h
 include/codeblocks/macrosmanager.h
-include/codeblocks/managedthread.h
 include/codeblocks/manager.h
 include/codeblocks/menuitemsmanager.h
 include/codeblocks/misctreeitemdata.h
@@ -162,9 +161,9 @@ include/codeblocks/searchresultslog.h
 include/codeblocks/selecttargetdlg.h
 include/codeblocks/settings.h
 include/codeblocks/templatemanager.h
+include/codeblocks/tinywxuni.h
 include/codeblocks/tinyxml/
 include/codeblocks/tinyxml/tinystr.h
-include/codeblocks/tinyxml/tinywxuni.h
 include/codeblocks/tinyxml/tinyxml.h
 include/codeblocks/toolsmanager.h
 include/codeblocks/uservarmanager.h
@@ -384,6 +383,7 @@ include/wxsmith/wxwidgets/wxwidgetsres.h
 include/wxsmith/wxwidgets/wxwidgetsresfactory.h
 lib/codeblocks/
 lib/codeblocks/plugins/
+lib/codeblocks/plugins/libAstyle.so
 lib/codeblocks/plugins/libAutoVersioning.so
 lib/codeblocks/plugins/libBrowseTracker.so
 lib/codeblocks/plugins/libCccc.so
@@ -414,7 +414,6 @@ lib/codeblocks/plugins/libThreadSearch.so
 lib/codeblocks/plugins/libToolsPlus.so
 lib/codeblocks/plugins/libValgrind.so
 lib/codeblocks/plugins/libabbreviations.so
-lib/codeblocks/plugins/libastyle.so
 lib/codeblocks/plugins/libautosave.so
 lib/codeblocks/plugins/libbyogames.so
 lib/codeblocks/plugins/libcb_koders.so
@@ -493,8 +492,12 @@ lib/pkgconfig/wxsmithaui.pc
 @man man/man1/cb_share_config.1
 @man man/man1/codeblocks.1
 @man man/man1/codesnippets.1
+share/appdata/
+share/appdata/codeblocks-contrib.metainfo.xml
+share/appdata/codeblocks.appdata.xml
 share/applications/codeblocks.desktop
 share/codeblocks/
+share/codeblocks/Astyle.zip
 share/codeblocks/AutoVersioning.zip
 share/codeblocks/BrowseTracker.zip
 share/codeblocks/Cccc.zip
@@ -538,7 +541,6 @@ share/codeblocks/ThreadSearch.zip
 share/codeblocks/ToolsPlus.zip
 share/codeblocks/Valgrind.zip
 share/codeblocks/abbreviations.zip
-share/codeblocks/astyle.zip
 share/codeblocks/autosave.zip
 share/codeblocks/byogames.zip
 share/codeblocks/cb_koders.zip
@@ -548,6 +550,7 @@ share/codeblocks/codesnippets.zip
 share/codeblocks/codestat.zip
 share/codeblocks/compiler.zip
 share/codeblocks/compilers/
+share/codeblocks/compilers/compiler_android-gcc.xml
 share/codeblocks/compilers/compiler_avr-gcc.xml
 share/codeblocks/compilers/compiler_bcc.xml
 share/codeblocks/compilers/compiler_bfin-elf-gcc.xml
@@ -558,13 +561,16 @@ share/codeblocks/compilers/compiler_ldc.xml
 share/codeblocks/compilers/compiler_lm32-gcc.xml
 share/codeblocks/compilers/compiler_lm8-gcc.xml
 share/codeblocks/compilers/compiler_msp430-gcc.xml
+share/codeblocks/compilers/compiler_mw.xml
 share/codeblocks/compilers/compiler_null.xml
 share/codeblocks/compilers/compiler_pgifortran.xml
+share/codeblocks/compilers/compiler_powerpc-eabi.xml
 share/codeblocks/compilers/compiler_ppc-gcc.xml
 share/codeblocks/compilers/compiler_sdcc.xml
 share/codeblocks/compilers/compiler_tcc.xml
 share/codeblocks/compilers/compiler_tricore-gcc.xml
 share/codeblocks/compilers/compiler_zpu-gcc.xml
+share/codeblocks/compilers/options_android-gcc.xml
 share/codeblocks/compilers/options_arm-elf-gcc.xml
 share/codeblocks/compilers/options_avr-gcc.xml
 share/codeblocks/compilers/options_bcc.xml
@@ -603,9 +609,11 @@ share/codeblocks/compilers/options_msp430-gcc.xml
 share/codeblocks/compilers/options_msvc10.xml
 share/codeblocks/compilers/options_msvc8.xml
 share/codeblocks/compilers/options_msvctk.xml
+share/codeblocks/compilers/options_mw.xml
 share/codeblocks/compilers/options_null.xml
 share/codeblocks/compilers/options_ow.xml
 share/codeblocks/compilers/options_pgifortran.xml
+share/codeblocks/compilers/options_powerpc-eabi.xml
 share/codeblocks/compilers/options_ppc-gcc.xml
 share/codeblocks/compilers/options_sdcc.xml
 share/codeblocks/compilers/options_tcc.xml
@@ -1227,6 +1235,8 @@ share/codeblocks/lexers/lexer_ada.sample
 share/codeblocks/lexers/lexer_ada.xml
 share/codeblocks/lexers/lexer_angelscript.sample
 share/codeblocks/lexers/lexer_angelscript.xml
+share/codeblocks/lexers/lexer_autotools.sample
+share/codeblocks/lexers/lexer_autotools.xml
 share/codeblocks/lexers/lexer_bash.sample
 share/codeblocks/lexers/lexer_bash.xml
 share/codeblocks/lexers/lexer_batch.sample
@@ -1245,6 +1255,8 @@ share/codeblocks/lexers/lexer_cpp.sample
 share/codeblocks/lexers/lexer_cpp.xml
 share/codeblocks/lexers/lexer_css.sample
 share/codeblocks/lexers/lexer_css.xml
+share/codeblocks/lexers/lexer_cu.sample
+share/codeblocks/lexers/lexer_cu.xml
 share/codeblocks/lexers/lexer_d.sample
 share/codeblocks/lexers/lexer_d.xml
 share/codeblocks/lexers/lexer_diff.sample
@@ -1265,6 +1277,8 @@ share/codeblocks/lexers/lexer_html.sample
 share/codeblocks/lexers/lexer_html.xml
 share/codeblocks/lexers/lexer_ihex.sample
 share/codeblocks/lexers/lexer_ihex.xml
+share/codeblocks/lexers/lexer_inno.sample
+share/codeblocks/lexers/lexer_inno.xml
 share/codeblocks/lexers/lexer_java.sample
 share/codeblocks/lexers/lexer_java.xml
 share/codeblocks/lexers/lexer_javascript.sample
@@ -1291,6 +1305,8 @@ share/codeblocks/lexers/lexer_perl.sample
 share/codeblocks/lexers/lexer_perl.xml
 share/codeblocks/lexers/lexer_postscript.sample
 share/codeblocks/lexers/lexer_postscript.xml
+share/codeblocks/lexers/lexer_powershell.sample
+share/codeblocks/lexers/lexer_powershell.xml
 share/codeblocks/lexers/lexer_prg.sample
 share/codeblocks/lexers/lexer_prg.xml
 share/codeblocks/lexers/lexer_properties.sample
@@ -1340,7 +1356,6 @@ share/codeblocks/scripts/make_dist.script
 share/codeblocks/scripts/plugin_find_broken_files.script
 share/codeblocks/scripts/sample_plugin.script
 share/codeblocks/scripts/startup.script
-share/codeblocks/scripts/stl-views-1.0.3.gdb
 share/codeblocks/scripts/tests/
 share/codeblocks/scripts/tests/menu_test_plugin.script
 share/codeblocks/scripts/tests/script_test_plugin.script
@@ -1381,6 +1396,10 @@ share/codeblocks/templates/sdccapp.template
 share/codeblocks/templates/sdl-cb.bmp
 share/codeblocks/templates/sdl-main.cpp
 share/codeblocks/templates/sdl.png
+share/codeblocks/templates/sdl2-main.cpp
+share/codeblocks/templates/sdl2.png
+share/codeblocks/templates/sdl2app.cbp
+share/codeblocks/templates/sdl2app.template
 share/codeblocks/templates/sdlapp.cbp
 share/codeblocks/templates/sdlapp.template
 share/codeblocks/templates/sfml-cb.bmp
@@ -1395,6 +1414,32 @@ share/codeblocks/templates/staticlib-sample.c
 share/codeblocks/templates/staticlib.cbp
 share/codeblocks/templates/staticlib.template
 share/codeblocks/templates/wizard/
+share/codeblocks/templates/wizard/arduino/
+share/codeblocks/templates/wizard/arduino/files/
+share/codeblocks/templates/wizard/arduino/files/cores/
+share/codeblocks/templates/wizard/arduino/files/cores/CDC.cpp
+share/codeblocks/templates/wizard/arduino/files/cores/HID.cpp
+share/codeblocks/templates/wizard/arduino/files/cores/HardwareSerial.cpp
+share/codeblocks/templates/wizard/arduino/files/cores/IPAddress.cpp
+share/codeblocks/templates/wizard/arduino/files/cores/Print.cpp
+share/codeblocks/templates/wizard/arduino/files/cores/Stream.cpp
+share/codeblocks/templates/wizard/arduino/files/cores/Tone.cpp
+share/codeblocks/templates/wizard/arduino/files/cores/USBCore.cpp
+share/codeblocks/templates/wizard/arduino/files/cores/WInterrupts.c
+share/codeblocks/templates/wizard/arduino/files/cores/WMath.cpp
+share/codeblocks/templates/wizard/arduino/files/cores/WString.cpp
+share/codeblocks/templates/wizard/arduino/files/cores/libraries.cpp
+share/codeblocks/templates/wizard/arduino/files/cores/main.cpp
+share/codeblocks/templates/wizard/arduino/files/cores/new.cpp
+share/codeblocks/templates/wizard/arduino/files/cores/wiring.c
+share/codeblocks/templates/wizard/arduino/files/cores/wiring_analog.c
+share/codeblocks/templates/wizard/arduino/files/cores/wiring_digital.c
+share/codeblocks/templates/wizard/arduino/files/cores/wiring_pulse.c
+share/codeblocks/templates/wizard/arduino/files/cores/wiring_shift.c
+share/codeblocks/templates/wizard/arduino/files/sketch.cpp
+share/codeblocks/templates/wizard/arduino/logo.png
+share/codeblocks/templates/wizard/arduino/wizard.png
+share/codeblocks/templates/wizard/arduino/wizard.script
 share/codeblocks/templates/wizard/arm/
 share/codeblocks/templates/wizard/arm/files/
 share/codeblocks/templates/wizard/arm/files/ARM-eval7t/
@@ -1516,6 +1561,10 @@ share/codeblocks/templates/wizard/d/console/hello.d
 share/codeblocks/templates/wizard/d/logo.png
 share/codeblocks/templates/wizard/d/wizard.png
 share/codeblocks/templates/wizard/d/wizard.script
+share/codeblocks/templates/wizard/d_source/
+share/codeblocks/templates/wizard/d_source/logo.png
+share/codeblocks/templates/wizard/d_source/wizard.png
+share/codeblocks/templates/wizard/d_source/wizard.script
 share/codeblocks/templates/wizard/directx/
 share/codeblocks/templates/wizard/directx/dx8/
 share/codeblocks/templates/wizard/directx/dx8/main.cpp
@@ -1600,6 +1649,16 @@ share/codeblocks/templates/wizard/irrlicht/files/main.cpp
 share/codeblocks/templates/wizard/irrlicht/logo.png
 share/codeblocks/templates/wizard/irrlicht/wizard.png
 share/codeblocks/templates/wizard/irrlicht/wizard.script
+share/codeblocks/templates/wizard/java/
+share/codeblocks/templates/wizard/java/file/
+share/codeblocks/templates/wizard/java/file/logo.png
+share/codeblocks/templates/wizard/java/file/wizard.png
+share/codeblocks/templates/wizard/java/file/wizard.script
+share/codeblocks/templates/wizard/java/files/
+share/codeblocks/templates/wizard/java/files/Main.java
+share/codeblocks/templates/wizard/java/logo.png
+share/codeblocks/templates/wizard/java/wizard.png
+share/codeblocks/templates/wizard/java/wizard.script
 share/codeblocks/templates/wizard/lf/
 share/codeblocks/templates/wizard/lf/files/
 share/codeblocks/templates/wizard/lf/files/quick/
@@ -1614,9 +1673,10 @@ share/codeblocks/templates/wizard/lf/wizard.script
 share/codeblocks/templates/wizard/lf/wizard.xrc
 share/codeblocks/templates/wizard/matlab_csf/
 share/codeblocks/templates/wizard/matlab_csf/files/
-share/codeblocks/templates/wizard/matlab_csf/files/lccstub.c
 share/codeblocks/templates/wizard/matlab_csf/files/mexversion.rc
 share/codeblocks/templates/wizard/matlab_csf/files/sfuntmpl.c
+share/codeblocks/templates/wizard/matlab_csf/lccstub/
+share/codeblocks/templates/wizard/matlab_csf/lccstub/lccstub.c
 share/codeblocks/templates/wizard/matlab_csf/logo.png
 share/codeblocks/templates/wizard/matlab_csf/wizard.png
 share/codeblocks/templates/wizard/matlab_csf/wizard.script
@@ -1628,6 +1688,13 @@ share/codeblocks/templates/wizard/mcs51/logo.png
 share/codeblocks/templates/wizard/mcs51/wizard.png
 share/codeblocks/templates/wizard/mcs51/wizard.script
 share/codeblocks/templates/wizard/mcs51/wizard.xrc
+share/codeblocks/templates/wizard/msp430/
+share/codeblocks/templates/wizard/msp430/files/
+share/codeblocks/templates/wizard/msp430/files/main.c
+share/codeblocks/templates/wizard/msp430/logo.png
+share/codeblocks/templates/wizard/msp430/wizard.png
+share/codeblocks/templates/wizard/msp430/wizard.script
+share/codeblocks/templates/wizard/msp430/wizard.xrc
 share/codeblocks/templates/wizard/ogre/
 share/codeblocks/templates/wizard/ogre/files/
 share/codeblocks/templates/wizard/ogre/files/main.cpp
@@ -1636,7 +1703,7 @@ share/codeblocks/templates/wizard/ogre/wizard.png
 share/codeblocks/templates/wizard/ogre/wizard.script
 share/codeblocks/templates/wizard/opencv/
 share/codeblocks/templates/wizard/opencv/files/
-share/codeblocks/templates/wizard/opencv/files/lena.jpg
+share/codeblocks/templates/wizard/opencv/files/arnold_schwarzenegger.jpg
 share/codeblocks/templates/wizard/opencv/files/main.cpp
 share/codeblocks/templates/wizard/opencv/logo.png
 share/codeblocks/templates/wizard/opencv/wizard.png
@@ -1693,6 +1760,18 @@ share/codeblocks/templates/wizard/qt4/files/main.cpp
 share/codeblocks/templates/wizard/qt4/logo.png
 share/codeblocks/templates/wizard/qt4/wizard.png
 share/codeblocks/templates/wizard/qt4/wizard.script
+share/codeblocks/templates/wizard/qt4dll/
+share/codeblocks/templates/wizard/qt4dll/files/
+share/codeblocks/templates/wizard/qt4dll/files/main.cpp
+share/codeblocks/templates/wizard/qt4dll/logo.png
+share/codeblocks/templates/wizard/qt4dll/wizard.png
+share/codeblocks/templates/wizard/qt4dll/wizard.script
+share/codeblocks/templates/wizard/qt5/
+share/codeblocks/templates/wizard/qt5/files/
+share/codeblocks/templates/wizard/qt5/files/main.cpp
+share/codeblocks/templates/wizard/qt5/logo.png
+share/codeblocks/templates/wizard/qt5/wizard.png
+share/codeblocks/templates/wizard/qt5/wizard.script
 share/codeblocks/templates/wizard/sdl/
 share/codeblocks/templates/wizard/sdl/files/
 share/codeblocks/templates/wizard/sdl/files/cb.bmp
@@ -1700,6 +1779,12 @@ share/codeblocks/templates/wizard/sdl/files/main.cpp
 share/codeblocks/templates/wizard/sdl/logo.png
 share/codeblocks/templates/wizard/sdl/wizard.png
 share/codeblocks/templates/wizard/sdl/wizard.script
+share/codeblocks/templates/wizard/sdl2/
+share/codeblocks/templates/wizard/sdl2/files/
+share/codeblocks/templates/wizard/sdl2/files/main.cpp
+share/codeblocks/templates/wizard/sdl2/logo.png
+share/codeblocks/templates/wizard/sdl2/wizard.png
+share/codeblocks/templates/wizard/sdl2/wizard.script
 share/codeblocks/templates/wizard/sfml/
 share/codeblocks/templates/wizard/sfml/logo.png
 share/codeblocks/templates/wizard/sfml/sfml1/

@@ -1,9 +1,10 @@
-$OpenBSD: patch-src_plugins_compilergcc_compilergcc_cpp,v 1.4 2016/01/30 11:20:01 ajacoutot Exp $
+$OpenBSD: patch-src_plugins_compilergcc_compilergcc_cpp,v 1.5 2018/02/06 15:28:51 sthen Exp $
 
 Always use cb_console_runner from installed PREFIX.
 
---- src/plugins/compilergcc/compilergcc.cpp.orig	Sat Jan 23 11:43:05 2016
-+++ src/plugins/compilergcc/compilergcc.cpp	Fri Jan 29 00:27:33 2016
+Index: src/plugins/compilergcc/compilergcc.cpp
+--- src/plugins/compilergcc/compilergcc.cpp.orig
++++ src/plugins/compilergcc/compilergcc.cpp
 @@ -159,7 +159,7 @@ namespace
  {
      PluginRegistrant<CompilerGCC> reg(_T("Compiler"));
@@ -13,7 +14,7 @@ Always use cb_console_runner from installed PREFIX.
      static const wxString strSLASH(_T("/"));
      static const wxString strSPACE(_T(" "));
      static const wxString strQUOTE(platform::windows ? _T("\"") : _T("'"));
-@@ -1723,8 +1723,7 @@ int CompilerGCC::RunSingleFile(const wxString& filenam
+@@ -1767,8 +1767,7 @@ int CompilerGCC::RunSingleFile(const wxString& filenam
  
      wxString baseDir = ConfigManager::GetExecutableFolder();
      wxString crunnStr = strQUOTE + baseDir + strSLASH + strCONSOLE_RUNNER + strQUOTE;
@@ -23,7 +24,7 @@ Always use cb_console_runner from installed PREFIX.
  
      if (!command.Replace(_T("$SCRIPT"), exe_filename))
          command << strQUOTE << exe_filename << strQUOTE; // if they didn't specify $SCRIPT, append:
-@@ -1838,7 +1837,7 @@ int CompilerGCC::Run(ProjectBuildTarget* target)
+@@ -1885,7 +1884,7 @@ int CompilerGCC::Run(ProjectBuildTarget* target)
                      : EscapeSpaces(m_CdRun);
      wxString crunnStr = platform::windows
                        ? strQUOTE + baseDir + strSLASH + strCONSOLE_RUNNER + strQUOTE
@@ -32,7 +33,7 @@ Always use cb_console_runner from installed PREFIX.
      wxString hostapStr = platform::windows
                         ? strQUOTE + target->GetHostApplication() + strQUOTE
                         : EscapeSpaces(target->GetHostApplication());
-@@ -1876,8 +1875,6 @@ int CompilerGCC::Run(ProjectBuildTarget* target)
+@@ -1923,8 +1922,6 @@ int CompilerGCC::Run(ProjectBuildTarget* target)
  
          if (target->GetUseConsoleRunner())
          {
@@ -41,7 +42,7 @@ Always use cb_console_runner from installed PREFIX.
                  command << crunnStr << strSPACE;
  
                  if (!platform::windows)
-@@ -1889,7 +1886,6 @@ int CompilerGCC::Run(ProjectBuildTarget* target)
+@@ -1936,7 +1933,6 @@ int CompilerGCC::Run(ProjectBuildTarget* target)
                      QuoteStringIfNeeded(strLinkerPath);
                      command << strLinkerPath << strSPACE;
                  }

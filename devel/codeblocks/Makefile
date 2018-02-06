@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.46 2018/01/20 15:05:34 jsg Exp $
+# $OpenBSD: Makefile,v 1.47 2018/02/06 15:28:51 sthen Exp $
 
 BROKEN-alpha=	sqvm.cpp:394:1: internal compiler error: Segmentation fault
 COMMENT=	Code::Blocks C/C++ IDE
 
-V=		16.01
+V=		17.12
 DISTNAME=	codeblocks_${V}
 PKGNAME=	codeblocks-${V}
-REVISION=	5
+EXTRACT_SUFX=	.tar.xz
 
-WRKDIST=	${WRKDIR}/codeblocks-${V}.release
+WRKDIST=	${WRKDIR}/codeblocks-${V}
 
 SHARED_LIBS +=  codeblocks           0.1      # 0.1
 SHARED_LIBS +=  wxchartctrl          0.1      # 0.1
@@ -31,24 +31,24 @@ HOMEPAGE=	http://www.codeblocks.org/
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ICE SDL SM X11 Xcomposite Xcursor Xdamage Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 bz2 c cairo
-WANTLIB += expat ffi fontconfig freetype gamin-1 gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
-WANTLIB += gthread-2.0 gtk-x11-2.0 harfbuzz hunspell-1.6 iconv intl iodbc
+WANTLIB += ${COMPILER_LIBCXX} ICE SDL SM X11 Xcomposite Xcursor
+WANTLIB += Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm
+WANTLIB += atk-1.0 boost_system bz2 c cairo expat ffi fontconfig
+WANTLIB += freetype gamin-1 gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
+WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
+WANTLIB += gtk-x11-2.0 harfbuzz hunspell-1.6 iconv intl iodbc
 WANTLIB += jpeg m mspack pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png pthread sndio ${LIBCXX}
-WANTLIB += tiff usbhid wx_base wx_base_net wx_base_odbc wx_base_xml
-WANTLIB += wx_gtk2_adv wx_gtk2_aui wx_gtk2_core wx_gtk2_dbgrid
-WANTLIB += wx_gtk2_html wx_gtk2_qa wx_gtk2_richtext wx_gtk2_xrc
-WANTLIB += xcb xcb-render xcb-shm z ${COMPILER_LIBCXX}
+WANTLIB += pcre pixman-1 png sndio tiff usbhid wx_base wx_base_net
+WANTLIB += wx_base_odbc wx_base_xml wx_gtk2_adv wx_gtk2_aui wx_gtk2_core
+WANTLIB += wx_gtk2_dbgrid wx_gtk2_html wx_gtk2_qa wx_gtk2_richtext
+WANTLIB += wx_gtk2_xrc xcb xcb-render xcb-shm z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=codeblocks/Sources/${V}/}
 
-BUILD_DEPENDS=	archivers/zip \
-		devel/boost
+BUILD_DEPENDS=	archivers/zip
 
 LIB_DEPENDS=	archivers/bzip2 \
+		devel/boost \
 		sysutils/gamin \
 		textproc/hunspell \
 		x11/wxWidgets
@@ -67,8 +67,7 @@ BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
 			devel/libtool
 
 CONFIGURE_STYLE=gnu
-# nullptr test must pass
-CXXFLAGS +=	-std=c++11 -Wno-c++11-narrowing
+CXXFLAGS +=	-std=c++11
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-contrib-plugins=all
