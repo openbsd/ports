@@ -1,15 +1,14 @@
-$OpenBSD: patch-tests_suites_main_test_function,v 1.1 2017/10/21 00:47:52 jca Exp $
+$OpenBSD: patch-tests_suites_main_test_function,v 1.2 2018/02/06 10:26:31 sthen Exp $
 
 XXX can't take the address of stdout
 
 Index: tests/suites/main_test.function
 --- tests/suites/main_test.function.orig
 +++ tests/suites/main_test.function
-@@ -401,32 +401,7 @@ int main(int argc, const char *argv[])
-             if( unmet_dep_count == 0 )
+@@ -418,30 +418,7 @@ int main(int argc, const char *argv[])
              {
-                 test_errors = 0;
--
+                 test_info.failed = 0;
+ 
 -#if defined(__unix__) || (defined(__APPLE__) && defined(__MACH__))
 -                /* Suppress all output from the library unless we're verbose
 -                 * mode
@@ -34,7 +33,6 @@ Index: tests/suites/main_test.function
 -                        exit( 1 );
 -                }
 -#endif /* __unix__ || __APPLE__ __MACH__ */
--
+ 
              }
  
-             if( unmet_dep_count > 0 || ret == DISPATCH_UNSUPPORTED_SUITE )
