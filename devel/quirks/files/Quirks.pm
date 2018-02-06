@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.575 2018/02/01 21:49:32 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.576 2018/02/06 22:09:28 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -501,6 +501,7 @@ my $stem_extensions = {
 };
 
 my $obsolete_reason = {
+# 5.5
 	'BitTorrent' => 0,
 	'BitTorrent-gui' => 0,
 	'sgmlformat' => 0,
@@ -518,6 +519,7 @@ my $obsolete_reason = {
 	'apc-upsd' => 3,
 	'mod_bandwidth' => 3,
 	'varconf' => 0,
+# 5.6
 	'radiusd-cistron' => 2,
 	'radiusd-lucent' => 2,
 	'emesene' => 0,
@@ -557,6 +559,7 @@ my $obsolete_reason = {
 	'xmms-bonk' => 3,
 	'mailcrypt' => 0,
 	'tcpcat' => 4,
+# 5.7
 	'ctm' => 3,
 	'papyon' => 3,
 	'bacula-web' => 1,
@@ -625,6 +628,7 @@ my $obsolete_reason = {
 	'hs-stringtable-atom' => 5,
 	'pugs' => 5,
 	'xawtv' => 5,
+# 5.8
 	'qt4-eventsview' => 0,
 	'rioutil' => 3,
 	'chmsee' => 0,
@@ -705,6 +709,7 @@ my $obsolete_reason = {
 	'tla' => 3,
 	'googlecl' => 3,
 	'cyphertite' => 3,
+# 5.9
 	'cxxtools' => 5,
 	'tntnet' => 6,
 	'dwb' => 6,
@@ -831,6 +836,7 @@ my $obsolete_reason = {
 	'hs-simple-sendfile' => 5,
 	'monadius' => 3,
 	'hs-bimap' => 5,
+# 6.0
 	'nicotine' => 3,
 	'toprump' => 3,
 	'fedora_base' => 0,
@@ -840,7 +846,7 @@ my $obsolete_reason = {
 	'xcept' => 0,
 	'cqcam' => 6,
 	'uisp' => 6,
-        'libretto-config' => 6,
+	'libretto-config' => 6,
 	'courtney' => 2,
 	'junkbuster' => 2,
 	'icb' => 0,
@@ -900,6 +906,7 @@ my $obsolete_reason = {
 	'yt' => 0,
 	'gmime-sharp' => 6,
 	'py-subvertpy' => 5,
+# 6.1
 	'clamz' => 3,
 	'p5-Net-Abuse-Utils-Spamhaus' => 6,
 	'mlite' => 3,
@@ -1035,6 +1042,7 @@ my $obsolete_reason = {
 	'pigment' => 3,
 	'py-pigment' => 3,
 	'gogo' => 3,
+# 6.2
 	'spectemu' => 3,
 	'pinpoint' => 3,
 	'anjuta' => 3,
@@ -1130,6 +1138,7 @@ my $obsolete_reason = {
 	'toad' => 3,
 	'pgp' => 3,
 	'gonzui' => 3,
+# 6.3
 	'puppet-dashboard' => 5,
 	'dnsfilter' => 3,
 	'empathy' => 6,
@@ -1223,6 +1232,7 @@ my $obsolete_reason = {
 	'akonadi-googledata' => 6,
 	'arora' => 3,
 	'powerdns-ldap' => 6,
+	'p5-Net-LDNS' => 6,
 };
 
 # reasons for obsolete packages
