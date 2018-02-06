@@ -1,0 +1,39 @@
+$OpenBSD: patch-src_dhcpcd_c,v 1.1 2018/02/06 10:11:34 sthen Exp $
+
+From 8f483d192082a953dd035f38ee4555735106f1fc Mon Sep 17 00:00:00 2001
+From: Roy Marples <roy@marples.name>
+Date: Fri, 2 Feb 2018 11:24:58 +0000
+Subject: inet6: simplify setup of kernel
+
+Rename if_checkipv6 to if_setup_inet6 so it's more descriptive.
+simpify code as we don't really care about the result.
+Restore the prior behavior of not disabling kernel RA handling
+if dhcpcd is not doing it.
+
+Index: src/dhcpcd.c
+--- src/dhcpcd.c.orig
++++ src/dhcpcd.c
+@@ -437,19 +437,15 @@ configure_interface1(struct interface *ifp)
+ 		ifo->options &=
+ 		    ~(DHCPCD_IPV6RS | DHCPCD_DHCP6 | DHCPCD_WAITIP6);
+ 
+-	/* We want to disable kernel interface RA as early as possible. */
++	/* We want to setup INET6 on the interface as soon as possible. */
+ 	if (ifp->active == IF_ACTIVE_USER &&
+-	    !(ifp->ctx->options & DHCPCD_DUMPLEASE))
++	    ifo->options & DHCPCD_IPV6 &&
++	    !(ifp->ctx->options & (DHCPCD_DUMPLEASE | DHCPCD_TEST)))
+ 	{
+-		int ra_global, ra_iface;
+-
+ 		/* If not doing any DHCP, disable the RDNSS requirement. */
+ 		if (!(ifo->options & (DHCPCD_DHCP | DHCPCD_DHCP6)))
+ 			ifo->options &= ~DHCPCD_IPV6RA_REQRDNSS;
+-		ra_global = if_checkipv6(ifp->ctx, NULL);
+-		ra_iface = if_checkipv6(ifp->ctx, ifp);
+-		if (ra_global == -1 || ra_iface == -1)
+-			ifo->options &= ~DHCPCD_IPV6RS;
++		if_setup_inet6(ifp);
+ 	}
+ #endif
+ 
