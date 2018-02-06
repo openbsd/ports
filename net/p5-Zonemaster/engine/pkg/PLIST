@@ -1,88 +1,87 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/02/05 01:03:36 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/02/06 21:55:39 sthen Exp $
 ${P5SITE}/Zonemaster/
-${P5SITE}/Zonemaster.pm
-${P5SITE}/Zonemaster/ASNLookup.pm
-${P5SITE}/Zonemaster/Config.pm
-${P5SITE}/Zonemaster/Constants.pm
-${P5SITE}/Zonemaster/DNSName.pm
-${P5SITE}/Zonemaster/Exception.pm
-${P5SITE}/Zonemaster/Logger/
-${P5SITE}/Zonemaster/Logger.pm
-${P5SITE}/Zonemaster/Logger/Entry.pm
-${P5SITE}/Zonemaster/NSArray.pm
-${P5SITE}/Zonemaster/Nameserver/
-${P5SITE}/Zonemaster/Nameserver.pm
-${P5SITE}/Zonemaster/Nameserver/Cache.pm
-${P5SITE}/Zonemaster/Net/
-${P5SITE}/Zonemaster/Net/IP.pm
-${P5SITE}/Zonemaster/Overview.pod
-${P5SITE}/Zonemaster/Packet.pm
-${P5SITE}/Zonemaster/Recursor.pm
-${P5SITE}/Zonemaster/Test/
-${P5SITE}/Zonemaster/Test.pm
-${P5SITE}/Zonemaster/Test/Address.pm
-${P5SITE}/Zonemaster/Test/Basic.pm
-${P5SITE}/Zonemaster/Test/Connectivity.pm
-${P5SITE}/Zonemaster/Test/Consistency.pm
-${P5SITE}/Zonemaster/Test/DNSSEC.pm
-${P5SITE}/Zonemaster/Test/Delegation.pm
-${P5SITE}/Zonemaster/Test/Example.pm
-${P5SITE}/Zonemaster/Test/Nameserver.pm
-${P5SITE}/Zonemaster/Test/Syntax.pm
-${P5SITE}/Zonemaster/Test/Zone.pm
-${P5SITE}/Zonemaster/TestMethods.pm
-${P5SITE}/Zonemaster/Translator.pm
-${P5SITE}/Zonemaster/Util.pm
-${P5SITE}/Zonemaster/Zone.pm
-${P5SITE}/auto/share/dist/Zonemaster/
-${P5SITE}/auto/share/dist/Zonemaster/Makefile
-${P5SITE}/auto/share/dist/Zonemaster/config.json
-${P5SITE}/auto/share/dist/Zonemaster/config_example_logfilter.json
-${P5SITE}/auto/share/dist/Zonemaster/en.po
-${P5SITE}/auto/share/dist/Zonemaster/fr.po
-${P5SITE}/auto/share/dist/Zonemaster/fr_FR.UTF-8.po
-${P5SITE}/auto/share/dist/Zonemaster/iana-profile.json
-${P5SITE}/auto/share/dist/Zonemaster/locale/
-${P5SITE}/auto/share/dist/Zonemaster/locale/en/
-${P5SITE}/auto/share/dist/Zonemaster/locale/en/LC_MESSAGES/
-${P5SITE}/auto/share/dist/Zonemaster/locale/en/LC_MESSAGES/Zonemaster.mo
-${P5SITE}/auto/share/dist/Zonemaster/locale/fr/
-${P5SITE}/auto/share/dist/Zonemaster/locale/fr/LC_MESSAGES/
-${P5SITE}/auto/share/dist/Zonemaster/locale/fr/LC_MESSAGES/Zonemaster.mo
-${P5SITE}/auto/share/dist/Zonemaster/locale/fr_FR.UTF-8/
-${P5SITE}/auto/share/dist/Zonemaster/locale/fr_FR.UTF-8/LC_MESSAGES/
-${P5SITE}/auto/share/dist/Zonemaster/locale/fr_FR.UTF-8/LC_MESSAGES/Zonemaster.mo
-${P5SITE}/auto/share/dist/Zonemaster/locale/sv/
-${P5SITE}/auto/share/dist/Zonemaster/locale/sv/LC_MESSAGES/
-${P5SITE}/auto/share/dist/Zonemaster/locale/sv/LC_MESSAGES/Zonemaster.mo
-${P5SITE}/auto/share/dist/Zonemaster/policy.json
-${P5SITE}/auto/share/dist/Zonemaster/sv.po
-@man man/man3p/Zonemaster.3p
-@man man/man3p/Zonemaster::ASNLookup.3p
-@man man/man3p/Zonemaster::Config.3p
-@man man/man3p/Zonemaster::Constants.3p
-@man man/man3p/Zonemaster::DNSName.3p
-@man man/man3p/Zonemaster::Exception.3p
-@man man/man3p/Zonemaster::Logger.3p
-@man man/man3p/Zonemaster::Logger::Entry.3p
-@man man/man3p/Zonemaster::NSArray.3p
-@man man/man3p/Zonemaster::Nameserver.3p
-@man man/man3p/Zonemaster::Nameserver::Cache.3p
-@man man/man3p/Zonemaster::Overview.3p
-@man man/man3p/Zonemaster::Packet.3p
-@man man/man3p/Zonemaster::Recursor.3p
-@man man/man3p/Zonemaster::Test.3p
-@man man/man3p/Zonemaster::Test::Address.3p
-@man man/man3p/Zonemaster::Test::Basic.3p
-@man man/man3p/Zonemaster::Test::Connectivity.3p
-@man man/man3p/Zonemaster::Test::Consistency.3p
-@man man/man3p/Zonemaster::Test::DNSSEC.3p
-@man man/man3p/Zonemaster::Test::Delegation.3p
-@man man/man3p/Zonemaster::Test::Example.3p
-@man man/man3p/Zonemaster::Test::Nameserver.3p
-@man man/man3p/Zonemaster::Test::Syntax.3p
-@man man/man3p/Zonemaster::Test::Zone.3p
-@man man/man3p/Zonemaster::TestMethods.3p
-@man man/man3p/Zonemaster::Translator.3p
-@man man/man3p/Zonemaster::Util.3p
-@man man/man3p/Zonemaster::Zone.3p
+${P5SITE}/Zonemaster/Engine/
+${P5SITE}/Zonemaster/Engine.pm
+${P5SITE}/Zonemaster/Engine/ASNLookup.pm
+${P5SITE}/Zonemaster/Engine/Config.pm
+${P5SITE}/Zonemaster/Engine/Constants.pm
+${P5SITE}/Zonemaster/Engine/DNSName.pm
+${P5SITE}/Zonemaster/Engine/Exception.pm
+${P5SITE}/Zonemaster/Engine/Logger/
+${P5SITE}/Zonemaster/Engine/Logger.pm
+${P5SITE}/Zonemaster/Engine/Logger/Entry.pm
+${P5SITE}/Zonemaster/Engine/NSArray.pm
+${P5SITE}/Zonemaster/Engine/Nameserver/
+${P5SITE}/Zonemaster/Engine/Nameserver.pm
+${P5SITE}/Zonemaster/Engine/Nameserver/Cache.pm
+${P5SITE}/Zonemaster/Engine/Net/
+${P5SITE}/Zonemaster/Engine/Net/IP.pm
+${P5SITE}/Zonemaster/Engine/Overview.pod
+${P5SITE}/Zonemaster/Engine/Packet.pm
+${P5SITE}/Zonemaster/Engine/Recursor.pm
+${P5SITE}/Zonemaster/Engine/Test/
+${P5SITE}/Zonemaster/Engine/Test.pm
+${P5SITE}/Zonemaster/Engine/Test/Address.pm
+${P5SITE}/Zonemaster/Engine/Test/Basic.pm
+${P5SITE}/Zonemaster/Engine/Test/Connectivity.pm
+${P5SITE}/Zonemaster/Engine/Test/Consistency.pm
+${P5SITE}/Zonemaster/Engine/Test/DNSSEC.pm
+${P5SITE}/Zonemaster/Engine/Test/Delegation.pm
+${P5SITE}/Zonemaster/Engine/Test/Example.pm
+${P5SITE}/Zonemaster/Engine/Test/Nameserver.pm
+${P5SITE}/Zonemaster/Engine/Test/Syntax.pm
+${P5SITE}/Zonemaster/Engine/Test/Zone.pm
+${P5SITE}/Zonemaster/Engine/TestMethods.pm
+${P5SITE}/Zonemaster/Engine/Translator.pm
+${P5SITE}/Zonemaster/Engine/Util.pm
+${P5SITE}/Zonemaster/Engine/Zone.pm
+${P5SITE}/auto/share/dist/Zonemaster-Engine/
+${P5SITE}/auto/share/dist/Zonemaster-Engine/config.json
+${P5SITE}/auto/share/dist/Zonemaster-Engine/config_example_logfilter.json
+${P5SITE}/auto/share/dist/Zonemaster-Engine/iana-ipv4-special-registry.csv
+${P5SITE}/auto/share/dist/Zonemaster-Engine/iana-ipv6-special-registry.csv
+${P5SITE}/auto/share/dist/Zonemaster-Engine/iana-profile.json
+${P5SITE}/auto/share/dist/Zonemaster-Engine/locale/
+${P5SITE}/auto/share/dist/Zonemaster-Engine/locale/da/
+${P5SITE}/auto/share/dist/Zonemaster-Engine/locale/da/LC_MESSAGES/
+${P5SITE}/auto/share/dist/Zonemaster-Engine/locale/da/LC_MESSAGES/Zonemaster-Engine.mo
+${P5SITE}/auto/share/dist/Zonemaster-Engine/locale/en/
+${P5SITE}/auto/share/dist/Zonemaster-Engine/locale/en/LC_MESSAGES/
+${P5SITE}/auto/share/dist/Zonemaster-Engine/locale/en/LC_MESSAGES/Zonemaster-Engine.mo
+${P5SITE}/auto/share/dist/Zonemaster-Engine/locale/fr/
+${P5SITE}/auto/share/dist/Zonemaster-Engine/locale/fr/LC_MESSAGES/
+${P5SITE}/auto/share/dist/Zonemaster-Engine/locale/fr/LC_MESSAGES/Zonemaster-Engine.mo
+${P5SITE}/auto/share/dist/Zonemaster-Engine/locale/sv/
+${P5SITE}/auto/share/dist/Zonemaster-Engine/locale/sv/LC_MESSAGES/
+${P5SITE}/auto/share/dist/Zonemaster-Engine/locale/sv/LC_MESSAGES/Zonemaster-Engine.mo
+${P5SITE}/auto/share/dist/Zonemaster-Engine/policy.json
+@man man/man3p/Zonemaster::Engine.3p
+@man man/man3p/Zonemaster::Engine::ASNLookup.3p
+@man man/man3p/Zonemaster::Engine::Config.3p
+@man man/man3p/Zonemaster::Engine::Constants.3p
+@man man/man3p/Zonemaster::Engine::DNSName.3p
+@man man/man3p/Zonemaster::Engine::Exception.3p
+@man man/man3p/Zonemaster::Engine::Logger.3p
+@man man/man3p/Zonemaster::Engine::Logger::Entry.3p
+@man man/man3p/Zonemaster::Engine::NSArray.3p
+@man man/man3p/Zonemaster::Engine::Nameserver.3p
+@man man/man3p/Zonemaster::Engine::Nameserver::Cache.3p
+@man man/man3p/Zonemaster::Engine::Net::IP.3p
+@man man/man3p/Zonemaster::Engine::Overview.3p
+@man man/man3p/Zonemaster::Engine::Packet.3p
+@man man/man3p/Zonemaster::Engine::Recursor.3p
+@man man/man3p/Zonemaster::Engine::Test.3p
+@man man/man3p/Zonemaster::Engine::Test::Address.3p
+@man man/man3p/Zonemaster::Engine::Test::Basic.3p
+@man man/man3p/Zonemaster::Engine::Test::Connectivity.3p
+@man man/man3p/Zonemaster::Engine::Test::Consistency.3p
+@man man/man3p/Zonemaster::Engine::Test::DNSSEC.3p
+@man man/man3p/Zonemaster::Engine::Test::Delegation.3p
+@man man/man3p/Zonemaster::Engine::Test::Example.3p
+@man man/man3p/Zonemaster::Engine::Test::Nameserver.3p
+@man man/man3p/Zonemaster::Engine::Test::Syntax.3p
+@man man/man3p/Zonemaster::Engine::Test::Zone.3p
+@man man/man3p/Zonemaster::Engine::TestMethods.3p
+@man man/man3p/Zonemaster::Engine::Translator.3p
+@man man/man3p/Zonemaster::Engine::Util.3p
+@man man/man3p/Zonemaster::Engine::Zone.3p

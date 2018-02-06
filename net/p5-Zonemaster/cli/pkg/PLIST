@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/02/05 01:08:17 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/02/06 21:55:39 sthen Exp $
 bin/zonemaster-cli
 ${P5SITE}/Zonemaster/CLI.pm
 ${P5SITE}/auto/share/dist/Zonemaster-CLI/
-${P5SITE}/auto/share/dist/Zonemaster-CLI/Makefile
-${P5SITE}/auto/share/dist/Zonemaster-CLI/en.po
-${P5SITE}/auto/share/dist/Zonemaster-CLI/fr.po
 ${P5SITE}/auto/share/dist/Zonemaster-CLI/locale/
+${P5SITE}/auto/share/dist/Zonemaster-CLI/locale/da/
+${P5SITE}/auto/share/dist/Zonemaster-CLI/locale/da/LC_MESSAGES/
+${P5SITE}/auto/share/dist/Zonemaster-CLI/locale/da/LC_MESSAGES/Zonemaster-CLI.mo
 ${P5SITE}/auto/share/dist/Zonemaster-CLI/locale/en/
 ${P5SITE}/auto/share/dist/Zonemaster-CLI/locale/en/LC_MESSAGES/
 ${P5SITE}/auto/share/dist/Zonemaster-CLI/locale/en/LC_MESSAGES/Zonemaster-CLI.mo
@@ -15,6 +15,5 @@ ${P5SITE}/auto/share/dist/Zonemaster-CLI/locale/fr/LC_MESSAGES/Zonemaster-CLI.mo
 ${P5SITE}/auto/share/dist/Zonemaster-CLI/locale/sv/
 ${P5SITE}/auto/share/dist/Zonemaster-CLI/locale/sv/LC_MESSAGES/
 ${P5SITE}/auto/share/dist/Zonemaster-CLI/locale/sv/LC_MESSAGES/Zonemaster-CLI.mo
-${P5SITE}/auto/share/dist/Zonemaster-CLI/sv.po
 @man man/man1/zonemaster-cli.1
 @man man/man3p/Zonemaster::CLI.3p

@@ -1,0 +1,165 @@
+@comment $OpenBSD: PLIST,v 1.1 2018/02/06 21:55:39 sthen Exp $
+${P5ARCH}/
+${P5ARCH}/Zonemaster/
+${P5ARCH}/Zonemaster/LDNS/
+${P5ARCH}/Zonemaster/LDNS.pm
+${P5ARCH}/Zonemaster/LDNS/Packet.pm
+${P5ARCH}/Zonemaster/LDNS/RR/
+${P5ARCH}/Zonemaster/LDNS/RR.pm
+${P5ARCH}/Zonemaster/LDNS/RR/A.pm
+${P5ARCH}/Zonemaster/LDNS/RR/A6.pm
+${P5ARCH}/Zonemaster/LDNS/RR/AAAA.pm
+${P5ARCH}/Zonemaster/LDNS/RR/AFSDB.pm
+${P5ARCH}/Zonemaster/LDNS/RR/APL.pm
+${P5ARCH}/Zonemaster/LDNS/RR/ATMA.pm
+${P5ARCH}/Zonemaster/LDNS/RR/CAA.pm
+${P5ARCH}/Zonemaster/LDNS/RR/CDS.pm
+${P5ARCH}/Zonemaster/LDNS/RR/CERT.pm
+${P5ARCH}/Zonemaster/LDNS/RR/CNAME.pm
+${P5ARCH}/Zonemaster/LDNS/RR/DHCID.pm
+${P5ARCH}/Zonemaster/LDNS/RR/DLV.pm
+${P5ARCH}/Zonemaster/LDNS/RR/DNAME.pm
+${P5ARCH}/Zonemaster/LDNS/RR/DNSKEY.pm
+${P5ARCH}/Zonemaster/LDNS/RR/DS.pm
+${P5ARCH}/Zonemaster/LDNS/RR/EID.pm
+${P5ARCH}/Zonemaster/LDNS/RR/EUI48.pm
+${P5ARCH}/Zonemaster/LDNS/RR/EUI64.pm
+${P5ARCH}/Zonemaster/LDNS/RR/GID.pm
+${P5ARCH}/Zonemaster/LDNS/RR/GPOS.pm
+${P5ARCH}/Zonemaster/LDNS/RR/HINFO.pm
+${P5ARCH}/Zonemaster/LDNS/RR/HIP.pm
+${P5ARCH}/Zonemaster/LDNS/RR/IPSECKEY.pm
+${P5ARCH}/Zonemaster/LDNS/RR/ISDN.pm
+${P5ARCH}/Zonemaster/LDNS/RR/KEY.pm
+${P5ARCH}/Zonemaster/LDNS/RR/KX.pm
+${P5ARCH}/Zonemaster/LDNS/RR/L32.pm
+${P5ARCH}/Zonemaster/LDNS/RR/L64.pm
+${P5ARCH}/Zonemaster/LDNS/RR/LOC.pm
+${P5ARCH}/Zonemaster/LDNS/RR/LP.pm
+${P5ARCH}/Zonemaster/LDNS/RR/MAILA.pm
+${P5ARCH}/Zonemaster/LDNS/RR/MAILB.pm
+${P5ARCH}/Zonemaster/LDNS/RR/MB.pm
+${P5ARCH}/Zonemaster/LDNS/RR/MD.pm
+${P5ARCH}/Zonemaster/LDNS/RR/MF.pm
+${P5ARCH}/Zonemaster/LDNS/RR/MG.pm
+${P5ARCH}/Zonemaster/LDNS/RR/MINFO.pm
+${P5ARCH}/Zonemaster/LDNS/RR/MR.pm
+${P5ARCH}/Zonemaster/LDNS/RR/MX.pm
+${P5ARCH}/Zonemaster/LDNS/RR/NAPTR.pm
+${P5ARCH}/Zonemaster/LDNS/RR/NID.pm
+${P5ARCH}/Zonemaster/LDNS/RR/NIMLOC.pm
+${P5ARCH}/Zonemaster/LDNS/RR/NINFO.pm
+${P5ARCH}/Zonemaster/LDNS/RR/NS.pm
+${P5ARCH}/Zonemaster/LDNS/RR/NSAP.pm
+${P5ARCH}/Zonemaster/LDNS/RR/NSEC.pm
+${P5ARCH}/Zonemaster/LDNS/RR/NSEC3.pm
+${P5ARCH}/Zonemaster/LDNS/RR/NSEC3PARAM.pm
+${P5ARCH}/Zonemaster/LDNS/RR/NULL.pm
+${P5ARCH}/Zonemaster/LDNS/RR/NXT.pm
+${P5ARCH}/Zonemaster/LDNS/RR/PTR.pm
+${P5ARCH}/Zonemaster/LDNS/RR/PX.pm
+${P5ARCH}/Zonemaster/LDNS/RR/RKEY.pm
+${P5ARCH}/Zonemaster/LDNS/RR/RP.pm
+${P5ARCH}/Zonemaster/LDNS/RR/RRSIG.pm
+${P5ARCH}/Zonemaster/LDNS/RR/RT.pm
+${P5ARCH}/Zonemaster/LDNS/RR/SIG.pm
+${P5ARCH}/Zonemaster/LDNS/RR/SINK.pm
+${P5ARCH}/Zonemaster/LDNS/RR/SOA.pm
+${P5ARCH}/Zonemaster/LDNS/RR/SPF.pm
+${P5ARCH}/Zonemaster/LDNS/RR/SRV.pm
+${P5ARCH}/Zonemaster/LDNS/RR/SSHFP.pm
+${P5ARCH}/Zonemaster/LDNS/RR/TA.pm
+${P5ARCH}/Zonemaster/LDNS/RR/TALINK.pm
+${P5ARCH}/Zonemaster/LDNS/RR/TKEY.pm
+${P5ARCH}/Zonemaster/LDNS/RR/TLSA.pm
+${P5ARCH}/Zonemaster/LDNS/RR/TXT.pm
+${P5ARCH}/Zonemaster/LDNS/RR/TYPE.pm
+${P5ARCH}/Zonemaster/LDNS/RR/UID.pm
+${P5ARCH}/Zonemaster/LDNS/RR/UINFO.pm
+${P5ARCH}/Zonemaster/LDNS/RR/UNSPEC.pm
+${P5ARCH}/Zonemaster/LDNS/RR/URI.pm
+${P5ARCH}/Zonemaster/LDNS/RR/WKS.pm
+${P5ARCH}/Zonemaster/LDNS/RR/X25.pm
+${P5ARCH}/Zonemaster/LDNS/RRList.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/Zonemaster/
+${P5ARCH}/auto/Zonemaster/LDNS/
+${P5ARCH}/auto/Zonemaster/LDNS/LDNS.so
+@man man/man3p/Zonemaster::LDNS.3p
+@man man/man3p/Zonemaster::LDNS::Packet.3p
+@man man/man3p/Zonemaster::LDNS::RR.3p
+@man man/man3p/Zonemaster::LDNS::RR::A.3p
+@man man/man3p/Zonemaster::LDNS::RR::A6.3p
+@man man/man3p/Zonemaster::LDNS::RR::AAAA.3p
+@man man/man3p/Zonemaster::LDNS::RR::AFSDB.3p
+@man man/man3p/Zonemaster::LDNS::RR::APL.3p
+@man man/man3p/Zonemaster::LDNS::RR::ATMA.3p
+@man man/man3p/Zonemaster::LDNS::RR::CAA.3p
+@man man/man3p/Zonemaster::LDNS::RR::CDS.3p
+@man man/man3p/Zonemaster::LDNS::RR::CERT.3p
+@man man/man3p/Zonemaster::LDNS::RR::CNAME.3p
+@man man/man3p/Zonemaster::LDNS::RR::DHCID.3p
+@man man/man3p/Zonemaster::LDNS::RR::DLV.3p
+@man man/man3p/Zonemaster::LDNS::RR::DNAME.3p
+@man man/man3p/Zonemaster::LDNS::RR::DNSKEY.3p
+@man man/man3p/Zonemaster::LDNS::RR::DS.3p
+@man man/man3p/Zonemaster::LDNS::RR::EID.3p
+@man man/man3p/Zonemaster::LDNS::RR::EUI48.3p
+@man man/man3p/Zonemaster::LDNS::RR::EUI64.3p
+@man man/man3p/Zonemaster::LDNS::RR::GID.3p
+@man man/man3p/Zonemaster::LDNS::RR::GPOS.3p
+@man man/man3p/Zonemaster::LDNS::RR::HINFO.3p
+@man man/man3p/Zonemaster::LDNS::RR::HIP.3p
+@man man/man3p/Zonemaster::LDNS::RR::IPSECKEY.3p
+@man man/man3p/Zonemaster::LDNS::RR::ISDN.3p
+@man man/man3p/Zonemaster::LDNS::RR::KEY.3p
+@man man/man3p/Zonemaster::LDNS::RR::KX.3p
+@man man/man3p/Zonemaster::LDNS::RR::L32.3p
+@man man/man3p/Zonemaster::LDNS::RR::L64.3p
+@man man/man3p/Zonemaster::LDNS::RR::LOC.3p
+@man man/man3p/Zonemaster::LDNS::RR::LP.3p
+@man man/man3p/Zonemaster::LDNS::RR::MAILA.3p
+@man man/man3p/Zonemaster::LDNS::RR::MAILB.3p
+@man man/man3p/Zonemaster::LDNS::RR::MB.3p
+@man man/man3p/Zonemaster::LDNS::RR::MD.3p
+@man man/man3p/Zonemaster::LDNS::RR::MF.3p
+@man man/man3p/Zonemaster::LDNS::RR::MG.3p
+@man man/man3p/Zonemaster::LDNS::RR::MINFO.3p
+@man man/man3p/Zonemaster::LDNS::RR::MR.3p
+@man man/man3p/Zonemaster::LDNS::RR::MX.3p
+@man man/man3p/Zonemaster::LDNS::RR::NAPTR.3p
+@man man/man3p/Zonemaster::LDNS::RR::NID.3p
+@man man/man3p/Zonemaster::LDNS::RR::NIMLOC.3p
+@man man/man3p/Zonemaster::LDNS::RR::NINFO.3p
+@man man/man3p/Zonemaster::LDNS::RR::NS.3p
+@man man/man3p/Zonemaster::LDNS::RR::NSAP.3p
+@man man/man3p/Zonemaster::LDNS::RR::NSEC.3p
+@man man/man3p/Zonemaster::LDNS::RR::NSEC3.3p
+@man man/man3p/Zonemaster::LDNS::RR::NSEC3PARAM.3p
+@man man/man3p/Zonemaster::LDNS::RR::NULL.3p
+@man man/man3p/Zonemaster::LDNS::RR::NXT.3p
+@man man/man3p/Zonemaster::LDNS::RR::PTR.3p
+@man man/man3p/Zonemaster::LDNS::RR::PX.3p
+@man man/man3p/Zonemaster::LDNS::RR::RKEY.3p
+@man man/man3p/Zonemaster::LDNS::RR::RP.3p
+@man man/man3p/Zonemaster::LDNS::RR::RRSIG.3p
+@man man/man3p/Zonemaster::LDNS::RR::RT.3p
+@man man/man3p/Zonemaster::LDNS::RR::SIG.3p
+@man man/man3p/Zonemaster::LDNS::RR::SINK.3p
+@man man/man3p/Zonemaster::LDNS::RR::SOA.3p
+@man man/man3p/Zonemaster::LDNS::RR::SPF.3p
+@man man/man3p/Zonemaster::LDNS::RR::SRV.3p
+@man man/man3p/Zonemaster::LDNS::RR::SSHFP.3p
+@man man/man3p/Zonemaster::LDNS::RR::TA.3p
+@man man/man3p/Zonemaster::LDNS::RR::TALINK.3p
+@man man/man3p/Zonemaster::LDNS::RR::TKEY.3p
+@man man/man3p/Zonemaster::LDNS::RR::TLSA.3p
+@man man/man3p/Zonemaster::LDNS::RR::TXT.3p
+@man man/man3p/Zonemaster::LDNS::RR::TYPE.3p
+@man man/man3p/Zonemaster::LDNS::RR::UID.3p
+@man man/man3p/Zonemaster::LDNS::RR::UINFO.3p
+@man man/man3p/Zonemaster::LDNS::RR::UNSPEC.3p
+@man man/man3p/Zonemaster::LDNS::RR::URI.3p
+@man man/man3p/Zonemaster::LDNS::RR::WKS.3p
+@man man/man3p/Zonemaster::LDNS::RR::X25.3p
+@man man/man3p/Zonemaster::LDNS::RRList.3p

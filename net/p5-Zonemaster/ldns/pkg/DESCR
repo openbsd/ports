@@ -1,0 +1,12 @@
+This module aims to provide an alternative to the Net::DNS module, based on
+the ldns library from NLnet Labs. The module includes the necessary C code,
+so the library does not need to be globally installed.
+
+This module is written as part of the Zonemaster project, and therefore
+primarily exposes the functionality needed for that. Since Zonemaster is a
+diagnostic tool, that means the functions most used are those for looking
+things up and inspecting them.
+
+If you want a module that specifically aims to be a complete and
+transparent interface to ldns, DNS::LDNS is a better fit than this
+module.
