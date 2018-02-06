@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2017/12/24 14:54:58 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2018/02/06 14:47:26 ajacoutot Exp $
 include/gexiv2/
 include/gexiv2/gexiv2-enums.h
 include/gexiv2/gexiv2-log.h
@@ -14,6 +14,9 @@ lib/libgexiv2.a
 lib/libgexiv2.la
 @lib lib/libgexiv2.so.${LIBgexiv2_VERSION}
 lib/pkgconfig/gexiv2.pc
+lib/python2.7/site-packages/gi/
+lib/python2.7/site-packages/gi/overrides/
+lib/python2.7/site-packages/gi/overrides/GExiv2.py
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/GExiv2.py
 share/gir-1.0/GExiv2-0.10.gir
 share/gtk-doc/html/gexiv2/
