@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2017/06/27 14:05:55 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/02/07 13:52:23 ajacoutot Exp $
 include/pycairo/
 %%python3%%
 !%%python3%%
@@ -7,4 +7,5 @@ lib/python${MODPY_VERSION}/site-packages/cairo/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cairo/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/cairo/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cairo/_cairo.so
+lib/python${MODPY_VERSION}/site-packages/cairo/include/
 lib/python${MODPY_VERSION}/site-packages/pycairo-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
