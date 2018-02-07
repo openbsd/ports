@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2018/01/10 08:56:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2018/02/07 17:34:08 ajacoutot Exp $
 
 COMMENT=		GObject API that wraps around libxml2
 
-GNOME_VERSION=		0.16.0
+GNOME_VERSION=		0.16.1
 GNOME_PROJECT=		gxml
 
 SHARED_LIBS +=  gxml-0.16                 0.0 # 1.0
