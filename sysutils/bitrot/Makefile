@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.3 2018/02/05 06:30:21 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.4 2018/02/07 14:04:48 bentley Exp $
 
 COMMENT =		detects when files bit-rot
 
-MODPY_EGG_VERSION =	0.9.0
+MODPY_EGG_VERSION =	0.9.2
 DISTNAME =		bitrot-${MODPY_EGG_VERSION}
-REVISION=		0
 
 CATEGORIES =		sysutils
 
 HOMEPAGE =		https://github.com/ambv/bitrot/
+
+MAINTAINER =		Bryan Vyhmeister <bryan@bsdjournal.net>
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
