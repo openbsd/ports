@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2016/05/12 14:00:13 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2018/02/07 09:58:48 landry Exp $
 
 COMMENT =	browse LDAP server with a shell-like CLI
 
-DISTNAME =	shelldap-1.3.2
-HG_COMMIT =	aa4172c204d4
+DISTNAME =	shelldap-1.4.0
+HG_COMMIT =	e8af5aa8bd15
 EPOCH =	0
-REVISION =	0
 CATEGORIES =	sysutils
 
 HOMEPAGE =	https://bitbucket.org/mahlon/shelldap/
