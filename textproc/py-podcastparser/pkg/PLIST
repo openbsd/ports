@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/04/18 02:13:26 danj Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/02/07 09:07:57 danj Exp $
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}podcastparser.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/podcastparser-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/podcastparser.py
-lib/python${MODPY_VERSION}/site-packages/podcastparser.pyc
-@man man/man1/podcastparser.1
+@man man/man1/podcastparser${MODPY_BIN_SUFFIX}.1

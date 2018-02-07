@@ -1,35 +1,38 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/04/18 02:13:26 danj Exp $
+# $OpenBSD: Makefile,v 1.2 2018/02/07 09:07:57 danj Exp $
 
 COMMENT=	simple, fast and efficient podcast parser
 
-MODPY_EGG_VERSION=	0.6.1
+MODPY_EGG_VERSION=	0.6.2
 DISTNAME=	podcastparser-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	textproc
-
-HOMEPAGE=	http://gpodder.org/podcastparser/
 
 MAINTAINER=	Tim Meunier <trondd@kagu-tsuchi.com>
 
 # ISC
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	${HOMEPAGE}
-
 MODULES=	lang/python
 
-BUILD_DEPENDS=	textproc/py-sphinx
+MODPY_PI=	Yes
 
-TEST_DEPENDS=	devel/py-nose \
-		devel/py-coverage
+BUILD_DEPENDS=	textproc/py-sphinx${MODPY_FLAVOR}
+
+TEST_DEPENDS=	devel/py-nose${MODPY_FLAVOR} \
+		devel/py-coverage${MODPY_FLAVOR}
+
+FLAVORS=	python3
+FLAVOR?=
 
 MAKE_FILE=	makefile
 MAKE_ENV=	PYTHON=${MODPY_BIN}
 
 post-build:
-	cd ${WRKSRC}/doc && ${MAKE_ENV} ${MAKE_PROGRAM} man
+	cd ${WRKSRC}/doc && ${MAKE_ENV} ${MAKE_PROGRAM} man \
+		SPHINXBUILD=sphinx-build${MODPY_BIN_SUFFIX}
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/doc/_build/man/*.1 ${PREFIX}/man/man1/
+	${INSTALL_DATA} ${WRKSRC}/doc/_build/man/podcastparser.1 \
+		${PREFIX}/man/man1/podcastparser${MODPY_BIN_SUFFIX}.1
 
 .include <bsd.port.mk>
