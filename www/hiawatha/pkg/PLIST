@@ -1,7 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.18 2016/08/27 08:17:54 juanfra Exp $
+@comment $OpenBSD: PLIST,v 1.19 2018/02/07 14:18:23 juanfra Exp $
 @newgroup _hiawatha:579
 @newuser _hiawatha:579:579:daemon:Hiawatha HTTP Server:/nonexistent:/sbin/nologin
 @bin bin/ssi-cgi
+lib/hiawatha/
+@lib lib/hiawatha/libmbedcrypto.so.2.6
+@lib lib/hiawatha/libmbedtls.so.2.6
+@lib lib/hiawatha/libmbedx509.so.2.6
 @man man/man1/cgi-wrapper.1
 @man man/man1/hiawatha.1
 @man man/man1/ssi-cgi.1

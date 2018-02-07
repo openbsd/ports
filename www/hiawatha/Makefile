@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.53 2018/01/11 19:27:11 rpe Exp $
+# $OpenBSD: Makefile,v 1.54 2018/02/07 14:18:23 juanfra Exp $
 
 COMMENT =		secure webserver
 DISTNAME =		hiawatha-10.7
-REVISION =		2
+REVISION =		3
 CATEGORIES =		www net
 
 HOMEPAGE =		https://www.hiawatha-webserver.org/
@@ -16,10 +16,14 @@ MASTER_SITES =		${HOMEPAGE}files/
 
 MODULES =		devel/cmake
 
-WANTLIB += c mbedcrypto mbedtls mbedx509 pthread xml2 xslt z
+# XXX mbedtls 2.7 breaks hiawatha
+#WANTLIB += c mbedcrypto mbedtls mbedx509 pthread xml2 xslt z
+WANTLIB += c pthread xml2 xslt z
 
-LIB_DEPENDS =		security/polarssl>=2.2.1p0 \
-			textproc/libxslt
+# XXX mbedtls 2.7 breaks hiawatha
+#LIB_DEPENDS =		security/polarssl>=2.2.1p0 \
+#			textproc/libxslt
+LIB_DEPENDS =		textproc/libxslt
 
 CONFIGURE_ARGS =	-DWEBROOT_DIR="/var/hiawatha" \
 			-DWORK_DIR="/var/db/hiawatha" \
@@ -27,11 +31,12 @@ CONFIGURE_ARGS =	-DWEBROOT_DIR="/var/hiawatha" \
 			-DLOG_DIR="/var/log/hiawatha" \
 			-DCMAKE_INSTALL_MANDIR="${PREFIX}/man" \
 			-DENABLE_XSLT=ON \
-			-DPID_DIR="/var/run" \
-			-DUSE_SYSTEM_MBEDTLS=ON
+			-DPID_DIR="/var/run"
+# XXX mbedtls 2.7 breaks hiawatha
+#			-DUSE_SYSTEM_MBEDTLS=ON
 
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+			LDFLAGS="-L${WRKBUILD}/mbedtls/library -L${LOCALBASE}/lib"
 
 NO_TEST =		Yes
 
