@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2017/04/22 10:49:46 juanfra Exp $
+# $OpenBSD: Makefile,v 1.7 2018/02/07 21:30:11 juanfra Exp $
 
 COMMENT =		public domain implementation of the lzip data compressor
 
-DISTNAME =		pdlzip-1.8
+DISTNAME =		pdlzip-1.9
 
 HOMEPAGE =		http://lzip.nongnu.org/pdlzip.html
 MASTER_SITES =		${MASTER_SITE_SAVANNAH:=lzip/pdlzip/}
