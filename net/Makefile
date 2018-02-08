@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1048 2018/02/06 22:06:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.1049 2018/02/08 06:34:12 bentley Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -59,6 +59,7 @@
      SUBDIR += darkstat
      SUBDIR += dclib
      SUBDIR += ddclient
+     SUBDIR += deluge
      SUBDIR += dhcdrop
      SUBDIR += dhcpcd
      SUBDIR += dhcpdump
@@ -211,6 +212,7 @@
      SUBDIR += libst
      SUBDIR += libstrophe
      SUBDIR += libtorrent
+     SUBDIR += libtorrent-rasterbar
      SUBDIR += libupnp
      SUBDIR += libvncserver
      SUBDIR += livemedia
