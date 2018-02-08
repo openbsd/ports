@@ -1,0 +1,15 @@
+$OpenBSD: patch-include_libtorrent_config_hpp,v 1.1.1.1 2018/02/08 06:30:34 bentley Exp $
+Index: include/libtorrent/config.hpp
+--- include/libtorrent/config.hpp.orig
++++ include/libtorrent/config.hpp
+@@ -563,6 +563,10 @@ int snprintf(char* buf, int len, char const* fmt, ...)
+ #define TORRENT_USE_UNC_PATHS 0
+ #endif
+ 
++#if defined(__OpenBSD__)
++#define TORRENT_USE_RLIMIT 0
++#endif
++
+ #ifndef TORRENT_USE_RLIMIT
+ #define TORRENT_USE_RLIMIT 1
+ #endif

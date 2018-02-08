@@ -1,0 +1,7 @@
+libtorrent(-rasterbar) is a C++ library that aims to be a good
+alternative to all the other bittorrent implementations around.
+
+The main goals of libtorrent are to be cpu efficient, memory efficient
+and very easy to use.
+
+Note that this is NOT the same library as the libtorrent package!
