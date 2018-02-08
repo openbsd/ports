@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2017/04/23 22:13:36 jca Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/02/08 22:35:19 sthen Exp $
 @bin bin/rdiff
-include/librsync-config.h
 include/librsync.h
 @lib lib/librsync.so.${LIBrsync_VERSION}
 @man man/man1/rdiff.1
