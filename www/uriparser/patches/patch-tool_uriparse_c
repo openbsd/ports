@@ -1,7 +1,8 @@
-$OpenBSD: patch-tool_uriparse_c,v 1.1.1.1 2013/12/24 20:43:25 bentley Exp $
---- tool/uriparse.c.orig	Mon Dec 23 08:36:39 2013
-+++ tool/uriparse.c	Mon Dec 23 08:36:41 2013
-@@ -41,6 +41,7 @@
+$OpenBSD: patch-tool_uriparse_c,v 1.2 2018/02/08 13:01:30 sthen Exp $
+Index: tool/uriparse.c
+--- tool/uriparse.c.orig
++++ tool/uriparse.c
+@@ -42,6 +42,7 @@
  #include <uriparser/Uri.h>
  #include <arpa/inet.h>
  #include <netinet/in.h>
