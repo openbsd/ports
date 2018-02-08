@@ -1,20 +1,21 @@
-# $OpenBSD: Makefile,v 1.13 2017/09/04 17:28:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2018/02/08 09:15:18 rsadowski Exp $
 
 COMMENT	=	spaced learning system
 
 DISTNAME =	anki-2.0.48-source
 PKGNAME =	${DISTNAME:S/-source//}
+REVISION =	0
 
 CATEGORIES =	education
 
-HOMEPAGE =	http://ankisrs.net/
+HOMEPAGE =	https://ankisrs.net/
 
 MAINTAINER =	Federico G. Schwindt <fgsch@openbsd.org>
 
 # AGPL3
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =	http://ankisrs.net/download/mirror/ \
+MASTER_SITES =	https://apps.ankiweb.net/downloads/current/ \
 		https://apps.ankiweb.net/downloads/beta/
 
 EXTRACT_SUFX =	.tgz
