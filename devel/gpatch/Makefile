@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2015/04/07 08:55:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2018/02/08 12:55:39 sthen Exp $
 
 COMMENT=		GNU patch
 
-VERSION=		2.7.5
+VERSION=		2.7.6
 DISTNAME=		patch-${VERSION}
 PKGNAME=		gpatch-${VERSION}
 CATEGORIES=		devel
