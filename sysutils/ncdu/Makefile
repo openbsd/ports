@@ -1,19 +1,18 @@
-# $OpenBSD: Makefile,v 1.13 2016/08/26 21:19:44 jca Exp $
+# $OpenBSD: Makefile,v 1.14 2018/02/08 17:33:39 jca Exp $
 
 COMMENT=		ncurses-based du(1)
 
-DISTNAME=		ncdu-1.12
+DISTNAME=		ncdu-1.13
 CATEGORIES=		sysutils
 
-HOMEPAGE=		http://dev.yorhel.nl/ncdu/
+HOMEPAGE=		https://dev.yorhel.nl/ncdu/
 
-MASTER_SITES=		http://dev.yorhel.nl/download/ \
-			${MASTER_SITE_SOURCEFORGE:=ncdu/}
+MASTER_SITES=		https://dev.yorhel.nl/download/
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		c ncursesw
+WANTLIB=		c curses
 
 CONFIGURE_STYLE=	gnu
 
