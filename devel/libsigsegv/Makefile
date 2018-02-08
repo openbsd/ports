@@ -1,20 +1,19 @@
-# $OpenBSD: Makefile,v 1.24 2017/11/08 18:33:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2018/02/08 12:49:21 sthen Exp $
 
 COMMENT =		library for handling page faults in user mode
 
-DISTNAME =		libsigsegv-2.11
+DISTNAME =		libsigsegv-2.12
 SHARED_LIBS =		sigsegv 1.0
 CATEGORIES =		devel
 
 HOMEPAGE =		https://www.gnu.org/software/libsigsegv/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =		${MASTER_SITE_GNU:=libsigsegv/}
 
 SEPARATE_BUILD = 	Yes
-
 
 CONFIGURE_STYLE =	gnu
 # We know these values, so don't run the configure tests for them which may
