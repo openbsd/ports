@@ -1,0 +1,14 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2018/02/08 06:32:10 bentley Exp $
+
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -505,7 +505,7 @@ if not windows_check() and not osx_check():
+         ('share/icons/hicolor/72x72/apps', ['deluge/data/icons/hicolor/72x72/apps/deluge.png']),
+         ('share/icons/hicolor/96x96/apps', ['deluge/data/icons/hicolor/96x96/apps/deluge.png']),
+         ('share/pixmaps', ['deluge/data/pixmaps/deluge.png', 'deluge/data/pixmaps/deluge.xpm']),
+-        ('share/man/man1', [
++        ('man/man1', [
+             'docs/man/deluge.1',
+             'docs/man/deluged.1',
+             'docs/man/deluge-gtk.1',
