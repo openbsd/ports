@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1049 2018/02/08 06:34:12 bentley Exp $
+# $OpenBSD: Makefile,v 1.1050 2018/02/09 09:52:18 bentley Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -60,6 +60,7 @@
      SUBDIR += dclib
      SUBDIR += ddclient
      SUBDIR += deluge
+     SUBDIR += deluge-ltconfig
      SUBDIR += dhcdrop
      SUBDIR += dhcpcd
      SUBDIR += dhcpdump
