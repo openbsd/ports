@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2018/02/08 22:05:42 landry Exp $
+# $OpenBSD: Makefile,v 1.25 2018/02/09 12:28:24 landry Exp $
 
 COMMENT =	simple archive manager
 CATEGORIES =	x11 archivers
@@ -18,7 +18,8 @@ CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-BUILD_DEPENDS =	devel/gettext-tools
+BUILD_DEPENDS =	devel/gettext-tools \
+		devel/intltool
 LIB_DEPENDS =	devel/gettext \
 		x11/gtk+3
 RUN_DEPENDS =	archivers/zip \
