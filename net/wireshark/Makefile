@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2018/01/16 13:10:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.62 2018/02/09 11:07:03 sthen Exp $
 
 BROKEN-alpha =	.got subsegment exceeds 64K (size 101480)
 BROKEN-sparc64 = cc: Internal error: Illegal instruction (program cc1)
@@ -34,6 +34,15 @@ cWANTLIB +=	c glib-2.0 m pcap z
 MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 
 MULTI_PACKAGES = -text -main -gtk
+PSEUDO_FLAVORS = no_x11 no_gtk no_qt
+# sync with devel/mozjs17: qt -> polkit -> mozjs17
+.if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "amd64" || \
+    ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "hppa" || \
+    ${MACHINE_ARCH} == "powerpc" || ${MACHINE_ARCH} == "sparc64"
+FLAVOR ?=
+.else
+FLAVOR ?=	no_qt
+.endif
 
 MODLUA_VERSION = 5.2
 MODULES =	lang/lua \
@@ -103,11 +112,25 @@ LIB_DEPENDS-gtk +=	tshark-${WVER}:${BUILD_PKGPATH:S/,$//},-text \
 
 MODULES +=		devel/cmake
 CONFIGURE_STYLE =	cmake
-CONFIGURE_ARGS =	-DBUILD_wireshark_gtk=true \
-			-DDUMPCAP_INST_VALS=suid \
+CONFIGURE_ARGS +=	-DDUMPCAP_INST_VALS=suid \
 			-DCMAKE_INSTALL_MANDIR=${TRUEPREFIX}/man \
 			-DCOMPILER_CAN_HANDLE_SSE4_2=false \
 			-DSH_EXECUTABLE=/bin/ksh
+
+.include <bsd.port.arch.mk>
+
+.if ${FLAVOR:Mno_x11}
+BUILD_PACKAGES := ${BUILD_PACKAGES:N-main:N-gtk}
+.endif
+.if ${FLAVOR:Mno_qt}
+BUILD_PACKAGES := ${BUILD_PACKAGES:N-main}
+.endif
+.if ${BUILD_PACKAGES:M-gtk}
+CONFIGURE_ARGS +=	-DBUILD_wireshark_gtk=true
+.endif
+.if !${BUILD_PACKAGES:M-main}
+CONFIGURE_ARGS +=	-DBUILD_wireshark=false
+.endif
 
 NO_TEST =	Yes
 
