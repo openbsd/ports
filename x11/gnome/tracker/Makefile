@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.229 2018/02/09 23:08:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.230 2018/02/09 23:20:59 ajacoutot Exp $
 
 COMMENT=		metadata database and search tool
 
@@ -46,8 +46,7 @@ MODGNOME_TOOLS=		gobject-introspection vala
 MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 MODPY_RUNDEP=		No
 
-CONFIGURE_STYLE=	autoconf
-AUTOCONF_VERSION=	2.69
+CONFIGURE_STYLE=	gnu
 
 CONFIGURE_ARGS=		--disable-network-manager
 
