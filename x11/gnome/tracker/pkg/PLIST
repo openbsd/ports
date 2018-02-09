@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.42 2017/11/01 15:17:47 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.43 2018/02/09 23:08:46 ajacoutot Exp $
 @conflict evolution-meta-tracker-*
 @conflict nautilus-meta-tracker-*
 @conflict tracker-*
@@ -222,6 +222,7 @@ share/locale/gl/LC_MESSAGES/tracker.mo
 share/locale/he/LC_MESSAGES/tracker.mo
 share/locale/hu/LC_MESSAGES/tracker.mo
 share/locale/id/LC_MESSAGES/tracker.mo
+share/locale/is/LC_MESSAGES/tracker.mo
 share/locale/it/LC_MESSAGES/tracker.mo
 share/locale/ja/LC_MESSAGES/tracker.mo
 share/locale/kk/LC_MESSAGES/tracker.mo
