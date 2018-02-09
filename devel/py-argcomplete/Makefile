@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2017/11/15 08:19:55 rpointel Exp $
+# $OpenBSD: Makefile,v 1.10 2018/02/09 08:52:29 jasper Exp $
 
 COMMENT =	bash tab completion for argparse
 
-MODPY_EGG_VERSION =	1.9.2
+MODPY_EGG_VERSION =	1.9.3
 DISTNAME =	argcomplete-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 CATEGORIES =	devel

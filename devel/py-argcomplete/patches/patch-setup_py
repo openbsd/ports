@@ -1,6 +1,7 @@
-$OpenBSD: patch-setup_py,v 1.1 2017/06/09 00:35:38 danj Exp $
---- setup.py.orig	Tue Mar  7 19:55:42 2017
-+++ setup.py	Tue Mar  7 19:55:53 2017
+$OpenBSD: patch-setup_py,v 1.2 2018/02/09 08:52:29 jasper Exp $
+Index: setup.py
+--- setup.py.orig
++++ setup.py
 @@ -4,7 +4,7 @@ import glob
  from setuptools import setup, find_packages
  
@@ -8,5 +9,5 @@ $OpenBSD: patch-setup_py,v 1.1 2017/06/09 00:35:38 danj Exp $
 -tests_require = ["coverage", "flake8", "pexpect", "wheel"]
 +tests_require = ["coverage", "pexpect", "wheel"]
  
- try:
-     import argparse  # noqa
+ setup(
+     name='argcomplete',
