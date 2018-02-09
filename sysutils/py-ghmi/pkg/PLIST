@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2018/01/25 12:47:41 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2018/02/09 08:22:01 jasper Exp $
 bin/pyghmicons
 bin/pyghmiutil
 bin/virshbmc
@@ -36,8 +36,12 @@ lib/python${MODPY_VERSION}/site-packages/pyghmi/ipmi/oem/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/pyghmi/ipmi/oem/generic.py
 lib/python${MODPY_VERSION}/site-packages/pyghmi/ipmi/oem/generic.pyc
 lib/python${MODPY_VERSION}/site-packages/pyghmi/ipmi/oem/lenovo/
+lib/python${MODPY_VERSION}/site-packages/pyghmi/ipmi/oem/lenovo/EfiDecompressor.py
+lib/python${MODPY_VERSION}/site-packages/pyghmi/ipmi/oem/lenovo/EfiDecompressor.pyc
 lib/python${MODPY_VERSION}/site-packages/pyghmi/ipmi/oem/lenovo/__init__.py
 lib/python${MODPY_VERSION}/site-packages/pyghmi/ipmi/oem/lenovo/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/pyghmi/ipmi/oem/lenovo/config.py
+lib/python${MODPY_VERSION}/site-packages/pyghmi/ipmi/oem/lenovo/config.pyc
 lib/python${MODPY_VERSION}/site-packages/pyghmi/ipmi/oem/lenovo/cpu.py
 lib/python${MODPY_VERSION}/site-packages/pyghmi/ipmi/oem/lenovo/cpu.pyc
 lib/python${MODPY_VERSION}/site-packages/pyghmi/ipmi/oem/lenovo/dimm.py
