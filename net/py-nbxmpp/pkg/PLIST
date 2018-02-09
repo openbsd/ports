@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/08/04 09:29:28 pea Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/02/09 19:52:10 phessler Exp $
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/
 lib/python${MODPY_VERSION}/site-packages/nbxmpp-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/__init__.py
@@ -23,8 +23,6 @@ lib/python${MODPY_VERSION}/site-packages/nbxmpp/protocol.py
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/protocol.pyc
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/proxy_connectors.py
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/proxy_connectors.pyc
-lib/python${MODPY_VERSION}/site-packages/nbxmpp/rndg.py
-lib/python${MODPY_VERSION}/site-packages/nbxmpp/rndg.pyc
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/roster_nb.py
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/roster_nb.pyc
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/simplexml.py
