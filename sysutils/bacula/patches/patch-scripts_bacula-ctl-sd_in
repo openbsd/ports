@@ -1,0 +1,13 @@
+$OpenBSD: patch-scripts_bacula-ctl-sd_in,v 1.1 2018/02/09 09:31:50 sthen Exp $
+
+Index: scripts/bacula-ctl-sd.in
+--- scripts/bacula-ctl-sd.in.orig
++++ scripts/bacula-ctl-sd.in
+@@ -216,6 +216,7 @@ case "$1" in
+    start)
+       [ -x ${BACSDBIN}/bacula-sd ] && {
+ 	 echo "Starting the $Bacula Storage daemon"
++	 cd ${SUBSYSDIR}
+ 	 OPTIONS=''
+ 	 if [ "${SD_USER}" != '' ]; then
+ 	    OPTIONS="${OPTIONS} -u ${SD_USER}"

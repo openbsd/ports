@@ -1,0 +1,13 @@
+$OpenBSD: patch-scripts_bacula-ctl-fd_in,v 1.1 2018/02/09 09:31:50 sthen Exp $
+
+Index: scripts/bacula-ctl-fd.in
+--- scripts/bacula-ctl-fd.in.orig
++++ scripts/bacula-ctl-fd.in
+@@ -216,6 +216,7 @@ case "$1" in
+    start)
+       [ -x ${BACFDBIN}/bacula-fd ] && {
+ 	 echo "Starting the $Bacula File daemon"
++	 cd ${SUBSYSDIR}
+ 	 OPTIONS=''
+ 	 if [ "${FD_USER}" != '' ]; then
+ 	    OPTIONS="${OPTIONS} -u ${FD_USER}"

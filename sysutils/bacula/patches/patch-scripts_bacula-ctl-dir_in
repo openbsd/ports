@@ -1,0 +1,13 @@
+$OpenBSD: patch-scripts_bacula-ctl-dir_in,v 1.1 2018/02/09 09:31:50 sthen Exp $
+
+Index: scripts/bacula-ctl-dir.in
+--- scripts/bacula-ctl-dir.in.orig
++++ scripts/bacula-ctl-dir.in
+@@ -219,6 +219,7 @@ case "$1" in
+    start)
+       [ -x ${BACDIRBIN}/bacula-dir ] && { 
+ 	  echo "Starting the $Bacula Director daemon"
++	 cd ${SUBSYSDIR}
+ 	 OPTIONS=''
+ 	 if [ "${DIR_USER}" != '' ]; then
+ 	    OPTIONS="${OPTIONS} -u ${DIR_USER}"
