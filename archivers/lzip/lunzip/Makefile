@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2017/04/24 20:51:24 juanfra Exp $
+# $OpenBSD: Makefile,v 1.9 2018/02/09 20:57:35 juanfra Exp $
 
 COMMENT =		decompressor written in C for lzip files
 
-DISTNAME =		lunzip-1.9
+DISTNAME =		lunzip-1.10
 
 HOMEPAGE =		http://lzip.nongnu.org/lunzip.html
 MASTER_SITES =		${MASTER_SITE_SAVANNAH:=lzip/lunzip/}
