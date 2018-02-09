@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2018/01/11 19:27:10 rpe Exp $
+# $OpenBSD: Makefile,v 1.3 2018/02/09 10:41:45 nigel Exp $
 
 COMMENT =	BackUp and Restore Program
 DISTNAME =	burp-2.0.54
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	sysutils
 HOMEPAGE =	http://burp.grke.org/
@@ -21,7 +21,7 @@ BUILD_DEPENDS =	devel/uthash \
 		devel/check
 LIB_DEPENDS =	net/librsync
 RUN_DEPENDS =	shells/bash
-WANTLIB +=	bz2 c crypto m ncurses rsync ssl z
+WANTLIB +=	b2 c crypto m curses rsync ssl z
 
 SUBST_VARS +=	TRUEPREFIX
 post-patch:
