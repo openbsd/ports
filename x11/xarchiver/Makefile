@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2018/02/09 12:28:24 landry Exp $
+# $OpenBSD: Makefile,v 1.26 2018/02/09 17:06:22 ajacoutot Exp $
 
 COMMENT =	simple archive manager
 CATEGORIES =	x11 archivers
@@ -11,6 +11,8 @@ HOMEPAGE =	http://xarchiver.sourceforge.net
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
+MODULES =	textproc/intltool
+
 USE_GMAKE =	Yes
 
 CONFIGURE_STYLE =	gnu
@@ -18,8 +20,6 @@ CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-BUILD_DEPENDS =	devel/gettext-tools \
-		devel/intltool
 LIB_DEPENDS =	devel/gettext \
 		x11/gtk+3
 RUN_DEPENDS =	archivers/zip \
