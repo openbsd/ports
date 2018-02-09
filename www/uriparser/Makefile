@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.6 2018/02/08 13:01:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2018/02/09 00:18:20 ajacoutot Exp $
 
 COMMENT =		URI parsing library
 
 DISTNAME =		uriparser-0.8.5
+REVISION =		0
 
 SHARED_LIBS +=  uriparser                 1.0 # 1.21
 
 CATEGORIES =		www
 
-HOMEPAGE =		http://uriparser.sourceforge.net/
+HOMEPAGE =		https://uriparser.github.io/
 
 # BSD 3-clause
 PERMIT_PACKAGE_CDROM =	Yes
