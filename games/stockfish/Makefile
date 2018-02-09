@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/02/04 22:03:36 bcallah Exp $
+# $OpenBSD: Makefile,v 1.3 2018/02/09 01:21:01 bcallah Exp $
 
 V =		9
 COMMENT =	open source chess engine
@@ -35,9 +35,9 @@ MAKE_ENV =	ARCH=ppc-32
 .elif ${MACHINE_ARCH:Maarch64} || ${MACHINE_ARCH:Malpha} || \
 	${MACHINE_ARCH:Msparc64} || ${MACHINE_ARCH:Mmips64} || \
 	${MACHINE_ARCH:Mmips64el}
-MAKE_ENV =	ARCH=generic-64
+MAKE_ENV =	ARCH=general-64
 .else
-MAKE_ENV =	ARCH=generic-32
+MAKE_ENV =	ARCH=general-32
 .endif
 
 NO_TEST =	Yes
