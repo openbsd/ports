@@ -1,7 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.3 2017/02/10 22:25:20 danj Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/02/09 20:09:03 rpointel Exp $
 !%%python3%%
 bin/markdown_py${MODPY_BIN_SUFFIX}
-lib/python${MODPY_VERSION}/site-packages/Markdown-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/Markdown-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/Markdown-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/Markdown-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/Markdown-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/Markdown-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/Markdown-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/markdown/
 lib/python${MODPY_VERSION}/site-packages/markdown/__init__.py
 lib/python${MODPY_VERSION}/site-packages/markdown/__main__.py
