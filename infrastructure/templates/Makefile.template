@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.template,v 1.76 2017/02/25 16:04:20 danj Exp $
+# $OpenBSD: Makefile.template,v 1.77 2018/02/09 17:08:33 sthen Exp $
 #
 # Replace ??? with appropriate values
 # Remove extraneous comments before commit
@@ -25,11 +25,12 @@ DISTNAME =	???
 #PKGNAME-foo =	???	for multi packages
 
 #
-# For github: traditional tarballs in /releases/download are normally
-# preferred if available; use them with DISTNAME/MASTER_SITES lines as
-# normal. For projects using auto-generated tarballs, set GH_ACCOUNT,
-# GH_PROJECT, and *one* of GH_TAGNAME or GH_COMMIT. For GH_COMMIT, also
-# set DISTNAME. For GH_TAGNAME, set DISTNAME if the default is no good.
+# github:
+# /releases/ -> preferred. ignore GH_*, just use MASTER_SITES and DISTNAME.
+# /archive/ ->  GH_ACCOUNT and GH_PROJECT, plus either GH_TAGNAME or GH_COMMIT.
+#
+# set DISTNAME if using GH_COMMIT, or if using GH_TAGNAME and the tag is not in
+# the format "v1.00" or "1.00".
 #
 #GH_ACCOUNT =	username
 #GH_PROJECT =	project
