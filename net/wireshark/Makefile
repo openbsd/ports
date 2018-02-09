@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2018/02/09 11:07:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.63 2018/02/09 20:05:28 sthen Exp $
 
 BROKEN-alpha =	.got subsegment exceeds 64K (size 101480)
 BROKEN-sparc64 = cc: Internal error: Illegal instruction (program cc1)
@@ -46,8 +46,7 @@ FLAVOR ?=	no_qt
 
 MODLUA_VERSION = 5.2
 MODULES =	lang/lua \
-		lang/python \
-		x11/qt5
+		lang/python
 MODLUA_SA =	Yes
 MODLUA_RUNDEP =	No
 MODPY_RUNDEP =	No
@@ -128,7 +127,9 @@ BUILD_PACKAGES := ${BUILD_PACKAGES:N-main}
 .if ${BUILD_PACKAGES:M-gtk}
 CONFIGURE_ARGS +=	-DBUILD_wireshark_gtk=true
 .endif
-.if !${BUILD_PACKAGES:M-main}
+.if ${BUILD_PACKAGES:M-main}
+MODULES +=	x11/qt5
+.else
 CONFIGURE_ARGS +=	-DBUILD_wireshark=false
 .endif
 
