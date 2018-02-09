@@ -1,23 +1,11 @@
-$OpenBSD: patch-configure_ac,v 1.1.1.1 2017/11/01 15:19:20 ajacoutot Exp $
+$OpenBSD: patch-configure_ac,v 1.2 2018/02/09 23:37:40 ajacoutot Exp $
 
-2nd chunck:
 https://bugzilla.gnome.org/show_bug.cgi?id=789768
 
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -173,8 +173,9 @@ if test "x$have_statvfs" = "xyes" ; then
- fi
- 
- # Check for defines we expect
--AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[]], [[
-+AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[
- #include "stdio.h"
-+]], [[
- printf ("%s", __FUNCTION__);
-    ]])],
-    [have_function=yes],
-@@ -238,7 +239,7 @@ AC_SUBST(GLIB_PREFIX)
+@@ -239,7 +239,7 @@ AC_SUBST(GLIB_PREFIX)
  GVDB_REQUIRED="glib-2.0 >= $GLIB_REQUIRED"
  
  # Check requirements for libtracker-common
@@ -26,7 +14,7 @@ Index: configure.ac
                              glib-2.0        >= $GLIB_REQUIRED
                              gio-unix-2.0    >= $GLIB_REQUIRED"
  
-@@ -251,7 +252,7 @@ case $host in
+@@ -252,7 +252,7 @@ case $host in
  esac
  
  # Check requirements for libtracker-extract
@@ -35,7 +23,7 @@ Index: configure.ac
                               glib-2.0     >= $GLIB_REQUIRED
                               gio-unix-2.0 >= $GLIB_REQUIRED
  			     gmodule-2.0  >= $GLIB_REQUIRED"
-@@ -266,7 +267,7 @@ PKG_CHECK_MODULES(TRACKER_RESDUMP, [$TRACKER_RESDUMP_R
+@@ -267,7 +267,7 @@ PKG_CHECK_MODULES(TRACKER_RESDUMP, [$TRACKER_RESDUMP_R
                    [have_tracker_resdump=no])
  
  # Check requirements for tracker-extract
@@ -44,7 +32,7 @@ Index: configure.ac
                            glib-2.0        >= $GLIB_REQUIRED
                            gio-unix-2.0    >= $GLIB_REQUIRED
                            gmodule-2.0     >= $GLIB_REQUIRED"
-@@ -287,7 +288,7 @@ TRACKER_EXTRACT_MODULES_REQUIRED="glib-2.0     >= $GLI
+@@ -288,7 +288,7 @@ TRACKER_EXTRACT_MODULES_REQUIRED="glib-2.0     >= $GLI
  PKG_CHECK_MODULES(TRACKER_EXTRACT_MODULES, [$TRACKER_EXTRACT_MODULES_REQUIRED])
  
  # Check requirements for tracker-writeback
@@ -53,7 +41,7 @@ Index: configure.ac
                              glib-2.0     >= $GLIB_REQUIRED
                              gio-unix-2.0 >= $GLIB_REQUIRED
                              gmodule-2.0  >= $GLIB_REQUIRED"
-@@ -295,7 +296,7 @@ TRACKER_WRITEBACK_REQUIRED="tracker-sparql-2.0 >= TRAC
+@@ -296,7 +296,7 @@ TRACKER_WRITEBACK_REQUIRED="tracker-sparql-2.0 >= TRAC
  PKG_CHECK_MODULES(TRACKER_WRITEBACK, [$TRACKER_WRITEBACK_REQUIRED])
  
  # Check requirements for tracker-miner-fs
@@ -62,7 +50,7 @@ Index: configure.ac
                             glib-2.0     >= $GLIB_REQUIRED
                             gio-unix-2.0 >= $GLIB_REQUIRED
                             gmodule-2.0  >= $GLIB_REQUIRED"
-@@ -305,14 +306,14 @@ PKG_CHECK_MODULES(TRACKER_MINER_FS, [$TRACKER_MINER_FS
+@@ -306,14 +306,14 @@ PKG_CHECK_MODULES(TRACKER_MINER_FS, [$TRACKER_MINER_FS
  TRACKER_MINER_FS_LIBS="$TRACKER_MINER_FS_LIBS -lz -lm"
  
  # Check requirements for tracker-miner-apps
@@ -79,7 +67,7 @@ Index: configure.ac
                              glib-2.0 >= $GLIB_REQUIRED
                              libgrss  >= $LIBGRSS_REQUIRED"
  
-@@ -1266,7 +1267,6 @@ OLD_CFLAGS="$CFLAGS"
+@@ -1301,7 +1301,6 @@ OLD_CFLAGS="$CFLAGS"
  OLD_LDFLAGS="$LDFLAGS"
  OLD_LIBS="$LIBS"
  CFLAGS=""
@@ -87,7 +75,7 @@ Index: configure.ac
  LIBS=""
  
  AC_ARG_ENABLE(libgif,
-@@ -1317,7 +1317,6 @@ OLD_CFLAGS="$CFLAGS"
+@@ -1352,7 +1351,6 @@ OLD_CFLAGS="$CFLAGS"
  OLD_LDFLAGS="$LDFLAGS"
  OLD_LIBS="$LIBS"
  CFLAGS=""
@@ -95,7 +83,7 @@ Index: configure.ac
  LIBS=""
  
  AC_ARG_ENABLE(libjpeg,
-@@ -1368,7 +1367,6 @@ OLD_CFLAGS="$CFLAGS"
+@@ -1403,7 +1401,6 @@ OLD_CFLAGS="$CFLAGS"
  OLD_LDFLAGS="$LDFLAGS"
  OLD_LIBS="$LIBS"
  CFLAGS=""
@@ -103,7 +91,7 @@ Index: configure.ac
  LIBS=""
  
  AC_ARG_ENABLE(libtiff,
-@@ -1419,7 +1417,6 @@ OLD_CFLAGS="$CFLAGS"
+@@ -1454,7 +1451,6 @@ OLD_CFLAGS="$CFLAGS"
  OLD_LDFLAGS="$LDFLAGS"
  OLD_LIBS="$LIBS"
  CFLAGS=""

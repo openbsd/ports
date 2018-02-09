@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2017/12/02 12:44:33 edd Exp $
+# $OpenBSD: Makefile,v 1.4 2018/02/09 23:37:40 ajacoutot Exp $
 
 TRACKER_API=		2.0
 SUBST_VARS=		TRACKER_API
-REVISION =		0
 
 COMMENT=		tracker miners and metadata extractors
 
 GNOME_PROJECT=		tracker-miners
-GNOME_VERSION=		2.0.3
+GNOME_VERSION=		2.0.4
 
 SHARED_LIBS +=  tracker-extract           1.0 # 0.0
 
@@ -15,16 +14,16 @@ SHARED_LIBS +=  tracker-extract           1.0 # 0.0
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} X11 Xext Xrender archive assuan
-WANTLIB += bz2 c cairo crypto cue enca exempi exif expat ffi fontconfig
-WANTLIB += freetype gcrypt gif gio-2.0 glib-2.0 gmime-3.0 gmodule-2.0
-WANTLIB += gobject-2.0 gpg-error gpgme gsf-1 gstaudio-1.0
-WANTLIB += gstbase-1.0 gstpbutils-1.0 gstreamer-1.0 gsttag-1.0
-WANTLIB += gstvideo-1.0 gthread-2.0 gxps iconv icudata icui18n
-WANTLIB += icuuc idn intl iptcdata jpeg json-glib-1.0 kvm lcms2
-WANTLIB += lz4 lzma m openjp2 orc-0.4 osinfo-1.0 pcre pixman-1
-WANTLIB += png poppler poppler-glib soup-2.4 sqlite3 tag tag_c
-WANTLIB += tiff totem-plparser upower-glib util uuid xcb xcb-render
-WANTLIB += xcb-shm xml2 xslt z
+WANTLIB += bz2 c cairo crypto cue enca exempi exif exiv2 expat
+WANTLIB += ffi fontconfig freetype gcrypt gexiv2 gif gio-2.0 glib-2.0
+WANTLIB += gmime-3.0 gmodule-2.0 gobject-2.0 gpg-error gpgme gsf-1
+WANTLIB += gstaudio-1.0 gstbase-1.0 gstpbutils-1.0 gstreamer-1.0
+WANTLIB += gsttag-1.0 gstvideo-1.0 gthread-2.0 gxps iconv icudata
+WANTLIB += icui18n icuuc idn intl iptcdata jpeg json-glib-1.0
+WANTLIB += kvm lcms2 lz4 lzma m openjp2 orc-0.4 osinfo-1.0 pcre
+WANTLIB += pixman-1 png poppler poppler-glib soup-2.4 sqlite3
+WANTLIB += tag tag_c tiff totem-plparser upower-glib util uuid
+WANTLIB += xcb xcb-render xcb-shm xml2 xslt z
 WANTLIB += tracker-sparql-${TRACKER_API}                                        
 WANTLIB += tracker-miner-${TRACKER_API}                                         
 WANTLIB += lib/tracker-${TRACKER_API}/tracker-common                            
@@ -41,6 +40,7 @@ LIB_DEPENDS=		audio/libcue \
 			devel/libgsf \
 			graphics/giflib \
 			graphics/libexif \
+			graphics/libgexiv2 \
 			graphics/libgxps \
 			graphics/libiptcdata \
 			misc/osinfo/libosinfo \

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/11/01 15:19:20 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/02/09 23:37:40 ajacoutot Exp $
 @conflict meta-tracker-<2.0
 lib/systemd/user/tracker-extract.service
 lib/systemd/user/tracker-miner-apps.service
@@ -25,6 +25,7 @@ lib/tracker-miners-${TRACKER_API}/extract-modules/libextract-pdf.so
 lib/tracker-miners-${TRACKER_API}/extract-modules/libextract-playlist.so
 lib/tracker-miners-${TRACKER_API}/extract-modules/libextract-png.so
 lib/tracker-miners-${TRACKER_API}/extract-modules/libextract-ps.so
+lib/tracker-miners-${TRACKER_API}/extract-modules/libextract-raw.so
 lib/tracker-miners-${TRACKER_API}/extract-modules/libextract-text.so
 lib/tracker-miners-${TRACKER_API}/extract-modules/libextract-tiff.so
 lib/tracker-miners-${TRACKER_API}/extract-modules/libextract-xmp.so
@@ -136,6 +137,7 @@ share/tracker-miners/extract-rules/10-oasis.rule
 share/tracker-miners/extract-rules/10-pdf.rule
 share/tracker-miners/extract-rules/10-png.rule
 share/tracker-miners/extract-rules/10-ps.rule
+share/tracker-miners/extract-rules/10-raw.rule
 share/tracker-miners/extract-rules/10-svg.rule
 share/tracker-miners/extract-rules/10-tiff.rule
 share/tracker-miners/extract-rules/10-xmp.rule
