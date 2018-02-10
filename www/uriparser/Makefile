@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2018/02/09 00:18:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2018/02/10 13:55:24 ajacoutot Exp $
 
 COMMENT =		URI parsing library
 
 DISTNAME =		uriparser-0.8.5
-REVISION =		0
+WRKDIST =		${WRKDIR}/uriparser-${DISTNAME}
+REVISION =		1
 
 SHARED_LIBS +=  uriparser                 1.0 # 1.21
 
@@ -16,16 +17,26 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=uriparser/}
-EXTRACT_SUFX =		.tar.bz2
+MASTER_SITES =		https://github.com/uriparser/uriparser/archive/
 
 # cpptest is only used during tests but configure requires it
 BUILD_DEPENDS =		devel/cpptest
 TEST_DEPENDS =		devel/cpptest
 
-SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--disable-doc
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include"
+
+AUTOCONF_VERSION =	2.69
+AUTOMAKE_VERSION =	1.15
+BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS} \
+			devel/libtool
+
+pre-configure:
+	cd ${WRKSRC} && env -i \
+		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
+		autoreconf -fi
 
 .include <bsd.port.mk>
