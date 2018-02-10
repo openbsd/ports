@@ -1,7 +1,8 @@
-$OpenBSD: patch-m4_decoders_m4,v 1.4 2017/02/25 11:17:30 ajacoutot Exp $
---- m4/decoders.m4.orig	Tue Feb 21 06:13:13 2017
-+++ m4/decoders.m4	Thu Feb 23 19:12:00 2017
-@@ -363,7 +363,7 @@ AC_DEFUN([XINE_DECODER_PLUGINS], [
+$OpenBSD: patch-m4_decoders_m4,v 1.5 2018/02/10 15:29:24 ajacoutot Exp $
+Index: m4/decoders.m4
+--- m4/decoders.m4.orig
++++ m4/decoders.m4
+@@ -377,7 +377,7 @@ AC_DEFUN([XINE_DECODER_PLUGINS], [
  			 [AC_CHECK_HEADERS([mpc/mpcdec.h], [have_external_libmpcdec=yes], [have_external_libmpcdec=no])],
  			 [AC_CHECK_LIB([mpcdec], [mpc_decoder_decode],
  				       [AC_CHECK_HEADERS([mpcdec/mpcdec.h], [have_external_libmpcdec=yes], [have_external_libmpcdec=no])],

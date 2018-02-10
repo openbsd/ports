@@ -1,11 +1,12 @@
-$OpenBSD: patch-src_xine-utils_utils_c,v 1.7 2017/02/25 11:17:30 ajacoutot Exp $
+$OpenBSD: patch-src_xine-utils_utils_c,v 1.8 2018/02/10 15:29:24 ajacoutot Exp $
 
 Make use of clock_gettime() on OpenBSD. Until we have per-process
 timers and can enable _POSIX_TIMERS in unistd.h.
 
---- src/xine-utils/utils.c.orig	Tue Feb 21 06:13:14 2017
-+++ src/xine-utils/utils.c	Thu Feb 23 19:17:09 2017
-@@ -669,7 +669,8 @@ void xine_xprintf(xine_t *xine, int verbose, const cha
+Index: src/xine-utils/utils.c
+--- src/xine-utils/utils.c.orig
++++ src/xine-utils/utils.c
+@@ -726,7 +726,8 @@ void xine_xprintf(xine_t *xine, int verbose, const cha
  
  int xine_monotonic_clock(struct timeval *tv, struct timezone *tz)
  {

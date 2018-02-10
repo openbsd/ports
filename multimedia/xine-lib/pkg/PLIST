@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2017/03/20 08:14:03 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.26 2018/02/10 15:29:24 ajacoutot Exp $
 @conflict xine-lib-arts-*
 @conflict xine-lib-esd-*
 @conflict xine-lib-jack-*
@@ -96,13 +96,10 @@ lib/xine/plugins/${XINEAPI_REV}/xineplug_flac.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_inp_bluray.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_inp_cdda.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_inp_dvd.so
-lib/xine/plugins/${XINEAPI_REV}/xineplug_inp_http.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_inp_mms.so
-lib/xine/plugins/${XINEAPI_REV}/xineplug_inp_net.so
-lib/xine/plugins/${XINEAPI_REV}/xineplug_inp_pnm.so
+lib/xine/plugins/${XINEAPI_REV}/xineplug_inp_network.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_inp_pvr.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_inp_rtp.so
-lib/xine/plugins/${XINEAPI_REV}/xineplug_inp_rtsp.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_inp_v4l2.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_inp_vcd.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_nsf.so

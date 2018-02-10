@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.136 2017/12/20 18:37:52 jca Exp $
+# $OpenBSD: Makefile,v 1.137 2018/02/10 15:29:24 ajacoutot Exp $
 
 COMMENT=	multimedia decoding library
 
-DISTNAME=	xine-lib-1.2.8
-REVISION=	3
+DISTNAME=	xine-lib-1.2.9
 CATEGORIES=	multimedia
-MASTER_SITES=	https://xine-lib.alioth.debian.org/releases/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xine/}
 EXTRACT_SUFX=	.tar.xz
 
-SHARED_LIBS=	xine	33.0
+SHARED_LIBS=	xine	34.0
 
-HOMEPAGE=	http://www.xine-project.org/
+HOMEPAGE=	https://www.xine-project.org/
 
 MAINTAINER=	Brad Smith <brad@comstyle.com>
 
@@ -29,7 +28,7 @@ WANTLIB += vcdinfo vorbis vorbisenc vpx x264 x265 xcb xcb-dri2
 WANTLIB += xcb-glx xcb-shape xcb-shm xcb-xv xdg-basedir xml2 xvidcore
 WANTLIB += z
 
-XINEAPI_REV=	2.6
+XINEAPI_REV=	2.7
 SUBST_VARS+=	XINEAPI_REV
 
 COMPILER=	base-clang base-gcc
