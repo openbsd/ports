@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2017/05/30 19:19:38 robert Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/02/10 15:07:16 robert Exp $
 @bin bin/caja
 @bin bin/caja-autorun-software
 @bin bin/caja-connect-server
@@ -37,7 +37,6 @@ share/applications/caja.desktop
 share/applications/mate-network-scheme.desktop
 share/caja/
 share/caja/browser.xml
-share/caja/caja-desktop-3.14.css
 share/caja/caja-desktop.css
 share/caja/caja-extras.placeholder
 share/caja/caja-suggested.placeholder
@@ -156,10 +155,11 @@ share/locale/eu/LC_MESSAGES/caja.mo
 share/locale/fa/LC_MESSAGES/caja.mo
 share/locale/fi/LC_MESSAGES/caja.mo
 share/locale/fr/LC_MESSAGES/caja.mo
+share/locale/fr_CA/
+share/locale/fr_CA/LC_MESSAGES/
+share/locale/fr_CA/LC_MESSAGES/caja.mo
 share/locale/frp/LC_MESSAGES/caja.mo
 share/locale/fur/LC_MESSAGES/caja.mo
-share/locale/fy/
-share/locale/fy/LC_MESSAGES/
 share/locale/fy/LC_MESSAGES/caja.mo
 share/locale/ga/LC_MESSAGES/caja.mo
 share/locale/gl/LC_MESSAGES/caja.mo
@@ -180,6 +180,7 @@ share/locale/it/LC_MESSAGES/caja.mo
 share/locale/ja/LC_MESSAGES/caja.mo
 share/locale/ka/LC_MESSAGES/caja.mo
 share/locale/kk/LC_MESSAGES/caja.mo
+share/locale/km/LC_MESSAGES/caja.mo
 share/locale/kn/LC_MESSAGES/caja.mo
 share/locale/ko/LC_MESSAGES/caja.mo
 share/locale/ku/LC_MESSAGES/caja.mo

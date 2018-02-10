@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2017/05/30 21:32:08 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/02/10 15:07:17 robert Exp $
 @bin bin/pluma
 include/pluma/
 include/pluma/pluma-app.h
@@ -177,10 +177,9 @@ share/gtk-doc/html/pluma/left-insensitive.png
 share/gtk-doc/html/pluma/left.png
 share/gtk-doc/html/pluma/pluma-PlumaPrintJob.html
 share/gtk-doc/html/pluma/pluma-pluma-app.html
-share/gtk-doc/html/pluma/pluma-pluma-convert.html
 share/gtk-doc/html/pluma/pluma-pluma-debug.html
 share/gtk-doc/html/pluma/pluma-pluma-document.html
-share/gtk-doc/html/pluma/pluma-pluma-encodings-option-menu.html
+share/gtk-doc/html/pluma/pluma-pluma-encodings-combo-box.html
 share/gtk-doc/html/pluma/pluma-pluma-encodings.html
 share/gtk-doc/html/pluma/pluma-pluma-file-chooser-dialog.html
 share/gtk-doc/html/pluma/pluma-pluma-help.html
@@ -491,8 +490,6 @@ share/locale/da/LC_MESSAGES/pluma.mo
 share/locale/de/LC_MESSAGES/pluma.mo
 share/locale/dz/LC_MESSAGES/pluma.mo
 share/locale/el/LC_MESSAGES/pluma.mo
-share/locale/en_AU/
-share/locale/en_AU/LC_MESSAGES/
 share/locale/en_AU/LC_MESSAGES/pluma.mo
 share/locale/en_CA/LC_MESSAGES/pluma.mo
 share/locale/en_GB/LC_MESSAGES/pluma.mo
@@ -512,6 +509,9 @@ share/locale/eu/LC_MESSAGES/pluma.mo
 share/locale/fa/LC_MESSAGES/pluma.mo
 share/locale/fi/LC_MESSAGES/pluma.mo
 share/locale/fr/LC_MESSAGES/pluma.mo
+share/locale/fr_CA/
+share/locale/fr_CA/LC_MESSAGES/
+share/locale/fr_CA/LC_MESSAGES/pluma.mo
 share/locale/ga/LC_MESSAGES/pluma.mo
 share/locale/gl/LC_MESSAGES/pluma.mo
 share/locale/gu/LC_MESSAGES/pluma.mo
@@ -524,6 +524,9 @@ share/locale/id/LC_MESSAGES/pluma.mo
 share/locale/is/LC_MESSAGES/pluma.mo
 share/locale/it/LC_MESSAGES/pluma.mo
 share/locale/ja/LC_MESSAGES/pluma.mo
+share/locale/jv/
+share/locale/jv/LC_MESSAGES/
+share/locale/jv/LC_MESSAGES/pluma.mo
 share/locale/ka/LC_MESSAGES/pluma.mo
 share/locale/kk/LC_MESSAGES/pluma.mo
 share/locale/kn/LC_MESSAGES/pluma.mo
@@ -533,8 +536,6 @@ share/locale/ku_IQ/
 share/locale/ku_IQ/LC_MESSAGES/
 share/locale/ku_IQ/LC_MESSAGES/pluma.mo
 share/locale/ky/LC_MESSAGES/pluma.mo
-share/locale/la/
-share/locale/la/LC_MESSAGES/
 share/locale/la/LC_MESSAGES/pluma.mo
 share/locale/lt/LC_MESSAGES/pluma.mo
 share/locale/lv/LC_MESSAGES/pluma.mo

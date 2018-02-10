@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/04/30 19:01:25 robert Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/02/10 15:07:17 robert Exp $
 include/libmateweather/
 include/libmateweather/location-entry.h
 include/libmateweather/mateweather-enum-types.h
@@ -25,7 +25,6 @@ share/gtk-doc/html/libmateweather/home.png
 share/gtk-doc/html/libmateweather/index.html
 share/gtk-doc/html/libmateweather/left-insensitive.png
 share/gtk-doc/html/libmateweather/left.png
-share/gtk-doc/html/libmateweather/libmateweather-mateweather-mateconf.html
 share/gtk-doc/html/libmateweather/libmateweather-mateweather-prefs.html
 share/gtk-doc/html/libmateweather/libmateweather-mateweather-xml.html
 share/gtk-doc/html/libmateweather/libmateweather-weather.html

@@ -1,19 +1,18 @@
-# $OpenBSD: Makefile,v 1.3 2017/10/23 17:11:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2018/02/10 15:07:16 robert Exp $
 
 COMMENT=		components for the MATE desktop
 
 SHARED_LIBS+=		mate-desktop-2		0.0 # 18.4
 
 MATE_PROJECT=		mate-desktop
-REVISION=		0
 
 CATEGORIES=		x11
 
 # LGPLv2/GFDLv1.1/GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
-WANTLIB += Xinerama Xrandr Xrender c dconf epoxy expat ffi fontconfig
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
+WANTLIB += Xinerama Xrandr Xrender Xtst c dconf epoxy expat ffi fontconfig
 WANTLIB += freetype gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += iconv intl m pcre pixman-1 pthread xcb
 WANTLIB += xcb-render xcb-shm z

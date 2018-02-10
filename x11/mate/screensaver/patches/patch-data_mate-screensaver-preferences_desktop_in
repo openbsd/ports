@@ -1,6 +1,8 @@
-$OpenBSD: patch-data_mate-screensaver-preferences_desktop_in,v 1.1.1.1 2017/04/30 19:01:28 robert Exp $
---- data/mate-screensaver-preferences.desktop.in.orig	Fri Mar 17 17:58:29 2017
-+++ data/mate-screensaver-preferences.desktop.in	Fri Mar 17 17:58:36 2017
+$OpenBSD: patch-data_mate-screensaver-preferences_desktop_in,v 1.2 2018/02/10 15:07:17 robert Exp $
+
+Index: data/mate-screensaver-preferences.desktop.in
+--- data/mate-screensaver-preferences.desktop.in.orig
++++ data/mate-screensaver-preferences.desktop.in
 @@ -1,5 +1,5 @@
  [Desktop Entry]
 -_Name=Screensaver

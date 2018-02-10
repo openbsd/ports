@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2017/05/30 21:32:08 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/02/10 15:07:17 robert Exp $
 @bin bin/mate-notification-properties
 lib/mate-notification-daemon/
 lib/mate-notification-daemon/engines/
@@ -16,10 +16,7 @@ lib/mate-notification-daemon/engines/libslider.so
 lib/mate-notification-daemon/engines/libstandard.so
 @bin libexec/mate-notification-daemon
 @man man/man1/mate-notification-properties.1
-share/applications/
 share/applications/mate-notification-properties.desktop
-share/dbus-1/
-share/dbus-1/services/
 share/dbus-1/services/org.freedesktop.mate.Notifications.service
 share/glib-2.0/schemas/org.mate.NotificationDaemon.gschema.xml
 share/icons/hicolor/16x16/apps/mate-notification-properties.png
@@ -86,8 +83,6 @@ share/locale/ko/LC_MESSAGES/mate-notification-daemon.mo
 share/locale/ku_IQ/
 share/locale/ku_IQ/LC_MESSAGES/
 share/locale/ku_IQ/LC_MESSAGES/mate-notification-daemon.mo
-share/locale/ky/
-share/locale/ky/LC_MESSAGES/
 share/locale/ky/LC_MESSAGES/mate-notification-daemon.mo
 share/locale/lt/LC_MESSAGES/mate-notification-daemon.mo
 share/locale/lv/LC_MESSAGES/mate-notification-daemon.mo
@@ -115,8 +110,6 @@ share/locale/te/LC_MESSAGES/mate-notification-daemon.mo
 share/locale/th/LC_MESSAGES/mate-notification-daemon.mo
 share/locale/tr/LC_MESSAGES/mate-notification-daemon.mo
 share/locale/uk/LC_MESSAGES/mate-notification-daemon.mo
-share/locale/ur/
-share/locale/ur/LC_MESSAGES/
 share/locale/ur/LC_MESSAGES/mate-notification-daemon.mo
 share/locale/uz/LC_MESSAGES/mate-notification-daemon.mo
 share/locale/vi/LC_MESSAGES/mate-notification-daemon.mo

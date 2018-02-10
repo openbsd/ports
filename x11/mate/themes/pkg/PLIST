@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2017/07/13 08:40:06 robert Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/02/10 15:07:17 robert Exp $
 @unexec-delete rm -f %D/share/icons/ContrastHigh/icon-theme.cache
 share/icons/ContrastHigh/
 share/icons/ContrastHigh/16x16/
@@ -4971,6 +4971,9 @@ share/themes/TraditionalGreen/gtk-3.0/img/menuitem-radio-checked-insensitive.png
 share/themes/TraditionalGreen/gtk-3.0/img/menuitem-radio-checked.png
 share/themes/TraditionalGreen/gtk-3.0/img/menuitem-radio-hover.png
 share/themes/TraditionalGreen/gtk-3.0/img/menuitem-radio-insensitive.png
+share/themes/TraditionalGreen/gtk-3.0/img/menuitem-radio-mixed-hover.png
+share/themes/TraditionalGreen/gtk-3.0/img/menuitem-radio-mixed-insensitive.png
+share/themes/TraditionalGreen/gtk-3.0/img/menuitem-radio-mixed.png
 share/themes/TraditionalGreen/gtk-3.0/img/menuitem-radio.png
 share/themes/TraditionalGreen/gtk-3.0/img/pane-separator-grip-horz.png
 share/themes/TraditionalGreen/gtk-3.0/img/pane-separator-grip-vert.png
@@ -5041,6 +5044,9 @@ share/themes/TraditionalOk/gtk-3.0/img/menuitem-radio-checked-insensitive.png
 share/themes/TraditionalOk/gtk-3.0/img/menuitem-radio-checked.png
 share/themes/TraditionalOk/gtk-3.0/img/menuitem-radio-hover.png
 share/themes/TraditionalOk/gtk-3.0/img/menuitem-radio-insensitive.png
+share/themes/TraditionalOk/gtk-3.0/img/menuitem-radio-mixed-hover.png
+share/themes/TraditionalOk/gtk-3.0/img/menuitem-radio-mixed-insensitive.png
+share/themes/TraditionalOk/gtk-3.0/img/menuitem-radio-mixed.png
 share/themes/TraditionalOk/gtk-3.0/img/menuitem-radio.png
 share/themes/TraditionalOk/gtk-3.0/img/pane-separator-grip-horz.png
 share/themes/TraditionalOk/gtk-3.0/img/pane-separator-grip-vert.png
