@@ -1,11 +1,11 @@
-$OpenBSD: patch-SWIG__bio_i,v 1.1 2017/10/09 05:57:38 ajacoutot Exp $
+$OpenBSD: patch-SWIG__bio_i,v 1.2 2018/02/10 08:40:55 ajacoutot Exp $
 
 Fix build with LibreSSL
 
 Index: SWIG/_bio.i
 --- SWIG/_bio.i.orig
 +++ SWIG/_bio.i
-@@ -63,14 +63,14 @@ extern BIO *BIO_pop(BIO *);
+@@ -61,14 +61,14 @@ extern int BIO_eof(BIO *);
  static PyObject *_bio_err;
  
  
@@ -22,7 +22,7 @@ Index: SWIG/_bio.i
      pyfd_init();
  #endif
  }
-@@ -299,7 +299,7 @@ int bio_should_write(BIO* a) {
+@@ -294,7 +294,7 @@ int bio_should_write(BIO* a) {
      return BIO_should_write(a);
  }
  
