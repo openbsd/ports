@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2018/01/19 15:46:58 jca Exp $
-
-BROKEN-powerpc=	configure: error: C compiler cannot create executables
+# $OpenBSD: Makefile,v 1.16 2018/02/10 09:19:48 landry Exp $
 
 COMMENT=	common libraries for the CMU speech recognition engines
 
 VERSION=	0.6
 DISTNAME=	sphinxbase-${VERSION}
 PKGNAME=	cmu-sphinxbase-${VERSION}
-REVISION=	4
+REVISION=	5
 CATEGORIES=	audio
 SHARED_LIBS= 	sphinxbase	1.0 \
 		sphinxad	1.0
@@ -32,7 +30,7 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--without-python
 CONFIGURE_ENV=		CPPFLAGS=-I${LOCALBASE}/include	\
 			LDFLAGS=-L${LOCALBASE}/lib 	\
-			LIBS="-lblas -lm -lgfortran -lquadmath -lsndio" \
+			LIBS="-lblas -lm -lgfortran -lsndio" \
 			HAVE_DOXYGEN="no"
 
 pre-build:
