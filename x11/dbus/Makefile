@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.147 2018/01/11 19:27:12 rpe Exp $
+# $OpenBSD: Makefile,v 1.148 2018/02/10 00:01:42 ajacoutot Exp $
 
 PORTROACH=		limitw:1,even
 DPB_PROPERTIES=		parallel
@@ -6,15 +6,14 @@ DPB_PROPERTIES=		parallel
 COMMENT-main=		message bus system
 COMMENT-suid=		DBus setuid helper for starting system services
 
-V=			1.12.2
+V=			1.12.4
 DISTNAME=		dbus-${V}
 EPOCH-main=		0
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-suid=		dbus-daemon-launch-helper-${V}
-REVISION-main=		0
 
-SHARED_LIBS +=  dbus-1               11.2     # 22.4
+SHARED_LIBS +=  dbus-1               11.2     # 22.5
 
 CATEGORIES=		x11
 
