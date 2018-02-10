@@ -1,6 +1,7 @@
-$OpenBSD: patch-conf_master_cf,v 1.10 2017/01/07 23:49:47 sthen Exp $
---- conf/master.cf.orig	Sat Dec  3 10:49:54 2016
-+++ conf/master.cf	Fri Jan  6 23:03:24 2017
+$OpenBSD: patch-conf_master_cf,v 1.11 2018/02/10 21:19:23 sthen Exp $
+Index: conf/master.cf
+--- conf/master.cf.orig
++++ conf/master.cf
 @@ -9,12 +9,12 @@
  # service type  private unpriv  chroot  wakeup  maxproc command + args
  #               (yes)   (yes)   (no)    (never) (100)
@@ -29,7 +30,7 @@ $OpenBSD: patch-conf_master_cf,v 1.10 2017/01/07 23:49:47 sthen Exp $
  #  -o syslog_name=postfix/smtps
  #  -o smtpd_tls_wrappermode=yes
  #  -o smtpd_sasl_auth_enable=yes
-@@ -37,32 +37,32 @@ smtp      inet  n       -       n       -       -     
+@@ -37,33 +37,33 @@ smtp      inet  n       -       n       -       -     
  #  -o smtpd_recipient_restrictions=
  #  -o smtpd_relay_restrictions=permit_sasl_authenticated,reject
  #  -o milter_macro_daemon_name=ORIGINATING
@@ -63,6 +64,7 @@ $OpenBSD: patch-conf_master_cf,v 1.10 2017/01/07 23:49:47 sthen Exp $
 -relay     unix  -       -       n       -       -       smtp
 +smtp      unix  -       -       y       -       -       smtp
 +relay     unix  -       -       y       -       -       smtp
+         -o syslog_name=postfix/$service_name
  #       -o smtp_helo_timeout=5 -o smtp_connect_timeout=5
 -showq     unix  n       -       n       -       -       showq
 -error     unix  -       -       n       -       -       error
@@ -83,7 +85,7 @@ $OpenBSD: patch-conf_master_cf,v 1.10 2017/01/07 23:49:47 sthen Exp $
  #
  # ====================================================================
  # Interfaces to non-Postfix software. Be sure to examine the manual
-@@ -96,21 +96,21 @@ scache    unix  -       -       n       -       1     
+@@ -97,21 +97,21 @@ scache    unix  -       -       n       -       1     
  # Also specify in main.cf: cyrus_destination_recipient_limit=1
  #
  #cyrus     unix  -       n       n       -       -       pipe

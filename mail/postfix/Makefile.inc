@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.92 2016/09/23 09:16:56 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.93 2018/02/10 21:19:23 sthen Exp $
 
 COMMENT=	fast, secure sendmail replacement
 
@@ -21,6 +21,7 @@ HOMEPAGE=	http://www.postfix.org/
 
 MAINTAINER=	Brad Smith <brad@comstyle.com>
 
+# IBM Public License 1.0 / Eclipse Public License 2.0
 PERMIT_PACKAGE_CDROM=	cannot be sold, see section 4 of license
 PERMIT_PACKAGE_FTP=	yes
 PERMIT_DISTFILES_FTP=	yes
