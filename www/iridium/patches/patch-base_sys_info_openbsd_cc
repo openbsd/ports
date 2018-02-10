@@ -1,12 +1,38 @@
-$OpenBSD: patch-base_sys_info_openbsd_cc,v 1.9 2017/12/04 13:55:41 robert Exp $
+$OpenBSD: patch-base_sys_info_openbsd_cc,v 1.10 2018/02/10 08:02:52 robert Exp $
 
 Index: base/sys_info_openbsd.cc
 --- base/sys_info_openbsd.cc.orig
 +++ base/sys_info_openbsd.cc
-@@ -54,18 +54,6 @@ int64_t SysInfo::AmountOfAvailablePhysicalMemoryImpl()
+@@ -29,6 +29,10 @@ int64_t AmountOfMemory(int pages_name) {
+ 
+ namespace base {
+ 
++// pledge(2)
++int64_t aofpmem = 0;
++int64_t aofapmem = 0;
++
+ // static
+ int SysInfo::NumberOfProcessors() {
+   int mib[] = { CTL_HW, HW_NCPU };
+@@ -43,26 +47,20 @@ int SysInfo::NumberOfProcessors() {
+ 
+ // static
+ int64_t SysInfo::AmountOfPhysicalMemoryImpl() {
+-  return AmountOfMemory(_SC_PHYS_PAGES);
++  // pledge(2)
++  if (!aofpmem)
++    aofpmem = AmountOfMemory(_SC_PHYS_PAGES);
++  return aofpmem;
  }
  
  // static
+ int64_t SysInfo::AmountOfAvailablePhysicalMemoryImpl() {
+   // We should add inactive file-backed memory also but there is no such
+   // information from OpenBSD unfortunately.
+-  return AmountOfMemory(_SC_AVPHYS_PAGES);
+-}
+-
+-// static
 -uint64_t SysInfo::MaxSharedMemorySize() {
 -  int mib[] = { CTL_KERN, KERN_SHMINFO, KERN_SHMINFO_SHMMAX };
 -  size_t limit;
@@ -16,9 +42,10 @@ Index: base/sys_info_openbsd.cc
 -    return 0;
 -  }
 -  return static_cast<uint64_t>(limit);
--}
--
--// static
- std::string SysInfo::CPUModelName() {
-   int mib[] = { CTL_HW, HW_MODEL };
-   char name[256];
++  // pledge(2)
++  if (!aofapmem)
++    aofapmem = AmountOfMemory(_SC_AVPHYS_PAGES);
++  return aofapmem;
+ }
+ 
+ // static
