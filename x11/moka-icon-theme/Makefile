@@ -1,12 +1,14 @@
-# $OpenBSD: Makefile,v 1.2 2015/05/18 11:29:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2018/02/10 17:40:38 landry Exp $
 
 COMMENT =		minimal, flat style icon theme
 
-DISTNAME =		moka-icon-theme-5.0
+GH_ACCOUNT =		snwh
+GH_PROJECT =		moka-icon-theme
+GH_TAGNAME =		v5.3.6
+
 CATEGORIES =		x11
 
-HOMEPAGE =		http://mokaproject.com/moka-icon-theme/
-MASTER_SITES =		https://github.com/moka-project/moka-icon-theme/raw/master/
+HOMEPAGE =		https://snwh.org/moka
 
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
@@ -22,9 +24,6 @@ ICONSDIR =		${PREFIX}/share/icons/
 
 do-install:
 	${INSTALL_DATA_DIR} ${ICONSDIR}
-	# Fix broken symlinks
-	rm ${WRKDIST}/Moka/*/apps/{Blender,blender,FBReader,TeXworks,Uberwriter,uberwriter,texworks,fbreader}.png
-	rm ${WRKDIST}/Moka/8x8/emblems/emblem-{danger,insync-des-error}.png
 	cd ${WRKDIST} ; pax -L -rw Moka ${ICONSDIR}
 
 .include <bsd.port.mk>
