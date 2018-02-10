@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2017/05/01 12:22:26 juanfra Exp $
+# $OpenBSD: Makefile,v 1.8 2018/02/10 20:34:42 juanfra Exp $
 
 COMMENT =		C implementation of lzip
 
-DISTNAME =		clzip-1.9
+DISTNAME =		clzip-1.10
 
 HOMEPAGE =		http://lzip.nongnu.org/clzip.html
 MASTER_SITES =		${MASTER_SITE_SAVANNAH:=lzip/clzip/}
