@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2017/12/27 13:30:45 robert Exp $
+# $OpenBSD: Makefile,v 1.6 2018/02/10 17:45:50 robert Exp $
 
 COMMENT=	next generation web interface for Kopano
 
-WAPP_VERSION=	3.4.3
-
-REVISION=	0
+WAPP_VERSION=	3.4.6
 
 PLUGINS_WITH_DEFCONF= \
 		contactfax-${WAPP_VERSION}.${MINOR}-${RPMVER} \
@@ -20,8 +18,8 @@ PLUGINS=	${PLUGINS_WITH_DEFCONF} \
 		folderwidgets-${WAPP_VERSION}.${MINOR}-${RPMVER} \
 		quickitems-${WAPP_VERSION}.${MINOR}-${RPMVER}
 
-MINOR=		1127
-RPMVER=		669.1
+MINOR=		1225
+RPMVER=		715.1
 PKGNAME=	kopano-webapp-${WAPP_VERSION}.${MINOR}
 
 EXTRACT_SUFX=	# empty
@@ -45,9 +43,9 @@ DISTFILES+=	kopano-webapp-${WAPP_VERSION}.${MINOR}-${RPMVER}.noarch.rpm \
 		kopano-webapp-plugin-spell-nl-2.0.0.0-4.1.noarch.rpm \
 		kopano-webapp-plugin-spell-pl-pl-2.0.0.0-10.1.noarch.rpm \
 
-DISTFILES+=	kopano-webapp-plugin-files-2.1.1.233-153.1.noarch.rpm \
-		kopano-webapp-plugin-filesbackend-owncloud-2.1.1.67-44.1.noarch.rpm \
-		kopano-webapp-plugin-filesbackend-smb-2.1.1.35-32.1.noarch.rpm
+DISTFILES+=	kopano-webapp-plugin-files-2.1.2.236-156.1.noarch.rpm \
+		kopano-webapp-plugin-filesbackend-owncloud-2.1.1.70-46.1.noarch.rpm \
+		kopano-webapp-plugin-filesbackend-smb-2.1.1.36-33.1.noarch.rpm
 
 DISTFILES+=	kopano-webapp-plugin-meetings-3.0.0.92-7.2.noarch.rpm
 		

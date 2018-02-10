@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2017/12/27 13:30:45 robert Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/02/10 17:45:50 robert Exp $
 @conflict zarafa-webapp-*
 @pkgpath mail/zarafa/webapp
 kopano-webapp/
@@ -381,7 +381,7 @@ kopano-webapp/client/resources/images/buttons/triangle_right_stop_outline.png
 kopano-webapp/client/resources/images/default_contact_profile.png
 kopano-webapp/client/resources/images/favicon.ico
 kopano-webapp/client/resources/images/icons/
-kopano-webapp/client/resources/images/icons-s723580684a.png
+kopano-webapp/client/resources/images/icons-s0c1b9a781d.png
 kopano-webapp/client/resources/images/icons/arrow_down_l.png
 kopano-webapp/client/resources/images/icons/arrow_down_l_white.png
 kopano-webapp/client/resources/images/icons/arrow_down_s.png
@@ -462,6 +462,7 @@ kopano-webapp/client/resources/images/icons/icon_folder_rss.png
 kopano-webapp/client/resources/images/icons/icon_folder_store.png
 kopano-webapp/client/resources/images/icons/icon_folder_task.png
 kopano-webapp/client/resources/images/icons/icon_funnel.png
+kopano-webapp/client/resources/images/icons/icon_import_attachment.png
 kopano-webapp/client/resources/images/icons/icon_importance.png
 kopano-webapp/client/resources/images/icons/icon_inbox.png
 kopano-webapp/client/resources/images/icons/icon_index.png
@@ -3257,6 +3258,7 @@ kopano-webapp/server/includes/notifiers/class.notifier.php
 kopano-webapp/server/includes/notifiers/class.stickynotelistnotifier.php
 kopano-webapp/server/includes/notifiers/class.tasklistnotifier.php
 kopano-webapp/server/includes/templates/
+kopano-webapp/server/includes/templates/BadRequest.php
 kopano-webapp/server/includes/templates/login.php
 kopano-webapp/server/includes/templates/webclient.php
 kopano-webapp/server/includes/templates/webclient_separatewindow.php
