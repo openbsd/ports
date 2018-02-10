@@ -1,7 +1,8 @@
-$OpenBSD: patch-configure_ac,v 1.1 2014/11/24 10:29:10 sthen Exp $
---- configure.ac.orig	Thu Nov 13 19:59:02 2014
-+++ configure.ac	Tue Nov 18 02:15:11 2014
-@@ -198,7 +198,7 @@ dnl This will DEFINE the readline headers.
+$OpenBSD: patch-configure_ac,v 1.2 2018/02/10 09:59:37 landry Exp $
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -233,7 +233,7 @@ dnl This will DEFINE the readline headers.
  RL_LIB_READLINE_INCLUDES
  
  dnl Made it this far, add the readline and termcap LIBS

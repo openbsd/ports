@@ -1,27 +1,29 @@
-# $OpenBSD: Makefile,v 1.6 2017/07/04 11:09:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2018/02/10 09:59:37 landry Exp $
 
 COMMENT=	curses GDB interface
-DISTNAME=	cgdb-0.6.8
-REVISION=	0
+
+DISTNAME=	cgdb-0.7.0
+
 CATEGORIES=	devel
-HOMEPAGE=	http://cgdb.me/
+
+HOMEPAGE=	https://cgdb.github.io/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c ereadline m ncurses
+WANTLIB=	${COMPILER_LIBCXX} c curses ereadline m util
 
-MASTER_SITES=	http://cgdb.me/files/
+MASTER_SITES=	https://cgdb.me/files/
 
-BUILD_DEPENDS=	devel/help2man
 LIB_DEPENDS=	devel/readline>=6.1p2
 
-CONFIGURE_STYLE=  autoconf
-AUTOCONF_VERSION= 2.69
-CONFIGURE_ARGS+=  --with-readline=yes
+SEPARATE_BUILD=		Yes
+CONFIGURE_STYLE=	autoconf
+CONFIGURE_ARGS+=	--with-readline=yes
+CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib" \
+			CPPFLAGS="-I${LOCALBASE}/include/ereadline -I${LOCALBASE}/include"
 
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
-		CPPFLAGS="-I${LOCALBASE}/include/ereadline -I${LOCALBASE}/include"
+AUTOCONF_VERSION=	2.69
 
 # there are tests, but not working yet
 NO_TEST=	Yes
