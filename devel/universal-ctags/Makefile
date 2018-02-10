@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2017/09/11 06:31:44 jca Exp $
+# $OpenBSD: Makefile,v 1.3 2018/02/10 08:39:54 rsadowski Exp $
 
 COMMENT =	multilanguage reimplementation of the Unix ctags utility
 
 GH_ACCOUNT =	universal-ctags
 GH_PROJECT =	ctags
-GH_COMMIT =	6742b034f43af57da7ba478528f2c628389ba16e
+GH_COMMIT =	4f9f6f83de929385c448e59d40e5b62588b6bbcb
 # commit date YYYYMMDD
-DISTNAME =	universal-ctags-0.20170318
+DISTNAME =	universal-ctags-0.20171229
 
 CATEGORIES =	devel
 
@@ -14,7 +14,7 @@ HOMEPAGE =	https://ctags.io/
 
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
-WANTLIB += c
+WANTLIB += c xml2 yaml
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
@@ -38,7 +38,12 @@ AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.11
 
 BUILD_DEPENDS =		${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS}
+			${MODGNU_AUTOMAKE_DEPENDS} \
+			textproc/py-docutils
+
+LIB_DEPENDS +=		textproc/libxml \
+			devel/libyaml
+
 TEST_DEPENDS =		textproc/gdiff \
 			sysutils/coreutils
 
@@ -49,14 +54,9 @@ FLAVOR?=
 CONFIGURE_ARGS+=	--enable-iconv
 LIB_DEPENDS+=		converters/libiconv
 WANTLIB+=		iconv
+.else
+CONFIGURE_ARGS+=	--disable-iconv
 .endif
-
-# Application software must not redefine macros in the
-# implementation namespace.  For example, redefining __unused__
-# blows up in our <ctype.h>.
-post-extract:
-	find ${WRKSRC} -type f -name '*.[ch]' -exec sed -i \
-	's/__unused__/uct_unused/g; s/__printf__/uct_printf/g' {} +
 
 pre-configure:
 	cd ${WRKSRC} && ${SETENV} AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
