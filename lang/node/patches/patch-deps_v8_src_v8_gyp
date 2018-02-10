@@ -1,0 +1,26 @@
+$OpenBSD: patch-deps_v8_src_v8_gyp,v 1.1 2018/02/10 14:50:35 abieber Exp $
+
+Index: deps/v8/src/v8.gyp
+--- deps/v8/src/v8.gyp.orig
++++ deps/v8/src/v8.gyp
+@@ -74,7 +74,7 @@
+               },
+             }],
+             ['soname_version!=""', {
+-              'product_extension': 'so.<(soname_version)',
++              'product_extension': 'so.${LIBv8_VERSION}',
+             }],
+           ],
+         },
+@@ -2046,9 +2046,10 @@
+                 '-L/usr/local/lib -lexecinfo',
+             ]},
+             'sources': [
++              'base/debug/stack_trace_posix.cc',
+               'base/platform/platform-openbsd.cc',
+               'base/platform/platform-posix.h',
+-              'base/platform/platform-posix.cc'
++              'base/platform/platform-posix.cc',
+               'base/platform/platform-posix-time.h',
+               'base/platform/platform-posix-time.cc',
+             ],

@@ -1,23 +1,22 @@
-# $OpenBSD: Makefile,v 1.67 2018/01/09 02:11:11 abieber Exp $
+# $OpenBSD: Makefile,v 1.68 2018/02/10 14:50:35 abieber Exp $
 
 # XXX:
 # - Needs __ARM_NR_cacheflush (or the like) to work on arm-based ports.
 # - Needs bundled libcares as arpa/nameser.h does not include ns_t_a.
 
-ONLY_FOR_ARCHS =	amd64 i386
+ONLY_FOR_ARCHS =	amd64 aarch64 i386
 
 USE_WXNEEDED =		Yes
 
 COMMENT =		V8 JavaScript for clients and servers
 
-NODE_VERSION =		v6.12.3
+NODE_VERSION =		v8.9.4
 
 PLEDGE_VER =		1.1.0
 DISTFILES =		node-pledge-{}${PLEDGE_VER}.tar.gz:0 ${DISTNAME}.tar.gz
 
 DISTNAME =		node-${NODE_VERSION}
 PKGNAME =		${DISTNAME:S/v//g}
-REVISION =		0
 
 MASTER_SITES0 =		https://github.com/qbit/node-pledge/archive/
 
@@ -53,6 +52,10 @@ CONFIGURE_STYLE =	simple
 CONFIGURE_ARGS =	--prefix=${PREFIX} \
 			--shared-zlib
 
+.if "${MACHINE_ARCH}" ==	"aarch64"
+CONFIGURE_ARGS +=	--openssl-no-asm
+.endif
+
 SUBST_VARS += 		DISTNAME
 SUBST_VARS += 		DISTFILES
 SUBST_VARS += 		EXTRACT_SUFX
@@ -70,6 +73,13 @@ do-extract:
 		${FULLDISTDIR}/node-pledge-${PLEDGE_VER}.tar.gz && \
 	mv ${WRKSRC}/deps/npm/node_modules/node-pledge-${PLEDGE_VER} \
 		${WRKSRC}/deps/npm/node_modules/node-pledge
+
+post-extract:
+	# Currently tarbals exclude tools/eslint, while the tests that require it
+	# are still in tree
+	cd ${WRKSRC} && for x in $$(grep -r "tools/eslint" test/* | awk -F: '{print $$1}' | sort | uniq); do \
+		rm $$x; \
+	done
 
 pre-configure:
 	@# Bad practice, but prevents a whole stack of patches.
@@ -94,5 +104,12 @@ post-install:
 		mv $$x ../..; \
 		ln -s ../../$$x $$x; \
 	done
+
+do-test:
+	cd ${WRKSRC} && \
+	ulimit -n $$(ulimit -Hn) && \
+	ulimit -d $$(ulimit -Hd) && \
+	gmake test
+
 
 .include <bsd.port.mk>

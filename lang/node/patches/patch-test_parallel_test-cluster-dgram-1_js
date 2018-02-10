@@ -1,9 +1,10 @@
-$OpenBSD: patch-test_parallel_test-cluster-dgram-1_js,v 1.1 2017/10/10 13:32:07 abieber Exp $
+$OpenBSD: patch-test_parallel_test-cluster-dgram-1_js,v 1.2 2018/02/10 14:50:35 abieber Exp $
 
 Index: test/parallel/test-cluster-dgram-1.js
 --- test/parallel/test-cluster-dgram-1.js.orig
 +++ test/parallel/test-cluster-dgram-1.js
-@@ -1,7 +1,7 @@
+@@ -21,8 +21,8 @@
+ 
  'use strict';
  const common = require('../common');
 -if (common.isWindows)

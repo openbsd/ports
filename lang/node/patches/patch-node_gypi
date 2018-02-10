@@ -1,9 +1,9 @@
-$OpenBSD: patch-node_gypi,v 1.1 2017/08/06 15:01:45 abieber Exp $
+$OpenBSD: patch-node_gypi,v 1.2 2018/02/10 14:50:35 abieber Exp $
 
 Index: node.gypi
 --- node.gypi.orig
 +++ node.gypi
-@@ -284,11 +284,14 @@
+@@ -154,11 +154,14 @@
          'NODE_PLATFORM="darwin"',
        ],
      }],

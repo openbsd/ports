@@ -1,27 +1,26 @@
-$OpenBSD: patch-deps_uv_src_unix_openbsd_c,v 1.3 2015/12/21 19:27:05 abieber Exp $
+$OpenBSD: patch-deps_uv_src_unix_openbsd_c,v 1.4 2018/02/10 14:50:35 abieber Exp $
 
 Fix from Fabian Raetz <fabian.raetz@gmail.com>, currently set for 
 the next release of 1.x: https://github.com/libuv/libuv/pull/652
 
---- deps/uv/src/unix/openbsd.c.orig	Thu Dec  3 15:16:58 2015
-+++ deps/uv/src/unix/openbsd.c	Fri Dec 18 08:16:31 2015
-@@ -26,6 +26,7 @@
+Index: deps/uv/src/unix/openbsd.c
+--- deps/uv/src/unix/openbsd.c.orig
++++ deps/uv/src/unix/openbsd.c
+@@ -26,11 +26,13 @@
  #include <sys/resource.h>
  #include <sys/sched.h>
  #include <sys/time.h>
 +#include <sys/stat.h>
  #include <sys/sysctl.h>
  
- #include <ifaddrs.h>
-@@ -36,6 +37,7 @@
+ #include <errno.h>
  #include <fcntl.h>
- #include <kvm.h>
  #include <paths.h>
 +#include <stdio.h>
  #include <stdlib.h>
  #include <string.h>
  #include <unistd.h>
-@@ -76,12 +78,53 @@ void uv_loadavg(double avg[3]) {
+@@ -61,12 +63,53 @@ void uv_loadavg(double avg[3]) {
  }
  
  
@@ -76,7 +75,7 @@ the next release of 1.x: https://github.com/libuv/libuv/pull/652
    pid_t mypid;
    int err;
  
-@@ -109,18 +152,11 @@ int uv_exepath(char* buffer, size_t* size) {
+@@ -94,18 +137,11 @@ int uv_exepath(char* buffer, size_t* size) {
      argsbuf_size *= 2U;
    }
  

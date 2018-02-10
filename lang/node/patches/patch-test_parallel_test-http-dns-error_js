@@ -1,29 +1,29 @@
-$OpenBSD: patch-test_parallel_test-http-dns-error_js,v 1.1 2017/10/10 13:32:07 abieber Exp $
+$OpenBSD: patch-test_parallel_test-http-dns-error_js,v 1.2 2018/02/10 14:50:35 abieber Exp $
 
 Index: test/parallel/test-http-dns-error.js
 --- test/parallel/test-http-dns-error.js.orig
 +++ test/parallel/test-http-dns-error.js
-@@ -23,13 +23,21 @@ function test(mod) {
+@@ -39,9 +39,13 @@ function test(mod) {
+ 
+   // Bad host name should not throw an uncatchable exception.
    // Ensure that there is time to attach an error listener.
-   const req1 = mod.get({host: host, port: 42}, do_not_call);
++  var err_check = 'ENOTFOUND';
++  if (common.isOpenBSD) {
++    err_check = 'EAI_FAIL'
++  }
+   const req1 = mod.get({ host: host, port: 42 }, do_not_call);
    req1.on('error', common.mustCall(function(err) {
 -    assert.strictEqual(err.code, 'ENOTFOUND');
-+    if (common.isOpenBSD) {
-+      assert.strictEqual(err.code, 'EAI_FAIL');
-+    } else {
-+      assert.strictEqual(err.code, 'ENOTFOUND');
-+    }
++    assert.strictEqual(err.code, err_check);
    }));
    // http.get() called req1.end() for us
  
-   const req2 = mod.request({method: 'GET', host: host, port: 42}, do_not_call);
+@@ -51,7 +55,7 @@ function test(mod) {
+     port: 42
+   }, do_not_call);
    req2.on('error', common.mustCall(function(err) {
 -    assert.strictEqual(err.code, 'ENOTFOUND');
-+    if (common.isOpenBSD) {
-+      assert.strictEqual(err.code, 'EAI_FAIL');
-+    } else {
-+      assert.strictEqual(err.code, 'ENOTFOUND');
-+    }
++    assert.strictEqual(err.code, err_check);
    }));
    req2.end();
  }

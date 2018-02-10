@@ -1,9 +1,10 @@
-$OpenBSD: patch-deps_npm_lib_npm_js,v 1.4 2017/01/23 16:47:04 abieber Exp $
---- deps/npm/lib/npm.js.orig	Mon Dec 12 11:29:06 2016
-+++ deps/npm/lib/npm.js	Mon Dec 12 11:29:39 2016
-@@ -288,7 +288,7 @@
-         // go ahead and spin up the registry client.
-         npm.registry = new CachingRegClient(npm.config)
+$OpenBSD: patch-deps_npm_lib_npm_js,v 1.5 2018/02/10 14:50:35 abieber Exp $
+Index: deps/npm/lib/npm.js
+--- deps/npm/lib/npm.js.orig
++++ deps/npm/lib/npm.js
+@@ -332,7 +332,7 @@
+ 
+         log.resume()
  
 -        var umask = npm.config.get('umask')
 +        var umask = npm.config.get('umask') || 0022

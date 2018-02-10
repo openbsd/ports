@@ -1,9 +1,9 @@
-$OpenBSD: patch-test_common_index_js,v 1.2 2017/10/31 01:31:45 abieber Exp $
+$OpenBSD: patch-test_common_index_js,v 1.3 2018/02/10 14:50:35 abieber Exp $
 
 Index: test/common/index.js
 --- test/common/index.js.orig
 +++ test/common/index.js
-@@ -27,6 +27,7 @@ exports.isLinuxPPCBE = (process.platform === 'linux') 
+@@ -50,6 +50,7 @@ exports.isLinuxPPCBE = (process.platform === 'linux') 
                         (os.endianness() === 'BE');
  exports.isSunOS = process.platform === 'sunos';
  exports.isFreeBSD = process.platform === 'freebsd';
